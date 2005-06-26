@@ -1,6 +1,6 @@
 diff -ruN ../sylpheed-2.0.0beta3.orig/src/compose.c ./src/compose.c
 --- ../sylpheed-2.0.0beta3.orig/src/compose.c	Tue Jun 21 08:57:48 2005
-+++ ./src/compose.c	Sat Jun 25 20:05:20 2005
++++ ./src/compose.c	Sun Jun 26 14:12:37 2005
 @@ -4331,7 +4331,7 @@
  	gtk_container_add(GTK_CONTAINER(container), toolbar);
  	gtk_widget_set_size_request(toolbar, 1, -1);
@@ -10,6 +10,15 @@ diff -ruN ../sylpheed-2.0.0beta3.orig/src/compose.c ./src/compose.c
  	send_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
  					   _("Send"),
  					   _("Send message"),
+@@ -4340,7 +4340,7 @@
+ 					   G_CALLBACK(toolbar_send_cb),
+ 					   compose);
+ 
+-	icon_wid = stock_pixmap_widget(container, STOCK_PIXMAP_MAIL_SEND_QUEUE);
++	icon_wid = stock_pixbuf_widget(container, STOCK_PIXMAP_MAIL_SEND_QUEUE);
+ 	sendl_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
+ 					   _("Send later"),
+ 					   _("Put into queue folder and send later"),
 @@ -4349,7 +4349,7 @@
  					   G_CALLBACK(toolbar_send_later_cb),
  					   compose);
@@ -80,7 +89,7 @@ diff -ruN ../sylpheed-2.0.0beta3.orig/src/folderview.c ./src/folderview.c
  	stock_pixbuf_gdk(treeview, STOCK_PIXMAP_DIR_NOSELECT,
 diff -ruN ../sylpheed-2.0.0beta3.orig/src/mainwindow.c ./src/mainwindow.c
 --- ../sylpheed-2.0.0beta3.orig/src/mainwindow.c	Mon Jun 20 10:13:33 2005
-+++ ./src/mainwindow.c	Sat Jun 25 20:15:17 2005
++++ ./src/mainwindow.c	Sun Jun 26 14:12:20 2005
 @@ -2188,11 +2188,11 @@
  				    GTK_ORIENTATION_HORIZONTAL);
  	gtk_toolbar_set_style(GTK_TOOLBAR(toolbar), GTK_TOOLBAR_BOTH);
@@ -95,6 +104,15 @@ diff -ruN ../sylpheed-2.0.0beta3.orig/src/mainwindow.c ./src/mainwindow.c
  	get_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
  					  _("Get"),
  					  _("Incorporate new mail"),
+@@ -2200,7 +2200,7 @@
+ 					  icon_wid,
+ 					  G_CALLBACK(toolbar_inc_cb),
+ 					  mainwin);
+-	icon_wid = stock_pixmap_widget(container, STOCK_PIXMAP_MAIL_RECEIVE_ALL);
++	icon_wid = stock_pixbuf_widget(container, STOCK_PIXMAP_MAIL_RECEIVE_ALL);
+ 	getall_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
+ 					     _("Get all"),
+ 					     _("Incorporate new mail of all accounts"),
 @@ -2211,7 +2211,7 @@
  
  	gtk_toolbar_append_space(GTK_TOOLBAR(toolbar));
@@ -196,9 +214,66 @@ diff -ruN ../sylpheed-2.0.0beta3.orig/src/mainwindow.c ./src/mainwindow.c
  	account_btn = gtk_toolbar_append_item(GTK_TOOLBAR(toolbar),
  					      _("Account"),
  					      _("Account setting"),
+diff -ruN ../sylpheed-2.0.0beta3.orig/src/pixmaps/mail_receive_all.png.uu ./src/pixmaps/mail_receive_all.png.uu
+--- ../sylpheed-2.0.0beta3.orig/src/pixmaps/mail_receive_all.png.uu	Thu Jan  1 01:00:00 1970
++++ ./src/pixmaps/mail_receive_all.png.uu	Sun Jun 26 13:47:39 2005
+@@ -0,0 +1,23 @@
++begin 644 mail_receive_all.png
++MB5!.1PT*&@H````-24A$4@```!@````8"`8```#@=SWX````!F)+1T0`_P#_
++M`/^@O:>3````"7!(67,```L3```+$P$`FIP8```##TE$051(Q]663T@<5QS'
++M/SONKGO*.M8VM$5*H(<M:(Q;2[V+BX(XN`N!P$)MA5)D<LDF]J)X\-![8<$>
++MI%AH#6'72PB4DDNVB0@2XL&35T>P,<[HFG6R?V9^.61WF74WQ3^]],&7>;SW
++MY?=]W_=^\WL/_N_-=WK@2OC*_A>]D2['<7CY:H^]G9>O2F_*'UZ4U]3Z!OKV
++M_WKQIV2?/9#)V9O2]6GG_F5X?D^_"V@3<95BN<CKDV,*A=>(B`)<K7+^.0</
++M`,4CL'@]VKO7]U5?)SX?+H+2IO#QM8\ZU:OA/>#^.7E-`G?"'>'<K>]N52<4
++M_`$_G]_XC&`HD`.^.2/OVU9G"_`](%]^'97,DP?RV^-?9?R'8?G@$U6`)OP+
++M[S80JBU>\633+XE$@LS]+,\>K5',%Q$SR,;3Y[BN2Z52H5*I4"J5L&V;WY?_
++MX.^'3RGFBSC[;3S,/"*12`#\#*A`T.M$`<0T3=$T3;:WM^7NCW=E<W-3CH^/
++M)9_/R]'141V'AX=B699L;&Q(ZMX=R>5RHFF:K*ZNUEQ$@+#W"!1`1$0,PY"A
++MH2%Q'*<>W"M@69:8IBFF:<K!P8'L[.R(IFF2R61D?7V])M!;=:$HIP]"5566
++MEY>)Q^.$0B%$!-=U&[XUG)R<,#DYR<3$!)%(I.5_U200#`91595T.LW(R`CM
++M[>WPSEY3<%W7B<?C#`P,T-'1<3:!4JG4X"06BQ$(!!J"V[;-]/0TT6B4_O[^
++M]P9_KP-OZ^GI87Q\O"YBVS:ZKM/=W<WP\'!],6<6J#FP+(OY^7G2Z30S,S,D
++MDTG\?C^ZKA.+Q4@FDV2SV3-7U7H6E<ME,0Q#IJ:F1$2D4"B(81BRM;55SY:U
++MM34Q#$,,PY#9V=EZOU46M4S35"I5#^Y%+=#IL9I(*P&?1\`1$>;FYEA86&!W
++M=_=<%\OBXB)C8V,,#@X"7`<,X*A!()5*,3HZ>N';:V5EA:6EI08![Q;=;E74
++M+H"?O*7"YREV[=5]"P.!2US#Y>K*+:#H.Y5)P2K:+B'@`*4J7%^+1X#O/WA,
++8U+:+M\VX-P;4@`4U`````$E%3D2N0F""
++`
++end
+diff -ruN ../sylpheed-2.0.0beta3.orig/src/pixmaps/mail_send_queue.png.uu ./src/pixmaps/mail_send_queue.png.uu
+--- ../sylpheed-2.0.0beta3.orig/src/pixmaps/mail_send_queue.png.uu	Thu Jan  1 01:00:00 1970
++++ ./src/pixmaps/mail_send_queue.png.uu	Sun Jun 26 13:47:51 2005
+@@ -0,0 +1,26 @@
++begin 644 mail_send_queue.png
++MB5!.1PT*&@H````-24A$4@```!@````8"`8```#@=SWX````!F)+1T0`_P#_
++M`/^@O:>3````"7!(67,```L3```+$P$`FIP8```#JDE$051(Q\V5STMC5Q3'
++M/^_EY26=*9JH6)JNW'3JHMVUPBPL&`5=M+&&=B/2A6!!8SM%J_-'.#JT*(ZZ
++M$+J8TDY7;84(6?D#"]8Z()5:<2@F(XYOC-4D)B;OG2[R@R03!UT4>N#P[GWW
++MW._WGG/N.1?^3^)[_X;\E_@2>_J+`-<B4:\,'OF)U,GO?/6IB^N0J%<'_PT%
++MA=OO.*]%HEX%/!W[$\5V$Q$3X%HDY01*[I^:![\X^P,4';!*#,M(U#)5\G9:
++MT9X^X$$QR*MO?`#`R5_?8%GI`LGR9I)[WYX4FYI%X\^!6>`"L-2BDS_P^_V(
++M2(EF5[72;TX2B03Q>)Q8+,;^_CY^OQ_@:\`-Z(!23,#L["R=G9TEFP&LS"F8
++MR1?BFTPF22:31*-1`H$`W=W=^:5JP/'"D=QN-Y.3D[2VMK*XN$@BD<B2'?S,
++M0>0)N@9_'Z1YQ9$-L8B02"0(!`+T]/3@\7CR4/;R_*I9>Y%X/"[A<%A\/I^D
++MT^E\8574_?U]\7J],C\_+UM;6[*VMI9?>SL7)E4K=UO7]8(G[>WMA3#D<Y+)
++M9#`,@_7U=?KZ^G"YW`2#038V-FAH:,!FLV&:IEKINA8\R&LX');FYF:)Q^-R
++M?'PL1T='LKJZ*H.#@S(T-"07%RG)RVD\)G?OCDIM;:UHFO:1HBBUQ6$J$*33
++MZ1*"_OY^\7J]<G9V)CL[._+EG2_D^X</I5B>&T9A/#4U)75U==]5556]69&@
++M&+RWMU=$1(+!H/A\/@F%0O*Q_Q,IE]'14=G>WB[,V]O;GWL\G@\O]:`8/$^V
++MM;4E+2TMLKR\+"(BIFF*B,C"PH*TM;6)98DD4]F0_?#HD30V-HY73/+AX2$3
++M$Q/,S<T5KJG;[<;M=M/4U(1I9HLVG<[@<.CT]P^@::`H%`I3+`O+LFHJ-KOI
++MZ6G&QL:(1")$H]$2=;E<&(:1==FF<GY^#@B[NT^8N'\?)`.`81A8EG54WHL8
++M'AZFHZ.#4"A4L3,Z'`Y65E;HZNK"KFG8-8W'FX\Y^>>$\W@2I_,F`$M+2[%8
++M++91?DT'7U94@*BJ*KJNR\S,C%PF]\;'T\"/3H?S5G&$%,`)O`Z\E:O$2GH;
++MN*/K^J\C(R.)2#@LJ51*8K%SV=O;D_Z!@02P#GP&O$8V-25>Z#FU7?)^5`,-
++MP'O`N_7U];=J:FI<IFDJAF&<1J/176`#6`4V@6=*A0='><D#=2/78VH41:FV
++LV^UUBJ)4B8AJ658JD\E$@2CP##@"3O\%H+J*M#,%!#P`````245.1*Y"8((`
++`
++end
 diff -ruN ../sylpheed-2.0.0beta3.orig/src/stock_pixmap.c ./src/stock_pixmap.c
 --- ../sylpheed-2.0.0beta3.orig/src/stock_pixmap.c	Mon May  9 11:29:14 2005
-+++ ./src/stock_pixmap.c	Sat Jun 25 20:00:55 2005
++++ ./src/stock_pixmap.c	Sun Jun 26 14:19:51 2005
 @@ -28,8 +28,6 @@
  #include "pixmaps/address.xpm"
  #include "pixmaps/book.xpm"
@@ -229,20 +304,31 @@ diff -ruN ../sylpheed-2.0.0beta3.orig/src/stock_pixmap.c ./src/stock_pixmap.c
 -#include "pixmaps/stock_mail_compose.xpm"
 -#include "pixmaps/stock_mail_forward.xpm"
 -#include "pixmaps/stock_mail_receive.xpm"
- #include "pixmaps/stock_mail_receive_all.xpm"
+-#include "pixmaps/stock_mail_receive_all.xpm"
 -#include "pixmaps/stock_mail_reply.xpm"
 -#include "pixmaps/stock_mail_reply_to_all.xpm"
 -#include "pixmaps/stock_mail_send.xpm"
- #include "pixmaps/stock_mail_send_queue.xpm"
+-#include "pixmaps/stock_mail_send_queue.xpm"
 -#include "pixmaps/stock_paste.xpm"
 -#include "pixmaps/stock_preferences.xpm"
 -#include "pixmaps/stock_properties.xpm"
++#include "pixmaps/mail_receive_all.h"
++#include "pixmaps/mail_send_queue.h"
  #include "pixmaps/sylpheed-logo.xpm"
 -#include "pixmaps/tb_address_book.xpm"
  #include "pixmaps/trash.xpm"
  #include "pixmaps/unread.xpm"
  #include "pixmaps/vcard.xpm"
-@@ -89,8 +70,6 @@
+@@ -82,6 +63,8 @@
+ 	GdkPixmap *pixmap;
+ 	GdkBitmap *mask;
+ 	GdkPixbuf *pixbuf;
++	const guint8 *pixbuf_data;
++	int pixbuf_data_len;
+ };
+ 
+ static StockPixmapData pixmaps[] =
+@@ -89,8 +72,6 @@
  	{address_xpm			, NULL, NULL},
  	{book_xpm			, NULL, NULL},
  	{category_xpm			, NULL, NULL},
@@ -251,7 +337,7 @@ diff -ruN ../sylpheed-2.0.0beta3.orig/src/stock_pixmap.c ./src/stock_pixmap.c
  	{clip_xpm			, NULL, NULL},
  	{complete_xpm			, NULL, NULL},
  	{continue_xpm			, NULL, NULL},
-@@ -101,33 +80,16 @@
+@@ -101,33 +82,16 @@
  	{error_xpm			, NULL, NULL},
  	{forwarded_xpm			, NULL, NULL},
  	{group_xpm			, NULL, NULL},
@@ -272,19 +358,44 @@ diff -ruN ../sylpheed-2.0.0beta3.orig/src/stock_pixmap.c ./src/stock_pixmap.c
 -	{stock_mail_compose_xpm		, NULL, NULL},
 -	{stock_mail_forward_xpm		, NULL, NULL},
 -	{stock_mail_receive_xpm		, NULL, NULL},
- 	{stock_mail_receive_all_xpm	, NULL, NULL},
+-	{stock_mail_receive_all_xpm	, NULL, NULL},
 -	{stock_mail_reply_xpm		, NULL, NULL},
 -	{stock_mail_reply_to_all_xpm	, NULL, NULL},
 -	{stock_mail_send_xpm		, NULL, NULL},
- 	{stock_mail_send_queue_xpm	, NULL, NULL},
+-	{stock_mail_send_queue_xpm	, NULL, NULL},
 -	{stock_paste_xpm		, NULL, NULL},
 -	{stock_preferences_xpm		, NULL, NULL},
 -	{stock_properties_xpm		, NULL, NULL},
++	{NULL				, NULL, NULL, NULL, mail_receive_all, sizeof(mail_receive_all) },
++	{NULL				, NULL, NULL, NULL, mail_send_queue, sizeof(mail_send_queue) },
  	{sylpheed_logo_xpm		, NULL, NULL},
 -	{tb_address_book_xpm		, NULL, NULL},
  	{trash_xpm			, NULL, NULL},
  	{unread_xpm			, NULL, NULL},
  	{vcard_xpm			, NULL, NULL},
+@@ -197,9 +161,19 @@
+ 
+ 	pix_d = &pixmaps[icon];
+ 
+-	if (!pix_d->pixbuf)
+-		pix_d->pixbuf = gdk_pixbuf_new_from_xpm_data
+-			((const gchar **)pix_d->data);
++	if (!pix_d->pixbuf) {
++		if (pix_d->data)
++			pix_d->pixbuf = gdk_pixbuf_new_from_xpm_data
++				((const gchar **)pix_d->data);
++		else if (pix_d->pixbuf_data)
++			pix_d->pixbuf = gdk_pixbuf_new_from_inline
++				(pix_d->pixbuf_data_len,
++				 pix_d->pixbuf_data,
++				 FALSE,
++				 NULL);
++		else
++			g_return_val_if_reached(-1);
++	}
+ 	if (!pix_d->pixbuf)
+ 		return -1;
+ 
 diff -ruN ../sylpheed-2.0.0beta3.orig/src/stock_pixmap.h ./src/stock_pixmap.h
 --- ../sylpheed-2.0.0beta3.orig/src/stock_pixmap.h	Mon May  9 11:29:14 2005
 +++ ./src/stock_pixmap.h	Sat Jun 25 19:59:24 2005
