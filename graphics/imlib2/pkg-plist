@@ -1,10 +1,10 @@
-bin/imlib2_bumpmap
-bin/imlib2_colorspace
+%%X11%%bin/imlib2_bumpmap
+%%X11%%bin/imlib2_colorspace
 bin/imlib2_conv
-bin/imlib2_poly
-bin/imlib2_show
-bin/imlib2_test
-bin/imlib2_view
+%%X11%%bin/imlib2_poly
+%%X11%%bin/imlib2_show
+%%X11%%bin/imlib2_test
+%%X11%%bin/imlib2_view
 bin/imlib2-config
 include/Imlib2.h
 lib/libImlib2.a
