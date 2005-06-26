@@ -87,6 +87,7 @@ share/uim/pyload.scm
 share/uim/pyunihan.scm
 share/uim/rk.scm
 share/uim/romaja.scm
+share/uim/scim.scm
 share/uim/skk-custom.scm
 share/uim/skk-editor.scm
 share/uim/skk-key-custom.scm
@@ -103,6 +104,7 @@ share/uim/tables/korean-hangul3.table
 share/uim/tcode.scm
 share/uim/tutcode-key-custom.scm
 share/uim/tutcode.scm
+share/uim/uim-db.scm
 share/uim/uim-sh.scm
 share/uim/ustr.scm
 share/uim/util.scm

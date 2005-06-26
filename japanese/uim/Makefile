@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	uim
-PORTVERSION=	0.4.6
-PORTREVISION=	3
+PORTVERSION=	0.4.7
 CATEGORIES=	japanese x11
 MASTER_SITES=	http://uim.freedesktop.org/releases/
 
@@ -30,6 +29,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib  -L${LOCALBASE}/lib"
 DOCSDIR_JA=	${PREFIX}/share/doc/ja/uim
 PLIST_SUB+=	DOCSDIR_JA="${DOCSDIR_JA:S,^${PREFIX}/,,}"
+
+MAN1=		uim-xim.1
 
 .include <bsd.port.pre.mk>
 
