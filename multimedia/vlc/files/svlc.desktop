@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=VideoLAN (skins) Media Player
+Comment=Video and Audio player and server
+Icon=gvlc.png
+Exec=vlc --intf skins2
+TryExec=svlc
+Terminal=false
+Type=Application
+Categories=Application;AudioVideo;
