@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.1.0
-PORTREVISION=	20050618
+PORTREVISION=	20050625
 CATEGORIES=	lang java
 VERSIONSTRING=	4.1-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -67,6 +67,7 @@ CONFIGURE_ARGS+=	--disable-nls \
 		--with-system-zlib \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--program-suffix=${SUFFIX} \
+		--libdir=${TARGLIB} \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/
 .if defined(WITH_FORTRAN)
 CONFIGURE_ARGS+=	--with-gmp=${LOCALBASE}
@@ -76,7 +77,6 @@ MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 CONFIGURE_ARGS+=	--enable-shared
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib ${TARGLIB}
-EXTRA_LIBS=	libgcc_s
 .else
 CONFIGURE_ARGS+=	--disable-shared
 .endif
@@ -106,14 +106,12 @@ CONFIGURE_ARGS+=	--disable-libgcj
 PLIST_SUB+=	LIBJAVA="@comment "
 .else
 PLIST_SUB+=	LIBJAVA=""
-EXTRA_LIBS+=	libffi libgcj libgij
 .endif
 
 .if defined(WITH_FORTRAN)
 MAN1+=	gfortran${SUFFIX}.1
 INFO+=	gfortran
 PLIST_SUB+=	FORTRAN=""
-EXTRA_LIBS+=	libgfortran libgfortranbegin
 .else
 PLIST_SUB+=	FORTRAN="@comment "
 .endif
@@ -157,12 +155,7 @@ post-install:
 	           ${PREFIX}/man/man1/${f}${SUFFIX}.1; \
 	fi
 .endfor
-	# These libraries are moved from PREFIX/lib to avoid conflicts with
-	# the stock compiler.
-.for f in libstdc++ libsupc++ libobjc libmudflap libmudflapth ${EXTRA_LIBS}
-	${MV} -f ${PREFIX}/lib/${f}.* ${TARGLIB}
-.endfor
-	${RM} -f ${PREFIX}/lib/libiberty.a ${TARGLIB}/*.la
+	${RM} -f ${TARGLIB}/*.la
 	${RM} -f ${PREFIX}/man/man7/fsf-funding.7 \
 	         ${PREFIX}/man/man7/gfdl.7 ${PREFIX}/man/man7/gpl.7
 	# Add target libraries and include files to packaging list.
