@@ -28,6 +28,7 @@ share/locale/nds/LC_MESSAGES/imagerename_plugin.mo
 share/locale/nds/LC_MESSAGES/imgalleryplugin.mo
 share/locale/nds/LC_MESSAGES/irkick.mo
 share/locale/nds/LC_MESSAGES/jefferson.mo
+share/locale/nds/LC_MESSAGES/joystick.mo
 share/locale/nds/LC_MESSAGES/kabc2mutt.mo
 share/locale/nds/LC_MESSAGES/kabc_dir.mo
 share/locale/nds/LC_MESSAGES/kabc_file.mo
@@ -64,7 +65,6 @@ share/locale/nds/LC_MESSAGES/katexmltools.mo
 share/locale/nds/LC_MESSAGES/kbabel.mo
 share/locale/nds/LC_MESSAGES/kbinaryclock.mo
 share/locale/nds/LC_MESSAGES/kcalc.mo
-share/locale/nds/LC_MESSAGES/kcardchooser.mo
 share/locale/nds/LC_MESSAGES/kcharselect.mo
 share/locale/nds/LC_MESSAGES/kcharselectapplet.mo
 share/locale/nds/LC_MESSAGES/kcmaccess.mo
@@ -106,7 +106,6 @@ share/locale/nds/LC_MESSAGES/kcmlaptop.mo
 share/locale/nds/LC_MESSAGES/kcmlaunch.mo
 share/locale/nds/LC_MESSAGES/kcmlayout.mo
 share/locale/nds/LC_MESSAGES/kcmlilo.mo
-share/locale/nds/LC_MESSAGES/kcmlinuz.mo
 share/locale/nds/LC_MESSAGES/kcmlirc.mo
 share/locale/nds/LC_MESSAGES/kcmlocale.mo
 share/locale/nds/LC_MESSAGES/kcmmediacontrol.mo

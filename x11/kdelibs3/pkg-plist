@@ -638,7 +638,6 @@ include/kstringhandler.h
 include/kstringvalidator.h
 include/kstyle.h
 include/ksvgiconengine.h
-include/kswap.h
 include/ksycoca.h
 include/ksycocaentry.h
 include/ksycocatype.h
@@ -3159,6 +3158,7 @@ share/icons/crystalsvg/16x16/actions/editdelete.png
 share/icons/crystalsvg/16x16/actions/editpaste.png
 share/icons/crystalsvg/16x16/actions/editshred.png
 share/icons/crystalsvg/16x16/actions/edittrash.png
+share/icons/crystalsvg/16x16/actions/emptytrash.png
 share/icons/crystalsvg/16x16/actions/encrypted.png
 share/icons/crystalsvg/16x16/actions/eraser.png
 share/icons/crystalsvg/16x16/actions/exec.png
@@ -3565,6 +3565,7 @@ share/icons/crystalsvg/22x22/actions/editdelete.png
 share/icons/crystalsvg/22x22/actions/editpaste.png
 share/icons/crystalsvg/22x22/actions/editshred.png
 share/icons/crystalsvg/22x22/actions/edittrash.png
+share/icons/crystalsvg/22x22/actions/emptytrash.png
 share/icons/crystalsvg/22x22/actions/encrypted.png
 share/icons/crystalsvg/22x22/actions/eraser.png
 share/icons/crystalsvg/22x22/actions/exec.png
@@ -3897,6 +3898,7 @@ share/icons/crystalsvg/32x32/actions/editdelete.png
 share/icons/crystalsvg/32x32/actions/editpaste.png
 share/icons/crystalsvg/32x32/actions/editshred.png
 share/icons/crystalsvg/32x32/actions/edittrash.png
+share/icons/crystalsvg/32x32/actions/emptytrash.png
 share/icons/crystalsvg/32x32/actions/encrypted.png
 share/icons/crystalsvg/32x32/actions/exec.png
 share/icons/crystalsvg/32x32/actions/exit.png

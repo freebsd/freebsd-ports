@@ -527,7 +527,6 @@ share/locale/hu/LC_MESSAGES/kbstateapplet.mo
 share/locale/hu/LC_MESSAGES/kbugbuster.mo
 share/locale/hu/LC_MESSAGES/kcachegrind.mo
 share/locale/hu/LC_MESSAGES/kcalc.mo
-share/locale/hu/LC_MESSAGES/kcardchooser.mo
 share/locale/hu/LC_MESSAGES/kcharselect.mo
 share/locale/hu/LC_MESSAGES/kcharselectapplet.mo
 share/locale/hu/LC_MESSAGES/kcm_krfb.mo
@@ -570,7 +569,6 @@ share/locale/hu/LC_MESSAGES/kcmkonsole.mo
 share/locale/hu/LC_MESSAGES/kcmkontactnt.mo
 share/locale/hu/LC_MESSAGES/kcmktalkd.mo
 share/locale/hu/LC_MESSAGES/kcmkttsd.mo
-share/locale/hu/LC_MESSAGES/kcmkttsmgr.mo
 share/locale/hu/LC_MESSAGES/kcmkuick.mo
 share/locale/hu/LC_MESSAGES/kcmkurifilt.mo
 share/locale/hu/LC_MESSAGES/kcmkvaio.mo
@@ -585,7 +583,6 @@ share/locale/hu/LC_MESSAGES/kcmlaptop.mo
 share/locale/hu/LC_MESSAGES/kcmlaunch.mo
 share/locale/hu/LC_MESSAGES/kcmlayout.mo
 share/locale/hu/LC_MESSAGES/kcmlilo.mo
-share/locale/hu/LC_MESSAGES/kcmlinuz.mo
 share/locale/hu/LC_MESSAGES/kcmlirc.mo
 share/locale/hu/LC_MESSAGES/kcmlocale.mo
 share/locale/hu/LC_MESSAGES/kcmmediacontrol.mo

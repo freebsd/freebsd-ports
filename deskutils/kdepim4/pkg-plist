@@ -27,7 +27,6 @@ bin/konsolekalendar
 bin/kontact
 bin/korgac
 bin/korganizer
-bin/korganizerIn
 bin/korn
 bin/kpalmdoc
 bin/kpilot
@@ -172,7 +171,6 @@ include/kpilot/pilotLocalDatabase.h
 include/kpilot/pilotRecord.h
 include/kpilot/pilotSerialDatabase.h
 include/kpilot/plugin.h
-include/kpilot/recordConduit.h
 include/kpilot/syncAction.h
 include/kpilot/uiDialog.h
 include/ksieve/error.h
@@ -499,7 +497,7 @@ lib/libakregatorprivate.la
 lib/libakregatorprivate.so
 lib/libgpgme++.la
 lib/libgpgme++.so
-lib/libgpgme++.so.1
+lib/libgpgme++.so.2
 lib/libkabc_groupdav.la
 lib/libkabc_groupdav.so
 lib/libkabc_groupdav.so.1
@@ -694,6 +692,9 @@ share/apps/akregator/articleviewer.rc
 share/apps/akregator/eventsrc
 share/apps/akregator/pageviewer.rc
 share/apps/akregator/pics/akregator_flag.png
+share/apps/akregator/pics/kmmsgflag.png
+share/apps/akregator/pics/kmmsgnew.png
+share/apps/akregator/pics/kmmsgunseen.png
 share/apps/kaddressbook/bookmark_xxportui.rc
 share/apps/kaddressbook/contacteditorpages/KPilotCustomFieldEditor.ui
 share/apps/kaddressbook/csv-templates/kaddressbook.desktop
@@ -774,6 +775,7 @@ share/apps/kconf_update/kmail-3.3-split-sign-encr-keys.sh
 share/apps/kconf_update/kmail-3.3-use-ID-for-accounts.pl
 share/apps/kconf_update/kmail-3.3b1-misc.pl
 share/apps/kconf_update/kmail-3.4-misc.pl
+share/apps/kconf_update/kmail-3.4.1-update-status-filters.pl
 share/apps/kconf_update/kmail-pgpidentity.pl
 share/apps/kconf_update/kmail-upd-identities.pl
 share/apps/kconf_update/kmail.upd

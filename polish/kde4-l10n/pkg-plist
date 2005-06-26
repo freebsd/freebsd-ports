@@ -94,10 +94,10 @@ share/locale/pl/LC_MESSAGES/kbinaryclock.mo
 share/locale/pl/LC_MESSAGES/kblackbox.mo
 share/locale/pl/LC_MESSAGES/kbounce.mo
 share/locale/pl/LC_MESSAGES/kbruch.mo
+share/locale/pl/LC_MESSAGES/kbstateapplet.mo
 share/locale/pl/LC_MESSAGES/kbugbuster.mo
 share/locale/pl/LC_MESSAGES/kcachegrind.mo
 share/locale/pl/LC_MESSAGES/kcalc.mo
-share/locale/pl/LC_MESSAGES/kcardchooser.mo
 share/locale/pl/LC_MESSAGES/kcharselect.mo
 share/locale/pl/LC_MESSAGES/kcharselectapplet.mo
 share/locale/pl/LC_MESSAGES/kcm_krfb.mo
@@ -140,7 +140,6 @@ share/locale/pl/LC_MESSAGES/kcmkonsole.mo
 share/locale/pl/LC_MESSAGES/kcmkontactnt.mo
 share/locale/pl/LC_MESSAGES/kcmktalkd.mo
 share/locale/pl/LC_MESSAGES/kcmkttsd.mo
-share/locale/pl/LC_MESSAGES/kcmkttsmgr.mo
 share/locale/pl/LC_MESSAGES/kcmkuick.mo
 share/locale/pl/LC_MESSAGES/kcmkurifilt.mo
 share/locale/pl/LC_MESSAGES/kcmkvaio.mo
@@ -155,7 +154,6 @@ share/locale/pl/LC_MESSAGES/kcmlaptop.mo
 share/locale/pl/LC_MESSAGES/kcmlaunch.mo
 share/locale/pl/LC_MESSAGES/kcmlayout.mo
 share/locale/pl/LC_MESSAGES/kcmlilo.mo
-share/locale/pl/LC_MESSAGES/kcmlinuz.mo
 share/locale/pl/LC_MESSAGES/kcmlirc.mo
 share/locale/pl/LC_MESSAGES/kcmlocale.mo
 share/locale/pl/LC_MESSAGES/kcmmediacontrol.mo
@@ -428,6 +426,7 @@ share/locale/pl/LC_MESSAGES/krfb.mo
 share/locale/pl/LC_MESSAGES/kruler.mo
 share/locale/pl/LC_MESSAGES/krunapplet.mo
 share/locale/pl/LC_MESSAGES/ksame.mo
+share/locale/pl/LC_MESSAGES/ksayit.mo
 share/locale/pl/LC_MESSAGES/kscd.mo
 share/locale/pl/LC_MESSAGES/kscreensaver.mo
 share/locale/pl/LC_MESSAGES/kshisen.mo
@@ -472,7 +471,12 @@ share/locale/pl/LC_MESSAGES/ktnef.mo
 share/locale/pl/LC_MESSAGES/ktouch.mo
 share/locale/pl/LC_MESSAGES/ktron.mo
 share/locale/pl/LC_MESSAGES/kttsd.mo
+share/locale/pl/LC_MESSAGES/kttsd_commandplugin.mo
+share/locale/pl/LC_MESSAGES/kttsd_eposplugin.mo
 share/locale/pl/LC_MESSAGES/kttsd_festivalintplugin.mo
+share/locale/pl/LC_MESSAGES/kttsd_fliteplugin.mo
+share/locale/pl/LC_MESSAGES/kttsd_freettsplugin.mo
+share/locale/pl/LC_MESSAGES/kttsd_hadifixplugin.mo
 share/locale/pl/LC_MESSAGES/kttsd_sbdplugin.mo
 share/locale/pl/LC_MESSAGES/kttsd_stringreplacerplugin.mo
 share/locale/pl/LC_MESSAGES/kttsd_talkerchooserplugin.mo

@@ -55,4 +55,9 @@ pre-everything::
 RUN_DEPENDS+=	callgrind:${PORTSDIR}/devel/callgrind
 .endif
 
+post-patch:
+# Breakage might be caused by security/heimdal's broken fnmatch.h
+	@${REINPLACE_CMD} -e 's|<\(fnmatch.h\)>|"/usr/include/\1"|' \
+		${WRKSRC}/cervisia/stringmatcher.cpp
+
 .include <bsd.port.post.mk>

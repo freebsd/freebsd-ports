@@ -41,6 +41,7 @@ include/kopete/kopetemessagemanagerfactory.h
 include/kopete/kopetemetacontact.h
 include/kopete/kopetemimetypehandler.h
 include/kopete/kopetenotifyclient.h
+include/kopete/kopetenotifydataobject.h
 include/kopete/kopeteonlinestatus.h
 include/kopete/kopeteonlinestatusmanager.h
 include/kopete/kopetepassword.h
@@ -252,7 +253,6 @@ share/apps/kget/icons/crystalsvg/22x22/actions/bar6.png
 share/apps/kget/icons/crystalsvg/22x22/actions/dock.png
 share/apps/kget/icons/crystalsvg/22x22/actions/tool_clipboard.png
 share/apps/kget/icons/crystalsvg/22x22/actions/tool_delay.png
-share/apps/kget/icons/crystalsvg/22x22/actions/tool_delete.png
 share/apps/kget/icons/crystalsvg/22x22/actions/tool_disconnect.png
 share/apps/kget/icons/crystalsvg/22x22/actions/tool_dock.png
 share/apps/kget/icons/crystalsvg/22x22/actions/tool_drop_target.png
@@ -1161,12 +1161,15 @@ share/apps/kppp/Rules/Ireland/Eircom_National.rst
 share/apps/kppp/Rules/Ireland/Eircom_Special.rst
 share/apps/kppp/Rules/Israel/Bezeq_Interurban.rst
 share/apps/kppp/Rules/Israel/Bezeq_Local.rst
+share/apps/kppp/Rules/Italy/Atlanet.rst
 share/apps/kppp/Rules/Italy/Infostrada_Internet_SpZero.rst
 share/apps/kppp/Rules/Italy/Infostrada_Libero1055_Base.rst
 share/apps/kppp/Rules/Italy/Infostrada_Libero1055_SpZero.rst
 share/apps/kppp/Rules/Italy/Infostrada_Loc_Reg_Naz_SpZero.rst
 share/apps/kppp/Rules/Italy/Infostrada_Locali_Base.rst
 share/apps/kppp/Rules/Italy/Infostrada_Reg_Naz_Base.rst
+share/apps/kppp/Rules/Italy/Tele2_Altri_ISP.rst
+share/apps/kppp/Rules/Italy/Tele2_Internet_Tele2.rst
 share/apps/kppp/Rules/Italy/Telecom_Interurbane_Fino15Km.rst
 share/apps/kppp/Rules/Italy/Telecom_Interurbane_Oltre15Km.rst
 share/apps/kppp/Rules/Italy/Telecom_Locali.rst

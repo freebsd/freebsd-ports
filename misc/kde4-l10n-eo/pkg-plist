@@ -45,7 +45,6 @@ share/locale/eo/LC_MESSAGES/kbattleship.mo
 share/locale/eo/LC_MESSAGES/kblackbox.mo
 share/locale/eo/LC_MESSAGES/kbounce.mo
 share/locale/eo/LC_MESSAGES/kcalc.mo
-share/locale/eo/LC_MESSAGES/kcardchooser.mo
 share/locale/eo/LC_MESSAGES/kcharselect.mo
 share/locale/eo/LC_MESSAGES/kcharselectapplet.mo
 share/locale/eo/LC_MESSAGES/kcmaccess.mo
@@ -87,7 +86,6 @@ share/locale/eo/LC_MESSAGES/kcmlaptop.mo
 share/locale/eo/LC_MESSAGES/kcmlaunch.mo
 share/locale/eo/LC_MESSAGES/kcmlayout.mo
 share/locale/eo/LC_MESSAGES/kcmlilo.mo
-share/locale/eo/LC_MESSAGES/kcmlinuz.mo
 share/locale/eo/LC_MESSAGES/kcmlocale.mo
 share/locale/eo/LC_MESSAGES/kcmmidi.mo
 share/locale/eo/LC_MESSAGES/kcmnic.mo

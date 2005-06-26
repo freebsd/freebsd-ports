@@ -98,7 +98,6 @@ share/locale/is/LC_MESSAGES/kbstateapplet.mo
 share/locale/is/LC_MESSAGES/kbugbuster.mo
 share/locale/is/LC_MESSAGES/kcachegrind.mo
 share/locale/is/LC_MESSAGES/kcalc.mo
-share/locale/is/LC_MESSAGES/kcardchooser.mo
 share/locale/is/LC_MESSAGES/kcharselect.mo
 share/locale/is/LC_MESSAGES/kcharselectapplet.mo
 share/locale/is/LC_MESSAGES/kcm_krfb.mo
@@ -141,7 +140,6 @@ share/locale/is/LC_MESSAGES/kcmkonsole.mo
 share/locale/is/LC_MESSAGES/kcmkontactnt.mo
 share/locale/is/LC_MESSAGES/kcmktalkd.mo
 share/locale/is/LC_MESSAGES/kcmkttsd.mo
-share/locale/is/LC_MESSAGES/kcmkttsmgr.mo
 share/locale/is/LC_MESSAGES/kcmkuick.mo
 share/locale/is/LC_MESSAGES/kcmkurifilt.mo
 share/locale/is/LC_MESSAGES/kcmkvaio.mo
@@ -156,7 +154,6 @@ share/locale/is/LC_MESSAGES/kcmlaptop.mo
 share/locale/is/LC_MESSAGES/kcmlaunch.mo
 share/locale/is/LC_MESSAGES/kcmlayout.mo
 share/locale/is/LC_MESSAGES/kcmlilo.mo
-share/locale/is/LC_MESSAGES/kcmlinuz.mo
 share/locale/is/LC_MESSAGES/kcmlirc.mo
 share/locale/is/LC_MESSAGES/kcmlocale.mo
 share/locale/is/LC_MESSAGES/kcmmediacontrol.mo
@@ -416,6 +413,7 @@ share/locale/is/LC_MESSAGES/kreadconfig.mo
 share/locale/is/LC_MESSAGES/krec.mo
 share/locale/is/LC_MESSAGES/kregexpeditor.mo
 share/locale/is/LC_MESSAGES/kres_blogging.mo
+share/locale/is/LC_MESSAGES/kres_bugzilla.mo
 share/locale/is/LC_MESSAGES/kres_exchange.mo
 share/locale/is/LC_MESSAGES/kres_featureplan.mo
 share/locale/is/LC_MESSAGES/kres_groupwise.mo

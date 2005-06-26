@@ -66,6 +66,7 @@ share/apps/kimagemapeditor/removepointcursor.png
 share/apps/klinkstatus/klinkstatus_shell.rc
 share/apps/klinkstatuspart/klinkstatus_part.rc
 share/apps/klinkstatuspart/pics/304.png
+share/apps/kmdr-editor/pics/kommandersplash.png
 share/apps/kxsldbg/kxsldbg_shell.rc
 share/apps/kxsldbgpart/kxsldbg_part.rc
 share/apps/quanta/actions.rc
@@ -1700,6 +1701,8 @@ share/servicetypes/quantadebugger.desktop
 @dirrm share/apps/quanta
 @dirrm share/apps/kxsldbgpart
 @dirrm share/apps/kxsldbg
+@dirrm share/apps/kmdr-editor/pics
+@dirrm share/apps/kmdr-editor
 @dirrm share/apps/klinkstatuspart/pics
 @dirrm share/apps/klinkstatuspart
 @dirrm share/apps/klinkstatus

@@ -27,9 +27,13 @@ share/apps/ktuberling/sounds/pt/sobrancelha.wav
 share/doc/HTML/pt/KRegExpEditor/common
 share/doc/HTML/pt/KRegExpEditor/index.cache.bz2
 share/doc/HTML/pt/KRegExpEditor/index.docbook
+share/doc/HTML/pt/akregator/common
+share/doc/HTML/pt/akregator/index.cache.bz2
+share/doc/HTML/pt/akregator/index.docbook
 share/doc/HTML/pt/amor/common
 share/doc/HTML/pt/amor/index.cache.bz2
 share/doc/HTML/pt/amor/index.docbook
+share/doc/HTML/pt/amor/man-amor.6.docbook
 share/doc/HTML/pt/ark/common
 share/doc/HTML/pt/ark/index.cache.bz2
 share/doc/HTML/pt/ark/index.docbook
@@ -407,6 +411,7 @@ share/doc/HTML/pt/kdebugdialog/common
 share/doc/HTML/pt/kdebugdialog/index.cache.bz2
 share/doc/HTML/pt/kdebugdialog/index.docbook
 share/doc/HTML/pt/kdelibs/man-artsmessage.1.docbook
+share/doc/HTML/pt/kdelibs/man-checkXML.1.docbook
 share/doc/HTML/pt/kdelibs/man-dcop.1.docbook
 share/doc/HTML/pt/kdelibs/man-kdeoptions.7.docbook
 share/doc/HTML/pt/kdelibs/man-qtoptions.7.docbook
@@ -565,6 +570,7 @@ share/doc/HTML/pt/khelpcenter/userguide/intro.docbook
 share/doc/HTML/pt/khelpcenter/userguide/kde-as-root.docbook
 share/doc/HTML/pt/khelpcenter/userguide/kde-edutainment.docbook
 share/doc/HTML/pt/khelpcenter/userguide/kde-for-admins.docbook
+share/doc/HTML/pt/khelpcenter/userguide/kde-office.docbook
 share/doc/HTML/pt/khelpcenter/userguide/kdeadmin-apps.docbook
 share/doc/HTML/pt/khelpcenter/userguide/kdebase-apps.docbook
 share/doc/HTML/pt/khelpcenter/userguide/kdeedu-apps.docbook
@@ -824,6 +830,9 @@ share/doc/HTML/pt/kmplot/introduction.docbook
 share/doc/HTML/pt/kmplot/menu.docbook
 share/doc/HTML/pt/kmplot/reference.docbook
 share/doc/HTML/pt/kmplot/using.docbook
+share/doc/HTML/pt/knetattach/common
+share/doc/HTML/pt/knetattach/index.cache.bz2
+share/doc/HTML/pt/knetattach/index.docbook
 share/doc/HTML/pt/knewsticker/common
 share/doc/HTML/pt/knewsticker/index.cache.bz2
 share/doc/HTML/pt/knewsticker/index.docbook
@@ -1268,6 +1277,7 @@ share/doc/HTML/pt/scripts/man-cheatmake.1.docbook
 share/doc/HTML/pt/scripts/man-create_cvsignore.1.docbook
 share/doc/HTML/pt/scripts/man-create_makefile.1.docbook
 share/doc/HTML/pt/scripts/man-create_makefiles.1.docbook
+share/doc/HTML/pt/scripts/man-cvscheck.1.docbook
 share/doc/HTML/pt/scripts/man-cvslastchange.1.docbook
 share/doc/HTML/pt/scripts/man-cvslastlog.1.docbook
 share/doc/HTML/pt/scripts/man-cvsrevertlast.1.docbook
@@ -1402,7 +1412,6 @@ share/locale/pt/LC_MESSAGES/kbstateapplet.mo
 share/locale/pt/LC_MESSAGES/kbugbuster.mo
 share/locale/pt/LC_MESSAGES/kcachegrind.mo
 share/locale/pt/LC_MESSAGES/kcalc.mo
-share/locale/pt/LC_MESSAGES/kcardchooser.mo
 share/locale/pt/LC_MESSAGES/kcharselect.mo
 share/locale/pt/LC_MESSAGES/kcharselectapplet.mo
 share/locale/pt/LC_MESSAGES/kcm_krfb.mo
@@ -1445,7 +1454,6 @@ share/locale/pt/LC_MESSAGES/kcmkonsole.mo
 share/locale/pt/LC_MESSAGES/kcmkontactnt.mo
 share/locale/pt/LC_MESSAGES/kcmktalkd.mo
 share/locale/pt/LC_MESSAGES/kcmkttsd.mo
-share/locale/pt/LC_MESSAGES/kcmkttsmgr.mo
 share/locale/pt/LC_MESSAGES/kcmkuick.mo
 share/locale/pt/LC_MESSAGES/kcmkurifilt.mo
 share/locale/pt/LC_MESSAGES/kcmkvaio.mo
@@ -1460,7 +1468,6 @@ share/locale/pt/LC_MESSAGES/kcmlaptop.mo
 share/locale/pt/LC_MESSAGES/kcmlaunch.mo
 share/locale/pt/LC_MESSAGES/kcmlayout.mo
 share/locale/pt/LC_MESSAGES/kcmlilo.mo
-share/locale/pt/LC_MESSAGES/kcmlinuz.mo
 share/locale/pt/LC_MESSAGES/kcmlirc.mo
 share/locale/pt/LC_MESSAGES/kcmlocale.mo
 share/locale/pt/LC_MESSAGES/kcmmediacontrol.mo
@@ -1992,6 +1999,7 @@ share/locale/pt/flag.png
 @dirrm share/doc/HTML/pt/knotes
 @dirrm share/doc/HTML/pt/knode
 @dirrm share/doc/HTML/pt/knewsticker
+@dirrm share/doc/HTML/pt/knetattach
 @dirrm share/doc/HTML/pt/kmplot
 @dirrm share/doc/HTML/pt/kmouth
 @dirrm share/doc/HTML/pt/kmousetool
@@ -2163,6 +2171,7 @@ share/locale/pt/flag.png
 @dirrm share/doc/HTML/pt/artsbuilder
 @dirrm share/doc/HTML/pt/ark
 @dirrm share/doc/HTML/pt/amor
+@dirrm share/doc/HTML/pt/akregator
 @dirrm share/doc/HTML/pt/KRegExpEditor
 @dirrm share/apps/ktuberling/sounds/pt
 @dirrm share/apps/ktuberling/sounds

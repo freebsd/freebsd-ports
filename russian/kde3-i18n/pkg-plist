@@ -17,6 +17,7 @@ share/doc/HTML/ru/KRegExpEditor/index.docbook
 share/doc/HTML/ru/amor/common
 share/doc/HTML/ru/amor/index.cache.bz2
 share/doc/HTML/ru/amor/index.docbook
+share/doc/HTML/ru/amor/man-amor.6.docbook
 share/doc/HTML/ru/ark/common
 share/doc/HTML/ru/ark/index.cache.bz2
 share/doc/HTML/ru/ark/index.docbook
@@ -219,6 +220,9 @@ share/doc/HTML/ru/kcontrol/crypto/index.docbook
 share/doc/HTML/ru/kcontrol/desktop/common
 share/doc/HTML/ru/kcontrol/desktop/index.cache.bz2
 share/doc/HTML/ru/kcontrol/desktop/index.docbook
+share/doc/HTML/ru/kcontrol/desktopbehavior/common
+share/doc/HTML/ru/kcontrol/desktopbehavior/index.cache.bz2
+share/doc/HTML/ru/kcontrol/desktopbehavior/index.docbook
 share/doc/HTML/ru/kcontrol/ebrowsing/common
 share/doc/HTML/ru/kcontrol/ebrowsing/index.cache.bz2
 share/doc/HTML/ru/kcontrol/ebrowsing/index.docbook
@@ -469,8 +473,6 @@ share/doc/HTML/ru/kghostview/index.docbook
 share/doc/HTML/ru/kgpg/common
 share/doc/HTML/ru/kgpg/index.cache.bz2
 share/doc/HTML/ru/kgpg/index.docbook
-share/doc/HTML/ru/khelpcenter/background.png
-share/doc/HTML/ru/khelpcenter/bgtable.png
 share/doc/HTML/ru/khelpcenter/common
 share/doc/HTML/ru/khelpcenter/contact.docbook
 share/doc/HTML/ru/khelpcenter/faq/about.docbook
@@ -490,6 +492,7 @@ share/doc/HTML/ru/khelpcenter/faq/moreinfo.docbook
 share/doc/HTML/ru/khelpcenter/faq/nonkdeapps.docbook
 share/doc/HTML/ru/khelpcenter/faq/notrelated.docbook
 share/doc/HTML/ru/khelpcenter/faq/panel.docbook
+share/doc/HTML/ru/khelpcenter/faq/qt.docbook
 share/doc/HTML/ru/khelpcenter/faq/questions.docbook
 share/doc/HTML/ru/khelpcenter/faq/sound.docbook
 share/doc/HTML/ru/khelpcenter/faq/tips.docbook
@@ -502,20 +505,18 @@ share/doc/HTML/ru/khelpcenter/glossary/kdeprintingglossary.docbook
 share/doc/HTML/ru/khelpcenter/help.docbook
 share/doc/HTML/ru/khelpcenter/index.cache.bz2
 share/doc/HTML/ru/khelpcenter/index.docbook
-share/doc/HTML/ru/khelpcenter/kdelogo2.png
 share/doc/HTML/ru/khelpcenter/konq.css
-share/doc/HTML/ru/khelpcenter/lines.png
-share/doc/HTML/ru/khelpcenter/lines2.png
 share/doc/HTML/ru/khelpcenter/links.docbook
 share/doc/HTML/ru/khelpcenter/main.html
-share/doc/HTML/ru/khelpcenter/pointers.png
 share/doc/HTML/ru/khelpcenter/quickstart/common
 share/doc/HTML/ru/khelpcenter/quickstart/index.cache.bz2
 share/doc/HTML/ru/khelpcenter/quickstart/index.docbook
-share/doc/HTML/ru/khelpcenter/shadow1.png
 share/doc/HTML/ru/khelpcenter/support.docbook
 share/doc/HTML/ru/khelpcenter/userguide/about-desktop.docbook
+share/doc/HTML/ru/khelpcenter/userguide/accessibility.docbook
+share/doc/HTML/ru/khelpcenter/userguide/browser-fine-tuning.docbook
 share/doc/HTML/ru/khelpcenter/userguide/common
+share/doc/HTML/ru/khelpcenter/userguide/control-center.docbook
 share/doc/HTML/ru/khelpcenter/userguide/credits-and-license.docbook
 share/doc/HTML/ru/khelpcenter/userguide/first-impressions.docbook
 share/doc/HTML/ru/khelpcenter/userguide/getting-started.docbook
@@ -524,6 +525,8 @@ share/doc/HTML/ru/khelpcenter/userguide/index.cache.bz2
 share/doc/HTML/ru/khelpcenter/userguide/index.docbook
 share/doc/HTML/ru/khelpcenter/userguide/installation.docbook
 share/doc/HTML/ru/khelpcenter/userguide/intro.docbook
+share/doc/HTML/ru/khelpcenter/userguide/kde-edutainment.docbook
+share/doc/HTML/ru/khelpcenter/userguide/kde-for-admins.docbook
 share/doc/HTML/ru/khelpcenter/userguide/kdeadmin-apps.docbook
 share/doc/HTML/ru/khelpcenter/userguide/kdebase-apps.docbook
 share/doc/HTML/ru/khelpcenter/userguide/kdeedu-apps.docbook
@@ -595,6 +598,9 @@ share/doc/HTML/ru/kinfocenter/memory/index.docbook
 share/doc/HTML/ru/kinfocenter/nics/common
 share/doc/HTML/ru/kinfocenter/nics/index.cache.bz2
 share/doc/HTML/ru/kinfocenter/nics/index.docbook
+share/doc/HTML/ru/kinfocenter/opengl/common
+share/doc/HTML/ru/kinfocenter/opengl/index.cache.bz2
+share/doc/HTML/ru/kinfocenter/opengl/index.docbook
 share/doc/HTML/ru/kinfocenter/partitions/common
 share/doc/HTML/ru/kinfocenter/partitions/index.cache.bz2
 share/doc/HTML/ru/kinfocenter/partitions/index.docbook
@@ -759,6 +765,9 @@ share/doc/HTML/ru/kmplot/introduction.docbook
 share/doc/HTML/ru/kmplot/menu.docbook
 share/doc/HTML/ru/kmplot/reference.docbook
 share/doc/HTML/ru/kmplot/using.docbook
+share/doc/HTML/ru/knetattach/common
+share/doc/HTML/ru/knetattach/index.cache.bz2
+share/doc/HTML/ru/knetattach/index.docbook
 share/doc/HTML/ru/knewsticker/common
 share/doc/HTML/ru/knewsticker/index.cache.bz2
 share/doc/HTML/ru/knewsticker/index.docbook
@@ -801,6 +810,9 @@ share/doc/HTML/ru/kolourpaint/index.docbook
 share/doc/HTML/ru/kompare/common
 share/doc/HTML/ru/kompare/index.cache.bz2
 share/doc/HTML/ru/kompare/index.docbook
+share/doc/HTML/ru/kompmgr/common
+share/doc/HTML/ru/kompmgr/index.cache.bz2
+share/doc/HTML/ru/kompmgr/index.docbook
 share/doc/HTML/ru/konq-plugins/babel/common
 share/doc/HTML/ru/konq-plugins/babel/index.cache.bz2
 share/doc/HTML/ru/konq-plugins/babel/index.docbook
@@ -1069,6 +1081,9 @@ share/doc/HTML/ru/ktouch/index.docbook
 share/doc/HTML/ru/ktron/common
 share/doc/HTML/ru/ktron/index.cache.bz2
 share/doc/HTML/ru/ktron/index.docbook
+share/doc/HTML/ru/kttsd/common
+share/doc/HTML/ru/kttsd/index.cache.bz2
+share/doc/HTML/ru/kttsd/index.docbook
 share/doc/HTML/ru/ktuberling/common
 share/doc/HTML/ru/ktuberling/index.cache.bz2
 share/doc/HTML/ru/ktuberling/index.docbook
@@ -1117,6 +1132,7 @@ share/doc/HTML/ru/kwordquiz/index.docbook
 share/doc/HTML/ru/kworldclock/common
 share/doc/HTML/ru/kworldclock/index.cache.bz2
 share/doc/HTML/ru/kworldclock/index.docbook
+share/doc/HTML/ru/kworldclock/man-kworldclock.1.docbook
 share/doc/HTML/ru/kwrite/common
 share/doc/HTML/ru/kwrite/index.cache.bz2
 share/doc/HTML/ru/kwrite/index.docbook
@@ -1287,7 +1303,6 @@ share/locale/ru/LC_MESSAGES/kbstateapplet.mo
 share/locale/ru/LC_MESSAGES/kbugbuster.mo
 share/locale/ru/LC_MESSAGES/kcachegrind.mo
 share/locale/ru/LC_MESSAGES/kcalc.mo
-share/locale/ru/LC_MESSAGES/kcardchooser.mo
 share/locale/ru/LC_MESSAGES/kcharselect.mo
 share/locale/ru/LC_MESSAGES/kcharselectapplet.mo
 share/locale/ru/LC_MESSAGES/kcm_krfb.mo
@@ -1330,7 +1345,6 @@ share/locale/ru/LC_MESSAGES/kcmkonsole.mo
 share/locale/ru/LC_MESSAGES/kcmkontactnt.mo
 share/locale/ru/LC_MESSAGES/kcmktalkd.mo
 share/locale/ru/LC_MESSAGES/kcmkttsd.mo
-share/locale/ru/LC_MESSAGES/kcmkttsmgr.mo
 share/locale/ru/LC_MESSAGES/kcmkuick.mo
 share/locale/ru/LC_MESSAGES/kcmkurifilt.mo
 share/locale/ru/LC_MESSAGES/kcmkvaio.mo
@@ -1345,7 +1359,6 @@ share/locale/ru/LC_MESSAGES/kcmlaptop.mo
 share/locale/ru/LC_MESSAGES/kcmlaunch.mo
 share/locale/ru/LC_MESSAGES/kcmlayout.mo
 share/locale/ru/LC_MESSAGES/kcmlilo.mo
-share/locale/ru/LC_MESSAGES/kcmlinuz.mo
 share/locale/ru/LC_MESSAGES/kcmlirc.mo
 share/locale/ru/LC_MESSAGES/kcmlocale.mo
 share/locale/ru/LC_MESSAGES/kcmmediacontrol.mo
@@ -1806,6 +1819,7 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/kuickshow
 @dirrm share/doc/HTML/ru/kturtle
 @dirrm share/doc/HTML/ru/ktuberling
+@dirrm share/doc/HTML/ru/kttsd
 @dirrm share/doc/HTML/ru/ktron
 @dirrm share/doc/HTML/ru/ktouch
 @dirrm share/doc/HTML/ru/ktnef
@@ -1860,6 +1874,7 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/konq-plugins/crashes
 @dirrm share/doc/HTML/ru/konq-plugins/babel
 @dirrm share/doc/HTML/ru/konq-plugins
+@dirrm share/doc/HTML/ru/kompmgr
 @dirrm share/doc/HTML/ru/kompare
 @dirrm share/doc/HTML/ru/kolourpaint
 @dirrm share/doc/HTML/ru/kolf
@@ -1867,6 +1882,7 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/knotes
 @dirrm share/doc/HTML/ru/knode
 @dirrm share/doc/HTML/ru/knewsticker
+@dirrm share/doc/HTML/ru/knetattach
 @dirrm share/doc/HTML/ru/kmplot
 @dirrm share/doc/HTML/ru/kmouth
 @dirrm share/doc/HTML/ru/kmousetool
@@ -1901,6 +1917,7 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/kinfocenter/pcmcia
 @dirrm share/doc/HTML/ru/kinfocenter/pci
 @dirrm share/doc/HTML/ru/kinfocenter/partitions
+@dirrm share/doc/HTML/ru/kinfocenter/opengl
 @dirrm share/doc/HTML/ru/kinfocenter/nics
 @dirrm share/doc/HTML/ru/kinfocenter/memory
 @dirrm share/doc/HTML/ru/kinfocenter/ioports
@@ -1987,6 +2004,7 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/kcontrol/energy
 @dirrm share/doc/HTML/ru/kcontrol/email
 @dirrm share/doc/HTML/ru/kcontrol/ebrowsing
+@dirrm share/doc/HTML/ru/kcontrol/desktopbehavior
 @dirrm share/doc/HTML/ru/kcontrol/desktop
 @dirrm share/doc/HTML/ru/kcontrol/crypto
 @dirrm share/doc/HTML/ru/kcontrol/cookies
