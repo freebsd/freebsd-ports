@@ -7,7 +7,7 @@
 
 PORTNAME=	imlib2_loaders
 PORTVERSION=	1.2.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
@@ -18,10 +18,9 @@ LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 		edb.1:${PORTSDIR}/databases/edb \
 		eet.9:${PORTSDIR}/devel/eet
 
-USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=	15
 USE_GNOME=	gnomehack gnometarget
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" \
+		LIBS="-L${PREFIX}/lib"
 
 .include <bsd.port.mk>
