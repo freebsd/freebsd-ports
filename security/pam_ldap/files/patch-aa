@@ -1,6 +1,6 @@
---- Makefile.in.orig	Wed Sep 25 09:49:08 2002
-+++ Makefile.in	Sat Oct 12 00:52:19 2002
-@@ -405,17 +405,13 @@
+--- Makefile.in.orig	Sun Jun 26 13:33:47 2005
++++ Makefile.in	Sun Jun 26 13:35:09 2005
+@@ -434,19 +434,15 @@
  
  install-exec-local: pam_ldap.so
  	@$(NORMAL_INSTALL)
@@ -19,5 +19,8 @@
 -		$(INSTALL_DATA) -o root -g root $(srcdir)/ldap.conf $(DESTDIR)$(sysconfdir)/ldap.conf; \
 +	$(INSTALL_DATA) -o root -g wheel $(srcdir)/ldap.conf $(DESTDIR)$(sysconfdir)/ldap.conf.dist; \
  	fi
+-	$(INSTALL_DATA) -o root -g root $(srcdir)/pam_ldap.5 $(DESTDIR)$(mandir)/man5/pam_ldap.5
++	$(INSTALL_DATA) -o root -g wheel $(srcdir)/pam_ldap.5 $(DESTDIR)$(mandir)/man5/pam_ldap.5
  
  uninstall-local:
+ 	@$(NORMAL_UNINSTALL)
