@@ -17,10 +17,12 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/IPTC.pm
 %%SITE_PERL%%/Image/ExifTool/Jpeg2000.pm
 %%SITE_PERL%%/Image/ExifTool/Kodak.pm
+%%SITE_PERL%%/Image/ExifTool/MIFF.pm
 %%SITE_PERL%%/Image/ExifTool/MakerNotes.pm
 %%SITE_PERL%%/Image/ExifTool/Minolta.pm
 %%SITE_PERL%%/Image/ExifTool/Nikon.pm
 %%SITE_PERL%%/Image/ExifTool/Olympus.pm
+%%SITE_PERL%%/Image/ExifTool/PNG.pm
 %%SITE_PERL%%/Image/ExifTool/Panasonic.pm
 %%SITE_PERL%%/Image/ExifTool/Pentax.pm
 %%SITE_PERL%%/Image/ExifTool/Photoshop.pm
@@ -66,9 +68,11 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/IPTC.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Jpeg2000.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Kodak.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/MIFF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Minolta.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Nikon.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Olympus.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/PNG.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Panasonic.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Pentax.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Photoshop.html

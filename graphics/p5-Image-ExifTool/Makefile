@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	5.25
+PORTVERSION=	5.32
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/
 PKGNAMEPREFIX=	p5-
@@ -32,10 +32,12 @@ MAN3=		File::RandomAccess.3 \
 		Image::ExifTool::IPTC.3 \
 		Image::ExifTool::Jpeg2000.3 \
 		Image::ExifTool::Kodak.3 \
+		Image::ExifTool::MIFF.3 \
 		Image::ExifTool::MakerNotes.3 \
 		Image::ExifTool::Minolta.3 \
 		Image::ExifTool::Nikon.3 \
 		Image::ExifTool::Olympus.3 \
+		Image::ExifTool::PNG.3 \
 		Image::ExifTool::Panasonic.3 \
 		Image::ExifTool::Pentax.3 \
 		Image::ExifTool::Photoshop.3 \
