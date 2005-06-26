@@ -87,6 +87,8 @@ CONFIGURE_ARGS+=--disable-ssl
 .if defined(WITH_ICON_THEME)
 RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 EXTRA_PATCHES+=	${FILESDIR}/icon-theme.diff
+UUDECODE?=	/usr/bin/uudecode
+GDK_PIXBUF_CSOURCE?=	${X11BASE}/bin/gdk-pixbuf-csource
 .endif
 
 MAKEFILES=	Makefile.in ac/Makefile.in faq/Makefile.in faq/de/Makefile.in \
@@ -113,6 +115,11 @@ post-patch:
 
 pre-build:
 	${LN} -sf ${LIBTOOL} ${WRKSRC}/libtool
+.if defined(WITH_ICON_THEME)
+.for i in mail_receive_all mail_send_queue
+	cd ${WRKSRC}/src/pixmaps && ${UUDECODE} ${i}.png.uu && ${GDK_PIXBUF_CSOURCE} --raw --name=${i} ${i}.png > ${i}.h
+.endfor
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
