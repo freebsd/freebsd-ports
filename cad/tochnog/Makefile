@@ -7,7 +7,7 @@
 
 PORTNAME=	tochnog
 PORTVERSION=	20010211
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tochnog
@@ -24,6 +24,13 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu
 .endif
 LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
 
+# This port installs some plugins into a directory which is owned by the
+# the cad/linux-gid port, but it doesn't adds a dependency to linux-gid,
+# since tochnog can be used standalone.
+# The right thing to do would be to add a slave port which installs the
+# plugins only. The slave port would have to depend upon linux-gid and
+# tochnog.
+
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 MAKEFILE=	makefile
@@ -31,7 +38,7 @@ MAKEFILE=	makefile
 GIDDIR?=	share/gid
 PLIST_SUB+=	GIDDIR=${GIDDIR}
 
-GID_PREFIX?=	${X11BASE}/${GIDDIR}/problemtypes
+GID_PREFIX?=	${LOCALBASE}/${GIDDIR}/problemtypes
 
 .ifdef WITH_THREADS
 BLAS_LIBS?=	-L${LOCALBASE}/lib -lptf77blas -latlas_r

@@ -7,6 +7,7 @@
 
 PORTNAME=	gid
 PORTVERSION=	7.4.9b
+PORTREVISION=	1
 CATEGORIES=	cad linux
 MASTER_SITES=	ftp://gid.cimne.upc.es/pub/gid_adds/Linux/Old/
 PKGNAMEPREFIX=	linux-
@@ -19,7 +20,7 @@ CONFLICTS=	id-utils-[0-9]* coreutils-[0-9]*
 ONLY_FOR_ARCHS=	amd64 i386
 
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
+#USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 NO_WRKSUBDIR=	yes
