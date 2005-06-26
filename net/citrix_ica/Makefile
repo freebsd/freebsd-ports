@@ -7,7 +7,7 @@
 
 PORTNAME=	citrix_ica
 PORTVERSION=	9.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net comms linux
 MASTER_SITES=
 DISTNAME=	${PORTNAME}-linuxx86-${PORTVERSION}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.3:${PORTSDIR}/x11-toolkits/linu
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
+#USE_X_PREFIX=	yes
 RESTRICTED=	"License prohibits redistribution"
 IS_INTERACTIVE=	"Noisy license agreement ignores stdin"
 
