@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.96
+PORTVERSION?=	0.97
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.arcade-history.com/download/:history \
@@ -130,16 +130,16 @@ PLIST_SUB+=	DATFILES=""
 
 EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
-#HIVER=		795
+HIVER=		096
 
-DISTFILES+=	uhsdat${PORTVERSION:S/.//}.zip:highscore \
+DISTFILES+=	uhsdat${HIVER}.zip:highscore \
 		history${PORTVERSION:S/./_/}.zip:history \
 		cheat.zip:cheat
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 post-extract:
 	cd ${WRKDIR} && \
-		${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/uhsdat${PORTVERSION:S/.//}.zip \
+		${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/uhsdat${HIVER}.zip \
 			hiscore.dat
 	cd ${WRKDIR} && \
 		${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/history${PORTVERSION:S/./_/}.zip \
