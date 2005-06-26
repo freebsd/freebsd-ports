@@ -1,0 +1,11 @@
+bin/doodle
+bin/doodled
+include/doodle.h
+lib/libdoodle.a
+lib/libdoodle.so
+lib/libdoodle.so.2
+share/locale/de/LC_MESSAGES/doodle.mo
+share/locale/eu/LC_MESSAGES/doodle.mo
+share/locale/ga/LC_MESSAGES/doodle.mo
+share/locale/nl/LC_MESSAGES/doodle.mo
+share/locale/sq/LC_MESSAGES/doodle.mo

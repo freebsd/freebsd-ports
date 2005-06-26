@@ -1,0 +1,8 @@
+Doodle is a tool to quickly search the documents on a computer. Doodle
+builds an index using meta-data contained in the documents and allows
+fast searches on the resulting database. Doodle uses libextractor to
+support obtaining meta-data from various file-formats. The database
+used by doodle is a suffix tree, resulting in fast lookups. Doodle
+supports approximate searches.
+
+WWW: http://gnunet.org/doodle/
