@@ -1,0 +1,20 @@
+--- configure.orig	Sun Jun 26 00:02:58 2005
++++ configure	Sun Jun 26 00:20:51 2005
+@@ -22804,7 +22804,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+ 
+-   for path in /usr/local/lib/mysql /usr/lib/mysql
++   for path in ${PREFIX}/lib/mysql /usr/local/lib/mysql /usr/lib/mysql
+    do
+       LIBS="$save_LIBS -lm -L$path -lmysqlclient"
+       cat >conftest.$ac_ext <<_ACEOF
+@@ -22925,7 +22925,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+ 
+-   for path in /usr/local/pgsql/lib /usr/pgsql/lib
++   for path in ${PREFIX}/lib /usr/local/lib /usr/lib
+    do
+       LIBS="$save_LIBS  -L$path -lpq"
+       cat >conftest.$ac_ext <<_ACEOF
