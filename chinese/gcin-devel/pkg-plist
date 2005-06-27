@@ -21,6 +21,7 @@ lib/libgcin-im-client.so
 %%DATADIR%%/table/et-asdf.kbm
 %%DATADIR%%/table/et26.kbm
 %%DATADIR%%/table/et26-asdf.kbm
+%%DATADIR%%/table/greek.gtab
 %%DATADIR%%/table/gtab.list
 %%DATADIR%%/table/hsu.kbm
 %%DATADIR%%/table/ibm.kbm

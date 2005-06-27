@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	0.9.9
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	chinese
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/ \
 		http://edt1023.sayya.org/misc/
@@ -43,16 +42,15 @@ USE_GCC=	3.4
 .endif
 
 .if defined(WITH_BOSHIAMY)
+IGNOREFILES=	${BOSHIAMYFILE}
 GCINFILE=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
-BOSHIAMYFILE=	noseeing-${BOSHIAMYVER}.tar.gz
-BOSHIAMYVER=	3
+BOSHIAMYFILE=	noseeing.tar.gz
 post-extract:
 	@cd ${WRKSRC}/data/ \
 		&& ${TAR} -zxf ${DISTDIR}/${BOSHIAMYFILE} \
 		&& ${RM} -f noseeing.gtab
 post-patch:
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-data-Makefile \
-		${FILESDIR}/extra-patch-data-noseeing.cin
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-data-Makefile
 PLIST_SUB+=	BOSHIAMY=""
 .endif
 
