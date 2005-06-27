@@ -1,7 +1,10 @@
 bin/dps-config
 bin/search.cgi
 bin/storedoc.cgi
+etc/dpsearch/acronym/en.acr
+etc/dpsearch/acronym/en.cs.acr
 etc/dpsearch/acronym/en.fido.acr
+etc/dpsearch/acronym/ru.acr
 etc/dpsearch/cached.conf-dist
 etc/dpsearch/indexer.conf-dist
 etc/dpsearch/langmap.conf-dist
@@ -67,6 +70,7 @@ etc/dpsearch/langmap/hr.latin2.lm
 etc/dpsearch/langmap/hu.cp1250.lm
 etc/dpsearch/langmap/hu.latin2.lm
 etc/dpsearch/langmap/hy.armscii-8.lm
+etc/dpsearch/langmap/id.latin1.lm
 etc/dpsearch/langmap/is.latin1.lm
 etc/dpsearch/langmap/it.latin1.lm
 etc/dpsearch/langmap/ja.euc-jp.lit.lm
@@ -138,6 +142,7 @@ etc/dpsearch/langmap/tl.ascii.lm
 etc/dpsearch/langmap/tr.cp1254.lm
 etc/dpsearch/langmap/tr.cp857.lm
 etc/dpsearch/langmap/tr.latin5.lm
+etc/dpsearch/langmap/tr.utf-8.lm
 etc/dpsearch/langmap/uk.cp1251.lm
 etc/dpsearch/langmap/uk.cp866u.lm
 etc/dpsearch/langmap/uk.koi8-u.lm
@@ -294,6 +299,7 @@ sbin/stored
 %%DOCSDIR%%/dpsearch-disclaimer.ru.html
 %%DOCSDIR%%/dpsearch-doingsearch.en.html
 %%DOCSDIR%%/dpsearch-doingsearch.ru.html
+%%DOCSDIR%%/dpsearch-donations.en.html
 %%DOCSDIR%%/dpsearch-extended-indexing.en.html
 %%DOCSDIR%%/dpsearch-extended-indexing.ru.html
 %%DOCSDIR%%/dpsearch-fuzzy.en.html

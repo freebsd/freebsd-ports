@@ -1,6 +1,0 @@
-DataparkSearch Engine is successfully installed.
-Now, to use DataparkSearch you need to create the appropriate *sql database
-manually: Please read documenation located in ${PREFIX}/share/doc/dataparksearch.
-
-For more information on how to use DataparkSearch Engine, please refer to their
-web site at http://www.dataparksearch.org/
