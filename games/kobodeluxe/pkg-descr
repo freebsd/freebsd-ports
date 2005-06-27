@@ -1,6 +1,7 @@
-Kobo Deluxe (formerly SKobo) is an SDL port of Akira Higuchi's game XKobo. 
-It adds sound, smoother animation, filtered high resolution support, a 
-more intuitive menu driven user interface, joystick support and other 
-features.
+Kobo Deluxe is an enhanced version of Akira Higuchi's game XKobo. It adds
+sound, smoother animation, high resolution support, OpenGL acceleration
+(optional), an intuitive menu driven user interface, joystick support and
+other features. Kobo Deluxe uses SDL for graphics, sound and input, which
+makes it possible to run the game on pretty much anything.
 
 WWW: http://www.olofson.net/kobodl/
