@@ -1,0 +1,125 @@
+--- configure.orig	Thu Jul 15 16:17:46 2004
++++ configure	Thu Jul 15 16:58:51 2004
+@@ -1113,116 +1113,14 @@
+ x11_include="not found"
+ x11_link="not found"
+ 
+-for dir in \
+-    $x11_include_dir          \
+-                              \
+-    /usr/X11R6/include        \
+-    /usr/include/X11R6        \
+-    /usr/local/X11R6/include  \
+-    /usr/local/include/X11R6  \
+-    /opt/X11R6/include        \
+-                              \
+-    /usr/X11/include          \
+-    /usr/include/X11          \
+-    /usr/local/X11/include    \
+-    /usr/local/include/X11    \
+-    /opt/X11/include          \
+-                              \
+-    /usr/X11R5/include        \
+-    /usr/include/X11R5        \
+-    /usr/local/X11R5/include  \
+-    /usr/local/include/X11R5  \
+-    /usr/local/x11r5/include  \
+-    /opt/X11R5/include        \
+-                              \
+-    /usr/X11R4/include        \
+-    /usr/include/X11R4        \
+-    /usr/local/X11R4/include  \
+-    /usr/local/include/X11R4  \
+-                              \
+-    /usr/X386/include         \
+-    /usr/x386/include         \
+-    /usr/XFree86/include/X11  \
+-                              \
+-    /usr/include              \
+-    /usr/local/include        \
+-    /usr/unsupported/include  \
+-    /usr/athena/include       \
+-    /usr/lpp/Xamples/include  \
+-                              \
+-    /usr/openwin/include      \
+-    /usr/openwin/share/include \
+-    ; \
+-do
+-  if test -f $dir/X11/X.h; then
+-    x11_include=$dir
+-    break
+-  fi
+-done
+-
+-if test "$x11_include" = "not found"; then
+-  x11_try_lib_dir=''
+-else
+-  x11_try_lib_dir=`echo $x11_include | sed -e 's|include|lib|'`
++if [ -n "$x11_include_dir" ]; then
++  x11_include="$x11_include_dir"
+ fi
+ 
+-for dir in \
+-    $x11_lib_dir          \
+-    $x11_try_lib_dir      \
+-                          \
+-    /usr/X11R6/lib        \
+-    /usr/lib/X11R6        \
+-    /usr/local/X11R6/lib  \
+-    /usr/local/lib/X11R6  \
+-    /opt/X11R6/lib        \
+-                          \
+-    /usr/X11/lib          \
+-    /usr/lib/X11          \
+-    /usr/local/X11/lib    \
+-    /usr/local/lib/X11    \
+-    /opt/X11/lib          \
+-                          \
+-    /usr/X11R5/lib        \
+-    /usr/lib/X11R5        \
+-    /usr/local/X11R5/lib  \
+-    /usr/local/lib/X11R5  \
+-    /usr/local/x11r5/lib  \
+-    /opt/X11R5/lib        \
+-                          \
+-    /usr/X11R4/lib        \
+-    /usr/lib/X11R4        \
+-    /usr/local/X11R4/lib  \
+-    /usr/local/lib/X11R4  \
+-                          \
+-    /usr/X386/lib         \
+-    /usr/x386/lib         \
+-    /usr/XFree86/lib/X11  \
+-                          \
+-    /usr/lib              \
+-    /usr/local/lib        \
+-    /usr/unsupported/lib  \
+-    /usr/athena/lib       \
+-    /usr/lpp/Xamples/lib  \
+-    /lib/usr/lib/X11      \
+-                          \
+-    /usr/openwin/lib      \
+-    /usr/openwin/share/lib \
+-    ; \
+-do
+-  if test -f $dir/libX11.a || \
+-     test -f $dir/libX11.so || \
+-     test -f $dir/libX11.dll.a || \
+-     test -f $dir/libX11.sa; then
+-    if test $dir = /usr/lib; then
+-      x11_link="-lX11"
+-    else
+-      x11_link="-L$dir -lX11"
+-      x11_libs="-L$dir"
+-    fi
+-    break
+-  fi
+-done
+-
++if [ -n "$x11_lib_dir" ]; then
++  x11_link="-L$x11_lib_dir -lX11"
++  x11_libs="-L$x11_lib_dir"
++fi
+ 
+ if test "$x11_include" = "not found" || test "$x11_link" = "not found"
+ then

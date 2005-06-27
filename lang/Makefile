@@ -136,6 +136,7 @@
     SUBDIR += malbolge
     SUBDIR += mawk
     SUBDIR += mdk
+    SUBDIR += metaocaml
     SUBDIR += mit-scheme
     SUBDIR += mixal
     SUBDIR += ml-pnet

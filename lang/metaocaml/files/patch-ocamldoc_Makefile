@@ -1,0 +1,22 @@
+--- ocamldoc/Makefile.orig	Sat Nov 22 17:38:34 2003
++++ ocamldoc/Makefile	Sat Nov 22 04:34:14 2003
+@@ -40,7 +40,7 @@
+ OCAMLDOC_LIBA=odoc_info.a
+ INSTALL_LIBDIR=$(OCAMLLIB)/ocamldoc
+ INSTALL_BINDIR=$(OCAMLBIN)
+-INSTALL_MANODIR=$(MANDIR)/man3
++INSTALL_MANODIR=$(MANDIR)/mann
+ 
+ INSTALL_MLIS=odoc_info.mli 
+ INSTALL_CMIS=$(INSTALL_MLIS:.mli=.cmi)
+@@ -281,7 +281,9 @@
+ 	$(CP) ocamldoc.hva *.cmi $(GENERATORS) $(OCAMLDOC_LIBCMA) $(INSTALL_LIBDIR)
+ 	$(CP) $(INSTALL_MLIS) $(INSTALL_CMIS) $(INSTALL_LIBDIR)
+ 	if test -d $(INSTALL_MANODIR); then : ; else $(MKDIR) $(INSTALL_MANODIR); fi
+-	$(CP) stdlib_man/* $(INSTALL_MANODIR)
++	for f in stdlib_man/*; do \
++		$(CP) $$f $(INSTALL_MANODIR)/`basename $$f .3o`.n; \
++	done
+ 
+ installopt:
+ 	if test -f $(OCAMLDOC_OPT) ; then $(MAKE) installopt_really ; fi

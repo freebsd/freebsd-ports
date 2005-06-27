@@ -1,0 +1,12 @@
+--- ./Makefile.orig	Thu Jun  9 16:59:57 2005
++++ ./Makefile	Thu Jun  9 17:00:05 2005
+@@ -133,8 +133,7 @@
+   asmcomp/schedgen.cmx asmcomp/scheduling.cmx \
+   asmcomp/emitaux.cmx asmcomp/emit.cmx asmcomp/asmgen.cmx \
+   asmcomp/asmlink.cmx asmcomp/asmlibrarian.cmx asmcomp/asmpackager.cmx \
+-driver/pparse.cmx driver/opterrors.cmx driver/optcompile.cmx \
+-stdlib/hookdynlink.cmx
++driver/pparse.cmx driver/opterrors.cmx driver/optcompile.cmx
+ 
+ TOPLEVEL=driver/pparse.cmo driver/errors.cmo driver/compile.cmo \
+   toplevel/genprintval.cmo toplevel/toploop.cmo \

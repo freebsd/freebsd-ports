@@ -1,0 +1,12 @@
+--- stdlib/Makefile.bak	Fri Apr 22 05:04:24 2005
++++ stdlib/Makefile	Fri Apr 22 05:13:40 2005
+@@ -47,8 +47,7 @@
+ 	rm -f std_exit.p.cmi
+ 
+ install:
+-	cp stdlib.cma std_exit.cmo *.cmi *.mli *.ml camlheader camlheader_ur \
+-           $(LIBDIR)
++	cp stdlib.cma std_exit.cmo *.cmi *.mli *.ml camlheader camlheader_ur $(LIBDIR)
+ 
+ installopt: installopt-default installopt-$(PROFILING)
+ 

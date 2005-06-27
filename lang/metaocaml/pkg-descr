@@ -1,0 +1,6 @@
+MetaOCaml is a multi-stage extension of the OCaml programming language, and
+provides three basic constructs called Brackets, Escape, and Run for building,
+combining, and executing future-stage computations, respectively. MetaOCaml
+is a compiled dialect of MetaML.
+
+WWW: http://www.metaocaml.org/
