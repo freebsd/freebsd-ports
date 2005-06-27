@@ -185,7 +185,7 @@ libexec/gimp/2.2/plug-ins/CML_explorer
 libexec/gimp/2.2/plug-ins/FractalExplorer
 libexec/gimp/2.2/plug-ins/Lighting
 libexec/gimp/2.2/plug-ins/MapObject
-%%AA%%libexec/gimp/2.2/plug-ins/aa
+libexec/gimp/2.2/plug-ins/aa
 libexec/gimp/2.2/plug-ins/align_layers
 libexec/gimp/2.2/plug-ins/animationplay
 libexec/gimp/2.2/plug-ins/animoptimize
@@ -263,7 +263,7 @@ libexec/gimp/2.2/plug-ins/illusion
 libexec/gimp/2.2/plug-ins/imagemap
 libexec/gimp/2.2/plug-ins/iwarp
 libexec/gimp/2.2/plug-ins/jigsaw
-%%JPEG%%libexec/gimp/2.2/plug-ins/jpeg
+libexec/gimp/2.2/plug-ins/jpeg
 libexec/gimp/2.2/plug-ins/laplace
 libexec/gimp/2.2/plug-ins/lic
 libexec/gimp/2.2/plug-ins/mail
@@ -271,7 +271,7 @@ libexec/gimp/2.2/plug-ins/mapcolor
 libexec/gimp/2.2/plug-ins/max_rgb
 libexec/gimp/2.2/plug-ins/maze
 libexec/gimp/2.2/plug-ins/mblur
-%%MNG%%libexec/gimp/2.2/plug-ins/mng
+libexec/gimp/2.2/plug-ins/mng
 libexec/gimp/2.2/plug-ins/mosaic
 libexec/gimp/2.2/plug-ins/neon
 libexec/gimp/2.2/plug-ins/newsprint
@@ -290,7 +290,7 @@ libexec/gimp/2.2/plug-ins/pix
 libexec/gimp/2.2/plug-ins/pixelize
 libexec/gimp/2.2/plug-ins/plasma
 libexec/gimp/2.2/plug-ins/plugin-browser
-%%PNG%%libexec/gimp/2.2/plug-ins/png
+libexec/gimp/2.2/plug-ins/png
 libexec/gimp/2.2/plug-ins/pnm
 libexec/gimp/2.2/plug-ins/polar
 libexec/gimp/2.2/plug-ins/postscript
@@ -327,10 +327,10 @@ libexec/gimp/2.2/plug-ins/spheredesigner
 libexec/gimp/2.2/plug-ins/spread
 libexec/gimp/2.2/plug-ins/struc
 libexec/gimp/2.2/plug-ins/sunras
-%%SVG%%libexec/gimp/2.2/plug-ins/svg
+libexec/gimp/2.2/plug-ins/svg
 libexec/gimp/2.2/plug-ins/tga
 libexec/gimp/2.2/plug-ins/threshold_alpha
-%%TIFF%%libexec/gimp/2.2/plug-ins/tiff
+libexec/gimp/2.2/plug-ins/tiff
 libexec/gimp/2.2/plug-ins/tile
 libexec/gimp/2.2/plug-ins/tileit
 libexec/gimp/2.2/plug-ins/tiler
@@ -347,9 +347,9 @@ libexec/gimp/2.2/plug-ins/webbrowser
 libexec/gimp/2.2/plug-ins/whirlpinch
 libexec/gimp/2.2/plug-ins/wind
 libexec/gimp/2.2/plug-ins/winicon
-%%WMF%%libexec/gimp/2.2/plug-ins/wmf
+libexec/gimp/2.2/plug-ins/wmf
 libexec/gimp/2.2/plug-ins/xbm
-%%JPEG%%libexec/gimp/2.2/plug-ins/xjt
+libexec/gimp/2.2/plug-ins/xjt
 libexec/gimp/2.2/plug-ins/xpm
 libexec/gimp/2.2/plug-ins/xwd
 libexec/gimp/2.2/plug-ins/zealouscrop
