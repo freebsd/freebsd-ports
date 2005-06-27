@@ -7,7 +7,7 @@
 
 PORTNAME=	codes
 PORTVERSION=	0.46
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/i/${PKGNAMEPREFIX}${PORTNAME}
@@ -100,6 +100,7 @@ do-install:
 		${PREFIX}/share/locale/${catalog:S|.mo||}/LC_MESSAGES/iso_4217.mo
 .endfor
 	@${MKDIR} ${PREFIX}/share/xml/iso-codes
+	@${MKDIR} ${PREFIX}/libdata/pkgconfig
 	@${INSTALL_SCRIPT} ${WRKSRC}/iso_3166/iso_3166.xml \
 		${PREFIX}/share/xml/iso-codes/iso_3166.xml
 	@${INSTALL_SCRIPT} ${WRKSRC}/iso_3166/iso_3166_2/iso_3166_2.xml \
