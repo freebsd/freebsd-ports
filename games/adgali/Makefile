@@ -7,27 +7,27 @@
 #
 
 PORTNAME=	adgali
-PORTVERSION=	0.2.3
-PORTREVISION=	2
+PORTVERSION=	0.2.4
 CATEGORIES=	games devel
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://adgali.apiou.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An open source game library useful for 2D games programmation
+COMMENT=	An open source game library useful for 2D game development
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.9:${PORTSDIR}/print/freetype2
 
+USE_BZIP2=	yes
 USE_SDL=	sdl
-USE_GNOME=	gnometarget
-USE_REINPLACE=	yes
+USE_XPM=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_LIBTOOL_VER=	15
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--enable-compile-optim=no
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
@@ -35,10 +35,6 @@ INSTALLS_SHLIB=	yes
 .if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
 BROKEN=		"Configure fails"
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O3 ||g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-release $$(LT_RELEASE)||g' ${WRKSRC}/src/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
