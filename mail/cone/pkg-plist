@@ -47,8 +47,8 @@ libexec/cone
 %%DATADIR%%/address.html
 %%DATADIR%%/attributes.html
 %%DATADIR%%/book.html
-%%DATADIR%%/c2591.html
-%%DATADIR%%/c2629.html
+%%DATADIR%%/c2646.html
+%%DATADIR%%/c2684.html
 %%DATADIR%%/cone.hlp
 %%DATADIR%%/cone.html
 %%DATADIR%%/cone00index.html
@@ -63,6 +63,7 @@ libexec/cone
 %%DATADIR%%/cone09masterpassword.html
 %%DATADIR%%/cone10encryption.html
 %%DATADIR%%/cone11filters.html
+%%DATADIR%%/cone12addressbook.html
 %%DATADIR%%/conn.html
 %%DATADIR%%/emailaddress.html
 %%DATADIR%%/envelope.html
@@ -324,15 +325,15 @@ libexec/cone
 %%DATADIR%%/smap1.html
 %%DATADIR%%/store.html
 %%DATADIR%%/synchronous.html
-%%DATADIR%%/x12226.html
-%%DATADIR%%/x12432.html
-%%DATADIR%%/x12768.html
-%%DATADIR%%/x13039.html
-%%DATADIR%%/x13282.html
-%%DATADIR%%/x13386.html
-%%DATADIR%%/x13628.html
-%%DATADIR%%/x14002.html
-%%DATADIR%%/x14013.html
+%%DATADIR%%/x12281.html
+%%DATADIR%%/x12487.html
+%%DATADIR%%/x12823.html
+%%DATADIR%%/x13094.html
+%%DATADIR%%/x13337.html
+%%DATADIR%%/x13441.html
+%%DATADIR%%/x13683.html
+%%DATADIR%%/x14057.html
+%%DATADIR%%/x14068.html
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/rootcerts
