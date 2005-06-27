@@ -6,41 +6,40 @@
 #
 
 PORTNAME=	ntl
-PORTVERSION=	5.3.1
+PORTVERSION=	5.4
 CATEGORIES=	math
 MASTER_SITES=	http://www.shoup.net/ntl/
 
 MAINTAINER=	matthiasb@acm.org
 COMMENT=	Victor Shoup's Number Theory Library
 
+# ntl is faster with libgmp4, but you can disable it
+.if !defined(WITHOUT_GMP)
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+.endif
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
-		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
-		NTL_GMP_LIP=on GMP_PREFIX="${LOCALBASE}"
-CONFIGURE_WRKSRC= ${BUILD_WRKSRC}
+		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" NTL_STD_CXX=on
+
+.if !defined(WITHOUT_GMP)
+CONFIGURE_ARGS+=	NTL_GMP_LIP=on GMP_PREFIX="${LOCALBASE}"
+.endif
+
+CONFIGURE_WRKSRC=	${BUILD_WRKSRC}
 
 BUILD_WRKSRC=	${WRKSRC}/src
 MAKEFILE=	makefile
-
-# Build with WITH_ISO_CXX=yes if you want to use the "Standard C++"
-# version of NTL. In this version, all of NTL is "wrapped" inside
-# the namespace NTL, and are no longer directly accessible---you must
-# either use explicit qualification, or using directives, or
-# using declarations.
-
-.if defined(WITH_ISO_CXX)
-CONFIGURE_ARGS+= NTL_STD_CXX=on
-.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/include/NTL
 	${INSTALL_DATA} ${WRKSRC}/include/NTL/*  ${PREFIX}/include/NTL/
 	${INSTALL_DATA} ${BUILD_WRKSRC}/ntl.a ${PREFIX}/lib/libntl.a
+
+post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/NTL
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/NTL/
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
