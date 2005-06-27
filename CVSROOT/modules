@@ -5913,6 +5913,7 @@ metacity-themes	ports/x11-themes/metacity-themes
 metakit		ports/databases/metakit
 metalog		ports/sysutils/metalog
 metamail	ports/mail/metamail
+metaocaml	ports/lang/metaocaml
 metapixel	ports/graphics/metapixel
 metasploit	ports/security/metasploit
 metis		ports/math/metis
