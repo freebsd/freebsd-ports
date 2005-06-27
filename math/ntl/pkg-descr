@@ -8,6 +8,8 @@ by Victor Shoup.  It provides objects and methods for
 	- vectors and matrices over extensions
 	- finite rings
 
+Unless you define WITHOUT_GMP, NTL requires libgmp4.
+
 WWW: http://www.shoup.net/
 
 Matthias Bauer
