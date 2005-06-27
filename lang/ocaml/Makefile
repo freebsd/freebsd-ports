@@ -17,21 +17,23 @@ PKGNAMESUFFIX=	${SFX}
 MAINTAINER?=	marwan.burelle@lri.fr
 COMMENT?=	The Objective Caml compiler and programming environment
 
+CONFLICTS=	metaocaml-[0-9]*
+
 .if defined(WITHOUT_X11)
 PLIST_SUB+=	X11="@comment " TK="@comment "
 WITHOUT_TK=	yes
 SFX=		-nox11
-CONFLICTS=	ocaml-[0-9]* ocaml-notk-[0-9]*
+CONFLICTS+=	ocaml-[0-9]* ocaml-notk-[0-9]*
 .else
 PLIST_SUB+=	X11=""
 USE_XLIB=	yes
 .if defined(WITHOUT_TK)
 PLIST_SUB+=	TK="@comment "
 SFX=		-notk
-CONFLICTS=	ocaml-[0-9]* ocaml-nox11-[0-9]*
+CONFLICTS+=	ocaml-[0-9]* ocaml-nox11-[0-9]*
 .else
 PLIST_SUB+=	TK=""
-CONFLICTS=	ocaml-nox11-[0-9]* ocaml-notk-[0-9]*
+CONFLICTS+=	ocaml-nox11-[0-9]* ocaml-notk-[0-9]*
 
 BUILD_DEPENDS+=	${LOCALBASE}/include/tcl8.4:${PORTSDIR}/lang/tcl84 \
 		${LOCALBASE}/include/tk8.4:${PORTSDIR}/x11-toolkits/tk84
