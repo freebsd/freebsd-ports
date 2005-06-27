@@ -318,8 +318,6 @@ share/gnome/gramps/plugins/Leak.py
 share/gnome/gramps/plugins/Leak.pyo
 share/gnome/gramps/plugins/Merge.py
 share/gnome/gramps/plugins/Merge.pyo
-share/gnome/gramps/plugins/NavWebPage.py
-share/gnome/gramps/plugins/NavWebPage.pyo
 share/gnome/gramps/plugins/PatchNames.py
 share/gnome/gramps/plugins/PatchNames.pyo
 share/gnome/gramps/plugins/ReadPkg.py
@@ -487,6 +485,8 @@ share/locale/ro/LC_MESSAGES/gramps.mo
 share/locale/ru/LC_MESSAGES/gramps.mo
 share/locale/sv/LC_MESSAGES/gramps.mo
 share/locale/zh_CN/LC_MESSAGES/gramps.mo
+share/mime/application/x-gedcom.xml
+share/mime/application/x-geneweb.xml
 share/mime/application/x-gramps-package.xml
 share/mime/application/x-gramps-xml.xml
 share/mime/application/x-gramps.xml
