@@ -1,13 +1,20 @@
---- apps/Makefile.in.orig	Wed Jan 16 06:55:09 2002
-+++ apps/Makefile.in	Thu Feb 28 06:28:56 2002
-@@ -19,8 +19,8 @@
+--- apps/Makefile.in.orig	Mon Feb 28 23:52:47 2005
++++ apps/Makefile.in	Thu Jun  9 16:36:08 2005
+@@ -13,14 +13,14 @@
+ MV		= @MV@
+ RM		= @RM@
+ RMF		= @RM@ -f
+-MKDIR		= @MKDIR@
++MKDIR		= @MKDIR@ -p
+ FIND		= @FIND@
+ XARGS		= @XARGS@
  LDCONFIG	= @LDCONFIG@
  
  INSTALL		= @INSTALL@
--INSTALL_PROGRAM	= @INSTALL@ -s -m 755
+-INSTALL_PROGRAM	= @INSTALL@ -m 755
 -INSTALL_DATA	= @INSTALL@ -m 644
 +INSTALL_PROGRAM	= @INSTALL_PROGRAM@
 +INSTALL_DATA	= @INSTALL_DATA@
  
  INCS_X		= @X_CFLAGS@
- INCS_PRIVATE= @APPS_AFTERBASE_CFLAGS@ -I../..
+ INCS_PRIVATE    = 
