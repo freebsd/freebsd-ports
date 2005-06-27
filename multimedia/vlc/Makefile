@@ -229,7 +229,7 @@ LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
 CONFLICTS=	vlc-*-0.8.2.200*
 
-### BROKEN -- Needs newer verision of toolame ###
+### BROKEN -- Needs newer version of toolame ###
 WITHOUT_TOOLAME=	yes
 WITHOUT_MOZILLA_PLUGIN=	yes
 ### BROKEN ###
@@ -246,14 +246,13 @@ USE_GNOME=	gnometarget libxml2
 USE_REINPLACE=	yes
 WANT_SDL=	yes
 USE_ICONV=	yes
-USE_PERL5_BUILD=yes
 
 FAKEDIR=	${WRKDIR}/fake
 PLIST=		${WRKDIR}/plist
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include/vlc/ -I${LOCALBASE}/ffmpeg ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include/vlc/ ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 
 CONFIGURE_ARGS+=	--enable-ffmpeg \
