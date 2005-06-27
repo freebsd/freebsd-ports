@@ -3,17 +3,19 @@ bin/autoopts-config
 bin/columns
 bin/getdefs
 bin/xml2ag
-include/options.h
-include/usage-txt.h
+include/autoopts/options.h
+include/autoopts/usage-txt.h
 lib/libguileopts.a
 lib/libguileopts.so
 lib/libguileopts.so.0
 lib/libopts.a
 lib/libopts.so
-lib/libopts.so.23
+lib/libopts.so.25
+libdata/pkgconfig/autoopts.pc
 share/aclocal/autoopts.m4
 %%DATADIR%%/aginfo.tpl
 %%DATADIR%%/aginfo3.tpl
+%%DATADIR%%/agman-lib.tpl
 %%DATADIR%%/agman1.tpl
 %%DATADIR%%/agman3.tpl
 %%DATADIR%%/autoopts.m4
@@ -23,11 +25,13 @@ share/aclocal/autoopts.m4
 %%DATADIR%%/fsm-trans.tpl
 %%DATADIR%%/fsm.tpl
 %%DATADIR%%/getopt.tpl
-%%DATADIR%%/libopts-23.0.14.tar.gz
+%%DATADIR%%/libopts-25.0.0.tar.gz
 %%DATADIR%%/optcode.tpl
 %%DATADIR%%/opthead.tpl
 %%DATADIR%%/options.tpl
 %%DATADIR%%/optlib.tpl
 %%DATADIR%%/optmain.tpl
+%%DATADIR%%/rc-sample.tpl
 %%DATADIR%%/stdoptions.def
 @dirrm %%DATADIR%%
+@dirrm include/autoopts
