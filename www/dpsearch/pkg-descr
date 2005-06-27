@@ -10,7 +10,7 @@ Key features:
 * External parsers support for other document types;
 * Ability to index multilangual sites using content negotiation;
 * Searching all of the word forms using ispell affixes and dictionaries;
-* Stopwords and synonyms lists;
+* Stopwords, synonyms and acronyms lists;
 * Boolean query language support;
 * Results sorting by relevancy, popularity rank, last modified time and by 
   importance (a multiplication of relevancy and popularity rank);

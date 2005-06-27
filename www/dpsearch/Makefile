@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	dpsearch
-PORTVERSION=	4.29
+PORTVERSION=	4.31
 CATEGORIES=	www
 MASTER_SITES=	http://dataparksearch.newsa.ru/ \
-		http://dataparksearch.h0t.de/ \
 		http://www.dataparksearch.org/
 
 MAINTAINER=	ports@FreeBSD.org
@@ -27,6 +26,8 @@ CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/dpsearch \
 		--localstatedir=/var/dpsearch \
 		--enable-mp3 \
 		--with-zlib
+
+SUB_FILES=	pkg-message
 
 OPTIONS=	DPSEARCH_THREADS  "Enable pthreads"                       on  \
 		DPSEARCH_SSL      "Enable SSL"                            on  \
@@ -133,7 +134,6 @@ pre-install:
 post-install:
 	${CHMOD} 700 /var/dpsearch/cache
 	${CHOWN} -R www:www /var/dpsearch/
-	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

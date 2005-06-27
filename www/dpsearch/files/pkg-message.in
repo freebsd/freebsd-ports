@@ -1,0 +1,11 @@
+===============================================================================
+DataparkSearch Engine is now installed.
+
+To use DataparkSearch, you need to create the appropriate *sql database
+manually. Please read the documentation located in:
+
+%%DOCSDIR%%
+
+For more information on how to use DataparkSearch Engine, please refer to their
+web site at http://www.dataparksearch.org/
+===============================================================================
