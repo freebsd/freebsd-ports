@@ -1,15 +1,15 @@
---- Makefile.in.orig	Fri Nov  7 05:44:51 2003
-+++ Makefile.in	Fri Nov 14 00:00:39 2003
-@@ -168,7 +168,7 @@
+--- Makefile.in.orig	Thu Jun 16 02:44:43 2005
++++ Makefile.in	Fri Jun 24 13:30:27 2005
+@@ -234,7 +234,7 @@
  tmpdir = /tmp
  
  # Directory for app-defaults file
 -appdefaultsdir = $(datadir)/$(PACKAGE)-$(VERSION)/app-defaults
 +appdefaultsdir = $(libdir)/X11/app-defaults
- 
  PATHNAMES = -DPROG_VERSION=$(VERSION) \
  	-DCAD_DIR=\"$(prefix)\" \
-@@ -195,7 +195,7 @@
+ 	-DTEMP_DIR=\"$(tmpdir)\" \
+@@ -261,7 +261,7 @@
  INCLUDES = -IXw ${INC_SPECS}
  
  # Library directory and files
@@ -17,13 +17,13 @@
 +librarydir = $(libdir)/X11/$(PACKAGE)
  USER_RC_FILE = .xcircuitrc
  PROLOGUE_FILE = xcircps2.pro
- BUILTINS_DEP1 = generic.lps
-@@ -746,7 +746,7 @@
+ LGF_LIB = lgf.lps
+@@ -786,7 +786,7 @@
  
- lib/tcl/xcircuit${SHDLIB_EXT}: xcwrap.o ${xcircuit_OBJECTS}
+ lib/tcl/xcircuit${SHDLIB_EXT}: xcwrap.o ${xcircuit_OBJECTS} ${xcircuit_DEPEND}
  	$(RM) lib/xcircuit${SHDLIB_EXT}
--	$(CC) ${CFLAGS} -o $@ ${LDDL_FLAGS} xcwrap.o ${xcircuit_OBJECTS} \
-+	$(LD) ${LDFLAGS} -o $@ ${LDDL_FLAGS} xcwrap.o ${xcircuit_OBJECTS} \
- 		${X_LIBS} ${X_EXTRA_LIBS} ${EXTRA_LIBS} -lc ${LIBS}
+-	$(CC) ${CFLAGS} ${SHLIB_CFLAGS} -o $@ ${LDDL_FLAGS} xcwrap.o \
++	$(LD) -o $@ ${LDDL_FLAGS} xcwrap.o \
+ 		${xcircuit_OBJECTS} ${xcircuit_LDADD} ${LDFLAGS} \
+ 		${X_EXTRA_LIBS} ${EXTRA_LIBS} -lc ${LIBS}
  
- tcl:	lib/tcl/xcircuit${SHDLIB_EXT}
