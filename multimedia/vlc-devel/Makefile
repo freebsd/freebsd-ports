@@ -213,7 +213,7 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.8.2.20050622
+DISTVERSION=	0.8.2.20050626
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/vlc/snapshots/ \
 		${MASTER_SITE_LOCAL:S|$|:mozilla|} \
@@ -349,6 +349,10 @@ OPTIONS=	AALIB "Console graphics support" Off \
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+BROKEN=	"Does not compile with perl ${PERL_VERSION}"
+.endif
 
 .if ${ARCH}=="amd64"
 WITH_WXGTK_VER=	2.4
