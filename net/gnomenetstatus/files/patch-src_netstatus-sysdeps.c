@@ -1,5 +1,5 @@
 --- src/netstatus-sysdeps.c.orig	Fri Jul 30 04:21:30 2004
-+++ src/netstatus-sysdeps.c	Thu Mar  3 03:04:41 2005
++++ src/netstatus-sysdeps.c	Mon Jun 27 14:14:19 2005
 @@ -35,6 +35,16 @@
  #include <glib.h>
  #include <libgnome/gnome-i18n.h>
@@ -17,7 +17,7 @@
  static inline gboolean
  parse_stats (char    *buf,
  	     int      prx_idx,
-@@ -384,6 +394,173 @@
+@@ -384,6 +394,174 @@ parse_header (char *buf,
       }
  }
  
@@ -170,6 +170,7 @@
 +
 +  if (g_strncasecmp (iface, "an", 2) && g_strncasecmp (iface, "wi", 2) &&
 +    g_strncasecmp (iface, "ath", 3) && g_strncasecmp (iface, "ndis", 4) &&
++    g_strncasecmp (iface, "ural", 4) && g_strncasecmp (iface, "ral", 3) &&
 +    g_strncasecmp (iface, "ipw", 3) && g_strncasecmp (iface, "iwi", 3) &&
 +    g_strncasecmp (iface, "acx", 3))
 +    return error_message;
@@ -191,7 +192,7 @@
  char *
  netstatus_sysdeps_read_iface_statistics (const char *iface,
  					 gulong     *in_packets,
-@@ -413,11 +590,11 @@
+@@ -413,11 +591,11 @@ netstatus_sysdeps_read_iface_statistics 
    if (!g_shell_parse_argv (command_line, NULL, &argv, &error))
      {
        error_message = g_strdup_printf (_("Could not parse command line '%s': %s"),
@@ -206,7 +207,7 @@
        return error_message;
      }
    g_free (command_line);
-@@ -456,8 +633,8 @@
+@@ -456,8 +634,8 @@ netstatus_sysdeps_read_iface_statistics 
        g_io_channel_read_line (channel, &buf, NULL, NULL, NULL);
  
        if (!parse_stats (buf,
@@ -217,7 +218,7 @@
  	{
  	  error_message = g_strdup_printf (_("Could not parse interface statistics from '%s'. "
  					     "prx_idx = %d; ptx_idx = %d; brx_idx = %d; btx_idx = %d;"),
-@@ -477,7 +654,7 @@
+@@ -477,7 +655,7 @@ netstatus_sysdeps_read_iface_statistics 
      }
    else
      {
@@ -226,7 +227,7 @@
  				       iface, error->message);
        g_error_free (error);
      }
-@@ -485,23 +662,6 @@
+@@ -485,23 +663,6 @@ netstatus_sysdeps_read_iface_statistics 
    g_strfreev (argv);
  
    return error_message;
