@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.contrib.andrew.cmu.edu/~tmartin/senken/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A city simulation game
 
-BROKEN=		Incomplete pkg-plist
-
 USE_GNOME=	gnometarget gtk20
 USE_SDL=	image sdl
 USE_REINPLACE=	yes
@@ -23,5 +21,6 @@ GNU_CONFIGURE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-I/usr/X11R6/include||g  ; \
 		 s|-L/usr/X11R6/lib||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/install-sh -d/d' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
