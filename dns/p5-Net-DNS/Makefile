@@ -46,10 +46,20 @@ MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 
 .if ${PERL_LEVEL} < 500800
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6
+PLIST_SUB+=	BYTES_INSTALL=""
+.else
+PLIST_SUB+=	BYTES_INSTALL="@comment "
 .endif
 
 DOCSDIR=	${PREFIX}/share/doc/p5-Net-DNS
+
 post-install:
+.if ${PERL_LEVEL} < 500800
+.for file in bytes.pm bytes_heavy.pl
+	${INSTALL_DATA} ${FILESDIR}/${file} ${SITE_PERL}
+.endfor
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for doc in Changes README TODO
