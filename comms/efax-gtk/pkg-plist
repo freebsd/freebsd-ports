@@ -2,4 +2,5 @@ bin/efax-gtk
 bin/efax-0.9a
 bin/efix-0.9a
 etc/efax-gtkrc
-share/gnome/applications/efax-gtk.desktop
+share/applications/efax-gtk.desktop
+@unexec rmdir %D/share/applications 2>/dev/null || true

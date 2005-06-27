@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		efax-gtk
-PORTVERSION=		3.0.1
+PORTVERSION=		3.0.2
 CATEGORIES=		comms
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,9 +20,8 @@ RUN_DEPENDS=		${X11BASE}/bin/ggv:${PORTSDIR}/print/ggv \
 			${LOCALBASE}/bin/gs:${PORTSDIR}/print/ghostscript-gnu
 
 USE_GNOME=		gtk20
-USE_X_PREFIX=		YES
-GNU_CONFIGURE=		YES
-CONFIGURE_ARGS=		--datadir=${PREFIX}/share/gnome
+USE_X_PREFIX=		yes
+GNU_CONFIGURE=		yes
 MAN1=			efax.1 efix.1 efax-gtk.1
 
 post-install:
