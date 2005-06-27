@@ -47,9 +47,6 @@ JAVA_BUILD=	jdk
 .if (${OSVERSION} < 503001 && ${OSVERSION} >= 500000) || (${OSVERSION} <= 492000)
 BROKEN=		"rtld depends on _end symbol. type make -DTRYBROKEN to see how to upgrade your rtld"
 .endif
-.if exists(${X11BASE}/bin/fltk-config)
-BROKEN=		"Please deinstall fltk, currently causes a build failure"
-.endif
 
 CODELINE=		680
 RELEASE_NR=		1.9
