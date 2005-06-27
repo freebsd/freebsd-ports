@@ -38,6 +38,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX}/etc/nginx \
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--with-debug
+STRIP=		#do not strip if nginx with debug information
 .endif
 
 .if defined(WITH_OPENSSL_MODULE)
