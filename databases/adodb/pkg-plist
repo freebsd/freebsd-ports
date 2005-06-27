@@ -152,6 +152,7 @@
 %%TESTS%%%%ADODB_DIR%%/tests/time.php
 %%TESTS%%%%ADODB_DIR%%/tests/tmssql.php
 %%TESTS%%%%ADODB_DIR%%/tests/xmlschema.xml
+%%TESTS%%%%ADODB_DIR%%/tests/xmlschema-mssql.xml
 %%PORTDOCS%%%%DOCSDIR%%/docs-adodb.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs-datadict.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs-oracle.htm
