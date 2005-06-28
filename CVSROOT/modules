@@ -12791,6 +12791,7 @@ xmms-weasel	ports/multimedia/xmms-weasel
 xmms-wma	ports/audio/xmms-wma
 xmms-xf86audio	ports/audio/xmms-xf86audio
 xmms-xvs	ports/graphics/xmms-xvs
+xmms-xymms	ports/audio/xmms-xymms
 xmold		ports/x11/xmold
 xmolwt		ports/biology/xmolwt
 xmon		ports/x11/xmon
