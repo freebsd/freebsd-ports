@@ -1,0 +1,9 @@
+--- gnome2-java.pc.in.orig	Sun Jun 19 13:36:46 2005
++++ gnome2-java.pc.in	Sun Jun 19 13:37:19 2005
+@@ -9,5 +9,5 @@
+ Version: @VERSION@
+ api_version=@apiversion@
+ classpath=@INSTALLED_CLASSPATH@
+-Libs: -L@libdir@ -lgnomejava
++Libs: -L@libdir@ -lgnomejni-@apiversion@
+ 

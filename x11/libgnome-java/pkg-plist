@@ -1,4 +1,184 @@
-lib/libgnomejava%%GNOME_API_VERSION%%.so
-lib/libgnomejava%%GNOME_API_VERSION%%.so.%%PORTVERSION%%
-share/java/classes/gnome%%GNOME_API_VERSION%%-%%PORTVERSION%%.jar
-share/java/classes/gnome%%GNOME_API_VERSION%%.jar
+lib/libgnomejni-%%GNOME_API_VERSION%%.so
+lib/libgnomejni-%%GNOME_API_VERSION%%.so.1
+libdata/pkgconfig/gnome2-java.pc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/api/allclasses-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/api/allclasses-noframe.html
+%%PORTDOCS%%%%DOCSDIR%%/api/constant-values.html
+%%PORTDOCS%%%%DOCSDIR%%/api/deprecated-list.html
+%%PORTDOCS%%%%DOCSDIR%%/api/help-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/api/index-all.html
+%%PORTDOCS%%%%DOCSDIR%%/api/index.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/About.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/App.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/AppBar.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/Canvas.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/CanvasBpath.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/CanvasClipgroup.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/CanvasEllipse.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/CanvasGroup.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/CanvasItem.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/CanvasLine.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/CanvasPathDef.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/CanvasPixbuf.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/CanvasPoints.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/CanvasPolygon.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/CanvasRE.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/CanvasRect.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/CanvasRichText.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/CanvasShape.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/CanvasText.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/CanvasWidget.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/Client.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/ClientFlags.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/ClientState.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/ColorPicker.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/Config.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/DateEdit.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/DateEditFlags.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/DialogType.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/Druid.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/DruidPage.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/DruidPageEdge.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/DruidPageStandard.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/EdgePosition.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/Entry.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/FileDomain.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/FileEntry.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/FontPicker.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/FontPickerMode.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/GConf.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/Gnome.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/GnomeStockItem.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/HRef.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/Help.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/HelpError.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/HelpException.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/IconEntry.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/IconList.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/IconListMode.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/IconSelection.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/IconTextItem.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/InteractStyle.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/ModuleInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/PasswordDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/PixmapEntry.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/PopupMenu.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/PreferencesType.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/Program.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/RestartStyle.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/SaveStyle.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/Scores.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/Sound.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/UIBuilderData.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/UIInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/UIInfoConfigurableTypes.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/UIInfoType.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/UIPixmapType.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/Url.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/Util.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/WindowIcon.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/AppBarEvent.Type.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/AppBarEvent.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/AppBarListener.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/ClientEvent.Type.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/ClientEvent.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/ClientListener.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/ColorPickerEvent.Type.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/ColorPickerEvent.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/ColorPickerListener.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/DateEditEvent.Type.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/DateEditEvent.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/DateEditListener.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/DruidPageChangeEvent.Type.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/DruidPageChangeEvent.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/DruidPageChangeListener.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/DruidPageSetupEvent.Type.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/DruidPageSetupEvent.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/DruidPageSetupListener.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/FontPickerEvent.Type.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/FontPickerEvent.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/FontPickerListener.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/IconEntryEvent.Type.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/IconEntryEvent.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/IconEntryListener.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/event/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/api/overview-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/api/overview-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/api/overview-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/api/package-list
+%%PORTDOCS%%%%DOCSDIR%%/api/packages.html
+%%PORTDOCS%%%%DOCSDIR%%/api/resources/inherit.gif
+%%PORTDOCS%%%%DOCSDIR%%/api/serialized-form.html
+%%PORTDOCS%%%%DOCSDIR%%/api/stylesheet.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/app/AppExample.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/appbar/Appbar.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/canvas/CanvasExample.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/colorpicker/ColorPickerTest.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/dateedit/DateEditExample.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/druid/DruidExample.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/entry/EntryTest.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/fileentry/FileEntryTest.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/fontpick/FontPick.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/gnomeconfig/ReadConfig.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/gnomeconfig/WriteConfig.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/gnomesound/SoundTest.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/gnomesound/startup.wav
+%%PORTDOCS%%%%DOCSDIR%%/examples/gnomeurl/UrlTest.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/href/HrefExample.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/iconentry/IconEntryExample.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/popupmenu/PopupMenuExample.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/radiomenu/RadioMenu.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/radiotoolbar/RadioToolbar.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/runExample.sh
+%%PORTDOCS%%%%DOCSDIR%%/examples/runExample.sh.in
+%%PORTDOCS%%%%DOCSDIR%%/examples/simplemenu/SimpleMenu.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/stockmenu/StockMenu.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/stockmenu/topic.dat
+%%PORTDOCS%%%%DOCSDIR%%/examples/stocktoolbar/StockToolbar.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/testgnome/TestGNOME.java
+%%PORTDOCS%%share/%%PORTNAME%%/tutorial/First.java
+%%PORTDOCS%%share/%%PORTNAME%%/tutorial/Fourth.java
+%%PORTDOCS%%share/%%PORTNAME%%/tutorial/Second.java
+%%PORTDOCS%%share/%%PORTNAME%%/tutorial/Third.java
+%%PORTDOCS%%@dirrm share/%%PORTNAME%%/tutorial
+%%PORTDOCS%%@dirrm share/%%PORTNAME%%
+%%JAVAJARDIR%%/gnome%%GNOME_API_VERSION%%.jar
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/testgnome
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/stocktoolbar
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/stockmenu
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/simplemenu
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/radiotoolbar
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/radiomenu
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/popupmenu
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/iconentry
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/href
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/gnomeurl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/gnomesound
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/gnomeconfig
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/fontpick
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/fileentry
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/entry
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/druid
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/dateedit
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/colorpicker
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/canvas
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/appbar
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/app
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/resources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/org/gnu/gnome/event
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/org/gnu/gnome
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/org/gnu
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/org
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
