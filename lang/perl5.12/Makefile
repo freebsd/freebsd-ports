@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	../../src \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		BSDPAN-${PERL_VER}${EXTRACT_SUFX}:local
 
-PATCH_SITES=	${MASTER_SITE_LOCAL} \
+PATCH_SITES=	${MASTER_SITE_LOCAL:S/$/tobez\//} \
 		http://www.tobez.org/download/port-mirrors/lang/perl58/
 PATCHFILES=	defined-or-5.8.7.bz2
 
