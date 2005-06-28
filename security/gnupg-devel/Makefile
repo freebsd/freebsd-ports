@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libassuan.a:${PORTSDIR}/security/libassuan
 LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
 		ksba.14:${PORTSDIR}/security/libksba \
 		pth.20:${PORTSDIR}/devel/pth \
-		usb:${PORTSDIR}/devel/libusb
+		usb-0.1:${PORTSDIR}/devel/libusb
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 		dirmngr:${PORTSDIR}/security/dirmngr
 
