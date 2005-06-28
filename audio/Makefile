@@ -138,6 +138,7 @@
     SUBDIR += gai-album
     SUBDIR += gai-visual-audio
     SUBDIR += gaim-festival
+    SUBDIR += gbsplay
     SUBDIR += gdam
     SUBDIR += gdesklets-cornerxmms
     SUBDIR += gdesklets-xmms
