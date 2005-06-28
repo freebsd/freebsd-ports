@@ -1,12 +1,13 @@
 # New ports collection makefile for:	milter-bogom
 # Date created:			12 Feb 2005
-# Whom:				Victor Balada Diaz <victor@alf.dyndns.ws>
+# Whom:				Victor Balada Diaz <victor@bsdes.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	milter-bogom
 PORTVERSION=	1.7.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.usebox.net/jjm/bogom/ \
 		http://blackshell.usebox.net/bogom/
@@ -28,9 +29,7 @@ USE_RC_SUBR=	milter-bogom.sh
 PLIST_FILES=	sbin/bogom \
 		etc/bogom.conf-example
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	README CHANGELOG
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/bogom.8
@@ -42,7 +41,7 @@ post-patch:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/bogom ${PREFIX}/sbin
-	@${INSTALL_MAN} ${WRKSRC}/bogom.8 ${PREFIX}/man/man8
+	@${INSTALL_MAN} ${WRKSRC}/bogom.8 ${MAN8PREFIX}/man/man8
 	@${INSTALL_DATA} ${WRKSRC}/bogom.conf-example ${PREFIX}/etc
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
