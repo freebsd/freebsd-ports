@@ -37,7 +37,7 @@ USE_REINPLACE=	yes
 
 .if !defined(WITHOUT_JAVA)
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.4
 JAVA_BUILD=	jdk
 .endif
 
