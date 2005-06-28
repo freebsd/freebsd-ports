@@ -4,3 +4,7 @@ MD5 (ghc-6.4-i386-unknown-freebsd5-boot.tar.bz2) = a242bb7f10daca29c449793a94de3
 SIZE (ghc-6.4-i386-unknown-freebsd5-boot.tar.bz2) = 6278695
 MD5 (ghc-6.4-i386-unknown-freebsd-boot.tar.bz2) = 89466b400e0bad9c6fb62c25efa90892
 SIZE (ghc-6.4-i386-unknown-freebsd-boot.tar.bz2) = 6307768
+MD5 (patch-ghc-libraries_GLUT.diff) = db88b17120da91e9d3d32c564e848bf5
+SIZE (patch-ghc-libraries_GLUT.diff) = 1012
+MD5 (patch-ghc-libraries_OpenAL.diff) = 327224640f535887d3b42001ad2e4f94
+SIZE (patch-ghc-libraries_OpenAL.diff) = 683

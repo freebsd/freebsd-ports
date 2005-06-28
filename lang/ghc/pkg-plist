@@ -12,7 +12,10 @@ bin/runghc
 bin/runhaskell
 bin/stat2resid
 lib/ghc-%%GHC_VERSION%%/HSCabal.o
+lib/ghc-%%GHC_VERSION%%/HSGLUT.o
+lib/ghc-%%GHC_VERSION%%/HSGLUT_cbits.o
 lib/ghc-%%GHC_VERSION%%/HSHUnit.o
+lib/ghc-%%GHC_VERSION%%/HSOpenAL.o
 lib/ghc-%%GHC_VERSION%%/HSOpenGL.o
 lib/ghc-%%GHC_VERSION%%/HSOpenGL_cbits.o
 lib/ghc-%%GHC_VERSION%%/HSQuickCheck.o
@@ -1070,6 +1073,48 @@ lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Begin.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Begin.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Callbacks.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Callbacks.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Callbacks/Global.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Callbacks/Global.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Callbacks/Registration.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Callbacks/Registration.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Callbacks/Window.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Callbacks/Window.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Colormap.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Colormap.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Constants.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Constants.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Debugging.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Debugging.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/DeviceControl.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/DeviceControl.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Extensions.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Extensions.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Fonts.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Fonts.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/GameMode.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/GameMode.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Initialization.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Initialization.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Menu.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Menu.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Objects.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Objects.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Overlay.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Overlay.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/QueryUtils.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/QueryUtils.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/State.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/State.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Types.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Types.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Window.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Window.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH/Lib.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH/Lib.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH/Ppr.hi
@@ -1080,6 +1125,48 @@ lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH/Syntax.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH/Syntax.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/AL.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/AL.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/AL/ALboolean.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/AL/ALboolean.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/AL/BasicTypes.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/AL/BasicTypes.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/AL/Buffer.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/AL/Buffer.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/AL/Format.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/AL/Format.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/AL/Listener.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/AL/Listener.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/AL/PeekPoke.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/AL/PeekPoke.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/AL/QueryUtils.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/AL/QueryUtils.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/AL/Source.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/AL/Source.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALC.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALC.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALC/BasicTypes.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALC/BasicTypes.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALC/Context.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALC/Context.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALC/Device.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALC/Device.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALC/Errors.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALC/Errors.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALC/Extensions.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALC/Extensions.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALC/Queries.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALC/Queries.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALUT.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALUT.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALUT/Exception.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALUT/Exception.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALUT/Initialization.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALUT/Initialization.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALUT/WAV.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALUT/WAV.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/System/Directory/Internals.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Directory/Internals.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Error.hi
@@ -1113,7 +1200,11 @@ lib/ghc-%%GHC_VERSION%%/imports/Text/Printf.hi
 lib/ghc-%%GHC_VERSION%%/include/Cmm.h
 lib/ghc-%%GHC_VERSION%%/include/GHCConstants.h
 lib/ghc-%%GHC_VERSION%%/include/HsBaseConfig.h
+lib/ghc-%%GHC_VERSION%%/include/HsGLUT.h
+lib/ghc-%%GHC_VERSION%%/include/HsGLUTConfig.h
+lib/ghc-%%GHC_VERSION%%/include/HsGLUTExt.h
 lib/ghc-%%GHC_VERSION%%/include/HsNetworkConfig.h
+lib/ghc-%%GHC_VERSION%%/include/HsOpenAL.h
 lib/ghc-%%GHC_VERSION%%/include/HsOpenGL.h
 lib/ghc-%%GHC_VERSION%%/include/HsOpenGLExt.h
 lib/ghc-%%GHC_VERSION%%/include/HsOpenGLTypes.h
@@ -1132,11 +1223,16 @@ lib/ghc-%%GHC_VERSION%%/libHSCabal.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSCabal_p.a
 lib/ghc-%%GHC_VERSION%%/libHSHUnit.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSHUnit_p.a
+lib/ghc-%%GHC_VERSION%%/libHSOpenAL.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSOpenAL_p.a
 lib/ghc-%%GHC_VERSION%%/libHSOpenGL.a
 lib/ghc-%%GHC_VERSION%%/libHSOpenGL_cbits.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSOpenGL_p.a
 lib/ghc-%%GHC_VERSION%%/libHSfgl.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSfgl_p.a
+lib/ghc-%%GHC_VERSION%%/libHSGLUT.a
+lib/ghc-%%GHC_VERSION%%/libHSGLUT_cbits.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSGLUT_p.a
 lib/ghc-%%GHC_VERSION%%/libHSmtl.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSmtl_p.a
 lib/ghc-%%GHC_VERSION%%/libHSstm.a
@@ -1264,6 +1360,11 @@ lib/ghc-%%GHC_VERSION%%/unlit
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/System/Directory
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/System/Console
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/System
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALUT
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/ALC
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL/AL
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Sound/OpenAL
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Sound
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Network
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell
@@ -1274,6 +1375,9 @@ lib/ghc-%%GHC_VERSION%%/unlit
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT/Callbacks
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI/GLUT
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/UI
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/GHC
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Foreign/Marshal
