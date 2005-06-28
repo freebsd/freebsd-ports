@@ -20,7 +20,7 @@ BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT} \
 		xmkmf:${X_IMAKE_PORT}
 LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2 \
 		smbclient:${PORTSDIR}/net/samba-libsmbclient \
-		usb:${PORTSDIR}/devel/libusb
+		usb-0.1:${PORTSDIR}/devel/libusb
 
 CONFLICTS=	kdeartwork-3.[2-3]* kdelibs-3.[0-3]* kdeutils-3.[0-2]*
 
