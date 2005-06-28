@@ -252,7 +252,7 @@ PLIST=		${WRKDIR}/plist
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include/vlc/ ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include/src -I${WRKSRC}/include/vlc/ ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 
 CONFIGURE_ARGS+=	--enable-ffmpeg \
@@ -403,6 +403,7 @@ BUILD_DEPENDS+=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/${WXGTK2_PORT}
 RUN_DEPENDS+=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/${WXGTK2_PORT}
 CONFIGURE_ARGS+=--enable-wxwindows
 CONFIGURE_ENV+=	WX_CONFIG="${X11BASE}/bin/${WX_CONFIG}"
+WITH_WXGTK=	yes
 .else
 CONFIGURE_ARGS+=--disable-wxwindows
 .endif
