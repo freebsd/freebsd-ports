@@ -168,6 +168,7 @@ dnews_*			news/dnews		Only free for schools and
 dns.tar.Z		dns/h2n			Never get an approval yet
 doom3-linux-*		games/linux-doom3-demo	Redistribution limited
 doomsrc.zip		games/doom		requested by id Software
+dr_freebsd_*.zip	sysutils/megarc		Must be downloaded manually
 drweb-qmail-*.tar.gz	security/drweb-qmail	Non-commercial or evaluation use
 dsnake-*		games/dsnake		License prohibits any reselling
 eagle-*.tgz		cad/linux-eagle		Usage permitted for non-commercial
