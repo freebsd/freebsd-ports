@@ -6,57 +6,63 @@
 #
 
 PORTNAME=	libgconf-java
-PORTVERSION=	2.6.0
-PORTREVISION=	2
+PORTVERSION=	2.10.1
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.10
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Java wrapper for GConf
 
-BUILD_DEPENDS=	${LOCALBASE}/share/java/classes/gtk${GTK_API_VERSION}-${GTK_JAVA_VERSION}.jar:${PORTSDIR}/x11-toolkits/libgtk-java
-RUN_DEPENDS=	${LOCALBASE}/share/java/classes/gtk${GTK_API_VERSION}-${GTK_JAVA_VERSION}.jar:${PORTSDIR}/x11-toolkits/libgtk-java
+BUILD_DEPENDS=	${JAVALIBDIR}/gtk${GTK_API_VERSION}.jar:${PORTSDIR}/x11-toolkits/libgtk-java
+RUN_DEPENDS=	${JAVALIBDIR}/gtk${GTK_API_VERSION}.jar:${PORTSDIR}/x11-toolkits/libgtk-java
 
 USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+USE_LIBTOOL_VER=15
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
 JAVA_OS=	native
+USE_GCC=	3.4+
 USE_GNOME=	gnomehack gconf2
 USE_REINPLACE=	yes
-CONFIGURE_ARGS=	--without-gcj-compile \
-		--with-java-prefix=${JAVA_HOME}
-CONFIGURE_ENV=	DB2="/dev/null"
+CONFIGURE_ARGS=	--without-gcj-compile
+CONFIGURE_ENV=	CPPFLAGS="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd"
 
-GCONF_API_VERSION=	2.6
-GTK_API_VERSION=	2.4
-VERSION=		2.6.0
-GTK_JAVA_VERSION=	2.4.0
+GCONF_API_VERSION=	2.10
+GTK_API_VERSION=	2.6
 PLIST_SUB=		GCONF_API_VERSION=${GCONF_API_VERSION} \
-			PORTVERSION=${VERSION}
+			PORTNAME=${PORTNAME}
 
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|^GTKJAR=.*|GTKJAR=${LOCALBASE}/share/java/classes/gtk${GTK_API_VERSION}-${GTK_JAVA_VERSION}.jar|' \
-		${WRKSRC}/configure
-
 do-install:
 	${MKDIR} ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/lib/libgconfjava${GCONF_API_VERSION}.so.${VERSION} \
-		${PREFIX}/lib
-	${LN} -sf ${PREFIX}/lib/libgconfjava${GCONF_API_VERSION}.so.${VERSION} ${PREFIX}/lib/libgconfjava${GCONF_API_VERSION}.so
+	${INSTALL_DATA} ${WRKSRC}/.libs/libgconfjni-${GCONF_API_VERSION}.so \
+		${PREFIX}/lib/libgconfjni-${GCONF_API_VERSION}.so.1
+	${LN} -sf ${PREFIX}/lib/libgconfjni-${GCONF_API_VERSION}.so.1 \
+		${PREFIX}/lib/libgconfjni-${GCONF_API_VERSION}.so
+	${MKDIR} ${PREFIX}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKSRC}/gconf-java.pc	${PREFIX}/libdata/pkgconfig
 	${MKDIR} ${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKSRC}/lib/gconf${GCONF_API_VERSION}-${VERSION}.jar \
-		${JAVAJARDIR}
-	${LN} -sf ${JAVAJARDIR}/gconf${GCONF_API_VERSION}-${VERSION}.jar \
-		${JAVAJARDIR}/gconf${GCONF_API_VERSION}.jar
+	${INSTALL_DATA} ${WRKSRC}/gconf${GCONF_API_VERSION}.jar ${JAVAJARDIR}
 
 post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/api
+	cd ${WRKSRC}/doc/api && ${FIND} . | ${CPIO} -pdmu ${DOCSDIR}/api
+	${MKDIR} ${DOCSDIR}/examples
+	cd ${WRKSRC}/doc/examples && ${FIND} . \
+		| ${CPIO} -pdmu ${DOCSDIR}/examples
+.endif
 	@${SED} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|g ; \
 		s|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%GCONF_API_VERSION%%|${GCONF_API_VERSION}|g' \
