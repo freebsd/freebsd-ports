@@ -6,10 +6,12 @@
 
 PORTNAME=	ghc
 PORTVERSION=	6.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot
+PATCH_SITES=	http://www-i2.informatik.rwth-aachen.de/~stolz/FreeBSD/
+PATCHFILES=	patch-ghc-libraries_GLUT.diff patch-ghc-libraries_OpenAL.diff
 
 ONLY_FOR_ARCHS=	i386
 
@@ -18,6 +20,9 @@ BOOT_DIST=	ghc-${PORTVERSION}-i386-unknown-freebsd-boot${EXTRACT_SUFX}:boot
 BOOT_DIST5=	ghc-${PORTVERSION}-i386-unknown-freebsd5-boot${EXTRACT_SUFX}:boot
 
 USE_BZIP2=	yes
+
+OPTIONS=	PROFILE "Compile for profiling as well" on
+
 .include <bsd.port.pre.mk>
 
 DISTFILES=	${SRC_DIST}
@@ -28,7 +33,10 @@ DISTFILES+=	${BOOT_DIST}
 DISTFILES+=	${BOOT_DIST5}
 .endif
 
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+WANT_AUTOCONF_VER=259	# Need this to regenerate patched configure in GLUT
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4 \
+		glut.3:${PORTSDIR}/graphics/libglut \
+		openal.0:${PORTSDIR}/audio/openal
 
 MAINTAINER=	simonmar@microsoft.com
 COMMENT=	A Compiler for the functional language Haskell
@@ -66,15 +74,6 @@ MAKE_ENV+=	TMPDIR=${TMPDIR}
 ALL_TARGET=	stage1
 MAKE_ENV += stage=1
 
-pre-everything::
-.if !defined(WITHOUT_PROFILE)
-	@${ECHO_CMD} "To build GHC without profiling libraries,"
-	@${ECHO_CMD} "hit Ctrl-C now and restart with 'make"
-	@${ECHO_CMD} "WITHOUT_PROFILE=YES'."
-.else
-	@${ECHO_CMD} "Building GHC without profiling libraries."
-.endif
-
 .if defined(WITHOUT_PROFILE)
 post-extract:
 	@${ECHO} >>${WRKSRC}/mk/build.mk GhcLibWays=
@@ -85,6 +84,8 @@ post-patch:
 		${WRKSRC}/ghc/rts/package.conf.in
 
 pre-configure:
+	@(cd ${WRKSRC}/libraries/GLUT && ${AUTOCONF})
+	@(cd ${WRKSRC}/libraries/OpenAL && ${AUTOCONF})
 	@(cd ${BOOT_DIR} && ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
 	@(cd ${BOOT_DIR} && ${MAKE} in-place)
 
