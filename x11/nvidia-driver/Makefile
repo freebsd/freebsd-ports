@@ -23,13 +23,23 @@ USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 INSTALLS_SHLIB=	yes
+SUB_FILES+=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
 		VM86_INT10CALL	"Use VM86 interface for video BIOS calls" off \
 		ACPI		"Enable support for ACPI Power Management" off \
 		LINUX		"Build with support for Linux compatibility" on
 
-.include <bsd.port.pre.mk>
+# Get __FreeBSD_version.  Needed to set PORTREVISION before including bsd.port.mk.
+# XXX This is not required for -CURRENT XXX
+.if !defined(OSVERSION)
+.if exists(/sbin/sysctl)
+OSVERSION!=	/sbin/sysctl -n kern.osreldate
+.else
+OSVERSION!=	/usr/sbin/sysctl -n kern.osreldate
+.endif
+.endif
 
 # Newer releases from NVidia do not play nicely with FreeBSD prior to 5.3.
 # While we support 4.x/5.2.1 releases, stick to 6113 version of driver for
@@ -39,13 +49,14 @@ OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
 .if ${OSVERSION} < 503000
 NVVERSION=	6113
 PORTREVISION=	4
-EXTRA_PATCHES+=	${FILESDIR}/6113-*
 PLIST_SUB+=	DIFFS="" DRVSO="@comment "
 .else
-NVVERSION=	7174
-PORTREVISION=	1
+NVVERSION=	7667
 PLIST_SUB+=	DIFFS="@comment " DRVSO=""
 .endif
+EXTRA_PATCHES+=	${FILESDIR}/${NVVERSION}-*
+
+.include <bsd.port.pre.mk>
 
 # XXX Should use ${PKG_INFO} XXX
 #
@@ -75,7 +86,7 @@ PLIST_SUB+=	FREEBSD5="" FREEBSD4="@comment "
 
 post-patch: .SILENT
 # We should support -CURRENT: kill the check
-.if ${NVVERSION} == 7174
+.if ${NVVERSION} == 7667
 	${REINPLACE_CMD} '24,26d' ${WRKSRC}/src/nv-freebsd.h
 .endif
 .if defined(WITH_FREEBSD_AGP)

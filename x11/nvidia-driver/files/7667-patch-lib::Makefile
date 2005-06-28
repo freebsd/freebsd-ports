@@ -1,0 +1,11 @@
+--- lib/Makefile.orig	Fri Jun 17 09:44:23 2005
++++ lib/Makefile	Wed Jun 22 19:12:16 2005
+@@ -6,7 +6,7 @@
+ FIND_DIRS=	/usr/lib	\
+ 		${X11BASE}/lib
+ 
+-.if exists(/compat/linux)
++.if exists(/compat/linux) && !defined(WITHOUT_LINUX)
+ SUBDIR+=	compat
+ FIND_DIRS+=	/compat/linux/lib \
+ 		/compat/linux/usr/lib \
