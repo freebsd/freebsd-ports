@@ -1,0 +1,8 @@
+--- glade-java.pc.in.orig	Mon Jun 20 16:00:00 2005
++++ glade-java.pc.in	Mon Jun 20 16:02:11 2005
+@@ -9,4 +9,4 @@
+ Version: @VERSION@
+ api_version=@apiversion@
+ classpath=@INSTALLED_CLASSPATH@
+-Libs: -L@libdir@ -lgladejava
++Libs: -L@libdir@ -lgladejni-@apiversion@

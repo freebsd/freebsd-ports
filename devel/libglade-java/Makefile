@@ -6,67 +6,66 @@
 #
 
 PORTNAME=	libglade-java
-PORTVERSION=	2.4.0
-PORTREVISION=	2
+PORTVERSION=	2.10.1
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.4
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.10
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Java wrapper for libglade
 
-BUILD_DEPENDS=	${LOCALBASE}/share/java/classes/gtk${GTK_API_VERSION}-${GTK_JAVA_VERSION}.jar:${PORTSDIR}/x11-toolkits/libgtk-java \
-		${LOCALBASE}/share/java/classes/gnome${GNOME_API_VERSION}-${GNOME_JAVA_VERSION}.jar:${PORTSDIR}/x11/libgnome-java
-RUN_DEPENDS=	${LOCALBASE}/share/java/classes/gtk${GTK_API_VERSION}-${GTK_JAVA_VERSION}.jar:${PORTSDIR}/x11-toolkits/libgtk-java \
-		${LOCALBASE}/share/java/classes/gnome${GNOME_API_VERSION}-${GNOME_JAVA_VERSION}.jar:${PORTSDIR}/x11/libgnome-java
+BUILD_DEPENDS=	${JAVALIBDIR}/gtk${GTK_API_VERSION}.jar:${PORTSDIR}/x11-toolkits/libgtk-java \
+		${JAVALIBDIR}/gnome${GNOME_API_VERSION}.jar:${PORTSDIR}/x11/libgnome-java
+RUN_DEPENDS=	${JAVALIBDIR}/gtk${GTK_API_VERSION}.jar:${PORTSDIR}/x11-toolkits/libgtk-java \
+		${JAVALIBDIR}/gnome${GNOME_API_VERSION}.jar:${PORTSDIR}/x11/libgnome-java
 
 USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+USE_LIBTOOL_VER=15
 USE_JAVA=	yes
+USE_GCC=	3.4+
 JAVA_VERSION=	1.2+
 JAVA_OS=	native
 USE_GNOME=	gnomehack libglade2
 USE_REINPLACE=	yes
-CONFIGURE_ARGS=	--without-gcj-compile \
-		--with-java-prefix=${JAVA_HOME}
-CONFIGURE_ENV=	DB2="/dev/null"
+CONFIGURE_ARGS=	--without-gcj-compile
+CONFIGURE_ENV=	CPPFLAGS="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd"
 
-GLADE_API_VERSION=	2.4
-GTK_API_VERSION=	2.4
-GNOME_API_VERSION=	2.6
-GTK_JAVA_VERSION=	2.4.0
-GNOME_JAVA_VERSION=	2.6.0
-VERSION=		2.4.0
+GLADE_API_VERSION=	2.10
+GTK_API_VERSION=	2.6
+GNOME_API_VERSION=	2.10
 PLIST_SUB=		GLADE_API_VERSION=${GLADE_API_VERSION} \
-			PORTVERSION=${VERSION}
+			PORTNAME=${PORTNAME}
 
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|^GTKJAR=.*|GTKJAR=${LOCALBASE}/share/java/classes/gtk${GTK_API_VERSION}-${GTK_JAVA_VERSION}.jar| ; \
-		s|^GNOMEJAR=.*|GNOMEJAR=${LOCALBASE}/share/java/classes/gnome${GNOME_API_VERSION}-${GNOME_JAVA_VERSION}.jar|' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|@gtkapiversion@|${GTK_API_VERSION}|g ; \
-		s|@apiversion@|${GLADE_API_VERSION}|g ; \
-		s|@version@|${VERSION}|g' \
-		${WRKSRC}/src/Makefile.in \
-		${WRKSRC}/src/java/org/gnu/glade/LibGlade.java.in
-
 do-install:
 	${MKDIR} ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/lib/libgladejava${GLADE_API_VERSION}.so.${VERSION} \
-		${PREFIX}/lib
-	${LN} -sf ${PREFIX}/lib/libgladejava${GLADE_API_VERSION}.so.${VERSION} ${PREFIX}/lib/libgladejava${GLADE_API_VERSION}.so
+	${INSTALL_DATA} ${WRKSRC}/.libs/libgladejni-${GLADE_API_VERSION}.so \
+		${PREFIX}/lib/libgladejni-${GLADE_API_VERSION}.so.1
+	${LN} -sf ${PREFIX}/lib/libgladejni-${GLADE_API_VERSION}.so.1 \
+		${PREFIX}/lib/libgladejni-${GLADE_API_VERSION}.so
+	${MKDIR} ${PREFIX}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKSRC}/glade-java.pc	${PREFIX}/libdata/pkgconfig
 	${MKDIR} ${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKSRC}/lib/glade${GLADE_API_VERSION}-${VERSION}.jar \
-		${JAVAJARDIR}
-	${LN} -sf ${JAVAJARDIR}/lib/glade${GLADE_API_VERSION}-${VERSION}.jar \
-		${JAVAJARDIR}/glade${GLADE_API_VERSION}.jar
+	${INSTALL_DATA} ${WRKSRC}/glade${GLADE_API_VERSION}.jar ${JAVAJARDIR}
 
 post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/api
+	cd ${WRKSRC}/doc/api && ${FIND} . | ${CPIO} -pdmu ${DOCSDIR}/api
+	${MKDIR} ${DOCSDIR}/examples
+	cd ${WRKSRC}/doc/examples && ${FIND} . \
+		| ${CPIO} -pdmu ${DOCSDIR}/examples
+.endif
 	@${SED} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|g ; \
 		s|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%GLADE_API_VERSION%%|${GLADE_API_VERSION}|g' \
