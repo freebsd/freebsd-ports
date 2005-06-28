@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net-Server
-PORTVERSION=	0.87
-PORTREVISION=	1
+PORTVERSION=	0.88
 CATEGORIES=	net perl5
 MASTER_SITES=	http://www.seamons.com/net_server/ \
 		${MASTER_SITE_PERL_CPAN}
@@ -41,8 +40,5 @@ MAN3=		Net::Server.3 \
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/UNIX.pm:${PORTSDIR}/devel/p5-IO
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/UNIX.pm:${PORTSDIR}/devel/p5-IO
 .endif
-
-post-patch:
-	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 .include <bsd.port.post.mk>
