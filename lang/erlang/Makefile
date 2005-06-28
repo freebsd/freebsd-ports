@@ -105,14 +105,6 @@ pre-configure:
 # rest, not in share/doc/erlang as it should, because of relative
 # links in the documentation.
 post-install:
-#	@for SCRIPT in ecc elink ear escript; do \
-#		${REINPLACE_CMD} -e "s@ERLANG_EARS=.*@ERLANG_EARS=${LOCALBASE}/lib/erlang/erts-${ERTS_VSN}@" ${LOCALBASE}/bin/$${SCRIPT}; \
-#	done
-
-#	@for SCRIPT in ecc elink; do \
-#		${REINPLACE_CMD} -e "s@exec .*beam_evm@exec beam_evm@" ${LOCALBASE}/bin/$${SCRIPT}; \
-#	done
-
 	@${LN} -sf ${LOCALBASE}/lib/erlang/lib/erl_interface-*/bin/erl_call ${LOCALBASE}/bin/erl_call
 	@${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_MAN} \
 		-C ${PREFIX}/lib/erlang
