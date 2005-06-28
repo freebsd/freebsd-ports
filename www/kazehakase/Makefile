@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	kazehakase
-PORTVERSION=	0.2.7
-PORTREVISION=	1
+PORTVERSION=	0.2.8
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	${PORTNAME}/14508
+MASTER_SITE_SUBDIR=	${PORTNAME}/15343
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Kazehakase is a browser with gecko engine like Epiphany or Galeon
@@ -96,7 +95,7 @@ RUN_DEPENDS+=	estxview:${PORTSDIR}/textproc/estraier
 
 pre-everything::
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Enable Migemo (Japanese incremental search by defining WITH_MIGEMO"
+	@${ECHO_MSG} "Enable Migemo (Japanese incremental search) by defining WITH_MIGEMO"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Enable Thumbnail support by defining WITH_THUMBNAIL"
 	@${ECHO_MSG} ""

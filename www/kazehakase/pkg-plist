@@ -59,6 +59,7 @@ share/gnome/kazehakase/search-result.css
 share/gnome/pixmaps/kazehakase-icon.png
 share/locale/cs/LC_MESSAGES/kazehakase.mo
 share/locale/ja/LC_MESSAGES/kazehakase.mo
+share/locale/ru/LC_MESSAGES/kazehakase.mo
 @dirrm share/gnome/kazehakase/icons
 @dirrm share/gnome/kazehakase
 @dirrm etc/kazehakase/mozilla
