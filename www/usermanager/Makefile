@@ -1,6 +1,6 @@
 # New ports collection makefile for:	UserManager
 # Date created:				19 December 2004
-# Whom:					DanGer <danger@wilbury.sk>
+# Whom:					Daniel Gerzo <danger@rulez.sk>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://machiel.generaal.net/files/pureftpd/
 DISTNAME=	ftp_v${PORTVERSION}
 
-MAINTAINER=	danger@wilbury.sk
+MAINTAINER=	danger@rulez.sk
 COMMENT=	Easily create, change, or delete virtual PureFTPd users
 
 WRKSRC=		${WRKDIR}/ftp
