@@ -146,12 +146,28 @@ OPTIONS+=	SPF_PATCH "Implement SPF checker" off
 OPTIONS+=	TLS_DEBUG "enable additional debug information" off
 .elif defined(SLAVE_LDAP)
 OPTIONS+=	TLS "SMTP TLS support" on \
-		LDAP_CLUSTER "cluster support" on \
+		ALTQUEUE "run a QMAILQUEUE external queue" off \
+		BIGBROTHER "use the control/bigbrother program" off \
+		BIGTODO "use big_todo qmail patch" off \
+		BIND_8_COMPAT "Needed if compile fails building dns.c" off \
+		CLEARTEXTPASSWD "use cleartext passwords (Dangerous!)" off \
+		DASH_EXT "dash_ext extended mail addresses add" on \
+		DATA_COMPRESS "smtp on the fly DATA compression" on \
+		EXTERNAL_TODO "external high-performance todo processing" on \
+		IGNOREVERISIGN "disallow dns wildchar matches on gtlds" off \
+		QLDAP_CLUSTER "cluster support" on \
+		QMQP_COMPRESS "QMQP on the fly compression" on \
+		QUOTATRASH "include the Trash in the quota" off \
+		SMTPEXECCHECK "smtp DOS/Windows executable detection" on \
 		AUTOMAILDIRMAKE "the auto-maildir-make feature" on \
 		AUTOHOMEDIRMAKE "auto-homedir-make feature" on \
-		LDAP_DEBUG "possibility to log and debug imap/pop" off \
-		CLEARTEXTPASSWD "use cleartext passwords" off \
-		DASH_EXT "dash_ext extended mail addresses add" off
+		LDAP_DEBUG "possibility to log and debug imap/pop" off
+
+LDAP_PARAMS=	ALTQUEUE BIGBROTHER BIGTODO BIND_8_COMPAT\
+		CLEARTEXTPASSWD DASH_EXT DATA_COMPRESS\
+		EXTERNAL_TODO IGNOREVERISIGN QLDAP_CLUSTER\
+		QMQP_COMPRESS QUOTATRASH SMTPEXECCHECK
+
 .elif defined(SLAVE_SPAMCONTROL)
 OPTIONS+=	RELAYMAILFROM	"Open relay based on mailfrom" off \
 		QUITASAP	"Close session in case of a filter condition" off \
@@ -303,8 +319,16 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}2
 
 .if !defined(WITHOUT_TLS)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-with_tls
-USE_OPENSSL=	yes
+# we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .endif
+
+.for param in ${LDAP_PARAMS}
+.if defined(WITH_${param})
+LDAPFLAGS+=	-D${param}
+.endif
+.endfor
+
 .endif
 
 .if (defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH)) &&\
@@ -472,38 +496,33 @@ post-patch:
 	@${REINPLACE_CMD} "s|/usr/local/ssl|${OPENSSLBASE}|" \
 		${WRKSRC}/Makefile
 .elif defined(SLAVE_LDAP)
-	@${REINPLACE_CMD} "s|LDAPLIBS=-L/usr/local/lib|LDAPLIBS=-L${LOCALBASE}/lib|; \
-			   s|LDAPINCLUDES=-I/usr/local/include|LDAPINCLUDES=-I${LOCALBASE}/include|" \
+	@${REINPLACE_CMD} "s|^LDAPLIBS=-L/usr/local/lib|LDAPLIBS=-L${LOCALBASE}/lib|; \
+			   s|^LDAPINCLUDES=-I/usr/local/include|LDAPINCLUDES=-I${LOCALBASE}/include|" \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} "s|^#SHADOWLIBS=-lcrypt$$|SHADOWLIBS=-lcrypt|" \
 		${WRKSRC}/Makefile
 .if !defined(WITHOUT_TLS)
-	@${REINPLACE_CMD} "s|#TLS=|TLS=|; \
-			   s|#TLSINCLUDES=-I/usr/local/include|TLSINCLUDES=-I${OPENSSLBASE}/include|; \
-			   s|#TLSLIBS=-L/usr/local/lib|TLSLIBS=-L${OPENSSLBASE}/lib|; \
-			   s|#OPENSSLBIN=/usr/local/bin/openssl|OPENSSLBIN=${OPENSSLBASE}/bin/openssl|" \
+	@${REINPLACE_CMD} "s|^#TLS=|TLS=|; \
+			   s|^#TLSINCLUDES=-I/usr/local/include|TLSINCLUDES=-I${OPENSSLBASE}/include|; \
+			   s|^#TLSLIBS=-L/usr/local/lib|TLSLIBS=-L${OPENSSLBASE}/lib|; \
+			   s|^#OPENSSLBIN=/usr/local/bin/openssl|OPENSSLBIN=${OPENSSLBASE}/bin/openssl|" \
 		${WRKSRC}/Makefile
 .endif
-.if !defined(WITHOUT_LDAP_CLUSTER)
-	@${REINPLACE_CMD} "s|#LDAPFLAGS=-DQLDAP_CLUSTER\s+-DEXTERNAL_TODO|LDAPFLAGS\+=-DQLDAP_CLUSTER -DEXTERNAL_TODO#|" \
+.if defined(WITH_DATA_COMPRESS) || defined (WITH_QMQP_COMPRESS)
+	@${REINPLACE_CMD} "s|^#ZLIB=-lz$$|ZLIB=-lz|" \
 		${WRKSRC}/Makefile
 .endif
 .if !defined(WITHOUT_AUTOMAILDIRMAKE)
-	@${REINPLACE_CMD} "s|#MDIRMAKE=-DAUTOMAILDIRMAKE|MDIRMAKE=-DAUTOMAILDIRMAKE|" \
-		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} "s|^#MDIRMAKE=|MDIRMAKE=|" ${WRKSRC}/Makefile
 .endif
 .if !defined(WITHOUT_AUTOHOMEDIRMAKE)
-	@${REINPLACE_CMD} "s|#HDIRMAKE=-DAUTOHOMEDIRMAKE|HDIRMAKE=-DAUTOHOMEDIRMAKE|" \
-		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} "s|^#HDIRMAKE=|HDIRMAKE=|" ${WRKSRC}/Makefile
 .endif
 .if defined(WITH_LDAP_DEBUG)
-	@${REINPLACE_CMD} "s|#DEBUG=-DDEBUG|DEBUG=-DDEBUG|" \
-		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} "s|^#DEBUG=|DEBUG=|" ${WRKSRC}/Makefile
 .endif
-.if defined(WITH_CLEARTEXTPASSWD)
-	@${REINPLACE_CMD} "s|^#\s*-DCLEARTEXTPASSWD.*$$|LDAPFLAGS\+=-DCLEARTEXTPASSWD|" \
-		${WRKSRC}/Makefile
-.endif
-.if defined(WITH_DASH_EXT)
-	@${REINPLACE_CMD} "s|^# -DDASH_EXT.*$$|LDAPFLAGS\+=-DDASH_EXT|" \
+.if defined(LDAPFLAGS)
+	@${REINPLACE_CMD} "s|^#LDAPFLAGS=.*$$|LDAPFLAGS=${LDAPFLAGS}|" \
 		${WRKSRC}/Makefile
 .endif
 .endif
@@ -521,9 +540,6 @@ do-configure:
 		${FILESDIR}/pkg-install.in > ${WRKDIR}/pkg-install
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${CSH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
-.if defined(SLAVE_LDAP)
-	@${REINPLACE_CMD} 's|^cc |cc -lcrypt |' ${WRKSRC}/conf-ld ${WRKSRC}/conf-cc
-.endif
 	@${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-qmail
 .if defined(WITH_BIG_CONCURRENCY_PATCH) \
 	&& !defined(BARRIER_BIG_CONCURRENCY_PATCH) \
