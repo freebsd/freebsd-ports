@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	rsyncmanager
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.verbotenplanet.net/rsyncmanager/
+MASTER_SITES=	ftp://ftp.insidesystems.net/rsyncmanager/
 
 MAINTAINER=	kelley@insidesystems.net
 COMMENT=	Flexible rsync resource manager daemon written in ruby
@@ -18,28 +18,22 @@ RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_RUBY=	yes
-USE_RUBY_FEATURES=	1.8
+USE_RUBY_FEATURES=	ruby18
 
 NO_BUILD=	yes
 
 PORTDOCS=	README
 
-USE_RC_SUBR=	yes
-SED_SCRIPT=	-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
-		-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%RUBY_WITHOUT_SUFFIX%%,${RUBY_WITHOUT_SUFFIX},g'
-
-pre-install:
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/${PORTNAME}.sh >${WRKDIR}/${PORTNAME}.sh
+USE_RC_SUBR=	${PORTNAME}.sh
+SUB_LIST=	RUBY_WITHOUT_SUFFIX="${RUBY_WITHOUT_SUFFIX}"
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.rb ${PREFIX}/bin/${PORTNAME}.rb
-	${INSTALL_DATA} ${WRKSRC}/examples/${PORTNAME}.xml ${PREFIX}/etc/${PORTNAME}.xml.sample
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/etc/rc.d/${PORTNAME}.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME}.rb ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/documentation/${PORTNAME}.xml ${PREFIX}/etc/${PORTNAME}.xml.sample
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for docfile in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/documentation/${docfile} ${DOCSDIR}
 .endfor
 .endif
 
