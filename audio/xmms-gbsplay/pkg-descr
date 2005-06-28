@@ -1,0 +1,8 @@
+xmms-gbsplay is a XMMS input plugin which emulates the sound hardware of the
+Nintendo Game Boy(TM). It is able to play the sounds from a Game Boy(TM)
+module dump (.GBS format) in XMMS.
+
+WWW: http://gbsplay.berlios.de/
+
+- ehaupt
+ehaupt@critical.ch
