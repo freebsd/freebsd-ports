@@ -341,15 +341,14 @@ Index: src/delay_pools.c
      ch.src_addr = r->client_addr;
      ch.my_addr = r->my_addr;
      ch.my_port = r->my_port;
-Index: src/structs.h
-*** src/structs.h.orig	Wed Oct  6 00:56:14 2004
---- src/structs.h	Mon Oct 18 20:23:13 2004
+*** src/structs.h.orig	Sun Jun 26 12:45:58 2005
+--- src/structs.h	Sun Jun 26 12:48:45 2005
 ***************
-*** 609,614 ****
---- 609,619 ----
-  	int relaxed_header_parser;
+*** 610,615 ****
+--- 610,620 ----
   	int accel_uses_host_header;
   	int accel_no_pmtu_disc;
+  	int global_internal_static;
 + #if FOLLOW_X_FORWARDED_FOR
 + 	int acl_uses_indirect_client;
 + 	int delay_pool_uses_indirect_client;
@@ -359,8 +358,8 @@ Index: src/structs.h
       acl *aclList;
       struct {
 ***************
-*** 627,632 ****
---- 632,640 ----
+*** 631,636 ****
+--- 636,644 ----
   	acl_access *reply;
   	acl_address *outgoing_address;
   	acl_tos *outgoing_tos;
@@ -371,8 +370,8 @@ Index: src/structs.h
       acl_deny_info_list *denyInfoList;
       struct _authConfig {
 ***************
-*** 1623,1628 ****
---- 1631,1641 ----
+*** 1620,1625 ****
+--- 1628,1638 ----
       unsigned int internal:1;
       unsigned int body_sent:1;
       unsigned int reset_tcp:1;
@@ -385,8 +384,8 @@ Index: src/structs.h
   
   struct _link_list {
 ***************
-*** 1669,1674 ****
---- 1682,1690 ----
+*** 1666,1671 ****
+--- 1679,1687 ----
       int max_forwards;
       /* these in_addr's could probably be sockaddr_in's */
       struct in_addr client_addr;
@@ -397,8 +396,8 @@ Index: src/structs.h
       unsigned short my_port;
       HttpHeader header;
 ***************
-*** 1680,1685 ****
---- 1696,1706 ----
+*** 1677,1682 ****
+--- 1693,1703 ----
       const char *vary_headers;	/* Used when varying entities are detected. Changes how the store key is calculated */
       BODY_HANDLER *body_reader;
       void *body_reader_data;
