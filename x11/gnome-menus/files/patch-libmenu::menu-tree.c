@@ -1,5 +1,5 @@
---- libmenu/menu-tree.c.orig	Tue Mar 22 05:34:24 2005
-+++ libmenu/menu-tree.c	Wed Mar 23 14:34:04 2005
+--- libmenu/menu-tree.c.orig	Tue Jun 28 04:05:19 2005
++++ libmenu/menu-tree.c	Tue Jun 28 04:05:42 2005
 @@ -67,6 +67,12 @@
    gpointer            user_data;
  } MenuTreeMonitor;
@@ -21,7 +21,7 @@
    GSList *subdirs;
  
    guint refcount : 24;
-@@ -747,17 +754,15 @@
+@@ -750,17 +757,15 @@
      }
  }
  
@@ -42,7 +42,7 @@
    while (tmp != NULL)
      {
        retval = g_slist_prepend (retval,
-@@ -770,6 +775,22 @@
+@@ -773,6 +778,22 @@
  }
  
  GSList *
@@ -65,7 +65,7 @@
  menu_tree_directory_get_subdirs (MenuTreeDirectory *directory)
  {
    GSList *retval;
-@@ -936,6 +957,7 @@
+@@ -939,6 +960,7 @@
    retval->name             = g_strdup (name);
    retval->directory_entry  = NULL;
    retval->entries          = NULL;
@@ -73,7 +73,7 @@
    retval->subdirs          = NULL;
    retval->only_unallocated = FALSE;
    retval->refcount         = 1;
-@@ -2488,16 +2510,21 @@
+@@ -2554,16 +2576,21 @@
  }
  
  static void
@@ -101,9 +101,9 @@
  }
  
  static MenuTreeDirectory *
-@@ -2511,11 +2538,14 @@
-   MenuLayoutNode     *layout_iter;
+@@ -2576,11 +2603,14 @@
    MenuTreeDirectory  *directory;
+   DesktopEntrySet    *entry_pool;
    DesktopEntrySet    *entries;
 +  DesktopEntrySet    *excluded_entries;
    gboolean            deleted;
@@ -116,15 +116,15 @@
    g_assert (menu_layout_node_get_type (layout) == MENU_LAYOUT_NODE_MENU);
    g_assert (menu_layout_node_menu_get_name (layout) != NULL);
  
-@@ -2532,6 +2562,7 @@
-   dir_dirs = menu_layout_node_menu_get_directory_dirs (layout);
+@@ -2594,6 +2624,7 @@
+   only_unallocated = FALSE;
  
    entries = desktop_entry_set_new ();
 +  excluded_entries = desktop_entry_set_new ();
    allocated_set = desktop_entry_set_new ();
  
-   layout_iter = menu_layout_node_get_children (layout);
-@@ -2578,6 +2609,7 @@
+   entry_pool = desktop_entry_set_new ();
+@@ -2644,6 +2675,7 @@
                  if (rule_set != NULL)
                    {
                      desktop_entry_set_union (entries, rule_set);
@@ -132,7 +132,7 @@
                      desktop_entry_set_union (allocated_set, rule_set);
                      desktop_entry_set_unref (rule_set);
                    }
-@@ -2610,6 +2642,7 @@
+@@ -2676,6 +2708,7 @@
                  if (rule_set != NULL)
                    {
                      desktop_entry_set_subtract (entries, rule_set);
@@ -140,7 +140,7 @@
                      desktop_entry_set_unref (rule_set);
                    }
  
-@@ -2707,15 +2740,28 @@
+@@ -2775,14 +2808,28 @@
    if (deleted)
      {
        desktop_entry_set_unref (entries);
@@ -149,7 +149,6 @@
        return NULL;
      }
  
--  directory->entries = NULL;
 +  foreach_data.directory = directory;
 +  foreach_data.list = NULL;
    desktop_entry_set_foreach (entries,
