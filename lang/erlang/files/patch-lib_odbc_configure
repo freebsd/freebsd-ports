@@ -1,0 +1,11 @@
+--- lib/odbc/configure.orig	Sat Jun 25 18:33:21 2005
++++ lib/odbc/configure	Sat Jun 25 18:33:51 2005
+@@ -1096,7 +1096,7 @@
+ 	       echo $ac_n "checking for odbc in standard locations""... $ac_c" 1>&6
+ echo "configure:1098: checking for odbc in standard locations" >&5
+ 	         for dir in /opt/local/pgm/odbc /usr/local/odbc /usr/odbc \
+-		     /usr
++		     /usr /usr/local
+ 		 do   
+ 		    if test -f "$dir/include/sql.h"; then
+ 		      is_odbc_std_location=yes	   
