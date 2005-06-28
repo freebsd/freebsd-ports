@@ -1,0 +1,9 @@
+Data::Taxonomy::Tags will basically take care of easily managing tags for an
+item. You provide it with a string of tags and it will allow you to call
+methods to get all the tags and categories as well as add and delete tags
+from the list.
+
+WWW: http://search.cpan.org/dist/Data-Taxonomy-Tags/
+
+- Aaron Dalton
+aaron@daltons.ca

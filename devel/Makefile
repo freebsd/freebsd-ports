@@ -768,6 +768,7 @@
     SUBDIR += p5-Data-ShowTable
     SUBDIR += p5-Data-Stag
     SUBDIR += p5-Data-Table
+    SUBDIR += p5-Data-Taxonomy-Tags
     SUBDIR += p5-Data-TemporaryBag
     SUBDIR += p5-Data-TreeDumper
     SUBDIR += p5-Data-UUID
