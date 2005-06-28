@@ -1,4 +1,3 @@
-# ex:ts=8
 # New ports collection makefile for:   jdresolve
 # Date created:        15 June 2001
 # Whom:                Christophe Labouisse <christophe@labouisse.org>
@@ -8,8 +7,11 @@
 
 PORTNAME=	jdresolve
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.jdrowell.com/projects/jdresolve/
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	patch-0.6.2b1.diff
 
 MAINTAINER=	christophe@labouisse.org
 COMMENT=	A IP addresse to hostname program for httpd log files
@@ -17,7 +19,6 @@ COMMENT=	A IP addresse to hostname program for httpd log files
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_BZIP2=	yes
 USE_PERL5=	yes
 NO_BUILD=	yes
 
