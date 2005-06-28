@@ -1,0 +1,11 @@
+--- configure.orig	Mon Jun 20 16:08:34 2005
++++ configure	Mon Jun 20 16:09:54 2005
+@@ -19760,7 +19760,7 @@
+ VERSION="2.10.1"
+ WINDOWS_LIB_VERSION="2-10"
+ 
+-INSTALLED_CLASSPATH=\${prefix}/share/java/glade${apiversion}-${VERSION}.jar
++INSTALLED_CLASSPATH=\${prefix}/share/java/classes/glade${apiversion}.jar
+ INSTALLED_JNI_DIR=\${prefix}/lib/
+ 
+ 
