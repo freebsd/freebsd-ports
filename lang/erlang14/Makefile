@@ -7,6 +7,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	r10b6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang parallel
 MASTER_SITES=	http://www.erlang.org/download/        \
@@ -24,6 +25,16 @@ COMMENT=	A functional programming language from Ericsson
 
 .if !defined(WITHOUT_X11)
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+.endif
+
+.if !defined(WITHOUT_ODBC)
+DRIVER_MANAGER?=        iodbc
+
+.if ${DRIVER_MANAGER} == "unixodbc"
+LIB_DEPENDS+=           odbc.1:${PORTSDIR}/databases/unixODBC
+.else   # assume we're using iodbc
+LIB_DEPENDS+=           iodbc.3:${PORTSDIR}/databases/libiodbc
+.endif
 .endif
 
 # Set JAVABINDIR to where you have javac, if different from below
@@ -45,6 +56,10 @@ REINPLACE_ARGS=	-i
 CONFIGURE_TARGET=	# Empty
 CONFIGURE_ARGS+=	--enable-threads --enable-hipe --enable-kernel-poll
 NOPRECIOUSMAKEVARS=	yes # Prevent exporting of "ARCH"
+
+CFLAGS+=        -I${LOCALBASE}/include
+LDFLAGS+=       -L${LOCALBASE}/lib
+CONFIGURE_ENV=  CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.pre.mk>
 
