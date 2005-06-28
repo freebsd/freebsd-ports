@@ -1,0 +1,9 @@
+An extremely memory-efficient hash_map implementation. 2 bits/entry overhead!
+The Google SparseHash project contains several hash-map implementations in use
+at Google, with different performance characteristics, including an
+implementation that optimizes for space and one that optimizes for speed.
+
+WWW: http://goog-sparsehash.sf.net
+
+- Vasil Dimov
+vd@datamax.bg

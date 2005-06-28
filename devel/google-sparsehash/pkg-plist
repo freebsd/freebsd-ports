@@ -1,0 +1,26 @@
+include/google/dense_hash_map
+include/google/dense_hash_set
+include/google/sparse_hash_map
+include/google/sparse_hash_set
+include/google/sparsehash/config.h
+include/google/sparsehash/densehashtable.h
+include/google/sparsehash/hash_fun.h
+include/google/sparsehash/sparsehashtable.h
+include/google/sparsetable
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/dense_hash_map.html
+%%PORTDOCS%%%%DOCSDIR%%/dense_hash_set.html
+%%PORTDOCS%%%%DOCSDIR%%/implementation.html
+%%PORTDOCS%%%%DOCSDIR%%/performance.html
+%%PORTDOCS%%%%DOCSDIR%%/sparse_hash_map.html
+%%PORTDOCS%%%%DOCSDIR%%/sparse_hash_set.html
+%%PORTDOCS%%%%DOCSDIR%%/sparsetable.html
+@dirrm include/google/sparsehash
+@dirrm include/google
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
