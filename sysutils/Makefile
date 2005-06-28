@@ -280,6 +280,7 @@
     SUBDIR += mapchan
     SUBDIR += mcron
     SUBDIR += mdf2iso
+    SUBDIR += megarc
     SUBDIR += memdump
     SUBDIR += memfetch
     SUBDIR += memgrep
