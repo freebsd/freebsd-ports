@@ -6,63 +6,65 @@
 #
 
 PORTNAME=	libgnome-java
-PORTVERSION=	2.6.0
-PORTREVISION=	2
+PORTVERSION=	2.10.1
 CATEGORIES=	x11 java
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.10
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Java wrapper for GNOME 2
 
-BUILD_DEPENDS=	${LOCALBASE}/share/java/classes/gtk${GTK_API_VERSION}-${GTK_JAVA_VERSION}.jar:${PORTSDIR}/x11-toolkits/libgtk-java
-RUN_DEPENDS=	${LOCALBASE}/share/java/classes/gtk${GTK_API_VERSION}-${GTK_JAVA_VERSION}.jar:${PORTSDIR}/x11-toolkits/libgtk-java
+BUILD_DEPENDS=	${JAVALIBDIR}/gtk${GTK_API_VERSION}.jar:${PORTSDIR}/x11-toolkits/libgtk-java
+RUN_DEPENDS=	${JAVALIBDIR}/gtk${GTK_API_VERSION}.jar:${PORTSDIR}/x11-toolkits/libgtk-java
 
 USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+USE_LIBTOOL_VER=15
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
 JAVA_OS=	native
+USE_GCC=	3.4+
 USE_GNOME=	gnomehack libgnomeui
 USE_REINPLACE=	yes
-CONFIGURE_ARGS=	--without-gcj-compile \
-		--with-java-prefix=${JAVA_HOME}
-CONFIGURE_ENV=	DB2="/dev/null"
+CONFIGURE_ARGS=	--without-gcj-compile
+CONFIGURE_ENV=	CPPFLAGS="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd"
 
-GNOME_API_VERSION=	2.6
-GTK_API_VERSION=	2.4
-GTK_JAVA_VERSION=	2.4.0
-VERSION=		2.6.0
-PLIST_SUB=		GNOME_API_VERSION=${GNOME_API_VERSION} \
-			PORTVERSION=${VERSION}
+GNOME_API_VERSION=	2.10
+GTK_API_VERSION=	2.6
+PLIST_SUB=		GNOME_API_VERSION=${GNOME_API_VERSION} PORTNAME=${PORTNAME}
 
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|^GTKJAR=.*|GTKJAR=${LOCALBASE}/share/java/classes/gtk${GTK_API_VERSION}-${GTK_JAVA_VERSION}.jar|' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|@gtkapiversion@|${GTK_API_VERSION}|g ; \
-		s|@apiversion@|${GNOME_API_VERSION}|g ; \
-		s|@version@|${VERSION}|g' \
-		${WRKSRC}/src/Makefile.in \
-		${WRKSRC}/src/java/org/gnu/gnome/Gnome.java.in \
-		${WRKSRC}/src/java/org/gnu/gnome/Program.java.in
-
 do-install:
 	${MKDIR} ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/lib/libgnomejava${GNOME_API_VERSION}.so.${VERSION} \
-		${PREFIX}/lib
-	${LN} -sf ${PREFIX}/lib/libgnomejava${GNOME_API_VERSION}.so.${VERSION} ${PREFIX}/lib/libgnomejava${GNOME_API_VERSION}.so
+	${INSTALL_DATA} ${WRKSRC}/.libs/libgnomejni-${GNOME_API_VERSION}.so \
+		${PREFIX}/lib/libgnomejni-${GNOME_API_VERSION}.so.1
+	${LN} -sf ${PREFIX}/lib/libgnomejni-${GNOME_API_VERSION}.so.1 \
+		${PREFIX}/lib/libgnomejni-${GNOME_API_VERSION}.so
+	${MKDIR} ${PREFIX}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKSRC}/gnome2-java.pc	${PREFIX}/libdata/pkgconfig
 	${MKDIR} ${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKSRC}/lib/gnome${GNOME_API_VERSION}-${VERSION}.jar \
-		${JAVAJARDIR}
-	${LN} -sf ${JAVAJARDIR}/gnome${GNOME_API_VERSION}-${VERSION}.jar \
-		${JAVAJARDIR}/gnome${GNOME_API_VERSION}.jar
+	${INSTALL_DATA} ${WRKSRC}/gnome${GNOME_API_VERSION}.jar ${JAVAJARDIR}
 
 post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}
+	${MKDIR} ${PREFIX}/share/${PORTNAME}/tutorial
+	${INSTALL_DATA} ${WRKSRC}/doc/tutorial/* ${PREFIX}/share/${PORTNAME}/tutorial
+	${MKDIR} ${DOCSDIR}/api
+	cd ${WRKSRC}/doc/api && ${FIND} . | ${CPIO} -pdmu ${DOCSDIR}/api
+	${MKDIR} ${DOCSDIR}/examples
+	cd ${WRKSRC}/doc/examples && ${FIND} . \
+		| ${CPIO} -pdmu ${DOCSDIR}/examples
+.endif
 	@${SED} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|g ; \
 		s|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%GNOME_API_VERSION%%|${GNOME_API_VERSION}|g' \

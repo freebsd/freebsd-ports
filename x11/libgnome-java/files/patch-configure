@@ -1,0 +1,11 @@
+--- configure.orig	Sun Jun 19 13:17:59 2005
++++ configure	Sun Jun 19 13:18:46 2005
+@@ -19514,7 +19514,7 @@
+ apiversion="2.10"
+ VERSION="2.10.1"
+ 
+-INSTALLED_CLASSPATH=\${prefix}/share/java/gnome${apiversion}-${VERSION}.jar
++INSTALLED_CLASSPATH=\${prefix}/share/java/classes/gnome${apiversion}.jar
+ INSTALLED_JNI_DIR=\${prefix}/lib/
+ 
+ 
