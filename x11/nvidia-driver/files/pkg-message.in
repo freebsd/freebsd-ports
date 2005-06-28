@@ -23,4 +23,4 @@ linux.ko is available as well (or have it compiled in kernel).
 
 Note that this driver does not support PAE-enabled kernels.
 
-See ${PREFIX}/share/doc/NVIDIA_GLX-1.0/README for more information.
+See %%PREFIX%%/share/doc/NVIDIA_GLX-1.0/README for more information.
