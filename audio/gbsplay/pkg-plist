@@ -1,0 +1,9 @@
+bin/gbsplay
+bin/gbsinfo
+@unexec if cmp -s %D/etc/gbsplayrc %D/etc/gbsplayrc.default; then rm -f %D/etc/gbsplayrc; fi
+etc/gbsplayrc.default
+@exec [ -f %B/gbsplayrc ] || cp %B/%f %B/gbsplayrc
+share/locale/de/LC_MESSAGES/gbsplay.mo
+share/locale/en/LC_MESSAGES/gbsplay.mo
+%%EXAMPLESDIR%%/nightmode.gbs
+@dirrm %%EXAMPLESDIR%%
