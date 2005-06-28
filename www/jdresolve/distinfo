@@ -1,2 +1,4 @@
-MD5 (jdresolve-0.6.1.tar.bz2) = f7eb2ef7d1ce517803e2f2fa051a99c1
-SIZE (jdresolve-0.6.1.tar.bz2) = 40960
+MD5 (jdresolve-0.6.1.tar.gz) = 916a1e0023d2d18e2b2e8efd4efe23c5
+SIZE (jdresolve-0.6.1.tar.gz) = 51200
+MD5 (patch-0.6.2b1.diff) = b1f6147a4b1f10ec1b77ed11ca3c9634
+SIZE (patch-0.6.2b1.diff) = 1222
