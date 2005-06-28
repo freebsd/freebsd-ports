@@ -2576,6 +2576,7 @@ gbase		ports/converters/gbase
 gbe		ports/emulators/gbe
 gbib		ports/databases/gbib
 gbottler	ports/games/gbottler
+gbsplay		ports/audio/gbsplay
 gbuffy		ports/mail/gbuffy
 gcal		ports/deskutils/gcal
 gcalctool	ports/math/gcalctool
@@ -12746,6 +12747,7 @@ xmms-finespectrum	ports/graphics/xmms-finespectrum
 xmms-fishmatic	ports/graphics/xmms-fishmatic
 xmms-flac	ports/audio/xmms-flac
 xmms-fxt	ports/audio/xmms-fxt
+xmms-gbsplay	ports/audio/xmms-gbsplay
 xmms-gdancer	ports/graphics/xmms-gdancer
 xmms-goom	ports/graphics/xmms-goom
 xmms-imms	ports/audio/xmms-imms
