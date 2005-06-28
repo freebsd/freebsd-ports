@@ -84,7 +84,7 @@ post-patch:
 
 post-build:
 	@${SED} -e 's,%%DOCSDIR%%,${DOCSDIR},' \
-		< ${.CURDIR}/pkg-message > ${PKGMESSAGE}
+		< ${MASTERDIR}/pkg-message > ${PKGMESSAGE}
 
 do-install:
 .ifndef(WITHOUT_CORE)
