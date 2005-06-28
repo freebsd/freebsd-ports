@@ -1,0 +1,8 @@
+--- gconf-java.pc.in.orig	Mon Jun 20 17:29:54 2005
++++ gconf-java.pc.in	Mon Jun 20 17:30:13 2005
+@@ -9,4 +9,4 @@
+ Version: @VERSION@
+ api_version=@apiversion@
+ classpath=@INSTALLED_CLASSPATH@
+-Libs: -L@libdir@ -lgconfjava
++Libs: -L@libdir@ -lgconfjni-@apiversion@
