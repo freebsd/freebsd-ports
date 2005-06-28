@@ -1,6 +1,25 @@
 --- configure.in.orig	Tue Jun 14 00:41:54 2005
-+++ configure.in	Thu Jun 23 15:14:13 2005
-@@ -387,9 +387,6 @@
++++ configure.in	Tue Jun 28 20:47:59 2005
+@@ -176,9 +176,15 @@
+   sendmailver_b=`echo $sendmailver | awk -F. '{printf $2}'`
+   sendmailver_c=`echo $sendmailver | awk -F. '{printf $3}'`
+ 
+-  AC_DEFINE_UNQUOTED(SENDMAIL_VERSION_A, $sendmailver_a, [major version of Sendmail])
+-  AC_DEFINE_UNQUOTED(SENDMAIL_VERSION_B, $sendmailver_b, [minor version of Sendmail])
+-  AC_DEFINE_UNQUOTED(SENDMAIL_VERSION_C, $sendmailver_c, [subversion of Sendmail])
++  if echo "$sendmailver_a" | egrep -q '^[0-9]+$'; then
++    AC_DEFINE_UNQUOTED(SENDMAIL_VERSION_A, $sendmailver_a, [major version of Sendmail])
++  fi
++  if echo "$sendmailver_b" | egrep -q '^[0-9]+$'; then
++    AC_DEFINE_UNQUOTED(SENDMAIL_VERSION_B, $sendmailver_b, [minor version of Sendmail])
++  fi
++  if echo "$sendmailver_c" | egrep -q '^[0-9]+$'; then
++    AC_DEFINE_UNQUOTED(SENDMAIL_VERSION_C, $sendmailver_c, [subversion of Sendmail])
++  fi
+ 
+ fi
+ 
+@@ -387,9 +393,6 @@
      ;;
  freebsd*)
      if test "$have_pthreads" = "yes"; then
@@ -10,7 +29,7 @@
  	TH_SAFE="-thread-safe"
  	AC_DEFINE(CL_THREAD_SAFE,1,[thread safe])
  	AC_DEFINE(_REENTRANT,1,[thread safe])
-@@ -732,7 +729,7 @@
+@@ -732,7 +735,7 @@
  
  AC_ARG_ENABLE(gethostbyname_r,
  [  --disable-gethostbyname_r	  disable support for gethostbyname_r],
