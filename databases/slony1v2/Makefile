@@ -15,6 +15,7 @@ COMMENT=	PostgreSQL master to multiple replicas replication system
 
 PGSQL_PORT=	${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 RUN_DEPENDS=	${LOCALBASE}/bin/postmaster:${PGSQL_PORT}
+BUILD_DEPENDS=	${LOCALBASE}/bin/postmaster:${PGSQL_PORT}
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
