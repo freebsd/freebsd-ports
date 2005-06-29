@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Jul 26 14:40:46 2004
-+++ Makefile.in	Thu Oct 28 10:51:40 2004
+--- Makefile.in	Sat Jun  4 16:39:25 2005
++++ Makefile.in	Thu Jun  9 07:12:23 2005
 @@ -59,2 +59,4 @@
  INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
 +GENERIC_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/generic
@@ -54,7 +54,7 @@
 @@ -641,7 +661,13 @@
  	@echo "Installing header files";
 -	@for i in $(GENERIC_DIR)/tcl.h $(GENERIC_DIR)/tclDecls.h \
--		$(GENERIC_DIR)/tclPlatDecls.h ; \
+-		$(GENERIC_DIR)/tclPlatDecls.h; \
 +	@for i in $(GENERIC_DIR)/*.h ; \
  	    do \
 -	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
@@ -68,17 +68,29 @@
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tclDecls.h $(INCLUDE_INSTALL_DIR)/tclDecls.h
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tclPlatDecls.h $(INCLUDE_INSTALL_DIR)/tclPlatDecls.h
  	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)";
-@@ -703,3 +729,2 @@
- 	@echo "Cross-linking top-level (.1) docs";
--	@$(UNIX_DIR)/mkLinks $(MKLINKS_FLAGS) $(MAN1_INSTALL_DIR)
- 	@echo "Installing C API (.3) docs";
-@@ -713,3 +738,2 @@
- 	@echo "Cross-linking C API (.3) docs";
--	@$(UNIX_DIR)/mkLinks $(MKLINKS_FLAGS) $(MAN3_INSTALL_DIR)
- 	@echo "Installing command (.n) docs";
-@@ -723,3 +747,10 @@
- 	@echo "Cross-linking command (.n) docs";
--	@$(UNIX_DIR)/mkLinks $(MKLINKS_FLAGS) $(MANN_INSTALL_DIR)
+@@ -712,18 +738,20 @@
+ 		fi; \
+ 	    done;
+-	@echo "Installing and cross-linking top-level (.1) docs";
+-	@for i in $(TOP_DIR)/doc/*.1; do \
+-	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i $(MAN1_INSTALL_DIR); \
+-	done
++	@echo "Installing top-level (.1) docs";
++	${BSD_INSTALL_MAN} $(TOP_DIR)/doc/*.1 $(MAN1_INSTALL_DIR)/
+ 
+-	@echo "Installing and cross-linking C API (.3) docs";
+-	@for i in $(TOP_DIR)/doc/*.3; do \
+-	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i $(MAN3_INSTALL_DIR); \
+-	done
++	@echo "Installing C API (.3) docs";
++	${BSD_INSTALL_MAN} $(TOP_DIR)/doc/*.3 $(MAN3_INSTALL_DIR)/
+ 
+-	@echo "Installing and cross-linking command (.n) docs";
+-	@for i in $(TOP_DIR)/doc/*.n; do \
+-	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i $(MANN_INSTALL_DIR); \
+-	done
++	@echo "Installing command (.n) docs";
++	${BSD_INSTALL_MAN} $(TOP_DIR)/doc/*.n $(MANN_INSTALL_DIR)/
 +	@echo "**********"
 +	@echo "IMPORTANT:"
 +	@echo "**********"
@@ -88,3 +100,4 @@
 +	@echo "There are NOT default place, but good place to avoid"
 +	@echo "conflicting with another version of Tcl/Tks."
  
+ # Optional target to install private headers

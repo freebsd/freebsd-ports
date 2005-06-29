@@ -1,26 +1,26 @@
---- Makefile.in.orig	Thu Jul 29 14:57:48 2004
-+++ Makefile.in	Thu Oct 28 11:17:38 2004
-@@ -64,2 +64,4 @@
+--- Makefile.in	Fri Jun  3 15:59:49 2005
++++ Makefile.in	Thu Jun  9 08:35:12 2005
+@@ -65,2 +65,4 @@
  INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
 +GENERIC_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/generic
 +UNIX_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/unix
  
-@@ -115,3 +117,3 @@
+@@ -131,3 +133,3 @@
  #CFLAGS			= $(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
 -CFLAGS			= @CFLAGS_DEFAULT@ @CFLAGS@
 +CFLAGS			?= @CFLAGS_DEFAULT@ @CFLAGS@
  
-@@ -239,3 +241,3 @@
+@@ -258,3 +260,3 @@
  SHLIB_LD_LIBS		= @SHLIB_LD_LIBS@
 -TK_SHLIB_LD_EXTRAS	= @TK_SHLIB_LD_EXTRAS@
 +TK_SHLIB_LD_EXTRAS	= @TCL_SHLIB_LD_EXTRAS@
  
-@@ -388,2 +390,4 @@
+@@ -469,2 +471,4 @@
  
 +INSTALL_HDRS = tk.h tkDecls.h tkInt.h tkIntXlibDecls.h
 +
  DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
-@@ -407,2 +411,8 @@
+@@ -488,2 +492,8 @@
  	@MAKE_LIB@
 +	ln -sf @TK_LIB_FILE@ libtk${SHORT_TK_VER}.so
 +
@@ -29,14 +29,14 @@
 +	ar cr libtk${SHORT_TK_VER}.a ${OBJS}
 +	$(RANLIB) libtk${SHORT_TK_VER}.a
  
-@@ -509,3 +519,4 @@
+@@ -607,3 +617,4 @@
  
 -install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) wish
 +install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) \
 +	libtk${SHORT_TK_VER}.a wish
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) $(PKG_INSTALL_DIR); \
-@@ -535,6 +546,11 @@
- 	@chmod 555 $(LIB_INSTALL_DIR)/$(LIB_FILE)
+@@ -639,6 +650,11 @@
+ 	    fi
 +	@ln -sf $(LIB_INSTALL_DIR)/$(TK_LIB_FILE) $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.so
 +	@echo "Installing libtk${SHORT_TK_VER}.a"
 +	@$(INSTALL_DATA) libtk${SHORT_TK_VER}.a $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.a
@@ -48,38 +48,46 @@
 +	@echo "Installing tkConfig.sh to $(LIB_INSTALL_DIR)/tk$(VERSION)"
 +	@mkdir -p $(LIB_INSTALL_DIR)/tk$(VERSION)
 +	@$(INSTALL_DATA) tkConfig.sh $(LIB_INSTALL_DIR)/tk$(VERSION)/tkConfig.sh
- 	@if test "$(TK_BUILD_EXP_FILE)" != ""; then \
-@@ -551,2 +567,3 @@
- 	@for i in $(INCLUDE_INSTALL_DIR) \
+ 	@if test "$(STUB_LIB_FILE)" != "" ; then \
+@@ -653,2 +669,3 @@
+ 	for i in $(INCLUDE_INSTALL_DIR) $${XLIB_INCLUDE_INSTALL_DIR} \
 +		$(GENERIC_INCLUDE_INSTALL_DIR) $(UNIX_INCLUDE_INSTALL_DIR) \
  		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images \
-@@ -565,6 +582,14 @@
+@@ -667,7 +684,10 @@
  	@echo "Installing header files";
 -	@for i in $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDecls.h \
--		$(GENERIC_DIR)/tkPlatDecls.h ; \
-+	@for i in $(GENERIC_DIR)/*.h ; \
+-		$(GENERIC_DIR)/tkPlatDecls.h $(@TK_WINDOWINGSYSTEM@_HDRS) ; \
++	${BSD_INSTALL_DATA} $(GENERIC_DIR)/*.h $(GENERIC_INCLUDE_INSTALL_DIR)/
++	${BSD_INSTALL_DATA} $(UNIX_DIR)/*.h $(UNIX_INCLUDE_INSTALL_DIR)/
++	@for i in $(INSTALL_HDRS) ; \
  	    do \
 -	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
-+	    $(INSTALL_DATA) $$i $(GENERIC_INCLUDE_INSTALL_DIR); \
-+	    done;
-+	@for i in $(UNIX_DIR)/*.h ; \
-+	    do \
-+	    $(INSTALL_DATA) $$i $(UNIX_INCLUDE_INSTALL_DIR); \
-+	    done;
-+	@for i in $(INSTALL_HDRS) ; \
-+  	    do \
+-	    done;
 +	    j=`basename $$i` ; \
 +	    ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/$$j $(INCLUDE_INSTALL_DIR)/$$j ; \
++	done
++
+ 	@list='$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)'; for i in $$list ; \
+@@ -742,16 +762,8 @@
  	    done;
-@@ -645,3 +670,2 @@
- 	@echo "Cross-linking top-level (.1) docs";
--	@$(UNIX_DIR)/mkLinks $(MKLINKS_FLAGS) $(MAN1_INSTALL_DIR)
- 	@echo "Installing C API (.3) docs";
-@@ -655,3 +679,2 @@
- 	@echo "Cross-linking top-level (.3) docs";
--	@$(UNIX_DIR)/mkLinks $(MKLINKS_FLAGS) $(MAN3_INSTALL_DIR)
- 	@echo "Installing command (.n) docs";
-@@ -665,3 +688,2 @@
- 	@echo "Cross-linking command (.n) docs";
--	@$(UNIX_DIR)/mkLinks $(MKLINKS_FLAGS) $(MANN_INSTALL_DIR)
+-	@echo "Installing and cross-linking top-level (.1) docs";
+-	@for i in $(TOP_DIR)/doc/*.1; do \
+-	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i $(MAN1_INSTALL_DIR); \
+-	done
+-
+-	@echo "Installing and cross-linking C API (.3) docs";
+-	@for i in $(TOP_DIR)/doc/*.3; do \
+-	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i $(MAN3_INSTALL_DIR); \
+-	done
+-
+-	@echo "Installing and cross-linking command (.n) docs";
+-	@for i in $(TOP_DIR)/doc/*.n; do \
+-	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i $(MANN_INSTALL_DIR); \
+-	done
++	@echo "Installing top-level (.1) docs";
++	${BSD_INSTALL_MAN} $(TOP_DIR)/doc/*.1 $(MAN1_INSTALL_DIR)
++	@echo "Installing C API (.3) docs";
++	${BSD_INSTALL_MAN} $(TOP_DIR)/doc/*.3 $(MAN3_INSTALL_DIR)
++	@echo "Installing command (.n) docs";
++	${BSD_INSTALL_MAN} $(TOP_DIR)/doc/*.n $(MANN_INSTALL_DIR)
  
