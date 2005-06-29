@@ -32,7 +32,9 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps --with-openssl \
 
 USE_OPENSSL=	yes
 
-.if !defined(WITHOUT_BIND9_THREADS) || defined(PACKAGE_BUILDING)
+# ISC staff has informed me that for 9.3.x, threads are always a bad idea.
+# Leave the affirmative option for those that want to experiment.
+.if defined(WITH_BIND9_THREADS)
 CONFIGURE_ARGS+=	--enable-threads
 .else
 CONFIGURE_ARGS+=	--disable-threads
