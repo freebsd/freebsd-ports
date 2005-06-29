@@ -26,8 +26,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 GNU_CONFIGURE=	yes
 TK_VER=		8.4
 SHORT_TK_VER=	84
-CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl${TK_VER} \
-		--includedir=${LOCALBASE}/include/tk${TK_VER}
+CONFIGURE_ARGS=	--enable-shared --with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
+		--includedir=${PREFIX}/include/tk${TK_VER}
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk${SHORT_TK_VER}.so.1
 MAKE_ENV=	SHORT_TK_VER=${SHORT_TK_VER}
 PLIST_SUB=	TK_VER=${TK_VER} SHORT_TK_VER=${SHORT_TK_VER}
