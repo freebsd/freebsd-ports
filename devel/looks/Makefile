@@ -19,6 +19,7 @@ FETCH_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 DISTDATE=	20050325
 
 FETCH_CMD=	${LOCALBASE}/bin/wget
+FETCH_BEFORE_ARGS=	--no-check-certificate
 DISABLE_SIZE=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
