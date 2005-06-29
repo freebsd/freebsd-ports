@@ -49,6 +49,10 @@ OPTIONS=	IODBC		"iODBC support"				on \
 BROKEN=		"Does not compile on !i386"
 .endif
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile"
+.endif
+
 # OPT_CLIPLIBS contains the optional subdirectories built by
 # the patched ${WRKSRC}/cliplibs/Makefile
 # Not currently built: clip-oracle
