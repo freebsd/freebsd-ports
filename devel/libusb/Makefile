@@ -18,6 +18,6 @@ COMMENT=	Library giving userland programs access to USB devices
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-build-docs
 INSTALLS_SHLIB=	yes
-USE_GCC=	3.1+
+USE_LIBTOOL_VER=15
 
 .include <bsd.port.mk>
