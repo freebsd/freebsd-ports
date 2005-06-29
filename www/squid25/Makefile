@@ -66,7 +66,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -82,7 +82,7 @@ PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
 PATCHFILES=	squid-2.5.STABLE10-content_length.patch \
 		squid-2.5.STABLE10-spanish.patch \
 		squid-2.5.STABLE10-internal_date.patch \
-		squid-2.5.STABLE10-chroot.patch \
+		squid-2.5.STABLE10-chroot-2.patch \
 		squid-2.5.STABLE10-transparent.patch \
 		squid-2.5.STABLE10-redirect_flags.patch \
 		squid-2.5.STABLE10-cache_dir_change.patch \
