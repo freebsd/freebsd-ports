@@ -1,0 +1,11 @@
+Read data from Excel spread sheets without Microsoft! Provides an API to allow
+any application to read Excel documents. The xlreader tool converts Excel data
+to tab delimited, CSV or SQL inserts. Written in C. Based on the the Java
+version by Andrew Khan.
+
+This project was designed out of frustration.
+
+WWW: http://www.giffin.org/xlreader.php
+
+- ehaupt
+ehaupt@critical.ch
