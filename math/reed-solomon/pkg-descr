@@ -1,0 +1,7 @@
+This is a port of Phil Karn's Reed-Solomon CODEC library. This package may be
+useful to programmers working on data communications software.
+
+WWW: http://www.ka9q.net/code/fec/
+
+- Thomas Sandford
+freebsduser@paradisegreen.co.uk

@@ -218,6 +218,7 @@
     SUBDIR += qtiplot
     SUBDIR += qwtplot3d
     SUBDIR += rascal
+    SUBDIR += reed-solomon
     SUBDIR += rpc
     SUBDIR += rpy
     SUBDIR += ruby-algebra

@@ -1,0 +1,4 @@
+include/rs.h
+lib/librs.a
+lib/librs.so
+lib/librs.so.4.0.0
