@@ -1,0 +1,11 @@
+pynids is a python wrapper for libnids, a Network Intrusion Detection
+System library offering sniffing, IP defragmentation, TCP stream
+reassembly and TCP port scan detection. Let your own python routines
+examine (or kill) network conversations.
+
+pynids is free software, licensed under the GPL.
+
+WWW: http://pilcrow.madison.wi.us/pynids/
+
+- Corey Smith
+corsmith@gmail.com
