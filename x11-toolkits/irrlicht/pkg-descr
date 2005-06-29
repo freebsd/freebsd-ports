@@ -1,0 +1,11 @@
+The Irrlicht Engine is an open source high performance realtime 3D engine
+written in C++.  It is completely cross-platform, using D3D, OpenGL and
+its own software renderer, and has all of the state-of-the-art features
+which can be found in commercial 3d engines.
+
+It has a huge active community, and there are lots of games in development that
+use the engine.  You can find enhancements for Irrlicht all over the web, like
+alternative terrain renderers, portal renderers, world layers, tutorials,
+editors, bindings for java, perl, ruby, python, and so on.
+
+WWW: http://irrlicht.sf.net/

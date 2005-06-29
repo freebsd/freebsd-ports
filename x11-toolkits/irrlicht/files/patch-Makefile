@@ -1,0 +1,51 @@
+--- Makefile.orig	Wed May 25 18:43:26 2005
++++ Makefile	Sun Jun 26 21:07:02 2005
+@@ -1,29 +1,38 @@
+ # Irrlicht Engine 0.10.0
+ # Makefile for Linux, created from Bloodshed Win32 Makefile by N.Gebhardt.
+ 
+-CPP  = g++ 
+-LINKOBJ  = CGUIButton.o CGUICheckbox.o CGUIComboBox.o CGUIContextMenu.o CGUIEditBox.o CGUIEnvironment.o CGUIFileOpenDialog.o CGUIFont.o CGUIImage.o CGUIInOutFader.o CGUIListBox.o CGUIMenu.o CGUIMeshViewer.o CGUIMessageBox.o CGUIModalScreen.o CGUIScrollBar.o CGUISkin.o CGUIStaticText.o CGUITabControl.o CGUIToolBar.o CGUIWindow.o CSoftwareDriver.o CSoftwareTexture.o CTRFlat.o CTRFlatWire.o CTRGouraud.o CTRGouraudWire.o CTRTextureFlat.o CTRTextureFlatWire.o CTRTextureGouraud.o CTRTextureGouraudAdd.o CTRTextureGouraudNoZ.o CTRTextureGouraudWire.o CZBuffer.o COpenGLDriver.o COpenGLNormalMapRenderer.o COpenGLParallaxMapRenderer.o COpenGLShaderMaterialRenderer.o COpenGLTexture.o CD3D8Driver.o CD3D8NormalMapRenderer.o CD3D8ParallaxMapRenderer.o CD3D8ShaderMaterialRenderer.o CD3D8Texture.o CColorConverter.o CFPSCounter.o CImage.o CImageLoaderBmp.o CImageLoaderJPG.o CImageLoaderPCX.o CImageLoaderPNG.o CImageLoaderPSD.o CImageLoaderTGA.o CNullDriver.o CD3D9Driver.o CD3D9HLSLMaterialRenderer.o CD3D9NormalMapRenderer.o CD3D9ParallaxMapRenderer.o CD3D9ShaderMaterialRenderer.o CD3D9Texture.o CVideoModeList.o C3DSMeshFileLoader.o CAnimatedMeshMD2.o CAnimatedMeshMS3D.o CAnimatedMeshSceneNode.o CBillboardSceneNode.o CCameraFPSSceneNode.o CCameraMayaSceneNode.o CCameraSceneNode.o CColladaFileLoader.o CCSMLoader.o CDefaultMeshFormatLoader.o CDMFLoader.o CDummyTransformationSceneNode.o CEmptySceneNode.o CGeometryCreator.o CLightSceneNode.o CLMTSMeshFileLoader.o CMeshManipulator.o CMeshSceneNode.o CMetaTriangleSelector.o CMY3DMeshFileLoader.o COCTLoader.o COctTreeSceneNode.o COctTreeTriangleSelector.o CParticleBoxEmitter.o CParticleFadeOutAffector.o CParticleGravityAffector.o CParticlePointEmitter.o CParticleSystemSceneNode.o CQ3LevelMesh.o CSceneCollisionManager.o CSceneManager.o CSceneNodeAnimatorCollisionResponse.o CSceneNodeAnimatorDelete.o CSceneNodeAnimatorFlyCircle.o CSceneNodeAnimatorFlyStraight.o CSceneNodeAnimatorFollowSpline.o CSceneNodeAnimatorRotation.o CSceneNodeAnimatorTexture.o CShadowVolumeSceneNode.o CSkyBoxSceneNode.o CStaticMeshOBJ.o CTerrainSceneNode.o CTerrainTriangleSelector.o CTestSceneNode.o CTextSceneNode.o CTriangleBBSelector.o CTriangleSelector.o CWaterSurfaceSceneNode.o CXAnimationPlayer.o CXFileReader.o CXMeshFileLoader.o CFileList.o CFileSystem.o CLimitReadFile.o CMemoryReadFile.o CReadFile.o CWriteFile.o CXMLReader.o CXMLWriter.o CZipReader.o irrXML.o zlib/adler32.o zlib/compress.o zlib/crc32.o zlib/deflate.o zlib/inffast.o zlib/inflate.o zlib/inftrees.o zlib/trees.o zlib/uncompr.o zlib/zutil.o jpeglib/jcapimin.o jpeglib/jcapistd.o jpeglib/jccoefct.o jpeglib/jccolor.o jpeglib/jcdctmgr.o jpeglib/jchuff.o jpeglib/jcinit.o jpeglib/jcmainct.o jpeglib/jcmarker.o jpeglib/jcmaster.o jpeglib/jcomapi.o jpeglib/jcparam.o jpeglib/jcphuff.o jpeglib/jcprepct.o jpeglib/jcsample.o jpeglib/jctrans.o jpeglib/jdapimin.o jpeglib/jdapistd.o jpeglib/jdatadst.o jpeglib/jdatasrc.o jpeglib/jdcoefct.o jpeglib/jdcolor.o jpeglib/jddctmgr.o jpeglib/jdhuff.o jpeglib/jdinput.o jpeglib/jdmainct.o jpeglib/jdmarker.o jpeglib/jdmaster.o jpeglib/jdmerge.o jpeglib/jdphuff.o jpeglib/jdpostct.o jpeglib/jdsample.o jpeglib/jdtrans.o jpeglib/jerror.o jpeglib/jfdctflt.o jpeglib/jfdctfst.o jpeglib/jfdctint.o jpeglib/jidctflt.o jpeglib/jidctfst.o jpeglib/jidctint.o jpeglib/jidctred.o jpeglib/jmemmgr.o jpeglib/jmemnobs.o jpeglib/jquant1.o jpeglib/jquant2.o jpeglib/jutils.o jpeglib/rdbmp.o jpeglib/rdcolmap.o jpeglib/rdgif.o jpeglib/rdppm.o jpeglib/rdrle.o jpeglib/rdswitch.o jpeglib/rdtarga.o jpeglib/transupp.o jpeglib/wrbmp.o jpeglib/wrgif.o jpeglib/wrppm.o jpeglib/wrrle.o jpeglib/wrtarga.o libpng/png.o libpng/pngerror.o libpng/pngget.o libpng/pngmem.o libpng/pngpread.o libpng/pngread.o libpng/pngrio.o libpng/pngrtran.o libpng/pngrutil.o libpng/pngset.o libpng/pngtrans.o libpng/pngwio.o libpng/pngwrite.o libpng/pngwtran.o libpng/pngwutil.o CIrrDeviceLinux.o CIrrDeviceStub.o CIrrDeviceWin32.o CLogger.o COSOperator.o CStringParameters.o Irrlicht.o os.o $(RES)
+-LIBS =  -L"/usr/X11R6/lib" -L"jpeglib" -L"zlib" --no-export-all-symbols --add-stdcall-alias -lGL -lXxf86vm
+-CXXINCS = -I"include/" -I"zlib/"
++.SUFFIXES: .So
++
++CPP  = $(CXX)
++LINKOBJ  = CGUIButton.o CGUICheckBox.o CGUIComboBox.o CGUIContextMenu.o CGUIEditBox.o CGUIEnvironment.o CGUIFileOpenDialog.o CGUIFont.o CGUIImage.o CGUIInOutFader.o CGUIListBox.o CGUIMenu.o CGUIMeshViewer.o CGUIMessageBox.o CGUIModalScreen.o CGUIScrollBar.o CGUISkin.o CGUIStaticText.o CGUITabControl.o CGUIToolBar.o CGUIWindow.o CSoftwareDriver.o CSoftwareTexture.o CTRFlat.o CTRFlatWire.o CTRGouraud.o CTRGouraudWire.o CTRTextureFlat.o CTRTextureFlatWire.o CTRTextureGouraud.o CTRTextureGouraudAdd.o CTRTextureGouraudNoZ.o CTRTextureGouraudWire.o CZBuffer.o COpenGLDriver.o COpenGLNormalMapRenderer.o COpenGLParallaxMapRenderer.o COpenGLShaderMaterialRenderer.o COpenGLTexture.o CD3D8Driver.o CD3D8NormalMapRenderer.o CD3D8ParallaxMapRenderer.o CD3D8ShaderMaterialRenderer.o CD3D8Texture.o CColorConverter.o CFPSCounter.o CImage.o CImageLoaderBmp.o CImageLoaderJPG.o CImageLoaderPCX.o CImageLoaderPNG.o CImageLoaderPSD.o CImageLoaderTGA.o CNullDriver.o CD3D9Driver.o CD3D9HLSLMaterialRenderer.o CD3D9NormalMapRenderer.o CD3D9ParallaxMapRenderer.o CD3D9ShaderMaterialRenderer.o CD3D9Texture.o CVideoModeList.o C3DSMeshFileLoader.o CAnimatedMeshMD2.o CAnimatedMeshMS3D.o CAnimatedMeshSceneNode.o CBillboardSceneNode.o CCameraFPSSceneNode.o CCameraMayaSceneNode.o CCameraSceneNode.o CColladaFileLoader.o CCSMLoader.o CDefaultMeshFormatLoader.o CDMFLoader.o CDummyTransformationSceneNode.o CEmptySceneNode.o CGeometryCreator.o CLightSceneNode.o CLMTSMeshFileLoader.o CMeshManipulator.o CMeshSceneNode.o CMetaTriangleSelector.o CMY3DMeshFileLoader.o COCTLoader.o COctTreeSceneNode.o COctTreeTriangleSelector.o CParticleBoxEmitter.o CParticleFadeOutAffector.o CParticleGravityAffector.o CParticlePointEmitter.o CParticleSystemSceneNode.o CQ3LevelMesh.o CSceneCollisionManager.o CSceneManager.o CSceneNodeAnimatorCollisionResponse.o CSceneNodeAnimatorDelete.o CSceneNodeAnimatorFlyCircle.o CSceneNodeAnimatorFlyStraight.o CSceneNodeAnimatorFollowSpline.o CSceneNodeAnimatorRotation.o CSceneNodeAnimatorTexture.o CShadowVolumeSceneNode.o CSkyBoxSceneNode.o CStaticMeshOBJ.o CTerrainSceneNode.o CTerrainTriangleSelector.o CTestSceneNode.o CTextSceneNode.o CTriangleBBSelector.o CTriangleSelector.o CWaterSurfaceSceneNode.o CXAnimationPlayer.o CXFileReader.o CXMeshFileLoader.o CFileList.o CFileSystem.o CLimitReadFile.o CMemoryReadFile.o CReadFile.o CWriteFile.o CXMLReader.o CXMLWriter.o CZipReader.o irrXML.o CIrrDeviceLinux.o CIrrDeviceStub.o CIrrDeviceWin32.o CLogger.o COSOperator.o CStringParameters.o Irrlicht.o os.o $(RES)
++LINKOBJ_SHARED= ${LINKOBJ:.o=.So}
++LIBS =  -L$(X11BASE)/lib -L$(LOCALBASE)/lib --no-export-all-symbols --add-stdcall-alias -lGL -lXxf86vm -lz -ljpeg -lpng
++CXXINCS = -Iinclude
+ BIN  = libIrrlicht.a
+-CXXFLAGS = $(CXXINCS) -DIRRLICHT_EXPORTS=1
++BIN_SHARED  = libIrrlicht.so.1
++CXXFLAGS = $(CXXINCS) -DIRRLICHT_EXPORTS=1 ${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include
++
++.cpp.So:
++	${CXX} ${CXXFLAGS} -fPIC -c ${.IMPSRC} -o ${.TARGET}
+ 
+-all: $(LINKOBJ) $(BIN)
+-	cp libIrrlicht.a ../../lib/Linux/
++all: $(LINKOBJ) $(BIN) $(BIN_SHARED)
+ 
+ clean:
+ 	rm -f $(LINKOBJ) $(BIN)
+ 
+ $(BIN): $(LINKOBJ)
+-	ar r $(BIN) $(LINKOBJ)
++	ar r $(BIN) `lorder $(LINKOBJ) | tsort -q`
+ 	ranlib $(BIN)
+ 
++$(BIN_SHARED): $(LINKOBJ_SHARED)
++	$(CXX) -shared -Wl,-x -o ${.TARGET} -Wl,-soname,$(BIN_SHARED) \
++		`lorder $(LINKOBJ_SHARED) | tsort -q` $(LIBS)
+ 
+ CGUIButton.o: CGUIButton.cpp
+ 	$(CPP) -c CGUIButton.cpp -o CGUIButton.o $(CXXFLAGS)
+ 
+-CGUICheckbox.o: CGUICheckBox.cpp
+-	$(CPP) -c CGUICheckBox.cpp -o CGUICheckbox.o $(CXXFLAGS)
++CGUICheckBox.o: CGUICheckBox.cpp
++	$(CPP) -c CGUICheckBox.cpp -o CGUICheckBox.o $(CXXFLAGS)
+ 
+ CGUIComboBox.o: CGUIComboBox.cpp
+ 	$(CPP) -c CGUIComboBox.cpp -o CGUIComboBox.o $(CXXFLAGS)

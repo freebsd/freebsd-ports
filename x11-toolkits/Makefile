@@ -71,6 +71,7 @@
     SUBDIR += inti-gconf
     SUBDIR += inti-gl
     SUBDIR += inti-sourceview
+    SUBDIR += irrlicht
     SUBDIR += itk
     SUBDIR += iwidgets
     SUBDIR += jx
