@@ -3868,6 +3868,7 @@ irit		ports/graphics/irit
 iroffer		ports/irc/iroffer
 ironpython	ports/lang/ironpython
 irrd		ports/net/irrd
+irrlicht	ports/x11-toolkits/irrlicht
 irrtoolset	ports/net-mgmt/irrtoolset
 irsim		ports/cad/irsim
 irssi		ports/irc/irssi
