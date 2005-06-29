@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lzo
-PORTVERSION=	2.00
+PORTVERSION=	2.01
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/
 MASTER_SITE_SUBDIR=	libs/compression
@@ -25,7 +25,7 @@ INSTALLS_SHLIB=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA}	${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
