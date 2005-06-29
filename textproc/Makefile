@@ -721,6 +721,7 @@
     SUBDIR += xhtml1-xsd
     SUBDIR += xincluder
     SUBDIR += xlhtml
+    SUBDIR += xlreader
     SUBDIR += xls2xml
     SUBDIR += xml-i18n-tools
     SUBDIR += xml-lite.el
