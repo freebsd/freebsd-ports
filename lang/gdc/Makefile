@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdc
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		http://home.earthlink.net/~dvdfrdmn/d/:gdc
