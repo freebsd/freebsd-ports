@@ -7,6 +7,7 @@
 
 PORTNAME=	libevent
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://monkey.org/~provos/
 
@@ -16,6 +17,7 @@ COMMENT=	Provides an API to execute callback functions on certain events
 GNU_CONFIGURE=	yes
 USE_LIBTOOL_VER=	15
 USE_REINPLACE=	yes
+INSTALLS_SHLIB=	yes
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
