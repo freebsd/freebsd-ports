@@ -1,6 +1,6 @@
---- tircproxy.c.orig	Wed Sep 25 02:55:48 2002
-+++ tircproxy.c	Wed Sep 25 02:56:17 2002
-@@ -131,6 +131,8 @@
+--- tircproxy.c.orig	Wed Jun 29 13:40:45 2005
++++ tircproxy.c	Wed Jun 29 13:42:01 2005
+@@ -131,9 +131,14 @@
  #	include <netinet/ip_compat.h>
  #  endif
  #  include <netinet/ip_fil.h>
@@ -9,7 +9,13 @@
  #  include <netinet/ip_proxy.h>
  #  include <netinet/ip_nat.h>
  #  define TRANS 1
-@@ -1066,9 +1068,10 @@
++#  ifndef IPL_NAT
++#  define IPL_NAT IPNAT_NAME
++#  endif
+ #  warning IPF transparent proxying available
+ # else
+ #  undef IPF
+@@ -1066,9 +1071,10 @@
  	struct sockaddr_in			to_addr;
  	int					to_len;
  #if IPF
@@ -23,7 +29,7 @@
  #endif
     
     	/* Give this thing 10 minutes to get started (paranoia).
-@@ -1152,9 +1155,9 @@
+@@ -1152,9 +1158,9 @@
                  natlook.nl_inport = sloc.sin_port;
  
                  fd = open(IPL_NAT, O_RDONLY);
