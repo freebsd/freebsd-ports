@@ -1,0 +1,11 @@
+flowgrep is a basic IDS/IPS tool written in python as a way to help you
+investigate and manage your network. it works by sniffing traffic, reassembling
+TCP streams, and IP and UDP fragments into single packets, and allowing you to
+"grep" through their payloads using regular expressions. the quality of the
+regular expression engine is similar to Perl's. think of it as a marriage of
+tcpflow, tcpkill, and ngrep.
+
+WWW: http://www.monkey.org/~jose/software/flowgrep/
+
+- Corey Smith
+corsmith@gmail.com

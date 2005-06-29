@@ -135,6 +135,7 @@
     SUBDIR += fidelio
     SUBDIR += findmtu
     SUBDIR += firetalk
+    SUBDIR += flowgrep
     SUBDIR += forg
     SUBDIR += fpc-inet
     SUBDIR += fping
