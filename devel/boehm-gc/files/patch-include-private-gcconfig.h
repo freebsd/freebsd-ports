@@ -1,6 +1,15 @@
---- include/private/gcconfig.h.orig	Sat Dec 18 09:20:16 2004
-+++ include/private/gcconfig.h	Sun Mar 20 01:37:33 2005
-@@ -328,10 +328,18 @@
+--- include/private/gcconfig.h.orig	Sat May 21 05:48:29 2005
++++ include/private/gcconfig.h	Thu Jun 30 01:10:10 2005
+@@ -62,7 +62,7 @@
+ /* Determine the machine type: */
+ # if defined(__arm__) || defined(__thumb__)
+ #    define ARM32
+-#    if !defined(LINUX) && !defined(NETBSD)
++#    if !defined(LINUX) && !defined(NETBSD) && !defined(FREEBSD)
+ #      define NOSYS
+ #      define mach_type_known
+ #    endif
+@@ -330,10 +330,22 @@
  #    define X86_64
  #    define mach_type_known
  # endif
@@ -17,10 +26,14 @@
 +#    define POWERPC
 +#    define mach_type_known
 +# endif
++# if defined(FREEBSD) && defined(__arm__)
++#    define ARM32
++#    define mach_type_known
++# endif
  # if defined(bsdi) && (defined(i386) || defined(__i386__))
  #    define I386
  #    define BSDI
-@@ -811,6 +819,16 @@
+@@ -822,6 +834,16 @@
  #     define DATASTART GC_data_start
  #     define DYNAMIC_LOADING
  #   endif
@@ -37,7 +50,25 @@
  #   ifdef NOSYS
  #     define ALIGNMENT 4
  #     define OS_TYPE "NOSYS"
-@@ -1939,6 +1957,15 @@
+@@ -1782,6 +1804,17 @@
+ #	endif
+ #       define USE_GENERIC_PUSH_REGS
+ #   endif
++#   ifdef FREEBSD
++#   define ALIGNMENT 4
++#       define OS_TYPE "FREEBSD"
++#       ifdef __ELF__
++#           define DYNAMIC_LOADING
++#       endif
++#       define HEURISTIC2
++	extern char etext[];
++#       define SEARCH_FOR_DATA_START
++#   endif
++		   
+ #   ifdef LINUX
+ #       define OS_TYPE "LINUX"
+ #       define HEURISTIC1
+@@ -1932,6 +1965,15 @@
  #	ifdef __ELF__
  #	    define DYNAMIC_LOADING
  #	endif
