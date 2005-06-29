@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
 MASTER_SITE_SUBDIR=	knu
 DISTNAME=	pkgtools-${DISTVERSION}
 
+MAINTAINER=	koma2@lovepeers.org
+COMMENT=	FreeBSD ports/packages administration and management tool suite
+
 DISTVERSION=	20041224
 
 .if ${DISTVERSION} != ${PORTVERSION}
@@ -23,12 +26,7 @@ PATCHFILES=	${DISTNAME}-${PORTVERSION}.diff.bz2
 PATCH_DIST_STRIP=	-p1
 .endif
 
-MAINTAINER=	koma2@lovepeers.org
-COMMENT=	FreeBSD ports/packages administration and management tool suite
-
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb1.so:${PORTSDIR}/databases/ruby-bdb1
-# For PKG_DBDRIVER={bdb_btree,bdb_hash,bdb}
-#		${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
+OPTIONS=	BDB4 "Use Berkeley DB >=2 as backend. (Use BDB 1.85 if off)" off
 
 USE_RC_SUBR=	yes
 USE_BZIP2=	yes
@@ -61,11 +59,18 @@ INSTALL_TARGET+=	install-doc
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_BDB4)
+# For PKG_DBDRIVER={bdb_btree,bdb_hash,bdb}
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
+.else
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb1.so:${PORTSDIR}/databases/ruby-bdb1
+.endif
+
 # pkg_create(1) must support -b. (4.5-RELEASE or later)
 # XXX: PKG_CMD is not defined yet..
 PKG_CREATE_OK!=	/usr/sbin/pkg_create 2>&1 | ${GREP} ' -b ' || ${TRUE}
 .if empty(PKG_CREATE_OK)
-IGNORE=	pkg_create does not support -b.  Please update /usr/sbin/pkg_* to those of the latest RELENG_4
+IGNORE=	pkg_create does not support -b. Please update /usr/sbin/pkg_* to those of the latest RELENG_4
 .endif
 
 post-install:
