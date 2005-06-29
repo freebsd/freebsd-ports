@@ -36,4 +36,5 @@ ac_add_options --enable-image-decoders=default,-xbm
 ac_add_options  --with-system-jpeg=%%LOCALBASE%%
 ac_add_options  --with-system-png=%%LOCALBASE%%
 ac_add_options  --with-pthreads
+ac_add_options  --enable-xft
 ac_add_options --prefix=%%PREFIX%%
