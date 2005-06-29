@@ -10211,6 +10211,7 @@ redir		ports/net/redir
 redland		ports/textproc/redland
 redland-bindings	ports/textproc/redland-bindings
 reed		ports/misc/reed
+reed-solomon	ports/math/reed-solomon
 refdb		ports/textproc/refdb
 regexx		ports/devel/regexx
 regexxer	ports/devel/regexxer
