@@ -4366,6 +4366,7 @@ jabber-jud	ports/net/jabber-jud
 jabber-msn	ports/net/jabber-msn
 jabber-pyicq	ports/net/jabber-pyicq
 jabber-pymsn	ports/net/jabber-pymsn
+jabber-users-agent	ports/net/jabber-users-agent
 jabber-xdb_ldap	ports/net/jabber-xdb_ldap
 jabber-yahoo	ports/net/jabber-yahoo
 jabberd		ports/net/jabberd
