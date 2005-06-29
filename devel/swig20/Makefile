@@ -6,19 +6,21 @@
 #
 
 PORTNAME=	swig
-PORTVERSION=	1.3.21
-PORTREVISION=	1
+PORTVERSION=	1.3.25
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	xride@x12.dk
 COMMENT=	Simplified Wrapper and Interface Generator
 
 WANT_AUTOCONF_VER=253
-VER=		${PORTVERSION:R}
 
-# Supported languages: guile perl php4 python ruby tcl ocaml pike java
+VER=		${PORTVERSION:R}
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+
+# Supported languages: guile perl php4 python ruby tcl ocaml pike java csharp
+#                      allegrocl modula3 chicken
 SWIG_LANGUAGES?=	guile perl php4 python ruby tcl
 .for lang in ${SWIG_LANGUAGES}
 WANT_SWIG_${lang:U}=	yes
@@ -26,23 +28,20 @@ WANT_SWIG_${lang:U}=	yes
 
 .if defined(WANT_SWIG_GUILE)
 BUILD_DEPENDS+=		guile:${PORTSDIR}/lang/guile
-PLIST_SUB+=		WANT_SWIG_GUILE=""
-.else
-PLIST_SUB+=		WANT_SWIG_GUILE="@comment "
 .endif
+
 .if defined(WANT_SWIG_PERL)
 CATEGORIES+=		perl5
 USE_PERL5=		yes
-PLIST_SUB+=		WANT_SWIG_PERL=""
-.else
-PLIST_SUB+=		WANT_SWIG_PERL="@comment "
 .endif
+
 .if defined(WANT_SWIG_PHP4)
 BUILD_DEPENDS+=		${LOCALBASE}/include/php/main/php.h:${PORTSDIR}/lang/php4
-PLIST_SUB+=		WANT_SWIG_PHP4=""
+CONFIGURE_ARGS+=	--with-php4
 .else
-PLIST_SUB+=		WANT_SWIG_PHP4="@comment "
+CONFIGURE_ARGS+=	--without-php4
 .endif
+
 .if defined(WANT_SWIG_PYTHON)
 CATEGORIES+=		python
 USE_PYTHON=		yes
@@ -50,69 +49,80 @@ PYTHON_NO_DEPENDS=	yes
 BUILD_DEPENDS+=		${PYTHON_CMD}:${PYTHON_PORTSDIR}
 CONFIGURE_ARGS+=	--with-pyincl=${PYTHON_INCLUDEDIR} \
 			--with-pylib=${PYTHON_LIBDIR}
-PLIST_SUB+=		WANT_SWIG_PYTHON=""
-.else
-PLIST_SUB+=		WANT_SWIG_PYTHON="@comment "
 .endif
+
 .if defined(WANT_SWIG_RUBY)
 CATEGORIES+=		ruby
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
-PLIST_SUB+=		WANT_SWIG_RUBY=""
+CONFIGURE_ARGS+=	--with-ruby
 .else
-PLIST_SUB+=		WANT_SWIG_RUBY="@comment "
+CONFIGURE_ARGS+=	--without-ruby
 .endif
+
 .if defined(WANT_SWIG_TCL)
 CATEGORIES+=		tcl84
 BUILD_DEPENDS+=		${LOCALBASE}/bin/tclsh8.4:${PORTSDIR}/lang/tcl84
 CONFIGURE_ARGS+=	--with-tclincl=${LOCALBASE}/include/tcl8.4/ \
 			--with-tcllib=${LOCALBASE}/lib/tcl8.4/
-PLIST_SUB+=		WANT_SWIG_TCL=""
+.endif
+
+.if defined(WANT_SWIG_CSHARP)
+BUILD_DEPENDS+=		${LOCALBASE}/bin/mono:${PORTSDIR}/lang/mono
+CONFIGURE_ARGS+=	--with-csharp-compiler=${LOCALBASE}/bin/mcs
 .else
-PLIST_SUB+=		WANT_SWIG_TCL="@comment "
+CONFIGURE_ARGS+=	--without-csharp-compiler
 .endif
 
 .if defined(WANT_SWIG_OCAML)
 BUILD_DEPENDS+=		${LOCALBASE}/bin/ocamlc:${PORTSDIR}/lang/ocaml
-PLIST_SUB+=		WANT_SWIG_OCAML=""
 .else
-PLIST_SUB+=		WANT_SWIG_OCAML="@comment "
+CONFIGURE_ARGS+=	--without-ocaml
+.endif
+
+.if defined(WANT_SWIG_ALLEGRCL)
+CONFIGURE_ARGS+=	--with-allegrocl
+.else
+CONFIGURE_ARGS+=	--without-allegrocl
+.endif
+
+.if defined(WANT_SWIG_MODULA3)
+CONFIGURE_ARGS+=	--with-modula3
+.else
+CONFIGURE_ARGS+=	--without-modula3
 .endif
 
 .if defined(WANT_SWIG_PIKE)
 BUILD_DEPENDS+=		${LOCALBASE}/bin/pike:${PORTSDIR}/lang/pike
-PLIST_SUB+=		WANT_SWIG_PIKE=""
 .else
-PLIST_SUB+=		WANT_SWIG_PIKE="@comment "
-CONFIGURE_ARGS +=	--without-pike
+CONFIGURE_ARGS+=	--without-pike
 .endif
 
 .if defined(WANT_SWIG_JAVA)
 CATEGORIES+=		java
 USE_JAVA=	1.2+
-PLIST_SUB+=		WANT_SWIG_JAVA=""
 .else
-PLIST_SUB+=		WANT_SWIG_JAVA="@comment "
-CONFIGURE_ARGS +=	--without-java
+CONFIGURE_ARGS+=	--without-java
 .endif
 
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME:U}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_LIBTOOL_VER=	13
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fPIC -DPIC"
-ALL_TARGET=	swig runtime
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC -DPIC"
+ALL_TARGET=	swig
 PLIST_SUB+=	VER="${VER}"
 
 .include <bsd.port.pre.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e 's/SKIP_CHICKEN=$$/&"1"/' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|$$RUBY |${RUBY} |' ${WRKSRC}/configure
+
+post-configure:
+	${REINPLACE_CMD} -e 's#null#&|| true#' ${WRKSRC}/Makefile
 
 post-install:
-# A separate swig13-runtime port might be nice
-	@(cd ${INSTALL_WRKSRC}/Runtime && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
-
 	${LN} -f ${PREFIX}/bin/swig ${PREFIX}/bin/swig${VER}
 
 .include <bsd.port.post.mk>
