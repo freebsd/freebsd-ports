@@ -14,6 +14,10 @@ DISTNAME= 	smooth-blend-${PORTVERSION}
 MAINTAINER= 	decept0@gmail.com
 COMMENT= 	A window decoration for KDE
 
+BROKEN=		"master site disappeared"
+DEPRECATED=	"master site disappeared"
+EXPIRATION_DATE=2005-07-31
+
 USE_BZIP2= 	yes
 USE_KDEBASE_VER=3
 INSTALLS_SHLIB=	yes
