@@ -32,6 +32,148 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f70f8860-e8ee-11d9-b875-0001020eed82">
+    <topic>kernel -- ipfw packet matching errors with address tables</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.4</ge><le>5.4_3</le></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description</h1>
+	<p>The ipfw tables lookup code caches the result of the last
+	  query.  The kernel may process multiple packets
+	  concurrently, performing several concurrent table lookups.
+	  Due to an insufficient locking, a cached result can become
+	  corrupted that could cause some addresses to be incorrectly
+	  matched against a lookup table.</p>
+	<h1>Impact</h1>
+	<p>When lookup tables are used with ipfw, packets may on very
+	  rare occasions incorrectly match a lookup table.  This could
+	  result in a packet being treated contrary to the defined
+	  packet filtering ruleset. For example, a packet may be
+	  allowed to pass through when it should have been
+	  discarded.</p>
+	<p>The problem can only occur on Symmetric Multi-Processor
+	  (SMP) systems, or on Uni Processor (UP) systems with the
+	  PREEMPTION kernel option enabled (not the default).</p>
+	<h1>Workaround</h1>
+	<p>a) Do not use lookup tables.</p>
+	<p>OR</p>
+	<p>b) Disable concurrent processing of packets in the network
+	  stack by setting the "debug.mpsafenet=0" tunable:</p>
+	<p># echo "debug.mpsafenet=0" &lt;&lt; /boot/loader.conf</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2019</cvename>
+      <freebsdsa>SA-05:13.ipfw</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2005-06-29</discovery>
+      <entry>2005-06-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="197f444f-e8ef-11d9-b875-0001020eed82">
+    <topic>bzip2 -- denial of service and permission race vulnerabilities</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.4</ge><le>5.4_3</le></range>
+	<range><ge>5.*</ge><le>5.3_17</le></range>
+	<range><ge>4.11</ge><le>4.11_11</le></range>
+	<range><le>4.10_16</le></range>
+      </system>
+      <package>
+	<name>bzip2</name>
+	<range><lt>1.0.3_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description</h1>
+	<p>Two problems have been discovered relating to the
+	  extraction of bzip2-compressed files.	 First, a carefully
+	  constructed invalid bzip2 archive can cause bzip2 to enter
+	  an infinite loop.  Second, when creating a new file, bzip2
+	  closes the file before setting its permissions.</p>
+	<h1>Impact</h1>
+	<p>The first problem can cause bzip2 to extract a bzip2
+	  archive to an infinitely large file.	If bzip2 is used in
+	  automated processing of untrusted files this could be
+	  exploited by an attacker to create an denial-of-service
+	  situation by exhausting disk space or by consuming all
+	  available cpu time.</p>
+	<p>The second problem can allow a local attacker to change the
+	  permissions of local files owned by the user executing bzip2
+	  providing that they have write access to the directory in
+	  which the file is being extracted.</p>
+	<h1>Workaround</h1>
+	<p>Do not uncompress bzip2 archives from untrusted sources and
+	  do not uncompress files in directories where untrusted users
+	  have write access.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0953</cvename>
+      <cvename>CAN-2005-1260</cvename>
+      <freebsdsa>SA-05:14.bzip2</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2005-03-30</discovery>
+      <entry>2005-06-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3ec8f43b-e8ef-11d9-b875-0001020eed82">
+    <topic>kernel -- TCP connection stall denial of service</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.4</ge><le>5.4_3</le></range>
+	<range><ge>5.*</ge><le>5.3_17</le></range>
+	<range><ge>4.11</ge><le>4.11_11</le></range>
+	<range><le>4.10_16</le></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description</h1>
+	<p>Two problems have been discovered in the FreeBSD TCP stack.</p>
+	<p>First, when a TCP packets containing a timestamp is
+	  received, inadequate checking of sequence numbers is
+	  performed, allowing an attacker to artificially increase the
+	  internal "recent" timestamp for a connection.</p>
+	<p>Second, a TCP packet with the SYN flag set is accepted for
+	  established connections, allowing an attacker to overwrite
+	  certain TCP options.</p>
+	<h1>Impact</h1>
+	<p>Using either of the two problems an attacker with knowledge
+	  of the local and remote IP and port numbers associated with
+	  a connection can cause a denial of service situation by
+	  stalling the TCP connection. The stalled TCP connection my
+	  be closed after some time by the other host.</p>
+	<h1>Workaround</h1>
+	<p>In some cases it may be possible to defend against these
+	  attacks by blocking the attack packets using a firewall.
+	  Packets used to effect either of these attacks would have
+	  spoofed source IP addresses.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0356</cvename>
+      <cvename>CAN-2005-2068</cvename>
+      <freebsdsa>SA-05:15.tcp</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2005-06-29</discovery>
+      <entry>2005-06-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="76adaab0-e4e3-11d9-b875-0001020eed82">
     <topic>ethereal -- multiple protocol dissectors vulnerabilities</topic>
     <affects>
