@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nvu
-DISTVERSION=	1.0PR
+DISTVERSION=	1.0
 CATEGORIES=	www
 MASTER_SITES=	http://cvs.nvu.com/download/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-sources
@@ -14,11 +14,10 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-sources
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A complete Web Authoring System similar to Dreamweaver or Frontpage
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		freetype-config:${PORTSDIR}/print/freetype2
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
-		freetype.9:${PORTSDIR}/print/freetype2
+		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
@@ -28,28 +27,15 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-
-OPTIONS=	XFT "Enable Xft font anti-aliasing" on \
-		DEBUG "Enable debugging (i.e. gdb) support" off \
-		OPTIMIZED_CFLAGS "Enable -O2 optimizations" off
-
 NVU=		${PORTNAME}-${DISTVERSION}
 FAKEDIR=	${WRKDIR}/FAKE
 WRKSRC=		${WRKDIR}/mozilla
 PLIST=		${WRKDIR}/plist
-
 MAKEFILE=	client.mk
 ALL_TARGET=	build_all
-
 PKG_CONFIGS=	nvu-gtkmozembed.pc nvu-js.pc nvu-nspr.pc \
 		nvu-nss.pc nvu-plugin.pc nvu-xpcom.pc
-
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
-			--exclude */macbuild/*\
-			--exclude */package/* \
-			--exclude .cvsignore \
-			--exclude makefile.win \
-			--exclude MANIFEST
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/*
 
 .include <bsd.port.pre.mk>
 
@@ -57,8 +43,11 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-config_make-jars.pl
 .endif
 
-.if !defined(WITHOUT_XFT)
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+pre-everything::
+.if !defined(WITH_OPTIMIZED_CFLAGS)
+	@${ECHO_MSG} "Enable -O2 optimizations by defining"
+	@${ECHO_MSG} "WITH_OPTIMIZED_CFLAGS"
+	@${ECHO_MSG}
 .endif
 
 post-patch:
@@ -77,16 +66,10 @@ post-patch:
 		s|%%PREFIX%%|${FAKEDIR}|; \
 		s|%%LOCALBASE%%|${LOCALBASE}|' \
 		${FILESDIR}/mozconfig.in >${WRKSRC}/.mozconfig
-# Stupid workaround.. 
+# Stupid workaround..
 .for f in toolkit/components/Makefile.in toolkit/components/gnome/Makefile.in
-	@${ECHO_CMD} "LDFLAGS += -L${LOCALBASE}/lib" \
-		>> ${WRKSRC}/${f}
+	@${ECHO_CMD} "LDFLAGS += -L${LOCALBASE}/lib" >> ${WRKSRC}/${f}
 .endfor
-.if defined(WITHOUT_XFT)
-	@${ECHO_CMD} "ac_add_options  --disable-xft" >> ${WRKSRC}/.mozconfig
-.else
-	@${ECHO_CMD} "ac_add_options  --enable-xft" >> ${WRKSRC}/.mozconfig
-.endif
 .if defined(WITH_DEBUG)
 	@${ECHO_CMD} "ac_add_options  --enable-debug" >> ${WRKSRC}/.mozconfig
 	@${ECHO_CMD} "ac_add_options  --disable-strip" >> ${WRKSRC}/.mozconfig
