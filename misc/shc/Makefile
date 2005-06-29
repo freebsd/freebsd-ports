@@ -9,7 +9,9 @@
 PORTNAME=	shc
 PORTVERSION=	3.8.2
 CATEGORIES=	misc
-MASTER_SITES=	http://www.datsi.fi.upm.es/~frosal/sources/
+MASTER_SITES=	http://www.datsi.fi.upm.es/~frosal/sources/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	jylefort
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
