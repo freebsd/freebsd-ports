@@ -252,7 +252,7 @@ PLIST=		${WRKDIR}/plist
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include/src -I${WRKSRC}/include/vlc/ ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include/src -I${WRKSRC}/include/vlc -I${WRKSRC}/include ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 
 CONFIGURE_ARGS+=	--enable-ffmpeg \
