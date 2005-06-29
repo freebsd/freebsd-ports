@@ -14,8 +14,6 @@
     SUBDIR += koffice-i18n
     SUBDIR += libtlen
     SUBDIR += ooodict_PL
-    SUBDIR += openoffice-1.0
-    SUBDIR += openoffice-1.1
     SUBDIR += php_doc
     SUBDIR += sap
     SUBDIR += sms

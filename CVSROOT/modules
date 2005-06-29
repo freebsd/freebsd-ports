@@ -405,8 +405,6 @@ ar-kde3-i18n	ports/arabic/kde3-i18n
 ar-khotot	ports/arabic/khotot
 ar-koffice-i18n	ports/arabic/koffice-i18n
 ar-libitl	ports/arabic/libitl
-ar-openoffice-1.0	ports/editors/openoffice-1.0-ar
-ar-openoffice-1.1	ports/arabic/openoffice-1.1
 arc		ports/archivers/arc
 arcexplorer	ports/databases/arcexplorer
 archie		ports/net/archie
@@ -1496,8 +1494,6 @@ de-manpages	ports/german/manpages
 de-ooodict-AT	ports/german/ooodict-de_AT
 de-ooodict-CH	ports/german/ooodict-de_CH
 de-ooodict-DE	ports/german/ooodict-de_DE
-de-openoffice-1.0	ports/german/openoffice-1.0
-de-openoffice-1.1	ports/german/openoffice-1.1
 de-phone	ports/german/phone
 de-selfhtml	ports/german/selfhtml
 de-staroffice5	ports/german/staroffice5
@@ -1622,7 +1618,6 @@ djbdns-tools	ports/dns/djbdns-tools
 djbfft		ports/math/djbfft
 djvulibre	ports/graphics/djvulibre
 dk-milter	ports/mail/dk-milter
-dk-openoffice-1.0	ports/editors/openoffice-1.0-dk
 dkftpbench	ports/benchmarks/dkftpbench
 dkimap4		ports/mail/dkimap4
 dlint		ports/dns/dlint
@@ -2002,7 +1997,6 @@ es		ports/shells/es
 es-aspell	ports/textproc/es-aspell
 es-ooodict-ES	ports/editors/ooodict-es_ES
 es-ooodict-MX	ports/editors/ooodict-es_MX
-es-openoffice-1.0	ports/editors/openoffice-1.0-es
 esdl		ports/devel/esdl
 esh		ports/shells/esh
 eshell-emacs20	ports/editors/eshell-emacs20
@@ -2368,8 +2362,6 @@ fr-med		ports/french/med
 fr-mozilla-flp	ports/french/mozilla-flp
 fr-ooodict-BE	ports/french/ooodict-fr_BE
 fr-ooodict-FR	ports/french/ooodict-fr_FR
-fr-openoffice-1.0	ports/french/openoffice-1.0
-fr-openoffice-1.1	ports/french/openoffice-1.1
 fr-plgrenouille	ports/french/plgrenouille
 fr-staroffice52	ports/french/staroffice52
 fr-xtel		ports/french/xtel
@@ -3162,7 +3154,6 @@ gqmpeg-devel	ports/audio/gqmpeg-devel
 gqradio		ports/audio/gqradio
 gqview		ports/graphics/gqview
 gqview-devel	ports/graphics/gqview-devel
-gr-openoffice-1.0	ports/editors/openoffice-1.0-gr
 grabc		ports/x11/grabc
 grace		ports/math/grace
 gracer		ports/games/gracer
@@ -3638,7 +3629,6 @@ hu-jdictionary-eng-hun-expr	ports/hungarian/jdictionary-eng-hun-expr
 hu-kde3-i18n	ports/hungarian/kde3-i18n
 hu-koffice-i18n	ports/hungarian/koffice-i18n
 hu-ooodict-HU	ports/hungarian/ooodict
-hu-openoffice-1.1	ports/hungarian/openoffice-1.1
 huc		ports/lang/huc
 hugelatex	ports/print/hugelatex
 hugin		ports/graphics/hugin
@@ -4204,8 +4194,6 @@ ja-onew-canna+wnn7	ports/japanese/onew-canna+wnn7
 ja-onew-freewnn	ports/japanese/onew-freewnn
 ja-onew-wnn6	ports/japanese/onew-wnn6
 ja-onew-wnn7	ports/japanese/onew-wnn7
-ja-openoffice-1.0	ports/japanese/openoffice-1.0
-ja-openoffice-1.1	ports/japanese/openoffice-1.1
 ja-openoffice-templates	ports/japanese/openoffice-templates
 ja-otojiro-fpw	ports/japanese/otojiro-fpw
 ja-p5-Date-Japanese-Era	ports/japanese/p5-Date-Japanese-Era
@@ -4846,8 +4834,6 @@ ko-nh2ps	ports/korean/nh2ps
 ko-nhpf		ports/korean/nhpf
 ko-nvi-euc-kr	ports/korean/nvi-euc-kr
 ko-nvi-iso-2022-kr	ports/korean/nvi-iso-2022-kr
-ko-openoffice-1.0	ports/korean/openoffice-1.0
-ko-openoffice-1.1	ports/korean/openoffice-1.1
 ko-pgp.language	ports/korean/pgp.language
 ko-pinetreefonts	ports/korean/pinetreefonts
 ko-scim-tables	ports/korean/scim-tables
@@ -6611,7 +6597,6 @@ njs		ports/lang/njs
 nl-aspell	ports/textproc/nl-aspell
 nl-ispell	ports/textproc/nl-ispell
 nl-ooodict-NL	ports/editors/ooodict-nl_NL
-nl-openoffice-1.0	ports/editors/openoffice-1.0-nl
 nload		ports/net/nload
 nltk		ports/textproc/nltk
 nmap		ports/security/nmap
@@ -6847,29 +6832,8 @@ opennap		ports/audio/opennap
 openntpd	ports/net/openntpd
 openobex	ports/comms/openobex
 openoffice-1.0	ports/editors/openoffice-1.0
-openoffice-1.0-ar	ports/editors/openoffice-1.0-ar
-openoffice-1.0-dk	ports/editors/openoffice-1.0-dk
-openoffice-1.0-es	ports/editors/openoffice-1.0-es
-openoffice-1.0-gr	ports/editors/openoffice-1.0-gr
-openoffice-1.0-it	ports/editors/openoffice-1.0-it
-openoffice-1.0-nl	ports/editors/openoffice-1.0-nl
-openoffice-1.0-se	ports/editors/openoffice-1.0-se
-openoffice-1.0-tr	ports/editors/openoffice-1.0-tr
 openoffice-1.1	ports/editors/openoffice-1.1
-openoffice-1.1-ca	ports/editors/openoffice-1.1-ca
-openoffice-1.1-cs	ports/editors/openoffice-1.1-cs
 openoffice-1.1-devel	ports/editors/openoffice-1.1-devel
-openoffice-1.1-dk	ports/editors/openoffice-1.1-dk
-openoffice-1.1-el	ports/editors/openoffice-1.1-el
-openoffice-1.1-es	ports/editors/openoffice-1.1-es
-openoffice-1.1-et	ports/editors/openoffice-1.1-et
-openoffice-1.1-fi	ports/editors/openoffice-1.1-fi
-openoffice-1.1-it	ports/editors/openoffice-1.1-it
-openoffice-1.1-nl	ports/editors/openoffice-1.1-nl
-openoffice-1.1-se	ports/editors/openoffice-1.1-se
-openoffice-1.1-sk	ports/editors/openoffice-1.1-sk
-openoffice-1.1-sl_SI	ports/editors/openoffice-1.1-sl_SI
-openoffice-1.1-tr	ports/editors/openoffice-1.1-tr
 openoffice-2.0-devel	ports/editors/openoffice-2.0-devel
 openorb		ports/devel/openorb
 openproducer	ports/graphics/openproducer
@@ -9265,8 +9229,6 @@ pl-kde3-i18n	ports/polish/kde3-i18n
 pl-koffice-i18n	ports/polish/koffice-i18n
 pl-libtlen	ports/polish/libtlen
 pl-ooodict_PL	ports/polish/ooodict_PL
-pl-openoffice-1.0	ports/polish/openoffice-1.0
-pl-openoffice-1.1	ports/polish/openoffice-1.1
 pl-sap		ports/polish/sap
 pl-sms		ports/polish/sms
 pl-sms2		ports/polish/sms2
@@ -9664,9 +9626,6 @@ pt-koffice-i18n	ports/portuguese/koffice-i18n
 pt-koffice-i18n-pt_BR	ports/portuguese/koffice-i18n-pt_BR
 pt-ooodict-BR	ports/portuguese/ooodict-pt_BR
 pt-ooodict-PT	ports/portuguese/ooodict-pt_PT
-pt-openoffice-1.0	ports/portuguese/openoffice-1.0
-pt-openoffice-1.1-pt_BR	ports/portuguese/openoffice-1.1-pt_BR
-pt-openoffice-1.1-pt_PT	ports/portuguese/openoffice-1.1-pt_PT
 pt-staroffice52	ports/portuguese/staroffice52
 pt-webalizer-pt_BR	ports/portuguese/webalizer-pt_BR
 pt-webalizer-pt_PT	ports/portuguese/webalizer-pt_PT
@@ -10424,8 +10383,6 @@ ru-muttprint	ports/russian/muttprint
 ru-nagios	ports/russian/nagios
 ru-napster	ports/russian/napster
 ru-ooodict-RU	ports/russian/ooodict-ru_RU
-ru-openoffice-1.0	ports/russian/openoffice-1.0
-ru-openoffice-1.1	ports/russian/openoffice-1.1
 ru-p5-Lingua-RU-Charset	ports/russian/p5-Lingua-RU-Charset
 ru-p5-XML-Parser-encodings	ports/russian/p5-XML-Parser-encodings
 ru-p5-cyrillic	ports/russian/p5-cyrillic
@@ -10844,7 +10801,6 @@ sdpa		ports/math/sdpa
 sdpara		ports/math/sdpara
 sdr		ports/mbone/sdr
 sdts++		ports/devel/sdts++
-se-openoffice-1.0	ports/editors/openoffice-1.0-se
 seabattle	ports/games/seabattle
 seahaven	ports/games/seahaven
 seahorse	ports/security/seahorse
@@ -11706,7 +11662,6 @@ tpp		ports/misc/tpp
 tptest		ports/net/tptest
 tr-aspell	ports/textproc/tr-aspell
 tr-ircd		ports/irc/tr-ircd
-tr-openoffice-1.0	ports/editors/openoffice-1.0-tr
 tr2latex	ports/print/tr2latex
 trac		ports/www/trac
 trackballs	ports/games/trackballs
@@ -13170,12 +13125,6 @@ zh-nvi-big5	ports/chinese/nvi-big5
 zh-nvi-euc-cn	ports/chinese/nvi-euc-cn
 zh-nvi-euc-tw	ports/chinese/nvi-euc-tw
 zh-oicq		ports/chinese/oicq
-zh-openoffice-1.0-CN	ports/chinese/openoffice-1.0-zh_CN
-zh-openoffice-1.0-TW	ports/chinese/openoffice-1.0-zh_TW
-zh-openoffice-1.0-zh_CN	ports/chinese/openoffice-1.0-zh_CN
-zh-openoffice-1.0-zh_TW	ports/chinese/openoffice-1.0-zh_TW
-zh-openoffice-1.1-zh_CN	ports/chinese/openoffice-1.1-zh_CN
-zh-openoffice-1.1-zh_TW	ports/chinese/openoffice-1.1-zh_TW
 zh-oto			ports/chinese/oto
 zh-oxford		ports/chinese/oxford
 zh-p5-Date-Chinese	ports/chinese/p5-Date-Chinese
