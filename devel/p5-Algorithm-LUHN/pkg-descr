@@ -1,0 +1,11 @@
+This module calculates the Modulus 10 Double Add Double checksum, also known
+as the LUHN Formula. This algorithm is used to verify credit card numbers and
+Standard & Poor's security identifiers such as CUSIP and CSIN.
+
+You can find plenty of information about the algorithm by searching the web
+for "modulus 10 double add double".
+
+WWW: http://search.cpan.org/dist/Algorithm-LUHN/
+
+- Aaron Dalton
+aaron@daltons.ca
