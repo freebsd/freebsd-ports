@@ -1,3 +1,4 @@
+bin/senna-cfg
 include/senna/senna.h
 lib/libsenna.a
 lib/libsenna.so
