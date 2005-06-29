@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyx12-${PORTVERSION:S/.b/b/}
 
-MAINTAINER=	john@zoner.org
+MAINTAINER=	jholland@kazoocmh.org
 COMMENT=	Validate HIPAA X12 documents
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
