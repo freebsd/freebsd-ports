@@ -53,8 +53,6 @@
     SUBDIR += nhpf
     SUBDIR += nvi-euc-kr
     SUBDIR += nvi-iso-2022-kr
-    SUBDIR += openoffice-1.0
-    SUBDIR += openoffice-1.1
     SUBDIR += pgp.language
     SUBDIR += php_doc
     SUBDIR += pinetreefonts

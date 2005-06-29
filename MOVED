@@ -1519,3 +1519,45 @@ www/netscape7||2005-06-10|security bugs
 devel/p5-File-Spec|devel/p5-PathTools|2005-06-11|module was merged with Cwd and renamed
 textproc/p5-PodParser|textproc/p5-Pod-Parser|2005-06-11|module was renamed
 graphics/ruby-evas|graphics/ruby-evas|2005-06-16|out of date, and not compatible with new evas
+arabic/openoffice-1.1||2005-06-29|localized version should be built via knob
+chinese/openoffice-1.0-zh_CN||2005-06-29|no longer maintained
+chinese/openoffice-1.0-zh_TW||2005-06-29|no longer maintained
+chinese/openoffice-1.1-zh_CN||2005-06-29|localized version should be built via knob
+chinese/openoffice-1.1-zh_TW||2005-06-29|localized version should be built via knob
+editors/openoffice-1.0-ar||2005-06-29|no longer maintained
+editors/openoffice-1.0-dk||2005-06-29|no longer maintained
+editors/openoffice-1.0-es||2005-06-29|no longer maintained
+editors/openoffice-1.0-gr||2005-06-29|no longer maintained
+editors/openoffice-1.0-it||2005-06-29|no longer maintained
+editors/openoffice-1.0-nl||2005-06-29|no longer maintained
+editors/openoffice-1.0-se||2005-06-29|no longer maintained
+editors/openoffice-1.0-tr||2005-06-29|no longer maintained
+editors/openoffice-1.1-ca||2005-06-29|localized version should be built via knob
+editors/openoffice-1.1-cs||2005-06-29|localized version should be built via knob
+editors/openoffice-1.1-dk||2005-06-29|localized version should be built via knob
+editors/openoffice-1.1-el||2005-06-29|localized version should be built via knob
+editors/openoffice-1.1-es||2005-06-29|localized version should be built via knob
+editors/openoffice-1.1-et||2005-06-29|localized version should be built via knob
+editors/openoffice-1.1-fi||2005-06-29|localized version should be built via knob
+editors/openoffice-1.1-it||2005-06-29|localized version should be built via knob
+editors/openoffice-1.1-nl||2005-06-29|localized version should be built via knob
+editors/openoffice-1.1-se||2005-06-29|localized version should be built via knob
+editors/openoffice-1.1-sk||2005-06-29|localized version should be built via knob
+editors/openoffice-1.1-sl_SI||2005-06-29|localized version should be built via knob
+editors/openoffice-1.1-tr||2005-06-29|localized version should be built via knob
+french/openoffice-1.0||2005-06-29|no longer maintained
+french/openoffice-1.1||2005-06-29|localized version should be built via knob
+german/openoffice-1.0||2005-06-29|no longer maintained
+german/openoffice-1.1||2005-06-29|localized version should be built via knob
+hungarian/openoffice-1.1||2005-06-29|localized version should be built via knob
+japanese/openoffice-1.0||2005-06-29|no longer maintained
+japanese/openoffice-1.1||2005-06-29|localized version should be built via knob
+korean/openoffice-1.0||2005-06-29|no longer maintained
+korean/openoffice-1.1||2005-06-29|localized version should be built via knob
+polish/openoffice-1.0||2005-06-29|no longer maintained
+polish/openoffice-1.1||2005-06-29|localized version should be built via knob
+portuguese/openoffice-1.0||2005-06-29|no longer maintained
+portuguese/openoffice-1.1-pt_BR||2005-06-29|localized version should be built via knob
+portuguese/openoffice-1.1-pt_PT||2005-06-29|localized version should be built via knob
+russian/openoffice-1.0||2005-06-29|no longer maintained
+russian/openoffice-1.1||2005-06-29|localized version should be built via knob
