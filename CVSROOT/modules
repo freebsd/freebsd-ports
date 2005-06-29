@@ -2263,6 +2263,7 @@ flow-extract	ports/net-mgmt/flow-extract
 flow-tools	ports/net-mgmt/flow-tools
 flowd		ports/net-mgmt/flowd
 flowdesigner	ports/devel/flowdesigner
+flowgrep	ports/net/flowgrep
 flowscan	ports/net-mgmt/flowscan
 flphoto		ports/graphics/flphoto
 flpsed		ports/print/flpsed
