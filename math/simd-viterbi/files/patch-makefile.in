@@ -1,0 +1,38 @@
+--- makefile.in.orig	Wed Jun 29 17:35:03 2005
++++ makefile.in	Wed Jun 29 17:36:53 2005
+@@ -5,7 +5,7 @@
+ VPATH = @srcdir@
+ CC=@CC@
+ 
+-CFLAGS=@CFLAGS@ -I. -Wall @ARCH_OPTION@
++CFLAGS=@CFLAGS@ -I. -Wall -fPIC
+ 
+ SHARED_LIB=libviterbi.so.@VERSION@
+ STATIC_LIB=@STATIC_LIB@
+@@ -22,13 +22,12 @@
+ 	./vtest29
+ 
+ install: all
+-	install -m 644 -p $(SHARED_LIB) $(STATIC_LIB) @libdir@
++	$(BSD_INSTALL_DATA) $(STATIC_LIB) @libdir@
++	$(BSD_INSTALL_PROGRAM) $(SHARED_LIB) @libdir@
+ 	(cd @libdir@;ln -f -s $(SHARED_LIB) libviterbi.so)
+ 	(cd @libdir@;ln -f -s $(STATIC_LIB) libviterbi.a)
+-	ldconfig
+-	install -m 644 -p parity.h viterbi27.h viterbi29.h @includedir@
+-	mkdir -m 0755 -p @mandir@/man3
+-	install -m 644 -p simd-viterbi.3 @mandir@/man3
++	$(BSD_INSTALL_DATA) parity.h viterbi27.h viterbi29.h @includedir@
++	$(BSD_INSTALL_MAN) simd-viterbi.3 @mandir@/man3
+ 
+ vtest27: vtest27.o $(STATIC_LIB)
+ 	gcc -g -o $@ $^
+@@ -53,7 +52,7 @@
+ 	ar rv $@ $^
+ 
+ $(SHARED_LIB): $(STATIC_LIB)
+-	gcc -shared -Xlinker -soname=libviterbi.so.@SO_NAME@ -o $@ -Wl,-whole-archive $^ -Wl,-no-whole-archive -lc
++	gcc -shared -fPIC -Xlinker -soname=libviterbi.so.@SO_NAME@ -o $@ -Wl,-whole-archive $^ -Wl,-no-whole-archive -lc
+ 
+ viterbi27port.o: viterbi27.c viterbi27.h parity.h
+ 	gcc -c $(CFLAGS) -o $@ $<
