@@ -12618,6 +12618,7 @@ xlog		ports/comms/xlog
 xlogmaster	ports/sysutils/xlogmaster
 xlogout		ports/x11/xlogout
 xloops-ginac	ports/science/xloops-ginac
+xlreader	ports/textproc/xlreader
 xls2xml		ports/textproc/xls2xml
 xlupe		ports/x11/xlupe
 xmaddressbook	ports/deskutils/xmaddressbook
