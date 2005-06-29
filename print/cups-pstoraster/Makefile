@@ -28,7 +28,7 @@ ESPGS_VER=	${PORTVERSION}rc3
 DISTNAME=	espgs-${ESPGS_VER}-source
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - espgs-${ESPGS_VER}/pstoraster
 ESPGS_WRKSRC=	${WRKDIR}/espgs-${ESPGS_VER}/pstoraster
-WRKSRC=		${WRKDIRPREFIX}${PORTSDIR}/${GHOSTSCRIPT_PORT}/work/ghostscript
+WRKSRC=		${WRKDIRPREFIX}$$(${REALPATH} ${PORTSDIR})/${GHOSTSCRIPT_PORT}/work/ghostscript
 PATCH_WRKSRC=	${ESPGS_WRKSRC}
 
 USE_BZIP2=	yes
@@ -76,5 +76,4 @@ do-install:
 	${INSTALL_DATA} ${ESPGS_WRKSRC}/${file} ${PREFIX}/share/cups/model
 .endfor
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
