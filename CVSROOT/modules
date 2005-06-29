@@ -9972,6 +9972,7 @@ pylize		ports/misc/pylize
 pymol		ports/biology/pymol
 pymsgauth	ports/mail/pymsgauth
 pyne		ports/news/pyne
+pynids		ports/net/pynids
 pyobfuscate	ports/devel/pyobfuscate
 pypanda		ports/misc/pypanda
 pyphany		ports/www/pyphany
