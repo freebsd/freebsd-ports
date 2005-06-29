@@ -1,0 +1,13 @@
+--- config.xml.orig	Thu Jun  9 07:25:05 2005
++++ config.xml	Thu Jun  9 07:33:13 2005
+@@ -10,6 +10,10 @@
+   </component>
+   <mysql>
+     <dbname>JUD</dbname>
++    <!--
++    <host>mysql.remote.server</host>
++    <port>3306</port>
++    -->
+     <username>someone</username>
+     <password>something</password>
+     <limit>250</limit>

@@ -1,0 +1,57 @@
+--- users-agent.orig	Mon Sep  6 23:05:32 2004
++++ users-agent	Mon Jun 13 09:19:06 2005
+@@ -1,9 +1,4 @@
+-#!/bin/sh
+-#-*-Perl-*-
+-
+-exec perl -x $0 "$@";
+-
+-#!perl
++#!%%PERL%%
+ 
+ ##############################################################################
+ #
+@@ -29,7 +24,7 @@
+ 
+ my %optctl = ();
+ $optctl{debug} = 0;
+-$optctl{config} = "config.xml";
++$optctl{config} = "/usr/local/etc/jabber-users-agent.xml";
+ &GetOptions(\%optctl, "debug=i","config=s");
+ 
+ if (!(-f $optctl{config}))
+@@ -39,6 +34,10 @@
+     exit(1);
+ } 
+ 
++open(PIDFILE,">/var/jabberd/pid/users-agent.pid");
++    print PIDFILE "$$";
++close(PIDFILE);
++
+ my $Debug = new Net::Jabber::Debug(level=>$optctl{debug},
+                                    header=>"Users-Agent");
+ 
+@@ -119,8 +118,13 @@
+ ##############################################################################
+ &readConfigXML();
+ 
++my $data_source = "DBI:mysql:database=".$config{mysql}->{dbname};
++
++if ($config{mysql}->{host} ne '') {
++    $data_source .= ";host=".$config{mysql}->{host}.";port=".($config{mysql}->{port} eq '' ? '3306' : $config{mysql}->{port});
++}
+ 
+-my $dbh = DBI->connect("DBI:mysql:database=".$config{mysql}->{dbname},$config{mysql}->{username},$config{mysql}->{password});
++my $dbh = DBI->connect($data_source,$config{mysql}->{username},$config{mysql}->{password});
+ #$dbh->trace(2) if (($optctl{debug} > 0) && defined($dbh));
+ 
+ ##############################################################################
+@@ -174,7 +178,7 @@
+ 
+ ##############################################################################
+ #
+-# readConfigXML - read the config.xml file, parse it, and set config hash
++# readConfigXML - read the /usr/local/etc/jabber-users-agent.xml file, parse it, and set config hash
+ #                 with the proper settings.
+ #
+ ##############################################################################
