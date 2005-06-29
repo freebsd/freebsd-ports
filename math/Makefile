@@ -240,6 +240,7 @@
     SUBDIR += sdpa
     SUBDIR += sdpara
     SUBDIR += ses
+    SUBDIR += simd-viterbi
     SUBDIR += slsc
     SUBDIR += snns
     SUBDIR += solitaire
