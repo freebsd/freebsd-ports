@@ -21,12 +21,3 @@ slapd runs under a non-privileged user id (by default `ldap'),
 see %%RC_DIR%%/etc/rc.d/slapd%%RC_SUFX%% for more information.
 
 ************************************************************
-
-############################################################
-
-  CAUTION: This is an alpha release, for evaluation only.
-
-  Do not use in a production environment!
-  Please use OpenLDAP 2.2 instead. 
-
-############################################################
