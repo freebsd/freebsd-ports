@@ -1,0 +1,6 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/Monta/.packlist
+%%SITE_PERL%%/Template/Plugin/Monta.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/Monta
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Template/Plugin 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Template 2>/dev/null || true

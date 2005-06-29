@@ -1,0 +1,4 @@
+Template::Plugin::Monta is a plugin for Template Toolkit which allows you to
+use monta-method on your template.
+
+WWW: http://search.cpan.org/dist/Template-Plugin-Monta/
