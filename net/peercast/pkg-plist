@@ -1,5 +1,6 @@
 bin/peercast
 libexec/peercast
+share/peercast/html/de/bcid.html
 share/peercast/html/de/broadcast.html
 share/peercast/html/de/chaninfo.html
 share/peercast/html/de/connections.html
@@ -13,6 +14,7 @@ share/peercast/html/de/relayinfo.html
 share/peercast/html/de/relays.html
 share/peercast/html/de/settings.html
 share/peercast/html/de/viewlog.html
+share/peercast/html/en/bcid.html
 share/peercast/html/en/broadcast.html
 share/peercast/html/en/chaninfo.html
 share/peercast/html/en/connections.html
@@ -26,6 +28,7 @@ share/peercast/html/en/relayinfo.html
 share/peercast/html/en/relays.html
 share/peercast/html/en/settings.html
 share/peercast/html/en/viewlog.html
+share/peercast/html/fr/bcid.html
 share/peercast/html/fr/broadcast.html
 share/peercast/html/fr/chaninfo.html
 share/peercast/html/fr/connections.html
@@ -39,6 +42,7 @@ share/peercast/html/fr/relayinfo.html
 share/peercast/html/fr/relays.html
 share/peercast/html/fr/settings.html
 share/peercast/html/fr/viewlog.html
+share/peercast/html/ja/bcid.html
 share/peercast/html/ja/broadcast.html
 share/peercast/html/ja/chaninfo.html
 share/peercast/html/ja/connections.html
