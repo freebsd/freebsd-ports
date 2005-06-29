@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+lib/jabber/users-agent/createDB
+lib/jabber/users-agent/users-agent
+@dirrm lib/jabber/users-agent
+@unexec rmdir %D/lib/jabber 2>/dev/null || true
+@unexec if cmp -s %D/etc/jabber-users-agent.xml %D/etc/jabber-users-agent.xml.sample; then rm -f %D/etc/jabber-users-agent.xml; fi
+etc/jabber-users-agent.xml.sample
+@exec [ -f %B/jabber-users-agent.xml ] || cp %B/%f %B/jabber-users-agent.xml

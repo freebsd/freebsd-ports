@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# Start or stop jabber-users-agent
+# $FreeBSD$
+
+# PROVIDE: jabber_users_agent
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: FreeBSD shutdown
+#
+# Define these jabber_users_agent_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+jabber_users_agent_dir=${jabberd_users_agent_dir-"%%PREFIX%%/lib/jabber/users-agent"}
+jabber_users_agent_enable=${jabberd_users_agent_enable-"NO"}
+
+. /etc/rc.subr
+
+name="jabber_users_agent"
+rcvar=`set_rcvar`
+command_interpreter="%%PERL%%"
+command="${jabber_users_agent_dir}/users-agent"
+command_args="&"
+
+pidfile="/var/jabberd/pid/users-agent.pid"
+
+load_rc_config $name
+stop_postcmd="jabber_users_agent_stop_post"
+
+jabber_users_agent_stop_post () {
+	rm -f ${pidfile}
+}
+
+run_rc_command "$1"

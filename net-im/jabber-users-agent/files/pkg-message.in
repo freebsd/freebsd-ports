@@ -1,0 +1,9 @@
+ATTENTION:
+
+Before start to use this, you need to create a MySQL database. You
+can use a script to help you, this script is installed as
+%%PREFIX%%/lib/jabber/users-agent/createDB. You will find instructions
+to use it on %%DOCSDIR%%/INSTALL.
+
+After create the database, configure host, username and password
+to access it on %%PREFIX%%/etc/jabber-users-agent.xml.

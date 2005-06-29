@@ -269,6 +269,7 @@
     SUBDIR += jabber-msn
     SUBDIR += jabber-pyicq
     SUBDIR += jabber-pymsn
+    SUBDIR += jabber-users-agent
     SUBDIR += jabber-xdb_ldap
     SUBDIR += jabber-yahoo
     SUBDIR += jabberd
