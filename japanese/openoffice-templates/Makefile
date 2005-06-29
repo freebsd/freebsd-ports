@@ -17,7 +17,7 @@ DISTNAME=	impress_${PORTNAME}
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT=	OpenOffice.org 1.1 Impress Templates
 
-RUN_DEPENDS=	${LOCALBASE}/${OPENOFFICE}/program/soffice:${PORTSDIR}/japanese/openoffice-1.1
+RUN_DEPENDS=	${LOCALBASE}/${OPENOFFICE}/program/soffice:${PORTSDIR}/editors/openoffice-1.1
 
 NO_BUILD=	yes
 PLIST_FILES=	${OOTEMPLATES:S|^|${TEMPLATEDIR}/|}
