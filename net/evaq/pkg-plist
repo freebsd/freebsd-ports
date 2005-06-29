@@ -341,58 +341,7 @@ share/apps/eva/image/theme/uploadhistory.png
 share/apps/eva/servers
 share/apps/eva/sound/msg.wav
 share/apps/eva/sound/system.wav
-share/doc/HTML/en/eva/common/1.png
-share/doc/HTML/en/eva/common/10.png
-share/doc/HTML/en/eva/common/2.png
-share/doc/HTML/en/eva/common/3.png
-share/doc/HTML/en/eva/common/4.png
-share/doc/HTML/en/eva/common/5.png
-share/doc/HTML/en/eva/common/6.png
-share/doc/HTML/en/eva/common/7.png
-share/doc/HTML/en/eva/common/8.png
-share/doc/HTML/en/eva/common/9.png
-share/doc/HTML/en/eva/common/appheader.html
-share/doc/HTML/en/eva/common/artistic-license.html
-share/doc/HTML/en/eva/common/bottom-left.png
-share/doc/HTML/en/eva/common/bottom-middle.png
-share/doc/HTML/en/eva/common/bottom-right.png
-share/doc/HTML/en/eva/common/bottom1.png
-share/doc/HTML/en/eva/common/bottom2.png
-share/doc/HTML/en/eva/common/bsd-license.html
-share/doc/HTML/en/eva/common/docheadergears.png
-share/doc/HTML/en/eva/common/doctop1.png
-share/doc/HTML/en/eva/common/doctop1a.png
-share/doc/HTML/en/eva/common/doctop1b.png
-share/doc/HTML/en/eva/common/doctop2.png
-share/doc/HTML/en/eva/common/doxygen.css
-share/doc/HTML/en/eva/common/fdl-license
-share/doc/HTML/en/eva/common/fdl-license.html
-share/doc/HTML/en/eva/common/footer.html
-share/doc/HTML/en/eva/common/gpl-license
-share/doc/HTML/en/eva/common/gpl-license.html
-share/doc/HTML/en/eva/common/grad.png
-share/doc/HTML/en/eva/common/header.html
-share/doc/HTML/en/eva/common/headerbg.png
-share/doc/HTML/en/eva/common/kde-common.css
-share/doc/HTML/en/eva/common/kde-default.css
-share/doc/HTML/en/eva/common/kde-localised.css.template
-share/doc/HTML/en/eva/common/kde-web.css
-share/doc/HTML/en/eva/common/kde_logo.png
-share/doc/HTML/en/eva/common/kde_logo_bg.png
-share/doc/HTML/en/eva/common/kmenu.png
-share/doc/HTML/en/eva/common/lgpl-license
-share/doc/HTML/en/eva/common/lgpl-license.html
-share/doc/HTML/en/eva/common/mainfooter.html
-share/doc/HTML/en/eva/common/mainheader.html
-share/doc/HTML/en/eva/common/qpl-license.html
-share/doc/HTML/en/eva/common/shadow.png
-share/doc/HTML/en/eva/common/top-left.png
-share/doc/HTML/en/eva/common/top-middle.png
-share/doc/HTML/en/eva/common/top-right-konqueror.png
-share/doc/HTML/en/eva/common/web-docbottom.png
-share/doc/HTML/en/eva/common/web-doctop.png
-share/doc/HTML/en/eva/common/x11-license.html
-share/doc/HTML/en/eva/common/xml.dcl
+share/doc/HTML/en/eva/common
 share/doc/HTML/en/eva/index.cache.bz2
 share/doc/HTML/en/eva/index.docbook
 share/icons/hicolor/128x128/apps/eva.png
@@ -402,7 +351,6 @@ share/icons/hicolor/32x32/apps/eva.png
 share/icons/hicolor/48x48/apps/eva.png
 share/icons/hicolor/64x64/apps/eva.png
 share/locale/zh_CN/LC_MESSAGES/eva.mo
-@dirrm share/doc/HTML/en/eva/common
 @dirrm share/doc/HTML/en/eva
 @dirrm share/apps/eva/sound
 @dirrm share/apps/eva/image/theme
