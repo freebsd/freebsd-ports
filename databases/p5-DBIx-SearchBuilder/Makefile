@@ -33,7 +33,8 @@ MAN3=	DBIx::SearchBuilder.3 DBIx::SearchBuilder::Handle.3 \
 	DBIx::SearchBuilder::Handle::mysqlPP.3 \
 	DBIx::SearchBuilder::Record.3 \
 	DBIx::SearchBuilder::Record::Cachable.3 \
-	DBIx::SearchBuilder::Union.3
+	DBIx::SearchBuilder::Union.3 \
+	DBIx::SearchBuilder::Unique.3
 
 .include <bsd.port.pre.mk>
 
