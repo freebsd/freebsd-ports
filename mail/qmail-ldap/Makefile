@@ -7,14 +7,15 @@
 
 PORTNAME=	qmail
 PORTVERSION=	${QMAIL_VERSION}.${LDAP_PATCH_DATE}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-ldap
 
 MAINTAINER=	freebsd@galle.com.br
 COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH LDAP support
 
-RUN_DEPENDS=	${LOCALBASE}/bin/svscan:${PORTSDIR}/sysutils/daemontools
+RUN_DEPENDS=	${LOCALBASE}/bin/svscan:${PORTSDIR}/sysutils/daemontools \
+		${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
 
 CONFLICTS=	nss-[0-9]* emboss-[0-9]* digest-[0-9]*
 
