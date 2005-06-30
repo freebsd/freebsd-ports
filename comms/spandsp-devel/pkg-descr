@@ -1,0 +1,4 @@
+Spandsp is a DSP library to support fax functions in the Asterisk PBX.
+Basically it implements a software fax machine to fax out or in.
+
+WWW: http://www.soft-switch.org/
