@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	gdesklets
-PORTVERSION=	0.34.3
+PORTVERSION=	0.35.1
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://www.pycage.de/download/${PORTNAME}/
+MASTER_SITES=	http://www.gdesklets.org/releases/ \
+		http://www.pycage.de/download/${PORTNAME}/
 DISTNAME=	gDesklets-${PORTVERSION}
 
 MAINTAINER=	klammer@webonaut.com
