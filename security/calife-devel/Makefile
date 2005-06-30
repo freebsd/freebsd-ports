@@ -17,7 +17,13 @@ COMMENT=	A lightweight alternative to sudo
 USE_BZIP2=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-pam --with-etcdir=${PREFIX}/etc
+CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+CONFIGURE_ARGS+=	--with-pam
+.endif
 
 CONFLICTS?=	calife-2.*
 
@@ -25,7 +31,9 @@ MAN1=		calife.1
 MAN5=		calife.auth.5
 
 post-install:
+.if ${OSVERSION} >= 500000
 	@${INSTALL_DATA} ${WRKSRC}/calife.pam ${PREFIX}/etc/pam.d/calife.sample
+.endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
