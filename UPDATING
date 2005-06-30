@@ -6,6 +6,24 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050630:
+  AFFECTS: users of x11/nvidia-driver
+  AUTHOR: danfe@FreeBSD.org
+
+  Due to several complaints, new (unsupported) option had been added to port
+  Makefile: WITH_LEGACY_GPU_SUPPORT.  Starting with version 7667, NVidia has
+  dropped support for numerous "legacy" GPUs, while this option allows to go
+  with previous version of driver (this does not apply to older versions of
+  FreeBSD, since you have to use version 6113 of driver (if you did not yet
+  upgraded to FreeBSD 5.3 or later) which has support for those GPUs).
+
+  If you must use WITH_LEGACY_GPU_SUPPORT option, be sure to ``hold'' the
+  package by making appropriate entry in your pkgtools.conf, otherwise
+  portupgrade(1) will upgrade your port to latest NVidia release on the
+  next run, which is probably not what you want.
+
+  Refer to x11/nvidia-driver/Makefile for further details.
+
 20050624:
   AFFECTS: users of lang/perl5.8
   AUTHOR: tobez@FreeBSD.org

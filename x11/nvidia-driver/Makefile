@@ -31,8 +31,10 @@ OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
 		ACPI		"Enable support for ACPI Power Management" off \
 		LINUX		"Build with support for Linux compatibility" on
 
-# Get __FreeBSD_version.  Needed to set PORTREVISION before including bsd.port.mk.
+# Get __FreeBSD_version.  Needed to set PORTREVISION before including of
+# <bsd.port.pre.mk>.
 # XXX This is not required for -CURRENT XXX
+#
 .if !defined(OSVERSION)
 .if exists(/sbin/sysctl)
 OSVERSION!=	/sbin/sysctl -n kern.osreldate
@@ -42,19 +44,49 @@ OSVERSION!=	/usr/sbin/sysctl -n kern.osreldate
 .endif
 
 # Newer releases from NVidia do not play nicely with FreeBSD prior to 5.3.
-# While we support 4.x/5.2.1 releases, stick to 6113 version of driver for
+# While we support 4.x/5.2.1 releases, stick to version 6113 of driver for
 # that old versions of FreeBSD.  This can go away when we stop supporting
 # them.  For details, please refer to PR ports/79571.
+#
+# Starting with version 7667, NVidia has dropped support for numerous
+# "legacy" GPUs.  One can, however, build the port with -DWITH_LEGACY_GPU_SUPPORT
+# to go with version 7174 of driver (this does not apply to older versions
+# of FreeBSD, since one has to use version 6113 of driver (if [s]he did not
+# yet upgraded to FreeBSD 5.3 or later) which has support for those GPUs).
+#
+# If you must use WITH_LEGACY_GPU_SUPPORT option, be sure to ``hold'' the
+# package by making appropriate entry in your pkgtools.conf, otherwise
+# portupgrade(1) will upgrade your port to latest NVidia release on the
+# next run, which is probably not what you want.
+#
+# 			ATTENTION!! ACHTUNG!! VNIMANIE!!
+#
+# This very Makefile is already overly complicated, thus support for
+# multiple versions of NVidia releases is going away once we stop caring for
+# ports on 4.x versions of FreeBSD.  This also applies to "legacy GPUs"
+# support.  Those poor souls^W^Wproud owners of RIVA's and Vanta's, frankly,
+# should consider buying a modern gfx card.
+#
+# XXX WITH_LEGACY_GPU_SUPPORT is not in OPTIONS because it has to be handled
+# _before_ including of <bsd.port.pre.mk>.  On the other hand, it is really
+# an UNSUPPORTED option anyway, so this is for good to hide it here XXX
 #
 .if ${OSVERSION} < 503000
 NVVERSION=	6113
 PORTREVISION=	4
 PLIST_SUB+=	DIFFS="" DRVSO="@comment "
+EXTRA_PATCHES+=	${FILESDIR}/${NVVERSION}-*
+.else
+.if defined(WITH_LEGACY_GPU_SUPPORT)
+NVVERSION=	7174
+PORTREVISION=	1
+EXTRA_PATCHES+=	${FILESDIR}/6113-patch-lib::Makefile
 .else
 NVVERSION=	7667
+EXTRA_PATCHES+=	${FILESDIR}/${NVVERSION}-*
+.endif
 PLIST_SUB+=	DIFFS="@comment " DRVSO=""
 .endif
-EXTRA_PATCHES+=	${FILESDIR}/${NVVERSION}-*
 
 .include <bsd.port.pre.mk>
 
@@ -86,7 +118,7 @@ PLIST_SUB+=	FREEBSD5="" FREEBSD4="@comment "
 
 post-patch: .SILENT
 # We should support -CURRENT: kill the check
-.if ${NVVERSION} == 7667
+.if ${NVVERSION} >= 7174
 	${REINPLACE_CMD} '24,26d' ${WRKSRC}/src/nv-freebsd.h
 .endif
 .if defined(WITH_FREEBSD_AGP)
