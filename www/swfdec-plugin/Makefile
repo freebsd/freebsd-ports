@@ -33,8 +33,14 @@ USE_REINPLACE=	yes
 USE_LIBTOOL_VER=	15
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		MOZILLA_CONFIG="${X11BASE}/lib/mozilla/mozilla-config"
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+.if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="firefox"
+CONFIGURE_ENV+=	MOZILLA_CONFIG="${X11BASE}/bin/firefox-config"
+.else
+CONFIGURE_ENV+=	MOZILLA_CONFIG="${X11BASE}/lib/mozilla/mozilla-config"
+.endif
+
 INSTALLS_SHLIB=	yes
 INSTALL_WRKSRC=	${WRKSRC}/plugin
 
@@ -42,5 +48,6 @@ PLIST_SUB=	VERSION=${PORTVERSION:R}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,int16_t,__int16_t," ${WRKSRC}/libswfdec/swfdec_shape.c
+	@${REINPLACE_CMD} -e "s,mozilla/plugins/,browser_plugins/," ${WRKSRC}/plugin/Makefile.in
 
 .include <bsd.port.mk>
