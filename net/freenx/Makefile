@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	freenx
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.1
 CATEGORIES=	net
 MASTER_SITES=	http://debian.tu-bs.de/knoppix/nx/
 
 MAINTAINER=	freenx@deweyonline.com
-COMMENT=	Low-bandwidth X network server
+COMMENT=	Frontend (auth/session management) for nxserver backend compression libraries
 
 RUN_DEPENDS=	${NXPREFIX}/bin/nxagent:${PORTSDIR}/net/nxserver \
 		bash:${PORTSDIR}/shells/bash2 \
@@ -25,12 +25,15 @@ WRKSRC=		${WRKDIR}
 
 do-install:
 	${MKDIR} ${NXPREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/freenx-0.3.1/nxclient ${NXPREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/freenx-0.3.1/nxnode ${NXPREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/freenx-0.3.1/nxnode-login ${NXPREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/freenx-0.3.1/nxserver ${NXPREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/freenx-0.3.1/nxsetup ${NXPREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/freenx-0.3.1/nxkeygen ${NXPREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/freenx-0.3.1/nxloadconfig ${NXPREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/freenx-0.4.1/nxclient ${NXPREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/freenx-0.4.1/nxnode ${NXPREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/freenx-0.4.1/nxnode-login ${NXPREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/freenx-0.4.1/nxserver ${NXPREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/freenx-0.4.1/nxsetup ${NXPREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/freenx-0.4.1/nxkeygen ${NXPREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/freenx-0.4.1/nxloadconfig ${NXPREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/freenx-0.4.1/nxprint ${NXPREFIX}/bin
+	${MKDIR} ${NXPREFIX}/etc/nxserver
+	${INSTALL_SCRIPT} ${WRKSRC}/freenx-0.4.1/node.conf.sample ${NXPREFIX}/etc/nxserver
 
 .include <bsd.port.mk>

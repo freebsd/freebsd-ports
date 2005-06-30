@@ -1,0 +1,8 @@
+--- freenx-0.4.1/nxnode-login.orig	Tue Jun 28 12:15:43 2005
++++ freenx-0.4.1/nxnode-login	Tue Jun 28 11:53:16 2005
+@@ -1,4 +1,4 @@
+-#!/usr/bin/expect
++#!/usr/local/bin/expect
+ # nxnode-login: spawns and controls ssh 
+ # Copyright (c) 2004 by Fabian Franz.
+ # License: GPL, version 2

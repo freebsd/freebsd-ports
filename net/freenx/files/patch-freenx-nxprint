@@ -1,0 +1,8 @@
+--- freenx-0.4.1/nxprint.orig	Mon Jun 27 13:38:09 2005
++++ freenx-0.4.1/nxprint	Mon Jun 27 13:53:08 2005
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/local/bin/bash
+ #
+ # nxprint - Prints a list of available drivers or printers
+ # 
