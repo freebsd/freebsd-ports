@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	qtiplot
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.2.2
 CATEGORIES=	math science
 MASTER_SITES=	http://soft.proindependent.com/
+DISTNAME=	${PORTNAME}-0.6.2-2
 
 MAINTAINER=	gaoj@cpsc.ucalgary.ca
 COMMENT=	An Origin clone for data analysis and scientific plotting
@@ -33,6 +34,12 @@ MAKE_ENV=	QTDIR=${QT_PREFIX}
 IGNORE=		does not compile on FreeBSD 4.x
 .endif
 
+.if exists(${X11BASE}/share/qt/mkspecs/freebsd-g++)
+QMAKESPEC=	${X11BASE}/share/qt/mkspecs/freebsd-g++
+.else
+QMAKESPEC=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+.endif
+
 pre-configure:
 	@${REINPLACE_CMD} -e \
 		"s:/home/ion/qt/qwt-4.2.0/include:${LOCALBASE}/include/qwt:" \
@@ -42,7 +49,7 @@ pre-configure:
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
-		-spec freebsd-g++ qtiplot.pro
+		-spec ${QMAKESPEC} qtiplot.pro
 
 post-configure:
 	@${REINPLACE_CMD} -e \
