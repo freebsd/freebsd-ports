@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	clearlooks
-PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTVERSION=	0.6.2
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	clearlooks
@@ -16,17 +15,16 @@ DISTNAME=	clearlooks-${PORTVERSION}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT?=	GTK+ 2.x engine based on Bluecurve
 
-CONFLICTS=	clearlooks-metacity-[0-9]*
-
 USE_BZIP2=	yes
 USE_LIBTOOL_VER=15
-USE_GNOME=	gtk20 gnomehier
+USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
 
+OPTIONS+=	METACITY "Depend on MetaCity Theme" On
 .if defined(PORTNAME) && ${PORTNAME} == "clearlooks"
 OPTIONS+=	ANIMATION "Enable experimental animated progressbars" Off
 .endif
@@ -48,12 +46,16 @@ INSTALL_WRKSRC=	${WRKSRC}/themes
 PLIST_SUB+=	ENGINE="@comment "
 .endif
 
+.if !defined(WITHOUT_METACITY)
+RUN_DEPENDS+=	${X11BASE}/share/gnome/themes/Clearlooks/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/clearlooks-metacity
+.endif
+
 .if defined(WITH_ANIMATION)
 CONFIGURE_ARGS+=	--enable-animation
 .endif
 
 .if ${PORTNAME} == "clearlooks"
-pre-everything::
+3pre-everything::
 	@if [ -n "`${PKG_INFO} -xI '^gtk-engines2*[0-9]*'`" ]; then \
 		${ECHO_MSG} ; \
 		${ECHO_MSG} "Gnome/gtk-engine users should use ${PORTSDIR}/x11-themes/clearlooks-themes instead" ; \
@@ -67,7 +69,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|gtkrc||' \
 		${WRKSRC}/themes/Clearlooks/gtk-2.0/Makefile.in
 .endif
-	@${REINPLACE_CMD} -e 's|$$(gnome_data)/themes/Clearlooks/metacity-1|${PREFIX}/share/gnome/themes/Clearlooks/metacity-1|' \
-		${WRKSRC}/themes/Clearlooks/metacity-1/Makefile.in
 
 .include <bsd.port.post.mk>
