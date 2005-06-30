@@ -1,5 +1,5 @@
---- src/daemon/driver/driverControlers.ml.orig	Sun Mar  7 17:44:13 2004
-+++ src/daemon/driver/driverControlers.ml	Tue Mar 23 11:31:09 2004
+--- src/daemon/driver/driverControlers.ml.orig	Thu Aug 19 15:56:53 2004
++++ src/daemon/driver/driverControlers.ml	Thu Jun 30 19:25:24 2005
 @@ -319,6 +319,7 @@
    }
  
@@ -25,22 +25,24 @@
          TcpBufferedSocket.write_string sock iac_will_naws;
  
          before_telnet_output o sock;
-@@ -602,15 +604,15 @@
+@@ -608,17 +610,17 @@
  let http_add_html_header r = 
    http_add_gen_header r;
    add_reply_header r "Pragma" "no-cache";
--  add_reply_header r "Content-Type" "text/html; charset=iso-8859-1"
-+  add_reply_header r "Content-Type" "text/html; charset=big5"
+-  add_reply_header r "Content-Type" "text/html; charset=iso-8859-1";
++  add_reply_header r "Content-Type" "text/html; charset=big5";
+   add_gzip_headers r
  
  let http_add_css_header r = 
    http_add_gen_header r;
--  add_reply_header r "Content-Type" "text/css; charset=iso-8859-1"
-+  add_reply_header r "Content-Type" "text/css; charset=big5"
+-  add_reply_header r "Content-Type" "text/css; charset=iso-8859-1";
++  add_reply_header r "Content-Type" "text/css; charset=big5";
+   add_gzip_headers r
  
  let http_add_js_header r =
    http_add_gen_header r;
--  add_reply_header  r "Content-Type" "text/javascript; charset=iso-8859-1"
-+  add_reply_header  r "Content-Type" "text/javascript; charset=big5"
+-  add_reply_header  r "Content-Type" "text/javascript; charset=iso-8859-1";
++  add_reply_header  r "Content-Type" "text/javascript; charset=big5";
+   add_gzip_headers r
    
  let any_ip = Ip.of_inet_addr Unix.inet_addr_any
-   
