@@ -15,6 +15,7 @@
     SUBDIR += bmp-docklet
     SUBDIR += cal
     SUBDIR += checkrdf
+    SUBDIR += cycle
     SUBDIR += dailystrips
     SUBDIR += dlume
     SUBDIR += doodle
