@@ -20,9 +20,15 @@ WANT_GNOME=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=	253
+
+.if !defined(WITHOUT_THREADS)
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -DHAVE_LIBPTHREAD" \
 		LDFLAGS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-vga=no
+.else
+CONFIGURE_ARGS= --enable-vga=no --enable-pthreads=no
+.endif
+
 MAKEFILE=	makefile
 ALL_TARGET=	full-build
 INSTALLS_SHLIB=	yes
