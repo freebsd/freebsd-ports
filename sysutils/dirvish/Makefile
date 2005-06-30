@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	dirvish
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	http://www.dirvish.org/
-DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lorenl@alzatex.com
 COMMENT=	Network backup system based off of rsync
@@ -21,8 +20,6 @@ RUN_DEPENDS=	${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time-modules \
 
 MAN5=		dirvish.conf.5
 MAN8=		dirvish.8 dirvish-expire.8 dirvish-locate.8 dirvish-runall.8
-
-WRKSRC=		${WRKDIR}/Dirvish-${PORTVERSION}
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
