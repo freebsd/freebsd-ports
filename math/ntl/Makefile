@@ -18,6 +18,7 @@ COMMENT=	Victor Shoup's Number Theory Library
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 .endif
 
+USE_PERL5_BUILD=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" NTL_STD_CXX=on
