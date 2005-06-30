@@ -1345,7 +1345,7 @@ to /usr/local/aster/ASTK/ASTK_SERV/bin (or you can remove $HOME/.astkrc).
   A "quick and dirty" guide on setting up, configuring and using getmail is
   available at:
 
-    (http://qnd-guides.net/qnd-getmail.html)
+    (http://www.qnd-guides.org/qnd-getmail.html)
 
 20041012:
   AFFECTS: users of devel/perforce
