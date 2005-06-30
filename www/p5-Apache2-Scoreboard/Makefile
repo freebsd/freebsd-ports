@@ -22,7 +22,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
-MAN3=		Apache::Scoreboard.3
+MAN3=		Apache::Scoreboard.3 Apache::DummyScoreboard.3
 
 INSTALLS_SHLIB=	YES
 
