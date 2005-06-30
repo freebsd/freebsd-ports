@@ -1378,6 +1378,7 @@ cy-aspell	ports/textproc/cy-aspell
 cy-ooodict-GB	ports/editors/ooodict-cy_GB
 cyberbit-ttfonts	ports/x11-fonts/cyberbit-ttfonts
 cybercalendar	ports/www/cybercalendar
+cycle		ports/deskutils/cycle
 cyclone		ports/lang/cyclone
 cymbaline	ports/audio/cymbaline
 cyr-rfx		ports/x11-fonts/cyr-rfx
