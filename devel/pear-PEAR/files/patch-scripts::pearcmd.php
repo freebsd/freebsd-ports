@@ -1,7 +1,7 @@
 --- scripts/pearcmd.php.orig	Wed Oct 27 02:58:21 2004
 +++ scripts/pearcmd.php	Thu Dec 16 17:30:19 2004
 @@ -1,3 +1,4 @@
-+#!@php_bin@ -n -q -dsafe_mode=0 -doutput_buffering=1
++#!@php_bin@ -nq
  <?php
  //
  // +----------------------------------------------------------------------+
