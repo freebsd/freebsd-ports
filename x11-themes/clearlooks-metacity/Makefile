@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	clearlooks
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Clearlooks Metacity theme
 
-CONFLICTS=	clearlooks-[0-9]* clearlooks-themes-[0-9]*
-
 WRKSRC=		${WRKDIR}/Clearlooks/metacity-1/
 USE_GNOME=	metacity gnomeprefix
 USE_X_PREFIX=	yes
