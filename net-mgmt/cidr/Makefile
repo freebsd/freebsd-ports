@@ -7,8 +7,7 @@
 PORTNAME=	cidr
 PORTVERSION=	2.3.2
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://geeksoul.com/robert/cidr/
-MASTER_SITES+=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://critical.ch/distfiles/
 MASTER_SITE_SUBDIR=	nork
 DISTNAME=	cidr-current
 
