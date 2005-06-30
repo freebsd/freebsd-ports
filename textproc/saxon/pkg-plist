@@ -1,31 +1,8 @@
-%%EXAMPLESDIR%%/applet/demo/README.html
-%%EXAMPLESDIR%%/applet/demo/client.html
-%%EXAMPLESDIR%%/applet/demo/foo-s1.xml
-%%EXAMPLESDIR%%/applet/demo/get-todo-list.html
-%%EXAMPLESDIR%%/applet/demo/index.html
-%%EXAMPLESDIR%%/applet/demo/lts3611beac.jpg
-%%EXAMPLESDIR%%/applet/demo/rabbitwhorn.jpg
-%%EXAMPLESDIR%%/applet/demo/s1ToHTML.xsl
-%%EXAMPLESDIR%%/applet/demo/saxonApplets.xml
-%%EXAMPLESDIR%%/applet/demo/simple.html
-%%EXAMPLESDIR%%/applet/demo/target.html
-%%EXAMPLESDIR%%/applet/family-tree/family-tree.html
-%%EXAMPLESDIR%%/applet/family-tree/kennedy.xml
-%%EXAMPLESDIR%%/applet/family-tree/person-applet.xsl
-%%EXAMPLESDIR%%/applet/family-tree/person.xsl
+@comment $FreeBSD$
 %%EXAMPLESDIR%%/data/books.dtd
 %%EXAMPLESDIR%%/data/books.xml
 %%EXAMPLESDIR%%/data/othello.xml
 %%EXAMPLESDIR%%/data/play.dtd
-%%EXAMPLESDIR%%/data/tstmt.dtd
-%%EXAMPLESDIR%%/java/DTDGenerator$1.class
-%%EXAMPLESDIR%%/java/DTDGenerator$AttributeDetails.class
-%%EXAMPLESDIR%%/java/DTDGenerator$CharHandler.class
-%%EXAMPLESDIR%%/java/DTDGenerator$ChildDetails.class
-%%EXAMPLESDIR%%/java/DTDGenerator$ElemHandler.class
-%%EXAMPLESDIR%%/java/DTDGenerator$ElementDetails.class
-%%EXAMPLESDIR%%/java/DTDGenerator.class
-%%EXAMPLESDIR%%/java/DTDGenerator.java
 %%EXAMPLESDIR%%/java/ExampleContentHandler.class
 %%EXAMPLESDIR%%/java/ExampleContentHandler.java
 %%EXAMPLESDIR%%/java/JDOMExample.class
@@ -52,6 +29,8 @@
 %%EXAMPLESDIR%%/styles/books.xsl
 %%EXAMPLESDIR%%/styles/play.xsl
 %%EXAMPLESDIR%%/styles/total.xsl
+%%EXAMPLESDIR%%/styles/tour10.xsl
+%%EXAMPLESDIR%%/styles/tour11.xsl
 %%EXAMPLESDIR%%/trax/exampleSimple2.out
 %%EXAMPLESDIR%%/trax/xml/baz.xml
 %%EXAMPLESDIR%%/trax/xml/embedded.xml
@@ -76,7 +55,4 @@
 @dirrm %%EXAMPLESDIR%%/styles
 @dirrm %%EXAMPLESDIR%%/java
 @dirrm %%EXAMPLESDIR%%/data
-@dirrm %%EXAMPLESDIR%%/applet/family-tree
-@dirrm %%EXAMPLESDIR%%/applet/demo
-@dirrm %%EXAMPLESDIR%%/applet
 @dirrm %%EXAMPLESDIR%%
