@@ -16,6 +16,7 @@ bin/semCorFreq.pl
 %%SITE_PERL%%/WordNet/ic-semcor.dat
 %%SITE_PERL%%/WordNet/synsetdepths-2.0.dat
 %%SITE_PERL%%/WordNet/wordvectors.dat
+%%SITE_PERL%%/WordNet/vector-pairs-relation.dat
 %%SITE_PERL%%/WordNet/vector-relation.dat
 %%SITE_PERL%%/WordNet/Similarity.pm
 %%SITE_PERL%%/WordNet/Similarity/hso.pm
