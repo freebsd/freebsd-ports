@@ -1,0 +1,85 @@
+.\" .ig
+.\" cycle manual page.
+.\" 
+.\" Miriam Ruiz <little_miry@yahoo.es>, 2005.
+.\" 
+.\" This next line loads the www macro package so that the .URL macro can be used.
+.\" ..
+.\" .mso www.tmac
+.TH "cycle" "1" "6 April 2005" "Miriam Ruiz" "Utils"
+.SH "NAME"
+.
+cycle \- a calendar for women
+.
+.SH "SYNOPSIS"
+.
+.B cycle
+.
+.SH "DESCRIPTION"
+.
+Cycle is a calendar program for women. Given a cycle length or statistics for several periods, it can calculate the days until menstruation, the days of "safe" sex, the fertile period, and the days to ovulations, and define the d.o.b. (date of birth) of a child. It allows the user to write notes and helps to supervise the reception of hormonal contraceptive tablets.
+.
+.SH "FEATURES"
+The program is capable of:
+.P
+ \- Calculate of the days of menstruation, based on length of the cycle or on statistics of a period.
+ \- Calculate the "safe" sex days, fertile period and day to ovulations
+ \- Definition of D.O.B . (Date Of Birth) of a child
+ \- Allows to write notes
+ \- Helps to supervise reception of hormonal contraceptive tablets
+.P
+.SH "HOW DOES IT WORK"
+It uses the calendar method for the definition of fertile days. For this is necessary to determine duration, at least, of last six cycles. For determine the fertile days it uses this algoritm:
+.P
+ \- First day: duration of shortest cycle minus 18
+ \- Last day: duration of longest cycle minus 11
+ \- Ovulation: is considered in the middle of fertile period (Determine the exact day isn't possible with the calendar method) 
+.P
+
+Date of a birth of the child is counted from the beginning of last menstruation (in obstetrics are accepted 40 weeks). This date is corrected with the duration of a cycle (are subtracted or added same number of days that a cycle differs from 28 days). Is possible check the results at: http://cir.msk.ru/sroki.shtml (in Russian)
+.SH "USAGE"
+.
+It is necessary to mark the beginning of menstruation. This is possible clicking with the right button on the date and chosing "The beginning of a cycle". Similarly the mark can be removed. Using duration of last six cycles, the program will calculate
+
+.P
+ \- Fertile period \- green cells
+ \- Ovulation day (the middle fertile period) \- brightly green cell
+ \- Beginning of following menstruation \- pink cells 
+.P
+
+Cycle duration is set in options or is calculated an average of last six periods.
+
+To determine prospective date of a birth of the child, it is necessary first day of last cycle to mark in addition as "Pregnancy".
+
+Depending on your purposes, you can display only "Safe" sex days or only fertile days. Information about interesting day can be received clicking with left button.
+
+Is possible adding a note to any date using corresponding item of the menu. Day with a note are underlined.
+
+It is necessary to note that factor of failures of calendar contraception method is about 10 percent. This method is suitable only for women with enough regular cycle.
+
+If your doctor has recommended hormonal contraceptive this program will help to supervise their reception. Closely familiarize with the instruction applied to the chosen preparation. Packing can contain 21 tablet (the circuit of reception 21 day on one tablet, then 7 days pause) or 28 tablets in this case all tablets are accepted without interruption every day of 28. In the program, is marked only day of reception of each first tablet of packing.
+
+NOTE: This program is not a reliable contraceptive method. It does neither help to prevent sexual transmision diseases like AIDS. It is just an electronic means of keeping track of some of your medical data and extract some statistical conclusions from them. You cannot consider this program as a substitute for your gynecologist in any way.
+.
+.SH "FILES"
+.
+.TP 
+.I ~/.cycle
+This is the directory where cycle stores the data.
+.
+.SH "AUTHOR"
+.
+cycle was written by Oleg S. Gints.
+.P
+This manual page was written for Debian by Miriam Ruiz <little_miry@yahoo.es>.
+.
+.SH "SEE ALSO"
+.
+You can find cycle's home page at: 
+.URL http://cycle.sourceforge.net/
+http://cycle.sourceforge.net/
+.P
+More information about calendar method are available at:
+.URL http://www.mama.ru/gynecolog/STA/st18.htm
+http://www.mama.ru/gynecolog/STA/st18.htm (in Russian)
+.
