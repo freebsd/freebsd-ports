@@ -25,7 +25,7 @@ USE_GNOME=	gtk12
 PLIST_FILES=	lib/xmms/Effect/libdefx.so
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^MAKE=.*||; s|gcc|${CC}|; s|-O2|${CFLAGS}|; \
+	@${REINPLACE_CMD} -e 's|^MAKE=.*||; s|gcc|${CC}|; s|-O2|${CFLAGS} -fPIC|; \
 		s|gtk-config|${GTK_CONFIG}|' ${WRKSRC}/config.mak
 	@${REINPLACE_CMD} -e 's|-shared|-shared -fPIC|' ${WRKSRC}/Makefile
 
