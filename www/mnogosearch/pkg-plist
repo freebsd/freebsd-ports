@@ -430,4 +430,5 @@ sbin/indexer
 @dirrm etc/mnogosearch/synonym
 @dirrm etc/mnogosearch/stopwords
 @dirrm etc/mnogosearch/langmap
+@unexec rmdir %D/etc/mnogosearch 2>/dev/null || true
 @dirrm %%DOCSDIR%%
