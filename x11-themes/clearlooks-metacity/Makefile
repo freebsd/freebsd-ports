@@ -7,12 +7,15 @@
 
 PORTNAME=	clearlooks-metacity
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	clearlooks
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Clearlooks Metacity theme
+
+CONFLICTS=	clearlooks-[0-9]* clearlooks-themes-[0-9]*
 
 WRKSRC=		${WRKDIR}/Clearlooks/metacity-1/
 USE_GNOME=	metacity gnomeprefix
