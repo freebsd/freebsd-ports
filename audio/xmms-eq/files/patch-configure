@@ -1,19 +1,30 @@
 --- configure.orig	Sun May 16 03:59:17 2004
-+++ configure	Tue Jun 14 18:53:43 2005
-@@ -9690,9 +9690,9 @@
++++ configure	Thu Jun 30 02:09:17 2005
+@@ -9664,7 +9664,7 @@
+   sse2=no
+ fi;
+ 
+-ARCH_DEFINES_DEFAULT="-DARCH_X86"
++ARCH_DEFINES_DEFAULT=""
+ if test "x$debug" = xyes; then
+ 	XF_CFLAGS="-Wall -g -O2 -DDEBUG $XF_CFLAGS"
+ else
+@@ -9689,10 +9689,10 @@
+ fi
  
  have_solaris=no
- arch_type=ix86
+-arch_type=ix86
 -SSE_RES=`cat /proc/cpuinfo|grep sse`
 -SSE2_RES=`cat /proc/cpuinfo|grep sse2`
 -MMX_RES=`cat /proc/cpuinfo|grep mmx`
++arch_type=unknown
 +SSE_RES=`grep 'Features=.*[<,]SSE[>,]' /var/run/dmesg.boot`
 +SSE2_RES=`grep 'Features=.*[<,]SSE2[>,]' /var/run/dmesg.boot`
 +MMX_RES=`grep 'Features=.*[<,]MMX[>,]' /var/run/dmesg.boot`
  ARCH_DEFINES=""
  
  if test "x$mmx" = xyes; then
-@@ -9708,27 +9708,6 @@
+@@ -9708,27 +9708,8 @@
  if test "x$debug" = xno; then
      case "$host" in
          i386-*-* | i86pc-*-*)
@@ -38,16 +49,8 @@
 -	    ;;
 -	    i686-*-*)
 -            ARCH_DEFINES="-march=i686"
++            ARCH_DEFINES_DEFAULT="-DARCH_X86"
++            arch_type=ix86
  		    if test "x$benchmark" = xyes; then
  			    XF_CFLAGS="$XF_CFLAGS -DBENCHMARK"
  		    fi
-@@ -9775,6 +9754,9 @@
-             ARCH_DEFINES_DEFAULT="-O3"
-             have_solaris=yes
-         ;;
-+	*)
-+	    arch_type="unknown"
-+	;;
-     esac
- fi
- 
