@@ -193,6 +193,14 @@ CONFIGURE_ARGS+=	--enable-proxycache
 CONFIGURE_ARGS+=	--enable-aci
 .endif
 
+.if defined(WITH_UNIQUE)
+CONFIGURE_ARGS+=       --enable-unique
+.endif
+
+.if defined(WITH_PPOLICY)
+CONFIGURE_ARGS+=       --enable-ppolicy
+.endif
+
 .if defined(WITHOUT_BDB)
 CONFIGURE_ARGS+=	--disable-bdb \
 			--disable-hdb \
@@ -355,6 +363,8 @@ pre-everything::
 	@${ECHO} "WITH_DYNGROUP         with Dynamic Group overlay"
 	@${ECHO} "WITH_PROXYCACHE       with Proxy Cache overlay"
 	@${ECHO} "WITH_ACI              with per-object ACIs (experimental)"
+	@${ECHO} "WITH_UNIQUE           with attribute Uniqueness overlay"
+	@${ECHO} "WITH_PPOLICY          with Password Policy overlay"
 	@${ECHO} "WITHOUT_DYNAMIC_BACKENDS build static backends"
 .if defined(DFOSVERSION) || ${OSVERSION} >= 500038
 	@${ECHO} "WITH_RCORDER          slapd(1) should start early in the boot process"
