@@ -41,10 +41,30 @@ www/snortsms/conf/dsp_save_conf.php
 www/snortsms/conf/fbx_Switch.php
 www/snortsms/conf/index.php
 www/snortsms/contrib/SNORTSMS.mysql
+www/snortsms/contrib/SNORT_fix.mysql
+www/snortsms/css/calendar_icon.png
+www/snortsms/css/datepickercontrol.css
 www/snortsms/css/default.css
 www/snortsms/docs/snortsms_install.html
 www/snortsms/dsp_main.php
 www/snortsms/dsp_menu.php
+www/snortsms/events/act_action.php
+www/snortsms/events/act_checkdb.php
+www/snortsms/events/act_scope.php
+www/snortsms/events/dsp_.php
+www/snortsms/events/dsp_home.php
+www/snortsms/events/dsp_mywindows.php
+www/snortsms/events/dsp_pagenate.php
+www/snortsms/events/fbx_Settings.php
+www/snortsms/events/fbx_Switch.php
+www/snortsms/events/index.php
+www/snortsms/events/qry_mywindows.php
+www/snortsms/events/qry_otheralerts.php
+www/snortsms/events/qry_search.php
+www/snortsms/events/qry_sig_recon.php
+www/snortsms/events/qry_sig_summary.php
+www/snortsms/events/qry_sigcat.php
+www/snortsms/events/qry_sigzoom.php
 www/snortsms/fbx_Circuits.php
 www/snortsms/fbx_Fusebox3.0_PHP4.0.6.php
 www/snortsms/fbx_Fusebox3.0_PHP4.1.x.php
@@ -95,10 +115,12 @@ www/snortsms/import/fbx_Switch.php
 www/snortsms/import/index.php
 www/snortsms/index.php
 www/snortsms/java/cssmenu.js
+www/snortsms/java/datepickercontrol.js
 www/snortsms/lib/func_DrawRepHeader.php
 www/snortsms/lib/func_GenBarnConf.php
 www/snortsms/lib/func_GenSnortConf.php
 www/snortsms/lib/func_GenToken.php
+www/snortsms/lib/func_IsIP.php
 www/snortsms/lib/func_Log.php
 www/snortsms/lib/func_ReserveNextID.php
 www/snortsms/lib/func_Rules.php
@@ -262,6 +284,7 @@ www/snortsms/variables/qry_variables.php
 @dirrm www/snortsms/java
 @dirrm www/snortsms/import
 @dirrm www/snortsms/images
+@dirrm www/snortsms/events
 @dirrm www/snortsms/docs
 @dirrm www/snortsms/css
 @dirrm www/snortsms/contrib

@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	snortsms
-PORTVERSION=	0.12.6
+PORTVERSION=	0.14.9
 CATEGORIES=	security www
 MASTER_SITES=	http://snortsms.servangle.net/dnloads/
 
 MAINTAINER=	snortsms@servangle.net
-COMMENT=	A Snort Sensor Management System web interface and monitoring console
+COMMENT=	A remote management and monitoring interface for Snort based IDS
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB \
 		${LOCALBASE}/bin/curl:${PORTSDIR}/ftp/curl
 
-USE_PHP=	mysql pcre pcntl
+USE_PHP=	mysql pcre pcntl session
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
