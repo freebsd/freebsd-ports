@@ -1,5 +1,5 @@
---- freenx-0.3.1/nxsetup.orig	Tue Feb 15 19:00:31 2005
-+++ freenx-0.3.1/nxsetup	Mon Mar 28 15:53:10 2005
+--- freenx-0.4.1/nxsetup.orig	Tue Feb 15 19:00:31 2005
++++ freenx-0.4.1/nxsetup	Mon Mar 28 15:53:10 2005
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/local/bin/bash
