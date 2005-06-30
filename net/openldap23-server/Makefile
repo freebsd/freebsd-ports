@@ -167,8 +167,6 @@ BACKEND_ENABLE=		"yes"
 BACKEND_PLIST=		"@comment "
 .endif
 
-CONFIGURE_ARGS+=	--disable-syncprov
-
 CONFIGURE_ARGS+=	--localstatedir=${LOCALSTATEDIR} \
 			--enable-ldbm=${BACKEND_ENABLE} \
 			--enable-crypt \
@@ -194,11 +192,17 @@ CONFIGURE_ARGS+=	--enable-aci
 .endif
 
 .if defined(WITH_UNIQUE)
-CONFIGURE_ARGS+=       --enable-unique
+CONFIGURE_ARGS+=	--enable-unique
 .endif
 
 .if defined(WITH_PPOLICY)
-CONFIGURE_ARGS+=       --enable-ppolicy
+CONFIGURE_ARGS+=	--enable-ppolicy
+.endif
+
+.if defined(WITH_SYNCPROV)
+CONFIGURE_ARGS+=	--enable-syncprov
+.else
+CONFIGURE_ARGS+=	--disable-syncprov
 .endif
 
 .if defined(WITHOUT_BDB)
@@ -365,6 +369,7 @@ pre-everything::
 	@${ECHO} "WITH_ACI              with per-object ACIs (experimental)"
 	@${ECHO} "WITH_UNIQUE           with attribute Uniqueness overlay"
 	@${ECHO} "WITH_PPOLICY          with Password Policy overlay"
+	@${ECHO} "WITH_SYNCPROV		with Syncprov overlay"
 	@${ECHO} "WITHOUT_DYNAMIC_BACKENDS build static backends"
 .if defined(DFOSVERSION) || ${OSVERSION} >= 500038
 	@${ECHO} "WITH_RCORDER          slapd(1) should start early in the boot process"
