@@ -7,7 +7,7 @@
 # Add the following line to /etc/rc.conf to enable daedalus:
 # daedalus_enable (bool):      Set to "NO" by default.
 #                             Set it to "YES" to enable daedalus
-# daedalus_flags (str):        Set to "-C -c %%PREFIX%%/etc/daedalus.conf" by default.
+# daedalus_flags (str):        Set to "-c %%PREFIX%%/etc/daedalus/daedalus.xml -t %%PREFIX%%/etc/daedalus/templates.xml" by default.
 #                             Extra flags passed to start command
 #
 . %%RC_SUBR%%
@@ -18,10 +18,10 @@ rcvar=`set_rcvar`
 command="%%PREFIX%%/bin/daedalus.rb"
 pidfile="/var/run/daedalus.pid"
 command_interpreter="%%RUBY_WITHOUT_SUFFIX%%"
-required_files=%%PREFIX%%/etc/daedalus.conf
+required_files=%%PREFIX%%/etc/daedalus/daedalus.xml
 
 [ -z "$daedalus_enable" ]       && daedalus_enable="NO"
-[ -z "$daedalus_flags" ]        && daedalus_flags="-C -c %%PREFIX%%/etc/daedalus.conf"
+[ -z "$daedalus_flags" ]        && daedalus_flags="-c %%PREFIX%%/etc/daedalus/daedalus.xml -t %%PREFIX%%/etc/daedalus/templates.xml"
 
 load_rc_config $name
 

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	daedalus
-PORTVERSION=	1.1
+PORTVERSION=	2.0
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.verbotenplanet.net/daedalus/
+MASTER_SITES=	ftp://ftp.insidesystems.net/daedalus/
 
 MAINTAINER=	kelley@insidesystems.net
 COMMENT=	Flexible process monitor/restart daemon written in ruby
@@ -30,7 +30,9 @@ pre-install:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/daedalus.rb ${PREFIX}/bin/daedalus.rb
-	${INSTALL_DATA} ${WRKSRC}/examples/daedalus.conf ${PREFIX}/etc/daedalus.conf.sample
+	${MKDIR} ${PREFIX}/etc/daedalus
+	${INSTALL_DATA} ${WRKSRC}/examples/daedalus.xml ${PREFIX}/etc/daedalus/daedalus.xml.sample
+	${INSTALL_DATA} ${WRKSRC}/examples/templates.xml ${PREFIX}/etc/daedalus/templates.xml.sample
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/etc/rc.d/${PORTNAME}.sh
 
 post-install:
