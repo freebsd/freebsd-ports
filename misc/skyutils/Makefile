@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	skyutils
-PORTVERSION=	2.6
+PORTVERSION=	2.8
 CATEGORIES=	misc
 MASTER_SITES=	http://zekiller.skytech.org/fichiers/
 
 MAINTAINER=	machiel_mastenbroek@hotmail.com
 COMMENT=	A library required by smssend (same author)
 
-USE_AUTOCONF_VER?=259
-USE_INC_LIBTOOL_VER=13
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_AUTOCONF_VER=	259
+USE_INC_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

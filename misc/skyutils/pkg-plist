@@ -1,7 +1,7 @@
 bin/skyutils-config
 include/skyutils.h
-lib/libskyutils-2.6.so
-lib/libskyutils-2.6.so.6
+lib/libskyutils-2.8.so
+lib/libskyutils-2.8.so.8
 lib/libskyutils.a
 lib/libskyutils.la
 lib/libskyutils.so
