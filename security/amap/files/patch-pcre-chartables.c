@@ -1,5 +1,5 @@
---- pcre-3.9/chartables.c.orig	Sun May 22 12:18:27 2005
-+++ pcre-3.9/chartables.c	Sun May 22 12:18:34 2005
+--- pcre-3.9/chartables.c.orig	Wed Jun 29 17:30:09 2005
++++ pcre-3.9/chartables.c	Wed Jun 29 17:30:16 2005
 @@ -10,7 +10,7 @@
  character tables which are used when no tables are passed to the compile
  function. */

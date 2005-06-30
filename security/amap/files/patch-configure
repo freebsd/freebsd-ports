@@ -1,0 +1,11 @@
+--- configure.orig	Wed Jun 29 17:40:57 2005
++++ configure	Wed Jun 29 17:41:18 2005
+@@ -29,7 +29,7 @@
+ SOCKET_PATH=""
+ MANDIR=""
+ LIBDIRS=`cat /etc/ld.so.conf 2> /dev/null`
+-PREFIX=`echo "$1"|grep prefix=|sed 's/.*prefix=//i'`
++PREFIX=`echo "$1"|grep prefix=|sed 's/.*prefix=//'`
+ echo
+ 
+ echo "Checking for openssl ..."
