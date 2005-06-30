@@ -63,6 +63,9 @@ lib/gdesklets/Sensors/FontSelector/__init__.pyo
 lib/gdesklets/config/ConfigBoolean.py
 lib/gdesklets/config/ConfigBoolean.pyc
 lib/gdesklets/config/ConfigBoolean.pyo
+lib/gdesklets/config/ConfigButton.py
+lib/gdesklets/config/ConfigButton.pyc
+lib/gdesklets/config/ConfigButton.pyo
 lib/gdesklets/config/ConfigColor.py
 lib/gdesklets/config/ConfigColor.pyc
 lib/gdesklets/config/ConfigColor.pyo
@@ -108,15 +111,9 @@ lib/gdesklets/config/DaemonConfigger.pyo
 lib/gdesklets/config/DisplayConfigger.py
 lib/gdesklets/config/DisplayConfigger.pyc
 lib/gdesklets/config/DisplayConfigger.pyo
-lib/gdesklets/config/GConfBackend.py
-lib/gdesklets/config/GConfBackend.pyc
-lib/gdesklets/config/GConfBackend.pyo
 lib/gdesklets/config/StateSaver.py
 lib/gdesklets/config/StateSaver.pyc
 lib/gdesklets/config/StateSaver.pyo
-lib/gdesklets/config/Win32Backend.py
-lib/gdesklets/config/Win32Backend.pyc
-lib/gdesklets/config/Win32Backend.pyo
 lib/gdesklets/config/__init__.py
 lib/gdesklets/config/__init__.pyc
 lib/gdesklets/config/__init__.pyo
@@ -146,6 +143,9 @@ lib/gdesklets/display/GlassWindow.pyo
 lib/gdesklets/display/Layouter.py
 lib/gdesklets/display/Layouter.pyc
 lib/gdesklets/display/Layouter.pyo
+lib/gdesklets/display/MenuItem.py
+lib/gdesklets/display/MenuItem.pyc
+lib/gdesklets/display/MenuItem.pyo
 lib/gdesklets/display/Plug.py
 lib/gdesklets/display/Plug.pyc
 lib/gdesklets/display/Plug.pyo
@@ -161,6 +161,9 @@ lib/gdesklets/display/TargetBonoboControl.pyo
 lib/gdesklets/display/TargetCanvas.py
 lib/gdesklets/display/TargetCanvas.pyc
 lib/gdesklets/display/TargetCanvas.pyo
+lib/gdesklets/display/TargetDisplay.py
+lib/gdesklets/display/TargetDisplay.pyc
+lib/gdesklets/display/TargetDisplay.pyo
 lib/gdesklets/display/TargetEntry.py
 lib/gdesklets/display/TargetEntry.pyc
 lib/gdesklets/display/TargetEntry.pyo
@@ -176,21 +179,12 @@ lib/gdesklets/display/TargetGauge.pyo
 lib/gdesklets/display/TargetGroup.py
 lib/gdesklets/display/TargetGroup.pyc
 lib/gdesklets/display/TargetGroup.pyo
-lib/gdesklets/display/TargetHTML.py
-lib/gdesklets/display/TargetHTML.pyc
-lib/gdesklets/display/TargetHTML.pyo
 lib/gdesklets/display/TargetImage.py
 lib/gdesklets/display/TargetImage.pyc
 lib/gdesklets/display/TargetImage.pyo
 lib/gdesklets/display/TargetLabel.py
 lib/gdesklets/display/TargetLabel.pyc
 lib/gdesklets/display/TargetLabel.pyo
-lib/gdesklets/display/TargetMenu.py
-lib/gdesklets/display/TargetMenu.pyc
-lib/gdesklets/display/TargetMenu.pyo
-lib/gdesklets/display/TargetMenuItem.py
-lib/gdesklets/display/TargetMenuItem.pyc
-lib/gdesklets/display/TargetMenuItem.pyo
 lib/gdesklets/display/TargetPlotter.py
 lib/gdesklets/display/TargetPlotter.pyc
 lib/gdesklets/display/TargetPlotter.pyo
@@ -220,6 +214,18 @@ lib/gdesklets/gdesklets-daemon
 lib/gdesklets/gdesklets-logview
 lib/gdesklets/gdesklets-migration-tool
 lib/gdesklets/gdesklets-shell
+lib/gdesklets/layout/__init__.py
+lib/gdesklets/layout/__init__.pyc
+lib/gdesklets/layout/__init__.pyo
+lib/gdesklets/layout/HashPQueue.py
+lib/gdesklets/layout/HashPQueue.pyc
+lib/gdesklets/layout/HashPQueue.pyo
+lib/gdesklets/layout/LayoutObject.py
+lib/gdesklets/layout/LayoutObject.pyc
+lib/gdesklets/layout/LayoutObject.pyo
+lib/gdesklets/layout/Unit.py
+lib/gdesklets/layout/Unit.pyc
+lib/gdesklets/layout/Unit.pyo
 lib/gdesklets/libdesklets/__init__.py
 lib/gdesklets/libdesklets/__init__.pyc
 lib/gdesklets/libdesklets/__init__.pyo
@@ -317,6 +323,9 @@ lib/gdesklets/main/client.pyo
 lib/gdesklets/main/remotecommands.py
 lib/gdesklets/main/remotecommands.pyc
 lib/gdesklets/main/remotecommands.pyo
+lib/gdesklets/main/transition.py
+lib/gdesklets/main/transition.pyc
+lib/gdesklets/main/transition.pyo
 lib/gdesklets/plugin/ControlRegistry.py
 lib/gdesklets/plugin/ControlRegistry.pyc
 lib/gdesklets/plugin/ControlRegistry.pyo
@@ -485,15 +494,9 @@ lib/gdesklets/utils/Struct.pyo
 lib/gdesklets/utils/TargetSettings.py
 lib/gdesklets/utils/TargetSettings.pyc
 lib/gdesklets/utils/TargetSettings.pyo
-lib/gdesklets/utils/TilingImage.py
-lib/gdesklets/utils/TilingImage.pyc
-lib/gdesklets/utils/TilingImage.pyo
 lib/gdesklets/utils/Trie.py
 lib/gdesklets/utils/Trie.pyc
 lib/gdesklets/utils/Trie.pyo
-lib/gdesklets/utils/Unit.py
-lib/gdesklets/utils/Unit.pyc
-lib/gdesklets/utils/Unit.pyo
 lib/gdesklets/utils/WindowSnapper.py
 lib/gdesklets/utils/WindowSnapper.pyc
 lib/gdesklets/utils/WindowSnapper.pyo
@@ -509,12 +512,13 @@ lib/gdesklets/utils/datatypes.pyo
 lib/gdesklets/utils/dialog.py
 lib/gdesklets/utils/dialog.pyc
 lib/gdesklets/utils/dialog.pyo
+lib/gdesklets/utils/error.py
+lib/gdesklets/utils/error.pyc
+lib/gdesklets/utils/error.pyo
 lib/gdesklets/utils/ewmh.so
 lib/gdesklets/utils/i18n.py
 lib/gdesklets/utils/i18n.pyc
 lib/gdesklets/utils/i18n.pyo
-lib/gdesklets/utils/libutils.a
-lib/gdesklets/utils/libutils.so
 lib/gdesklets/utils/logger.py
 lib/gdesklets/utils/logger.pyc
 lib/gdesklets/utils/logger.pyo
@@ -601,6 +605,7 @@ share/mime/packages/gdesklets.xml
 @dirrm lib/gdesklets/scripting
 @dirrm lib/gdesklets/plugin
 @dirrm lib/gdesklets/main
+@dirrm lib/gdesklets/layout
 @dirrm lib/gdesklets/libdesklets/system/OpenBSD
 @dirrm lib/gdesklets/libdesklets/system/NetBSD
 @dirrm lib/gdesklets/libdesklets/system/Linux
