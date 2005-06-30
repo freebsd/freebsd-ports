@@ -7,7 +7,7 @@
 
 PORTNAME=	mulberry
 PORTVERSION=	3.1.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cyrusoft.com/pub/Mulberry/v${PORTVERSION:S/./_/g}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}-rh6
@@ -20,7 +20,7 @@ COMMENT=	A scalable high-performance GUI internet Mail User Agent
 
 NO_WRKSUBDIR=	yes
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
