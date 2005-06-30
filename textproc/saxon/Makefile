@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	saxon
-PORTVERSION=	6.5.3
-PORTREVISION=	1
+PORTVERSION=	6.5.4
 CATEGORIES=	textproc java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	saxon
-DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/g}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/./-/g}
 
 MAINTAINER=	hq@FreeBSD.org
-COMMENT=	An XSLT processor for Java
+COMMENT=	An XSLT 1.0 processor for Java
 
-RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.1+
+JAVA_VERSION=	1.2+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
@@ -29,24 +28,18 @@ CONFLICTS=	saxon-devel-8.*
 JARFILES=	saxon-jdom.jar saxon.jar
 PLIST_FILES+=	${JARFILES:S,^,%%JAVAJARDIR%%/,} bin/saxon
 .if !defined(NOPORTDOCS)
-PORTDOCS=	api api-guide.html changes.html changes5.html conditions.html \
+PORTDOCS=	api api-guide.html changes.html conditions.html \
 		conformance.html dtdgen.html expressions.html \
-		extensibility.html extensions.html history.html index.html \
-		instant.html patterns.html samples.html saxon-style.css \
-		using-xsl.html xsl-elements.html
+		extensibility.html extensions.html index.html \
+		instant.html limitations.html patterns.html samples.html \
+		saxon-style.css using-xsl.html xsl-elements.html
 .endif
 
-post-extract:
-	@${RMDIR} ${WRKSRC}/samples/ot
-
-do-configure:
-	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
-		s|%%SAXON_JARS%%|${JARFILES:S,^,${JAVAJARDIR}/,}|' \
-		${FILESDIR}/saxon.sh >${WRKSRC}/saxon
+SUB_LIST=	SAXON_JARS="${JARFILES:S,^,${JAVAJARDIR}/,}"
+SUB_FILES=	saxon.sh
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JARs in ${JAVAJARDIR}..."
-	@${MKDIR} ${JAVAJARDIR}
 .for JARFILE in ${JARFILES}
 	@${ECHO_MSG} -n " ${JARFILE}"
 	@${INSTALL_DATA} ${WRKSRC}/${JARFILE} ${JAVAJARDIR}/
@@ -65,7 +58,7 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 	@${ECHO_MSG} -n ">> Installing script in ${PREFIX}/bin..."
-	@${INSTALL_SCRIPT} ${WRKSRC}/saxon ${PREFIX}/bin/
+	@${INSTALL_SCRIPT} ${WRKDIR}/saxon.sh ${PREFIX}/bin/saxon
 	@${ECHO_MSG} " [ DONE ]"
 
 .include <bsd.port.mk>
