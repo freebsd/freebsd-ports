@@ -6,26 +6,28 @@
 #
 
 PORTNAME=	foremost
-PORTVERSION=	0.69
+PORTVERSION=	1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://${PORTNAME}.sourceforge.net/pkg/
 
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Console program to recover files based on their headers and footers
 
 USE_GMAKE=	yes
-ALL_TARGET=	openbsd
+ALL_TARGET=	freebsd
 MAN1=		foremost.1
 USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/foremost etc/foremost.conf.sample
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|PREFIX|${PREFIX}|' ${WRKSRC}/foremost.h
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|; s|-Wall -O2|${CFLAGS}|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/config.c
+	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' ${WRKSRC}/${MAN1}
 
-post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/foremost
-	@${INSTALL} -Cm 644 ${WRKSRC}/foremost.conf ${PREFIX}/etc/foremost.conf.sample
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/foremost.conf ${PREFIX}/etc/foremost.conf.sample
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
