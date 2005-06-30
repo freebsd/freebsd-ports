@@ -1,5 +1,7 @@
---- configure	Tue Aug  3 00:01:03 1999
-+++ configure.orig	Sun Feb 20 21:28:20 2000
+$FreeBSD$
+
+--- configure.orig	Mon Aug  2 15:01:03 1999
++++ configure	Thu Jun 30 20:17:31 2005
 @@ -3090,6 +3090,61 @@
  fi
  done
@@ -62,3 +64,21 @@
  for ac_func in memset memcmp memmove strchr strrchr strdup strerror
  do
  echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
+@@ -4713,7 +4768,7 @@
+ 		;;
+ 	FreeBSD*|NetBSD*)
+ 		SHLIB_LFLAGS="-Bshareable"
+-		SHLIB_CFLAGS="-fpic"
++		SHLIB_CFLAGS="-fPIC"
+ 		PRELOADS="LD_PRELOAD"
+ 		;;
+ 	SunOS*4.*)
+@@ -4773,7 +4828,7 @@
+ 
+ 
+ 	if test `uname -s` = "FreeBSD"; then
+-		SHLIB_CFLAGS="-fpic -r"
++		SHLIB_CFLAGS="-fPIC -r"
+ 	fi
+ 
+ 	echo "$ac_t"""lflags: $SHLIB_LFLAGS cflags: $SHLIB_CFLAGS"" 1>&6
