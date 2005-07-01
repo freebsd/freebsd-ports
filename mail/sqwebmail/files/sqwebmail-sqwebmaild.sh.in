@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# An rc.subr-style startup script for courier-authdaemond service.
+# An rc.subr-style startup script for the sqwebmaild service.
 
 # PROVIDE: sqwebmaild
-# REQUIRE: LOGIN sqwebmaild
+# REQUIRE: LOGIN
 # KEYWORD: FreeBSD shutdown
 
 # Define these sqwebmaild_* variables in one of these files:
