@@ -1,15 +1,15 @@
---- mono/Makefile.in.orig	Fri May 13 02:47:06 2005
-+++ mono/Makefile.in	Fri May 13 02:51:15 2005
-@@ -279,7 +279,7 @@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+--- mono/Makefile.in.orig	Thu Jun 30 23:27:19 2005
++++ mono/Makefile.in	Thu Jun 30 23:27:43 2005
+@@ -299,7 +299,7 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
 -SUBDIRS = . doc example
 +SUBDIRS = . example
  TARGET = $(ASSEMBLY)
  NOINST_EXES = test-dbus-sharp.exe
  ASSEMBLY_NAME = dbus-sharp
-@@ -325,6 +325,10 @@
+@@ -345,6 +345,10 @@
  	$(ASSEMBLY).config.in   \
  	dbus-sharp.snk
  
@@ -20,7 +20,7 @@
  all: all-recursive
  
  .SUFFIXES:
-@@ -371,6 +375,23 @@
+@@ -391,6 +395,23 @@
  distclean-libtool:
  	-rm -f libtool
  uninstall-info-am:
@@ -44,7 +44,7 @@
  
  # This directory's subdirectories are mostly independent; you can cd
  # into them and run `make' without going through this Makefile.
-@@ -549,7 +570,7 @@
+@@ -569,7 +590,7 @@
  	done
  check-am: all-am
  check: check-recursive
@@ -53,7 +53,7 @@
  installdirs: installdirs-recursive
  installdirs-am:
  install: install-recursive
-@@ -594,7 +615,7 @@
+@@ -614,7 +635,7 @@
  
  info-am:
  
@@ -62,7 +62,7 @@
  
  install-exec-am:
  
-@@ -620,7 +641,7 @@
+@@ -640,7 +661,7 @@
  
  ps-am:
  
@@ -71,7 +71,7 @@
  
  uninstall-info: uninstall-info-recursive
  
-@@ -631,12 +652,13 @@
+@@ -651,12 +672,13 @@
  	html-am info info-am install install-am install-data \
  	install-data-am install-data-local install-exec \
  	install-exec-am install-info install-info-am install-man \
@@ -87,7 +87,7 @@
  
  
  all-am: $(TARGET)
-@@ -652,14 +674,14 @@
+@@ -672,14 +694,14 @@
  
  install-data-local:
  	@if test -n '$(TARGET)'; then                       \

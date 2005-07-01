@@ -1,0 +1,12 @@
+--- config.h.in.orig	Fri Jul  1 00:48:36 2005
++++ config.h.in	Fri Jul  1 00:48:56 2005
+@@ -9,6 +9,9 @@
+ /* Use dnotify on Linux */
+ #undef DBUS_BUS_ENABLE_DNOTIFY_ON_LINUX
+ 
++/* Use kqueue on FreeBSD */
++#undef DBUS_BUS_ENABLE_KQUEUE_ON_FREEBSD
++
+ /* Disable assertion checking */
+ #undef DBUS_DISABLE_ASSERT
+ 
