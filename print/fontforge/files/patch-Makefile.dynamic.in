@@ -1,5 +1,5 @@
---- Makefile.dynamic.in.orig	Wed Apr 20 01:36:16 2005
-+++ Makefile.dynamic.in	Wed May  4 15:06:07 2005
+--- Makefile.dynamic.in.orig	Thu Jun  9 02:20:04 2005
++++ Makefile.dynamic.in	Thu Jun 30 13:51:27 2005
 @@ -48,34 +48,35 @@
  	$(LIBTOOL) $(INSTALL) -c libgunicode.la $(libdir)/libgunicode.la
  	#cp .libs/*.so.*.* $(libdir)
@@ -11,7 +11,7 @@
  
  install_docs:
  	mkdir -p $(docdir)
- 	mkdir $(docdir)/flags
+ 	mkdir -p $(docdir)/flags
  #explicit use of sh to make sure we don't invoke csh with different "if" syntax
  	-sh -c "if test -d htdocs/ja >/dev/null ; then mkdir -p $(docdir)/ja ; fi"
 -	-cp htdocs/*.{html,png,gif,pdf} $(docdir)

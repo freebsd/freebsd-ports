@@ -502,5 +502,6 @@ libdata/pkgconfig/fontforge.pc
 %%DATADIR%%/pfaedit-it.ui
 %%DATADIR%%/pfaedit-ja.ui
 %%DATADIR%%/pfaedit-ru.ui
+%%DATADIR%%/pfaedit-zh.ui
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
