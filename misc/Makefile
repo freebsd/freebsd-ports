@@ -47,6 +47,7 @@
     SUBDIR += compat4x
     SUBDIR += cpuid
     SUBDIR += crosspad
+    SUBDIR += cs
     SUBDIR += cstream
     SUBDIR += cuecat
     SUBDIR += cwish
