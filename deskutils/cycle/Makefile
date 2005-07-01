@@ -17,7 +17,7 @@ COMMENT=	A calendar program for women
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wx-2.6-gtk2-ansi/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython26
 
 USE_BZIP2=	yes
-USE_PYTHON=	yes
+USE_PYTHON_RUN=	yes
 USE_REINPLACE=	yes
 NO_BUILD=	yes
 
