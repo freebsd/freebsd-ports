@@ -7,6 +7,7 @@
 
 PORTNAME=	Data-TreeDumper
 PORTVERSION=	0.23
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -17,6 +18,7 @@ COMMENT=	Dumps a data structure in a tree fashion
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/Size.pm:${PORTSDIR}/devel/p5-Term-Size \
 		${SITE_PERL}/Text/Wrap.pm:${PORTSDIR}/textproc/p5-Text-Tabs+Wrap \
+		${SITE_PERL}/Class/ISA.pm:${PORTSDIR}/devel/p5-Class-ISA \
 		${SITE_PERL}/${PERL_ARCH}/Devel/Size.pm:${PORTSDIR}/devel/p5-Devel-Size
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
