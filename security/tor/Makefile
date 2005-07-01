@@ -7,6 +7,7 @@
 
 PORTNAME=	tor
 PORTVERSION=	0.1.0.10
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://tor.eff.org/dist/
 
@@ -14,7 +15,7 @@ MAINTAINER=	freebsd-ports@rikrose.net
 COMMENT=	An anonymizing overlay network for TCP
 
 RUN_DEPENDS=	tsocks:${PORTSDIR}/net/tsocks
-LIB_DEPENDS=	event-1.1:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.1a:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes

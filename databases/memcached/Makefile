@@ -7,6 +7,7 @@
 
 PORTNAME=	memcached
 PORTVERSION=	1.1.11
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.danga.com/memcached/dist/
 
