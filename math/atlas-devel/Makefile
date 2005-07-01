@@ -9,7 +9,7 @@
 #       Program and compiler flags are finetuned to gcc.
 
 PORTNAME=	atlas
-PORTVERSION=	3.7.8
+PORTVERSION=	3.7.10
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	math-atlas
@@ -33,7 +33,7 @@ USE_GCC=3.4
 
 # only affects for lapack sub project
 .if defined(WITH_OPTIMIZED_FLAGS)
-FFLAGS+=-pipe -O3 -ffast-math
+FFLAGS+=-pipe -O3 -ffast-math -funroll-all-loops -fpeel-loops -ftracer -funswitch-loops -funit-at-a-time
 .endif
 
 post-patch:
@@ -43,6 +43,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+g' \
 			  -e 's+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g' \
 		${WRKSRC}/config.c
+.if defined(PORTS_ARCH)
+	@${REINPLACE_CMD} -e 's+%%PORTS_ARCH%%+${PORTS_ARCH}+g' \
+			-e 's+%%HAVE_ARCH%%+1+g' ${WRKSRC}/config.c
+.else
+	@${REINPLACE_CMD} -e 's+%%PORTS_ARCH%%+0+g' \
+			-e 's+%%HAVE_ARCH%%+0+g' ${WRKSRC}/config.c
+.endif
 .if (${MACHINE_ARCH} == "alpha")
 	@(cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/alpha-patch)
 .endif
@@ -55,6 +62,9 @@ PICFLAG?=	-fpic
 
 ANSWER_i386?=	${PRINTF} "\n\n\n\n\n\n\n\n\n\n"
 ANSWER_ia64?=	${PRINTF} "\n\n\n2\n\n\n\n\nf77\n-O2 -static\n\n"
+
+#for ports build cluster
+#PORTS_ARCH=IntP5
 
 .if !defined(ANSWER_${ARCH})
 ANSWER=	${ANSWER_i386}
@@ -80,6 +90,15 @@ pre-build:
 	@${ECHO_MSG} "for slow computers (over 1 day)."
 	@${ECHO_MSG} "And sometimes stop building for Athlon."
 	@${ECHO_MSG} "In this case please retype make or rebuild whole atlas."
+.if !defined(PORTS_ARCH)
+	@${ECHO_MSG} "Warning:"
+	@${ECHO_MSG} "If your arch is not correctly detected, you can specify" 
+	@${ECHO_MSG} "by yourself."
+	@${ECHO_MSG} "for example : make PORTS_ARCH=P5Int"
+	@${ECHO_MSG} "Available architectures for x86 are:"
+	@${ECHO_MSG} "IntP5, IntP5MMX, IntPPRO, IntPII, IntPIII, IntP4, IntP4E"
+	@${ECHO_MSG} "IntP4E64, TMEff, AmdAthlon,AmdHammer32, AmdHammer64"
+.endif
 
 do-build:
 # make lapack
