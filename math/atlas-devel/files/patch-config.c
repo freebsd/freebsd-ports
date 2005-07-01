@@ -1,17 +1,27 @@
---- config.c.orig	Mon Dec 22 23:06:32 2003
-+++ config.c	Sat Mar 27 14:47:04 2004
-@@ -666,7 +666,9 @@
-    sprintf(ln, "%s --version", gcc);
-    if (CmndOneLine(NULL, ln, ln2) == 0)
+--- config.c.orig	Sun Apr 24 22:31:53 2005
++++ config.c	Tue Jun 28 16:46:54 2005
+@@ -686,7 +686,10 @@
     {
+       if (strstr(ln2, "Apple Computer"))
+          *comp = 3;
 -      *major = GetIntVers(ln2, &j);
++
 +      j=0;if(isalpha(ln2[0])){for(i=0;!isspace(ln2[i]);i++)j++;} /*skip gccXXX ; XXX is number*/
 +      for (i=j; !isdigit(ln2[i]); i++) j++;
 +      *major = GetIntVers(ln2+j, &i); j += i;
        if (*major != -1)
        {
           *minor = GetIntVers(ln2+j, &i); j += i;
-@@ -1188,7 +1190,9 @@
+@@ -1044,6 +1044,8 @@
+    {
+       if (strstr(ln, "x86_64"))
+          iret = 1;
++      if (strstr(ln, "amd64"))
++         iret = 1;
+       else if (strstr(ln, "ppc64"))
+          iret = 2;
+    }
+@@ -1229,7 +1232,9 @@
     switch(OS)
     {
     case OSOSX:  /* don't know answer */
@@ -22,7 +32,7 @@
     case OSLinux:
        break;
     case OSSunOS:
-@@ -1450,9 +1454,9 @@
+@@ -1494,9 +1499,9 @@
           if (THREADS && OS == OSFreeBSD)
           {
              if (which == CPF77)
@@ -34,7 +44,7 @@
           }
           break;
        case OSSunOS4:
-@@ -1984,8 +1988,8 @@
+@@ -2113,8 +2118,8 @@
        if (OS == OSFreeBSD)
        {
           if (strstr(comp, "cc"))
@@ -45,7 +55,7 @@
        }
     }
     return(*comp ? comp : NULL);
-@@ -2587,7 +2587,7 @@
+@@ -2756,7 +2761,7 @@
        break;
     case IntP4:
        lf1 = l1 = 64;
@@ -54,7 +64,7 @@
        s1 = 0;
        s2 = 0;
        break;
-@@ -2687,6 +2687,7 @@
+@@ -2860,6 +2865,7 @@
        l1 = l2 = s1 = s2 = 0;
        lf2 = 4096;
     }
@@ -62,7 +72,7 @@
     if (lvl == 1)
     {
        if (AmSure) *AmSure = s1;
-@@ -2799,7 +2803,7 @@
+@@ -2977,7 +2983,7 @@
        else if (strstr(ln, "ia64")) la = LAIA64;
        else if ( strstr(ln, "i686") || strstr(ln, "i586") ||
                  strstr(ln, "i486") || strstr(ln, "i386") ||
@@ -71,7 +81,17 @@
     }
     return(la);
  }
-@@ -2835,12 +2839,22 @@
+@@ -3006,6 +3012,9 @@
+    else
+       sprintf(ln2,
+          "cd CONFIG ; make IRunx86Info mydir=%s/CONFIG | fgrep cpu", TOPdir);
++
++   if (%%HAVE_ARCH%%) {mach = %%PORTS_ARCH%%; return(mach); }
++
+    if ( !CmndOneLine(NULL, ln2, ln) )
+    {
+       if (strstr(ln, "Pentium 4E64"))
+@@ -3047,12 +3056,22 @@
           }
           break;
        case LASPARC: /* don't know */
@@ -94,9 +114,12 @@
           }
           break;
        case LAIA64: /* don't know */
-@@ -2849,14 +2863,32 @@
+@@ -3060,15 +3079,35 @@
+       case LAX86:
           if (!CmndOneLine(targ, "sysctl hw.model", ln))
           {
++//         mach = Use64Bits ? IntP4E64 : IntP4E; #EM64T
++//         mach = IntP4E;                #prescott
              if (strstr(ln, "Pentium Pro")) mach = IntPPRO;
 +            else if (strstr(ln, "Pentium(R) Pro")) mach = IntPPRO;
 +            else if (strstr(ln, "Pentium 4")) mach = IntP4;
@@ -132,7 +155,7 @@
           }
           break;
        default:;
-@@ -3641,8 +3673,8 @@
+@@ -3922,8 +3961,8 @@
     }
     if (THREADS) /* add ncpu to ARCH */
     {
@@ -143,19 +166,7 @@
     }
     do
     {
-@@ -4047,9 +4079,9 @@
-    if (mach == IA64Itan || mach == IA64Itan2 )
-       fprintf(fpout, " -DATL_MAXNREG=128");
-    if (ASMD != ASM_None) fprintf(fpout, " -DATL_%s", ASMNAM[ASMD]);
--   if (mach == AmdHammer32 && (OS != OSWinNT && OS != OSWin9x))
-+   if (mach == AmdHammer32 && (OS != OSWinNT && OS != OSWin9x && OS != OSFreeBSD))
-       fprintf(fpout, " -m32");
--   else if (mach == AmdHammer64) fprintf(fpout, " -m64");
-+   else if (mach == AmdHammer64 && (OS != OSFreeBSD)) fprintf(fpout, " -m64");
-    if (mach == IA64Itan2 && strstr(CC, "icc"))
-       fprintf(fpout, " -DATL_IntelIccBugs");
-    fprintf(fpout, "\n\n");
-@@ -4080,7 +4112,7 @@
+@@ -4371,7 +4410,7 @@
     if (THREADS)
     {
        fprintf(fpout, " -DATL_NCPU=%d", ncpu);
