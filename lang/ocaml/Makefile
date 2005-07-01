@@ -89,12 +89,7 @@ MODOPT=		camlp4o camlp4r ocamlc ocamldep ocamldoc ocamllex ocamlopt
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-PLIST_SUB+=	PROF="@comment "
-BROKEN=		"Does not compile on !i386"
-.else
 PLIST_SUB+=	PROF=""
-.endif
 
 post-configure:
 # CFLAGS safeness
