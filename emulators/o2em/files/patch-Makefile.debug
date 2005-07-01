@@ -1,0 +1,68 @@
+diff -urN ../o2em117src.old/Makefile.debug ./Makefile.debug
+--- ../o2em117src.old/Makefile.debug	Wed Dec 31 18:00:00 1969
++++ ./Makefile.debug	Fri Jun 24 16:05:27 2005
+@@ -0,0 +1,64 @@
++CC = gcc
++
++CFLAGS = -g -Wall -I${PREFIX}/include -DFREEBSD -DPREFIX=\"${PREFIX}\"
++LFLAGS = 
++LIBALLEG = -L${PREFIX}/lib -lalleg -lalleg_unsharable
++
++
++all: o2em dis48
++
++clean:
++	rm -f src/audio.o src/cpu.o src/cset.o src/keyboard.o src/main.o src/table.o src/vdc.o src/vmachine.o src/debug.o src/timefunc.o src/voice.o src/crc32.o src/vpp_cset.o src/vpp.o src/dis48.o src/o2em src/dis48
++
++
++o2em:	audio.o cpu.o cset.o keyboard.o main.o table.o vdc.o vmachine.o debug.o timefunc.o voice.o crc32.o vpp_cset.o vpp.o
++	$(CC) $(LFLAGS) src/audio.o src/cpu.o src/cset.o src/keyboard.o src/main.o src/table.o src/vdc.o src/vmachine.o src/debug.o src/timefunc.o src/voice.o src/crc32.o src/vpp_cset.o src/vpp.o -o src/o2em $(LIBALLEG)
++
++dis48:	dis48.o table.o
++	$(CC) $(LFLAGS) src/dis48.o src/table.o -o src/dis48
++
++
++audio.o:	audio.c audio.h cpu.h types.h config.h vmachine.h
++	$(CC) $(CFLAGS) -c src/audio.c -o src/audio.o
++
++cpu.o:	cpu.c cpu.h types.h vmachine.h keyboard.h voice.h vdc.h vpp.h
++	$(CC) $(CFLAGS) -c src/cpu.c -o src/cpu.o
++	
++cset.o:	cset.c cset.h types.h 
++	$(CC) $(CFLAGS) -c src/cset.c -o src/cset.o
++	
++debug.o:	debug.c debug.h cpu.h keyboard.h vmachine.h audio.h vdc.h table.h
++	$(CC) $(CFLAGS) -c src/debug.c -o src/debug.o
++	
++dis48.o:	dis48.c types.h table.h
++	$(CC) $(CFLAGS) -c src/dis48.c -o src/dis48.o
++	
++keyboard.o:	keyboard.c keyboard.h types.h cpu.h vmachine.h vdc.h audio.h voice.h vpp.h
++	$(CC) $(CFLAGS) -c src/keyboard.c -o src/keyboard.o
++	
++main.o:	main.c crc32.h audio.h vmachine.h config.h vdc.h cpu.h debug.h keyboard.h voice.h
++	$(CC) $(CFLAGS) -c src/main.c -o src/main.o
++	
++table.o:	table.c table.h cpu.h
++	$(CC) $(CFLAGS) -c src/table.c -o src/table.o
++	
++vdc.o:	vdc.c vdc.h types.h vmachine.h config.h keyboard.h cset.h timefunc.h cpu.h vpp.h
++	$(CC) $(CFLAGS) -c src/vdc.c -o src/vdc.o
++	
++vmachine.o:	vmachine.c vmachine.h audio.h types.h cpu.h keyboard.h config.h debug.h vdc.h vpp.h timefunc.h voice.h
++	$(CC) $(CFLAGS) -c src/vmachine.c -o src/vmachine.o
++
++timefunc.o: timefunc.c timefunc.h
++	$(CC) $(CFLAGS) -c src/timefunc.c -o src/timefunc.o
++
++voice.o: voice.c voice.h vmachine.h cpu.h
++	$(CC) $(CFLAGS) -c src/voice.c -o src/voice.o
++
++crc32.o: crc32.c crc32.h
++	$(CC) $(CFLAGS) -c src/crc32.c -o src/crc32.o
++
++vpp_cset.o: vpp_cset.c vpp_cset.h
++	$(CC) $(CFLAGS) -c src/vpp_cset.c -o src/vpp_cset.o
++
++vpp.o: vpp.c vpp.h types.h vpp_cset.h vmachine.h vdc.h
++	$(CC) $(CFLAGS) -c src/vpp.c -o src/vpp.o
