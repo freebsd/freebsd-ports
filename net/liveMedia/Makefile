@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2005.06.29
+PORTVERSION=	2005.06.30
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	net devel
@@ -61,6 +61,8 @@ liveMedia=		\
 		liveMedia/include/AC3AudioRTPSink.hh \
 		liveMedia/include/AC3AudioRTPSource.hh \
 		liveMedia/include/AC3AudioStreamFramer.hh \
+		liveMedia/include/ADTSAudioFileServerMediaSubsession.hh \
+		liveMedia/include/ADTSAudioFileSource.hh \
 		liveMedia/include/AMRAudioFileServerMediaSubsession.hh \
 		liveMedia/include/AMRAudioFileSink.hh \
 		liveMedia/include/AMRAudioFileSource.hh \
