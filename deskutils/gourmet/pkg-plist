@@ -1,4 +1,7 @@
 bin/gourmet
+%%PYTHON_SITELIBDIR%%/gourmet/FauxActionGroups.py
+%%PYTHON_SITELIBDIR%%/gourmet/FauxActionGroups.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/FauxActionGroups.pyo
 %%PYTHON_SITELIBDIR%%/gourmet/FileChooserSaveAs.py
 %%PYTHON_SITELIBDIR%%/gourmet/FileChooserSaveAs.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/FileChooserSaveAs.pyo
@@ -77,6 +80,12 @@ bin/gourmet
 %%PYTHON_SITELIBDIR%%/gourmet/defaults.py
 %%PYTHON_SITELIBDIR%%/gourmet/defaults.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/defaults.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/defaults_pt.py
+%%PYTHON_SITELIBDIR%%/gourmet/defaults_pt.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/defaults_pt.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/defaults_sk.py
+%%PYTHON_SITELIBDIR%%/gourmet/defaults_sk.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/defaults_sk.pyo
 %%PYTHON_SITELIBDIR%%/gourmet/defaults_en.py
 %%PYTHON_SITELIBDIR%%/gourmet/defaults_en.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/defaults_en.pyo
@@ -152,12 +161,21 @@ bin/gourmet
 %%PYTHON_SITELIBDIR%%/gourmet/importers/__init__.py
 %%PYTHON_SITELIBDIR%%/gourmet/importers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/importers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/importers/BeautifulSoup.py
+%%PYTHON_SITELIBDIR%%/gourmet/importers/BeautifulSoup.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/importers/BeautifulSoup.pyo
 %%PYTHON_SITELIBDIR%%/gourmet/importers/gxml2_importer.py
 %%PYTHON_SITELIBDIR%%/gourmet/importers/gxml2_importer.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/importers/gxml2_importer.pyo
 %%PYTHON_SITELIBDIR%%/gourmet/importers/gxml_importer.py
 %%PYTHON_SITELIBDIR%%/gourmet/importers/gxml_importer.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/importers/gxml_importer.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_importer.py
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_importer.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_importer.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_rules.py
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_rules.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_rules.pyo
 %%PYTHON_SITELIBDIR%%/gourmet/importers/importer.py
 %%PYTHON_SITELIBDIR%%/gourmet/importers/importer.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/importers/importer.pyo
@@ -176,9 +194,15 @@ bin/gourmet
 %%PYTHON_SITELIBDIR%%/gourmet/importers/plaintext_importer.py
 %%PYTHON_SITELIBDIR%%/gourmet/importers/plaintext_importer.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/importers/plaintext_importer.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/importers/rezkonv_importer.py
+%%PYTHON_SITELIBDIR%%/gourmet/importers/rezkonv_importer.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/importers/rezkonv_importer.pyo
 %%PYTHON_SITELIBDIR%%/gourmet/importers/xml_importer.py
 %%PYTHON_SITELIBDIR%%/gourmet/importers/xml_importer.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/importers/xml_importer.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/importers/zip_importer.py
+%%PYTHON_SITELIBDIR%%/gourmet/importers/zip_importer.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/importers/zip_importer.pyo
 %%PYTHON_SITELIBDIR%%/gourmet/keyEditor.py
 %%PYTHON_SITELIBDIR%%/gourmet/keyEditor.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/keyEditor.pyo
@@ -225,6 +249,7 @@ bin/gourmet
 %%PYTHON_SITELIBDIR%%/gourmet/version.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/version.pyo
 share/applications/gourmet.desktop
+share/gourmet/FAQ
 share/gourmet/app.glade
 share/gourmet/converter.glade
 share/gourmet/databaseChooser.glade
@@ -240,39 +265,19 @@ share/gourmet/recipe.dtd
 share/gourmet/shopList.glade
 share/gourmet/splash.png
 share/pixmaps/recbox.png
-share/locale/bg/LC_MESSAGES/gourmet.mo
-share/locale/ca/LC_MESSAGES/gourmet.mo
-share/locale/cs/LC_MESSAGES/gourmet.mo
-share/locale/da/LC_MESSAGES/gourmet.mo
 share/locale/de_AT/LC_MESSAGES/gourmet.mo
 share/locale/de_DE/LC_MESSAGES/gourmet.mo
-share/locale/es/LC_MESSAGES/gourmet.mo
-share/locale/es_ES/LC_MESSAGES/gourmet.mo
-share/locale/fr/LC_MESSAGES/gourmet.mo
-share/locale/gl/LC_MESSAGES/gourmet.mo
-share/locale/he/LC_MESSAGES/gourmet.mo
-share/locale/hu/LC_MESSAGES/gourmet.mo
-share/locale/it/LC_MESSAGES/gourmet.mo
-share/locale/nb/LC_MESSAGES/gourmet.mo
-share/locale/nl/LC_MESSAGES/gourmet.mo
 share/locale/nl_BE/LC_MESSAGES/gourmet.mo
-share/locale/nl_NL/LC_MESSAGES/gourmet.mo
-share/locale/pl/LC_MESSAGES/gourmet.mo
-share/locale/pt/LC_MESSAGES/gourmet.mo
-share/locale/pt_BR/LC_MESSAGES/gourmet.mo
-share/locale/pt_PT/LC_MESSAGES/gourmet.mo
-share/locale/sk/LC_MESSAGES/gourmet.mo
-share/locale/sv/LC_MESSAGES/gourmet.mo
 share/locale/sv_SE/LC_MESSAGES/gourmet.mo
 share/locale/tr/LC_MESSAGES/gourmet.mo
-@dirrm share/locale/sv_SE/LC_MESSAGES
-@dirrm share/locale/sv_SE
-@dirrm share/locale/nl_BE/LC_MESSAGES
-@dirrm share/locale/nl_BE
-@dirrm share/locale/es_ES/LC_MESSAGES
-@dirrm share/locale/es_ES
+@dirrm share/locale/de_AT/LC_MESSAGES
+@dirrm share/locale/de_AT
 @dirrm share/locale/de_DE/LC_MESSAGES
 @dirrm share/locale/de_DE
+@dirrm share/locale/nl_BE/LC_MESSAGES
+@dirrm share/locale/nl_BE
+@dirrm share/locale/sv_SE/LC_MESSAGES
+@dirrm share/locale/sv_SE
 @dirrm share/gourmet
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/importers
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/exporters
