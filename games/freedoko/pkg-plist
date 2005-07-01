@@ -122,7 +122,6 @@ bin/FreeDoko
 %%DOCSDIR%%/Implementation/Schweine.txt
 %%DOCSDIR%%/Implementation/Zugriff.html
 %%DOCSDIR%%/Roadmap
-%%DOCSDIR%%/ToDo
 %%DOCSDIR%%/de/DDV_Kurzregeln.pdf
 %%DOCSDIR%%/de/DDV_Turnierregeln.pdf
 %%DOCSDIR%%/de/Dateien.pdf
@@ -186,8 +185,11 @@ bin/FreeDoko
 %%DOCSDIR%%/manual/de/operation/party_points.html
 %%DOCSDIR%%/manual/de/operation/party_settings.html
 %%DOCSDIR%%/manual/de/operation/pictures/about.png
+%%DOCSDIR%%/manual/de/operation/pictures/bug_report.png
 %%DOCSDIR%%/manual/de/operation/pictures/cardset_license.png
 %%DOCSDIR%%/manual/de/operation/pictures/changelog.png
+%%DOCSDIR%%/manual/de/operation/pictures/current_trick.png
+%%DOCSDIR%%/manual/de/operation/pictures/current_trick.small.png
 %%DOCSDIR%%/manual/de/operation/pictures/full_trick.png
 %%DOCSDIR%%/manual/de/operation/pictures/generate_error.png
 %%DOCSDIR%%/manual/de/operation/pictures/last_trick.png
@@ -196,18 +198,88 @@ bin/FreeDoko
 %%DOCSDIR%%/manual/de/operation/pictures/main_window.game.small.png
 %%DOCSDIR%%/manual/de/operation/pictures/main_window.start.png
 %%DOCSDIR%%/manual/de/operation/pictures/party_points.png
-%%DOCSDIR%%/manual/de/operation/pictures/reservation.solo.png
-%%DOCSDIR%%/manual/de/operation/pictures/bug_report.png
 %%DOCSDIR%%/manual/de/operation/pictures/party_settings.png
 %%DOCSDIR%%/manual/de/operation/pictures/player_config.png
 %%DOCSDIR%%/manual/de/operation/pictures/reservation.png
+%%DOCSDIR%%/manual/de/operation/pictures/reservation.solo.png
+%%DOCSDIR%%/manual/de/operation/pictures/rules/announcements.png
+%%DOCSDIR%%/manual/de/operation/pictures/rules/announcements.small.png
+%%DOCSDIR%%/manual/de/operation/pictures/rules/dollen.png
+%%DOCSDIR%%/manual/de/operation/pictures/rules/dollen.small.png
+%%DOCSDIR%%/manual/de/operation/pictures/rules/informations.png
+%%DOCSDIR%%/manual/de/operation/pictures/rules/informations.small.png
+%%DOCSDIR%%/manual/de/operation/pictures/rules/marriage.png
+%%DOCSDIR%%/manual/de/operation/pictures/rules/marriage.small.png
+%%DOCSDIR%%/manual/de/operation/pictures/rules/poverty.png
+%%DOCSDIR%%/manual/de/operation/pictures/rules/poverty.small.png
+%%DOCSDIR%%/manual/de/operation/pictures/rules/solo.png
+%%DOCSDIR%%/manual/de/operation/pictures/rules/solo.small.png
+%%DOCSDIR%%/manual/de/operation/pictures/rules/specialpoints.png
+%%DOCSDIR%%/manual/de/operation/pictures/rules/specialpoints.small.png
+%%DOCSDIR%%/manual/de/operation/pictures/rules/swines.png
+%%DOCSDIR%%/manual/de/operation/pictures/rules/swines.small.png
+%%DOCSDIR%%/manual/de/operation/pictures/rules/tournament.png
+%%DOCSDIR%%/manual/de/operation/pictures/rules/tournament.small.png
 %%DOCSDIR%%/manual/de/operation/pictures/splash.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/contra.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/five_nines.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/fox_highest_trump.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/genscher.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/hyperswines.club.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/hyperswines.diamond.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/hyperswines.heart.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/hyperswines.spade.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/marriage.club.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/marriage.color.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/marriage.foreign.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/marriage.heart.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/marriage.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/marriage.spade.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/marriage.trump.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/no_0.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/no_0_reply.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/no_120.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/no_120_reply.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/no_30.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/no_30_reply.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/no_60.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/no_60_reply.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/no_90.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/no_90_reply.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/poverty.0.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/poverty.1.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/poverty.2.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/poverty.3.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/poverty.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/re.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/six_kings.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/solo.club.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/solo.diamond.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/solo.heart.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/solo.jack.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/solo.king-jack.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/solo.king-queen.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/solo.king.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/solo.koehler.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/solo.meatless.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/solo.queen-jack.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/solo.queen.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/solo.spade.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/swines-hyperswines.club.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/swines-hyperswines.diamond.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/swines-hyperswines.heart.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/swines-hyperswines.spade.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/swines.club.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/swines.diamond.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/swines.heart.png
+%%DOCSDIR%%/manual/de/operation/pictures/symbols/swines.spade.png
 %%DOCSDIR%%/manual/de/operation/player_config.html
 %%DOCSDIR%%/manual/de/operation/problems.html
 %%DOCSDIR%%/manual/de/operation/reservation.html
 %%DOCSDIR%%/manual/de/operation/rules_config.html
 %%DOCSDIR%%/manual/de/operation/settings.html
 %%DOCSDIR%%/manual/de/operation/start.html
+%%DOCSDIR%%/manual/de/operation/symbols.html
 %%DOCSDIR%%/manual/de/operation/toc.html
 %%DOCSDIR%%/manual/de/overview.html
 %%DOCSDIR%%/manual/de/rules.html
@@ -237,6 +309,8 @@ bin/FreeDoko
 @dirrm %%DOCSDIR%%/manual/pictures
 @dirrm %%DOCSDIR%%/manual/en/operation
 @dirrm %%DOCSDIR%%/manual/en
+@dirrm %%DOCSDIR%%/manual/de/operation/pictures/symbols
+@dirrm %%DOCSDIR%%/manual/de/operation/pictures/rules
 @dirrm %%DOCSDIR%%/manual/de/operation/pictures
 @dirrm %%DOCSDIR%%/manual/de/operation
 @dirrm %%DOCSDIR%%/manual/de
