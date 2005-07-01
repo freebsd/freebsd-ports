@@ -40,6 +40,7 @@ CONFIGURE_ARGS+=	--without-x
 PLIST_SUB=	X11="@comment "
 .else
 USE_XLIB=	yes
+PLIST_SUB=	X11=""
 .endif
 
 post-patch:
