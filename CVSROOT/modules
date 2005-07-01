@@ -2114,6 +2114,7 @@ fastdnaml	ports/biology/fastdnaml
 fastest_cvsup	ports/sysutils/fastest_cvsup
 fastjar		ports/archivers/fastjar
 fastresolve	ports/dns/fastresolve
+fatback		ports/sysutils/fatback
 fb		ports/editors/fb
 fbbi		ports/lang/fbbi
 fbcmd		ports/x11-wm/fbcmd
