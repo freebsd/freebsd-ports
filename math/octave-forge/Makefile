@@ -19,7 +19,7 @@ BUILD_DEPENDS=	qhull:${PORTSDIR}/math/qhull \
 		gcsplit:${PORTSDIR}/sysutils/coreutils \
 		bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	octave:${PORTSDIR}/math/octave \
-		bin/qhull:${PORTSDIR}/math/qhull \
+		qhull:${PORTSDIR}/math/qhull \
 		bash:${PORTSDIR}/shells/bash
 
 USE_GMAKE=	yes
