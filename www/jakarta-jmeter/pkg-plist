@@ -1,5 +1,37 @@
 @comment $FreeBSD$
-bin/jmeter
+%%DATADIR%%/bin/ApacheJMeter.jar
+%%DATADIR%%/bin/jmeter
+%%DATADIR%%/bin/jmeter-server
+%%DATADIR%%/bin/jmeter-test.log
+%%DATADIR%%/bin/jmeter.properties
+%%DATADIR%%/bin/jmetertest.properties
+%%DATADIR%%/bin/upgrade.properties
+%%DATADIR%%/bin/users.dtd
+%%DATADIR%%/bin/users.xml
+%%DATADIR%%/extras/JMeter Ant Task.html
+%%DATADIR%%/extras/JMeter Ant Task_files/JMeterResults.jpg
+%%DATADIR%%/extras/JMeterResults.jpg
+%%DATADIR%%/extras/JMeterResultsDetail.jpg
+%%DATADIR%%/extras/addons.txt
+%%DATADIR%%/extras/addons.xml
+%%DATADIR%%/extras/ant-jmeter.jar
+%%DATADIR%%/extras/collapse.jpg
+%%DATADIR%%/extras/eclipse.readme
+%%DATADIR%%/extras/eclipselaunch.txt
+%%DATADIR%%/extras/execcode.bsh
+%%DATADIR%%/extras/expand.jpg
+%%DATADIR%%/extras/jmeter-results-detail-report.xsl
+%%DATADIR%%/extras/jmeter-results-report.xsl
+%%DATADIR%%/extras/remote.bsh
+%%DATADIR%%/extras/startup.bsh
+%%DATADIR%%/lib/LICENSE(jdom).txt
+%%DATADIR%%/lib/LICENSE(jtidy).txt
+%%DATADIR%%/lib/Tidy.jar
+%%DATADIR%%/lib/avalon-framework-4.1.4.jar
+%%DATADIR%%/lib/commons-collections.jar
+%%DATADIR%%/lib/commons-httpclient-2.0.jar
+%%DATADIR%%/lib/commons-logging.jar
+%%DATADIR%%/lib/excalibur-logger-1.1.jar
 %%DATADIR%%/lib/ext/ApacheJMeter_components.jar
 %%DATADIR%%/lib/ext/ApacheJMeter_core.jar
 %%DATADIR%%/lib/ext/ApacheJMeter_ftp.jar
@@ -8,12 +40,11 @@ bin/jmeter
 %%DATADIR%%/lib/ext/ApacheJMeter_java.jar
 %%DATADIR%%/lib/ext/ApacheJMeter_jdbc.jar
 %%DATADIR%%/lib/ext/ApacheJMeter_ldap.jar
-%%DATADIR%%/lib/avalon-excalibur-4.1.jar
-%%DATADIR%%/lib/avalon-framework-4.1.4.jar
-%%DATADIR%%/lib/Tidy.jar
-%%DATADIR%%/lib/commons-collections.jar
-%%DATADIR%%/lib/jakarta-oro-2.0.7.jar
-%%DATADIR%%/lib/jdom-b8.jar
+%%DATADIR%%/lib/ext/ApacheJMeter_monitors.jar
+%%DATADIR%%/lib/ext/ApacheJMeter_tcp.jar
+%%DATADIR%%/lib/htmlparser.jar
+%%DATADIR%%/lib/jakarta-oro-2.0.8.jar
+%%DATADIR%%/lib/jdom-b9.jar
 %%DATADIR%%/lib/jorphan.jar
 %%DATADIR%%/lib/js.jar
 %%DATADIR%%/lib/js_jar_license(mozilla).html
@@ -24,24 +55,10 @@ bin/jmeter
 %%DATADIR%%/lib/xalan.jar
 %%DATADIR%%/lib/xercesImpl.jar
 %%DATADIR%%/lib/xml-apis.jar
-%%DATADIR%%/extras/JMeter Ant Task_files/JMeterResults.jpg
-%%DATADIR%%/extras/JMeter Ant Task.html
-%%DATADIR%%/extras/JMeterResults.jpg
-%%DATADIR%%/extras/JMeterResultsDetail.jpg
-%%DATADIR%%/extras/ant-jmeter.jar
-%%DATADIR%%/extras/jmeter-results-detail-report.zip
-%%DATADIR%%/extras/jmeter-results-report.xsl
-%%DATADIR%%/bin/ApacheJMeter.jar
-%%DATADIR%%/bin/jmeter
-%%DATADIR%%/bin/jmeter-server
-%%DATADIR%%/bin/jmeter.log
-%%DATADIR%%/bin/jmeter.properties
-%%DATADIR%%/bin/upgrade.properties
-%%DATADIR%%/bin/users.dtd
-%%DATADIR%%/bin/users.xml
-@dirrm %%DATADIR%%/lib/ext
-@dirrm %%DATADIR%%/lib
+bin/jmeter
+@dirrm %%DATADIR%%/bin
 @dirrm %%DATADIR%%/extras/JMeter Ant Task_files
 @dirrm %%DATADIR%%/extras
-@dirrm %%DATADIR%%/bin
+@dirrm %%DATADIR%%/lib/ext
+@dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%
