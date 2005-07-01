@@ -6715,6 +6715,7 @@ ny-ooodict-MW	ports/editors/ooodict-ny_MW
 nylon		ports/net/nylon
 nzbget		ports/news/nzbget
 o2c		ports/lang/o2c
+o2em		ports/emulators/o2em
 oaf		ports/devel/oaf
 oak		ports/sysutils/oak
 oases		ports/science/oases
