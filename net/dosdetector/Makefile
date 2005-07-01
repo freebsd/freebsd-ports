@@ -9,10 +9,10 @@
 
 PORTNAME=		dosdetector
 PORTVERSION=		0.0
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		net
 MASTER_SITES=		http://darkzone.ma.cx/resources/unix/dosdetector/
-DISTNAME=		${PORTNAME}-20050616
+DISTNAME=		${PORTNAME}-20050701
 
 MAINTAINER=		msciciel@darkzone.ma.cx
 COMMENT=		Detect suspicious network traffic
