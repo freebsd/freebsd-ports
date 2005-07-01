@@ -133,6 +133,7 @@
     SUBDIR += extipl
     SUBDIR += fanout
     SUBDIR += fastest_cvsup
+    SUBDIR += fatback
     SUBDIR += fcron
     SUBDIR += fdupes
     SUBDIR += fetchlog
