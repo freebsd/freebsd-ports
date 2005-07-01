@@ -7,6 +7,7 @@ include/tk%%TK_VER%%/generic/tkButton.h
 include/tk%%TK_VER%%/generic/tkCanvas.h
 include/tk%%TK_VER%%/generic/tkColor.h
 include/tk%%TK_VER%%/generic/tkDecls.h
+include/tk%%TK_VER%%/generic/tkEntry.h
 include/tk%%TK_VER%%/generic/tkFileFilter.h
 include/tk%%TK_VER%%/generic/tkFont.h
 include/tk%%TK_VER%%/generic/tkInitScript.h
@@ -127,6 +128,7 @@ lib/tk%%TK_VER%%/msgs/el.msg
 lib/tk%%TK_VER%%/msgs/en.msg
 lib/tk%%TK_VER%%/msgs/en_gb.msg
 lib/tk%%TK_VER%%/msgs/es.msg
+lib/tk%%TK_VER%%/msgs/es_ES.msg
 lib/tk%%TK_VER%%/msgs/eo.msg
 lib/tk%%TK_VER%%/msgs/fr.msg
 lib/tk%%TK_VER%%/msgs/it.msg
