@@ -1,5 +1,5 @@
---- vdelivermail.c.orig	Mon Oct 20 20:59:57 2003
-+++ vdelivermail.c	Sat Nov  1 11:21:15 2003
+--- vdelivermail.c.orig	Thu May 27 03:31:09 2004
++++ vdelivermail.c	Fri Jul  1 19:20:25 2005
 @@ -62,6 +62,7 @@
  #define FILE_SIZE 156
  char hostname[FILE_SIZE];
@@ -8,7 +8,7 @@
  
  #define MSG_BUF_SIZE 5000
  char msgbuf[MSG_BUF_SIZE];
-@@ -90,6 +91,10 @@
+@@ -89,6 +90,10 @@
  void usernotfound(void);
  int is_loop_match( char *dt, char *address);
  int deliver_quota_warning(const char *dir, const char *q);
@@ -19,7 +19,7 @@
  
  static char local_file[156];
  static char local_file_new[156];
-@@ -257,7 +262,7 @@
+@@ -256,7 +261,7 @@
  
      /* check for wildcard if there's no match */
      if(tmpstr == NULL) {
@@ -29,13 +29,13 @@
                  tmpuser[0] = '\0';
                  strncat(tmpuser,TheUser,i); 
 @@ -444,6 +449,7 @@
-  int inject = 0;
+  int write_fd;
   FILE *fs;
   char tmp_file[256];
 + int pim[2];
  
-     /* check if the email is looping to this user */
-     if ( is_looping( address ) == 1 ) {
+     /* This is a comment, ignore it */
+     if ( *address == '#' ) return(0);
 @@ -631,6 +637,51 @@
          }
      }
@@ -88,7 +88,15 @@
  
      /* read it in chunks and write it to the new file */
      while((file_count=read(0,msgbuf,MSG_BUF_SIZE))>0) {
-@@ -881,6 +932,9 @@
+@@ -823,6 +874,7 @@
+      printf("unable to fork\n"); 
+      exit(0);
+    case 0:
++     setenv("SHELL", "/bin/sh", 1);
+      args[0] = "/bin/sh"; args[1] = "-c"; args[2] = prog; args[3] = 0;
+      sig_catch(SIGPIPE,SIG_DFL);
+      execv(*args,args);
+@@ -882,6 +934,9 @@
          if (strncmp(loop_buf, "Delivered-To: ", 14) == 0 &&
              is_loop_match(loop_buf, address)==1 ) {
  
@@ -98,7 +106,7 @@
              /* return the loop found */
              return(1);
  
-@@ -919,6 +973,8 @@
+@@ -920,6 +975,8 @@
               * looping not found value
              */
              if ( found == 0 ) {
@@ -107,7 +115,7 @@
                  /* return not found looping message value */
                  return(0);
              }
-@@ -1335,3 +1391,96 @@
+@@ -1300,3 +1357,96 @@
     return(1);
  }
  
