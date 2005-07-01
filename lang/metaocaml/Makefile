@@ -8,7 +8,9 @@
 PORTNAME=	metaocaml
 PORTVERSION=	3.08.a20
 CATEGORIES=	lang
-MASTER_SITES=	http://www.metaocaml.org/dist/
+MASTER_SITES=	http://www.metaocaml.org/dist/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	jylefort
 DISTNAME=	MetaOCaml_308_alpha_020
 
 MAINTAINER=	mainland@apeiron.net
