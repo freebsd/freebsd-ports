@@ -6,12 +6,9 @@
 #
 
 PORTNAME=		tea
-DISTVERSION=		9.1
+DISTVERSION=		10.0
 CATEGORIES=		editors
-MASTER_SITES=		${MASTER_SITE_LOCAL} \
-			http://tea.linux.kiev.ua/ \
-			http://freebsd.nsu.ru/distfiles/
-MASTER_SITE_SUBDIR=	danfe
+MASTER_SITES=		http://tea.linux.kiev.ua/
 
 MAINTAINER=		danfe@FreeBSD.org
 COMMENT=		A simple and powerful GTK+ text editor
