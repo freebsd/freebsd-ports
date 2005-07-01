@@ -1,0 +1,18 @@
+Fatback is a forensic tool for undeleting files from FAT file systems.
+
+Fatback is different from other undelete tools in that it does the
+following:
+
+   * Runs under UNIX environments
+   * Can undelete files automatically
+   * Supports Long File Names
+   * Supports FAT12, FAT16, and FAT32
+   * Powerful interactive mode
+   * Recursively undeletes deleted directories
+   * Recovers lost cluster chains
+   * Works with single partitions or whole disks
+
+WWW: http://sourceforge.net/project/showfiles.php?group_id=46038
+
+- ehaupt
+ehaupt@critical.ch
