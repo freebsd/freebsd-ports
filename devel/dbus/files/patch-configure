@@ -1,6 +1,14 @@
---- configure.orig	Mon Jan 24 17:28:13 2005
-+++ configure	Mon Jan 24 19:20:14 2005
-@@ -4342,7 +4342,7 @@
+--- configure.orig	Fri Jul  1 00:49:18 2005
++++ configure	Fri Jul  1 00:52:48 2005
+@@ -1059,6 +1059,7 @@
+                           optimize for fast installation [default=yes]
+   --disable-libtool-lock  avoid locking (might break parallel builds)
+   --disable-dnotify         Disable using dnotify on Linux
++  --disable-kqueue          Disable using kqueue on FreeBSD
+ 
+ Optional Packages:
+   --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
+@@ -4471,7 +4472,7 @@
  
    case " $CFLAGS " in
    *[\ \	]-Wfloat-equal[\ \	]*) ;;
@@ -9,7 +17,40 @@
    esac
  
    case " $CFLAGS " in
-@@ -26195,14 +26195,14 @@
+@@ -28059,6 +28060,32 @@
+ 
+ fi
+ 
++# kqueue checks
++case "${target_os}" in
++    freebsd*)
++    	# Check whether --enable-kqueue or --disable-kqueue was given.
++if test "${enable_kqueue+set}" = set; then
++    enableval="$enable_kqueue"
++    case "${enableval}" in
++	yes) kqueue=false ;;
++	no) kqueue=true ;;
++	*) { { echo "$as_me:$LINENO: error: bad value ${enableval} for --disable-kqueue" >&5
++echo "$as_me: error: bad value ${enableval} for --disable-kqueue" >&2;}
++   { (exit 1); exit 1; }; } ;;
++        esac
++else
++    kqueue=true
++fi;
++;;
++esac
++if test x$kqueue = xtrue; then
++
++cat >>confdefs.h <<\_ACEOF
++#define DBUS_BUS_ENABLE_KQUEUE_ON_FREEBSD 1
++_ACEOF
++
++fi
++
+ 
+ #### Set up final flags
+ DBUS_CLIENT_CFLAGS=
+@@ -28621,14 +28648,14 @@
  echo "${ECHO_T}not found" >&6
  fi
  
