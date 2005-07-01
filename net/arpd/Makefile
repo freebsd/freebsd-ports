@@ -7,6 +7,7 @@
 
 PORTNAME=	arpd
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://niels.xtdnet.nl/honeyd/
 

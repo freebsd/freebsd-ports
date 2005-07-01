@@ -7,7 +7,7 @@
 
 PORTNAME=	plb
 PORTVERSION=	0.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://plb.sunsite.dk/files/
 
