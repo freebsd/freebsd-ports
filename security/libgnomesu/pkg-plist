@@ -3,7 +3,7 @@ include/libgnomesu-1.0/libgnomesu/gnomesu-auth-dialog.h
 include/libgnomesu-1.0/libgnomesu/libgnomesu.h
 lib/libgnomesu.a
 lib/libgnomesu.so
-lib/libgnomesu.so.1
+lib/libgnomesu.so.2
 libdata/pkgconfig/libgnomesu-1.0.pc
 libexec/gnomesu-backend
 libexec/gnomesu-pam-backend
@@ -24,11 +24,13 @@ share/locale/el/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/en_CA/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/en_GB/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/es/LC_MESSAGES/libgnomesu-1.0.mo
+share/locale/eu/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/fi/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/fr/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/gu/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/hr/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/hu/LC_MESSAGES/libgnomesu-1.0.mo
+share/locale/it/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/ja/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/ko/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/lt/LC_MESSAGES/libgnomesu-1.0.mo
@@ -39,11 +41,13 @@ share/locale/pa/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/pl/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/pt/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/pt_BR/LC_MESSAGES/libgnomesu-1.0.mo
+share/locale/rw/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/sk/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/sq/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/sr/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/sr@Latn/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/sv/LC_MESSAGES/libgnomesu-1.0.mo
+share/locale/tr/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomesu-1.0.mo
 @dirrm include/libgnomesu-1.0/libgnomesu
