@@ -8,7 +8,9 @@
 PORTNAME=	facturier
 PORTVERSION=	2.1.2
 CATEGORIES=	french finance
-MASTER_SITES=	http://ignu.ungi.org/download/
+MASTER_SITES=	http://ignu.ungi.org/download/	\
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	thierry
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Logiciel de facturation pour P.M.I. & P.M.E.
