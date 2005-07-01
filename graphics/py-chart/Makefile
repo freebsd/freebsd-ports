@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	chart
-PORTVERSION=	1.28.1
+PORTVERSION=	1.37
 CATEGORIES=	graphics python
-MASTER_SITES=	http://www.hpl.hp.com/personal/Yasushi_Saito/pychart/
+MASTER_SITES=	http://download.gna.org/pychart/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyChart-${PORTVERSION}
 
