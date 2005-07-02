@@ -1,5 +1,5 @@
 --- bus/dir-watch.c.orig	Tue Jun 14 22:31:38 2005
-+++ bus/dir-watch.c	Fri Jul  1 01:07:28 2005
++++ bus/dir-watch.c	Sat Jul  2 15:07:55 2005
 @@ -28,17 +28,25 @@
  #include <stdlib.h>
  #include <unistd.h>
@@ -28,7 +28,7 @@
  /* use a static array to avoid handling OOM */
  static int fds[MAX_DIRS_TO_WATCH];
  static int num_fds = 0;
-@@ -92,6 +100,121 @@ bus_drop_all_directory_watches (void)
+@@ -92,6 +100,132 @@ bus_drop_all_directory_watches (void)
  	}
      }
    
@@ -45,11 +45,22 @@
 +_handle_kqueue_watch (DBusWatch *watch, unsigned int flags, void *data)
 +{
 +  struct kevent ev;
++  int res;
++  pid_t pid;
 +
-+  if (kevent (kq, NULL, 0, &ev, 1, NULL) > 0)
++  res = kevent (kq, NULL, 0, &ev, 1, NULL);
++
++  if (res > 0)
 +    {
-+      pid_t pid = getpid ();
++      pid = getpid ();
 +      _dbus_verbose ("Sending SIGHUP signal on reception of a kevent\n");
++      (void) kill (pid, SIGHUP);
++    }
++  else if (res < 0 && errno == EBADF)
++    {
++      kq = -1;
++      pid = getpid ();
++      _dbus_verbose ("Sending SIGHUP signal since kqueue has been closed\n");
 +      (void) kill (pid, SIGHUP);
 +    }
 +
