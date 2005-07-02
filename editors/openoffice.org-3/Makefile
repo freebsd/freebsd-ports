@@ -50,8 +50,8 @@ BROKEN=		"rtld depends on _end symbol. type make -DTRYBROKEN to see how to upgra
 
 CODELINE=		680
 RELEASE_NR=		1.9
-MILESTONE=		111
-SNAPDATE=		20050621
+MILESTONE=		113
+SNAPDATE=		20050701
 INSTALLATION_BASEDIR=	openoffice.org${RELEASE_NR}m${MILESTONE}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org2.0
@@ -188,45 +188,5 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-package-rename:
-	@${ECHO_MSG} "===>   Rename package for OpenOffice.org mirror upload";
-	@${MV} ${PKGFILE} \
-		${WRKDIR}/../${PACKAGE_BASENAME}_install_${LOCALIZED_LANG}${PKG_SUFX}
-
-package-canonical:
-	@${ECHO_MSG} "===>   Canonical packaging for OpenOffice.org";
-	@cd ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice/install/${LOCALIZED_LANG}/freebsd-*/ ;\
-	${TAR} cfj ${WRKDIR}/../${PACKAGE_BASENAME}_native_install_${LOCALIZED_LANG}${PKG_SUFX} .
-	@${CP} ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice_languagepack/install/${LOCALIZED_LANG}/freebsd-*/openofficeorg-*.tgz .
-
-sdk:
-	@${ECHO_MSG} "===>   Make SDK of OpenOffice.org"
-	@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd sdk_oo ; build.pl ; deliver.pl'
-	@${MV} ${WRKSRC}/solver/${CODELINE}/unxfbsd.pro/bin/OpenOffice.org2.0_SDK.tar.gz ${WRKDIR}/../${PACKAGE_BASENAME}_sdk.tar.gz
-
-solver:
-	@${ECHO_MSG} "===>   Make Solver of OpenOffice.org"
-	@cd ${WRKSRC} ; ${TAR} cfj ${WRKDIR}/../${PACKAGE_BASENAME}_solver.tar.bz2 solver
-
-languagepack:
-	@${ECHO_MSG} "===>   Make languagepack of OpenOffice.org"
-.if defined (ALL_LOCALIZED_LANGS)
-	@cd ${WRKSRC} ; ${SETENV} "DEFAULT_TO_ENGLISH_FOR_PACKING=yes" ${TCSH} -c 'source FreeBSDEnv.Set ; cd instsetoo_native/util ; dmake ooolanguagepack'
-.else
-	@cd ${WRKSRC} ; ${SETENV} "DEFAULT_TO_ENGLISH_FOR_PACKING=yes" ${TCSH} -c 'source FreeBSDEnv.Set ; cd instsetoo_native/util ; dmake ooolanguagepack_${LOCALIZED_LANG}'
-.endif
-
-.if !defined (ALL_LOCALIZED_LANGS)
-	@${RM} -fr ${WRKDIR}/langpack_tmp
-	@${MKDIR} ${WRKDIR}/langpack_tmp
-.if defined (LOCALIZED_LANG)
-	@cd ${WRKDIR}/langpack_tmp ; \
-		${TAR} xf ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice_languagepack/install/${LOCALIZED_LANG}/freebsd-*/openofficeorg-*.tgz
-	@cd ${WRKDIR}/langpack_tmp/opt/openoffice* ; \
-		${MKDIR} ../${INSTALLATION_BASEDIR} ; \
-		${MV} * ../${INSTALLATION_BASEDIR} ; cd .. ; \
-		${TAR} cfj ${WRKDIR}/../${PACKAGE_BASENAME}_langpack_${LOCALIZED_LANG}.tar.bz2 ${INSTALLATION_BASEDIR}
-.endif
-.endif
-
+.include <${FILESDIR}/Makefile.others>
 .include <bsd.port.post.mk>
