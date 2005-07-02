@@ -17,6 +17,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_AUTOCONF_VER=	259
 USE_INC_LIBTOOL_VER=	13
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
+
+pre-configure:
+	@${REINPLACE_CMD} -e's/[[:cntrl:]]*$$//' ${WRKSRC}/src/skyutils.h
 
 .include <bsd.port.mk>
