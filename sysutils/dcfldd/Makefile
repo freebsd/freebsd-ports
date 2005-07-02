@@ -6,25 +6,23 @@
 #
 
 PORTNAME=	dcfldd
-PORTVERSION=	1.0
+PORTVERSION=	1.2.4
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	biatchux
+MASTER_SITE_SUBDIR=	dcfldd
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	An enhanced dd tool with MD5 hashing capability
 
+USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LIBS=-L${LOCALBASE}/lib
-
 MAN1=		dcfldd.1
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-dcfldd.h ${PATCHDIR}/extra-patch-human.c \
+		${PATCHDIR}/extra-patch-xstrtol.h
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
