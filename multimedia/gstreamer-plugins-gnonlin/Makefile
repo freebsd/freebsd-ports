@@ -16,6 +16,8 @@ COMMENT=	GStreamer extension library for non-linear editing
 
 LIB_DEPENDS=	gstreamer-0.8.5:${PORTSDIR}/multimedia/gstreamer
 
+BROKEN=		Incomplete pkg-plist
+
 CONFLICTS=	pitivi-0.1.1*
 
 USE_BZIP2=	yes
