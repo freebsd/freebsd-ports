@@ -13,13 +13,14 @@ MASTER_SITES=	http://www.garloff.de/kurt/linux/ddrescue/
 MAINTAINER=	nobutaka@freebsd.org
 COMMENT=	A dd tool suitable for rescuing data from a medium with errors
 
+USE_GETOPT_LONG=yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	default
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
+MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib -lgnugetopt"
 .endif
 
 do-install:
