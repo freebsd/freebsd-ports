@@ -13,6 +13,8 @@ MASTER_SITES=	http://download.librdf.org/source/
 MAINTAINER=	russell@rucus.ru.ac.za
 COMMENT=	Language bindings for the Redland package
 
+BROKEN=		Configure fails
+
 #OPTIONS=	JAVA "Add Java bindings" off \
 #		PERL "Add Perl bindings" off \
 #		PHP "Add PHP bindings" off \
