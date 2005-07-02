@@ -5,44 +5,40 @@
 # $FreeBSD$
 #
 
-PORTNAME=		translator
-PORTVERSION=		0.1.0
-PORTREVISION=	1
-CATEGORIES=		misc
-MASTER_SITES=		http://jodrell.net/files/translator/
+PORTNAME=	translator
+PORTVERSION=	0.1.0
+PORTREVISION=	2
+CATEGORIES=	misc
+MASTER_SITES=	http://jodrell.net/files/attic/translator/
 
-MAINTAINER=		jylefort@FreeBSD.org
-COMMENT=		A GTK+ frontend to the Babelfish translation service
+MAINTAINER=	jylefort@FreeBSD.org
+COMMENT=	A GTK+ frontend to the Babelfish translation service
 
-RUN_DEPENDS=		${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-			${SITE_PERL}/${PERL_ARCH}/Gtk2/GladeXML.pm:${PORTSDIR}/x11-toolkits/p5-Glade2 \
-			${SITE_PERL}/${PERL_ARCH}/Gnome2/GConf.pm:${PORTSDIR}/devel/p5-Gnome2-GConf \
-			${SITE_PERL}/WWW/Babelfish.pm:${PORTSDIR}/www/p5-WWW-Babelfish
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
+		${SITE_PERL}/${PERL_ARCH}/Gtk2/GladeXML.pm:${PORTSDIR}/x11-toolkits/p5-Glade2 \
+		${SITE_PERL}/${PERL_ARCH}/Gnome2/GConf.pm:${PORTSDIR}/devel/p5-Gnome2-GConf \
+		${SITE_PERL}/WWW/Babelfish.pm:${PORTSDIR}/www/p5-WWW-Babelfish
 
-USE_X_PREFIX=		yes
-USE_PERL5=		yes
-NO_BUILD=		yes
+USE_X_PREFIX=	yes
+USE_PERL5=	yes
+NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-HAVE_THREADS!=		${PERL} -mthreads -e '' >/dev/null 2>&1 && ${ECHO} 'yes' || true
+HAVE_THREADS!=	${PERL} -mthreads -e '' >/dev/null 2>&1 && ${ECHO_CMD} 'yes' || true
 
 .if ${PERL_LEVEL} < 500800 || empty(HAVE_THREADS)
-IGNORE=			"Needs threaded perl 5.8.0 or higher, install lang/perl5.8 with threads support and try again"
+IGNORE=		needs threaded perl 5.8.0 or higher, install lang/perl5.8 with threads support and try again
 .endif
 
 post-patch:
-	@${SED} -e \
-		's|share/pixmaps|share/gnome/pixmaps| ; \
-		 s|@PREFIX@|${PREFIX}|' \
-		${WRKSRC}/translator.pl > ${WRKSRC}/translator
+	@${SED} -e 's|@PREFIX@|${PREFIX}|' ${WRKSRC}/translator.pl > ${WRKSRC}/translator
 
 do-install:
-	${MKDIR} ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/translator ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/gnome/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/translator.png ${PREFIX}/share/gnome/pixmaps
-	${MKDIR} ${PREFIX}/share/translator
-	${INSTALL_DATA} ${WRKSRC}/translator.glade ${PREFIX}/share/translator
+	${MKDIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/translator.png ${PREFIX}/share/pixmaps
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/translator.glade ${DATADIR}
 
 .include <bsd.port.post.mk>
