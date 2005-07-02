@@ -1,5 +1,5 @@
 --- bus/dir-watch.c.orig	Tue Jun 14 22:31:38 2005
-+++ bus/dir-watch.c	Sat Jul  2 15:07:55 2005
++++ bus/dir-watch.c	Sat Jul  2 15:29:35 2005
 @@ -28,17 +28,25 @@
  #include <stdlib.h>
  #include <unistd.h>
@@ -45,10 +45,11 @@
 +_handle_kqueue_watch (DBusWatch *watch, unsigned int flags, void *data)
 +{
 +  struct kevent ev;
++  struct timespec nullts = { 0, 0 };
 +  int res;
 +  pid_t pid;
 +
-+  res = kevent (kq, NULL, 0, &ev, 1, NULL);
++  res = kevent (kq, NULL, 0, &ev, 1, &nullts);
 +
 +  if (res > 0)
 +    {
@@ -78,7 +79,6 @@
 +{
 +  int fd;
 +  struct kevent ev;
-+  static struct timespec nullts = { 0, 0 };
 +
 +  _dbus_assert (dir != NULL);
 +
@@ -129,7 +129,7 @@
 +  EV_SET (&ev, fd, EVFILT_VNODE, EV_ADD | EV_ENABLE | EV_CLEAR,
 +          NOTE_DELETE | NOTE_EXTEND | NOTE_WRITE | NOTE_LINK | NOTE_RENAME |
 +	  NOTE_REVOKE, 0, 0);
-+  if (kevent (kq, &ev, 1, NULL, 0, &nullts) == -1)
++  if (kevent (kq, &ev, 1, NULL, 0, NULL) == -1)
 +    {
 +      _dbus_warn ("Cannot setup a kevent for '%s'; error '%s'\n", dir, _dbus_strerror (errno));
 +      close (fd);
