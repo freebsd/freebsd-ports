@@ -23,7 +23,7 @@ this functionality is not used at all.
 
 --- moz/mozilla-source-1.0.patch.org	Tue Feb 10 19:44:34 2004
 +++ moz/mozilla-source-1.0.patch	Sat Mar 19 12:51:35 2005
-@@ -4471,14 +4471,15 @@
+@@ -4471,14 +4471,16 @@
       return NS_OK;
   }
  
@@ -31,13 +31,14 @@ this functionality is not used at all.
 +--- misc/build/mozilla/.mozconfig	Tue Jul 22 21:52:27 2003
  +++ misc/build/mozilla/.mozconfig	Mon Jul 28 15:07:20 2003
 -@@ -0,0 +1,8 @@
-+@@ -0,0 +1,9 @@
++@@ -0,0 +1,10 @@
  +ac_add_options --disable-tests
  +ac_add_options --disable-xprint
  +ac_add_options --without-system-zlib
  +ac_add_options --enable-ldap
  +ac_add_options --disable-debug
 ++ac_add_options --disable-freetype2
+++ac_add_options --enable-default-toolkit=xlib
  +ac_add_options --enable-optimize
  +ac_add_options --enable-crypto
  +ac_add_options --enable-strip
