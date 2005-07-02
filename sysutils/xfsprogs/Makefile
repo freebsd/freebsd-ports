@@ -34,6 +34,12 @@ MAN8=	fsck.xfs.8 mkfs.xfs.8 xfs_admin.8 xfs_bmap.8 xfs_check.8 \
 	xfs_io.8 xfs_logprint.8 xfs_mkfile.8 xfs_ncheck.8 \
 	xfs_repair.8 xfs_rtcp.8
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 pre-configure:
 	${RM} -f ${WRKSRC}/configure
 
@@ -41,4 +47,4 @@ post-configure:
 	${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-lpthread|${PTHREAD_LIBS}|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
