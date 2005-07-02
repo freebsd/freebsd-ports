@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/
 MAINTAINER=	tmclaugh@sdf.lonestar.org
 COMMENT=	Enhanced ftp client from NetBSD
 
+BROKEN=		Unfetchable
+
 GNU_CONFIGURE=	yes
 
 MAN1=		tnftp.1
