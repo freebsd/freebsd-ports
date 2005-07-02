@@ -29,10 +29,11 @@ share/anthy/noun.depword
 share/anthy/typetab
 share/anthy/v.depword
 %%PORTDOCS%%%%DOCSDIR%%/ELISP
+%%ELISPDIR%%/anthy-azik.el
 %%ELISPDIR%%/anthy-conf.el
 %%ELISPDIR%%/anthy-dic.el
 %%ELISPDIR%%/anthy-isearch.el
-%%ELISPDIR%%/anthy-azik.el
+%%ELISPDIR%%/anthy-kyuri.el
 %%ELISPDIR%%/anthy.el
 %%ELISPDIR%%/leim-list.el
 @dirrm share/anthy
