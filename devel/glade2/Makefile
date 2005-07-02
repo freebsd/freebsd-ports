@@ -7,6 +7,7 @@
 
 PORTNAME=	glade2
 PORTVERSION=	2.10.0
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.10
@@ -24,6 +25,7 @@ INSTALLS_OMF=	yes
 USE_LIBTOOL_VER=15
 USE_GNOME=	gnomeprefix intlhack gnomehack libgnomedb libgnomeui
 USE_GMAKE=	yes
+CONFIGURE_ARGS=	--enable-gnome-db
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
