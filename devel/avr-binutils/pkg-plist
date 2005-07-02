@@ -2,6 +2,7 @@ avr/bin/ar
 avr/bin/as
 avr/bin/ld
 avr/bin/nm
+avr/bin/objdump
 avr/bin/ranlib
 avr/bin/strip
 avr/lib/ldscripts/avr1.x
@@ -51,6 +52,7 @@ share/locale/fr/LC_MESSAGES/binutils.mo
 share/locale/fr/LC_MESSAGES/gas.mo
 share/locale/fr/LC_MESSAGES/ld.mo
 share/locale/ja/LC_MESSAGES/binutils.mo
+share/locale/ro/LC_MESSAGES/binutils.mo
 share/locale/ru/LC_MESSAGES/binutils.mo
 share/locale/sv/LC_MESSAGES/binutils.mo
 share/locale/sv/LC_MESSAGES/ld.mo
