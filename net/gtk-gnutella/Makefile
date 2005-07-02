@@ -8,7 +8,7 @@
 #
 # A quick note on configurable make symbols:
 #
-# INTERACTIVE_CONFIGURE: Launches Configure in it's default mode,
+# INTERACTIVE_CONFIGURE: Launches Configure in its default mode,
 #	which is *very* interactive. Disabled here by default to conform to
 #	FreeBSD guidelines, this mode is useful if you have problems with the
 #	default Configure.
@@ -22,20 +22,16 @@
 # WITH_DEBUG: Compile with debugging symbols. Useful if you intend to make
 #	a bug report.
 #
-# WITHOUT_ICU: Don't compile with unicode support via the ICU library.
-#	Note that ICU versions previous to 2.6 may not work correctly.
-#
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	0.95
+PORTVERSION=	0.95.3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://gtk-gnutella.sourceforge.net/download/ \
 		ftp://gtk-gnutella.sourceforge.net/pub/gtk-gnutella/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER=	crollins666@hotmail.com
+MAINTAINER=	jonas@schiebtsich.net
 COMMENT=	GTK based Gnutella client
 
 USE_PERL5=	yes
@@ -43,18 +39,19 @@ USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_BISON=	yes
 USE_GNOME=	libxml2
+INSTALL_TARGET=	install install.man
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
-CONFIGURE_ARGS=		-Dyacc='bison -y' -Dofficial='true' -Dprefix=${PREFIX}
-CONFIGURE_ARGS+=	-Dbindir=${PREFIX}/bin -Dprivlib=${PREFIX}/share/gtk-gnutella
-CONFIGURE_ARGS+=	-Dsysman=${PREFIX}/man/man1 -Dlocale=${PREFIX}/share/locale
-CONFIGURE_ARGS+=	-Dccflags='${CFLAGS} -I${LOCALBASE}/include/'
+CONFIGURE_ARGS=	-Dyacc='bison -y' -Dofficial='true' -Dprefix=${PREFIX} \
+		-Dprivlib=${PREFIX}/share/gtk-gnutella \
+		-Dsysman=${PREFIX}/man/man1 -Dlocale=${PREFIX}/share/locale \
+		-Dcc='${CC}' -Dccflags='${CFLAGS} -I${LOCALBASE}/include' \
+		-Doptimize='undef' -Dlibpth='/usr/lib ${LOCALBASE}/lib'
 
 MAN1=		gtk-gnutella.1
 
 OPTIONS=	DEBUG "Build with debugging symbols" off \
-		GTK2 "Build with gtk2 frontend" off \
-		ICU "Enable non-roman charset support" on \
+		GTK2 "Build with gtk2 frontend" on \
 		PORTABILITY "Use the PATH variable at run-time" off
 
 .include <bsd.port.pre.mk>
@@ -75,22 +72,8 @@ CONFIGURE_ARGS+=	-Dgtkversion=1
 USE_GNOME+=		gtk12
 .endif
 
-.if !defined(WITHOUT_ICU)
-LIB_DEPENDS+=		icuuc:${PORTSDIR}/devel/icu2
-
-# Add threading to the ld flags; icuuc requires these by default
-CONFIGURE_ARGS+=	-Dldflags=${PTHREAD_LIBS}
-.else
-CONFIGURE_ARGS+=	-Dd_icu=false
-.endif
-
 .if defined(WITH_PORTABILITY)
 CONFIGURE_ARGS+=	-Dd_portable=true
 .endif
-
-post-install:
-	@${ECHO} 'Installing compressed man page in man/man1/'
-	@${CP} ${WRKSRC}/src/gtk-gnutella.man ${WRKSRC}/src/gtk-gnutella.1
-	@${INSTALL_MAN} ${WRKSRC}/src/gtk-gnutella.1 ${PREFIX}/man/man1
 
 .include <bsd.port.post.mk>
