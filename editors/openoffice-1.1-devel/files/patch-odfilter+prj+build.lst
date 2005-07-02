@@ -1,0 +1,13 @@
+Index: odfilter/prj/build.lst
+===================================================================
+RCS file: /cvs/xml/odfilter/prj/build.lst,v
+retrieving revision 1.1
+diff -u -r1.1 build.lst
+--- odfilter/prj/build.lst	6 Jun 2005 12:36:50 -0000	1.1
++++ odfilter/prj/build.lst	1 Jul 2005 10:49:28 -0000
+@@ -1,4 +1,4 @@
+-xod	odfilter	:	offapi goodies comphelper NULL
++xod	odfilter	:	offapi goodies comphelper xmloff NULL
+ xod	odfilter									usr1	-	all	xod_mkout NULL
+ xod	odfilter\prj								get		-	all	xod_prj NULL
+ xod	odfilter\source								nmake	-	all	xod_transform NULL
