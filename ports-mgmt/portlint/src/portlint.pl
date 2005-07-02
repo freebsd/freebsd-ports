@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.76 2005/04/15 04:53:34 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.78 2005/07/02 20:31:33 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 7;
-my $micro = 1;
+my $micro = 2;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -331,7 +331,7 @@ if ($committer) {
 					"consider importing it as \"dot$_\".");
 		} elsif (/[^-.a-zA-Z0-9_\+]/) {
 			&perror("Warning: $fullname: only use characters ".
-					"[-_.a-zA-Z0-9] for patch or script names.");
+					"[-_.a-zA-Z0-9+] for patch or script names.");
 		} elsif (/\.(orig|rej|bak)$/ || /~$/ || /^\#/) {
 			&perror("FATAL: $fullname: for safety, be sure to cleanup ".
 					"backup files before committing the port.");
@@ -937,6 +937,7 @@ sub checkmakefile {
 	my $useindex = 0;
 	my %deprecated = ();
 	my %autocmdnames = ();
+	my $pre_mk_line = 0;
 
 	open(IN, "< $file") || return 0;
 	$rawwhole = '';
@@ -1067,6 +1068,8 @@ sub checkmakefile {
 	#
 	pos($whole) = 0;
 	if ($whole =~ /^\.include\s+<bsd\.port\.pre\.mk>$/gm) {
+		# Remember position
+		$pre_mk_line = &linenumber($`) + 1;
 		print "OK: checking for USE_* used too late.\n" if ($verbose);
 		my @use_early = qw(
 			APACHE
@@ -1098,6 +1101,34 @@ sub checkmakefile {
 			my $lineno = &linenumber($`);
 			&perror("FATAL: $file [$lineno]: $1 is set after ".
 				"including bsd.port.pre.mk.");
+		}
+	}
+
+	#
+	# whole file: check OPTIONS
+	#
+	pos($whole) = 0;
+	print "OK: checking OPTIONS.\n" if ($verbose);
+	@oopt = ($makevar{OPTIONS} =~ /(\w+)\s+\".*?\"\s+\w+/sg);
+	while ($whole =~ /\n[^#\n]*?\(?\s*WITH(?:OUT)?_(\w+)\s*\)?/mg) {
+		push @mopt, $1;
+		my $lineno = &linenumber($`) + 1;
+		&perror("FATAL: $file [$lineno]: option WITH(OUT)_$1 is used before ".
+			"including bsd.port.pre.mk.")
+	}
+	foreach my $i (@oopt) {
+		if (!grep(/^$i$/, @mopt)) {
+			&perror("WARN: $file: $i is listed in OPTIONS, ".
+				"but neither WITH_$i nor WITHOUT_$i appears.");
+		}
+	}
+	foreach my $i (@mopt) {
+		next if ($i eq 'NLS'); # skip WITHOUT_NLS
+		if (!grep(/^$i$/, @oopt)) {
+			# XXX: disable temporarily.
+			# OPTIONS is still "in flux"
+			#&perror("WARN: $file: WITH_$i or WITHOUT_$i appears, ".
+			#	"consider using OPTIONS macro.");
 		}
 	}
 
@@ -2394,26 +2425,6 @@ FETCH_DEPENDS DEPENDS DEPENDS_TARGET
 		&perror("FATAL: $file: USE_ANT is intended only for ports that ".
 			"build with Ant.  You should not override ``do-build'' when ".
 			"defining USE_ANT");
-	}
-
-	# check OPTIONS
-	print "OK: checking OPTIONS.\n" if ($verbose);
-	@oopt = ($makevar{OPTIONS} =~ /(\w+)\s+\".*?\"\s+\w+/sg);
-	@mopt = ($tmp =~ /\(?\s*WITH(?:OUT)?_(\w+)\s*\)?/mg);
-	foreach my $i (@oopt) {
-		if (!grep(/^$i$/, @mopt)) {
-			&perror("WARN: $file: $i is listed in OPTIONS, ".
-				"but neither WITH_$i nor WITHOUT_$i appears.");
-		}
-	}
-	foreach my $i (@mopt) {
-		next if ($i eq 'NLS'); # skip WITHOUT_NLS
-		if (!grep(/^$i$/, @oopt)) {
-			# XXX: disabled temporarily.
-			# OPTIONS is still "in flux"
-			#&perror("WARN: $file: WITH_$i or WITHOUT_$i appears, ".
-			#	"consider using OPTIONS macro.");
-		}
 	}
 
 	1;
