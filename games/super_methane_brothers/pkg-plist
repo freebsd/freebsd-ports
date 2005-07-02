@@ -22,3 +22,4 @@ bin/methane
 %%PORTDOCS%%%%DOCSDIR%%/todo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec [ -s /var/games/methanescores ] || rm -f /var/games/methanescores

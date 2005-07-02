@@ -7,6 +7,7 @@
 
 PORTNAME=	super_methane_brothers
 PORTVERSION=	1.4.7
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	methane
@@ -18,8 +19,6 @@ COMMENT=	A port of the Amiga platform game of the same name
 
 LIB_DEPENDS=	clanCore-0.7:${PORTSDIR}/devel/clanlib-devel \
 		mikmod:${PORTSDIR}/audio/libmikmod
-
-BROKEN=		Does not compile
 
 BUILD_WRKSRC=	${WRKSRC}/source/linux
 MAKEFILE=	makefile
@@ -36,8 +35,8 @@ IGNORE=		does not compile on FreeBSD 4.X
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|g\+\+|$${CXX}|; \
-		 s|gcc|$${CXX}|; \
+		's|g++|${CXX}|; s|gcc|${CXX}|; \
+		 s|\(clanCore-0.7\)|\1 clanSignals-0.7|; \
 		 s|^\(METHANE_FLAGS =\)|\1 -I${X11BASE}/include|; \
 		 s|^\(METHANE_LIBS =\)|\1 -L${X11BASE}/lib|' \
 		${BUILD_WRKSRC}/makefile
