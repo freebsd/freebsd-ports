@@ -377,6 +377,7 @@
     SUBDIR += pkg_tree
     SUBDIR += pkill
     SUBDIR += plconfig
+    SUBDIR += plod
     SUBDIR += pmap
     SUBDIR += port-authoring-tools
     SUBDIR += port-maintenance-tools
