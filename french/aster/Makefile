@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	aster
-PORTVERSION=	7.4.0
-PORTREVISION=	3
+PORTVERSION=	8.1.0
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
-DISTNAME=	${PORTNAME}-full-src-${PORTVERSION}-6
+DISTNAME=	${PORTNAME}-full-src-${PORTVERSION}-1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analyse des structures et thermo-mécanique
@@ -39,6 +38,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur	\
 		${PYNUMERIC}
 LIB_DEPENDS+=	tcl${SHORT_TCL_VER}:${PORTSDIR}/lang/tcl${SHORT_TCL_VER}	\
 		tk${SHORT_TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}	\
+		lapack.3:${PORTSDIR}/math/lapack				\
 		hdf5.0:${PORTSDIR}/science/hdf5					\
 		med.1:${PORTSDIR}/french/med
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
@@ -52,7 +52,7 @@ USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
-PLIST_SUB=	ASTERDIR=${PORTNAME}/${vaster} TOOLDIR=${PORTNAME}/outils
+PLIST_SUB=	ASTERDIR=${PORTNAME}/${vaster} TOOLDIR=${PORTNAME}/${vaster}/outils
 PKGMESSAGE=	${WRKDIR}/pkg-message
 .if defined(WITHOUT_ASTK_CLI)
 PKGMESSIN=	pkg-message.sans-astk.in
@@ -157,12 +157,12 @@ RUN_DEPENDS+=	${X11BASE}/bin/xedit:${X_CLIENTS_PORT}
 .endif
 
 vaster=		STA${PORTVERSION:S/.0//}
-INST_DAT=	GPL.txt LICENSE.TERMS astest cata_ele.pickled catalo catapy	\
+INST_DAT=	LICENSE.TERMS astest cata_ele.pickled catalo catapy	\
 		elements etude materiau
 INST_PY=	bibpyt commande
 DAT2FIX=	astout.export config.txt forma01a.export
 inst_dir=	${PREFIX}/${PORTNAME}/${vaster}
-tools_dir=	${PREFIX}/${PORTNAME}/outils
+tools_dir=	${inst_dir}/outils
 v_ifdef=	${OPSYS:U}
 SHELL_INSTALL_ASTER=	${LOCALBASE}/bin/${SHIA}
 tcl_dir=	${LOCALBASE}
@@ -198,6 +198,7 @@ pre-configure:
 	@${ECHO_CMD} "HOME_MED='${LOCALBASE}'"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "HOME_TCL_TK='${tcl_dir}'"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "BLASLIB='${lib_blas}'"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "LAPACKLIB='-llapack'"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "GZIP='/usr/bin/gzip'"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "SHELL_EXECUTION='${SHELL_INSTALL_ASTER}'"	>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "EDITOR='${WITH_ED}'"			>> ${WRKSRC}/setup.cfg
@@ -208,7 +209,7 @@ pre-configure:
 		>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe ${PTHREAD_CFLAGS} -D${FLAGARCH}'"	\
 		>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "SYSLIBS='-Xlinker -export-dynamic ${PTHREAD_LIBS} -lutil -lm -lz -lg2c'"	\
+	@${ECHO_CMD} "SYSLIB='-Xlinker -export-dynamic ${PTHREAD_LIBS} -lutil -lm -lz -lg2c'"	\
 		>> ${WRKSRC}/setup.cfg
 
 do-configure:
@@ -220,6 +221,8 @@ pre-build:
 	${SED} -e 's|${LOCALBASE}/aster|${WRKSRC}/instdir|'	\
 		< ${LOCALBASE}/aster/ASTK/ASTK_SERV/conf/config		\
 		> ${WRKSRC}/instdir/ASTK/ASTK_SERV/conf/config
+	${CP} ${LOCALBASE}/aster/ASTK/ASTK_SERV/conf/aster_profile.sh	\
+		${WRKSRC}/instdir/ASTK/ASTK_SERV/conf
 	${LN} -sf ${LOCALBASE}/aster/ASTK/ASTK_SERV/bin			\
 		${WRKSRC}/instdir/ASTK/ASTK_SERV
 	${LN} -sf ${LOCALBASE}/aster/ASTK/ASTK_SERV/lib			\
@@ -238,6 +241,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/instdir/${vaster}/asterd ${inst_dir} # Don't strip!
 .for FILE in ${DAT2FIX}
 	${SED} -e 's|${WRKSRC}/instdir/${vaster}|${inst_dir}|g'		\
+		-e 's|${WRKSRC}/instdir|${inst_dir}|g'			\
 		-e 's|${WRKSRC}/instdir/outils|${tools_dir}|g'		\
 		-e 's|P mode astout|P mode interactif|'			\
 		-e 's|P mode forma01a|P mode interactif|'		\
@@ -286,6 +290,7 @@ test:	install
 	@${ECHO_CMD} Note: homard must be installed to run some steps succesfully.
 	(cd ${inst_dir};	\
 	${LOCALBASE}/aster/ASTK/ASTK_SERV/bin/as_run astout.export)
+	@${ECHO_CMD} Check ${inst_dir}/astest/*.erre
 .endif
 
 .include <bsd.port.post.mk>
