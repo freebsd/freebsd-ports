@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mercury
-DISTVERSION=	1709_RC11f
+DISTVERSION=	1709_RC12
 CATEGORIES=	net java
 MASTER_SITES=	http://70.25.151.230/		\
 		http://download.mercury.to/	\
