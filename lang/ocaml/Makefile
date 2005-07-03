@@ -43,6 +43,7 @@ LIB_DEPENDS+=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
 HAS_CONFIGURE=	yes
 ALL_TARGET=	world.opt
 STRIP=
@@ -96,12 +97,17 @@ post-configure:
 	@${REINPLACE_CMD} -E \
 		-e 's|(BYTECCCOMPOPTS[[:space:]]*=.*)|\1 ${CFLAGS}|' \
 		-e 's|(NATIVECCCOMPOPTS[[:space:]]*=.*)|\1 ${CFLAGS}|' \
+		-e 's|gcc|${CC}|g'	\
 		${WRKSRC}/config/Makefile
+.if ${MACHINE_ARCH} == sparc64
+        @${REINPLACE_CMD} -e 's,-O2,-O,g' ${WRKSRC}/config/Makefile
+.endif
 # INSTALL* safeness (which preserves the correct permissions despite
 # user's umask(1)
 	@${FIND} ${WRKDIR} -type f -name Makefile -print0 | \
 		${XARGS} -0 -n 5 -x \
 		${REINPLACE_CMD} -E \
+		-e 's,\$$\(ARCH\),${ARCH:sparc64=sparc},g'	\
 		-e 's,^([[:space:]]*(then)?[[:space:]]*)cp([[:space:]]+.*BINDIR),\1\$${BSD_INSTALL_PROGRAM} \3,' \
 		-e 's,^([[:space:]]*(then)?[[:space:]]*)cp([[:space:]]+.*LIBDIR),\1\$${BSD_INSTALL_DATA} \3,' \
 		-e 's,^([[:space:]]*(then)?[[:space:]]*)cp([[:space:]]+.*INSTALLDIR),\1\$${BSD_INSTALL_DATA} \3,' \
@@ -111,7 +117,6 @@ post-configure:
 		-e 's,([[:space:]]*then[[:space:]]*)cp([[:space:]]+.*LIBDIR),\1\$${BSD_INSTALL_DATA} \2,' \
 		-e 's,([[:space:]]*then[[:space:]]*)cp([[:space:]]+.*BINDIR),\1\$${BSD_INSTALL_PROGRAM} \2,' \
 		-e 's,([[:space:]]*(do|then)[[:space:]]*)(\$$\(CP\)|cp)([[:space:]]+.*(MANDIR|MANODIR|MANEXT)),\1\$${BSD_INSTALL_MAN} \4,'
-	@${FIND} ${WRKDIR} -type f -name Makefile.bak -delete
 
 post-install:
 	@${TOUCH} ${PREFIX}/lib/ocaml/ocamldoc/custom/.keep
