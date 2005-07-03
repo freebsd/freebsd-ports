@@ -101,6 +101,7 @@
     SUBDIR += viewfax
     SUBDIR += vpb2
     SUBDIR += vrflash
+    SUBDIR += wwl
     SUBDIR += wy60
     SUBDIR += xastir
     SUBDIR += xcept

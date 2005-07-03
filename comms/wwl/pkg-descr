@@ -1,0 +1,6 @@
+Given two Maidenhead locators, calculates distance (qrb) and azimuth.
+
+Originally by IK0ZSN Mirko Caserta <ik0zsn@amsat.org>
+
+- Diane Bruce, VA3DB
+db@db.net
