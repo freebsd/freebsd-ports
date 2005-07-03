@@ -52,6 +52,7 @@
     SUBDIR += cvsmail
     SUBDIR += cyrus-imapd2
     SUBDIR += cyrus-imapd22
+    SUBDIR += cyrus2courier
     SUBDIR += dbmail
     SUBDIR += dcc-dccd
     SUBDIR += delatt
