@@ -21,6 +21,7 @@
     SUBDIR += golded+
     SUBDIR += grn
     SUBDIR += gup
+    SUBDIR += hellanzb
     SUBDIR += husky-base
     SUBDIR += husky-bsopack
     SUBDIR += husky-fidoconf
