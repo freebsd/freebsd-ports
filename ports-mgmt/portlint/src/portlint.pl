@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.78 2005/07/02 20:31:33 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.79 2005/07/03 04:49:07 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -1115,6 +1115,7 @@ sub checkmakefile {
 		my $lineno = &linenumber($`) + 1;
 		&perror("FATAL: $file [$lineno]: option WITH(OUT)_$1 is used before ".
 			"including bsd.port.pre.mk.")
+		if (scalar(@oopt) && $lineno < $pre_mk_line);
 	}
 	foreach my $i (@oopt) {
 		if (!grep(/^$i$/, @mopt)) {
