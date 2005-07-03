@@ -17,6 +17,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	MPEG audio decoder plugin for akode
 
+EXTRA_PATCHES=	${.CURDIR}/../../multimedia/kdemultimedia3/files/patch-configure
+
 LIB_DEPENDS=	mad:${PORTSDIR}/audio/libmad
 
 CONFLICTS=	kdemultimedia-3.[1-3]*

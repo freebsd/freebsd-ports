@@ -17,6 +17,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Resampler plugin for akode
 
+EXTRA_PATCHES=	${.CURDIR}/../../multimedia/kdemultimedia3/files/patch-configure
+
 LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate
 
 CONFLICTS=	kdemultimedia-3.[1-3]*

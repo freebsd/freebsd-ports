@@ -17,6 +17,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE audio player
 
+EXTRA_PATCHES=	${.CURDIR}/../../multimedia/kdemultimedia3/files/patch-configure
+
 LIB_DEPENDS=	akode:${PORTSDIR}/audio/akode \
 		musicbrainz:${PORTSDIR}/audio/libmusicbrainz \
 		tag:${PORTSDIR}/audio/taglib \

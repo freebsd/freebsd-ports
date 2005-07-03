@@ -17,6 +17,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Xine-based multimedia backend for KDE
 
+EXTRA_PATCHES=	${.CURDIR}/../../multimedia/kdemultimedia3/files/patch-configure
+
 LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
 
 CONFLICTS=	kdemultimedia-3.1.* kdemultimedia-3.2.[0-3]
