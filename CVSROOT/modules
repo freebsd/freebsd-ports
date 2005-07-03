@@ -4128,6 +4128,7 @@ ja-makejvf	ports/japanese/makejvf
 ja-man-doc	ports/japanese/man-doc
 ja-marumoji-fonts	ports/japanese/marumoji-fonts
 ja-mecab	ports/japanese/mecab
+ja-mecab-razil	ports/japanese/mecab-razil
 ja-mell		ports/japanese/mell
 ja-mendexk-euc	ports/japanese/mendexk-euc
 ja-mendexk-sjis	ports/japanese/mendexk-sjis
@@ -7966,6 +7967,7 @@ p5-Net-Dict	ports/net/p5-Net-Dict
 p5-Net-Divert	ports/net/p5-Net-Divert
 p5-Net-Domain-ExpireDate	ports/dns/p5-Net-Domain-ExpireDate
 p5-Net-FTP-Common	ports/ftp/p5-Net-FTP-Common
+p5-Net-FTP-Recursive	ports/ftp/p5-Net-FTP-Recursive
 p5-Net-FTPServer	ports/ftp/p5-Net-FTPServer
 p5-Net-Finger	ports/net/p5-Net-Finger
 p5-Net-Gnats	ports/net/p5-Net-Gnats
@@ -8405,6 +8407,7 @@ p5-Text-VimColor	ports/textproc/p5-Text-VimColor
 p5-Test-Warn		ports/devel/p5-Test-Warn
 p5-Text-WikiFormat	ports/textproc/p5-Text-WikiFormat
 p5-Text-Wrapper	ports/textproc/p5-Text-Wrapper
+p5-Text-vFile-asData	ports/devel/p5-Text-vFile-asData
 p5-Tie-Array-Sorted	ports/devel/p5-Tie-Array-Sorted
 p5-Tie-Cache	ports/devel/p5-Tie-Cache
 p5-Tie-DBI	ports/databases/p5-Tie-DBI
@@ -8598,6 +8601,7 @@ p5-dTemplate	ports/textproc/p5-dTemplate
 p5-ePerl	ports/lang/p5-ePerl
 p5-enum		ports/devel/p5-enum
 p5-hp200lx-db	ports/databases/p5-hp200lx-db
+p5-iCal-Parser	ports/devel/p5-iCal-Parser
 p5-ldap-abook	ports/www/p5-ldap-abook
 p5-libapreq	ports/www/p5-libapreq
 p5-libapreq-static	ports/www/p5-libapreq-static
@@ -10843,6 +10847,7 @@ sendip		ports/net-mgmt/sendip
 sendmail-ldap	ports/mail/sendmail-ldap
 sendmail-sasl	ports/mail/sendmail-sasl
 senken		ports/games/senken
+senna		ports/textproc/senna
 senso		ports/games/senso
 sentinel	ports/mail/sentinel
 seq2		ports/misc/seq2
@@ -13260,8 +13265,3 @@ ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
 zu-ooodict-ZA	ports/editors/ooodict-zu_ZA
 zziplib		ports/devel/zziplib
-p5-Net-FTP-Recursive	ports/ftp/p5-Net-FTP-Recursive
-p5-Text-vFile-asData	ports/devel/p5-Text-vFile-asData
-p5-iCal-Parser	ports/devel/p5-iCal-Parser
-ja-mecab-razil	ports/japanese/mecab-razil
-senna		ports/textproc/senna
