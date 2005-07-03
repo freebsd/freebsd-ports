@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	R
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -73,4 +73,10 @@ test check: build
 check-all: build
 	@(cd ${WRKSRC}; ${MAKE} check-all)
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+CONFIGURE_ARGS+=	--disable-mbcs
+.endif
+
+.include <bsd.port.post.mk>
