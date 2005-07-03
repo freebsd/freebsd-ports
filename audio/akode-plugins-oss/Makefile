@@ -17,6 +17,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	OSS output plugin for akode
 
+EXTRA_PATCHES=	${.CURDIR}/../../multimedia/kdemultimedia3/files/patch-configure
+
 CONFLICTS=	kdemultimedia-3.[1-3]*
 
 PLUGIN=		oss_sink

@@ -1,0 +1,11 @@
+--- configure.orig	Sun Jul  3 02:53:19 2005
++++ configure	Sun Jul  3 02:54:03 2005
+@@ -33404,7 +33404,7 @@
+ 
+ echo "$as_me:$LINENO: result: $ac_cv_x86_sse" >&5
+ echo "${ECHO_T}$ac_cv_x86_sse" >&6
+-if eval "test \"`echo `$ac_cv_x86_sse\" = yes"; then
++if eval "test \" `echo `$ac_cv_x86_sse\" = yes"; then
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_X86_SSE 1

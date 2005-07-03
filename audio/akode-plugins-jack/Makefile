@@ -17,6 +17,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Jack output plugin for akode
 
+EXTRA_PATCHES=	${.CURDIR}/../../multimedia/kdemultimedia3/files/patch-configure
+
 LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack
 
 CONFLICTS=	kdemultimedia-3.[1-3]*

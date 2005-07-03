@@ -17,6 +17,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Polypaudio output plugin for akode
 
+EXTRA_PATCHES=	${.CURDIR}/../../multimedia/kdemultimedia3/files/patch-configure
+
 LIB_DEPENDS=	polyp-simple:${PORTSDIR}/audio/polypaudio
 
 CONFLICTS=	kdemultimedia-3.[1-3]*

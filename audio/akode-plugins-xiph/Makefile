@@ -17,6 +17,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	FLAC/Speex/Vorbis decoder plugin for akode
 
+EXTRA_PATCHES=	${.CURDIR}/../../multimedia/kdemultimedia3/files/patch-configure
+
 LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		ogg:${PORTSDIR}/audio/libogg \
 		speex:${PORTSDIR}/audio/speex \
