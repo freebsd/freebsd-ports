@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	kupu
-DISTVERSION=	1.2r2
+PORTVERSION=	1.2.1
 CATEGORIES=	www zope
 MASTER_SITES=	http://kupu.oscom.org/midcom-serveattachmentguid-ed5785a2c523bd36767c80bb2020cd7c/
 PKGNAMEPREFIX=	zope-
-DISTNAME=	kupu-1.2rc2
 
 MAINTAINER=	x@Vex.Net
 COMMENT=	A 'document-centric' client-side editor for Mozilla/IE
