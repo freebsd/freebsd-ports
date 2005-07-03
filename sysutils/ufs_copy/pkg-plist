@@ -1,0 +1,3 @@
+sbin/ufs_copy
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

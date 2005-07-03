@@ -489,6 +489,7 @@
     SUBDIR += ucspi-unix
     SUBDIR += udesc_dump
     SUBDIR += udfclient
+    SUBDIR += ufs_copy
     SUBDIR += unidesc
     SUBDIR += unquote
     SUBDIR += upsd
