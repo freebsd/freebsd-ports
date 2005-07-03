@@ -7,6 +7,7 @@
 
 PORTNAME=	ecore
 PORTVERSION=	0.9.9.010
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
@@ -15,10 +16,9 @@ COMMENT=	A core event abstraction library
 
 LIB_DEPENDS=	evas.1:${PORTSDIR}/graphics/evas
 
-BROKEN=		Incorrect pkg-plist
-
 USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=	15
+USE_ICONV=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS+=	--enable-pthreads
