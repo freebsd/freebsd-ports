@@ -50,6 +50,7 @@
     SUBDIR += linpsk
     SUBDIR += linrad
     SUBDIR += lirc
+    SUBDIR += locator
     SUBDIR += lrzsz
     SUBDIR += ltmdm
     SUBDIR += mgetty+sendfax
