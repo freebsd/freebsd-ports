@@ -19,7 +19,6 @@ lib/epiphany-%%VERSION%%/extensions/libselectstylesheetextension.so
 lib/epiphany-%%VERSION%%/extensions/libsidebarextension.so
 lib/epiphany-%%VERSION%%/extensions/libsmartbookmarksextension.so
 lib/epiphany-%%VERSION%%/extensions/libtabgroupsextension.so
-lib/epiphany-%%VERSION%%/extensions/libtabsmenuextension.so
 lib/epiphany-%%VERSION%%/extensions/libtabstatesextension.a
 lib/epiphany-%%VERSION%%/extensions/libtabstatesextension.so
 lib/epiphany-%%VERSION%%/extensions/libtabstatesextension.so.0
@@ -29,7 +28,6 @@ lib/epiphany-%%VERSION%%/extensions/sidebar.xml
 lib/epiphany-%%VERSION%%/extensions/smart-bookmarks.xml
 lib/epiphany-%%VERSION%%/extensions/tab-groups.xml
 lib/epiphany-%%VERSION%%/extensions/tab-states.xml
-lib/epiphany-%%VERSION%%/extensions/tabsmenu.xml
 share/gnome/epiphany-extensions/ephy-gestures.xml
 share/gnome/epiphany-extensions/glade/action-properties.glade
 share/gnome/epiphany-extensions/glade/actions-editor.glade
@@ -48,6 +46,7 @@ share/locale/el/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/en_CA/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/es/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
+share/locale/fi/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/fr/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/hr/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/hu/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
@@ -70,6 +69,7 @@ share/locale/sv/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/uk/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/wa/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
+share/locale/zh_TW/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 @dirrm share/gnome/epiphany-extensions/xml
 @dirrm share/gnome/epiphany-extensions/glade
 @dirrm share/gnome/epiphany-extensions
