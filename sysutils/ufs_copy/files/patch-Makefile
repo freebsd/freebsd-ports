@@ -1,0 +1,11 @@
+--- Makefile.orig	Sun Jul  3 00:10:17 2005
++++ Makefile	Sun Jul  3 00:10:38 2005
+@@ -4,7 +4,7 @@
+ PROG=	ufs_copy
+ WARNS=	0
+ MAN=
+-NOSHARED?=      YES
++NO_SHARED?=      YES
+ LDADD=	-lufs
+ CFLAGS+= -Wall -Wformat
+ BINDIR?=        /sbin

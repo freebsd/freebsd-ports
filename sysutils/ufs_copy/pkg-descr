@@ -1,0 +1,5 @@
+The ufs_copy copies a UFS filesystem image like dd(1).
+It doesn't copy free blocks for speed and it generates a sparse destination
+file for saving space.
+
+WWW: http://people.freebsd.org/~simokawa/ufs/
