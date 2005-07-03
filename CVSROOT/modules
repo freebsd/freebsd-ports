@@ -3482,6 +3482,7 @@ heartbeat	ports/sysutils/heartbeat
 heimdal		ports/security/heimdal
 heirloom	ports/sysutils/heirloom
 helium		ports/lang/helium
+hellanzb	ports/news/hellanzb
 hello		ports/misc/hello
 help2man	ports/misc/help2man
 hercules	ports/emulators/hercules
