@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pydance
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	games
 MASTER_SITES=	http://www.icculus.org/pyddr/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz ${SONGS}
