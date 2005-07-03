@@ -6,15 +6,11 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.wesnoth.org/files/
 MASTER_SITE_SUBDIR=	wesnoth
-.if defined(LITE)
-PKGNAMESUFFIX=	-lite
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
-.endif
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A fantasy turn-based strategy game
@@ -41,13 +37,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN6=		wesnoth.6
 MANLANG=	"" de
-
-.if defined(LITE)
-CONFIGURE_ARGS+=	--enable-lite
-PLIST_SUB+=		LITE:="@comment "
-.else
-PLIST_SUB+=		LITE:=""
-.endif
 
 .if defined(WITH_CAMPAIGN) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-campaign-server
@@ -104,12 +93,9 @@ PLIST_SUB+=		KDE:="@comment "
 .endif
 
 pre-everything::
-.if !defined(LITE) || !defined(WITH_CAMPAIGN) || !defined(WITH_DEBUG) || !defined(WITH_EDITOR) || !defined(WITH_SERVER) || !defined(WITH_TOOLS)
+.if !defined(WITH_CAMPAIGN) || !defined(WITH_DEBUG) || !defined(WITH_EDITOR) || !defined(WITH_SERVER) || !defined(WITH_TOOLS)
 	@${ECHO_MSG} "You may specify the following on the command line:"
 	@${ECHO_MSG} " "
-.endif
-.if !defined(LITE)
-	@${ECHO_MSG} "LITE=yes for lite version of Wesnoth (without music and story images)."
 .endif
 .if !defined(WITH_CAMPAIGN)
 	@${ECHO_MSG} "WITH_CAMPAIGN=yes to enable compilation of campaign server."
@@ -131,6 +117,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|[$$][(]datadir[)]/applications|${X11BASE}/share/gnome/applications|g ; \
 		s|[$$][(]datadir[)]/icons|${X11BASE}/share/gnome/pixmaps|g' \
 			${WRKSRC}/icons/Makefile.in
-	@${FIND} ${WRKSRC} -name stamp-po -delete
+#	@${FIND} ${WRKSRC} -name stamp-po -delete
 
 .include <bsd.port.post.mk>
