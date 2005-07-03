@@ -82,7 +82,8 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
 		gpatch:${PORTSDIR}/devel/patch \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-		bison-devel:${PORTSDIR}/devel/bison-devel
+		bison-devel:${PORTSDIR}/devel/bison-devel \
+		imake:${X_IMAKE_PORT}
 .if defined(WITHOUT_JAVA)
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 .else
