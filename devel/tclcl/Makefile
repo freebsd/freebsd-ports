@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tclcl
-PORTVERSION=	1.15
+PORTVERSION=	1.16
 CATEGORIES=	devel tcl84 tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	otcl-tclcl
@@ -15,8 +15,8 @@ DISTFILES=	tclcl-src-${PORTVERSION}.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/C++ interface used by ns and nam
 
-LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
-		otcl.1:${PORTSDIR}/lang/otcl
+LIB_DEPENDS=	tk84:${PORTSDIR}/x11-toolkits/tk84 \
+		otcl:${PORTSDIR}/lang/otcl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4
