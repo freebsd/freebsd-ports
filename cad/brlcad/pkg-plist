@@ -26,6 +26,7 @@ bin/avg4
 bin/awf
 bin/azel
 bin/bary
+bin/benchmark
 bin/binfo
 bin/bot-bldxf
 bin/bot-raw
@@ -62,7 +63,6 @@ bin/c-d
 bin/cad_boundp
 bin/cad_parea
 bin/cadbug.sh
-bin/cakeinclude.sh
 bin/cat-fb
 bin/cell-fb
 bin/chan_add
@@ -73,7 +73,6 @@ bin/cmap-fb
 bin/comgeom-g
 bin/contours
 bin/conv-vg2g
-bin/copyright.sh
 bin/cray.sh
 bin/crop
 bin/cubitorle
@@ -145,7 +144,6 @@ bin/fence
 bin/fhor
 bin/files-tape
 bin/firpass
-bin/footer.sh
 bin/g-acad
 bin/g-dxf
 bin/g-euclid
@@ -172,7 +170,6 @@ bin/globe
 bin/graytorle
 bin/halftone
 bin/hd
-bin/header.sh
 bin/i-a
 bin/i-d
 bin/i-f
@@ -188,22 +185,15 @@ bin/irdisp
 bin/istat
 bin/jack-g
 bin/kurt
-bin/ldAix.sh
 bin/lgt
 bin/loop
 bin/mac-pix
 bin/machinetype.sh
-bin/make_bz2.sh
-bin/make_deb.sh
-bin/make_dmg.sh
-bin/make_pkg.sh
-bin/make_rpm.sh
-bin/make_tar.sh
-bin/make_tgz.sh
-bin/make_zip.sh
 bin/mcut
 bin/mergechan
 bin/mged
+bin/mged.sh
+@exec ln -s %D/%F %%LOCALBASE%%/bin/mged
 bin/mk_bolt
 bin/mk_gastank
 bin/mk_handle
@@ -227,6 +217,7 @@ bin/orle-pix
 bin/painttorle
 bin/patch-g
 bin/pcd-pix
+bin/perf.sh
 bin/picket_fence
 bin/pipe
 bin/pipetest
@@ -435,7 +426,6 @@ bin/vas4
 bin/vcrtorle
 bin/vdeck
 bin/vegitation
-bin/vers.sh
 bin/viewpoint-g
 bin/wall
 bin/wasatchrle
@@ -1266,6 +1256,45 @@ share/README.IRIX
 share/README.MacOSX
 share/anim.txt
 share/benchmark.tr
+%%DATADIR%%/db/axis.g
+%%DATADIR%%/db/bldg391.g
+%%DATADIR%%/db/boolean-ops.g
+%%DATADIR%%/db/castle.g
+%%DATADIR%%/db/cornell.g
+%%DATADIR%%/db/cray.g
+%%DATADIR%%/db/crod.g
+%%DATADIR%%/db/cube.g
+%%DATADIR%%/db/demo.g
+%%DATADIR%%/db/galileo.g
+%%DATADIR%%/db/havoc.g
+%%DATADIR%%/db/kman.g
+%%DATADIR%%/db/ktank.g
+%%DATADIR%%/db/lgt-test.g
+%%DATADIR%%/db/m35.g
+%%DATADIR%%/db/moss.g
+%%DATADIR%%/db/pic.g
+%%DATADIR%%/db/prim.g
+%%DATADIR%%/db/sphflake.g
+%%DATADIR%%/db/star.g
+%%DATADIR%%/db/tank_car.g
+%%DATADIR%%/db/terra.g
+%%DATADIR%%/db/truck.g
+%%DATADIR%%/db/wave.g
+%%DATADIR%%/db/woodsman.g
+%%DATADIR%%/db/world.g
+%%DATADIR%%/db/xmp.g
+%%DATADIR%%/pix/bldg391.log
+%%DATADIR%%/pix/bldg391.pix
+%%DATADIR%%/pix/m35.log
+%%DATADIR%%/pix/m35.pix
+%%DATADIR%%/pix/moss.log
+%%DATADIR%%/pix/moss.pix
+%%DATADIR%%/pix/sphflake.log
+%%DATADIR%%/pix/sphflake.pix
+%%DATADIR%%/pix/star.log
+%%DATADIR%%/pix/star.pix
+%%DATADIR%%/pix/world.log
+%%DATADIR%%/pix/world.pix
 share/cvs.txt
 share/description.txt
 share/ged.tr
@@ -1521,6 +1550,9 @@ vfont/nonie.r.12
 @dirrm tclscripts/lib
 @dirrm tclscripts/geometree
 @dirrm tclscripts
+@dirrm %%DATADIR%%/pix
+@dirrm %%DATADIR%%/db
+@dirrm %%DATADIR%%
 @dirrm share
 @dirrm sample_applications
 @dirrm pro-engineer/text/usascii/resource

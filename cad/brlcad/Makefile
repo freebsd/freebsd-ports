@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	brlcad
-PORTVERSION=	7.2.4
+PORTVERSION=	7.2.6
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	brlcad
@@ -200,13 +200,13 @@ LDFLAGS+=	${PTHREAD_LIBS}
 BROKEN=		"Does not compile on FreeBSD-${OSREL}"
 .endif
 
-.if ${ARCH} != i386
+.if !(${ARCH} == i386 || ${ARCH} == amd64)
 IGNORE=		Dumps core on ${ARCH}!
 .endif
 
 .ifndef WITHOUT_OPTIMIZATION
 CONFIGURE_ARGS+=	--disable-debug
-.if !(${ARCH} == alpha || ${ARCH} == sparc64)
+.if !(${ARCH} == alpha || ${ARCH} == sparc64 || ${ARCH} == amd64)
 CONFIGURE_ARGS+=	--enable-optimized
 .endif
 .else
@@ -228,6 +228,6 @@ pre-install:
 		${WRKSRC}/mged.sh
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/mged.sh ${LOCALBASE}/bin/mged
+	@${INSTALL_SCRIPT} ${WRKSRC}/mged.sh ${PREFIX}/bin/mged.sh
 
 .include <bsd.port.post.mk>
