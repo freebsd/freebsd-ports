@@ -1,0 +1,64 @@
+bin/hellanzb.py
+@unexec if cmp -s %D/etc/hellanzb.conf.sample %D/etc/hellanzb.conf; then rm -f %D/etc/hellanzb.conf; fi
+etc/hellanzb.conf.sample
+@exec if [ ! -f %D/etc/hellanzb.conf ] ; then cp -p %D/%F %B/hellanzb.conf; fi
+%%PYTHON_SITELIBDIR%%/Hellanzb/Core.py
+%%PYTHON_SITELIBDIR%%/Hellanzb/Core.pyc
+%%PYTHON_SITELIBDIR%%/Hellanzb/Core.pyo
+%%PYTHON_SITELIBDIR%%/Hellanzb/Daemon.py
+%%PYTHON_SITELIBDIR%%/Hellanzb/Daemon.pyc
+%%PYTHON_SITELIBDIR%%/Hellanzb/Daemon.pyo
+%%PYTHON_SITELIBDIR%%/Hellanzb/Elite.py
+%%PYTHON_SITELIBDIR%%/Hellanzb/Elite.pyc
+%%PYTHON_SITELIBDIR%%/Hellanzb/Elite.pyo
+%%PYTHON_SITELIBDIR%%/Hellanzb/Growl.py
+%%PYTHON_SITELIBDIR%%/Hellanzb/Growl.pyc
+%%PYTHON_SITELIBDIR%%/Hellanzb/Growl.pyo
+%%PYTHON_SITELIBDIR%%/Hellanzb/HellaReactor.py
+%%PYTHON_SITELIBDIR%%/Hellanzb/HellaReactor.pyc
+%%PYTHON_SITELIBDIR%%/Hellanzb/HellaReactor.pyo
+%%PYTHON_SITELIBDIR%%/Hellanzb/Log.py
+%%PYTHON_SITELIBDIR%%/Hellanzb/Log.pyc
+%%PYTHON_SITELIBDIR%%/Hellanzb/Log.pyo
+%%PYTHON_SITELIBDIR%%/Hellanzb/Logging.py
+%%PYTHON_SITELIBDIR%%/Hellanzb/Logging.pyc
+%%PYTHON_SITELIBDIR%%/Hellanzb/Logging.pyo
+%%PYTHON_SITELIBDIR%%/Hellanzb/PostProcessor.py
+%%PYTHON_SITELIBDIR%%/Hellanzb/PostProcessor.pyc
+%%PYTHON_SITELIBDIR%%/Hellanzb/PostProcessor.pyo
+%%PYTHON_SITELIBDIR%%/Hellanzb/PostProcessorUtil.py
+%%PYTHON_SITELIBDIR%%/Hellanzb/PostProcessorUtil.pyc
+%%PYTHON_SITELIBDIR%%/Hellanzb/PostProcessorUtil.pyo
+%%PYTHON_SITELIBDIR%%/Hellanzb/Util.py
+%%PYTHON_SITELIBDIR%%/Hellanzb/Util.pyc
+%%PYTHON_SITELIBDIR%%/Hellanzb/Util.pyo
+%%PYTHON_SITELIBDIR%%/Hellanzb/__init__.py
+%%PYTHON_SITELIBDIR%%/Hellanzb/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Hellanzb/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Hellanzb/HellaXMLRPC/HtPasswdAuth.py
+%%PYTHON_SITELIBDIR%%/Hellanzb/HellaXMLRPC/HtPasswdAuth.pyc
+%%PYTHON_SITELIBDIR%%/Hellanzb/HellaXMLRPC/HtPasswdAuth.pyo
+%%PYTHON_SITELIBDIR%%/Hellanzb/HellaXMLRPC/__init__.py
+%%PYTHON_SITELIBDIR%%/Hellanzb/HellaXMLRPC/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Hellanzb/HellaXMLRPC/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Hellanzb/HellaXMLRPC/xmlrpc.py
+%%PYTHON_SITELIBDIR%%/Hellanzb/HellaXMLRPC/xmlrpc.pyc
+%%PYTHON_SITELIBDIR%%/Hellanzb/HellaXMLRPC/xmlrpc.pyo
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/ArticleDecoder.py
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/ArticleDecoder.pyc
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/ArticleDecoder.pyo
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/NZBModel.py
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/NZBModel.pyc
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/NZBModel.pyo
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/NZBLeecherUtil.py
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/NZBLeecherUtil.pyc
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/NZBLeecherUtil.pyo
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/__init__.py
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/nntp.py
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/nntp.pyc
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/nntp.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/Hellanzb/HellaXMLRPC
+@dirrm %%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher
+@dirrm %%PYTHON_SITELIBDIR%%/Hellanzb
