@@ -8,7 +8,7 @@
 
 PORTNAME=	deep_zoom
 PORTVERSION=	0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://members.rogers.com/rowley-c/deep_zoom/
 
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 		gmp.6:${PORTSDIR}/math/libgmp4
 
-IMLIB2_CONFIG=	${X11BASE}/bin/imlib2-config
+IMLIB2_CONFIG=	${LOCALBASE}/bin/imlib2-config
 USE_REINPLACE=	yes
 USE_GNOME=	glib12
 USE_GMAKE=	yes

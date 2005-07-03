@@ -1,0 +1,11 @@
+--- imlib2-config.in.orig	Sun Jul  3 07:35:44 2005
++++ imlib2-config.in	Sun Jul  3 07:36:02 2005
+@@ -42,7 +42,7 @@
+       if test @includedir@ != /usr/include ; then
+         includes=-I@includedir@
+       fi
+-      echo $includes
++      echo $includes @my_includes@
+       ;;
+     --libs)
+       libdirs=-L@libdir@
