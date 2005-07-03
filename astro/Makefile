@@ -14,7 +14,6 @@
     SUBDIR += gdesklets-goodweather
     SUBDIR += gdesklets-goodweather-psi
     SUBDIR += gdesklets-seti
-    SUBDIR += gdesklets-weather
     SUBDIR += gkrellmearth
     SUBDIR += gkrellmoon
     SUBDIR += gkrellmoon2

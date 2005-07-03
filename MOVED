@@ -1561,3 +1561,4 @@ portuguese/openoffice-1.1-pt_BR||2005-06-29|localized version should be built vi
 portuguese/openoffice-1.1-pt_PT||2005-06-29|localized version should be built via knob
 russian/openoffice-1.0||2005-06-29|no longer maintained
 russian/openoffice-1.1||2005-06-29|localized version should be built via knob
+astro/gdesklets-weather||2005-07-03|does not work for a long time
