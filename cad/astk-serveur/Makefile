@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	astk
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	cad
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 .if !defined(CLIENT_SEUL)
@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-serveur
 .else
 PKGNAMESUFFIX=	-client
 .endif
-DISTNAME=	aster-full-src-${ASTER_VER}-6
+DISTNAME=	aster-full-src-${ASTER_VER}-1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Graphical interface for Code_Aster (server side)
@@ -50,7 +50,7 @@ S_SCRIPTS=	bin/as_actu bin/as_del bin/as_edit bin/as_exec bin/as_info	\
 		bin/as_serv bin/as_tail bin/tool_stanley lib/sub_script
 S_PYLIBS=	as_config.py as_system.py
 C_SCRIPTS=	bin/astk bin/bsf
-tools_dir=	${LOCALBASE}/aster/outils
+tools_dir=	${aster_dir}/outils
 conf_dir=	${WRKSRC}/lib/ASTK/astkrc
 
 .include <bsd.port.pre.mk>
@@ -77,7 +77,7 @@ TCL_VER?=	${TK_VER}
 SHORT_TK_VER=	${TK_VER:S/.//}
 BWidget_VER=	1.7.0
 
-ASTER_VER=	7.4.0
+ASTER_VER=	8.1.0
 vaster=		STA${ASTER_VER:S/.0//}
 
 GIBI=		gibi2000
@@ -149,7 +149,8 @@ post-extract:
 post-patch:
 .if !defined(CLIENT_SEUL)
 	@${RM} ${WRKSRC}/conf/config.orig ${WRKSRC}/bin/as_exec.orig			\
-		${WRKSRC}/bin/as_serv.orig ${WRKSRC}/lib/as_config.py.orig
+		${WRKSRC}/bin/as_serv.orig ${WRKSRC}/lib/as_config.py.orig		\
+		${WRKSRC}/lib/as_exec.py.orig ${WRKSRC}/lib/as_system.py.orig
 .else
 	@${RM} ${WRKSRC}/lib/ASTK/init.tcl.orig	${WRKSRC}/lib/ASTK/astkrc/outils.orig	\
 		${WRKSRC}/share/tkselecteur.tcl.orig

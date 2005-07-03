@@ -1,6 +1,17 @@
 --- conf/config.orig	Fri Jan  7 09:10:16 2005
-+++ conf/config	Sun Jan  9 22:15:57 2005
-@@ -68,6 +68,7 @@
++++ conf/config	Sat Jul  2 20:44:10 2005
+@@ -49,6 +49,10 @@
+ # temporary directory for Aster executions
+ rep_trav : /tmp
+ 
++# directories for tests
++rep_test : /tmp
++resu_test : /tmp
++
+ # choose True to create symbolic links instead of copying executable and catalogs
+ symlink : True
+ 
+@@ -68,6 +72,7 @@
  # for each version a config.VVV file must be created.
  # DO NOT EDIT FOLLOWING LINE !
  #?vers : VVV?
@@ -8,7 +19,7 @@
  
  #-------------------------------------------------------------------------------
  # ----- batch/interactive configuration
-@@ -106,12 +107,12 @@
+@@ -106,12 +111,12 @@
  # batch_job : to display information about jobs
  # batch_kil : to delete jobs
  # --- Sun Grid Engine example
@@ -27,7 +38,7 @@
  
  # --- LSF example
  #batch_nom : LSF
-@@ -122,18 +123,21 @@
+@@ -122,18 +127,21 @@
  #batch_kil : /usr/opt/lsf/4.2/alpha5/bin/bkill
  
  # --- PBS example
@@ -54,7 +65,7 @@
  # TRU64 :
  #?TRU64?ps_cpu : /bin/ps -e -ocputime -ocommand
  #?TRU64?ps_pid : /bin/ps -e -opid -ocommand
-@@ -157,6 +161,7 @@
+@@ -157,6 +165,7 @@
  # GDB :
  #?P_LINUX?cmd_post : gdb -batch --command=@D @E @C
  #?P_LINUX?cmd_dbg : ddd --debugger gdb --command=@D @E @C

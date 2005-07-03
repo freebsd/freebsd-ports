@@ -46,6 +46,7 @@
 %%CLIENT%%%%ASTKDIR%%/lib/ASTK/ihm_menu.tcl
 %%CLIENT%%%%ASTKDIR%%/lib/ASTK/ihm_outils.tcl
 %%CLIENT%%%%ASTKDIR%%/lib/ASTK/ihm_rex.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/ihm_salome.tcl
 %%CLIENT%%%%ASTKDIR%%/lib/ASTK/ihm_satellite.tcl
 %%CLIENT%%%%ASTKDIR%%/lib/ASTK/ihm_status.tcl
 %%CLIENT%%%%ASTKDIR%%/lib/ASTK/init.tcl
@@ -162,6 +163,7 @@
 %%CLIENT%%%%ASTKDIR%%/share/icons/vaio_printS.gif
 %%CLIENT%%%%ASTKDIR%%/share/icons/vaio_refreshB.gif
 %%CLIENT%%%%ASTKDIR%%/share/icons/vaio_refreshS.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_salome.gif
 %%CLIENT%%%%ASTKDIR%%/share/icons/vaio_save.gif
 %%CLIENT%%%%ASTKDIR%%/share/icons/vaio_upB.gif
 %%CLIENT%%%%ASTKDIR%%/share/icons/vaio_upS.gif
