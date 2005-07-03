@@ -1,0 +1,11 @@
+--- files/os.dat.orig Fri Jun 17 14:08:59 2005
++++ files/os.dat      Fri Jun 17 14:09:09 2005
+@@ -112,6 +112,7 @@
+ 215:FreeBSD 4.11 (i386):/sbin/md5 -q:/usr/local/bin:
+ 216:FreeBSD 4.5 (i386):/sbin/md5 -q:/usr/local/bin:
+ 217:FreeBSD 4.6 (i386):/sbin/md5 -q:/usr/local/bin:
++218:FreeBSD 5.4 (i386):/sbin/md5 -q:/usr/local/bin:
+ 300:Sun Solaris 8 (sparc):/bin/ls:/bin:
+ 301:Sun Solaris 9 (sparc):/bin/ls:/bin:
+ 400:IBM AIX 5.4:/bin/ls:/bin:
+
