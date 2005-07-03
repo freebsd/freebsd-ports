@@ -1,0 +1,4 @@
+
+This port has installed sample data files, python samples and script samples
+for ledger in ${PREFIX}/share/examples/ledger/
+Have fun!
