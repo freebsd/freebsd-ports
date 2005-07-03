@@ -1,5 +1,14 @@
 --- configure.orig	Thu Jul 15 16:17:46 2004
 +++ configure	Thu Jul 15 16:58:51 2004
+@@ -652,7 +652,8 @@
+ case "$arch,$model,$system" in
+   alpha,*,digital) profiling='prof';;
+   i386,*,linux_elf) profiling='prof';;
+   i386,*,bsd_elf) profiling='prof';;
++  *,*,freebsd) profiling='prof';;
+   sparc,*,solaris)
+     profiling='prof'
+     case "$nativecc" in gcc*) ;; *) cc_profile='-xpg';; esac;;
 @@ -1113,116 +1113,14 @@
  x11_include="not found"
  x11_link="not found"
