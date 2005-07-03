@@ -97,7 +97,7 @@ CONFIGURE_ARGS+=	--enable-mp
 USE_GNOME+=		gnomepanel desktopfileutils
 CONFIGURE_ARGS+=	--with-desktop-dir=${X11BASE}/share/gnome
 CONFIGURE_ENV+=		GIMP_THREAD_LIBS=${PTHREAD_LIBS}
-PKGNAMESUFFIX=		-gnome
+PKGNAMESUFFIX:=		-gnome
 PLIST_SUB+=		GNOMEPANEL:=""
 GNOME_ENABLED=		yes
 .else
