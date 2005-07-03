@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eficas
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.0
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-sansdoc-${PORTVERSION}-1
@@ -32,7 +32,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 LEFICASDIR?=	apps/${PORTNAME}
 EFICASDIR=	${PREFIX}/${LEFICASDIR}
-PLIST_SUB=	EFICASDIR=${LEFICASDIR}
+PLIST_SUB=	EFICASDIR=${LEFICASDIR} STAV=STA8
 
 .if defined(LANG) && ${LANG:Mfr*} != ""
 EF_LANG=	fr
@@ -45,6 +45,7 @@ ENV2PYTHON=	Misc/Cyclops.py Aster/eficas_aster.py convert/Parserv5/Translate.py
 post-patch:
 	@${RM} ${WRKSRC}/convert/Parserv5/Translate.py.orig	\
 		${WRKSRC}/Editeur/bureau.py.orig
+	@${RM} -r ${WRKSRC}/Pmw	# Use our ported Pmw
 
 pre-configure:
 .for FILE in ${ENV2PYTHON}
