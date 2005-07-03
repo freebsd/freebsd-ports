@@ -28,7 +28,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd August 12, 2004
+.Dd July 3, 2005
 .Os
 .Dt PORTAUDIT \&1 "FreeBSD ports collection"
 .
@@ -42,7 +42,7 @@
 .Sh SYNOPSIS
 .
 .Nm
-.Op Fl aCdF
+.Op Fl aCdFqvV
 .Op Fl X Ar days
 .Op Fl f Ar file
 .Op Fl r Ar eregex
@@ -79,11 +79,20 @@ Print a vulnerability report for all installed packages.
 .It Fl C
 Print a vulnerability report for the port in the current working directory.
 Mostly useful for port developers.
-.It Fl F
-Fetch the current database from the
-.Fx servers.
 .It Fl d
 Print the creation date of the database.
+.It Fl F
+Fetch the current database from the
+.Fx
+servers.
+.It Fl q
+Quiet mode.
+.It Fl V
+Show
+.Nm
+version number.
+.It Fl v
+Verbose mode.
 .It Fl X Ar days
 Download a fresh database when the local is at least
 .Ar days
@@ -145,9 +154,9 @@ Print a vulnerability report for the current set of prebuild packages:
 .
 .Xr ports 7 ,
 .Xr periodic.conf 5 ,
-.Li Aq http://www.FreeBSD.org/ports/portaudit/ ,
-.Li Aq http://www.FreeBSD.org/security/#adv ,
-.Li Aq http://FreeBSD.VuXML.org/ .
+.Pa http://www.FreeBSD.org/ports/portaudit/ ,
+.Pa http://www.FreeBSD.org/security/#adv ,
+.Pa http://FreeBSD.VuXML.org/ .
 .
 .
 .Sh BUGS
@@ -162,5 +171,5 @@ Sure to be some.
 .
 .Sh HISTORY
 .
-package auditing first appeared in
+Package auditing first appeared in
 .Nx 1.4.3 .
