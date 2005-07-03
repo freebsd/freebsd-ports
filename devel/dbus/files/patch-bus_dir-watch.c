@@ -1,5 +1,5 @@
 --- bus/dir-watch.c.orig	Tue Jun 14 22:31:38 2005
-+++ bus/dir-watch.c	Sat Jul  2 15:29:35 2005
++++ bus/dir-watch.c	Sun Jul  3 01:40:21 2005
 @@ -28,17 +28,25 @@
  #include <stdlib.h>
  #include <unistd.h>
@@ -28,7 +28,7 @@
  /* use a static array to avoid handling OOM */
  static int fds[MAX_DIRS_TO_WATCH];
  static int num_fds = 0;
-@@ -92,6 +100,132 @@ bus_drop_all_directory_watches (void)
+@@ -92,6 +100,141 @@ bus_drop_all_directory_watches (void)
  	}
      }
    
@@ -40,6 +40,7 @@
 +static int kq = -1;
 +static int fds[MAX_DIRS_TO_WATCH];
 +static int num_fds = 0;
++static DBusWatch *watch = NULL;
 +
 +static dbus_bool_t
 +_handle_kqueue_watch (DBusWatch *watch, unsigned int flags, void *data)
@@ -60,6 +61,10 @@
 +  else if (res < 0 && errno == EBADF)
 +    {
 +      kq = -1;
++      if (watch != NULL)
++	{
++          _dbus_watch_unref (watch);
++	}
 +      pid = getpid ();
 +      _dbus_verbose ("Sending SIGHUP signal since kqueue has been closed\n");
 +      (void) kill (pid, SIGHUP);
@@ -82,9 +87,8 @@
 +
 +  _dbus_assert (dir != NULL);
 +
-+  if (kq == -1)
++  if (kq < 0)
 +    {
-+      DBusWatch *watch;
 +      DBusLoop *loop;
 +
 +      kq = kqueue ();
@@ -102,6 +106,8 @@
 +	if (watch == NULL)
 +          {
 +            _dbus_warn ("Unable to create kqueue watch\n");
++	    close (kq);
++	    kq = -1;
 +	    goto out;
 +	  }
 +
@@ -109,6 +115,9 @@
 +                                   NULL, NULL))
 +          {
 +            _dbus_warn ("Unable to add reload watch to main loop");
++	    close (kq);
++	    kq = -1;
++	    _dbus_watch_unref (watch);
 +            goto out;
 +	  }
 +    }
