@@ -7,7 +7,7 @@
 
 PORTNAME=	ltvariations
 PORTVERSION=	0.26
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -16,8 +16,7 @@ DISTNAME=	LTVariations-${PORTVERSION}
 MAINTAINER=	tim@bishnet.net
 COMMENT=	A collection of sensors and displays
 
-RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
-		${X11BASE}/share/gnome/gdesklets/Sensors/Weather/__init__.py:${PORTSDIR}/astro/gdesklets-weather
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
