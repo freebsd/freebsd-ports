@@ -11516,6 +11516,7 @@ texmaker	ports/editors/texmaker
 texpower	ports/print/texpower
 textedit	ports/editors/textedit
 textmaze	ports/games/textmaze
+textproc-flip	ports/textproc/flip
 tftp-hpa	ports/ftp/tftp-hpa
 tgif		ports/graphics/tgif
 tgif-nls	ports/graphics/tgif-nls
