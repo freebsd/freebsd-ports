@@ -26,3 +26,4 @@ lib/%%PYTHON_VERSION%%/site-packages/dbus/services.pyo
 lib/%%PYTHON_VERSION%%/site-packages/dbus/types.py
 lib/%%PYTHON_VERSION%%/site-packages/dbus/types.pyc
 lib/%%PYTHON_VERSION%%/site-packages/dbus/types.pyo
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/dbus
