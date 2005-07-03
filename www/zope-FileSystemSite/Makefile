@@ -8,7 +8,7 @@
 PORTNAME=	FileSystemSite
 PORTVERSION=	1.4.1
 CATEGORIES=	www zope
-MASTER_SITES=	http://zope.org/Members/infrae/FileSystemSite/${PORTNAME}-${PORTVERSION}/
+MASTER_SITES=	http://www.zope.org/Members/infrae/FileSystemSite/${PORTNAME}-${PORTVERSION}/
 PKGNAMEPREFIX=	zope-
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
