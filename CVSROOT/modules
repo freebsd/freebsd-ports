@@ -12331,6 +12331,7 @@ wu-ftpd		ports/ftp/wu-ftpd
 wu-ftpd+ipv6	ports/ftp/wu-ftpd+ipv6
 wv		ports/textproc/wv
 wv2		ports/textproc/wv2
+wwl		ports/comms/wwl
 www6to4		ports/www/www6to4
 wwwcount	ports/www/wwwcount
 wwwoffle	ports/www/wwwoffle
