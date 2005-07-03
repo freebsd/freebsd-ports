@@ -9260,6 +9260,7 @@ plb		ports/net/plb
 plconfig	ports/sysutils/plconfig
 plib		ports/x11-toolkits/plib
 pload		ports/net/pload
+plod		ports/sysutils/plod
 plog		ports/www/plog
 plone		ports/www/plone
 plor		ports/news/plor
