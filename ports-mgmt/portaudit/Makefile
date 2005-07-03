@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	portaudit
-PORTVERSION=	0.5.9
+PORTVERSION=	0.5.10
 CATEGORIES=	security
 DISTFILES=
 
-MAINTAINER=	simon@FreeBSD.org
+MAINTAINER=	security@FreeBSD.org
 COMMENT=	Checks installed ports against a list of security vulnerabilities
 
 MAN1=		portaudit.1

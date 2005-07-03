@@ -153,10 +153,14 @@ audit_installed()
 			close(cmd)
 		}
 		END {
-			print vul " problem(s) in your installed packages found."
+			if ("'$opt_quiet'" == "false") {
+				print vul " problem(s) in your installed packages found."
+			}
 			if (vul > 0) {
-				print "\nYou are advised to update or deinstall" \
-					" the affected package(s) immediately."
+				if ("'$opt_quiet'" == "false") {
+					print "\nYou are advised to update or deinstall" \
+						" the affected package(s) immediately."
+				}
 				exit(1)
 			}
 		}
@@ -295,7 +299,7 @@ fetch_auditfile()
 		cp -f "$portaudit_filename" "$portaudit_filename.old"
 	fi
 
-	$opt_verbose && echo "Attempting to fetch from $portaudit_site."
+	$opt_verbose && echo "Attempting to fetch from $portaudit_sites."
 	urls=`echo "$portaudit_sites" | tr -s ' \t' '\n' | sed -E -e "s/?\$/$portaudit_filename"`
 
 	if ! env $portaudit_fetch_env $portaudit_fetch_cmd $urls; then
@@ -367,7 +371,7 @@ while getopts aCdf:Fqr:vVX: opt; do
 	X)
 		opt_expiry="$OPTARG";;
 	?)
-		echo "Usage: $0 -aCdF [-X days] [-r pattern] [-f file] [pkg-name ...]"
+		echo "Usage: $0 -aCdFVvq [-X days] [-r pattern] [-f file] [pkg-name ...]"
 		exit 2;;
 	esac
 done
