@@ -2660,7 +2660,6 @@ gdesklets-sensor-psi_variableborder	ports/deskutils/gdesklets-sensor-psi_variabl
 gdesklets-seti	ports/astro/gdesklets-seti
 gdesklets-starterbar	ports/deskutils/gdesklets-starterbar
 gdesklets-tasklist	ports/x11/gdesklets-tasklist
-gdesklets-weather	ports/astro/gdesklets-weather
 gdesklets-xmms	ports/audio/gdesklets-xmms
 gdict		ports/textproc/gdict
 gdis		ports/science/gdis
