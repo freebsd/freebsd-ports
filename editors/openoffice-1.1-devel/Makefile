@@ -110,7 +110,8 @@ CXX=	g++32
 .endif
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
-		gcp:${PORTSDIR}/sysutils/coreutils
+		gcp:${PORTSDIR}/sysutils/coreutils \
+		imake:${X_IMAKE_PORT}
 .if defined(WITHOUT_JAVA)
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 .else
