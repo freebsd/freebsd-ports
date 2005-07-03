@@ -1,5 +1,5 @@
 --- bus/dir-watch.c.orig	Tue Jun 14 22:31:38 2005
-+++ bus/dir-watch.c	Sun Jul  3 01:40:21 2005
++++ bus/dir-watch.c	Sun Jul  3 02:07:14 2005
 @@ -28,17 +28,25 @@
  #include <stdlib.h>
  #include <unistd.h>
@@ -28,7 +28,7 @@
  /* use a static array to avoid handling OOM */
  static int fds[MAX_DIRS_TO_WATCH];
  static int num_fds = 0;
-@@ -92,6 +100,141 @@ bus_drop_all_directory_watches (void)
+@@ -92,6 +100,144 @@ bus_drop_all_directory_watches (void)
  	}
      }
    
@@ -41,6 +41,13 @@
 +static int fds[MAX_DIRS_TO_WATCH];
 +static int num_fds = 0;
 +static DBusWatch *watch = NULL;
++static DBusLoop *loop = NULL;
++
++static dbus_bool_t
++_kqueue_watch_callback (DBusWatch *watch, unsigned int condition, void *data)
++{
++  return dbus_watch_handle (watch, condition);
++}
 +
 +static dbus_bool_t
 +_handle_kqueue_watch (DBusWatch *watch, unsigned int flags, void *data)
@@ -63,7 +70,9 @@
 +      kq = -1;
 +      if (watch != NULL)
 +	{
++	  _dbus_loop_remove_watch (loop, watch, _kqueue_watch_callback, NULL);
 +          _dbus_watch_unref (watch);
++	  watch = NULL;
 +	}
 +      pid = getpid ();
 +      _dbus_verbose ("Sending SIGHUP signal since kqueue has been closed\n");
@@ -71,12 +80,6 @@
 +    }
 +
 +  return TRUE;
-+}
-+
-+static dbus_bool_t
-+_kqueue_watch_callback (DBusWatch *watch, unsigned int condition, void *data)
-+{
-+  return dbus_watch_handle (watch, condition);
 +}
 +
 +void
@@ -89,7 +92,6 @@
 +
 +  if (kq < 0)
 +    {
-+      DBusLoop *loop;
 +
 +      kq = kqueue ();
 +      if (kq < 0)
@@ -118,6 +120,7 @@
 +	    close (kq);
 +	    kq = -1;
 +	    _dbus_watch_unref (watch);
++	    watch = NULL;
 +            goto out;
 +	  }
 +    }
