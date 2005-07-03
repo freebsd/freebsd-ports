@@ -6,7 +6,7 @@
 # REQUIRE: DAEMON
 # KEYWORD: FreeBSD
 #
-# Howl's mDNSResponder, a Zeroconf (Rendezvous) service advertisement daemon.
+# Howl's mDNSResponder, a Zeroconf (Bonjour) service advertisement daemon.
 #
 
 mdnsresponder_enable=${mdnsresponder_enable-"NO"}
