@@ -62,6 +62,7 @@ lib/R/doc/manual/R-admin.html
 lib/R/etc/Makeconf
 lib/R/etc/Renviron
 lib/R/etc/repositories
+lib/R/include/libintl.h
 lib/R/include/R.h
 lib/R/include/R_ext/Applic.h
 lib/R/include/R_ext/Arith.h
@@ -1085,6 +1086,7 @@ lib/R/library/base/help/NULL
 lib/R/library/base/help/Paren
 lib/R/library/base/help/Platform
 lib/R/library/base/help/Primitive
+lib/R/library/base/help/Quotes
 lib/R/library/base/help/Random
 lib/R/library/base/help/Random-user
 lib/R/library/base/help/RdUtils
@@ -1458,6 +1460,7 @@ lib/R/library/base/html/NULL.html
 lib/R/library/base/html/Paren.html
 lib/R/library/base/html/Platform.html
 lib/R/library/base/html/Primitive.html
+lib/R/library/base/html/Quotes.html
 lib/R/library/base/html/Random-user.html
 lib/R/library/base/html/Random.html
 lib/R/library/base/html/RdUtils.html
@@ -1830,6 +1833,7 @@ lib/R/library/base/latex/NULL.tex
 lib/R/library/base/latex/Paren.tex
 lib/R/library/base/latex/Platform.tex
 lib/R/library/base/latex/Primitive.tex
+lib/R/library/base/latex/Quotes.tex
 lib/R/library/base/latex/Random-user.tex
 lib/R/library/base/latex/Random.tex
 lib/R/library/base/latex/RdUtils.tex
@@ -2175,9 +2179,11 @@ lib/R/library/base/latex/zip.file.extract.tex
 lib/R/library/base/latex/zpackages.tex
 lib/R/library/base/latex/zutils.tex
 lib/R/library/base/man/base.Rd.gz
+lib/R/library/base/po/de/LC_MESSAGES/R-base.mo
 lib/R/library/base/po/en@quot/LC_MESSAGES/R-base.mo
 lib/R/library/base/po/it/LC_MESSAGES/R-base.mo
 lib/R/library/base/po/ja/LC_MESSAGES/R-base.mo
+lib/R/library/base/po/ko/LC_MESSAGES/R-base.mo
 lib/R/library/base/po/zh_CN/LC_MESSAGES/R-base.mo
 lib/R/library/boot/CONTENTS
 lib/R/library/boot/DESCRIPTION
@@ -2656,7 +2662,6 @@ lib/R/library/cluster/help/sizeDiss
 lib/R/library/cluster/help/summary.agnes
 lib/R/library/cluster/help/summary.clara
 lib/R/library/cluster/help/summary.diana
-lib/R/library/cluster/help/summary.fanny
 lib/R/library/cluster/help/summary.mona
 lib/R/library/cluster/help/summary.pam
 lib/R/library/cluster/help/twins.object
@@ -2711,7 +2716,6 @@ lib/R/library/cluster/html/sizeDiss.html
 lib/R/library/cluster/html/summary.agnes.html
 lib/R/library/cluster/html/summary.clara.html
 lib/R/library/cluster/html/summary.diana.html
-lib/R/library/cluster/html/summary.fanny.html
 lib/R/library/cluster/html/summary.mona.html
 lib/R/library/cluster/html/summary.pam.html
 lib/R/library/cluster/html/twins.object.html
@@ -2765,7 +2769,6 @@ lib/R/library/cluster/latex/sizeDiss.tex
 lib/R/library/cluster/latex/summary.agnes.tex
 lib/R/library/cluster/latex/summary.clara.tex
 lib/R/library/cluster/latex/summary.diana.tex
-lib/R/library/cluster/latex/summary.fanny.tex
 lib/R/library/cluster/latex/summary.mona.tex
 lib/R/library/cluster/latex/summary.pam.tex
 lib/R/library/cluster/latex/twins.object.tex
@@ -3427,6 +3430,8 @@ lib/R/library/grDevices/po/en_GB/LC_MESSAGES/grDevices.mo
 lib/R/library/grDevices/po/it/LC_MESSAGES/R-grDevices.mo
 lib/R/library/grDevices/po/it/LC_MESSAGES/grDevices.mo
 lib/R/library/grDevices/po/ja/LC_MESSAGES/R-grDevices.mo
+lib/R/library/grDevices/po/ko/LC_MESSAGES/R-grDevices.mo
+lib/R/library/grDevices/po/ko/LC_MESSAGES/grDevices.mo
 lib/R/library/graphics/CONTENTS
 lib/R/library/graphics/DESCRIPTION
 lib/R/library/graphics/INDEX
@@ -3707,6 +3712,7 @@ lib/R/library/graphics/man/graphics.Rd.gz
 lib/R/library/graphics/po/en@quot/LC_MESSAGES/R-graphics.mo
 lib/R/library/graphics/po/it/LC_MESSAGES/R-graphics.mo
 lib/R/library/graphics/po/ja/LC_MESSAGES/R-graphics.mo
+lib/R/library/graphics/po/ko/LC_MESSAGES/R-graphics.mo
 lib/R/library/grid/CONTENTS
 lib/R/library/grid/DESCRIPTION
 lib/R/library/grid/INDEX
@@ -3979,6 +3985,8 @@ lib/R/library/grid/po/en@quot/LC_MESSAGES/grid.mo
 lib/R/library/grid/po/it/LC_MESSAGES/grid.mo
 lib/R/library/grid/po/ja/LC_MESSAGES/R-grid.mo
 lib/R/library/grid/po/ja/LC_MESSAGES/grid.mo
+lib/R/library/grid/po/ko/LC_MESSAGES/R-grid.mo
+lib/R/library/grid/po/ko/LC_MESSAGES/grid.mo
 lib/R/library/lattice/CONTENTS
 lib/R/library/lattice/Changes
 lib/R/library/lattice/DESCRIPTION
@@ -4378,6 +4386,7 @@ lib/R/library/methods/libs/methods.so
 lib/R/library/methods/man/methods.Rd.gz
 lib/R/library/methods/po/en@quot/LC_MESSAGES/R-methods.mo
 lib/R/library/methods/po/en@quot/LC_MESSAGES/methods.mo
+lib/R/library/methods/po/ko/LC_MESSAGES/R-methods.mo
 lib/R/library/mgcv/CONTENTS
 lib/R/library/mgcv/DESCRIPTION
 lib/R/library/mgcv/INDEX
@@ -4418,6 +4427,7 @@ lib/R/library/mgcv/R-ex/summary.gam.R
 lib/R/library/mgcv/R-ex/te.R
 lib/R/library/mgcv/R-ex/tensor.prod.model.matrix.R
 lib/R/library/mgcv/R-ex/uniquecombs.R
+lib/R/library/mgcv/R-ex/vcov.gam.R
 lib/R/library/mgcv/R-ex/vis.gam.R
 lib/R/library/mgcv/R/mgcv
 lib/R/library/mgcv/R/mgcv.rdb
@@ -4479,6 +4489,7 @@ lib/R/library/mgcv/help/summary.gam
 lib/R/library/mgcv/help/te
 lib/R/library/mgcv/help/tensor.prod.model.matrix
 lib/R/library/mgcv/help/uniquecombs
+lib/R/library/mgcv/help/vcov.gam
 lib/R/library/mgcv/help/vis.gam
 lib/R/library/mgcv/html/00Index.html
 lib/R/library/mgcv/html/Predict.matrix.html
@@ -4537,6 +4548,7 @@ lib/R/library/mgcv/html/summary.gam.html
 lib/R/library/mgcv/html/te.html
 lib/R/library/mgcv/html/tensor.prod.model.matrix.html
 lib/R/library/mgcv/html/uniquecombs.html
+lib/R/library/mgcv/html/vcov.gam.html
 lib/R/library/mgcv/html/vis.gam.html
 lib/R/library/mgcv/latex/Predict.matrix.tex
 lib/R/library/mgcv/latex/anova.gam.tex
@@ -4594,6 +4606,7 @@ lib/R/library/mgcv/latex/summary.gam.tex
 lib/R/library/mgcv/latex/te.tex
 lib/R/library/mgcv/latex/tensor.prod.model.matrix.tex
 lib/R/library/mgcv/latex/uniquecombs.tex
+lib/R/library/mgcv/latex/vcov.gam.tex
 lib/R/library/mgcv/latex/vis.gam.tex
 lib/R/library/mgcv/libs/mgcv.so
 lib/R/library/mgcv/man/mgcv.Rd.gz
@@ -4671,7 +4684,6 @@ lib/R/library/nlme/R-ex/collapse.R
 lib/R/library/nlme/R-ex/collapse.groupedData.R
 lib/R/library/nlme/R-ex/compareFits.R
 lib/R/library/nlme/R-ex/comparePred.R
-lib/R/library/nlme/R-ex/contr.SAS.R
 lib/R/library/nlme/R-ex/corAR1.R
 lib/R/library/nlme/R-ex/corARMA.R
 lib/R/library/nlme/R-ex/corCAR1.R
@@ -4937,7 +4949,6 @@ lib/R/library/nlme/help/collapse
 lib/R/library/nlme/help/collapse.groupedData
 lib/R/library/nlme/help/compareFits
 lib/R/library/nlme/help/comparePred
-lib/R/library/nlme/help/contr.SAS
 lib/R/library/nlme/help/corAR1
 lib/R/library/nlme/help/corARMA
 lib/R/library/nlme/help/corCAR1
@@ -5225,7 +5236,6 @@ lib/R/library/nlme/html/collapse.groupedData.html
 lib/R/library/nlme/html/collapse.html
 lib/R/library/nlme/html/compareFits.html
 lib/R/library/nlme/html/comparePred.html
-lib/R/library/nlme/html/contr.SAS.html
 lib/R/library/nlme/html/corAR1.html
 lib/R/library/nlme/html/corARMA.html
 lib/R/library/nlme/html/corCAR1.html
@@ -5512,7 +5522,6 @@ lib/R/library/nlme/latex/collapse.groupedData.tex
 lib/R/library/nlme/latex/collapse.tex
 lib/R/library/nlme/latex/compareFits.tex
 lib/R/library/nlme/latex/comparePred.tex
-lib/R/library/nlme/latex/contr.SAS.tex
 lib/R/library/nlme/latex/corAR1.tex
 lib/R/library/nlme/latex/corARMA.tex
 lib/R/library/nlme/latex/corCAR1.tex
@@ -6065,6 +6074,8 @@ lib/R/library/splines/po/en@quot/LC_MESSAGES/R-splines.mo
 lib/R/library/splines/po/en@quot/LC_MESSAGES/splines.mo
 lib/R/library/splines/po/ja/LC_MESSAGES/R-splines.mo
 lib/R/library/splines/po/ja/LC_MESSAGES/splines.mo
+lib/R/library/splines/po/ko/LC_MESSAGES/R-splines.mo
+lib/R/library/splines/po/ko/LC_MESSAGES/splines.mo
 lib/R/library/splines/po/ru/LC_MESSAGES/R-splines.mo
 lib/R/library/stats/CONTENTS
 lib/R/library/stats/COPYRIGHTS.modreg
@@ -7259,6 +7270,8 @@ lib/R/library/stats/po/it/LC_MESSAGES/R-stats.mo
 lib/R/library/stats/po/it/LC_MESSAGES/stats.mo
 lib/R/library/stats/po/ja/LC_MESSAGES/R-stats.mo
 lib/R/library/stats/po/ja/LC_MESSAGES/stats.mo
+lib/R/library/stats/po/ko/LC_MESSAGES/R-stats.mo
+lib/R/library/stats/po/ko/LC_MESSAGES/stats.mo
 lib/R/library/stats/po/zh_CN/LC_MESSAGES/R-stats.mo
 lib/R/library/stats4/CONTENTS
 lib/R/library/stats4/DESCRIPTION
@@ -7324,6 +7337,7 @@ lib/R/library/stats4/man/stats4.Rd.gz
 lib/R/library/stats4/po/en@quot/LC_MESSAGES/R-stats4.mo
 lib/R/library/stats4/po/it/LC_MESSAGES/R-stats4.mo
 lib/R/library/stats4/po/ja/LC_MESSAGES/R-stats4.mo
+lib/R/library/stats4/po/ko/LC_MESSAGES/R-stats4.mo
 lib/R/library/stats4/po/ru/LC_MESSAGES/R-stats4.mo
 lib/R/library/survival/CONTENTS
 lib/R/library/survival/COPYING
@@ -7582,6 +7596,7 @@ lib/R/library/tcltk/R-ex/TclInterface.R
 lib/R/library/tcltk/R-ex/TkCommands.R
 lib/R/library/tcltk/R-ex/TkWidgetcmds.R
 lib/R/library/tcltk/R-ex/TkWidgets.R
+lib/R/library/tcltk/R-ex/tclServiceMode.R
 lib/R/library/tcltk/R/tcltk
 lib/R/library/tcltk/R/tcltk.rdb
 lib/R/library/tcltk/R/tcltk.rdx
@@ -7605,6 +7620,7 @@ lib/R/library/tcltk/help/TclInterface
 lib/R/library/tcltk/help/TkCommands
 lib/R/library/tcltk/help/TkWidgetcmds
 lib/R/library/tcltk/help/TkWidgets
+lib/R/library/tcltk/help/tclServiceMode
 lib/R/library/tcltk/help/tkStartGUI
 lib/R/library/tcltk/help/tk_select.list
 lib/R/library/tcltk/help/tkpager
@@ -7613,6 +7629,7 @@ lib/R/library/tcltk/html/TclInterface.html
 lib/R/library/tcltk/html/TkCommands.html
 lib/R/library/tcltk/html/TkWidgetcmds.html
 lib/R/library/tcltk/html/TkWidgets.html
+lib/R/library/tcltk/html/tclServiceMode.html
 lib/R/library/tcltk/html/tkStartGUI.html
 lib/R/library/tcltk/html/tk_select.list.html
 lib/R/library/tcltk/html/tkpager.html
@@ -7620,6 +7637,7 @@ lib/R/library/tcltk/latex/TclInterface.tex
 lib/R/library/tcltk/latex/TkCommands.tex
 lib/R/library/tcltk/latex/TkWidgetcmds.tex
 lib/R/library/tcltk/latex/TkWidgets.tex
+lib/R/library/tcltk/latex/tclServiceMode.tex
 lib/R/library/tcltk/latex/tkStartGUI.tex
 lib/R/library/tcltk/latex/tk_select.list.tex
 lib/R/library/tcltk/latex/tkpager.tex
@@ -7628,6 +7646,7 @@ lib/R/library/tcltk/man/tcltk.Rd.gz
 lib/R/library/tcltk/po/en@quot/LC_MESSAGES/R-tcltk.mo
 lib/R/library/tcltk/po/it/LC_MESSAGES/R-tcltk.mo
 lib/R/library/tcltk/po/ja/LC_MESSAGES/R-tcltk.mo
+lib/R/library/tcltk/po/ko/LC_MESSAGES/R-tcltk.mo
 lib/R/library/tcltk/po/ru/LC_MESSAGES/R-tcltk.mo
 lib/R/library/tools/CONTENTS
 lib/R/library/tools/DESCRIPTION
@@ -7733,6 +7752,8 @@ lib/R/library/tools/po/en@quot/LC_MESSAGES/tools.mo
 lib/R/library/tools/po/it/LC_MESSAGES/R-tools.mo
 lib/R/library/tools/po/it/LC_MESSAGES/tools.mo
 lib/R/library/tools/po/ja/LC_MESSAGES/tools.mo
+lib/R/library/tools/po/ko/LC_MESSAGES/R-tools.mo
+lib/R/library/tools/po/ko/LC_MESSAGES/tools.mo
 lib/R/library/tools/po/ru/LC_MESSAGES/tools.mo
 lib/R/library/utils/CONTENTS
 lib/R/library/utils/DESCRIPTION
@@ -8048,6 +8069,7 @@ lib/R/library/utils/latex/utils-deprecated.tex
 lib/R/library/utils/latex/vignette.tex
 lib/R/library/utils/man/utils.Rd.gz
 lib/R/library/utils/po/en@quot/LC_MESSAGES/R-utils.mo
+lib/R/library/utils/po/ko/LC_MESSAGES/R-utils.mo
 lib/R/modules/R_X11.so
 lib/R/modules/internet.so
 lib/R/modules/lapack.so
@@ -8065,8 +8087,10 @@ lib/R/share/locale/de/LC_MESSAGES/R.mo
 lib/R/share/locale/en/LC_MESSAGES/R.mo
 lib/R/share/locale/en@quot/LC_MESSAGES/R.mo
 lib/R/share/locale/en_GB/LC_MESSAGES/R.mo
+lib/R/share/locale/fr/LC_MESSAGES/R.mo
 lib/R/share/locale/it/LC_MESSAGES/R.mo
 lib/R/share/locale/ja/LC_MESSAGES/R.mo
+lib/R/share/locale/ko/LC_MESSAGES/R.mo
 lib/R/share/locale/pt_BR/LC_MESSAGES/R.mo
 lib/R/share/locale/ru/LC_MESSAGES/R.mo
 lib/R/share/locale/zh_CN/LC_MESSAGES/R.mo
@@ -8111,10 +8135,14 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/share/locale/ru
 @dirrm lib/R/share/locale/pt_BR/LC_MESSAGES
 @dirrm lib/R/share/locale/pt_BR
+@dirrm lib/R/share/locale/ko/LC_MESSAGES
+@dirrm lib/R/share/locale/ko
 @dirrm lib/R/share/locale/ja/LC_MESSAGES
 @dirrm lib/R/share/locale/ja
 @dirrm lib/R/share/locale/it/LC_MESSAGES
 @dirrm lib/R/share/locale/it
+@dirrm lib/R/share/locale/fr/LC_MESSAGES
+@dirrm lib/R/share/locale/fr
 @dirrm lib/R/share/locale/en_GB/LC_MESSAGES
 @dirrm lib/R/share/locale/en_GB
 @dirrm lib/R/share/locale/en@quot/LC_MESSAGES
@@ -8128,6 +8156,8 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/share/R
 @dirrm lib/R/share
 @dirrm lib/R/modules
+@dirrm lib/R/library/utils/po/ko/LC_MESSAGES
+@dirrm lib/R/library/utils/po/ko
 @dirrm lib/R/library/utils/po/en@quot/LC_MESSAGES
 @dirrm lib/R/library/utils/po/en@quot
 @dirrm lib/R/library/utils/po
@@ -8142,6 +8172,8 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/utils
 @dirrm lib/R/library/tools/po/ru/LC_MESSAGES
 @dirrm lib/R/library/tools/po/ru
+@dirrm lib/R/library/tools/po/ko/LC_MESSAGES
+@dirrm lib/R/library/tools/po/ko
 @dirrm lib/R/library/tools/po/ja/LC_MESSAGES
 @dirrm lib/R/library/tools/po/ja
 @dirrm lib/R/library/tools/po/it/LC_MESSAGES
@@ -8160,6 +8192,8 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/tools
 @dirrm lib/R/library/tcltk/po/ru/LC_MESSAGES
 @dirrm lib/R/library/tcltk/po/ru
+@dirrm lib/R/library/tcltk/po/ko/LC_MESSAGES
+@dirrm lib/R/library/tcltk/po/ko
 @dirrm lib/R/library/tcltk/po/ja/LC_MESSAGES
 @dirrm lib/R/library/tcltk/po/ja
 @dirrm lib/R/library/tcltk/po/it/LC_MESSAGES
@@ -8190,6 +8224,8 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/survival
 @dirrm lib/R/library/stats4/po/ru/LC_MESSAGES
 @dirrm lib/R/library/stats4/po/ru
+@dirrm lib/R/library/stats4/po/ko/LC_MESSAGES
+@dirrm lib/R/library/stats4/po/ko
 @dirrm lib/R/library/stats4/po/ja/LC_MESSAGES
 @dirrm lib/R/library/stats4/po/ja
 @dirrm lib/R/library/stats4/po/it/LC_MESSAGES
@@ -8207,6 +8243,8 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/stats4
 @dirrm lib/R/library/stats/po/zh_CN/LC_MESSAGES
 @dirrm lib/R/library/stats/po/zh_CN
+@dirrm lib/R/library/stats/po/ko/LC_MESSAGES
+@dirrm lib/R/library/stats/po/ko
 @dirrm lib/R/library/stats/po/ja/LC_MESSAGES
 @dirrm lib/R/library/stats/po/ja
 @dirrm lib/R/library/stats/po/it/LC_MESSAGES
@@ -8226,6 +8264,8 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/stats
 @dirrm lib/R/library/splines/po/ru/LC_MESSAGES
 @dirrm lib/R/library/splines/po/ru
+@dirrm lib/R/library/splines/po/ko/LC_MESSAGES
+@dirrm lib/R/library/splines/po/ko
 @dirrm lib/R/library/splines/po/ja/LC_MESSAGES
 @dirrm lib/R/library/splines/po/ja
 @dirrm lib/R/library/splines/po/en@quot/LC_MESSAGES
@@ -8297,6 +8337,8 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/mgcv/R
 @dirrm lib/R/library/mgcv/Meta
 @dirrm lib/R/library/mgcv
+@dirrm lib/R/library/methods/po/ko/LC_MESSAGES
+@dirrm lib/R/library/methods/po/ko
 @dirrm lib/R/library/methods/po/en@quot/LC_MESSAGES
 @dirrm lib/R/library/methods/po/en@quot
 @dirrm lib/R/library/methods/po
@@ -8320,6 +8362,8 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/lattice/R
 @dirrm lib/R/library/lattice/Meta
 @dirrm lib/R/library/lattice
+@dirrm lib/R/library/grid/po/ko/LC_MESSAGES
+@dirrm lib/R/library/grid/po/ko
 @dirrm lib/R/library/grid/po/ja/LC_MESSAGES
 @dirrm lib/R/library/grid/po/ja
 @dirrm lib/R/library/grid/po/it/LC_MESSAGES
@@ -8337,6 +8381,8 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/grid/R
 @dirrm lib/R/library/grid/Meta
 @dirrm lib/R/library/grid
+@dirrm lib/R/library/graphics/po/ko/LC_MESSAGES
+@dirrm lib/R/library/graphics/po/ko
 @dirrm lib/R/library/graphics/po/ja/LC_MESSAGES
 @dirrm lib/R/library/graphics/po/ja
 @dirrm lib/R/library/graphics/po/it/LC_MESSAGES
@@ -8353,6 +8399,8 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/graphics/R
 @dirrm lib/R/library/graphics/Meta
 @dirrm lib/R/library/graphics
+@dirrm lib/R/library/grDevices/po/ko/LC_MESSAGES
+@dirrm lib/R/library/grDevices/po/ko
 @dirrm lib/R/library/grDevices/po/ja/LC_MESSAGES
 @dirrm lib/R/library/grDevices/po/ja
 @dirrm lib/R/library/grDevices/po/it/LC_MESSAGES
@@ -8424,12 +8472,16 @@ lib/R/share/texmf/upquote.sty
 @dirrm lib/R/library/boot
 @dirrm lib/R/library/base/po/zh_CN/LC_MESSAGES
 @dirrm lib/R/library/base/po/zh_CN
+@dirrm lib/R/library/base/po/ko/LC_MESSAGES
+@dirrm lib/R/library/base/po/ko
 @dirrm lib/R/library/base/po/ja/LC_MESSAGES
 @dirrm lib/R/library/base/po/ja
 @dirrm lib/R/library/base/po/it/LC_MESSAGES
 @dirrm lib/R/library/base/po/it
 @dirrm lib/R/library/base/po/en@quot/LC_MESSAGES
 @dirrm lib/R/library/base/po/en@quot
+@dirrm lib/R/library/base/po/de/LC_MESSAGES
+@dirrm lib/R/library/base/po/de
 @dirrm lib/R/library/base/po
 @dirrm lib/R/library/base/man
 @dirrm lib/R/library/base/latex
