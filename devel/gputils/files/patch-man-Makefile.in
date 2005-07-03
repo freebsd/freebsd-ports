@@ -1,0 +1,10 @@
+--- man/Makefile.in.orig	Mon May 30 11:22:34 2005
++++ man/Makefile.in	Mon May 30 11:22:53 2005
+@@ -160,7 +160,6 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = fr
+ man_MANS = \
+ 	gpasm.1 \
+ 	gpdasm.1 \
