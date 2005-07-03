@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 PKGNAMESUFFIX=	-sharp
 
@@ -15,7 +15,7 @@ COMMENT=	Mono interface to the D-BUS messaging system
 
 LIB_DEPENDS=	dbus-1.1:${PORTSDIR}/devel/dbus
 BUILD_DEPENDS=	monodoc:${PORTSDIR}/devel/monodoc
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	monodoc:${PORTSDIR}/devel/monodoc
 
 MASTERDIR=	${.CURDIR}/../dbus
 BUILD_WRKSRC=	${WRKSRC}/mono
