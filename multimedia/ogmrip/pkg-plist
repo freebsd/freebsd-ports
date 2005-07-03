@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+bin/dvdcpy
 bin/ogmrip
 bin/srttool
 bin/subp2pgm
@@ -7,13 +8,12 @@ include/ogmrip/ogmrip-acopy.h
 include/ogmrip/ogmrip-audio.h
 include/ogmrip/ogmrip-avi.h
 include/ogmrip/ogmrip-codec.h
+include/ogmrip/ogmrip-container.h
+include/ogmrip/ogmrip-dvdcpy.h
 include/ogmrip/ogmrip-lavc.h
-include/ogmrip/ogmrip-merge.h
-include/ogmrip/ogmrip-misc.h
 %%MKV_SUPPORT%%include/ogmrip/ogmrip-mkv.h
 include/ogmrip/ogmrip-mp3.h
-include/ogmrip/ogmrip-mux.h
-include/ogmrip/ogmrip-split.h
+include/ogmrip/ogmrip-ogg.h
 include/ogmrip/ogmrip-srt.h
 include/ogmrip/ogmrip-subp.h
 include/ogmrip/ogmrip-tools.h
@@ -49,6 +49,7 @@ share/applications/ogmrip.desktop
 %%DATADIR%%/ogmrip-pref.glade
 %%DATADIR%%/ogmrip-progress.glade
 %%DATADIR%%/ogmrip-spell.glade
+%%DATADIR%%/ogmrip-ui.xml
 share/pixmaps/ogmrip.png
 @dirrm include/ogmrip
 @dirrm include/ogmspawn

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ogmrip
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +25,7 @@ LIB_DEPENDS=	xvidcore:${PORTSDIR}/multimedia/xvid \
 		enchant:${PORTSDIR}/textproc/enchant
 
 USE_REINPLACE=	yes
-USE_GNOME=	gtk20 glib20 libgnomeui gconf2 libgnome libglade2
+USE_GNOME=	gtk20 glib20 gconf2 libglade2
 USE_LIBTOOL_VER=15
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
