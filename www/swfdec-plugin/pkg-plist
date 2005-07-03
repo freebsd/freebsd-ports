@@ -1,2 +1,2 @@
 bin/swfdec-mozilla-player
-lib/mozilla/plugins/libswfdecmozilla.so
+lib/browser_plugins/libswfdecmozilla.so
