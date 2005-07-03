@@ -5,12 +5,12 @@
 #
 
 PORTNAME=	howl
-PORTVERSION=	0.9.10
+PORTVERSION=	1.0.0
 CATEGORIES?=	net devel
 MASTER_SITES=	http://www.porchdogsoft.com/download/
 
 MAINTAINER=	marcus@FreeBSD.org
-COMMENT=	Zeroconf/Rendezvous implementation
+COMMENT=	Zeroconf/Bonjour(tm) implementation
 
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig
