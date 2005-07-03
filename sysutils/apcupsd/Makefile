@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --sbindir=${PREFIX}/sbin \
 OPTIONS=	CLIENT_ONLY "Build apcupsd client only (no network server)" off
 OPTIONS+=	CGI "Compile with CGI programms to show status" off
 OPTIONS+=	USB "Compile with USB Support (READ MANUAL!!!)" off
+OPTIONS+=	SNMP "Compile with SNMP Support (READ MANUAL!!!)" off
 
 .include <bsd.port.pre.mk>
 
@@ -50,6 +51,11 @@ PLIST_SUB+=	CGI="@comment "
 CONFIGURE_ARGS+=--enable-net
 .else
 CONFIGURE_ARGS+=--enable-master-slave
+.endif
+
+.if defined(WITH_SNMP)
+LIB_DEPENDS+=	netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp
+CONFIGURE_ARGS+=--enable-snmp
 .endif
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \
@@ -75,6 +81,7 @@ pre-everything::
 	@${ECHO_MSG} "  WITH_CGI=yes		if you want to build CGI support."
 	@${ECHO_MSG} "  WITH_CLIENT_ONLY=yes	if you only want a network client."
 	@${ECHO_MSG} "  WITH_USB=yes		to compile with USB support (READ MANUAL!!!)"
+	@${ECHO_MSG} "  WITH_SNMP=yes		to compile with SNMP support (READ MANUAL!!!)"
 	@${ECHO_MSG} ""
 .if defined(WITH_CGI)
 	@${ECHO_MSG} "===> Building with CGI support."

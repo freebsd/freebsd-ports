@@ -1,0 +1,19 @@
+*** autoconf/variables.mak.in.orig	Thu Apr  1 22:32:21 2004
+--- autoconf/variables.mak.in	Sun Jul  3 13:00:08 2005
+***************
+*** 90,96 ****
+  
+  # Made INCFLAGS relative to the topdir and hardcoded into the Makefiles
+  # For GDINCLUDE see src/cgi/Makefile.in
+! INCFLAGS = $(GDINCLUDE) -I$(topdir)/include
+  CFLAGS = @CFLAGS@ $(CPPFLAGS) @PTHREAD_CFLAGS@ $(INCFLAGS)
+  LDFLAGS = @LDFLAGS@
+  LIBS = $(DRVLIBS) $(APCLIBS) $(INTLLIBS) @PTHREAD_LFLAGS@ @LIBS@
+--- 90,96 ----
+  
+  # Made INCFLAGS relative to the topdir and hardcoded into the Makefiles
+  # For GDINCLUDE see src/cgi/Makefile.in
+! INCFLAGS = $(GDINCLUDE) -I$(topdir)/include $(EXTRAINCS)
+  CFLAGS = @CFLAGS@ $(CPPFLAGS) @PTHREAD_CFLAGS@ $(INCFLAGS)
+  LDFLAGS = @LDFLAGS@
+  LIBS = $(DRVLIBS) $(APCLIBS) $(INTLLIBS) @PTHREAD_LFLAGS@ @LIBS@
