@@ -9,7 +9,7 @@ PORTNAME=	yabm
 PORTVERSION=	0.2.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://shapeshifter.se/code/yabm/release/ \
-		http://www2.shapeshifter.se/yabm/release/
+		http://www2.shapeshifter.se/code/yabm/release/
 
 MAINTAINER=	fli@shapeshifter.se
 COMMENT=	Yet Another Bandwidth Meter, somewhat resembles the Linux bwbar
