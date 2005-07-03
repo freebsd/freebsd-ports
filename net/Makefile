@@ -161,7 +161,6 @@
     SUBDIR += gatekeeper
     SUBDIR += gdesklets-lt-network
     SUBDIR += gdesklets-networkinfo
-    SUBDIR += gdesklets-rssgrab
     SUBDIR += gdesklets-sensor-psi_network
     SUBDIR += gdesklets-sensor-psi_ping
     SUBDIR += generic-nqs
