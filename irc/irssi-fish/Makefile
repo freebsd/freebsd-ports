@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	irssi-fish
-DISTVERSION=	0.98
+DISTVERSION=	0.99
 CATEGORIES=	irc security
 MASTER_SITES=	http://fish.sekure.us/irssi/
 DISTNAME=	FiSH-irssi.v${DISTVERSION}-source
