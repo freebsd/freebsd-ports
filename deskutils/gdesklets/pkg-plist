@@ -573,12 +573,15 @@ share/locale/pl/LC_MESSAGES/gdesklets.mo
 share/locale/pt/LC_MESSAGES/gdesklets.mo
 share/locale/pt_BR/LC_MESSAGES/gdesklets.mo
 share/locale/ru/LC_MESSAGES/gdesklets.mo
+share/locale/rw/LC_MESSAGES/gdesklets.mo
 share/locale/sq/LC_MESSAGES/gdesklets.mo
 share/locale/sr/LC_MESSAGES/gdesklets.mo
 share/locale/sr@Latn/LC_MESSAGES/gdesklets.mo
 share/locale/sv/LC_MESSAGES/gdesklets.mo
 share/locale/tr/LC_MESSAGES/gdesklets.mo
 share/locale/uk/LC_MESSAGES/gdesklets.mo
+share/locale/zh_CN/LC_MESSAGES/gdesklets.mo
+share/locale/zh_TW/LC_MESSAGES/gdesklets.mo
 share/mime/application/x-gdesklets-display.xml
 share/mime/packages/gdesklets.xml
 @dirrm share/gnome/gdesklets/Sensors
