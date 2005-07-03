@@ -1,0 +1,9 @@
+--- Makefile.in	Wed Jan 19 14:21:21 2005
++++ Makefile.in	Sat Jul  2 20:33:28 2005
+@@ -110,5 +110,5 @@
+ TCL_84_LIBRARY_FILES = \
+         $(TCL_BASE_LIBRARY_FILES) \
+-	$(LIBRARY_TCL)/http2.4/http.tcl
++	$(LIBRARY_TCL)/http2.5/http.tcl
+ 
+ TCL_LIBRARY_FILES = \

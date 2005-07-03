@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	otcl
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	lang tcl84 tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	otcl-tclcl
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	otcl-tclcl
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIT Object Tcl
 
-LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
+LIB_DEPENDS=	tk84:${PORTSDIR}/x11-toolkits/tk84
 
 USE_AUTOCONF_VER=	213
 CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4
