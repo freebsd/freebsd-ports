@@ -1391,6 +1391,7 @@ cyrus-sasl2	ports/security/cyrus-sasl2
 cyrus-sasl2-ldapdb	ports/security/cyrus-sasl2-ldapdb
 cyrus-sasl2-saslauthd	ports/security/cyrus-sasl2-saslauthd
 cyrus-smlacapd	ports/databases/cyrus-smlacapd
+cyrus2courier	ports/mail/cyrus2courier
 d2x		ports/games/d2x
 da-aspell	ports/textproc/da-aspell
 da-ooodict-DK	ports/editors/ooodict-da_DK
