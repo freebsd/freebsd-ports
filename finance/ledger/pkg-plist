@@ -1,0 +1,54 @@
+bin/ledger
+include/ledger/acconf.h
+include/ledger/amount.h
+include/ledger/balance.h
+include/ledger/binary.h
+include/ledger/config.h
+include/ledger/datetime.h
+include/ledger/debug.h
+include/ledger/derive.h
+include/ledger/emacs.h
+include/ledger/error.h
+include/ledger/format.h
+include/ledger/gnucash.h
+include/ledger/journal.h
+include/ledger/ledger.h
+include/ledger/mask.h
+include/ledger/ofx.h
+include/ledger/option.h
+include/ledger/parser.h
+include/ledger/py_eval.h
+include/ledger/pyfstream.h
+include/ledger/pyledger.h
+include/ledger/qif.h
+include/ledger/quotes.h
+include/ledger/reconcile.h
+include/ledger/textual.h
+include/ledger/timing.h
+include/ledger/util.h
+include/ledger/valexpr.h
+include/ledger/value.h
+include/ledger/walk.h
+include/ledger/xml.h
+lib/libledger.a
+%%EXAMPLESDIR%%/ledger.el
+%%EXAMPLESDIR%%/ledger.texi
+%%EXAMPLESDIR%%/ledger.vim
+%%EXAMPLESDIR%%/main.py
+%%EXAMPLESDIR%%/sample.dat
+%%EXAMPLESDIR%%/scripts/README
+%%EXAMPLESDIR%%/scripts/bal
+%%EXAMPLESDIR%%/scripts/bal-huquq
+%%EXAMPLESDIR%%/scripts/entry
+%%EXAMPLESDIR%%/scripts/getquote
+%%EXAMPLESDIR%%/scripts/report
+%%EXAMPLESDIR%%/scripts/tc
+%%EXAMPLESDIR%%/scripts/ti
+%%EXAMPLESDIR%%/scripts/to
+%%EXAMPLESDIR%%/scripts/trend
+%%EXAMPLESDIR%%/setup.py
+@dirrm share/nls/en_US.US-ASCII
+@dirrm share/nls/POSIX
+@dirrm %%EXAMPLESDIR%%/scripts
+@dirrm %%EXAMPLESDIR%%
+@dirrm include/ledger

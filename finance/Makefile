@@ -16,6 +16,7 @@
     SUBDIR += khacc
     SUBDIR += kmymoney2
     SUBDIR += ktoblzcheck
+    SUBDIR += ledger
     SUBDIR += libofx
     SUBDIR += libstocks
     SUBDIR += mybudget
