@@ -7,7 +7,7 @@
 
 PORTNAME=	fluxspace
 PORTVERSION=	0.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.isomedia.com/homes/stevencooper/files/
 
@@ -20,6 +20,9 @@ BUILD_DEPENDS=	imlib2-config:${PORTSDIR}/graphics/imlib2 \
 USE_PYTHON=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=		yes
+CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
 
 .include <bsd.port.pre.mk>
 
