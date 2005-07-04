@@ -28,9 +28,6 @@ bin/mutt_dotlock
 bin/pgpewrap
 bin/pgpring
 bin/smime_keys
-@unexec if cmp -s %D/etc/Muttrc.dist %D/etc/Muttrc; then rm -f %D/etc/Muttrc; fi
-etc/Muttrc.dist
-@exec if [ ! -f %D/etc/Muttrc ]; then cp %D/etc/Muttrc.dist %D/etc/Muttrc; fi
 EOF
 
 if [ "$MUTT_NLS" = "yes" ]; then
@@ -183,4 +180,11 @@ EOF
 fi
 
 sort -u $tmp_first
+
+cat<<EOF
+@unexec if cmp -s %D/etc/Muttrc.dist %D/etc/Muttrc; then rm -f %D/etc/Muttrc; fi
+etc/Muttrc.dist
+@exec if [ ! -f %D/etc/Muttrc ]; then install -m 644 %D/etc/Muttrc.dist %D/etc/Muttrc; fi
+EOF
+
 cat $tmp_last
