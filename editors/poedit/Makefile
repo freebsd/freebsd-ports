@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	poedit
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	1.3.3
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,8 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gettext catalogs (.po files) editor
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2 \
-		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
+LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
 
 USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
@@ -27,7 +25,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--with-wx-config=${X11BASE}/bin/wxgtk2-2.4-config
 
 CPPFLAGS=	-I${LOCALBASE}/include/db${USE_BDB_VER} \
 		-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
@@ -49,6 +46,14 @@ LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
 LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
 .else
 BROKEN=		"WITH_BDB_VER must be 3, 4 or 41"
+.endif
+
+.if defined(WITH_WXGTK24)
+LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
+CONFIGURE_ARGS+=	--with-wx-config=${X11BASE}/bin/wxgtk2-2.4-config
+.else
+LIB_DEPENDS+=	wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
+CONFIGURE_ARGS+=	--with-wx-config=${X11BASE}/bin/wxgtk2-2.6-config
 .endif
 
 post-patch:

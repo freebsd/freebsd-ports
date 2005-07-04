@@ -17,11 +17,15 @@ share/locale/es_PR/LC_MESSAGES/poedit.mo
 share/locale/et/LC_MESSAGES/poedit.mo
 share/locale/eu/LC_MESSAGES/poedit.mo
 share/locale/fa_IR/LC_MESSAGES/poedit.mo
+share/locale/fi/LC_MESSAGES/poedit.mo
 share/locale/fr/LC_MESSAGES/poedit.mo
+share/locale/fur/LC_MESSAGES/poedit.mo
+share/locale/gl/LC_MESSAGES/poedit.mo
 share/locale/he/LC_MESSAGES/poedit.mo
 share/locale/hi/LC_MESSAGES/poedit.mo
 share/locale/hr/LC_MESSAGES/poedit.mo
 share/locale/hu/LC_MESSAGES/poedit.mo
+share/locale/id/LC_MESSAGES/poedit.mo
 share/locale/is/LC_MESSAGES/poedit.mo
 share/locale/it/LC_MESSAGES/poedit.mo
 share/locale/ja/LC_MESSAGES/poedit.mo
@@ -56,19 +60,19 @@ share/locale/zh_TW/LC_MESSAGES/poedit.mo
 %%DATADIR%%/help.zip
 %%DATADIR%%/resources.zip
 @dirrm %%DATADIR%%
-@unexec rmdir %D/share/locale/af_ZA/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/af_ZA 2> /dev/null || true
-@unexec rmdir %D/share/locale/am_ET/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/am_ET 2> /dev/null || true
-@unexec rmdir %D/share/locale/ast/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/ast 2> /dev/null || true
-@unexec rmdir %D/share/locale/br/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/br 2> /dev/null || true
-@unexec rmdir %D/share/locale/es_PR/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/es_PR 2> /dev/null || true
-@unexec rmdir %D/share/locale/ky/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/ky 2> /dev/null || true
-@unexec rmdir %D/share/locale/sq_AL/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/sq_AL 2> /dev/null || true
 @unexec rmdir %D/share/locale/sv_SE/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/sv_SE 2> /dev/null || true
+@unexec rmdir %D/share/locale/sq_AL/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/sq_AL 2> /dev/null || true
+@unexec rmdir %D/share/locale/ky/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ky 2> /dev/null || true
+@unexec rmdir %D/share/locale/fur/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/fur 2> /dev/null || true
+@unexec rmdir %D/share/locale/es_PR/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/es_PR 2> /dev/null || true
+@unexec rmdir %D/share/locale/ast/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ast 2> /dev/null || true
+@unexec rmdir %D/share/locale/am_ET/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/am_ET 2> /dev/null || true
+@unexec rmdir %D/share/locale/af_ZA/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/af_ZA 2> /dev/null || true
