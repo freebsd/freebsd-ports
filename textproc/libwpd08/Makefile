@@ -20,10 +20,4 @@ USE_LIBTOOL_VER=15
 USE_GNOME=	gnomehack libgsf
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
