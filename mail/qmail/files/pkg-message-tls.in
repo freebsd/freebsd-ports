@@ -10,13 +10,8 @@ or login.conf(5)).
 Do not forget to read %%PREFIX%%/doc/TLS.readme. After all,
 this is NOT our old stock qmail.
 
-==> You can enable qmail as your default mailer:
-
-# this will disable the default MTA
-1) do "make disable-sendmail"
-
-# enable qmail as your default MTA
-2) do "make enable-qmail"
+You can enable qmail as your default mailer executing:
+> %%PREFIX%%/scripts/enable-qmail
 
 ==> As you need to provide a working certificate in %%PREFIX%%/control/cert.pem :
 
