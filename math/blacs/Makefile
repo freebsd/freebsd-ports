@@ -41,6 +41,19 @@ F77EXTRAFLAGS=	-w -fno-globals -fugly-complex
 USE_REINPLACE=	yes
 DEBUG_LEVEL=	0
 
+.if defined(WITH_OPTIMIZED_FLAGS)
+.if ${ARCH} == "amd64"
+FFLAGS+=	-pipe -O3 -ffast-math -funroll-all-loops -fpeel-loops -ftracer -funswitch-loops -funit-at-a-time
+CFLAGS+=	-pipe -O3 -ffast-math -funroll-all-loops -fpeel-loops -ftracer -funswitch-loops -funit-at-a-time
+.else if ${ARCH} == "i386"
+FFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double -mcpu=i686 -march=i686 -mfancy-math-387 -mpreferred-stack-boundary=3
+CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double -mcpu=i686 -march=i686 -mfancy-math-387 -mpreferred-stack-boundary=3
+.else
+FFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -Wno-multichar
+CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -Wno-multichar
+.endif
+.endif
+
 pre-patch:
 	(${CP} ${WRKSRC}/BMAKES/Bmake.MPI-LINUX ${WRKSRC}/Bmake.inc)
 post-patch:
