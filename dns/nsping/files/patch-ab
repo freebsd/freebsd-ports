@@ -1,6 +1,16 @@
---- nsping.c.orig	Fri Nov 12 15:30:42 1999
-+++ nsping.c	Fri Nov 12 15:44:06 1999
-@@ -189,10 +189,14 @@
+--- nsping.c.orig	Wed Nov 26 09:11:39 1997
++++ nsping.c	Tue Jan 25 15:04:41 2005
+@@ -14,6 +14,9 @@
+ #include <stdarg.h>
+ #include <assert.h>
+ 
++
++#define MAX_ID	65536
++
+ /* store state on sent queries */
+ 
+ struct nsq {
+@@ -189,10 +192,14 @@
  
  int guess_zone() {
  	char lhn[MAXDNAME];
@@ -15,7 +25,59 @@
  
  	cp = strchr(lhn, '.');
  	if(!cp || !(*(++cp)))
-@@ -679,9 +683,7 @@
+@@ -268,8 +275,10 @@
+ 
+ 	signal(SIGALRM, probe);
+ 
+-	if(!Start)
+-		Start = getpid();
++	if(!Start) {
++		Start = getpid() % MAX_ID;
++	  	dprintf("Start = %d\n", Start);
++	}
+ 
+ 	/* we're overwriting state from a query we never got a response
+ 	 * to, so at least note that we missed it.
+@@ -285,7 +294,8 @@
+ 
+ 	/* get the DNS request */
+ 
+-	l = dns_packet(&qp, Start + Sent);
++	dprintf("sending with id = %d\n", (Start + Sent) % MAX_ID);
++	l = dns_packet(&qp, (Start + Sent) % MAX_ID); 
+ 
+ 	do {
+ 		if(sendto(Sockfd, qp, l, 0, 
+@@ -299,7 +309,7 @@
+ 
+ 	/* if it was sent successfully, update state */
+ 
+-	Queries[Pos].id = Start + Sent;
++	Queries[Pos].id = (Start + Sent) % MAX_ID;
+ 	gettimeofday(&Queries[Pos].sent, NULL);
+ 	Queries[Pos].found = 0;
+ 
+@@ -420,7 +430,7 @@
+ 	double triptime;
+ 
+ 	if(!Start)
+-		Start = getpid();
++		Start = getpid() % MAX_ID;
+ 
+ 	gettimeofday(&tv, NULL);
+ 
+@@ -437,8 +447,9 @@
+ 		Queries[i].found = 1;	
+ 
+ 	/* figure out which query this was, using the DNS query ID */
+-
++	dprintf("received with id = %d\n", ntohs(hp->id));
+ 	delta = ntohs(hp->id) - Start;
++	dprintf("delta = %d - %d = %d\n", ntohs(hp->id), Start, delta);
+ 	
+ 	/* figure out how long it took */
+ 
+@@ -679,9 +690,7 @@
  /* -------------------------------------------------------------------------- */
  
   void usage() {
