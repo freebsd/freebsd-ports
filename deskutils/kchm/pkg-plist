@@ -7,7 +7,6 @@ lib/kde3/libchmnewpart.so
 lib/kde3/kio_chmnew.la
 lib/kde3/kio_chmnew.so
 include/chmxx.h
-include/chm_lib.h
 include/lzx.h
 share/mimelnk/application/chmmime.desktop
 share/services/chmnew.protocol
@@ -23,3 +22,4 @@ share/apps/chmnew/chmnew_shell.rc
 share/servicetypes/kchm.desktop
 @dirrm share/apps/chmnewpart
 @dirrm share/apps/chmnew
+@dirrm share/apps/kchm

@@ -1,0 +1,13 @@
+--- libchm++/Makefile.in.bak	Thu Mar 17 19:42:53 2005
++++ libchm++/Makefile.in	Mon Jul  4 11:55:14 2005
+@@ -344,8 +344,8 @@
+ AM_CFLAGS = -DCHM_MT -DDMALLOC_DISABLE
+ lib_LTLIBRARIES = libchmmix.la
+ libchmmix_la_LDFLAGS = 
+-libchmmix_la_SOURCES = chm_lib.c chm_lib.h lzx.c lzx.h chm.cpp chmxx.h tagreader.cpp tagreader.h
+-include_HEADERS = chmxx.h chm_lib.h lzx.h
++libchmmix_la_SOURCES = chm_lib.c lzx.c lzx.h chm.cpp chmxx.h tagreader.cpp tagreader.h
++include_HEADERS = chmxx.h lzx.h
+ AM_CXXFLAGS = -D_REENTRANT
+ EXTRA_DIST = *.h
+ #>- all: all-am
