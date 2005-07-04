@@ -7,6 +7,7 @@
 
 PORTNAME=	apg
 PORTVERSION=	2.3.0b
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.adel.nursat.kz/apg/download/ \
 		${MASTER_SITE_PACKETSTORM}
@@ -16,7 +17,7 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	An automated password generator
 
 .if defined(WITH_CRACKLIB)
-BUILD_DEPENDS=	${LOCALBASE}/lib/crack.a:${PORTSDIR}/security/cracklib
+LIB_DEPENDS=	crack.1:${PORTSDIR}/security/cracklib
 MAKE_ARGS=	-DWITH_CRACKLIB
 .endif
 
