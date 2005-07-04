@@ -1,31 +1,11 @@
---- src/entries_parser.cpp	Thu Feb 24 08:15:56 2005
-+++ src/entries_parser.cpp	Wed Mar 23 15:46:18 2005
-@@ -246,14 +246,27 @@
+--- src/entries_parser.cpp.orig	Wed Apr 27 00:26:22 2005
++++ src/entries_parser.cpp	Mon Jul  4 16:24:56 2005
+@@ -283,7 +283,7 @@
  
- 	int gm_sec  = isoDateTime.mid(17,2).toInt();
+ 	time_t utc_time;
  
--	time_t utc_time = mktime(&m);
-+	time_t utc_time;
- 
+-#if defined(FreeBSD)
 +#if defined(__FreeBSD__)
-+
-+	// BSD has inverse of gmtime()
-+	utc_time = timegm(&m);
-+
-+#else
-+
-+	// all others do mktime() and adjust timezone
- 	// mktime assumes broken-down time in local timezone,
- 	// to get UTC we need to correct result by timezone offset
-+
-+	utc_time = mktime(&m);
-+
- #if (_WINDOWS || ESVN_WIN )
- 	utc_time -= _timezone;
- #else
- 	utc_time -= timezone;
-+#endif
-+
- #endif
  
- 	// round to remove leap seconds in "right" timezones
+ 	// BSD has inverse of gmtime()
+ 	utc_time = timegm(&m);

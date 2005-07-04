@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	esvn
-PORTVERSION=	0.6.9
+PORTVERSION=	0.6.11
 CATEGORIES=	devel
 MASTER_SITES=	http://esvn.umputun.com/ \
 		${MASTER_SITE_GENTOO}
