@@ -41,13 +41,19 @@ PLIST_SUB+=     PORTVERSION="${PORTVERSION}"
 #WITH_SMP=	yes
 #WITH_ICC=	yes
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_OPTIMIZED_FLAGS)
+.if ${ARCH} == "amd64"
+CFLAGS+=	-pipe -O3 -ffast-math -funroll-all-loops -fpeel-loops -ftracer -funswitch-loops -funit-at-a-time
+CXXFLAGS+=	-pipe -O3 -ffast-math -funroll-all-loops -fpeel-loops -ftracer -funswitch-loops -funit-at-a-time
+.else if ${ARCH} == "i386"
+CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double -mcpu=i686 -march=i686 -mfancy-math-387 -mpreferred-stack-boundary=3
+CXXFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -Wno-multichar -malign-double -mcpu=i686 -march=i686 -mfancy-math-387 -mpreferred-stack-boundary=3
+.else
 CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations
 CXXFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -Wno-multichar
-.if (${ARCH} == "i386" && !${MACHINE_ARCH} == "amd64" )
-CFLAGS+=	 -malign-double -mcpu=i686 -march=i686 -mfancy-math-387 -mpreferred-stack-boundary=3
-CXXFLAGS+=	 -malign-double -mcpu=i686 -march=i686 -mfancy-math-387 -mpreferred-stack-boundary=3
-.endif # i386
+.endif
 .endif
 
 .if defined(WITH_ICC)
@@ -97,4 +103,4 @@ do-install:
 
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
