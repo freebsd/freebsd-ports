@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	munger
-PORTVERSION=	4.55
+PORTVERSION=	4.56
 CATEGORIES=	lang
 MASTER_SITES=	http://www.jamesbailie.com/
 
@@ -15,6 +15,7 @@ COMMENT=	Static lisp interpreter with text processing abilities
 
 RUN_DEPENDS=	nc:${PORTSDIR}/net/netcat
 
+USE_REINPLACE=	yes
 MAN1=		munger.1
 MANCOMPRESSED=	yes
 PLIST_SUB=	MUNGER_VERSION=${PORTVERSION}
@@ -24,6 +25,10 @@ OPTIONS=	FCGI "include FastCGI interface" on \
 		TERM "include character-I/O functions" on
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-L/usr/local/lib|-L${LOCALBASE}/lib|' \
+		${WRKSRC}/Makefile
 
 .if defined(WITH_SQL)
 LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
