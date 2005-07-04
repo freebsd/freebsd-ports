@@ -7,7 +7,7 @@
 
 PORTNAME=	release
 PORTVERSION=	0.99
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/B/BD/BDFOY
@@ -31,4 +31,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-0.24
 MAN1=		release.1
 MAN3=		Module::Release.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=	Perl 5.8 or newer required. Install lang/perl5.8 and try again.
+.endif
+
+.include <bsd.port.post.mk>
