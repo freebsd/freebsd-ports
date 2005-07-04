@@ -5,7 +5,6 @@ Currently the system supports the following specification:
 
 	Internet Key Exchange (IKEv2) Protocol
 	draft-ietf-ipsec-ikev2-17.txt
-	(The IKE daemon is not included in the current release due to IPR issue)
 
 	Kerberized Internet Negotiation of Keys (KINK)
 	draft-ietf-kink-kink-06.txt
