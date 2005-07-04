@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openslp
-PORTVERSION=	1.0.11
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openslp
@@ -15,14 +14,20 @@ MASTER_SITE_SUBDIR=	openslp
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Open-source implementation of the Service Location Protocol
 
-.if defined(WITH_SLP_SECURITY)
+USE_LIBTOOL_VER=15
 USE_OPENSSL=	yes
-.endif
-
-GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/openslp \
 		--localstatedir=/var
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+CONFIGURE_TARGET=--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+
+USE_RC_SUBR=	yes
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+
+OPTIONS=	SLP_SECURITY "Turn on SLPv2 security support" off \
+		ASYNC_API "Enable asynchronous communication API" off
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_SLP_SECURITY)
 CONFIGURE_ARGS+=	--enable-slpv2-security
@@ -31,18 +36,6 @@ CONFIGURE_ARGS+=	--enable-slpv2-security
 .if defined(WITH_ASYNC_API)
 CONFIGURE_ARGS+=	--enable-async-api
 .endif
-
-INSTALLS_SHLIB=	yes
-USE_RC_SUBR=	yes
-
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
-
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "OpenSLP has the following tunable option(s):"
-	@${ECHO_MSG} "		WITH_SLP_SECURITY=yes	Turns on SLPv2 security support"
-	@${ECHO_MSG} "		WITH_ASYNC_API=yes	Enable asynchronous communication API"
-	@${ECHO_MSG} ""
 
 post-extract:
 	@(cd ${WRKSRC}; \
@@ -63,4 +56,4 @@ post-install:
 		${FIND} . -type f -exec ${INSTALL_DATA} \{} ${DOCSDIR}/\{} \;)
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

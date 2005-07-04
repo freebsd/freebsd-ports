@@ -11,70 +11,70 @@ etc/openslp/slp.spi.default
 @dirrm etc/openslp
 etc/rc.d/001slpd.sh
 include/slp.h
-lib/libslp.so.1
-lib/libslp.so
 lib/libslp.a
+lib/libslp.so
+lib/libslp.so.1
 sbin/slpd
-%%PORTDOCS%%share/doc/openslp/rfc/rfc1766.txt
-%%PORTDOCS%%share/doc/openslp/rfc/rfc2165.txt
-%%PORTDOCS%%share/doc/openslp/rfc/rfc2254.txt
-%%PORTDOCS%%share/doc/openslp/rfc/rfc2396.txt
-%%PORTDOCS%%share/doc/openslp/rfc/rfc2608.txt
-%%PORTDOCS%%share/doc/openslp/rfc/rfc2609.txt
-%%PORTDOCS%%share/doc/openslp/rfc/rfc2610.txt
-%%PORTDOCS%%share/doc/openslp/rfc/rfc2614.txt
-%%PORTDOCS%%share/doc/openslp/rfc/srvreg-integrity.txt
-%%PORTDOCS%%share/doc/openslp/rfc/threat_analysis_min_security.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/Callbacks.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/Divergence.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/Examples.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/SLPAttrCallback.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/SLPClose.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/SLPDelAttrs.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/SLPDereg.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/SLPError.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/SLPEscape.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/SLPFindAttrs.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/SLPFindScopes.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/SLPFindSrvTypes.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/SLPFindSrvs.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/SLPFree.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/SLPGetProperty.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/SLPGetRefreshInterval.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/SLPOpen.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/SLPReg.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/SLPParseSrvURL.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/SLPRegReport.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/SLPSetProperty.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/SLPSrvTypeCallback.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/SLPSrvURLCallback.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/SLPTypes.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/SLPUnescape.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/Security.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/Syntax.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/index.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/openslp_security_whitepaper.html
-%%PORTDOCS%%share/doc/openslp/html/ProgrammersGuide/smalllogo.jpg
-%%PORTDOCS%%share/doc/openslp/html/IntroductionToSLP/AgentInit.jpg
-%%PORTDOCS%%share/doc/openslp/html/IntroductionToSLP/ServiceReg.jpg
-%%PORTDOCS%%share/doc/openslp/html/IntroductionToSLP/ServiceRqst.jpg
-%%PORTDOCS%%share/doc/openslp/html/IntroductionToSLP/index.html
-%%PORTDOCS%%share/doc/openslp/html/UsersGuide/CommandLine.html
-%%PORTDOCS%%share/doc/openslp/html/UsersGuide/FileLocations.html
-%%PORTDOCS%%share/doc/openslp/html/UsersGuide/Installation.html
-%%PORTDOCS%%share/doc/openslp/html/UsersGuide/Optimization.html
-%%PORTDOCS%%share/doc/openslp/html/UsersGuide/Security.html
-%%PORTDOCS%%share/doc/openslp/html/UsersGuide/SlpConf.html
-%%PORTDOCS%%share/doc/openslp/html/UsersGuide/SlpReg.html
-%%PORTDOCS%%share/doc/openslp/html/UsersGuide/UserFAQ.html
-%%PORTDOCS%%share/doc/openslp/html/UsersGuide/WhenToRunSlpd.html
-%%PORTDOCS%%share/doc/openslp/html/UsersGuide/WhoShouldRead.html
-%%PORTDOCS%%share/doc/openslp/html/UsersGuide/index.html
-%%PORTDOCS%%share/doc/openslp/html/UsersGuide/smalllogo.jpg
-%%PORTDOCS%%share/doc/openslp/html/faq.html
-%%PORTDOCS%%@dirrm share/doc/openslp/html/UsersGuide
-%%PORTDOCS%%@dirrm share/doc/openslp/html/IntroductionToSLP
-%%PORTDOCS%%@dirrm share/doc/openslp/html/ProgrammersGuide
-%%PORTDOCS%%@dirrm share/doc/openslp/html
-%%PORTDOCS%%@dirrm share/doc/openslp/rfc
-%%PORTDOCS%%@dirrm share/doc/openslp
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc1766.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2165.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2254.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2396.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2608.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2609.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2610.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2614.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/srvreg-integrity.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/threat_analysis_min_security.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/Callbacks.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/Divergence.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/Examples.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/SLPAttrCallback.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/SLPClose.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/SLPDelAttrs.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/SLPDereg.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/SLPError.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/SLPEscape.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/SLPFindAttrs.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/SLPFindScopes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/SLPFindSrvTypes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/SLPFindSrvs.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/SLPFree.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/SLPGetProperty.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/SLPGetRefreshInterval.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/SLPOpen.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/SLPReg.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/SLPParseSrvURL.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/SLPRegReport.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/SLPSetProperty.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/SLPSrvTypeCallback.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/SLPSrvURLCallback.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/SLPTypes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/SLPUnescape.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/Security.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/Syntax.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/openslp_security_whitepaper.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ProgrammersGuide/smalllogo.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/IntroductionToSLP/AgentInit.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/IntroductionToSLP/ServiceReg.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/IntroductionToSLP/ServiceRqst.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/IntroductionToSLP/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/UsersGuide/CommandLine.html
+%%PORTDOCS%%%%DOCSDIR%%/html/UsersGuide/FileLocations.html
+%%PORTDOCS%%%%DOCSDIR%%/html/UsersGuide/Installation.html
+%%PORTDOCS%%%%DOCSDIR%%/html/UsersGuide/Optimization.html
+%%PORTDOCS%%%%DOCSDIR%%/html/UsersGuide/Security.html
+%%PORTDOCS%%%%DOCSDIR%%/html/UsersGuide/SlpConf.html
+%%PORTDOCS%%%%DOCSDIR%%/html/UsersGuide/SlpReg.html
+%%PORTDOCS%%%%DOCSDIR%%/html/UsersGuide/UserFAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/html/UsersGuide/WhenToRunSlpd.html
+%%PORTDOCS%%%%DOCSDIR%%/html/UsersGuide/WhoShouldRead.html
+%%PORTDOCS%%%%DOCSDIR%%/html/UsersGuide/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/UsersGuide/smalllogo.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/faq.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/UsersGuide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/IntroductionToSLP
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/ProgrammersGuide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
