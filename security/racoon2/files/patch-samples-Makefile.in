@@ -1,0 +1,15 @@
+--- samples/Makefile.in-	Tue Jul  5 01:33:44 2005
++++ samples/Makefile.in	Tue Jul  5 01:33:57 2005
+@@ -17,9 +17,9 @@
+ 
+ install-startup-rc-d:
+ 	$(INSTALL) -d $(sysconfdir)/rc.d
+-	$(INSTALL) rc.d-iked $(sysconfdir)/rc.d/iked
+-	$(INSTALL) rc.d-kinkd $(sysconfdir)/rc.d/kinkd
+-	$(INSTALL) rc.d-spmd $(sysconfdir)/rc.d/spmd
++	$(INSTALL) rc.d-iked $(sysconfdir)/rc.d/iked.sh
++	$(INSTALL) rc.d-kinkd $(sysconfdir)/rc.d/kinkd.sh
++	$(INSTALL) rc.d-spmd $(sysconfdir)/rc.d/spmd.sh
+ 
+ install-startup-init-d:
+ 	$(INSTALL) -d $(sysconfdir)/init.d
