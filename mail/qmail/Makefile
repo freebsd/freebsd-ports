@@ -105,13 +105,6 @@ NO_PACKAGE=	djb's packaging license does not allow non-standard \
 PREFIX?=		/var/qmail
 QMAIL_VERSION?=		1.03
 
-.if defined(SLAVE_SMTP_AUTH_TLS) || defined(SLAVE_TLS)
-CFLAGS+=	-I${OPENSSLBASE}/include -L${OPENSSLBASE}/lib -DTLS
-.if defined(WITH_TLS_DEBUG)
-CFLAGS+=	-DDEBUG
-.endif
-.endif
-
 .if !defined(BARRIER_QMAILQUEUE_PATCH)
 OPTIONS+=	QMAILQUEUE_PATCH "run a QMAILQUEUE program" off
 .endif
@@ -181,8 +174,6 @@ OPTIONS+=	RELAYMAILFROM	"Open relay based on mailfrom" off \
 .endif
 .if !defined(SLAVE_LDAP)
 OPTIONS+=	RCDLINK "create rc.d/qmail.sh" on
-.else
-WITHOUT_RCDLINK=	yes
 .endif
 
 ALL_TARGET+=	default dot-qmail.5 qmail-control.5 qmail-getpw.8 \
@@ -314,6 +305,13 @@ USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if defined(SLAVE_SMTP_AUTH_TLS) || defined(SLAVE_TLS)
+CFLAGS+=	-I${OPENSSLBASE}/include -L${OPENSSLBASE}/lib -DTLS
+.if defined(WITH_TLS_DEBUG)
+CFLAGS+=	-DDEBUG
+.endif
+.endif
+
 .if defined(SLAVE_LDAP)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}2
 
@@ -328,6 +326,12 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-with_tls
 LDAPFLAGS+=	-D${param}
 .endif
 .endfor
+
+.if defined(WITH_EXTERNAL_TODO)
+PLIST_SUB+=	EXTERNAL_TODO=""
+.else
+PLIST_SUB+=	EXTERNAL_TODO="@comment "
+.endif
 
 .endif
 
@@ -391,7 +395,7 @@ PATCHFILES+=	qmail-date-localtime.patch:localtime
 WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT?=	509
 .endif
 
-.if defined(WITH_RCDLINK)
+.if defined(WITH_RCDLINK) && !defined(SLAVE_LDAP)
 PLIST_SUB+=	RCDLINK=""
 RCDLINK=
 .else
@@ -536,7 +540,7 @@ post-patch:
 		${WRKSRC}/hier.c
 
 do-configure:
-	@${SED} -e 's,%%RCDLINK%%,${RCDLINK2},g; s,%%LOCALBASE%%,${LOCALBASE},g' \
+	@${SED} -e 's,%%RCDLINK%%,${RCDLINK},g; s,%%LOCALBASE%%,${LOCALBASE},g' \
 		${FILESDIR}/pkg-install.in > ${WRKDIR}/pkg-install
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${CSH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
