@@ -4,13 +4,13 @@ include/vamos/body/Brake.h
 include/vamos/body/Car.h
 include/vamos/body/Clutch.h
 include/vamos/body/Contact_Point.h
+include/vamos/body/Dashboard.h
 include/vamos/body/Differential.h
 include/vamos/body/Drivetrain.h
 include/vamos/body/Engine.h
 include/vamos/body/Exerter.h
 include/vamos/body/Frame.h
 include/vamos/body/Fuel_Tank.h
-include/vamos/body/Gauge.h
 include/vamos/body/Gl_Car.h
 include/vamos/body/Particle.h
 include/vamos/body/Rigid_Body.h
@@ -18,22 +18,21 @@ include/vamos/body/Suspension.h
 include/vamos/body/Tire.h
 include/vamos/body/Transmission.h
 include/vamos/body/Wheel.h
-include/vamos/geometry/Ac3d.h
 include/vamos/geometry/Constants.h
 include/vamos/geometry/Conversions.h
-include/vamos/geometry/Gl_Texture_Image.h
-include/vamos/geometry/Handle.h
 include/vamos/geometry/Inertia_Tensor.h
 include/vamos/geometry/Interpolator.h
 include/vamos/geometry/Linear_Interpolator.h
 include/vamos/geometry/Material.h
-include/vamos/geometry/Sample.h
 include/vamos/geometry/Spline.h
-include/vamos/geometry/Texture_Image.h
 include/vamos/geometry/Three_Matrix.h
 include/vamos/geometry/Three_Vector.h
-include/vamos/geometry/Two_Point.h
+include/vamos/geometry/Two_Vector.h
 include/vamos/geometry/XML_Parser.h
+include/vamos/media/Ac3d.h
+include/vamos/media/Sample.h
+include/vamos/media/Texture_Image.h
+include/vamos/track/Gl_Road_Segment.h
 include/vamos/track/Road_Segment.h
 include/vamos/track/Strip_Track.h
 include/vamos/track/Track.h
@@ -48,6 +47,9 @@ lib/libvamos-body.so.0
 lib/libvamos-geometry.a
 lib/libvamos-geometry.so
 lib/libvamos-geometry.so.0
+lib/libvamos-media.a
+lib/libvamos-media.so
+lib/libvamos-media.so.0
 lib/libvamos-track.a
 lib/libvamos-track.so
 lib/libvamos-track.so.0
@@ -171,6 +173,7 @@ lib/libvamos-world.so.0
 @dirrm %%DATADIR%%
 @dirrm include/vamos/world
 @dirrm include/vamos/track
+@dirrm include/vamos/media
 @dirrm include/vamos/geometry
 @dirrm include/vamos/body
 @dirrm include/vamos

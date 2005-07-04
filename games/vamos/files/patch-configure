@@ -1,14 +1,6 @@
---- configure.orig	Tue Oct 12 11:11:25 2004
-+++ configure	Tue Nov  2 19:29:17 2004
-@@ -8722,7 +8722,6 @@
- fi
- 
- LIBS="$LIBS -L$x_libraries"
--CXXFLAGS="-gstabs+ -Wall -pedantic"
- 
- 
- ac_ext=cc
-@@ -11352,81 +11351,6 @@
+--- configure.orig	Thu Jun 30 10:58:52 2005
++++ configure	Sat Jul  2 13:59:13 2005
+@@ -11364,81 +11364,6 @@
      opengl_LIBS="$LIBS $x_suffix"
  
  
@@ -90,11 +82,11 @@
  echo "$as_me:$LINENO: checking for glutGetModifiers in -lglut" >&5
  echo $ECHO_N "checking for glutGetModifiers in -lglut... $ECHO_C" >&6
  if test "${ac_cv_lib_glut_glutGetModifiers+set}" = set; then
-@@ -11500,7 +11424,6 @@
+@@ -11512,7 +11437,6 @@
  
  fi
  
 -    fi
- 
-     LIBS="$LIBS $x_suffix"
  else
+ 
+ 

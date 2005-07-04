@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	vamos
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,6 +23,7 @@ LIB_DEPENDS=	cppunit-1.10.2:${PORTSDIR}/devel/cppunit \
 
 USE_GL=		yes
 USE_GETOPT_LONG=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -33,9 +34,9 @@ INSTALLS_SHLIB=	yes
 
 INFO=		vamos
 
-CPPFLAGS=	-I${LOCALBASE}/include/libpng -I${X11BASE}/include \
-		${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lusbhid -lGL -lGLU -lglut \
+CPPFLAGS=	-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include \
+		-I${X11BASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lusbhid \
 		${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
@@ -46,5 +47,10 @@ BROKEN=		"Does not compile on 4.x (port and dependencies need recent C++ compile
 
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/*.info*
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|^AM_CXXFLAGS|#AM_CXXFLAGS|g ; \
+		 s|-ldl||g'
 
 .include <bsd.port.post.mk>
