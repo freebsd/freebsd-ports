@@ -7,6 +7,7 @@
 
 PORTNAME=	edje
 PORTVERSION=	0.5.0.010
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
@@ -19,7 +20,8 @@ LIB_DEPENDS=	embryo.9:${PORTSDIR}/lang/embryo \
 		evas.1:${PORTSDIR}/graphics/evas \
 		ecore.1:${PORTSDIR}/x11/ecore
 
-USE_LIBTOOL_VER=	15
+USE_LIBTOOL_VER=	13
+USE_GCC=	3.4
 USE_GNOME=	gnomehack pkgconfig gnometarget
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
