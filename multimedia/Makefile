@@ -61,6 +61,7 @@
     SUBDIR += gxmms
     SUBDIR += handbrake
     SUBDIR += hayes
+    SUBDIR += istanbul
     SUBDIR += kaffeine
     SUBDIR += kaffeine-mozilla
     SUBDIR += kdemultimedia3
