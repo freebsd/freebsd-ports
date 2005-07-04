@@ -76,10 +76,12 @@ share/ss/ct_c.sed
 %%NLS%%share/locale/es/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/it/LC_MESSAGES/e2fsprogs.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/e2fsprogs.mo
+%%NLS%%share/locale/rw/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/e2fsprogs.mo
-%%NLS%%@unexec for i in cs de es fr it pl sv tr ; do rmdir -p %D/share/locale/$i/LC_MESSAGES 2>/dev/null || true ; done
+%%NLS%%@unexec for i in cs de es fr it nl pl rw sv tr ; do rmdir -p %D/share/locale/$i/LC_MESSAGES 2>/dev/null || true ; done
 @dirrm share/ss
 @dirrm share/et
 @dirrm include/uuid
