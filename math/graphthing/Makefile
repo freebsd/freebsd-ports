@@ -7,26 +7,31 @@
 #
 
 PORTNAME=	graphthing
-PORTVERSION=	0.9.5
+PORTVERSION=	1.0
 CATEGORIES=	math
 MASTER_SITES=	http://graph.seul.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool that allows you to create, manipulate and study graphs
 
-LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
+LIB_DEPENDS=	wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
 
 USE_BZIP2=	yes
-USE_GNOME=	gnometarget gtk12
+USE_GNOME=	gnometarget gtk20
 USE_BISON=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--with-wx-config=${X11BASE}/bin/wxgtk2-2.6-config
 
 PLIST_FILES=	bin/graphthing bin/gt
 
-post-patch:
-	${REINPLACE_CMD} -e "s,\/usr\/include\/gtk-1.2\/gdk\/gdkkeysyms.h,," \
-		${WRKSRC}/src/depend.1
+CPPFLAGS=	${PTHREAD_CFLAGS}
+LDFLAGS=	${PTHREAD_LIBS}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/graphthing ${PREFIX}/bin
+	${LN} -sf graphthing ${PREFIX}/bin/gt
 
 .include <bsd.port.mk>
