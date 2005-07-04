@@ -21,6 +21,7 @@ lib/cycle/setup.py
 @dirrm %%DATADIR%%/icons/large
 %%DATADIR%%/icons/cycle.xpm
 @dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
 share/locale/cs/LC_MESSAGES/cycle.mo
 share/locale/de/LC_MESSAGES/cycle.mo
 share/locale/ru/LC_MESSAGES/cycle.mo
