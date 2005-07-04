@@ -90,6 +90,9 @@ MODOPT=		camlp4o camlp4r ocamlc ocamldep ocamldoc ocamllex ocamlopt
 
 .include <bsd.port.pre.mk>
 
+.if ${MACHINE_ARCH} == sparc64
+BROKEN=	ocamlc.opt seg-faults on ${MACHINE_ARCH}, please try to fix
+.endif
 PLIST_SUB+=	PROF=""
 
 post-configure:
@@ -99,9 +102,6 @@ post-configure:
 		-e 's|(NATIVECCCOMPOPTS[[:space:]]*=.*)|\1 ${CFLAGS}|' \
 		-e 's|gcc|${CC}|g'	\
 		${WRKSRC}/config/Makefile
-.if ${MACHINE_ARCH} == sparc64
-        @${REINPLACE_CMD} -e 's,-O2,-O,g' ${WRKSRC}/config/Makefile
-.endif
 # INSTALL* safeness (which preserves the correct permissions despite
 # user's umask(1)
 	@${FIND} ${WRKDIR} -type f -name Makefile -print0 | \
