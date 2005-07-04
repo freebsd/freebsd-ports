@@ -1,0 +1,23 @@
+bin/istanbul
+%%PYTHON_SITELIBDIR%%/istanbul/__init__.py
+%%PYTHON_SITELIBDIR%%/istanbul/configure/__init__.py
+%%PYTHON_SITELIBDIR%%/istanbul/configure/config.py
+%%PYTHON_SITELIBDIR%%/istanbul/extern/__init__.py
+%%PYTHON_SITELIBDIR%%/istanbul/extern/pytrayicon/__init__.py
+%%PYTHON_SITELIBDIR%%/istanbul/extern/pytrayicon/pytrayicon.so
+%%PYTHON_SITELIBDIR%%/istanbul/main/__init__.py
+%%PYTHON_SITELIBDIR%%/istanbul/main/main.py
+%%PYTHON_SITELIBDIR%%/istanbul/main/prefs.py
+share/applications/istanbul.desktop
+%%DATADIR%%/glade/prefs.glade
+share/pixmaps/istanbul.png
+@dirrm share/istanbul/glade
+@dirrm share/istanbul
+@dirrm %%PYTHON_SITELIBDIR%%/istanbul/main
+@dirrm %%PYTHON_SITELIBDIR%%/istanbul/extern/pytrayicon
+@dirrm %%PYTHON_SITELIBDIR%%/istanbul/extern
+@dirrm %%PYTHON_SITELIBDIR%%/istanbul/configure
+@dirrm %%PYTHON_SITELIBDIR%%/istanbul
+@unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || true
+@unexec rmdir %D/%%PYTHON_LIBDIR%% 2>/dev/null || true
+@unexec rmdir %D/share/applications 2>/dev/null || true
