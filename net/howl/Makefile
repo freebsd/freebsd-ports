@@ -14,6 +14,7 @@ COMMENT=	Zeroconf/Bonjour(tm) implementation
 
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig
+USE_GETOPT_LONG=yes
 USE_LIBTOOL_VER=15
 USE_RC_SUBR=	yes
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
