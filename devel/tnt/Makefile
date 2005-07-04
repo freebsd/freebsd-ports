@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tnt
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.6
 CATEGORIES=	devel math
 MASTER_SITES=	http://math.nist.gov/tnt/
-DISTNAME=	${PORTNAME}_121
+DISTNAME=	${PORTNAME}_126
 .ifndef NOPORTDOCS
 DISTFILES=${DISTNAME}${EXTRACT_SUFX} tnt120doc.zip
 .endif
@@ -19,9 +19,14 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Template Numerical Toolkit
 
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+
 USE_ZIP=	yes
 NO_BUILD=	yes
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+
+.ifndef NOPORTDOCS
+PORTDOCS=	*
+.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/include/tnt
