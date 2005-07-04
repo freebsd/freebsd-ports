@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libetpan
-PORTVERSION=	0.36
+PORTVERSION=	0.37
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mail library
 
 USE_ICONV=	yes
-USE_OPENSSL=	yes
 USE_LIBTOOL_VER=	15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -24,5 +23,13 @@ INSTALLS_SHLIB=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+.if defined(WITH_GNUTLS)
+LIB_DEPENDS+=	gnutls.12:${PORTSDIR}/security/gnutls
+CONFIGURE_ARGS+=	--with-gnutls
+.else
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=	--without-gnutls
+.endif
 
 .include <bsd.port.mk>
