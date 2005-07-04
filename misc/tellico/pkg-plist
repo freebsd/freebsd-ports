@@ -96,6 +96,7 @@ share/icons/hicolor/48x48/mimetypes/tellico.png
 share/icons/hicolor/64x64/apps/tellico.png
 share/icons/hicolor/64x64/mimetypes/tellico.png
 share/locale/bg/LC_MESSAGES/tellico.mo
+share/locale/ca/LC_MESSAGES/tellico.mo
 share/locale/cs/LC_MESSAGES/tellico.mo
 share/locale/de/LC_MESSAGES/tellico.mo
 share/locale/ee/LC_MESSAGES/tellico.mo
@@ -120,6 +121,8 @@ share/mimelnk/application/x-tellico.desktop
 @unexec rmdir %D/share/locale/fi 2>/dev/null || true
 @unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/cs 2>/dev/null || true
+@unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ca 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/64x64/mimetypes 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/64x64/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/64x64 2>/dev/null || true
