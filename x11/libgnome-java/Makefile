@@ -38,6 +38,10 @@ PLIST_SUB=		GNOME_API_VERSION=${GNOME_API_VERSION} PORTNAME=${PORTNAME}
 
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
+post-extract:
+	@${REINPLACE_CMD} -e 's|||g' \
+		${WRKSRC}/gnome2-java.pc.in
+
 do-install:
 	${MKDIR} ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/.libs/libgnomejni-${GNOME_API_VERSION}.so \
