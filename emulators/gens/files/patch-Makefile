@@ -1,0 +1,26 @@
+--- Makefile.orig	Wed Jun 22 16:18:29 2005
++++ Makefile	Wed Jun 22 16:19:44 2005
+@@ -59,7 +59,7 @@
+ glade/interface.o\
+ glade/support.o
+ 
+-GTKCFLAGS=-DWITH_GTK -DGTK_DISABLE_DEPRECATED `pkg-config gtk+-2.0 --cflags`
++GTKCFLAGS=-DWITH_GTK `pkg-config gtk+-2.0 --cflags`
+ 
+ 
+ #uncomment this if you want to enable GTK support (default)
+@@ -73,12 +73,12 @@
+ GTKLDFLAGS=`pkg-config gtk+-2.0 --libs`
+ 
+ #uncomment this if you want to enable GTK support (default)
+-LDFLAGS=-lm `sdl-config --libs` -lz -lstdc++ -s $(GTKLDFLAGS)
++LDFLAGS=-lm `sdl-config --libs` -lz -lstdc++ -s $(GTKLDFLAGS) %%LDFLAGS%%
+ #uncomment this if you want to disable GTK support
+ #LDFLAGS=-lm `sdl-config --libs` -lz -lstdc++ -s
+ 
+ 
+-NASMFLAGS=-D__GCC2 -f elf -O3
++NASMFLAGS=-D__GCC2 -f elf
+ CC=gcc
+ CXX=g++
+ TARGET=gens

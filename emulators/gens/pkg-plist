@@ -1,0 +1,20 @@
+bin/gens
+%%DATADIR%%/gens
+%%DATADIR%%/resource/Gens2.ico
+%%DATADIR%%/resource/bitmap1.bmp
+%%DATADIR%%/resource/bmp00000.bmp
+%%DATADIR%%/resource/bmp00001.bmp
+%%DATADIR%%/resource/bmp00002.bmp
+%%DATADIR%%/resource/bmp00003.bmp
+%%DATADIR%%/resource/bmp00004.bmp
+%%DATADIR%%/resource/bmp00005.bmp
+%%DATADIR%%/resource/bmp00006.bmp
+%%DATADIR%%/resource/gens.ico
+%%DATADIR%%/resource/gens_big.bmp
+%%DATADIR%%/resource/gens_small.bmp
+%%DATADIR%%/resource/sonic.ico
+%%DATADIR%%/resource/sonic2.ico
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/resource
+@dirrm %%DATADIR%%
