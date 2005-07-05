@@ -1,0 +1,24 @@
+bin/metromap
+share/locale/ru/LC_MESSAGES/metromap.mo
+%%DATADIR%%/data/Berlin/Metro.ini
+%%DATADIR%%/data/KievUkr/Metro.ini
+%%DATADIR%%/data/London/Metro.ini
+%%DATADIR%%/data/Metro.ini
+%%DATADIR%%/data/Moscow/Metro.ini
+%%DATADIR%%/data/Peterburg/Metro.ini
+%%DATADIR%%/modules/FindPath.py
+%%DATADIR%%/modules/FindPath.pyc
+%%DATADIR%%/modules/Interface.py
+%%DATADIR%%/modules/Interface.pyc
+%%DATADIR%%/modules/MapDisplay.py
+%%DATADIR%%/modules/MapDisplay.pyc
+%%DATADIR%%/modules/ReadMap.py
+%%DATADIR%%/modules/ReadMap.pyc
+@dirrm %%DATADIR%%/data/Berlin
+@dirrm %%DATADIR%%/data/KievUkr
+@dirrm %%DATADIR%%/data/London
+@dirrm %%DATADIR%%/data/Moscow
+@dirrm %%DATADIR%%/data/Peterburg
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/modules
+@dirrm %%DATADIR%%
