@@ -5917,6 +5917,7 @@ metapixel	ports/graphics/metapixel
 metasploit	ports/security/metasploit
 metis		ports/math/metis
 metis-edf	ports/math/metis-edf
+metromap	ports/misc/metromap
 mew		ports/mail/mew
 mew-emacs20	ports/mail/mew-emacs20
 mew-mule	ports/mail/mew-mule
