@@ -9,7 +9,7 @@
 PORTNAME=	gcc
 PORTVERSION=	3.4.5
 PORTREVISION=	20050607
-CATEGORIES=	lang java
+CATEGORIES=	lang
 VERSIONSTRING=	3.4-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -17,7 +17,6 @@ DISTFILES=	\
 		gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g77-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-java-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
 
@@ -42,10 +41,6 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
-.endif
-
-.if ${ARCH} == amd64  ||  ${ARCH} == ia64  ||  ${ARCH} == sparc64
-WITHOUT_LIBJAVA=	yes
 .endif
 
 .if ${ARCH} == alpha
@@ -80,30 +75,11 @@ MAN1=		cpp${SUFFIX}.1 \
 		g++${SUFFIX}.1 \
 		g77-${SUFFIX}.1 \
 		gcc${SUFFIX}.1 \
-		gcov${SUFFIX}.1 \
-		gcj${SUFFIX}.1 \
-		gcjh${SUFFIX}.1 \
-		gij${SUFFIX}.1 \
-		grepjar${SUFFIX}.1 \
-		jar${SUFFIX}.1 \
-		jcf-dump${SUFFIX}.1 \
-		jv-scan${SUFFIX}.1 jv-convert${SUFFIX}.1 \
-		rmic${SUFFIX}.1 rmiregistry${SUFFIX}.1
-INFO=		cpp cppinternals g77 gcc gccinstall gccint gcj fastjar
-
-.if defined(WITHOUT_LIBJAVA)
-CONFIGURE_ARGS+=	--disable-libgcj
-PLIST_SUB+=	LIBJAVA="@comment "
-.else
-EXTRA_LIBS+=	lib-org-xml-sax lib-org-w3c-dom libffi libgcj
-PLIST_SUB+=	LIBJAVA=""
-.endif
+		gcov${SUFFIX}.1
+INFO=		cpp cppinternals g77 gcc gccinstall gccint
 
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
-.if defined(WITHOUT_LIBJAVA)
-	@${ECHO_MSG} "(without libgcj)"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
@@ -128,7 +104,7 @@ post-install:
 	for mp in ${_MANPAGES}; do \
 	  ${TEST} -e $${mp} || ${TOUCH} ${TOUCH_FLAGS} $${mp}; \
 	done
-.for f in c++ g77 gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
+.for f in c++ g77 gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++
 	# gij and jv-convert, for example, are not built on all platforms.
 	if [ -e ${PREFIX}/bin/${f}${SUFFIX} ]; then \
 	  ${STRIP_CMD} ${PREFIX}/bin/${f}${SUFFIX}; \
@@ -150,7 +126,7 @@ post-install:
 	         ${PREFIX}/man/man7/gfdl.7 ${PREFIX}/man/man7/gpl.7
 	# Add target libraries and include files to packaging list.
 	${RM} -f ${WRKDIR}/PLIST.lib
-.for d in ${TARGLIB:S/^${PREFIX}\///} include/gcj include/gnu include/java include/javax
+.for d in ${TARGLIB:S/^${PREFIX}\///}
 	cd ${PREFIX} ; if [ -d $d ]; then \
 	    ${FIND} $d -type f -o -type l >>${WRKDIR}/PLIST.lib ;\
 	    ${FIND} $d -type d | ${SORT} -r \
