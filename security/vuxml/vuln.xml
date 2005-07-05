@@ -32,6 +32,35 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b2a1a3b5-ed95-11d9-8310-0001020eed82">
+    <topic>net-snmp -- remote DoS vulnerability</topic>
+    <affects>
+      <package>
+	<name>net-snmp</name>
+	<range><lt>5.2.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Net-SNMP release announcement reports:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=net-snmp-announce&amp;m=112059518426328">
+	  <p>A security vulnerability has been found in Net-SNMP
+	    releases that could allow a denial of service attack
+	    against Net-SNMP agent's which have opened a stream based
+	    protocol (EG, TCP but not UDP; it should be noted that
+	    Net-SNMP does not by default open a TCP port).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="sdzmt5sul0.fsf@wes.hardakers.net">http://marc.theaimsgroup.com/?l=net-snmp-announce&amp;m=112059518426328</mlist>
+    </references>
+    <dates>
+      <discovery>2005-07-02</discovery>
+      <entry>2005-07-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1cf00643-ed8a-11d9-8310-0001020eed82">
     <topic>cacti -- multiple vulnerabilities</topic>
     <affects>
