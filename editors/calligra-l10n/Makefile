@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	koffice-i18n
-PORTVERSION=	1.3.5
+PORTVERSION=	1.4.0
 CATEGORIES=	misc kde
 MASTER_SITES=	# none
 DISTFILES=	# none

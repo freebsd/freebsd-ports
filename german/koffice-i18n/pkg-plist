@@ -5,6 +5,13 @@ share/doc/HTML/de/kchart/index.docbook
 share/doc/HTML/de/kformula/common
 share/doc/HTML/de/kformula/index.cache.bz2
 share/doc/HTML/de/kformula/index.docbook
+share/doc/HTML/de/kivio/common
+share/doc/HTML/de/kivio/credits.docbook
+share/doc/HTML/de/kivio/index.cache.bz2
+share/doc/HTML/de/kivio/index.docbook
+share/doc/HTML/de/kivio/introduction.docbook
+share/doc/HTML/de/kivio/usage.docbook
+share/doc/HTML/de/kivio/working.docbook
 share/doc/HTML/de/koffice/common
 share/doc/HTML/de/koffice/index.cache.bz2
 share/doc/HTML/de/koffice/index.docbook
@@ -138,7 +145,6 @@ share/doc/HTML/de/kword/kparts.docbook
 share/doc/HTML/de/kword/linkdlg.png
 share/doc/HTML/de/kword/listdepth1.png
 share/doc/HTML/de/kword/listdepth2.png
-share/doc/HTML/de/kword/listdepth3.png
 share/doc/HTML/de/kword/lists.docbook
 share/doc/HTML/de/kword/ltab2.png
 share/doc/HTML/de/kword/mailmerge.docbook
@@ -166,7 +172,6 @@ share/doc/HTML/de/kword/screen.png
 share/doc/HTML/de/kword/spelldlg.png
 share/doc/HTML/de/kword/storeprint.docbook
 share/doc/HTML/de/kword/styldlg1.png
-share/doc/HTML/de/kword/styldlg2.png
 share/doc/HTML/de/kword/styles.docbook
 share/doc/HTML/de/kword/table.docbook
 share/doc/HTML/de/kword/tableprop1.png
@@ -188,11 +193,9 @@ share/doc/HTML/de/kword/wpfmtpg3.png
 share/doc/HTML/de/thesaurus/common
 share/doc/HTML/de/thesaurus/index.cache.bz2
 share/doc/HTML/de/thesaurus/index.docbook
-share/locale/de/LC_MESSAGES/csvfilter.mo
 share/locale/de/LC_MESSAGES/desktop_koffice.mo
 share/locale/de/LC_MESSAGES/example.mo
 share/locale/de/LC_MESSAGES/karbon.mo
-share/locale/de/LC_MESSAGES/karbonepsfilter.mo
 share/locale/de/LC_MESSAGES/kchart.mo
 share/locale/de/LC_MESSAGES/kdgantt.mo
 share/locale/de/LC_MESSAGES/kexi.mo
@@ -200,45 +203,24 @@ share/locale/de/LC_MESSAGES/kfile_koffice.mo
 share/locale/de/LC_MESSAGES/kfile_ooo.mo
 share/locale/de/LC_MESSAGES/kformdesigner.mo
 share/locale/de/LC_MESSAGES/kformula.mo
-share/locale/de/LC_MESSAGES/kformulalatexfilter.mo
-share/locale/de/LC_MESSAGES/kformulamathmlfilter.mo
-share/locale/de/LC_MESSAGES/kformulapngfilter.mo
 share/locale/de/LC_MESSAGES/kivio.mo
 share/locale/de/LC_MESSAGES/koconverter.mo
-share/locale/de/LC_MESSAGES/kocryptfilter.mo
 share/locale/de/LC_MESSAGES/koffice.mo
+share/locale/de/LC_MESSAGES/kofficefilters.mo
 share/locale/de/LC_MESSAGES/koshell.mo
 share/locale/de/LC_MESSAGES/kounavail.mo
 share/locale/de/LC_MESSAGES/kplato.mo
 share/locale/de/LC_MESSAGES/kpresenter.mo
-share/locale/de/LC_MESSAGES/kpresenterkwordfilter.mo
 share/locale/de/LC_MESSAGES/krita.mo
 share/locale/de/LC_MESSAGES/kscan_plugin.mo
+share/locale/de/LC_MESSAGES/kscreenshot_plugin.mo
 share/locale/de/LC_MESSAGES/kspread.mo
 share/locale/de/LC_MESSAGES/kspreadcalc_calc.mo
-share/locale/de/LC_MESSAGES/kspreaddbasefilter.mo
-share/locale/de/LC_MESSAGES/kspreadexcelimportfilter.mo
-share/locale/de/LC_MESSAGES/kspreadlatexexportfilter.mo
-share/locale/de/LC_MESSAGES/kspreadopencalcfilter.mo
-share/locale/de/LC_MESSAGES/kspreadqprofilter.mo
+share/locale/de/LC_MESSAGES/kspreadinsertcalendar.mo
 share/locale/de/LC_MESSAGES/kthesaurus.mo
 share/locale/de/LC_MESSAGES/kugar.mo
 share/locale/de/LC_MESSAGES/kword.mo
-share/locale/de/LC_MESSAGES/kwordabiwordfilter.mo
-share/locale/de/LC_MESSAGES/kwordasciifilter.mo
-share/locale/de/LC_MESSAGES/kwordhtmlexportfilter.mo
-share/locale/de/LC_MESSAGES/kwordhtmlimportfilter.mo
-share/locale/de/LC_MESSAGES/kwordlatexexportfilter.mo
-share/locale/de/LC_MESSAGES/kwordlatexfilter.mo
-share/locale/de/LC_MESSAGES/kwordlateximportfilter.mo
-share/locale/de/LC_MESSAGES/kwordmswordfilter.mo
-share/locale/de/LC_MESSAGES/kwordmswritefilter.mo
-share/locale/de/LC_MESSAGES/kwordoowriterfilter.mo
-share/locale/de/LC_MESSAGES/kwordpdfimport.mo
-share/locale/de/LC_MESSAGES/olefilterswinword97filter.mo
 share/locale/de/LC_MESSAGES/thesaurus_tool.mo
-share/locale/de/LC_MESSAGES/xsltexportfilter.mo
-share/locale/de/LC_MESSAGES/xsltimportfilter.mo
 @dirrm share/doc/HTML/de/thesaurus
 @dirrm share/doc/HTML/de/kword
 @dirrm share/doc/HTML/de/kugar
@@ -246,6 +228,7 @@ share/locale/de/LC_MESSAGES/xsltimportfilter.mo
 @dirrm share/doc/HTML/de/kpresenter
 @dirrm share/doc/HTML/de/koshell
 @dirrm share/doc/HTML/de/koffice
+@dirrm share/doc/HTML/de/kivio
 @dirrm share/doc/HTML/de/kformula
 @dirrm share/doc/HTML/de/kchart
 @dirrm share/apps/koffice/autocorrect
