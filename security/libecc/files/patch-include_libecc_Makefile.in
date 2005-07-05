@@ -1,0 +1,11 @@
+--- include/libecc/Makefile.in.orig	Mon Jul  4 01:05:30 2005
++++ include/libecc/Makefile.in	Mon Jul  4 01:06:20 2005
+@@ -206,7 +206,7 @@
+ 	polynomial.h \
+ 	square.hcc \
+ 	fieldmath.h
+-
++EXTRA_HEADERS = $(libecc_HEADERS)
+ 
+ # point.h
+ 
