@@ -17,4 +17,5 @@ share/locale/nl/LC_MESSAGES/vorbis-tools.mo
 share/locale/ro/LC_MESSAGES/vorbis-tools.mo
 share/locale/ru/LC_MESSAGES/vorbis-tools.mo
 share/locale/sv/LC_MESSAGES/vorbis-tools.mo
+share/locale/uk/LC_MESSAGES/vorbis-tools.mo
 @dirrm share/examples/vorbis-tools
