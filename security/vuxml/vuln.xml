@@ -32,6 +32,69 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1cf00643-ed8a-11d9-8310-0001020eed82">
+    <topic>cacti -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cacti</name>
+	<range><lt>0.8.6f</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefan Esser reports:</p>
+	<blockquote cite="http://www.hardened-php.net/advisory-032005.php">
+	  <p>Wrongly implemented user input filters lead to multiple
+	    SQL Injection vulnerabilities which can lead f.e. to
+	    disclosure of the admin password hash.</p>
+	</blockquote>
+	<blockquote cite="http://www.hardened-php.net/advisory-042005.php">
+	  <p>Wrongly implemented user input filters allows injection
+	    of user input into executed commandline.</p>
+	  <p>Alberto Trivero posted his Remote Command Execution
+	    Exploit for Cacti &lt;= 0.8.6d to Bugtraq on the 22th
+	    June. Having analysed his bug we come to the conclusion,
+	    that the malfunctioning input filters, which were already
+	    mentioned in the previous advisory are also responsible
+	    for this bug still being exploitable.</p>
+	</blockquote>
+	<blockquote cite="http://www.hardened-php.net/advisory-052005.php">
+	  <p>A HTTP headers bypass switch can also be used to
+	    completely bypass the authentification system of Cacti. As
+	    admin it is possible to execute shell commands with the
+	    permission of the webserver.</p>
+	  <p>While looking at the source of Cacti a HTTP headers
+	    bypass switch was discovered, that also switches off a
+	    call to <code>session_start()</code> and the manual
+	    application of <code>addslashes()</code> in case of
+	    <code>magic_quotes_gpc=Off</code>.</p>
+	  <p>When register_globals is turned on* an attacker can use
+	    this switch to disables Cacti's use of PHP's session
+	    support and therefore supply the session variables on his
+	    own through f.e.  the URL. Additionally using the switch
+	    renders several SQL statements vulnerable to SQL
+	    Injections attacks, when magic_quotes_gpc is turned off,
+	    which is the recommended setting.</p>
+	  <p>Logged in as an admin it is possible to issue shell
+	    commands.</p>
+	  <p>(*) register_globals is turned off by default since PHP
+	    4.2 but is activated on most servers because of older
+	    scripts requiring it.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="007301c57753$5ab17f60$0100a8c0@alberto">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111954136315248</mlist>
+      <url>http://www.hardened-php.net/advisory-032005.php</url>
+      <url>http://www.hardened-php.net/advisory-042005.php</url>
+      <url>http://www.hardened-php.net/advisory-052005.php</url>
+    </references>
+    <dates>
+      <discovery>2005-06-22</discovery>
+      <entry>2005-07-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dca0a345-ed81-11d9-8310-0001020eed82">
     <topic>wordpress -- multiple vulnerabilities</topic>
     <affects>
