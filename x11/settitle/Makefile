@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	settitle
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/settitle/ \
-		ftp://ftp.megamirror.com/pub/ugh/unix/settitle/ \
-		http://ftp.megamirror.com/pub/ugh/unix/settitle/
+MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/settitle/
 
 MAINTAINER=	andrew@ugh.net.au
 COMMENT=	A program for setting the title of terminal emulator windows
