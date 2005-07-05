@@ -29,6 +29,7 @@
     SUBDIR += gcube
     SUBDIR += generator
     SUBDIR += generator-cbiere
+    SUBDIR += gens
     SUBDIR += gngb
     SUBDIR += gnuboy
     SUBDIR += grustibus

@@ -1,0 +1,26 @@
+#!/bin/sh
+# gens - gens 2.12a wrapper script
+#
+# 2005 Travis Poppe
+
+USERDIR=$HOME/.gens
+
+if [ -d $USERDIR ]; then
+	echo "gens working directory appears to be $USERDIR/"
+	echo ""
+
+	cd $USERDIR
+	./gens $*
+	exit
+fi
+
+mkdir $USERDIR
+mkdir $USERDIR/resource
+ln -s %%PREFIX%%/share/gens/gens $USERDIR/gens
+ln -s %%PREFIX%%/share/gens/resource/* $USERDIR/resource
+
+echo "Installed gens to $USERDIR/"
+echo ""
+
+cd $USERDIR
+./gens $*

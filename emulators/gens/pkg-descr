@@ -1,0 +1,14 @@
+A Sega Genesis/CD/32X emulator that uses the SDL library and has a GTK 
+user interface.
+
+Note: This is not the latest version of gens available for *nix. The
+latest version makes use of the Linux-specific header file 'linux/cdrom.h' 
+which causes the build to fail.
+
+Patches to get the latest version working on FreeBSD are more than 
+welcome!
+
+WWW: http://gens.consolemul.com/
+
+- Travis Poppe
+tlp@liquidx.org
