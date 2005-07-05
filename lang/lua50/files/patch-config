@@ -1,0 +1,11 @@
+--- config.orig	Fri Apr 11 16:00:41 2003
++++ config	Wed Jul  6 00:09:46 2005
+@@ -6,7 +6,7 @@
+ LOADLIB=
+ DLLIB=
+ NUMBER=
+-POPEN=
++POPEN= -DUSE_POPEN=1
+ TMPNAM=
+ DEGREES=
+ USERCONF=
