@@ -1,8 +1,11 @@
 include/libecc/bitset.h
-include/libecc/config.h
 include/libecc/debug.h
+include/libecc/fieldmath.h
+include/libecc/polynomial.h
 include/libecc/rng.h
 include/libecc/sha.h
-@dirrm include/libecc
+include/libecc/square.hcc
 lib/libecc.so
-lib/libecc.so.3
+lib/libecc.so.11
+
+@dirrm include/libecc

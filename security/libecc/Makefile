@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libecc
-PORTVERSION=	0.3.0
+PORTVERSION=	0.11.0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,9 +15,14 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Elliptic Curve Library
 
-USE_GCC=	3.3
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+
+USE_GCC=	3.3+
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+
+CONFIGURE_ENV+=	LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include"
 
 .include <bsd.port.pre.mk>
 
