@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	dirdiff
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	2.1
+PORTREVISION=	2
 CATEGORIES=	sysutils tcl84 tk84
-MASTER_SITES=	ftp://samba.org/pub/paulus/
+MASTER_SITES=	ftp://ftp.samba.org/pub/paulus/
 
 MAINTAINER=	grog@FreeBSD.Org
 COMMENT=	A graphical diff tool
