@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cacti
-PORTVERSION=	0.8.6e
-PORTREVISION=	1
+PORTVERSION=	0.8.6f
 CATEGORIES=	net www
 MASTER_SITES=	http://www.cacti.net/downloads/
 
