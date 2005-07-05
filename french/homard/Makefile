@@ -7,7 +7,7 @@
 
 PORTNAME=	homard
 PORTVERSION=	7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	french cad linux python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.${ARCH}
@@ -35,9 +35,9 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME:U}
 
 LHOMARDDIR?=	apps/${PORTNAME}
-ASTER_VER=	7.4
+ASTER_VER=	8.1
 vaster=		STA${ASTER_VER}
-ASTER_TOOLS=	${LOCALBASE}/aster/outils
+ASTER_TOOLS=	${LOCALBASE}/aster/${vaster}/outils
 HOMARDDIR=	${PREFIX}/${LHOMARDDIR}
 AHPY=		aster_homard_py
 AHPY5=		aster_homard_V5x_py
