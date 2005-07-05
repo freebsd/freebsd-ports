@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tk
-PORTVERSION=	8.4.10
-PORTREVISION=	1
+PORTVERSION=	8.4.11
 PORTEPOCH=	2
 CATEGORIES=	x11-toolkits tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -17,8 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical toolkit for TCL
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${TCL84_PORT}:extract
-LIB_DEPENDS=	tcl84.1:${PORTSDIR}/${TCL84_PORT}
+LIB_DEPENDS=	tcl84:${PORTSDIR}/${TCL84_PORT}
 
 LATEST_LINK=	tk84
 USE_XLIB=	yes
@@ -352,8 +350,6 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 .endif
 
 TKBASE?=	${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}
-TCLBASE!=	( cd ${PORTSDIR}/${TCL84_PORT} && make -V TCLBASE )
-TCLWRK!=	( cd ${PORTSDIR}/${TCL84_PORT} && make -V WRKDIR )
 
 pre-everything::
 	@if ${TEST} -e "${NONEXISTENT}"; then ${ECHO_MSG} "=== Aborted, please remove ${NONEXISTENT}"; exit 1; fi
@@ -366,9 +362,6 @@ post-configure:
 	${REINPLACE_CMD} \
 		-e 's|${WRKDIRPREFIX}${.CURDIR}|$${WRKDIRPREFIX}${TKBASE}|' \
 		${WRKSRC}/tkConfig.sh
-	${REINPLACE_CMD} \
-		-e 's|$${WRKDIRPREFIX}${TCLBASE}/work|${TCLWRK}|' \
-		${WRKSRC}/Makefile
 .if defined(WITHOUT_TK84_MAN)
 	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
 		${WRKSRC}/Makefile
