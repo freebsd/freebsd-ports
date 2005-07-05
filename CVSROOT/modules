@@ -2695,6 +2695,7 @@ genius		ports/deskutils/genius
 genmenu		ports/x11-wm/genmenu
 genpak		ports/biology/genpak
 genproto	ports/devel/genproto
+gens		ports/emulators/gens
 gensig		ports/mail/gensig
 gentium		ports/x11-fonts/gentium
 gentoo		ports/x11-fm/gentoo
