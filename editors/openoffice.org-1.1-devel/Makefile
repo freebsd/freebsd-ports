@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	1.1.4.${SNAPDATE}
+PORTVERSION=	1.1.5.${SNAPDATE}
 CATEGORIES+=	editors
 MASTER_SITES+=	ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%,maho/openoffice.org/&,}:moz \
@@ -81,9 +81,9 @@ L10NHELPS=	helpcontent_01_unix.tgz helpcontent_07_unix.tgz \
 .endif
 
 CODELINE=		645
-RELEASE_NR=		1.1.4
-MILESTONE=		56
-SNAPDATE=		20050630
+RELEASE_NR=		1.1.5
+MILESTONE=		57
+SNAPDATE=		20050705
 INSTALLATION_BASEDIR=   OpenOffice.org${RELEASE_NR}
 EXECBASE=               openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org1.1
