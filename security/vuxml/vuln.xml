@@ -32,6 +32,72 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dca0a345-ed81-11d9-8310-0001020eed82">
+    <topic>wordpress -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>1.5.1.3,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GulfTech Security Research reports:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112006967221438">
+	  <p>There are a number of vulnerabilities in WordPress that
+	    may allow an attacker to ultimately run arbitrary code on
+	    the vulnerable system. These vulnerabilities include SQL
+	    Injection, Cross Site Scripting, and also issues that may
+	    aid an attacker in social engineering.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2107</cvename>
+      <cvename>CAN-2005-2108</cvename>
+      <cvename>CAN-2005-2109</cvename>
+      <cvename>CAN-2005-2110</cvename>
+      <mlist msgid="42C2BE6E.2050408@gulftech.org">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112006967221438</mlist>
+    </references>
+    <dates>
+      <discovery>2005-06-28</discovery>
+      <entry>2005-07-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a4955b32-ed84-11d9-8310-0001020eed82">
+    <topic>wordpress -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>1.5.1.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Gentoo Linux Security Advisory reports:</p>
+	<blockquote cite="http://www.gentoo.org/security/en/glsa/glsa-200506-04.xml">
+	  <p>Due to a lack of input validation, WordPress is
+	    vulnerable to SQL injection and XSS attacks.</p>
+	  <p>An attacker could use the SQL injection vulnerabilites to
+	    gain information from the database. Furthermore the
+	    cross-site scripting issues give an attacker the ability
+	    to inject and execute malicious script code or to steal
+	    cookie-based authentication credentials, potentially
+	    compromising the victim's browser.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1810</cvename>
+      <url>http://www.gentoo.org/security/en/glsa/glsa-200506-04.xml</url>
+    </references>
+    <dates>
+      <discovery>2005-04-12</discovery>
+      <entry>2005-07-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4afacca1-eb9d-11d9-a8bd-000cf18bbe54">
     <topic>phpbb -- remote PHP code execution vulnerability</topic>
     <affects>
@@ -182,10 +248,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <cvename>CAN-2005-0953</cvename>
       <cvename>CAN-2005-1260</cvename>
       <freebsdsa>SA-05:14.bzip2</freebsdsa>
+      <url>http://scary.beasts.org/security/CESA-2005-002.txt</url>
     </references>
     <dates>
       <discovery>2005-03-30</discovery>
       <entry>2005-06-29</entry>
+      <modified>2005-07-05</modified>
     </dates>
   </vuln>
 
