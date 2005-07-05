@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	transcode
-DISTVERSION=	1.0.0beta3
-PORTREVISION=	2
+DISTVERSION=	1.0.0rc1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dl.fkb.wormulon.net/transcode/ \
 		http://dl.kel.wormulon.net/transcode/ \
+		http://rebels.plukwa.net/linux-video/transcode/ \
 		http://www.jakemsr.com/transcode/
 
 MAINTAINER=	hendrik@scholz.net
