@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gtk-doc
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.3
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.4
 
 MAINTAINER=	gnome@freebsd.org
 COMMENT=	Code documentation system, originally for GTK+
