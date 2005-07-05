@@ -88,6 +88,7 @@ share/locale/pt/LC_MESSAGES/GConf2.mo
 share/locale/pt_BR/LC_MESSAGES/GConf2.mo
 share/locale/ro/LC_MESSAGES/GConf2.mo
 share/locale/ru/LC_MESSAGES/GConf2.mo
+share/locale/rw/LC_MESSAGES/GConf2.mo
 share/locale/sk/LC_MESSAGES/GConf2.mo
 share/locale/sl/LC_MESSAGES/GConf2.mo
 share/locale/sq/LC_MESSAGES/GConf2.mo
@@ -104,6 +105,12 @@ share/locale/zh_CN/LC_MESSAGES/GConf2.mo
 share/locale/zh_TW/LC_MESSAGES/GConf2.mo
 share/sgml/gconf/gconf-1.0.dtd
 @dirrm share/sgml/gconf
+@unexec rmdir %D/share/locale/yi/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/yi 2> /dev/null || true
+@unexec rmdir %D/share/locale/xh/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/xh 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw 2> /dev/null || true
 @dirrm share/doc/gconf
 @dirrm lib/GConf/2
 @dirrm include/gconf/2/gconf
