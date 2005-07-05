@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PPI-HTML
-PORTVERSION=	0.03
+PORTVERSION=	0.05
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/A/AD/ADAMK
@@ -16,7 +16,8 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Generate syntax-hightlighted HTML for Perl using PPI
 
 BUILD_DEPENDS=	${SITE_PERL}/PPI.pm:${PORTSDIR}/textproc/p5-PPI \
-		${SITE_PERL}/CSS/Tiny.pm:${PORTSDIR}/textproc/p5-CSS-Tiny
+		${SITE_PERL}/CSS/Tiny.pm:${PORTSDIR}/textproc/p5-CSS-Tiny \
+		${SITE_PERL}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
