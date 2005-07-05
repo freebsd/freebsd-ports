@@ -345,6 +345,7 @@
     SUBDIR += paicc
     SUBDIR += pcfclock
     SUBDIR += pciutils
+    SUBDIR += pdixtract
     SUBDIR += pdumpfs
     SUBDIR += pdumpfs-clean
     SUBDIR += pdumpfs-rsync
