@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	3.4.5
-PORTREVISION=	20050607
+PORTREVISION=	20050628
 CATEGORIES=	lang
 VERSIONSTRING=	3.4-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -56,13 +56,13 @@ CONFIGURE_ARGS=	--disable-nls \
 		--with-system-zlib \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--program-suffix=${SUFFIX} \
+		--libdir=${TARGLIB} \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+=	--enable-shared
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib ${TARGLIB}
-EXTRA_LIBS=	libgcc_s
 .else
 CONFIGURE_ARGS+=	--disable-shared
 .if ${OSVERSION} < 500000 && ${ARCH} == alpha
@@ -116,12 +116,7 @@ post-install:
 .endfor
 	${MV} -f ${PREFIX}/bin/g77${SUFFIX} ${PREFIX}/bin/g77-${SUFFIX}
 	-${MV} -f ${PREFIX}/man/man1/g77${SUFFIX}.1 ${PREFIX}/man/man1/g77-${SUFFIX}.1
-	# These libraries are moved from PREFIX/lib to avoid conflicts with
-	# the stock compiler.
-.for f in libstdc++ libsupc++ libg2c libfrtbegin libobjc ${EXTRA_LIBS}
-	${MV} -f ${PREFIX}/lib/${f}.* ${TARGLIB}
-.endfor
-	${RM} -f ${PREFIX}/lib/libiberty.a ${TARGLIB}/*.la
+	${RM} -f ${TARGLIB}/*.la
 	${RM} -f ${PREFIX}/man/man7/fsf-funding.7 \
 	         ${PREFIX}/man/man7/gfdl.7 ${PREFIX}/man/man7/gpl.7
 	# Add target libraries and include files to packaging list.
