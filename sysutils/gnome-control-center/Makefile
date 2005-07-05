@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomecontrolcenter2
-PORTVERSION=	2.10.1
+PORTVERSION=	2.10.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/control-center/2.10
@@ -41,8 +41,6 @@ GCONF_SCHEMAS=	apps_gnome_settings_daemon_default_editor.schemas \
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[{]prefix[}]/share/pixmaps|{datadir}/pixmaps|g'
-	@${REINPLACE_CMD} -e 's|mozilla-thunderbird|thunderbird|g' \
-		${WRKSRC}/capplets/default-applications/gnome-default-applications-properties-structs.c
 	@${REINPLACE_CMD} -e 's|/bin/tar|/usr/bin/tar|g ; \
 		s|/bin/gzip|/usr/bin/gzip|g' \
 		${WRKSRC}/capplets/theme-switcher/gnome-theme-installer.c
