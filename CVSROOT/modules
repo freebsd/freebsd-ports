@@ -8722,6 +8722,7 @@ pdfmap		ports/misc/pdfmap
 pdfmerge	ports/print/pdfmerge
 pdftk		ports/print/pdftk
 pdftohtml	ports/textproc/pdftohtml
+pdixtract	ports/sysutils/pdixtract
 pdksh		ports/shells/pdksh
 pdmenu		ports/misc/pdmenu
 pdnmesh		ports/cad/pdnmesh
