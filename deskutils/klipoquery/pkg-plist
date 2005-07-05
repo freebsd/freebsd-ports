@@ -1,0 +1,14 @@
+lib/libklipoquery.la
+lib/libklipoquery.so
+share/apps/kicker/applets/klipoquery.desktop
+share/config/klipoqueryrc
+share/doc/HTML/en/klipoquery/common
+share/doc/HTML/en/klipoquery/index.cache.bz2
+share/doc/HTML/en/klipoquery/index.docbook
+@dirrm share/doc/HTML/en/klipoquery
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@unexec rmdir %D/share/config 2>/dev/null || true
+@unexec rmdir %D/share/apps/kicker/applets 2>/dev/null || true
+@unexec rmdir %D/share/apps/kicker 2>/dev/null || true
+@unexec rmdir %D/share/apps 2>/dev/null || true

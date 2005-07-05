@@ -80,6 +80,7 @@
     SUBDIR += kdepim3
     SUBDIR += kdissert
     SUBDIR += kickpim
+    SUBDIR += klipoquery
     SUBDIR += kluje
     SUBDIR += knowit
     SUBDIR += kompose
