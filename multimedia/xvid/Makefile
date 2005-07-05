@@ -9,7 +9,7 @@ PORTNAME=	xvid
 PORTVERSION=	1.0.3
 PORTEPOCH=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://files.xvid.org/downloads/
+MASTER_SITES=	http://downloads.xvid.org/downloads/
 DISTNAME=	${PORTNAME}core-${PORTVERSION}
 
 MAINTAINER=	lofi@freebsd.org
