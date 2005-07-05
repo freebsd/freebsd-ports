@@ -1,6 +1,7 @@
 sbin/iked
 sbin/kinkd
 sbin/spmd
+sbin/spmdctl
 sbin/pskgen
 etc/racoon2.conf.sample
 etc/rc.d/iked.sh

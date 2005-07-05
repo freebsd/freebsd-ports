@@ -7,6 +7,7 @@
 
 PORTNAME=	racoon2
 PORTVERSION=	20050625b
+PORTREVISION=	1
 CATEGORIES=	security net ipv6
 MASTER_SITES=	ftp://ftp.kame.net/pub/racoon2/
 EXTRACT_SUFX=	.tgz
@@ -35,6 +36,8 @@ PORTDOCS+=	kinkd-data-struct.obj kinkd-impl.ja.txt kinkd-install.ja.txt
 PORTDOCS+=	kinkd-state-txn.obj libracoon.ja.txt racoon2.conf.ikev2
 PORTDOCS+=	racoon2.conf.kink specification.ja.txt spmif.txt system-message.ja.txt
 .endif
+
+MAN8=		spmd.8 spmdctl.8 kinkd.8
 
 post-patch:
 .if !defined(NOPORTDOCS)
