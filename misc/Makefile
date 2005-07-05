@@ -296,6 +296,7 @@
     SUBDIR += mc
     SUBDIR += mc-light
     SUBDIR += menushki
+    SUBDIR += metromap
     SUBDIR += mgp-mode.el
     SUBDIR += mime-support
     SUBDIR += mirmon
