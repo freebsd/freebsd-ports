@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	wordpress-mu
-PORTVERSION=	2005.05.08
+PORTVERSION=	1.5.1.2
 CATEGORIES=	www
 MASTER_SITES=	http://blogs.linux.ie/download/wpmu/ \
 		http://mu.wordpress.org/nightly-builds/
-DISTNAME=	wpmu-${PORTVERSION:S/./-/g}
+DISTNAME=	wpmu-stable-${PORTVERSION:S/./_/g}
 
 MAINTAINER=	tjs@cdpa.nsysu.edu.tw
 COMMENT=	Multi-user version of the famous WordPress blogging application
