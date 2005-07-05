@@ -6,7 +6,11 @@ bin/sqlt-graph
 %%SITE_PERL%%/SQL/Translator.pm
 %%SITE_PERL%%/SQL/Translator/Manual.pod
 %%SITE_PERL%%/SQL/Translator/Parser.pm
+%%SITE_PERL%%/SQL/Translator/Parser/Access.pm
+%%SITE_PERL%%/SQL/Translator/Parser/DB2.pm
+%%SITE_PERL%%/SQL/Translator/Parser/DB2/Grammar.pm
 %%SITE_PERL%%/SQL/Translator/Parser/DBI.pm
+%%SITE_PERL%%/SQL/Translator/Parser/DBI/DB2.pm
 %%SITE_PERL%%/SQL/Translator/Parser/DBI/MySQL.pm
 %%SITE_PERL%%/SQL/Translator/Parser/DBI/PostgreSQL.pm
 %%SITE_PERL%%/SQL/Translator/Parser/DBI/SQLite.pm
@@ -32,9 +36,11 @@ bin/sqlt-graph
 %%SITE_PERL%%/SQL/Translator/Producer/Oracle.pm
 %%SITE_PERL%%/SQL/Translator/Producer/POD.pm
 %%SITE_PERL%%/SQL/Translator/Producer/PostgreSQL.pm
+%%SITE_PERL%%/SQL/Translator/Producer/SQLServer.pm
 %%SITE_PERL%%/SQL/Translator/Producer/SQLite.pm
 %%SITE_PERL%%/SQL/Translator/Producer/Storable.pm
 %%SITE_PERL%%/SQL/Translator/Producer/Sybase.pm
+%%SITE_PERL%%/SQL/Translator/Producer/TT/Base.pm
 %%SITE_PERL%%/SQL/Translator/Producer/TT/Table.pm
 %%SITE_PERL%%/SQL/Translator/Producer/TTSchema.pm
 %%SITE_PERL%%/SQL/Translator/Producer/XML.pm
@@ -44,21 +50,31 @@ bin/sqlt-graph
 %%SITE_PERL%%/SQL/Translator/Schema/Constants.pm
 %%SITE_PERL%%/SQL/Translator/Schema/Constraint.pm
 %%SITE_PERL%%/SQL/Translator/Schema/Field.pm
+%%SITE_PERL%%/SQL/Translator/Schema/Graph.pm
+%%SITE_PERL%%/SQL/Translator/Schema/Graph/CompoundEdge.pm
+%%SITE_PERL%%/SQL/Translator/Schema/Graph/Edge.pm
+%%SITE_PERL%%/SQL/Translator/Schema/Graph/HyperEdge.pm
+%%SITE_PERL%%/SQL/Translator/Schema/Graph/Node.pm
+%%SITE_PERL%%/SQL/Translator/Schema/Graph/Port.pm
 %%SITE_PERL%%/SQL/Translator/Schema/Index.pm
+%%SITE_PERL%%/SQL/Translator/Schema/Object.pm
 %%SITE_PERL%%/SQL/Translator/Schema/Procedure.pm
 %%SITE_PERL%%/SQL/Translator/Schema/Table.pm
 %%SITE_PERL%%/SQL/Translator/Schema/Trigger.pm
 %%SITE_PERL%%/SQL/Translator/Schema/View.pm
+%%SITE_PERL%%/SQL/Translator/Shell.pm
 %%SITE_PERL%%/SQL/Translator/Utils.pm
 %%SITE_PERL%%/Test/SQL/Translator.pm
 @dirrm %%SITE_PERL%%/Test/SQL
 @unexec rmdir %D/%%SITE_PERL%%/Test 2>/dev/null || true
+@dirrm %%SITE_PERL%%/SQL/Translator/Schema/Graph
 @dirrm %%SITE_PERL%%/SQL/Translator/Schema
 @dirrm %%SITE_PERL%%/SQL/Translator/Producer/XML
 @dirrm %%SITE_PERL%%/SQL/Translator/Producer/TT
 @dirrm %%SITE_PERL%%/SQL/Translator/Producer
 @dirrm %%SITE_PERL%%/SQL/Translator/Parser/XML
 @dirrm %%SITE_PERL%%/SQL/Translator/Parser/DBI
+@dirrm %%SITE_PERL%%/SQL/Translator/Parser/DB2
 @dirrm %%SITE_PERL%%/SQL/Translator/Parser
 @dirrm %%SITE_PERL%%/SQL/Translator
 @unexec rmdir %D/%%SITE_PERL%%/SQL 2>/dev/null || true

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	SQL-Translator
-PORTVERSION=	0.06
-PORTREVISION=	2
+PORTVERSION=	0.07
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SQL
@@ -29,7 +28,10 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/Base.pm:${PORTSDIR}/devel/p5-Class-Base \
 		${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
 		${SITE_PERL}/XML/XPath.pm:${PORTSDIR}/textproc/p5-XML-XPath \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
+		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
+		${SITE_PERL}/Class/Data/Inheritable.pm:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
+		${SITE_PERL}/Class/MakeMethods.pm:${PORTSDIR}/devel/p5-Class-MakeMethods \
+		${SITE_PERL}/Log/Log4perl.pm:${PORTSDIR}/devel/p5-Log-Log4perl
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
@@ -42,7 +44,9 @@ MAN1=		sqlt-diagram.1 \
 MAN3=		SQL::Translator.3 \
 		SQL::Translator::Manual.3 \
 		SQL::Translator::Parser.3 \
+		SQL::Translator::Parser::Access.3 \
 		SQL::Translator::Parser::DBI.3 \
+		SQL::Translator::Parser::DBI::DB2.3 \
 		SQL::Translator::Parser::DBI::MySQL.3 \
 		SQL::Translator::Parser::DBI::PostgreSQL.3 \
 		SQL::Translator::Parser::DBI::SQLite.3 \
@@ -68,9 +72,11 @@ MAN3=		SQL::Translator.3 \
 		SQL::Translator::Producer::Oracle.3 \
 		SQL::Translator::Producer::POD.3 \
 		SQL::Translator::Producer::PostgreSQL.3 \
+		SQL::Translator::Producer::SQLServer.3 \
 		SQL::Translator::Producer::SQLite.3 \
 		SQL::Translator::Producer::Storable.3 \
 		SQL::Translator::Producer::Sybase.3 \
+		SQL::Translator::Producer::TT::Base.3 \
 		SQL::Translator::Producer::TT::Table.3 \
 		SQL::Translator::Producer::TTSchema.3 \
 		SQL::Translator::Producer::XML.3 \
@@ -81,6 +87,7 @@ MAN3=		SQL::Translator.3 \
 		SQL::Translator::Schema::Constraint.3 \
 		SQL::Translator::Schema::Field.3 \
 		SQL::Translator::Schema::Index.3 \
+		SQL::Translator::Schema::Object.3 \
 		SQL::Translator::Schema::Procedure.3 \
 		SQL::Translator::Schema::Table.3 \
 		SQL::Translator::Schema::Trigger.3 \
@@ -89,21 +96,7 @@ MAN3=		SQL::Translator.3 \
 		Test::SQL::Translator.3
 
 .include <bsd.port.pre.mk>
-
 .if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Dir.pm:${PORTSDIR}/devel/p5-IO
-EXTRA_PATCHES+=	${PATCHDIR}/5.005_03-patch-lib::SQL::Translator::Parser::xSV.pm \
-		${PATCHDIR}/5.005_03-patch-lib::SQL::Translator::Producer::Diagram.pm \
-		${PATCHDIR}/5.005_03-patch-lib::SQL::Translator::Producer::GraphViz.pm \
-		${PATCHDIR}/5.005_03-patch-lib::SQL::Translator::Producer::HTML.pm \
-		${PATCHDIR}/5.005_03-patch-lib::SQL::Translator::Producer::XML::SQLFairy.pm \
-		${PATCHDIR}/5.005_03-patch-lib::SQL::Translator::Schema::Table.pm \
-		${PATCHDIR}/5.005_03-patch-lib::SQL::Translator::Utils.pm \
-		${PATCHDIR}/5.005_03-patch-t::05bgep-re.t \
-		${PATCHDIR}/5.005_03-patch-t::19sybase-parser.t \
-		${PATCHDIR}/5.005_03-patch-t::27sqlite-parser.t \
-		${PATCHDIR}/5.005_03-patch-t::31dumper.t
-
+IGNORE=	requires Perl 5.6. Install lang/perl5 or lang/perl5.8, and try again
 .endif
-
 .include <bsd.port.post.mk>
