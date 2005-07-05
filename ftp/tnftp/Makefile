@@ -8,11 +8,11 @@
 PORTNAME=	tnftp
 PORTVERSION=	20050625
 CATEGORIES=	ftp
-MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/
+MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/ \
+		ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/old/
 
 MAINTAINER=	tmclaugh@sdf.lonestar.org
 COMMENT=	Enhanced ftp client from NetBSD
-
 
 GNU_CONFIGURE=	yes
 
