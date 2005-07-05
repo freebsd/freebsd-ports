@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	vorbis-tools
-PORTVERSION=	1.0.1
-PORTREVISION=	4
+PORTVERSION=	1.1.1
 PORTEPOCH=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://www.vorbis.com/files/1.0.1/unix/
+MASTER_SITES=	http://downloads.xiph.org/releases/vorbis/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Play, encode, and manage Ogg Vorbis files
@@ -22,7 +21,9 @@ LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_GETTEXT=	yes
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=15
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--enable-vcut
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
