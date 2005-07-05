@@ -7,14 +7,14 @@
 
 PORTNAME=	ocp
 PORTVERSION=	0.1.9
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://labs.nixia.no/
 
 MAINTAINER=	ehaupt@critical.ch
 COMMENT=	The legendary Open Cubic Player
 
-LIB_DEPENDS=	sidplay.1:${PORTSDIR}/audio/libsidplay \
-		id3tag.2:${PORTSDIR}/audio/libid3tag \
+LIB_DEPENDS=	id3tag.2:${PORTSDIR}/audio/libid3tag \
 		mad.2:${PORTSDIR}/audio/libmad \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
@@ -43,8 +43,15 @@ TIMIDITY_CFG=	${LOCALBASE}/share/timidity/timidity.cfg
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 500000
+LIB_DEPENDS+=	sidplay.1:${PORTSDIR}/audio/libsidplay
+PLIST_SUB+=	LIBSIDPLAY=""
+.else
+PLIST_SUB+=	LIBSIDPLAY="@comment "
+.endif
+
 .if exists(${TIMIDITY_CFG}) || !defined(WITHOUT_MIDI)
-RUN_DEPENDS=	${TIMIDITY_CFG}:${PORTSDIR}/audio/eawpats
+RUN_DEPENDS+=	${TIMIDITY_CFG}:${PORTSDIR}/audio/eawpats
 .endif
 
 .if defined(WITHOUT_X11)
