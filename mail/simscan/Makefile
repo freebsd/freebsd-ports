@@ -45,7 +45,7 @@ CONFIGURE_ARGS=--enable-clamavdb-path=/var/db/clamav \
 		--enable-workdir=${WORKDIR}
 
 .if defined(WITHOUT_CLAMAV)
-CONFIGURE_ARGS+=-enable-clamav=n
+CONFIGURE_ARGS+=	--enable-clamav=n
 .else
 BUILD_DEPENDS+=	clamdscan:${PORTSDIR}/security/clamav
 .endif
