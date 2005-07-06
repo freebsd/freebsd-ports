@@ -237,6 +237,7 @@
     SUBDIR += oinkmaster
     SUBDIR += op
     SUBDIR += opencdk
+    SUBDIR += openct
     SUBDIR += opensc
     SUBDIR += opensc-esteid
     SUBDIR += openscep

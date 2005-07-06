@@ -1,0 +1,19 @@
+OpenCT, a middleware framework for smart card terminals.
+It all started with a reader driver library to provide a framework for people
+writing drivers for smart card readers. The idea was to provide all the usual
+stuff (T=0, T=1, serial vs. USB device handling, etc) in a single place, and
+reduce driver writing to interaction with the device itself.
+
+OpenCT provides a native OpenCT, CT-API and PC/SC Lite IFD interface with an
+OpenCT ifdhandler resource manager.
+
+OpenCT is an open source implementation providing card terminal drivers:
+Towitoko CHIPDRIVE micro - serial interface reader
+KOBIL KAAN Professional - serial interface reader
+Schlumberger e-gate - USB token / smart card reader
+Aladdin eToken PRO - USB crypto Token
+Eutron CryptoIdentity IT-SEC - A USB crypto Token
+Rainbow iKey 3000 - USB crypto Token
+OMNIKEY CardMan - UDB smart card reader
+
+WWW:	http://www.opensc.org/
