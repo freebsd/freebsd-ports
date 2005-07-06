@@ -1,0 +1,11 @@
+--- amavisd-agent.orig	Sun Jun 19 18:26:43 2005
++++ amavisd-agent	Sun Jun 19 18:28:04 2005
+@@ -107,7 +107,7 @@
+ # main program starts here
+   $SIG{INT} = sub { die "\n" };  # do the END code block
+   my($env) = BerkeleyDB::Env->new(
+-    '-Home'=>'/var/amavis/db', '-Flags'=> DB_INIT_CDB | DB_INIT_MPOOL);
++    '-Home'=>'%%AMAVISDIR%%/db', '-Flags'=> DB_INIT_CDB | DB_INIT_MPOOL);
+   defined $env or die "BDB no env: $BerkeleyDB::Error $!";
+   my($db) = BerkeleyDB::Hash->new(
+     '-Filename'=>'snmp.db', '-Flags'=>DB_RDONLY, '-Env'=>$env );
