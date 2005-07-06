@@ -1,11 +1,18 @@
---- Makefile.orig	Tue Mar 13 20:40:19 2001
-+++ Makefile	Fri Mar  5 04:55:10 2004
-@@ -6,7 +6,7 @@
+--- Makefile.orig       Tue Apr 19 19:52:01 2005
++++ Makefile    Wed Jul  6 14:52:16 2005
+@@ -2,12 +2,12 @@
+ #
+ # In fact all we have to make is the libfilecmp.so.0.0 library.
+ 
+-BINDIR=$(DESTDIR)/usr/bin
+-LIBDIR=$(DESTDIR)/usr/lib
++BINDIR=$(DESTDIR)${PREFIX}/bin
++LIBDIR=$(DESTDIR)${PREFIX}/lib
  INSTALL=install
  
  # You may need to change the -I arguments depending on your system
 -CFLAGS=-O3 -I/usr/include/tcl8.3/ -I/usr/include/tcl
 +CFLAGS+=-fPIC -I/usr/local/include/tcl8.4/
  
- all:	filecmp.so.0.0
+ all:   libfilecmp.so.0.0
  
