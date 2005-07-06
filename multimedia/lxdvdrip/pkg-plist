@@ -1,4 +1,5 @@
 bin/lxdvdrip
+bin/lxac3scan
 etc/lxdvdrip.conf.DE
 etc/lxdvdrip.conf.EN
 etc/lxdvdrip.conf.FR
