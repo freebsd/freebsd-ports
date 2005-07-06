@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	pyslsk
-PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTVERSION=	1.2.7b
 CATEGORIES=	net
 MASTER_SITES=	http://www.sensi.org/~ak/pyslsk/
 
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	Client for SoulSeek filesharing system
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython24
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython24
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/wx-2.6-gtk2-ansi/wx/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython26
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wx-2.6-gtk2-ansi/wx/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython26
 
 .if !defined(WITHOUT_VORBIS)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis
@@ -28,4 +27,11 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/bsddb3/__init__.py:${PORTSDIR}/databases/py-b
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+pre-install:
+.if exists(${PYTHON_SITELIBDIR}/wx/__init__.py)
+BROKEN=	"pyslsk only works with py-wxPython >= 2.6, please deinstall old version first"
+.endif
+
+.include <bsd.port.post.mk>
