@@ -32,6 +32,46 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="107692a1-ee6c-11d9-8310-0001020eed82">
+    <topic>acroread -- insecure temporary file creation</topic>
+    <affects>
+      <package>
+	<name>acroread4</name>
+	<name>acroread5</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>acroread</name>
+	<range><lt>7.0.0</lt></range>
+	<range><gt>5.*,1</gt><lt>7.0.0,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia Research reports:</p>
+	<blockquote cite="http://secunia.com/secunia_research/2005-6/advisory/">
+	  <p>Secunia has discovered a security issue in Adobe Reader
+	    for Linux, which can be exploited by malicious, local
+	    users to gain knowledge of sensitive information.</p>
+	  <p>The problem is caused due to temporary files being
+	    created with permissions based on a user's umask in the
+	    "/tmp" folder under certain circumstances when documents
+	    are opened.</p>
+	  <p>Successful exploitation allows an unprivileged user to
+	    read arbitrary users' documents.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1912</cvename>
+      <url>http://secunia.com/secunia_research/2005-6/advisory/</url>
+    </references>
+    <dates>
+      <discovery>2005-06-29</discovery>
+      <entry>2005-07-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d8e1aadd-ee68-11d9-8310-0001020eed82">
     <topic>clamav -- cabinet file handling DoS vulnerability</topic>
     <affects>
