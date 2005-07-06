@@ -21,7 +21,7 @@ COMMENT=	Blackdown Java Development Kit 1.4 for Linux
 RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 
 EXTRACT_CMD=		${TAIL}
-EXTRACT_BEFORE_ARGS=	+564
+EXTRACT_BEFORE_ARGS=	+592
 EXTRACT_AFTER_ARGS=	| ${BZIP2_CMD} -dc | ${TAR} xf -
 USE_BZIP2=	yes
 USE_LINUX=	yes
@@ -33,16 +33,22 @@ PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
 
 NO_BUILD=	yes
 JDK_VERSION=	1.4.2
-JDK_VER_SUFFIX=	-01
-DOWNLOAD_DIR=	${PORTNAME:U}-${JDK_VERSION}/${ARCH}/01
+JDK_VER_SUFFIX=	-02
+DOWNLOAD_DIR=	${PORTNAME:U}-${JDK_VERSION}/i386/02
 ONLY_FOR_ARCHS=	i386 amd64
 
 NO_CDROM=	"License doesn\'t allow distribution with fee"
 NO_PACKAGE=	"License doesn\'t allow binary distributions"
 
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${JDK_VERSION}
+PACKED_JARS=	lib/tools.jar jre/lib/rt.jar jre/lib/jsse.jar jre/lib/charsets.jar jre/lib/ext/localedata.jar jre/lib/plugin.jar jre/javaws/javaws.jar
+UNPACK_CMD=	${APP_HOME}/lib/unpack
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 504000
+IGNORE=		does not run (core dumps: Bad System Call)
+.endif
 
 post-fetch:
 	@${CHMOD} +x ${DISTDIR}/${DISTFILES}
@@ -64,6 +70,14 @@ do-install:
 	@${ECHO} -n ">> Copying files..."
 	@${CP} -R ${WRKSRC}/* ${APP_HOME}
 	@${CHOWN} -h -R ${LIBOWN}:${LIBGRP} ${APP_HOME}
+	@${ECHO} " [ DONE ]"
+	@${ECHO} -n ">> Unpacking JARs..."
+	@for i in ${PACKED_JARS}; do \
+	  if [ -f ${APP_HOME}/`dirname $$i`/`basename $$i .jar`.pack ]; then \
+	    ${UNPACK_CMD} ${APP_HOME}/`dirname $$i`/`basename $$i .jar`.pack ${APP_HOME}/$$i; \
+	    ${RM} -f ${APP_HOME}/`dirname $$i`/`basename $$i .jar`.pack; \
+	  fi \
+	done
 	@${ECHO} " [ DONE ]"
 
 	@${ECHO} -n ">> Registering with javavm..."

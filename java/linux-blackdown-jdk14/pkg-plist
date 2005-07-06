@@ -33,7 +33,6 @@
 %%T%%/bin/serialver
 %%T%%/bin/servertool
 %%T%%/bin/tnameserv
-%%T%%/demo/applets.html
 %%T%%/demo/applets/Animator/Animation.class
 %%T%%/demo/applets/Animator/AnimationFrame.class
 %%T%%/demo/applets/Animator/Animator.class
@@ -896,7 +895,6 @@
 %%T%%/jre/README
 %%T%%/jre/THIRDPARTYLICENSEREADME.txt
 %%T%%/jre/bin/ControlPanel
-%%T%%/jre/bin/HtmlConverter
 %%T%%/jre/bin/java
 %%T%%/jre/bin/java_vm
 %%T%%/jre/bin/javaws
@@ -914,7 +912,7 @@
 %%T%%/jre/javaws/javalogo52x88.gif
 %%T%%/jre/javaws/javaws
 %%T%%/jre/javaws/javaws-l10n.jar
-%%T%%/jre/javaws/javaws.pack
+%%T%%/jre/javaws/javaws.jar
 %%T%%/jre/javaws/javaws.policy
 %%T%%/jre/javaws/javawsbin
 %%T%%/jre/javaws/readme.html
@@ -943,7 +941,7 @@
 %%T%%/jre/javaws/resources/splash.jpg
 %%T%%/jre/javaws/sunlogo64x30.gif
 %%T%%/jre/lib/audio/soundbank.gm
-%%T%%/jre/lib/charsets.pack
+%%T%%/jre/lib/charsets.jar
 %%T%%/jre/lib/cmm/CIEXYZ.pf
 %%T%%/jre/lib/cmm/GRAY.pf
 %%T%%/jre/lib/cmm/LINEAR_RGB.pf
@@ -952,7 +950,7 @@
 %%T%%/jre/lib/content-types.properties
 %%T%%/jre/lib/ext/dnsns.jar
 %%T%%/jre/lib/ext/ldapsec.jar
-%%T%%/jre/lib/ext/localedata.pack
+%%T%%/jre/lib/ext/localedata.jar
 %%T%%/jre/lib/ext/sunjce_provider.jar
 %%T%%/jre/lib/flavormap.properties
 %%T%%/jre/lib/font.properties
@@ -1005,7 +1003,6 @@
 %%T%%/jre/lib/fonts/LucidaTypewriterOblique.ttf
 %%T%%/jre/lib/fonts/LucidaTypewriterRegular.ttf
 %%T%%/jre/lib/fonts/fonts.dir
-%%T%%/jre/lib/htmlconverter.jar
 %%T%%/jre/lib/i386/awt_robot
 %%T%%/jre/lib/i386/client/Xusage.txt
 %%T%%/jre/lib/i386/client/libjsig.so
@@ -1052,7 +1049,7 @@
 %%T%%/jre/lib/images/cursors/motif_MoveDrop32x32.gif
 %%T%%/jre/lib/images/cursors/motif_MoveNoDrop32x32.gif
 %%T%%/jre/lib/jce.jar
-%%T%%/jre/lib/jsse.pack
+%%T%%/jre/lib/jsse.jar
 %%T%%/jre/lib/jvm.hprof.txt
 %%T%%/jre/lib/jvm.jcov.txt
 %%T%%/jre/lib/locale/de/LC_MESSAGES/sunw_java_plugin.mo
@@ -1068,10 +1065,10 @@
 %%T%%/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES/sunw_java_plugin.mo
 %%T%%/jre/lib/locale/zh_TW/LC_MESSAGES/sunw_java_plugin.mo
 %%T%%/jre/lib/logging.properties
-%%T%%/jre/lib/plugin.pack
+%%T%%/jre/lib/plugin.jar
 %%T%%/jre/lib/psfont.properties.ja
 %%T%%/jre/lib/psfontj2d.properties
-%%T%%/jre/lib/rt.pack
+%%T%%/jre/lib/rt.jar
 %%T%%/jre/lib/security/US_export_policy.jar
 %%T%%/jre/lib/security/cacerts
 %%T%%/jre/lib/security/java.policy
@@ -1488,7 +1485,7 @@
 %%T%%/lib/htmlconverter.jar
 %%T%%/lib/ir.idl
 %%T%%/lib/orb.idl
-%%T%%/lib/tools.pack
+%%T%%/lib/tools.jar
 %%T%%/lib/unpack
 %%T%%/man/ja
 %%T%%/man/ja_JP.eucJP/man1/appletviewer.1.gz
