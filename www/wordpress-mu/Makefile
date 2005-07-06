@@ -7,6 +7,7 @@
 
 PORTNAME=	wordpress-mu
 PORTVERSION=	1.5.1.3
+PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://blogs.linux.ie/download/wpmu/ \
 		http://mu.wordpress.org/nightly-builds/
