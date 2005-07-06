@@ -30,6 +30,7 @@ share/qbrew/paleale.qbrew
 share/qbrew/qbrew.png
 share/qbrew/qbrew.svg
 share/qbrew/qbrewdata
+share/qbrew/splash.png
 share/qbrew/stout.qbrew
 @dirrm share/qbrew
 @dirrm share/doc/qbrew/en
