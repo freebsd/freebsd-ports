@@ -6817,6 +6817,7 @@ openbabel	ports/science/openbabel
 openbgpd	ports/net/openbgpd
 openbox		ports/x11-wm/openbox
 opencdk		ports/security/opencdk
+openct		ports/security/openct
 opencyc		ports/misc/opencyc
 opendchub	ports/net/opendchub
 opendis		ports/graphics/opendis
