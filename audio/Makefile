@@ -200,6 +200,7 @@
     SUBDIR += gstreamer-plugins-sndfile
     SUBDIR += gstreamer-plugins-speex
     SUBDIR += gstreamer-plugins-vorbis
+    SUBDIR += gstreamer-plugins-wavpack
     SUBDIR += gtick
     SUBDIR += gtkgep
     SUBDIR += gtkguitune

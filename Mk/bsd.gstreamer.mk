@@ -52,14 +52,14 @@ GST_SHLIB_VERSION=	1
 #
 # These are the current supported gstreamer-plugins modules
 #
-_USE_GSTREAMER_ALL=	a52dec aalib artsd audiofile cairo cdaudio cdparanoia \
+_USE_GSTREAMER_ALL=	a52dec aalib artsd audiofile cairo cdaudio cdio cdparanoia \
 			dirac dts dv dvd esound faac faad ffmpeg flac \
 			gconf gdkpixbuf gnomevfs gsm hermes ivorbis jack jpeg \
 			jpeg-mmx ladspa lame libcaca libfame libmms libmng \
 			libpng libvisual mad mikmod mpeg2dec mpeg2enc mplex \
 			musepack musicbrainz nas sdl shout shout2 sidplay \
 			smoothwave sndfile speex theora ogg pango polypaudio \
-			swfdec vorbis xvid
+			swfdec vorbis wavpack xvid
 
 # other plugins
 OTHER_GSTREAMER_PLUGINS+=	core yes
@@ -71,6 +71,9 @@ core_GST_EXT=	.keep
 
 yes_DEPENDS=	multimedia/gstreamer-plugins
 yes_PLIST=	libgstac3parse
+
+cdio_DEPENDS=	sysutils/gstreamer-plugins-cdio
+cdio_PLIST=	libgstcddasrc
 
 gconf_DEPENDS=	devel/gstreamer-plugins-gconf
 gconf_PLIST=	libgstgconfelements
@@ -138,6 +141,7 @@ speex_DEPENDS=	audio/gstreamer-plugins-speex
 
 vorbis_DEPENDS=	audio/gstreamer-plugins-vorbis
 
+wavpack_DEPENDS=	audio/gstreamer-plugins-wavpack
 
 # Devel Plugins Section
 gnomevfs_DEPENDS=	devel/gstreamer-plugins-gnomevfs

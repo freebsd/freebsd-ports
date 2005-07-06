@@ -3245,6 +3245,7 @@ gstreamer-plugins-artsd		ports/audio/gstreamer-plugins-artsd
 gstreamer-plugins-audiofile	ports/audio/gstreamer-plugins-audiofile
 gstreamer-plugins-cairo		ports/graphics/gstreamer-plugins-cairo
 gstreamer-plugins-cdaudio	ports/audio/gstreamer-plugins-cdaudio
+gstreamer-plugins-cdio		ports/sysutils/gstreamer-plugins-cdio
 gstreamer-plugins-cdparanoia	ports/audio/gstreamer-plugins-cdparanoia
 gstreamer-plugins-core		ports/multimedia/gstreamer-plugins-core
 gstreamer-plugins-dirac		ports/multimedia/gstreamer-plugins-dirac
@@ -3293,6 +3294,7 @@ gstreamer-plugins-speex		ports/audio/gstreamer-plugins-speex
 gstreamer-plugins-swfdec	ports/graphics/gstreamer-plugins-swfdec
 gstreamer-plugins-theora	ports/multimedia/gstreamer-plugins-theora
 gstreamer-plugins-vorbis	ports/audio/gstreamer-plugins-vorbis
+gstreamer-plugins-wavpack	ports/audio/gstreamer-plugins-wavpack
 gstreamer-plugins-xvid		ports/multimedia/gstreamer-plugins-xvid
 gsubedit	ports/multimedia/gsubedit
 gsystem		ports/science/gsystem
