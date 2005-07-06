@@ -9,25 +9,12 @@
 PORTNAME=	zmtx-zmrx
 PORTVERSION=	1.02
 CATEGORIES=	comms
-# previous mastersites disappeared in May 2003.  See, perhaps,
-# cvs.synchro.net/cgi-bin/viewcvs/src/stp, as a possible followon
-# project.
-MASTER_SITES=	# ftp://ftp.inria.fr/network/modem/
-# see also comp.unix.sources for version 1.0
-# ftp://ftp.lth.se/pub/usenet/comp.sources.unix/volume28/zm/part01.gz
-DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.shar.gz
+MASTER_SITES=	ftp://ftp.netsw.org/net/modem/protocols/zmodem/zmtx-zmrx/
 
-DEPRECATED=	"master site disappeared"
-EXPIRATION_DATE=2005-07-31
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Receive/Send files via ZMODEM protocol.  (unrestrictive)
 
-EXTRACT_CMD=	zcat
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	|sh
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile
 MAN1=		zmrx.1 zmtx.1
 PLIST_FILES=	bin/zmrx bin/zmtx
@@ -40,7 +27,7 @@ do-install:
 
 post-install:
 	@${ECHO_MSG} ""
-	@/usr/bin/more ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>
