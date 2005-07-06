@@ -1,8 +1,7 @@
-			Dirdiff-1.2.
+			Dirdiff-2.1.
 
 			Paul Mackerras
-			Linuxcare, Inc.
-			<paulus@linuxcare.com.au>
+			<paulus@samba.org>
 
 Dirdiff is a graphical tool for displaying the differences between
 directory trees and for merging changes from one tree into another.
@@ -21,30 +20,88 @@ the selected changes using the merge menu.  Dirdiff will then pop up
 another window containing the merged file.  You can then edit the
 merged version and save it back into file.
 
+Dirdiff now also has a file mode, which can be used for viewing the
+differences between files and for merging changes from one file into
+another.  This mode is invoked if regular files are specified on the
+command line (or in the new directory/file chooser, see below) rather
+than directories.  (Dirdiff will exit with an error message if some
+files and some directories are specified.)
 
-What's new in dirdiff-1.2.
+
+What's new in dirdiff-2.1.
 --------------------------
 
-* The help text and Makefile have been updated, thanks to Martin Pool.
+* The diff display window can now display 3-way, 4-way and 5-way diffs
+  as well as the normal 2-way diffs.  When a line is identified as
+  coming from multiple files, most of it will be colored for the
+  newest of those files, and extra colored bars at the left of the
+  line will identify which other files it is in.
+
+* You can now modify the diff display interactively (for example, to
+  make it more understandable).  You can use the middle mouse button
+  to drag the blue separator bars to expose more context, or drag
+  colored diff lines up and down (the movement is constrained so as to
+  not alter the meaning of the diff).  Dragging context lines splits
+  them into colored diff lines.
+
+* There is now a menu on the diff display window for generating
+  patches embodying the changes that could be made with the merge
+  menu.  That is, the diff lines that are checked in the diff viewer
+  will be made into - and + lines in the generated patch.
+
+* The BitKeeper integration feature has been removed.  I plan to add
+  generic features for integration with arbitrary SCM systems in
+  future.
 
 
-What was new in dirdiff-1.1.
+What was new in dirdiff-2.0.
 ----------------------------
 
-* Dirdiff can now generate a patch containing the differences in a
-  selected set of files between any two directory trees.  See the
-  File -> Make patch submenu in the main window.
+* Some great new features from Dorothy Robinson:
 
-* Some key bindings have been fixed.
+  - A dialog box for choosing the directories to be diffed, if dirdiff
+    is invoked without specifying any directories or files on the
+    command line.
 
-* The results of a merge are now put into a window where it can be
-  inspected and edited, rather than immediately replacing the original
-  file.
+  - Colored icons instead of squares in the file list window.
 
-* There is now a find function which can be used in the differences
-  window, the merge window and the patch window.
+  - Colored icons in the Diff and Copy/Del menus (provided you are
+    using Tk 8.4 or later).
 
-* Various bugs have been fixed.
+  - Modifications so dirdiff can be used under Windows.
+
+  - A color key showing the ordering of the colors.
+
+  - Use of two-level menus for the Diff, Copy/Del and Patch menus (the
+    Diff and Copy/Del menus use two levels only when there are
+    sufficient alternatives for it to make things simpler).
+
+  - A filename search function using the filename bar in the file list
+    window.
+
+  - Options to allow the user to select external diff and file viewer
+    programs.
+
+* There is now a mode for ignoring files in a directory if they match
+  any of the patterns listed in the .cvsignore in that directory.
+  This is invoked with the -C command-line option or by choosing the
+  "Ignore files in .cvsignore" option in the Options menu.
+
+* Some users have requested a mode in which, when a directory exists
+  in one tree but not another, dirdiff display the files in that
+  directory as existing in the one tree but not the other (rather than
+  displaying just a single line for the directory).  This mode is
+  enabled by choosing the "Show files that aren't in some dirs" option
+  in the Options menu.
+
+* Trees can now be marked as "read-only" in the Options menu.  This
+  means that menu options that would modify those trees (in the
+  Copy/Del, Touch and Merge menus) will not be offered.
+
+* Files can be added to the excluded file list by selecting them and
+  choosing "Exclude selection" under the File menu.
+
+* Changes to the "Underline tabs" mode now take effect immediately.
 
 
 Installation.
@@ -55,22 +112,13 @@ however can make use of a shared library called filecmp.so.0.0 for
 comparing files.  This is optional, but it has two benefits: (a)
 comparing files is faster with filecmp.so.0.0 (without it, dirdiff has
 to start an external process running `cmp'), and (b) filecmp.so.0.0
-can optionally ignore RCS strings when it is comparing two files.
+can optionally ignore RCS and BK strings when it is comparing two files.
 
 The Makefile in this directory will compile filecmp.so.0.0, and
-install it and dirdiff.  By default dirdiff is installed in
-/usr/local/bin and filecmp.so.0.0 is installed in /usr/local/lib.
-Doing `make' will compile filecmp.so.0.0; `make install' will install
-dirdiff and filecmp.so.0.0.
-
-However, on many systems, Tcl/Tk does not look in /usr/local/lib for
-shared libraries, and so it will not find filecmp.so.0.0.  This is not
-fatal; the consequences are that it will be a bit slower and that the
-`ignore RCS strings' option is not available.  One solution is to
-install in /usr/bin or /usr/lib.  To do this, you can do `make install
-DESTDIR=/usr'.  Under Linux, you can alternatively edit your
-/etc/ld.so.conf to add /usr/local/lib and re-run ldconfig (after
-installing filecmp.so.0.0 in /usr/local/lib).
+install it and dirdiff.  By default dirdiff is installed in /usr/bin
+and filecmp.so.0.0 is installed in /usr/lib.  Doing `make' will
+compile filecmp.so.0.0; `make install' will install dirdiff and
+filecmp.so.0.0.
 
 
 Usage.
@@ -98,3 +146,9 @@ group.  Selecting a line means that you are asking for that change to
 be made when you update either of the files using the Merge menu.  The
 line will be removed if it is already present or added if it is not
 present.
+
+Starting with dirdiff-2.0, you can start dirdiff without any arguments
+and it will pop up a dialog box where you can enter the directories to
+be compared.
+
+
