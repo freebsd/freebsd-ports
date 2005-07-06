@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Font-TTF
-PORTVERSION=	0.34
+PORTVERSION=	0.35
 CATEGORIES=	x11-fonts perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Font
@@ -18,7 +18,6 @@ COMMENT=	Perl module for TrueType font hacking
 
 PERL_CONFIGURE=	yes
 
-MAN1=	ttfbuilder.plx.1
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	Font::TTF::AATKern.3 Font::TTF::Anchor.3 Font::TTF::Bsln.3 \
 	Font::TTF::Cmap.3 Font::TTF::Coverage.3 Font::TTF::Cvt_.3 \
@@ -40,6 +39,6 @@ MAN3=	Font::TTF::AATKern.3 Font::TTF::Anchor.3 Font::TTF::Bsln.3 \
 	Font::TTF::Prep.3 Font::TTF::Prop.3 Font::TTF::Segarr.3 \
 	Font::TTF::Table.3 Font::TTF::Ttc.3 Font::TTF::Ttopen.3 \
 	Font::TTF::Utils.3 Font::TTF::Vhea.3 Font::TTF::Vmtx.3 \
-	Font::TTF::XMLparse.3
+	Font::TTF::XMLparse.3 Font::TTF::PSNames.3
 
 .include <bsd.port.mk>
