@@ -4,21 +4,26 @@ uses common UNIX tools such as cat, grep and sed.
 Features include:
     * intuitive commandline interface
     * support for multiple weblogs
+    * support for multiple categories
     * easy editing and management of entries
     * archiving by category, entry, and month
-    * category support
-    * permalinks
-    * RSS syndication (comes with RSS 1.0 (RDF) format)
-    * a fully functional web site, using templates and stylesheets for easy
-      customization (you're looking at it!)
+    * pagination
+    * permanent links
+    * RSS syndication (comes with RSS 1.0 and 2.0 formats)
+    * Atom syndication (comes with 0.3 format)
+    * templates and CSS style sheets for full control of appearance
     * placeholders for easy template manipulation
-    * plugins for calendar, recent entries, weblog status, etc.
+    * plugins for calendar, recent entries, weblog status, fortunes, etc.
     * auto-formatting, e.g. line breaks translate to HTML
-    * parts for extensibility (e.g. news.htm, 2003-06.htm)
-    * per-weblog configuration via a seperate config file (blog.conf)
-    * no dependency on any javascript, server-side scripting, or server-side
-      includes
-    * no need for MySQL or any other special database (uses flat-file)
-    * some small effort at shell portability
+    * support for relative and absolute links
+    * extensibility through reusability
+    * global configuration to set defaults (nb.conf)
+    * per-weblog configuration to override global defaults (blog.conf)
+    * intelligent build system, only rebuilds relative parts for a modified entry
+    * simple cache system, for faster content generation
+    * auto-detection of weblog from current directory
+    * no dependency on any java-script, server-side scripting, or server-side includes
+    * no dependency on any special database (uses flat-file)
+    * multi-platform portability (or at least wherever there's bash and the required commands)
 
-WWW: http://home.columbus.rr.com/n1xt3r/nanoblogger/
+WWW: http://nanoblogger.sourceforge.net/
