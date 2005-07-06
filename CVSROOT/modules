@@ -2261,6 +2261,7 @@ floatator	ports/misc/floatator
 flock		ports/sysutils/flock
 flog		ports/sysutils/flog
 flood		ports/www/flood
+flops		ports/benchmarks/flops
 florist		ports/devel/florist
 flounder	ports/science/flounder
 flow-extract	ports/net-mgmt/flow-extract
