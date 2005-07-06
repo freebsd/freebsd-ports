@@ -1,14 +1,30 @@
---- build.xml~	Thu Dec 23 19:37:39 2004
-+++ build.xml	Wed Jan 12 12:59:16 2005
-@@ -60,6 +60,11 @@
+$FreeBSD$
+
+--- build.xml.orig	Thu Jun 23 00:29:13 2005
++++ build.xml	Tue Jul  5 23:08:11 2005
+@@ -57,12 +57,13 @@
+ 	</path>
+ 		
+ 	<path id="project.build.classpath">
+-		<fileset dir="${buildDir}/${fullProdName}/lib-nodist">
++		<fileset dir="${buildDir}/${fullProdName}/lib">
  			<include name="**/*.jar"/>
  		</fileset>
  
+-		<fileset dir="${buildDir}/${fullProdName}/lib">
+-			<include name="**/*.jar"/>
 +		<fileset dir="${javalibdir}">
 +			<include name="junit.jar"/>
 +			<include name="log4j.jar"/>
-+		</fileset>
-+
- 		<pathelement location="${buildDir}/${fullProdName}" />
- 	</path>
+ 		</fileset>
  
+ 		<pathelement location="${buildDir}/${fullProdName}" />
+@@ -253,7 +254,7 @@
+ 			includes="**/*.class,**/*.properties*,COPYING,README" 
+ 			excludes="testsuite/**" 
+ 			index="true" 
+-			manifest="${buildDir}/MANIFEST.MF"/>
++			manifest="${buildDir}/META-INF/MANIFEST.MF"/>
+ 	</target>
+ 
+ 	<target name="dist-trace" depends="init, compile-driver-trace">
