@@ -32,6 +32,38 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8efe93e2-ee62-11d9-8310-0001020eed82">
+    <topic>zlib -- buffer overflow vulnerability</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.4</ge><lt>5.4_4</lt></range>
+	<range><ge>5.3</ge><lt>5.3_18</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description</h1>
+	<p>An error in the handling of corrupt compressed data streams
+	  can result in a buffer being overflowed.</p>
+	<h1>Impact</h1>
+	<p>By carefully crafting a corrupt compressed data stream, an
+	  attacker can overwrite data structures in a zlib-using
+	  application.	This may cause the application to halt,
+	  causing a denial of service; or it may result in the
+	  attacker gaining elevated privileges.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2096</cvename>
+      <freebsdsa>SA-05:16.zlib</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2005-07-06</discovery>
+      <entry>2005-07-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="70c59485-ee5a-11d9-8310-0001020eed82">
     <topic>acroread -- buffer overflow vulnerability</topic>
     <affects>
@@ -297,7 +329,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <system>
 	<name>FreeBSD</name>
-	<range><ge>5.4</ge><le>5.4_3</le></range>
+	<range><ge>5.4</ge><lt>5.4_3</lt></range>
       </system>
     </affects>
     <description>
@@ -334,6 +366,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-06-29</discovery>
       <entry>2005-06-29</entry>
+      <modified>2005-07-06</modified>
     </dates>
   </vuln>
 
@@ -342,10 +375,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <system>
 	<name>FreeBSD</name>
-	<range><ge>5.4</ge><le>5.4_3</le></range>
-	<range><ge>5.*</ge><le>5.3_17</le></range>
-	<range><ge>4.11</ge><le>4.11_11</le></range>
-	<range><le>4.10_16</le></range>
+	<range><ge>5.4</ge><lt>5.4_3</lt></range>
+	<range><ge>5.*</ge><lt>5.3_17</lt></range>
+	<range><ge>4.11</ge><lt>4.11_11</lt></range>
+	<range><lt>4.10_16</lt></range>
       </system>
       <package>
 	<name>bzip2</name>
@@ -386,7 +419,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-03-30</discovery>
       <entry>2005-06-29</entry>
-      <modified>2005-07-05</modified>
+      <modified>2005-07-06</modified>
     </dates>
   </vuln>
 
@@ -395,10 +428,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <system>
 	<name>FreeBSD</name>
-	<range><ge>5.4</ge><le>5.4_3</le></range>
-	<range><ge>5.*</ge><le>5.3_17</le></range>
-	<range><ge>4.11</ge><le>4.11_11</le></range>
-	<range><le>4.10_16</le></range>
+	<range><ge>5.4</ge><lt>5.4_3</lt></range>
+	<range><ge>5.*</ge><lt>5.3_17</lt></range>
+	<range><ge>4.11</ge><lt>4.11_11</lt></range>
+	<range><lt>4.10_16</lt></range>
       </system>
     </affects>
     <description>
@@ -434,7 +467,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-06-29</discovery>
       <entry>2005-06-29</entry>
-      <modified>2005-07-03</modified>
+      <modified>2005-07-06</modified>
     </dates>
   </vuln>
 
@@ -1011,12 +1044,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <system>
 	<name>FreeBSD</name>
-	<range><ge>5.4</ge><le>5.4_2</le></range>
-	<range><ge>5.0</ge><le>5.3_16</le></range>
-	<range><ge>4.11</ge><le>4.11_10</le></range>
-	<range><ge>4.10</ge><le>4.10_15</le></range>
-	<range><ge>4.9</ge><le>4.9_18</le></range>
-	<range><le>4.8_33</le></range>
+	<range><ge>5.4</ge><lt>5.4_2</lt></range>
+	<range><ge>5.0</ge><lt>5.3_16</lt></range>
+	<range><ge>4.11</ge><lt>4.11_10</lt></range>
+	<range><ge>4.10</ge><lt>4.10_15</lt></range>
+	<range><ge>4.9</ge><lt>4.9_18</lt></range>
+	<range><lt>4.8_33</lt></range>
       </system>
       <package>
 	<name>gzip</name>
@@ -1058,6 +1091,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-04-20</discovery>
       <entry>2005-06-18</entry>
+      <modified>2005-07-06</modified>
     </dates>
   </vuln>
 
