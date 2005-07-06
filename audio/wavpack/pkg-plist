@@ -1,0 +1,11 @@
+bin/wavpack
+bin/wvunpack
+include/wavpack/md5.h
+include/wavpack/unpack3.h
+include/wavpack/wavpack.h
+include/wavpack/wputils.h
+lib/libwavpack.a
+lib/libwavpack.so
+lib/libwavpack.so.0
+libdata/pkgconfig/wavpack.pc
+@dirrm include/wavpack
