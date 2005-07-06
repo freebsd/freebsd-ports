@@ -1,0 +1,22 @@
+--- build/unix/config_proginfo_host.orig	Sun Jul  3 17:23:50 2005
++++ build/unix/config_proginfo_host	Sun Jul  3 17:24:43 2005
+@@ -80,7 +80,7 @@
+ LIB_openal_CFLAGS=""
+ case "$HOST_SYSTEM" in
+ 	FreeBSD|OpenBSD)
+-		LIB_openal_LDFLAGS="-L/usr/local/lib -pthread -lopenal"
++		LIB_openal_LDFLAGS="-L${LOCALBASE}/lib -pthread -lopenal"
+ 		;;
+ 	MINGW32*)
+ 		LIB_openal_LDFLAGS="-lopenal32"
+@@ -132,8 +132,8 @@
+ LIB_vorbisfile_NAME="vorbisfile"
+ case "$HOST_SYSTEM" in
+ 	FreeBSD|OpenBSD)
+-		LIB_vorbisfile_CFLAGS="-I/usr/local/include"
+-		LIB_vorbisfile_LDFLAGS="-L/usr/local/lib -lvorbisfile -lvorbis"
++		LIB_vorbisfile_CFLAGS="-I${LOCALBASE}/include"
++		LIB_vorbisfile_LDFLAGS="-L${LOCALBASE}/lib -lvorbisfile -lvorbis"
+ 		;;
+ 	MINGW32*)
+ 		LIB_vorbisfile_CFLAGS=""
