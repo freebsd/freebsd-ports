@@ -1,0 +1,67 @@
+etc/cron.daily/epylog.cron
+etc/epylog/epylog.conf
+etc/epylog/modules.d/logins.conf
+etc/epylog/modules.d/mail.conf
+etc/epylog/modules.d/notices.conf
+etc/epylog/modules.d/packets.conf
+etc/epylog/modules.d/spamd.conf
+etc/epylog/modules.d/weeder.conf
+etc/epylog/notice_dist.xml
+etc/epylog/notice_local.xml
+etc/epylog/report_template.html
+etc/epylog/trojans.list
+etc/epylog/weed_dist.cf
+etc/epylog/weed_local.cf
+lib/perl5/site_perl/epylog.pm
+%%PYTHON_SITELIBDIR%%/epylog/__init__.py
+%%PYTHON_SITELIBDIR%%/epylog/__init__.pyc
+%%PYTHON_SITELIBDIR%%/epylog/helpers.py
+%%PYTHON_SITELIBDIR%%/epylog/helpers.pyc
+%%PYTHON_SITELIBDIR%%/epylog/log.py
+%%PYTHON_SITELIBDIR%%/epylog/log.pyc
+%%PYTHON_SITELIBDIR%%/epylog/module.py
+%%PYTHON_SITELIBDIR%%/epylog/module.pyc
+%%PYTHON_SITELIBDIR%%/epylog/mytempfile.py
+%%PYTHON_SITELIBDIR%%/epylog/mytempfile.pyc
+%%PYTHON_SITELIBDIR%%/epylog/publishers.py
+%%PYTHON_SITELIBDIR%%/epylog/publishers.pyc
+%%PYTHON_SITELIBDIR%%/epylog/report.py
+%%PYTHON_SITELIBDIR%%/epylog/report.pyc
+sbin/epylog
+share/doc/epylog-1.0.3/AUTHORS
+share/doc/epylog-1.0.3/ChangeLog
+share/doc/epylog-1.0.3/INSTALL
+share/doc/epylog-1.0.3/LICENSE
+share/doc/epylog-1.0.3/README
+share/doc/epylog-1.0.3/doc/modules.txt
+share/doc/epylog-1.0.3/doc/roadmap.txt
+share/doc/epylog-1.0.3/doc/templates/template.mod.pl
+share/doc/epylog-1.0.3/doc/templates/template_mod.py
+share/doc/epylog-1.0.3/doc/testcase/logins.testcase
+share/doc/epylog-1.0.3/doc/testcase/mail.testcase
+share/doc/epylog-1.0.3/doc/testcase/notices.testcase
+share/doc/epylog-1.0.3/doc/testcase/packets.testcase
+share/doc/epylog-1.0.3/doc/testcase/spamd.testcase
+share/doc/epylog-1.0.3/doc/testcase/weeder.testcase
+share/epylog/modules/logins_mod.py
+share/epylog/modules/logins_mod.pyc
+share/epylog/modules/mail_mod.py
+share/epylog/modules/mail_mod.pyc
+share/epylog/modules/notices_mod.py
+share/epylog/modules/notices_mod.pyc
+share/epylog/modules/packets_mod.py
+share/epylog/modules/packets_mod.pyc
+share/epylog/modules/spamd_mod.py
+share/epylog/modules/spamd_mod.pyc
+share/epylog/modules/weeder_mod.py
+share/epylog/modules/weeder_mod.pyc
+@dirrm share/epylog/modules
+@dirrm share/epylog
+@dirrm share/doc/epylog-1.0.3/doc/testcase
+@dirrm share/doc/epylog-1.0.3/doc/templates
+@dirrm share/doc/epylog-1.0.3/doc
+@dirrm share/doc/epylog-1.0.3
+@dirrm %%PYTHON_SITELIBDIR%%/epylog
+@dirrm etc/epylog/modules.d
+@dirrm etc/epylog
+@unexec rmdir %D/etc/cron.daily 2>/dev/null || true

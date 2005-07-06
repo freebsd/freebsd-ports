@@ -1,0 +1,20 @@
+Epylog is a syslog parser which runs periodically,
+looks at your logs, processes some of the entries
+in order to present them in a more comprehensible format,
+and then mails you the output.
+It is written specifically for large network clusters
+where a lot of machines (around 50 and upwards) log to the
+same loghost using syslog or syslog-ng.
+It is an alternative to a similar package, called LogWatch.
+
+The epylog engine should work on most unix systems running
+Python-2.2 and above, although currently the processing modules
+are only written to work with linux (and particularly Red Hat Linux
+series 7 and above).
+However, other unix and linux flavors should work fine,
+as long as they use standard logging facilities and things like PAM.
+
+WWW: http://linux.duke.edu/projects/epylog
+
+- Alan Snelson
+alan@wave2.co.uk
