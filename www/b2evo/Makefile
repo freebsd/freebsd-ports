@@ -7,11 +7,15 @@
 
 PORTNAME=	b2evolution
 PORTVERSION=	0.9.0.12
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	evocms
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${B2EVO_DATE}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${B2EVO_DATE} \
+		xmlrpc_fix_111
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-${B2EVO_DATE}
 
+# Maintainership available: drop me a line if interested :p
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	A multilingual, multiuser, multi-blog engine
 
@@ -41,6 +45,10 @@ B2EVO_DIR?=	${WWWDOCROOT}/${B2EVO_URL}
 PLIST=		${WRKDIR}/pkg-plist
 
 .include <bsd.port.pre.mk>
+
+post-extract:
+	cd ${WRKSRC}/blogs/b2evocore \
+		&& ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/xmlrpc_fix_111${EXTRACT_SUFX}
 
 pre-install:
 	cd ${WRKSRC} && ${FIND} -s . -type f | \
