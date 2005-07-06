@@ -413,12 +413,14 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <cvename>CAN-2005-2086</cvename>
       <url>http://www.frsirt.com/english/advisories/2005/0904</url>
       <url>http://www.phpbb.com/phpBB/viewtopic.php?t=302011</url>
     </references>
     <dates>
       <discovery>2005-06-28</discovery>
       <entry>2005-07-03</entry>
+      <modified>2005-07-07</modified>
     </dates>
   </vuln>
 
