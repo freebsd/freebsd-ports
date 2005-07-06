@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	scm
-PORTVERSION=	5d9
-PORTREVISION=	1
+PORTVERSION=	5e1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. OLD
-DISTFILES=	scm5d9.zip slib3a1.zip slib-psd1-3.tar.gz
-EXTRACT_ONLY=	scm5d9.zip slib3a1.zip
+DISTFILES=	scm5e1.zip slib3a2.zip slib-psd1-3.tar.gz
+EXTRACT_ONLY=	scm5e1.zip slib3a2.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scheme interpreter
@@ -32,7 +31,7 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 SCM_DATA=	COPYING Iedline.scm Init${PORTVERSION}.scm Link.scm \
 		Macexp.scm Macro.scm Transcen.scm Tscript.scm mkimpcat.scm \
 		r4rstest.scm
-SCM_MODULES=	crs.so edline.so gsubr.so ioext.so posix.so ramap.so \
+SCM_MODULES=	byte.so crs.so edline.so gsubr.so ioext.so posix.so ramap.so \
 		record.so rgx.so sc2.so socket.so unix.so
 
 .include <bsd.port.pre.mk>
@@ -54,7 +53,13 @@ post-patch:
 post-build:
 	@cd ${WRKSRC} \
 		&& SCMLIT="./scmlit" ${SH} ./build \
-		 -F "arrays bignums cautious inexact macro dynamic-linking" \
+		 -F arrays \
+		 -F bignums \
+		 -F cautious \
+		 -F engineering-notation \
+		 -F inexact \
+		 -F macro \
+		 -F dynamic-linking \
 		 -h system \
 		 -o scm \
 		 -s "${PREFIX}/lib/scm/" \
@@ -67,8 +72,43 @@ post-build:
 		 -h system \
 		 -t dll \
 		&& SCMLIT="./scmlit" ${SH} ./build \
-		 -c "sc2.c rgx.c record.c gsubr.c ioext.c posix.c unix.c \
-		     socket.c ramap.c" \
+		 -c sc2.c \
+		 -h system \
+		 -t dll \
+		&& SCMLIT="./scmlit" ${SH} ./build \
+		 -c rgx.c \
+		 -h system \
+		 -t dll \
+		&& SCMLIT="./scmlit" ${SH} ./build \
+		 -c record.c \
+		 -h system \
+		 -t dll \
+		&& SCMLIT="./scmlit" ${SH} ./build \
+		 -c gsubr.c \
+		 -h system \
+		 -t dll \
+		&& SCMLIT="./scmlit" ${SH} ./build \
+		 -c ioext.c \
+		 -h system \
+		 -t dll \
+		&& SCMLIT="./scmlit" ${SH} ./build \
+		 -c posix.c \
+		 -h system \
+		 -t dll \
+		&& SCMLIT="./scmlit" ${SH} ./build \
+		 -c unix.c \
+		 -h system \
+		 -t dll \
+		&& SCMLIT="./scmlit" ${SH} ./build \
+		 -c socket.c \
+		 -h system \
+		 -t dll \
+		&& SCMLIT="./scmlit" ${SH} ./build \
+		 -c ramap.c \
+		 -h system \
+		 -t dll \
+		&& SCMLIT="./scmlit" ${SH} ./build \
+		 -c byte.c \
 		 -h system \
 		 -t dll
 
@@ -86,7 +126,6 @@ do-install:
 	@${MKDIR} ${PREFIX}/lib/scm/slib/psd
 	${INSTALL_DATA} ${WRKDIR}/slib/psd/*.scm ${PREFIX}/lib/scm/slib/psd
 	${INSTALL_DATA} ${WRKDIR}/scm/scm.info ${PREFIX}/info
-	@install-info ${PREFIX}/info/scm.info ${PREFIX}/info/dir
 	cd ${PREFIX}/lib/scm && ${PREFIX}/bin/scm -lmkimpcat.scm
 
 .include <bsd.port.post.mk>

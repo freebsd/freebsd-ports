@@ -10,10 +10,10 @@ SLIB is a portable Scheme library which SCM uses.
 
 SLIB-PSD is a portable debugger for Scheme (requires emacs editor).
 
-The init file is hard-coded as /usr/local/share/scm/Init.scm.  Alternatively,
+The init file is hard-coded as /usr/local/lib/scm/Init.scm.  Alternatively,
 one can set the environment variable SCM_INIT_PATH to the pathname of Init.scm.
 
-The library files are in /usr/local/share/scm/slib.  Alternatively, one can set
+The library files are in /usr/local/lib/scm/slib.  Alternatively, one can set
 the environment variable SCHEME_LIBRARY_PATH to the slib directory.  Remember to
 use a trailing / on the pathname.
 
