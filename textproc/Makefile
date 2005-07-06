@@ -51,6 +51,7 @@
     SUBDIR += coco
     SUBDIR += code2html
     SUBDIR += cole
+    SUBDIR += colordiff
     SUBDIR += cost
     SUBDIR += crimson
     SUBDIR += cs-aspell

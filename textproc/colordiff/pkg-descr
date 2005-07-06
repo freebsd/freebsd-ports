@@ -1,0 +1,10 @@
+Colordiff is a wrapper for diff and produces the same output as diff but with
+coloured syntax highlighting at the command line to improve readability.
+
+The output is similar to how a diff-generated patch might appear in Vim or Emacs
+with the appropriate syntax highlighting options enabled.
+
+WWW: http://colordiff.sourceforge.net/
+
+- ehaupt
+ehaupt@critical.ch
