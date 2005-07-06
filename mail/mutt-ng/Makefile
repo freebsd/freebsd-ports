@@ -82,7 +82,7 @@ PLIST_SUB+=		HCACHE="@comment "
 
 .if defined (WITH_FLOCK)
 CONFIGURE_ARGS+=	--enable-flock
-CONFIGURE_ARGS+=	--disbale-fcntl
+CONFIGURE_ARGS+=	--disable-fcntl
 .endif
 
 .if defined(WITH_SLANG) && !defined(WITH_NCURSES_PORT)
