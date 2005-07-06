@@ -1981,6 +1981,7 @@ epsmerge	ports/print/epsmerge
 epsonepl	ports/print/epsonepl
 epstool		ports/graphics/epstool
 epydoc		ports/devel/epydoc
+epylog		ports/sysutils/epylog
 erc		ports/irc/erc
 eric		ports/devel/eric
 eris		ports/devel/eris
