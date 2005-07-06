@@ -1,0 +1,11 @@
+--- build/unix/build_functions.orig	Mon May 16 01:28:22 2005
++++ build/unix/build_functions	Sun Jul  3 18:00:10 2005
+@@ -145,7 +145,7 @@
+ 	eval "${TARGET}_requirements"
+ 	eval "${TARGET}_prepare_config"
+ 	eval "${TARGET}_load_config"
+-	eval "${TARGET}_do_config"
++	#eval "${TARGET}_do_config"
+ 	eval "${TARGET}_save_config"
+ }
+ 
