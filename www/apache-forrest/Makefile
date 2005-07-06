@@ -19,7 +19,8 @@ DISTNAME=		${PORTNAME}-${PORTVERSION}
 MAINTAINER=		nivit@users.sourceforge.net
 COMMENT=		A tool for rapid development of small sites
 
-USE_JAVA=		1.4+
+USE_JAVA=		yes
+JAVA_VERSION=		1.4+
 
 USE_REINPLACE=		Yes
 REPLACE_FILES=		${WRKSRC}/bin/forrest ${WRKSRC}/tools/ant/bin/ant
