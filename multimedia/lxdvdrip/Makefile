@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	lxdvdrip
-PORTVERSION=	1.41
+PORTVERSION=	1.46
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.berlios.de/lxdvdrip/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-3
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	q@galgenberg.net
@@ -22,13 +21,19 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+MAN1=		lxdvdrip.1
+
 do-build:
-	(cd ${WRKSRC}; ${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib \
-	-ldvdread -lm -o lxdvdrip lxdvdrip.c)
+	(cd ${WRKSRC}; \
+	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib \
+	-ldvdread -lm -o lxdvdrip lxdvdrip.c; \
+	${CC} ${CFLAGS} -lm -o lxac3scan lxac3scan.c)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lxdvdrip ${LOCALBASE}/bin
-	${INSTALL_DATA} ${WRKSRC}/doc-pak/lxdvdrip.conf.* ${LOCALBASE}/etc
+	${INSTALL_PROGRAM} ${WRKSRC}/lxdvdrip ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/lxac3scan ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/lxdvdrip.1 ${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/doc-pak/lxdvdrip.conf.* ${PREFIX}/etc
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc-pak && ${CP} Changelog* README.* TODO freebsd.doc ${DOCSDIR}
