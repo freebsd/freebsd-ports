@@ -12,6 +12,7 @@ parrot/LICENSES/gpl.txt
 parrot/bin/parrot
 parrot/docs/debugger.pod
 parrot/docs/embed.pod
+parrot/docs/extend.pod
 parrot/docs/faq.pod
 parrot/docs/gettingstarted.pod
 parrot/docs/glossary.pod
@@ -55,6 +56,7 @@ parrot/docs/pdds/pdd15_objects.pod
 parrot/docs/pdds/pdd16_native_call.pod
 parrot/docs/pdds/pdd17_basic_types.pod
 parrot/docs/pdds/pdd18_security.pod
+parrot/docs/pdds/pdd19_pir.pod
 parrot/docs/pdds/pdd_template.pod
 parrot/docs/pmc/array.pod
 parrot/docs/pmc/iterator.pod
@@ -63,6 +65,11 @@ parrot/docs/pmc/perlhash.pod
 parrot/docs/pmc/perlstring.pod
 parrot/docs/pmc/struct.pod
 parrot/docs/pmc/subs.pod
+parrot/docs/req/model_users.pod
+parrot/docs/resources/favicon.ico
+parrot/docs/resources/parrot.small.png
+parrot/docs/resources/perl.css
+parrot/docs/resources/up.gif
 parrot/examples/assembly/99beer.pasm
 parrot/examples/assembly/Makefile
 parrot/examples/assembly/acorn.l
@@ -100,6 +107,7 @@ parrot/examples/assembly/small.xml
 parrot/examples/assembly/stack.pasm
 parrot/examples/assembly/sub.pasm
 parrot/examples/assembly/substr.pasm
+parrot/examples/assembly/sudoku.pir
 parrot/examples/assembly/thr-primes.imc
 parrot/examples/assembly/trace.pasm
 parrot/examples/assembly/uniq.pasm
@@ -278,6 +286,8 @@ parrot/imcc/examples/test_spilling.imc
 parrot/runtime/parrot/dynext/README
 parrot/runtime/parrot/include/DWIM.imc
 parrot/runtime/parrot/include/README
+parrot/runtime/parrot/include/call_bits.pasm
+parrot/runtime/parrot/include/cclass.pasm
 parrot/runtime/parrot/include/config.fpmc
 parrot/runtime/parrot/include/datatypes.pasm
 parrot/runtime/parrot/include/errors.pasm
@@ -285,8 +295,10 @@ parrot/runtime/parrot/include/except_severity.pasm
 parrot/runtime/parrot/include/except_types.pasm
 parrot/runtime/parrot/include/iglobals.pasm
 parrot/runtime/parrot/include/interpcores.pasm
+parrot/runtime/parrot/include/interpdebug.pasm
 parrot/runtime/parrot/include/interpflags.pasm
 parrot/runtime/parrot/include/interpinfo.pasm
+parrot/runtime/parrot/include/interptrace.pasm
 parrot/runtime/parrot/include/iotypes.pasm
 parrot/runtime/parrot/include/iterator.pasm
 parrot/runtime/parrot/include/longopt.pasm
@@ -302,8 +314,10 @@ parrot/runtime/parrot/include/timer.pasm
 parrot/runtime/parrot/include/tm.pasm
 parrot/runtime/parrot/include/vtable_methods.pasm
 parrot/runtime/parrot/include/warnings.pasm
+parrot/runtime/parrot/library/PGE.pbc
 parrot/runtime/parrot/library/PGE/Dumper.pir
 parrot/runtime/parrot/library/PGE/Glob.pir
+parrot/runtime/parrot/library/PGE/Hs.pir
 parrot/runtime/parrot/library/SDL.imc
 parrot/runtime/parrot/library/config.imc
 parrot/runtime/parrot/library/config.pbc
@@ -400,6 +414,8 @@ parrot/runtime/parrot/library/YAML/Parser/Syck.imc
 @dirrm parrot/examples/benchmarks
 @dirrm parrot/examples/assembly
 @dirrm parrot/examples
+@dirrm parrot/docs/resources
+@dirrm parrot/docs/req
 @dirrm parrot/docs/pmc
 @dirrm parrot/docs/pdds
 @dirrm parrot/docs/dev
