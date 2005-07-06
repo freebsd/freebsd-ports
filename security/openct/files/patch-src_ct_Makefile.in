@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/ct/Makefile.in.orig	Tue Jul 20 23:56:08 2004
++++ src/ct/Makefile.in	Wed Sep  8 18:38:25 2004
+@@ -169,7 +169,7 @@
+ 
+ libopenct_la_LDFLAGS = -version-info @OPENCT_LT_CURRENT@:@OPENCT_LT_REVISION@:@OPENCT_LT_AGE@
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = @prefix@/libdata/pkgconfig
+ pkgconfig_DATA = libopenct.pc
+ subdir = src/ct
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

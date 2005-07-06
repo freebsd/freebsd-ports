@@ -1,0 +1,65 @@
+bin/openct-tool
+sbin/ifdhandler
+sbin/ifdproxy
+sbin/openct-control
+include/openct/apdu.h
+include/openct/buffer.h
+include/openct/conf.h
+include/openct/ctapi.h
+include/openct/device.h
+include/openct/driver.h
+include/openct/error.h
+include/openct/ifd.h
+include/openct/logging.h
+include/openct/openct.h
+include/openct/protocol.h
+include/openct/server.h
+include/openct/socket.h
+include/openct/tlv.h
+include/openct/types.h
+lib/openct-ifd.so
+lib/openct-ifd.bundle/Contents/Info.plist
+lib/openct-ifd.bundle/Contents/PkgInfo
+lib/openct-ifd.bundle/Contents/FreeBSD/openct-ifd.so
+lib/libopenct.a
+lib/libopenct.so
+lib/libopenct.so.1
+lib/libopenctapi.a
+lib/libopenctapi.so
+lib/libifd.a
+lib/libifd.so
+lib/libifd.so.1
+libdata/pkgconfig/libopenct.pc
+etc/openct.conf-sample
+etc/rc.d/openct.sh
+@dirrm include/openct/
+@dirrm lib/openct-ifd.bundle/Contents/FreeBSD/
+@dirrm lib/openct-ifd.bundle/Contents/
+@dirrm lib/openct-ifd.bundle/
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/export-wiki.sh
+%%PORTDOCS%%%%DOCSDIR%%/export-wiki.xsl
+%%PORTDOCS%%%%DOCSDIR%%/AuthorsAndCredits.html
+%%PORTDOCS%%%%DOCSDIR%%/FilesTools.html
+%%PORTDOCS%%%%DOCSDIR%%/LicenseText.html
+%%PORTDOCS%%%%DOCSDIR%%/OperatingSystems.html
+%%PORTDOCS%%%%DOCSDIR%%/QuickStart.html
+%%PORTDOCS%%%%DOCSDIR%%/RecentResults.html
+%%PORTDOCS%%%%DOCSDIR%%/RemoteAccess.html
+%%PORTDOCS%%%%DOCSDIR%%/SecureSetup.html
+%%PORTDOCS%%%%DOCSDIR%%/SupportedReaders.html
+%%PORTDOCS%%%%DOCSDIR%%/TroubleShooting.html
+%%PORTDOCS%%%%DOCSDIR%%/cardman.html
+%%PORTDOCS%%%%DOCSDIR%%/ccid.html
+%%PORTDOCS%%%%DOCSDIR%%/egate.html
+%%PORTDOCS%%%%DOCSDIR%%/etoken.html
+%%PORTDOCS%%%%DOCSDIR%%/eutron.html
+%%PORTDOCS%%%%DOCSDIR%%/gempc.html
+%%PORTDOCS%%%%DOCSDIR%%/ikey2032.html
+%%PORTDOCS%%%%DOCSDIR%%/ikey3000.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/kaan.html
+%%PORTDOCS%%%%DOCSDIR%%/smartboard.html
+%%PORTDOCS%%%%DOCSDIR%%/towitoko.html
+%%PORTDOCS%%%%DOCSDIR%%/trac.css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
