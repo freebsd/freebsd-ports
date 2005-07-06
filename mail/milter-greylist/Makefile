@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	milter-greylist
-PORTVERSION=	1.6
-PORTREVISION=	2
+PORTVERSION=	2.0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/
+DISTNAME=	milter-greylist-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	aragorn+ports@teaser.fr
@@ -18,11 +18,12 @@ COMMENT=	Easy-to-use greylist milter for sendmail
 MAN5=		greylist.conf.5
 MAN8=		milter-greylist.8
 
+CFLAGS+=	${PTHREAD_CFLAGS}
+LIBS+=		${PTHREAD_LIBS}
+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-user=smmsp
-CFLAGS+=	${PTHREAD_CFLAGS}
-LIBS+=		${PTHREAD_LIBS}
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LIBS="${LIBS}"
 
 ALL_TARGET=	milter-greylist
@@ -46,14 +47,30 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/milter-greylist.sh ${PREFIX}/etc/rc.d/
 
 post-install:
-	@${MKDIR} /var/milter-greylist /var/db/milter-greylist
-	@${CHOWN} smmsp /var/milter-greylist /var/db/milter-greylist
+	@${MKDIR} /var/milter-greylist
+	@${CHOWN} smmsp /var/milter-greylist
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/greylist.conf ${EXAMPLESDIR}
 .endif
+
+	@${TEST} -f /var/db/milter-greylist/greylist.db && ( \
+		${ECHO} "************************************************************"; \
+		${ECHO} "************************************************************"; \
+		${ECHO} "**                                                        **"; \
+		${ECHO} "**                        WARNING                         **"; \
+		${ECHO} "**                                                        **"; \
+		${ECHO} "** The default dump file location has changed.            **"; \
+		${ECHO} "** Please move greylist.db from /var/db/milter-greylist/  **"; \
+		${ECHO} "** to /var/milter-greylist/ and update your greylist.conf **"; \
+		${ECHO} "** accordingly.                                           **"; \
+		${ECHO} "**                                                        **"; \
+		${ECHO} "************************************************************"; \
+		${ECHO} "************************************************************"; \
+	) || ${TRUE}
+
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
