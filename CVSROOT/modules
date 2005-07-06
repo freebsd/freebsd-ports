@@ -11680,6 +11680,7 @@ totd		ports/dns/totd
 totem		ports/multimedia/totem
 totem-gstreamer	ports/multimedia/totem-gstreamer
 towitoko	ports/devel/towitoko
+toxine		ports/multimedia/toxine
 tpad		ports/editors/tpad
 tpager		ports/x11-wm/tpager
 tpasm		ports/devel/tpasm
