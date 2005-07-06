@@ -125,6 +125,7 @@
     SUBDIR += eject
     SUBDIR += enteruser
     SUBDIR += env4801
+    SUBDIR += epylog
     SUBDIR += eroaster
     SUBDIR += est
     SUBDIR += estctrl
