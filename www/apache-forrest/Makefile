@@ -5,8 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=		apache-forrest
-PORTVERSION=		0.5.1
-CATEGORIES=		www
+PORTVERSION=		0.7
+CATEGORIES=		www java
 MASTER_SITES=		${MASTER_SITE_APACHE} \
 			http://mirror.tomato.it/apache/forrest/ \
 			http://mirrors.publicshout.org/apache/forrest/ \
@@ -14,46 +14,38 @@ MASTER_SITES=		${MASTER_SITE_APACHE} \
 			http://www.apache.inetcosmos.org/dist/forrest/ \
 			ftp://mirror.nohup.it/apache/forrest/
 MASTER_SITE_SUBDIR=	forrest
-DISTNAME=		${PORTNAME}-${PORTVERSION}-src
+DISTNAME=		${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=		nivit@users.sourceforge.net
 COMMENT=		A tool for rapid development of small sites
 
-USE_JAVA=		1.2+
+USE_JAVA=		1.4+
 
-REPLACE_FILES=		${WRKSRC}/src/resources/forrest-shbat/bin/forrest \
-			${WRKSRC}/src/resources/forrestbot/bin/forrestbot
+USE_REINPLACE=		Yes
+REPLACE_FILES=		${WRKSRC}/bin/forrest ${WRKSRC}/tools/ant/bin/ant
 
-BUILD_CMD=		${SETENV} JAVA_HOME=${JAVA_HOME} ${WRKSRC}/build.sh
-
-.if !defined(NOPORTDOCS)
-BUILD_DOCS=		site
-FORREST_DOCS=		${INSTALL_WRKSRC}/${BUILD_DOCS}
-.endif
+NO_BUILD=		Yes
 
 INSTALL_WRKSRC=		${WRKSRC}/build
-FORREST_DIR=		${INSTALL_WRKSRC}/dist/shbat
 LINK_OPTS?=		-sf
 
 FIND_ARGS1=		-type d \! -empty
-FIND_ARGS2=		\! -type d -and -perm -a+x -and \! -name "*.orig"
-FIND_ARGS3=		\! -type d -and \! -perm -a+x -and \! -name "*.bat" -and \! -name "*.orig"
+FIND_ARGS2=		\! -type d -and -perm -a+x -and \! -name "*.orig" -and \! -name "*.bak"
+FIND_ARGS3=		\! -type d -and \! -perm -a+x -and \! -name "*.bat" -and \! -name "*.orig" -and \! -name "LICENSE.txt" -and \! -name "KEYS" -and \! -name "NOTICE.txt" -and \! -name "*.license.txt"
+
+ANT=		${DATADIR}/tools/ant/bin/ant
+ANT_TARGET=	local-deploy
+PLUGINSDIR=	${DATADIR}/plugins/org.apache.forrest.plugin.output.pdf
 
 post-patch:
 	@for FILE in ${REPLACE_FILES}; do \
-		${SED} \
-		-e "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/g" \
-		$${FILE} > ${WRKSRC}/`basename $${FILE}`; \
-		${MV} -f ${WRKSRC}/`basename $${FILE}` $${FILE}; \
+		${REINPLACE_CMD} -e "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/g" \
+		$${FILE} ;\
 	done;
-
-do-build:
-	@cd ${WRKSRC}; \
-	${BUILD_CMD} ${BUILD_DOCS}
 
 do-install:
 # Script and data
-	@cd ${FORREST_DIR}; \
+	@cd ${WRKSRC}; \
 	DIRS=$$(${FIND} . ${FIND_ARGS1}); \
 	for DIR in $${DIRS}; do \
 		${MKDIR} ${DATADIR}/$${DIR}; \
@@ -66,26 +58,18 @@ do-install:
 	for FILE in $${FILES}; do \
 		${INSTALL_DATA} $${FILE} ${DATADIR}/$${FILE}; \
 	done;
-# Documentation
-.if !defined(NOPORTDOCS)
-	@cd ${FORREST_DOCS}; \
-	DIRS=$$(${FIND} . ${FIND_ARGS1}); \
-	for DIR in $${DIRS}; do \
-		${MKDIR} ${DOCSDIR}/$${DIR}; \
-	done; \
-	FILES=$$(${FIND} . ${FIND_ARGS3}); \
-	for FILE in $${FILES}; do \
-		${INSTALL_DATA} $${FILE} ${DOCSDIR}/$${FILE}; \
-	done;
-.endif
+
 # Links to executables
-	@cd ${FORREST_DIR}; \
+	@cd ${WRKSRC}; \
 	FILES=$$(${FIND} bin ${FIND_ARGS2} ); \
 	for FILE in $${FILES}; do \
 		${LN} ${LINK_OPTS} ${DATADIR}/$${FILE} ${PREFIX}/$${FILE}; \
 	done;
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
+	@cd ${PLUGINSDIR}; \
+	${SETENV} FORREST_HOME=${DATADIR} ${ANT} ${ANT_TARGET}; \
+	${SED} -e "/%%DATADIR%%/s//${DATADIR:S/\//\\\//g}/g" \
+		-e "/%%PORTVERSION%%/s//${PORTVERSION}/g" ${PKGMESSAGE};
 
 .include <bsd.port.mk>

@@ -1,758 +1,1316 @@
+@comment $FreeBSD$
 bin/forrest
-bin/forrestbot
-%%PORTDOCS%%%%DOCSDIR%%/images/project-logo.png
-%%PORTDOCS%%%%DOCSDIR%%/images/group-logo.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/tabs.png
-%%PORTDOCS%%%%DOCSDIR%%/images/fix.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/add.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/dir-menu3.png
-%%PORTDOCS%%%%DOCSDIR%%/images/menu.png
-%%PORTDOCS%%%%DOCSDIR%%/images/menu3.png
-%%PORTDOCS%%%%DOCSDIR%%/images/dir-menu2.png
-%%PORTDOCS%%%%DOCSDIR%%/images/icon.png
-%%PORTDOCS%%%%DOCSDIR%%/images/menu2.png
-%%PORTDOCS%%%%DOCSDIR%%/images/hack.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/rss.png
-%%PORTDOCS%%%%DOCSDIR%%/images/built-with-cocoon.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/dir-menu.png
-%%PORTDOCS%%%%DOCSDIR%%/images/remove.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/update.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/project-logo.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/new-project.png
-%%PORTDOCS%%%%DOCSDIR%%/images/page-areas.png
-%%PORTDOCS%%%%DOCSDIR%%/skin/images/search-right.gif
-%%PORTDOCS%%%%DOCSDIR%%/skin/images/singlepage.gif
-%%PORTDOCS%%%%DOCSDIR%%/skin/images/vcss.png
-%%PORTDOCS%%%%DOCSDIR%%/skin/images/pdfdoc.gif
-%%PORTDOCS%%%%DOCSDIR%%/skin/images/chapter_open.gif
-%%PORTDOCS%%%%DOCSDIR%%/skin/images/current.gif
-%%PORTDOCS%%%%DOCSDIR%%/skin/images/printer.gif
-%%PORTDOCS%%%%DOCSDIR%%/skin/images/favicon.ico
-%%PORTDOCS%%%%DOCSDIR%%/skin/images/doc.gif
-%%PORTDOCS%%%%DOCSDIR%%/skin/images/valid-html401.png
-%%PORTDOCS%%%%DOCSDIR%%/skin/images/tab-right.gif
-%%PORTDOCS%%%%DOCSDIR%%/skin/images/tab-left.gif
-%%PORTDOCS%%%%DOCSDIR%%/skin/images/spacer.gif
-%%PORTDOCS%%%%DOCSDIR%%/skin/images/xmldoc.gif
-%%PORTDOCS%%%%DOCSDIR%%/skin/images/tabSel-right.gif
-%%PORTDOCS%%%%DOCSDIR%%/skin/images/menu-left.gif
-%%PORTDOCS%%%%DOCSDIR%%/skin/images/chapter.gif
-%%PORTDOCS%%%%DOCSDIR%%/skin/images/page.gif
-%%PORTDOCS%%%%DOCSDIR%%/skin/images/label.gif
-%%PORTDOCS%%%%DOCSDIR%%/skin/images/menu-right.gif
-%%PORTDOCS%%%%DOCSDIR%%/skin/images/search-left.gif
-%%PORTDOCS%%%%DOCSDIR%%/skin/images/tabSel-left.gif
-%%PORTDOCS%%%%DOCSDIR%%/skin/breadcrumbs.js
-%%PORTDOCS%%%%DOCSDIR%%/skin/breadcrumbs-optimized.js
-%%PORTDOCS%%%%DOCSDIR%%/skin/page.css
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/xmlform/step4.html
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/xmlform/step1.html
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/xmlform/step5.html
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/xmlform/howto-xmlform.html
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/xmlform/step5.pdf
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/xmlform/step2.html
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/xmlform/revision-step1-2002-05-20.html
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/xmlform/step2.pdf
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/xmlform/revision-howto-xmlform-2002-05-20.html
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/xmlform/howto-xmlform.pdf
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/xmlform/step3.html
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/xmlform/step1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/xmlform/revision-howto-xmlform-2002-05-25.html
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/xmlform/revision-howto-xmlform-2002-05-25.pdf
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/xmlform/revision-step1-2002-05-20.pdf
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/xmlform/step4.pdf
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/xmlform/step3.pdf
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/xmlform/revision-howto-xmlform-2002-05-20.pdf
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/v10/howto-v10.html
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/v10/howto-v10.pdf
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/bugzilla-patch/my-images/bugzilla-screen.gif
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/bugzilla-patch/howto-bugzilla-patch.html
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/bugzilla-patch/howto-bugzilla-patch.pdf
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/cvs-ssh/howto-cvs-ssh.html
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/cvs-ssh/howto-cvs-ssh.pdf
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/index.html
-%%PORTDOCS%%%%DOCSDIR%%/community/howto/index.pdf
-%%PORTDOCS%%%%DOCSDIR%%/community/index.html
-%%PORTDOCS%%%%DOCSDIR%%/community/index.pdf
-%%PORTDOCS%%%%DOCSDIR%%/changes.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/document-v12.html
-%%PORTDOCS%%%%DOCSDIR%%/libre-intro.html
-%%PORTDOCS%%%%DOCSDIR%%/favicon.ico
-%%PORTDOCS%%%%DOCSDIR%%/cap.html
-%%PORTDOCS%%%%DOCSDIR%%/changes.rss
-%%PORTDOCS%%%%DOCSDIR%%/index.pdf
-%%PORTDOCS%%%%DOCSDIR%%/your-project.html
-%%PORTDOCS%%%%DOCSDIR%%/your-project.pdf
-%%PORTDOCS%%%%DOCSDIR%%/forrest-contract.html
-%%PORTDOCS%%%%DOCSDIR%%/linking.html
-%%PORTDOCS%%%%DOCSDIR%%/abs-menulinks
-%%PORTDOCS%%%%DOCSDIR%%/who.html
-%%PORTDOCS%%%%DOCSDIR%%/faq.html
-%%PORTDOCS%%%%DOCSDIR%%/faq.pdf
-%%PORTDOCS%%%%DOCSDIR%%/document-v12.pdf
-%%PORTDOCS%%%%DOCSDIR%%/forrestbot.html
-%%PORTDOCS%%%%DOCSDIR%%/forrest-contract.pdf
-%%PORTDOCS%%%%DOCSDIR%%/live-sites.html
-%%PORTDOCS%%%%DOCSDIR%%/todo.html
-%%PORTDOCS%%%%DOCSDIR%%/contrib.html
-%%PORTDOCS%%%%DOCSDIR%%/contrib.pdf
-%%PORTDOCS%%%%DOCSDIR%%/document-v11.dtdx.html
-%%PORTDOCS%%%%DOCSDIR%%/upgrading_05.html
-%%PORTDOCS%%%%DOCSDIR%%/license.html
-%%PORTDOCS%%%%DOCSDIR%%/license.pdf
-%%PORTDOCS%%%%DOCSDIR%%/live-sites.pdf
-%%PORTDOCS%%%%DOCSDIR%%/wiki-sample.html
-%%PORTDOCS%%%%DOCSDIR%%/validation.html
-%%PORTDOCS%%%%DOCSDIR%%/validation.pdf
-%%PORTDOCS%%%%DOCSDIR%%/forrestbar.html
-%%PORTDOCS%%%%DOCSDIR%%/wiki-sample.pdf
-%%PORTDOCS%%%%DOCSDIR%%/dtd-docs.html
-%%PORTDOCS%%%%DOCSDIR%%/dtd-docs.pdf
-%%PORTDOCS%%%%DOCSDIR%%/forrestbot-intro.html
-%%PORTDOCS%%%%DOCSDIR%%/document-v11.dtdx.pdf
-%%PORTDOCS%%%%DOCSDIR%%/faq-v11.dtdx.html
-%%PORTDOCS%%%%DOCSDIR%%/faq-v11.dtdx.pdf
-%%PORTDOCS%%%%DOCSDIR%%/howto-v10.dtdx.html
-%%PORTDOCS%%%%DOCSDIR%%/howto-v10.dtdx.pdf
-%%PORTDOCS%%%%DOCSDIR%%/libre-intro.pdf
-%%PORTDOCS%%%%DOCSDIR%%/forrestbot.pdf
-%%PORTDOCS%%%%DOCSDIR%%/dreams.html
-%%PORTDOCS%%%%DOCSDIR%%/dreams.pdf
-%%PORTDOCS%%%%DOCSDIR%%/sitemap-ref.html
-%%PORTDOCS%%%%DOCSDIR%%/faq.xml
-%%PORTDOCS%%%%DOCSDIR%%/body-index.html
-%%PORTDOCS%%%%DOCSDIR%%/sitemap-ref.pdf
-%%PORTDOCS%%%%DOCSDIR%%/changes.xml
-%%PORTDOCS%%%%DOCSDIR%%/abs-linkmap
-%%PORTDOCS%%%%DOCSDIR%%/mail-archives.html
-%%PORTDOCS%%%%DOCSDIR%%/mail-archives.pdf
-%%PORTDOCS%%%%DOCSDIR%%/tab-index.html
-%%PORTDOCS%%%%DOCSDIR%%/upgrading_05.pdf
-%%PORTDOCS%%%%DOCSDIR%%/menu-index.html
-%%PORTDOCS%%%%DOCSDIR%%/who.pdf
-%%PORTDOCS%%%%DOCSDIR%%/compliance.html
-%%PORTDOCS%%%%DOCSDIR%%/compliance.pdf
-%%PORTDOCS%%%%DOCSDIR%%/todo.pdf
-%%PORTDOCS%%%%DOCSDIR%%/cap.pdf
-%%PORTDOCS%%%%DOCSDIR%%/forrestbot-intro.pdf
-%%PORTDOCS%%%%DOCSDIR%%/linkmap-index.html
-%%PORTDOCS%%%%DOCSDIR%%/linking.pdf
-%%PORTDOCS%%%%DOCSDIR%%/index.xml
-%%PORTDOCS%%%%DOCSDIR%%/mail-lists.html
-%%PORTDOCS%%%%DOCSDIR%%/mail-lists.pdf
-%%PORTDOCS%%%%DOCSDIR%%/changes.pdf
-%%PORTDOCS%%%%DOCSDIR%%/primer.html
-%%PORTDOCS%%%%DOCSDIR%%/primer.pdf
 %%DATADIR%%/bin/forrest
-%%DATADIR%%/bin/forrestbot
-%%DATADIR%%/tasks/org/apache/forrest/UncopiedFileSelector.java
-%%DATADIR%%/legal/LICENSE.resolver
-%%DATADIR%%/legal/LICENSE
-%%DATADIR%%/legal/LICENSE.batik
-%%DATADIR%%/legal/LICENSE.xml-apis
-%%DATADIR%%/legal/LICENSE.avalon
-%%DATADIR%%/legal/LICENSE.jisp
-%%DATADIR%%/legal/LICENSE.servlet
-%%DATADIR%%/legal/LICENSE.apache
-%%DATADIR%%/legal/LICENSE.jakarta-regexp
-%%DATADIR%%/legal/LICENSE.krysalis
-%%DATADIR%%/legal/LICENSE.xalan
-%%DATADIR%%/legal/LICENSE.junit
-%%DATADIR%%/legal/LICENSE.logkit
-%%DATADIR%%/legal/LICENSE.jakarta-commons
-%%DATADIR%%/legal/LICENSE.ant
-%%DATADIR%%/legal/LICENSE.jetty.html
-%%DATADIR%%/legal/LICENSE.jtidy
-%%DATADIR%%/legal/LICENSE.xerces
-%%DATADIR%%/legal/LICENSE.jing
-%%DATADIR%%/WEB-INF/lib/excalibur-cli-1.0.jar
-%%DATADIR%%/WEB-INF/lib/commons-cli-1.0.jar
-%%DATADIR%%/WEB-INF/lib/excalibur-i18n-1.0.jar
-%%DATADIR%%/WEB-INF/lib/util.concurrent-1.3.2.jar
-%%DATADIR%%/WEB-INF/lib/commons-jxpath-20030909.jar
-%%DATADIR%%/WEB-INF/lib/excalibur-instrument-manager-1.0.jar
-%%DATADIR%%/WEB-INF/lib/nekodtd-dtd2xml.jar
-%%DATADIR%%/WEB-INF/lib/cocoon-2.1.2.jar
-%%DATADIR%%/WEB-INF/lib/placeholder
-%%DATADIR%%/WEB-INF/lib/xerces-xniWriter.jar
-%%DATADIR%%/WEB-INF/lib/excalibur-monitor-1.0.2.jar
-%%DATADIR%%/WEB-INF/lib/logkit-1.2.jar
-%%DATADIR%%/WEB-INF/lib/excalibur-io-1.1.jar
-%%DATADIR%%/WEB-INF/lib/excalibur-store-20030825.jar
-%%DATADIR%%/WEB-INF/lib/commons-lang-1.0.1.jar
-%%DATADIR%%/WEB-INF/lib/lucene-1.2.jar
-%%DATADIR%%/WEB-INF/lib/cocoon-profiler-block-2.1.2.jar
-%%DATADIR%%/WEB-INF/lib/excalibur-xmlutil-20030520.jar
-%%DATADIR%%/WEB-INF/lib/excalibur-component-1.1.jar
-%%DATADIR%%/WEB-INF/lib/cocoon-deprecated-2.1.2.jar
-%%DATADIR%%/WEB-INF/lib/jakarta-oro-2.0.6.jar
-%%DATADIR%%/WEB-INF/lib/avalon-framework-4.1.4.jar
-%%DATADIR%%/WEB-INF/lib/jtidy-04aug2000r7-dev.jar
-%%DATADIR%%/WEB-INF/lib/jakarta-regexp-1.3.jar
-%%DATADIR%%/WEB-INF/lib/resolver-20030708.jar
-%%DATADIR%%/WEB-INF/lib/cocoon-asciiart-block-2.1.2.jar
-%%DATADIR%%/WEB-INF/lib/fop-0.20.5.jar
-%%DATADIR%%/WEB-INF/lib/cocoon-batik-block-2.1.2.jar
-%%DATADIR%%/WEB-INF/lib/cocoon-html-block-2.1.2.jar
-%%DATADIR%%/WEB-INF/lib/nekodtd-0.1.6.jar
-%%DATADIR%%/WEB-INF/lib/xml-forrest-components.jar
-%%DATADIR%%/WEB-INF/lib/excalibur-naming-1.0.jar
-%%DATADIR%%/WEB-INF/lib/excalibur-concurrent-20020820.jar
-%%DATADIR%%/WEB-INF/lib/commons-collections-2.1.jar
-%%DATADIR%%/WEB-INF/lib/excalibur-instrument-1.0.jar
-%%DATADIR%%/WEB-INF/lib/jing-20020724.jar
-%%DATADIR%%/WEB-INF/lib/cocoon-linkrewriter-block-2.1.2.jar
-%%DATADIR%%/WEB-INF/lib/cocoon-fop-block-2.1.2.jar
-%%DATADIR%%/WEB-INF/lib/excalibur-sourceresolve-20030715.jar
-%%DATADIR%%/WEB-INF/lib/excalibur-event-20030904.jar
-%%DATADIR%%/WEB-INF/lib/excalibur-datasource-vm12-20021121.jar
-%%DATADIR%%/WEB-INF/lib/cocoon-chaperon-block-2.1.2.jar
-%%DATADIR%%/WEB-INF/lib/excalibur-logger-1.0.1.jar
-%%DATADIR%%/WEB-INF/lib/excalibur-instrument-manager-interfaces-1.0.jar
-%%DATADIR%%/WEB-INF/lib/xml-forrest-scratchpad.jar
-%%DATADIR%%/WEB-INF/lib/batik-1.5b4-fop.jar
-%%DATADIR%%/WEB-INF/lib/chaperon-2.1.jar
-%%DATADIR%%/WEB-INF/lib/jisp-2.5.1.jar
-%%DATADIR%%/WEB-INF/lib/nekopull-0.2.3.jar
-%%DATADIR%%/WEB-INF/lib/excalibur-pool-1.2.jar
-%%DATADIR%%/WEB-INF/classes/org/apache/cocoon/util/mime.types
-%%DATADIR%%/WEB-INF/classes/CatalogManager.properties
-%%DATADIR%%/WEB-INF/jettyconf.xml
-%%DATADIR%%/WEB-INF/cocoon.xconf
-%%DATADIR%%/WEB-INF/web.xml
-%%DATADIR%%/WEB-INF/jtidy.properties
-%%DATADIR%%/WEB-INF/logkit.xconf
-%%DATADIR%%/WEB-INF/cli.xconf
-%%DATADIR%%/lib/endorsed/xercesImpl-2.5.0.jar
+%%DATADIR%%/build/xml-forrest.jar
+%%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf/build.xml
+%%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf/output.xmap
+%%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs/images/group-logo.gif
+%%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs/images/usemap.gif
+%%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs/images/project.svg
+%%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs/images/project-logo.gif
+%%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs/images/group.svg
+%%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs/images/icon.png
+%%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs/favicon.ico
+%%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs/tabs.xml
+%%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs/index.xml
+%%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs/site.xml
+%%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/skinconf.xml
+%%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf/forrest.properties
+%%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf/status.xml
+%%DATADIR%%/build/plugins/catalog.xcat
+%%DATADIR%%/etc/cocoon_upgrade/upgrade_cocoon_jars.sh
+%%DATADIR%%/etc/cocoon_upgrade/README.txt
+%%DATADIR%%/etc/cocoon_upgrade/blocks.properties
+%%DATADIR%%/etc/cocoon_upgrade/build.properties
+%%DATADIR%%/etc/cocoon_upgrade/build.xml
+%%DATADIR%%/etc/cocoon_upgrade/local.blocks.properties
+%%DATADIR%%/etc/cocoon_upgrade/local.build.properties
+%%DATADIR%%/etc/cocoon_upgrade/upgrade-cocoon-xconf.xsl
+%%DATADIR%%/etc/README.txt
+%%DATADIR%%/etc/RELEASE-NOTES-0.7.txt
+%%DATADIR%%/etc/RELEASE_PROCESS.txt
+%%DATADIR%%/etc/announcement-0.7.txt
+%%DATADIR%%/etc/docs-review.txt
+%%DATADIR%%/etc/new-skinconf-forrest-site.xml
+%%DATADIR%%/etc/publishing_our_site.txt
+%%DATADIR%%/etc/relicense-jars.txt
+%%DATADIR%%/etc/relicense-tree.txt
+%%DATADIR%%/etc/relicense.txt
+%%DATADIR%%/lib/core/avalon-framework-api-4.1.5.jar
+%%DATADIR%%/lib/core/avalon-framework-impl-4.1.5.jar
+%%DATADIR%%/lib/core/batik-all-1.5.1.jar
+%%DATADIR%%/lib/core/castor-0.9.6-xml.jar
+%%DATADIR%%/lib/core/chaperon-20040205.jar
+%%DATADIR%%/lib/core/cocoon-2.2.0-dev-r125082.jar
+%%DATADIR%%/lib/core/cocoon-asciiart-block-2.2.0-dev-r125082.jar
+%%DATADIR%%/lib/core/cocoon-batik-block-2.2.0-dev-r125082.jar
+%%DATADIR%%/lib/core/cocoon-chaperon-block-2.2.0-dev-r125082.jar
+%%DATADIR%%/lib/core/cocoon-fop-block-2.2.0-dev-r125082.jar
+%%DATADIR%%/lib/core/cocoon-html-block-2.2.0-dev-r125082.jar
+%%DATADIR%%/lib/core/ehcache-1.1.jar
+%%DATADIR%%/lib/core/cocoon-linkrewriter-block-2.2.0-dev-r125082.jar
+%%DATADIR%%/lib/core/cocoon-lucene-block-2.2.0-dev-r125082.jar
+%%DATADIR%%/lib/core/cocoon-profiler-block-2.2.0-dev-r125082.jar
+%%DATADIR%%/lib/core/cocoon-xsp-block-2.2.0-dev-r125082.jar
+%%DATADIR%%/lib/core/commons-cli-1.0.jar
+%%DATADIR%%/lib/core/commons-collections-3.1.jar
+%%DATADIR%%/lib/core/commons-httpclient-2.0.2.jar
+%%DATADIR%%/lib/core/commons-jci-r159148.jar
+%%DATADIR%%/lib/core/commons-jexl-1.0.jar
+%%DATADIR%%/lib/core/commons-jxpath-20030909.jar
+%%DATADIR%%/lib/core/commons-lang-2.0-20041007T2305.jar
+%%DATADIR%%/lib/core/commons-logging-1.0.4.jar
+%%DATADIR%%/lib/core/excalibur-i18n-1.1.jar
+%%DATADIR%%/lib/core/excalibur-instrument-1.0.jar
+%%DATADIR%%/lib/core/excalibur-io-1.1.jar
+%%DATADIR%%/lib/core/excalibur-logger-1.1.jar
+%%DATADIR%%/lib/core/excalibur-naming-1.0.jar
+%%DATADIR%%/lib/core/excalibur-pool-api-2.0.0.jar
+%%DATADIR%%/lib/core/excalibur-pool-impl-2.0.0.jar
+%%DATADIR%%/lib/core/excalibur-pool-instrumented-2.0.0.jar
+%%DATADIR%%/lib/core/excalibur-sourceresolve-1.1.jar
+%%DATADIR%%/lib/core/excalibur-store-1.0.jar
+%%DATADIR%%/lib/core/excalibur-xmlutil-1.0.jar
+%%DATADIR%%/lib/core/fop-0.20.5.jar
+%%DATADIR%%/lib/core/jcs-1.2.5-dev-20050313.jar
+%%DATADIR%%/lib/core/jing-20030619.jar
+%%DATADIR%%/lib/core/jtidy-04aug2000r7-dev.jar
+%%DATADIR%%/lib/core/log4j-1.2.9.jar
+%%DATADIR%%/lib/core/logkit-1.2.2.jar
+%%DATADIR%%/lib/core/lucene-1.4.3.jar
+%%DATADIR%%/lib/core/nekopull-0.2.4.jar
+%%DATADIR%%/lib/core/oreilly.codepolicy.txt
+%%DATADIR%%/lib/core/oreilly.permission.txt
+%%DATADIR%%/lib/core/rhino-1.6R1.jar
+%%DATADIR%%/lib/core/util.concurrent-1.3.4.jar
+%%DATADIR%%/lib/core/w3c-dtd-license.txt
+%%DATADIR%%/lib/core/xml-commons-resolver-1.1.jar
+%%DATADIR%%/lib/core/xmlbeans-1.0.3.jar
+%%DATADIR%%/lib/endorsed/jakarta-bcel-20040329.jar
+%%DATADIR%%/lib/endorsed/jakarta-regexp-1.3.jar
+%%DATADIR%%/lib/endorsed/xalan-2.6.1-dev-20041008T0304.jar
+%%DATADIR%%/lib/endorsed/xercesImpl-2.6.2.jar
 %%DATADIR%%/lib/endorsed/xml-apis.jar
-%%DATADIR%%/lib/endorsed/xalan-2.5.1.jar
-%%DATADIR%%/lib/optional/jetty-4.2.8.jar
-%%DATADIR%%/lib/optional/servlet-2.3.jar
-%%DATADIR%%/lib/optional/org.apache.jasper.jar
-%%DATADIR%%/lib/optional/VERSION.TXT
-%%DATADIR%%/ant/lib/ant.jar
-%%DATADIR%%/ant/lib/nodeps.jar
-%%DATADIR%%/ant/lib/ant-trax.jar
-%%DATADIR%%/ant/lib/ant-xalan2.jar
-%%DATADIR%%/ant/lib/ant-apache-resolver.jar
-%%DATADIR%%/ant/lib/resolver-20030708.jar
-%%DATADIR%%/ant/bin/runant.pl
-%%DATADIR%%/ant/bin/antRun
-%%DATADIR%%/ant/bin/complete-ant-cmd.pl
-%%DATADIR%%/ant/bin/runant.py
-%%DATADIR%%/ant/bin/ant
-%%DATADIR%%/ant/bin/antRun.pl
-%%DATADIR%%/forrestbot/webapp/WEB-INF/classes/forrestbot/IOUtil.class
-%%DATADIR%%/forrestbot/webapp/WEB-INF/classes/forrestbot/IOUtil.java
-%%DATADIR%%/forrestbot/webapp/WEB-INF/logic.jsp
-%%DATADIR%%/forrestbot/webapp/WEB-INF/web.xml
-%%DATADIR%%/forrestbot/webapp/WEB-INF/README.txt
-%%DATADIR%%/forrestbot/webapp/WEB-INF/utils.jsp
-%%DATADIR%%/forrestbot/webapp/WEB-INF/users.properties
-%%DATADIR%%/forrestbot/webapp/images/file.gif
-%%DATADIR%%/forrestbot/webapp/images/dir.gif
-%%DATADIR%%/forrestbot/webapp/index.jsp
-%%DATADIR%%/forrestbot/webapp/viewsite.jsp
-%%DATADIR%%/forrestbot/webapp/refresh_controlpanel.jsp
-%%DATADIR%%/forrestbot/webapp/welcome.html
-%%DATADIR%%/forrestbot/webapp/tail_refreshlog.jsp
-%%DATADIR%%/forrestbot/webapp/controlpanel.jsp
-%%DATADIR%%/forrestbot/webapp/refresh_frame.jsp
-%%DATADIR%%/forrestbot/samples/entities/xml-forrest-template.ent
-%%DATADIR%%/forrestbot/samples/entities/avalon-phoenix.ent
-%%DATADIR%%/forrestbot/samples/entities/avalon-site.ent
-%%DATADIR%%/forrestbot/samples/entities/krysalis-centipede.ent
-%%DATADIR%%/forrestbot/samples/entities/cocoon-site.ent
-%%DATADIR%%/forrestbot/samples/entities/xml-forrest-krysalis.ent
-%%DATADIR%%/forrestbot/samples/entities/xml-forrest.ent
-%%DATADIR%%/forrestbot/samples/entities/xml-site.ent
-%%DATADIR%%/forrestbot/samples/entities/incubator-site.ent
-%%DATADIR%%/forrestbot/samples/entities/xml-fop.ent
-%%DATADIR%%/forrestbot/samples/entities/ws-site.ent
-%%DATADIR%%/forrestbot/samples/entities/xml-xindice.ent
-%%DATADIR%%/forrestbot/samples/xml-forrest-local.xml
-%%DATADIR%%/forrestbot/samples/xml-site-cvs.xml
-%%DATADIR%%/forrestbot/samples/xml-xindice-cvs.xml
-%%DATADIR%%/forrestbot/samples/xml-forrest-template-cvs.xml
-%%DATADIR%%/forrestbot/samples/avalon-phoenix-cvs.xml
-%%DATADIR%%/forrestbot/samples/krysalis-centipede-cvs.xml
-%%DATADIR%%/forrestbot/samples/ws-site-cvs.xml
-%%DATADIR%%/forrestbot/samples/cocoon-site-cvs.xml
-%%DATADIR%%/forrestbot/samples/xml-fop-cvs.xml
-%%DATADIR%%/forrestbot/samples/forrestbot-old.conf.xml
-%%DATADIR%%/forrestbot/samples/README.txt
-%%DATADIR%%/forrestbot/samples/incubator-site-cvs.xml
-%%DATADIR%%/forrestbot/samples/xml-forrest-template-local.xml
-%%DATADIR%%/forrestbot/samples/xml-forrest-cvs.xml
-%%DATADIR%%/forrestbot/samples/avalon-site-cvs.xml
-%%DATADIR%%/forrestbot/samples/forrestbot.conf.xml
-%%DATADIR%%/forrestbot/samples/xml-forrest-krysalis-cvs.xml
-%%DATADIR%%/forrestbot/scripts/README.txt
-%%DATADIR%%/forrestbot/scripts/local-vars-cocoondev.org
-%%DATADIR%%/forrestbot/scripts/launch-overseer-ssh
-%%DATADIR%%/forrestbot/scripts/local-vars-sample
-%%DATADIR%%/forrestbot/scripts/local-vars
-%%DATADIR%%/forrestbot/scripts/publish_livesite
-%%DATADIR%%/forrestbot/scripts/refresh
-%%DATADIR%%/forrestbot/scripts/launch-overseer
-%%DATADIR%%/forrestbot/scripts/overseer
-%%DATADIR%%/forrestbot/scripts/refresh_all
-%%DATADIR%%/forrestbot/lib/README.txt
-%%DATADIR%%/forrestbot/lib/ant-javamail.jar
-%%DATADIR%%/forrestbot/lib/ant-contrib-0.1.jar
-%%DATADIR%%/forrestbot/xslt/config2defaults.xsl
-%%DATADIR%%/forrestbot/xslt/config2work.xsl
-%%DATADIR%%/forrestbot/ant/templates.build.xml
-%%DATADIR%%/forrestbot/stages.conf.xml
-%%DATADIR%%/forrestbot/forrestbot.build.xml
-%%DATADIR%%/forrestbot/forrestbot.properties
-%%DATADIR%%/context/resources/grammars/grm2xgrm.xsl
-%%DATADIR%%/context/resources/grammars/lexicon-v20.dtd
-%%DATADIR%%/context/resources/grammars/grm.xgrm
-%%DATADIR%%/context/resources/grammars/link.xlex
-%%DATADIR%%/context/resources/grammars/wiki.grm
-%%DATADIR%%/context/resources/grammars/grammar-v20.dtd
-%%DATADIR%%/context/resources/grammars/regex.xgrm
-%%DATADIR%%/context/resources/grammars/wiki.xgrm
-%%DATADIR%%/context/resources/grammars/grm.xlex
-%%DATADIR%%/context/resources/grammars/text4regex.xsl
-%%DATADIR%%/context/resources/grammars/grm2xlex.xsl
-%%DATADIR%%/context/resources/grammars/regex.xlex
-%%DATADIR%%/context/resources/grammars/wiki.xlex
-%%DATADIR%%/context/resources/schema/entity/ISOgrk1.pen
-%%DATADIR%%/context/resources/schema/entity/ISOlat1.pen
-%%DATADIR%%/context/resources/schema/entity/ISOnum.pen
-%%DATADIR%%/context/resources/schema/entity/ISOpub.pen
-%%DATADIR%%/context/resources/schema/entity/ISOtech.pen
-%%DATADIR%%/context/resources/schema/entity/ISOdia.pen
-%%DATADIR%%/context/resources/schema/w3c-dtd/xhtml1-strict.dtd
-%%DATADIR%%/context/resources/schema/w3c-dtd/svg-20000303-shared.dtd
-%%DATADIR%%/context/resources/schema/w3c-dtd/catalog
-%%DATADIR%%/context/resources/schema/w3c-dtd/xhtml1-frameset.dtd
-%%DATADIR%%/context/resources/schema/w3c-dtd/xhtml1-transitional.dtd
-%%DATADIR%%/context/resources/schema/w3c-dtd/svg-20000303-stylable.dtd
-%%DATADIR%%/context/resources/schema/w3c-dtd/xhtml-special.ent
-%%DATADIR%%/context/resources/schema/w3c-dtd/xhtml-symbol.ent
-%%DATADIR%%/context/resources/schema/w3c-dtd/catalog.xcat
-%%DATADIR%%/context/resources/schema/w3c-dtd/svg10.dtd
-%%DATADIR%%/context/resources/schema/w3c-dtd/xhtml1.dcl
-%%DATADIR%%/context/resources/schema/w3c-dtd/svg-20000303-exchange.dtd
-%%DATADIR%%/context/resources/schema/w3c-dtd/xhtml-lat1.ent
-%%DATADIR%%/context/resources/schema/docbook/4.2/ent/iso-amsa.ent
-%%DATADIR%%/context/resources/schema/docbook/4.2/ent/iso-amso.ent
-%%DATADIR%%/context/resources/schema/docbook/4.2/ent/iso-amsn.ent
-%%DATADIR%%/context/resources/schema/docbook/4.2/ent/iso-num.ent
-%%DATADIR%%/context/resources/schema/docbook/4.2/ent/iso-cyr2.ent
-%%DATADIR%%/context/resources/schema/docbook/4.2/ent/iso-cyr1.ent
-%%DATADIR%%/context/resources/schema/docbook/4.2/ent/iso-pub.ent
-%%DATADIR%%/context/resources/schema/docbook/4.2/ent/iso-grk4.ent
-%%DATADIR%%/context/resources/schema/docbook/4.2/ent/iso-grk3.ent
-%%DATADIR%%/context/resources/schema/docbook/4.2/ent/iso-dia.ent
-%%DATADIR%%/context/resources/schema/docbook/4.2/ent/iso-tech.ent
-%%DATADIR%%/context/resources/schema/docbook/4.2/ent/iso-amsr.ent
-%%DATADIR%%/context/resources/schema/docbook/4.2/ent/iso-grk2.ent
-%%DATADIR%%/context/resources/schema/docbook/4.2/ent/iso-box.ent
-%%DATADIR%%/context/resources/schema/docbook/4.2/ent/iso-lat2.ent
-%%DATADIR%%/context/resources/schema/docbook/4.2/ent/iso-amsc.ent
-%%DATADIR%%/context/resources/schema/docbook/4.2/ent/iso-grk1.ent
-%%DATADIR%%/context/resources/schema/docbook/4.2/ent/iso-lat1.ent
-%%DATADIR%%/context/resources/schema/docbook/4.2/ent/iso-amsb.ent
-%%DATADIR%%/context/resources/schema/docbook/4.2/ChangeLog
-%%DATADIR%%/context/resources/schema/docbook/4.2/soextblx.dtd
-%%DATADIR%%/context/resources/schema/docbook/4.2/README
-%%DATADIR%%/context/resources/schema/docbook/4.2/dbpoolx.mod
-%%DATADIR%%/context/resources/schema/docbook/4.2/docbookx.dtd
-%%DATADIR%%/context/resources/schema/docbook/4.2/dbcentx.mod
-%%DATADIR%%/context/resources/schema/docbook/4.2/catalog.xml
-%%DATADIR%%/context/resources/schema/docbook/4.2/calstblx.dtd
-%%DATADIR%%/context/resources/schema/docbook/4.2/docbook.cat
-%%DATADIR%%/context/resources/schema/docbook/4.2/dbhierx.mod
-%%DATADIR%%/context/resources/schema/docbook/4.2/dbgenent.mod
-%%DATADIR%%/context/resources/schema/docbook/4.2/dbnotnx.mod
-%%DATADIR%%/context/resources/schema/dtd/v20a/faq-v20.mod
-%%DATADIR%%/context/resources/schema/dtd/v20a/faq-v20.dtd
-%%DATADIR%%/context/resources/schema/dtd/v20a/document-v20.mod
-%%DATADIR%%/context/resources/schema/dtd/v20a/document-v20.dtd
-%%DATADIR%%/context/resources/schema/dtd/v10/todo-v10.dtd
-%%DATADIR%%/context/resources/schema/dtd/v10/faq-v10.dtd
-%%DATADIR%%/context/resources/schema/dtd/v10/characters.ent
-%%DATADIR%%/context/resources/schema/dtd/v10/document-v10.dtd
-%%DATADIR%%/context/resources/schema/dtd/v10/changes-v10.dtd
-%%DATADIR%%/context/resources/schema/dtd/v10/README
-%%DATADIR%%/context/resources/schema/dtd/howto-v10.dtd
-%%DATADIR%%/context/resources/schema/dtd/specification-v11.dtd
-%%DATADIR%%/context/resources/schema/dtd/javadoc-v04draft.dtd
-%%DATADIR%%/context/resources/schema/dtd/xgump-draft.dtd
-%%DATADIR%%/context/resources/schema/dtd/common-charents-v10.mod
-%%DATADIR%%/context/resources/schema/dtd/contributors-v10.dtd
-%%DATADIR%%/context/resources/schema/dtd/document-v12.mod
-%%DATADIR%%/context/resources/schema/dtd/todo-v11.mod
-%%DATADIR%%/context/resources/schema/dtd/todo-v12.dtd
-%%DATADIR%%/context/resources/schema/dtd/changes-v11.mod
-%%DATADIR%%/context/resources/schema/dtd/changes-v12.dtd
-%%DATADIR%%/context/resources/schema/dtd/tab-cocoon-v10.dtd
-%%DATADIR%%/context/resources/schema/dtd/document-v11.mod
-%%DATADIR%%/context/resources/schema/dtd/document-v12.dtd
-%%DATADIR%%/context/resources/schema/dtd/todo-v11.dtd
-%%DATADIR%%/context/resources/schema/dtd/faq-v12.mod
-%%DATADIR%%/context/resources/schema/dtd/changes-v11.dtd
-%%DATADIR%%/context/resources/schema/dtd/document-v11.dtd
-%%DATADIR%%/context/resources/schema/dtd/common-elems-v10.mod
-%%DATADIR%%/context/resources/schema/dtd/faq-v11.mod
-%%DATADIR%%/context/resources/schema/dtd/faq-v12.dtd
-%%DATADIR%%/context/resources/schema/dtd/faq-v11.dtd
-%%DATADIR%%/context/resources/schema/dtd/book-cocoon-v10.dtd
-%%DATADIR%%/context/resources/schema/dtd/howto-v12.dtd
-%%DATADIR%%/context/resources/schema/sdocbook/1.0/sdocbook-custom.dtd
-%%DATADIR%%/context/resources/schema/sdocbook/1.0/sdocbookref.dtd
-%%DATADIR%%/context/resources/schema/sdocbook/1.0/sdbpool.mod
-%%DATADIR%%/context/resources/schema/sdocbook/1.0/sdocbook.dtd
-%%DATADIR%%/context/resources/schema/sdocbook/1.0/sdocbookref-custom.dtd
-%%DATADIR%%/context/resources/schema/sdocbook/1.0/sdbhier.mod
-%%DATADIR%%/context/resources/schema/sdocbook/1.0/sdbcent.mod
-%%DATADIR%%/context/resources/schema/sdocbook/1.0/sdocbook.css
-%%DATADIR%%/context/resources/schema/sdocbook/1.0/sinclist.mod
-%%DATADIR%%/context/resources/schema/relaxng/unstable/forrestbot.rnx
-%%DATADIR%%/context/resources/schema/relaxng/unstable/forrestbot.rng
-%%DATADIR%%/context/resources/schema/relaxng/unstable/any.rnx
-%%DATADIR%%/context/resources/schema/relaxng/unstable/any.rng
-%%DATADIR%%/context/resources/schema/relaxng/xslt.rng
-%%DATADIR%%/context/resources/schema/relaxng/skinconf.rnc
-%%DATADIR%%/context/resources/schema/relaxng/README.txt
-%%DATADIR%%/context/resources/schema/relaxng/book-v01.rng
-%%DATADIR%%/context/resources/schema/relaxng/sitemap-v06.rng
-%%DATADIR%%/context/resources/schema/CatalogManager.properties
-%%DATADIR%%/context/resources/schema/catalog
-%%DATADIR%%/context/resources/schema/README
-%%DATADIR%%/context/resources/schema/catalog.xcat
-%%DATADIR%%/context/resources/stylesheets/aggregates/docs2document.xsl
-%%DATADIR%%/context/resources/stylesheets/aggregates/book2cinclude.xsl
-%%DATADIR%%/context/resources/stylesheets/aggregates/doc2doc-uniqueids.xsl
-%%DATADIR%%/context/resources/stylesheets/aggregates/relativize-split-linkmap.xsl
-%%DATADIR%%/context/resources/stylesheets/howto2document.xsl
-%%DATADIR%%/context/resources/stylesheets/absolutize-linkmap.xsl
-%%DATADIR%%/context/resources/stylesheets/page2html.xsl
-%%DATADIR%%/context/resources/stylesheets/wiki2html.xsl
-%%DATADIR%%/context/resources/stylesheets/site2site-selectnode.xsl
-%%DATADIR%%/context/resources/stylesheets/directory2revisions.xsl
-%%DATADIR%%/context/resources/stylesheets/text2document.xsl
-%%DATADIR%%/context/resources/stylesheets/flat2document.xsl
-%%DATADIR%%/context/resources/stylesheets/changesv10tochangesv11.xsl
-%%DATADIR%%/context/resources/stylesheets/directory2book.xsl
-%%DATADIR%%/context/resources/stylesheets/copyover.xsl
-%%DATADIR%%/context/resources/stylesheets/dtdx2flat.xsl
-%%DATADIR%%/context/resources/stylesheets/docbook2document.xsl
-%%DATADIR%%/context/resources/stylesheets/html2document.xsl
-%%DATADIR%%/context/resources/stylesheets/docv20todocv12.xsl
-%%DATADIR%%/context/resources/stylesheets/project2text.xsl
-%%DATADIR%%/context/resources/stylesheets/changes2document.xsl
-%%DATADIR%%/context/resources/stylesheets/faqv20tofaqv12.xsl
-%%DATADIR%%/context/resources/stylesheets/wiki2htmlpage.xsl
-%%DATADIR%%/context/resources/stylesheets/todo2document.xsl
-%%DATADIR%%/context/resources/stylesheets/dotdots.xsl
-%%DATADIR%%/context/resources/stylesheets/rssissues2document.xsl
-%%DATADIR%%/context/resources/stylesheets/relativize-linkmap.xsl
-%%DATADIR%%/context/resources/stylesheets/site2site-normalizetabs.xsl
-%%DATADIR%%/context/resources/stylesheets/bookv10.xsl
-%%DATADIR%%/context/resources/stylesheets/changes2rss.xsl
-%%DATADIR%%/context/resources/stylesheets/docv10todocv11.xsl
-%%DATADIR%%/context/resources/stylesheets/wiki2document.xsl
-%%DATADIR%%/context/resources/stylesheets/html2htmlbody.xsl
-%%DATADIR%%/context/resources/stylesheets/site2book.xsl
-%%DATADIR%%/context/resources/stylesheets/faqv10tofaqv11.xsl
-%%DATADIR%%/context/resources/stylesheets/profile2page.xsl
-%%DATADIR%%/context/resources/stylesheets/faq2document.xsl
-%%DATADIR%%/context/resources/images/remove.jpg
-%%DATADIR%%/context/resources/images/forrest-credit-logo.png
-%%DATADIR%%/context/resources/images/update.jpg
-%%DATADIR%%/context/resources/images/fix.jpg
-%%DATADIR%%/context/resources/images/hack.jpg
-%%DATADIR%%/context/resources/images/rss.png
-%%DATADIR%%/context/resources/images/built-with-forrest-button.png
-%%DATADIR%%/context/resources/images/add.jpg
-%%DATADIR%%/context/skins/avalon-tigris/images/favicon.ico
-%%DATADIR%%/context/skins/avalon-tigris/images/add.jpg
-%%DATADIR%%/context/skins/avalon-tigris/images/void.gif
-%%DATADIR%%/context/skins/avalon-tigris/images/nw_min.gif
-%%DATADIR%%/context/skins/avalon-tigris/images/xmldoc.gif
-%%DATADIR%%/context/skins/avalon-tigris/images/remove.jpg
-%%DATADIR%%/context/skins/avalon-tigris/images/strich.gif
-%%DATADIR%%/context/skins/avalon-tigris/images/vcss.png
-%%DATADIR%%/context/skins/avalon-tigris/images/valid-html401.png
-%%DATADIR%%/context/skins/avalon-tigris/images/nw_maj_rond.gif
-%%DATADIR%%/context/skins/avalon-tigris/images/update.jpg
-%%DATADIR%%/context/skins/avalon-tigris/images/pdfdoc.gif
-%%DATADIR%%/context/skins/avalon-tigris/images/note.gif
-%%DATADIR%%/context/skins/avalon-tigris/css/site.css
-%%DATADIR%%/context/skins/avalon-tigris/css/tigris.css
-%%DATADIR%%/context/skins/avalon-tigris/css/print.css
-%%DATADIR%%/context/skins/avalon-tigris/css/mysite.css
-%%DATADIR%%/context/skins/avalon-tigris/xslt/html/site2xhtml.xsl
-%%DATADIR%%/context/skins/avalon-tigris/xslt/html/tab2menu.xsl
-%%DATADIR%%/context/skins/avalon-tigris/xslt/html/document2html.xsl
-%%DATADIR%%/context/skins/avalon-tigris/xslt/html/book2menu.xsl
-%%DATADIR%%/context/skins/avalon-tigris/xslt/fo/document2fo.xsl
-%%DATADIR%%/context/skins/krysalis-site/images/icon_error_lrg.gif
-%%DATADIR%%/context/skins/krysalis-site/images/icon_folder_sml.gif
-%%DATADIR%%/context/skins/krysalis-site/images/spacer.gif
-%%DATADIR%%/context/skins/krysalis-site/images/icon_doc_lrg.gif
-%%DATADIR%%/context/skins/krysalis-site/images/bottom-left.png
-%%DATADIR%%/context/skins/krysalis-site/images/current.gif
-%%DATADIR%%/context/skins/krysalis-site/images/top-right.png
-%%DATADIR%%/context/skins/krysalis-site/images/xmldoc.gif
-%%DATADIR%%/context/skins/krysalis-site/images/favicon.ico
-%%DATADIR%%/context/skins/krysalis-site/images/chapter_open.gif
-%%DATADIR%%/context/skins/krysalis-site/images/icon_warning_sml.gif
-%%DATADIR%%/context/skins/krysalis-site/images/icon_success_sml.gif
-%%DATADIR%%/context/skins/krysalis-site/images/icon_info_lrg.gif
-%%DATADIR%%/context/skins/krysalis-site/images/page.gif
-%%DATADIR%%/context/skins/krysalis-site/images/top-left.png
-%%DATADIR%%/context/skins/krysalis-site/images/icon_error_sml.gif
-%%DATADIR%%/context/skins/krysalis-site/images/bottom-right.png
-%%DATADIR%%/context/skins/krysalis-site/images/icon_doc_sml.gif
-%%DATADIR%%/context/skins/krysalis-site/images/icon_help_sml.gif
-%%DATADIR%%/context/skins/krysalis-site/images/vcss.png
-%%DATADIR%%/context/skins/krysalis-site/images/label.gif
-%%DATADIR%%/context/skins/krysalis-site/images/pdfdoc.gif
-%%DATADIR%%/context/skins/krysalis-site/images/printer.gif
-%%DATADIR%%/context/skins/krysalis-site/images/chapter.gif
-%%DATADIR%%/context/skins/krysalis-site/images/singlepage.gif
-%%DATADIR%%/context/skins/krysalis-site/images/icon_info_sml.gif
-%%DATADIR%%/context/skins/krysalis-site/images/icon_folder_lrg.gif
-%%DATADIR%%/context/skins/krysalis-site/images/icon_warning_lrg.gif
-%%DATADIR%%/context/skins/krysalis-site/images/icon_success_lrg.gif
-%%DATADIR%%/context/skins/krysalis-site/images/valid-html401.png
-%%DATADIR%%/context/skins/krysalis-site/xslt/html/document2html.xsl
-%%DATADIR%%/context/skins/krysalis-site/xslt/html/site2xhtml.xsl
-%%DATADIR%%/context/skins/krysalis-site/xslt/html/tab2menu.xsl
-%%DATADIR%%/context/skins/krysalis-site/xslt/html/book2menu.xsl
-%%DATADIR%%/context/skins/krysalis-site/xslt/fo/document2fo.xsl
-%%DATADIR%%/context/skins/krysalis-site/scripts/fontsize.js
-%%DATADIR%%/context/skins/krysalis-site/scripts/breadcrumbs.js
-%%DATADIR%%/context/skins/krysalis-site/scripts/menu.js
-%%DATADIR%%/context/skins/krysalis-site/scripts/breadcrumbs-optimized.js
-%%DATADIR%%/context/skins/krysalis-site/css/page.css
-%%DATADIR%%/context/skins/template/images/README.txt
-%%DATADIR%%/context/skins/template/xslt/html/book2menu.xsl
-%%DATADIR%%/context/skins/template/xslt/html/site2xhtml.xsl
-%%DATADIR%%/context/skins/template/xslt/html/tab2menu.xsl
-%%DATADIR%%/context/skins/template/xslt/html/document2html.xsl
-%%DATADIR%%/context/skins/template/xslt/fo/document2fo.xsl
-%%DATADIR%%/context/skins/template/scripts/README.txt
-%%DATADIR%%/context/skins/template/css/README.txt
-%%DATADIR%%/context/skins/forrest-css/images/nav-bottom.png
-%%DATADIR%%/context/skins/forrest-css/images/top-left.png
-%%DATADIR%%/context/skins/forrest-css/images/vcss.png
-%%DATADIR%%/context/skins/forrest-css/images/search-bottom.png
-%%DATADIR%%/context/skins/forrest-css/images/top-right.png
-%%DATADIR%%/context/skins/forrest-css/images/navbullet.png
-%%DATADIR%%/context/skins/forrest-css/images/printer.gif
-%%DATADIR%%/context/skins/forrest-css/images/xmldoc.gif
-%%DATADIR%%/context/skins/forrest-css/images/chapter.gif
-%%DATADIR%%/context/skins/forrest-css/images/icon_warning_sml.gif
-%%DATADIR%%/context/skins/forrest-css/images/icon_success_sml.gif
-%%DATADIR%%/context/skins/forrest-css/images/spacer.gif
-%%DATADIR%%/context/skins/forrest-css/images/valid-html401.png
-%%DATADIR%%/context/skins/forrest-css/images/label.gif
-%%DATADIR%%/context/skins/forrest-css/images/bottom-left.png
-%%DATADIR%%/context/skins/forrest-css/images/singlepage.gif
-%%DATADIR%%/context/skins/forrest-css/images/icon_error_lrg.gif
-%%DATADIR%%/context/skins/forrest-css/images/icon_folder_lrg.gif
-%%DATADIR%%/context/skins/forrest-css/images/icon_doc_lrg.gif
-%%DATADIR%%/context/skins/forrest-css/images/current.gif
-%%DATADIR%%/context/skins/forrest-css/images/printer.png
-%%DATADIR%%/context/skins/forrest-css/images/favicon.ico
-%%DATADIR%%/context/skins/forrest-css/images/content-bg.gif
-%%DATADIR%%/context/skins/forrest-css/images/icon_warning_lrg.gif
-%%DATADIR%%/context/skins/forrest-css/images/icon_success_lrg.gif
-%%DATADIR%%/context/skins/forrest-css/images/chapter_open.gif
-%%DATADIR%%/context/skins/forrest-css/images/icon_info_lrg.gif
-%%DATADIR%%/context/skins/forrest-css/images/tab-top.png
-%%DATADIR%%/context/skins/forrest-css/images/icon_error_sml.gif
-%%DATADIR%%/context/skins/forrest-css/images/navbullet-selected.png
-%%DATADIR%%/context/skins/forrest-css/images/page.gif
-%%DATADIR%%/context/skins/forrest-css/images/bottom-right.png
-%%DATADIR%%/context/skins/forrest-css/images/icon_info_sml.gif
-%%DATADIR%%/context/skins/forrest-css/images/pdfdoc.gif
-%%DATADIR%%/context/skins/forrest-css/images/icon_folder_sml.gif
-%%DATADIR%%/context/skins/forrest-css/images/icon_doc_sml.gif
-%%DATADIR%%/context/skins/forrest-css/images/icon_help_sml.gif
-%%DATADIR%%/context/skins/forrest-css/scripts/breadcrumbs-optimized.js
-%%DATADIR%%/context/skins/forrest-css/scripts/breadcrumbs.js
-%%DATADIR%%/context/skins/forrest-css/xslt/html/tab2menu.xsl
-%%DATADIR%%/context/skins/forrest-css/xslt/html/book2menu.xsl
-%%DATADIR%%/context/skins/forrest-css/xslt/html/document2html.xsl
-%%DATADIR%%/context/skins/forrest-css/xslt/html/site2xhtml.xsl
-%%DATADIR%%/context/skins/forrest-css/xslt/fo/document2fo.xsl
-%%DATADIR%%/context/skins/forrest-css/css/page.css
-%%DATADIR%%/context/skins/forrest-css/css/krysalis.css
-%%DATADIR%%/context/skins/common/images/pdfdoc.gif
-%%DATADIR%%/context/skins/common/images/printer.gif
-%%DATADIR%%/context/skins/common/images/README.txt
-%%DATADIR%%/context/skins/common/images/xmldoc.gif
-%%DATADIR%%/context/skins/common/images/spacer.gif
-%%DATADIR%%/context/skins/common/images/valid-html401.png
-%%DATADIR%%/context/skins/common/images/built-with-forrest-button.png
-%%DATADIR%%/context/skins/common/xslt/fo/document2fo.xsl
-%%DATADIR%%/context/skins/common/xslt/fo/footerinfo.xsl
-%%DATADIR%%/context/skins/common/xslt/fo/pdfoutline.xsl
-%%DATADIR%%/context/skins/common/xslt/html/tabutils.xsl
-%%DATADIR%%/context/skins/common/xslt/html/site2xhtml.xsl
-%%DATADIR%%/context/skins/common/xslt/html/tab2menu.xsl
-%%DATADIR%%/context/skins/common/xslt/html/dotdots.xsl
-%%DATADIR%%/context/skins/common/xslt/html/renderlogo.xsl
-%%DATADIR%%/context/skins/common/xslt/html/pathutils.xsl
-%%DATADIR%%/context/skins/common/xslt/html/split.xsl
-%%DATADIR%%/context/skins/common/xslt/html/book2menu.xsl
-%%DATADIR%%/context/skins/common/xslt/html/document2html.xsl
-%%DATADIR%%/context/skins/forrest-site/xslt/html/tab2menu.xsl
-%%DATADIR%%/context/skins/forrest-site/xslt/html/document2html.xsl
-%%DATADIR%%/context/skins/forrest-site/xslt/html/site2xhtml.xsl
-%%DATADIR%%/context/skins/forrest-site/xslt/html/book2menu.xsl
-%%DATADIR%%/context/skins/forrest-site/xslt/fo/document2fo.xsl
-%%DATADIR%%/context/skins/forrest-site/images/xmldoc.gif
-%%DATADIR%%/context/skins/forrest-site/images/tab-left.gif
-%%DATADIR%%/context/skins/forrest-site/images/singlepage.gif
-%%DATADIR%%/context/skins/forrest-site/images/page.gif
-%%DATADIR%%/context/skins/forrest-site/images/label.gif
-%%DATADIR%%/context/skins/forrest-site/images/spacer.gif
-%%DATADIR%%/context/skins/forrest-site/images/printer.gif
-%%DATADIR%%/context/skins/forrest-site/images/chapter.gif
-%%DATADIR%%/context/skins/forrest-site/images/vcss.png
-%%DATADIR%%/context/skins/forrest-site/images/tabSel-left.gif
-%%DATADIR%%/context/skins/forrest-site/images/current.gif
-%%DATADIR%%/context/skins/forrest-site/images/chapter_open.gif
-%%DATADIR%%/context/skins/forrest-site/images/tab-right.gif
-%%DATADIR%%/context/skins/forrest-site/images/search-right.gif
-%%DATADIR%%/context/skins/forrest-site/images/menu-right.gif
-%%DATADIR%%/context/skins/forrest-site/images/menu-left.gif
-%%DATADIR%%/context/skins/forrest-site/images/favicon.ico
-%%DATADIR%%/context/skins/forrest-site/images/tabSel-right.gif
-%%DATADIR%%/context/skins/forrest-site/images/valid-html401.png
-%%DATADIR%%/context/skins/forrest-site/images/pdfdoc.gif
-%%DATADIR%%/context/skins/forrest-site/images/search-left.gif
-%%DATADIR%%/context/skins/forrest-site/images/doc.gif
-%%DATADIR%%/context/skins/forrest-site/css/page.css
-%%DATADIR%%/context/skins/forrest-site/scripts/breadcrumbs.js
-%%DATADIR%%/context/skins/forrest-site/scripts/breadcrumbs-optimized.js
-%%DATADIR%%/context/revisions.xmap
-%%DATADIR%%/context/resources.xmap
-%%DATADIR%%/context/aggregate.xmap
-%%DATADIR%%/context/issues.xmap
-%%DATADIR%%/context/raw.xmap
-%%DATADIR%%/context/linkmap.xmap
-%%DATADIR%%/context/forrest.xmap
-%%DATADIR%%/context/dtd.xmap
-%%DATADIR%%/context/jettyconf.xml
-%%DATADIR%%/context/profiler.xmap
-%%DATADIR%%/context/status.xmap
-%%DATADIR%%/context/faq.xmap
-%%DATADIR%%/context/jtidy.properties
-%%DATADIR%%/context/sitemap.xmap
-%%DATADIR%%/context/menu.xmap
-%%DATADIR%%/forrest.build.xml
-%%DATADIR%%/forrest.antproxy.xml
-%%DATADIR%%/fresh-site.zip
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/skin/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/skin
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/community/howto/xmlform
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/community/howto/v10
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/community/howto/bugzilla-patch/my-images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/community/howto/bugzilla-patch
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/community/howto/cvs-ssh
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/community/howto
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/community
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DATADIR%%/lib/optional/README.txt
+%%DATADIR%%/main/fresh-site/src/documentation/classes/CatalogManager.properties
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/images/group-logo.gif
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/images/group.svg
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/images/icon.png
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/images/project-logo.gif
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/images/project.svg
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/images/usemap.gif
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/samples/subdir/book-sample.xml
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/samples/subdir/hello.zip
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/samples/subdir/index.xml
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/samples/ascii-art.xml
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/samples/cocoon-pyramid.aart
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/samples/custom.xml
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/samples/customSchema.xml
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/samples/document-v13.xml
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/samples/embedded_html.html
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/samples/faq.xml
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/samples/hello-v10.dtd
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/samples/helloAgain.pdf
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/samples/index.xml
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/samples/linking.xml
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/samples/sample.xml
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/samples/static.xml
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/samples/usemap.xml
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/hello.pdf
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/index.xml
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/site.xml
+%%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/tabs.xml
+%%DATADIR%%/main/fresh-site/src/documentation/content/test1.html
+%%DATADIR%%/main/fresh-site/src/documentation/resources/schema/catalog.xcat
+%%DATADIR%%/main/fresh-site/src/documentation/resources/schema/hello-v10.dtd
+%%DATADIR%%/main/fresh-site/src/documentation/resources/stylesheets/hello2document.xsl
+%%DATADIR%%/main/fresh-site/src/documentation/translations/langcode.xml
+%%DATADIR%%/main/fresh-site/src/documentation/translations/languages_en.xml
+%%DATADIR%%/main/fresh-site/src/documentation/translations/languages_es.xml
+%%DATADIR%%/main/fresh-site/src/documentation/translations/menu.xml
+%%DATADIR%%/main/fresh-site/src/documentation/translations/menu_af.xml
+%%DATADIR%%/main/fresh-site/src/documentation/translations/menu_de.xml
+%%DATADIR%%/main/fresh-site/src/documentation/translations/menu_es.xml
+%%DATADIR%%/main/fresh-site/src/documentation/translations/menu_it.xml
+%%DATADIR%%/main/fresh-site/src/documentation/translations/menu_no.xml
+%%DATADIR%%/main/fresh-site/src/documentation/translations/menu_ru.xml
+%%DATADIR%%/main/fresh-site/src/documentation/translations/menu_sk.xml
+%%DATADIR%%/main/fresh-site/src/documentation/translations/tabs.xml
+%%DATADIR%%/main/fresh-site/src/documentation/translations/tabs_es.xml
+%%DATADIR%%/main/fresh-site/src/documentation/README.txt
+%%DATADIR%%/main/fresh-site/src/documentation/sitemap.xmap
+%%DATADIR%%/main/fresh-site/src/documentation/skinconf.xml
+%%DATADIR%%/main/fresh-site/forrest.properties
+%%DATADIR%%/main/java/org/apache/cocoon/components/source/impl/ZipSource.java
+%%DATADIR%%/main/java/org/apache/cocoon/components/source/impl/ZipSourceFactory.java
+%%DATADIR%%/main/java/org/apache/forrest/conf/AntProperties.java
+%%DATADIR%%/main/java/org/apache/forrest/conf/AntPropertiesModule.java
+%%DATADIR%%/main/java/org/apache/forrest/conf/ForrestConfModule.java
+%%DATADIR%%/main/java/org/apache/forrest/conf/ForrestConfUtils.java
+%%DATADIR%%/main/java/org/apache/forrest/conf/SkinconfTransformer.java
+%%DATADIR%%/main/java/org/apache/forrest/locationmap/lm/AbstractNode.java
+%%DATADIR%%/main/java/org/apache/forrest/locationmap/lm/LocationMap.java
+%%DATADIR%%/main/java/org/apache/forrest/locationmap/lm/LocationNode.java
+%%DATADIR%%/main/java/org/apache/forrest/locationmap/lm/LocatorNode.java
+%%DATADIR%%/main/java/org/apache/forrest/locationmap/lm/MatchNode.java
+%%DATADIR%%/main/java/org/apache/forrest/locationmap/lm/SelectNode.java
+%%DATADIR%%/main/java/org/apache/forrest/locationmap/AbstractWrappingModule.java
+%%DATADIR%%/main/java/org/apache/forrest/locationmap/LocationMapModule.java
+%%DATADIR%%/main/java/org/apache/forrest/locationmap/RegexpLocationMapMatcher.java
+%%DATADIR%%/main/java/org/apache/forrest/locationmap/WildcardLocationMapHintMatcher.java
+%%DATADIR%%/main/java/org/apache/forrest/locationmap/WildcardLocationMapMatcher.java
+%%DATADIR%%/main/java/org/apache/forrest/log/ForrestLogTargetFactory.java
+%%DATADIR%%/main/java/org/apache/forrest/sourceexists/SourceExistsSelector.java
+%%DATADIR%%/main/java/org/apache/forrest/sourcetype/DocDeclRule.java
+%%DATADIR%%/main/java/org/apache/forrest/sourcetype/DocumentElementRule.java
+%%DATADIR%%/main/java/org/apache/forrest/sourcetype/ProcessingInstructionRule.java
+%%DATADIR%%/main/java/org/apache/forrest/sourcetype/SourceInfo.java
+%%DATADIR%%/main/java/org/apache/forrest/sourcetype/SourceType.java
+%%DATADIR%%/main/java/org/apache/forrest/sourcetype/SourceTypeAction.java
+%%DATADIR%%/main/java/org/apache/forrest/sourcetype/SourceTypeRule.java
+%%DATADIR%%/main/java/org/apache/forrest/sourcetype/XmlSchemaRule.java
+%%DATADIR%%/main/java/org/apache/forrest/util/IdGeneratorTransformer.java
+%%DATADIR%%/main/java/org/apache/forrest/util/XPathTransformer.java
+%%DATADIR%%/main/java/org/apache/forrest/xni/XNIConfigurableFileGenerator.java
+%%DATADIR%%/main/targets/context.xml
+%%DATADIR%%/main/targets/plugins.xml
+%%DATADIR%%/main/targets/site.xml
+%%DATADIR%%/main/targets/skins.xml
+%%DATADIR%%/main/targets/validate.xml
+%%DATADIR%%/main/targets/webapp.xml
+%%DATADIR%%/main/tasks/org/apache/forrest/UncopiedFileSelector.java
+%%DATADIR%%/main/var/catalogMountSnippet.xsl
+%%DATADIR%%/main/var/echo-settings-message.txt
+%%DATADIR%%/main/var/full.cvsignore
+%%DATADIR%%/main/var/initial_catalog.xcat
+%%DATADIR%%/main/var/initial_plugins_sitemap.xmap
+%%DATADIR%%/main/var/pluginMountSnippet.xsl
+%%DATADIR%%/main/var/pluginlist2echo.xsl
+%%DATADIR%%/main/var/pluginlist2fetch.xsl
+%%DATADIR%%/main/var/skin-not-found-message.txt
+%%DATADIR%%/main/var/skinlist2echo.xsl
+%%DATADIR%%/main/var/skinlist2fetch.xsl
+%%DATADIR%%/main/var/template-project-created-message.txt
+%%DATADIR%%/main/var/webapp-generated-message.txt
+%%DATADIR%%/main/var/webapp-local-generated-message.txt
+%%DATADIR%%/main/webapp/WEB-INF/classes/org/apache/cocoon/util/mime.types
+%%DATADIR%%/main/webapp/WEB-INF/classes/log4j.properties
+%%DATADIR%%/main/webapp/WEB-INF/xconf/forrest-core.xconf
+%%DATADIR%%/main/webapp/WEB-INF/cli.xconf
+%%DATADIR%%/main/webapp/WEB-INF/cocoon.xconf
+%%DATADIR%%/main/webapp/WEB-INF/jtidy.properties
+%%DATADIR%%/main/webapp/WEB-INF/logkit.xconf
+%%DATADIR%%/main/webapp/WEB-INF/web.xml
+%%DATADIR%%/main/webapp/resources/chaperon/grammars/link.xlex
+%%DATADIR%%/main/webapp/resources/chaperon/stylesheets/pattern2link.xsl
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/ent/iso-amsa.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/ent/iso-amsb.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/ent/iso-amsc.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/ent/iso-amsn.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/ent/iso-amso.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/ent/iso-amsr.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/ent/iso-box.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/ent/iso-cyr1.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/ent/iso-cyr2.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/ent/iso-dia.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/ent/iso-grk1.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/ent/iso-grk2.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/ent/iso-grk3.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/ent/iso-grk4.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/ent/iso-lat1.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/ent/iso-lat2.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/ent/iso-num.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/ent/iso-pub.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/ent/iso-tech.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/calstblx.dtd
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/dbcentx.mod
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/dbgenent.mod
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/dbhierx.mod
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/dbnotnx.mod
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/dbpoolx.mod
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/docbookx.dtd
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/soextblx.dtd
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/ent/iso-amsa.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/ent/iso-amsb.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/ent/iso-amsc.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/ent/iso-amsn.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/ent/iso-amso.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/ent/iso-amsr.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/ent/iso-box.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/ent/iso-cyr1.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/ent/iso-cyr2.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/ent/iso-dia.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/ent/iso-grk1.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/ent/iso-grk2.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/ent/iso-grk3.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/ent/iso-grk4.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/ent/iso-lat1.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/ent/iso-lat2.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/ent/iso-num.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/ent/iso-pub.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/ent/iso-tech.ent
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/ChangeLog
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/README
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/calstblx.dtd
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/catalog.xml
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/dbcentx.mod
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/dbgenent.mod
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/dbhierx.mod
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/dbnotnx.mod
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/dbpoolx.mod
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/docbook.cat
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/docbookx.dtd
+%%DATADIR%%/main/webapp/resources/schema/docbook/4.2/soextblx.dtd
+%%DATADIR%%/main/webapp/resources/schema/docbook/catalog
+%%DATADIR%%/main/webapp/resources/schema/docbook/catalog.xcat
+%%DATADIR%%/main/webapp/resources/schema/dtd/v10/README.txt
+%%DATADIR%%/main/webapp/resources/schema/dtd/v10/changes-v10.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/v10/characters.ent
+%%DATADIR%%/main/webapp/resources/schema/dtd/v10/document-v10.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/v10/faq-v10.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/v10/todo-v10.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/v20a/STATUS.txt
+%%DATADIR%%/main/webapp/resources/schema/dtd/v20a/document-v20.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/v20a/document-v20.mod
+%%DATADIR%%/main/webapp/resources/schema/dtd/v20a/faq-v20.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/v20a/faq-v20.mod
+%%DATADIR%%/main/webapp/resources/schema/dtd/.htaccess
+%%DATADIR%%/main/webapp/resources/schema/dtd/book-cocoon-v10.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/changes-v11.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/changes-v11.mod
+%%DATADIR%%/main/webapp/resources/schema/dtd/changes-v12.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/changes-v13.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/changes-v20.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/changes-v20.mod
+%%DATADIR%%/main/webapp/resources/schema/dtd/common-charents-v10.mod
+%%DATADIR%%/main/webapp/resources/schema/dtd/common-elems-v10.mod
+%%DATADIR%%/main/webapp/resources/schema/dtd/contributors-v10.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/document-v11.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/document-v11.mod
+%%DATADIR%%/main/webapp/resources/schema/dtd/document-v12.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/document-v12.mod
+%%DATADIR%%/main/webapp/resources/schema/dtd/document-v13.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/document-v13.mod
+%%DATADIR%%/main/webapp/resources/schema/dtd/document-v20.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/document-v20.mod
+%%DATADIR%%/main/webapp/resources/schema/dtd/faq-v11.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/faq-v11.mod
+%%DATADIR%%/main/webapp/resources/schema/dtd/faq-v12.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/faq-v12.mod
+%%DATADIR%%/main/webapp/resources/schema/dtd/faq-v13.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/faq-v20.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/faq-v20.mod
+%%DATADIR%%/main/webapp/resources/schema/dtd/howto-v10.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/howto-v12.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/howto-v13.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/howto-v20.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/index.html
+%%DATADIR%%/main/webapp/resources/schema/dtd/javadoc-v04draft.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/readme.txt
+%%DATADIR%%/main/webapp/resources/schema/dtd/skinconfig-v06-1.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/skinconfig-v06-2.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/skinconfig-v06-3.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/skinconfig-v06.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/status-v13.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/skinconfig-v07-1.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/specification-v11.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/status-v13.mod
+%%DATADIR%%/main/webapp/resources/schema/dtd/tab-cocoon-v10.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/tab-cocoon-v11.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/todo-v11.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/todo-v11.mod
+%%DATADIR%%/main/webapp/resources/schema/dtd/todo-v12.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/todo-v13.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/todo-v20.dtd
+%%DATADIR%%/main/webapp/resources/schema/dtd/todo-v20.mod
+%%DATADIR%%/main/webapp/resources/schema/dtd/xgump-draft.dtd
+%%DATADIR%%/main/webapp/resources/schema/entity/.htaccess
+%%DATADIR%%/main/webapp/resources/schema/entity/ISOdia.pen
+%%DATADIR%%/main/webapp/resources/schema/entity/ISOgrk1.pen
+%%DATADIR%%/main/webapp/resources/schema/entity/ISOlat1.pen
+%%DATADIR%%/main/webapp/resources/schema/entity/ISOnum.pen
+%%DATADIR%%/main/webapp/resources/schema/entity/ISOpub.pen
+%%DATADIR%%/main/webapp/resources/schema/entity/ISOtech.pen
+%%DATADIR%%/main/webapp/resources/schema/entity/index.html
+%%DATADIR%%/main/webapp/resources/schema/open-office/catalog
+%%DATADIR%%/main/webapp/resources/schema/open-office/catalog.xcat
+%%DATADIR%%/main/webapp/resources/schema/open-office/dummy.dtd
+%%DATADIR%%/main/webapp/resources/schema/relaxng/unstable/any.rng
+%%DATADIR%%/main/webapp/resources/schema/relaxng/unstable/any.rnx
+%%DATADIR%%/main/webapp/resources/schema/relaxng/unstable/forrestbot.rng
+%%DATADIR%%/main/webapp/resources/schema/relaxng/unstable/forrestbot.rnx
+%%DATADIR%%/main/webapp/resources/schema/relaxng/README.txt
+%%DATADIR%%/main/webapp/resources/schema/relaxng/book-v01.rng
+%%DATADIR%%/main/webapp/resources/schema/relaxng/document-v20.mod.rng
+%%DATADIR%%/main/webapp/resources/schema/relaxng/document-v20.rng
+%%DATADIR%%/main/webapp/resources/schema/relaxng/sitemap-v06.rng
+%%DATADIR%%/main/webapp/resources/schema/relaxng/skinconf.rnc
+%%DATADIR%%/main/webapp/resources/schema/relaxng/xslt.rng
+%%DATADIR%%/main/webapp/resources/schema/sdocbook/1.0/sdbcent.mod
+%%DATADIR%%/main/webapp/resources/schema/sdocbook/1.0/sdbhier.mod
+%%DATADIR%%/main/webapp/resources/schema/sdocbook/1.0/sdbpool.mod
+%%DATADIR%%/main/webapp/resources/schema/sdocbook/1.0/sdocbook-custom.dtd
+%%DATADIR%%/main/webapp/resources/schema/sdocbook/1.0/sdocbook.css
+%%DATADIR%%/main/webapp/resources/schema/sdocbook/1.0/sdocbook.dtd
+%%DATADIR%%/main/webapp/resources/schema/sdocbook/1.0/sdocbookref-custom.dtd
+%%DATADIR%%/main/webapp/resources/schema/sdocbook/1.0/sdocbookref.dtd
+%%DATADIR%%/main/webapp/resources/schema/sdocbook/1.0/sinclist.mod
+%%DATADIR%%/main/webapp/resources/schema/sdocbook/catalog
+%%DATADIR%%/main/webapp/resources/schema/sdocbook/catalog.xcat
+%%DATADIR%%/main/webapp/resources/schema/w3c-dtd/README.txt
+%%DATADIR%%/main/webapp/resources/schema/w3c-dtd/catalog
+%%DATADIR%%/main/webapp/resources/schema/w3c-dtd/catalog.xcat
+%%DATADIR%%/main/webapp/resources/schema/w3c-dtd/svg-20000303-exchange.dtd
+%%DATADIR%%/main/webapp/resources/schema/w3c-dtd/svg-20000303-shared.dtd
+%%DATADIR%%/main/webapp/resources/schema/w3c-dtd/svg-20000303-stylable.dtd
+%%DATADIR%%/main/webapp/resources/schema/w3c-dtd/svg10.dtd
+%%DATADIR%%/main/webapp/resources/schema/w3c-dtd/w3c-license.txt
+%%DATADIR%%/main/webapp/resources/schema/w3c-dtd/xhtml-lat1.ent
+%%DATADIR%%/main/webapp/resources/schema/w3c-dtd/xhtml-special.ent
+%%DATADIR%%/main/webapp/resources/schema/w3c-dtd/xhtml-symbol.ent
+%%DATADIR%%/main/webapp/resources/schema/w3c-dtd/xhtml1-frameset.dtd
+%%DATADIR%%/main/webapp/resources/schema/w3c-dtd/xhtml1-strict.dtd
+%%DATADIR%%/main/webapp/resources/schema/w3c-dtd/xhtml1-transitional.dtd
+%%DATADIR%%/main/webapp/resources/schema/w3c-dtd/xhtml1.dcl
+%%DATADIR%%/main/webapp/resources/schema/README.txt
+%%DATADIR%%/main/webapp/resources/schema/catalog
+%%DATADIR%%/main/webapp/resources/schema/catalog.forrest
+%%DATADIR%%/main/webapp/resources/schema/catalog.forrest.xcat
+%%DATADIR%%/main/webapp/resources/schema/catalog.xcat
+%%DATADIR%%/main/webapp/resources/stylesheets/aggregates/book2cinclude.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/aggregates/doc2doc-uniqueids.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/aggregates/docs2document.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/aggregates/relativize-split-linkmap.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/external/str.find-last.xslt
+%%DATADIR%%/main/webapp/resources/stylesheets/search/book2cinclude-lucene.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/search/document2lucene.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/search/lucene-update2document.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/search/search2document.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/absolutize-linkmap.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/any2document.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/bookv10.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/changesv10tochangesv11.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/copyover.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/declare-broken-site-links.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/directory2book.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/directory2i18n.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/directory2revisions.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/docv10todocv11.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/docv20todocv12.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/docv20todocv13.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/dotdots.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/extract-svg.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/faq2document.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/faqv10tofaqv11.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/faqv20tofaqv12.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/faqv20tofaqv13.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/howto2document.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/html2document.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/html2htmlbody.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/i18n.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/linkmap2document.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/normalizehrefs.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/page2html.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/plugins2xdoc.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/profile2page.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/project2text.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/projectnavigation2site.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/relativize-linkmap.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/rss2document.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/rssissues2document.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/site2book.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/site2site-normalizetabs.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/site2site-selectnode.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/strip-doctype.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/text2document.xsl
+%%DATADIR%%/main/webapp/resources/stylesheets/upgrade-skinconf.xsl
+%%DATADIR%%/main/webapp/skins/common/css/forrest.css.xslt
+%%DATADIR%%/main/webapp/skins/common/images/README.txt
+%%DATADIR%%/main/webapp/skins/common/images/add.jpg
+%%DATADIR%%/main/webapp/skins/common/images/built-with-forrest-button.png
+%%DATADIR%%/main/webapp/skins/common/images/corner-imports.svg.xslt
+%%DATADIR%%/main/webapp/skins/common/images/dc.svg.xslt
+%%DATADIR%%/main/webapp/skins/common/images/external-link.gif
+%%DATADIR%%/main/webapp/skins/common/images/fix.jpg
+%%DATADIR%%/main/webapp/skins/common/images/forrest-credit-logo.png
+%%DATADIR%%/main/webapp/skins/common/images/hack.jpg
+%%DATADIR%%/main/webapp/skins/common/images/pdfdoc.gif
+%%DATADIR%%/main/webapp/skins/common/images/poddoc.png
+%%DATADIR%%/main/webapp/skins/common/images/poddoc.svg.xslt
+%%DATADIR%%/main/webapp/skins/common/images/printer.gif
+%%DATADIR%%/main/webapp/skins/common/images/rc.svg.xslt
+%%DATADIR%%/main/webapp/skins/common/images/remove.jpg
+%%DATADIR%%/main/webapp/skins/common/images/rss.png
+%%DATADIR%%/main/webapp/skins/common/images/spacer.gif
+%%DATADIR%%/main/webapp/skins/common/images/txtdoc.png
+%%DATADIR%%/main/webapp/skins/common/images/txtdoc.svg.xslt
+%%DATADIR%%/main/webapp/skins/common/images/update.jpg
+%%DATADIR%%/main/webapp/skins/common/images/valid-html401.png
+%%DATADIR%%/main/webapp/skins/common/images/vcss.png
+%%DATADIR%%/main/webapp/skins/common/images/xmldoc.gif
+%%DATADIR%%/main/webapp/skins/common/scripts/breadcrumbs-optimized.js
+%%DATADIR%%/main/webapp/skins/common/scripts/breadcrumbs.js
+%%DATADIR%%/main/webapp/skins/common/scripts/fontsize.js
+%%DATADIR%%/main/webapp/skins/common/scripts/getBlank.js
+%%DATADIR%%/main/webapp/skins/common/scripts/getMenu.js
+%%DATADIR%%/main/webapp/skins/common/scripts/menu.js
+%%DATADIR%%/main/webapp/skins/common/translations/CommonMessages_de.xml
+%%DATADIR%%/main/webapp/skins/common/translations/CommonMessages_en_US.xml
+%%DATADIR%%/main/webapp/skins/common/translations/CommonMessages_es.xml
+%%DATADIR%%/main/webapp/skins/common/translations/CommonMessages_fr.xml
+%%DATADIR%%/main/webapp/skins/common/xslt/fo/document2fo.xsl
+%%DATADIR%%/main/webapp/skins/common/xslt/fo/footerinfo.xsl
+%%DATADIR%%/main/webapp/skins/common/xslt/fo/pdfoutline.xsl
+%%DATADIR%%/main/webapp/skins/common/xslt/html/book2menu.xsl
+%%DATADIR%%/main/webapp/skins/common/xslt/html/document2html.xsl
+%%DATADIR%%/main/webapp/skins/common/xslt/html/dotdots.xsl
+%%DATADIR%%/main/webapp/skins/common/xslt/html/pathutils.xsl
+%%DATADIR%%/main/webapp/skins/common/xslt/html/renderlogo.xsl
+%%DATADIR%%/main/webapp/skins/common/xslt/html/site2xhtml.xsl
+%%DATADIR%%/main/webapp/skins/common/xslt/html/split.xsl
+%%DATADIR%%/main/webapp/skins/common/xslt/html/strip_namespaces.xsl
+%%DATADIR%%/main/webapp/skins/common/xslt/html/tab2menu.xsl
+%%DATADIR%%/main/webapp/skins/common/xslt/html/tabutils.xsl
+%%DATADIR%%/main/webapp/skins/common/xslt/svg/document2svg.xsl
+%%DATADIR%%/main/webapp/skins/common/skinconf.xsl
+%%DATADIR%%/main/webapp/skins/corium/brainstorming.txt
+%%DATADIR%%/main/webapp/skins/forrest-site/css/page.css
+%%DATADIR%%/main/webapp/skins/forrest-site/images/chapter.gif
+%%DATADIR%%/main/webapp/skins/forrest-site/images/chapter_open.gif
+%%DATADIR%%/main/webapp/skins/forrest-site/images/current.gif
+%%DATADIR%%/main/webapp/skins/forrest-site/images/doc.gif
+%%DATADIR%%/main/webapp/skins/forrest-site/images/label.gif
+%%DATADIR%%/main/webapp/skins/forrest-site/images/menu-left.gif
+%%DATADIR%%/main/webapp/skins/forrest-site/images/menu-right.gif
+%%DATADIR%%/main/webapp/skins/forrest-site/images/page.gif
+%%DATADIR%%/main/webapp/skins/forrest-site/images/pdfdoc.gif
+%%DATADIR%%/main/webapp/skins/forrest-site/images/printer.gif
+%%DATADIR%%/main/webapp/skins/forrest-site/images/search-left.gif
+%%DATADIR%%/main/webapp/skins/forrest-site/images/search-right.gif
+%%DATADIR%%/main/webapp/skins/forrest-site/images/singlepage.gif
+%%DATADIR%%/main/webapp/skins/forrest-site/images/spacer.gif
+%%DATADIR%%/main/webapp/skins/forrest-site/images/tab-left.gif
+%%DATADIR%%/main/webapp/skins/forrest-site/images/tab-right.gif
+%%DATADIR%%/main/webapp/skins/forrest-site/images/tabSel-left.gif
+%%DATADIR%%/main/webapp/skins/forrest-site/images/tabSel-right.gif
+%%DATADIR%%/main/webapp/skins/forrest-site/images/xmldoc.gif
+%%DATADIR%%/main/webapp/skins/forrest-site/xslt/fo/document2fo.xsl
+%%DATADIR%%/main/webapp/skins/forrest-site/xslt/html/book2menu.xsl
+%%DATADIR%%/main/webapp/skins/forrest-site/xslt/html/document2html.xsl
+%%DATADIR%%/main/webapp/skins/forrest-site/xslt/html/site2xhtml.xsl
+%%DATADIR%%/main/webapp/skins/forrest-site/xslt/html/tab2menu.xsl
+%%DATADIR%%/main/webapp/skins/krysalis-site/css/forrest.css.xslt
+%%DATADIR%%/main/webapp/skins/krysalis-site/css/page.css
+%%DATADIR%%/main/webapp/skins/krysalis-site/images/chapter.gif
+%%DATADIR%%/main/webapp/skins/krysalis-site/images/chapter_open.gif
+%%DATADIR%%/main/webapp/skins/krysalis-site/images/current.gif
+%%DATADIR%%/main/webapp/skins/krysalis-site/images/error.png
+%%DATADIR%%/main/webapp/skins/krysalis-site/images/info.png
+%%DATADIR%%/main/webapp/skins/krysalis-site/images/label.gif
+%%DATADIR%%/main/webapp/skins/krysalis-site/images/page.gif
+%%DATADIR%%/main/webapp/skins/krysalis-site/images/pdfdoc.gif
+%%DATADIR%%/main/webapp/skins/krysalis-site/images/printer.gif
+%%DATADIR%%/main/webapp/skins/krysalis-site/images/success.png
+%%DATADIR%%/main/webapp/skins/krysalis-site/images/warning.png
+%%DATADIR%%/main/webapp/skins/krysalis-site/images/xmldoc.gif
+%%DATADIR%%/main/webapp/skins/krysalis-site/xslt/fo/document2fo.xsl
+%%DATADIR%%/main/webapp/skins/krysalis-site/xslt/html/book2menu.xsl
+%%DATADIR%%/main/webapp/skins/krysalis-site/xslt/html/document2html.xsl
+%%DATADIR%%/main/webapp/skins/krysalis-site/xslt/html/site2xhtml.xsl
+%%DATADIR%%/main/webapp/skins/krysalis-site/xslt/html/tab2menu.xsl
+%%DATADIR%%/main/webapp/skins/krysalis-site/skinconf.xsl
+%%DATADIR%%/main/webapp/skins/leather-dev/css/base-contracts.css
+%%DATADIR%%/main/webapp/skins/leather-dev/css/basic.css
+%%DATADIR%%/main/webapp/skins/leather-dev/css/branding.css
+%%DATADIR%%/main/webapp/skins/leather-dev/css/navigation.css
+%%DATADIR%%/main/webapp/skins/leather-dev/css/profiling.css.xslt
+%%DATADIR%%/main/webapp/skins/leather-dev/images/chapter.gif
+%%DATADIR%%/main/webapp/skins/leather-dev/images/chapter_open.gif
+%%DATADIR%%/main/webapp/skins/leather-dev/images/current.gif
+%%DATADIR%%/main/webapp/skins/leather-dev/images/doc.gif
+%%DATADIR%%/main/webapp/skins/leather-dev/images/header-background-grad.png
+%%DATADIR%%/main/webapp/skins/leather-dev/images/header-background.gif
+%%DATADIR%%/main/webapp/skins/leather-dev/images/header-background.png
+%%DATADIR%%/main/webapp/skins/leather-dev/images/header_white_line.gif
+%%DATADIR%%/main/webapp/skins/leather-dev/images/label.gif
+%%DATADIR%%/main/webapp/skins/leather-dev/images/page.gif
+%%DATADIR%%/main/webapp/skins/leather-dev/images/pdfdoc.gif
+%%DATADIR%%/main/webapp/skins/leather-dev/images/printer.gif
+%%DATADIR%%/main/webapp/skins/leather-dev/images/search-left.gif
+%%DATADIR%%/main/webapp/skins/leather-dev/images/search-right.gif
+%%DATADIR%%/main/webapp/skins/leather-dev/images/sidebar_bg.gif
+%%DATADIR%%/main/webapp/skins/leather-dev/images/singlepage.gif
+%%DATADIR%%/main/webapp/skins/leather-dev/images/spacer.gif
+%%DATADIR%%/main/webapp/skins/leather-dev/images/tab-left.gif
+%%DATADIR%%/main/webapp/skins/leather-dev/images/tab-right.gif
+%%DATADIR%%/main/webapp/skins/leather-dev/images/tl-off.gif
+%%DATADIR%%/main/webapp/skins/leather-dev/images/tl-on.gif
+%%DATADIR%%/main/webapp/skins/leather-dev/images/tr-off.gif
+%%DATADIR%%/main/webapp/skins/leather-dev/images/tr-on.gif
+%%DATADIR%%/main/webapp/skins/leather-dev/images/xmldoc.gif
+%%DATADIR%%/main/webapp/skins/leather-dev/templates/default.fv
+%%DATADIR%%/main/webapp/skins/leather-dev/xslt/fo/document2fo.xsl
+%%DATADIR%%/main/webapp/skins/leather-dev/xslt/html/book2menu.xsl
+%%DATADIR%%/main/webapp/skins/leather-dev/xslt/html/document2html.xsl
+%%DATADIR%%/main/webapp/skins/leather-dev/xslt/html/site2xhtml.xsl
+%%DATADIR%%/main/webapp/skins/leather-dev/xslt/html/tab2menu.xsl
+%%DATADIR%%/main/webapp/skins/leather-dev/xslt/xml/fct-bits/c-fontsize-fct.xml
+%%DATADIR%%/main/webapp/skins/leather-dev/xslt/xml/fct-bits/fct-bits.txt
+%%DATADIR%%/main/webapp/skins/leather-dev/xslt/xml/fct-bits/fct-bits.xsl
+%%DATADIR%%/main/webapp/skins/leather-dev/xslt/xml/fct-bits/pipeline.txt
+%%DATADIR%%/main/webapp/skins/leather-dev/xslt/xml/contract.xsl
+%%DATADIR%%/main/webapp/skins/leather-dev/xslt/xml/dir2contracts.xsl
+%%DATADIR%%/main/webapp/skins/leather-dev/xslt/xml/ft-leather.xml
+%%DATADIR%%/main/webapp/skins/leather-dev/xslt/xml/ft2xhtml.xsl
+%%DATADIR%%/main/webapp/skins/leather-dev/xslt/xml/site2xml.xsl
+%%DATADIR%%/main/webapp/skins/leather-dev/xslt/xml/sitemap.xmap
+%%DATADIR%%/main/webapp/skins/leather-dev/brainstorming.txt
+%%DATADIR%%/main/webapp/skins/leather-dev/contracts.inicial.txt
+%%DATADIR%%/main/webapp/skins/leather-dev/forrest-template.xml
+%%DATADIR%%/main/webapp/skins/leather-dev/note.txt
+%%DATADIR%%/main/webapp/skins/leather-dev/skinconf.xsl
+%%DATADIR%%/main/webapp/skins/pelt/css/basic.css
+%%DATADIR%%/main/webapp/skins/pelt/css/print.css
+%%DATADIR%%/main/webapp/skins/pelt/css/profile.css.xslt
+%%DATADIR%%/main/webapp/skins/pelt/css/screen.css
+%%DATADIR%%/main/webapp/skins/pelt/images/chapter.gif
+%%DATADIR%%/main/webapp/skins/pelt/images/chapter_open.gif
+%%DATADIR%%/main/webapp/skins/pelt/images/current.gif
+%%DATADIR%%/main/webapp/skins/pelt/images/error.png
+%%DATADIR%%/main/webapp/skins/pelt/images/header_white_line.gif
+%%DATADIR%%/main/webapp/skins/pelt/images/info.png
+%%DATADIR%%/main/webapp/skins/pelt/images/instruction_arrow.png
+%%DATADIR%%/main/webapp/skins/pelt/images/label.gif
+%%DATADIR%%/main/webapp/skins/pelt/images/page.gif
+%%DATADIR%%/main/webapp/skins/pelt/images/pdfdoc.gif
+%%DATADIR%%/main/webapp/skins/pelt/images/printer.gif
+%%DATADIR%%/main/webapp/skins/pelt/images/success.png
+%%DATADIR%%/main/webapp/skins/pelt/images/warning.png
+%%DATADIR%%/main/webapp/skins/pelt/images/xmldoc.gif
+%%DATADIR%%/main/webapp/skins/pelt/xslt/fo/document2fo.xsl
+%%DATADIR%%/main/webapp/skins/pelt/xslt/html/book2menu.xsl
+%%DATADIR%%/main/webapp/skins/pelt/xslt/html/document2html.xsl
+%%DATADIR%%/main/webapp/skins/pelt/xslt/html/site2xhtml.xsl
+%%DATADIR%%/main/webapp/skins/pelt/xslt/html/tab2menu.xsl
+%%DATADIR%%/main/webapp/skins/pelt/note.txt
+%%DATADIR%%/main/webapp/skins/pelt/skinconf.xsl
+%%DATADIR%%/main/webapp/skins/plain-dev/xslt/html/book2menu.xsl
+%%DATADIR%%/main/webapp/skins/plain-dev/xslt/html/document2html.xsl
+%%DATADIR%%/main/webapp/skins/plain-dev/xslt/html/site2xhtml.xsl
+%%DATADIR%%/main/webapp/skins/plain-dev/xslt/html/tab2menu.xsl
+%%DATADIR%%/main/webapp/skins/tigris/css/forrest.css.xslt
+%%DATADIR%%/main/webapp/skins/tigris/css/inst.css
+%%DATADIR%%/main/webapp/skins/tigris/css/ns4_only.css
+%%DATADIR%%/main/webapp/skins/tigris/css/print.css
+%%DATADIR%%/main/webapp/skins/tigris/css/quirks.css
+%%DATADIR%%/main/webapp/skins/tigris/css/tigris.css
+%%DATADIR%%/main/webapp/skins/tigris/images/corporate_logo.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/file.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/folder-closed.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/folder-open.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/help_logo.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_alert.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_alertsml.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_arrowfolder1_sml.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_arrowfolder2_sml.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_arrowfolderclosed1_sml.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_arrowfolderopen2_sml.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_arrowmembers1_sml.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_arrowmembers2_sml.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_arrowusergroups1_sml.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_arrowusergroups2_sml.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_arrowwaste1_sml.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_arrowwaste2_sml.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_confirmsml.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_doc_lrg.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_doc_sml.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_error_lrg.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_error_sml.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_folder_lrg.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_folder_sml.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_help_lrg.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_help_sml.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_info_lrg.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_info_sml.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_infosml.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_members_lrg.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_members_sml.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_sortdown.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_sortleft.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_sortright.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_sortup.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_success_lrg.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_success_sml.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_usergroups_lrg.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_usergroups_sml.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_warning_lrg.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_warning_sml.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_waste_lrg.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/icon_waste_sml.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/nw_maj.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/nw_maj_hi.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/nw_maj_rond.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/nw_med.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/nw_med_hi.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/nw_med_rond.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/nw_min.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/nw_min_036.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/nw_min_hi.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/pdfdoc.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/poweredby_036.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/printer.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/product_logo.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/se_maj_rond.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/strich.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/sw_maj_rond.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/sw_med_rond.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/sw_min.gif
+%%DATADIR%%/main/webapp/skins/tigris/images/xmldoc.gif
+%%DATADIR%%/main/webapp/skins/tigris/scripts/tigris.js
+%%DATADIR%%/main/webapp/skins/tigris/xslt/fo/document2fo.xsl
+%%DATADIR%%/main/webapp/skins/tigris/xslt/html/book2menu.xsl
+%%DATADIR%%/main/webapp/skins/tigris/xslt/html/document2html.xsl
+%%DATADIR%%/main/webapp/skins/tigris/xslt/html/site2xhtml.xsl
+%%DATADIR%%/main/webapp/skins/tigris/xslt/html/tab2menu.xsl
+%%DATADIR%%/main/webapp/skins/tigris/README.txt
+%%DATADIR%%/main/webapp/skins/tigris/skinconf.xsl
+%%DATADIR%%/main/webapp/skins/README.txt
+%%DATADIR%%/main/webapp/skins/new-skin-names.txt
+%%DATADIR%%/main/webapp/aggregate.xmap
+%%DATADIR%%/main/webapp/default-forrest.properties
+%%DATADIR%%/main/webapp/faq.xmap
+%%DATADIR%%/main/webapp/forrest.xmap
+%%DATADIR%%/main/webapp/i18n.xmap
+%%DATADIR%%/main/webapp/issues.xmap
+%%DATADIR%%/main/webapp/jettyconf.xml
+%%DATADIR%%/main/webapp/linkmap.xmap
+%%DATADIR%%/main/webapp/menu.xmap
+%%DATADIR%%/main/webapp/profiler.xmap
+%%DATADIR%%/main/webapp/raw.xmap
+%%DATADIR%%/main/webapp/resources.xmap
+%%DATADIR%%/main/webapp/revisions.xmap
+%%DATADIR%%/main/webapp/search.xmap
+%%DATADIR%%/main/webapp/sitemap.xmap
+%%DATADIR%%/main/webapp/tabs.xmap
+%%DATADIR%%/main/build.sh
+%%DATADIR%%/main/build.xml
+%%DATADIR%%/main/forrest.antproxy.xml
+%%DATADIR%%/main/forrest.build.xml
+%%DATADIR%%/main/module.xml
+%%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs/images/group-logo.gif
+%%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs/images/group.svg
+%%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs/images/icon.png
+%%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs/images/project-logo.gif
+%%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs/images/project.svg
+%%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs/images/usemap.gif
+%%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs/favicon.ico
+%%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs/index.xml
+%%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs/site.xml
+%%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs/tabs.xml
+%%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/skinconf.xml
+%%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf/build.xml
+%%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf/forrest.properties
+%%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf/output.xmap
+%%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf/status.xml
+%%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf/build/build.number
+%%DATADIR%%/plugins/pluginTemplate/lib/readme.txt
+%%DATADIR%%/plugins/pluginTemplate/src/documentation/content/xdocs/images/group-logo.gif
+%%DATADIR%%/plugins/pluginTemplate/src/documentation/content/xdocs/images/group.svg
+%%DATADIR%%/plugins/pluginTemplate/src/documentation/content/xdocs/images/icon.png
+%%DATADIR%%/plugins/pluginTemplate/src/documentation/content/xdocs/images/project-logo.gif
+%%DATADIR%%/plugins/pluginTemplate/src/documentation/content/xdocs/images/project.svg
+%%DATADIR%%/plugins/pluginTemplate/src/documentation/content/xdocs/images/usemap.gif
+%%DATADIR%%/plugins/pluginTemplate/src/documentation/content/xdocs/index.xml
+%%DATADIR%%/plugins/pluginTemplate/src/documentation/content/xdocs/site.xml
+%%DATADIR%%/plugins/pluginTemplate/src/documentation/content/xdocs/tabs.xml
+%%DATADIR%%/plugins/pluginTemplate/src/documentation/skinconf.xml
+%%DATADIR%%/plugins/pluginTemplate/src/java/readme.txt
+%%DATADIR%%/plugins/pluginTemplate/build.xml
+%%DATADIR%%/plugins/pluginTemplate/forrest.properties
+%%DATADIR%%/plugins/pluginTemplate/sitemap.xmap
+%%DATADIR%%/plugins/pluginTemplate/status.xml
+%%DATADIR%%/plugins/build.xml
+%%DATADIR%%/plugins/plugins.xml
+%%DATADIR%%/site-author/classes/CatalogManager.properties
+%%DATADIR%%/site-author/conf/cli.xconf
+%%DATADIR%%/site-author/content/skins/skins.xml
+%%DATADIR%%/site-author/content/xdocs/TR/2004/WD-forrest10.html
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/howto/bugzilla-patch/my-images/bugzilla-screen.gif
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/howto/bugzilla-patch/book.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/howto/bugzilla-patch/howto-bugzilla-patch.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/howto/multi/howto-multi.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/howto/multi/revision-howto-multi-2003-09-14.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/howto/multi/revision-howto-multi-2003-09-15.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/howto/multi/revision-step1-2003-09-16.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/howto/multi/step1.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/howto/multi/step2.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/howto/multi/step3.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/howto/howto-asf-mirror.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/howto/howto-forrestbot.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/howto/howto-howto.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/howto/howto-pdf-tab.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/howto/index.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/build.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/cap.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/catalog.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/compliance.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/faq.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/forrest-contract.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/index.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/linking.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/oowriter.sxw
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/project-sitemap.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/searching.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/sitemap-ref.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/skin-package.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/skins.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/upgrading_06.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/validation.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/wiki-sample.cwiki
+%%DATADIR%%/site-author/content/xdocs/docs_0_60/your-project.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/bugzilla-patch/my-images/bugzilla-screen.gif
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/bugzilla-patch/book.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/bugzilla-patch/howto-bugzilla-patch.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/cvs-ssh/book.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/cvs-ssh/howto-cvs-ssh.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/multi/howto-multi.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/multi/revision-howto-multi-2003-09-14.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/multi/revision-howto-multi-2003-09-15.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/multi/revision-step1-2003-09-16.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/multi/step1.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/multi/step2.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/multi/step3.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/forrest.xmap.html
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/howto-asf-mirror.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/howto-buildPlugin.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/howto-corner-images.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/howto-custom-html-source.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/howto-editcss.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/howto-forrest-from-maven.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/howto-forrestbot.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/howto-howto.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/howto-pdf-tab.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/howto-view-contracts.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/howto-view-dsl.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/howto-view-install.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/index.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/project_sitemap.xmap.html
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/sitemap.xmap.html
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/images/snapshot-plain-dev.png
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/images/snapshot-view-viewHelper.png
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/build.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/cap.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/catalog.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/compliance.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/dreams.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/faq.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/forrest-contract.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/index.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/libre-intro.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/linking.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/primer.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/project-sitemap.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/searching.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/sitemap-ref.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/skin-package.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/skins.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/upgrading_07.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/validation.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/views.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_70/your-project.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_80/index.xml
+%%DATADIR%%/site-author/content/xdocs/docs_0_80/upgrading_08.xml
+%%DATADIR%%/site-author/content/xdocs/dtdx/document-v11.xml
+%%DATADIR%%/site-author/content/xdocs/dtdx/document-v12.xml
+%%DATADIR%%/site-author/content/xdocs/dtdx/document-v13.dtdx.pdf
+%%DATADIR%%/site-author/content/xdocs/dtdx/document-v13.xml
+%%DATADIR%%/site-author/content/xdocs/dtdx/document-v20.dtdx.pdf
+%%DATADIR%%/site-author/content/xdocs/dtdx/document-v20.xml
+%%DATADIR%%/site-author/content/xdocs/dtdx/dtd-docs.xml
+%%DATADIR%%/site-author/content/xdocs/dtdx/faq-v13.dtdx.pdf
+%%DATADIR%%/site-author/content/xdocs/dtdx/faq-v20.dtdx.pdf
+%%DATADIR%%/site-author/content/xdocs/dtdx/howto-v13.dtdx.pdf
+%%DATADIR%%/site-author/content/xdocs/dtdx/howto-v20.dtdx.pdf
+%%DATADIR%%/site-author/content/xdocs/pluginDocs/plugins_0_70/pluginInfrastructure.xml
+%%DATADIR%%/site-author/content/xdocs/pluginDocs/plugins_0_70/usingPlugins.xml
+%%DATADIR%%/site-author/content/xdocs/pluginDocs/plugins_0_80/pluginInfrastructure.xml
+%%DATADIR%%/site-author/content/xdocs/pluginDocs/plugins_0_80/usingPlugins.xml
+%%DATADIR%%/site-author/content/xdocs/pluginDocs/index.xml
+%%DATADIR%%/site-author/content/xdocs/tools/forrestbar.xml
+%%DATADIR%%/site-author/content/xdocs/tools/forrestbar.xpi
+%%DATADIR%%/site-author/content/xdocs/tools/forrestbot-web-interface.xml
+%%DATADIR%%/site-author/content/xdocs/tools/forrestbot.xml
+%%DATADIR%%/site-author/content/xdocs/tools/index.xml
+%%DATADIR%%/site-author/content/xdocs/tools/xxe.xml
+%%DATADIR%%/site-author/content/xdocs/trash/docs_0_50/index.xml
+%%DATADIR%%/site-author/content/xdocs/trash/docs_0_50/upgrading_05.xml
+%%DATADIR%%/site-author/content/xdocs/versions/index.xml
+%%DATADIR%%/site-author/content/xdocs/contrib.xml
+%%DATADIR%%/site-author/content/xdocs/events.xml
+%%DATADIR%%/site-author/content/xdocs/favicon.ico
+%%DATADIR%%/site-author/content/xdocs/flyer.xml
+%%DATADIR%%/site-author/content/xdocs/guidelines.xml
+%%DATADIR%%/site-author/content/xdocs/index.xml
+%%DATADIR%%/site-author/content/xdocs/license.xml
+%%DATADIR%%/site-author/content/xdocs/live-sites.xml
+%%DATADIR%%/site-author/content/xdocs/mail-lists.xml
+%%DATADIR%%/site-author/content/xdocs/mirrors.html
+%%DATADIR%%/site-author/content/xdocs/proposal-asf-forrestbot.xml
+%%DATADIR%%/site-author/content/xdocs/site.xml
+%%DATADIR%%/site-author/content/xdocs/tabs.xml
+%%DATADIR%%/site-author/content/xdocs/uri-namespace.xml
+%%DATADIR%%/site-author/content/xdocs/versions.xml
+%%DATADIR%%/site-author/content/xdocs/who.xml
+%%DATADIR%%/site-author/content/.htaccess
+%%DATADIR%%/site-author/content/mirrors.cgi
+%%DATADIR%%/site-author/resources/images/apache-forrest-original.svg
+%%DATADIR%%/site-author/resources/images/apache-forrest.png
+%%DATADIR%%/site-author/resources/images/built-with-cocoon.gif
+%%DATADIR%%/site-author/resources/images/dir-menu.png
+%%DATADIR%%/site-author/resources/images/dir-menu2.png
+%%DATADIR%%/site-author/resources/images/dir-menu3.png
+%%DATADIR%%/site-author/resources/images/icon.png
+%%DATADIR%%/site-author/resources/images/menu.png
+%%DATADIR%%/site-author/resources/images/menu2.png
+%%DATADIR%%/site-author/resources/images/menu3.png
+%%DATADIR%%/site-author/resources/images/new-project.png
+%%DATADIR%%/site-author/resources/images/page-areas.png
+%%DATADIR%%/site-author/resources/images/project-logo.gif
+%%DATADIR%%/site-author/resources/images/project-logo.png
+%%DATADIR%%/site-author/resources/images/tabs.png
+%%DATADIR%%/site-author/forrest.properties
+%%DATADIR%%/site-author/publish.xml
+%%DATADIR%%/site-author/sitemap.xmap
+%%DATADIR%%/site-author/skinconf.xml
+%%DATADIR%%/site-author/status.xml
+%%DATADIR%%/tools/ant/bin/ant
+%%DATADIR%%/tools/ant/bin/ant.cmd
+%%DATADIR%%/tools/ant/bin/antRun
+%%DATADIR%%/tools/ant/bin/antRun.pl
+%%DATADIR%%/tools/ant/bin/antenv.cmd
+%%DATADIR%%/tools/ant/bin/complete-ant-cmd.pl
+%%DATADIR%%/tools/ant/bin/envset.cmd
+%%DATADIR%%/tools/ant/bin/runant.pl
+%%DATADIR%%/tools/ant/bin/runant.py
+%%DATADIR%%/tools/ant/bin/runrc.cmd
+%%DATADIR%%/tools/ant/lib/ant-apache-resolver.jar
+%%DATADIR%%/tools/ant/lib/ant-contrib-1.0b2.jar
+%%DATADIR%%/tools/ant/lib/ant-jsch.jar
+%%DATADIR%%/tools/ant/lib/ant-launcher.jar
+%%DATADIR%%/tools/ant/lib/ant-nodeps.jar
+%%DATADIR%%/tools/ant/lib/ant-trax.jar
+%%DATADIR%%/tools/ant/lib/ant-xalan2.jar
+%%DATADIR%%/tools/ant/lib/ant.jar
+%%DATADIR%%/tools/ant/lib/jsch-0.1.14.jar
+%%DATADIR%%/tools/ant/lib/jsvn-0.9-dev.jar
+%%DATADIR%%/tools/ant/lib/xml-commons-resolver-1.1.jar
+%%DATADIR%%/tools/dtdconverters/README.txt
+%%DATADIR%%/tools/dtdconverters/dtdx.dtd
+%%DATADIR%%/tools/dtdconverters/dtdx2dtd.xsl
+%%DATADIR%%/tools/eclipse/conf/log4j.xml
+%%DATADIR%%/tools/eclipse/icons/build.png
+%%DATADIR%%/tools/eclipse/icons/start.png
+%%DATADIR%%/tools/eclipse/icons/stop.png
+%%DATADIR%%/tools/eclipse/lib/log4j-1.2.9.jar
+%%DATADIR%%/tools/eclipse/lib/log4j_LICENSE.txt
+%%DATADIR%%/tools/eclipse/src/org/apache/forrest/eclipse/actions/Utilities.java
+%%DATADIR%%/tools/eclipse/src/org/apache/forrest/eclipse/job/AntBuildListener.java
+%%DATADIR%%/tools/eclipse/src/org/apache/forrest/eclipse/job/ForrestBuilder.java
+%%DATADIR%%/tools/eclipse/src/org/apache/forrest/eclipse/job/ForrestJob.java
+%%DATADIR%%/tools/eclipse/src/org/apache/forrest/eclipse/job/ForrestManager.java
+%%DATADIR%%/tools/eclipse/src/org/apache/forrest/eclipse/job/ForrestRunner.java
+%%DATADIR%%/tools/eclipse/src/org/apache/forrest/eclipse/job/ForrestStopper.java
+%%DATADIR%%/tools/eclipse/src/org/apache/forrest/eclipse/popup/actions/BuildSite.java
+%%DATADIR%%/tools/eclipse/src/org/apache/forrest/eclipse/popup/actions/StartForrest.java
+%%DATADIR%%/tools/eclipse/src/org/apache/forrest/eclipse/popup/actions/StopForrest.java
+%%DATADIR%%/tools/eclipse/src/org/apache/forrest/eclipse/preference/ForrestPreferences.java
+%%DATADIR%%/tools/eclipse/src/org/apache/forrest/eclipse/wizards/NewProjectWizard.java
+%%DATADIR%%/tools/eclipse/src/org/apache/forrest/eclipse/wizards/NewXDoc.java
+%%DATADIR%%/tools/eclipse/src/org/apache/forrest/eclipse/wizards/NewXdocPage.java
+%%DATADIR%%/tools/eclipse/src/org/apache/forrest/eclipse/ForrestPlugin.java
+%%DATADIR%%/tools/eclipse/src/org/apache/forrest/template/new_xdoc.xml
+%%DATADIR%%/tools/eclipse/src/org/apache/forrest/template/template_build.xml
+%%DATADIR%%/tools/eclipse/.classpath
+%%DATADIR%%/tools/eclipse/.project
+%%DATADIR%%/tools/eclipse/build.properties
+%%DATADIR%%/tools/eclipse/plugin.properties
+%%DATADIR%%/tools/eclipse/plugin.xml
+%%DATADIR%%/tools/eclipse/readme.txt
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/images/apache-down.png
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/images/apache.png
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/images/code-down.png
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/images/code.png
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/images/download-down.png
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/images/download.png
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/images/faq-down.png
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/images/faq.png
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/images/forrest-down.png
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/images/forrest.png
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/images/gump-down.png
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/images/gump.png
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/images/news-down.png
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/images/news.png
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/images/projects-down.png
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/images/projects.png
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/images/search-down.png
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/images/search.png
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/images/tools-down.png
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/images/tools.png
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/contents.rdf
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/forrestbar.css
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/forrestbarOverlay.js
+%%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/forrestbarOverlay.xul
+%%DATADIR%%/tools/forrestbar/xpi/install.js
+%%DATADIR%%/tools/forrestbar/build.xml
+%%DATADIR%%/tools/forrestbot/core/cvs_add.sh
+%%DATADIR%%/tools/forrestbot/core/build.xml
+%%DATADIR%%/tools/forrestbot/core/deploy.xml
+%%DATADIR%%/tools/forrestbot/core/emailtemplate.txt
+%%DATADIR%%/tools/forrestbot/core/forrestbot.xml
+%%DATADIR%%/tools/forrestbot/core/getsrc.xml
+%%DATADIR%%/tools/forrestbot/core/notify.xml
+%%DATADIR%%/tools/forrestbot/lib/ant-contrib-0.5.jar
+%%DATADIR%%/tools/forrestbot/lib/jsvn-0.9-dev.jar
+%%DATADIR%%/tools/forrestbot/webapp/lib/README.txt
+%%DATADIR%%/tools/forrestbot/webapp/lib/oscore-2.2.2.jar
+%%DATADIR%%/tools/forrestbot/webapp/lib/osuser-1.0-dev.jar
+%%DATADIR%%/tools/forrestbot/webapp/lib/propertyset-1.2.jar
+%%DATADIR%%/tools/forrestbot/webapp/src/conf/groups.xml
+%%DATADIR%%/tools/forrestbot/webapp/src/conf/log4j.properties
+%%DATADIR%%/tools/forrestbot/webapp/src/conf/osuser.xml
+%%DATADIR%%/tools/forrestbot/webapp/src/conf/projects.xml
+%%DATADIR%%/tools/forrestbot/webapp/src/conf/settings.properties
+%%DATADIR%%/tools/forrestbot/webapp/src/conf/users.xml
+%%DATADIR%%/tools/forrestbot/webapp/src/java/org/apache/forrest/forrestbot/webapp/action/BaseAction.java
+%%DATADIR%%/tools/forrestbot/webapp/src/java/org/apache/forrest/forrestbot/webapp/action/ExecuteAction.java
+%%DATADIR%%/tools/forrestbot/webapp/src/java/org/apache/forrest/forrestbot/webapp/action/LogoutAction.java
+%%DATADIR%%/tools/forrestbot/webapp/src/java/org/apache/forrest/forrestbot/webapp/action/ViewLogBodyAction.java
+%%DATADIR%%/tools/forrestbot/webapp/src/java/org/apache/forrest/forrestbot/webapp/action/ViewLogFrameAction.java
+%%DATADIR%%/tools/forrestbot/webapp/src/java/org/apache/forrest/forrestbot/webapp/action/ViewLogHeaderAction.java
+%%DATADIR%%/tools/forrestbot/webapp/src/java/org/apache/forrest/forrestbot/webapp/action/ViewSummaryAction.java
+%%DATADIR%%/tools/forrestbot/webapp/src/java/org/apache/forrest/forrestbot/webapp/dto/ProjectDTO.java
+%%DATADIR%%/tools/forrestbot/webapp/src/java/org/apache/forrest/forrestbot/webapp/form/BaseDynaActionForm.java
+%%DATADIR%%/tools/forrestbot/webapp/src/java/org/apache/forrest/forrestbot/webapp/form/LoginForm.java
+%%DATADIR%%/tools/forrestbot/webapp/src/java/org/apache/forrest/forrestbot/webapp/util/Executor.java
+%%DATADIR%%/tools/forrestbot/webapp/src/java/org/apache/forrest/forrestbot/webapp/util/Project.java
+%%DATADIR%%/tools/forrestbot/webapp/src/java/org/apache/forrest/forrestbot/webapp/Config.java
+%%DATADIR%%/tools/forrestbot/webapp/src/java/org/apache/forrest/forrestbot/webapp/Constants.java
+%%DATADIR%%/tools/forrestbot/webapp/src/java/org/apache/forrest/forrestbot/webapp/Resources.properties
+%%DATADIR%%/tools/forrestbot/webapp/src/webapp/WEB-INF/tld/struts-bean-el.tld
+%%DATADIR%%/tools/forrestbot/webapp/src/webapp/WEB-INF/tld/struts-html-el.tld
+%%DATADIR%%/tools/forrestbot/webapp/src/webapp/WEB-INF/tld/struts-logic-el.tld
+%%DATADIR%%/tools/forrestbot/webapp/src/webapp/WEB-INF/struts-config.xml
+%%DATADIR%%/tools/forrestbot/webapp/src/webapp/WEB-INF/struts-tiles.xml
+%%DATADIR%%/tools/forrestbot/webapp/src/webapp/WEB-INF/web.xml
+%%DATADIR%%/tools/forrestbot/webapp/src/webapp/common/footer.jsp
+%%DATADIR%%/tools/forrestbot/webapp/src/webapp/common/header.jsp
+%%DATADIR%%/tools/forrestbot/webapp/src/webapp/common/layout.jsp
+%%DATADIR%%/tools/forrestbot/webapp/src/webapp/common/simple.jsp
+%%DATADIR%%/tools/forrestbot/webapp/src/webapp/common/viewlog_frame.jsp
+%%DATADIR%%/tools/forrestbot/webapp/src/webapp/commandForm.jsp
+%%DATADIR%%/tools/forrestbot/webapp/src/webapp/execute.jsp
+%%DATADIR%%/tools/forrestbot/webapp/src/webapp/index.jsp
+%%DATADIR%%/tools/forrestbot/webapp/src/webapp/loginForm.jsp
+%%DATADIR%%/tools/forrestbot/webapp/src/webapp/logout.jsp
+%%DATADIR%%/tools/forrestbot/webapp/src/webapp/summary.jsp
+%%DATADIR%%/tools/forrestbot/webapp/src/webapp/viewlog_body.jsp
+%%DATADIR%%/tools/forrestbot/webapp/src/webapp/viewlog_header.jsp
+%%DATADIR%%/tools/forrestbot/webapp/src/webapp/welcome.html
+%%DATADIR%%/tools/forrestbot/webapp/src/webapp/welcome.local.html
+%%DATADIR%%/tools/forrestbot/webapp/.classpath
+%%DATADIR%%/tools/forrestbot/webapp/.project
+%%DATADIR%%/tools/forrestbot/webapp/maven.xml
+%%DATADIR%%/tools/forrestbot/webapp/project.properties
+%%DATADIR%%/tools/forrestbot/webapp/project.xml
+%%DATADIR%%/tools/forrestbot/avalon-phoenix.xml
+%%DATADIR%%/tools/forrestbot/avalon-site.xml
+%%DATADIR%%/tools/forrestbot/cocoon-site.xml
+%%DATADIR%%/tools/forrestbot/forrest-pelt.xml
+%%DATADIR%%/tools/forrestbot/forrest-seed.xml
+%%DATADIR%%/tools/forrestbot/forrest.xml
+%%DATADIR%%/tools/forrestbot/incubator.xml
+%%DATADIR%%/tools/forrestbot/sf-struts.xml
+%%DATADIR%%/tools/forrestbot/ws-site.xml
+%%DATADIR%%/tools/forrestbot/xml-fop.xml
+%%DATADIR%%/tools/forrestbot/xml-site.xml
+%%DATADIR%%/tools/forrestbot/xml-xindice.xml
+%%DATADIR%%/tools/forrestbot/xml-xmlbeans.xml
+%%DATADIR%%/tools/jetty/jetty-4.2.19.jar
+%%DATADIR%%/tools/jetty/jetty-4.2.19.jar.license.html
+%%DATADIR%%/tools/jetty/servlet-2.3.jar
+%%DATADIR%%/tools/logos/etc/apache_pb.svg
+%%DATADIR%%/tools/logos/etc/feather.svg
+%%DATADIR%%/tools/logos/etc/ws-project-logo.jpg
+%%DATADIR%%/tools/logos/resources/apache-feather.ico
+%%DATADIR%%/tools/logos/resources/apache-icon.svg
+%%DATADIR%%/tools/logos/templates/apache-httpd.svg
+%%DATADIR%%/tools/logos/templates/apache-jakarta.svg
+%%DATADIR%%/tools/logos/templates/apache-resource.svg
+%%DATADIR%%/tools/logos/templates/apache.svg
+%%DATADIR%%/tools/logos/batik-rasterizer.jar
+%%DATADIR%%/tools/logos/build.xml
+%%DATADIR%%/tools/logos/logopage.xsl
+%%DATADIR%%/tools/logos/logos.xsl
+%%DATADIR%%/tools/logos/projects.xml
+%%DATADIR%%/tools/targets/maven.xml
+%%DATADIR%%/tools/targets/patch.xml
+%%DATADIR%%/tools/xxe/css/common.css
+%%DATADIR%%/tools/xxe/css/document1x.css
+%%DATADIR%%/tools/xxe/css/document2x.css
+%%DATADIR%%/tools/xxe/icons/note.png
+%%DATADIR%%/tools/xxe/icons/sub.png
+%%DATADIR%%/tools/xxe/icons/sup.png
+%%DATADIR%%/tools/xxe/template/document11.xml
+%%DATADIR%%/tools/xxe/template/document12.xml
+%%DATADIR%%/tools/xxe/template/document13.xml
+%%DATADIR%%/tools/xxe/template/document20.xml
+%%DATADIR%%/tools/xxe/README.txt
+%%DATADIR%%/tools/xxe/build.xml
+%%DATADIR%%/tools/xxe/common_config.xml
+%%DATADIR%%/tools/xxe/document-v10.xxe
+%%DATADIR%%/tools/xxe/document-v20.xxe
+%%DATADIR%%/tools/xxe/toolBar.xml
+%%DATADIR%%/whiteboard/plugins/build.xml
+%%DATADIR%%/whiteboard/plugins/whiteboard-plugins.xml
+%%DATADIR%%/README.txt
+%%DATADIR%%/index.html
 @dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%/tasks/org/apache/forrest
-@dirrm %%DATADIR%%/tasks/org/apache
-@dirrm %%DATADIR%%/tasks/org
-@dirrm %%DATADIR%%/tasks
-@dirrm %%DATADIR%%/legal
-@dirrm %%DATADIR%%/WEB-INF/lib
-@dirrm %%DATADIR%%/WEB-INF/classes/org/apache/cocoon/util
-@dirrm %%DATADIR%%/WEB-INF/classes/org/apache/cocoon
-@dirrm %%DATADIR%%/WEB-INF/classes/org/apache
-@dirrm %%DATADIR%%/WEB-INF/classes/org
-@dirrm %%DATADIR%%/WEB-INF/classes
-@dirrm %%DATADIR%%/WEB-INF
+@dirrm %%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs/images
+@dirrm %%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs
+@dirrm %%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content
+@dirrm %%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf/src/documentation
+@dirrm %%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf/src
+@dirrm %%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf/resources
+@dirrm %%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf
+@dirrm %%DATADIR%%/build/plugins
+@dirrm %%DATADIR%%/build
+@dirrm %%DATADIR%%/etc/cocoon_upgrade
+@dirrm %%DATADIR%%/etc
+@dirrm %%DATADIR%%/lib/core
 @dirrm %%DATADIR%%/lib/endorsed
 @dirrm %%DATADIR%%/lib/optional
 @dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/ant/lib
-@dirrm %%DATADIR%%/ant/bin
-@dirrm %%DATADIR%%/ant
-@dirrm %%DATADIR%%/forrestbot/webapp/WEB-INF/classes/forrestbot
-@dirrm %%DATADIR%%/forrestbot/webapp/WEB-INF/classes
-@dirrm %%DATADIR%%/forrestbot/webapp/WEB-INF
-@dirrm %%DATADIR%%/forrestbot/webapp/images
-@dirrm %%DATADIR%%/forrestbot/webapp
-@dirrm %%DATADIR%%/forrestbot/samples/entities
-@dirrm %%DATADIR%%/forrestbot/samples
-@dirrm %%DATADIR%%/forrestbot/scripts
-@dirrm %%DATADIR%%/forrestbot/lib
-@dirrm %%DATADIR%%/forrestbot/xslt
-@dirrm %%DATADIR%%/forrestbot/ant
-@dirrm %%DATADIR%%/forrestbot
-@dirrm %%DATADIR%%/context/resources/grammars
-@dirrm %%DATADIR%%/context/resources/schema/entity
-@dirrm %%DATADIR%%/context/resources/schema/w3c-dtd
-@dirrm %%DATADIR%%/context/resources/schema/docbook/4.2/ent
-@dirrm %%DATADIR%%/context/resources/schema/docbook/4.2
-@dirrm %%DATADIR%%/context/resources/schema/docbook
-@dirrm %%DATADIR%%/context/resources/schema/dtd/v20a
-@dirrm %%DATADIR%%/context/resources/schema/dtd/v10
-@dirrm %%DATADIR%%/context/resources/schema/dtd
-@dirrm %%DATADIR%%/context/resources/schema/sdocbook/1.0
-@dirrm %%DATADIR%%/context/resources/schema/sdocbook
-@dirrm %%DATADIR%%/context/resources/schema/relaxng/unstable
-@dirrm %%DATADIR%%/context/resources/schema/relaxng
-@dirrm %%DATADIR%%/context/resources/schema
-@dirrm %%DATADIR%%/context/resources/stylesheets/aggregates
-@dirrm %%DATADIR%%/context/resources/stylesheets
-@dirrm %%DATADIR%%/context/resources/images
-@dirrm %%DATADIR%%/context/resources
-@dirrm %%DATADIR%%/context/skins/avalon-tigris/images
-@dirrm %%DATADIR%%/context/skins/avalon-tigris/css
-@dirrm %%DATADIR%%/context/skins/avalon-tigris/xslt/html
-@dirrm %%DATADIR%%/context/skins/avalon-tigris/xslt/fo
-@dirrm %%DATADIR%%/context/skins/avalon-tigris/xslt
-@dirrm %%DATADIR%%/context/skins/avalon-tigris
-@dirrm %%DATADIR%%/context/skins/krysalis-site/images
-@dirrm %%DATADIR%%/context/skins/krysalis-site/xslt/html
-@dirrm %%DATADIR%%/context/skins/krysalis-site/xslt/fo
-@dirrm %%DATADIR%%/context/skins/krysalis-site/xslt
-@dirrm %%DATADIR%%/context/skins/krysalis-site/scripts
-@dirrm %%DATADIR%%/context/skins/krysalis-site/css
-@dirrm %%DATADIR%%/context/skins/krysalis-site
-@dirrm %%DATADIR%%/context/skins/template/images
-@dirrm %%DATADIR%%/context/skins/template/xslt/html
-@dirrm %%DATADIR%%/context/skins/template/xslt/fo
-@dirrm %%DATADIR%%/context/skins/template/xslt
-@dirrm %%DATADIR%%/context/skins/template/scripts
-@dirrm %%DATADIR%%/context/skins/template/css
-@dirrm %%DATADIR%%/context/skins/template
-@dirrm %%DATADIR%%/context/skins/forrest-css/images
-@dirrm %%DATADIR%%/context/skins/forrest-css/scripts
-@dirrm %%DATADIR%%/context/skins/forrest-css/xslt/html
-@dirrm %%DATADIR%%/context/skins/forrest-css/xslt/fo
-@dirrm %%DATADIR%%/context/skins/forrest-css/xslt
-@dirrm %%DATADIR%%/context/skins/forrest-css/css
-@dirrm %%DATADIR%%/context/skins/forrest-css
-@dirrm %%DATADIR%%/context/skins/common/images
-@dirrm %%DATADIR%%/context/skins/common/xslt/fo
-@dirrm %%DATADIR%%/context/skins/common/xslt/html
-@dirrm %%DATADIR%%/context/skins/common/xslt
-@dirrm %%DATADIR%%/context/skins/common
-@dirrm %%DATADIR%%/context/skins/forrest-site/xslt/html
-@dirrm %%DATADIR%%/context/skins/forrest-site/xslt/fo
-@dirrm %%DATADIR%%/context/skins/forrest-site/xslt
-@dirrm %%DATADIR%%/context/skins/forrest-site/images
-@dirrm %%DATADIR%%/context/skins/forrest-site/css
-@dirrm %%DATADIR%%/context/skins/forrest-site/scripts
-@dirrm %%DATADIR%%/context/skins/forrest-site
-@dirrm %%DATADIR%%/context/skins
-@dirrm %%DATADIR%%/context
+@dirrm %%DATADIR%%/main/fresh-site/src/documentation/classes
+@dirrm %%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/images
+@dirrm %%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/samples/subdir
+@dirrm %%DATADIR%%/main/fresh-site/src/documentation/content/xdocs/samples
+@dirrm %%DATADIR%%/main/fresh-site/src/documentation/content/xdocs
+@dirrm %%DATADIR%%/main/fresh-site/src/documentation/content
+@dirrm %%DATADIR%%/main/fresh-site/src/documentation/resources/schema
+@dirrm %%DATADIR%%/main/fresh-site/src/documentation/resources/stylesheets
+@dirrm %%DATADIR%%/main/fresh-site/src/documentation/resources
+@dirrm %%DATADIR%%/main/fresh-site/src/documentation/translations
+@dirrm %%DATADIR%%/main/fresh-site/src/documentation
+@dirrm %%DATADIR%%/main/fresh-site/src
+@dirrm %%DATADIR%%/main/fresh-site
+@dirrm %%DATADIR%%/main/java/org/apache/cocoon/components/source/impl
+@dirrm %%DATADIR%%/main/java/org/apache/cocoon/components/source
+@dirrm %%DATADIR%%/main/java/org/apache/cocoon/components
+@dirrm %%DATADIR%%/main/java/org/apache/cocoon
+@dirrm %%DATADIR%%/main/java/org/apache/forrest/conf
+@dirrm %%DATADIR%%/main/java/org/apache/forrest/locationmap/lm
+@dirrm %%DATADIR%%/main/java/org/apache/forrest/locationmap
+@dirrm %%DATADIR%%/main/java/org/apache/forrest/log
+@dirrm %%DATADIR%%/main/java/org/apache/forrest/sourceexists
+@dirrm %%DATADIR%%/main/java/org/apache/forrest/sourcetype
+@dirrm %%DATADIR%%/main/java/org/apache/forrest/util
+@dirrm %%DATADIR%%/main/java/org/apache/forrest/xni
+@dirrm %%DATADIR%%/main/java/org/apache/forrest
+@dirrm %%DATADIR%%/main/java/org/apache
+@dirrm %%DATADIR%%/main/java/org
+@dirrm %%DATADIR%%/main/java
+@dirrm %%DATADIR%%/main/targets
+@dirrm %%DATADIR%%/main/tasks/org/apache/forrest
+@dirrm %%DATADIR%%/main/tasks/org/apache
+@dirrm %%DATADIR%%/main/tasks/org
+@dirrm %%DATADIR%%/main/tasks
+@dirrm %%DATADIR%%/main/var
+@dirrm %%DATADIR%%/main/webapp/WEB-INF/classes/org/apache/cocoon/util
+@dirrm %%DATADIR%%/main/webapp/WEB-INF/classes/org/apache/cocoon
+@dirrm %%DATADIR%%/main/webapp/WEB-INF/classes/org/apache
+@dirrm %%DATADIR%%/main/webapp/WEB-INF/classes/org
+@dirrm %%DATADIR%%/main/webapp/WEB-INF/classes
+@dirrm %%DATADIR%%/main/webapp/WEB-INF/xconf
+@dirrm %%DATADIR%%/main/webapp/WEB-INF
+@dirrm %%DATADIR%%/main/webapp/resources/chaperon/grammars
+@dirrm %%DATADIR%%/main/webapp/resources/chaperon/stylesheets
+@dirrm %%DATADIR%%/main/webapp/resources/chaperon
+@dirrm %%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2/ent
+@dirrm %%DATADIR%%/main/webapp/resources/schema/docbook/4.1.2
+@dirrm %%DATADIR%%/main/webapp/resources/schema/docbook/4.2/ent
+@dirrm %%DATADIR%%/main/webapp/resources/schema/docbook/4.2
+@dirrm %%DATADIR%%/main/webapp/resources/schema/docbook
+@dirrm %%DATADIR%%/main/webapp/resources/schema/dtd/v10
+@dirrm %%DATADIR%%/main/webapp/resources/schema/dtd/v20a
+@dirrm %%DATADIR%%/main/webapp/resources/schema/dtd
+@dirrm %%DATADIR%%/main/webapp/resources/schema/entity
+@dirrm %%DATADIR%%/main/webapp/resources/schema/open-office
+@dirrm %%DATADIR%%/main/webapp/resources/schema/relaxng/unstable
+@dirrm %%DATADIR%%/main/webapp/resources/schema/relaxng
+@dirrm %%DATADIR%%/main/webapp/resources/schema/sdocbook/1.0
+@dirrm %%DATADIR%%/main/webapp/resources/schema/sdocbook
+@dirrm %%DATADIR%%/main/webapp/resources/schema/w3c-dtd
+@dirrm %%DATADIR%%/main/webapp/resources/schema
+@dirrm %%DATADIR%%/main/webapp/resources/stylesheets/aggregates
+@dirrm %%DATADIR%%/main/webapp/resources/stylesheets/external
+@dirrm %%DATADIR%%/main/webapp/resources/stylesheets/search
+@dirrm %%DATADIR%%/main/webapp/resources/stylesheets
+@dirrm %%DATADIR%%/main/webapp/resources
+@dirrm %%DATADIR%%/main/webapp/skins/common/css
+@dirrm %%DATADIR%%/main/webapp/skins/common/images
+@dirrm %%DATADIR%%/main/webapp/skins/common/scripts
+@dirrm %%DATADIR%%/main/webapp/skins/common/translations
+@dirrm %%DATADIR%%/main/webapp/skins/common/xslt/fo
+@dirrm %%DATADIR%%/main/webapp/skins/common/xslt/html
+@dirrm %%DATADIR%%/main/webapp/skins/common/xslt/svg
+@dirrm %%DATADIR%%/main/webapp/skins/common/xslt
+@dirrm %%DATADIR%%/main/webapp/skins/common
+@dirrm %%DATADIR%%/main/webapp/skins/corium
+@dirrm %%DATADIR%%/main/webapp/skins/forrest-site/css
+@dirrm %%DATADIR%%/main/webapp/skins/forrest-site/images
+@dirrm %%DATADIR%%/main/webapp/skins/forrest-site/xslt/fo
+@dirrm %%DATADIR%%/main/webapp/skins/forrest-site/xslt/html
+@dirrm %%DATADIR%%/main/webapp/skins/forrest-site/xslt
+@dirrm %%DATADIR%%/main/webapp/skins/forrest-site
+@dirrm %%DATADIR%%/main/webapp/skins/krysalis-site/css
+@dirrm %%DATADIR%%/main/webapp/skins/krysalis-site/images
+@dirrm %%DATADIR%%/main/webapp/skins/krysalis-site/xslt/fo
+@dirrm %%DATADIR%%/main/webapp/skins/krysalis-site/xslt/html
+@dirrm %%DATADIR%%/main/webapp/skins/krysalis-site/xslt
+@dirrm %%DATADIR%%/main/webapp/skins/krysalis-site
+@dirrm %%DATADIR%%/main/webapp/skins/leather-dev/css
+@dirrm %%DATADIR%%/main/webapp/skins/leather-dev/images
+@dirrm %%DATADIR%%/main/webapp/skins/leather-dev/templates
+@dirrm %%DATADIR%%/main/webapp/skins/leather-dev/xslt/fo
+@dirrm %%DATADIR%%/main/webapp/skins/leather-dev/xslt/html
+@dirrm %%DATADIR%%/main/webapp/skins/leather-dev/xslt/xml/fct-bits
+@dirrm %%DATADIR%%/main/webapp/skins/leather-dev/xslt/xml
+@dirrm %%DATADIR%%/main/webapp/skins/leather-dev/xslt
+@dirrm %%DATADIR%%/main/webapp/skins/leather-dev
+@dirrm %%DATADIR%%/main/webapp/skins/pelt/css
+@dirrm %%DATADIR%%/main/webapp/skins/pelt/images
+@dirrm %%DATADIR%%/main/webapp/skins/pelt/xslt/fo
+@dirrm %%DATADIR%%/main/webapp/skins/pelt/xslt/html
+@dirrm %%DATADIR%%/main/webapp/skins/pelt/xslt
+@dirrm %%DATADIR%%/main/webapp/skins/pelt
+@dirrm %%DATADIR%%/main/webapp/skins/plain-dev/xslt/html
+@dirrm %%DATADIR%%/main/webapp/skins/plain-dev/xslt
+@dirrm %%DATADIR%%/main/webapp/skins/plain-dev
+@dirrm %%DATADIR%%/main/webapp/skins/tigris/css
+@dirrm %%DATADIR%%/main/webapp/skins/tigris/images
+@dirrm %%DATADIR%%/main/webapp/skins/tigris/scripts
+@dirrm %%DATADIR%%/main/webapp/skins/tigris/xslt/fo
+@dirrm %%DATADIR%%/main/webapp/skins/tigris/xslt/html
+@dirrm %%DATADIR%%/main/webapp/skins/tigris/xslt
+@dirrm %%DATADIR%%/main/webapp/skins/tigris
+@dirrm %%DATADIR%%/main/webapp/skins
+@dirrm %%DATADIR%%/main/webapp
+@dirrm %%DATADIR%%/main
+@dirrm %%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf/resources
+@dirrm %%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs/images
+@dirrm %%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content/xdocs
+@dirrm %%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/content
+@dirrm %%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf/src/documentation
+@dirrm %%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf/src
+@dirrm %%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf/build
+@dirrm %%DATADIR%%/plugins/org.apache.forrest.plugin.output.pdf
+@dirrm %%DATADIR%%/plugins/pluginTemplate/lib
+@dirrm %%DATADIR%%/plugins/pluginTemplate/src/documentation/content/xdocs/images
+@dirrm %%DATADIR%%/plugins/pluginTemplate/src/documentation/content/xdocs
+@dirrm %%DATADIR%%/plugins/pluginTemplate/src/documentation/content
+@dirrm %%DATADIR%%/plugins/pluginTemplate/src/documentation
+@dirrm %%DATADIR%%/plugins/pluginTemplate/src/java
+@dirrm %%DATADIR%%/plugins/pluginTemplate/src
+@dirrm %%DATADIR%%/plugins/pluginTemplate
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/site-author/classes
+@dirrm %%DATADIR%%/site-author/conf
+@dirrm %%DATADIR%%/site-author/content/skins
+@dirrm %%DATADIR%%/site-author/content/xdocs/TR/2004
+@dirrm %%DATADIR%%/site-author/content/xdocs/TR
+@dirrm %%DATADIR%%/site-author/content/xdocs/docs_0_60/howto/bugzilla-patch/my-images
+@dirrm %%DATADIR%%/site-author/content/xdocs/docs_0_60/howto/bugzilla-patch
+@dirrm %%DATADIR%%/site-author/content/xdocs/docs_0_60/howto/multi
+@dirrm %%DATADIR%%/site-author/content/xdocs/docs_0_60/howto
+@dirrm %%DATADIR%%/site-author/content/xdocs/docs_0_60
+@dirrm %%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/bugzilla-patch/my-images
+@dirrm %%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/bugzilla-patch
+@dirrm %%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/cvs-ssh
+@dirrm %%DATADIR%%/site-author/content/xdocs/docs_0_70/howto/multi
+@dirrm %%DATADIR%%/site-author/content/xdocs/docs_0_70/howto
+@dirrm %%DATADIR%%/site-author/content/xdocs/docs_0_70/images
+@dirrm %%DATADIR%%/site-author/content/xdocs/docs_0_70
+@dirrm %%DATADIR%%/site-author/content/xdocs/docs_0_80
+@dirrm %%DATADIR%%/site-author/content/xdocs/dtdx
+@dirrm %%DATADIR%%/site-author/content/xdocs/pluginDocs/plugins_0_70
+@dirrm %%DATADIR%%/site-author/content/xdocs/pluginDocs/plugins_0_80
+@dirrm %%DATADIR%%/site-author/content/xdocs/pluginDocs
+@dirrm %%DATADIR%%/site-author/content/xdocs/tools
+@dirrm %%DATADIR%%/site-author/content/xdocs/trash/docs_0_50
+@dirrm %%DATADIR%%/site-author/content/xdocs/trash
+@dirrm %%DATADIR%%/site-author/content/xdocs/versions
+@dirrm %%DATADIR%%/site-author/content/xdocs
+@dirrm %%DATADIR%%/site-author/content
+@dirrm %%DATADIR%%/site-author/resources/images
+@dirrm %%DATADIR%%/site-author/resources
+@dirrm %%DATADIR%%/site-author
+@dirrm %%DATADIR%%/tools/ant/bin
+@dirrm %%DATADIR%%/tools/ant/lib
+@dirrm %%DATADIR%%/tools/ant
+@dirrm %%DATADIR%%/tools/dtdconverters
+@dirrm %%DATADIR%%/tools/eclipse/conf
+@dirrm %%DATADIR%%/tools/eclipse/icons
+@dirrm %%DATADIR%%/tools/eclipse/lib
+@dirrm %%DATADIR%%/tools/eclipse/src/org/apache/forrest/eclipse/actions
+@dirrm %%DATADIR%%/tools/eclipse/src/org/apache/forrest/eclipse/job
+@dirrm %%DATADIR%%/tools/eclipse/src/org/apache/forrest/eclipse/popup/actions
+@dirrm %%DATADIR%%/tools/eclipse/src/org/apache/forrest/eclipse/popup
+@dirrm %%DATADIR%%/tools/eclipse/src/org/apache/forrest/eclipse/preference
+@dirrm %%DATADIR%%/tools/eclipse/src/org/apache/forrest/eclipse/wizards
+@dirrm %%DATADIR%%/tools/eclipse/src/org/apache/forrest/eclipse
+@dirrm %%DATADIR%%/tools/eclipse/src/org/apache/forrest/template
+@dirrm %%DATADIR%%/tools/eclipse/src/org/apache/forrest
+@dirrm %%DATADIR%%/tools/eclipse/src/org/apache
+@dirrm %%DATADIR%%/tools/eclipse/src/org
+@dirrm %%DATADIR%%/tools/eclipse/src
+@dirrm %%DATADIR%%/tools/eclipse
+@dirrm %%DATADIR%%/tools/forrestbar/xpi/content/forrestbar/images
+@dirrm %%DATADIR%%/tools/forrestbar/xpi/content/forrestbar
+@dirrm %%DATADIR%%/tools/forrestbar/xpi/content
+@dirrm %%DATADIR%%/tools/forrestbar/xpi
+@dirrm %%DATADIR%%/tools/forrestbar
+@dirrm %%DATADIR%%/tools/forrestbot/core
+@dirrm %%DATADIR%%/tools/forrestbot/lib
+@dirrm %%DATADIR%%/tools/forrestbot/webapp/lib
+@dirrm %%DATADIR%%/tools/forrestbot/webapp/src/conf
+@dirrm %%DATADIR%%/tools/forrestbot/webapp/src/java/org/apache/forrest/forrestbot/webapp/action
+@dirrm %%DATADIR%%/tools/forrestbot/webapp/src/java/org/apache/forrest/forrestbot/webapp/dto
+@dirrm %%DATADIR%%/tools/forrestbot/webapp/src/java/org/apache/forrest/forrestbot/webapp/form
+@dirrm %%DATADIR%%/tools/forrestbot/webapp/src/java/org/apache/forrest/forrestbot/webapp/util
+@dirrm %%DATADIR%%/tools/forrestbot/webapp/src/java/org/apache/forrest/forrestbot/webapp
+@dirrm %%DATADIR%%/tools/forrestbot/webapp/src/java/org/apache/forrest/forrestbot
+@dirrm %%DATADIR%%/tools/forrestbot/webapp/src/java/org/apache/forrest
+@dirrm %%DATADIR%%/tools/forrestbot/webapp/src/java/org/apache
+@dirrm %%DATADIR%%/tools/forrestbot/webapp/src/java/org
+@dirrm %%DATADIR%%/tools/forrestbot/webapp/src/java
+@dirrm %%DATADIR%%/tools/forrestbot/webapp/src/webapp/WEB-INF/tld
+@dirrm %%DATADIR%%/tools/forrestbot/webapp/src/webapp/WEB-INF
+@dirrm %%DATADIR%%/tools/forrestbot/webapp/src/webapp/common
+@dirrm %%DATADIR%%/tools/forrestbot/webapp/src/webapp
+@dirrm %%DATADIR%%/tools/forrestbot/webapp/src
+@dirrm %%DATADIR%%/tools/forrestbot/webapp
+@dirrm %%DATADIR%%/tools/forrestbot
+@dirrm %%DATADIR%%/tools/jetty
+@dirrm %%DATADIR%%/tools/logos/etc
+@dirrm %%DATADIR%%/tools/logos/resources
+@dirrm %%DATADIR%%/tools/logos/templates
+@dirrm %%DATADIR%%/tools/logos
+@dirrm %%DATADIR%%/tools/targets
+@dirrm %%DATADIR%%/tools/xxe/css
+@dirrm %%DATADIR%%/tools/xxe/icons
+@dirrm %%DATADIR%%/tools/xxe/template
+@dirrm %%DATADIR%%/tools/xxe
+@dirrm %%DATADIR%%/tools
+@dirrm %%DATADIR%%/whiteboard/plugins
+@dirrm %%DATADIR%%/whiteboard
 @dirrm %%DATADIR%%/
