@@ -8,6 +8,7 @@ lib/scm/Macexp.scm
 lib/scm/Macro.scm
 lib/scm/Transcen.scm
 lib/scm/Tscript.scm
+lib/scm/byte.so
 lib/scm/crs.so
 lib/scm/edline.so
 lib/scm/gsubr.so
@@ -33,6 +34,7 @@ lib/scm/slib/byte.scm
 lib/scm/slib/bytenumb.scm
 lib/scm/slib/chap.scm
 lib/scm/slib/charplot.scm
+lib/scm/slib/clrnamdb.scm
 lib/scm/slib/cltime.scm
 lib/scm/slib/coerce.scm
 lib/scm/slib/collect.scm
@@ -64,6 +66,8 @@ lib/scm/slib/eval.scm
 lib/scm/slib/factor.scm
 lib/scm/slib/fft.scm
 lib/scm/slib/fluidlet.scm
+lib/scm/slib/format.scm
+lib/scm/slib/formatst.scm
 lib/scm/slib/genwrite.scm
 lib/scm/slib/getopt.scm
 lib/scm/slib/getparam.scm
@@ -95,6 +99,7 @@ lib/scm/slib/null.scm
 lib/scm/slib/obj2str.scm
 lib/scm/slib/object.scm
 lib/scm/slib/paramlst.scm
+lib/scm/slib/peanosfc.scm
 lib/scm/slib/phil-spc.scm
 lib/scm/slib/plottest.scm
 lib/scm/slib/pnm.scm
@@ -156,6 +161,7 @@ lib/scm/slib/subarray.scm
 lib/scm/slib/synchk.scm
 lib/scm/slib/synclo.scm
 lib/scm/slib/synrul.scm
+lib/scm/slib/timecore.scm
 lib/scm/slib/timezone.scm
 lib/scm/slib/top-refs.scm
 lib/scm/slib/trace.scm
