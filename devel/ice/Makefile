@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Ice
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.zeroc.com/download/Ice/2.1/
 
