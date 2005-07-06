@@ -7,6 +7,7 @@
 
 PORTNAME=	most
 PORTVERSION=	4.10.1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/most/ \
 		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/most/ \
