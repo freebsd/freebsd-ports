@@ -32,6 +32,93 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d8e1aadd-ee68-11d9-8310-0001020eed82">
+    <topic>clamav -- cabinet file handling DoS vulnerability</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>0.86</lt></range>
+      </package>
+      <package>
+	<name>clamav-devel</name>
+	<range><lt>20050620</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An iDEFENSE Security Advisory reports:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112006456809016">
+	  <p>Remote exploitation of an input validation error in Clam
+	    AntiVirus ClamAV allows attackers to cause a denial of
+	    service condition.</p>
+	  <p>The vulnerability specifically exists due to insufficient
+	    validation on cabinet file header data. The
+	    <code>ENSURE_BITS()</code> macro fails to check for zero
+	    length reads, allowing a carefully constructed cabinet
+	    file to cause an infinite loop.</p>
+	  <p>ClamAV is used in a number of mail gateway
+	    products. Successful exploitation requires an attacker to
+	    send a specially constructed CAB file through a mail
+	    gateway or personal anti-virus client utilizing the ClamAV
+	    scanning engine. The infinate loop will cause the ClamAV
+	    software to use all available processor resources,
+	    resulting in a denial of service or severe degradation to
+	    system performance. Remote exploitation can be achieved by
+	    sending a malicious file in an e-mail message or during an
+	    HTTP session.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1923</cvename>
+      <mlist msgid="FB24803D1DF2A34FA59FC157B77C97050462A3AB@IDSERV04.idef.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112006456809016</mlist>
+    </references>
+    <dates>
+      <discovery>2005-06-29</discovery>
+      <entry>2005-07-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6d18fe19-ee67-11d9-8310-0001020eed82">
+    <topic>clamav -- MS-Expand file handling DoS vulnerability</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>0.86</lt></range>
+      </package>
+      <package>
+	<name>clamav-devel</name>
+	<range><lt>20050620</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An iDEFENSE Security Advisory reports:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112006402411598">
+	  <p>Remote exploitation of an input validation error in Clam
+	    AntiVirus ClamAV allows attackers to cause a denial of
+	    service condition.</p>
+	  <p>The vulnerability specifically exists due to improper
+	    behavior during exceptional conditions.</p>
+	  <p>Successful exploitation allows attackers to exhaust file
+	    descriptors pool and memory. Anti-virus detection
+	    functionality will fail if there is no file descriptors
+	    available with which to open files. Remote exploitation
+	    can be achieved by sending a malicious file in an e-mail
+	    message or during an HTTP session.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1922</cvename>
+      <mlist msgid="FB24803D1DF2A34FA59FC157B77C97050462A3AC@IDSERV04.idef.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112006402411598</mlist>
+    </references>
+    <dates>
+      <discovery>2005-06-29</discovery>
+      <entry>2005-07-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8efe93e2-ee62-11d9-8310-0001020eed82">
     <topic>zlib -- buffer overflow vulnerability</topic>
     <affects>
