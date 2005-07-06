@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysql-connector-java
-PORTVERSION=	3.1.8
+PORTVERSION=	3.1.10
 CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	Connector-J
@@ -24,9 +24,9 @@ BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
 USE_JAVA=	yes
 USE_ANT=	yes
 JAVA_VERSION=	1.4+
-ALL_TARGET=	clean compile-driver
+ALL_TARGET=	clean dist
 MAKE_ARGS=	-Djavalibdir=${JAVALIBDIR}
-BUILDDIR=	${WRKDIR}/build-mysql-jdbc/${DISTNAME}
+BUILDDIR=	${WRKDIR}/${DISTNAME}/build/${DISTNAME}
 
 .else
 
@@ -37,14 +37,16 @@ BUILDDIR=	${WRKDIR}/${DISTNAME}
 .endif
 
 APIDOCSDIR=	${DOCSDIR}/javadoc
+SRCDIR=		${WRKDIR}/${DISTNAME}/src
+JAVADOCDIR=	${WRKDIR}/${DISTNAME}/javadoc
 DESTJARFILE=	${PORTNAME}.jar
 EXTRAJARS=	jdbc2_0-stdext.jar jta-spec1_0_1.jar
-EXTRADOCS=	README CHANGES
+EXTRADOCS=	README CHANGES docs/index.html docs/connector-j-en.pdf
 JARFILE=	${DISTNAME}-bin.jar
-JDCLASSPATH=	${WRKSRC}:${WRKSRC}/lib/jdbc2_0-stdext.jar:${WRKSRC}/lib/jta-spec1_0_1.jar:${CLASSPATH}
+JDCLASSPATH=	${SRCDIR}:${SRCDIR}/lib/jdbc2_0-stdext.jar:${SRCDIR}/lib/jta-spec1_0_1.jar:${CLASSPATH}
 
 PLIST_FILES=	%%JAVAJARDIR%%/jdbc2_0-stdext.jar \
-		%%JAVAJARDIR%%/jta-spec1_0_1.jar \
+		%%JAVAJARDIR%%/jta-spec1_0_1.jar  \
 		%%JAVAJARDIR%%/mysql-connector-java.jar
 
 .if !defined(NOPORTDOCS)
@@ -67,9 +69,9 @@ post-build:
 do-build:
 .endif
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${BUILDDIR}/doc && (cd ${BUILD_WRKSRC};  \
-	    ${JAVADOC} -d ${BUILDDIR}/doc -package         \
-	        -classpath  ${JDCLASSPATH}                 \
+	@${MKDIR} ${JAVADOCDIR} && (cd ${SRCDIR}; \
+	    ${JAVADOC} -d ${JAVADOCDIR} -package  \
+	        -classpath  ${JDCLASSPATH}          \
 	         com.mysql.jdbc org.gjt.mm.mysql)
 .endif
 
@@ -77,10 +79,9 @@ do-install: do-install-jar do-install-apidocs
 
 do-install-jar:
 	@${ECHO_MSG} -n ">> Installing .jar files..."
-	@${MKDIR} ${JAVAJARDIR}
 	@${INSTALL_DATA} ${BUILDDIR}/${JARFILE} ${JAVAJARDIR}/${DESTJARFILE}
-	@for extrajar in ${EXTRAJARS} ; do                                 \
-	  ${INSTALL_DATA} ${INSTALL_WRKSRC}/lib/$$extrajar ${JAVAJARDIR} ; \
+	@for extrajar in ${EXTRAJARS} ; do                                     \
+	  ${INSTALL_DATA} ${INSTALL_WRKSRC}/src/lib/$$extrajar ${JAVAJARDIR} ; \
 	done
 	@${ECHO_MSG} " [ DONE ]"
 
@@ -88,9 +89,9 @@ do-install-apidocs:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${APIDOCSDIR}
-	@${CP} -r ${BUILDDIR}/doc/* ${APIDOCSDIR}
-	@for extradoc in ${EXTRADOCS} ; do                    \
-	  ${INSTALL_DATA} ${BUILDDIR}/$$extradoc ${DOCSDIR} ; \
+	@${CP} -r ${JAVADOCDIR}/* ${APIDOCSDIR}
+	@for extradoc in ${EXTRADOCS} ; do                          \
+	  ${INSTALL_DATA} ${INSTALL_WRKSRC}/$$extradoc ${DOCSDIR} ; \
 	done
 	@${ECHO_MSG} " [ DONE ]"
 .endif
