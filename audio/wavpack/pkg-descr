@@ -1,0 +1,15 @@
+WavPack allows users to compress (and restore) both 16 and 24-bit audio files
+in the .WAV format. It also supports multichannel streams and high frequency
+sampling rates. Like other lossless compression schemes the data reduction
+varies with the source, but it is generally between 25% and 50% for typical
+popular music and somewhat better than that for classical music and other
+sources with greater dynamic range.
+
+WavPack also incorporates a unique "hybrid" mode that provides all the
+advantages of lossless compression with an additional bonus. Instead of
+creating a single file, this mode creates both a relatively small, high-quality
+lossy file that can be used all by itself, and a "correction" file that (when
+combined with the lossy file) provides full lossless restoration. For some
+users, this means never having to choose between lossless and lossy compression.
+
+WWW: http://www.wavpack.com/

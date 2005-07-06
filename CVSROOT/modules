@@ -12113,6 +12113,7 @@ washerdryer	ports/x11-clocks/washerdryer
 watchdog	ports/sysutils/watchdog
 wavbreaker	ports/audio/wavbreaker
 waveplay	ports/audio/waveplay
+wavpack		ports/audio/wavpack
 wavplay		ports/audio/wavplay
 wb		ports/mbone/wb
 wb0		ports/www/wb0

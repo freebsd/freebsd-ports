@@ -478,6 +478,7 @@
     SUBDIR += vsound
     SUBDIR += wavbreaker
     SUBDIR += waveplay
+    SUBDIR += wavpack
     SUBDIR += wavplay
     SUBDIR += wmalbum
     SUBDIR += wmcdplay
