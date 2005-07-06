@@ -7,7 +7,7 @@
 # Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -39,11 +39,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Un
 		${LOCALBASE}/bin/rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 USE_PERL5_RUN=	yes
-USE_RC_SUBR=	yes
-
-PKGINSTALL=	${WRKDIR}/INSTALL
-PKGDEINSTALL=	${WRKDIR}/DEINSTALL
-PKGMESSAGE=	${WRKDIR}/MESSAGE
 
 AMAVISUSER?=	vscan
 AMAVISGROUP?=	vscan
@@ -54,17 +49,45 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.p.+//}
 
 OPTIONS=	MYSQL	"MySQL support"		off \
 		PGSQL	"PgSQL support"		off \
-		LDAP	"LDAP support"		off
+		LDAP	"LDAP support"		off \
+		MILTER	"sendmail milter support" on
+
+SUB_FILES=	pkg-install pkg-deinstall pkg-message
+
+SUB_LIST=	AMAVISUSER=${AMAVISUSER} \
+		AMAVISGROUP=${AMAVISGROUP} \
+		AMAVISDIR=${AMAVISDIR} \
+		AMAVISQUARANTINE=${AMAVISQUARANTINE} \
+		DOCSDIR=${DOCSDIR}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500037
+USE_RCORDER=	amavisd.sh
+RC_DIR=		/etc/rc.d
+RC_SUFX=
+.else
+USE_RC_SUBR+=	amavisd.sh
+RC_DIR=		${PREFIX}/etc/rc.d
+RC_SUFX=	.sh
+.endif
+
 .if !exists(/usr/lib/libmilter.a) && !exists(${PREFIX}/lib/libmilter.a)
+AMAVIS_NOAMAVIS="@comment "
+.endif
+
+.if defined(WITH_MILTER) && !defined(AMAVIS_NOAMAVIS)
+USE_RCORDER+=	amavis-milter.sh
+.else
 AMAVIS_NOMILTER="@comment "
 .endif
 
-PLIST_SUB+=	AMAVIS_NOMILTER=${AMAVIS_NOMILTER}
+PLIST_SUB+=	AMAVIS_NOMILTER=${AMAVIS_NOMILTER} \
+		AMAVIS_NOAMAVIS=${AMAVIS_NOAMAVIS} \
+		RC_DIR=${RC_DIR} \
+		RC_SUFX=${RC_SUFX}
 
-.if defined(AMAVIS_NOMILTER)
+.if defined(AMAVIS_NOAMAVIS)
 do-build:
 	@${ECHO} libmilter not available, not building amavis-milter and amavis
 .else
@@ -74,13 +97,7 @@ CONFIGURE_WRKSRC=	${WRKSRC}/helper-progs
 BUILD_WRKSRC=	${WRKSRC}/helper-progs
 .endif
 
-SED_SCRIPT=	-e 's,%%AMAVISUSER%%,${AMAVISUSER},g' \
-		-e 's,%%AMAVISGROUP%%,${AMAVISGROUP},g' \
-		-e 's,%%AMAVISDIR%%,${AMAVISDIR},g' \
-		-e 's,%%AMAVISQUARANTINE%%,${AMAVISQUARANTINE},g' \
-		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
-		-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
+SED_SCRIPT=	${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
 
 .if defined(WITH_MYSQL)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
@@ -94,11 +111,8 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-P
 RUN_DEPENDS+=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
 .endif
 
-pre-build:
-	for f in amavisd.sh amavis-milter.sh INSTALL DEINSTALL MESSAGE; do \
-		${SED} ${SED_SCRIPT} < ${FILESDIR}/$${f}.tmpl > ${WRKDIR}/$${f}; \
-	done
-	for f in amavisd.conf amavisd.conf-sample amavisd amavisd-nanny; do \
+post-patch:
+	@for f in amavisd.conf amavisd.conf-sample amavisd amavisd-agent amavisd-nanny; do \
 		${SED} ${SED_SCRIPT} < ${WRKSRC}/$${f} > ${WRKDIR}/$${f}; \
 	done
 
@@ -106,12 +120,14 @@ pre-install:
 	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
 
 do-install:
-.if !defined(AMAVIS_NOMILTER)
+.if !defined(AMAVIS_NOAMAVIS)
 	${INSTALL_PROGRAM} ${WRKSRC}/helper-progs/amavis ${PREFIX}/sbin
+.endif
+.if !defined(AMAVIS_NOMILTER)
 	${INSTALL_PROGRAM} ${WRKSRC}/helper-progs/amavis-milter ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKDIR}/amavis-milter.sh ${PREFIX}/etc/rc.d
 .endif
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKDIR}/amavisd-agent ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd-nanny ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd.conf ${PREFIX}/etc/amavisd.conf-dist
 .if !exists(${PREFIX}/etc/amavisd.conf)
@@ -119,7 +135,6 @@ do-install:
 .endif
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd.conf-sample ${PREFIX}/etc/amavisd.conf-sample
 	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf-default ${PREFIX}/etc/amavisd.conf-default
-	${INSTALL_SCRIPT} ${WRKDIR}/amavisd.sh ${PREFIX}/etc/rc.d
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in AAAREADME.first INSTALL LDAP.schema LICENSE RELEASE_NOTES README_FILES/*

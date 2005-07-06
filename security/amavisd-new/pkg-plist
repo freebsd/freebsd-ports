@@ -1,3 +1,6 @@
+@comment $FreeBSD$
+%%AMAVIS_NOMILTER%%@unexec %%RC_DIR%%/amavis-milter%%RC_SUFX%% stop > /dev/null 2>&1 || true
+@unexec %%RC_DIR%%/amavisd%%RC_SUFX%% stop > /dev/null 2>&1 || true
 %%PORTDOCS%%%%DOCSDIR%%/AAAREADME.first
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/LDAP.schema
@@ -30,9 +33,8 @@ etc/amavisd.conf-default
 etc/amavisd.conf-dist
 @exec [ ! -f %B/amavisd.conf ] && cp %B/%f %B/amavisd.conf
 etc/amavisd.conf-sample
-%%AMAVIS_NOMILTER%%etc/rc.d/amavis-milter.sh
-etc/rc.d/amavisd.sh
-%%AMAVIS_NOMILTER%%sbin/amavis
+%%AMAVIS_NOAMAVIS%%sbin/amavis
 %%AMAVIS_NOMILTER%%sbin/amavis-milter
 sbin/amavisd
+sbin/amavisd-agent
 sbin/amavisd-nanny
