@@ -1,0 +1,10 @@
+--- cg-add.orig	Tue Jul  5 16:51:31 2005
++++ cg-add	Tue Jul  5 16:52:09 2005
+@@ -27,6 +27,6 @@
+ }
+ 
+ cat $TMPFILE | tr '\0' '\n' | sed 's/^/Adding file /'
+-cat $TMPFILE | xargs -0r git-update-cache --add --
++cat $TMPFILE | xargs -0 git-update-cache --add --
+ 
+ rm $TMPFILE

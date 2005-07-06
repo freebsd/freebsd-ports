@@ -1,0 +1,11 @@
+--- cg-init.orig	Tue Jul  5 16:54:14 2005
++++ cg-init	Tue Jul  5 16:54:20 2005
+@@ -38,7 +38,7 @@
+ 	echo "Cloned (origin $uri available as branch \"origin\")"
+ else
+ 	git-read-tree # Seed the dircache
+-	find * \( -type f -o -type l \) -print0 | xargs -0r cg-add
++	find * \( -type f -o -type l \) -print0 | xargs -0 cg-add
+ 	cg-commit -C -m"Initial commit" -E
+ fi
+ 

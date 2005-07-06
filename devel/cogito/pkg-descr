@@ -1,4 +1,7 @@
-       Cogito, GIT - the content tracker
+       Cogito - version control system
+
+Cogito is a version control system layered on top of the git tree history
+storage system.
 
 The GIT itself is merely an extremely fast and flexible filesystem-based
 database designed to store directory trees with regard to their history.
@@ -7,6 +10,3 @@ with the database in a manner to a degree similar to other SCM tools (like
 CVS, BitKeeper or Monotone).
 
 WWW: http://kernel.org/pub/software/scm/cogito/
-
-- Michael Seyfert
-michaels@sdf.lonestar.org

@@ -1,0 +1,11 @@
+--- cg-Xlib.orig	Tue Jul  5 16:44:36 2005
++++ cg-Xlib	Tue Jul  5 17:00:30 2005
+@@ -55,7 +55,7 @@
+ 		return 1
+ 	fi
+ 	if [ "$has_stat" ]; then
+-		$has_stat "$@"
++		shift;shift; $has_stat -f '%z' "$@"
+ 		return
+ 	fi
+ 

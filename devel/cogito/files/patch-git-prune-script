@@ -1,0 +1,10 @@
+--- git-prune-script.orig	Tue Jul  5 16:55:04 2005
++++ git-prune-script	Tue Jul  5 16:55:29 2005
+@@ -20,6 +20,6 @@
+     s|\(..\)|\1/|p
+ }' | {
+ 	cd "$GIT_OBJECT_DIRECTORY" || exit
+-	xargs -r $dryrun rm -f
++	xargs $dryrun rm -f
+ }
+ 
