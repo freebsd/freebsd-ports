@@ -1,0 +1,23 @@
+Toxine is a text user interface using the xine library. It permit to playback
+all streams that xine supports, in interactive or in  script mode (using
+toxine syntax). It use xine's visualisation plugins (AAlib, X11, DXR3/HW+),
+and/or his own 'none' one (audio only output).
+
+It use the readline library, which permit, in interactive mode, to recall
+commands, completions, etc..
+
+You can use it in a console (useful for DXR3/HW+ owners, using TV output), or
+in a X11 terminal window.
+If you're a developper, and you want to test/debug your own plugins, using
+toxine is useful due of script usage. This way, you can reproduce actions
+without interactions, redirect outputs to a file (name given or not). You can
+also see how to implement your own xine library frontend, because toxine
+implement almost all xine's API calls.
+
+If you don't like GUIs, or love console (and AAlib video output), toxine is
+for you ;-)
+
+WWW: http://toxine.sourceforge.net/
+
+- Alejandro Pulver
+alejandro@vanet.biz

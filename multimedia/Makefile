@@ -155,6 +155,7 @@
     SUBDIR += tosvcd
     SUBDIR += totem
     SUBDIR += totem-gstreamer
+    SUBDIR += toxine
     SUBDIR += transcode
     SUBDIR += vcdgear
     SUBDIR += vcdimager

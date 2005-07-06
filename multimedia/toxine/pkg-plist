@@ -1,0 +1,9 @@
+bin/dvdplayer.sh
+bin/toxine
+%%AALIB%%lib/toxine/plugins/toxine_vo_plugin_aa.so
+%%LIBCACA%%lib/toxine/plugins/toxine_vo_plugin_caca.so
+lib/toxine/plugins/toxine_vo_plugin_dxr3.so
+lib/toxine/plugins/toxine_vo_plugin_none.so
+lib/toxine/plugins/toxine_vo_plugin_x11.so
+@dirrm lib/toxine/plugins
+@dirrm lib/toxine
