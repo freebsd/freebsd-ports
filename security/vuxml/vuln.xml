@@ -32,6 +32,47 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="70c59485-ee5a-11d9-8310-0001020eed82">
+    <topic>acroread -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>acroread4</name>
+	<name>acroread5</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>acroread</name>
+	<range><lt>7.0.0</lt></range>
+	<range><gt>5.*,1</gt><lt>7.0.0,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An Adobe Security Advisory reports:</p>
+	<blockquote cite="http://www.adobe.com/support/techdocs/329083.html">
+	  <p>A vulnerability within Adobe Reader has been
+	    identified. Under certain circumstances, remote
+	    exploitation of a buffer overflow in Adobe Reader could
+	    allow an attacker to execute arbitrary code.</p>
+	  <p>If exploited, it could allow the execution of arbitrary
+	    code under the privileges of the local user. Remote
+	    exploitation is possible if the malicious PDF document is
+	    sent as an email attachment or if the PDF document is
+	    accessed via a web link.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1625</cvename>
+      <url>http://www.adobe.com/support/techdocs/329083.html</url>
+      <mlist msgid="FB24803D1DF2A34FA59FC157B77C97050462A5E2@IDSERV04.idef.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112059685332569</mlist>
+    </references>
+    <dates>
+      <discovery>2005-07-05</discovery>
+      <entry>2005-07-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b2a1a3b5-ed95-11d9-8310-0001020eed82">
     <topic>net-snmp -- remote DoS vulnerability</topic>
     <affects>
