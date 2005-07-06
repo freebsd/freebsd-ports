@@ -10,6 +10,7 @@
     SUBDIR += dbench
     SUBDIR += dbs
     SUBDIR += dkftpbench
+    SUBDIR += flops
     SUBDIR += forkbomb
     SUBDIR += himenobench
     SUBDIR += hpl

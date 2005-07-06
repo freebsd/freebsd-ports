@@ -1,0 +1,12 @@
+flops.c is a C program which attempts to estimate your system's floating-
+point 'MFLOPS' rating for the FADD, FSUB, FMUL, and FDIV operations based on
+specific 'instruction mixes' (discussed below).  The program provides an
+estimate of PEAK MFLOPS performance by making maximal use of register
+variables with minimal interaction with main memory.  The execution loops
+are all small so that they will fit in any cache.  The flops.c execution
+modules include various percent weightings of FDIV's (from 0% to 25% FDIV's)
+so that the range of performance can be obtained when using FDIV's.  FDIV's,
+being computationally more intensive than FADD's or FMUL's, can impact
+performance considerably on some systems.
+
+WWW: http://performance.netlib.org/performance/html/flops.html
