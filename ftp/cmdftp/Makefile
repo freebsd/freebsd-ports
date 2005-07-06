@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	cmdftp
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.2
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cmdftp
 
-MAINTAINER=	fehlner@gmx.de
+MAINTAINER=	vsevolod@highsecure.ru
 COMMENT=	Command line shell-like ftp client
 
 USE_REINPLACE=yes
