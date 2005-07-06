@@ -2,7 +2,6 @@ GST_ALL_PLUGINS= \
 		a52dec \
 		aalib \
 		aalibtest \
-		amrnb \
 		arts \
 		artstest \
 		artsc \
@@ -10,6 +9,7 @@ GST_ALL_PLUGINS= \
 		audioresample \
 		cairo \
 		cdaudio \
+		cdio \
 		cdparanoia \
 		dirac \
 		directfb \
@@ -70,11 +70,11 @@ GST_ALL_PLUGINS= \
 		sndfile \
 		speex \
 		swfdec \
-		tarkin \
 		theora \
 		vcd \
 		vorbis \
 		vorbistest \
+		wavpack \
 		xvid
 
 # Disable all plugins by default\
@@ -84,6 +84,7 @@ CONFIGURE_ARGS+=	--disable-${d}
 
 CONFIGURE_ARGS+=--disable-tests \
 		--disable-examples \
+		--disable-amrnb \
 		--disable-alsa \
 		--disable-http \
 		--enable-cdrom \
@@ -93,12 +94,12 @@ CONFIGURE_ARGS+=--disable-tests \
 		--enable-oss \
 		--disable-osx_audio \
 		--disable-osx_video \
+		--disable-tarkin \
 		--enable-static \
-		--disable-spc \
+		--enable-spc \
 		--disable-sunaudio \
 		--disable-gst_v4l \
 		--disable-gst_v4l2 \
-		--enable-wavpack \
 		--disable-xine \
 		--enable-x \
 		--enable-xshm \
@@ -222,6 +223,12 @@ LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 # libcdaudio
 .if ${GST_PLUGIN}=="cdaudio"
 LIB_DEPENDS+=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
+.endif
+
+# libcdio
+.if ${GST_PLUGIN}=="cdio"
+LIB_DEPENDS+=	cdio.5:${PORTSDIR}/sysutils/libcdio
+PLIST_FILES=	${GST_LIB_DIR}/libgstcddasrc.so
 .endif
 
 # libvisual
@@ -395,7 +402,7 @@ PLIST_FILES=	${GST_LIB_DIR}/libgsttextoverlay.so \
 		${GST_LIB_DIR}/libgsttimeoverlay.so
 .endif
 
-# libpng
+# libpng and the snapshot plugin
 .if ${GST_PLUGIN}=="libpng"
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 GST_PLUGIN_DIR= ext/libpng \
@@ -443,6 +450,11 @@ LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
 .endif
 
+# wavpack
+.if ${GST_PLUGIN}=="wavpack"
+LIB_DEPENDS+=	wavpack.0:${PORTSDIR}/audio/wavpack
+.endif
+
 # xvid
 .if ${GST_PLUGIN}=="xvid"
 LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
@@ -450,8 +462,8 @@ LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
 
 LIB_DEPENDS+=	gstplay-${VERSION}.${SHLIB_VERSION}:${PORTSDIR}/multimedia/gstreamer-plugins
 
-PLIST_FILES+=	'@exec %D/bin/gst-register --gst-registry=%D/share/gnome/cache/gstreamer-${VERSION}/registry.xml 2>/dev/null || true'
-PLIST_FILES+=	'@unexec %D/bin/gst-register --gst-registry=%D/share/gnome/cache/gstreamer-${VERSION}/registry.xml 2>/dev/null || true'
+PLIST_FILES+=	'@exec %D/bin/gst-register-${VERSION} --gst-registry=%D/share/gnome/cache/gstreamer-${VERSION}/registry.xml 2>/dev/null || true'
+PLIST_FILES+=	'@unexec %D/bin/gst-register-${VERSION} --gst-registry=%D/share/gnome/cache/gstreamer-${VERSION}/registry.xml 2>/dev/null || true'
 
 do-build:
 .if ${GST_PLUGIN} == "gconf"

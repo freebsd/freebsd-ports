@@ -14,4 +14,6 @@ GST_PLUGIN=	cairo
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
+IGNORE=		Cairo needs to be updated to 0.5 for plugin to work.
+
 .include "${MASTERDIR}/Makefile"
