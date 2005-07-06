@@ -1,0 +1,12 @@
+PROG=	wmbday
+SRCS=	date.c main.c ring.c
+
+PREFIX?=  ${X11BASE}
+
+BINDIR=   ${PREFIX}/bin
+SHAREDIR= ${PREFIX}
+CFLAGS+=  -I/usr/X11R6/include
+LDFLAGS+= -L/usr/X11R6/lib
+LDADD=    -lX11 -lXext -lXpm
+
+.include <bsd.prog.mk>
