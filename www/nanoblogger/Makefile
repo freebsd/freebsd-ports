@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	nanoblogger
-PORTVERSION=	3.1
+PORTVERSION=	3.2.3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small weblog engine for the UNIX command line
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_REINPLACE=	yes
 NO_BUILD=	yes
@@ -27,7 +27,7 @@ PORTDOCS=	*
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/nb
+	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/nb
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/nb ${PREFIX}/bin
