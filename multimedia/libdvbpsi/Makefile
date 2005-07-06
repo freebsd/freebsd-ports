@@ -7,18 +7,18 @@
 #
 
 PORTNAME=	libdvbpsi
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/libdvbpsi/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
-DISTNAME=	${PORTNAME}3-${PORTVERSION}
+DISTNAME=	${PORTNAME}4-${PORTVERSION}
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A library for MPEG TS and DVB PSI tables decoding and generation
 
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_LIBTOOL_VER=15
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-release
 INSTALLS_SHLIB=	yes
 

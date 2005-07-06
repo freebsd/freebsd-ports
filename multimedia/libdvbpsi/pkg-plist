@@ -18,13 +18,19 @@ include/dvbpsi/dr_0f.h
 include/dvbpsi/dr_42.h
 include/dvbpsi/dr_47.h
 include/dvbpsi/dr_48.h
+include/dvbpsi/dr_4d.h
+include/dvbpsi/dr_4e.h
+include/dvbpsi/dr_52.h
+include/dvbpsi/dr_55.h
+include/dvbpsi/dr_56.h
 include/dvbpsi/dr_59.h
 include/dvbpsi/dvbpsi.h
+include/dvbpsi/eit.h
 include/dvbpsi/pat.h
 include/dvbpsi/pmt.h
 include/dvbpsi/psi.h
 include/dvbpsi/sdt.h
 lib/libdvbpsi.a
 lib/libdvbpsi.so
-lib/libdvbpsi.so.3
+lib/libdvbpsi.so.4
 @dirrm include/dvbpsi
