@@ -19,6 +19,11 @@ bin/grepjar41
 bin/jv-scan41
 bin/jcf-dump41
 include/mf-runtime.h
+include/ssp/ssp.h
+include/ssp/string.h
+include/ssp/stdio.h
+include/ssp/unistd.h
+@unexec rmdir %D/include/ssp 2>/dev/null || true
 %%FORTRAN%%bin/gfortran41
 %%LIBJAVA%%bin/addr2name.awk41
 %%LIBJAVA%%bin/gcj-dbtool41
