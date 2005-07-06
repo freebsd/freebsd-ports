@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	APC
-PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTVERSION=	3.0.2
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -18,7 +17,6 @@ MAINTAINER=	marcus@corp.grupos.com.br
 COMMENT=	Alternative PHP Cache
 
 USE_PHP=	yes
-USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	apc
 
@@ -29,19 +27,28 @@ CONFIGURE_ARGS=	--enable-apc
 
 OPTIONS=	MMAP       "Enable mmap memory support (default: IPC shm)" off \
 		SEMAPHORES "Enable sysv IPC semaphores (default: fcntl())" off \
+		PHP4_OPT   "Little optimization for PHP4" off
 
 .include <bsd.port.pre.mk>
 
-.if ${PHP_VER} == 5
-BROKEN=		This port is not compatible with php${PHP_VER}
+.if defined(WITH_MMAP)
+CONFIGURE_ARGS+=	--enable-apc-mmap
 .endif
 
-.if !defined(WITHOUT_MMAP)
-CONFIGURE_ARGS+=	--enable-mmap
+.if defined(WITH_SEMAPHORES)
+CONFIGURE_ARGS+=	--enable-apc-sem
 .endif
 
-.if !defined(WITHOUT_SEMAPHORES)
-CONFIGURE_ARGS+=	--enable-sem
+.if defined(WITH_PHP4_OPT)
+.if ${PHP_VER} == 4
+.if exists(${LOCALBASE}/include/apache/httpd.h)
+CFLAGS+=	-I${LOCALBASE}/include/apache -DAPC_PHP4_STAT
+.elif exists(${LOCALBASE}/include/apache2/httpd.h)
+CFLAGS+=	-I${LOCALBASE}/include/apache -DAPC_PHP4_STAT
+.endif
+.else
+IGNORE=	This optimization is only for PHP4. PHP5 or newer does not need it
+.endif
 .endif
 
 .if !defined(NOPORTDOCS)
