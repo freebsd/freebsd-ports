@@ -1,17 +1,20 @@
-*****************************************************************************
-To build a site:
 
-1)  $ mkdir mysite; cd mysite
-2)  $ forrest seed
-3)  $ forrest site
-4)  see results in ./build/site/index.html with your web browser
+*************************************************************************
 
-If you get this error:
+  Set the environment variable:
 
-Can't connect to X11 window using ':0.0' as the value of the DISPLAY variable
+      FORREST_HOME=%%DATADIR%%
 
-replace step 3) with:
+  and add ${FORREST_HOME}/bin to your PATH.
 
-    $ forrest -Dforrest.jvmargs=-Djava.awt.headless=true site
+  To build a site:
 
-*****************************************************************************
+      1)  $ mkdir mysite; cd mysite
+      2)  $ forrest seed
+      3)  $ forrest
+      4)  see results in ./build/site/index.html with your web browser
+
+  To avoid any issue with old classes being loaded, run a 'forrest clean'
+  in your project directory, after you upgraded to this version (%%PORTVERSION%%)
+
+*************************************************************************
