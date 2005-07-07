@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	radiusclient
-PORTVERSION=	0.4.9
+PORTVERSION=	0.5.1
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/radiusclient-ng/
+DISTNAME=	${PORTNAME}-ng-${PORTVERSION}
 
 MAINTAINER=	maurice@castro.aus.net
 COMMENT=	Client library and basic utilities for Radius authenticated login

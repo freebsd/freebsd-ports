@@ -1,20 +1,20 @@
-etc/radiusclient/dictionary
-etc/radiusclient/dictionary.ascend
-etc/radiusclient/dictionary.compat
-etc/radiusclient/dictionary.merit
-etc/radiusclient/dictionary.sip
-etc/radiusclient/issue
-etc/radiusclient/port-id-map
-etc/radiusclient/radiusclient.conf
-etc/radiusclient/servers
-include/radiusclient.h
-lib/libradiusclient.a
-lib/libradiusclient.so
-lib/libradiusclient.so.2
+etc/radiusclient-ng/dictionary
+etc/radiusclient-ng/dictionary.ascend
+etc/radiusclient-ng/dictionary.compat
+etc/radiusclient-ng/dictionary.merit
+etc/radiusclient-ng/dictionary.sip
+etc/radiusclient-ng/issue
+etc/radiusclient-ng/port-id-map
+etc/radiusclient-ng/radiusclient.conf
+etc/radiusclient-ng/servers
+include/radiusclient-ng.h
+lib/libradiusclient-ng.a
+lib/libradiusclient-ng.so
+lib/libradiusclient-ng.so.2
 sbin/login.radius
 sbin/radacct
 sbin/radexample
 sbin/radiusclient
 sbin/radlogin
 sbin/radstatus
-@dirrm etc/radiusclient
+@dirrm etc/radiusclient-ng
