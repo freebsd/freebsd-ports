@@ -33,7 +33,6 @@ bin/readmsg
 %%CONF_DIR%%/elm.terminalinfo-dist
 @exec if [ -f %D/%%LIB_DIR%%/elm.terminalinfo ]; then [ -f %B/elm.terminalinfo ] && old=.old || old=; mv %D/%%LIB_DIR%%/elm.terminalinfo %B/elm.terminalinfo${old}; fi
 @exec [ -f %B/elm.terminalinfo ] || cp %B/%f %B/elm.terminalinfo
-%%RC_DIR%%/000.elm.sh
 %%LIB_DIR%%/elm-help.0
 %%LIB_DIR%%/elm-help.1
 %%LIB_DIR%%/elm-help.2
@@ -94,7 +93,6 @@ share/nls/C/elm2.4me+.cat
 @exec %D/%%LIB_DIR%%/elmrc-write -G -I
 @exec %D/%%LIB_DIR%%/elmlibregister -G -I %%ELM_SHLIBS%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%SHLIB_DIR%%
 @dirrm %%LIB_DIR%%/elm.map.txt
 @dirrm %%LIB_DIR%%/elm.map.bin
 @unexec rmdir %D/%%LIB_DIR%% 2> /dev/null || :

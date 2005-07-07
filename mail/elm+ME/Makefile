@@ -11,8 +11,9 @@ CATEGORIES=	mail
 DISTNAME=	elm-${ELM_VERSION}ME+${ELM_REVISION}
 
 # here are the main repositories.
-MASTER_SITES=	ftp://ftp.ozone.fmi.fi/KEH/ \
-		http://www.ozone.fmi.fi/KEH/
+MASTER_SITES=	http://www.ozone.fmi.fi/KEH/ \
+		ftp://ftp.ozone.fmi.fi/KEH/
+		
 # the following repositories conform to the main repository.
 MASTER_SITES+=	ftp://ftp.lip6.fr/pub/unix/mail/elm-me/ \
 		ftp://ftp.tu-darmstadt.de/pub/networking/mail/elm+ME/ \
@@ -45,7 +46,6 @@ COMMENT=	A once-popular mail user agent, unofficial clone
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-//:S/ME+/.ME+./}
 
 HAS_CONFIGURE=	yes
-USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 
@@ -66,7 +66,6 @@ INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/%%SHLIB_DIR%%
 
 PLIST_SUB=	SO_REV="${SO_REV}" \
-		RC_DIR="${RC_DIR:S,^${PREFIX}/,,}" \
 		MAIL_DIR="${MAIL_DIR:S,^${PREFIX}/,,}" \
 		CONF_DIR="${CONF_DIR:S,^${PREFIX}/,,}" \
 		LIB_DIR="${LIB_DIR:S,^${PREFIX}/,,}" \
@@ -74,7 +73,6 @@ PLIST_SUB=	SO_REV="${SO_REV}" \
 		ELM_SHLIBS="${ELM_SHLIBS}" \
 		${ELM_SHLIBS:U:S/^/ELM_/:S/$/=""/} \
 		${ELM_UNSHLIBS:U:S/^/ELM_/:S/$/="@comment "/}
-RCSCRIPTS_SUB=	SHLIB_DIR="${SHLIB_DIR}" RC_SUBR=${RC_SUBR}
 
 MAN1=           answer.1 checkalias.1 elm.1 elmalias.1 elmbindata.1 \
 		elmcharset.1 elmlibregister.1 elmrc-write.1 elmregister.1 \
@@ -97,8 +95,8 @@ OPTIONS=	ELM_ICONV "libiconv support" on \
 #
 
 ELM_VERSION=	2.4
-ELM_REVISION=	119
-ELM_PATCHLEVEL=	_	# a...z = patch-level, _ means no patch-level.
+ELM_REVISION=	121
+ELM_PATCHLEVEL=	h	# a...z = patch-level, _ means no patch-level.
 
 ELM_PATCHDONE=	false
 .for level in _ a b c d e f g h i j k l m n o p q r s t u v w x y z
@@ -155,15 +153,12 @@ SO_REV=		$$([ -f ${WRKSRC}/hdrs/patchlevel.h ] && \
 MSECS=		1
 
 STAGE_DIR=	${WRKDIR}/stage
-RC_DIR=		${PREFIX}/etc/rc.d
 MAIL_DIR=	${PREFIX}/etc/mail
 CONF_DIR=	${MAIL_DIR}/elm
 LIB_DIR=	${PREFIX}/lib/elm
-SHLIB_DIR=	${PREFIX}/libexec/elm
+SHLIB_DIR=	${PREFIX}/lib
 
 CONFIG_PATH=	${WRKDIR}/config.sh
-_RC_FILE=	00elm.sh
-RC_FILE=	000.elm.sh
 MIME_TYPES=	elm.mimetypes
 MIME_CSETS=	elm.mimecharsets
 TERM_INFO=	elm.terminalinfo
@@ -179,14 +174,10 @@ DOC_FILES+=	shared_libs/${shlib:L}/README.${shlib:U}
 # Post-patch
 #
 
-post-patch: fix-permissions patch-startup-scripts patch-setgid patch-nls-files
+post-patch: fix-permissions patch-setgid patch-nls-files
 
 fix-permissions:
 	@${CHMOD} -R u+w ${WRKSRC}
-
-patch-startup-scripts:
-	@${SED} ${RCSCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/${_RC_FILE} > ${WRKDIR}/${RC_FILE}
 
 # from <sys/unistd.h>:
 # Although we have saved user/group IDs, we do not use them in setuid
@@ -262,14 +253,11 @@ backup-conf-files:
 # Post-install
 #
 
-post-install: install-startup-files install-nls-files \
+post-install: install-nls-files \
 	      install-doc-files install-mime-types \
 	      install-conf-files restore-conf-files \
 	      merge-global-rc-file \
 	      remove-catman-files remove-catman-links
-
-install-startup-files:
-	@${INSTALL_SCRIPT} ${WRKDIR}/${RC_FILE} ${RC_DIR}
 
 install-nls-files:
 	@cd ${WRKSRC}/nls; ${MAKE} install
