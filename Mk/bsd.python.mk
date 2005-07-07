@@ -115,6 +115,21 @@ Python_Include_MAINTAINER=	perky@FreeBSD.org
 #
 # PYSETUP:		Name of the setup script used by the distutils package.
 #				default: setup.py
+#
+# USE_TWISTED:	If this option is just yes then
+#				the dependence to twistedCore is added. Alternatively here
+#				can be listed specific components of twisted framework, 
+#				available components are: web, lore, news, words, pair,
+#				mail, names, xish, runner, flow and conch. Note that 
+#				core component is required for any of this optional components. 
+#
+# USE_ZOPE:		Use Zope - an object-based web application platform, this
+#				also sets up ZOPEBASEDIR - relative base directory of zope 
+#				server, SZOPEBASEDIR - absolute base directory of zope that
+#				is ${LOCALBASE}/${SZOPEBASEDIR} by default, 
+#				ZOPEPRODUCTDIR - directory, where products for zope can be 
+#				found. Note that USE_ZOPE require python2.3
+#
 
 _PYTHON_PORTBRANCH=		2.4
 _PYTHON_ALLBRANCHES=	2.4 2.3 2.2 2.1 2.5 # preferred first
@@ -156,9 +171,9 @@ USE_PYTHON_RUN=		yes
 # Validate Python version whether it meets USE_PYTHON version restriction.
 _PYTHON_VERSION_CHECK!=		${ECHO_CMD} "${USE_PYTHON}" | \
 							${SED} 's/^\([1-9]\.[0-9]\)$$/\1-\1/'
-_PYTHON_VERSION_MINIMUM!=   ${ECHO_CMD} "${_PYTHON_VERSION_CHECK}" | \
+_PYTHON_VERSION_MINIMUM!=	${ECHO_CMD} "${_PYTHON_VERSION_CHECK}" | \
 							${SED} -n 's/.*\([1-9]\.[0-9]\)[-+].*/\1/p'
-_PYTHON_VERSION_MAXIMUM!=   ${ECHO_CMD} "${_PYTHON_VERSION_CHECK}" | \
+_PYTHON_VERSION_MAXIMUM!=	${ECHO_CMD} "${_PYTHON_VERSION_CHECK}" | \
 							${SED} -n 's/.*-\([1-9]\.[0-9]\).*/\1/p'
 .if !empty(_PYTHON_VERSION_MINIMUM) && ( \
 		${_PYTHON_VERSION} < ${_PYTHON_VERSION_MINIMUM})
@@ -342,6 +357,46 @@ PLIST_SUB+=		PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR:S;${PREFIX}/;;} \
 PLIST_SUB+=		ZOPEBASEDIR=${SZOPEBASEDIR} \
 				ZOPEPRODUCTDIR=${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}
 .endif
+
+# Twisted specific routines
+.if defined(USE_TWISTED)
+
+.if ${USE_TWISTED} == "20" || ${USE_TWISTED} == "yes"
+USE_TWISTED_VER=	${USE_TWISTED}
+RUN_DEPENDS+=		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twistedCore
+.elif ${USE_TWISTED} == "13"
+USE_TWISTED_VER=	${USE_TWISTED}
+RUN_DEPENDS+=		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted
+.else
+USE_TWISTED_VER=	"20"
+# Checking for twisted components 
+_TWISTED_COMPONENTS?=	web lore news words pair mail names xish runner flow conch
+
+# XXX Should be here other dependencies types?
+web_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/web/__init__.py:${PORTSDIR}/www/py-twistedWeb	
+lore_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/textproc/__init__.py:${PORTSDIR}/textproc/py-twistedLore
+news_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/news/__init__.py:${PORTSDIR}/news/py-twistedNews
+words_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/words/__init__.py:${PORTSDIR}/net/py-twistedWords
+pair_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/pair/__init__.py:${PORTSDIR}/net/py-twistedPair
+mail_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/mail/__init__.py:${PORTSDIR}/mail/py-twistedMail
+names_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/names/__init__.py:${PORTSDIR}/dns/py-twistedNames
+xish_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/xish/__init__.py:${PORTSDIR}/devel/py-twistedXish
+runner_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/runner/__init__.py:${PORTSDIR}/devel/py-twistedRunner
+flow_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/flow/__init__.py:${PORTSDIR}/devel/py-twistedFlow
+conch_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/conch/__init__.py:${PORTSDIR}/security/py-twistedConch
+
+.for component in ${_TWISTED_COMPONENTS}
+_COMP_TEST=	${USE_TWISTED:M${component}}
+. if ${_COMP_TEST:S/${component}//}!=${_COMP_TEST:S/  / /g}
+RUN_DEPENDS+=	${${component}_RUN_DEPENDS}
+. endif
+.endfor
+
+# Implicit dependency from core
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twistedCore
+.endif
+
+.endif # defined(USE_TWISTED)
 
 # XXX Hm, should I export some of the variables above to *_ENV?
 
