@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	SQL-Abstract
-PORTVERSION=	1.13
+PORTVERSION=	1.19
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SQL
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dom@happygiraffe.net
+MAINTAINER=	lars@balker.dk
 COMMENT=	Perl extension to generate SQL from Perl data structures
 
 PERL_CONFIGURE=	yes
