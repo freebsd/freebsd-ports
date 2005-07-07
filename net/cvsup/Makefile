@@ -16,11 +16,6 @@ DISTNAME=	cvsup-snap-${PORTVERSION}
 MAINTAINER=	jdp@FreeBSD.org
 COMMENT?=	General network file distribution system optimized for CVS (GUI version)
 
-PROCESSOR!=	/usr/bin/uname -p
-.if ${PROCESSOR} == "amd64"
-USE_BZIP2=	yes
-.endif
-
 ONLY_FOR_ARCHS=	alpha amd64 i386 sparc64
 
 .include <bsd.port.pre.mk>
@@ -32,33 +27,24 @@ BROKEN=		Not supported on versions earlier than 4.1-RELEASE
 .if ${ARCH} == "alpha"
 TARGET=		FBSD_ALPHA
 .elif ${ARCH} == "amd64"
-PORTREVISION=	2
-MASTER_SITE_SUBDIR=	bz
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-DISTNAME=	cvsup-without-gui.amd64
-NO_WRKSUBDIR=	yes
-USE_REINPLACE=	yes
-NO_BUILD=	binary-only
-MANCOMPRESSED=	yes
+MAINTAINER=	bzeeb+freebsdports@zabbadoz.net
+TARGET=		FBSD_AMD64
+AMD64_PATCHES=	p-amd64-aa p-amd64-zlib
 .elif ${ARCH} == "i386"
 TARGET=		FreeBSD4
 .elif ${ARCH} == "sparc64"
 TARGET=		FBSD_SPARC64
 .endif
 
-.ifdef WITHOUT_X11
+.if defined(WITHOUT_X11) || ${ARCH} == "amd64"
 M3FLAGS+=	-DNOGUI
-.if ${ARCH} != "amd64"
 BUILD_DEPENDS=	${PREFIX}/lib/m3/pkg/tcp/${TARGET}/libm3tcp.a:${PORTSDIR}/lang/ezm3
-.endif		# != amd64
 PKGNAMESUFFIX=	-without-gui
 COMMENT=	General network file distribution system optimized for CVS (non-GUI version)
 DESCR=		${PKGDIR}/pkg-descr.nogui
 .else
-.if ${ARCH} != "amd64"
 USE_XLIB=	yes
 BUILD_DEPENDS=	${PREFIX}/lib/m3/pkg/formsvbt/${TARGET}/libm3formsvbt.a:${PORTSDIR}/lang/ezm3
-.endif		# != amd64
 .endif
 
 MAKE_ARGS+=	PREFIX=${PREFIX} M3FLAGS="${M3FLAGS}"
@@ -71,39 +57,28 @@ M3FLAGS+=	-DSTATIC
 
 pre-fetch:
 .ifndef WITHOUT_X11
-	@${ECHO_MSG} "*****************************************************"
 .if ${ARCH} == "amd64"
-	@${ECHO_MSG} "* CVSup with X11 not yet supported on amd64.        *"
-	@${ECHO_MSG} "* Will install non-X11 version. You might want      *"
-.endif
-	@${ECHO_MSG} "* To build CVSup without X11 (and without the GUI), *"
+	@${ECHO_MSG} "*****************************************************"
+	@${ECHO_MSG} "* CVSup with X11 is not yet supported on amd64.     *"
+	@${ECHO_MSG} "* I will build cvsup without X11 support now.       *"
+	@${ECHO_MSG} "*****************************************************"
+.else
+	@${ECHO_MSG} "*****************************************************"
+	@${ECHO_MSG} "* To build CVSup without X11 (and without the GUI)  *"
 	@${ECHO_MSG} "* use the \"net/cvsup-without-gui\" port.             *"
 	@${ECHO_MSG} "*****************************************************"
 .endif
-	@${TRUE}
+.endif
+
+pre-patch:
+.if ${ARCH} == "amd64"
+.for f in ${AMD64_PATCHES}
+	@cd ${WRKSRC} && ${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/${f}
+.endfor
+.endif
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/cvsup
 	@${INSTALL_DATA} ${WRKSRC}/License ${PREFIX}/share/cvsup/License
-
-.if ${ARCH} == "amd64"
-do-patch:
-	@${TRUE}
-
-do-configure:
-	@${TOUCH} ${WRKSRC}/License
-	@${TOUCH} ${TOUCH_FLAGS} ${CONFIGURE_COOKIE}
-	@${TRUE}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/cvpasswd ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/cvsup ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/sbin/cvsupd ${PREFIX}/sbin/
-	${INSTALL_MAN} ${WRKSRC}/man/man1/cvpasswd.1.gz ${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/man/man1/cvsup.1.gz ${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/man/man8/cvsupd.8.gz ${PREFIX}/man/man8/
-	${MKDIR} ${PREFIX}/share/cvsup
-	${MV} ${WRKSRC}/share/cvsup/License ${WRKSRC}/License
-.endif
 
 .include <bsd.port.post.mk>

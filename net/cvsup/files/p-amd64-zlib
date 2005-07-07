@@ -1,0 +1,56 @@
+--- suplib/src/GzipWr.m3.orig	Tue Jun  1 21:09:44 2004
++++ suplib/src/GzipWr.m3	Wed Jun  2 08:59:02 2004
+@@ -32,7 +32,7 @@ UNSAFE MODULE GzipWr;
+ 
+ IMPORT
+   GzipError, OSError, StreamWrClass, Thread, Ugzip, Wr, WrClass;
+-FROM Ctypes IMPORT unsigned_char_star;
++FROM Ctypes IMPORT unsigned_char_star, int;
+ 
+ REVEAL
+   T = Public BRANDED OBJECT
+@@ -102,12 +102,15 @@ PROCEDURE Deflate(strmp: Ugzip.z_stream_
+ (* Call "Ugzip.deflate", making sure that pointers into the (traced)
+    input and output buffers are on the stack or in registers.  This
+    ensures that the collector will not move the buffers. *)
++  VAR
++    rc: int;
+   BEGIN
+     strmp.next_in := next_in;
+     strmp.avail_in := avail_in;
+     strmp.next_out := next_out;
+     strmp.avail_out := avail_out;
+-    RETURN Ugzip.deflate(strmp, flush);
++    rc := Ugzip.deflate(strmp, flush);
++    RETURN rc;
+   END Deflate;
+ 
+ PROCEDURE Flush(self: T)
+--- suplib/src/GzipRd.m3.orig	Tue Mar  4 19:26:22 2003
++++ suplib/src/GzipRd.m3	Wed Jun  2 08:59:22 2004
+@@ -32,7 +32,7 @@ UNSAFE MODULE GzipRd;
+ 
+ IMPORT
+   GzipError, OSError, Rd, RdClass, StreamRdClass, Thread, Ugzip;
+-FROM Ctypes IMPORT unsigned_char_star;
++FROM Ctypes IMPORT unsigned_char_star, int;
+ 
+ REVEAL
+   T = Public BRANDED OBJECT
+@@ -83,12 +83,15 @@ PROCEDURE Inflate(strmp: Ugzip.z_stream_
+ (* Call "Ugzip.inflate", making sure that pointers into the (traced)
+    input and output buffers are on the stack or in registers.  This
+    ensures that the collector will not move the buffers. *)
++  VAR
++    rc: int;
+   BEGIN
+     strmp.next_in := next_in;
+     strmp.avail_in := avail_in;
+     strmp.next_out := next_out;
+     strmp.avail_out := avail_out;
+-    RETURN Ugzip.inflate(strmp, flush);
++    rc := Ugzip.inflate(strmp, flush);
++    RETURN rc;
+   END Inflate;
+ 
+ PROCEDURE Init(self: T;
