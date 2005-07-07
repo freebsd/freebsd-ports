@@ -7206,6 +7206,7 @@ p5-Class-DBI-Plugin-Type	ports/databases/p5-Class-DBI-Plugin-Type
 p5-Class-DBI-Replication	ports/databases/p5-Class-DBI-Replication
 p5-Class-DBI-SAK	ports/databases/p5-Class-DBI-SAK
 p5-Class-DBI-SQLite	ports/databases/p5-Class-DBI-SQLite
+p5-Class-DBI-Sweet	ports/databases/p5-Class-DBI-Sweet
 p5-Class-DBI-ToSax	ports/databases/p5-Class-DBI-ToSax
 p5-Class-DBI-Untaint	ports/databases/p5-Class-DBI-Untaint
 p5-Class-DBI-mysql	ports/databases/p5-Class-DBI-mysql
