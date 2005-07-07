@@ -13,6 +13,7 @@ MASTER_SITES=	http://linux.duke.edu/projects/epylog/download/
 MAINTAINER=	alan@wave2.co.uk
 COMMENT=	Epylog is a syslog parser which mails you the output
 
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
 
 MAN3=		epylog.3
