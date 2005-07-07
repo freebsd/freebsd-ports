@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libol
-PORTVERSION=	0.3.15
+PORTVERSION=	0.3.16
 CATEGORIES=	devel
 MASTER_SITES=	http://www.balabit.com/downloads/libol/0.3/
 
@@ -14,7 +14,7 @@ MAINTAINER=	vince@blue-box.net
 COMMENT=	Library needed by syslog-ng
 
 GNU_CONFIGURE=	yes
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
 USE_GCC=	3.3+
 
