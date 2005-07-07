@@ -1,0 +1,11 @@
+--- configure.in.orig	Sat Jul  2 14:29:13 2005
++++ configure.in	Sat Jul  2 14:29:20 2005
+@@ -11,7 +11,7 @@
+ AC_PATH_XTRA
+ AC_PATH_X
+ dnl echo $X_CFLAGS $X_LIBS
+-CFLAGS="$X_CFLAGS $X_LIBS"
++CFLAGS="$CFLAGS $X_CFLAGS $X_LIBS"
+ AC_CHECK_LIB(X11, XCopyArea, [], [], $X_LIBS)
+ AC_CHECK_LIB(Xext, XShapeCombineMask, [], [], $X_LIBS)
+ AC_CHECK_LIB(Xpm, XpmCreatePixmapFromData, [], [], $X_LIBS)
