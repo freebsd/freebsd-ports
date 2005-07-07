@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnome2-power-tools
-PORTVERSION=	2.10.1
+PORTVERSION=	2.10.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
