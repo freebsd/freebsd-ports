@@ -10379,6 +10379,7 @@ rtb		ports/games/rtb
 rtc		ports/emulators/rtc
 rtcw		ports/games/rtcw
 rtcw-paks	ports/games/rtcw-paks
+rtf2html	ports/textproc/rtf2html
 rtf2latex	ports/print/rtf2latex
 rtfm		ports/misc/rtfm
 rtfreader	ports/textproc/rtfreader
