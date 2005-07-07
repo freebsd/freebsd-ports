@@ -1,5 +1,5 @@
 --- antivirus.c.orig	Tue Jul 15 21:27:14 2003
-+++ antivirus.c	Wed Nov 17 07:19:12 2004
++++ antivirus.c	Mon Jun 20 17:45:16 2005
 @@ -85,6 +85,8 @@
  static char *FORMAT=NULL;
  static sfsistat avfailcode=0;
@@ -39,7 +39,7 @@
 +	if ( retval == 2 )
 +		retval = 0;
 +    }
-+	
++
    if (retval>0)
      {
        fseek(priv->childfp,0,SEEK_SET);
@@ -58,7 +58,19 @@
  	    {
  	      if (viruses[0])
  		strncat(viruses," ",sizeof(viruses));
-@@ -1211,6 +1233,7 @@
+@@ -572,10 +594,8 @@
+       if (viruses[0])
+ 	priv->viruses=strdup(viruses);
+       else
+-	priv->viruses=strdup("please contact postmaster");
+-
+-      if ((priv->viruses)==NULL)
+ 	{
++	  priv->viruses=strdup("please contact postmaster");
+ 	  return(avfailcode);
+ 	}
+       return(SMFIS_REJECT);
+@@ -1211,6 +1231,7 @@
    if (AVFAILACTION==NULL) AVFAILACTION=CONF_AVFAILACTION;
    if (VIRUSACTION==NULL) VIRUSACTION=CONF_VIRUSACTION;
  
@@ -66,7 +78,7 @@
    if (strcasecmp(AVPRODUCT,"mcafee")==0)
      {
        FORMAT=FORMAT_MCAFEE;
-@@ -1225,10 +1248,17 @@
+@@ -1225,10 +1246,17 @@
      {
        FORMAT=FORMAT_FSAV;
      }
