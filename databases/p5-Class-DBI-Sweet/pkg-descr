@@ -1,0 +1,5 @@
+Class::DBI::Sweet provides convenient count, search, page, and cache
+functions in a sweet package. It integrates these functions with
+"Class::DBI" in a convenient and efficient way.
+
+WWW: http://search.cpan.org/dist/Class-DBI-Sweet/

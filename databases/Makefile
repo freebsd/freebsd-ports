@@ -154,6 +154,7 @@
     SUBDIR += p5-Class-DBI-Replication
     SUBDIR += p5-Class-DBI-SAK
     SUBDIR += p5-Class-DBI-SQLite
+    SUBDIR += p5-Class-DBI-Sweet
     SUBDIR += p5-Class-DBI-ToSax
     SUBDIR += p5-Class-DBI-Untaint
     SUBDIR += p5-Class-DBI-mysql
