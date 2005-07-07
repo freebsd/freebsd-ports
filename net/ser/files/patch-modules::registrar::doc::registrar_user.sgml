@@ -1,0 +1,51 @@
+
+$FreeBSD$
+
+--- modules/registrar/doc/registrar_user.sgml
++++ modules/registrar/doc/registrar_user.sgml
+@@ -29,7 +29,12 @@
+ 		    </listitem>
+ 		    <listitem>
+ 			<para>
+-			    <emphasis>sl - Stateless Replies</emphasis>.
++			    <emphasis>sl - Stateless Replies (if <varname>use_tm</varname> is 0)</emphasis>.
++			</para>
++		    </listitem>
++		    <listitem>
++			<para>
++			    <emphasis>tm - Transaction module (if <varname>use_tm</varname> is 1)</emphasis>.
+ 			</para>
+ 		    </listitem>
+ 	    	</itemizedlist>
+@@ -321,6 +326,31 @@
+ modparam("registrar", "retry_after", 30)
+ ...
+ 		</programlisting>
++	    </example>
++	</section>
++
++	<section>
++	    <title><varname>use_tm</varname> (integer)</title>
++	    <para>
++		If set to 1 then the registrar will use <function>t_reply()</function> function from
++		the tm module instead of <function>sl_send_reply()</function> function from the sl
++		module for sending replies.  This allows registration transactions to be processed
++		statefully if necessary.  When set to 1 script writer need to ensure that transaction
++		exists when <function>save()</function> is called, usually by calling
++		<function>t_newtran()</function>.
++	    </para>
++	    <para>
++		<emphasis>
++		    Default value is 0.
++		</emphasis>
++	    </para>
++	    <example>
++		<title>Set <varname>use_tm</varname> parameter</title>
++		<programlisting format="linespecific">
++...
++modparam("registrar", "use_tm", 1)
++...
++</programlisting>
+ 	    </example>
+ 	</section>
+ 

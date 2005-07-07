@@ -7,6 +7,7 @@
 
 PORTNAME=	ser
 PORTVERSION=	0.9.3
+#PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.berlios.de/pub/ser/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
@@ -15,23 +16,34 @@ MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A very fast and configurable SIP proxy
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client
-LIB_DEPENDS=	radiusclient.2:${PORTSDIR}/net/radiusclient
+LIB_DEPENDS=	radiusclient-ng.2:${PORTSDIR}/net/radiusclient \
+		xml2.5:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_PGSQL=	yes
 USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
+MAKE_ENV+=	"LDFLAGS=-L${LOCALBASE}/lib"
 
 MAN8=		ser.8
 MAN5=		ser.cfg.5
 MANCOMPRESSED=	no
 
-.include <bsd.port.pre.mk>
+.if !defined(WITHOUT_MYSQL)
+USE_MYSQL=	yes
+PLIST_SUB+=	MYSQL=""
+.else
+PLIST_SUB+=	MYSQL="@comment "
+MAKE_ENV+=	MYSQL=mysql
+.endif
 
-.if ${ARCH} != "i386"
-BROKEN=		"Broken pkg-plist on !i386"
+.if !defined(WITHOUT_POSTGRESQL)
+USE_PGSQL=	yes
+PLIST_SUB+=	POSTGRESQL=""
+.else
+PLIST_SUB+=	POSTGRESQL="@comment "
+MAKE_ENV+=	POSTGRESQL=postgres
 .endif
 
 post-install:
@@ -49,4 +61,4 @@ post-install:
 			${PREFIX}/etc/ser/radiusclient.conf; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

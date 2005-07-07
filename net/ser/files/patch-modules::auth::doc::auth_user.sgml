@@ -1,0 +1,44 @@
+
+$FreeBSD$
+
+--- modules/auth/doc/auth_user.sgml
++++ modules/auth/doc/auth_user.sgml
+@@ -33,7 +33,10 @@
+ 	    must be loaded before this module):
+ 	    <itemizedlist>
+ 		<listitem>
+-		    <para><emphasis>sl</emphasis> -- Stateless replies</para>
++		    <para><emphasis>sl</emphasis> -- Stateless replies (if <varname>use_tm</varname> is 0)</para>
++		</listitem>
++		<listitem>
++		    <para><emphasis>tm</emphasis> -- Transaction module (if <varname>use_tm</varname> is 1)</para>
+ 		</listitem>
+ 	    </itemizedlist>
+ 	</para>
+@@ -103,6 +106,26 @@
+ 		<title>rpid_suffix</title>
+ 		<programlisting format="linespecific">
+ modparam("auth", "rpid_suffix", "@1.2.3.4>")
++</programlisting>
++	    </example>
++	</section>
++	<section>
++	    <title><varname>use_tm</varname> (integer)</title>
++	    <para>
++		If set to 1 then the auth will use <function>t_reply()</function> function from
++		the tm module instead of <function>sl_send_reply()</function> function from the
++		sl module for sending replies.  This allows challenge responses to be processes
++		statefully if necessary.  When set to 1 script writer need to ensure that transaction
++		exists when <function>www_challenge()</function> or <function>proxy_challenge()</function>
++		is called, usually by calling <function>t_newtran()</function>.
++	    </para>
++	    <para>
++		Default value is 0.
++	    </para>
++	    <example>
++		<title>use_tm example</title>
++		<programlisting format="linespecific">
++modparam("auth", "use_tm", 1)
+ </programlisting>
+ 	    </example>
+ 	</section>

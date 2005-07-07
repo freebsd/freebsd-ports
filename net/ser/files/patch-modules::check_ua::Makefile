@@ -1,0 +1,19 @@
+
+$FreeBSD$
+
+--- modules/check_ua/Makefile.orig
++++ modules/check_ua/Makefile
+@@ -0,0 +1,13 @@
++# $Id: patch-modules::check_ua::Makefile,v 1.2 2005/04/05 13:10:07 netch Exp $
++#
++# example module makefile
++#
++# 
++# WARNING: do not run this directly, it should be run by the master Makefile
++
++include ../../Makefile.defs
++auto_gen=
++NAME=check_ua.so
++LIBS= 
++
++include ../../Makefile.modules
