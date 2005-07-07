@@ -382,6 +382,7 @@ lib/m3/pkg/m3core/src/unix/freebsd-4.%%ARCH%%/Ustat.i3
 lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Usyslog.i3
 lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Utime.i3
 lib/m3/pkg/m3core/src/unix/freebsd-4.%%ARCH%%/Utypes.i3
+%%AMD64%%lib/m3/pkg/m3core/src/unix/freebsd-4.%%ARCH%%/Uucontext.i3
 lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Uugid.i3
 lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Uuio.i3
 lib/m3/pkg/m3core/src/unix/freebsd-4.generic/Uutmp.i3
