@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	settitle
-PORTVERSION=	1.1
+PORTVERSION=	1.1.1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/settitle/
 
