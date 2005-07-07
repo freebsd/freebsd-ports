@@ -1,0 +1,13 @@
+--- src/Makefile.in.orig	Mon Dec 17 23:09:32 2001
++++ src/Makefile.in	Mon Oct 21 13:37:26 2002
+@@ -155,6 +155,10 @@
+ /* This holds special options for linking temacs
+    that should be used for linking anything else.  */
+ #ifndef LD_SWITCH_SYSTEM_TEMACS
++#if defined(__FreeBSD_version) && (__FreeBSD_version >= 500042)
++#define LD_SWITCH_SYSTEM_TEMACS -znocombreloc
++#else
+ #define LD_SWITCH_SYSTEM_TEMACS
++#endif
+ #endif
+ 

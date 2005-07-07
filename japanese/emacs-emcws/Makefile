@@ -7,7 +7,7 @@
 
 PORTNAME=	emcws
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	japanese editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
@@ -149,6 +149,13 @@ EMACS_BASE=${PREFIX}
 EMACS_BASE=${LOCALBASE}
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+CFLAGS:=	${CFLAGS:C/-O.?/-O0/g}
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
+.endif
+
 pre-everything::
 	@${CAT} ${FILESDIR}/emcws-message
 .if !defined(WITH_MENUBAR_FONTSET)
@@ -215,4 +222,4 @@ post-install:
 	@${ECHO_MSG} "====>"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
