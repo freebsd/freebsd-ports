@@ -1,5 +1,5 @@
 --- configure.orig	Tue Jun 14 02:01:04 2005
-+++ configure	Sat Jun 18 02:45:18 2005
++++ configure	Mon Jun 20 20:13:56 2005
 @@ -1774,7 +1774,7 @@
  fi
  
@@ -9,6 +9,15 @@
  
  # We need awk for the "check" target.  The system "awk" is bad on
  # some platforms.
+@@ -14028,7 +14028,7 @@
+                 bdbpfx="$bdbpfx $d/$v"
+             done
+         done
+-        BDB_VERSIONS="db-4 db4 db-4.3 db4.3 db43 db-4.2 db4.2 db42 db-4.1 db4.1 db41 db ''"
++        BDB_VERSIONS="db-4.3 db4.3 db43 db-4.2 db4.2 db42 db-4.1 db4.1 db41 db ''"
+         echo "$as_me:$LINENO: checking for BerkeleyDB > 4.0" >&5
+ echo $ECHO_N "checking for BerkeleyDB > 4.0... $ECHO_C" >&6
+         for d in $bdbpfx; do
 @@ -14037,8 +14037,8 @@
              for v in / $BDB_VERSIONS; do
                  if test -r "$d/include/$v/db.h"; then
