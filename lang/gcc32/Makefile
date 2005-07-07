@@ -9,12 +9,11 @@
 PORTNAME=	gcc
 PORTVERSION=	3.2.3
 PORTREVISION=	3
-CATEGORIES=	lang java
+CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		http://web.inter.NL.net/hcc/Haj.Ten.Brugge/:bc
 MASTER_SITE_SUBDIR=	releases/gcc-${PORTVERSION}
 DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
-		gcc-testsuite-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-g++-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-g77-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-objc-${PORTVERSION}${EXTRACT_SUFX}
@@ -86,14 +85,6 @@ pre-configure:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 	@${REINPLACE_CMD} -e 's/elf_x86_64/elf_x86_64_fbsd/g' \
 	    ${SRCDIR}/gcc/config/i386/freebsd64.h
-
-post-build:
-	@echo "Consider running 'make check' before 'make install',"
-	@echo "especially if you have not built port on -STABLE or -CURRENT."
-	@echo "This suggestion assumes that you have dejagnu port installed."
-
-check: build
-	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 pre-install:
 	${MKDIR} ${PREFIX}/info
