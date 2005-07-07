@@ -1,0 +1,92 @@
+#
+# This should not be needed.  The amd64 port of ezm3 has
+# compiler bugs that manifest as sorting problems.  Once that
+# is fixed, this can go away.
+#
+--- suplib/src/ChannelMux.m3	Sun Oct 26 11:09:31 2003
++++ suplib/src/ChannelMux.m3	Tue Mar  4 11:26:19 2003
+@@ -778,5 +778,5 @@
+ PROCEDURE ChanPut(self: Channel;
+                   READONLY arr: ARRAY OF CHAR)
++  RAISES {Wr.Failure, Thread.Alerted} =
+-  RAISES {Thread.Alerted, Wr.Failure} =
+   VAR
+     pos := 0;
+--- suplib/src/EscapedWr.m3	Sun Oct 26 11:10:20 2003
++++ suplib/src/EscapedWr.m3	Tue Mar  4 11:26:20 2003
+@@ -46,5 +46,5 @@
+ 
+ PROCEDURE Close(self: T)
++  RAISES {Wr.Failure, Thread.Alerted} =
+-  RAISES {Thread.Alerted, Wr.Failure} =
+   BEGIN
+     TRY
+@@ -63,5 +63,5 @@
+ 
+ PROCEDURE Flush(self: T)
++  RAISES {Wr.Failure, Thread.Alerted} =
+-  RAISES {Thread.Alerted, Wr.Failure} =
+   BEGIN
+     Seek(self, self.cur);
+@@ -91,5 +91,5 @@
+ 
+ PROCEDURE Seek(self: T; n: CARDINAL)
++  RAISES {Wr.Failure, Thread.Alerted} =
+-  RAISES {Thread.Alerted, Wr.Failure} =
+   VAR
+     ch: CHAR;
+--- suplib/src/GzipWr.m3	Sun Oct 26 11:11:22 2003
++++ suplib/src/GzipWr.m3	Tue Mar  4 11:26:23 2003
+@@ -58,5 +58,5 @@
+ 
+ PROCEDURE Close(self: T)
++  RAISES {Wr.Failure, Thread.Alerted} =
+-  RAISES {Thread.Alerted, Wr.Failure} =
+   VAR
+     status: INTEGER;
+@@ -112,5 +112,5 @@
+ 
+ PROCEDURE Flush(self: T)
++  RAISES {Wr.Failure, Thread.Alerted} =
+-  RAISES {Thread.Alerted, Wr.Failure} =
+   VAR
+     status: INTEGER;
+@@ -170,5 +170,5 @@
+ 
+ PROCEDURE Seek(self: T; n: CARDINAL)
++  RAISES {Wr.Failure, Thread.Alerted} =
+-  RAISES {Thread.Alerted, Wr.Failure} =
+   VAR
+     oldLo: CARDINAL;
+--- suplib/src/MD5Wr.m3	Sun Oct 26 11:10:48 2003
++++ suplib/src/MD5Wr.m3	Tue Mar  4 11:26:24 2003
+@@ -48,5 +48,5 @@
+ 
+ PROCEDURE Close(self: T)
++  RAISES {Wr.Failure, Thread.Alerted} =
+-  RAISES {Thread.Alerted, Wr.Failure} =
+   BEGIN
+     IF self.closeChild THEN
+@@ -56,5 +56,5 @@
+ 
+ PROCEDURE Flush(self: T)
++  RAISES {Wr.Failure, Thread.Alerted} =
+-  RAISES {Thread.Alerted, Wr.Failure} =
+   BEGIN
+     Seek(self, self.cur);
+@@ -96,5 +96,5 @@
+ 
+ PROCEDURE Seek(self: T; n: CARDINAL)
++  RAISES {Wr.Failure, Thread.Alerted} =
+-  RAISES {Thread.Alerted, Wr.Failure} =
+   BEGIN
+     <* ASSERT n = self.cur *>
+--- suptcp/src/POSIX/SupTCP.m3	Sun Oct 26 11:08:21 2003
++++ suptcp/src/POSIX/SupTCP.m3	Sun Apr  6 16:48:58 2003
+@@ -289,5 +289,5 @@
+ PROCEDURE GetBytesFD(
+     t: T; VAR arr: ARRAY OF CHAR; timeout: LONGREAL) : CARDINAL
++    RAISES {Rd.Failure, Thread.Alerted, ConnFD.TimedOut} =
+-    RAISES {Rd.Failure, ConnFD.TimedOut, Thread.Alerted} =
+   VAR 
+     len: INTEGER;  
