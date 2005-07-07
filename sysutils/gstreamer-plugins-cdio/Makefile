@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	audio
+CATEGORIES=	sysutils
 PORTREVISION=	0
 
 COMMENT=	Gstreamer compact disc input and control library
