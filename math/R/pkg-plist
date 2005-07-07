@@ -58,11 +58,15 @@ lib/R/doc/html/search/index.txt
 lib/R/doc/html/template.html
 lib/R/doc/html/thanks.html
 lib/R/doc/html/up.jpg
+lib/R/doc/manual/R-FAQ.html
 lib/R/doc/manual/R-admin.html
+lib/R/doc/manual/R-data.html
+lib/R/doc/manual/R-exts.html
+lib/R/doc/manual/R-intro.html
+lib/R/doc/manual/R-lang.html
 lib/R/etc/Makeconf
 lib/R/etc/Renviron
 lib/R/etc/repositories
-lib/R/include/libintl.h
 lib/R/include/R.h
 lib/R/include/R_ext/Applic.h
 lib/R/include/R_ext/Arith.h

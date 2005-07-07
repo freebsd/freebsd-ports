@@ -8,6 +8,7 @@
 
 PORTNAME=	R
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -48,6 +49,7 @@ CONFIGURE_ARGS=	--with-lapack="-llapack" --with-blas="-lblas"
 MAN1=		R.1
 
 GNU_CONFIGURE=	yes
+USE_GETTEXT=	yes
 USE_XLIB=	yes
 USE_PERL5=	yes
 CONFIGURE_ENV=	FFLAGS="${FFLAGS}" \
@@ -77,6 +79,11 @@ check-all: build
 
 .if ${OSVERSION} < 500000
 CONFIGURE_ARGS+=	--disable-mbcs
+.endif
+
+.if ${OSVERSION} < 600000
+CONFIGURE_ENV+=	MAKEINFO_CMD=${LOCALBASE}/bin/makeinfo
+BUILD_DEPENDS+=	makeinfo:${PORTSDIR}/print/texinfo
 .endif
 
 .include <bsd.port.post.mk>
