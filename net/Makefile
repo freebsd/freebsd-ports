@@ -875,6 +875,7 @@
     SUBDIR += wmping
     SUBDIR += wmq3
     SUBDIR += wmwave
+    SUBDIR += wmwifi
     SUBDIR += wol
     SUBDIR += wping
     SUBDIR += x11vnc
