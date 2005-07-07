@@ -589,6 +589,7 @@
     SUBDIR += roap
     SUBDIR += rot
     SUBDIR += rotix
+    SUBDIR += rtf2html
     SUBDIR += rtfreader
     SUBDIR += rtfx
     SUBDIR += rubber
