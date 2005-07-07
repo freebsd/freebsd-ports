@@ -12308,6 +12308,7 @@ wmusic		ports/audio/wmusic
 wmwave		ports/net/wmwave
 wmweather	ports/misc/wmweather
 wmweather+	ports/misc/wmweather+
+wmwifi		ports/net/wmwifi
 wmwork		ports/misc/wmwork
 wmx10		ports/misc/wmx10
 wmxss		ports/x11/wmxss
