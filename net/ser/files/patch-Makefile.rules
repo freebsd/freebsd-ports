@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.rules
++++ Makefile.rules
+@@ -18,7 +18,7 @@
+ 	$(CC) $(CFLAGS) $(DEFS) -c $< -o $@
+ 
+ %.d: %.c $(ALLDEP)
+-	@set -e; $(MKDEP) $(DEFS) $< \
++	@set -e; $(MKDEP) $(CFLAGS) $(DEFS) $< \
+ 	|  sed 's#\(\($*D)\)\?$(*F)\)\.o[ :]*#$*.o $@ : #g' > $@; \
+ 	[ -s $@ ] || rm -f $@
+ 

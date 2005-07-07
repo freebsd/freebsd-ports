@@ -1,23 +1,27 @@
 
 $FreeBSD$
 
---- Makefile.orig	Tue Jul 27 02:18:34 2004
-+++ Makefile	Tue Jul 27 21:01:36 2004
-@@ -44,10 +44,10 @@
+--- Makefile.orig
++++ Makefile
+@@ -45,13 +45,12 @@
+ skip_modules?=
  
  # if not set on the cmd. line or the env, exclude this modules:
- exclude_modules?= 			cpl cpl-c extcmd \
+-exclude_modules?= 			cpl ext extcmd \
 -							postgres snmp \
-+							snmp \
++exclude_modules?= 			cpl extcmd \
++							$(POSTGRESQL) snmp \
  							im \
 -							jabber mysql \
--							auth_radius group_radius uri_radius 
-+							jabber \
-+							group_radius uri_radius 
++							jabber $(MYSQL) \
+ 							cpl-c \
+-							auth_radius group_radius uri_radius avp_radius \
+-							pa
++							group_radius uri_radius avp_radius
  # always exclude the CVS dir
  override exclude_modules+= CVS $(skip_modules)
  
-@@ -258,7 +258,7 @@
+@@ -263,7 +262,7 @@
  		chmod 644 $(cfg-prefix)/$(cfg-dir)ser.cfg.sample
  		if [ -z "${skip_cfg_install}" -a \
  				! -f $(cfg-prefix)/$(cfg-dir)ser.cfg ]; then \
@@ -26,7 +30,7 @@ $FreeBSD$
  				$(cfg-prefix)/$(cfg-dir)ser.cfg; \
  		fi
  #		$(INSTALL-CFG) etc/ser.cfg $(cfg-prefix)/$(cfg-dir)
-@@ -267,10 +267,10 @@
+@@ -272,10 +271,10 @@
  		$(INSTALL-TOUCH) $(bin-prefix)/$(bin-dir)/ser 
  		$(INSTALL-BIN) ser $(bin-prefix)/$(bin-dir)
  		$(INSTALL-TOUCH)   $(bin-prefix)/$(bin-dir)/sc
@@ -38,4 +42,4 @@ $FreeBSD$
 +		$(INSTALL-SCRIPT) scripts/ser_mysql.sh  $(bin-prefix)/$(bin-dir)
  		$(INSTALL-TOUCH)   $(bin-prefix)/$(bin-dir)/gen_ha1
  		$(INSTALL-BIN) utils/gen_ha1/gen_ha1 $(bin-prefix)/$(bin-dir)
- 
+ 		$(INSTALL-TOUCH)   $(bin-prefix)/$(bin-dir)/serunix

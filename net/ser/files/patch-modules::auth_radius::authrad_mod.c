@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- modules/auth_radius/authrad_mod.c.orig	Mon Jul 19 01:56:23 2004
-+++ modules/auth_radius/authrad_mod.c	Tue Jul 27 21:50:52 2004
-@@ -64,7 +64,7 @@
+--- modules/auth_radius/authrad_mod.c.orig
++++ modules/auth_radius/authrad_mod.c
+@@ -69,7 +69,7 @@
  /*
   * Module parameter variables
   */

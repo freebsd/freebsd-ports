@@ -1,0 +1,187 @@
+Index: parser/case_serv.h
+===================================================================
+RCS file: parser/case_serv.h
+diff -N parser/case_serv.h
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ parser/case_serv.h	20 Dec 2004 18:52:54 -0000	1.1
+@@ -0,0 +1,45 @@
++/*
++ * $Id: patch-server,v 1.2 2005/04/05 13:10:08 netch Exp $
++ *
++ * Subject Header Field Name Parsing Macros
++ *
++ * Copyright (C) 2001-2003 Fhg Fokus
++ *
++ * This file is part of ser, a free SIP server.
++ *
++ * ser is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation; either version 2 of the License, or
++ * (at your option) any later version
++ *
++ * For a license to use the ser software under conditions
++ * other than those described here, or to purchase support for this
++ * software, please contact iptel.org by e-mail at the following addresses:
++ *    info@iptel.org
++ *
++ * ser is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program; if not, write to the Free Software
++ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
++ */
++
++
++#ifndef CASE_SERV_H
++#define CASE_SERV_H
++
++
++#define serv_CASE                   \
++    p += 4;                         \
++    if (LOWER_BYTE(*p) == 'e' && LOWER_BYTE(p[1]) == 'r') {   \
++            hdr->type = HDR_SERVER; \
++            p+= 2;                  \
++	    goto dc_end;            \
++    }                               \
++    goto other;
++
++
++#endif /* CASE_SERV_H */
+Index: parser/hf.c
+===================================================================
+RCS file: /cvsroot/ser/sip_router/parser/hf.c,v
+retrieving revision 1.21
+retrieving revision 1.22
+diff -d -u -d -u -r1.21 -r1.22
+--- parser/hf.c	3 Dec 2004 17:11:36 -0000	1.21
++++ parser/hf.c	20 Dec 2004 18:52:54 -0000	1.22
+@@ -130,10 +130,10 @@
+ 
+ 		case HDR_ACCEPTLANGUAGE:
+ 			break;
+-			
++
+ 		case HDR_ORGANIZATION:
+ 			break;
+-			
++
+ 		case HDR_PRIORITY:
+ 			break;
+ 
+@@ -156,6 +156,9 @@
+ 
+ 		case HDR_RPID:
+ 			free_to(hf->parsed);
++			break;
++
++		case HDR_SERVER:
+ 			break;
+ 
+ 		default:
+Index: parser/hf.h
+===================================================================
+RCS file: /cvsroot/ser/sip_router/parser/hf.h,v
+retrieving revision 1.16
+retrieving revision 1.17
+diff -d -u -d -u -r1.16 -r1.17
+--- parser/hf.h	3 Dec 2004 17:11:36 -0000	1.16
++++ parser/hf.h	20 Dec 2004 18:52:54 -0000	1.17
+@@ -73,7 +73,8 @@
+ #define HDR_CONTENTDISPOSITION (1 << 27)  /* Content-Disposition hdr field */
+ #define HDR_DIVERSION          (1 << 28)  /* Diversion header field */
+ #define HDR_RPID               (1 << 29)  /* Remote-Party-ID header field */
+-#define HDR_OTHER              (1 << 30)  /* Some other header field */
++#define HDR_SERVER             (1 << 30)  /* Server header field */
++#define HDR_OTHER              (1 << 31)  /* Some other header field */
+ 
+ 
+ /* returns true if the header links allocated memory on parse field */
+Index: parser/keys.h
+===================================================================
+RCS file: /cvsroot/ser/sip_router/parser/keys.h,v
+retrieving revision 1.11
+retrieving revision 1.12
+diff -d -u -d -u -r1.11 -r1.12
+--- parser/keys.h	3 Dec 2004 17:11:36 -0000	1.11
++++ parser/keys.h	20 Dec 2004 18:52:54 -0000	1.12
+@@ -115,6 +115,8 @@
+ #define _pt_d_ 0x64617470   /* "pt-d" */
+ #define _ispo_ 0x6f707369   /* "ispo" */
+ #define _siti_ 0x69746973   /* "siti" */
++
++#define _serv_ 0x76726573   /* "serv" */
+ 
+ #define _dive_ 0x65766964   /* "dive" */
+ #define _rsio_ 0x6f697372   /* "rsio" */
+Index: parser/msg_parser.c
+===================================================================
+RCS file: /cvsroot/ser/sip_router/parser/msg_parser.c,v
+retrieving revision 1.44
+retrieving revision 1.45
+diff -d -u -d -u -r1.44 -r1.45
+--- parser/msg_parser.c	3 Dec 2004 17:11:36 -0000	1.44
++++ parser/msg_parser.c	20 Dec 2004 18:52:54 -0000	1.45
+@@ -204,6 +204,7 @@
+ 	        case HDR_ACCEPTDISPOSITION:
+ 	        case HDR_DIVERSION:
+ 	        case HDR_RPID:
++	        case HDR_SERVER:
+ 		case HDR_OTHER:
+ 			/* just skip over it */
+ 			hdr->body.s=tmp;
+@@ -406,6 +407,10 @@
+ 		        case HDR_RPID:
+ 				if (msg->rpid==0) msg->rpid = hf;
+ 				msg->parsed_flag|=HDR_RPID;
++				break;
++		        case HDR_SERVER:
++				if (msg->server==0) msg->server = hf;
++				msg->parsed_flag|=HDR_SERVER;
+ 				break;
+ 			case HDR_VIA:
+ 				msg->parsed_flag|=HDR_VIA;
+Index: parser/msg_parser.h
+===================================================================
+RCS file: /cvsroot/ser/sip_router/parser/msg_parser.h,v
+retrieving revision 1.49
+retrieving revision 1.50
+diff -d -u -d -u -r1.49 -r1.50
+--- parser/msg_parser.h	3 Dec 2004 17:11:36 -0000	1.49
++++ parser/msg_parser.h	20 Dec 2004 18:52:54 -0000	1.50
+@@ -193,6 +193,7 @@
+ 	struct hdr_field* accept_disposition;
+ 	struct hdr_field* diversion;
+ 	struct hdr_field* rpid;
++	struct hdr_field* server;
+ 
+ 	char* eoh;        /* pointer to the end of header (if found) or null */
+ 	char* unparsed;   /* here we stopped parsing*/
+Index: parser/parse_hname2.c
+===================================================================
+RCS file: /cvsroot/ser/sip_router/parser/parse_hname2.c,v
+retrieving revision 1.19
+retrieving revision 1.20
+diff -d -u -d -u -r1.19 -r1.20
+--- parser/parse_hname2.c	3 Dec 2004 17:11:36 -0000	1.19
++++ parser/parse_hname2.c	20 Dec 2004 18:52:54 -0000	1.20
+@@ -84,6 +84,7 @@
+ #include "case_supp.h"     /* Supported */
+ #include "case_dive.h"     /* Diversion */
+ #include "case_remo.h"     /* Remote-Party-ID */
++#include "case_serv.h"     /* Server */
+ 
+ 
+ #define READ(val) \
+@@ -114,7 +115,8 @@
+         case _subj_: subj_CASE; \
+         case _user_: user_CASE; \
+         case _dive_: dive_CASE; \
+-        case _remo_: remo_CASE;
++        case _remo_: remo_CASE; \
++        case _serv_: serv_CASE;
+ 
+ 
+ #define PARSE_COMPACT(id)          \
