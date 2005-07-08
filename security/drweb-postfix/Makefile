@@ -7,6 +7,7 @@
 
 PORTNAME=	drweb-postfix
 PORTVERSION=	4.32.1
+PORTREVISION=	1
 CATEGORIES=	security mail
 MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/FreeBSD/49/ \
 		ftp://ftp.drweb.ru/pub/unix/FreeBSD/53/
