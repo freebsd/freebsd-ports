@@ -8,13 +8,14 @@ bin/gphoto2
 %%NLS%%share/locale/de/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gphoto2.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gphoto2.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gphoto2.mo
-%%NLS%%share/locale/no/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gphoto2.mo
@@ -24,4 +25,5 @@ bin/gphoto2
 %%NLS%%share/locale/sv/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gphoto2.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/gphoto2.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
