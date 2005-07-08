@@ -217,6 +217,7 @@
     SUBDIR += doc++
     SUBDIR += doctorj
     SUBDIR += dotconf
+    SUBDIR += dotconf++
     SUBDIR += doxygen
     SUBDIR += dparser
     SUBDIR += dprog
