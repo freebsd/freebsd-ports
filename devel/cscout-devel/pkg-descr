@@ -1,0 +1,29 @@
+CScout is a source code analyzer and refactoring browser for
+collections of C programs.  It can process workspaces of multiple
+projects (we define a project as a collection of C source files
+that are linked together) mapping the complexity introduced by the
+C preprocessor back into the original C source code files.  CScout
+takes advantage of modern hardware advances (fast processors and
+large memory capacities) to analyze C source code beyond the level
+of detail and accuracy provided by  current compilers and linkers.
+The analysis CScout performs takes into account the identifier
+scopes introduced by the C preprocessor and the C language proper
+scopes and namespaces.  CScout has already been applied on projects
+ranging from tens of thousands of lines, like the apache web server
+(using 36MB of memory, taking 6 minutes on a 500MHz Celeron processor),
+to above a million lines of code, like the FreeBSD kernel (using
+813MB of memory, taking 3 hours 42 minutes on a 900MHz Itanium 2
+processor).
+
+This free unsupported version of CScout is distributed under the terms
+of the CScout Public License, which is available in the accompanying
+documentation.
+
+Note that this is a development version, and there may be updates of
+this package with the same version number.  This will cause the
+package install to fail the checksum check.  To solve this problem,
+*after confirming that the archive is correct*, perform:
+
+  make makesum
+
+WWW: http://www.spinellis.gr/cscout/
