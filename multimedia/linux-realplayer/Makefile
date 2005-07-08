@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	linux-realplayer
-PORTVERSION=	10.0.4
-PORTREVISION=	1
+PORTVERSION=	10.0.5
 CATEGORIES=	multimedia audio linux
-MASTER_SITES=	https://helixcommunity.org/download.php/1145/
-DISTNAME=	RealPlayer-10.0.4.750-20050401.i586
+MASTER_SITES=	https://helixcommunity.org/download.php/1343/
+DISTNAME=	RealPlayer-10.0.5.756-20050513.i586
 EXTRACT_SUFX=	.rpm
 
 MAINTAINER=	ports@FreeBSD.org
@@ -21,7 +20,7 @@ RUN_DEPENDS=	\
 	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2
 
 WRKSRC=		${WRKDIR}/usr/local/RealPlayer
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
 RESTRICTED=	"Redistribution not allowed"
