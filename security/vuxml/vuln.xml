@@ -32,6 +32,47 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d177d9f9-e317-11d9-8088-00123f0f7307">
+    <topic>nwclient -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>nwclient</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Insecure file permissions, network access control and DNS
+	  usage put systems that use Legato NetWorker at risk.</p>
+	<p>When the software is running, several files that contain
+	  sensitive information are created with insecure permissions.
+	  The information exposed include passwords and can therefore
+	  be used for privilege elevation.</p>
+	<p>An empty &quot;servers&quot; file, which should normally
+	  contain hostnames of authorized backup servers, may allow
+	  unauthorized backups to be made. Sensitive information can
+	  be extracted from these backups.</p>
+	<p>When reverse DNS fails for the Legato client IP a weak
+	  authorization scheme, containing a flaw that allows
+	  unauthorized access, is used. This may allow unauthorized
+	  access.</p>
+      </body>
+    </description>
+    <references>
+      <bid>3564</bid>
+      <bid>3840</bid>
+      <bid>3842</bid>
+      <cvename>CAN-2001-0910</cvename>
+      <cvename>CAN-2002-0113</cvename>
+      <cvename>CAN-2002-0114</cvename>
+      <url>http://portal1.legato.com/resources/bulletins/372.html</url>
+    </references>
+    <dates>
+      <discovery>2002-01-10</discovery>
+      <entry>2005-07-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="107692a1-ee6c-11d9-8310-0001020eed82">
     <topic>acroread -- insecure temporary file creation</topic>
     <affects>
