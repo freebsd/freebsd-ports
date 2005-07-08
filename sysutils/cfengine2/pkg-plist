@@ -31,5 +31,16 @@ sbin/vicf
 %%DOCSDIR%%/cfengine-Anomalies.html
 %%DOCSDIR%%/cfengine-Reference.html
 %%DOCSDIR%%/cfengine-Tutorial.html
+%%DOCSDIR%%/cfengine-Anomalies.pdf
+%%DOCSDIR%%/cfengine-Reference.pdf
+%%DOCSDIR%%/cfengine-Tutorial.pdf
+%%DOCSDIR%%/cfengine-Anomalies.ps
+%%DOCSDIR%%/cfengine-Reference.ps
+%%DOCSDIR%%/cfengine-Tutorial.ps
+%%DATADIR%%/README
+%%DATADIR%%/ChangeLog
+%%DATADIR%%/INSTALL
+%%DATADIR%%/NEWS
 @dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%

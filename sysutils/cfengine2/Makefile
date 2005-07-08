@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	cfengine
-PORTVERSION=	2.1.13
+PORTVERSION=	2.1.15
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.iu.hio.no/pub/cfengine/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	paul@aps.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A systems administration tool for networks
 
 USE_OPENSSL=	yes
@@ -39,10 +39,4 @@ LDFLAGS+=	-L${LOCALBASE}/lib/db41 -ldb41
 .error WITH_BDB_VER must be 41 or 42
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

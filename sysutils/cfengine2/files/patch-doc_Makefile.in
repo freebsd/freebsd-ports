@@ -1,51 +1,18 @@
---- doc/Makefile.in.orig	Mon Sep 13 19:37:05 2004
-+++ doc/Makefile.in	Mon Sep 13 19:39:34 2004
-@@ -70,7 +70,7 @@
- docDATA_INSTALL = $(INSTALL_DATA)
- htmlDATA_INSTALL = $(INSTALL_DATA)
- psDATA_INSTALL = $(INSTALL_DATA)
--DATA = $(doc_DATA) $(html_DATA) $(ps_DATA)
-+DATA = $(doc_DATA) $(html_DATA)
- DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
- ACLOCAL = @ACLOCAL@
- AMDEP_FALSE = @AMDEP_FALSE@
-@@ -184,18 +184,18 @@
- target_vendor = @target_vendor@
- man_MANS = cfengine.8 cfagent.8  cfenvd.8  cfenvgraph.8  cfexecd.8  cfkey.8  cfrun.8  cfservd.8
- info_TEXINFOS = cfengine-Reference.texinfo cfengine-Tutorial.texinfo cfengine-Anomalies.texinfo
--docdir = $(prefix)/doc/$(PACKAGE)-$(VERSION)
-+docdir = $(prefix)/share/doc/cfengine
- doc_DATA = 
- 
+--- doc/Makefile.in.orig   Thu Jul  7 13:32:07 2005
++++ doc/Makefile.in Thu Jul  7 13:37:09 2005
+@@ -205,14 +205,14 @@
+
  # Info used in building and installing HTML files
+ htmlfiles = $(info_TEXINFOS:.texinfo=.html)
 -htmldir = $(pkgdatadir)/html
 +htmldir = $(docdir)
- htmlfiles = cfengine-Reference.html cfengine-Tutorial.html cfengine-Anomalies.html
  html_DATA = $(htmlfiles)
- 
+
  # Info used in building and installing Postscript files
- psfiles = cfengine-Tutorial.ps cfengine-Reference.ps cfengine-Anomalies.ps
- pdffiles = cfengine-Tutorial.pdf cfengine-Reference.pdf cfengine-Anomalies.pdf
--psdir = $(pkgdatadir)/doc
-+psdir = $(docdir)
- ps_DATA = $(psfiles) $(pdffiles)
- MAKEINFOHTML = $(MAKEINFO) --html --no-split
- 
-@@ -709,7 +709,7 @@
- info-am: $(INFO_DEPS)
- 
- install-data-am: install-docDATA install-htmlDATA install-info-am \
--	install-man install-psDATA
-+	install-man
- 
- install-exec-am:
- 
-@@ -769,7 +769,7 @@
- ps-am: $(PSS)
- 
- uninstall-am: uninstall-docDATA uninstall-htmlDATA uninstall-info-am \
--	uninstall-man uninstall-psDATA
-+	uninstall-man
- 
- uninstall-man: uninstall-man8
- 
+ psfiles = $(info_TEXINFOS:.texinfo=.ps)
+ pdffiles = $(info_TEXINFOS:.texinfo=.pdf)
+ dvifiles = $(info_TEXINFOS:.texinfo=.dvi)
+-docdir = $(pkgdatadir)/doc
++docdir = $(prefix)/share/doc/cfengine
+ doc_DATA = $(psfiles) $(pdffiles)
+
