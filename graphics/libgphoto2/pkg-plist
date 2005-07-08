@@ -18,6 +18,7 @@ include/gphoto2/gphoto2-setting.h
 include/gphoto2/gphoto2-version.h
 include/gphoto2/gphoto2-widget.h
 include/gphoto2/gphoto2.h
+lib/gphoto2/%%VERSION%%/libgphoto2_adc65.so
 lib/gphoto2/%%VERSION%%/libgphoto2_agfa_cl20.so
 lib/gphoto2/%%VERSION%%/libgphoto2_aox.so
 lib/gphoto2/%%VERSION%%/libgphoto2_barbie.so
@@ -98,6 +99,8 @@ libdata/pkgconfig/libgphoto2.pc
 %%NLS%%share/locale/de/LC_MESSAGES/libgphoto2_port-0.mo
 %%NLS%%share/locale/es/LC_MESSAGES/libgphoto2-2.mo
 %%NLS%%share/locale/es/LC_MESSAGES/libgphoto2_port-0.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/libgphoto2-2.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/libgphoto2_port-0.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libgphoto2-2.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libgphoto2_port-0.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/libgphoto2-2.mo
