@@ -139,7 +139,7 @@ $FreeBSD$
  		LIBS= -pthread -lfl  #dlopen is in libc
  	else
 -		LIBS= -lfl  #dlopen is in libc
-+		LIBS= -lfl -L$(LOCALBASE)/lib -lsiplog #dlopen is in libc
++		LIBS= -lfl -L$(LOCALBASE)/lib #dlopen is in libc
  	endif
  	YACC=yacc
  endif
