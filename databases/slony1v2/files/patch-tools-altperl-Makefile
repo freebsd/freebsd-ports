@@ -1,0 +1,19 @@
+--- tools/altperl/Makefile.dist	Wed Jul  6 11:31:10 2005
++++ tools/altperl/Makefile	Wed Jul  6 11:31:45 2005
+@@ -13,6 +13,8 @@
+ DISTFILES = Makefile ToDo README $(wildcard *.pl) $(wildcard *.pm) slon_tools.conf-sample
+ 
+ all:
++ifdef toolsbin
++
+ ifndef PERL
+ 	@echo "The altperl tools require that Perl be installed."
+ 	exit 1;
+@@ -31,6 +33,7 @@
+                        $$file > $$tmpname; \
+ 		chmod 755 $$tmpname; \
+ 	done
++endif
+ 
+ install: all installdirs
+ ifndef toolsbin

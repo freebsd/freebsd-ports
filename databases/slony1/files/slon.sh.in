@@ -20,7 +20,7 @@ rcvar=`set_rcvar`
 
 pidfile="/var/run/$name.pid"
 command="%%PREFIX%%/bin/slon"
-command_args="-f %%PREFIX%%/etc/$name.conf -p $pidfile"
+command_args="-f %%PREFIX%%/etc/$name.conf -p $pidfile &"
 required_files="%%PREFIX%%/etc/$name.conf"
 
 # read configuration and set defaults
