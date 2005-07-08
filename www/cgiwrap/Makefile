@@ -7,96 +7,108 @@
 
 PORTNAME=	cgiwrap
 PORTVERSION=	3.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	freebsd@jdc.parodius.com
-COMMENT=	Securely execute ~user CGI scripts
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-httpd-user=${WWWOWN} \
-		--with-install-group=${WWWGRP} \
-		--with-install-dir=${WITH_MAIN_CGIDIR} \
-		--with-cgi-dir=${WITH_USER_CGIDIR} \
-		--with-local-contact=${WITH_EMAIL} \
-		--with-allow-file=${WITH_ALLOWFILE} \
-		--with-deny-file=${WITH_DENYFILE}
+COMMENT=	Securely execute Web CGI scripts
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-## Available knobs:
+OPTIONS=	CGI_OWNER "Check CGI file owner" on \
+		CGI_GROUP "Check CGI file group" on \
+		CGI_SETUID "Check CGI file setuid permissions" on \
+		CGI_SETGID "Check CGI file setgid permissions" on \
+		CGI_GROUP_WRITABLE "Check CGI g+w file permissions" on \
+		CGI_WORLD_WRITABLE "Check CGI o+w file permissions" on \
+		NPH "Enable nph binaries" off \
+		DEBUG "Enable cgiwrapd binaries" off
+
 ##
-##   WITH_MAIN_CGIDIR:     location of the cgiwrap binaries
+# INSTALL_DIR
 #
-# This is the directory where the cgiwrap binaries (i.e. the setuid
-# root binaries) get installed to.
+# Specify the location of the cgiwrap binaries.  This is the directory
+# where the cgiwrap binaries get installed in.
 #
-WITH_MAIN_CGIDIR?=	${PREFIX}/www/cgi-bin
+INSTALL_DIR?=	${PREFIX}/www/cgi-bin
 
-##   WITH_USER_CGIDIR:     location of the CGI directory per user
-##                         account (i.e. public_html/cgi-bin)
+##
+# USER_CGIDIR
 #
-# Set this to the directory (relative to each user's home) where CGI
-# scripts will be found.  Common alternate values are "www/cgi-bin"
-# (a.k.a. ~user/www/cgi-bin) and "cgi-bin" (a.k.a. ~user/cgi-bin)
+# Specify the location of the CGI directory ~user accounts will store
+# CGIs in.  This is "home directory relative".  Alternatives include
+# "www/cgi-bin" and "cgi-bin".
 #
-WITH_USER_CGIDIR?=	public_html/cgi-bin
+USER_CGIDIR?=	public_html/cgi-bin
 
-##   WITH_ALLOWFILE:       location/name of the cgiwrap.allow ACL file
-##   WITH_DENYFILE:        location/name of the cgiwrap.deny ACL file
+##
+# ALLOW_FILE
+# DENY_FILE
 #
-WITH_ALLOWFILE?=	${PREFIX}/etc/${PORTNAME}.allow
-WITH_DENYFILE?=		${PREFIX}/etc/${PORTNAME}.deny
+# Full path to the allow and deny files for CGI access.  These files
+# contain the username of the UNIX account who will be allowed/denied
+# using the cgiwrap binary.
+#
+ALLOW_FILE?=	${PREFIX}/etc/${PORTNAME}.allow
+DENY_FILE?=	${PREFIX}/etc/${PORTNAME}.deny
 
-##   WITH_EMAIL:           cgiwrap administrator's Email address
+##
+# LOG_FILE
 #
-WITH_EMAIL?=		webmaster@dummy-host.example.com
-
-##   WITH_LOGGING:         enables cgiwrap logging; specifies the
-##                         path and filename of the logfile
+# Enables cgiwrap logging (when a user called cgiwrap, its arguments,
+# and who ran it).  Specify the full path to the logfile.
 #
-.if defined(WITH_LOGGING)
-CONFIGURE_ARGS+=	--with-logging-file=${WITH_LOGGING}
-.endif
-
-##   WITH_DEBUG:           enables cgiwrap debugging support, via
-##                         the 'cgiwrapd' binary
-#
-.if defined(WITH_DEBUG)
-PLIST_SUB+=	CGIWRAPDFLAG=
+.if defined(LOG_FILE)
+CONFIGURE_ARGS+=	--with-logging-file=${LOG_FILE}
 .else
-PLIST_SUB+=	CGIWRAPDFLAG="@comment "
+CONFIGURE_ARGS+=	--without-logging-file
 .endif
 
-##   WITHOUT_CHECK_OWNER:  disable CGI file ownership checks
-##   WITHOUT_CHECK_GROUP:  disable CGI file group checks
-##   WITHOUT_CHECK_SETUID: disable CGI file setuid permissions check
-##   WITHOUT_CHECK_SETGID: disable CGI file setgid permissions check
-##   WITHOUT_CHECK_GROUP_WRITABLE:
-##          disable CGI file group-writable permissions check
-##   WITHOUT_CHECK_WORLD_WRITABLE:
-##          disable CGI file world-writable permissions check
-#
-.if defined(WITHOUT_CHECK_OWNER)
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-httpd-user=${WWWOWN} \
+		--with-install-group=${WWWGRP} \
+		--with-install-dir=${INSTALL_DIR} \
+		--with-cgi-dir=${USER_CGIDIR} \
+		--with-allow-file=${ALLOW_FILE} \
+		--with-deny-file=${DENY_FILE} \
+		--with-wall
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITH_CGI_OWNER)
 CONFIGURE_ARGS+=	--without-check-owner
 .endif
-.if defined(WITHOUT_CHECK_GROUP)
+.if !defined(WITH_CGI_GROUP)
 CONFIGURE_ARGS+=	--without-check-group
 .endif
-.if defined(WITHOUT_CHECK_SETUID)
+.if !defined(WITH_CGI_SETUID)
 CONFIGURE_ARGS+=	--without-check-setuid
 .endif
-.if defined(WITHOUT_CHECK_SETGID)
+.if !defined(WITH_CGI_SETGID)
 CONFIGURE_ARGS+=	--without-check-setgid
 .endif
-.if defined(WITHOUT_CHECK_GROUP_WRITABLE)
+.if !defined(WITH_CGI_GROUP_WRITABLE)
 CONFIGURE_ARGS+=	--without-check-group-writable
 .endif
-.if defined(WITHOUT_CHECK_WORLD_WRITABLE)
+.if !defined(WITH_CGI_WORLD_WRITABLE)
 CONFIGURE_ARGS+=	--without-check-world-writable
+.endif
+
+.if !defined(WITH_NPH)
+PLIST_SUB+=		NPHFLAG="@comment "
+CONFIGURE_ARGS+=	--without-nph
+.else
+PLIST_SUB+=		NPHFLAG=
+.endif
+
+.if !defined(WITH_DEBUG)
+PLIST_SUB+=		DEBUGFLAG="@comment "
+CONFIGURE_ARGS+=	--without-cgiwrapd
+.else
+PLIST_SUB+=		DEBUGFLAG=
 .endif
 
 .if !defined(NOPORTDOCS)
@@ -107,18 +119,19 @@ PORTDOCS=	accesscontrol.html afs.html changes.html \
 		thanks.html todo.html tricks.html y2k.html
 .endif
 
-show-options:
-	@${SED} -ne 's/^##//p' ${.CURDIR}/Makefile
-
 pre-install:
-	@${MKDIR} ${WITH_MAIN_CGIDIR}
+	@${MKDIR} ${INSTALL_DIR}
 
 post-install:
-	@${STRIP_CMD} ${WITH_MAIN_CGIDIR}/cgiwrap
-	@${CHMOD} 4550 ${WITH_MAIN_CGIDIR}/cgiwrap
-.if !defined(WITH_DEBUG)
-	@${RM} ${WITH_MAIN_CGIDIR}/cgiwrapd
-	@${RM} ${WITH_MAIN_CGIDIR}/nph-cgiwrapd
+	@${STRIP_CMD} ${INSTALL_DIR}/cgiwrap
+	@${CHMOD} 4550 ${INSTALL_DIR}/cgiwrap
+.if defined(WITH_DEBUG)
+	@${STRIP_CMD} ${INSTALL_DIR}/cgiwrapd
+	@${CHMOD} 4550 ${INSTALL_DIR}/cgiwrapd
+.if defined(WITH_NPH)
+	@${STRIP_CMD} ${INSTALL_DIR}/nph-cgiwrapd
+	@${CHMOD} 4550 ${INSTALL_DIR}/nph-cgiwrapd
+.endif
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -126,10 +139,10 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/htdocs/${f} ${DOCSDIR}
 .endfor
 .endif
-	@${SED}	-e's,%%MAIN_CGIDIR%%,${WITH_MAIN_CGIDIR},g' \
-		-e's,%%ALLOWFILE%%,${WITH_ALLOWFILE},g' \
-		-e's,%%DENYFILE%%,${WITH_DENYFILE},g' \
+	@${SED}	-e's,%%INSTALL_DIR%%,${INSTALL_DIR},g' \
+		-e's,%%ALLOW_FILE%%,${ALLOW_FILE},g' \
+		-e's,%%DENY_FILE%%,${DENY_FILE},g' \
 		${MASTERDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

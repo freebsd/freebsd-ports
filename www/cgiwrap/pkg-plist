@@ -1,5 +1,5 @@
 www/cgi-bin/cgiwrap
-%%CGIWRAPDFLAG%%www/cgi-bin/cgiwrapd
-www/cgi-bin/nph-cgiwrap
-%%CGIWRAPDFLAG%%www/cgi-bin/nph-cgiwrapd
+%%DEBUGFLAG%%www/cgi-bin/cgiwrapd
+%%NPHFLAG%%www/cgi-bin/nph-cgiwrap
+%%NPHFLAG%%%%DEBUGFLAG%%www/cgi-bin/nph-cgiwrapd
 @unexec rmdir %D/www/cgi-bin 2>/dev/null || true
