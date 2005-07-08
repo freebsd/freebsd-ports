@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	2.0.0.b.4
+PORTVERSION=	2.0.0.b.5
 PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/v2.0beta/ \
@@ -42,8 +42,7 @@ OPTIONS=	GPGME		"Enable GnuPG support using GPGME." off \
 		COMPFACE	"Enable X-Face support." off \
 		JPILOT		"Enable JPilot support." off \
 		LDAP		"Enable LDAP support." off \
-		SSL		"Enable OpenSSL support." on \
-		ICON_THEME	"Use icon theme instead of some pixmaps." off
+		SSL		"Enable OpenSSL support." on
 
 .include <bsd.port.pre.mk>
 
@@ -84,12 +83,6 @@ CONFIGURE_ARGS+=--enable-ssl
 .else
 CONFIGURE_ARGS+=--disable-ssl
 .endif
-.if defined(WITH_ICON_THEME)
-RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
-EXTRA_PATCHES+=	${FILESDIR}/icon-theme.diff
-UUDECODE?=	/usr/bin/uudecode
-GDK_PIXBUF_CSOURCE?=	${X11BASE}/bin/gdk-pixbuf-csource
-.endif
 
 MAKEFILES=	Makefile.in ac/Makefile.in faq/Makefile.in faq/de/Makefile.in \
 		faq/en/Makefile.in faq/es/Makefile.in faq/fr/Makefile.in \
@@ -110,14 +103,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^faqdir = @faqdir@$$|faqdir = ${DOCSDIR}/faq|g; \
 		s|^manualdir = @manualdir@$$|manualdir = ${DOCSDIR}/manual|g' \
 		${WRKSRC}/${i}
-.endfor
-.endif
-
-pre-build:
-	${LN} -sf ${LIBTOOL} ${WRKSRC}/libtool
-.if defined(WITH_ICON_THEME)
-.for i in mail_receive_all mail_send_queue
-	cd ${WRKSRC}/src/pixmaps && ${UUDECODE} ${i}.png.uu && ${GDK_PIXBUF_CSOURCE} --raw --name=${i} ${i}.png > ${i}.h
 .endfor
 .endif
 
