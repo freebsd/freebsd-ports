@@ -1,13 +1,16 @@
+@comment $FreeBSD$
 etc/pop-before-smtp-conf.pl.sample
 etc/rc.d/pop-before-smtp.sh.sample
 sbin/pop-before-smtp
-share/doc/pop-before-smtp/COPYING
-share/doc/pop-before-smtp/ChangeLog
-share/doc/pop-before-smtp/README
-share/doc/pop-before-smtp/README.QUICKSTART
-share/doc/pop-before-smtp/README.rootless-install
-share/doc/pop-before-smtp/TODO
-share/doc/pop-before-smtp/popa3d/README
-share/doc/pop-before-smtp/popa3d/popa3d-0.4.patch
-@dirrm share/doc/pop-before-smtp/popa3d
-@dirrm share/doc/pop-before-smtp
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.QUICKSTART
+%%PORTDOCS%%%%DOCSDIR%%/README.rootless-install
+%%PORTDOCS%%%%DOCSDIR%%/popauth.m4
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/popa3d/README
+%%PORTDOCS%%%%DOCSDIR%%/popa3d/popa3d-0.4.patch
+%%PORTDOCS%%%%DOCSDIR%%/popa3d/popa3d-0.6.4.patch
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/popa3d
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

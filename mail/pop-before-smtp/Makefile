@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pop-before-smtp
-PORTVERSION=	1.35
+PORTVERSION=	1.37
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	popbsmtp
@@ -23,10 +23,10 @@ RUN_DEPENDS=	${SITE_PERL}/File/Tail.pm:${PORTSDIR}/devel/p5-File-Tail \
 NO_BUILD=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
-
+POD2MAN?=	pod2man
 PKGMESSAGE=	${WRKDIR}/.pkg-message
-
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+MAN8=		${PORTNAME}.8
 
 # Override this as you see fit
 POPBSMTP_RC_SCRIPT?=	${PREFIX}/etc/rc.d/pop-before-smtp.sh.sample
@@ -35,6 +35,9 @@ post-patch:
 	@${REINPLACE_CMD} 's|^#!/usr/bin/perl|#!${PERL}|; \
 		s|/etc/postfix/pop-before-smtp|${PREFIX}/etc/postfix/pop-before-smtp|g;' \
 		${WRKSRC}/pop-before-smtp
+
+pre-install:
+	@${POD2MAN} ${WRKSRC}/${PORTNAME} > ${PREFIX}/man/man8/${PORTNAME}.8
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pop-before-smtp ${PREFIX}/sbin
@@ -46,15 +49,15 @@ do-install:
 	@${CHMOD} 755 ${POPBSMTP_RC_SCRIPT}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in COPYING ChangeLog README TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for FILE in COPYING ChangeLog README TODO
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
-.for file in README.QUICKSTART README.rootless-install
-	${INSTALL_DATA} ${WRKSRC}/contrib/${file} ${DOCSDIR}
+.for FILE in README.QUICKSTART README.rootless-install popauth.m4
+	${INSTALL_DATA} ${WRKSRC}/contrib/${FILE} ${DOCSDIR}
 .endfor
 	@${MKDIR} ${DOCSDIR}/popa3d
-.for file in README popa3d-0.4.patch
-	${INSTALL_DATA} ${WRKSRC}/contrib/popa3d/${file} ${DOCSDIR}/popa3d
+.for FILE in README popa3d-0.4.patch popa3d-0.6.4.patch
+	${INSTALL_DATA} ${WRKSRC}/contrib/popa3d/${FILE} ${DOCSDIR}/popa3d
 .endfor
 .endif
 
