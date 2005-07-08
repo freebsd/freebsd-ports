@@ -18,11 +18,13 @@ lib/MailScanner/MailScanner/BinHex.pm
 lib/MailScanner/MailScanner/Config.pm
 lib/MailScanner/MailScanner/ConfigDefs.pl
 lib/MailScanner/MailScanner/CustomConfig.pm
+lib/MailScanner/MailScanner/CustomFunctions/GenericSpamScanner.pm
 lib/MailScanner/MailScanner/CustomFunctions/MyExample.pm
 lib/MailScanner/MailScanner/CustomFunctions/DavidHooton.pm
 lib/MailScanner/MailScanner/CustomFunctions/ZMRouterDirHash.pm
 lib/MailScanner/MailScanner/Exim.pm
 lib/MailScanner/MailScanner/EximDiskStore.pm
+lib/MailScanner/MailScanner/GenericSpam.pm
 lib/MailScanner/MailScanner/Lock.pm
 lib/MailScanner/MailScanner/Log.pm
 lib/MailScanner/MailScanner/MCP.pm
@@ -492,12 +494,15 @@ libexec/MailScanner/vexira-wrapper.sample
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.2.61
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.2.63
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.3.0.0
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.3.0.3
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/Message.pm.patch.3.0.0
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/Message.pm.patch.3.0.3
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.55
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.60
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.61
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.63
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.3.0.0
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.3.0.3
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/index.html
 %%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/install/tcp
 %%PORTDOCS%%%%DOCSDIR%%/install/mime-tools-patch.txt
