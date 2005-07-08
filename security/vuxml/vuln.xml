@@ -32,6 +32,35 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9a035a56-eff0-11d9-8310-0001020eed82">
+    <topic>ekg -- insecure temporary file creation</topic>
+    <affects>
+      <package>
+	<name>pl-ekg</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Eric Romang reports that ekg creates temporary files in an
+	  insecure manner.  This can be exploited by an attacker using
+	  a symlink attack to overwrite arbitrary files and possibly
+	  execute arbitrary commands with the permissions of the user
+	  running ekg.</p>
+      </body>
+    </description>
+    <references>
+      <bid>14146</bid>
+      <cvename>CAN-2005-1916</cvename>
+      <mlist msgid="42CA2DDB.5030606@zataz.net">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112060146011122</mlist>
+      <url>http://bugs.gentoo.org/show_bug.cgi?id=94172</url>
+    </references>
+    <dates>
+      <discovery>2005-07-05</discovery>
+      <entry>2005-07-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6e33f4ab-efed-11d9-8310-0001020eed82">
     <topic>bugzilla -- multiple vulnerabilities</topic>
     <affects>
