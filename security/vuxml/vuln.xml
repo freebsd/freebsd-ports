@@ -32,6 +32,46 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6e33f4ab-efed-11d9-8310-0001020eed82">
+    <topic>bugzilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>bugzilla</name>
+	<name>ja-bugzilla</name>
+	<range><ge>2.17.1</ge><lt>2.18.2 </lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Bugzilla Security Advisory reports:</p>
+	<blockquote cite="http://www.bugzilla.org/security/2.18.1/">
+	  <p>Any user can change any flag on any bug, even if they
+	    don't have access to that bug, or even if they can't
+	    normally make bug changes. This also allows them to expose
+	    the summary of a bug.</p>
+	  <p>Bugs are inserted into the database before they are
+	    marked as private, in Bugzilla code. Thus, MySQL
+	    replication can lag in between the time that the bug is
+	    inserted and when it is marked as private (usually less
+	    than a second). If replication lags at this point, the bug
+	    summary will be accessible to all users until replication
+	    catches up.	 Also, on a very slow machine, there may be a
+	    pause longer than a second that allows users to see the
+	    title of the newly-filed bug.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.bugzilla.org/security/2.18.1/</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=292544</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=293159</url>
+    </references>
+    <dates>
+      <discovery>2005-07-07</discovery>
+      <entry>2005-07-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d177d9f9-e317-11d9-8088-00123f0f7307">
     <topic>nwclient -- multiple vulnerabilities</topic>
     <affects>
