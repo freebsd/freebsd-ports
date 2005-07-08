@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	avenger
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailavenger.org/dist/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dm+bugs+avenger@mailavenger.org
 COMMENT=	An anti-spam SMTP server
 
 LIB_DEPENDS=	db-4.3:${PORTSDIR}/databases/db43
@@ -23,12 +23,13 @@ MAN1=		aliascheck.1 avenger.1 dbutil.1 deliver.1 dotlock.1 \
 MAN5=		asmtpd.conf.5
 MAN8=		asmtpd.8 avenger.local.8
 
-CONFIGURE_ARGS=	--with-db=${LOCALBASE}
+AVETC=		${PREFIX}/etc
+CONFIGURE_ENV=	WFLAGS='-Wall'
+CONFIGURE_ARGS=	--with-db=${LOCALBASE} --with-etcdir=${AVETC}
 
 post-patch:
-	@${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} -e \
-		's|\(/etc/avenger\)|${PREFIX}\1|g' {} \;
-	@${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC}/doc -name "*.[158]" | ${XARGS} \
+		${REINPLACE_CMD} -e 's|/etc/avenger|${PREFIX}/etc/avenger|g'
 
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
