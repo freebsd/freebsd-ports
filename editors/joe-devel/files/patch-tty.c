@@ -1,7 +1,7 @@
---- tty.c.orig	Fri Dec  7 19:19:54 2001
-+++ tty.c	Fri Dec  7 19:20:13 2001
-@@ -1006,8 +1006,10 @@
- 
+--- tty.c.orig	Fri Mar 18 10:40:11 2005
++++ tty.c	Fri May  6 16:58:38 2005
+@@ -1074,8 +1074,10 @@
+ 			setsid();	/* I think you do setprgp(0,0) on systems with no setsid() */
  #ifndef SETPGRP_VOID
  			setpgrp(0, 0);
 +/*
@@ -10,4 +10,4 @@
 +*/
  #endif
  
- 			for (x = 0; x != 32; ++x)
+ #endif

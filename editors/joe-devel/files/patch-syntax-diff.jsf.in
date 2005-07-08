@@ -1,0 +1,42 @@
+--- syntax/diff.jsf.in.orig	Fri May  6 18:14:53 2005
++++ syntax/diff.jsf.in	Fri May  6 18:19:28 2005
+@@ -6,6 +6,7 @@
+ 
+ # Color definitions
+ =Idle
++=Options	blue
+ =FileNew	bold green
+ =FileOld	bold red
+ =DiffStuff	magenta
+@@ -15,6 +16,7 @@
+ 
+ :reset Idle
+ 	*		goo
++	"d"		goo
+ 	"-"		preudiff	buffer
+ 	"*"		precdiff	buffer
+ 	"0-9"		ndiff		recolor=-1
+@@ -33,8 +35,14 @@
+ done
+ 	"*"		precdiff
+ 
++:options Options
++	*		options
++	"\n"		reset
++
+ :goo Idle
+-	*		goo
++	*		goo		strings
++	"diff"		options		recolor=-4
++done
+ 	"\n"		reset
+ 
+ :udiff Idle
+@@ -58,6 +66,7 @@
+ 
+ :udiffhunk Idle
+ 	*		reset
++	"d"		goo		buffer
+ 	"-"		udiffoldordel	recolor=-1
+ 	"+"		udiffadd	recolor=-1
+ 	" "		udiffctx	recolor=-1

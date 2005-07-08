@@ -9,6 +9,8 @@ termcap/terminfo, excellent screen update optimizations (JOE is
 fully usable at 2400 baud), simple installation, and all of the
 UNIX-integration features of VI.
 
+JOE(-devel) now has UTF-8 support and Syntax Highlighting.
+
 WWW: http://sourceforge.net/projects/joe-editor/
 
 -Pete

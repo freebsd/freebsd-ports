@@ -20,10 +20,12 @@ etc/joe/jstarrc.dist
 @unexec if cmp -s %D/etc/joe/rjoerc.dist %D/etc/joe/rjoerc; then rm -f %D/etc/joe/rjoerc; fi
 etc/joe/rjoerc.dist
 @exec if [ ! -f %D/etc/joe/rjoerc ]; then cp %D/etc/joe/%f %D/etc/joe/rjoerc; fi
+etc/joe/syntax/4gl.jsf
 etc/joe/syntax/asm.jsf
 etc/joe/syntax/c.jsf
 etc/joe/syntax/conf.jsf
 etc/joe/syntax/csh.jsf
+etc/joe/syntax/css.jsf
 etc/joe/syntax/diff.jsf
 etc/joe/syntax/fortran.jsf
 etc/joe/syntax/html.jsf
@@ -31,19 +33,25 @@ etc/joe/syntax/java.jsf
 etc/joe/syntax/lisp.jsf
 etc/joe/syntax/mail.jsf
 etc/joe/syntax/mason.jsf
+etc/joe/syntax/ocaml.jsf
 etc/joe/syntax/pascal.jsf
 etc/joe/syntax/perl.jsf
 etc/joe/syntax/php.jsf
 etc/joe/syntax/python.jsf
 etc/joe/syntax/sh.jsf
+etc/joe/syntax/sml.jsf
 etc/joe/syntax/tcl.jsf
+etc/joe/syntax/tex.jsf
 etc/joe/syntax/verilog.jsf
 etc/joe/syntax/vhdl.jsf
 etc/joe/syntax/xml.jsf
-%%PORTDOCS%%%%DOCSDIR%%/CommandList
-%%PORTDOCS%%%%DOCSDIR%%/INFO
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm etc/joe/charmaps
-@dirrm etc/joe/syntax
-@dirrm etc/joe
+etc/joe/doc/ChangeLog
+etc/joe/doc/LIST
+etc/joe/doc/HACKING
+etc/joe/doc/HINTS
+etc/joe/doc/NEWS
+etc/joe/doc/README
+@unexec rmdir %D/etc/joe/doc 2>/dev/null || true
+@unexec rmdir %D/etc/joe/charmaps 2>/dev/null || true
+@unexec rmdir %D/etc/joe/syntax 2>/dev/null || true
+@unexec rmdir %D/etc/joe 2>/dev/null || true
