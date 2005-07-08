@@ -7,6 +7,7 @@
 
 PORTNAME=	avenger
 PORTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailavenger.org/dist/
 
@@ -23,7 +24,7 @@ MAN1=		aliascheck.1 avenger.1 dbutil.1 deliver.1 dotlock.1 \
 MAN5=		asmtpd.conf.5
 MAN8=		asmtpd.8 avenger.local.8
 
-AVETC=		${PREFIX}/etc
+AVETC=		${PREFIX}/etc/avenger
 CONFIGURE_ENV=	WFLAGS='-Wall'
 CONFIGURE_ARGS=	--with-db=${LOCALBASE} --with-etcdir=${AVETC}
 
