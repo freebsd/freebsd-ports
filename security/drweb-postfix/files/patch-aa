@@ -68,7 +68,7 @@
 -SenderTemplate = /usr/local/etc/drweb/templates/en-ru/postfix/archive-sender.msg
 -AdminTemplate = /usr/local/etc/drweb/templates/en-ru/postfix/archive-admin.msg
 +SenderTemplate = %CONFDIR%/templates/en-ru/postfix/archive-sender.msg
-+AdminTemplate = %CONFIDR%/templates/en-ru/postfix/archive-admin.msg
++AdminTemplate = %CONFDIR%/templates/en-ru/postfix/archive-admin.msg
  RcptsTemplate = 
  
  [ErrorNotifications]
