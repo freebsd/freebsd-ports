@@ -1,0 +1,9 @@
+@exec mv %D/bin/%%FIREFOX%% %D/bin/%%FIREFOX%%.orig
+@exec mv %D/lib/%%FIREFOX%%/chrome/chrome.rdf %D/lib/%%FIREFOX%%/chrome/chrome.rdf.orig
+@exec mv %D/lib/%%FIREFOX%%/chrome/installed-chrome.txt %D/lib/%%FIREFOX%%/chrome/installed-chrome.txt.orig
+lib/%%FIREFOX%%/chrome/chrome.rdf
+lib/%%FIREFOX%%/chrome/installed-chrome.txt
+lib/%%FIREFOX%%/chrome/zh-CN.jar
+@unexec mv %D/bin/%%FIREFOX%%.orig %D/bin/%%FIREFOX%%
+@unexec mv %D/lib/%%FIREFOX%%/chrome/chrome.rdf.orig %D/lib/%%FIREFOX%%/chrome/chrome.rdf
+@unexec mv %D/lib/%%FIREFOX%%/chrome/installed-chrome.txt.orig %D/lib/%%FIREFOX%%/chrome/installed-chrome.txt
