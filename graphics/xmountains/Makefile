@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmountains
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.epcc.ed.ac.uk/~spb/xmountains/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
