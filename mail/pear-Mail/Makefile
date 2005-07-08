@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	mail www pear
 
 MAINTAINER=	antonio@php.net
@@ -19,13 +19,13 @@ FILES=		Mail.php Mail/mail.php Mail/null.php Mail/sendmail.php	\
 		Mail/smtp.php Mail/RFC822.php
 TESTS=		rfc822.phpt
 
-LATEST_LINK=	pear-Mail	# Required for OPTIONS
+LATEST_LINK=	pear-${PORTNAME}
 OPTIONS=	PEAR_NET_SMTP "PEAR::Net_SMTP support" off
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PEAR_NET_SMTP)
-BUILD_DEPENDS+=	${PEARDIR}/Net/SMTP.php:${PORTSDIR}/net/pear-Net_SMTP
+RUN_DEPENDS+=	${PEARDIR}/Net/SMTP.php:${PORTSDIR}/net/pear-Net_SMTP
 .endif
 
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
