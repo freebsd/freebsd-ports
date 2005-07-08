@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	wikipedia
 MAINTAINER=	tux@pinguru.net
 COMMENT=	The wiki engine used by Wikipedia
 
+NO_LATEST_LINK=	yes
+
 NO_BUILD=	yes
 USE_PHP=	iconv mbstring pcre session xml zlib imagick readline
 WANT_PHP_WEB=	yes
@@ -23,7 +25,7 @@ OPTIONS=	PGSQL "Use PostgreSQL instead of MySQL" off \
 		LDAP "Use LDAP authentication" off
 
 PORT_DBDIR?=	/var/db/ports
-LASTEST_LINK=	${PORTNAME}
+LATEST_LINK=	${PORTNAME}
 OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 
 .if exists(${OPTIONSFILE})
