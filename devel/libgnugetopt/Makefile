@@ -20,8 +20,6 @@ MASTER_SITE_SUBDIR=	lioux
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU getopt library
 
-CONFLICTS=	freelibiberty-*
-
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 
