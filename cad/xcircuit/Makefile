@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xcircuit
-PORTVERSION=	3.3.18
+PORTVERSION=	3.3.19
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://xcircuit.ece.jhu.edu/archive/
@@ -27,7 +27,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
 		--with-tk=${LOCALBASE}/lib/tk8.4
 
-CFLAGS+=	-I${X11BASE}/include
+CFLAGS+=	-fPIC -I${X11BASE}/include
 
 WISH=		${LOCALBASE}/bin/wish8.4
 
