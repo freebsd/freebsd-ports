@@ -32,6 +32,40 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="88188a8c-eff6-11d9-8310-0001020eed82">
+    <topic>phppgadmin -- "formLanguage" local file inclusion vulnerability</topic>
+    <affects>
+      <package>
+	<name>phppgadmin</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/15941/">
+	  <p>A vulnerability has been reported in phpPgAdmin, which
+	    can be exploited by malicious people to disclose sensitive
+	    information.</p>
+	  <p>Input passed to the "formLanguage" parameter in
+	    "index.php" isn't properly verified, before it is used to
+	    include files. This can be exploited to include arbitrary
+	    files from local resources.</p>
+	  <p>Successful exploitation requires that "magic_quotes_gpc"
+	    is disabled.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>14142</bid>
+      <url>http://secunia.com/advisories/15941/</url>
+    </references>
+    <dates>
+      <discovery>2005-07-05</discovery>
+      <entry>2005-07-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b64481d9-eff4-11d9-8310-0001020eed82">
     <topic>pear-XML_RPC -- information disclosure
       vulnerabilities</topic>
