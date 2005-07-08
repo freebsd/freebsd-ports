@@ -33,6 +33,10 @@ GNUSTEP_WITHOUT_LIBOBJC=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 504000
+BROKEN=		"Configure fails on FreeBSD >= 5.x"
+.endif
+
 pre-configure:
 	@if test ! -f "${TARGLIB}/libobjc.so"; then \
 		${ECHO_MSG} "libobjc.so not found, please update your gcc"; \
