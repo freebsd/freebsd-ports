@@ -9,14 +9,14 @@
 #
 
 PORTNAME=	cdialog
-PORTVERSION=	1.0.20050206
+PORTVERSION=	1.0.20050306
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/dialog/
 DISTNAME=	${PORTNAME:S|^c||}-${PORTVERSION:R}-${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sylvioc@gmail.com
 COMMENT=	An enhanced version of 'dialog' to work with ncurses
 
 USE_GMAKE=	yes
