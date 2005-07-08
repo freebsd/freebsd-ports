@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b64481d9-eff4-11d9-8310-0001020eed82">
+    <topic>pear-XML_RPC -- information disclosure
+      vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>pear-XML_RPC</name>
+	<range><lt>1.3.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The pear-XML_RPC release notes reports that the following
+	  issues has been fixed:</p>
+	<blockquote cite="http://pear.php.net/package/XML_RPC/download/1.3.2">
+	  <p>Eliminate path disclosure vulnerabilities by suppressing
+	    error messages when eval()'ing.</p>
+	  <p>Eliminate path disclosure vulnerability by catching bogus
+	    parameters submitted to
+	    <code>XML_RPC_Value::serializeval()</code>.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://pear.php.net/package/XML_RPC/download/1.3.2</url>
+    </references>
+    <dates>
+      <discovery>2005-07-07</discovery>
+      <entry>2005-07-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9a035a56-eff0-11d9-8310-0001020eed82">
     <topic>ekg -- insecure temporary file creation</topic>
     <affects>
