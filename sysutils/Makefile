@@ -212,6 +212,7 @@
     SUBDIR += healthd
     SUBDIR += heartbeat
     SUBDIR += heirloom
+    SUBDIR += highlnk
     SUBDIR += hourglass
     SUBDIR += httplog
     SUBDIR += i855vidctl10
