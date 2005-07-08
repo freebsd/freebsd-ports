@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBD-mysql
-PORTVERSION=	2.9008
+PORTVERSION=	3.0001
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
@@ -38,7 +38,7 @@ post-patch:
 	@${PERL} -pi -e 's/(?:use|no) warnings;?//; s/our (%\w+)/use vars qw(\1);\n\1/' \
 		${WRKSRC}/lib/DBD/mysql/GetInfo.pm
 .endif
-	@${PERL} -pi -e 's/$$/ || MYSQL_VERSION_ID == 50000/ if $$. == 100' \
+	@${PERL} -pi -e 's/$$/ || MYSQL_VERSION_ID == 50000/ if $$. == 107' \
 		${WRKSRC}/mysql.xs
 
 .include <bsd.port.post.mk>
