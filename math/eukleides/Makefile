@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	eukleides
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	math
 MASTER_SITES=	http://perso.wanadoo.fr/obrecht/download/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Euclidean geometry drawing language
 
 RUN_DEPENDS=	pstoedit:${PORTSDIR}/graphics/pstoedit \
-		epstopdf:${PORTSDIR}/print/teTeX
+		epstopdf:${PORTSDIR}/print/teTeX-base
 
 USE_BISON=	yes
 USE_REINPLACE=	yes
@@ -34,11 +34,11 @@ post-patch:
 		's|#!/bin/bash|#!/bin/sh|g'
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/eukleides ${PREFIX}/bin/eukleides
-	${INSTALL_SCRIPT} ${WRKSRC}/euk2edit ${PREFIX}/bin/euk2edit
-	${INSTALL_SCRIPT} ${WRKSRC}/euk2eps ${PREFIX}/bin/euk2eps
-	${INSTALL_MAN} ${WRKSRC}/eukleides.man ${MANPREFIX}/man/man1/eukleides.1
-	${INSTALL_DATA} ${WRKSRC}/eukleides.info ${PREFIX}/${INFO_PATH}/eukleides.info
+	${INSTALL_PROGRAM} ${WRKSRC}/eukleides ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/euk2edit ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/euk2eps ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/eukleides.1 ${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/eukleides.info ${PREFIX}/${INFO_PATH}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/*.euk ${EXAMPLESDIR}
