@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2005.07.01
+PORTVERSION=	2005.07.08
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	net devel
@@ -72,6 +72,7 @@ liveMedia=		\
 		liveMedia/include/AVIFileSink.hh \
 		liveMedia/include/AudioInputDevice.hh \
 		liveMedia/include/AudioRTPSink.hh \
+		liveMedia/include/Base64.hh \
 		liveMedia/include/BasicUDPSink.hh \
 		liveMedia/include/BasicUDPSource.hh \
 		liveMedia/include/ByteStreamFileSource.hh \
