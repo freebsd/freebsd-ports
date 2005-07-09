@@ -140,7 +140,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>phpBB is vulnerable to lemote exploitation of an input
+	<p>phpBB is vulnerable to remote exploitation of an input
 	  validation vulnerability allows attackers to read the
 	  contents of arbitrary system files under the privileges
 	  of the webserver.  This also allows remote attackers to
