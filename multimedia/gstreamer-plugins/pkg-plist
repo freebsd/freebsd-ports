@@ -101,7 +101,7 @@ lib/gstreamer-%%VERSION%%/libgstsilence.so
 lib/gstreamer-%%VERSION%%/libgstsinesrc.so
 lib/gstreamer-%%VERSION%%/libgstsmooth.so
 lib/gstreamer-%%VERSION%%/libgstsmpte.so
-lib/gstreamer-%%VERSION%%/libgstspc.so
+%%SPC%%lib/gstreamer-%%VERSION%%/libgstspc.so
 lib/gstreamer-%%VERSION%%/libgstspectrum.so
 lib/gstreamer-%%VERSION%%/libgstspeed.so
 lib/gstreamer-%%VERSION%%/libgststereo.so
