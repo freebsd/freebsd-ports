@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	skype
-PORTVERSION=	1.1.0.13
+PORTVERSION=	1.1.0.20
 CATEGORIES=	net
 MASTER_SITES=	http://download.skype.com/linux/
 DISTNAME=	skype_staticQT-${PORTVERSION}
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	P2P VoIP software
@@ -40,7 +39,7 @@ PLIST_SUB+=	GNOME=""
 PLIST_SUB+=	GNOME="@comment "
 .endif
 
-#WRKSRC= ${WRKDIR}/${DISTNAME}
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/skype
