@@ -7,6 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.8.10
+PORTREVISION=	1
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://gstreamer.freedesktop.org/src/gst-plugins/
@@ -52,7 +53,7 @@ WITHOUT_CPU_CFLAGS=	yes
 
 INSTALLS_SHLIB=	yes
 
-PLIST_SUB=	VERSION="${VERSION}" \
+PLIST_SUB+=	VERSION="${VERSION}" \
 		SHLIB_VERSION="${SHLIB_VERSION}"
 
 MAN1=		gst-launch-ext-0.8.1 gst-visualise-0.8.1
