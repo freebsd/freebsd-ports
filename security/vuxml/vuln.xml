@@ -32,6 +32,165 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="50457509-d05e-11d9-9aed-000e0c2e438a">
+    <topic>phpSysInfo -- cross site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpSysInfo</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Securityreason.com advisory reports that various cross
+	  site scripting vulnerabilities have been found in phpSysInfo.
+	  Input is not properly sanitised before it is returned to the
+	  user.  A malicious person could exploit this to execute
+	  arbitrary HTML and script code in a users browser session.
+	  Also it is possible to view the full path of certain scripts
+	  by accessing them directly.</p>
+      </body>
+    </description>
+    <references>
+      <bid>12887</bid>
+      <cvename>CAN-2005-0869</cvename>
+      <cvename>CAN-2005-0870</cvename>
+      <mlist msgid="20050323180207.11987.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111161017209422</mlist>
+    </references>
+    <dates>
+      <discovery>2005-03-22</discovery>
+      <entry>2005-07-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="eeae6cce-d05c-11d9-9aed-000e0c2e438a">
+    <topic>mysql-server -- insecure temporary file creation</topic>
+    <affects>
+      <package>
+	<name>mysql-server</name>
+	<range><gt>4.1</gt><lt>4.1.12</lt></range>
+	<range><gt>5.0</gt><lt>5.0.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Zataz advisory reports that MySQL contains a security
+	  flaw which could allow a malicious local user to inject
+	  arbitrary SQL commands during the initial database creation
+	  process.</p>
+	<p>The problem lies in the mysql_install_db script which
+	  creates temporary files based on the PID used by the
+	  script.</p>
+      </body>
+    </description>
+    <references>
+      <bid>13660</bid>
+      <cvename>CAN-2005-1636</cvename>
+      <url>http://www.zataz.net/adviso/mysql-05172005.txt</url>
+    </references>
+    <dates>
+      <discovery>2005-05-07</discovery>
+      <entry>2005-07-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3e0072d4-d05b-11d9-9aed-000e0c2e438a">
+    <topic>net-snmp -- fixproc insecure temporary file creation</topic>
+    <affects>
+      <package>
+	<name>net-snmp</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Gentoo advisory reports:</p>
+	<blockquote cite="http://www.gentoo.org/security/en/glsa/glsa-200505-18.xml">
+	  <p>Net-SNMP creates temporary files in an insecure manner,
+	    possibly allowing the execution of arbitrary code.</p>
+	  <p>A malicious local attacker could exploit a race condition
+	    to change the content of the temporary files before they
+	    are executed by fixproc, possibly leading to the execution
+	    of arbitrary code.  A local attacker could also create
+	    symbolic links in the temporary files directory, pointing
+	    to a valid file somewhere on the filesystem.  When fixproc
+	    is executed, this would result in the file being
+	    overwritten.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>13715</bid>
+      <cvename>CAN-2005-1740</cvename>
+      <url>http://security.gentoo.org/glsa/glsa-200505-18.xml</url>
+    </references>
+    <dates>
+      <discovery>2005-05-23</discovery>
+      <entry>2005-07-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="326c517a-d029-11d9-9aed-000e0c2e438a">
+    <topic>phpbb -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpbb</name>
+	<range><lt>2.0.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpBB is vulnerable to lemote exploitation of an input
+	  validation vulnerability allows attackers to read the
+	  contents of arbitrary system files under the privileges
+	  of the webserver.  This also allows remote attackers to
+	  unlink arbitrary system files under the privileges of the
+	  webserver.</p>
+      </body>
+    </description>
+    <references>
+      <bid>12618</bid>
+      <bid>12621</bid>
+      <bid>12623</bid>
+      <cvename>CAN-2005-0258</cvename>
+      <cvename>CAN-2005-0259</cvename>
+      <url>http://security.gentoo.org/glsa/glsa-200503-02.xml</url>
+      <url>http://www.idefense.com/application/poi/display?id=205&amp;type=vulnerabilities</url>
+      <url>http://www.idefense.com/application/poi/display?id=204&amp;type=vulnerabilities</url>
+    </references>
+    <dates>
+      <discovery>2005-02-22</discovery>
+     <entry>2005-07-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6596bb80-d026-11d9-9aed-000e0c2e438a">
+    <topic>shtool -- insecure temporary file creation</topic>
+    <affects>
+      <package>
+	<name>shtool</name>
+	<range><le>2.0.1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Zataz advisory reports that shtool contains a security
+	  flaw which could allow a malicious local user to create or
+	  overwrite the contents of arbitrary files.  The attacker
+	  could fool a user into executing the arbitrary file possibly
+	  executing arbitrary code.</p>
+      </body>
+    </description>
+    <references>
+      <bid>13767</bid>
+      <url>http://www.zataz.net/adviso/shtool-05252005.txt</url>
+    </references>
+    <dates>
+      <discovery>2005-05-25</discovery>
+      <entry>2005-07-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="88188a8c-eff6-11d9-8310-0001020eed82">
     <topic>phppgadmin -- "formLanguage" local file inclusion vulnerability</topic>
     <affects>
