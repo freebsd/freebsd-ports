@@ -21,6 +21,8 @@ EXTRACT_ONLY=	psys-1.58.tar.gz log-5.63.tar.gz netcmp-1.13.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An electronic CAD system
 
+BROKEN=		Size mismatch
+
 NO_WRKSUBDIR=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
