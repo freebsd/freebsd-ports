@@ -232,6 +232,7 @@ share/locale/de/LC_MESSAGES/roundup.mo
 share/locale/en/LC_MESSAGES/roundup.mo
 share/locale/fr/LC_MESSAGES/roundup.mo
 share/locale/ru/LC_MESSAGES/roundup.mo
+share/locale/zh_CN/LC_MESSAGES/roundup.mo
 %%DATADIR%%/cgi-bin/roundup.cgi
 %%DATADIR%%/templates/classic/TEMPLATE-INFO.txt
 %%DATADIR%%/templates/classic/detectors/messagesummary.py

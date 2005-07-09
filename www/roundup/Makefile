@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	roundup
-PORTVERSION=	0.8.2
-CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+PORTVERSION=	0.8.3
+CATEGORIES=	www python
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://bsdchat.com/dist/dryice/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dryice@liu.com.cn
 COMMENT=	An Issue-Tracking System for Knowledge Workers
 
 USE_PYTHON=	yes
