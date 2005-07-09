@@ -8,7 +8,7 @@
 PORTNAME=	icbm3d
 PORTVERSION=	0.4
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/icbm3d/
+MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/icbm3d/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
