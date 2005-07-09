@@ -6074,6 +6074,7 @@ mmake		ports/java/mmake
 mmc		ports/mail/mmc
 mmencode	ports/converters/mmencode
 mmix		ports/lang/mmix
+mmore		ports/sysutils/mmore
 mmosaic		ports/www/mmosaic
 mmpython	ports/multimedia/mmpython
 mmr		ports/mail/mmr
