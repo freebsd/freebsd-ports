@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	exifprobe
-PORTVERSION=	2.0.0
+DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.virtual-cafe.com/~dhh/tools.d/exifprobe.d/
 
@@ -14,6 +15,7 @@ MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Probes JPEG or TIFF images and reports contents and structure
 
 USE_REINPLACE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}p1
 
 MAN1=		exifgrep.1 exifprobe.1
 PLIST_FILES=	bin/exifgrep bin/exifprobe
