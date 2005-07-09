@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkcvs
-PORTVERSION=	7.2.2
+PORTVERSION=	7.2.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.twobarleycorns.net/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
