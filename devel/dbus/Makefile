@@ -7,7 +7,7 @@
 
 PORTNAME=	dbus
 PORTVERSION=	0.34
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/
 
@@ -17,13 +17,13 @@ COMMENT?=	A message bus system for inter-application communication
 BUILD_DEPENDS?=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS?=	expat.5:${PORTSDIR}/textproc/expat2
 
-USE_GNOME?=	gnomehack gtk20 libxml2
+USE_GNOME?=	gnomehack glib20 libxml2
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ARGS?=--enable-gtk \
+CONFIGURE_ARGS?=--disable-gtk \
 		--disable-python \
 		--disable-gcj \
 		--disable-mono \
