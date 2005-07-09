@@ -297,6 +297,7 @@
     SUBDIR += mkfile
     SUBDIR += mksunbootcd
     SUBDIR += mktool
+    SUBDIR += mmore
     SUBDIR += modules
     SUBDIR += monit
     SUBDIR += monitord
