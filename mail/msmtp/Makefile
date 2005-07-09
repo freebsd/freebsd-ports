@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	msmtp
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	msmtp
@@ -23,7 +23,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAN1=		msmtp.1
 INFO=	msmtp
-PLIST_FILES=	bin/msmtp
 
 # XXX we need gnutls >= 1.2.0 which is not avaible via ports tree
 .if defined(WITH_GNUTLS)
@@ -44,6 +43,15 @@ CONFIGURE_ARGS+=	--disable-ssl
 LIB_DEPENDS+=	gsasl.9:${PORTSDIR}/security/gsasl
 .else
 CONFIGURE_ARGS+=	--disable-gsasl
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=		yes
+CONFIGURE_ARGS+=	--enable-nls
+PLIST_SUB=		NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB=		NLS="@comment "
 .endif
 
 .include <bsd.port.mk>
