@@ -10,7 +10,7 @@ PORTNAME=	bblimage
 PORTVERSION=	0.66
 PORTREVISION=	1
 CATEGORIES=	science
-MASTER_SITES=	http://www.uphs.upenn.edu/bbl/software/files/
+MASTER_SITES=	http://www.med.upenn.edu/bbl/software/files/
 EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	ports@FreeBSD.org
