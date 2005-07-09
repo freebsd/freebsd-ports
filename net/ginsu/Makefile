@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ginsu
-PORTVERSION=	0.5.3
+PORTVERSION=	0.7.0
 CATEGORIES=	net
 MASTER_SITES=	http://repetae.net/john/computer/ginsu/drop/
 
@@ -14,8 +14,6 @@ MAINTAINER=	jason-fbsd-ports-ginsu@shalott.net
 COMMENT=	A client for the gale secure instant messaging system
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
-
-BROKEN=		Does not build
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
