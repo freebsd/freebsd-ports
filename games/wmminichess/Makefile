@@ -9,7 +9,7 @@ PORTNAME=	wmminichess
 PORTVERSION=	0.8
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.foobargeek.com/miniCHESS/
+MASTER_SITES=	http://www.insanum.com/miniCHESS/
 DISTNAME=	miniCHESS-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
