@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	exifprobe
-PORTVERSION=	1.2.6
+PORTVERSION=	2.0.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.virtual-cafe.com/~dhh/tools.d/exifprobe.d/
 
@@ -16,7 +16,6 @@ COMMENT=	Probes JPEG or TIFF images and reports contents and structure
 USE_REINPLACE=	yes
 
 MAN1=		exifgrep.1 exifprobe.1
-PORTDOCS=	DESCRIPTION exifprobe-rman.html
 PLIST_FILES=	bin/exifgrep bin/exifprobe
 
 post-patch:
@@ -29,11 +28,5 @@ do-install:
 .for i in ${MAN1}
 	@${INSTALL_MAN} ${WRKSRC}/${i} ${MANPREFIX}/man/man1
 .endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.endif
 
 .include <bsd.port.mk>
