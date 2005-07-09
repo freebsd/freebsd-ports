@@ -9,8 +9,7 @@ PORTNAME=	gfont
 PORTVERSION=	1.0.3
 PORTREVISION=	1
 CATEGORIES=	graphics print www
-MASTER_SITES=	http://www.engelschall.com/sw/gfont/distrib/ \
-		ftp://ftp.engelschall.com/sw/gfont/
+MASTER_SITES=	ftp://ftp.ossp.org/pkg/tool/gfont/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphics Font - Create GIF image rendered with TeX-available Font
