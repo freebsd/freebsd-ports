@@ -18,6 +18,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	San Le's Free Finite Element Analysis
 
+BROKEN=		Size mismatch
+
 CONFLICTS=	swi-pl-* TenDRA-*
 USE_REINPLACE=	yes
 USE_MESA=	yes
