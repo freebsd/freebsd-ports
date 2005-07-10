@@ -9,7 +9,7 @@
 PORTNAME=	hexcurse
 PORTVERSION=	1.55
 CATEGORIES=	editors
-MASTER_SITES=	http://jewfish.net/downloads/
+MASTER_SITES=	http://www.jewfish.net/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A versatile ncurses-based hex editor
