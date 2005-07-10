@@ -2,13 +2,12 @@
 # Date created:        22 July 2002
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
-# $Id: Makefile,v 1.22 2005/05/16 03:43:07 mezz7 Exp $
+# $Id: Makefile,v 1.29 2005/07/07 05:52:45 tmclau02 Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	mono
-PORTVERSION=	1.1.7
-PORTREVISION=	4
+PORTVERSION=	1.1.8.2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/sources/mono-1.1/
 
@@ -32,9 +31,10 @@ CONFIGURE_ARGS=	--program-transform-name=\'\' \
 
 MAN1=		cert2spc.1 certmgr.1 chktrust.1 cilc.1 disco.1 dtd2xsd.1 \
 		gacutil.1 genxs.1 ilasm.1 jay.1 macpack.1 makecert.1 mcs.1 \
-		mint.1 mkbundle.1 mono-service.1 mono.1 monoburg.1 monodis.1 \
-		monop.1 monostyle.1 oldmono.1 permview.1 prj2make.1 secutil.1 \
-		setreg.1 signcode.1 sn.1 soapsuds.1 sqlsharp.1 wsdl.1 xsd.1
+		mint.1 mkbundle.1 mono-service.1 mono-shlib-cop.1 mono.1 \
+		monoburg.1 monodis.1 monop.1 monostyle.1 oldmono.1 \
+		permview.1 prj2make.1 secutil.1 setreg.1 signcode.1 sn.1 \
+		soapsuds.1 sqlsharp.1 wsdl.1 xsd.1
 MAN5=		mono-config.5
 
 ONLY_FOR_ARCHS=	i386
@@ -52,15 +52,18 @@ IGNORE=	Does not work on 4.X and 5.X before 503000
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-support_mph.h
 .endif
 
-.if exists(${LOCALBASE}/lib/libgamin-1.so)
-LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/gamin
-.elif exists(${LOCALBASE}/lib/libfam.so)
-LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
+.if exists(${LOCALBASE}/lib/libfam.so)
+USE_FAM=	yes
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/mono/metadata/assembly.c
+
+tests: build
+	@${ECHO_MSG} "===> Running mono regression tests"
+	@(cd ${WRKSRC}/mono/tests && ${SETENV} ${MAKE_ENV} ${GMAKE} \
+		${MAKE_FLAGS} Makefile ${MAKE_ARGS} test)
 
 pre-su-install:
 	${MKDIR} ${X11BASE}/lib/mono/gac
