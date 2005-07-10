@@ -23,6 +23,10 @@ etc/avmilter/avmilter.warn.sample
 @unexec if cmp -s %D/etc/antivir.conf.sample %D/etc/antivir.conf; then rm -f %D/etc/antivir.conf; else echo "If permanently deleting this package, %D/etc/antivir.conf must be removed manually."; fi
 etc/antivir.conf.sample
 @exec [ -f %B/antivir.conf ] || cp %B/%f %B/antivir.conf
+@cwd /
+etc/antivir.conf
+@exec ln -sf %%LOCALBASE%%/%F %D/%F
+@cwd %%LOCALBASE%%
 etc/rc.d/avmilter.sh
 etc/rc.d/avupdater.sh-dist_avmilter
 @unexec if [ -f %B/avupdater.sh ]; then echo "If permanently deleting this package, %B/avupdater.sh must be removed manually."; fi
@@ -86,5 +90,6 @@ sbin/avmilter
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL
 %%PORTDOCS%%%%DOCSDIR%%/README.gpg
 %%PORTDOCS%%%%DOCSDIR%%/avmilter_de.pdf
+%%PORTDOCS%%%%DOCSDIR%%/avmilter_en.pdf
 %%PORTDOCS%%%%DOCSDIR%%/antivir.gpg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

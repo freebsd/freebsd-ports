@@ -1,6 +1,6 @@
 --- doc/MANUAL.orig	Wed Jan 28 11:48:04 2004
 +++ doc/MANUAL	Mon Mar  1 01:08:06 2004
-@@ -24,37 +24,38 @@
+@@ -39,37 +39,38 @@
  
  To start, stop, restart AntiVir Milter:
  
@@ -17,12 +17,12 @@
  ---------------------------
  
 -Copy the license file *.key to the folder /usr/lib/AntiVir and 
--set the access rights of user and group to default uucp:
+-set the access rights of user and group to default root:antivir :
 +Copy the license file *.key to the folder %%PREFIX%%/AntiVir and 
-+set the access rights of user root and group to smmsp:
++set the access rights of user and group to default root:smmsp:
  
 -	# cp hbedv.key /usr/lib/AntiVir/
--	# chown uucp:antivir /usr/lib/AntiVir/avmgate.key
+-	# chown root:antivir /usr/lib/AntiVir/hbedv.key
 +	# cp hbedv.key %%PREFIX%%/AntiVir/
 +	# chown root:smmsp %%PREFIX%%/AntiVir/hbedv.key
 +	# chmod 440 %%PREFIX%%/AntiVir/hbedv.key
@@ -51,7 +51,7 @@
  # MaxNestingLevel		same as ArchiveMaxRecursion
  # MaxAttachments		100
  # BlockSuspiciousMime		NO
-@@ -62,7 +63,7 @@
+@@ -77,7 +78,7 @@
  # ExposeRecipientAlerts		NO
  # ExposeSenderAlerts		NO
  # ExposePostmasterAlerts	YES
@@ -60,7 +60,7 @@
  # RejectAlertMail		NO
  # QuarantineAlert		YES
  # ScanInArchive			YES
-@@ -93,13 +94,13 @@
+@@ -115,13 +116,13 @@
  -------------------------------
  
  Add the following line for a daily update at e.g. 0:25 a.m.:
@@ -77,7 +77,7 @@
  are provided:
  
  # EmailTo            	root@localhost
-@@ -113,7 +114,7 @@
+@@ -135,7 +136,7 @@
  # HTTPProxyPassword  	password
  # SyslogFacility     	user
  # SyslogPriority     	notice
@@ -86,7 +86,7 @@
  # GnuPGOptions
  # DetectDialer
  # DetectJoke
-@@ -133,7 +134,7 @@
+@@ -155,7 +156,7 @@
  you have the possibility to define your own text in alert and
  pathological notification mails.
  
@@ -95,7 +95,7 @@
  following files:
  
  	patho-administrator
-@@ -190,14 +191,15 @@
+@@ -213,14 +214,15 @@
  will be printed to syslog:
  (avmilter[1234]: Mail from foo@bar.tld to john@doe.tld will be scanned!)
  
@@ -113,9 +113,9 @@
  The i is an option for the regexp and it means ignore case.
  
  #The following matches exactly the *recipient* address "foo@bar.tld"
-@@ -298,8 +300,8 @@
- 11. Notice Mail Restrictions
- ------------------------
+@@ -325,8 +327,8 @@
+ no notice mail will be sent to the recipient(s) and the sender!
+ This behaviour cannot be changed.
  
 -In the /etc/avmilter.warn file one can specify who receives a
 -mail in case of an alert.

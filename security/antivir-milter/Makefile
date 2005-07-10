@@ -5,12 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	antivir-milter
-PORTVERSION=	1.1.0p3
-CATEGORIES=	security mail
-MASTER_SITES=	ftp://ftp.antivir.de/unix/milter/ \
-		http://dl.antivir.de/dateien/antivir/release/
-DISTVERSION=	${PORTVERSION:C/p.+$//}
+PORTVERSION=	1.1.0p7
 DISTVERSIONPREFIX=	prof-
+DISTVERSION=	${PORTVERSION:C/p/-/}
+CATEGORIES=	security mail
+MASTER_SITES=	http://dl.antivir.de/down/unix/packages/
 
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	AntiVir Milter mail virusscanner for Sendmail
@@ -48,6 +47,7 @@ LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 .endif
 
 post-extract:
+	@${CP} ${FILESDIR}/avq.sh ${WRKSRC}/script/avq
 	@${MV} ${WRKSRC}/templates/en/patho-admnistrator\
 		${WRKSRC}/templates/en/patho-administrator
 	@${MV} ${WRKSRC}/templates/en/virus-admnistrator\
@@ -93,6 +93,7 @@ do-install:
 .if !exists(${PREFIX}/etc/antivir.conf)
 	@${INSTALL_DATA} ${WRKSRC}/etc/antivir.conf ${PREFIX}/etc
 .endif
+	@${LN} -sf ${PREFIX}/etc/antivir.conf /etc
 	@${INSTALL_PROGRAM} ${BINSRC}/avmilter ${PREFIX}/sbin
 	@${INSTALL_SCRIPT} ${WRKDIR}/antivirupdater.sh \
 		${PREFIX}/sbin/antivirupdater
@@ -119,7 +120,7 @@ do-install:
 .for i in ChangeLog LICENSE LICENSE.DE
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
-.for i in MANUAL avmilter_de.pdf
+.for i in MANUAL avmilter_de.pdf avmilter_en.pdf
 	@${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/pgp/README ${DOCSDIR}/README.gpg
