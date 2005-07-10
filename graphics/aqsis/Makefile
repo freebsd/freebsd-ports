@@ -38,8 +38,8 @@ LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64 (needs -fPIC)"
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "ia64"
+BROKEN=		"Does not compile on ${MACHINE_ARCH} (needs -fPIC)"
 .endif
 
 post-patch:
