@@ -6454,6 +6454,7 @@ namazu2		ports/databases/namazu2
 nana		ports/devel/nana
 nano		ports/editors/nano
 nanoblogger	ports/www/nanoblogger
+nant		ports/devel/nant
 napshare	ports/net/napshare
 napster		ports/audio/napster
 narval		ports/deskutils/narval
