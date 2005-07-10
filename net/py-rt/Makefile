@@ -9,7 +9,7 @@
 PORTNAME=	rt
 PORTVERSION=	2.5
 CATEGORIES=	net python
-MASTER_SITES=	http://www.sprintlabs.com/Department/IP-Interworking/Routing/PyRT/
+MASTER_SITES=	http://research.sprintlabs.com/pyrt/results/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyrt-${PORTVERSION}
 
