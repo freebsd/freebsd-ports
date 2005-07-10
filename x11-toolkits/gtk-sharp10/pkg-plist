@@ -85,35 +85,35 @@ share/gapi/gtkhtml-api.xml
 share/gapi/pango-api.xml
 share/gapi/rsvg-api.xml
 share/gapi/vte-api.xml
-@dirrm share/gapi
+@unexec rmdir %D/share/gapi 2> /dev/null || true
 @dirrm lib/mono/gtk-sharp
 @dirrm lib/mono/gac/vte-sharp/1.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/vte-sharp
+@unexec rmdir %D/lib/mono/gac/vte-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/rsvg-sharp/1.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/rsvg-sharp
+@unexec rmdir %D/lib/mono/gac/rsvg-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/pango-sharp/1.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/pango-sharp
+@unexec rmdir %D/lib/mono/gac/pango-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/gtkhtml-sharp/1.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/gtkhtml-sharp
+@unexec rmdir %D/lib/mono/gac/gtkhtml-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/gtk-sharp/1.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/gtk-sharp
+@unexec rmdir %D/lib/mono/gac/gtk-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/gnomedb-sharp/1.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/gnomedb-sharp
+@unexec rmdir %D/lib/mono/gac/gnomedb-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/gnome-sharp/1.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/gnome-sharp
+@unexec rmdir %D/lib/mono/gac/gnome-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/glib-sharp/1.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/glib-sharp
+@unexec rmdir %D/lib/mono/gac/glib-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/glade-sharp/1.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/glade-sharp
+@unexec rmdir %D/lib/mono/gac/glade-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/gdk-sharp/1.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/gdk-sharp
+@unexec rmdir %D/lib/mono/gac/gdk-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/gda-sharp/1.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/gda-sharp
+@unexec rmdir %D/lib/mono/gac/gda-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/gconf-sharp/1.0.0.0__35e10195dab3c99f
 @dirrm lib/mono/gac/gconf-sharp-peditors/1.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/gconf-sharp-peditors
-@dirrm lib/mono/gac/gconf-sharp
+@unexec rmdir %D/lib/mono/gac/gconf-sharp-peditors 2> /dev/null || true
+@unexec rmdir %D/lib/mono/gac/gconf-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/atk-sharp/1.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/atk-sharp
+@unexec rmdir %D/lib/mono/gac/atk-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/art-sharp/1.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/art-sharp
+@unexec rmdir %D/lib/mono/gac/art-sharp 2> /dev/null || true
