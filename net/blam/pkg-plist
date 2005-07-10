@@ -1,10 +1,11 @@
 bin/blam
-lib/blam/atom.dll
+lib/blam/Atom.NET.dll
+lib/blam/RSS.NET.dll
 lib/blam/blam.exe
+lib/blam/blam.exe.config
 lib/blam/libblam.a
 lib/blam/libblam.so
 lib/blam/libblam.so.0
-lib/blam/rss.dll
 share/gnome/applications/blam.desktop
 share/gnome/blam/collection.xml
 share/gnome/blam/images/blam-box-bottom-left.png
@@ -49,6 +50,7 @@ share/locale/sv/LC_MESSAGES/blam.mo
 share/locale/tr/LC_MESSAGES/blam.mo
 share/locale/uk/LC_MESSAGES/blam.mo
 share/locale/zh_CN/LC_MESSAGES/blam.mo
+share/locale/zh_TW/LC_MESSAGES/blam.mo
 @unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/rw 2> /dev/null || true
 @dirrm share/gnome/blam/images
