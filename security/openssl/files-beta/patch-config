@@ -1,0 +1,13 @@
+--- config.orig	Sun Jun 26 20:10:20 2005
++++ config	Sun Jul 10 14:46:38 2005
+@@ -654,8 +654,8 @@
+   *-*-sunos4)		OUT="sunos-$CC" ;;
+ 
+   *86*-*-bsdi4)		OUT="BSD-x86-elf"; options="$options no-sse2 -ldl" ;;
+-  alpha*-*-*bsd*)	OUT="BSD-generic64; options="$options -DL_ENDIAN" ;;
+-  powerpc64-*-*bsd*)	OUT="BSD-generic64; options="$options -DB_ENDIAN" ;;
++  alpha*-*-*bsd*)	OUT="BSD-alpha" ;;
++  powerpc64-*-*bsd*)	OUT="BSD-generic64"; options="$options -DB_ENDIAN" ;;
+   sparc64-*-*bsd*)	OUT="BSD-sparc64" ;;
+   ia64-*-*bsd*)		OUT="BSD-ia64" ;;
+   amd64-*-*bsd*)	OUT="BSD-x86_64" ;;
