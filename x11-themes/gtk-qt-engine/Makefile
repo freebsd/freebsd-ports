@@ -9,7 +9,8 @@ PORTNAME=	gtk-qt-engine
 PORTVERSION=	0.6
 PORTREVISION=	2
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://www.freedesktop.org/~davidsansome/
+MASTER_SITES=	http://www.freedesktop.org/~davidsansome/ \
+		http://freebsd.ricin.com/ports/distfiles/
 
 MAINTAINER=	danny@ricin.com
 COMMENT=	GTK-QT Theme Engine allows GTK2 apps to use QT (KDE) themes
