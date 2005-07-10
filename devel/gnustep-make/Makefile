@@ -37,18 +37,24 @@ GNUSTEP_WITHOUT_LIBOBJC=	yes
 BROKEN=		"Configure fails on FreeBSD >= 5.x"
 .endif
 
+.if !defined(GNUSTEP_WITH_BASE_GCC)
 pre-configure:
 	@if test ! -f "${TARGLIB}/libobjc.so"; then \
 		${ECHO_MSG} "libobjc.so not found, please update your gcc"; \
 		${FALSE}; \
 	fi; \
-	if test `${LDCONFIG} -r | ${GREP} libobjc.so | wc -l` -eq 0; then \
+	if test `${LDCONFIG} -r | ${GREP} "${TARGLIB}/libobjc.so" | wc -l` -eq 0; then \
 		${ECHO_MSG} "trying to fix ldconfig.hints"; \
 		${LDCONFIG} -f "${WRKDIR}/ldconfig.hints" -m "${TARGLIB}";\
-		if test `${LDCONFIG} -f "${WRKDIR}/ldconfig.hints" -r | ${GREP} libobjc.so | wc -l` -eq 0; then \
+		if test `${LDCONFIG} -f "${WRKDIR}/ldconfig.hints" -r | ${GREP} "${TARGLIB}/libobjc.so" | wc -l` -eq 0; then \
 			${ECHO_MSG} "libobjc.so not in path"; \
 			${FALSE}; \
 		fi; \
-	fi; \
+	fi;
+.endif
+
+.if defined(PARALLEL_PACKAGE_BUILD)
+NO_PACKAGE=	yes
+.endif
 
 .include <bsd.port.post.mk>
