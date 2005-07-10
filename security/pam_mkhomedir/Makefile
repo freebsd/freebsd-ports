@@ -10,7 +10,7 @@ PORTVERSION=	0.1
 CATEGORIES=	security
 MASTER_SITES=	http://portal-to-web.de/pam_mkhomedir/
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	gremlin@portal-to-web.de
 COMMENT=	Create HOME with a PAM module on demand
 
 MANCOMPRESSED=	yes
