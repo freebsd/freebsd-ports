@@ -7,12 +7,12 @@
 
 PORTNAME=	kde
 PORTVERSION=	4.0.0
-PORTREVISION=
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits kde python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/snapshots/PyKDE/ \
 		http://freebsd.ricin.com/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PyKDE-snapshot20050316
+DISTNAME=	PyKDE-snapshot20050628
 
 MAINTAINER=	danny@ricin.com
 COMMENT=	Python bindings for KDE3
