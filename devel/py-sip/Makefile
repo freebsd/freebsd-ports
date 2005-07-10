@@ -6,11 +6,12 @@
 
 PORTNAME=	sip
 PORTVERSION=	4.2.1
-PORTREVISION=
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/sip/ \
 		http://freebsd.ricin.com/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	sip-snapshot-20050703
 
 MAINTAINER=	danny@ricin.com
 COMMENT=	Python to C and C++ bindings generator
@@ -29,13 +30,13 @@ do-configure:
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
 		${PYTHON_CMD} configure.py \
 		-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR} \
-		-e ${PYTHON_INCLUDEDIR} -v ${PREFIX}/share/sip )
+		-e ${PYTHON_INCLUDEDIR} -v ${DATADIR} )
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@( ${MKDIR} ${DOCSDIR} && cd ${WRKSRC}/doc && \
-		${INSTALL_DATA} default.css sipref.html sipref.txt ${DOCSDIR} \
-		&& ${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} )
+	@( ${MKDIR} ${DOCSDIR} && cd ${WRKSRC} && ${INSTALL_DATA} \
+		doc/default.css doc/sipref.txt NEWS LICENSE ${DOCSDIR} && \
+		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} )
 .endif
 	@${PYTHON_CMD} -c "import sipconfig"
 	@${PYTHON_CMD} -O -c "import sipconfig"
