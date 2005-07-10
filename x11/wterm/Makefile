@@ -9,7 +9,7 @@ PORTNAME=	wterm
 PORTVERSION=	6.2.9
 PORTREVISION=	1
 CATEGORIES=	x11
-MASTER_SITES= 	http://largo.windowmaker.org/files/
+MASTER_SITES=	http://largo.windowmaker.org/files/
 
 MAINTAINER=	adam-ports@blacktabby.org
 COMMENT=	A color vt102 terminal emulator with transparency support
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${X11BASE}/lib/libWINGs.a:${PORTSDIR}/x11-wm/windowmaker
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --enable-transparency --enable-xpm-background \
+CONFIGURE_ARGS=	--enable-transparency --enable-xpm-background \
 		--disable-delete-key --disable-backspace-key \
 		--enable-next-scrollbar --enable-utmp --enable-wtmp \
 		--enable-menubar --enable-graphics
