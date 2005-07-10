@@ -7,7 +7,7 @@
 
 PORTNAME=	kdevelop
 PORTVERSION=	3.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION:S/.0//}/src
@@ -55,10 +55,12 @@ pre-everything::
 
 post-patch:
 	@${TOUCH} -t 200401230000 ${WRKSRC}/Makefile.am.in
+	@${CP} ${WRKSRC}/admin/acinclude.m4.in ${WRKSRC}/parts/appwizard/common/admin/acinclude.m4.in
 
 post-configure:
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
-		s|%%PREFIX%%|${PREFIX}|g' < ${FILESDIR}/kdevelop \
+		s|%%PREFIX%%|${PREFIX}|g ; \
+		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' < ${FILESDIR}/kdevelop \
 		> ${WRKDIR}/kdevelop
 .if ${ARCH} == "amd64"
 	@${REINPLACE_CMD} -e "s,-O2,${CFLAGS} -fPIC," \
