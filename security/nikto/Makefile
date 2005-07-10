@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nikto
-PORTVERSION=	1.34
+PORTVERSION=	1.35
 CATEGORIES=	security www
 MASTER_SITES=	http://www.cirt.net/nikto/ \
 		ftp://ftp.bay13.net/pub/wiretapped/vulnerability-assessment/nikto/ \
