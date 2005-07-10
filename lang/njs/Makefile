@@ -9,25 +9,27 @@ PORTNAME=	njs
 PORTVERSION=	0.2.5
 PORTREVISION=	1
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.bbassett.net/pub/njs/	\
-		http://www.bbassett.net/njs/	\
+MASTER_SITES=	http://www.bbassett.net/njs/	\
 		http://www.iki.fi/mtr/js/
 DISTNAME=	js-${PORTVERSION}
 
-MAINTAINER=	thierry@pompo.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NJS (NGS) is a standalone JavaScript/ECMAScript interpreter
 
 CONFLICTS=	js-1.5.*
 
-GNU_CONFIGURE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=13
 .if defined(NOPORTDOCS)
 USE_REINPLACE=	yes
 .endif
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-shared
 
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 MAN1=	js.1 jsdas.1
+INFO=	js
 
 post-extract:
 	@${RM} ${WRKSRC}/docs/js.info*
@@ -38,13 +40,8 @@ pre-install:
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-.for info in js.info
-	install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir
-.endfor
-.endif
 	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE} | ${SED} -e "s:%%PREFIX%%:${PREFIX}:g"
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
 .include <bsd.port.mk>
