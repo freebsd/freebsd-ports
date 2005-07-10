@@ -35,7 +35,6 @@ USE_GNOME=	orbit
 .endif
 
 USE_XLIB=	yes
-USE_IMAKE=	yes
 USE_PERL5=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
@@ -111,18 +110,15 @@ CXX=	g++32
 .endif
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
-		gcp:${PORTSDIR}/sysutils/coreutils
+		gcp:${PORTSDIR}/sysutils/coreutils \
+		imake:${X_IMAKE_PORT}
 .if defined(WITHOUT_JAVA)
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
-.else
-BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 .endif
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
-ANT?=		${LOCALBASE}/bin/ant
 TCSH?=		/bin/tcsh
-UNZIP?=		${PREFIX}/bin/unzip
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NUMOFPROCESSES?=	1
 
