@@ -8,7 +8,7 @@
 PORTNAME=	clig
 PORTVERSION=	1.1.3
 CATEGORIES=	devel tcl82
-MASTER_SITES=	http://wsd.iitb.fhg.de/~kir/clighome/
+MASTER_SITES=	http://wsd.iitb.fhg.de/~geg/clighome/
 
 MAINTAINER=	billf@FreeBSD.org
 COMMENT=	Auto-generate an (argc, argv) processor, usage message, and manpage
