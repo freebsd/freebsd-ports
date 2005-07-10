@@ -76,4 +76,4 @@ share/locale/zh_TW/LC_MESSAGES/gnome-mime-data.mo
 @unexec rmdir %D/share/locale/sr@ije/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/sr@ije 2>/dev/null || true
 @unexec rmdir %D/share/locale/yi/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/yi
+@unexec rmdir %D/share/locale/yi 2>/dev/null || true
