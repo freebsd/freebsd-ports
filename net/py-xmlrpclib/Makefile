@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	xmlrpclib
-PORTVERSION=	0.9.9
+PORTVERSION=	1.0.1
 CATEGORIES=	net python
-MASTER_SITES=	http://www.pythonware.net/storage/
+MASTER_SITES=	http://effbot.org/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	xmlrpc-${PORTVERSION}-010226
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python implementation of the XML-RPC protocol
 
 USE_PYTHON=	yes
 USE_ZIP=	yes
-NO_WRKSUBDIR=	yes
 
 XRL_DOCDIR=	${PREFIX}/share/doc/py-xmlrpclib
 XRL_EGDIR=	${PREFIX}/share/examples/py-xmlrpclib
