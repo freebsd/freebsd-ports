@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Mon Feb 28 17:13:10 2005
++++ Makefile.in	Thu Jun  2 22:54:03 2005
+@@ -527,7 +527,6 @@
+ @GCONF_SCHEMAS_INSTALL_TRUE@	    GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$$p ; \
+ @GCONF_SCHEMAS_INSTALL_TRUE@	  done \
+ @GCONF_SCHEMAS_INSTALL_TRUE@	fi
+-@GCONF_SCHEMAS_INSTALL_TRUE@	killall -HUP gconfd-2
+ @GCONF_SCHEMAS_INSTALL_FALSE@install-data-local:
+ 
+ gfax: gfax.in config.log
