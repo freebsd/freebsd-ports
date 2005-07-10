@@ -6,12 +6,17 @@
 #
 
 PORTNAME=	openssl
-.if defined(OPENSSL_SNAPSHOT)
-PORTVERSION=	0.9.7
+.if defined(WITH_OPENSSL_SNAPSHOT)
+PORTVERSION=	0.9.8
 PORTREVISION!=	date -v-1d +%Y%m%d
+.else
+.if defined(WITH_OPENSSL_BETA)
+PORTVERSION=	0.9.8
+PORTREVISION?=	0
 .else
 PORTVERSION=	0.9.7g
 PORTREVISION?=	0
+.endif
 .endif
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
@@ -29,7 +34,7 @@ COMMENT=	SSL and crypto library
 .error You have `USE_OPENSSL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
-.if defined(OPENSSL_SNAPSHOT)
+.if defined(WITH_OPENSSL_SNAPSHOT)
 MASTER_SITE_SUBDIR2=	snapshot
 DISTNAME2=	${PORTNAME}-${PORTVERSION}-stable-SNAP-${PORTREVISION}
 NO_CHECKSUM=	yes
@@ -38,18 +43,26 @@ MASTER_SITE_SUBDIR2=	source
 DISTNAME2=	${PORTNAME}-${PORTVERSION}
 .endif
 
+.if defined(WITH_OPENSSL_BETA) || defined(WITH_OPENSSL_SNAPSHOT)
 .if defined(WITH_OPENSSL_BETA)
 BETA_SUFFIX=		-beta
 CONFLICTS?=		openssl-0.*
+.endif
 OPENSSL_SHLIBVER?=	4
 NO_LATEST_LINK=		yes
+PATCHDIR=		${MASTERDIR}/files-beta
+PLIST_SUB+=		OPENSSL_BETA=""
+PLIST_SUB+=		OPENSSL_STABLE="@comment "
 .else
 CONFLICTS?=		openssl-beta-0.*
 OPENSSL_SHLIBVER?=	3
+PLIST_SUB+=		OPENSSL_BETA="@comment "
+PLIST_SUB+=		OPENSSL_STABLE=""
 .endif
 
 MAKE_ENV+=		MANPREFIX=${MANPREFIX}
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
+NOPRECIOUSSOFTMAKEVARS=	Too many _MLINKS for fetch
 USE_REINPLACE=		yes
 USE_PERL5_BUILD=	yes
 CFLAGS+=		-Wl,-rpath,${LOCALBASE}/lib
@@ -847,6 +860,29 @@ MLINKS=	dgst.1 md4.1 \
 	ui_compat.3 des_read_pw_string.3 \
 	des_modes.7 Modes_of_DES.7
 
+.if defined(WITH_OPENSSL_BETA) || defined(WITH_OPENSSL_SNAPSHOT)
+MAN1+=	ec.1 ecparam.1
+MAN3+=	ASN1_generate_nconf.3 BN_BLINDING_new.3 ERR_set_mark.3 \
+	ecdsa.3 OPENSSL_Applink.3 OPENSSL_ia32cap.3 x509.3
+MAN5+=	x509v3_config.5
+MLINKS+= \
+	ASN1_generate_nconf.3 ASN1_generate_v3.3 \
+	BN_BLINDING_new.3 BN_BLINDING_convert.3 \
+	BN_BLINDING_new.3 BN_BLINDING_free.3 \
+	BN_BLINDING_new.3 BN_BLINDING_update.3 \
+	BN_BLINDING_new.3 BN_BLINDING_invert.3 \
+	BN_BLINDING_new.3 BN_BLINDING_convert_ex.3 \
+	BN_BLINDING_new.3 BN_BLINDING_invert_ex.3 \
+	BN_BLINDING_new.3 BN_BLINDING_get_thread_id.3 \
+	BN_BLINDING_new.3 BN_BLINDING_set_thread_id.3 \
+	BN_BLINDING_new.3 BN_BLINDING_get_flags.3 \
+	BN_BLINDING_new.3 BN_BLINDING_set_flags.3 \
+	BN_BLINDING_new.3 BN_BLINDING_create_param.3 \
+	ERR_set_mark.3 ERR_pop_to_mark.3
+.else
+MAN3+=	SN1_generate_nconf.3
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "aout"
@@ -902,6 +938,13 @@ do-configure:
 	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS} \
 	./config --prefix=${PREFIX} --openssldir=${OPENSSLDIR} \
 	-L${PREFIX}/lib ${EXTRACONFIGURE}
+.if defined(WITH_OPENSSL_BETA)
+	@${REINPLACE_CMD} \
+		-e 's|^MANDIR=.*$$|MANDIR=$$(MANPREFIX)/man|' \
+		-e 's|lib/pkgconfig|libdata/pkgconfig|g' \
+		-e 's|LIBVERSION=[^ ]* |LIBVERSION=$(OPENSSL_SHLIBVER) |' \
+		${WRKSRC}/Makefile
+.else
 	@${REINPLACE_CMD} \
 		-e 's|^FIPS_DES_ENC=|#FIPS_DES_ENC=|' \
 		-e 's|^FIPS_SHA1_ASM_OBJ=|#FIPS_SHA1_ASM_OBJ=|' \
@@ -909,6 +952,7 @@ do-configure:
 		-e 's|^SHARED_LIBS_LINK_EXTS=.*$$|SHARED_LIBS_LINK_EXTS=.so|' \
 		-e 's|^SHLIBDIRS= fips|SHLIBDIRS=|' \
 		${WRKSRC}/Makefile
+.endif
 
 post-install:
 .if !defined(NOSHARED)
