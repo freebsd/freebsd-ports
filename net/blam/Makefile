@@ -2,22 +2,23 @@
 # Date created:				20040812
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
-# $Id: Makefile,v 1.10 2005/05/10 16:59:13 mezz7 Exp $
+# $Id: Makefile,v 1.12 2005/06/22 03:28:22 tmclau02 Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	blam
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.2
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.8
 
-MAINTAINER=	tmclaugh@sdf.lonestar.org
+MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Mono based RSS feed reader
 
 BUILD_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp \
 		${X11BASE}/libdata/pkgconfig/gecko-sharp.pc:${PORTSDIR}/www/gecko-sharp
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp \
+		${X11BASE}/libdata/pkgconfig/gecko-sharp.pc:${PORTSDIR}/www/gecko-sharp
 
 .if !defined(WITH_MOZILLA)
 MOZILLA=	mozilla
