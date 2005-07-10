@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	findlib
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml-programming.de/packages/
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
+ALL_TARGET=	all opt
 
 PLIST_FILES=	bin/ocamlfind etc/findlib.conf
 
