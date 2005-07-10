@@ -83,7 +83,7 @@ CONFIGURE_ARGS+=	--disable-mbcs
 
 .if ${OSVERSION} < 600000
 CONFIGURE_ENV+=	MAKEINFO_CMD=${LOCALBASE}/bin/makeinfo
-BUILD_DEPENDS+=	makeinfo:${PORTSDIR}/print/texinfo
+BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 .endif
 
 .include <bsd.port.post.mk>
