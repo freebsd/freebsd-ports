@@ -35,6 +35,7 @@ USE_GNOME=	orbit
 .endif
 
 USE_XLIB=	yes
+USE_IMAKE=	yes
 USE_PERL5=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
@@ -110,8 +111,7 @@ CXX=	g++32
 .endif
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
-		gcp:${PORTSDIR}/sysutils/coreutils \
-		imake:${X_IMAKE_PORT}
+		gcp:${PORTSDIR}/sysutils/coreutils
 .if defined(WITHOUT_JAVA)
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 .else
