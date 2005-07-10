@@ -23,6 +23,7 @@ bin/mupprnt
 %%PORTDOCS%%%%DOCSDIR%%/uguide/contexts.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/cres.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/crossbar.html
+%%PORTDOCS%%%%DOCSDIR%%/uguide/crossst.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/debug.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/fontfile.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/gensyn.html
@@ -31,16 +32,19 @@ bin/mupprnt
 %%PORTDOCS%%%%DOCSDIR%%/uguide/heeltoe.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/ichdattr.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/include.html
+%%PORTDOCS%%%%DOCSDIR%%/uguide/index.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/intro.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/invisbar.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/linecurv.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/lyrics.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/macros.html
+%%PORTDOCS%%%%DOCSDIR%%/uguide/mantup.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/manual.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/midi.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/midmeas.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/mixtsig.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/mugex10.gif
+%%PORTDOCS%%%%DOCSDIR%%/uguide/mugex100.gif
 %%PORTDOCS%%%%DOCSDIR%%/uguide/mugex11.gif
 %%PORTDOCS%%%%DOCSDIR%%/uguide/mugex12.gif
 %%PORTDOCS%%%%DOCSDIR%%/uguide/mugex13.gif
@@ -137,6 +141,7 @@ bin/mupprnt
 %%PORTDOCS%%%%DOCSDIR%%/uguide/mugex96.gif
 %%PORTDOCS%%%%DOCSDIR%%/uguide/mugex97.gif
 %%PORTDOCS%%%%DOCSDIR%%/uguide/mugex98.gif
+%%PORTDOCS%%%%DOCSDIR%%/uguide/mugex99.gif
 %%PORTDOCS%%%%DOCSDIR%%/uguide/multirst.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/multsong.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/muschar.gif
@@ -156,6 +161,7 @@ bin/mupprnt
 %%PORTDOCS%%%%DOCSDIR%%/uguide/register.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/roll.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/shaped.html
+%%PORTDOCS%%%%DOCSDIR%%/uguide/sharehd.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/slashmrk.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/stuff.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/tabstaff.html
@@ -165,7 +171,6 @@ bin/mupprnt
 %%PORTDOCS%%%%DOCSDIR%%/uguide/textstr.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/trnspose.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/tuplets.html
-%%PORTDOCS%%%%DOCSDIR%%/uguide/uguide.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/utilpgms.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/verses.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/uguide

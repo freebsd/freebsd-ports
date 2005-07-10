@@ -1,6 +1,7 @@
 PROG=	mup
 LDADD+=	-lm
 NOMAN=
+NO_MAN=
 
 SRCS=	abshorz.c \
         absvert.c \
