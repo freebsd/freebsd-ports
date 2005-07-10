@@ -13,7 +13,7 @@
  
  
  if test "x$has_mono" = "xtrue"; then
--GACUTIL_FLAGS='/package $(PACKAGE_VERSION) /gacdir $(DESTDIR)$(libdir)'
+-GACUTIL_FLAGS='/package $(PACKAGE_VERSION) /gacdir $(DESTDIR)$(prefix)/lib'
 +GACUTIL_FLAGS='/package $(PACKAGE_VERSION) /root $(DESTDIR)$(libdir) /gacdir $(DESTDIR)$(libdir)'
  GENERATED_SOURCES=generated/*.cs
  # Extract the first word of "mono", so it can be a program name with args.

@@ -2,14 +2,15 @@
 # Date created:         2003-01-01
 # Whom:                 Juli Mallett
 #
-# $Id: Makefile,v 1.8 2005/04/15 04:51:40 tmclau02 Exp $
+# $Id: Makefile,v 1.12 2005/06/07 01:21:44 mezz7 Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	gtk-sharp
-PORTVERSION=	1.9.3
+PORTVERSION=	1.9.5
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://go-mono.com/sources/gtk-sharp-2.0/
 MASTER_SITE_SUBDIR=	gtk-sharp
 PKGNAMESUFFIX=	-devel
 
@@ -17,7 +18,7 @@ MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	GTK+ and GNOME interfaces for the .NET runtime
 
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
 USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=15

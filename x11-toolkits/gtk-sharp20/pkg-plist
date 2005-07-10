@@ -3,10 +3,9 @@ bin/gapi2-fixup
 bin/gapi2-parser
 bin/gconfsharp2-schemagen
 lib/gtk-sharp-2.0/gapi-fixup.exe
+lib/gtk-sharp-2.0/gapi-parser.exe
 lib/gtk-sharp-2.0/gapi2xml.pl
 lib/gtk-sharp-2.0/gapi_codegen.exe
-lib/gtk-sharp-2.0/gapi_format_xml
-lib/gtk-sharp-2.0/gapi_parser.pl
 lib/gtk-sharp-2.0/gapi_pp.pl
 lib/gtk-sharp-2.0/gconfsharp-schemagen.exe
 lib/libgdksharpglue-2.so
@@ -15,6 +14,7 @@ lib/libglibsharpglue-2.so
 lib/libgnomesharpglue-2.so
 lib/libgtksharpglue-2.so
 lib/libpangosharpglue-2.so
+lib/libvtesharpglue-2.so
 lib/mono/gac/art-sharp/2.0.0.0__35e10195dab3c99f/art-sharp.dll
 lib/mono/gac/art-sharp/2.0.0.0__35e10195dab3c99f/art-sharp.dll.config
 lib/mono/gac/atk-sharp/2.0.0.0__35e10195dab3c99f/atk-sharp.dll
@@ -91,40 +91,41 @@ share/gapi-2.0/gtkhtml-api.xml
 share/gapi-2.0/pango-api.xml
 share/gapi-2.0/rsvg-api.xml
 share/gapi-2.0/vte-api.xml
-@dirrm share/gapi-2.0
+@dirrm lib/gtk-sharp-2.0/
+@unexec rmdir %D/share/gapi-2.0 2> /dev/null || true
 @dirrm lib/mono/gtk-sharp-2.0
 @dirrm lib/mono/gac/vte-sharp/2.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/vte-sharp
+@unexec rmdir %D/lib/mono/gac/vte-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/rsvg-sharp/2.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/rsvg-sharp
+@unexec rmdir %D/lib/mono/gac/rsvg-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/pango-sharp/2.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/pango-sharp
+@unexec rmdir %D/lib/mono/gac/pango-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/gtkhtml-sharp/2.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/gtkhtml-sharp
+@unexec rmdir %D/lib/mono/gac/gtkhtml-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/gtk-sharp/2.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/gtk-sharp
+@unexec rmdir %D/lib/mono/gac/gtk-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/gtk-dotnet/2.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/gtk-dotnet
+@unexec rmdir %D/lib/mono/gac/gtk-dotnet 2> /dev/null || true
 @dirrm lib/mono/gac/gnomedb-sharp/2.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/gnomedb-sharp
+@unexec rmdir %D/lib/mono/gac/gnomedb-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/gnome-vfs-sharp/2.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/gnome-vfs-sharp
+@unexec rmdir %D/lib/mono/gac/gnome-vfs-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/gnome-sharp/2.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/gnome-sharp
+@unexec rmdir %D/lib/mono/gac/gnome-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/glib-sharp/2.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/glib-sharp
+@unexec rmdir %D/lib/mono/gac/glib-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/glade-sharp/2.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/glade-sharp
+@unexec rmdir %D/lib/mono/gac/glade-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/gdk-sharp/2.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/gdk-sharp
+@unexec rmdir %D/lib/mono/gac/gdk-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/gda-sharp/2.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/gda-sharp
+@unexec rmdir %D/lib/mono/gac/gda-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/gconf-sharp/2.0.0.0__35e10195dab3c99f
 @dirrm lib/mono/gac/gconf-sharp-peditors/2.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/gconf-sharp-peditors
-@dirrm lib/mono/gac/gconf-sharp
+@unexec rmdir %D/lib/mono/gac/gconf-sharp-peditors 2> /dev/null || true
+@unexec rmdir %D/lib/mono/gac/gconf-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/atk-sharp/2.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/atk-sharp
+@unexec rmdir %D/lib/mono/gac/atk-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/art-sharp/2.0.0.0__35e10195dab3c99f
-@dirrm lib/mono/gac/art-sharp
-@dirrm lib/gtk-sharp-2.0
+@unexec rmdir %D/lib/mono/gac/art-sharp 2> /dev/null || true
+@unexec rmdir %D/lib/gtk-sharp-2.0 2> /dev/null || true
