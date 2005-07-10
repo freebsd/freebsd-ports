@@ -1,0 +1,16 @@
+What is it?
+-----------
+NAnt is a .NET based build tool. In theory it is kind of like make without
+make's wrinkles. In practice it's a lot like Ant.
+
+If you are not familiar with Jakarta Ant you can get more information at the
+Ant project web site (http://ant.apache.org/).
+
+
+Why NAnt?
+---------
+Because Ant was too Java specific.
+Because Ant needed the Java runtime.  NAnt only needs the .NET
+or Mono runtime.
+
+WWW: http://nant.sourceforge.net/
