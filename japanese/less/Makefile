@@ -9,17 +9,17 @@ PORTNAME=	less+iso
 PORTVERSION=	358.254
 PORTREVISION=	2
 CATEGORIES=	japanese
-MASTER_SITES=	http://www.io.com/~kazushi/less/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	sf
+MASTER_SITES=	http://www25.big.jp/~jam/less/:jless \
+		${MASTER_SITE_LOCAL:S/$/:gtags/}
+MASTER_SITE_SUBDIR=	sf/:gtags
 DISTNAME=	less-${PORTVERSION:R}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${XGTAGS}${EXTRACT_SUFX} \
-		regex_cs-lwp9k.shar.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:jless \
+		${XGTAGS}${EXTRACT_SUFX}:gtags \
+		regex_cs-lwp9k.shar.gz:jless
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		${XGTAGS}${EXTRACT_SUFX}
 
-PATCH_SITES=	http://www.io.com/~kazushi/less/
+PATCH_SITES=	http://www25.big.jp/~jam/less/
 PATCHFILES=	${DISTNAME}-iso${PORTVERSION:E}.patch.gz
 PATCH_DIST_STRIP=	-p1
 
