@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	tiff
-PORTVERSION=	3.7.2
+PORTVERSION=	3.7.3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 		http://dl1.maptools.org/dl/libtiff/
@@ -21,10 +21,12 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--with-jpeg-include-dir=${LOCALBASE}/include \
 			--with-jpeg-lib-dir=${LOCALBASE}/lib
+LDFLAGS+=	-lcompat
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 .if defined(WITH_X11) && !defined(WITHOUT_X11)
 USE_XLIB=	yes
@@ -111,7 +113,7 @@ MLINKS=	TIFFError.3tiff          TIFFSetErrorHandler.3tiff \
 
 pre-configure:
 	${REINPLACE_CMD} \
-		-e 's|-version-number .*$$|-version-number 4:0:0|' \
+		-e 's|^LIBTIFF_VERSION_INFO =.*$$|LIBTIFF_VERSION_INFO = 4:0:0|' \
 		${WRKSRC}/libtiff/Makefile.in
 	${REINPLACE_CMD} -e 's|^docfiles|no-docfiles|' \
 		-e 's|man html|man|' ${WRKSRC}/Makefile.in
