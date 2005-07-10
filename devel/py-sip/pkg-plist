@@ -1,6 +1,7 @@
 bin/sip
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/default.css
-%%PORTDOCS%%%%DOCSDIR%%/sipref.html
 %%PORTDOCS%%%%DOCSDIR%%/sipref.txt
 %%PYTHON_INCLUDEDIR%%/sip.h
 %%PYTHON_SITELIBDIR%%/sip.so
