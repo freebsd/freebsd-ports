@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/
 DISTNAME=	cdrtools-2.01
 
-MAINTAINER=	marius@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CD/CD-R[W] and ISO-9660 image creation and extraction tools
 
 CONFLICTS?=	cdrtools-devel-* cjk-cdrtools-*
