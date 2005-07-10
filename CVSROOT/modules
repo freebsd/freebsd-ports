@@ -65,7 +65,7 @@ taginfo		CVSROOT taginfo
 3proxy		ports/net/3proxy
 44bsd-csh	ports/shells/44bsd-csh
 44bsd-hunt	ports/games/44bsd-hunt
-44bsd-more	ports/misc/44bsd-more
+44bsd-more	ports/sysutils/44bsd-more
 44bsd-rdist	ports/net/44bsd-rdist
 4g8		ports/net/4g8
 4stattack	ports/games/4stattack
@@ -6222,7 +6222,7 @@ moregroupware	ports/deskutils/moregroupware
 moria		ports/games/moria
 morpheus	ports/graphics/morpheus
 moscow_ml	ports/lang/moscow_ml
-most		ports/misc/most
+most		ports/sysutils/most
 motor		ports/devel/motor
 mount.app	ports/sysutils/mount.app
 mouseclock	ports/x11-clocks/mouseclock
@@ -9424,7 +9424,7 @@ ports_java	ports/java
 ports_korean	ports/korean
 ports_lam	ports/net/lam
 ports_lang	ports/lang
-ports_less	ports/misc/less
+ports_less	ports/sysutils/less
 ports_libarchive	ports/archivers/libarchive
 ports_libedit	ports/devel/libedit
 ports_libpcap	ports/net/libpcap
@@ -10239,7 +10239,7 @@ recombine	ports/biology/recombine
 redir		ports/net/redir
 redland		ports/textproc/redland
 redland-bindings	ports/textproc/redland-bindings
-reed		ports/misc/reed
+reed		ports/sysutils/reed
 reed-solomon	ports/math/reed-solomon
 refdb		ports/textproc/refdb
 regexx		ports/devel/regexx
@@ -12218,7 +12218,7 @@ wmcliphist	ports/x11/wmcliphist
 wmclock		ports/x11-clocks/wmclock
 wmclockmon	ports/x11-clocks/wmclockmon
 wmconfig	ports/x11-wm/wmconfig
-wmcp		ports/misc/wmcp
+wmcp		ports/x11-wm/wmcp
 wmcpuload	ports/sysutils/wmcpuload
 wmctrl		ports/x11/wmctrl
 wmcube		ports/sysutils/wmcube
