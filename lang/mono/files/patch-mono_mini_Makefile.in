@@ -1,0 +1,42 @@
+--- mono/mini/Makefile.in.orig	Wed Jul  6 21:41:54 2005
++++ mono/mini/Makefile.in	Wed Jul  6 23:48:29 2005
+@@ -341,6 +341,7 @@
+ ac_ct_OBJDUMP = @ac_ct_OBJDUMP@
+ ac_ct_RANLIB = @ac_ct_RANLIB@
+ ac_ct_STRIP = @ac_ct_STRIP@
++ac_pt_PKG_CONFIG = @ac_pt_PKG_CONFIG@
+ am__fastdepCC_FALSE = @am__fastdepCC_FALSE@
+ am__fastdepCC_TRUE = @am__fastdepCC_TRUE@
+ am__fastdepCXX_FALSE = @am__fastdepCXX_FALSE@
+@@ -422,7 +423,7 @@
+ 	$(libgc_static_libs) \
+ 	$(ICU_LIBS)
+ 
+-RUNTIME = MONO_PATH=$(mcs_topdir)/class/lib/default MONO_SHARED_DIR=$(mono_build_root)/runtime MONO_CFG_DIR=$(mono_cfg_dir) ./mono --config $(top_builddir)/data/config
++RUNTIME = MONO_PATH=$(mcs_topdir)/class/lib/default $(top_builddir)/runtime/mono-wrapper
+ MCS = $(RUNTIME) $(mcs_topdir)/class/lib/default/mcs.exe -unsafe -nowarn:0162
+ ILASM = $(RUNTIME) $(mcs_topdir)/ilasm/ilasm.exe
+ INCLUDES = \
+@@ -641,9 +642,9 @@
+ 	      exit 1;; \
+ 	  esac; \
+ 	done; \
+-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign  mono/mini/Makefile'; \
++	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  mono/mini/Makefile'; \
+ 	cd $(top_srcdir) && \
+-	  $(AUTOMAKE) --foreign  mono/mini/Makefile
++	  $(AUTOMAKE) --gnu  mono/mini/Makefile
+ .PRECIOUS: Makefile
+ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
+ 	@case '$?' in \
+@@ -1124,7 +1125,9 @@
+ docu: mini.sgm
+ 	docbook2txt mini.sgm
+ 
+-check-local: rcheck
++check-local:
++	ok=:; $(MAKE) rcheck || ok=false; \
++	$(top_builddir)/runtime/semdel-wrapper || :; $$ok
+ 
+ clean-local:
+ 	rm -f mono a.out gmon.out *.o test.exe

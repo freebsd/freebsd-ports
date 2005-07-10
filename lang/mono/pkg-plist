@@ -21,11 +21,11 @@ bin/mono
 bin/mono-find-provides
 bin/mono-find-requires
 bin/mono-service
+bin/mono-shlib-cop
 bin/monodiet
 bin/monodis
 bin/monograph
 bin/monop
-bin/monoresgen
 bin/pedump
 bin/permview
 bin/prj2make
@@ -108,10 +108,8 @@ include/mono/utils/mono-uri.h
 include/mono/utils/monobitset.h
 lib/libMonoPosixHelper.a
 lib/libMonoPosixHelper.so
-lib/libMonoPosixHelper.so.1
 lib/libikvm-native.a
 lib/libikvm-native.so
-lib/libikvm-native.so.0
 lib/libmono-profiler-cov.a
 lib/libmono-profiler-cov.so
 lib/libmono-profiler-cov.so.0
@@ -211,12 +209,10 @@ lib/mono/1.0/mkbundle.exe
 lib/mono/1.0/mkbundle.exe.mdb
 lib/mono/1.0/mono-api-diff.exe
 lib/mono/1.0/mono-api-info.exe
-lib/mono/1.0/mono-find-provides.exe
-lib/mono/1.0/mono-find-provides.exe.mdb
-lib/mono/1.0/mono-find-requires.exe
-lib/mono/1.0/mono-find-requires.exe.mdb
 lib/mono/1.0/mono-service.exe
 lib/mono/1.0/mono-service.exe.mdb
+lib/mono/1.0/mono-shlib-cop.exe
+lib/mono/1.0/mono-shlib-cop.exe.mdb
 lib/mono/1.0/monop.exe
 lib/mono/1.0/monop.exe.mdb
 lib/mono/1.0/mscorlib.dll
@@ -299,6 +295,7 @@ lib/mono/2.0/cscompmgd.dll
 lib/mono/2.0/gmcs.exe
 lib/mono/2.0/gmcs.exe.config
 lib/mono/2.0/gmcs.exe.mdb
+lib/mono/2.0/mono-api-info.exe
 lib/mono/2.0/mscorlib.dll
 lib/mono/2.0/mscorlib.dll.mdb
 lib/mono/2.0/nunit.util.dll
@@ -346,8 +343,10 @@ lib/mono/gac/ICSharpCode.SharpZipLib/0.6.0.0__1b03e6acf1164f73/ICSharpCode.Sharp
 lib/mono/gac/ICSharpCode.SharpZipLib/0.6.0.0__1b03e6acf1164f73/ICSharpCode.SharpZipLib.dll.mdb
 lib/mono/gac/ICSharpCode.SharpZipLib/2.6.0.0__1b03e6acf1164f73/ICSharpCode.SharpZipLib.dll
 lib/mono/gac/ICSharpCode.SharpZipLib/2.6.0.0__1b03e6acf1164f73/ICSharpCode.SharpZipLib.dll.mdb
-lib/mono/gac/Microsoft.JScript/0.0.0.0__b03f5f7f11d50a3a/Microsoft.JScript.dll
-lib/mono/gac/Microsoft.JScript/0.0.0.0__b03f5f7f11d50a3a/Microsoft.JScript.dll.mdb
+lib/mono/gac/Microsoft.JScript/7.0.5000.0__b03f5f7f11d50a3a/Microsoft.JScript.dll
+lib/mono/gac/Microsoft.JScript/7.0.5000.0__b03f5f7f11d50a3a/Microsoft.JScript.dll.mdb
+lib/mono/gac/Microsoft.JScript/8.0.3600.0__b03f5f7f11d50a3a/Microsoft.JScript.dll
+lib/mono/gac/Microsoft.JScript/8.0.3600.0__b03f5f7f11d50a3a/Microsoft.JScript.dll.mdb
 lib/mono/gac/Microsoft.VisualBasic/7.0.5000.0__b03f5f7f11d50a3a/Microsoft.VisualBasic.dll
 lib/mono/gac/Microsoft.VisualBasic/8.0.3600.0__b03f5f7f11d50a3a/Microsoft.VisualBasic.dll
 lib/mono/gac/Microsoft.VisualC/7.0.5000.0__b03f5f7f11d50a3a/Microsoft.VisualC.dll
@@ -642,7 +641,8 @@ share/jay/skeleton.cs
 @dirrm lib/mono/gac/Microsoft.VisualBasic/8.0.3600.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/Microsoft.VisualBasic/7.0.5000.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/Microsoft.VisualBasic
-@dirrm lib/mono/gac/Microsoft.JScript/0.0.0.0__b03f5f7f11d50a3a
+@dirrm lib/mono/gac/Microsoft.JScript/8.0.3600.0__b03f5f7f11d50a3a
+@dirrm lib/mono/gac/Microsoft.JScript/7.0.5000.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/Microsoft.JScript
 @dirrm lib/mono/gac/ICSharpCode.SharpZipLib/2.6.0.0__1b03e6acf1164f73
 @dirrm lib/mono/gac/ICSharpCode.SharpZipLib/0.6.0.0__1b03e6acf1164f73
@@ -677,8 +677,8 @@ share/jay/skeleton.cs
 @dirrm lib/mono/gac/Accessibility/1.0.5000.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/Accessibility
 @unexec rmdir %D/lib/mono/gac 2>/dev/null || true
-@dirrm lib/mono/2.0
-@dirrm lib/mono/1.0
+@unexec rmdir %D/lib/mono/2.0 2>/dev/null || true
+@unexec rmdir %D/lib/mono/1.0 2>/dev/null || true
 @unexec rmdir %D/lib/mono 2>/dev/null || true
 @dirrm include/mono/utils
 @dirrm include/mono/private

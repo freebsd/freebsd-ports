@@ -1,0 +1,27 @@
+--- configure.orig	Wed Jul  6 21:41:55 2005
++++ configure	Wed Jul  6 22:00:23 2005
+@@ -35047,6 +35047,8 @@
+ 
+           ac_config_files="$ac_config_files runtime/monodis-wrapper"
+ 
++	  ac_config_files="$ac_config_files runtime/semdel-wrapper"
++
+ 
+           ac_config_commands="$ac_config_commands runtime/etc/mono/1.0/machine.config"
+ 
+@@ -35804,6 +35806,7 @@
+   # Handling of arguments.
+   "runtime/mono-wrapper" ) CONFIG_FILES="$CONFIG_FILES runtime/mono-wrapper" ;;
+   "runtime/monodis-wrapper" ) CONFIG_FILES="$CONFIG_FILES runtime/monodis-wrapper" ;;
++  "runtime/semdel-wrapper" ) CONFIG_FILES="$CONFIG_FILES runtime/semdel-wrapper" ;;
+   "Makefile" ) CONFIG_FILES="$CONFIG_FILES Makefile" ;;
+   "mint.pc" ) CONFIG_FILES="$CONFIG_FILES mint.pc" ;;
+   "mono.pc" ) CONFIG_FILES="$CONFIG_FILES mono.pc" ;;
+@@ -36348,6 +36351,7 @@
+   case $ac_file in
+     runtime/mono-wrapper ) chmod +x runtime/mono-wrapper ;;
+     runtime/monodis-wrapper ) chmod +x runtime/monodis-wrapper ;;
++    runtime/semdel-wrapper ) chmod +x runtime/semdel-wrapper ;;
+   esac
+ done
+ _ACEOF

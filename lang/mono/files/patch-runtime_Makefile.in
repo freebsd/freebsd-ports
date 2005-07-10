@@ -1,0 +1,148 @@
+--- runtime/Makefile.in.orig	Wed Jul  6 21:41:54 2005
++++ runtime/Makefile.in	Wed Jul  6 23:33:56 2005
+@@ -14,10 +14,6 @@
+ 
+ @SET_MAKE@
+ 
+-# This is just used to copy and install the DLL files that are currently
+-# being compiled on windows.
+-#
+-
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
+ VPATH = @srcdir@
+@@ -43,14 +39,15 @@
+ target_triplet = @target@
+ subdir = runtime
+ DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
+-	$(srcdir)/mono-wrapper.in $(srcdir)/monodis-wrapper.in
++	$(srcdir)/mono-wrapper.in $(srcdir)/monodis-wrapper.in \
++	$(srcdir)/semdel-wrapper.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/configure.in
+ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
+ 	$(ACLOCAL_M4)
+ mkinstalldirs = $(install_sh) -d
+ CONFIG_HEADER = $(top_builddir)/config.h
+-CONFIG_CLEAN_FILES = mono-wrapper monodis-wrapper
++CONFIG_CLEAN_FILES = mono-wrapper monodis-wrapper semdel-wrapper
+ SCRIPTS = $(noinst_SCRIPTS)
+ depcomp =
+ am__depfiles_maybe =
+@@ -196,6 +193,7 @@
+ ac_ct_OBJDUMP = @ac_ct_OBJDUMP@
+ ac_ct_RANLIB = @ac_ct_RANLIB@
+ ac_ct_STRIP = @ac_ct_STRIP@
++ac_pt_PKG_CONFIG = @ac_pt_PKG_CONFIG@
+ am__fastdepCC_FALSE = @am__fastdepCC_FALSE@
+ am__fastdepCC_TRUE = @am__fastdepCC_TRUE@
+ am__fastdepCXX_FALSE = @am__fastdepCXX_FALSE@
+@@ -254,7 +252,7 @@
+ # hack to prevent 'check' from depending on 'all'
+ AUTOMAKE_OPTIONS = cygnus
+ tmpinst = _tmpinst
+-noinst_SCRIPTS = mono-wrapper monodis-wrapper
++noinst_SCRIPTS = mono-wrapper monodis-wrapper semdel-wrapper
+ etctmp = etc
+ symlinks = etc/mono/1.0/machine.config etc/mono/2.0/machine.config
+ SUPPORT_FILES = $(symlinks) mono-wrapper wrapper-config
+@@ -273,7 +271,7 @@
+ CLEANFILES = wrapper-config
+ 
+ # the 'cygnus' option also disables the default 'distdir:' target, which we _do_ want
+-MYDISTFILES = Makefile.am Makefile.in mono-wrapper.in monodis-wrapper.in
++MYDISTFILES = $(DIST_COMMON)
+ all: all-am
+ 
+ .SUFFIXES:
+@@ -310,6 +308,8 @@
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
+ monodis-wrapper: $(top_builddir)/config.status $(srcdir)/monodis-wrapper.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
++semdel-wrapper: $(top_builddir)/config.status $(srcdir)/semdel-wrapper.in
++	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
+ 
+ mostlyclean-libtool:
+ 	-rm -f *.lo
+@@ -418,15 +418,20 @@
+ # The write check is to foil 'make distcheck'
+ all-local: $(SUPPORT_FILES)
+ 	if test -w $(mcs_topdir); then :; else chmod -R +w $(mcs_topdir); fi
+-	d=`pwd`; cd $(mcs_topdir) && $(MAKE) PROFILES='$(build_profiles)' all-profiles
++	d=`pwd`; ok=:; \
++	( cd $(mcs_topdir) && \
++	  $(MAKE) PROFILES='$(build_profiles)' all-profiles ) || ok=false; \
++	./semdel-wrapper || :; $$ok
+ 
+ # override automake
+ install: install-exec install-data
+ 
+ # override automake
+ install-exec: $(SUPPORT_FILES)
+-	d=`pwd`; \
+-	cd $(mcs_topdir) && $(MAKE) PROFILES='$(build_profiles)' RUNTIME_HAS_CONSISTENT_GACDIR=yes prefix=$(prefix) install-profiles
++	d=`pwd`; ok=:; \
++	( cd $(mcs_topdir) && \
++	  $(MAKE) PROFILES='$(build_profiles)' RUNTIME_HAS_CONSISTENT_GACDIR=yes prefix=$(prefix) install-profiles ) || ok=false; \
++	./semdel-wrapper || :; $$ok
+ 
+ # override automake
+ install-data:
+@@ -434,33 +439,38 @@
+ 
+ # override automake
+ uninstall:
+-	d=`pwd`; \
+-	cd $(mcs_topdir) && $(MAKE) PROFILES='$(build_profiles)' RUNTIME_HAS_CONSISTENT_GACDIR=yes prefix=$(prefix) uninstall-profiles
++	d=`pwd`; ok=:; \
++	( cd $(mcs_topdir) && \
++	  $(MAKE) PROFILES='$(build_profiles)' RUNTIME_HAS_CONSISTENT_GACDIR=yes prefix=$(prefix) uninstall-profiles ) || ok=false; \
++	./semdel-wrapper || :; $$ok
+ 
+ clean-local:
+ 	d=`pwd`; cd $(mcs_topdir) && $(MAKE) PROFILES='$(build_profiles)' clean-profiles
++	-./semdel-wrapper
+ 	-rm -fr $(etctmp) $(tmpinst) .wapi
+ 
+ mcs-do-test-profiles:
+-	d=`pwd`; cd $(mcs_topdir) && $(MAKE) PROFILES='$(build_profiles)' test-profiles
++	d=`pwd`; ok=:; \
++	( cd $(mcs_topdir) && $(MAKE) PROFILES='$(build_profiles)' test-profiles ) || ok=false; \
++	./semdel-wrapper || :; $$ok
+ 
+ mcs-do-run-test-profiles: test-support-files
+-	d=`pwd`; PATH=$$d/$(tmpinst)/bin:$$PATH ; export PATH ; \
+-	( cd $(mcs_topdir) && $(MAKE) PROFILES='$(build_profiles)' run-test-profiles ) || ret=false ; \
+-	rm -fr $(tmpinst); $$ret
++	d=`pwd`; ok=:; PATH=$$d/$(tmpinst)/bin:$$PATH ; export PATH ; \
++	( cd $(mcs_topdir) && $(MAKE) PROFILES='$(build_profiles)' run-test-profiles ) || ok=false; \
++	./semdel-wrapper || :; rm -fr $(tmpinst); $$ok
+ 
+ # Use --compile-all as a poor man's PEVerify to detect invalid IL
+ mcs-compileall: mono-wrapper wrapper-config
+-	save_MONO_PATH=$$MONO_PATH; mcs_topdir=`cd $(mcs_topdir) && $(cur_dir_cmd)`; ret=:; \
++	save_MONO_PATH=$$MONO_PATH; mcs_topdir=`cd $(mcs_topdir) && $(cur_dir_cmd)`; ok=:; \
+ 	for profile in $(build_profiles); do \
+ 	  MONO_PATH="$$mcs_topdir/class/lib/$$profile$(PLATFORM_PATH_SEPARATOR)$$save_MONO_PATH"; export MONO_PATH; \
+ 	  for i in $(mcs_topdir)/class/lib/$$profile/*.dll $(mcs_topdir)/class/lib/$$profile/*.exe $(mcs_topdir)/class/Microsoft.VisualBasic/fixup/$$profile/*.dll; do \
+ 	    if ./mono-wrapper --compile-all $$i; then \
+ 	      echo $$i verified OK; \
+ 	    else \
+-	      echo $$i verification failed; ret=false; \
++	      echo $$i verification failed; ok=false; \
+ 	    fi; done; done; \
+-	$$ret
++	./semdel-wrapper || :; $$ok
+ 
+ check-local: mcs-compileall mcs-do-test-profiles
+ 	$(MAKE) $(test_select) mcs-do-run-test-profiles
+@@ -506,8 +516,7 @@
+ 	rm -fr $(distdir)
+ 	mkdir $(distdir)
+ 	test -z '$(MYDISTFILES)' || for file in ''$(MYDISTFILES); do \
+-	  if test -f $$file; then d=.; else d=$(srcdir); fi; \
+-	  cp -p $$d/$$file $(distdir) ; done
++	  cp -p $$file $(distdir) ; done
+ 	find $(distdir) -type f -exec chmod a+r {} ';'
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

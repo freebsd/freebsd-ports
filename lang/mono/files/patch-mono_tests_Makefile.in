@@ -1,0 +1,93 @@
+--- mono/tests/Makefile.in.orig	Wed Jul  6 21:41:54 2005
++++ mono/tests/Makefile.in	Wed Jul  6 23:51:30 2005
+@@ -211,6 +211,7 @@
+ ac_ct_OBJDUMP = @ac_ct_OBJDUMP@
+ ac_ct_RANLIB = @ac_ct_RANLIB@
+ ac_ct_STRIP = @ac_ct_STRIP@
++ac_pt_PKG_CONFIG = @ac_pt_PKG_CONFIG@
+ am__fastdepCC_FALSE = @am__fastdepCC_FALSE@
+ am__fastdepCC_TRUE = @am__fastdepCC_TRUE@
+ am__fastdepCXX_FALSE = @am__fastdepCXX_FALSE@
+@@ -270,7 +271,12 @@
+ TEST_PROG_RUN = MONO_PATH=$(mcs_topdir)/class/lib/default MONO_SHARED_DIR=$(mono_build_root)/runtime $(LIBTOOL) --mode=execute $(TEST_PROG)
+ JITTEST_PROG_RUN = MONO_PATH=$(mcs_topdir)/class/lib/default MONO_SHARED_DIR=$(mono_build_root)/runtime $(LIBTOOL) --mode=execute $(JITTEST_PROG)
+ RUNTIME_ARGS = --config tests-config --optimize=all
+-RUNTIME = MONO_PATH=$(mcs_topdir)/class/lib/default $(top_builddir)/runtime/mono-wrapper
++with_mono_path = MONO_PATH=$(mcs_topdir)/class/lib/default
++RUNTIME = $(with_mono_path) $(top_builddir)/runtime/mono-wrapper
++MKBUNDLE = \
++	PKG_CONFIG_PATH=$(top_builddir):$(PKG_CONFIG_PATH) \
++	$(RUNTIME) $(mcs_topdir)/tools/mkbundle/mkbundle.exe
++
+ CSC = $(RUNTIME) $(mcs_topdir)/class/lib/default/mcs.exe -unsafe -nowarn:0162 -nowarn:0168 -nowarn:0219
+ ILASM = $(RUNTIME) $(mcs_topdir)/ilasm/ilasm.exe
+ BENCHSRC = fib.cs random.cs nested-loops.cs ackermann.cs tight-loop.cs sieve.cs
+@@ -326,7 +332,6 @@
+ 	pinvoke11.cs		\
+ 	pinvoke13.cs		\
+ 	pinvoke17.cs		\
+-	pinvoke18.cs		\
+ 	invoke.cs		\
+ 	invoke2.cs		\
+ 	runtime-invoke.cs		\
+@@ -386,7 +391,6 @@
+ 	appdomain.cs        \
+ 	appdomain1.cs		\
+ 	appdomain2.cs		\
+-	appdomain3.cs		\
+ 	appdomain-client.cs	\
+ 	appdomain-unload.cs \
+ 	loader.cs       \
+@@ -521,9 +525,9 @@
+ 	      exit 1;; \
+ 	  esac; \
+ 	done; \
+-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign  mono/tests/Makefile'; \
++	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  mono/tests/Makefile'; \
+ 	cd $(top_srcdir) && \
+-	  $(AUTOMAKE) --foreign  mono/tests/Makefile
++	  $(AUTOMAKE) --gnu  mono/tests/Makefile
+ .PRECIOUS: Makefile
+ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
+ 	@case '$?' in \
+@@ -762,7 +766,9 @@
+ 	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
+ 	tags uninstall uninstall-am uninstall-info-am
+ 
+-check-local: test
++check-local:
++	ok=:; $(MAKE) test || ok=false; \
++	$(top_builddir)/runtime/semdel-wrapper || :; $$ok
+ 
+ %.exe: %.il
+ 	$(ILASM) -out:$@ $<
+@@ -770,7 +776,7 @@
+ %.exe: %.cs TestDriver.dll
+ 	$(CSC) -r:TestDriver.dll -out:$@ $<
+ 
+-test:	testjit
++test:	testjit testbundle
+ 
+ TestDriver.dll:
+ 	$(CSC) -target:library -out:$@ $(srcdir)/../mini/TestDriver.cs
+@@ -836,7 +842,7 @@
+ 	export LD_LIBRARY_PATH="`pwd`/.libs:$${LD_LIBRARY_PATH}"; \
+ 	for i in $(TESTSI_CS) $(TESTBS); do	\
+ 		rm -f $${i}.so; \
+-		$(JITTEST_PROG) --aot $${i} > /dev/null; \
++		$(JITTEST_PROG_RUN) --aot $${i} > /dev/null; \
+ 		if $(srcdir)/test-driver '$(JITTEST_PROG_RUN)' $$i "$(DISABLED_TESTS)" $(RUNTIME_ARGS); \
+ 		then \
+ 			passed=`expr $${passed} + 1`; \
+@@ -895,6 +901,11 @@
+ 	echo "$${passed} test(s) passed. $${failed} test(s) failed."; \
+ 	if [ $${failed} != 0 ]; then echo -e "\nFailed tests:\n"; \
+ 	  for i in $${failed_tests}; do echo $${i}; done; exit 1; fi
++
++testbundle: console.exe
++	$(MKBUNDLE) --static console.exe
++	$(with_mono_path) ./a.out
++	- rm -rf a.out
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
