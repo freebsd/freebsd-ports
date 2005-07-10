@@ -9,7 +9,9 @@ PORTNAME=	pcnfsd
 PORTVERSION=	93.02.16
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	ftp://bcm.tmc.edu/pcnfs/
+MASTER_SITES=	http://www.tux.org/pub/net/lprng/TOOLS/PCNFSD/ \
+		http://lprng.sourceforge.net/DISTRIB/TOOLS/PCNFSD/ \
+		http://public.planetmirror.com/pub/lprng/UNIXTOOLS/PCNFSD/
 DISTNAME=	pcnfsd.93.02.16
 EXTRACT_SUFX=	.tar.Z
 

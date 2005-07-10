@@ -8,7 +8,9 @@
 PORTNAME=	oonsoo
 PORTVERSION=	1.2
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.redlinelabs.com/pub/oonsoo/
+MASTER_SITES=	http://www2.cddc.vt.edu/linux/games/solitaires/ \
+		http://sunsite.rediris.es/sites2/ibiblio.org/linux/games/solitaires/ \
+		ftp://ftp.eos.ncsu.edu/pub/bsvc/rohan/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
