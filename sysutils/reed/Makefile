@@ -8,7 +8,7 @@
 PORTNAME=	reed
 PORTVERSION=	5.4
 PORTREVISION=	1
-CATEGORIES=	misc
+CATEGORIES=	sysutils
 MASTER_SITES=	http://www.sacredchao.net/~piman/archive/
 
 MAINTAINER=	petef@FreeBSD.org

@@ -109,6 +109,7 @@
     SUBDIR += wmakerconf
     SUBDIR += wmanager
     SUBDIR += wmconfig
+    SUBDIR += wmcp
     SUBDIR += wmg
     SUBDIR += wmi
     SUBDIR += wmii

@@ -3,7 +3,6 @@
 
     COMMENT = Miscellaneous utilities
 
-    SUBDIR += 44bsd-more
     SUBDIR += achievo
     SUBDIR += aclgen
     SUBDIR += acron
@@ -273,7 +272,6 @@
     SUBDIR += kwatch
     SUBDIR += latex-mk
     SUBDIR += lc
-    SUBDIR += less
     SUBDIR += lesspipe
     SUBDIR += libhome
     SUBDIR += libmcal
@@ -302,7 +300,6 @@
     SUBDIR += mirmon
     SUBDIR += misterproper
     SUBDIR += mmv
-    SUBDIR += most
     SUBDIR += moviedb
     SUBDIR += mshell
     SUBDIR += mtx
@@ -374,7 +371,6 @@
     SUBDIR += quick-lounge-applet
     SUBDIR += quotes
     SUBDIR += quranref
-    SUBDIR += reed
     SUBDIR += renamedlgplugins
     SUBDIR += rfc
     SUBDIR += ringtonetools
@@ -439,7 +435,6 @@
     SUBDIR += whichman
     SUBDIR += wmScoreBoard
     SUBDIR += wmcalendar
-    SUBDIR += wmcp
     SUBDIR += wmfirew
     SUBDIR += wminfo
     SUBDIR += wmjulia

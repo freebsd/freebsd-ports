@@ -4,6 +4,7 @@
     COMMENT = System utilities
 
     SUBDIR += 3dm
+    SUBDIR += 44bsd-more
     SUBDIR += 915resolution
     SUBDIR += LPRng
     SUBDIR += LPRngTool
@@ -245,6 +246,7 @@
     SUBDIR += lcdproc
     SUBDIR += ldap-account-manager
     SUBDIR += ledit
+    SUBDIR += less
     SUBDIR += lfm
     SUBDIR += libcdio
     SUBDIR += libchk
@@ -301,6 +303,7 @@
     SUBDIR += modules
     SUBDIR += monit
     SUBDIR += monitord
+    SUBDIR += most
     SUBDIR += mount.app
     SUBDIR += msyslog
     SUBDIR += mtxorbd
@@ -416,6 +419,7 @@
     SUBDIR += rdiff-backup
     SUBDIR += rdiff-backup-devel
     SUBDIR += readlink
+    SUBDIR += reed
     SUBDIR += reoback
     SUBDIR += rfstool
     SUBDIR += rlogview
