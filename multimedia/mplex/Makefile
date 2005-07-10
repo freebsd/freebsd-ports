@@ -8,7 +8,8 @@
 PORTNAME=	mplex
 PORTVERSION=	1.1
 CATEGORIES=	multimedia
-MASTER_SITES=	ftp://ftp.leo.org/pub/comp/general/graphics/mpeg/mplex/
+MASTER_SITES=	http://ftp.yars.free.net/pub/software/unix/X11/mpeg/ \
+		http://www.netsw.org/graphic/movie/mpeg/mplex/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplexes MPEG component streams into system layers
