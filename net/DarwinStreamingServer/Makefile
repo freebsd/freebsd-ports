@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	DarwinStreamingServer
-PORTVERSION=	5.0.3.2
-PORTREVISION=	1
+PORTVERSION=	5.5
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	#http://developer.apple.com/darwin/projects/streaming/source/
 #		You must accept APSL (Apple Public Source License),  and get
-#		DSS-v5_0_3_2.zip.
-DISTNAME=	DSS-v${PORTVERSION:S/./_/g}
+#		DarwinStreamingSrvr5.5-Source.tar.
+DISTNAME=	DarwinStreamingSrvr${PORTVERSION}-Source
+EXTRACT_SUFX=	.tar
 
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	Darwin Streaming Server, a MP3, MPEG4 and QuickTime streaming server
@@ -27,7 +28,6 @@ NO_PACKAGE=	${RESTRICTED}
 IGNORE=		${RESTRICTED}
 .endif
 
-USE_ZIP=	YES
 USE_REINPLACE=	YES
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -57,28 +57,33 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local/,${PREFIX}/,' \
 		${WRKSRC}/Install							\
 		${WRKSRC}/defaultPaths.h						\
+		${WRKSRC}/Documentation/readme.txt					\
 		${WRKSRC}/streamingserver.xml-POSIX					\
 		${WRKSRC}/WebAdmin/src/streamingadminserver.pl				\
 		${WRKSRC}/WebAdmin/WebAdminHtml/adminprotocol-lib.pl
 	@${REINPLACE_CMD} -e 's,${PREFIX}/sbin/StreamingServerModules,${PREFIX}/libexec/StreamingServerModules,' \
 		${WRKSRC}/Install							\
 		${WRKSRC}/defaultPaths.h						\
+		${WRKSRC}/Documentation/readme.txt					\
 		${WRKSRC}/streamingserver.xml-POSIX
 	@${REINPLACE_CMD} -e 's,${PREFIX}/movies,${DATADIR}/movies,' \
 		${WRKSRC}/Install							\
 		${WRKSRC}/defaultPaths.h						\
+		${WRKSRC}/Documentation/readme.txt					\
 		${WRKSRC}/streamingserver.xml-POSIX					\
 		${WRKSRC}/WebAdmin/WebAdminHtml/adminprotocol-lib.pl
 	@${REINPLACE_CMD} -e 's,/etc/streaming,${PREFIX}/etc/streaming,' \
 		${WRKSRC}/Install							\
 		${WRKSRC}/qtaccess							\
 		${WRKSRC}/defaultPaths.h						\
+		${WRKSRC}/Documentation/readme.txt					\
 		${WRKSRC}/streamingserver.xml-POSIX					\
 		${WRKSRC}/WebAdmin/src/streamingadminserver.pl				\
 		${WRKSRC}/WebAdmin/streamingadminserver_Darwin.conf
 	@${REINPLACE_CMD} -e 's,/var/streaming/logs,/var/log/streaming,' \
 		${WRKSRC}/Install							\
 		${WRKSRC}/defaultPaths.h						\
+		${WRKSRC}/Documentation/readme.txt					\
 		${WRKSRC}/streamingserver.xml-POSIX					\
 		${WRKSRC}/WebAdmin/src/streamingadminserver.pl				\
 		${WRKSRC}/WebAdmin/streamingadminserver_Darwin.conf
@@ -88,11 +93,11 @@ post-patch:
 		${WRKSRC}/WebAdmin/streamingadminserver_Darwin.conf
 	@${REINPLACE_CMD} -e 's,/var/streaming/playlists,/var/spool/streaming.playlists,' \
 		${WRKSRC}/Install							\
+		${WRKSRC}/Documentation/readme.txt					\
 		${WRKSRC}/WebAdmin/src/streamingadminserver.pl				\
 		${WRKSRC}/WebAdmin/streamingadminserver_Darwin.conf
 	@${REINPLACE_CMD} -e 's,/var/streaming/streamingadminserver.pid,/var/run/streamingadminserver.pid,' \
-		${WRKSRC}/WebAdmin/src/streamingadminserver.pl				\
-		${WRKSRC}/WebAdmin/streamingadminserver_Darwin.conf
+		${WRKSRC}/WebAdmin/src/streamingadminserver.pl
 	@${REINPLACE_CMD} -e '/-O[23]/d' \
 		${WRKSRC}/Makefile.POSIX						\
 		${WRKSRC}/QTFileLib/Makefile.POSIX					\
@@ -101,10 +106,11 @@ post-patch:
 		${WRKSRC}/HTTPUtilitiesLib/Makefile.POSIX				\
 		${WRKSRC}/CommonUtilitiesLib/Makefile.POSIX				\
 		${WRKSRC}/StreamingProxy.tproj/Makefile.POSIX				\
-		${WRKSRC}/StreamingServer.pbproj/project.pbxproj			\
+		${WRKSRC}/StreamingServer.xcode/project.pbxproj				\
 		${WRKSRC}/PlaylistBroadcaster.tproj/Makefile.POSIX			\
 		${WRKSRC}/QTFileTools/QTRTPGen.tproj/Makefile.POSIX			\
 		${WRKSRC}/QTFileTools/QTSDPGen.tproj/Makefile.POSIX			\
+		${WRKSRC}/StreamingServer.pbproject/project.pbxproj			\
 		${WRKSRC}/QTFileTools/QTFileInfo.tproj/Makefile.POSIX			\
 		${WRKSRC}/QTFileTools/QTFileTest.tproj/Makefile.POSIX			\
 		${WRKSRC}/APIModules/QTSSRefMovieModule/Makefile.POSIX			\
@@ -112,6 +118,7 @@ post-patch:
 		${WRKSRC}/QTFileTools/QTBroadcaster.tproj/Makefile.POSIX		\
 		${WRKSRC}/QTFileTools/QTRTPFileTest.tproj/Makefile.POSIX		\
 		${WRKSRC}/QTFileTools/QTSampleLister.tproj/Makefile.POSIX		\
+		${WRKSRC}/APIModules/QTSSHomeDirectoryModule/Makefile.POSIX		\
 		${WRKSRC}/APIModules/QTSSRawFileModule.bproj/Makefile.POSIX		\
 		${WRKSRC}/APIModules/QTSSSpamDefenseModule.bproj/Makefile.POSIX		\
 		${WRKSRC}/APIModules/QTSSDemoAuthorizationModule.bproj/Makefile.POSIX

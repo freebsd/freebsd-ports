@@ -1,6 +1,6 @@
---- Buildit.orig	Thu Jun 10 09:03:33 2004
-+++ Buildit	Sun Feb 20 17:19:01 2005
-@@ -78,20 +78,20 @@
+--- Buildit.orig	Tue May 31 19:54:23 2005
++++ Buildit	Sun Jul 10 15:22:41 2005
+@@ -93,20 +93,20 @@
  		fi
  		;;
  
@@ -22,7 +22,7 @@
 +	        INCLUDE_FLAG="-include"
  		
 -		CORE_LINK_LIBS="-pthread -lm -lcrypt"
-+		CORE_LINK_LIBS="${PTHREAD_LIBS} -lcrypt -lm"
++		CORE_LINK_LIBS="${PTHREAD_LIBS} -lm -lcrypt"
  
  		SHARED=-shared
 -		MODULE_LIBS="-lgcc -lstdc++"

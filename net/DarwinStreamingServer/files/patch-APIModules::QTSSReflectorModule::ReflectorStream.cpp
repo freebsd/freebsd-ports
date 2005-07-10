@@ -1,14 +1,5 @@
---- APIModules/QTSSReflectorModule/ReflectorStream.cpp.orig	Thu Jun 10 09:03:34 2004
-+++ APIModules/QTSSReflectorModule/ReflectorStream.cpp	Sun May  1 19:53:44 2005
-@@ -179,7 +179,7 @@
-     theRRWriter++;
-     *theRRWriter = htonl(theSsrc);
-     theRRWriter++;
--    *theRRWriter = FOUR_CHARS_TO_INT('Q','T','S','S');
-+    *theRRWriter = htonl(FOUR_CHARS_TO_INT('Q','T','S','S'));
-     theRRWriter++;
-     *theRRWriter = htonl(0);
-     theRRWriter++;
+--- APIModules/QTSSReflectorModule/ReflectorStream.cpp.orig	Thu Sep 30 23:40:54 2004
++++ APIModules/QTSSReflectorModule/ReflectorStream.cpp	Sun Jul 10 15:16:15 2005
 @@ -381,11 +381,11 @@
      // specified by the source info, we can use that to demultiplex separate broadcasts on
      // the same port. If the src IP addr is 0, we cannot do this and must dedicate 1 port per
