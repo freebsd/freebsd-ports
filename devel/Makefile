@@ -596,6 +596,7 @@
     SUBDIR += msp430-libc
     SUBDIR += msrc0
     SUBDIR += nana
+    SUBDIR += nant
     SUBDIR += nasm
     SUBDIR += naturaldocs
     SUBDIR += ncnf
