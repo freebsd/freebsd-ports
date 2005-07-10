@@ -1,8 +1,4 @@
-This is the MonoDoc module.  It contains the documentation for
-the Mono class libraries, tools to produce and edit the
-documentation, and a documentation browser.
+This is the MonoDoc module.  It contains the documentation for the Mono
+class libraries.
 
-The documentation browser consists of a library and two
-front-ends: a Gtk#-based one, and an ASP.NET-based version.
-
-WWW: http://www.mono-project.com
+WWW: http://www.mono-project.com/
