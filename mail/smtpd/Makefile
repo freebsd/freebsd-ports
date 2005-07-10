@@ -9,7 +9,9 @@ PORTNAME=	smtpd
 PORTVERSION=	2.0
 PORTREVISION=	2
 CATEGORIES=	mail security
-MASTER_SITES=	ftp://ftp.obtuse.com/pub/smtpd/
+MASTER_SITES=	http://ftp.rge.com/pub/mail/smtpd/ \
+		http://www.netsw.org/net/ip/firewall/proxy/smtpd/ \
+		ftp://ftp.obtuse.com/pub/smtpd/
 
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	patch-smtpd-2.0-RBL.gz
