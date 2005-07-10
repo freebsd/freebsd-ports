@@ -3,8 +3,8 @@ bin/MP3Broadcaster
 bin/PlaylistBroadcaster
 sbin/DarwinStreamingServer
 sbin/streamingadminserver.pl
-@comment libexec/StreamingServerModules/QTSSHomeDirectoryModule
-@comment libexec/StreamingServerModules/QTSSRefMovieModule
+libexec/StreamingServerModules/QTSSRefMovieModule
+libexec/StreamingServerModules/QTSSHomeDirectoryModule
 @exec   mkdir %D/%%DATADIR%%                 2>/dev/null || true
 @exec   mkdir %D/%%DATADIR%%/movies          2>/dev/null || true
 %%DATADIR%%/readme.txt
@@ -135,6 +135,10 @@ sbin/streamingadminserver.pl
 %%DATADIR%%/movies/sample_100kbit.mp4
 %%DATADIR%%/movies/sample_300kbit.mov
 %%DATADIR%%/movies/sample_300kbit.mp4
+%%DATADIR%%/movies/sample_50kbit.3gp
+%%DATADIR%%/movies/sample_h264_100kbit.mp4
+%%DATADIR%%/movies/sample_h264_1mbit.mp4
+%%DATADIR%%/movies/sample_h264_300kbit.mp4
 etc/rc.d/streamingadminserver.sh
 etc/rc.d/darwin_streaming_server.sh
 etc/streaming/qtusers-dist
