@@ -28,7 +28,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gconf2.so:${PORTSDIR}/devel/ruby-gconf2 \
 		${RUBY_SITEARCHLIBDIR}/panelapplet2.so:${PORTSDIR}/x11-toolkits/ruby-panelapplet \
 		${RUBY_SITEARCHLIBDIR}/libglade2.so:${PORTSDIR}/devel/ruby-libglade2
 
-USE_RUBY=       yes
+USE_RUBY=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 
