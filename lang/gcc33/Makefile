@@ -8,11 +8,11 @@
 
 PORTNAME=	gcc
 PORTVERSION=	3.3.6
-PORTREVISION=	20050511
+PORTEPOCH=	1
 CATEGORIES=	lang
-VERSIONSTRING=	3.3-${PORTREVISION}
+VERSIONSTRING=	${PORTVERSION}
 MASTER_SITES=	${MASTER_SITE_GCC}
-MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
+MASTER_SITE_SUBDIR=	releases/gcc-${VERSIONSTRING}
 DISTFILES=	\
 		gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
@@ -74,7 +74,6 @@ INFO=		cpp cppinternals g77 gcc gccint
 
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
-	@${ECHO_MSG} "(without Java)"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
@@ -94,8 +93,8 @@ check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 post-install:
-	# man pages can only be generated if Perl >= 5.6 is installed, so
-	# fake them on 4.x systems.
+	# man pages can only be generated if Perl >= 5.6 is installed;
+	# fake them otherwise.
 	for mp in ${_MANPAGES}; do \
 	  ${TEST} -e $${mp} || ${TOUCH} ${TOUCH_FLAGS} $${mp}; \
 	done
