@@ -8,7 +8,8 @@
 PORTNAME=	mpeg_stat
 PORTVERSION=	2.2b
 CATEGORIES=	multimedia
-MASTER_SITES=	ftp://mm-ftp.CS.Berkeley.EDU/pub/multimedia/mpeg/stat/
+MASTER_SITES=	http://bmrc.berkeley.edu/ftp/pub/multimedia/mpeg/stat/ \
+		ftp://mm-ftp.CS.Berkeley.EDU/pub/multimedia/mpeg/stat/
 DISTNAME=	${PKGNAME}-src
 
 MAINTAINER=	ports@FreeBSD.org

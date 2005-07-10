@@ -8,7 +8,8 @@
 PORTNAME=	mpeg_encode
 PORTVERSION=	1.5b
 CATEGORIES=	multimedia
-MASTER_SITES=	ftp://mm-ftp.CS.Berkeley.EDU/pub/multimedia/mpeg/encode/
+MASTER_SITES=	http://bmrc.berkeley.edu/ftp/pub/multimedia/mpeg/encode/ \
+		ftp://mm-ftp.CS.Berkeley.EDU/pub/multimedia/mpeg/encode/
 DISTNAME=	${PKGNAME}-src
 
 MAINTAINER=	ports@FreeBSD.org
