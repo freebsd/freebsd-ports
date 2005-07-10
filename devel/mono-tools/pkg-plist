@@ -1,0 +1,11 @@
+bin/gasnview
+bin/gnunit
+bin/gnunit2
+bin/monodoc
+lib/mono/1.0/gasnview.exe
+lib/mono/1.0/gnunit.exe
+lib/mono/2.0/gnunit2.exe
+lib/monodoc/browser.exe
+share/applications/monodoc.desktop
+share/pixmaps/monodoc.png
+@unexec rmdir %D/share/applications 2> /dev/null || true

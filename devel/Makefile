@@ -584,6 +584,7 @@
     SUBDIR += mkmf
     SUBDIR += mm
     SUBDIR += mob
+    SUBDIR += mono-tools
     SUBDIR += monodoc
     SUBDIR += monotone
     SUBDIR += motor
