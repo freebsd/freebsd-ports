@@ -1563,3 +1563,8 @@ russian/openoffice-1.0||2005-06-29|no longer maintained
 russian/openoffice-1.1||2005-06-29|localized version should be built via knob
 astro/gdesklets-weather||2005-07-03|does not work for a long time
 net/gdesklets-rssgrab||2005-07-03|dissapeared
+misc/44bsd-more|sysutils/44bsd-more|2005-07-10|moved to better category
+misc/less|sysutils/less|2005-07-10|moved to better category
+misc/most|sysutils/most|2005-07-10|moved to better category
+misc/reed|sysutils/reed|2005-07-10|moved to better category
+misc/wmcp|x11-wm/wmcp|2005-07-10|moved to better category

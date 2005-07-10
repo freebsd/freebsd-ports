@@ -7,7 +7,7 @@
 
 PORTNAME=	wmcp
 PORTVERSION=	1.2.8
-CATEGORIES=	misc windowmaker
+CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	http://soupnazi.org/FreeBSD/ports/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org

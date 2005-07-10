@@ -7,7 +7,7 @@
 
 PORTNAME=	less
 PORTVERSION=	382
-CATEGORIES=	misc
+CATEGORIES=	sysutils
 MASTER_SITES=	http://www.greenwoodsoftware.com/%SUBDIR%/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	less
