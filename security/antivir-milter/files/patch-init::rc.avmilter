@@ -1,11 +1,11 @@
 --- init/rc.avmilter.orig	Sun Sep 21 19:51:22 2003
 +++ init/rc.avmilter	Sun Sep 21 20:22:38 2003
-@@ -15,13 +15,19 @@
+@@ -13,13 +13,19 @@
  
  case "$1" in
      start)
 -		echo "Starting AntiVir Milter."
--		/usr/sbin/avmilter	
+-		/usr/lib/AntiVir/avmilter.bin
 +		if [ -x %%PREFIX%%/sbin/avmilter ]; then
 +			umask 0077
 +			/bin/rm -f /var/spool/avmilter/avmilter.sock
@@ -18,28 +18,28 @@
  		;;
      stop)
 -		echo -n "Shutting down AntiVir Milter."
--		killall -TERM /usr/sbin/avmilter > /dev/null 2>&1
+-		killall -TERM /usr/lib/AntiVir/avmilter.bin > /dev/null 2>&1
 -		echo
 +		killall -TERM avmilter > /dev/null 2>&1
 +		echo -n " avmilter"
  		;;
      restart)
  	        "$0" stop
-@@ -29,7 +35,7 @@
+@@ -27,7 +33,7 @@
         		"$0" start
          	;;
      status)
--		if [ -z "$(ps axw | grep "/usr/sbin/avmilter" | grep -v grep)" ]
+-		if [ -z "$(ps axw | grep "/usr/lib/AntiVir/avmilter.bin" | grep -v grep)" ]
 +		if [ -z "$(ps axw | grep "avmilter" | grep -v grep)" ]
                  then
                          echo "FAILED avmilter is not running!"
                  else        
-@@ -37,7 +43,7 @@
+@@ -35,7 +41,7 @@
          	fi
- 	;;
+ 		;;
      *)
 -		echo "Usage: $0 {start|stop|restart|status}"
 +		echo "Usage: `basename $0` {start|stop|restart|status}" >&2
  		exit 1
+ 		;;
  esac
- 

@@ -1,7 +1,7 @@
---- script/avupdater.orig	Thu Nov 25 10:29:31 2004
+--- script/avupdater.orig	Nov 25 10:29:31 2004
 +++ script/avupdater	Wed Dec  8 15:23:09 2004
 @@ -5,10 +5,8 @@
- # Copyright (c) 2002-2004 H+BEDV Datentechnik GmbH
+ # Copyright (c) 2002-2005 H+BEDV Datentechnik GmbH
  #
  
 -PATH="/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:/usr/local/sbin"
@@ -12,25 +12,7 @@
  
  DAEMON="$AVDIR/$DAEMONNAME"
  
-@@ -41,6 +39,17 @@
- 	PROCESSLIST=""
- 
- 	case "${OS}" in
-+		freebsd)
-+			# Work around bug in some versions of ps(1) where
-+			# `ps -o 'pid= command='` doesn't work.
-+			for PROC in `ps axw -o 'pid=' -o 'command=' | grep ${DAEMONNAME}.*[-]-updater-daemon`
-+			do
-+				if [ -z "`$ECHO ${PROC} | sed -e s/[0-9]//g`" ]
-+				then
-+					PROCESSLIST="${PROCESSLIST} ${PROC}"
-+				fi
-+			done
-+			;;
- 		sunos)
- 			for PROC in `ps -Ao pid,args | grep ${DAEMONNAME}.*[-]-updater-daemon`
- 			do
-@@ -64,63 +73,41 @@
+@@ -71,63 +69,41 @@
  
  case "$1" in
  	start)
@@ -71,7 +53,7 @@
  		getPROCESSLIST
  		for PROC in $PROCESSLIST
  		do
- 			kill -15 $PROC
+ 			kill -TERM $PROC > /dev/null 2>&1
  		done
  
 -		$ECHO "."
