@@ -2,13 +2,13 @@
 # Date created:					20041011
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
-# $Id: Makefile,v 1.7 2005/05/13 00:56:00 tmclau02 Exp $
+# $Id: Makefile,v 1.9 2005/06/21 22:32:11 mezz7 Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	tomboy
 PORTVERSION=	0.3.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.beatniksoftware.com/tomboy/releases/
 
