@@ -8,7 +8,7 @@
 PORTNAME=	ipfm
 PORTVERSION=	0.11.5
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://robert.cheramy.net-mgmt/ipfm/archive/
+MASTER_SITES=	http://robert.cheramy.net/ipfm/archive/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@oven.org
