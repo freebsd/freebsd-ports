@@ -126,7 +126,6 @@ EXTRA_PATCHES=	${PATCHDIR}/0001-dnd_optimization.patch \
 		${PATCHDIR}/0020-designer-deletetabs.patch \
 		${PATCHDIR}/0032-fix_rotated_randr.diff \
 		${PATCHDIR}/0035-qvaluelist-streaming-operator.patch \
-		${PATCHDIR}/0036-qprogressbar-optimization.patch \
 		${PATCHDIR}/0037-dnd-timestamp-fix.patch \
 		${PATCHDIR}/0038-dragobject-dont-prefer-unknown.patch \
 		${PATCHDIR}/0044-qscrollview-windowactivate-fix.diff \
