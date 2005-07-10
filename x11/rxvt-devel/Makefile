@@ -14,7 +14,7 @@ CATEGORIES+=	x11
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/%SUBDIR%/ \
 		ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/rxvt/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/unix/X11/terms/rxvt/%SUBDIR%/
-MASTER_SITE_SUBDIR=     . old devel
+MASTER_SITE_SUBDIR=	. old devel
 PKGNAMESUFFIX=	-devel
 DISTNAME=	rxvt-${PORTVERSION}
 
