@@ -6,12 +6,12 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.14.1
-PORTREVISION=
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyQt/ \
+MASTER_SITES=	http://www.river-bank.demon.co.uk/download/snapshots/PyQt/ \
 		http://freebsd.ricin.com/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PyQt-x11-gpl-${PORTVERSION}
+DISTNAME=	PyQt-x11-gpl-snapshot-20050706
 
 MAINTAINER=	danny@ricin.com
 COMMENT=	Python bindings for the Qt toolkit
@@ -23,6 +23,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_QT_VER=	3
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
+
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGBASE}
 
 .include <bsd.port.pre.mk>
 
@@ -53,5 +55,13 @@ post-configure:
 post-install:
 	@${PYTHON_CMD} -c "import pyqtconfig"
 	@${PYTHON_CMD} -O -c "import pyqtconfig"
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${EXAMPLESDIR} ${EXAMPLESDIR}/SQL ${EXAMPLESDIR}/canvas \
+		${EXAMPLESDIR}/i18n ${EXAMPLESDIR}/webbrowser
+	@( cd ${WRKSRC}/examples3 && ${TAR} -cf - . ) | \
+		( cd ${EXAMPLESDIR} && ${TAR} -xf - )
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${EXAMPLESDIR}
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.post.mk>
