@@ -9,7 +9,7 @@ PORTNAME=	smtpclient
 PORTVERSION=	1.0.0
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://www.engelschall.com/sw/smtpclient/distrib/
+MASTER_SITES=	ftp://www.ossp.org/pkg/tool/smtpclient/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple SMTP client
