@@ -37,6 +37,9 @@ bin/linkchecker
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/gopherurl.py
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/gopherurl.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/gopherurl.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/checker/internpaturl.py
+%%PYTHON_SITELIBDIR%%/linkcheck/checker/internpaturl.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/checker/internpaturl.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/httpheaders.py
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/httpheaders.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/httpheaders.pyo
