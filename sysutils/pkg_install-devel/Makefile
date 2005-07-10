@@ -36,6 +36,8 @@ BACKUPDIR?=		/var/backups
 USE_OPENSSL=		yes
 MAN1+=			pkg_check.1 pkg_sign.1
 PLIST_SUB+=		OPENSSL=""
+CFLAGS+=		-I${OPENSSLINC}
+LDFLAGS+=		-L${OPENSSLLIB}
 .else
 MAKE_ARGS=		-DNO_OPENSSL
 PLIST_SUB+=		OPENSSL="@comment "
