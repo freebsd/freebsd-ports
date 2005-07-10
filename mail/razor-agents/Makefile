@@ -7,7 +7,7 @@
 
 PORTNAME=	razor-agents
 PORTVERSION=	2.72
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	razor
@@ -25,7 +25,7 @@ PERL_CONFIGURE=	yes
 MAN1=		razor-revoke.1 razor-admin.1 razor-report.1 razor-check.1
 MAN3=		Razor2::Errorhandler.3 Razor2::Preproc::deHTMLxs.3 \
 		Razor2::Syslog.3
-MAN5=		razor-agents.5 razor-whitelist.5 razor-agent.conf.5
+#MAN5=		razor-agents.5 razor-whitelist.5 razor-agent.conf.5
 
 post-patch:
 	@${PERL} -pi.orig -e 's|/etc/razor|${PREFIX}/etc|g' \
