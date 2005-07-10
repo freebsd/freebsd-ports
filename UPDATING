@@ -6,6 +6,26 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+
+20050710:
+  AFFECTS: users of x11-toolkits/qt33, x11/kdelibs3
+  AUTHOR: kde@FreeBSD.org
+
+  If you have compiled qt33 with the KDE_OPTIONS option checked (if your
+  installed qt-package is called qt-copy-3.3.4 instead of qt-3.3.4, check
+  with pkg_info), you should cvsup and recompile both qt33, kdelibs3 and
+  everything depending on it (in that order):
+
+  portupgrade -f qt\* && portupgrade -fr kdelibs\*
+
+  Previous versions of the qt33 port contained a patch that
+  introduces binary incompatibility between kdelibs and an unpatched qt33,
+  if kdelibs has been compiled against a patched qt33.
+
+  Symptoms of the binary incompatibility: Unresolved symbol warnings from
+  various KDE applications, "Could not start kdeinit" dialogs during KDE
+  startup, kicker crashes during exiting KDE.
+
 20050630:
   AFFECTS: users of x11/nvidia-driver
   AUTHOR: danfe@FreeBSD.org
