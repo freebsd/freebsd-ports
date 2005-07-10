@@ -57,9 +57,11 @@ pre-configure:
 .for file in config.guess config.sub install-sh
 	@${CP} ${PREFIX}/System/Makefiles/${file} ${WRKSRC}
 .endfor
-	${REINPLACE_CMD} -e "s|-lphread|${PTHREAD_LIBS}|" -e "s|CFLAGS =|CFLAGS+=|" \
+	${REINPLACE_CMD} -e "s|-lphtread|${PTHREAD_LIBS}|g" -e "s|CFLAGS =|CFLAGS+=|" \
 		-e "s|-Wall|-Wall ${PTHREAD_CFLAGS:S=""==}|" \
 		${WRKSRC}/Tools/gsnd/portaudio/pa_unix_oss/Makefile
+	${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" \
+		${WRKSRC}/Tools/gsnd/GNUmakefile.postamble
 .if !defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e "s|doc=no|doc=yes|" ${WRKSRC}/GNUmakefile
 .endif
