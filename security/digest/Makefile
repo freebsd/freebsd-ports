@@ -7,18 +7,16 @@
 #
 
 PORTNAME?=	digest
-PORTVERSION?=	${VERSION}
+PORTVERSION?=	20050323
 CATEGORIES?=	security sysutils
-MASTER_SITES=	#
-DISTFILES=
+MASTER_SITES?=	http://highsecure.ru/
 
-MAINTAINER?=	eik@FreeBSD.org
+MAINTAINER?=	vsevolod@highsecure.ru
 COMMENT?=	Message digest wrapper utility
 
 CONFLICTS?=	nss-[0-9]* emboss-[0-9]* qmail-ldap2-*
 
 GNU_CONFIGURE=	yes
-NO_WRKSUBDIR=	yes
 
 MAN1?=		${PORTNAME}.1
 
@@ -27,13 +25,6 @@ PLIST_FILES?=	bin/${PORTNAME}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.pre.mk>
-
-VERSION!=	${AWK} -F "'" '/^PACKAGE_VERSION=/ {print $$2}' \
-			${FILESDIR}/configure
-
-post-extract:
-	@${CP} -Rp ${FILESDIR}/* ${WRKSRC}
-	@${CHMOD} +x ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 test: build
 	@${ECHO_MSG} "No news is good news"

@@ -1,8 +1,0 @@
-#! /bin/sh
-#
-# $FreeBSD$
-#
-# This file is replaced in do-configure
-#
-
-. /usr/ports/Templates/config.guess
