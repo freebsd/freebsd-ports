@@ -1,11 +1,11 @@
---- ./jacal.sh.orig	Mon Dec  1 04:19:32 2003
-+++ ./jacal.sh	Mon Feb 14 21:44:19 2005
-@@ -92,6 +92,8 @@
-      if [ -z "${SCHEME_LIBRARY_PATH}" ]; then
-        if [ -d /usr/local/lib/slib/ ]; then
- 	  export SCHEME_LIBRARY_PATH=/usr/local/lib/slib/
-+       elif [ -d %%PREFIX%%/lib/slib/ ]; then
-+	  export SCHEME_LIBRARY_PATH=%%PREFIX%%/lib/slib/
+--- jacal.sh.orig	Wed Jun 22 03:52:36 2005
++++ jacal.sh	Mon Jul 11 08:02:25 2005
+@@ -98,6 +98,8 @@
+ 	  SCHEME_LIBRARY_PATH=/usr/local/lib/slib/
         elif [ -d /usr/share/slib/ ]; then
- 	  export SCHEME_LIBRARY_PATH=/usr/share/slib/
+ 	  SCHEME_LIBRARY_PATH=/usr/share/slib/
++       elif [ -d %%PREFIX%%/lib/slib/ ]; then
++ 	  export SCHEME_LIBRARY_PATH=%%PREFIX%%/lib/slib/
         fi
+      export SCHEME_LIBRARY_PATH
+      fi;;
