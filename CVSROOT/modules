@@ -12783,6 +12783,7 @@ xmms-pipe	ports/audio/xmms-pipe
 xmms-quix3dn	ports/audio/xmms-quix3dn
 xmms-real-random	ports/audio/xmms-real-random
 xmms-scrobbler	ports/audio/xmms-scrobbler
+xmms-sexypsf	ports/audio/xmms-sexypsf
 xmms-shn	ports/audio/xmms-shn
 xmms-sid	ports/audio/xmms-sid
 xmms-skins	ports/multimedia/xmms-skins
