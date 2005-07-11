@@ -540,6 +540,7 @@
     SUBDIR += xmms-quix3dn
     SUBDIR += xmms-real-random
     SUBDIR += xmms-scrobbler
+    SUBDIR += xmms-sexypsf
     SUBDIR += xmms-shn
     SUBDIR += xmms-sid
     SUBDIR += xmms-sndfile
