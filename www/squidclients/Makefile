@@ -8,7 +8,7 @@
 PORTNAME=	squidclients
 PORTVERSION=	1.6
 CATEGORIES=	www
-MASTER_SITES=	http://www.cineca.it/~nico/binaries/
+MASTER_SITES=	http://people.freebsd.org/~demon/distfiles/
 DISTNAME=	squidclients-1.6-freebsd.bin
 EXTRACT_SUFX=
 
