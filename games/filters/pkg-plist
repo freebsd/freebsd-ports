@@ -1,0 +1,23 @@
+bin/b1ff
+bin/censor
+bin/chef
+bin/cockney
+bin/eleet
+bin/fudd
+bin/jethro
+bin/jibberish
+bin/jive
+bin/ken
+bin/kraut
+bin/ky00te
+bin/newspeak
+bin/nyc
+bin/rasterman
+bin/spammer
+bin/studly
+bin/uniencode
+bin/upside-down
+%%EXAMPLESDIR%%/SAMPLES
+%%PORTDOCS%%%%DOCSDIR%%/README
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

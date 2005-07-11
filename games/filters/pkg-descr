@@ -1,0 +1,10 @@
+A collection of command line filters, including B1FF and the Swedish Chef.
+No personal, racial, societal slurs are intended. For amusement only.
+
+All the filters read input from stdin, change it, and write the filtered
+text to stdout.
+
+WWW: None
+
+- ehaupt
+ehaupt@critical.ch

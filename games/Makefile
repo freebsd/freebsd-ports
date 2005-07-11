@@ -131,6 +131,7 @@
     SUBDIR += fargoal
     SUBDIR += fgfs-base
     SUBDIR += fgkicker
+    SUBDIR += filters
     SUBDIR += fkiss
     SUBDIR += flightgear
     SUBDIR += flying
