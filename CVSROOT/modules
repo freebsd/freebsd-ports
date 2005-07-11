@@ -4450,6 +4450,7 @@ javacc		ports/textproc/javacc
 javadc		ports/net/javadc
 javamail	ports/java/javamail
 javanns		ports/math/javanns
+javaview	ports/math/javaview
 javavmwrapper	ports/java/javavmwrapper
 javel		ports/java/javel
 jaxen		ports/java/jaxen
