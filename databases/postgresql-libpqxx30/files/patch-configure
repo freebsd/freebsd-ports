@@ -1,0 +1,11 @@
+--- configure~	Fri Jul  1 09:52:28 2005
++++ configure	Tue Jul 12 00:15:36 2005
+@@ -19403,7 +19403,7 @@
+ 
+ 
+ # Add options to compiler command line, if compiler accepts it
+-function add_compiler_opts() {
++add_compiler_opts() {
+ 	for option in $* ; do
+ 		SAVE_CXXFLAGS="$CXXFLAGS"
+ 		CXXFLAGS="$CXXFLAGS $option"
