@@ -12,7 +12,7 @@ MASTER_SITES=	http://cell.sick.ru/~glebius/ng_netflow/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ng-netflow
 
-MAINTAINER=	glebius@cell.sick.ru
+MAINTAINER=	glebius@FreeBSD.org
 COMMENT=	Netgraph node implementing Cisco (c) netflow
 
 NO_PACKAGE=	Should be in sync with the kernel to work correctly
