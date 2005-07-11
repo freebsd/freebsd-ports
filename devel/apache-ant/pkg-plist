@@ -1392,6 +1392,7 @@ ant/lib/ant-xslp.jar
 ant/lib/ant.jar
 ant/lib/xercesImpl.jar
 ant/lib/xml-apis.jar
+bin/ant
 @dirrm ant/bin
 %%PORTDOCS%%@dirrm ant/docs/ant2
 %%PORTDOCS%%@dirrm ant/docs/images
