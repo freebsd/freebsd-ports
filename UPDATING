@@ -13,18 +13,19 @@ upgrades.
 
   If you have compiled qt33 with the KDE_OPTIONS option checked (if your
   installed qt-package is called qt-copy-3.3.4 instead of qt-3.3.4, check
-  with pkg_info), you should cvsup and recompile both qt33, kdelibs3 and
-  everything depending on it (in that order):
+  with pkg_info), you should cvsup and recompile qt33 and everything
+  depending on it:
 
-  portupgrade -f qt\* && portupgrade -fr kdelibs\*
+  portupgrade -rf qt\*
 
   Previous versions of the qt33 port contained a patch that
-  introduces binary incompatibility between kdelibs and an unpatched qt33,
-  if kdelibs has been compiled against a patched qt33.
+  introduces binary incompatibility between unpatched qt33 and software
+  compiled against a patched qt33.
 
   Symptoms of the binary incompatibility: Unresolved symbol warnings from
-  various KDE applications, "Could not start kdeinit" dialogs during KDE
-  startup, kicker crashes during exiting KDE.
+  various KDE/Qt applications (both during runtime or compiling/linking),
+  "Could not start kdeinit" dialogs during KDE startup, kicker crashes during
+  exiting KDE.
 
 20050630:
   AFFECTS: users of x11/nvidia-driver
