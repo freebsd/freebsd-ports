@@ -23,6 +23,7 @@ RUN_DEPENDS=	${FIREFOX}:${PORTSDIR}/www/${FIREFOX}
 
 USE_X_PREFIX=	yes
 USE_ZIP=	yes
+NO_BUILD=	yes
 EXTRACT_BEFORE_ARGS=	-qo
 
 FIREFOX=	${PORTNAME}
@@ -34,15 +35,6 @@ FIREFOX_BIN=	${FIREFOX_HOME}/${PORTNAME}-bin
 PLIST_SUB=	FIREFOX=${FIREFOX}
 
 .include <bsd.port.pre.mk>
-
-LOCALENAME=	zh_TW.UTF-8
-
-do-build:
-	${SED} -e "s^%%PREFIX%%^${PREFIX}^g" \
-		-e "s^%%LOCALBASE%%^${LOCALBASE}^g" \
-		-e "s^%%LOCALENAME%%^${LOCALENAME}^g" \
-		-e "s^%%FIREFOX%%^${FIREFOX}^g" \
-		${FILESDIR}/firefox.sh > ${WRKDIR}/${FIREFOX}
 
 do-install:
 	echo "===> Backup setting files..."
