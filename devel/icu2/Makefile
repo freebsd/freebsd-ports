@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://www-126.ibm.com/pub/icu/${PORTVERSION}/
 DISTNAME=	icu-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	andrew@ids.pl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	International Components for Unicode
 
 CONFLICTS=	icu-[0-9]*
