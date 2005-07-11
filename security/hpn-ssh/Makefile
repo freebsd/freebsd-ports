@@ -6,21 +6,17 @@
 #
 
 PORTNAME=	hpn-ssh
-PORTVERSION=	3.9.0.1
+PORTVERSION=	3.9.0.1.${HPNVERSION}
 PORTEPOCH=	1
-.if defined(WITH_NONE_CIPHER)
-PORTREVISON=	1
-.endif
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/%SUBDIR%/ \
 		ftp://carroll.cac.psu.edu/pub/OpenBSD/OpenSSH/portable/%SUBDIR%/
 PKGNAMESUFFIX?=	${GSSAPI_SUFFIX}${BASE_SUFFIX}
 DISTNAME=	openssh-${OPENSSHVERSION}
 
+PATCHFILES+=	openssh-${OPENSSHVERSION}-hpn${HPNVERSION}.diff
 .if defined(WITH_NONE_CIPHER)
-PATCHFILES=	openssh-${OPENSSHVERSION}-hpn-none-p2.diff
-.else
-PATCHFILES=	openssh-${OPENSSHVERSION}-hpn.diff
+PATCHFILES+=	openssh-${OPENSSHVERSION}-hpn${HPNVERSION}-none.diff
 .endif
 PATCH_SITES=	http://www.psc.edu/networking/projects/hpn-ssh/
 PATCH_DIST_STRIP=-p1
@@ -28,6 +24,7 @@ PATCH_DIST_STRIP=-p1
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	High Performance Enabled SSH/SCP
 
+HPNVERSION=	11
 OPENSSHVERSION=	3.9p1
 WRKSRC=		${WRKDIR}/openssh-${OPENSSHVERSION}
 
