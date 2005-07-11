@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DB_DataObject
-PORTVERSION=	1.7.13
+PORTVERSION=	1.7.15
 CATEGORIES=	databases pear
 
 MAINTAINER=	antonio@php.net
@@ -21,9 +21,10 @@ USE_REINPLACE=	yes
 CATEGORY=	DB
 FILES=		DataObject.php DataObject/Cast.php DataObject/Generator.php \
 		DataObject/createTables.php DataObject/Error.php
-DOCS=		example.ini
+EXAMPLES=	example.ini
+_EXAMPLESDIR=	docs
 
-LATEST_LINK=	pear-DB_DataObject
+LATEST_LINK=	pear-${PORTNAME}
 OPTIONS=	PEAR_VALIDATE "PEAR::Validate support" off
 
 post-patch:
