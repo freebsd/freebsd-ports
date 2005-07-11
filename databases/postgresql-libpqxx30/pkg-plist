@@ -27,6 +27,7 @@ include/pqxx/largeobject
 include/pqxx/largeobject.hxx
 include/pqxx/largeobject.h
 include/pqxx/libcompiler.h
+include/pqxx/libpq-forward.hxx
 include/pqxx/nontransaction
 include/pqxx/nontransaction.hxx
 include/pqxx/nontransaction.h
@@ -64,7 +65,6 @@ include/pqxx/util
 include/pqxx/util.hxx
 include/pqxx/util.h
 include/pqxx/config-public-compiler.h
-include/pqxx/config-public-libpq.h
 lib/libpqxx.a
 lib/libpqxx.la
 lib/libpqxx.so
