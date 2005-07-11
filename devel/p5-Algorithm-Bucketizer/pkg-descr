@@ -1,0 +1,5 @@
+Algorithm::Bucketizer distributes items of a defined size into a number of
+dynamically created buckets, each of them capable of holding items of a defined
+total size.
+
+WWW: http://search.cpan.org/search?dist=Algorithm-Bucketizer

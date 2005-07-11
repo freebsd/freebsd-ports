@@ -645,6 +645,7 @@
     SUBDIR += p5-Agent
     SUBDIR += p5-Algorithm-Accounting
     SUBDIR += p5-Algorithm-Annotate
+    SUBDIR += p5-Algorithm-Bucketizer
     SUBDIR += p5-Algorithm-ChooseSubsets
     SUBDIR += p5-Algorithm-Cluster
     SUBDIR += p5-Algorithm-Diff
