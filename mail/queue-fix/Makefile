@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.netmeridian.com/e-huss/
 
-MAINTAINER=	freebsd@galle.com.br
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Repairs or generates a qmail queue structure
 
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail

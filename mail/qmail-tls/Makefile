@@ -11,7 +11,6 @@ PORTREVISION=	0
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-tls
 
-MAINTAINER=	freebsd@galle.com.br
 COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH TLS support
 
 SLAVE_TLS=	yes

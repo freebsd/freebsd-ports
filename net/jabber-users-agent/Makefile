@@ -12,7 +12,7 @@ MASTER_SITES=	http://files.jabberstudio.org/users-agent/
 PKGNAMEPREFIX=	jabber-
 DISTNAME=	Users-Agent-${PORTVERSION}
 
-MAINTAINER=	freebsd@galle.com.br
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A Perl based Jabber User Directory
 
 NO_BUILD=	yes

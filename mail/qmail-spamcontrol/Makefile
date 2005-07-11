@@ -14,7 +14,6 @@ PKGNAMESUFFIX=	-spamcontrol
 DISTFILES=	${QMAIL_DIST} ${SPAMCONTROL_DIST}:spamcontrol
 EXTRACT_ONLY=	${QMAIL_DIST}
 
-MAINTAINER=	freebsd@galle.com.br
 COMMENT=	Qmail MTA with SpamControl patches
 
 EXTRA_PATCHES+=	${MASTERDIR}/files/patch-install.c

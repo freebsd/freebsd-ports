@@ -11,7 +11,6 @@ PORTREVISION=	2
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-ldap
 
-MAINTAINER=	freebsd@galle.com.br
 COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH LDAP support
 
 RUN_DEPENDS=	${LOCALBASE}/bin/svscan:${PORTSDIR}/sysutils/daemontools \

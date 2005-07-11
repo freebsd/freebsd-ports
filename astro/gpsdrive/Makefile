@@ -12,7 +12,7 @@ CATEGORIES=	astro
 MASTER_SITES=	http://www.gpsdrive.cc/           \
 		http://gpsdrive.teachlinux.com/
 
-MAINTAINER=	freebsd@galle.com.br
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A GPS navigation system
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre

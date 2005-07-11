@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.io.com/~kazushi/xtt/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sada
 
-MAINTAINER=	freebsd@galle.com.br
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Libraries to use the FreeType library from the perl language
 
 RUN_DEPENDS=	${SITE_PERL}/jcode.pl:${PORTSDIR}/japanese/jcode.pl
