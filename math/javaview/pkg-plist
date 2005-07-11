@@ -1,0 +1,601 @@
+@comment $FreeBSD$
+bin/javaview
+%%DATADIR%%/jars/javaview.jar
+%%DATADIR%%/jars/jvx.jar
+%%DATADIR%%/jars/jvxGeom.jar
+%%DATADIR%%/jars/vgpapp.jar
+%%DATADIR%%/jars/jvLite.jar
+%%DATADIR%%/jars/browserProps.html
+%%DATADIR%%/jars/contact.html
+%%DATADIR%%/jars/copyright.html
+%%DATADIR%%/jars/help.html
+%%DATADIR%%/jars/mac.html
+%%DATADIR%%/jars/requirements.html
+%%DATADIR%%/jars/shortcuts.html
+%%DATADIR%%/jars/systemFonts.html
+%%DATADIR%%/bin/javaview
+%%DATADIR%%/bin/vssver.scc
+%%DATADIR%%/images/AutumnTriangle_fill3_med.jpg
+%%DATADIR%%/images/BlackWhiteTilesRepeat_fill4.gif
+%%DATADIR%%/images/ColorPicker.jpg
+%%DATADIR%%/images/DisplayBackgrd.gif
+%%DATADIR%%/images/EtchedChrome_fill4_med.jpg
+%%DATADIR%%/images/EtchedChrome_frame4_med.gif
+%%DATADIR%%/images/Flecht_fill4.jpg
+%%DATADIR%%/images/Globe.gif
+%%DATADIR%%/images/HexagonalBricks_fill4.jpg
+%%DATADIR%%/images/HolzMatteNoise_fill4.gif
+%%DATADIR%%/images/JavaViewLogo.gif
+%%DATADIR%%/images/JavaViewLogoWide4.gif
+%%DATADIR%%/images/jv.ico
+%%DATADIR%%/images/jvBackground.jpg
+%%DATADIR%%/images/jvFrameDefaultOpaque_med.jpg
+%%DATADIR%%/images/jvIcon.gif
+%%DATADIR%%/images/jvFrameDefault_sgl.gif
+%%DATADIR%%/images/jvLaunch.jpg
+%%DATADIR%%/images/jvTextureBlocks.jpg
+%%DATADIR%%/images/jvTextureDijkstra.gif
+%%DATADIR%%/images/jvTextureSquareOpaque_sgl.gif
+%%DATADIR%%/images/jvTextureTriangleOpaque_med.jpg
+%%DATADIR%%/images/jvTextureTriangleTransp_med.gif
+%%DATADIR%%/images/MetallNieten_fill4.jpg
+%%DATADIR%%/images/pspbrwse.jbf
+%%DATADIR%%/images/RedBorderWithBricks_fill4.jpg
+%%DATADIR%%/images/RedBorder_fill4.jpg
+%%DATADIR%%/images/TileIrregularRepeat_fill4.jpg
+%%DATADIR%%/images/vssver.scc
+%%DATADIR%%/images/Wood_fill4.gif
+%%DATADIR%%/images/ZebraRepeat_fill4.jpg
+%%DATADIR%%/rsrc/Messages_jvlite_bg.properties
+%%DATADIR%%/rsrc/Messages_jvlite_de.properties
+%%DATADIR%%/rsrc/Messages_jvlite_fr.properties
+%%DATADIR%%/rsrc/Messages_jvlite_sr.properties
+%%DATADIR%%/rsrc/Messages_jvx_bg.properties
+%%DATADIR%%/rsrc/Messages_jvx_de.properties
+%%DATADIR%%/rsrc/Messages_jvx_fr.properties
+%%DATADIR%%/rsrc/Messages_jvx_sr.properties
+%%DATADIR%%/rsrc/Messages_jv_bg.properties
+%%DATADIR%%/rsrc/Messages_jv_de.properties
+%%DATADIR%%/rsrc/Messages_jv_fr.properties
+%%DATADIR%%/rsrc/Messages_jv_sr.properties
+%%DATADIR%%/rsrc/Messages_vgp_bg.properties
+%%DATADIR%%/rsrc/Messages_vgp_de.properties
+%%DATADIR%%/rsrc/Messages_vgp_fr.properties
+%%DATADIR%%/rsrc/Messages_vgp_sr.properties
+%%DATADIR%%/rsrc/egSample.xml
+%%DATADIR%%/rsrc/egTemplate.xml
+%%DATADIR%%/rsrc/jvdSample.jvd
+%%DATADIR%%/rsrc/jvxSample.jvx
+%%DATADIR%%/models/bd/4noid.bd
+%%DATADIR%%/models/bd/Cube.bd
+%%DATADIR%%/models/bd/Cube_soap.bd
+%%DATADIR%%/models/bd/F-Rd.bd
+%%DATADIR%%/models/bd/Genus.bd
+%%DATADIR%%/models/bd/Gergonne.bd
+%%DATADIR%%/models/bd/GergonneFine.bd
+%%DATADIR%%/models/bd/Graph_10.bd
+%%DATADIR%%/models/bd/Graph_30.bd
+%%DATADIR%%/models/bd/Graph_5.bd
+%%DATADIR%%/models/bd/I-Wp.bd
+%%DATADIR%%/models/bd/Neovius.bd
+%%DATADIR%%/models/bd/Octo.bd
+%%DATADIR%%/models/bd/PlaneTest.bd
+%%DATADIR%%/models/bd/Scherk.bd
+%%DATADIR%%/models/bd/Scherk_hdl.bd
+%%DATADIR%%/models/bd/Schwarz_FreeBnd.bd
+%%DATADIR%%/models/bd/Triple.bd
+%%DATADIR%%/models/bd/Wing.bd
+%%DATADIR%%/models/bd/_modelList.xml
+%%DATADIR%%/models/byu/Brezel_13824.byu
+%%DATADIR%%/models/byu/Brezel_1920.byu
+%%DATADIR%%/models/byu/Brezel_480.byu
+%%DATADIR%%/models/byu/Brezel_96.byu
+%%DATADIR%%/models/byu/Gauss_1152.byu
+%%DATADIR%%/models/byu/Gauss_200.byu
+%%DATADIR%%/models/byu/Gauss_3042.byu
+%%DATADIR%%/models/byu/Gauss_8.byu
+%%DATADIR%%/models/byu/Genus1_Helicoid3.byu
+%%DATADIR%%/models/byu/hyperboloid.byu
+%%DATADIR%%/models/byu/Pseudosphere_400.byu
+%%DATADIR%%/models/byu/RoundedCone_1128.byu
+%%DATADIR%%/models/byu/WeirdTriangle.byu
+%%DATADIR%%/models/byu/_modelList.xml
+%%DATADIR%%/models/cmc/Lawson_3_90_60_Anim.1.byu
+%%DATADIR%%/models/cmc/Lawson_3_90_60_Anim.2.byu
+%%DATADIR%%/models/cmc/Lawson_3_90_60_Anim.3.byu
+%%DATADIR%%/models/cmc/Lawson_3_90_60_Anim.4.byu
+%%DATADIR%%/models/cmc/Lawson_3_90_60_Anim.5.byu
+%%DATADIR%%/models/cmc/penta_segment.byu
+%%DATADIR%%/models/cmc/Quadro_Fund.byu
+%%DATADIR%%/models/cmc/Wente_Anim.1.byu
+%%DATADIR%%/models/cmc/Wente_Anim.2.byu
+%%DATADIR%%/models/cmc/Wente_Fund1.byu
+%%DATADIR%%/models/cmc/Wente_Fund2.byu
+%%DATADIR%%/models/cmc/Wente_Fund3.byu
+%%DATADIR%%/models/cmc/Wente_Fund4.byu
+%%DATADIR%%/models/cmc/Wente_Fund5.byu
+%%DATADIR%%/models/cmc/_modelList.xml
+%%DATADIR%%/models/curves/coloredCurve.jvd
+%%DATADIR%%/models/curves/coloredCurve.jvx
+%%DATADIR%%/models/curves/edgeThickness.jvd
+%%DATADIR%%/models/curves/edgeThickness.jvx
+%%DATADIR%%/models/curves/polynomial_x4.jvd
+%%DATADIR%%/models/curves/polynomial_x4.jvx
+%%DATADIR%%/models/curves/simpleCurve.jvx
+%%DATADIR%%/models/curves/_modelList.xml
+%%DATADIR%%/models/diverse/HyperAndSphere.obj
+%%DATADIR%%/models/diverse/nefertiti.jvx
+%%DATADIR%%/models/diverse/origamiAirplane.jvx
+%%DATADIR%%/models/diverse/simpleJet.jvx
+%%DATADIR%%/models/diverse/_modelList.xml
+%%DATADIR%%/models/dxf/maple_rect.dxf
+%%DATADIR%%/models/dxf/mech.dxf
+%%DATADIR%%/models/dxf/nefertiti.dxf
+%%DATADIR%%/models/dxf/pipes.dxf
+%%DATADIR%%/models/dxf/venus.dxf
+%%DATADIR%%/models/dxf/_modelList.xml
+%%DATADIR%%/models/fe/catenoidUnstable.fe
+%%DATADIR%%/models/fe/_modelList.xml
+%%DATADIR%%/models/jvd/Cylinder_256.html
+%%DATADIR%%/models/jvd/Cylinder_256.jvd
+%%DATADIR%%/models/jvd/Cylinder_256.jvx
+%%DATADIR%%/models/jvd/pspbrwse.jbf
+%%DATADIR%%/models/jvd/vssver.scc
+%%DATADIR%%/models/jvd/_modelList.xml
+%%DATADIR%%/models/jvx/BrezelWithBnd_Geodesics.jvx
+%%DATADIR%%/models/jvx/Brezel_Geodesics.jvx
+%%DATADIR%%/models/jvx/closedPolygon.jvx
+%%DATADIR%%/models/jvx/closedPolygonAll.jvx
+%%DATADIR%%/models/jvx/closedPolygonMultiple.jvx
+%%DATADIR%%/models/jvx/colorGlobalBack.jvx
+%%DATADIR%%/models/jvx/colorLocal.jvx
+%%DATADIR%%/models/jvx/colorLocalBack.jvx
+%%DATADIR%%/models/jvx/ConnectedDisks.jvx
+%%DATADIR%%/models/jvx/flowWithElementTexture.gif
+%%DATADIR%%/models/jvx/flowWithElementTexture.jvx
+%%DATADIR%%/models/jvx/geomDirect.jvx
+%%DATADIR%%/models/jvx/holeInSquare.jvx
+%%DATADIR%%/models/jvx/intersectedCylinder.jvd
+%%DATADIR%%/models/jvx/intersectedCylinder.jvx
+%%DATADIR%%/models/jvx/jvxSample.jvx
+%%DATADIR%%/models/jvx/lineConfiguration.jvd
+%%DATADIR%%/models/jvx/lineConfiguration.jvx
+%%DATADIR%%/models/jvx/neighbourInfo.jvx
+%%DATADIR%%/models/jvx/nonconvexDomain.jvx
+%%DATADIR%%/models/jvx/openPolygon.jvx
+%%DATADIR%%/models/jvx/pspbrwse.jbf
+%%DATADIR%%/models/jvx/Snail.jvx
+%%DATADIR%%/models/jvx/venus.jvx
+%%DATADIR%%/models/jvx/vertexSizes.jvd
+%%DATADIR%%/models/jvx/vertexSizes.jvx
+%%DATADIR%%/models/jvx/withLabels.jvx
+%%DATADIR%%/models/jvx/world.jvx
+%%DATADIR%%/models/jvx/_modelList.xml
+%%DATADIR%%/models/knots/HopfPlus.jvx
+%%DATADIR%%/models/knots/TrefoilLeft.jvx
+%%DATADIR%%/models/knots/_modelList.xml
+%%DATADIR%%/models/maple/archimedean.mpl
+%%DATADIR%%/models/maple/archimedean2Color.mpl
+%%DATADIR%%/models/maple/archimedeanIndividual.mpl
+%%DATADIR%%/models/maple/archimedeanSolids.jvd
+%%DATADIR%%/models/maple/archimedeanSolids.jvx
+%%DATADIR%%/models/maple/archimedeanSolids.mpl
+%%DATADIR%%/models/maple/clover.mpl
+%%DATADIR%%/models/maple/corkscrew.mpl
+%%DATADIR%%/models/maple/curves.mpl
+%%DATADIR%%/models/maple/duality.mpl
+%%DATADIR%%/models/maple/duct.mpl
+%%DATADIR%%/models/maple/geometryInsideHtml.html
+%%DATADIR%%/models/maple/grid.html
+%%DATADIR%%/models/maple/grid.mpl
+%%DATADIR%%/models/maple/helix.mpl
+%%DATADIR%%/models/maple/honeycomb.mpl
+%%DATADIR%%/models/maple/isosurfaceFails.mpl
+%%DATADIR%%/models/maple/kepler.mpl
+%%DATADIR%%/models/maple/klein.jvx.gz
+%%DATADIR%%/models/maple/klein.mpl
+%%DATADIR%%/models/maple/klein_merge.mpl.gz
+%%DATADIR%%/models/maple/lightTitle.mpl
+%%DATADIR%%/models/maple/mandelbrot.mpl
+%%DATADIR%%/models/maple/meshes.mpl
+%%DATADIR%%/models/maple/moebius.mpl
+%%DATADIR%%/models/maple/pointMix.mpl
+%%DATADIR%%/models/maple/polygons.mpl
+%%DATADIR%%/models/maple/pumpkin.mpl
+%%DATADIR%%/models/maple/sierpinski.jvd
+%%DATADIR%%/models/maple/sierpinski.jvx
+%%DATADIR%%/models/maple/sierpinski.mpl
+%%DATADIR%%/models/maple/sinAnim.mpl
+%%DATADIR%%/models/maple/sinAxesBoxed.mpl
+%%DATADIR%%/models/maple/sinAxesDefault.mpl
+%%DATADIR%%/models/maple/sinAxesFrame.mpl
+%%DATADIR%%/models/maple/sinAxesLabels.mpl
+%%DATADIR%%/models/maple/sinAxesNone.mpl
+%%DATADIR%%/models/maple/sinAxesNormal.mpl
+%%DATADIR%%/models/maple/sinColor.mpl
+%%DATADIR%%/models/maple/singularity.mpl
+%%DATADIR%%/models/maple/singularityKnot.jvd
+%%DATADIR%%/models/maple/singularityKnot.jvx
+%%DATADIR%%/models/maple/singularityKnot.mpl
+%%DATADIR%%/models/maple/sinMultiple.mpl
+%%DATADIR%%/models/maple/sinStylePoint.mpl
+%%DATADIR%%/models/maple/sinThickness.mpl
+%%DATADIR%%/models/maple/sinTitle.mpl
+%%DATADIR%%/models/maple/sinTitleMultiLine.mpl
+%%DATADIR%%/models/maple/sin_xy.mpl
+%%DATADIR%%/models/maple/snail.mpl
+%%DATADIR%%/models/maple/sphereWhite.mpl
+%%DATADIR%%/models/maple/spiral.mpl
+%%DATADIR%%/models/maple/testQuotes.html
+%%DATADIR%%/models/maple/testQuotes.mpl
+%%DATADIR%%/models/maple/transparentPlot.mpl
+%%DATADIR%%/models/maple/tree.jvd
+%%DATADIR%%/models/maple/tree.jvx
+%%DATADIR%%/models/maple/tree.mpl
+%%DATADIR%%/models/maple/treeManyModels.jvd
+%%DATADIR%%/models/maple/treeManyModels.jvx
+%%DATADIR%%/models/maple/treeManyModels.mpl
+%%DATADIR%%/models/maple/trinocular.mpl
+%%DATADIR%%/models/maple/unity.mpl
+%%DATADIR%%/models/maple/vfield.mpl
+%%DATADIR%%/models/maple/vssver.scc
+%%DATADIR%%/models/maple/_modelList.xml
+%%DATADIR%%/models/math/Animation.mgs
+%%DATADIR%%/models/math/animMgs.mgs
+%%DATADIR%%/models/math/catenoidAnim.mgs
+%%DATADIR%%/models/math/DodecahedralStar.mgs
+%%DATADIR%%/models/math/KeyAnimation.mgs
+%%DATADIR%%/models/math/polygonSet.mgs
+%%DATADIR%%/models/math/sampleAnimation.mgs
+%%DATADIR%%/models/math/sampleDensityAnim.mgs
+%%DATADIR%%/models/math/sampleGraphics.mgs
+%%DATADIR%%/models/math/Santa.mgs
+%%DATADIR%%/models/math/sin.html
+%%DATADIR%%/models/math/torus.mgs
+%%DATADIR%%/models/math/vssver.scc
+%%DATADIR%%/models/math/world.html
+%%DATADIR%%/models/math/world.mgs
+%%DATADIR%%/models/math/_modelList.xml
+%%DATADIR%%/models/minimal/CatenoidEnneper_800.byu
+%%DATADIR%%/models/minimal/Catenoid_162.byu
+%%DATADIR%%/models/minimal/Costa.byu
+%%DATADIR%%/models/minimal/Costa_256.jvx
+%%DATADIR%%/models/minimal/Costa_256.obj
+%%DATADIR%%/models/minimal/Costa_512.obj
+%%DATADIR%%/models/minimal/Enneper4Quarter_540.jvx
+%%DATADIR%%/models/minimal/EnneperFrontBackQuad_432.jvd
+%%DATADIR%%/models/minimal/EnneperFrontBackQuad_432.jvx
+%%DATADIR%%/models/minimal/EnneperQuarter_1184.jvx
+%%DATADIR%%/models/minimal/EnneperQuarter_135.jvx
+%%DATADIR%%/models/minimal/Enneper_1184.jvx
+%%DATADIR%%/models/minimal/Enneper_399.jvx
+%%DATADIR%%/models/minimal/Enneper_748.jvx
+%%DATADIR%%/models/minimal/Enneper_Test.obj
+%%DATADIR%%/models/minimal/Gackstatter_2048.byu
+%%DATADIR%%/models/minimal/Trinoid_240.obj
+%%DATADIR%%/models/minimal/Gackstatter_fund.byu
+%%DATADIR%%/models/minimal/Gergonne_Degenerate.bd
+%%DATADIR%%/models/minimal/Gergonne_Dual.jvx
+%%DATADIR%%/models/minimal/Gergonne_Fine.jvx
+%%DATADIR%%/models/minimal/HelicoidGenus1_1280.byu
+%%DATADIR%%/models/minimal/Helicoid_Discrete.jvx
+%%DATADIR%%/models/minimal/Henneberg_7040.byu
+%%DATADIR%%/models/minimal/Henneberg_880.byu
+%%DATADIR%%/models/minimal/MaxPrinciple.jvd
+%%DATADIR%%/models/minimal/MaxPrinciple.jvx
+%%DATADIR%%/models/minimal/Schwarz_Block.jvx
+%%DATADIR%%/models/minimal/Trinoid_720.jvx
+%%DATADIR%%/models/minimal/Trinoid_768.byu
+%%DATADIR%%/models/minimal/Trinoid_fund.byu
+%%DATADIR%%/models/minimal/_modelList.xml
+%%DATADIR%%/models/obj/PartialCube_2.obj
+%%DATADIR%%/models/obj/snailWithTexture.obj
+%%DATADIR%%/models/obj/Triangle.obj
+%%DATADIR%%/models/obj/VertexStar.obj
+%%DATADIR%%/models/obj/_Format.obj
+%%DATADIR%%/models/obj/_modelList.xml
+%%DATADIR%%/models/off/Teapot.off
+%%DATADIR%%/models/off/_modelList.xml
+%%DATADIR%%/models/polytope/24-cell.jvx
+%%DATADIR%%/models/polytope/CsaszarTorus.jvx
+%%DATADIR%%/models/polytope/Cube.jvx
+%%DATADIR%%/models/polytope/Cube4d.jvx
+%%DATADIR%%/models/polytope/Cube4d_S3.jvx
+%%DATADIR%%/models/polytope/CubeOctahedron.jvx
+%%DATADIR%%/models/polytope/Cubical4.jvx
+%%DATADIR%%/models/polytope/DecomposedSnubDodecahedron.jvd
+%%DATADIR%%/models/polytope/DecomposedSnubDodecahedron.jvx
+%%DATADIR%%/models/polytope/Dodecahedron.jvx
+%%DATADIR%%/models/polytope/Goldfarb3.jvx
+%%DATADIR%%/models/polytope/Hidden.jvx
+%%DATADIR%%/models/polytope/Icosahedron.jvx
+%%DATADIR%%/models/polytope/IcosiDodecahedron.jvx
+%%DATADIR%%/models/polytope/Octahedron.jvx
+%%DATADIR%%/models/polytope/RandomPolytope.jvx
+%%DATADIR%%/models/polytope/RhombIcosiDodecahedron.jvx
+%%DATADIR%%/models/polytope/SharirCube.jvx
+%%DATADIR%%/models/polytope/RhombiCubeOctahedron.jvx
+%%DATADIR%%/models/polytope/RhombiTruncatedCube.jvx
+%%DATADIR%%/models/polytope/RhombiTruncatedIcosahedron.jvx
+%%DATADIR%%/models/polytope/SchoenhardtOctahedron.jvd
+%%DATADIR%%/models/polytope/SchoenhardtOctahedron.jvx
+%%DATADIR%%/models/polytope/SnubCube.jvx
+%%DATADIR%%/models/polytope/SnubDodecahedron.jvx
+%%DATADIR%%/models/polytope/SoccerBall.jvd
+%%DATADIR%%/models/polytope/SoccerBall.jvx
+%%DATADIR%%/models/polytope/Tetrahedron.jvx
+%%DATADIR%%/models/polytope/TruncatedCube.jvx
+%%DATADIR%%/models/polytope/TruncatedDodecahedron.jvx
+%%DATADIR%%/models/polytope/TruncatedOctahedron.jvx
+%%DATADIR%%/models/polytope/TruncatedTetrahedron.jvx
+%%DATADIR%%/models/polytope/_modelList.xml
+%%DATADIR%%/models/primitive/Circle_20.jvx
+%%DATADIR%%/models/primitive/ConeOverOrigin_4.jvx
+%%DATADIR%%/models/primitive/Cube.byu
+%%DATADIR%%/models/primitive/CubeNormalized.byu
+%%DATADIR%%/models/primitive/CubeWithEdges.jvd
+%%DATADIR%%/models/primitive/CubeWithEdges.jvx
+%%DATADIR%%/models/primitive/Cube_192.byu
+%%DATADIR%%/models/primitive/Cylinder_256.jvx
+%%DATADIR%%/models/primitive/DisksConnectedSymm_408.jvx
+%%DATADIR%%/models/primitive/DisksConnected_1000.jvx
+%%DATADIR%%/models/primitive/Disk_200.jvx
+%%DATADIR%%/models/primitive/Disk_500.jvx
+%%DATADIR%%/models/primitive/Dodecahedron.jvd
+%%DATADIR%%/models/primitive/Dodecahedron.jvx
+%%DATADIR%%/models/primitive/Dodecahedron.obj
+%%DATADIR%%/models/primitive/Dodecahedron_Demo.jvx
+%%DATADIR%%/models/primitive/Dodecahedron_Transp.jvx
+%%DATADIR%%/models/primitive/Icosahedron.jvx
+%%DATADIR%%/models/primitive/Octahedron.byu
+%%DATADIR%%/models/primitive/planeRefine.byu
+%%DATADIR%%/models/primitive/Pyramid_4.byu
+%%DATADIR%%/models/primitive/Quadr_242.byu
+%%DATADIR%%/models/primitive/Rectangle2d_3triang.jvx
+%%DATADIR%%/models/primitive/Rectangle2d_huge.jvx
+%%DATADIR%%/models/primitive/Rectangle2d_triang.jvx
+%%DATADIR%%/models/primitive/Rectangle2d_unit.jvx
+%%DATADIR%%/models/primitive/Rectangle3d_triang.jvx
+%%DATADIR%%/models/primitive/SphereEighth.jvx
+%%DATADIR%%/models/primitive/SphereHalf.jvx
+%%DATADIR%%/models/primitive/SphereUnit.jvx
+%%DATADIR%%/models/primitive/SphereUnitQuadr.jvx
+%%DATADIR%%/models/primitive/Sphere_1000.jvx
+%%DATADIR%%/models/primitive/Sphere_2204.byu
+%%DATADIR%%/models/primitive/Sphere_500.jvx
+%%DATADIR%%/models/primitive/Sphere_8.byu
+%%DATADIR%%/models/primitive/Tetrahedron.byu
+%%DATADIR%%/models/primitive/Torus_1680.byu
+%%DATADIR%%/models/primitive/Torus_200.byu
+%%DATADIR%%/models/primitive/TriangleEquilateral2D.jvx
+%%DATADIR%%/models/primitive/TriangleSet3.jvx
+%%DATADIR%%/models/primitive/TriangleSet4.jvx
+%%DATADIR%%/models/primitive/_modelList.xml
+%%DATADIR%%/models/stl/cadPart.stl
+%%DATADIR%%/models/stl/_modelList.xml
+%%DATADIR%%/models/wrl/TorusFaceColor.wrl
+%%DATADIR%%/models/wrl/TorusVertexColor.wrl
+%%DATADIR%%/models/wrl/_modelList.xml
+%%DATADIR%%/models/_modelAllList.xml
+%%DATADIR%%/models/_modelList.xml
+%%DATADIR%%/deploy/_jarVersion.txt
+%%DATADIR%%/JavaViewLib/_jarVersion.txt
+%%DATADIR%%/vgp/tutor/animationPanel/AnimPanel.html
+%%DATADIR%%/vgp/tutor/color/package.html
+%%DATADIR%%/vgp/tutor/color/PaColorDemo.html
+%%DATADIR%%/vgp/tutor/color/PaColorDemo.java
+%%DATADIR%%/vgp/tutor/displaySettings/index.html
+%%DATADIR%%/vgp/tutor/displaySettings/indexLite.html
+%%DATADIR%%/vgp/tutor/domain/Domain.html
+%%DATADIR%%/vgp/tutor/eventCamera/package.html
+%%DATADIR%%/vgp/tutor/eventCamera/PaEventCamera.html
+%%DATADIR%%/vgp/tutor/eventCamera/PaEventCamera.java
+%%DATADIR%%/vgp/tutor/eventCamera/PjEventCamera.java
+%%DATADIR%%/vgp/tutor/eventCamera/PjEventCamera_IP.java
+%%DATADIR%%/vgp/tutor/expr/Expressions.html
+%%DATADIR%%/vgp/tutor/firstApplet/index.html
+%%DATADIR%%/vgp/tutor/firstApplet/package.html
+%%DATADIR%%/vgp/tutor/firstApplet/MyApplet.java
+%%DATADIR%%/vgp/tutor/firstApplication/index.html
+%%DATADIR%%/vgp/tutor/firstApplication/package.html
+%%DATADIR%%/vgp/tutor/firstApplication/MyApplication.java
+%%DATADIR%%/vgp/tutor/firstGraph/index.html
+%%DATADIR%%/vgp/tutor/firstGraph/package.html
+%%DATADIR%%/vgp/tutor/firstGraph/MyGraph.java
+%%DATADIR%%/vgp/tutor/firstProject/index.html
+%%DATADIR%%/vgp/tutor/firstProject/package.html
+%%DATADIR%%/vgp/tutor/firstProject/MyApplet.java
+%%DATADIR%%/vgp/tutor/firstProject/MyProject.java
+%%DATADIR%%/vgp/tutor/firstProject/MyProject_IP.java
+%%DATADIR%%/vgp/tutor/firstProject/MySurface.java
+%%DATADIR%%/vgp/tutor/fractal/package.html
+%%DATADIR%%/vgp/tutor/fractal/PaFractalImage.html
+%%DATADIR%%/vgp/tutor/fractal/PaFractalImage.java
+%%DATADIR%%/vgp/tutor/fractal/PjFractalImage.java
+%%DATADIR%%/vgp/tutor/fractal/PjFractalImage_IP.java
+%%DATADIR%%/vgp/tutor/height/package.html
+%%DATADIR%%/vgp/tutor/height/PaHeight.html
+%%DATADIR%%/vgp/tutor/height/PaHeight.java
+%%DATADIR%%/vgp/tutor/height/PjHeight.java
+%%DATADIR%%/vgp/tutor/height/PjHeight_IP.java
+%%DATADIR%%/vgp/tutor/key/package.html
+%%DATADIR%%/vgp/tutor/key/PaKeyframe.html
+%%DATADIR%%/vgp/tutor/key/PaKeyframe.java
+%%DATADIR%%/vgp/tutor/key/PjKeyframe.java
+%%DATADIR%%/vgp/tutor/key/PjKeyframe_IP.java
+%%DATADIR%%/vgp/tutor/linear/package.html
+%%DATADIR%%/vgp/tutor/linear/PaLinear.html
+%%DATADIR%%/vgp/tutor/linear/PaLinear.java
+%%DATADIR%%/vgp/tutor/linear/PjLinear.java
+%%DATADIR%%/vgp/tutor/linear/PjLinear_IP.java
+%%DATADIR%%/vgp/tutor/loader/package.html
+%%DATADIR%%/vgp/tutor/loader/PaLoader.html
+%%DATADIR%%/vgp/tutor/loader/PaLoader.java
+%%DATADIR%%/vgp/tutor/loader/PgAbcLoader.java
+%%DATADIR%%/vgp/tutor/loader/cube.abc
+%%DATADIR%%/vgp/tutor/loader/cubePoints.abc
+%%DATADIR%%/vgp/tutor/lsystem/package.html
+%%DATADIR%%/vgp/tutor/lsystem/PaLSystem.html
+%%DATADIR%%/vgp/tutor/lsystem/LSystem.java
+%%DATADIR%%/vgp/tutor/lsystem/PaLSystem.java
+%%DATADIR%%/vgp/tutor/lsystem/PjLSystem.java
+%%DATADIR%%/vgp/tutor/lsystem/PjLSystem_IP.java
+%%DATADIR%%/vgp/tutor/model/package.html
+%%DATADIR%%/vgp/tutor/model/PaModel.html
+%%DATADIR%%/vgp/tutor/model/PaModel.java
+%%DATADIR%%/vgp/tutor/model/PjModel.java
+%%DATADIR%%/vgp/tutor/model/PjModel_IP.java
+%%DATADIR%%/vgp/tutor/ode/package.html
+%%DATADIR%%/vgp/tutor/ode/PaExprOde.html
+%%DATADIR%%/vgp/tutor/ode/PaExprOde.java
+%%DATADIR%%/vgp/tutor/ode/PjExprOde.java
+%%DATADIR%%/vgp/tutor/ode/PjExprOde_IP.java
+%%DATADIR%%/vgp/tutor/parm/package.html
+%%DATADIR%%/vgp/tutor/parm/PaParmSurface.html
+%%DATADIR%%/vgp/tutor/parm/PaParmSurface.java
+%%DATADIR%%/vgp/tutor/parm/PjParmSurface.java
+%%DATADIR%%/vgp/tutor/parm/PjParmSurface_IP.java
+%%DATADIR%%/vgp/tutor/parmCurve/package.html
+%%DATADIR%%/vgp/tutor/parmCurve/PaParmCurve.html
+%%DATADIR%%/vgp/tutor/parmCurve/PaParmCurve.java
+%%DATADIR%%/vgp/tutor/parmCurve/PjParmCurve.java
+%%DATADIR%%/vgp/tutor/parmCurve/PjParmCurve_IP.java
+%%DATADIR%%/vgp/tutor/pick/package.html
+%%DATADIR%%/vgp/tutor/pick/PaPickEvent.html
+%%DATADIR%%/vgp/tutor/pick/PaPickEvent.java
+%%DATADIR%%/vgp/tutor/pick/PjPickEvent.java
+%%DATADIR%%/vgp/tutor/pick/PjPickEvent_IP.java
+%%DATADIR%%/vgp/tutor/polygonSet/package.html
+%%DATADIR%%/vgp/tutor/polygonSet/PaPolygonSet.html
+%%DATADIR%%/vgp/tutor/polygonSet/PaPolygonSet.java
+%%DATADIR%%/vgp/tutor/polygonSet/PjPolygonSet.java
+%%DATADIR%%/vgp/tutor/rivara/package.html
+%%DATADIR%%/vgp/tutor/rivara/PaRivara.html
+%%DATADIR%%/vgp/tutor/rivara/PaRivara.java
+%%DATADIR%%/vgp/tutor/rivara/PjRivara.java
+%%DATADIR%%/vgp/tutor/rivara/PjRivara_IP.java
+%%DATADIR%%/vgp/tutor/rootFinder/package.html
+%%DATADIR%%/vgp/tutor/rootFinder/PaRootFinder.html
+%%DATADIR%%/vgp/tutor/rootFinder/PaRootFinder.java
+%%DATADIR%%/vgp/tutor/rootFinder/PjRootFinder.java
+%%DATADIR%%/vgp/tutor/rootFinder/PjRootFinder_IP.java
+%%DATADIR%%/vgp/tutor/ruler/package.html
+%%DATADIR%%/vgp/tutor/ruler/PaRuler.html
+%%DATADIR%%/vgp/tutor/ruler/PaRuler.java
+%%DATADIR%%/vgp/tutor/ruler/PjRuler.java
+%%DATADIR%%/vgp/tutor/ruler/PjRuler_IP.java
+%%DATADIR%%/vgp/tutor/slider/package.html
+%%DATADIR%%/vgp/tutor/slider/PaSlider.html
+%%DATADIR%%/vgp/tutor/slider/PaSlider.java
+%%DATADIR%%/vgp/tutor/slider/PjSlider.java
+%%DATADIR%%/vgp/tutor/slider/PjSlider_IP.java
+%%DATADIR%%/vgp/tutor/subdivision/package.html
+%%DATADIR%%/vgp/tutor/subdivision/PaSubdivision.html
+%%DATADIR%%/vgp/tutor/subdivision/PaSubdivision.java
+%%DATADIR%%/vgp/tutor/subdivision/PjSubdivision.java
+%%DATADIR%%/vgp/tutor/texture/images/Auge.jpg
+%%DATADIR%%/vgp/tutor/texture/images/City2.jpg
+%%DATADIR%%/vgp/tutor/texture/images/CubeFlow.jpg
+%%DATADIR%%/vgp/tutor/texture/images/Himmel.jpg
+%%DATADIR%%/vgp/tutor/texture/images/Leuchte.jpg
+%%DATADIR%%/vgp/tutor/texture/images/T_Rex.jpg
+%%DATADIR%%/vgp/tutor/texture/images/Water.jpg
+%%DATADIR%%/vgp/tutor/texture/package.html
+%%DATADIR%%/vgp/tutor/texture/PaTexturedSurface.html
+%%DATADIR%%/vgp/tutor/texture/PaTextureCube.java
+%%DATADIR%%/vgp/tutor/texture/PaTexturedSurface.java
+%%DATADIR%%/vgp/tutor/texture/PjTextureCube.java
+%%DATADIR%%/vgp/tutor/texture/PjTexturedSurface.java
+%%DATADIR%%/vgp/tutor/texture/PjTexturedSurface_IP.java
+%%DATADIR%%/vgp/tutor/torusknot/package.html
+%%DATADIR%%/vgp/tutor/torusknot/PaTorusKnot.html
+%%DATADIR%%/vgp/tutor/torusknot/PaTorusKnot.java
+%%DATADIR%%/vgp/tutor/torusknot/PjTorusKnot.java
+%%DATADIR%%/vgp/tutor/torusknot/PjTorusKnot_IP.java
+%%DATADIR%%/vgp/tutor/transform/package.html
+%%DATADIR%%/vgp/tutor/transform/PaTransform.html
+%%DATADIR%%/vgp/tutor/transform/PaTransform.java
+%%DATADIR%%/vgp/tutor/transform/PjTransform.java
+%%DATADIR%%/vgp/tutor/transform/PjTransform_IP.java
+%%DATADIR%%/vgp/tutor/updatePanel/package.html
+%%DATADIR%%/vgp/tutor/updatePanel/MyClass.java
+%%DATADIR%%/vgp/tutor/updatePanel/MyClass_IP.java
+%%DATADIR%%/vgp/tutor/vectorField/package.html
+%%DATADIR%%/vgp/tutor/vectorField/PaVectorField.html
+%%DATADIR%%/vgp/tutor/vectorField/PaVectorField.java
+%%DATADIR%%/vgp/tutor/vectorField/PjVectorField.java
+%%DATADIR%%/vgp/tutor/vectorField/PjVectorField_IP.java
+%%DATADIR%%/vgp/tutor/index.html
+%%DATADIR%%/_jarVersion.txt
+%%DATADIR%%/readme.txt
+%%DATADIR%%/readme_linux.txt
+%%DATADIR%%/sample.html
+%%DATADIR%%/sample.jvx
+%%DATADIR%%/sample.mgs
+%%DATADIR%%/sample.mpl
+%%DATADIR%%/sample.obj
+%%DATADIR%%/sampleTorus.jvx
+%%DATADIR%%/javaview.html
+%%DATADIR%%/jvLite.html
+@dirrm %%DATADIR%%/jars
+@dirrm %%DATADIR%%/bin
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/rsrc
+@dirrm %%DATADIR%%/models/bd
+@dirrm %%DATADIR%%/models/byu
+@dirrm %%DATADIR%%/models/cmc
+@dirrm %%DATADIR%%/models/curves
+@dirrm %%DATADIR%%/models/diverse
+@dirrm %%DATADIR%%/models/dxf
+@dirrm %%DATADIR%%/models/fe
+@dirrm %%DATADIR%%/models/jvd
+@dirrm %%DATADIR%%/models/jvx
+@dirrm %%DATADIR%%/models/knots
+@dirrm %%DATADIR%%/models/maple
+@dirrm %%DATADIR%%/models/math
+@dirrm %%DATADIR%%/models/minimal
+@dirrm %%DATADIR%%/models/obj
+@dirrm %%DATADIR%%/models/off
+@dirrm %%DATADIR%%/models/polytope
+@dirrm %%DATADIR%%/models/primitive
+@dirrm %%DATADIR%%/models/stl
+@dirrm %%DATADIR%%/models/wrl
+@dirrm %%DATADIR%%/models
+@dirrm %%DATADIR%%/deploy
+@dirrm %%DATADIR%%/JavaViewLib
+@dirrm %%DATADIR%%/vgp/tutor/animationPanel
+@dirrm %%DATADIR%%/vgp/tutor/color
+@dirrm %%DATADIR%%/vgp/tutor/displaySettings
+@dirrm %%DATADIR%%/vgp/tutor/domain
+@dirrm %%DATADIR%%/vgp/tutor/eventCamera
+@dirrm %%DATADIR%%/vgp/tutor/expr
+@dirrm %%DATADIR%%/vgp/tutor/firstApplet
+@dirrm %%DATADIR%%/vgp/tutor/firstApplication
+@dirrm %%DATADIR%%/vgp/tutor/firstGraph
+@dirrm %%DATADIR%%/vgp/tutor/firstProject
+@dirrm %%DATADIR%%/vgp/tutor/fractal
+@dirrm %%DATADIR%%/vgp/tutor/height
+@dirrm %%DATADIR%%/vgp/tutor/key
+@dirrm %%DATADIR%%/vgp/tutor/linear
+@dirrm %%DATADIR%%/vgp/tutor/loader
+@dirrm %%DATADIR%%/vgp/tutor/lsystem
+@dirrm %%DATADIR%%/vgp/tutor/model
+@dirrm %%DATADIR%%/vgp/tutor/ode
+@dirrm %%DATADIR%%/vgp/tutor/parm
+@dirrm %%DATADIR%%/vgp/tutor/parmCurve
+@dirrm %%DATADIR%%/vgp/tutor/pick
+@dirrm %%DATADIR%%/vgp/tutor/polygonSet
+@dirrm %%DATADIR%%/vgp/tutor/rivara
+@dirrm %%DATADIR%%/vgp/tutor/rootFinder
+@dirrm %%DATADIR%%/vgp/tutor/ruler
+@dirrm %%DATADIR%%/vgp/tutor/slider
+@dirrm %%DATADIR%%/vgp/tutor/subdivision
+@dirrm %%DATADIR%%/vgp/tutor/texture/images
+@dirrm %%DATADIR%%/vgp/tutor/texture
+@dirrm %%DATADIR%%/vgp/tutor/torusknot
+@dirrm %%DATADIR%%/vgp/tutor/transform
+@dirrm %%DATADIR%%/vgp/tutor/updatePanel
+@dirrm %%DATADIR%%/vgp/tutor/vectorField
+@dirrm %%DATADIR%%/vgp/tutor
+@dirrm %%DATADIR%%/vgp
+@dirrm %%DATADIR%%
