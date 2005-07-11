@@ -22,9 +22,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
+FILES=	wavpack.h unpack3.c words.c md5.c
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.in
+.for i in ${FILES}
+	@cd ${WRKSRC} && cp ${i} ${i}.orig && \
+		col < ${i}.orig > ${i}
+.endfor	
 
 .include <bsd.port.mk>
