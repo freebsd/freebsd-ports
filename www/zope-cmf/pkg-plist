@@ -676,6 +676,12 @@
 %%ZOPEPRODUCTDIR%%/CMFDefault/tests/test_join.pyc
 %%ZOPEPRODUCTDIR%%/CMFDefault/tests/test_utils.py
 %%ZOPEPRODUCTDIR%%/CMFDefault/tests/test_utils.pyc
+%%ZOPEPRODUCTDIR%%/CMFDefault/tests/test_Acquisition.py
+%%ZOPEPRODUCTDIR%%/CMFDefault/tests/test_DiscussionReply.py
+%%ZOPEPRODUCTDIR%%/CMFDefault/tests/test_RestrictedAcquisition.py
+%%ZOPEPRODUCTDIR%%/CMFDefault/tests/test_Acquisition.pyc
+%%ZOPEPRODUCTDIR%%/CMFDefault/tests/test_DiscussionReply.pyc
+%%ZOPEPRODUCTDIR%%/CMFDefault/tests/test_RestrictedAcquisition.pyc
 %%ZOPEPRODUCTDIR%%/CMFDefault/tool.gif
 %%ZOPEPRODUCTDIR%%/CMFDefault/utils.py
 %%ZOPEPRODUCTDIR%%/CMFDefault/utils.pyc
