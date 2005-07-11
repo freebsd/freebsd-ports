@@ -7,6 +7,7 @@
 
 PORTNAME=	gemini
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.brama.com/compute/unix/
 PKGNAMEPREFIX=	koi8-u-
