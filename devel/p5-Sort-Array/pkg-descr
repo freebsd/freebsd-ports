@@ -1,0 +1,9 @@
+This extended sorting algorithm allows you to
+
+  a) sort an array by ANY field number, not only the first
+  b) find duplicates in your data-set and sort them out.
+
+WWW: http://search.cpan.org/dist/Sort-Array/
+
+- ehaupt
+ehaupt@critical.ch
