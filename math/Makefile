@@ -28,6 +28,7 @@
     SUBDIR += calcoo
     SUBDIR += calctool
     SUBDIR += ccmath
+    SUBDIR += chryzodus
     SUBDIR += clarence
     SUBDIR += cln
     SUBDIR += concorde
