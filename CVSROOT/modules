@@ -2210,6 +2210,7 @@ fileroller	ports/archivers/fileroller
 filerunner	ports/x11-fm/filerunner
 fileschanged	ports/sysutils/fileschanged
 filtermail	ports/mail/filtermail
+filters		ports/games/filters
 finchtv		ports/biology/finchtv
 find-zlib	ports/security/find-zlib
 find_ddos	ports/security/find_ddos
