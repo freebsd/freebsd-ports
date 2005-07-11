@@ -8276,6 +8276,7 @@ p5-Smart-Comments	ports/devel/p5-Smart-Comments
 p5-Socket6	ports/net/p5-Socket6
 p5-Socks	ports/net/p5-Socks
 p5-Sort-ArbBiLex	ports/textproc/p5-Sort-ArbBiLex
+p5-Sort-Array	ports/devel/p5-Sort-Array
 p5-Sort-ArrayOfArrays	ports/devel/p5-Sort-ArrayOfArrays
 p5-Sort-Fields	ports/textproc/p5-Sort-Fields
 p5-Sort-Naturally	ports/textproc/p5-Sort-Naturally
