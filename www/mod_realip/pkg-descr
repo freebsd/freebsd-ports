@@ -1,0 +1,9 @@
+mod_realip is an apache 1.3 module, which changes the IP address of
+the proxy server to the IP address a client, supplied by the proxy
+server in "X-Real-IP" or "X-Forwarded-For" header. mod_realip is
+designed for use on backends, which serve reverse proxied HTTP
+requests.
+
+WWW: http://sysoev.ru/mod_realip/
+
+- Gleb Smirnoff <glebius@FreeBSD.org>

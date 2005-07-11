@@ -324,6 +324,7 @@
     SUBDIR += mod_put
     SUBDIR += mod_python
     SUBDIR += mod_python3
+    SUBDIR += mod_realip
     SUBDIR += mod_roaming
     SUBDIR += mod_roaming2
     SUBDIR += mod_rpaf
