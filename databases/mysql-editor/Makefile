@@ -8,8 +8,8 @@
 PORTNAME=	mysql-editor
 PORTVERSION=	0.2
 CATEGORIES=	databases www
-MASTER_SITES=	http://sorry.vse.cz/~xzemt02/mysql/ \
-		http://www.mysql.com/Contrib/
+MASTER_SITES=	${MASTER_SITE_MYSQL}
+MASTER_SITE_SUBDIR=Contrib
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	mi@aldan.algebra.com
