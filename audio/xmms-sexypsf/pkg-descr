@@ -1,0 +1,14 @@
+Sexypsf is an XMMS plugin for playing .psf files.
+
+The PSF format brings the functionality of NSF, SID, SPC, and GBS to next-
+generation consoles.  PSF utilizes the original music driver code from each
+game to replay sequenced music in a perfectly authentic, and size-efficient,
+way.
+
+The general idea is that a PSF file contains a zlib-compressed program which,
+if executed on the real console, would simply play the music.
+
+WWW: http://projects.raphnet.net/
+
+- ehaupt
+ehaupt@critical.ch
