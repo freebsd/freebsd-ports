@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	isearch
-PORTVERSION=	1.47.01
+PORTVERSION=	1.47i
 CATEGORIES=	textproc databases
-MASTER_SITES=	http://www.etymon.com/pub/software/Isearch/
+MASTER_SITES=	http://www.etymon.com/software/Isearch/
 DISTNAME=	Isearch-${PORTVERSION}
 
 MAINTAINER=	pmarquis@pobox.com
