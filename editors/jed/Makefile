@@ -12,7 +12,7 @@ CATEGORIES=	editors
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/jed/v${PORTVERSION:R}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
-MAINTAINER=	freebsd@galle.com.br
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A SLang-based text editor
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang

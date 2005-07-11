@@ -11,7 +11,6 @@ PORTREVISION=	1
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-smtp_auth+tls
 
-MAINTAINER=	freebsd@galle.com.br
 COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH SMTP_AUTH+TLS
 
 # not type-safe

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	firebird
 PKGNAMESUFFIX=	-devel
 DISTNAME=	firebird2-20050505
 
-MAINTAINER=	freebsd@galle.com.br
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
 
 USE_BZIP2=		yes

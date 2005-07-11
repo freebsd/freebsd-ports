@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES+=	${MASTER_SITE_QMAIL}
 DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
 
-MAINTAINER?=	freebsd@galle.com.br
+MAINTAINER?=	garga@FreeBSD.org
 COMMENT?=	A secure, reliable, efficient, simple, and fast MTA
 
 DIST_SUBDIR=	qmail

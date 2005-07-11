@@ -11,7 +11,7 @@ CATEGORIES=	shells perl5
 MASTER_SITES=	http://www.gregorpurdy.com/gregor/psh/
 DISTNAME=	psh-${PORTVERSION}
 
-MAINTAINER=	freebsd@galle.com.br
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	New shell made entirely out of a Perl script
 
 PERL_CONFIGURE=	yes

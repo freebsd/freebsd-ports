@@ -11,7 +11,7 @@ CATEGORIES=	security www
 MASTER_SITES=	http://www.allard.nu/pfw/download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	freebsd@galle.com.br
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A web frontend for the pf firewall
 
 RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo

@@ -11,7 +11,6 @@ PORTREVISION=	0
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-mysql
 
-MAINTAINER=	freebsd@galle.com.br
 COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH MySQL support
 
 MYSQL_PATCH_VERSION=	1.1.11
