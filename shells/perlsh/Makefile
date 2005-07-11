@@ -8,7 +8,7 @@
 PORTNAME=	perlsh
 PORTVERSION=	1.8
 CATEGORIES=	shells perl5
-MASTER_SITES=	http://www.gregorpurdy.com/gregor/psh/
+MASTER_SITES=	http://www.cpan.org/authors/id/G/GR/GREGOR/
 DISTNAME=	psh-${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
