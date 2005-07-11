@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	obrien
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Filter that converts English text to Jive
 
+CONFLICTS=	filters-* talkfilters-*
+
 WRKSRC=		${WRKDIR}/jive
 MAN1=		jive.1
 

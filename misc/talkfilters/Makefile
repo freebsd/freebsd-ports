@@ -13,7 +13,7 @@ MASTER_SITES=	http://www2.dystance.net/software/talkfilters/
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Set of filters to convert English text to various stereotyped dialects
 
-CONFLICTS=	jive* chef*
+CONFLICTS=	jive* chef* filters-*
 
 USE_LIBTOOL_VER=	15
 INSTALLS_SHLIB=		yes
