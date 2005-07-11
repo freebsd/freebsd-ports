@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apache-ant
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.5
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:bin,} \
 		http://www.esil.univ-mrs.fr/~hquiroz/:man
