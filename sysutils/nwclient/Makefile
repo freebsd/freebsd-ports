@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network backup client to NetWorker servers
 
+FORBIDDEN=	http://vuxml.freebsd.org/d177d9f9-e317-11d9-8088-00123f0f7307.html
+
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 alpha
 
