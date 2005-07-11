@@ -19,8 +19,8 @@ MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sourc
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Bayesian spam filter - stable maintenance version
 
-PORTVER_MAJ=	3.4.6
-SNAP_DATE=	.20050523.0845
+PORTVER_MAJ=	3.4.8
+#SNAP_DATE=	.20050523.0845
 
 .ifdef(SNAP_DATE)
 WRKSRC=		${WRKDIR}/dspam-cvs-stable${SNAP_DATE}

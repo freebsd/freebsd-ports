@@ -16,6 +16,21 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-3.4.8
+#
+
+BUGFIX: File descriptor leaks when connection to delivery host fails
+BUGFIX: Decoding NUL characters causes message truncation
+BUGFIX: Many files not written to group directory when using managed groups
+BUGFIX: Some LDAs/MTAs truncate message when single dots not properly quoted
+BUGFIX: 7BIT encoding contains 8BIT characters
+BUGFIX: Messages to multiple local recipients may fail to decode completely 
+BUGFIX: Delivery of false positives fails in managed groups
+BUGFIX: LMTP/SMTP delivery fails on non-250 2xx response code
+BUGFIX: Messages missing a terminating boundary fail to receive a signature
+
+
+###########################################################################
 # dspam-3.4.6.20050523.0845
 # 
 
