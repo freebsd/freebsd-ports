@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- apps/Makefile.orig	Sat Sep 25 00:32:56 2004
-+++ apps/Makefile	Sun Oct 10 16:20:06 2004
-@@ -40,7 +40,7 @@
+--- apps/Makefile.orig	Wed Jun 22 14:40:11 2005
++++ apps/Makefile	Wed Jun 22 14:43:45 2005
+@@ -40,9 +40,13 @@
  #APPS+=app_rpt.so
  
  APPS+=$(shell if [ -f /usr/include/linux/zaptel.h ]; then echo "app_zapras.so app_meetme.so app_flash.so app_zapbarge.so app_zapscan.so" ; fi)
@@ -11,8 +8,14 @@ $FreeBSD$
 +APPS+=$(shell if [ -f $(LOCALBASE)/include/zaptel.h ]; then echo "app_zapras.so app_meetme.so app_flash.so app_zapbarge.so app_zapscan.so" ; fi)
  APPS+=$(shell if [ -f /usr/include/osp/osp.h ]; then echo "app_osplookup.so" ; fi)
  
++ifdef WITH_FAX
++APPS+=$(shell if [ -f $(LOCALBASE)/include/spandsp.h ]; then echo "app_rxfax.so app_txfax.so" ; fi)
++endif
++
  CFLAGS+=-fPIC
-@@ -65,12 +65,12 @@
+ 
+ ifeq ($(USE_POSTGRES_VM_INTERFACE),1)
+@@ -65,12 +69,12 @@
  	$(CC) $(SOLINK) -o $@ $< -ltonezone
  
  install: all
@@ -27,9 +30,18 @@ $FreeBSD$
  else
  ifeq ($(USE_POSTGRES_VM_INTERFACE),1)
  	$(CC) $(SOLINK) -o $@ $(MLFLAGS) $< -lpq
-@@ -80,16 +80,16 @@
+@@ -79,17 +83,25 @@
+ endif
  endif
  
++ifdef WITH_FAX
++app_rxfax.so : app_rxfax.o
++	$(CC) $(SOLINK) -o $@ $< -L$(LOCALBASE)/lib -lspandsp -ltiff
++
++app_txfax.so : app_txfax.o
++	$(CC) $(SOLINK) -o $@ $< -L$(LOCALBASE)/lib -lspandsp -ltiff
++endif
++
  app_sql_postgres.o: app_sql_postgres.c
 -	$(CC) -pipe -I/usr/local/pgsql/include $(CFLAGS) -c -o app_sql_postgres.o app_sql_postgres.c
 +	$(CC) -I$(LOCALBASE)/include/pgsql $(CFLAGS) -c -o app_sql_postgres.o app_sql_postgres.c
