@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- bin/javaview	Wed Jul  6 23:56:31 2005
++++ bin/javaview.port	Thu Jul  7 00:00:57 2005
+@@ -28,7 +28,7 @@
+ 
+ ## The following directory must contain the java executable "java".
+ ## It may be empty or commented out if "java" is found via your PATH variable.
+-#JAVA_HOME=/usr/bin
++JAVA_HOME=%%JAVA_HOME%%
+ 
+ ## Remove the comment char '#' from the line below (keep the underscore!), 
+ ## if you experience VERY slow performance of JavaView
+@@ -38,7 +38,7 @@
+ ## The following directory is the base of your JavaView installation.
+ ## Default setting: Location of this script then one directory back up.
+ ## You may set it to an absolute path like "/homes/myself/JavaView".
+-JAVAVIEW_HOME=`dirname $0`/..
++JAVAVIEW_HOME=%%DATADIR%%
+ 
+ ## The following directory contains the files "javaview.jar",
+ ## and optionally "jvx.jar" and "vgpapp.jar".

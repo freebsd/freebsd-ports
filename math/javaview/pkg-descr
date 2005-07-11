@@ -1,0 +1,7 @@
+This tiny version of JavaView is optimized for fast download and contains the
+viewer module only, without any dialogs, inspectors and geometry algorithms.
+
+The lite version is mainly used to display precomputed geometry models inside
+web pages.
+
+WWW: http://www.javaview.de/

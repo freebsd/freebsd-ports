@@ -88,6 +88,7 @@
     SUBDIR += jakarta-commons-math
     SUBDIR += jama
     SUBDIR += javanns
+    SUBDIR += javaview
     SUBDIR += kaskade
     SUBDIR += koctave
     SUBDIR += kseg
