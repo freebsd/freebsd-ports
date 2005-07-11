@@ -1,14 +1,17 @@
 bin/supertux
+share/applications/supertux.desktop
+share/pixmaps/supertux.png
 %%DATADIR%%/CREDITS
 %%DATADIR%%/extro-bonus.txt
+%%DATADIR%%/extro-bonus2.txt
 %%DATADIR%%/extro.txt
 %%DATADIR%%/images/background/arctis.png
 %%DATADIR%%/images/background/arctis2.jpg
+%%DATADIR%%/images/background/arctis_dark.jpg
 %%DATADIR%%/images/background/cave2.jpg
 %%DATADIR%%/images/background/extro.jpg
 %%DATADIR%%/images/background/ocean.png
 %%DATADIR%%/images/background/oiltux.jpg
-%%DATADIR%%/images/highscore/highscore.png
 %%DATADIR%%/images/icon.xpm
 %%DATADIR%%/images/icons/bgd.png
 %%DATADIR%%/images/icons/bkgrd.png
@@ -28,24 +31,11 @@ bin/supertux
 %%DATADIR%%/images/icons/select-mode1.png
 %%DATADIR%%/images/icons/select-mode2.png
 %%DATADIR%%/images/icons/select-one.png
+%%DATADIR%%/images/icons/select.png
 %%DATADIR%%/images/icons/settings.png
 %%DATADIR%%/images/icons/test-level.png
 %%DATADIR%%/images/icons/tilegroup.png
 %%DATADIR%%/images/icons/up.png
-%%DATADIR%%/images/intro/beam.png
-%%DATADIR%%/images/intro/copter-squish.png
-%%DATADIR%%/images/intro/copter-stretch.png
-%%DATADIR%%/images/intro/copter1.png
-%%DATADIR%%/images/intro/copter2.png
-%%DATADIR%%/images/intro/gown-lookup.png
-%%DATADIR%%/images/intro/gown-sit.png
-%%DATADIR%%/images/intro/gown-upset.png
-%%DATADIR%%/images/intro/intro-old.png
-%%DATADIR%%/images/intro/intro.png
-%%DATADIR%%/images/intro/tux-mad.png
-%%DATADIR%%/images/intro/tux-sit.png
-%%DATADIR%%/images/intro/tux-upset.png
-%%DATADIR%%/images/leveleditor/select.png
 %%DATADIR%%/images/shared/1up.png
 %%DATADIR%%/images/shared/bouncingsnowball-left-0.png
 %%DATADIR%%/images/shared/bouncingsnowball-left-1.png
@@ -218,7 +208,6 @@ bin/supertux
 %%DATADIR%%/images/shared/star-3.png
 %%DATADIR%%/images/shared/star-4.png
 %%DATADIR%%/images/shared/star.png
-%%DATADIR%%/images/shared/super-bkgd.png
 %%DATADIR%%/images/shared/tux-duck-left.png
 %%DATADIR%%/images/shared/tux-duck-right.png
 %%DATADIR%%/images/shared/tux-duck.png
@@ -410,6 +399,7 @@ bin/supertux
 %%DATADIR%%/images/tilesets/snowbg3.png
 %%DATADIR%%/images/tilesets/snowbg4.png
 %%DATADIR%%/images/tilesets/supertux.stgt
+%%DATADIR%%/images/tilesets/tree.png
 %%DATADIR%%/images/tilesets/water-trans.png
 %%DATADIR%%/images/tilesets/water.png
 %%DATADIR%%/images/tilesets/waterfall-trans1-1-1.png
@@ -600,9 +590,6 @@ bin/supertux
 %%DATADIR%%/images/tilesets/waves-trans-2.png
 %%DATADIR%%/images/title/background.jpg
 %%DATADIR%%/images/title/logo.png
-%%DATADIR%%/images/title/title-anim1.png
-%%DATADIR%%/images/title/title-anim2.png
-%%DATADIR%%/images/title/title.png
 %%DATADIR%%/images/worldmap/antarctica.stwt
 %%DATADIR%%/images/worldmap/castle1.png
 %%DATADIR%%/images/worldmap/castle2.png
@@ -698,9 +685,34 @@ bin/supertux
 %%DATADIR%%/levels/bonus1/wansti-level3.stl
 %%DATADIR%%/levels/bonus1/wansti-level4.stl
 %%DATADIR%%/levels/bonus1/wansti-level5.stl
-%%DATADIR%%/levels/default/bonusisland.stwm
-%%DATADIR%%/levels/default/level1.stl
-%%DATADIR%%/levels/default/worldmap.stwm
+%%DATADIR%%/levels/bonus2/level1.stl
+%%DATADIR%%/levels/bonus2/level10.stl
+%%DATADIR%%/levels/bonus2/level11.stl
+%%DATADIR%%/levels/bonus2/level12.stl
+%%DATADIR%%/levels/bonus2/level13.stl
+%%DATADIR%%/levels/bonus2/level14.stl
+%%DATADIR%%/levels/bonus2/level15.stl
+%%DATADIR%%/levels/bonus2/level16.stl
+%%DATADIR%%/levels/bonus2/level17.stl
+%%DATADIR%%/levels/bonus2/level18.stl
+%%DATADIR%%/levels/bonus2/level19.stl
+%%DATADIR%%/levels/bonus2/level2.stl
+%%DATADIR%%/levels/bonus2/level20.stl
+%%DATADIR%%/levels/bonus2/level21.stl
+%%DATADIR%%/levels/bonus2/level22.stl
+%%DATADIR%%/levels/bonus2/level23.stl
+%%DATADIR%%/levels/bonus2/level24.stl
+%%DATADIR%%/levels/bonus2/level25.stl
+%%DATADIR%%/levels/bonus2/level26.stl
+%%DATADIR%%/levels/bonus2/level27.stl
+%%DATADIR%%/levels/bonus2/level28.stl
+%%DATADIR%%/levels/bonus2/level3.stl
+%%DATADIR%%/levels/bonus2/level4.stl
+%%DATADIR%%/levels/bonus2/level5.stl
+%%DATADIR%%/levels/bonus2/level6.stl
+%%DATADIR%%/levels/bonus2/level7.stl
+%%DATADIR%%/levels/bonus2/level8.stl
+%%DATADIR%%/levels/bonus2/level9.stl
 %%DATADIR%%/levels/misc/menu.stl
 %%DATADIR%%/levels/world1/level1.stl
 %%DATADIR%%/levels/world1/level10.stl
@@ -728,18 +740,22 @@ bin/supertux
 %%DATADIR%%/levels/world1/level7.stl
 %%DATADIR%%/levels/world1/level8.stl
 %%DATADIR%%/levels/world1/level9.stl
+%%DATADIR%%/levels/worldmaps/bonusisland1.stwm
+%%DATADIR%%/levels/worldmaps/bonusisland2.stwm
+%%DATADIR%%/levels/worldmaps/world1.stwm
 %%DATADIR%%/music/Mortimers_chipdisko-fast.mod
 %%DATADIR%%/music/Mortimers_chipdisko.mod
 %%DATADIR%%/music/SALCON-fast.MOD
 %%DATADIR%%/music/SALCON.MOD
 %%DATADIR%%/music/cave-fast.mod
 %%DATADIR%%/music/cave.mod
+%%DATADIR%%/music/credits.ogg
 %%DATADIR%%/music/fortress-fast.mod
 %%DATADIR%%/music/fortress.mod
 %%DATADIR%%/music/fortress2-fast.mod
 %%DATADIR%%/music/fortress2.mod
+%%DATADIR%%/music/leveldone.mod
 %%DATADIR%%/music/theme.mod
-%%DATADIR%%/music/tux-leveldone.mod
 %%DATADIR%%/sounds/bigjump.wav
 %%DATADIR%%/sounds/brick.wav
 %%DATADIR%%/sounds/bump-upgrade.wav
@@ -763,9 +779,10 @@ bin/supertux
 %%DATADIR%%/supertux.strf
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/levels/worldmaps
 @dirrm %%DATADIR%%/levels/world1
 @dirrm %%DATADIR%%/levels/misc
-@dirrm %%DATADIR%%/levels/default
+@dirrm %%DATADIR%%/levels/bonus2
 @dirrm %%DATADIR%%/levels/bonus1
 @dirrm %%DATADIR%%/levels
 @dirrm %%DATADIR%%/images/worldmap
@@ -773,10 +790,8 @@ bin/supertux
 @dirrm %%DATADIR%%/images/tilesets
 @dirrm %%DATADIR%%/images/status
 @dirrm %%DATADIR%%/images/shared
-@dirrm %%DATADIR%%/images/leveleditor
-@dirrm %%DATADIR%%/images/intro
 @dirrm %%DATADIR%%/images/icons
-@dirrm %%DATADIR%%/images/highscore
 @dirrm %%DATADIR%%/images/background
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
+@unexec rmdir %D/share/applications 2> /dev/null || true
