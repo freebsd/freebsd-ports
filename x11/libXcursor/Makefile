@@ -9,7 +9,7 @@ PORTNAME=	libXcursor
 PORTVERSION=	1.1.2
 PORTREVISION=	3
 CATEGORIES=	x11
-MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
+MASTER_SITES=	http://xlibs.freedesktop.org/release/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X client-side cursor loading library

@@ -9,7 +9,7 @@ PORTNAME=	libXdamage
 PORTVERSION=	1.0.1
 PORTREVISION=	2
 CATEGORIES=	x11
-MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
+MASTER_SITES=	http://xlibs.freedesktop.org/release/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Damage extension library
