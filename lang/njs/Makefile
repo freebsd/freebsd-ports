@@ -9,7 +9,9 @@ PORTNAME=	njs
 PORTVERSION=	0.2.5
 PORTREVISION=	1
 CATEGORIES=	lang
-MASTER_SITES=	http://www.bbassett.net/njs/	\
+MASTER_SITES=	http://www.njs-javascript.org/	\
+		http://people.ssh.fi/mtr/js/	\
+		http://www.bbassett.net/njs/	\
 		http://www.iki.fi/mtr/js/
 DISTNAME=	js-${PORTVERSION}
 
