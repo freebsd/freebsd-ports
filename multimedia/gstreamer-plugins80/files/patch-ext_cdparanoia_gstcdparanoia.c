@@ -1,5 +1,5 @@
---- ext/cdparanoia/gstcdparanoia.c.orig	Tue Jul  5 13:24:21 2005
-+++ ext/cdparanoia/gstcdparanoia.c	Tue Jul  5 13:24:27 2005
+--- ext/cdparanoia/gstcdparanoia.c.orig	Mon Jul 11 14:36:25 2005
++++ ext/cdparanoia/gstcdparanoia.c	Mon Jul 11 14:38:41 2005
 @@ -562,6 +562,7 @@
      gint16 *cdda_buf;
      gint64 timestamp;
@@ -16,26 +16,34 @@
  
        if (src->flush_pending) {
          src->flush_pending = FALSE;
-@@ -790,7 +790,11 @@
+@@ -788,9 +788,15 @@
+ 
+   /* fail if the device couldn't be found */
    if (src->d == NULL) {
++#if defined(__FreeBSD__)
      GST_ELEMENT_ERROR (src, RESOURCE, OPEN_READ,
          (_("Could not open CD device %s for reading."),
 -            src->d->cdda_device_name), ("cdda_identify failed"));
-+#if defined(__FreeBSD__)
 +	     src->d->dev->device_path), ("cdda_identify failed"));
 +#else
++    GST_ELEMENT_ERROR (src, RESOURCE, OPEN_READ,
++        (_("Could not open CD device %s for reading."),
 +	     src->d->cdda_device_name), ("cdda_identify failed"));
 +#endif
      return FALSE;
    }
  
-@@ -807,7 +811,11 @@
+@@ -805,9 +811,15 @@
+ 
+   /* open the disc */
    if (cdda_open (src->d)) {
-     GST_ELEMENT_ERROR (src, RESOURCE, OPEN_READ,
-         (_("Could not open CD device %s for reading."),
 +#if defined(__FreeBSD__)
++    GST_ELEMENT_ERROR (src, RESOURCE, OPEN_READ,
++        (_("Could not open CD device %s for reading."),
 +            src->d->dev->device_path), ("cdda_open failed"));
 +#else
+     GST_ELEMENT_ERROR (src, RESOURCE, OPEN_READ,
+         (_("Could not open CD device %s for reading."),
              src->d->cdda_device_name), ("cdda_open failed"));
 +#endif
      cdda_close (src->d);
