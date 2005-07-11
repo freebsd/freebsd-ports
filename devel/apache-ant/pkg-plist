@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 ant/LICENSE
 ant/README
 ant/WHATSNEW
@@ -92,6 +93,7 @@ ant/bin/antRun
 %%PORTDOCS%%ant/docs/manual/CoreTasks/java.html
 %%PORTDOCS%%ant/docs/manual/CoreTasks/javac.html
 %%PORTDOCS%%ant/docs/manual/CoreTasks/javadoc.html
+%%PORTDOCS%%ant/docs/manual/CoreTasks/length.html
 %%PORTDOCS%%ant/docs/manual/CoreTasks/loadfile.html
 %%PORTDOCS%%ant/docs/manual/CoreTasks/loadproperties.html
 %%PORTDOCS%%ant/docs/manual/CoreTasks/macrodef.html
@@ -147,6 +149,7 @@ ant/bin/antRun
 %%PORTDOCS%%ant/docs/manual/CoreTypes/permissions.html
 %%PORTDOCS%%ant/docs/manual/CoreTypes/propertyset.html
 %%PORTDOCS%%ant/docs/manual/CoreTypes/redirector.html
+%%PORTDOCS%%ant/docs/manual/CoreTypes/regexp.html
 %%PORTDOCS%%ant/docs/manual/CoreTypes/selectors-program.html
 %%PORTDOCS%%ant/docs/manual/CoreTypes/selectors.html
 %%PORTDOCS%%ant/docs/manual/CoreTypes/xmlcatalog.html
@@ -257,6 +260,7 @@ ant/bin/antRun
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/DynamicConfiguratorNS.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/DynamicElement.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/DynamicElementNS.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/Executor.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/ExitException.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/ExitStatusException.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/FileScanner.html
@@ -279,6 +283,8 @@ ant/bin/antRun
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/TaskContainer.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/TypeAdapter.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/UnknownElement.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/UnsupportedAttributeException.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/UnsupportedElementException.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/XmlLogger.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/filters/BaseFilterReader.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/filters/BaseParamFilterReader.html
@@ -322,6 +328,7 @@ ant/bin/antRun
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/filters/util/package-summary.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/filters/util/package-tree.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/helper/AntXMLContext.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/helper/DefaultExecutor.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/helper/ProjectHelper2.AntHandler.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/helper/ProjectHelper2.ElementHandler.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/helper/ProjectHelper2.MainHandler.html
@@ -330,6 +337,7 @@ ant/bin/antRun
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/helper/ProjectHelper2.TargetHandler.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/helper/ProjectHelper2.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/helper/ProjectHelperImpl.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/helper/SingleCheckExecutor.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/helper/package-frame.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/helper/package-summary.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/helper/package-tree.html
@@ -364,6 +372,7 @@ ant/bin/antRun
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/package-tree.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/AbstractCvsTask.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/Ant.Reference.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/Ant.TargetElement.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/Ant.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/AntStructure.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/Antlib.html
@@ -416,6 +425,10 @@ ant/bin/antRun
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/GenerateKey.DistinguishedName.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/GenerateKey.DnameParam.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/GenerateKey.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/Get.Base64Converter.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/Get.DownloadProgress.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/Get.NullProgress.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/Get.VerboseProgress.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/Get.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/ImportTask.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/Input.html
@@ -439,6 +452,9 @@ ant/bin/antRun
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/Jikes.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/JikesOutputParser.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/KeySubst.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/Length.FileMode.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/Length.When.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/Length.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/LoadFile.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/LoadProperties.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/LogOutputStream.html
@@ -551,6 +567,7 @@ ant/bin/antRun
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/FilesMatch.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/Http.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/IsFalse.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/IsFileSelected.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/IsReference.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/IsSet.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/IsTrue.html
@@ -772,6 +789,13 @@ ant/bin/antRun
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javacc/package-frame.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javacc/package-summary.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javacc/package-tree.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javah/JavahAdapter.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javah/JavahAdapterFactory.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javah/Kaffeh.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javah/SunJavah.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javah/package-frame.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javah/package-summary.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javah/package-tree.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend/JDependTask.FormatAttribute.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend/JDependTask.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend/package-frame.html
@@ -836,6 +860,14 @@ ant/bin/antRun
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/package-frame.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/package-summary.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/package-tree.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/native2ascii/DefaultNative2Ascii.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/native2ascii/KaffeNative2Ascii.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/native2ascii/Native2AsciiAdapter.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/native2ascii/Native2AsciiAdapterFactory.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/native2ascii/SunNative2Ascii.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/native2ascii/package-frame.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/native2ascii/package-summary.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/native2ascii/package-tree.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/FTP.Action.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/FTP.FTPDirectoryScanner.AntFTPFile.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/FTP.FTPDirectoryScanner.AntFTPRootFile.html
@@ -1068,6 +1100,10 @@ ant/bin/antRun
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/types/XMLCatalog.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/types/ZipFileSet.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/types/ZipScanner.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/types/mappers/FilterMapper.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/types/mappers/package-frame.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/types/mappers/package-summary.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/types/mappers/package-tree.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/types/optional/ScriptFilter.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/types/optional/depend/ClassfileSet.ClassRoot.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/types/optional/depend/ClassfileSet.html
@@ -1102,6 +1138,7 @@ ant/bin/antRun
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/types/resolver/package-frame.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/types/resolver/package-summary.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/types/resolver/package-tree.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/types/selectors/AbstractSelectorContainer.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/types/selectors/AndSelector.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/types/selectors/BaseExtendSelector.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/types/selectors/BaseSelector.html
@@ -1158,6 +1195,7 @@ ant/bin/antRun
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/util/ConcatFileInputStream.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/util/ContainerMapper.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/util/DOMElementWriter.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/util/DOMUtils.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/util/DateUtils.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/util/FileNameMapper.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/ant/util/FileUtils.html
@@ -1251,6 +1289,7 @@ ant/bin/antRun
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/tar/package-tree.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/zip/AsiExtraField.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/zip/ExtraFieldUtils.html
+%%PORTDOCS%%ant/docs/manual/api/org/apache/tools/zip/JarMarker.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/zip/UnixStat.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/zip/UnrecognizedExtraField.html
 %%PORTDOCS%%ant/docs/manual/api/org/apache/tools/zip/ZipEntry.html
@@ -1294,6 +1333,9 @@ ant/bin/antRun
 %%PORTDOCS%%ant/docs/manual/sysclasspath.html
 %%PORTDOCS%%ant/docs/manual/tasksoverview.html
 %%PORTDOCS%%ant/docs/manual/toc.html
+%%PORTDOCS%%ant/docs/manual/tutorial-HelloWorldWithAnt.html
+%%PORTDOCS%%ant/docs/manual/tutorial-tasks-filesets-properties.html
+%%PORTDOCS%%ant/docs/manual/tutorial-tasks-filesets-properties.zip
 %%PORTDOCS%%ant/docs/manual/tutorial-writing-tasks-src.zip
 %%PORTDOCS%%ant/docs/manual/tutorial-writing-tasks.html
 %%PORTDOCS%%ant/docs/manual/using.html
@@ -1301,19 +1343,8 @@ ant/bin/antRun
 %%PORTDOCS%%ant/docs/mission.html
 %%PORTDOCS%%ant/docs/page.css
 %%PORTDOCS%%ant/docs/problems.html
-%%PORTDOCS%%ant/docs/projects.html
-%%PORTDOCS%%ant/docs/projects/antidote/design.html
-%%PORTDOCS%%ant/docs/projects/antidote/images/screenshot.jpg
-%%PORTDOCS%%ant/docs/projects/antidote/index.html
-%%PORTDOCS%%ant/docs/projects/antidote/module.html
-%%PORTDOCS%%ant/docs/projects/antlib/antlib_classloaders.html
-%%PORTDOCS%%ant/docs/projects/antlib/antlib_contract.html
-%%PORTDOCS%%ant/docs/projects/antlib/antlib_descriptors.html
-%%PORTDOCS%%ant/docs/projects/antlib/antlib_namespaces.html
-%%PORTDOCS%%ant/docs/projects/antlib/antlib_roadmap.html
-%%PORTDOCS%%ant/docs/projects/antlib/index.html
-%%PORTDOCS%%ant/docs/projects/antlib/roles.html
 %%PORTDOCS%%ant/docs/projects/index.html
+%%PORTDOCS%%ant/docs/projects.html
 %%PORTDOCS%%ant/docs/resources.html
 ant/etc/ant-bootstrap.jar
 ant/etc/changelog.xsl
@@ -1361,94 +1392,93 @@ ant/lib/ant-xslp.jar
 ant/lib/ant.jar
 ant/lib/xercesImpl.jar
 ant/lib/xml-apis.jar
-bin/ant
-@dirrm ant/lib
-@dirrm ant/etc/checkstyle
-@dirrm ant/etc
-%%PORTDOCS%%@dirrm ant/docs/projects/antlib
-%%PORTDOCS%%@dirrm ant/docs/projects/antidote/images
-%%PORTDOCS%%@dirrm ant/docs/projects/antidote
-%%PORTDOCS%%@dirrm ant/docs/projects
-%%PORTDOCS%%@dirrm ant/docs/manual/stylesheets
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/zip
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/tar
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/mail
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/bzip2
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/util/regexp
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/util/optional
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/util/facade
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/util/depend/bcel
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/util/depend
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/util
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/types/selectors
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/types/resolver
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/types/optional/image
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/types/optional/depend
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/types/optional
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/types
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/rmic
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/windows
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/unix
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/splash
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sound
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sos
+@dirrm ant/bin
+%%PORTDOCS%%@dirrm ant/docs/ant2
+%%PORTDOCS%%@dirrm ant/docs/images
+%%PORTDOCS%%@dirrm ant/docs/manual/CoreTasks
+%%PORTDOCS%%@dirrm ant/docs/manual/CoreTypes
+%%PORTDOCS%%@dirrm ant/docs/manual/Integration
+%%PORTDOCS%%@dirrm ant/docs/manual/OptionalTasks
+%%PORTDOCS%%@dirrm ant/docs/manual/OptionalTypes
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/filters/util
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/filters
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/helper
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/input
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/launch
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/listener
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/loader
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/email
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/i18n
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/image
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javacc
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javah
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jlink
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/native2ascii
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/pvcs
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/scm
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/script
 %%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/attributes
 %%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode
 %%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/script
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/scm
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/pvcs
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jlink
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javacc
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/image
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/i18n
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sos
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sound
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/splash
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/unix
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/windows
 %%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/email
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/rmic
 %%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/loader
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/listener
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/launch
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/input
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/helper
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/filters/util
-%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/filters
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/types/mappers
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/types/optional/depend
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/types/optional/image
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/types/optional
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/types/resolver
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/types/selectors
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/types
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/util/depend/bcel
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/util/depend
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/util/facade
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/util/optional
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/util/regexp
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant/util
 %%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/ant
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/bzip2
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/mail
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/tar
+%%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools/zip
 %%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache/tools
 %%PORTDOCS%%@dirrm ant/docs/manual/api/org/apache
 %%PORTDOCS%%@dirrm ant/docs/manual/api/org
 %%PORTDOCS%%@dirrm ant/docs/manual/api
-%%PORTDOCS%%@dirrm ant/docs/manual/OptionalTypes
-%%PORTDOCS%%@dirrm ant/docs/manual/OptionalTasks
-%%PORTDOCS%%@dirrm ant/docs/manual/Integration
-%%PORTDOCS%%@dirrm ant/docs/manual/CoreTypes
-%%PORTDOCS%%@dirrm ant/docs/manual/CoreTasks
+%%PORTDOCS%%@dirrm ant/docs/manual/stylesheets
 %%PORTDOCS%%@dirrm ant/docs/manual
-%%PORTDOCS%%@dirrm ant/docs/images
-%%PORTDOCS%%@dirrm ant/docs/ant2
+%%PORTDOCS%%@dirrm ant/docs/projects
 %%PORTDOCS%%@dirrm ant/docs
-@dirrm ant/bin
+@dirrm ant/etc/checkstyle
+@dirrm ant/etc
+@dirrm ant/lib
 @dirrm ant
