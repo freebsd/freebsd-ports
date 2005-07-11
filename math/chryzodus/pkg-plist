@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+bin/chryzodus
+%%PORTDOCS%%%%DOCSDIR%%/chryzode.html
+%%PORTDOCS%%%%DOCSDIR%%/file.html
+%%PORTDOCS%%%%DOCSDIR%%/help.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/keyboard.html
+%%PORTDOCS%%%%DOCSDIR%%/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/zoom.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

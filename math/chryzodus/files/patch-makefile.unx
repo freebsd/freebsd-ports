@@ -1,0 +1,12 @@
+$FreeBSD$
+--- makefile.unx	Tue Jun 29 17:16:38 2004
++++ makefile.unx.port	Sat Jul  9 21:43:27 2005
+@@ -6,7 +6,7 @@
+ #--------------------------------------#
+ 
+ CXX = g++
+-CFLAGS = -Wall
++CFLAGS = -Wall `allegro-config --cflags`
+ LDFLAGS = -s -lstdc++ `allegro-config --libs`
+ 
+ OBJECTS = main.o gui.o compute.o
