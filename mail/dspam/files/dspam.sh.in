@@ -14,7 +14,7 @@
 # dspam_enable="YES"
 #
 
-. /etc/rc.subr
+. %%RC_SUBR%%
 
 name=dspam
 rcvar=`set_rcvar`
