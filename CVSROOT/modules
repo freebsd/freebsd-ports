@@ -1048,6 +1048,7 @@ chpasswd	ports/www/chpasswd
 chpp		ports/textproc/chpp
 chromium	ports/games/chromium
 chrootuid	ports/security/chrootuid
+chryzodus	ports/math/chryzodus
 chtml		ports/www/chtml
 cicquin		ports/net/cicquin
 cider		ports/cad/cider
