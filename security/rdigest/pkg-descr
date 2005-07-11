@@ -1,8 +1,6 @@
-This utility is a wrapper for the md5(3), sha1(3) and rmd160(3)
-routines.
-
-It is remarkably similar to the digest package, except that it
-can recursively checksum directory trees.
+This utility is a wrapper for the md5(3), sha1(3), rmd160(3), and
+tiger hash routines.  It is remarkably similar to the digest package,
+except that it can recursively checksum directory trees.
 
 While a simple checksum on a tar file is usually satisfactory, once
 said archive has been extracted, it is virtually impossible to
@@ -11,37 +9,8 @@ checksum.  To be specific, changes in timestamps and ownership, and
 changes in file ordering within directories can affect the checksum of
 the archive, while not really impacting the actual code at all.
 
-The algorithm used to checksum a directory in this implementation is
-as follows:
-
-	cd into directory
-	initialize MASTER_HASH
-	walk directory tree, sorting all entries
-	foreach entry
-		if it is a directory:
-			skip it if it is named "RCS", "CVS", or "SCCS"
-			initialize SLAVE_HASH
-			add the string "d " into SLAVE_HASH
-			add the pathname of the directory into SLAVE_HASH
-			finish SLAVE_HASH
-			fold the hexified SLAVE_HASH result into MASTER_HASH
-		if it is a file:
-			initialize SLAVE_HASH
-			add the string "f " into SLAVE_HASH
-			add the pathname of the file into SLAVE_HASH
-			finish SLAVE_HASH
-			fold the hexified SLAVE_HASH result into MASTER_HASH
-			initialize SLAVE_HASH
-			add the contents of the file into SLAVE_HASH
-			finish SLAVE_HASH
-			fold the hexified SLAVE_HASH result into MASTER_HASH
-		if it is a symbolic link
-			initialize SLAVE_HASH
-			add the string "l " into SLAVE_HASH
-			add the pathname of the link into SLAVE_HASH
-			finish SLAVE_HASH
-			fold the hexified SLAVE_HASH result into MASTER_HASH
-			initialize SLAVE_HASH
-			add the contents of the link into SLAVE_HASH
-			finish SLAVE_HASH
-			fold the hexified SLAVE_HASH result into MASTER_HASH
+The algorithm used to checksum a directory in this implementation
+is considers only the files' pathnames, the files' types (ie,
+directory vs.  file vs. symbolic link), and their contents (for
+the latter two).  It is described in greater detail in the man
+page.
