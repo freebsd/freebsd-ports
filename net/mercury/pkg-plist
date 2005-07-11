@@ -139,7 +139,10 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/UI/dialogs/RemovedContact.xml
 %%INSTDIR%%/resources/UI/dialogs/RenameGroup.xml
 %%INSTDIR%%/resources/UI/panels/ConferencePanel.xml
+%%INSTDIR%%/resources/lang/PT_pt.xml
 %%INSTDIR%%/resources/lang/en.xml
+%%INSTDIR%%/resources/lang/it.xml
+%%INSTDIR%%/resources/lang/nl.xml
 %%INSTDIR%%/resources/menu/AccountTab.xml
 %%INSTDIR%%/resources/menu/MSN.xml
 %%INSTDIR%%/resources/menu/Tray.xml
