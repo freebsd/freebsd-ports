@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	sybase
-PORTVERSION=	0.36
+PORTVERSION=	0.37
 PORTREVISION=	2
 CATEGORIES=	databases python
 MASTER_SITES=	http://object-craft.com.au/projects/sybase/download/
