@@ -6174,6 +6174,7 @@ mod_proxy_html	ports/www/mod_proxy_html
 mod_put		ports/www/mod_put
 mod_python	ports/www/mod_python
 mod_python3	ports/www/mod_python3
+mod_realip	ports/www/mod_realip
 mod_roaming	ports/www/mod_roaming
 mod_roaming2	ports/www/mod_roaming2
 mod_rpaf	ports/www/mod_rpaf
