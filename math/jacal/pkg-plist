@@ -22,7 +22,6 @@ lib/jacal/math.scm
 lib/jacal/modeinit.scm
 lib/jacal/norm.scm
 lib/jacal/poly.scm
-lib/jacal/scl.scm
 lib/jacal/sexp.scm
 lib/jacal/sqfree.scm
 lib/jacal/tensor.scm
