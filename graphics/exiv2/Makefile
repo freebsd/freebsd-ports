@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	exiv2
-PORTVERSION=	0.6.2
+PORTVERSION=	0.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://home.arcor.de/ahuggel/exiv2/
 
