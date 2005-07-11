@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mmore
-PORTVERSION=	1.0
+PORTVERSION=	1.01
 CATEGORIES=	sysutils
 MASTER_SITES=	http://matt.sixxgate.com/files/
 
