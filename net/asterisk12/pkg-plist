@@ -221,6 +221,7 @@ lib/asterisk/modules/app_queue.so
 lib/asterisk/modules/app_random.so
 lib/asterisk/modules/app_read.so
 lib/asterisk/modules/app_record.so
+%%WITH_FAX%%lib/asterisk/modules/app_rxfax.so
 lib/asterisk/modules/app_sayunixtime.so
 lib/asterisk/modules/app_segfault.so
 lib/asterisk/modules/app_senddtmf.so
@@ -238,6 +239,7 @@ lib/asterisk/modules/app_talkdetect.so
 lib/asterisk/modules/app_test.so
 lib/asterisk/modules/app_transfer.so
 lib/asterisk/modules/app_txtcidname.so
+%%WITH_FAX%%lib/asterisk/modules/app_txfax.so
 lib/asterisk/modules/app_url.so
 lib/asterisk/modules/app_userevent.so
 lib/asterisk/modules/app_verbose.so

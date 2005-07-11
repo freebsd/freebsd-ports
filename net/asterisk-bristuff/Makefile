@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.0.7
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -72,6 +72,14 @@ PLIST_SUB+=	WITH_ZAPTEL=""
 
 .if !defined(WITHOUT_MYSQL)
 USE_MYSQL=	yes
+.endif
+
+.if !defined(WITHOUT_FAX)
+MAKE_ENV+=	WITH_FAX=1
+LIB_DEPENDS+=	spandsp.0:${PORTSDIR}/comms/spandsp
+PLIST_SUB+=	WITH_FAX=""
+.else
+PLIST_SUB+=	WITH_FAX="@comment "
 .endif
 
 post-patch:
