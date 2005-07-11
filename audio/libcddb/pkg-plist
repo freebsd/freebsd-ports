@@ -6,10 +6,11 @@ include/cddb/cddb_conn.h
 include/cddb/cddb_disc.h
 include/cddb/cddb_error.h
 include/cddb/cddb_log.h
+include/cddb/cddb_site.h
 include/cddb/cddb_track.h
 include/cddb/version.h
 lib/libcddb.a
 lib/libcddb.so
-lib/libcddb.so.1
+lib/libcddb.so.2
 libdata/pkgconfig/libcddb.pc
 @dirrm include/cddb
