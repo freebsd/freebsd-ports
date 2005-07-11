@@ -9,7 +9,7 @@ PORTNAME=	libXtrans
 PORTVERSION=	0.1
 PORTREVISION=	1
 CATEGORIES=	x11
-MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
+MASTER_SITES=	http://xlibs.freedesktop.org/release/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Network API translation layer for X applications and libraries

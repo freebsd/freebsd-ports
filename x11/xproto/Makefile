@@ -8,7 +8,7 @@
 PORTNAME=	xproto
 PORTVERSION=	6.6.2
 CATEGORIES=	x11
-MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
+MASTER_SITES=	http://xlibs.freedesktop.org/release/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X11 protocol headers
