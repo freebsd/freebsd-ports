@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cherokee
-PORTVERSION=	0.4.23
+PORTVERSION=	0.4.24
 CATEGORIES=	www
 MASTER_SITES=	http://www.0x50.org/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION:R}/${PORTVERSION}
@@ -18,7 +18,6 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -42,14 +41,10 @@ CONFIGURE_ARGS+=	--enable-tls=gnutls
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-PLIST_SUB+=	PAM="" PAM5="@comment "
+PLIST_SUB+=	PAM=""
 .else
-PLIST_SUB+=	PAM="@comment " PAM5=""
+PLIST_SUB+=	PAM="@comment "
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$(top_builddir)/sherokee_reinplace|true|g' \
-		${WRKSRC}/Makefile.in
 
 pre-build:
 .for file in advanced.conf cherokee.conf mods-ssl sites-default sites-example
@@ -70,7 +65,13 @@ pre-install:
 	@${ECHO_MSG} " `pwd` "
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/doc/Intro.txt ${DATADIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/images/*.png ${DOCSDIR}
+.endif
+	${INSTALL_DATA} ${WRKSRC}/doc/develop/Intro.txt ${DATADIR}
 	@${ECHO_MSG} " "
 	@${ECHO_MSG} " Dont forget to read the doc "
 	@${ECHO_MSG} " ${PREFIX}/share/cherokee/Intro.txt"

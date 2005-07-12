@@ -1,0 +1,30 @@
+--- Makefile.in.orig	Thu Jul  7 23:03:20 2005
++++ Makefile.in	Tue Jul 12 01:18:30 2005
+@@ -305,7 +305,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = m4 contrib www doc icons qa cherokee cget 
++SUBDIRS = m4 contrib www icons qa cherokee cget 
+ bin_SCRIPTS = cherokee-config
+ SUFFIXES = .sample.pre .sample
+ 
+@@ -961,7 +961,7 @@
+ 
+ 
+ .sample.pre.sample:
+-	$(top_builddir)/cherokee_replace $< $@ "%sysconfdir%" "${sysconfdir}" "%datadir%" "${datadir}" "%prefix%" "${prefix}" "%wwwroot%" "${WWW_ROOT}"
++	true $< $@ "%sysconfdir%" "${sysconfdir}" "%datadir%" "${datadir}" "%prefix%" "${prefix}" "%wwwroot%" "${WWW_ROOT}"
+ 
+ install-data-local-config:
+ 	@$(mkinstalldirs) $(DESTDIR)$(pkgincludedir);
+@@ -999,9 +999,6 @@
+ 		echo "$@ will not overwrite existing $(cherokeeconfdir)/mime.conf"; \
+ 	else \
+ 		$(INSTALL_DATA) $(top_srcdir)/mime.conf.sample $(DESTDIR)$(cherokeeconfdir)/mime.conf; \
+-	fi
+-	@if test -d $(DESTDIR)$(sysconfdir)/pam.d && test ! -d $(DESTDIR)$(sysconfdir)/pam.d/cherokee ; then \
+-		$(INSTALL_DATA) $(top_srcdir)/pam.d_cherokee $(DESTDIR)$(sysconfdir)/pam.d/cherokee; \
+ 	fi
+ 	@if test -f $(DESTDIR)$(cherokeeconfdir)/sites-available/default ; then \
+ 		echo "$@ will not overwrite existing $(cherokeeconfdir)/sites-available/default"; \
