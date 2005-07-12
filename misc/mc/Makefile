@@ -23,6 +23,13 @@ USE_REINPLACE=	yes
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 
+OPTIONS=	SLANG		"Build with SLang library" on \
+		ICONV		"Build with iconv recoding" on \
+		EDIT		"Build with internal editor" on \
+		X11		"Build with X11 library" off \
+		SUBSHELL	"Build with subshell support" on \
+		SAMBA		"Build with Samba support" on
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SAMBA) || !(defined(WITHOUT_SAMBA) || defined(MINIMAL))
@@ -40,6 +47,8 @@ PLIST_SUB=	CHARSETS="@comment "
 
 .if !defined(WITH_X11) || defined(MINIMAL)
 CONFIGURE_ARGS+=--without-x
+.else
+USE_XLIB=	yes
 .endif
 
 .if !defined(WITH_EDIT) && (defined(WITHOUT_EDIT) || defined(MINIMAL))
