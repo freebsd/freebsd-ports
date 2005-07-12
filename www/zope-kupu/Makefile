@@ -7,8 +7,9 @@
 
 PORTNAME=	kupu
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	www zope
-MASTER_SITES=	http://kupu.oscom.org/midcom-serveattachmentguid-ed5785a2c523bd36767c80bb2020cd7c/
+MASTER_SITES=	http://kupu.oscom.org/midcom-serveattachmentguid-6b4584286e6cd5bbf2f82f0a83ead0e2/
 PKGNAMEPREFIX=	zope-
 
 MAINTAINER=	x@Vex.Net
