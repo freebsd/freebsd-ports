@@ -8,7 +8,7 @@
 PORTNAME=	bugsquish
 PORTVERSION=	0.0.6
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/bugsquish/src/
+MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/bugsquish/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bug-squishing, fly-swatting action
