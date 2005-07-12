@@ -6,27 +6,29 @@
 #
 
 PORTNAME=	nexuiz
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}
+DISTFILES=	${PORTNAME}${EXTRACT_SUFX} \
+		patch${PORTVERSION:S/.//g}${EXTRACT_SUFX}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A fast-paced, chaotic, and intense multiplayer first person shooter
 
-NO_PACKAGE=	Package will be 149MB, set FORCE_PACKAGE if you really want to build it
+NO_PACKAGE=	Package will be 156MB, set FORCE_PACKAGE if you really want to build it
 
 USE_REINPLACE=	yes
 USE_ZIP=	yes
 
-WRKSRC=		${WRKDIR}/Nexuiz/sources/darkplaces
+WRKSRC=		${WRKDIR}/sources/darkplaces
 MAKEFILE=	makefile.bsd
 MAKE_ARGS=	CC="${CC}" OPTIM_RELEASE="${CFLAGS} -fno-strict-aliasing -ffast-math -funroll-loops"
 ALL_TARGET=	#
 
 PLIST_FILES=	%%CLIENT%%bin/${PORTNAME}-glx %%SDL_CLIENT%%bin/${PORTNAME}-sdl \
-		%%SERVER%%bin/${PORTNAME}-dedicated %%DATADIR%%/data/data20050531.pk3
+		%%SERVER%%bin/${PORTNAME}-dedicated %%DATADIR%%/data/data20050531.pk3 \
+		%%DATADIR%%/data/data20050629.pk3
 PLIST_DIRS=	%%DATADIR%%/data %%DATADIR%%
 
 OPTIONS=	CLIENT		"Build GLX client"		on \
@@ -65,11 +67,9 @@ PLIST_SUB+=	SERVER="@comment "
 .endif
 
 post-extract:
-	@${EXTRACT_CMD} ${WRKDIR}/Nexuiz/sources/nexuizenginesource20050530.zip \
-		-d ${WRKDIR}/Nexuiz/sources
 	@${REINPLACE_CMD} -e 's,sdl-config,sdl11-config,g' \
 		${WRKSRC}/makefile.inc
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},; 51,$$d' \
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},; 74,$$d' \
 		${WRKSRC}/${MAKEFILE}
 	@${ECHO_CMD} 'LDFLAGS_SDL=$$(LDFLAGS_BSDSDL)' >> ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -E 's,"\.","${DATADIR}",' ${WRKSRC}/fs.c
@@ -81,6 +81,7 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nexuiz-* ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}/data
-	${INSTALL_DATA} ${WRKDIR}/Nexuiz/data/data20050531.pk3 ${DATADIR}/data
+	${INSTALL_DATA} ${WRKDIR}/Nexuiz/data/data20050531.pk3 \
+		${WRKDIR}/data/data20050629.pk3 ${DATADIR}/data
 
 .include <bsd.port.post.mk>
