@@ -1,0 +1,21 @@
+--- Makefile.old	Wed Jul 14 21:08:03 2004
++++ Makefile	Mon Jul 11 16:41:46 2005
+@@ -71,13 +71,14 @@
+ 
+ 	@mkdir -p $(install_bin)
+ 	@$(COPY) bin/$(TSPC) $(install_bin)
+-	@$(COPY) bin/tspc.conf.sample $(install_bin)
+ 
+-	@if [ ! -f $(install_bin)/tspc.conf ]; then \
+-		$(COPY) $(install_bin)/tspc.conf.sample $(install_bin)/tspc.conf; \
++	@mkdir -p $(installdir)/etc
++	@$(COPY) bin/tspc.conf.sample $(installdir)/etc
++
++	@if [ ! -f $(installdir)/etc/tspc.conf ]; then \
++		$(COPY) $(installdir)/etc/tspc.conf.sample $(installdir)/etc/tspc.conf; \
+ 	fi
+ 
+-	@$(COPY) GPL_LICENSE.txt $(installdir)
+ 
+ clean: pre-checks
+ 	@for dir in ${subdirs}; do \

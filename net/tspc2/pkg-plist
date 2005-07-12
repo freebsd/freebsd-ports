@@ -1,0 +1,8 @@
+bin/tspc
+etc/tspc.conf
+etc/tspc.conf.sample
+%%DATADIR%%/template/README
+%%DATADIR%%/template/checktunnel.sh
+%%DATADIR%%/template/freebsd.sh
+@dirrm %%DATADIR%%/template
+@dirrm %%DATADIR%%

@@ -1,0 +1,26 @@
+#!/bin/sh
+
+case "$1" in
+
+start)
+	%%PREFIX%%/bin/tspc -f %%PREFIX%%/etc/tspc.conf
+	echo -n ' tspc2'
+	;;
+
+stop)
+	killall -TERM tspc
+	echo -n ' tspc2'
+	;;
+
+restart)
+	killall -TERM tspc
+	%%PREFIX%%/bin/tspc -f %%PREFIX%%/etc/tspc.conf
+	echo 'tspc2 restarted'
+	;;
+
+*)
+	echo "Usage: ${0##*/}: { start | stop | restart }" >&2
+	exit 64
+	;;
+
+esac
