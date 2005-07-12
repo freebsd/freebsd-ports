@@ -9,7 +9,7 @@ PORTNAME=	asterisk-oh323
 PORTVERSION=	0.6.5
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://www.inaccessnetworks.com/asterisk-oh323/download/
+MASTER_SITES=	http://www.inaccessnetworks.com/projects/asterisk-oh323/download/
 
 MAINTAINER=	bamby@portaone.com
 COMMENT=	A H.323 support module for the Asterisk soft PBX
