@@ -42,7 +42,7 @@ OPTIONS+=	BLADEENC "Encoder: bladeenc: Install audio/bladeenc" off \
 		GOGO "Encoder: gogo: Install audio/gogo" off \
 		MP3ENCODE "Encoder: mp3encode: Install audio/mp3encode" off
 
-ISO_LOCALES=	de es fr pt_BR ru
+ISO_LOCALES=	de es fr pt_BR
 
 .include <bsd.port.pre.mk>
 
@@ -118,5 +118,8 @@ post-patch:
 	${LOCALBASE}/bin/iconv -f ISO-8859-15 -t UTF-8 \
 		${WRKSRC}/po/_${l}.po > ${WRKSRC}/po/${l}.po
 .endfor
+	@${MV} ${WRKSRC}/po/ru.po ${WRKSRC}/po/_ru.po
+	${LOCALBASE}/bin/iconv -f koi8-r -t UTF-8 \
+		${WRKSRC}/po/_ru.po > ${WRKSRC}/po/ru.po
 
 .include <bsd.port.post.mk>
