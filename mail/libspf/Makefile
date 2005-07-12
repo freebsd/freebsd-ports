@@ -6,101 +6,70 @@
 #
 
 PORTNAME=	libspf
-PORTVERSION=	0.25.b
+DISTVERSION=	1.0.0-p3
 CATEGORIES=	mail
-MASTER_SITES=	http://www.libspf.org/files/
-DISTNAME=	${PORTNAME}.${PORTVERSION}eta
+MASTER_SITES=	http://www.libspf.org/files/src/
 
-DEPRECATED=	"stale, try mail/libspf2"
-EXPIRATION_DATE=2005-07-31
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marcus@corp.grupos.com.br
 COMMENT=	Sender Policy Framework (SPF) library and client
 
-NOT_FOR_ARCHS=	amd64 alpha
-
-USE_GETOPT_LONG=yes
 USE_BZIP2=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}.25
-USE_GMAKE=	yes
-USE_REINPLACE=	yes
+USE_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
-LIBSPF_REV=	1
-PLIST_SUB=	PORTNAME=${PORTNAME} LIBSPF_REV=${LIBSPF_REV}
-LDFLAGS+=	-L${WRKSRC}
 
-# Supported tunables:
-#
-# WITH_SPF_LOG_FILE=/foo/bar	enable transaction logfile (if unset: no log)
-# WITH_SPF_DEBUG=yes		enable debugging
-# WITH_SPF_DEBUG_FILE=/foo/baz	enable debug logfile (if unset: stdout/stderr)
+OPTIONS=	RFC_RECURSION	"Change SPF recursion to 20 (as per RFC)"	off \
+		LOGFILE_STATS	"Enables logfile stats"				off \
+		DEBUG		"Enables debug option"				off
 
-.if defined(WITH_SPF_LOG_FILE)
-SPF_LOG_FILE=	${WITH_SPF_LOG_FILE}
-.else
-SPF_LOG_FILE=	/dev/null
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_RFC_RECURSION)
+CONFIGURE_ARGS+=	--enable-rfc-recursion
 .endif
 
-.if defined(WITH_SPF_DEBUG)
-SPF_CFLAGS=	-ggdb -DDEBUG -D_SPF_DEBUG
-.if defined(WITH_SPF_DEBUG_FILE)
-SPF_CFLAGS+=	-D_SPF_DEBUG_LOGFILE
-.endif
+.if !defined(WITHOUT_LOGFILE_STATS)
+CONFIGURE_ARGS+=	--enable-logfile-stats
 .endif
 
-.if defined(WITH_SPF_DEBUG_FILE)
-SPF_DEBUG_FILE=	${WITH_SPF_DEBUG_FILE}
-.else
-SPF_DEBUG_FILE=	/dev/null
+.if !defined(WITHOUT_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-SPF_CFLAGS+=	-DDEBUG_LOG_FILE=\\\"${SPF_DEBUG_FILE}\\\" \
-		-DOUTPUT_LOG_FILE=\\\"${SPF_LOG_FILE}\\\"
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
-# This is all a bit messy, but given the inconvenient original Makefile,
-# this seems to be the best way to make this port work in this version.
-# The author of libspf is working on autotools support, so this ugliness
-# should have an end soon.
-post-patch:
-	@${REINPLACE_CMD} \
-	    -e 's,^CFLAGS:=.*,CFLAGS+=-Wall -D_BSD_SOURCE ${SPF_CFLAGS},' \
-	    -e 's/^CPPFLAGS:=/#CPPFLAGS:=/' \
-	    -e 's/^LDFLAGS:=/#LDFLAGS:=/' \
-	    -e 's/make /${GMAKE} /g' \
-	    -e 's/-lresolv//g' \
-	    -e 's/libspf.a : -lc/libspf.a :/g' \
-	    -e 's/libspf\.so\.1\.0\.1/libspf.so.${LIBSPF_REV}/g' \
-	    -e 's/-soname,libspf\.so\.1/-soname,libspf.so.${LIBSPF_REV}/g' \
-	    ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} \
-	    -e 's,^CFLAGS:=,CFLAGS:=${CFLAGS} ${CPPFLAGS},' \
-	    -e 's,^CPPFLAGS:=,CPPFLAGS:=${CPPFLAGS},' \
-	    -e 's,^LDFLAGS:=.*,LDFLAGS=${LDFLAGS},' \
-	    -e 's/make /${GMAKE} /g' \
-	    -e 's/-o spfquery/-o spfquery-${PORTNAME}/g' \
-	    ${WRKSRC}/tools/Makefile
-	@${REINPLACE_CMD} \
-	    -e 's/#include "error.h"//' \
-	    ${WRKSRC}/main.c ${WRKSRC}/dns.c
-	@${REINPLACE_CMD} \
-	    -e 's,\(#define DEBUG_LOG_FILE.*\),/* \1 */,' \
-	    -e 's,\(#define OUTPUT_LOG_FILE.*\),/* \1 */,' \
-	    ${WRKSRC}/util.h
-	@${REINPLACE_CMD} \
-	    -e 's/spfquery /spfquery-${PORTNAME} /' \
-	    -e 's/getopt_long_only/getopt_long/g' \
-	    -E -e '/stderr/s/ -([a-z]{2,})/ --\1/g' \
-	    ${WRKSRC}/tools/spfquery.c
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${FIND} ${WRKSRC}/docs -type d -name CVS | ${XARGS} ${RM} -rf
+.for i in docs docs/API docs/API/doxygen docs/API/doxygen/html docs/RFC docs/qmail \
+	docs/qmail/1.03 docs/qmail/1.04 docs/qmail/1.05 docs/spfqtool docs/Postfix \
+	docs/Postfix/2.1.x docs/Sendmail docs/Sendmail/8.12.x docs/Sendmail/8.13.x \
+	docs/Courier-MTA docs/history
+	@${MKDIR} ${DOCSDIR}/${i}
+	@for f in `${FIND} ${WRKSRC}/${i} ! -type d -maxdepth 1`; do \
+		${INSTALL_DATA} $${f} ${DOCSDIR}/${i}; \
+	done
+.endfor
+.endif
+	@${MKDIR} ${EXAMPLESDIR}
+	@${FIND} ${WRKSRC}/examples -type d -name CVS | ${XARGS} ${RM} -rf
+.for i in examples/qmail examples/qmail/control examples/Sendmail
+	@${MKDIR} ${EXAMPLESDIR}/${i}
+	@for f in `${FIND} ${WRKSRC}/${i} ! -type d -maxdepth 1`; do \
+		${INSTALL_DATA} $${f} ${EXAMPLESDIR}/${i}; \
+	done
+.endfor
+	@${MKDIR} ${DATADIR}
+	@${FIND} ${WRKSRC}/patches -type d -name CVS | ${XARGS} ${RM} -rf
+.for i in patches patches/qmail patches/qmail/1.03 patches/qmail/1.05 patches/Postfix \
+	patches/Postfix/2.1.x patches/Sendmail patches/Sendmail/8.12.x patches/Sendmail/8.13.x \
+	patches/Courier-MTA
+	@${MKDIR} ${DATADIR}/${i}
+	@for f in `${FIND} ${WRKSRC}/${i} ! -type d -maxdepth 1`; do \
+		${INSTALL_DATA} $${f} ${DATADIR}/${i}; \
+	done
+.endfor
 
-post-build:
-	@(cd ${WRKSRC}/tools; ${SETENV} ${MAKE_ENV} ${GMAKE} shared )
-
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/spf.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/libspf.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/libspf.so.${LIBSPF_REV} ${PREFIX}/lib
-	(cd ${PREFIX}/lib ; ${LN} -sf libspf.so.${LIBSPF_REV} libspf.so)
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/spfquery-${PORTNAME} ${PREFIX}/bin
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

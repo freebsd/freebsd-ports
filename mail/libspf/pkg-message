@@ -1,6 +1,0 @@
------------------------------------------------------------------------
-Note: This port installs the SPF userspace tools with a filename suffix
-      of -libspf in order to avoid conflicts with other SPF ports
-      providing tools of the same name.
-      Please create convenience symlinks manually, if desired.
------------------------------------------------------------------------

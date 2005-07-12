@@ -1,5 +1,57 @@
+bin/spfqtool
+bin/spfqtool_static
+include/_stdint.h
 include/spf.h
+lib/libspf-1.0.so
+lib/libspf-1.0.so.0
 lib/libspf.a
 lib/libspf.so
-lib/libspf.so.%%LIBSPF_REV%%
-bin/spfquery-%%PORTNAME%%
+%%EXAMPLESDIR%%/examples/Sendmail/sendmail.cf
+%%EXAMPLESDIR%%/examples/Sendmail/sendmail.mc.example
+%%EXAMPLESDIR%%/examples/Sendmail/spf.m4
+%%EXAMPLESDIR%%/examples/qmail/control/spfaction
+%%EXAMPLESDIR%%/examples/qmail/control/spfbestguess
+%%EXAMPLESDIR%%/examples/qmail/control/spfdebugstate
+%%EXAMPLESDIR%%/examples/qmail/control/spfexplainstate
+%%EXAMPLESDIR%%/examples/qmail/control/spfexplanation
+%%EXAMPLESDIR%%/examples/qmail/control/spfguessstate
+%%EXAMPLESDIR%%/examples/qmail/control/spfheaderstate
+%%EXAMPLESDIR%%/examples/qmail/control/spftarpit
+%%EXAMPLESDIR%%/examples/qmail/control/spftarpittime
+%%EXAMPLESDIR%%/examples/qmail/control/spftrustedforwarder
+%%EXAMPLESDIR%%/examples/qmail/control/spftrustedstate
+%%DATADIR%%/patches/Courier-MTA/courier-0.45.4-spf.diff
+%%DATADIR%%/patches/Postfix/2.1.x/postfix-2.1.4-libspf-1.0-RC6.diff
+%%DATADIR%%/patches/Postfix/README
+%%DATADIR%%/patches/README
+%%DATADIR%%/patches/Sendmail/8.12.x/sendmail-8.12.10-libspf.0.24.diff
+%%DATADIR%%/patches/Sendmail/8.12.x/sendmail-8.12.11-libspf.0.25.diff
+%%DATADIR%%/patches/Sendmail/8.12.x/sendmail-8.12.11-libspf.0.25.fixed.diff
+%%DATADIR%%/patches/Sendmail/8.13.x/sendmail-8.13.0-libspf-1.0-RC3.diff
+%%DATADIR%%/patches/Sendmail/8.13.x/sendmail-8.13.1-libspf-1.0-RC5.diff
+%%DATADIR%%/patches/Sendmail/8.13.x/sendmail-8.13.1-libspf-1.0-RC6.diff
+%%DATADIR%%/patches/Sendmail/8.13.x/sendmail-8.13.4-libspf-1.0.diff
+%%DATADIR%%/patches/Sendmail/README
+%%DATADIR%%/patches/qmail/1.03/qmail-1.03.solaris.patch
+%%DATADIR%%/patches/qmail/1.05/Makefile-dynamic-1.05.diff
+%%DATADIR%%/patches/qmail/1.05/Makefile-static-1.05.diff
+%%DATADIR%%/patches/qmail/1.05/netqmail-1.05-libspf-0.25.diff
+%%DATADIR%%/patches/qmail/1.05/netqmail-1.05-libspf-1.0.0-RC5.diff
+%%DATADIR%%/patches/qmail/1.05/netqmail-1.05-libspf-1.0.0-RC6.diff
+%%DATADIR%%/patches/qmail/README
+@dirrm %%DATADIR%%/patches/qmail/1.05
+@dirrm %%DATADIR%%/patches/qmail/1.03
+@dirrm %%DATADIR%%/patches/qmail
+@dirrm %%DATADIR%%/patches/Sendmail/8.13.x
+@dirrm %%DATADIR%%/patches/Sendmail/8.12.x
+@dirrm %%DATADIR%%/patches/Sendmail
+@dirrm %%DATADIR%%/patches/Postfix/2.1.x
+@dirrm %%DATADIR%%/patches/Postfix
+@dirrm %%DATADIR%%/patches/Courier-MTA
+@dirrm %%DATADIR%%/patches
+@dirrm %%DATADIR%%
+@dirrm %%EXAMPLESDIR%%/examples/qmail/control
+@dirrm %%EXAMPLESDIR%%/examples/qmail
+@dirrm %%EXAMPLESDIR%%/examples/Sendmail
+@dirrm %%EXAMPLESDIR%%/examples
+@dirrm %%EXAMPLESDIR%%
