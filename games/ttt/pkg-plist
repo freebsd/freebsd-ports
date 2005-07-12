@@ -1,0 +1,22 @@
+bin/ttt
+%%DATADIR%%/images/grid.bmp
+%%DATADIR%%/images/o.bmp
+%%DATADIR%%/images/start_1ply.bmp
+%%DATADIR%%/images/start_2ply.bmp
+%%DATADIR%%/images/title.bmp
+%%DATADIR%%/images/turn_o.bmp
+%%DATADIR%%/images/turn_x.bmp
+%%DATADIR%%/images/win_draw.bmp
+%%DATADIR%%/images/win_o.bmp
+%%DATADIR%%/images/win_x.bmp
+%%DATADIR%%/images/x.bmp
+%%DATADIR%%/sounds/badspot.wav
+%%DATADIR%%/sounds/draw.wav
+%%DATADIR%%/sounds/intro.wav
+%%DATADIR%%/sounds/o.wav
+%%DATADIR%%/sounds/start.wav
+%%DATADIR%%/sounds/win.wav
+%%DATADIR%%/sounds/x.wav
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%
