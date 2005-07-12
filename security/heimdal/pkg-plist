@@ -25,7 +25,6 @@ include/asn1_err.h
 include/base64.h
 include/der.h
 include/editline.h
-include/fnmatch.h
 include/getarg.h
 include/gssapi.h
 include/hdb-private.h
