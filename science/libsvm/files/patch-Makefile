@@ -7,11 +7,3 @@
  
  all: svm-train svm-predict svm-scale
  
-@@ -10,6 +9,6 @@
- svm-scale: svm-scale.c
- 	$(CXXC) $(CFLAGS) svm-scale.c -o svm-scale
- svm.o: svm.cpp svm.h
--	$(CXXC) $(CFLAGS) -c svm.cpp
-+	$(CXXC) $(CFLAGS) %%AMD64%% -c svm.cpp
- clean:
- 	rm -f *~ svm.o svm-train svm-predict svm-scale
