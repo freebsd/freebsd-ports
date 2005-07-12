@@ -104,6 +104,7 @@
     SUBDIR += mhc-xemacs21-mule
     SUBDIR += mnemo
     SUBDIR += moregroupware
+    SUBDIR += mrundlg
     SUBDIR += multi-backgrounds-daemon
     SUBDIR += multisync
     SUBDIR += multisync-backup
