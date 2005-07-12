@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	marlin
-PORTVERSION=	0.7
-PORTREVISION=	4
+PORTVERSION=	0.8
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +18,7 @@ LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnometarget intlhack libgnomeui
+USE_GNOME=	gnomeprefix gnomehack gnometarget intlhack libgnomeui nautiluscdburner
 USE_GSTREAMER=	flac gconf mad vorbis
 INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
