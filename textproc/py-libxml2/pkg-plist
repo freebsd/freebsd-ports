@@ -15,6 +15,7 @@ lib/%%PYTHON_VERSION%%/site-packages/libxml2mod.so
 %%EXAMPLESDIR%%/inbuf.py
 %%EXAMPLESDIR%%/indexes.py
 %%EXAMPLESDIR%%/invalid.xml
+%%EXAMPLESDIR%%/nsdel.py
 %%EXAMPLESDIR%%/outbuf.py
 %%EXAMPLESDIR%%/push.py
 %%EXAMPLESDIR%%/pushSAX.py
