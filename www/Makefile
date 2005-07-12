@@ -464,6 +464,7 @@
     SUBDIR += p5-CGI.pm
     SUBDIR += p5-CGI_Lite
     SUBDIR += p5-Catalyst
+    SUBDIR += p5-Catalyst-Helper-Controller-Scaffold
     SUBDIR += p5-Catalyst-Model-CDBI
     SUBDIR += p5-Catalyst-Model-CDBI-Sweet
     SUBDIR += p5-Catalyst-Plugin-FillInForm
