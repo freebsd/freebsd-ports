@@ -1,9 +1,8 @@
 %%ZOPEPRODUCTDIR%%/kupu/apache-lenya/kupu/kupustyles.css
 %%ZOPEPRODUCTDIR%%/kupu/apache-lenya/kupu/body.kupu
-%%ZOPEPRODUCTDIR%%/kupu/apache-lenya/kupu/toolboxes.kupu
-%%ZOPEPRODUCTDIR%%/kupu/apache-lenya/kupu/lenya.js
-%%ZOPEPRODUCTDIR%%/kupu/apache-lenya/kupu/toolbar.kupu
 %%ZOPEPRODUCTDIR%%/kupu/apache-lenya/kupu/kupudrawerstyles.css
+%%ZOPEPRODUCTDIR%%/kupu/apache-lenya/kupu/kupulenyainit.js
+%%ZOPEPRODUCTDIR%%/kupu/apache-lenya/kupu/kupumacros.html
 %%ZOPEPRODUCTDIR%%/kupu/apache-lenya/kupu/include.kupu
 %%ZOPEPRODUCTDIR%%/kupu/apache-lenya/kupu/wire.kupu
 %%ZOPEPRODUCTDIR%%/kupu/apache-lenya/kupu/xmlconfig.kupu
@@ -114,6 +113,9 @@
 %%ZOPEPRODUCTDIR%%/kupu/plone/permissions.py
 %%ZOPEPRODUCTDIR%%/kupu/plone/libraries.pt
 %%ZOPEPRODUCTDIR%%/kupu/plone/kupu_plone_layer/browserSupportsKupu.py
+%%ZOPEPRODUCTDIR%%/kupu/plone/kupu_plone_layer/contentUsesKupu.py
+%%ZOPEPRODUCTDIR%%/kupu/plone/kupu_plone_layer/convertContentForKupu.py
+%%ZOPEPRODUCTDIR%%/kupu/plone/kupu_plone_layer/kupu_wysiwyg_support.html
 %%ZOPEPRODUCTDIR%%/kupu/plone/kupu_plone_layer/kupuUploadImage.py
 %%ZOPEPRODUCTDIR%%/kupu/plone/kupu_plone_layer/kupuploneinit.js
 %%ZOPEPRODUCTDIR%%/kupu/plone/kupu_plone_layer/kupuUploadImage.py.metadata
@@ -158,7 +160,6 @@
 %%ZOPEPRODUCTDIR%%/kupu/plone/kupu_plone_layer/plonekupuimages/anchor.gif
 %%ZOPEPRODUCTDIR%%/kupu/plone/kupu_plone_layer/plonekupuimages/delete_icon.gif
 %%ZOPEPRODUCTDIR%%/kupu/plone/kupu_plone_layer/kupucollection.xml.pt.metadata
-%%ZOPEPRODUCTDIR%%/kupu/plone/kupu_plone_layer/wysiwyg_support.html
 %%ZOPEPRODUCTDIR%%/kupu/plone/kupu_plone_layer/kupublank.html.html
 %%ZOPEPRODUCTDIR%%/kupu/plone/kupu_plone_layer/kupuploneeditor.js
 %%ZOPEPRODUCTDIR%%/kupu/plone/kupu_plone_layer/kupuInfoForObjects.py
@@ -196,7 +197,6 @@
 %%ZOPEPRODUCTDIR%%/kupu/default/html.kupu
 %%ZOPEPRODUCTDIR%%/kupu/default/contextmenu.kupu
 %%ZOPEPRODUCTDIR%%/kupu/default/wire.kupu
-%%ZOPEPRODUCTDIR%%/kupu/default/kupumacros.html
 %%ZOPEPRODUCTDIR%%/kupu/default/drawers.kupu
 %%ZOPEPRODUCTDIR%%/kupu/form/include.kupu
 %%ZOPEPRODUCTDIR%%/kupu/form/body.kupu
@@ -208,6 +208,7 @@
 %%ZOPEPRODUCTDIR%%/kupu/common/kupustyles.css
 %%ZOPEPRODUCTDIR%%/kupu/common/sarissa.js
 %%ZOPEPRODUCTDIR%%/kupu/common/kupuloggers.js
+%%ZOPEPRODUCTDIR%%/kupu/common/kupumacros.html
 %%ZOPEPRODUCTDIR%%/kupu/common/kupumultieditor.js
 %%ZOPEPRODUCTDIR%%/kupu/common/kupuhelpers.js
 %%ZOPEPRODUCTDIR%%/kupu/common/kupuinit.js
