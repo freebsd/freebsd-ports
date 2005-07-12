@@ -26,7 +26,7 @@ MAN3=	fame_close.3 fame_encode_frame.3 fame_get_object.3 fame_init.3 \
 	fame_open.3 fame_register.3 fame_unregister.3 fame_encode_slice.3 \
 	fame_start_frame.3 fame_end_frame.3
 
-OPTIONS=	SSE "SSE optimized routines" off \
+OPTIONS=	SSE "SSE optimized routines (no effect in this release)" off \
 		MMX "MMX optimized routines" on
 
 .include <bsd.port.pre.mk>
