@@ -7,28 +7,23 @@
 #
 
 PORTNAME=	rubber
-PORTVERSION=	0.99.8
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://ebeffara.free.fr/pub/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A wrapper for LaTeX and friends
 
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.2+
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --moddir=${PYTHON_SITELIBDIR}
+CONFIGURE_ARGS=	--prefix=${PREFIX} --infodir=${PREFIX}/${INFO_PATH} \
+		--datadir=${PYTHON_SITELIBDIR}
 
 MANLANG=	"" fr
 MAN1=		rubber.1 rubber-info.1 rubber-pipe.1
 INFO=		rubber
-
-pre-install:
-	${INSTALL_DATA} ${WRKSRC}/doc/rubber.info ${PREFIX}/info
-	@install-info ${PREFIX}/info/rubber.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
