@@ -36,6 +36,17 @@ lib/scheme48/big/search-tree.scm
 lib/scheme48/big/socket.scm
 lib/scheme48/big/strong.scm
 lib/scheme48/big/value-pipe.scm
+lib/scheme48/big/dynamic-external.scm
+lib/scheme48/big/shared-object.scm
+lib/scheme48/cml/async-channel.scm
+lib/scheme48/cml/channel.scm
+lib/scheme48/cml/interfaces.scm
+lib/scheme48/cml/jar.scm
+lib/scheme48/cml/packages.scm
+lib/scheme48/cml/placeholder.scm
+lib/scheme48/cml/rendezvous.scm
+lib/scheme48/cml/time.scm
+lib/scheme48/cml/trans-id.scm
 lib/scheme48/env/assem.scm
 lib/scheme48/env/basic-command.scm
 lib/scheme48/env/build.scm
@@ -63,6 +74,9 @@ lib/scheme48/env/start.scm
 lib/scheme48/env/traverse.scm
 lib/scheme48/env/user.scm
 lib/scheme48/env/version-info.scm
+lib/scheme48/env/condition.scm
+lib/scheme48/env/io-condition.scm
+lib/scheme48/env/signal.scm
 lib/scheme48/link/data.scm
 lib/scheme48/link/generate-c-header.scm
 lib/scheme48/link/generate-old-c-header.scm
@@ -151,5 +165,6 @@ lib/scheme48/srfi/srfi-7.scm
 @dirrm lib/scheme48/misc
 @dirrm lib/scheme48/link
 @dirrm lib/scheme48/env
+@dirrm lib/scheme48/cml
 @dirrm lib/scheme48/big
 @dirrm lib/scheme48
