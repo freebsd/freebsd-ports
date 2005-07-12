@@ -9,14 +9,13 @@ etc/cherokee/mods-available/ssl
 etc/cherokee/sites-available/default
 etc/cherokee/sites-available/example.com
 etc/cherokee/sites-enabled/default
-%%PAM5%%etc/pam.d/cherokee
 include/cherokee/admin_client.h
 include/cherokee/buffer.h
 include/cherokee/cherokee-config.h
 include/cherokee/cherokee.h
 include/cherokee/common.h
-include/cherokee/config_value.h
 include/cherokee/connection.h
+include/cherokee/connection_info.h
 include/cherokee/downloader.h
 include/cherokee/encoder.h
 include/cherokee/fdpoll.h
@@ -51,7 +50,6 @@ lib/cherokee/libplugin_phpcgi.so
 lib/cherokee/libplugin_plain.so
 lib/cherokee/libplugin_read_config.so
 lib/cherokee/libplugin_redir.so
-lib/cherokee/libplugin_remote_control.so
 lib/cherokee/libplugin_server_info.so
 lib/cherokee/libplugin_w3c.so
 lib/libcherokee-base.a
@@ -94,10 +92,36 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/icons/text.png
 %%DATADIR%%/icons/unknown.png
 %%DATADIR%%/mime_types.txt
+%%PORTDOCS%%%%DOCSDIR%%/Behavior_configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/CGI_Executing.html
+%%PORTDOCS%%%%DOCSDIR%%/Cget.html
+%%PORTDOCS%%%%DOCSDIR%%/Common_behavior.html
+%%PORTDOCS%%%%DOCSDIR%%/Compiling_and_Installing.html
+%%PORTDOCS%%%%DOCSDIR%%/Configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/Current_events.html
+%%PORTDOCS%%%%DOCSDIR%%/Directory_configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/Directory_listing.html
+%%PORTDOCS%%%%DOCSDIR%%/Extension_configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/FastCGI.html
+%%PORTDOCS%%%%DOCSDIR%%/File_sending.html
+%%PORTDOCS%%%%DOCSDIR%%/How_to_generate_SSL_keys.html
+%%PORTDOCS%%%%DOCSDIR%%/Icons_configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/Main_Page.html
+%%PORTDOCS%%%%DOCSDIR%%/Mime_types_configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/PHP_execution.html
+%%PORTDOCS%%%%DOCSDIR%%/Redirections.html
+%%PORTDOCS%%%%DOCSDIR%%/Server-conf-small.png
+%%PORTDOCS%%%%DOCSDIR%%/Server_configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/U-Cherokee.html
+%%PORTDOCS%%%%DOCSDIR%%/WebApplications.html
+%%PORTDOCS%%%%DOCSDIR%%/WebSites.html
+%%PORTDOCS%%%%DOCSDIR%%/cherokee.png
+%%PORTDOCS%%%%DOCSDIR%%/index.html
 www/images/cherokee-logo.png
 www/images/powered_by_cherokee.png
 www/images/top-layer.png
 www/index.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/deps
 @dirrm %%DATADIR%%
