@@ -1,0 +1,8 @@
+Catalyst::Helper::Controller::Scaffold is a helper for scaffolding for 
+Catalyst, which adds easy scaffolding:
+
+    # Imagine you want to generate a scaffolding controller MyApp::C::SomeTable
+    # for a CDBI table class MyApp::M::CDBI::SomeTable
+    script/myapp_create.pl controller SomeTable Scaffold CDBI::SomeTable
+
+WWW:	http://search.cpan.org/dist/Catalyst-Helper-Controller-Scaffold/

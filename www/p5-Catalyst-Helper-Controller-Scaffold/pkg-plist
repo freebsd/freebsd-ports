@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Catalyst/Helper/Controller/Scaffold.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Helper/Controller/Scaffold/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Helper/Controller/Scaffold 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Helper/Controller 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Helper 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Helper/Controller 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Helper 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst 2>/dev/null || true
