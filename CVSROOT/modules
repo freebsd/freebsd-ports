@@ -11766,6 +11766,7 @@ tsclient	ports/net/tsclient
 tse3		ports/audio/tse3
 tsito		ports/games/tsito
 tsocks		ports/net/tsocks
+tspc2		ports/net/tspc2
 tt		ports/games/tt
 tta		ports/audio/tta
 ttcp		ports/benchmarks/ttcp
