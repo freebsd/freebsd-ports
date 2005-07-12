@@ -501,6 +501,7 @@
     SUBDIR += tsito
     SUBDIR += tt
     SUBDIR += ttraffic
+    SUBDIR += ttt
     SUBDIR += tux-aqfh
     SUBDIR += tuxkart
     SUBDIR += tuxpuck
