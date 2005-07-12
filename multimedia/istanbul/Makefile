@@ -25,7 +25,13 @@ USE_X_PREFIX=		yes
 USE_GSTREAMER=		shout2 theora ogg
 USE_REINPLACE=		yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN="Configure Fails"
+.endif
+
 post-configure:
 			${REINPLACE_CMD} -e "s|#!/usr/bin/python|#!/usr/bin/env python|" `${FIND} ${WRKDIR} -type f -name "istanbul"`
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
