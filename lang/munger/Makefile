@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	munger
-PORTVERSION=	4.56
+PORTVERSION=	4.57
 CATEGORIES=	lang
 MASTER_SITES=	http://www.jamesbailie.com/
 
@@ -25,10 +25,6 @@ OPTIONS=	FCGI "include FastCGI interface" on \
 		TERM "include character-I/O functions" on
 
 .include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-L/usr/local/lib|-L${LOCALBASE}/lib|' \
-		${WRKSRC}/Makefile
 
 .if defined(WITH_SQL)
 LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
