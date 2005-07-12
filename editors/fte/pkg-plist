@@ -23,7 +23,6 @@ lib/fte/config/m_asm.fte
 lib/fte/config/m_asm370.fte
 lib/fte/config/m_bin.fte
 lib/fte/config/m_c.fte
-lib/fte/config/m_c_kb.fte
 lib/fte/config/m_clario.fte
 lib/fte/config/m_diff.fte
 lib/fte/config/m_ebnf.fte
@@ -72,18 +71,12 @@ lib/fte/config/pal_gray.fte
 lib/fte/config/pal_wht.fte
 lib/fte/config/slang/simple.keylist
 lib/fte/config/slang/slangkbd.map
-lib/fte/config/texput.log
 lib/fte/config/ui_brief.fte
 lib/fte/config/ui_fte.fte
-lib/fte/config/ui_fte2.fte
 lib/fte/config/ui_k_fte.fte
-lib/fte/config/ui_k_fte2.fte
 lib/fte/config/ui_k_ne.fte
 lib/fte/config/ui_k_ws.fte
-lib/fte/config/ui_kb.fte
 lib/fte/config/ui_m_fte.fte
-lib/fte/config/ui_m_fte2.fte
-lib/fte/config/ui_m_kb.fte
 lib/fte/config/ui_m_ne.fte
 lib/fte/config/ui_m_ws.fte
 lib/fte/config/ui_mew.fte
@@ -91,6 +84,14 @@ lib/fte/config/ui_ne.fte
 lib/fte/config/ui_vi.fte
 lib/fte/config/ui_ws.fte
 lib/fte/config/uicstyle.fte
+lib/fte/config/ab_perl.fte
+lib/fte/config/m_catbs.fte
+lib/fte/config/m_gawk.fte
+lib/fte/config/m_merge.fte
+lib/fte/config/m_unrealscript.fte
+lib/fte/config/m_xslt.fte
+lib/fte/config/pal_blue.fte
+lib/fte/config/ui_k_joe.fte
 lib/fte/localconfig/systemmain.fte
 lib/fte/system.fterc
 @dirrm lib/fte/config/kbd

@@ -1,38 +1,73 @@
---- src/fte-unix.mak.orig	Sun Apr 13 14:42:30 2003
-+++ src/fte-unix.mak	Sun Apr 13 14:40:54 2003
-@@ -5,8 +5,8 @@
+--- src/fte-unix.mak.orig	Sat Jan  8 21:15:19 2005
++++ src/fte-unix.mak	Mon Jul 11 19:47:52 2005
+@@ -5,9 +5,9 @@
  
  #  vfte - for Linux console directly (with limitations, see con_linux.cpp)
  
--TARGETS = xfte vfte sfte
+-TARGETS = xfte vfte nfte
++#TARGETS = xfte vfte nfte
+ #TARGETS = xfte vfte sfte nfte
 -#TARGETS = xfte
-+#TARGETS = xfte vfte sfte
 +TARGETS = xfte
  
  PRIMARY = xfte
  
-@@ -48,8 +48,12 @@
+@@ -36,22 +36,21 @@
+ 
+ #gcc/g++
+ COPTIONS = -Wall -Wpointer-arith -Wconversion -Wwrite-strings \
+-           -Winline
++           -Winline -fno-rtti -fno-exceptions
+ 
+ #CC       = g++
+ #LD       = g++
+ # try this for smaller/faster code and less dependencies
+-CC       = g++ -fno-rtti -fno-exceptions
+-LD       = g++ -fno-rtti -fno-exceptions
+-
++CC       = $(CXX)
++LD	 = $(CXX)
+ 
+ # choose your os here
  
  #######################################################################
  # Linux
 -UOS      = -DLINUX
+-XINCDIR  = -I/usr/X11R6/include
 -XLIBDIR  = -L/usr/X11R6/lib -lstdc++
-+#UOS      = -DLINUX
-+#XLIBDIR  = -L/usr/X11R6/lib -lstdc++
-+
-+UOS = -DFREEBSD
-+XLIBDIR = -L/usr/X11R6/lib
-+XINCDIR = -I/usr/X11R6/include
++UOS      = -DFREEBSD
++XINCDIR  = -I$(X11BASE)/include
++XLIBDIR  = -L$(X11BASE)/lib
  
  #######################################################################
  # HP/UX
-@@ -150,7 +154,8 @@
+@@ -141,8 +140,8 @@
+ #OPTIMIZE = -O2
+ #OPTIMIZE = -O2 -s
  
+-CCFLAGS  = $(OPTIMIZE) $(I18NOPTIONS) $(APPOPTIONS) $(COPTIONS) -DUNIX $(UOS) $(INCDIR) $(XINCDIR) $(QINCDIR) $(MINCDIR) $(SINCDIR)
+-LDFLAGS  = $(OPTIMIZE) $(LIBDIR) $(XLIBDIR) $(QLIBDIR) $(MLIBDIR)
++CCFLAGS  = $(CPPFLAGS) $(CXXFLAGS) $(CFLAGS) $(I18NOPTIONS) $(APPOPTIONS) $(COPTIONS) -DUNIX $(UOS) $(INCDIR) $(XINCDIR) $(QINCDIR) $(MINCDIR) $(SINCDIR)
++LDFLAGS  += $(LIBDIR) $(XLIBDIR) $(MLIBDIR)
+ 
+ OEXT     = o
+ 
+@@ -154,7 +153,7 @@
  # Need -lXt below if USE_XTINIT is defined
  XLIBS    = -lX11 $(SOCKETLIB)
+ #-lmpatrol -lelf
 -VLIBS    = -lgpm -lncurses
-+#VLIBS    = -lgpm -lncurses
-+VLIBS = -lncurses
++VLIBS    = -lncurses
  # -ltermcap outdated by ncurses
+ NLIBS    = -lncurses
  SLIBS    = -lslang
- QLIBS    = -lqt
+@@ -227,6 +226,6 @@
+ #
+ # include dependency files if they exist
+ #
+-ifneq ($(wildcard .depend),)
+-include .depend
+-endif
++#ifneq ($(wildcard .depend),)
++#include .depend
++#endif
