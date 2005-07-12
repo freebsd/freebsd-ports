@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtorrent
-PORTVERSION=	0.6.6
+PORTVERSION=	0.6.7
 CATEGORIES=	net
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 
@@ -25,6 +25,5 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O3/${CFLAGS}/' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/malloc\.h/d' ${WRKSRC}/src/utils/sha_fast.cc
 
 .include <bsd.port.mk>
