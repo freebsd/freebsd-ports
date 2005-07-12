@@ -9,14 +9,14 @@ PORTNAME=	bforce
 PORTVERSION=	0.22.8.7
 PORTREVISION=	3
 CATEGORIES=	comms
-MASTER_SITES=	http://kst.spb.ru/bforce/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	binkleyforce
 PKGNAMESUFFIX=	-kst
 DISTNAME=	${PORTNAME}-0.22.8.kst7
 
 MAINTAINER=	anrays@gmail.com
 COMMENT=	Simple ifcico like Fidonet technology mailer
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
