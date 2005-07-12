@@ -9,7 +9,7 @@ PORTNAME=	madbomber
 PORTVERSION=	0.2.5
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/madbomber/src/
+MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/madbomber/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clone of Activision's classic Atari 2600 console game "Kaboom!"
