@@ -2,12 +2,13 @@
 # Date created:        22 July 2002
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
-# $Id: Makefile,v 1.29 2005/07/07 05:52:45 tmclau02 Exp $
+# $Id: Makefile,v 1.30 2005/07/12 22:00:50 mezz7 Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	mono
 PORTVERSION=	1.1.8.2
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/sources/mono-1.1/
 
@@ -59,6 +60,8 @@ USE_FAM=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/mono/metadata/assembly.c
+	@${REINPLACE_CMD} -e 's|.so.0|.so|g' \
+		${WRKSRC}/configure
 
 tests: build
 	@${ECHO_MSG} "===> Running mono regression tests"
