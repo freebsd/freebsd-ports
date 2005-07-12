@@ -6,8 +6,9 @@
 #
 
 PORTNAME=	libsvm
-PORTVERSION=	2.71
-PORTREVISION=	2
+PORTVERSION=	2.8
+PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	science math
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/libsvm/ \
 		http://www.csie.ntu.edu.tw/~cjlin/libsvm/oldfiles/
@@ -33,18 +34,12 @@ TXT_DOCS=	COPYRIGHT README FAQ.html README.python
 .if !defined(NOPORTDOCS)
 PORTDOCS=	${TXT_DOCS}
 .endif
-TOOLS=		python/grid.py python/easy.py
+TOOLS=		tools/grid.py tools/easy.py
 
 MSG_FILE=	${PKGDIR}/pkg-message
 PKGMESSAGE=	${WRKSRC}/pkg-message
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-AMD64=	-fPIC
-.else
-AMD64=
-.endif
 
 pre-everything::
 .if defined(WITH_PYTHON)
@@ -56,9 +51,7 @@ pre-everything::
 post-patch:
 .if defined(WITH_PYTHON)
 	@${REINPLACE_CMD} -e "s,%%PYTHON_INCLUDEDIR%%,${PYTHON_INCLUDEDIR}," ${WRKSRC}/python/Makefile
-	@${REINPLACE_CMD} -e "s,%%AMD64%%,${AMD64}," ${WRKSRC}/python/Makefile
 .endif
-	@${REINPLACE_CMD} -e "s,%%AMD64%%,${AMD64}," ${WRKSRC}/Makefile
 	@${SED} 's|%%DATADIR%%|${DATADIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
 
 post-build:
