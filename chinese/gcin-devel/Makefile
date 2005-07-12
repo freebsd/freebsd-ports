@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	chinese
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/ \
-		http://edt1023.sayya.org/misc/
+		http://edt1023.sayya.org/gcin/source/ \
+		http://edt1023.sayya.org/misc/ \
+		http://bbs.ilc.edu.tw/~chinsan/gcin/
 .if defined(WITH_BOSHIAMY)
 DISTFILES=	${GCINFILE} ${BOSHIAMYFILE}
 EXTRACT_ONLY=	${GCINFILE}
