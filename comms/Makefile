@@ -89,6 +89,7 @@
     SUBDIR += smstools
     SUBDIR += snooper
     SUBDIR += spandsp
+    SUBDIR += splat
     SUBDIR += sredird
     SUBDIR += thebridge
     SUBDIR += tilp
