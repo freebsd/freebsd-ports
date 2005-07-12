@@ -831,6 +831,7 @@
     SUBDIR += tridiavnc
     SUBDIR += tsclient
     SUBDIR += tsocks
+    SUBDIR += tspc2
     SUBDIR += ttlscan
     SUBDIR += ttt
     SUBDIR += tund

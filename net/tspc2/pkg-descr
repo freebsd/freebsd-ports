@@ -1,0 +1,12 @@
+Instead of a Web interface, which is usually offered by traditional tunnel
+brokers, Freenet6 uses an innovative model based on the TSP Client. The TSP
+Client is software that usually runs on a PC and that implements the Tunnel
+Setup Protocol (TSP). The TSP Client is used to automatically negotiate a
+configured tunnel between a PC or router and the Freenet6 tunnel broker,
+making IPv6 easy to install and maintain. The TSP Client source code is
+licensed under the GPL. A commercial license is also available.
+
+WWW: http://www.hexago.com/
+
+- Linas
+shirshegsm@gmail.com

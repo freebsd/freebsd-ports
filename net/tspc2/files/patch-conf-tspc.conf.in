@@ -1,0 +1,11 @@
+--- conf/tspc.conf.in.bak	Tue Jun 15 18:01:01 2004
++++ conf/tspc.conf.in	Mon Jul 11 18:24:39 2005
+@@ -24,7 +24,7 @@
+ #  the only use is for the OS scripts which will be taken 
+ #  from $tsp_dir/template
+ #
+-tsp_dir=@tsp_dir@
++tsp_dir=/usr/local/share/tspc2
+ 
+ #
+ # authentication method:
