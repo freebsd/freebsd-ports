@@ -1,9 +1,16 @@
-
-$FreeBSD$
-
---- res/Makefile.orig
-+++ res/Makefile
-@@ -21,7 +21,10 @@
+--- res/Makefile.orig	Tue Jul 12 01:28:04 2005
++++ res/Makefile	Tue Jul 12 01:58:11 2005
+@@ -13,15 +13,18 @@
+ 
+ MODS=res_adsi.so res_features.so res_crypto.so res_musiconhold.so res_indications.so res_monitor.so \
+      res_agi.so res_watchdog.so
+-MODS+=$(shell if [ -f "/usr/include/odbcinst.h" ]; then echo "res_odbc.so res_config_odbc.so"; fi)
+-MODS+=$(shell if [ -f "/usr/local/include/odbcinst.h" ]; then echo "res_odbc.so res_config_odbc.so"; fi)
++#MODS+=$(shell if [ -f "/usr/include/odbcinst.h" ]; then echo "res_odbc.so res_config_odbc.so"; fi)
++#MODS+=$(shell if [ -f "/usr/local/include/odbcinst.h" ]; then echo "res_odbc.so res_config_odbc.so"; fi)
+ MODS+=$(shell if [ -f "/usr/include/osp/osp.h" ]; then echo "res_osp.so"; fi)
+ 
+ CRYPTO_LIBS=-lssl -lcrypto
  
  CFLAGS+=
  CFLAGS+=$(shell [ -f /usr/include/linux/zaptel.h ] && echo " -DZAPATA_MOH")

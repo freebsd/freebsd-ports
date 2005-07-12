@@ -121,6 +121,9 @@ etc/asterisk/voicemail.conf-dist
 @unexec if cmp -s %D/etc/asterisk/vpb.conf %D/etc/asterisk/vpb.conf-dist; then rm -f %D/etc/asterisk/vpb.conf; fi
 etc/asterisk/vpb.conf-dist
 @exec [ -f %B/vpb.conf ] || cp %B/%f %B/vpb.conf
+@unexec if cmp -s %D/etc/asterisk/watchdog.conf %D/etc/asterisk/watchdog.conf-dist; then rm -f %D/etc/asterisk/watchdog.conf; fi
+etc/asterisk/watchdog.conf-dist
+@exec [ -f %B/watchdog.conf ] || cp %B/%f %B/watchdog.conf
 @unexec if cmp -s %D/etc/asterisk/zapata.conf %D/etc/asterisk/zapata.conf-dist; then rm -f %D/etc/asterisk/zapata.conf; fi
 etc/asterisk/zapata.conf-dist
 @exec [ -f %B/zapata.conf ] || cp %B/%f %B/zapata.conf
@@ -176,6 +179,7 @@ include/asterisk/sched.h
 include/asterisk/srv.h
 include/asterisk/tdd.h
 include/asterisk/term.h
+include/asterisk/transcap.h
 include/asterisk/translate.h
 include/asterisk/ulaw.h
 include/asterisk/utils.h
@@ -230,6 +234,7 @@ lib/asterisk/modules/app_setcallerid.so
 lib/asterisk/modules/app_setcdruserfield.so
 lib/asterisk/modules/app_setcidname.so
 lib/asterisk/modules/app_setcidnum.so
+lib/asterisk/modules/app_settransfercapability.so
 lib/asterisk/modules/app_sms.so
 lib/asterisk/modules/app_softhangup.so
 lib/asterisk/modules/app_striplsd.so
@@ -251,6 +256,7 @@ lib/asterisk/modules/app_zapateller.so
 %%WITH_ZAPTEL%%lib/asterisk/modules/app_zapscan.so
 lib/asterisk/modules/cdr_csv.so
 lib/asterisk/modules/cdr_manager.so
+lib/asterisk/modules/cdr_odbc.so
 lib/asterisk/modules/chan_agent.so
 %%WITH_H323%%lib/asterisk/modules/chan_h323.so
 lib/asterisk/modules/chan_iax2.so
@@ -298,6 +304,7 @@ lib/asterisk/modules/res_features.so
 lib/asterisk/modules/res_indications.so
 lib/asterisk/modules/res_monitor.so
 lib/asterisk/modules/res_musiconhold.so
+lib/asterisk/modules/res_watchdog.so
 sbin/asterisk
 sbin/astgenkey
 sbin/astman
@@ -411,6 +418,7 @@ sbin/safe_asterisk
 %%DATADIR%%/sounds/digits/h-9.gsm
 %%DATADIR%%/sounds/digits/hundred.gsm
 %%DATADIR%%/sounds/digits/million.gsm
+%%DATADIR%%/sounds/digits/minus.gsm
 %%DATADIR%%/sounds/digits/mon-0.gsm
 %%DATADIR%%/sounds/digits/mon-1.gsm
 %%DATADIR%%/sounds/digits/mon-10.gsm
