@@ -479,6 +479,7 @@ share/NAnt/bin/scvs.exe
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/HelloWindowsForms
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Filters/ReplaceCharacter
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Filters
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/help/types
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/help/tasks
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/help/introduction
