@@ -389,6 +389,7 @@ share/sip/qtext/qextscintillalexerjava.sip
 share/sip/qtext/qextscintillalexerjavascript.sip
 share/sip/qtext/qextscintillalexerlua.sip
 share/sip/qtext/qextscintillalexerperl.sip
+share/sip/qtext/qextscintillalexerpov.sip
 share/sip/qtext/qextscintillalexerpython.sip
 share/sip/qtext/qextscintillalexerruby.sip
 share/sip/qtext/qextscintillalexersql.sip
