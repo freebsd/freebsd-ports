@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.0.7
-PORTREVISION=	8
+PORTVERSION=	1.0.9
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/
 
-PATCHFILES=	${PORTNAME}-1.0.6-${BRIVER}.patch.gz
+PATCHFILES=	${PORTNAME}-1.0.8-${BRIVER}.patch.gz
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	fjoe
 PATCH_DIST_STRIP=	-p1
@@ -27,7 +26,7 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 ONLY_FOR_ARCHS=	i386 sparc64
 
-BRIVER=		bristuff-0.2.0-RC7j
+BRIVER=		bristuff-0.2.0-RC8h
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/editline
 USE_GMAKE=	yes

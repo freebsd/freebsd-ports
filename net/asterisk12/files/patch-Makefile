@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Apr 14 00:05:14 2005
-+++ Makefile	Thu Apr 14 00:05:14 2005
+--- Makefile.orig	Tue Jul 12 00:36:27 2005
++++ Makefile	Tue Jul 12 01:24:50 2005
 @@ -45,6 +45,15 @@
  PROC=$(shell uname -m)
  endif
@@ -225,7 +225,7 @@
  
  update: 
  	@if [ -d CVS ]; then \
-@@ -367,125 +372,90 @@
+@@ -367,127 +372,90 @@
  	fi
  
  bininstall: all
@@ -325,6 +325,8 @@
 -	@echo " + a stable release, remember to delete      +"
 -	@echo " + everything from your asterisk modules     +"
 -	@echo " + directory (/usr/lib/asterisk/modules/)    +"
+-	@echo " + and the asterisk header directory         +"
+-	@echo " + (/usr/include/asterisk/)                  +"
 -	@echo " + before doing a '$(MAKE) install'.            +"
 -	@echo " +                                           +"
 -	@echo " +-------------------------------------------+"
@@ -403,7 +405,7 @@
  	:> $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/unavail.gsm
  	for x in vm-theperson digits/1 digits/2 digits/3 digits/4 vm-isunavail; do \
  		cat $(DESTDIR)$(ASTVARLIBDIR)/sounds/$$x.gsm >> $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/unavail.gsm ; \
-@@ -500,7 +470,7 @@
+@@ -502,7 +470,7 @@
  	@[ -d $(DESTDIR)$(HTTPDIR)/html ] || ( echo "No http directory" && exit 1 )
  	@[ -d $(DESTDIR)$(HTTPDIR)/cgi-bin ] || ( echo "No cgi-bin directory" && exit 1 )
  	install -m 4755 -o root -g root contrib/scripts/vmail.cgi $(DESTDIR)$(HTTPDIR)/cgi-bin/vmail.cgi
@@ -412,7 +414,7 @@
  	for x in images/*.gif; do \
  		install -m 644 $$x $(DESTDIR)$(HTTPDIR)/html/_asterisk/; \
  	done
-@@ -520,10 +490,10 @@
+@@ -522,10 +490,10 @@
  
  __rpm: _version
  	rm -rf /tmp/asterisk ; \
