@@ -25,7 +25,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-X
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
-CONFIGURE_ARGS+=	create_packlist=0
 
 MAN3=		XML::Atom.3 \
 		XML::Atom::Client.3 \
