@@ -1,0 +1,21 @@
+--- configure.orig	Mon Jul 11 15:17:20 2005
++++ configure	Mon Jul 11 23:25:52 2005
+@@ -2933,8 +2933,7 @@
+ echo "$as_me:$LINENO: result: $bfd_cv_build_exeext" >&5
+ echo "${ECHO_T}$bfd_cv_build_exeext" >&6
+   EXEEXT_FOR_BUILD=""
+-  test x"${bfd_cv_build_exeext}" != xno && EXEEXT_FOR_BUILD=${bfd_cv_build_exeex
+-t}
++  test x"${bfd_cv_build_exeext}" != xno && EXEEXT_FOR_BUILD=${bfd_cv_build_exeext}
+ fi
+ 
+ # Find a good install program.  We prefer a C program (faster),
+@@ -3995,7 +3994,7 @@
+ 
+ 
+ if test "$GCC" = "yes"; then
+-  CFLAGS="$CFLAGS -Wall -W -Wmissing-prototypes -Wstrict-prototypes -Wconversion -pedantic"
++  CFLAGS="$CFLAGS -Wall -W -Wmissing-prototypes -Wstrict-prototypes -Wconversion"
+ fi
+ 
+ 
