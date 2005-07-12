@@ -85,6 +85,7 @@
     SUBDIR += sleuth
     SUBDIR += sqldjbdns
     SUBDIR += staticcharge
+    SUBDIR += tinystats
     SUBDIR += totd
     SUBDIR += updatedd
     SUBDIR += walker
