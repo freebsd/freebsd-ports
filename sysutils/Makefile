@@ -420,6 +420,7 @@
     SUBDIR += rdiff-backup-devel
     SUBDIR += readlink
     SUBDIR += reed
+    SUBDIR += rename
     SUBDIR += reoback
     SUBDIR += rfstool
     SUBDIR += rlogview
