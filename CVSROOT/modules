@@ -10111,6 +10111,7 @@ qmail-ldap	ports/mail/qmail-ldap
 qmail-mysql	ports/mail/qmail-mysql
 qmail-notify	ports/mail/qmail-notify
 qmail-qfilter	ports/mail/qmail-qfilter
+qmail-rblchk	ports/mail/qmail-rblchk
 qmail-remove	ports/mail/qmail-remove
 qmail-scanner	ports/mail/qmail-scanner
 qmail-smtp_auth+tls	ports/mail/qmail-smtp_auth+tls
