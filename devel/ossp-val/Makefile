@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	val
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
@@ -24,11 +24,9 @@ USE_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-ex=${LOCALBASE}
 
-.include <bsd.port.pre.mk>
+MAN1=	val-config.1
+MAN3=	val.3
 
-.if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
-.endif
+NOT_FOR_ARCHS=	alpha
 
-.include "${FILESDIR}/manpages.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
