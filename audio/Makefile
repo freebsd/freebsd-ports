@@ -40,6 +40,7 @@
     SUBDIR += autocd
     SUBDIR += autools
     SUBDIR += autozen
+    SUBDIR += aylet
     SUBDIR += baudline
     SUBDIR += beast
     SUBDIR += bebocd
@@ -496,6 +497,7 @@
     SUBDIR += wsoundprefs
     SUBDIR += wsoundserver
     SUBDIR += x11amp
+    SUBDIR += xaylet
     SUBDIR += xcd
     SUBDIR += xcdplayer
     SUBDIR += xfce4-mixer
