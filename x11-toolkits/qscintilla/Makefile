@@ -6,11 +6,13 @@
 
 PORTNAME=	qscintilla
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.river-bank.demon.co.uk/download/QScintilla/
-DISTNAME=	qscintilla-1.62-gpl-${PORTVERSION}
+MASTER_SITES=	http://www.river-bank.demon.co.uk/download/snapshots/QScintilla/ \
+		http://freebsd.ricin.com/ports/distfiles/
+DISTNAME=	${PORTNAME}-1.64-gpl-snapshot-20050709
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danny@ricin.com
 COMMENT=	QT port of scintilla
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
@@ -31,7 +33,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/qextscintilla*.h ${PREFIX}/include
 	${MKDIR} ${DATADIR}/translations
 	${INSTALL_DATA} ${WRKSRC}/qscintilla*.qm ${DATADIR}/translations
-	${INSTALL_DATA} ${WRKSRC}/libqscintilla.so.5.2.0 ${PREFIX}/lib/libqscintilla.so.5
-	${LN} -sf ${PREFIX}/lib/libqscintilla.so.5 ${PREFIX}/lib/libqscintilla.so
+	${INSTALL_DATA} ${WRKSRC}/libqscintilla.so.6.0.0 ${PREFIX}/lib/libqscintilla.so.6
+	${LN} -sf ${PREFIX}/lib/libqscintilla.so.6 ${PREFIX}/lib/libqscintilla.so
 
 .include <bsd.port.mk>
