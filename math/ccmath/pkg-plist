@@ -1,6 +1,7 @@
 include/ccmath.h
 lib/libccm.a
 lib/libccm.so
+lib/libccm.so.1
 %%PORTDOCS%%%%DOCSDIR%%/C00-intro
 %%PORTDOCS%%%%DOCSDIR%%/C01-matrix
 %%PORTDOCS%%%%DOCSDIR%%/C02-intg
