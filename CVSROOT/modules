@@ -1909,6 +1909,7 @@ elscreen	ports/misc/elscreen
 elvis		ports/editors/elvis
 em		ports/editors/em
 emacs		ports/editors/emacs
+emacs-calc	ports/math/emacs-calc
 emacs-chess	ports/games/emacs-chess
 emacs-lisp-intro	ports/lang/emacs-lisp-intro
 emacs-wiki	ports/textproc/emacs-wiki
