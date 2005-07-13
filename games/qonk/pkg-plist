@@ -1,0 +1,3 @@
+bin/qonk
+%%DATADIR%%/font.ttf
+@dirrm %%DATADIR%%
