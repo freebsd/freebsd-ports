@@ -1,0 +1,25 @@
+--- lib/Makefile.in.orig	Wed Jul 13 00:04:25 2005
++++ lib/Makefile.in	Wed Jul 13 00:08:12 2005
+@@ -56,8 +56,10 @@
+ 		  ${srcdir}/libtar.h \
+ 		  ${srcdir}/internal.h \
+ 		  ../listhash/libtar_listhash.h
+-LIBTAR_LIBS	= ./libtar.a
+-ALL		= libtar.a
++LIBTAR_LIBS	= ./libtar.a 
++SHARED_LIB	= libtar.so
++SHARED_LIB_VER	= $(SHARED_LIB).0
++ALL		= libtar.a $(SHARED_LIB_VER)
+ 
+ DISTCLEANFILES	= ../listhash/libtar_listhash.h \
+ 		  ../listhash/libtar_list.c \
+@@ -71,6 +73,9 @@
+ libtar.a: ${LIBTAR_OBJS} ${LIBOBJS}
+ 	${AR} rc libtar.a ${LIBTAR_OBJS} ${LIBOBJS}
+ 	${RANLIB} libtar.a
++
++${SHARED_LIB_VER}: libtar.a ${LIBTAR_OBJS} ${LIBOBJS}
++	 ${CC} ${CFLAGS} -shared -Wl,-soname,${SHARED_LIB_VER} -o ${SHARED_LIB_VER} ${LIBTAR_OBJS} ${LIBOBJS} ${LDFLAGS}
+ 
+ ${LIBTAR_OBJS}: ${LIBTAR_HDRS}
+ 
