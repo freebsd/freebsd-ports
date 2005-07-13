@@ -1,0 +1,14 @@
+--- calc.texinfo.orig	Sun Jul 10 11:30:45 2005
++++ calc.texinfo	Sun Jul 10 11:33:21 2005
+@@ -172,6 +172,11 @@
+ \catcode`\@=0 @catcode`@\=@active
+ @end iftex
+ 
++@dircategory The Emacs editor and associated tools
++@direntry
++* Calc: (calc).		The Emacs calculator
++@end direntry
++
+ @ifinfo
+ This file documents Calc, the GNU Emacs calculator.
+ 

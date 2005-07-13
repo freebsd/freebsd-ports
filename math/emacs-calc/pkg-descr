@@ -1,0 +1,14 @@
+Emacs Calc can do arbitrary precision arithmetic, operations on matrices,
+complex numbers, calendar dates and various other types, plus symbolic
+algebra and calculus, graphics, and lots more. Calc also comes with an
+extensive manual which you can print or read on-line.
+
+-- the Emacs Calc home page
+
+WWW: http://www.synaptics.com/people/daveg
+
+Add
+  (load "calc-autoload")
+to your .emacs file to define autoloads.
+
+Maintainer: Andrew Bernard (andrewb@cs.cmu.edu)

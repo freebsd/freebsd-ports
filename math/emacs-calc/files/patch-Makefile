@@ -1,0 +1,55 @@
+--- Makefile.orig	Sun Jul 10 10:59:15 2005
++++ Makefile	Sun Jul 10 11:24:42 2005
+@@ -52,13 +52,13 @@
+ # Do full Calc installation.  (Note that `make' == `make all'.)
+ # These are written this way instead of `all: compile private info'
+ # to make the steps more explicit while the `make' is in progress.
+-all:
++all.orig:
+ 	$(MAKE) compile
+ 	$(MAKE) private
+ 	$(MAKE) info
+ 	$(ECHO) "Calc is now installed."
+ 
+-install:
++install.orig:
+ 	$(MAKE) compile
+ 	$(MAKE) public
+ 	$(MAKE) info
+@@ -180,4 +180,36 @@
+ 	$(REMOVE) calctut.*
+ 	$(REMOVE) calcsum.*
+ 
++# FreeBSD installation
++
++prefix        = /usr/local
++infodir       = ${prefix}/info
++sharedir      = ${prefix}/share
++emacssharedir = ${sharedir}/emacs
++emacssitedir  = ${emacssharedir}/site-lisp
++calcsitedir   = ${emacssitedir}/calc
++
++elcfiles  != find . -name '*.elc' -type f
++infofiles != find . -name 'calc.info*' -type f
++sitefiles  = INSTALL README README.prev ${elcfiles}
++
++installfiles := ${infofiles:%=$(infodir)/%} ${sitefiles:%=$(calcsitedir)/%}
++
++all:
++	$(MAKE) compile
++	$(MAKE) info
++
++install: ${installfiles}
++	install-info ${infodir}/calc.info ${infodir}/dir
++
++.for file in ${infofiles}
++${infodir}/${file}: ${file}
++	install -o root -g wheel -m 0444 $? $@
++.endfor
++
++.for file in ${sitefiles}
++${calcsitedir}/${file}: ${file}
++	@install -d -o root -g wheel -m 0755 ${@D}
++	install -o root -g wheel -m 0444 $? $@
++.endfor
+ 
