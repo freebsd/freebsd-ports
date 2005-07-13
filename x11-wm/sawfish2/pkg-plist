@@ -639,6 +639,8 @@ share/sawfish/%%VERSION%%/themes/smaker/close_inv.png
 share/sawfish/%%VERSION%%/themes/smaker/min.png
 share/sawfish/%%VERSION%%/themes/smaker/min_inv.png
 share/sawfish/%%VERSION%%/themes/smaker/theme.jl
+@exec mkdir -p %D/share/sawfish/sounds
+@exec mkdir -p %D/share/sawfish/themes
 @dirrm share/sawfish/themes
 @dirrm share/sawfish/sounds
 @dirrm share/sawfish/%%VERSION%%/themes/smaker
