@@ -6,7 +6,7 @@
 #
 
 CATEGORIES=	devel
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	Gstreamer gnomevfs plugin
 

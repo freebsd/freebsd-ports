@@ -6,7 +6,7 @@
 #
 
 CATAGORIES=	multimedia
-PORTREVISION=	0
+PORTREVISION=	1
 
 GST_PLUGIN=	libfame
 
