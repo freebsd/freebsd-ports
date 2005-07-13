@@ -1,0 +1,6 @@
+bin/podcastamatic
+etc/podcastamatic.conf
+%%PORTDOCS%%%%DOCSDIR%%/readme.html
+%%DATADIR%%/style.css
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

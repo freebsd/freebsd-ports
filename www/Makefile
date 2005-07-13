@@ -657,6 +657,7 @@
     SUBDIR += plugger-plugins-hubbe
     SUBDIR += pmwiki
     SUBDIR += pnews
+    SUBDIR += podcastamatic
     SUBDIR += polipo
     SUBDIR += postnuke
     SUBDIR += pound
