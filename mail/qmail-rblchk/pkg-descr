@@ -1,0 +1,10 @@
+A fast rbl lookup implementation for qmail, typically used as part of .qmail
+command processing.
+
+It has the same function as rblsmtpd, but the messages are checked at local
+delivery time.
+
+WWW: http://morettoni.net/qmail-rblchk.en.html
+
+- ehaupt
+ehaupt@critical.ch
