@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fileinfo
-PORTVERSION=	0.2
+PORTVERSION=	1.0
 CATEGORIES=	sysutils pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
