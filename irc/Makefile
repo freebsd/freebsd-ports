@@ -77,6 +77,7 @@
     SUBDIR += pure-xemacs21-mule
     SUBDIR += py-irclib
     SUBDIR += py-supybot
+    SUBDIR += py-supybot-plugins
     SUBDIR += quirc
     SUBDIR += rbot
     SUBDIR += riece

@@ -1,0 +1,33 @@
+# New ports collection makefile for:	supybot-plugins
+# Date created:		2005-07-12
+# Whom:			Radim Kolar
+#
+# $FreeBSD$
+#
+
+PORTNAME=	supybot-plugins
+PORTVERSION=	20050530
+CATEGORIES=	irc python
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	supybot
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	Supybot-plugins-${PORTVERSION}
+
+MAINTAINER=	ports@freebsd.org
+COMMENT=	Official plugin pack for Supybot
+
+RUN_DEPENDS=	supybot:${PORTSDIR}/irc/py-supybot
+
+USE_PYTHON=	2.3+
+USE_BZIP2=	yes
+
+post-extract:
+	${RM} -rf ${WRKSRC}/_darcs
+
+do-build:
+	cd ${WRKSRC} && ${PYTHON_CMD} -c 'import compileall;compileall.compile_dir(".");' && ${PYTHON_CMD} -O -c 'import compileall;compileall.compile_dir(".");'
+
+do-install:
+	cd ${WRKSRC} && ${FIND} . | ${CPIO} -pdm -R ${BINOWN}:${BINGRP} ${PYTHONPREFIX_SITELIBDIR}/supybot/plugins
+
+.include <bsd.port.mk>
