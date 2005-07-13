@@ -12304,7 +12304,6 @@ wmnet		ports/net/wmnet
 wmnet2		ports/net/wmnet2
 wmnetload	ports/net/wmnetload
 wmnetmon	ports/net/wmnetmon
-wmnetselect	ports/www/wmnetselect
 wmoldmenu2new	ports/x11/wmoldmenu2new
 wmpal		ports/misc/wmpal
 wmpccard	ports/sysutils/wmpccard
