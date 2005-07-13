@@ -1,0 +1,23 @@
+You have to do something like bellow before starting up the bot.
+
+  # mkdir home/of/the/sulci/the/bot
+  # cd    home/of/the/sulci/the/bot
+  # cp ${PREFIX}/share/examples/sulci/sulci.conf.example sulci.conf
+  # vi sulci.conf
+  # ln -s ${PREFIX}/share/sulci/tlds.db .
+
+  # echo sulci_enable=\"YES"\ >> /etc/rc.conf
+  # echo sulci_chdir=\"home/of/the/sulci/the/bot\" >> /etc/rc.conf
+
+
+Also, you could add rc.subr's vars like this:
+
+  sulci_user="sulci"
+  sulci_nice="20"
+  sulci_precmd="eval `/usr/bin/limits -U sulci -e`"
+
+and don't forget to chown home/of/the/sulci/the/bot
+
+
+Note: you have to get the key from Google before using the "google"
+plug-in. See http://api.google.com/ for how to.

@@ -1,0 +1,30 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: sulci
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Define these sulci_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/sulci
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+sulci_enable=${sulci_enable-"NO"}
+sulci_precmd=":"
+
+. %%RC_SUBR%%
+
+name="sulci"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/sulci"
+command_args="> /dev/null 2>&1 &"
+
+load_rc_config $name
+
+start_precmd="${sulci_precmd}"
+
+run_rc_command "$1"
