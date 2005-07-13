@@ -9,6 +9,7 @@
     SUBDIR += bind84
     SUBDIR += bind9
     SUBDIR += bind9-dlz
+    SUBDIR += bind9-sdb-ldap
     SUBDIR += checkdns
     SUBDIR += crossip
     SUBDIR += ddclient

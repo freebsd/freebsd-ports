@@ -1,0 +1,7 @@
+This port includes all the excellent features of the BIND9 DNS server,
+including support for an LDAP back-end. These patches were written by Venaas.
+
+WWW: http://www.venaas.no/ldap/bind-sdb/
+
+- Hugo
+hugo@meiland.nl 
