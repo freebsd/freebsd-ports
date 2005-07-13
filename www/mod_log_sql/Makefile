@@ -8,17 +8,17 @@ PORTNAME=	mod_log_sql
 PORTVERSION=	1.18
 PORTREVISION=	2
 CATEGORIES=	www databases
-MASTER_SITES=	http://www.grubbybaby.com/mod_log_sql/
+MASTER_SITES=	http://www.outoforder.cc/downloads/${PORTNAME}/
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Allows Apache to log to a MySQL database
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
-LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/${APACHE_PORT}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_MYSQL=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
