@@ -18,10 +18,10 @@ COMMENT=	DjVu viewers, encoders, browser plugin, and utilities
 .if !defined(WITHOUT_X11)
 USE_X_PREFIX=	yes
 USE_QT_VER=	3
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
 .else
 PKGNAMESUFFIX=	-nox11
-LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
 .endif
 
 USE_ICONV=	yes
