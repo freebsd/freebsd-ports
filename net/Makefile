@@ -294,6 +294,7 @@
     SUBDIR += kphone
     SUBDIR += kpopup
     SUBDIR += krdesktop
+    SUBDIR += ktorrent
     SUBDIR += l2tpd
     SUBDIR += lam
     SUBDIR += lam7
