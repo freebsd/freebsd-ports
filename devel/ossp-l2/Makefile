@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	l2
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.10
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
@@ -20,8 +20,7 @@ COMMENT=	A C library for a flexible and sophisticated Unix logging facility
 USE_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
+MAN1=		l2-config.1 l2tool.1
+MAN3=		l2.3
 
-.include "${FILESDIR}/manpages.mk"
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
