@@ -330,6 +330,7 @@
     SUBDIR += oggsplit
     SUBDIR += openal
     SUBDIR += opennap
+    SUBDIR += openspc
     SUBDIR += opmixer
     SUBDIR += orpheus
     SUBDIR += osalp
