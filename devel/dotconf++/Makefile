@@ -7,6 +7,7 @@
 
 PORTNAME=	dotconfpp
 PORTVERSION=	0.0.4a
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://voodoo.com.ua/dotconf++/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
