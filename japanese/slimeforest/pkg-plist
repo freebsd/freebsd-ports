@@ -1,7 +1,6 @@
 bin/slimeforest-fs
 bin/slimeforest-win
 %%DATADIR%%/jquest/exec.ver
-%%DATADIR%%/jquest/jquest
 %%DATADIR%%/jquest/images/axehero.png
 %%DATADIR%%/jquest/images/basic.font
 %%DATADIR%%/jquest/images/bcframe.png
@@ -11,6 +10,7 @@ bin/slimeforest-win
 %%DATADIR%%/jquest/images/blocktile.png
 %%DATADIR%%/jquest/images/blueblob.png
 %%DATADIR%%/jquest/images/blueblop.png
+%%DATADIR%%/jquest/images/bluecube.png
 %%DATADIR%%/jquest/images/blueslime.png
 %%DATADIR%%/jquest/images/brother.png
 %%DATADIR%%/jquest/images/castletile.png
@@ -26,6 +26,9 @@ bin/slimeforest-win
 %%DATADIR%%/jquest/images/downtile.png
 %%DATADIR%%/jquest/images/drawbackaxe.png
 %%DATADIR%%/jquest/images/drawbackhoe.png
+%%DATADIR%%/jquest/images/dunblob.png
+%%DATADIR%%/jquest/images/dunblop.png
+%%DATADIR%%/jquest/images/dunslime.png
 %%DATADIR%%/jquest/images/elder.png
 %%DATADIR%%/jquest/images/explainbug.png
 %%DATADIR%%/jquest/images/farmhero.png
@@ -45,10 +48,12 @@ bin/slimeforest-win
 %%DATADIR%%/jquest/images/greenblob.png
 %%DATADIR%%/jquest/images/greenblop.png
 %%DATADIR%%/jquest/images/greencube.png
+%%DATADIR%%/jquest/images/greengem24.png
 %%DATADIR%%/jquest/images/greenpipe.png
 %%DATADIR%%/jquest/images/greenslime.png
 %%DATADIR%%/jquest/images/hilltile.png
 %%DATADIR%%/jquest/images/hometile.png
+%%DATADIR%%/jquest/images/kanji16.font
 %%DATADIR%%/jquest/images/kanji48.font
 %%DATADIR%%/jquest/images/king.png
 %%DATADIR%%/jquest/images/magislime.png
@@ -95,7 +100,10 @@ bin/slimeforest-win
 %%DATADIR%%/jquest/images/wstile.png
 %%DATADIR%%/jquest/images/wswtile.png
 %%DATADIR%%/jquest/images/wwtile.png
+%%DATADIR%%/jquest/images/yellowgem24.png
+%%DATADIR%%/jquest/jquest
 %%DATADIR%%/jquest/languagedata/hints.data
+%%DATADIR%%/jquest/languagedata/hiragana.cpd
 %%DATADIR%%/jquest/languagedata/hiragana.data
 %%DATADIR%%/jquest/languagedata/kanji.cpd
 %%DATADIR%%/jquest/languagedata/kanji.data
