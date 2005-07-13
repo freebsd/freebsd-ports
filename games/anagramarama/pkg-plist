@@ -1,0 +1,18 @@
+bin/ag
+%%DATADIR%%/audio/badword.wav
+%%DATADIR%%/audio/clearword.wav
+%%DATADIR%%/audio/click-answer.wav
+%%DATADIR%%/audio/click-shuffle.wav
+%%DATADIR%%/audio/clock-tick.wav
+%%DATADIR%%/audio/duplicate.wav
+%%DATADIR%%/audio/found.wav
+%%DATADIR%%/audio/foundbig.wav
+%%DATADIR%%/audio/shuffle.wav
+%%DATADIR%%/images/background.bmp
+%%DATADIR%%/images/letterBank.bmp
+%%DATADIR%%/images/numberBank.bmp
+%%DATADIR%%/images/smallLetterBank.bmp
+%%DATADIR%%/wordlist.txt
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/audio
+@dirrm %%DATADIR%%
