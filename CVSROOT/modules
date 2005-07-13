@@ -278,6 +278,7 @@ aim		ports/net/aim
 aimsniff	ports/security/aimsniff
 airoflash	ports/misc/airoflash
 airport		ports/net-mgmt/airport
+airrox		ports/games/airrox
 aish		ports/converters/aish
 akode		ports/audio/akode
 akode-plugins-jack	ports/audio/akode-plugins-jack
