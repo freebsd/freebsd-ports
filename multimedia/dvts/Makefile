@@ -17,7 +17,7 @@ PATCHFILES=	dvts-patch-20030805
 PATCH_DIST_STRIP=	-p4
 
 MAINTAINER=	simokawa@FreeBSD.org
-COMMENT=	An imprementation of Digital Video Transport System
+COMMENT=	An implementation of Digital Video Transport System
 
 USE_AUTOCONF_VER=	253
 
