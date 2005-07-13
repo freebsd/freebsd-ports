@@ -118,7 +118,6 @@ ORBit2		ports/devel/ORBit2
 OpenEXR		ports/graphics/OpenEXR
 PDL		ports/math/PDL
 PicMonger	ports/news/PicMonger
-qnetchess	ports/games/qnetchess
 R		ports/math/R
 SETIsupport	ports/astro/SETIsupport
 STk		ports/lang/STk
@@ -10114,6 +10113,7 @@ qmc		ports/misc/qmc
 qmls		ports/cad/qmls
 qmqtool		ports/mail/qmqtool
 qmrtg		ports/mail/qmrtg
+qnetchess	ports/games/qnetchess
 qnetwalk	ports/games/qnetwalk
 qnxstyle	ports/x11-themes/qnxstyle
 qonk		ports/games/qonk
