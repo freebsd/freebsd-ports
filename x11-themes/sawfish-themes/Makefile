@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	sawfish-themes
-PORTVERSION=	0.10
-PORTREVISION=	2
+PORTVERSION=	0.11
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/s/${PORTNAME}/
-DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	karma@ez.pereslavl.ru
 COMMENT=	Themes for Sawfish window manager
@@ -19,13 +18,13 @@ RUN_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish2
 
 USE_X_PREFIX=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 DATA_DIRS=	2YearsToNever Anonymous Aquiline BWM Big Blackwindow Bubbles_Exact \
-		Derivative DoubleHeliX Elberg Empire FinalStep Greene2.0 Hacksaw \
+		CoolClean Derivative DoubleHeliX Elberg Empire FinalStep Greene2.0 Hacksaw \
 		HeliX Klarth Microtene OrangeJuice SawLook SawthenaForever Strap \
 		Studio T-16-blue T-16-red T-16-yellow Titanium V absolute-metal \
 		bluefoo gorilla gorillaz mxflat typo
