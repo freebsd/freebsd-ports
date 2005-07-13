@@ -1,3 +1,5 @@
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-analyse.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-analyse.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-autogen.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-autogen.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-autoloads.el
@@ -37,6 +39,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-semantic-wrapper.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-speedbar.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-speedbar.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-symboldef.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-symboldef.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-tod.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-tod.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-upgrade.el
