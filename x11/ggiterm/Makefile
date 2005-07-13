@@ -6,24 +6,22 @@
 #
 
 PORTNAME=	ggiterm
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggiterm
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	antoine.brodin@laposte.net
 COMMENT=	A terminal emulator for GGI
 
 LIB_DEPENDS=	ggi.2:${PORTSDIR}/graphics/libggi
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
-INSTALLS_SHLIB=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ggi-prefix=${LOCALBASE}
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -40,9 +38,6 @@ CONFIGURE_ARGS+=--without-freetype
 .endif
 
 MAN1=		ggiterm.1
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lggi |-lggi ${PTHREAD_LIBS} |' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
