@@ -61,6 +61,7 @@
     SUBDIR += mwavem
     SUBDIR += nasawash
     SUBDIR += ncid
+    SUBDIR += nec2c
     SUBDIR += nokryptia
     SUBDIR += obexapp
     SUBDIR += openobex
