@@ -1,0 +1,275 @@
+--- ../pr/tests/cleanup.c	Sun Apr 25 11:01:02 2004
++++ ../pr/tests/cleanup.c	Tue Jul 12 01:19:53 2005
+@@ -48,5 +48,5 @@
+ static void PR_CALLBACK Thread(void *sleep)
+ {
+-    PR_Sleep(PR_SecondsToInterval((PRUint32)sleep));
++    PR_Sleep(PR_SecondsToInterval((intptr_t)sleep));
+     printf("Thread exiting\n");
+ }
+@@ -72,5 +72,6 @@
+     PRFileDesc *err = PR_GetSpecialFD(PR_StandardError);
+     PLOptState *opt = PL_CreateOptState(argc, argv, "Ghs:S:t:cC:");
+-    PRIntn concurrency = 1, child_sleep = 10, main_sleep = 5, threads = 1;
++    PRIntn concurrency = 1, main_sleep = 5, threads = 1;
++    intptr_t child_sleep = 10;
+ 
+     PR_STDIO_INIT();
+@@ -113,5 +114,5 @@
+     PR_fprintf(err, "\tConcurrency: %d\n", concurrency);
+     PR_fprintf(err, "\tNumber of threads: %d\n", threads);
+-    PR_fprintf(err, "\tThread sleep: %d\n", child_sleep);
++    PR_fprintf(err, "\tThread sleep: %ld\n", (long)child_sleep);
+     PR_fprintf(err, "\tMain sleep: %d\n", main_sleep); 
+     PR_fprintf(err, "\tCleanup will %sbe called\n\n", (cleanup) ? "" : "NOT "); 
+--- ../pr/tests/cvar.c	Sun Apr 25 11:01:02 2004
++++ ../pr/tests/cvar.c	Tue Jul 12 01:22:52 2005
+@@ -174,5 +174,5 @@
+ {
+ 	CircBuf *cbp = (CircBuf *)arg;
+-    PRInt32 i, n;
++    intptr_t i, n;
+     void *data;
+ 
+@@ -180,6 +180,6 @@
+     for (i = 0; i < n; i++) {
+ 		data = GetCBData(cbp);
+-		if ((int)data != i)
+-    		if (debug_mode) printf("data mismatch at for i = %d usec\n", i);
++		if ((intptr_t)data != i)
++    		if (debug_mode) printf("data mismatch at for i = %ld usec\n", (long)i);
+     }
+  
+@@ -193,5 +193,5 @@
+ {
+ 	CircBuf *cbp = (CircBuf *)arg;
+-    PRInt32 i, n;
++    intptr_t i, n;
+ 
+     n = count / 2;
+--- ../pr/tests/foreign.c	Mon Mar  7 20:22:57 2005
++++ ../pr/tests/foreign.c	Tue Jul 12 01:25:31 2005
+@@ -269,5 +269,5 @@
+     PRDir *dir;
+     PRFileDesc *pair[2];
+-    PRIntn test = (PRIntn)arg;
++    intptr_t test = (intptr_t)arg;
+ 
+ 	for (test = 0; test < 12; ++test) {
+@@ -364,5 +364,5 @@
+ {
+     PRStatus rv;
+-	PRInt32	thread_cnt = DEFAULT_THREAD_COUNT;
++	intptr_t	thread_cnt = DEFAULT_THREAD_COUNT;
+ 	PLOptStatus os;
+ 	PLOptState *opt = PL_CreateOptState(argc, argv, "dt:");
+--- ../pr/tests/forktest.c	Sun Apr 25 11:01:02 2004
++++ ../pr/tests/forktest.c	Tue Jul 12 01:28:15 2005
+@@ -80,5 +80,5 @@
+     PRNetAddr addr;
+     PRFileDesc *sock = NULL;
+-    PRInt32 tmp = (PRInt32)arg;
++    intptr_t tmp = (intptr_t)arg;
+ 
+     /*
+@@ -176,5 +176,5 @@
+     }
+     clientThread = PR_CreateThread( PR_USER_THREAD, ClientThreadFunc,
+-        (void *) PR_ntohs(addr.inet.port), PR_PRIORITY_NORMAL, PR_LOCAL_THREAD,
++        (void *)(intptr_t)PR_ntohs(addr.inet.port), PR_PRIORITY_NORMAL, PR_LOCAL_THREAD,
+         PR_JOINABLE_THREAD, 0);
+     if (clientThread == NULL) {
+--- ../pr/tests/mbcs.c	Sun Apr 25 11:01:02 2004
++++ ../pr/tests/mbcs.c	Tue Jul 12 01:34:26 2005
+@@ -114,14 +114,14 @@
+         }
+         if ( PR_FILE_FILE == info.type )  {
+-            printf("File: %s \tsize: %ld\n", dirEntry->name, info.size );
++            printf("File: %s \tsize: %ld\n", dirEntry->name, (long)info.size );
+             fd = PR_Open( file, PR_RDONLY, 0 );
+             if ( NULL == fd )  {
+                 printf("PR_Open() failed. Error: %ld, OSError: %ld\n", 
+-                    PR_GetError(), PR_GetOSError());
++                    (long)PR_GetError(), (long)PR_GetOSError());
+             }
+             rc = PR_Close( fd );
+             if ( PR_FAILURE == rc )  {
+                 printf("PR_Close() failed. Error: %ld, OSError: %ld\n", 
+-                    PR_GetError(), PR_GetOSError());
++                    (long)PR_GetError(), (long)PR_GetOSError());
+             }
+         } else if ( PR_FILE_DIRECTORY == info.type ) {
+--- ../pr/tests/nbconn.c	Fri Apr 29 18:46:05 2005
++++ ../pr/tests/nbconn.c	Tue Jul 12 01:36:03 2005
+@@ -226,5 +226,5 @@
+ 			}
+ 			printf( "PR_GetConnectStatus: connect failed: (%ld, %ld)\n",
+-					PR_GetError(), PR_GetOSError());
++					(long)PR_GetError(), (long)PR_GetOSError());
+ 		}
+ 		PR_Close(sock);
+@@ -376,5 +376,5 @@
+ 		goto def_exit;
+ 	}
+-	DPRINTF(("Created TCP_Server thread [0x%x]\n",thr));
++	DPRINTF(("Created TCP_Server thread [%p]\n", thr));
+ 	pd.fd = conn_fd;
+ 	pd.in_flags = PR_POLL_WRITE | PR_POLL_EXCEPT;
+@@ -459,5 +459,5 @@
+ 	} else {
+ 		fprintf(stderr,"PR_GetConnectStatus: connect failed: (%ld, %ld)\n",
+-				PR_GetError(), PR_GetOSError());
++				(long)PR_GetError(), (long)PR_GetOSError());
+ 		failed_already = 1;
+ 		goto def_exit;
+--- ../pr/tests/nonblock.c	Sun Apr 25 11:01:02 2004
++++ ../pr/tests/nonblock.c	Tue Jul 12 01:37:52 2005
+@@ -84,5 +84,5 @@
+ clientThreadFunc(void *arg)
+ {
+-    PRUintn port = (PRUintn)arg;
++    intptr_t port = (intptr_t)arg;
+     PRFileDesc *sock;
+     PRNetAddr addr;
+@@ -196,5 +196,5 @@
+ 
+     clientThread = PR_CreateThread(PR_USER_THREAD,
+-	    clientThreadFunc, (void *) listenPort,
++	    clientThreadFunc, (void *) (intptr_t)listenPort,
+ 	    PR_PRIORITY_NORMAL, PR_LOCAL_THREAD,
+ 	    PR_UNJOINABLE_THREAD, 0);
+@@ -240,5 +240,5 @@
+         PL_PrintError("First Receive:\n");
+ 	    fprintf(stderr, "First PR_Recv: retVal: %ld, Error: %ld\n",
+-            retVal, PR_GetError());
++            (long)retVal, (long)PR_GetError());
+ 	    exit(1);
+         }
+@@ -250,5 +250,5 @@
+         PL_PrintError("Second Receive:\n");
+ 	    fprintf(stderr, "Second PR_Recv: retVal: %ld, Error: %ld\n", 
+-            retVal, PR_GetError());
++            (long)retVal, (long)PR_GetError());
+ 	    exit(1);
+         }
+--- ../pr/tests/op_noacc.c	Sun Apr 25 11:01:02 2004
++++ ../pr/tests/op_noacc.c	Tue Jul 12 01:40:22 2005
+@@ -82,5 +82,5 @@
+     PR_STDIO_INIT();
+ 	err01 = PR_Open("err01.tmp", PR_CREATE_FILE | PR_RDWR, 0);
+-	if (err01 == NULL) 
++	if (err01 == NULL) {
+ 		if (PR_GetError() == PR_NO_ACCESS_RIGHTS_ERROR) {
+ 				printf ("error code is %d\n",PR_GetError());
+@@ -92,3 +92,7 @@
+ 			return 1;
+ 		}
+-}			
++	} else {
++		perror("err01.tmp");
++		return 2;
++	}
++}
+--- ../pr/tests/peek.c	Sun Apr 25 11:01:02 2004
++++ ../pr/tests/peek.c	Tue Jul 12 01:41:44 2005
+@@ -168,5 +168,5 @@
+     PRFileDesc *sock;
+     PRSocketOptionData opt;
+-    PRUint16 port = (PRUint16) arg;
++    PRUint16 port = (intptr_t) arg;
+     PRNetAddr addr;
+     char buf[BUFFER_SIZE];
+@@ -332,5 +332,5 @@
+     }
+     client = PR_CreateThread(
+-            PR_USER_THREAD, ClientNB, (void *) port,
++            PR_USER_THREAD, ClientNB, (void *)(intptr_t) port,
+             PR_PRIORITY_NORMAL, scope, PR_JOINABLE_THREAD, 0);
+     if (NULL == client) {
+--- ../pr/tests/pipepong.c	Sun Apr 25 11:01:02 2004
++++ ../pr/tests/pipepong.c	Tue Jul 12 01:43:52 2005
+@@ -69,5 +69,5 @@
+         fprintf(stderr, "pong process: received \"%s\"\n", buf);
+         if (nBytes != 5) {
+-            fprintf(stderr, "pong process: expected 5 bytes but got %d bytes\n",
++            fprintf(stderr, "pong process: expected 5 bytes but got %zd bytes\n",
+                     nBytes);
+             exit(1);
+--- ../pr/tests/poll_nm.c	Sun Apr 25 11:01:02 2004
++++ ../pr/tests/poll_nm.c	Tue Jul 12 01:45:57 2005
+@@ -97,5 +97,5 @@
+ clientThreadFunc(void *arg)
+ {
+-    PRUintn port = (PRUintn) arg;
++    PRUintn port = (intptr_t) arg;
+     PRFileDesc *sock;
+     PRNetAddr addr;
+@@ -251,5 +251,5 @@
+ 
+     clientThread = PR_CreateThread(PR_USER_THREAD,
+-	    clientThreadFunc, (void *) listenPort1,
++	    clientThreadFunc, (void *)(intptr_t)listenPort1,
+ 	    PR_PRIORITY_NORMAL, PR_LOCAL_THREAD,
+ 	    PR_UNJOINABLE_THREAD, 0);
+@@ -261,5 +261,5 @@
+ 
+     clientThread = PR_CreateThread(PR_USER_THREAD,
+-	    clientThreadFunc, (void *) listenPort2,
++	    clientThreadFunc, (void *)(intptr_t)listenPort2,
+ 	    PR_PRIORITY_NORMAL, PR_LOCAL_THREAD,
+ 	    PR_UNJOINABLE_THREAD, 0);
+--- ../lib/tests/Makefile.in	Sun Nov  7 21:52:55 2004
++++ ../lib/tests/Makefile.in	Tue Jul 12 01:49:15 2005
+@@ -247,5 +247,5 @@
+ 	$(LINK) $(EXEFLAGS) $(LDOPTS) $< $(LIBPLC)  $(LIBPLDS) $(LIBPR) $(OS_LIBS) $(EXTRA_LIBS)
+ else
+-	$(CC) $(XCFLAGS) $< $(LDOPTS) $(LIBPLC) $(LIBPLDS) $(LIBPR) $(EXTRA_LIBS) -o $@
++	$(CC) $(XCFLAGS) $< $(LDOPTS) $(LIBPLC) $(LIBPLDS) $(LIBPR) $(OS_LIBS) $(EXTRA_LIBS) -o $@
+ endif
+ endif
+--- ../pr/tests/getai.c	Sun Apr 25 11:01:02 2004
++++ ../pr/tests/getai.c	Tue Jul 12 02:20:40 2005
+@@ -46,6 +46,11 @@
+     void *iter;
+     PRNetAddr addr;
++    const char *host;
+ 
+-    ai = PR_GetAddrInfoByName(argv[1], PR_AF_UNSPEC, PR_AI_ADDRCONFIG);
++    if (argc > 1)
++	host = argv[1];
++    else
++	host = "www.FreeBSD.org";
++    ai = PR_GetAddrInfoByName(host, PR_AF_UNSPEC, PR_AI_ADDRCONFIG);
+     if (ai == NULL) {
+         fprintf(stderr, "PR_GetAddrInfoByName failed: (%d, %d)\n",
+--- ../pr/tests/Makefile.in	Sun Apr 25 11:01:02 2004
++++ ../pr/tests/Makefile.in	Tue Jul 12 02:25:18 2005
+@@ -556,16 +557,17 @@
+ 
+ runtests:: $(PROGS) ALWAYS
+-	@$(ECHO) "\nNSPR Test Results - $(OBJDIR)\n"
+-	@$(ECHO) "BEGIN\t\t\t`date`"
+-	@$(ECHO) "NSPR_TEST_LOGFILE\t$(LOGFILE)\n"
+-	@$(ECHO) "Test\t\t\tResult\n"
++	@$(ECHO) "NSPR Test Results - $(OBJDIR)"
++	@$(ECHO) "BEGIN			`date`"
++	@$(ECHO) "Test			Result"
+ 	@cd $(OBJDIR); for i in $(PROGRAMS); do					\
+-	$(ECHO) "$$i\c";										\
+-	./$$i >> $(LOGFILE) 2>&1 ;								\
++	printf "$$i";										\
++	./$$i > $$i.output 2>&1;								\
+ 	if  [ 0 = $$? ] ; then									\
+-		$(ECHO) "\t\t\tPassed";								\
+-	else													\
+-		$(ECHO) "\t\t\tFAILED";								\
+-	fi;														\
++		$(ECHO) "			Passed";					\
++		rm $$i.output;									\
++	else											\
++		$(ECHO) "			FAILED";					\
++		cat $$i.output;									\
++	fi;											\
+ 	done
+-	@$(ECHO) "\nEND\t\t`date`\n"
++	@$(ECHO) "END		`date`"

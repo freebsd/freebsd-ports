@@ -1,0 +1,35 @@
+pthread_t can well be a 64-bit value -- on FreeBSD/amd64, for example.
+Better to just keep calling it pthread_t isntead of casting to anything.
+
+	-mi
+
+--- ../pr/include/private/pprthred.h	Sun Apr 25 11:00:56 2004
++++ ../pr/include/private/pprthred.h	Tue Jul 12 00:52:42 2005
+@@ -44,4 +44,5 @@
+ */
+ #include "nspr.h"
++#include <pthread.h>
+ 
+ #if defined(XP_OS2)
+@@ -92,5 +92,5 @@
+ ** when it is created or attached.
+ */
+-NSPR_API(PRUint32) PR_GetThreadID(PRThread *thread);
++NSPR_API(pthread_t) PR_GetThreadID(PRThread *thread);
+ 
+ /*
+--- ../pr/src/pthreads/ptthread.c	Wed May 25 22:27:51 2005
++++ ../pr/src/pthreads/ptthread.c	Tue Jul 12 00:49:50 2005
+@@ -979,10 +979,10 @@
+ }
+ 
+-PR_IMPLEMENT(PRUint32) PR_GetThreadID(PRThread *thred)
++PR_IMPLEMENT(pthread_t) PR_GetThreadID(PRThread *thred)
+ {
+ #if defined(_PR_DCETHREADS)
+     return (PRUint32)&thred->id;  /* this is really a sham! */
+ #else
+-    return (PRUint32)thred->id;  /* and I don't know what they will do with it */
++    return thred->id;  /* and I don't know what they will do with it */
+ #endif
+ }
