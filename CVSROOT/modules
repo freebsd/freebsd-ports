@@ -9338,6 +9338,7 @@ pngwriter	ports/graphics/pngwriter
 pnm2ppa		ports/print/pnm2ppa
 poc		ports/security/poc
 pocketreader	ports/textproc/pocketreader
+podcastamatic	ports/www/podcastamatic
 poedit		ports/editors/poedit
 poink		ports/net/poink
 pointless	ports/misc/pointless
