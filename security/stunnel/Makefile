@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	4.10
-PORTREVISION=	3
+PORTVERSION=	4.11
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://stunnel.mirt.net/stunnel/OBSOLETE/ \
@@ -47,13 +46,17 @@ CONFIGURE_ARGS+=	--enable-ipv6
 BROKEN=	'The WITH_UCONTEXT, WITH_FORK and WITH_PTHREAD options are mutually exclusive - please specify at most one of them, the default is WITH_PTHREAD'
 .endif
 
-CFLAGS+=-DFORCE_THREADING_MODEL
 .if defined(WITH_UCONTEXT)
-CFLAGS+=-DFORCE_UCONTEXT
+.if ${OSVERSION} < 500112
+BROKEN=	'The ucontext model is only supported on FreeBSD 5.x and 6.x'
+.endif
+CONFIGURE_ARGS+=--with-threads=ucontext
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}" LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 .elif defined(WITH_FORK)
-CFLAGS+=-DFORCE_FORK
+CONFIGURE_ARGS+=--with-threads=fork
 .else
-CFLAGS+=-DFORCE_PTHREAD
+CONFIGURE_ARGS+=--with-threads=pthread
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}" LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 .endif
 
 post-patch:
