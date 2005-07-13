@@ -1,0 +1,8 @@
+OpenSPC is an SPC command line player created using a very modified SNEeSe SPC
+CPU core. It was written in C (although the SPC core is in Assembly) using
+DJGPP.
+
+WWW: http://membres.lycos.fr/pixels/OpenSPC.html
+
+- ehaupt
+ehaupt@critical.ch
