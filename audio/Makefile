@@ -328,6 +328,7 @@
     SUBDIR += nosefart
     SUBDIR += nspmod
     SUBDIR += ocp
+    SUBDIR += ogg2mp3
     SUBDIR += oggsplit
     SUBDIR += openal
     SUBDIR += opennap
