@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	PyX
-PORTVERSION=	0.6.3
+PORTVERSION=	0.8
 CATEGORIES=	graphics python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
@@ -18,13 +18,19 @@ COMMENT=	A Python package for the creation of encapsulated PostScript figures
 
 BUILD_DEPENDS=	kpsewhich:${PORTSDIR}/print/teTeX
 
-USE_PYTHON=	2.0+
+USE_PYTHON=	2.1+
 USE_PYDISTUTILS=	yes
+USE_REINPLACE=	yes
+
+PLIST_FILES=	etc/pyxrc
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/etc|etc|g' ${WRKSRC}/setup.py
 
 post-install:
-	@${FIND} ${PYTHON_SITELIBDIR}/pyx ! -type d | \
+	@${FIND} ${PYTHONPREFIX_SITELIBDIR}/pyx ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PYTHON_SITELIBDIR}/pyx -type d | ${SORT} -r | \
+	@${FIND} ${PYTHONPREFIX_SITELIBDIR}/pyx -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 	@${FIND} ${PREFIX}/share/pyx ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
