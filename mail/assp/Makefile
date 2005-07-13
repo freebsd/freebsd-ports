@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	assp
-PORTVERSION=	1.1.1.b13
+PORTVERSION=	1.1.1
 CATEGORIES=	mail
-MASTER_SITES=	http://opal.com/freebsd/ports/mail/assp/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	assp
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Anti-Spam SMTP Proxy
 
 USE_ZIP=	yes
-NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
@@ -64,6 +64,11 @@ PLIST_SUB+=	ASSP_CLAMAV=""
 .else
 PLIST_SUB+=	ASSP_CLAMAV="@comment "
 .endif
+
+EXTRACT_AFTER_ARGS=	-d ${PORTNAME}-${PORTVERSION}
+
+pre-patch:
+	@${REINPLACE_CMD} -e 's|.$$||' ${WRKSRC}/stats.sh
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/*.pl
