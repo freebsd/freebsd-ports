@@ -38,6 +38,8 @@
     SUBDIR += atlantikdesigner
     SUBDIR += atomix
     SUBDIR += atr3d
+    SUBDIR += atris
+    SUBDIR += atris-sounds
     SUBDIR += awele
     SUBDIR += barrage
     SUBDIR += bass
