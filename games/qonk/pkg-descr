@@ -1,0 +1,21 @@
+Qonk is a small game I wrote to learn some SDL basics. The game is a small
+build-and-conquer strategy game with very simple rules. A complete game only
+lasts for a few minutes and can be a fun break away from work or whatever
+you're doing.
+
+The setting of the game is a solar system of planets. Your goal is to conquer
+all of the planets in the game by sending ships there. Planets that are under
+your control generate new ships. Simple AI players are playing against you. As
+you gain more experience throughout the game, more AI players have to be
+kicked out of bigger solar systems.
+
+The game is currently very much in beta. I published it however in order to
+see whether it compiles on other machines, and to see what reactions people
+had on its gameplay. The game engine itself is fully functional. A lot of
+things have to be added to make this a mature game (like menus and stuff), but
+since the engine itself works, Qonk is already very playable.
+
+WWW: http://anthony.liekens.net/index.php/Computers/Qonk
+
+- Alejandro Pulver
+alejandro@varnet.biz
