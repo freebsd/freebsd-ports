@@ -6878,6 +6878,7 @@ openscep	ports/security/openscep
 opensched	ports/textproc/opensched
 openslp		ports/net/openslp
 opensp		ports/textproc/opensp
+openspc		ports/audio/openspc
 openssh-askpass	ports/security/openssh-askpass
 openssh-portable	ports/security/openssh-portable
 openssl-beta	ports/security/openssl-beta
