@@ -442,9 +442,9 @@ SELECTED_OPTIONS+=	localmfreqauth=no
 .endif
 
 .if defined(WITH_AUTHCRAM)
-SELECTED_OPTIONS+=	authcram=yes
+SELECTED_OPTIONS+=	cram-md5=yes
 .else
-SELECTED_OPTIONS+=	authcram=no
+SELECTED_OPTIONS+=	cram-md5=no
 .endif
 
 .if defined(WITH_MOREIPME)
