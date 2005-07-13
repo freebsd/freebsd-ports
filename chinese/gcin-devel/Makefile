@@ -7,6 +7,7 @@
 
 PORTNAME=	gcin
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/ \
 		http://edt1023.sayya.org/gcin/source/ \
@@ -25,7 +26,6 @@ USE_BZIP2=	YES
 GNU_CONFIGURE=	YES
 USE_GNOME=	gtk20
 USE_GMAKE=	YES
-PLIST_SUB+=	BOSHIAMY="@comment "
 
 MAN1=		gcin.1 gcin2tab.1
 
@@ -54,6 +54,8 @@ post-extract:
 post-patch:
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-data-Makefile
 PLIST_SUB+=	BOSHIAMY=""
+.else
+PLIST_SUB+=	BOSHIAMY="@comment "
 .endif
 
 post-install:
