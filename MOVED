@@ -1569,3 +1569,4 @@ misc/most|sysutils/most|2005-07-10|moved to better category
 misc/reed|sysutils/reed|2005-07-10|moved to better category
 misc/wmcp|x11-wm/wmcp|2005-07-10|moved to better category
 x11/kde31-apireference|x11/kde3-apireference|2005-07-10|renamed in order to carry the latest kde3-apireference
+www/wmnetselect||2005-07-13|removed
