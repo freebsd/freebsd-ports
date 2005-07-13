@@ -1,0 +1,3 @@
+Gastman is a graphical Manager interface for Asterisk.
+It uses the GTK+ library, and so is usually run under XWindows,
+although GTK+ environments also exist for Windows and Mac OS X.

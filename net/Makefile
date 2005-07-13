@@ -158,6 +158,7 @@
     SUBDIR += gaim-rss-reader
     SUBDIR += gajim
     SUBDIR += gale
+    SUBDIR += gastman
     SUBDIR += gatekeeper
     SUBDIR += gdesklets-lt-network
     SUBDIR += gdesklets-networkinfo
