@@ -324,6 +324,7 @@
     SUBDIR += p5-POE-Component-Client-SMTP
     SUBDIR += p5-POE-Component-SMTP
     SUBDIR += p5-Qmail-Envelope
+    SUBDIR += p5-Sendmail-AccessDB
     SUBDIR += p5-Sendmail-Milter
     SUBDIR += p5-URI-imap
     SUBDIR += p5-URI-imaps
