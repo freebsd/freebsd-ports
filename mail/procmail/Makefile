@@ -34,7 +34,7 @@ MAINTAINER=	ache@FreeBSD.org
 COMMENT=	A local mail delivery agent
 
 .if defined(WITH_COURIER_MAILDIR_KLUDGE)
-PATCH_SITES=	http://www.john.net.au/pub/procmail-courier
+PATCH_SITES=	http://www.john.net.au/pub/procmail-courier/
 PATCHFILES=	procmail-authenticate.c-userMaildir.patch
 PATCH_DIST_STRIP=-p
 .endif
