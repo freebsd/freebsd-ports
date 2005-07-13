@@ -1,0 +1,18 @@
+--- src/glext-lib.stub.orig	Fri Jun 10 13:27:17 2005
++++ src/glext-lib.stub	Wed Jul 13 22:18:47 2005
+@@ -524,6 +524,7 @@
+   "GLint nstrings = Scm_Length(strings); int i = 0;
+   GLint *lengths;
+   GLcharARB **ss;
++  ScmObj sp;
+   ENSURE(glShaderSourceARB);
+   if (nstrings < 0) goto einval;
+   lengths = SCM_NEW_ATOMIC2(GLint*, nstrings*sizeof(GLint));
+@@ -531,7 +532,6 @@
+      input parameter, and we don't need this array after calling
+      glShaderSourceARB. */
+   ss = SCM_NEW_ATOMIC2(GLcharARB**, nstrings*sizeof(GLcharARB*));
+-  ScmObj sp;
+   SCM_FOR_EACH(sp, strings) {
+     if (!SCM_STRINGP(SCM_CAR(sp))) goto einval;
+     lengths[i] = SCM_STRING_SIZE(SCM_CAR(sp));
