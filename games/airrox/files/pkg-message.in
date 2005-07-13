@@ -1,0 +1,6 @@
+To play airrox you have to copy the file %%DATADIR%%/config.txt to your
+home directory, with the name ".airrox".
+
+Example:
+
+cp %%DATADIR%%/config.txt ~/.airrox

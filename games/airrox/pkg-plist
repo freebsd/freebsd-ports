@@ -1,0 +1,50 @@
+bin/airrox
+%%DATADIR%%/audio/fx/colisaodiscojogador.wav
+%%DATADIR%%/audio/fx/colisaodiscomesa.wav
+%%DATADIR%%/audio/fx/fxlist
+%%DATADIR%%/audio/fx/gol.wav
+%%DATADIR%%/audio/music/playlist
+%%DATADIR%%/audio/music/soumn_-_now_is_the_time_to_try_something_new.ogg
+%%DATADIR%%/icones/airrox.bmp
+%%DATADIR%%/imagens/mjogar.bmp
+%%DATADIR%%/imagens/mjogar1.bmp
+%%DATADIR%%/imagens/mjogar1h.bmp
+%%DATADIR%%/imagens/mjogar2.bmp
+%%DATADIR%%/imagens/mjogar2h.bmp
+%%DATADIR%%/imagens/mjogar3.bmp
+%%DATADIR%%/imagens/mjogar3h.bmp
+%%DATADIR%%/imagens/mjogarh.bmp
+%%DATADIR%%/imagens/mobs.bmp
+%%DATADIR%%/imagens/mobsh.bmp
+%%DATADIR%%/imagens/msair.bmp
+%%DATADIR%%/imagens/msairh.bmp
+%%DATADIR%%/meshs/mallet.3ds
+%%DATADIR%%/meshs/mesa.3ds
+%%DATADIR%%/meshs/placar.3ds
+%%DATADIR%%/meshs/puck.3ds
+%%DATADIR%%/texturas/display0.bmp
+%%DATADIR%%/texturas/display1.bmp
+%%DATADIR%%/texturas/display2.bmp
+%%DATADIR%%/texturas/display3.bmp
+%%DATADIR%%/texturas/display4.bmp
+%%DATADIR%%/texturas/display5.bmp
+%%DATADIR%%/texturas/display6.bmp
+%%DATADIR%%/texturas/display7.bmp
+%%DATADIR%%/texturas/display8.bmp
+%%DATADIR%%/texturas/display9.bmp
+%%DATADIR%%/texturas/logomesa.bmp
+%%DATADIR%%/texturas/mallet.bmp
+%%DATADIR%%/texturas/mesa.bmp
+%%DATADIR%%/texturas/placar.bmp
+%%DATADIR%%/texturas/puck.bmp
+%%DATADIR%%/config.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+@dirrm %%DATADIR%%/texturas
+@dirrm %%DATADIR%%/meshs
+@dirrm %%DATADIR%%/imagens
+@dirrm %%DATADIR%%/icones
+@dirrm %%DATADIR%%/audio/music
+@dirrm %%DATADIR%%/audio/fx
+@dirrm %%DATADIR%%/audio
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%

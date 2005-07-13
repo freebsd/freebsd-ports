@@ -23,6 +23,7 @@
     SUBDIR += adonthell
     SUBDIR += affenspiel
     SUBDIR += afternoonstalker
+    SUBDIR += airrox
     SUBDIR += alephone
     SUBDIR += alephone-data
     SUBDIR += alienblaster
