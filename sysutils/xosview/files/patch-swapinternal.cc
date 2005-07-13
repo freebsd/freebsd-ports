@@ -1,6 +1,6 @@
 --- bsd/swapinternal.cc.orig	Tue Nov 16 23:16:20 1999
 +++ bsd/swapinternal.cc	Tue Aug 21 11:27:26 2001
-@@ -437,16 +437,17 @@
+@@ -459,16 +459,17 @@
  #endif /* XOSVIEW_FREEBSD */
  
  void

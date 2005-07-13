@@ -6,6 +6,7 @@
  void
 -BSDGetSwapInfo(int* total, int* free);
 +BSDGetSwapInfo(int64_t* total, int64_t* free);
+ #endif
  
  void
 -BSDGetSwapCtlInfo(int* total, int* free);
