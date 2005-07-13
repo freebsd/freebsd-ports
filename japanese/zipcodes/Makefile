@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zipcodes
-PORTVERSION=	20050325
+PORTVERSION=	20050630
 CATEGORIES=	japanese misc
 MASTER_SITES=	http://dist.bsdlab.org/
 DISTFILES=	ken_all-${PORTVERSION_K}.lzh jigyosyo-${PORTVERSION_J}.lzh
@@ -24,7 +24,7 @@ NO_WRKSUBDIR=	yes
 
 USE_PERL5_BUILD=yes
 MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}" SCRIPTDIR=${SCRIPTDIR} PERL=${PERL}
-PORTVERSION_K?=	20050330
+PORTVERSION_K?=	20050630
 PORTVERSION_J?=	${PORTVERSION}
 
 post-extract:
@@ -32,8 +32,8 @@ post-extract:
 
 # for maintainance.
 fetch1:
-	fetch http://post.ah-tech.co.jp/zipcode/dl/kogaki/lzh/ken_all.lzh
-	fetch http://post.ah-tech.co.jp/zipcode/dl/jigyosyo/lzh/jigyosyo.lzh
+	fetch http://www.post.japanpost.jp/zipcode/dl/kogaki/lzh/ken_all.lzh
+	fetch http://www.post.japanpost.jp/zipcode/dl/jigyosyo/lzh/jigyosyo.lzh
 	chmod og+r *.lzh
 
 fetch2:
