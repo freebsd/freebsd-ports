@@ -1,0 +1,14 @@
+--- README.orig	Fri May 16 12:25:35 2003
++++ README	Thu Jul  7 17:01:27 2005
+@@ -80,9 +80,9 @@
+          1. Opening configuration file
+                 * Create configuration document object:
+ 
+-                  DOTCONFDocument * conf = new DOTCONFDocument(DOTCONFDocument::CASEINSENSETIVE);
++                  DOTCONFDocument * conf = new DOTCONFDocument(DOTCONFDocument::CASEINSENSITIVE);
+                   or
+-                  DOTCONFDocument * conf = new DOTCONFDocument(DOTCONFDocument::CASESENSETIVE);
++                  DOTCONFDocument * conf = new DOTCONFDocument(DOTCONFDocument::CASESENSITIVE);
+                 * [OPTIONAL] Set required options
+ 
+                   const char * requiredOptions[] = {"Users", NULL};
