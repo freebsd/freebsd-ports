@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	slimeforest
-PORTVERSION=	0.51
-PORTREVISION=	1
+PORTVERSION=	0.53
 CATEGORIES=	japanese games linux
-MASTER_SITES=	http://lrnj.com/sfa/
+MASTER_SITES=	http://lrnj.com/
 DISTNAME=	sfa
 EXTRACT_SUFX=	.tgz
 
@@ -22,12 +21,12 @@ NO_BUILD=	yes
 USE_LINUX=	yes
 
 WRKSRC=		${WRKDIR}/slimeforest
-FIND_DIRS=		-type d \! -empty
-FIND_EXEC=		\! -type d -and -perm -a+x \! -name "*.bak" \! -name "*.orig"
-FIND_DATA=		\! -type d -and \! -perm -a+x -and \! -name "*.txt"
-LINK_OPTS=		-s
+FIND_DIRS=	-type d \! -empty
+FIND_EXEC=	\! -type d -and -perm -a+x \! -name "*.bak" \! -name "*.orig"
+FIND_DATA=	\! -type d -and \! -perm -a+x -and \! -name "*.txt"
+LINK_OPTS=	-s
 
-REPLACE_FILES=		runfs runwin
+REPLACE_FILES=	runfs runwin
 
 post-patch:
 	@for FILE in ${REPLACE_FILES}; do \
