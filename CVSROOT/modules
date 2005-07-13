@@ -300,6 +300,7 @@ alexandria	ports/deskutils/alexandria
 alf		ports/devel/alf
 algae		ports/math/algae
 algotutor	ports/math/algotutor
+alienblaster	ports/games/alienblaster
 alienwah	ports/audio/alienwah
 align		ports/textproc/align
 alignmargins	ports/print/alignmargins
