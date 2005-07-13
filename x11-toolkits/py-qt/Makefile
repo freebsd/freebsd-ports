@@ -6,17 +6,17 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.14.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/snapshots/PyQt/ \
 		http://freebsd.ricin.com/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PyQt-x11-gpl-snapshot-20050706
+DISTNAME=	PyQt-x11-gpl-snapshot-20050709
 
 MAINTAINER=	danny@ricin.com
 COMMENT=	Python bindings for the Qt toolkit
 
-LIB_DEPENDS=	qscintilla.5:${PORTSDIR}/x11-toolkits/qscintilla
+LIB_DEPENDS=	qscintilla.6:${PORTSDIR}/x11-toolkits/qscintilla
 BUILD_DEPENDS=	${LOCALBASE}/bin/sip:${PORTSDIR}/devel/py-sip
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
