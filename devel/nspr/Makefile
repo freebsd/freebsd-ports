@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nspr
-PORTVERSION=	4.4.1
-PORTREVISION=	1
+PORTVERSION=	4.6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	nspr/releases/v${PORTVERSION}/src
@@ -44,5 +43,28 @@ do-install:
 .for lib in ${LIBS}
 	${LN} -sf ${lib} ${PREFIX}/lib/${lib:S/.1$//}
 .endfor
+
+prtests:
+	${GMAKE} -C ${WRKSRC}/pr/tests runtests
+
+libtests:
+	${GMAKE} -C ${WRKSRC}/lib/tests
+	${WRKSRC}/lib/tests/string
+	${WRKSRC}/lib/tests/base64t
+	# The test below is commented out, because arena requires
+	# command-line arguments. If you can provide reasonable values
+	# for it, please contact ${MAINTAINER}. Thank you.
+	#	${WRKSRC}/lib/tests/arena
+	#
+
+#post-build test: libtests	# prtests
+	#
+	#######################################################
+	# Several parts of the NSPR's comprehensive self-test
+	# suite appear broken. Please, consider typing
+	#	make prtests
+	# To run them anyway. Your help in investigating
+	# any of the failures would be most appreciated.
+	# Please, contact ${MAINTAINER} with any patches. Thank you.
 
 .include <bsd.port.mk>
