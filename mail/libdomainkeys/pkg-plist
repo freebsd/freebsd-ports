@@ -1,3 +1,4 @@
+include/dktrace.h
 include/domainkeys.h
 lib/libdomainkeys.a
 lib/libdomainkeys.so
