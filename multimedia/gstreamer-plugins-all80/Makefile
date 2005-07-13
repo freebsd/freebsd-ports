@@ -35,7 +35,7 @@ WITHOUT_SWFDEC=	yes	# Depeneds on liboil, does not build on 4.x
 .if !defined(WITHOUT_SHOUT) && !defined(WITHOUT_SHOUT2)
 WITHOUT_SHOUT=	yes
 .endif
-# Jpeg & Jpeg-mmx conflicts
+# Jpeg & Jpeg-mmx Conflict
 .if ${ARCH}!="i386"
 WITHOUT_JPEG-MMX=	yes
 .else

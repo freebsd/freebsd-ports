@@ -6,7 +6,7 @@
 #
 
 CATEGORIES=	audio
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	Gstreamer ladspa (Linux Audio Developer's Simple Plugin API) plugin
 

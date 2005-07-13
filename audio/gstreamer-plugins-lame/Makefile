@@ -6,7 +6,7 @@
 #
 
 CATEGORIES=	audio
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	Gstreamer mp3 encode plugin
 
