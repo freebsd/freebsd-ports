@@ -5,15 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	metabar
-PORTVERSION=	0.6
+PORTVERSION=	0.8
 CATEGORIES=	deskutils kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Sidebar plugin for Konqueror
-
-EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_KDEBASE_VER=3
