@@ -16,9 +16,6 @@ COMMENT=	Text user interface using the xine library
 
 LIB_DEPENDS=	xine.13:${PORTSDIR}/multimedia/libxine
 
-# configure rejects amd64
-ONLY_FOR_ARCHS=	i386
-
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
