@@ -11349,6 +11349,7 @@ sudo		ports/security/sudo
 sudoscript	ports/security/sudoscript
 sudosh		ports/security/sudosh
 sugarcrm	ports/deskutils/sugarcrm
+sulci		ports/net/sulci
 sun-wtk		ports/java/sun-wtk
 sunclock	ports/astro/sunclock
 sunterlib	ports/devel/sunterlib
