@@ -8,7 +8,7 @@
 PORTNAME=	sshbuddy
 PORTVERSION=	1.05
 CATEGORIES=	misc
-MASTER_SITES=	http://www.linuxmafia.com/pub/linux/security/sshbuddy/
+MASTER_SITES=	http://linuxmafia.com/pub/linux/security/sshbuddy/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and small GUI utility to manage ssh sessions

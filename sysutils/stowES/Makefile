@@ -10,7 +10,7 @@ PORTNAME=	stowES
 PORTVERSION=	0.5.4
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.inf.tu-dresden.de/~al10/stowES/download/
+MASTER_SITES=	http://os.inf.tu-dresden.de/~adam/stowES/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	stow Enhancement Script
