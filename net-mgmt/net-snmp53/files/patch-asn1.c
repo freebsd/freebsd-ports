@@ -1,5 +1,5 @@
---- snmplib/asn1.c.orig.2	Sat Dec 11 00:07:16 2004
-+++ snmplib/asn1.c	Thu Feb 24 23:42:30 2005
+--- snmplib/asn1.c.orig	Fri Dec 10 18:07:16 2004
++++ snmplib/asn1.c	Fri Jun 10 20:09:34 2005
 @@ -181,6 +181,9 @@
  #include <in.h>
  #endif
@@ -32,7 +32,14 @@
      mask = ((u_long) 0xFF) << (8 * (sizeof(long) - 1));
      /*
       * mask is 0xFF000000 on a big-endian machine 
-@@ -2674,6 +2685,12 @@
+@@ -2668,19 +2679,26 @@
+     register long   integer = *intp;
+     int             testvalue = (*intp < 0) ? -1 : 0;
+     size_t          start_offset = *offset;
++    int             imaxbytes = 4;
+ 
+     if (intsize != sizeof(long)) {
+         _asn_size_err(errpre, intsize, sizeof(long));
          return 0;
      }
  
@@ -45,7 +52,15 @@
      if (((*pkt_len - *offset) < 1) && !(r && asn_realloc(pkt, pkt_len))) {
          return 0;
      }
-@@ -2823,6 +2840,10 @@
+     *(*pkt + *pkt_len - (++*offset)) = (u_char) integer;
+     integer >>= 8;
+ 
+-    while (integer != testvalue) {
++    while (integer != testvalue && (--imaxbytes)) {
+         if (((*pkt_len - *offset) < 1)
+             && !(r && asn_realloc(pkt, pkt_len))) {
+             return 0;
+@@ -2823,6 +2841,10 @@
      if (intsize != sizeof(unsigned long)) {
          _asn_size_err(errpre, intsize, sizeof(unsigned long));
          return 0;

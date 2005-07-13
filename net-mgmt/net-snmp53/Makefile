@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	snmp
-PORTVERSION=	5.2.1
-PORTREVISION=	2
-PKGNAMEPREFIX=	net-
+PORTVERSION=	5.2.1.2
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	net-snmp
+PKGNAMEPREFIX=	net-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
+
+MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	An extendable SNMP implementation
 
 .if defined(WITH_INETADDRESS_HACK)
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-snmplib::mib.c
@@ -20,9 +22,6 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-snmplib::mib.c
 .if !defined(WITH_TKMIB)
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-local:Makefile.in
 .endif
-
-MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	An extendable SNMP implementation
 
 .if defined(WITH_TKMIB)
 RUN_DEPEND=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
@@ -103,15 +102,15 @@ NET_SNMP_MIB_MODULE_LIST=host disman/event-mib smux mibII/mta_sendmail mibII/tcp
 _NET_SNMP_MIB_MODULES=
 .for module1 in ${NET_SNMP_MIB_MODULE_LIST}
 _module1=${module1}
-_define= false
+_define=false
 . for module2 in ${NET_SNMP_MIB_MODULES}
 _module2=${module2}
 .  if ${_module1} == ${_module2}
-_define= true
+_define=true
 .  endif
 . endfor
 . if ${_define} == true
-_NET_SNMP_MIB_MODULES+= ${module1}
+_NET_SNMP_MIB_MODULES+=${module1}
 PLIST_SUB+=	WITH_${module1:C|.*/||:U}=""
 . else
 PLIST_SUB+=	WITH_${module1:C|.*/||:U}="@comment "
@@ -221,21 +220,20 @@ patch-autoconf:
 	@${MV} ${WRKSRC}/aclocal.m4.tmp ${WRKSRC}/aclocal.m4
 
 patch-script-files:
-.for file in ${SCRIPT_FILES}
+.for filename in ${SCRIPT_FILES}
 	@${REINPLACE_CMD} ${SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${WRKSRC}/local/${file}
+		${WRKSRC}/local/${filename}
 .endfor
 
 patch-startup-files:
-.for file in ${STARTUP_FILES}
+.for filename in ${STARTUP_FILES}
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/${file}.sample > ${WRKDIR}/${file}
+		${FILESDIR}/${filename}.sample > ${WRKDIR}/${filename}
 .endfor
 
 post-configure:
 	@${FIND} ${WRKSRC} -name Makefile | \
 	 ${XARGS} ${REINPLACE_CMD} -E -e '/^INSTALL[ 	]+=/s|$$| -m 755|'
-
 
 post-build:
 .if !defined(WITHOUT_PERL)
@@ -256,8 +254,8 @@ strip-files:
 	@cd ${PREFIX}/sbin; ${STRIP_CMD} ${SBIN_FILES}
 
 install-startup-files:
-.for file in ${STARTUP_FILES}
-	@${INSTALL_SCRIPT} ${WRKDIR}/${file} ${STARTUP_DIR}
+.for filename in ${STARTUP_FILES}
+	@${INSTALL_SCRIPT} ${WRKDIR}/${filename} ${STARTUP_DIR}
 .endfor
 
 install-config-files:
@@ -266,8 +264,8 @@ install-config-files:
 install-doc-files:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-. for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+. for filename in ${DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${filename} ${DOCSDIR}
 . endfor
 .endif
 
