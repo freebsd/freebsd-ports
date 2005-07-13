@@ -10116,6 +10116,7 @@ qmqtool		ports/mail/qmqtool
 qmrtg		ports/mail/qmrtg
 qnetwalk	ports/games/qnetwalk
 qnxstyle	ports/x11-themes/qnxstyle
+qonk		ports/games/qonk
 qpage		ports/comms/qpage
 qpopper		ports/mail/qpopper
 qrash		ports/x11/qrash
