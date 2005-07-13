@@ -9,3 +9,4 @@ bin/sip
 %%PYTHON_SITELIBDIR%%/sipconfig.pyc
 %%PYTHON_SITELIBDIR%%/sipconfig.pyo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/sip

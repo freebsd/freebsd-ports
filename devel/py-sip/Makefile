@@ -6,12 +6,12 @@
 
 PORTNAME=	sip
 PORTVERSION=	4.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/sip/ \
 		http://freebsd.ricin.com/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	sip-snapshot-20050703
+DISTNAME=	sip-snapshot-20050709
 
 MAINTAINER=	danny@ricin.com
 COMMENT=	Python to C and C++ bindings generator
@@ -38,6 +38,8 @@ post-install:
 		doc/default.css doc/sipref.txt NEWS LICENSE ${DOCSDIR} && \
 		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} )
 .endif
+	@# pyqt/pykde use this
+	@${MKDIR} ${DATADIR}
 	@${PYTHON_CMD} -c "import sipconfig"
 	@${PYTHON_CMD} -O -c "import sipconfig"
 
