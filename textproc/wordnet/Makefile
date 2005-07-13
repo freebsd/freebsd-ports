@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.cogsci.princeton.edu/pub/wordnet/${PORTVERSION}/ \
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Dictionaries and thesauri with devel. libraries (C, TCL) and browsers
 
-LIB_DEPENDS=	tk${TCL_VER}.1:${PORTSDIR}/x11-toolkits/tk${TCL_VER}
+LIB_DEPENDS=	tk${TCL_VER}:${PORTSDIR}/x11-toolkits/tk${TCL_VER}
 
 # The vendor packages up a lot of useless precompiled binaries
 # for a few platforms with the source code. Do not extract them:
