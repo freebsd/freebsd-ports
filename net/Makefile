@@ -782,6 +782,7 @@
     SUBDIR += straw
     SUBDIR += stund
     SUBDIR += suckblow
+    SUBDIR += sulci
     SUBDIR += sup
     SUBDIR += svnc
     SUBDIR += tac_plus-libradius
