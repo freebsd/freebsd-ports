@@ -13,7 +13,6 @@
     SUBDIR += CaribbeanStud
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
-    SUBDIR += qnetchess
     SUBDIR += abridge
     SUBDIR += abuse
     SUBDIR += abuse_sdl
@@ -414,6 +413,7 @@
     SUBDIR += qgo
     SUBDIR += qix
     SUBDIR += qkmj
+    SUBDIR += qnetchess
     SUBDIR += qnetwalk
     SUBDIR += qstat
     SUBDIR += quake2forge
