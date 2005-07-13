@@ -801,7 +801,6 @@
     SUBDIR += wiliki
     SUBDIR += winhelpcgi
     SUBDIR += wml
-    SUBDIR += wmnetselect
     SUBDIR += wnews
     SUBDIR += wordpress
     SUBDIR += wordpress-mu
