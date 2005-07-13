@@ -25,6 +25,7 @@
     SUBDIR += afternoonstalker
     SUBDIR += alephone
     SUBDIR += alephone-data
+    SUBDIR += alienblaster
     SUBDIR += amphetamine
     SUBDIR += amy
     SUBDIR += an
