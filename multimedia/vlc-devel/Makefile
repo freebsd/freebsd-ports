@@ -408,7 +408,7 @@ DEFAULT_CDROM_DEVICE=/dev/acd0
 .endif
 
 .if defined(WITH_SKINS) && !defined(WITHOUT_SKINS)
-BUILD_DEPENDS+=	libtar:${PORTSDIR}/devel/libtar
+LIB_DEPENDS+=	libtar.0:${PORTSDIR}/devel/libtar
 CONFIGURE_ARGS+=--enable-skins2 --enable-skins
 USE_XLIB=	yes
 .else
