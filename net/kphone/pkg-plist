@@ -15,6 +15,7 @@ bin/kphone
 %%DATADIR%%/translations/kphone_fr.qm
 %%DATADIR%%/translations/kphone_hu.qm
 %%DATADIR%%/translations/kphone_pt_BR.qm
+%%DATADIR%%/translations/kphone_pl_PL.qm
 %%DATADIR%%/translations/kphone_sv.qm
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%/icons
