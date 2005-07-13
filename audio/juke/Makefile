@@ -18,6 +18,10 @@ GNU_CONFIGURE=		yes
 
 MAN1=			juke.1
 
+.if defined(WITH_VI_BINDINGS)
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-vi
+.endif
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/juke.conf ${PREFIX}/etc/juke.conf.sample
 	@${SED} 's,PREFIX,${PREFIX},' ${PKGMESSAGE}
