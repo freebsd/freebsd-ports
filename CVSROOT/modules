@@ -6792,6 +6792,7 @@ offix-printer	ports/print/offix-printer
 offix-trash	ports/deskutils/offix-trash
 offlineimap	ports/mail/offlineimap
 oftpd		ports/ftp/oftpd
+ogg2mp3		ports/audio/ogg2mp3
 oggsplit	ports/audio/oggsplit
 ogle		ports/multimedia/ogle
 ogle-gui	ports/multimedia/ogle-gui
