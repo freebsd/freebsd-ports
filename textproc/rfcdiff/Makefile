@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rfcdiff
-PORTVERSION=	1.23
-PORTREVISION=	1
+PORTVERSION=	1.25
 CATEGORIES=	textproc
 MASTER_SITES=	http://ietf.levkowetz.com/tools/${PORTNAME}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
