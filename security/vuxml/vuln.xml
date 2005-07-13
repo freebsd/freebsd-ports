@@ -99,7 +99,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>net-snmp</name>
-	<range><gt>0</gt></range>
+	<range><lt>5.2.1.2</lt></range>
       </package>
     </affects>
     <description>
@@ -127,6 +127,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-05-23</discovery>
       <entry>2005-07-09</entry>
+      <modified>2005-07-13</modified>
     </dates>
   </vuln>
 
