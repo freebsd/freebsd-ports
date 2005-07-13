@@ -5899,6 +5899,7 @@ mencal		ports/deskutils/mencal
 menushki	ports/misc/menushki
 meqcc		ports/games/meqcc
 mercator	ports/devel/mercator
+mercurial	ports/devel/mercurial
 mercury		ports/net/mercury
 mergeant	ports/databases/mergeant
 mergelog	ports/www/mergelog
