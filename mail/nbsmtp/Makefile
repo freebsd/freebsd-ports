@@ -4,9 +4,11 @@
 #
 # $FreeBSD$
 #
+# WITH_SSL=yes	"Support for secure connection to mail server"
+#
 
 PORTNAME=	nbsmtp
-PORTVERSION=	0.98
+PORTVERSION=	0.99
 CATEGORIES=	mail
 MASTER_SITES=	http://www.gentoo-es.org/~ferdy/ \
 		http://www.it.uc3m.es/~ferdy/nbsmtp/
@@ -14,15 +16,30 @@ MASTER_SITES=	http://www.gentoo-es.org/~ferdy/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple program for outgoing SMTP delivery
 
-PLIST_FILES=	bin/nbsmtp
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+
+OPTIONS=	IPV6	"Support for IPv6 connections"			off \
+		DEBUG	"Enable debug information (for developers)"	off
+
+PLIST_FILES=	bin/nbsmtp
 
 MAN5=	nbsmtprc.5
 MAN8=	nbsmtp.8
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/nbsmtp ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/nbsmtp.8 ${MAN8PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/nbsmtprc.5 ${MAN5PREFIX}/man/man5
+.if defined(WITH_SSL)
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=	--enable-ssl
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
+.endif
+
+.if !defined(WITHOUT_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+.endif
+
+.include <bsd.port.post.mk>
