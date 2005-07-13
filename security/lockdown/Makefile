@@ -16,6 +16,12 @@ COMMENT=	Hardening script for FreeBSD
 
 MAN1=		editfile.1 editfstab.1 editkernel.1 editlogin.1 editttys.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not build on 4.x"
+.endif
+
 INSTALLS_SHLIB= yes
 
 WRKSRC=		${WRKDIR}/lockdown
@@ -28,4 +34,4 @@ do-install:
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/lockdown ${PREFIX}/bin/lockdown
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
