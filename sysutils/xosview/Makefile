@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xosview
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,10 +21,6 @@ USE_REINPLACE=	yes
 MAN1=		xosview.1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 600000
-BROKEN=		"Configure fails on FreeBSD >= 6.x"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,iostream.h,iostream,' \
@@ -46,7 +42,7 @@ post-patch:
 		${WRKSRC}/fieldmeter.cc \
 		${WRKSRC}/fieldmeterdecay.cc \
 		${WRKSRC}/fieldmetergraph.cc
-	@${REINPLACE_CMD} -e 's,-O4 -pipe,,' \
+	@${REINPLACE_CMD} -e 's,-O4,,' \
 		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

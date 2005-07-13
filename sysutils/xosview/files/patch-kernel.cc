@@ -1,6 +1,6 @@
---- bsd/kernel.cc.orig	Tue Oct  9 10:40:51 2001
-+++ bsd/kernel.cc	Mon Oct 27 20:03:03 2003
-@@ -46,6 +46,7 @@
+--- bsd/kernel.cc.orig	Tue Oct 14 03:53:17 2003
++++ bsd/kernel.cc	Thu Mar 17 23:26:49 2005
+@@ -54,6 +54,7 @@
  #endif
  
  #ifdef HAVE_DEVSTAT
@@ -8,8 +8,41 @@
  #include <devstat.h>
  #include <stdlib.h>	/*  For malloc().  */
  void DevStat_Init();
-@@ -297,7 +298,12 @@
-   while (nlp && nlp->n_name) {
+@@ -211,19 +212,28 @@
+ 
+ { "_bufspace" },
+ #define BUFSPACE_SYM_INDEX      3
++#if __FreeBSD_version < 500000
+ { "_intr_countp" },
+ #define INTRCOUNTP_SYM_INDEX 	4
++{ DUMMY_SYM },
++#define DUMMY_5			5
++#else
++{ "_intrnames" },
++#define INTRNAMES_SYM_INDEX 	4
++{ "_eintrnames" },
++#define EINTRNAMES_SYM_INDEX 	5
++#endif /* FreeBSD < 5.x */
+ { "_intrcnt" },
+-#define INTRCNT_SYM_INDEX 	5
++#define INTRCNT_SYM_INDEX 	6
+ { "_eintrcnt" },
+-#define EINTRCNT_SYM_INDEX 	6
++#define EINTRCNT_SYM_INDEX 	7
+ 
+ #ifndef HAVE_DEVSTAT
+ 
+ { "_dk_ndrive" },
+-#define DK_NDRIVE_SYM_INDEX     7
++#define DK_NDRIVE_SYM_INDEX     8
+ { "_dk_wds" },
+-#define DK_WDS_SYM_INDEX        8
++#define DK_WDS_SYM_INDEX        9
+ 
+ #endif /*HAVE_DEVSTAT */
+ 
+@@ -329,7 +339,12 @@
+   while (nlp && nlp->n_name && strncmp(nlp->n_name, DUMMY_SYM, strlen(DUMMY_SYM))) {
      if ((nlp->n_type == 0) || (nlp->n_value == 0))
        /*errx (-1, "kvm_nlist() lookup failed for symbol '%s'.", nlp->n_name);*/
 +#if defined(XOSVIEW_FREEBSD) && defined(__alpha__)
@@ -21,16 +54,7 @@
      nlp++;
    }
  #ifdef HAVE_DEVSTAT
-@@ -493,7 +499,7 @@
- //
- 
- void
--BSDGetSwapCtlInfo(int *totalp, int *freep) {
-+BSDGetSwapCtlInfo(int64_t *totalp, int64_t *freep) {
-   int	totalinuse, totalsize;
-   int rnswap, nswap = swapctl(SWAP_NSWAP, 0, 0);
-   struct swapent *swapiter;
-@@ -557,13 +563,21 @@
+@@ -597,13 +612,21 @@
  	 * Make sure that the userland devstat version matches the kernel
  	 * devstat version.
  	 */
@@ -52,7 +76,7 @@
  		nodisk++;
  		return;
  	}
-@@ -578,7 +592,11 @@
+@@ -618,7 +641,11 @@
  	 * changed here, since it almost certainly has.  We only look for
  	 * errors.
  	 */
@@ -64,7 +88,7 @@
  		nodisk++;
  		return;
  	}
-@@ -590,7 +608,11 @@
+@@ -630,7 +657,11 @@
  
  	/* only interested in disks */
  	matches = NULL;
@@ -76,7 +100,7 @@
  		nodisk++;
  		return;
  	}
-@@ -605,7 +627,11 @@
+@@ -645,7 +676,11 @@
  	 * device list has changed, so we don't look for return values of 0
  	 * or 1.  If we get back -1, though, there is an error.
  	 */
@@ -88,7 +112,7 @@
  		       &num_selections, &select_generation,
  		       generation, cur.dinfo->devices, num_devices,
  		       matches, num_matches,
-@@ -632,7 +658,11 @@
+@@ -672,7 +707,11 @@
  		 * the selection process again, in case a device that we
  		 * were previously displaying has gone away.
  		 */
@@ -100,7 +124,7 @@
  		case -1:
  			return (0);
  		case 1: {
-@@ -640,7 +670,11 @@
+@@ -680,7 +719,11 @@
  
  			num_devices = cur.dinfo->numdevs;
  			generation = cur.dinfo->generation;
@@ -112,7 +136,7 @@
  					    &num_selections, &select_generation,
  					    generation, cur.dinfo->devices,
  					    num_devices, matches, num_matches,
-@@ -664,14 +698,22 @@
+@@ -704,14 +747,22 @@
  		 * Calculate elapsed time up front, since it's the same for all
  		 * devices.
  		 */
@@ -135,7 +159,7 @@
  			return (0);
  		}
  
-@@ -685,7 +727,11 @@
+@@ -725,7 +776,11 @@
  
  			di = dev_select[dn].position;
  
@@ -147,7 +171,7 @@
  				  &last.dinfo->devices[di], busy_seconds,
  				  &total_bytes, &total_transfers,
  				  NULL, NULL,
-@@ -700,7 +746,11 @@
+@@ -740,7 +795,11 @@
  		last.dinfo = cur.dinfo;
  		cur.dinfo = tmp_dinfo;
  
@@ -159,7 +183,7 @@
  
  	} else {
  		/* no disks found ? */
-@@ -828,25 +878,25 @@
+@@ -912,25 +971,26 @@
    OpenKDIfNeeded(); 
    nintr = (nlst[EINTRCNT_SYM_INDEX].n_value -
  	   nlst[INTRCNT_SYM_INDEX].n_value)   / sizeof(int);
@@ -189,17 +213,46 @@
  BSDGetIntrStats (unsigned long intrCount[NUM_INTR]) {
 -#ifdef XOSVIEW_FREEBSD
 +#if defined(XOSVIEW_FREEBSD) && defined(__i386__)
++#if __FreeBSD_version < 500000
      /* FreeBSD has an array of interrupt counts, indexed by device number.
         These are also indirected by IRQ num with intr_countp: */
      safe_kvm_read (nlst[INTRCOUNTP_SYM_INDEX].n_value,
-@@ -875,8 +925,8 @@
-       intrCount[i] = kvm_intrptrs[i];
- #endif /* _BSDI_VERSION */
- 
--#else /* XOSVIEW_FREEBSD */
--  //  NetBSD/OpenBSD version, based on vmstat.c.  Note that the pc532
-+#else /* XOSVIEW_FREEBSD & i386 */
-+  //  NetBSD/OpenBSD & FreeBSD/Alpha version, based on vmstat.c.  Note that the pc532 
-   //  platform does support intrcnt and eintrcnt, but vmstat uses
-   //  the more advanced event counters to provide software
-   //  counts.  We'll just use the intrcnt array here.  If anyone
+@@ -944,6 +1004,38 @@
+ 	    sizeof(unsigned long);
+ 	intrCount[i] = kvm_intrcnt[idx];
+     }
++#else /* FreeBSD 5.x and 6.x */
++    /* This code is stolen from vmstat */
++    unsigned long *kvm_intrcnt;
++    char *kvm_intrname;
++    size_t inamlen, intrcntlen;
++    unsigned int i, nintr;
++    int d;
++
++    intrcntlen = (nlst[EINTRCNT_SYM_INDEX].n_value - nlst[INTRCNT_SYM_INDEX].n_value);
++    inamlen = nlst[EINTRNAMES_SYM_INDEX].n_value - nlst[INTRNAMES_SYM_INDEX].n_value;
++    nintr = intrcntlen / sizeof(unsigned long);
++
++    if (((kvm_intrcnt = (unsigned long *)malloc(intrcntlen)) == NULL) || 
++	((kvm_intrname = (char *)malloc(inamlen)) == NULL))
++      err(1, "malloc()");
++
++    safe_kvm_read (nlst[INTRCNT_SYM_INDEX].n_value, kvm_intrcnt, intrcntlen);
++    safe_kvm_read (nlst[INTRNAMES_SYM_INDEX].n_value, kvm_intrname, inamlen);
++
++    /* kvm_intrname has the ASCII names of the IRQs, every null-terminated
++     * string corresponds to a value in the kvm_intrcnt array */
++    for (i=0; i < nintr; i++) {
++	if (kvm_intrname[0] != '\0' && (*kvm_intrcnt != 0)) {
++	  /* Figure out which irq we have here */
++	    if (1 == sscanf(kvm_intrname, "irq%d:", &d))
++	      if (d < NUM_INTR)
++		intrCount[d] = *kvm_intrcnt;
++	}
++	kvm_intrcnt++;
++	kvm_intrname += strlen(kvm_intrname) + 1;
++    }
++#endif
+ #elif defined (XOSVIEW_BSDI)
+     int nintr = 16;
+ #if _BSDI_VERSION >= 199802 /* BSD/OS 4.x */
