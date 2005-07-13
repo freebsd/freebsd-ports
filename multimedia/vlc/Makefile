@@ -418,7 +418,7 @@ CONFIGURE_ARGS+=	--disable-arts
 
 .if !defined(WITHOUT_CDROM)
 LIB_DEPENDS+=	vcdinfo.1:${PORTSDIR}/multimedia/vcdimager \
-		cdio.5:${PORTSDIR}/sysutils/libcdio
+		cdio.6:${PORTSDIR}/sysutils/libcdio
 CONFIGURE_ARGS+=--enable-vcd \
 		--enable-libcddb \
 		--enable-libcdio \
