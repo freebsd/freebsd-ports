@@ -15,7 +15,11 @@ DISTNAME=	virtual_jay_peak_linux_1_1a
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A simulation of snowboarding at the Jay Peak resort in Vermont
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/graphics/linux_mesa3
+.if defined(WITH_NVIDIA_GL)
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+.else
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
+.endif
 
 WRKSRC=		${WRKDIR}/soulride
 ONLY_FOR_ARCHS=	i386
