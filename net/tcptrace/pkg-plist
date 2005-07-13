@@ -1,18 +1,18 @@
 bin/tcptrace
 bin/xpl2gpl
-share/doc/tcptrace/ARGS
-share/doc/tcptrace/CHANGES
-share/doc/tcptrace/COPYING
-share/doc/tcptrace/COPYRIGHT
-share/doc/tcptrace/FAQ
-share/doc/tcptrace/README
-share/doc/tcptrace/README.mailing_list
-share/doc/tcptrace/README.modules
-share/doc/tcptrace/README.tline_graphs
-share/doc/tcptrace/README.tput_graphs
-share/doc/tcptrace/README.version
-share/doc/tcptrace/README.xpl2gpl
-share/doc/tcptrace/THANKS
-share/doc/tcptrace/WWW
-share/doc/tcptrace/dot_tcptracerc
-@dirrm share/doc/tcptrace
+%%PORTDOCS%%%%DOCSDIR%%/ARGS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.mailing_list
+%%PORTDOCS%%%%DOCSDIR%%/README.modules
+%%PORTDOCS%%%%DOCSDIR%%/README.tline_graphs
+%%PORTDOCS%%%%DOCSDIR%%/README.tput_graphs
+%%PORTDOCS%%%%DOCSDIR%%/README.version
+%%PORTDOCS%%%%DOCSDIR%%/README.xpl2gpl
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/WWW
+%%PORTDOCS%%%%DOCSDIR%%/dot_tcptracerc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
