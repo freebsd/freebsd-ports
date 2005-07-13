@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	libssh2
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	security devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	a library implementing the SSH2 protocol
+COMMENT=	A library implementing the SSH2 protocol
 
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
