@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-Webmail-Gmail
-PORTVERSION=	1.03.1
+PORTVERSION=	1.04
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -25,8 +25,9 @@ MAN3=		Mail::Webmail::Gmail.3
 
 .include <bsd.port.pre.mk>
 
+post-patch:
 .if ${PERL_LEVEL} < 500601
-IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5 then try again
+	@${PERL} -pi -e 's/\r//g;s/^our/my/g' ${WRKSRC}/lib/Mail/Webmail/Gmail.pm
 .endif
 
 .include <bsd.port.post.mk>
