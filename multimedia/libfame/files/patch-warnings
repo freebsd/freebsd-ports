@@ -131,3 +131,26 @@ Include the missing header:
 -  unsigned int weight_left, weight_top, weight_topright;
  
    unsigned char *shape;
+--- src/fame_malloc.c	Fri Jun 20 08:40:30 2003
++++ src/fame_malloc.c	Tue Jul 12 19:59:14 2005
+@@ -22,4 +22,6 @@
+ 
+ #include <stdlib.h>
++#include <stdio.h>
++#include <inttypes.h>
+ 
+ void* fame_malloc(size_t size)
+@@ -37,7 +39,11 @@
+ 
+   ptr = (unsigned char*) malloc(size+ALIGN);
+-  aligned = (unsigned char*) (((unsigned int)ptr & (~(ALIGN-1))) + ALIGN );
++  if (ptr == NULL) {
++	perror("fame_malloc");
++	exit(1);
++  }
++  aligned = (unsigned char*) (((uintptr_t)ptr & (~(ALIGN-1))) + ALIGN );
+   padding = aligned - 1;
+-  *padding = (ALIGN-1) - ((unsigned int)ptr & (ALIGN-1));
++  *padding = (ALIGN-1) - ((uintptr_t)ptr & (ALIGN-1));
+ 
+   return ((void*)aligned);
