@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ssh2
-PORTVERSION=	0.7
+PORTVERSION=	0.9
 CATEGORIES=	security pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -21,8 +21,5 @@ LIB_DEPENDS=	ssh2:${PORTSDIR}/security/libssh2
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
-
-#post-install:
-#	@${MV} ${PREFIX}/lib/
 
 .include <bsd.port.mk>
