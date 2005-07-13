@@ -7,6 +7,7 @@
 
 PORTNAME=	dk-milter
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dk-milter
@@ -49,6 +50,7 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' \
 		-e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|' \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		-e "s|\`-O'|\`${CFLAGS}'|g" \
 		${WRKSRC}/devtools/OS/FreeBSD
 	${SED} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
