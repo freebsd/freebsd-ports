@@ -6,14 +6,14 @@
  
 -char *FileName  = "tspc.conf";
 -char *LogFile   = "tspc.log";
-+char *FileName  = "/usr/local/etc/tspc.conf";
++char *FileName  = "PREFIX/etc/tspc.conf";
 +char *LogFile   = "/var/log/tspc.log";
  char *LogFileName = NULL;
  char *ScriptInterpretor = "/bin/sh";
  char *ScriptExtension = "sh";
  char *ScriptDir = NULL;
 -char *TspHomeDir = "/usr/local/etc/tsp";
-+char *TspHomeDir = "/usr/local/share/tspc2";
++char *TspHomeDir = "PREFIX/share/tspc2";
  char DirSeparator = '/';
  
  int Verbose = 0;

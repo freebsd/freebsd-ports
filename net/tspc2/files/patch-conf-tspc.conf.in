@@ -5,7 +5,7 @@
  #  from $tsp_dir/template
  #
 -tsp_dir=@tsp_dir@
-+tsp_dir=/usr/local/share/tspc2
++tsp_dir=PREFIX/share/tspc2
  
  #
  # authentication method:
