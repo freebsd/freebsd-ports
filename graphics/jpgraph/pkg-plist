@@ -11,6 +11,7 @@
 %%DATADIR%%/jpg-config.inc
 %%DATADIR%%/jpgraph_antispam-digits.php
 %%DATADIR%%/jpgraph_antispam.php
+%%DATADIR%%/jpgraph_date.php
 %%DATADIR%%/jpgraph_iconplot.php
 %%DATADIR%%/jpgraph_plotband.php
 %%DATADIR%%/jpgraph.php
@@ -36,6 +37,7 @@
 @dirrm %%DATADIR%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/accbarex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/alphabarex1.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/antispamex01.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/backgroundex01.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/backgroundex02.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/backgroundex03.php
@@ -44,6 +46,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/bar_csimex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/bar_csimex2.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/bar_csimex3.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/barformatcallbackex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/bargradex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/bargradex2.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/bargradex3.php
@@ -97,6 +100,9 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/centeredlineex03.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/centerlinebarex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/dateaxisex1.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/dateaxisex2.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/dateaxisex3.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/dateaxisex4.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/dbschemaex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/dupyaxisex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/example0.php
@@ -277,6 +283,10 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/pieex7.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/pieex8.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/pieex9.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/pielabelsex1.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/pielabelsex2.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/pielabelsex3.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/pielabelsex4.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/polarex0-180.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/polarex0.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/polarex1.php
@@ -358,6 +368,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/tiger_bkg.gif
 %%PORTDOCS%%%%EXAMPLESDIR%%/tiger_bkg.jpg
 %%PORTDOCS%%%%EXAMPLESDIR%%/tiger_bkg.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/timestampex01.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/titlecsimex01.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/topxaxisex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/worldmap1.jpg
