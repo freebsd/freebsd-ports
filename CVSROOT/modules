@@ -574,6 +574,7 @@ axis		ports/www/axis
 axpoint		ports/print/axpoint
 axyftp		ports/ftp/axyftp
 ayam		ports/graphics/ayam
+aylet		ports/audio/aylet
 ayttm		ports/net/ayttm
 az-aspell	ports/textproc/az-aspell
 azureus		ports/net/azureus
@@ -12427,6 +12428,7 @@ xataxx		ports/games/xataxx
 xautolock	ports/x11/xautolock
 xautomation	ports/x11/xautomation
 xawtv		ports/multimedia/xawtv
+xaylet		ports/audio/xaylet
 xbaby		ports/games/xbaby
 xbae		ports/x11-toolkits/xbae
 xballoon	ports/x11/xballoon
