@@ -289,6 +289,36 @@ share/sawfish/1.3/themes/Bubbles_Exact/maximize_overlay.png
 share/sawfish/1.3/themes/Bubbles_Exact/README.pl
 share/sawfish/1.3/themes/Bubbles_Exact/blue.png
 share/sawfish/1.3/themes/Bubbles_Exact/blank.png
+share/sawfish/1.3/themes/CoolClean/st_top_right_inactive.png
+share/sawfish/1.3/themes/CoolClean/bottom.png
+share/sawfish/1.3/themes/CoolClean/top_right_button_box_active.png
+share/sawfish/1.3/themes/CoolClean/top_active.png
+share/sawfish/1.3/themes/CoolClean/minimize_clicked.png
+share/sawfish/1.3/themes/CoolClean/menu_active.png
+share/sawfish/1.3/themes/CoolClean/top_right.png
+share/sawfish/1.3/themes/CoolClean/st_top_right_active.png
+share/sawfish/1.3/themes/CoolClean/title_bar_active.png
+share/sawfish/1.3/themes/CoolClean/bottom_right.png
+share/sawfish/1.3/themes/CoolClean/maximize_clicked.png
+share/sawfish/1.3/themes/CoolClean/s_top_right_inactive.png
+share/sawfish/1.3/themes/CoolClean/README
+share/sawfish/1.3/themes/CoolClean/s_top_right_active.png
+share/sawfish/1.3/themes/CoolClean/t_top_right_button_box_inactive.png
+share/sawfish/1.3/themes/CoolClean/s_menu_inactive.png
+share/sawfish/1.3/themes/CoolClean/right.png
+share/sawfish/1.3/themes/CoolClean/minimize_active.png
+share/sawfish/1.3/themes/CoolClean/title_bar_inactive.png
+share/sawfish/1.3/themes/CoolClean/maximize_active.png
+share/sawfish/1.3/themes/CoolClean/bottom_left.png
+share/sawfish/1.3/themes/CoolClean/s_menu_active.png
+share/sawfish/1.3/themes/CoolClean/theme.jl
+share/sawfish/1.3/themes/CoolClean/t_top_right_button_box_active.png
+share/sawfish/1.3/themes/CoolClean/close_clicked.png
+share/sawfish/1.3/themes/CoolClean/top_inactive.png
+share/sawfish/1.3/themes/CoolClean/menu_inactive.png
+share/sawfish/1.3/themes/CoolClean/top_right_button_box_inactive.png
+share/sawfish/1.3/themes/CoolClean/left.png
+share/sawfish/1.3/themes/CoolClean/close_normal.png
 share/sawfish/1.3/themes/Derivative/apple-red.png
 share/sawfish/1.3/themes/Derivative/menu-n.png
 share/sawfish/1.3/themes/Derivative/mval.png
@@ -992,9 +1022,6 @@ share/sawfish/1.3/themes/gorilla/.xvpics/tr.png
 share/sawfish/1.3/themes/gorilla/.xvpics/tr-u.png
 share/sawfish/1.3/themes/gorilla/.xvpics/focused.png
 share/sawfish/1.3/themes/gorilla/.xvpics/left.png
-share/sawfish/1.3/themes/gorilla/CVS/Repository
-share/sawfish/1.3/themes/gorilla/CVS/Root
-share/sawfish/1.3/themes/gorilla/CVS/Entries
 share/sawfish/1.3/themes/gorilla/unfocused.png
 share/sawfish/1.3/themes/gorilla/top.png
 share/sawfish/1.3/themes/gorilla/top-u.png
@@ -1221,7 +1248,6 @@ share/sawfish/1.3/themes/typo/README
 @dirrm share/sawfish/1.3/themes/mxflat/button-icons/square-6
 @dirrm share/sawfish/1.3/themes/mxflat/button-icons/square-9
 @dirrm share/sawfish/1.3/themes/mxflat/button-icons
-@dirrm share/sawfish/1.3/themes/gorilla/CVS
 @dirrm share/sawfish/1.3/themes/Klarth/Arrows
 @dirrm share/sawfish/1.3/themes/Klarth/Classic
 @dirrm share/sawfish/1.3/themes/Klarth/Math
@@ -1232,6 +1258,7 @@ share/sawfish/1.3/themes/typo/README
 @dirrm share/sawfish/1.3/themes/Big
 @dirrm share/sawfish/1.3/themes/Blackwindow
 @dirrm share/sawfish/1.3/themes/Bubbles_Exact
+@dirrm share/sawfish/1.3/themes/CoolClean
 @dirrm share/sawfish/1.3/themes/Derivative
 @dirrm share/sawfish/1.3/themes/DoubleHeliX
 @dirrm share/sawfish/1.3/themes/Elberg
