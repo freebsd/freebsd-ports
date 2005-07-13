@@ -7,6 +7,7 @@
 
 PORTNAME=	wmwifi
 PORTVERSION=	0.4
+PORTREVISION=	1
 DISTVERSIONSUFFIX=-bsd
 CATEGORIES=	net
 MASTER_SITES=	http://digitalssg.net/debian/
