@@ -1,0 +1,5 @@
+%%DATADIR%%/disk.dsk
+%%DATADIR%%/gag.iso
+%%PORTDOCS%%%%DOCSDIR%%/install.txt
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

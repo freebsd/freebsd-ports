@@ -163,6 +163,7 @@
     SUBDIR += fsbackup
     SUBDIR += ftrace
     SUBDIR += fvcool
+    SUBDIR += gag
     SUBDIR += ganglia-monitor-core
     SUBDIR += ganglia-webfrontend
     SUBDIR += gcdmaster

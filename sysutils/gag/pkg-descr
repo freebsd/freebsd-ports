@@ -1,0 +1,24 @@
+GAG (initials, in spanish, of Graphical Boot Manager) is a Boot Manager
+program. It's loaded when the computer is turned on and allows you to choose
+the operating system you want to use. Its main features are:
+
+* Allows boot of up to 9 different operating systems.
+* It can boot operating systems installed in primary and extended partitions.
+* Can be installed from nearly all operating systems.
+* GAG doesn't need its own partition. It installs itself in the first track of
+  the hard disk, wich is reserved for these kinds of programs. It can also be
+  instaled on a floppy disk, without using the hard disk.
+* It has a timer to boot a default operating system (selectable by the user).
+* The configuration menu can be protected with a password.
+* The program works in graphic mode, and has a lot of icons.
+* Hides the primary partitions.
+* Allows a password to be put on each operating system.
+* Allows the boot manager text to be translated to all languages.
+* Can exchange disk drives.
+* Has the SafeBoot system, that allows to boot if GAG is overwrited.
+* Supports a great variety of keyboards (QWERTY, AZERTY, QWERTZ and DVORAK).
+* Fully support for hard disks up to 4 terabytes (4096 gigabytes).
+* Full version and free software (distributed under GPL licence, with source).
+
+- Alejandro Pulver
+alejandro@varnet.biz
