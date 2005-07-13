@@ -560,6 +560,7 @@
     SUBDIR += maven
     SUBDIR += memcheck
     SUBDIR += mercator
+    SUBDIR += mercurial
     SUBDIR += meta-cvs
     SUBDIR += mico
     SUBDIR += mime
