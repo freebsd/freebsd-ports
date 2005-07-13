@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	kodos
-PORTVERSION=	2.4.5
-PORTREVISION=	1
+PORTVERSION=	2.4.6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://bsdchat.com/dist/dryice/
