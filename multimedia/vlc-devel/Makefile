@@ -144,6 +144,9 @@
 # WITHOUT_STREAM_PLUGINS=yes
 #  Disable build and install of Streaming plugins
 #
+# WITH_WIN32_CODECS=yes
+#  Support for win32 multimedia DLL's
+#
 # Other Knobs:
 #
 # DEBUG=yes
@@ -213,7 +216,7 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.8.2.20050705
+DISTVERSION=	0.8.2.20050712
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/vlc/snapshots/ \
 		${MASTER_SITE_LOCAL:S|$|:mozilla|} \
@@ -234,7 +237,7 @@ COMMENT=	Multimedia streaming server and player for various audio/video formats
 RUN_DEPEDNS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
-CONFLICTS=	vlc-*-0.8.1*
+CONFLICTS=	vlc-*-0.8.2*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-snapshot-${PORTVERSION:S/0.8.2.//}
 ### BROKEN -- Needs newer verision of toolame ###
@@ -344,6 +347,7 @@ OPTIONS=	AALIB "Console graphics support" Off \
 		TRANSCODE "Depends on multimedia/transcode" Off \
 		TWOLAME "Twolame Mpeg layer 2 audio Support" Off \
 		VORBIS "Vorbis support (implies WITH_OGG)" On \
+		WIN32_CODECS "Win32-codecs support (i386 only)" Off \
 		WXGTK "WxGtk+2 frontend" On \
 		X264 "H.264 AVC video codec" Off
 .endif
@@ -409,6 +413,13 @@ CONFIGURE_ARGS+=--enable-skins2 --enable-skins
 USE_XLIB=	yes
 .else
 CONFIGURE_ARGS+=--disable-skins2
+.endif
+
+.if ${ARCH}=="i386" && defined(WITH_WIN32_CODECS)
+RUN_DEPENDS+=	${LOCALBASE}/lib/win32/wmv8ds32.ax:${PORTSDIR}/multimedia/win32-codecs
+CONFIGURE_ARGS+=--enable-loader
+.else
+CONFIGURE_ARGS+=--disable-loader
 .endif
 
 .if !defined(WITHOUT_WXGTK)
@@ -795,6 +806,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|; \
 		s|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
 		${WRKSRC}/include/vlc_config.h
+.if ${ARCH}=="i386" && defined(WITH_WIN32_CODECS)
+	@${REINPLACE_CMD} -e 's|-DWIN32_PATH=\\"\\"|-DWIN32_PATH=\\"${LOCALBASE}/lib/win32\\"|' \
+		${WRKSRC}/loader/Makefile.in
+.endif
 
 pre-install:
 	${RM} -rf ${PLIST} ${FAKEDIR}
