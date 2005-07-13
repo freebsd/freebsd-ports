@@ -4951,6 +4951,7 @@ ksubeditor	ports/multimedia/ksubeditor
 ktagebuch	ports/deskutils/ktagebuch
 ktextdecode	ports/converters/ktextdecode
 ktoblzcheck	ports/finance/ktoblzcheck
+ktorrent	ports/net/ktorrent
 ktritoc		ports/games/ktritoc
 ku-ooodict-TR	ports/editors/ooodict-ku_TR
 kuake		ports/deskutils/kuake
