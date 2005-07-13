@@ -1,0 +1,24 @@
+nec2c is a translation of the NEC2 FORTRAN source code to the C language.
+The translation was performed mostly "by hand" and a lot of modifications
+to the original program were introduced in order to modernize the NEC2
+and to remove as many built-in limitations as possible. The attendant
+SOMNEC program was also translated to C and incorporated in nec2c as a
+function so that Sommerfeld ground solutions are a part of the program.
+
+Originally Written by:
+
+Numerical Electromagnetics Code (NEC2)  developed at Lawrence
+Livermore lab., Livermore, CA.  (contact G. Burke at 415-422-8414
+for problems with the NEC code. For problems with the vax implem-
+entation, contact J. Breakall at 415-422-8196 or E. Domning at 415
+422-5936)
+file created 4/11/80.
+
+Translation by:
+
+Neoklis Kyriazis  5B4AZ   Limassol, Cyprus, neoklisk@cytanet.com.cy
+
+WWW: http://www.si-list.org/swindex2.html#nec2c
+
+- Diane Bruce, VA3DB
+db@db.net

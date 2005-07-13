@@ -1,0 +1,18 @@
+--- Makefile.orig	Tue Jan 27 14:53:38 2004
++++ Makefile	Sat Jul  9 00:19:39 2005
+@@ -1,12 +1,11 @@
+ #Makefile for nec2c     21 Aug 2003
+
+-SHELL = /bin/sh
+-CC    = gcc -Wall -O3 -g
++all:	nec2c
+
+-objects = nec2c.o misc.o somnec.o
++objects = nec2c.o misc.o somnec.o carg.o
+
+ nec2c : $(objects)
+-	$(CC) -lm -lefence -o nec2c $(objects)
++	$(CC) -lm -o nec2c $(objects) -L${PREFIX}/lib -lccm
+
+ $(objects) : nec2c.h
+
