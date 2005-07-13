@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	php4
-PORTVERSION=	4.3.11
-PORTREVISION?=	1
+PORTVERSION=	4.4.0
+PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP:S,$,:release,} \
 		http://downloads.php.net/ilia/:rc \
@@ -84,9 +84,10 @@ CONFLICTS+=	php5-5* php5-cli-5* mod_php5-5* php5-cgi-5*
 CONFIGURE_ARGS+=--disable-cli
 .endif
 
+MAN1=		php-config.1 phpize.1
 .if ${PHP_SAPI} == "full" || ${PHP_SAPI} == "cli"
 PLIST_SUB+=	CLI=""
-MAN1=		php.1
+MAN1+=		php.1
 .else
 PLIST_SUB+=	CLI="@comment "
 .endif

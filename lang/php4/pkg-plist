@@ -1,6 +1,5 @@
 %%CLI%%bin/php
 bin/php-config
-bin/phpextdist
 bin/phpize
 etc/php.conf
 etc/php.ini-dist
