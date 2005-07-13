@@ -29,6 +29,7 @@
     SUBDIR += amphetamine
     SUBDIR += amy
     SUBDIR += an
+    SUBDIR += anagramarama
     SUBDIR += angband
     SUBDIR += antipolix
     SUBDIR += aop
