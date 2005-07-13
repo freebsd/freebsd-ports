@@ -235,7 +235,7 @@ LIB_DEPENDS+=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
 
 # libcdio
 .if ${GST_PLUGIN}=="cdio"
-LIB_DEPENDS+=	cdio.5:${PORTSDIR}/sysutils/libcdio
+LIB_DEPENDS+=	cdio.6:${PORTSDIR}/sysutils/libcdio
 PLIST_FILES=	${GST_LIB_DIR}/libgstcddasrc.so
 .endif
 
