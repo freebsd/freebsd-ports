@@ -515,6 +515,8 @@ atmsupport	ports/net/atmsupport
 atomix		ports/games/atomix
 atp		ports/news/atp
 atr3d		ports/games/atr3d
+atris		ports/games/atris
+atris-sounds	ports/games/atris-sounds
 aub		ports/news/aub
 aube		ports/audio/aube
 auctex		ports/print/auctex
