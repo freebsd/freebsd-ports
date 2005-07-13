@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	kphone
-PORTVERSION=	4.1.1
+PORTVERSION=	4.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.wirlab.net/kphone/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sylvioc@gmail.com
 COMMENT=	A voice over internet phone
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
