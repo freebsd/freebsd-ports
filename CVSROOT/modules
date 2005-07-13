@@ -698,6 +698,7 @@ bind8		ports/dns/bind8
 bind84		ports/dns/bind84
 bind9		ports/dns/bind9
 bind9-dlz	ports/dns/bind9-dlz
+bind9-sdb-ldap	ports/dns/bind9-sdb-ldap
 binder		ports/x11-fm/binder
 bindtest	ports/net/bindtest
 bing		ports/net/bing
