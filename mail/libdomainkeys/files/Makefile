@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 LIB = 	domainkeys
-SRCS=	dns_txt.c domainkeys.c
-INCS=	domainkeys.h
+SRCS=	dns_txt.c domainkeys.c dktrace.c
+INCS=	domainkeys.h dktrace.h
 
 SHLIB_MAJOR=	%%SHLIB_MAJOR%%
 
