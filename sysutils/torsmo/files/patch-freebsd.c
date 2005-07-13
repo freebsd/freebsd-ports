@@ -1,5 +1,5 @@
---- freebsd.c.orig	Wed Aug 25 20:24:24 2004
-+++ freebsd.c	Sun Jan  2 08:49:26 2005
+--- freebsd.c.dist	Wed Jul 13 09:34:20 2005
++++ freebsd.c	Wed Jul 13 09:34:26 2005
 @@ -4,14 +4,12 @@
  #include <stdio.h>
  #include <stdlib.h>
@@ -86,7 +86,30 @@
         
  	if (GETSYSCTL("hw.acpi.thermal.tz0.temperature", temp)) {
          	(void)fprintf(stderr, "Cannot read sysctl \"hw.acpi.thermal.tz0.temperature\"\n");
-@@ -344,4 +381,38 @@
+@@ -303,15 +340,19 @@
+ }
+ 
+ void get_battery_stuff(char *buf, unsigned int n, const char *bat) {
+-	int battime;
++	int battime, batlife, state;
+              
+ 	if (GETSYSCTL("hw.acpi.battery.time", battime))
+ 		(void)fprintf(stderr, "Cannot read sysctl \"hw.acpi.battery.time\"\n");
++	if (GETSYSCTL("hw.acpi.battery.life", batlife))
++		(void)fprintf(stderr, "Cannot read sysctl \"hw.acpi.battery.life\"\n");
++	if (GETSYSCTL("hw.acpi.acline", state))
++		(void)fprintf(stderr, "Cannot read sysctl \"hw.acpi.acline\"\n");
+                      
+ 	if (battime != -1)
+-        	snprintf(buf, n, "Discharging, remaining %d:%2.2d", battime / 60, battime % 60);
++        	snprintf(buf, n, "%d:%2.2d%s", battime / 60, battime % 60, (state? " (charging)":""));
+ 	else
+-        	snprintf(buf, n, "Battery is charging");
++		snprintf(buf, n, "%d%%%s", batlife, (state? " (charging)":""));
+ }
+ 
+ int open_i2c_sensor(const char *dev, const char *type, int n, int *div)
+@@ -344,4 +385,38 @@
  
  char* get_acpi_fan() {
  	return "";
