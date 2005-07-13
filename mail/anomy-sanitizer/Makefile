@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	anomy-sanitizer
-PORTVERSION=	1.66
+PORTVERSION=	1.71
 CATEGORIES=	mail security
 MASTER_SITES=	http://mailtools.anomy.net/dist/
 
