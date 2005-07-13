@@ -6513,6 +6513,7 @@ ndiff		ports/math/ndiff
 ndir		ports/sysutils/ndir
 nds-aspell	ports/textproc/nds-aspell
 neXtaw		ports/x11-toolkits/neXtaw
+nec2c		ports/comms/nec2c
 nedit		ports/editors/nedit
 nefu		ports/net-mgmt/nefu
 nemesis		ports/net/nemesis
