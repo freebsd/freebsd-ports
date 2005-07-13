@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	cfg
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.9
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
@@ -23,7 +23,6 @@ USE_LIBTOOL_VER=	15
 CONFIGURE_ARGS=	--with-ex=${LOCALBASE}
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
+MAN3=		cfg.3
 
-.include "${FILESDIR}/manpages.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
