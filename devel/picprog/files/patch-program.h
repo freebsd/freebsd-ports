@@ -1,6 +1,6 @@
---- program.h.orig	Tue Nov 19 12:53:12 2002
-+++ program.h	Tue Nov 19 12:53:20 2002
-@@ -31,6 +31,7 @@
+--- program.h.orig	Thu Jan  1 20:35:09 2004
++++ program.h	Fri Jul  8 21:44:23 2005
+@@ -30,6 +30,7 @@
  #ifndef H_PROGRAM
  #define H_PROGRAM
  
