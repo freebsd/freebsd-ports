@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	irc
-PORTVERSION=	2.11.1
+PORTVERSION=	2.11.1.1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.irc.org/irc/server/ \
 		ftp://ftp2.nchu.edu.tw/UNIX/IRC/server/ \
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.irc.org/irc/server/ \
 		ftp://ftp.archive.de.uu.net/pub/mirrors/ftp.irc.org/server/ \
 		ftp://ftp.iway.fr/pub/mirrors/ftp.irc.org/server/ \
 		ftp://ftp.nl.uu.net/pub/mirrors/ftp.irc.org/server/
-DISTNAME=	${PORTNAME}${PORTVERSION}
+DISTNAME=	${PORTNAME}2.11.1p1
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
