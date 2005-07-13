@@ -33,8 +33,11 @@ MASTER_SITES=	ftp://ftp.procmail.org/pub/procmail/ \
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	A local mail delivery agent
 
-# Global variables
-#
+.if defined(WITH_COURIER_MAILDIR_KLUDGE)
+PATCH_SITES=	http://www.john.net.au/pub/procmail-courier
+PATCHFILES=	procmail-authenticate.c-userMaildir.patch
+PATCH_DIST_STRIP=-p
+.endif
 
 USE_REINPLACE=	yes
 
