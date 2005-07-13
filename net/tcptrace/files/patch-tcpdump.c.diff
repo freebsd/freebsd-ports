@@ -1,0 +1,17 @@
+--- tcpdump.c.orig	Thu May  5 18:41:30 2005
++++ tcpdump.c	Thu May  5 18:41:53 2005
+@@ -112,10 +112,13 @@
+ 	/* for some reason, the windows version of tcpdump is using */
+ 	/* this.  It looks just like ethernet to me */
+       case PCAP_DLT_EN10MB:
+-	offset = find_ip_eth(buf); /* Here we check if we are dealing with Straight Ethernet encapsulation or PPPoE */
++	offset = find_ip_eth(buf); /* Here we check if we are dealing with Straight Ethernet encapsulation, PPPoE or .1q VLAN encapsulation */
+ 	memcpy(&eth_header, buf, EH_SIZE); /* save ether header */
+ 	switch (offset)
+ 	{
++		case EH_SIZE + ETHER_VLAN_ENCAP_LEN:
++			memcpy(&eth_header.ether_type, buf+EH_SIZE+2, 2);
++			/* FALLTHROUGH */
+ 		case EH_SIZE: /* straight Ethernet encapsulation */
+ 			memcpy((char *)ip_buf,buf+offset,iplen-offset);
+ 			callback_plast = ip_buf+iplen-offset-1;

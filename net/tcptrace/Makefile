@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tcptrace
-PORTVERSION=	6.6.0
+PORTVERSION=	6.6.7
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcptrace.org/download/
 
@@ -26,11 +26,13 @@ DOCFILES=	ARGS CHANGES COPYING COPYRIGHT FAQ README README.mailing_list \
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcptrace ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/xpl2gpl ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/tcptrace.man ${PREFIX}/man/man1/tcptrace.1
-	${MKDIR} ${PREFIX}/share/doc/tcptrace
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
 .for file in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/tcptrace
+	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
