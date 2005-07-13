@@ -543,8 +543,10 @@ bin/supybot
 %%PORTDOCS%%%%DOCSDIR%%/DocBook/supybot.css
 %%PORTDOCS%%%%DOCSDIR%%/DocBook/supybot.dsl
 %%PORTDOCS%%%%DOCSDIR%%/DocBook/supybot.dtd
+@exec mkdir -p %D/%%DOCSDIR%%/DocBook/man
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/DocBook/man
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/DocBook
+@exec mkdir -p %D/%%DOCSDIR%%/plugins
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/man
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
