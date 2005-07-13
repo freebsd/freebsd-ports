@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	sdl_image
-PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTVERSION=	1.2.4
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_image/release/
 PKGNAMEPREFIX=	linux-
