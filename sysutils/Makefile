@@ -322,6 +322,7 @@
     SUBDIR += nut
     SUBDIR += nut-libupsclient
     SUBDIR += nut-snmp
+    SUBDIR += nut-usb
     SUBDIR += nvclock
     SUBDIR += nvtv
     SUBDIR += nwclient
