@@ -6590,6 +6590,7 @@ newmail		ports/mail/newmail
 newmat		ports/math/newmat
 newpki-client	ports/security/newpki-client
 newpki-lib	ports/security/newpki-lib
+newpki-server	ports/security/newpki-server
 newsbot		ports/net/newsbot
 newscache	ports/news/newscache
 newsfetch	ports/news/newsfetch
