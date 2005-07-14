@@ -15,6 +15,7 @@ MAINTAINER=	vs@FreeBSD.org
 COMMENT=	Compilation of quotes from the TV series "Futurama"
 
 USE_BZIP2=	yes
+SUB_FILES=	pkg-message
 
 PLIST_FILES=	share/games/fortune/futurama share/games/fortune/futurama.dat
 PLIST_DIRS=	share/games/fortune share/games
@@ -28,6 +29,6 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/futurama* ${PREFIX}/share/games/fortune
 
 post-install:
-	@${SED} 's#PREFIX#${PREFIX}#' <pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
