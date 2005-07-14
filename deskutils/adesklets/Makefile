@@ -17,6 +17,7 @@ COMMENT=	An interactive Imlib2  console for the X Window system
 LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 USE_XLIB=	yes
@@ -37,6 +38,11 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib" \
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*.html
+.endif
+
+.if ${OSVERSION} >= 700000
+pre-configure:
+	@${REINPLACE_CMD} -e "s|FreeBSD 6|FreeBSD 7|g" ${WRKSRC}/configure
 .endif
 
 post-install:
