@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mjpegtools
-PORTVERSION=	1.6.2
-PORTREVISION=	2
+DISTVERSION=	1.6.3-rc1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mjpeg
@@ -24,9 +23,9 @@ USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-transform-name=""
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+USE_GNOME=	gnomehack gnometarget
 WANT_GNOME=	yes
 WANT_SDL=	yes
 INSTALLS_SHLIB=	yes
@@ -34,7 +33,8 @@ INSTALLS_SHLIB=	yes
 INFO=	mjpeg-howto
 MAN1=	jpeg2yuv.1 lav2mpeg.1 lav2wav.1 lav2yuv.1 \
 	lavpipe.1 lavplay.1 lavrec.1 lavtrans.1 mjpegtools.1 mp2enc.1 \
-	mpeg2enc.1 mplex.1 pgmtoy4m.1 ppmtoy4m.1 y4mcolorbars.1 y4mtoppm.1 \
+	mpeg2enc.1 mplex.1 pgmtoy4m.1 png2yuv.1 pnmtoy4m.1 ppmtoy4m.1 \
+	y4mcolorbars.1 y4mdenoise.1 y4munsharp.1 y4mtopnm.1 y4mtoppm.1 \
 	yuv2lav.1 yuvdenoise.1 yuvfps.1 yuvinactive.1 yuvkineco.1 \
 	yuvmedianfilter.1 yuvplay.1 yuvscaler.1 yuvycsnoise.1
 MAN5=	yuv4mpeg.5
@@ -169,16 +169,10 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -E -e 's|^(pkgconfigdir = )\$$\(libdir\)/(pkgconfig)|\1${PREFIX}/libdata/\2|' \
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -E -e 's@(-l(jpeg|png))@-L${LOCALBASE}/lib \1@; \
-		s,-ldl([[:space:]]|"),\1,; \
-		s|(-ldv)|-L${LOCALBASE}/lib \1 ${PTHREAD_LIBS:S/"//g}|; \
-		s|-pthread||' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' \
 		${WRKSRC}/lavtools/liblavplay.c \
-		${WRKSRC}/lavtools/yuvplay.c
+		${WRKSRC}/lavtools/yuvplay.c \
+		${WRKSRC}/lavtools/lavplay.c
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
 		${WRKSRC}/scripts/lav2avi.sh \
 		${WRKSRC}/scripts/lav2mpeg ${WRKSRC}/scripts/mpegtranscode
@@ -196,8 +190,5 @@ post-patch:
 # link to pthreads
 	@${REINPLACE_CMD} -E -e 's|(AVIPLAY_LIBS \=.*)|\1 ${PTHREAD_LIBS}|' \
 		${WRKSRC}/lavtools/Makefile.in
-
-post-configure:
-	@${CP} -f ${LIBTOOL} ${WRKSRC}
 
 .include <bsd.port.post.mk>
