@@ -1570,3 +1570,4 @@ misc/reed|sysutils/reed|2005-07-10|moved to better category
 misc/wmcp|x11-wm/wmcp|2005-07-10|moved to better category
 x11/kde31-apireference|x11/kde3-apireference|2005-07-10|renamed in order to carry the latest kde3-apireference
 www/wmnetselect||2005-07-13|removed
+korean/mplayer-fonts||2005-07-14|no longer needed
