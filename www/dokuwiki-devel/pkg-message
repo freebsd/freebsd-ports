@@ -1,7 +1,7 @@
 =================================================================
           	**** NOTE ****
   Remember to edit the following file:
-    %%PREFIX%%/%%WWWDOCROOT%%/%%DOKUWIKIURL%%/conf/dokuwiki.php 
+    %%PREFIX%%/%%DOKUWIKI_DIR%%/conf/dokuwiki.php 
 
   For FULL configuration instructions see
   http://wiki.splitbrain.org/wiki:config

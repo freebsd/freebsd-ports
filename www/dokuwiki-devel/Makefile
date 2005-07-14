@@ -6,34 +6,34 @@
 #
 
 PORTNAME=	dokuwiki
-PORTVERSION=	20050701
+PORTVERSION=	20050713
 CATEGORIES=	www
 MASTER_SITES=	http://www.splitbrain.org/Programming/PHP/DokuWiki/
-DISTNAME=	${PORTNAME}-2005-07-01
+DISTNAME=	${PORTNAME}-2005-07-13
 EXTRACT_SUFX=	.tgz
 
 # Maintainership available: drop me a line if interested :p
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	A simple and easy to use wiki, no database required
 
-USE_PHP=	pcre session xml zlib
+USE_PHP=	gd pcre session xml zlib
 PHP4_PORT?=	www/mod_php4
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 USE_REINPLACE=yes
 
 pre-fetch:
-.if !defined(DOKUWIKIDIR)
+.if !defined(DOKUWIKI_DIR)
 	 @${ECHO_MSG} ""
-	 @${ECHO_MSG} "Define DOKUWIKIDIR to override default of '${DOKUWIKIDIR}'."
+	 @${ECHO_MSG} "Define DOKUWIKI_DIR to override default of '${DOKUWIKI_DIR}'."
 	 @${ECHO_MSG} ""
 .endif
 
 WWWDOCROOT?=	www/data
-DOKUWIKIURL?=	${PORTNAME}
+DOKUWIKI_URL?=	${PORTNAME}
 WWWOWN?=	www
 WWWGRP?=	www
-DOKUWIKIDIR?=	${WWWDOCROOT}/${DOKUWIKIURL}
+DOKUWIKI_DIR?=	${WWWDOCROOT}/${DOKUWIKI_URL}
 PLIST=		${WRKDIR}/pkg-plist
 
 .if defined(BATCH)
@@ -46,7 +46,7 @@ pre-everything::
 .if !defined(WIKI_LANG)
 	@${ECHO_MSG} '*******************************************************'
 	@${ECHO_MSG} '* You can customize the wiki language by typing	      *'
-	@${ECHO_MSG} '*                                 Use make-flag:      *'
+	@${ECHO_MSG} '*                               Use make-flag:        *'
 	@${ECHO_MSG} '*  - Basque			WIKI_LANG=eu	      *'
 	@${ECHO_MSG} '*  - Brazilian Portuguese       WIKI_LANG=pt-br	      *'
 	@${ECHO_MSG} '*  - Simplified Chinese		WIKI_LANG=zh	      *'
@@ -94,23 +94,22 @@ post-patch:
 pre-install:
 	${TOUCH} ${WRKSRC}/data/changes.log
 	@cd ${WRKSRC} && ${FIND} -s . -type f | \
-		${SED} -e 's|^./||;s|^|${DOKUWIKIDIR}/|' > ${PLIST} \
+		${SED} -e 's|^./||;s|^|${DOKUWIKI_DIR}/|' > ${PLIST} \
 		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm ${DOKUWIKIDIR}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} "@unexec rmdir %D/${DOKUWIKIDIR} 2>/dev/null || true">> ${PLIST}
+		${SED} -e 's|^|@dirrm ${DOKUWIKI_DIR}/|' >> ${PLIST} \
+		&& ${ECHO_CMD} "@unexec ${RMDIR} %D/${DOKUWIKI_DIR} 2>/dev/null || true">> ${PLIST}
 
 do-install:
 	# Data files
-	-${MKDIR} ${PREFIX}/${DOKUWIKIDIR}
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${DOKUWIKIDIR}
-	@${CHMOD} 755 ${PREFIX}/${DOKUWIKIDIR}
-	@${CP} -R ${WRKSRC}/ ${PREFIX}/${DOKUWIKIDIR}
+	-${MKDIR} ${PREFIX}/${DOKUWIKI_DIR}
+	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${DOKUWIKI_DIR}
+	@${CHMOD} 755 ${PREFIX}/${DOKUWIKI_DIR}
+	@${CP} -R ${WRKSRC}/ ${PREFIX}/${DOKUWIKI_DIR}
 	# Setup the correct permissions
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${DOKUWIKIDIR}/data
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${DOKUWIKI_DIR}/data
 
 post-install:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' \
-		-e 's|%%WWWDOCROOT%%|${WWWDOCROOT}|' \
-		-e 's|%%DOKUWIKIURL%%|${DOKUWIKIURL}|' ${PKGMESSAGE}
+		-e 's|%%DOKUWIKI_DIR%%|${DOKUWIKI_DIR}|' ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
