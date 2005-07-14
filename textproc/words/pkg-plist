@@ -8,6 +8,6 @@
 %%DATADIR%%/UNIQUES.LAT
 @dirrm %%DATADIR%%
 bin/words
-%%PORTDOCS%%%%DOCSDIR%%/words.htm
 %%PORTDOCS%%%%DOCSDIR%%/wordsdoc.htm
+%%PORTDOCS%%%%DOCSDIR%%/wordsdev.htm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
