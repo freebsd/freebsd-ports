@@ -11422,6 +11422,7 @@ synce-trayicon	ports/palm/synce-trayicon
 syndigator	ports/www/syndigator
 synergy 	ports/sysutils/synergy
 sysconftool	ports/devel/sysconftool
+sysutils_gag	ports/sysutils/gag
 syslog-ng	ports/sysutils/syslog-ng
 sysmon		ports/net-mgmt/sysmon
 system-tools-backends	ports/sysutils/system-tools-backends
