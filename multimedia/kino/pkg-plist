@@ -19,14 +19,13 @@ share/gnome/kino/insert_before-16.png
 share/gnome/kino/insert_before.png
 share/gnome/kino/join.xpm
 share/gnome/kino/kino.glade
-share/gnome/kino/kino.jpeg
 share/gnome/kino/kino.png
 share/gnome/kino/link.xpm
 share/gnome/kino/link_off.xpm
 share/gnome/kino/magick.glade
-share/gnome/kino/photo-camera.xpm
 share/gnome/kino/publish_project.png
 share/gnome/kino/publish_still.png
+share/gnome/kino/saveframe.png
 share/gnome/kino/split.xpm
 share/gnome/kino/stock_media-begin-16.png
 share/gnome/kino/stock_media-end-16.png
@@ -61,10 +60,14 @@ share/gnome/kino/help/ui.html
 share/gnome/kino/scripts/help.sh
 share/gnome/kino/scripts/exports/extract_chapters
 share/gnome/kino/scripts/exports/ffmpeg2theora.sh
+share/gnome/kino/scripts/exports/ffmpeg_3gp.sh
 share/gnome/kino/scripts/exports/ffmpeg_divx.sh
+share/gnome/kino/scripts/exports/ffmpeg_divx_dual.sh
 share/gnome/kino/scripts/exports/ffmpeg_dvd.sh
 share/gnome/kino/scripts/exports/ffmpeg_dvd_dual.sh
+share/gnome/kino/scripts/exports/ffmpeg_flv.sh
 share/gnome/kino/scripts/exports/ffmpeg_mp3.sh
+share/gnome/kino/scripts/exports/ffmpeg_mp4.sh
 share/gnome/kino/scripts/exports/ffmpeg_vcd.sh
 share/gnome/kino/scripts/exports/mencoder.sh
 share/gnome/kino/scripts/exports/rawplay.sh
@@ -75,7 +78,12 @@ share/locale/cs/LC_MESSAGES/kino.mo
 share/locale/da/LC_MESSAGES/kino.mo
 share/locale/es/LC_MESSAGES/kino.mo
 share/locale/fr/LC_MESSAGES/kino.mo
+share/locale/it/LC_MESSAGES/kino.mo
+share/locale/no/LC_MESSAGES/kino.mo
 share/locale/sv/LC_MESSAGES/kino.mo
+share/locale/nb/LC_MESSAGES/kino.mo
+share/locale/eu/LC_MESSAGES/kino.mo
+share/mime/packages/kino.xml
 @dirrm include/kino
 @dirrm share/gnome/kino/help
 @dirrm share/gnome/kino/scripts/exports
@@ -84,3 +92,4 @@ share/locale/sv/LC_MESSAGES/kino.mo
 @dirrm share/gnome/kino
 @unexec rmdir %D/share/gnome/applications 2>/dev/null || true
 @unexec rmdir %D/share/gnome/pixmaps 2>/dev/null || true
+@unexec rmdir %D/share/mime/packages 2>/dev/null || true
