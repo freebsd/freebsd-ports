@@ -8,8 +8,8 @@
 PORTNAME=	vym
 PORTVERSION=	1.6.0
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.insilmaril.de/vym/download/
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	tux@pinguru.net
 COMMENT=	VYM  (View Your Mind) is a tool to generate and manipulate maps
