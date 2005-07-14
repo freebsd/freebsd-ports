@@ -71,6 +71,9 @@ FLAGARCH=	TRU64		# 64 bits
 .if ${OSVERSION} < 500000
 BROKEN=	"Does not compile on FreeBSD-4.x, and cannot be patched easily."
 .endif
+.if ${ARCH} == "amd64"
+BROKEN=	"Seg. fault on ${ARCH} during compilation of elements."
+.endif
 
 .if defined(WITH_BLAS)
 LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
