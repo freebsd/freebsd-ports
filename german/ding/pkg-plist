@@ -1,4 +1,5 @@
 bin/ding
 share/ding/ding.png
-share/ding/ger-eng.txt
+share/ding/ding.desktop
+share/ding/de-en.txt
 @dirrm share/ding

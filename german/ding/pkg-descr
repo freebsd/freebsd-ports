@@ -3,7 +3,7 @@ a  German-English  Dictionary  with  ca. 120,000 entries.   It  is  an
 offline version of the dictionary found at:
     <URL:http://dict.tu-chemnitz.de/>.
 
-It is based on Tk version >= 8.0 and uses the agrep for searching.
+It is based on Tk version >= 8.3 and uses the agrep for searching.
 
 It  has  many  configuration  options,  such  as  search  preferences,
 interface  language (English  or German),  colors. It has  history and
