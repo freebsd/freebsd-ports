@@ -10,7 +10,8 @@ PORTVERSION=	0.35.1
 PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gdesklets.org/releases/ \
-		http://www.pycage.de/download/${PORTNAME}/
+		http://www.pycage.de/download/${PORTNAME}/ \
+		${MASTER_SITE_GENTOO:S/%SUBDIR%/distfiles/}
 DISTNAME=	gDesklets-${PORTVERSION}
 
 MAINTAINER=	klammer@webonaut.com
