@@ -811,6 +811,7 @@
     SUBDIR += wwwoffle
     SUBDIR += wwwstat
     SUBDIR += wyvern
+    SUBDIR += xaraya
     SUBDIR += xist
     SUBDIR += xitami
     SUBDIR += xpath2rss
