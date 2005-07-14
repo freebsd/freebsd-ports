@@ -6724,6 +6724,7 @@ nunnimcax	ports/textproc/nunnimcax
 nuppelvideo	ports/multimedia/nuppelvideo
 nurbs++		ports/graphics/nurbs++
 nut		ports/sysutils/nut
+nut-libupsclient	ports/sysutils/nut-libupsclient
 nux		ports/textproc/nux
 nvclock		ports/sysutils/nvclock
 nvi-devel	ports/editors/nvi-devel
