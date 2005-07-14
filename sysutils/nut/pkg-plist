@@ -1,3 +1,4 @@
+@unexec %D/etc/rc.d/nut.sh forcestop 2>/dev/null || true
 bin/upsc
 bin/upscmd
 bin/upslog
@@ -12,6 +13,7 @@ etc/nut/upssched.conf.sample
 @unexec rmdir %D/etc/nut 2>/dev/null || true
 etc/rc.d/nut.sh
 libexec/nut/apcsmart
+libexec/nut/bcmxcp
 libexec/nut/belkin
 libexec/nut/belkinunv
 libexec/nut/bestfcom
@@ -38,8 +40,10 @@ libexec/nut/powercom
 libexec/nut/powermust
 libexec/nut/safenet
 libexec/nut/sms
+libexec/nut/solis
 libexec/nut/tripplite
 libexec/nut/tripplitesu
+libexec/nut/upscode2
 libexec/nut/upsdrvctl
 libexec/nut/victronups
 sbin/upsd
@@ -94,7 +98,6 @@ sbin/upssched
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/cables
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/drivers
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/nut
-@exec if [ ! -d /var/db/nut ]; then mkdir /var/db/nut; chown uucp:wheel /var/db/nut; chmod 0755 /var/db/nut; fi
+@unexec rmdir %D/libexec/nut 2>/dev/null || true
 @unexec rmdir /var/db/nut 2>/dev/null || true
 %%CGIDIRRM%%

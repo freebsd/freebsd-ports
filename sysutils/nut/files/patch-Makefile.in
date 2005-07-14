@@ -1,0 +1,37 @@
+--- Makefile.in.orig	Thu Jan 27 15:33:15 2005
++++ Makefile.in	Fri Jul  8 21:45:32 2005
+@@ -90,6 +90,12 @@
+ install-cgi-conf:
+ 	@cd conf; $(MAKE) install-cgi-conf; cd ..;
+ 
++lib: build-lib
++
++build-lib:
++	@cd common ; $(MAKE) || exit 1; cd ..;
++	@cd clients; $(MAKE) libupsclient.a || exit 1; cd ..;
++
+ install-lib:
+ 	@cd clients; $(MAKE) install-lib; cd ..;
+ 	@cd man; $(MAKE) install-lib-man; cd ..;
+@@ -98,9 +104,8 @@
+ usb: build-usb
+ 
+ build-usb:
+-	@cd drivers; $(MAKE) hidups; cd ..;
+-	@cd drivers; $(MAKE) newhidups; cd ..;
+-	@cd drivers; $(MAKE) energizerups; cd ..;
++	@cd common ; $(MAKE) || exit 1; cd ..;
++	@cd drivers; $(MAKE) newhidups || exit 1; cd ..;
+ 
+ install-usb:
+ 	@cd drivers; $(MAKE) install-usb; cd ..;
+@@ -109,7 +114,8 @@
+ snmp: build-snmp
+ 
+ build-snmp:
+-	@cd drivers; $(MAKE) snmp-ups; cd ..;
++	@cd common ; $(MAKE) || exit 1; cd ..;
++	@cd drivers; $(MAKE) snmp-ups || exit 1; cd ..;
+ 
+ install-snmp: snmp install-snmp-man install-snmp-mgr
+ 
