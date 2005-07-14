@@ -21,7 +21,7 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/${PORTVERSION}/:gnat \
 		http://libre.act-europe.fr/GNAT/${PORTVERSION}/:gnat \
 		${MASTER_SITE_LOCAL}:boot \
-		${MASTER_SITE_GNU}:gcc
+		ftp://ftp.gnu.org/pub/gnu/gcc/:gcc
 MASTER_SITE_SUBDIR=	gcc/:gcc deischen/gcc/:boot
 DISTFILES=	${GNATNAME}.tgz:gnat \
 		gcc-2.8.1.tar.gz:gcc
