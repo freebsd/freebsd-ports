@@ -320,6 +320,7 @@
     SUBDIR += nrg2iso
     SUBDIR += ntfsprogs
     SUBDIR += nut
+    SUBDIR += nut-libupsclient
     SUBDIR += nvclock
     SUBDIR += nvtv
     SUBDIR += nwclient
