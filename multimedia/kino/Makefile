@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	kino
-PORTVERSION=	0.7.5
-PORTREVISION=	5
+PORTVERSION=	0.7.6
 CATEGORIES=	multimedia
-MASTER_SITES=	http://kino.schirmacher.de/filemanager/download/42/	\
-		http://perso.enst.fr/~beyssac/mirrors/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	pb@FreeBSD.org

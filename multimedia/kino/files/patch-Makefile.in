@@ -4,8 +4,8 @@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
--SUBDIRS = po src help scripts linux-hotplug
-+SUBDIRS = po src help scripts
+-SUBDIRS = po src help scripts linux-hotplug pixmaps
++SUBDIRS = po src help scripts pixmaps
  MAINTAINERCLEANFILES = Makefile.in aclocal.m4 configure config.h.in
  #ACLOCAL_AMFLAGS = -I m4
  EXTRA_DIST = config.rpath  \

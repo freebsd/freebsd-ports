@@ -1,6 +1,6 @@
---- configure.orig	Fri Aug 13 01:15:49 2004
-+++ configure	Fri Aug 13 01:15:35 2004
-@@ -5325,7 +5325,7 @@
+--- configure.orig	Thu Jul 14 00:44:15 2005
++++ configure	Thu Jul 14 00:57:23 2005
+@@ -5448,7 +5448,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -9,7 +9,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -5693,7 +5693,7 @@
+@@ -5816,7 +5816,7 @@
  else
    { { echo "$as_me:$LINENO: error: Unable to link with libraw1394. Check that you have libraw1394 installed" >&5
  echo "$as_me: error: Unable to link with libraw1394. Check that you have libraw1394 installed" >&2;}
@@ -18,7 +18,7 @@
  
  fi
  
-@@ -5703,7 +5703,7 @@
+@@ -5826,7 +5826,7 @@
  else
    { { echo "$as_me:$LINENO: error: raw1394.h not found install libraw1394-devel" >&5
  echo "$as_me: error: raw1394.h not found install libraw1394-devel" >&2;}
@@ -27,7 +27,7 @@
  
  fi
  
-@@ -5853,7 +5853,7 @@
+@@ -5976,7 +5976,7 @@
  else
    { { echo "$as_me:$LINENO: error: avc1394.h not found, install libavc1394-devel" >&5
  echo "$as_me: error: avc1394.h not found, install libavc1394-devel" >&2;}
@@ -36,7 +36,7 @@
  
  fi
  
-@@ -5933,7 +5933,7 @@
+@@ -6056,7 +6056,7 @@
  else
    { { echo "$as_me:$LINENO: error: Unable to link with libavc1394. Check that you have libavc1394 installed and that the version is 0.4.1 or newer" >&5
  echo "$as_me: error: Unable to link with libavc1394. Check that you have libavc1394 installed and that the version is 0.4.1 or newer" >&2;}
@@ -45,7 +45,7 @@
  fi
  
  
-@@ -6080,7 +6080,7 @@
+@@ -6203,7 +6203,7 @@
  else
    { { echo "$as_me:$LINENO: error: rom1394.h not found, install libavc1394-devel" >&5
  echo "$as_me: error: rom1394.h not found, install libavc1394-devel" >&2;}
@@ -54,7 +54,7 @@
  
  fi
  
-@@ -6160,7 +6160,7 @@
+@@ -6283,7 +6283,7 @@
  else
    { { echo "$as_me:$LINENO: error: Unable to link with librom1394. Check that your have librom1394 installed (usually part of libavc1394) and that the version is 0.4.1 or newer" >&5
  echo "$as_me: error: Unable to link with librom1394. Check that your have librom1394 installed (usually part of libavc1394) and that the version is 0.4.1 or newer" >&2;}
@@ -63,7 +63,7 @@
  fi
  
  
-@@ -6240,7 +6240,7 @@
+@@ -6363,7 +6363,7 @@
  
  	{ { echo "$as_me:$LINENO: error: You need the pthread library to compile kino" >&5
  echo "$as_me: error: You need the pthread library to compile kino" >&2;}
@@ -72,26 +72,20 @@
  
  fi
  
-@@ -10187,15 +10187,15 @@
-      fi
-   fi
- 
--  if test $succeeded = yes; then
--     cat >>confdefs.h <<\_ACEOF
+@@ -10297,11 +10297,11 @@
+ 	echo "$as_me:$LINENO: result: not using file chooser dialogs" >&5
+ echo "${ECHO_T}not using file chooser dialogs" >&6
+ else
+-	GTK24_CFLAGS=$pkg_cv_GTK24_CFLAGS
+-	GTK24_LIBS=$pkg_cv_GTK24_LIBS
+-	cat >>confdefs.h <<\_ACEOF
 -#define HAVE_GTK24 1
 -_ACEOF
--
--  else
-+#  if test $succeeded = yes; then
-+#     cat >>confdefs.h <<\_ACEOF
++#	GTK24_CFLAGS=$pkg_cv_GTK24_CFLAGS
++#	GTK24_LIBS=$pkg_cv_GTK24_LIBS
++#	cat >>confdefs.h <<\_ACEOF
 +##define HAVE_GTK24 1
 +#_ACEOF
-+#
-+#  else
-      echo "$as_me:$LINENO: result: not using file chooser dialogs" >&5
- echo "${ECHO_T}not using file chooser dialogs" >&6
--  fi
-+#  fi
  
+ fi
  
- # ######################################################################

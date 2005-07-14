@@ -1,5 +1,5 @@
---- src/preferences_dialog.cc.orig	Tue Mar 30 06:35:13 2004
-+++ src/preferences_dialog.cc	Sun Apr 11 02:45:04 2004
+--- src/preferences_dialog.cc.orig	Tue Dec 28 16:22:48 2004
++++ src/preferences_dialog.cc	Thu Jul 14 00:42:56 2005
 @@ -32,8 +32,10 @@
  #include "support.h"
  #include "commands.h"
@@ -41,15 +41,15 @@
  
  		gtk_option_menu_set_menu ( GTK_OPTION_MENU ( widget ), glade_menu );
  		gtk_option_menu_set_history( GTK_OPTION_MENU( widget ), currentItem );
-@@ -421,6 +429,7 @@
+@@ -422,6 +430,7 @@
+ 	void
  	on_avc_phyid_activate( GtkMenuItem * menu_item, gpointer user_data )
  	{
- 		int currentNode = ( int ) user_data;
 +#if 0
+ 		nodeid_t currentNode = ( nodeid_t )( long )user_data;
  		static raw1394handle_t handle;
  #ifdef LIBRAW1394_OLD
- 
-@@ -439,6 +448,7 @@
+@@ -441,6 +450,7 @@
  		}
  		raw1394_destroy_handle( handle );
  		handle = NULL;
