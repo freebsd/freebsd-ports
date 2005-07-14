@@ -44,9 +44,4 @@ COMMENT2=		3.4.x
 
 MAKE_ENV+=		LD_LIBRARY_PATH=.:${WRKSRC}/gcc
 
-.if defined(PARALLEL_PACKAGE_BUILD)
-# pointyhat generates bad package after 2005-05-24
-NO_PACKAGE=		yes
-.endif
-
 .include "${MASTERDIR}/Makefile"
