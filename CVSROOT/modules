@@ -6419,6 +6419,7 @@ mxico		ports/x11/mxico
 mxp		ports/graphics/mxp
 mybudget	ports/finance/mybudget
 mydns		ports/dns/mydns
+myghty		ports/www/myghty
 mymoon		ports/astro/mymoon
 myodbc		ports/databases/myodbc
 myphpmoney	ports/finance/myphpmoney
