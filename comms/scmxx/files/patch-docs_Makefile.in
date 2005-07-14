@@ -1,0 +1,20 @@
+
+$FreeBSD$
+
+--- docs/Makefile.in.orig
++++ docs/Makefile.in
+@@ -66,12 +66,12 @@
+ .PHONY: install-$(PACKAGE_NAME).en.$(MANCAT)
+ install-$(PACKAGE_NAME).en.$(MANCAT): $(PACKAGE_NAME).en.$(MANCAT)
+ 	$(INSTALL) -d $(mandir)/man$(MANCAT); \
+-	$(INSTALL) --mode=644 $(PACKAGE_NAME).en.$(MANCAT) $(mandir)/man$(MANCAT)/$(MAN); \
++	$(INSTALL) -m 644 $(PACKAGE_NAME).en.$(MANCAT) $(mandir)/man$(MANCAT)/$(MAN); \
+ 
+ .PHONY: install-$(PACKAGE_NAME).%.$(MANCAT)
+ install-$(PACKAGE_NAME).%.$(MANCAT): $(PACKAGE_NAME).%.$(MANCAT)
+ 	$(INSTALL) -d $(mandir)/$*/man$(MANCAT); \
+-	$(INSTALL) --mode=644 $(PACKAGE_NAME).$*.$(MANCAT) $(mandir)/$*/man$(MANCAT)/$(MAN); \
++	$(INSTALL) -m 644 $(PACKAGE_NAME).$*.$(MANCAT) $(mandir)/$*/man$(MANCAT)/$(MAN); \
+ 
+ .PHONY: install
+ install: $(patsubst %,install-$(PACKAGE_NAME).%.$(MANCAT),$(MAN_LANGS))

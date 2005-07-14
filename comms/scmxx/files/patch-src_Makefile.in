@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -89,7 +89,7 @@
+ .PHONY: install
+ install: $(BINARY)
+ 	$(INSTALL) -d $(DESTDIR)$(bindir)
+-	$(INSTALL) --mode=755 $(BINARY) $(DESTDIR)$(bindir)
++	$(INSTALL) -m 755 $(BINARY) $(DESTDIR)$(bindir)
+ 
+ .PHONY: uninstall
+ uninstall:

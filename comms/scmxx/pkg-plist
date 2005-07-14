@@ -1,9 +1,11 @@
 @comment $FreeBSD$
 bin/scmxx
 share/locale/de/LC_MESSAGES/scmxx.mo
+share/locale/fr/LC_MESSAGES/scmxx.mo
 share/locale/it/LC_MESSAGES/scmxx.mo
 share/locale/ru/LC_MESSAGES/scmxx.mo
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README_WIN32.txt
 %%PORTDOCS%%%%DOCSDIR%%/gsmcharset.txt
 %%PORTDOCS%%%%DOCSDIR%%/gsm0338.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc_sources.txt
