@@ -22,8 +22,10 @@ include/hk_classes/hk_drivermanager.h
 include/hk_classes/hk_dsboolean.h
 include/hk_classes/hk_dscombobox.h
 include/hk_classes/hk_dsdatavisible.h
+include/hk_classes/hk_dsdate.h
 include/hk_classes/hk_dsgrid.h
 include/hk_classes/hk_dsgridcolumn.h
+include/hk_classes/hk_dsimage.h
 include/hk_classes/hk_dslineedit.h
 include/hk_classes/hk_dsmemo.h
 include/hk_classes/hk_dsmodevisible.h
@@ -48,6 +50,7 @@ include/hk_classes/hk_storagecolumn.h
 include/hk_classes/hk_storagedatasource.h
 include/hk_classes/hk_string.h
 include/hk_classes/hk_subform.h
+include/hk_classes/hk_tabvisible.h
 include/hk_classes/hk_url.h
 include/hk_classes/hk_visible.h
 %%MYSQL%%lib/hk_classes/drivers/libhk_mysqldriver.so
@@ -69,7 +72,7 @@ include/hk_classes/hk_visible.h
 %%PYTHON_SITELIBDIR%%/hk_classes.py
 %%PYTHON_SITELIBDIR%%/hk_classes.pyc
 lib/hk_classes/libhk_classes.so
-lib/hk_classes/libhk_classes.so.7
+lib/hk_classes/libhk_classes.so.8
 lib/hk_classes/libhk_classes.a
 @dirrm lib/hk_classes/drivers
 @dirrm lib/hk_classes
