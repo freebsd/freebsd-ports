@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Wed Jul  6 22:52:00 2005
++++ src/Makefile.in	Wed Jul  6 22:55:51 2005
+@@ -212,7 +212,7 @@
+ 	newpki_server-RepStore_ASN1.$(OBJEXT) \
+ 	newpki_server-SQL.$(OBJEXT) newpki_server-SQL_Conn.$(OBJEXT)
+ newpki_server_OBJECTS = $(am_newpki_server_OBJECTS)
+-newpki_server_LDADD = $(LDADD)
++newpki_server_LDADD = $(LDADD) $(LTLIBINTL) $(LTLIBICONV)
+ newpki_server_DEPENDENCIES =
+ newpki_server_LDFLAGS =
+ 

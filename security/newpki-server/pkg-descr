@@ -1,0 +1,5 @@
+NewPKI is a PKI based on the OpenSSL low-level API, all the datas are handled
+through a database, which provides a much more flexible PKI than with OpenSSL,
+such as seeking a certificate with a search engine.
+
+WWW:	http://www.newpki.org

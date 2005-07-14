@@ -1,0 +1,11 @@
+--- publication/ldap/configure.orig	Wed Jul  6 23:16:06 2005
++++ publication/ldap/configure	Wed Jul  6 23:17:19 2005
+@@ -7312,7 +7312,7 @@
+ # Prevent multiple expansion
+ 
+ 
+-libdir=/etc/newpki/modules
++libdir=$prefix/lib/newpki/modules
+ 
+ am__api_version="1.6"
+ # Find a good install program.  We prefer a C program (faster),

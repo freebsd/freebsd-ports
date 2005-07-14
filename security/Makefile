@@ -229,6 +229,7 @@
     SUBDIR += nettle
     SUBDIR += newpki-client
     SUBDIR += newpki-lib
+    SUBDIR += newpki-server
     SUBDIR += nikto
     SUBDIR += nmap
     SUBDIR += nmapfe
