@@ -1,0 +1,8 @@
+etc/newpki.conf.sample
+lib/newpki/modules/libpublication_ldap.la
+lib/newpki/modules/libpublication_ldap.so
+lib/newpki/modules/libpublication_ldap.so.0
+sbin/newpki-server
+%%NLS%%share/locale/fr/LC_MESSAGES/newpki-server.mo
+@dirrm lib/newpki/modules
+@dirrm lib/newpki
