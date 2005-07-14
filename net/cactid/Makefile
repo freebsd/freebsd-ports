@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	cactid
-PORTVERSION=	0.8.6.d
-PORTREVISION=	2
+PORTVERSION=	0.8.6.e
 CATEGORIES=	net
 MASTER_SITES=	http://www.cacti.net/downloads/cactid/
-DISTNAME=	cacti-${PORTNAME}-0.8.6d
+DISTNAME=	cacti-${PORTNAME}-0.8.6e
 
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A multithreaded poller for Cacti written in C
