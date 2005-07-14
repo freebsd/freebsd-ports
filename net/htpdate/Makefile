@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	htpdate
-PORTVERSION=	0.8.3
-CATEGORIES=	net
+PORTVERSION=	0.8.4
+CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.clevervest.com/htp/archive/c/
 
 MAINTAINER=	vsevolod@highsecure.ru
@@ -15,12 +15,11 @@ COMMENT=	Time synchronization over http utility
 
 USE_BZIP2=	yes
 
-MAN8=	htpdate.8
+MANCOMPRESSED=	no
+NOMANCOMPRESS=	yes
+MAN8=	htpdate.8.gz
 
 PLIST_FILES=	bin/htpdate
-
-post-extract:
-	@${GZIP_CMD} -d ${WRKSRC}/${MAN8}.gz
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/htpdate ${PREFIX}/bin
