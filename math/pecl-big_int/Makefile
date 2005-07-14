@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	big_int
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.7
 CATEGORIES=	math devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
