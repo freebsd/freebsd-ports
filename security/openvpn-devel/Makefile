@@ -24,6 +24,14 @@ CONFIGURE_ARGS=	--with-lzo-lib=${LOCALBASE}/lib \
 
 MAN8=		openvpn.8
 
+OPTIONS=	PW_SAVE "Interactive passwords may be read from a file" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PW_SAVE)
+CONFIGURE_ARGS+=	--enable-password-save
+.endif
+
 # self-tests here
 post-build:
 	( set -e ; cd ${WRKSRC} && \
@@ -49,4 +57,4 @@ post-install:
 	| ${CPIO} -pdmu ${DOCSDIR} )
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
