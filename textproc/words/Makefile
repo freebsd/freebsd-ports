@@ -7,6 +7,7 @@
 
 PORTNAME=	words
 PORTVERSION=	1.97E
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://users.erols.com/whitaker/
 DISTNAME=	${PORTNAME}all
@@ -57,8 +58,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/words.sh ${PREFIX}/bin/words
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/words.htm ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/wordsdoc.htm ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/wordsdev.htm ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
