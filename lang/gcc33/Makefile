@@ -52,6 +52,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls \
 		--with-system-zlib \
 		--program-suffix=${SUFFIX} \
+		--libdir=${TARGLIB} \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/ \
 		--enable-languages=c,c++,objc,f77
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
@@ -59,7 +60,6 @@ MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 CONFIGURE_ARGS+=	--enable-shared
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib ${TARGLIB}
-EXTRA_LIBS=	libgcc_s
 .else
 CONFIGURE_ARGS+=	--disable-shared
 .endif
@@ -98,12 +98,6 @@ post-install:
 	for mp in ${_MANPAGES}; do \
 	  ${TEST} -e $${mp} || ${TOUCH} ${TOUCH_FLAGS} $${mp}; \
 	done
-	@(for prog in \
-		${TARGLIB}/cc1 ${TARGLIB}/cc1obj ${TARGLIB}/cc1plus \
-		${TARGLIB}/collect2 ${TARGLIB}/f771 ; \
-	do \
-		${STRIP_CMD} $$prog ; \
-	done )
 .for f in c++ g77 gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++
 	# gij and jv-convert, for example, are not built on all platforms.
 	if [ -e ${PREFIX}/bin/${f}${SUFFIX} ]; then \
@@ -116,12 +110,7 @@ post-install:
 .endfor
 	${MV} -f ${PREFIX}/bin/g77${SUFFIX} ${PREFIX}/bin/g77-${SUFFIX}
 	-${MV} -f ${PREFIX}/man/man1/g77${SUFFIX}.1 ${PREFIX}/man/man1/g77-${SUFFIX}.1
-	# These libraries are moved from PREFIX/lib to avoid conflicts with
-	# the stock compiler.
-.for f in libstdc++ libsupc++ libg2c libfrtbegin libobjc ${EXTRA_LIBS}
-	${MV} -f ${PREFIX}/lib/${f}.* ${TARGLIB}
-.endfor
-	${RM} -f ${PREFIX}/lib/libiberty.a ${TARGLIB}/*.la
+	${RM} -f ${TARGLIB}/*.la
 	${RM} -f ${PREFIX}/man/man7/fsf-funding.7 \
 	         ${PREFIX}/man/man7/gfdl.7 ${PREFIX}/man/man7/gpl.7
 	# Add target libraries and include files to packaging list.
@@ -133,9 +122,9 @@ post-install:
 	        | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib ;\
 	fi
 .endfor
-	${CAT} ${WRKDIR}/PLIST.lib >> ${TMPPLIST}
-	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc-lib/${CONFIGURE_TARGET} 2>&1 || true" >> ${TMPPLIST}
-	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc-lib 2>&1 || true" >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc-lib/${CONFIGURE_TARGET} 2>&1 || true" >> ${WRKDIR}/PLIST.lib
+	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc-lib 2>&1 || true" >> ${WRKDIR}/PLIST.lib
+	cd ${WRKDIR} ; ${SED} -i -e "/PLIST.lib/ r PLIST.lib" ${TMPPLIST}
 
 cklatest:
 .for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/
