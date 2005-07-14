@@ -1,3 +1,4 @@
+bin/mabackup
 bin/mysql-administrator
 bin/mysql-administrator-bin
 share/applications/MySQLAdministrator.desktop
@@ -146,6 +147,7 @@ share/mysql-gui/common/field_overlay_edit.png
 share/mysql-gui/common/field_overlay_load.png
 share/mysql-gui/common/field_overlay_save.png
 share/mysql-gui/common/field_overlay_view.png
+share/mysql-gui/common/field_overlay_null.png
 share/mysql-gui/common/folder_16x16.png
 share/mysql-gui/common/magnify_glass.png
 share/mysql-gui/common/magnify_glass_with_popup.png
