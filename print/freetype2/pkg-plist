@@ -12,6 +12,7 @@ include/freetype2/freetype/config/ftmodule.h
 include/freetype2/freetype/config/ftoption.h
 include/freetype2/freetype/config/ftstdlib.h
 include/freetype2/freetype/freetype.h
+include/freetype2/freetype/ftbitmap.h
 include/freetype2/freetype/ftbbox.h
 include/freetype2/freetype/ftbdf.h
 include/freetype2/freetype/ftcache.h
@@ -28,6 +29,7 @@ include/freetype2/freetype/ftmac.h
 include/freetype2/freetype/ftmm.h
 include/freetype2/freetype/ftmodapi.h
 include/freetype2/freetype/ftmoderr.h
+include/freetype2/freetype/ftotval.h
 include/freetype2/freetype/ftoutln.h
 include/freetype2/freetype/ftpfr.h
 include/freetype2/freetype/ftrender.h
@@ -53,6 +55,7 @@ include/freetype2/freetype/internal/ftrfork.h
 include/freetype2/freetype/internal/ftserv.h
 include/freetype2/freetype/internal/ftstream.h
 include/freetype2/freetype/internal/fttrace.h
+include/freetype2/freetype/internal/ftvalid.h
 include/freetype2/freetype/internal/internal.h
 include/freetype2/freetype/internal/pcftypes.h
 include/freetype2/freetype/internal/psaux.h
@@ -61,6 +64,7 @@ include/freetype2/freetype/internal/sfnt.h
 include/freetype2/freetype/internal/svbdf.h
 include/freetype2/freetype/internal/svgldict.h
 include/freetype2/freetype/internal/svmm.h
+include/freetype2/freetype/internal/svotval.h
 include/freetype2/freetype/internal/svpfr.h
 include/freetype2/freetype/internal/svpostnm.h
 include/freetype2/freetype/internal/svpscmap.h

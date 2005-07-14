@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freetype2
-PORTVERSION=	2.1.9
+PORTVERSION=	2.1.10
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/%SUBDIR%/ \
@@ -35,12 +35,12 @@ CONFIGURE_WRKSRC=	${WRKSRC}/builds/unix
 CFLAGS+=	-DTT_CONFIG_OPTION_BYTECODE_INTERPRETER
 .endif
 
-.if defined(WITH_CJK)
-PATCH_SITES+=	ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/ \
-		http://bsdchat.com/dist/firefly-cjk-patchset/
-PATCHFILES+=	cjk-freetype-2.1.9-20050315.patch.gz
-PATCH_DIST_STRIP+=	-p1
-.endif
+#.if defined(WITH_CJK)
+#PATCH_SITES+=	ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/ \
+#		http://bsdchat.com/dist/firefly-cjk-patchset/
+#PATCHFILES+=	cjk-freetype-2.1.9-20050315.patch.gz
+#PATCH_DIST_STRIP+=	-p1
+#.endif
 
 pre-everything::
 .if !defined(WITHOUT_TTF_BYTECODE_ENABLED)
