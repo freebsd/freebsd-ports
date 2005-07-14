@@ -20,19 +20,20 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
 OPTIONS=	IPV6	"Support for IPv6 connections"			off \
-		DEBUG	"Enable debug information (for developers)"	off
+		DEBUG	"Enable debug information (for developers)"	off \
+		SSL	"Enable SSL support"				off
 
 PLIST_FILES=	bin/nbsmtp
 
 MAN5=	nbsmtprc.5
 MAN8=	nbsmtp.8
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_SSL)
-USE_OPENSSL=	yes
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--enable-ssl
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
