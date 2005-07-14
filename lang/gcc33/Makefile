@@ -37,6 +37,9 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700000
+IGNORE=		does not support FreeBSD 7.x and above
+.endif
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 BROKEN=			"Bus errors in stage2; system compiler may be broken."
