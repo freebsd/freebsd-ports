@@ -6588,6 +6588,7 @@ neverball	ports/games/neverball
 newfile		ports/devel/newfile
 newmail		ports/mail/newmail
 newmat		ports/math/newmat
+newpki-lib	ports/security/newpki-lib
 newsbot		ports/net/newsbot
 newscache	ports/news/newscache
 newsfetch	ports/news/newsfetch
