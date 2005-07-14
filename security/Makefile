@@ -227,6 +227,7 @@
     SUBDIR += nessus-plugins
     SUBDIR += nessus-plugins-devel
     SUBDIR += nettle
+    SUBDIR += newpki-lib
     SUBDIR += nikto
     SUBDIR += nmap
     SUBDIR += nmapfe
