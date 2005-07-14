@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	3.4.5
-PORTREVISION=	20050628
+PORTREVISION=	20050712
 CATEGORIES=	lang
 VERSIONSTRING=	3.4-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -128,9 +128,9 @@ post-install:
 	        | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib ;\
 	fi
 .endfor
-	${CAT} ${WRKDIR}/PLIST.lib >> ${TMPPLIST}
-	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc/${CONFIGURE_TARGET} 2>&1 || true" >> ${TMPPLIST}
-	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc 2>&1 || true" >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc/${CONFIGURE_TARGET} 2>&1 || true" >> ${WRKDIR}/PLIST.lib
+	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc 2>&1 || true" >> ${WRKDIR}/PLIST.lib
+	cd ${WRKDIR} ; ${SED} -i -e "/PLIST.lib/ r PLIST.lib" ${TMPPLIST}
 
 cklatest:
 .for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/
