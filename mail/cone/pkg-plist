@@ -47,8 +47,6 @@ libexec/cone
 %%DATADIR%%/address.html
 %%DATADIR%%/attributes.html
 %%DATADIR%%/book.html
-%%DATADIR%%/c2646.html
-%%DATADIR%%/c2684.html
 %%DATADIR%%/cone.hlp
 %%DATADIR%%/cone.html
 %%DATADIR%%/cone00index.html
@@ -325,15 +323,19 @@ libexec/cone
 %%DATADIR%%/smap1.html
 %%DATADIR%%/store.html
 %%DATADIR%%/synchronous.html
-%%DATADIR%%/x12281.html
-%%DATADIR%%/x12487.html
-%%DATADIR%%/x12823.html
-%%DATADIR%%/x13094.html
-%%DATADIR%%/x13337.html
-%%DATADIR%%/x13441.html
-%%DATADIR%%/x13683.html
-%%DATADIR%%/x14057.html
-%%DATADIR%%/x14068.html
+%%DATADIR%%/c2708.html
+%%DATADIR%%/c2746.html
+%%DATADIR%%/http.handler
+%%DATADIR%%/https.handler
+%%DATADIR%%/x12343.html
+%%DATADIR%%/x12549.html
+%%DATADIR%%/x12885.html
+%%DATADIR%%/x13156.html
+%%DATADIR%%/x13399.html
+%%DATADIR%%/x13503.html
+%%DATADIR%%/x13745.html
+%%DATADIR%%/x14119.html
+%%DATADIR%%/x14130.html
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/rootcerts
