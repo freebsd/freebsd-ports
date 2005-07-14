@@ -9,9 +9,9 @@ PORTNAME=	gru
 PORTVERSION=	8087
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://hp.vector.co.jp/authors/VA004959/gru/
+MASTER_SITES=	http://www.bsddiary.net/gru/
 
-MAINTAINER=	hym@cocoa.freemail.ne.jp
+MAINTAINER=	gibbon@cocoa.freemail.ne.jp
 COMMENT=	Gru makes your eyes happy
 
 USE_IMAKE=	yes
