@@ -321,6 +321,7 @@
     SUBDIR += ntfsprogs
     SUBDIR += nut
     SUBDIR += nut-libupsclient
+    SUBDIR += nut-snmp
     SUBDIR += nvclock
     SUBDIR += nvtv
     SUBDIR += nwclient
