@@ -9,4 +9,7 @@ MASTERDIR=	${.CURDIR}/../ecb
 
 EMACS_PORT_NAME=	emacs20
 
+DEPRECATED=	"no longer supported"
+EXPIRATION_DATE=2005-09-14
+
 .include "${MASTERDIR}/Makefile"
