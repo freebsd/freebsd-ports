@@ -107,7 +107,7 @@ CONFIGURE_ARGS+=	--without-relocatable-dumped-modules
 CONFIGURE_ARGS+=	--with-relocatable-dumped-modules
 .endif
 
-.if defined(WITH_EXPIREMENTAL_FEATURES)
+.if defined(WITH_EXPERIMENTAL_FEATURES)
 CONFIGURE_ARGS+=	--with-computed-goto \
 		--with-pg \
 		--with-long-long-int \
