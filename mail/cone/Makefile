@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cone
-PORTVERSION=	0.64
+PORTVERSION=	0.65
 CATEGORIES=	mail
 # This is for beta versions, leave it in please:
 #MASTER_SITES=	http://www.courier-mta.org/beta/${PORTNAME}/
@@ -17,14 +17,14 @@ MASTER_SITE_SUBDIR=	courier
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console based mail client with POP3/IMAP/SMAP support
 
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		aspell.16:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_FAM=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
+USE_GNOME=	libxml2
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
@@ -50,7 +50,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 502010
-IGNORE=		"port not supported on FreeBSD versions before 5.2.1-RELEASE"
+IGNORE=		not supported on FreeBSD versions before 5.2.1-RELEASE
 .endif
 
 .include <bsd.port.post.mk>
