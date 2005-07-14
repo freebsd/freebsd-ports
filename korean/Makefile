@@ -44,7 +44,6 @@
     SUBDIR += man-doc
     SUBDIR += mizifont
     SUBDIR += mod_url
-    SUBDIR += mplayer-fonts
     SUBDIR += msdosfs
     SUBDIR += mule-freewnn
     SUBDIR += munhwafonts-cid
