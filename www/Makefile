@@ -359,6 +359,7 @@
     SUBDIR += mozilla-devel
     SUBDIR += mozplugger
     SUBDIR += mplayer-plugin
+    SUBDIR += myghty
     SUBDIR += nanoblogger
     SUBDIR += nd
     SUBDIR += neon
