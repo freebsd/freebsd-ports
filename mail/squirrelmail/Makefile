@@ -6,17 +6,13 @@
 #
 
 PORTNAME=	squirrelmail
-PORTVERSION?=	1.4.4
-PORTREVISION?=	1
+PORTVERSION?=	1.4.5
 CATEGORIES?=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	squirrelmail
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		all_locales-${PORTVERSION}-20050122${EXTRACT_SUFX}
+		all_locales-${PORTVERSION}-20050713${EXTRACT_SUFX}
 DIST_SUBDIR=	squirrelmail
-PATCHFILES=	${DIST_SUBDIR}/sqm-144-xss.patch
-PATCH_SITES=	${MASTER_SITE_SOURCEFORGE}
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER?=	simond@irrelevant.org
 COMMENT?=	A webmail system which accesses mail over IMAP
@@ -84,7 +80,7 @@ do-build:
 .for file in AUTHORS ChangeLog COPYING INSTALL README UPGRADE
 	@${MV} ${WRKSRC}/${file} ${WRKSRC}/doc/
 .endfor
-	@${MV} ${WRKSRC}/ReleaseNotes ${WRKSRC}/doc/ReleaseNotes-${PORTVERSION}
+	@${MV} ${WRKSRC}/ReleaseNotes ${WRKSRC}/doc/ReleaseNotes-${PORTVERSION}.txt
 	@${MV} ${WRKSRC}/themes/README.themes ${WRKSRC}/doc/
 	@cd ${WRKSRC} ; for f in `find plugins -name "README*" -or \
 		-name INSTALL -or -name CHANGES -or -name HISTORY`; \
