@@ -1,0 +1,9 @@
+wxMaxima is a wxWidgets GUI for the computer algebra system maxima.
+
+Most of maxima functions are accessible through menus, some have
+dialogs. The input line has command history (up-key, down-key) and
+completion based on previous input (tab-key).
+wxMaxima provides 2d formated display of maxima output.
+
+Author:	Andrej Vodopivec <andrejv@users.sourceforge.net>
+WWW:	http://wxmaxima.sourceforge.net/

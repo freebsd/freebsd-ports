@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+bin/wxmaxima
+share/locale/es/LC_MESSAGES/wxMaxima.mo
+share/locale/fr/LC_MESSAGES/wxMaxima.mo
+share/locale/it/LC_MESSAGES/wxMaxima.mo
+%%DATADIR%%/COPYING
+%%DATADIR%%/README
+%%DATADIR%%/docs.zip
+%%DATADIR%%/intro.zip
+%%DATADIR%%/tips.txt
+%%DATADIR%%/wxmathml.lisp
+@dirrm %%DATADIR%%
