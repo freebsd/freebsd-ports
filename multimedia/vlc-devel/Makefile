@@ -824,7 +824,7 @@ pre-install:
 	${ECHO_CMD} "share/pixmaps/vlc.png" >> ${PLIST}
 	${ECHO_CMD} "share/applications/wxvlc.desktop" >> ${PLIST}
 .endif
-.if defined(WITH_WXGTK) || defined(WITH_SKINS)
+.if !defined(WITHOUT_WXGTK) || defined(WITH_SKINS)
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
 .endif
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
