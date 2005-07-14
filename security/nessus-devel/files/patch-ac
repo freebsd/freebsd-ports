@@ -1,0 +1,11 @@
+--- nessus/comm.c.orig	Sat Apr 30 13:36:37 2005
++++ nessus/comm.c	Fri Jul  8 16:04:27 2005
+@@ -95,7 +95,7 @@
+ 	base = limit;
+ 	limit = PBAR_MAX;
+ 	break;
+-      default:
++      default: ;
+     }
+   }
+ 
