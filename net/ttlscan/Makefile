@@ -9,7 +9,7 @@
 PORTNAME=	ttlscan
 PORTVERSION=	0.1.1
 CATEGORIES=	net
-MASTER_SITES=	http://www.raisdorf.net/files/code/
+MASTER_SITES=	http://www.wormulon.net/files/ttlscan/
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A tcp based scanner, showing ttl responses
