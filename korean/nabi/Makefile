@@ -8,9 +8,8 @@
 PORTNAME=	nabi
 PORTVERSION=	0.15
 PORTREVISION=	1
-#PORTREVISION=	1
-CATEGORIES=	korean gnome x11
-MASTER_SITES=	http://download.kldp.net/nabi/
+CATEGORIES=	korean gnome
+MASTER_SITES=	http://kldp.net/frs/download.php/1651/
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Hangul X Input Method for Everywhere

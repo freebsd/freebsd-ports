@@ -8,8 +8,8 @@ PORTNAME=	unfonts
 PORTVERSION=	1.0
 PORTEPOCH=	1
 CATEGORIES=	korean x11-fonts
-MASTER_SITES=	http://kldp.net/download.php/1425/:core \
-		http://kldp.net/download.php/1435/:extra
+MASTER_SITES=	http://kldp.net/frs/download.php/1425/:core \
+		http://kldp.net/frs/download.php/1435/:extra
 PKGNAMESUFFIX=	-ttf
 DISTFILES=	un-fonts-core-${PORTVERSION}.tar.gz:core \
 		un-fonts-extra-${PORTVERSION}.tar.gz:extra
