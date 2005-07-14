@@ -17,7 +17,7 @@
 #
 nut_enable=${nut_enable-"NO"}
 nut_prefix=${nut_prefix-"%%PREFIX%%"}
-nut_pidfile=${nut_pidfile-"/var/db/nut/nut.pid"}
+nut_pidfile=${nut_pidfile-"%%STATEDIR%%/nut.pid"}
 nut_upslog=${nut_upslog-"/var/log/ups.log"}
 nut_upsloginterval=${nut_upsloginterval-"300"}
 nut_upslogmail=${nut_upslogmail-"backups@localhost"}
@@ -27,7 +27,10 @@ nut_upslogmail=${nut_upslogmail-"backups@localhost"}
 name="nut"
 rcvar=`set_rcvar`
 
-start_cmd="nut_start"
+required_dirs="%%STATEDIR%%"
+required_files="${nut_prefix}/etc/nut/ups.conf ${nut_prefix}/etc/nut/upsd.conf ${nut_prefix}/etc/nut/upsd.users ${nut_prefix}/etc/nut/upsmon.conf"
+
+start_postcmd="nut_start"
 stop_cmd="nut_stop"
 
 nut_start() {
