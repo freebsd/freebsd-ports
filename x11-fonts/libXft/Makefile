@@ -38,10 +38,4 @@ PLIST_SUB+=	NEWMTREE=""
 PLIST_SUB+=	NEWMTREE="@comment "
 .endif
 
-.if defined(WITH_CJK)
-PATCH_SITES=	ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/ \
-		http://bsdchat.com/dist/firefly-cjk-patchset/
-PATCHFILES+=	cjk-patch-libXft-20041115.diff.gz
-.endif
-
 .include <bsd.port.post.mk>
