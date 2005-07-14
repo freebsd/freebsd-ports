@@ -9,7 +9,8 @@ PORTNAME?=	ispell
 PORTVERSION?=	3.2.06
 PORTREVISION?=	13
 CATEGORIES+=	textproc
-MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/
+MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/ \
+		http://distfiles.opendarwin.org/
 DISTNAME=	ispell-3.2.06		# needed for slave ports / options
 DISTFILES=	ispell-3.2.06.tar.gz    # needed for slave ports / options
 
