@@ -1,0 +1,5 @@
+bin/libupsclient-config
+include/parseconf.h
+include/upsclient.h
+lib/libupsclient.a
+libdata/pkgconfig/libupsclient.pc
