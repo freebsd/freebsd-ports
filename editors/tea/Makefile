@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		tea
-DISTVERSION=		10.0
+DISTVERSION=		10.1
 CATEGORIES=		editors
 MASTER_SITES=		http://tea.linux.kiev.ua/
 
