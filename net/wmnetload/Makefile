@@ -9,7 +9,9 @@ PORTNAME=	wmnetload
 PORTVERSION=	1.3
 PORTREVISION=	2
 CATEGORIES=	net windowmaker afterstep
-MASTER_SITES=	ftp://truffula.com/pub/
+MASTER_SITES=	ftp://truffula.com/pub/ \
+				http://dl.fkb.wormulon.net/wmnetload/ \
+				http://dl.kel.wormulon.net/wmnetload/
 
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	Network load monitor dockapp
