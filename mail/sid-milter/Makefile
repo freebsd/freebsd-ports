@@ -57,6 +57,7 @@ pre-configure:
 		> ${WRKSRC}/milter-sid.sh
 	${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' \
 		-e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|' \
+		-e "s|\`-O'|\`${CFLAGS}'|g" \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/devtools/OS/FreeBSD
 	${SED} -e "s|%%PREFIX%%|${PREFIX}|g" \
