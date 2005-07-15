@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipv6gen
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://techie.devnull.cz/ipv6/ipv6gen/dist/
 EXTRACT_SUFX=	.tgz
