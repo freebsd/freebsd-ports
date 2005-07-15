@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gwenview
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.2.0
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,6 +23,7 @@ USE_REINPLACE=	yes
 MAN1=	gwenview.1
 
 post-patch:
+	@${TOUCH} -t 200504010000 ${WRKSRC}/Makefile.am.in
 	@${REINPLACE_CMD} -e 's|xx||g' ${WRKSRC}/po/Makefile.in
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
