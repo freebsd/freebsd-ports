@@ -68,7 +68,7 @@ upgrades.
   AUTHOR: sem@FreeBSD.org
 
   Because of users need to keep their DB configuration but config.php
-  can't be saved on upgrating, I've moved DB settings in db-settings.php.
+  can't be saved on upgrading, I've moved DB settings in db-settings.php.
   So, you need to change db-settings.php and do not touch config.php
   anymore.
 
@@ -129,7 +129,7 @@ upgrades.
   and not mpeg4ip.
 
 20050523:
-  AFFECTS: users of games/pvgdn
+  AFFECTS: users of games/pvpgn
   AUTHOR: mek@mek.uz.ua
 
   The following has been changed in the bnetd.conf file (starting with
@@ -188,7 +188,7 @@ upgrades.
 
   # pkg_deinstall multimedia/ffmpeg
 
-  Futhermore, video capture is no longer working in the latest
+  Furthermore, video capture is no longer working in the latest
   version. Work is been done to overcome this.
 
 20050511:
@@ -208,9 +208,9 @@ upgrades.
   AFFECTS: users of lang/ocaml based applications and libraries
   AUTHOR: lioux@FreeBSD.org
 
-  With the recent update of ocaml to 3.08.3 some API compability
+  With the recent update of ocaml to 3.08.3 some API compatibility
   has been broken. It is a bit subtle so that some users might not
-  notice it. However, updating all ocaml based aplications and
+  notice it. However, updating all ocaml based applications and
   libraries are advised using the new compiler/interpreter version.
   Issue the following command:
 
@@ -223,8 +223,8 @@ upgrades.
   mail/courier-authlib has been moved to security/courier-authlib and is
   now only a meta-port. Installing the meta-port installs security/
   courier-authlib-base and no, one or more sub-ports regarding to what
-  authentification methods you've choosen. Courier-authlib-base only
-  provides you athentification via PAM. All ports depending on courier-
+  authentication methods you've chosen. Courier-authlib-base only
+  provides you authentication via PAM. All ports depending on courier-
   authlib (at the time of writing, courier-imap, sqwebmail and maildrop)
   giving you the same choice the meta-port provides you.
 
@@ -294,7 +294,7 @@ upgrades.
   AUTHOR: ijliao@FreeBSD.org
 
   As of 2004/11/09 cricket uses a separate user "wwwadm". If you
-  upgrade your installtion, make sure you chown your existing data.
+  upgrade your installation, make sure you chown your existing data.
 
 20050414:
   AFFECTS: users of databases/postgresql and any port that depends on it
@@ -373,7 +373,7 @@ upgrades.
   AUTHOR: kde@freebsd.org
 
   In KDE 3.4, a number of files were moved between ports, some ports
-  were added, one port has been removed and some applictions formerly available
+  were added, one port has been removed and some applications formerly available
   in their own ports were incorporated into KDE. This means that you will have
   to take some precautions to update your KDE installation. A simple
   portupgrade -a will not work.
@@ -384,7 +384,7 @@ upgrades.
   and you to be the superuser (or using sudo). We recommend not being logged in
   to a KDE session on the machine you're performing the upgrade on. If you
   choose to perform the update while being logged in to KDE, expect erratic
-  behaviour and crashes from applications launched until you log out and back
+  behavior and crashes from applications launched until you log out and back
   in.
 
   1.) Delete installed packages which conflict with the updated KDE
@@ -538,7 +538,7 @@ upgrades.
     - WITH_USERDB
     - WITH_LDAP
     - WITH_MYSQL
-    have been superceded by WITH_AUTHLIB.
+    have been superseded by WITH_AUTHLIB.
 
 20050306:
   AFFECTS: users of math/ploticus
@@ -727,7 +727,7 @@ upgrades.
 
   postgresql_enable=yes
 
-  The maintainance script is installed in etc/periodic/daily, and is
+  The maintenance script is installed in etc/periodic/daily, and is
   controlled by a set of new knobs in periodic.conf. Use it for
   vacuuming your databases and get daily backups. Note that daily
   vacuuming is on by default. See the script for details.
@@ -1286,7 +1286,7 @@ to /usr/local/aster/ASTK/ASTK_SERV/bin (or you can remove $HOME/.astkrc).
 
   Since there is a known problem that popfile doesn't work with DBD::SQLite 1.x
   at this time, you'll be in trouble after upgrading databases/p5-DBD-SQLite
-  to the latest one.  A workaround is commited to 0.22.0_1 which uses
+  to the latest one.  A workaround is committed to 0.22.0_1 which uses
   databases/p5-DBD-SQLite2 by default.  However, if already installed popfile,
   please check ${HOME}/.popfile/popfile.cfg, and change the line
   "bayes_dbconnect dbi:SQLite:dbname=$dbname" to
@@ -1339,7 +1339,7 @@ to /usr/local/aster/ASTK/ASTK_SERV/bin (or you can remove $HOME/.astkrc).
   AFFECTS: users of security/clamav
   AUTHOR: eik@FreeBSD.org
 
-  The configruration file for the clamd daemon has changed from
+  The configuration file for the clamd daemon has changed from
   /usr/local/etc/clamav.conf to /usr/local/etc/clamd.conf.
 
 20041013:
@@ -1480,7 +1480,7 @@ to /usr/local/aster/ASTK/ASTK_SERV/bin (or you can remove $HOME/.astkrc).
   and you to be the superuser (or using sudo). We recommend not being logged in
   to a KDE session on the machine you're performing the upgrade on. If you
   choose to perform the update while being logged in to KDE, expect erratic
-  behaviour and crashes from applications launched during the update.
+  behavior and crashes from applications launched during the update.
 
   1.) First, make sure your ports index is up to date.
 
@@ -1531,8 +1531,8 @@ to /usr/local/aster/ASTK/ASTK_SERV/bin (or you can remove $HOME/.astkrc).
     Then log out of KDE and back in again.
 
   - KMail has been heavily modified since KDE 3.2.x. Testing shows that KMail
-    can display erratic behaviour and crashes after the update. If you see any
-    such behaviour, it is recommended to simply close KMail and start it again
+    can display erratic behavior and crashes after the update. If you see any
+    such behavior, it is recommended to simply close KMail and start it again
     until it resumes normal operation.
 
     The integration of GnuPG and KMail for signing, encrypting and verifying
@@ -1666,7 +1666,7 @@ to /usr/local/aster/ASTK/ASTK_SERV/bin (or you can remove $HOME/.astkrc).
   ~/kdmrc /usr/local/share/config/kdm/ )
 
   Optional step 4.) Run, as root: genkdmconf (without any options) to update
-  your kdmrc to the lastest configfile format
+  your kdmrc to the latest configfile format
 
   Note for advanced users: Substitute /usr/local with your custom PREFIX if
   you're using one.
@@ -1756,12 +1756,12 @@ Option "XkbRules" "xfree86"
   AFFECTS: users of PHP
   AUTHOR: ale@FreeBSD.org
 
-  The old lang/php4 and lang/php5 ports have been splitted into 'base' PHP,
+  The old lang/php4 and lang/php5 ports have been split into 'base' PHP,
   PEAR, and shared extensions to allow more flexibility and add new features.
   Upgrading your current PHP installation will result in a 'base' PHP
   installation (no PEAR and no extensions).
   PEAR can be found in the new devel/php4-pear and devel/php5-pear ports, while
-  the set of PHP extensions to install can be choosen via the meta-ports
+  the set of PHP extensions to install can be chosen via the meta-ports
   lang/php4-extensions and lang/php5-extensions, or installing singular
   extensions individually.
   If you have a previous php.ini configuration file, be sure to comment out
@@ -1789,11 +1789,11 @@ Option "XkbRules" "xfree86"
   AUTHOR: eik@FreeBSD.org
 
   The default location of the startup script has been changed to
-  ${PREFIX}/etc/rc.d. When you depend on the previous behaviour,
+  ${PREFIX}/etc/rc.d. When you depend on the previous behavior,
   build the port with WITH_RCORDER=yes.
 
   Setting WITH_OPENLDAP_VER and WITH_MYSQL_VER do not automatically
-  imply the corresponding WITH_ varibale. The use of these options
+  imply the corresponding WITH_ variable. The use of these options
   is discouraged, use the global settings (WANT_OPENLDAP_VER and
   DEFAULT_MYSQL_VER) to set system wide defaults.
 
@@ -1802,7 +1802,7 @@ Option "XkbRules" "xfree86"
   AUTHOR: vs@FreeBSD.org
 
   Milter-sender version 0.58 released.
-  When updating to version 0.58, beware if you have a personalised
+  When updating to version 0.58, beware if you have a personalized
   configuration file (milter-sender.cf).  The meaning of the
   MxAcceptsAllAction variable has changed and its default has changed
   from 4 to 6.  If this variable is not updated, greylisting might be
