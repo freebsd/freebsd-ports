@@ -9,6 +9,7 @@ PORTNAME=	vsftpd
 PORTVERSION=	2.0.3
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://vsftpd.beasts.org/users/cevans/
+PKGNAMESUFFIX?=	${SSL_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A FTP daemon that aims to be "very secure"
@@ -23,15 +24,8 @@ DOCFILES=	AUDIT BENCHMARKS BUGS Changelog FAQ INSTALL LICENSE \
 
 LDFLAGS+=	-lwrap
 
-OPTIONS=	RC_NG	"install RC_NG script" off
-
-.if !defined(WITHOUT_SSL) && defined(WITH_VSFTPD_SSL)
-USE_OPENSSL=	yes
-CFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	-L${OPENSSLLIB}
-.else
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
-.endif
+OPTIONS=	RC_NG		"install RC_NG script"		off \
+		VSFTPD_SSL	"Include support for SSL"	off
 
 .include <bsd.port.pre.mk>
 
@@ -40,6 +34,15 @@ USE_RC_SUBR=	yes
 PLIST_SUB+=	RC_NG=""
 .else
 PLIST_SUB+=	RC_NG="@comment "
+.endif
+
+.if !defined(WITHOUT_SSL) && defined(WITH_VSFTPD_SSL)
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+SSL_SUFFIX=	-ssl
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
+.else
+MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 .endif
 
 do-configure:
