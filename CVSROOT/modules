@@ -773,6 +773,7 @@ bmp-alarm	ports/x11-clocks/bmp-alarm
 bmp-docklet	ports/deskutils/bmp-docklet
 bmp-extra-plugins	ports/multimedia/bmp-extra-plugins
 bmp-faad	ports/audio/bmp-faad
+bmp-festalon	ports/audio/bmp-festalon
 bmp-flac	ports/audio/bmp-flac
 bmp-htmlplaylist	ports/audio/bmp-htmlplaylist
 bmp-rootvis	ports/graphics/bmp-rootvis
@@ -2155,6 +2156,7 @@ femlab		ports/math/femlab
 fep		ports/misc/fep
 ferite		ports/lang/ferite
 fesi		ports/lang/fesi
+festalon	ports/audio/festalon
 festdoc		ports/audio/festdoc
 festival	ports/audio/festival
 festival+OGI	ports/audio/festival+OGI
@@ -12791,6 +12793,7 @@ xmms-eq		ports/audio/xmms-eq
 xmms-eq-skins	ports/x11-themes/xmms-eq-skins
 xmms-faad	ports/audio/xmms-faad
 xmms-fc		ports/audio/xmms-fc
+xmms-festalon	ports/audio/xmms-festalon
 xmms-finespectrum	ports/graphics/xmms-finespectrum
 xmms-fishmatic	ports/graphics/xmms-fishmatic
 xmms-flac	ports/audio/xmms-flac
