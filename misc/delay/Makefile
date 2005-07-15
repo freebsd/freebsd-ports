@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	delay
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	misc
 MASTER_SITES=	http://onegeek.org/~tom/software/delay/dl/
 
