@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phprojekt
-PORTVERSION=	4.2.3
+PORTVERSION=	5.0
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.phprojekt.com/download/
 DISTNAME=	${PORTNAME}
