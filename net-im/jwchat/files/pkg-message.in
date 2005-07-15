@@ -1,0 +1,28 @@
+
+--------------------------------------------------------------------------
+
+* Read %%PREFIX%%/%%WWW_ROOT%%/%%PORTNAME%%/README!
+
+* Edit %%PREFIX%%/%%WWW_ROOT%%/%%PORTNAME%%/config.js to suit your needs.
+
+* Now you have to setup your web server so that it redirects requests
+  to the URLs given at httpbase of config.js to an http polling/binding
+  capable jabber server component.
+
+  Something along these lines might work:
+
+  <Directory %%PREFIX%%/%%WWW_ROOT%%/%%PORTNAME%%>
+        Options +Indexes +Multiviews
+        AddDefaultCharset UTF-8
+        RewriteEngine On
+        RewriteRule http-poll/ http://localhost:5280/http-poll/ [P]
+  </Directory>
+
+  Note: You need to enable mod_rewrite and mod_proxy at your apache
+  configuration. Apache2 users also need to enable the protocol
+  specific proxy module mod_proxy_http.
+
+* Restart your web server
+
+--------------------------------------------------------------------------
+
