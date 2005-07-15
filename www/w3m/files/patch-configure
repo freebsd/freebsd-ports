@@ -1,6 +1,15 @@
---- configure.orig	Fri Dec 12 22:49:07 2003
-+++ configure	Fri Dec 12 22:49:50 2003
-@@ -9451,7 +9451,7 @@
+--- configure.orig	Sat Jul 16 01:39:30 2005
++++ configure	Sat Jul 16 01:39:38 2005
+@@ -6443,7 +6443,7 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+-#include <machine/console.h>
++#include <sys/consio.h>
+    MOUSE_GETINFO
+ _ACEOF
+ if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
+@@ -10223,7 +10223,7 @@
  }'
  fi
  
