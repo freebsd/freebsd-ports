@@ -63,6 +63,8 @@ web2ldap/etc/web2ldap/web2ldapcnf/plugins/posixaccount.pyc
 web2ldap/etc/web2ldap/web2ldapcnf/plugins/activedirectory.pyc
 web2ldap/etc/web2ldap/web2ldapcnf/plugins/__init__.pyc
 web2ldap/etc/web2ldap/web2ldapcnf/plugins/entrust.pyc
+web2ldap/etc/web2ldap/web2ldapcnf/plugins/ppolicy.py
+web2ldap/etc/web2ldap/web2ldapcnf/plugins/ppolicy.pyc
 web2ldap/etc/web2ldap/web2ldapcnf/standalone.py
 web2ldap/etc/web2ldap/web2ldapcnf/fastcgi.py
 web2ldap/etc/web2ldap/web2ldapcnf/hosts.py
