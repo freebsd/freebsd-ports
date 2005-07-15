@@ -278,6 +278,7 @@
     SUBDIR += frink
     SUBDIR += fsmgenerator
     SUBDIR += ftnchek
+    SUBDIR += fujaba
     SUBDIR += funnelweb
     SUBDIR += g-wrap
     SUBDIR += g2c
