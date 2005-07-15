@@ -8,7 +8,8 @@ PORTNAME=	xmms-midi
 PORTVERSION=	0.03
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://ban.joh.cam.ac.uk/~cr212/xmms-midi/
+MASTER_SITES=	http://dl.fkb.wormulon.net/xmms-midi/ \
+				http://dl.kel.wormulon.net/xmms-midi/
 
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	XMMS input plugin to play midi files
