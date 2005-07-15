@@ -1,0 +1,67 @@
+--- makefile.orig	Sat May 21 14:03:45 2005
++++ makefile	Wed Jul 13 19:30:52 2005
+@@ -7,19 +7,18 @@
+ RELEASE = 1
+ USEPAK = 1
+ 
+-PREFIX=$(DESTDIR)/usr
+-BINDIR = $(PREFIX)/games/
+-DATADIR = $(PREFIX)/share/games/parallelrealities/
+-DOCDIR = $(PREFIX)/share/doc/$(PROG)-$(VERSION)-$(RELEASE)/
++BINDIR = $(PREFIX)/bin/
++DATADIR = $(PREFIX)/share/$(PROG)/
++DOCDIR = $(PREFIX)/share/doc/$(PROG)/
+ ICONDIR = $(PREFIX)/share/icons/
+ KDE = $(PREFIX)/share/applnk/Games/Arcade/
+ GNOME = $(PREFIX)/share/gnome/apps/Games/
+ 
+ SAFEDIR = /tmp/
+ 
+-CFLAGS += `sdl-config --cflags` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUSEPAK=$(USEPAK)
+-CFLAGS += -DPAKNAME=\"$(PAKNAME)\" -DPAKLOCATION=\"$(DATADIR)\" -DSAFEDIR=\"$(SAFEDIR)\" -DUNIX -DGAMEPLAYMANUAL=\"$(DOCDIR)manual.html\" -Wall
+-LIBS = `sdl-config --libs` -lSDL_mixer -lSDL_image -lSDL_ttf
++CFLAGS += `/usr/local/bin/sdl11-config --cflags` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUSEPAK=$(USEPAK)
++CFLAGS += -DPAKNAME=\"$(PAKNAME)\" -DPAKLOCATION=\"$(DATADIR)\" -DSAFEDIR=\"$(SAFEDIR)\" -DUNIX -DGAMEPLAYMANUAL=\"$(DOCDIR)manual.html\" -Wall
++LIBS = `/usr/local/bin/sdl11-config --libs` -lSDL_mixer -lSDL_image -lSDL_ttf
+ 
+ OBJS += CAudio.o 
+ OBJS += CBase.o
+@@ -51,7 +50,7 @@
+ PAKOBJS = CFileData.o pak.o
+ 
+ # top-level rule to create the program.
+-all: $(PROG) pak
++all: $(PROG) pak buildpak
+ 
+ # compiling other source files.
+ %.o: src/%.cpp src/%.h src/defs.h src/headers.h
+@@ -73,23 +72,10 @@
+ 
+ # install
+ install:
+-
+-	./pak data gfx music sound $(PAKNAME)
+-	mkdir -p $(BINDIR)
++	$(BSD_INSTALL_PROGRAM) $(PROG) $(BINDIR)$(PROG)
+ 	mkdir -p $(DATADIR)
+-	mkdir -p $(DOCDIR)
+-	mkdir -p $(ICONDIR)
+-	mkdir -p $(ICONDIR)mini
+-	mkdir -p $(ICONDIR)large
+-	mkdir -p $(KDE)
+-	mkdir -p $(GNOME)
+-
+-	strip $(PROG)
+-	install -o root -g games -m 755 $(PROG) $(BINDIR)$(PROG)
+-	install -o root -g games -m 644 $(PAKNAME) $(DATADIR)$(PAKNAME)
+-	cp $(DOCS) $(DOCDIR)
+-	cp $(ICONS)$(PROG).png $(ICONDIR)
+-	cp $(ICONS)$(PROG)-mini.png $(ICONDIR)mini/$(PROG).png
+-	cp $(ICONS)$(PROG)-large.png $(ICONDIR)large/$(PROG).png
+-	cp $(ICONS)$(PROG).desktop $(KDE)
+-	cp $(ICONS)$(PROG).desktop $(GNOME)
++	$(BSD_INSTALL_DATA) $(PAKNAME) $(DATADIR)$(PAKNAME)
++	mkdir -p $(PREFIX)/share/applications
++	$(BSD_INSTALL_DATA) $(ICONS)$(PROG).desktop $(PREFIX)/share/applications
++	mkdir -p $(PREFIX)/share/pixmaps
++	$(BSD_INSTALL_DATA) $(ICONS)$(PROG).png $(PREFIX)/share/pixmaps
