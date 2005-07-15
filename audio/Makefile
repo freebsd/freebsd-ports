@@ -48,6 +48,7 @@
     SUBDIR += bladeenc
     SUBDIR += blop
     SUBDIR += bmp-faad
+    SUBDIR += bmp-festalon
     SUBDIR += bmp-flac
     SUBDIR += bmp-htmlplaylist
     SUBDIR += bmp-scrobbler
@@ -102,6 +103,7 @@
     SUBDIR += faac
     SUBDIR += faad
     SUBDIR += fcplay
+    SUBDIR += festalon
     SUBDIR += festdoc
     SUBDIR += festival
     SUBDIR += festival+OGI
@@ -522,6 +524,7 @@
     SUBDIR += xmms-eq
     SUBDIR += xmms-faad
     SUBDIR += xmms-fc
+    SUBDIR += xmms-festalon
     SUBDIR += xmms-flac
     SUBDIR += xmms-fxt
     SUBDIR += xmms-gbsplay
