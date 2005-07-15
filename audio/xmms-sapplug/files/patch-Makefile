@@ -1,0 +1,47 @@
+--- Makefile.orig	Thu Jul 14 11:24:17 2005
++++ Makefile	Thu Jul 14 11:34:05 2005
+@@ -19,15 +19,18 @@
+ # 
+ ##########################################################################
+ 
+-CC     = gcc 
++CC?=		gcc 
++MAKE?=		make
+ 
+-CFLAGS = -O2 -Wall -fPIC -fpic \
+-	-finline-functions -ffast-math \
+-	-funroll-all-loops -fomit-frame-pointer -fno-strength-reduce \
+-	$(shell xmms-config --cflags) 
++CFLAGS?=	-O2 -Wall -fPIC -fpic \
++		-finline-functions -ffast-math \
++		-funroll-all-loops -fomit-frame-pointer -fno-strength-reduce
+ 
+-LINKER_FLAGS = -shared -Wl,-soname -Wl,$(TARGET) \
+-	-Wl,-retain-symbols-file -Wl,syms
++CFLAGS+=	$(shell xmms-config --cflags)
++
++
++LDFLAGS+=	-shared -Wl,-soname -Wl,$(TARGET) \
++		-Wl,-retain-symbols-file -Wl,syms
+ 
+ TARGET = libsap.so
+ 
+@@ -43,15 +46,15 @@
+ plugin: $(OBJS)
+ 	@./scripts/gen_symbols sap_plug.o 
+ 	@echo 
+-	$(CC) $(LINKER_FLAGS) $(OBJS) $(SAPLIB) -o $(TARGET)
++	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS) $(SAPLIB) -o $(TARGET)
+ 	@echo 
+ library: 
+ 	@echo 
+-	cd saplib && make 
++	cd saplib && $(MAKE)
+ 	@echo 
+ install:
+ 	cp $(TARGET) $(HOME)/.xmms/Plugins/Input
+ clean:
+ 	rm -f *.o *.so *.a .syms syms
+ realclean: clean
+-	cd saplib && make clean
++	cd saplib && $(MAKE) clean
