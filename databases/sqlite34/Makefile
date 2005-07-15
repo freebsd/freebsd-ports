@@ -11,7 +11,7 @@
 # If you want to build the TCL wrapper, you have to define SQLITE_WITH_TCL84.
 
 PORTNAME=	sqlite
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 
