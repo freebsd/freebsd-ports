@@ -12,7 +12,7 @@ $FreeBSD$
  #PREFIX = /opt/ayam
  # if you use one of the following, be sure to change LIBDIR
  # and DOCDIR to a more suitable (Ayam specific) path
-@@ -31,21 +31,21 @@
+@@ -31,14 +31,14 @@
  
  INSTALL = ./ninstall
  #INSTALL = install
@@ -20,35 +20,29 @@ $FreeBSD$
 +#MKDIR = mkdir -p
  
  # the C compiler
--CC = cc
+-#CC = cc
 +CC ?= cc
  #CC = gcc
  
  # the C++ compiler (just in use for the AyCSG and onio plugin)
--CXX = CC
+-#CXX = CC
 +CXX = ${CC}
- #CXX = g++-3.0
+ #CXX = g++
  
  # the linker
- # Starting with BMRT2.5, libribout and libslcargs are in C++,
- # which forces us to use "CC" or "g++" to link the right libraries
- # automatically
--LD = CC
-+LD = ${CC}
- # for Linux, use
- #LD = g++
- # MacOSX
-@@ -73,7 +73,8 @@
- # o add -DAYOLDSLX if you compile with an Aqsis libslxargs prior to 0.7.19
- # o add -DUSE_NON_CONST if you compile with Tcl/Tk 8.4.x
- 
--CFLAGS = -O -DAYUSESLCARGS -DAYUSEBMRTRIBOUT
+@@ -77,7 +77,10 @@
+ # the default configuration is to build with Affine as RIB writer without
+ # any shader parsing library (i.e. you will have to build and load a
+ # plugin for shader parsing)
+-CFLAGS = -O -DAYUSEAFFINE
++#CFLAGS = -O -DAYUSEAFFINE
++
 +# make amd64 happy with fPIC
 +CFLAGS += -O -fPIC -DAYUSESLXARGS -DAYUSEAQSISRIB -DAYENABLEWAIT
- # IRIX (-DAYIRIXBUG is needed by ncurve.c to work around a bug in libGLU)::
- #CFLAGS = -O -fullwarn -DAYIRIXBUG -DAYUSESLCARGS -DAYUSEBMRTRIBOUT
- # Linux:
-@@ -120,49 +121,53 @@
+ 
+ # simple configuration using BMRT
+ #CFLAGS = -O -DAYUSESLCARGS -DAYUSEBMRTRIBOUT
+@@ -128,49 +131,53 @@
  TOGLOBJECT = togl/togl.o
  
  # OpenGL
@@ -65,9 +59,9 @@ $FreeBSD$
  
  # Tcl/Tk
  # Tcl directory
- #TCLDIR = ../../tcl8.2.2
--TCLDIR = ../../tcl8.0
-+#TCLDIR = ../../tcl8.0
+-TCLDIR = ../../tcl8.2.2
++#TCLDIR = ../../tcl8.2.2
+ #TCLDIR = ../../tcl8.0
  
  # Tcl includes
 -TCLINC = -I$(TCLDIR)/generic
@@ -76,18 +70,18 @@ $FreeBSD$
  
  # Tcl library
  # link options for linking with Tcl library
- #TCLLIB = -L$(TCLDIR)/unix -ltcl8.2
--TCLLIB = -L$(TCLDIR)/unix -ltcl8.0
-+#TCLLIB = -L$(TCLDIR)/unix -ltcl8.0
-+TCLLIB = -L${LOCALBASE}/lib -ltcl82
+-TCLLIB = -L$(TCLDIR)/unix -ltcl8.2
++#TCLLIB = -L$(TCLDIR)/unix -ltcl8.2
+ #TCLLIB = -L$(TCLDIR)/unix -ltcl8.0
  # if you have an installed Tcl/Tk, you probably just want:
  #TCLLIB = -ltcl
++TCLLIB = -L${LOCALBASE}/lib -ltcl82
  
  # Tk sources directory
  # Note: You really need the Tk _sources_ in order to compile Ayam!
- #TKDIR = ../../tk8.2.2
--TKDIR = ../../tk8.0
-+#TKDIR = ../../tk8.0
+-TKDIR = ../../tk8.2.2
++#TKDIR = ../../tk8.2.2
+ #TKDIR = ../../tk8.0
  
  # Tk includes
 -TKINC = -I$(TKDIR)/generic -I$(TKDIR)/unix
@@ -96,12 +90,12 @@ $FreeBSD$
  
  # Tk library
  # link options for linking with Tk library
- #TKLIB = -L$(TKDIR)/unix -ltk8.2
--TKLIB = -L$(TKDIR)/unix -ltk8.0
-+#TKLIB = -L$(TKDIR)/unix -ltk8.0
-+TKLIB = -L${LOCALBASE}/lib -ltk82
+-TKLIB = -L$(TKDIR)/unix -ltk8.2
++#TKLIB = -L$(TKDIR)/unix -ltk8.2
+ #TKLIB = -L$(TKDIR)/unix -ltk8.0
  # if you have an installed Tcl/Tk, you probably just want:
  #TKLIB = -ltk
++TKLIB = -L${LOCALBASE}/lib -ltk82
  
  
  # X11-libs
@@ -111,8 +105,15 @@ $FreeBSD$
  #X11LIBS = -L/usr/X11R6/lib -lXmu -lXext -lX11
  
  
-@@ -177,18 +182,18 @@
- 
+@@ -179,23 +186,23 @@
+ AFFINEINCDIR = ./affine/include
+ # if you use Affine as BMRT libribout replacement
+ # (also add -DAYUSEAFFINE to CFLAGS!):
+-AFFINEOBJS = ./affine/src/write.o ./affine/src/constant.o
++#AFFINEOBJS = ./affine/src/write.o ./affine/src/constant.o
+ # if you do not use Affine as BMRT libribout replacement:
+-#AFFINEOBJS = 
++AFFINEOBJS = 
  
  # Aqsis
 -AQSISDIR = /usr/local/aqsis
@@ -125,41 +126,30 @@ $FreeBSD$
 +#AQSISOBJS = 
  # if you use Aqsis libslxargs (add -DAYUSESLXARGS to CFLAGS!):
 -#AQSISOBJS = $(AQSISLIBDIR)/rcdummy.o $(AQSISLIBDIR)/libshadervm.so $(AQSISLIBDIR)/libshaderexecenv.so $(AQSISLIBDIR)/libslxargs.so $(AQSISLIBDIR)/libaqsistypes.so -L /usr/local/lib -llog4cpp
-+AQSISOBJS = $(AQSISLIBDIR)/libaqsis.a $(AQSISLIBDIR)/libshadervm.so $(AQSISLIBDIR)/libshaderexecenv.so $(AQSISLIBDIR)/libslxargs.so $(AQSISLIBDIR)/libaqsistypes.so -L${LOCALBASE}/lib $(AQSISLIBDIR)/libraytrace.so -lstdc++
++AQSISOBJS = $(AQSISLIBDIR)/libaqsis.a $(AQSISLIBDIR)/libshadervm.so $(AQSISLIBDIR)/libshaderexecenv.so $(AQSISLIBDIR)/libslxargs.so $(AQSISLIBDIR)/libaqsistypes.so -L ${LOCALBASE}/lib $(AQSISLIBDIR)/libraytrace.so -lstdc++
  
  # if you do not use Aqsis libri2rib as BMRT libribout replacement:
- #AQSISRI2RIB =
+-AQSISRI2RIB =
++#AQSISRI2RIB =
  # if you use Aqsis libri2rib (add -DAYUSEAQSISRIB to CFLAGS above!):
--AQSISRI2RIB = $(AQSISLIBDIR)/libri2rib.so -L /usr/local/lib -llog4cpp
+-#AQSISRI2RIB = $(AQSISLIBDIR)/libri2rib.so -L /usr/local/lib -llog4cpp
 +AQSISRI2RIB = $(AQSISLIBDIR)/libri2rib.so -L${AQSISLIBDIR} -lstdc++ ${PTHREAD_LIBS}
  
  
  # BMRT
-@@ -199,9 +204,9 @@
- BMRTINCDIR = $(BMRTDIR)/include
- BMRTLIBDIR = $(BMRTDIR)/lib
- # if you use BMRT libribout and not Affine:
--RIBOUTLIB = -L$(BMRTLIBDIR) -lribout
-+#RIBOUTLIB = -L$(BMRTLIBDIR) -lribout
- # if you use Affine or Aqsis libri2rib as BMRT libribout replacement:
--#RIBOUTLIB =
-+RIBOUTLIB =
- # if you do not use libslcargs from BMRT:
- SLCARGSLIB =
- # if you use Affine as BMRT libribout replacement and libslcargs from BMRT:
-@@ -211,9 +216,9 @@
- # Dynamic Loading
- # Library for dynamic loading (contains dlopen())
- # Linux, IRIX, Solaris, (MacOSX: get libdl from Fink!):
--DL = -ldl
-+#DL = -ldl
+@@ -220,9 +227,9 @@
+ # IRIX, Solaris, (MacOSX: get libdl from Fink!):
+ #DL = -ldl
+ # Linux:
+-DL = -ldl -lpthread
++#DL = -ldl -lpthread
  # NetBSD:
 -#DL =
 +DL =
  
  # linker flags to produce shared modules:
  # Linux, Solaris, IRIX:
-@@ -227,8 +232,8 @@
+@@ -236,8 +243,8 @@
  RRIBLIBS = -L$(AFFINEDIR)/lib -lribrdr -lribhash -lribnop -lm
  
  # Ayslx Plugin (Aqsis)
@@ -170,15 +160,12 @@ $FreeBSD$
  
  # Ayso Plugin (RenderDotC, RDC)
  RDCDIR = /usr/local/rdc
-@@ -422,9 +427,9 @@
+@@ -431,7 +438,7 @@
  .cpp.o:
  	$(CXX) -c $(CFLAGS) $*.cpp -o $@ -I. -IMF3D -I$(TOGLINCDIR) $(TCLINC) $(TKINC) -I$(BMRTINCDIR) -I$(GLINCDIR) -I$(AFFINEINCDIR) -I$(AQSISINCDIR) -I$(OPENCSGINCDIR) -I$(GLEWINCDIR) -Iplugins
  
 -all: ayamsh csphere.so mfio.so metaobj.so
 +all: ayamsh csphere.so mfio.so metaobj.so ayslx.so
  
--ayamsh: $(AYAMOBJS) $(TOGLOBJECT) $(AFFINEOBJS)
-+ayamsh: $(AYAMOBJS) $(TOGLOBJECT)
+ ayamsh: $(AYAMOBJS) $(TOGLOBJECT) $(AFFINEOBJS)
  	$(LD) $(AYAMOBJS) $(TOGLOBJECT) $(EXLDFLAGS) -o ayamsh $(TKLIB) $(TCLLIB) $(GLLIBS) $(X11LIBS) $(RIBOUTLIB) $(AQSISRI2RIB) $(SLCARGSLIB) $(AFFINEOBJS) $(AQSISOBJS) $(TIFFLIB) -lm $(DL)
- 
- aycsg.so: $(AYCSGOBJS) $(OPENCSGOBJS)
