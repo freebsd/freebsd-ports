@@ -7,7 +7,7 @@
 
 PORTNAME=	hugin
 PORTVERSION=	0.5.b2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,9 +30,11 @@ RUN_DEPENDS=	PTOptimizer:${PORTSDIR}/graphics/libpano12 \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG}
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 
 DOCSDIR=	${PREFIX}/share/hugin/xrc/data
+WX_CONFIG=	${X11BASE}/bin/wxgtk2-2.4-config
 
 .include <bsd.port.mk>
