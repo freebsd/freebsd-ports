@@ -7,7 +7,7 @@
 
 PORTNAME=	fpdf
 PORTVERSION=	1.53
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print www
 MASTER_SITES=	http://www.fpdf.org/fr/
 DISTNAME=	${PORTNAME}${PORTVERSION:S|.||}
@@ -31,8 +31,10 @@ EXT2CNV=	afm htm php txt
 DOCS=		FAQ.htm doc/* fpdf.css histo.htm install.txt tutoriel
 
 do-fetch:
-	@${FETCH_CMD} ${FETCH_BEFORE_ARGS}	\
-		'${MASTER_SITES}dl.php?v=${PORTVERSION:S|.||}&f=${EXTRACT_SUFX:S|.||}'
+	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
+	${FETCH_CMD} ${FETCH_BEFORE_ARGS}	\
+		'${MASTER_SITES}dl.php?v=${PORTVERSION:S|.||}&f=${EXTRACT_SUFX:S|.||}'; \
+	fi
 
 pre-patch:
 .for ext in ${EXT2CNV}
