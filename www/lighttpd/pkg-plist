@@ -6,6 +6,7 @@ lib/lighttpd/mod_accesslog.so
 lib/lighttpd/mod_alias.so
 lib/lighttpd/mod_auth.so
 lib/lighttpd/mod_cgi.so
+lib/lighttpd/mod_cml.so
 lib/lighttpd/mod_compress.so
 lib/lighttpd/mod_evhost.so
 lib/lighttpd/mod_expire.so
@@ -21,6 +22,7 @@ lib/lighttpd/mod_setenv.so
 lib/lighttpd/mod_simple_vhost.so
 lib/lighttpd/mod_ssi.so
 lib/lighttpd/mod_status.so
+lib/lighttpd/mod_trigger_b4_dl.so
 lib/lighttpd/mod_userdir.so
 lib/lighttpd/mod_usertrack.so
 sbin/lighttpd
