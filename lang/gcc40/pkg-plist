@@ -34,5 +34,3 @@ include/mf-runtime.h
 %%LIBJAVA%%share/java/libgcj-%%GCC_VER%%.jar
 %%LIBJAVA%%@dirrm lib/security
 @comment Insert PLIST.lib here
-@comment -=[ begin PLIST.lib ]=-
-@comment -=[ end PLIST.lib ]=-
