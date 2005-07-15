@@ -39,8 +39,18 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
-BROKEN=		"Does not configure on alpha 5.x"
+.if ${ARCH} != "amd64" && ${ARCH} != "i386"
+USE_REINPLACE=	yes
+
+post-patch:
+# These architectures do not support "-minline-all-stringops"
+	@${REINPLACE_CMD} -e 's|-minline-all-stringops||g' \
+				${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.if ${ARCH} == "alpha"
+# "-ffast-math" does not work on alpha
+	@${REINPLACE_CMD} -e 's|-ffast-math||g' \
+				${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.endif
 .endif
 
 # Generator needs GCC 2.95.x or GCC >= 3.4.2 to work properly.
