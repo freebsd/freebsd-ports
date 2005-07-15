@@ -271,7 +271,7 @@ upgrades.
   2. You must also delete from ~/.ipython/ the file pysh.py.
 
 20050419:
-  AFFECTS: users of linux-opera
+  AFFECTS: users of www/linux-opera
   AUTHOR: mezz@FreeBSD.org
 
   Opera has been updated to 8.0. If you are upgrade from version 7.x or
@@ -369,7 +369,9 @@ upgrades.
   configuration file.
 
 20050320:
-  AFFECTS: users of x11/kde3, x11/kdelibs3, x11/kdebase3, x11-themes/kdeartwork3, www/akregator, x11-themes/phase, multimedia/kdemultimedia3
+  AFFECTS: users of x11/kde3, x11/kdelibs3, x11/kdebase3,
+	x11-themes/kdeartwork3, www/akregator, x11-themes/phase,
+	multimedia/kdemultimedia3
   AUTHOR: kde@freebsd.org
 
   In KDE 3.4, a number of files were moved between ports, some ports
@@ -474,7 +476,8 @@ upgrades.
   postgresql_enable=yes
 
 20050318:
-  AFFECTS: users of x11-wm/blackbox, boxtools, bbkeys and bbpager
+  AFFECTS: users of x11-wm/blackbox, x11-wm/boxtools, x11-wm/bbkeys, and
+	x11-wm/bbpager
   AUTHOR: A.J.Caines@halplant.com
 
   The new blackbox ports include several changes to use and configuration.
@@ -649,7 +652,8 @@ upgrades.
   If you have other problems, please contact hrs@FreeBSD.org.
 
 20050212:
-  AFFECTS: users of x11-fonts/mkbold, mkitalic and mkbold-mkitalic
+  AFFECTS: users of x11-fonts/mkbold, x11-fonts/mkitalic, and
+	x11-fonts/mkbold-mkitalic
   AUTHOR: koma2@ms.u-tokyo.ac.jp
 
   The dependency on x11-fonts/mkbold and x11-fonts/mkitalic has been
@@ -680,7 +684,7 @@ upgrades.
   with the teTeX distribution to explain structure of the ports.
 
 20050205:
-  AFFECTS: users of lang/ruby16_r, lang/ruby18_r and lang/ruby18
+  AFFECTS: users of lang/ruby16_r, lang/ruby18_r, and lang/ruby18
   AUTHOR: knu@FreeBSD.org
 
   The slippery pthread support for systems prior to 502102 has been
@@ -778,12 +782,12 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
 /usr/local/share/doc/spambnc.
 
 20050117:
-  AFFECTS: users of astk-client
+  AFFECTS: users of cad/astk-client
   AUTHOR: thierry@FreeBSD.org
 
-ASTK has been moved; if there exists files $HOME/.astkrc/config_serveurs,
-you have to update the entry rep_serv from /usr/local/ASTK/ASTK_SERV/bin
-to /usr/local/aster/ASTK/ASTK_SERV/bin (or you can remove $HOME/.astkrc).
+  ASTK has been moved; if there exists files $HOME/.astkrc/config_serveurs,
+  you have to update the entry rep_serv from /usr/local/ASTK/ASTK_SERV/bin
+  to /usr/local/aster/ASTK/ASTK_SERV/bin (or you can remove $HOME/.astkrc).
 
 20050114:
   AFFECTS: users of security/libgnomesu, esp. on FreeBSD 4.x.
@@ -1188,7 +1192,7 @@ to /usr/local/aster/ASTK/ASTK_SERV/bin (or you can remove $HOME/.astkrc).
   cd /usr/ports/multimedia/mpeg4ip && make install clean
 
 20041111:
-  AFFECTS: users of java
+  AFFECTS: users of Java
   AUTHOR: glewis@FreeBSD.org
 
   javavmwrapper has been rewritten.  It now creates symbolic links for
@@ -1721,7 +1725,7 @@ to /usr/local/aster/ASTK/ASTK_SERV/bin (or you can remove $HOME/.astkrc).
 Option "XkbRules" "xfree86"
 
 20040723:
-  AFFECTS: users of FreeBSD-current, users of xorg
+  AFFECTS: users of FreeBSD-current, users of X.Org
   AUTHOR: anholt@FreeBSD.org
 
   The XFREE86_VERSION variable is deprecated and has been replaced by the
@@ -1877,7 +1881,7 @@ Option "XkbRules" "xfree86"
   daapd_enable="YES"
 
 20040626:
-  AFFECTS: users of php4 and php5 with the PDFlib extension
+  AFFECTS: users of lang/php4 and lang/php5 with the PDFlib extension
   AUTHOR: ale@FreeBSD.org
 
   The PDFlib extension has been removed from the archive and moved to PECL.
@@ -2196,7 +2200,7 @@ Option "XkbRules" "xfree86"
     should run antivirupdater to get a current VDF.
 
 20040226:
-  AFFECTS: i386 users of ruby and portupgrade
+  AFFECTS: i386 users of lang/ruby* and sysutils/portupgrade
   AUTHOR: knu@FreeBSD.org
 
   Change the default version of ruby to 1.8 for i386.
