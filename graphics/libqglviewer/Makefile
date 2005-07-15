@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	libqglviewer
-PORTVERSION=	1.3.8.3
+PORTVERSION=	2.0.0.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://artis.imag.fr/Members/Gilles.Debunne/QGLViewer/src/
-DISTNAME=	libQGLViewer-${PORTVERSION:R}
+DISTNAME=	libQGLViewer-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ library helps development of 3D applications
