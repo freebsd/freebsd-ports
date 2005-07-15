@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uim
-PORTVERSION=	0.4.7
+PORTVERSION=	0.4.7.1
 CATEGORIES=	japanese x11
 MASTER_SITES=	http://uim.freedesktop.org/releases/
 
