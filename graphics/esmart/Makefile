@@ -7,6 +7,7 @@
 
 PORTNAME=	esmart
 PORTVERSION=	0.9.0.003
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
@@ -14,6 +15,7 @@ MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Evas smart objects development libraries
 
 LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
+		edje.5:${PORTSDIR}/graphics/edje \
 		epsilon.0:${PORTSDIR}/graphics/epsilon \
 		evas.1:${PORTSDIR}/graphics/evas \
 		ecore.1:${PORTSDIR}/x11/ecore
