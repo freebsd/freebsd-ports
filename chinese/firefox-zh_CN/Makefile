@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	firefox
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	chinese www
-MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}/win32/xpi/
+MASTER_SITES=	http://bbs.ilc.edu.tw/~chinsan/firefox/
 PKGNAMESUFFIX=	-zh_CN
-DISTNAME=	zh-CN
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}.${PORTVERSION}
 EXTRACT_SUFX=	.xpi
 
 # Maintainership available: drop me a line if interested :p
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	Firefox Simplified Chinese(zh-CN) Language Pack
 
-BUILD_DEPENDS=	${X11BASE}/lib/${FIREFOX}/regxpcom:${PORTSDIR}/www/${FIREFOX}
-RUN_DEPENDS=	${FIREFOX}:${PORTSDIR}/www/${FIREFOX}
+BUILD_DEPENDS=	${X11BASE}/lib/${FIREFOX}/regxpcom:${PORTSDIR}/www/firefox
+RUN_DEPENDS=	${FIREFOX}:${PORTSDIR}/www/firefox
 
 USE_X_PREFIX=	yes
 USE_ZIP=	yes
@@ -38,18 +37,19 @@ PLIST_SUB=	FIREFOX=${FIREFOX}
 
 do-install:
 	echo "===> Backup setting files..."
+	(cd ${FIREFOX_HOME}; \
+	${MV} -f browserconfig.properties browserconfig.properties.orig)
+	(cd ${FIREFOX_HOME}/defaults/pref; \
+	${MV} -f firefox-l10n.js firefox-l10n.js.orig)
+	(cd ${FIREFOX_HOME}/defaults/profile; \
+	${MV} -f bookmarks.html bookmarks.html.orig)
 	(cd ${FIREFOX_HOME}/chrome; \
 	${MV} -f chrome.rdf chrome.rdf.orig; \
 	${MV} -f installed-chrome.txt installed-chrome.txt.orig)
 
 	echo "===> Copying locale files..."
-	(cd ${WRKDIR}; ${TAR} -cf - chrome) | \
+	(cd ${WRKDIR}; ${TAR} -cf - *) | \
 	${TAR} -xf - -C ${FIREFOX_HOME}
-
-	echo "===> Copying locale setting file..."
-	(cd ${FIREFOX_HOME}/chrome; \
-	${CP} installed-chrome.txt.orig installed-chrome.txt; \
-	${CAT} ${FILESDIR}/installed-chrome.txt >> installed-chrome.txt)
 
 	echo "===> Cleaning Chrome's registry..."
 	${RM} -rf ${FIREFOX_HOME}/chrome/overlayinfo
