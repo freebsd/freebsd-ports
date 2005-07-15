@@ -134,6 +134,19 @@
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Darcs/test.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Darcs/test.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Darcs/test.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dcc/README.txt
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dcc/__init__.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dcc/__init__.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dcc/__init__.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dcc/config.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dcc/config.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dcc/config.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dcc/plugin.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dcc/plugin.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dcc/plugin.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dcc/test.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dcc/test.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/Dcc/test.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Debian/BeautifulSoup.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Debian/BeautifulSoup.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Debian/BeautifulSoup.pyo
@@ -176,6 +189,22 @@
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Ebay/test.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Ebay/test.pyc
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Ebay/test.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/ExternalNotice/README.txt
+%%PYTHON_SITELIBDIR%%/supybot/plugins/ExternalNotice/__init__.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/ExternalNotice/__init__.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/ExternalNotice/__init__.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/ExternalNotice/config.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/ExternalNotice/config.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/ExternalNotice/config.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/ExternalNotice/plugin.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/ExternalNotice/plugin.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/ExternalNotice/plugin.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/ExternalNotice/supybot-external-notice.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/ExternalNotice/supybot-external-notice.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/ExternalNotice/supybot-external-notice.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/ExternalNotice/test.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/ExternalNotice/test.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/ExternalNotice/test.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Freenode/README.txt
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Freenode/__init__.py
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Freenode/__init__.pyc
@@ -660,9 +689,11 @@
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Gameknot
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Freshmeat
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Freenode
+@dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/ExternalNotice
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Ebay
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Dunno
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Debian
+@dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Dcc
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Darcs
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/CyborgName
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins/Currency
