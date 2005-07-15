@@ -528,6 +528,7 @@
     SUBDIR += vavoom
     SUBDIR += vectoroids
     SUBDIR += virt
+    SUBDIR += viruskiller
     SUBDIR += wanderer
     SUBDIR += wargus
     SUBDIR += wesnoth

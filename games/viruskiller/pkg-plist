@@ -1,0 +1,17 @@
+bin/viruskiller
+share/applications/viruskiller.desktop
+share/pixmaps/viruskiller.png
+%%DATADIR%%/viruskiller.pak
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/battery.png
+%%PORTDOCS%%%%DOCSDIR%%/bomb.png
+%%PORTDOCS%%%%DOCSDIR%%/clock.png
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/title.png
+%%PORTDOCS%%%%DOCSDIR%%/virus1.gif
+%%PORTDOCS%%%%DOCSDIR%%/virus2.gif
+%%PORTDOCS%%%%DOCSDIR%%/virus3.gif
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+@unexec rmdir %D/share/applications 2>/dev/null || true
