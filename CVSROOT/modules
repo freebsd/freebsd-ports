@@ -12066,6 +12066,7 @@ vips		ports/graphics/vips
 virt		ports/games/virt
 virtualmin	ports/sysutils/virtualmin
 virtualpaper	ports/print/virtualpaper
+viruskiller	ports/games/viruskiller
 vis5d+		ports/science/vis5d+
 visionegg	ports/graphics/visionegg
 visitors	ports/www/visitors
