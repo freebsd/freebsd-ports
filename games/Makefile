@@ -469,6 +469,7 @@
     SUBDIR += spider
     SUBDIR += ssamtse
     SUBDIR += ssc
+    SUBDIR += starfighter
     SUBDIR += starlanes
     SUBDIR += stratagus
     SUBDIR += stvef-paks

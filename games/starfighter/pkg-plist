@@ -1,0 +1,15 @@
+bin/starfighter
+%%PORTDOCS%%%%DOCSDIR%%/ammo.gif
+%%PORTDOCS%%%%DOCSDIR%%/cash.gif
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/plasmaAmmo.png
+%%PORTDOCS%%%%DOCSDIR%%/plasmaDamage.png
+%%PORTDOCS%%%%DOCSDIR%%/plasmaRate.png
+%%PORTDOCS%%%%DOCSDIR%%/rocketAmmo.png
+%%PORTDOCS%%%%DOCSDIR%%/sflogo.gif
+%%PORTDOCS%%%%DOCSDIR%%/shield.gif
+%%PORTDOCS%%%%DOCSDIR%%/superCharge.png
+%%PORTDOCS%%%%DOCSDIR%%/targetArrow.png
+%%DATADIR%%/starfighter.pak
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

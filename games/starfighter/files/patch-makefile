@@ -1,0 +1,25 @@
+--- makefile.orig	Mon Aug 18 09:48:23 2003
++++ makefile	Wed Jul 13 18:40:23 2005
+@@ -7,9 +7,9 @@
+ PACK = starfighter.pak
+ DOCS = docs/*
+ 
+-BINDIR = /usr/games/
+-DATADIR = /usr/share/games/parallelrealities/
+-DOCDIR = /usr/share/doc/starfighter/
++BINDIR = $(PREFIX)/bin/
++DATADIR = $(PREFIX)/share/$(PROG)/
++DOCDIR = $(PREFIX)/share/doc/$(PROG)/
+ # top-level rule to create the program.
+ all: $(PROG)
+ 
+@@ -31,7 +31,5 @@
+ # install
+ install:
+ 	mkdir -p $(DATADIR)
+-	strip $(PROG)
+-	install -o root -g games -m 755 $(PROG) $(BINDIR)$(PROG)
+-	install -o root -g games -m 644 $(PACK) $(DATADIR)$(PACK)
+-	cp $(DOCS) $(DOCDIR)
++	$(BSD_INSTALL_PROGRAM) $(PROG) $(BINDIR)$(PROG)
++	$(BSD_INSTALL_DATA) $(PACK) $(DATADIR)$(PACK)
