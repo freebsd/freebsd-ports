@@ -1,5 +1,5 @@
---- src/net/Fl_FTP_Connect.cpp.orig	Fri Feb 27 04:09:46 2004
-+++ src/net/Fl_FTP_Connect.cpp	Fri Feb 27 04:10:32 2004
+--- src/net/Fl_FTP_Connect.cpp.orig	Fri Jul 15 11:31:49 2005
++++ src/net/Fl_FTP_Connect.cpp	Fri Jul 15 11:39:47 2005
 @@ -1,6 +1,6 @@
  #include <efltk/net/Fl_FTP_Connect.h>
  #include <stdio.h>
