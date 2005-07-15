@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qmail-rblchk
-DISTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	mail
 MASTER_SITES=	http://morettoni.net/qmail/
 
@@ -27,14 +27,20 @@ INSTALL_TARGET=	setup
 
 USE_REINPLACE=	yes
 
-PLIST_FILES=	bin/qmail-rblchk
+PLIST_FILES=	bin/qmail-rblchk %%EXAMPLESDIR%%/spam-report.sh
+PLIST_DIRS=	%%EXAMPLESDIR%%
+MAN1=		qmail-rblchk.1
 
 post-patch:
-	@${REINPLACE_CMD} 's|02755|0755|g' ${WRKSRC}/hier.c ${WRKSRC}/generic-conf.c
+	@${REINPLACE_CMD} 's|02755|0755|g; /"cat/d' ${WRKSRC}/hier.c
 
 do-configure:
 	${PRINTF}   "${PREFIX}\n\n.../bin.\n"	> ${WRKSRC}/conf-home
 	${ECHO_CMD} "${CC} ${CFLAGS}"		> ${WRKSRC}/conf-cc
 	${ECHO_CMD} "${CC} ${LDFLAGS}"		> ${WRKSRC}/conf-ld
+
+post-install:
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/contrib/spam-report.sh ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
