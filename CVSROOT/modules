@@ -2492,6 +2492,7 @@ ftree		ports/misc/ftree
 fudgit		ports/math/fudgit
 fugu		ports/net/fugu
 fuhquake	ports/games/fuhquake
+fujaba		ports/devel/fujaba
 fujiplay	ports/graphics/fujiplay
 fung-calc	ports/math/fung-calc
 funktrackergold	ports/audio/funktrackergold
