@@ -106,7 +106,7 @@ Java_Include_MAINTAINER=	glewis@FreeBSD.org hq@FreeBSD.org
 #
 # JAVA_CLASSES		Path to the archive that contains the JDK class files. On
 #					JDK 1.2 or later, this is ${JAVA_HOME}/jre/lib/rt.jar.
-#					Earlier JDK's use ${JAVA_HOME/lib/classes.zip.
+#					Earlier JDK's use ${JAVA_HOME}/lib/classes.zip.
 #
 # JAVASHAREDIR      The base directory for all shared Java resources.
 #
