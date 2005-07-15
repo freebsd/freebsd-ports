@@ -27,9 +27,9 @@ OPTIONS=	REDIRECT "Define malloc(3)-family replacements" off \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_THREADING) && !defined(WITHOUT_THREADING)
+.if defined(WITH_THREADING)
 CONFIGURE_ARGS+=	--enable-threads=posix --enable-thread-local-alloc
-.if defined(WITH_PARALLEL_MARK) && !defined(WITHOUT_PARALLEL_MARK)
+.if defined(WITH_PARALLEL_MARK)
 CONFIGURE_ARGS+=	--enable-parallel-mark
 .endif
 PKGNAMESUFFIX=		+threaded
@@ -37,11 +37,11 @@ PKGNAMESUFFIX=		+threaded
 CONFIGURE_ARGS+=	--disable-threads
 PKGNAMESUFFIX=		# empty
 .endif
-.if defined(WITH_REDIRECT) && !defined(WITHOUT_REDIRECT)
+.if defined(WITH_REDIRECT)
 CONFIGURE_ARGS+=	--enable-redirect-malloc
 PKGNAMESUFFIX:=		${PKGNAMESUFFIX}+redirect
 .endif
-.if defined(WITH_FULLDEBUG) && !defined(WITHOUT_FULLDEBUG)
+.if defined(WITH_FULLDEBUG)
 CONFIGURE_ARGS+=	--enable-full-debug
 PKGNAMESUFFIX:=		${PKGNAMESUFFIX}+fulldebug
 .endif
