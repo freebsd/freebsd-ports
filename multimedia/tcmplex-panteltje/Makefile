@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	tcmplex-panteltje
-PORTVERSION=	0.4.6
+PORTVERSION=	0.4.7
 CATEGORIES=	multimedia
-MASTER_SITES=	ftp://sunsite.unc.edu/pub/linux/apps/video/
+MASTER_SITES=	http://ip51cf87c4.direct-adsl.nl/panteltje/dvd/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	hq@FreeBSD.org
