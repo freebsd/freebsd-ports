@@ -12,7 +12,7 @@ CATEGORIES=		audio net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		funkblaster@n11.bmstu.ru
+MAINTAINER=		funkblaster@mail.ru
 COMMENT=		Direct streaming generator for Icecast/Shoutcast
 
 LIB_DEPENDS=		shout.4:${PORTSDIR}/audio/libshout2
