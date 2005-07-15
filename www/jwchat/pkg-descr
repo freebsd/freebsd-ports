@@ -1,0 +1,13 @@
+JWChat aims to be a full featured, web-based Jabber client.
+It uses only JavaScript and HTML on the client-side. Currently
+it supports basic jabber instant messaging, roster management
+and muc-based groupchats.
+
+JWChat is an advanced instant messenger (IM) just like AIM,
+MSN Messenger, Yahoo! Messenger or ICQ. This means you can manage
+your contacts, chat with other users directly or join a groupchat
+room for collaborative communication. Unlike other IMs you can use
+this with your web browser only without having to install any
+additional software at all.
+
+WWW: http://jwchat.sourceforge.net/
