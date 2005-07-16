@@ -32,8 +32,133 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5d72701a-f601-11d9-bcd1-02061b08fc24">
+    <topic>firefox &amp; mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>1.0.5,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>1.0.5</lt></range>
+      </package>
+      <package>
+	<name>mozilla</name>
+	<range><lt>1.7.9,2</lt></range>
+	<range><ge>1.8.*,2</ge></range>
+      </package>
+      <package>
+	<name>linux-mozilla</name>
+	<name>linux-mozilla-devel</name>
+	<range><lt>1.7.9</lt></range>
+	<range><ge>1.8.*</ge></range>
+      </package>
+      <package>
+	<name>netscape7</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<!-- These ports are obsolete. -->
+	<name>de-linux-mozillafirebird</name>
+	<name>el-linux-mozillafirebird</name>
+	<name>ja-linux-mozillafirebird-gtk1</name>
+	<name>ja-mozillafirebird-gtk2</name>
+	<name>linux-mozillafirebird</name>
+	<name>ru-linux-mozillafirebird</name>
+	<name>zhCN-linux-mozillafirebird</name>
+	<name>zhTW-linux-mozillafirebird</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<!-- These package names are obsolete. -->
+	<name>de-linux-netscape</name>
+	<name>de-netscape7</name>
+	<name>fr-linux-netscape</name>
+	<name>fr-netscape7</name>
+	<name>ja-linux-netscape</name>
+	<name>ja-netscape7</name>
+	<name>linux-netscape</name>
+	<name>linux-phoenix</name>
+	<name>mozilla+ipv6</name>
+	<name>mozilla-embedded</name>
+	<name>mozilla-firebird</name>
+	<name>mozilla-gtk1</name>
+	<name>mozilla-gtk2</name>
+	<name>mozilla-gtk</name>
+	<name>mozilla-thunderbird</name>
+	<name>phoenix</name>
+	<name>pt_BR-netscape7</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Foundation reports of multiple security
+	  vulnerabilities in Firefox and Mozilla:</p>
+	<blockquote cite="http://www.mozilla.org/projects/security/known-vulnerabilities.html">
+	  <ul>
+	    <li><em>MFSA 2005-56</em> Code execution through shared function
+	      objects</li>
+	    <li><em>MFSA 2005-55</em> XHTML node spoofing</li>
+	    <li><em>MFSA 2005-54</em> Javascript prompt origin spoofing</li>
+	    <li><em>MFSA 2005-53</em> Standalone applications can run arbitrary
+	      code through the browser</li>
+	    <li><em>MFSA 2005-52</em> Same origin violation: frame calling
+	      top.focus()</li>
+	    <li><em>MFSA 2005-51</em> The return of frame-injection
+	      spoofing</li>
+	    <li><em>MFSA 2005-50</em> Possibly exploitable crash in
+	      InstallVersion.compareTo()</li>
+	    <li><em>MFSA 2005-49</em> Script injection from Firefox sidebar
+	      panel using data:</li>
+	    <li><em>MFSA 2005-48</em> Same-origin violation with InstallTrigger
+	      callback</li>
+	    <li><em>MFSA 2005-47</em> Code execution via "Set as
+	      Wallpaper"</li>
+	    <li><em>MFSA 2005-46</em> XBL scripts ran even when Javascript
+	      disabled</li>
+	    <li><em>MFSA 2005-45</em> Content-generated event
+	      vulnerabilities</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1937</cvename>
+      <cvename>CAN-2005-2260</cvename>
+      <cvename>CAN-2005-2261</cvename>
+      <cvename>CAN-2005-2262</cvename>
+      <cvename>CAN-2005-2263</cvename>
+      <cvename>CAN-2005-2264</cvename>
+      <cvename>CAN-2005-2265</cvename>
+      <cvename>CAN-2005-2266</cvename>
+      <cvename>CAN-2005-2267</cvename>
+      <cvename>CAN-2005-2268</cvename>
+      <cvename>CAN-2005-2269</cvename>
+      <cvename>CAN-2005-2270</cvename>
+      <url>http://www.mozilla.org/projects/security/known-vulnerabilities.html</url>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-45.html</url>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-46.html</url>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-47.html</url>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-48.html</url>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-49.html</url>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-50.html</url>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-51.html</url>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-52.html</url>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-53.html</url>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-54.html</url>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-55.html</url>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-56.html</url>
+    </references>
+    <dates>
+      <discovery>2005-07-12</discovery>
+      <entry>2005-07-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f241641e-f5ea-11d9-a6db-000d608ed240">
-    <topic>Drupal -- PHP code execution vulnerabilities</topic>
+    <topic>drupal -- PHP code execution vulnerabilities</topic>
     <affects>
       <package>
 	<name>drupal</name>
