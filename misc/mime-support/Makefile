@@ -17,9 +17,12 @@ COMMENT=	MIME Media Types list
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
-PLIST_FILES=	etc/mime.types
+PLIST_FILES=	bin/run-mailcap etc/mime.types
+MAN1=		run-mailcap.1
 
 do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/run-mailcap ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/mime.types ${PREFIX}/etc
+	${INSTALL_MAN} ${WRKSRC}/run-mailcap.man ${MANPREFIX}/man/man1/run-mailcap.1
 
 .include <bsd.port.mk>
