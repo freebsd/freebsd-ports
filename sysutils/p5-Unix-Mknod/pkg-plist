@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Unix/Mknod.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Mknod/Mknod.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Mknod/Mknod.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Mknod/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Mknod
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Unix 2>/dev/null || true
