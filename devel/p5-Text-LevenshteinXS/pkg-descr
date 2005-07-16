@@ -1,0 +1,7 @@
+This is a port of Josh Goldberg's Text::LevenshteinXS
+An XS implementation of the Levenshtein edit distance
+
+WWW: http://search.cpan.org/~jgoldberg/Text-LevenshteinXS-0.03/
+
+Christian
+christian <AT> karg.org
