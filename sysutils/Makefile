@@ -351,6 +351,7 @@
     SUBDIR += p5-Tie-Syslog
     SUBDIR += p5-UPS-Nut
     SUBDIR += p5-Unix-ConfigFile
+    SUBDIR += p5-Unix-Mknod
     SUBDIR += p5-Unix-Processors
     SUBDIR += p5-Unix-Syslog
     SUBDIR += p5-User
