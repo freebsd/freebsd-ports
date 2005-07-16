@@ -13,28 +13,27 @@ MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/
 MAINTAINER=	steven@honson.org
 COMMENT=	Lightweight, easy to configure DNS forwarder and DHCP server
 
-USE_REINPLACE=	yes
-USE_RC_SUBR=	yes
-
 MAN8=		dnsmasq.8
-PLIST_FILES=	sbin/dnsmasq etc/dnsmasq.conf.example etc/rc.d/dnsmasq.sh
+PLIST_FILES=	sbin/dnsmasq etc/dnsmasq.conf.example
 
-USE_GETOPT_LONG=	yes
-MAKE_ENV+=	"LIBS=${LDFLAGS}"
+USE_GETOPT_LONG=yes
+MAKE_ENV=	LIBS="${LDFLAGS}" RPM_OPT_FLAGS="${CPPFLAGS}"
+
 .if defined(WITHOUT_IPV6)
-MAKE_ENV+=	RPM_OPT_FLAGS="${CPPFLAGS} -DNO_IPV6"
-.else
-MAKE_ENV+=	RPM_OPT_FLAGS="${CPPFLAGS}"
+MAKE_ENV+=	-DNO_IPV6
 .endif
 
-post-build:
-	@${SED} -e "s|%%RC_SUBR%%|${RC_SUBR}|g;s|%%PREFIX%%|${PREFIX}|g" \
-	<${FILESDIR}/dnsmasq.sh >${WRKDIR}/dnsmasq.sh
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500037
+USE_RC_SUBR=	dnsmasq.sh
+.else
+USE_RCORDER=	dnsmasq.sh
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/dnsmasq ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/dnsmasq.conf.example ${PREFIX}/etc
-	${INSTALL_SCRIPT} ${WRKDIR}/dnsmasq.sh ${PREFIX}/etc/rc.d
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${PREFIX}/man/man8
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
