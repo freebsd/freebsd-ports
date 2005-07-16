@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=		ekg
-PORTVERSION=		1.6r1
+PORTVERSION=		1.6r2
 PORTEPOCH=		1
 CATEGORIES=		polish net
 MASTER_SITES=		http://dev.null.pl/ekg/archive/
-DISTNAME=		${PORTNAME}-1.6rc1
+DISTNAME=		${PORTNAME}-1.6rc2
 
 MAINTAINER=		jacek@combit.com.pl
 COMMENT=		Text-mode Gadu-Gadu client
@@ -40,7 +40,7 @@ MANCOMPRESSED=	no
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/ekg
 	${RM} ${PREFIX}/lib/libgadu.so ${PREFIX}/lib/libgadu.so.3
-	${MV} ${PREFIX}/lib/libgadu.so.3.2 ${PREFIX}/lib/libgadu.so.3
+	${MV} ${PREFIX}/lib/libgadu.so.3.3 ${PREFIX}/lib/libgadu.so.3
 	${LN} -s ${PREFIX}/lib/libgadu.so.3 ${PREFIX}/lib/libgadu.so
 
 .include <bsd.port.mk>
