@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	scribus
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2.1
 CATEGORIES=	print editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scribus.org.uk/downloads/${PORTVERSION}/
@@ -20,7 +20,6 @@ LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		cups.2:${PORTSDIR}/print/cups-base \
 		freetype.9:${PORTSDIR}/print/freetype2
-
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 USE_BZIP2=	yes
@@ -52,10 +51,11 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g; \
-		 s|-O2||g ; \
+		 s|-O2 ||g ; \
+		 s|="-lc"|=""|g ; \
 		 s|2\.3|${PYTHON_VERSION:S/^python//}|g ; \
 		 s|python2_3|${PYTHON_VERSION:S/./_/}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		's|/share/man|/man|g' ${WRKSRC}/scribus/manpages/Makefile.in
+	@${REINPLACE_CMD} -e '/\/share\/pixmaps\//s|^|#|g' \
+		${WRKSRC}/scribus/icons/Makefile.in
 
 .include <bsd.port.post.mk>
