@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/JavaScript/SpiderMonkey.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript/SpiderMonkey/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript/SpiderMonkey/SpiderMonkey.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript/SpiderMonkey/SpiderMonkey.so
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/JavaScript 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript/SpiderMonkey
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript 2>/dev/null || true
