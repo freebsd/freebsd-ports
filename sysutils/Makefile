@@ -331,6 +331,7 @@
     SUBDIR += obliterate
     SUBDIR += open
     SUBDIR += openupsd
+    SUBDIR += p5-File-Stat-Bits
     SUBDIR += p5-File-Which
     SUBDIR += p5-Filesys-DiskFree
     SUBDIR += p5-Filesys-DiskSpace
