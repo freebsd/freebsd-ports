@@ -1,6 +1,14 @@
---- libgamin/gam_api.c.orig	Thu May 19 20:40:13 2005
-+++ libgamin/gam_api.c	Thu May 19 20:41:38 2005
-@@ -421,7 +421,7 @@
+--- libgamin/gam_api.c.orig	Sat Jul 16 14:50:35 2005
++++ libgamin/gam_api.c	Sat Jul 16 15:05:33 2005
+@@ -14,6 +14,7 @@
+ #include <sys/socket.h>
+ #include <sys/un.h>
+ #include <sys/uio.h>
++#include <string.h>
+ #include "fam.h"
+ #include "gam_protocol.h"
+ #include "gam_data.h"
+@@ -421,7 +422,7 @@ gamin_write_credential_byte(int fd)
  {
      char data[2] = { 0, 0 };
      int written;
@@ -9,7 +17,7 @@
      struct {
  	    struct cmsghdr hdr;
  	    struct cmsgcred cred;
-@@ -445,7 +445,7 @@
+@@ -445,7 +446,7 @@ gamin_write_credential_byte(int fd)
  #endif
  
  retry:
@@ -18,7 +26,7 @@
      written = sendmsg(fd, &msg, 0);
  #else
      written = write(fd, &data[0], 1);
-@@ -650,7 +650,7 @@
+@@ -655,7 +656,7 @@ gamin_check_cred(GAMDataPtr conn, int fd
  
      s_uid = getuid();
  
