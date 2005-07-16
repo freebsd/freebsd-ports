@@ -1,5 +1,5 @@
---- python/Makefile.in.orig	Sat Jul 16 02:18:56 2005
-+++ python/Makefile.in	Sat Jul 16 02:20:46 2005
+--- python/Makefile.in.orig	Sat Jul 16 13:21:22 2005
++++ python/Makefile.in	Sat Jul 16 13:22:22 2005
 @@ -60,12 +60,12 @@
  	"$(DESTDIR)$(dbusdir)"
  dbusbindingsLTLIBRARIES_INSTALL = $(INSTALL)
@@ -22,10 +22,10 @@
  dbus_bindings_la_LDFLAGS = -module -avoid-version -fPIC -export-symbols-regex initdbus_bindings
 -dbus_bindings_la_LIBADD = $(top_builddir)/dbus/libdbus-1.la
 +dbus_bindings_la_LIBADD = -ldbus-1
- nodist_dbus_bindings_la_SOURCES = $(srcdir)/dbus_bindings.c
+ nodist_dbus_bindings_la_SOURCES = dbus_bindings.c
  dbus_glib_bindings_la_LDFLAGS = -module -avoid-version -fPIC -export-symbols-regex initdbus_glib_bindings 
 -dbus_glib_bindings_la_LIBADD = $(top_builddir)/dbus/libdbus-1.la $(top_builddir)/glib/libdbus-glib-1.la
 +dbus_glib_bindings_la_LIBADD = -ldbus-1 -ldbus-glib-1
  dbus_glib_bindings_la_CFLAGS = $(DBUS_GLIB_CFLAGS) $(DBUS_GLIB_TOOL_CFLAGS)
- nodist_dbus_glib_bindings_la_SOURCES = $(srcdir)/dbus_glib_bindings.c
+ nodist_dbus_glib_bindings_la_SOURCES = dbus_glib_bindings.c
  EXTRA_DIST = \
