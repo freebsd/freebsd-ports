@@ -1,25 +1,21 @@
--------------------------------------------------------------------------------
-You should now log into your normal user account and issue a
+===============================================================================
+To do anything useful with the emulator, you need:
 
-	epsxe-install
+  - a GPU (graphical processing unit) plugin, choose between:
 
-in order to create and populate ~/.epsxe, needed to run the program.
+      emulators/linux-peops-softgpu
+      emulators/linux-pete-xgl2gpu
+      emulators/linux-pete-mesagpu
 
-To do anything useful with the emulator, you'll need a GPU and a SPU
-plugin (the Ports Collection contains a number of those), and a
-Playstation BIOS image. From the port's documentation:
+  - a SPU (sound processing unit) plugin:
 
-	"During testing we found out that the scph1001.bin and
-	 scph7502.bin BIOS are compatible, but the scph1000.bin
-	 won't work."
+      emulators/linux-peops-spu
 
-Note that you may only be in possession of the copyrighted BIOS if
-you're legally entitled to do so.
+  - a Playstation BIOS image:
 
-When you install a PSEmu Pro plugin from a FreeBSD port or package,
-you should re-run
+      The port documentation says: "during testing we found out that the
+      scph1001.bin and scph7502.bin BIOS are compatible, but the scph1000.bin
+      won't work".
 
-	epsxe-install
-
-in order to make the plugin available to ePSXe.
--------------------------------------------------------------------------------
+      Please keep in mind that the Playstation BIOS is copyrighted software.
+===============================================================================

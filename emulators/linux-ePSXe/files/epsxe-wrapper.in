@@ -1,0 +1,54 @@
+#!/bin/sh
+# $FreeBSD$
+
+EPSXE=%%PREFIX%%/libexec/epsxe
+DATADIR=%%DATADIR%%
+PSEMUPRO_PLUGINS_DIR=%%PREFIX%%/lib/psemupro/plugins
+PSEMUPRO_CFGBINS_DIR=%%PREFIX%%/libexec/psemupro/cfg
+PSEMUPRO_CFGFILES_DIR=%%PREFIX%%/share/psemupro/cfg
+
+USERDIR=$HOME/.epsxe
+
+remove_stale_symlinks () {
+    dir="$1"
+    
+    for f in $dir/*; do
+	[ "x$f" = "x$dir/*" ] && break
+
+	target=`readlink $f`
+	if [ -n "$target" ] && [ ! -e "$target" ]; then
+	    rm -f $f
+	fi
+    done
+}
+
+### create $USERDIR hierarchy
+
+for d in bios cfg cheats memcards patches plugins snap sstates; do
+    mkdir -p $USERDIR/$d || exit 1
+done
+
+### remove stale symlinks
+
+for d in plugins cfg; do
+    remove_stale_symlinks $USERDIR/$d || exit 1
+done
+
+### populate $USERDIR
+
+ln -sf $EPSXE $USERDIR/epsxe || exit 1
+
+for f in keycodes.lst cheats/breath_of_fire_4_usa.cht \
+    cheats/chrono_cross_ntsc.cht cheats/tarzan_pal.cht; do
+    ln -sf $DATADIR/$f $USERDIR/$f || exit 1
+done
+
+ln -sf $PSEMUPRO_PLUGINS_DIR/* $USERDIR/plugins 2>/dev/null
+ln -sf $PSEMUPRO_CFGBINS_DIR/* $USERDIR/cfg 2>/dev/null
+cp -n $PSEMUPRO_CFGFILES_DIR/* $USERDIR/cfg 2>/dev/null
+chmod u+w $USERDIR/cfg/* 2>/dev/null
+
+### run the emulator
+
+cd $USERDIR || exit 1
+exec ./epsxe "$@"
