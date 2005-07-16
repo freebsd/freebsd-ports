@@ -1,0 +1,6 @@
+lib/%%PYTHON_VERSION%%/site-packages/BeautifulSoup.py
+lib/%%PYTHON_VERSION%%/site-packages/BeautifulSoup.pyc
+lib/%%PYTHON_VERSION%%/site-packages/BeautifulSoup.pyo
+lib/%%PYTHON_VERSION%%/site-packages/BeautifulSoupTests.py
+lib/%%PYTHON_VERSION%%/site-packages/BeautifulSoupTests.pyc
+lib/%%PYTHON_VERSION%%/site-packages/BeautifulSoupTests.pyo
