@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	scim-canna
-PORTVERSION=	0.0.0
-PORTREVISION=	1
+PORTVERSION=	0.1.0
+PORTREVISION=	0
 CATEGORIES=	japanese
-MASTER_SITES=	http://www.homa.ne.jp/~ashie/linux/files/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
+MASTER_SITE_SUBDIR=	scim-imengine/14496
 
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	SCIM IMEngine module using Canna
