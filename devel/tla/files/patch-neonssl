@@ -1,0 +1,8 @@
+--- src/libneon/PLUGIN/AUTOCONF.orig	Wed Jun  1 21:08:13 2005
++++ src/libneon/PLUGIN/AUTOCONF	Sun Jun 19 19:23:56 2005
+@@ -16,4 +16,4 @@
+ fi
+ 
+ 
+-"$1" --with-ssl=no --with-included-expat --with-expat --disable-shared --enable-static
++"$1" --with-ssl --with-included-expat --with-expat --disable-shared --enable-static

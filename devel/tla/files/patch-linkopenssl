@@ -1,0 +1,10 @@
+--- src/tla/tla/Makefile.in.orig	Wed Jun  1 21:08:31 2005
++++ src/tla/tla/Makefile.in	Sun Jun 19 19:19:29 2005
+@@ -4,6 +4,7 @@
+ 				../libdate/libdate.a \
+ 				$(objroot)/hackerlab/libhackerlab/libhackerlab.a \
+ 				../../libneon/src/libneon.la \
++				-lssl -lcrypto \
+ 				-lm 
+ 
+ mains			:=	tla.c
