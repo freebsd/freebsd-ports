@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	milter
-PORTVERSION=	0.6.9
-PORTREVISION=	1
+PORTVERSION=	0.8.1
 CATEGORIES=	mail python
-MASTER_SITES=	http://www.bmsi.com/python/
+MASTER_SITES=	http://www.bmsi.com/python/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	pymilter
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	georg@graf.priv.at
