@@ -57,6 +57,26 @@ include/scribus/tree.h
 include/scribus/vgradient.h
 include/scribus/vruler.h
 include/scribus/werktoolb.h
+lib/scribus/dicts/README_ca_ES.txt
+lib/scribus/dicts/README_cs_CZ.txt
+lib/scribus/dicts/README_cy_GB.txt
+lib/scribus/dicts/README_da_DK.txt
+lib/scribus/dicts/README_de_DE.txt
+lib/scribus/dicts/README_en_EN.txt
+lib/scribus/dicts/README_en_GB.txt
+lib/scribus/dicts/README_es_ES.txt
+lib/scribus/dicts/README_fi_FI.txt
+lib/scribus/dicts/README_hu_HU.txt
+lib/scribus/dicts/README_lt_LT.txt
+lib/scribus/dicts/README_no_NO.txt
+lib/scribus/dicts/README_pl_PL.txt
+lib/scribus/dicts/README_pt_BR.txt
+lib/scribus/dicts/README_pt_PT.txt
+lib/scribus/dicts/README_ru_RU_0.txt
+lib/scribus/dicts/README_sk_SK.txt
+lib/scribus/dicts/README_sl_SI.txt
+lib/scribus/dicts/README_sv_SE.txt
+lib/scribus/dicts/README_uk_UA.txt
 lib/scribus/dicts/hyph_af.dic
 lib/scribus/dicts/hyph_ca.dic
 lib/scribus/dicts/hyph_cs.dic
@@ -68,12 +88,14 @@ lib/scribus/dicts/hyph_es.dic
 lib/scribus/dicts/hyph_fi.dic
 lib/scribus/dicts/hyph_fr.dic
 lib/scribus/dicts/hyph_ga.dic
+lib/scribus/dicts/hyph_hr.dic
 lib/scribus/dicts/hyph_hu.dic
 lib/scribus/dicts/hyph_it.dic
 lib/scribus/dicts/hyph_lt.dic
 lib/scribus/dicts/hyph_nl.dic
 lib/scribus/dicts/hyph_pl.dic
 lib/scribus/dicts/hyph_pt.dic
+lib/scribus/dicts/hyph_pt_BR.dic
 lib/scribus/dicts/hyph_ru.dic
 lib/scribus/dicts/hyph_sk.dic
 lib/scribus/dicts/hyph_sl.dic
@@ -98,6 +120,9 @@ lib/scribus/plugins/gettext/libcsvim.so.0
 lib/scribus/plugins/gettext/libhtmlim.a
 lib/scribus/plugins/gettext/libhtmlim.so
 lib/scribus/plugins/gettext/libhtmlim.so.0
+lib/scribus/plugins/gettext/libodtimplugin.a
+lib/scribus/plugins/gettext/libodtimplugin.so
+lib/scribus/plugins/gettext/libodtimplugin.so.0
 lib/scribus/plugins/gettext/libsxwimplugin.a
 lib/scribus/plugins/gettext/libsxwimplugin.so
 lib/scribus/plugins/gettext/libsxwimplugin.so.0
@@ -131,6 +156,9 @@ lib/scribus/plugins/libsaveastemplateplugin.so.0
 lib/scribus/plugins/libscribusexportpixmap.a
 lib/scribus/plugins/libscribusexportpixmap.so
 lib/scribus/plugins/libscribusexportpixmap.so.0
+lib/scribus/plugins/libscribusshortwords.a
+lib/scribus/plugins/libscribusshortwords.so
+lib/scribus/plugins/libscribusshortwords.so.0
 lib/scribus/plugins/libscriptplugin.a
 lib/scribus/plugins/libscriptplugin.so
 lib/scribus/plugins/libscriptplugin.so.0
@@ -147,7 +175,6 @@ lib/scribus/rgbscribusgreys.txt
 lib/scribus/rgbsvg.txt
 lib/scribus/scribus.af.qm
 lib/scribus/scribus.bg.qm
-lib/scribus/scribus.br.qm
 lib/scribus/scribus.ca.qm
 lib/scribus/scribus.cs.qm
 lib/scribus/scribus.cy.qm
@@ -168,6 +195,7 @@ lib/scribus/scribus.lt.qm
 lib/scribus/scribus.nb.qm
 lib/scribus/scribus.nl.qm
 lib/scribus/scribus.pl.qm
+lib/scribus/scribus.pt_BR.qm
 lib/scribus/scribus.ru.qm
 lib/scribus/scribus.se.qm
 lib/scribus/scribus.sk.qm
@@ -177,17 +205,24 @@ lib/scribus/scribus.sr.qm
 lib/scribus/scribus.tr.qm
 lib/scribus/scribus.uk.qm
 lib/scribus/scribus.zh.qm
+%%DATADIR%%/doc/cs/tutorials/scribus-short-words/after_short_words.png
+%%DATADIR%%/doc/cs/tutorials/scribus-short-words/before_short_words.png
+%%DATADIR%%/doc/cs/tutorials/scribus-short-words/dialog.png
+%%DATADIR%%/doc/cs/tutorials/scribus-short-words/menu.png
+%%DATADIR%%/doc/cs/tutorials/scribus-short-words/menu.xml
+%%DATADIR%%/doc/cs/tutorials/scribus-short-words/short-words-manual.html
 %%DATADIR%%/doc/en/about1.html
 %%DATADIR%%/doc/en/about2.html
-%%DATADIR%%/doc/en/acroreader.html
 %%DATADIR%%/doc/en/cms.html
+%%DATADIR%%/doc/en/cms2.html
+%%DATADIR%%/doc/en/cms3.html
+%%DATADIR%%/doc/en/cms4.html
 %%DATADIR%%/doc/en/codingstandards.html
 %%DATADIR%%/doc/en/contributions.html
 %%DATADIR%%/doc/en/cross-platform.html
 %%DATADIR%%/doc/en/cups.html
 %%DATADIR%%/doc/en/cygwin.html
 %%DATADIR%%/doc/en/developers.html
-%%DATADIR%%/doc/en/docchanges.html
 %%DATADIR%%/doc/en/doccopyright.html
 %%DATADIR%%/doc/en/docinfo.html
 %%DATADIR%%/doc/en/documentation.html
@@ -198,19 +233,26 @@ lib/scribus/scribus.zh.qm
 %%DATADIR%%/doc/en/fonts1.html
 %%DATADIR%%/doc/en/fonts2.html
 %%DATADIR%%/doc/en/fonts3.html
+%%DATADIR%%/doc/en/fonts4.html
+%%DATADIR%%/doc/en/fonts5.html
 %%DATADIR%%/doc/en/gettexthowto.html
 %%DATADIR%%/doc/en/gsadv.html
+%%DATADIR%%/doc/en/gsfont.html
 %%DATADIR%%/doc/en/gsview.html
 %%DATADIR%%/doc/en/hyphenator.html
 %%DATADIR%%/doc/en/images/RDF.png
 %%DATADIR%%/doc/en/images/Scripter.png
 %%DATADIR%%/doc/en/images/Scripter_error_string.png
 %%DATADIR%%/doc/en/images/acro1.png
+%%DATADIR%%/doc/en/images/acro2.png
 %%DATADIR%%/doc/en/images/acro3.png
 %%DATADIR%%/doc/en/images/acroinfo.png
 %%DATADIR%%/doc/en/images/acropass.png
+%%DATADIR%%/doc/en/images/acroreader5.1.png
 %%DATADIR%%/doc/en/images/acrosec.png
+%%DATADIR%%/doc/en/images/after_short_words.png
 %%DATADIR%%/doc/en/images/batik1.png
+%%DATADIR%%/doc/en/images/before_short_words.png
 %%DATADIR%%/doc/en/images/cmsmodify1.png
 %%DATADIR%%/doc/en/images/cmspanel.png
 %%DATADIR%%/doc/en/images/colormanager2.png
@@ -224,6 +266,11 @@ lib/scribus/scribus.zh.qm
 %%DATADIR%%/doc/en/images/fontpref3.png
 %%DATADIR%%/doc/en/images/fontprev.png
 %%DATADIR%%/doc/en/images/fonts.png
+%%DATADIR%%/doc/en/images/fonts2.png
+%%DATADIR%%/doc/en/images/fonts3.png
+%%DATADIR%%/doc/en/images/fonts4.png
+%%DATADIR%%/doc/en/images/fontsampler.png
+%%DATADIR%%/doc/en/images/fontsampler2.png
 %%DATADIR%%/doc/en/images/formularz_export_PDF.png
 %%DATADIR%%/doc/en/images/formularz_js_skrypt.png
 %%DATADIR%%/doc/en/images/formularz_js_sprawdzanie.png
@@ -258,7 +305,6 @@ lib/scribus/scribus.zh.qm
 %%DATADIR%%/doc/en/images/prefspanel5.png
 %%DATADIR%%/doc/en/images/printer1.png
 %%DATADIR%%/doc/en/images/printer2.png
-%%DATADIR%%/doc/en/images/printer3.png
 %%DATADIR%%/doc/en/images/printpreview.png
 %%DATADIR%%/doc/en/images/printseps.png
 %%DATADIR%%/doc/en/images/pstoedit1.png
@@ -270,6 +316,8 @@ lib/scribus/scribus.zh.qm
 %%DATADIR%%/doc/en/images/siatka_menu.png
 %%DATADIR%%/doc/en/images/spinbox1.png
 %%DATADIR%%/doc/en/images/svg1.png
+%%DATADIR%%/doc/en/images/swdialog.png
+%%DATADIR%%/doc/en/images/swmenu.png
 %%DATADIR%%/doc/en/images/symbole.png
 %%DATADIR%%/doc/en/images/ulica.png
 %%DATADIR%%/doc/en/images/wlasciwosci_pola.png
@@ -291,6 +339,7 @@ lib/scribus/scribus.zh.qm
 %%DATADIR%%/doc/en/machints2.html
 %%DATADIR%%/doc/en/menu.xml
 %%DATADIR%%/doc/en/moncal.html
+%%DATADIR%%/doc/en/mouse.html
 %%DATADIR%%/doc/en/otherinfo.html
 %%DATADIR%%/doc/en/parallel-install.html
 %%DATADIR%%/doc/en/pdf_form.html
@@ -304,13 +353,15 @@ lib/scribus/scribus.zh.qm
 %%DATADIR%%/doc/en/print1.html
 %%DATADIR%%/doc/en/print2.html
 %%DATADIR%%/doc/en/print3.html
+%%DATADIR%%/doc/en/readme.html
 %%DATADIR%%/doc/en/resources.html
-%%DATADIR%%/doc/en/screenshots.html
 %%DATADIR%%/doc/en/scribus-svg.html
 %%DATADIR%%/doc/en/scribuscopyright.html
 %%DATADIR%%/doc/en/scribusfileformat.html
+%%DATADIR%%/doc/en/scripter-extensions.html
 %%DATADIR%%/doc/en/scripter-faq.html
 %%DATADIR%%/doc/en/scripter1.html
+%%DATADIR%%/doc/en/scripterapi-ImageExport.html
 %%DATADIR%%/doc/en/scripterapi-PDFfile.html
 %%DATADIR%%/doc/en/scripterapi-Printer.html
 %%DATADIR%%/doc/en/scripterapi-color.html
@@ -329,6 +380,7 @@ lib/scribus/scribus.zh.qm
 %%DATADIR%%/doc/en/scripterapi-textframes.html
 %%DATADIR%%/doc/en/scripterapi.html
 %%DATADIR%%/doc/en/settings1.html
+%%DATADIR%%/doc/en/short-words.html
 %%DATADIR%%/doc/en/specs.html
 %%DATADIR%%/doc/en/toolbox.html
 %%DATADIR%%/doc/en/toolbox1.html
@@ -347,7 +399,18 @@ lib/scribus/scribus.zh.qm
 %%DATADIR%%/doc/en/topten.html
 %%DATADIR%%/doc/en/translation_howto.html
 %%DATADIR%%/doc/en/tutorials.html
-%%DATADIR%%/doc/en/wine.html
+%%DATADIR%%/doc/fr/tutorials/scribus-short-words/after_short_words.png
+%%DATADIR%%/doc/fr/tutorials/scribus-short-words/before_short_words.png
+%%DATADIR%%/doc/fr/tutorials/scribus-short-words/dialog.png
+%%DATADIR%%/doc/fr/tutorials/scribus-short-words/menu.png
+%%DATADIR%%/doc/fr/tutorials/scribus-short-words/menu.xml
+%%DATADIR%%/doc/fr/tutorials/scribus-short-words/short-words-manual.html
+%%DATADIR%%/doc/pl/tutorials/scribus-short-words/after_short_words.png
+%%DATADIR%%/doc/pl/tutorials/scribus-short-words/before_short_words.png
+%%DATADIR%%/doc/pl/tutorials/scribus-short-words/dialog.png
+%%DATADIR%%/doc/pl/tutorials/scribus-short-words/menu.png
+%%DATADIR%%/doc/pl/tutorials/scribus-short-words/menu.xml
+%%DATADIR%%/doc/pl/tutorials/scribus-short-words/short-words-manual.html
 %%DATADIR%%/icons/AddNode.png
 %%DATADIR%%/icons/AddPoint.png
 %%DATADIR%%/icons/AppIcon.png
@@ -503,6 +566,7 @@ lib/scribus/scribus.zh.qm
 %%DATADIR%%/icons/vectorgfx.png
 %%DATADIR%%/icons/view.png
 %%DATADIR%%/icons/vmirror.png
+%%DATADIR%%/plugins/scribus-short-words.rc
 %%DATADIR%%/samples/3columnA4.py
 %%DATADIR%%/samples/3columnUSLTR.py
 %%DATADIR%%/samples/Calendar.py
@@ -517,9 +581,9 @@ lib/scribus/scribus.zh.qm
 %%DATADIR%%/samples/plus_10_pourcent_group.py
 %%DATADIR%%/samples/pochette_cd.py
 %%DATADIR%%/samples/quote.py
+%%DATADIR%%/samples/sample_db_usage.py
 %%DATADIR%%/samples/trait_de_coupe.py
 %%DATADIR%%/samples/wordcount.py
-%%DATADIR%%/scripts/COPYING
 %%DATADIR%%/scripts/ChangeLog
 %%DATADIR%%/scripts/FontSample.py
 %%DATADIR%%/scripts/NEWS
@@ -554,9 +618,19 @@ lib/scribus/scribus.zh.qm
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/samples
+@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/doc/pl/tutorials/scribus-short-words
+@dirrm %%DATADIR%%/doc/pl/tutorials
+@dirrm %%DATADIR%%/doc/pl
+@dirrm %%DATADIR%%/doc/fr/tutorials/scribus-short-words
+@dirrm %%DATADIR%%/doc/fr/tutorials
+@dirrm %%DATADIR%%/doc/fr
 @dirrm %%DATADIR%%/doc/en/images
 @dirrm %%DATADIR%%/doc/en
+@dirrm %%DATADIR%%/doc/cs/tutorials/scribus-short-words
+@dirrm %%DATADIR%%/doc/cs/tutorials
+@dirrm %%DATADIR%%/doc/cs
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%
 @dirrm lib/scribus/profiles
