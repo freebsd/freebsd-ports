@@ -1,6 +1,6 @@
---- glib/dbus-gvalue-utils.c.orig	Sat Jul  2 01:10:40 2005
-+++ glib/dbus-gvalue-utils.c	Sat Jul  2 01:11:18 2005
-@@ -682,7 +682,6 @@ dbus_g_type_specialized_builtins_init (v
+--- glib/dbus-gvalue-utils.c.orig	Mon Jul 11 00:54:18 2005
++++ glib/dbus-gvalue-utils.c	Sat Jul 16 17:27:30 2005
+@@ -855,7 +855,6 @@
      NULL
    };
  
@@ -8,19 +8,30 @@
  
    static const DBusGTypeSpecializedCollectionVtable ptrarray_vtable = {
      {
-@@ -697,7 +696,6 @@ dbus_g_type_specialized_builtins_init (v
-     ptrarray_iterator
+@@ -869,7 +868,6 @@
+     NULL,
    };
  
 -  dbus_g_type_register_collection ("GPtrArray", &ptrarray_vtable, 0);
  
-   static const DBusGTypeSpecializedMapVtable hashtable_vtable = {
+   static const DBusGTypeSpecializedCollectionVtable slist_vtable = {
      {
-@@ -711,5 +709,7 @@ dbus_g_type_specialized_builtins_init (v
-     hashtable_iterator
+@@ -883,8 +881,6 @@
+     slist_end_append,
    };
  
+-  dbus_g_type_register_collection ("GSList", &slist_vtable, 0);
+-
+   static const DBusGTypeSpecializedMapVtable hashtable_vtable = {
+     {
+       hashtable_constructor,
+@@ -898,6 +894,9 @@
+     hashtable_append
+   };
+ 
++  dbus_g_type_register_collection ("GSList", &slist_vtable, 0);
 +  dbus_g_type_register_collection ("GArray", &array_vtable, 0);
 +  dbus_g_type_register_collection ("GPtrArray", &ptrarray_vtable, 0);
    dbus_g_type_register_map ("GHashTable", &hashtable_vtable, 0);
  }
+ 
