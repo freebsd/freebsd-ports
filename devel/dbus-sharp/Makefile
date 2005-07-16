@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel gnome
 PKGNAMESUFFIX=	-sharp
 
