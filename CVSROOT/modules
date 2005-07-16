@@ -11648,6 +11648,7 @@ tinker		ports/biology/tinker
 tintfu		ports/graphics/tintfu
 tintin++	ports/net/tintin++
 tintin++-devel	ports/net/tintin++-devel
+tinybsd		ports/sysutils/tinybsd
 tinyca		ports/security/tinyca
 tinycdb		ports/databases/tinycdb
 tinycobol	ports/lang/tinycobol
