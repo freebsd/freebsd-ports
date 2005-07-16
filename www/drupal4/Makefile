@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drupal
-PORTVERSION=	4.6.0
+PORTVERSION=	4.6.2
 CATEGORIES=	www
 MASTER_SITES=	http://drupal.org/files/projects/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -23,9 +23,9 @@ RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 NO_BUILD=	yes
 DRUPDIR=	www/data/drupal
 DOCS=		CHANGELOG.txt INSTALL.txt LICENSE.txt MAINTAINERS.txt
+PLIST_SUB+=	DRUPDIR=${DRUPDIR}
 
 do-install:
-
 	${MKDIR} ${PREFIX}/${DRUPDIR}
 	${CP} ${WRKSRC}/.htaccess ${PREFIX}/${DRUPDIR}
 	${CP} ${WRKSRC}/cron.php ${PREFIX}/${DRUPDIR}
@@ -40,10 +40,12 @@ do-install:
 	${CP} -R ${WRKSRC}/themes ${PREFIX}/${DRUPDIR}
 	${CP} ${WRKSRC}/update.php ${PREFIX}/${DRUPDIR}
 	${CP} ${WRKSRC}/xmlrpc.php ${PREFIX}/${DRUPDIR}
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/${DRUPDIR}/doc
 .for FILE in ${DOCS}
 	${CP} ${WRKSRC}/${FILE} ${PREFIX}/${DRUPDIR}/doc
 .endfor
+.endif
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${DRUPDIR}
 
 	@${ECHO_MSG} ""
