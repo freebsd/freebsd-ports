@@ -5596,6 +5596,7 @@ linux-panorama-tools	ports/graphics/linux-panorama-tools
 linux-peops-softgpu	ports/emulators/linux-peops-softgpu
 linux-peops-spu	ports/emulators/linux-peops-spu
 linux-pete-mesagpu	ports/emulators/linux-pete-mesagpu
+linux-pete-xgl2gpu	ports/emulators/linux-pete-xgl2gpu
 linux-png	ports/graphics/linux-png
 linux-png10	ports/graphics/linux-png10
 linux-q3ademo	ports/games/linux-q3ademo
