@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pete-mesagpu
-PORTVERSION=	1.75
-PORTREVISION=	3
+PORTVERSION=	1.76
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www.pbernert.com/
 PKGNAMEPREFIX=	linux-
@@ -30,8 +29,6 @@ MAJOR=		${PORTVERSION:R}
 MINOR=		${PORTVERSION:E}
 PLIST_SUB+=	MAJOR=${MAJOR} MINOR=${MINOR}
 
-.include <bsd.port.pre.mk>
-
 PSEMUPRO_PLUGINS_DIR=	${PREFIX}/lib/psemupro/plugins
 PSEMUPRO_CFGBINS_DIR=	${PREFIX}/libexec/psemupro/cfg
 PSEMUPRO_CFGFILES_DIR=	${PREFIX}/share/psemupro/cfg
@@ -48,10 +45,7 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} \
-		${WRKSRC}/readme.txt \
-		${WRKSRC}/version.txt \
-		${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
