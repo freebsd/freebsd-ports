@@ -1,10 +1,17 @@
-lib/%%PYTHON_VERSION%%/site-packages/Milter.py
-lib/%%PYTHON_VERSION%%/site-packages/Milter.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Milter.pyo
-lib/%%PYTHON_VERSION%%/site-packages/milter.so
-lib/%%PYTHON_VERSION%%/site-packages/mime.py
-lib/%%PYTHON_VERSION%%/site-packages/mime.pyc
-lib/%%PYTHON_VERSION%%/site-packages/mime.pyo
-lib/%%PYTHON_VERSION%%/site-packages/spf.py
-lib/%%PYTHON_VERSION%%/site-packages/spf.pyc
-lib/%%PYTHON_VERSION%%/site-packages/spf.pyo
+%%PYTHON_SITELIBDIR%%/Milter/__init__.py
+%%PYTHON_SITELIBDIR%%/Milter/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Milter/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Milter/dsn.py
+%%PYTHON_SITELIBDIR%%/Milter/dsn.pyc
+%%PYTHON_SITELIBDIR%%/Milter/dsn.pyo
+%%PYTHON_SITELIBDIR%%/Milter/dynip.py
+%%PYTHON_SITELIBDIR%%/Milter/dynip.pyc
+%%PYTHON_SITELIBDIR%%/Milter/dynip.pyo
+%%PYTHON_SITELIBDIR%%/milter.so
+%%PYTHON_SITELIBDIR%%/mime.py
+%%PYTHON_SITELIBDIR%%/mime.pyc
+%%PYTHON_SITELIBDIR%%/mime.pyo
+%%PYTHON_SITELIBDIR%%/spf.py
+%%PYTHON_SITELIBDIR%%/spf.pyc
+%%PYTHON_SITELIBDIR%%/spf.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/Milter
