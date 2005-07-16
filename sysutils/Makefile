@@ -493,6 +493,7 @@
     SUBDIR += throttle
     SUBDIR += ticker.app
     SUBDIR += timelimit
+    SUBDIR += tinybsd
     SUBDIR += tmpwatch
     SUBDIR += topless
     SUBDIR += torsmo
