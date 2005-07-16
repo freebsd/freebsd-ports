@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	minimalist
-PORTVERSION=	2.5.2.3
+PORTVERSION=	2.5.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mml.org.ua/LIST/ \
 		http://www.giovannelli.it/~gmarco/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/-/}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gmarco@giovannelli.it
 COMMENT=	A minimalistic mailing list manager
