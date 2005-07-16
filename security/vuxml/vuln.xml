@@ -32,6 +32,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f241641e-f5ea-11d9-a6db-000d608ed240">
+    <topic>Drupal -- PHP code execution vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>drupal</name>
+	<range><lt>4.6.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kuba Zygmunt discovered a flaw in the input validation routines 
+	  of Drupal's filter mechanism.  An attacker could execute
+	  arbitrary PHP code on a target site when public comments or
+	  postings are allowed.</p>
+      </body>
+    </description>
+    <references>
+	<cvename>CAN-2005-1921</cvename>
+	<cvename>CAN-2005-2106</cvename>
+	<url>http://drupal.org/files/sa-2005-002/advisory.txt</url>
+    </references>
+    <dates>
+      <discovery>2005-06-29</discovery>
+      <entry>2005-07-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="50457509-d05e-11d9-9aed-000e0c2e438a">
     <topic>phpSysInfo -- cross site scripting vulnerability</topic>
     <affects>
