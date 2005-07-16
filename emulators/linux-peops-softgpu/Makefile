@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	peops-softgpu
-PORTVERSION=	1.16
-PORTREVISION=	1
+PORTVERSION=	1.17
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www.pbernert.com/
 PKGNAMEPREFIX=	linux-
@@ -29,8 +28,6 @@ MAJOR=		${PORTVERSION:R}
 MINOR=		${PORTVERSION:E}
 PLIST_SUB+=	MAJOR=${MAJOR} MINOR=${MINOR}
 
-.include <bsd.port.pre.mk>
-
 PSEMUPRO_PLUGINS_DIR=	${PREFIX}/lib/psemupro/plugins
 PSEMUPRO_CFGBINS_DIR=	${PREFIX}/libexec/psemupro/cfg
 PSEMUPRO_CFGFILES_DIR=	${PREFIX}/share/psemupro/cfg
@@ -47,10 +44,7 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} \
-		${WRKSRC}/peops_soft_readme_${MAJOR}_${MINOR}.txt \
-		${WRKSRC}/peops_soft_version_${MAJOR}_${MINOR}.txt \
-		${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
