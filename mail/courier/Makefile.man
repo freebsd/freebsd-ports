@@ -21,14 +21,13 @@ MAN1=	\
 	testmxlookup.1
 MAN5=	\
 	dot-courier.5 \
-	maildir.5 \
-	maildropex.5 \
-	maildropfilter.5 \
-	maildropgdbm.5
+	maildir.5
 MAN7=	\
-	authlib.7 \
 	localmailfilter.7 \
-	maildirquota.7
+	maildirquota.7 \
+	maildropex.7 \
+	maildropfilter.7 \
+	maildropgdbm.7
 MAN8=	\
 	courier.8 \
 	courierfilter.8 \
@@ -44,40 +43,28 @@ MAN8=	\
 	makehosteddomains.8 \
 	makepercentrelay.8 \
 	makesmtpaccess.8 \
-	makeuserdb.8 \
 	mkesmtpdcert.8 \
 	mkimapdcert.8 \
 	mkpop3dcert.8 \
 	pop3d.8 \
-	submit.8 \
-	userdb.8 \
-	userdbpw.8
+	submit.8
 
 MLINKS=	dot-forward.1 dotforward.1 \
 	sendmail.1 rmail.1 \
-	authlib.7 authcram.7 \
-	authlib.7 authdaemon.7 \
-	authlib.7 authdaemond.7 \
-	authlib.7 authldap.7 \
-	authlib.7 authmysql.7 \
-	authlib.7 authpam.7 \
-	authlib.7 authpwd.7 \
-	authlib.7 authshadow.7 \
-	authlib.7 authuserdb.7 \
-	authlib.7 authvchkpw.7 \
 	courierfilter.8 filterctl.8 \
 	courierpop3d.8 courierpop3login.8 \
 	esmtpd.8 esmtpd-msa.8 \
-	makesmtpaccess.8 makesmtpaccess-msa.8 \
-	makeuserdb.8 pw2userdb.8 \
-	makeuserdb.8 vchkpw2userdb.8
+	makesmtpaccess.8 makesmtpaccess-msa.8
 
-.if defined(WITH_FAX) && ${WITH_FAX} == yes
+.if defined(WITH_LDAP) && !defined(WITHOUT_LDAP)
+#MAN8+=	courierldapaliasd.8
+.endif
+	
+.if defined(WITH_SENDFAX) && !defined(WITHOUT_SENDFAX)
 MAN8+=	courierfax.8
 .endif
 	
-.if defined(WITH_UUCP) && ${WITH_UUCP} == yes
+.if defined(WITH_UUCP) && !defined(WITHOUT_UUCP)
 MAN8+=	courieruucp.8
 MLINKS+=courieruucp.8 makeuucpneighbors.8
 .endif
-

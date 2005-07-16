@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/mail/courier/files/Attic/courier.sh,v 1.3 2004-01-15 15:12:32 sergei Exp $
+# $FreeBSD$
 #
 # Adapted for FreeBSD from courier.sysvinit
 #
@@ -8,7 +8,7 @@
 # "courierd restart" for a kindler, gentler, restart.
 #
 # PROVIDE: mail
-# REQUIRE: LOGIN
+# REQUIRE: LOGIN courier_authdaemond
 # BEFORE:  securelevel
 # KEYWORD: FreeBSD shutdown
 #
@@ -38,13 +38,38 @@ courier_enable=${courier_enable:-"NO"}	# Run Courier-MTA (YES/NO).
 name="courier"
 rcvar=`set_rcvar`
 
+start_precmd="${name}_prestart"
 start_cmd="${name}_start"
 stop_cmd="${name}_stop"
 extra_commands="restart"
 
+courier_prestart()
+{	# Ensure runtime directories exist with correct permissions
+	/usr/bin/install -o %%BINOWN%% -g %%BINGRP%% -m 0755 -d %%LOCALSTATEDIR%%
+	/usr/bin/install -o %%MAILOWN%% -g %%MAILGRP%% -m 0750 -d %%LOCALSTATEDIR%%/allfilters
+	/usr/bin/install -o %%MAILOWN%% -g %%MAILGRP%% -m 0700 -d %%LOCALSTATEDIR%%/faxtmp
+	/usr/bin/install -o %%MAILOWN%% -g %%MAILGRP%% -m 0750 -d %%LOCALSTATEDIR%%/filters
+	/usr/bin/install -o %%MAILOWN%% -g %%MAILGRP%% -m 0750 -d %%LOCALSTATEDIR%%/msgq
+	/usr/bin/install -o %%MAILOWN%% -g %%MAILGRP%% -m 0750 -d %%LOCALSTATEDIR%%/msgs
+	/usr/bin/install -o %%MAILOWN%% -g %%MAILGRP%% -m 0770 -d %%LOCALSTATEDIR%%/tmp
+	/usr/bin/install -o %%MAILOWN%% -g %%MAILGRP%% -m 0755 -d %%LOCALSTATEDIR%%/track
+	/usr/bin/install -o %%MAILOWN%% -g %%MAILGRP%% -m 0400 -c /dev/null %%LOCALSTATEDIR%%/.noident
+
+	/usr/bin/install -o %%BINOWN%% -g %%BINGRP%% -m 0755 -d %%CALENDIR%%
+	/usr/bin/install -o %%CACHEOWN%% -g %%MAILGRP%% -m 0700 -d %%CALENDIR%%/localcache
+	/usr/bin/install -o %%CACHEOWN%% -g %%MAILGRP%% -m 0750 -d %%CALENDIR%%/private
+	/usr/bin/install -o %%CACHEOWN%% -g %%MAILGRP%% -m 0755 -d %%CALENDIR%%/public
+
+	/usr/bin/install -o %%CACHEOWN%% -g mail -m 0700 -d %%CACHEDIR%%
+}
+
 courier_start()
 {	# First time after install create aliases.dat and makesmtpaccess.dat
 	echo -n "Starting"
+
+	if [ -f ${sysconfdir}/crontab ]; then
+		/usr/bin/crontab -u %%CACHEOWN%% ${sysconfdir}/crontab
+	fi
 
 	if [ ! -f ${sysconfdir}/aliases.dat \
 	  -a -x ${sbindir}/makealiases ]; then
@@ -56,7 +81,7 @@ courier_start()
 	ESMTPDSTART=""
 	if [ -f ${sysconfdir}/esmtpd ]; then
 		. ${sysconfdir}/esmtpd
-		case $ESMTPDSTART in
+		case "$ESMTPDSTART" in
 		[Yy]*)
 			esmtpdcert=1
 			;;
@@ -74,7 +99,7 @@ courier_start()
 	ESMTPDSTART=""
 	if [ -f ${sysconfdir}/esmtpd-msa ]; then
 		. ${sysconfdir}/esmtpd-msa
-		case $ESMTPDSTART in
+		case "$ESMTPDSTART" in
 		[Yy]*)
 			esmtpdcert=1
 			;;
@@ -90,30 +115,15 @@ courier_start()
 		${sbindir}/courierfilter start
 	fi
 
-	if [ -x ${libexecdir}/authlib/authdaemond ]; then
-		echo -n " authdaemond"
-		${libexecdir}/authlib/authdaemond start
-	fi
-
 	if [ -x ${sbindir}/courierldapaliasd ]; then
 		echo -n " courierldapaliasd"
 		${sbindir}/courierldapaliasd start
 	fi
 
-	case "`cat ${sysconfdir}/calendarmode 2>/dev/null`" in
-	net)
-		if [ -x ${libexecdir}/courier/pcpd ]; then
-			echo -n " pcpd"
-			${libexecdir}/courier/pcpd start
-		fi
-		;;
-	*)
-		;;
-	esac
-
-	if [ -x ${libexecdir}/courier/sqwebmaild ]; then
+	if [ -x ${libexecdir}/courier/sqwebmaild \
+	  -a -x ${sbindir}/webmaild ]; then
 		echo -n " webmail"
-		${libexecdir}/courier/sqwebmaild start
+		${sbindir}/webmaild start
 	fi
 
 	if [ -x ${sbindir}/courier ]; then
@@ -124,7 +134,7 @@ courier_start()
 	if [ "$esmtpdcert" = 1 ]; then
 		# If we do not have a certificate, make one up.
 		if [ ! -f ${sysconfdir}/esmtpd.pem \
-		  -a -x $COURIERTLS \
+		  -a -x "$COURIERTLS" \
 		  -a -x ${sbindir}/mkesmtpdcert ]; then
 			echo -n " generating-ESMTP-SSL-certificate..."
 			${sbindir}/mkesmtpdcert >/dev/null 2>&1
@@ -134,7 +144,7 @@ courier_start()
 	ESMTPDSTART=""
 	if [ -f ${sysconfdir}/esmtpd ]; then
 		. ${sysconfdir}/esmtpd
-		case $ESMTPDSTART in
+		case "$ESMTPDSTART" in
 		[Yy]*)
 			if [ -x ${sbindir}/esmtpd ]; then
 				echo -n " esmtpd"
@@ -147,7 +157,7 @@ courier_start()
 	ESMTPDSTART=""
 	if [ -f ${sysconfdir}/esmtpd-msa ]; then
 		. ${sysconfdir}/esmtpd-msa
-		case $ESMTPDSTART in
+		case "$ESMTPDSTART" in
 		[Yy]*)
 			if [ -x ${sbindir}/esmtpd-msa ]; then
 				echo -n " esmtpd-msa"
@@ -160,9 +170,9 @@ courier_start()
 	ESMTPDSSLSTART=""
 	if [ -f ${sysconfdir}/esmtpd-ssl ]; then
 		. ${sysconfdir}/esmtpd-ssl
-		case $ESMTPDSSLSTART in
+		case "$ESMTPDSSLSTART" in
 		[Yy]*)
-			if [ -x $COURIERTLS \
+			if [ -x "$COURIERTLS" \
 			  -a -x ${sbindir}/esmtpd-ssl ]; then
 				echo -n " esmtpd-ssl"
 				${sbindir}/esmtpd-ssl start
@@ -174,7 +184,7 @@ courier_start()
 	IMAPDSTART=""
 	if [ -f ${sysconfdir}/imapd ]; then
 		. ${sysconfdir}/imapd
-		case $IMAPDSTART in
+		case "$IMAPDSTART" in
 		[Yy]*)
 			if [ -x ${sbindir}/imapd ]; then
 				echo -n " imapd"
@@ -187,9 +197,9 @@ courier_start()
 	IMAPDSSLSTART=""
 	if [ -f ${sysconfdir}/imapd-ssl ]; then
 		. ${sysconfdir}/imapd-ssl
-		case $IMAPDSSLSTART in
+		case "$IMAPDSSLSTART" in
 		[Yy]*)	# If we do not have a certificate, make one up.
-			if [ -x $COURIERTLS ]; then
+			if [ -x "$COURIERTLS" ]; then
 				if [ ! -f ${sysconfdir}/imapd.pem \
 				  -a -x ${sbindir}/mkimapdcert ]; then
 					echo -n " generating-IMAP-SSL-certificate..."
@@ -207,7 +217,7 @@ courier_start()
 	POP3DSTART=""
 	if [ -f ${sysconfdir}/pop3d ]; then 
 		. ${sysconfdir}/pop3d
-		case $POP3DSTART in
+		case "$POP3DSTART" in
 		[Yy]*)
 			if [ -x ${sbindir}/pop3d ]; then
 				echo -n " pop3d"
@@ -220,9 +230,9 @@ courier_start()
 	POP3DSSLSTART=""
 	if [ -f ${sysconfdir}/pop3d-ssl ]; then
 		. ${sysconfdir}/pop3d-ssl
-		case $POP3DSSLSTART in
+		case "$POP3DSSLSTART" in
 		[Yy]*)	# If we do not have a certificate, make one up.
-			if [ -x $COURIERTLS ]; then
+			if [ -x "$COURIERTLS" ]; then
 				if [ ! -f ${sysconfdir}/pop3d.pem \
 				  -a -x ${sbindir}/mkpop3dcert ]; then 
 					echo -n " generating-POP3-SSL-certificate..."
@@ -283,14 +293,9 @@ courier_stop()
 		${sbindir}/courier stop
 	fi
 
-	if [ -x ${libexecdir}/courier/sqwebmaild ]; then
+	if [ -x ${sbindir}/webmaild ]; then
 		echo -n " webmail"
-		${libexecdir}/courier/sqwebmaild stop
-	fi
-
-	if [ -x ${libexecdir}/courier/pcpd ]; then
-		echo -n " pcpd"
-		${libexecdir}/courier/pcpd stop
+		${sbindir}/webmaild stop
 	fi
 
 	if [ -x ${sbindir}/courierldapaliasd ]; then
@@ -298,15 +303,12 @@ courier_stop()
 		${sbindir}/courierldapaliasd stop
 	fi
 
-	if [ -x ${libexecdir}/authlib/authdaemond ]; then
-		echo -n " authdaemond"
-		${libexecdir}/authlib/authdaemond stop
-	fi
-
 	if [ -x ${sbindir}/courierfilter ]; then
 		echo -n " courierfilter"
 		${sbindir}/courierfilter stop
 	fi
+
+	echo y | /usr/bin/crontab -u %%CACHEOWN%% -r || true
 	echo "."
 }
 

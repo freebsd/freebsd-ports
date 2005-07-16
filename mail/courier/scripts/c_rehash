@@ -6,7 +6,7 @@
 
 my $openssl;
 
-my $dir = "/etc/ssl";
+my $dir = "/usr/local/ssl";
 
 if(defined $ENV{OPENSSL}) {
 	$openssl = $ENV{OPENSSL};
@@ -15,10 +15,12 @@ if(defined $ENV{OPENSSL}) {
 	$ENV{OPENSSL} = $openssl;
 }
 
-if(! -f $openssl) {
+$ENV{PATH} .= ":$dir/bin";
+
+if(! -x $openssl) {
 	my $found = 0;
 	foreach (split /:/, $ENV{PATH}) {
-		if(-f "$_/$openssl") {
+		if(-x "$_/$openssl") {
 			$found = 1;
 			last;
 		}	
@@ -98,7 +100,8 @@ sub check_file {
 
 sub link_hash_cert {
 		my $fname = $_[0];
-		my ($hash, $fprint) = `$openssl x509 -hash -fingerprint -noout -in $fname`;
+		$fname =~ s/'/'\\''/g;
+		my ($hash, $fprint) = `"$openssl" x509 -hash -fingerprint -noout -in '$fname'`;
 		chomp $hash;
 		chomp $fprint;
 		$fprint =~ s/^.*=//;
@@ -128,7 +131,8 @@ sub link_hash_cert {
 
 sub link_hash_crl {
 		my $fname = $_[0];
-		my ($hash, $fprint) = `$openssl crl -hash -fingerprint -noout -in $fname`;
+		$fname =~ s/'/'\\''/g;
+		my ($hash, $fprint) = `"$openssl" crl -hash -fingerprint -noout -in '$fname'`;
 		chomp $hash;
 		chomp $fprint;
 		$fprint =~ s/^.*=//;
