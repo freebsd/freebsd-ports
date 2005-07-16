@@ -1,8 +1,0 @@
---- tla/libneon/PLUGIN/AUTOCONF.orig	Sat Dec  6 11:35:27 2003
-+++ tla/libneon/PLUGIN/AUTOCONF	Tue Aug 31 13:22:59 2004
-@@ -1,4 +1,4 @@
- #!/bin/sh
- 
--"$1" --with-expat --with-included-expat --with-included-neon
-+"$1" --with-expat --with-included-expat --with-included-neon --with-ssl
- 
