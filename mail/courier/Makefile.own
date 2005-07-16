@@ -7,6 +7,8 @@ OWNER0=	bin/courier-config \
 	bin/lockmail \
 	bin/mailbot \
 	bin/maildirmake \
+	bin/maildiracl \
+	bin/maildirkw \
 	bin/makemime \
 	bin/mimegpg \
 	bin/preline \
@@ -40,25 +42,19 @@ OWNER0=	bin/courier-config \
 	etc/courier/rfcerrheader.txt \
 	etc/courier/smtpaccess/default \
 	etc/courier/webmail.authpam \
-	libexec/authlib/authdaemon \
-	libexec/authlib/authdaemond \
-	libexec/authlib/authdaemond.plain \
-	libexec/authlib/changepwd/authdaemon.passwd \
 	libexec/courier/courierpop3d \
 	libexec/courier/courierpop3login \
 	libexec/courier/imaplogin \
 	libexec/courier/makedatprog \
-	libexec/courier/modules/esmtp/authend \
-	libexec/courier/modules/local/courierdeliver \
-	libexec/courier/modules/local/courierlocal \
-	libexec/courier/modules/modules.ctl \
+	libexec/courier/modules \
 	libexec/courier/pcpd \
+	libexec/courier/sqwebmaild \
 	libexec/courier/webmail/webadmin \
 	libexec/courier/webmail/webmail \
 	libexec/filters/dupfilter \
 	libexec/filters/perlfilter \
 	sbin/courier \
-	sbin/courierlogger \
+	sbin/courierldapaliasd \
 	sbin/couriertcpd \
 	sbin/showconfig \
-	sbin/userdbpw
+	sbin/webmaild

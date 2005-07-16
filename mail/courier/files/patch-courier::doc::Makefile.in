@@ -1,6 +1,6 @@
---- courier/doc/Makefile.in.orig	Wed Apr 23 01:46:13 2003
-+++ courier/doc/Makefile.in	Sat Aug  9 21:59:26 2003
-@@ -985,18 +985,18 @@
+--- courier/doc/Makefile.in.orig	Sun Jul  3 00:15:30 2005
++++ courier/doc/Makefile.in	Sun Jul  3 00:15:30 2005
+@@ -1136,18 +1136,18 @@
  	$(MAKE) do-man-install
  
  do-man-install:
@@ -26,7 +26,7 @@
  
  status.html: config.status
  
-@@ -1009,24 +1009,24 @@
+@@ -1160,24 +1160,24 @@
  	@SUBDIRS="$(SUBDIRS)" ; for f in $$SUBDIRS ; do ( cd $$f && $(MAKE) $(AM_MAKEFLAGS) install-perms ) ; cat /dev/null >>$$f/permissions.dat ; cat $$f/permissions.dat >>permissions.dat ; done
  
  install-perms-local:
@@ -66,6 +66,6 @@
 +#	@echo $(htmldocdir) 755 bin bin >>permissions.dat
 +#	@for f in $(htmldoc_DATA) ; do \
 +#	echo $(htmldocdir)/$$f 444 bin bin doc >>permissions.dat ; done
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
+ 
+ htmldoc: $(htmldocfiles)
+ 	echo '/icon\.gif/a'"\\" >htmldoc.sed

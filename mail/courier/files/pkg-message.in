@@ -3,27 +3,19 @@
 	Check and/or modify the following configuration files to
 	suit your needs:
 
-		%%PREFIX%%/etc/courier/authdaemonrc
-		%%PREFIX%%/etc/courier/authldaprc
-		%%PREFIX%%/etc/courier/authmysqlrc
-		%%PREFIX%%/etc/courier/authpgsqlrc
 		%%PREFIX%%/etc/courier/courierd
 		%%PREFIX%%/etc/courier/esmtpd
 		%%PREFIX%%/etc/courier/esmtpd-msa
 		%%PREFIX%%/etc/courier/esmtpd-ssl
-		%%PREFIX%%/etc/courier/faxcoverpage.tr
-		%%PREFIX%%/etc/courier/faxnotifyrc
-		%%PREFIX%%/etc/courier/faxrc
+%%WITHFAX%%		%%PREFIX%%/etc/courier/faxcoverpage.tr
+%%WITHFAX%%		%%PREFIX%%/etc/courier/faxnotifyrc
+%%WITHFAX%%		%%PREFIX%%/etc/courier/faxrc
 		%%PREFIX%%/etc/courier/imapd
 		%%PREFIX%%/etc/courier/imapd-ssl
 		%%PREFIX%%/etc/courier/ldapaddressbook
-		%%PREFIX%%/etc/courier/ldapaliasrc
+%%WITHLDAP%%		%%PREFIX%%/etc/courier/ldapaliasrc
 		%%PREFIX%%/etc/courier/pop3d
 		%%PREFIX%%/etc/courier/pop3d-ssl
-
-	Note that some of the configuration files might not exist
-	depending on which authentication services you chose to
-	omit.
 
 	Do not forget to update /etc/pam.d/ or /etc/pam.conf with
 	the contents of %%PREFIX%%/etc/courier/*.authpam.
@@ -44,6 +36,5 @@
 		daily_submit_queuerun="NO"
 
 	Documentation (if installed locally) is located in
-	%%PREFIX%%/share/doc/courier/ otherwise see
+	%%DOCSDIR%%/ otherwise see
 	http://www.Courier-MTA.org/
-

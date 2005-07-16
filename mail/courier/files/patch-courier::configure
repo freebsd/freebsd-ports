@@ -1,6 +1,6 @@
---- courier/configure.orig	Sat Nov 15 15:13:43 2003
-+++ courier/configure	Wed Jan  7 03:22:36 2004
-@@ -21208,9 +21208,9 @@
+--- courier/configure.orig	Sun Jul  3 00:06:22 2005
++++ courier/configure	Sun Jul  3 00:06:22 2005
+@@ -22109,9 +22109,9 @@
  
  if test "$testmode" = "0"
  then

@@ -1,20 +1,31 @@
-DOCS=	AUTHORS BENCHMARKS INSTALL NEWS README \
-	authlib/README.authmysql.html \
-	authlib/README.ldap \
-	gpglib/README.gpglib.html \
-	imap/FAQ.imap \
-	imap/FAQ.imap.html \
+DOCS=	AUTHORS \
+	BENCHMARKS \
+	COPYING \
+	COPYING.GPL \
+	ChangeLog \
+	ChangeLog.2001 \
+	INSTALL \
+	NEWS \
+	README \
+	TODO \
+	imap/BUGS.imap \
 	imap/README.imap \
-	imap/README.imap.html \
-	maildir/README.maildirfilter.html \
-	maildir/README.maildirquota.html \
+	imap/README.proxy \
 	maildir/README.maildirquota.txt \
 	maildir/README.sharedfolders.txt \
+	tcpd/README.couriertls \
+	webmail/BUGS.webmail \
+	webmail/SECURITY.webmail
+
+HTMLDOCS=NEWS.html \
+	gpglib/README.gpglib.html \
+	imap/BUGS.imap.html \
+	imap/README.imap.html \
+	imap/README.proxy.html \
+	maildir/README.maildirfilter.html \
+	maildir/README.maildirquota.html \
 	maildir/README.sharedfolders.html \
 	maildrop/README.maildrop.html \
 	pcp/README.pcp.html \
-	tcpd/README.couriertls \
-	webmail/BUGS.webmail \
 	webmail/BUGS.webmail.html \
-	webmail/SECURITY.webmail \
 	webmail/SECURITY.webmail.html
