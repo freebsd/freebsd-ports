@@ -9763,6 +9763,7 @@ py-ansistyle	ports/devel/py-ansistyle
 py-anygui	ports/x11-toolkits/py-anygui
 py-ao		ports/audio/py-ao
 py-asv		ports/textproc/py-asv
+py-beautifulsoup	ports/www/py-beautifulsoup
 py-biopython	ports/biology/py-biopython
 py-bison	ports/devel/py-bison
 py-bittornado	ports/net/py-bittornado
