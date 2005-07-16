@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.icecrew.nl/software/gnoemoe/download/
 
-MAINTAINER=	jesse@icecrew.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome MOO Client
 
 USE_RUBY=	yes
