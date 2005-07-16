@@ -41,8 +41,11 @@ CONFIGURE_ARGS=	--with-bdb-lib=-ldb41_cxx --with-bdb-incdir=${LOCALBASE}/include
 .elif ${WITH_BDB_VER} == 42
 LIB_DEPENDS+=	db-4.2:${PORTSDIR}/databases/db42
 CONFIGURE_ARGS=	--with-bdb-lib=-ldb_cxx-4.2 --with-bdb-incdir=${LOCALBASE}/include/db42
+.elif ${WITH_BDB_VER} == 43
+LIB_DEPENDS+=	db-4.3:${PORTSDIR}/databases/db43
+CONFIGURE_ARGS=	--with-bdb-lib=-ldb_cxx-4.3 --with-bdb-incdir=${LOCALBASE}/include/db43
 .else
-.error WITH_BDB_VER must be one between 3, 4, 41 or 42
+.error WITH_BDB_VER must be one between 3, 4, 41, 42 or 43
 .endif
 
 MAN1=	dns-terror.1 btree-dump.1 convert-dom-db.1 convert-ip-db.1 \
