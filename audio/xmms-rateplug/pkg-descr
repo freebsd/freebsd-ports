@@ -1,0 +1,12 @@
+Adds extra control to the XMMS playlist and automatically skips songs you don't
+like and play the ones you do like.
+
+  * High rated songs will be played privileged
+  * Manual manipulation of the assessment of single songs
+  * Ignore single songs
+  * Configurable
+
+WWW: http://xmmsassesment.sourceforge.net/
+
+- ehaupt
+ehaupt@critical.ch

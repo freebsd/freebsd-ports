@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# Emanuel Haupt <ehaupt@critical.ch>
+#
+# This script creates the users configfile that needs to
+# exist in order to use this plugin
+#
+# $FreeBSD$
+
+
+if [ ! -d ~/.xmms ]; then
+	echo "===>  Creating xmms directory"
+	mkdir ~/.xmms
+fi
+
+if [ -f ~/.xmms/database.txt ]; then
+	echo "===>  Database already exists"
+else
+	echo "===>  Initializing database"
+	touch ~/.xmms/database.txt
+	echo "===>  Database initialized"
+fi
