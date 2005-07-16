@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel gnome
 PKGNAMESUFFIX=	-sharp
 
@@ -26,7 +26,6 @@ PLIST=		${.CURDIR}/pkg-plist
 DBUS_SLAVE=	yes
 
 USE_GNOME=	gnomehack gnometarget
-USE_PYTHON=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-mono \
 		--disable-python \
@@ -39,8 +38,9 @@ CONFIGURE_ARGS=	--enable-mono \
 		--disable-doxygen-docs \
 		--disable-xml-docs
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/mono/doc/Makefile.in
+# Disable those, since it doesn't install docs yet.
+#post-patch:
+#	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+#		${WRKSRC}/mono/doc/Makefile.in
 
 .include "${MASTERDIR}/Makefile"
