@@ -1,0 +1,8 @@
+share/tinybsd/COPYRIGHT
+share/tinybsd/README
+share/tinybsd/tinybsd.basefiles
+share/tinybsd/TINYBSD
+share/tinybsd/TODO
+bin/tinybsd
+@dirrm share/tinybsd
+
