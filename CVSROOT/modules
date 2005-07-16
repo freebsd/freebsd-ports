@@ -12827,6 +12827,7 @@ xmms-osssurround	ports/audio/xmms-osssurround
 xmms-paranormal	ports/graphics/xmms-paranormal
 xmms-pipe	ports/audio/xmms-pipe
 xmms-quix3dn	ports/audio/xmms-quix3dn
+xmms-rateplug	ports/audio/xmms-rateplug
 xmms-real-random	ports/audio/xmms-real-random
 xmms-sapplug	ports/audio/xmms-sapplug
 xmms-scrobbler	ports/audio/xmms-scrobbler
