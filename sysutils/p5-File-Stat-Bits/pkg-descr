@@ -1,0 +1,6 @@
+This Perl5 module to interface with the major()/minor() C routines.
+
+WWW: http://search.cpan.org/search?dist=File-Stat-Bits
+
+- Jim Pirzyk
+pirzyk@freebsd.org
