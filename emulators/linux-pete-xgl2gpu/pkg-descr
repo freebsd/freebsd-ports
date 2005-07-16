@@ -1,0 +1,9 @@
+Pete's XGL2 GPU is a PSEmu Pro GPU plugin using a hardware-accelerated
+modern OpenGL renderer.
+
+This is the Linux version, tested with emulators/linux-ePSXe.
+
+WWW: http://www.pbernert.com/
+
+- Jean-Yves Lefort
+jylefort@brutele.be

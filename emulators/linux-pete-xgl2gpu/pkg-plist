@@ -1,0 +1,12 @@
+lib/psemupro/plugins/libgpuPeteXGL2.so.%%MAJOR%%.0.%%MINOR%%
+libexec/psemupro/cfg/cfgPeteXGL2
+share/psemupro/cfg/gpuPeteXGL2.cfg
+@unexec rmdir %D/lib/psemupro/plugins 2>/dev/null || true
+@unexec rmdir %D/lib/psemupro 2>/dev/null || true
+@unexec rmdir %D/libexec/psemupro/cfg 2>/dev/null || true
+@unexec rmdir %D/libexec/psemupro 2>/dev/null || true
+@unexec rmdir %D/share/psemupro/cfg 2>/dev/null || true
+@unexec rmdir %D/share/psemupro 2>/dev/null || true
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/version.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
