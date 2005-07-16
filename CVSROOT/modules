@@ -7793,6 +7793,7 @@ p5-Inline-Java	ports/devel/p5-Inline-Java
 p5-Inline-Tcl	ports/devel/p5-Inline-Tcl
 p5-Ioctl	ports/devel/p5-Ioctl
 p5-Jabber-Connection	ports/net/p5-Jabber-Connection
+p5-JavaScript-SpiderMonkey	ports/lang/p5-JavaScript-SpiderMonkey
 p5-Kwiki	ports/www/p5-Kwiki
 p5-Kwiki-Archive-Rcs	ports/www/p5-Kwiki-Archive-Rcs
 p5-Kwiki-Archive-SVK	ports/www/p5-Kwiki-Archive-SVK
