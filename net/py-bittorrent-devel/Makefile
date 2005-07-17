@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	BitTorrent
-PORTVERSION=	4.1.2
+PORTVERSION=	4.1.3
 PORTEPOCH=	1
 CATEGORIES?=	net python
 MASTER_SITES=	http://www.bittorrent.com/dl/ \
@@ -34,6 +34,7 @@ PORTDOCS=	\
 		README.txt \
 		TRACKERLESS.txt \
 		credits.txt \
+		credits-l10n.txt \
 		redirdonate.html
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-noportdocs-setup.py
