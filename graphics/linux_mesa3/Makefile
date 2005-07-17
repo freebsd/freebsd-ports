@@ -20,6 +20,9 @@ CATEGORIES=	graphics linux
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	A graphics library similar to SGI's OpenGL, used from Linux programs
 
+DEPRECATED=	yes
+EXPIRATION_DATE=2005-12-01
+
 USE_XLIB=	yes
 BASEVERSION=7.2
 ONLY_FOR_ARCHS=	i386
