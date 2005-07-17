@@ -7,7 +7,7 @@
 
 PORTNAME=	ac3d
 PORTVERSION=	5.0.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://inivis.swmirror.com/
 PKGNAMEPREFIX=	linux-
@@ -22,7 +22,11 @@ RUN_DEPENDS=	\
 		${LINUXBASE}/usr/lib/libpng.so.2:${PORTSDIR}/graphics/linux-png10 \
 		${LINUXBASE}/usr/lib/libtiff.so.3:${PORTSDIR}/graphics/linux-tiff
 .ifdef(INSTALL_DYNLINKED_VERSION)
-RUN_DEPENDS+=	${LINUXBASE}/usr/libGLU.so.1:${PORTSDIR}/graphics/linux_mesa3
+.ifdef(WITH_NVIDIA_GL)
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+.else
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
+.endif
 .endif
 
 RESTRICTED=	"no distribution permitted"
