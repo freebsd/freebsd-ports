@@ -1,5 +1,5 @@
---- gnome-keyring.c.orig	Mon Feb 21 02:50:29 2005
-+++ gnome-keyring.c	Tue Apr 26 01:57:25 2005
+--- gnome-keyring.c.orig	Fri May 27 03:54:22 2005
++++ gnome-keyring.c	Sat Jul 16 21:49:24 2005
 @@ -36,6 +36,7 @@
  #include <string.h>
  #include <sys/types.h>
@@ -13,9 +13,9 @@
    char buf;
    int bytes_written;
 +#if defined(HAVE_CMSGCRED) && (!defined(LOCAL_CREDS) || defined(__FreeBSD__))
-+  struct {
++  union {
 +	  struct cmsghdr hdr;
-+	  struct cmsgcred cred;
++	  char cred[CMSG_SPACE (sizeof (struct cmsgcred))];
 +  } cmsg;
 +  struct iovec iov;
 +  struct msghdr msg;
@@ -30,10 +30,10 @@
 +  msg.msg_iov = &iov;
 +  msg.msg_iovlen = 1;
 +
-+  msg.msg_control = &cmsg;
-+  msg.msg_controllen = sizeof (cmsg);
++  msg.msg_control = (caddr_t) &cmsg;
++  msg.msg_controllen = CMSG_SPACE (sizeof (struct cmsgcred));
 +  memset (&cmsg, 0, sizeof (cmsg));
-+  cmsg.hdr.cmsg_len = sizeof (cmsg);
++  cmsg.hdr.cmsg_len = CMSG_LEN (sizeof (struct cmsgcred));
 +  cmsg.hdr.cmsg_level = SOL_SOCKET;
 +  cmsg.hdr.cmsg_type = SCM_CREDS;
 +#endif
@@ -54,9 +54,9 @@
    char buf;
    int bytes_written;
 +#if defined(HAVE_CMSGCRED) && (!defined(LOCAL_CREDS) || defined(__FreeBSD__))
-+  struct {
++  union {
 +	  struct cmsghdr hdr;
-+	  struct cmsgcred cred;
++	  char cred[CMSG_SPACE (sizeof (struct cmsgcred))];
 +  } cmsg;
 +  struct iovec iov;
 +  struct msghdr msg;
@@ -71,10 +71,10 @@
 +  msg.msg_iov = &iov;
 +  msg.msg_iovlen = 1;
 +
-+  msg.msg_control = &cmsg;
-+  msg.msg_controllen = sizeof (cmsg);
++  msg.msg_control = (caddr_t) &cmsg;
++  msg.msg_controllen = CMSG_SPACE (sizeof (struct cmsgcred));
 +  memset (&cmsg, 0, sizeof (cmsg));
-+  cmsg.hdr.cmsg_len = sizeof (cmsg);
++  cmsg.hdr.cmsg_len = CMSG_LEN (sizeof (struct cmsgcred));
 +  cmsg.hdr.cmsg_level = SOL_SOCKET;
 +  cmsg.hdr.cmsg_type = SCM_CREDS;
 +#endif
