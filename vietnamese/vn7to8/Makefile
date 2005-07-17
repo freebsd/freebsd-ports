@@ -10,8 +10,7 @@
 PORTNAME=	vn7to8
 PORTVERSION=	1.1.1
 CATEGORIES=	vietnamese
-MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Unix/  \
-		ftp://ftp.monash.edu.au/pub/vietnam/unix/
+MASTER_SITES=	ftp://ftp.monash.edu.au/pub/vietnam/unix/
 DISTNAME=	vn7to8
 EXTRACT_SUFX=	.tar.Z
 
