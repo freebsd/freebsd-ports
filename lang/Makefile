@@ -282,6 +282,7 @@
     SUBDIR += tcl82
     SUBDIR += tcl83
     SUBDIR += tcl84
+    SUBDIR += tcl84-thread
     SUBDIR += tclX
     SUBDIR += tcltutor
     SUBDIR += tensile
