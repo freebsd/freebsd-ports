@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl equivalent of statfs(2)
 
+BROKEN=		Incomplete pkg-plist
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Filesys::DiskSpace.3
