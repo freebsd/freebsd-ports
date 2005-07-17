@@ -23,6 +23,8 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A popular newsreader for emacs20
 
+BROKEN=		Incomplete pkg-plist
+
 HAS_CONFIGURE=	yes
 
 EMACS_PORT_NAME?=emacs20
