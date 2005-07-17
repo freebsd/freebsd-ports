@@ -1,15 +1,13 @@
---- Makefile.in.orig	Thu Nov 21 02:43:25 2002
-+++ Makefile.in	Sun Mar 28 02:13:53 2004
-@@ -14,9 +14,9 @@
+--- Makefile.in.orig	Mon Dec 20 23:15:05 2004
++++ Makefile.in	Sat Jul 16 23:47:26 2005
+@@ -11,8 +11,8 @@
  # DEFS should include -Dacceptarg3_t=int (replace with the correct data type)
- CC = @CC@
  CXX = @CXX@
--CFLAGS = @extracflags@ @DEFS@ -O2 -I@includedir@ -Ilibtcd -c
--CXXFLAGS = @extracxxflags@ @DEFS@ -O2 -I@includedir@ -Ilibtcd -I$(XROOT)/include -I/usr/local/include -I/usr/contrib/include -c
--LDFLAGS = @extraldflags@ -L@libdir@ -L$(XROOT)/lib -L/usr/local/lib -L/usr/contrib/lib -o
-+CFLAGS = @CFLAGS@ @extracflags@ @DEFS@ -I@includedir@ -Ilibtcd @CPPFLAGS@ -c
-+CXXFLAGS = @CXXFLAGS@ @extracxxflags@ @DEFS@ -I@includedir@ -Ilibtcd -I$(XROOT)/include @CPPFLAGS@ -c
-+LDFLAGS = @LDFLAGS@ @extraldflags@ -L@libdir@ -L$(XROOT)/lib -o
+ CC = @CC@
+-CXXFLAGS = @extracxxflags@ @DEFS@ -I@includedir@ -Ilibtcd -I@xroot@/include @normalcxxflags@ -c
+-LDFLAGS = @extraldflags@ -L@libdir@ -L@xlibdir@ @normalldflags@ -o
++CXXFLAGS = @CXXFLAGS@ @DEFS@ -I@includedir@ -Ilibtcd -I@xroot@/include @extracxxflags@ -c
++LDFLAGS = @LDFLAGS@ -L@libdir@ -L@xlibdir@ @extraldflags@ -o
  
  # Extra switches and libs determined by configure.in
  extraswitches=@extraswitches@
