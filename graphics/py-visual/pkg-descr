@@ -1,0 +1,10 @@
+With this Python module a program can create 3D objects (such as spheres,
+curves, etc.) and position them in 3D space. Visual, running in a separate
+thread, automatically updates a 3D scene many times per second, to reflect
+the current positions of the objects.
+The programmer does not need to deal with display management, but can focus
+on the computational aspects of the program.
+The user can navigate in the 3D scene by using the mouse to zoom and rotate
+while the program is running. Visual supports full vector algebra.
+
+WWW:	http://www.vpython.org/
