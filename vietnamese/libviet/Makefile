@@ -16,6 +16,7 @@ MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	VIQR<->VISCII conversion and VISCII ctype-like routines
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/lib
+USE_BZIP2=	yes
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/libvntype.a ${WRKSRC}/libviqr.a  \
