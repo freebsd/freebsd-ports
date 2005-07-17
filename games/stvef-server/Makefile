@@ -15,6 +15,8 @@ DISTFILES=	stveflinuxdedicated120.zip
 MAINTAINER=	nik@FreeBSD.org
 COMMENT=	Star Trek Voyager: Elite Forces dedicated server for Linux
 
+BROKEN=		Incomplete pkg-plist
+
 ONLY_FOR_ARCHS=	i386
 USE_ZIP=	yes
 USE_LINUX=	yes

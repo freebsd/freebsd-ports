@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	nik@FreeBSD.org
 COMMENT=	Return to Castle Wolfenstein for Linux
 
+BROKEN=		Incomplete pkg-plist
+
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
