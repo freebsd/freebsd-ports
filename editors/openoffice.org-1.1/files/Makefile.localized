@@ -3,6 +3,8 @@
 # $FreeBSD$
 
 ################################################################
+# consult config_office/set_soenv.in for available languages
+################################################################
 .if defined(LOCALIZED_LANG)
 .if ${LOCALIZED_LANG} == "af"
 LANG_PKGNAME=   af
@@ -219,20 +221,6 @@ LANG_CONFIGURE_ARG=	RUSS
 L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 .endif
 ################################################################
-.if ${LOCALIZED_LANG} == "es"
-LANG_PKGNAME=   es
-LANG_EXT=       34
-L10NHELP=       helpcontent_${LANG_EXT}_unix.tgz
-LANG_CONFIGURE_ARG=     SPAN
-.endif
-################################################################
-.if ${LOCALIZED_LANG} == "sv"
-LANG_PKGNAME=	sv
-LANG_EXT=	46
-L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
-LANG_CONFIGURE_ARG=	SWED
-.endif
-################################################################
 .if ${LOCALIZED_LANG} == "sk"
 LANG_PKGNAME=	sk
 LANG_EXT=	43
@@ -246,6 +234,20 @@ LANG_SUFFIX=	SI
 LANG_EXT=	50
 LANG_CONFIGURE_ARG=	SLOVENIAN
 L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "es"
+LANG_PKGNAME=   es
+LANG_EXT=       34
+L10NHELP=       helpcontent_${LANG_EXT}_unix.tgz
+LANG_CONFIGURE_ARG=     SPAN
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "sv"
+LANG_PKGNAME=	sv
+LANG_EXT=	46
+L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
+LANG_CONFIGURE_ARG=	SWED
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "th"
