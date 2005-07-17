@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	html2ps-${PAPERSIZE}
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.0.b4
+PORTEPOCH=	1
 CATEGORIES=	print www perl5
 MASTER_SITES=	http://user.it.uu.se/~jan/
-DISTNAME=	html2ps-1.0b3
+DISTNAME=	html2ps-1.0b4
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	HTML to PostScript converter
