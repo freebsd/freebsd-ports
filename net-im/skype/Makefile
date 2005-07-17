@@ -7,6 +7,7 @@
 
 PORTNAME=	skype
 PORTVERSION=	1.1.0.20
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.skype.com/linux/
 DISTNAME=	skype_staticQT-${PORTVERSION}
@@ -20,7 +21,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux
 .ifdef WITH_NVIDIA_GL
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 .else
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/graphics/linux_mesa3
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/libGL.so.1:${PORTSDIR}/graphics/linux_dri
 .endif
 
 USE_BZIP2=	yes
