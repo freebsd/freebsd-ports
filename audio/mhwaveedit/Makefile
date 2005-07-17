@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	mhwaveedit
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.mtek.chalmers.se/~hjormagn/
+MASTER_SITES=	http://download.gna.org/mhwaveedit/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical program for editing sound files
@@ -74,6 +74,7 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|^AM_CFLAGS=|#AM_CFLAGS=|g ; \
+		 s|-ldl||g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
