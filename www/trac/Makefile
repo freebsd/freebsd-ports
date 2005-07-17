@@ -12,7 +12,7 @@ CATEGORIES=	www devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 		ftp://ftp.edgewall.com/pub/trac/
 
-MAINTAINER=	thinker@branda.to
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An enhanced wiki and issue tracking system for software projects
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/sqlite/main.py:${PORTSDIR}/databases/py-PySQLite10 \
