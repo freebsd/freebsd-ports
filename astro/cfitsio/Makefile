@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cfitsio
-PORTVERSION=	2.500
+PORTVERSION=	2.510
 CATEGORIES=	astro
 MASTER_SITES=	ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
