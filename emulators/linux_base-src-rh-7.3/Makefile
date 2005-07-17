@@ -48,6 +48,8 @@ EXTRACT_ONLY=
 MAINTAINER=		trevor@FreeBSD.org
 COMMENT=		GNU GPL sources to linux_base-rh-7.3, to satisfy licence
 
+BROKEN=			Incomplete pkg-plist
+
 DIST_SUBDIR=		rpm/src/rh-${PORTVERSION}
 NO_MTREE=		yes
 PLIST=			${WRKDIR}/plist

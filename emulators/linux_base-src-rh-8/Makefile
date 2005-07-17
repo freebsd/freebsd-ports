@@ -40,6 +40,8 @@ EXTRACT_ONLY=
 MAINTAINER=		trevor@FreeBSD.org
 COMMENT=		(L)GPL sources for linux_base-8, to comply with licences
 
+BROKEN=			Incomplete pkg-plist
+
 .undef USE_LINUX
 
 DIST_SUBDIR=		rpm/src/rh-${PORTVERSION}

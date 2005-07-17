@@ -15,6 +15,8 @@ DIST_SUBDIR=	Acrobat5
 MAINTAINER=	koma2@lovepeers.org
 COMMENT?=	Asian Font Packs for Acrobat Reader 5.0 (for common files)
 
+BROKEN=		Incomplete pkg-plist
+
 NO_BUILD=	yes
 SLAVEDIRS=	chinese/acroread-chsfont chinese/acroread-chtfont
 
