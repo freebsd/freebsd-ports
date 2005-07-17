@@ -62,6 +62,7 @@ include/wzdftpd/wzd_site_user.h
 include/wzdftpd/wzd_socket.h
 include/wzdftpd/wzd_string.h
 include/wzdftpd/wzd_structs.h
+include/wzdftpd/wzd_threads.h
 include/wzdftpd/wzd_tls.h
 include/wzdftpd/wzd_types.h
 include/wzdftpd/wzd_utf8.h
