@@ -15,8 +15,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.ORG
 COMMENT=	Session Announcement Protocol (rfc2974) packet parser
 
-BROKEN=		Incomplete pkg-plist
-
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/Multicast.pm:${PORTSDIR}/net/p5-IO-Socket-Multicast \
 		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
 RUN_DEPENDS=	${BUILD_DEPENDS}
