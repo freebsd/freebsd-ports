@@ -19,7 +19,7 @@ COMMENT=	Mjpeg-tools YUV video stream processing tools
 
 LIB_DEPENDS=	lavjpeg-1.6.3:${PORTSDIR}/multimedia/mjpegtools
 
-CFILES=		yuvdeinterlace yuvafps yuvfade yuvwater
+CFILES=		yuvafps yuvfade yuvwater
 PLIST_FILES=	${CFILES:S|^|bin/|}
 
 CPPFLAGS=	-I${LOCALBASE}/include/mjpegtools -DHAVE_INTTYPES_H
