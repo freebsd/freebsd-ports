@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	UserManager
-PORTVERSION=	1.4.0
-CATEGORIES=	www
+PORTVERSION=	2.0
+CATEGORIES=	www ftp
 MASTER_SITES=	http://machiel.generaal.net/files/pureftpd/
 DISTNAME=	ftp_v${PORTVERSION}
 
@@ -17,7 +17,7 @@ COMMENT=	Easily create, change, or delete virtual PureFTPd users
 WRKSRC=		${WRKDIR}/ftp
 
 BROKEN_WITH_PHP=	5
-USE_PHP=	mysql
+USE_PHP=	mysql pcre posix session
 
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -27,16 +27,8 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${PREFIX}/www/data/UserManager
-	@${MKDIR} ${PREFIX}/www/data/UserManager/images
-	@${MKDIR} ${PREFIX}/www/data/UserManager/language
-	@${MKDIR} ${PREFIX}/www/data/UserManager/style
-	${INSTALL_DATA} ${WRKSRC}/script.mysql ${PREFIX}/www/data/UserManager
-	${INSTALL_DATA} ${WRKSRC}/*.php ${PREFIX}/www/data/UserManager
-	${INSTALL_DATA} ${WRKSRC}/readme.txt ${PREFIX}/www/data/UserManager
-	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${PREFIX}/www/data/UserManager
-	${INSTALL_DATA} ${WRKSRC}/images/* ${PREFIX}/www/data/UserManager/images
-	${INSTALL_DATA} ${WRKSRC}/language/* ${PREFIX}/www/data/UserManager/language
-	${INSTALL_DATA} ${WRKSRC}/style/*  ${PREFIX}/www/data/UserManager/style
+	@${CP} -Rp ${WRKSRC}/* ${PREFIX}/www/data/UserManager
+	@${CHMOD} 666 ${PREFIX}/www/data/UserManager/config.php
 	@${ECHO_CMD} ""
 
 post-install:
