@@ -9,9 +9,7 @@
 PORTNAME=	dbf
 PORTVERSION=	0.8.3.1
 CATEGORIES=	databases
-MASTER_SITES=	http://download.berlios.de/dbf/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://download.berlios.de/dbf/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
