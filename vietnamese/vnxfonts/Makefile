@@ -11,8 +11,8 @@
 PORTNAME=	vnxfonts
 PORTVERSION=	1.1.1
 CATEGORIES=	vietnamese x11-fonts
-MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Unix/  \
-		ftp://ftp.monash.edu.au/pub/vietnam/unix/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	obrien
 DISTNAME=	Xfonts
 EXTRACT_SUFX=	.tar.Z
 

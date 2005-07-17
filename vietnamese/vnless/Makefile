@@ -9,8 +9,7 @@
 PORTNAME=	vnless
 PORTVERSION=	1.0
 CATEGORIES=	vietnamese
-MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Unix/  \
-		ftp://ftp.monash.edu.au/pub/vietnam/unix/
+MASTER_SITES=	ftp://ftp.monash.edu.au/pub/vietnam/unix/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
