@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg_trackinst
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.freebsd.org/~perky/distfiles/
 
