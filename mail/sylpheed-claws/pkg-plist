@@ -43,6 +43,7 @@ include/sylpheed-claws/common/string_match.h
 include/sylpheed-claws/common/stringtable.h
 include/sylpheed-claws/common/sylpheed.h
 include/sylpheed-claws/common/template.h
+include/sylpheed-claws/common/timing.h
 include/sylpheed-claws/common/utils.h
 include/sylpheed-claws/common/uuencode.h
 include/sylpheed-claws/common/version.h
@@ -141,6 +142,7 @@ include/sylpheed-claws/pop.h
 include/sylpheed-claws/prefs_account.h
 include/sylpheed-claws/prefs_actions.h
 include/sylpheed-claws/prefs_common.h
+include/sylpheed-claws/prefs_compose_writing.h
 include/sylpheed-claws/prefs_customheader.h
 include/sylpheed-claws/prefs_display_header.h
 include/sylpheed-claws/prefs_ext_prog.h
@@ -151,8 +153,14 @@ include/sylpheed-claws/prefs_fonts.h
 include/sylpheed-claws/prefs_gtk.h
 include/sylpheed-claws/prefs_image_viewer.h
 include/sylpheed-claws/prefs_matcher.h
+include/sylpheed-claws/prefs_message.h
 include/sylpheed-claws/prefs_msg_colors.h
+include/sylpheed-claws/prefs_other.h
+include/sylpheed-claws/prefs_quote.h
+include/sylpheed-claws/prefs_receive.h
+include/sylpheed-claws/prefs_send.h
 include/sylpheed-claws/prefs_spelling.h
+include/sylpheed-claws/prefs_summaries.h
 include/sylpheed-claws/prefs_summary_column.h
 include/sylpheed-claws/prefs_template.h
 include/sylpheed-claws/prefs_themes.h
