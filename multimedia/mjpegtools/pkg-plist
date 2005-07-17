@@ -1,5 +1,5 @@
 bin/anytovcd.sh
-%%GTK%%bbin/glav
+%%GTK%%bin/glav
 bin/jpeg2yuv
 bin/lav2avi.sh
 bin/lav2mpeg
