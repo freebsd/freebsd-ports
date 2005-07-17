@@ -15,6 +15,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	FPDNS - Fingerprinting DNS servers
 
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
