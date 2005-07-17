@@ -64,6 +64,15 @@ pre-fetch:
 	@${ECHO} "make -DWITH_TTF_BYTECODE_ENABLED"
 	@${ECHO} "See http://www.freetype.org/patents.html for details"
 .endif
+.if !defined(LOCALIZED_LANG)
+	@${ECHO}
+	@${ECHO} "You can select the language for OOo by making it with 'make LOCALIZED_LANG=xx'"
+	@${ECHO} "while xx can be one of the following:"
+	@${ECHO} "af ar ca cs de dk el es et eu fi fr gl-ES he hi-IN"
+	@${ECHO} "hu it ja kn-IN ko lt nb nl nn ns pl pt pt-BR ru sk"
+	@${ECHO} "sl-SI sv th tn tr we zh-CN zh-TW zu"
+	@${ECHO}
+.endif
 .if !defined(WITHOUT_JAVA)
 	@${ECHO}
 	@${ECHO} "You can compile OOo without Java support by"
