@@ -8,12 +8,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	linux-q3ademo
+PORTNAME=	q3ademo
 PORTVERSION=	1.11.6
 PORTREVISION=	3
 CATEGORIES=	games graphics linux
 # fetch manually
 MASTER_SITES=
+PKGNAMEPREFIX=	linux-
 DISTNAME=	linuxq3ademo-1.11-6.x86.gz.sh
 # dont uncompress
 EXTRACT_SUFX=
@@ -28,7 +29,11 @@ USE_X_PREFIX=	yes
 .include <bsd.port.pre.mk>
 
 .if ${X_WINDOW_SYSTEM:L} != xfree86-3
-RUN_DEPENDS +=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
+.ifdef(WITH_NVIDIA_GL)
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+.else
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
+.endif
 .else
 RUN_DEPENDS +=	${LINUXBASE}/lib/libGL.so:${PORTSDIR}/graphics/linux_glx
 .endif
