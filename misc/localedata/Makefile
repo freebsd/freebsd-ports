@@ -29,6 +29,9 @@ IGNORE=		is not required for your OS
 
 WRKSRC=		${WRKDIR}/${ARCH}
 
+post-extract:
+	cd ${WRKDIR}/ia64; ${MV} usr/share/locale .
+
 do-install:
 	${MKDIR} ${TARGET_DIR}
 	${PAX} -rw -s${WRKSRC} ${WRKSRC}/locale ${TARGET_DIR}
