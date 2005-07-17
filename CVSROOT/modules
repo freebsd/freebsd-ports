@@ -11492,6 +11492,7 @@ tcl81-thread	ports/lang/tcl81-thread
 tcl82		ports/lang/tcl82
 tcl83		ports/lang/tcl83
 tcl84		ports/lang/tcl84
+tcl84-thread	ports/lang/tcl84-thread
 tclExpat	ports/textproc/tclExpat
 tclX		ports/lang/tclX
 tclcheck	ports/devel/tclcheck
