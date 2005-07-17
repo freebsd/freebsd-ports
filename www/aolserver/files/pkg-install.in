@@ -1,0 +1,46 @@
+#! /bin/sh
+
+PATH=/bin:/usr/sbin:/usr/bin
+EXAMPLESDIR=%%EXAMPLESDIR%%
+AOLSERVERBASE=%%AOLSERVERBASE%%
+
+post-install() {
+	echo "Running post-install script"
+	echo "Setting file permissions"
+	chown nobody:nogroup ${AOLSERVERBASE}/servers/server1/modules/nslog
+	chown nobody:nogroup ${AOLSERVERBASE}/log
+	chmod 755 ${AOLSERVERBASE}
+	chmod 755 ${EXAMPLESDIR}/aolserver.sh.sample
+
+	echo "Checking Aolserver processes before (re)start"
+	pid1=`ps -ax | grep sample-config | grep -v grep| awk -F' ' '{print $1}'`;
+	if test "$pid1" = "" ; then 
+		echo ""
+	else
+		echo "Killing sample-config pid"	
+		kill $pid1;
+	fi
+
+	pid2=`ps -ax | grep nsd | grep -v grep| awk -F' ' '{print $1}'`;
+	if test "$pid2" = "" ; then
+		echo "Good. No running Aolserver process.";
+	else
+		echo "Warning: at least one non-standard Aolserver process is running..."
+		echo "We are still starting Aolserver, but it may not be able to listen on the same address:port"
+		echo "FYI: killall -9 nsd stops all processes. Or change the IP-address in config.tcl, then restart."
+	fi
+
+	echo "Starting aolserver: ${AOLSERVERBASE}/bin/nsd -t ${AOLSERVERBASE}/sample-config.tcl -u nobody -g nogroup" 
+	${AOLSERVERBASE}/bin/nsd -t ${AOLSERVERBASE}/sample-config.tcl -u nobody -g nogroup
+}
+
+case $2 in
+
+POST-INSTALL)
+	post-install
+	;;
+*)
+	echo "unknown pkg-install option"
+	;;
+esac
+
