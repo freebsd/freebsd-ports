@@ -20,6 +20,8 @@ LIB_DEPENDS=	embryo.9:${PORTSDIR}/lang/embryo \
 		evas.1:${PORTSDIR}/graphics/evas \
 		ecore.1:${PORTSDIR}/x11/ecore
 
+BROKEN=		Incomplete pkg-plist
+
 USE_LIBTOOL_VER=	13
 USE_GCC=	3.4
 USE_GNOME=	gnomehack pkgconfig gnometarget
