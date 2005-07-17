@@ -23,7 +23,7 @@ USE_GNOME=	gtk12
 
 WRKSRC=		${WRKDIR}/sexypsf
 
-CFLAGS+=	-I${WRKSRC}
+CFLAGS+=	-I${WRKSRC} -fPIC
 DEFINES=	-DSPSFVERSION=\""${PORTVERSION}\"" -DPSS_STYLE=1
 
 PORTDOCS=	ChangeLog README psf_format.txt spu.txt spu2regs.txt \
