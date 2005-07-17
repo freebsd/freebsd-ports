@@ -147,6 +147,7 @@ include/net-snmp/system/freebsd3.h
 include/net-snmp/system/freebsd4.h
 include/net-snmp/system/freebsd5.h
 include/net-snmp/system/freebsd6.h
+include/net-snmp/system/freebsd7.h
 include/net-snmp/system/generic.h
 include/net-snmp/system/hpux.h
 include/net-snmp/system/irix.h

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Jul 17 22:43:28 2005
++++ Makefile.in	Sun Jul 17 22:43:33 2005
+@@ -16,7 +16,7 @@
+ INSTALLHEADERS=version.h
+ INCLUDESUBDIR=system
+ INCLUDESUBDIRHEADERS= aix.h bsd.h bsdi3.h bsdi4.h bsdi.h cygwin.h \
+-	darwin.h darwin7.h freebsd5.h freebsd6.h \
++	darwin.h darwin7.h freebsd5.h freebsd6.h freebsd7.h \
+ 	dynix.h freebsd2.h freebsd3.h freebsd4.h freebsd.h generic.h hpux.h \
+ 	irix.h linux.h mingw32.h mips.h netbsd.h openbsd.h osf5.h \
+ 	solaris2.6.h solaris2.7.h solaris2.8.h solaris2.9.h solaris.h \
