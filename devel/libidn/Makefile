@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libidn
-PORTVERSION=	0.5.17
+PORTVERSION=	0.5.18
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
 		http://josefsson.org/libidn/releases/
@@ -44,7 +44,7 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in README FAQ
+.for i in FAQ NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
