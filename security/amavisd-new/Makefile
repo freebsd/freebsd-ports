@@ -8,6 +8,7 @@
 
 PORTNAME=	amavisd-new
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -77,7 +78,11 @@ AMAVIS_NOAMAVIS="@comment "
 .endif
 
 .if defined(WITH_MILTER) && !defined(AMAVIS_NOAMAVIS)
+.if ${OSVERSION} >= 500037
 USE_RCORDER+=	amavis-milter.sh
+.else
+USE_RC_SUBR+=	amavis-milter.sh
+.endif
 .else
 AMAVIS_NOMILTER="@comment "
 .endif
