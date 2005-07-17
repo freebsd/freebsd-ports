@@ -29,12 +29,8 @@ MAN6=		sol.6
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 pre-build:
-	cd ${WRKSRC} && ${GMAKE} depend
+	cd ${WRKSRC} && ${GMAKE} readme.var
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sol ${PREFIX}/bin
