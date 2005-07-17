@@ -456,6 +456,7 @@
     SUBDIR += py-opengl
     SUBDIR += py-paint
     SUBDIR += py-pydot
+    SUBDIR += py-visual
     SUBDIR += q-graph
     SUBDIR += qcamview
     SUBDIR += qcomicbook
