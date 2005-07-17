@@ -8,7 +8,7 @@
 PORTNAME=	aspell
 CATEGORIES=	vietnamese
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Aspell with Vietnamese dictionaries
 
 MASTERDIR=	${.CURDIR}/../../textproc/aspell
