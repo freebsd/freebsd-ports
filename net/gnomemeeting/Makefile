@@ -49,6 +49,10 @@ MAN1=		gnomemeeting.1
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		"Configure fails on !i386"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -E -e 's=-D[[:punct:][:alnum:]]+_DISABLE_DEPRECATED==g' \
 		${WRKSRC}/src/Makefile.am \
