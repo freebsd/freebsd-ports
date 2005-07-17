@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www2.inf.ethz.ch/personal/biere/projects/ccmalloc/
 
-MAINTAINER=	jure@kom.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ memory profiler and memory leak tracer
 
 USE_PERL5=	yes
