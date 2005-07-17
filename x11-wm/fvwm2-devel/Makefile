@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fvwm
-PORTVERSION=	2.5.12
-PORTREVISION=	1
+PORTVERSION=	2.5.13
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
@@ -37,6 +36,8 @@ RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS+=	stroke.0:${PORTSDIR}/devel/libstroke
 .endif
 
+# Other ports this port cannot coexist with
+CONFLICTS?=	fvwm-1.* fvwm-2.4.*
 NO_LATEST_LINK=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
