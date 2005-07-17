@@ -14,6 +14,8 @@ DISTNAME=	ngs${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automatic 3D tetrahedral mesh generator
 
+BROKEN=		Does not build
+
 LIB_DEPENDS=	tix8184:${PORTSDIR}/x11-toolkits/tix
 
 USE_GCC=	3.3	# netgen-4.4 is BROKEN with gcc-3.4 on 5.3-STABLE.

@@ -24,6 +24,8 @@ LIB_DEPENDS=	FOX-1.4:${PORTSDIR}/x11-toolkits/fox-devel \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		fxscintilla.17:${PORTSDIR}/x11-toolkits/fxscintilla
 
+BROKEN=		Does not build
+
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
