@@ -1,172 +1,127 @@
-aolserver/bin/translate-ini
-aolserver/bin/nsd8x
-aolserver/bin/nsd76
-aolserver/bin/nsd
-aolserver/bin/nssock.so
+aolserver/bin/init.tcl
+aolserver/bin/install-sh
+%%nscache%%aolserver/bin/nscache.so
 aolserver/bin/nscgi.so
 aolserver/bin/nscp.so
-aolserver/bin/nslog.so
-aolserver/bin/nsperm.so
+aolserver/bin/nsd
+aolserver/bin/nsdb.so
 aolserver/bin/nsext.so
-aolserver/modules/tcl/util.tcl
+aolserver/bin/nslog.so
+%%nsoracle%%aolserver/bin/nsoracle.so
+aolserver/bin/nsperm.so
+%%nspostgres%%aolserver/bin/nspostgres.so
+aolserver/bin/nssock.so
+%%nssha1%%aolserver/bin/nssha1.so
+aolserver/bin/nsthreadtest
+aolserver/include/Makefile.global
+aolserver/include/Makefile.module
+aolserver/include/ns.h
+aolserver/include/nsdb.h
+aolserver/include/nsextmsg.h
+aolserver/include/nspd.h
+aolserver/include/nsthread.h
+aolserver/lib/libnsd.so
+aolserver/lib/libnsdb.so
+aolserver/lib/libnsext.so
+aolserver/lib/libnspd.a
+aolserver/lib/libnsthread.so
+aolserver/modules/tcl/charsets.tcl
+aolserver/modules/tcl/compat.tcl
 aolserver/modules/tcl/debug.tcl
-aolserver/modules/tcl/namespace.tcl
+aolserver/modules/tcl/fastpath.tcl
 aolserver/modules/tcl/file.tcl
 aolserver/modules/tcl/form.tcl
 aolserver/modules/tcl/http.tcl
 aolserver/modules/tcl/init.tcl
 aolserver/modules/tcl/modlog.tcl
-aolserver/modules/tcl/prodebug.tcl
 aolserver/modules/tcl/nsdb.tcl
-aolserver/modules/tcl/sendmail.tcl
-aolserver/modules/tcl/tcl.html
-aolserver/modules/tcl/fastpath.tcl
 aolserver/modules/tcl/nsperm/compat.tcl
 aolserver/modules/tcl/nsperm/init.tcl
-aolserver/lib/tcl8.3/msgcat1.0/pkgIndex.tcl
-aolserver/lib/tcl8.3/msgcat1.0/msgcat.tcl
-aolserver/lib/tcl8.3/encoding/symbol.enc
-aolserver/lib/tcl8.3/encoding/big5.enc
-aolserver/lib/tcl8.3/encoding/cp1250.enc
-aolserver/lib/tcl8.3/encoding/cp1251.enc
-aolserver/lib/tcl8.3/encoding/cp1252.enc
-aolserver/lib/tcl8.3/encoding/cp1253.enc
-aolserver/lib/tcl8.3/encoding/cp1254.enc
-aolserver/lib/tcl8.3/encoding/cp1255.enc
-aolserver/lib/tcl8.3/encoding/cp1256.enc
-aolserver/lib/tcl8.3/encoding/cp1257.enc
-aolserver/lib/tcl8.3/encoding/cp1258.enc
-aolserver/lib/tcl8.3/encoding/cp437.enc
-aolserver/lib/tcl8.3/encoding/cp737.enc
-aolserver/lib/tcl8.3/encoding/cp775.enc
-aolserver/lib/tcl8.3/encoding/cp850.enc
-aolserver/lib/tcl8.3/encoding/cp852.enc
-aolserver/lib/tcl8.3/encoding/cp855.enc
-aolserver/lib/tcl8.3/encoding/cp857.enc
-aolserver/lib/tcl8.3/encoding/cp860.enc
-aolserver/lib/tcl8.3/encoding/cp861.enc
-aolserver/lib/tcl8.3/encoding/cp862.enc
-aolserver/lib/tcl8.3/encoding/cp863.enc
-aolserver/lib/tcl8.3/encoding/cp864.enc
-aolserver/lib/tcl8.3/encoding/cp865.enc
-aolserver/lib/tcl8.3/encoding/cp866.enc
-aolserver/lib/tcl8.3/encoding/cp869.enc
-aolserver/lib/tcl8.3/encoding/cp874.enc
-aolserver/lib/tcl8.3/encoding/cp932.enc
-aolserver/lib/tcl8.3/encoding/cp936.enc
-aolserver/lib/tcl8.3/encoding/cp949.enc
-aolserver/lib/tcl8.3/encoding/cp950.enc
-aolserver/lib/tcl8.3/encoding/dingbats.enc
-aolserver/lib/tcl8.3/encoding/euc-cn.enc
-aolserver/lib/tcl8.3/encoding/euc-jp.enc
-aolserver/lib/tcl8.3/encoding/euc-kr.enc
-aolserver/lib/tcl8.3/encoding/gb12345.enc
-aolserver/lib/tcl8.3/encoding/gb1988.enc
-aolserver/lib/tcl8.3/encoding/gb2312.enc
-aolserver/lib/tcl8.3/encoding/iso2022-jp.enc
-aolserver/lib/tcl8.3/encoding/iso2022-kr.enc
-aolserver/lib/tcl8.3/encoding/iso2022.enc
-aolserver/lib/tcl8.3/encoding/iso8859-1.enc
-aolserver/lib/tcl8.3/encoding/iso8859-2.enc
-aolserver/lib/tcl8.3/encoding/iso8859-3.enc
-aolserver/lib/tcl8.3/encoding/iso8859-4.enc
-aolserver/lib/tcl8.3/encoding/iso8859-5.enc
-aolserver/lib/tcl8.3/encoding/jis0201.enc
-aolserver/lib/tcl8.3/encoding/jis0208.enc
-aolserver/lib/tcl8.3/encoding/iso8859-6.enc
-aolserver/lib/tcl8.3/encoding/iso8859-7.enc
-aolserver/lib/tcl8.3/encoding/iso8859-8.enc
-aolserver/lib/tcl8.3/encoding/iso8859-9.enc
-aolserver/lib/tcl8.3/encoding/jis0212.enc
-aolserver/lib/tcl8.3/encoding/koi8-r.enc
-aolserver/lib/tcl8.3/encoding/ksc5601.enc
-aolserver/lib/tcl8.3/encoding/macCentEuro.enc
-aolserver/lib/tcl8.3/encoding/macCroatian.enc
-aolserver/lib/tcl8.3/encoding/macCyrillic.enc
-aolserver/lib/tcl8.3/encoding/macDingbats.enc
-aolserver/lib/tcl8.3/encoding/macGreek.enc
-aolserver/lib/tcl8.3/encoding/macIceland.enc
-aolserver/lib/tcl8.3/encoding/macJapan.enc
-aolserver/lib/tcl8.3/encoding/macRoman.enc
-aolserver/lib/tcl8.3/encoding/macRomania.enc
-aolserver/lib/tcl8.3/encoding/macThai.enc
-aolserver/lib/tcl8.3/encoding/macTurkish.enc
-aolserver/lib/tcl8.3/encoding/macUkraine.enc
-aolserver/lib/tcl8.3/encoding/shiftjis.enc
-aolserver/lib/tcl8.3/encoding/ascii.enc
-aolserver/lib/tcl8.3/http1.0/pkgIndex.tcl
-aolserver/lib/tcl8.3/http1.0/http.tcl
-aolserver/lib/tcl8.3/http2.3/pkgIndex.tcl
-aolserver/lib/tcl8.3/http2.3/http.tcl
-aolserver/lib/tcl8.3/dde1.1/pkgIndex.tcl
-aolserver/lib/tcl8.3/opt0.4/optparse.tcl
-aolserver/lib/tcl8.3/opt0.4/pkgIndex.tcl
-aolserver/lib/tcl8.3/reg1.0/pkgIndex.tcl
-aolserver/lib/tcl8.3/tcltest1.0/pkgIndex.tcl
-aolserver/lib/tcl8.3/tcltest1.0/tcltest.tcl
-aolserver/lib/tcl8.3/history.tcl
-aolserver/lib/tcl8.3/word.tcl
-aolserver/lib/tcl8.3/tclIndex
-aolserver/lib/tcl8.3/auto.tcl
-aolserver/lib/tcl8.3/init.tcl
-aolserver/lib/tcl8.3/ldAout.tcl
-aolserver/lib/tcl8.3/license.terms
-aolserver/lib/tcl8.3/package.tcl
-aolserver/lib/tcl8.3/parray.tcl
-aolserver/lib/tcl8.3/safe.tcl
-aolserver/lib/libnspd.a
-aolserver/lib/libnsthread.a
-aolserver/servers/server1/modules/nsperm/perms
-aolserver/servers/server1/modules/nsperm/hosts.deny
-aolserver/servers/server1/modules/nsperm/hosts.allow
-aolserver/servers/server1/modules/nsperm/group
-aolserver/servers/server1/modules/nsperm/passwd
-aolserver/servers/server1/pages/index.html
-aolserver/include/Makefile.module
-aolserver/include/ns.h
-aolserver/include/nsextmsg.h
-aolserver/include/nspd.h
-aolserver/include/nsthread.h
-aolserver/include/tcl.h
-aolserver/include/tcl76.h
-aolserver/include/tcl83.h
-aolserver/include/tclDecls.h
-aolserver/include/Makefile.global
-aolserver/include/nsd.h
+aolserver/modules/tcl/prodebug.tcl
+aolserver/modules/tcl/sendmail.tcl
+aolserver/modules/tcl/stats.tcl
+aolserver/modules/tcl/util.tcl
 aolserver/sample-config.tcl
-etc/rc.d/aolserver.sh
-share/doc/aolserver/ChangeLog
-share/doc/aolserver/README
-share/doc/aolserver/config.txt
-share/doc/aolserver/faq.html
-share/doc/aolserver/default-home.html
-share/doc/aolserver/install.html
-share/doc/aolserver/license.txt
-share/doc/aolserver/tcl-changes.txt
-share/doc/aolserver/tuning.html
-@exec mkdir -p %D/aolserver/servers/server1/modules/nslog
-@exec mkdir -p %D/aolserver/log
+aolserver/servers/server1/modules/nsperm/group
+aolserver/servers/server1/modules/nsperm/hosts.allow
+aolserver/servers/server1/modules/nsperm/hosts.deny
+aolserver/servers/server1/modules/nsperm/passwd
+aolserver/servers/server1/modules/nsperm/perms
+aolserver/servers/server1/pages/index.html
+%%PORTDOCS%%%%DOCSDIR%%/README-tests.txt
+%%PORTDOCS%%%%DOCSDIR%%/adp/test1.adp
+%%PORTDOCS%%%%DOCSDIR%%/adp/test2.adp
+%%PORTDOCS%%%%DOCSDIR%%/adp/test3.adp
+%%PORTDOCS%%%%DOCSDIR%%/adp/test4.adp
+%%PORTDOCS%%%%DOCSDIR%%/adp/test4.inc
+%%PORTDOCS%%%%DOCSDIR%%/adp/test5.adp
+%%PORTDOCS%%%%DOCSDIR%%/adp/test5a.adp
+%%PORTDOCS%%%%DOCSDIR%%/adp/test6.adp
+%%PORTDOCS%%%%DOCSDIR%%/adp/test7.adp
+%%PORTDOCS%%%%DOCSDIR%%/adp/test7b.adp
+%%PORTDOCS%%%%DOCSDIR%%/adp/test7c.adp
+%%PORTDOCS%%%%DOCSDIR%%/adp/test8.adp
+%%PORTDOCS%%%%DOCSDIR%%/adp/test8a.adp
+%%PORTDOCS%%%%DOCSDIR%%/adp/test8b.adp
+%%PORTDOCS%%%%DOCSDIR%%/adp/test9.adp
+%%PORTDOCS%%%%DOCSDIR%%/adp/test9.inc
+%%PORTDOCS%%%%DOCSDIR%%/api/ns_conn.adp
+%%PORTDOCS%%%%DOCSDIR%%/api/ns_job.adp
+%%PORTDOCS%%%%DOCSDIR%%/api/ns_localtime.adp
+%%PORTDOCS%%%%DOCSDIR%%/cdev/test1.adp
+%%PORTDOCS%%%%DOCSDIR%%/dbase/test1.adp
+%%PORTDOCS%%%%DOCSDIR%%/index.adp
+%%PORTDOCS%%%%DOCSDIR%%/new/all.tcl
+%%PORTDOCS%%%%DOCSDIR%%/new/harness.tcl
+%%PORTDOCS%%%%DOCSDIR%%/new/http-test-config.tcl
+%%PORTDOCS%%%%DOCSDIR%%/new/http.test
+%%PORTDOCS%%%%DOCSDIR%%/new/ns_addrbyhost.test
+%%PORTDOCS%%%%DOCSDIR%%/new/ns_adp_compress.test
+%%PORTDOCS%%%%DOCSDIR%%/new/ns_hostbyaddr.test
+%%PORTDOCS%%%%DOCSDIR%%/new/ns_hrefs.test
+%%PORTDOCS%%%%DOCSDIR%%/new/servers/server1/pages/ns_adp_compress.adp
+%%PORTDOCS%%%%DOCSDIR%%/nstelemetry.adp
+%%PORTDOCS%%%%DOCSDIR%%/sec/test1.adp
+%%PORTDOCS%%%%DOCSDIR%%/tcl/test1.tcl
+%%PORTDOCS%%%%DOCSDIR%%/tcl/test1a.tcl
+%%PORTDOCS%%%%DOCSDIR%%/tcl/test1b.tcl
+%%PORTDOCS%%%%DOCSDIR%%/tests.html
+%%EXAMPLESDIR%%/aolserver.sh.sample
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/license.terms
 @dirrm aolserver/bin
-@dirrm aolserver/log
+@dirrm aolserver/include
+@dirrm aolserver/lib
+@unexec rm -Rf %D/aolserver/log 2>&1 > /dev/null || true
+@dirrm aolserver/man/man1
+@dirrm aolserver/man/man3
+@dirrm aolserver/man/mann
+@dirrm aolserver/man
 @dirrm aolserver/modules/tcl/nsperm
 @dirrm aolserver/modules/tcl
 @dirrm aolserver/modules
-@dirrm aolserver/lib/tcl8.3/msgcat1.0
-@dirrm aolserver/lib/tcl8.3/encoding
-@dirrm aolserver/lib/tcl8.3/http1.0
-@dirrm aolserver/lib/tcl8.3/http2.3
-@dirrm aolserver/lib/tcl8.3/dde1.1
-@dirrm aolserver/lib/tcl8.3/opt0.4
-@dirrm aolserver/lib/tcl8.3/reg1.0
-@dirrm aolserver/lib/tcl8.3/tcltest1.0
-@dirrm aolserver/lib/tcl8.3
-@dirrm aolserver/lib
-@dirrm aolserver/servers/server1/modules/nslog
+@unexec rm -Rf %D/aolserver/servers/server1/modules/nslog 2>&1 > /dev/null || true
 @dirrm aolserver/servers/server1/modules/nsperm
 @dirrm aolserver/servers/server1/modules
 @dirrm aolserver/servers/server1/pages
 @dirrm aolserver/servers/server1
 @dirrm aolserver/servers
-@dirrm aolserver/include
 @dirrm aolserver
-@dirrm share/doc/aolserver
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/adp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cdev
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/dbase
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/new/servers/server1/pages
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/new/servers/server1
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/new/servers
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/new
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/sec
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tcl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@exec mkdir -p %%DOCSDIR%%
+@exec mkdir -p %D/aolserver/servers/server1/modules/nslog
+@exec mkdir -p %D/aolserver/log
+@exec mkdir -p %D/%%EXAMPLESDIR%%
+@unexec rm -Rf %D/%%EXAMPLESDIR%% 2>&1 >/dev/null || true

@@ -1,9 +1,31 @@
+     ******** READ THIS ********
 
-Assuming you have changed to %%PREFIX%%, please copy
-aolserver/sample-config.tcl to aolserver/nsd.tcl and season to taste.
-An example server is in at aolserver/servers/server1, and you should
-similarly copy the contents of this directory to, e.g.,
-aolserver/servers/www.mydomain.com before modifying them.
+Congratulations! You have installed the web application server, Aolserver.
 
-These files are examples only and will be deleted if you remove this
-port.
+Test aolserver:
+    # %%AOLSERVERBASE%%/bin/nsd -t %%AOLSERVERBASE%%/sample-config.tcl -u nobody -g nogroup
+
+Then, with your favorite browser, something like:
+    # lynx localhost:8000
+
+Kill aolserver:
+    # killall nsd
+
+A sample start/stop script is in %%PREFIX%%/etc/rc.d/aolserver.sh.sample
+
+Generally one would copy %%AOLSERVERBASE%%/sample-config.tcl to 
+%%AOLSERVERBASE%%/nsd.tcl and season to taste. For example:
+set address to 0.0.0.0 or the actual ip-address and set httpport to 80.
+
+For AOLserver 4 using privileged ports (usually < 1024), add the flag
+-b youraddress:yourport. So:
+    # %%AOLSERVERBASE%%/bin/nsd -t %%AOLSERVERBASE%%/sample-config.tcl \
+      -u nobody -g nogroup -b 0.0.0.0:80
+    # lynx localhost
+
+Remember: THIS MESSAGE is in PORTSDIR/www/aolserver/files/pkg-message.in. 
+
+-Aldert
+aldert@nooitgedagt.net
+
+     ******** READ THE INFORMATION ABOVE ********

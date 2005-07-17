@@ -1,0 +1,20 @@
+#! /bin/sh
+
+PATH=$PATH:/bin:/usr/bin:/usr/sbin
+
+case $2 in
+
+POST-DEINSTALL)
+	echo "You are deinstalling this port:"
+	echo "  Remember to kill the associated Aolserver process if we don't succeed."
+	echo "  We will try to kill the standard now:"
+	pid=`ps -ax | grep sample-config | grep -v grep| awk -F' ' '{print $1}'`;
+	if test "$pid" = "" ; then
+		echo "  No sample-config.tcl process found."
+	else
+		echo "  Killing sample-config.tcl proces. pid: $pid ."
+		kill $pid
+		echo "  Done."
+	fi
+	;;
+esac
