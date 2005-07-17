@@ -21,6 +21,8 @@ NO_CDROM=	${RESTRICTED}
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
 
+BROKEN=		Unfetchable
+
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)

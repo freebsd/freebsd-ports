@@ -14,6 +14,7 @@ DISTNAME=	tasks
 MAINTAINER=	gioria@FreeBSD.org
 COMMENT=	A web based, hierarchical task manager
 
+BROKEN=		Unfetchable
 RESTRICTED=	No redistribution or repackaging allowed
 
 USE_APACHE=	yes

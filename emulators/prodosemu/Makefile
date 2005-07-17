@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}.v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A text based Apple IIe ProDOS emulator
 
+BROKEN=		Unfetchable
+
 RESTRICTED=	apple.rom copyright is owned by Apple and cannot be distributed.
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
 
