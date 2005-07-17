@@ -62,6 +62,10 @@ post-patch:
 		${WRKSRC}/mono/metadata/assembly.c
 	@${REINPLACE_CMD} -e 's|.so.0|.so|g' \
 		${WRKSRC}/configure
+.if ${OSVERSION} > 700000
+	@${REINPLACE_CMD} -e 's|freebsd6|freebsd7|g' \
+		${WRKSRC}/configure ${WRKSRC}/libgc/configure
+.endif
 
 tests: build
 	@${ECHO_MSG} "===> Running mono regression tests"
