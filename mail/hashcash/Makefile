@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	hashcash
-PORTVERSION=	1.17
+PORTVERSION=	1.18
 CATEGORIES=	mail
 MASTER_SITES=	http://www.hashcash.org/source/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bremner@unb.ca
 COMMENT=	Anti-spam / denial of service counter-measure tool
-
 
 MAN1=		hashcash.1 sha1-hashcash.1
 PLIST_FILES=	bin/hashcash bin/sha1
