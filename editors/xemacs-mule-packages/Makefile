@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	xemacs-mule-packages
-PORTVERSION=	4.1
+PORTVERSION=	4.2
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS:S|%SUBDIR%|packages|}
 DISTFILES=	\
 		edict-1.16-pkg.tar.gz \
 		egg-its-1.27-pkg.tar.gz \
-		latin-euro-standards-1.04-pkg.tar.gz \
+		latin-euro-standards-1.07-pkg.tar.gz \
 		latin-unity-1.15-pkg.tar.gz \
 		leim-1.22-pkg.tar.gz \
 		locale-1.21-pkg.tar.gz \
-		lookup-1.14-pkg.tar.gz \
-		mule-base-1.46-pkg.tar.gz \
-		mule-ucs-1.11-pkg.tar.gz \
+		lookup-1.15-pkg.tar.gz \
+		mule-base-1.47-pkg.tar.gz \
+		mule-ucs-1.14-pkg.tar.gz \
 		skk-1.23-pkg.tar.gz
 DIST_SUBDIR=	xemacs
 
