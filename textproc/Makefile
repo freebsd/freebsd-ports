@@ -397,6 +397,7 @@
     SUBDIR += p5-Text-Graphics
     SUBDIR += p5-Text-MagicTemplate
     SUBDIR += p5-Text-Metaphone
+    SUBDIR += p5-Text-NSP
     SUBDIR += p5-Text-Netstring
     SUBDIR += p5-Text-Ngram
     SUBDIR += p5-Text-Ngrams

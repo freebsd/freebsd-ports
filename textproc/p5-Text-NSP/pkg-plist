@@ -1,0 +1,71 @@
+bin/statistic.pl
+bin/split-data.pl
+bin/combig-script.sh
+bin/huge-count.pl
+bin/rank-script.sh
+bin/kocos.pl
+bin/huge-combine.pl
+bin/count.pl
+bin/rank.pl
+bin/kocos-script.sh
+bin/combig.pl
+bin/sort-bigrams.pl
+%%SITE_PERL%%/auto/Text/NSP/autosplit.ix
+%%SITE_PERL%%/pmi.pm
+%%SITE_PERL%%/rightFisher.pm
+%%SITE_PERL%%/tmi3.pm
+%%SITE_PERL%%/measure3d.pm
+%%SITE_PERL%%/odds.pm
+%%SITE_PERL%%/ll3.pm
+%%SITE_PERL%%/ll.pm
+%%SITE_PERL%%/dice.pm
+%%SITE_PERL%%/x2.pm
+%%SITE_PERL%%/measure2d.pm
+%%SITE_PERL%%/leftFisher.pm
+%%SITE_PERL%%/phi.pm
+%%SITE_PERL%%/tmi.pm
+%%SITE_PERL%%/tscore.pm
+%%SITE_PERL%%/Text/NSP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/NSP/.packlist
+%%PORTDOCS%%%%DOCSDIR%%/html/dice.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ll.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ll3.html
+%%PORTDOCS%%%%DOCSDIR%%/html/odds.html
+%%PORTDOCS%%%%DOCSDIR%%/html/phi.html
+%%PORTDOCS%%%%DOCSDIR%%/html/tmi.html
+%%PORTDOCS%%%%DOCSDIR%%/html/pmi.html
+%%PORTDOCS%%%%DOCSDIR%%/html/tscore.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/leftFisher.html
+%%PORTDOCS%%%%DOCSDIR%%/html/rightFisher.html
+%%PORTDOCS%%%%DOCSDIR%%/html/measure2d.html
+%%PORTDOCS%%%%DOCSDIR%%/html/measure3d.html
+%%PORTDOCS%%%%DOCSDIR%%/html/count.html
+%%PORTDOCS%%%%DOCSDIR%%/html/statistic.html
+%%PORTDOCS%%%%DOCSDIR%%/html/rank.html
+%%PORTDOCS%%%%DOCSDIR%%/html/kocos.html
+%%PORTDOCS%%%%DOCSDIR%%/html/combig.html
+%%PORTDOCS%%%%DOCSDIR%%/html/huge-count.html
+%%PORTDOCS%%%%DOCSDIR%%/html/huge-combine.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sort-bigrams.html
+%%PORTDOCS%%%%DOCSDIR%%/html/split-data.html
+%%PORTDOCS%%%%DOCSDIR%%/html/FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/html/NewStats.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Measures.html
+%%PORTDOCS%%%%DOCSDIR%%/html/README.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Todo.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Usage.html
+%%PORTDOCS%%%%DOCSDIR%%/pod/FAQ.pod
+%%PORTDOCS%%%%DOCSDIR%%/pod/NewStats.pod
+%%PORTDOCS%%%%DOCSDIR%%/pod/Measures.pod
+%%PORTDOCS%%%%DOCSDIR%%/pod/README.pod
+%%PORTDOCS%%%%DOCSDIR%%/pod/Todo.pod
+%%PORTDOCS%%%%DOCSDIR%%/pod/Usage.pod
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pod
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/NSP
+@dirrm %%SITE_PERL%%/auto/Text/NSP
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/auto/Text 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Text 2>/dev/null || true
