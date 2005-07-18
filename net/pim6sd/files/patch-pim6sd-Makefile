@@ -1,0 +1,11 @@
+--- pim6sd/Makefile.orig	Mon Jul 18 11:26:30 2005
++++ pim6sd/Makefile	Mon Jul 18 11:26:39 2005
+@@ -80,7 +80,7 @@
+ 
+ BINDIR=	$(PREFIX)/sbin
+ PROG=	pim6sd
+-CFLAGS+=-DHAVE_STDARG_H -DHAVE_MLDV2
++CFLAGS+=-DHAVE_STDARG_H
+ LDADD+=-ly -ll
+ SRCS=	mld6.c mld6_proto.c\
+ 	mld6v2.c mld6v2_proto.c\
