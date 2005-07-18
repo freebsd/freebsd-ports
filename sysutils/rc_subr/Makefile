@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	eik
 
-MAINTAINER=	eik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common startup and shutdown subroutines used by scripts
 
 USE_BZIP2=	yes

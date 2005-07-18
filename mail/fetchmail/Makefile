@@ -19,7 +19,7 @@ MASTER_SITES=	http://www.catb.org/~esr/%SUBDIR%/ \
 		ftp://ftp.dti.ad.jp/pub/net/mail/%SUBDIR%/
 MASTER_SITE_SUBDIR=	fetchmail
 
-MAINTAINER=	eik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Batch mail retrieval utility for IMAP/POP2/POP3/APOP/KPOP/ETRN/ODMR
 
 .if defined(WITH_X11)

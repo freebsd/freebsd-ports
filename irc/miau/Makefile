@@ -11,7 +11,7 @@ CATEGORIES=		irc
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	miau
 
-MAINTAINER=		eik@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A fully featured easy to use IRC-bouncer
 
 USE_BZIP2=		yes
