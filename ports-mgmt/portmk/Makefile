@@ -10,7 +10,7 @@ PORTVERSION=	0.1.1
 CATEGORIES=	devel
 DISTFILES=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Development version of bsd.port.mk
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
