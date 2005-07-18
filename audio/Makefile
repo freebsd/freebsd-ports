@@ -362,6 +362,7 @@
     SUBDIR += p5-tagged
     SUBDIR += paman
     SUBDIR += pd
+    SUBDIR += penguinsap
     SUBDIR += phatbeat
     SUBDIR += pimp3
     SUBDIR += play
