@@ -9,3 +9,5 @@ standard, but is only available if the input image is a jpeg file.  If
 the file is anything other than jpg, the traditional freedesktop.org png
 thumbnailing will occur.  To show the speed increase epeg offers,
 Epsilon builds with and without epeg.
+
+WWW: http://www.enlightenment.org/Libraries/Epsilon/index.html
