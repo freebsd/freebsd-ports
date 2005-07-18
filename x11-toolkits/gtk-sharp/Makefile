@@ -8,6 +8,7 @@
 
 PORTNAME=	gtk-sharp
 PORTVERSION=	1.0.10
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://go-mono.com/sources/${PORTNAME}/
 
@@ -30,5 +31,8 @@ MAKE_ENV=MONO_SHARED_DIR=${WRKDIR}
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.pl' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^#!/usr/bin/perl|#!${PERL}|'
+
+pre-su-install:
+	${MKDIR} ${LOCALBASE}/share/gapi
 
 .include <bsd.port.mk>
