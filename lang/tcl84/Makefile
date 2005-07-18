@@ -17,7 +17,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool Command Language
 
-LATEST_LINK=	tcl84
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 INSTALLS_SHLIB=	yes
@@ -37,6 +36,7 @@ THREADS_SUFFIX=		-threads
 CONFIGURE_ARGS+=	--enable-threads
 .endif
 
+LATEST_LINK=	tcl84${THREADS_SUFFIX}
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_TCL84_MAN)
