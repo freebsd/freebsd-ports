@@ -13,6 +13,8 @@ sbin/sulci
 %%DATADIR%%/lang/ru_time.ml
 %%EXAMPLESDIR%%/sulci.conf.example
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/cmdlist.en.txt
 %%PORTDOCS%%%%DOCSDIR%%/cmdlist.ru.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/lang

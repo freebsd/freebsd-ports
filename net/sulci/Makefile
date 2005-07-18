@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sulci
-PORTVERSION=	20050708
-PORTREVISION=	1
+PORTVERSION=	20050718
 CATEGORIES=	net
 MASTER_SITES=	http://neva.vlink.ru/distfiles/
 
@@ -46,7 +45,14 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${FILESDIR}/cmdlist.ru.txt ${DOCSDIR}
+
+.  for i in COPYING ChangeLog
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.  endfor
+
+.  for i in cmdlist.en.txt cmdlist.ru.txt
+	${INSTALL_DATA} ${WRKSRC}/doc/sulci/${i} ${DOCSDIR}
+.  endfor
 .endif
 
 post-install:
