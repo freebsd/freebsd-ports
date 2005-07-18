@@ -1,12 +1,12 @@
 --- Makefile.orig	Tue Mar 19 19:16:06 1996
 +++ Makefile	Sat Jul 24 13:30:04 1999
-@@ -9,12 +9,12 @@
+@@ -9,12 +9,11 @@
  # pick gcc if you'd rather , and/or do -g instead of -O if debugging
  # debugging
  # DFLAGS = -DTEST -DDEBUG
 -CFLAGS = -O
+-XFLAGS = 	# xtra cflags, set by systype targets
 +CFLAGS ?= -O
- XFLAGS = 	# xtra cflags, set by systype targets
  XLIBS =		# xtra libs if necessary?
  # -Bstatic for sunos,  -static for gcc, etc.  You want this, trust me.
  STATIC =
@@ -29,7 +29,7 @@
  # virtually the same as netbsd/bsd44lite/whatever
  freebsd:
 -	make -e $(ALL) $(MFLAGS) XFLAGS='-DFREEBSD' STATIC=-static
-+	make -e $(ALL) $(MFLAGS) XFLAGS='-DFREEBSD -DGAPING_SECURITY_HOLE -DTELNET -DINET6' STATIC=-static
++	make -e $(ALL) $(MFLAGS) XFLAGS='-DFREEBSD $(XFLAGS)' STATIC=-static
  
  bsdi:
  	make -e $(ALL) $(MFLAGS) XFLAGS='-DBSDI' STATIC=-Bstatic
