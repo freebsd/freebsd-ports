@@ -26,9 +26,29 @@ COMMENT=	Simple utility which reads and writes data across network connections
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	freebsd
 
+OPTIONS=	IPV6 "enable IPv6 support" on \
+		TELNET "enable TELNET support" on \
+		GAPING "enable GAPING_SECURITY_HOLE support" on
+
 PLIST_FILES=	bin/nc
 PORTDOCS=	README
 MAN1=		nc.1
+
+.include <bsd.port.pre.mk>
+
+.if defined (WITH_IPV6)
+XFLAGS+=	-DIPV6
+.endif
+
+.if defined (WITH_TELNET)
+XFLAGS+=	-DTELNET
+.endif
+
+.if defined (WITH_GAPING)
+XFLAGS+=	-DGAPING_SECURITY_HOLE
+.endif
+
+MAKE_ENV=	XFLAGS="$(XFLAGS)"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nc ${PREFIX}/bin
@@ -38,4 +58,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
