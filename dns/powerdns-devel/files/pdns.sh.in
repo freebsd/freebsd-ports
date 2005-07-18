@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: pdns_server
+# REQUIRE: DAEMON
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable dovecot:
+#
+#pdns_enable="YES"
+#
+# See pdns_server(8) for flags.
+#
+
+. %%RC_SUBR%%
+
+name=pdns
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/pdns_server
+
+# set defaults
+
+pdns_enable=${pdns_enable:-"NO"}
+pdns_conf=${pdns_conf:-"%%PREFIX%%/etc/pdns.conf"}
+pdns_flags=${pdns_flags:-""}
+
+load_rc_config ${name}
+
+required_files=${pdns_conf}
+
+run_rc_command "$1"
