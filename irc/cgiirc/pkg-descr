@@ -1,0 +1,6 @@
+GGI:IRC is a Perl/CGI program that lets you access IRC from a web browser, it is
+designed to be flexible and has many uses such as an IRC gateway for an IRC
+network, a chat-room for a website or to access IRC when stuck behind a
+restrictive firewall.
+
+WWW:	http://cgiirc.sourceforge.net/
