@@ -5,37 +5,45 @@
 # $FreeBSD$
 
 PORTNAME=	rbscrobbler
-PORTVERSION=	0.0.8
-PORTREVISION=	1
+PORTVERSION=	0.0.9
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://members.cox.net/alexrevo/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rhythmbox plugin for Audioscrobbler
 
-BUILD_DEPENDS=	rhythmbox:${PORTSDIR}/audio/rhythmbox \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
-RUN_DEPENDS=	rhythmbox:${PORTSDIR}/audio/rhythmbox \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
+RUN_DEPENDS=	rhythmbox:${PORTSDIR}/audio/rhythmbox
 
+USE_GNOME=	pygnomeextras
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
-CFLAGS+=	"-I${PYTHON_INCLUDEDIR}"
+
+MAN1=		rbscrobbler.1
 
 post-patch:
-	${REINPLACE_CMD} -e "s,CFLAGS =,CFLAGS+= -I${PYTHON_INCLUDEDIR}," \
-		${WRKSRC}/trayicon/Makefile
+	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|CFLAGS =|CFLAGS +=|g ; \
+		 s|/usr/include/python2.3/|${PYTHON_INCLUDEDIR}|g'
 
 do-install:
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC}; ${INSTALL_DATA} Audioscrobbler.py Debug.py MyQueue.py \
-		Rhythmbox_Bonobo.py RLInput.py singletonmixin.py ${DATADIR}
-	cd ${WRKSRC}; ${INSTALL_SCRIPT} rbscrobbler.py ${DATADIR}
-	ln -sf ${DATADIR}/rbscrobbler.py ${PREFIX}/bin/rbscrobbler
-	${MKDIR} ${DATADIR}/images
-	${INSTALL_DATA} ${WRKSRC}/images/*.png ${DATADIR}/images
-	${MKDIR} ${DATADIR}/trayicon
-	cd ${WRKSRC}; ${INSTALL_DATA} trayicon/__init__.py \
-		trayicon/trayicon.so ${DATADIR}/trayicon
+	${INSTALL_MAN} ${WRKSRC}/rbscrobbler.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/rbscrobbler
+	${INSTALL_SCRIPT} ${WRKSRC}/rbscrobbler.py \
+		${PYTHONPREFIX_SITELIBDIR}/rbscrobbler
+	${LN} -sf ${PYTHONPREFIX_SITELIBDIR}/rbscrobbler/rbscrobbler.py \
+		${PREFIX}/bin/rbscrobbler
+.for file in Audioscrobbler.py Debug.py MyQueue.py Rhythmbox_Bonobo.py \
+	Scrobbler_Musicbrainz.py singletonmixin.py
+	${INSTALL_DATA} ${WRKSRC}/${file} \
+		${PYTHONPREFIX_SITELIBDIR}/rbscrobbler
+.endfor
+	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/rbscrobbler/images
+	${INSTALL_DATA} ${WRKSRC}/images/*.png \
+		${PYTHONPREFIX_SITELIBDIR}/rbscrobbler/images
+	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/rbscrobbler/trayicon
+.for file in trayicon/__init__.py trayicon/trayicon.so
+	${INSTALL_DATA} ${WRKSRC}/${file} \
+		${PYTHONPREFIX_SITELIBDIR}/rbscrobbler/trayicon
+.endfor
 
 .include <bsd.port.mk>
