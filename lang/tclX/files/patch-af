@@ -8,7 +8,7 @@
  # Where:
 -#    o docdir is the directory containing the manual pages.
  #    o maninfo is the path to a file that when sources returns a list of
-@@ -64,5 +63,14 @@
+@@ -64,5 +63,16 @@
  
 -    set stat [catch {
 -        open $manPage
@@ -22,6 +22,8 @@
 +    
 +    if {[string match *.gz $manPage]} {
 +	set stat [catch {open "|gzip -d -c $manPage"} fh]
++    } elseif {[string match *.bz2 $manPage]} {
++	set stat [catch {open "|bzip2 -d -c $manPage"} fh]
 +    } else {
 +	set stat [catch {open $manPage} fh]
 +    }
@@ -31,6 +33,10 @@
 -        puts stderr "can't open \"$manPage\" $fh"
 +        puts stderr "can't open \"$manPage\" $fh. (cwd is [pwd])"
          return
+@@ -75,2 +89,3 @@
+         switch -glob -- $line {
++	    {.so man.macros} {}
+             .so* {
 @@ -114,3 +119,3 @@
  
 -proc GenInputFile {docDir manInfoTbl tmpFile} {
