@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	1.210
-PORTREVISION=	2
+PORTVERSION=	1.220
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -26,11 +25,9 @@ USE_PERL5=	yes
 USE_RC_SUBR=    yes
 USE_REINPLACE=	yes
 
-WEBMIN_MODULES=	bind8-1.210-3.wbm.gz \
-		mysql-1.210-2.wbm.gz \
-		useradmin-1.210-2.wbm.gz
+WEBMIN_MODULES=
 
-WEBMIN_THEMES=	mscstyle3-1.210-1.wbt.gz
+WEBMIN_THEMES=
 
 post-extract:
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
