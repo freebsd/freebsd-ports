@@ -18,4 +18,4 @@ etc. sine it provides FAST random-access read/write of any data wanted
 unpack/repack files - data can be etxracted and put back at whim with a
 simple API from which simple or complex tools can be built.
 
-WWW: http://www.enlightenment.org/pages/edb.html
+WWW: http://www.enlightenment.org/Libraries/Edb/index.html
