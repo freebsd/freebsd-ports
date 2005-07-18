@@ -16,9 +16,6 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	An extendable SNMP implementation
 
-.if defined(WITH_INETADDRESS_HACK)
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-snmplib::mib.c
-.endif
 .if !defined(WITH_TKMIB)
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-local:Makefile.in
 .endif
