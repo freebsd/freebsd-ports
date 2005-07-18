@@ -19,6 +19,8 @@ LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
 
 BROKEN=		Does not compile
 
+LATEST_LINK=	${PORTNAME}-devel
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
