@@ -65,7 +65,9 @@ CONFIGURE_ARGS+=	--enable-debug=no
 CONFIGURE_ARGS+=	--enable-debug=yes
 .else
 CONFIGURE_ARGS+=	--enable-debug=minimum
+CFLAGS+= -g
 .endif
+STRIP=
 .endif
 .endif
 
