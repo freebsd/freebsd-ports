@@ -52,5 +52,8 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|datadir)/icons/gnome|prefix)/share/icons/gnome|g' \
 		${WRKSRC}/pixmaps/Makefile.in
+	@${REINPLACE_CMD} -e 's|;;|;|g' \
+		${WRKSRC}/src/journal.c \
+		${WRKSRC}/src/msg_queue.c
 
 .include <bsd.port.mk>
