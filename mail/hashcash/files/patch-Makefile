@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Mar 30 06:27:47 2005
-+++ Makefile	Fri Apr  1 15:54:54 2005
+--- Makefile.orig	Wed Jul 13 12:10:52 2005
++++ Makefile	Mon Jul 18 12:23:12 2005
 @@ -2,9 +2,9 @@
  CHANGEME1 = 1 # put PACKAGER = EBUILD|RPM etc here
  CHANGEME2 = 2
@@ -13,3 +13,12 @@
  MAKEDEPEND = makedepend
  MSLIB = mslib 
  # here you can choose the regexp style your system has
+@@ -16,7 +16,7 @@
+ # 	REGEXP = 
+ REGEXP=-DREGEXP_POSIX
+ COPT_DEBUG = -g
+-COPT_GENERIC = -O3
++#COPT_GENERIC = -O3
+ COPT_GNU = -O3 -funroll-loops
+ COPT_X86 = -O3 -funroll-loops -march=i386 -mcpu=pentium -mmmx \
+ 	-D_REENTRANT -D_THREAD_SAFE -fPIC
