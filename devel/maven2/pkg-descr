@@ -1,0 +1,8 @@
+Maven is a software project management and comprehension tool. Based on the
+concept of a project object model (POM), Maven can manage a project's build,
+reporting and documentation from a central piece of information.
+
+Maven 2.0 is a rewrite of the popular Maven application to achieve a number of
+goals, and to provide a stable basis to take it into the future.
+
+WWW: http://maven.apache.org/maven2/index.html
