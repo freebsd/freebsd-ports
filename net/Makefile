@@ -459,10 +459,6 @@
     SUBDIR += opendchub
     SUBDIR += opengk
     SUBDIR += openh323
-    SUBDIR += openldap21-client
-    SUBDIR += openldap21-sasl-client
-    SUBDIR += openldap21-sasl-server
-    SUBDIR += openldap21-server
     SUBDIR += openldap22-client
     SUBDIR += openldap22-sasl-client
     SUBDIR += openldap22-sasl-server
