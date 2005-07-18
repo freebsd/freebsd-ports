@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	enlightenment
-PORTVERSION=	0.16.999.010
-PORTREVISION=	1
+PORTVERSION=	0.16.999.011
+PORTREVISION=	0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
@@ -21,6 +21,7 @@ LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 		embryo.9:${PORTSDIR}/lang/embryo \
 		eet.9:${PORTSDIR}/devel/eet
 
+USE_GMAKE=	yes
 CONFLICTS=	x11-wm/enlightenment
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnometarget
