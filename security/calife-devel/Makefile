@@ -14,6 +14,8 @@ DISTNAME=	calife-3.0pre5
 MAINTAINER=	thomas@FreeBSD.org
 COMMENT=	A lightweight alternative to sudo
 
+LATEST_LINK=	${PORTNAME}-devel
+
 USE_BZIP2=	yes
 
 GNU_CONFIGURE=	yes
