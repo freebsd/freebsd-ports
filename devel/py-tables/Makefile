@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	tables
-PORTVERSION=	1.0
-PORTREVISION=	3
+PORTVERSION=	1.1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pytables
@@ -30,13 +29,17 @@ USE_PYDISTUTILS=	yes
 
 PLIST_FILES=	bin/nctoh5 bin/ptdump bin/ptrepack
 
+.if !exists(/usr/bin/bzip2)
+LIB_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/setup.py
 
 post-install:
-	@${FIND} ${PYTHON_SITELIBDIR}/tables ! -type d | \
+	@${FIND} ${PYTHONPREFIX_SITELIBDIR}/tables ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PYTHON_SITELIBDIR}/tables -type d | ${SORT} -r | \
+	@${FIND} ${PYTHONPREFIX_SITELIBDIR}/tables -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
