@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sleuth
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	dns
 MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/local/mj/net/
 
