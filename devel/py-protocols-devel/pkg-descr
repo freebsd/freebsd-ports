@@ -1,0 +1,8 @@
+PyProtocols extends the PEP 246 adapt() function with a new "declaration API"
+that lets you easily define your own protocols and adapters, and declare what
+adapters should be used to adapt what types, objects, or protocols.
+In addition to its own Interface type, PyProtocols can also use Twisted and
+Zope's Interface types too.
+
+Author:	Phillip J. Eby
+WWW:	http://peak.telecommunity.com/PyProtocols.html

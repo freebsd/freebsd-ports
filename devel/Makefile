@@ -1338,6 +1338,7 @@
     SUBDIR += py-plex
     SUBDIR += py-pmock
     SUBDIR += py-pqueue
+    SUBDIR += py-protocols
     SUBDIR += py-psyco
     SUBDIR += py-px
     SUBDIR += py-repl
