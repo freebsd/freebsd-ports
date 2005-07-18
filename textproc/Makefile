@@ -355,6 +355,7 @@
     SUBDIR += p5-Regexp-Log-Common
     SUBDIR += p5-SVG
     SUBDIR += p5-Search-Saryer
+    SUBDIR += p5-Search-VectorSpace
     SUBDIR += p5-Sort-ArbBiLex
     SUBDIR += p5-Sort-Fields
     SUBDIR += p5-Sort-Naturally
