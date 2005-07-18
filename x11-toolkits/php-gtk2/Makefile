@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php-gtk
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://gtk.php.net/distributions/ \
 		http://document-root.de/mirror/php-gtk/
@@ -14,12 +14,11 @@ MASTER_SITES=	http://gtk.php.net/distributions/ \
 MAINTAINER=	kiesel@schlund.de
 COMMENT=	An extension to use gtk in PHP-applications
 
-WANT_AUTOMAKE_VER=	15
-USE_AUTOCONF_VER=	253
-WANT_LIBTOOL_VER=	13
+WANT_AUTOMAKE_VER=	19
+USE_AUTOCONF_VER=	259
+WANT_LIBTOOL_VER=	15
 GNU_CONFIGURE=	yes
 USE_PHP=	pcre
-USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
 WANT_PHP_SCR=	yes
 BROKEN_WITH_PHP=	5
@@ -27,6 +26,7 @@ USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
+WRKSRC=${WRKDIR}/php_gtk-${PORTVERSION}
 
 OPTIONS=	LIBGLADE	"GladeXML support in php-gtk" on \
 		SCINTILLA	"Scintilla support" on \
@@ -90,7 +90,7 @@ EXAMPLES=	combobutton.php fileselection.php gtk.php hello.php list.php \
 
 pre-configure:
 	@${ECHO_MSG} "===>  Building configuration files for ${PKGNAME}"
-	@(cd ${WRKSRC} && ${SETENV} ${SCRIPTS_ENV} ./buildconf)
+	@(cd ${WRKSRC} && ${SETENV} ${SCRIPTS_ENV} PHP_AUTOCONF=autoconf259 PHP_AUTOHEADER=autoheader259 ./buildconf)
 .for FILE in ${PIC2FIX}
 	@${REINPLACE_CMD} -e "s|-prefer-pic|${CFLAGS}|g" ${WRKSRC}/${FILE}
 .endfor
