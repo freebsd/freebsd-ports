@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: pdns_recursor
+# REQUIRE: DAEMON
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable dovecot:
+#
+#pdns_recursor_enable="YES"
+#
+# See http://rtfm.powerdns.com for flags.
+#
+
+. %%RC_SUBR%%
+
+name=pdns_recursor
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/pdns_recursor
+
+# set defaults
+
+pdns_recursor_enable=${pdns_recursor_enable:-"NO"}
+pdns_recursor_conf=${pdns_recursor_conf:-"%%PREFIX%%/etc/recursor.conf"}
+pdns_recursor_flags=${pdns_recursor_flags:-""}
+
+load_rc_config ${name}
+
+required_files=${pdns_recursor_conf}
+
+run_rc_command "$1"

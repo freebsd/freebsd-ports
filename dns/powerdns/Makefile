@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	powerdns
-PORTVERSION=	2.9.17
+PORTVERSION=	2.9.18
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
@@ -14,10 +14,13 @@ DISTNAME=	pdns-${PORTVERSION}
 MAINTAINER=	tremere@cainites.net
 COMMENT=	An advanced DNS server with SQL backend
 
+LIB_DEPENDS=	boost_regex.2:${PORTSDIR}/devel/boost
+
 USE_GMAKE=	YES
 USE_SUBMAKE=	YES
 USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
+CXXFLAGS+=	-I${PREFIX}/include
 CONFIGURE_ARGS+=	--with-modules="${CONFIGURE_MODULES} pipe" \
 			--with-dynmodules=""
 #			--enable-debug
@@ -27,10 +30,23 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		DISTNAME="${DISTNAME}" \
 		POWERDNS_OPTIONS="${POWERDNS_OPTIONS}"
 MAN8=		pdns_control.8 pdns_server.8 zone2sql.8
-STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/pdns.sh.sample
-LIBMAP_CONF=	/etc/libmap.conf
+
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500037
+USE_RCORDER=	pdns.sh
+RC_DIR=		/etc/rc.d
+RC_SUFX=
+.else
+USE_RC_SUBR+=	pdns.sh
+RC_DIR=		${PREFIX}/etc/rc.d
+RC_SUFX=	.sh
+.endif
+
+PLIST_SUB+=	RC_DIR=${RC_DIR} \
+		RC_SUFX=${RC_SUFX}
 
 # use user config if possible
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
@@ -72,7 +88,7 @@ PLIST_SUB+=		WITHLDAP="@comment "
 .endif
 
 .if defined(WITH_SQLITE)
-LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite2
+LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite2
 CONFIGURE_ARGS+=	--enable-sqlite
 CONFIGURE_MODULES+=	"gsqlite"
 .else
@@ -80,6 +96,11 @@ CONFIGURE_ARGS+=	--disable-sqlite
 .endif
 
 .if defined(POWERDNS_WITH_RECURSOR)
+.if ${OSVERSION} >= 500037
+USE_RCORDER+=	pdns_recursor.sh
+.else
+USE_RC_SUBR+=	pdns_recursor.sh
+.endif
 CONFIGURE_ARGS+=	--enable-recursor
 PLIST_SUB+=		RECURSOR=""
 .else
@@ -91,15 +112,13 @@ PLIST_SUB+=		RECURSOR="@comment "
 UCONTEXT!=	${AWK} '/setcontext/ { print "YES" }' \
 		/usr/include/ucontext.h
 .if ${UCONTEXT} == ""
-BROKEN=		setcontext for recursor not found or FreeBSD version lower than 5.0
+BROKEN=		"setcontext for recursor not found or FreeBSD version lower than 5.0"
 .endif
 .endif
 .endif
 
-.if defined(POWERDNS_WITH_RECURSOR) || defined(WITH_LDAP)
 .if ${OSVERSION} < 500039
-USE_GCC=3.2
-.endif
+USE_GCC=3.4
 .endif
 
 .if defined(NO_DESCRIBE)
@@ -136,12 +155,6 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/$i ${EXAMPLESDIR}/
 .endfor
 .endif
-.if !exists(${STARTUP_SCRIPT})
-	@${ECHO_MSG} "Installing ${STARTUP_SCRIPT} startup file."
-	${SED} -e "s=%%PREFIX%%=${PREFIX}=" \
-		${FILESDIR}/pdns.sh.sample  \
-		> ${WRKSRC}/pdns.sh.sample
-	${INSTALL_SCRIPT} ${WRKSRC}/pdns.sh.sample ${STARTUP_SCRIPT}
-.endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
