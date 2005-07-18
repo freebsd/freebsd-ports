@@ -51,6 +51,7 @@
     SUBDIR += p5-Chemistry-Elements
     SUBDIR += paraview
     SUBDIR += psi3
+    SUBDIR += py-paida
     SUBDIR += py-scipy
     SUBDIR += qcl
     SUBDIR += ruby-dcl

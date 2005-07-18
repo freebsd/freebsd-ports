@@ -1,0 +1,9 @@
+Description: PAIDA is pure Python scientific analysis package and implements
+AIDA (Abstract Interfaces for Data Analysis).  The main features are:
+- Pure Python! (so works on both Python and Jython)
+- Creating/Plotting the histogram, ntuple, profile and cloud
+- Fitting parameter optimization with constraints and its parabolic and
+  asymmetric error evaluation
+- XML based storing
+
+WWW:	http://paida.sourceforge.net
