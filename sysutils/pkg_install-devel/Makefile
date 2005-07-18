@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	eik
 PKGNAMESUFFIX=		-devel
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		clement@FreeBSD.org
 COMMENT=		Development version of the FreeBSD 5.x package tools
 
 CONFLICTS=		pkg_install-[0-9]*
