@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mhash
-PORTVERSION=	1.0
+PORTVERSION=	1.4
 CATEGORIES=	security python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mhash
@@ -19,17 +19,14 @@ COMMENT=	Python mhash module
 
 LIB_DEPENDS=	mhash:${PORTSDIR}/security/mhash
 
-PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/mhash.so
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/mhash.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_REINPLACE=	yes
-PYDISTUTILS_BUILDARGS=	-L${LOCALBASE}/lib
+
 CFLAGS+=	-I${LOCALBASE}/include
+MAKE_ENV=	"LDFLAGS=-L${LOCALBASE}/lib"
 
-pre-patch:
-	${REINPLACE_CMD} -e '227s,$$,\\,' ${WRKSRC}/mhash.c # put a missed terminating quote
-
-do-build:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} build_ext ${PYDISTUTILS_BUILDARGS})
+test: install
+	${PYTHON_CMD} ${WRKSRC}/test.py
 
 .include <bsd.port.mk>
