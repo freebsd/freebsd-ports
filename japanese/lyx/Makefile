@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	flathill
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-jp-kit0.10b4for${PORTVERSION}.tar.gz
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
 
 #RUN_DEPENDS=	platex:${PORTSDIR}/japanese/platex-euc
@@ -24,7 +24,7 @@ COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
 #.endif
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
-BROKEN=		Incomplete pkg-plist
+BROKEN=		"Incomplete pkg-plist"
 
 USE_XPM=	yes
 USE_PERL5=	yes
