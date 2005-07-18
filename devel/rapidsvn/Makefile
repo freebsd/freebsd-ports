@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rapidsvn
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rapidsvn.org/download/
 
