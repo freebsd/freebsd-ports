@@ -412,6 +412,7 @@
     SUBDIR += pwman
     SUBDIR += pxytest
     SUBDIR += py-clamav
+    SUBDIR += py-crack
     SUBDIR += py-cryptkit
     SUBDIR += py-fchksum
     SUBDIR += py-gnupg

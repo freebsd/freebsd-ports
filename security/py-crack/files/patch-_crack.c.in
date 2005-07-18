@@ -1,0 +1,11 @@
+--- _crack.c.in.orig	Sun Jul 17 16:23:35 2005
++++ _crack.c.in	Sun Jul 17 16:23:45 2005
+@@ -19,7 +19,7 @@
+  */
+ 
+ #include <Python.h>
+-#include <crack.h>
++#include <packer.h>
+ #include <stdio.h>
+ 
+ #define FILENAME_MAXLEN 512
