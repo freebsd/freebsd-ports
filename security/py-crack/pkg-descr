@@ -1,0 +1,5 @@
+This module brings to Python programs the capability of evaluating password
+strength. To achieve this noble aim it uses the well known cracklib toolkit,
+hence the name.  
+
+WWW: http://www.nongnu.org/python-crack/
