@@ -1,0 +1,575 @@
+Index: user.c
+===================================================================
+--- user.c	(revision 1711)
++++ user.c	(revision 1712)
+@@ -202,8 +202,8 @@
+ 	memset(&change_flags, 0, sizeof(change_flags));
+ 
+ 	/* get options */
+-	opterr = 0;		/* suppress error message from getopt() */
+-	while ((opt = getopt(argc, argv,
++	dm_opterr = 0;		/* suppress error message from getopt() */
++	while ((opt = dm_getopt(argc, argv,
+ 		"-a:d:c:e:l::x:" /* Major modes */
+ 		"W::w:P::p:u:g:m:t:s:S:T:" /* Minor options */
+ 		"i" "f:qnyvVh" /* Common options */ )) != -1) {
+@@ -223,16 +223,16 @@
+ 			if (mode)
+ 				mode_toomany = 1;
+ 			mode = opt;
+-			if (optarg && strlen(optarg))
+-				user = dm_strdup(optarg);
++			if (dm_optarg && strlen(dm_optarg))
++				user = dm_strdup(dm_optarg);
+ 			break;
+ 
+ 		case 'x':
+ 			if (mode)
+ 				mode_toomany = 1;
+ 			mode = opt;
+-			if (optarg && strlen(optarg))
+-				alias = dm_strdup(optarg);
++			if (dm_optarg && strlen(dm_optarg))
++				alias = dm_strdup(dm_optarg);
+ 			break;
+ 
+ 		case 'l':
+@@ -241,8 +241,8 @@
+ 			if (mode != 0 && mode != 'l')
+ 				mode_toomany = 1;
+ 			mode = opt;
+-			if (optarg && strlen(optarg))
+-				userspec = dm_strdup(optarg);
++			if (dm_optarg && strlen(dm_optarg))
++				userspec = dm_strdup(dm_optarg);
+ 			break;
+ 
+ 		case 'i':
+@@ -253,13 +253,13 @@
+ 		/* Minor options */
+ 		case 'w':
+ 			change_flags.newpasswd = 1;
+-			passwd = dm_strdup(optarg);
++			passwd = dm_strdup(dm_optarg);
+ 			break;
+ 
+ 		case 'W':
+ 			change_flags.newpasswd = 1;
+-			if (optarg && strlen(optarg)) {
+-				passwdfile = dm_strdup(optarg);
++			if (dm_optarg && strlen(dm_optarg)) {
++				passwdfile = dm_strdup(dm_optarg);
+ 				change_flags.newpasswdfile = 1;
+ 			} else {
+ 				change_flags.newpasswdstdin = 1;
+@@ -268,20 +268,20 @@
+ 
+ 		case 'u':
+ 			change_flags.newuser = 1;
+-			newuser = dm_strdup(optarg);
++			newuser = dm_strdup(dm_optarg);
+ 			break;
+ 
+ 		case 'p':
+ 			if (!passwdtype)
+-				passwdtype = dm_strdup(optarg);
++				passwdtype = dm_strdup(dm_optarg);
+ 			// else
+ 				// Complain about only one type allowed.
+ 			break;
+ 
+ 		case 'P':
+ 			change_flags.newpasswdshadow = 1;
+-			if (optarg && strlen(optarg))
+-				passwdfile = dm_strdup(optarg);
++			if (dm_optarg && strlen(dm_optarg))
++				passwdfile = dm_strdup(dm_optarg);
+ 			else
+ 				passwdfile = SHADOWFILE;
+ 			passwdtype = "shadow";
+@@ -289,42 +289,42 @@
+ 
+ 		case 'g':
+ 			change_flags.newclientid = 1;
+-			clientid = strtoull(optarg, NULL, 10);
++			clientid = strtoull(dm_optarg, NULL, 10);
+ 			break;
+ 
+ 		case 'm':
+ 			change_flags.newmaxmail = 1;
+-			maxmail = strtomaxmail(optarg);
++			maxmail = strtomaxmail(dm_optarg);
+ 			break;
+ 
+ 		case 's':
+ 			// Add this item to the user's aliases.
+-			if (optarg && (len = strlen(optarg)))
+-				list_nodeadd(&alias_add, optarg, len+1);
++			if (dm_optarg && (len = strlen(dm_optarg)))
++				list_nodeadd(&alias_add, dm_optarg, len+1);
+ 			break;
+ 
+ 		case 'S':
+ 			// Delete this item from the user's aliases.
+-			if (optarg && (len = strlen(optarg)))
+-				list_nodeadd(&alias_del, optarg, len+1);
++			if (dm_optarg && (len = strlen(dm_optarg)))
++				list_nodeadd(&alias_del, dm_optarg, len+1);
+ 			break;
+ 
+ 		case 't':
+ 			// Add this item to the alias's forwards.
+-			if (optarg && (len = strlen(optarg)))
+-				list_nodeadd(&fwds_add, optarg, len+1);
++			if (dm_optarg && (len = strlen(dm_optarg)))
++				list_nodeadd(&fwds_add, dm_optarg, len+1);
+ 			break;
+ 
+ 		case 'T':
+ 			// Delete this item from the alias's forwards.
+-			if (optarg && (len = strlen(optarg)))
+-				list_nodeadd(&fwds_del, optarg, len+1);
++			if (dm_optarg && (len = strlen(dm_optarg)))
++				list_nodeadd(&fwds_del, dm_optarg, len+1);
+ 			break;
+ 
+ 		/* Common options */
+ 		case 'f':
+-			if (optarg && strlen(optarg) > 0)
+-				configFile = optarg;
++			if (dm_optarg && strlen(dm_optarg) > 0)
++				configFile = dm_optarg;
+ 			else {
+ 				qerrorf("dbmail-users: -f requires a filename\n\n");
+ 				result = 1;
+Index: lmtpd.c
+===================================================================
+--- lmtpd.c	(revision 1711)
++++ lmtpd.c	(revision 1712)
+@@ -100,8 +100,8 @@
+ 	openlog(PNAME, LOG_PID, LOG_MAIL);
+ 
+ 	/* get command-line options */
+-	opterr = 0;		/* suppress error message from getopt() */
+-	while ((opt = getopt(argc, argv, "vVhqnf:p:")) != -1) {
++	dm_opterr = 0;		/* suppress error message from getopt() */
++	while ((opt = dm_getopt(argc, argv, "vVhqnf:p:")) != -1) {
+ 		switch (opt) {
+ 		case 'v':
+ 			/* TODO: Perhaps verbose should log to the console with -n? */
+@@ -121,8 +121,8 @@
+ 			do_showhelp();
+ 			return 0;
+ 		case 'p':
+-			if (optarg && strlen(optarg) > 0)
+-				pidFile = optarg;
++			if (dm_optarg && strlen(dm_optarg) > 0)
++				pidFile = dm_optarg;
+ 			else {
+ 				fprintf(stderr,
+ 					"dbmail-lmtpd: -p requires a filename "
+@@ -131,8 +131,8 @@
+ 			}
+ 			break;
+ 		case 'f':
+-			if (optarg && strlen(optarg) > 0)
+-				configFile = optarg;
++			if (dm_optarg && strlen(dm_optarg) > 0)
++				configFile = dm_optarg;
+ 			else {
+ 				fprintf(stderr,
+ 					"dbmail-lmtpd: -f requires a filename "
+Index: dm_getopt.c
+===================================================================
+--- dm_getopt.c	(revision 1711)
++++ dm_getopt.c	(revision 1712)
+@@ -135,7 +135,7 @@
+  */
+ 
+ int _dm_getopt_internal(int argc, char * argv[], const char *shortopts,
+-                     const struct option *longopts, int *longind,
++                     const struct dm_option *longopts, int *longind,
+                      int long_only)
+ {
+   char mode, colon_mode = *shortopts;
+@@ -261,13 +261,13 @@
+ }
+ 
+ int dm_getopt_long(int argc, char * argv[], const char *shortopts,
+-                const struct option *longopts, int *longind)
++                const struct dm_option *longopts, int *longind)
+ {
+   return _dm_getopt_internal(argc, argv, shortopts, longopts, longind, 0);
+ }
+ 
+ int dm_getopt_long_only(int argc, char * argv[], const char *shortopts,
+-                const struct option *longopts, int *longind)
++                const struct dm_option *longopts, int *longind)
+ {
+   return _dm_getopt_internal(argc, argv, shortopts, longopts, longind, 1);
+ }
+Index: maintenance.c
+===================================================================
+--- maintenance.c	(revision 1711)
++++ maintenance.c	(revision 1712)
+@@ -121,8 +121,8 @@
+ 	setvbuf(stdout, 0, _IONBF, 0);
+ 
+ 	/* get options */
+-	opterr = 0;		/* suppress error message from getopt() */
+-	while ((opt = getopt(argc, argv,
++	dm_opterr = 0;		/* suppress error message from getopt() */
++	while ((opt = dm_getopt(argc, argv,
+ 			"-acrtl:pudb" /* Main options */
+ 			"i" /* Maybe later options */
+ 			"f:qnyvVh")) != -1) { /* Common options */
+@@ -173,8 +173,8 @@
+ 		case 'l':
+ 			check_iplog = 1;
+ 			do_nothing = 0;
+-			if (optarg)
+-				strncpy(timespec, optarg, LEN);
++			if (dm_optarg)
++				strncpy(timespec, dm_optarg, LEN);
+ 			else
+ 				timespec[0] = 0;
+ 
+@@ -209,8 +209,8 @@
+ 			break;
+ 
+ 		case 'f':
+-			if (optarg && strlen(optarg) > 0)
+-				configFile = optarg;
++			if (dm_optarg && strlen(dm_optarg) > 0)
++				configFile = dm_optarg;
+ 			else {
+ 				qerrorf("dbmail-util: -f requires a filename\n\n" );
+ 				return 1;
+Index: dm_getopt.h
+===================================================================
+--- dm_getopt.h	(revision 1711)
++++ dm_getopt.h	(revision 1712)
+@@ -26,38 +26,23 @@
+  */
+ 
+ #include "config.h"
++#ifndef DM_GETOPT_H
++#define DM_GETOPT_H
+ 
+-#ifndef USE_DM_GETOPT
+-#  include <getopt.h>
+-#endif
++#  ifndef USE_DM_GETOPT
++#    include <getopt.h>
++#    define dm_getopt getopt
++#    define dm_getopt_long getopt_long
++#    define dm_getopt_long_only getopt_long_only
++#    define _dm_getopt_internal _getopt_internal
++#    define dm_opterr opterr
++#    define dm_optind optind
++#    define dm_optopt optopt
++#    define dm_optarg optarg
++#  endif
+ 
+-#ifdef USE_DM_GETOPT
++#  ifdef USE_DM_GETOPT
+ 
+-#  ifndef DM_GETOPT_H
+-     /* Our include guard first. */
+-#    define DM_GETOPT_H
+-     /* Try to kill the system getopt.h */
+-#    define _GETOPT_DECLARED
+-#    define _GETOPT_H
+-#    define GETOPT_H
+-
+-#    undef getopt
+-#    define getopt dm_getopt
+-#    undef getopt_long
+-#    define getopt_long dm_getopt_long
+-#    undef getopt_long_only
+-#    define getopt_long_only dm_getopt_long_only
+-#    undef _getopt_internal
+-#    define _getopt_internal _dm_getopt_internal
+-#    undef opterr
+-#    define opterr dm_opterr
+-#    undef optind
+-#    define optind dm_optind
+-#    undef optopt
+-#    define optopt dm_optopt
+-#    undef optarg
+-#    define optarg dm_optarg
+-
+ #    ifdef __cplusplus
+ extern "C" {
+ #    endif
+@@ -68,7 +53,7 @@
+ extern int dm_optind, dm_opterr, dm_optopt;
+ extern char *dm_optarg;
+ 
+-struct option {
++struct dm_option {
+   const char *name;
+   int has_arg;
+   int *flag;
+@@ -76,28 +61,25 @@
+ };
+ 
+ /* human-readable values for has_arg */
+-#    undef no_argument
+-#    define no_argument 0
+-#    undef required_argument
+-#    define required_argument 1
+-#    undef optional_argument
+-#    define optional_argument 2
++#    define dm_getopt_no_argument 0
++#    define dm_getopt_required_argument 1
++#    define dm_getopt_optional_argument 2
+  
+ /* GNU-style long-argument parsers */
+ extern int dm_getopt_long(int argc, char * argv[], const char *shortopts,
+-                       const struct option *longopts, int *longind);
++                       const struct dm_option *longopts, int *longind);
+  
+ extern int dm_getopt_long_only(int argc, char * argv[], const char *shortopts,
+-                            const struct option *longopts, int *longind);
++                            const struct dm_option *longopts, int *longind);
+  
+ extern int _dm_getopt_internal(int argc, char * argv[], const char *shortopts,
+-                            const struct option *longopts, int *longind,
++                            const struct dm_option *longopts, int *longind,
+                            int long_only);
+ 
+ #    ifdef __cplusplus
+ }
+ #    endif
+ 
+-#  endif /* DM_GETOPT_H */
++#  endif /* USE_DM_GETOPT */
+ 
+-#endif /* USE_DM_GETOPT */
++#endif /* DM_GETOPT_H */
+Index: timsieved.c
+===================================================================
+--- timsieved.c	(revision 1711)
++++ timsieved.c	(revision 1712)
+@@ -99,8 +99,8 @@
+ 	openlog(PNAME, LOG_PID, LOG_MAIL);
+ 
+ 	/* get command-line options */
+-	opterr = 0;		/* suppress error message from getopt() */
+-	while ((opt = getopt(argc, argv, "vVhqnf:p:")) != -1) {
++	dm_opterr = 0;		/* suppress error message from getopt() */
++	while ((opt = dm_getopt(argc, argv, "vVhqnf:p:")) != -1) {
+ 		switch (opt) {
+ 		case 'v':
+ 			/* TODO: Perhaps verbose should log to the console with -n? */
+@@ -120,8 +120,8 @@
+ 			do_showhelp();
+ 			return 0;
+ 		case 'p':
+-			if (optarg && strlen(optarg) > 0)
+-				pidFile = optarg;
++			if (dm_optarg && strlen(dm_optarg) > 0)
++				pidFile = dm_optarg;
+ 			else {
+ 				fprintf(stderr,
+ 					"dbmail-timsieved: -p requires a filename "
+@@ -130,8 +130,8 @@
+ 			}
+ 			break;
+ 		case 'f':
+-			if (optarg && strlen(optarg) > 0)
+-				configFile = optarg;
++			if (dm_optarg && strlen(dm_optarg) > 0)
++				configFile = dm_optarg;
+ 			else {
+ 				fprintf(stderr,
+ 					"dbmail-timsieved: -f requires a filename "
+Index: pop3d.c
+===================================================================
+--- pop3d.c	(revision 1711)
++++ pop3d.c	(revision 1712)
+@@ -103,8 +103,8 @@
+ 	openlog(PNAME, LOG_PID, LOG_MAIL);
+ 
+ 	/* get command-line options */
+-	opterr = 0;		/* suppress error message from getopt() */
+-	while ((opt = getopt(argc, argv, "vVhqnf:p:")) != -1) {
++	dm_opterr = 0;		/* suppress error message from getopt() */
++	while ((opt = dm_getopt(argc, argv, "vVhqnf:p:")) != -1) {
+ 		switch (opt) {
+ 		case 'v':
+ 			/* TODO: Perhaps verbose should log to the console with -n? */
+@@ -124,8 +124,8 @@
+ 			do_showhelp();
+ 			return 0;
+ 		case 'p':
+-			if (optarg && strlen(optarg) > 0)
+-				pidFile = optarg;
++			if (dm_optarg && strlen(dm_optarg) > 0)
++				pidFile = dm_optarg;
+ 			else {
+ 				fprintf(stderr,
+ 					"dbmail-pop3d: -p requires a filename "
+@@ -134,8 +134,8 @@
+ 			}
+ 			break;
+ 		case 'f':
+-			if (optarg && strlen(optarg) > 0)
+-				configFile = optarg;
++			if (dm_optarg && strlen(dm_optarg) > 0)
++				configFile = dm_optarg;
+ 			else {
+ 				fprintf(stderr,
+ 					"dbmail-pop3d: -f requires a filename "
+Index: imapd.c
+===================================================================
+--- imapd.c	(revision 1711)
++++ imapd.c	(revision 1712)
+@@ -97,8 +97,8 @@
+ 	openlog(PNAME, LOG_PID, LOG_MAIL);
+ 
+ 	/* get command-line options */
+-	opterr = 0;		/* suppress error message from getopt() */
+-	while ((opt = getopt(argc, argv, "vVhqnf:p:")) != -1) {
++	dm_opterr = 0;		/* suppress error message from getopt() */
++	while ((opt = dm_getopt(argc, argv, "vVhqnf:p:")) != -1) {
+ 		switch (opt) {
+ 		case 'v':
+ 			/* TODO: Perhaps verbose should log to the console with -n? */
+@@ -118,8 +118,8 @@
+ 			do_showhelp();
+ 			return 0;
+ 		case 'p':
+-			if (optarg && strlen(optarg) > 0)
+-				pidFile = optarg;
++			if (dm_optarg && strlen(dm_optarg) > 0)
++				pidFile = dm_optarg;
+ 			else {
+ 				fprintf(stderr,
+ 					"dbmail-imapd: -p requires a filename "
+@@ -128,8 +128,8 @@
+ 			}
+ 			break;
+ 		case 'f':
+-			if (optarg && strlen(optarg) > 0)
+-				configFile = optarg;
++			if (dm_optarg && strlen(dm_optarg) > 0)
++				configFile = dm_optarg;
+ 			else {
+ 				fprintf(stderr,
+ 					"dbmail-imapd: -f requires a filename "
+Index: sievecmd.c
+===================================================================
+--- sievecmd.c	(revision 1711)
++++ sievecmd.c	(revision 1712)
+@@ -57,7 +57,7 @@
+ 	char *user_name = NULL;
+ 	char *name = NULL;
+ 	FILE *source = NULL;
+-	extern char *optarg;
++	extern char *dm_optarg;
+ 
+ 	openlog(PNAME, LOG_PID, LOG_MAIL);
+ 
+@@ -70,7 +70,7 @@
+ 	configure_debug(TRACE_ERROR, 1, 0);
+ 
+ 	while (opt != -1 && act != 'h') {
+-		opt = getopt(argc, argv, "a:d:i:r:u:l");
++		opt = dm_getopt(argc, argv, "a:d:i:r:u:l");
+ 
+ 		switch (opt) {
+ 		case -1:
+@@ -84,11 +84,11 @@
+ 				act = 'h';
+ 			else
+ 				act = opt;
+-			name = optarg;
++			name = dm_optarg;
+ 			source = stdin;	// FIXME to take files as input, too
+ 			break;
+ 		case 'u':
+-			user_name = dm_strdup(optarg);
++			user_name = dm_strdup(dm_optarg);
+ 			break;
+ 		case 'l':
+ 			if (act != 0)
+Index: main.c
+===================================================================
+--- main.c	(revision 1711)
++++ main.c	(revision 1712)
+@@ -189,7 +189,7 @@
+ 	 * with an immediately preceding option are return with option 
+ 	 * value '1'. We will use this to allow for multiple values to
+ 	 * follow after each of the supported options. */
+-	while ((c = getopt(argc, argv, "-t::m:u:d:r: f:qnyvVh")) != EOF) {
++	while ((c = dm_getopt(argc, argv, "-t::m:u:d:r: f:qnyvVh")) != EOF) {
+ 		/* Received an n-th value following the last option,
+ 		 * so recall the last known option to be used in the switch. */
+ 		if (c == 1)
+@@ -200,13 +200,13 @@
+ 		case 't':
+ 			trace(TRACE_INFO, "main(): using NORMAL_DELIVERY");
+ 
+-			if (optarg) {
++			if (dm_optarg) {
+ 				if (deliver_to_header) {
+ 					printf
+ 					    ("Only one header field may be specified.\n");
+ 					usage_error = 1;
+ 				} else
+-					deliver_to_header = optarg;
++					deliver_to_header = dm_optarg;
+ 			} else
+ 				deliver_to_header = "deliver-to";
+ 
+@@ -221,7 +221,7 @@
+ 				    ("Only one header field may be specified.\n");
+ 				usage_error = 1;
+ 			} else
+-				deliver_to_mailbox = optarg;
++				deliver_to_mailbox = dm_optarg;
+ 
+ 			break;
+ 
+@@ -231,8 +231,8 @@
+ 
+ 			/* Add argument onto the returnpath list. */
+ 			if (list_nodeadd
+-			    (&returnpath, optarg,
+-			     strlen(optarg) + 1) == 0) {
++			    (&returnpath, dm_optarg,
++			     strlen(dm_optarg) + 1) == 0) {
+ 				trace(TRACE_ERROR,
+ 				      "main(): list_nodeadd reports out of memory"
+ 				      " while adding to returnpath");
+@@ -247,7 +247,7 @@
+ 			      "main(): using SPECIAL_DELIVERY to usernames");
+ 
+ 			dsnuser_init(&dsnuser);
+-			dsnuser.address = dm_strdup(optarg);
++			dsnuser.address = dm_strdup(dm_optarg);
+ 
+ 			/* Add argument onto the users list. */
+ 			if (list_nodeadd
+@@ -267,7 +267,7 @@
+ 			      "main(): using SPECIAL_DELIVERY to email addresses");
+ 
+ 			dsnuser_init(&dsnuser);
+-			dsnuser.address = dm_strdup(optarg);
++			dsnuser.address = dm_strdup(dm_optarg);
+ 
+ 			/* Add argument onto the users list. */
+ 			if (list_nodeadd
+@@ -284,8 +284,8 @@
+ 
+ 		/* Common command line options. */
+ 		case 'f':
+-			if (optarg && strlen(optarg) > 0)
+-				configFile = optarg;
++			if (dm_optarg && strlen(dm_optarg) > 0)
++				configFile = dm_optarg;
+ 			else {
+ 				fprintf(stderr,
+ 					"dbmail-smtp: -f requires a filename\n\n" );

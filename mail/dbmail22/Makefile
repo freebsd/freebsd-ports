@@ -7,6 +7,7 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/
 PKGNAMESUFFIX=	-${DATABASE}
@@ -20,13 +21,9 @@ GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_GMAKE=	YES
 USE_OPENSSL=	YES
+USE_RC_SUBR=	dbmail-pop3d.sh dbmail-lmtpd.sh dbmail-imapd.sh
 
 CFLAGS += -fPIC
-
-SED_SCRIPT+=    -e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
-		-e 's|%%PREFIX%%|${PREFIX}|g' \
-		-e 's|%%RC_DIR%%|${RC_DIR}|g' \
-		-e 's|%%RC_SUFX%%|${RC_SUFX}|g'
 
 .if defined(WITH_POSTGRESQL)
 CONFIGURE_ARGS+=	--with-pgsql
@@ -68,16 +65,8 @@ post-configure:
 	@${REINPLACE_CMD} -i.orig 's!/etc/dbmail.conf!${PREFIX}/etc/dbmail.conf!g' \
 				${WRKSRC}/dbmail.h
 
-post-build:
-.for f in imap lmtp pop3
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/dbmail-${f}d.sh > ${WRKDIR}/dbmail-${f}d.sh
-.endfor
-
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/dbmail.conf ${PREFIX}/etc/dbmail.conf-dist
-.for f in imap lmtp pop3
-	@${INSTALL_SCRIPT} ${WRKDIR}/dbmail-${f}d.sh ${DESTDIR}${PREFIX}/etc/rc.d/dbmail-${f}d.sh
-.endfor
 	@${MKDIR} ${DATADIR}/sql
 	@${INSTALL_DATA} ${WRKSRC}/sql/${DATABASE}/* ${DATADIR}/sql
 	@cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1
