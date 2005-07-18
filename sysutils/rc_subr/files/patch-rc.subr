@@ -1,0 +1,11 @@
+--- rc.subr.orig	Tue Aug 10 14:26:29 2004
++++ rc.subr	Mon Jul 18 09:42:30 2005
+@@ -203,7 +203,7 @@
+ 	fi
+ 	read _pid _junk < $_pidfile
+ 	if [ -z "$_pid" ]; then
+-		debug "pid file {$_pidfile): no pid in file."
++		debug "pid file ($_pidfile): no pid in file."
+ 		return
+ 	fi
+ 	_find_processes $_procname ${_interpreter:-.} '-p '"$_pid"
