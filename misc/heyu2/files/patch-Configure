@@ -1,0 +1,11 @@
+--- Configure.orig	Sun Jul 17 00:07:33 2005
++++ Configure	Sun Jul 17 00:07:50 2005
+@@ -84,7 +84,7 @@
+ 		CC = gcc
+ 		CFLAGS = -g -O \$(DFLAGS) -Wall
+ 		LIBS = -lm -lc
+-		DFLAGS= -DHASSELECT -DNEEDGTIME -DFREEBSD
++		DFLAGS= -DHASSELECT -DNEEDGTIME -DFREEBSD -DLOCKDIR=\"/var/spool/lock\"
+ EoF
+ 	;;
+     sco*)

@@ -1,4 +1,4 @@
-bin/heyu2
+bin/heyu
 %%EXAMPLESDIR%%/x10config.sample
 %%EXAMPLESDIR%%/x10.sched.sample
 @dirrm share/examples/heyu2
