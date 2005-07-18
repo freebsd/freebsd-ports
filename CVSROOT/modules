@@ -8956,6 +8956,7 @@ pekwm		ports/x11-wm/pekwm
 pen		ports/net/pen
 pengpong	ports/games/pengpong
 penguin-command	ports/games/penguin-command
+penguinsap	ports/audio/penguinsap
 pentix		ports/games/pentix
 penv		ports/sysutils/penv
 peps		ports/graphics/peps
