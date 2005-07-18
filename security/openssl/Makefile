@@ -879,8 +879,6 @@ MLINKS+= \
 	BN_BLINDING_new.3 BN_BLINDING_set_flags.3 \
 	BN_BLINDING_new.3 BN_BLINDING_create_param.3 \
 	ERR_set_mark.3 ERR_pop_to_mark.3
-.else
-MAN3+=	SN1_generate_nconf.3
 .endif
 
 .include <bsd.port.pre.mk>
