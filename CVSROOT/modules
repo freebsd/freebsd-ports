@@ -5856,6 +5856,7 @@ matrix		ports/math/matrix
 matrix-kmod	ports/misc/matrix-kmod
 mavbiff		ports/mail/mavbiff
 maven		ports/devel/maven
+maven2		ports/devel/maven2
 maverik		ports/graphics/maverik
 mawk		ports/lang/mawk
 maxima		ports/math/maxima
