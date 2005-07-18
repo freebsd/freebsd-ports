@@ -5,8 +5,10 @@ bin/enlightenment_remote
 include/E_Lib.h
 include/enlightenment/e.h
 include/enlightenment/e_actions.h
+include/enlightenment/e_alert.h
 include/enlightenment/e_apps.h
 include/enlightenment/e_atoms.h
+include/enlightenment/e_bg.h
 include/enlightenment/e_bindings.h
 include/enlightenment/e_border.h
 include/enlightenment/e_box.h
@@ -20,6 +22,7 @@ include/enlightenment/e_error.h
 include/enlightenment/e_focus.h
 include/enlightenment/e_font.h
 include/enlightenment/e_gadman.h
+include/enlightenment/e_grabinput.h
 include/enlightenment/e_hints.h
 include/enlightenment/e_icon.h
 include/enlightenment/e_includes.h
@@ -32,16 +35,20 @@ include/enlightenment/e_ipc_handlers.h
 include/enlightenment/e_ipc_handlers_list.h
 include/enlightenment/e_layout.h
 include/enlightenment/e_manager.h
+include/enlightenment/e_maximize.h
 include/enlightenment/e_menu.h
+include/enlightenment/e_mmx.h
 include/enlightenment/e_module.h
 include/enlightenment/e_moveresize.h
 include/enlightenment/e_msg.h
 include/enlightenment/e_object.h
+include/enlightenment/e_pan.h
 include/enlightenment/e_path.h
 include/enlightenment/e_place.h
 include/enlightenment/e_pointer.h
 include/enlightenment/e_popup.h
 include/enlightenment/e_prefix.h
+include/enlightenment/e_remember.h
 include/enlightenment/e_resist.h
 include/enlightenment/e_signals.h
 include/enlightenment/e_startup.h
@@ -50,6 +57,7 @@ include/enlightenment/e_test.h
 include/enlightenment/e_theme.h
 include/enlightenment/e_user.h
 include/enlightenment/e_utils.h
+include/enlightenment/e_win.h
 include/enlightenment/e_winlist.h
 include/enlightenment/e_xinerama.h
 include/enlightenment/e_zone.h
@@ -124,6 +132,7 @@ lib/libe.so.0
 %%DATADIR%%/doc/enlightenment.png
 share/locale/bg/LC_MESSAGES/enlightenment.mo
 share/locale/cs/LC_MESSAGES/enlightenment.mo
+share/locale/da/LC_MESSAGES/enlightenment.mo
 share/locale/de/LC_MESSAGES/enlightenment.mo
 share/locale/es/LC_MESSAGES/enlightenment.mo
 share/locale/fi/LC_MESSAGES/enlightenment.mo
@@ -136,6 +145,7 @@ share/locale/pt/LC_MESSAGES/enlightenment.mo
 share/locale/ru/LC_MESSAGES/enlightenment.mo
 share/locale/sl/LC_MESSAGES/enlightenment.mo
 share/locale/zh_CN/LC_MESSAGES/enlightenment.mo
+share/xsessions/enlightenment.desktop
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/data/themes
 @dirrm %%DATADIR%%/data/other

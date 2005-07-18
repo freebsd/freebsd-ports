@@ -4,4 +4,4 @@ zip file) and allow fast random-access reading of the file later
 on. It does not do zip as a zip itself has more complexity than is
 needed, and it was much simpler to implement this once here.
 
-WWW: http://www.enlightenment.org/pages/eet.html
+WWW: http://www.enlightenment.org/Libraries/Eet/index.html

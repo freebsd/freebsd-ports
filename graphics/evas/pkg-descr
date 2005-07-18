@@ -3,4 +3,4 @@ text, smooth super and sub-sampled images, alpha-blend, as well as drop down to
 using normal X11 primitives such as pixmaps, lines and rectangles for speed if
 your CPU or graphics hardware is too slow.
 
-WWW: http://www.enlightenment.org/pages/evas.html
+WWW: http://www.enlightenment.org/Libraries/Evas/index.html
