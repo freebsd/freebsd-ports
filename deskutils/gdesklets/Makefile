@@ -7,7 +7,7 @@
 
 PORTNAME=	gdesklets
 PORTVERSION=	0.35.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gdesklets.org/releases/ \
 		http://www.pycage.de/download/${PORTNAME}/ \
@@ -21,10 +21,20 @@ LIB_DEPENDS=	gtop-2.0.2:${PORTSDIR}/devel/libgtop2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	15
+USE_LIBTOOL_VER=15
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack librsvg2 pygnomeextras
+
+OPTIONS=	GDBM "install py-gdbm instead py-bsddb for config storage" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_GDBM)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm
+.else
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
+.endif
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
@@ -38,4 +48,4 @@ post-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/lib/gdesklets
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
