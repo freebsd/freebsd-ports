@@ -7,11 +7,12 @@
 PORTNAME=	snowstar
 PORTVERSION=	0.75.5
 CATEGORIES=	audio
-MASTER_SITES=	http://www.daft.com/~armadilo/projects/snowstar/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	fenner
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	fenner@FreeBSD.Org
-COMMENT=	A GUI interface to copy files to/from the Diamond Rio
+COMMENT=	A GUI interface to copy files to/from the Diamond Rio PM300
 
 RUN_DEPENDS=	rio:${PORTSDIR}/audio/rio \
 		wish8.2:${PORTSDIR}/x11-toolkits/tk82
