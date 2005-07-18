@@ -559,6 +559,7 @@
     SUBDIR += makeplus
     SUBDIR += maketool
     SUBDIR += maven
+    SUBDIR += maven2
     SUBDIR += memcheck
     SUBDIR += mercator
     SUBDIR += mercurial

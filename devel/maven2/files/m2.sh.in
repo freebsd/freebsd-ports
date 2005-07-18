@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+if [ -f /etc/mavenrc ] ; then
+	. /etc/mavenrc
+fi
+
+if [ -f "${HOME}/.mavenrc" ] ; then
+	. "${HOME}/.mavenrc"
+fi
+
+M2_HOME=${M2_HOME:-"%%DATADIR%%"}
+
+JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" $MAVEN_OPTS \
+	-classpath "${M2_HOME}"/core/boot/classworlds-*.jar \
+	"-Dclassworlds.conf=${M2_HOME}/bin/m2.conf" \
+	"-Dmaven.home=${M2_HOME}" org.codehaus.classworlds.Launcher "$@"
