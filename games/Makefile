@@ -129,6 +129,7 @@
     SUBDIR += enigma
     SUBDIR += euchre
     SUBDIR += evilfinder
+    SUBDIR += exmars
     SUBDIR += exult
     SUBDIR += falconseye
     SUBDIR += farblazer
