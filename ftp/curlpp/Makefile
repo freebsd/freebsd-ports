@@ -7,11 +7,9 @@
 #
 
 PORTNAME=	curlpp
-PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTVERSION=	0.3.3
 CATEGORIES=	ftp
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://rrette.com/
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	A C++ wrapper for libcurl
@@ -32,11 +30,16 @@ INSTALLS_SHLIB=	yes
 BROKEN=		"Does not compile on alpha 4.x"
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/test/README ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/test/example*.cpp ${EXAMPLESDIR}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/README ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/example*.cpp ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/guide.pdf ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
