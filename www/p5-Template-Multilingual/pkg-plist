@@ -1,0 +1,6 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Multilingual/.packlist
+%%SITE_PERL%%/Template/Multilingual/Parser.pm
+%%SITE_PERL%%/Template/Multilingual.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Multilingual
+@dirrm %%SITE_PERL%%/Template/Multilingual
+@unexec rmdir %D/%%SITE_PERL%%/Template 2>/dev/null || true

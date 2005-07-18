@@ -1,0 +1,16 @@
+This subclass of Template Toolkit's Template::Parser parses multilingual
+templates: templates that contain text in several languages.
+
+    <t>
+      <en>Hello!</en>
+      <fr>Bonjour !</fr>
+    </t>
+
+Use this module directly if you have subclassed Template, otherwise you may
+find it easier to use Template::Multilingual.
+
+Language codes can be any string that matches \w+, but we suggest sticking
+to ISO-639 which provides 2-letter codes for common languages and 3-letter
+codes for many others.
+
+WWW: http://search.cpan.org/~cholet/Template-Multilingual/
