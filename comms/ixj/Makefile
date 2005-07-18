@@ -11,7 +11,7 @@ CATEGORIES=	comms
 MASTER_SITES=	ftp://telepresence.dmem.strath.ac.uk/pub/openh323/
 DISTNAME=	ixj_freebsd-${PORTVERSION}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Driver for Quicknet Internet PhoneJack and LineJack. Used by OpenH323
 
 ONLY_FOR_ARCHS=	i386
@@ -19,7 +19,7 @@ ONLY_FOR_ARCHS=	i386
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
-BROKEN	=	"Driver has not been updated for 5.x kernels. Still uses machine/ipl.h"
+IGNORE	=	cannot be installed since the driver has not been updated for 5.x kernels. Still uses machine/ipl.h
 .endif
 
 WRKSRC=         ${WRKDIR}/ixj_freebsd
