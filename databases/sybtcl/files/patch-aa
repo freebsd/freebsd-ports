@@ -8,7 +8,7 @@
 +#endif
 +
 +#ifndef TDS_DEF_CHARSET
-+#define TDS_DEF_CHARSET NULL /* Not defined by Sybase */
++#define TDS_DEF_CHARSET "iso_1" /* Not defined by Sybase */
 +#endif
 +
  typedef struct SybTclProcs {	/* struct for handle entries */
