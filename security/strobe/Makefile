@@ -19,4 +19,6 @@ WRKSRC=		${WRKDIR}/strobe
 ALL_TARGET=	strobe
 MAN1=		strobe.1
 
+PLIST_FILES=	bin/strobe lib/strobe.services
+
 .include <bsd.port.mk>
