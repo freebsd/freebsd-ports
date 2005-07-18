@@ -6871,10 +6871,6 @@ openh323	ports/net/openh323
 openhbci	ports/finance/openhbci
 openjade	ports/textproc/openjade
 openjit		ports/java/openjit
-openldap21-client	ports/net/openldap21-client
-openldap21-sasl-client	ports/net/openldap21-sasl-client
-openldap21-sasl-server	ports/net/openldap21-sasl-server
-openldap21-server	ports/net/openldap21-server
 openldap22-client	ports/net/openldap22-client
 openldap22-sasl-client	ports/net/openldap22-sasl-client
 openldap22-sasl-server	ports/net/openldap22-sasl-server
