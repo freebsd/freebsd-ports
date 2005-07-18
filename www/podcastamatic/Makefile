@@ -7,6 +7,7 @@
 
 PORTNAME=	podcastamatic
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://bradley.chicago.il.us/projects/podcastamatic/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
@@ -25,10 +26,20 @@ NO_BUILD=	yes
 do-patch:
 	@${REINPLACE_CMD} -e "s|${PORTNAME}.conf|${PREFIX}/etc/${PORTNAME}.conf|"\
 		 ${WRKSRC}/${PORTNAME}.pl
+	@${REINPLACE_CMD} -e "s|podcastamatic.log|/var/log/${PORTNAME}.log|"\
+		${WRKSRC}/${PORTNAME}.conf
+	@${REINPLACE_CMD} -e "s|/projects/podcastamatic|/podcast|"\
+		${WRKSRC}/${PORTNAME}.conf
+	@${REINPLACE_CMD} -e "s|style.css|${PREFIX}/share/${PORTNAME}/style.css|"\
+		${WRKSRC}/${PORTNAME}.conf
+	@${REINPLACE_CMD} -e "s|/testpodcast||" ${WRKSRC}/${PORTNAME}.conf
+	@${REINPLACE_CMD} -e "s|/audio||" ${WRKSRC}/${PORTNAME}.conf
+	@${REINPLACE_CMD} -e "s|[wW]:|${PREFIX}/www|" ${WRKSRC}/${PORTNAME}.conf
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc/
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf.sample
+	test \! -f ${PREFIX}/etc/${PORTNAME}.conf && ${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf || true
 	@${MKDIR} ${PREFIX}/share/${PORTNAME}
 	@${INSTALL_DATA} ${WRKSRC}/style.css ${PREFIX}/share/${PORTNAME}/
 .if !defined(NOPORTDOCS)
