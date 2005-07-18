@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xmlsec
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	security python
 MASTER_SITES=	http://pyxmlsec.labs.libre-entreprise.org/releases/sources/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,7 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 post-install:
-	@${FIND} ${PYTHON_SITELIBDIR} -name "xmlsec*" | \
+	@${FIND} ${PYTHONPREFIX_SITELIBDIR} -name "xmlsec*" | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
