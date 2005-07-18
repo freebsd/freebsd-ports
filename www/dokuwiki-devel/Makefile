@@ -20,7 +20,7 @@ USE_PHP=	gd pcre session xml zlib
 PHP4_PORT?=	www/mod_php4
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
-USE_REINPLACE=yes
+USE_REINPLACE=	YES
 
 pre-fetch:
 .if !defined(DOKUWIKI_DIR)
@@ -83,7 +83,8 @@ pre-everything::
 
 pre-patch:
 .if defined(WIKI_LANG)
-	@${REINPLACE_CMD} -e 's|'en'|'${WIKI_LANG}'|g' ${WRKSRC}/conf/dokuwiki.php
+	@${REINPLACE_CMD} -e 's|lang\(.*\)'en'|lang\1'${WIKI_LANG}'|g' \
+		${WRKSRC}/conf/dokuwiki.php
 	${FIND} ${WRKSRC}/conf -name "*.php.bak" -delete
 .endif
 
