@@ -32,6 +32,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2e116ba5-f7c3-11d9-928e-000b5d7e6dd5">
+    <topic>kdebase -- Kate backup file permission leak</topic>
+    <affects>
+      <package>
+	<name>kdebase</name>
+	<range><ge>3.2.0</ge><lt>3.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A KDE Security Advisory explains:</p>
+	<blockquote cite="http://www.kde.org/info/security/advisory-20050718-1.txt">
+	  <p>Kate / Kwrite create a file backup before saving a modified
+	    file. These backup files are created with default permissions,
+	    even if the original file had more strict permissions set.</p>
+	  <p>Depending on the system security settings, backup files
+	    might be readable by other users.  Kate / Kwrite are
+	    network transparent applications and therefore this
+	    vulnerability might not be restricted to local users.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1920</cvename>
+      <url>https://bugs.kde.org/show_bug.cgi?id=103331</url>
+      <url>http://www.kde.org/info/security/advisory-20050718-1.txt</url>
+    </references>
+    <dates>
+      <discovery>2005-07-18</discovery>
+      <entry>2005-07-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5d72701a-f601-11d9-bcd1-02061b08fc24">
     <topic>firefox &amp; mozilla -- multiple vulnerabilities</topic>
     <affects>
