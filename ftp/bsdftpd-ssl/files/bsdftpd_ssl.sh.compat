@@ -1,10 +1,23 @@
 #!/bin/sh
 
-# Add extra options here for the BSDftpd-ssl FTP server.
+# This is the startup script that runs bsdftpd-ssl FTP server in FreeBSD 4.x.
+
+# Set the value to "YES" to make this script actually do something.
+ENABLE="NO"
+
+# Add extra options here for the FTP server.
 # See ftpd-ssl(8) for more details.
 EXTRAOPTS="-l"
 
 # You shouldn't edit anything below...
+case ${ENABLE} in
+    [Yy][Ee][Ss])
+	;;
+    *)
+	exit 0
+	;;
+esac
+
 if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
     echo "$0: Cannot determine the PREFIX" >&2
     exit 1

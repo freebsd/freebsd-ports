@@ -1,5 +1,5 @@
 bin/ftps
-etc/rc.d/bsdftpd_ssl.sh
+etc/rc.d/bsdftpd_ssl.sh.sample
 libexec/ftpd
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -17,12 +17,6 @@ libexec/ftpd
 %%PORTDOCS%%%%DOCSDIR%%/docs/standards.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/verify.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/x509_auth.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/ftpchroot
-%%PORTDOCS%%%%EXAMPLESDIR%%/ftpusers
-%%PORTDOCS%%%%EXAMPLESDIR%%/rc.conf.d/bsdftpd_ssl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/cert
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rc.conf.d
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
