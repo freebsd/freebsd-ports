@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gate
-PORTVERSION=	2.05a
+PORTVERSION=	2.06
 CATEGORIES=	editors
 MASTER_SITES=	http://www.unixpapa.com/software/
 
