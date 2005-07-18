@@ -468,6 +468,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <cvename>CAN-2005-2173</cvename>
+      <cvename>CAN-2005-2174</cvename>
       <url>http://www.bugzilla.org/security/2.18.1/</url>
       <url>https://bugzilla.mozilla.org/show_bug.cgi?id=292544</url>
       <url>https://bugzilla.mozilla.org/show_bug.cgi?id=293159</url>
@@ -475,6 +477,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-07-07</discovery>
       <entry>2005-07-08</entry>
+      <modified>2005-07-18</modified>
     </dates>
   </vuln>
 
