@@ -5,7 +5,7 @@
          ;;
  
 -     *freebsd5*)
-+     *freebsd[56]*)
++     *freebsd[567]*)
          echo "$as_me:$LINENO: result: ok (${host_os})" >&5
  echo "${ECHO_T}ok (${host_os})" >&6
          VG_PLATFORM="x86-freebsd"
