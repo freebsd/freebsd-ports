@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	numarray
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.3
 CATEGORIES=	math python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	numpy
@@ -17,8 +17,6 @@ COMMENT=	Numeric array manipulation extension module for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-PLIST_SUB=	DOCSDIR=${DOCSDIR:S,${PREFIX}/,,} \
-		EXAMPLESDIR=${EXAMPLESDIR:S,${PREFIX}/,,}
 
 post-configure:
 	cd ${WRKSRC} && \
@@ -30,6 +28,7 @@ post-install:
 	@${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
 	@${TAR} -C ${WRKSRC}/Doc -cf- .|${TAR} -C ${DOCSDIR} -xf-
 	@${TAR} -C ${WRKSRC}/Examples -cf- .|${TAR} -C ${EXAMPLESDIR} -xf-
+	@${RM} -fr ${EXAMPLESDIR}/ufunc/build
 .endif
 
 .include <bsd.port.mk>

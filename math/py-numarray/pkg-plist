@@ -85,9 +85,6 @@
 %%PYTHON_SITELIBDIR%%/numarray/dotblas.py
 %%PYTHON_SITELIBDIR%%/numarray/dotblas.pyc
 %%PYTHON_SITELIBDIR%%/numarray/dotblas.pyo
-%%PYTHON_SITELIBDIR%%/numarray/examples/Matrix.py
-%%PYTHON_SITELIBDIR%%/numarray/examples/Matrix.pyc
-%%PYTHON_SITELIBDIR%%/numarray/examples/Matrix.pyo
 %%PYTHON_SITELIBDIR%%/numarray/examples/__init__.py
 %%PYTHON_SITELIBDIR%%/numarray/examples/__init__.pyc
 %%PYTHON_SITELIBDIR%%/numarray/examples/__init__.pyo
@@ -261,6 +258,9 @@
 %%PYTHON_SITELIBDIR%%/numarray/safethread.py
 %%PYTHON_SITELIBDIR%%/numarray/safethread.pyc
 %%PYTHON_SITELIBDIR%%/numarray/safethread.pyo
+%%PYTHON_SITELIBDIR%%/numarray/session.py
+%%PYTHON_SITELIBDIR%%/numarray/session.pyc
+%%PYTHON_SITELIBDIR%%/numarray/session.pyo
 %%PYTHON_SITELIBDIR%%/numarray/strings.py
 %%PYTHON_SITELIBDIR%%/numarray/strings.pyc
 %%PYTHON_SITELIBDIR%%/numarray/strings.pyo
@@ -294,6 +294,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/README
 %%PORTDOCS%%%%DOCSDIR%%/manual/StyleGuide
 %%PORTDOCS%%%%DOCSDIR%%/manual/TODO
+%%PORTDOCS%%%%DOCSDIR%%/manual/arrayindexing.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/arrayattributes.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/arraybasics.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/arrayfunctions.tex
@@ -305,6 +306,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/fft.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/glossary.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/installation.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/intermediate.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/introduction.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/linearalgebra.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/ma.tex
@@ -315,7 +317,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/numarray.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/objectarray.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/overview.tex
-%%PORTDOCS%%%%DOCSDIR%%/manual/pseudoindices.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/randomarray.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/recordarray.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/table.py
@@ -338,10 +339,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-1.0
 %%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-1.1
 %%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-1.2.2.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-1.3
+%%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-1.3.~1.4.~
 %%PORTDOCS%%%%DOCSDIR%%/sitecustomize.py
 %%PORTDOCS%%%%DOCSDIR%%/unittest.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/ChangeLog
-%%PORTDOCS%%%%EXAMPLESDIR%%/Matrix.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/__init__.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/bench.py
@@ -376,6 +378,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/Src/const.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/Src/polevl.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/setup.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/setup_rzero.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/setup_special.py
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ufunc/Src
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ufunc/RipNumeric
