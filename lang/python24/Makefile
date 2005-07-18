@@ -7,7 +7,7 @@
 
 PORTNAME=	python
 PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -85,12 +85,6 @@ PLIST_SUB+=	32BIT_ONLY=""
 CFLAGS+=	-DPYTHON_DEFAULT_RECURSION_LIMIT=900
 .endif
 
-.if ${OSVERSION} < 400000
-LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-CFLAGS+=	-I${LOCALBASE}/include/ncurses -I${LOCALBASE}/include
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
-.endif
-
 .if !defined(WITHOUT_IPV6) && ${OSVERSION} >= 400014
 CONFIGURE_ARGS+= --enable-ipv6
 .else
@@ -101,14 +95,14 @@ CONFIGURE_ARGS+= --disable-ipv6
 CONFIGURE_ARGS+= --with-fpectl
 .endif
 
-.if ${OSVERSION} >= 600000
-PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
-.elif ${OSVERSION} >= 500000
-PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd6
-.elif ${OSVERSION} >= 400000
-PLATFORMS=plat-freebsd3 plat-freebsd5 plat-freebsd6
-.else
+.if ${OSVERSION} >= 700000
 PLATFORMS=plat-freebsd4 plat-freebsd5 plat-freebsd6
+.elif ${OSVERSION} >= 600000
+PLATFORMS=plat-freebsd4 plat-freebsd5 plat-freebsd7
+.elif ${OSVERSION} >= 500000
+PLATFORMS=plat-freebsd4 plat-freebsd6 plat-freebsd7
+.else
+PLATFORMS=plat-freebsd5 plat-freebsd6 plat-freebsd7
 .endif
 
 post-extract:
@@ -126,8 +120,6 @@ pre-patch:
 	${REINPLACE_CMD} -e \
 		's|^\( *prefixes = .*\)\]$$|\1, "${X11BASE}"]|g' \
 		${WRKSRC}/Lib/site.py
-	${MKDIR} ${WRKSRC}/Lib/plat-freebsd6
-	${CP} ${WRKSRC}/Lib/plat-freebsd5/regen ${WRKSRC}/Lib/plat-freebsd6/
 .if defined(WITH_FPECTL) && ${ARCH} == i386
 	${ECHO} "fpectl fpectlmodule.c" >> ${WRKSRC}/Modules/Setup.dist
 .endif
