@@ -1,0 +1,125 @@
+@unexec if cmp -s %D/www/cgiirc/cgiirc.config %D/www/cgiirc/cgiirc.config.sample; then rm -f %D/www/cgiirc/cgiirc.config; fi
+www/cgiirc/README
+www/cgiirc/cgiirc.config.full
+www/cgiirc/cgiirc.config.sample
+www/cgiirc/client-perl.cgi
+www/cgiirc/client.c
+www/cgiirc/docs/CHANGES
+www/cgiirc/docs/COPYING
+www/cgiirc/docs/TODO
+www/cgiirc/docs/decode.pl
+www/cgiirc/docs/help.html
+www/cgiirc/docs/identd.pl
+www/cgiirc/docs/identd.xinetd
+www/cgiirc/docs/viewconnects.pl
+www/cgiirc/formats/dark
+www/cgiirc/formats/default
+www/cgiirc/formats/gothic
+www/cgiirc/formats/mirc
+www/cgiirc/formats/russian
+www/cgiirc/images/actmsg.wav
+www/cgiirc/images/actsound.gif
+www/cgiirc/images/angry.gif
+www/cgiirc/images/cgiirc.gif
+www/cgiirc/images/cheesy.gif
+www/cgiirc/images/closedn.gif
+www/cgiirc/images/closeup.gif
+www/cgiirc/images/confused.gif
+www/cgiirc/images/cool.gif
+www/cgiirc/images/cry.gif
+www/cgiirc/images/embarassed.gif
+www/cgiirc/images/entry.gif
+www/cgiirc/images/favicon.ico
+www/cgiirc/images/flat.gif
+www/cgiirc/images/font.gif
+www/cgiirc/images/grin.gif
+www/cgiirc/images/happy.gif
+www/cgiirc/images/happycry.gif
+www/cgiirc/images/helpdn.gif
+www/cgiirc/images/helpup.gif
+www/cgiirc/images/hmmm.gif
+www/cgiirc/images/join.wav
+www/cgiirc/images/joinsound.gif
+www/cgiirc/images/kiss.gif
+www/cgiirc/images/love.gif
+www/cgiirc/images/notsure.gif
+www/cgiirc/images/optionsdn.gif
+www/cgiirc/images/optionsup.gif
+www/cgiirc/images/scrollback.gif
+www/cgiirc/images/sleep.gif
+www/cgiirc/images/smile.gif
+www/cgiirc/images/sorry.gif
+www/cgiirc/images/surprised.gif
+www/cgiirc/images/taras/angry.gif
+www/cgiirc/images/taras/cheesy.gif
+www/cgiirc/images/taras/closedn.gif
+www/cgiirc/images/taras/closeup.gif
+www/cgiirc/images/taras/confused.gif
+www/cgiirc/images/taras/cool.gif
+www/cgiirc/images/taras/cry.gif
+www/cgiirc/images/taras/embarassed.gif
+www/cgiirc/images/taras/entry.gif
+www/cgiirc/images/taras/flat.gif
+www/cgiirc/images/taras/font.gif
+www/cgiirc/images/taras/grin.gif
+www/cgiirc/images/taras/happy.gif
+www/cgiirc/images/taras/helpdn.gif
+www/cgiirc/images/taras/helpup.gif
+www/cgiirc/images/taras/love.gif
+www/cgiirc/images/taras/notsure.gif
+www/cgiirc/images/taras/optionsdn.gif
+www/cgiirc/images/taras/optionsup.gif
+www/cgiirc/images/taras/smile.gif
+www/cgiirc/images/taras/surprised.gif
+www/cgiirc/images/taras/time.gif
+www/cgiirc/images/taras/tongue.gif
+www/cgiirc/images/taras/unhappy.gif
+www/cgiirc/images/taras/wink.gif
+www/cgiirc/images/time.gif
+www/cgiirc/images/tongue.gif
+www/cgiirc/images/unhappy.gif
+www/cgiirc/images/what.gif
+www/cgiirc/images/wink.gif
+www/cgiirc/interfaces/default.pm
+www/cgiirc/interfaces/ie.pm
+www/cgiirc/interfaces/interface-make/fform.pm
+www/cgiirc/interfaces/interface-make/fmain.pm
+www/cgiirc/interfaces/interface-make/fuserlist.pm
+www/cgiirc/interfaces/interface-make/fwindowlist.pm
+www/cgiirc/interfaces/interface-make/main.pm
+www/cgiirc/interfaces/interface-make/make-js-interfaces.pl
+www/cgiirc/interfaces/konqueror.pm
+www/cgiirc/interfaces/mozilla.pm
+www/cgiirc/interfaces/nonjs.pm
+www/cgiirc/interfaces/opera.pm
+www/cgiirc/interfaces/opera7.pm
+www/cgiirc/interfaces/style-dark.css
+www/cgiirc/interfaces/style-default.css
+www/cgiirc/interfaces/style-gothic.css
+www/cgiirc/interfaces/style-mirc.css
+www/cgiirc/ipaccess.example
+www/cgiirc/irc.cgi
+www/cgiirc/modules/.htaccess
+www/cgiirc/modules/Command.pm
+www/cgiirc/modules/Event.pm
+www/cgiirc/modules/IRC.pm
+www/cgiirc/modules/IRC/Channel.pm
+www/cgiirc/modules/IRC/Channel/Nick.pm
+www/cgiirc/modules/IRC/Event.pm
+www/cgiirc/modules/IRC/RawCommands.pm
+www/cgiirc/modules/IRC/UniqueHash.pm
+www/cgiirc/modules/IRC/Util.pm
+www/cgiirc/modules/Timer.pm
+www/cgiirc/modules/parse.pl
+www/cgiirc/nph-irc.cgi
+
+@dirrm www/cgiirc/modules/IRC/Channel
+@dirrm www/cgiirc/modules/IRC
+@dirrm www/cgiirc/modules
+@dirrm www/cgiirc/interfaces/interface-make
+@dirrm www/cgiirc/interfaces
+@dirrm www/cgiirc/images/taras
+@dirrm www/cgiirc/images
+@dirrm www/cgiirc/formats
+@dirrm www/cgiirc/docs
+@unexec rmdir %D/www/cgiirc >/dev/null 2>&1 || true

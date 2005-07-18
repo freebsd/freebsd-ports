@@ -10,6 +10,7 @@
     SUBDIR += bnc
     SUBDIR += bobot++
     SUBDIR += bopm
+    SUBDIR += cgiirc
     SUBDIR += ctrlproxy
     SUBDIR += dancer
     SUBDIR += dancer-ircd
