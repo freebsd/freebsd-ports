@@ -18,13 +18,11 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Extended TCL
 
 .ifdef WITHOUT_X11
-LIB_DEPENDS=	tcl${TCL_DVER}.1:${PORTSDIR}/lang/tcl${TCL_DVER}
+LIB_DEPENDS=	tcl${TCL_DVER}:${PORTSDIR}/lang/tcl${TCL_DVER}
 PKGNAMESUFFIX=	-nox11
 .else
-LIB_DEPENDS=	tk${TCL_DVER}.1:${PORTSDIR}/x11-toolkits/tk${TCL_DVER}
+LIB_DEPENDS=	tk${TCL_DVER}:${PORTSDIR}/x11-toolkits/tk${TCL_DVER}
 .endif
-
-#BROKEN=		Incorrect pkg-plist
 
 TCL_VER?=	8.4
 TCL_DVER?=	${TCL_VER:S/.//}
@@ -38,6 +36,7 @@ CONFIGURE_ARGS= --enable-shared \
 		--with-tk="${LOCALBASE}/lib/tk${TCL_VER}"
 PLIST_SUB=	TCLX_LONG_VER=${PORTVERSION:R} \
 		TCLX_SHORT_VER=${PORTVERSION:R:S/.//}
+INSTALL_TARGET=	install-binaries install-libraries
 
 .ifdef WITHOUT_X11
 CONFIGURE_ARGS+=--enable-tk=NO
@@ -49,27 +48,30 @@ PLIST_SUB+=	X11=''
 
 MAKE_ENV=	LDFLAGS="-lm"
 
-MAN3=   CmdWrite.3 Handles.3 Keylist.3 ObjCmdWrite.3 TclXInit.3 \
-	TclCommandWriting.3 \
-	TclX_KeyedListDelete.3 TclX_KeyedListGet.3 TclX_KeyedListGetKeys.3 \
-	TclX_KeyedListSet.3 TclX_Main.3 TclX_NewKeyedListObj.3 \
-	Tcl_HandleAlloc.3 Tcl_HandleFree.3 Tcl_HandleTblInit.3 \
-	Tcl_HandleTblRelease.3 Tcl_HandleTblUseCount.3 Tcl_HandleWalk.3 \
-	Tcl_HandleXlate.3  Tclx_Init.3  Tclxcmd_Init.3 TkX_Main.3 Tkx_Init.3
+MAN3=   CmdWrite.3 Handles.3 Keylist.3 ObjCmdWrite.3 TclXInit.3
+MANN=	TclX.n
 
-MANN=	Memory.n TclX.n Tcl_DisplayMemory.n Tcl_InitMemory.n \
-	Tcl_ValidateAllMemory.n ckalloc.n ckfree.n
+MLINKS=	CmdWrite.3	TclCommandWriting.3	\
+	Keylist.3	TclX_NewKeyedListObj.3
+.for l in Delete Get GetKeys Set TclX_Main TclX_NewKeyedListObj
+MLINKS+=	Keylist.3	TclX_Keylist$l.3
+.endfor
+.for l in Alloc Free TblInit TblRelease TblUseCount Walk Xlate
+MLINKS+=	Handles.3	TclX_Handle$l.3
+.endfor
+.for l in Tclxcmd_Init TclX_Main Tkx_Init TkX_Main
+MLINKS+=	TclXInit.3	$l.3
+.endfor
+
+post-patch:
+	# This man-page is now part of Tcl distribution:
+	${RM} ${WRKSRC:H}/doc/Memory.n
 
 .include <bsd.port.pre.mk>
 
-post-install:
+pre-install:
 	# Preventing the help files from being rebuilt over and over:
-	${INSTALL_MAN} ${WRKSRC}/../doc/CmdWrite.3 ${PREFIX}/man/man3
-	${INSTALL_MAN} ${WRKSRC}/../doc/Handles.3 ${PREFIX}/man/man3
-	${INSTALL_MAN} ${WRKSRC}/../doc/Keylist.3 ${PREFIX}/man/man3
-	${INSTALL_MAN} ${WRKSRC}/../doc/ObjCmdWrite.3 ${PREFIX}/man/man3
-	${INSTALL_MAN} ${WRKSRC}/../doc/TclXInit.3 ${PREFIX}/man/man3
-	${INSTALL_MAN} ${WRKSRC}/../doc/Memory.n ${PREFIX}/man/mann
-	${INSTALL_MAN} ${WRKSRC}/../doc/TclX.n ${PREFIX}/man/mann
+	cd ${WRKSRC:H}/doc && ${INSTALL_MAN} ${MAN3} ${PREFIX}/man/man3
+	cd ${WRKSRC:H}/doc && ${INSTALL_MAN} ${MANN} ${PREFIX}/man/mann
 
 .include <bsd.port.post.mk>
