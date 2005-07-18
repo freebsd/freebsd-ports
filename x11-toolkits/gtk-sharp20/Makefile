@@ -8,7 +8,7 @@
 
 PORTNAME=	gtk-sharp
 PORTVERSION=	1.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://go-mono.com/sources/gtk-sharp-2.0/
 MASTER_SITE_SUBDIR=	gtk-sharp
@@ -31,5 +31,8 @@ USE_GNOME=	gnomehack libgnomedb librsvg2 gnomepanel gtkhtml3 vte
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.pl' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^#!/usr/bin/perl|#!${PERL}|'
+
+pre-su-install:
+	${MKDIR} ${LOCALBASE}/share/gapi-2.0
 
 .include <bsd.port.mk>
