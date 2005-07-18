@@ -14,6 +14,7 @@
     SUBDIR += clearlooks-themes-extras
     SUBDIR += colorstep
     SUBDIR += cursor-bluecurve-theme
+    SUBDIR += cursor-jimmac-theme
     SUBDIR += engradient
     SUBDIR += enlightenment-theme-BlueSteel
     SUBDIR += enlightenment-theme-BrushedMetal-Tigert
