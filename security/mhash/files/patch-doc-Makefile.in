@@ -1,0 +1,19 @@
+--- doc/Makefile.in.orig	Fri Apr 22 11:43:32 2005
++++ doc/Makefile.in	Fri Apr 22 11:44:46 2005
+@@ -391,13 +391,13 @@
+ mhash-doc: $(dist_targets)
+ 
+ $(srcdir)/mhash.html: $(srcdir)/mhash.pod
+-	pod2html --noindex --netscape --title="mhash library" $< | sed 's/MHASH_VERSION/@MHASH_VERSION@/' > $@
++	pod2html --noindex --netscape --title="mhash library" $(srcdir)/mhash.pod | sed 's/MHASH_VERSION/@MHASH_VERSION@/' > $@
+ 
+ $(srcdir)/mhash.0: $(srcdir)/mhash.3
+-	nroff -man $< > $@
++	nroff -man $(srcdir)/mhash.3 > $@
+ 
+ $(srcdir)/mhash.3: $(srcdir)/mhash.pod
+-	pod2man $(PODPARAMS) $< | sed 's/MHASH_VERSION/@MHASH_VERSION@/' > $@
++	pod2man $(PODPARAMS) $(srcdir)/mhash.pod | sed 's/MHASH_VERSION/@MHASH_VERSION@/' > $@
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mhash
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +16,7 @@ COMMENT=	An easy-to-use library for strong hashes such as MD5 and SHA1
 
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=13
+USE_PERL5_BUILD=yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-LDFLAGS="${PTHREAD_LIBS}" --enable-static \
 			--with-gnu-ld
