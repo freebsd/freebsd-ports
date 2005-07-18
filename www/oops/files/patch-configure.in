@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- configure.in.orig
 +++ configure.in
-@@ -328,14 +328,20 @@
+@@ -328,14 +328,17 @@
            rel=`uname -r`
            case "$rel" in
              4*)
@@ -16,13 +16,10 @@ $FreeBSD$
 -            *)
 -              CFLAGS="$CFLAGS -pthread"
 -              LIBS="-lc_r $LEXLIB $LIBS"
-+ 	    5.[012]*)
++ 	    5.[[012]]*)
 + 	      LIBS="$PTHREAD_LIBS $LEXLIB $LIBS"
 + 	      ;;
-+              5*)
-+ 	      CFLAGS="$CFLAGS $PTHREAD_CFLAGS $PTHREAD_LIBS"
-+                ;;
-+ 	    6*)
++ 	    [[567]]*)
 + 	      CFLAGS="$CFLAGS $PTHREAD_CFLAGS $PTHREAD_LIBS"
 + 	      ;;
 +              *)
@@ -31,7 +28,7 @@ $FreeBSD$
                ;;
            esac
  	  RPATH_OPTION="-rpath"
-@@ -430,10 +436,10 @@
+@@ -430,10 +433,10 @@
  esac
  
  if test "X$MYSQL_PATH" != "X" ; then
