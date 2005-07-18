@@ -18,6 +18,8 @@ COMMENT=	A curses-based SpreadSheet program
 WRKSRC=		${WRKDIR}/ss_133
 MAN1=		ss.1 pss.1
 
+PLIST_FILES=	bin/ss bin/pss
+
 do-configure:
 	@${CP} ${WRKSRC}/config.bsd  ${WRKSRC}/config.h
 
