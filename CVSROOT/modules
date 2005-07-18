@@ -9930,6 +9930,7 @@ py-pow		ports/security/py-pow
 py-pqueue	ports/devel/py-pqueue
 py-probstat	ports/math/py-probstat
 py-prolog	ports/lang/py-prolog
+py-protocols	ports/devel/py-protocols
 py-psyco	ports/devel/py-psyco
 py-psycopg	ports/databases/py-psycopg
 py-pullparser	ports/www/py-pullparser
