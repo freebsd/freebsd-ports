@@ -1,0 +1,14 @@
+=============================================================================
+You will also need to read "Configuration" and "Supplement information" parts
+of %%DOCSDIR%%/INSTALL file from the package documentation
+for the subsequent configuration steps:
+  1. Create the server certificate
+  2. Edit PAM configuration
+  3. Start the FTP server
+
+If you want to run the FTP server in the daemon mode, you can copy the sample
+start-up script %%PREFIX%%/etc/rc.d/bsdftpd_ssl.sh.sample to
+%%PREFIX%%/etc/rc.d/bsdftpd_ssl.sh.
+
+Please note: the manual page for the FTP server is available as ftpd-ssl(8).
+=============================================================================

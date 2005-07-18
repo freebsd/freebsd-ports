@@ -6,13 +6,17 @@
 #
 
 PORTNAME=	bsdftpd-ssl
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 PORTREVISION=	0
 CATEGORIES=	ftp
-MASTER_SITES=	http://bsdftpd-ssl.sc.ru/files/bsdftpd-ssl/archive/1.0/src/
+MASTER_SITES=	http://bsdftpd-ssl.sc.ru/files/bsdftpd-ssl/archive/1.1/src/
 DISTNAME=	bsdftpd-ssl-${PORTVERSION}
 
 MAINTAINER=	skynick@mail.sc.ru
+
+USE_OPENSSL=	yes
+
+.include <bsd.port.pre.mk>
 
 # Client only part
 .if defined(CLIENT_ONLY)
@@ -28,13 +32,18 @@ MAN1=	ftps.1
 COMMENT=	Secure FTP server with the TLS/SSL support
 MAN5=	ftpchroot.5 xferlog.5
 MAN8=	ftpd.8
-MLINKS=	ftpd.8 ftpd-ssl.8
+MLINKS=	ftpd.8 ftpd-ssl.8 ftpchroot.5 ftpchroot-ssl.5
 PKGMESSAGE=	${WRKDIR}/pkg-message
-SED_ARG=	's|%%PREFIX%%|${PREFIX}|g; s|%%DOCSDIR%%|${DOCSDIR}|g'
+SED_ARG=	's|%%PREFIX%%|${PREFIX}|g; s|%%DOCSDIR%%|${DOCSDIR}|g; s|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g; s|%%RC_SUBR%%|${RC_SUBR}|g'
+. if ${OSVERSION} >= 503001
+#    FreeBSD >= 5.3
+USE_RC_SUBR=	yes
+. else
+PLIST=		${FILESDIR}/pkg-plist.server.compat
+. endif
 .endif
 
 MANCOMPRESSED=	yes
-USE_OPENSSL=	yes
 
 BINOWN=	root
 BINGRP=	wheel
@@ -50,15 +59,28 @@ MANDIR=	${PREFIX}/man/man
 DOCDIR=	${DOCSDIR}${PKGNAMESUFFIX}
 
 pre-build:
+.if ${OSVERSION} < 500000
+# Compatibility with FreeBSD 4.x
+	(cd ${WRKSRC} && ./config.sh _conv_gcc29x) || exit
+.endif
 	(cd ${WRKSRC} && ./config.sh FreeBSD) || exit
+
 do-build:
 # Client part
 	(cd ${WRKSRC}/port && make && cd ${WRKSRC}/ftp && make) || exit
 # Server part
 .if !defined(CLIENT_ONLY)
 	(cd ${WRKSRC}/ftpd && make) || exit
+. if ${OSVERSION} >= 503001
+#    FreeBSD >= 5.3
 	@${SED} ${SED_ARG} ${FILESDIR}/pkg-message.server > \
 	${WRKDIR}/pkg-message
+	@${SED} ${SED_ARG} ${FILESDIR}/bsdftpd_ssl.sh > \
+	${WRKDIR}/bsdftpd_ssl.sh
+. else
+	@${SED} ${SED_ARG} ${FILESDIR}/pkg-message.server.compat > \
+	${WRKDIR}/pkg-message
+. endif
 .endif
 
 do-install:
@@ -98,10 +120,21 @@ post-install:
 	${INSTALL_SCRIPT} -p ${WRKSRC}/cert/xCA.sh ${DOCDIR}/cert/xCA.sh
 .endif
 .if !defined(CLIENT_ONLY)
-	@${INSTALL_SCRIPT} ${FILESDIR}/bsdftpd-ssl.sh ${PREFIX}/etc/rc.d/bsdftpd-ssl.sh.sample
+. if ${OSVERSION} >= 503001
+#    FreeBSD >= 5.3
+	${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${EXAMPLESDIR}/rc.conf.d
+	${INSTALL_DATA} -p ${FILESDIR}/README.examples ${EXAMPLESDIR}/README
+	${INSTALL_DATA} -p ${FILESDIR}/ftpchroot ${EXAMPLESDIR}/ftpchroot
+	${INSTALL_DATA} -p ${FILESDIR}/ftpusers ${EXAMPLESDIR}/ftpusers
+	${INSTALL_DATA} -p ${FILESDIR}/rc_conf_d.bsdftpd_ssl ${EXAMPLESDIR}/rc.conf.d/bsdftpd_ssl
+	${INSTALL_SCRIPT} ${WRKDIR}/bsdftpd_ssl.sh ${PREFIX}/etc/rc.d/bsdftpd_ssl.sh
+. else
+	${INSTALL_SCRIPT} ${FILESDIR}/bsdftpd_ssl.sh.compat ${PREFIX}/etc/rc.d/bsdftpd_ssl.sh.sample
+. endif
 	@${ECHO_CMD} "*******************************************************************************"
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD} "*******************************************************************************"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

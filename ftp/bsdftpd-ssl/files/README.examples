@@ -1,0 +1,11 @@
+This directory contains example configuration files for the bsdftpd-ssl FTP
+server:
+
+rc.conf.d/bsdftpd_ssl - the configuration parameters for rc.d/ startup script,
+     which is already installed as /usr/local/etc/rc.d/bsdftpd_ssl.sh. The
+     script actually do nothing until that parameters will be added into the
+     one of the /etc/rc.conf.d/bsdftpd_ssl or /etc/rc.conf files.
+
+ftpusers - the /etc/ftpusers file.
+
+ftpchroot - the /etc/ftpchroot file.
