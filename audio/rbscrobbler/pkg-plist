@@ -1,19 +1,19 @@
 bin/rbscrobbler
-%%DATADIR%%/Audioscrobbler.py
-%%DATADIR%%/Debug.py
-%%DATADIR%%/MyQueue.py
-%%DATADIR%%/Rhythmbox_Bonobo.py
-%%DATADIR%%/RLInput.py
-%%DATADIR%%/singletonmixin.py
-%%DATADIR%%/rbscrobbler.py
-%%DATADIR%%/images/icon-offline.png
-%%DATADIR%%/images/icon-online.png
-%%DATADIR%%/images/notsubmitted.png
-%%DATADIR%%/images/offline.png
-%%DATADIR%%/images/online.png
-%%DATADIR%%/images/submitted.png
-%%DATADIR%%/trayicon/__init__.py
-%%DATADIR%%/trayicon/trayicon.so
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/trayicon
-@dirrm %%DATADIR%%
+%%PYTHON_SITELIBDIR%%/rbscrobbler/Audioscrobbler.py
+%%PYTHON_SITELIBDIR%%/rbscrobbler/Debug.py
+%%PYTHON_SITELIBDIR%%/rbscrobbler/MyQueue.py
+%%PYTHON_SITELIBDIR%%/rbscrobbler/Rhythmbox_Bonobo.py
+%%PYTHON_SITELIBDIR%%/rbscrobbler/Scrobbler_Musicbrainz.py
+%%PYTHON_SITELIBDIR%%/rbscrobbler/singletonmixin.py
+%%PYTHON_SITELIBDIR%%/rbscrobbler/rbscrobbler.py
+%%PYTHON_SITELIBDIR%%/rbscrobbler/images/icon-offline.png
+%%PYTHON_SITELIBDIR%%/rbscrobbler/images/icon-online.png
+%%PYTHON_SITELIBDIR%%/rbscrobbler/images/notsubmitted.png
+%%PYTHON_SITELIBDIR%%/rbscrobbler/images/offline.png
+%%PYTHON_SITELIBDIR%%/rbscrobbler/images/online.png
+%%PYTHON_SITELIBDIR%%/rbscrobbler/images/submitted.png
+%%PYTHON_SITELIBDIR%%/rbscrobbler/trayicon/__init__.py
+%%PYTHON_SITELIBDIR%%/rbscrobbler/trayicon/trayicon.so
+@dirrm %%PYTHON_SITELIBDIR%%/rbscrobbler/trayicon
+@dirrm %%PYTHON_SITELIBDIR%%/rbscrobbler/images
+@dirrm %%PYTHON_SITELIBDIR%%/rbscrobbler
