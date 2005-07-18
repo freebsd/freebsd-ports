@@ -3,16 +3,16 @@ include/%%PYTHON_VERSION%%/CXX/Exception.hxx
 include/%%PYTHON_VERSION%%/CXX/Extensions.hxx
 include/%%PYTHON_VERSION%%/CXX/IndirectPythonInterface.hxx
 include/%%PYTHON_VERSION%%/CXX/Objects.hxx
-@dirrm include/%%PYTHON_VERSION%%/CXX
-lib/%%PYTHON_VERSION%%/site-packages/CXX/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/CXX/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/CXX/__init__.pyo
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/CXX
+%%PYTHON_SITELIBDIR%%/CXX/__init__.py
+%%PYTHON_SITELIBDIR%%/CXX/__init__.pyc
+%%PYTHON_SITELIBDIR%%/CXX/__init__.pyo
 share/%%PYTHON_VERSION%%/CXX/IndirectPythonInterface.cxx
 share/%%PYTHON_VERSION%%/CXX/cxx_extensions.cxx
 share/%%PYTHON_VERSION%%/CXX/cxxextensions.c
 share/%%PYTHON_VERSION%%/CXX/cxxsupport.cxx
+%%PORTDOCS%%%%DOCSDIR%%/PyCXX.html
+@dirrm %%PYTHON_SITELIBDIR%%/CXX
+@dirrm include/%%PYTHON_VERSION%%/CXX
 @dirrm share/%%PYTHON_VERSION%%/CXX
-@dirrm share/%%PYTHON_VERSION%%
-%%PORTDOCS%%share/doc/cxx/PyCXX.html
-%%PORTDOCS%%@dirrm share/doc/cxx
+@unexec rmdir %D/share/%%PYTHON_VERSION%% >/dev/null 2>&1 || true
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
