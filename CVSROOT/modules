@@ -2055,7 +2055,6 @@ evolution	ports/mail/evolution
 evolution-data-server	ports/databases/evolution-data-server
 evolution-webcal	ports/www/evolution-webcal
 evolvotron	ports/graphics/evolvotron
-eweather	ports/x11/eweather
 ewipe		ports/misc/ewipe
 ewl		ports/x11-toolkits/ewl
 exact		ports/mail/exact
