@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	mail www pear
 
 MAINTAINER=	antonio@php.net
