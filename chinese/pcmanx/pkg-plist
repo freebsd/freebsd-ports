@@ -1,0 +1,8 @@
+bin/pcmanx
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/pcmanx.mo
+%%DATADIR%%/emoticons
+%%DATADIR%%/sitelist
+share/applications/pcmanx.desktop
+share/pixmaps/pcmanx.png
+@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrm %%DATADIR%%
