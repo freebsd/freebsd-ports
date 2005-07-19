@@ -18,6 +18,7 @@
     SUBDIR += fix-mime-charset
     SUBDIR += fribidi
     SUBDIR += gbase
+    SUBDIR += htx
     SUBDIR += i18ntools
     SUBDIR += ical2html
     SUBDIR += iconv
