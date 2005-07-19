@@ -1,0 +1,7 @@
+This LaTeX package extends the capabilities of TeX/LaTeX to generate
+the arabic writing from an ASCII transliteration for texts in several
+languages using the arabic script.
+Several other common encodings are also supported.
+
+Author:	Prof. Klaus Lagally
+WWW:	http://www.tug.org/tex-archive/language/arabtex/doc/html/arabtex.htm
