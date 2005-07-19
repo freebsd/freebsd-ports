@@ -11839,6 +11839,9 @@ tux-aqfh	ports/games/tux-aqfh
 tuxcards	ports/deskutils/tuxcards
 tuxkart		ports/games/tuxkart
 tuxnes		ports/emulators/tuxnes
+tuxpaint	ports/games/tuxpaint
+tuxpaint-fonts	ports/games/tuxpaint-fonts
+tuxpaint-stamps	ports/games/tuxpaint-stamps
 tuxpuck		ports/games/tuxpuck
 tuxracer	ports/games/tuxracer
 tuxracer_golf	ports/games/tuxracer_golf
