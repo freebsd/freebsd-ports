@@ -2048,6 +2048,7 @@ eval		ports/math/eval
 evangeline	ports/irc/evangeline
 evaq		ports/net/evaq
 evas		ports/graphics/evas
+eventum		ports/www/eventum
 eventwatcher	ports/sysutils/eventwatcher
 evg		ports/www/evg
 evilfinder	ports/games/evilfinder
