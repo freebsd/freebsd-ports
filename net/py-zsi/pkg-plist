@@ -1,4 +1,17 @@
-bin/wsdl2py
+bin/wsdl2dispatch.py
+bin/wsdl2py.py
+%%PYTHON_SITELIBDIR%%/ZSI/ServiceContainer.py
+%%PYTHON_SITELIBDIR%%/ZSI/ServiceContainer.pyc
+%%PYTHON_SITELIBDIR%%/ZSI/ServiceContainer.pyo
+%%PYTHON_SITELIBDIR%%/ZSI/wstools/Namespaces.py
+%%PYTHON_SITELIBDIR%%/ZSI/wstools/Namespaces.pyc
+%%PYTHON_SITELIBDIR%%/ZSI/wstools/Namespaces.pyo
+%%PYTHON_SITELIBDIR%%/ZSI/wstools/c14n.py
+%%PYTHON_SITELIBDIR%%/ZSI/wstools/c14n.pyc
+%%PYTHON_SITELIBDIR%%/ZSI/wstools/c14n.pyo
+%%PYTHON_SITELIBDIR%%/ZSI/wstools/logging.py
+%%PYTHON_SITELIBDIR%%/ZSI/wstools/logging.pyc
+%%PYTHON_SITELIBDIR%%/ZSI/wstools/logging.pyo
 %%PYTHON_SITELIBDIR%%/ZSI/ServiceProxy.py
 %%PYTHON_SITELIBDIR%%/ZSI/ServiceProxy.pyc
 %%PYTHON_SITELIBDIR%%/ZSI/ServiceProxy.pyo
@@ -122,7 +135,26 @@ bin/wsdl2py
 %%PORTDOCS%%%%EXAMPLESDIR%%/test/test_zsi_net.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/test/tests_bad.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/test/tests_good.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/samples/Echo/Echo.wsdl
+%%PORTDOCS%%%%EXAMPLESDIR%%/samples/Echo/EchoClient.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/samples/Echo/EchoServer.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/samples/Echo/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/test/wsdl2py/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/test/wsdl2py/ServiceTest.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/test/wsdl2py/runTests.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/test/wsdl2py/test_AmazonWebService.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/test/wsdl2py/test_FreeDBService.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/test/wsdl2py/test_GlobalWeather_gw.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/test/wsdl2py/test_GlobalWeather_si.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/test/wsdl2py/test_TerraService.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/test/wsdl2py/test_ThreatService.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/test/wsdl2py/test_XMethodsQuery.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/test/wsdl2py/test_ZipCodeResolver.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/test/wsdl2py/test_compile.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/test/wsdl2py/test_wsdl2py.py
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/test/wsdl2py
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/test
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/samples/Echo
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/samples
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
