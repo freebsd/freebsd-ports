@@ -1487,7 +1487,7 @@ x11-toolkits/wxgtk2-utils-devel|x11-toolkits/wxgtk2-contrib-utils|2005-05-12|ren
 mail/sendmail811|mail/sendmail|2005-05-13|obsolete
 games/xpilot-ng|games/xpilot-ng-server|2005-05-15|split into -client and -server
 devel/p5-POE-Component-EasyDBI|databases/p5-POE-Component-EasyDBI|2005-05-15|move to a better category
-www/mnogosearch|www/mnogosearch31|2004-05-15|finished repocopy
+www/mnogosearch|www/mnogosearch31|2005-05-15|finished repocopy
 net/amule|net/amule1|2005-05-16|port renamed
 net/amule-devel|net/amule2|2005-05-16|obsolete
 databases/firebird|databases/firebird-server|2005-05-17|split into -client and -server
@@ -1571,10 +1571,10 @@ misc/wmcp|x11-wm/wmcp|2005-07-10|moved to better category
 x11/kde31-apireference|x11/kde3-apireference|2005-07-10|renamed in order to carry the latest kde3-apireference
 www/wmnetselect||2005-07-13|removed
 korean/mplayer-fonts||2005-07-14|no longer needed
-net/openldap21-client|net/openldap22-client|2004-07-17|removed EOL version of OpenLDAP
-net/openldap21-sasl-client|net/openldap22-sasl-client|2004-07-17|removed EOL version of OpenLDAP
-net/openldap21-sasl-server|net/openldap22-sasl-server|2004-07-17|removed EOL version of OpenLDAP
-net/openldap21-server|net/openldap22-server|2004-07-17|removed EOL version of OpenLDAP
+net/openldap21-client|net/openldap22-client|2005-07-17|removed EOL version of OpenLDAP
+net/openldap21-sasl-client|net/openldap22-sasl-client|2005-07-17|removed EOL version of OpenLDAP
+net/openldap21-sasl-server|net/openldap22-sasl-server|2005-07-17|removed EOL version of OpenLDAP
+net/openldap21-server|net/openldap22-server|2005-07-17|removed EOL version of OpenLDAP
 devel/aegis||2005-07-18|install problems; upstream authors did not respond
 devel/linux-understand_ada||2005-07-18|unfetchable; new version requires support contract
 devel/linux-understand_c||2005-07-18|unfetchable; new version requires support contract
