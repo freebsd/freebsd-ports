@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Apache-Gallery
-PORTVERSION=	0.9.1
-PORTREVISION=	3
+PORTVERSION=	1.0RC2
 CATEGORIES=	www perl5
 MASTER_SITES=	http://apachegallery.dk/download/ \
 		${MASTER_SITE_PERL_CPAN}
@@ -40,38 +39,20 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Apache::Gallery.3
 
-TEMPLATEFILES=	dircomment.tpl directory.tpl error.tpl file.tpl index.tpl \
-		info.tpl interval.tpl intervalactive.tpl layout.tpl \
-		navpicture.tpl nodircomment.tpl nopictureinfo.tpl \
-		orig.tpl picture.tpl scale.tpl pictureinfo.tpl refresh.tpl \
-		scale.tpl scaleactive.tpl showpicture.tpl \
-		slideshowisoff.tpl slideshowoff.tpl
-ICONS=		application-doc.png application-pdf.png application-rtf.png \
-		sound-mp3.png sound-ogg.png sound-wav.png \
-		video-asf.png video-avi.png \
-		video-mov.png video-mpeg.png video-mpg.png video-wmv.png \
-		video-asf.png agfolder.png
-
-post-patch:
-	@${RM} -f ${WRKSRC}/lib/Apache/Gallery.pm.orig
-
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/Apache-Gallery/templates
-.for f in ${TEMPLATEFILES}
-	${INSTALL_DATA} ${WRKSRC}/templates/default/${f} \
-		${PREFIX}/share/Apache-Gallery/templates/
-.endfor
-.for f in ${ICONS}
-	${INSTALL_DATA} ${WRKSRC}/htdocs/${f} \
-		${PREFIX}/www/icons/
-.endfor
-	${MKDIR} ${PREFIX}/share/Apache-Gallery/css
-	${INSTALL_DATA} ${WRKSRC}/templates/default/gallery.css \
-		${PREFIX}/share/Apache-Gallery/css/
+	${MKDIR} ${PREFIX}/www/icons/gallery/
+	${INSTALL_DATA} ${WRKSRC}/htdocs/* \
+		${PREFIX}/www/icons/gallery
+	${MKDIR} ${DATADIR}/templates/default
+	${MKDIR} ${DATADIR}/templates/new
+	${INSTALL_DATA} ${WRKSRC}/templates/default/* \
+		${DATADIR}/templates/default
+	${INSTALL_DATA} ${WRKSRC}/templates/new/* \
+		${DATADIR}/templates/new
 .endif
 .if !defined(BATCH)
-	@${SED} s!%%PREFIX%%!${PREFIX}!g ${PKGMESSAGE}
+	@${SED} s!%%DATADIR%%!${DATADIR}!g ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.pre.mk>
