@@ -25,10 +25,6 @@ MAN1=	crawl.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600022
-BROKEN=		"Does not compile on FreeBSD >= 6.x"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/include/db2,${LOCALBASE}/include/db3,g' \
 		-e 's,db2,db3,g' ${WRKSRC}/configure.in
