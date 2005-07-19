@@ -1583,3 +1583,4 @@ devel/p5-Config-Ini||2005-07-18|disappeared from CPAN
 devel/parrot||2005-07-18|obsolete and unmaintained
 devel/swarm||2005-07-18|failed to compile
 lang/gcc27|lang/gcc295|2005-07-18|long obsolete
+net/tramp-emacs20|net/tramp-emacs|2005-07-18|expired
