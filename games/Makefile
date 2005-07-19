@@ -151,6 +151,7 @@
     SUBDIR += freeciv-gtk2
     SUBDIR += freedoko
     SUBDIR += freedroid
+    SUBDIR += freedroidrpg
     SUBDIR += freesci
     SUBDIR += freesweep
     SUBDIR += frikqcc
