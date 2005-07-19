@@ -1,0 +1,35 @@
+bin/dupemap
+bin/magicrescue
+bin/magicsort
+%%DATADIR%%/recipes/avi
+%%DATADIR%%/recipes/elf
+%%DATADIR%%/recipes/gimp-xcf
+%%DATADIR%%/recipes/gpl
+%%DATADIR%%/recipes/gzip
+%%DATADIR%%/recipes/jpeg-exif
+%%DATADIR%%/recipes/jpeg-jfif
+%%DATADIR%%/recipes/mp3-id3v1
+%%DATADIR%%/recipes/mp3-id3v2
+%%DATADIR%%/recipes/msoffice
+%%DATADIR%%/recipes/perl
+%%DATADIR%%/recipes/png
+%%DATADIR%%/recipes/zip
+%%DATADIR%%/tools/checkrecipe
+%%DATADIR%%/tools/elfextract.pl
+%%DATADIR%%/tools/gimp-resave.pl
+%%DATADIR%%/tools/gzip_rename.pl
+%%DATADIR%%/tools/inputseek
+%%DATADIR%%/tools/laola.pl
+%%DATADIR%%/tools/mp3extract.pl
+%%DATADIR%%/tools/ole_rename.pl
+%%DATADIR%%/tools/oleextract.pl
+%%DATADIR%%/tools/pngextract.pl
+%%DATADIR%%/tools/safecat
+%%DATADIR%%/tools/script_rename.pl
+%%DATADIR%%/tools/textextract
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+@dirrm %%DATADIR%%/tools
+@dirrm %%DATADIR%%/recipes
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
