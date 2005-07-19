@@ -26,7 +26,9 @@ MAKE_ENV=	CXX="${CXX}"
 
 post-patch:
 # Fix Makefile
-	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}| ; \
+	@${REINPLACE_CMD} -e 's|$$(PREFIX)/share/$$(PROG)|${DATADIR}| ; \
+			s|$$(PREFIX)/share/doc/$$(PROG)|${DOCSDIR}| ; \
+			s|sdl-config|${SDL_CONFIG}| ; \
 			s|\(-Wall\)|${CFLAGS} \1|' \
 				${WRKSRC}/${MAKEFILE}
 
