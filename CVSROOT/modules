@@ -237,7 +237,6 @@ advancecomp	ports/archivers/advancecomp
 adzap		ports/www/adzap
 adzap2squirm	ports/www/adzap2squirm
 aee		ports/editors/aee
-aegis		ports/devel/aegis
 aescrypt	ports/security/aescrypt
 aewan		ports/editors/aewan
 aewm		ports/x11-wm/aewm
@@ -5617,9 +5616,6 @@ linux-sun-jdk14	ports/java/linux-sun-jdk14
 linux-sun-jdk15	ports/java/linux-sun-jdk15
 linux-sunbird	ports/www/linux-sunbird
 linux-tiff	ports/graphics/linux-tiff
-linux-understand_ada	ports/devel/linux-understand_ada
-linux-understand_c	ports/devel/linux-understand_c
-linux-understand_java	ports/devel/linux-understand_java
 linux-ungif	ports/graphics/linux-ungif
 linux-urw-fonts	ports/x11-fonts/linux-urw-fonts
 linux-ut2004-demo	ports/games/linux-ut2004-demo
@@ -7291,7 +7287,6 @@ p5-Compress-Zlib	ports/archivers/p5-Compress-Zlib
 p5-Config-Auto	ports/devel/p5-Config-Auto
 p5-Config-Fast	ports/devel/p5-Config-Fast
 p5-Config-General	ports/devel/p5-Config-General
-p5-Config-Ini	ports/devel/p5-Config-Ini
 p5-Config-IniFiles	ports/devel/p5-Config-IniFiles
 p5-Config-Objective	ports/devel/p5-Config-Objective
 p5-Config-Setting	ports/devel/p5-Config-Setting
@@ -8733,7 +8728,6 @@ pardiff		ports/textproc/pardiff
 pari		ports/math/pari
 pari-devel	ports/math/pari-devel
 parmetis	ports/math/parmetis
-parrot		ports/devel/parrot
 party		ports/irc/party
 pash		ports/shells/pash
 passepartout	ports/graphics/passepartout
@@ -11405,7 +11399,6 @@ sw-aspell	ports/textproc/sw-aspell
 sw-ooodict-KE	ports/editors/ooodict-sw_KE
 swaks		ports/mail/swaks
 swami		ports/audio/swami
-swarm		ports/devel/swarm
 swatch		ports/security/swatch
 sweep		ports/audio/sweep
 swfdec		ports/graphics/swfdec
