@@ -1,4 +1,0 @@
-bin/xtar
-lib/X11/xtar/xtar.doc
-lib/X11/app-defaults/XTar
-@dirrm lib/X11/xtar

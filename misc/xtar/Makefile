@@ -18,5 +18,7 @@ USE_MOTIF=	yes
 USE_IMAKE=	yes
 MAKE_ARGS=	XMLIB="${MOTIFLIB}"
 MAN1=		xtar.1
+PLIST_FILES=	bin/xtar lib/X11/xtar/xtar.doc lib/X11/app-defaults/XTar
+PLIST_DIRS=	lib/X11/xtar
 
 .include <bsd.port.mk>
