@@ -513,6 +513,7 @@
     SUBDIR += ttt
     SUBDIR += tux-aqfh
     SUBDIR += tuxkart
+    SUBDIR += tuxpaint
     SUBDIR += tuxpuck
     SUBDIR += tuxracer
     SUBDIR += tuxracer_golf
