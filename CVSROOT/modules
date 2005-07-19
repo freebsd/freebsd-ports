@@ -3646,6 +3646,7 @@ httpgrabber	ports/www/httpgrabber
 httplog		ports/sysutils/httplog
 httptunnel	ports/www/httptunnel
 httrack		ports/www/httrack
+htx		ports/converters/htx
 hu-aspell	ports/hungarian/aspell
 hu-hu-phone	ports/hungarian/hu-phone
 hu-hu-zipcodes	ports/hungarian/hu-zipcodes
