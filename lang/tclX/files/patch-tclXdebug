@@ -1,0 +1,141 @@
+--- ../tcl/generic/tclXdebug.c	Wed Mar 31 01:37:43 1999
++++ ../tcl/generic/tclXdebug.c	Mon Jul 18 23:18:20 2005
+@@ -48,11 +48,12 @@
+ static void
+ PrintStr _ANSI_ARGS_((Tcl_Channel  channel,
+-                      char        *string,
+-                      int          numChars,
++                      const char  *string,
++                      size_t       strLen,
++                      size_t       numChars,
+                       int          quoted));
+ 
+ static void
+ PrintArg _ANSI_ARGS_((Tcl_Channel  channel,
+-                      char        *argStr,
++                      const char  *argStr,
+                       int          noTruncate));
+ 
+@@ -60,7 +61,7 @@
+ TraceCode  _ANSI_ARGS_((traceInfo_pt infoPtr,
+                         int          level,
+-                        char        *command,
++                        const char  *command,
+                         int          argc,
+-                        char       **argv));
++                        const char  * const *argv));
+ 
+ static int
+@@ -73,7 +74,7 @@
+                            traceInfo_pt  infoPtr,
+                            int           level,
+-                           char         *command,
++                           const char   *command,
+                            int           argc,
+-                           char        **argv));
++                           const char   * const *argv));
+ 
+ static void
+@@ -81,9 +82,9 @@
+                              Tcl_Interp   *interp,
+                              int           level,
+-                             char         *command,
++                             const char   *command,
+                              Tcl_CmdProc  *cmdProc,
+                              ClientData    cmdClientData,
+                              int           argc,
+-                             char        **argv));
++                             const char   * const *argv));
+ 
+ static int
+@@ -132,8 +133,8 @@
+  */
+ static void
+-PrintStr (channel, string, numChars, quoted)
++PrintStr (channel, string, strLen, numChars, quoted)
+     Tcl_Channel  channel;
+-    char        *string;
+-    int          numChars;
++    const char  *string;
++    size_t       strLen, numChars;
+     int          quoted;
+ {
+@@ -149,5 +150,5 @@
+         }
+     }
+-    if (numChars < (int) strlen (string))
++    if (numChars < strLen)
+         Tcl_Write (channel, "...", 3);
+     if (quoted) 
+@@ -166,8 +167,9 @@
+ PrintArg (channel, argStr, noTruncate)
+     Tcl_Channel  channel;
+-    char        *argStr;
++    const char  *argStr;
+     int          noTruncate;
+ {
+-    int idx, argLen, printLen;
++    int idx;
++    size_t argLen, printLen;
+     int quoted;
+ 
+@@ -185,5 +187,5 @@
+         }
+ 
+-    PrintStr (channel, argStr, printLen, quoted);
++    PrintStr (channel, argStr, argLen, printLen, quoted);
+ }
+ 
+@@ -199,9 +201,10 @@
+     traceInfo_pt infoPtr;
+     int          level;
+-    char        *command;
++    const char  *command;
+     int          argc;
+-    char       **argv;
++    const char  * const *argv;
+ {
+-    int idx, cmdLen, printLen;
++    int idx;
++    size_t strLen, printLen;
+     char buf [32];
+ 
+@@ -215,9 +218,13 @@
+ 
+     if (infoPtr->noEval) {
+-        cmdLen = printLen = strlen (command);
+-        if ((!infoPtr->noTruncate) && (printLen > CMD_TRUNCATE_SIZE))
++        strLen = strlen (command);
++	if (command[strLen - 1] == '\n')
++	    --strLen;
++        if ((!infoPtr->noTruncate) && (strLen > CMD_TRUNCATE_SIZE))
+             printLen = CMD_TRUNCATE_SIZE;
++	else
++	    printLen = strLen;
+ 
+-        PrintStr (infoPtr->channel, command, printLen, FALSE);
++        PrintStr(infoPtr->channel, command, strLen, printLen, FALSE);
+       } else {
+           for (idx = 0; idx < argc; idx++) {
+@@ -289,7 +296,7 @@
+     traceInfo_pt  infoPtr;
+     int           level;
+-    char         *command;
++    const char   *command;
+     int           argc;
+-    char        **argv;
++    const char   * const *argv;
+ {
+     Interp       *iPtr = (Interp *) interp;
+@@ -353,9 +360,9 @@
+     Tcl_Interp   *interp;
+     int           level;
+-    char         *command;
++    const char   *command; /* (almost) same as argv[0] */
+     Tcl_CmdProc  *cmdProc;
+     ClientData    cmdClientData;
+     int           argc;
+-    char        **argv;
++    const char   * const *argv;
+ {
+     Interp       *iPtr = (Interp *) interp;

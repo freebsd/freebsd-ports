@@ -1,0 +1,7 @@
+--- ../tk/tests/signal.test	Wed Mar 31 01:37:56 1999
++++ ../tk/tests/signal.test	Mon Jul 18 20:10:40 2005
+@@ -20,2 +20,4 @@
+ 
++package require Tk
++
+ foreach i [winfo children .] {

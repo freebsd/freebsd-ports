@@ -7,7 +7,7 @@
 
 PORTNAME=	tclX
 PORTVERSION=	8.3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang tcl${TCL_DVER} tk${TCL_DVER}
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=tclx
@@ -54,7 +54,7 @@ MANN=	TclX.n
 MLINKS=	CmdWrite.3	TclCommandWriting.3	\
 	Keylist.3	TclX_NewKeyedListObj.3
 .for l in Delete Get GetKeys Set TclX_Main TclX_NewKeyedListObj
-MLINKS+=	Keylist.3	TclX_Keylist$l.3
+MLINKS+=	Keylist.3	TclX_KeyedList$l.3
 .endfor
 .for l in Alloc Free TblInit TblRelease TblUseCount Walk Xlate
 MLINKS+=	Handles.3	TclX_Handle$l.3
@@ -67,11 +67,20 @@ post-patch:
 	# This man-page is now part of Tcl distribution:
 	${RM} ${WRKSRC:H}/doc/Memory.n
 
-.include <bsd.port.pre.mk>
-
 pre-install:
-	# Preventing the help files from being rebuilt over and over:
 	cd ${WRKSRC:H}/doc && ${INSTALL_MAN} ${MAN3} ${PREFIX}/man/man3
 	cd ${WRKSRC:H}/doc && ${INSTALL_MAN} ${MANN} ${PREFIX}/man/mann
 
-.include <bsd.port.post.mk>
+post-install:
+	######
+	# If you have spare time, try running ``make test'' and
+	# debug any tests, that fail. Thank you.
+	######
+
+test:
+	cd ${WRKSRC:H}/tcl/tests && ${SETENV} LANG=C ${WRKSRC}/runtcl all
+.ifndef WITHOUT_X11
+	cd ${WRKSRC:H}/tk/tests && ${WRKSRC}/runtcl signal.test
+.endif
+
+.include <bsd.port.mk>

@@ -1,0 +1,45 @@
+There is no need for TclX_WriteStr to exist any more -- Tcl_Write
+will do the same thing if the passed length is negative.
+
+This patch will still let the function into the library (for
+ABI compatibility), but the new compiles will use Tcl_Write
+directly.
+
+TclX_Eval does not do anything to its `string' argument, nor
+do Tcl_Eval or Tcl_EvalFile, that it calls. Constify `string'.
+
+	-mi
+
+--- ../tcl/generic/tclExtdInt.h	Sat May 19 12:45:23 2001
++++ ../tcl/generic/tclExtdInt.h	Mon Jul 18 21:05:47 2005
+@@ -224,5 +224,3 @@
+ 
+-extern int
+-TclX_WriteStr _ANSI_ARGS_((Tcl_Channel  channel,
+-                           char        *str));
++#define TclX_WriteStr(channel, string)	Tcl_Write((channel), (string), -1)
+ 
+--- ../tcl/generic/tclXutil.c	Sat May 19 12:45:23 2001
++++ ../tcl/generic/tclXutil.c	Mon Jul 18 21:04:07 2005
+@@ -556,5 +556,5 @@
+     Tcl_Interp  *interp;
+     unsigned     options;
+-    char        *string;
++    const char  *string;
+ {
+     Interp      *iPtr = (Interp *) interp;
+@@ -624,4 +624,7 @@
+ }
+ 
++#ifdef TclX_WriteStr
++#	undef TclX_WriteStr
++#endif
+ /*-----------------------------------------------------------------------------
+  * TclX_WriteStr --
+@@ -937,5 +940,5 @@
+     Tcl_DString *joinedPath;
+ {
+-    char *joinArgv [2];
++    const char *joinArgv [2];
+ 
+     joinArgv [0] = path1;
