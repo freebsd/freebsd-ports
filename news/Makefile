@@ -7,6 +7,7 @@
     SUBDIR += atp
     SUBDIR += aub
     SUBDIR += bgrab
+    SUBDIR += brag
     SUBDIR += c-nocem
     SUBDIR += cg
     SUBDIR += cleanfeed
