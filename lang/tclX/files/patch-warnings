@@ -1,5 +1,61 @@
+--- ../tcl/generic/tclExtend.h	Wed Jun 14 03:48:24 2000
++++ ../tcl/generic/tclExtend.h	Mon Jul 18 22:39:18 2005
+@@ -101,5 +101,5 @@
+ TclX_Eval _ANSI_ARGS_((Tcl_Interp  *interp,
+                        unsigned     options,
+-                       char        *cmd));
++                       const char  *cmd));
+ 
+ EXTERN int
+@@ -123,7 +123,7 @@
+ Tclx_SafeInit _ANSI_ARGS_((Tcl_Interp *interp));
+ 
+-EXTERN char*
++EXTERN const char*
+ TclX_InitTclStubs _ANSI_ARGS_((Tcl_Interp *interp,
+-			       char       *version,
++			       const char *version,
+ 			       int         exact));
+ 
+@@ -203,5 +203,5 @@
+ TclX_KeyedListGet _ANSI_ARGS_((Tcl_Interp *interp,
+                                Tcl_Obj    *keylPtr,
+-                               char       *key,
++                               const char *key,
+                                Tcl_Obj   **valuePtrPtr));
+ 
+@@ -209,5 +209,5 @@
+ TclX_KeyedListSet _ANSI_ARGS_((Tcl_Interp *interp,
+                                Tcl_Obj    *keylPtr,
+-                               char       *key,
++                               const char *key,
+                                Tcl_Obj    *valuePtr));
+ 
+@@ -215,10 +215,10 @@
+ TclX_KeyedListDelete _ANSI_ARGS_((Tcl_Interp *interp,
+                                   Tcl_Obj    *keylPtr,
+-                                  char       *key));
++                                  const char *key));
+ 
+ EXTERN int
+ TclX_KeyedListGetKeys _ANSI_ARGS_((Tcl_Interp *interp,
+                                    Tcl_Obj    *keylPtr,
+-                                   char       *key,
++                                   const char *key,
+                                    Tcl_Obj   **listObjPtrPtr));
+ 
 --- ../tcl/generic/tclXbsearch.c	Wed Mar 31 01:37:43 1999
 +++ ../tcl/generic/tclXbsearch.c	Mon Apr  5 13:30:43 2004
+@@ -106,7 +106,8 @@
+ TclProcKeyCompare (searchCBPtr)
+     binSearchCB_t *searchCBPtr;
+ {
+-    char *cmdArgv [3], *command, *oldResult;
++    const char * cmdArgv [3];
++    char *command;
+     int   result;
+ 
+     cmdArgv [0] = searchCBPtr->tclProc;
 @@ -123,15 +120,9 @@
      if (Tcl_GetIntFromObj (searchCBPtr->interp,
                             Tcl_GetObjResult (searchCBPtr->interp),
@@ -25,7 +81,14 @@
 +    off_t high, low;
  
 --- ../tcl/generic/tclXdup.c	Wed Mar 31 01:37:43 1999
-+++ ../tcl/generic/tclXdup.c	Fri Jan 10 16:27:00 2003
++++ ../tcl/generic/tclXdup.c	Mon Jul 18 21:24:59 2005
+@@ -58,5 +58,5 @@
+ {
+     Tcl_DString strValues;
+-    char *option, *value, **optArgv = NULL;
++    const char *option, *value, **optArgv = NULL;
+     int optArgc, idx;
+ 
 @@ -202,5 +202,5 @@
  {
      Tcl_Channel newChannel;
@@ -113,61 +176,171 @@
 +        (ubyte_pt) ckalloc ((size_t)initEntries * tblHdrPtr->entrySize);
      LinkInNewEntries (tblHdrPtr, 0, initEntries);
 --- ../tcl/generic/tclXkeylist.c	Wed Mar 31 01:37:45 1999
-+++ ../tcl/generic/tclXkeylist.c	Fri Jan 10 17:50:40 2003
-@@ -376,3 +376,4 @@
++++ ../tcl/generic/tclXkeylist.c	Mon Jul 18 22:39:43 2005
+@@ -106,5 +106,5 @@
+ static int
+ FindKeyedListEntry _ANSI_ARGS_((keylIntObj_t *keylIntPtr,
+-                                char         *key,
++                                const char   *key,
+                                 int          *keyLenPtr,
+                                 char        **nextSubKeyPtr));
+@@ -370,10 +370,11 @@
+ FindKeyedListEntry (keylIntPtr, key, keyLenPtr, nextSubKeyPtr)
+     keylIntObj_t *keylIntPtr;
+-    char         *key;
++    const char   *key;
+     int          *keyLenPtr;
+     char        **nextSubKeyPtr;
+ {
      char *keySeparPtr;
 -    int keyLen, findIdx;
 +    int   findIdx;
 +    size_t keyLen;
  
-@@ -605,4 +606,3 @@
+     keySeparPtr = strchr (key, '.');
+@@ -604,6 +605,5 @@
+     for (idx = 0; idx < keylIntPtr->numEntries; idx++) {
          entryObjv [0] = 
 -            Tcl_NewStringObj (keylIntPtr->entries [idx].key,
 -                              strlen (keylIntPtr->entries [idx].key));
 +            Tcl_NewStringObj (keylIntPtr->entries [idx].key, -1);
          entryObjv [1] = keylIntPtr->entries [idx].valuePtr;
-@@ -613,3 +613,3 @@
+         listObjv [idx] = Tcl_NewListObj (2, entryObjv);
+@@ -612,5 +612,5 @@
+     tmpListObj = Tcl_NewListObj (keylIntPtr->numEntries, listObjv);
      listStr = Tcl_GetStringFromObj (tmpListObj, &strLen);
 -    keylPtr->bytes = ckbinstrdup (listStr, strLen);
 +    keylPtr->bytes = ckbinstrdup (listStr, (size_t)strLen);
      keylPtr->length = strLen;
-@@ -745,4 +745,4 @@
+ 
+@@ -660,5 +660,5 @@
+     Tcl_Interp *interp;
+     Tcl_Obj    *keylPtr;
+-    char       *key;
++    const char *key;
+     Tcl_Obj   **valuePtrPtr;
+ {
+@@ -715,5 +715,5 @@
+     Tcl_Interp *interp;
+     Tcl_Obj    *keylPtr;
+-    char       *key;
++    const char *key;
+     Tcl_Obj    *valuePtr;
+ {
+@@ -744,6 +744,6 @@
+         }
          keylIntPtr->entries [findIdx].key =
 -            (char *) ckalloc (keyLen + 1);
 -        strncpy (keylIntPtr->entries [findIdx].key, key, keyLen);
 +            (char *) ckalloc ((size_t)(keyLen + 1));
 +        strncpy (keylIntPtr->entries [findIdx].key, key, (size_t)keyLen);
          keylIntPtr->entries [findIdx].key [keyLen] = '\0';
-@@ -784,4 +784,4 @@
+         keylIntPtr->entries [findIdx].valuePtr = valuePtr;
+@@ -783,6 +783,6 @@
+         findIdx = keylIntPtr->numEntries++;
          keylIntPtr->entries [findIdx].key =
 -            (char *) ckalloc (keyLen + 1);
 -        strncpy (keylIntPtr->entries [findIdx].key, key, keyLen);
 +            (char *) ckalloc ((size_t)(keyLen + 1));
 +        strncpy (keylIntPtr->entries [findIdx].key, key, (size_t)keyLen);
          keylIntPtr->entries [findIdx].key [keyLen] = '\0';
+         keylIntPtr->entries [findIdx].valuePtr = newKeylPtr;
+@@ -814,5 +814,5 @@
+     Tcl_Interp *interp;
+     Tcl_Obj    *keylPtr;
+-    char       *key;
++    const char *key;
+ {
+     keylIntObj_t *keylIntPtr, *subKeylIntPtr;
+@@ -888,5 +888,5 @@
+     Tcl_Interp *interp;
+     Tcl_Obj    *keylPtr;
+-    char       *key;
++    const char *key;
+     Tcl_Obj   **listObjPtrPtr;
+ {
 --- ../tcl/generic/tclXlib.c	Wed Oct 24 18:57:02 2001
-+++ ../tcl/generic/tclXlib.c	Fri Jan 10 18:01:02 2003
-@@ -89,3 +89,3 @@
++++ ../tcl/generic/tclXlib.c	Mon Jul 18 22:12:59 2005
+@@ -68,3 +68,3 @@
+ EvalFilePart _ANSI_ARGS_((Tcl_Interp  *interp,
+-                          char        *fileName,
++                          const char  *fileName,
+                           off_t        offset,
+@@ -87,5 +87,5 @@
+                                   char       *packageName,
+-                                  char      **fileNamePtr,
++                                  Tcl_Obj   **fileNamePtr,
                                    off_t      *offsetPtr,
 -                                  unsigned   *lengthPtr));
 +                                  long       *lengthPtr));
  
-@@ -386,3 +387,3 @@
-     off_t       *offsetPtr;
+@@ -159,3 +159,3 @@
+     Tcl_Interp  *interp;
+-    char        *fileName;
++    const char  *fileName;
+     off_t        offset;
+@@ -167,3 +167,4 @@
+     Tcl_DString pathBuf, cmdBuf;
+-    char *oldScriptFile, *buf;
++    Tcl_Obj *oldScriptFile;
++    char *buf;
+     Tcl_Channel channel = NULL;
+@@ -210,3 +211,3 @@
+     oldScriptFile = iPtr->scriptFile;
+-    iPtr->scriptFile = fileName;
++    iPtr->scriptFile = Tcl_NewStringObj(fileName, -1);
+     result = Tcl_GlobalEval (interp, cmdBuf.string);
+@@ -384,5 +385,5 @@
+     char       *packageName;
+-    char      **fileNamePtr;
+-    off_t       *offsetPtr;
 -    unsigned   *lengthPtr;
++    Tcl_Obj   **fileNamePtr;
++    off_t      *offsetPtr;
 +    long       *lengthPtr;
  {
-@@ -414,3 +415,4 @@
+@@ -414,7 +415,7 @@
          goto invalidEntry;
 -    if (TclX_GetUnsignedFromObj (interp, pkgDataObjv [2], lengthPtr) != TCL_OK)
 +    if (Tcl_GetLongFromObj (interp, pkgDataObjv [2], lengthPtr) != TCL_OK
 +	|| *lengthPtr < 0)
          goto invalidEntry;
-@@ -886,3 +888,3 @@
+ 
+-    *fileNamePtr = Tcl_GetStringFromObj (pkgDataObjv [0], NULL);
+-    *fileNamePtr = ckstrdup (*fileNamePtr);
++    *fileNamePtr = pkgDataObjv[0];
+ 
+@@ -455,3 +456,3 @@
+     Tcl_DString  command;
+-    char        *result;
++    const char  *result;
+ 
+@@ -540,3 +541,3 @@
+         if ((Tcl_SplitList (interp, lineBuffer.string, &lineArgc,
+-                            &lineArgv) != TCL_OK) || (lineArgc < 4))
++                            (const char ***)&lineArgv) != TCL_OK) || (lineArgc < 4))
+             goto formatError;
+@@ -884,5 +885,6 @@
+ {
+-    char     *fileName;
++    Tcl_Obj  *fileNameObj;
++    const char *fileName;
      off_t     offset;
 -    unsigned  length;
 +    long      length;
      int       result;
+@@ -894,7 +896,9 @@
+     if (GetPackageIndexEntry (interp, Tcl_GetStringFromObj (objv [1], NULL),
+-                              &fileName, &offset, &length) != TCL_OK)
++                              &fileNameObj, &offset, &length) != TCL_OK)
+         return TCL_ERROR;
+ 
++    fileName = Tcl_GetStringFromObj(fileNameObj, NULL);
++    Tcl_IncrRefCount(fileNameObj);
+     result = EvalFilePart (interp, fileName, offset, length);
+-    ckfree (fileName);
++    Tcl_DecrRefCount(fileNameObj);
+ 
 --- ../tcl/generic/tclXlist.c	Sat May 19 12:39:44 2001
 +++ ../tcl/generic/tclXlist.c	Fri Jan 10 18:04:21 2003
 @@ -469,3 +469,3 @@
@@ -186,4 +359,185 @@
      } else {
 -        int seed;
 +        unsigned int seed;
+ 
+--- ../tcl/generic/tclXcmdloop.c	Wed Mar 31 01:37:43 1999
++++ ../tcl/generic/tclXcmdloop.c	Mon Jul 18 20:59:50 2005
+@@ -192,5 +192,5 @@
+     char       *prompt2;
+ {
+-    char *promptHook, *resultStr;
++    const char *promptHook, *resultStr;
+     int result, useResult, promptDone = FALSE;
+     Tcl_Channel stdoutChan, stderrChan;
+--- ../tcl/generic/tclXfilecmds.c	Wed Mar 31 01:37:43 1999
++++ ../tcl/generic/tclXfilecmds.c	Mon Jul 18 21:27:01 2005
+@@ -72,5 +72,5 @@
+ {
+     Tcl_Channel  channels [2];
+-    char        *channelNames [2];
++    const char  *channelNames[2];
+ 
+     if (!((objc == 1) || (objc == 3)))
+--- ../tcl/generic/tclXinit.c	Sat Feb  5 12:22:46 2000
++++ ../tcl/generic/tclXinit.c	Mon Jul 18 22:20:14 2005
+@@ -167,6 +167,6 @@
+ #define PROC_ARGC 5
+     Tcl_CmdInfo cmdInfo;
+-    char *procArgv[PROC_ARGC+1];
+-    char *quick;
++    const char *procArgv[PROC_ARGC+1];
++    const char *quick;
+     
+     if (DefineFindInit(interp, &cmdInfo) != TCL_OK) {
+@@ -207,5 +207,5 @@
+ {
+     Tcl_DString buffer;
+-    char *path;
++    const char *path;
+     Tcl_Channel chan;
+ 
+@@ -266,5 +266,5 @@
+     Tcl_Interp  *interp;
+     int exitCode;
+-    char *message, *errorStack, *noDump, *strResult;
++    const char *message, *errorStack, *noDump, *strResult;
+     Tcl_Channel stdoutChan, stderrChan;
+     Tcl_Obj *savedResult;
+@@ -453,11 +453,11 @@
+  *-----------------------------------------------------------------------------
+  */
+-char *
++const char *
+ TclX_InitTclStubs (interp, version, exact)
+     Tcl_Interp *interp;
+-    char *version;
++    const char *version;
+     int exact;
+ {
+-    char *actualVersion;
++    const char *actualVersion;
+ 
+     actualVersion = Tcl_InitStubs(interp, version, exact);
+--- ../tcl/generic/tclXprofile.c	Wed Mar 31 01:37:46 1999
++++ ../tcl/generic/tclXprofile.c	Mon Jul 18 22:32:38 2005
+@@ -124,5 +124,5 @@
+                                 Tcl_Interp   *interp,
+                                 int           argc,
+-                                char        **argv));
++                                const char  **argv));
+ 
+ static int
+@@ -263,5 +263,6 @@
+     int idx, newEntry;
+     profEntry_t *scanPtr;
+-    char **stackArgv, *stackListPtr;
++    const char **stackArgv;
++    char *stackListPtr;
+     Tcl_HashEntry *hashEntryPtr;
+     profDataEntry_t *dataEntryPtr;
+@@ -273,5 +274,5 @@
+      * are skipped.
+      */
+-    stackArgv = (char **) ckalloc (sizeof (char *) * infoPtr->stackSize);
++    stackArgv = (const char **)ckalloc (sizeof (char *) * infoPtr->stackSize);
+     if (infoPtr->evalMode) {
+         for (idx= 0, scanPtr = entryPtr; scanPtr != NULL;
+@@ -525,5 +526,5 @@
+     Tcl_Interp   *interp;
+     int           argc;
+-    char        **argv;
++    const char  **argv;
+ {
+     profInfo_t *infoPtr = (profInfo_t *) clientData;
+@@ -796,5 +797,6 @@
+     Tcl_HashSearch searchCookie;
+     profDataEntry_t *dataEntryPtr;
+-    char *dataArgv [3], *dataListPtr;
++    const char *dataArgv[3];
++    char *dataListPtr;
+     char countBuf [32], realTimeBuf [32], cpuTimeBuf [32];
+ 
+--- ../tcl/generic/tclXsignal.c	Wed Mar 31 01:37:46 1999
++++ ../tcl/generic/tclXsignal.c	Mon Jul 18 22:38:35 2005
+@@ -53,5 +53,5 @@
+  * Pointer is used as a quick check of a valid signal number.
+  */
+-static char *unknownSignalIdMsg;
++static const char *unknownSignalIdMsg;
+ 
+ /*
+@@ -237,5 +237,5 @@
+  * Prototypes of internal functions.
+  */
+-static char *
++static const char *
+ GetSignalName _ANSI_ARGS_((int signalNum));
+ 
+@@ -346,5 +346,5 @@
+  *-----------------------------------------------------------------------------
+  */
+-static char *
++static const char *
+ GetSignalName (signalNum)
+     int signalNum;
+@@ -806,5 +806,5 @@
+      */
+     if (signalTrapCmds [signalNum] == NULL) {
+-        char *signalName = GetSignalName (signalNum);
++        const char *signalName = GetSignalName (signalNum);
+ 
+         signalsReceived [signalNum] = 0;
+--- ../tcl/generic/tclXshell.c	Wed Jun 14 03:48:24 2000
++++ ../tcl/generic/tclXshell.c	Mon Jul 18 22:45:08 2005
+@@ -144,5 +144,5 @@
+         goto tclError;
+ 
+-    tclArgv = Tcl_Merge (argc - optind,  &argv [optind]);
++    tclArgv = Tcl_Merge (argc - optind,  (const char **)&argv [optind]);
+     if (Tcl_SetVar (interp, "argv", tclArgv,
+                     TCL_GLOBAL_ONLY | TCL_LEAVE_ERR_MSG) == NULL)
+@@ -227,5 +227,5 @@
+     Tcl_Interp *interp;
+ {
+-    char *evalStr;
++    const char *evalStr;
+ 
+     /* 
+--- ../tcl/generic/tclXstring.c	Fri Apr 23 06:00:07 1999
++++ ../tcl/generic/tclXstring.c	Mon Jul 18 22:46:30 2005
+@@ -212,5 +212,5 @@
+     int strLen, utfLen, first, subLen;
+     int isRange = (int) clientData;
+-    char *str, *start, *end;
++    const char *str, *start, *end;
+ 
+     if (objc != 4) {
+--- ../doc/Keylist.3	Wed Mar 31 01:37:41 1999
++++ ../doc/Keylist.3	Mon Jul 18 23:35:57 2005
+@@ -32,5 +32,5 @@
+ TclX_KeyedListGet (Tcl_Interp *interp,
+                    Tcl_Obj    *keylPtr,
+-                   char       *key,
++                   const char *key,
+                    Tcl_Obj   **valuePtrPtr);
+ 
+@@ -38,5 +38,5 @@
+ TclX_KeyedListSet (Tcl_Interp *interp,
+                    Tcl_Obj    *keylPtr,
+-                   char       *key,
++                   const char *key,
+                    Tcl_Obj    *valuePtr);
+ 
+@@ -44,10 +44,10 @@
+ TclX_KeyedListDelete (Tcl_Interp *interp,
+                       Tcl_Obj    *keylPtr,
+-                      char       *key);
++                      const char *key);
+ 
+ int
+ TclX_KeyedListGetKeys (Tcl_Interp *interp,
+                        Tcl_Obj    *keylPtr,
+-                       char       *key,
++                       const char *key,
+                        Tcl_Obj   **listObjPtrPtr);
  

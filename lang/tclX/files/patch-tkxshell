@@ -1,7 +1,25 @@
---- ../tk/generic/tkXshell.c	Sun Feb  6 19:54:00 2000
-+++ ../tk/generic/tkXshell.c	Fri Mar 16 14:02:59 2001
-@@ -87,2 +87,4 @@
+--- ../tk/generic/tkXshell.c	Fri Jun 29 16:55:39 2001
++++ ../tk/generic/tkXshell.c	Mon Jul 18 22:50:01 2005
+@@ -85,6 +85,8 @@
+ extern char *		strrchr _ANSI_ARGS_((CONST char *string, int c));
+ #endif
 +#if TK_MAJOR_VERSION == 8 && TK_MINOR_VERSION < 3
- extern void		TkpDisplayWarning _ANSI_ARGS_((char *msg,
- 			    char *title));
+ 
+ #ifndef TKX_SHELL
 +#endif
+ /*
+  * Forward declarations for procedures defined later in this file.
+@@ -142,5 +144,5 @@
+ #endif
+ #ifdef TKX_SHELL
+-    char *msg;
++    const char *msg;
+     Tcl_Channel errChannel;
+     int argi;
+@@ -248,5 +250,5 @@
+      */
+ 
+-    args = Tcl_Merge(argc-1, argv+1);
++    args = Tcl_Merge(argc-1, (const char **)argv+1);
+     Tcl_ExternalToUtfDString(NULL, args, -1, &argString);
+     Tcl_SetVar(interp, "argv", Tcl_DStringValue(&argString), TCL_GLOBAL_ONLY);
