@@ -15,13 +15,18 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	marcus@corp.grupos.com.br
 COMMENT=	Python implementation of SPF
 
-RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/DNS/__init__.py:${PORTSDIR}/dns/py-dns
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/DNS/__init__.py:${PORTSDIR}/dns/py-dns
 
 DIST_SUBDIR=	python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
 DOCSDIR?=	${PREFIX}/share/doc/py-${PORTNAME}
+
+PLIST_FILES=	bin/spf.py \
+		%%PYTHON_SITELIBDIR%%/spf.py \
+		%%PYTHON_SITELIBDIR%%/spf.pyc \
+		%%PYTHON_SITELIBDIR%%/spf.pyo
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
