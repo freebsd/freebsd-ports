@@ -1,0 +1,600 @@
+bin/tuxpaint
+bin/tuxpaint-import
+etc/tuxpaint/tuxpaint.conf
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/TODO.txt
+%%PORTDOCS%%%%DOCSDIR%%/af/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/af/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/af/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/af/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/af/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/af/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/af/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/be/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/be/COPYING.html
+%%PORTDOCS%%%%DOCSDIR%%/be/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/be/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/be/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/be/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/be/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/bg/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/bg/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/bg/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/bg/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/bg/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/bg/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/bg/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/bg/gplbg.html
+%%PORTDOCS%%%%DOCSDIR%%/br/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/br/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/br/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/br/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/br/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/br/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/br/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/ca/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/ca/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/ca/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/ca/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/ca/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/ca/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/ca/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/cs/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/cs/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/cs/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/cs/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/cs/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/cs/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/cs/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/cy/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/cy/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/cy/GPL.html
+%%PORTDOCS%%%%DOCSDIR%%/cy/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/cy/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/cy/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/cy/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/da/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/da/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/da/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/da/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/da/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/da/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/da/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/de/ANBRINGEN.txt
+%%PORTDOCS%%%%DOCSDIR%%/de/AUTOREN.txt
+%%PORTDOCS%%%%DOCSDIR%%/de/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/de/GELESEN_MIR.txt
+%%PORTDOCS%%%%DOCSDIR%%/de/KOPIE.txt
+%%PORTDOCS%%%%DOCSDIR%%/de/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/de/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/el/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/el/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/el/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/el/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/el/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/el/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/el/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/es/AUTORES.txt
+%%PORTDOCS%%%%DOCSDIR%%/es/CONTRIBUYENTES.txt
+%%PORTDOCS%%%%DOCSDIR%%/es/COPIADO.txt
+%%PORTDOCS%%%%DOCSDIR%%/es/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/es/INSTALACION.txt
+%%PORTDOCS%%%%DOCSDIR%%/es/LEEME.txt
+%%PORTDOCS%%%%DOCSDIR%%/es/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/es/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/es/html/LEEME.html
+%%PORTDOCS%%%%DOCSDIR%%/eu/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/eu/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/eu/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/eu/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/eu/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/eu/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/fi/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/fi/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/fi/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/fi/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/fi/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/fi/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/fi/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/fr/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/fr/COPIER.txt
+%%PORTDOCS%%%%DOCSDIR%%/fr/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/fr/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/fr/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/fr/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/fr/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/he/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/he/COPYING.html
+%%PORTDOCS%%%%DOCSDIR%%/he/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/he/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/he/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/he/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/he/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/hi/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/hi/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/hi/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/hi/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/hi/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/hi/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/hi/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/hr/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/hr/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/hr/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/hr/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/hr/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/hr/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/hr/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/OPTIONS.html
+%%PORTDOCS%%%%DOCSDIR%%/html/README.html
+%%PORTDOCS%%%%DOCSDIR%%/html/images/brush_edit.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/canvas.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/colors.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/ex_colorable.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/ex_lines.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/ex_paint.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/ex_shapes.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/ex_stamps.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/ex_text.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/ex_tintable.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/fontsizes.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/icon-win32.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/open_back.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/open_dialog.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/open_erase.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/open_open.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/saveover.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/selector.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/stamp_edit.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tips.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tool_eraser.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tool_lines.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tool_magic.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tool_new.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tool_open.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tool_paint.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tool_print.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tool_quit.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tool_redo.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tool_save.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tool_shapes.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tool_stamp.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tool_text.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tool_undo.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tools.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tuxpaint-title.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/tuxpaint-title.png
+%%PORTDOCS%%%%DOCSDIR%%/hu/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/hu/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/hu/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/hu/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/hu/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/hu/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/id/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/id/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/id/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/id/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/id/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/id/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/id/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/is/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/is/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/is/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/is/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/is/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/is/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/it/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/it/COPIATURA.txt
+%%PORTDOCS%%%%DOCSDIR%%/it/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/it/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/it/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/it/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/it/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/it/html/README.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/ja/COPYING.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/ja/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/ja/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/ja/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/ja/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/ko/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/ko/COPYING.html
+%%PORTDOCS%%%%DOCSDIR%%/ko/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/ko/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/ko/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/ko/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/ko/README-utf8.txt
+%%PORTDOCS%%%%DOCSDIR%%/ko/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/lt/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/lt/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/lt/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/lt/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/lt/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/lt/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/lt/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/ms/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/nb/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/nb/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/nb/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/nb/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/nb/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/nb/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/nl/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/nl/COPYING_nl.txt
+%%PORTDOCS%%%%DOCSDIR%%/nl/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/nl/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/nl/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/nl/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/nl/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/nl/html/README.html
+%%PORTDOCS%%%%DOCSDIR%%/nn/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/nn/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/nn/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/nn/INSTALLERING.txt
+%%PORTDOCS%%%%DOCSDIR%%/nn/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/nn/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/pl/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/pl/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/pl/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/pl/LICENCJA-GNU.txt
+%%PORTDOCS%%%%DOCSDIR%%/pl/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/pl/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/pl/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/pt/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/pt_br/AUTORES.txt
+%%PORTDOCS%%%%DOCSDIR%%/pt_br/COPYING_pt_BR.txt
+%%PORTDOCS%%%%DOCSDIR%%/pt_br/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/pt_br/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/pt_br/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/pt_br/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/pt_br/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/ro/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/ro/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/ro/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/ro/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/ro/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/ro/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/ro/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/ru/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/sk/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/sr/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/sr/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/sr/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/sr/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/sr/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/sr/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/sr/ojl.html
+%%PORTDOCS%%%%DOCSDIR%%/sv/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/sv/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/sv/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/sv/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/sv/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/sv/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/sv/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/ta/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/tr/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/tr/COPYING_tr.txt
+%%PORTDOCS%%%%DOCSDIR%%/tr/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/tr/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/tr/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/tr/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/tr/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/wa/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/zh_cn/COPYING.html
+%%PORTDOCS%%%%DOCSDIR%%/zh_tw/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/zh_tw/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/zh_tw/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/zh_tw/GNU_GPL_Chinese.html
+%%PORTDOCS%%%%DOCSDIR%%/zh_tw/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/zh_tw/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/zh_tw/PNG.txt
+%%PORTDOCS%%%%DOCSDIR%%/zh_tw/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/zh_tw/html/README.html
+share/locale/af/LC_MESSAGES/tuxpaint.mo
+share/locale/be/LC_MESSAGES/tuxpaint.mo
+share/locale/bg/LC_MESSAGES/tuxpaint.mo
+share/locale/br/LC_MESSAGES/tuxpaint.mo
+share/locale/ca/LC_MESSAGES/tuxpaint.mo
+share/locale/cs/LC_MESSAGES/tuxpaint.mo
+share/locale/cy/LC_MESSAGES/tuxpaint.mo
+share/locale/da/LC_MESSAGES/tuxpaint.mo
+share/locale/de/LC_MESSAGES/tuxpaint.mo
+share/locale/el/LC_MESSAGES/tuxpaint.mo
+share/locale/en_GB/LC_MESSAGES/tuxpaint.mo
+share/locale/es/LC_MESSAGES/tuxpaint.mo
+share/locale/eu/LC_MESSAGES/tuxpaint.mo
+share/locale/fi/LC_MESSAGES/tuxpaint.mo
+share/locale/fr/LC_MESSAGES/tuxpaint.mo
+share/locale/he/LC_MESSAGES/tuxpaint.mo
+share/locale/hi/LC_MESSAGES/tuxpaint.mo
+share/locale/hr/LC_MESSAGES/tuxpaint.mo
+share/locale/hu/LC_MESSAGES/tuxpaint.mo
+share/locale/id/LC_MESSAGES/tuxpaint.mo
+share/locale/is/LC_MESSAGES/tuxpaint.mo
+share/locale/it/LC_MESSAGES/tuxpaint.mo
+share/locale/ja/LC_MESSAGES/tuxpaint.mo
+share/locale/ko/LC_MESSAGES/tuxpaint.mo
+share/locale/lt/LC_MESSAGES/tuxpaint.mo
+share/locale/ms/LC_MESSAGES/tuxpaint.mo
+share/locale/nb/LC_MESSAGES/tuxpaint.mo
+share/locale/nl/LC_MESSAGES/tuxpaint.mo
+share/locale/nn/LC_MESSAGES/tuxpaint.mo
+share/locale/pl/LC_MESSAGES/tuxpaint.mo
+share/locale/pt_BR/LC_MESSAGES/tuxpaint.mo
+share/locale/pt_PT/LC_MESSAGES/tuxpaint.mo
+share/locale/ro/LC_MESSAGES/tuxpaint.mo
+share/locale/ru/LC_MESSAGES/tuxpaint.mo
+share/locale/sk/LC_MESSAGES/tuxpaint.mo
+share/locale/sl/LC_MESSAGES/tuxpaint.mo
+share/locale/sr/LC_MESSAGES/tuxpaint.mo
+share/locale/sv/LC_MESSAGES/tuxpaint.mo
+share/locale/ta/LC_MESSAGES/tuxpaint.mo
+share/locale/tlh/LC_MESSAGES/tuxpaint.mo
+share/locale/tr/LC_MESSAGES/tuxpaint.mo
+share/locale/vi/LC_MESSAGES/tuxpaint.mo
+share/locale/wa/LC_MESSAGES/tuxpaint.mo
+share/locale/zh_CN/LC_MESSAGES/tuxpaint.mo
+share/locale/zh_TW/LC_MESSAGES/tuxpaint.mo
+share/pixmaps/tuxpaint.png
+%%DATADIR%%/brushes/round_03.png
+%%DATADIR%%/brushes/round_06.png
+%%DATADIR%%/brushes/round_12.png
+%%DATADIR%%/brushes/round_24.png
+%%DATADIR%%/brushes/round_36.png
+%%DATADIR%%/brushes/round_fuzz.png
+%%DATADIR%%/brushes/round_seethru.png
+%%DATADIR%%/brushes/round_seethru_05.png
+%%DATADIR%%/brushes/round_seethru_10.png
+%%DATADIR%%/brushes/slash_10_lt.png
+%%DATADIR%%/brushes/slash_10_rt.png
+%%DATADIR%%/brushes/slash_16_lt.png
+%%DATADIR%%/brushes/slash_16_rt.png
+%%DATADIR%%/brushes/slash_20_lt.png
+%%DATADIR%%/brushes/slash_20_rt.png
+%%DATADIR%%/brushes/spray.png
+%%DATADIR%%/brushes/square_06.png
+%%DATADIR%%/brushes/square_12.png
+%%DATADIR%%/brushes/square_24.png
+%%DATADIR%%/brushes/square_36.png
+%%DATADIR%%/brushes/square_fuzz.png
+%%DATADIR%%/brushes/square_seethru.png
+%%DATADIR%%/brushes/tiny.png
+%%DATADIR%%/brushes/x.png
+%%DATADIR%%/fonts/FreeMono.ttf
+%%DATADIR%%/fonts/FreeMonoBold.ttf
+%%DATADIR%%/fonts/FreeMonoBoldOblique.ttf
+%%DATADIR%%/fonts/FreeMonoOblique.ttf
+%%DATADIR%%/fonts/FreeSans.ttf
+%%DATADIR%%/fonts/FreeSansBold.ttf
+%%DATADIR%%/fonts/FreeSansBoldOblique.ttf
+%%DATADIR%%/fonts/FreeSansOblique.ttf
+%%DATADIR%%/fonts/FreeSerif.ttf
+%%DATADIR%%/fonts/FreeSerifBold.ttf
+%%DATADIR%%/fonts/FreeSerifBoldItalic.ttf
+%%DATADIR%%/fonts/FreeSerifItalic.ttf
+%%DATADIR%%/fonts/default_font.ttf
+%%DATADIR%%/images/icon-win32.ico
+%%DATADIR%%/images/icon.png
+%%DATADIR%%/images/icon128x128.png
+%%DATADIR%%/images/icon16x16.png
+%%DATADIR%%/images/icon192x192.png
+%%DATADIR%%/images/icon22x22.png
+%%DATADIR%%/images/icon32x32.png
+%%DATADIR%%/images/icon32x32.xpm
+%%DATADIR%%/images/icon48x48.png
+%%DATADIR%%/images/icon64x64.png
+%%DATADIR%%/images/icon96x96.png
+%%DATADIR%%/images/magic/blocks.png
+%%DATADIR%%/images/magic/blur.png
+%%DATADIR%%/images/magic/chalk.png
+%%DATADIR%%/images/magic/drip.png
+%%DATADIR%%/images/magic/fade.png
+%%DATADIR%%/images/magic/fill.png
+%%DATADIR%%/images/magic/flip.png
+%%DATADIR%%/images/magic/mirror.png
+%%DATADIR%%/images/magic/negative.png
+%%DATADIR%%/images/magic/rainbow.png
+%%DATADIR%%/images/magic/sparkles.png
+%%DATADIR%%/images/magic/thick.png
+%%DATADIR%%/images/magic/thin.png
+%%DATADIR%%/images/shapes/circle.png
+%%DATADIR%%/images/shapes/circle_f.png
+%%DATADIR%%/images/shapes/diamond.png
+%%DATADIR%%/images/shapes/diamond_f.png
+%%DATADIR%%/images/shapes/oval.png
+%%DATADIR%%/images/shapes/oval_f.png
+%%DATADIR%%/images/shapes/pentagon.png
+%%DATADIR%%/images/shapes/pentagon_f.png
+%%DATADIR%%/images/shapes/rectangle.png
+%%DATADIR%%/images/shapes/rectangle_f.png
+%%DATADIR%%/images/shapes/square.png
+%%DATADIR%%/images/shapes/square_f.png
+%%DATADIR%%/images/shapes/triangle.png
+%%DATADIR%%/images/shapes/triangle_f.png
+%%DATADIR%%/images/title.png
+%%DATADIR%%/images/tools/brush.png
+%%DATADIR%%/images/tools/eraser.png
+%%DATADIR%%/images/tools/lines.png
+%%DATADIR%%/images/tools/magic.png
+%%DATADIR%%/images/tools/new.png
+%%DATADIR%%/images/tools/open.png
+%%DATADIR%%/images/tools/print.png
+%%DATADIR%%/images/tools/quit.png
+%%DATADIR%%/images/tools/redo.png
+%%DATADIR%%/images/tools/save.png
+%%DATADIR%%/images/tools/shapes.png
+%%DATADIR%%/images/tools/stamp.png
+%%DATADIR%%/images/tools/text.png
+%%DATADIR%%/images/tools/undo.png
+%%DATADIR%%/images/tux/bored.png
+%%DATADIR%%/images/tux/default.png
+%%DATADIR%%/images/tux/great.png
+%%DATADIR%%/images/tux/kiss.png
+%%DATADIR%%/images/tux/oops.png
+%%DATADIR%%/images/tux/wait.png
+%%DATADIR%%/images/tuxpaint-icon.svg
+%%DATADIR%%/images/tuxpaint-installer-icon-32x32.png
+%%DATADIR%%/images/tuxpaint-installer.ico
+%%DATADIR%%/images/ui/back.png
+%%DATADIR%%/images/ui/btn_down.png
+%%DATADIR%%/images/ui/btn_off.png
+%%DATADIR%%/images/ui/btn_up.png
+%%DATADIR%%/images/ui/color_btn_down.png
+%%DATADIR%%/images/ui/color_btn_up.png
+%%DATADIR%%/images/ui/cursor_down.png
+%%DATADIR%%/images/ui/cursor_down_large.png
+%%DATADIR%%/images/ui/cursor_starter_down.png
+%%DATADIR%%/images/ui/cursor_starter_up.png
+%%DATADIR%%/images/ui/cursor_up.png
+%%DATADIR%%/images/ui/cursor_up_large.png
+%%DATADIR%%/images/ui/erase.png
+%%DATADIR%%/images/ui/grow.png
+%%DATADIR%%/images/ui/no.png
+%%DATADIR%%/images/ui/no_title.png
+%%DATADIR%%/images/ui/no_title_large.png
+%%DATADIR%%/images/ui/open.png
+%%DATADIR%%/images/ui/paintcan.png
+%%DATADIR%%/images/ui/progress.png
+%%DATADIR%%/images/ui/scroll_down.png
+%%DATADIR%%/images/ui/scroll_down_off.png
+%%DATADIR%%/images/ui/scroll_up.png
+%%DATADIR%%/images/ui/scroll_up_off.png
+%%DATADIR%%/images/ui/shrink.png
+%%DATADIR%%/images/ui/sparkles-old.png
+%%DATADIR%%/images/ui/sparkles.png
+%%DATADIR%%/images/ui/title.png
+%%DATADIR%%/images/ui/title_large.png
+%%DATADIR%%/images/ui/yes.png
+%%DATADIR%%/sounds/bleep.wav
+%%DATADIR%%/sounds/blocks.wav
+%%DATADIR%%/sounds/blur.wav
+%%DATADIR%%/sounds/bubble.wav
+%%DATADIR%%/sounds/chalk.wav
+%%DATADIR%%/sounds/click.wav
+%%DATADIR%%/sounds/drip.wav
+%%DATADIR%%/sounds/eraser1.wav
+%%DATADIR%%/sounds/eraser2.wav
+%%DATADIR%%/sounds/fade.wav
+%%DATADIR%%/sounds/flip.wav
+%%DATADIR%%/sounds/giggle.wav
+%%DATADIR%%/sounds/grow.wav
+%%DATADIR%%/sounds/harp.wav
+%%DATADIR%%/sounds/keyclick.wav
+%%DATADIR%%/sounds/line_end.wav
+%%DATADIR%%/sounds/line_start.wav
+%%DATADIR%%/sounds/mirror.wav
+%%DATADIR%%/sounds/negative.wav
+%%DATADIR%%/sounds/paint1.wav
+%%DATADIR%%/sounds/paint2.wav
+%%DATADIR%%/sounds/paint3.wav
+%%DATADIR%%/sounds/paint4.wav
+%%DATADIR%%/sounds/prompt.wav
+%%DATADIR%%/sounds/rainbow.wav
+%%DATADIR%%/sounds/return.wav
+%%DATADIR%%/sounds/save.wav
+%%DATADIR%%/sounds/scroll.wav
+%%DATADIR%%/sounds/shrink.wav
+%%DATADIR%%/sounds/sparkles1.wav
+%%DATADIR%%/sounds/sparkles2.wav
+%%DATADIR%%/sounds/stamp.wav
+%%DATADIR%%/sounds/thick.wav
+%%DATADIR%%/sounds/thin.wav
+%%DATADIR%%/stamps/cartoon/tux/tux-drat.dat
+%%DATADIR%%/stamps/cartoon/tux/tux-drat.png
+%%DATADIR%%/stamps/cartoon/tux/tux-kiss1.dat
+%%DATADIR%%/stamps/cartoon/tux/tux-kiss1.png
+%%DATADIR%%/stamps/cartoon/tux/tux-kiss2.dat
+%%DATADIR%%/stamps/cartoon/tux/tux-kiss2.png
+%%DATADIR%%/stamps/cartoon/tux/tux-yay2.dat
+%%DATADIR%%/stamps/cartoon/tux/tux-yay2.png
+%%DATADIR%%/stamps/cartoon/tux/tux-yes1.dat
+%%DATADIR%%/stamps/cartoon/tux/tux-yes1.png
+%%DATADIR%%/stamps/cartoon/tux/tux-yes2.dat
+%%DATADIR%%/stamps/cartoon/tux/tux-yes2.png
+%%DATADIR%%/starters/chicken.png
+%%DATADIR%%/starters/jetplane.png
+%%DATADIR%%/starters/reef-back.png
+%%DATADIR%%/starters/reef.png
+%%DATADIR%%/starters/reef.txt
+%%DATADIR%%/starters/skyline-sf-dusk-back.jpeg
+%%DATADIR%%/starters/skyline-sf-dusk.png
+%%DATADIR%%/starters/skyline-sf-dusk.txt
+@dirrm %%DATADIR%%/starters
+@dirrm %%DATADIR%%/stamps/cartoon/tux
+@dirrm %%DATADIR%%/stamps/cartoon
+@dirrm %%DATADIR%%/stamps
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/images/ui
+@dirrm %%DATADIR%%/images/tux
+@dirrm %%DATADIR%%/images/tools
+@dirrm %%DATADIR%%/images/shapes
+@dirrm %%DATADIR%%/images/magic
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%/brushes
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/zh_tw/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/zh_tw
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/zh_cn
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/zh
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/zh
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/wa
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/vi
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/vi
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tr
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ta
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/sv
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/sr
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/sk
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ru
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ro
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pt_br
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/nn
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/nl/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/nl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/nb
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ms
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ko
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/it/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/it
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/is
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/id
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/hu
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/hr
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/hi
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/he
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/fi
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/eu
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/es/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/es
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/el
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/de
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/da
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/cz
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cz
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cy
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ca
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/br
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/bg
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/be
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/af
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm etc/tuxpaint
+@unexec rmdir %D/share/locale/tlh/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/tlh 2>/dev/null || true
+@unexec rmdir %D/share/pixmaps 2>/dev/null || true

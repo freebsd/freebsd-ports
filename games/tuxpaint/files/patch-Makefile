@@ -1,0 +1,63 @@
+--- Makefile.orig	Sun Oct  3 19:32:26 2004
++++ Makefile	Thu Jul 14 15:49:29 2005
+@@ -27,7 +27,7 @@
+ # Docs and man page:
+ 
+ DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint/
+-MAN_PREFIX=$(PREFIX)/share/man/
++MAN_PREFIX=$(PREFIX)/man/
+ 
+ 
+ # 'System-wide' Config file:
+@@ -88,7 +88,7 @@
+ 
+ # The entire set of CFLAGS:
+ 
+-CFLAGS=-O2 -Wall -Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
++CFLAGS+= -Wall -Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
+ DEFS=-DDATA_PREFIX=\"$(DATA_PREFIX)\" \
+ 	-D$(NOSOUNDFLAG) -DDOC_PREFIX=\"$(DOC_PREFIX)\" \
+ 	-DLOCALEDIR=\"$(LOCALE_PREFIX)\" -DCONFDIR=\"$(CONFDIR)\"
+@@ -145,8 +145,7 @@
+ install:	install-bin install-data install-man install-doc \
+ 		install-icon install-gettext install-importscript \
+ 		install-default-config install-example-stamps \
+-		install-example-starters \
+-		install-gnome install-kde install-kde-icons
++		install-example-starters
+ 	@echo
+ 	@echo "--------------------------------------------------------------"
+ 	@echo
+@@ -393,10 +392,6 @@
+ 	@install -d $(ICON_PREFIX)
+ 	@cp data/images/icon.png $(ICON_PREFIX)tuxpaint.png
+ 	@chmod 644 $(ICON_PREFIX)tuxpaint.png
+-	@install -d $(X11_ICON_PREFIX)
+-	@cp data/images/icon32x32.xpm $(X11_ICON_PREFIX)tuxpaint.xpm
+-	@chmod 644 $(X11_ICON_PREFIX)tuxpaint.xpm
+-
+ 
+ # Install the program:
+ 
+@@ -680,12 +675,6 @@
+ 	@cp src/manpage/tuxpaint.1 $(MAN_PREFIX)/man1/
+ 	@gzip -f $(MAN_PREFIX)/man1/tuxpaint.1
+ 	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint.1.gz
+-	@# pl/man1 directory...
+-	@install -d $(MAN_PREFIX)/pl/man1/
+-	@# tuxpaint-pl.1
+-	@cp src/manpage/tuxpaint-pl.1 $(MAN_PREFIX)/pl/man1/tuxpaint.1
+-	@gzip -f $(MAN_PREFIX)/pl/man1/tuxpaint.1
+-	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/pl/man1/tuxpaint.1.gz
+ 	@# tuxpaint-import.1
+ 	@cp src/manpage/tuxpaint-import.1 $(MAN_PREFIX)/man1/
+ 	@gzip -f $(MAN_PREFIX)/man1/tuxpaint-import.1
+@@ -701,7 +690,7 @@
+ 	@$(CC) $(CFLAGS) $(SDL_CFLAGS) $(DEFS) \
+ 		-o tuxpaint obj/tuxpaint.o $(HQXX_O) \
+ 		$(ARCH_LIBS) $(SDL_LIBS) \
+-		-lm $(ARCH_LINKS)
++		-lm $(ARCH_LINKS) -lintl
+ 	@$(RSRC_CMD)
+ 	@$(MIMESET_CMD)
+ 
