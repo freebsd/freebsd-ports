@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pngcheck
-PORTVERSION=	1.99.3
+PORTVERSION=	2.0.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://swrinde.nde.swri.edu/pub/png/applications/
