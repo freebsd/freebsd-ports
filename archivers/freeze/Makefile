@@ -17,5 +17,6 @@ COMMENT=	Compression program - often used in QNX
 GNU_CONFIGURE=	yes
 ALL_TARGET=	prog
 MAN1=		freeze.1 melt.1 unfreeze.1 fcat.1 statist.1
+PLIST_FILES=	bin/fcat bin/freeze bin/melt bin/statist bin/unfreeze
 
 .include <bsd.port.mk>
