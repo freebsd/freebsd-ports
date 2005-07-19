@@ -26,9 +26,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_MIKMOD)
+LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
+.endif
+
 post-configure:
 	@${REINPLACE_CMD} -e \
 		's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
 			${WRKSRC}/libtool
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
