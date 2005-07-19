@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	PyGreSQL
-PORTVERSION=	3.5
-PORTREVISION=	1
+PORTVERSION=	3.6.2
 PORTEPOCH=	1
 CATEGORIES=	databases python
 MASTER_SITES=	ftp://ftp.pygresql.org/pub/distrib/
