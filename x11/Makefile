@@ -44,7 +44,6 @@
     SUBDIR += emu
     SUBDIR += erun
     SUBDIR += eterm
-    SUBDIR += eweather
     SUBDIR += fast-user-switch-applet
     SUBDIR += fbdesk
     SUBDIR += fbpanel
