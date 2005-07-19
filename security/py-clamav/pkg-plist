@@ -1,1 +1,3 @@
-lib/%%PYTHON_VERSION%%/site-packages/pyclamav.so
+%%PYTHON_SITELIBDIR%%/pyclamav.so
+share/examples/py-clamav/example.py
+@dirrm %%EXAMPLESDIR%%
