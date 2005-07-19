@@ -65,7 +65,7 @@
 +                ;;
 +        esac
 +        ;;
-+    FreeBSD:5.*)
++    FreeBSD:5.*|FreeBSD:6.*|FreeBSD:7.*)
 +        REXXLIB="librexx.so"
 +	SOLINK="librexx.so"
 +        RANLIB=ranlib
