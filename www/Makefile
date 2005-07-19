@@ -106,6 +106,7 @@
     SUBDIR += epiphany
     SUBDIR += epiphany-extensions
     SUBDIR += erwn
+    SUBDIR += eventum
     SUBDIR += evg
     SUBDIR += evolution-webcal
     SUBDIR += fcgi
