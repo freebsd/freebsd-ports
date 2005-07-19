@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mcrypt
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	security python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	python-mcrypt
@@ -19,12 +19,13 @@ COMMENT=	A comprehensive Python interface to the mcrypt library
 
 LIB_DEPENDS=	mcrypt:${PORTSDIR}/security/libmcrypt
 
-PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/mcrypt.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_REINPLACE=	yes
 PYDISTUTILS_BUILDARGS=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
+
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/mcrypt.so
 
 pre-patch:
 	# put a missed terminating quote
