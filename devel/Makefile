@@ -21,7 +21,6 @@
     SUBDIR += adabooch-doc-html
     SUBDIR += adacurses
     SUBDIR += adasdl
-    SUBDIR += aegis
     SUBDIR += agenda-headers
     SUBDIR += agenda-libs
     SUBDIR += agenda-snow-libs
@@ -527,9 +526,6 @@
     SUBDIR += linux-libglade
     SUBDIR += linux-runrev
     SUBDIR += linux-sdl12
-    SUBDIR += linux-understand_ada
-    SUBDIR += linux-understand_c
-    SUBDIR += linux-understand_java
     SUBDIR += linux_devtools
     SUBDIR += linux_devtools-6
     SUBDIR += linux_devtools-7
@@ -745,7 +741,6 @@
     SUBDIR += p5-Config-Auto
     SUBDIR += p5-Config-Fast
     SUBDIR += p5-Config-General
-    SUBDIR += p5-Config-Ini
     SUBDIR += p5-Config-IniFiles
     SUBDIR += p5-Config-Objective
     SUBDIR += p5-Config-Setting
@@ -1171,7 +1166,6 @@
     SUBDIR += p5-release
     SUBDIR += p5-version
     SUBDIR += p65
-    SUBDIR += parrot
     SUBDIR += patch
     SUBDIR += pccts
     SUBDIR += pcl-cvs-emacs
@@ -1506,7 +1500,6 @@
     SUBDIR += subversion-python
     SUBDIR += sunterlib
     SUBDIR += svk
-    SUBDIR += swarm
     SUBDIR += swig11
     SUBDIR += swig13
     SUBDIR += swig13-doc
