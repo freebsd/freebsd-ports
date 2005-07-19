@@ -1575,3 +1575,10 @@ net/openldap21-client|net/openldap22-client|2004-07-17|removed EOL version of Op
 net/openldap21-sasl-client|net/openldap22-sasl-client|2004-07-17|removed EOL version of OpenLDAP
 net/openldap21-sasl-server|net/openldap22-sasl-server|2004-07-17|removed EOL version of OpenLDAP
 net/openldap21-server|net/openldap22-server|2004-07-17|removed EOL version of OpenLDAP
+devel/aegis||2005-07-18|install problems; upstream authors did not respond
+devel/linux-understand_ada||2005-07-18|unfetchable; new version requires support contract
+devel/linux-understand_c||2005-07-18|unfetchable; new version requires support contract
+devel/linux-understand_java||2005-07-18|unfetchable; new version requires support contract
+devel/p5-Config-Ini||2005-07-18|disappeared from CPAN
+devel/parrot||2005-07-18|obsolete and unmaintained
+devel/swarm||2005-07-18|failed to compile
