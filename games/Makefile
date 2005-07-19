@@ -514,6 +514,7 @@
     SUBDIR += tux-aqfh
     SUBDIR += tuxkart
     SUBDIR += tuxpaint
+    SUBDIR += tuxpaint-fonts
     SUBDIR += tuxpaint-stamps
     SUBDIR += tuxpuck
     SUBDIR += tuxracer
