@@ -1,0 +1,151 @@
+--- mgstat.c.orig	Wed Jul 20 00:56:00 2005
++++ mgstat.c	Wed Jul 20 01:01:07 2005
+@@ -96,7 +96,7 @@
+ 	struct list_head *h;
+ 	struct year_t *t;
+ 	
+-	debug(5, __FUNCTION__ ": looking for %d\n", year);
++	debug(5, "%s: looking for %d\n", __FUNCTION__, year);
+ 	list_for_each(h, &years_l) {
+ 		t = list_entry(h, struct year_t, head);
+ 		if(t->year == year) return t;
+@@ -113,7 +113,7 @@
+ 	list_add(&t->head, &years_l);
+ 	INIT_LIST_HEAD(&t->months);
+ 	
+-	debug(5, __FUNCTION__ ": %d year added.\n", year);
++	debug(5, "%s: %d year added.\n", __FUNCTION__, year);
+ 	
+ 	return t;
+ }
+@@ -130,7 +130,7 @@
+ 	INIT_LIST_HEAD(&t->days);
+ 	months_nr++;
+ 
+-	debug(5, __FUNCTION__ ": searching for %s %d\n", s, year);	
++	debug(5, "%s: searching for %s %d\n", __FUNCTION__, s, year);	
+ 
+ 	if(!(y = find_year(year))) y = new_year(year);
+ 	y->nr_months++;
+@@ -156,9 +156,9 @@
+ 	}
+ 	t = new_entry(day, head);
+ 	cur_day = t;
+-	debug(5, __FUNCTION__ ": %d day created\n", day);
++	debug(5, "%s: %d day created\n", __FUNCTION__, day);
+ FOUND:
+-	debug(5, __FUNCTION__ ": %d day found - %lld\n", day, t->req_c);
++	debug(5, "%s: %d day found - %lld\n", __FUNCTION__, day, t->req_c);
+ 	cur_day = t;
+ 	return t;
+ }
+@@ -186,7 +186,7 @@
+ FOUND:
+ 	cur_month = t;
+ 	cur_day = 0;
+-	debug(5, __FUNCTION__ ": FOUND %s %s %d\n", t->month, month, year);	
++	debug(5, "%s: FOUND %s %s %d\n", __FUNCTION__, t->month, month, year);	
+ 	return find_day(day, &t->days);
+ }
+ 
+@@ -223,7 +223,7 @@
+                 return;
+         }
+         e->req_c++;
+-	debug(2, __FUNCTION__ ": req increased for %d (%lld)\n", 
++	debug(2, "%s: req increased for %d (%lld)\n", __FUNCTION__, 
+ 		e->day, e->req_c);
+         if(!(t = strstr(s, MOD_GZIP_ID))) return;
+ 	id = t;
+@@ -237,7 +237,7 @@
+         for(i = 0; i < sizeof gzip_ok/sizeof(char *); i++)
+                 if(!strncmp(t, gzip_ok[i], strlen(gzip_ok[i]))) goto FOUND;
+         e->ncomp_c++;
+-	debug(2, __FUNCTION__ "non compressed req - %lld\n", e->ncomp_c);	
++	debug(2, "%snon compressed req - %lld\n", __FUNCTION__, e->ncomp_c);	
+ 	while(*--id == ' ') ;
+ 	if(!isdigit((int)*id)) {
+ #ifdef DEBUG
+@@ -622,7 +622,7 @@
+ 	if (!strcasecmp(log_file, "-")) f = stdin;
+ 	else f = fopen(log_file, "r");
+ 		
+-	if(!f) errx(1, __FUNCTION__ ": cannot open log file %s: %s", 
++	if(!f) errx(1, "%s: cannot open log file %s: %s", __FUNCTION__,
+ 		log_file, strerror(errno));
+ 	read_hist(mk_filename(out_dir, MG_HIST, 0));
+ //dump_list(); exit(0);
+--- output.c.orig	Wed Jul 20 01:01:11 2005
++++ output.c	Wed Jul 20 01:02:17 2005
+@@ -205,7 +205,7 @@
+ 		if(!strncasecmp(m_name[i], m, 3)) 
+ 			return i+1;
+ 	}
+-	errx(1, __FUNCTION__ ": Invalid month name %s", m);
++	errx(1, "%s: Invalid month name %s", __FUNCTION__, m);
+ 	return 0;
+ }
+ 
+@@ -263,7 +263,7 @@
+ 		}
+ 		p++;
+ 	}
+-	errx(1, __FUNCTION__": internal error - unknown month %s.", m->month);
++	errx(1, "%s: internal error - unknown month %s.", __FUNCTION__, m->month);
+ 	return 0;
+ }
+ 
+@@ -304,10 +304,10 @@
+ 	else if(!gethostname(buf, sizeof buf)) tmp = buf;
+ 	else tmp = "localhost";	
+ 	tab = calloc(h->nr_months, sizeof m);
+-	if(!tab) errx(1, __FUNCTION__ ": Cannot allocate memory.");
++	if(!tab) errx(1, "%s: Cannot allocate memory.", __FUNCTION__);
+ 	list_for_each_r(x, &h->months) {
+ 		m = list_entry(x, struct month_t, l_year);
+-		if(i > h->nr_months) errx(1, __FUNCTION__ ": Internal error.");
++		if(i > h->nr_months) errx(1, "%s: Internal error.", __FUNCTION__);
+ 		tab[i] = m;
+ 		get_max(&m->days);
+ 		i++;
+@@ -376,9 +376,9 @@
+ #endif 	
+ 	max_r = max = total = max_all_b = 0;
+ 	tab = calloc(m->nr_days, sizeof t);
+-	if(!tab) errx(1, __FUNCTION__ ": Cannot allocate memory.");
++	if(!tab) errx(1, ": Cannot allocate memory.", __FUNCTION__);
+ 	list_for_each_r(x, &m->days) {
+-		if(i == 31) errx(1, __FUNCTION__ ": internal error: too many days.");
++		if(i == 31) errx(1, "%s: internal error: too many days.", __FUNCTION__);
+ 		t = list_entry(x, struct entry_t, l_month);
+ 		tab[i] = t;
+ 		i++;
+--- graph.c.orig	Wed Jul 20 01:02:20 2005
++++ graph.c	Wed Jul 20 01:02:47 2005
+@@ -35,7 +35,7 @@
+ {
+ 	struct gd_image *p;
+ 	p = calloc(1, sizeof *p);
+-	if(!p) errx(1, __FUNCTION__ ": cannot allocate memory.");
++	if(!p) errx(1, "%s: cannot allocate memory.", __FUNCTION__);
+ 	return p;
+ }
+ 
+@@ -127,7 +127,7 @@
+ 	gdImageRectangle(g->im, G_MARG_X-1, G_MARG_Y-2, G_END_X, G_END_Y+1, g->colors[GRAY]);
+ 	snprintf(buf, sizeof buf, "%s/%s", out_dir, s);
+ 	f = fopen(buf, "wb");
+-	if(!f) errx(1, __FUNCTION__ ": cannot open %s: %s", buf, strerror(errno));
++	if(!f) errx(1, "%s: cannot open %s: %s", __FUNCTION__, buf, strerror(errno));
+ #ifdef HAVE_GD_GIF
+ 	gdImageGif(g->im, f);
+ #else
+@@ -137,7 +137,7 @@
+ 	gdImageDestroy(g->im);
+ 	free(g);
+ #ifdef DEBUG	
+-	printf(__FUNCTION__": Writing %s\n", s);	
++	printf("%s: Writing %s\n", __FUNCTION__, s);	
+ #endif
+ }	
+ 
