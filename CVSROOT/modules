@@ -401,6 +401,7 @@ aqmoney		ports/finance/aqmoney
 aqsis		ports/graphics/aqsis
 ar-ae_fonts_mono	ports/arabic/ae_fonts_mono
 ar-ae_fonts_ttf	ports/arabic/ae_fonts_ttf
+ar-arabtex	ports/arabic/arabtex
 ar-kacst_fonts	ports/arabic/kacst_fonts
 ar-kde3-i18n	ports/arabic/kde3-i18n
 ar-khotot	ports/arabic/khotot
