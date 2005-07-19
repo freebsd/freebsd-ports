@@ -10,7 +10,7 @@ PORTVERSION=	2.2.15b
 CATEGORIES=	editors
 MASTER_SITES=	http://mahon.cwx.net/sources/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	az@inec.ru
 COMMENT=	An easy editor with both curses and X11 interfaces
 
 OPTIONS=	XAE "Build X11 version 'xae'" off
@@ -25,6 +25,8 @@ USE_XLIB=	yes
 ALL_TARGET=	both
 PLIST_SUB=	XAE=""
 .endif
+
+PLIST_FILES=	bin/aee bin/rae lib/help.ae %%XAE%%bin/xae %%XAE%%bin/rxae
 
 MAN1=		aee.1
 
