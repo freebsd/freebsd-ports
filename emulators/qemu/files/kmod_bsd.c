@@ -284,6 +284,10 @@ void CDECL kqemu_log(const char *fmt, ...)
 #define KQEMU_MAX_INSTANCES 4
 
 struct kqemu_instance {
+#if __FreeBSD_version > 500000
+    TAILQ_ENTRY(kqemu_instance) kqemu_ent;
+    struct cdev *kqemu_dev;
+#endif
     struct kqemu_state *state;
 };
 
@@ -292,7 +296,9 @@ static int max_locked_pages;
 #if __FreeBSD_version < 500000
 static dev_t kqemu_dev;
 #else
-static struct cdev *kqemu_dev;
+static struct clonedevs *kqemuclones;
+static TAILQ_HEAD(,kqemu_instance) kqemuhead = TAILQ_HEAD_INITIALIZER(kqemuhead);
+static eventhandler_tag clonetag;
 #endif
 
 
@@ -322,8 +328,66 @@ static struct cdevsw kqemu_cdevsw = {
 	.d_close =	kqemu_close,
 	.d_ioctl =	kqemu_ioctl,
 	.d_name =	"kqemu",
+#ifdef D_NEEDGIANT
+	.d_flags =	D_NEEDGIANT,
+#endif
 #endif
 };
+
+#if __FreeBSD_version > 500000
+static void
+kqemu_clone(void *arg, char *name, int namelen, struct cdev **dev)
+{
+    int unit, r;
+    if (*dev != NULL)
+	return;
+
+    if (strcmp(name, "kqemu") == 0)
+	unit = -1;
+    else if (dev_stdclone(name, NULL, "kqemu", &unit) != 1)
+	return;		/* Bad name */
+    if (unit != -1 && unit > KQEMU_MAX_INSTANCES)
+	return;
+
+    r = clone_create(&kqemuclones, &kqemu_cdevsw, &unit, dev, 0);
+    if (r) {
+	    *dev = make_dev(&kqemu_cdevsw, unit2minor(unit),
+		    UID_ROOT, GID_WHEEL, 0660, "kqemu%d", unit);
+	    if (*dev != NULL) {
+		    dev_ref(*dev);
+		    (*dev)->si_flags |= SI_CHEAPCLONE;
+	    }
+    }
+}
+#endif
+
+static void kqemu_destroy(struct kqemu_instance *ks)
+{
+    struct cdev *dev = ks->kqemu_dev;
+
+    if (ks->state) {
+	kqemu_delete(ks->state);
+	ks->state = NULL;
+    }
+
+    free(ks, M_KQEMU);
+    dev->si_drv1 = NULL;
+#if __FreeBSD_version > 500000
+    mtx_lock_spin(&cache_lock);
+    TAILQ_REMOVE(&kqemuhead, ks, kqemu_ent);
+#endif
+    if (!--kqemu_ref_count) {
+	int i;
+	for (i = 1023; i >= 0; i--)
+	    kqemu_vfree(pagecache[i]);
+        memset(pagecache, 0, 1024 * sizeof(void *));
+    }
+#if __FreeBSD_version > 500000
+    mtx_unlock_spin(&cache_lock);
+
+    destroy_dev(dev);
+#endif
+}
 
 int
 #if __FreeBSD_version < 500000
@@ -355,7 +419,9 @@ kqemu_open(dev, flags, fmt, td)
     
     dev->si_drv1 = ks;
 #if __FreeBSD_version > 500000
+    ks->kqemu_dev = dev;
     mtx_lock_spin(&cache_lock);
+    TAILQ_INSERT_TAIL(&kqemuhead, ks, kqemu_ent);
 #endif
     kqemu_ref_count++;
 #if __FreeBSD_version > 500000
@@ -382,25 +448,8 @@ kqemu_close(dev, flags, fmt, td)
 #endif
     struct kqemu_instance *ks = (struct kqemu_instance *) dev->si_drv1;
 
-    if (ks->state) {
-	kqemu_delete(ks->state);
-	ks->state = NULL;
-    }
-    
-    free(ks, M_KQEMU);
-    dev->si_drv1 = NULL;
-#if __FreeBSD_version > 500000
-    mtx_lock_spin(&cache_lock);
-#endif
-    if (!--kqemu_ref_count) {
-	int i;
-	for (i = 1023; i >= 0; i--)
-	    kqemu_vfree(pagecache[i]);
-        memset(pagecache, 0, 1024 * sizeof(void *));
-    }
-#if __FreeBSD_version > 500000
-    mtx_unlock_spin(&cache_lock);
-#endif
+    kqemu_destroy(ks);
+
     kqemu_log("closed by pid=%d\n", p->p_pid);
     return(0);
 }
@@ -513,9 +562,14 @@ init_module(void)
     	kqemu_log("error registering cdevsw, rc=%d\n", rc);
 	return(ENOENT);
     }
-#endif
 	
     kqemu_dev = make_dev(&kqemu_cdevsw, 0, UID_ROOT, GID_WHEEL, 0660, "kqemu");
+#else
+    clone_setup(&kqemuclones);
+    clonetag = EVENTHANDLER_REGISTER(dev_clone, kqemu_clone, 0, 1000);
+    if (!clonetag)
+	return ENOMEM;
+#endif
 
     kqemu_log("KQEMU installed, max_instances=%d max_locked_mem=%dkB.\n",
               KQEMU_MAX_INSTANCES, max_locked_pages * 4);
@@ -529,12 +583,25 @@ cleanup_module(void)
 {
 #if __FreeBSD_version < 500000
     int rc;
+#else
+    struct kqemu_instance *ks;
 #endif
     
-    destroy_dev(kqemu_dev);
 #if __FreeBSD_version < 500000
+    destroy_dev(kqemu_dev);
     if ((rc = cdevsw_remove(&kqemu_cdevsw)))
 	kqemu_log("error unregistering, rc=%d\n", rc);
+#else
+    EVENTHANDLER_DEREGISTER(dev_clone, clonetag);
+    mtx_lock_spin(&cache_lock);
+    while ((ks = TAILQ_FIRST(&kqemuhead)) != NULL) {
+	mtx_unlock_spin(&cache_lock);
+	kqemu_destroy(ks);
+	mtx_lock_spin(&cache_lock);
+    }
+    mtx_unlock_spin(&cache_lock);
+    mtx_destroy(&cache_lock);
+    clone_cleanup(&kqemuclones);
 #endif
 
     kqemu_vfree(pagecache);

@@ -14,7 +14,7 @@ cross-debugging.
 As QEMU requires no host kernel patches to run, it is very safe and easy to use.
 (but kqemu is now also supported for the i386 on i386 case)
 
-See also the preconfigured system images on http://www.freeoszoo.org/
+See also the preconfigured system images on http://oszoo.org/
 Many live cd isos also work.
 
 WWW: http://fabrice.bellard.free.fr/qemu/
