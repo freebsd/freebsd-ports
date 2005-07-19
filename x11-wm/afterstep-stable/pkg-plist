@@ -1,10 +1,13 @@
+bin/ASWallpaper
 bin/Animate
 bin/Arrange
 bin/Banner
+bin/GWCommand
 bin/Ident
 bin/MonitorWharf
 bin/Pager
 bin/Wharf
+bin/WinCommand
 bin/WinList
 bin/WinTabs
 bin/Xpm2Jpg
@@ -13,13 +16,24 @@ bin/afterstep-config
 bin/afterstepdoc
 bin/ascolor
 bin/ascommand.pl
+bin/asgtk-config
 bin/importasmenu
 bin/installastheme.pl
 bin/makeastheme.pl
 bin/postcard.sh
+include/libASGTK/asgtk.h
+include/libASGTK/asgtkai.h
+include/libASGTK/asgtkapp.h
+include/libASGTK/asgtkcolorsel.h
+include/libASGTK/asgtkgradient.h
+include/libASGTK/asgtkimagebrowser.h
+include/libASGTK/asgtkimagedir.h
+include/libASGTK/asgtkimageview.h
+include/libASGTK/asgtkxmleditor.h
 include/libAfterConf/afterconf.h
 include/libAfterStep/afterstep.h
 include/libAfterStep/asapp.h
+include/libAfterStep/ascommand.h
 include/libAfterStep/asdatabase.h
 include/libAfterStep/asfeel.h
 include/libAfterStep/aswindata.h
@@ -43,6 +57,7 @@ include/libAfterStep/screen.h
 include/libAfterStep/session.h
 include/libAfterStep/shape.h
 include/libAfterStep/wmprops.h
+lib/libASGTK.a
 lib/libAfterConf.a
 lib/libAfterStep.a
 %%DATADIR%%/CREDITS
@@ -555,10 +570,12 @@ lib/libAfterStep.a
 %%DATADIR%%/desktop/icons/mini-recycler.xpm
 %%DATADIR%%/desktop/icons/mini/AS
 %%DATADIR%%/desktop/icons/mini/App
+%%DATADIR%%/desktop/icons/mini/Desktop
 %%DATADIR%%/desktop/icons/mini/Exit
 %%DATADIR%%/desktop/icons/mini/Folder
 %%DATADIR%%/desktop/icons/mini/Menu
 %%DATADIR%%/desktop/icons/mini/Recycler
+%%DATADIR%%/desktop/icons/mini/RemoteControl
 %%DATADIR%%/desktop/icons/mini/scale16.sh
 %%DATADIR%%/desktop/icons/monalisa.xpm
 %%DATADIR%%/desktop/icons/monitor-bsd.xpm
@@ -899,6 +916,7 @@ lib/libAfterStep.a
 %%DATADIR%%/doc/html/TbarLayout.html
 %%DATADIR%%/doc/html/Wharf.html
 %%DATADIR%%/doc/html/WharfSounds.html
+%%DATADIR%%/doc/html/WinCommand.html
 %%DATADIR%%/doc/html/WinList.html
 %%DATADIR%%/doc/html/WinTabs.html
 %%DATADIR%%/doc/html/afterstep_faq.html
@@ -1789,6 +1807,8 @@ lib/libAfterStep.a
 %%DATADIR%%/doc/html/data/desktop/icons/mini/AS.png
 %%DATADIR%%/doc/html/data/desktop/icons/mini/App.html
 %%DATADIR%%/doc/html/data/desktop/icons/mini/App.png
+%%DATADIR%%/doc/html/data/desktop/icons/mini/Desktop.html
+%%DATADIR%%/doc/html/data/desktop/icons/mini/Desktop.png
 %%DATADIR%%/doc/html/data/desktop/icons/mini/Exit.html
 %%DATADIR%%/doc/html/data/desktop/icons/mini/Exit.png
 %%DATADIR%%/doc/html/data/desktop/icons/mini/Folder.html
@@ -1797,6 +1817,8 @@ lib/libAfterStep.a
 %%DATADIR%%/doc/html/data/desktop/icons/mini/Menu.png
 %%DATADIR%%/doc/html/data/desktop/icons/mini/Recycler.html
 %%DATADIR%%/doc/html/data/desktop/icons/mini/Recycler.png
+%%DATADIR%%/doc/html/data/desktop/icons/mini/RemoteControl.html
+%%DATADIR%%/doc/html/data/desktop/icons/mini/RemoteControl.png
 %%DATADIR%%/doc/html/data/desktop/icons/mini/background.jpg
 %%DATADIR%%/doc/html/data/desktop/icons/mini/index.html
 %%DATADIR%%/doc/html/data/desktop/icons/mini/scale16.sh.html
@@ -2565,6 +2587,9 @@ lib/libAfterStep.a
 %%DATADIR%%/doc/html/data/start/1_Desktop/d_nop.html
 %%DATADIR%%/doc/html/data/start/1_Desktop/e_updatestart.html
 %%DATADIR%%/doc/html/data/start/1_Desktop/f_updateall.html
+%%DATADIR%%/doc/html/data/start/1_Desktop/g_nop.html
+%%DATADIR%%/doc/html/data/start/1_Desktop/h_aswallpaper.html
+%%DATADIR%%/doc/html/data/start/1_Desktop/i_gwcommand.html
 %%DATADIR%%/doc/html/data/start/1_Desktop/index.html
 %%DATADIR%%/doc/html/data/start/2_Modules/Animate.html
 %%DATADIR%%/doc/html/data/start/2_Modules/Audio.html
@@ -2856,6 +2881,9 @@ lib/libAfterStep.a
 %%DATADIR%%/start/1_Desktop/d_nop
 %%DATADIR%%/start/1_Desktop/e_updatestart
 %%DATADIR%%/start/1_Desktop/f_updateall
+%%DATADIR%%/start/1_Desktop/g_nop
+%%DATADIR%%/start/1_Desktop/h_aswallpaper
+%%DATADIR%%/start/1_Desktop/i_gwcommand
 %%DATADIR%%/start/2_Modules/Animate
 %%DATADIR%%/start/2_Modules/Audio
 %%DATADIR%%/start/2_Modules/Banner
@@ -3059,3 +3087,4 @@ share/xsessions/AfterStep.desktop
 @dirrm %%DATADIR%%
 @dirrm include/libAfterStep
 @dirrm include/libAfterConf
+@dirrm include/libASGTK

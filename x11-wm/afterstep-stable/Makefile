@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	afterstep
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	ftp://ftp.afterstep.org/stable/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -25,9 +25,10 @@ LIB_DEPENDS=	rplay.1:${PORTSDIR}/audio/rplay \
 RUN_DEPENDS=	${X11BASE}/bin/xli:${PORTSDIR}/graphics/xli
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_GNOME=	gtk20
 USE_PERL5=	yes
 USE_XPM=	yes
+USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--enable-i18n \
@@ -47,8 +48,8 @@ MAN1=		ASDatabase.1x ASDatabaseEntry.1x AfterStep.1x Align.1x \
 		FeelWindowBox.1x Functions.1x Gravity.1x Look.1x \
 		MyBackground.1x MyFrame.1x MyStyle.1x Pager.1x \
 		PagerDecorations.1x Placement.1x SupportedHints.1x \
-		TbarLayout.1x Wharf.1x WharfSounds.1x WinList.1x WinTabs.1x \
-		afterstep_faq.1x asimagexml.1x
+		TbarLayout.1x Wharf.1x WharfSounds.1x WinCommand.1x \
+		WinList.1x WinTabs.1x afterstep_faq.1x asimagexml.1x
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
