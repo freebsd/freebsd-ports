@@ -1,0 +1,20 @@
+--- magicsort.orig     Mon Jul 18 11:55:35 2005
++++ magicsort  Mon Jul 18 12:03:01 2005
+@@ -13,7 +13,7 @@
+ while (defined(my $file = readdir DH)) {
+     next unless -f $file;
+ 
+-    open FILE, "-|", "file", $file or die "Executing file: $!\n";
++    open(FILE, 'file '.$file.'|') or die "Executing file: $!\n";
+     my $idstring = <FILE>;
+     close FILE;
+ 
+@@ -25,7 +25,7 @@
+       next;
+     }
+     my $dir = substr($idstring, length($file) + 2);
+-    mkdir $dir;
++    mkdir $dir,0755;
+     rename $file, "$dir/$file" or warn "Cannot move $file: $!\n";
+ }
+ 

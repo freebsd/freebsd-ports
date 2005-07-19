@@ -281,6 +281,7 @@
     SUBDIR += ltrace
     SUBDIR += luma
     SUBDIR += lxsplit
+    SUBDIR += magicrescue
     SUBDIR += maint
     SUBDIR += makefs
     SUBDIR += manck
