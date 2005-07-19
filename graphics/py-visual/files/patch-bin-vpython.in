@@ -1,0 +1,12 @@
+$FreeBSD$
+--- bin/vpython.in	Fri Feb 25 21:39:38 2005
++++ bin/vpython.in.port	Tue Jul 19 10:35:23 2005
+@@ -2,7 +2,7 @@
+ # Variables determined by configure.
+ PYTHON=@PYTHON@
+ visualexampledir=@visualexampledir@
+-IDLE=idle
++IDLE=%%PYTHONBASE%%/bin/idle%%PYTHON_VERSION%%
+ PYTHONPATH=@PYTHONPATH@
+ export PYTHONPATH
+ 
