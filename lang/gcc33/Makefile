@@ -62,7 +62,7 @@ MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+=	--enable-shared
 INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib ${TARGLIB}
+LDCONFIG_DIRS=	${TARGLIB}
 .else
 CONFIGURE_ARGS+=	--disable-shared
 .endif
