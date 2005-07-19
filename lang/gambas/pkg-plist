@@ -330,7 +330,11 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Explorer/refresh.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/.gambas/FABOUT
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/.gambas/FNOTEPAD
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/.icon/16.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/.icon/32.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/.icon/48.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/.project
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/CHANGELOG
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/FAbout.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/FAbout.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/FNotepad.class
@@ -3848,6 +3852,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Networking/ClientSocket
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Networking
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Notepad/.lang
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Notepad/.icon
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Notepad/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Notepad
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Explorer/.lang
