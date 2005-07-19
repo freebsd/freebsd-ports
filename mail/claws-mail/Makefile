@@ -94,12 +94,6 @@ CONFIGURE_ARGS+=	--enable-compface
 .else
 CONFIGURE_ARGS+=	--disable-compface
 .endif
-.if defined(WITH_JCONV) || defined(WITH_ALL)
-CONFIGURE_ARGS+=	--enable-jconv
-LIB_DEPENDS+=		jconv.0:${PORTSDIR}/japanese/libjconv
-.else
-CONFIGURE_ARGS+=	--disable-jconv
-.endif
 .if defined(WITH_ASPELL) || defined(WITH_ALL)
 LIB_DEPENDS+=		pspell.16:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=	--enable-aspell
@@ -150,7 +144,6 @@ pre-everything::
 	@${ECHO} ""
 	@${ECHO} "      WITH_COMPFACE  Enable compface (X-Face) support"
 	@${ECHO} "      WITH_GPGME     Build the pgpmime plugin"
-	@${ECHO} "      WITH_JCONV     Enable enhanced charset conversion"
 	@${ECHO} "      WITH_ASPELL    Enable spell-checking support"
 	@${ECHO} "      WITH_JPILOT    Enable JPilot support"
 	@${ECHO} "      WITH_LDAP      Enable LDAP access support"
