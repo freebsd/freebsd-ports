@@ -1,0 +1,9 @@
+KMOD=	kqemu
+SRCS=	kmod_bsd.c
+OBJS=	kqemu-mod-i386.o
+.if ${OSVERSION} >= 500000
+CC=	cc
+.endif
+WERROR=
+
+.include <bsd.kmod.mk>
