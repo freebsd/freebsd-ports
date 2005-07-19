@@ -7,7 +7,7 @@
 
 PORTNAME=	xcdroast
 PORTVERSION=	0.98.a.15
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.xcdroast.org/download/:src \
@@ -53,6 +53,7 @@ PLIST_SUB=	NLS=""
 .if defined(WITH_GTK2)
 CONFIGURE_ARGS+=--enable-gtk2
 USE_GNOME=	gtk20
+PATCH_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 .else
 CONFIGURE_ARGS+=--disable-gtk2
 USE_GNOME=	gdkpixbuf
@@ -84,5 +85,13 @@ pre-patch:
 post-patch:
 	@${REINPLACE_CMD} -e 's|gint in, out|gsize in, out|g' \
 		${WRKSRC}/src/xtools.c
+.if defined(WITH_GTK2)
+	@cd ${WRKSRC}/po ; for FILE in *.po ; do \
+		SOURCE=`${AWK} -F'[=\\\\\\\\]' '/charset=/ { print $$2 }' $$FILE` ; \
+		${LOCALBASE}/bin/iconv -f $$SOURCE -t UTF-8 $$FILE > $$FILE.bak ; \
+		${MV} $$FILE.bak $$FILE ; \
+		${REINPLACE_CMD} -e 's|charset='$$SOURCE'|charset=UTF-8|g' $$FILE ; \
+	done
+.endif
 
 .include <bsd.port.post.mk>
