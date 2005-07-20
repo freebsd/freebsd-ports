@@ -1,0 +1,17 @@
+Ruby-acl provides Access Control List checks.
+
+	list = %w(
+	  deny all
+	  allow 192.168.1.*
+	  allow 127.0.0.1
+	)
+	acl = ACL.new(list, ACL::DENY_ALLOW)
+	...
+	ns = soc.accept
+	unless acl.allow_socket?(ns)
+	  # forbidden
+	end
+
+
+Author:	Masatoshi SEKI <m_seki@mva.biglobe.ne.jp>
+WWW:	http://www.ruby-lang.org/raa/list.rhtml?name=acl

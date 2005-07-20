@@ -1402,7 +1402,6 @@ net-mgmt/ruby-snmp||2005-02-18|port was broken or obsolete
 net/ruby-jabber4r||2005-02-18|port was broken or obsolete
 palm/syncmal||2005-02-18|port was broken or obsolete
 print/lilypond-devel||2005-02-18|port was broken or obsolete
-security/ruby-acl||2005-02-18|port was broken or obsolete
 shells/bash1||2005-02-18|port was broken or obsolete
 textproc/gutenbook||2005-02-18|port was broken or obsolete
 textproc/sgmltools||2005-02-18|port was broken or obsolete
