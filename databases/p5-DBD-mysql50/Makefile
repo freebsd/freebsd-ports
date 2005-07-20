@@ -9,6 +9,8 @@ PKGNAMESUFFIX=	50
 
 COMMENT=	MySQL 5.0 driver for the Perl5 Database Interface (DBI)
 
+BROKEN=		Does not compile
+
 CONFLICTS=	p5-Mysql-modules-* p5-DBD-mysql-* p5-DBD-mysql4[0-9]-*
 
 WANT_MYSQL_VER=	50
