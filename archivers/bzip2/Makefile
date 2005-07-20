@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	bzip2
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=	bzip2/v102
+MASTER_SITES=	http://www.bzip.org/${PORTVERSION}/
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	A block-sorting file compressor
