@@ -1,23 +1,23 @@
-# New ports collection makefile for:   catdoc
-# Date created:        11 November 1997
-# Whom:                Brion Moss <brion@queeg.com>
+# New ports collection makefile for:	catdoc
+# Date created:				11 November 1997
+# Whom:					Brion Moss <brion@queeg.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	catdoc
-PORTVERSION=	0.93.4
+PORTVERSION=	0.94
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.45.free.net/pub/catdoc/
 #		${MASTER_SITE_TEX_CTAN:S/$/support\/catdoc\//}
 
-MAINTAINER=	brion@queeg.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert MS Word/Excel documents to plain ASCII or TeX.  TK viewer included
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-MAN1=		catdoc.1 wordview.1 xls2csv.1
+MAN1=		catdoc.1 wordview.1 xls2csv.1 catppt.1
 
 .if !defined(LANG) || ${LANG} != ru_RU.KOI8-R
 # Remove the below line to get Cyrillic code page support instead
@@ -32,7 +32,7 @@ post-patch:
 .for i in 0 1 2 3 4
 .if exists(${LOCALBASE}/bin/wish8.${i})
 CONFIGURE_ARGS=	--with-wish=${LOCALBASE}/bin/wish8.${i}
-RUN_DEPENDS=	${LOCALBASE}/bin/wish8.${i}:${PORTSDIR}/x11-toolkits/tk8${i}
+RUN_DEPENDS+=	${LOCALBASE}/bin/wish8.${i}:${PORTSDIR}/x11-toolkits/tk8${i}
 .endif
 .endfor
 
