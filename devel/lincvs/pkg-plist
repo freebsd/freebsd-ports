@@ -38,6 +38,7 @@ share/lincvs/translation/fr.qm
 share/lincvs/translation/it.qm
 share/lincvs/translation/ja.qm
 share/lincvs/translation/ru.qm
+share/lincvs/translation/vi.qm
 @dirrm share/lincvs/translation
 @dirrm share/lincvs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Translations/ru
