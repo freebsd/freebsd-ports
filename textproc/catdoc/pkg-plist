@@ -1,4 +1,5 @@
 bin/catdoc
+bin/catppt
 bin/wordview
 bin/xls2csv
 share/catdoc/8859-1.txt
@@ -42,6 +43,12 @@ share/catdoc/cp869.txt
 share/catdoc/cp874.txt
 share/catdoc/koi8-r.txt
 share/catdoc/koi8-u.txt
+share/catdoc/mac-arabic.txt
+share/catdoc/mac-centeuro.txt
+share/catdoc/mac-cyrillic.txt
+share/catdoc/mac-greek.txt
+share/catdoc/mac-hebrew.txt
+share/catdoc/mac-roman.txt
 share/catdoc/tex.replchars
 share/catdoc/tex.specchars
 share/catdoc/us-ascii.txt
