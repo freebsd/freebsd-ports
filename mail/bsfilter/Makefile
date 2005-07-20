@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	bsfilter
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	mail ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	bsfilter/14691
+MASTER_SITE_SUBDIR=	bsfilter/15651
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	info@otsune.com
@@ -29,7 +29,7 @@ OPTIONS=	CHASEN "Japanese Morphological Analysis Support" Off \
 .if defined(WITH_CHASEN)
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/chasen.so:${PORTSDIR}/japanese/ruby-chasen
 .endif
-.if ${ARCH} == i386 && defined(WITH_MECAB)
+.if ${ARCH} != "sparc64" && defined(WITH_MECAB)
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/MeCab.so:${PORTSDIR}/japanese/ruby-mecab
 .endif
 .if defined(WITH_KAKASI)
