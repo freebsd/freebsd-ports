@@ -7,7 +7,7 @@
 
 PORTNAME=		samba
 PORTVERSION?=		3.0.14a
-PORTREVISION?=		0
+PORTREVISION?=		1
 PORTEPOCH?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
@@ -60,15 +60,9 @@ CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}
 
 .if !defined(SAMBA_SUBPORT)
 
-OPTIONS=	LDAP		"With LDAP support" on
-.if defined(PACKAGE_BUILDING)
-# Kerberos5 setup is very box specific, we don't
-# want artificial dependencies in the packages
-OPTIONS+=	ADS		"With Active Directory support" off
-.else
-OPTIONS+=	ADS		"With Active Directory support" on
-.endif
-OPTIONS+=	CUPS		"With CUPS printing support" on \
+OPTIONS=	LDAP		"With LDAP support" on \
+		ADS		"With Active Directory support" off \
+		CUPS		"With CUPS printing support" on \
 		WINBIND		"With WinBIND support" on \
 		ACL_SUPPORT	"With ACL support" off \
 		SYSLOG		"With Syslog support" off \
@@ -216,6 +210,16 @@ CONFIGURE_ARGS+=	--with-included-popt
 .endif
 
 # Common part
+
+# For 4.8 - 4.11 combination of Kerberos and OpenLDAP is broken
+# due the conflict between system and OpenSSL port libcrypto libraries
+.if ${OSVERSION} > 470103 && ${OSVERSION} < 500000
+.if defined(WITH_ADS)
+IGNORE=			"Broken dependency between OpenSSL, OpenLDAP and Heimdal for FreeBSD 4.x. Disable ADS support"
+.endif
+WITHOUT_ADS=		on
+.endif
+
 .if !defined(PACKAGE_BUILDING) && !defined(WITHOUT_ADS)
 WANT_LDAP=		yes
 WANT_KRB5=		yes
