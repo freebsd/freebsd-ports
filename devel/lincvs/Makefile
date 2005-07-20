@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	lincvs
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	devel kde
 MASTER_SITES=	http://lincvs.com/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-0-generic-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sylvioc@gmail.com
 COMMENT=	Graphical CVS front-end using QT
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_QT_VER=	3
 QTDIR?=		${X11BASE}
-MAKE_ENV+=      QTDIR=${QTDIR} QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+MAKE_ENV+=	QTDIR=${QTDIR} QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 ALL_TARGET=	install
 USE_REINPLACE=	yes
 
