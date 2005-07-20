@@ -1,0 +1,104 @@
+bin/tuxmath
+%%DATADIR%%/images/alpha.png
+%%DATADIR%%/images/backgrounds/0.jpg
+%%DATADIR%%/images/backgrounds/1.jpg
+%%DATADIR%%/images/backgrounds/2.jpg
+%%DATADIR%%/images/backgrounds/3.jpg
+%%DATADIR%%/images/backgrounds/4.jpg
+%%DATADIR%%/images/cities/cdead-blue.png
+%%DATADIR%%/images/cities/cdead-green.png
+%%DATADIR%%/images/cities/cdead-orange.png
+%%DATADIR%%/images/cities/cdead-red.png
+%%DATADIR%%/images/cities/city-blue.png
+%%DATADIR%%/images/cities/city-green.png
+%%DATADIR%%/images/cities/city-orange.png
+%%DATADIR%%/images/cities/city-red.png
+%%DATADIR%%/images/cities/csplode-blue-1.png
+%%DATADIR%%/images/cities/csplode-blue-2.png
+%%DATADIR%%/images/cities/csplode-blue-3.png
+%%DATADIR%%/images/cities/csplode-blue-4.png
+%%DATADIR%%/images/cities/csplode-blue-5.png
+%%DATADIR%%/images/cities/csplode-green-1.png
+%%DATADIR%%/images/cities/csplode-green-2.png
+%%DATADIR%%/images/cities/csplode-green-3.png
+%%DATADIR%%/images/cities/csplode-green-4.png
+%%DATADIR%%/images/cities/csplode-green-5.png
+%%DATADIR%%/images/cities/csplode-orange-1.png
+%%DATADIR%%/images/cities/csplode-orange-2.png
+%%DATADIR%%/images/cities/csplode-orange-3.png
+%%DATADIR%%/images/cities/csplode-orange-4.png
+%%DATADIR%%/images/cities/csplode-orange-5.png
+%%DATADIR%%/images/cities/csplode-red-1.png
+%%DATADIR%%/images/cities/csplode-red-2.png
+%%DATADIR%%/images/cities/csplode-red-3.png
+%%DATADIR%%/images/cities/csplode-red-4.png
+%%DATADIR%%/images/cities/csplode-red-5.png
+%%DATADIR%%/images/cities/shields.png
+%%DATADIR%%/images/comets/comet1.png
+%%DATADIR%%/images/comets/comet2.png
+%%DATADIR%%/images/comets/comet3.png
+%%DATADIR%%/images/comets/cometex1.png
+%%DATADIR%%/images/comets/cometex2.png
+%%DATADIR%%/images/icon.png
+%%DATADIR%%/images/options-devel.jpg
+%%DATADIR%%/images/status/cmd_credits.png
+%%DATADIR%%/images/status/cmd_options.png
+%%DATADIR%%/images/status/cmd_play.png
+%%DATADIR%%/images/status/cmd_quit.png
+%%DATADIR%%/images/status/demo-small.png
+%%DATADIR%%/images/status/demo.png
+%%DATADIR%%/images/status/gameover.png
+%%DATADIR%%/images/status/keypad.png
+%%DATADIR%%/images/status/lednums.png
+%%DATADIR%%/images/status/loading.png
+%%DATADIR%%/images/status/nbs.png
+%%DATADIR%%/images/status/numbers.png
+%%DATADIR%%/images/status/nums.png
+%%DATADIR%%/images/status/paused.png
+%%DATADIR%%/images/status/score.png
+%%DATADIR%%/images/status/standby.png
+%%DATADIR%%/images/status/title.png
+%%DATADIR%%/images/status/tux4kids.png
+%%DATADIR%%/images/status/tux_helmet1.png
+%%DATADIR%%/images/status/tux_helmet2.png
+%%DATADIR%%/images/status/tux_helmet3.png
+%%DATADIR%%/images/status/wave.png
+%%DATADIR%%/images/tux/console.png
+%%DATADIR%%/images/tux/tux-console1.png
+%%DATADIR%%/images/tux/tux-console2.png
+%%DATADIR%%/images/tux/tux-console3.png
+%%DATADIR%%/images/tux/tux-console4.png
+%%DATADIR%%/images/tux/tux-drat.png
+%%DATADIR%%/images/tux/tux-egypt1.png
+%%DATADIR%%/images/tux/tux-egypt2.png
+%%DATADIR%%/images/tux/tux-fist1.png
+%%DATADIR%%/images/tux/tux-fist2.png
+%%DATADIR%%/images/tux/tux-kiss1.png
+%%DATADIR%%/images/tux/tux-kiss2.png
+%%DATADIR%%/images/tux/tux-relax1.png
+%%DATADIR%%/images/tux/tux-relax2.png
+%%DATADIR%%/images/tux/tux-sit.png
+%%DATADIR%%/images/tux/tux-yay1.png
+%%DATADIR%%/images/tux/tux-yay2.png
+%%DATADIR%%/images/tux/tux-yes1.png
+%%DATADIR%%/images/tux/tux-yes2.png
+%%DATADIR%%/images/tux/tux-yipe.png
+%%DATADIR%%/sounds/alarm.wav
+%%DATADIR%%/sounds/buzz.wav
+%%DATADIR%%/sounds/click.wav
+%%DATADIR%%/sounds/explosion.wav
+%%DATADIR%%/sounds/game.mod
+%%DATADIR%%/sounds/game2.mod
+%%DATADIR%%/sounds/game3.mod
+%%DATADIR%%/sounds/laser.wav
+%%DATADIR%%/sounds/pop.wav
+%%DATADIR%%/sounds/shieldsdown.wav
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/images/ufos
+@dirrm %%DATADIR%%/images/tux
+@dirrm %%DATADIR%%/images/status
+@dirrm %%DATADIR%%/images/comets
+@dirrm %%DATADIR%%/images/cities
+@dirrm %%DATADIR%%/images/backgrounds
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%
