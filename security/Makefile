@@ -483,6 +483,7 @@
     SUBDIR += snortsms
     SUBDIR += snortsnarf
     SUBDIR += spike-proxy
+    SUBDIR += squidclam
     SUBDIR += srm
     SUBDIR += srp
     SUBDIR += sscep

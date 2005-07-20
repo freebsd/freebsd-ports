@@ -1,0 +1,7 @@
+Bridge betwean ClamAV antivirus software and Squid caching proxy.
+
+Squidclam is a replacement for SquidClamAV-Redirector.py written 
+in C using libclamav and libcurl
+
+Author:	squidclam@users.sourceforge.net
+WWW:	http://sourceforge.net/projects/squidclam/

@@ -1,0 +1,9 @@
+***********************************************************************
+*
+* To use this software you need to make changes in squid config file.
+* Please refer to %%DOCSDIR%%/README.
+* You may find example of config file for this software here:
+* %%EXAMPLESDIR%%/squidclam.conf
+* Plce your work copy of squidclam.conf into %%PREFIX%%/etc/ directory.
+*
+***********************************************************************

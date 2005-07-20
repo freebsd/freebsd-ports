@@ -1,0 +1,57 @@
+--- configure.orig	Sun Apr 24 23:40:07 2005
++++ configure	Sun Jun 26 01:49:42 2005
+@@ -4,52 +4,16 @@
+ 
+ CLAMLIBS="`clamav-config --libs || exit -1`"
+ CURLLIBS="`curl-config --libs || exit -1`"
+-CFLAGS="$CFLAGS $CURLLIBS $CLAMLIBS -lclamav -lcurl"
++CFLAGS="-I%%LOCALBASE%%/include $CFLAGS $CURLLIBS $CLAMLIBS -lclamav -lcurl"
+ OUTFILE=Makefile
+ BINARY=squidclam
+-TMPFILE=`mktemp`
+ 
+ # only use libs once
+ CFLAGS="`echo $CFLAGS | tr ' ' '\n' | sort -u | tr '\n' ' '`"
+ 
+-# no options allowed
+-if test $# -ne 0
+-then
+-	echo ""
+-	echo "This is just a very small script. No Options available."
+-	echo "If you like to provide me with a better one please do :)"
+-	echo ""
+-	exit -1
+-fi
+-
+-# compiler test
+-if test x"$CC" = "x"
+-then
+-    CC="gcc -Wall"
+-fi
+-
+-# can we generate an executable
+-cat > $TMPFILE.c << EOF
+-int main (void) {
+-	return 0;
+-}
+-EOF
+-
+-$CC -o $TMPFILE.exe $TMPFILE.c
+-
+-if test $? -ne 0
+-then
+-	echo "compiler not able to generate an executable"
+-	exit -1
+-else
+-	rm -f $TMPFILE*
+-fi
+-
+ # write makefile
+ cat > $OUTFILE << EOF
+-ifndef \$(DESTDIR)
+-        DESTDIR="/usr/local/bin"
+-endif
++DESTDIR?=	"%%PREFIX%%/bin"
+ 
+ CFLAGS=$CFLAGS
+ 
