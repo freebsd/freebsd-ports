@@ -340,6 +340,8 @@ jai_imageio-*-lib-linux-* java/jai-imageio	Redistribution is not permitted
 java3d-sdk-*-linux-i386* java/java3d		License does not allow distribution
 javamail-*.zip		java/javamail		See the license
 javax_comm-*-solsparc.*	comms/java-commapi	No commercial use
+jbootstrap-*.tar.gz	java/jbootstrap		Redistribution of pre-compiled
+						binaries is not permitted
 jce-aba-*		java/jce-aba		Crypto; export-controlled
 jdk*_ELF.*.tar.gz	java/jdk11		License does not allow distribution
 						with fee
