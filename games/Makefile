@@ -696,6 +696,7 @@
     SUBDIR += yahtzee
     SUBDIR += yamsweeper
     SUBDIR += zangband
+    SUBDIR += zephulor
     SUBDIR += znibbles
     SUBDIR += zoom
     SUBDIR += ztrack
