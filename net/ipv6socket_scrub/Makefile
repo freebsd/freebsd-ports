@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	ipv6socket_scrub
-PORTVERSION=    1.0
+PORTVERSION=	1.0
 CATEGORIES=	net devel ipv6
-MASTER_SITES=	#http://www.sun.com/solaris/ipv6
+MASTER_SITES=	#http://www.sun.com/download/index.jsp?cat=Operating%20Systems&tab=3
 DISTNAME=	IPv6socket_scrub
 EXTRACT_SUFX=	.tar
 
@@ -25,7 +25,7 @@ NO_PACKAGE=	${RESTRICTED}
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
 	${ECHO} '======================================================='; \
-	${ECHO} 'You need to sign the agreement on http://www.sun.com/solaris/ipv6'; \
+	${ECHO} 'You need to sign the agreement on http://www.sun.com/download/index.jsp?cat=Operating%20Systems&tab=3'; \
 	${ECHO} 'and fetch on your own.'; \
 	${ECHO} 'Once ${DISTFILES} has been downloaded, move it to '; \
 	${ECHO} '${DISTDIR} and then restart this build '; \
