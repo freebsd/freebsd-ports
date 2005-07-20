@@ -26,6 +26,12 @@ CONFIGURE_ARGS+=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}	\
 
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600031
+BROKEN=			"Does not compile on FreeBSD >= 6.0"
+.endif
+
 pre-configure:
 	@${RM} ${WRKSRC}/config.cache
 
@@ -36,4 +42,4 @@ post-install:
 		> ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
