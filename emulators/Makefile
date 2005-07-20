@@ -67,6 +67,7 @@
     SUBDIR += linux_base-src-rh-8
     SUBDIR += linux_base-suse-9.1
     SUBDIR += linux_base-suse-9.2
+    SUBDIR += linux_base-suse-9.3
     SUBDIR += mastergear
     SUBDIR += minivmac
     SUBDIR += mips64emul
