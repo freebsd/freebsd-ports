@@ -7,6 +7,7 @@
 
 PORTNAME=	Config-Objective
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Config
@@ -21,7 +22,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Config::Objective::List.3 Config::Objective::Boolean.3 \
 		Config::Objective::Table.3 Config::Objective.3 \
 		Config::Objective::Hash.3 Config::Objective::Integer.3 \
