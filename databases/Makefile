@@ -352,6 +352,7 @@
     SUBDIR += ruby-search-namazu
     SUBDIR += ruby-sqlite
     SUBDIR += ruby-sqlite3
+    SUBDIR += rubygem-activerecord
     SUBDIR += slony1
     SUBDIR += sqlite2
     SUBDIR += sqlite3
