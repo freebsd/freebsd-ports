@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-netload-plugin
-PORTVERSION=	0.2.2
-PORTREVISION=	3
+PORTVERSION=	0.3.2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
 		http://matt.nerim.net/xfce-goodies/ \
@@ -23,6 +22,7 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui
 RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 
+USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
