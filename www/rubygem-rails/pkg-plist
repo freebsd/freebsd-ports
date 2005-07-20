@@ -11,10 +11,12 @@ bin/rails
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/bin/console_sandbox
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/bin/destroy
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/bin/generate
+%%GEMS_DIR%%/rails-%%PORTVERSION%%/bin/listener
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/bin/profiler
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/bin/rails
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/bin/runner
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/bin/server
+%%GEMS_DIR%%/rails-%%PORTVERSION%%/bin/tracker
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/bin/update
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/configs/apache.conf
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/configs/database.yml
@@ -22,6 +24,7 @@ bin/rails
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/configs/routes.rb
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/dispatches/dispatch.fcgi
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/dispatches/dispatch.rb
+%%GEMS_DIR%%/rails-%%PORTVERSION%%/dispatches/gateway.cgi
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/doc/README_FOR_APP
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/environments/development.rb
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/environments/environment.rb
@@ -35,12 +38,17 @@ bin/rails
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/html/500.html
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/html/favicon.ico
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/html/index.html
+%%GEMS_DIR%%/rails-%%PORTVERSION%%/html/javascripts/controls.js
+%%GEMS_DIR%%/rails-%%PORTVERSION%%/html/javascripts/dragdrop.js
+%%GEMS_DIR%%/rails-%%PORTVERSION%%/html/javascripts/effects.js
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/html/javascripts/prototype.js
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/binding_of_caller.rb
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/breakpoint.rb
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/breakpoint_client.rb
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/code_statistics.rb
+%%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/console_sandbox.rb
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/dispatcher.rb
+%%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/fcgi_handler.rb
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator.rb
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator/base.rb
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator/commands.rb
@@ -58,6 +66,9 @@ bin/rails
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator/generators/components/mailer/templates/mailer.rb
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator/generators/components/mailer/templates/unit_test.rb
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator/generators/components/mailer/templates/view.rhtml
+%%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator/generators/components/migration/USAGE
+%%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator/generators/components/migration/migration_generator.rb
+%%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator/generators/components/migration/templates/migration.rb
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator/generators/components/model/USAGE
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator/generators/components/model/model_generator.rb
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator/generators/components/model/templates/fixtures.yml
@@ -90,6 +101,7 @@ bin/rails
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator/scripts/update.rb
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator/simple_logger.rb
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator/spec.rb
+%%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rubyprof_ext.rb
 %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/webrick_server.rb
 %%SPEC_DIR%%/rails-%%PORTVERSION%%.gemspec
 @dirrm %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator/scripts
@@ -99,6 +111,8 @@ bin/rails
 @dirrm %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator/generators/components/scaffold
 @dirrm %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator/generators/components/model/templates
 @dirrm %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator/generators/components/model
+@dirrm %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator/generators/components/migration/templates
+@dirrm %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator/generators/components/migration
 @dirrm %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator/generators/components/mailer/templates
 @dirrm %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator/generators/components/mailer
 @dirrm %%GEMS_DIR%%/rails-%%PORTVERSION%%/lib/rails_generator/generators/components/controller/templates
