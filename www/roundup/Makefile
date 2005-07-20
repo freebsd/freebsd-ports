@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	roundup
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://bsdchat.com/dist/dryice/
