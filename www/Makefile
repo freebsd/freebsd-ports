@@ -718,6 +718,7 @@
     SUBDIR += ruby-nora
     SUBDIR += ruby-tmpl
     SUBDIR += ruby-webunit
+    SUBDIR += rubygem-actionpack
     SUBDIR += sarg
     SUBDIR += sbox-dtc
     SUBDIR += scout
