@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ZendOptimizer
-PORTVERSION=	2.5.10
+PORTVERSION=	2.5.10a
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd${VER}-i386
 
@@ -25,7 +25,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 # Check for FreeBSD version
 .if ${OSVERSION} < 400000
-IGNORE=		"This port is for FreeBSD 4 or above"
+IGNORE=		This port is for FreeBSD 4 or above
 .else
 .if ${OSVERSION} < 500000
 VER=		4.3
