@@ -11851,6 +11851,7 @@ turba		ports/mail/turba
 tux-aqfh	ports/games/tux-aqfh
 tuxcards	ports/deskutils/tuxcards
 tuxkart		ports/games/tuxkart
+tuxmath		ports/games/tuxmath
 tuxnes		ports/emulators/tuxnes
 tuxpaint	ports/games/tuxpaint
 tuxpaint-fonts	ports/games/tuxpaint-fonts
