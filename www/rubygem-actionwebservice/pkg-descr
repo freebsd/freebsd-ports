@@ -1,0 +1,19 @@
+Action Web Service
+
+Action Web Service provides a way to publish interoperable web service APIs with
+Rails without spending a lot of time delving into protocol details.
+
+Features
+
+* SOAP RPC protocol support
+* Dynamic WSDL generation for APIs
+* XML-RPC protocol support
+* Clients that use the same API definitions as the server for
+  easy interoperability with other Action Web Service based applications
+* Type signature hints to improve interoperability with static languages
+* Active Record model class support in signatures
+
+WWW:	http://www.rubyonrails.com
+
+- Jonathan Weiss
+jw@innerewut.de
