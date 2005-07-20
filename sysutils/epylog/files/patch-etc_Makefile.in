@@ -1,0 +1,25 @@
+--- etc/Makefile.in.orig	Wed Jul 20 05:29:47 2005
++++ etc/Makefile.in	Wed Jul 20 05:32:37 2005
+@@ -32,8 +32,8 @@
+ 
+ SUBDIRS = modules.d
+ INSTALLDIRS = $(pkgconfdir)
+-CFGFILES = epylog.conf notice_dist.xml notice_local.xml report_template.html \
+-	trojans.list weed_dist.cf weed_local.cf
++CFGFILES = epylog.conf notice_local.xml report_template.html weed_local.cf
++FILES = notice_dist.xml trojans.list weed_dist.cf
+ 
+ all: all-stamp
+ 
+@@ -47,7 +47,10 @@
+ 
+ install: all installdirs
+ 	for CFGFILE in $(CFGFILES); do \
+-	  $(INSTALL_DATA) $$CFGFILE $(DESTDIR)$(pkgconfdir)/$$CFGFILE; \
++	  $(INSTALL_DATA) $$CFGFILE $(DESTDIR)$(pkgconfdir)/$$CFGFILE.default; \
++	done
++	for FILE in $(FILES); do \
++	  $(INSTALL_DATA) $$FILE $(DESTDIR)$(pkgconfdir); \
+ 	done
+ 	for subdir in $(SUBDIRS) ; do \
+ 	  $(MAKE) -C $$subdir install ; \

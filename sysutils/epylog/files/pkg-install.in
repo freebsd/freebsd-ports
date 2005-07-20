@@ -1,0 +1,9 @@
+#!/bin/sh
+
+[ "$2" != "POST-INSTALL" ] && exit 0
+
+for f in %%CONF_FILES%%; do
+	if ! [ -f "${PKG_PREFIX}/etc/epylog/$f" ]; then
+		cp -p "${PKG_PREFIX}/etc/epylog/$f.default" "${PKG_PREFIX}/etc/epylog/$f"
+	fi
+done

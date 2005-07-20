@@ -1,17 +1,17 @@
-etc/cron.daily/epylog.cron
-etc/epylog/epylog.conf
-etc/epylog/modules.d/logins.conf
-etc/epylog/modules.d/mail.conf
-etc/epylog/modules.d/notices.conf
-etc/epylog/modules.d/packets.conf
-etc/epylog/modules.d/spamd.conf
-etc/epylog/modules.d/weeder.conf
+etc/epylog/epylog.conf.default
+etc/epylog/epylog.cron
+etc/epylog/modules.d/logins.conf.default
+etc/epylog/modules.d/mail.conf.default
+etc/epylog/modules.d/notices.conf.default
+etc/epylog/modules.d/packets.conf.default
+etc/epylog/modules.d/spamd.conf.default
+etc/epylog/modules.d/weeder.conf.default
 etc/epylog/notice_dist.xml
-etc/epylog/notice_local.xml
-etc/epylog/report_template.html
+etc/epylog/notice_local.xml.default
+etc/epylog/report_template.html.default
 etc/epylog/trojans.list
 etc/epylog/weed_dist.cf
-etc/epylog/weed_local.cf
+etc/epylog/weed_local.cf.default
 lib/perl5/site_perl/epylog.pm
 %%PYTHON_SITELIBDIR%%/epylog/__init__.py
 %%PYTHON_SITELIBDIR%%/epylog/__init__.pyc
@@ -62,6 +62,5 @@ share/epylog/modules/weeder_mod.pyc
 @dirrm share/doc/epylog-1.0.3/doc
 @dirrm share/doc/epylog-1.0.3
 @dirrm %%PYTHON_SITELIBDIR%%/epylog
-@dirrm etc/epylog/modules.d
-@dirrm etc/epylog
-@unexec rmdir %D/etc/cron.daily 2>/dev/null || true
+@unexec rmdir %D/etc/epylog/modules.d 2>/dev/null || true
+@unexec rmdir %D/etc/epylog 2>/dev/null || true
