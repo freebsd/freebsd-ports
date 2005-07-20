@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ede
-PORTVERSION=	1.0.1.1
+PORTVERSION=	1.0.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ede
@@ -16,14 +16,21 @@ COMMENT=	Equinox Desktop Environment
 
 LIB_DEPENDS=	efltk.2:${PORTSDIR}/x11-toolkits/efltk
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_AUTOCONF_VER=	213
-USE_AUTOMAKE_VER=	14
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not build on 4.x (sound system)"
+.endif
 
 pre-configure:
 	@cd ${WRKSRC}; ${ACLOCAL}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
