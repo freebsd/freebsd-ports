@@ -1,0 +1,12 @@
+diff -ur send.c send.c
+--- send.c     Tue Mar 14 03:45:05 2000
++++ send.c  Wed Feb  2 17:05:46 2005
+@@ -92,7 +92,7 @@
+       /* -- launch smbclient and read output from pipe -- */
+       //sprintf (command_line, "( %s cat %s ) | smbclient -M \"%s\" -U \"%s\" -n \"%s\" \"%s\"", (MULTI_RECIPIENTS ? prefix : ""), temp_filename, head_text, user_rc.samba_username, user_rc.samba_nbiosname, user_rc.samba_misc);
+ 
+-      sprintf (command_line, "( %s cat %s ) | smbclient -M \"%s\" -U \"%s\" -n \"%s\" \"%s\" 2>&1", (MULTI_RECIPIENTS ? prefix : ""), temp_filename, head_text, user_rc.samba_username, user_rc.samba_nbiosname, user_rc.samba_misc);
++      sprintf (command_line, "( %s cat %s ) | smbclient -M \"%s\" -U \"%s\" -n \"%s\" 2>&1", (MULTI_RECIPIENTS ? prefix : ""), temp_filename, head_text, user_rc.samba_username, user_rc.samba_nbiosname);
+ 
+ 
+       output = popen (command_line, "r");
