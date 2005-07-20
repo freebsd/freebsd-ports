@@ -33,6 +33,10 @@ CONNECTORS_RELEASE=	${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		"Does not build on amd64 or ia64"
+.endif
+
 # Apache locations.
 APACHECTL?=	${LOCALBASE}/sbin/apachectl
 APR_LIB?=	${LOCALBASE}/lib/
