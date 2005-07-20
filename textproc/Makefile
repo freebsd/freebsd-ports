@@ -578,6 +578,7 @@
     SUBDIR += rand
     SUBDIR += raptor
     SUBDIR += re_graph
+    SUBDIR += redet
     SUBDIR += redland
     SUBDIR += redland-bindings
     SUBDIR += refdb
