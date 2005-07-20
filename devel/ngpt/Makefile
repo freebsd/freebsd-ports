@@ -27,4 +27,8 @@ USE_GMAKE=	yes
 BROKEN=		"Does not compile on !i386 and !amd64"
 .endif
 
+.if ${OSVERSION} >= 600031
+BROKEN=		"Does not compile on FreeBSD >= 6.0"
+.endif
+
 .include <bsd.port.post.mk>
