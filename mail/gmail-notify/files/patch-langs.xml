@@ -1,0 +1,21 @@
+*** langs.xml.orig	Tue May  3 10:02:33 2005
+--- langs.xml	Tue Jun  7 15:28:53 2005
+***************
+*** 33,38 ****
+--- 33,39 ----
+  		<string id="32">Conns time span</string>
+  		<string id="33">Some value is missing</string>
+  		<string id="34">Save username and password</string>
++ 		<string id="99" >Action path:</string>
+  	</lang>
+  	<lang name="Español">
+  		<string id="1" >Configuración de Gmail Notifier</string>
+***************
+*** 67,71 ****
+--- 68,73 ----
+  		<string id="32">Intervalo e/conexiones</string>
+  		<string id="33">Falta completar algún valor</string>
+  		<string id="34">Guardar nombre de usuario y contraseña</string>
++ 		<string id="99" >Acción</string>
+  	</lang>
+  </langs>

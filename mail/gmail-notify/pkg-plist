@@ -1,0 +1,23 @@
+bin/gmail-notifier
+%%DATADIR%%/GmailConfig.py
+%%DATADIR%%/GmailConfig.pyc
+%%DATADIR%%/GmailPopupMenu.py
+%%DATADIR%%/GmailPopupMenu.pyc
+%%DATADIR%%/README
+%%DATADIR%%/constants.py
+%%DATADIR%%/constants.pyc
+%%DATADIR%%/gmail-notify-icon.png
+%%DATADIR%%/background.jpg
+%%DATADIR%%/icon.jpg
+%%DATADIR%%/icon.png
+%%DATADIR%%/icon2.jpg
+%%DATADIR%%/icon2.png
+%%DATADIR%%/langs.xml
+%%DATADIR%%/libgmail.py
+%%DATADIR%%/libgmail.pyc
+%%DATADIR%%/mkconstants.py
+%%DATADIR%%/notifier.py
+%%DATADIR%%/trayicon.so
+%%DATADIR%%/xmllangs.py
+%%DATADIR%%/xmllangs.pyc
+@dirrm %%DATADIR%%
