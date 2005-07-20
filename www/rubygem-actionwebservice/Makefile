@@ -1,18 +1,18 @@
 # Ports collection makefile for:	rubygem-actionwebservice
 # Date created:				27 May 2005
-# Whom:					Jonathan Weiss (<jw@innerewut.net>)
+# Whom:					Jonathan Weiss (<jw@innerewut.de>)
 #
 # $FreeBSD$
 
 PORTNAME=	actionwebservice
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.1
 CATEGORIES=	www ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/4155/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/5172/
 
-MAINTAINER=	jw@innerewut.net
+MAINTAINER=	jw@innerewut.de
 COMMENT=	Simple support for publishing Web Service APIs for Rails applications
 
-BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/actionpack-1.8.1.gemspec:${PORTSDIR}/www/rubygem-actionpack
+BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/actionpack-1.9.1.gemspec:${PORTSDIR}/www/rubygem-actionpack
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .include <bsd.port.pre.mk>
