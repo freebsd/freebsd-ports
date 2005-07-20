@@ -1,0 +1,24 @@
+@comment $FreeBSD$
+bin/qsheff
+@unexec if cmp -s %D/etc/qsheff/qsheff.attach %D/etc/qsheff/qsheff.attach-default; then rm -f %D/etc/qsheff/qsheff.attach; fi
+etc/qsheff/qsheff.attach-default
+@exec [ -f %B/qsheff.attach ] || cp %B/%f %B/qsheff.attach
+@unexec if cmp -s %D/etc/qsheff/qsheff.conf %D/etc/qsheff/qsheff.conf-default; then rm -f %D/etc/qsheff/qsheff.conf; fi
+etc/qsheff/qsheff.conf-default
+@unexec if cmp -s %D/etc/qsheff/qsheff.rules %D/etc/qsheff/qsheff.rules-default; then rm -f %D/etc/qsheff/qsheff.rules; fi
+etc/qsheff/qsheff.rules-default
+@exec [ -f %B/qsheff.rules ] || cp %B/%f %B/qsheff.attach
+@unexec if cmp -s %D/etc/qsheff/qsheff.wblist %D/etc/qsheff/qsheff.wblist-default; then rm -f %D/etc/qsheff/qsheff.wblist; fi
+etc/qsheff/qsheff.wblist-default
+@exec [ -f %B/qsheff.wblist ] || cp %B/%f %B/qsheff.attach
+%%DATADIR%%/developer.notes
+%%DATADIR%%/eicar.com.txt
+%%DATADIR%%/sample-OK.msg
+%%DATADIR%%/sample-SPAM.msg
+%%DATADIR%%/sample-VIRUS.msg
+%%DATADIR%%/uninstall.sh
+@unexec rmdir %D/etc/qsheff 2>/dev/null || true
+@dirrm %%DATADIR%%
+@unexec echo "ATTENTION:"
+@unexec echo "1) Remember to restore your qmail-queue program on %%PREFIX%%/bin"
+@unexec echo "2) Quarantina directory (/var/spool/qsheffq) not removed. You can remove it manually."
