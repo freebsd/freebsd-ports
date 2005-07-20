@@ -1,0 +1,21 @@
+bin/abe
+%%DATADIR%%/images/images.tar
+%%DATADIR%%/maps/default.dat
+%%DATADIR%%/maps/intro.dat
+%%DATADIR%%/sounds/bubble.wav
+%%DATADIR%%/sounds/closed.wav
+%%DATADIR%%/sounds/death.wav
+%%DATADIR%%/sounds/door.wav
+%%DATADIR%%/sounds/game.ogg
+%%DATADIR%%/sounds/gem.wav
+%%DATADIR%%/sounds/intro.ogg
+%%DATADIR%%/sounds/jump.wav
+%%DATADIR%%/sounds/menu.wav
+%%DATADIR%%/sounds/object.wav
+%%DATADIR%%/sounds/platform.wav
+%%DATADIR%%/sounds/pop.wav
+%%DATADIR%%/sounds/spring.wav
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/maps
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%
