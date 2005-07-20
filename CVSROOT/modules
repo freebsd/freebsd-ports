@@ -11273,6 +11273,7 @@ squash		ports/audio/squash
 squeak		ports/lang/squeak
 squeuer		ports/astro/squeuer
 squid		ports/www/squid
+squidclam	ports/security/squidclam
 squidclients	ports/www/squidclients
 squidguard	ports/www/squidguard
 squidpurge	ports/www/squidpurge
