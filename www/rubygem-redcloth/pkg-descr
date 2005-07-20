@@ -1,0 +1,13 @@
+RedCloth is a module for using Textile in Ruby. Textile is a text
+format. A very simple text format. Another stab at making readable text
+that can be converted to HTML.
+
+No need to use verbose HTML to build your docs, your blogs, your pages.
+Textile gives you readable text while youre writing and beautiful text
+for your readers. And if you need to break out into HTML, Textile will
+allow you to do so.
+
+WWW: http://www.whytheluckystiff.net/ruby/redcloth/
+
+- Jonathan Weiss
+jw@innerewut.de

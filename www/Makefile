@@ -721,6 +721,7 @@
     SUBDIR += rubygem-actionpack
     SUBDIR += rubygem-actionwebservice
     SUBDIR += rubygem-rails
+    SUBDIR += rubygem-redcloth
     SUBDIR += sarg
     SUBDIR += sbox-dtc
     SUBDIR += scout

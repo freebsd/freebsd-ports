@@ -1,0 +1,18 @@
+%%CACHE_DIR%%/redcloth-3.0.3.gem
+%%GEMS_DIR%%/RedCloth-3.0.3/bin/redcloth
+%%GEMS_DIR%%/RedCloth-3.0.3/lib/redcloth.rb
+%%GEMS_DIR%%/RedCloth-3.0.3/run-tests.rb
+%%GEMS_DIR%%/RedCloth-3.0.3/tests/code.yml
+%%GEMS_DIR%%/RedCloth-3.0.3/tests/images.yml
+%%GEMS_DIR%%/RedCloth-3.0.3/tests/instiki.yml
+%%GEMS_DIR%%/RedCloth-3.0.3/tests/links.yml
+%%GEMS_DIR%%/RedCloth-3.0.3/tests/lists.yml
+%%GEMS_DIR%%/RedCloth-3.0.3/tests/markdown.yml
+%%GEMS_DIR%%/RedCloth-3.0.3/tests/poignant.yml
+%%GEMS_DIR%%/RedCloth-3.0.3/tests/table.yml
+%%GEMS_DIR%%/RedCloth-3.0.3/tests/textism.yml
+%%SPEC_DIR%%/RedCloth-3.0.3.gemspec
+@dirrm %%GEMS_DIR%%/RedCloth-3.0.3/tests
+@dirrm %%GEMS_DIR%%/RedCloth-3.0.3/lib
+@dirrm %%GEMS_DIR%%/RedCloth-3.0.3/bin
+@dirrm %%GEMS_DIR%%/RedCloth-3.0.3
