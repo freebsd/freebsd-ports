@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	yap
-PORTVERSION=	4.5.5
+PORTVERSION=	4.5.6
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.ncc.up.pt/~vsc/Yap/Yap4.5/
 DISTNAME=	Yap-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -27,9 +26,7 @@ INFO=		yap
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
+ONLY_FOR_ARCHS=	i386
 
 post-extract:
 	@${RM} -f ${WRKSRC}/docs/*.info*
@@ -38,6 +35,7 @@ post-build:
 	cd ${WRKSRC}/docs && makeinfo --no-split yap.tex
 
 pre-install:
-	${INSTALL_DATA} ${WRKSRC}/docs/yap.info ${PREFIX}/info
+	@${MKDIR} ${PREFIX}/${INFO_PATH}
+	${INSTALL_DATA} ${WRKSRC}/docs/yap.info ${PREFIX}/${INFO_PATH}
 
 .include <bsd.port.post.mk>
