@@ -7,19 +7,16 @@
 #
 
 PORTNAME=	ply
-PORTVERSION=	1.3.1
+PORTVERSION=	1.6
 CATEGORIES=	devel python
-MASTER_SITES=	http://systems.cs.uchicago.edu/ply/
+MASTER_SITES=	http://www.dabeaz.com/ply/
+PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Lex-Yacc
 
 USE_PYTHON=	yes
-NO_BUILD=	yes
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/lex.py ${PYTHON_SITELIBDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/yacc.py ${PYTHON_SITELIBDIR}
+USE_PYDISTUTILS=	yes
 
 .if !defined(NOPORTDOCS)
 post-install:
