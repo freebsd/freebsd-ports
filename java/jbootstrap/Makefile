@@ -20,10 +20,12 @@ MAKE_FLAGS+=	BINDIR=${PREFIX}/${PORTNAME}/bin \
 INSTALL_TARGET=	install install-doc
 .endif
 
+RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-IGNORE=		"This port requires perl 5.8 or above."
+IGNORE=		This port requires perl 5.8 or above.
 .endif
 
 .if !exists(${DISTDIR}/${DISTFILE}) && !defined(PACKAGE_BUILDING)
