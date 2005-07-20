@@ -29,6 +29,10 @@ COMMENT=	GNU Compiler Collection 4.1
 .if defined(WITH_FORTRAN)
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 .endif
+.if defined(WITH_JAVA_AWT)
+LIB_DEPENDS+=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
+#LIB_DEPENDS+=	cairo:${PORTSDIR}/graphics/cairo
+.endif
 
 CONFLICTS=	gcc-3.3.* gcc-3.4.* gcc-4.0.*
 LATEST_LINK?=	gcc41${PKGNAMESUFFIX}
@@ -38,6 +42,10 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_REINPLACE=	yes
+.if defined(WITH_JAVA_AWT)
+USE_GNOME=	gtk20
+USE_X11=	yes
+.endif
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
@@ -71,6 +79,10 @@ CONFIGURE_ARGS+=	--disable-nls \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/
 .if defined(WITH_FORTRAN)
 CONFIGURE_ARGS+=	--with-gmp=${LOCALBASE}
+.endif
+.if defined(WITH_JAVA_AWT)
+CONFIGURE_ARGS+=      --enable-java-awt=xlib,gtk #--enable-gtk-cairo=yes
+WANT_SHAREDLIBS=yes #We need this atm
 .endif
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 .if defined(WANT_SHAREDLIBS)
