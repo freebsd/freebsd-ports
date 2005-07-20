@@ -6,28 +6,43 @@
 #
 
 PORTNAME=	qsstv
-PORTVERSION=	5.3b
+PORTVERSION=	6.0a
 CATEGORIES=	comms
-MASTER_SITES=	http://users.telenet.be/on4qz/download/
+MASTER_SITES=	http://users.telenet.be/on4qz/snapshots/download/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	db@db.net
 COMMENT=	Amateur Radio SSTV/FAX reception program for unix
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_QT_VER=	3
-CONFIGURE_ARGS=	--with-extra-includes=${LOCALBASE}/include --with-extra-libs=${LOCALBASE}/lib --infodir=${DOCSDIR}
+USE_REINPLACE=	yes
+CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+CONFIGURE_ARGS=	--qtdir=${X11BASE}
+MAKE_ARGS+=	QTDIR=${X11BASE} \
+		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
+		DESTDIR="" TARGET="qsstv" DOCSDIR="${DOCSDIR}"
 
-do-install:
-	${INSTALL_PROGRAM} -m 755 ${WRKSRC}/qsstv/qsstv ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/qsstv/docs/en/*.png ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/qsstv/docs/en/*.html ${DOCSDIR}
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${OSVERSION} < 500000
+	@${FIND} ${WRKSRC} -name '*.cpp' | ${XARGS} ${REINPLACE_CMD} -e 's|)round(|)rint(|g ; s|) round(|)rint(|g ; s|(round)|(rint)|'
 .endif
 
-.include <bsd.port.mk>
+do-configure:
+	cd ${WRKSRC}; \
+	${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/qmake -spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ ${PORTNAME}.pro; \
+
+do-install:
+	${INSTALL_PROGRAM} -m 755 ${WRKSRC}/qsstv ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
+.endif
+
+.include <bsd.port.post.mk>
