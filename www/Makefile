@@ -770,6 +770,7 @@
     SUBDIR += twhttpd
     SUBDIR += twig
     SUBDIR += twiki
+    SUBDIR += typo
     SUBDIR += typo3
     SUBDIR += udmsearch
     SUBDIR += ump
