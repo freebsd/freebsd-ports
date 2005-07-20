@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fget
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	ftp www
 MASTER_SITES=	ftp://ftp.feep.net/pub/software/fget/
 
