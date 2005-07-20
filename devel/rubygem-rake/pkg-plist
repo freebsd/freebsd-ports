@@ -1,0 +1,323 @@
+bin/rake
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/CompositePublisher.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/CompositePublisher.src/M000014.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/CompositePublisher.src/M000015.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/CompositePublisher.src/M000016.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/FileTask.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/FileTask.src/M000010.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/FileTask.src/M000011.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/FileUtils.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/FileUtils.src/M000068.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/FileUtils.src/M000069.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/FileUtils.src/M000070.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/FileUtils.src/M000071.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Kernel.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Kernel.src/M000076.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/Cloneable.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/Cloneable.src/M000077.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/CompositePublisher.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/CompositePublisher.src/M000097.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/CompositePublisher.src/M000098.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/CompositePublisher.src/M000099.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/DefaultLoader.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/DefaultLoader.src/M000096.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src/M000117.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src/M000118.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src/M000120.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src/M000121.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src/M000122.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src/M000123.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src/M000124.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src/M000125.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src/M000126.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src/M000127.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src/M000128.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src/M000129.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src/M000130.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src/M000131.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src/M000132.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src/M000133.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src/M000134.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src/M000135.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src/M000136.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src/M000137.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src/M000138.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src/M000139.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src/M000140.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FtpFile.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FtpFile.src/M000111.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FtpFile.src/M000112.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FtpFile.src/M000113.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FtpFile.src/M000114.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FtpFile.src/M000115.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FtpFile.src/M000116.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FtpUploader.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FtpUploader.src/M000101.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FtpUploader.src/M000102.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FtpUploader.src/M000103.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FtpUploader.src/M000104.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FtpUploader.src/M000105.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/GemPackageTask.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/GemPackageTask.src/M000106.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/GemPackageTask.src/M000107.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/GemPackageTask.src/M000108.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/MakefileLoader.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/MakefileLoader.src/M000109.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/PackageTask.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/PackageTask.src/M000083.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/PackageTask.src/M000084.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/PackageTask.src/M000085.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/RDocTask.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/RDocTask.src/M000079.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/RDocTask.src/M000080.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/RDocTask.src/M000081.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/RDocTask.src/M000082.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/RubyForgePublisher.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/RubyForgePublisher.src/M000110.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/RuleRecursionOverflowError.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/RuleRecursionOverflowError.src/M000086.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/RuleRecursionOverflowError.src/M000087.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/RuleRecursionOverflowError.src/M000088.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/SshDirPublisher.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/SshDirPublisher.src/M000089.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/SshDirPublisher.src/M000090.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/SshFilePublisher.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/SshFilePublisher.src/M000094.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/SshFilePublisher.src/M000095.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/SshFreshDirPublisher.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/SshFreshDirPublisher.src/M000141.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/TaskLib.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/TaskLib.src/M000100.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/TestTask.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/TestTask.src/M000091.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/TestTask.src/M000092.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/TestTask.src/M000093.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/RakeApp.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/RakeApp.src/M000033.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/RakeApp.src/M000034.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/RakeApp.src/M000035.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/RakeApp.src/M000036.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/RakeApp.src/M000037.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/RakeApp.src/M000038.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/RakeApp.src/M000039.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/RakeApp.src/M000040.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/RakeApp.src/M000041.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/RakeApp.src/M000042.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/RakeApp.src/M000043.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/RakeApp.src/M000044.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/RakeApp.src/M000045.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/RakeApp.src/M000046.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/RakeApp.src/M000047.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/RakeFileUtils.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/RakeFileUtils.src/M000072.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/RakeFileUtils.src/M000073.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/RakeFileUtils.src/M000074.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/SshDirPublisher.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/SshDirPublisher.src/M000008.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/SshDirPublisher.src/M000009.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/SshFilePublisher.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/SshFilePublisher.src/M000012.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/SshFilePublisher.src/M000013.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/SshFreshDirPublisher.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/SshFreshDirPublisher.src/M000048.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/String.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/String.src/M000049.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Sys.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Sys.src/M000050.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Sys.src/M000051.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Sys.src/M000052.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Sys.src/M000053.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Sys.src/M000054.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Sys.src/M000055.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Sys.src/M000056.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Sys.src/M000057.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Sys.src/M000058.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Sys.src/M000059.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Sys.src/M000060.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Sys.src/M000061.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Sys.src/M000062.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Sys.src/M000063.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Sys.src/M000064.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Sys.src/M000065.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Sys.src/M000066.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Sys.src/M000067.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Task.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Task.src/M000017.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Task.src/M000018.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Task.src/M000019.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Task.src/M000020.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Task.src/M000021.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Task.src/M000022.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Task.src/M000023.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Task.src/M000024.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Task.src/M000025.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Task.src/M000026.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Task.src/M000027.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Task.src/M000028.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Task.src/M000029.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Task.src/M000030.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Task.src/M000031.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Task.src/M000032.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Test.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Test/Unit.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Test/Unit/Collector.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Test/Unit/Collector/Dir.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Test/Unit/Collector/Dir.src/M000075.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/created.rid
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/CHANGES.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/MIT-LICENSE.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/README.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/TODO.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/doc/glossary_rdoc.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/doc/proto_rake_rdoc.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/doc/rakefile_rdoc.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/doc/rational_rdoc.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/doc/release_notes/rake-0_4_14_rdoc.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/doc/release_notes/rake-0_4_15_rdoc.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/doc/release_notes/rake-0_5_0_rdoc.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/doc/release_notes/rake-0_5_3_rdoc.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/doc/release_notes/rake-0_5_4_rdoc.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake/clean_rb.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake/contrib/compositepublisher_rb.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake/contrib/ftptools_rb.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake/contrib/publisher_rb.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake/contrib/rubyforgepublisher_rb.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake/contrib/sshpublisher_rb.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake/contrib/sys_rb.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake/gempackagetask_rb.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake/loaders/makefile_rb.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake/packagetask_rb.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake/rake_test_loader_rb.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake/rdoctask_rb.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake/ruby182_test_unit_fix_rb.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake/runtest_rb.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake/tasklib_rb.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake/testtask_rb.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake_rb.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake_rb.src/M000001.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake_rb.src/M000002.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake_rb.src/M000003.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake_rb.src/M000004.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake_rb.src/M000005.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake_rb.src/M000006.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake_rb.src/M000007.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/fr_class_index.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/fr_file_index.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/fr_method_index.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/index.html
+%%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/rdoc-style.css
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/CHANGES
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/MIT-LICENSE
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/README
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/Rakefile
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/TAGS
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/TODO
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/bin/rake
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/doc/example/Rakefile1
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/doc/example/Rakefile2
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/doc/example/a.c
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/doc/example/b.c
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/doc/example/main.c
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/doc/glossary.rdoc
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/doc/jamis.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/doc/proto_rake.rdoc
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/doc/rake.1.gz
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/doc/rakefile.rdoc
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/doc/rational.rdoc
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/doc/release_notes/rake-0.4.14.rdoc
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/doc/release_notes/rake-0.4.15.rdoc
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/doc/release_notes/rake-0.5.0.rdoc
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/doc/release_notes/rake-0.5.3.rdoc
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/doc/release_notes/rake-0.5.4.rdoc
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/install.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/lib/rake.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/lib/rake/clean.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/lib/rake/contrib/compositepublisher.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/lib/rake/contrib/ftptools.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/lib/rake/contrib/publisher.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/lib/rake/contrib/rubyforgepublisher.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/lib/rake/contrib/sshpublisher.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/lib/rake/contrib/sys.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/lib/rake/gempackagetask.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/lib/rake/loaders/makefile.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/lib/rake/packagetask.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/lib/rake/rake_test_loader.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/lib/rake/rdoctask.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/lib/rake/ruby182_test_unit_fix.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/lib/rake/runtest.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/lib/rake/tasklib.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/lib/rake/testtask.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/test/contrib/testsys.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/test/data/rbext/rakefile.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/test/filecreation.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/test/functional.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/test/shellcommand.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/test/test_makefile_loader.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/test/testclean.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/test/testfilelist.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/test/testfileutils.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/test/testftp.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/test/testpackagetask.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/test/testtasks.rb
+%%GEMS_DIR%%/rake-%%PORTVERSION%%/test/testtesttask.rb
+%%SPEC_DIR%%/rake-%%PORTVERSION%%.gemspec
+%%CACHE_DIR%%/rake-%%PORTVERSION%%.gem
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake_rb.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake/loaders
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake/contrib
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib/rake
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/lib
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/doc/release_notes
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files/doc
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/files
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Test/Unit/Collector/Dir.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Test/Unit/Collector
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Test/Unit
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Test
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Task.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Sys.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/String.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/SshFreshDirPublisher.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/SshFilePublisher.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/SshDirPublisher.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/RakeFileUtils.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/RakeApp.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/TestTask.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/TaskLib.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/SshFreshDirPublisher.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/SshFilePublisher.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/SshDirPublisher.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/RuleRecursionOverflowError.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/RubyForgePublisher.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/RDocTask.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/PackageTask.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/MakefileLoader.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/GemPackageTask.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FtpUploader.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FtpFile.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/FileList.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/DefaultLoader.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/CompositePublisher.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake/Cloneable.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Rake
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/Kernel.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/FileUtils.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/FileTask.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes/CompositePublisher.src
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc/classes
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%/rdoc
+@dirrm %%DOC_DIR%%/rake-%%PORTVERSION%%
+@dirrm %%GEMS_DIR%%/rake-%%PORTVERSION%%/test/data/rbext
+@dirrm %%GEMS_DIR%%/rake-%%PORTVERSION%%/test/data
+@dirrm %%GEMS_DIR%%/rake-%%PORTVERSION%%/test/contrib
+@dirrm %%GEMS_DIR%%/rake-%%PORTVERSION%%/test
+@dirrm %%GEMS_DIR%%/rake-%%PORTVERSION%%/lib/rake/loaders
+@dirrm %%GEMS_DIR%%/rake-%%PORTVERSION%%/lib/rake/contrib
+@dirrm %%GEMS_DIR%%/rake-%%PORTVERSION%%/lib/rake
+@dirrm %%GEMS_DIR%%/rake-%%PORTVERSION%%/lib
+@dirrm %%GEMS_DIR%%/rake-%%PORTVERSION%%/doc/release_notes
+@dirrm %%GEMS_DIR%%/rake-%%PORTVERSION%%/doc/example
+@dirrm %%GEMS_DIR%%/rake-%%PORTVERSION%%/doc
+@dirrm %%GEMS_DIR%%/rake-%%PORTVERSION%%/bin
+@dirrm %%GEMS_DIR%%/rake-%%PORTVERSION%%
