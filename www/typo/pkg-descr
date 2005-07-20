@@ -1,0 +1,13 @@
+Typo is an absolutely minimal weblogging engine powered by rails. It
+supports XMLRPC posting, ping/trackback, comments, textile, categories,
+all common exports, fulltext search and so on.
+
+Typo makes it fast and easy to weblog, enabling posting through a rich
+desktop client application like MarsEdit or ecto (see below for a
+compatible clients list). A web-based administration interface handles
+configuration and management.
+
+WWW: http://typo.leetsoft.com/
+
+- Jonathan Weiss
+jw@innerewut.de
