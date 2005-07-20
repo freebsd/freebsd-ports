@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	axel
-PORTVERSION=	1.0a
-PORTREVISION=	4
+PORTVERSION=	1.0b
+PORTREVISION=	0
 CATEGORIES=	ftp
-MASTER_SITES=	http://www.lintux.cx/downloads/
+MASTER_SITES=	http://wilmer.gaast.net/downloads/
 
-MAINTAINER=	lintux@debian.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A download accelerator
 
 USE_GETTEXT=	yes
