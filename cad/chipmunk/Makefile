@@ -6,22 +6,20 @@
 #
 
 PORTNAME=	chipmunk
-PORTVERSION=	5.63
+PORTVERSION=	5.64
 CATEGORIES=	cad
 MASTER_SITES=	http://www.cs.berkeley.edu/~lazzaro/chipmunk/pickup/sources/
-DISTFILES=	psys-1.58.tar.gz log-5.63.tar.gz netcmp-1.13.tar.gz \
+DISTFILES=	psys-1.59.tar.gz log-5.64.tar.gz netcmp-1.13.tar.gz \
 		mosis-1.14.tar.gz wol-1.14.tar.gz wolcomp-1.14.tar.gz \
 		until-1.14.tar.gz util-1.11.tar.gz view-1.14.tar.gz \
 		Makefile
 DIST_SUBDIR=	chipmunk
-EXTRACT_ONLY=	psys-1.58.tar.gz log-5.63.tar.gz netcmp-1.13.tar.gz \
+EXTRACT_ONLY=	psys-1.59.tar.gz log-5.64.tar.gz netcmp-1.13.tar.gz \
 		mosis-1.14.tar.gz wol-1.14.tar.gz wolcomp-1.14.tar.gz \
 		until-1.14.tar.gz util-1.11.tar.gz view-1.14.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An electronic CAD system
-
-BROKEN=		Size mismatch
 
 NO_WRKSUBDIR=	yes
 USE_XLIB=	yes

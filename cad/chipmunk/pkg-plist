@@ -74,5 +74,5 @@ bin/wol
 %%DATADIR%%/untilstuff.ps
 %%DATADIR%%/vlsi.cnf
 @exec mkdir %D/%%DATADIR%%/ntk
-@unexec rmdir %D/%%DATADIR%%/ntk
+@dirrm %%DATADIR%%/ntk
 @dirrm %%DATADIR%%
