@@ -1,0 +1,232 @@
+%%CACHE_DIR%%/actionwebservice-%%PORTVERSION%%.gem
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Base.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Base.src/M000034.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Base.src/M000035.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Base.src/M000036.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Base.src/M000037.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Base.src/M000038.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Base.src/M000039.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Base.src/M000040.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Base.src/M000041.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Base.src/M000042.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Method.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Method.src/M000026.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Method.src/M000027.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Method.src/M000028.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Method.src/M000029.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Method.src/M000030.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Method.src/M000031.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Method.src/M000032.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Method.src/M000033.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Base.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Casting/BaseCaster.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Casting/BaseCaster.src/M000021.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Casting/BaseCaster.src/M000022.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Casting/BaseCaster.src/M000023.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Client/Soap.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Client/Soap.src/M000024.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Client/XmlRpc.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Client/XmlRpc.src/M000025.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Container/ActionController/ClassMethods.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Container/ActionController/ClassMethods.src/M000001.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Container/Delegated/ClassMethods.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Container/Delegated/ClassMethods.src/M000003.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Container/Delegated/ClassMethods.src/M000004.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Container/Direct/ClassMethods.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Container/Direct/ClassMethods.src/M000002.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.src/M000044.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.src/M000045.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.src/M000047.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.src/M000048.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapActiveRecordStructFactory.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapActiveRecordStructFactory.src/M000005.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapActiveRecordStructFactory.src/M000006.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBinding.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBinding.src/M000007.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBinding.src/M000008.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBinding.src/M000009.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBinding.src/M000010.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBinding.src/M000012.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapMarshaler.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapMarshaler.src/M000013.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapMarshaler.src/M000014.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapMarshaler.src/M000015.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapMarshaler.src/M000016.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapMarshaler.src/M000018.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapTypedArrayFactory.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapTypedArrayFactory.src/M000019.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapTypedArrayFactory.src/M000020.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Scaffolding/ClassMethods.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Scaffolding/ClassMethods.src/M000043.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Struct.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Struct.src/M000050.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Struct.src/M000051.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Struct.src/M000052.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Struct.src/M000053.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/XMLRPC.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/XMLRPC/FaultException.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/created.rid
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/api_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/base_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/casting_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/client/base_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/client/soap_client_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/client/xmlrpc_client_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/client_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/container/action_controller_container_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/container/delegated_container_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/container/direct_container_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/container_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/dispatcher/abstract_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/dispatcher/action_controller_dispatcher_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/dispatcher_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/invocation_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/protocol/abstract_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/protocol/discovery_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/protocol/soap_protocol/marshaler_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/protocol/soap_protocol_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/protocol/xmlrpc_protocol_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/protocol_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/scaffolding_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/struct_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/support/class_inheritable_options_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/support/signature_types_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/test_invoke_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/fr_class_index.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/fr_file_index.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/fr_method_index.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/index.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/rdoc-style.css
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/CHANGELOG
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/MIT-LICENSE
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/README
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/Rakefile
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/TODO
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/examples/googlesearch/README
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/examples/googlesearch/autoloading/google_search_api.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/examples/googlesearch/autoloading/google_search_controller.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/examples/googlesearch/delegated/google_search_service.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/examples/googlesearch/delegated/search_controller.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/examples/googlesearch/direct/google_search_api.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/examples/googlesearch/direct/search_controller.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/examples/metaWeblog/README
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/examples/metaWeblog/apis/blogger_api.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/examples/metaWeblog/apis/blogger_service.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/examples/metaWeblog/apis/meta_weblog_api.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/examples/metaWeblog/apis/meta_weblog_service.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/examples/metaWeblog/controllers/xmlrpc_controller.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/api.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/base.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/casting.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/client.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/client/base.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/client/soap_client.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/client/xmlrpc_client.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/container.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/container/action_controller_container.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/container/delegated_container.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/container/direct_container.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/dispatcher.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/dispatcher/abstract.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/dispatcher/action_controller_dispatcher.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/invocation.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/protocol.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/protocol/abstract.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/protocol/discovery.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/protocol/soap_protocol.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/protocol/soap_protocol/marshaler.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/protocol/xmlrpc_protocol.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/scaffolding.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/struct.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/support/class_inheritable_options.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/support/signature_types.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/templates/scaffolds/layout.rhtml
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/templates/scaffolds/methods.rhtml
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/templates/scaffolds/parameters.rhtml
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/templates/scaffolds/result.rhtml
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/test_invoke.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/setup.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/test/abstract_client.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/test/abstract_dispatcher.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/test/abstract_unit.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/test/api_test.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/test/apis/auto_load_api.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/test/apis/broken_auto_load_api.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/test/base_test.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/test/casting_test.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/test/client_soap_test.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/test/client_xmlrpc_test.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/test/container_test.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/test/dispatcher_action_controller_soap_test.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/test/dispatcher_action_controller_xmlrpc_test.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/test/gencov
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/test/invocation_test.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/test/run
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/test/scaffolded_controller_test.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/test/struct_test.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/test/test_invoke_test.rb
+%%SPEC_DIR%%/actionwebservice-%%PORTVERSION%%.gemspec
+@dirrm %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/test/apis
+@dirrm %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/test
+@dirrm %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/templates/scaffolds
+@dirrm %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/templates
+@dirrm %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/support
+@dirrm %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/protocol/soap_protocol
+@dirrm %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/protocol
+@dirrm %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/dispatcher
+@dirrm %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/container
+@dirrm %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/client
+@dirrm %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service
+@dirrm %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib
+@dirrm %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/examples/metaWeblog/controllers
+@dirrm %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/examples/metaWeblog/apis
+@dirrm %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/examples/metaWeblog
+@dirrm %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/examples/googlesearch/direct
+@dirrm %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/examples/googlesearch/delegated
+@dirrm %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/examples/googlesearch/autoloading
+@dirrm %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/examples/googlesearch
+@dirrm %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/examples
+@dirrm %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/support
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/protocol/soap_protocol
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/protocol
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/dispatcher
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/container
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/client
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/XMLRPC
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Struct.src
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Scaffolding/ClassMethods.src
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Scaffolding
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapTypedArrayFactory.src
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapMarshaler.src
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapBinding.src
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapActiveRecordStructFactory.src
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.src
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Invocation
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Container/Direct/ClassMethods.src
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Container/Direct
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Container/Delegated/ClassMethods.src
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Container/Delegated
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Container/ActionController/ClassMethods.src
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Container/ActionController
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Container
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Client/XmlRpc.src
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Client/Soap.src
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Client
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Casting/BaseCaster.src
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Casting
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Method.src
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Base.src
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc
+@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%
