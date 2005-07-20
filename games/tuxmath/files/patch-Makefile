@@ -1,0 +1,27 @@
+--- Makefile.orig	Fri Sep  7 04:40:21 2001
++++ Makefile	Thu Jul 14 19:46:18 2005
+@@ -6,7 +6,7 @@
+ # 2001.Aug.26 - 2001.Sep.07
+ 
+ 
+-CFLAGS=-Wall -O2 $(SDL_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" -DDEBUG \
++CFLAGS+= $(SDL_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" -DDEBUG \
+ 	-DVERSION=\"$(VERSION)\" -D$(SOUND)SOUND
+ 
+ SDL_CFLAGS=$(shell sdl-config --cflags)
+@@ -30,14 +30,10 @@
+ 
+ install:
+ 	@echo "COPYING BINARY TO $(BIN_PREFIX)"
+-	cp tuxmath $(BIN_PREFIX)
+-	chown root.root $(BIN_PREFIX)/tuxmath
+-	chmod a+rx,g-w,o-w $(BIN_PREFIX)/tuxmath
++	$(BSD_INSTALL_PROGRAM) tuxmath $(BIN_PREFIX)
+ 	@echo "COPYING DATA FILES TO $(DATA_PREFIX)"
+ 	mkdir -p $(DATA_PREFIX)
+ 	cp -r data/* $(DATA_PREFIX)
+-	chown -R root.root $(DATA_PREFIX)
+-	chmod -R a+rX,g-w,o-w $(DATA_PREFIX)
+ 
+ clean:
+ 	-rm tuxmath

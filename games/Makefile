@@ -513,6 +513,7 @@
     SUBDIR += ttt
     SUBDIR += tux-aqfh
     SUBDIR += tuxkart
+    SUBDIR += tuxmath
     SUBDIR += tuxpaint
     SUBDIR += tuxpaint-fonts
     SUBDIR += tuxpaint-stamps
