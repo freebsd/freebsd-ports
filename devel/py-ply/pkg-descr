@@ -6,4 +6,4 @@ version of lex and yacc. The other significant feature of PLY is that it
 provides extensive input validation and error reporting--much more so than
 other Python parsing tools.
 
-WWW: http://systems.cs.uchicago.edu/ply/
+WWW: http://www.dabeaz.com/ply/
