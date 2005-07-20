@@ -54,6 +54,7 @@
     SUBDIR += icewm
     SUBDIR += ion
     SUBDIR += ion-2
+    SUBDIR += ion-3ds
     SUBDIR += jewel
     SUBDIR += kahakai
     SUBDIR += kappdock

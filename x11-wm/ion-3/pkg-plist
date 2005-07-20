@@ -1,0 +1,86 @@
+bin/ion3
+bin/pwm3
+etc/ion3/cfg_bindings.lua
+etc/ion3/cfg_dock.lua
+etc/ion3/cfg_floatws.lua
+etc/ion3/cfg_ion.lua
+etc/ion3/cfg_ionws.lua
+etc/ion3/cfg_kludges.lua
+etc/ion3/cfg_menu.lua
+etc/ion3/cfg_menus.lua
+etc/ion3/cfg_panews.lua
+etc/ion3/cfg_pwm.lua
+etc/ion3/cfg_pwm_bindings.lua
+etc/ion3/cfg_pwm_menus.lua
+etc/ion3/cfg_query.lua
+etc/ion3/cfg_sp.lua
+etc/ion3/cfg_statusbar.lua
+etc/ion3/dock-draw.lua
+etc/ion3/look.lua
+etc/ion3/look_brownsteel.lua
+etc/ion3/look_clean.lua
+etc/ion3/look_cleanios.lua
+etc/ion3/look_cleanviolet.lua
+etc/ion3/look_dusky.lua
+etc/ion3/look_greyviolet.lua
+etc/ion3/look_ios.lua
+etc/ion3/look_simpleblue.lua
+etc/ion3/look_wheat2.lua
+etc/ion3/lookcommon_clean.lua
+etc/ion3/lookcommon_emboss.lua
+lib/ion3/bin/ion-completefile
+lib/ion3/bin/ion-statusd
+lib/ion3/lc/de.lc
+lib/ion3/lc/ext_statusbar.lc
+lib/ion3/lc/ioncore_bindings.lc
+lib/ion3/lc/ioncore_efbb.lc
+lib/ion3/lc/ioncore_ext.lc
+lib/ion3/lc/ioncore_luaext.lc
+lib/ion3/lc/ioncore_misc.lc
+lib/ion3/lc/ioncore_wd.lc
+lib/ion3/lc/ioncore_winprops.lc
+lib/ion3/lc/mod_dock.lc
+lib/ion3/lc/mod_floatws.lc
+lib/ion3/lc/mod_ionws.lc
+lib/ion3/lc/mod_menu.lc
+lib/ion3/lc/mod_mgmtmode.lc
+lib/ion3/lc/mod_panews.lc
+lib/ion3/lc/mod_query.lc
+lib/ion3/lc/mod_query_chdir.lc
+lib/ion3/lc/mod_sm.lc
+lib/ion3/lc/mod_sp.lc
+lib/ion3/lc/mod_statusbar.lc
+lib/ion3/lc/statusd_date.lc
+lib/ion3/lc/statusd_load.lc
+lib/ion3/lc/statusd_mail.lc
+lib/ion3/mod/de.so
+lib/ion3/mod/mod_dock.so
+lib/ion3/mod/mod_floatws.so
+lib/ion3/mod/mod_ionws.so
+lib/ion3/mod/mod_menu.so
+lib/ion3/mod/mod_mgmtmode.so
+lib/ion3/mod/mod_panews.so
+lib/ion3/mod/mod_query.so
+lib/ion3/mod/mod_sm.so
+lib/ion3/mod/mod_sp.so
+lib/ion3/mod/mod_statusbar.so
+share/doc/ion3/ChangeLog
+share/doc/ion3/LICENSE
+share/doc/ion3/README
+share/doc/ion3/RELNOTES
+share/ion3/ion-completeman
+share/ion3/ion-runinxterm
+share/ion3/welcome.cs.txt
+share/ion3/welcome.de.txt
+share/ion3/welcome.fi.txt
+share/ion3/welcome.txt
+share/locale/cs/LC_MESSAGES/ion3.mo
+share/locale/de/LC_MESSAGES/ion3.mo
+share/locale/fi/LC_MESSAGES/ion3.mo
+@dirrm lib/ion3/bin
+@dirrm lib/ion3/lc
+@dirrm lib/ion3/mod
+@dirrm lib/ion3
+@dirrm share/ion3
+@dirrm share/doc/ion3
+@unexec rmdir %D/etc/ion3 2>/dev/null || true
