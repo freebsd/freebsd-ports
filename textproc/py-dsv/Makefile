@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dsv
-PORTVERSION=	1.3.7
+PORTVERSION=	1.4.0
 CATEGORIES=	textproc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	python-${PORTNAME}
@@ -25,7 +25,7 @@ USE_PYDISTUTILS=	yes
 DSV_BASEDIR=	${PYTHONPREFIX_SITELIBDIR}/DSV
 
 post-install:
-	@ printf '#!/bin/sh\n${PYTHON_CMD} ${DSV_BASEDIR}/DSV.py "$$@"\n' \
+	@${PRINTF} '#!/bin/sh\n${PYTHON_CMD} ${DSV_BASEDIR}/DSV.py "$$@"\n' \
 	  >${WRKDIR}/DSV.sh
 	@ ${INSTALL_SCRIPT} ${WRKDIR}/DSV.sh ${PREFIX}/bin/DSV
 .if !defined(NOPORTDOCS)
