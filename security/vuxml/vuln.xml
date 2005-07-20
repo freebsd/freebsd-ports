@@ -32,6 +32,34 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3497d7be-2fef-45f4-8162-9063751b573a">
+    <topic>fetchmail -- remote root/code injection from malicious POP3 server</topic>
+    <affects>
+      <package>
+	<name>fetchmail</name>
+	<range><lt>6.2.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>fetchmail's POP3/UIDL code does not truncate received UIDs properly.
+	  A malicious or compromised POP3 server can thus corrupt fetchmail's
+	  stack and inject code when fetchmail is using UIDL, either through
+	  configuration, or as a result of certain server capabilities. Note
+	  that fetchmail is run as root on some sites, so an attack might
+	  compromise the root account and thus the whole machine.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=212762</url>
+      <freebsdpr>ports/83805</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2005-07-20</discovery>
+      <entry>2005-07-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2e116ba5-f7c3-11d9-928e-000b5d7e6dd5">
     <topic>kdebase -- Kate backup file permission leak</topic>
     <affects>
