@@ -34,6 +34,7 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.1.gemspec
 %%RUBY_SITELIBDIR%%/rubygems/version.rb
 %%RUBY_SITELIBDIR%%/rubygems.rb
 %%RUBY_SITELIBDIR%%/ubygems.rb
+@exec mkdir -p %D/lib/ruby/gems/%%RUBY_VER%%/doc
 @unexec rmdir %D/lib/ruby/gems/%%RUBY_VER%%/cache 2>/dev/null || true
 @unexec rmdir %D/lib/ruby/gems/%%RUBY_VER%%/doc 2>/dev/null || true
 @unexec rmdir %D/lib/ruby/gems/%%RUBY_VER%%/gems/sources-0.0.1/lib 2>/dev/null || true

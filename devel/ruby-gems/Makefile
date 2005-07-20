@@ -7,6 +7,7 @@
 
 PORTNAME=	gems
 PORTVERSION=	0.8.10
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://rubyforge.org/frs/download.php/3700/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
