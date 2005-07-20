@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.chez.com/littleigloo/files/
 DISTNAME=	LinPopUp-${PORTVERSION}.src
 
-MAINTAINER=	ports@oven.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 port of WinPopup
 
 RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/net/samba
