@@ -1,0 +1,11 @@
+--- etc/modules.d/Makefile.in.orig	Wed Jul 20 05:33:26 2005
++++ etc/modules.d/Makefile.in	Wed Jul 20 05:33:26 2005
+@@ -43,7 +43,7 @@
+ 
+ install: all installdirs
+ 	for MCONF in $(MCONFS); do \
+-	  $(INSTALL_DATA) $$MCONF.conf $(DESTDIR)$(pkgconfdir)/modules.d/; \
++	  $(INSTALL_DATA) $$MCONF.conf $(DESTDIR)$(pkgconfdir)/modules.d/$$MCONF.conf.default; \
+ 	done
+ 
+ uninstall:
