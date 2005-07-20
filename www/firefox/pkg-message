@@ -1,13 +1,4 @@
 ======================================================================
-README FOR GNOMEVFS SUPPORT:
-Gnomevfs support is optional (disabled by default), and can be enabled by
-building with ``-DWITH_SMB''.
-
-It is new and currently has issues to be ironed out.
-
-You must delete your components registry for gnomevfs to register:
-
-rm ~/.mozilla/firefox/default.*/compreg.dat
 
 SMB issues:
 Network group, machine, and share browsing does not work correctly.
