@@ -1,0 +1,16 @@
+bin/dipole
+bin/first
+bin/input
+bin/optimise
+bin/output
+bin/yagi
+%%PORTDOCS%%%%DOCSDIR%%/dipole.1.html
+%%PORTDOCS%%%%DOCSDIR%%/first.1.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/input.1.html
+%%PORTDOCS%%%%DOCSDIR%%/optimise.1.html
+%%PORTDOCS%%%%DOCSDIR%%/output.1.html
+%%PORTDOCS%%%%DOCSDIR%%/pattern.jpg
+%%PORTDOCS%%%%DOCSDIR%%/yagi.1.html
+%%PORTDOCS%%%%DOCSDIR%%/yagi.jpg
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
