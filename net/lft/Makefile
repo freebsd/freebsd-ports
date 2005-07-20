@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lft
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	2.31
 CATEGORIES=	net
 MASTER_SITES=	http://www.mainnerve.com/lft/ \
 		http://www.drkangel.org/sw/
