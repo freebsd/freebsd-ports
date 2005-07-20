@@ -1,5 +1,5 @@
---- src/main/Makefile.in.orig	Sun May 22 02:43:44 2005
-+++ src/main/Makefile.in	Wed May 25 17:24:05 2005
+--- src/main/Makefile.in.orig	Sat May 21 15:43:44 2005
++++ src/main/Makefile.in	Fri Jul 15 21:04:42 2005
 @@ -703,8 +703,6 @@
  
  
