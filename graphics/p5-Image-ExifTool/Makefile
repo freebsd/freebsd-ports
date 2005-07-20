@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	5.32
+PORTVERSION=	5.46
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		File::RandomAccess.3 \
 		Image::ExifTool.3 \
+		Image::ExifTool::BMP.3 \
 		Image::ExifTool::BuildTagLookup.3 \
 		Image::ExifTool::Canon.3 \
 		Image::ExifTool::CanonCustom.3 \
@@ -33,14 +34,17 @@ MAN3=		File::RandomAccess.3 \
 		Image::ExifTool::Jpeg2000.3 \
 		Image::ExifTool::Kodak.3 \
 		Image::ExifTool::MIFF.3 \
+		Image::ExifTool::MNG.3 \
 		Image::ExifTool::MakerNotes.3 \
 		Image::ExifTool::Minolta.3 \
 		Image::ExifTool::Nikon.3 \
 		Image::ExifTool::Olympus.3 \
+		Image::ExifTool::PDF.3 \
 		Image::ExifTool::PNG.3 \
 		Image::ExifTool::Panasonic.3 \
 		Image::ExifTool::Pentax.3 \
 		Image::ExifTool::Photoshop.3 \
+		Image::ExifTool::PostScript.3 \
 		Image::ExifTool::PrintIM.3 \
 		Image::ExifTool::Ricoh.3 \
 		Image::ExifTool::Sanyo.3 \
