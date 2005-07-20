@@ -9,7 +9,8 @@ PORTNAME=	lft
 PORTVERSION=	2.31
 CATEGORIES=	net
 MASTER_SITES=	http://www.mainnerve.com/lft/ \
-		http://www.drkangel.org/sw/
+		http://www.drkangel.org/sw/ \
+		${MASTER_SITE_GENTOO:S/%SUBDIR%/distfiles/}
 
 MAINTAINER=	drkangel@drkangel.org
 COMMENT=	Layer 4 Traceroute program
