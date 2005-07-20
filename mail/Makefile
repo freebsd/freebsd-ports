@@ -116,6 +116,7 @@
     SUBDIR += glacier
     SUBDIR += glbiff
     SUBDIR += gld
+    SUBDIR += gmail-notify
     SUBDIR += gmime
     SUBDIR += gmime2
     SUBDIR += gnarwl

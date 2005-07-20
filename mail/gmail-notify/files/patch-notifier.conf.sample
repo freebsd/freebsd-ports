@@ -1,0 +1,13 @@
+*** notifier.conf.sample.ori	Tue Jun  7 13:29:16 2005
+--- notifier.conf.sample	Tue Jun  7 13:35:44 2005
+***************
+*** 7,12 ****
+--- 7,14 ----
+  
+  browserpath="your_browser_path"
+  
++ actionpath="action_to_do_when_new_mails"
++ 
+  voffset=48
+  hoffset=128
+  

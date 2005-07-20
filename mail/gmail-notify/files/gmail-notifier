@@ -1,0 +1,5 @@
+#! /bin/sh
+# Launch notifier
+#
+# David <djulien.bsd@gmail.com>
+cd @DATADIR@ ; python notifier.py
