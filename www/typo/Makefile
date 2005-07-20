@@ -1,6 +1,6 @@
 # New ports collection makefile for:	www/typo
 # Date created:				May 29th 2005
-# Whom:					Jonathan Weiss <jw@innerewut.det>
+# Whom:					Jonathan Weiss <jw@innerewut.de>
 #
 # $FreeBSD$
 #
