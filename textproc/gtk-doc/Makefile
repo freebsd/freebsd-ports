@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.4
 
-MAINTAINER=	gnome@freebsd.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Code documentation system, originally for GTK+
 
 BUILD_DEPENDS=	jade:${PORTSDIR}/textproc/jade \

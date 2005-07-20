@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gcompris
 DISTNAME=	gcompris-${PORTVERSION}
 
-MAINTAINER=	gnome@freebsd.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome2 educational games and activities for kids ages 2 to 10
 
 BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html \

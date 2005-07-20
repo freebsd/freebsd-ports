@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://osdn.dl.sourceforge.net/sourceforge/galeon/
 MASTER_SITE_SUBDIR=	${PORTNAME:S/2$//}
 
-MAINTAINER=	gnome@freebsd.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNOME 2 Web browser based on gecko (the Mozilla rendering engine)
 
 BUILD_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}

@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	marcus@freebsd.org
+MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Audio player for the Gnome 2 desktop environment
 
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \

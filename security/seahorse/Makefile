@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=sources/${PORTNAME}/0.7
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	gnome@freebsd.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A front end for GnuPG
 
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
