@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Test-Deep
-PORTVERSION=	0.087
+PORTVERSION=	0.088
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	az@inec.ru
 COMMENT=	Test data structures for differences deeply
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/NoWarnings.pm:${PORTSDIR}/devel/p5-Test-NoWarnings \
