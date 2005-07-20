@@ -1444,6 +1444,7 @@
     SUBDIR += ruby-sysvipc
     SUBDIR += ruby-textbuf
     SUBDIR += ruby-tzfile
+    SUBDIR += rubygem-activesupport
     SUBDIR += rudiments
     SUBDIR += rvi
     SUBDIR += rvm
