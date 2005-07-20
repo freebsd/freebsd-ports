@@ -22,6 +22,12 @@ USE_GMAKE=	yes
 ALL_TARGET=	# empty
 MAN1=		cnet.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64 or ia64"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|8.3|8.4|g ; \
 		 s|83|84|g' ${WRKSRC}/src/Makefile.freebsd
@@ -43,4 +49,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/DOC/images/* ${DOCSDIR}/images
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
