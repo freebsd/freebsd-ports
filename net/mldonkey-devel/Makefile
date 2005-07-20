@@ -81,6 +81,10 @@ PORTDOCS=	${DOCFILES}
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		"Does not compile on ${ARCH}"
+.endif
+
 ### Development version
 ## Thus, we will use non standard threading library
 ## We will switch from libpthread to libthr which should produce
