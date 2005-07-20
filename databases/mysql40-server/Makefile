@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	4.0.24
-PORTREVISION?=	1
+PORTVERSION=	4.0.25
+PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQL-4.0
@@ -109,11 +109,6 @@ PLIST_SUB=	VER=${PORTVERSION}
 MAN1=		isamchk.1 isamlog.1 mysqld.1 \
 		mysqld_safe.1 perror.1 replace.1
 
-.if !defined(NOPORTDOCS)
-DOCS=		manual.html manual.txt manual_toc.html
-PORTDOCS=	${DOCS} Flags
-.endif
-
 INFO=		mysql
 
 pre-fetch:
@@ -146,13 +141,6 @@ post-patch:
 post-install:
 .if !defined(PACKAGE_BUILDING)
 	@${SETENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/Flags
-.for doc in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/Docs/${doc} ${DOCSDIR}
-.endfor
-	@${INSTALL_DATA} ${WRKSRC}/Docs/Flags/*.gif ${DOCSDIR}/Flags
 .endif
 
 .else
