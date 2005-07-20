@@ -1,0 +1,15 @@
+Rails is a web-application framework for the MVC pattern that includes
+both a template engine, controller framework, and object-relational
+mapping package. Everything needed to develop web-apps that can run on
+CGI, FastCGI, and mod_ruby
+
+Being a full-stack framework means that all layers are built to work
+seamlessly together. That way you Don't Repeat Yourself (DRY) and you
+can use a single language from top to bottom. Everything from templates
+to control flow to business logic is written in Ruby - The language of
+love for industry heavy-weights.
+
+WWW: http://www.rubyonrails.com
+
+- Jonathan Weiss
+jw@innerewut.de

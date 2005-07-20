@@ -720,6 +720,7 @@
     SUBDIR += ruby-webunit
     SUBDIR += rubygem-actionpack
     SUBDIR += rubygem-actionwebservice
+    SUBDIR += rubygem-rails
     SUBDIR += sarg
     SUBDIR += sbox-dtc
     SUBDIR += scout
