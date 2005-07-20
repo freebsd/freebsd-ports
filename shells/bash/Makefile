@@ -25,7 +25,7 @@ PATCHFILES+=		${PORTNAME}${PORTVERSION:R:S/.//g}-0${patch}:bash
 PATCHLEVEL=		${patch}
 .endfor
 
-MAINTAINER=		eik@FreeBSD.org
+MAINTAINER=		obrien@FreeBSD.org
 COMMENT=		The GNU Project's Bourne Again SHell
 
 IGNOREFILES=		FAQ
