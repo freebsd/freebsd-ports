@@ -10293,6 +10293,7 @@ reallyslick	ports/graphics/reallyslick
 recmpeg		ports/multimedia/recmpeg
 recode		ports/converters/recode
 recombine	ports/biology/recombine
+redet		ports/textproc/redet
 redir		ports/net/redir
 redland		ports/textproc/redland
 redland-bindings	ports/textproc/redland-bindings
