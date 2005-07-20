@@ -1,6 +1,6 @@
 --- makefile.orig	Sat May 21 14:03:45 2005
-+++ makefile	Wed Jul 13 19:30:52 2005
-@@ -7,19 +7,18 @@
++++ makefile	Tue Jul 19 18:49:52 2005
+@@ -7,10 +7,9 @@
  RELEASE = 1
  USEPAK = 1
  
@@ -14,18 +14,6 @@
  ICONDIR = $(PREFIX)/share/icons/
  KDE = $(PREFIX)/share/applnk/Games/Arcade/
  GNOME = $(PREFIX)/share/gnome/apps/Games/
- 
- SAFEDIR = /tmp/
- 
--CFLAGS += `sdl-config --cflags` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUSEPAK=$(USEPAK)
--CFLAGS += -DPAKNAME=\"$(PAKNAME)\" -DPAKLOCATION=\"$(DATADIR)\" -DSAFEDIR=\"$(SAFEDIR)\" -DUNIX -DGAMEPLAYMANUAL=\"$(DOCDIR)manual.html\" -Wall
--LIBS = `sdl-config --libs` -lSDL_mixer -lSDL_image -lSDL_ttf
-+CFLAGS += `/usr/local/bin/sdl11-config --cflags` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUSEPAK=$(USEPAK)
-+CFLAGS += -DPAKNAME=\"$(PAKNAME)\" -DPAKLOCATION=\"$(DATADIR)\" -DSAFEDIR=\"$(SAFEDIR)\" -DUNIX -DGAMEPLAYMANUAL=\"$(DOCDIR)manual.html\" -Wall
-+LIBS = `/usr/local/bin/sdl11-config --libs` -lSDL_mixer -lSDL_image -lSDL_ttf
- 
- OBJS += CAudio.o 
- OBJS += CBase.o
 @@ -51,7 +50,7 @@
  PAKOBJS = CFileData.o pak.o
  
