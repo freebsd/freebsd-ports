@@ -1,0 +1,11 @@
+--- Makefile.in.orig   Sat Nov 29 00:14:08 2003
++++ Makefile.in        Fri Jul  8 16:23:06 2005
+@@ -95,7 +95,7 @@
+ VERSION = @VERSION@
+ YACC = @YACC@
+
+-SUBDIRS = src doc po
++SUBDIRS = src doc
+
+ CLEANFILES = *~
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

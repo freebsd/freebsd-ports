@@ -9,24 +9,12 @@ PORTNAME=	aide
 PORTVERSION=	0.10
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITE_SOURCEFORGE+= http://unc.dl.sourceforge.net/%SUBDIR%/ \
-		http://umn.dl.sourceforge.net/%SUBDIR%/ \
-		http://twtelecom.dl.sourceforge.net/%SUBDIR%/ \
-		http://aleron.dl.sourceforge.net/%SUBDIR%/ \
-		http://easynews.dl.sourceforge.net/%SUBDIR%/ \
-		http://switch.dl.sourceforge.net/%SUBDIR%/ \
-		http://cesnet.dl.sourceforge.net/%SUBDIR%/ \
-		http://flow.dl.sourceforge.net/%SUBDIR%/ \
-		http://keihanna.dl.sourceforge.net/%SUBDIR%/ \
-		http://heanet.dl.sourceforge.net/%SUBDIR%/ 
-MASTER_SITE_SUBDIR=	${PORTNAME}
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.cs.tut.fi/~rammer/ \
+		http://www.cs.tut.fi/~rammer/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A replacement and extension for Tripwire
-
-BROKEN=		Incomplete pkg-plist
 
 LIB_DEPENDS=	mhash.2:${PORTSDIR}/security/mhash
 
@@ -42,13 +30,15 @@ CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 MAN1=		aide.1
 MAN5=		aide.conf.5
 
+SUB_FILES=	pkg-message
+
 post-install:
 	@${INSTALL_DATA} ${FILESDIR}/aide.conf.freebsd ${PREFIX}/etc/aide.conf.sample
 	@if [ ! -d ${PREFIX}/etc/aide.conf ]; then \
 		${INSTALL_DATA} ${FILESDIR}/aide.conf.freebsd ${PREFIX}/etc/aide.conf ; \
 	fi
 	@if [ ! -d /var/db/aide/databases ]; then \
-		${MKDIR} -p /var/db/aide/databases; \
+		${MKDIR} /var/db/aide/databases; \
 		${CHOWN} root:wheel /var/db/aide ; \
 		${CHOWN} root:wheel /var/db/aide/databases ; \
 		${CHMOD} 0700 /var/db/aide ; \
