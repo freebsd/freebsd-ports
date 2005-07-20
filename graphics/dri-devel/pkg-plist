@@ -5,6 +5,7 @@ lib/modules/dri/mach64_dri.so
 lib/modules/dri/mga_dri.so
 lib/modules/dri/r128_dri.so
 lib/modules/dri/r200_dri.so
+lib/modules/dri/r300_dri.so
 lib/modules/dri/radeon_dri.so
 lib/modules/dri/savage_dri.so
 lib/modules/dri/sis_dri.so

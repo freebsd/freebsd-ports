@@ -6,21 +6,29 @@
 #
 
 PORTNAME=	dri
-PORTVERSION=	6.2.20050419
+PORTVERSION=	6.2.20050719
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~anholt/dri/
 MASTER_SITE_SUBDIR=	anholt
-DISTFILES=	Mesa-20050419.tar.bz2	\
-		drm-20050419.tar.bz2
+DISTFILES=	Mesa-20050719.tar.bz2	\
+		drm-20050719.tar.bz2	\
+		r300-20050719.tar.bz2
+
+PATCH_SITES=	http://people.freebsd.org/~anholt/dri/
+PATCHFILES=	patch-r300_drm.bz2
 
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	DRI OpenGL drivers snapshot
 
 BUILD_DEPENDS=	makedepend:${X_IMAKE_PORT}
 
-CONFLICTS=	xfree86-dri-* dri-6.2_*
+EXTRA_DISTFILES= \
+		Mesa-20050719.tar.bz2	\
+		drm-20050719.tar.bz2
+
+CONFLICTS=	xfree86-dri-[0-9]* dri-6.2_*
 
 WRKSRC=		${WRKDIR}/Mesa
 USE_X_PREFIX=	yes
@@ -41,6 +49,11 @@ DRIMODDIR=	${PREFIX}/lib/modules/dri
 USE_GCC=        3.4
 .endif
 
+post-extract:
+	(cd ${WRKSRC}/src/mesa/drivers/dri && \
+		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		${DISTDIR}/r300-20050719.tar.bz2 ${EXTRACT_AFTER_ARGS} )
+
 .if ${X_WINDOW_SYSTEM:L} != xorg
 IGNORE=	requires libGL from X.Org.
 .endif
@@ -59,6 +72,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/mga_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/r128_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/r200_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/r300_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/radeon_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/savage_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/sis_dri.so ${DRIMODDIR}
