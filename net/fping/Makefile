@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_to-ipv6
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Quickly ping N hosts w/o flooding the network
 
+PLIST_FILES=	sbin/fping
+
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--bindir="${PREFIX}/sbin"

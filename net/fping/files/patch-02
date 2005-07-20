@@ -1,5 +1,5 @@
 --- fping.c.orig	Mon Jan 21 02:06:30 2002
-+++ fping.c	Sat Oct 25 21:33:01 2003
++++ fping.c	Tue Jul 12 18:11:30 2005
 @@ -42,7 +42,6 @@
   * IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
   * WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
@@ -63,6 +63,17 @@
  	ident = getpid() & 0xFFFF;
  
  	verbose_flag = 1;
+@@ -502,8 +504,8 @@
+ 			break;
+ 		
+ 		case 'r':
+-			if( !( retry = ( u_int )atoi( optarg ) ) )
+-				usage();
++			retry = ( u_int )atoi( optarg );
++
+ 
+ 			break;
+ 		
 @@ -823,6 +825,7 @@
  
  		while( fgets( line, 132, ping_file ) )
