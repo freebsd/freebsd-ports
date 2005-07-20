@@ -1,0 +1,19 @@
+A qmail-queue replacement to filter mail traffic and more.
+It supports:
+	* Antivirus executing
+	* body filtering
+	* subject filtering
+	* attachment blocking
+	* quarantine
+	* white/black list
+	* single line logging for qmail and many features.
+
+Project Page:
+WWW: http://www.enderunix.org/qsheff
+
+Author: 
+
+Baris SIMSEK
+simsek@enderunix.org
+EnderUNIX SDT @ Turkey
+http://www.enderunix.org/simsek/

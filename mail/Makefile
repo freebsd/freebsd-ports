@@ -421,6 +421,7 @@
     SUBDIR += qpopper
     SUBDIR += qscan
     SUBDIR += qsf
+    SUBDIR += qsheff
     SUBDIR += qtools
     SUBDIR += queue-fix
     SUBDIR += queue-repair
