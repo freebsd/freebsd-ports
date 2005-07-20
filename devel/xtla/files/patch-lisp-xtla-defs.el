@@ -1,18 +1,19 @@
---- lisp/xtla-defs.el.orig	Sun Nov  7 17:53:03 2004
-+++ lisp/xtla-defs.el	Thu Nov 11 09:15:52 2004
-@@ -1605,13 +1605,13 @@
-   :group 'xtla)
+--- lisp/xtla-defs.el.orig	Sat Jul  9 04:01:48 2005
++++ lisp/xtla-defs.el	Wed Jul 20 09:43:15 2005
+@@ -1758,14 +1758,14 @@
  
- ;;;###autoload
--(defcustom tla-diff-executable "diff"
-+(defcustom tla-diff-executable "gdiff"
+ (defcustom tla-diff-executable (tla--first-set
+                                 tla-site-diff-executable
+-                                "diff")
++                                "gdiff")
    "*The name of the diff executable."
    :type 'string
    :group 'xtla)
  
- ;;;###autoload
--(defcustom tla-patch-executable "patch"
-+(defcustom tla-patch-executable "gpatch"
+ (defcustom tla-patch-executable (tla--first-set
+                                  tla-site-patch-executable
+-                                 "patch")
++                                 "gpatch")
    "*The name of the patch executable."
    :type 'string
    :group 'xtla)

@@ -1,5 +1,11 @@
+%%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-autoconf.el
+%%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-autoconf.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-autoloads.el
 %%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-autoloads.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-baz.el
+%%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-baz.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-bconfig.el
+%%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-bconfig.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-browse.el
 %%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-browse.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-build.el
@@ -9,6 +15,10 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-defs.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-emacs.el
 %%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-emacs.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-lisp.el
+%%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-lisp.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-site.el
+%%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-site.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-tests.el
 %%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-tests.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-tips.el
