@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pcmanx
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.8
 CATEGORIES=	chinese net
 MASTER_SITES=	http://pcmanx.csie.net/release/ \
 		http://bbs.ilc.edu.tw/~chinsan/pcmanx/
@@ -32,9 +32,7 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|--tag=CXX||g' ${WRKSRC}/src/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
