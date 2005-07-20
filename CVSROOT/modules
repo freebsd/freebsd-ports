@@ -10168,6 +10168,7 @@ qscanplot	ports/math/qscanplot
 qscheme		ports/lang/qscheme
 qscintilla	ports/x11-toolkits/qscintilla
 qsf		ports/mail/qsf
+qsheff		ports/mail/qsheff
 qslim		ports/graphics/qslim
 qssl		ports/devel/qssl
 qsstv		ports/comms/qsstv
