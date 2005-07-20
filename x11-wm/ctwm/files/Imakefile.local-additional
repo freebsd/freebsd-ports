@@ -1,0 +1,9 @@
+
+XCOMM We might actually prefer using something from X11BASE here instead,
+XCOMM since that's where we technically install XPM stuff (though it's
+XCOMM the same thing as USRLIBDIR)
+USER_XPMLIBDIR = -L$(USRLIBDIR)
+USER_XPMINCDIR = -I$(INCROOT)
+
+USER_JPEGLIBDIR = -L$(LOCALBASE)/lib
+USER_JPEGINCDIR = -I$(LOCALBASE)/include

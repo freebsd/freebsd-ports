@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	ctwm
-PORTVERSION=	3.6
-PORTREVISION=	1
+PORTVERSION=	3.7
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://slpc1.epfl.ch/public/software/ctwm/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ctwm-images${EXTRACT_SUFX}
+MASTER_SITES=	http://ctwm.free.lp.se/dist/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	An extension to twm, with support for multiple virtual screens, etc
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		ctwm.1
 
-post-extract:
-	@(cd ${WRKSRC} && ${LN} -s ../xpm xpm)
+pre-configure:
+	${CP} ${WRKSRC}/Imakefile.local-template ${WRKSRC}/Imakefile.local
+	${CAT} ${FILESDIR}/Imakefile.local-additional >> ${WRKSRC}/Imakefile.local
 
 .include <bsd.port.mk>
