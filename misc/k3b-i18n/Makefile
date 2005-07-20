@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	k3b-i18n
-PORTVERSION=	0.11
-PORTREVISION=	2
+PORTVERSION=	0.12.2
 CATEGORIES?=	misc kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/-i18n//}
@@ -21,12 +20,5 @@ USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
-
-post-extract:
-	@${TOUCH} ${WRKSRC}/config.h.in
-
-post-patch:
-	@${REINPLACE_CMD} -e 's/xx//' ${WRKSRC}/po/Makefile.in
 
 .include <bsd.port.mk>
