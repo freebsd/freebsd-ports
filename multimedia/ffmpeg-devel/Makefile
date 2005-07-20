@@ -77,6 +77,10 @@ LIB_FILES=	libavcodec/libavcodec.a libavformat/libavformat.a
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
+BROKEN=		"Does not compile on ${ARCH}"
+.endif
+
 ##
 ## default options
 ##
