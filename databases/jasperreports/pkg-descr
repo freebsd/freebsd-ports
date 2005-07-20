@@ -8,4 +8,6 @@ applications, including J2EE or Web applications, to generate dynamic content.
 Its main purpose is to help creating page oriented, ready to print documents in
 a simple and flexible manner.
 
+If you need a GUI, please see the port devel/ireport.
+
 WWW:	http://jasperreports.sourceforge.net/
