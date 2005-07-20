@@ -1,0 +1,10 @@
+jbootstrap/bin/.java_wrapper
+jbootstrap/bin/java
+jbootstrap/bin/javac
+jbootstrap/bin/javah
+jbootstrap/libexec/InvokerGen
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm jbootstrap/libexec
+@dirrm jbootstrap/bin
+@dirrm jbootstrap

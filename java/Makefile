@@ -76,6 +76,7 @@
     SUBDIR += javavmwrapper
     SUBDIR += javel
     SUBDIR += jaxen
+    SUBDIR += jbootstrap
     SUBDIR += jboss2
     SUBDIR += jboss3
     SUBDIR += jboss4
