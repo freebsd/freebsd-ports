@@ -1,0 +1,11 @@
+--- datas/Makefile.orig	Wed Jul 20 12:23:29 2005
++++ datas/Makefile	Wed Jul 20 12:23:39 2005
+@@ -10,7 +10,7 @@
+ 	$(INSTALL_DATA) mime.conf $(DIR)
+ 	$(INSTALL_DATA) efltk.conf $(DIR)
+ 	$(MKINSTALLDIRS) $(bindir)
+-	$(INSTALL_PROGRAM) startede $(bindir)
++	$(INSTALL_SCRIPT) startede $(bindir)
+ 
+ uninstall:
+ 	$(RM) -r $(DIR)

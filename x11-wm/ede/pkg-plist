@@ -3,19 +3,20 @@ bin/econtrol
 bin/edewm
 bin/edisplayconf
 bin/efinder
-bin/ehelpbook
 bin/eiconman
 bin/eiconsconf
 bin/einstaller
+bin/ekeyconf
+bin/elauncher
 bin/emenueditor
 bin/epanelconf
 bin/erun
 bin/esvrconf
 bin/etimedate
 bin/etip
+bin/evolume
 bin/ewmconf
 bin/eworkpanel
-bin/glob
 bin/startede
 share/ede/.ede/desktop/Terminal.desktop
 share/ede/.ede/ede.conf
@@ -37,10 +38,19 @@ share/ede/.ede/schemes/None.scheme
 share/ede/.ede/schemes/Tubus.scheme
 share/ede/.ede/schemes/TypicalBrown.scheme
 share/ede/.ede/wmanager.conf
+share/ede/doc/authors.html
+share/ede/doc/changelog.html
+share/ede/doc/copying.html
 share/ede/doc/ede-small.gif
+share/ede/doc/ede.png
+share/ede/doc/getede.png
+share/ede/doc/help.html
 share/ede/doc/index.html
+share/ede/doc/logoinvert100.png
+share/ede/doc/style.css
 share/ede/icons/16x16/3floppy_mount.png
 share/ede/icons/16x16/3floppy_unmount.png
+share/ede/icons/16x16/about.png
 share/ede/icons/16x16/access.png
 share/ede/icons/16x16/access2.png
 share/ede/icons/16x16/applix.png
@@ -75,6 +85,7 @@ share/ede/icons/16x16/decrypted.png
 share/ede/icons/16x16/desktop.png
 share/ede/icons/16x16/document.png
 share/ede/icons/16x16/down.png
+share/ede/icons/16x16/econtrol.png
 share/ede/icons/16x16/edit.png
 share/ede/icons/16x16/editcopy.png
 share/ede/icons/16x16/editcut.png
@@ -82,6 +93,9 @@ share/ede/icons/16x16/editdelete.png
 share/ede/icons/16x16/editpaste.png
 share/ede/icons/16x16/editshred.png
 share/ede/icons/16x16/edittrash.png
+share/ede/icons/16x16/efinder.png
+share/ede/icons/16x16/ehelpbook.png
+share/ede/icons/16x16/emenueditor.png
 share/ede/icons/16x16/empty2.png
 share/ede/icons/16x16/empty_ascii.png
 share/ede/icons/16x16/encrypted.png
@@ -160,6 +174,7 @@ share/ede/icons/16x16/linuxconf.png
 share/ede/icons/16x16/lock.png
 share/ede/icons/16x16/lockoverlay.png
 share/ede/icons/16x16/log.png
+share/ede/icons/16x16/logout.png
 share/ede/icons/16x16/mail_generic.png
 share/ede/icons/16x16/make.png
 share/ede/icons/16x16/midi.png
@@ -487,6 +502,7 @@ share/ede/programs/System/Kterm.desktop
 share/ede/programs/System/UNIX-regular.desktop
 share/ede/programs/System/UNIX.desktop
 share/ede/programs/System/Vnterm.desktop
+share/ede/programs/System/rxvt.desktop
 share/ede/programs/Utilities/.directory
 share/ede/programs/Utilities/calc.desktop
 share/ede/programs/Utilities/finder.desktop
@@ -494,37 +510,38 @@ share/ede/programs/Utilities/fstabedit.desktop
 share/ede/programs/Utilities/sccalc.desktop
 share/ede/programs/Utilities/tips.desktop
 share/ede/programs/Utilities/xmag.desktop
-share/locale/fi/LC_MESSAGES/edewm.mo
-share/locale/id/LC_MESSAGES/ecolorconf.mo
-share/locale/id/LC_MESSAGES/econtrol.mo
-share/locale/id/LC_MESSAGES/edewm.mo
-share/locale/id/LC_MESSAGES/edisplayconf.mo
-share/locale/id/LC_MESSAGES/efinder.mo
-share/locale/id/LC_MESSAGES/ehelpbook.mo
-share/locale/id/LC_MESSAGES/eiconman.mo
-share/locale/id/LC_MESSAGES/eiconsconf.mo
-share/locale/id/LC_MESSAGES/emenueditor.mo
-share/locale/id/LC_MESSAGES/epanelconf.mo
-share/locale/id/LC_MESSAGES/erun.mo
-share/locale/id/LC_MESSAGES/etimedate.mo
-share/locale/id/LC_MESSAGES/etip.mo
-share/locale/id/LC_MESSAGES/ewmconf.mo
-share/locale/id/LC_MESSAGES/eworkpanel.mo
+share/locale/hu/LC_MESSAGES/ecolorconf.mo
+share/locale/hu/LC_MESSAGES/econtrol.mo
+share/locale/hu/LC_MESSAGES/edewm.mo
+share/locale/hu/LC_MESSAGES/edisplayconf.mo
+share/locale/hu/LC_MESSAGES/efinder.mo
+share/locale/hu/LC_MESSAGES/eiconman.mo
+share/locale/hu/LC_MESSAGES/eiconsconf.mo
+share/locale/hu/LC_MESSAGES/einstaller.mo
+share/locale/hu/LC_MESSAGES/elauncher.mo
+share/locale/hu/LC_MESSAGES/emenueditor.mo
+share/locale/hu/LC_MESSAGES/epanelconf.mo
+share/locale/hu/LC_MESSAGES/esvrconf.mo
+share/locale/hu/LC_MESSAGES/etimedate.mo
+share/locale/hu/LC_MESSAGES/evolume.mo
+share/locale/hu/LC_MESSAGES/ewmconf.mo
+share/locale/hu/LC_MESSAGES/eworkpanel.mo
 share/locale/ru/LC_MESSAGES/ecolorconf.mo
 share/locale/ru/LC_MESSAGES/econtrol.mo
 share/locale/ru/LC_MESSAGES/edewm.mo
 share/locale/ru/LC_MESSAGES/edisplayconf.mo
 share/locale/ru/LC_MESSAGES/efinder.mo
-share/locale/ru/LC_MESSAGES/ehelpbook.mo
 share/locale/ru/LC_MESSAGES/eiconman.mo
 share/locale/ru/LC_MESSAGES/eiconsconf.mo
 share/locale/ru/LC_MESSAGES/einstaller.mo
+share/locale/ru/LC_MESSAGES/elauncher.mo
 share/locale/ru/LC_MESSAGES/emenueditor.mo
 share/locale/ru/LC_MESSAGES/epanelconf.mo
 share/locale/ru/LC_MESSAGES/erun.mo
 share/locale/ru/LC_MESSAGES/esvrconf.mo
 share/locale/ru/LC_MESSAGES/etimedate.mo
 share/locale/ru/LC_MESSAGES/etip.mo
+share/locale/ru/LC_MESSAGES/evolume.mo
 share/locale/ru/LC_MESSAGES/ewmconf.mo
 share/locale/ru/LC_MESSAGES/eworkpanel.mo
 share/locale/sk/LC_MESSAGES/ecolorconf.mo
@@ -532,25 +549,26 @@ share/locale/sk/LC_MESSAGES/econtrol.mo
 share/locale/sk/LC_MESSAGES/edewm.mo
 share/locale/sk/LC_MESSAGES/edisplayconf.mo
 share/locale/sk/LC_MESSAGES/efinder.mo
-share/locale/sk/LC_MESSAGES/ehelpbook.mo
 share/locale/sk/LC_MESSAGES/eiconman.mo
 share/locale/sk/LC_MESSAGES/eiconsconf.mo
 share/locale/sk/LC_MESSAGES/einstaller.mo
+share/locale/sk/LC_MESSAGES/elauncher.mo
 share/locale/sk/LC_MESSAGES/emenueditor.mo
 share/locale/sk/LC_MESSAGES/epanelconf.mo
 share/locale/sk/LC_MESSAGES/erun.mo
 share/locale/sk/LC_MESSAGES/esvrconf.mo
 share/locale/sk/LC_MESSAGES/etimedate.mo
 share/locale/sk/LC_MESSAGES/etip.mo
+share/locale/sk/LC_MESSAGES/evolume.mo
 share/locale/sk/LC_MESSAGES/ewmconf.mo
 share/locale/sk/LC_MESSAGES/eworkpanel.mo
 share/locale/sr/LC_MESSAGES/ecolorconf.mo
 share/locale/sr/LC_MESSAGES/econtrol.mo
 share/locale/sr/LC_MESSAGES/edewm.mo
 share/locale/sr/LC_MESSAGES/edisplayconf.mo
-share/locale/sr/LC_MESSAGES/ehelpbook.mo
 share/locale/sr/LC_MESSAGES/eiconman.mo
 share/locale/sr/LC_MESSAGES/eiconsconf.mo
+share/locale/sr/LC_MESSAGES/elauncher.mo
 share/locale/sr/LC_MESSAGES/emenueditor.mo
 share/locale/sr/LC_MESSAGES/epanelconf.mo
 share/locale/sr/LC_MESSAGES/erun.mo
@@ -572,11 +590,7 @@ share/locale/sr/LC_MESSAGES/eworkpanel.mo
 @dirrm share/ede/icons/16x16
 @dirrm share/ede/icons
 @dirrm share/ede/doc
-@dirrm share/ede/apps
 @dirrm share/ede/.ede/schemes
-@dirrm share/ede/.ede/programs
-@dirrm share/ede/.ede/favourites
 @dirrm share/ede/.ede/desktop
-@dirrm share/ede/.ede/apps
 @dirrm share/ede/.ede
 @dirrm share/ede
