@@ -25,6 +25,10 @@ USE_PERL5_BUILD=true
 # This port only works on i386 right now.
 ONLY_FOR_ARCHS=	i386
 
+.if ${OSVERSION} >= 600031
+BROKEN=		"Does not compile on FreeBSD >= 6.0"
+.endif
+
 .if ${OSVERSION} < 400015
 BROKEN="Requires FreeBSD 4.0 or newer"
 .endif
