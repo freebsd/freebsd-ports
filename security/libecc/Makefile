@@ -26,6 +26,10 @@ CONFIGURE_ENV+=	LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 .if ${OSVERSION} < 501103
 # Work around bsd.port.mk bug: Does not currently set up MAKE_ENV for gcc 3.2 and 3.3
 MAKE_ENV+=	CC="${CC}" CXX="${CXX}"
