@@ -1,0 +1,37 @@
+# $FreeBSD$
+# Ruby gem module common settings
+
+
+BUILD_DEPENDS+=	${RUBYGEMBIN}:${PORTSDIR}/devel/ruby-gems
+RUN_DEPENDS+=	${BUILD_DEPENDS}
+
+PKGNAMEPREFIX=	rubygem-
+EXTRACT_SUFX=	.gem
+NO_EXTRACT=	YES
+DIST_SUBDIR=	rubygem
+
+USE_REINPLACE=	yes
+
+NO_BUILD=	yes
+
+REV=		1.8
+GEMS_BASE_DIR=	lib/ruby/gems/${REV}
+GEMS_DIR=	${GEMS_BASE_DIR}/gems
+DOC_DIR=	${GEMS_BASE_DIR}/doc
+CACHE_DIR=	${GEMS_BASE_DIR}/cache
+SPEC_DIR=	${GEMS_BASE_DIR}/specifications
+
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}" \
+		REV="${REV}" \
+		GEMS_BASE_DIR="lib/ruby/gems/${REV}" \
+		GEMS_DIR="${GEMS_BASE_DIR}/gems" \
+		DOC_DIR="${GEMS_BASE_DIR}/doc" \
+		CACHE_DIR="${GEMS_BASE_DIR}/cache" \
+		SPEC_DIR="${GEMS_BASE_DIR}/specifications" \
+		PORT="${PORTNAME}-${PORTVERSION}" \
+		EXTRACT_SUFX="${EXTRACT_SUFX}"
+
+RUBYGEMBIN=	${LOCALBASE}/bin/gem
+
+do-install:
+	${RUBYGEMBIN} install --install-dir ${PREFIX}/lib/ruby/gems/${REV} ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
