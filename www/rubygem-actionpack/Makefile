@@ -1,18 +1,18 @@
 # Ports collection makefile for:	gem-actionpack
 # Date created:				27 May 2005
-# Whom:					Jonathan Weiss (<jw@innerewut.net>)
+# Whom:					Jonathan Weiss (<jw@innerewut.de>)
 #
 # $FreeBSD$
 
 PORTNAME=	actionpack
-PORTVERSION=	1.8.1
+PORTVERSION=	1.9.1
 CATEGORIES=	www ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/4149/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/5166/
 
-MAINTAINER=	jw@innerewut.net
+MAINTAINER=	jw@innerewut.de
 COMMENT=	Action Controller and Action View of Rails MVC Framework
 
-BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-1.0.4.gemspec:${PORTSDIR}/devel/rubygem-activesupport
+BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-1.1.1.gemspec:${PORTSDIR}/devel/rubygem-activesupport
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .include <bsd.port.pre.mk>
