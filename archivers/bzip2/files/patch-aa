@@ -1,6 +1,6 @@
---- Makefile	2002/02/14 03:34:07	1.1
-+++ Makefile	2002/02/14 03:53:34
-@@ -2,14 +2,16 @@
+--- Makefile.orig	Thu Feb 17 14:28:24 2005
++++ Makefile	Tue Jul 19 02:39:56 2005
+@@ -2,13 +2,15 @@
  SHELL=/bin/sh
  
  # To assist in cross-compiling
@@ -10,16 +10,15 @@
  RANLIB=ranlib
  LDFLAGS=
  
- # Suitably paranoid flags to avoid bugs in gcc-2.7
  BIGFILES=-D_FILE_OFFSET_BITS=64
--CFLAGS=-Wall -Winline -O2 -fomit-frame-pointer -fno-strength-reduce $(BIGFILES)
+-CFLAGS=-Wall -Winline -O -g $(BIGFILES)
 +CFLAGS?=-O2
 +CFLAGS+=-Wall -Winline -fomit-frame-pointer -fno-strength-reduce $(BIGFILES)
 +SOFLAGS=-fPIC -fpic -DPIC
  
  # Where you want it installed when you do 'make install'
  PREFIX=/usr
-@@ -23,10 +25,18 @@
+@@ -22,10 +24,18 @@
        decompress.o \
        bzlib.o
  
@@ -41,7 +40,7 @@
  
  bzip2recover: bzip2recover.o
  	$(CC) $(CFLAGS) $(LDFLAGS) -o bzip2recover bzip2recover.o
-@@ -40,6 +50,10 @@
+@@ -39,6 +49,10 @@
  		$(RANLIB) libbz2.a ; \
  	fi
  
@@ -52,9 +51,9 @@
  check: test
  test: bzip2
  	@cat words1
-@@ -98,9 +112,25 @@
+@@ -96,9 +110,25 @@
+ 	echo ".so man1/bzdiff.1" > $(PREFIX)/man/man1/bzcmp.1
  
- distclean: clean
  clean: 
 -	rm -f *.o libbz2.a bzip2 bzip2recover \
 +	rm -f *.o *.so libbz2.a libbz2.so.1 bzip2 bzip2recover \

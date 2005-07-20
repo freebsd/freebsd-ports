@@ -14,15 +14,8 @@ lib/libbz2.a
 lib/libbz2.so
 lib/libbz2.so.1
 %%PORTDOCS%%%%DOCSDIR%%/manual.ps.bz2
-%%PORTDOCS%%%%DOCSDIR%%/manual.texi
-%%PORTDOCS%%%%DOCSDIR%%/manual_1.html
-%%PORTDOCS%%%%DOCSDIR%%/manual_2.html
-%%PORTDOCS%%%%DOCSDIR%%/manual_3.html
-%%PORTDOCS%%%%DOCSDIR%%/manual_4.html
-%%PORTDOCS%%%%DOCSDIR%%/manual_toc.html
+%%PORTDOCS%%%%DOCSDIR%%/manual.xml
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
-%%PORTDOCS%%%%DOCSDIR%%/manual_abt.html
-%%PORTDOCS%%%%DOCSDIR%%/manual_ovr.html
 %%PORTDOCS%%%%DOCSDIR%%/manual.pdf
 %%PORTDOCS%%%%DOCSDIR%%/bzip2.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
