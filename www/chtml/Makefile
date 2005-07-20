@@ -12,7 +12,7 @@ MASTER_SITES=   http://people.delphiforums.com/gjc/
 DISTNAME=       chtml
 EXTRACT_SUFX=   .tgz
 
-MAINTAINER=     david+ports@bushong.net
+MAINTAINER=     ports@FreeBSD.org
 COMMENT=	Chunked HTML templating engine
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/csiod:${PORTSDIR}/lang/siod
