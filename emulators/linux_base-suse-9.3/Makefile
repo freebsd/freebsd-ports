@@ -1,67 +1,152 @@
-# New ports collection makefile for:	linux_base-suse-9.2
-# Date created:				2005-01-11
-# Whom:					trevor
+# New ports collection makefile for:		linux_base-suse-9.3
+# Date created:					2005-07-12
+# Whom:						trevor
 # based on ports/emulators/linux_base by Marcel Moolenaar and others
+# and on techniques from mbrolavox port by edwin and pav
 #
-# $FreeBSD$
 # $FreeBSD$
 #
 
 PORTNAME=		linux_base-suse
-PORTVERSION=		9.2
+PORTVERSION=		9.3
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_SUSE} ${MASTER_SITE_SUSE:S/$/:update/}
-MASTER_SITE_SUBDIR=	i386/9.2/suse/i586 i386/update/9.2/rpm/i586/:update
-DISTFILES=	\
-	suse-release-9.2-3.1.i586.rpm \
-	glibc-locale-2.3.3-118.i586.rpm \
-	glibc-2.3.3-118.i586.rpm \
-	filesystem-9.2-2.1.i586.rpm \
-	libattr-2.4.16-2.i586.rpm \
-	db-4.2.52-90.i586.rpm \
-	compat-gdbm-1.8.0-4.i586.rpm \
-	glib-1.2.10-589.i586.rpm \
-	bash-3.0-8.2.i586.rpm:update \
-	ncurses-5.4-65.i586.rpm \
-	readline-5.0-1.2.i586.rpm:update \
-	zlib-1.2.1-74.i586.rpm \
-	bzip2-1.0.2-347.i586.rpm \
-	libzio-0.1-4.i586.rpm \
-	info-4.7-6.i586.rpm \
-	grep-2.5.1-431.i586.rpm \
-	desktop-file-utils-0.7-2.1.i586.rpm \
-	coreutils-5.2.1-32.i586.rpm \
-	popt-1.7-190.i586.rpm \
-	insserv-1.00.5-6.2.i586.rpm \
-	setserial-2.17-579.i586.rpm \
-	libstdc++-3.3.4-11.i586.rpm \
-	slang-1.4.9-123.i586.rpm \
-	libacl-2.2.25-2.i586.rpm \
-	libselinux-1.16-3.i586.rpm \
-	rpm-4.1.1-191.i586.rpm \
-	libgcc-3.3.4-11.i586.rpm \
-	termcap-2.0.8-878.i586.rpm
+MASTER_SITE_SUBDIR=	i386/9.3/suse/i586 i386/update/9.3/rpm/i586/:update
 
-MAINTAINER=		trevor@FreeBSD.org
-COMMENT=		Basic packages for Linux mode from SUSE 9.2/i386
+MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Basic packages for Linux mode from SUSE 9.3/i386
 
 EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
-CONFLICTS=		linux_base-7* linux_base-debian* \
-			linux_base-gentoo* linux_base-rh* linux_base-suse-9.1*
+CONFLICTS=	linux_base-7* linux_base-debian* linux_base-gentoo* linux_base-rh* \
+		linux_base-suse-9.1* linux_base-suse-9.2*
 
-RESTRICTED=	"binaries under GNU GPL:  http://www.gnu.org/licenses/gpl.txt"
-ONLY_FOR_ARCHS=		amd64 i386
-DIST_SUBDIR=		rpm/i386/suse/9.2
-PREFIX=			${LINUXBASE}
+RPMLIST=	${.CURDIR}/files/rpmlist.conf
+
+.if !defined(OPTIONS)
+OPTIONS!=	/usr/bin/awk -F\| '{ print $$1 " \"" $$3 "\" " $$4 }' ${RPMLIST}
+.endif
+.if !defined(ALLOPTIONS)
+ALLOPTIONS!=	/usr/bin/awk -F\| '{ print $$1 }' ${RPMLIST}
+.for ii in ${ALLOPTIONS}
+FILE_${ii}!=	/usr/bin/grep -w ^${ii} ${RPMLIST} | /usr/bin/awk -F\| '{ print $$2 }'
+.endfor
+.endif
+
+.include <bsd.port.pre.mk>
+
+# Equivalents to some of the RPMs that may optionally be installed by this port
+# may also be installed separately by other ports.
+#
+# accessibility/linux-atk
+.if defined(WITH_atk)
+CONFLICTS+=linux-atk-1.2.*
+.endif
+# audio/linux-arts
+.if defined(WITH_arts)
+CONFLICTS+=linux-arts-1.0.*
+.endif
+# audio/linux-libaudiofile
+.if defined(WITH_audiofile)
+CONFLICTS+=linux-audiofile-0.*
+.endif
+# devel/linux-glib2
+.if defined(WITH_glib2)
+CONFLICTS+=linux-glib2-2.2.*
+.endif
+# devel/linux-libglade
+.if defined(WITH_libglade0)
+CONFLICTS+=linux-libglade-0.*
+.endif
+# devel/linux-sdl12
+.if defined(WITH_sdl)
+CONFLICTS+=linux-sdl12-1.2.*
+.endif
+# graphics/linux-imlib
+.if defined(WITH_imlib)
+CONFLICTS+=linux-imlib-1.9.*
+.endif
+# graphics/linux-jpeg
+.if defined(WITH_jpeg)
+CONFLICTS+=linux-jpeg-6*
+.endif
+# graphics/linux-libmng
+.if defined(WITH_libmng)
+CONFLICTS+=linux-libmng-1.0.*
+.endif
+# graphics/linux_mesa3
+.if defined(WITH_xorgmesa)
+CONFLICTS+=linux_mesa3-3.*
+.endif
+# graphics/linux-png
+.if defined(WITH_libpng)
+CONFLICTS+=linux-png-1.2.*
+.endif
+# graphics/linux-tiff
+.if defined(WITH_libtiff)
+CONFLICTS+=linux-tiff-3.*
+.endif
+# textproc/linux-expat
+.if defined(WITH_expat)
+CONFLICTS+=linux-expat-1.*
+.endif
+# textproc/linux-libxml
+.if defined(WITH_libxml1)
+CONFLICTS+=linux-xlibxml-1.*
+.endif
+# x11/linux-XFree86-libs
+.if defined(WITH_xorglibs)
+CONFLICTS+=linux-XFree86-libs-4.*
+.endif
+# x11/linux-gnomelibs
+.if defined(WITH_gnomelibs)
+CONFLICTS+=linux-gnomelibs-1.*
+.endif
+# x11-fonts/linux-fontconfig
+.if defined(WITH_fontconfig)
+CONFLICTS+=linux-fontconfig-2.*
+.endif
+# x11-toolkits/linux-openmotif
+.if defined(WITH_openmotif)
+CONFLICTS+=linux-openmotif-2.2.*
+.endif
+# x11-toolkits/linux-gtk
+.if defined(WITH_gtk1)
+CONFLICTS+=linux-gtk-1.*
+.endif
+# x11-toolkits/linux-gtk2
+.if defined(WITH_gtk2)
+CONFLICTS+=linux-gtk2-2.*
+.endif
+# x11-toolkits/linux-pango
+.if defined(WITH_pango)
+CONFLICTS+=linux-pango-1.*
+.endif
+
+DIST_SUBDIR=		rpm/i386/suse/9.3
+IS_INTERACTIVE=	yes
 NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
+ONLY_FOR_ARCHS=		amd64 i386
 PLIST=			${WRKDIR}/plist
+PREFIX=			${LINUXBASE}
+RESTRICTED=		"to distribute, must offer sources:  http://www.gnu.org/licenses/gpl.txt"
+
+.for ii in ${ALLOPTIONS}
+. if defined(WITH_${ii})
+MYDISTFILES+=	${FILE_${ii}}
+. endif
+.endfor
+.if defined(MYDISTFILES)
+DISTFILES=	${MYDISTFILES}
+DIST_SUBDIR=	rpm/i386/suse/9.3
+.else
+DISTFILES=	# none
+.endif
 
 # Avoid cyclic dependency.
 .undef USE_LINUX
 
-.include <bsd.port.pre.mk>
 REMOVE_DIRS=		boot dev home initrd root tmp var/tmp usr/local usr/tmp
 REMOVE_FILES=		bin/df bin/su etc/exports etc/group etc/localtime \
 			etc/motd etc/passwd etc/printcap etc/services \
@@ -77,19 +162,33 @@ FALLBACK_ELF_MIB=	kern.fallback_elf_brand
 LINUX_ELF=		3
 PREVIOUS_ELF!=		/sbin/sysctl -n ${FALLBACK_ELF_MIB}
 
+distinfo:
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fetch NO_CHECKSUM=yes \
+		DISABLE_SIZE=yes
+	@if [ -f ${MD5_FILE} ]; then ${CAT} /dev/null > ${MD5_FILE}; fi
+	@(cd ${DISTDIR}; \
+	for file in ${_CKSUMFILES}; do \
+	${MD5} $$file >> ${MD5_FILE}; \
+		if [ -z "${NO_SIZE}" ]; then \
+			${ECHO_CMD} "SIZE ($$file) = "`${LS} -ALln $$file | ${AWK} '{print $$5}'` \
+				>> ${MD5_FILE}; \
+	fi; \
+	done)
+
 do-extract:
 #
-# Handle the loading of the linux loadable kernel module if required.
+# Handle the loading of the Linux loadable kernel module if required.
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${MKDIR} ${WRKSRC}/var/lib/rpm ${WRKSRC}/var/tmp ${WRKSRC}/lib
 	@cd ${WRKSRC}/lib && ${LN} -sf libtermcap.so.2.0.8 libtermcap.so.2
 	LC_ALL=C rpm --initdb --root ${WRKSRC} --dbpath /var/lib/rpm
 #
-# Install all packages. Ignore dependencies just like the Red Hat installer.
-# Also, set the ELF fallback brand to Linux, so that we don't have to do
+# Set the ELF fallback brand to Linux, so we need not do
 # anything special to run statically linked binaries.
 	@/sbin/sysctl -w ${FALLBACK_ELF_MIB}=${LINUX_ELF}
-	@for ii in ${DISTFILES:S/:update//}; do \
+#
+# Install all packages, ignoring dependencies.
+	@for ii in ${MYDISTFILES:S/:update//}; do \
 		LC_ALL=C rpm -U --root ${WRKSRC} --dbpath /var/lib/rpm \
 			--nodeps --replacepkgs --ignoreos --ignorearch \
 			${DISTDIR}/${DIST_SUBDIR}/$$ii; \
@@ -99,8 +198,8 @@ do-extract:
 	done
 	@/sbin/sysctl -w ${FALLBACK_ELF_MIB}=${PREVIOUS_ELF}
 #
-# Install yp.conf as a hint to NIS users and make sure there's an
-# mtab in etc, albeit an empty one. This is needed in a couple of
+# Install yp.conf as a hint to NIS users and make sure there is an
+# mtab in etc, albeit an empty one.  This is needed in a couple of
 # cases, notably staroffice6.
 #
 	${INSTALL} ${COPY} -m 644 ${FILESDIR}/yp.conf ${WRKSRC}/etc
@@ -128,8 +227,8 @@ do-install:
 # directory.  If hard-linking is possible (installing to the same mount point),
 # no disk space is consumed in the installation step.  The fallback is to copy,
 # and cpio is noisy in this case.
-	cd ${WRKSRC} && ${FIND} * | ${CPIO} -dlmp ${PREFIX}
-	${FIND} ${PREFIX} -type d -exec ${CHMOD} 755 \{\} \;
+	@cd ${WRKSRC} && ${FIND} * | ${CPIO} -dlmp ${PREFIX}
+	@${FIND} ${PREFIX} -type d -exec ${CHMOD} 755 \{\} \;
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
