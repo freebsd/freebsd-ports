@@ -6,24 +6,18 @@
 #
 
 PORTNAME=	cksfv
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.3.5
 CATEGORIES=	security
-MASTER_SITES=	http://www.fodder.org/cksfv/
+MASTER_SITES=	http://www.modeemi.fi/~shd/foss/cksfv/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create or manipulate Simple File Verification (SFV) checksum files
 
-BUILD_WRKSRC=	${WRKSRC}/src
-INSTALL_WRKSRC=	${BUILD_WRKSRC}
-USE_GMAKE=	yes
-ALL_TARGET=	${PORTNAME}
-MAKE_ENV+=	VERSION=${PORTVERSION}
+PLIST_FILES=	bin/cksfv
 
-post-install:
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/cksfv
-	@ ${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/cksfv
-.endif
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man --prefix=${PREFIX}
+
+MAN1=	cksfv.1
 
 .include <bsd.port.mk>
