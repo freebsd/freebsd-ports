@@ -30,4 +30,14 @@ PLIST_FILES=	\
 		bin/icotool \
 		bin/wrestool
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
+.include <bsd.port.post.mk>
