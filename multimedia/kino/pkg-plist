@@ -92,4 +92,3 @@ share/mime/packages/kino.xml
 @dirrm share/gnome/kino
 @unexec rmdir %D/share/gnome/applications 2>/dev/null || true
 @unexec rmdir %D/share/gnome/pixmaps 2>/dev/null || true
-@unexec rmdir %D/share/mime/packages 2>/dev/null || true
