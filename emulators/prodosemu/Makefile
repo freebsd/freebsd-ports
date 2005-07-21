@@ -18,10 +18,17 @@ COMMENT=	A text based Apple IIe ProDOS emulator
 RESTRICTED=	apple.rom copyright is owned by Apple and cannot be distributed.
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
 
+PLIST_FILES=	bin/prodos share/apple2/prodos-2e.rom
+PLIST_DIRS=	share/apple2
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	README
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/prodosemu
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/prodosemu
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
