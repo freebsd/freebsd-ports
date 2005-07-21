@@ -28,8 +28,8 @@ RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
 IGNORE=		This port requires perl 5.8 or above.
 .endif
 
-.if !exists(${DISTDIR}/${DISTFILE}) && !defined(PACKAGE_BUILDING)
-IGNORE= Please fetch ${DISTFILE} from http://www.eyesbeyond.com/freebsddom/java/jbootstrap.html and place it in ${DISTDIR}
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+IGNORE= Please fetch ${DISTNAME}${EXTRACT_SUFX} from http://www.eyesbeyond.com/freebsddom/java/jbootstrap.html and place it in ${DISTDIR}
 .endif
 
 .include <bsd.port.post.mk>
