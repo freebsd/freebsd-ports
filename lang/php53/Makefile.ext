@@ -215,7 +215,7 @@ CONFIGURE_ARGS+=--with-mysqli=${LOCALBASE}/bin/mysql_config
 
 USE_MYSQL=	yes
 DEFAULT_MYSQL_VER=	41
-BROKEN_WITH_MYSQL=	323 40 50
+BROKEN_WITH_MYSQL=	323 40
 .endif
 
 .if ${PHP_MODNAME} == "ncurses"
