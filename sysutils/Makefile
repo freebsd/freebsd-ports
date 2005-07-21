@@ -529,6 +529,7 @@
     SUBDIR += videogen
     SUBDIR += virtualmin
     SUBDIR += vobcopy
+    SUBDIR += vttest
     SUBDIR += wait_on
     SUBDIR += watchdog
     SUBDIR += webjob
