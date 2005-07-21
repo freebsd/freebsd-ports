@@ -32,6 +32,36 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="43a7b0a7-f9bc-11d9-b473-00061bc2ad93">
+    <topic>PowerDNS -- LDAP backend fails to escape all queries</topic>
+    <affects>
+      <package>
+	<name>powerdns</name>
+	<range><lt>2.9.18</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The LDAP backend in PowerDNS has issues with escaping
+	  queries which could cause connection errors.  This would
+	  make it possible for a malicious user to temporarily blank
+	  domains.</p>
+	<blockquote cite="http://doc.powerdns.com/security-policy.html">
+	<p>This is known to affect all releases prior to 2.9.18.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2302</cvename>
+      <url>http://doc.powerdns.com/security-policy.html</url>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112155941310297&amp;w=2</url>
+    </references>
+    <dates>
+      <discovery>2005-07-16</discovery>
+      <entry>2005-07-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3497d7be-2fef-45f4-8162-9063751b573a">
     <topic>fetchmail -- remote root/code injection from malicious POP3 server</topic>
     <affects>
