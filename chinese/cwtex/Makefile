@@ -32,4 +32,10 @@ do-install:
 	${CAT} ${FILESDIR}/config.ps >> ${PREFIX}/share/texmf/dvips/config/config.ps
 	mktexlsr
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+BROKEN=		"Does not install on ia64 or sparc64"
+.endif
+
+.include <bsd.port.post.mk>
