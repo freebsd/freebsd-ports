@@ -1991,6 +1991,7 @@ epiwm		ports/x11-wm/epiwm
 epix		ports/graphics/epix
 epm		ports/devel/epm
 epplets		ports/x11-wm/epplets
+eps		ports/mail/eps
 eps2png		ports/graphics/eps2png
 epsilon		ports/graphics/epsilon
 epsmerge	ports/print/epsmerge
