@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abiword
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.4
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -45,6 +45,10 @@ MAKEFILE=	GNUmakefile
 ABIVERSION=	2.4
 PLIST_SUB+=	ABIVERSION=${ABIVERSION}
 WRKSRC=		${WRKDIR}/abiword-${PORTVERSION}/abi
+
+EXTERNALS=	MSVC* abipbx abiword-docs abiword-plugins expat fribidi \
+		libiconv libpng pbx popt wv zlib
+EXTRACT_AFTER_ARGS=| ${TAR} -xpf - ${EXTERNALS:C,^,--exclude ${DISTNAME}/,}
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug \
