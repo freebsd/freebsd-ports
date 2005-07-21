@@ -22,14 +22,17 @@ QMAIL_DIR?=	/var/qmail
 NO_SIZE=	yes
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/mail/${DISTNAME}
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PLIST_FILES=	sbin/usendmail
 PORTDOCS=	NEWS README
+SUB_FILES=	pkg-message
+SUB_LIST=	QMAIL_DIR=${QMAIL_DIR}
 
-do-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's,/var/qmail,${QMAIL_DIR},' \
 	    ${WRKSRC}/src/usendmail.c
+	@${REINPLACE_CMD} -e 's,^CC=,CC\?=,' \
+	    ${WRKSRC}/src/Makefile
 
 do-build:
 	cd ${WRKSRC} && ./package/build
@@ -40,11 +43,6 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/src && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
-
-post-install:
-	@${SED} -e 's:%%PREFIX%%:${PREFIX}:g' \
-	    -e's:%%QMAIL_DIR%%:${QMAIL_DIR}:g' <pkg-message \
-	    >${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
