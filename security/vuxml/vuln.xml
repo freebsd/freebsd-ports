@@ -81,12 +81,15 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
-      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=212762</url>
+      <cvename>CAN-2005-2335</cvename>
       <freebsdpr>ports/83805</freebsdpr>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=212762</url>
+      <url>http://fetchmail.berlios.de/fetchmail-SA-2005-01.txt</url>
     </references>
     <dates>
       <discovery>2005-07-20</discovery>
       <entry>2005-07-20</entry>
+      <modified>2005-06-21</modified>
     </dates>
   </vuln>
 
