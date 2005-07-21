@@ -3,13 +3,13 @@
 @exec mv %D/lib/%%FIREFOX%%/chrome/installed-chrome.txt %D/lib/%%FIREFOX%%/chrome/installed-chrome.txt.orig
 @exec mv %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js.orig
 @exec mv %D/lib/%%FIREFOX%%/defaults/profile/bookmarks.html %D/lib/%%FIREFOX%%/defaults/profile/bookmarks.html.orig
-@exec mv %D/lib/%%FIREFOX%%/defaults/profile/prefs.js %D/lib/%%FIREFOX%%/defaults/profile/prefs.js.orig
 lib/%%FIREFOX%%/browserconfig.properties
 lib/%%FIREFOX%%/chrome/chrome.rdf
 lib/%%FIREFOX%%/chrome/installed-chrome.txt
 lib/%%FIREFOX%%/chrome/ja-JP.jar
 lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js
 lib/%%FIREFOX%%/defaults/profile/bookmarks.html
+lib/%%FIREFOX%%/defaults/profile/user.js
 lib/%%FIREFOX%%/searchplugins/FreeBSD_PR.png
 lib/%%FIREFOX%%/searchplugins/FreeBSD_PR.src
 lib/%%FIREFOX%%/searchplugins/amazon-ja.png
@@ -33,4 +33,3 @@ lib/%%FIREFOX%%/searchplugins/yahoo-ja.src
 @unexec mv %D/lib/%%FIREFOX%%/chrome/installed-chrome.txt.orig %D/lib/%%FIREFOX%%/chrome/installed-chrome.txt
 @unexec mv %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js.orig %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js
 @unexec mv %D/lib/%%FIREFOX%%/defaults/profile/bookmarks.html.orig %D/lib/%%FIREFOX%%/defaults/profile/bookmarks.html
-@unexec mv %D/lib/%%FIREFOX%%/defaults/profile/prefs.js.orig %D/lib/%%FIREFOX%%/defaults/profile/prefs.js
