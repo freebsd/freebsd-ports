@@ -1,7 +1,7 @@
 ********************************
 If your XIM wouldn't work properly, try to make a file
 
-"${HOME}/.mozilla/firefox/${USER}/*.slt/user.js"
+"${HOME}/.mozilla/firefox/*.default/user.js"
 
 with below content;
 --

@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	firefox
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	chinese www
 MASTER_SITES=	http://bbs.ilc.edu.tw/~chinsan/firefox/
 PKGNAMESUFFIX=	-zh_CN
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}.${PORTVERSION}
-EXTRACT_SUFX=	.xpi
 
 # Maintainership available: drop me a line if interested :p
 MAINTAINER=	chinsan.tw@gmail.com
