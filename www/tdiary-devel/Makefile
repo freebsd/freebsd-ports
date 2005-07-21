@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tdiary
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES?=	www ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.tdiary.org/download/
@@ -22,6 +22,7 @@ CONFLICTS?=	ja-tdiary-devel-[0-9]*
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_RUBY=	yes
 RUBY_VER=	1.8
+#TDIARY_LANG	ja:Japanese en:English zh:Traditional-Chinese
 
 RUBY_SHEBANG_FILES=	index.rb update.rb misc/convert2.rb misc/plugin/squeeze.rb \
 			misc/plugin/windex.rb misc/plugin/rast-register.rb \
@@ -33,7 +34,7 @@ TDIARYDIR=	${EXAMPLESDIR}${PKGNAMESUFFIX}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .if  !defined(TDIARY_LANG)
-TDIARY_LANG=	tdiary.conf-en
+TDIARY_LANG=	en
 .endif
 .if defined(WITH_TDIARY_UCONV)
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
@@ -54,15 +55,7 @@ do-install:
 		-e 's,@@@@LANG@@@@,${TDIARY_LANG},g' \
 		${FILESDIR}/tdiaryinst.rb.in > ${TDIARYDIR}/tdiaryinst.rb
 	@${CP} -pR ${WRKSRC}/ ${TDIARYDIR}
-.if ${TDIARY_LANG} == tdiary.conf-en
-	@${ECHO_MSG} "===>  TDIARY : English Language messages support"
 	@${RUBY} -i -pe 'sub(/%Y-%m-%d/, "%Y-%m-%d [%a]")' ${TDIARYDIR}/misc/i18n/tdiary.conf.sample-en
-.else
-	@${ECHO_MSG} "===>  TDIARY : Japanese Language messages support"
-	@${RUBY} -i -pe 'sub(/%Y-%m-%d/, "%Y-%m-%d [%J]")' ${TDIARYDIR}/tdiary.conf.sample
-	@${ECHO_MSG}
-	@${ECHO_MSG} "===>  When you install in home directory, let's choose plugin of 'jdate.rb' to just display 'YOUBI'."
-.endif
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${TDIARYDIR}
 
 post-install:
