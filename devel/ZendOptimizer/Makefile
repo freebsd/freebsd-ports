@@ -7,6 +7,7 @@
 
 PORTNAME=	ZendOptimizer
 PORTVERSION=	2.5.10a
+PORTREVISION=	1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd${VER}-i386
 
@@ -46,7 +47,7 @@ and place it in ${DISTDIR}.\n
 .endif
 
 .if ${PHP_VER} == 4
-ZEND_PATH=	4.3.x
+ZEND_PATH=	4.4.x
 .else
 ZEND_PATH=	5.0.x
 .endif
