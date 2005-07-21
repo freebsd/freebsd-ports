@@ -1,0 +1,23 @@
+EPS (Email Parsing System) is intended to give people the ability
+to write their own email processing tools. 
+Whether you want to process incoming and outgoing emails, 
+or just analyze a message,
+this package is intended to aid in that endeavor.
+
+Features
+
+    * Written in C
+    * API is documented
+    * Fast and efficient
+
+Usage
+How we use EPS and how others use EPS
+
+    * Tracking incoming and outgoing email messages based on threads
+    * Archiving and searching against threads
+    * Demographics collection via email
+    * Email client
+    * Create custom autoresponders
+    * We even used it to parse simple LDIF files!
+
+WWW: http://www.inter7.com/index.php?page=eps

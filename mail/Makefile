@@ -78,6 +78,7 @@
     SUBDIR += emil
     SUBDIR += enigmail
     SUBDIR += enigmail-thunderbird
+    SUBDIR += eps
     SUBDIR += esmtp
     SUBDIR += evolution
     SUBDIR += exact
