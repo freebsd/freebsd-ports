@@ -20,6 +20,8 @@ BUILD_DEPENDS=	gosh:${PORTSDIR}/${GAUCHE_PORT} \
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 RUN_DEPENDS=	gosh:${PORTSDIR}/${GAUCHE_PORT}
 
+BROKEN=		Incorrect pkg-plist
+
 GAUCHE_PORT=	lang/gauche
 
 WRKSRC=		${WRKDIR}/dbm
