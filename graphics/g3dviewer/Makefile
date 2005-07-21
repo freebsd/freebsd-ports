@@ -7,25 +7,26 @@
 #
 
 PORTNAME=	g3dviewer
-PORTVERSION=	0.0.3
-PORTREVISION=	1
+PORTVERSION=	0.1.0
+PORTREVISION=	0
 CATEGORIES=	graphics
-MASTER_SITES=	#
-
-DEPRECATED=	"master site disappeared"
-EXPIRATION_DATE=2005-07-31
+MASTER_SITES=	http://automagically.de/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D file viewer for GTK+
 
-LIB_DEPENDS=	gtkgl:${PORTSDIR}/x11-toolkits/gtkglarea
+LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
 
-USE_GNOME=	gtk12
+USE_GNOME=	gtk20 pkgconfig
 USE_MESA=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	\
-	CPPFLAGS="${PTHREAD_CFLAGS} `${GTK_CONFIG} --cflags` -fPIC" \
-	LDFLAGS="${PTHREAD_LIBS} `${GTK_CONFIG} --libs` -lGL -lGLU -lglut"
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib"
+
+post-install:
+	@${FIND} ${DATADIR} ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
