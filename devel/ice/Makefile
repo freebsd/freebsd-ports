@@ -32,6 +32,10 @@ CFLAGS+=	-DNDEBUG
 BROKEN=	"does not compile on systems prior to 5.x"
 .endif
 
+.if ${ARCH} == "ia64"
+BROKEN=		"Does not compile on ia64"
+.endif
+
 .if ((${ARCH} != i386) && (${ARCH} != powerpc))
 MAKE_ENV=	LP64=yes
 .endif
