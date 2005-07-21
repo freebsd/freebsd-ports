@@ -32,6 +32,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e72fd82b-fa01-11d9-bc08-0001020eed82">
+    <topic>dnrd -- remote buffer and stack overflow vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>dnrd</name>
+	<range><lt>2.19.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Natanael Copa reports that dnrd is vulnerable to a remote
+	  buffer overflow and a remote stack overflow.  These
+	  vulnerabilities can be triggered by sending invalid DNS
+	  packets to dnrd.</p>
+	<p>The buffer overflow could potentially be used to execute
+	  arbitrary code with the permissions of the dnrd daemon.
+	  Note that dnrd runs in an chroot environment and runs as
+	  non-root.</p>
+	<p>The stack overflow vulnerability can cause dnrd to
+	  crash.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2315</cvename>
+      <cvename>CAN-2005-2316</cvename>
+      <freebsdpr>ports/83851</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2005-07-21</discovery>
+      <entry>2005-07-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="43a7b0a7-f9bc-11d9-b473-00061bc2ad93">
     <topic>PowerDNS -- LDAP backend fails to escape all queries</topic>
     <affects>
