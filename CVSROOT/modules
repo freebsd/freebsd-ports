@@ -9562,6 +9562,7 @@ postgresql-contrib	ports/databases/postgresql-contrib
 postgresql-devel	ports/databases/postgresql-devel
 postgresql-docs	ports/databases/postgresql-docs
 postgresql-jdbc	ports/databases/postgresql-jdbc
+postgresql-libpgeasy	ports/databases/postgresql-libpgeasy
 postgresql-libpq++	ports/databases/postgresql-libpq++
 postgresql-libpqxx	ports/databases/postgresql-libpqxx
 postgresql-odbc	ports/databases/postgresql-odbc
