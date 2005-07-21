@@ -1,6 +1,6 @@
---- src/wp/main/unix/GNUmakefile.in.orig	Sun Jun 12 16:12:49 2005
-+++ src/wp/main/unix/GNUmakefile.in	Sun Jun 12 16:13:12 2005
-@@ -735,8 +735,6 @@
+--- src/wp/main/unix/GNUmakefile.in.orig	Wed Jul 20 22:27:50 2005
++++ src/wp/main/unix/GNUmakefile.in	Wed Jul 20 22:28:01 2005
+@@ -760,8 +760,6 @@
  install-exec-local:	
  	@if test -f $(DESTDIR)/$(bindir)/abiword; then \
  	  echo "$(DESTDIR)/$(bindir)/abiword is a regular file - I'm not going to create a link."; \

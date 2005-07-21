@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abiword
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.4
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -36,6 +36,10 @@ MD5_FILE=	${.CURDIR}/../abiword-devel/distinfo
 
 ABIVERSION=	2.4
 PLIST_SUB+=	ABIVERSION=${ABIVERSION}
+
+EXTERNALS=	MSVC* abipbx abiword-docs expat fribidi libiconv libpng pbx \
+		popt wv zlib
+EXTRACT_AFTER_ARGS=| ${TAR} -xpf - ${EXTERNALS:C,^,--exclude ${DISTNAME}/,}
 
 # NOTE: Please, keep those knobs in the ABC's order.
 
