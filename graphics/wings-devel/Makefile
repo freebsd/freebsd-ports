@@ -27,6 +27,12 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 504001
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	@${CP} ${FILESDIR}/wings.sh ${WRKSRC}/wings.sh
 	@${REINPLACE_CMD} -e 's|!!PREFIX!!|${PREFIX}|g' ${WRKSRC}/wings.sh
@@ -44,4 +50,4 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/wings.sh ${PREFIX}/bin/wings
 	@${LN} -sf ${DISTNAME} ${PREFIX}/lib/erlang/lib/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
