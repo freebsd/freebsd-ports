@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkcvs
-PORTVERSION=	7.2.3
+PORTVERSION=	7.2.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.twobarleycorns.net/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
@@ -16,24 +16,22 @@ COMMENT=	Tcl/Tk frontends to CVS and diff
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
-NO_BUILD=	yes
-MAN1=		tkcvs.1
 USE_REINPLACE=	yes
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-.endif
+NO_BUILD=	yes
+
+MAN1=		tkcvs.1
 
 WISH=		wish8.4
 TCLSH=		tclsh8.4
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|wish|${WISH}|g' ${WRKSRC}/tkcvs/tkcvs.tcl \
-		${WRKSRC}/tkdiff/tkdiff ${WRKSRC}/doinstall.tcl
+	@${GREP} -lR "exec wish " ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|exec wish |exec ${WISH} |g'
 
 do-install:
 	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${TCLSH} doinstall.tcl -nox ${PREFIX}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 .for file in FAQ vendor5readme.pdf
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor

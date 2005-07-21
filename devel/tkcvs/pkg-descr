@@ -1,1 +1,8 @@
-This is a port of tkcvs and tkdiffB, the Tcl/Tk frontends to CVS and diff 
+TkCVS is a cross-platform, TCL/Tk-based GUI for the CVS configuration
+management system. It displays the status of the files in the current
+working directory, and provides buttons and menus to execute CVS
+commands on the selected files. The Module Browser extends CVS with
+facilities for a user-friendly listing of modules in the repository.
+TkDiff is included for browsing and merging your changes.
+
+WWW: http://www.twobarleycorns.net/tkcvs.html
