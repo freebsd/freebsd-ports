@@ -71,10 +71,8 @@ CONFIGURE_ARGS+=--enable-video-opengl
 .if exists(/usr/include/libusbhid.h)
 CONFIGURE_ENV+=	USB_LIBS=-lusbhid
 CFLAGS+=	-DHAVE_LIBUSBHID_H
-.elif exists(/usr/include/libusb.h)
-CONFIGURE_ENV+=	USB_LIBS=-lusb
 .else
-CONFIGURE_ARGS+=--enable-joystick=no
+CONFIGURE_ENV+=	USB_LIBS=-lusb
 .endif
 
 MAN3!=		${CAT} ${FILESDIR}/man3
