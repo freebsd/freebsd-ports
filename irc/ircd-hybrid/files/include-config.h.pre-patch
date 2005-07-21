@@ -1,5 +1,5 @@
---- include/config.h.orig	Thu Feb  6 01:46:11 2003
-+++ include/config.h	Thu Jan 29 20:16:13 2004
+--- include/config.h.orig	Sun Oct 26 03:08:12 2003
++++ include/config.h	Thu Jul  7 11:27:45 2005
 @@ -90,7 +90,9 @@
  /*#define IRCD_PREFIX     "IRCD$BASEDIR:"*/
  #define DPATH           "IRCD$BASEDIR:"
@@ -10,7 +10,7 @@
  #define LOGPATH         "IRCD$LOGDIR:"
  
  #undef  MODPATH
-@@ -134,13 +136,13 @@
+@@ -137,13 +139,13 @@
  /* dirs */
  #define DPATH   IRCD_PREFIX                                                     
  #define BINPATH IRCD_PREFIX "/bin/"
@@ -30,3 +30,12 @@
  
  /* files */
  #define SPATH   BINPATH "/ircd"                 /* ircd executable */
+@@ -158,7 +160,7 @@
+ #define RPATH   ETCPATH "/ircd.rsa"             /* ircd rsa private keyfile */
+ #define MPATH   ETCPATH "/ircd.motd"            /* MOTD file */
+ #define LPATH   LOGPATH "/ircd.log"             /* ircd logfile */
+-#define PPATH   ETCPATH "/ircd.pid"             /* pid file */
++#define PPATH   "/var/run/ircd.pid"             /* pid file */
+ #define OPATH   ETCPATH "/opers.motd"           /* oper MOTD file */
+ #define LIPATH  ETCPATH "/links.txt"            /* cached links file */
+ #endif /* !VMS */
