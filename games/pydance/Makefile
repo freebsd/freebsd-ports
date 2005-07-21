@@ -8,7 +8,10 @@
 PORTNAME=	pydance
 PORTVERSION=	1.0.3
 CATEGORIES=	games
-MASTER_SITES=	http://www.icculus.org/pyddr/
+MASTER_SITES=	\
+		http://offload1.icculus.org/pyddr/ \
+		http://www.icculus.org/pyddr/ \
+		http://www.informatik.uni-frankfurt.de/~polzer/distfiles/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz ${SONGS}
 DIST_SUBDIR=	pydance
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
