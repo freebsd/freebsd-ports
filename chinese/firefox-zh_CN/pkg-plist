@@ -9,6 +9,7 @@ lib/%%FIREFOX%%/chrome/installed-chrome.txt
 lib/%%FIREFOX%%/chrome/zh-CN.jar
 lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js
 lib/%%FIREFOX%%/defaults/profile/bookmarks.html
+lib/%%FIREFOX%%/defaults/profile/user.js
 lib/%%FIREFOX%%/searchplugins/baidu.gif
 lib/%%FIREFOX%%/searchplugins/baidu.src
 lib/%%FIREFOX%%/searchplugins/eBaycn.gif
