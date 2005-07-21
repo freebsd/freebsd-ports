@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	avr-libc
-PORTVERSION=	1.2.3
-PORTREVISION=	4
+PORTVERSION=	1.2.4
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
@@ -28,8 +27,6 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		pdflatex:${PORTSDIR}/print/teTeX \
 		fig2dev:${PORTSDIR}/print/transfig
 .endif
-
-BROKEN=		Install fails
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
