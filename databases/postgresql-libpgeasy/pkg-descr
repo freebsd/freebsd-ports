@@ -1,0 +1,7 @@
+Pgeasy is a PostgreSQL API that is a cleaner interface to the libpq
+library, more like an SQL 4GL interface.
+
+There are examples in share/examples/postgresql/libpqeasy
+and docs in share/doc/postgresql/libpqeasy
+
+WWW: http://gborg.postgresql.org/project/libpgeasy/
