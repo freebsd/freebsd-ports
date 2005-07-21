@@ -28,4 +28,10 @@ CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
 		CPPFLAGS=-I${LOCALBASE}/include \
 		LIBS=-L${LOCALBASE}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
+.include <bsd.port.post.mk>
