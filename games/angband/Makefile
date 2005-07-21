@@ -6,21 +6,26 @@
 #
 
 PORTNAME=	angband
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.6
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.sunet.se/pub/games/Angband/Source/ \
+MASTER_SITES=	ftp://ftp.thangorodrim.net/pub/angband/Source/ \
+		ftp://ftp.sunet.se/pub/games/Angband/Source/ \
 		ftp://ftp.planetmirror.com/pub/angband/Source/
 
 MAINTAINER=	mph@freebsd.org
 COMMENT=	Rogue-like game with color, X11 support
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-setgid=games
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
-CONFIGURE_ARGS=	--with-setgid=games --with-x
+CONFIGURE_ARGS+=	--with-x
 .else
-CONFIGURE_ARGS=	--with-setgid=games --with-x=no
+CONFIGURE_ARGS+=	--with-x=no
 .endif
+
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 pre-fetch:
 .if !defined(WITHOUT_X11)
@@ -28,5 +33,8 @@ pre-fetch:
 .else
 	@${ECHO_MSG} "Building without X support"
 .endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
