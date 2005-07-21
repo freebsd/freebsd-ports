@@ -27,7 +27,7 @@ USE_REINPLACE=		yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
+.if ${ARCH} == "sparc64" || ${ARCH} == "amd64"
 BROKEN="Configure Fails"
 .endif
 
