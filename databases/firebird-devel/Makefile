@@ -9,7 +9,7 @@ PORTNAME=	firebird
 PORTVERSION=	2.0.a2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.ramenzoni.com.br/~garga/firebird/ \
-		http://www.galle.com.br/~renato/firebird/ \
+		http://www.galle.com.br/~garga/firebird/ \
 		http://www.brainsoft.com.br/~garga/firebird/
 MASTER_SITE_SUBDIR=	firebird
 PKGNAMESUFFIX=	-devel
