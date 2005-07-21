@@ -8,14 +8,12 @@
 PORTNAME=	prodosemu
 PORTVERSION=	0.1
 CATEGORIES=	emulators
-MASTER_SITES=	http://eachan.dorsai.org/~druid/apple2/ \
-		ftp://apple2.caltech.edu/pub/apple2/emulators/
+MASTER_SITES=	http://downloads.planetmirror.com/pub/apple2/emulators/prodosemu/ \
+		http://www.apple2.org.za/mirrors/apple2.caltech.edu/emulators/
 DISTNAME=	${PORTNAME}.v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A text based Apple IIe ProDOS emulator
-
-BROKEN=		Unfetchable
 
 RESTRICTED=	apple.rom copyright is owned by Apple and cannot be distributed.
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
