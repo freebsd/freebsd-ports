@@ -1,22 +1,20 @@
 bin/columns
-share/Columns/applause.wav
-share/Columns/bg.bmp
-share/Columns/big.fnt
-share/Columns/bye.wav
+%%DATADIR%%/applause.wav
+%%DATADIR%%/bg.bmp
+%%DATADIR%%/big.fnt
+%%DATADIR%%/bye.wav
 @mode 0666
-share/Columns/columns.hsc
+%%DATADIR%%/columns.hsc
 @mode
-share/Columns/drop.wav
-share/Columns/hello.wav
-share/Columns/laugh.wav
-share/Columns/level.wav
-share/Columns/magic.wav
-share/Columns/move.wav
-share/Columns/perfect.wav
-share/Columns/remove.wav
-share/Columns/rotate.wav
-share/Columns/small.fnt
-share/Columns/tiles.bmp
-%%PORTDOCS%%share/doc/columns/README
-%%PORTDOCS%%@dirrm share/doc/columns
-@dirrm share/Columns
+%%DATADIR%%/drop.wav
+%%DATADIR%%/hello.wav
+%%DATADIR%%/laugh.wav
+%%DATADIR%%/level.wav
+%%DATADIR%%/magic.wav
+%%DATADIR%%/move.wav
+%%DATADIR%%/perfect.wav
+%%DATADIR%%/remove.wav
+%%DATADIR%%/rotate.wav
+%%DATADIR%%/small.fnt
+%%DATADIR%%/tiles.bmp
+@dirrm %%DATADIR%%
