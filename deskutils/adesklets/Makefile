@@ -41,8 +41,8 @@ PORTDOCS=	*.html
 .endif
 
 .if ${OSVERSION} >= 700000
-pre-configure:
-	@${REINPLACE_CMD} -e "s|FreeBSD 6|FreeBSD 7|g" ${WRKSRC}/configure
+post-configure:
+	@${REINPLACE_CMD} -e "s|#define _POSIX_C_SOURCE 199309||" ${WRKSRC}/src/config.h
 .endif
 
 post-install:
