@@ -9,7 +9,7 @@ PORTNAME=	clamav
 PORTVERSION=	20050704
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
-		http://www.galle.com.br/~renato/clamav-devel/
+		http://www.galle.com.br/~garga/clamav-devel/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
