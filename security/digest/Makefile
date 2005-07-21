@@ -8,6 +8,7 @@
 
 PORTNAME?=	digest
 PORTVERSION?=	20050323
+PORTREVISION=	1
 CATEGORIES?=	security sysutils
 MASTER_SITES?=	http://highsecure.ru/
 
