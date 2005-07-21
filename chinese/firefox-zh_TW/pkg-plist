@@ -9,6 +9,7 @@ lib/%%FIREFOX%%/chrome/installed-chrome.txt
 lib/%%FIREFOX%%/chrome/zh-TW.jar
 lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js
 lib/%%FIREFOX%%/defaults/profile/bookmarks.html
+lib/%%FIREFOX%%/defaults/profile/user.js
 lib/%%FIREFOX%%/searchplugins/FreeBSD_PR.png
 lib/%%FIREFOX%%/searchplugins/FreeBSD_PR.src
 @unexec mv %D/lib/%%FIREFOX%%/browserconfig.properties.orig %D/lib/%%FIREFOX%%/browserconfig.properties
