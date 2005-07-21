@@ -5511,6 +5511,7 @@ limewire	ports/net/limewire
 linalg		ports/math/linalg
 linc		ports/net/linc
 lincity		ports/games/lincity
+lincity-ng	ports/games/lincity-ng
 lincvs		ports/devel/lincvs
 lindele		ports/audio/lindele
 lineak_defaultplugin	ports/sysutils/lineak_defaultplugin
