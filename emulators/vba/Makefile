@@ -28,6 +28,10 @@ TARGET_DIR=	${PREFIX}/bin/
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+BROKEN=		"Runaway cc1plus process"
+.endif
+
 .if ( ${OSVERSION} < 500035 )
 CFLAGS+=	-O0
 .endif
