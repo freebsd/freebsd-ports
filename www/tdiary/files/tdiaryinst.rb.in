@@ -85,7 +85,7 @@ def usage
   STDERR.print "    --name=<author_name>      Specify author name\n"
   STDERR.print "    --mail=<author_mail>      Specify author mail address\n"
   STDERR.print "    --tdiarymaster=<dir>      Specify tDiary master directory default: @@@@PREFIX@@@@/share/examples/tdiary\n"
-  STDERR.print "    --lang=<language>         Specify your language ('en' or 'ja') default: @@@@LANG@@@@\n"
+  STDERR.print "    --lang=<language>         Specify your language ('en' or 'ja' or 'zh') default: @@@@LANG@@@@\n"
   STDERR.print "    --suexec                  Use suExec for CGI execution\n"
   STDERR.print "    --symlink                 Use symbolic link for tDiary master files\n"
   STDERR.print "    --quiet                   Do not display any information\n"
@@ -158,6 +158,9 @@ class TdiaryInstall
     when 'tdiary.conf-ja' , 'ja'
       @lang = 'ja'
       @tdconfig = 'tdiary.conf-ja'
+    when 'zh'
+      @lang = 'zh'
+      @tdconfig = 'tdiary.conf-en'
     else
       raise "Unknown Language : #{value}"
     end
@@ -281,6 +284,7 @@ class TdiaryInstall
         line = "@author_mail = '#{@author_mail}'\n" if line =~ /^\@author_mail\s/
         line = "@html_title = '#{@author_name} diary'\n" if line =~ /^\@html_title\s/
         line = "@index_page = 'http://#{@author_host}/~#{@username}\/'" if line =~ /^\@index_page\s/
+	line = "@lang = '#{@lang}'\n" if line =~ /^\@lang\s/
         s += line
       }
     }
