@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File_Archive
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	archivers www pear
 
 MAINTAINER=	antonio@php.net
