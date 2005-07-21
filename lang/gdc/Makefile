@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdc
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		http://home.earthlink.net/~dvdfrdmn/d/:gdc
@@ -29,13 +29,13 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
 __GCC_VERSION=	3.4.5
-__GCC_REVISION=	20050607
+__GCC_REVISION=	20050719
 __GCC_VERSIONSTRING=	3.4-${__GCC_REVISION}
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-IGNORE= It is supported on FreeBSD 5.x and later.
+IGNORE=	It is supported on FreeBSD 5.x and later.
 .endif
 
 .if ${ARCH} == "amd64"
@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=--disable-nls --with-system-zlib \
 		--with-gxx-include-dir=${GXX_INC} \
 		--disable-shared --prefix=${PREFIX} \
 		--enable-languages=c,d,c++
-MAKE_ARGS+=     MAKEINFOFLAGS="--no-split"
+MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 GNU_CONFIGURE=	yes
 PLIST_SUB=	__GCC_VER=${__GCC_VERSION} CONF_TARGET=${CONFIGURE_TARGET}
 
