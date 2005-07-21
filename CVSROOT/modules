@@ -12172,6 +12172,7 @@ vtk-headers	ports/math/vtk-headers
 vtk-java	ports/math/vtk-java
 vtk-python	ports/math/vtk-python
 vtk-tcl		ports/math/vtk-tcl
+vttest		ports/sysutils/vttest
 vtun		ports/net/vtun
 vtwm		ports/x11-wm/vtwm
 vulnerability-test-port	ports/security/vulnerability-test-port
