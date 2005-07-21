@@ -5,7 +5,7 @@
  
    def ToplevelInstaller.instance
 -    @singleton ||= new(File.dirname($0))
-+    @singleton ||= new(File.pwd)
++    @singleton ||= new(Dir.pwd)
      @singleton
    end
  
