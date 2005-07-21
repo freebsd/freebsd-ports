@@ -1,0 +1,40 @@
+--- ./sink.c~	2003-10-11 00:06:36.000000000 +0200
++++ ./sink.c	2005-07-20 18:26:32.000000000 +0200
+@@ -724,7 +724,7 @@
+ 
+     /* see the ap computation under the SMTP branch */
+     fprintf(sinkfp, 
+-	    "MAIL FROM: %s", (msg->return_path[0]) ? msg->return_path : user);
++	    "MAIL FROM:%s", (msg->return_path[0]) ? msg->return_path : user);
+ 
+     if (ctl->pass8bits || (ctl->mimemsg & MSG_IS_8BIT))
+ 	fputs(" BODY=8BITMIME", sinkfp);
+--- ./smtp.c~	2003-08-06 05:30:18.000000000 +0200
++++ ./smtp.c	2005-07-20 18:26:32.000000000 +0200
+@@ -232,13 +232,13 @@
+     int ok;
+     char buf[MSGBUFSIZE];
+ 
+-    if (strchr(from, '<'))
++    if (from[0]=='<')
+ #ifdef HAVE_SNPRINTF
+ 	snprintf(buf, sizeof(buf),
+ #else
+ 	sprintf(buf,
+ #endif /* HAVE_SNPRINTF */
+-		"MAIL FROM: %s", from);
++		"MAIL FROM:%s", from);
+     else
+ #ifdef HAVE_SNPRINTF
+     snprintf(buf, sizeof(buf),
+--- Makefile.in.orig	Thu Jul 21 11:48:31 2005
++++ Makefile.in	Thu Jul 21 11:49:11 2005
+@@ -4,7 +4,7 @@
+ # So just uncomment all the lines marked QNX.
+ 
+ PACKAGE = fetchmail
+-VERSION = 6.2.5
++VERSION = 6.2.5.1
+ 
+ # Ultrix 2.2 make doesn't expand the value of VPATH.
+ srcdir = @srcdir@

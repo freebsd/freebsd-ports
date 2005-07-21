@@ -10,16 +10,17 @@
 # want fetchmailconf to work, define WITH_X11
 
 PORTNAME=	fetchmail
-PORTVERSION=	6.2.5
-PORTREVISION=	2
+PORTVERSION=	6.2.5.1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.catb.org/~esr/%SUBDIR%/ \
+		http://download.berlios.de/%SUBDIR%/ \
 		ftp://ftp.ayamura.org/pub/%SUBDIR%/ \
 		ftp://ftp.win.jp/pub/%SUBDIR%/ \
 		ftp://ftp.dti.ad.jp/pub/net/mail/%SUBDIR%/
 MASTER_SITE_SUBDIR=	fetchmail
+DISTNAME=	${PORTNAME}-6.2.5
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Batch mail retrieval utility for IMAP/POP2/POP3/APOP/KPOP/ETRN/ODMR
 
 .if defined(WITH_X11)
@@ -69,7 +70,9 @@ DOCS+=		README.SSL
 PLIST_SUB+=	SSLDOCS="%%PORTDOCS%%"
 .elif exists(${LOCALBASE}/lib/libssl.a) && exists(${LOCALBASE}/lib/libcrypto.a)
 CONFIGURE_ARGS+=-with-includes=${LOCALBASE}/include/openssl --with-ssl=${LOCALBASE}
+.if exists(${LOCALBASE}/lib/libRSAglue.a)
 CONFIGURE_ENV+=	RSAGLUE=-lRSAglue
+.endif
 DOCS+=		README.SSL
 PLIST_SUB+=	SSLDOCS="%%PORTDOCS%%"
 .else

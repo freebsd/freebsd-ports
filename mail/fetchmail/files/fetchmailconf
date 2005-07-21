@@ -11,7 +11,7 @@ if [ -e $PREFIX/bin/python ]; then
 	exec $PREFIX/libexec/fetchmailconf.bin
 else
 	cat <<EOF
-The fetchmailconf program requires Python with Tkinter , which does not
+The fetchmailconf program requires Python with Tkinter, which does not
 appear to be installed on this system.  Python/Tkinter can be found in
 the FreeBSD Ports Collection under x11-toolkits/py-tkinter.
 EOF
