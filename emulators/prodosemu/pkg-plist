@@ -1,5 +1,0 @@
-bin/prodos
-share/apple2/prodos-2e.rom
-%%PORTDOCS%%share/doc/prodosemu/README
-%%PORTDOCS%%@dirrm share/doc/prodosemu
-@dirrm share/apple2
