@@ -476,7 +476,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>phppgadmin</name>
-	<range><gt>0</gt></range>
+	<range><lt>3.5.4</lt></range>
       </package>
     </affects>
     <description>
@@ -497,11 +497,14 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <bid>14142</bid>
+      <cvename>CAN-2005-2256</cvename>
       <url>http://secunia.com/advisories/15941/</url>
+      <url>http://sourceforge.net/project/shownotes.php?release_id=342261</url>
     </references>
     <dates>
       <discovery>2005-07-05</discovery>
       <entry>2005-07-08</entry>
+      <modified>2005-07-21</modified>
     </dates>
   </vuln>
 
