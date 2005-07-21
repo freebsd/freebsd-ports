@@ -10,7 +10,8 @@ PORTVERSION=	2.1.1
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	databases perl5
-MASTER_SITES=	ftp://gborg.postgresql.org/pub/pgperl/stable/
+MASTER_SITES=	${MASTER_SITE_PGSQL}
+MASTER_SITE_SUBDIR=	projects/gborg/pgperl/stable
 PKGNAMEPREFIX=	p5-
 DIST_SUBDIR=	postgresql
 

@@ -8,7 +8,8 @@
 PORTNAME=	libpqxx
 PORTVERSION=	2.5.5
 CATEGORIES=	databases
-MASTER_SITES=	ftp://gborg.postgresql.org/pub/libpqxx/stable/
+MASTER_SITES=	${MASTER_SITE_PGSQL}
+MASTER_SITE_SUBDIR=	projects/gborg/libpqxx/stable
 PKGNAMEPREFIX=	postgresql-
 DIST_SUBDIR=	postgresql
 
