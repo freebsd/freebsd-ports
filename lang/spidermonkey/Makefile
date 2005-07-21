@@ -4,12 +4,12 @@
 #
 # $FreeBSD$
 
-PORTNAME=	js
-PORTVERSION=	1.5.p6
+PORTNAME=	spidermonkey
+DISTVERSION=	1.5-rc6a
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	js
-DISTNAME=	js-1.5-rc6
+DISTNAME=	js-${DISTVERSION}
 
 MAINTAINER=	citric@cubicone.tmetic.com
 COMMENT=	A standalone JavaScript interpreter from the Mozilla project
