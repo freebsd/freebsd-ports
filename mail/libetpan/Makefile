@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libetpan
-PORTVERSION=	0.37
+PORTVERSION=	0.38
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,6 +30,12 @@ CONFIGURE_ARGS+=	--with-gnutls
 .else
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--without-gnutls
+.endif
+
+.if defined(WITH_SASL)
+LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/mail/cyrus-sasl2
+.else
+CONFIGURE_ARGS+=	--without-sasl
 .endif
 
 .include <bsd.port.mk>
