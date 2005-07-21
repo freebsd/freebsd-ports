@@ -5,4 +5,3 @@ share/tinybsd/TINYBSD
 share/tinybsd/TODO
 bin/tinybsd
 @dirrm share/tinybsd
-
