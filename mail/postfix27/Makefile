@@ -7,7 +7,7 @@
 
 # To pre-select options in batch mode, run make like this:
 #
-#  make -DBATCH POSTFIX_OPTIONS="DB3 IPv6TLS"
+#  make -DBATCH POSTFIX_OPTIONS="DB3 TLS"
 #
 # the options are the same names as in the scripts/configure.postfix file.
 # POSTFIX_OPTIONS can be set in /etc/make.conf also.
