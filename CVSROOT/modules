@@ -2313,6 +2313,7 @@ fly		ports/graphics/fly
 flying		ports/games/flying
 flyspray	ports/devel/flyspray
 flyway		ports/misc/flyway
+fmars		ports/games/fmars
 fmio		ports/audio/fmio
 fmirror		ports/ftp/fmirror
 fmsx		ports/emulators/fmsx
