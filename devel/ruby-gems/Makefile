@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gems
-PORTVERSION=	0.8.10
-PORTREVISION=	1
+PORTVERSION=	0.8.11
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/3700/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/5207/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
