@@ -59,16 +59,18 @@
 %%PYTHON_SITELIBDIR%%/Numeric/numeric_version.pyo
 %%PYTHON_SITELIBDIR%%/Numeric/ranlib.so
 %%PYTHON_SITELIBDIR%%/Numeric/umath.so
-share/examples/py-numeric/NumTut/__init__.py
-share/examples/py-numeric/NumTut/greece.pik
-share/examples/py-numeric/NumTut/mkpic.py
-share/examples/py-numeric/NumTut/testview.py
-share/examples/py-numeric/NumTut/view.py
-share/examples/py-numeric/life.py
-share/examples/py-numeric/mandelbrot.py
-share/examples/py-numeric/sieve.py
-@dirrm share/examples/py-numeric/NumTut
-@dirrm share/examples/py-numeric
+%%DOCSDIR%%/numpy.pdf
+%%EXAMPLESDIR%%/NumTut/__init__.py
+%%EXAMPLESDIR%%/NumTut/greece.pik
+%%EXAMPLESDIR%%/NumTut/mkpic.py
+%%EXAMPLESDIR%%/NumTut/testview.py
+%%EXAMPLESDIR%%/NumTut/view.py
+%%EXAMPLESDIR%%/life.py
+%%EXAMPLESDIR%%/mandelbrot.py
+%%EXAMPLESDIR%%/sieve.py
+@dirrm %%EXAMPLESDIR%%/NumTut
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/Numeric/RNG
 @dirrm %%PYTHON_SITELIBDIR%%/Numeric/MA
 @dirrm %%PYTHON_SITELIBDIR%%/Numeric/FFT

@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	numeric
-PORTVERSION=	23.7
+PORTVERSION=	23.8
 CATEGORIES=	math python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	numpy
+MASTER_SITES=	http://numeric.scipy.org/:doc \
+		${MASTER_SITE_SOURCEFORGE:S/$/:source/}
+MASTER_SITE_SUBDIR=	numpy/:source
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Numeric-${PORTVERSION}
+DISTFILES=	Numeric-${PORTVERSION}${EXTRACT_SUFX}:source \
+		numpy.pdf:doc
+EXTRACT_ONLY=	Numeric-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	tg@FreeBSD.org
 COMMENT=	The Numeric Extension to Python
@@ -19,7 +22,8 @@ COMMENT=	The Numeric Extension to Python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-EXAMPLEDIR=	${PREFIX}/share/examples/py-numeric
+DOCSDIR=	${PREFIX}/share/doc/py-numeric
+EXAMPLESDIR=	${PREFIX}/share/examples/py-numeric
 
 .include <bsd.port.pre.mk>
 
@@ -30,10 +34,17 @@ pre-fetch:
 	@${FALSE}
 .endif
 
+post-extract:
+	@${CP} ${DISTDIR}/numpy.pdf ${WRKSRC}
+
 post-install:
-	@${MKDIR} ${EXAMPLEDIR}
-	${INSTALL_DATA} ${WRKSRC}/Demo/*.py ${EXAMPLEDIR}
-	@${MKDIR} ${EXAMPLEDIR}/NumTut
-	${INSTALL_DATA} ${WRKSRC}/Demo/NumTut/* ${EXAMPLEDIR}/NumTut
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/Demo/*.py ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}/NumTut
+	${INSTALL_DATA} ${WRKSRC}/Demo/NumTut/* ${EXAMPLESDIR}/NumTut
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/numpy.pdf ${DOCSDIR}
+.endif
 
 .include <bsd.port.post.mk>
