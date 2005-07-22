@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	smstools
-PORTVERSION=	1.14.8
+PORTVERSION=	1.14.11
 CATEGORIES=	comms
-MASTER_SITES=	http://smstools.meinemullemaus.de/packages/
+MASTER_SITES=	http://mirrors.catpipe.net/smstools/
 
 MAINTAINER=	bennyk@wax.dk
 COMMENT=	Tools to handle Short Message Service
@@ -28,8 +28,13 @@ post-patch:
 		${WRKSRC}/examples/smsd.conf.easy \
 		${WRKSRC}/examples/smsd.conf.full \
 		${WRKSRC}/bin/sms
-	@${REINPLACE_CMD} -e "s|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g; \
-				s|%%DOCSDIR%%|${DOCSDIR}|g" \
+	@${REINPLACE_CMD} -e "s|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g" \
 		${WRKSRC}/install.sub
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${CP} -Rfv ${WRKSRC}/doc/* ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
