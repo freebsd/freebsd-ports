@@ -1,0 +1,4 @@
+bin/ne
+%%DATADIR%%/default.keys
+%%DATADIR%%/default.menus
+@dirrm share/ne
