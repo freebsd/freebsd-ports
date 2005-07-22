@@ -1,2 +1,4 @@
 MD5 (fetchmail-6.2.5.tar.gz) = 9956b30139edaa4f5f77c4d0dbd80225
 SIZE (fetchmail-6.2.5.tar.gz) = 1257376
+MD5 (fetchmail-patch-6.2.5.2.gz) = be18f89b94e937a22560aa452e524c4b
+SIZE (fetchmail-patch-6.2.5.2.gz) = 2000

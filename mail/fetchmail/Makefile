@@ -10,7 +10,7 @@
 # want fetchmailconf to work, define WITH_X11
 
 PORTNAME=	fetchmail
-PORTVERSION=	6.2.5.1
+PORTVERSION=	6.2.5.2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.catb.org/~esr/%SUBDIR%/ \
 		http://download.berlios.de/%SUBDIR%/ \
@@ -19,6 +19,11 @@ MASTER_SITES=	http://www.catb.org/~esr/%SUBDIR%/ \
 		ftp://ftp.dti.ad.jp/pub/net/mail/%SUBDIR%/
 MASTER_SITE_SUBDIR=	fetchmail
 DISTNAME=	${PORTNAME}-6.2.5
+
+PATCH_SITES=	http://download.berlios.de/%SUBDIR%/
+PATCH_SITE_SUBDIR=	fetchmail
+PATCHFILES=	${PORTNAME}-patch-${PORTVERSION}.gz
+PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Batch mail retrieval utility for IMAP/POP2/POP3/APOP/KPOP/ETRN/ODMR
@@ -49,6 +54,7 @@ MLINKS=		fetchmail.1 fetchmailconf.1
 FDOC=		${PREFIX}/share/doc/fetchmail
 DOCS=		FAQ FEATURES NEWS NOTES README \
 		design-notes.html fetchmail-FAQ.html fetchmail-features.html
+WRKSRC=		${WRKDIR}/${PORTNAME}-6.2.5
 
 .if !defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--enable-nls
