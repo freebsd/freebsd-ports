@@ -59,8 +59,6 @@ GCONF_SCHEMAS=	galeon.schemas
 
 FLASHPLAYER=	${LOCALBASE}/lib/libflashplayer.so.1
 
-CONFLICTS=	galeon-[0-9]*
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500000
