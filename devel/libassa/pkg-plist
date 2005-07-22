@@ -1,4 +1,3 @@
-bin/assa-config
 bin/assa-genesis
 include/assa/Acceptor.h
 include/assa/Address.h
@@ -59,5 +58,4 @@ include/assa/xdrIOBuffer.h
 lib/libassa.so
 lib/libassa.so.3
 libdata/pkgconfig/assa.pc
-share/aclocal/assa.m4
 @dirrm include/assa
