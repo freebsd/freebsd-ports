@@ -10,7 +10,7 @@ PORTVERSION=	0.1.0
 CATEGORIES=	misc
 MASTER_SITES=	http://metromap.antex.ru/
 
-MAINTAINER=	vsevolod@highsecure.ru
+MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	A simple application for finding paths in different subways maps
 
 USE_PYTHON=	yes

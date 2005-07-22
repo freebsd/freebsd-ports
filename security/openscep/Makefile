@@ -10,7 +10,7 @@ PORTVERSION=	0.4.2
 CATEGORIES=	security
 MASTER_SITES=	http://openscep.othello.ch/download/
 
-MAINTAINER=	vsevolod@highsecure.ru
+MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Open source scep server
 
 USE_REINPLACE=	yes

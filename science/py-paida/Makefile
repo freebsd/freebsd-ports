@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	paida
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-3.2.1_2.8
 
-MAINTAINER=	vsevolod@highsecure.ru
+MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Pure Python scientific analysis package
 
 .if !defined(NO_GUI)

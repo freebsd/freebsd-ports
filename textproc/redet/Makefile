@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.cis.upenn.edu/~wjposer/.downloads/
 DISTNAME=	${PORTNAME}tiny-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	vsevolod@highsecure.ru
+MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Visual regexp constructors with many regexp types support
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
