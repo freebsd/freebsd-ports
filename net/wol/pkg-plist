@@ -1,11 +1,14 @@
 @comment $FreeBSD$
 bin/wol
+bin/wol-bootptab
 bin/wol-dhcpdconf
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-share/locale/de/LC_MESSAGES/wol.mo
-share/locale/fr/LC_MESSAGES/wol.mo
-share/locale/it/LC_MESSAGES/wol.mo
+%%NLS%%share/locale/de/LC_MESSAGES/wol.mo
+%%NLS%%share/locale/es/LC_MESSAGES/wol.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/wol.mo
+%%NLS%%share/locale/it/LC_MESSAGES/wol.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/wol.mo
