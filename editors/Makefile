@@ -109,6 +109,7 @@
     SUBDIR += mule
     SUBDIR += mule-common
     SUBDIR += nano
+    SUBDIR += ne
     SUBDIR += nedit
     SUBDIR += nvi-devel
     SUBDIR += nvi-m17n
