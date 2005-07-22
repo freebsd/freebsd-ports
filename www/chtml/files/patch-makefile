@@ -1,5 +1,14 @@
---- makefile.orig	Mon Jun 22 22:43:44 1998
-+++ makefile	Tue Nov  5 13:07:32 2002
+--- makefile.orig	Mon Jun 22 20:43:44 1998
++++ makefile	Fri Jul 22 09:42:30 2005
+@@ -9,7 +9,7 @@
+ INSTALL_BINDIR=/usr/local/bin
+ INSTALL_INCDIR=/usr/local/include
+ INSTALL_SIODDIR=/usr/local/lib/siod
+-INSTALL_PERLDIR=/usr/local/lib/perl5/site_perl
++INSTALL_PERLDIR=$(SITE_PERL)
+ INSTALL_DEMODIR=$$HOME/public_html/chtml
+ 
+ #CFLAGS=-g -Wall
 @@ -17,7 +17,7 @@
  .SUFFIXES: .html .html-bin .smd .cgi .pl .cgi .scm .cgi
  
