@@ -108,10 +108,12 @@ bin/icewmtray
 %%DATADIR%%/menu
 %%DATADIR%%/preferences
 %%DATADIR%%/taskbar/bsd-daemon.xpm
+%%DATADIR%%/taskbar/collapse.xpm
 %%DATADIR%%/taskbar/debian.xpm
 %%DATADIR%%/taskbar/desktop.xpm
-%%DATADIR%%/taskbar/icewm.xpm
+%%DATADIR%%/taskbar/expand.xpm
 %%DATADIR%%/taskbar/icewm-logo.xpm
+%%DATADIR%%/taskbar/icewm.xpm
 %%DATADIR%%/taskbar/linux.xpm
 %%DATADIR%%/taskbar/linux1.xpm
 %%DATADIR%%/taskbar/linux2.xpm
@@ -349,6 +351,7 @@ bin/icewmtray
 %%NLS%%share/locale/ja/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/icewm.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/no/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/icewm.mo
