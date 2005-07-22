@@ -7,6 +7,33 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 
+20050722:
+  AFFECTS: All RELENG_6 and HEAD users of ports/packages, maintainers
+	   of ports that interact with the compat libraries.
+  AUTHOR: kensmith@FreeBSD.org
+
+  The shared library version number of all shared libraries built as
+  part of the baseline system has been incremented in both RELENG_6
+  and HEAD.  The overall goal is to make handling of the compat library
+  infrastructure easier.  Each new release branch will have different
+  version numbers for all of the shared libraries and the compat ports
+  can simply include all of the shared libraries from the previous
+  release.
+
+  If you update your system using normal cvsup/rebuild/reinstall
+  mechanisms the old versions of the libraries will still be on your
+  system so your old ports executables will continue to work.
+  But you definitely should plan on recompiling and reinstalling all
+  of your installed ports so they get relinked against the new libraries.
+  If you don't take this step as time goes on "normal" updates and
+  installs run the risk of having executables relying on both the new
+  and old versions of the libraries which would cause big problems.
+
+  It will take some time for the pre-built packages available on the
+  FTP mirror sites to be rebuilt against the new libraries.  If you
+  want to update your ports using the pre-built packages watch the
+  mailing lists for when the rebuilt packages become available.
+
 20050710:
   AFFECTS: users of x11-toolkits/qt33, x11/kdelibs3
   AUTHOR: kde@FreeBSD.org
