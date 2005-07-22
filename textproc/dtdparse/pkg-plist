@@ -1,26 +1,20 @@
-bin/contentmodel
+bin/dtddiff
+bin/dtddiff2html
 bin/dtdflatten
 bin/dtdformat
 bin/dtdparse
-bin/dtdstats
-bin/elements
-%%SITE_PERL%%/XML/DTDParse/Catalog.pm
-%%SITE_PERL%%/XML/DTDParse/ContentModel.pm
-%%SITE_PERL%%/XML/DTDParse/DTD.pm
-%%SITE_PERL%%/XML/DTDParse/Tokenizer.pm
-%%SITE_PERL%%/XML/DTDParse/html.pl
-%%SITE_PERL%%/XML/DTDParse/plain.pl
-%%SITE_PERL%%/XML/DTDParse/refentry.pl
-@dirrm %%SITE_PERL%%/XML/DTDParse
-@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
-share/xml/dtdparse/catalog
-share/xml/dtdparse/dtd.dtd
-@dirrm share/xml/dtdparse
-%%EXAMPLESDIR%%/sample.dtd
-%%EXAMPLESDIR%%/sample.mod
-%%EXAMPLESDIR%%/simple-inline.mod
-%%EXAMPLESDIR%%/simple.dtd
-@dirrm %%EXAMPLESDIR%%
-%%DOCSDIR%%/README
-%%DOCSDIR%%/WhatsNew
-@dirrm %%DOCSDIR%%
+%%SITE_PERL%%/SGML/DTDParse/Catalog.pm
+%%SITE_PERL%%/SGML/DTDParse/ContentModel.pm
+%%SITE_PERL%%/SGML/DTDParse/DTD.pm
+%%SITE_PERL%%/SGML/DTDParse/Format/html.pl
+%%SITE_PERL%%/SGML/DTDParse/Format/plain.pl
+%%SITE_PERL%%/SGML/DTDParse/Format/refentry.pl
+%%SITE_PERL%%/SGML/DTDParse/Tokenizer.pm
+%%SITE_PERL%%/SGML/DTDParse/Util.pm
+%%SITE_PERL%%/SGML/DTDParse.pm
+%%SITE_PERL%%/mach/auto/SGML/DTDParse/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/SGML/DTDParse
+@dirrm %%SITE_PERL%%/SGML/DTDParse/Format
+@dirrm %%SITE_PERL%%/SGML/DTDParse
+@unexec rmdir %D/%%SITE_PERL%%/mach/auto/SGML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/SGML 2>/dev/null || true
