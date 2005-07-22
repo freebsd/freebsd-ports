@@ -1997,6 +1997,7 @@ epsilon		ports/graphics/epsilon
 epsmerge	ports/print/epsmerge
 epsonepl	ports/print/epsonepl
 epstool		ports/graphics/epstool
+epstools	ports/mail/epstools
 epydoc		ports/devel/epydoc
 epylog		ports/sysutils/epylog
 erc		ports/irc/erc
