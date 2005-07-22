@@ -20,8 +20,6 @@ BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
 		${SITE_PERL}/POE/Component/SSLify.pm:${PORTSDIR}/security/p5-POE-Component-SSLify
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		Incomplete pkg-plist
-
 PERL_CONFIGURE=	yes
 
 MAN3=		POE::Component::Client::Client-Keepalive.3 \
