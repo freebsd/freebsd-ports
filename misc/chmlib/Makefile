@@ -14,7 +14,7 @@ MASTER_SITES=	http://66.93.236.84/~jedwin/projects/chmlib/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	vsevolod@highsecure.ru
+MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	A library for dealing with Microsoft ITSS/CHM format files
 
 USE_REINPLACE=	yes
