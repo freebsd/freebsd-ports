@@ -9,7 +9,9 @@
 PORTNAME=	cs
 PORTVERSION=	0.9.5
 CATEGORIES=	misc
-MASTER_SITES=	http://njhurst.org/programming/cross-stitch/
+MASTER_SITES=	http://njhurst.org/programming/cross-stitch/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pav
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
