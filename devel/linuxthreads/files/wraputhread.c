@@ -1,4 +1,6 @@
 /*
+ * Copyright (c) 2005 Yahoo! Technologies Norway AS
+ * Copyright (c) 2003 Overture Services Norway AS
  * Copyright (c) 2001 Daniel Eischen <deischen@FreeBSD.org>.
  * All rights reserved.
  *
@@ -23,7 +25,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: /tmp/pcvs/ports/devel/linuxthreads/files/wraputhread.c,v 1.3 2003-06-09 03:48:31 tegge Exp $
+ * $FreeBSD: /tmp/pcvs/ports/devel/linuxthreads/files/wraputhread.c,v 1.4 2005-07-22 22:20:21 tegge Exp $
  */
 
 #ifdef LINUXTHREADS_WRAP_API
@@ -242,14 +244,14 @@ enum {
 };
 
 enum {
-	UTHREAD_PTHREAD_INHERIT_SCHED = 0,
-	UTHREAD_PTHREAD_EXPLICIT_SCHED = 1
+	UTHREAD_PTHREAD_INHERIT_SCHED = 4,
+	UTHREAD_PTHREAD_EXPLICIT_SCHED = 0
 };
 
 
 enum {
-	UTHREAD_PTHREAD_SCOPE_SYSTEM = 0,
-	UTHREAD_PTHREAD_SCOPE_PROCESS = 1
+	UTHREAD_PTHREAD_SCOPE_SYSTEM = 2,
+	UTHREAD_PTHREAD_SCOPE_PROCESS = 0
 };
 
 enum {
@@ -1050,8 +1052,6 @@ _pthread_getspecific(pthread_key_t key)
 int
 _pthread_join(pthread_t tid, void **treturn)
 {
-	if (treturn == NULL)
-		return EINVAL;
 	return __pthread_join(tid, treturn);
 }
 

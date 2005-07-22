@@ -138,3 +138,24 @@ set at 20 + 16 * MAXUSERS.
    as if the kernel was compiled without the _KPOSIX_PRIORITY_SCHEDULING
    option, but limited to the linuxthread library.
 
+7) libraries using SIGUSR2 or SIGUSR1 will conflict with linuxthreads.
+   SIGUSR1 is hardcoded in the FreeBSD kernel (cf. RFLINUXTHPN flag
+   passed to rfork()), but the linuxthreads library can be changed to use
+   another signal instead of SIGUSR2 by defining LINUXTHREADS_ALT_RESTARTSIG
+   to the alternate signal number (e.g. 32).
+
+8) By default, the maximum thread stack size is 2 MB, and the maximum
+   number of threads is 1024.  Layout of stacks are based on the
+   maximum thread stack size.  This means that 2 GB of the address space
+   can be used by thread stacks, limiting what is left for other
+   purposes (text, data, bss, heap, mmap).  To shrink the address range
+   used for thread stacks, the maximum thread stack size can be changed
+   by defining LINUXTHREADS_MAX_STACK_SIZE to a suitable value, e.g.
+   1048576.  The maximum number of threads can be changed by defining
+   LINUXTHREADS_MAX_THREADS to a suitable value, e.g. 2048.
+   The product of the maximum thread stack size and the maximum number
+   of threads should not exceed 2 GB.  The maximum stack size must be
+   a power of 2.
+
+9) The complete FreeBSD source code matching the installed userland
+   must be installed in /usr/src before building linuxthreads.

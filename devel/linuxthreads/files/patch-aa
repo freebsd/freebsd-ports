@@ -13,7 +13,7 @@ diff -ru ../../work/linuxthreads-2.2.3/Examples/Makefile ./Examples/Makefile
 diff -ru ../../work/linuxthreads-2.2.3/Makefile ./Makefile
 --- ../../work/linuxthreads-2.2.3/Makefile	Wed Apr 25 21:50:59 2001
 +++ ./Makefile	Thu Jun  7 23:13:52 2001
-@@ -1,128 +1,126 @@
+@@ -1,128 +1,143 @@
 -# Copyright (C) 1996,1997,1998,1999,2000,2001 Free Software Foundation, Inc.
 -# This file is part of the GNU C Library.
 +LIB=lthread
@@ -65,6 +65,12 @@ diff -ru ../../work/linuxthreads-2.2.3/Makefile ./Makefile
 +CFLAGS += -DLINUXTHREADS 
 +CFLAGS += -D__USE_UNIX98
 +CFLAGS += -D__USE_XOPEN2K -D_STACK_GROWS_DOWN -DNEWLIBC -D_THREAD_SAFE
++.if defined(LINUXTHREADS_MAX_STACK_SIZE)
++CFLAGS += -DSTACK_SIZE=$(LINUXTHREADS_MAX_STACK_SIZE)
++.endif
++.if defined(LINUXTHREADS_MAX_THREADS)
++CFLAGS += -DPTHREAD_THREADS_MAX=$(LINUXTHREADS_MAX_THREADS)
++.endif
 +.if defined(LINUXTHREADS_DETECT_UNSAFE_EXIT)
 +CFLAGS += -DLINUXTHREADS_DETECT_UNSAFE_EXIT
 +.endif
@@ -76,6 +82,10 @@ diff -ru ../../work/linuxthreads-2.2.3/Makefile ./Makefile
 +
 +.if defined(LINUXTHREADS_NO_POSIX_PRIORITY_SCHEDULING)
 +CFLAGS += -DLINUXTHREADS_NO_POSIX_PRIORITY_SCHEDULING
++.endif
++
++.if defined(LINUXTHREADS_ALT_RESTARTSIG)
++CFLAGS += -DLINUXTHREADS_ALT_RESTARTSIG=${LINUXTHREADS_ALT_RESTARTSIG}
 +.endif
 +
 +CFLAGS += -I${LIBSRC_BASE}/libc/${MACHINE_ARCH} -I${.CURDIR}/sysdeps/${MACHINE_ARCH}
@@ -114,6 +124,13 @@ diff -ru ../../work/linuxthreads-2.2.3/Makefile ./Makefile
 +	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 444 \
 +		${.CURDIR}/sysdeps/unix/sysv/linux/bits/$(hdr) \
 +		${PREFIX}/include/pthread/linuxthreads/bits/$(hdr)
++.endfor
++	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 0755 \
++		${PREFIX}/include/pthread/linuxthreads/sys
++.for hdr in _pthreadtypes.h
++	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 444 \
++		${.CURDIR}/sys/$(hdr) \
++		${PREFIX}/include/pthread/linuxthreads/sys/$(hdr)
 +.endfor
 +.for hdr in pt-machine.h useldt.h
 +	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 444 \
@@ -749,13 +766,17 @@ diff -ru ../../work/linuxthreads-2.2.3/pthread.c ./pthread.c
  static void pthread_handle_sigcancel(int sig);
  static void pthread_handle_sigrestart(int sig);
  static void pthread_handle_sigdebug(int sig);
-@@ -238,8 +246,8 @@
+@@ -238,8 +246,12 @@
  #ifndef __SIGRTMIN
  static int current_rtmin = -1;
  static int current_rtmax = -1;
 -int __pthread_sig_restart = SIGUSR1;
 -int __pthread_sig_cancel = SIGUSR2;
++#ifdef LINUXTHREADS_ALT_RESTARTSIG
++int __pthread_sig_restart = LINUXTHREADS_ALT_RESTARTSIG;
++#else
 +int __pthread_sig_restart = SIGUSR2;
++#endif
 +int __pthread_sig_cancel = SIGUSR1;
  int __pthread_sig_debug;
  #else
@@ -1105,7 +1126,15 @@ diff -ru ../../work/linuxthreads-2.2.3/signals.c ./signals.c
  {
    pthread_descr self;
    char * in_sighandler;
-@@ -145,9 +144,9 @@
+@@ -130,6 +129,7 @@
+ {
+   struct sigaction newact;
+   struct sigaction *newactp;
++  arch_sighandler_t user_oact;
+ 
+   if (sig == __pthread_sig_restart ||
+       sig == __pthread_sig_cancel ||
+@@ -145,20 +145,34 @@
  	  && sig > 0 && sig < NSIG)
  	{
  	  if (act->sa_flags & SA_SIGINFO)
@@ -1117,12 +1146,30 @@ diff -ru ../../work/linuxthreads-2.2.3/signals.c ./signals.c
  	}
        newactp = &newact;
      }
-@@ -158,7 +157,7 @@
+   else
+     newactp = NULL;
++  if (sig > 0 && sig < NSIG)
++    {
++      user_oact = sighandler[sig].old;
++      if (act &&
++	  ((__sighandler_t *) user_oact == SIG_IGN ||
++	   (__sighandler_t *) user_oact == SIG_DFL))
++	/* For the assignment is does not matter whether it's a normal
++	   or real-time signal.  */
++	sighandler[sig].old = (arch_sighandler_t) act->sa_handler;
++    }
+   if (__libc_sigaction(sig, newactp, oact) == -1)
+-    return -1;
++    {
++      if (act && sig > 0 && sig < NSIG)
++	sighandler[sig].old = user_oact;
++      return -1;
++    }
    if (sig > 0 && sig < NSIG)
      {
        if (oact != NULL)
 -	oact->sa_handler = (__sighandler_t) sighandler[sig].old;
-+	oact->sa_handler = (__sighandler_t *) sighandler[sig].old;
++	oact->sa_handler = (__sighandler_t *) user_oact;
        if (act)
  	/* For the assignment is does not matter whether it's a normal
  	   or real-time signal.  */
@@ -1225,6 +1272,16 @@ diff -ru ../../work/linuxthreads-2.2.3/sysdeps/unix/sysv/linux/bits/local_lim.h 
  
  /* Have to remove NR_OPEN?  */
  #ifdef __undef_NR_OPEN
+@@ -64,7 +64,9 @@
+ /* The number of threads per process.  */
+ #define _POSIX_THREAD_THREADS_MAX	64
+ /* This is the value this implementation supports.  */
++#ifndef PTHREAD_THREADS_MAX
+ #define PTHREAD_THREADS_MAX	1024
++#endif
+ 
+ /* Maximum amount by which a process can descrease its asynchronous I/O
+    priority level.  */
 diff -ru ../../work/linuxthreads-2.2.3/sysdeps/unix/sysv/linux/bits/sigthread.h ./sysdeps/unix/sysv/linux/bits/sigthread.h
 --- ../../work/linuxthreads-2.2.3/sysdeps/unix/sysv/linux/bits/sigthread.h	Thu Aug 31 21:45:04 2000
 +++ ./sysdeps/unix/sysv/linux/bits/sigthread.h	Thu Jun  7 22:59:29 2001
