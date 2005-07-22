@@ -1,2 +1,23 @@
 bin/g3dviewer
 include/g3dviewer_plugin.h
+lib/g3dviewer/plugins/image/img_bmp.so
+lib/g3dviewer/plugins/import/imp_3dmf.so
+lib/g3dviewer/plugins/import/imp_3ds.so
+lib/g3dviewer/plugins/import/imp_cob.so
+lib/g3dviewer/plugins/import/imp_dxf.so
+lib/g3dviewer/plugins/import/imp_heightfield.so
+lib/g3dviewer/plugins/import/imp_iob.so
+lib/g3dviewer/plugins/import/imp_lwo.so
+lib/g3dviewer/plugins/import/imp_md2.so
+lib/g3dviewer/plugins/import/imp_nff.so
+lib/g3dviewer/plugins/import/imp_obj.so
+lib/g3dviewer/plugins/import/imp_q3o.so
+%%DATADIR%%/pixmaps/icon16_material.xpm
+%%DATADIR%%/pixmaps/icon16_model.xpm
+%%DATADIR%%/pixmaps/icon16_plugins.xpm
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
+@dirrm lib/g3dviewer/plugins/import
+@dirrm lib/g3dviewer/plugins/image
+@dirrm lib/g3dviewer/plugins
+@dirrm lib/g3dviewer

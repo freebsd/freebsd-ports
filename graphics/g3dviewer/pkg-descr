@@ -1,15 +1,18 @@
 G3DViewer is a 3D file viewer for GTK+ supporting a variety of file types:
    - 3D Studio (.3ds, .prj)
    - LightWave (.lw, .lwb, .lwo)
-   - Alias Wavefront Maya (.obj)
+   - Alias Wavefront (.obj)
    - Impulse TurboSilver / Imagine (.iob)
    - AutoCAD (.dxf)
    - Quake II Models (.md2)
-   - Neutral File Format (.nff) new
+   - Neutral File Format (.nff)
+   - 3D Metafile (.3dmf, .3mf, .b3d)
+   - Caligari TrueSpace Objects (.cob)
+   - Quick3D Objects & Scenes (.q3o, q3s)
 
 Some of the features are:
    - Wireframe mode
    - Specular lighting (not really nice at the moment)
    - changable background color :)
 
-WWW: http://automagically.de/?g3dviewer
+WWW: http://automagically.de/index.shtml?g3dviewer
