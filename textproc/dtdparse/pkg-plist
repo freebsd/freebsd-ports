@@ -12,9 +12,9 @@ bin/dtdparse
 %%SITE_PERL%%/SGML/DTDParse/Tokenizer.pm
 %%SITE_PERL%%/SGML/DTDParse/Util.pm
 %%SITE_PERL%%/SGML/DTDParse.pm
-%%SITE_PERL%%/mach/auto/SGML/DTDParse/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/SGML/DTDParse
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML/DTDParse/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML/DTDParse
 @dirrm %%SITE_PERL%%/SGML/DTDParse/Format
 @dirrm %%SITE_PERL%%/SGML/DTDParse
-@unexec rmdir %D/%%SITE_PERL%%/mach/auto/SGML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/SGML 2>/dev/null || true
