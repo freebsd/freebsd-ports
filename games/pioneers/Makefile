@@ -9,7 +9,7 @@ PORTNAME=	gnocatan
 PORTVERSION=	0.8.1.59
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITE_SUBDIR=	pio
 
 MAINTAINER=	sw@gegenunendlich.de
 COMMENT=	An Internet playable version of the Settlers of Catan for GNOME/GTK
