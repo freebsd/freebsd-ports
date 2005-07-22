@@ -1,0 +1,18 @@
+--- Makefile.orig	Sun May 15 12:54:02 2005
++++ Makefile	Thu Jul  7 19:26:25 2005
+@@ -5,13 +5,12 @@
+ #INDENT = indent
+ 
+ 
+-CC = gcc
+-CFLAGS = -O2 -fomit-frame-pointer -fpic -fno-strict-aliasing #-march=athlon-xp
++CFLAGS = $(OPT)
++OPT = -O2 -fomit-frame-pointer
+ #DEBUG = -g -fno-omit-frame-pointer -O0
+ 
+ #options for fm_sim.c only:
+ #no-crossjumping - gcc 3.3 breaks computed gotos, this seems to help a little
+-OPTS = -fno-cse-follow-jumps -fno-crossjumping
+ #OPTS += -fno-strict-aliasing
+ 
+ #CFLAGS = $(CFLAGS_OPT) -fverbose-asm -W -Wimplicit -Wparentheses -Wpointer-arith \

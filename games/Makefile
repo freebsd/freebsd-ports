@@ -141,6 +141,7 @@
     SUBDIR += fkiss
     SUBDIR += flightgear
     SUBDIR += flying
+    SUBDIR += fmars
     SUBDIR += foobillard
     SUBDIR += fotaq
     SUBDIR += frabs
