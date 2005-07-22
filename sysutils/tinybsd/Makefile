@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	tinybsd
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.tinybsd.org/
+MASTER_SITES=	http://www.tinybsd.org/download/
 
 MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	Shell script to build embedded systems based on FreeBSD
