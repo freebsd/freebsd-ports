@@ -35,7 +35,7 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 
-.if !defined(WITHOUT_JAVA)
+.if !defined(WITHOUT_JAVA) && !defined(WITH_GNUGCJ)
 USE_JAVA=	yes
 JAVA_VERSION=	1.4
 JAVA_BUILD=	jdk
@@ -50,8 +50,8 @@ BROKEN=		"rtld depends on _end symbol. type make -DTRYBROKEN to see how to upgra
 
 CODELINE=		680
 RELEASE_NR=		1.9
-MILESTONE=		117
-SNAPDATE=		20050713
+MILESTONE=		120
+SNAPDATE=		20050722
 INSTALLATION_BASEDIR=	openoffice.org${RELEASE_NR}m${MILESTONE}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org2.0
@@ -67,16 +67,34 @@ PKGNAMEPREFIX=          ${LANG_PKGNAME}-
 PKGNAMESUFFIX?=         -${LANG_SUFFIX}
 .endif
 
+.if defined(WITH_GNUGCJ)
+BUILD_DEPENDS+=	gcc41:${PORTSDIR}/lang/gcc41
+BROKEN=	"still work in progress"
+.else
 BUILD_DEPENDS+=	gcc-ooo:${PORTSDIR}/lang/gcc-ooo
+.endif
+
 # FIXME (correctly add ccache before gcc and g++)
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
+.if defined(WITH_GNUGCJ)
+CC=	ccache gcc41
+CXX=	ccache g++41
+.else
 CC=	ccache gcc-ooo
 CXX=	ccache g++-ooo
+.endif #WITH_GNUGCJ
+.endif #WITH_CCACHE
+.if !defined(WITH_CCACHE)
+.if defined(WITH_GNUGCJ)
+CC=	gcc41
+CXX=	g++41
 .else
 CC=	gcc-ooo
 CXX=	g++-ooo
-.endif
+.endif #WITH_GNUGCJ
+.endif #!WITH_CCACHE
+
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
@@ -84,9 +102,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		bison-devel:${PORTSDIR}/devel/bison-devel \
 		imake:${X_IMAKE_PORT}
-.if defined(WITHOUT_JAVA)
-LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
-.else
+.if !defined(WITHOUT_JAVA)
 BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 .endif
 
