@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	Maypole
-PORTVERSION=	2.09
+PORTVERSION=	2.10
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/S/SI/SIMONFLK
+MASTER_SITE_SUBDIR=	../by-authors/id/T/TE/TEEJAY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
@@ -31,7 +31,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/DBI/Loader.pm:${PORTSDIR}/databases/p5-Class-D
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/Class/Data/Inheritable.pm:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		${SITE_PERL}/CGI/Simple.pm:${PORTSDIR}/www/p5-CGI-Simple \
-		${SITE_PERL}/HTTP/Headers.pm:${PORTSDIR}/www/p5-libwww
+		${SITE_PERL}/HTTP/Headers.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	MODPERL "mod_perl support" on
@@ -40,8 +41,8 @@ OPTIONS=	MODPERL "mod_perl support" on
 
 .if defined(WITH_MODPERL)
 .if defined(WITH_APACHE2)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq2
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq2
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2
 .else
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
@@ -69,6 +70,7 @@ MAN3=		Apache::MVC.3 \
 		Maypole::Manual::BuySpy.3 \
 		Maypole::Manual::Flox.3 \
 		Maypole::Manual::Model.3 \
+		Maypole::Manual::Plugins.3 \
 		Maypole::Manual::Request.3 \
 		Maypole::Manual::StandardTemplates.3 \
 		Maypole::Manual::View.3 \
@@ -76,6 +78,7 @@ MAN3=		Apache::MVC.3 \
 		Maypole::Model::Base.3 \
 		Maypole::Model::CDBI.3 \
 		Maypole::Model::CDBI::Plain.3 \
+		Maypole::Session.3 \
 		Maypole::View::Base.3 \
 		Maypole::View::TT.3
 
@@ -129,7 +132,7 @@ post-install:
 	@ ${CAT} ${PKGMESSAGE}
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		"Perl 5.6 or newer required. Install lang/perl5 or lang/perl5.8 and try again."
+IGNORE=		Perl 5.6 or newer required. Install lang/perl5 or lang/perl5.8 and try again.
 .endif
 
 .include <bsd.port.post.mk>
