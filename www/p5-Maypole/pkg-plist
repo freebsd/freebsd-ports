@@ -12,6 +12,7 @@
 %%SITE_PERL%%/Maypole/Manual/BuySpy.pod
 %%SITE_PERL%%/Maypole/Manual/Flox.pod
 %%SITE_PERL%%/Maypole/Manual/Model.pod
+%%SITE_PERL%%/Maypole/Manual/Plugins.pod
 %%SITE_PERL%%/Maypole/Manual/Request.pod
 %%SITE_PERL%%/Maypole/Manual/StandardTemplates.pod
 %%SITE_PERL%%/Maypole/Manual/View.pod
@@ -19,6 +20,7 @@
 %%SITE_PERL%%/Maypole/Model/Base.pm
 %%SITE_PERL%%/Maypole/Model/CDBI.pm
 %%SITE_PERL%%/Maypole/Model/CDBI/Plain.pm
+%%SITE_PERL%%/Maypole/Session.pm
 %%SITE_PERL%%/Maypole/View/Base.pm
 %%SITE_PERL%%/Maypole/View/TT.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Maypole/.packlist
