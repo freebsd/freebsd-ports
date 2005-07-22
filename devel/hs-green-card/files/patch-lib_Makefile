@@ -1,0 +1,60 @@
+--- lib/Makefile.orig	Thu Jun  5 14:37:24 2003
++++ lib/Makefile	Tue May 31 20:00:59 2005
+@@ -3,7 +3,7 @@
+ ### User serviceable parts  ###
+ 
+ # Options to compile the sources with.
+-GHC_OPTS = -cpp -fglasgow-exts -fno-prune-tydecls 
++GHC_OPTS = -cpp -fglasgow-exts
+ 
+ PACKAGE=greencard
+ 
+@@ -40,7 +40,7 @@
+ 	$(HC) -package-name $(PACKAGE) $(GHC_OPTS) $(WAY_$(way)_GHC_OPTS) -c $< -o $@ -hisuf $(way_)hi
+ 
+ %.o : %.c
+-	$(HC) $(CC_OPTS) -c $< -o $@
++	$(HC) $(CC_OPTS) -I. -c $< -o $@
+ 
+ SRC_HC_OPTS 	+= -package-name $(PACKAGE)
+ 
+@@ -51,8 +51,8 @@
+ 	rm -f Foreign/GreenCard.$(way_)o Foreign/GreenCard_stub_ffi.o libHSgreencard.$(way_)a
+ 
+ install :: libHSgreencard.$(way_)a Foreign/GreenCard.$(way_)hi
+-	install -D Foreign/GreenCard.$(way_)hi $(libdir)/imports/Foreign/GreenCard.$(way_)hi
+-	install -D libHSgreencard.$(way_)a $(libdir)/libHSgreencard.$(way_)a
++	install Foreign/GreenCard.$(way_)hi $(libdir)/imports/Foreign/GreenCard.$(way_)hi
++	install libHSgreencard.$(way_)a $(libdir)/libHSgreencard.$(way_)a
+ 
+ uninstall ::
+ 	rm -f $(libdir)/imports/Foreign/GreenCard.$(way_)hi
+@@ -61,7 +61,7 @@
+ ifeq "$(way)" ""
+ 
+ install ::
+-	install -D Foreign/GreenCard.gc $(libdir)/Foreign/GreenCard.gc
++	install Foreign/GreenCard.gc $(libdir)/Foreign/GreenCard.gc
+ uninstall ::
+ 	rm -f $(libdir)/Foreign/GreenCard.gc 
+ 
+@@ -87,8 +87,8 @@
+ install :: all
+ 
+ install :: Foreign/GreenCard.hs
+-	install -D Foreign/GreenCard.gc $(libdir)/Foreign/GreenCard.gc
+-	install -D Foreign/GreenCard.hs $(libdir)/Foreign/GreenCard.hs
++	install Foreign/GreenCard.gc $(libdir)/Foreign/GreenCard.gc
++	install Foreign/GreenCard.hs $(libdir)/Foreign/GreenCard.hs
+ 
+ uninstall :: 
+ 	rm -f $(libdir)/Foreign/GreenCard.gc
+@@ -96,7 +96,7 @@
+ 
+ # No actual ffi in Foreign.GreenCard so nothing to install
+ # install :: Foreign/GreenCard.so
+-#         install -D Foreign/GreenCard.so $(libdir)/Foreign/GreenCard.so
++#         install Foreign/GreenCard.so $(libdir)/Foreign/GreenCard.so
+ # uninstall :: 
+ # 	rm -f $(libdir)/Foreign/GreenCard.so
+ 
