@@ -1,0 +1,9 @@
+
+ =======================================================================
+ To reduce the number of term windows opened, use -n:
+   angband -- -n2
+ To use graphical tiles, use -g:
+   angband -g
+   Note: you have to download graphical tiles from www.thangorodrim.net
+   manually and place them in %%PREFIX%%/share/angband/lib/xtra/graf
+ =======================================================================
