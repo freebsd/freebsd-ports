@@ -7,7 +7,7 @@
 
 PORTNAME=	linuxthreads
 PORTVERSION=	2.2.3
-PORTREVISION=	16
+PORTREVISION=	18
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glibc
@@ -25,10 +25,6 @@ USE_PERL5_BUILD=true
 # This port only works on i386 right now.
 ONLY_FOR_ARCHS=	i386
 
-.if ${OSVERSION} >= 600031
-BROKEN=		"Does not compile on FreeBSD >= 6.0"
-.endif
-
 .if ${OSVERSION} < 400015
 BROKEN="Requires FreeBSD 4.0 or newer"
 .endif
@@ -36,8 +32,14 @@ BROKEN="Requires FreeBSD 4.0 or newer"
 USING_GCC3=true
 MAKE_ENV+= USING_GCC3=true
 .endif
-.if defined(INSTALL_LIBLTHREAD_PIC_ARCHIVE)
+.if defined(LINUXTHREADS_INSTALL_LIBLTHREAD_PIC_ARCHIVE)
 MAKE_ENV+=	INSTALL_LIBLTHREAD_PIC_ARCHIVE=yes
+.endif
+.if defined(LINUXTHREADS_MAX_STACK_SIZE)
+MAKE_ENV+=	LINUXTHREADS_STACK_SIZE=${LINUXTHREADS_MAX_STACK_SIZE}
+.endif
+.if defined(LINUXTHREADS_MAX_THREADS)
+MAKE_ENV+=	LINUXTHREADS_MAX_THREADS=${LINUXTHREADS_MAX_THREADS}
 .endif
 .if defined(LINUXTHREADS_DETECT_UNSAFE_EXIT)
 MAKE_ENV+=	LINUXTHREADS_DETECT_UNSAFE_EXIT=yes
@@ -49,22 +51,27 @@ MAKE_ENV+=	LINUXTHREADS_WRAP_LD="sh ${FILESDIR}/ldwrap"
 .if defined(LINUXTHREADS_NO_POSIX_PRIORITY_SCHEDULING)
 MAKE_ENV+=	LINUXTHREADS_NO_POSIX_PRIORITY_SCHEDULING=yes
 .endif
+.if defined(LINUXTHREADS_ALT_RESTARTSIG)
+MAKE_ENV+=	LINUXTHREADS_ALT_RESTARTSIG=${LINUXTHREADS_ALT_RESTARTSIG}
+.endif
 
 threads_files := README.FreeBSD clone.S clone.h freebsd-compat.h getgr_r.c \
 	gethostby_r.c getnetby_r.c getprotoby_r.c getpw_r.c getservby_r.c \
 	lclone.c libc_calls.c libc_thread.c sched.c uthread_file.c \
 	wraputhread.c localtime.c getlogin.c telldir.c ttyname.c
 
+threads_files2 := _pthreadtypes.h
+
 WRKSRC=		${WRKDIR}/${PKGNAME}
 SRC_BASE=	/usr/src
 LIBSRC_BASE=	${SRC_BASE}/lib
 
 pre-fetch:
-.if !defined(WITH_CONDWAIT_PATCH)
+.if !defined(LINUXTHREADS_WITH_CONDWAIT_PATCH)
 	@${ECHO}
 	@${ECHO} You can use an experimental patch to reduce the number of
 	@${ECHO} condition variable triggered context switches by defining
-	@${ECHO} WITH_CONDWAIT_PATCH
+	@${ECHO} LINUXTHREADS_WITH_CONDWAIT_PATCH
 	@${ECHO}
 .endif
 .if !defined(LINUXTHREADS_DETECT_UNSAFE_EXIT)
@@ -72,6 +79,20 @@ pre-fetch:
 	@${ECHO} "Some unsafe calls to exit() can be detected by defining"
 	@${ECHO} "LINUXTHREADS_DETECT_UNSAFE_EXIT, see files/README.FreeBSD"
 	@${ECHO} "for more info."
+	@${ECHO}
+.endif
+.if !defined(LINUXTHREADS_MAX_STACK_SIZE)
+	@${ECHO}
+	@${ECHO} "The maximum stack size (default 2097152) can be overridden"
+	@${ECHO} "by defining LINUXTHREADS_MAX_STACK_SIZE,"
+	@${ECHO} "see files/README.FreeBSD for more info."
+	@${ECHO}
+.endif
+.if !defined(LINUXTHREADS_MAX_THREADS)
+	@${ECHO}
+	@${ECHO} "The maximum number of threads (default 1024) can be"
+	@${ECHO} "overriden by defining LINUXTHREADS_MAX_THREADS,"
+	@${ECHO} "see files/README.FreeBSD for more info."
 	@${ECHO}
 .endif
 .if !defined(LINUXTHREADS_WRAP_API)
@@ -85,6 +106,13 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} "Use of POSIX priority scheduling can be turned off by"
 	@${ECHO} "defining LINUXTHREADS_NO_POSIX_PRIORITY_SCHEDULING,"
+	@${ECHO} "see files/README.FreeBSD for more info."
+	@${ECHO}
+.endif
+.if !defined(LINUXTHREADS_ALT_RESTARTSIG)
+	@${ECHO}
+	@${ECHO} "An alternate restart signal can be selected by"
+	@${ECHO} "defining LINUXTHREADS_ALT_RESTARTSIG,"
 	@${ECHO} "see files/README.FreeBSD for more info."
 	@${ECHO}
 .endif
@@ -124,6 +152,9 @@ post-extract:
 	@${SED} -f ${FILESDIR}/strptime.sed \
 	    /usr/src/lib/libc/stdtime/strptime.c \
 	    > ${WRKSRC}/strptime.c
+	@${MKDIR} ${WRKSRC}/sys
+	@cd ${FILESDIR} ; \
+		${CP} -p ${threads_files2} ${WRKSRC}/sys/.
 	@${MKDIR} ${WRKSRC}/libgcc_r
 	@${TEST} -f ${WRKSRC}/libgcc_r/Makefile || \
 	${LN} -s ${FILESDIR}/Makefile.libgcc_r ${WRKSRC}/libgcc_r/Makefile
@@ -154,9 +185,9 @@ post-extract:
 	   ${WRKSRC}/libsupc++/Makefile.inc
 .endif
 
-.if defined(WITH_CONDWAIT_PATCH) || defined(LINUXTHREADS_WRAP_API)
+.if defined(LINUXTHREADS_WITH_CONDWAIT_PATCH) || defined(LINUXTHREADS_WRAP_API)
 post-patch:
-.if defined(WITH_CONDWAIT_PATCH)
+.if defined(LINUXTHREADS_WITH_CONDWAIT_PATCH)
 	@${ECHO_MSG} "===>  Applying experimental patch condwait-patch"
 	@if ${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/condwait-patch; then \
 	  ${ECHO_MSG} "===>  Patch condwait-patch applied successfully"; \
@@ -198,12 +229,12 @@ post-install:
 
 #	@sh ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.if defined(NOPROFILE)
+.if (defined(NOPROFILE) && ${OSVERSION} < 600007) || (defined(NO_PROFILE) && ${OSVERSION} >= 600007)
 PLIST_SUB=	PROFILE:="@comment "
 .else
 PLIST_SUB=	PROFILE:=""
 .endif
-.if defined(NOPIC)
+.if (defined(NOPIC) && ${OSVERSION} < 600007) || (defined(NO_PIC) && ${OSVERSION} >= 600007)
 PLIST_SUB+=	PIC:="@comment "
 .else
 PLIST_SUB+=	PIC:=""
@@ -218,7 +249,7 @@ PLIST_SUB+=	LIBLGCC_R_PICARCHIVE:=""
 .else
 PLIST_SUB+=	LIBLGCC_R_PICARCHIVE:="@comment "
 .endif
-.if defined(INSTALL_PIC_ARCHIVE) || defined(INSTALL_LIBLTHREAD_PIC_ARCHIVE)
+.if defined(INSTALL_PIC_ARCHIVE) || defined(LINUXTHREADS_INSTALL_LIBLTHREAD_PIC_ARCHIVE)
 PLIST_SUB+=	LIBLTHREADPICARCHIVE:=""
 .else
 PLIST_SUB+=	LIBLTHREADPICARCHIVE:="@comment "
