@@ -8,7 +8,7 @@
 # BEFORE:  SERVERS
 # KEYWORD: shutdown
 
-# Add the following line to /etc/rc.conf to enable `runsvdir':
+# Add the following lines to /etc/rc.conf to enable `runsvdir':
 #
 #runsvdir_enable="YES"		(default: NO)
 #runsvdir_path="/service"	(default: /var/service)
