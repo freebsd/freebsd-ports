@@ -142,6 +142,7 @@
 %%DATADIR%%/docs/de/subcircuit.html
 %%DATADIR%%/docs/de/unterschaltung.png
 %%DATADIR%%/docs/de/wire.png
+%%DATADIR%%/docs/en/characters.html
 %%DATADIR%%/docs/en/contab.png
 %%DATADIR%%/docs/en/index.html
 %%DATADIR%%/docs/en/internal.html
@@ -189,13 +190,20 @@
 %%DATADIR%%/lang/qucs_pt.qm
 %%DATADIR%%/lang/qucs_ro.qm
 %%DATADIR%%/lang/qucs_se.qm
+%%DATADIR%%/library/Diodes.lib
+%%DATADIR%%/library/MOSFETs.lib
+%%DATADIR%%/library/OpAmps.lib
+%%DATADIR%%/library/Substrates.lib
+%%DATADIR%%/library/Transistors.lib
 bin/qucs
 bin/qucsator
 bin/qucsconv
 bin/qucsedit
 bin/qucsfilter
 bin/qucshelp
+bin/qucslib
 bin/qucstrans
+@dirrm %%DATADIR%%/library
 @dirrm %%DATADIR%%/lang
 @dirrm %%DATADIR%%/docs/fr
 @dirrm %%DATADIR%%/docs/es
