@@ -57,6 +57,11 @@ PLIST_SUB+=	QT=""
 .else
 CONFIGURE_ARGS+=--disable-qt
 PLIST_SUB+=	QT="@comment "
+.if defined(PKGNAMEPREFIX)
+.if ${PKGNAMEPREFIX}==${PYTHON_PKGNAMEPREFIX} && ${OSVERSION} < 500000
+IGNORE=	Does not build on 4.X
+.endif
+.endif
 .endif
 
 post-patch:
