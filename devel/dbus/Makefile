@@ -57,11 +57,6 @@ PLIST_SUB+=	QT=""
 .else
 CONFIGURE_ARGS+=--disable-qt
 PLIST_SUB+=	QT="@comment "
-.if defined(PKGNAMEPREFIX)
-.if ${PKGNAMEPREFIX}==${PYTHON_PKGNAMEPREFIX} && ${OSVERSION} < 500000
-IGNORE=	Does not build on 4.X
-.endif
-.endif
 .endif
 
 post-patch:
@@ -78,6 +73,13 @@ post-install:
 .endif
 	${INSTALL_SCRIPT} ${WRKSRC}/dbus.sh ${PREFIX}/etc/rc.d
 	${MKDIR} ${X11BASE}/share/dbus-1/services
+.else
+.if defined(PKGNAMEPREFIX)
+.if ${PKGNAMEPREFIX}==${PYTHON_PKGNAMEPREFIX} && ${OSVERSION} < 500000
+IGNORE=	Does not build on 4.X
+.endif
+.endif
+
 .endif
 
 .include <bsd.port.post.mk>
