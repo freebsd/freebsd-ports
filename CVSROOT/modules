@@ -6530,6 +6530,7 @@ nd		ports/www/nd
 ndiff		ports/math/ndiff
 ndir		ports/sysutils/ndir
 nds-aspell	ports/textproc/nds-aspell
+ne		ports/editors/ne
 neXtaw		ports/x11-toolkits/neXtaw
 nec2c		ports/comms/nec2c
 nedit		ports/editors/nedit
