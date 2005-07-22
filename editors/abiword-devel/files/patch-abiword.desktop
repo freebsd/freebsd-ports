@@ -16,7 +16,7 @@
 -MimeType=application/x-abiword;text/x-abiword;text/x-xml-abiword;text/plain;application/vnd.ms-word;application/rtf;application/vnd.plain;application/xhtml+xml;text/html;
 -Name=Word Processor
 -Comment=AbiWord Word Processor
-+MimeType=application/x-abiword;text/x-abiword;text/x-xml-abiword;application/vnd.ms-word;application/rtf;application/vnd.plain;application/xhtml+xml;text/html;
++MimeType=application/x-abiword;text/x-abiword;text/x-xml-abiword;application/vnd.ms-word;application/msword;application/rtf;application/vnd.plain;application/xhtml+xml;text/html;
 +Name=Word Processor (2.3)
 +Comment=AbiWord Word Processor (2.3.x)
  Name[de]=Textverarbeitung
