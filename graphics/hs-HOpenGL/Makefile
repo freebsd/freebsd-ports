@@ -12,7 +12,11 @@ CATEGORIES=	graphics haskell
 MASTER_SITES=	http://haskell.cs.yale.edu/HOpenGL/releases/
 PKGNAMEPREFIX=	hs-
 
-MAINTAINER=	ports@FreeBSD.org
+DEPRECATED=	"part of lang/ghc, broken dependencies"
+BROKEN=		${DEPRECATED}
+EXPIRATION_DATE=2005-10-01
+
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Binding for OpenGL and GLUT for the lazy functional language Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc5 \

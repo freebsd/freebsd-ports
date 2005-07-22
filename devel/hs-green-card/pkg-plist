@@ -1,26 +1,11 @@
-bin/green-card
-lib/green-card/StdDIS.gc
-lib/green-card/StdDIS.hi
-lib/green-card/StdDIS.hs
-lib/green-card/StdDIS.o
-lib/green-card/libHSgreencard.a
-%%PORTDOCS%%%%DOCSDIR%%/directives.html
-%%PORTDOCS%%%%DOCSDIR%%/dis-std.html
-%%PORTDOCS%%%%DOCSDIR%%/dis.html
-%%PORTDOCS%%%%DOCSDIR%%/docbook.css
-%%PORTDOCS%%%%DOCSDIR%%/extensions.html
-%%PORTDOCS%%%%DOCSDIR%%/fill-in.html
-%%PORTDOCS%%%%DOCSDIR%%/goals.html
-%%PORTDOCS%%%%DOCSDIR%%/green-card.dvi.gz
-%%PORTDOCS%%%%DOCSDIR%%/green-card.ps.gz
-%%PORTDOCS%%%%DOCSDIR%%/greencard.html
-%%PORTDOCS%%%%DOCSDIR%%/import.html
-%%PORTDOCS%%%%DOCSDIR%%/invoking.html
-%%PORTDOCS%%%%DOCSDIR%%/motivation.html
-%%PORTDOCS%%%%DOCSDIR%%/overview.html
-%%PORTDOCS%%%%DOCSDIR%%/proc-spec.html
-%%PORTDOCS%%%%DOCSDIR%%/related.html
-%%PORTDOCS%%%%DOCSDIR%%/type-sig.html
-%%PORTDOCS%%%%DOCSDIR%%/using.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/green-card
+bin/greencard
+lib/greencard-%%GC_VERSION%%/imports/Foreign/GreenCard.hi
+lib/greencard-%%GC_VERSION%%/imports/Foreign/GreenCard.p_hi
+lib/greencard-%%GC_VERSION%%/Foreign/GreenCard.gc
+lib/greencard-%%GC_VERSION%%/greencard-bin
+lib/greencard-%%GC_VERSION%%/libHSgreencard.p_a
+lib/greencard-%%GC_VERSION%%/libHSgreencard.a
+@dirrm lib/greencard-%%GC_VERSION%%/imports/Foreign
+@dirrm lib/greencard-%%GC_VERSION%%/imports
+@dirrm lib/greencard-%%GC_VERSION%%/Foreign
+@dirrm lib/greencard-%%GC_VERSION%%

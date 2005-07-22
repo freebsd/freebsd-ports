@@ -1,12 +1,31 @@
---- src/Makefile.orig	Wed May  1 23:27:47 2002
-+++ src/Makefile	Wed May  1 23:28:02 2002
-@@ -1,9 +1,6 @@
- # (GNU) Makefile for Green Card (GHC)
+--- src/Makefile.orig	Tue May 31 20:11:19 2005
++++ src/Makefile	Tue May 31 20:01:39 2005
+@@ -47,7 +47,7 @@ clean ::
+ 	rm -f $(PROGRAM)
  
- ### User serviceable parts  ###
--HC      = /path/to/ghc
--CC      = gcc
--RM      = rm
+ install :: $(PROGRAM)
+-	install -D $(PROGRAM) $(bindir)/$(PROGRAM)
++	install $(PROGRAM) $(bindir)/$(PROGRAM)
  
- # Options to compile the sources with.
+ uninstall :: 
+ 	rm -f $(bindir)/$$i
+@@ -58,7 +58,7 @@ install :: all
+ 	for i in $(ALL_SRCS); do \
+ 		case $$i in \
+ 		  (*.hs | *.lhs) \
+-		    install -D $$i $(libdir)/src/$$i; \
++		    install $$i $(libdir)/src/$$i; \
+ 		esac; \
+ 	done
  
+@@ -98,8 +98,8 @@ all	:: greencard-bin
+ all     :: $(PROGRAM)
+ 
+ install :: all
+-	install -D greencard-bin $(libdir)/greencard-bin
+-	install -D $(PROGRAM) $(bindir)/$(PROGRAM)
++	install greencard-bin $(libdir)/greencard-bin
++	install $(PROGRAM) $(bindir)/$(PROGRAM)
+ 
+ uninstall ::
+ 	$(RM) $(libdir)/greencard-bin

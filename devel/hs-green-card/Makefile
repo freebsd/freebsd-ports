@@ -6,30 +6,25 @@
 #
 
 PORTNAME=	green-card
-PORTVERSION=	2.05
-PORTREVISION=	1
+PORTVERSION=	3.0.1
 CATEGORIES=	devel haskell
-MASTER_SITES=	http://www.galois.com/~sof/
+MASTER_SITES=	http://haskell.org/greencard/downloads/
 PKGNAMEPREFIX=	hs-
-DISTNAME=	gc-${PORTVERSION}-src
+DISTNAME=	greencard-${GC_VERSION}-src
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A foreign function interface preprocessor for Haskell
 
-BUILD_DEPENDS=	ghc-5.04.3:${PORTSDIR}/lang/ghc5
+BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
-WRKSRC=		${WRKDIR}/gc-${PORTVERSION}
+WRKSRC=		${WRKDIR}/greencard-${GC_VERSION}
+GC_VERSION=	3.01
+GCLIBDIR=	${PREFIX}/lib/greencard-${GC_VERSION}
+PLIST_SUB+=	GC_VERSION=${GC_VERSION}
 
 USE_GMAKE=	yes
-ALL_TARGET=	all
 
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/green-card ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/lib/green-card
-	@(cd ${WRKSRC}/lib/ghc && ${CP} StdDIS.* libHSgreencard.a ${PREFIX}/lib/green-card)
-.if !defined(NOPORTDOCS)
-	@(cd ${WRKSRC}/doc && ${CP} -R green-card ${PREFIX}/share/doc \
-	  && ${CP} green-card.dvi.gz green-card.ps.gz ${DOCSDIR})
-.endif
+pre-install:
+	${MKDIR} ${GCLIBDIR}/Foreign ${GCLIBDIR}/imports/Foreign
 
 .include <bsd.port.mk>
