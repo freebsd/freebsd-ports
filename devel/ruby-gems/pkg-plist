@@ -1,5 +1,6 @@
 bin/gem
 bin/gem_server
+bin/gem_mirror
 bin/gemwhich
 bin/generate_yaml_index.rb
 bin/update_rubygems
@@ -19,6 +20,7 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.1.gemspec
 %%RUBY_SITELIBDIR%%/rubygems/format.rb
 %%RUBY_SITELIBDIR%%/rubygems/gem_commands.rb
 %%RUBY_SITELIBDIR%%/rubygems/gem_runner.rb
+%%RUBY_SITELIBDIR%%/rubygems/gem_openssl.rb
 %%RUBY_SITELIBDIR%%/rubygems/installer.rb
 %%RUBY_SITELIBDIR%%/rubygems/loadpath_manager.rb
 %%RUBY_SITELIBDIR%%/rubygems/old_format.rb
@@ -26,6 +28,7 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.1.gemspec
 %%RUBY_SITELIBDIR%%/rubygems/package.rb
 %%RUBY_SITELIBDIR%%/rubygems/remote_installer.rb
 %%RUBY_SITELIBDIR%%/rubygems/rubygems_version.rb
+%%RUBY_SITELIBDIR%%/rubygems/security.rb
 %%RUBY_SITELIBDIR%%/rubygems/source_index.rb
 %%RUBY_SITELIBDIR%%/rubygems/specification.rb
 %%RUBY_SITELIBDIR%%/rubygems/timer.rb
@@ -35,12 +38,12 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.1.gemspec
 %%RUBY_SITELIBDIR%%/rubygems.rb
 %%RUBY_SITELIBDIR%%/ubygems.rb
 @exec mkdir -p %D/lib/ruby/gems/%%RUBY_VER%%/doc
-@unexec rmdir %D/lib/ruby/gems/%%RUBY_VER%%/cache 2>/dev/null || true
-@unexec rmdir %D/lib/ruby/gems/%%RUBY_VER%%/doc 2>/dev/null || true
-@unexec rmdir %D/lib/ruby/gems/%%RUBY_VER%%/gems/sources-0.0.1/lib 2>/dev/null || true
-@unexec rmdir %D/lib/ruby/gems/%%RUBY_VER%%/gems/sources-0.0.1 2>/dev/null || true
-@unexec rmdir %D/lib/ruby/gems/%%RUBY_VER%%/gems 2>/dev/null || true
-@unexec rmdir %D/lib/ruby/gems/%%RUBY_VER%%/specifications 2>/dev/null || true
-@unexec rmdir %D/lib/ruby/gems/%%RUBY_VER%% 2>/dev/null || true
-@unexec rmdir %D/lib/ruby/gems 2>/dev/null || true
 @dirrm %%RUBY_SITELIBDIR%%/rubygems
+@dirrm lib/ruby/gems/1.8/specifications
+@dirrm lib/ruby/gems/1.8/gems/sources-0.0.1/lib
+@dirrm lib/ruby/gems/1.8/gems/sources-0.0.1
+@dirrm lib/ruby/gems/1.8/gems
+@dirrm lib/ruby/gems/1.8/doc
+@dirrm lib/ruby/gems/1.8/cache
+@dirrm lib/ruby/gems/1.8
+@dirrm lib/ruby/gems
