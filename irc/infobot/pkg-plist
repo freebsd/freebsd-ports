@@ -1,79 +1,82 @@
-share/infobot-%%VERSION%%/files/sane-is.txt
-share/infobot-%%VERSION%%/files/infobot-is.txt
-share/infobot-%%VERSION%%/files/infobot.channels
-share/infobot-%%VERSION%%/files/infobot.config
-share/infobot-%%VERSION%%/files/infobot.config-dist
-share/infobot-%%VERSION%%/files/infobot.crontab
-share/infobot-%%VERSION%%/files/infobot.help
-share/infobot-%%VERSION%%/files/infobot.users
-share/infobot-%%VERSION%%/files/infobot.users-dist
-share/infobot-%%VERSION%%/files/magic8.txt
-share/infobot-%%VERSION%%/files/sane-are.txt
-share/infobot-%%VERSION%%/files/sane-ignore.txt
-share/infobot-%%VERSION%%/files/infobot-are.txt
-share/infobot-%%VERSION%%/scripts/update_db
-share/infobot-%%VERSION%%/scripts/curl
-share/infobot-%%VERSION%%/scripts/dump_db
-share/infobot-%%VERSION%%/scripts/flock-test
-share/infobot-%%VERSION%%/scripts/get_entries_from_log
-share/infobot-%%VERSION%%/scripts/make_password
-share/infobot-%%VERSION%%/scripts/make_snap
-share/infobot-%%VERSION%%/scripts/restore_snap
-share/infobot-%%VERSION%%/scripts/run_if_needed.pl
-share/infobot-%%VERSION%%/scripts/track2fact
-share/infobot-%%VERSION%%/scripts/unupdate_dbs
-share/infobot-%%VERSION%%/scripts/README.scripts
-share/infobot-%%VERSION%%/src/stockquote.pl
-share/infobot-%%VERSION%%/src/ANSI.pl
-share/infobot-%%VERSION%%/src/Channel.pl
-share/infobot-%%VERSION%%/src/CTCP.pl
-share/infobot-%%VERSION%%/src/Extras.pl
-share/infobot-%%VERSION%%/src/DBM.pl
-share/infobot-%%VERSION%%/src/DNS.pl
-share/infobot-%%VERSION%%/src/Internic.pl
-share/infobot-%%VERSION%%/src/Help.pl
-share/infobot-%%VERSION%%/src/IrcExtras.pl
-share/infobot-%%VERSION%%/src/Irc.pl
-share/infobot-%%VERSION%%/src/IrcHooks.pl
-share/infobot-%%VERSION%%/src/Math.pl
-share/infobot-%%VERSION%%/src/Misc.pl
-share/infobot-%%VERSION%%/src/NOAA.pl
-share/infobot-%%VERSION%%/src/Norm.pl
-share/infobot-%%VERSION%%/src/Params.pl
-share/infobot-%%VERSION%%/src/Process.pl
-share/infobot-%%VERSION%%/src/Question.pl
-share/infobot-%%VERSION%%/src/RDF.pl
-share/infobot-%%VERSION%%/src/Reply.pl
-share/infobot-%%VERSION%%/src/Search.pl
-share/infobot-%%VERSION%%/src/Setup.pl
-share/infobot-%%VERSION%%/src/Slashdot3.pl
-share/infobot-%%VERSION%%/src/Speller.pl
-share/infobot-%%VERSION%%/src/Update.pl
-share/infobot-%%VERSION%%/src/Statement.pl
-share/infobot-%%VERSION%%/src/Traceroute.pl
-share/infobot-%%VERSION%%/src/User.pl
-share/infobot-%%VERSION%%/src/Util.pm
-share/infobot-%%VERSION%%/src/W3Search.pl
-share/infobot-%%VERSION%%/src/Zippy.pl
-share/infobot-%%VERSION%%/src/babel.pl
-share/infobot-%%VERSION%%/src/exchange.pl
-share/infobot-%%VERSION%%/src/excuse.pl
-share/infobot-%%VERSION%%/src/insult.pl
-share/infobot-%%VERSION%%/src/module-template
-share/infobot-%%VERSION%%/src/myRoutines.pl
-share/infobot-%%VERSION%%/src/nickometer.pl
-share/infobot-%%VERSION%%/src/purldoc.pl
-share/infobot-%%VERSION%%/src/Aviation.pl
-share/infobot-%%VERSION%%/doc/how_to_fix_files_uploaded_from_windows_to_unix.txt
-share/infobot-%%VERSION%%/doc/infobot_guide.html
-share/infobot-%%VERSION%%/doc/intro.bit
-share/infobot-%%VERSION%%/doc/makemanual.pl
-share/infobot-%%VERSION%%/infobot
-share/infobot-%%VERSION%%/REVISIONS
-share/infobot-%%VERSION%%/README
-share/infobot-%%VERSION%%/LICENSE
-@dirrm share/infobot-%%VERSION%%/files
-@dirrm share/infobot-%%VERSION%%/scripts
-@dirrm share/infobot-%%VERSION%%/src
-@dirrm share/infobot-%%VERSION%%/doc
-@dirrm share/infobot-%%VERSION%%
+bin/infobot
+etc/infobot/infobot-are.txt
+etc/infobot/infobot-is.txt
+etc/infobot/infobot.channels
+@unexec if cmp -s %D/etc/infobot/infobot.config %D/etc/infobot/infobot.config-dist; then rm -f %D/etc/infobot/infobot.config; fi
+etc/infobot/infobot.config-dist
+etc/infobot/infobot.crontab
+@unexec if cmp -s %D/etc/infobot/infobot.help %D/etc/infobot/infobot.help-dist; then rm -f %D/etc/infobot/infobot.help; fi
+etc/infobot/infobot.help-dist
+@unexec if cmp -s %D/etc/infobot/infobot.users %D/etc/infobot/infobot.users-dist; then rm -f %D/etc/infobot/infobot.users; fi
+etc/infobot/infobot.users-dist
+etc/infobot/magic8.txt
+etc/infobot/sane-are.txt
+etc/infobot/sane-ignore.txt
+etc/infobot/sane-is.txt
+%%DATADIR%%/extras/ANSI.pl
+%%DATADIR%%/extras/Aviation.pl
+%%DATADIR%%/extras/DNS.pl
+%%DATADIR%%/extras/Extras.pl
+%%DATADIR%%/extras/Internic.pl
+%%DATADIR%%/extras/Math.pl
+%%DATADIR%%/extras/NOAA.pl
+%%DATADIR%%/extras/RDF.pl
+%%DATADIR%%/extras/Slashdot3.pl
+%%DATADIR%%/extras/Speller.pl
+%%DATADIR%%/extras/Traceroute.pl
+%%DATADIR%%/extras/W3Search.pl
+%%DATADIR%%/extras/Zippy.pl
+%%DATADIR%%/extras/babel.pl
+%%DATADIR%%/extras/exchange.pl
+%%DATADIR%%/extras/excuse.pl
+%%DATADIR%%/extras/insult.pl
+%%DATADIR%%/extras/module-template
+%%DATADIR%%/extras/myRoutines.pl
+%%DATADIR%%/extras/nickometer.pl
+%%DATADIR%%/extras/purldoc.pl
+%%DATADIR%%/extras/stockquote.pl
+%%DATADIR%%/scripts/update_db
+%%DATADIR%%/scripts/curl
+%%DATADIR%%/scripts/dump_db
+%%DATADIR%%/scripts/flock-test
+%%DATADIR%%/scripts/get_entries_from_log
+%%DATADIR%%/scripts/make_password
+%%DATADIR%%/scripts/make_snap
+%%DATADIR%%/scripts/restore_snap
+%%DATADIR%%/scripts/run_if_needed.pl
+%%DATADIR%%/scripts/track2fact
+%%DATADIR%%/scripts/unupdate_dbs
+%%DATADIR%%/scripts/README.scripts
+%%DATADIR%%/src/CTCP.pl
+%%DATADIR%%/src/Channel.pl
+%%DATADIR%%/src/DBM.pl
+%%DATADIR%%/src/Help.pl
+%%DATADIR%%/src/Irc.pl
+%%DATADIR%%/src/IrcExtras.pl
+%%DATADIR%%/src/IrcHooks.pl
+%%DATADIR%%/src/Misc.pl
+%%DATADIR%%/src/Norm.pl
+%%DATADIR%%/src/Params.pl
+%%DATADIR%%/src/Process.pl
+%%DATADIR%%/src/Question.pl
+%%DATADIR%%/src/Reply.pl
+%%DATADIR%%/src/Search.pl
+%%DATADIR%%/src/Setup.pl
+%%DATADIR%%/src/Statement.pl
+%%DATADIR%%/src/Update.pl
+%%DATADIR%%/src/User.pl
+%%DATADIR%%/src/Util.pm
+%%PORTDOCS%%%%DOCSDIR%%/how_to_fix_files_uploaded_from_windows_to_unix.txt
+%%PORTDOCS%%%%DOCSDIR%%/infobot_guide.html
+%%PORTDOCS%%%%DOCSDIR%%/intro.bit
+%%PORTDOCS%%%%DOCSDIR%%/makemanual.pl
+%%PORTDOCS%%%%DOCSDIR%%/REVISIONS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/extras
+@dirrm %%DATADIR%%/files
+@dirrm %%DATADIR%%/scripts
+@unexec rmdir %D/etc/infobot > /dev/null 2>&1 || true
+@unexec rmdir %D/share/infobot/src > /dev/null 2>&1 || true
+@unexec rmdir %D/share/infobot > /dev/null 2>&1 || true
