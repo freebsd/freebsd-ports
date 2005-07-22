@@ -1,0 +1,17 @@
+fmars is Fast Memory Array Redcode Simulator
+
+A specialized simulator for the game of Corewars. It's designed to be of
+particular use in automated redcode optimizers and evolvers. fmars borrows the
+idea from Martin Ankerl's qmars and pushes it to the extreme.
+
+It generates source code with special case for every possible opcode/addressing
+mode combination. This allows some optimizations that aren't possible in other
+simulators.
+
+fmars is compatible with pMARS with an exception for p-space, which is not yet
+implemented.
+
+WWW: http://www.v-lo.krakow.pl/~michal/fmars.html
+
+- Alejandro Pulver
+alejandro@varnet.biz
