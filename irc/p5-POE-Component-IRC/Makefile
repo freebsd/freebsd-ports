@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	POE-Component-IRC
-PORTVERSION=	4.63
+PORTVERSION=	4.65
 CATEGORIES=	irc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
@@ -25,6 +25,7 @@ MAN3=		POE::Component::IRC.3 \
 		POE::Component::IRC::Constants.3 \
 		POE::Component::IRC::Plugin.3 \
 		POE::Component::IRC::Plugin::BotAddressed.3 \
+		POE::Component::IRC::Plugin::BotTraffic.3 \
 		POE::Component::IRC::Plugin::Connector.3 \
 		POE::Component::IRC::Plugin::Whois.3 \
 		POE::Component::IRC::Qnet.3 \

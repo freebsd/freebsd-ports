@@ -2,6 +2,7 @@
 %%SITE_PERL%%/POE/Component/IRC/Constants.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/BotAddressed.pm
+%%SITE_PERL%%/POE/Component/IRC/Plugin/BotTraffic.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/Connector.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/Whois.pm
 %%SITE_PERL%%/POE/Component/IRC/Qnet.pm
