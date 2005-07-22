@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mrxvt
-PORTVERSION=	0.3.9
+PORTVERSION=	0.4.1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	materm
@@ -25,15 +25,5 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include
 		LIBS="${LIBS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 MAN1=		mrxvt.1
-PLIST_FILES=	bin/mrxvt
 
-PORTDOCS=	TIPS README.greek README.menu README.xvt \
-		xdefaults-sample.txt xterm.seq mrxvt.vbs
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} <= 500000
-IGNORE=		Does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
