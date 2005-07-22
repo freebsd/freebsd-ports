@@ -1,0 +1,31 @@
+bin/bomns
+%%EDITOR%%bin/bomnsedit
+%%LAUNCHER%%bin/bomnslauncher2
+%%DATADIR%%/graphics/editor_cursor.bmp
+%%DATADIR%%/graphics/editor_hud.bmp
+%%DATADIR%%/graphics/font.bmp
+%%DATADIR%%/graphics/hud.bmp
+%%DATADIR%%/graphics/intro.bmp
+%%DATADIR%%/graphics/objects.bmp
+%%DATADIR%%/graphics/players.bmp
+%%DATADIR%%/graphics/winscreen.bmp
+%%DATADIR%%/levels/faceoff.lvl
+%%DATADIR%%/levels/killyou.lvl
+%%DATADIR%%/levels/narrow.lvl
+%%DATADIR%%/levels/test.lvl
+%%DATADIR%%/sounds/beep.wav
+%%DATADIR%%/sounds/begin1.wav
+%%DATADIR%%/sounds/begin2.wav
+%%DATADIR%%/sounds/begin3.wav
+%%DATADIR%%/sounds/begin4.wav
+%%DATADIR%%/sounds/begin5.wav
+%%DATADIR%%/sounds/begin6.wav
+%%DATADIR%%/sounds/explosion.wav
+%%DATADIR%%/sounds/hurt.wav
+%%DATADIR%%/sounds/invulnerable.wav
+%%DATADIR%%/sounds/warp.wav
+%%DATADIR%%/sounds/winner.wav
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/levels
+@dirrm %%DATADIR%%/graphics
+@dirrm %%DATADIR%%
