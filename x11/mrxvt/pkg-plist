@@ -1,0 +1,16 @@
+bin/mrxvt
+share/pixmaps/mrxvt-csh.png
+share/pixmaps/mrxvt-csh.xpm
+share/pixmaps/mrxvt-root.png
+share/pixmaps/mrxvt-root.xpm
+share/pixmaps/mrxvt.png
+share/pixmaps/mrxvt.xpm
+%%PORTDOCS%%%%DOCSDIR%%/mrxvt.vbs
+%%PORTDOCS%%%%DOCSDIR%%/mrxvtset.pl
+%%PORTDOCS%%%%DOCSDIR%%/README.greek
+%%PORTDOCS%%%%DOCSDIR%%/README.menu
+%%PORTDOCS%%%%DOCSDIR%%/README.xvt
+%%PORTDOCS%%%%DOCSDIR%%/TIPS
+%%PORTDOCS%%%%DOCSDIR%%/xdefaults-sample.txt
+%%PORTDOCS%%%%DOCSDIR%%/xterm.seq
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
