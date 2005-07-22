@@ -1,5 +1,11 @@
 bin/gxmlviewer
 bin/xmlview-control
 bin/xmlformatter
-lib/netscape/plugins/npgxmlviewer.so
+lib/gxmlviewer/plugins/npgxmlviewer.so
 share/gnome/oaf/GNOME_XMLView.oaf
+@unexec rm -f %%X11BASE%%/lib/browser_plugins/npgxmlviewer.so
+@unexec rmdir %%X11BASE%%/lib/browser_plugins 2>/dev/null || true
+@exec mkdir -p %%X11BASE%%/lib/browser_plugins 2>/dev/null || true
+@exec ln -sf %D/lib/gxmlviewer/plugins/npgxmlviewer.so %%X11BASE%%/lib/browser_plugins/npgxmlviewer.so
+@dirrm lib/gxmlviewer/plugins
+@dirrm lib/gxmlviewer
