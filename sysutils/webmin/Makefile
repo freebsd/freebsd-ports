@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.220
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -26,7 +26,9 @@ USE_PERL5=	yes
 USE_RC_SUBR=    yes
 USE_REINPLACE=	yes
 
-WEBMIN_MODULES=	proftpd-1.220-1.wbm.gz
+WEBMIN_MODULES=	postfix-1.220-1.wbm.gz \
+		proftpd-1.220-1.wbm.gz \
+		time-1.220-1.wbm.gz
 
 WEBMIN_THEMES=
 
