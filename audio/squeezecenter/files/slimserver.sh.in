@@ -21,7 +21,7 @@ stop_cmd="slimserver_stop"
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/%%SLIMDIR%%/slimserver.pl
-pidfile=/var/run/slimserver/${name}.pid
+pidfile=/var/run/${name}.pid
 logfile=/var/log/slimserver.log
 statedir=/var/db/slimserver
 cachedir=${statedir}/cache
@@ -46,10 +46,6 @@ slimserver_start_precmd()
 	if [ ! -d ${playlistdir} ]; then
 		mkdir -p ${playlistdir}
 		chown -R ${u}:${g} ${playlistdir}
-	fi
-	if [ ! -d /var/run/slimserver ]; then
-		mkdir -p /var/run/slimserver
-		chown -R ${u}:${g} /var/run/slimserver
 	fi
 	if [ ! -f ${conffile} ]; then
 		touch ${conffile}
@@ -82,10 +78,9 @@ slimserver_stop()
 	rm -f ${pidfile}
 }
 
-# set defaults
+load_rc_config ${name}
 
 slimserver_enable=${slimserver_enable:-"NO"}
 slimserver_flags=${slimserver_flags:-""}
 
-load_rc_config ${name}
 run_rc_command "$1"

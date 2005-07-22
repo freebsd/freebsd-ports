@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slimserver
-PORTVERSION?=	6.0.2
+PORTVERSION?=	6.1.1
 PORTREVISION=	0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.slimdevices.com/downloads/${NIGHTLY}SlimServer_v${DISTVERSION}/
@@ -41,7 +41,7 @@ SLIMCPANPKGS=	Compress-Zlib-1.33.tar.gz \
 ALLFILES=	${DISTFILES} ${SLIMCPANPKGS}
 
 .if ${PERL_LEVEL} < 500800
-IGNORE=	"Perl 5.8 or newer required. Install lang/perl5.8 and try again."
+IGNORE=		Perl 5.8 or newer required. Install lang/perl5.8 and try again.
 .endif
 
 .if ${OSVERSION} < 502110
