@@ -2,8 +2,8 @@
 %%SITE_PERL%%/POE/Component/Connection/Keepalive.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/Keepalive/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/Keepalive
-@unexec rmdir %D/%%SITE_PERL%%/POEComponent/Client 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/POEComponent/Connection 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/POE/Component/Client 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/POE/Component/Connection 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/POE 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component 2>/dev/null || true
