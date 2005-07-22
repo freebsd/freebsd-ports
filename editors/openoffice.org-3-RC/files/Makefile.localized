@@ -14,6 +14,14 @@ CATEGORIES=	arabic
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
+.if ${LOCALIZED_LANG} == "bn"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "be-BY"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
 .if ${LOCALIZED_LANG} == "bg"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
@@ -77,11 +85,19 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
+.if ${LOCALIZED_LANG} == "gu-IN"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
 .if ${LOCALIZED_LANG} == "he"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "hi-IN"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "hr"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
@@ -138,6 +154,10 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
+.if ${LOCALIZED_LANG} == "pa-IN"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
 .if ${LOCALIZED_LANG} == "pl"
 CATEGORIES=	polish
 LANG_PKGNAME=	${LOCALIZED_LANG}
@@ -163,6 +183,11 @@ CATEGORIES=	russian
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
+.if ${LOCALIZED_LANG} == "rw"
+CATEGORIES=	russian
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
 .if ${LOCALIZED_LANG} == "sk"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
@@ -175,6 +200,10 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
+.if ${LOCALIZED_LANG} == "ta-IN"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
 .if ${LOCALIZED_LANG} == "th"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
@@ -184,6 +213,10 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 #.endif
 ################################################################
 .if ${LOCALIZED_LANG} == "tr"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "vi"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################

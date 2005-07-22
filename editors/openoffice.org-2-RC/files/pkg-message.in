@@ -6,27 +6,27 @@ Written by:	Martin Blapp <mbr@freebsd.org>
 OpenOffice.org %%RELEASE_NR%%m%%MILESTONE%% will soon been installed in
 %%PREFIX%%/%%EXECBASE%%
 
-1 User installation
--------------------
+1. User installation
+--------------------
 
 Just type "%%EXECBASE%%" after you have successfully
 installed the package. If there is no installed
 OO.org dir in your homedir, you'll be prompted to
-install some files and choose a installed JDK.
+install some files and choose an installed JDK.
 The setup installs a ".openoffice.org%%RELEASE_NR%%.%%MILESTONE%%" folder
 in your homedir.
 
 If the setup tells you there is already an installed
-version, you may look at the file ".sversionrc" in
-your homedir. In this file OpenOffice and StarOffice
-have both a line for each version which is installed.
+version, you may look in the file ".sversionrc" located
+in your homedir. In this file, OpenOffice and StarOffice
+will have a line for each version that is installed.
 After removing the problematic line you should be able to
-install again.
+install the package again.
 
-2 Start OO.org
---------------
+2. Starting OO.org
+------------------
 
-There are some wrappers installed for fast startup.
+There are some wrappers installed for faster startup.
 Add "%%PREFIX%%/bin/" to your PATH and you will be able
 to use them.
 
@@ -43,11 +43,9 @@ to use them.
 
 OO.org does need $LANG to be set to a suitable value.
 
-3 If you stuck into a trouble
+3. If you run into problems
 --------------------------------------------------
-Somehow you can stuck into a trouble. 
-To solve this issue, please remove the already installed
-".openoffice.org%%RELEASE_NR%%.%%MILESTONE%%" dir in your homedir and remove the
-appropriate entry from ".sversionrc". After you have done
-this, redo the user installation and the problem will
-go away.
+If you somehow run into problems, please remove the already installed
+".openoffice.org%%RELEASE_NR%%.%%MILESTONE%%" dir in your homedir
+along with the appropriate entry in ".sversionrc". Redo the user
+installation and the problems should go away.

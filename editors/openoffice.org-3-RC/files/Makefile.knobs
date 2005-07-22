@@ -2,10 +2,14 @@
 # Whom:         Maho Nakata <maho@FreeBSD.org>
 # $FreeBSD$
 
+.if !defined(WITHOUT_JAVA) && !defined(WITH_GNUGCJ)
+CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}" --with-ant-home=${LOCALBASE}/ant
+.endif
+.if !defined(WITHOUT_JAVA) && defined(WITH_GNUGCJ)
+CONFIGURE_ARGS+=	--with-java=gij --with-ant-home=${LOCALBASE}/ant
+.endif
 .if defined(WITHOUT_JAVA)
 CONFIGURE_ARGS+=	--without-java
-.else
-CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}" --with-ant-home=${LOCALBASE}/ant
 .endif
 
 .if defined(WITH_KDE)
@@ -63,36 +67,50 @@ pre-fetch:
 	@${ECHO} "If you set WITH_DEBUG=2, you add internal"
 	@${ECHO} "OOo debug support."
 .endif
-#XXX currently broken
-#.if !defined(WITHOUT_MOZILLA)
-#	@${ECHO}
-#	@${ECHO} "You can compile OOo without Mozilla connectivity by"
-#	@${ECHO} "make -DWITHOUT_MOZILLA"
-#.endif
+.if !defined(WITHOUT_MOZILLA)
+	@${ECHO}
+	@${ECHO} "You can compile OOo without Mozilla connectivity with"
+	@${ECHO} "make -DWITHOUT_MOZILLA"
+.endif
 .if !defined(WITH_TTF_BYTECODE_ENABLED)
 	@${ECHO}
 	@${ECHO} "You may get better quality of glyphs"
-	@${ECHO} "at small bitmap sizes, If you have"
+	@${ECHO} "at small bitmap sizes if you have"
 	@${ECHO} "licensed the Apple patents"
-	@${ECHO} "US05155805 US05159668 and US05325479, by"
+	@${ECHO} "US05155805 US05159668 and US05325479, with"
 	@${ECHO} "make -DWITH_TTF_BYTECODE_ENABLED"
 	@${ECHO} "See http://www.freetype.org/patents.html for details"
 .endif
+	@${ECHO}
+	@${ECHO} "You can select the language for OOo by making it with:"
+	@${ECHO} "make LOCALIZED_LANG=xx" 
+	@${ECHO} "while xx can be one of the following"
+	@${ECHO} "af ar bn be-BY bg ca cs cy da de el en-GB eo es"
+	@${ECHO} "et eu fi fr gl gu-IN he hi-IN hr hu it ja km kn-IN"
+	@${ECHO} "ko lt ms nb nl nn ns pa-IN pl pt pt-BR ru rw sk"
+	@${ECHO} "sl sv ta-IN th tn tr vi xh zh-CN zh-TW zu"
+	@${ECHO}
 #XXX currently broken
 #.if !defined(WITHOUT_JAVA)
 #	@${ECHO}
-#	@${ECHO} "You can compile OOo without Java support by"
+#	@${ECHO} "You can compile OOo without Java support with"
 #	@${ECHO} "make -DWITHOUT_JAVA"
+#.endif
+#XXX currently broken
+#.if !defined(WITH_GNUGCJ)
+#	@${ECHO}
+#	@${ECHO} "You can compile OOo with GNU GCJ instead of SUN's JDK with"
+#	@${ECHO} "make -DWITH_GNUGCJ"
 #.endif
 #XXX currently broken
 #.if !defined(WITH_CUPS)
 #	@${ECHO}
-#	@${ECHO} "You can compile OOo with CUPS support by"
+#	@${ECHO} "You can compile OOo with CUPS support with"
 #	@${ECHO} "make -DWITH_CUPS"
 #.endif
 .if !defined(WITH_KDE)
 	@${ECHO}
-	@${ECHO} "You can compile OOo to use Qt/KDE vclplug"
+	@${ECHO} "You can compile OOo to use Qt/KDE vclplug with"
 	@${ECHO} "make -DWITH_KDE"
 .endif
 	@${ECHO}
@@ -102,6 +120,6 @@ pre-fetch:
 .if defined(WITH_DEBUG)
 	@${ECHO} "of free diskspace (~ 18GB)."
 .else
-	@${ECHO} "of free diskspace (~ 8.5GB)."
+	@${ECHO} "of free diskspace (~ 9GB)."
 .endif
 	@${ECHO} "If you want SDK and/or solver, please type make sdk and/or make solver"
