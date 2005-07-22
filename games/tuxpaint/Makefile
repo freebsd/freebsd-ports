@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	alejandro@varnet.biz
 COMMENT=	Drawing program designed for young children
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
-
 USE_GMAKE=	yes
 USE_SDL=	image mixer sdl ttf
 USE_GNOME=	intltool
