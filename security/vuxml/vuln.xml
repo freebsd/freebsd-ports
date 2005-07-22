@@ -32,6 +32,36 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3f4ac724-fa8b-11d9-afcf-0060084a00e5">
+    <topic>fetchmail -- denial of service/crash from malicious POP3 server</topic>
+    <affects>
+      <package>
+	<name>fetchmail</name>
+	<range><eq>6.2.5.1</eq></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>In fetchmail 6.2.5.1, the the remote code injection via
+	  POP3 UIDL was fixed, but a denial of service attack was
+	  introduced:</p>
+	<p>Two possible NULL-pointer dereferences allow a malicous
+	  POP3 server to crash fetchmail by respondig with UID lines
+	  containing only the article number but no UID (in violation
+	  of RFC-1939), or a message without Message-ID when no UIDL
+	  support is available.</p>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="20050721172317.GB3071@amilo.ms.mff.cuni.cz">http://lists.berlios.de/pipermail/fetchmail-devel/2005-July/000397.html</mlist>
+      <url>http://fetchmail.berlios.de/fetchmail-SA-2005-01.txt</url>
+    </references>
+    <dates>
+      <discovery>2005-07-21</discovery>
+      <entry>2005-07-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e72fd82b-fa01-11d9-bc08-0001020eed82">
     <topic>dnrd -- remote buffer and stack overflow vulnerabilities</topic>
     <affects>
