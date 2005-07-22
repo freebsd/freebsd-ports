@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	admuser
-PORTVERSION=	2.3
+PORTVERSION=	2.3.1
 PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://sarg.sourceforge.net/
