@@ -1,0 +1,18 @@
+@comment $FreeBSD$
+bin/eps-headers
+bin/eps-body
+bin/eps-address
+bin/eps-full
+bin/eps-b64encode
+bin/eps-b64decode
+bin/eps-rewrite
+bin/eps-fold
+bin/eps-qpdecode
+%%EXAMPLESDIR%%/addr.1
+%%EXAMPLESDIR%%/addr.2
+%%EXAMPLESDIR%%/addr.3
+%%EXAMPLESDIR%%/addr.4
+%%EXAMPLESDIR%%/email.1
+%%EXAMPLESDIR%%/email.2
+%%EXAMPLESDIR%%/virus.email
+@dirrm %%EXAMPLESDIR%%
