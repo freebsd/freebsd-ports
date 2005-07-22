@@ -14,7 +14,7 @@ DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	chero7@telus.net
+MAINTAINER=	jw@innerewut.de
 COMMENT=	Package management framework for the Ruby language
 
 USE_RUBY=	yes
