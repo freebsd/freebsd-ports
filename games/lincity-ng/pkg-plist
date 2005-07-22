@@ -685,6 +685,7 @@ share/applications/lincity-ng.desktop
 %%DATADIR%%/locale/gui/nl.po
 %%DATADIR%%/locale/nl.po
 %%DATADIR%%/music/01 - pronobozo - lincity.ogg
+%%DATADIR%%/music/city_blues.ogg
 %%DATADIR%%/opening/Beach.scn
 %%DATADIR%%/opening/bad_times.scn
 %%DATADIR%%/opening/good_times.scn
