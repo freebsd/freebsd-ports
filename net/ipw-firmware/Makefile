@@ -43,6 +43,10 @@ USE_RC_SUBR=	${DRIVERNAME}.sh
 MAN8=		${DRIVERNAME}control.8
 MANCOMPRESSED=	yes
 
+.if !defined(PACKAGE_BUILDING)
+IS_INTERACTIVE=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 # That's a bit arbitrary since I have no idea if ${DRIVERNAME}(4) can be
