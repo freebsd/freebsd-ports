@@ -488,6 +488,7 @@
     SUBDIR += spruce
     SUBDIR += sqlgrey
     SUBDIR += squirrelmail
+    SUBDIR += squirrelmail-compatibility-plugin
     SUBDIR += sqwebmail
     SUBDIR += ssmtp
     SUBDIR += stuphead

@@ -1,0 +1,10 @@
+SquirrelMail Plug-in that provdies a standard API for plugin authors who need
+certain functionalities that may not be available in older versions of
+SquirrelMail. SquirrelMail administrators only need to download this plugin if
+any of the plugins they have require it.
+This plugin has no functionality in and of itself.
+
+WWW: http://www.squirrelmail.org
+
+- Alexander Wittig
+alexander@wittig.name
