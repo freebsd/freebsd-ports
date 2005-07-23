@@ -1735,6 +1735,7 @@ drivel		ports/deskutils/drivel
 drm		ports/games/drm
 drm-kmod	ports/graphics/drm-kmod
 dropbear	ports/security/dropbear
+drpython	ports/devel/drpython
 drscheme	ports/lang/drscheme
 drumpiler	ports/audio/drumpiler
 drupal		ports/www/drupal
