@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	mlview
-PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTVERSION=	0.8
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.7
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	barner@FreeBSD.org
@@ -24,13 +23,27 @@ USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
-USE_REINPLACE=yes
+USE_REINPLACE=	yes
 
 GCONF_SCHEMAS=	mlview.schemas
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		"s,mlview-app-icon.xpm,${PREFIX}/share/gnome/${PORTNAME}/mlview-app-icon.xpm," \
-		${WRKSRC}/mlview.desktop.in
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+# Autodetect dbus
+.if exists (${LOCALBASE}/lib/libdbus-1.so.1)
+WITH_DBUS=	yes
+.endif
+
+.if defined (WITH_DBUS)
+LIB_DEPENDS+=	dbus-1.1:${PORTSDIR}/devel/dbus
+CONFIGURE_ARGS+="--enable-dbus=yes"
+.endif
+
+pre-everything::
+.if !defined (WITH_DBUS)
+	${ECHO_CMD}
+	${ECHO_CMD} Re-run with -DWITH_DBUS in order to enable dbus support!
+	${ECHO_CMD}
+.endif
+
+.include <bsd.port.post.mk>

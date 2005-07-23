@@ -1,0 +1,11 @@
+--- configure.in.orig	Sat Jul 23 12:53:33 2005
++++ configure.in	Sat Jul 23 12:53:40 2005
+@@ -67,7 +67,7 @@
+ \* 10000 + $MLVIEW_MINOR_VERSION \
+ \* 100 + $MLVIEW_MICRO_VERSION`
+ 
+-MLVIEW_EXE=$prefix/bin/mlv
++MLVIEW_EXE=$prefix/bin/mlview
+ AC_SUBST(MLVIEW_VERSION_NUMBER)
+ AC_SUBST(MLVIEW_VERSION)
+ AC_SUBST(AC_PACKAGE_VERSION)
