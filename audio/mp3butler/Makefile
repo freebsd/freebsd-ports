@@ -6,31 +6,25 @@
 #
 
 PORTNAME=	mp3butler
-PORTVERSION=	1.0.2
+PORTVERSION=	2.30
 CATEGORIES=	audio
-MASTER_SITES=	#
+MASTER_SITES=	http://iainlea.dyndns.org/software/${PORTNAME}/
 
-DEPRECATED=	"master site disappeared"
-EXPIRATION_DATE=2005-07-31
+MAINTAINER=	az@inec.ru
+COMMENT=	A program for renaming mp3 files and looking ID3 tags for it
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A program for renaming mp3 files
+RUN_DEPENDS=	${SITE_PERL}/CDDB.pm:${PORTSDIR}/audio/p5-CDDB \
+		${SITE_PERL}/MP3/Tag.pm:${PORTSDIR}/audio/p5-MP3-Tag \
+	${SITE_PERL}/${PERL_ARCH}/MusicBrainz/Client.pm:${PORTSDIR}/audio/p5-MusicBrainz-Client
 
+NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
 USE_PERL5=	yes
 
-MAN1=		mp3butler.1
-
-do-build:
-	(cd ${WRKSRC} && ${SH} ./mkdocs)
+PLIST_FILES=	bin/mp3butler.pl bin/id3butler.pl
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/mp3butler.pl ${PREFIX}/bin/mp3butler
-	${INSTALL_MAN} ${WRKSRC}/mp3butler.1 ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-.for I in COPYING ChangeLog INSTALL RANT README
-	${MKDIR} ${PREFIX}/share/doc/mp3butler
-	${INSTALL_DATA} ${WRKSRC}/$I ${PREFIX}/share/doc/mp3butler
-.endfor
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/mp3butler.pl ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/id3butler.pl ${PREFIX}/bin
 
 .include <bsd.port.mk>

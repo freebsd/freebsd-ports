@@ -1,9 +1,10 @@
-Mp3butler is a program written in perl for renaming your mp3's.
+Mp3butler is a set of programs written in perl for renaming your mp3's.
 
-	o It will remove all characters that require shell escapes from filenames
-	o It will remove capitalization from filenames
-	o It can create ID3 tags using the filename
-	o It can reorganize your mp3's into an organizational hierarchy 
-
+o It will remove all characters that require shell escapes from filenames
+o It will remove capitalization from filenames
+o It can create ID3 tags using the filename
+o It can reorganize your mp3's into an organizational hierarchy 
+o id3butler can also lookup tags for mp3 via MusicBrainz and FreeDB databases
+	
 - Christopher Preston
 rbg@gayteenresource.org

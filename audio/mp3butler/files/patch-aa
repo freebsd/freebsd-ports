@@ -1,8 +1,0 @@
---- mkdocs.orig	Mon Apr 30 15:10:33 2001
-+++ mkdocs	Mon Apr 30 15:10:39 2001
-@@ -4,5 +4,4 @@
- pod2text mp3butler.pl > mp3butler-manpage.txt
- echo creating mp3butler manual page: mp3butler.1.gz
- pod2man mp3butler.pl --center='BabblicaSoft Documentation' > mp3butler.1
--gzip mp3butler.1
- 
