@@ -12,7 +12,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	http://www.namazu.org/~knok/
 PKGNAMEPREFIX=	p5-
 
-DEPRECATED=	"not available on namazu.org, author's site, or CPAN"
+DEPRECATED=	not available on namazu.org, author's site, or CPAN
 EXPIRATION_DATE=2005-07-31
 
 MAINTAINER=	ports@FreeBSD.org
