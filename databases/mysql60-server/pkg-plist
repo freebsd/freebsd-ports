@@ -25,8 +25,6 @@ bin/perror
 bin/replace
 bin/resolve_stack_dump
 bin/resolveip
-include/mysql/mysqld_ername.h
-include/mysql/mysqld_error.h
 %%NDB%%include/mysql/ndb/mgmapi/mgmapi.h
 %%NDB%%include/mysql/ndb/mgmapi/mgmapi_config_parameters.h
 %%NDB%%include/mysql/ndb/mgmapi/mgmapi_config_parameters_debug.h
@@ -55,7 +53,6 @@ include/mysql/mysqld_error.h
 %%NDB%%include/mysql/ndb/ndbapi/ndb_cluster_connection.hpp
 %%NDB%%include/mysql/ndb/ndbapi/ndb_opt_defaults.h
 %%NDB%%include/mysql/ndb/ndbapi/ndberror.h
-include/mysql/sql_state.h
 lib/mysql/libdbug.a
 lib/mysql/libheap.a
 lib/mysql/libmyisam.a

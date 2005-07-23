@@ -34,8 +34,11 @@ include/mysql/mysql_com.h
 include/mysql/mysql_embed.h
 include/mysql/mysql_time.h
 include/mysql/mysql_version.h
+include/mysql/mysqld_ername.h
+include/mysql/mysqld_error.h
 include/mysql/raid.h
 include/mysql/sql_common.h
+include/mysql/sql_state.h
 include/mysql/sslopt-case.h
 include/mysql/sslopt-longopts.h
 include/mysql/sslopt-vars.h
