@@ -1,0 +1,19 @@
+--- mlview.desktop.in.orig	Sat Jun 25 14:57:05 2005
++++ mlview.desktop.in	Sat Jul 23 13:02:57 2005
+@@ -1,13 +1,13 @@
+ [Desktop Entry]
+-Version=0.9.4
++Version=0.8.0
+ Encoding=UTF-8
+ Type=Application
+ Name=MlView XML Editor
+ GenericName=MlView Generic XML Editor
+ Categories=Application;Development;
+ Comment=A generic simple XML editor for GNOME
+-Icon=mlview-app-icon.xpm
+-TryExec=mlv
++Icon=/usr/X11R6/share/gnome/pixmaps/mlview-app-icon.xpm
++TryExec=mlview
+ Exec=@MLVIEW_EXE@ %F
+ Terminal=false
+ 
