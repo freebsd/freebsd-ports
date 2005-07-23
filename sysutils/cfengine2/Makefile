@@ -36,7 +36,7 @@ LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
 CPPFLAGS+=	-I${LOCALBASE}/include/db41
 LDFLAGS+=	-L${LOCALBASE}/lib/db41 -ldb41
 .else
-.error WITH_BDB_VER must be 41 or 42
+IGNORE=	WITH_BDB_VER must be 41 or 42
 .endif
 
 .include <bsd.port.mk>
