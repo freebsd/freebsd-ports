@@ -1,6 +1,6 @@
---- scripts/Makefile.in.orig	Fri May 13 13:33:57 2005
-+++ scripts/Makefile.in	Fri Jun  3 16:58:01 2005
-@@ -320,26 +320,7 @@
+--- scripts/Makefile.in.orig	Fri Jul 15 12:40:26 2005
++++ scripts/Makefile.in	Sat Jul 23 11:14:03 2005
+@@ -322,24 +322,7 @@
  vio_dir = @vio_dir@
  vio_libs = @vio_libs@
  zlib_dir = @zlib_dir@
@@ -21,14 +21,12 @@
 -			mysql_explain_log \
 -			mysql_tableinfo \
 -			mysqld_multi \
--			make_win_src_distribution \
--			make_win_binary_distribution \
 -			mysql_create_system_tables
 +bin_SCRIPTS =
  
  EXTRA_SCRIPTS = make_binary_distribution.sh \
  			make_sharedlib_distribution.sh \
-@@ -369,7 +350,7 @@
+@@ -369,7 +352,7 @@
  			mysqlaccess.conf \
  			mysqlbug
  
