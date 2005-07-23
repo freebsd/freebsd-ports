@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier-authlib
-PORTVERSION=	0.56
+PORTVERSION=	0.57
 PORTREVISION=	0
 CATEGORIES?=	security mail
 .if defined(PKGNAMESUFFIX)
@@ -84,7 +84,7 @@ AUTHMOD=	auth${PKGNAMESUFFIX:S/-//:S/gdbm/db/}
 RUN_DEPENDS+=	${LOCALBASE}/share/sysconftool/sysconftool:${PORTSDIR}/devel/sysconftool
 CONFIGURE_ARGS+=--with-base --with-authpam
 
-MAN1=		courierlogger.1
+MAN1=		courierlogger.1 authtest.1
 
 MAN3=		authlib.3 auth_generic.3 auth_login.3 auth_getuserinfo.3 \
 		auth_enumerate.3 auth_passwd.3 auth_getoption.3 auth_sasl.3
