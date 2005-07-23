@@ -12,7 +12,7 @@ CATEGORIES=	converters
 MASTER_SITES=	http://w3.sys.es.osaka-u.ac.jp/~seke/software/cn2jp/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-DEPRECATED=	"no longer available from author's site"
+DEPRECATED=	no longer available from author's site
 EXPIRATION_DATE=2005-07-31
 
 MAINTAINER=	ports@FreeBSD.org
