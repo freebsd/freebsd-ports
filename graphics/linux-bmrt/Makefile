@@ -5,17 +5,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=	linux-bmrt
+PORTNAME=	bmrt
 PORTVERSION=	2.6beta
 PORTREVISION=	2
 CATEGORIES=	graphics linux
 MASTER_SITES=	#fetch manually
+PKGNAMEPREFIX=	linux-
 DISTNAME=	BMRT${PORTVERSION}.linux-glibc2
 
 MAINTAINER=	rjoseph@mammalia.org
 COMMENT=	A collection of rendering programs that use the RenderMan interface
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/graphics/linux_mesa3
+.ifdef WITH_NVIDIA_GL
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+.else
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
+.endif
 
 WRKSRC=		${WRKDIR}/BMRT2.6
 NO_BUILD=	yes
