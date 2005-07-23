@@ -9,7 +9,7 @@ PORTNAME=	dotconfpp
 PORTVERSION=	0.0.4a
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://voodoo.com.ua/dotconf++/
+MASTER_SITES=	http://voodoo.com.ua/dotconfpp/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
