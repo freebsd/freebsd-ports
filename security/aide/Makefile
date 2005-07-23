@@ -34,7 +34,7 @@ SUB_FILES=	pkg-message
 
 post-install:
 	@${INSTALL_DATA} ${FILESDIR}/aide.conf.freebsd ${PREFIX}/etc/aide.conf.sample
-	@if [ ! -d ${PREFIX}/etc/aide.conf ]; then \
+	@if [ ! -f ${PREFIX}/etc/aide.conf ]; then \
 		${INSTALL_DATA} ${FILESDIR}/aide.conf.freebsd ${PREFIX}/etc/aide.conf ; \
 	fi
 	@if [ ! -d /var/db/aide/databases ]; then \
