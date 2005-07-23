@@ -7,6 +7,7 @@
 
 PORTNAME=	pete-mesagpu
 PORTVERSION=	1.76
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www.pbernert.com/
 PKGNAMEPREFIX=	linux-
@@ -15,8 +16,13 @@ DISTNAME=	gpupetemesagl${MAJOR}${MINOR}
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A PSEmu Pro GPU plugin using an OpenGL renderer (Linux version)
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk \
-		${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/graphics/linux_mesa3
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
+
+.ifdef WITH_NVIDIA_GL
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+.else
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
+.endif
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
