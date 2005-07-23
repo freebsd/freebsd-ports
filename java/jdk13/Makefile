@@ -59,7 +59,8 @@ MAKE_ENV=	ALT_BOOTDIR="${JDK13DIR}" \
 		SYS_CFLAGS="${CFLAGS}" \
 		CLASSPATH="" \
 		LD_LIBRARY_PATH="" \
-		JAVA_COMPILER=""
+		JAVA_COMPILER="" \
+		_JAVA_BOOTSTRAP_VERSION="1.3.1"
 .if defined(WITH_PLUGIN)
 MAKE_ENV +=	LIBG_HDRS="${LOCALBASE}/include/glib12" \
 		GTK_HDRS="${X11BASE}/include/gtk12" \
@@ -120,6 +121,7 @@ BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/linux-blackdown-jdk13
 JDK13DIR=	${LOCALBASE}/jdk${JDK_VERSION}
 .elif exists(${LOCALBASE}/diablo-jdk${JDK_VERSION}/bin/javac)
 JDK13DIR=	${LOCALBASE}/diablo-jdk${JDK_VERSION}
+BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/diablo-jdk${JDK_VERSION}
 .else
 JDK13DIR=	${LOCALBASE}/jbootstrap
 BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/jbootstrap
