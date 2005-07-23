@@ -17,10 +17,6 @@ COMMENT=	Digit@lway MPIO MP3 player tool
 
 LIB_DEPENDS=	usb-0.1:${PORTSDIR}/devel/libusb
 
-BROKEN=		Configure fails
-DEPRECATED=	"${BROKEN}"
-EXPIRATION_DATE=2005-09-22
-
 USE_ICONV=	yes
 USE_LIBTOOL_VER=	13
 USE_GETOPT_LONG=	yes
