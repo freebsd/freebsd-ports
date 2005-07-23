@@ -22,7 +22,7 @@ LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 		eet.9:${PORTSDIR}/devel/eet
 
 USE_GMAKE=	yes
-CONFLICTS=	x11-wm/enlightenment
+CONFLICTS=	enlightenment-[0-9]*
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnometarget
 USE_ICONV=	yes
@@ -32,4 +32,10 @@ USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 50000
+IGNORE=	Does not build on 4.X
+.endif
+
+.include <bsd.port.post.mk>
