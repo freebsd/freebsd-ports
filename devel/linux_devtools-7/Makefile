@@ -10,14 +10,14 @@ PORTVERSION=		7.1
 PORTREVISION=		3
 CATEGORIES=		devel emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
-MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS
+MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${ARCH}/RedHat/RPMS
 DISTFILES=		${RPM_MAKE} \
 			binutils-2.10.91.0.2-3.${MACHINE_ARCH}.rpm \
 			${RPM_GDB}
 EXTRACT_ONLY=
 
 PATCH_SITES=		${MASTER_SITE_REDHAT_LINUX}
-PATCH_SITE_SUBDIR=	updates/${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}
+PATCH_SITE_SUBDIR=	updates/${PORTVERSION}/${LANG}/os/${ARCH}
 PATCHFILES=		${UPDATES}
 
 MAINTAINER=		freebsd-emulation@FreeBSD.org
@@ -25,11 +25,12 @@ COMMENT=		Packages needed for doing development in Linux mode
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
-BROKEN=			Incomplete pkg-plist
+BROKEN=			"Incomplete pkg-plist"
 DEPRECATED=		"${BROKEN}"
 EXPIRATION_DATE=	2005-09-22
 
 ONLY_FOR_ARCHS=		alpha i386
+NO_LATEST_LINK=		yes
 
 USE_LINUX=		7
 DIST_SUBDIR=		rpm
@@ -39,21 +40,21 @@ NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
 PLIST=			${WRKDIR}/plist
 RESTRICTED=		"binaries under GNU GPL without accompanying source"
-MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
+MD5_FILE=		${MASTERDIR}/distinfo.${ARCH}
 
 # Let's avoid hardcoding 'en' as the language.
 LANG=			en
 
 .include <bsd.port.pre.mk>
 
-.if (${MACHINE_ARCH} == "alpha")
+.if (${ARCH} == "alpha")
 PATCH_SITES=	\
 	ftp://ftp2.compaq.com/pub/linux/RedHat/7.2-alpha/updates/rpms/alpha/ \
 	ftp://alpha.crl.dec.com/pub/linux/redhat/7.2-alpha/updates/rpms/alpha/
 PORTREVISION=	2
 .endif
 
-.if (${MACHINE_ARCH} == "i386")
+.if (${ARCH} == "i386")
 RPM_GDB=		gdb-5.0rh-5.i386.rpm
 RPM_MAKE=		make-3.79.1-5.i386.rpm
 UPDATES=		XFree86-devel-4.1.0-50.i386.rpm \
@@ -93,10 +94,10 @@ pre-install:
 	@${RM} -rf ${WRKSRC}/tmp
 	@${MKDIR} ${WRKSRC}/tmp
 .for ii in ${DISTFILES} ${PATCHFILES}
-	cd ${WRKSRC}/tmp; rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${ii} | cpio -id
+	cd ${WRKSRC}/tmp; rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${ii} | ${CPIO} -id
 .endfor
 	cd ${WRKSRC}/tmp; ${FIND} * -type f -o -type l > ${PLIST}
-.if (${MACHINE_ARCH} == "i386")
+.if (${ARCH} == "i386")
 	${ECHO_CMD} boot/kernel.h >> ${PLIST}
 .endif
 	cd ${WRKSRC}/tmp; ${FIND} -d * -type d | ${GREP} -vE "man|locale" | \
