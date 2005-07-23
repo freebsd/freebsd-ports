@@ -1,0 +1,367 @@
+bin/drpython
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Check Syntax.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Close All Documents.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Close All Other Documents.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Close Prompt.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Close.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Comment.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Copy.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Customize Pop Up Menu.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Customize Shortcuts.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Customize ToolBar.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Cut.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Dedent.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Default.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Delete.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/End.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Exit.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Expand All.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Find Next.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Find Previous.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Find.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/First Document.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Fold All.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Go To.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Help.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Indent.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Insert Regular Expression.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Last Document.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Lowercase.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/New.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Next Document.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Open Imported Module.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Open.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Paste.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Preferences.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Previous Document.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Print File.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Print Prompt.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Print Setup.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Python.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Redo.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Reload File.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Replace.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Restore File From Backup.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Run.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Save All Documents.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Save As.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Save Prompt Output To File.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Save.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Select All.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Select None.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Set Arguments.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Source Browser Go To.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Toggle Fold.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Toggle Prompt.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Toggle Source Browser.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Toggle View Whitespace.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/UnComment.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Undo.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Uppercase.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/View In Left Panel.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/View In Right Panel.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/View In Top Panel.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/View Python Docs.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/View Regular Expression Howto.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/View WxWidgets Docs.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Zoom In.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Zoom Out.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/active modified.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/active not running.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/active running.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/active unmodified.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/bookmark.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/class.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/def.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/down.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/drscript.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/folder open.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/folder.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/import.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/modified.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/not running.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/py.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/pyw.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/running.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/transparent.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/unknown.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/unmodified.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/up.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Check Syntax.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Close All Documents.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Close All Other Documents.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Close Prompt.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Close.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Comment.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Copy.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Customize Pop Up Menu.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Customize Shortcuts.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Customize ToolBar.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Cut.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Dedent.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Default.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Delete.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/End.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Exit.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Expand All.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Find Next.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Find Previous.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Find.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/First Document.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Fold All.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Go To.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Help.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Indent.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Insert Regular Expression.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Last Document.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Lowercase.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/New.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Next Document.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Open Imported Module.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Open.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Paste.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Preferences.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Previous Document.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Print File.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Print Prompt.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Print Setup.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Python.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Redo.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Reload File.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Replace.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Restore File From Backup.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Run.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Save All Documents.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Save As.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Save Prompt Output To File.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Save.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Select All.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Select None.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Set Arguments.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Side Panels.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Source Browser Go To.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Toggle Fold.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Toggle Prompt.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Toggle Source Browser.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Toggle View Whitespace.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/UnComment.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Undo.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Uppercase.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/View In Left Panel.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/View In Right Panel.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/View In Top Panel.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/View Python Docs.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/View Regular Expression Howto.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/View WxWidgets Docs.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Zoom In.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Zoom Out.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/back.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/bookmarks.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/detailed.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/drpython.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/folder.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/forward.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/home.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/list.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/new directory.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/up.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/drpython.ico
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/drpython.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/install.wizard.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/uninstall.wizard.png
+%%PYTHON_SITELIBDIR%%/drpython/documentation/NorthStarLogoSmall_top.gif
+%%PYTHON_SITELIBDIR%%/drpython/documentation/credits.html
+%%PYTHON_SITELIBDIR%%/drpython/documentation/credits.txt
+%%PYTHON_SITELIBDIR%%/drpython/documentation/default.css
+%%PYTHON_SITELIBDIR%%/drpython/documentation/drdoc.py
+%%PYTHON_SITELIBDIR%%/drpython/documentation/drdoc.pyc
+%%PYTHON_SITELIBDIR%%/drpython/documentation/drdoc.pyo
+%%PYTHON_SITELIBDIR%%/drpython/documentation/drpython.png
+%%PYTHON_SITELIBDIR%%/drpython/documentation/drscript.html
+%%PYTHON_SITELIBDIR%%/drpython/documentation/drscript.txt
+%%PYTHON_SITELIBDIR%%/drpython/documentation/gpl.html
+%%PYTHON_SITELIBDIR%%/drpython/documentation/gpl.txt
+%%PYTHON_SITELIBDIR%%/drpython/documentation/help.html
+%%PYTHON_SITELIBDIR%%/drpython/documentation/help.txt
+%%PYTHON_SITELIBDIR%%/drpython/documentation/montypythonMOLDoctor.jpg
+%%PYTHON_SITELIBDIR%%/drpython/documentation/montypythonMOLDoctorAndSupport.jpg
+%%PYTHON_SITELIBDIR%%/drpython/documentation/northstar.html
+%%PYTHON_SITELIBDIR%%/drpython/documentation/northstar.txt
+%%PYTHON_SITELIBDIR%%/drpython/documentation/plugins.html
+%%PYTHON_SITELIBDIR%%/drpython/documentation/plugins.txt
+%%PYTHON_SITELIBDIR%%/drpython/documentation/preferences.html
+%%PYTHON_SITELIBDIR%%/drpython/documentation/preferences.txt
+%%PYTHON_SITELIBDIR%%/drpython/documentation/pyrst2html.py
+%%PYTHON_SITELIBDIR%%/drpython/documentation/pyrst2html.pyc
+%%PYTHON_SITELIBDIR%%/drpython/documentation/pyrst2html.pyo
+%%PYTHON_SITELIBDIR%%/drpython/documentation/thanks.html
+%%PYTHON_SITELIBDIR%%/drpython/documentation/thanks.txt
+%%PYTHON_SITELIBDIR%%/drpython/drAboutDialog.py
+%%PYTHON_SITELIBDIR%%/drpython/drAboutDialog.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drAboutDialog.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drBookmarksDialog.py
+%%PYTHON_SITELIBDIR%%/drpython/drBookmarksDialog.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drBookmarksDialog.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drBookmarksMenu.py
+%%PYTHON_SITELIBDIR%%/drpython/drBookmarksMenu.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drBookmarksMenu.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drDragAndDrop.py
+%%PYTHON_SITELIBDIR%%/drpython/drDragAndDrop.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drDragAndDrop.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drDynamicDrScriptDialog.py
+%%PYTHON_SITELIBDIR%%/drpython/drDynamicDrScriptDialog.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drDynamicDrScriptDialog.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drEncoding.py
+%%PYTHON_SITELIBDIR%%/drpython/drEncoding.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drEncoding.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drFileDialog.py
+%%PYTHON_SITELIBDIR%%/drpython/drFileDialog.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drFileDialog.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drFileDialogPrefs.py
+%%PYTHON_SITELIBDIR%%/drpython/drFileDialogPrefs.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drFileDialogPrefs.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drFindReplaceDialog.py
+%%PYTHON_SITELIBDIR%%/drpython/drFindReplaceDialog.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drFindReplaceDialog.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drGetBlockInfo.py
+%%PYTHON_SITELIBDIR%%/drpython/drGetBlockInfo.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drGetBlockInfo.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drGetKeyDialog.py
+%%PYTHON_SITELIBDIR%%/drpython/drGetKeyDialog.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drGetKeyDialog.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drKeywords.py
+%%PYTHON_SITELIBDIR%%/drpython/drKeywords.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drKeywords.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drMenu.py
+%%PYTHON_SITELIBDIR%%/drpython/drMenu.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drMenu.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drNotebook.py
+%%PYTHON_SITELIBDIR%%/drpython/drNotebook.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drNotebook.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drOpenImportedModuleDialog.py
+%%PYTHON_SITELIBDIR%%/drpython/drOpenImportedModuleDialog.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drOpenImportedModuleDialog.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drPluginDialog.py
+%%PYTHON_SITELIBDIR%%/drpython/drPluginDialog.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drPluginDialog.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drPluginMenu.py
+%%PYTHON_SITELIBDIR%%/drpython/drPluginMenu.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drPluginMenu.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drPopUp.py
+%%PYTHON_SITELIBDIR%%/drpython/drPopUp.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drPopUp.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drPopUpMenuDialog.py
+%%PYTHON_SITELIBDIR%%/drpython/drPopUpMenuDialog.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drPopUpMenuDialog.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drPreferences.py
+%%PYTHON_SITELIBDIR%%/drpython/drPreferences.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drPreferences.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drPrefsDialog.py
+%%PYTHON_SITELIBDIR%%/drpython/drPrefsDialog.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drPrefsDialog.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drPrefsFile.py
+%%PYTHON_SITELIBDIR%%/drpython/drPrefsFile.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drPrefsFile.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drPrinter.py
+%%PYTHON_SITELIBDIR%%/drpython/drPrinter.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drPrinter.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drPrompt.py
+%%PYTHON_SITELIBDIR%%/drpython/drPrompt.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drPrompt.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drProperty.py
+%%PYTHON_SITELIBDIR%%/drpython/drProperty.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drProperty.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drRegularExpressionDialog.py
+%%PYTHON_SITELIBDIR%%/drpython/drRegularExpressionDialog.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drRegularExpressionDialog.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drSTC.py
+%%PYTHON_SITELIBDIR%%/drpython/drSTC.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drSTC.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drScriptDialog.py
+%%PYTHON_SITELIBDIR%%/drpython/drScriptDialog.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drScriptDialog.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drScriptMenu.py
+%%PYTHON_SITELIBDIR%%/drpython/drScriptMenu.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drScriptMenu.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drScrolledMessageDialog.py
+%%PYTHON_SITELIBDIR%%/drpython/drScrolledMessageDialog.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drScrolledMessageDialog.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drSetupPreferences.py
+%%PYTHON_SITELIBDIR%%/drpython/drSetupPreferences.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drSetupPreferences.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drShortcuts.py
+%%PYTHON_SITELIBDIR%%/drpython/drShortcuts.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drShortcuts.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drShortcutsDialog.py
+%%PYTHON_SITELIBDIR%%/drpython/drShortcutsDialog.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drShortcutsDialog.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drShortcutsFile.py
+%%PYTHON_SITELIBDIR%%/drpython/drShortcutsFile.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drShortcutsFile.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drSingleChoiceDialog.py
+%%PYTHON_SITELIBDIR%%/drpython/drSingleChoiceDialog.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drSingleChoiceDialog.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drSourceBrowser.py
+%%PYTHON_SITELIBDIR%%/drpython/drSourceBrowser.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drSourceBrowser.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drSourceBrowserGoTo.py
+%%PYTHON_SITELIBDIR%%/drpython/drSourceBrowserGoTo.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drSourceBrowserGoTo.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drStyleDialog.py
+%%PYTHON_SITELIBDIR%%/drpython/drStyleDialog.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drStyleDialog.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drTabNanny.py
+%%PYTHON_SITELIBDIR%%/drpython/drTabNanny.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drTabNanny.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drText.py
+%%PYTHON_SITELIBDIR%%/drpython/drText.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drText.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drToolBarDialog.py
+%%PYTHON_SITELIBDIR%%/drpython/drToolBarDialog.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drToolBarDialog.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drToolBarFile.py
+%%PYTHON_SITELIBDIR%%/drpython/drToolBarFile.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drToolBarFile.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drTreeDialog.py
+%%PYTHON_SITELIBDIR%%/drpython/drTreeDialog.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drTreeDialog.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drZip.py
+%%PYTHON_SITELIBDIR%%/drpython/drZip.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drZip.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drpython.lin
+%%PYTHON_SITELIBDIR%%/drpython/drpython.py
+%%PYTHON_SITELIBDIR%%/drpython/drpython.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drpython.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drpython.pyw
+%%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/PrintEndOfLineCharactersInPrompt.py
+%%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/PrintEndOfLineCharactersInPrompt.pyc
+%%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/PrintEndOfLineCharactersInPrompt.pyo
+%%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/ReplaceAllInSelection.py
+%%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/ReplaceAllInSelection.pyc
+%%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/ReplaceAllInSelection.pyo
+%%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/ReverseAssignment.py
+%%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/ReverseAssignment.pyc
+%%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/ReverseAssignment.pyo
+%%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/RunInTerminal.py
+%%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/RunInTerminal.pyc
+%%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/RunInTerminal.pyo
+%%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/SetTerminalArgs.py
+%%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/SetTerminalArgs.pyc
+%%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/SetTerminalArgs.pyo
+%%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/SwitcherooInSelection.py
+%%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/SwitcherooInSelection.pyc
+%%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/SwitcherooInSelection.pyo
+%%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/drscript.dat
+%%PYTHON_SITELIBDIR%%/drpython/lnkDecoderRing.py
+%%PYTHON_SITELIBDIR%%/drpython/lnkDecoderRing.pyc
+%%PYTHON_SITELIBDIR%%/drpython/lnkDecoderRing.pyo
+%%PYTHON_SITELIBDIR%%/drpython/postinst.py
+%%PYTHON_SITELIBDIR%%/drpython/postinst.pyc
+%%PYTHON_SITELIBDIR%%/drpython/postinst.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/drpython/examples/DrScript
+@dirrm %%PYTHON_SITELIBDIR%%/drpython/examples
+@dirrm %%PYTHON_SITELIBDIR%%/drpython/documentation
+@dirrm %%PYTHON_SITELIBDIR%%/drpython/bitmaps/24
+@dirrm %%PYTHON_SITELIBDIR%%/drpython/bitmaps/16
+@dirrm %%PYTHON_SITELIBDIR%%/drpython/bitmaps
+@dirrm %%PYTHON_SITELIBDIR%%/drpython
