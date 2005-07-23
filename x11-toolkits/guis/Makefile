@@ -27,6 +27,8 @@ MAKE_ENV=	PYTHONCFLAGS="-I${LOCALBASE}/include/python${USE_PYTHON} ${PTHREAD_CFL
 ALL_TARGET=	prog
 
 BROKEN=		Broken dependency after python 2.4 update
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 PLIST_FILES=	bin/pyguis bin/ruguis bin/pyguis-scripter bin/ruguis-scripter
 MAN1=	pyguis.1

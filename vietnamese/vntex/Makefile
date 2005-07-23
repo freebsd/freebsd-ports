@@ -19,6 +19,8 @@ COMMENT=	teTeX Vietnamese language + font support
 RUN_DEPENDS=	virtex:${PORTSDIR}/print/teTeX
 
 BROKEN=		Broken dependency
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_ZIP=	yes
 NO_BUILD=	yes

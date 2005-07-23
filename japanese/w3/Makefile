@@ -15,6 +15,8 @@ BUILD_DEPENDS=	mule:${PORTSDIR}/editors/mule
 RUN_DEPENDS=	# none
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 EMACSCMD=	mule
 ELISPDIR=	${PREFIX}/lib/mule/site-lisp

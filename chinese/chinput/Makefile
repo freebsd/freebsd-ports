@@ -20,6 +20,8 @@ BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT} \
 		mkfontdir:${X_CLIENTS_PORT}
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2005-09-22
 
 USE_XLIB=	yes
 

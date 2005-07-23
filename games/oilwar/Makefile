@@ -16,6 +16,8 @@ MAINTAINER=	hendrik@scholz.net
 COMMENT=	Evil army wants to steal your oil
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_SDL=	image mixer sdl
 GNU_CONFIGURE=	yes

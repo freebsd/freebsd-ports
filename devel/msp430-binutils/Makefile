@@ -16,6 +16,8 @@ MAINTAINER=	lev@FreeBSD.org
 COMMENT=	GNU binutils for TI's msp430 MCUs cross-development
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2005-09-22
 
 BINUTILVERSION=	2.15
 

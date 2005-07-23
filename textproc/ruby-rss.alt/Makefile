@@ -23,6 +23,8 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
 #		${RUBY_SITELIBDIR}/xmlscan/parser.rb:${PORTSDIR}/textproc/ruby-xmlscan
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 CONFLICTS=	ruby-rss-*
 

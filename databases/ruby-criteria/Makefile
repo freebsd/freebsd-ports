@@ -16,6 +16,8 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby module for SQL query abstraction, and others
 
 BROKEN=		"Fails self-test during build"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes

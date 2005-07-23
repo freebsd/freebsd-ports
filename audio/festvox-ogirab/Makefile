@@ -23,6 +23,8 @@ ${PREFIX}/share/festival/lib/ogi_token.scm:${PORTSDIR}/audio/festival+OGI \
 		${LOCALBASE}/share/festival/lib/dicts/ogi_lex.out:${PORTSDIR}/audio/festlex-ogi
 
 BROKEN=		Unfetchable
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2005-09-22
 
 RESTRICTED=	no-commercial-use
 

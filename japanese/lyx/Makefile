@@ -25,6 +25,8 @@ COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
 BROKEN=		"Incomplete pkg-plist"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_XPM=	yes
 USE_PERL5=	yes

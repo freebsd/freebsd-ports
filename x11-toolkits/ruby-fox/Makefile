@@ -24,6 +24,8 @@ LIB_DEPENDS=	FOX-1.0.0:${PORTSDIR}/x11-toolkits/fox \
 		fxscintilla.16:${PORTSDIR}/x11-toolkits/fxscintilla-fox10
 
 BROKEN=		Broken dependency
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes

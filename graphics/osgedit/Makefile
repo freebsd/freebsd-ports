@@ -21,6 +21,8 @@ LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
 RUN_DEPENDS=	${X11BASE}/lib/libosg.so:${PORTSDIR}/graphics/osg
 
 BROKEN=		"Does not compile"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui

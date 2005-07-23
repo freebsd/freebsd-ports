@@ -14,6 +14,8 @@ MAINTAINER=	russell@rucus.ru.ac.za
 COMMENT=	Language bindings for the Redland package
 
 BROKEN=		Configure fails
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 #OPTIONS=	JAVA "Add Java bindings" off \
 #		PERL "Add Perl bindings" off \

@@ -25,6 +25,8 @@ BUILD_DEPENDS=  ${LOCALBASE}/lib/libviqr.a:${PORTSDIR}/vietnamese/libviet \
 RUN_DEPENDS=	${PREFIX}/lib/X11/fonts/vietnamese/fonts.dir:${PORTSDIR}/vietnamese/vnxfonts
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - xc/programs/xterm
 WRKSRC=		${WRKDIR}/xc/programs/xterm

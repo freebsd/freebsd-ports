@@ -16,6 +16,8 @@ MAINTAINER=	lewiz@compsoc.man.ac.uk
 COMMENT=	A smart LDAP directory management tool
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

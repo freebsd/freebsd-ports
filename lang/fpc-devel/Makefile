@@ -18,6 +18,8 @@ MAINTAINER=	marco@freepascal.org
 COMMENT=	Delphi and Turbo Pascal compatible Pascal (commandline) compiler
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 .include <bsd.port.pre.mk>
 

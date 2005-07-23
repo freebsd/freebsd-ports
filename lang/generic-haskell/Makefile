@@ -14,6 +14,8 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	The Generic Haskell compiler
 
 BROKEN=		"Not compatible with latest GHC yet"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		bash:${PORTSDIR}/shells/bash

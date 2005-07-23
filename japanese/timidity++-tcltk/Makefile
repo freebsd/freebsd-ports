@@ -11,6 +11,8 @@ MAINTAINER=	yatt@luna2.org
 COMMENT=	Tcl/Tk interface for TiMidity++ with Japanese support
 
 BROKEN=		Incomplete distinfo file
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 INTERFACE=	tcltk
 JAPANESE=	yes

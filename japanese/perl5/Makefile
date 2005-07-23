@@ -41,6 +41,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pattern Extraction and Recognition Language + Japanese patches
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 .include <bsd.port.pre.mk>
 

@@ -16,6 +16,8 @@ MAINTAINER=	nik@FreeBSD.org
 COMMENT=	Star Trek Voyager: Elite Forces dedicated server for Linux
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 ONLY_FOR_ARCHS=	i386
 USE_ZIP=	yes

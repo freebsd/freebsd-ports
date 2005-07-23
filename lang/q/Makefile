@@ -24,6 +24,8 @@ LIB_DEPENDS=	Magick.8:${PORTSDIR}/graphics/ImageMagick \
 		gmp.6:${PORTSDIR}/math/libgmp4
 
 BROKEN=		Does not compile
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_REINPLACE=	yes
 USE_BISON=	yes

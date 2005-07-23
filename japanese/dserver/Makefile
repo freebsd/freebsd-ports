@@ -25,6 +25,8 @@ COMMENT=	CDROM dictionary server & clients
 RUN_DEPENDS=	jless:${PORTSDIR}/japanese/less
 
 BROKEN=		Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes

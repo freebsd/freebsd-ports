@@ -17,6 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The SOAP Method product provides support for remote SOAP methods
 
 BROKEN=		Broken dependency
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/SOAPpy/__init__.py:${PORTSDIR}/net/py-soappy
 

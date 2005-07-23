@@ -16,6 +16,8 @@ COMMENT=	Tune Pine for Ukrainian (KOI8-U) defaults
 RUN_DEPENDS=	pine:${PORTSDIR}/mail/pine4
 
 BROKEN=		Removes config file at deinstall-time
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES

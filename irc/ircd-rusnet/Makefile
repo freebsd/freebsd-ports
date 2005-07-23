@@ -20,6 +20,8 @@ MAINTAINER=	sead@mail.ru
 COMMENT=	RusNet Internet Relay Chat Server
 
 BROKEN=		Does not build
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

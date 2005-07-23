@@ -18,6 +18,8 @@ COMMENT=	Ruby interface to the Spread library
 LIB_DEPENDS=	tspread.1:${PORTSDIR}/net/spread
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

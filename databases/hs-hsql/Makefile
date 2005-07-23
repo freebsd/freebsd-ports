@@ -18,6 +18,8 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell access to SQL
 
 BROKEN=		"Not compatible with latest GHC yet"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc

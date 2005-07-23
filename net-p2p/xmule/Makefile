@@ -22,6 +22,8 @@ LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes

@@ -16,6 +16,8 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	GNOME Gstreamer based video/audio capture solution
 
 BROKEN=		Does not compile
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_GSTREAMER=	core
 USE_GNOME=	\

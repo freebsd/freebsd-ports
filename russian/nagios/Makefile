@@ -20,6 +20,8 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
 BROKEN=		Changes permissions of installed directory
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 CONFLICTS=	nagios-1*
 

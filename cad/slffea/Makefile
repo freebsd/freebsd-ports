@@ -19,6 +19,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	San Le's Free Finite Element Analysis
 
 BROKEN=		Size mismatch
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2005-09-22
 
 CONFLICTS=	swi-pl-* TenDRA-*
 USE_REINPLACE=	yes

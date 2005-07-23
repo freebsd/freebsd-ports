@@ -20,6 +20,8 @@ BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS=		${LINUXBASE}/usr/lib/libartsc.so.0:${PORTSDIR}/audio/linux-arts
 
 BROKEN=			Incomplete pkg-plist
+DEPRECATED=		${BROKEN}
+EXPIRATION_DATE=	2005-09-22
 
 RESTRICTED=		"binary redistribution license needs clarification"
 

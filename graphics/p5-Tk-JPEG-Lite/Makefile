@@ -20,6 +20,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 BROKEN=		Removes files installed by another port
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 PERL_CONFIGURE=	yes
 USE_REINPLACE=	yes

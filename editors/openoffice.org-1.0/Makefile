@@ -27,6 +27,8 @@ DISTFILES+=	${L10NHELP:S/$/:help/}
 .endif
 
 BROKEN=		Unfetchable
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2005-09-22
 
 NO_LATEST_LINK=	yes
 FIND?=	/usr/bin/find

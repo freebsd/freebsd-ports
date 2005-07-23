@@ -15,5 +15,7 @@ MASTERDIR=	${.CURDIR}/../../editors/xemacs21-mule
 CANNA=		yes
 
 BROKEN=		"Incomplete pkg-plist"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 .include	"${MASTERDIR}/Makefile"

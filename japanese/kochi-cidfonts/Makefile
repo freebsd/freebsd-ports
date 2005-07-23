@@ -15,6 +15,8 @@ MAINTAINER=	kanou@khdd.net
 COMMENT=	Free Japanese CID-keyed fonts named 'Kochi'
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_BZIP2=	yes
 NO_BUILD=	yes

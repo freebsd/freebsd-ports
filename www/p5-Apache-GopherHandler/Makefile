@@ -22,6 +22,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_MODBUILD=	yes
 
 BROKEN=		Broken due the new mod_perl2 API
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 MAN3=		Apache::GopherHandler.3 \
 		Apache::GopherHandler::TiedSocket.3

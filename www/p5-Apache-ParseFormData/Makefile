@@ -21,6 +21,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 BROKEN=		Broken due the new mod_perl2 API
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 MAN3=		Apache::ParseFormData.3
 

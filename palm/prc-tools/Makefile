@@ -23,6 +23,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of tools supporting C and C++ programming for Palm OS
 
 BROKEN=		Incorrect pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 # it is unknown whether it could actually be made to work elsewhere,
 # but right now it does not.

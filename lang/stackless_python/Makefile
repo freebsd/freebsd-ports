@@ -22,6 +22,8 @@ MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python implementation that does not use the C stack
 
 BROKEN=		Distinfo out of date
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 CONFLICTS=	python-2.3.*
 ONLY_FOR_ARCHS=	i386 powerpc

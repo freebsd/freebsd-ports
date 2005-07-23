@@ -20,6 +20,8 @@ COMMENT=	OpenOffice.org 1.1 Impress Templates
 RUN_DEPENDS=	${LOCALBASE}/${OPENOFFICE}/program/soffice:${PORTSDIR}/editors/openoffice-1.1
 
 BROKEN=		Install fails
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 NO_BUILD=	yes
 PLIST_FILES=	${OOTEMPLATES:S|^|${TEMPLATEDIR}/|}

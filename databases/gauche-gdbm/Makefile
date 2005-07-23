@@ -21,6 +21,8 @@ LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 RUN_DEPENDS=	gosh:${PORTSDIR}/${GAUCHE_PORT}
 
 BROKEN=		Incorrect pkg-plist
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2005-09-22
 
 GAUCHE_PORT=	lang/gauche
 

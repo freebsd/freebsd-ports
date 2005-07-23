@@ -17,6 +17,8 @@ MAINTAINER=	dean@odyssey.apana.org.au
 COMMENT=	Distributed Checksum Clearinghouse procmail, sendmail support
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes

@@ -21,6 +21,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_mysql.so:${PORTSDIR}/databases/py-MySQLdb	\
 		${PYNUMERIC}
 
 BROKEN=		"Conflicting dependencies: apache 1.x and apache 2.x"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 .if !defined(WITHOUT_X11)
 . if !defined(WITHOUT_XPDF)

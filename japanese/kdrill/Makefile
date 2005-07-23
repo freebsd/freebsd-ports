@@ -15,6 +15,8 @@ MAINTAINER=	sethk@meowfishies.com
 COMMENT=	A program to quiz you on the meanings of Kanji
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 # Explictly state HTML'ized man pages in packing list since not all are
 # generated from imake.

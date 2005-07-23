@@ -17,6 +17,8 @@ MAINTAINER=	gtchask@mm.st
 COMMENT=	A tool integration framework for Haskell, including Htk
 
 BROKEN=		"Does not compile with ghc 6.4 (specifically, ghc-pkg)"
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2005-09-22
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc

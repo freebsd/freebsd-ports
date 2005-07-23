@@ -23,6 +23,8 @@ COMMENT=	Routines for performing multithreaded sparse factorization
 BUILD_DEPENDS=	${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/blas
 
 BROKEN=		Size mismatch
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/SuperLU_MT

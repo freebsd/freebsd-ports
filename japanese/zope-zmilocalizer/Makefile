@@ -19,6 +19,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec \
 		${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/PlacelessTranslationService/__init__.py:${PORTSDIR}/www/zope-placelesstranslationservice
 
 BROKEN=		Broken dependency
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_PYTHON=	yes
 USE_ZOPE=	yes
