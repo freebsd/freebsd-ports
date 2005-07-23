@@ -20,3 +20,4 @@ share/gnome/pixmaps/directory_administrator/old-group-icon.xpm
 share/gnome/pixmaps/directory_administrator/old-user-icon.xpm
 share/gnome/pixmaps/directory_administrator/user-icon.xpm
 @dirrm share/gnome/pixmaps/directory_administrator
+@unexec rmdir %D/share/applications 2>/dev/null || true

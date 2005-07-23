@@ -9,17 +9,15 @@ PORTNAME=	diradmin
 PORTVERSION=	1.5.1
 PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	http://diradmin.open-it.org/
+MASTER_SITES=	http://diradmin.open-it.org/releases/ \
+		http://diradmin.open-it.org/releases/old/
 DISTNAME=	directory_administrator-${PORTVERSION}
 
 MAINTAINER=	lewiz@compsoc.man.ac.uk
 COMMENT=	A smart LDAP directory management tool
 
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomelibs
