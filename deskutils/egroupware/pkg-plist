@@ -15,7 +15,7 @@ www/data-dist/egroupware/addressbook/inc/export/Multiple_VCard
 www/data-dist/egroupware/addressbook/inc/export/Netscape_LDIF
 www/data-dist/egroupware/addressbook/inc/export/Outlook_CSV_-_Deutsch
 www/data-dist/egroupware/addressbook/inc/export/Outlook_CSV_-_English
-www/data-dist/egroupware/addressbook/inc/export/Outlook_CSV_-_Français
+www/data-dist/egroupware/addressbook/inc/export/Outlook_CSV_-_French
 www/data-dist/egroupware/addressbook/inc/export/Palm_PDB
 www/data-dist/egroupware/addressbook/inc/export/phpgw_LDIF
 www/data-dist/egroupware/addressbook/inc/export/phpgw_SQL
@@ -49,8 +49,10 @@ www/data-dist/egroupware/addressbook/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/addressbook/setup/phpgw_es-es.lang
 www/data-dist/egroupware/addressbook/setup/phpgw_fi.lang
 www/data-dist/egroupware/addressbook/setup/phpgw_fr.lang
+www/data-dist/egroupware/addressbook/setup/phpgw_hr.lang
 www/data-dist/egroupware/addressbook/setup/phpgw_hu.lang
 www/data-dist/egroupware/addressbook/setup/phpgw_it.lang
+www/data-dist/egroupware/addressbook/setup/phpgw_iw.lang
 www/data-dist/egroupware/addressbook/setup/phpgw_ja.lang
 www/data-dist/egroupware/addressbook/setup/phpgw_ko.lang
 www/data-dist/egroupware/addressbook/setup/phpgw_nl.lang
@@ -159,8 +161,10 @@ www/data-dist/egroupware/admin/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/admin/setup/phpgw_es-es.lang
 www/data-dist/egroupware/admin/setup/phpgw_fi.lang
 www/data-dist/egroupware/admin/setup/phpgw_fr.lang
+www/data-dist/egroupware/admin/setup/phpgw_hr.lang
 www/data-dist/egroupware/admin/setup/phpgw_hu.lang
 www/data-dist/egroupware/admin/setup/phpgw_it.lang
+www/data-dist/egroupware/admin/setup/phpgw_iw.lang
 www/data-dist/egroupware/admin/setup/phpgw_ja.lang
 www/data-dist/egroupware/admin/setup/phpgw_ko.lang
 www/data-dist/egroupware/admin/setup/phpgw_nl.lang
@@ -240,13 +244,17 @@ www/data-dist/egroupware/backup/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/backup/setup/phpgw_es-es.lang
 www/data-dist/egroupware/backup/setup/phpgw_fi.lang
 www/data-dist/egroupware/backup/setup/phpgw_fr.lang
+www/data-dist/egroupware/backup/setup/phpgw_hr.lang
 www/data-dist/egroupware/backup/setup/phpgw_it.lang
+www/data-dist/egroupware/backup/setup/phpgw_iw.lang
 www/data-dist/egroupware/backup/setup/phpgw_ko.lang
 www/data-dist/egroupware/backup/setup/phpgw_nl.lang
 www/data-dist/egroupware/backup/setup/phpgw_pl.lang
 www/data-dist/egroupware/backup/setup/phpgw_pt-br.lang
 www/data-dist/egroupware/backup/setup/phpgw_pt.lang
+www/data-dist/egroupware/backup/setup/phpgw_ru.lang
 www/data-dist/egroupware/backup/setup/phpgw_sl.lang
+www/data-dist/egroupware/backup/setup/phpgw_sv.lang
 www/data-dist/egroupware/backup/setup/phpgw_zh.lang
 www/data-dist/egroupware/backup/setup/phpgw_zt.lang
 www/data-dist/egroupware/backup/setup/setup.inc.php
@@ -273,8 +281,8 @@ www/data-dist/egroupware/bookmarks/inc/class.sqlquery.inc.php
 www/data-dist/egroupware/bookmarks/inc/class.ui.inc.php
 www/data-dist/egroupware/bookmarks/inc/hook_admin.inc.php
 www/data-dist/egroupware/bookmarks/inc/hook_bookmarks_about.inc.php
-www/data-dist/egroupware/bookmarks/inc/hook_sidebox_menu.inc.php
 www/data-dist/egroupware/bookmarks/inc/hook_preferences.inc.php
+www/data-dist/egroupware/bookmarks/inc/hook_sidebox_menu.inc.php
 www/data-dist/egroupware/bookmarks/index.php
 www/data-dist/egroupware/bookmarks/setup/default_records.inc.php
 www/data-dist/egroupware/bookmarks/setup/phpgw_bg.lang
@@ -286,8 +294,10 @@ www/data-dist/egroupware/bookmarks/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/bookmarks/setup/phpgw_es-es.lang
 www/data-dist/egroupware/bookmarks/setup/phpgw_fi.lang
 www/data-dist/egroupware/bookmarks/setup/phpgw_fr.lang
+www/data-dist/egroupware/bookmarks/setup/phpgw_hr.lang
 www/data-dist/egroupware/bookmarks/setup/phpgw_hu.lang
 www/data-dist/egroupware/bookmarks/setup/phpgw_it.lang
+www/data-dist/egroupware/bookmarks/setup/phpgw_iw.lang
 www/data-dist/egroupware/bookmarks/setup/phpgw_ja.lang
 www/data-dist/egroupware/bookmarks/setup/phpgw_ko.lang
 www/data-dist/egroupware/bookmarks/setup/phpgw_nl.lang
@@ -295,6 +305,7 @@ www/data-dist/egroupware/bookmarks/setup/phpgw_no.lang
 www/data-dist/egroupware/bookmarks/setup/phpgw_pl.lang
 www/data-dist/egroupware/bookmarks/setup/phpgw_pt-br.lang
 www/data-dist/egroupware/bookmarks/setup/phpgw_pt.lang
+www/data-dist/egroupware/bookmarks/setup/phpgw_ru.lang
 www/data-dist/egroupware/bookmarks/setup/phpgw_sl.lang
 www/data-dist/egroupware/bookmarks/setup/phpgw_sv.lang
 www/data-dist/egroupware/bookmarks/setup/phpgw_zh.lang
@@ -466,6 +477,7 @@ www/data-dist/egroupware/calendar/egroupware.org/holidays.AU.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.BE.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.BR.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.CA.csv
+www/data-dist/egroupware/calendar/egroupware.org/holidays.CH.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.CL.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.CO.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.CZ.csv
@@ -477,6 +489,7 @@ www/data-dist/egroupware/calendar/egroupware.org/holidays.FR.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.GB.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.GR.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.HK.csv
+www/data-dist/egroupware/calendar/egroupware.org/holidays.HR.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.IE.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.IL.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.IT.csv
@@ -487,8 +500,10 @@ www/data-dist/egroupware/calendar/egroupware.org/holidays.MX.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.MY.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.NC.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.NL.csv
+www/data-dist/egroupware/calendar/egroupware.org/holidays.NZ.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.PL.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.PT.csv
+www/data-dist/egroupware/calendar/egroupware.org/holidays.RU.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.SE.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.SL.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.TH.csv
@@ -541,8 +556,10 @@ www/data-dist/egroupware/calendar/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/calendar/setup/phpgw_es-es.lang
 www/data-dist/egroupware/calendar/setup/phpgw_fi.lang
 www/data-dist/egroupware/calendar/setup/phpgw_fr.lang
+www/data-dist/egroupware/calendar/setup/phpgw_hr.lang
 www/data-dist/egroupware/calendar/setup/phpgw_hu.lang
 www/data-dist/egroupware/calendar/setup/phpgw_it.lang
+www/data-dist/egroupware/calendar/setup/phpgw_iw.lang
 www/data-dist/egroupware/calendar/setup/phpgw_ja.lang
 www/data-dist/egroupware/calendar/setup/phpgw_ko.lang
 www/data-dist/egroupware/calendar/setup/phpgw_nl.lang
@@ -753,11 +770,14 @@ www/data-dist/egroupware/comic/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/comic/setup/phpgw_es-es.lang
 www/data-dist/egroupware/comic/setup/phpgw_fi.lang
 www/data-dist/egroupware/comic/setup/phpgw_fr.lang
+www/data-dist/egroupware/comic/setup/phpgw_hr.lang
 www/data-dist/egroupware/comic/setup/phpgw_it.lang
+www/data-dist/egroupware/comic/setup/phpgw_iw.lang
 www/data-dist/egroupware/comic/setup/phpgw_nl.lang
 www/data-dist/egroupware/comic/setup/phpgw_pl.lang
 www/data-dist/egroupware/comic/setup/phpgw_pt-br.lang
 www/data-dist/egroupware/comic/setup/phpgw_sl.lang
+www/data-dist/egroupware/comic/setup/phpgw_sv.lang
 www/data-dist/egroupware/comic/setup/phpgw_zh.lang
 www/data-dist/egroupware/comic/setup/phpgw_zt.lang
 www/data-dist/egroupware/comic/setup/setup.inc.php
@@ -812,14 +832,18 @@ www/data-dist/egroupware/developer_tools/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/developer_tools/setup/phpgw_es-es.lang
 www/data-dist/egroupware/developer_tools/setup/phpgw_fi.lang
 www/data-dist/egroupware/developer_tools/setup/phpgw_fr.lang
+www/data-dist/egroupware/developer_tools/setup/phpgw_hr.lang
 www/data-dist/egroupware/developer_tools/setup/phpgw_it.lang
+www/data-dist/egroupware/developer_tools/setup/phpgw_iw.lang
 www/data-dist/egroupware/developer_tools/setup/phpgw_ja.lang
 www/data-dist/egroupware/developer_tools/setup/phpgw_ko.lang
 www/data-dist/egroupware/developer_tools/setup/phpgw_nl.lang
 www/data-dist/egroupware/developer_tools/setup/phpgw_pl.lang
 www/data-dist/egroupware/developer_tools/setup/phpgw_pt-br.lang
 www/data-dist/egroupware/developer_tools/setup/phpgw_pt.lang
+www/data-dist/egroupware/developer_tools/setup/phpgw_ru.lang
 www/data-dist/egroupware/developer_tools/setup/phpgw_sl.lang
+www/data-dist/egroupware/developer_tools/setup/phpgw_sv.lang
 www/data-dist/egroupware/developer_tools/setup/phpgw_uk.lang
 www/data-dist/egroupware/developer_tools/setup/phpgw_zh.lang
 www/data-dist/egroupware/developer_tools/setup/phpgw_zt.lang
@@ -845,6 +869,7 @@ www/data-dist/egroupware/doc/cvs_full_checkout.pl
 www/data-dist/egroupware/doc/inlinedocparser.php
 www/data-dist/egroupware/doc/inlinedocparser_docbook.tpl
 www/data-dist/egroupware/doc/inlinedocparser_html.tpl
+www/data-dist/egroupware/doc/rpm-build/.rpmmacros
 www/data-dist/egroupware/doc/rpm-build/build-egw-rpms.sh
 www/data-dist/egroupware/doc/rpm-build/egroupware-allapp.spec
 www/data-dist/egroupware/doc/rpm-build/egroupware-fedora.spec
@@ -922,8 +947,10 @@ www/data-dist/egroupware/email/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/email/setup/phpgw_es-es.lang
 www/data-dist/egroupware/email/setup/phpgw_fi.lang
 www/data-dist/egroupware/email/setup/phpgw_fr.lang
+www/data-dist/egroupware/email/setup/phpgw_hr.lang
 www/data-dist/egroupware/email/setup/phpgw_hu.lang
 www/data-dist/egroupware/email/setup/phpgw_it.lang
+www/data-dist/egroupware/email/setup/phpgw_iw.lang
 www/data-dist/egroupware/email/setup/phpgw_ja.lang
 www/data-dist/egroupware/email/setup/phpgw_ko.lang
 www/data-dist/egroupware/email/setup/phpgw_nl.lang
@@ -1560,12 +1587,16 @@ www/data-dist/egroupware/emailadmin/setup/phpgw_de.lang
 www/data-dist/egroupware/emailadmin/setup/phpgw_en.lang
 www/data-dist/egroupware/emailadmin/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/emailadmin/setup/phpgw_es-es.lang
+www/data-dist/egroupware/emailadmin/setup/phpgw_fi.lang
 www/data-dist/egroupware/emailadmin/setup/phpgw_fr.lang
+www/data-dist/egroupware/emailadmin/setup/phpgw_hr.lang
 www/data-dist/egroupware/emailadmin/setup/phpgw_it.lang
+www/data-dist/egroupware/emailadmin/setup/phpgw_iw.lang
 www/data-dist/egroupware/emailadmin/setup/phpgw_nl.lang
 www/data-dist/egroupware/emailadmin/setup/phpgw_pl.lang
 www/data-dist/egroupware/emailadmin/setup/phpgw_pt-br.lang
 www/data-dist/egroupware/emailadmin/setup/phpgw_sl.lang
+www/data-dist/egroupware/emailadmin/setup/phpgw_sv.lang
 www/data-dist/egroupware/emailadmin/setup/phpgw_zh.lang
 www/data-dist/egroupware/emailadmin/setup/phpgw_zt.lang
 www/data-dist/egroupware/emailadmin/setup/setup.inc.php
@@ -1658,11 +1689,15 @@ www/data-dist/egroupware/etemplate/setup/phpgw_de.lang
 www/data-dist/egroupware/etemplate/setup/phpgw_en.lang
 www/data-dist/egroupware/etemplate/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/etemplate/setup/phpgw_es-es.lang
+www/data-dist/egroupware/etemplate/setup/phpgw_fi.lang
 www/data-dist/egroupware/etemplate/setup/phpgw_fr.lang
+www/data-dist/egroupware/etemplate/setup/phpgw_hr.lang
 www/data-dist/egroupware/etemplate/setup/phpgw_it.lang
+www/data-dist/egroupware/etemplate/setup/phpgw_iw.lang
 www/data-dist/egroupware/etemplate/setup/phpgw_nl.lang
 www/data-dist/egroupware/etemplate/setup/phpgw_pt-br.lang
 www/data-dist/egroupware/etemplate/setup/phpgw_sl.lang
+www/data-dist/egroupware/etemplate/setup/phpgw_sv.lang
 www/data-dist/egroupware/etemplate/setup/phpgw_zt.lang
 www/data-dist/egroupware/etemplate/setup/setup.inc.php
 www/data-dist/egroupware/etemplate/setup/tables_baseline.inc.php
@@ -1735,14 +1770,18 @@ www/data-dist/egroupware/felamimail/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/felamimail/setup/phpgw_es-es.lang
 www/data-dist/egroupware/felamimail/setup/phpgw_fi.lang
 www/data-dist/egroupware/felamimail/setup/phpgw_fr.lang
+www/data-dist/egroupware/felamimail/setup/phpgw_hr.lang
 www/data-dist/egroupware/felamimail/setup/phpgw_hu.lang
 www/data-dist/egroupware/felamimail/setup/phpgw_it.lang
+www/data-dist/egroupware/felamimail/setup/phpgw_iw.lang
 www/data-dist/egroupware/felamimail/setup/phpgw_ja.lang
 www/data-dist/egroupware/felamimail/setup/phpgw_nl.lang
+www/data-dist/egroupware/felamimail/setup/phpgw_no.lang
 www/data-dist/egroupware/felamimail/setup/phpgw_pl.lang
 www/data-dist/egroupware/felamimail/setup/phpgw_pt-br.lang
 www/data-dist/egroupware/felamimail/setup/phpgw_pt.lang
 www/data-dist/egroupware/felamimail/setup/phpgw_sl.lang
+www/data-dist/egroupware/felamimail/setup/phpgw_sv.lang
 www/data-dist/egroupware/felamimail/setup/phpgw_zh.lang
 www/data-dist/egroupware/felamimail/setup/phpgw_zt.lang
 www/data-dist/egroupware/felamimail/setup/phpmailer.lang-br.php
@@ -1938,13 +1977,19 @@ www/data-dist/egroupware/filemanager/setup/phpgw_de.lang
 www/data-dist/egroupware/filemanager/setup/phpgw_en.lang
 www/data-dist/egroupware/filemanager/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/filemanager/setup/phpgw_es-es.lang
+www/data-dist/egroupware/filemanager/setup/phpgw_fi.lang
 www/data-dist/egroupware/filemanager/setup/phpgw_fr.lang
+www/data-dist/egroupware/filemanager/setup/phpgw_hr.lang
 www/data-dist/egroupware/filemanager/setup/phpgw_it.lang
+www/data-dist/egroupware/filemanager/setup/phpgw_iw.lang
 www/data-dist/egroupware/filemanager/setup/phpgw_nl.lang
+www/data-dist/egroupware/filemanager/setup/phpgw_no.lang
 www/data-dist/egroupware/filemanager/setup/phpgw_pl.lang
 www/data-dist/egroupware/filemanager/setup/phpgw_pt-br.lang
 www/data-dist/egroupware/filemanager/setup/phpgw_pt.lang
+www/data-dist/egroupware/filemanager/setup/phpgw_ru.lang
 www/data-dist/egroupware/filemanager/setup/phpgw_sl.lang
+www/data-dist/egroupware/filemanager/setup/phpgw_sv.lang
 www/data-dist/egroupware/filemanager/setup/phpgw_zh.lang
 www/data-dist/egroupware/filemanager/setup/phpgw_zt.lang
 www/data-dist/egroupware/filemanager/setup/setup.inc.php
@@ -2116,13 +2161,16 @@ www/data-dist/egroupware/forum/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/forum/setup/phpgw_es-es.lang
 www/data-dist/egroupware/forum/setup/phpgw_fi.lang
 www/data-dist/egroupware/forum/setup/phpgw_fr.lang
+www/data-dist/egroupware/forum/setup/phpgw_hr.lang
 www/data-dist/egroupware/forum/setup/phpgw_hu.lang
 www/data-dist/egroupware/forum/setup/phpgw_it.lang
+www/data-dist/egroupware/forum/setup/phpgw_iw.lang
 www/data-dist/egroupware/forum/setup/phpgw_ja.lang
 www/data-dist/egroupware/forum/setup/phpgw_nl.lang
 www/data-dist/egroupware/forum/setup/phpgw_pl.lang
 www/data-dist/egroupware/forum/setup/phpgw_pt-br.lang
 www/data-dist/egroupware/forum/setup/phpgw_pt.lang
+www/data-dist/egroupware/forum/setup/phpgw_ru.lang
 www/data-dist/egroupware/forum/setup/phpgw_sl.lang
 www/data-dist/egroupware/forum/setup/phpgw_sv.lang
 www/data-dist/egroupware/forum/setup/phpgw_zh.lang
@@ -2174,18 +2222,6 @@ www/data-dist/egroupware/forum/templates/jerryr/images/navbar-over.png
 www/data-dist/egroupware/forum/templates/jerryr/images/navbar.png
 www/data-dist/egroupware/forum/templates/literati/images/navbar.png
 www/data-dist/egroupware/ftp/doc/copyright.gpl
-www/data-dist/egroupware/ftp/images/directory.gif
-www/data-dist/egroupware/ftp/images/directory.png
-www/data-dist/egroupware/ftp/images/navbar.gif
-www/data-dist/egroupware/ftp/images/navbar.png
-www/data-dist/egroupware/ftp/images/rename.gif
-www/data-dist/egroupware/ftp/images/rename.png
-www/data-dist/egroupware/ftp/images/save.gif
-www/data-dist/egroupware/ftp/images/save.png
-www/data-dist/egroupware/ftp/images/trash.gif
-www/data-dist/egroupware/ftp/images/trash.png
-www/data-dist/egroupware/ftp/images/view.gif
-www/data-dist/egroupware/ftp/images/view.png
 www/data-dist/egroupware/ftp/inc/functions.inc.php
 www/data-dist/egroupware/ftp/index.php
 www/data-dist/egroupware/ftp/setup/phpgw_cs.lang
@@ -2196,19 +2232,24 @@ www/data-dist/egroupware/ftp/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/ftp/setup/phpgw_es-es.lang
 www/data-dist/egroupware/ftp/setup/phpgw_fi.lang
 www/data-dist/egroupware/ftp/setup/phpgw_fr.lang
+www/data-dist/egroupware/ftp/setup/phpgw_hr.lang
 www/data-dist/egroupware/ftp/setup/phpgw_it.lang
+www/data-dist/egroupware/ftp/setup/phpgw_iw.lang
 www/data-dist/egroupware/ftp/setup/phpgw_kr.lang
 www/data-dist/egroupware/ftp/setup/phpgw_nl.lang
 www/data-dist/egroupware/ftp/setup/phpgw_no.lang
 www/data-dist/egroupware/ftp/setup/phpgw_pl.lang
 www/data-dist/egroupware/ftp/setup/phpgw_pt-br.lang
+www/data-dist/egroupware/ftp/setup/phpgw_ru.lang
 www/data-dist/egroupware/ftp/setup/phpgw_sl.lang
 www/data-dist/egroupware/ftp/setup/phpgw_sp.lang
+www/data-dist/egroupware/ftp/setup/phpgw_sv.lang
 www/data-dist/egroupware/ftp/setup/phpgw_zh.lang
 www/data-dist/egroupware/ftp/setup/phpgw_zt.lang
 www/data-dist/egroupware/ftp/setup/setup.inc.php
 www/data-dist/egroupware/ftp/templates/default/bad_connection.tpl
 www/data-dist/egroupware/ftp/templates/default/confirm_delete.tpl
+www/data-dist/egroupware/ftp/templates/default/images/folder.png
 www/data-dist/egroupware/ftp/templates/default/images/navbar.gif
 www/data-dist/egroupware/ftp/templates/default/images/navbar.png
 www/data-dist/egroupware/ftp/templates/default/login.tpl
@@ -3515,8 +3556,10 @@ www/data-dist/egroupware/headlines/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/headlines/setup/phpgw_es-es.lang
 www/data-dist/egroupware/headlines/setup/phpgw_fi.lang
 www/data-dist/egroupware/headlines/setup/phpgw_fr.lang
+www/data-dist/egroupware/headlines/setup/phpgw_hr.lang
 www/data-dist/egroupware/headlines/setup/phpgw_hu.lang
 www/data-dist/egroupware/headlines/setup/phpgw_it.lang
+www/data-dist/egroupware/headlines/setup/phpgw_iw.lang
 www/data-dist/egroupware/headlines/setup/phpgw_ja.lang
 www/data-dist/egroupware/headlines/setup/phpgw_ko.lang
 www/data-dist/egroupware/headlines/setup/phpgw_nl.lang
@@ -3581,14 +3624,17 @@ www/data-dist/egroupware/infolog/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/infolog/setup/phpgw_es-es.lang
 www/data-dist/egroupware/infolog/setup/phpgw_fi.lang
 www/data-dist/egroupware/infolog/setup/phpgw_fr.lang
+www/data-dist/egroupware/infolog/setup/phpgw_hr.lang
 www/data-dist/egroupware/infolog/setup/phpgw_hu.lang
 www/data-dist/egroupware/infolog/setup/phpgw_it.lang
+www/data-dist/egroupware/infolog/setup/phpgw_iw.lang
 www/data-dist/egroupware/infolog/setup/phpgw_ja.lang
 www/data-dist/egroupware/infolog/setup/phpgw_ko.lang
 www/data-dist/egroupware/infolog/setup/phpgw_nl.lang
 www/data-dist/egroupware/infolog/setup/phpgw_no.lang
 www/data-dist/egroupware/infolog/setup/phpgw_pl.lang
 www/data-dist/egroupware/infolog/setup/phpgw_pt-br.lang
+www/data-dist/egroupware/infolog/setup/phpgw_ru.lang
 www/data-dist/egroupware/infolog/setup/phpgw_sl.lang
 www/data-dist/egroupware/infolog/setup/phpgw_sv.lang
 www/data-dist/egroupware/infolog/setup/phpgw_uk.lang
@@ -3784,11 +3830,15 @@ www/data-dist/egroupware/jinn/setup/phpgw_de.lang
 www/data-dist/egroupware/jinn/setup/phpgw_en.lang
 www/data-dist/egroupware/jinn/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/jinn/setup/phpgw_es-es.lang
+www/data-dist/egroupware/jinn/setup/phpgw_fi.lang
 www/data-dist/egroupware/jinn/setup/phpgw_fr.lang
+www/data-dist/egroupware/jinn/setup/phpgw_hr.lang
 www/data-dist/egroupware/jinn/setup/phpgw_it.lang
+www/data-dist/egroupware/jinn/setup/phpgw_iw.lang
 www/data-dist/egroupware/jinn/setup/phpgw_nl.lang
 www/data-dist/egroupware/jinn/setup/phpgw_pt-br.lang
 www/data-dist/egroupware/jinn/setup/phpgw_sl.lang
+www/data-dist/egroupware/jinn/setup/phpgw_sv.lang
 www/data-dist/egroupware/jinn/setup/phpgw_zt.lang
 www/data-dist/egroupware/jinn/setup/setup.inc.php
 www/data-dist/egroupware/jinn/setup/tables_baseline.inc.php
@@ -3849,8 +3899,10 @@ www/data-dist/egroupware/manual/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/manual/setup/phpgw_es-es.lang
 www/data-dist/egroupware/manual/setup/phpgw_fi.lang
 www/data-dist/egroupware/manual/setup/phpgw_fr.lang
+www/data-dist/egroupware/manual/setup/phpgw_hr.lang
 www/data-dist/egroupware/manual/setup/phpgw_hu.lang
 www/data-dist/egroupware/manual/setup/phpgw_it.lang
+www/data-dist/egroupware/manual/setup/phpgw_iw.lang
 www/data-dist/egroupware/manual/setup/phpgw_ja.lang
 www/data-dist/egroupware/manual/setup/phpgw_ko.lang
 www/data-dist/egroupware/manual/setup/phpgw_nl.lang
@@ -3889,8 +3941,10 @@ www/data-dist/egroupware/messenger/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/messenger/setup/phpgw_es-es.lang
 www/data-dist/egroupware/messenger/setup/phpgw_fi.lang
 www/data-dist/egroupware/messenger/setup/phpgw_fr.lang
+www/data-dist/egroupware/messenger/setup/phpgw_hr.lang
 www/data-dist/egroupware/messenger/setup/phpgw_hu.lang
 www/data-dist/egroupware/messenger/setup/phpgw_it.lang
+www/data-dist/egroupware/messenger/setup/phpgw_iw.lang
 www/data-dist/egroupware/messenger/setup/phpgw_ja.lang
 www/data-dist/egroupware/messenger/setup/phpgw_pl.lang
 www/data-dist/egroupware/messenger/setup/phpgw_pt-br.lang
@@ -3938,11 +3992,14 @@ www/data-dist/egroupware/news_admin/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/news_admin/setup/phpgw_es-es.lang
 www/data-dist/egroupware/news_admin/setup/phpgw_fi.lang
 www/data-dist/egroupware/news_admin/setup/phpgw_fr.lang
+www/data-dist/egroupware/news_admin/setup/phpgw_hr.lang
 www/data-dist/egroupware/news_admin/setup/phpgw_it.lang
+www/data-dist/egroupware/news_admin/setup/phpgw_iw.lang
 www/data-dist/egroupware/news_admin/setup/phpgw_nl.lang
 www/data-dist/egroupware/news_admin/setup/phpgw_pl.lang
 www/data-dist/egroupware/news_admin/setup/phpgw_pt-br.lang
 www/data-dist/egroupware/news_admin/setup/phpgw_sl.lang
+www/data-dist/egroupware/news_admin/setup/phpgw_sv.lang
 www/data-dist/egroupware/news_admin/setup/phpgw_uk.lang
 www/data-dist/egroupware/news_admin/setup/phpgw_zh.lang
 www/data-dist/egroupware/news_admin/setup/phpgw_zt.lang
@@ -3999,13 +4056,18 @@ www/data-dist/egroupware/phpbrain/setup/phpgw_de.lang
 www/data-dist/egroupware/phpbrain/setup/phpgw_en.lang
 www/data-dist/egroupware/phpbrain/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/phpbrain/setup/phpgw_es-es.lang
+www/data-dist/egroupware/phpbrain/setup/phpgw_fi.lang
 www/data-dist/egroupware/phpbrain/setup/phpgw_fr.lang
+www/data-dist/egroupware/phpbrain/setup/phpgw_hr.lang
 www/data-dist/egroupware/phpbrain/setup/phpgw_hu.lang
 www/data-dist/egroupware/phpbrain/setup/phpgw_it.lang
+www/data-dist/egroupware/phpbrain/setup/phpgw_iw.lang
 www/data-dist/egroupware/phpbrain/setup/phpgw_nl.lang
 www/data-dist/egroupware/phpbrain/setup/phpgw_pl.lang
 www/data-dist/egroupware/phpbrain/setup/phpgw_pt-br.lang
+www/data-dist/egroupware/phpbrain/setup/phpgw_ru.lang
 www/data-dist/egroupware/phpbrain/setup/phpgw_sl.lang
+www/data-dist/egroupware/phpbrain/setup/phpgw_sv.lang
 www/data-dist/egroupware/phpbrain/setup/phpgw_zh.lang
 www/data-dist/egroupware/phpbrain/setup/phpgw_zt.lang
 www/data-dist/egroupware/phpbrain/setup/setup.inc.php
@@ -4865,8 +4927,10 @@ www/data-dist/egroupware/phpgwapi/setup/phpgw_es-es.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_fi.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_fr.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_he.lang
+www/data-dist/egroupware/phpgwapi/setup/phpgw_hr.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_hu.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_it.lang
+www/data-dist/egroupware/phpgwapi/setup/phpgw_iw.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_ja.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_ko.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_nl.lang
@@ -5985,7 +6049,10 @@ www/data-dist/egroupware/phpldapadmin/setup/phpgw_de.lang
 www/data-dist/egroupware/phpldapadmin/setup/phpgw_en.lang
 www/data-dist/egroupware/phpldapadmin/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/phpldapadmin/setup/phpgw_es-es.lang
+www/data-dist/egroupware/phpldapadmin/setup/phpgw_fi.lang
 www/data-dist/egroupware/phpldapadmin/setup/phpgw_fr.lang
+www/data-dist/egroupware/phpldapadmin/setup/phpgw_hr.lang
+www/data-dist/egroupware/phpldapadmin/setup/phpgw_iw.lang
 www/data-dist/egroupware/phpldapadmin/setup/phpgw_pt-br.lang
 www/data-dist/egroupware/phpldapadmin/setup/phpgw_zt.lang
 www/data-dist/egroupware/phpldapadmin/setup/setup.inc.php
@@ -6072,6 +6139,8 @@ www/data-dist/egroupware/phpsysinfo/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/phpsysinfo/setup/phpgw_es-es.lang
 www/data-dist/egroupware/phpsysinfo/setup/phpgw_fi.lang
 www/data-dist/egroupware/phpsysinfo/setup/phpgw_fr.lang
+www/data-dist/egroupware/phpsysinfo/setup/phpgw_hr.lang
+www/data-dist/egroupware/phpsysinfo/setup/phpgw_iw.lang
 www/data-dist/egroupware/phpsysinfo/setup/phpgw_pl.lang
 www/data-dist/egroupware/phpsysinfo/setup/phpgw_pt-br.lang
 www/data-dist/egroupware/phpsysinfo/setup/phpgw_sl.lang
@@ -6256,13 +6325,16 @@ www/data-dist/egroupware/polls/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/polls/setup/phpgw_es-es.lang
 www/data-dist/egroupware/polls/setup/phpgw_fi.lang
 www/data-dist/egroupware/polls/setup/phpgw_fr.lang
+www/data-dist/egroupware/polls/setup/phpgw_hr.lang
 www/data-dist/egroupware/polls/setup/phpgw_hu.lang
 www/data-dist/egroupware/polls/setup/phpgw_it.lang
+www/data-dist/egroupware/polls/setup/phpgw_iw.lang
 www/data-dist/egroupware/polls/setup/phpgw_ja.lang
 www/data-dist/egroupware/polls/setup/phpgw_pl.lang
 www/data-dist/egroupware/polls/setup/phpgw_pt-br.lang
 www/data-dist/egroupware/polls/setup/phpgw_pt.lang
 www/data-dist/egroupware/polls/setup/phpgw_sl.lang
+www/data-dist/egroupware/polls/setup/phpgw_sv.lang
 www/data-dist/egroupware/polls/setup/phpgw_uk.lang
 www/data-dist/egroupware/polls/setup/phpgw_zh.lang
 www/data-dist/egroupware/polls/setup/phpgw_zt.lang
@@ -6311,8 +6383,10 @@ www/data-dist/egroupware/preferences/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/preferences/setup/phpgw_es-es.lang
 www/data-dist/egroupware/preferences/setup/phpgw_fi.lang
 www/data-dist/egroupware/preferences/setup/phpgw_fr.lang
+www/data-dist/egroupware/preferences/setup/phpgw_hr.lang
 www/data-dist/egroupware/preferences/setup/phpgw_hu.lang
 www/data-dist/egroupware/preferences/setup/phpgw_it.lang
+www/data-dist/egroupware/preferences/setup/phpgw_iw.lang
 www/data-dist/egroupware/preferences/setup/phpgw_ja.lang
 www/data-dist/egroupware/preferences/setup/phpgw_ko.lang
 www/data-dist/egroupware/preferences/setup/phpgw_nl.lang
@@ -6320,6 +6394,7 @@ www/data-dist/egroupware/preferences/setup/phpgw_no.lang
 www/data-dist/egroupware/preferences/setup/phpgw_pl.lang
 www/data-dist/egroupware/preferences/setup/phpgw_pt-br.lang
 www/data-dist/egroupware/preferences/setup/phpgw_pt.lang
+www/data-dist/egroupware/preferences/setup/phpgw_ru.lang
 www/data-dist/egroupware/preferences/setup/phpgw_sl.lang
 www/data-dist/egroupware/preferences/setup/phpgw_sv.lang
 www/data-dist/egroupware/preferences/setup/phpgw_uk.lang
@@ -6495,6 +6570,7 @@ www/data-dist/egroupware/projects/js/jscode/edit_project.js
 www/data-dist/egroupware/projects/js/jscode/list_projects.js
 www/data-dist/egroupware/projects/setup/default_records.inc.php
 www/data-dist/egroupware/projects/setup/phpgw_br.lang
+www/data-dist/egroupware/projects/setup/phpgw_cs.lang
 www/data-dist/egroupware/projects/setup/phpgw_da.lang
 www/data-dist/egroupware/projects/setup/phpgw_de.lang
 www/data-dist/egroupware/projects/setup/phpgw_en.lang
@@ -6503,12 +6579,15 @@ www/data-dist/egroupware/projects/setup/phpgw_es-es.lang
 www/data-dist/egroupware/projects/setup/phpgw_es.lang
 www/data-dist/egroupware/projects/setup/phpgw_fi.lang
 www/data-dist/egroupware/projects/setup/phpgw_fr.lang
+www/data-dist/egroupware/projects/setup/phpgw_hr.lang
 www/data-dist/egroupware/projects/setup/phpgw_hu.lang
 www/data-dist/egroupware/projects/setup/phpgw_it.lang
+www/data-dist/egroupware/projects/setup/phpgw_iw.lang
 www/data-dist/egroupware/projects/setup/phpgw_nl.lang
 www/data-dist/egroupware/projects/setup/phpgw_pl.lang
 www/data-dist/egroupware/projects/setup/phpgw_pt-br.lang
 www/data-dist/egroupware/projects/setup/phpgw_pt.lang
+www/data-dist/egroupware/projects/setup/phpgw_ru.lang
 www/data-dist/egroupware/projects/setup/phpgw_sl.lang
 www/data-dist/egroupware/projects/setup/phpgw_sv.lang
 www/data-dist/egroupware/projects/setup/phpgw_zh.lang
@@ -6614,11 +6693,14 @@ www/data-dist/egroupware/registration/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/registration/setup/phpgw_es-es.lang
 www/data-dist/egroupware/registration/setup/phpgw_fi.lang
 www/data-dist/egroupware/registration/setup/phpgw_fr.lang
+www/data-dist/egroupware/registration/setup/phpgw_hr.lang
 www/data-dist/egroupware/registration/setup/phpgw_it.lang
+www/data-dist/egroupware/registration/setup/phpgw_iw.lang
 www/data-dist/egroupware/registration/setup/phpgw_nl.lang
 www/data-dist/egroupware/registration/setup/phpgw_pl.lang
 www/data-dist/egroupware/registration/setup/phpgw_pt-br.lang
 www/data-dist/egroupware/registration/setup/phpgw_sl.lang
+www/data-dist/egroupware/registration/setup/phpgw_sv.lang
 www/data-dist/egroupware/registration/setup/phpgw_zt.lang
 www/data-dist/egroupware/registration/setup/setup.inc.php
 www/data-dist/egroupware/registration/setup/tables_baseline.inc.php
@@ -6677,14 +6759,17 @@ www/data-dist/egroupware/setup/lang/phpgw_es-ca.lang
 www/data-dist/egroupware/setup/lang/phpgw_es-es.lang
 www/data-dist/egroupware/setup/lang/phpgw_fi.lang
 www/data-dist/egroupware/setup/lang/phpgw_fr.lang
+www/data-dist/egroupware/setup/lang/phpgw_hr.lang
 www/data-dist/egroupware/setup/lang/phpgw_hu.lang
 www/data-dist/egroupware/setup/lang/phpgw_it.lang
+www/data-dist/egroupware/setup/lang/phpgw_iw.lang
 www/data-dist/egroupware/setup/lang/phpgw_ja.lang
 www/data-dist/egroupware/setup/lang/phpgw_ko.lang
 www/data-dist/egroupware/setup/lang/phpgw_nl.lang
 www/data-dist/egroupware/setup/lang/phpgw_pl.lang
 www/data-dist/egroupware/setup/lang/phpgw_pt-br.lang
 www/data-dist/egroupware/setup/lang/phpgw_pt.lang
+www/data-dist/egroupware/setup/lang/phpgw_ru.lang
 www/data-dist/egroupware/setup/lang/phpgw_sl.lang
 www/data-dist/egroupware/setup/lang/phpgw_zh.lang
 www/data-dist/egroupware/setup/lang/phpgw_zt.lang
@@ -6816,7 +6901,10 @@ www/data-dist/egroupware/sitemgr/setup/phpgw_de.lang
 www/data-dist/egroupware/sitemgr/setup/phpgw_en.lang
 www/data-dist/egroupware/sitemgr/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/sitemgr/setup/phpgw_es-es.lang
+www/data-dist/egroupware/sitemgr/setup/phpgw_fi.lang
 www/data-dist/egroupware/sitemgr/setup/phpgw_fr.lang
+www/data-dist/egroupware/sitemgr/setup/phpgw_hr.lang
+www/data-dist/egroupware/sitemgr/setup/phpgw_iw.lang
 www/data-dist/egroupware/sitemgr/setup/phpgw_nl.lang
 www/data-dist/egroupware/sitemgr/setup/phpgw_pt-br.lang
 www/data-dist/egroupware/sitemgr/setup/phpgw_sl.lang
@@ -6830,6 +6918,7 @@ www/data-dist/egroupware/sitemgr/sitemgr-link/setup/phpgw_da.lang
 www/data-dist/egroupware/sitemgr/sitemgr-link/setup/phpgw_en.lang
 www/data-dist/egroupware/sitemgr/sitemgr-link/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/sitemgr/sitemgr-link/setup/phpgw_fr.lang
+www/data-dist/egroupware/sitemgr/sitemgr-link/setup/phpgw_hr.lang
 www/data-dist/egroupware/sitemgr/sitemgr-link/setup/phpgw_sl.lang
 www/data-dist/egroupware/sitemgr/sitemgr-link/setup/phpgw_zt.lang
 www/data-dist/egroupware/sitemgr/sitemgr-link/setup/setup.inc.php
@@ -7080,56 +7169,6 @@ www/data-dist/egroupware/sitemgr/templates/idsociety/images/navbar.png
 www/data-dist/egroupware/sitemgr/templates/jerryr/images/navbar-over.png
 www/data-dist/egroupware/sitemgr/templates/jerryr/images/navbar.png
 www/data-dist/egroupware/sitemgr/theme_info.php
-www/data-dist/egroupware/skel/debian/README.Debian
-www/data-dist/egroupware/skel/debian/changelog
-www/data-dist/egroupware/skel/debian/control
-www/data-dist/egroupware/skel/debian/copyright
-www/data-dist/egroupware/skel/debian/dirs
-www/data-dist/egroupware/skel/debian/postinst
-www/data-dist/egroupware/skel/debian/postrm
-www/data-dist/egroupware/skel/debian/rules
-www/data-dist/egroupware/skel/doc/copyright.gpl
-www/data-dist/egroupware/skel/doc/sgml/changes.sgml
-www/data-dist/egroupware/skel/doc/sgml/credits.sgml
-www/data-dist/egroupware/skel/doc/sgml/install.sgml
-www/data-dist/egroupware/skel/doc/sgml/packaging.sgml
-www/data-dist/egroupware/skel/help/index.php
-www/data-dist/egroupware/skel/inc/class.bo.inc.php
-www/data-dist/egroupware/skel/inc/class.skel.inc.php
-www/data-dist/egroupware/skel/inc/class.so.inc.php
-www/data-dist/egroupware/skel/inc/class.ui.inc.php
-www/data-dist/egroupware/skel/inc/functions.inc.php
-www/data-dist/egroupware/skel/inc/header.inc.php
-www/data-dist/egroupware/skel/inc/hook_add_def_pref.inc.php
-www/data-dist/egroupware/skel/inc/hook_admin.inc.php
-www/data-dist/egroupware/skel/inc/hook_home.inc.php
-www/data-dist/egroupware/skel/inc/hook_manual.inc.php
-www/data-dist/egroupware/skel/inc/hook_preferences.inc.php
-www/data-dist/egroupware/skel/inc/hook_sidebox_menu.inc.php
-www/data-dist/egroupware/skel/index.php
-www/data-dist/egroupware/skel/setup/phpgw_en.lang
-www/data-dist/egroupware/skel/setup/phpgw_es-ca.lang
-www/data-dist/egroupware/skel/setup/phpgw_fr.lang
-www/data-dist/egroupware/skel/setup/phpgw_pt-br.lang
-www/data-dist/egroupware/skel/setup/phpgw_sl.lang
-www/data-dist/egroupware/skel/setup/setup.inc.php
-www/data-dist/egroupware/skel/setup/tables_baseline.inc.php
-www/data-dist/egroupware/skel/setup/tables_current.inc.php
-www/data-dist/egroupware/skel/setup/tables_update.inc.php
-www/data-dist/egroupware/skel/templates/default/delete.tpl
-www/data-dist/egroupware/skel/templates/default/form.tpl
-www/data-dist/egroupware/skel/templates/default/header.tpl
-www/data-dist/egroupware/skel/templates/default/images/navbar.png
-www/data-dist/egroupware/skel/templates/default/list.tpl
-www/data-dist/egroupware/skel/templates/default/preference_acl.tpl
-www/data-dist/egroupware/skel/templates/default/preference_acl_row.tpl
-www/data-dist/egroupware/skel/templates/default/preference_colspan.tpl
-www/data-dist/egroupware/skel/templates/default/preferences.tpl
-www/data-dist/egroupware/skel/templates/default/view.tpl
-www/data-dist/egroupware/skel/templates/idsociety/images/navbar-over.gif
-www/data-dist/egroupware/skel/templates/idsociety/images/navbar-over.png
-www/data-dist/egroupware/skel/templates/idsociety/images/navbar.gif
-www/data-dist/egroupware/skel/templates/idsociety/images/navbar.png
 www/data-dist/egroupware/soap.php
 www/data-dist/egroupware/stocks/doc/copyright.gpl
 www/data-dist/egroupware/stocks/inc/functions.inc.php
@@ -7147,8 +7186,10 @@ www/data-dist/egroupware/stocks/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/stocks/setup/phpgw_es-es.lang
 www/data-dist/egroupware/stocks/setup/phpgw_fi.lang
 www/data-dist/egroupware/stocks/setup/phpgw_fr.lang
+www/data-dist/egroupware/stocks/setup/phpgw_hr.lang
 www/data-dist/egroupware/stocks/setup/phpgw_hu.lang
 www/data-dist/egroupware/stocks/setup/phpgw_it.lang
+www/data-dist/egroupware/stocks/setup/phpgw_iw.lang
 www/data-dist/egroupware/stocks/setup/phpgw_ko.lang
 www/data-dist/egroupware/stocks/setup/phpgw_pl.lang
 www/data-dist/egroupware/stocks/setup/phpgw_pt-br.lang
@@ -7193,8 +7234,10 @@ www/data-dist/egroupware/tts/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/tts/setup/phpgw_es-es.lang
 www/data-dist/egroupware/tts/setup/phpgw_fi.lang
 www/data-dist/egroupware/tts/setup/phpgw_fr.lang
+www/data-dist/egroupware/tts/setup/phpgw_hr.lang
 www/data-dist/egroupware/tts/setup/phpgw_hu.lang
 www/data-dist/egroupware/tts/setup/phpgw_it.lang
+www/data-dist/egroupware/tts/setup/phpgw_iw.lang
 www/data-dist/egroupware/tts/setup/phpgw_ja.lang
 www/data-dist/egroupware/tts/setup/phpgw_ko.lang
 www/data-dist/egroupware/tts/setup/phpgw_nl.lang
@@ -7288,11 +7331,15 @@ www/data-dist/egroupware/wiki/setup/phpgw_de.lang
 www/data-dist/egroupware/wiki/setup/phpgw_en.lang
 www/data-dist/egroupware/wiki/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/wiki/setup/phpgw_es-es.lang
+www/data-dist/egroupware/wiki/setup/phpgw_fi.lang
 www/data-dist/egroupware/wiki/setup/phpgw_fr.lang
+www/data-dist/egroupware/wiki/setup/phpgw_hr.lang
 www/data-dist/egroupware/wiki/setup/phpgw_it.lang
+www/data-dist/egroupware/wiki/setup/phpgw_iw.lang
 www/data-dist/egroupware/wiki/setup/phpgw_ko.lang
 www/data-dist/egroupware/wiki/setup/phpgw_pt-br.lang
 www/data-dist/egroupware/wiki/setup/phpgw_sl.lang
+www/data-dist/egroupware/wiki/setup/phpgw_sv.lang
 www/data-dist/egroupware/wiki/setup/phpgw_zt.lang
 www/data-dist/egroupware/wiki/setup/setup.inc.php
 www/data-dist/egroupware/wiki/setup/tables_baseline.inc.php
@@ -7379,18 +7426,6 @@ www/data-dist/egroupware/xmlrpc.php
 @dirrm www/data-dist/egroupware/stocks/inc
 @dirrm www/data-dist/egroupware/stocks/doc
 @dirrm www/data-dist/egroupware/stocks
-@dirrm www/data-dist/egroupware/skel/templates/idsociety/images
-@dirrm www/data-dist/egroupware/skel/templates/idsociety
-@dirrm www/data-dist/egroupware/skel/templates/default/images
-@dirrm www/data-dist/egroupware/skel/templates/default
-@dirrm www/data-dist/egroupware/skel/templates
-@dirrm www/data-dist/egroupware/skel/setup
-@dirrm www/data-dist/egroupware/skel/inc
-@dirrm www/data-dist/egroupware/skel/help
-@dirrm www/data-dist/egroupware/skel/doc/sgml
-@dirrm www/data-dist/egroupware/skel/doc
-@dirrm www/data-dist/egroupware/skel/debian
-@dirrm www/data-dist/egroupware/skel
 @dirrm www/data-dist/egroupware/sitemgr/templates/jerryr/images
 @dirrm www/data-dist/egroupware/sitemgr/templates/jerryr
 @dirrm www/data-dist/egroupware/sitemgr/templates/idsociety/images
@@ -7866,7 +7901,6 @@ www/data-dist/egroupware/xmlrpc.php
 @dirrm www/data-dist/egroupware/ftp/templates
 @dirrm www/data-dist/egroupware/ftp/setup
 @dirrm www/data-dist/egroupware/ftp/inc
-@dirrm www/data-dist/egroupware/ftp/images
 @dirrm www/data-dist/egroupware/ftp/doc
 @dirrm www/data-dist/egroupware/ftp
 @dirrm www/data-dist/egroupware/forum/templates/literati/images
