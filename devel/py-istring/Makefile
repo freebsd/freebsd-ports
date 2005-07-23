@@ -9,14 +9,12 @@
 PORTNAME=	istring
 PORTVERSION=	1.0.1
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.neosynapse.net/downloads/
+MASTER_SITES=	http://www.neosynapse.net/downloads/ \
+		http://core.inec.ru/~az/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
-DEPRECATED=	"master site up but distfile unavailable"
-EXPIRATION_DATE=2005-07-31
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	az@inec.ru
 COMMENT=	Interpolated Strings
 
 USE_PYTHON=	yes
