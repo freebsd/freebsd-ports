@@ -16,6 +16,8 @@ MAINTAINER=	fracture@allusion.net
 COMMENT=	A WAD-file editor, for games like Doom and Hexen
 
 BROKEN=		Does not compile
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

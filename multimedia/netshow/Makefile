@@ -18,6 +18,8 @@ COMMENT=	Microsoft NetShow video stream player
 
 RESTRICTED=	"Commercial software"
 BROKEN=		Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes

@@ -16,6 +16,8 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Functional programming compiler for a subset of Haskell
 
 BROKEN=		Does not build
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 .if defined(WITH_HINT)
 USE_JAVA=	1.4+

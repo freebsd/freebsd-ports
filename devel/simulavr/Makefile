@@ -23,6 +23,8 @@ BUILD_DEPENDS=	${LOCALBASE}/avr/include/avr/io.h:${PORTSDIR}/devel/avr-libc \
 		latex:${PORTSDIR}/print/teTeX
 
 BROKEN=		"Does not build (latex generates pdf instead of dvi)"
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2005-09-22
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

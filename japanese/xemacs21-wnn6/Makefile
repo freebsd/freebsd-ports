@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XEmacs(stable version) text editor(SJ3, SKK and Wnn6)
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 MASTERDIR=	${.CURDIR}/../../editors/xemacs21-mule
 

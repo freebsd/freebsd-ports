@@ -18,6 +18,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scientific data plotting package
 
 BROKEN=		Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 ONLY_FOR_ARCHS=	i386 alpha
 USE_LINUX=	yes

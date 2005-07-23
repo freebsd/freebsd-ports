@@ -22,11 +22,13 @@ USE_LINUX=	yes
 USE_X_PREFIX=	yes
 
 BROKEN=		Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
-ECHO_MSG=/usr/bin/printf
+#ECHO_MSG=/usr/bin/printf
 IGNORE= :\n\
 Because of licensing restrictions, you must fetch the distribution manually.\n\
 Please visit ${MASTER_SITES}\n\

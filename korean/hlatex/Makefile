@@ -18,6 +18,8 @@ MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	LaTeX package to use Hangul(UTF-8/UHC/KSX1001)
 
 BROKEN=		Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 # it depends on teTeX(lambda)
 BUILD_DEPENDS=	texhash:${PORTSDIR}/print/teTeX

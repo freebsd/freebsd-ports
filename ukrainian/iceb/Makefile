@@ -15,6 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ukrainian accounting system
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2005-09-22
 
 USE_MYSQL=	yes
 WANT_MYSQL_VER=	323

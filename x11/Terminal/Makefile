@@ -18,6 +18,8 @@ LIB_DEPENDS=	exo-0.2:${PORTSDIR}/x11/libexo \
 		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 vte

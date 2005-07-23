@@ -18,7 +18,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	info@otsune.com
 COMMENT=	A webmail system which accesses mail over IMAP with Japanese patch
 
-BROKEN=		ja patch is not applyed.
+BROKEN=		ja patch is not applied.
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_GETTEXT=	YES
 

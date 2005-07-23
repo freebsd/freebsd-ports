@@ -14,6 +14,8 @@ DISTNAME=	action50
 
 COMMENT=	Action Half-Life mod full server package for Linux
 BROKEN=		"Can't fetch file and project went inactive"
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2005-09-22
 
 HALFLIFE_PORT_MASTER=	${.CURDIR}/../hlserver-flf
 

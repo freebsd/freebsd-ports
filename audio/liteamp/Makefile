@@ -18,6 +18,8 @@ LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 		vorbisfile.4:${PORTSDIR}/audio/libvorbis
 
 BROKEN=		Uses nonstandard locale directory
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2005-09-22
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

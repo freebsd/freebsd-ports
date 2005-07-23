@@ -26,6 +26,8 @@ COMMENT=		Packages needed for doing development in Linux mode
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
 BROKEN=			Incomplete pkg-plist
+DEPRECATED=		"${BROKEN}"
+EXPIRATION_DATE=	2005-09-22
 
 ONLY_FOR_ARCHS=		alpha i386
 

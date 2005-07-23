@@ -18,6 +18,8 @@ COMMENT=	A Zope user folder which uses MySQL database to store user information
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/MySQLdb/__init__.py:${PORTSDIR}/databases/py-MySQLdb
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_PYTHON=	yes
 USE_ZOPE=	yes

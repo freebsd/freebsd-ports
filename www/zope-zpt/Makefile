@@ -24,6 +24,8 @@ USE_PYTHON=	yes
 DIST_SUBDIR=	zope
 
 BROKEN=		Does not build after python 2.4 update
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 ZTUVERSION=	1.1.3
 

@@ -17,6 +17,8 @@ MAINTAINER=	nik@FreeBSD.org
 COMMENT=	Return to Castle Wolfenstein for Linux
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes

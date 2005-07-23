@@ -19,6 +19,8 @@ RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX \
 		anytopnm:${PORTSDIR}/graphics/netpbm
 
 BROKEN=		Does not correctly use gettext
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2005-09-22
 
 .if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
 RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-afpl

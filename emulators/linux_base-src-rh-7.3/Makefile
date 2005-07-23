@@ -49,6 +49,8 @@ MAINTAINER=		trevor@FreeBSD.org
 COMMENT=		GNU GPL sources to linux_base-rh-7.3, to satisfy licence
 
 BROKEN=			Incomplete pkg-plist
+DEPRECATED=		${BROKEN}
+EXPIRATION_DATE=	2005-09-22
 
 DIST_SUBDIR=		rpm/src/rh-${PORTVERSION}
 NO_MTREE=		yes

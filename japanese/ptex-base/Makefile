@@ -28,6 +28,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		t1.5:${PORTSDIR}/devel/t1lib
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 OPTIONS=	DVIPSK "Install dvipsk with Japanize patch from ASCII" off
 OPTIONS+=	UDVIPS "Install udvips (Implies DVIPSK)" off

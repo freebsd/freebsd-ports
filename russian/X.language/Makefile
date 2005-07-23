@@ -22,6 +22,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Setup X locale/nls/keyboard/fonts for russian language (koi8-r)
 
 BROKEN=		Incorrect pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

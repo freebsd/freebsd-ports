@@ -18,6 +18,8 @@ COMMENT=	Russian language module for PGP
 RUN_DEPENDS=	${LOCALBASE}/share/pgp/config.txt:${PORTSDIR}/security/pgp
 
 BROKEN=		Incorrect pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_ZIP=	YES
 NO_WRKSUBDIR=	YES

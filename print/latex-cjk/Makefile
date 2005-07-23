@@ -17,6 +17,8 @@ MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
 COMMENT=	A LaTeX2e macro package which enables the use of CJK scripts
 
 BROKEN=		"Installation and dependency problems"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		${LOCALBASE}/share/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf \

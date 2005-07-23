@@ -13,6 +13,8 @@ MAINTAINER=	bra@fsn.hu
 COMMENT=	PEAR random password creator
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_PHP=	yes
 WANT_PHP_PEAR=	yes

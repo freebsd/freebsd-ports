@@ -18,6 +18,8 @@ MAINTAINER=	lev@FreeBSD.org
 COMMENT=	FSF gdb-5.1.1 for TI's msp430 MCUs cross-development
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2005-09-22
 
 GDBVERSION=	5.1.1
 PATCHVERSION=	20030909

@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities and library to manipulate ReiserFS partitions
 
 BROKEN=		Leaves behind lib/charset.alias instead of correctly using gettext
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=yes

@@ -20,6 +20,8 @@ COMMENT=	A C++ application framework and widget library for X11
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 BROKEN=		Incorrect pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

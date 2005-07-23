@@ -19,6 +19,8 @@ COMMENT=	An internationalized HTML checker with japanese message(EUC-JP)
 RUN_DEPENDS=	${SITE_PERL}/jcode.pl:${PORTSDIR}/japanese/jcode.pl
 
 BROKEN=		"Incomplete pkg-plist (port installs into nonstandard perl directory)"
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2005-09-22
 
 WRKSRC=		${WRKDIR}/weblint-97
 MANLANG=	ja

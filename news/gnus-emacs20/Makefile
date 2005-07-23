@@ -24,6 +24,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A popular newsreader for emacs20
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 HAS_CONFIGURE=	yes
 

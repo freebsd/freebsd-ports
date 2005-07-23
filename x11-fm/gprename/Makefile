@@ -17,6 +17,8 @@ COMMENT=	Perl script for renaming multiple files
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk:${PORTSDIR}/x11-toolkits/p5-Gtk
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 NO_BUILD=	yes
 PLIST_DIRS=	share/gprename/languages share/gprename/pixmaps share/gprename

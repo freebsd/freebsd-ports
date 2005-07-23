@@ -14,6 +14,8 @@ PLIST=		${.CURDIR}/pkg-plist
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
 BROKEN=		Incorrect pkg-plist
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2005-09-22
 
 XEMACS_MAJOR_VER=	21
 WITH_XIM=	--with-xim=xlib

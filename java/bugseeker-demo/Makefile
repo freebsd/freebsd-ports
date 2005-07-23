@@ -20,6 +20,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A debugger for Java software
 
 BROKEN=		Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_JAVA=	1.3+
 

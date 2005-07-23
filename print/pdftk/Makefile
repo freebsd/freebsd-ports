@@ -19,6 +19,8 @@ COMMENT=	A simple tool for doing everyday things with PDF documents
 NOT_FOR_ARCHS=	amd64 ia64 sparc64
 
 BROKEN=		"Broken dependency"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 # Get gcc version suffix without the dot in USE_GCC
 CSUFF=		${USE_GCC:S/.//}

@@ -13,6 +13,8 @@ COMMENT=	XEmacs(stable version) text editor(SJ3, SKK, Canna and FreeWnn)
 MASTERDIR=	${.CURDIR}/../../editors/xemacs21-mule
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 CANNA=		yes
 FREEWNN=	yes

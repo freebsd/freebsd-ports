@@ -16,6 +16,8 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl equivalent of statfs(2)
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 PERL_CONFIGURE=	yes
 

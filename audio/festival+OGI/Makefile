@@ -26,6 +26,8 @@ LIB_DEPENDS=	audio.2:${PORTSDIR}/audio/nas \
 		esd.2:${PORTSDIR}/audio/esound
 
 BROKEN=		Incorrect pkg-plist
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2005-09-22
 
 CONFLICTS=	festival-*
 DIST_SUBDIR=	festival

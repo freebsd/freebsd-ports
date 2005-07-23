@@ -18,6 +18,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network Assistant Reasoning with a Validating Agent Language
 
 BROKEN=		"Conflicting dependencies (py-gtk2 and py-gtk)"
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2005-09-22
 
 RUN_DEPENDS=	${PYXML} \
 		${PYTHON_SITELIBDIR}/${XMLDIR}/xpath/__init__.py:${PORTSDIR}/textproc/py-4suite \

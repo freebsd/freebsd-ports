@@ -16,6 +16,8 @@ MAINTAINER=	koma2@lovepeers.org
 COMMENT?=	Asian Font Packs for Acrobat Reader 5.0 (for common files)
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 NO_BUILD=	yes
 SLAVEDIRS=	chinese/acroread-chsfont chinese/acroread-chtfont

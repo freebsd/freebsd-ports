@@ -18,6 +18,8 @@ MAINTAINER=		olgeni@FreeBSD.org
 COMMENT=		Pager for the ROX desktop
 
 BROKEN=			Does not build
+DEPRECATED=		${BROKEN}
+EXPIRATION_DATE=	2005-09-22
 
 USE_GNOME=		gtk20 pkgconfig libxml2 libwnck
 USE_AUTOCONF_VER=	213

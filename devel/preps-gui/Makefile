@@ -18,6 +18,8 @@ COMMENT=	Problem reporting system
 LIB_DEPENDS+=	preps-1.6.1:${PORTSDIR}/devel/libpreps
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

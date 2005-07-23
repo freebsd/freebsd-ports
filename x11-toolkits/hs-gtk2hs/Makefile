@@ -21,6 +21,8 @@ BUILD_DEPENDS=	ghc-6.2.2:${PORTSDIR}/lang/ghc \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 BROKEN=		Broken dependency
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_GNOME=	gtk20 libglade2 gtksourceview gconf2
 GNU_CONFIGURE=	yes

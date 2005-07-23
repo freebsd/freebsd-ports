@@ -15,6 +15,8 @@ MAINTAINER=	gioria@FreeBSD.org
 COMMENT=	A web based, hierarchical task manager
 
 BROKEN=		Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 RESTRICTED=	No redistribution or repackaging allowed
 
 USE_APACHE=	yes

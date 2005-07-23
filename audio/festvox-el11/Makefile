@@ -21,6 +21,8 @@ COMMENT=	Castilian Spanish male voice for Festival
 RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2005-09-22
 
 WRKSRC=		${WRKDIR}/festival
 

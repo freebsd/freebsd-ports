@@ -18,6 +18,8 @@ COMMENT=	A powerful Bible study application for KDE3
 LIB_DEPENDS=	sword.4:${PORTSDIR}/misc/sword
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes

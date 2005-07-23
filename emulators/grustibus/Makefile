@@ -18,6 +18,8 @@ COMMENT=	An xmame frontend for Gnome
 RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 WANT_GNOME=	yes
 USE_GNOME=	gnomeprefix gnomecanvas

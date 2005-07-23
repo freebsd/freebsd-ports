@@ -20,6 +20,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++
 LIB_DEPENDS=	${INTERFACE_DEPS}
 
 BROKEN=		Incomplete distinfo file
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2005-09-22
 
 SLAVEDIRS=	audio/timidity++-gtk audio/timidity++-motif \
 		audio/timidity++-slang audio/timidity++-tcltk \

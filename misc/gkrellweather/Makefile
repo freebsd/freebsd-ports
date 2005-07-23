@@ -20,6 +20,8 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm \
 		${X11BASE}/bin/GrabWeather:${PORTSDIR}/misc/wmweather
 
 BROKEN=		Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-09-22
 
 NO_LATEST_LINK=	yes
 
