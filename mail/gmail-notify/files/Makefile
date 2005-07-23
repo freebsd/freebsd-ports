@@ -1,10 +1,10 @@
 # $FreeBSD$
 # Makefile to build trayicon.so
 
-CFLAGS = `pkg-config --cflags gtk+-2.0 pygtk-2.0` -I${PREFIX}/include/python2.4/ -I. -Wall -I${PREFIX}/share/pygtk/2.0 -I${PREFIX}/libdata/pkgconfig -DEGG_COMPILATION
+CFLAGS = `pkg-config --cflags gtk+-2.0 pygtk-2.0` -I${LOCALBASE}/include/python2.4/ -I. -Wall -I${LOCALBASE}/share/pygtk/2.0 -I${LOCALBASE}/libdata/pkgconfig -DEGG_COMPILATION -fPIC
 LDFLAGS = `pkg-config --libs gtk+-2.0 pygtk-2.0`
 
-DEFS_DIR= ${PREFIX}/share/pygtk/2.0/defs/
+DEFS_DIR= ${LOCALBASE}/share/pygtk/2.0/defs/
 
 CODEGEN = pygtk-codegen-2.0
 
