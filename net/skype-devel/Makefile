@@ -63,20 +63,6 @@ post-install:
 	@${ECHO} "##########################################################################"
 	@${ECHO} "Do not worry if you see 'volume_adjust: SOUND_MIXER_WRITE_IGAIN failed: No such device or address' errors from skype, the skype sound code is overly verbose in this regard. It would be enough to print it only once." | fmt
 	@${ECHO} "##########################################################################"
-	@${ECHO} "Known good soundcards for the use with Skype:"
-	@${ECHO} " - SiS 7012 (snd_ich) based ones"
-	@${ECHO} " - CMedia CMI8738 (snd_cmi) based ones"
-	@${ECHO} " - Creative EMU10K1 (snd_emu10k1) based ones"
-	@${ECHO}
-	@${ECHO} "Probably bad soundcards for the use with Skype:"
-	@${ECHO} " - VIA on-board sound (FreeBSD 5.1 seems to be ok)"
-	@${ECHO} " - Creative CT5880 (snd_es137x) based ones"
-	@${ECHO} " - Yamaha DS-1E (snd_ds1) based ones (reported for FreeBSD 4.10)"
-	@${ECHO} " - SB16 DSP 4.16 (snd_sb16) based ones"
-	@${ECHO} " - ESS 18xx (snd_ess) based ones"
-	@${ECHO} " - Acer Labs M5451 (snd_t4dwave) based ones"
-	@${ECHO}
-	@${ECHO} "If your soundcard is not listed here, send the the output of 'cat /dev/sndstat' with a short note if it works or not to ${MAINTAINER} please." | fmt
-	@${ECHO} "##########################################################################"
+	@${ECHO} "There are known problems with some soundcards in 5.x. This is due to a bug in the kernel. It is fixed in 6.x. Additionally there is some further work in the sound subsystem going on which fixes some related problems. This work will not be available in 6.0-RELEASE. If you experience problems update to the most recent 6.x-RELEASE, if this does not fix your problems ask on multimedia@FreeBSD.org." | fmt
 
 .include <bsd.port.post.mk>
