@@ -13,9 +13,9 @@ MASTER_SITES=	http://www.xdobry.de/mysqltcl/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	TCL module for accessing MySQL databases based on msqltcl
 
-LIB_DEPENDS=	mysqlclient:${PORTSDIR}/databases/mysql323-client \
-		${TCL_NODOT}:${PORTSDIR}/lang/${TCL_NODOT}
+LIB_DEPENDS=	${TCL_NODOT}:${PORTSDIR}/lang/${TCL_NODOT}
 
+USE_MYSQL=	yes
 TCL_VERSION?=	tcl8.4
 TCL_NODOT=	${TCL_VERSION:S/.//}
 SQL_DIR=	${PREFIX}/lib/${TCL_VERSION}/mysqltcl
