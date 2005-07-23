@@ -15,7 +15,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	An extensible i/o abstraction for dealing with structured file formats
 
-.if !exists(/usr/lib/libbz2.so.1)
+.if !exists(/usr/lib/libbz2.so)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 
