@@ -220,6 +220,7 @@
     SUBDIR += doxygen
     SUBDIR += dparser
     SUBDIR += dprog
+    SUBDIR += drpython
     SUBDIR += dumb
     SUBDIR += dwarfdump
     SUBDIR += e4graph
