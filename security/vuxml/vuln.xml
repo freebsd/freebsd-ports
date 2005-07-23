@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b4892b5b-fb1c-11d9-96ba-00909925db3e">
+    <topic>Multiple cross-site scripting (XSS) and SQL injection vulnerabilities in eGroupware</topic>
+    <affects>
+      <package>
+	<name>egroupware</name>
+	<range><lt>1.0.0.007</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Multiple cross-site scripting (XSS) vulnerabilities in eGroupware
+	  before 1.0.0.007 allow remote attackers to inject arbitrary web
+	  script or HTML via the (1) ab_id, (2) page, (3) type,
+	  or (4) lang parameter to index.php or (5) category_id parameter.
+	</p>
+	<p>Multiple SQL injection vulnerabilities in index.php in eGroupware
+	  before 1.0.0.007 allow remote attackers to execute arbitrary SQL
+	  commands via the (1) filter or (2) cats_app parameter.
+	</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1202</cvename>
+      <cvename>CAN-2005-1203</cvename>
+      <url>http://sourceforge.net/project/shownotes.php?release_id=320768</url>
+    </references>
+    <dates>
+      <discovery>2005-04-20</discovery>
+      <entry>2005-07-23</entry>
+    </dates>
+  </vuln>
   <vuln vid="3f4ac724-fa8b-11d9-afcf-0060084a00e5">
     <topic>fetchmail -- denial of service/crash from malicious POP3 server</topic>
     <affects>
