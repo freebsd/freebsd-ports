@@ -1,10 +1,11 @@
---- Makefile.in.orig	Tue Mar  1 03:22:03 2005
-+++ Makefile.in	Sun Apr 24 14:07:54 2005
-@@ -46,10 +46,10 @@
- PRE_UNINSTALL = :
+--- Makefile.in.orig	Sat Jul 23 02:06:37 2005
++++ Makefile.in	Sat Jul 23 15:35:52 2005
+@@ -47,11 +47,10 @@
  POST_UNINSTALL = :
+ build_triplet = @build@
  host_triplet = @host@
--sbin_PROGRAMS = authtest$(EXEEXT) authenumerate$(EXEEXT)
+-sbin_PROGRAMS = authtest$(EXEEXT) authenumerate$(EXEEXT) \
+-	authpasswd$(EXEEXT)
 -bin_PROGRAMS = courierauthconfig$(EXEEXT)
 -noinst_PROGRAMS = authdaemontest$(EXEEXT) authmksock$(EXEEXT) \
 -	authdaemondprog$(EXEEXT)
@@ -15,16 +16,16 @@
  DIST_COMMON = README $(am__configure_deps) $(include_HEADERS) \
  	$(srcdir)/Makefile.am $(srcdir)/Makefile.in \
  	$(srcdir)/README.authdebug.html.in $(srcdir)/authdaemond.in \
-@@ -74,7 +74,7 @@
- 	README.authdebug.html dbobj.h authmigrate courier-authlib.spec \
- 	courier-authlib.sysvinit userdb-test-cram-md5.pl
- am__installdirs = "$(DESTDIR)$(pkglibdir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(pkglibexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man3dir)" "$(DESTDIR)$(includedir)"
+@@ -87,7 +86,7 @@
+ 	"$(DESTDIR)$(sbindir)" "$(DESTDIR)$(pkglibexecdir)" \
+ 	"$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man1dir)" \
+ 	"$(DESTDIR)$(man3dir)" "$(DESTDIR)$(includedir)"
 -pkglibLTLIBRARIES_INSTALL = $(INSTALL)
 +pkglibLTLIBRARIES_INSTALL = $(INSTALL) -m 0444
  LTLIBRARIES = $(pkglib_LTLIBRARIES)
  am__DEPENDENCIES_1 = libcourierauthcommon.la
  am_libauthcustom_la_OBJECTS = authcustom.lo preauthcustom.lo
-@@ -426,8 +426,14 @@
+@@ -400,8 +399,14 @@
  userdb = @userdb@
  vpopmail_home = @vpopmail_home@
  AUTOMAKE_OPTIONS = dist-bzip2
@@ -41,7 +42,7 @@
  INCLUDES = $(LTDLINCL)
  modules = @LIBAUTHUSERDB@ \
  	@LIBAUTHPAM@ @LIBAUTHPWD@ @LIBAUTHSHADOW@ \
-@@ -436,9 +442,11 @@
+@@ -410,9 +415,11 @@
  
  pkglibexecdir = $(libexecdir)/courier-authlib
  pkglibexec_SCRIPTS = authsystem.passwd
@@ -56,18 +57,49 @@
  
  sbin_SCRIPTS = authdaemond
  EXTRA_LTLIBRARIES = libauthuserdb.la \
-@@ -590,8 +598,8 @@
+@@ -570,8 +577,8 @@
  
- libcourierauthsaslclient_la_DEPENDENCIES = $(commonlibs)
- libcourierauthsaslclient_la_LDFLAGS = $(commonlibs:%=-Wl,%) -export-symbols-regex '^auth_sasl_client$$'
+ libcourierauthsaslclient_la_LIBADD = libcourierauth.la
+ libcourierauthsaslclient_la_LDFLAGS = -export-symbols-regex '^auth_sasl_client$$'
 -include_HEADERS = courier_auth_config.h courierauth.h courierauthsasl.h \
 -	courierauthsaslclient.h courierauthdebug.h
 +@HAVE_BASE_TRUE@include_HEADERS = courier_auth_config.h courierauth.h courierauthsasl.h \
 +@HAVE_BASE_TRUE@	courierauthsaslclient.h courierauthdebug.h
  
  courierauthconfig_SOURCES = authinfo.c
- authtest_SOURCES = authtest.c
-@@ -1356,15 +1364,21 @@
+ authpasswd_SOURCES = authpasswd.c
+@@ -601,7 +608,7 @@
+ man3 = authlib.3 auth_generic.3 auth_login.3 auth_getuserinfo.3 \
+ 	auth_enumerate.3 auth_passwd.3 auth_getoption.3 auth_sasl.3
+ 
+-man1 = authpasswd.1 authtest.1
++man1 = authtest.1
+ man_MANS = $(man1) $(man3)
+ BUILT1 = authlib.html authldaprc.h authmysqlrc.h authpgsqlrc.h authpiperc.h \
+ 	authdaemonrc.h vpopmail_config.h packageversion.h \
+@@ -985,8 +992,8 @@
+ 	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
+ 	  inst=`echo $$inst | sed -e 's/^.*\///'`; \
+ 	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
+-	  echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man1dir)/$$inst'"; \
+-	  $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man1dir)/$$inst"; \
++	  echo " install  -o root -g wheel -m 444 '$$file' '$(DESTDIR)$(man1dir)/$$inst'"; \
++	  install  -o root -g wheel -m 444 "$$file" "$(DESTDIR)$(man1dir)/$$inst"; \
+ 	done
+ uninstall-man1:
+ 	@$(NORMAL_UNINSTALL)
+@@ -1030,8 +1037,8 @@
+ 	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
+ 	  inst=`echo $$inst | sed -e 's/^.*\///'`; \
+ 	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
+-	  echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man3dir)/$$inst'"; \
+-	  $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man3dir)/$$inst"; \
++	  echo " install  -o root -g wheel -m 444 '$$file' '$(DESTDIR)$(man3dir)/$$inst'"; \
++	  install  -o root -g wheel -m 444 "$$file" "$(DESTDIR)$(man3dir)/$$inst"; \
+ 	done
+ uninstall-man3:
+ 	@$(NORMAL_UNINSTALL)
+@@ -1398,15 +1405,21 @@
  
  info-am:
  
@@ -97,7 +129,7 @@
  
  install-info: install-info-recursive
  
-@@ -1473,6 +1487,19 @@
+@@ -1516,6 +1529,19 @@
  @HAVE_LDAP_FALSE@uninstall-authldaprc:
  @HAVE_LDAP_FALSE@	@:
  
@@ -117,9 +149,9 @@
  authldaprc.h:
  	echo "#define AUTHLDAPRC \"@authldaprc@\"" >authldaprc.h
  
-@@ -1497,16 +1524,22 @@
- authmysqlrc.h:
- 	echo "#define AUTHMYSQLRC \"@authmysqlrc@\"" >authmysqlrc.h
+@@ -1545,16 +1571,22 @@
+ authpiperc.h:
+ 	echo "#define PIPE_PROGRAM \"@authProg@\"" >authpiperc.h
  
 -install-authdaemonrc:
 -	$(mkinstalldirs) $(DESTDIR)`dirname @authdaemonrc@`
@@ -149,7 +181,7 @@
  
  authdaemonrc.h:
  	echo "#define AUTHDAEMONRC \"@authdaemonrc@\"" >authdaemonrc.h
-@@ -1549,18 +1582,18 @@
+@@ -1597,18 +1629,18 @@
  # automake still a bit stupid...
  
  install-data-hook: install-authdaemonrc install-authpgsqlrc \
@@ -177,7 +209,7 @@
  	test "@LIBAUTHUSERDB@" = "" && exit 0 ;\
  		$(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) makedat/makedatprog \
  				$(DESTDIR)$(pkglibexecdir)/makedatprog ; \
-@@ -1578,7 +1611,7 @@
+@@ -1626,7 +1658,7 @@
  				$(DESTDIR)$(sbindir)/userdb-test-cram-md5
  
  uninstall-hook: uninstall-authldaprc uninstall-authdaemonrc uninstall-authmysqlrc uninstall-authpgsqlrc
@@ -186,16 +218,16 @@
  	test "@AUTHUSERDB@" = "" && exit 0 ;\
  		rm -f $(DESTDIR)$(pkglibexecdir)/makedatprog \
  				$(DESTDIR)$(sbindir)/vchkpw2userdb \
-@@ -1592,7 +1625,7 @@
+@@ -1640,7 +1672,7 @@
  	CONFIG_FILES=authlib.html CONFIG_HEADERS= $(SHELL) ./config.status
  
  authlib.3: authlib.3.in
 -	CONFIG_FILES=authlib.3 CONFIG_HEADERS= $(SHELL) ./config.status
 +@HAVE_BASE_TRUE@	CONFIG_FILES=authlib.3 CONFIG_HEADERS= $(SHELL) ./config.status
  
- @HAVE_SGML_TRUE@authlib.html.in: authlib.sgml docbook/sgml2html
- @HAVE_SGML_TRUE@	docbook/sgml2html authlib.sgml authlib.html.in
-@@ -1654,10 +1687,10 @@
+ @HAVE_SGML_TRUE@authpasswd.html: authpasswd.sgml docbook/sgml2html
+ @HAVE_SGML_TRUE@	docbook/sgml2html authpasswd.sgml authpasswd.html
+@@ -1714,10 +1746,10 @@
  	@SHELL@ authmigrate
  
  install-configure:
