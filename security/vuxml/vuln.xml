@@ -32,8 +32,43 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ccd325d2-fa08-11d9-bc08-0001020eed82">
+    <topic>isc-dhcpd -- format string vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>isc-dhcp3-client</name>
+	<name>isc-dhcp3-devel</name>
+	<name>isc-dhcp3-relay</name>
+	<name>isc-dhcp3-server</name>
+	<name>isc-dhcp3</name>
+	<name>isc-dhcp</name>
+	<name>isc-dhcpd</name>
+	<range><lt>3.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The ISC DHCP programs are vulnerable to several format
+	  string vulnerabilities which may allow a remote attacker to
+	  execute arbitrary code with the permissions of the DHCP
+	  programs, typically root for the DHCP server.</p>
+      </body>
+    </description>
+    <references>
+      <bid>11591</bid>
+      <certvu>448384</certvu>
+      <cvename>CAN-2004-1006</cvename>
+      <mlist msgid="20041109003345.GG763@isc.org">http://marc.theaimsgroup.com/?l=dhcp-announce&amp;m=109996073218290</mlist>
+    </references>
+    <dates>
+      <discovery>2004-11-08</discovery>
+      <entry>2005-07-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b4892b5b-fb1c-11d9-96ba-00909925db3e">
-    <topic>Multiple cross-site scripting (XSS) and SQL injection vulnerabilities in eGroupware</topic>
+    <topic>egroupware -- multiple cross-site scripting (XSS) and SQL
+      injection vulnerabilities</topic>
     <affects>
       <package>
 	<name>egroupware</name>
@@ -63,6 +98,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <entry>2005-07-23</entry>
     </dates>
   </vuln>
+
   <vuln vid="3f4ac724-fa8b-11d9-afcf-0060084a00e5">
     <topic>fetchmail -- denial of service/crash from malicious POP3 server</topic>
     <affects>
