@@ -1,0 +1,11 @@
+--- configure.orig	Sun May 30 05:47:49 2004
++++ configure	Sat Jul 23 18:09:22 2005
+@@ -19999,7 +19999,7 @@
+ 
+         # This 'test' call uses non-standard syntax and will fail on most
+         # systems, but it's just informational so any warning can be ignored.
+-if test "$LIBUSB_VER" \< "0.1.7"; then
++if test "$LIBUSB_VER" \< "0.1.10"; then
+     { echo "$as_me:$LINENO: WARNING:
+ *** You need at least version 0.1.7 of the libusb library for USB support
+ *** http://sourceforge.net/projects/libusb/
