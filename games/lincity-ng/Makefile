@@ -20,6 +20,8 @@ LIB_DEPENDS=	physfs-1.0.0:${PORTSDIR}/devel/physfs
 USE_BZIP2=	yes
 USE_GCC=	3.2+
 USE_SDL=	sdl mixer image ttf gfx
+USE_GNOME=	libxml2
+USE_REINPLACE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libphysfs=${PREFIX}
@@ -30,7 +32,16 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not build on 4.x"
+pre-configure::
+	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|' \
+	${WRKSRC}/src/gui/Filter.cpp ${WRKSRC}/src/gui/Gradient.hpp \
+	${WRKSRC}/src/gui/Color.hpp
+.endif
+
+.if ${OSVERSION} < 504000
+pre-configure::
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-src-gui-Gradient.cpp
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-src-gui-PainterSDL-PainterSDL.cpp
 .endif
 
 do-build:
