@@ -150,9 +150,9 @@ post-extract:
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
 .if (${NUMOFPROCESSES}>1)
-	@cd ${WRKSRC} ;	${SETENV} "DEFAULT_TO_ENGLISH_FOR_PACKING=yes" ${TCSH} -c "source FreeBSDEnv.Set ; cd instsetoo_native ; build.pl -P${NUMOFPROCESSES} --all"
+	@cd ${WRKSRC} ;	${TCSH} -c "source FreeBSDEnv.Set ; cd instsetoo_native ; build.pl -P${NUMOFPROCESSES} --all"
 .else
-	@cd ${WRKSRC} ;	${SETENV} "DEFAULT_TO_ENGLISH_FOR_PACKING=yes"  ${TCSH} -c "source FreeBSDEnv.Set ; dmake"
+	@cd ${WRKSRC} ;	${TCSH} -c "source FreeBSDEnv.Set ; dmake"
 .endif
 
 do-install:
