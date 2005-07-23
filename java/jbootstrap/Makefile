@@ -13,6 +13,8 @@ MASTER_SITES=	# http://www.eyesbeyond.com/freebsddom/java/jbootstrap.html
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Java bootstrap tools
 
+RUN_DEPENDS=	${LOCALBASE}/bin/jikes:${PORTSDIR}/java/jikes
+
 USE_PERL5_RUN=	yes
 MAKE_FLAGS+=	BINDIR=${PREFIX}/${PORTNAME}/bin \
 		LIBEXECDIR=${PREFIX}/${PORTNAME}/libexec
