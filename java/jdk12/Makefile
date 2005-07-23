@@ -51,7 +51,8 @@ MAKE_ENV=	HAVE_DPS="no" \
 		_JDK11DIR="${JDK11DIR}" \
 		SYS_CFLAGS="${CFLAGS}" \
 		CLASSPATH="" \
-		JAVA_COMPILER=""
+		JAVA_COMPILER="" \
+		_JAVA_BOOTSTRAP_VERSION="1.2.2"
 ALL_TARGET=	release-images
 PATCH_CMD=	${PATCH} -p1 <
 PLIST_SUB+=	JDK_VERSION=${JDK_VERSION}
@@ -70,11 +71,14 @@ PLIST_SUB+=	DEBUG:=""
 .include <bsd.port.pre.mk>
 
 .if !defined(JDK12DIR)
-.if defined(WITH_LINUX_BOOTSTRAP) || !exists(${PREFIX}/jdk${JDK_VERSION}/bin/javac)
+.if defined(WITH_LINUX_BOOTSTRAP)
 JDK12DIR=	${LOCALBASE}/linux-blackdown-jdk${JDK_VERSION}
 BUILD_DEPENDS+=	${JDK12DIR}/bin/javac:${PORTSDIR}/java/linux-blackdown-jdk12
-.else
+.elif exists(${LOCALBASE}/jdk${JDK_VERSION}/bin/javac)
 JDK12DIR=	${LOCALBASE}/jdk${JDK_VERSION}
+.else
+JDK12DIR=	${LOCALBASE}/jbootstrap
+BUILD_DEPENDS+=	${JDK12DIR}/bin/javac:${PORTSDIR}/java/jbootstrap
 .endif
 .endif
 
