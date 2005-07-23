@@ -112,19 +112,17 @@ LD_LIBRARY_PATH_FILES=	../src/solaris/javavm/runtime/javai_md.c \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000 && !exists(${PREFIX}/jdk${JDK_VERSION}/bin/javac)
-WITH_LINUX_BOOTSTRAP=yes
-.endif
-
 .if !defined(JDK13DIR)
 .if defined(WITH_LINUX_BOOTSTRAP)
 JDK13DIR=	${LOCALBASE}/linux-blackdown-jdk${JDK_VERSION}
 BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/linux-blackdown-jdk13
-.elif exists(${PREFIX}/jdk${JDK_VERSION}/bin/javac)
+.elif exists(${LOCALBASE}/jdk${JDK_VERSION}/bin/javac)
 JDK13DIR=	${LOCALBASE}/jdk${JDK_VERSION}
-.else
+.elif exists(${LOCALBASE}/diablo-jdk${JDK_VERSION}/bin/javac)
 JDK13DIR=	${LOCALBASE}/diablo-jdk${JDK_VERSION}
-BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/diablo-jdk13
+.else
+JDK13DIR=	${LOCALBASE}/jbootstrap
+BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/jbootstrap
 .endif
 .endif
 
