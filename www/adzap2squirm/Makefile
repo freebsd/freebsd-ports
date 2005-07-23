@@ -16,6 +16,8 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Use and update adzap patterns with squirm
 
+BROKEN=		Unfetchable
+
 RUN_DEPENDS=	squirm:${PORTSDIR}/www/squirm
 
 SQUID_UID?=	squid
