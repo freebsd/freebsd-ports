@@ -28,7 +28,7 @@ ARCH?=	i386
 .if (${ARCH} == i386) || (${ARCH} == amd64)
 DIST_SUBDIR=	perforce/${VERSION}/i386
 VERSION=	05.1
-REVISION=	1
+REVISION=	2
 PLATFORM=	freebsd4
 BIN_FILES=	p4
 SBIN_FILES=	p4d p4ftpd p4p p4web
