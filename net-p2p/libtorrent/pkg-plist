@@ -5,9 +5,10 @@ include/torrent/entry.h
 include/torrent/exceptions.h
 include/torrent/http.h
 include/torrent/peer.h
+include/torrent/rate.h
 include/torrent/torrent.h
 include/torrent/tracker.h
 lib/libtorrent.so
-lib/libtorrent.so.3
+lib/libtorrent.so.4
 libdata/pkgconfig/libtorrent.pc
 @dirrm include/torrent
