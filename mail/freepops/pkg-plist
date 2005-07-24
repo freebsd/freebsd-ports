@@ -33,6 +33,12 @@ etc/freepops/config.lua.sample
 %%DATADIR%%/lua/tre.lua
 %%DATADIR%%/lua/xml2table.lua
 %%DATADIR%%/lua/yahoo.lua
+%%DATADIR%%/lua/xml2tex.lua
+%%DATADIR%%/lua/version_comparer.lua
+%%DATADIR%%/lua/updater.lua
+%%DATADIR%%/lua/netscape.lua
+%%DATADIR%%/lua/mail2world.lua
+%%DATADIR%%/lua/juno.lua
 @dirrm %%DATADIR%%/lua_unofficial
 @dirrm %%DATADIR%%/lua
 @dirrm %%DATADIR%%
