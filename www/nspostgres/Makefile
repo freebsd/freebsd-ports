@@ -19,6 +19,9 @@ COMMENT=	A driver to access PostgreSQL databases from Aolserver
 BUILD_DEPENDS=	${LOCALBASE}/aolserver/bin/nsd:${PORTSDIR}/www/aolserver
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+DEPRECATED=	Use www/aolserver with WITH_NSPOSTGRES=1 instead.
+IGNORE=		${DEPRECATED}
+
 USE_PGSQL=	yes
 
 WRKSRC=		${WRKDIR}/nspostgres
