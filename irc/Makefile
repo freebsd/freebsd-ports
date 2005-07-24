@@ -48,6 +48,7 @@
     SUBDIR += ircservices
     SUBDIR += iroffer
     SUBDIR += irssi
+    SUBDIR += irssi-devel
     SUBDIR += irssi-fish
     SUBDIR += irssi-scripts
     SUBDIR += irssistats
