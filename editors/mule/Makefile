@@ -99,6 +99,10 @@ ELC_DIR=	../lisp
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64" && ${OSVERSION} >= 600031
+BROKEN=		"Configure fails on amd64 >= 6.x"
+.endif
+
 # Make a value of INPUT_METHOD
 .if defined(INPUT_METHOD)
 INPUT_METHOD!=	${ECHO_CMD} ${INPUT_METHOD} | sed -e 's/^/-/' -e 's/ /+/g'
