@@ -259,7 +259,7 @@ fi
 branch=$1
 date=$2
 
-if [ "x$branch" != x4 -a "x$branch" != x4-exp -a "x$branch" != x5 -a "x$branch" != x5-exp -a "x$branch" != x6 ]; then
+if [ "x$branch" != x4 -a "x$branch" != x4-exp -a "x$branch" != x5 -a "x$branch" != x5-exp -a "x$branch" != x6 -a "x$branch" != x7 ]; then
   usage
 fi
 
