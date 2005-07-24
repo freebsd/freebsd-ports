@@ -1,34 +1,40 @@
-# New ports collection makefile for:	irssi
-# Date created:			14 Apr 1999
-# Whom:				Jim Mock <jim@FreeBSD.org>
+# New ports collection makefile for:	irssi-devel
+# Date created:                 03 Mar 2005
+# Whom:                         Vsevolod Stakhov <vsevolod@highsecure.ru>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	irssi
-PORTVERSION=	0.8.9
-PORTREVISION?=	3
-CATEGORIES?=	irc
-MASTER_SITES=	http://irssi.org/files/
+PORTVERSION=	20050720
+CATEGORIES=	irc
+MASTER_SITES=	http://highsecure.ru/
+PKGNAMESUFFIX=	-devel
 
-MAINTAINER?=	vanilla@FreeBSD.org
-COMMENT?=	A modular IRC client with many features
+MAINTAINER=	vsevolod@FreeBSD.org
+COMMENT=	A modular IRC client with many features
 
-USE_BZIP2=	yes
+CONFLICTS=	irssi-0.8*
+
 GNU_CONFIGURE=	yes
 
-WANT_GNOME=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GNOME=	glib20
+USE_LIBTOOL_VER=	15
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
 
 MAN1=		irssi.1
 
-# Set option defaults.
+OPTIONS=	PERL "Enable perl support" on \
+		PROXY "Enable proxy support" off \
+		SOCKS "Enable socks proxy support" off \
+		IPV6 "Enable IPv6" on \
+		BOT "Enable bot" off
 
-.if ! defined(WITH_SSL)
-WITH_SSL=	yes
-.endif
+# USE_OPENSSL must be defined before bsd.port.pre.mk so use old schema
+# for WITH_SSL option
 
-.if ${WITH_SSL:L} == "no"
+.if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=	--disable-ssl
 .else
 USE_OPENSSL=	yes
@@ -36,50 +42,9 @@ USE_OPENSSL=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ! defined(WITH_GLIB)
-.if exists(${LOCALBASE}/include/glib-2.0/glib.h)
-WITH_GLIB=	2
-.else
-WITH_GLIB=	1
-.endif
-.endif
-
-.if ! defined(WITH_PERL)
-WITH_PERL=	yes
-.endif
-
-.if ! defined(WITH_PROXY)
-WITH_PROXY=	no
-.endif
-
-.if ! defined(WITH_SOCKS)
-WITH_SOCKS=	no
-.endif
-
-.if ! defined(WITH_IPV6)
-WITH_IPV6=	yes
-.endif
-
-.if ! defined(WITH_BOEHM_GC)
-WITH_BOEHM_GC=	no
-.endif
-
-.if ! defined(WITH_BOT)
-WITH_BOT=	no
-.endif
-
 # Process options.
 
-.if ${WITH_GLIB} == "2"
-USE_GNOME=	glib20
-.elif ${WITH_GLIB} == "1"
-CONFIGURE_ARGS+=	--with-glib1
-USE_GNOME=	glib12
-.else
-.error WITH_GLIB must be set to "1" or "2".
-.endif
-
-.if ${WITH_PERL:L} == "yes"
+.if defined(WITH_PERL)
 USE_PERL5=	yes
 CONFIGURE_ARGS+=	--with-perl-lib=site
 PLIST_SUB+=	WITH_PERL=""
@@ -88,57 +53,37 @@ CONFIGURE_ARGS+=	--without-perl
 PLIST_SUB+=	WITH_PERL="@comment "
 .endif
 
-.if ${WITH_PROXY:L} == "yes"
+.if defined(WITH_PROXY)
 CONFIGURE_ARGS+=	--with-proxy
 PLIST_SUB+=	WITH_PROXY=""
 .else
 PLIST_SUB+=	WITH_PROXY="@comment "
 .endif
 
-.if ${WITH_SOCKS:L} == "yes"
+.if defined(WITH_SOCKS)
 CONFIGURE_ARGS+=	--with-socks
 .endif
 
-.if ${WITH_IPV6:L} == "yes"
+.if defined(WITH_IPV6)
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+=	--enable-ipv6
 CATEGORIES+=	ipv6
 .else
-.error This version of FreeBSD does not support IPv6. Please use WITH_IPV6=no.
+BROKEN=	"This version of FreeBSD does not support IPv6. Please use WITH_IPV6=no"
 .endif
 .endif
 
-.if ${WITH_BOEHM_GC:L} == "yes"
-LIB_DEPENDS+=	gc.1:${PORTSDIR}/devel/boehm-gc
-CONFIGURE_ENV+=	CPPFLAGS=-I${PREFIX}/include
-CONFIGURE_ARGS+=	--with-gc
-.endif
-
-.if ${WITH_BOT:L} == "yes"
+.if defined(WITH_BOT)
 CONFIGURE_ARGS+=	--with-bot
 .endif
 
-pre-extract:
-	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} ""
-	@${ECHO} "	WITH_GLIB=1|2		Select a GLib version to use [auto]"
-	@${ECHO} "	WITH_PERL=yes|no	Enable Perl support [yes]"
-	@${ECHO} "	WITH_PROXY=yes|no	Enable irssi-proxy [no]"
-	@${ECHO} "	WITH_SOCKS=yes|no	Enable Socks support [no]"
-	@${ECHO} "	WITH_IPV6=yes|no	Enable IPv6 support [yes]"
-	@${ECHO} "	WITH_SSL=yes|no		Enable SSL support [yes]"
-	@${ECHO} "	WITH_BOEHM_GC=yes|no	Enable GC support [no]"
-	@${ECHO} "	WITH_BOT=yes|no		Enable BOT support [no]"
-	@${ECHO} ""
-
-pre-configure:
-	@cd ${WRKSRC} && ${MV} irssi.conf irssi.conf.sample || ${TRUE}
+post-configure:
+	@${MV} ${WRKSRC}/irssi.conf ${WRKSRC}/irssi.conf.sample
 
 post-install:
-	@if [ ! -f ${LOCALBASE}/etc/irssi.conf ]; then \
+	@if [ ! -f ${PREFIX}/etc/irssi.conf ]; then \
 		${ECHO} "Installing default configuration file."; \
-		${INSTALL_DATA} ${WRKSRC}/irssi.conf.sample ${LOCALBASE}/etc/irssi.conf ; \
+		${INSTALL_DATA} ${WRKSRC}/irssi.conf.sample ${PREFIX}/etc/irssi.conf ; \
 	fi
 
 .include <bsd.port.post.mk>

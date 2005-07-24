@@ -1,0 +1,9 @@
+--- irssi-version.h.in.orig	Wed Jul 20 15:29:15 2005
++++ irssi-version.h.in	Wed Jul 20 15:29:38 2005
+@@ -1,4 +1,4 @@
+ /* automatically created by configure */
+ #define IRSSI_VERSION "@VERSION@"
+-#define IRSSI_VERSION_DATE @VERSION_DATE@
+-#define IRSSI_VERSION_TIME @VERSION_TIME@
++#define IRSSI_VERSION_DATE 20050720
++#define IRSSI_VERSION_TIME 1530
