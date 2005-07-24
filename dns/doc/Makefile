@@ -23,7 +23,7 @@ MAN8=		doc.8
 .include <bsd.port.pre.mk>
   	 
 .if ${OSVERSION} < 500000
-BROKEN=         "This version of DOC requires DiG Version-9.x to run on 4.x."
+IGNORE=         requires DiG Version-9.x to run on 4.x
 .endif
 
 do-build:
