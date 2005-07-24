@@ -117,12 +117,10 @@ if [ "${error}" = 0 ]; then
   if grep -q "even though it is marked BROKEN" ${log}; then
     echo | mail -s "${pkgname} BROKEN but built on ${arch} ${branch}" kris@FreeBSD.org krion@FreeBSD.org
   fi
-  if [ "${arch}" = "i386" ]; then
-    if grep -q "^list of .*file" ${log}; then
-      buildlogdir=$(realpath ${pb}/${arch}/${branch}/logs/)
-      baselogdir=$(basename ${buildlogdir})
-      (sed -e '/^build started/,$d' $log;echo;echo "For the full build log, see"; echo; echo "  http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$(basename $log)";echo;sed -e '1,/^=== Checking filesystem state/d' $log) | mail -s "${pkgname} pkg-plist errors on ${arch} ${branch}" kris@FreeBSD.org krion@FreeBSD.org
-    fi
+  if grep -q "^list of .*file" ${log}; then
+    buildlogdir=$(realpath ${pb}/${arch}/${branch}/logs/)
+    baselogdir=$(basename ${buildlogdir})
+    (sed -e '/^build started/,$d' $log;echo;echo "For the full build log, see"; echo; echo "  http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$(basename $log)";echo;sed -e '1,/^=== Checking filesystem state/d' $log) | mail -s "${pkgname} pkg-plist errors on ${arch} ${branch}" kris@FreeBSD.org krion@FreeBSD.org
   fi
 else
   log=${pb}/${arch}/${branch}/errors/${pkgname}.log
