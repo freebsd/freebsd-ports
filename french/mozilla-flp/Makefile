@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mozilla-flp
-PORTVERSION=	1.7.8
+PORTVERSION=	1.7.10
 CATEGORIES=	french www
 MASTER_SITES=	http://frenchmozilla.sourceforge.net/FTP/${PORTVERSION}/
 DISTNAME=	mozilla-${PORTVERSION}.fr-FR.langpack
