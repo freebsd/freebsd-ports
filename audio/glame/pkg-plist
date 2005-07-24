@@ -4,6 +4,8 @@ bin/glame-convert.sh
 lib/glame/audio_io_esd.so
 lib/glame/audio_io_oss.so
 lib/glame/debug.so
+lib/glame/file_mp3_out.so
+lib/glame/file_oggvorbis_out.so
 lib/glame/mixer.so
 lib/glame/normalize.so
 lib/glame/resample.so
@@ -36,6 +38,7 @@ share/gnome/glame/pixmaps/output.png
 share/gnome/glame/pixmaps/pan.png
 share/gnome/glame/pixmaps/ping.png
 share/gnome/glame/pixmaps/pipe.png
+share/gnome/glame/pixmaps/play-button.png
 share/gnome/glame/pixmaps/play.png
 share/gnome/glame/pixmaps/prod.png
 share/gnome/glame/pixmaps/pulse.png
@@ -47,6 +50,7 @@ share/gnome/glame/pixmaps/select_all.png
 share/gnome/glame/pixmaps/select_none.png
 share/gnome/glame/pixmaps/sine.png
 share/gnome/glame/pixmaps/statistics.png
+share/gnome/glame/pixmaps/stop-button.png
 share/gnome/glame/pixmaps/sum.png
 share/gnome/glame/pixmaps/volume_adjust.png
 share/gnome/glame/pixmaps/zoom_in.png
@@ -58,10 +62,8 @@ share/gnome/glame/scripts/glame_testsuite.scm
 share/gnome/glame/scripts/read_mp3.scm
 share/gnome/glame/scripts/resample.scm
 share/gnome/glame/scripts/write_mp3.scm
-share/locale/da/LC_MESSAGES/glame.mo
 share/locale/de/LC_MESSAGES/glame.mo
 share/locale/fr/LC_MESSAGES/glame.mo
-share/locale/it/LC_MESSAGES/glame.mo
 @dirrm share/gnome/glame/scripts
 @dirrm share/gnome/glame/pixmaps
 @dirrm share/gnome/glame
