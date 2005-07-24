@@ -3911,6 +3911,7 @@ irrlicht	ports/x11-toolkits/irrlicht
 irrtoolset	ports/net-mgmt/irrtoolset
 irsim		ports/cad/irsim
 irssi		ports/irc/irssi
+irssi-devel	ports/irc/irssi-devel
 irssi-fish	ports/irc/irssi-fish
 irssi-scripts	ports/irc/irssi-scripts
 irssistats	ports/irc/irssistats
