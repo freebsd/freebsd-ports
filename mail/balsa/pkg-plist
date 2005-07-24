@@ -43,7 +43,7 @@ share/gnome/balsa/hicolor/24x24/apps/balsa-signature-notrust.png
 share/gnome/balsa/hicolor/24x24/apps/balsa-signature-unknown.png
 share/gnome/balsa/hicolor/24x24/apps/balsa-trash-empty.png
 share/gnome/balsa/hicolor/icon-theme.cache
-@exec gtk-update-icon-cache %%X11BASE%%/share/icons/hicolor > /dev/null || /usr/bin/true
+@exec gtk-update-icon-cache %D/share/icons/hicolor 2>/dev/null || true
 share/gnome/balsa/pixmaps/attachment.png
 share/gnome/balsa/pixmaps/balsa-logo.png
 share/gnome/balsa/pixmaps/balsa-top.png
@@ -128,13 +128,16 @@ share/locale/sr/LC_MESSAGES/balsa.mo
 share/locale/sr@Latn/LC_MESSAGES/balsa.mo
 share/locale/sv/LC_MESSAGES/balsa.mo
 share/locale/tr/LC_MESSAGES/balsa.mo
-share/locale/vi/LC_MESSAGES/balsa.mo
 share/locale/uk/LC_MESSAGES/balsa.mo
+share/locale/vi/LC_MESSAGES/balsa.mo
 share/locale/wa/LC_MESSAGES/balsa.mo
 share/locale/zh_CN/LC_MESSAGES/balsa.mo
 share/locale/zh_TW/LC_MESSAGES/balsa.mo
+@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/rw 2>/dev/null || true
 @dirrm share/gnome/sounds/balsa
 @dirrm share/gnome/omf/balsa
+@unexec rmdir %D/share/icons/hicolor/48x48/mimetypes 2>/dev/null || true
 @dirrm share/gnome/help/balsa/C/figures
 @dirrm share/gnome/help/balsa/C
 @dirrm share/gnome/help/balsa
@@ -145,5 +148,5 @@ share/locale/zh_TW/LC_MESSAGES/balsa.mo
 @dirrm share/gnome/balsa/hicolor/16x16
 @dirrm share/gnome/balsa/hicolor
 @dirrm share/gnome/balsa
-@comment @unexec gtk-update-icon-cache %%X11BASE%%/share/icons/hicolor > /dev/null || /usr/bin/true
-@unexec rm -f %%X11BASE%%/share/icons/hicolor/icon-theme.cache
+@unexec rm -f %D/share/icons/hicolor/icon-theme.cache 2>/dev/null || true
+@unexec gtk-update-icon-cache %D/share/icons/hicolor 2>/dev/null || true
