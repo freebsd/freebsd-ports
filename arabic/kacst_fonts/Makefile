@@ -6,13 +6,13 @@
 #
 
 PORTNAME=		kacst_fonts
-PORTVERSION=		1.4
+PORTVERSION=		1.5
 CATEGORIES=		arabic
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	arabeyes
 DISTNAME=		kacst_fonts_${PORTVERSION}
 
-MAINTAINER=	samy@kerneled.com
+MAINTAINER=	samy@kerneled.org
 COMMENT=	Truetype Arabic fonts created by KACST
 
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
@@ -20,6 +20,9 @@ BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 WRKSRC=	${WRKDIR}/KacstArabicFonts-${PORTVERSION}
+
+SUB_FILES=	pkg-message
+SUB_LIST=	PORTNAME="${PORTNAME}"
 
 do-build:
 	@ttmkfdir -c -d ${WRKSRC} > ${WRKSRC}/fonts.dir
@@ -30,7 +33,6 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/fonts.dir ${PREFIX}/lib/X11/fonts/kacst_fonts/
 
 post-install:
-	@${CAT} ${PKGMESSAGE} | ${SED} "s|X11BASE|${X11BASE}|g" \
-		| ${SED} "s|PORTNAME|${PORTNAME}|g"
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

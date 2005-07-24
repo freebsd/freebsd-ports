@@ -2,12 +2,13 @@ lib/X11/fonts/kacst_fonts/KacstArt.ttf
 lib/X11/fonts/kacst_fonts/KacstBook.ttf
 lib/X11/fonts/kacst_fonts/KacstDecorative.ttf
 lib/X11/fonts/kacst_fonts/KacstDigital.ttf
+lib/X11/fonts/kacst_fonts/KacstFarsi.ttf
 lib/X11/fonts/kacst_fonts/KacstLetter.ttf
 lib/X11/fonts/kacst_fonts/KacstPoster.ttf
-lib/X11/fonts/kacst_fonts/KacstQr.ttf
 lib/X11/fonts/kacst_fonts/KacstQura.ttf
-lib/X11/fonts/kacst_fonts/KacstTitleL.ttf
-lib/X11/fonts/kacst_fonts/KacstTitle.ttf
 lib/X11/fonts/kacst_fonts/KacstQuraFixed.ttf
+lib/X11/fonts/kacst_fonts/KacstQurn.ttf
+lib/X11/fonts/kacst_fonts/KacstTitle.ttf
+lib/X11/fonts/kacst_fonts/KacstTitleL.ttf
 lib/X11/fonts/kacst_fonts/fonts.dir
 @dirrm lib/X11/fonts/kacst_fonts
