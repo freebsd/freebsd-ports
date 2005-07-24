@@ -29,7 +29,7 @@ PORTNAMESUFFIX=	${PKGNAMESUFFIX}
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-emacs=${EMACS_NAME}
+CONFIGURE_ARGS+=	--with-emacs=${EMACS_NAME} --with-diff=gdiff --with-patch=gpatch
 USE_GMAKE=	yes
 INFO=		xtla
 
