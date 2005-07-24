@@ -1,0 +1,11 @@
+--- modules/src/Makefile.template.orig	Sun Jul 24 23:43:25 2005
++++ modules/src/Makefile.template	Sun Jul 24 23:43:47 2005
+@@ -77,7 +77,7 @@
+ 	
+ .%.d:%.c
+ 	$(H)echo " building dep for $<"
+-	$(H)$(CC) -I. -I$(PREFIX)/include -MM $< > $@;
++	$(H)$(CC) ${CFLAGS} -MM $< > $@;
+ 
+ .%.d:%.pkg
+ 	$(H)echo " building dep for $<"
