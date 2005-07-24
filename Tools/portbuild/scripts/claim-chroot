@@ -40,7 +40,7 @@ done
 chrootnum=$$
 # If we didn't find a pre-existing directory, create and claim a new one.
 while [ ${found} != 1 ]; do
-  chrootnum=$((chrootnum+1))
+  chrootnum=$(($chrootnum+1))
   chroot=${chrootdir}/${chrootnum}
   mkdir -p ${chroot} 2>/dev/null || continue
   mkdir ${chroot}/used 2>/dev/null || continue
