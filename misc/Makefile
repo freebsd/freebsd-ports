@@ -44,6 +44,7 @@
     SUBDIR += compat22
     SUBDIR += compat3x
     SUBDIR += compat4x
+    SUBDIR += countrycodes
     SUBDIR += cpuid
     SUBDIR += crosspad
     SUBDIR += cs
