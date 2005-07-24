@@ -123,6 +123,7 @@
     SUBDIR += dvdtape
     SUBDIR += dwatch
     SUBDIR += e2fsprogs
+    SUBDIR += eiciel
     SUBDIR += eject
     SUBDIR += enteruser
     SUBDIR += env4801

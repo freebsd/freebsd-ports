@@ -1,0 +1,6 @@
+===============================================================================
+To use the eiciel Nautilus extension, Nautilus has to be restarted.
+
+ACLs are not enabled by default. To enable them, use "tunefs -a" (only works
+on unmounted file systems) or the "acls" mount(8) option.
+===============================================================================
