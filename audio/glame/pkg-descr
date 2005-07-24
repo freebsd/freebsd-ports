@@ -2,17 +2,4 @@ GLAME is meant to be the GIMP of audio processing. It is designed to be
 a powerful, fast, stable, and easily extensible sound editor for GNOME
 desktop.
 
-Current Status (as of version 0.2.0):
-==========================================
-- usable filternetwork GUI - src/gui/glame
-- usable console UI - src/cglame
-- the glame midlayer which supports
-  * plugins
-  * scripting (using guile)
-- the filternetwork backend which supports
-  * threading, i.e. pipelined processing of all data
-  * feedback inside the network does work
-  * zero-copy operation inside and between filters
-- the swapfile backing store
-
 WWW: http://glame.sourceforge.net/
