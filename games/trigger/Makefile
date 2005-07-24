@@ -7,6 +7,7 @@
 
 PORTNAME=	trigger
 PORTVERSION=	0.5.1c
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://0day.icculus.org/mirrors/trigger/
 DISTFILES=	trigger-${PORTVERSION}-src${EXTRACT_SUFX} \
