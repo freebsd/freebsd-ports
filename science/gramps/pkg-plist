@@ -296,6 +296,10 @@ share/gnome/gramps/plugins/Eval.py
 share/gnome/gramps/plugins/Eval.pyo
 share/gnome/gramps/plugins/EventCmp.py
 share/gnome/gramps/plugins/EventCmp.pyo
+share/gnome/gramps/plugins/ExportVCalendar.py
+share/gnome/gramps/plugins/ExportVCalendar.pyo
+share/gnome/gramps/plugins/ExportVCard.py
+share/gnome/gramps/plugins/ExportVCard.pyo
 share/gnome/gramps/plugins/FamilyGroup.py
 share/gnome/gramps/plugins/FamilyGroup.pyo
 share/gnome/gramps/plugins/FanChart.py
@@ -310,6 +314,8 @@ share/gnome/gramps/plugins/GraphViz.py
 share/gnome/gramps/plugins/GraphViz.pyo
 share/gnome/gramps/plugins/ImportGeneWeb.py
 share/gnome/gramps/plugins/ImportGeneWeb.pyo
+share/gnome/gramps/plugins/ImportvCard.py
+share/gnome/gramps/plugins/ImportvCard.pyo
 share/gnome/gramps/plugins/IndivComplete.py
 share/gnome/gramps/plugins/IndivComplete.pyo
 share/gnome/gramps/plugins/IndivSummary.py
@@ -386,6 +392,8 @@ share/gnome/gramps/plugins/scratchpad.glade
 share/gnome/gramps/plugins/soundex.glade
 share/gnome/gramps/plugins/stock_link.png
 share/gnome/gramps/plugins/summary.glade
+share/gnome/gramps/plugins/vcalendarexport.glade
+share/gnome/gramps/plugins/vcardexport.glade
 share/gnome/gramps/plugins/verify.glade
 share/gnome/gramps/plugins/writeftree.glade
 share/gnome/gramps/rule.glade
