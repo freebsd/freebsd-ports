@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.4
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/
 DISTNAME=	balsa-${PORTVERSION}
@@ -39,6 +39,8 @@ CONFIGURE_ARGS=	--enable-threads \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -liconv"
 
+INSTALLS_OMF=	balsa-C.omf
+
 MAN1=		balsa.1
 
 OPTIONS=	LDAP "Enable LDAP support" on \
@@ -59,6 +61,10 @@ CONFIGURE_ARGS+=	--with-ldap
 post-patch:
 	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|g' \
 		${WRKSRC}/libbalsa/mailbox_imap.c
+# PREFIX safeness
+	@${REINPLACE_CMD} -E \
+		-e 's|^(HICOLOR_ICON_DIR)[^/]+/|\1=${PREFIX}/|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
 	-@gtk-update-icon-cache ${X11BASE}/share/icons/hicolor
