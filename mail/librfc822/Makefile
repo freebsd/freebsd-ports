@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	mail devel
 MASTER_SITES=	http://cryp.to/librfc822/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ismail@EnderUNIX.org
 COMMENT=	A complete parser for RFC822 addresses
 
 USE_GCC=	2.95
