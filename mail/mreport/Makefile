@@ -8,13 +8,9 @@
 PORTNAME=	mreport
 PORTVERSION=	0.9
 CATEGORIES=	mail sysutils
-# mastersite disappeared in August 2003
-MASTER_SITES=	# ftp://ftp.datrix.co.za/pub/mreport/
+MASTER_SITES=	http://yenigul.net/mreport/
 
-DEPRECATED=	"master site disappeared"
-EXPIRATION_DATE=2005-07-31
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ismail@EnderUNIX.org
 COMMENT=	Sendmail logfile summary tool
 
 USE_REINPLACE=	yes
