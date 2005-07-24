@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	gnome-osd
-PORTVERSION=	0.7.3
+DISTVERSION=	0.8.0-1
 CATEGORIES=	misc
 MASTER_SITES=	http://telecom.inescporto.pt/~gjc/gnome-osd/
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	An On-Screen-Display infrastructure using Pango text rendering
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_X_PREFIX=	yes
-USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack pygnome2
 USE_PYTHON=	yes
 USE_REINPLACE=	yes

@@ -1,5 +1,6 @@
 bin/gnome-osd-client
 bin/gnome-osd-properties
+bin/rbosd.py
 libdata/bonobo/servers/GNOME_OSD.server
 %%PYTHON_SITELIBDIR%%/gnomeosd/__init__.py
 %%PYTHON_SITELIBDIR%%/gnomeosd/__init__.pyc
@@ -24,7 +25,6 @@ libdata/bonobo/servers/GNOME_OSD.server
 %%PYTHON_SITELIBDIR%%/gnomeosd/server.pyo
 libexec/gnome-osd-server
 share/gnome/applications/gnome-osd-properties.desktop
-share/gnome/gnome-osd/rbosd.py
 share/gnome/gnome-osd/xchatosd.py
 share/gnome/pixmaps/gnome-osd.png
 share/locale/ja/LC_MESSAGES/gnome-osd.mo
