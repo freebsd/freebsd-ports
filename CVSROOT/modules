@@ -8554,6 +8554,7 @@ p5-Unix-Processors	ports/sysutils/p5-Unix-Processors
 p5-Unix-Statgrab	ports/devel/p5-Unix-Statgrab
 p5-Unix-Syslog	ports/sysutils/p5-Unix-Syslog
 p5-User		ports/sysutils/p5-User
+p5-User-Identity	ports/devel/p5-User-Identity
 p5-VCG		ports/graphics/p5-VCG
 p5-VCP		ports/devel/p5-VCP
 p5-VCP-Dest-svk		ports/devel/p5-VCP-Dest-svk
