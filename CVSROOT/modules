@@ -1235,6 +1235,7 @@ cos		ports/java/cos
 cosmo		ports/games/cosmo
 cost		ports/textproc/cost
 cotty		ports/sysutils/cotty
+countrycodes	ports/misc/countrycodes
 courier		ports/mail/courier
 courier-authlib	ports/security/courier-authlib
 courier-authlib-base	ports/security/courier-authlib-base
