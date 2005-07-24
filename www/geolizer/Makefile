@@ -36,7 +36,7 @@ SUPP_LANG=      catalan chinese croatian czech danish dutch english \
                 icelandic indonesian italian japanese korean latvian \
                 malay norwegian polish portuguese portuguese_brazil \
                 romanian romanian-iso-8859-2 russian serbian \
-                simplified_chinese slowak slovene spanish swedish \
+                simplified_chinese slovak slovene spanish swedish \
                 turkish ukrainian
 
 CONFLICTS=	webalizer-2*
