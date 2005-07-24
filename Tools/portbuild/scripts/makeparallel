@@ -19,7 +19,7 @@ buildenv ${pb} ${arch} ${branch}
 # trees and tend to stall the rest of the cluster waiting for them.
 # We try to start these as early as possible.
 
-quickports="lang/ghc x11/XFree86-4 editors/openoffice-1.1 x11/gnome2 x11/kde3 editors/openoffice-1.0 chinese/openoffice-1.0-zh_CN chinese/openoffice-1.0-zh_TW editors/openoffice-1.0 editors/openoffice-1.0-ar editors/openoffice-1.0-dk editors/openoffice-1.0-es editors/openoffice-1.0-gr editors/openoffice-1.0-it editors/openoffice-1.0-nl editors/openoffice-1.0-se editors/openoffice-1.0-tr french/openoffice-1.0 german/openoffice-1.0 japanese/openoffice-1.0 korean/openoffice-1.0 polish/openoffice-1.0 portuguese/openoffice-1.0 russian/openoffice-1.0 math/atlas math/atlas-devel java/jdk14"
+quickports="lang/ghc x11/XFree86-4 x11/xorg editors/openoffice-1.1 x11/gnome2 x11/kde3 java/jdk15 math/atlas math/atlas-devel java/jdk14"
 
 cd ${PORTSDIR}
 subdir=$(make -V SUBDIR)
