@@ -7,13 +7,14 @@
 
 PORTNAME=	netpanzer
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://download.berlios.de/netpanzer/
 
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Real time, isometric view, tank multiplayer strategy game
 
-LIB_DEPENDS=	physfs-1.0.0:${PORTSDIR}/devel/physfs
+LIB_DEPENDS=	physfs-1.0.1:${PORTSDIR}/devel/physfs
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 RUN_DEPENDS=	${X11BASE}/share/netpanzer/wads/netp.act:${PORTSDIR}/games/netpanzer-data
 

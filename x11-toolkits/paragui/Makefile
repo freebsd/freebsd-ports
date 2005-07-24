@@ -8,7 +8,7 @@
 
 PORTNAME=	paragui
 PORTVERSION=	1.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/stable.pkg/${PORTVERSION}
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/stable.pkg/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform high-level application framework and GUI library
 
-LIB_DEPENDS=	physfs-1.0.0:${PORTSDIR}/devel/physfs \
+LIB_DEPENDS=	physfs-1.0.1:${PORTSDIR}/devel/physfs \
 		expat.5:${PORTSDIR}/textproc/expat2
 
 USE_X_PREFIX=	yes

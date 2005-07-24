@@ -7,6 +7,7 @@
 
 PORTNAME=	lincity-ng
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://download.berlios.de/lincity-ng/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,7 @@ MAINTAINER=	az@inec.ru
 COMMENT=	Improved rich city simulation game for X
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
-LIB_DEPENDS=	physfs-1.0.0:${PORTSDIR}/devel/physfs
+LIB_DEPENDS=	physfs-1.0.1:${PORTSDIR}/devel/physfs
 
 USE_BZIP2=	yes
 USE_GCC=	3.2+
