@@ -7,7 +7,7 @@
 
 PORTNAME=	cdrtools
 PORTVERSION?=	2.01
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/
@@ -54,6 +54,12 @@ PLIST_SUB=	RSCSI="@comment "
 IGNORE=		The mlockall(2) of your FreeBSD 5.x version causes problems when used by cdrecord. Please update FreeBSD to >= 5.3 in order to use this port
 .endif
 
+.if exists(${LOCALBASE}/lib/libcdio.a) || defined(WITH_CDDB)
+WITH_CDDB=	yes
+LIB_DEPENDS+=	cddb.3:${PORTSDIR}/audio/libcddb \
+		cdio.6:${PORTSDIR}/sysutils/libcdio
+.endif
+
 pre-everything::
 .if !defined(WITH_RSCSI)
 	@${ECHO_MSG} ""
@@ -64,6 +70,10 @@ pre-everything::
 	@${ECHO_MSG} "			in cdda2wav, cdrecord, etc. is built unconditionally)."
 	@${ECHO_MSG} "			BEWARE:	The rscsi binary gets installed suid root as"
 	@${ECHO_MSG} "				this is the preferred method to set it up."
+	@${ECHO_MSG} ""
+.endif
+.if !defined(WITH_CDDB)
+	@${ECHO_MSG} "WITH_CDDB=yes		builds with cddb (http://freedb.org) support"
 	@${ECHO_MSG} ""
 .endif
 
