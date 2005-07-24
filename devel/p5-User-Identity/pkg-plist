@@ -1,0 +1,32 @@
+%%SITE_PERL%%/Mail/Identity.pm
+%%SITE_PERL%%/Mail/Identity.pod
+%%SITE_PERL%%/User/Identity.pm
+%%SITE_PERL%%/User/Identity.pod
+%%SITE_PERL%%/User/Identity/Archive.pm
+%%SITE_PERL%%/User/Identity/Archive.pod
+%%SITE_PERL%%/User/Identity/Archive/Plain.pm
+%%SITE_PERL%%/User/Identity/Archive/Plain.pod
+%%SITE_PERL%%/User/Identity/Collection.pm
+%%SITE_PERL%%/User/Identity/Collection.pod
+%%SITE_PERL%%/User/Identity/Collection/Emails.pm
+%%SITE_PERL%%/User/Identity/Collection/Emails.pod
+%%SITE_PERL%%/User/Identity/Collection/Locations.pm
+%%SITE_PERL%%/User/Identity/Collection/Locations.pod
+%%SITE_PERL%%/User/Identity/Collection/Systems.pm
+%%SITE_PERL%%/User/Identity/Collection/Systems.pod
+%%SITE_PERL%%/User/Identity/Collection/Users.pm
+%%SITE_PERL%%/User/Identity/Collection/Users.pod
+%%SITE_PERL%%/User/Identity/Item.pm
+%%SITE_PERL%%/User/Identity/Item.pod
+%%SITE_PERL%%/User/Identity/Location.pm
+%%SITE_PERL%%/User/Identity/Location.pod
+%%SITE_PERL%%/User/Identity/System.pm
+%%SITE_PERL%%/User/Identity/System.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/User/Identity/.packlist
+@dirrm %%SITE_PERL%%/User/Identity/Archive
+@dirrm %%SITE_PERL%%/User/Identity/Collection
+@dirrm %%SITE_PERL%%/User/Identity
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/User/Identity
+@unexec rmdir %D/%%SITE_PERL%%/Mail 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/User 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/User 2>/dev/null || true
