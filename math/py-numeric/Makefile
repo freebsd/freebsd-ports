@@ -22,6 +22,8 @@ COMMENT=	The Numeric Extension to Python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+WRKSRC=		${WRKDIR}/Numeric-${PORTVERSION}
+
 DOCSDIR=	${PREFIX}/share/doc/py-numeric
 EXAMPLESDIR=	${PREFIX}/share/examples/py-numeric
 
@@ -35,7 +37,7 @@ pre-fetch:
 .endif
 
 post-extract:
-	@${CP} ${DISTDIR}/numpy.pdf ${WRKSRC}
+	@${CP} ${DISTDIR}/numpy.pdf ${WRKDIR}
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
