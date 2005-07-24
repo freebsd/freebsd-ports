@@ -1884,6 +1884,7 @@ eggdrop		ports/irc/eggdrop
 egoboo		ports/games/egoboo
 egroupware	ports/deskutils/egroupware
 ehnt		ports/net-mgmt/ehnt
+eiciel		ports/sysutils/eiciel
 eieio		ports/devel/eieio
 eieio-emacs20	ports/devel/eieio-emacs20
 eif		ports/games/eif
