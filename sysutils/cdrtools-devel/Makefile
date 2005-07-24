@@ -77,7 +77,7 @@ pre-everything::
 .endif
 .if !defined(WITH_CDDB)
 	@${ECHO_MSG} "WITH_CDDB=yes		builds with cddb (http://freedb.org) support"
-        @${ECHO_MSG} ""
+	@${ECHO_MSG} ""
 .endif
 
 post-extract:
