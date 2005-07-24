@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mssql
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.7.1
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pymssql
@@ -19,13 +18,12 @@ COMMENT=	Python database interface for simple MS-SQL access
 
 LIB_DEPENDS=	sybdb.5:${PORTSDIR}/databases/freetds-msdblib
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.2+
 USE_PYDISTUTILS=yes
 USE_REINPLACE=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e 's,#include.*malloc\.h.*,,g' \
-		-e 's,/usr/local,${LOCALBASE},g' \
+	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/mssqldbmodule.c
 
 .include <bsd.port.mk>
