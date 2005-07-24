@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	unidesc
-PORTVERSION=	2.12
+PORTVERSION=	2.13
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	http://www.cis.upenn.edu/~wjposer/.downloads/
-DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Unicode Description Utilities
@@ -26,8 +24,6 @@ DEMOS=		demo.jpg demo.u demo32.u
 PORTDOCS=	README
 
 MAN1=		unidesc.1 uniname.1 ExplicateUTF8.1 unihist.1
-
-WRKSRC=		${WRKDIR}/${PORTNAME:U}
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|;s|%%LOCALBASE%%|${LOCALBASE}|'	\
