@@ -14,6 +14,8 @@ MASTER_SITES=	http://irssi.org/files/
 MAINTAINER?=	vanilla@FreeBSD.org
 COMMENT?=	A modular IRC client with many features
 
+CONFLICTS=      irssi-devel-*
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
