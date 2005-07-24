@@ -7,7 +7,7 @@
 
 PORTNAME=	eterm
 PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	x11
 MASTER_SITES=	http://www.eterm.org/download/
 DISTNAME=	Eterm-${PORTVERSION}
@@ -27,6 +27,8 @@ CONFIGURE_ARGS?=--enable-trans --enable-utmp \
 		--enable-xim --with-theme-update \
 		--with-backspace=bs --without-terminfo \
 		--enable-multi-charset
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		Eterm.1
 
