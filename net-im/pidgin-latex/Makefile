@@ -22,6 +22,7 @@ RUN_DEPENDS=	gaim:${PORTSDIR}/net/gaim \
 		latex:${PORTSDIR}/print/teTeX \
 		convert:${PORTSDIR}/graphics/ImageMagick
 
+CFLAGS+=	"-fPIC"
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
