@@ -1,8 +1,9 @@
 bin/oilwar
-share/games/oilwar/background.png
-share/games/oilwar/bitmaps.png
-share/games/oilwar/singlegunshot.wav
-share/games/oilwar/bulletricochet.wav
-share/games/oilwar/explode.wav
-share/games/oilwar/gasp.wav
-@dirrm share/games/oilwar
+%%DATADIR%%/background.png
+%%DATADIR%%/bitmaps.png
+%%DATADIR%%/bulletricochet.wav
+%%DATADIR%%/explode.wav
+%%DATADIR%%/gasp.wav
+%%DATADIR%%/oilwar.scores
+%%DATADIR%%/singlegunshot.wav
+@dirrm %%DATADIR%%

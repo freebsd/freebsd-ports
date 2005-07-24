@@ -7,7 +7,7 @@
 
 PORTNAME=	oilwar
 PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.2ndpoint.fi/projektit/filut/
 DISTNAME=	OilWar-${PORTVERSION}
@@ -15,11 +15,12 @@ DISTNAME=	OilWar-${PORTVERSION}
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	Evil army wants to steal your oil
 
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
 USE_SDL=	image mixer sdl
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|games/oilwar|${PORTNAME}|g ; \
+		s|/var/games|\$$\(datadir\)/oilwar|g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
