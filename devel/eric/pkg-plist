@@ -7,9 +7,6 @@ bin/eric3-re
 bin/eric3-trpreviewer
 bin/eric3-uipreviewer
 bin/eric3-unittest
-%%PYTHON_SITELIBDIR%%/eric3config.py
-%%PYTHON_SITELIBDIR%%/sitecustomize.pyc
-%%PYTHON_SITELIBDIR%%/sitecustomize.py
 %%PYTHON_SITELIBDIR%%/eric3/Checks/SyntaxCheckerDialog.py
 %%PYTHON_SITELIBDIR%%/eric3/Checks/SyntaxCheckerDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric3/Checks/SyntaxCheckerForm.py
@@ -22,16 +19,39 @@ bin/eric3-unittest
 %%PYTHON_SITELIBDIR%%/eric3/Checks/TabnannyForm.pyc
 %%PYTHON_SITELIBDIR%%/eric3/Checks/__init__.py
 %%PYTHON_SITELIBDIR%%/eric3/Checks/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/DTDs/Project-3.6.dtd
+%%PYTHON_SITELIBDIR%%/eric3/DTDs/Project-3.7.dtd
+%%PYTHON_SITELIBDIR%%/eric3/DTDs/Session-3.7.dtd
+%%PYTHON_SITELIBDIR%%/eric3/DTDs/Tasks-3.7.dtd
+%%PYTHON_SITELIBDIR%%/eric3/DebugClients/Ruby/AsyncFile.rb
+%%PYTHON_SITELIBDIR%%/eric3/DebugClients/Ruby/AsyncIO.rb
+%%PYTHON_SITELIBDIR%%/eric3/DebugClients/Ruby/Completer.rb
+%%PYTHON_SITELIBDIR%%/eric3/DebugClients/Ruby/Config.rb
+%%PYTHON_SITELIBDIR%%/eric3/DebugClients/Ruby/DebugClient.rb
+%%PYTHON_SITELIBDIR%%/eric3/DebugClients/Ruby/DebugClientBaseModule.rb
+%%PYTHON_SITELIBDIR%%/eric3/DebugClients/Ruby/DebugClientCapabilities.rb
+%%PYTHON_SITELIBDIR%%/eric3/DebugClients/Ruby/DebugProtocol.rb
+%%PYTHON_SITELIBDIR%%/eric3/DebugClients/Ruby/DebugQuit.rb
+%%PYTHON_SITELIBDIR%%/eric3/DebugClients/Ruby/Debuggee.rb
+%%PYTHON_SITELIBDIR%%/eric3/DebugClients/Ruby/__init__.rb
+%%PYTHON_SITELIBDIR%%/eric3/DebugClients/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/DebugClients/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/BreakPointViewer.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/BreakPointViewer.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DebugClientCapabilities.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/DebugClientCapabilities.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/EditWatchpointDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/EditWatchpointDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/EditWatchpointForm.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/EditWatchpointForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/WatchPointViewer.py
+%%PYTHON_SITELIBDIR%%/eric3/Debugger/WatchPointViewer.pyc
 %%PYTHON_SITELIBDIR%%/eric3/Debugger/AsyncFile.py
 %%PYTHON_SITELIBDIR%%/eric3/Debugger/AsyncFile.pyc
 %%PYTHON_SITELIBDIR%%/eric3/Debugger/AsyncIO.py
 %%PYTHON_SITELIBDIR%%/eric3/Debugger/AsyncIO.pyc
 %%PYTHON_SITELIBDIR%%/eric3/Debugger/AsyncIOBase.py
 %%PYTHON_SITELIBDIR%%/eric3/Debugger/AsyncIOBase.pyc
-%%PYTHON_SITELIBDIR%%/eric3/Debugger/BreakpointDialog.py
-%%PYTHON_SITELIBDIR%%/eric3/Debugger/BreakpointDialog.pyc
-%%PYTHON_SITELIBDIR%%/eric3/Debugger/BreakpointForm.py
-%%PYTHON_SITELIBDIR%%/eric3/Debugger/BreakpointForm.pyc
 %%PYTHON_SITELIBDIR%%/eric3/Debugger/Config.py
 %%PYTHON_SITELIBDIR%%/eric3/Debugger/Config.pyc
 %%PYTHON_SITELIBDIR%%/eric3/Debugger/Cyclops/Cyclops.py
@@ -120,6 +140,39 @@ bin/eric3-unittest
 %%PYTHON_SITELIBDIR%%/eric3/Documentation/README-passive-debugging.txt
 %%PYTHON_SITELIBDIR%%/eric3/Documentation/README-PyXML-0.8.3.txt
 %%PYTHON_SITELIBDIR%%/eric3/Documentation/README-scripting.txt
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.DebugClients.Ruby.AsyncFile.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.DebugClients.Ruby.AsyncIO.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.DebugClients.Ruby.Completer.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.DebugClients.Ruby.Config.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.DebugClients.Ruby.DebugClient.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.DebugClients.Ruby.DebugClientBaseModule.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.DebugClients.Ruby.DebugClientCapabilities.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.DebugClients.Ruby.DebugProtocol.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.DebugClients.Ruby.DebugQuit.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.DebugClients.Ruby.Debuggee.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.DebugClients.Ruby.__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Debugger.BreakPointViewer.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Debugger.DebugClientCapabilities.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Debugger.EditWatchpointDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Debugger.EditWatchpointForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Debugger.WatchPointViewer.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.QScintilla.LexerLua.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.QScintilla.LexerRuby.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.UI.TaskPropertiesDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.UI.TaskPropertiesForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.UI.TaskViewer.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Utilities.ClassBrowsers.ClbrBaseClasses.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Utilities.ClassBrowsers.__init__.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Utilities.ClassBrowsers.idlclbr.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Utilities.ClassBrowsers.pyclbr.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Utilities.ClassBrowsers.rbclbr.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.VCS.subversionPackage.RevisionSelectionDialog.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.VCS.subversionPackage.RevisionSelectionForm.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.XML.TasksHandler.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.XML.TasksWriter.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/index-eric3.DebugClients.Ruby.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/index-eric3.DebugClients.html
+%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/index-eric3.Utilities.ClassBrowsers.html
 %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Checks.SyntaxCheckerDialog.html
 %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Checks.SyntaxCheckerForm.html
 %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Checks.Tabnanny.html
@@ -128,8 +181,6 @@ bin/eric3-unittest
 %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Debugger.AsyncFile.html
 %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Debugger.AsyncIO.html
 %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Debugger.AsyncIOBase.html
-%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Debugger.BreakpointDialog.html
-%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Debugger.BreakpointForm.html
 %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Debugger.Config.html
 %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Debugger.Cyclops.Cyclops.html
 %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Debugger.Cyclops.HTMLCyclops.html
@@ -312,7 +363,6 @@ bin/eric3-unittest
 %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.UI.UserInterface.html
 %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.uninstall.html
 %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Utilities.ModuleParser.html
-%%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Utilities.pyclbr.html
 %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Utilities.SingleApplication.html
 %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Utilities.Startup.html
 %%PYTHON_SITELIBDIR%%/eric3/Documentation/Source/eric3doc-eric3.Utilities.__init__.html
@@ -517,6 +567,7 @@ bin/eric3-unittest
 %%PYTHON_SITELIBDIR%%/eric3/eric3.api
 %%PYTHON_SITELIBDIR%%/eric3/eric3.py
 %%PYTHON_SITELIBDIR%%/eric3/eric3.pyc
+%%PYTHON_SITELIBDIR%%/eric3/eric3.pyw
 %%PYTHON_SITELIBDIR%%/eric3/Examples/hallo.py
 %%PYTHON_SITELIBDIR%%/eric3/Examples/hallo.pyc
 %%PYTHON_SITELIBDIR%%/eric3/Examples/modpython.py
@@ -581,6 +632,47 @@ bin/eric3-unittest
 %%PYTHON_SITELIBDIR%%/eric3/Helpviewer/SearchForm.pyc
 %%PYTHON_SITELIBDIR%%/eric3/Helpviewer/__init__.py
 %%PYTHON_SITELIBDIR%%/eric3/Helpviewer/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/breakpoints.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/fileRuby.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/led_green.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/led_red.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/module.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-api.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-application.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-autocompletion.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-calltips.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-colours.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-debugger.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-editor.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-general.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-help.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-highlighter-association.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-highlighting-styles.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-icons.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-interface.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-mail_generic.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-orbit.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-printer.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-project.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-properties.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-pyDebugger.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-python.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-qtlogo.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-rbDebugger.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-refactoring.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-styles.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-vcs.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/preferences-viewmanager.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/projectSourcesPy.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/projectSourcesPyMixed.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/projectSourcesRb.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/projectSourcesRbMixed.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/task.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/taskCompleted.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/taskPrioHigh.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/taskPrioLow.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/taskPriority.png
+%%PYTHON_SITELIBDIR%%/eric3/icons/default/watchpoints.png
 %%PYTHON_SITELIBDIR%%/eric3/icons/default/addBookmark.png
 %%PYTHON_SITELIBDIR%%/eric3/icons/default/altn.png
 %%PYTHON_SITELIBDIR%%/eric3/icons/default/anychar.png
@@ -764,6 +856,7 @@ bin/eric3-unittest
 %%PYTHON_SITELIBDIR%%/eric3/pixmaps/listspace.png
 %%PYTHON_SITELIBDIR%%/eric3/pixmaps/tabview.png
 %%PYTHON_SITELIBDIR%%/eric3/pixmaps/workspace.png
+%%PYTHON_SITELIBDIR%%/eric3/pixmaps/eric.ico
 %%PYTHON_SITELIBDIR%%/eric3/Preferences/ConfigurationDialog.py
 %%PYTHON_SITELIBDIR%%/eric3/Preferences/ConfigurationDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric3/Preferences/ConfigurationForm.py
@@ -844,6 +937,10 @@ bin/eric3-unittest
 %%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerJava.pyc
 %%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerJavaScript.py
 %%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerJavaScript.pyc
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerLua.py
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerLua.pyc
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerRuby.py
+%%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerRuby.pyc
 %%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerPerl.py
 %%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerPerl.pyc
 %%PYTHON_SITELIBDIR%%/eric3/QScintilla/LexerPython.py
@@ -1030,12 +1127,26 @@ bin/eric3-unittest
 %%PYTHON_SITELIBDIR%%/eric3/UI/UserInterface.pyc
 %%PYTHON_SITELIBDIR%%/eric3/UI/__init__.py
 %%PYTHON_SITELIBDIR%%/eric3/UI/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/TaskPropertiesDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/TaskPropertiesDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/TaskPropertiesForm.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/TaskPropertiesForm.pyc
+%%PYTHON_SITELIBDIR%%/eric3/UI/TaskViewer.py
+%%PYTHON_SITELIBDIR%%/eric3/UI/TaskViewer.pyc
 %%PYTHON_SITELIBDIR%%/eric3/uninstall.py
 %%PYTHON_SITELIBDIR%%/eric3/uninstall.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Utilities/ClassBrowsers/ClbrBaseClasses.py
+%%PYTHON_SITELIBDIR%%/eric3/Utilities/ClassBrowsers/ClbrBaseClasses.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Utilities/ClassBrowsers/__init__.py
+%%PYTHON_SITELIBDIR%%/eric3/Utilities/ClassBrowsers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Utilities/ClassBrowsers/idlclbr.py
+%%PYTHON_SITELIBDIR%%/eric3/Utilities/ClassBrowsers/idlclbr.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Utilities/ClassBrowsers/pyclbr.py
+%%PYTHON_SITELIBDIR%%/eric3/Utilities/ClassBrowsers/pyclbr.pyc
+%%PYTHON_SITELIBDIR%%/eric3/Utilities/ClassBrowsers/rbclbr.py
+%%PYTHON_SITELIBDIR%%/eric3/Utilities/ClassBrowsers/rbclbr.pyc
 %%PYTHON_SITELIBDIR%%/eric3/Utilities/ModuleParser.py
 %%PYTHON_SITELIBDIR%%/eric3/Utilities/ModuleParser.pyc
-%%PYTHON_SITELIBDIR%%/eric3/Utilities/pyclbr.py
-%%PYTHON_SITELIBDIR%%/eric3/Utilities/pyclbr.pyc
 %%PYTHON_SITELIBDIR%%/eric3/Utilities/SingleApplication.py
 %%PYTHON_SITELIBDIR%%/eric3/Utilities/SingleApplication.pyc
 %%PYTHON_SITELIBDIR%%/eric3/Utilities/Startup.py
@@ -1174,6 +1285,10 @@ bin/eric3-unittest
 %%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/TagForm.pyc
 %%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/__init__.py
 %%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/RevisionSelectionDialog.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/RevisionSelectionDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/RevisionSelectionForm.py
+%%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage/RevisionSelectionForm.pyc
 %%PYTHON_SITELIBDIR%%/eric3/VCS/VersionControl.py
 %%PYTHON_SITELIBDIR%%/eric3/VCS/VersionControl.pyc
 %%PYTHON_SITELIBDIR%%/eric3/VCS/__init__.py
@@ -1302,6 +1417,10 @@ bin/eric3-unittest
 %%PYTHON_SITELIBDIR%%/eric3/XML/XMLWriterBase.pyc
 %%PYTHON_SITELIBDIR%%/eric3/XML/__init__.py
 %%PYTHON_SITELIBDIR%%/eric3/XML/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3/XML/TasksHandler.py
+%%PYTHON_SITELIBDIR%%/eric3/XML/TasksHandler.pyc
+%%PYTHON_SITELIBDIR%%/eric3/XML/TasksWriter.py
+%%PYTHON_SITELIBDIR%%/eric3/XML/TasksWriter.pyc
 %%PYTHON_SITELIBDIR%%/eric3/__init__.py
 %%PYTHON_SITELIBDIR%%/eric3/__init__.pyc
 @dirrm %%PYTHON_SITELIBDIR%%/eric3/pixmaps
@@ -1320,6 +1439,7 @@ bin/eric3-unittest
 @dirrm %%PYTHON_SITELIBDIR%%/eric3/VCS/subversionPackage
 @dirrm %%PYTHON_SITELIBDIR%%/eric3/VCS/cvsPackage
 @dirrm %%PYTHON_SITELIBDIR%%/eric3/VCS
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/Utilities/ClassBrowsers
 @dirrm %%PYTHON_SITELIBDIR%%/eric3/Utilities
 @dirrm %%PYTHON_SITELIBDIR%%/eric3/UI
 @dirrm %%PYTHON_SITELIBDIR%%/eric3/Tools
@@ -1337,6 +1457,7 @@ bin/eric3-unittest
 @dirrm %%PYTHON_SITELIBDIR%%/eric3/Project
 @dirrm %%PYTHON_SITELIBDIR%%/eric3/Preferences
 @dirrm %%PYTHON_SITELIBDIR%%/eric3/KdeQt
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/i18n
 @dirrm %%PYTHON_SITELIBDIR%%/eric3/Helpviewer
 @dirrm %%PYTHON_SITELIBDIR%%/eric3/Graphics
 @dirrm %%PYTHON_SITELIBDIR%%/eric3/Examples/Scripting
@@ -1347,6 +1468,8 @@ bin/eric3-unittest
 @dirrm %%PYTHON_SITELIBDIR%%/eric3/Documentation
 @dirrm %%PYTHON_SITELIBDIR%%/eric3/DesignerTemplates
 @dirrm %%PYTHON_SITELIBDIR%%/eric3/Debugger/Cyclops
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/DebugClients/Ruby
+@dirrm %%PYTHON_SITELIBDIR%%/eric3/DebugClients
 @dirrm %%PYTHON_SITELIBDIR%%/eric3/Debugger
 @dirrm %%PYTHON_SITELIBDIR%%/eric3/DTDs
 @dirrm %%PYTHON_SITELIBDIR%%/eric3/Checks

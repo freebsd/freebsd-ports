@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eric
-PORTVERSION=	3.6.2
+PORTVERSION=	3.7.1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	eric-ide
@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${X11BASE}/lib/libqscintilla.so:${PORTSDIR}/x11-toolkits/qscintil
 		pyuic:${PORTSDIR}/x11-toolkits/py-qt
 
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 do-install:
