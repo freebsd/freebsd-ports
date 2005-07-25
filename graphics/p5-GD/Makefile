@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	GD
-PORTVERSION=	2.23
-PORTREVISION=	1
+PORTVERSION=	2.25
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	GD
@@ -25,7 +24,7 @@ CONFIGURE_ARGS=	-options "JPEG,FT,XPM,GIF,PNG" \
 		-lib_png_path ${LOCALBASE} -lib_zlib_path ${LOCALBASE}
 
 MAN1=		bdf2gdfont.pl.1
-MAN3=		GD.3
+MAN3=		GD.3 GD::Polyline.3 GD::Simple.3
 
 .include <bsd.port.pre.mk>
 
