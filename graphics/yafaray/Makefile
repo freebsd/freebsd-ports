@@ -36,7 +36,7 @@ pre-everything::
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} <= 500000
-BROKEN=		"Does not compile (bad C++ code)"
+USE_GCC=3.4+
 .endif
 
 post-patch:
