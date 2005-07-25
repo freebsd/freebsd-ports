@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.wesnoth.org/files/
@@ -36,7 +36,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
 MAN6=		wesnoth.6
-MANLANG=	"" de
+MANLANG=	"" de sv
 
 .if defined(WITH_CAMPAIGN) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-campaign-server

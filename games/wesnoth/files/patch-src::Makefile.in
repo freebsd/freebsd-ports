@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Tue Jun  7 19:32:02 2005
-+++ src/Makefile.in	Tue Jun  7 19:33:28 2005
-@@ -912,10 +912,10 @@
+--- src/Makefile.in.orig	Mon Jul 25 13:41:55 2005
++++ src/Makefile.in	Mon Jul 25 13:42:40 2005
+@@ -918,10 +918,10 @@
  
  exploder_LDADD = @SDL_IMAGE_LIBS@ @SDL_LIBS@ $(LIBZIPIOS) $(LIBINTL) $(PNG_LIBS)
  cutter_LDADD = @SDL_IMAGE_LIBS@ @SDL_LIBS@ $(LIBZIPIOS) $(LIBINTL) $(PNG_LIBS)
