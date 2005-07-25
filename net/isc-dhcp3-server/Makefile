@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	dhcp
-PORTVERSION=	3.0.2
-PORTREVISION=	8
+PORTVERSION=	3.0.3
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	dhcp dhcp/dhcp-3.0-history
@@ -31,6 +31,7 @@ OPTIONS=	INTERFACE_POLLING "interface polling support" on
 .if ${SUBSYS} == server
 OPTIONS=	DHCP_PARANOIA "add -user, -group and -chroot options" on \
 		DHCP_JAIL "add -chroot and -jail options" on \
+		DHCP_SOCKETS "use sockets instead of /dev/bpf (jail-only)" off \
 		DHCP_LDAP "add experimental LDAP backend support" off \
 		DHCP_LDAP_SSL "support LDAP connection over SSL/TLS" on \
 		OPENSSL_BASE "use the base system OpenSSL (required by TLS)" on \
@@ -42,9 +43,9 @@ OPTIONS=	DHCP_PARANOIA "add -user, -group and -chroot options" on \
 
 .if ${SUBSYS} == server && defined(WITH_DHCP_LDAP)
 # Based on patch from Brian Masney :
-PATCH_SITES=	http://www.newwave.net/~masneyb/ \
-		ftp://ftp.frm2.tum.de/pub/jpulz/FreeBSD/
-PATCHFILES=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}-ldap-patch
+PATCH_SITES=	http://www.newwave.net/~masneyb/:ldap \
+		ftp://ftp.frm2.tum.de/pub/jpulz/FreeBSD/:ldap
+PATCHFILES=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}-ldap-patch:ldap
 PATCH_DIST_STRIP=	-p1
 
 USE_PERL5_RUN=	yes
@@ -59,9 +60,9 @@ USE_OPENSSL=	yes
 
 .if ${SUBSYS} == server && defined(WITH_DHCP_LQ)
 # Based on patch from Dmitry Sukhodoev :
-PATCH_SITES=	http://bingo.ru/~raven/FreeBSD/patches/ \
-		ftp://ftp.frm2.tum.de/pub/jpulz/FreeBSD/
-PATCHFILES+=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}-dlq-patch
+PATCH_SITES+=	http://bingo.ru/~raven/FreeBSD/patches/:dlq \
+		ftp://ftp.frm2.tum.de/pub/jpulz/FreeBSD/:dlq
+PATCHFILES+=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}-dlq-patch:dlq
 .endif
 
 # Global variables
@@ -225,6 +226,9 @@ patch-site-conf:
 .endif
 .if !defined(WITHOUT_DHCP_JAIL)
 	@${ECHO_CMD} CFLAGS += -DJAIL >> ${WRKSRC}/site.conf
+.if defined(WITH_DHCP_SOCKETS)
+	@${ECHO_CMD} CFLAGS += -DUSE_SOCKETS >> ${WRKSRC}/site.conf
+.endif
 .endif
 .if defined(WITH_DHCP_LDAP)
 	@${ECHO_CMD} CFLAGS += -I${LOCALBASE}/include >> ${WRKSRC}/site.conf
