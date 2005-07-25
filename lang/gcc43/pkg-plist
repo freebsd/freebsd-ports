@@ -34,6 +34,4 @@ include/ssp/unistd.h
 %%LIBJAVA%%include/ffi.h
 %%LIBJAVA%%libdata/pkgconfig/libgcj.pc
 %%LIBJAVA%%share/java/libgcj-%%GCC_VER%%.jar
-@dirrm share/classpath/api
-@dirrm share/classpath
 @comment Insert PLIST.lib here
