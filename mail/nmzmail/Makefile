@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	nmzmail
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ecademix.com/JohannesHofmann/
 
@@ -17,10 +17,12 @@ COMMENT=	Fast mail searching for mutt
 RUN_DEPENDS=	namazu:${PORTSDIR}/databases/namazu2 \
 		mutt:${PORTSDIR}/mail/mutt
 
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
-ALL_TARGET=	# empty
+
 PLIST_FILES=	bin/nmzmail
-PORTDOCS=	README
+PORTDOCS=	README	NEWS
 
 .include <bsd.port.pre.mk>
 
@@ -28,13 +30,12 @@ PORTDOCS=	README
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/nmzmail ${PREFIX}/bin
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
+	for f in ${PORTDOCS}; do \
+	${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
+	done
 .endif
 
 .include <bsd.port.post.mk>
