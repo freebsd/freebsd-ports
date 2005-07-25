@@ -11752,6 +11752,7 @@ tlf		ports/comms/tlf
 tmake		ports/devel/tmake
 tmda		ports/mail/tmda
 tmetric		ports/benchmarks/tmetric
+tmpreaper	ports/sysutils/tmpreaper
 tmpwatch	ports/sysutils/tmpwatch
 tn-aspell	ports/textproc/tn-aspell
 tn-ooodict-ZA	ports/editors/ooodict-tn_ZA
