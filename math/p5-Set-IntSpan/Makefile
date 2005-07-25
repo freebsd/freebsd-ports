@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Set-IntSpan
-PORTVERSION=	1.07
+PORTVERSION=	1.08
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Set
@@ -18,5 +18,8 @@ COMMENT=	Manages sets of integers
 PERL_CONFIGURE=	yes
 
 MAN3=		Set::IntSpan.3
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^our|my|g' ${WRKSRC}/IntSpan.pm
 
 .include <bsd.port.mk>
