@@ -7,6 +7,7 @@
 
 PORTNAME=	gdc
 PORTVERSION=	0.15
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		http://home.earthlink.net/~dvdfrdmn/d/:gdc
@@ -45,11 +46,12 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
 
 GXX_INC=${PREFIX}/lib/gcc/${CONFIGURE_TARGET}/${__GCC_VERSION}/include/c++/
+GDC_INC=${PREFIX}/include/d/${__GCC_VERSION}
 CONFIGURE_ARGS+=--disable-nls --with-system-zlib \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-gxx-include-dir=${GXX_INC} \
 		--disable-shared --prefix=${PREFIX} \
-		--enable-languages=c,d,c++
+		--enable-languages=c,c++,d
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 GNU_CONFIGURE=	yes
 PLIST_SUB=	__GCC_VER=${__GCC_VERSION} CONF_TARGET=${CONFIGURE_TARGET}
@@ -82,6 +84,9 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
 		${GCCDIR}/version.c
+	@${REINPLACE_CMD} -e \
+		'/^gcc_d_include_dir/s|^.*$$|gcc_d_include_dir = ${GDC_INC}|' \
+		${GCCDIR}/d/Make-lang.in
 
 post-build:
 .ifdef 	WITH_UNITTEST
