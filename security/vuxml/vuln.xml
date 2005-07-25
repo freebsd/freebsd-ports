@@ -32,6 +32,52 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1db7ecf5-fd24-11d9-b4d6-0007e900f87b">
+    <topic>clamav -- multiple remote buffer overflows</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>0.86.2</lt></range>
+      </package>
+      <package>
+	<name>clamav-devel</name>
+	<range><le>20050704</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/16180/">
+	  <p>Neel Mehta and Alex Wheeler have reported some
+	    vulnerabilities in Clam AntiVirus, which can be exploited
+	    by malicious people to cause a DoS (Denial of Service)
+	    or compromise a vulnerable system.</p>
+	  <ol>
+	    <li>Two integer overflow errors in "libclamav/tnef.c"
+	      when processing TNEF files can be exploited to cause
+	      a heap-based buffer overflow via a specially crafted
+	      TNEF file with a length value of -1 in the header.</li>
+	    <li>An integer overflow error in "libclamav/chmunpack.c"
+	      can be exploited to cause a heap-based buffer overflow
+	      via a specially crafted CHM file with a chunk entry that
+	      has a filename length of -1.</li>
+	    <li>A boundary error in "libclamav/fsg.c" when
+	      processing a FSG compressed file can cause a heap-based
+	      buffer overflow.</li>
+	  </ol>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.rem0te.com/public/images/clamav.pdf</url>
+      <url>http://secunia.com/advisories/16180/</url>
+    </references>
+    <dates>
+      <discovery>2005-07-24</discovery>
+      <entry>2005-07-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ccd325d2-fa08-11d9-bc08-0001020eed82">
     <topic>isc-dhcpd -- format string vulnerabilities</topic>
     <affects>
