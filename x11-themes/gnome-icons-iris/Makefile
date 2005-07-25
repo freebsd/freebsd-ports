@@ -10,12 +10,11 @@
 # x11-themes/gnome-icons/bsd.gnome-icons.mk for it.
 
 PORTNAME=	iris
-PORTVERSION=	0.4
-PORTREVISION=	1
+PORTVERSION=	20050420
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	teams/art.gnome.org/themes/icon
-DISTNAME=	ICON-Iris-${PORTVERSION}
+DISTNAME=	ICON-Iris
 
 MAINTAINER=	tmclaugh@sdf.lonestar.org
 COMMENT=	Iris SVG Icons for Gnome
