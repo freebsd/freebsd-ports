@@ -5020,6 +5020,7 @@ lapack++	ports/math/lapack++
 lapack95	ports/math/lapack95
 larbin		ports/www/larbin
 larswm		ports/x11-wm/larswm
+laspack		ports/math/laspack
 latd		ports/net/latd
 latex		ports/print/latex
 latex-arydshln	ports/print/latex-arydshln
