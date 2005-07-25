@@ -1,0 +1,6 @@
+bin/kchmviewer
+%%KDE%%lib/kde3/kio_msits.a
+%%KDE%%lib/kde3/kio_msits.la
+%%KDE%%lib/kde3/kio_msits.so
+%%KDE%%share/applnk/kchmviewer.desktop
+%%KDE%%share/services/msits.protocol

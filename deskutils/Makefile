@@ -77,6 +77,7 @@
     SUBDIR += kbirthday
     SUBDIR += kblticker
     SUBDIR += kchm
+    SUBDIR += kchmviewer
     SUBDIR += kdepim3
     SUBDIR += kdissert
     SUBDIR += kickpim

@@ -1,0 +1,11 @@
+KchmViewer is a chm (MS HTML help file format) viewer. Unlike most existing
+CHM viewers for Unix, it uses Trolltech's Qt widget library, and does not
+depend on KDE or Gnome. However, it may be compiled with full KDE support,
+including KDE widgets and KIO/KHTML.
+
+The main advantage of KchmViewer is non-english language support. Unlike
+others, KchmViewer in most cases correctly detects help file encoding,
+correctly shows tables of context of russian, korean, chinese and japanese
+help files, and correctly searches in non-english help files.
+
+WWW: http://kchmviewer.sourceforge.net/
