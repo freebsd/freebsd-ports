@@ -10,12 +10,13 @@ PORTVERSION=	5.5.9
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	tomcat-5/v${PORTVERSION}/bin
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	liukang@bjut.edu.cn
 COMMENT=	Open-source Java web server by Apache, 5.5.x branch
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.4+
 NO_BUILD=	YES
 
 .if !defined(NOPORTDOCS)
@@ -56,7 +57,15 @@ PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} WWWOWN=${USER} WWWGRP=${GROUP}
 LATEST_LINK=	${APP_SHORTNAME}
 CONF_EXT=	sample
 PLIST_SUB+=	CONF_EXT=${CONF_EXT}
+
 .include <bsd.port.pre.mk>
+
+.if ${JAVA_PORT_VERSION:C/^([0-9])\.([0-9])(.*)$/\1.\2/} == "1.4"
+DISTFILES+=	${PORTNAME}-${PORTVERSION}-compat.tar.gz
+PLIST_SUB+=	JAVA14=""
+.else
+PLIST_SUB+=	JAVA14="@comment "
+.endif
 
 pre-patch:
 	@${ECHO_MSG} "Installation settings:"
