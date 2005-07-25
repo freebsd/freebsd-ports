@@ -24,8 +24,10 @@ dcc/libexec/dcc-stats-graph
 dcc/libexec/dcc-stats-init
 dcc/libexec/dccd
 dcc/libexec/dccsight
+dcc/libexec/fetchblack
 dcc/libexec/fetch-testmsg-whitelist
 dcc/libexec/hackmc
+dcc/libexec/list-clients
 dcc/libexec/logger
 dcc/libexec/newwebuser
 dcc/libexec/rcDCC
