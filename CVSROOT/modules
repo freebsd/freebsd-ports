@@ -3357,6 +3357,7 @@ gtk-gnutella	ports/net/gtk-gnutella
 gtk-imonc	ports/sysutils/gtk-imonc
 gtk-industrial-theme	ports/x11-themes/gtk-industrial-theme
 gtk-knocker	ports/security/gtk-knocker
+gtk-launch	ports/x11/gtk-launch
 gtk-lila-theme	ports/x11-themes/gtk-lila-theme
 gtk-lila-theme-extras	ports/x11-themes/gtk-lila-theme-extras
 gtk-longhorninspirat-theme	ports/x11-themes/gtk-longhorninspirat-theme
