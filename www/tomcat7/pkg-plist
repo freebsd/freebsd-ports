@@ -30,6 +30,7 @@ etc/rc.d/020.jakarta-tomcat55.sh
 %%T%%/bin/commons-daemon.jar
 %%T%%/bin/commons-logging-api.jar
 %%T%%/bin/digest.sh
+%%JAVA14%%%%T%%/bin/jmx.jar
 %%T%%/bin/jsvc.tar.gz
 %%T%%/bin/setclasspath.sh
 %%T%%/bin/shutdown.sh
@@ -38,6 +39,8 @@ etc/rc.d/020.jakarta-tomcat55.sh
 %%T%%/bin/tool-wrapper.sh
 %%T%%/bin/version.sh
 %%T%%/common/classes/logging.properties
+%%JAVA14%%%%T%%/common/endorsed/xercesImpl.jar
+%%JAVA14%%%%T%%/common/endorsed/xml-apis.jar
 %%T%%/common/i18n/tomcat-i18n-en.jar
 %%T%%/common/i18n/tomcat-i18n-es.jar
 %%T%%/common/i18n/tomcat-i18n-fr.jar
