@@ -1,7 +1,7 @@
---- dhcpctl/Makefile.dist.orig	Mon Apr 28 16:31:57 2003
-+++ dhcpctl/Makefile.dist	Mon Apr 28 16:24:20 2003
-@@ -17,11 +17,11 @@
- # http://www.isc.org for more information.
+--- dhcpctl/Makefile.dist.orig	Thu Mar  3 17:55:23 2005
++++ dhcpctl/Makefile.dist	Mon Jul 25 08:33:33 2005
+@@ -22,11 +22,11 @@
+ #   http://www.isc.org/
  #
  
 -CATMANPAGES = dhcpctl.cat3 omshell.cat1
@@ -15,7 +15,7 @@
  HDRS   = dhcpctl.h
  
  INCLUDES = $(BINDINC) -I$(TOP)/includes
-@@ -29,10 +29,7 @@
+@@ -34,10 +34,7 @@
  DHCPCTLLIBS = libdhcpctl.a ../common/libdhcp.a $(BINDLIB) \
  		../omapip/libomapi.a ../dst/libdst.a
  
@@ -27,7 +27,7 @@
  
  cltest:	cltest.o $(DHCPCTLLIBS)
  	$(CC) $(DEBUG) $(LFLAGS) -o cltest cltest.o $(DHCPCTLLIBS) $(LIBS)
-@@ -43,8 +40,7 @@
+@@ -48,8 +45,7 @@
  	$(RANLIB) libdhcpctl.a
  
  install: all $(CATMANPAGES)
@@ -37,7 +37,7 @@
  	  foo=""; \
  	  for bar in `echo $(DESTDIR)$${dir} |tr / ' '`; do \
  	    foo=$${foo}/$$bar; \
-@@ -64,16 +60,12 @@
+@@ -69,16 +65,12 @@
  	  $(MANINSTALL) $(MANFROM) $${prefix}.$(MANCAT)$${suffix} $(MANTO) \
  			$(DESTDIR)$(LIBMANDIR)/$${prefix}$(LIBMANEXT); \
  	done
@@ -50,12 +50,12 @@
  	$(MKDEP) $(INCLUDES) $(PREDEFINES) $(SRC)
  
  clean:
--	-rm -f $(OBJ) test.o svtest cltest.o cltest
+-	-rm -f $(OBJ) omshell.o omshell cltest.o cltest
 +	-rm -f $(OBJ) cltest.o cltest
  
  realclean: clean
  	-rm -f libdhcpctl.a *~ $(CATMANPAGES) $(SEDMANPAGES)
-@@ -82,7 +74,7 @@
+@@ -87,7 +79,7 @@
  	-rm -f Makefile
  
  links:
@@ -64,7 +64,7 @@
  	  if [ ! -b $$foo ]; then \
  	    rm -f $$foo; \
  	  fi; \
-@@ -95,12 +87,5 @@
+@@ -100,12 +92,5 @@
  dhcpctl.man3:	dhcpctl.3
  	sed -e "s#ETCDIR#$(ETC)#g" -e "s#DBDIR#$(VARDB)#g" \
  		-e "s#RUNDIR#$(VARRUN)#g" < dhcpctl.3 >dhcpctl.man3
