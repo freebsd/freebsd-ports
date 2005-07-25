@@ -1,0 +1,10 @@
+Thinglaunch is a very fast launcher program for X.
+
+You can bind it to a key in your favorite window manager, and when you want to
+start a program, just type its name. thinglaunch has a tiny footprint and
+depends only on Xlib.
+
+WWW: http://unix.freshmeat.net/projects/thinglaunch/
+
+- ehaupt
+ehaupt@critical.ch
