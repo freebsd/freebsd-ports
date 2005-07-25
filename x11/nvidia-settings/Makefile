@@ -7,7 +7,7 @@
 
 PORTNAME=	nvidia-settings
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://download.nvidia.com/XFree86/nvidia-settings/
 
