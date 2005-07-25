@@ -12225,6 +12225,7 @@ wargus		ports/games/wargus
 warppipe	ports/net/warppipe
 washerdryer	ports/x11-clocks/washerdryer
 watchdog	ports/sysutils/watchdog
+watchfolder	ports/sysutils/watchfolder
 wavbreaker	ports/audio/wavbreaker
 waveplay	ports/audio/waveplay
 wavpack		ports/audio/wavpack
