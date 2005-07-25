@@ -1,0 +1,13 @@
+This port provides a program that can be used to clean out temporary-file
+directories. It recursively searches the directory, refusing to chdir()
+across symlinks, and removes files that have not been accessed in a
+user-specified amount of time. You can specify a set of files to protect
+from deletion with a shell pattern.
+
+It will not remove symlinks, sockets, fifos, or special files unless given a
+command line option enabling it to.
+
+WWW: http://packages.debian.org/stable/admin/tmpreaper.html
+
+- ehaupt
+ehaupt@critical.ch
