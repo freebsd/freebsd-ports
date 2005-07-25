@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bld
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.online.redhate.org/bld/
 
@@ -21,7 +21,8 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/bld
 PORTDOCS=	README README.postfix
 MAN5=		bld_whitelist.conf.5 bld_acl.conf.5 bld.conf.5
 MAN8=		bldsubmit.8 bld.8 bldquery.8 bldread.8 bldinsert.8 blddecr.8 \
-		bld-pf_policy.8
+		bld-pf_policy.8 bld-pf_log.pl.8 bld-mrtg.pl.8 \
+		bld-will_spam_for_food.pl.8
 
 SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g'
 RC_DIR=		${PREFIX}/etc/rc.d

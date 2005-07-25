@@ -4,9 +4,11 @@ sbin/bldread
 sbin/bldquery
 sbin/bldinsert
 sbin/blddecr
+sbin/bld-mrtg.pl
 sbin/bld-pf_policy
 sbin/bld-pf_policy.pl
 sbin/bld-pf_log.pl
+sbin/bld-will_spam_for_food.pl
 etc/rc.d/bld.sh
 etc/bld/bld.conf.sample
 @unexec rmdir %D/etc/bld 2>/dev/null || (echo ; echo "Keeping homemade configuration files in %D/etc/bld" ; echo) || true
