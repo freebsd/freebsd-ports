@@ -28,6 +28,7 @@ MASTER_SITE_SUBDIR=	. old related/postfix
 DISTNAME=	postfix-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
+# blanket approval for version updates: marcus@corp.grupos.com.br
 MAINTAINER=	vivek@khera.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
