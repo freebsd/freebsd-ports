@@ -1,70 +1,70 @@
-GNUstep/Apps/WPrefs.app/WPrefs
-GNUstep/Apps/WPrefs.app/WPrefs.tiff
-GNUstep/Apps/WPrefs.app/WPrefs.xpm
-GNUstep/Apps/WPrefs.app/tiff/advancetonewworkspace.tiff
-GNUstep/Apps/WPrefs.app/tiff/animations.tiff
-GNUstep/Apps/WPrefs.app/tiff/appearance.tiff
-GNUstep/Apps/WPrefs.app/tiff/clip.tiff
-GNUstep/Apps/WPrefs.app/tiff/configs.tiff
-GNUstep/Apps/WPrefs.app/tiff/cycleworkspaces.tiff
-GNUstep/Apps/WPrefs.app/tiff/dock.tiff
-GNUstep/Apps/WPrefs.app/tiff/dontlinkworkspaces.tiff
-GNUstep/Apps/WPrefs.app/tiff/ergonomic.tiff
-GNUstep/Apps/WPrefs.app/tiff/expert.tiff
-GNUstep/Apps/WPrefs.app/tiff/fonts.tiff
-GNUstep/Apps/WPrefs.app/tiff/iconprefs.tiff
-GNUstep/Apps/WPrefs.app/tiff/keyboard.tiff
-GNUstep/Apps/WPrefs.app/tiff/keyboardprefs.tiff
-GNUstep/Apps/WPrefs.app/tiff/keyshortcuts.tiff
-GNUstep/Apps/WPrefs.app/tiff/menualign1.tiff
-GNUstep/Apps/WPrefs.app/tiff/menualign2.tiff
-GNUstep/Apps/WPrefs.app/tiff/menuprefs.tiff
-GNUstep/Apps/WPrefs.app/tiff/menus.tiff
-GNUstep/Apps/WPrefs.app/tiff/moreanim.tiff
-GNUstep/Apps/WPrefs.app/tiff/mousesettings.tiff
-GNUstep/Apps/WPrefs.app/tiff/mousespeed.tiff
-GNUstep/Apps/WPrefs.app/tiff/msty1.tiff
-GNUstep/Apps/WPrefs.app/tiff/msty2.tiff
-GNUstep/Apps/WPrefs.app/tiff/msty3.tiff
-GNUstep/Apps/WPrefs.app/tiff/newstyle.tiff
-GNUstep/Apps/WPrefs.app/tiff/nonopaque.tiff
-GNUstep/Apps/WPrefs.app/tiff/oldstyle.tiff
-GNUstep/Apps/WPrefs.app/tiff/opaque.tiff
-GNUstep/Apps/WPrefs.app/tiff/paths.tiff
-GNUstep/Apps/WPrefs.app/tiff/smooth.tiff
-GNUstep/Apps/WPrefs.app/tiff/sound.tiff
-GNUstep/Apps/WPrefs.app/tiff/speed0.tiff
-GNUstep/Apps/WPrefs.app/tiff/speed0s.tiff
-GNUstep/Apps/WPrefs.app/tiff/speed1.tiff
-GNUstep/Apps/WPrefs.app/tiff/speed1s.tiff
-GNUstep/Apps/WPrefs.app/tiff/speed2.tiff
-GNUstep/Apps/WPrefs.app/tiff/speed2s.tiff
-GNUstep/Apps/WPrefs.app/tiff/speed3.tiff
-GNUstep/Apps/WPrefs.app/tiff/speed3s.tiff
-GNUstep/Apps/WPrefs.app/tiff/speed4.tiff
-GNUstep/Apps/WPrefs.app/tiff/speed4s.tiff
-GNUstep/Apps/WPrefs.app/tiff/tdel.tiff
-GNUstep/Apps/WPrefs.app/tiff/tedit.tiff
-GNUstep/Apps/WPrefs.app/tiff/textr.tiff
-GNUstep/Apps/WPrefs.app/tiff/theme.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer0.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer0s.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer1.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer1s.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer2.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer2s.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer3.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer3s.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer4.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer4s.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer5.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer5s.tiff
-GNUstep/Apps/WPrefs.app/tiff/tnew.tiff
-GNUstep/Apps/WPrefs.app/tiff/whandling.tiff
-GNUstep/Apps/WPrefs.app/tiff/windowfocus.tiff
-GNUstep/Apps/WPrefs.app/tiff/workspace.tiff
-GNUstep/Apps/WPrefs.app/tiff/workspacename.tiff
-GNUstep/Apps/WPrefs.app/tiff/xis.tiff
+GNUstep/Applications/WPrefs.app/WPrefs
+GNUstep/Applications/WPrefs.app/WPrefs.tiff
+GNUstep/Applications/WPrefs.app/WPrefs.xpm
+GNUstep/Applications/WPrefs.app/tiff/advancetonewworkspace.tiff
+GNUstep/Applications/WPrefs.app/tiff/animations.tiff
+GNUstep/Applications/WPrefs.app/tiff/appearance.tiff
+GNUstep/Applications/WPrefs.app/tiff/clip.tiff
+GNUstep/Applications/WPrefs.app/tiff/configs.tiff
+GNUstep/Applications/WPrefs.app/tiff/cycleworkspaces.tiff
+GNUstep/Applications/WPrefs.app/tiff/dock.tiff
+GNUstep/Applications/WPrefs.app/tiff/dontlinkworkspaces.tiff
+GNUstep/Applications/WPrefs.app/tiff/ergonomic.tiff
+GNUstep/Applications/WPrefs.app/tiff/expert.tiff
+GNUstep/Applications/WPrefs.app/tiff/fonts.tiff
+GNUstep/Applications/WPrefs.app/tiff/iconprefs.tiff
+GNUstep/Applications/WPrefs.app/tiff/keyboard.tiff
+GNUstep/Applications/WPrefs.app/tiff/keyboardprefs.tiff
+GNUstep/Applications/WPrefs.app/tiff/keyshortcuts.tiff
+GNUstep/Applications/WPrefs.app/tiff/menualign1.tiff
+GNUstep/Applications/WPrefs.app/tiff/menualign2.tiff
+GNUstep/Applications/WPrefs.app/tiff/menuprefs.tiff
+GNUstep/Applications/WPrefs.app/tiff/menus.tiff
+GNUstep/Applications/WPrefs.app/tiff/moreanim.tiff
+GNUstep/Applications/WPrefs.app/tiff/mousesettings.tiff
+GNUstep/Applications/WPrefs.app/tiff/mousespeed.tiff
+GNUstep/Applications/WPrefs.app/tiff/msty1.tiff
+GNUstep/Applications/WPrefs.app/tiff/msty2.tiff
+GNUstep/Applications/WPrefs.app/tiff/msty3.tiff
+GNUstep/Applications/WPrefs.app/tiff/newstyle.tiff
+GNUstep/Applications/WPrefs.app/tiff/nonopaque.tiff
+GNUstep/Applications/WPrefs.app/tiff/oldstyle.tiff
+GNUstep/Applications/WPrefs.app/tiff/opaque.tiff
+GNUstep/Applications/WPrefs.app/tiff/paths.tiff
+GNUstep/Applications/WPrefs.app/tiff/smooth.tiff
+GNUstep/Applications/WPrefs.app/tiff/sound.tiff
+GNUstep/Applications/WPrefs.app/tiff/speed0.tiff
+GNUstep/Applications/WPrefs.app/tiff/speed0s.tiff
+GNUstep/Applications/WPrefs.app/tiff/speed1.tiff
+GNUstep/Applications/WPrefs.app/tiff/speed1s.tiff
+GNUstep/Applications/WPrefs.app/tiff/speed2.tiff
+GNUstep/Applications/WPrefs.app/tiff/speed2s.tiff
+GNUstep/Applications/WPrefs.app/tiff/speed3.tiff
+GNUstep/Applications/WPrefs.app/tiff/speed3s.tiff
+GNUstep/Applications/WPrefs.app/tiff/speed4.tiff
+GNUstep/Applications/WPrefs.app/tiff/speed4s.tiff
+GNUstep/Applications/WPrefs.app/tiff/tdel.tiff
+GNUstep/Applications/WPrefs.app/tiff/tedit.tiff
+GNUstep/Applications/WPrefs.app/tiff/textr.tiff
+GNUstep/Applications/WPrefs.app/tiff/theme.tiff
+GNUstep/Applications/WPrefs.app/tiff/timer0.tiff
+GNUstep/Applications/WPrefs.app/tiff/timer0s.tiff
+GNUstep/Applications/WPrefs.app/tiff/timer1.tiff
+GNUstep/Applications/WPrefs.app/tiff/timer1s.tiff
+GNUstep/Applications/WPrefs.app/tiff/timer2.tiff
+GNUstep/Applications/WPrefs.app/tiff/timer2s.tiff
+GNUstep/Applications/WPrefs.app/tiff/timer3.tiff
+GNUstep/Applications/WPrefs.app/tiff/timer3s.tiff
+GNUstep/Applications/WPrefs.app/tiff/timer4.tiff
+GNUstep/Applications/WPrefs.app/tiff/timer4s.tiff
+GNUstep/Applications/WPrefs.app/tiff/timer5.tiff
+GNUstep/Applications/WPrefs.app/tiff/timer5s.tiff
+GNUstep/Applications/WPrefs.app/tiff/tnew.tiff
+GNUstep/Applications/WPrefs.app/tiff/whandling.tiff
+GNUstep/Applications/WPrefs.app/tiff/windowfocus.tiff
+GNUstep/Applications/WPrefs.app/tiff/workspace.tiff
+GNUstep/Applications/WPrefs.app/tiff/workspacename.tiff
+GNUstep/Applications/WPrefs.app/tiff/xis.tiff
 bin/convertfonts
 bin/get-wings-flags
 bin/get-wraster-flags
@@ -327,19 +327,19 @@ share/WindowMaker/xtree.dat
 %%WM_LINGUAS%%share/locale/zh_CN/LC_MESSAGES/WindowMaker.mo
 %%WM_LINGUAS%%share/locale/zh_TW/LC_MESSAGES/WPrefs.mo
 %%WM_LINGUAS%%share/locale/zh_TW/LC_MESSAGES/WindowMaker.mo
-@exec mkdir -p %D/GNUstep/Apps/WPrefs.app/xpm
+@exec mkdir -p %D/GNUstep/Applications/WPrefs.app/xpm
 @exec mkdir -p %D/share/WindowMaker/Sounds
-@dirrm share/WindowMaker/Styles
-@dirrm share/WindowMaker/Sounds
-@dirrm share/WindowMaker/IconSets
-@dirrm share/WindowMaker/Backgrounds
-@dirrm share/WINGs
+@dirrm GNUstep/Applications/WPrefs.app/tiff
+@dirrm GNUstep/Applications/WPrefs.app/xpm
+@dirrm GNUstep/Applications/WPrefs.app
+@dirrm GNUstep/Applications
+@dirrm GNUstep
+@dirrm etc/WindowMaker
+@dirrm include/WINGs
 @dirrm man/sk/man1
 @dirrm man/sk
-@dirrm include/WINGs
-@dirrm etc/WindowMaker
-@dirrm GNUstep/Apps/WPrefs.app/xpm
-@dirrm GNUstep/Apps/WPrefs.app/tiff
-@dirrm GNUstep/Apps/WPrefs.app
-@dirrm GNUstep/Apps
-@dirrm GNUstep
+@dirrm share/WINGs
+@dirrm share/WindowMaker/Backgrounds
+@dirrm share/WindowMaker/IconSets
+@dirrm share/WindowMaker/Sounds
+@dirrm share/WindowMaker/Styles
