@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	superlu_mt
-PORTVERSION=	1.0
+DISTVERSION=	1.0.20050524
 CATEGORIES=	math
 MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/ \
 		http://crd.lbl.gov/~xiaoye/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_1.0
 .ifndef NOPORTDOCS
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} simax97.ps.gz
 .endif
@@ -21,10 +21,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Routines for performing multithreaded sparse factorization
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/blas
-
-BROKEN=		Size mismatch
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
 
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/SuperLU_MT
