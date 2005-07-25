@@ -1,11 +1,17 @@
---- src/Makefile.orig	Wed Jul 21 17:54:38 2004
-+++ src/Makefile	Wed Jul 21 17:55:11 2004
-@@ -18,7 +18,7 @@
- # for releases use -Os, this makes the lib 15% smaller 
- CFLAGS += -Wall -pedantic
+--- src/Makefile.orig	Sun Jul 24 14:40:44 2005
++++ src/Makefile	Sun Jul 24 14:41:16 2005
+@@ -22,12 +22,12 @@
+ CFLAGS += -Wall -pedantic -fPIC
+ GTK_24 := $(shell pkg-config --atleast-version=2.4 'gtk+-2.0' && echo yes)
  
 -TCL_VERSION := $(shell echo 'puts $$tcl_version' | tclsh)
 +TCL_VERSION := 84
  
  # this breaks build on GTK 2.4 
  # -DGTK_DISABLE_DEPRECATED -DGNOME_DISABLE_DEPRECATED 
+ export ADDCFLAGS := -DVERSION=\"$(VERSION)\" -DUSE_TCL_STUBS $(shell pkg-config --cflags gtk+-2.0)
+-export LIBS := $(shell pkg-config --libs gtk+-2.0) -ltclstub$(TCL_VERSION)
++export LIBS := $(shell pkg-config --libs gtk+-2.0) -ltclstub$(TCL_VERSION) -L$(LOCALBASE)/lib
+ 
+ ############################################################
+ # There should be no need to edit something below this line 
