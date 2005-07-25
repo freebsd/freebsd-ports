@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liferea
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	liferea
@@ -40,6 +40,10 @@ MOZ_SUFFIX=	-devel
 .elif ${WITH_MOZILLA}=="firefox"
 MOZILLA=	firefox
 MOZ_BUILD=	firefox
+.elif ${WITH_MOZILLA}=="firefox-devel"
+MOZILLA=	firefox-devel
+MOZ_BUILD=	firefox
+MOZ_SUFFIX=	-devel
 .else
 IGNORE=		: Available options for WITH_MOZILLA are: mozilla mozilla-devel firefox
 .endif

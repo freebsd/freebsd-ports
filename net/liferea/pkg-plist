@@ -3,6 +3,7 @@ bin/liferea-bin
 lib/liferea/liblihtmlg.so
 %%MOZ%%lib/liferea/liblihtmlm.so
 share/gnome/applications/liferea.desktop
+share/gnome/liferea/css/adblock.css
 share/gnome/liferea/css/liferea.css
 share/gnome/liferea/css/liferea2.css
 share/gnome/liferea/dtd/html.ent
