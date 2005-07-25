@@ -1,16 +1,27 @@
---- configure.orig	Thu May 26 21:52:13 2005
-+++ configure	Sun Jun 12 11:17:03 2005
-@@ -2491,6 +2491,13 @@
+--- configure.orig	Fri Jul 22 11:36:56 2005
++++ configure	Sat Jul 23 11:27:41 2005
+@@ -2371,8 +2371,8 @@
+ 	;;
+     *)
+ 	DCCUID=root
+-	BINUID=bin
+-	BIN_GRP=bin
++	BINUID=root
++	BIN_GRP=dcc
+ 	;;
+ esac
+ 
+@@ -2445,6 +2445,13 @@
+     SENDMAIL="$with_sendmail"
      SENDMAIL_EVAL="$SENDMAIL"
      with_sendmail=yes
- fi
++fi
 +if test -n "$SENDMAIL" -a "$SENDMAIL" != "no"; then
 +    if test -f $SENDMAIL/include/libmilter/mfapi.h -a -f $SENDMAIL/lib/libmilter.a; then
 +    SENDMAIL_OBJ=$SENDMAIL/lib
 +    SENDMAIL_OBJ_EVAL=$SENDMAIL_OBJ
 +    SENDMAIL_LIB=$SENDMAIL_OBJ/libmilter.a
 +    fi
-+fi
+ fi
  if test -z "$SENDMAIL"; then
      # prefer a parallel ../sendmail directory
-     DEPTH=.

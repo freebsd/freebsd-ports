@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcc-dccd
-PORTVERSION=	1.3.5
+PORTVERSION=	1.3.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rhyolite.com/anti-spam/dcc/source/ \
 		http://www.wa.apana.org.au/~dean/sources/ \
@@ -15,10 +15,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dean@odyssey.apana.org.au
 COMMENT=	Distributed Checksum Clearinghouse procmail, sendmail support
-
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
 
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
@@ -37,11 +33,12 @@ DCCUID?=	112
 DCCGROUP?=	dcc
 DCCGID?=	112
 
-# if no preference was set, check for an up to date base version
-# but give an installed port preference over it.
+#
+# Use configure script to set locations of all files. Use of
+# sed scripting breaks things.
+#
 
-HOMEDIR=	${PREFIX}/dcc
-CONFIGURE_ARGS=	--homedir=${HOMEDIR}
+CONFIGURE_ARGS=	--homedir=${PREFIX}/dcc --bindir=${PREFIX}/bin --mandir=${PREFIX}/man --with-rundir=/var/run
 
 .include <bsd.port.pre.mk>
 
@@ -87,6 +84,7 @@ PLIST_SUB+=	WITH_DCCIFD=""
 .endif
 
 CONFIGURE_ARGS+=	--with-uid=${DCCUSER}
+
 SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%DCCUSER%%|${DCCUSER}|g' -e 's|%%DCCUID%%|${DCCUID}|g' \
 		-e 's|%%DCCGROUP%%|${DCCGROUP}|g' -e 's|%%DCCGID%%|${DCCGID}|g'
@@ -102,23 +100,12 @@ pre-everything::
 	@${ECHO_MSG} 'WITHOUT_SENDMAIL=yes'
 	@${ECHO_MSG} ''
 
-post-patch:
-	${FIND} ${WRKSRC} -type f -exec \
-		${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' {} \;
-	${REINPLACE_CMD} -e 's,PTHREAD_LDFLAGS="$$PTHREAD_LDFLAGS -pthread,PTHREAD_LDFLAGS="$$PTHREAD_LDFLAGS,g' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's,FreeBSD)\n\tPTHREAD_LDFLAGS,FreeBSD)\n\tDCC_CFLAGS="${PTHREAD_CFLAGS} $$DCC_CFLAGS"\n\tPTHREAD_LDFLAGS,g' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's,PTHREAD_LIBS="$$PTHREAD_LIBS -lc_r,PTHREAD_LIBS=" ${PTHREAD_LIBS},g' ${WRKSRC}/configure
-
 post-build:
 	@${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-install >${PKGINSTALL}
 	@${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-deinstall >${PKGDEINSTALL}
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PREFIX} PRE-INSTALL
-
-post-install:
-	@[ -s ${HOMEDIR}/dcc_conf ] || \
-		${CP} ${HOMEDIR}/dcc_conf.dist ${HOMEDIR}/dcc_conf
+	${SH} ${PKGINSTALL} ${PREFIX} PRE-INSTALL
 
 .include <bsd.port.post.mk>
