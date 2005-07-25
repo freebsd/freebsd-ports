@@ -23,6 +23,7 @@ GCLIBDIR=	${PREFIX}/lib/greencard-${GC_VERSION}
 PLIST_SUB+=	GC_VERSION=${GC_VERSION}
 
 USE_GMAKE=	yes
+MAKE_ARGS=	FOR_SYSTEM=GHC
 
 pre-install:
 	${MKDIR} ${GCLIBDIR}/Foreign ${GCLIBDIR}/imports/Foreign
