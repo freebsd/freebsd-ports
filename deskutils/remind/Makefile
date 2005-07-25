@@ -11,7 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://www.roaringpenguin.com/penguin/
 DISTNAME=	${PORTNAME}-03.00.22
 
-MAINTAINER=	purple@lewiz.net
+MAINTAINER=	lewiz@compsoc.man.ac.uk
 COMMENT=	Sophisticated calendar and alarm program
 
 GNU_CONFIGURE=	yes
