@@ -445,6 +445,7 @@
     SUBDIR += rtcw
     SUBDIR += rtcw-paks
     SUBDIR += rubix
+    SUBDIR += ruby-exmars
     SUBDIR += sarien
     SUBDIR += scare
     SUBDIR += scid
