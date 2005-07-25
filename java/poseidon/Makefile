@@ -21,6 +21,7 @@ COMMENT=	A popular UML CASE tool
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
+JAVA_VENDOR=	${_JAVA_VENDOR_LIST:Nsun}	# the port is broken with Sun JDKs
 USE_REINPLACE=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	"Redistribution is not permitted"
