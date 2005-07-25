@@ -6,7 +6,7 @@ etc/rc.d/dhcp6s.sh
 sbin/dhcp6c
 sbin/dhcp6relay
 sbin/dhcp6s
-sbin/dhcp6sctl
+sbin/dhcp6ctl
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

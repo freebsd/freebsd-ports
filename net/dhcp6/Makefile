@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dhcp6
-PORTVERSION=	20040903a
+PORTVERSION=	20050723a
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 DISTNAME=	kame-${PORTNAME}-${PORTVERSION}
@@ -21,7 +21,7 @@ CONFIGURE_ARGS+=	--sysconfdir=${LOCALBASE}/etc --with-localdbdir=/var/db
 USE_REINPLACE=	yes
 
 MAN5=		dhcp6c.conf.5 dhcp6s.conf.5
-MAN8=		dhcp6c.8 dhcp6s.8 dhcp6relay.8 dhcp6sctl.8
+MAN8=		dhcp6c.8 dhcp6s.8 dhcp6relay.8 dhcp6ctl.8
 
 RC_SCRIPTS=	dhcp6c.sh dhcp6relay.sh dhcp6s.sh
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
