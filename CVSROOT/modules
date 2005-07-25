@@ -4656,6 +4656,7 @@ kcd		ports/misc/kcd
 kcdlabel	ports/print/kcdlabel
 kcheckers	ports/games/kcheckers
 kchm		ports/deskutils/kchm
+kchmviewer	ports/deskutils/kchmviewer
 kcpuload	ports/sysutils/kcpuload
 kcube		ports/sysutils/kcube
 kdar		ports/sysutils/kdar
