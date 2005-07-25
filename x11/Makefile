@@ -73,6 +73,7 @@
     SUBDIR += gnometerminal
     SUBDIR += grabc
     SUBDIR += gromit
+    SUBDIR += gtk-launch
     SUBDIR += gtk-theme-switch
     SUBDIR += gtk-themepreview
     SUBDIR += gtk2-theme-switch

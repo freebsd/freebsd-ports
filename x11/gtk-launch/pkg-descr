@@ -1,0 +1,9 @@
+GTK-Launch is a program launcher, the equivalent of "Run Command" in
+KDE or GNOME.
+
+It features a command history, and only runs the command if it is valid.
+
+WWW: http://gtk-launch.descamps.net/
+
+- ehaupt
+ehaupt@critical.ch
