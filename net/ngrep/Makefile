@@ -31,6 +31,13 @@ PORTDOCS=	CHANGES.txt CREDITS.txt INSTALL.txt LICENSE.txt \
 
 .include <bsd.port.pre.mk>
 
+.if !defined(WITH_PORTS_PCAP)
+CONFIGURE_ARGS+=--with-pcap-includes=/usr/include
+.else
+CONFIGURE_ARGS+=--with-pcap-includes=${LOCALBASE}/include
+LIB_DEPENDS=   pcap.2:${PORTSDIR}/net/libpcap
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
