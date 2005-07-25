@@ -50,8 +50,8 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/web/escape_ext.so:${PORTSDIR}/www/ruby-nora
 .endif
 .include <bsd.port.pre.mk>
 
-.if ${RUBY_VERSION_CODE} < 163
-IGNORE=		Needs ruby 1.6.3 or higher, check ruby's version and try again
+.if ${RUBY_VERSION_CODE} < 167
+IGNORE=		Needs ruby 1.6.7 or higher, check ruby's version and try again
 .endif
 
 do-install:
