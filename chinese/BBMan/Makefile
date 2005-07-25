@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:L}
 DISTNAME=	${PORTNAME}-src-v${PORTVERSION:S,.,-,g}
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BBMan is a BBS client for X Window System
 
 LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24

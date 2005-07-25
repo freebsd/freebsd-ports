@@ -12,7 +12,7 @@ MASTER_SITES=	http://firefly.idv.tw/apt/firefly-font/ \
 		http://www.study-area.org/apt/firefly-font/
 DISTNAME=	fireflysung-${PORTVERSION}
 
-MAINTAINER=	statue@freebsd.sinica.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Firefly TrueType Font is combine of two arphic sung fonts
 
 NO_BUILD=	yes

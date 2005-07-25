@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	perl-oicq
 DISTNAME=	Net-OICQ-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implements OICQ messaging protocol
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \

@@ -11,7 +11,7 @@ CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/distfiles/ \
 		ftp://wm28.csie.ncu.edu.tw/pub/distfiles/
 
-MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kuo Chauo Chinese Fonts collection
 
 BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}

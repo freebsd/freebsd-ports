@@ -11,7 +11,7 @@ PATCH_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/joe/
 PATCHFILES=	zh-joe-2.8_3-patch
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../../editors/joe
 MD5_FILE=	${.CURDIR}/distinfo

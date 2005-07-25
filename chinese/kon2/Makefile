@@ -10,7 +10,7 @@ PORTREVISION=	2
 MASTERDIR=	${.CURDIR}/../../japanese/kon2-16dot
 CATEGORIES=	chinese
 
-MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/chinese/kcfonts:patch \
 		${NONEXISTENT}:${PORTSDIR}/chinese/cce:extract

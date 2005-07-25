@@ -28,7 +28,7 @@ DISTFILES=		cnprint330b.c \
 			hbf.tar.gz \
 			ntu_kai48.hbf ntu_kai48.bin.gz
 
-MAINTAINER=		statue@freebsd.netlab.cse.yzu.edu.tw
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Convert Chinese-Big5/GB encoded files to Postscript, using TTF fonts
 
 DIST_SUBDIR=		${PORTNAME}-${PORTVERSION}

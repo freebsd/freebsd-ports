@@ -10,7 +10,7 @@ PORTVERSION=	0.9.6
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/xttmgr/
 
-MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Big5/GB enhanced TrueType Font Manager
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2

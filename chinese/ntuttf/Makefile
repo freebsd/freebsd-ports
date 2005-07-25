@@ -14,7 +14,7 @@ DISTFILES=	NTU_FS_M.TTF NTU_KAI.TTF NTU_LI_M.TTF NTU_MB.TTF \
 		NTU_MM.TTF NTU_MR.TTF NTU_TW.TTF
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Seven Chinese Big5 TrueType fonts made by NTU
 
 NO_BUILD=	yes

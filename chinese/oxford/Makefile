@@ -16,7 +16,7 @@ DISTFILES=	a.zip b.zip c.zip d.zip e.zip f.zip g.zip h.zip i.zip \
 		s.zip t.zip u.zip v.zip w.zip x.zip y.zip z.zip \
 		oxford-0.2.el.zip
 
-MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A English to Chinese(GB) dictionary
 
 DIST_SUBDIR=	oxford

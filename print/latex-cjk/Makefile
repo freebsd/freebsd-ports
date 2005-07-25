@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/cjk/\
   		ftp://ftp.ffii.org/pub/cjk/
 DISTNAME=	cjk-${PORTVERSION}
 
-MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A LaTeX2e macro package which enables the use of CJK scripts
 
 BROKEN=		"Installation and dependency problems"
