@@ -7,7 +7,7 @@
 
 PORTNAME=	heyu
 PORTVERSION=	1.35
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://heyu.tanj.com/
 DISTNAME=	x10_heyu
@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	plambert@plambert.net
 COMMENT=	Control a CM11A interface from the command line
+
+CONFLICTS=	heyu2-*
 
 IS_INTERACTIVE=	yes
 ALL_TARGET=	heyu
