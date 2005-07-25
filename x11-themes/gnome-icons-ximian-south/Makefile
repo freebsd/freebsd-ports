@@ -14,7 +14,7 @@ PORTVERSION=	1.3.6
 PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	teams/art.gnome.org/themes/icon
+MASTER_SITE_SUBDIR=	teams/art.gnome.org/archive/themes/icon
 DISTNAME=	ICON-Ximian-South-${PORTVERSION}
 
 MAINTAINER=	tmclaugh@sdf.lonestar.org
