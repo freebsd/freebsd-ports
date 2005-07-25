@@ -1,0 +1,47 @@
+--- a/src/tests/t.encoding	30 Jun 2005 11:17:54 -0000	1.5
++++ b/src/tests/t.encoding	9 Jul 2005 22:24:12 -0000	1.8
+@@ -84,21 +84,34 @@
+ $BOGOUTIL -C -y 0 -m ${WORDLIST} --unicode=no
+ $BOGOUTIL -C -y 0 -d ${WORDLIST} | sort > ${TMPDIR}/wordlist.old.txt
+ 
+-cat <<EOF | sed "s/ $DATE//" > ${TMPDIR}/md5sum.ref
+-4ff193bff18e44bd6af0992497565df2 -   wordlist.iconv.txt
+-4ff193bff18e44bd6af0992497565df2 -   wordlist.new.txt
+-a36783e5753e6254167ffe32835e96d0 -   wordlist.no.txt
+-a36783e5753e6254167ffe32835e96d0 -   wordlist.old.txt
+-a36783e5753e6254167ffe32835e96d0 -   wordlist.raw.txt
+-4ff193bff18e44bd6af0992497565df2 -   wordlist.yes.txt
++echo "This is a test." >${TMPDIR}/empty.txt
++if ! cksum >${TMPDIR}/empty.sum ${TMPDIR}/empty.txt ; then
++    echo >&2 'cksum utility not found'
++    exit 77
++fi
++tr '	' ' ' <${TMPDIR}/empty.sum|cut -d " " -f 1-2 >${TMPDIR}/empty.sumonly
++if ! echo "2711662207 16" | cmp -s - ${TMPDIR}/empty.sumonly
++then
++    echo >&2 'cksum utility not POSIX compliant!'
++    exit 1
++fi
++
++cat <<EOF | sed "s/ $DATE//" > ${TMPDIR}/cksum.ref
++1059676362 909 wordlist.iconv.txt
++1059676362 909 wordlist.new.txt
++3303802408 880 wordlist.no.txt
++3303802408 880 wordlist.old.txt
++3303802408 880 wordlist.raw.txt
++1059676362 909 wordlist.yes.txt
+ EOF
+ 
+ for FILE in ${TMPDIR}/wordlist.*.txt ; do
+-    ( echo `md5sum < $FILE` " " `basename $FILE` ) >>  ${TMPDIR}/md5sum.out
++    cksum "$FILE" | $AWK '{ printf "%s %s ", $1, $2 }' >>${TMPDIR}/cksum.out
++    basename "$FILE" >>${TMPDIR}/cksum.out
+ done
+ 
+ if [ $verbose -eq 0 ] ; then 
+-    cmp ${TMPDIR}/md5sum.ref ${TMPDIR}/md5sum.out
++    cmp ${TMPDIR}/cksum.ref ${TMPDIR}/cksum.out
+ else
+-    diff ${TMPDIR}/md5sum.ref ${TMPDIR}/md5sum.out
++    diff -s ${TMPDIR}/cksum.ref ${TMPDIR}/cksum.out
+ fi

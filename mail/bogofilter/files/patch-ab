@@ -1,0 +1,154 @@
+--- a/src/charset.c	23 Jun 2005 22:39:55 -0000	1.32
++++ b/src/charset.c	4 Jul 2005 18:41:20 -0000	1.33
+@@ -25,7 +25,9 @@
+ 
+ #include "charset.h"
+ #include "convert_charset.h"
++#ifndef	DISABLE_UNICODE
+ #include "convert_unicode.h"
++#endif
+ #include "xmalloc.h"
+ #include "xstrdup.h"
+ 
+--- a/src/datastore_sqlite.c	21 May 2005 03:39:21 -0000	1.38
++++ b/src/datastore_sqlite.c	10 Jul 2005 00:21:03 -0000	1.40
+@@ -152,6 +152,16 @@
+     return rc;
+ }
+ 
++static sqlite3_stmt *sqlprep(dbh_t *dbh, const char *cmd) {
++    const char *tail; /* dummy */
++    sqlite3_stmt *ptr;
++    if (sqlite3_prepare(dbh->db, cmd, strlen(cmd), &ptr, &tail) != SQLITE_OK) {
++	print_error(__FILE__, __LINE__, "cannot compile %s: %s\n", cmd, sqlite3_errmsg(dbh->db)); 
++	exit(EX_ERROR); 
++    }
++    return ptr;
++}
++
+ /** Short trace handler function, passed to SQLite if debugging is
+  * enabled. */
+ static void db_trace(void *userdata /** unused */,
+@@ -236,6 +246,31 @@
+     return 1;
+ }
+ 
++static void check_sqlite_version(void)
++{
++#if SIZEOF_LONG > 4
++    unsigned int vmaj, vmin, vpl;
++    int count;
++    static int complained;
++    const char *v;
++
++    if (complained)
++	return;
++    complained = 1;
++    v = sqlite3_libversion();
++    sscanf(v, "%u.%u.%u", &vmaj, &vmin, &vpl);
++    if (vmaj > 3) return;
++    if (vmaj == 3 && vmin > 2) return;
++    if (vmaj == 3 && vmin == 2 && vpl >= 2) return;
++    fprintf(stderr,
++	    "\n"
++	    "WARNING: sqlite %s is not supported on %u-bit machines!\n"
++	    "WARNING: If you see bus errors, update sqlite to 3.2.2 or newer.\n"
++	    "\n",
++	    v, SIZEOF_LONG * 8);
++#endif
++}
++
+ void *db_open(void *dummyenv, bfpath *bfp, dbmode_t mode)
+ {
+     int rc;
+@@ -244,6 +279,8 @@
+ 
+     (void)dummyenv;
+ 
++    check_sqlite_version();
++
+     dbh = dbh_init(bfp);
+ 
+     /* open database file */
+@@ -320,16 +357,8 @@
+      * dbh->insert is not here as it's needed earlier,
+      * so it sets itself up lazily
+      */
+-#define PREP(cmd, ptr) \
+-    { const char *tail; /* dummy */ \
+-	if (sqlite3_prepare(dbh->db, cmd, strlen(cmd), ptr, &tail) != SQLITE_OK) { \
+-	    print_error(__FILE__, __LINE__, "cannot compile %s: %s\n", cmd, sqlite3_errmsg(dbh->db)); \
+-	    exit(EX_ERROR); \
+-	} \
+-    }
+-
+-    PREP("SELECT value FROM bogofilter WHERE key=? LIMIT 1;", &dbh->select);
+-    PREP("DELETE FROM bogofilter WHERE(key = ?);", &dbh->delete);
++    dbh->select = sqlprep(dbh, "SELECT value FROM bogofilter WHERE key=? LIMIT 1;");
++    dbh->delete = sqlprep(dbh, "DELETE FROM bogofilter WHERE(key = ?);");
+ 
+     /* check if byteswapped */
+     {
+@@ -398,7 +427,7 @@
+     static char buf[80];
+ 
+     if (!buf[0])
+-	snprintf(buf, sizeof(buf), "SQLite %s", sqlite3_version);
++	snprintf(buf, sizeof(buf), "SQLite %s", sqlite3_libversion());
+     return buf;
+ }
+ 
+@@ -426,8 +455,8 @@
+ 	dbh_t *dbh,		/**< database handle */
+ 	const char *func,	/**< function name to report in errors */
+ 	sqlite3_stmt *stmt,	/**< SQLite3 statement to execute/reset */
+-	int retnotfound,	/**< return value if no rows found */
+-	dbv_t *val		/**  OUT value from first row, NULL ok */
++	dbv_t *val,		/**< OUT value from first row, NULL ok */
++	int retnotfound		/**  return value if no rows found */
+ 	)
+ {
+     int rc;
+@@ -468,25 +497,25 @@
+     dbh_t *dbh = vhandle;
+ 
+     sqlite3_bind_blob(dbh->delete, 1, key->data, key->leng, SQLITE_STATIC);
+-    return sql_fastpath(dbh, "db_delete", dbh->delete, 0, NULL);
++    return sql_fastpath(dbh, "db_delete", dbh->delete, NULL, 0);
+ }
+ 
+ int db_set_dbvalue(void *vhandle, const dbv_t *key, const dbv_t *val) {
+     dbh_t *dbh = vhandle;
+ 
+     if (!dbh->insert)
+-	PREP("INSERT OR REPLACE INTO bogofilter VALUES(?,?);",    &dbh->insert);
++	dbh->insert = sqlprep(dbh, "INSERT OR REPLACE INTO bogofilter VALUES(?,?);");
+ 
+     sqlite3_bind_blob(dbh->insert, 1, key->data, key->leng, SQLITE_STATIC);
+     sqlite3_bind_blob(dbh->insert, 2, val->data, val->leng, SQLITE_STATIC);
+-    return sql_fastpath(dbh, "db_set_dbvalue", dbh->insert, 0, NULL);
++    return sql_fastpath(dbh, "db_set_dbvalue", dbh->insert, NULL, 0);
+ }
+ 
+ int db_get_dbvalue(void *vhandle, const dbv_t* key, /*@out@*/ dbv_t *val) {
+     dbh_t *dbh = vhandle;
+ 
+     sqlite3_bind_blob(dbh->select, 1, key->data, key->leng, SQLITE_STATIC);
+-    return sql_fastpath(dbh, "db_get_dbvalue", dbh->select, DS_NOTFOUND, val);
++    return sql_fastpath(dbh, "db_get_dbvalue", dbh->select, val, DS_NOTFOUND);
+ }
+ 
+ ex_t db_foreach(void *vhandle, db_foreach_t hook, void *userdata) {
+--- a/src/maint.c	25 Jun 2005 16:42:44 -0000	1.64
++++ b/src/maint.c	4 Jul 2005 18:41:20 -0000	1.65
+@@ -19,8 +19,10 @@
+ #include "datastore.h"
+ #include "error.h"
+ #include "charset.h"
++#ifndef	DISABLE_UNICODE
+ #include "convert_unicode.h"
+ #include "iconvert.h"
++#endif
+ #include "maint.h"
+ #include "transaction.h"
+ #include "wordlists.h"
