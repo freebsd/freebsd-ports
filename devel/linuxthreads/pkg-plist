@@ -10,7 +10,7 @@ lib/liblgcc_r.a
 %%GCC3ONLY:%%%%PROFILE:%%lib/liblstdc++_p.a
 %%GCC3ONLY:%%%%PICARCHIVE:%%lib/liblstdc++_pic.a
 %%GCC3ONLY:%%%%PIC:%%lib/liblstdc++.so
-%%GCC3ONLY:%%%%PIC:%%lib/liblstdc++.so.4
+%%GCC3ONLY:%%%%PIC:%%lib/liblstdc++.so.%%LIBSTDCPPMAJOR:%%
 %%GCC3ONLY:%%lib/liblsupc++.a
 %%GCC3ONLY:%%%%PROFILE:%%lib/liblsupc++_p.a
 %%GCC3ONLY:%%%%PICARCHIVE:%%lib/liblsupc++_pic.a
