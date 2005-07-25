@@ -24,6 +24,9 @@ LIB_DEPENDS=	art_lgpl.5:${PORTSDIR}/graphics/libart \
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
+SLAVE_PORT=	yes
+MASTER_PORT=	x11/ruby-gnome
+
 .include "${.CURDIR}/../../x11/ruby-gnome/Makefile.common"
 
 WRKSRC=		${RUBY_GNOME_WRKSRC}/${PORTNAME}

@@ -25,6 +25,9 @@ USE_RUBY_EXTCONF=	yes
 USE_XLIB=	yes
 USE_GNOME=	glib12 libcapplet gdkpixbuf
 
+SLAVE_PORT=	yes
+MASTER_PORT=	x11/ruby-gnome
+
 .include "${.CURDIR}/../../x11/ruby-gnome/Makefile.common"
 
 WRKSRC=		${RUBY_GNOME_WRKSRC}/${PORTNAME}
