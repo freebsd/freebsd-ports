@@ -8,7 +8,9 @@
 PORTNAME=	microgui
 PORTVERSION=	1.0
 CATEGORIES=	x11-themes gnome
-DISTNAME=	MCity-microGUI
+MASTER_SITES=	${MASTER_SITE_THEMES}
+MASTER_SITE_SUBDIR=	mcitymicrogui
+DISTNAME=	mcitymicrogui-default
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	The microGUI Sawfish theme for Metacity
