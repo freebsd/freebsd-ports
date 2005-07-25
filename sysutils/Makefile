@@ -533,6 +533,7 @@
     SUBDIR += vttest
     SUBDIR += wait_on
     SUBDIR += watchdog
+    SUBDIR += watchfolder
     SUBDIR += webjob
     SUBDIR += webmin
     SUBDIR += whatpix

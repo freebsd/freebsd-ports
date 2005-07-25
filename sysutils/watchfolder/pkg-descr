@@ -1,0 +1,8 @@
+Watchfolder watches specified folders for incoming files and processes them
+with programs assigned to those folders. Afterwards, the files are removed
+from the inbound directory.
+
+WWW: http://freshmeat.net/projects/watchd/
+
+- ehaupt
+ehaupt@critical.ch
