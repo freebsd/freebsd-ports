@@ -137,7 +137,7 @@ share/locale/zh_TW/LC_MESSAGES/balsa.mo
 @unexec rmdir %D/share/locale/rw 2>/dev/null || true
 @dirrm share/gnome/sounds/balsa
 @dirrm share/gnome/omf/balsa
-@unexec rmdir %D/share/icons/hicolor/48x48/mimetypes 2>/dev/null || true
+%%GTKICON%%@unexec rmdir %D/share/icons/hicolor/48x48/mimetypes 2>/dev/null || true
 @dirrm share/gnome/help/balsa/C/figures
 @dirrm share/gnome/help/balsa/C
 @dirrm share/gnome/help/balsa
@@ -149,4 +149,4 @@ share/locale/zh_TW/LC_MESSAGES/balsa.mo
 @dirrm share/gnome/balsa/hicolor
 @dirrm share/gnome/balsa
 @unexec rm -f %D/share/icons/hicolor/icon-theme.cache 2>/dev/null || true
-@unexec gtk-update-icon-cache %D/share/icons/hicolor 2>/dev/null || true
+%%GTKICON%%@unexec gtk-update-icon-cache %D/share/icons/hicolor 2>/dev/null || true
