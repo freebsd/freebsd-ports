@@ -1,0 +1,23 @@
+                        LASPack (version 1.12.2)
+
+LASPack is a package for solving large sparse systems of linear equations
+like those which arise from discretization of partial differential equations.
+
+Main features:
+
+- The primary aim of LASPack is the implementation of efficient iterative
+  methods for the solution of systems of linear equations.
+
+- Beside the obligatory Jacobi, succesive over-relaxation, Chebyshev, and
+  conjugate gradient solvers, LASPack contains selected state-of-the-art
+  algorithms which are commonly used for large sparse systems:
+
+  - CG-like methods for non-symmetric systems: CGN, GMRES, BiCG, QMR, CGS, and
+    BiCGStab,
+  - multilevel methods such as multigrid and conjugate gradient method
+    preconditioned by multigrid and BPX preconditioners.
+
+A complete description of the package (including the installation procedure)
+you may find in LASPack Reference Manual in the following postscript files:
+    
+WWW: http://www.tu-dresden.de/mwism/skalicky/laspack/laspack.html

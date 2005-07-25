@@ -1,0 +1,20 @@
+include/laspack/copyrght.h
+include/laspack/eigenval.h
+include/laspack/elcmp.h
+include/laspack/errhandl.h
+include/laspack/factor.h
+include/laspack/itersolv.h
+include/laspack/lastypes.h
+include/laspack/matrix.h
+include/laspack/mlsolv.h
+include/laspack/operats.h
+include/laspack/precond.h
+include/laspack/qmatrix.h
+include/laspack/rtc.h
+include/laspack/vector.h
+include/laspack/version.h
+lib/liblaspack.a
+%%PORTDOCS%%%%DOCSDIR%%/laspack1.ps
+%%PORTDOCS%%%%DOCSDIR%%/laspack2.ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/laspack

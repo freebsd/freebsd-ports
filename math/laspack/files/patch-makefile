@@ -1,0 +1,13 @@
+--- makefile.orig	Mon Jul 25 00:24:08 2005
++++ makefile	Mon Jul 25 00:24:30 2005
+@@ -21,8 +21,8 @@
+ #
+ # set the destination directories for the library and include files
+ #
+-LIBDEST		= $(HOME)/lib$(ARCH_EXT)
+-INCDEST		= $(HOME)/include
++LIBDEST		= $(PREFIX)/lib
++INCDEST		= $(PREFIX)/include
+ 
+ #
+ # the following text was created automaticaly. You should change it carefully.
