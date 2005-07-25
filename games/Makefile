@@ -28,6 +28,7 @@
     SUBDIR += alephone
     SUBDIR += alephone-data
     SUBDIR += alienblaster
+    SUBDIR += alienwave
     SUBDIR += amphetamine
     SUBDIR += amy
     SUBDIR += an
