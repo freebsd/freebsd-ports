@@ -172,6 +172,7 @@
     SUBDIR += startup-notification
     SUBDIR += sxpc
     SUBDIR += temperature.app
+    SUBDIR += thinglaunch
     SUBDIR += tkgoodstuff
     SUBDIR += tycoon
     SUBDIR += vdesk
