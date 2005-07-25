@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	windowmaker
-PORTVERSION=	0.91.0
+PORTVERSION=	0.92.0
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	source/release
@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--with-nlsdir=${PREFIX}/share/locale \
 		--with-libs-from="-L${LOCALBASE}/lib" \
 		--with-incs-from="-I${LOCALBASE}/include" \
-		--with-appspath="${PREFIX}/GNUstep/Apps" \
+		--with-gnustepdir="${PREFIX}/GNUstep" \
 		--disable-debug
 INSTALLS_SHLIB=	yes
 
@@ -43,17 +43,11 @@ MANLANG=	"" sk
 MAN1=		geticonset.1x getstyle.1x seticons.1x setstyle.1x wdwrite.1x \
 		wmaker.1x wmsetbg.1x wxcopy.1x wxpaste.1x
 
-OPTIONS=	KDE "Add hooks for kde support" off \
-		XINERAMA "Enable xinerama support" off \
+OPTIONS=	XINERAMA "Enable xinerama support" off \
 		XKB_STATUS "XKB keyboard language status support" off \
-		WM_LINGUAS "Enable support for additional locales" off \
-		WM_VDESKTOP "Experts only!" off
+		WM_LINGUAS "Enable support for additional locales" off
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_KDE) || defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS+=	--enable-kde
-.endif
 
 .if defined(WITH_XINERAMA) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-xinerama
@@ -71,15 +65,9 @@ PLIST_SUB=	WM_LINGUAS=""
 PLIST_SUB=	WM_LINGUAS="@comment "
 .endif
 
-.if defined(WITH_WM_VDESKTOP)
-CONFIGURE_ARGS+=	--enable-vdesktop
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e "s|TW\.Big5|TW|g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c
 	@${REINPLACE_CMD} -e "s|%%PERL%%|${PERL}|g" ${WRKSRC}/util/wm-oldmenu2new
-	@${REINPLACE_CMD} -e "s|-version-info 3:|-version-info 4:|g" ${WRKSRC}/wrlib/Makefile.in
 	@${REINPLACE_CMD} -e "s|Trebuchet MS,Luxi Sans|sans|g" ${WRKSRC}/WindowMaker/Defaults/WMGLOBAL
 	@${REINPLACE_CMD} -e "s|/usr/local/GNUstep|${PREFIX}/GNUstep|g" \
 		${WRKSRC}/WindowMaker/*menu*
