@@ -10565,6 +10565,7 @@ ruby-diff	ports/textproc/ruby-diff
 ruby-div	ports/www/ruby-div
 ruby-dump.rb	ports/converters/ruby-dump.rb
 ruby-esound	ports/audio/ruby-esound
+ruby-exmars	ports/games/ruby-exmars
 ruby-fam	ports/devel/ruby-fam
 ruby-fcgi	ports/www/ruby-fcgi
 ruby-fftw3	ports/math/ruby-fftw3
