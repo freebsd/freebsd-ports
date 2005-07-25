@@ -1,0 +1,12 @@
+Spfval validates SPF records. It does not check them via the network, this was
+intentionally omitted in favour of focusing purely on syntactically validating
+SPF records. Simply pass the validator a string and it will see if it validates
+as an SPFv1 or SPF-Classic record.
+
+If an error is found, it tries its best to report the error in question and the
+specific location in the record where the error occured.
+
+WWW: http://spfval.codeshare.ca/
+
+- ehaupt
+ehaupt@critical.ch

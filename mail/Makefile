@@ -485,6 +485,7 @@
     SUBDIR += spampd
     SUBDIR += spamprobe
     SUBDIR += spamstats
+    SUBDIR += spfval
     SUBDIR += spruce
     SUBDIR += sqlgrey
     SUBDIR += squirrelmail
