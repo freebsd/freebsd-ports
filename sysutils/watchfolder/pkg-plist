@@ -1,0 +1,7 @@
+bin/watchd
+@unexec if cmp -s %D/etc/watchd.conf %D/etc/watchd.conf.sample; then rm -f %D/etc/watchd.conf; fi
+etc/watchd.conf.sample
+@exec [ -f %B/watchd.conf ] || cp %B/%f %B/watchd.conf
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/watchfolder.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
