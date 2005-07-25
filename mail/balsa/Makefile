@@ -7,7 +7,7 @@
 
 PORTNAME=	balsa
 PORTVERSION=	2.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/
 DISTNAME=	balsa-${PORTVERSION}
@@ -40,8 +40,6 @@ CONFIGURE_ARGS=	--enable-threads \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -liconv"
 
-INSTALLS_OMF=	balsa-C.omf
-
 MAN1=		balsa.1
 
 OPTIONS=	LDAP "Enable LDAP support" on \
@@ -57,6 +55,12 @@ CONFIGURE_ARGS+=	--with-gpgme=${LOCALBASE}/bin/gpgme-config
 .if !defined(WITHOUT_LDAP)
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-ldap
+.endif
+
+.if ${PREFIX}==${X11BASE}
+PLIST_SUB+=	GTKICON="@comment "
+.else
+PLIST_SUB+=	GTKICON=""
 .endif
 
 post-patch:
