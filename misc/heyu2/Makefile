@@ -7,6 +7,7 @@
 
 PORTNAME=	heyu2
 PORTVERSION=	2.0.b.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://heyu.tanj.com/heyu2/
 DISTNAME=	heyu-2.0beta.2
@@ -14,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mstowe@chicago.us.mensa.org
 COMMENT=	Control a CM11A interface from the command line
+
+CONFLICTS=	heyu-*
 
 #IS_INTERACTIVE=	yes
 ALL_TARGET=	all
