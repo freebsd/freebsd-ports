@@ -24,6 +24,9 @@ USE_RUBY=	yes
 USE_GNOME=	libgnomecanvas
 USE_RUBY_EXTCONF=	yes
 
+SLAVE_PORT=	yes
+MASTER_PORT=	x11/ruby-gnome
+
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 
 WRKSRC=		${RUBY_GNOME_WRKSRC}/gnomecanvas

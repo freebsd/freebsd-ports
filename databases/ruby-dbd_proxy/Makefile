@@ -23,6 +23,9 @@ USE_RUBY=	yes
 USE_RUBY_FEATURES=	drb
 USE_RUBY_SETUP=	yes
 
+SLAVE_PORT=	yes
+MASTER_PORT=	databases/ruby-dbi
+
 WRKSRC=		${RUBY_DBI_WRKSRC}
 CONFIGURE_ARGS=	--with=bin/proxyserver,lib/${PORTNAME}
 
