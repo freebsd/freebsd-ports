@@ -231,7 +231,6 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth-trow.mo
 share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/campaigns/Eastern_Invasion.cfg
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne.cfg
-%%DATADIR%%/data/campaigns/README
 %%DATADIR%%/data/campaigns/Son_Of_The_Black_Eye.cfg
 %%DATADIR%%/data/campaigns/The_Dark_Hordes.cfg
 %%DATADIR%%/data/campaigns/The_Rise_of_Wesnoth.cfg
@@ -383,8 +382,8 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/scenarios/Eastern_Invasion/Undead_Crossing.cfg
 %%DATADIR%%/data/scenarios/Eastern_Invasion/Unexpected_Appearance.cfg
 %%DATADIR%%/data/scenarios/Eastern_Invasion/Weldyn_Attack.cfg
-%%DATADIR%%/data/scenarios/Eastern_Invasion/deaths.cfg
-%%DATADIR%%/data/scenarios/Eastern_Invasion/intro.cfg
+%%DATADIR%%/data/scenarios/Eastern_Invasion/utils/deaths.cfg
+%%DATADIR%%/data/scenarios/Eastern_Invasion/utils/intro.cfg
 %%DATADIR%%/data/scenarios/Heir_To_The_Throne/A_Choice_Must_Be_Made.cfg
 %%DATADIR%%/data/scenarios/Heir_To_The_Throne/Battle_for_Wesnoth.cfg
 %%DATADIR%%/data/scenarios/Heir_To_The_Throne/Bay_of_Pearls.cfg
@@ -415,8 +414,8 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/scenarios/Heir_To_The_Throne/Valley_of_Death.cfg
 %%DATADIR%%/data/scenarios/Heir_To_The_Throne/Valley_of_Statues.cfg
 %%DATADIR%%/data/scenarios/Heir_To_The_Throne/bigmap.cfg
-%%DATADIR%%/data/scenarios/Heir_To_The_Throne/deaths.cfg
-%%DATADIR%%/data/scenarios/Heir_To_The_Throne/intro.cfg
+%%DATADIR%%/data/scenarios/Heir_To_The_Throne/utils/deaths.cfg
+%%DATADIR%%/data/scenarios/Heir_To_The_Throne/utils/intro.cfg
 %%DATADIR%%/data/scenarios/Son_Of_The_Black_Eye/Black_Flag.cfg
 %%DATADIR%%/data/scenarios/Son_Of_The_Black_Eye/Clash_Of_Armies.cfg
 %%DATADIR%%/data/scenarios/Son_Of_The_Black_Eye/Desert_Of_Death.cfg
@@ -438,7 +437,7 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/scenarios/The_Dark_Hordes/Mages_And_Elves.cfg
 %%DATADIR%%/data/scenarios/The_Dark_Hordes/The_Skull_of_Agarash.cfg
 %%DATADIR%%/data/scenarios/The_Dark_Hordes/Underground_Pool.cfg
-%%DATADIR%%/data/scenarios/The_Dark_Hordes/intro.cfg
+%%DATADIR%%/data/scenarios/The_Dark_Hordes/utils/intro.cfg
 %%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth/A_Beach.cfg
 %%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth/A_Final_Spring.cfg
 %%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth/A_Harrowing_Escape.cfg
@@ -466,12 +465,12 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth/The_River_Road.cfg
 %%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth/The_Vanguard.cfg
 %%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth/Troll_Hole.cfg
-%%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth/trow-deaths.cfg
-%%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth/trow-intro.cfg
-%%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth/trow-macros.cfg
-%%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth/trow-nlmsg.cfg
-%%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth/trow-nohome.cfg
-%%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth/trow-noisle.cfg
+%%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth/utils/trow-deaths.cfg
+%%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth/utils/trow-intro.cfg
+%%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth/utils/trow-macros.cfg
+%%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth/utils/trow-nlmsg.cfg
+%%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth/utils/trow-nohome.cfg
+%%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth/utils/trow-noisle.cfg
 %%DATADIR%%/data/scenarios/multiplayer/2p_Blitz.cfg
 %%DATADIR%%/data/scenarios/multiplayer/2p_Charge.cfg
 %%DATADIR%%/data/scenarios/multiplayer/2p_Den_of_Onis.cfg
@@ -680,8 +679,6 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/units/Merman_Spearman.cfg
 %%DATADIR%%/data/units/Merman_Triton.cfg
 %%DATADIR%%/data/units/Merman_Warrior.cfg
-%%DATADIR%%/data/units/Mounted_Captain.cfg
-%%DATADIR%%/data/units/Mounted_Commander.cfg
 %%DATADIR%%/data/units/Mounted_Fighter.cfg
 %%DATADIR%%/data/units/Mounted_Warrior.cfg
 %%DATADIR%%/data/units/Mudcrawler.cfg
@@ -852,6 +849,7 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/attacks/pincers.png
 %%DATADIR%%/images/attacks/pistol.png
 %%DATADIR%%/images/attacks/pitchfork.png
+%%DATADIR%%/images/attacks/plaguestaff.png
 %%DATADIR%%/images/attacks/rapier.png
 %%DATADIR%%/images/attacks/short-sword.png
 %%DATADIR%%/images/attacks/slam.png
@@ -880,14 +878,32 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/buttons/downarrow-button-active.png
 %%DATADIR%%/images/buttons/downarrow-button-pressed.png
 %%DATADIR%%/images/buttons/downarrow-button.png
+%%DATADIR%%/images/buttons/draw_button_editor-active.png
+%%DATADIR%%/images/buttons/draw_button_editor-pressed.png
+%%DATADIR%%/images/buttons/draw_button_editor.png
 %%DATADIR%%/images/buttons/endturn-button-active.png
 %%DATADIR%%/images/buttons/endturn-button.png
+%%DATADIR%%/images/buttons/flip_map_button_editor-active.png
+%%DATADIR%%/images/buttons/flip_map_button_editor-pressed.png
+%%DATADIR%%/images/buttons/flip_map_button_editor.png
+%%DATADIR%%/images/buttons/flood_button_editor-active.png
+%%DATADIR%%/images/buttons/flood_button_editor-pressed.png
+%%DATADIR%%/images/buttons/flood_button_editor.png
 %%DATADIR%%/images/buttons/lite-active.png
 %%DATADIR%%/images/buttons/lite-pressed.png
 %%DATADIR%%/images/buttons/lite.png
 %%DATADIR%%/images/buttons/lite_small-active.png
 %%DATADIR%%/images/buttons/lite_small-pressed.png
 %%DATADIR%%/images/buttons/lite_small.png
+%%DATADIR%%/images/buttons/paste_button_editor-active.png
+%%DATADIR%%/images/buttons/paste_button_editor-pressed.png
+%%DATADIR%%/images/buttons/paste_button_editor.png
+%%DATADIR%%/images/buttons/redo_button_editor-active.png
+%%DATADIR%%/images/buttons/redo_button_editor-pressed.png
+%%DATADIR%%/images/buttons/redo_button_editor.png
+%%DATADIR%%/images/buttons/resize_button_editor-active.png
+%%DATADIR%%/images/buttons/resize_button_editor-pressed.png
+%%DATADIR%%/images/buttons/resize_button_editor.png
 %%DATADIR%%/images/buttons/scrollbottom-active.png
 %%DATADIR%%/images/buttons/scrollbottom.png
 %%DATADIR%%/images/buttons/scrollgroove-bottom.png
@@ -899,9 +915,24 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/buttons/scrolltop.png
 %%DATADIR%%/images/buttons/slider-selected.png
 %%DATADIR%%/images/buttons/slider.png
+%%DATADIR%%/images/buttons/start_position_button_editor-active.png
+%%DATADIR%%/images/buttons/start_position_button_editor-pressed.png
+%%DATADIR%%/images/buttons/start_position_button_editor.png
+%%DATADIR%%/images/buttons/toggle_grid_button_editor-active.png
+%%DATADIR%%/images/buttons/toggle_grid_button_editor-pressed.png
+%%DATADIR%%/images/buttons/toggle_grid_button_editor.png
+%%DATADIR%%/images/buttons/undo_button_editor-active.png
+%%DATADIR%%/images/buttons/undo_button_editor-pressed.png
+%%DATADIR%%/images/buttons/undo_button_editor.png
 %%DATADIR%%/images/buttons/uparrow-button-active.png
 %%DATADIR%%/images/buttons/uparrow-button-pressed.png
 %%DATADIR%%/images/buttons/uparrow-button.png
+%%DATADIR%%/images/buttons/zoom_in_button_editor-active.png
+%%DATADIR%%/images/buttons/zoom_in_button_editor-pressed.png
+%%DATADIR%%/images/buttons/zoom_in_button_editor.png
+%%DATADIR%%/images/buttons/zoom_out_button_editor-active.png
+%%DATADIR%%/images/buttons/zoom_out_button_editor-pressed.png
+%%DATADIR%%/images/buttons/zoom_out_button_editor.png
 %%DATADIR%%/images/campaigns/Eastern_Invasion/maps/eastern_invasion.png
 %%DATADIR%%/images/campaigns/Heir_To_The_Throne/story/story0a.png
 %%DATADIR%%/images/campaigns/Heir_To_The_Throne/story/story0b.png
@@ -1113,8 +1144,14 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/dwarf-warrior-attack.png
 %%DATADIR%%/images/dwarf-warrior-defend.png
 %%DATADIR%%/images/dwarf-warrior.png
+%%DATADIR%%/images/editor/brush-1-active.png
+%%DATADIR%%/images/editor/brush-1-pressed.png
 %%DATADIR%%/images/editor/brush-1.png
+%%DATADIR%%/images/editor/brush-2-active.png
+%%DATADIR%%/images/editor/brush-2-pressed.png
 %%DATADIR%%/images/editor/brush-2.png
+%%DATADIR%%/images/editor/brush-3-active.png
+%%DATADIR%%/images/editor/brush-3-pressed.png
 %%DATADIR%%/images/editor/brush-3.png
 %%DATADIR%%/images/elder-mage-attack.png
 %%DATADIR%%/images/elder-mage-defend.png
@@ -1265,6 +1302,10 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/elvish-marksman-bow-defend.png
 %%DATADIR%%/images/elvish-marksman-bow.png
 %%DATADIR%%/images/elvish-marksman-defend.png
+%%DATADIR%%/images/elvish-marksman-die1.png
+%%DATADIR%%/images/elvish-marksman-die2.png
+%%DATADIR%%/images/elvish-marksman-die3.png
+%%DATADIR%%/images/elvish-marksman-die4.png
 %%DATADIR%%/images/elvish-marksman.png
 %%DATADIR%%/images/elvish-marshal-attack.png
 %%DATADIR%%/images/elvish-marshal-attack1.png
@@ -1344,6 +1385,10 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/elvish-sharpshooter-bow-defend.png
 %%DATADIR%%/images/elvish-sharpshooter-bow.png
 %%DATADIR%%/images/elvish-sharpshooter-defend.png
+%%DATADIR%%/images/elvish-sharpshooter-die1.png
+%%DATADIR%%/images/elvish-sharpshooter-die2.png
+%%DATADIR%%/images/elvish-sharpshooter-die3.png
+%%DATADIR%%/images/elvish-sharpshooter-die4.png
 %%DATADIR%%/images/elvish-sharpshooter.png
 %%DATADIR%%/images/elvish-shyde-defend.png
 %%DATADIR%%/images/elvish-shyde-ftouch-attack1.png
@@ -2231,6 +2276,9 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/portraits/Heir_To_The_Throne/kalenz.png
 %%DATADIR%%/images/portraits/Heir_To_The_Throne/konrad.png
 %%DATADIR%%/images/portraits/Heir_To_The_Throne/lisar.png
+%%DATADIR%%/images/portraits/The_Dark_Hordes/gwiti.png
+%%DATADIR%%/images/portraits/The_Dark_Hordes/gwiti_lich.png
+%%DATADIR%%/images/portraits/The_Dark_Hordes/nati.png
 %%DATADIR%%/images/portraits/The_Rise_of_Wesnoth/addroran.png
 %%DATADIR%%/images/portraits/The_Rise_of_Wesnoth/aethyr.png
 %%DATADIR%%/images/portraits/The_Rise_of_Wesnoth/archmage.png
@@ -2428,9 +2476,11 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/terrain/alpha.png
 %%DATADIR%%/images/terrain/alphamask.png
 %%DATADIR%%/images/terrain/bridge-n-end.png
+%%DATADIR%%/images/terrain/bridge-n-s-tile.png
 %%DATADIR%%/images/terrain/bridge-n-s.png
 %%DATADIR%%/images/terrain/bridge-n.png
 %%DATADIR%%/images/terrain/bridge-ne-end.png
+%%DATADIR%%/images/terrain/bridge-ne-sw-tile.png
 %%DATADIR%%/images/terrain/bridge-ne-sw.png
 %%DATADIR%%/images/terrain/bridge-ne.png
 %%DATADIR%%/images/terrain/bridge-nw-end.png
@@ -2438,6 +2488,7 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/terrain/bridge-s-end.png
 %%DATADIR%%/images/terrain/bridge-s.png
 %%DATADIR%%/images/terrain/bridge-se-end.png
+%%DATADIR%%/images/terrain/bridge-se-nw-tile.png
 %%DATADIR%%/images/terrain/bridge-se-nw.png
 %%DATADIR%%/images/terrain/bridge-se.png
 %%DATADIR%%/images/terrain/bridge-sw-end.png
@@ -2484,6 +2535,10 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/terrain/castle-convex-se.png
 %%DATADIR%%/images/terrain/castle-convex-sw.png
 %%DATADIR%%/images/terrain/castle-convex-w.png
+%%DATADIR%%/images/terrain/castle-ruin-tile.png
+%%DATADIR%%/images/terrain/castle-sunken-ruin-tile.png
+%%DATADIR%%/images/terrain/castle-swamp-ruin-tile.png
+%%DATADIR%%/images/terrain/castle-tile.png
 %%DATADIR%%/images/terrain/castle-walls.tmpl
 %%DATADIR%%/images/terrain/castle.png
 %%DATADIR%%/images/terrain/cave-floor-n-ne-se-s.png
@@ -2664,6 +2719,7 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/terrain/dwarven-keep-floor.png
 %%DATADIR%%/images/terrain/dwarven-keep.png
 %%DATADIR%%/images/terrain/dwarven-village.png
+%%DATADIR%%/images/terrain/dwarven_castle-tile.png
 %%DATADIR%%/images/terrain/encampment-concave-e.png
 %%DATADIR%%/images/terrain/encampment-concave-ne.png
 %%DATADIR%%/images/terrain/encampment-concave-nw.png
@@ -2676,6 +2732,7 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/terrain/encampment-convex-se.png
 %%DATADIR%%/images/terrain/encampment-convex-sw.png
 %%DATADIR%%/images/terrain/encampment-convex-w.png
+%%DATADIR%%/images/terrain/encampment-tile.png
 %%DATADIR%%/images/terrain/flag-sotbe-1.png
 %%DATADIR%%/images/terrain/flag-sotbe-2.png
 %%DATADIR%%/images/terrain/flag-sotbe-3.png
@@ -2729,6 +2786,7 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/terrain/forest-castle-se.png
 %%DATADIR%%/images/terrain/forest-castle-sw.png
 %%DATADIR%%/images/terrain/forest-castle.png
+%%DATADIR%%/images/terrain/forest-tile.png
 %%DATADIR%%/images/terrain/forest.png
 %%DATADIR%%/images/terrain/forest2.png
 %%DATADIR%%/images/terrain/forest2_small.png
@@ -2837,6 +2895,7 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/terrain/keep-keep-se.png
 %%DATADIR%%/images/terrain/keep-keep-sw.png
 %%DATADIR%%/images/terrain/keep-keep-w.png
+%%DATADIR%%/images/terrain/keep-tile.png
 %%DATADIR%%/images/terrain/keep-wall-0-e.png
 %%DATADIR%%/images/terrain/keep-wall-0-ne.png
 %%DATADIR%%/images/terrain/keep-wall-0-nw.png
@@ -3098,6 +3157,7 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/terrain/snow-forest-castle-sw-nw.png
 %%DATADIR%%/images/terrain/snow-forest-castle-sw.png
 %%DATADIR%%/images/terrain/snow-forest-castle.png
+%%DATADIR%%/images/terrain/snow-forest-tile.png
 %%DATADIR%%/images/terrain/snow-forest.png
 %%DATADIR%%/images/terrain/snow-forest2.png
 %%DATADIR%%/images/terrain/snow-forest3.png
@@ -3398,25 +3458,37 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/terrain/tropical-forest2.png
 %%DATADIR%%/images/terrain/tropical-forest3.png
 %%DATADIR%%/images/terrain/tropical-forest4.png
+%%DATADIR%%/images/terrain/village-cave-tile.png
 %%DATADIR%%/images/terrain/village-cave.png
+%%DATADIR%%/images/terrain/village-coast-tile.png
 %%DATADIR%%/images/terrain/village-coast.png
 %%DATADIR%%/images/terrain/village-desert-shadow.png
+%%DATADIR%%/images/terrain/village-desert-tile.png
 %%DATADIR%%/images/terrain/village-desert.png
+%%DATADIR%%/images/terrain/village-desert2-tile.png
 %%DATADIR%%/images/terrain/village-desert2.png
 %%DATADIR%%/images/terrain/village-dusk.png
 %%DATADIR%%/images/terrain/village-dusk2.png
 %%DATADIR%%/images/terrain/village-dusk3.png
 %%DATADIR%%/images/terrain/village-dusk4.png
+%%DATADIR%%/images/terrain/village-elven-tile.png
 %%DATADIR%%/images/terrain/village-elven.png
 %%DATADIR%%/images/terrain/village-elven2.png
 %%DATADIR%%/images/terrain/village-first_watch.png
+%%DATADIR%%/images/terrain/village-human-hills-tile.png
+%%DATADIR%%/images/terrain/village-human-mountain-tile.png
+%%DATADIR%%/images/terrain/village-human-snow-hills-tile.png
+%%DATADIR%%/images/terrain/village-human-tile.png
 %%DATADIR%%/images/terrain/village-human.png
 %%DATADIR%%/images/terrain/village-human2.png
 %%DATADIR%%/images/terrain/village-human3.png
 %%DATADIR%%/images/terrain/village-second_watch.png
+%%DATADIR%%/images/terrain/village-snow-tile.png
 %%DATADIR%%/images/terrain/village-snow.png
+%%DATADIR%%/images/terrain/village-swampwater-tile.png
 %%DATADIR%%/images/terrain/village-swampwater.png
 %%DATADIR%%/images/terrain/village-tropical-forest.png
+%%DATADIR%%/images/terrain/village-tropical-tile.png
 %%DATADIR%%/images/terrain/village.png
 %%DATADIR%%/images/terrain/void-n-ne-se-s.png
 %%DATADIR%%/images/terrain/void-n-ne-se.png
@@ -3616,7 +3688,7 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/undead-skeleton-dying-2.png
 %%DATADIR%%/images/undead-skeleton-dying.png
 %%DATADIR%%/images/undead-skeleton.png
-%%DATADIR%%/images/undead-sorcerer-defence.png
+%%DATADIR%%/images/undead-sorcerer-defend.png
 %%DATADIR%%/images/undead-sorcerer-die-1.png
 %%DATADIR%%/images/undead-sorcerer-die-2.png
 %%DATADIR%%/images/undead-sorcerer-ranged1.png
@@ -3890,6 +3962,7 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 @dirrm %%DATADIR%%/images/portraits/core/James_Woo
 @dirrm %%DATADIR%%/images/portraits/core
 @dirrm %%DATADIR%%/images/portraits/The_Rise_of_Wesnoth
+@dirrm %%DATADIR%%/images/portraits/The_Dark_Hordes
 @dirrm %%DATADIR%%/images/portraits/Heir_To_The_Throne
 @dirrm %%DATADIR%%/images/portraits/Eastern_Invasion
 @dirrm %%DATADIR%%/images/portraits
@@ -3925,11 +3998,15 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 @dirrm %%DATADIR%%/data/terrain-graphics
 @dirrm %%DATADIR%%/data/scenarios/tutorial
 @dirrm %%DATADIR%%/data/scenarios/multiplayer
+@dirrm %%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth/utils
 @dirrm %%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth
+@dirrm %%DATADIR%%/data/scenarios/The_Dark_Hordes/utils
 @dirrm %%DATADIR%%/data/scenarios/The_Dark_Hordes
 @dirrm %%DATADIR%%/data/scenarios/Son_Of_The_Black_Eye/utils
 @dirrm %%DATADIR%%/data/scenarios/Son_Of_The_Black_Eye
+@dirrm %%DATADIR%%/data/scenarios/Heir_To_The_Throne/utils
 @dirrm %%DATADIR%%/data/scenarios/Heir_To_The_Throne
+@dirrm %%DATADIR%%/data/scenarios/Eastern_Invasion/utils
 @dirrm %%DATADIR%%/data/scenarios/Eastern_Invasion
 @dirrm %%DATADIR%%/data/scenarios
 @dirrm %%DATADIR%%/data/maps/multiplayer
@@ -3947,8 +4024,10 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 @unexec rmdir %D/share/locale/la 2> /dev/null || true
 @unexec rmdir %D/share/locale/el_GR/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/el_GR 2> /dev/null || true
+@unexec rmdir %D/man/sv/man6 2> /dev/null || true
+@unexec rmdir %D/man/sv 2> /dev/null || true
 @unexec rmdir %D/man/de/man6 2> /dev/null || true
-@unexec rmdir %D/man/de/ 2> /dev/null || true
+@unexec rmdir %D/man/de 2> /dev/null || true
 %%GNOME:%%share/gnome/applications/wesnoth.desktop
 %%GNOME:%%share/gnome/pixmaps/wesnoth-icon.png
 
