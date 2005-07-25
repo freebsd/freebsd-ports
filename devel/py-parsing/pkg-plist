@@ -15,6 +15,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.CharsNotIn-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.Combine-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.Dict-class.html
+%%PORTDOCS%%%%DOCSDIR%%/pyparsing.Each-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.Empty-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.FollowedBy-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.Forward-class.html
