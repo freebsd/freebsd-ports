@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	0.94.14
-PORTREVISION?=	1
+PORTVERSION=	0.95.2
+PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,9 +15,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER?=	matthias.andree@gmx.de
 COMMENT=	Fast, teachable, learning spam detector
 
-OPTIONS=	BASH  "Install scripts that depend on the bash(1) shell" on
-OPTIONS+=	GSL   "Link with system-wide GSL dynamically (recommended)" on
-OPTIONS+=	ICONV "Normalize tokens to Unicode (EXPERIMENTAL)" off
+OPTIONS=	BASH    "Install scripts that depend on the bash(1) shell" on
+OPTIONS+=	GSL     "Link with system-wide GSL dynamically (recommended)" on
+OPTIONS+=	UNICODE "Normalize tokens to Unicode (UTF-8)" on
 
 LIB_DEPENDS?=	db-4.3:${PORTSDIR}/databases/db43
 
@@ -38,8 +38,8 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 BF_LIBS?=		-ldb-4.3
 BF_CPPFLAGS?=		-I${LOCALBASE}/include/db43 -I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
-.if defined(WITH_ICONV)
-CONFIGURE_ARGS+=	--enable-iconv
+.if !defined(WITHOUT_UNICODE)
+CONFIGURE_ARGS+=	--enable-unicode
 USE_ICONV=		yes
 BF_LIBS+=		-liconv
 .endif
@@ -54,7 +54,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALL_TARGET=	install-strip prefix=${PREFIX}
 
 MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1 bogotune.1 \
-		bf_copy.1 bf_compact.1 bf_resize.1 bf_tar.1
+		bf_copy.1 bf_compact.1 bf_tar.1
 
 post-patch:
 	${REINPLACE_CMD} -e "s|/bin/bash|${LOCALBASE}/bin/bash|" \
@@ -67,6 +67,8 @@ post-patch:
 		${WRKSRC}/contrib/bogominitrain.pl \
 		${WRKSRC}/contrib/mime.get.rfc822 \
 		${WRKSRC}/contrib/printmaildir.pl
+	${REINPLACE_CMD} -e 's/INTEGRITY_TESTS = t.lock1 t.lock3 t.valgrind/INTEGRITY_TESTS = t.lock1 t.lock3/' \
+		${WRKSRC}/src/tests/Makefile.in
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
