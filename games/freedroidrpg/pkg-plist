@@ -5584,4 +5584,4 @@ bin/pngtoico
 @dirrm %%DATADIR%%/graphics/backgrounds
 @dirrm %%DATADIR%%/graphics
 @dirrm %%DATADIR%%/dialogs
-@dirrm share/freedroidrpg
+@dirrm %%DATADIR%%

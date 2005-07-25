@@ -15,10 +15,6 @@ DISTNAME=	${PORTNAME}-0.9.13-rc2
 MAINTAINER=	alejandro@varnet.biz
 COMMENT=	Modification of the classical Freedroid engine into an RPG
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png:${PORTSDIR}/graphics/png \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
-
 USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_SDL=	mixer image net sdl
@@ -38,6 +34,7 @@ BROKEN=		"does not compile (missing fenv.h)"
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's#-lSDL # #' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's#-lSDL # #' \
+				${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.post.mk>
