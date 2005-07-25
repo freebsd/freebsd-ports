@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://freebsd.ntu.edu.tw/FreeBSD/woju/source/ \
 		ftp://freebsd.csie.nctu.edu.tw/pub/taiwan/NTU/woju/source/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NTHU-CS Maple BBS 2.36 BBS-like editor
 
 .include <bsd.port.pre.mk>

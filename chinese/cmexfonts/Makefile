@@ -11,7 +11,7 @@ CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/cmexfonts/ \
 		ftp://sunsite.unc.edu/pub/Linux/X11/fonts/
 
-MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Big5+ Chinese Mingti bitmap font (by CMEX & DynaLab) for X11
 
 BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}

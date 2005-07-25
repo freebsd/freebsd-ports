@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.geocities.com/labourvanity/pub/ \
 		ftp://freebsd.sinica.edu.tw/pub/statue/chm2html/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CHM Tools package
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.info.gov.hk/digital21/chi/hkscs/download/
 DISTNAME=	ming_uni.ttf
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chinese Big5HKSCS TrueType fonts
 
 EXTRACT_CMD=	${GZIP_CMD}

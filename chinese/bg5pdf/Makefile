@@ -12,7 +12,7 @@ CATEGORIES=	chinese print
 MASTER_SITES=	http://cschin.yydolphin.net/bg5pdf/ \
 		ftp://freebsd.sinica.edu.tw/pub/statue/bg5pdf/
 
-MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Chinese-Big5 encoded files to PDF, using PDFlib
 
 LIB_DEPENDS=	pdf.7:${PORTSDIR}/print/pdflib

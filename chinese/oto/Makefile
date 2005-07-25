@@ -12,7 +12,7 @@ CATEGORIES=	chinese print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show you font info and add new 'name' and 'cmap' tables
 
 USE_ICONV=	yes

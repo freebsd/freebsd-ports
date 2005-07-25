@@ -18,7 +18,7 @@ DISTFILES=	${GCINFILE} ${BOSHIAMYFILE}
 EXTRACT_ONLY=	${GCINFILE}
 .endif
 
-MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A traditional chinese input utility in X
 
 USE_X_PREFIX=	YES

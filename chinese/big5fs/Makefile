@@ -10,7 +10,7 @@ PORTVERSION=	2.3
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/big5fs/
 
-MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reads Big5 filenames on Joliet, VFAT and NTFS filesystems
 
 NO_PACKAGE=	"Different versions definitely cause crash"

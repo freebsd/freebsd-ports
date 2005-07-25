@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/pyDict/
 
-MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Chinese <-> English dictionary, under both console and X11
 
 RUN_DEPENDS=	${LOCALBASE}/include/pygtk/pygtk.h:${PORTSDIR}/x11-toolkits/py-gtk \

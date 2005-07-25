@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/moefonts-cid/ \
 DISTFILES=	MOEKai-Regular MOESung-Regular
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MOE CIDFonts converted by Adobe
 
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/Resource/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps

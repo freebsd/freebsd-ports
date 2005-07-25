@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-chinese-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	True Type Font to Postscript Type 1 Converter with chinese maps
 
 RUN_DEPENDS=	ttf2pt1:${PORTSDIR}/print/ttf2pt1

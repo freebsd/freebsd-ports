@@ -11,7 +11,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/fortunetw/
 DISTNAME=	zh-fortunetw-${PORTVERSION}
 
-MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A very classic fortune file in Taiwan
 
 NO_BUILD=	yes
