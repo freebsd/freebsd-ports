@@ -1,0 +1,7 @@
+===============================================================================
+Create the file ~/.launch as follows:
+
+	echo MEMOIRE=5 > ~/.launch
+
+"5" is the number of commands to preserve in the command history.
+===============================================================================
