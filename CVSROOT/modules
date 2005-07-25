@@ -303,6 +303,7 @@ algae		ports/math/algae
 algotutor	ports/math/algotutor
 alienblaster	ports/games/alienblaster
 alienwah	ports/audio/alienwah
+alienwave	ports/games/alienwave
 align		ports/textproc/align
 alignmargins	ports/print/alignmargins
 alisp		ports/lang/alisp
