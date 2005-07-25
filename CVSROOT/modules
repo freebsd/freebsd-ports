@@ -11253,6 +11253,7 @@ spegla		ports/ftp/spegla
 spellcast	ports/games/spellcast
 spellutils	ports/textproc/spellutils
 speyes		ports/games/speyes
+spfval		ports/mail/spfval
 sphinx		ports/audio/sphinx
 spice		ports/cad/spice
 spider		ports/games/spider
