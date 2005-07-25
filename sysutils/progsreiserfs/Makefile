@@ -15,10 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities and library to manipulate ReiserFS partitions
 
-BROKEN=		Leaves behind lib/charset.alias instead of correctly using gettext
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
 GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=yes
 USE_LIBTOOL_VER=15
@@ -31,6 +27,7 @@ CONFIGURE_ARGS=	--disable-debug
 CONFIGURE_ARGS+=--disable-nls
 .else
 USE_GETTEXT=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 .endif
 
 MAN8=		cpfs.reiserfs.8 mkfs.reiserfs.8 reiserfs.8 \
