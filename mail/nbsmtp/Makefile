@@ -10,6 +10,7 @@
 PORTNAME=	nbsmtp
 PORTVERSION=	0.99
 CATEGORIES=	mail
+PORTREVISION=	1
 MASTER_SITES=	http://www.gentoo-es.org/~ferdy/ \
 		http://www.it.uc3m.es/~ferdy/nbsmtp/
 
