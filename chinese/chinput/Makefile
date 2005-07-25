@@ -13,7 +13,7 @@ CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://ftp.cn.freebsd.org/pub/ported/
 DISTNAME=	zh-chinput-2.1
 
-MAINTAINER=	phj@cn.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chinese GB2312,BIG5,Japanese code input server
 
 BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT} \

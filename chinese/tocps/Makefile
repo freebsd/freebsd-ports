@@ -11,7 +11,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.cn.FreeBSD.org/pub/ported/
 DISTNAME=	${PKGNAME}
 
-MAINTAINER=	phj@cn.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translates PostScript files with Chinese characters
 
 MANCOMPRESSED=	yes
