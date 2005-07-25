@@ -1,0 +1,26 @@
+exMARS combines the latest advance in corewar simulation technology, with
+proactive performance optimizations.
+
+Actually exMARS is a redcode simulator, just like exhaust and pMARS. In fact,
+I have shamelessly taken sourcecode from pMARS, exhaust, some ideas from
+qMars, a shot of optimizations, shook everything well, and garnished
+everything with a high level interface for Ruby.
+
+The resulting program has the following main features:
+
+* Uses the parser from pMARS, so no previous parsing is neccessary. At first
+  this was my main motivation for exMARS.
+* Speed: 50% faster than pmars on a Pentium III, and often more than twice as
+  fast than pmars on a Pentium 4 (using gcc 3.3.1, and the same compiler
+  options).
+* Rewritten the code in a more object oriented way, which allows different
+  Mars at the same time in the same program, it should also be thread save.
+
+NOTE: This is only Ruby interface part. To install exmars use games/exmars port.
+
+Author: Martin Ankerl
+
+WWW: http://martinus.geekisp.com/rublog.cgi/Projects/CoreWar/exMARS
+
+- Alejandro Pulver
+alejandro@varnet.biz
