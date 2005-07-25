@@ -15,6 +15,7 @@ The resulting program has the following main features:
   options).
 * Rewritten the code in a more object oriented way, which allows different
   Mars at the same time in the same program, it should also be thread save.
+* To get Ruby interface you can install games/ruby-exmars port.
 
 Author: Martin Ankerl
 
