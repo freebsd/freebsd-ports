@@ -9,10 +9,12 @@ PORTNAME=	dotconfpp
 PORTVERSION=	0.0.4a
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://voodoo.com.ua/dotconfpp/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://voodoo.com.ua/dotconfpp/
+MASTER_SITE_SUBDIR=	dotconfpp
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mark_sf@kikg.ifmo.ru
 COMMENT=	Configuration file parser written in C++
 
 USE_LIBTOOL_VER=15
