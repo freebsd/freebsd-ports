@@ -1,0 +1,11 @@
+--- libevent/Makefile.in.orig	Sun May 15 21:03:49 2005
++++ libevent/Makefile.in	Tue Jul 26 16:10:33 2005
+@@ -8,7 +8,7 @@
+ 
+ CC=@CC@
+ CPPFLAGS=@CPPFLAGS@ @DEFS@ -I. -Icompat -DVERSION=\"@PACKAGE_VERSION@\"
+-CFLAGS=@CFLAGS@
++CFLAGS=@CFLAGS@ ${CPPFLAGS}
+ LDFLAGS=@LDFLAGS@
+ INSTALL=@INSTALL@
+ AR=@AR@
