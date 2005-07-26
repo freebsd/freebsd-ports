@@ -6,7 +6,7 @@
 
 PORTNAME=	khacc
 PORTVERSION=	3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	qhacc
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	qhacc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple KDE-base financial manager
 
-LIB_DEPENDS=	qhacc.6:${PORTSDIR}/finance/qhacc
+LIB_DEPENDS=	qhacc.7:${PORTSDIR}/finance/qhacc
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_KDELIBS_VER=	3
