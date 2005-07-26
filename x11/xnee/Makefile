@@ -6,32 +6,37 @@
 #
 
 PORTNAME=	xnee
-PORTVERSION=	1.08
+PORTVERSION=	2.00
 CATEGORIES=	x11
-MASTER_SITES=	http://www.sandklef.com/xnee/tars/ \
-		${MASTER_SITE_GNU}
+MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	Xnee-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X events recorder and player
 
-BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
-
 USE_X_PREFIX=	yes
-USE_PERL5=	yes
+WANT_GNOME=	yes
+USE_GNOME=	gnomehack gnometarget
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-MAN1=		xnee.1
-INFO=		xnee xnee_develop
+INFO=		xnee
+PLIST_FILES=	bin/cnee lib/libxnee.a
 
-post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
-		's| -g | \@CFLAGS\@ |g ; \
-		 s|-lpthread|${PTHREAD_LIBS:S/"//g}|g ; \
-		 s|-ldl||g'
+.include <bsd.port.pre.mk>
 
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/xnee/doc/xnee.1 ${MANPREFIX}/man/man1
+.if ${HAVE_GNOME:Mgtk20}!=""
+USE_GNOME+=	gtk20
+PLIST_FILES+=	bin/gnee
+PKGNAMESUFFIX=	-gtk
+.else
+CONFIGURE_ARGS+=	--disable-gui
+.endif
 
-.include <bsd.port.mk>
+post-build:
+	cd ${WRKSRC}/doc && makeinfo --no-split xnee.texi
+
+pre-install:
+	${INSTALL_DATA} ${WRKSRC}/doc/xnee.info ${PREFIX}/${INFO_PATH}
+
+.include <bsd.port.post.mk>
