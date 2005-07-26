@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fisg
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.12
 CATEGORIES=	irc
 MASTER_SITES=	http://www.tnsp.org/files/ \
 		http://www.daemon.li/distfiles/
@@ -14,25 +14,27 @@ MASTER_SITES=	http://www.tnsp.org/files/ \
 MAINTAINER=	psh@iki.fi
 COMMENT=	Fast IRC statistics generator
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 BUILD_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 PORTDOCS=	README FAQ
+MAN1=		fisg.1
 
-DATA_FILES=	blue-h.png happy1.gif happy5.gif style-c64.css \
-		blue-v.png happy2.gif happy6.gif style-pisg.css \
-		green-h.png happy3.gif red-h.png yellow-h.png \
-		green-v.png happy4.gif red-v.png yellow-v.png
-
-PKGMESSAGE=	${WRKDIR}/pkg-message
+post-patch:
+	@${REINPLACE_CMD} -e 's|^PREFIX|PREFIX?|' \
+	-e 's|^CC|CC?|' -e 's|^CFLAGS|CFLAGS?|' ${WRKSRC}/src/Makefile
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/data/ && ${INSTALL_DATA} ${DATA_FILES} ${DATADIR}
+	${MKDIR} ${DATADIR}
+	${CP} -Rp ${WRKSRC}/data/*.png ${DATADIR}/
+	${CP} -Rp ${WRKSRC}/data/*.css ${DATADIR}/
+	${CP} -Rp ${WRKSRC}/data/*.gif ${DATADIR}/
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example.cfg ${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/users.cfg ${EXAMPLESDIR}/
 	${INSTALL_PROGRAM} ${WRKSRC}/src/fisg ${PREFIX}/bin
+	${INSTALL_MAN}	${WRKSRC}/src/fisg.1 ${MANPREFIX}/man/man1/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
