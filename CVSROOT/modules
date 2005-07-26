@@ -13179,6 +13179,7 @@ yazproxy	ports/net/yazproxy
 yell		ports/audio/yell
 yelp		ports/x11/yelp
 yencode		ports/news/yencode
+yersinia	ports/security/yersinia
 yi-aspell	ports/textproc/yi-aspell
 ymessenger	ports/net/ymessenger
 yodl		ports/textproc/yodl
