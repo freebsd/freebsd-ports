@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	barrage
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.0.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lgames
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	az@inec.ru
 COMMENT=	Destroy as many targets as possible
 
 USE_GMAKE=	yes
+USE_GETOPT_LONG=yes
 USE_SDL=	sdl mixer
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-profile-path=/var/games
