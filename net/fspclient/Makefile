@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fspclient
-PORTVERSION=	0.90.0
+PORTVERSION=	0.91.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,13 +14,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A ftp-like client for the FSP service
 
-GNU_CONFIGURE=	yes
-USE_GETOPT_LONG=	yes
 USE_BZIP2=	yes
-
-CFLAGS+=	-I${LOCALBASE}/include
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		fsp.1
 PLIST_FILES=	bin/fsp
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|<getopt\.h>|<unistd.h>|g' ${WRKSRC}/bsd/ls.c
 
 .include <bsd.port.mk>
