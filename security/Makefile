@@ -515,6 +515,7 @@
     SUBDIR += tinc
     SUBDIR += tinyca
     SUBDIR += tinysu
+    SUBDIR += tlswrap
     SUBDIR += tor
     SUBDIR += trinokiller
     SUBDIR += tripwire
