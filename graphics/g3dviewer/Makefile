@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	g3dviewer
-PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTVERSION=	0.1.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://automagically.de/files/
 
@@ -23,13 +22,17 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include 
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib 
+MAN1=		g3dviewer.1
+
+CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|$$(pkgdatadir)/plugins/|$$(pkglibdir)/plugins/|g'
 	@${REINPLACE_CMD} -e 's|DBG_CFLAGS="-O2"|DBG_CFLAGS=""|g ; \
 		 s|$$datadir/$$PACKAGE/|$$libdir/$$PACKAGE/|g' ${WRKSRC}/configure
+.for file in plugins/image/Makefile.in plugins/import/Makefile.in
+	@${REINPLACE_CMD} -e 's|= $$(pkgdatadir)|= $$(pkglibdir)|g ; \
+		 s|= -Wall|= -fPIC -Wall|g' ${WRKSRC}/${file}
+.endfor
 
 .include <bsd.port.mk>
