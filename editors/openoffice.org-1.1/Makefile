@@ -6,40 +6,39 @@
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	1.1.4
-PORTREVISION=	2
+PORTVERSION=	1.1.5.rc2
 CATEGORIES+=	editors
-MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/&,} \
+MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/rc/1.1.5rc2/&,} \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%,maho/openoffice.org/&,}:moz \
 		${MASTER_SITE_MOZILLA:S,%SUBDIR%,mozilla/releases/mozilla1.0/src/&,}:mozsrc \
-		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/%SUBDIR%/ \
-		ftp://ftp.kddlabs.co.jp/office/openoffice/%SUBDIR%/ \
-		ftp://ftp.tu-chemnitz.de/pub/openoffice/%SUBDIR%/ \
-		http://ftp.stardiv.de/pub/OpenOffice.org/%SUBDIR%/ \
-		http://ftp.gwdg.de/pub/misc/openoffice/%SUBDIR%/ \
+		ftp://ftp.kddlabs.co.jp/office/openoffice/contrib/rc/1.1.5rc2/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/rc/1.1.5rc2/ \
+		ftp://ftp.tu-chemnitz.de/pub/openoffice/contrib/rc/1.1.5rc2/ \
+		ftp://ftp.stardiv.de/pub/OpenOffice.org/contrib/rc/1.1.5rc2/ \
+		http://ftp.gwdg.de/pub/misc/openoffice/contrib/rc/1.1.5rc2/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent/&,}:help \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent-1.0/&,}:help3 \
 		ftp://ftp.kddlabs.co.jp/office/openoffice/contrib/helpcontent/:help \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent/:help \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help \
-		ftp://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/Files/:help2
-MASTER_SITE_SUBDIR=     stable/${PORTVERSION}
-DISTFILES+=	OOo_${PORTVERSION}_source.tar.gz gpc231.tar.Z:gpc
-EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.gz
+	ftp://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/Files/:help2
+
+DISTFILES+=	OOo_${RELEASE_NR}rc2_src.tar.gz gpc231.tar.Z:gpc
+EXTRACT_ONLY=	OOo_${RELEASE_NR}rc2_src.tar.gz
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
-USE_GNOME=	gtk20
 MOZILLA_PROJECT=	cws_srx645_mozooo.20040203.tar.gz
 MOZILLA_VERSION=	1.0
 MOZILLA_SOURCE=		mozilla-source-${MOZILLA_VERSION}.tar.gz
 .if !defined(WITHOUT_MOZILLA)
 DISTFILES+=	${MOZILLA_PROJECT}:moz ${MOZILLA_SOURCE}:mozsrc
-USE_GNOME+=	orbit gtk12
+USE_GNOME=	orbit
 .endif
 
+USE_XLIB=	yes
 USE_PERL5=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
@@ -47,7 +46,7 @@ USE_REINPLACE=	yes
 
 .if !defined(WITHOUT_JAVA)
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.4
 JAVA_BUILD=	jdk
 .endif
 
@@ -62,9 +61,7 @@ LANG_EXT?=	01
 LANG_CONFIGURE_ARG?=	ENUS
 L10NHELP?=     helpcontent_01_unix.tgz
 
-.if defined(L10NHELP)
 DISTFILES+=	${L10NHELP}:help
-.endif
 .if defined(ALL_LOCALIZED_LANGS)
 DISTFILES+=	helpcontent_01_unix.tgz:help helpcontent_07_unix.tgz:help3 \
 		helpcontent_31_unix.tgz:help  helpcontent_33_unix.tgz:help \
@@ -87,9 +84,9 @@ L10NHELPS=	helpcontent_01_unix.tgz helpcontent_07_unix.tgz \
 .endif
 
 CODELINE=		645
-RELEASE_NR=		${PORTVERSION}
+RELEASE_NR=		1.1.5
 INSTALLATION_BASEDIR=	OpenOffice.org${RELEASE_NR}
-EXECBASE=		openoffice.org-${RELEASE_NR}
+EXECBASE=		openoffice.org-${PORTVERSION}
 DIST_SUBDIR=		openoffice.org1.1
 SIMPLEOSVER=		${OSREL:C/\.//g}
 PACKAGE_BASENAME=       OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel
@@ -115,34 +112,19 @@ CXX=	g++32
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
-		xmkmf:${X_IMAKE_PORT} \
-		${X11BASE}/lib/libXft.so:${PORTSDIR}/x11-fonts/libXft
-.if !defined(DISPLAY)
-BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT}
-.endif
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
-		mng.1:${PORTSDIR}/graphics/libmng \
-		freetype.9:${PORTSDIR}/print/freetype2
+		imake:${X_IMAKE_PORT}
 .if defined(WITHOUT_JAVA)
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
-.else
-BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 .endif
 GNU_CONFIGURE=	yes
-USE_AUTOCONF_VER=	259
-WRKSRC=		${WRKDIR}
+WRKSRC=		${WRKDIR}/OOo_${RELEASE_NR}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
-ANT?=		${LOCALBASE}/bin/ant
 TCSH?=		/bin/tcsh
-UNZIP?=		${PREFIX}/bin/unzip
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NUMOFPROCESSES?=	1
 
-.if !defined(DISPLAY)
 DISPLAYHACK=localhost:1001
-.endif
-CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp
+CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --enable-pasf
 
 .include <${FILESDIR}/Makefile.knobs>
 
@@ -170,15 +152,10 @@ post-extract:
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/gpc231.tar.Z | ${TAR} xfz -
 	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/external/gpc/
 	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/external/gpc/
-.if defined(L10NHELP)
-	@${ECHO_MSG} "===>  Extracting L10NHELP sub project"
 	@${MKDIR} ${WRKDIR}/L10NHELP
 	@cd ${WRKDIR}/L10NHELP ; \
 		${CAT} ${DISTDIR}/${DIST_SUBDIR}/${L10NHELP} | ${GZIP_CMD} -d | ${TAR} xf -
-.endif
 .if defined(ALL_LOCALIZED_LANGS)
-	@${ECHO_MSG} "===>  Extracting All available L10NHELPs"
-	@${MKDIR} ${WRKDIR}/L10NHELP
 	@cd ${WRKDIR}/L10NHELP ; \
 	for helpfile in ${L10NHELPS}; do \
 		${CAT} ${DISTDIR}/${DIST_SUBDIR}/$$helpfile | ${GZIP_CMD} -d | ${TAR} xf - ; \
@@ -191,38 +168,17 @@ post-extract:
 	@cd ${WRKSRC} ; ${MV} moz moz.runtime ; ${MV} moz.old moz
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g;' ${WRKSRC}/odk/settings/settings.mk
-	@${REINPLACE_CMD} -e 's+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+g' ${WRKSRC}/odk/settings/settings.mk
-
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
 .if !defined(WITHOUT_MOZILLA)
 	@cd ${WRKSRC}/moz.runtime ; ${SETENV} "BUILD_MOZAB=TRUE" ${TCSH} -c 'source ../FreeBSDEnv.Set ; build.pl ; dmake zip' ; ${CP} unxfbsd.pro/zipped/FREEBSD*.zip ../moz/zipped
 .endif
-.if defined(L10NHELP) || defined(ALL_LOCALIZED_LANGS)
 	@${MKDIR} ${WRKSRC}/solver/${CODELINE}/unxfbsd.pro/pck
 	@${CP} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/solver/${CODELINE}/unxfbsd.pro/pck
-.endif
-.if !defined(DISPLAY)
-	#
-	# This is a UGLY hack to not have to specify a X-Display.
-	#
-	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
-	@sleep 5
 .if (${NUMOFPROCESSES}>1)
 	@cd ${WRKSRC} ; DISPLAY=${DISPLAYHACK} ; ${TCSH} -c "source FreeBSDEnv.Set ; cd instsetoo ; build.pl -P${NUMOFPROCESSES} --all"
 .else
-	cd ${WRKSRC} ; DISPLAY=${DISPLAYHACK} ; ${TCSH} -c "source FreeBSDEnv.Set ; dmake"
-.endif
-	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
-	@${RM} -f ${WRKDIR}/.Xvfb.pid
-.else
-.if (${NUMOFPROCESSES}>1)
-	@cd ${WRKSRC} ; DISPLAY=${DISPLAY} ; ${TCSH} -c "source FreeBSDEnv.Set ; cd instsetoo ; build.pl -P${NUMOFPROCESSES} --all"
-.else
-	@cd ${WRKSRC} ; DISPLAY=${DISPLAY} ; ${TCSH} -c "source FreeBSDEnv.Set ; dmake"
-.endif
+	@cd ${WRKSRC} ; DISPLAY=${DISPLAYHACK} ; ${TCSH} -c "source FreeBSDEnv.Set ; dmake"
 .endif
 
 do-install:

@@ -1,3 +1,7 @@
+Issutracker : #iXXXXX#
+CWS         : N/A
+Author      : NAKATA Maho <maho@openoffice.org> (JCA)
+Description : 
 In solver/645/unxfbsd.pro/inc/rtl/string.hxx,
 even though there is a descrioptin like
 static OString valueOf( sal_Int32 i, sal_Int16 radix = 10 ) SAL_THROW(())
