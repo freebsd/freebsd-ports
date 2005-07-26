@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cvsd
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	devel
 MASTER_SITES=	http://tiefighter.et.tudelft.nl/~arthur/cvsd/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
