@@ -30,8 +30,6 @@ bin/winhelp
 bin/wmc
 bin/wrc
 etc/rc.d/000.wine.sh
-@unexec if cmp -s %D/etc/wine.conf %D/etc/wine.conf.sample; then rm -f %D/etc/wine.conf; fi
-etc/wine.conf.sample
 include/wine/debug.h
 include/wine/exception.h
 include/wine/library.h
@@ -81,6 +79,7 @@ include/wine/windows/amstream.h
 include/wine/windows/amstream.idl
 include/wine/windows/amvideo.h
 include/wine/windows/amvideo.idl
+include/wine/windows/appmgmt.h
 include/wine/windows/audevcod.h
 include/wine/windows/austream.h
 include/wine/windows/austream.idl
@@ -88,6 +87,7 @@ include/wine/windows/aviriff.h
 include/wine/windows/axcore.idl
 include/wine/windows/axextend.idl
 include/wine/windows/basetsd.h
+include/wine/windows/basetyps.h
 include/wine/windows/cderr.h
 include/wine/windows/cfgmgr32.h
 include/wine/windows/cguid.h
@@ -147,6 +147,8 @@ include/wine/windows/dmusici.h
 include/wine/windows/dmusics.h
 include/wine/windows/docobj.h
 include/wine/windows/docobj.idl
+include/wine/windows/downloadmgr.h
+include/wine/windows/downloadmgr.idl
 include/wine/windows/dpaddr.h
 include/wine/windows/dplay.h
 include/wine/windows/dplay8.h
@@ -172,6 +174,7 @@ include/wine/windows/guiddef.h
 include/wine/windows/htmlhelp.h
 include/wine/windows/icm.h
 include/wine/windows/icmpapi.h
+include/wine/windows/idispids.h
 include/wine/windows/imagehlp.h
 include/wine/windows/imm.h
 include/wine/windows/initguid.h
@@ -208,6 +211,8 @@ include/wine/windows/mcx.h
 include/wine/windows/mediaerr.h
 include/wine/windows/mediaobj.h
 include/wine/windows/mediaobj.idl
+include/wine/windows/mimeinfo.h
+include/wine/windows/mimeinfo.idl
 include/wine/windows/minmax.h
 include/wine/windows/mlang.h
 include/wine/windows/mlang.idl
@@ -232,6 +237,9 @@ include/wine/windows/mssip.h
 include/wine/windows/mswsock.h
 include/wine/windows/msxml.h
 include/wine/windows/msxml.idl
+include/wine/windows/msxml2.h
+include/wine/windows/msxml2.idl
+include/wine/windows/msxml2did.h
 include/wine/windows/msxmldid.h
 include/wine/windows/nb30.h
 include/wine/windows/npapi.h
@@ -303,6 +311,7 @@ include/wine/windows/shobjidl.idl
 include/wine/windows/shtypes.h
 include/wine/windows/shtypes.idl
 include/wine/windows/sipbase.h
+include/wine/windows/snmp.h
 include/wine/windows/sql.h
 include/wine/windows/sqlext.h
 include/wine/windows/sqltypes.h
@@ -312,6 +321,7 @@ include/wine/windows/strmif.h
 include/wine/windows/strmif.idl
 include/wine/windows/tapi.h
 include/wine/windows/tchar.h
+include/wine/windows/textserv.h
 include/wine/windows/tlhelp32.h
 include/wine/windows/tmschema.h
 include/wine/windows/unknwn.h
@@ -333,6 +343,7 @@ include/wine/windows/winerror.h
 include/wine/windows/wingdi.h
 include/wine/windows/wininet.h
 include/wine/windows/winioctl.h
+include/wine/windows/winldap.h
 include/wine/windows/winnetwk.h
 include/wine/windows/winnls.h
 include/wine/windows/winnls32.h
@@ -362,11 +373,18 @@ include/wine/windows/wtsapi32.h
 include/wine/windows/wtypes.h
 include/wine/windows/wtypes.idl
 include/wine/windows/xcmc.h
+include/wine/windows/xmldom.h
+include/wine/windows/xmldom.idl
+include/wine/windows/xmldomdid.h
+include/wine/windows/xmldso.h
+include/wine/windows/xmldso.idl
+include/wine/windows/xmldsodid.h
 include/wine/windows/zmouse.h
 lib/libwine.so
 lib/libwine.so.1
 lib/libwine_unicode.so
 lib/libwine_unicode.so.1
+lib/wine/activeds.dll.so
 lib/wine/advapi32.dll.so
 lib/wine/advpack.dll.so
 lib/wine/amstream.dll.so
@@ -431,6 +449,7 @@ lib/wine/gdi.exe.so
 lib/wine/gdi32.dll.so
 lib/wine/glu32.dll.so
 lib/wine/glut32.dll.so
+lib/wine/hh.exe.so
 lib/wine/hhctrl.ocx.so
 lib/wine/iccvid.dll.so
 lib/wine/icinfo.exe.so
@@ -446,6 +465,7 @@ lib/wine/joystick.drv.so
 lib/wine/kernel32.dll.so
 lib/wine/keyboard.drv.so
 lib/wine/krnl386.exe.so
+lib/wine/libactiveds.def
 lib/wine/libadvapi32.def
 lib/wine/libadvpack.def
 lib/wine/libamstream.def
@@ -572,6 +592,7 @@ lib/wine/libwinnls32.def
 lib/wine/libwinspool.def
 lib/wine/libwintab32.def
 lib/wine/libwintrust.def
+lib/wine/libwldap32.def
 lib/wine/libwnaspi32.def
 lib/wine/libwow32.def
 lib/wine/libws2_32.def
@@ -585,7 +606,7 @@ lib/wine/mciavi.drv.so
 lib/wine/mcicda.drv.so
 lib/wine/mciseq.drv.so
 lib/wine/mciwave.drv.so
-lib/wine/midimap.drv.so
+lib/wine/midimap.dll.so
 lib/wine/mlang.dll.so
 lib/wine/mmdevldr.vxd.so
 lib/wine/mmsystem.dll.so
@@ -665,6 +686,7 @@ lib/wine/shlwapi.dll.so
 lib/wine/snmpapi.dll.so
 lib/wine/sound.dll.so
 lib/wine/start.exe.so
+lib/wine/stdole2.tlb.so
 lib/wine/stdole32.tlb.so
 lib/wine/sti.dll.so
 lib/wine/storage.dll.so
@@ -734,6 +756,7 @@ lib/wine/wintab.dll.so
 lib/wine/wintab32.dll.so
 lib/wine/wintrust.dll.so
 lib/wine/winver.exe.so
+lib/wine/wldap32.dll.so
 lib/wine/wnaspi32.dll.so
 lib/wine/wow32.dll.so
 lib/wine/wprocs.dll.so
@@ -743,6 +766,7 @@ lib/wine/wtsapi32.dll.so
 share/aclocal/wine.m4
 share/applications/wine.desktop
 share/wine/wine.inf
+share/wine/generic.ppd
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
