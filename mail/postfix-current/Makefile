@@ -15,7 +15,7 @@
 # NOTE: PCRE is enabled by default unless you specifically disable it.
 
 PORTNAME=	postfix
-DISTVERSION=	2.3-20050716
+DISTVERSION=	2.3-20050724
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
