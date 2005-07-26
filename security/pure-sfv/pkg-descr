@@ -1,0 +1,16 @@
+This utility creates .SFV (Simple File Verify) and .PAR (Parity Archive) data
+files.
+
+Features:
+
+  * Recursive directories handling
+  * Automatic checksum file naming ability in create mode
+  * Meaningful and documented exit values for easy scripting
+  * Wildcards for file names
+  * Creation of PAR (Parity Archive) files
+  * Create Multiple recovery sets if number of files in SFV greater than 255
+
+WWW: http://pure-sfv.sourceforge.net/
+
+- ehaupt
+ehaupt@critical.ch
