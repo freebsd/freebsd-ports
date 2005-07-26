@@ -1,5 +1,5 @@
 bin/liteamp
-lib/locale/ko/LC_MESSAGES/liteamp.mo
+share/locale/ko/LC_MESSAGES/liteamp.mo
 share/gnome/pixmaps/liteamp.png
 share/gnome/pixmaps/liteamp/adddir.png
 share/gnome/pixmaps/liteamp/addfile.png
