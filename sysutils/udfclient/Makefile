@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	udfclient
-PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTVERSION=	0.4.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.13thmonkey.org/udfclient/releases/
 DISTNAME=	UDFclient.${PORTVERSION}
