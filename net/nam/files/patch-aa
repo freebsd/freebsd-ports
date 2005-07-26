@@ -1,13 +1,20 @@
-$FreeBSD$
-
---- configure.orig	Sat Jun  8 23:00:16 2002
-+++ configure	Sat Jun  8 23:00:41 2002
-@@ -2041,7 +2041,7 @@
- EOF
+--- M	Tue Jul 26 12:13:26 2005
++++ Makefile.in	Tue Jul 26 12:13:47 2005
+@@ -62,7 +62,7 @@
  
+ STATIC = @V_STATIC@
+ DEFINE = -DTCL_TK @V_DEFINE@ @V_DEFINES@
+-CFLAGS = $(CCOPT) $(DEFINE) $(INCLUDE)
++CFLAGS += $(CCOPT) $(DEFINE) $(INCLUDE)
  
--		V_INCLUDES="$V_INCLUDE_ZLIB $V_INCLUDES"
-+		V_INCLUDES="$V_INCLUDES"
- 		V_DEFINES="-D$ac_tr_hdr $V_DEFINES"
- 
- 		NS_PACKAGE_zlib_UNDERWAY=true
+ INSTALL = @INSTALL@
+ RANLIB = @V_RANLIB@
+@@ -70,7 +70,7 @@
+ BLANK	= # make a blank space.  DO NOT add anything to this line
+ AR	= ar rc $(BLANK)
+ LINK	= $(CPP)
+-LDFLAGS	=
++LDFLAGS	+=
+ LDOUT	= -o $(BLANK)
+ PERL	= perl
+ RM	= rm -f

@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	nam
-PORTVERSION=	1.10
-PORTREVISION=	1
+PORTVERSION=	1.11
+#PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.isi.edu/nsnam/dist/
 DISTNAME=	nam-src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The UCB/LBNL Network Animator
+COMMENT=	Animation tool for network simulation traces
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtclcl.a:${PORTSDIR}/devel/tclcl
 LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
