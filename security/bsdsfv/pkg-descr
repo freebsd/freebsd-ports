@@ -1,0 +1,16 @@
+BSDsfv is a flexible and highly compatible SFV checksum utility. 
+
+Features:
+
+  - create SFV files, verify downloaded single files or whole releases
+  - add banners to your SFV files
+  - very flexible and compatible with all other SFV tools currently known,
+    including SFVNIX compatibility mode concerning SFV files created
+  - easy to console application
+  - plug & play support for glFTPd and other demons including
+    count-missing-files feature for race scripts
+
+WWW: http://bsdsfv.sourceforge.net/
+
+- ehaupt
+ehaupt@critical.ch

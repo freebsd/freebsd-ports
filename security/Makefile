@@ -36,6 +36,7 @@
     SUBDIR += botan
     SUBDIR += bro
     SUBDIR += bruteforceblocker
+    SUBDIR += bsdsfv
     SUBDIR += bubblegum
     SUBDIR += bugs
     SUBDIR += ca-roots
