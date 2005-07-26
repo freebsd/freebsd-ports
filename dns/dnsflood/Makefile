@@ -6,19 +6,21 @@
 #
 
 PORTNAME=	dnsflood
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	dns
-MASTER_SITES=	http://www.adotout.com/ \
-		http://voodoo.oberon.net/download/
+MASTER_SITES=	http://www.adotout.com/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	az@inec.ru
 COMMENT=	DNS flood detector
 
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/dns_flood_detector
+
+PLIST_FILES=	sbin/dns_flood_detector %%PORTDOCS%%%%DOCSDIR%%/README
+PLIST_DIRS=	%%PORTDOCS%%%%DOCSDIR%%
 
 pre-patch:
 	${CP} ${WRKSRC}/makefiles/Makefile-FreeBSD ${WRKSRC}/Makefile
