@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	dnsproxy
-PORTVERSION=	1.13
+PORTVERSION=	1.15
 CATEGORIES=	dns
 MASTER_SITES=	http://www.wolfermann.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	az@inec.ru
 COMMENT=	A proxy for DNS queries
 
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		dnsproxy.1
 PLIST_FILES=	sbin/dnsproxy
