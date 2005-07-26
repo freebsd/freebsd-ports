@@ -216,8 +216,7 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.8.2.20050712
-PORTREVISION=	1
+DISTVERSION=	0.8.2.20050723
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/vlc/snapshots/ \
 		${MASTER_SITE_LOCAL:S|$|:mozilla|} \
