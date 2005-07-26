@@ -50,8 +50,8 @@ BROKEN=		"rtld depends on _end symbol. type make -DTRYBROKEN to see how to upgra
 
 CODELINE=		680
 RELEASE_NR=		1.9
-MILESTONE=		120
-SNAPDATE=		20050722
+MILESTONE=		121
+SNAPDATE=		20050725
 INSTALLATION_BASEDIR=	openoffice.org${RELEASE_NR}m${MILESTONE}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org2.0
@@ -104,6 +104,8 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		imake:${X_IMAKE_PORT}
 .if !defined(WITHOUT_JAVA)
 BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
+.else
+LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 .endif
 
 GNU_CONFIGURE=	yes
