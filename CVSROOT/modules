@@ -9746,6 +9746,7 @@ pup		ports/print/pup
 pure-emacs20	ports/irc/pure-emacs20
 pure-emacs21	ports/irc/pure-emacs21
 pure-ftpd	ports/ftp/pure-ftpd
+pure-sfv	ports/security/pure-sfv
 pure-xemacs21-mule	ports/irc/pure-xemacs21-mule
 pureadmin	ports/ftp/pureadmin
 puredb		ports/databases/puredb
