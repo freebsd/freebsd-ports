@@ -1,0 +1,12 @@
+Yersinia is a layer 2 vulnerability scanner with support for the
+following protocols:
+
+Cisco Discovery Protocol (CDP)
+Dynamic Host Configuration Protocol (DHCP)
+Dynamic Trunking Protocol (DTP)
+Hot Standby Router Protocol (HSRP)
+IEEE 802.1q
+Spanning Tree Protocol (STP, RSTP)
+Virtual Trunking Protocol (VTP)
+
+WWW: http://yersignia.sourceforge.net/

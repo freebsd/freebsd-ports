@@ -1,0 +1,35 @@
+--- src/Makefile.in~	Sun Jul 24 12:22:05 2005
++++ src/Makefile.in	Sun Jul 24 12:22:08 2005
+@@ -135,8 +135,8 @@
+ 
+ bin_PROGRAMS = yersinia
+ 
+-yersinia_SOURCES = xstp.c parser.c getopt.c getopt1.c dtp.c dtp.h\
+-getopt.h parser.h xstp.h global.h cdp.c cdp.h dhcp.c dhcp.h\
++yersinia_SOURCES = xstp.c parser.c dtp.c dtp.h\
++parser.h xstp.h global.h cdp.c cdp.h dhcp.c dhcp.h\
+ hsrp.h hsrp.c dot1q.h dot1q.c vtp.h vtp.c arp.h arp.c\
+ thread-util.h thread-util.c admin.c admin.h terminal.c\
+ terminal.h terminal-defs.h commands.c commands.h commands-struct.h\
+@@ -151,8 +151,8 @@
+ bin_PROGRAMS = yersinia$(EXEEXT)
+ PROGRAMS = $(bin_PROGRAMS)
+ 
+-am__yersinia_SOURCES_DIST = xstp.c parser.c getopt.c getopt1.c dtp.c \
+-	dtp.h getopt.h parser.h xstp.h global.h cdp.c cdp.h dhcp.c \
++am__yersinia_SOURCES_DIST = xstp.c parser.c dtp.c \
++	dtp.h parser.h xstp.h global.h cdp.c cdp.h dhcp.c \
+ 	dhcp.h hsrp.h hsrp.c dot1q.h dot1q.c vtp.h vtp.c arp.h arp.c \
+ 	thread-util.h thread-util.c admin.c admin.h terminal.c \
+ 	terminal.h terminal-defs.h commands.c commands.h \
+@@ -160,8 +160,8 @@
+ 	yersinia.h yersinia.c md5.c md5.h md5_sum.c md5_sum.h \
+ 	protocols.h protocols.c ncurses-gui.c ncurses-gui.h
+ @HAS_CURSES_TRUE@am__objects_1 = ncurses-gui.$(OBJEXT)
+-am_yersinia_OBJECTS = xstp.$(OBJEXT) parser.$(OBJEXT) getopt.$(OBJEXT) \
+-	getopt1.$(OBJEXT) dtp.$(OBJEXT) cdp.$(OBJEXT) dhcp.$(OBJEXT) \
++am_yersinia_OBJECTS = xstp.$(OBJEXT) parser.$(OBJEXT) \
++	dtp.$(OBJEXT) cdp.$(OBJEXT) dhcp.$(OBJEXT) \
+ 	hsrp.$(OBJEXT) dot1q.$(OBJEXT) vtp.$(OBJEXT) arp.$(OBJEXT) \
+ 	thread-util.$(OBJEXT) admin.$(OBJEXT) terminal.$(OBJEXT) \
+ 	commands.$(OBJEXT) interfaces.$(OBJEXT) attack.$(OBJEXT) \
