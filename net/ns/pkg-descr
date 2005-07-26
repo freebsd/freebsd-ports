@@ -1,7 +1,5 @@
-NS is a discrete event simulator targeted at networking research. 
-Ns provides substantial support for simulation of TCP, routing, and multicast
-protocols. 
+NS is a discrete event simulator targeted at networking research.
+NS provides substantial support for simulation of TCP, routing,
+and multicast protocols. 
 
 WWW: http://www.isi.edu/nsnam/ns/
-
--Oscar <obonilla@fisicc-ufm.edu>
