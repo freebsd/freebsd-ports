@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pcmanx
-PORTVERSION=	0.1.8
+PORTVERSION=	0.2.6
 CATEGORIES=	chinese net
 MASTER_SITES=	http://pcmanx.csie.net/release/ \
 		http://bbs.ilc.edu.tw/~chinsan/pcmanx/
@@ -17,9 +17,10 @@ MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	PCManX is a BBS client using GTK+ 2.x
 
 USE_GNOME=	gtk20 intlhack
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=15
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
+INSTALLS_SHLIB=	yes
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -31,8 +32,5 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|--tag=CXX||g' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
