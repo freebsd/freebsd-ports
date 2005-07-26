@@ -1,12 +1,10 @@
---- Makefile.orig	Sat Jan  8 13:41:09 2005
-+++ Makefile	Sat Jan  8 13:55:03 2005
-@@ -1,29 +1,29 @@
+--- Makefile.orig	Fri Mar 25 12:34:41 2005
++++ Makefile	Tue Jul 26 08:25:26 2005
+@@ -1,28 +1,28 @@
 -INSTALLDIR = /usr/local/lib/gkrellm2/plugins
 +INSTALLDIR = ${PREFIX}/libexec/gkrellm2/plugins
- VERSION = 2.0.8
+ VERSION = 2.0.10
  PKGNAME = gkrellm-multiping
- #OPT = -march=athlon -O2
- #CC = gcc-3.0
 -CC = gcc
 +CC ?= gcc
  
@@ -14,17 +12,19 @@
  
  pinger: pinger.c
 -	$(CC) `pkg-config glib-2.0 --cflags` $(OPT) -lpthread `pkg-config glib-2.0 --libs` -Wall -o pinger pinger.c
-+	$(CC) `pkg-config glib-2.0 --cflags` $(OPT) ${PTHREAD_CFLAGS} ${PTHREAD_LIBS} `pkg-config glib-2.0 --libs` -Wall -o pinger pinger.c
++	$(CC) $(CFLAGS) `pkg-config glib-2.0 --cflags` $(OPT) ${PTHREAD_CFLAGS} ${PTHREAD_LIBS} `pkg-config glib-2.0 --libs` -Wall -o pinger pinger.c
  
  multiping.o: multiping.c decal_multiping_status.xpm
- 	$(CC) -Wall -fPIC -Wall `pkg-config gtk+-2.0 --cflags` $(OPT) -DVERSION=\"$(VERSION)\" -c multiping.c
+-	$(CC) -Wall -fPIC -Wall `pkg-config gtk+-2.0 --cflags` $(OPT) \
++	$(CC) $(CFLAGS) -Wall -fPIC -Wall `pkg-config gtk+-2.0 --cflags` $(OPT) \
+ 	-DINSTALLDIR=\"$(INSTALLDIR)\" -DVERSION=\"$(VERSION)\" -c multiping.c
  
  multiping.so: multiping.o
 -	$(CC) -shared -Wl -ggdb `pkg-config gtk+-2.0 --libs`-o multiping.so multiping.o
-+	$(CC) -shared -Wl `pkg-config gtk+-2.0 --libs`-o multiping.so multiping.o
++	$(CC) $(CFLAGS) -shared -Wl `pkg-config gtk+-2.0 --libs`-o multiping.so multiping.o
  
  clean:
- 	rm -f *.o *.so core
+ 	rm -f *.o *.so pinger core
  
  install: pinger multiping.so
 -	install -d $(INSTALLDIR)
