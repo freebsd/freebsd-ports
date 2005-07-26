@@ -1,5 +1,5 @@
---- xnee/doc/xnee.texi.orig	Fri Mar  7 06:03:53 2003
-+++ xnee/doc/xnee.texi	Fri Apr 18 17:05:07 2003
+--- doc/xnee.texi.orig	Wed May 11 05:04:02 2005
++++ doc/xnee.texi	Mon Jul 25 22:43:28 2005
 @@ -12,7 +12,7 @@
  
  @dircategory Miscellaneous
