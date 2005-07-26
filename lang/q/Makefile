@@ -12,7 +12,7 @@ CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	q-lang
 
-MAINTAINER=	ag@muwiinfa.geschichte.uni-mainz.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Q -- equational programming language
 
 BUILD_DEPENDS=	${LOCALBASE}/dx/lib_freebsd/libDXL.a:${PORTSDIR}/graphics/opendx
