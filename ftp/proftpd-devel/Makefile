@@ -98,11 +98,6 @@ MODULES?=	mod_ifsession:mod_ratio:mod_readme:mod_rewrite:mod_wrap
 INCLUDEDIRS=
 LIBDIRS=
 
-.if defined(WITH_OPENSSL)
-USE_OPENSSL=	yes
-MODULES:=${MODULES}:mod_tls
-.endif
-
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
 MODULES:=${MODULES}:mod_ldap
@@ -127,7 +122,9 @@ LIBDIRS:=${LIBDIRS}:${PREFIX}/lib
 .if defined(WITH_OPENSSL)
 CFLAGS+=	-DHAVE_OPENSSL
 USE_OPENSSL=	yes
-PROFTPD_LIBS+=	-lssl -lcrypto
+.include <${PORTSDIR}/Mk/bsd.openssl.mk>
+PROFTPD_LIBS+=	-lssl -lcrypto -L${LOCALBASE}/lib
+MODULES:=${MODULES}:mod_tls
 .endif
 
 .if defined(WITH_CTRLS)
