@@ -3,4 +3,4 @@ in the GNU libc, mainly intended for porting linuxish code to BSD
 platforms, however it can be used at any platform which has a gcc
 compiler.
 
-WWW: http://www.gnu.org/manual/glibc-2.2.3/html_chapter/libc_33.html
+WWW: http://www.gnu.org/software/libc/manual/html_node/Backtraces.html
