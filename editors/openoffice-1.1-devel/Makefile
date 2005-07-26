@@ -84,8 +84,8 @@ CODELINE=		645
 RELEASE_NR=		1.1.5
 MILESTONE=		57
 SNAPDATE=		20050705
-INSTALLATION_BASEDIR=   OpenOffice.org${RELEASE_NR}
-EXECBASE=               openoffice.org-${RELEASE_NR}m${MILESTONE}
+INSTALLATION_BASEDIR=	OpenOffice.org${RELEASE_NR}
+EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org1.1
 SIMPLEOSVER=		${OSREL:C/\.//g}
 PACKAGE_BASENAME=       OOo_${RELEASE_NR}m${MILESTONE}_${OPSYS}${SIMPLEOSVER}Intel
@@ -166,10 +166,6 @@ post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${MOZILLA_SOURCE} ${WRKSRC}/moz/download
 	@cd ${WRKSRC} ; ${MV} moz moz.runtime ; ${MV} moz.old moz
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g;' ${WRKSRC}/odk/settings/settings.mk
-	@${REINPLACE_CMD} -e 's+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+g' ${WRKSRC}/odk/settings/settings.mk
 
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
