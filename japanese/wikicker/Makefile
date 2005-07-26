@@ -29,7 +29,7 @@ RUN_DEPENDS+=		\
 			${SITE_PERL}/${PERL_ARCH}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String \
 			${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff \
 			${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-			${SITE_PERL}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode \
+			${JCODE}:${PORTSDIR}/japanese/p5-Jcode \
 			${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 			${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 			${SITE_PERL}/Log/Log4perl.pm:${PORTSDIR}/devel/p5-Log-Log4perl
@@ -52,6 +52,12 @@ RUN_DEPENDS+=		${SITE_PERL}/DB_File/Lock.pm:${PORTSDIR}/devel/p5-DB_File-Lock
 IGNORE=	requires Perl 5.6 or newer to run. Either install new Perl or define WITHOUT_WIKICKER_MEMCACHED
 .endif
 RUN_DEPENDS+=		${SITE_PERL}/Cache/Memcached.pm:${PORTSDIR}/databases/p5-Cache-Memcached
+.endif
+
+.if ${PERL_LEVEL} < 500801
+JCODE=	${SITE_PERL}/${PERL_ARCH}/Jcode.pm
+.else
+JCODE=	${SITE_PERL}/Jcode.pm
 .endif
 
 PERL_CONFIGURE=		yes

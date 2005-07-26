@@ -15,7 +15,7 @@ DISTNAME=	wiki${PORTVERSION:S|.|_|g}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	FreeStyle Wiki (perl based wiki clone)
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode \
+RUN_DEPENDS=	${JCODE}:${PORTSDIR}/japanese/p5-Jcode \
 	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template
 
 USE_ZIP=	yes
@@ -39,4 +39,12 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/wiki.cgi ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/setup.sh ${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500801
+JCODE=	${SITE_PERL}/${PERL_ARCH}/Jcode.pm
+.else
+JCODE=	${SITE_PERL}/Jcode.pm
+.endif
+
+.include <bsd.port.post.mk>
