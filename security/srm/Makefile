@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	srm
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.8
 CATEGORIES=	security sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	srm
@@ -14,7 +14,9 @@ MASTER_SITE_SUBDIR=	srm
 MAINTAINER=	kjones@antihackertoolkit.com
 COMMENT=	Secure rm, a utility which destroys file contents before unlinking
 
-USE_LIBTOOL_VER=13
+GNU_CONFIGURE=		yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_LIBTOOL_VER=	15
 
 MAN1=		srm.1
 PLIST_FILES=	bin/srm
