@@ -1,5 +1,5 @@
 etc/apache%%APACHE2%%/mod_jk.conf.sample
 etc/apache%%APACHE2%%/workers.properties.sample
 libexec/apache%%APACHE2%%/mod_jk.so
-@exec %D/sbin/apxs -e -A -n jk %f
-@unexec %D/sbin/apxs -e -A -n jk %f
+@exec %D/sbin/apxs -e -A -n jk %f || true
+@unexec %D/sbin/apxs -e -A -n jk %f || true

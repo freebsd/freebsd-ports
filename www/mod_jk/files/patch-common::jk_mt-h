@@ -1,11 +1,11 @@
---- common/jk_mt.h~	Thu Jun  6 03:23:25 2002
-+++ common/jk_mt.h	Wed Sep 10 01:22:36 2003
-@@ -70,7 +70,7 @@
-  * All WIN32 code is MT, UNIX code that uses pthreads is marked by the POSIX 
+--- common/jk_mt.h.orig	Sat Apr 16 16:33:27 2005
++++ common/jk_mt.h	Sat Jul 23 02:30:22 2005
+@@ -36,7 +36,7 @@
+  * All WIN32 code is MT, UNIX code that uses pthreads is marked by the POSIX
   * _REENTRANT define.
   */
--#if defined (WIN32) || defined(_REENTRANT)
-+#if defined (WIN32) || ( defined(FREEBSD_THREAD_HACK) && defined(_THREAD_SAFE) )
- 
-     /*
-      * Marks execution under MT compilation
+-#if defined (WIN32) || defined(_REENTRANT) || (defined(NETWARE) && defined(__NOVELL_LIBC__))
++#if defined (WIN32) || ( defined(FREEBSD_THREAD_HACK) && defined(_THREAD_SAFE) ) || (defined(NETWARE) && defined(__NOVELL_LIBC__))
+ #ifdef JK_PREFORK 
+ #define _MT_CODE 0
+ #else

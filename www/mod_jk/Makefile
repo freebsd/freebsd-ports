@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mod_jk
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.14.1
 PORTEPOCH?=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
-MASTER_SITE_SUBDIR=	tomcat-connectors/jk/source
-DISTNAME=	jakarta-tomcat-connectors-jk-${PORTVERSION}-src
+MASTER_SITE_SUBDIR=	tomcat-connectors/jk/source/jk-${PORTVERSION:S/.1$//}
+DISTNAME=	jakarta-tomcat-connectors-${PORTVERSION}-src
 
 MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	Apache JK module for connecting to Tomcat using AJP1X
@@ -36,15 +36,16 @@ PLIST_SUB=	APACHE2=
 .endif
 
 APACHE_CONF=	${LOCALBASE}/etc/apache${APACHE2}
-WRKSRC=		${WRKDIR}/jakarta-tomcat-connectors-jk-${PORTVERSION}-src/jk/native
+WRKSRC=		${WRKDIR}/jakarta-tomcat-connectors-${PORTVERSION}-src/jk/native
 
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=	--with-apxs=${APXS}
 
 do-install:
-	${APXS} -i -A -n jk ${WRKSRC}/apache-${APACHE_VER}/mod_jk.so
-	${SED} -e "s#%%APACHE_CONF%%#${APACHE_CONF}#g" ${FILESDIR}/mod_jk.conf.sample > ${WRKDIR}/mod_jk.conf.sample
+	${APXS} -i -n jk ${WRKSRC}/apache-${APACHE_VER}/mod_jk.so
+	- ${APXS} -e -A -n jk ${WRKSRC}/apache-${APACHE_VER}/mod_jk.so
+	${SED} -e "s#%%APACHE_CONF%%#${APACHE_CONF}#g" ${WRKSRC}/ > ${WRKDIR}/mod_jk.conf.sample
 	${INSTALL_DATA} ${WRKDIR}/mod_jk.conf.sample ${APACHE_CONF}
 	${INSTALL_DATA} ${FILESDIR}/workers.properties.sample ${APACHE_CONF}
 
