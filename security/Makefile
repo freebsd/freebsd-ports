@@ -407,6 +407,7 @@
     SUBDIR += proxycheck
     SUBDIR += proxytunnel
     SUBDIR += pscan
+    SUBDIR += pure-sfv
     SUBDIR += putty
     SUBDIR += pwauth
     SUBDIR += pwman
