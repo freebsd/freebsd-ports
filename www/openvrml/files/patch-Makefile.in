@@ -1,11 +1,11 @@
---- Makefile.in.orig	Wed Apr  7 13:30:15 2004
-+++ Makefile.in	Wed Apr  7 13:30:30 2004
-@@ -173,7 +173,7 @@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
--SUBDIRS = doc ide-projects m4 models lib java src
-+SUBDIRS = ide-projects m4 models lib java src
- 
+--- Makefile.in.orig	Mon Jul  4 01:29:49 2005
++++ Makefile.in	Fri Jul 22 16:32:32 2005
+@@ -236,7 +236,7 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-SUBDIRS = doc ide-projects m4 models lib java src mozilla-plugin tests
++SUBDIRS = ide-projects m4 models lib java src mozilla-plugin tests
  ACLOCAL_AMFLAGS = -I m4
- 
+ EXTRA_DIST = \
+         openvrml.pc.in \

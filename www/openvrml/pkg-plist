@@ -1,11 +1,39 @@
 bin/lookat
-lib/libopenvrml.a
-lib/libopenvrml.so
-lib/libopenvrml.so.4
+bin/lookat.sh
+include/openvrml/openvrml/basetypes.h
+include/openvrml/openvrml/bounding_volume.h
+include/openvrml/openvrml/browser.h
+include/openvrml/openvrml/common.h
+include/openvrml/openvrml/event.h
+include/openvrml/openvrml/exposedfield.h
+include/openvrml/openvrml/field_value.h
+include/openvrml/openvrml/frustum.h
+include/openvrml/openvrml/gl/viewer.h
+include/openvrml/openvrml/img.h
+include/openvrml/openvrml/node.h
+include/openvrml/openvrml/node_ptr.h
+include/openvrml/openvrml/rendering_context.h
+include/openvrml/openvrml/scope.h
+include/openvrml/openvrml/script.h
+include/openvrml/openvrml/system.h
+include/openvrml/openvrml/viewer.h
+include/openvrml/openvrml/vrml97node.h
 lib/libopenvrml-gl.a
 lib/libopenvrml-gl.so
-lib/libopenvrml-gl.so.5
-libdata/pkgconfig/openvrml.pc
+lib/libopenvrml-gl.so.6
+lib/libopenvrml.a
+lib/libopenvrml.so
+lib/libopenvrml.so.5
 libdata/pkgconfig/openvrml-gl.pc
+libdata/pkgconfig/openvrml.pc
+libexec/openvrml-player
+share/idl/openvrml-%%VER%%/openvrml.idl
 share/pixmaps/lookat.xpm
-@dirrm share/pixmaps
+lib/mozilla/plugins/openvrml.la
+lib/mozilla/plugins/openvrml.so
+lib/mozilla/plugins/openvrml.xpt
+@dirrm include/openvrml/openvrml/gl
+@dirrm include/openvrml/openvrml
+@dirrm include/openvrml
+@dirrm share/idl/openvrml-%%VER%%
+@unexec rmdir %D/share/pixmaps 2>/dev/null || true
