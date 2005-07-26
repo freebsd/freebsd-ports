@@ -2207,8 +2207,11 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>bnc</name>
 	<name>dante</name>
 	<name>rinetd</name>
-	<name>bld</name>
 	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>bld</name>
+	<range><lt>0.3.3</lt></range>
       </package>
     </affects>
     <description>
