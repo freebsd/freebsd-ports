@@ -1,5 +1,5 @@
---- cfg/Makefile.glo.orig	Sat Jan 15 17:01:28 2005
-+++ cfg/Makefile.glo	Thu Mar 24 13:13:31 2005
+--- ../gammu-1.01.0.orig/cfg/Makefile.glo	Tue Apr 12 15:26:08 2005
++++ cfg/Makefile.glo	Sat Jul  9 22:24:39 2005
 @@ -122,7 +122,7 @@
  	@echo Making $<
  	@$(CC) -c $(CFLAGS) -I$(TOPDIR)/common/ $(CPPFLAGS) $*.c -o $*.o
@@ -9,7 +9,16 @@
  
  $(TOPDIR)/gammu/gammu: $(COMMON) $(GAMMU)
  	@echo Linking gammu
-@@ -227,7 +227,7 @@
+@@ -136,7 +136,7 @@
+ 
+ $(TOPDIR)/common/libGammu.so.$(SONAME_MAJOR).$(SONAME_MINOR): $(COMMON)
+ 	@echo Linking libGammu.so.$(SONAME_MAJOR).$(SONAME_MINOR)
+-	@$(CC) $(LDLIBS) -shared -Wl,-soname -Wl,libGammu.so.$(SONAME_MAJOR).$(SONAME_MINOR) -o $(TOPDIR)/common/libGammu.so.$(SONAME_MAJOR).$(SONAME_MINOR) $(COMMON)
++	@$(CC) $(LDLIBS) -shared -Wl,-soname -Wl,libGammu.so.$(SONAME_MAJOR) -o $(TOPDIR)/common/libGammu.so.$(SONAME_MAJOR).$(SONAME_MINOR) $(COMMON)
+ 	@$(LN) -s libGammu.so.$(SONAME_MAJOR).$(SONAME_MINOR) $(TOPDIR)/common/libGammu.so.$(SONAME_MAJOR)
+ 	@$(LN) -s libGammu.so.$(SONAME_MAJOR) $(TOPDIR)/common/libGammu.so
+ 
+@@ -230,7 +230,7 @@
  	@$(INSTALL) -m 0644 $(TOPDIR)/docs/docs/english/gammu.1 $(DESTDIR)$(INSTALL_MAN_DIR)
  	@$(RM) $(DESTDIR)$(INSTALL_DOC_DIR)/docs/english/gammu.1
   
@@ -18,7 +27,7 @@
  
  installonly: all
  	@echo Installing binaries to $(DESTDIR)$(INSTALL_BIN_DIR)
-@@ -244,8 +244,7 @@
+@@ -247,8 +247,7 @@
  
  	@echo Installing shared library to $(DESTDIR)$(INSTALL_LIB_DIR)
  	@$(INSTALL) -m 0755 -d $(DESTDIR)$(INSTALL_LIB_DIR)
@@ -28,7 +37,7 @@
  	@$(LN) -s libGammu.so.$(SONAME_MAJOR) $(DESTDIR)$(INSTALL_LIB_DIR)/libGammu.so
   
  	@echo Installing static library to $(DESTDIR)$(INSTALL_LIB_DIR)
-@@ -264,8 +263,8 @@
+@@ -267,8 +266,8 @@
  	@$(INSTALL) -m 0644 cfg/config.h $(DESTDIR)$(INSTALL_H_DIR)/config.h
  
  	@echo Installing pkgconfig file
