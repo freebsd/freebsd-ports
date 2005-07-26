@@ -1,0 +1,166 @@
+--- src/commands.c~	Mon Apr 11 23:15:23 2005
++++ src/commands.c	Tue Jul 26 18:48:36 2005
+@@ -624,7 +624,8 @@
+                        u_int8_t proto)
+ {
+    int8_t msg[128];
+-   int8_t fail, params, aux;
++   int8_t fail, params;
++   int aux;
+    struct term_vty *vty = node->specific;
+ 
+    if (!(warray->word[warray->indx+1]))
+@@ -1971,7 +1972,7 @@
+ {
+    int8_t msg[128], *args, prova;
+    int8_t fail, i, params;
+-   u_int8_t aux;
++   int aux;
+    char *punt;
+    struct stp_data *stp_data;
+    struct term_vty *vty = node->specific;
+@@ -2113,21 +2114,11 @@
+    if (!strcmp("flags", comm_set_stp[x].s))
+    {
+       parser_str_tolower(args);
+-      if ( (*args == '0') && (*(args+1) == 'x') && (strlen(args) >= 2) )
+-      {
+-          punt = &prova;
+-          aux = strtol(args, &punt, 16);
+-          if ( *punt || (aux < 0) || (aux > 255) )
+-            return (command_bad_input(node,warray->indx+1));
+-         stp_data->flags |= aux;
+-      }
+-      else
+-      {
+-         aux = atoi(args);
+-         if ( (aux < 0) || (aux > 255) )
+-            return (command_bad_input(node,warray->indx+1));
+-         stp_data->flags |= aux;
+-      }
++      punt = &prova;
++      aux = strtol(args, &punt, 0);
++      if ( *punt || (aux < 0) || (aux > 255) )
++         return (command_bad_input(node,warray->indx+1));
++      stp_data->flags |= aux;
+ 
+       return 0;
+    }
+@@ -2146,21 +2137,11 @@
+    if (!strcmp("cost", comm_set_stp[x].s))
+    {
+       parser_str_tolower(args);
+-      if ( (*args == '0') && (*(args+1) == 'x') && (strlen(args) >= 2) )
+-      {
+-          punt = &prova;
+-          aux = strtol(args, &punt, 16);
+-          if ( *punt || (aux < 0) || (strlen(args) > 10) )
+-            return (command_bad_input(node,warray->indx+1));
+-          stp_data->root_pc = aux; 
+-      }
+-      else
+-      {
+-          aux = atoi(args);
+-          if ( (aux < 0) || (aux > 0xffffffff) )
+-            return (command_bad_input(node,warray->indx+1));
+-          stp_data->root_pc = aux;
+-      }
++      punt = &prova;
++      aux = strtol(args, &punt, 0);
++      if ( *punt || (aux < 0) || (strlen(args) > 10) )
++         return (command_bad_input(node,warray->indx+1));
++      stp_data->root_pc = aux; 
+  
+       return 0;
+    }
+@@ -2178,21 +2159,11 @@
+    if (!strcmp("portid", comm_set_stp[x].s))
+    {
+       parser_str_tolower(args);
+-      if ( (*args == '0') && (*(args+1) == 'x') && (strlen(args) >= 2) )
+-      {
+-          punt = &prova;
+-          aux = strtol(args, &punt, 16);
+-          if ( *punt || (aux < 0) || (aux > 65535) )
+-            return (command_bad_input(node,warray->indx+1));
+-          stp_data->port_id = aux;
+-      }
+-      else
+-      {
+-          aux = atoi(args);
+-          if ( (aux < 0) || (aux > 65535) )
+-            return (command_bad_input(node,warray->indx+1));
+-          stp_data->port_id = aux;
+-      }
++      punt = &prova;
++      aux = strtol(args, &punt, 0);
++      if ( *punt || (aux < 0) || (aux > 65535) )
++         return (command_bad_input(node,warray->indx+1));
++      stp_data->port_id = aux;
+       
+       return 0;
+    }
+@@ -2458,7 +2429,7 @@
+ {
+    int8_t msg[128], *args;
+    int8_t fail, i, params;
+-   u_int8_t aux;
++   int aux;
+    struct dtp_data *dtp_data;
+    struct term_vty *vty = node->specific;
+ 
+@@ -2749,7 +2720,7 @@
+ {
+    int8_t msg[128], *args;
+    int8_t fail, i, params;
+-   u_int8_t aux;
++   int aux;
+    struct in_addr addr;
+    u_int32_t aux_long;
+    struct dhcp_data *dhcp_data;
+@@ -3073,7 +3044,7 @@
+ {
+    int8_t msg[128], *args;
+    int8_t fail, i, params;
+-   u_int32_t aux;
++   int aux;
+    u_int32_t aux_long;
+    struct in_addr addr;
+    struct vtp_data *vtp_data;
+@@ -3389,7 +3360,7 @@
+ {
+    int8_t msg[128], *args;
+    int8_t fail, i, params;
+-   u_int8_t aux;
++   int aux;
+    u_int32_t aux_long;
+    struct in_addr addr;
+    struct dot1q_data *dot1q_data;
+@@ -3725,7 +3696,7 @@
+ {
+    int8_t msg[128], *args;
+    int8_t fail, i, params;
+-   u_int8_t aux;
++   int aux;
+    struct in_addr addr;
+    u_int32_t aux_long;
+    struct hsrp_data *hsrp_data;
+@@ -4116,7 +4087,7 @@
+ {
+    int8_t msg[128], *args;
+    int8_t fail, i, params;
+-   u_int8_t aux;
++   int aux;
+    struct cdp_data *cdp_data;
+    struct term_vty *vty = node->specific;
+ 
+@@ -4527,7 +4498,8 @@
+                     u_int8_t proto)
+ {
+    int8_t msg[128];
+-   int8_t i, fail, params, aux;
++   int8_t i, fail, params;
++   int aux;
+    struct attack *theattack = NULL;
+    struct term_vty *vty = node->specific;
+ 

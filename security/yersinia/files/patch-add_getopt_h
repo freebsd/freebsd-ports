@@ -1,0 +1,127 @@
+--- src/cdp.c~	Tue May 24 21:28:31 2005
++++ src/cdp.c	Sun Jul 24 11:14:34 2005
+@@ -57,6 +57,10 @@
+ #include <unistd.h>
+ #endif
+ 
++#ifdef NEED_GETOPT_H
++#include <getopt.h>
++#endif
++
+ #ifdef HAVE_STRING_H
+ #include <string.h>
+ #endif
+
+--- src/dhcp.c~	Tue May 24 21:28:31 2005
++++ src/dhcp.c	Sun Jul 24 11:14:55 2005
+@@ -59,6 +59,10 @@
+ #include <unistd.h>
+ #endif
+ 
++#ifdef NEED_GETOPT_H
++#include <getopt.h>
++#endif
++
+ #ifdef HAVE_STRING_H
+ #include <string.h>
+ #endif
+
+--- src/dot1q.c~	Tue May 24 21:28:31 2005
++++ src/dot1q.c	Sun Jul 24 11:15:02 2005
+@@ -58,6 +58,10 @@
+ #include <unistd.h>
+ #endif
+ 
++#ifdef NEED_GETOPT_H
++#include <getopt.h>
++#endif
++
+ #ifdef HAVE_STRING_H
+ #include <string.h>
+ #endif
+
+--- src/dtp.c~	Tue May 24 21:28:31 2005
++++ src/dtp.c	Sun Jul 24 11:15:12 2005
+@@ -57,6 +57,10 @@
+ #include <unistd.h>
+ #endif
+ 
++#ifdef NEED_GETOPT_H
++#include <getopt.h>
++#endif
++
+ #ifdef HAVE_STRING_H
+ #include <string.h>
+ #endif
+
+--- src/hsrp.c~	Tue May 24 21:28:31 2005
++++ src/hsrp.c	Sun Jul 24 11:15:34 2005
+@@ -59,6 +59,10 @@
+ #include <unistd.h>
+ #endif
+ 
++#ifdef NEED_GETOPT_H
++#include <getopt.h>
++#endif
++
+ #ifdef HAVE_STRING_H
+ #include <string.h>
+ #endif
+
+--- src/parser.c~	Mon Apr 11 23:15:24 2005
++++ src/parser.c	Sun Jul 24 11:21:11 2005
+@@ -52,6 +52,10 @@
+ #include <unistd.h>
+ #endif
+ 
++#ifdef NEED_GETOPT_H
++#include <getopt.h>
++#endif
++
+ #ifdef HAVE_STRING_H
+ #include <string.h>
+ #endif
+@@ -70,12 +74,6 @@
+ 
+ #ifdef HAVE_PTHREAD_H
+ #include <pthread.h>
+-#endif
+-
+-#ifdef HAVE_GETOPT_LONG_ONLY
+-#include <getopt.h>
+-#else
+-#include "getopt.h"
+ #endif
+ 
+ #include <termios.h>
+
+--- src/vtp.c~	Tue May 24 21:28:32 2005
++++ src/vtp.c	Sun Jul 24 11:17:02 2005
+@@ -57,6 +57,10 @@
+ #include <unistd.h>
+ #endif
+ 
++#ifdef NEED_GETOPT_H
++#include <getopt.h>
++#endif
++
+ #ifdef HAVE_STRING_H
+ #include <string.h>
+ #endif
+
+--- src/xstp.c~	Tue May 24 21:28:32 2005
++++ src/xstp.c	Sun Jul 24 11:21:23 2005
+@@ -53,8 +53,12 @@
+ #include <sys/time.h>
+ #endif
+ 
+-#ifdef HAVE_UNISTD_H
++#ifdef HAVE_UNISTD_H_x
+ #include <unistd.h>
++#endif
++
++#ifdef NEED_GETOPT_H
++#include <getopt.h>
+ #endif
+ 
+ #ifdef HAVE_STRING_H

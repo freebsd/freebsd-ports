@@ -540,6 +540,7 @@
     SUBDIR += xmlsec1
     SUBDIR += xspy
     SUBDIR += yafic
+    SUBDIR += yersinia
     SUBDIR += zebedee
     SUBDIR += zombiezapper
 
