@@ -72,6 +72,15 @@ upgrades.
 
   Refer to x11/nvidia-driver/Makefile for further details.
 
+20050625:
+  AFFECTS: users of sysutils/nut
+  AUTHOR: Joerg.Pulz@frm2.tum.de
+
+  nut now installs a rcNG script for starting the Network UPS Tools daemons.
+  To enable that at boot time, add the following into /etc/rc.conf[.local]:
+
+  nut_enable="YES"
+
 20050624:
   AFFECTS: users of lang/perl5.8
   AUTHOR: tobez@FreeBSD.org
