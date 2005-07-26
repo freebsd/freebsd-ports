@@ -7,21 +7,17 @@
 #
 
 PORTNAME=	fityk
-PORTVERSION=	0.5.0.1
+PORTVERSION=	0.5.1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}p${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free peak fitting software
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libboost_thread.so:${PORTSDIR}/devel/boost \
-		gnuplot:${PORTSDIR}/math/gnuplot
-RUN_DEPENDS=	${LOCALBASE}/lib/libboost_thread.so:${PORTSDIR}/devel/boost \
-		gnuplot:${PORTSDIR}/math/gnuplot
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
+LIB_DEPENDS=	boost_thread.2:${PORTSDIR}/devel/boost
+RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 USE_GNOME=	gnometarget gtk20
 USE_REINPLACE=	yes
