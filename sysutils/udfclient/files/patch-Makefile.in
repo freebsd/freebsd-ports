@@ -1,0 +1,11 @@
+--- Makefile.in	Sun Jun 26 00:02:51 2005
++++ Makefile.in	Mon Jul 25 20:34:12 2005
+@@ -33,7 +33,7 @@
+ #CFLAGS+= -D__ANONYMOUSUDF__
+ 
+ CFLAGS+= -fPIC -DPIC
+-POSTOBJ+= @SCSI_LIB@ @THREADLIB@ @TIMELIB@
++POSTOBJ+= @SCSI_LIB@ @THREADLIB@ #@TIMELIB@
+ 
+ 
+ # For use with the cpuflags package
