@@ -57,6 +57,8 @@ share/gnome/genius/gel/sets/basic.gel
 share/gnome/genius/gel/sets/loader.gel
 share/gnome/genius/gel/statistics/basic.gel
 share/gnome/genius/gel/statistics/loader.gel
+share/gnome/genius/gel/symbolic/differentiation.gel
+share/gnome/genius/gel/symbolic/loader.gel
 share/gnome/genius/genius.txt
 share/gnome/genius/gtksourceview/genius.lang
 share/gnome/genius/plugins/test.plugin
@@ -121,6 +123,7 @@ share/locale/pa/LC_MESSAGES/genius.mo
 share/locale/pl/LC_MESSAGES/genius.mo
 share/locale/pt/LC_MESSAGES/genius.mo
 share/locale/pt_BR/LC_MESSAGES/genius.mo
+share/locale/rw/LC_MESSAGES/genius.mo
 share/locale/sq/LC_MESSAGES/genius.mo
 share/locale/sr/LC_MESSAGES/genius.mo
 share/locale/sr@Latn/LC_MESSAGES/genius.mo
@@ -132,6 +135,7 @@ share/locale/zh_CN/LC_MESSAGES/genius.mo
 @dirrm share/gnome/help/genius
 @dirrm share/gnome/genius/gtksourceview
 @dirrm share/gnome/genius/plugins
+@dirrm share/gnome/genius/gel/symbolic
 @dirrm share/gnome/genius/gel/statistics
 @dirrm share/gnome/genius/gel/sets
 @dirrm share/gnome/genius/gel/number_theory
