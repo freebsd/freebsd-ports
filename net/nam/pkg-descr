@@ -1,11 +1,10 @@
-Nam is a Tcl/TK based animation tool for viewing network simulation traces 
-and real world packet traces. It supports topology layout, packet level 
-animation, and various data inspection tools. 
-
-Nam began at LBL. It has evolved substantially over the past few years. 
-The nam development effort is now an ongoing collaboration with 
-the VINT project.
+Nam is a Tcl/TK based animation tool for viewing network simulation
+traces and real world packet traces. It supports topology layout,
+packet level animation, and various data inspection tools.
+ 
+Nam began at LBL. It has evolved substantially over the past few
+years. The nam development effort was an ongoing collaboration with
+the VINT project. Currently, it is being developed at ISI as part of
+the SAMAN and Conser projects.
 
 WWW: http://www.isi.edu/nsnam/nam/
-
--Oscar <obonilla@fisicc-ufm.edu>
