@@ -20,10 +20,6 @@ BUILD_DEPENDS=	gosh:${PORTSDIR}/${GAUCHE_PORT} \
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 RUN_DEPENDS=	gosh:${PORTSDIR}/${GAUCHE_PORT}
 
-BROKEN=		Incorrect pkg-plist
-DEPRECATED=	"${BROKEN}"
-EXPIRATION_DATE=2005-09-22
-
 GAUCHE_PORT=	lang/gauche
 
 WRKSRC=		${WRKDIR}/dbm
@@ -33,12 +29,13 @@ PLIST_SUB=	VERSION="${PORTVERSION}" \
 		TARGET="${CONFIGURE_TARGET}"
 USE_REINPLACE=	yes
 
+GUACHE_BUILDDIR=`cd ${PORTSDIR}/${GAUCHE_PORT} && ${MAKE} -V WRKSRC`
+
 do-extract:
 	${MKDIR} ${WRKDIR}
-	${LN} -sf `cd ${PORTSDIR}/${GAUCHE_PORT} && ${MAKE} -V WRKSRC`/ext/dbm ${WRKDIR}/
+	${LN} -sf ${GUACHE_BUILDDIR}/ext/dbm ${WRKDIR}/
 
 do-configure:
-	cd `cd ${PORTSDIR}/${GAUCHE_PORT} && ${MAKE} -V WRKSRC` && ./configure --with-local=${LOCALBASE} --prefix=${LOCALBASE} --target=${CONFIGURE_TARGET} --host=${CONFIGURE_HOST} --build=${CONFIGURE_BUILD} && cd ext && ${REINPLACE_CMD} -e "s/archdir/&|sed 's,unknown-freebsd,portbld-freebsd,'/" Makefile.ext
 	cd ${WRKSRC} && make clean && ${REINPLACE_CMD} -e 's/^LIBFILES.*/LIBFILES = gdbm.so/' -e 's/^SCMFILES.*/SCMFILES = gdbm.scm/' Makefile
 
 do-install:
