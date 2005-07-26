@@ -37,6 +37,10 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+.endif
+
 .if defined(WITH_TCLTK)
 LIB_DEPENDS+=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
