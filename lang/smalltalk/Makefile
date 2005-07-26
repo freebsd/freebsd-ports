@@ -15,7 +15,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Smalltalk
 
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
+		execinfo.1:${PORTSDIR}/devel/libexecinfo
+
+OPTIONS=	TCLTK "Enable Tcl/Tk binding" on
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -32,6 +35,8 @@ INFO=		gst gst-base gst-libs
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_TCLTK)
 LIB_DEPENDS+=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
@@ -41,8 +46,6 @@ PLIST_SUB+=	TCLTK=""
 CONFIGURE_ARGS+=	--with-tcl=no
 PLIST_SUB+=	TCLTK="@comment "
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386" && ${ARCH} != "alpha"
 BROKEN=		"Does not compile on !i386 and !alpha"

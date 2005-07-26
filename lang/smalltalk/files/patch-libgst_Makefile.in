@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- libgst/Makefile.in.orig
++++ libgst/Makefile.in
+@@ -212,7 +212,7 @@
+ 
+ # definitions for libgst.la
+ libgst_la_LIBADD = $(top_builddir)/lib-src/library.la $(LIBSIGSEGV) \
+-	@LIBLTDL@ @LIBSNPRINTFV@ @LIBREADLINE@ @LIBGMP@
++	@LIBLTDL@ @LIBSNPRINTFV@ @LIBREADLINE@ @LIBGMP@ -lexecinfo
+ 
+ 
+ libgst_la_LDFLAGS = -version-info $(VERSION_INFO)
