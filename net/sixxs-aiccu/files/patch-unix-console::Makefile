@@ -9,7 +9,7 @@
  endif
  
  # FreeBSD 5.x
-@@ -45,7 +45,13 @@
+@@ -45,7 +45,19 @@
  CFLAGS  += -D AICCU_TYPE="\"kame\""
  SRCS	+= ../common/aiccu_kame.c
  OBJS	+= ../common/aiccu_kame.o
@@ -21,6 +21,12 @@
 +CFLAGS  += -D AICCU_TYPE="\"kame\""
 +SRCS	+= ../common/aiccu_kame.c
 +OBJS	+= ../common/aiccu_kame.o
++endif
++# FreeBSD 7.x
++ifeq ($(shell uname -r | cut -c 1),7)
++CFLAGS  += -D AICCU_TYPE="\"kame\""
++SRCS  += ../common/aiccu_kame.c
++OBJS  += ../common/aiccu_kame.o
  endif
  endif
  
