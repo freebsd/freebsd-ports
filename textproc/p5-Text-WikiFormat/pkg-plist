@@ -1,4 +1,6 @@
 %%SITE_PERL%%/Text/WikiFormat.pm
+%%SITE_PERL%%/Text/WikiFormat/Blocks.pm
 @unexec rmdir %D/%%SITE_PERL%%/auto/Text 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Text/WikiFormat 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Text 2>/dev/null || true
