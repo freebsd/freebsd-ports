@@ -7,6 +7,7 @@
 
 PORTNAME=	ucspi-ssl
 PORTVERSION=	0.68
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.superscript.com/ucspi-ssl/
 
@@ -22,6 +23,15 @@ NO_PACKAGE=	Non-explicit licensing terms
 DOCS=		CHANGES TODO UCSPI-SSL
 
 WRKSRC=		${WRKDIR}/host/superscript.com/net/${DISTNAME}
+
+SCRIPTS_TO_INSTALL=	https@ sslcat sslconnect
+
+post-patch:
+.for x in ${SCRIPTS_TO_INSTALL}
+	@${PERL} -pi.orig \
+		-e 's|HOME/command/|${PREFIX}/bin/|' \
+		${WRKSRC}/src/${x}.sh
+.endfor
 
 do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
@@ -39,7 +49,7 @@ do-build:
 	cd ${WRKSRC} && package/compile
 
 do-install:
-.for x in https@ sslcat sslconnect
+.for x in ${SCRIPTS_TO_INSTALL}
 	${INSTALL_SCRIPT} ${WRKSRC}/command/${x} ${PREFIX}/bin
 .endfor
 .for x in sslclient sslserver sslperl
