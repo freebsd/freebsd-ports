@@ -12,6 +12,7 @@ lib/g3dviewer/plugins/import/imp_md2.so
 lib/g3dviewer/plugins/import/imp_nff.so
 lib/g3dviewer/plugins/import/imp_obj.so
 lib/g3dviewer/plugins/import/imp_q3o.so
+lib/g3dviewer/plugins/import/imp_vrml.so
 %%DATADIR%%/pixmaps/icon16_material.xpm
 %%DATADIR%%/pixmaps/icon16_model.xpm
 %%DATADIR%%/pixmaps/icon16_plugins.xpm
