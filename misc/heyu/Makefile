@@ -13,7 +13,7 @@ MASTER_SITES=	http://heyu.tanj.com/
 DISTNAME=	x10_heyu
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	plambert@plambert.net
+MAINTAINER=	mstowe@chicago.us.mensa.org
 COMMENT=	Control a CM11A interface from the command line
 
 CONFLICTS=	heyu2-*
