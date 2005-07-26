@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	Net-Whois-Raw
-PORTVERSION=	0.37
+PORTVERSION=	0.97
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kappa@freebsd.org.ua
 COMMENT=	Very simple Perl interface to query raw whois data
