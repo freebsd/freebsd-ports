@@ -1,33 +1,33 @@
 bin/barrage
 share/applnk/Applications/barrage.desktop
-share/barrage/gfx/ammo.bmp
-share/barrage/gfx/crater.bmp
-share/barrage/gfx/cursors.bmp
-share/barrage/gfx/ft_neon.bmp
-share/barrage/gfx/ft_red.bmp
-share/barrage/gfx/ft_red14.bmp
-share/barrage/gfx/ft_yellow.bmp
-share/barrage/gfx/ground.bmp
-share/barrage/gfx/gun.bmp
-share/barrage/gfx/icons.bmp
-share/barrage/gfx/logo.bmp
-share/barrage/gfx/particles.bmp
-share/barrage/gfx/shots.bmp
-share/barrage/gfx/small_crater.bmp
-share/barrage/gfx/trees.bmp
-share/barrage/gfx/units.bmp
-share/barrage/sounds/autocannon.wav
-share/barrage/sounds/click.wav
-share/barrage/sounds/expl1.wav
-share/barrage/sounds/expl2.wav
-share/barrage/sounds/expl3.wav
-share/barrage/sounds/gunfire.wav
-share/barrage/sounds/highlight.wav
-share/barrage/sounds/scream1.wav
-share/barrage/sounds/scream2.wav
+%%DATADIR%%/gfx/ammo.bmp
+%%DATADIR%%/gfx/crater.bmp
+%%DATADIR%%/gfx/cursors.bmp
+%%DATADIR%%/gfx/ft_neon.bmp
+%%DATADIR%%/gfx/ft_red.bmp
+%%DATADIR%%/gfx/ft_red14.bmp
+%%DATADIR%%/gfx/ft_yellow.bmp
+%%DATADIR%%/gfx/ground.bmp
+%%DATADIR%%/gfx/gun.bmp
+%%DATADIR%%/gfx/icons.bmp
+%%DATADIR%%/gfx/logo.bmp
+%%DATADIR%%/gfx/particles.bmp
+%%DATADIR%%/gfx/shots.bmp
+%%DATADIR%%/gfx/small_crater.bmp
+%%DATADIR%%/gfx/trees.bmp
+%%DATADIR%%/gfx/units.bmp
+%%DATADIR%%/sounds/autocannon.wav
+%%DATADIR%%/sounds/click.wav
+%%DATADIR%%/sounds/expl1.wav
+%%DATADIR%%/sounds/expl2.wav
+%%DATADIR%%/sounds/expl3.wav
+%%DATADIR%%/sounds/gunfire.wav
+%%DATADIR%%/sounds/highlight.wav
+%%DATADIR%%/sounds/scream1.wav
+%%DATADIR%%/sounds/scream2.wav
 @unexec rmdir %D/share/applnk/Applications/ 2>/dev/null || true
 @unexec rmdir %D/share/applnk 2>/dev/null || true
-@dirrm share/barrage/sounds
-@dirrm share/barrage/gfx
-@dirrm share/barrage
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/gfx
+@dirrm %%DATADIR%%
 @cwd /var/games
