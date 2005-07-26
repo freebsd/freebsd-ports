@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	ns
-PORTVERSION=	2.27
-PORTREVISION=	1
+PORTVERSION=	2.28
+#PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.isi.edu/nsnam/dist/
-DISTNAME=	ns-src-2.27
+DISTNAME=	ns-src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The UCB/LBNL Network Simulator Version 2
+COMMENT=	Discrete event simulator for networking research
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtclcl.a:${PORTSDIR}/devel/tclcl
 RUN_DEPENDS=	${LOCALBASE}/bin/tclsh8.4:${PORTSDIR}/lang/tcl84
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/tclsh8.4:${PORTSDIR}/lang/tcl84
 MAN1=		ns.1
 MANCOMPRESSED=	no
 
-WRKSRC=		${WRKDIR}/ns-2.27
+WRKSRC=		${WRKDIR}/ns-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4
@@ -30,14 +30,10 @@ ALL_TARGET=
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000 || ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386 or on FreeBSD >= 5.x"
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ns ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/ns.1 ${PREFIX}/man/man1
-	${MKDIR} ${PREFIX}/share/examples/ns2
-	${INSTALL_DATA} ${WRKSRC}/tcl/ex/*.tcl ${PREFIX}/share/examples/ns2
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/tcl/ex/*.tcl ${EXAMPLESDIR}
 
 .include <bsd.port.post.mk>
