@@ -64,9 +64,9 @@ include/gammu/phone/nokia/dct3/n9210.h
 include/gammu/phone/nokia/dct4/dct4func.h
 include/gammu/phone/nokia/dct4/n3320.h
 include/gammu/phone/nokia/dct4/n3650.h
-include/gammu/phone/nokia/dct4/n6510.h
-include/gammu/phone/nokia/dct4/6510cal.h
-include/gammu/phone/nokia/dct4/6510file.h
+include/gammu/phone/nokia/dct4/6510/6510cal.h
+include/gammu/phone/nokia/dct4/6510/6510file.h
+include/gammu/phone/nokia/dct4/6510/n6510.h
 include/gammu/phone/obex/obexgen.h
 include/gammu/phone/symbian/mroutgen.h
 include/gammu/protocol/protocol.h
@@ -109,6 +109,7 @@ include/gammu/service/sms/gsmsms.h
 @dirrm include/gammu/phone/symbian
 @dirrm include/gammu/phone/obex
 @dirrm include/gammu/phone/nokia/dct3
+@dirrm include/gammu/phone/nokia/dct4/6510
 @dirrm include/gammu/phone/nokia/dct4
 @dirrm include/gammu/phone/nokia
 @dirrm include/gammu/phone/at

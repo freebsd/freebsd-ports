@@ -1,11 +1,11 @@
---- cfg/autoconf/configure.in.orig	Sat Jan 15 13:45:26 2005
-+++ cfg/autoconf/configure.in	Thu Apr 14 08:27:47 2005
+--- ../gammu-1.01.0.orig/cfg/autoconf/configure.in	Tue Mar  8 19:16:22 2005
++++ cfg/autoconf/configure.in	Sat Jul  9 12:51:12 2005
 @@ -185,17 +185,17 @@
       fi
       if test "$gsm_blue_stack" = unknown ; then
           AC_CHECK_HEADERS(bluetooth/bluetooth.h, 
 -                 [gsm_blue_stack=Bluez
-+                 [gsm_blue_stack=FreeBSD 
++                 [gsm_blue_stack=FreeBSD
                   LDLIBS="$LDLIBS -lbluetooth"
                   AC_CHECK_LIB(sdp, sdp_list_append, LDLIBS="$LDLIBS -lsdp")
                   AC_DEFINE(GSM_ENABLE_BLUEZ)
@@ -21,7 +21,7 @@
               [ if test x$withval = xyes; then
                       AC_MSG_WARN(Usage is: --with-bluedir=DIR)
                 else
-@@ -287,7 +287,7 @@
+@@ -292,7 +292,7 @@
          [  --disable-bluefbus      Disable Nokia FBUS2 over Bluetooth stack
                            (Nokia 6210)],
          [gsm_enable_bluefbus2="no"],
@@ -30,7 +30,7 @@
                  AC_DEFINE(GSM_ENABLE_BLUEFBUS2)
                  gsm_enable_bluefbus2="yes"
            else
-@@ -297,7 +297,7 @@
+@@ -302,7 +302,7 @@
          [  --disable-bluephonet    Disable Nokia PHONET FBUS over Bluetooth
                            stack (all new Nokias)],
          [gsm_enable_bluephonet="no"],
@@ -39,7 +39,7 @@
                  AC_DEFINE(GSM_ENABLE_BLUEPHONET)
                  gsm_enable_bluephonet="yes"
            else
-@@ -306,7 +306,7 @@
+@@ -311,7 +311,7 @@
  AC_ARG_ENABLE(blueat,
          [  --disable-blueat        Disable AT commands over Bluetooth stack],
          [gsm_enable_blueat="no"],
@@ -48,7 +48,7 @@
                  AC_DEFINE(GSM_ENABLE_BLUEAT)
                  gsm_enable_blueat="yes"
            else
-@@ -315,7 +315,7 @@
+@@ -320,7 +320,7 @@
  AC_ARG_ENABLE(blueobex,
          [  --disable-blueobex      Disable OBEX over Bluetooth stack],
          [gsm_enable_blueobex="no"],
@@ -57,7 +57,16 @@
                  AC_DEFINE(GSM_ENABLE_BLUEOBEX)
                  gsm_enable_blueobex="yes"
            else
-@@ -438,7 +438,7 @@
+@@ -355,7 +355,7 @@
+ AC_ARG_ENABLE(bluerfsearch,
+         [  --disable-bluerfsearch  Disable searching for RF channels with Bluetooth stack],
+         [gsm_enable_bluerfsearch="no"],
+-        [if test $gsm_blue_stack = Bluez; then
++        [if test $gsm_blue_stack = FreeBSD; then
+                 AC_DEFINE(BLUETOOTH_RF_SEARCHING)
+                 gsm_enable_bluerfsearch="yes"
+           fi])  
+@@ -443,7 +443,7 @@
    Binaries                                      - $bindir
    RPM making directory                          - $RPM_DIR
    Temporary directory                           - $TEMP_DIR

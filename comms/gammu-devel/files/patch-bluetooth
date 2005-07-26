@@ -1,20 +1,7 @@
-diff -ur orig/bluetoth.c patched/bluetoth.c
---- common/device/bluetoth/bluetoth.c	Thu Nov 25 12:36:26 2004
-+++ common/device/bluetoth/bluetoth.c	Thu Nov 25 12:46:22 2004
-@@ -30,9 +30,6 @@
- {
- 	GSM_Error error;
- 
--#ifdef BLUETOOTH_RF_SEARCHING
--	if (!mystrncasecmp(s->CurrentConfig->Connection, "bluerf", 6)) return bluetooth_findchannel(s);
--#endif
- 	
- 	switch (s->ConnectionType) {
- 	case GCT_BLUEAT:
-diff -ur common/device/bluetoth/bluez.c common/device/bluetoth/bluez.c
---- common/device/bluetoth/bluez.c	Thu Nov 25 12:36:26 2004
-+++ common/device/bluetoth/bluez.c	Thu Nov 25 12:46:56 2004
-@@ -14,6 +14,8 @@
+diff -ru ../gammu-1.01.0.orig/common/device/bluetoth/bluez.c common/device/bluetoth/bluez.c
+--- ../gammu-1.01.0.orig/common/device/bluetoth/bluez.c	Thu Mar 10 10:35:58 2005
++++ common/device/bluetoth/bluez.c	Sat Jul  9 12:46:07 2005
+@@ -23,6 +23,8 @@
  #ifdef GSM_ENABLE_BLUETOOTHDEVICE
  #ifdef GSM_ENABLE_BLUEZ
  
@@ -23,7 +10,7 @@ diff -ur common/device/bluetoth/bluez.c common/device/bluetoth/bluez.c
  #include <stdlib.h>
  #include <stdio.h>
  #include <fcntl.h>
-@@ -22,10 +24,7 @@
+@@ -31,10 +33,7 @@
  #include <sys/socket.h>
  #include <sys/time.h>
  #include <unistd.h>
@@ -35,7 +22,7 @@ diff -ur common/device/bluetoth/bluez.c common/device/bluetoth/bluez.c
  
  #include "../../gsmcomon.h"
  #include "../devfunc.h"
-@@ -34,21 +33,21 @@
+@@ -43,21 +42,21 @@
  GSM_Error bluetooth_connect(GSM_StateMachine *s, int port, char *device)
  {
  	GSM_Device_BlueToothData 	*d = &s->Device.Data.BlueTooth;
@@ -62,7 +49,7 @@ diff -ur common/device/bluetoth/bluez.c common/device/bluetoth/bluez.c
  
  	if (bind(fd, (struct sockaddr *)&laddr, sizeof(laddr)) < 0) {
  		dbgprintf("Can't bind socket\n");
-@@ -57,9 +56,9 @@
+@@ -66,9 +65,9 @@
  	}
  
  	str2ba(device, &bdaddr);
