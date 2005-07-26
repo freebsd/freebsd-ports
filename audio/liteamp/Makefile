@@ -6,9 +6,9 @@
 
 PORTNAME=	liteamp
 PORTVERSION=	0.2.3.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio gnome
-MASTER_SITES=	http://download.kldp.net/liteamp/
+MASTER_SITES=	http://kldp.net/frs/download.php/547/
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Light-weight Music Player for GNOME2
@@ -17,13 +17,9 @@ LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 		mad.2:${PORTSDIR}/audio/mad \
 		vorbisfile.4:${PORTSDIR}/audio/libvorbis
 
-BROKEN=		Uses nonstandard locale directory
-DEPRECATED=	"${BROKEN}"
-EXPIRATION_DATE=2005-09-22
-
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	libgnomeui gnomeprefix
+USE_GNOME=	gnomehack libgnomeui gnomeprefix
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
