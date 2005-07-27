@@ -1,5 +1,7 @@
 bin/ezstream
-%%PORTDOCS%%share/doc/ezstream/ezstream_m3u.xml
 %%PORTDOCS%%share/doc/ezstream/ezstream_mp3.xml
+%%PORTDOCS%%share/doc/ezstream/ezstream_reencoding_example_vorbis.xml
+%%PORTDOCS%%share/doc/ezstream/ezstream_reencoding_example_mp3.xml
 %%PORTDOCS%%share/doc/ezstream/ezstream_vorbis.xml
+%%PORTDOCS%%share/doc/ezstream/ezstream_reencoding_example_theora.xml
 %%PORTDOCS%%@dirrm share/doc/ezstream
