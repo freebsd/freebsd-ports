@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pango
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/1.8,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.6/
@@ -52,6 +52,9 @@ post-patch:
 	@${FIND} ${WRKSRC}/pango/opentype -name "*.[ch]" | ${XARGS} \
 		${REINPLACE_CMD} -e 's|internal/tterrors\.h|fterrors.h| ; \
 		s|TT_Err_|FT_Err_|g'
+	@${REINPLACE_CMD} -e 's|LT_VERSION_INFO="801:1:801"|LT_VERSION_INFO="800:1:800"|g' \
+		${WRKSRC}/configure
+
 post-install:
 	@${SED} -e 's|%%X11BASE%%|${X11BASE}|' < ${FILESDIR}/pkg-install.in \
 		> ${PKGINSTALL}
