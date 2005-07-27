@@ -7,6 +7,18 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 
+20050727:
+  AFFECTS: users of databases/firebird-server
+  AUTHOR: skv@FreeBSD.org
+
+  Changes in layout:
+  * database directory has changed from /usr/local/firebird to /var/db/firebird
+  * configuration files are placed in /usr/local/etc/firebird
+  * common utilities have been moved to /usr/local/bin
+  * suid-ed binaries have been moved to /usr/local/sbin
+
+  Update inetd.conf/xinetd.conf to reflect new location of "fb_inet_server".
+
 20050722:
   AFFECTS: All RELENG_6 and HEAD users of ports/packages, maintainers
 	   of ports that interact with the compat libraries.

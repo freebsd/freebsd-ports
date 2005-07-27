@@ -1,12 +1,5 @@
 @comment $FreeBSD$
-bin/fb_lock_print
-bin/gbak
-bin/gdef
-bin/gds_drop
-bin/gfix
 bin/gpre
-bin/gsec
-bin/gstat
 bin/isql
 bin/qli
 include/blr.h
@@ -24,14 +17,15 @@ lib/libfbembed.so.%%FIREBIRD_VERSION%%
 lib/libgds.so
 lib/libgds.so.1
 lib/libib_util.so
-@unexec if cmp -s %D/etc/firebird.conf %D/etc/firebird.conf.sample; then rm -f %D/etc/firebird.conf; fi
-etc/firebird.conf.sample
+@unexec if cmp -s %D/%%CONFDIR%%/firebird.conf %D/%%CONFDIR%%/firebird.conf.sample; then rm -f %D/%%CONFDIR%%/firebird.conf; fi
+%%CONFDIR%%/firebird.conf.sample
 @exec [ -f %B/firebird.conf ] || cp %B/%f %B/firebird.conf
-%%LIBDATADIR%%/de_DE.msg
-%%LIBDATADIR%%/firebird.msg
-%%LIBDATADIR%%/fr_FR.msg
-%%LIBDATADIR%%/ja_JP.msg
-@dirrm %%LIBDATADIR%%
+@unexec rmdir %D/%%CONFDIR%% 2>/dev/null || true
+%%DATADIR%%/de_DE.msg
+%%DATADIR%%/firebird.msg
+%%DATADIR%%/fr_FR.msg
+%%DATADIR%%/ja_JP.msg
+@dirrm %%DATADIR%%
 %%EXAMPLESDIR%%/align.h
 %%EXAMPLESDIR%%/api1.c
 %%EXAMPLESDIR%%/api10.c
@@ -79,4 +73,3 @@ etc/firebird.conf.sample
 %%EXAMPLESDIR%%/stat9.e
 %%EXAMPLESDIR%%/udf.sql
 %%EXAMPLESDIR%%/udflib.c
-@dirrm %%EXAMPLESDIR%%

@@ -1,25 +1,33 @@
 @comment $FreeBSD$
-firebird/RELNOTES
-firebird/UDF/fbudf.so
-firebird/UDF/fbudf.sql
-firebird/UDF/ib_udf.so
-firebird/UDF/ib_udf.sql
-@unexec if cmp -s %D/firebird/aliases.conf %D/firebird/aliases.conf.sample; then rm -f %D/firebird/aliases.conf; fi
-firebird/aliases.conf.sample
+bin/fb_lock_print
+bin/gbak
+bin/gdef
+bin/gfix
+bin/gsec
+bin/gstat
+sbin/fb_inet_server
+sbin/fb_lock_mgr
+sbin/gds_drop
+%%CONFDIR%%/aliases.conf.sample
 @exec [ -f %B/aliases.conf ] || cp %B/%f %B/aliases.conf
-firebird/bin/fb_inet_server
-firebird/bin/fb_lock_mgr
-@unexec [ -s %D/firebird/firebird.log ] || rm -f %D/firebird/firebird.log
-firebird/help/help.fdb
-firebird/intl/fbintl
-@unexec rm -f %D/firebird/isc_event1.`hostname`
-@unexec rm -f %D/firebird/isc_init1.`hostname`
-@unexec rm -f %D/firebird/isc_lock1.`hostname`
-@unexec if cmp -s %D/firebird/security.fdb %D/firebird/security.fdb.sample; then rm -f %D/firebird/security.fdb; fi
-firebird/security.fdb.sample
-@exec [ -f %B/security.fdb ] || cp %B/%f %B/security.fdb
-@dirrm firebird/UDF
-@dirrm firebird/bin
-@dirrm firebird/help
-@dirrm firebird/intl
-@unexec rmdir %D/firebird 2>/dev/null || true
+@unexec if cmp -s %D/%%CONFDIR%%/aliases.conf %D/%%CONFDIR%%/aliases.conf.sample; then rm -f %D/%%CONFDIR%%/aliases.conf; fi
+@unexec rmdir %D/%%CONFDIR%% 2>/dev/null || true
+@cwd /
+%%LOCALSTATEDIR%%/security.fdb.sample
+@exec [ -f %%LOCALSTATEDIR%%/security.fdb ] || cp %%LOCALSTATEDIR%%/security.fdb.sample %%LOCALSTATEDIR%%/security.fdb
+@unexec if cmp -s %%LOCALSTATEDIR%%/security.fdb %%LOCALSTATEDIR%%/security.fdb.sample; then rm -f %%LOCALSTATEDIR%%/security.fdb; fi
+%%LOCALSTATEDIR%%/RELNOTES
+%%LOCALSTATEDIR%%/UDF/fbudf.so
+%%LOCALSTATEDIR%%/UDF/fbudf.sql
+%%LOCALSTATEDIR%%/UDF/ib_udf.so
+%%LOCALSTATEDIR%%/UDF/ib_udf.sql
+%%LOCALSTATEDIR%%/help/help.fdb
+%%LOCALSTATEDIR%%/intl/fbintl
+@unexec [ -s %%LOCALSTATEDIR%%/firebird.log ] || rm -f %%LOCALSTATEDIR%%/firebird.log
+@unexec rm -f %%LOCALSTATEDIR%%/isc_event1.`hostname`
+@unexec rm -f %%LOCALSTATEDIR%%/isc_init1.`hostname`
+@unexec rm -f %%LOCALSTATEDIR%%/isc_lock1.`hostname`
+@dirrm %%LOCALSTATEDIR%%/UDF
+@dirrm %%LOCALSTATEDIR%%/help
+@dirrm %%LOCALSTATEDIR%%/intl
+@unexec rmdir %%LOCALSTATEDIR%% 2>/dev/null || true
