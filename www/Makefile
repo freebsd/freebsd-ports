@@ -760,6 +760,7 @@
     SUBDIR += tclwebtest
     SUBDIR += tdiary
     SUBDIR += tdiary-devel
+    SUBDIR += tdom
     SUBDIR += thttpd
     SUBDIR += thumbnail_index
     SUBDIR += tidy
