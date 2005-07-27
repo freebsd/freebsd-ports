@@ -1,9 +1,9 @@
-*** test/Makefile.arch.orig	Tue Jun 15 20:02:44 2004
---- test/Makefile.arch	Wed Jun 16 10:05:39 2004
+*** test/Makefile.arch.orig	Fri Jun 10 20:12:55 2005
+--- test/Makefile.arch	Sat Jul  9 19:49:07 2005
 ***************
 *** 9,15 ****
   ARCH         := $(shell root-config --arch)
-  PLATFORM      = $(ARCH)
+  PLATFORM     := $(shell root-config --platform)
   
 - CXX           =
   ObjSuf        = o
@@ -11,7 +11,7 @@
   ExeSuf        =
 --- 9,14 ----
 ***************
-*** 426,435 ****
+*** 406,415 ****
   
   ifeq ($(ARCH),freebsd4)
   # FreeBSD with glibc
@@ -22,7 +22,7 @@
   SOFLAGS       = -shared -Wl,-x
   endif
   
---- 425,439 ----
+--- 405,419 ----
   
   ifeq ($(ARCH),freebsd4)
   # FreeBSD with glibc

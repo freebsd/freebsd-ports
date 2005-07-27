@@ -1,28 +1,21 @@
-*** config/root-config.in.orig  Mon Jul  5 16:49:16 2004
---- config/root-config.in       Mon Jul  5 16:51:05 2004
+*** config/root-config.in.orig	Fri Jun 10 20:12:55 2005
+--- config/root-config.in	Sat Jul  9 19:46:11 2005
 ***************
-*** 245,253 ****
-     auxlibs="-lm -lg++"
+*** 260,267 ****
      ;;
-  freebsd4)
-!    # FreeBSD with glibc
-     auxcflags=
-     auxlibs="-lm -lstdc++"
+  freebsd5)
+     # FreeBSD 5 with glibc
+!    auxcflags=
+!    auxlibs="-lm -lstdc++"
      ;;
-  macosx)
-     # MacOS X with gcc (GNU cc v3.1) and possible fink (fink.sf.net)
---- 245,258 ----
-     auxlibs="-lm -lg++"
+  openbsd)
+     # OpenBSD with libc
+--- 260,267 ----
      ;;
-  freebsd4)
-!    # FreeBSD 4.x with glibc
-     auxcflags=
-     auxlibs="-lm -lstdc++"
-+    ;;
-+ freebsd5)
-+    # FreeBSD 5.x with glibc
-+    auxcflags="PTHREAD-CFLAGS"
-+    auxlibs="PTHREAD-LIBS -lm -lstdc++"
+  freebsd5)
+     # FreeBSD 5 with glibc
+!    auxcflags="PTHREAD-CFLAGS"
+!    auxlibs="PTHREAD-LIBS -lm -lstdc++"
      ;;
-  macosx)
-     # MacOS X with gcc (GNU cc v3.1) and possible fink (fink.sf.net)
+  openbsd)
+     # OpenBSD with libc

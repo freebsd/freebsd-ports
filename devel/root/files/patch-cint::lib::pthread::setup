@@ -1,0 +1,19 @@
+*** cint/lib/pthread/setup.orig	Mon Feb 28 18:28:12 2005
+--- cint/lib/pthread/setup	Sat Jul  9 19:39:34 2005
+***************
+*** 5,11 ****
+  case $os in
+  FreeBSD)
+    # Use following line for FreeBSD
+!   makecint -mk Makefile -dl pthread.dll -H pthd.h -D_THREAD_SAFE -D_POSIX_C_SOURCE=199506L -l -pthread  -cint -Z0
+    ;;
+  OpenBSD)
+    # Use following line for OpenBSD
+--- 5,11 ----
+  case $os in
+  FreeBSD)
+    # Use following line for FreeBSD
+!   makecint -mk Makefile -dl pthread.dll -H pthd.h -D_THREAD_SAFE -D_POSIX_C_SOURCE=199506L -l $PTHREAD_LIBS -cint -Z0
+    ;;
+  OpenBSD)
+    # Use following line for OpenBSD
