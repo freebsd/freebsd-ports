@@ -59,9 +59,17 @@ USE_RC_SUBR=	yes
 
 .include <bsd.port.pre.mk>
 
-DATADIR=	${PREFIX}/www
 DOCSDIR=	${PREFIX}/share/doc/apache
+.if defined(APACHE_DATADIR)
+DATADIR=	${APACHE_DATADIR}
+.else
+DATADIR=	${PREFIX}/www
+.endif
+.if defined(APACHE_DOCUMENT_ROOT)
+DOCUMENT_ROOT=	${APACHE_DOCUMENT_ROOT}
+.else
 DOCUMENT_ROOT=	${DATADIR}/data
+.endif
 
 .if exists(${LOCALBASE}/include/fnmatch.h)
 check-depends::
