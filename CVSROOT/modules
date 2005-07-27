@@ -11583,6 +11583,7 @@ tdiary		ports/www/tdiary
 tdiary-devel	ports/www/tdiary-devel
 tdir		ports/sysutils/tdir
 tdl		ports/devel/tdl
+tdom		ports/www/tdom
 tdtd.el		ports/textproc/tdtd.el
 teTeX		ports/print/teTeX
 teTeX-base	ports/print/teTeX-base
