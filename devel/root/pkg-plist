@@ -33,6 +33,7 @@ include/root/Byteswap.h
 include/root/CallFunc.h
 %%LDAP%%include/root/CintLDAP.h
 include/root/Class.h
+include/root/CsgOps.h
 include/root/DaemonUtils.h
 include/root/DataMbr.h
 include/root/Demangle.h
@@ -50,20 +51,201 @@ include/root/Hoption.h
 include/root/Hparam.h
 include/root/Htypes.h
 include/root/KeySymbols.h
-include/root/LinkDef.h
+%%KRB5%%include/root/Krb5Auth.h
 include/root/Match.h
 include/root/MemCheck.h
 include/root/MessageTypes.h
 include/root/Method.h
 include/root/MethodAr.h
 include/root/NetErrors.h
-%%THREADS%%include/root/PosixThreadInc.h
+include/root/PosixThreadInc.h
 include/root/Property.h
 include/root/RConfig.h
 include/root/RQ_OBJECT.h
+include/root/RStipples.h
 include/root/RVersion.h
 include/root/Riosfwd.h
 include/root/Riostream.h
+include/root/Roo1DTable.h
+include/root/Roo2DKeysPdf.h
+include/root/RooAICRegistry.h
+include/root/RooAbsAnaConvPdf.h
+include/root/RooAbsArg.h
+include/root/RooAbsBinning.h
+include/root/RooAbsCategory.h
+include/root/RooAbsCategoryLValue.h
+include/root/RooAbsCollection.h
+include/root/RooAbsData.h
+include/root/RooAbsFunc.h
+include/root/RooAbsGenContext.h
+include/root/RooAbsGoodnessOfFit.h
+include/root/RooAbsHiddenReal.h
+include/root/RooAbsIntegrator.h
+include/root/RooAbsLValue.h
+include/root/RooAbsOptGoodnessOfFit.h
+include/root/RooAbsPdf.h
+include/root/RooAbsProxy.h
+include/root/RooAbsReal.h
+include/root/RooAbsRealLValue.h
+include/root/RooAbsRootFinder.h
+include/root/RooAbsString.h
+include/root/RooAcceptReject.h
+include/root/RooAdaptiveGaussKronrodIntegrator1D.h
+include/root/RooAddGenContext.h
+include/root/RooAddModel.h
+include/root/RooAddPdf.h
+include/root/RooAddition.h
+include/root/RooArgList.h
+include/root/RooArgProxy.h
+include/root/RooArgSet.h
+include/root/RooArgusBG.h
+include/root/RooBCPEffDecay.h
+include/root/RooBCPGenDecay.h
+include/root/RooBDecay.h
+include/root/RooBMixDecay.h
+include/root/RooBifurGauss.h
+include/root/RooBinning.h
+include/root/RooBlindTools.h
+include/root/RooBreitWigner.h
+include/root/RooBrentRootFinder.h
+include/root/RooBukinPdf.h
+include/root/RooCBShape.h
+include/root/RooCatType.h
+include/root/RooCategory.h
+include/root/RooCategoryProxy.h
+include/root/RooChebychev.h
+include/root/RooChi2Var.h
+include/root/RooClassFactory.h
+include/root/RooCmdArg.h
+include/root/RooCmdConfig.h
+include/root/RooComplex.h
+include/root/RooConstVar.h
+include/root/RooConvCoefVar.h
+include/root/RooConvGenContext.h
+include/root/RooConvIntegrandBinding.h
+include/root/RooCurve.h
+include/root/RooCustomizer.h
+include/root/RooDataHist.h
+include/root/RooDataProjBinding.h
+include/root/RooDataSet.h
+include/root/RooDecay.h
+include/root/RooDirItem.h
+include/root/RooDouble.h
+include/root/RooDstD0BG.h
+include/root/RooEffGenContext.h
+include/root/RooEffProd.h
+include/root/RooEfficiency.h
+include/root/RooEllipse.h
+include/root/RooErrorHandler.h
+include/root/RooErrorVar.h
+include/root/RooExponential.h
+include/root/RooExtendPdf.h
+include/root/RooFit.h
+include/root/RooFitResult.h
+include/root/RooFormula.h
+include/root/RooFormulaVar.h
+include/root/RooGExpModel.h
+include/root/RooGaussKronrodIntegrator1D.h
+include/root/RooGaussModel.h
+include/root/RooGaussian.h
+include/root/RooGenCategory.h
+include/root/RooGenContext.h
+include/root/RooGenProdProj.h
+include/root/RooGenericPdf.h
+include/root/RooGlobalFunc.h
+include/root/RooGraphEdge.h
+include/root/RooGraphNode.h
+include/root/RooGraphSpring.h
+include/root/RooGrid.h
+include/root/RooHashTable.h
+include/root/RooHist.h
+include/root/RooHistError.h
+include/root/RooHistPdf.h
+include/root/RooHtml.h
+include/root/RooImproperIntegrator1D.h
+include/root/RooInt.h
+include/root/RooIntegrator1D.h
+include/root/RooIntegrator2D.h
+include/root/RooIntegratorBinding.h
+include/root/RooInvTransform.h
+include/root/RooKeysPdf.h
+include/root/RooLandau.h
+include/root/RooLinTransBinning.h
+include/root/RooLinearVar.h
+include/root/RooLinkedList.h
+include/root/RooLinkedListElem.h
+include/root/RooLinkedListIter.h
+include/root/RooList.h
+include/root/RooListProxy.h
+include/root/RooMCIntegrator.h
+include/root/RooMCStudy.h
+include/root/RooMPSentinel.h
+include/root/RooMapCatEntry.h
+include/root/RooMappedCategory.h
+include/root/RooMath.h
+include/root/RooMinuit.h
+include/root/RooMultiCatIter.h
+include/root/RooMultiCategory.h
+include/root/RooNLLVar.h
+include/root/RooNameReg.h
+include/root/RooNameSet.h
+include/root/RooNonCPEigenDecay.h
+include/root/RooNormListManager.h
+include/root/RooNormManager.h
+include/root/RooNormSetCache.h
+include/root/RooNovosibirsk.h
+include/root/RooNumConvPdf.h
+include/root/RooNumConvolution.h
+include/root/RooNumIntConfig.h
+include/root/RooNumIntFactory.h
+include/root/RooNumber.h
+include/root/RooParametricStepFunction.h
+include/root/RooPlot.h
+include/root/RooPlotable.h
+include/root/RooPolyVar.h
+include/root/RooPolynomial.h
+include/root/RooPrintable.h
+include/root/RooProdGenContext.h
+include/root/RooProdPdf.h
+include/root/RooProduct.h
+include/root/RooPullVar.h
+include/root/RooQuasiRandomGenerator.h
+include/root/RooRandom.h
+include/root/RooRangeBinning.h
+include/root/RooRealAnalytic.h
+include/root/RooRealBinding.h
+include/root/RooRealConstant.h
+include/root/RooRealIntegral.h
+include/root/RooRealMPFE.h
+include/root/RooRealProxy.h
+include/root/RooRealSumPdf.h
+include/root/RooRealVar.h
+include/root/RooRefCountList.h
+include/root/RooResolutionModel.h
+include/root/RooScaledFunc.h
+include/root/RooSegmentedIntegrator1D.h
+include/root/RooSegmentedIntegrator2D.h
+include/root/RooSetPair.h
+include/root/RooSetProxy.h
+include/root/RooSimGenContext.h
+include/root/RooSimPdfBuilder.h
+include/root/RooSimultaneous.h
+include/root/RooStreamParser.h
+include/root/RooStringVar.h
+include/root/RooSuperCategory.h
+include/root/RooTObjWrap.h
+include/root/RooTable.h
+include/root/RooThreshEntry.h
+include/root/RooThresholdCategory.h
+include/root/RooTrace.h
+include/root/RooTreeData.h
+include/root/RooTruthModel.h
+include/root/RooUnblindCPAsymVar.h
+include/root/RooUnblindOffset.h
+include/root/RooUnblindPrecision.h
+include/root/RooUnblindUniform.h
+include/root/RooUniformBinning.h
+include/root/RooVoigtian.h
 include/root/Rpair.h
 include/root/Rstrstream.h
 include/root/Rtypeinfo.h
@@ -116,6 +298,7 @@ include/root/TBenchmark.h
 include/root/TBits.h
 include/root/TBox.h
 include/root/TBranch.h
+include/root/TBranchBrowsable.h
 include/root/TBranchClones.h
 include/root/TBranchElement.h
 include/root/TBranchObject.h
@@ -130,6 +313,8 @@ include/root/TBrowserImp.h
 include/root/TBtree.h
 include/root/TBuffer.h
 include/root/TBuffer3D.h
+include/root/TBuffer3DTypes.h
+include/root/TBufferXML.h
 include/root/TButton.h
 include/root/TCL.h
 include/root/TCONE.h
@@ -140,12 +325,15 @@ include/root/TCanvas.h
 include/root/TCanvasImp.h
 include/root/TChain.h
 include/root/TChainElement.h
+include/root/TChainIndex.h
+include/root/TChainProof.h
 include/root/TChair.h
 include/root/TCint.h
 include/root/TClass.h
 include/root/TClassEdit.h
 include/root/TClassGenerator.h
 include/root/TClassMenuItem.h
+include/root/TClassRef.h
 include/root/TClassStreamer.h
 include/root/TClassTable.h
 include/root/TClassTree.h
@@ -155,8 +343,8 @@ include/root/TCollectionProxy.h
 include/root/TColor.h
 include/root/TColumnView.h
 include/root/TComplex.h
-%%THREADS%%include/root/TCondition.h
-%%THREADS%%include/root/TConditionImp.h
+include/root/TCondition.h
+include/root/TConditionImp.h
 include/root/TCondor.h
 include/root/TConfidenceLevel.h
 include/root/TContainerConverters.h
@@ -165,6 +353,7 @@ include/root/TContextMenuImp.h
 include/root/TControlBar.h
 include/root/TControlBarButton.h
 include/root/TControlBarImp.h
+include/root/TCreatePrimitives.h
 include/root/TCrown.h
 include/root/TCurlyArc.h
 include/root/TCurlyArcEditor.h
@@ -172,6 +361,7 @@ include/root/TCurlyLine.h
 include/root/TCurlyLineEditor.h
 include/root/TCut.h
 include/root/TCutG.h
+include/root/TDOMParser.h
 include/root/TDSet.h
 include/root/TDSetProxy.h
 include/root/TDataMember.h
@@ -215,15 +405,23 @@ include/root/TFeldmanCousins.h
 include/root/TFile.h
 include/root/TFileDrawMap.h
 include/root/TFileIter.h
+include/root/TFileMerger.h
 include/root/TFileSet.h
 include/root/TFitPanel.h
 include/root/TFitPanelGraph.h
 include/root/TFitter.h
+include/root/TFoam.h
+include/root/TFoamCell.h
+include/root/TFoamIntegrand.h
+include/root/TFoamMaxwt.h
+include/root/TFoamVect.h
 include/root/TFolder.h
 include/root/TFormLeafInfo.h
 include/root/TFormula.h
+include/root/TFormulaPrimitive.h
 include/root/TFractionFitter.h
 include/root/TFrame.h
+include/root/TFrameEditor.h
 include/root/TFree.h
 include/root/TFriendElement.h
 include/root/TFriendProxy.h
@@ -240,8 +438,8 @@ include/root/TGColorDialog.h
 include/root/TGColorSelect.h
 include/root/TGComboBox.h
 include/root/TGDimension.h
-include/root/TGDoubleSlider.h
 include/root/TGDockableFrame.h
+include/root/TGDoubleSlider.h
 include/root/TGFSComboBox.h
 include/root/TGFSContainer.h
 include/root/TGFileDialog.h
@@ -252,18 +450,28 @@ include/root/TGGC.h
 include/root/TGIcon.h
 include/root/TGIdleHandler.h
 include/root/TGImageMap.h
+include/root/TGLBoundingBox.h
 include/root/TGLCamera.h
+include/root/TGLDisplayListCache.h
+include/root/TGLDrawable.h
 include/root/TGLEditor.h
-include/root/TGLFrustum.h
+include/root/TGLIncludes.h
 include/root/TGLKernel.h
+include/root/TGLLogicalShape.h
+include/root/TGLOrthoCamera.h
+include/root/TGLPerspectiveCamera.h
+include/root/TGLPhysicalShape.h
+include/root/TGLRenderArea.h
+include/root/TGLScene.h
+include/root/TGLSceneObject.h
+include/root/TGLStopwatch.h
+include/root/TGLUtil.h
+include/root/TGLViewer.h
 include/root/TGLabel.h
 include/root/TGLayout.h
 include/root/TGListBox.h
 include/root/TGListTree.h
 include/root/TGListView.h
-include/root/TGLRender.h
-include/root/TGLRenderArea.h
-include/root/TGLSceneObject.h
 include/root/TGMdi.h
 include/root/TGMdiDecorFrame.h
 include/root/TGMdiFrame.h
@@ -276,7 +484,7 @@ include/root/TGNumberEntry.h
 include/root/TGObject.h
 include/root/TGPicture.h
 include/root/TGProgressBar.h
-include/root/TGQt.h
+%%QT%%include/root/TGQt.h
 include/root/TGResourcePool.h
 include/root/TGScrollBar.h
 include/root/TGShutter.h
@@ -342,6 +550,7 @@ include/root/TGeoPgon.h
 include/root/TGeoPhysicalNode.h
 include/root/TGeoPolygon.h
 include/root/TGeoShape.h
+include/root/TGeoShapeAssembly.h
 include/root/TGeoSphere.h
 include/root/TGeoTorus.h
 include/root/TGeoTrack.h
@@ -365,7 +574,10 @@ include/root/TGraphErrors.h
 include/root/TGraphPainter.h
 include/root/TGraphSmooth.h
 include/root/TGrid.h
-include/root/TGridProof.h
+include/root/TGridCollection.h
+include/root/TGridJDL.h
+include/root/TGridJob.h
+include/root/TGridJobStatus.h
 include/root/TGridResult.h
 include/root/TGroupButton.h
 include/root/TGuiBldDragManager.h
@@ -406,14 +618,18 @@ include/root/THistPainter.h
 include/root/THostAuth.h
 include/root/THtml.h
 include/root/TImage.h
+include/root/TImageDump.h
 include/root/TIndexTable.h
 include/root/TInetAddress.h
 include/root/TInspectCanvas.h
 include/root/TInspectorImp.h
 include/root/TInterpreter.h
+include/root/TIsAProxy.h
 include/root/TIterator.h
+%%KRB5%%include/root/TKSocket.h
 include/root/TKey.h
 include/root/TKeyMapFile.h
+include/root/TKeyXML.h
 %%LDAP%%include/root/TLDAPAttribute.h
 %%LDAP%%include/root/TLDAPEntry.h
 %%LDAP%%include/root/TLDAPResult.h
@@ -427,6 +643,7 @@ include/root/TLeafElement.h
 include/root/TLeafF.h
 include/root/TLeafI.h
 include/root/TLeafL.h
+include/root/TLeafO.h
 include/root/TLeafObject.h
 include/root/TLeafS.h
 include/root/TLegend.h
@@ -435,10 +652,12 @@ include/root/TLego.h
 include/root/TLimit.h
 include/root/TLimitDataSource.h
 include/root/TLine.h
+include/root/TLinearFitter.h
 include/root/TLink.h
 include/root/TList.h
 include/root/TLorentzRotation.h
 include/root/TLorentzVector.h
+include/root/TMCOptical.h
 include/root/TMCParticleType.h
 include/root/TMCProcess.h
 include/root/TMCVerbose.h
@@ -459,7 +678,6 @@ include/root/TMatrixDLazy.h
 include/root/TMatrixDSparse.h
 include/root/TMatrixDSym.h
 include/root/TMatrixDSymCramerInv.h
-include/root/TMatrixFSymCramerInv.h
 include/root/TMatrixDSymEigen.h
 include/root/TMatrixDUtils.h
 include/root/TMatrixF.h
@@ -467,6 +685,7 @@ include/root/TMatrixFBase.h
 include/root/TMatrixFCramerInv.h
 include/root/TMatrixFLazy.h
 include/root/TMatrixFSym.h
+include/root/TMatrixFSymCramerInv.h
 include/root/TMatrixFUtils.h
 include/root/TMehrotraSolver.h
 include/root/TMemberInspector.h
@@ -475,7 +694,6 @@ include/root/TMessage.h
 include/root/TMessageHandler.h
 include/root/TMethod.h
 include/root/TMethodArg.h
-include/root/TMethodBrowsable.h
 include/root/TMethodCall.h
 include/root/TMinuit.h
 include/root/TMixture.h
@@ -483,8 +701,11 @@ include/root/TMonitor.h
 include/root/TMultiDimFit.h
 include/root/TMultiGraph.h
 include/root/TMultiLayerPerceptron.h
-%%THREADS%%include/root/TMutex.h
-%%THREADS%%include/root/TMutexImp.h
+include/root/TMutex.h
+include/root/TMutexImp.h
+%%MYSQL%%include/root/TMySQLResult.h
+%%MYSQL%%include/root/TMySQLRow.h
+%%MYSQL%%include/root/TMySQLServer.h
 include/root/TNamed.h
 include/root/TNetFile.h
 include/root/TNeuron.h
@@ -495,7 +716,7 @@ include/root/TNtupleD.h
 include/root/TObjArray.h
 include/root/TObjString.h
 include/root/TObject.h
-include/root/TObjectExecute.h
+%%QT%%include/root/TObjectExecute.h
 include/root/TObjectSet.h
 include/root/TObjectTable.h
 include/root/TOrdCollection.h
@@ -540,10 +761,10 @@ include/root/TPolyLine3D.h
 include/root/TPolyLineShape.h
 include/root/TPolyMarker.h
 include/root/TPolyMarker3D.h
-%%THREADS%%include/root/TPosixCondition.h
-%%THREADS%%include/root/TPosixMutex.h
-%%THREADS%%include/root/TPosixThread.h
-%%THREADS%%include/root/TPosixThreadFactory.h
+include/root/TPosixCondition.h
+include/root/TPosixMutex.h
+include/root/TPosixThread.h
+include/root/TPosixThreadFactory.h
 include/root/TPostScript.h
 include/root/TPrimary.h
 include/root/TPrincipal.h
@@ -552,17 +773,22 @@ include/root/TProcessUUID.h
 include/root/TProfile.h
 include/root/TProfile2D.h
 include/root/TProof.h
+include/root/TProofCondor.h
 include/root/TProofDebug.h
 include/root/TProofDraw.h
 include/root/TProofLimitsFinder.h
 include/root/TProofPlayer.h
 include/root/TProofProgressDialog.h
 include/root/TProofServ.h
+include/root/TProofSuperMaster.h
+%%PYTHON%%include/root/TPyException.h
+%%PYTHON%%include/root/TPyReturn.h
+%%PYTHON%%include/root/TPython.h
 include/root/TQCommand.h
 include/root/TQConnection.h
-include/root/TQMimeTypes.h
+%%QT%%include/root/TQMimeTypes.h
 include/root/TQObject.h
-include/root/TQUserEvent.h
+%%QT%%include/root/TQUserEvent.h
 include/root/TQpDataBase.h
 include/root/TQpDataDens.h
 include/root/TQpDataSparse.h
@@ -575,26 +801,29 @@ include/root/TQpProbSparse.h
 include/root/TQpResidual.h
 include/root/TQpSolverBase.h
 include/root/TQpVar.h
-include/root/TQtApplication.h
-include/root/TQtApplicationThread.h
-include/root/TQtBrush.h
-include/root/TQtClientFilter.h
-include/root/TQtClientGuard.h
-include/root/TQtClientWidget.h
-include/root/TQtEvent.h
-include/root/TQtEventQueue.h
-include/root/TQtMarker.h
-include/root/TQtRConfig.h
-include/root/TQtRootApplication.h
-include/root/TQtRootGuiFactory.h
-include/root/TQtRootThread.h
-include/root/TQtThread.h
-include/root/TQtThreadStub.h
-include/root/TQtTimer.h
-include/root/TQtUtil.h
-include/root/TQtWidget.h
+%%QT%%include/root/TQtApplication.h
+%%QT%%include/root/TQtApplicationThread.h
+%%QT%%include/root/TQtBrush.h
+%%QT%%include/root/TQtClientFilter.h
+%%QT%%include/root/TQtClientGuard.h
+%%QT%%include/root/TQtClientWidget.h
+%%QT%%include/root/TQtEvent.h
+%%QT%%include/root/TQtEventQueue.h
+%%QT%%include/root/TQtMarker.h
+%%QT%%include/root/TQtRConfig.h
+%%QT%%include/root/TQtRootApplication.h
+%%QT%%include/root/TQtRootGuiFactory.h
+%%QT%%include/root/TQtRootThread.h
+%%QT%%include/root/TQtSymbolCodec.h
+%%QT%%include/root/TQtTermInputHandler.h
+%%QT%%include/root/TQtThread.h
+%%QT%%include/root/TQtThreadStub.h
+%%QT%%include/root/TQtTimer.h
+%%QT%%include/root/TQtUtil.h
+%%QT%%include/root/TQtWidget.h
+include/root/TQuaternion.h
 include/root/TROOT.h
-%%THREADS%%include/root/TRWLock.h
+include/root/TRWLock.h
 include/root/TRandom.h
 include/root/TRandom2.h
 include/root/TRandom3.h
@@ -620,9 +849,11 @@ include/root/TRootGLX.h
 include/root/TRootGuiBuilder.h
 include/root/TRootGuiFactory.h
 include/root/TRootHelpDialog.h
-include/root/TRootMainThread.h
+%%QT%%include/root/TRootMainThread.h
 include/root/TRotMatrix.h
 include/root/TRotation.h
+%%RUBY%%include/root/TRuby.h
+include/root/TSAXParser.h
 include/root/TSPHE.h
 include/root/TSQLResult.h
 include/root/TSQLRow.h
@@ -632,7 +863,8 @@ include/root/TSecContext.h
 include/root/TSelector.h
 include/root/TSelectorCint.h
 include/root/TSelectorDraw.h
-%%THREADS%%include/root/TSemaphore.h
+include/root/TSelectorScalar.h
+include/root/TSemaphore.h
 include/root/TSeqCollection.h
 include/root/TServerSocket.h
 include/root/TShape.h
@@ -675,15 +907,16 @@ include/root/TTablePoints.h
 include/root/TTableSorter.h
 include/root/TTask.h
 include/root/TText.h
-%%THREADS%%include/root/TThread.h
-%%THREADS%%include/root/TThreadFactory.h
-%%THREADS%%include/root/TThreadImp.h
+include/root/TThread.h
+include/root/TThreadFactory.h
+include/root/TThreadImp.h
 include/root/TTime.h
 include/root/TTimeStamp.h
 include/root/TTimer.h
 include/root/TToggle.h
 include/root/TToggleGroup.h
 include/root/TTree.h
+include/root/TTreeDrawArgsParser.h
 include/root/TTreeFormula.h
 include/root/TTreeFormulaManager.h
 include/root/TTreeIndex.h
@@ -704,6 +937,7 @@ include/root/TVector3.h
 include/root/TVectorD.h
 include/root/TVectorF.h
 include/root/TView.h
+include/root/TViewer3DPad.h
 include/root/TViewerOpenGL.h
 include/root/TViewerX3D.h
 include/root/TVirtualCollectionProxy.h
@@ -714,6 +948,7 @@ include/root/TVirtualGeoPainter.h
 include/root/TVirtualGeoTrack.h
 include/root/TVirtualHistPainter.h
 include/root/TVirtualIndex.h
+include/root/TVirtualIsAProxy.h
 include/root/TVirtualMC.h
 include/root/TVirtualMCApplication.h
 include/root/TVirtualMCDecayer.h
@@ -732,22 +967,38 @@ include/root/TVirtualUtilHist.h
 include/root/TVirtualUtilPad.h
 include/root/TVirtualViewer3D.h
 include/root/TVirtualX.h
-include/root/TVirtualX.interface.h
+%%QT%%include/root/TVirtualX.interface.h
 include/root/TVolume.h
 include/root/TVolumePosition.h
 include/root/TVolumeView.h
 include/root/TVolumeViewIter.h
-include/root/TWaitCondition.h
+%%QT%%include/root/TWaitCondition.h
 include/root/TWbox.h
 include/root/TWebFile.h
 include/root/TX11GL.h
-include/root/TXMLBuffer.h
+include/root/TXAbsNetCommon.h
+include/root/TXConnectionMgr.h
+include/root/TXDebug.h
+include/root/TXError.h
+include/root/TXInputBuffer.h
+include/root/TXLogConnection.h
+include/root/TXMLAttr.h
+include/root/TXMLDocument.h
 include/root/TXMLEngine.h
 include/root/TXMLFile.h
-include/root/TXMLKey.h
-include/root/TXMLSetup.h
+include/root/TXMLNode.h
+include/root/TXMLParser.h
 include/root/TXMLPlayer.h
+include/root/TXMLSetup.h
+include/root/TXMessage.h
+include/root/TXNetConn.h
+include/root/TXNetFile.h
+include/root/TXPhyConnection.h
+include/root/TXProtocol.h
+include/root/TXSocket.h
 include/root/TXTRU.h
+include/root/TXUnsolicitedMsg.h
+include/root/TXUrl.h
 include/root/TZIPFile.h
 include/root/Tailor.h
 include/root/Token.h
@@ -765,7 +1016,19 @@ include/root/ZIP.h
 include/root/ZTrees.h
 include/root/accstrm.h
 include/root/aixdlfcn.h
+include/root/bc_assign.h
+include/root/bc_autoobj.h
+include/root/bc_cfunc.h
+include/root/bc_debug.h
+include/root/bc_eh.h
+include/root/bc_exec.h
 include/root/bc_exec_asm.h
+include/root/bc_inst.h
+include/root/bc_linkdef.h
+include/root/bc_parse.h
+include/root/bc_reader.h
+include/root/bc_type.h
+include/root/bc_vtbl.h
 include/root/bcstrm.h
 include/root/cbstrm.h
 include/root/cfortran.h
@@ -777,6 +1040,7 @@ include/root/deflate.h
 include/root/dllrev.h
 include/root/fproto.h
 include/root/gcc3strm.h
+include/root/gl2ps.h
 include/root/global.h
 include/root/header.h
 include/root/iccstrm.h
@@ -796,8 +1060,8 @@ include/root/newsos.h
 include/root/proofdp.h
 include/root/rmain.cxx
 include/root/rootdp.h
-include/root/rpderr.h
 include/root/rpddefs.h
+include/root/rpderr.h
 include/root/rpdp.h
 include/root/rsaaux.h
 include/root/rsadef.h
@@ -810,6 +1074,7 @@ include/root/sunos.h
 include/root/sunstrm.h
 include/root/tableDescriptor.h
 include/root/trees.h
+include/root/typesym.h
 include/root/vc7strm.h
 include/root/vcstrm.h
 include/root/vcstrmold.h
@@ -817,6 +1082,9 @@ include/root/x3d.h
 include/root/zconf.h
 include/root/zlib.h
 include/root/zutil.h
+%%PYTHON%%lib/root/ROOT.py
+%%PYTHON%%lib/root/ROOT.pyc
+%%PYTHON%%lib/root/ROOT.pyo
 lib/root/cint/MAKEINFO
 lib/root/cint/include/.cvsignore
 lib/root/cint/include/Common.h
@@ -970,6 +1238,7 @@ lib/root/cint/include/windows.h
 lib/root/cint/include/winsock.h
 lib/root/cint/include/xgraph.c
 lib/root/cint/include/xygraphbuf.h
+lib/root/cint/lib/Makefile
 lib/root/cint/lib/README.txt
 lib/root/cint/lib/accstrm/CVS/Entries
 lib/root/cint/lib/accstrm/CVS/Repository
@@ -1005,6 +1274,7 @@ lib/root/cint/lib/dll_stl/CVS/Root
 lib/root/cint/lib/dll_stl/README.txt
 lib/root/cint/lib/dll_stl/cinteh.h
 lib/root/cint/lib/dll_stl/clim.h
+lib/root/cint/lib/dll_stl/cmplx.h
 lib/root/cint/lib/dll_stl/dqu.h
 lib/root/cint/lib/dll_stl/iter.h
 lib/root/cint/lib/dll_stl/lst.h
@@ -1050,8 +1320,8 @@ lib/root/cint/lib/gl/GL.h
 lib/root/cint/lib/gl/README.txt
 lib/root/cint/lib/gl/TOP.h
 lib/root/cint/lib/gl/cintGL.h
-lib/root/cint/lib/gl/setup.bat
 lib/root/cint/lib/gl/setup
+lib/root/cint/lib/gl/setup.bat
 lib/root/cint/lib/iccstrm/CVS/Entries
 lib/root/cint/lib/iccstrm/CVS/Repository
 lib/root/cint/lib/iccstrm/CVS/Root
@@ -1074,6 +1344,7 @@ lib/root/cint/lib/longlong/CVS/Root
 lib/root/cint/lib/longlong/README.txt
 lib/root/cint/lib/longlong/longdbl.h
 lib/root/cint/lib/longlong/longlong.h
+lib/root/cint/lib/longlong/make.bat
 lib/root/cint/lib/longlong/makelongif
 lib/root/cint/lib/longlong/makelongif3
 lib/root/cint/lib/longlong/setup
@@ -1101,6 +1372,7 @@ lib/root/cint/lib/prec_stl/README.txt
 lib/root/cint/lib/prec_stl/algorithm
 lib/root/cint/lib/prec_stl/bitset
 lib/root/cint/lib/prec_stl/climits
+lib/root/cint/lib/prec_stl/complex
 lib/root/cint/lib/prec_stl/deque
 lib/root/cint/lib/prec_stl/exception
 lib/root/cint/lib/prec_stl/functional
@@ -1210,7 +1482,9 @@ lib/root/cint/lib/vcstream/strstrm.h
 lib/root/cint/lib/win32api/CVS/Entries
 lib/root/cint/lib/win32api/CVS/Repository
 lib/root/cint/lib/win32api/CVS/Root
+lib/root/cint/lib/win32api/Makewin
 lib/root/cint/lib/win32api/cintwin.h
+lib/root/cint/lib/win32api/make.bat
 lib/root/cint/lib/win32api/readme.txt
 lib/root/cint/lib/win32api/setup.bat
 lib/root/cint/lib/win32api/setupbc.bat
@@ -1332,136 +1606,165 @@ lib/root/cint/stl/valarray
 lib/root/cint/stl/vector
 lib/root/cint/stl/vector.h
 %%AFTERIMAGE%%lib/root/libASImage.so
-%%AFTERIMAGE%%lib/root/libASImage.so.4
-%%AFTERIMAGE%%lib/root/libASImage.so.4.02
+%%AFTERIMAGE%%lib/root/libASImage.so.5
+%%AFTERIMAGE%%lib/root/libASImage.so.5.02
+%%AFTERIMAGE%%lib/root/libASImageGui.so
+%%AFTERIMAGE%%lib/root/libASImageGui.so.5
+%%AFTERIMAGE%%lib/root/libASImageGui.so.5.02
 %%AFTERIMAGE%%lib/root/libAfterImage.a
 lib/root/libCint.so
-lib/root/libCint.so.4
-lib/root/libCint.so.4.02
+lib/root/libCint.so.5
+lib/root/libCint.so.5.02
 lib/root/libCore.so
-lib/root/libCore.so.4
-lib/root/libCore.so.4.02
+lib/root/libCore.so.5
+lib/root/libCore.so.5.02
 lib/root/libEG.so
-lib/root/libEG.so.4
-lib/root/libEG.so.4.02
+lib/root/libEG.so.5
+lib/root/libEG.so.5.02
+lib/root/libFoam.so
+lib/root/libFoam.so.5
+lib/root/libFoam.so.5.02
 lib/root/libFumili.so
-lib/root/libFumili.so.4
-lib/root/libFumili.so.4.02
+lib/root/libFumili.so.5
+lib/root/libFumili.so.5.02
+%%QT%%lib/root/libGQt.so
+%%QT%%lib/root/libGQt.so.5
+%%QT%%lib/root/libGQt.so.5.02
 lib/root/libGX11.so
-lib/root/libGX11.so.4
-lib/root/libGX11.so.4.02
+lib/root/libGX11.so.5
+lib/root/libGX11.so.5.02
 lib/root/libGX11TTF.so
-lib/root/libGX11TTF.so.4
-lib/root/libGX11TTF.so.4.02
+lib/root/libGX11TTF.so.5
+lib/root/libGX11TTF.so.5.02
 lib/root/libGed.so
-lib/root/libGed.so.4
-lib/root/libGed.so.4.02
+lib/root/libGed.so.5
+lib/root/libGed.so.5.02
 lib/root/libGedOld.so
-lib/root/libGedOld.so.4
-lib/root/libGedOld.so.4.02
+lib/root/libGedOld.so.5
+lib/root/libGedOld.so.5.02
 lib/root/libGeom.so
-lib/root/libGeom.so.4
-lib/root/libGeom.so.4.02
+lib/root/libGeom.so.5
+lib/root/libGeom.so.5.02
 lib/root/libGeomPainter.so
-lib/root/libGeomPainter.so.4
-lib/root/libGeomPainter.so.4.02
+lib/root/libGeomPainter.so.5
+lib/root/libGeomPainter.so.5.02
 lib/root/libGpad.so
-lib/root/libGpad.so.4
-lib/root/libGpad.so.4.02
+lib/root/libGpad.so.5
+lib/root/libGpad.so.5.02
 lib/root/libGraf.so
-lib/root/libGraf.so.4
-lib/root/libGraf.so.4.02
+lib/root/libGraf.so.5
+lib/root/libGraf.so.5.02
 lib/root/libGraf3d.so
-lib/root/libGraf3d.so.4
-lib/root/libGraf3d.so.4.02
+lib/root/libGraf3d.so.5
+lib/root/libGraf3d.so.5.02
 lib/root/libGui.so
-lib/root/libGui.so.4
-lib/root/libGui.so.4.02
+lib/root/libGui.so.5
+lib/root/libGui.so.5.02
 lib/root/libGuiBld.so
-lib/root/libGuiBld.so.4
-lib/root/libGuiBld.so.4.02
-lib/root/libGQt.so
-lib/root/libGQt.so.4
-lib/root/libGQt.so.4.02
+lib/root/libGuiBld.so.5
+lib/root/libGuiBld.so.5.02
 lib/root/libHist.so
-lib/root/libHist.so.4
-lib/root/libHist.so.4.02
+lib/root/libHist.so.5
+lib/root/libHist.so.5.02
 lib/root/libHistPainter.so
-lib/root/libHistPainter.so.4
-lib/root/libHistPainter.so.4.02
+lib/root/libHistPainter.so.5
+lib/root/libHistPainter.so.5.02
 lib/root/libHtml.so
-lib/root/libHtml.so.4
-lib/root/libHtml.so.4.02
+lib/root/libHtml.so.5
+lib/root/libHtml.so.5.02
+%%KRB5%%lib/root/libKrb5Auth.so
+%%KRB5%%lib/root/libKrb5Auth.so.5
+%%KRB5%%lib/root/libKrb5Auth.so.5.02
 lib/root/libMLP.so
-lib/root/libMLP.so.4
-lib/root/libMLP.so.4.02
+lib/root/libMLP.so.5
+lib/root/libMLP.so.5.02
+lib/root/libMathCore.so
+lib/root/libMathCore.so.5
+lib/root/libMathCore.so.5.02
 lib/root/libMatrix.so
-lib/root/libMatrix.so.4
-lib/root/libMatrix.so.4.02
+lib/root/libMatrix.so.5
+lib/root/libMatrix.so.5.02
 lib/root/libMinuit.so
-lib/root/libMinuit.so.4
-lib/root/libMinuit.so.4.02
+lib/root/libMinuit.so.5
+lib/root/libMinuit.so.5.02
+%%MYSQL%%lib/root/libMySQL.so
+%%MYSQL%%lib/root/libMySQL.so.5
+%%MYSQL%%lib/root/libMySQL.so.5.02
+lib/root/libNetx.so
+lib/root/libNetx.so.5
+lib/root/libNetx.so.5.02
 lib/root/libNew.so
-lib/root/libNew.so.4
-lib/root/libNew.so.4.02
+lib/root/libNew.so.5
+lib/root/libNew.so.5.02
 %%POSTGRESQL%%lib/root/libPgSQL.so
-%%POSTGRESQL%%lib/root/libPgSQL.so.4
-%%POSTGRESQL%%lib/root/libPgSQL.so.4.02
+%%POSTGRESQL%%lib/root/libPgSQL.so.5
+%%POSTGRESQL%%lib/root/libPgSQL.so.5.02
 lib/root/libPhysics.so
-lib/root/libPhysics.so.4
-lib/root/libPhysics.so.4.02
+lib/root/libPhysics.so.5
+lib/root/libPhysics.so.5.02
 lib/root/libPostscript.so
-lib/root/libPostscript.so.4
-lib/root/libPostscript.so.4.02
+lib/root/libPostscript.so.5
+lib/root/libPostscript.so.5.02
 lib/root/libProof.so
-lib/root/libProof.so.4
-lib/root/libProof.so.4.02
+lib/root/libProof.so.5
+lib/root/libProof.so.5.02
 lib/root/libProofGui.so
-lib/root/libProofGui.so.4
-lib/root/libProofGui.so.4.02
-lib/root/libQtRoot.so
-lib/root/libQtRoot.so.4
-lib/root/libQtRoot.so.4.02
+lib/root/libProofGui.so.5
+lib/root/libProofGui.so.5.02
+%%PYTHON%%lib/root/libPyROOT.so
+%%PYTHON%%lib/root/libPyROOT.so.5
+%%PYTHON%%lib/root/libPyROOT.so.5.02
+%%QT%%lib/root/libQtRoot.so
+%%QT%%lib/root/libQtRoot.so.5
+%%QT%%lib/root/libQtRoot.so.5.02
 lib/root/libQuadp.so
-lib/root/libQuadp.so.4
-lib/root/libQuadp.so.4.02
+lib/root/libQuadp.so.5
+lib/root/libQuadp.so.5.02
 lib/root/libRGL.so
-lib/root/libRGL.so.4
-lib/root/libRGL.so.4.02
+lib/root/libRGL.so.5
+lib/root/libRGL.so.5.02
 %%LDAP%%lib/root/libRLDAP.so
-%%LDAP%%lib/root/libRLDAP.so.4
-%%LDAP%%lib/root/libRLDAP.so.4.02
-lib/root/libRXML.so
-lib/root/libRXML.so.4
-lib/root/libRXML.so.4.02
+%%LDAP%%lib/root/libRLDAP.so.5
+%%LDAP%%lib/root/libRLDAP.so.5.02
 lib/root/libRint.so
-lib/root/libRint.so.4
-lib/root/libRint.so.4.02
+lib/root/libRint.so.5
+lib/root/libRint.so.5.02
+lib/root/libRooFit.so
+lib/root/libRooFit.so.5
+lib/root/libRooFit.so.5.02
+%%RUBY%%lib/root/libRuby.so
+%%RUBY%%lib/root/libRuby.so.5
+%%RUBY%%lib/root/libRuby.so.5.02
 lib/root/libSrvAuth.so
-lib/root/libSrvAuth.so.4
-lib/root/libSrvAuth.so.4.02
+lib/root/libSrvAuth.so.5
+lib/root/libSrvAuth.so.5.02
 lib/root/libTable.so
-lib/root/libTable.so.4
-lib/root/libTable.so.4.02
-%%THREADS%%lib/root/libThread.so
-%%THREADS%%lib/root/libThread.so.4
-%%THREADS%%lib/root/libThread.so.4.02
+lib/root/libTable.so.5
+lib/root/libTable.so.5.02
+lib/root/libThread.so
+lib/root/libThread.so.5
+lib/root/libThread.so.5.02
 lib/root/libTree.so
-lib/root/libTree.so.4
-lib/root/libTree.so.4.02
+lib/root/libTree.so.5
+lib/root/libTree.so.5.02
 lib/root/libTreePlayer.so
-lib/root/libTreePlayer.so.4
-lib/root/libTreePlayer.so.4.02
+lib/root/libTreePlayer.so.5
+lib/root/libTreePlayer.so.5.02
 lib/root/libTreeViewer.so
-lib/root/libTreeViewer.so.4
-lib/root/libTreeViewer.so.4.02
+lib/root/libTreeViewer.so.5
+lib/root/libTreeViewer.so.5.02
 lib/root/libVMC.so
-lib/root/libVMC.so.4
-lib/root/libVMC.so.4.02
+lib/root/libVMC.so.5
+lib/root/libVMC.so.5.02
 lib/root/libX3d.so
-lib/root/libX3d.so.4
-lib/root/libX3d.so.4.02
-lib/root/libfreetype.a
+lib/root/libX3d.so.5
+lib/root/libX3d.so.5.02
+lib/root/libXMLIO.so
+lib/root/libXMLIO.so.5
+lib/root/libXMLIO.so.5.02
+lib/root/libXMLParser.so
+lib/root/libXMLParser.so.5
+lib/root/libXMLParser.so.5.02
 share/aclocal/root.m4
 %%DOCSDIR%%/BUILDSYSTEM
 %%DOCSDIR%%/CREDITS
@@ -1487,8 +1790,6 @@ share/aclocal/root.m4
 %%DOCSDIR%%/test/Makefile
 %%DOCSDIR%%/test/Makefile.arch
 %%DOCSDIR%%/test/Makefile.win32
-%%DOCSDIR%%/test/QpRandomDriver.cxx
-%%DOCSDIR%%/test/README
 %%DOCSDIR%%/test/ProofBench/.cvsignore
 %%DOCSDIR%%/test/ProofBench/CVS/Entries
 %%DOCSDIR%%/test/ProofBench/CVS/Repository
@@ -1504,10 +1805,13 @@ share/aclocal/root.m4
 %%DOCSDIR%%/test/ProofBench/EventTree_ProcOpt.h
 %%DOCSDIR%%/test/ProofBench/README
 %%DOCSDIR%%/test/ProofBench/Run_Node_Tests.C
+%%DOCSDIR%%/test/ProofBench/Run_Simple_Test.C
 %%DOCSDIR%%/test/ProofBench/SavePerfInfo.C
 %%DOCSDIR%%/test/ProofBench/make_event_par.sh
 %%DOCSDIR%%/test/ProofBench/make_event_trees.C
 %%DOCSDIR%%/test/ProofBench/make_tdset.C
+%%DOCSDIR%%/test/QpRandomDriver.cxx
+%%DOCSDIR%%/test/README
 %%DOCSDIR%%/test/RootShower/.cvsignore
 %%DOCSDIR%%/test/RootShower/.rootshowerrc
 %%DOCSDIR%%/test/RootShower/CVS/Entries
@@ -1530,8 +1834,8 @@ share/aclocal/root.m4
 %%DOCSDIR%%/test/RootShower/Physics.hlp
 %%DOCSDIR%%/test/RootShower/RSAbout.cxx
 %%DOCSDIR%%/test/RootShower/RSAbout.h
+%%DOCSDIR%%/test/RootShower/RSHelpText.cxx
 %%DOCSDIR%%/test/RootShower/RSHelpText.h
-%%DOCSDIR%%/test/RootShower/RSHelptext.cxx
 %%DOCSDIR%%/test/RootShower/RSLinkDef.h
 %%DOCSDIR%%/test/RootShower/RSMsgBox.cxx
 %%DOCSDIR%%/test/RootShower/RSMsgBox.h
@@ -1612,6 +1916,7 @@ share/aclocal/root.m4
 %%DOCSDIR%%/test/guiviewerLinkDef.h
 %%DOCSDIR%%/test/hsimple.cxx
 %%DOCSDIR%%/test/hworld.cxx
+%%DOCSDIR%%/test/hworld2.cxx
 %%DOCSDIR%%/test/minexam.cxx
 %%DOCSDIR%%/test/stress.cxx
 %%DOCSDIR%%/test/stressLinear.cxx
@@ -1626,6 +1931,8 @@ share/aclocal/root.m4
 %%DOCSDIR%%/test/vmatrix.cxx
 %%DOCSDIR%%/test/vvector.cxx
 %%DOCSDIR%%/tutorials/ContourList.C
+%%DOCSDIR%%/tutorials/DOMParsePerson.C
+%%DOCSDIR%%/tutorials/DOMRecursive.C
 %%DOCSDIR%%/tutorials/DynamicSlice.C
 %%DOCSDIR%%/tutorials/EditorBar.C
 %%DOCSDIR%%/tutorials/FeldmanCousins.C
@@ -1640,6 +1947,8 @@ share/aclocal/root.m4
 %%DOCSDIR%%/tutorials/Quad.cxx
 %%DOCSDIR%%/tutorials/Quad.h
 %%DOCSDIR%%/tutorials/Rolke.C
+%%DOCSDIR%%/tutorials/RoofitDemo.C
+%%DOCSDIR%%/tutorials/SAXHandler.C
 %%DOCSDIR%%/tutorials/TestAuth.C
 %%DOCSDIR%%/tutorials/WorldMap.C
 %%DOCSDIR%%/tutorials/alien.C
@@ -1648,12 +1957,15 @@ share/aclocal/root.m4
 %%DOCSDIR%%/tutorials/approx.C
 %%DOCSDIR%%/tutorials/archi.C
 %%DOCSDIR%%/tutorials/arrow.C
+%%DOCSDIR%%/tutorials/assembly.C
 %%DOCSDIR%%/tutorials/authclient.C
 %%DOCSDIR%%/tutorials/authserv.C
 %%DOCSDIR%%/tutorials/basic.C
 %%DOCSDIR%%/tutorials/basic.dat
+%%DOCSDIR%%/tutorials/basic2.C
 %%DOCSDIR%%/tutorials/basic3d.C
 %%DOCSDIR%%/tutorials/benchmarks.C
+%%DOCSDIR%%/tutorials/benchmarks.py
 %%DOCSDIR%%/tutorials/bent.C
 %%DOCSDIR%%/tutorials/bill.C
 %%DOCSDIR%%/tutorials/binomial.C
@@ -1671,6 +1983,7 @@ share/aclocal/root.m4
 %%DOCSDIR%%/tutorials/copytree.C
 %%DOCSDIR%%/tutorials/copytree2.C
 %%DOCSDIR%%/tutorials/copytree3.C
+%%DOCSDIR%%/tutorials/csgdemo.C
 %%DOCSDIR%%/tutorials/customContextMenu.C
 %%DOCSDIR%%/tutorials/customTH1Fmenu.C
 %%DOCSDIR%%/tutorials/demo.py
@@ -1680,6 +1993,7 @@ share/aclocal/root.m4
 %%DOCSDIR%%/tutorials/demoshelp.py
 %%DOCSDIR%%/tutorials/demoshelp.rb
 %%DOCSDIR%%/tutorials/dirs.C
+%%DOCSDIR%%/tutorials/double32.C
 %%DOCSDIR%%/tutorials/draw2dopt.C
 %%DOCSDIR%%/tutorials/earth.C
 %%DOCSDIR%%/tutorials/earth.dat
@@ -1706,23 +2020,32 @@ share/aclocal/root.m4
 %%DOCSDIR%%/tutorials/fit2a.C
 %%DOCSDIR%%/tutorials/fit2d.C
 %%DOCSDIR%%/tutorials/fitExclude.C
+%%DOCSDIR%%/tutorials/fitLinear.C
+%%DOCSDIR%%/tutorials/fitLinear2.C
+%%DOCSDIR%%/tutorials/fitLinearRobust.C
+%%DOCSDIR%%/tutorials/fitMultiGraph.C
 %%DOCSDIR%%/tutorials/fitcont.C
 %%DOCSDIR%%/tutorials/fithist.C
 %%DOCSDIR%%/tutorials/fitslicesy.C
+%%DOCSDIR%%/tutorials/foam_README
+%%DOCSDIR%%/tutorials/foam_demo.C
+%%DOCSDIR%%/tutorials/foam_demopers.C
+%%DOCSDIR%%/tutorials/foam_kanwa.C
 %%DOCSDIR%%/tutorials/fore.xpm
 %%DOCSDIR%%/tutorials/formula1.C
 %%DOCSDIR%%/tutorials/formula1.py
 %%DOCSDIR%%/tutorials/framework.C
 %%DOCSDIR%%/tutorials/framework.py
 %%DOCSDIR%%/tutorials/framework.rb
-%%DOCSDIR%%/tutorials/galaxy.pal.root
 %%DOCSDIR%%/tutorials/galaxy.root
 %%DOCSDIR%%/tutorials/galaxy_image.C
+%%DOCSDIR%%/tutorials/gallery.root
 %%DOCSDIR%%/tutorials/games.C
 %%DOCSDIR%%/tutorials/gaxis.C
 %%DOCSDIR%%/tutorials/geant3tasks.C
 %%DOCSDIR%%/tutorials/geodemo.C
 %%DOCSDIR%%/tutorials/geometry.C
+%%DOCSDIR%%/tutorials/geometry.py
 %%DOCSDIR%%/tutorials/gerrors.C
 %%DOCSDIR%%/tutorials/gerrors.py
 %%DOCSDIR%%/tutorials/gerrors2.C
@@ -1758,6 +2081,7 @@ share/aclocal/root.m4
 %%DOCSDIR%%/tutorials/hsimple.C
 %%DOCSDIR%%/tutorials/hsimple.py
 %%DOCSDIR%%/tutorials/hsimple.rb
+%%DOCSDIR%%/tutorials/hsimpleProxy.C
 %%DOCSDIR%%/tutorials/hstack.C
 %%DOCSDIR%%/tutorials/hstack.rb
 %%DOCSDIR%%/tutorials/hsum.C
@@ -1788,10 +2112,19 @@ share/aclocal/root.m4
 %%DOCSDIR%%/tutorials/mathGammaNormal.C
 %%DOCSDIR%%/tutorials/mathLaplace.C
 %%DOCSDIR%%/tutorials/mathStudent.C
+%%DOCSDIR%%/tutorials/mathcoreCDF.C
+%%DOCSDIR%%/tutorials/mathcoreGenVector.C
+%%DOCSDIR%%/tutorials/mathcoreLV.C
+%%DOCSDIR%%/tutorials/mathcoreSpecFunc.C
+%%DOCSDIR%%/tutorials/mathcoreStatFunc.C
+%%DOCSDIR%%/tutorials/mathcoreTreeLV.C
+%%DOCSDIR%%/tutorials/mathcoreVectorCollection.C
+%%DOCSDIR%%/tutorials/mathcoreVectorIO.C
 %%DOCSDIR%%/tutorials/mditest.C
 %%DOCSDIR%%/tutorials/mditestbg.xpm
 %%DOCSDIR%%/tutorials/mlpHiggs.C
 %%DOCSDIR%%/tutorials/mlpHiggs.root
+%%DOCSDIR%%/tutorials/mlpRegression.C
 %%DOCSDIR%%/tutorials/motorcycle.C
 %%DOCSDIR%%/tutorials/motorcycle.dat
 %%DOCSDIR%%/tutorials/mrt.py
@@ -1804,8 +2137,11 @@ share/aclocal/root.m4
 %%DOCSDIR%%/tutorials/myfit.C
 %%DOCSDIR%%/tutorials/na49.C
 %%DOCSDIR%%/tutorials/na49geomfile.C
+%%DOCSDIR%%/tutorials/na49geomfile.py
 %%DOCSDIR%%/tutorials/na49view.C
+%%DOCSDIR%%/tutorials/na49view.py
 %%DOCSDIR%%/tutorials/na49visible.C
+%%DOCSDIR%%/tutorials/na49visible.py
 %%DOCSDIR%%/tutorials/ntuple1.C
 %%DOCSDIR%%/tutorials/ntuple1.py
 %%DOCSDIR%%/tutorials/ntuple1.rb
@@ -1815,6 +2151,8 @@ share/aclocal/root.m4
 %%DOCSDIR%%/tutorials/pclient.C
 %%DOCSDIR%%/tutorials/peaks.C
 %%DOCSDIR%%/tutorials/permute.C
+%%DOCSDIR%%/tutorials/person.dtd
+%%DOCSDIR%%/tutorials/person.xml
 %%DOCSDIR%%/tutorials/portfolio.C
 %%DOCSDIR%%/tutorials/principal.C
 %%DOCSDIR%%/tutorials/pserv.C
@@ -1829,18 +2167,20 @@ share/aclocal/root.m4
 %%DOCSDIR%%/tutorials/rootlogoff.C
 %%DOCSDIR%%/tutorials/rootlogon.C
 %%DOCSDIR%%/tutorials/rootmarks.C
+%%DOCSDIR%%/tutorials/rootmarks.py
 %%DOCSDIR%%/tutorials/rose512.jpg
 %%DOCSDIR%%/tutorials/rose_image.C
 %%DOCSDIR%%/tutorials/runcatalog.sql
 %%DOCSDIR%%/tutorials/runzdemo.C
+%%DOCSDIR%%/tutorials/saxexample.xml
 %%DOCSDIR%%/tutorials/second.C
 %%DOCSDIR%%/tutorials/seism.C
 %%DOCSDIR%%/tutorials/shapes.C
 %%DOCSDIR%%/tutorials/shapes.py
 %%DOCSDIR%%/tutorials/shapesAnim.C
 %%DOCSDIR%%/tutorials/shared.C
-%%DOCSDIR%%/tutorials/spheres.C
 %%DOCSDIR%%/tutorials/solveLinear.C
+%%DOCSDIR%%/tutorials/spheres.C
 %%DOCSDIR%%/tutorials/splines.C
 %%DOCSDIR%%/tutorials/spy.C
 %%DOCSDIR%%/tutorials/spyserv.C
@@ -1876,18 +2216,20 @@ share/aclocal/root.m4
 %%DOCSDIR%%/tutorials/tvdemo.C
 %%DOCSDIR%%/tutorials/two.C
 %%DOCSDIR%%/tutorials/twoscales.C
+%%DOCSDIR%%/tutorials/vavilov.C
 %%DOCSDIR%%/tutorials/waves.C
 %%DOCSDIR%%/tutorials/work.C
-%%DOCSDIR%%/tutorials/worldmap.xpm
+%%DOCSDIR%%/tutorials/worldmap.jpg
 %%DOCSDIR%%/tutorials/xtruDraw.C
 %%DOCSDIR%%/tutorials/xtruSamples.C
 %%DOCSDIR%%/tutorials/xyslider.C
 %%DOCSDIR%%/tutorials/xysliderAction.C
 %%DOCSDIR%%/tutorials/zdemo.C
+%%DOCSDIR%%/tutorials/zdemo.py
 %%DOCSDIR%%/tutorials/zones.C
 share/emacs/site-lisp/root-help.el
-share/root/fonts/LICENSE
 share/root/fonts/BlackChancery.ttf
+share/root/fonts/LICENSE
 share/root/fonts/arial.ttf
 share/root/fonts/arialbd.ttf
 share/root/fonts/arialbi.ttf
@@ -2133,10 +2475,13 @@ share/root/icons/slider2v.xpm
 share/root/icons/slink_s.xpm
 share/root/icons/slink_t.xpm
 share/root/icons/stop_t.xpm
+share/root/icons/tb_back.xpm
 share/root/icons/tb_bigicons.xpm
 share/root/icons/tb_details.xpm
+share/root/icons/tb_forw.xpm
 share/root/icons/tb_list.xpm
 share/root/icons/tb_newfolder.xpm
+share/root/icons/tb_refresh.xpm
 share/root/icons/tb_smicons.xpm
 share/root/icons/tb_uplevel.xpm
 share/root/icons/tree_s.xpm
@@ -2145,90 +2490,92 @@ share/root/icons/x_pic.xpm
 share/root/icons/y_pic.xpm
 share/root/icons/z_pic.xpm
 share/root/macros/Dialogs.C
+share/root/macros/html.C
 share/root/proof/etc/.cvsignore
 share/root/proof/etc/cluster.conf.sample
 share/root/proof/etc/motd.sample
 share/root/proof/etc/noproof.sample
 share/root/proof/etc/proof.conf.sample
 share/root/proof/etc/rootnetrc.sample
+share/root/proof/utils/crypt
 share/root/proof/utils/pcmd
 share/root/proof/utils/pload
 share/root/proof/utils/pps
 share/root/proof/utils/proof-facility
 share/root/proof/utils/push
-@dirrm include/root
-@dirrm lib/root/cint/include/GL/CVS
-@dirrm lib/root/cint/include/GL
-@dirrm lib/root/cint/include/X11/CVS
-@dirrm lib/root/cint/include/X11
-@dirrm lib/root/cint/include/sys/CVS
-@dirrm lib/root/cint/include/sys
-@dirrm lib/root/cint/include
-@dirrm lib/root/cint/lib/accstrm/CVS
-@dirrm lib/root/cint/lib/accstrm
-@dirrm lib/root/cint/lib/bcstream/CVS
-@dirrm lib/root/cint/lib/bcstream
-@dirrm lib/root/cint/lib/cbstream/CVS
-@dirrm lib/root/cint/lib/cbstream
-@dirrm lib/root/cint/lib/dll_stl/CVS
-@dirrm lib/root/cint/lib/dll_stl
-@dirrm lib/root/cint/lib/gcc3strm/CVS
-@dirrm lib/root/cint/lib/gcc3strm/bits/CVS
-@dirrm lib/root/cint/lib/gcc3strm/bits
-@dirrm lib/root/cint/lib/gcc3strm/sys/CVS
-@dirrm lib/root/cint/lib/gcc3strm/sys
-@dirrm lib/root/cint/lib/gcc3strm
-@dirrm lib/root/cint/lib/gl/CVS
-@dirrm lib/root/cint/lib/gl
-@dirrm lib/root/cint/lib/iccstrm/CVS
-@dirrm lib/root/cint/lib/iccstrm
-@dirrm lib/root/cint/lib/ipc/CVS
-@dirrm lib/root/cint/lib/ipc
-@dirrm lib/root/cint/lib/longlong/CVS
-@dirrm lib/root/cint/lib/longlong
-@dirrm lib/root/cint/lib/posix/CVS
-@dirrm lib/root/cint/lib/posix
-@dirrm lib/root/cint/lib/prec_stl/CVS
-@dirrm lib/root/cint/lib/prec_stl
-@dirrm lib/root/cint/lib/pthread/CVS
-@dirrm lib/root/cint/lib/pthread
-@dirrm lib/root/cint/lib/qt/CVS
-@dirrm lib/root/cint/lib/qt
-@dirrm lib/root/cint/lib/snstream/CVS
-@dirrm lib/root/cint/lib/snstream
-@dirrm lib/root/cint/lib/socket/CVS
-@dirrm lib/root/cint/lib/socket
-@dirrm lib/root/cint/lib/stdstrct/CVS
-@dirrm lib/root/cint/lib/stdstrct
-@dirrm lib/root/cint/lib/stream/CVS
-@dirrm lib/root/cint/lib/stream
-@dirrm lib/root/cint/lib/vc7strm/CVS
-@dirrm lib/root/cint/lib/vc7strm
-@dirrm lib/root/cint/lib/vcstream/CVS
-@dirrm lib/root/cint/lib/vcstream
-@dirrm lib/root/cint/lib/win32api/CVS
-@dirrm lib/root/cint/lib/win32api
-@dirrm lib/root/cint/lib/xlib/CVS
-@dirrm lib/root/cint/lib/xlib
-@dirrm lib/root/cint/lib
-@dirrm lib/root/cint/stl
-@dirrm lib/root/cint
-@dirrm lib/root
-@dirrm %%DOCSDIR%%/test/ProofBench/CVS
-@dirrm %%DOCSDIR%%/test/ProofBench
-@dirrm %%DOCSDIR%%/test/RootShower/CVS
-@dirrm %%DOCSDIR%%/test/RootShower/anim/CVS
-@dirrm %%DOCSDIR%%/test/RootShower/anim
+@dirrm share/root/proof/utils
+@dirrm share/root/proof/etc
+@dirrm share/root/proof
+@dirrm share/root/macros
+@dirrm share/root/icons
+@dirrm share/root/fonts
+@dirrm share/root
+@dirrm %%DOCSDIR%%/tutorials
 @dirrm %%DOCSDIR%%/test/RootShower/icons/CVS
 @dirrm %%DOCSDIR%%/test/RootShower/icons
+@dirrm %%DOCSDIR%%/test/RootShower/anim/CVS
+@dirrm %%DOCSDIR%%/test/RootShower/anim
+@dirrm %%DOCSDIR%%/test/RootShower/CVS
 @dirrm %%DOCSDIR%%/test/RootShower
-@dirrm %%DOCSDIR%%/tutorials
+@dirrm %%DOCSDIR%%/test/ProofBench/CVS
+@dirrm %%DOCSDIR%%/test/ProofBench
 @dirrm %%DOCSDIR%%/test
 @dirrm %%DOCSDIR%%
-@dirrm share/root/fonts
-@dirrm share/root/icons
-@dirrm share/root/macros
-@dirrm share/root/proof/etc
-@dirrm share/root/proof/utils
-@dirrm share/root/proof
-@dirrm share/root
+@dirrm lib/root/cint/stl
+@dirrm lib/root/cint/lib/xlib/CVS
+@dirrm lib/root/cint/lib/xlib
+@dirrm lib/root/cint/lib/win32api/CVS
+@dirrm lib/root/cint/lib/win32api
+@dirrm lib/root/cint/lib/vcstream/CVS
+@dirrm lib/root/cint/lib/vcstream
+@dirrm lib/root/cint/lib/vc7strm/CVS
+@dirrm lib/root/cint/lib/vc7strm
+@dirrm lib/root/cint/lib/stream/CVS
+@dirrm lib/root/cint/lib/stream
+@dirrm lib/root/cint/lib/stdstrct/CVS
+@dirrm lib/root/cint/lib/stdstrct
+@dirrm lib/root/cint/lib/socket/CVS
+@dirrm lib/root/cint/lib/socket
+@dirrm lib/root/cint/lib/snstream/CVS
+@dirrm lib/root/cint/lib/snstream
+@dirrm lib/root/cint/lib/qt/CVS
+@dirrm lib/root/cint/lib/qt
+@dirrm lib/root/cint/lib/pthread/CVS
+@dirrm lib/root/cint/lib/pthread
+@dirrm lib/root/cint/lib/prec_stl/CVS
+@dirrm lib/root/cint/lib/prec_stl
+@dirrm lib/root/cint/lib/posix/CVS
+@dirrm lib/root/cint/lib/posix
+@dirrm lib/root/cint/lib/longlong/CVS
+@dirrm lib/root/cint/lib/longlong
+@dirrm lib/root/cint/lib/ipc/CVS
+@dirrm lib/root/cint/lib/ipc
+@dirrm lib/root/cint/lib/iccstrm/CVS
+@dirrm lib/root/cint/lib/iccstrm
+@dirrm lib/root/cint/lib/gl/CVS
+@dirrm lib/root/cint/lib/gl
+@dirrm lib/root/cint/lib/gcc3strm/sys/CVS
+@dirrm lib/root/cint/lib/gcc3strm/sys
+@dirrm lib/root/cint/lib/gcc3strm/bits/CVS
+@dirrm lib/root/cint/lib/gcc3strm/bits
+@dirrm lib/root/cint/lib/gcc3strm/CVS
+@dirrm lib/root/cint/lib/gcc3strm
+@dirrm lib/root/cint/lib/dll_stl/CVS
+@dirrm lib/root/cint/lib/dll_stl
+@dirrm lib/root/cint/lib/cbstream/CVS
+@dirrm lib/root/cint/lib/cbstream
+@dirrm lib/root/cint/lib/bcstream/CVS
+@dirrm lib/root/cint/lib/bcstream
+@dirrm lib/root/cint/lib/accstrm/CVS
+@dirrm lib/root/cint/lib/accstrm
+@dirrm lib/root/cint/lib
+@dirrm lib/root/cint/include/sys/CVS
+@dirrm lib/root/cint/include/sys
+@dirrm lib/root/cint/include/X11/CVS
+@dirrm lib/root/cint/include/X11
+@dirrm lib/root/cint/include/GL/CVS
+@dirrm lib/root/cint/include/GL
+@dirrm lib/root/cint/include
+@dirrm lib/root/cint
+@dirrm lib/root
+@dirrm include/root
