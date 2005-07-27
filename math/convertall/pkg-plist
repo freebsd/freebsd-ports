@@ -29,9 +29,9 @@ lib/convertall/unitgroup.py
 lib/convertall/unitgroup.pyc
 lib/convertall/unitlistview.py
 lib/convertall/unitlistview.pyc
-share/convertall/units.dat
+%%DATADIR%%/units.dat
 share/icons/convertall_lg.png
 share/icons/convertall_sm.png
-@dirrm share/convertall
+@dirrm %%DATADIR%%
 @dirrm lib/convertall
 @unexec rmdir %D/share/icons 2> /dev/null || true
