@@ -1,11 +1,15 @@
 Local/Applications/EasyDiff.app/EasyDiff
-Local/Applications/EasyDiff.app/Resources/DiffWindow.gorm
 Local/Applications/EasyDiff.app/Resources/EasyDiff.desktop
-Local/Applications/EasyDiff.app/Resources/EasyDiff.gorm
 Local/Applications/EasyDiff.app/Resources/EasyDiffInfo.plist
 Local/Applications/EasyDiff.app/Resources/Info-gnustep.plist
+Local/Applications/EasyDiff.app/Resources/main.gorm/data.classes
+Local/Applications/EasyDiff.app/Resources/main.gorm/objects.gorm
+Local/Applications/EasyDiff.app/Resources/window.gorm/data.classes
+Local/Applications/EasyDiff.app/Resources/window.gorm/objects.gorm
 Local/Applications/EasyDiff.app/library_paths.openapp
 Local/Applications/EasyDiff.app/stamp.make
+@dirrm Local/Applications/EasyDiff.app/Resources/window.gorm
+@dirrm Local/Applications/EasyDiff.app/Resources/main.gorm
 @dirrm Local/Applications/EasyDiff.app/Resources
 @dirrm Local/Applications/EasyDiff.app
 @dirrm Local/Applications

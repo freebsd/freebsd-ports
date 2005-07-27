@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	easydiff
-PORTVERSION=	0.1
-PORTREVISION=	1
+PORTVERSION=	0.3.0
 CATEGORIES=	textproc
 # outdated:	http://www.rivaille.net/EasyDiff/
-MASTER_SITES=	http://debian.uni-essen.de/misc/GNUstep/Apps/EasyDiff/
-DISTNAME=	EasyDiff-${PORTVERSION}
+# outdated:	http://debian.uni-essen.de/misc/GNUstep/Apps/EasyDiff/
+MASTER_SITES=	http://www.linuks.mine.nu/easydiff/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep graphical diff
 
 PREFIX=		${LOCALBASE}/GNUstep
 NO_MTREE=	yes
-WRKSRC=		${WRKDIR}/EasyDiff
 GUN_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNUSTEP=	yes
