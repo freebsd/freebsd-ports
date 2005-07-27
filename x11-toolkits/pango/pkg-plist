@@ -47,6 +47,7 @@ lib/pango/%%VERSION%%/modules/pango-basic-x.so
 lib/pango/%%VERSION%%/modules/pango-hangul-fc.so
 lib/pango/%%VERSION%%/modules/pango-hebrew-fc.so
 lib/pango/%%VERSION%%/modules/pango-indic-fc.so
+lib/pango/%%VERSION%%/modules/pango-khmer-fc.so
 lib/pango/%%VERSION%%/modules/pango-syriac-fc.so
 lib/pango/%%VERSION%%/modules/pango-thai-fc.so
 lib/pango/%%VERSION%%/modules/pango-tibetan-fc.so
@@ -87,6 +88,7 @@ libdata/pkgconfig/pangoxft.pc
 %%DOCSDIR%%/pango.html
 %%DOCSDIR%%/rendering.html
 %%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
 %%DOCSDIR%%/tools.html
 %%DOCSDIR%%/up.png
 @dirrm %%DOCSDIR%%
