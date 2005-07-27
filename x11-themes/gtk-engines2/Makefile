@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtk-engines2
-PORTVERSION=	2.6.3
-PORTREVISION=	3
+PORTVERSION=	2.6.4
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.6
@@ -41,9 +40,7 @@ pre-everything::
 
 # Disable the gtk1 theme.
 post-patch:
-	@${REINPLACE_CMD} -e 's|gtk gtk-2.0|gtk-2.0|' \
+	@${REINPLACE_CMD} -e 's|gtk gtk-2.0|gtk-2.0|g' \
 		${WRKSRC}/themes/Redmond/Makefile.in
-	@${REINPLACE_CMD} -e 's|menubarstyle|sunkenmenubar|g' \
-		${WRKSRC}/themes/Clearlooks/gtk-2.0/gtkrc
 
 .include <bsd.port.mk>
