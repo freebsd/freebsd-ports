@@ -82,7 +82,18 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	  ability to bypass web application firewall protection.
 	  Exploiting this vulnerability requires multiple carefully
 	  crafted HTTP requests, taking advantage of an caching server,
-	  proxy server, web application firewall etc.</p>
+	  proxy server, web application firewall etc. This only affects
+	  installations where Apache is used as HTTP proxy in
+	  combination with the following web servers:</p>
+	<ul>
+	  <il>IIS/6.0 and 5.0</il>
+	  <il>Apache 2.0.45 (as web server)</il>
+	  <il>apache 1.3.29</il>
+	  <il>WebSphere 5.1 and 5.0</il>
+	  <il>WebLogic 8.1 SP1</il>
+	  <il>Oracle9iAS web server 9.0.2</il>
+	  <il>SunONE web server 6.1 SP4</il>
+	</ul>
       </body>
     </description>
     <references>
