@@ -11,8 +11,8 @@ PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=Apache
-DISTNAME=	Apache-Scoreboard-${PORTVERSION}
 PKGNAMEPREFIX=	p5-
+DISTNAME=	Apache-Scoreboard-${PORTVERSION}
 
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Perl interface to the Apache scoreboard structure
@@ -31,4 +31,10 @@ post-patch:
 	${SED} -i.bak 's@%%LOCALBASE%%@${LOCALBASE}@g' ${WRKSRC}/Makefile.PL
 	${SED} -i.bak 's@%%LOCALBASE%%@${LOCALBASE}@g' ${WRKSRC}/Dummy/Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
+.endif
+
+.include <bsd.port.post.mk>
