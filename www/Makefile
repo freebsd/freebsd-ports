@@ -757,6 +757,7 @@
     SUBDIR += syndigator
     SUBDIR += tasks
     SUBDIR += tclhttpd
+    SUBDIR += tclwebtest
     SUBDIR += tdiary
     SUBDIR += tdiary-devel
     SUBDIR += thttpd
