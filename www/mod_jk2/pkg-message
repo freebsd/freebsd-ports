@@ -1,5 +1,16 @@
 *****************************************************************************
-Make sure mod_jk.so is enabled in ${PREFIX}/etc/apache2/httpd.conf and
-mod_jk is configured.  Have a look at
-${PREFIX}/etc/apache2/mod_jk.conf.sample for an example.
+
+Make sure mod_jk2.so is enabled in ${PREFIX}/etc/apache2/httpd.conf and
+mod_jk2 is configured. You will probably have to add
+
+JkSet config.file /usr/local/etc/apache2/workers2.properties
+
+to you config file and create the workers2.properties file according
+to the docs at the web site:
+http://jakarta.apache.org/tomcat/connectors-doc-archive/jk2/
+
+Please note that this software is *deprecated*. See
+http://jakarta.apache.org/tomcat/connectors-doc/news/20041100.html#20041115.1
+for more information.
+
 *****************************************************************************

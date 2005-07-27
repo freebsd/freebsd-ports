@@ -1,4 +1,5 @@
-mod_jk2 handles the communication between Tomcat and Apache.
-JK2 is a refactoring of JK and is much more powerful.
+NOTE: mod_jk2 is deprecated, please use mod_jk instead. See
+http://jakarta.apache.org/tomcat/connectors-doc/news/20041100.html#20041115.1
+for more information.
 
-WWW: http://jakarta.apache.org/tomcat/tomcat-4.1-doc/jk2/jk/aphowto.html
+WWW: http://jakarta.apache.org/tomcat/connectors-doc-archive/jk2/

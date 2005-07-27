@@ -1,0 +1,27 @@
+--- Makefile.in~	Wed Mar 24 14:33:15 2004
++++ Makefile.in	Thu Sep  9 04:06:21 2004
+@@ -8,6 +8,8 @@
+ 
+ clean-apxs: @APR_CLEAN@ jk2-clean-apxs
+ 
++install: jk2-install
++
+ install-apxs: jk2-install-apxs
+ 
+ jk2-build:
+@@ -25,6 +27,15 @@
+ 		echo "Making $$target in $$i"; \
+ 		if test "$$i" != "."; then \
+ 		(cd $$i && $(MAKE) -f Makefile.apxs) || exit 1; \
++	fi; \
++	done;
++
++jk2-install:
++	list='@WEBSERVERS@'; \
++	for i in $$list; do \
++		echo "Making $$target in $$i"; \
++		if test "$$i" != "."; then \
++		(cd $$i && $(MAKE) install) || exit 1; \
+ 	fi; \
+ 	done;
+ 
