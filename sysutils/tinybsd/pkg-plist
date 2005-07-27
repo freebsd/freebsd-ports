@@ -1,7 +1,59 @@
+share/tinybsd/CHANGES
 share/tinybsd/COPYRIGHT
 share/tinybsd/README
-share/tinybsd/tinybsd.basefiles
-share/tinybsd/TINYBSD
 share/tinybsd/TODO
-bin/tinybsd
+share/tinybsd/conf/bridge/TINYBSD
+share/tinybsd/conf/bridge/tinybsd.basefiles
+share/tinybsd/conf/bridge/etc/fstab
+share/tinybsd/conf/bridge/etc/rc.conf
+share/tinybsd/conf/bridge/etc/sysctl.conf
+@dirrm share/tinybsd/conf/bridge/etc
+@dirrm share/tinybsd/conf/bridge
+share/tinybsd/conf/default/TINYBSD
+share/tinybsd/conf/default/tinybsd.basefiles
+share/tinybsd/conf/default/etc/fstab
+share/tinybsd/conf/default/etc/rc.conf
+@dirrm share/tinybsd/conf/default/etc
+@dirrm share/tinybsd/conf/default
+share/tinybsd/conf/firewall/TINYBSD
+share/tinybsd/conf/firewall/tinybsd.basefiles
+share/tinybsd/conf/firewall/etc/authpf/authpf.rules
+@dirrm share/tinybsd/conf/firewall/etc/authpf
+share/tinybsd/conf/firewall/etc/fstab
+share/tinybsd/conf/firewall/etc/natd.conf
+share/tinybsd/conf/firewall/etc/pf.conf
+share/tinybsd/conf/firewall/etc/pf.os
+share/tinybsd/conf/firewall/etc/rc.conf
+share/tinybsd/conf/firewall/etc/rc.firewall
+share/tinybsd/conf/firewall/etc/sysctl.conf
+@dirrm share/tinybsd/conf/firewall/etc
+@dirrm share/tinybsd/conf/firewall
+share/tinybsd/conf/minimal/TINYBSD
+share/tinybsd/conf/minimal/tinybsd.basefiles
+share/tinybsd/conf/minimal/etc/fstab
+share/tinybsd/conf/minimal/etc/rc.conf
+@dirrm share/tinybsd/conf/minimal/etc
+@dirrm share/tinybsd/conf/minimal
+share/tinybsd/conf/vpn/TINYBSD
+share/tinybsd/conf/vpn/tinybsd.basefiles
+share/tinybsd/conf/vpn/etc/fstab
+share/tinybsd/conf/vpn/etc/rc.conf
+share/tinybsd/conf/vpn/etc/setkey.conf
+@dirrm share/tinybsd/conf/vpn/etc
+@dirrm share/tinybsd/conf/vpn
+share/tinybsd/conf/wireless/TINYBSD
+share/tinybsd/conf/wireless/tinybsd.basefiles
+share/tinybsd/conf/wireless/etc/authpf/authpf.rules
+@dirrm share/tinybsd/conf/wireless/etc/authpf
+share/tinybsd/conf/wireless/etc/fstab
+share/tinybsd/conf/wireless/etc/natd.conf
+share/tinybsd/conf/wireless/etc/pf.conf
+share/tinybsd/conf/wireless/etc/pf.os
+share/tinybsd/conf/wireless/etc/rc.conf
+share/tinybsd/conf/wireless/etc/rc.firewall
+@dirrm share/tinybsd/conf/wireless/etc
+@dirrm share/tinybsd/conf/wireless
+@dirrm share/tinybsd/conf
 @dirrm share/tinybsd
+bin/tinybsd
+

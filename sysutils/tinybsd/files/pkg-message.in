@@ -1,15 +1,15 @@
 *****************************************************************************
 You have installed the tinybsd package.
 
-The configuration files is in %%PREFIX%%/share/tinybsd.
+The configuration files is in %%PREFIX%%/share/tinybsd/conf.
 
 You can customize your tinybsd image editing
-%%PREFIX%%/share/tinybsd/tinybsd.basefiles to add or to remove the system
-binaries.
+%%PREFIX%%/share/tinybsd/conf/IMAGE/tinybsd.basefiles to add or to remove the 
+system binaries.
 
-Edit %%PREFIX%%/share/tinybsd/TINYBSD to add or to remove kernel options and
-then run %%PREFIX%%/bin/tinybsd script to build your system according your
-device information.
+Edit %%PREFIX%%/share/tinybsd/conf/IMAGE/TINYBSD to add or to remove kernel 
+options and then run %%PREFIX%%/bin/tinybsd script to build your system 
+according your device information.
 
 After the embedded system build is done, the resulting system will be avaliable
 in the %%PREFIX%%/share/tinybsd/tinybsd.bin file. To write this system image

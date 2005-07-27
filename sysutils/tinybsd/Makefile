@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tinybsd
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tinybsd.org/download/
 
@@ -18,11 +18,11 @@ SUB_FILES=	pkg-message
 
 post-install:
 	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}/README
-	${INSTALL_DATA} ${WRKSRC}/tinybsd.basefiles ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/TINYBSD ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/TODO ${DATADIR}
+	${CP} -Rp ${WRKSRC}/conf ${DATADIR}/
 	${SED} "s|/usr/local|${PREFIX}|g" ${WRKSRC}/tinybsd > ${PREFIX}/bin/tinybsd
 	${CHMOD} 555 ${PREFIX}/bin/tinybsd
 	@${CAT} ${PKGMESSAGE}
