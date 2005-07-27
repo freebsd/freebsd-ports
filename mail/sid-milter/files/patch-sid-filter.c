@@ -1,15 +1,6 @@
---- sid-filter/sid-filter.c.orig	Wed Apr 27 00:16:26 2005
-+++ sid-filter/sid-filter.c	Sat Jun 11 09:22:24 2005
-@@ -1140,8 +1140,6 @@
- 					}
- 					break;
- 
--				  default:
--					/* NOTREACHED */
- 				}
- 			}
- 
-@@ -1865,7 +1863,7 @@
+--- sid-filter/sid-filter.c.orig	Fri Jul 15 21:15:19 2005
++++ sid-filter/sid-filter.c	Wed Jul 27 19:20:27 2005
+@@ -1866,7 +1866,7 @@
  		}
  
  		sid_msgcleanup(ctx);
@@ -18,7 +9,7 @@
  	}
  
  	/* construct the status header's content */
-@@ -1895,7 +1893,7 @@
+@@ -1896,7 +1896,7 @@
  			}
  
  			sid_msgcleanup(ctx);
