@@ -7,30 +7,22 @@
 
 PORTNAME=	grustibus
 PORTVERSION=	0.43
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	grustibus
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xmame frontend for Gnome
 
 RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
 
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
-WANT_GNOME=	yes
-USE_GNOME=	gnomeprefix gnomecanvas
 USE_X_PREFIX=	yes
+USE_GNOME=	gnomecanvas gnomehack gnomeprefix libcapplet
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--sysconfdir=`${GNOME_CONFIG} --sysconfdir`
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--sysconfdir=`${GNOME_CONFIG} --sysconfdir`
 
-.include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mgnomelibs}!=""
-USE_GNOME+=	gnomelibs libcapplet
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
