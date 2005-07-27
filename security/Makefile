@@ -57,6 +57,7 @@
     SUBDIR += cmd5checkpw
     SUBDIR += courier-authlib
     SUBDIR += courier-authlib-base
+    SUBDIR += courierpassd
     SUBDIR += cops
     SUBDIR += cp2fwb
     SUBDIR += crack

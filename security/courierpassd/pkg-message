@@ -1,0 +1,11 @@
+In order to run this port, please add the following line to
+/etc/inetd.conf if not already there:
+
+pop3pw stream tcp nowait root /usr/local/sbin/courierpassd courierpassd -s imap
+
+"imap" can be replaced with the service you wish to authenticate (and change)
+passwords against, eg: "pop3".
+
+After modifying /etc/inetd.conf, you must (as root) run:
+
+	killall -HUP inetd

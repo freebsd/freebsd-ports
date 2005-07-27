@@ -1,0 +1,6 @@
+courierpasswd is a user authentication and password changing utility
+for the courier imap/pop3 system.
+
+Its interface follows that of checkpassword.
+
+WWW: http://www.arda.homeunix.net/store/
