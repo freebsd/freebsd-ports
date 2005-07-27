@@ -1,13 +1,13 @@
---- Makefile.in.orig	Sun Sep 26 01:33:12 2004
-+++ Makefile.in	Sun Sep 26 01:35:05 2004
-@@ -259,8 +259,8 @@
+--- Makefile.in.orig	Wed Jul 27 14:02:36 2005
++++ Makefile.in	Wed Jul 27 14:04:08 2005
+@@ -483,8 +483,8 @@
  		$(LIBTOOL) --mode=install $(INSTALL) pcregrep@EXEEXT@ $(DESTDIR)$(BINDIR)/pcregrep@EXEEXT@
  		$(LIBTOOL) --mode=install $(INSTALL) pcretest@EXEEXT@ $(DESTDIR)$(BINDIR)/pcretest@EXEEXT@
  		$(INSTALL) pcre-config $(DESTDIR)$(BINDIR)/pcre-config
 -		$(mkinstalldirs) $(DESTDIR)$(LIBDIR)/pkgconfig
--		$(INSTALL) libpcre.pc $(DESTDIR)$(LIBDIR)/pkgconfig/libpcre.pc
+-		$(INSTALL_DATA) libpcre.pc $(DESTDIR)$(LIBDIR)/pkgconfig/libpcre.pc
 +		$(mkinstalldirs) $(DESTDIR)$(prefix)/libdata/pkgconfig
-+		$(INSTALL) libpcre.pc $(DESTDIR)$(prefix)/libdata/pkgconfig/libpcre.pc
++		$(INSTALL_DATA) libpcre.pc $(DESTDIR)$(prefix)/libdata/pkgconfig/libpcre.pc
  
- # We deliberately omit dftables and chartables.c from 'make clean'; once made
- # chartables.c shouldn't change, and if people have edited the tables by hand,
+ # The uninstall target removes all the files that were installed.
+ 

@@ -3,9 +3,15 @@ bin/pcregrep
 bin/pcretest
 include/pcre.h
 include/pcreposix.h
+include/pcre_scanner.h
+include/pcre_stringpiece.h
+include/pcrecpp.h
 lib/libpcre.a
 lib/libpcre.so
 lib/libpcre.so.0
+lib/libpcrecpp.a
+lib/libpcrecpp.so
+lib/libpcrecpp.so.0
 lib/libpcreposix.a
 lib/libpcreposix.so
 lib/libpcreposix.so.0

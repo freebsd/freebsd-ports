@@ -1,0 +1,15 @@
+--- configure.orig	Wed Jul 27 15:51:37 2005
++++ configure	Wed Jul 27 15:51:55 2005
+@@ -19569,9 +19569,9 @@
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+ 
+-if test -n "$ac_cv_prog_ac_ct_CXX" -a "$pcre_has_cpp_headers" = 1; then
+-  MAYBE_CPP_TARGETS='$(CPP_TARGETS)'
+-fi
++##if test -n "$ac_cv_prog_ac_ct_CXX" -a "$pcre_has_cpp_headers" = 1; then
++MAYBE_CPP_TARGETS='$(CPP_TARGETS)'
++##fi
+ 
+ 
+ 
