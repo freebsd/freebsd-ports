@@ -7,6 +7,7 @@ System/Library/DTDs/gsdoc-0_6_7.dtd
 System/Library/DTDs/gsdoc-1_0_0.dtd
 System/Library/DTDs/gsdoc-1_0_1.dtd
 System/Library/DTDs/gsdoc-1_0_1.rnc
+System/Library/DTDs/gsdoc-1_0_2.dtd
 System/Library/DTDs/plist-0_9.dtd
 System/Library/Documentation/man/man1/autogsdoc.1.gz
 System/Library/Documentation/man/man1/cvtenc.1.gz
@@ -23,7 +24,6 @@ System/Library/Headers/Foundation/NSArchiver.h
 System/Library/Headers/Foundation/NSArray.h
 System/Library/Headers/Foundation/NSAttributedString.h
 System/Library/Headers/Foundation/NSAutoreleasePool.h
-System/Library/Headers/Foundation/NSBitmapCharSet.h
 System/Library/Headers/Foundation/NSBundle.h
 System/Library/Headers/Foundation/NSByteOrder.h
 System/Library/Headers/Foundation/NSCalendarDate.h
@@ -53,6 +53,7 @@ System/Library/Headers/Foundation/NSHost.h
 System/Library/Headers/Foundation/NSIndexSet.h
 System/Library/Headers/Foundation/NSInvocation.h
 System/Library/Headers/Foundation/NSKeyValueCoding.h
+System/Library/Headers/Foundation/NSKeyValueObserving.h
 System/Library/Headers/Foundation/NSKeyedArchiver.h
 System/Library/Headers/Foundation/NSLock.h
 System/Library/Headers/Foundation/NSMapTable.h
@@ -90,38 +91,45 @@ System/Library/Headers/Foundation/NSUtilities.h
 System/Library/Headers/Foundation/NSValue.h
 System/Library/Headers/Foundation/NSXMLParser.h
 System/Library/Headers/Foundation/NSZone.h
+System/Library/Headers/GNUstepBase/GCObject.h
+System/Library/Headers/GNUstepBase/GNUstep.h
+System/Library/Headers/GNUstepBase/GSCategories.h
+System/Library/Headers/GNUstepBase/GSFileHandle.h
+System/Library/Headers/GNUstepBase/GSFunctions.h
+System/Library/Headers/GNUstepBase/GSIArray.h
+System/Library/Headers/GNUstepBase/GSIMap.h
+System/Library/Headers/GNUstepBase/GSLocale.h
+System/Library/Headers/GNUstepBase/GSLock.h
+System/Library/Headers/GNUstepBase/GSMime.h
+System/Library/Headers/GNUstepBase/GSObjCRuntime.h
+System/Library/Headers/GNUstepBase/GSRunLoopCtxt.h
+System/Library/Headers/GNUstepBase/GSRunLoopWatcher.h
+System/Library/Headers/GNUstepBase/GSUnion.h
+System/Library/Headers/GNUstepBase/GSXML.h
+System/Library/Headers/GNUstepBase/Unicode.h
+System/Library/Headers/GNUstepBase/behavior.h
+System/Library/Headers/GNUstepBase/objc-gnu2next.h
+System/Library/Headers/GNUstepBase/preface.h
 System/Library/Headers/GNUstepBase/unicode/caseconv.h
 System/Library/Headers/GNUstepBase/unicode/cop.h
 System/Library/Headers/GNUstepBase/unicode/cyrillic.h
-System/Library/Headers/GNUstepBase/unicode/latin2.h
 System/Library/Headers/GNUstepBase/unicode/decomp.h
+System/Library/Headers/GNUstepBase/unicode/latin2.h
 System/Library/Headers/GNUstepBase/unicode/nextstep.h
-System/Library/Headers/GNUstepBase/GSObjCRuntime.h
-System/Library/Headers/GNUstepBase/GSCategories.h
-System/Library/Headers/GNUstepBase/GSFileHandle.h
-System/Library/Headers/GNUstepBase/GSUnion.h
-System/Library/Headers/GNUstepBase/GSIArray.h
-System/Library/Headers/GNUstepBase/GSIMap.h
-System/Library/Headers/GNUstepBase/GCObject.h
-System/Library/Headers/GNUstepBase/GSMime.h
-System/Library/Headers/GNUstepBase/GSXML.h
-System/Library/Headers/GNUstepBase/GSLocale.h
-System/Library/Headers/GNUstepBase/GSLock.h
-System/Library/Headers/GNUstepBase/Unicode.h
-System/Library/Headers/GNUstepBase/GNUstep.h
-System/Library/Headers/GNUstepBase/behavior.h
-System/Library/Headers/GNUstepBase/preface.h
-System/Library/Headers/GNUstepBase/objc-gnu2next.h
+System/Library/Headers/GSConfig.h
 System/Library/Headers/gnustep/base/GCObject.h
 System/Library/Headers/gnustep/base/GNUstep.h
 System/Library/Headers/gnustep/base/GSCategories.h
 System/Library/Headers/gnustep/base/GSFileHandle.h
+System/Library/Headers/gnustep/base/GSFunctions.h
 System/Library/Headers/gnustep/base/GSIArray.h
 System/Library/Headers/gnustep/base/GSIMap.h
 System/Library/Headers/gnustep/base/GSLocale.h
 System/Library/Headers/gnustep/base/GSLock.h
 System/Library/Headers/gnustep/base/GSMime.h
 System/Library/Headers/gnustep/base/GSObjCRuntime.h
+System/Library/Headers/gnustep/base/GSRunLoopCtxt.h
+System/Library/Headers/gnustep/base/GSRunLoopWatcher.h
 System/Library/Headers/gnustep/base/GSUnion.h
 System/Library/Headers/gnustep/base/GSXML.h
 System/Library/Headers/gnustep/base/Unicode.h
@@ -134,7 +142,6 @@ System/Library/Headers/gnustep/unicode/cyrillic.h
 System/Library/Headers/gnustep/unicode/decomp.h
 System/Library/Headers/gnustep/unicode/latin2.h
 System/Library/Headers/gnustep/unicode/nextstep.h
-System/Library/Headers/GSConfig.h
 System/Library/Libraries/Resources/gnustep-base/English.lproj/Localizable.strings
 System/Library/Libraries/Resources/gnustep-base/French.lproj/Localizable.strings
 System/Library/Libraries/Resources/gnustep-base/German.lproj/Localizable.strings
@@ -150,21 +157,9 @@ System/Library/Libraries/Resources/gnustep-base/Languages/Locale.aliases
 System/Library/Libraries/Resources/gnustep-base/Languages/Locale.encodings
 System/Library/Libraries/Resources/gnustep-base/Languages/Russian
 System/Library/Libraries/Resources/gnustep-base/Languages/Slovak
+System/Library/Libraries/Resources/gnustep-base/Languages/Spanish
 System/Library/Libraries/Resources/gnustep-base/Languages/TraditionalChinese
 System/Library/Libraries/Resources/gnustep-base/Languages/UkraineRussian
-System/Library/Libraries/Resources/gnustep-base/NSCharacterSets/alphanumericCharSet.dat
-System/Library/Libraries/Resources/gnustep-base/NSCharacterSets/controlCharSet.dat
-System/Library/Libraries/Resources/gnustep-base/NSCharacterSets/decimalDigitCharSet.dat
-System/Library/Libraries/Resources/gnustep-base/NSCharacterSets/decomposableCharSet.dat
-System/Library/Libraries/Resources/gnustep-base/NSCharacterSets/illegalCharSet.dat
-System/Library/Libraries/Resources/gnustep-base/NSCharacterSets/letterCharSet.dat
-System/Library/Libraries/Resources/gnustep-base/NSCharacterSets/lowercaseLetterCharSet.dat
-System/Library/Libraries/Resources/gnustep-base/NSCharacterSets/nonBaseCharSet.dat
-System/Library/Libraries/Resources/gnustep-base/NSCharacterSets/punctuationCharSet.dat
-System/Library/Libraries/Resources/gnustep-base/NSCharacterSets/symbolAndOperatorCharSet.dat
-System/Library/Libraries/Resources/gnustep-base/NSCharacterSets/uppercaseLetterCharSet.dat
-System/Library/Libraries/Resources/gnustep-base/NSCharacterSets/whitespaceAndNlCharSet.dat
-System/Library/Libraries/Resources/gnustep-base/NSCharacterSets/whitespaceCharSet.dat
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/GNUmakefile
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/GNUstep_zones
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/README
@@ -232,15 +227,15 @@ System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Anguil
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Antigua
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Araguaina
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/Buenos_Aires
-System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/Cordoba
-System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/Tucuman
-System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/La_Rioja
-System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/San_Juan
-System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/Jujuy
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/Catamarca
-System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/Mendoza
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/ComodRivadavia
+System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/Cordoba
+System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/Jujuy
+System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/La_Rioja
+System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/Mendoza
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/Rio_Gallegos
+System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/San_Juan
+System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/Tucuman
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/Ushuaia
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Aruba
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Asuncion
@@ -254,8 +249,8 @@ System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Bogota
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Boise
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Buenos_Aires
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Cambridge_Bay
-System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Cancun
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Campo_Grande
+System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Cancun
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Caracas
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Catamarca
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Cayenne
@@ -753,6 +748,7 @@ System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Universal
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/W-SU
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/WET
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Zulu
+System/Library/Libraries/Resources/gnustep-base/Spanish.lproj/Localizable.strings
 System/Library/Libraries/Resources/gnustep-base/TraditionalChinese.lproj/Localizable.strings
 System/Library/Libraries/libgnustep-base.so
 System/Library/Libraries/libgnustep-base.so.%%BASEVERSION%%
@@ -773,6 +769,7 @@ System/Tools/plser
 System/Tools/sfparse
 System/Tools/xmlparse
 @dirrm System/Library/Libraries/Resources/gnustep-base/TraditionalChinese.lproj
+@dirrm System/Library/Libraries/Resources/gnustep-base/Spanish.lproj
 @dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/US
 @dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/SystemV
 @dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Pacific
@@ -797,7 +794,6 @@ System/Tools/xmlparse
 @dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Africa
 @dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones
 @dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones
-@dirrm System/Library/Libraries/Resources/gnustep-base/NSCharacterSets
 @dirrm System/Library/Libraries/Resources/gnustep-base/Languages
 @dirrm System/Library/Libraries/Resources/gnustep-base/Italian.lproj
 @dirrm System/Library/Libraries/Resources/gnustep-base/German.lproj
