@@ -32,6 +32,70 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="651996e0-fe07-11d9-8329-000e0c2e438a">
+    <topic>apache -- http request smuggling</topic>
+    <affects>
+      <package>
+	<name>apache</name>
+	<range><lt>2.0.54_1</lt></range>
+	<range><lt>2.1.6_1</lt></range>
+      </package>
+      <package>
+	<name>apache+ipv6</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>apache_fp</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>apache+ssl</name>
+	<range><lt>1.3.33.1.55_1</lt></range>
+      </package>
+      <package>
+	<name>apache+mod_perl</name>
+	<range><lt>1.3.33_3</lt></range>
+      </package>
+      <package>
+	<name>apache+mod_ssl</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>apache+mod_ssl+ipv6</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+        <name>ru-apache</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>ru-apache+mod_ssl</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Watchfire whitepaper reports an vulnerability in the
+	  Apache webserver.  The vulnerability can be exploited by
+	  malicious people causing cross site scripting, web cache
+	  poisoining, session hijacking and most importantly the
+	  ability to bypass web application firewall protection.
+	  Exploiting this vulnerability requires multiple carefully
+	  crafted HTTP requests, taking advantage of an caching server,
+	  proxy server, web application firewall etc.</p>
+      </body>
+    </description>
+    <references>
+      <bid>14106</bid>
+      <cvename>CAN-2005-2088</cvename>
+      <url>http://www.watchfire.com/resources/HTTP-Request-Smuggling.pdf</url>
+    </references>
+    <dates>
+      <discovery>2005-07-25</discovery>
+      <entry>2005-07-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1db7ecf5-fd24-11d9-b4d6-0007e900f87b">
     <topic>clamav -- multiple remote buffer overflows</topic>
     <affects>
