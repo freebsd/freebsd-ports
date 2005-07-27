@@ -18,7 +18,7 @@ MASTER_SITES=		http://portmanager.sunsite.dk/distfiles/	\
 			${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	portmanager
 
-MAINTAINER=		ringworm01@gmail.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		FreeBSD installed ports status and safe update utility
 
 MAN1=			portmanager.1
