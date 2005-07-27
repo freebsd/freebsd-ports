@@ -1,0 +1,25 @@
+--- magick/blob.c      Wed Apr 14 18:45:16 2004
++++ magick/blob.c      Sun Jul 24 12:30:20 2005
+@@ -2364,5 +2364,5 @@
+                   (void) rewind(image->blob->file);
+                   (void) LogMagickEvent(BlobEvent,GetMagickModule(),
+-                     "  read %d magic header bytes", count);
++                     "  read %td magic header bytes", count);
+ #if defined(HasZLIB)
+                   if ((magick[0] == 0x1F) && (magick[1] == 0x8B) &&
+--- coders/ept.c       Wed Apr 14 18:45:28 2004
++++ coders/ept.c       Sun Jul 24 13:33:39 2005
+@@ -584,5 +584,5 @@
+       if (logging)
+         (void) LogMagickEvent(CoderEvent,GetMagickModule(),
+-          "Writing EPS section at offset %lld",TellBlob(image));
++          "Writing EPS section at offset %lld", (long long)TellBlob(image));
+       for (c=fgetc(ps_file); c != EOF; c=fgetc(ps_file))
+         (void) WriteBlobByte(image,c);
+@@ -590,5 +590,5 @@
+       if (logging)
+         (void) LogMagickEvent(CoderEvent,GetMagickModule(),
+-          "Writing TIFF section at offset %lld",TellBlob(image));
++          "Writing TIFF section at offset %lld", (long long)TellBlob(image));
+       for (c=fgetc(tiff_file); c != EOF; c=fgetc(tiff_file))
+         (void) WriteBlobByte(image,c);

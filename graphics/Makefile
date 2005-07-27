@@ -8,6 +8,7 @@
     SUBDIR += Coin
     SUBDIR += EZWGL
     SUBDIR += GIFgraph
+    SUBDIR += GraphicsMagick
     SUBDIR += Hermes
     SUBDIR += IPA
     SUBDIR += ImageMagick
