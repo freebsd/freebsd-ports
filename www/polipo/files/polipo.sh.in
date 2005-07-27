@@ -4,7 +4,7 @@
 # PROVIDE: polipo
 # REQUIRE: NETWORK
 # BEFORE:  NETWORK
-# KEYWORD: FreeBSD
+# KEYWORD: FreeBSD shutdown
 
 . %%RC_SUBR%%
 
