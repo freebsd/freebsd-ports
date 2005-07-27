@@ -11551,6 +11551,7 @@ tclock		ports/x11-clocks/tclock
 tclreadline	ports/devel/tclreadline
 tcltls		ports/devel/tcltls
 tcltutor	ports/lang/tcltutor
+tclwebtest	ports/www/tclwebtest
 tclxml		ports/devel/tclxml
 tcm		ports/graphics/tcm
 tcmplex-panteltje	ports/multimedia/tcmplex-panteltje
