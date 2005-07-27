@@ -1,7 +1,7 @@
 bin/polipo
 etc/polipo/config.sample
 etc/polipo/forbidden.sample
-etc/rc.d/polipo.sh
 etc/periodic/daily/400.polipo
+%%PORTDOCS%%%%DATADIR%%/www/index.html
 @unexec rmdir %D/etc/periodic/daily 2>/dev/null || true
 @unexec rmdir %D/etc/periodic 2>/dev/null || true

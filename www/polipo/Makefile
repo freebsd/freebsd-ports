@@ -7,6 +7,7 @@
 
 PORTNAME=	polipo
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.pps.jussieu.fr/~jch/software/files/polipo/ \
 		http://www.sax.de/~frank/polipo4bsd/files/
@@ -16,7 +17,7 @@ COMMENT=	A small and fast caching web proxy
 
 MAN1=		polipo.1
 
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	polipo.sh
 
 .include <bsd.port.pre.mk>
 
@@ -31,18 +32,10 @@ NOPORTDOCS=	yes
 INFO=		polipo
 .endif
 
-.if !defined(NOPORTDOCS)
 DOCSDIR=	${DATADIR}/www/doc
 PORTDOCS=	*
-PLIST_FILES+=	share/polipo/www/index.html
-.endif
 
-# created on the fly due to variable substitution
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
-SUB_FILES=	pkg-message pkg-install pkg-deinstall 400.polipo polipo.sh
+SUB_FILES=	pkg-message pkg-install pkg-deinstall 400.polipo
 SUB_LIST+=	USER=${PUSER} GROUP=${PGRP} DESTDIR=${DESTDIR} PCONFIGDIR=${PCONFIGDIR} \
 		PCACHEDIR=${PCACHEDIR} PPIDDIR=${PPIDDIR} PPIDFILE=${PPIDFILE} \
 		PLOGFILE=${PLOGFILE} RC_SUBR=${RC_SUBR}
@@ -62,7 +55,6 @@ pre-install: apply-slist
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/polipo ${DESTDIR}${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${WRKDIR}/polipo.sh ${DESTDIR}${PREFIX}/etc/rc.d/
 	${MKDIR} ${DESTDIR}${PREFIX}/etc/periodic/daily/
 	${INSTALL_SCRIPT} ${WRKDIR}/400.polipo ${DESTDIR}${PREFIX}/etc/periodic/daily/
 	${INSTALL_MAN} ${WRKSRC}/polipo.man ${DESTDIR}${PREFIX}/man/man1/polipo.1
@@ -83,6 +75,6 @@ do-install:
 
 post-install:
 	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
