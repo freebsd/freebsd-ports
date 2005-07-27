@@ -1,0 +1,117 @@
+--- Makefile.in        Fri Mar 18 19:36:21 2005
++++ Makefile.in        Sun Jul 24 18:21:35 2005
+@@ -100,5 +100,5 @@
+ 
+ # Architecture independent data files installed in the package's data directory
+-pkgdatadir = @MagickSharePath@
++pkgdatadir = ${DATA_DIR}/GraphicsMagick
+ ACLOCAL = @ACLOCAL@
+ AMDEP_FALSE = @AMDEP_FALSE@
+@@ -301,6 +301,6 @@
+ MagickLibConfigPath = @MagickLibConfigPath@
+ MagickLibPath = @MagickLibPath@
+-MagickShareConfigPath = @MagickShareConfigPath@
+-MagickSharePath = @MagickSharePath@
++MagickShareConfigPath = ${DATADIR}/share/GraphicsMagick/config
++MagickSharePath = ${DATADIR}/share/GraphicsMagick
+ MogrifyDelegate = @MogrifyDelegate@
+ NM = @NM@
+@@ -466,5 +466,5 @@
+ 
+ # Install HTML files
+-pkgdocdir = @MagickSharePath@
++pkgdocdir = ${DATA_DIR}/doc/GraphicsMagick
+ DOCDIRS = images www www/api www/Magick++
+ @WITH_PERL_TRUE@PERLMAGICK = PerlMagick
+@@ -1079,5 +1079,5 @@
+ 
+ # Install arch-independent package data
+-install-data-local: install-data-html
++install-data-local:
+ 
+ # Uninstall arch-independent package data
+--- coders/Makefile.in Fri Mar 18 19:36:16 2005
++++ coders/Makefile.in Sun Jul 24 19:22:21 2005
+@@ -1479,5 +1479,5 @@
+ install-pkgLTLIBRARIES: $(pkg_LTLIBRARIES)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(pkgdir)" || $(mkdir_p) "$(DESTDIR)$(pkgdir)"
++	test -z "$(pkgdir)" -o -z "$(pkg_LTLIBRARIES)" || $(mkdir_p) "$(DESTDIR)$(pkgdir)"
+ 	@list='$(pkg_LTLIBRARIES)'; for p in $$list; do \
+ 	 if test -f $$p; then \
+@@ -1825,5 +1825,5 @@
+ install-pkgDATA: $(pkg_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(pkgdir)" || $(mkdir_p) "$(DESTDIR)$(pkgdir)"
++	test -z "$(pkgdir)" -o -z '$(pkg_DATA)' || $(mkdir_p) "$(DESTDIR)$(pkgdir)"
+ 	@list='$(pkg_DATA)'; for p in $$list; do \
+ 	 if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+@@ -1842,5 +1842,5 @@
+ install-pkgdataDATA: $(pkgdata_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(pkgdatadir)" || $(mkdir_p) "$(DESTDIR)$(pkgdatadir)"
++	test -z "$(pkgdatadir)" -o -z '$(pkgdata_DATA)' || $(mkdir_p) "$(DESTDIR)$(pkgdatadir)"
+ 	@list='$(pkgdata_DATA)'; for p in $$list; do \
+ 	 if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+--- filters/Makefile.in        Fri Mar 18 19:36:17 2005
++++ filters/Makefile.in        Sun Jul 24 19:23:33 2005
+@@ -522,5 +522,5 @@
+ install-pkgLTLIBRARIES: $(pkg_LTLIBRARIES)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(pkgdir)" || $(mkdir_p) "$(DESTDIR)$(pkgdir)"
++	test -z "$(pkgdir)"  -o -z '$(pkg_LTLIBRARIES)' || $(mkdir_p) "$(DESTDIR)$(pkgdir)"
+ 	@list='$(pkg_LTLIBRARIES)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+@@ -592,5 +592,5 @@
+ install-pkgDATA: $(pkg_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(pkgdir)" || $(mkdir_p) "$(DESTDIR)$(pkgdir)"
++	test -z "$(pkgdir)" -o -z '$(pkg_DATA)' || $(mkdir_p) "$(DESTDIR)$(pkgdir)"
+ 	@list='$(pkg_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+--- config/Makefile.in Fri Mar 18 19:36:16 2005
++++ config/Makefile.in Sun Jul 24 19:25:34 2005
+@@ -274,7 +274,7 @@
+ MagickCoderModulesPath = @MagickCoderModulesPath@
+ MagickFilterModulesPath = @MagickFilterModulesPath@
+-MagickLibConfigPath = @MagickLibConfigPath@
++MagickLibConfigPath = ${DATA_DIR}/GraphicsMagick/config
+ MagickLibPath = @MagickLibPath@
+-MagickShareConfigPath = @MagickShareConfigPath@
++MagickShareConfigPath = ${MagickLibConfigPath}
+ MagickSharePath = @MagickSharePath@
+ MogrifyDelegate = @MogrifyDelegate@
+--- magick/Makefile.in	Fri Mar 18 19:36:18 2005
++++ magick/Makefile.in	Tue Jul 26 21:05:48 2005
+@@ -664,5 +664,5 @@
+ 
+ # Pkgconfig directory
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ 
+ # Files to install in Pkgconfig directory
+@@ -930,5 +930,5 @@
+ install-pkgDATA: $(pkg_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(pkgdir)" || $(mkdir_p) "$(DESTDIR)$(pkgdir)"
++	test -z "$(pkgdir)" -o -z '$(pkg_DATA)' || $(mkdir_p) "$(DESTDIR)$(pkgdir)"
+ 	@list='$(pkg_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+--- Magick++/lib/Makefile.in	Fri Mar 18 19:36:13 2005
++++ Magick++/lib/Makefile.in	Tue Jul 26 21:37:39 2005
+@@ -453,5 +453,5 @@
+ 
+ # Pkgconfig directory
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ 
+ # Files to install in Pkgconfig directory
+--- wand/Makefile.in	Fri Mar 18 19:36:20 2005
++++ wand/Makefile.in	Tue Jul 26 21:38:43 2005
+@@ -478,5 +478,5 @@
+ 
+ # Pkgconfig directory
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ 
+ # Files to install in Pkgconfig directory

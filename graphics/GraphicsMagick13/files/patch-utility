@@ -1,0 +1,21 @@
+--- magick/utility.c   Sat Apr  2 17:35:06 2005
++++ magick/utility.c   Sun Jul 24 18:22:40 2005
+@@ -47,4 +47,8 @@
+ #include "magick/utility.h"
+ 
++#if defined(POSIX)
++#     include <sys/types.h>
++#     include <sys/wait.h>
++#endif
+ 
+ /*
+@@ -3874,4 +3878,9 @@
+ #if defined(POSIX)
+   status=system(command);
++  if (status == -1)
++      perror(command);
++  else if (WIFSIGNALED(status)) {
++      fprintf(stderr, "Command ``\n%s\n'' terminated due to signal %d\n", command, WTERMSIG(status));
++  }
+ #elif defined(vms)
+   status=!system(command);

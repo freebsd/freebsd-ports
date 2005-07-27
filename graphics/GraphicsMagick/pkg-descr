@@ -1,0 +1,13 @@
+This is a port of GraphicsMagick(TM), the "swiss army knife" of image
+processing. It provides a robust collection of tools and libraries which
+support reading, writing, and manipulating an image in over 88 major
+formats including formats like DPX, GIF, JPEG, JPEG-2000, PNG, PDF, SVG
+and TIFF.
+
+The program is the fork of a better-known ImageMagick (5.5.2), which
+emphasizes end-user and API-stabilities.
+
+WWW: http://www.graphicsmagick.org/
+
+- Ron van Daal
+ronvdaal@n1x.nl

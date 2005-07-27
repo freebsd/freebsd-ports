@@ -1,0 +1,70 @@
+Index: magick/command.c
+===================================================================
+RCS file: /GraphicsMagick/GraphicsMagick/magick/command.c,v
+retrieving revision 1.147.2.8
+retrieving revision 1.147.2.9
+diff -u -r1.147.2.8 -r1.147.2.9
+--- magick/command.c   28 Apr 2005 22:57:28 -0000      1.147.2.8
++++ magick/command.c   16 Jul 2005 01:42:22 -0000      1.147.2.9
+@@ -6525,7 +6525,7 @@
+     } 
+   if (resource_database != (XrmDatabase) NULL)
+     {
+-      XrmDestroyDatabase(resource_database);
++      /* XrmDestroyDatabase(resource_database); */
+       resource_database=(XrmDatabase) NULL;
+     }
+ 
+Index: magick/image.c
+===================================================================
+RCS file: /GraphicsMagick/GraphicsMagick/magick/image.c,v
+retrieving revision 1.1207.2.5
+retrieving revision 1.1207.2.6
+diff -u -r1.1207.2.5 -r1.1207.2.6
+--- magick/image.c     1 May 2005 18:43:29 -0000       1.1207.2.5
++++ magick/image.c     16 Jul 2005 01:42:23 -0000      1.1207.2.6
+@@ -2527,7 +2527,7 @@
+   }
+   if (resource_database != (XrmDatabase) NULL)
+     {
+-      XrmDestroyDatabase(resource_database);
++      /* XrmDestroyDatabase(resource_database); */
+       resource_database=(XrmDatabase) NULL;
+     }
+   XDestroyResourceInfo(&resource_info);
+Index: magick/nt_base.c
+===================================================================
+RCS file: /GraphicsMagick/GraphicsMagick/magick/nt_base.c,v
+retrieving revision 1.35.2.6
+retrieving revision 1.35.2.7
+diff -u -r1.35.2.6 -r1.35.2.7
+--- magick/nt_base.c   20 Mar 2005 01:39:13 -0000      1.35.2.6
++++ magick/nt_base.c   19 Jun 2005 00:13:29 -0000      1.35.2.7
+@@ -2027,8 +2027,8 @@
+     }
+   entry->firsttime=FALSE;
+   (void) strncpy(entry->file_info.d_name,entry->Win32FindData.cFileName,
+-    MaxTextExtent-1);
+-  entry->file_info.d_name[MaxTextExtent-1]='\0';
++    sizeof(entry->file_info.d_name)-1);
++  entry->file_info.d_name[sizeof(entry->file_info.d_name)-1]='\0';
+   entry->file_info.d_namlen=strlen(entry->file_info.d_name);
+   return(&entry->file_info);
+ }
+Index: magick/version.h
+===================================================================
+RCS file: /GraphicsMagick/GraphicsMagick/magick/version.h,v
+retrieving revision 1.142.2.43
+retrieving revision 1.142.2.46
+diff -u -r1.142.2.43 -r1.142.2.46
+--- magick/version.h   1 May 2005 20:09:53 -0000       1.142.2.43
++++ magick/version.h   16 Jul 2005 01:42:24 -0000      1.142.2.46
+@@ -38,7 +38,7 @@
+ #define MagickLibVersion  0x010006
+ #define MagickLibVersionText  "1.1.6"
+ #define MagickLibVersionNumber 1,0,6
+-#define MagickChangeDate   "20050501"
++#define MagickChangeDate   "20050715"
+ #define MagickReleaseDate  "2005-05-01"
+ 
+ 
