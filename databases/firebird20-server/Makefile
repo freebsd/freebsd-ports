@@ -7,7 +7,7 @@
 
 PORTNAME?=	firebird
 PORTVERSION=	1.5.2
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=firebird
@@ -26,7 +26,10 @@ USE_LIBTOOL_VER=	15
 USE_AUTOCONF_VER=	259
 USE_GCC=	3.4
 
-PLIST_SUB=	FIREBIRD_VERSION=${PORTVERSION}
+LOCALSTATEDIR=	/var/db/firebird
+CONFDIR=	${PREFIX}/etc/firebird
+PLIST_SUB=	FIREBIRD_VERSION=${PORTVERSION} \
+		LOCALSTATEDIR=${LOCALSTATEDIR} CONFDIR="etc/firebird"
 
 # Don't use ld for linking, use gcc
 LD=	gcc
@@ -42,44 +45,42 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 # Server part stuff
 LIB_DEPENDS+=	fbembed.1:${PORTSDIR}/databases/firebird-client
 
-AUTOGENARGS=	--prefix=${PREFIX}/firebird \
-		--with-lock-manager
+AUTOGENARGS=	--with-lock-manager
 
-ALL_TARGET=	firebird_boot ref_databases msgs intl otherfiles \
-		inet_server extlib
-
-# Use own user and group when install server part
-BINGRP=		firebird
-BINMODE=	550
-SHAREGRP=	firebird
+ALL_TARGET=	firebird_boot ref_databases msgs libfbembed intl otherfiles \
+		inet_server extlib embed_gfix embed_gbak embed_gdef embed_util
 
 SUB_FILES=	pkg-install pkg-message aliases.conf
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGINSTALL=	${WRKDIR}/pkg-install
 
-SERVER_BIN=	fb_inet_server fb_lock_mgr
+SUID_BIN=	fb_inet_server fb_lock_mgr gds_drop
+UTIL_BIN=	fb_lock_print gbak gdef gfix gsec gstat
 UDF_SO=		ib_udf.so fbudf.so
 UDF_SQL=	src/extlib/ib_udf.sql src/extlib/fbudf/fbudf.sql
 
 CONFLICTS=	firebird-devel-[0-9]*
 .else
 # Client part stuff
-AUTOGENARGS=	--prefix=${PREFIX} \
-		--with-editline
+AUTOGENARGS=	--with-editline
 
-ALL_TARGET=	firebird_basic libfbembed embed_gfix embed_gbak embed_isql embed_gpre \
-		embed_util embed_gdef embed_qli libfbclient extlib
+ALL_TARGET=	firebird_basic libfbembed embed_isql embed_gpre \
+		embed_gdef embed_qli libfbclient extlib
+#ALL_TARGET=	firebird_basic libfbembed libfbclient \
+#		client_gpre client_gdef client_isql client_qli extlib
 
 INSTALLS_SHLIB=	yes
-LIBDATADIR=	${PREFIX}/libdata/firebird
-PLIST_SUB+=	LIBDATADIR="libdata/firebird"
-CLIENT_BIN=	fb_lock_print gbak gdef gds_drop gfix gpre gsec gstat isql qli
+CLIENT_BIN=	gpre isql qli
+
+CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
 .endif
+
+MAKE_ENV+=	CC=${CC} CXX=${CXX} FIREBIRD_TMP="${WRKDIR}" FIREBIRD_LOCK="${WRKDIR}"
 
 .include <bsd.port.pre.mk>
 
@@ -99,14 +100,6 @@ pre-everything::
 .endif
 .endif
 
-post-patch:
-.if !defined(CLIENT_ONLY)
-	@${REINPLACE_CMD} -e 's|^\(LINK_OPTS +=.*\)$$|\1 -L${LOCALBASE}/lib|' \
-		${WRKSRC}/builds/posix/Makefile.in.inet_server
-.endif
-	@${REINPLACE_CMD} -e 's|%%LIBDATADIR%%|${LIBDATADIR}|g' \
-		${WRKSRC}/src/jrd/gds.cpp
-
 .if !defined(CLIENT_ONLY)
 pre-install:
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
@@ -116,59 +109,70 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
+.ifndef WITHOUT_IPC_CLEANUP
+pre-build:
+	[ -f ${WRKDIR}/ipcs.pre.build ] || /usr/bin/ipcs -s | ${TAIL} -n +3 | \
+		${GREP} -F `${ID} -un` | ${CAT} > ${WRKDIR}/ipcs.pre.build
+
+post-build:
+	/usr/bin/ipcs -s | ${TAIL} -n +3 | ${GREP} -F `${ID} -un` | ${CAT} > ${WRKDIR}/ipcs.post.build
+	/usr/bin/diff -n ${WRKDIR}/ipcs.pre.build ${WRKDIR}/ipcs.post.build  | \
+		${TAIL} -n +2 | ${SED} -E 's/^s +([0-9]+).*$$/\/usr\/bin\/ipcrm -s \1/' > ${WRKDIR}/ipcrm.sh
+	${SH} ${WRKDIR}/ipcrm.sh
+.endif
+
 do-configure:
-	@(cd ${WRKSRC} && ${SETENV} CC=${CC} CXX=${CXX} MAKE=${GMAKE}	\
-	${AUTOTOOLS_VARS} ./autogen.sh ${AUTOGENARGS})
+	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} MAKE=${GMAKE}	\
+	${AUTOTOOLS_VARS} ./autogen.sh --localstatedir=${LOCALSTATEDIR} \
+		--prefix=${LOCALSTATEDIR} --exec-prefix=${PREFIX} \
+		--sysconfdir=${CONFDIR} --datadir=${DATADIR} ${AUTOGENARGS})
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|__attribute__ ((__unused__));||' \
 		${WRKSRC}/src/dsql/parse.cpp
-	@${REINPLACE_CMD} -e 's|firebird\.conf|${PREFIX}/etc/firebird.conf|g; \
-			      s|root_dir + string(CONFIG_FILE)|string(CONFIG_FILE)|g' \
-		${WRKSRC}/src/jrd/os/posix/config_root.cpp
-
-do-build:
-	@(cd ${WRKSRC} && ${SETENV} CC=${CC} CXX=${CXX} ${GMAKE} ${ALL_TARGET})
 
 do-install:
 .if !defined(CLIENT_ONLY)
 
-	${MKDIR} ${PREFIX}/firebird
-.for f in UDF bin help intl
-	${MKDIR} ${PREFIX}/firebird/${f}
-	${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/firebird/${f}
-.endfor
+	${INSTALL_PROGRAM} ${UTIL_BIN:S!^!${WRKSRC}/gen/firebird/bin/!} ${PREFIX}/bin
 
-	${INSTALL_DATA} ${WRKDIR}/aliases.conf ${PREFIX}/firebird/aliases.conf.sample
-	${INSTALL_DATA} -m 660 -o firebird ${WRKSRC}/gen/firebird/security.fdb \
-		${PREFIX}/firebird/security.fdb.sample
-	${INSTALL_DATA} -m 0440 ${WRKSRC}/gen/firebird/help/help.fdb ${PREFIX}/firebird/help
+	${INSTALL_PROGRAM} -o firebird -g firebird -m 6550 \
+		${SUID_BIN:S!^!${WRKSRC}/gen/firebird/bin/!} ${PREFIX}/sbin
 
-	${INSTALL_DATA} ${UDF_SO:S!^!${WRKSRC}/gen/firebird/UDF/!} \
-		${UDF_SQL:S!^!${WRKSRC}/!} ${PREFIX}/firebird/UDF
+	@${MKDIR} ${CONFDIR}
+	${INSTALL_DATA} ${WRKDIR}/aliases.conf ${CONFDIR}/aliases.conf.sample
 
-	${INSTALL_PROGRAM} -o firebird \
-	   ${SERVER_BIN:S!^!${WRKSRC}/gen/firebird/bin/!} ${PREFIX}/firebird/bin
-	${CHMOD} u+s ${SERVER_BIN:S!^!${PREFIX}/firebird/bin/!}
+	${MKDIR} ${LOCALSTATEDIR}/UDF ${LOCALSTATEDIR}/help ${LOCALSTATEDIR}/intl
 
-	${INSTALL_DATA} ${WRKSRC}/gen/firebird/intl/libfbintl.so ${PREFIX}/firebird/intl/fbintl
+	${INSTALL_DATA} -m 0440 ${UDF_SO:S!^!${WRKSRC}/gen/firebird/UDF/!} \
+		${UDF_SQL:S!^!${WRKSRC}/!} ${LOCALSTATEDIR}/UDF
 
-	${INSTALL_DATA} ${FILESDIR}/RELNOTES ${PREFIX}/firebird
+.if !exists(${LOCALSTATEDIR}/security.fdb)
+	${INSTALL_DATA} -m 0660 -o firebird -g firebird ${WRKSRC}/gen/firebird/security.fdb \
+		${LOCALSTATEDIR}/security.fdb
+.endif
+	${INSTALL_DATA} -m 0660 -o firebird -g firebird ${WRKSRC}/gen/firebird/security.fdb \
+		${LOCALSTATEDIR}/security.fdb.sample
 
-	# runtime files (.lock, .log) still placed to ${PREFIX}/firebird 
-	${CHOWN} firebird:firebird ${PREFIX}/firebird
-	${CHOWN} -R firebird:firebird ${PREFIX}/firebird/help
+	${INSTALL_DATA} -m 0440 -g firebird ${WRKSRC}/gen/firebird/help/help.fdb \
+		${LOCALSTATEDIR}/help
 
+	${INSTALL_DATA} ${WRKSRC}/gen/firebird/intl/libfbintl.so ${LOCALSTATEDIR}/intl/fbintl
+
+	# runtime files - lock, firebird.log, security.fdb
+	${CHOWN} -R firebird:firebird ${LOCALSTATEDIR}
+
+	${INSTALL_DATA} ${FILESDIR}/RELNOTES ${LOCALSTATEDIR}
 .else
 # defined CLIENT_ONLY
 	${INSTALL_PROGRAM} ${CLIENT_BIN:S!^!${WRKSRC}/gen/firebird/bin/!} \
 		${PREFIX}/bin
 
-	@${MKDIR} ${PREFIX}/etc
-.if !exists(${PREFIX}/etc/firebird.conf)
-	${INSTALL_DATA} ${WRKSRC}/gen/firebird/misc/firebird.conf ${PREFIX}/etc
+	@${MKDIR} ${CONFDIR}
+.if !exists(${CONFDIR}/firebird.conf)
+	${INSTALL_DATA} ${WRKSRC}/gen/firebird/misc/firebird.conf ${CONFDIR}
 .endif
-	${INSTALL_DATA} ${WRKSRC}/gen/firebird/misc/firebird.conf ${PREFIX}/etc/firebird.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/gen/firebird/misc/firebird.conf ${CONFDIR}/firebird.conf.sample
 
 	${INSTALL_DATA} ${WRKSRC}/gen/firebird/lib/libib_util.so \
 		${WRKSRC}/gen/firebird/lib/libfbclient.so.${PORTVERSION} \
@@ -186,8 +190,8 @@ do-install:
 	@${MKDIR} ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/gen/firebird/include/*.h ${PREFIX}/include
 
-	@${MKDIR} ${LIBDATADIR}
-	${INSTALL_DATA} ${WRKSRC}/gen/firebird/*.msg ${LIBDATADIR}
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/gen/firebird/*.msg ${DATADIR}
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/sql.extensions
@@ -199,6 +203,8 @@ do-install:
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/gen/firebird/examples/v5/* ${EXAMPLESDIR}
+	${CHOWN} firebird:firebird ${EXAMPLESDIR}/employee.*
+	${CHMOD} 0664 ${EXAMPLESDIR}/employee.*
 .endif
 
 .include <bsd.port.post.mk>

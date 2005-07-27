@@ -41,7 +41,7 @@ echo "firebird user using gid $fbGID"
 if which -s pw; then
 	if [ $nofbuid -ne 0 ]; then
 		pw useradd firebird -u $fbUID -g $fbGID -h - -s /bin/sh \
-		-d $PKG_PREFIX/firebird -c "Firebird Database Administrator"
+		-d /var/db/firebird -c "Firebird Database Administrator"
 	fi
 else
 	echo -n "unable to create user firebird - please create it manually,"
@@ -51,7 +51,7 @@ fi
 ;;
 
 POST-INSTALL)
-cd $PKG_PREFIX/firebird
+cd /var/db/firebird
 
 # Lock files
 

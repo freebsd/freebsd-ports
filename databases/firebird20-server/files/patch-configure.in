@@ -1,0 +1,12 @@
+--- configure.in.orig	Thu Dec  9 17:43:18 2004
++++ configure.in	Wed Jul 27 13:06:06 2005
+@@ -605,6 +605,9 @@
+ AC_SUBST(NEW_FIREBIRD_DIR)
+ 
+ AC_DEFINE_UNQUOTED(FB_PREFIX, $(if test "x$prefix" = "xNONE" ; then echo \"$ac_default_prefix\"; else echo \"$prefix\"; fi))
++AC_DEFINE_UNQUOTED(FB_EXEC_PREFIX, "$exec_prefix")
++AC_DEFINE_UNQUOTED(FB_CONF_PREFIX, "$sysconfdir")
++AC_DEFINE_UNQUOTED(FB_MSG_PREFIX, "$datadir")
+ 
+ AC_CONFIG_COMMANDS(,,[
+ dnl ### GEN ### directories for preprocessed cpp, databases and output

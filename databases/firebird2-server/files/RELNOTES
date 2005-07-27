@@ -21,7 +21,7 @@ have been removed.  The former can be accomplished with 'ps ax
     For example, after building and installing the port, you will
 probably go through something like this:
 
-# isql /usr/local/firebird/security.fdb
+# isql /var/db/firebird/security.fdb
 Statement failed, SQLCODE = -902
 
 operating system directive semget failed
@@ -86,7 +86,7 @@ a username and password already defined in security.fdb. For example:
 gsec
 > add myuser -pass mypass
 > quit
-isql -u myuser -p mypass localhost:/usr/local/firebird/examples/employee.fdb
+isql -u myuser -p mypass localhost:/usr/local/share/firebird/examples/employee.fdb
 
 This should reduce the need for hosts defined in /etc/hosts.equiv.
 

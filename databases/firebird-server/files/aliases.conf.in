@@ -5,4 +5,5 @@
 # Examples:
 #
 # employee = %%EXAMPLESDIR%%/employee.fdb
+# security = /var/db/firebird/security.fdb
 #

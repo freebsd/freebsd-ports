@@ -1,0 +1,11 @@
+--- builds/make.new/config/config.h.in.orig	Sun Jul  6 05:07:48 2003
++++ builds/make.new/config/config.h.in	Wed Jul 27 13:07:37 2005
+@@ -190,5 +190,8 @@
+ #undef SINIXZ
+ 
+ #define FB_PREFIX "/usr/local/firebird"
++#define FB_EXEC_PREFIX	"/usr/local"
++#define FB_CONF_PREFIX	"/usr/local/etc/firebird"
++#define FB_MSG_PREFIX	"/usr/local/libdata/firebird"
+ 
+ #endif
