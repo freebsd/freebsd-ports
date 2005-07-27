@@ -1,11 +1,13 @@
 --- src/makedefs.orig	Wed Jan 19 16:16:07 2005
 +++ src/makedefs	Wed Jan 19 16:16:17 2005
-@@ -10,6 +10,8 @@
-                 ;;
-   FreeBSD.5*)   DEFS="-DFREEBSD5"
-                 ;;
-+  FreeBSD.6*)   DEFS="-DFREEBSD6"
-+                ;;
-   NetBSD.1.6*)   DEFS="-DNETBSD16"
-                 ;;
-   OpenBSD.2*)   DEFS="-DOPENBSD2"
+@@ -10,6 +10,10 @@
+                   ;;
+     FreeBSD.5*)   DEFS="-DFREEBSD5"
+                   ;;
++    FreeBSD.6*)   DEFS="-DFREEBSD6"
++                  ;;
++    FreeBSD.7*)   DEFS="-DFREEBSD7"
++                  ;;
+    NetBSD.1.6*)   DEFS="-DNETBSD16"
+                   ;;
+     OpenBSD.2*)   DEFS="-DOPENBSD2"

@@ -30,5 +30,6 @@ bin/srch_strings
 %%PORTDOCS%%%%DOCSDIR%%/ref_fs.txt
 %%PORTDOCS%%%%DOCSDIR%%/ref_timeline.txt
 %%PORTDOCS%%%%DOCSDIR%%/skins_fat.txt
+%%PORTDOCS%%%%DOCSDIR%%/skins_iso9660.txt
 %%PORTDOCS%%%%DOCSDIR%%/skins_ntfs.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
