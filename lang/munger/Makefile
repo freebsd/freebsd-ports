@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	munger
-PORTVERSION=	4.57
+PORTVERSION=	4.60
 CATEGORIES=	lang
 MASTER_SITES=	http://www.jamesbailie.com/
 
@@ -14,11 +14,11 @@ MAINTAINER=	jimmy@jamesbailie.com
 COMMENT=	Static lisp interpreter with text processing abilities
 
 RUN_DEPENDS=	nc:${PORTSDIR}/net/netcat
+DATADIR=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 
 USE_REINPLACE=	yes
 MAN1=		munger.1
 MANCOMPRESSED=	yes
-PLIST_SUB=	MUNGER_VERSION=${PORTVERSION}
 
 OPTIONS=	FCGI "include FastCGI interface" on \
 		SQL  "include SQLite interface"  on \
