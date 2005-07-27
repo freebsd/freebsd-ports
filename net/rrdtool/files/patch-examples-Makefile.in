@@ -1,10 +1,10 @@
---- examples/Makefile.in.orig	Fri Jun 17 15:50:33 2005
-+++ examples/Makefile.in	Fri Jun 17 15:50:46 2005
-@@ -213,7 +213,7 @@
+--- examples/Makefile.in.orig	Mon Jul 25 18:14:50 2005
++++ examples/Makefile.in	Wed Jul 27 13:13:02 2005
+@@ -217,7 +217,7 @@
+ EXTRA_DIST = cgi-demo.cgi.in piped-demo.pl.in shared-demo.pl.in \
  	stripes.pl.in bigtops.pl.in minmax.pl.in 4charts.pl.in
  
- EXPREFIX := $(shell echo "@prefix@" | grep rrd >/dev/null || echo "rrdtool-@VERSION@/")
--examplesdir = $(prefix)/$(EXPREFIX)examples
+-examplesdir = $(pkgdatadir)/examples
 +examplesdir = $(datadir)/examples/rrdtool
  examples_SCRIPTS = cgi-demo.cgi piped-demo.pl shared-demo.pl \
  	stripes.pl bigtops.pl minmax.pl 4charts.pl

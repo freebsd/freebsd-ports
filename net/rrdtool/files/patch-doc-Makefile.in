@@ -1,13 +1,13 @@
---- doc/Makefile.in.orig	Fri Jun 17 13:07:14 2005
-+++ doc/Makefile.in	Fri Jun 17 15:49:49 2005
-@@ -233,9 +233,9 @@
+--- doc/Makefile.in.orig	Mon Jul 25 18:14:49 2005
++++ doc/Makefile.in	Wed Jul 27 13:11:47 2005
+@@ -235,9 +235,9 @@
  
- # some install rules if the install pat
- DOCPREFIX := $(shell echo "@prefix@" | grep rrd >/dev/null || echo "rrdtool-@VERSION@/")
--idocdir = $(prefix)/share/doc/$(DOCPREFIX)txt
+ # what should go into the distribution
+ EXTRA_DIST = $(POD) $(HTML) $(MAN) $(TXT) rrdtool-dump.dtd rrdtool-xport.dtd
+-idocdir = $(RRDDOCDIR)/txt
 +idocdir = $(datadir)/doc/rrdtool/txt
  idoc_DATA = $(POD) $(TXT)
--ihtmldir = $(prefix)/share/doc/$(DOCPREFIX)html
+-ihtmldir = $(RRDDOCDIR)/html
 +ihtmldir = $(datadir)/doc/rrdtool/html
  ihtml_DATA = $(HTML)
  imandir = $(mandir)/man1
