@@ -644,7 +644,6 @@ System/Library/PostScript/PPD/English.lproj/Generic-PostScript_Printer-Postscrip
 System/Library/Services/GSspell.service/GSspell
 System/Library/Services/GSspell.service/Resources/Info-gnustep.plist
 System/Makefiles/Additional/gui.make
-System/Tools/gnustep_sndd
 System/Tools/gopen
 System/Tools/make_services
 System/Tools/set_show_service

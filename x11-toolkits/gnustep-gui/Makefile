@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep-gui
-PORTVERSION=	0.9.5
+PORTVERSION=	0.10.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -57,17 +57,8 @@ pre-configure:
 .for file in config.guess config.sub install-sh
 	@${CP} ${PREFIX}/System/Makefiles/${file} ${WRKSRC}
 .endfor
-	${REINPLACE_CMD} -e "s|-lphtread|${PTHREAD_LIBS}|g" -e "s|CFLAGS =|CFLAGS+=|" \
-		-e "s|-Wall|-Wall ${PTHREAD_CFLAGS:S=""==}|" \
-		${WRKSRC}/Tools/gsnd/portaudio/pa_unix_oss/Makefile
-	${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" \
-		${WRKSRC}/Tools/gsnd/GNUmakefile.postamble
 .if !defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e "s|doc=no|doc=yes|" ${WRKSRC}/GNUmakefile
 .endif
-
-test:
-	@(cd ${WRKSRC}/Tools/gsnd/portaudio/pa_unix_oss && \
-		${GMAKE} && ./patest)
 
 .include <bsd.port.mk>
