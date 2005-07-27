@@ -101,119 +101,58 @@ System/Applications/Gorm.app/Resources/4Data.palette/Resources/Info-gnustep.plis
 System/Applications/Gorm.app/Resources/4Data.palette/Resources/palette.table
 System/Applications/Gorm.app/Resources/ClassInformation.plist
 System/Applications/Gorm.app/Resources/Defaults.plist
-System/Applications/Gorm.app/Resources/English.lproj/Gorm.gorm/Gorm.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/Gorm.gorm/Gorm.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/Gorm.gorm/Gorm.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/Gorm.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/Gorm.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/Gorm.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormClassInspector.gorm/GormClassInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormClassInspector.gorm/GormClassInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormClassInspector.gorm/GormClassInspector.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormClassInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormClassInspector.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormClassInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormClassPanel.gorm/GormClassPanel.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormClassPanel.gorm/GormClassPanel.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormClassPanel.gorm/GormClassPanel.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormClassPanel.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormClassPanel.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormClassPanel.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormCustomClassInspector.gorm/GormCustomClassInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormCustomClassInspector.gorm/GormCustomClassInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormCustomClassInspector.gorm/GormCustomClassInspector.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormCustomClassInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormCustomClassInspector.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormCustomClassInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormDocument.gorm/GormDocument.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormDocument.gorm/GormDocument.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormDocument.gorm/GormDocument.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormDocument.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormDocument.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormDocument.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormFontView.gorm/GormFontView.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormFontView.gorm/GormFontView.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormFontView.gorm/GormFontView.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormFontView.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormFontView.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormFontView.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm/GormImageInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm/GormImageInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm/GormImageInspector.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormNSSplitViewInspector.gorm/GormNSSplitViewInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormNSSplitViewInspector.gorm/GormNSSplitViewInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormNSSplitViewInspector.gorm/GormNSSplitViewInspector.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormNSSplitViewInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormNSSplitViewInspector.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormNSSplitViewInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm/GormPrefColors.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm/GormPrefColors.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm/GormPrefColors.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefGeneral.gorm/GormPrefGeneral.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefGeneral.gorm/GormPrefGeneral.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefGeneral.gorm/GormPrefGeneral.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefGeneral.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefGeneral.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefGeneral.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefGuideline.gorm/GormPrefGuideline.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefGuideline.gorm/GormPrefGuideline.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefGuideline.gorm/GormPrefGuideline.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefGuideline.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefGuideline.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefGuideline.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefHeaders.gorm/GormPrefHeaders.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefHeaders.gorm/GormPrefHeaders.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefHeaders.gorm/GormPrefHeaders.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefHeaders.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefHeaders.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefHeaders.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefPalettes.gorm/GormPrefPalettes.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefPalettes.gorm/GormPrefPalettes.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefPalettes.gorm/GormPrefPalettes.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefPalettes.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefPalettes.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefPalettes.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormPreferences.gorm/GormPreferences.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormPreferences.gorm/GormPreferences.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormPreferences.gorm/GormPreferences.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormPreferences.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormPreferences.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormPreferences.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormScrollViewAttributesInspector.gorm/GormScrollViewAttributesInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormScrollViewAttributesInspector.gorm/GormScrollViewAttributesInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormScrollViewAttributesInspector.gorm/GormScrollViewAttributesInspector.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormScrollViewAttributesInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormScrollViewAttributesInspector.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormScrollViewAttributesInspector.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormSetName.gorm/Gorm.tiff
-System/Applications/Gorm.app/Resources/English.lproj/GormSetName.gorm/GormSetName.gorm/Gorm.tiff
-System/Applications/Gorm.app/Resources/English.lproj/GormSetName.gorm/GormSetName.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormSetName.gorm/GormSetName.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormSetName.gorm/GormSetName.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormSetName.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormSetName.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormSetName.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormSh%%PORTOBJFORMAT%%Pref.gorm/GormSh%%PORTOBJFORMAT%%Pref.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormSh%%PORTOBJFORMAT%%Pref.gorm/GormSh%%PORTOBJFORMAT%%Pref.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormSh%%PORTOBJFORMAT%%Pref.gorm/GormSh%%PORTOBJFORMAT%%Pref.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormSh%%PORTOBJFORMAT%%Pref.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormSh%%PORTOBJFORMAT%%Pref.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormSh%%PORTOBJFORMAT%%Pref.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/GormSoundInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/GormSoundInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/GormSoundInspector.gorm/ff.tiff
-System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/GormSoundInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/GormSoundInspector.gorm/pause.tiff
-System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/GormSoundInspector.gorm/play.tiff
-System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/GormSoundInspector.gorm/rec.tiff
-System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/GormSoundInspector.gorm/rw.tiff
-System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/GormSoundInspector.gorm/stop.tiff
+System/Applications/Gorm.app/Resources/English.lproj/GormShelfPref.gorm/data.classes
+System/Applications/Gorm.app/Resources/English.lproj/GormShelfPref.gorm/data.info
+System/Applications/Gorm.app/Resources/English.lproj/GormShelfPref.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/ff.tiff
@@ -223,9 +162,6 @@ System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/pla
 System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/rec.tiff
 System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/rw.tiff
 System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/stop.tiff
-System/Applications/Gorm.app/Resources/English.lproj/GormViewSizeInspector.gorm/GormViewSizeInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormViewSizeInspector.gorm/GormViewSizeInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormViewSizeInspector.gorm/GormViewSizeInspector.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormViewSizeInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormViewSizeInspector.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormViewSizeInspector.gorm/objects.gorm
@@ -355,7 +291,7 @@ System/Library/Headers/GormPrefs/GormGuidelinePref.h
 System/Library/Headers/GormPrefs/GormHeadersPref.h
 System/Library/Headers/GormPrefs/GormPalettesPref.h
 System/Library/Headers/GormPrefs/GormPrefController.h
-System/Library/Headers/GormPrefs/GormSh%%PORTOBJFORMAT%%Pref.h
+System/Library/Headers/GormPrefs/GormShelfPref.h
 System/Library/Headers/InterfaceBuilder/IBApplicationAdditions.h
 System/Library/Headers/InterfaceBuilder/IBCellAdditions.h
 System/Library/Headers/InterfaceBuilder/IBCellProtocol.h
@@ -392,43 +328,24 @@ System/Library/Libraries/libGormPrefs.so.%%LIBVERSION%%
 @dirrm System/Library/Headers/GormPrefs
 @dirrm System/Library/Headers/GormObjCHeaderParser
 @dirrm System/Library/Headers/GormCore
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormViewSizeInspector.gorm/GormViewSizeInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormViewSizeInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/GormSoundInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormSh%%PORTOBJFORMAT%%Pref.gorm/GormSh%%PORTOBJFORMAT%%Pref.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormSh%%PORTOBJFORMAT%%Pref.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormSetName.gorm/GormSetName.gorm
+@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormShelfPref.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormSetName.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormScrollViewAttributesInspector.gorm/GormScrollViewAttributesInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormScrollViewAttributesInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPreferences.gorm/GormPreferences.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPreferences.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefPalettes.gorm/GormPrefPalettes.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefPalettes.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefHeaders.gorm/GormPrefHeaders.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefHeaders.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefGuideline.gorm/GormPrefGuideline.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefGuideline.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefGeneral.gorm/GormPrefGeneral.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefGeneral.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm/GormPrefColors.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormNSSplitViewInspector.gorm/GormNSSplitViewInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormNSSplitViewInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm/GormImageInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormFontView.gorm/GormFontView.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormFontView.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormDocument.gorm/GormDocument.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormDocument.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormCustomClassInspector.gorm/GormCustomClassInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormCustomClassInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormClassPanel.gorm/GormClassPanel.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormClassPanel.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormClassInspector.gorm/GormClassInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormClassInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/Gorm.gorm/Gorm.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/Gorm.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj
 @dirrm System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSTextViewInspector.gorm

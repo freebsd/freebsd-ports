@@ -92,8 +92,6 @@ System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Engl
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/English.lproj/BrowserViewerPref.nib/info.nib
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/English.lproj/BrowserViewerPref.nib/objects.nib
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Info-gnustep.plist
-System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/BrowserViewerPref.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/BrowserViewerPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/miniwindow.tiff
@@ -190,8 +188,6 @@ System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Englis
 System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/English.lproj/IconsViewerPref.nib/info.nib
 System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/English.lproj/IconsViewerPref.nib/objects.nib
 System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Info-gnustep.plist
-System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/IconsViewerPref.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/IconsViewerPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/miniwindow.tiff
@@ -436,8 +432,6 @@ System/Library/Bundles/BrowserViewer.viewer/Resources/English.lproj/BrowserViewe
 System/Library/Bundles/BrowserViewer.viewer/Resources/English.lproj/BrowserViewerPref.nib/info.nib
 System/Library/Bundles/BrowserViewer.viewer/Resources/English.lproj/BrowserViewerPref.nib/objects.nib
 System/Library/Bundles/BrowserViewer.viewer/Resources/Info-gnustep.plist
-System/Library/Bundles/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/BrowserViewerPref.gorm/data.classes
-System/Library/Bundles/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/BrowserViewerPref.gorm/objects.gorm
 System/Library/Bundles/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/data.classes
 System/Library/Bundles/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/objects.gorm
 System/Library/Bundles/BrowserViewer.viewer/Resources/miniwindow.tiff
@@ -492,8 +486,6 @@ System/Library/Bundles/IconsViewer.viewer/Resources/English.lproj/IconsViewerPre
 System/Library/Bundles/IconsViewer.viewer/Resources/English.lproj/IconsViewerPref.nib/info.nib
 System/Library/Bundles/IconsViewer.viewer/Resources/English.lproj/IconsViewerPref.nib/objects.nib
 System/Library/Bundles/IconsViewer.viewer/Resources/Info-gnustep.plist
-System/Library/Bundles/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/IconsViewerPref.gorm/data.classes
-System/Library/Bundles/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/IconsViewerPref.gorm/objects.gorm
 System/Library/Bundles/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/data.classes
 System/Library/Bundles/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/objects.gorm
 System/Library/Bundles/IconsViewer.viewer/Resources/miniwindow.tiff
@@ -611,7 +603,6 @@ System/Tools/wopen
 @dirrm System/Library/Bundles/ImageViewer.inspector
 @dirrm System/Library/Bundles/ImageThumbnailer.thumb/Resources
 @dirrm System/Library/Bundles/ImageThumbnailer.thumb
-@dirrm System/Library/Bundles/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/IconsViewerPref.gorm
 @dirrm System/Library/Bundles/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm
 @dirrm System/Library/Bundles/IconsViewer.viewer/Resources/Resources/English.lproj
 @dirrm System/Library/Bundles/IconsViewer.viewer/Resources/Resources
@@ -645,7 +636,6 @@ System/Tools/wopen
 @dirrm System/Library/Bundles/FModuleContents.finder/Resources/FModuleContents.gorm
 @dirrm System/Library/Bundles/FModuleContents.finder/Resources
 @dirrm System/Library/Bundles/FModuleContents.finder
-@dirrm System/Library/Bundles/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/BrowserViewerPref.gorm
 @dirrm System/Library/Bundles/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm
 @dirrm System/Library/Bundles/BrowserViewer.viewer/Resources/Resources/English.lproj
 @dirrm System/Library/Bundles/BrowserViewer.viewer/Resources/Resources
@@ -703,7 +693,6 @@ System/Tools/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/Italian.lproj/Finder.nib
 @dirrm System/Applications/GWorkspace.app/Resources/Italian.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Italian.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/IconsViewerPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/English.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources
@@ -759,7 +748,6 @@ System/Tools/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/Dutch.lproj/Finder.nib
 @dirrm System/Applications/GWorkspace.app/Resources/Dutch.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Dutch.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/BrowserViewerPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/English.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources
