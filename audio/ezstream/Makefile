@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ezstream
-PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTVERSION=	0.2.0
 CATEGORIES=	audio
 MASTER_SITES=	http://svn.xiph.org/releases/ezstream/
 
@@ -26,10 +25,11 @@ USE_LIBTOOL_VER=	15
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/conf/ezstream_m3u.xml \
-	${WRKSRC}/conf/ezstream_mp3.xml \
-	${WRKSRC}/conf/ezstream_vorbis.xml \
-	${DOCSDIR}
+.	for DOC in ezstream_mp3.xml ezstream_reencoding_example_vorbis.xml \
+		ezstream_reencoding_example_mp3.xml ezstream_vorbis.xml \
+		ezstream_reencoding_example_theora.xml
+		${INSTALL_DATA} ${WRKSRC}/conf/${DOC} ${DOCSDIR}
+.	endfor
 .endif
 
 .include <bsd.port.mk>
