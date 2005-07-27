@@ -3,6 +3,7 @@ bin/pmacct
 %%WITH_PGSQL%%bin/pmpgplay
 sbin/nfacctd
 sbin/pmacctd
+sbin/sfacctd
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/EXAMPLES
 %%PORTDOCS%%%%DOCSDIR%%/FAQS
