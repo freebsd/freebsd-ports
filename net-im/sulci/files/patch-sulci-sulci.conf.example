@@ -1,6 +1,6 @@
---- sulci/sulci.conf.example.orig	Mon Jul 18 12:21:52 2005
-+++ sulci/sulci.conf.example	Mon Jul 18 12:34:41 2005
-@@ -1,19 +1,19 @@
+--- sulci/sulci.conf.example.orig	Mon Jul 25 12:52:33 2005
++++ sulci/sulci.conf.example	Mon Jul 25 14:34:06 2005
+@@ -1,6 +1,6 @@
  <sulci>
   <jabber>
 -  <server>jabber.ru</server>
@@ -8,8 +8,9 @@
    <port>5222</port>
    <user>sxxxx</user>
    <resource>Ocaml</resource>
-   <password>secret</password>
-  </jabber>
+@@ -14,20 +14,22 @@
+  -->
+  <reconnect interval='10' count='3' />
  
 - <lang dir="./lang" default="ru"/>
 + <lang dir="/usr/local/share/sulci/lang" default="ru"/>
@@ -17,28 +18,37 @@
 - <acl jid='ermine@jabber.ru' class='admin'/>
 + <acl jid='admin@localhost' class='admin'/>
   
-  <muc>
+  <muc msg_limit="400">
    <!--  <room nick="sulci-test" jid="z@conference.jabber.ru" lang="ru"/> -->
 -  <room nick="sulci" jid="ejabberd@conference.jabber.ru" lang="en"/>
 +  <room nick="sulci" jid="test@conference.localhost" lang="en"/>
  
    <chatlogs>./chatlogs</chatlogs>
   </muc>
-@@ -25,7 +25,7 @@
-    <key>00000000000000000000000000000</key>
-   </google>
+ 
++ <!--
+  <debug>
+   <logfile>log.log</logfile>
+  </debug>
++ -->
+ 
+  <plugins>
+ 
+@@ -37,7 +39,7 @@
+ 
    <vocabulary name="vocabulary"/>
+ 
 -  <mueller file="/path/to/Mueller24.koi" hashext=".hash" />
 +  <mueller file="/usr/local/share/mueller-dic/Mueller7accentGPL.koi" hashext=".h" />
-   <markov dir="./markov_db"/>
-   <!--
-     <globalstats>
-@@ -40,7 +40,7 @@
-     <talkers db="talkers.db"/>
+ 
+   <markov dir="./markov_db" msg_limit="20" />
+ 
+@@ -59,7 +61,7 @@
    -->
+ 
    <cerberus kick="true">
--   <notify jid="ermine@jabber.ru"/>
+-   <notify jid="jid@jabber.server"/>
 +   <notify jid="admin@localhost"/>
    </cerberus>
+ 
   </plugins>
- </sulci>
