@@ -125,7 +125,7 @@ pre-extract:
 	@${ECHO_MSG} ""
 
 post-patch:
-	${SED} -i .orig1 's/OSVERSION/'${OSVERSION}'/g' \
+	${REINPLACE_CMD} -e 's/OSVERSION/'${OSVERSION}'/g' \
 		${WRKDIR}/apr-${PORTVERSION}/build/apr_hints.m4
 	${FIND} ${WRKDIR} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
