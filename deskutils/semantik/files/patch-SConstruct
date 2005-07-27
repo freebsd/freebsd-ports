@@ -1,13 +1,13 @@
---- SConstruct.orig	Wed Mar  9 02:57:54 2005
-+++ SConstruct	Wed Mar  9 14:47:59 2005
-@@ -9,6 +9,10 @@
- # TODO : remove
- env.AppendUnique( ENV = os.environ )
+--- SConstruct.orig	Mon Jul 11 00:47:41 2005
++++ SConstruct	Sun Jul 24 02:59:09 2005
+@@ -21,6 +21,10 @@
+ 
+ env.KDEuse("environ rpath")
  
 +env['CXX'] = "%%CXX%%"
 +env['CPPFLAGS'] = "%%CXXFLAGS%%"
 +env.AppendUnique(LINKFLAGS = ['%%LINKFLAGS%%'])
 +
- ## The target make dist requires the python module shutil which is in 2.3
- env.EnsurePythonVersion(2, 3)
- 
+ ###################################################################
+ # SCRIPTS FOR BUILDING THE TARGETS
+ ###################################################################

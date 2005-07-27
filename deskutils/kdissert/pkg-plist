@@ -17,7 +17,8 @@ lib/kde3/libkdisspdflatexbook.la
 lib/kde3/libkdisspdflatexbook.so
 lib/kde3/libkdissprosperslides.la
 lib/kde3/libkdissprosperslides.so
-share/applications/kde/kdissert.desktop
+lib/kde3/libkdissstx.la
+lib/kde3/libkdissstx.so
 share/applnk/Utilities/kdissert.desktop
 share/apps/kdissert/kdissertui.rc
 share/apps/kdissert/pics/nopix.png
@@ -30,29 +31,29 @@ share/apps/kdissert/templatedata/kdisshtmldoc.tar.gz
 share/apps/kdissert/templatedata/kdisspdflatexarticle.tar.gz
 share/apps/kdissert/templatedata/kdisspdflatexbook.tar.gz
 share/apps/kdissert/templatedata/kdissprosperslides.tar.gz
+share/apps/kdissert/templatedata/kdissstx.tar.gz
 share/apps/kdissert/tips
 share/apps/kdissertpart/kdissertpart.rc
-share/config.kcfg/kdissert.kcfg
 share/doc/HTML/en/kdissert/index.cache.bz2
 share/doc/HTML/en/kdissert/index.docbook
 share/doc/HTML/en/kdissert/screenshot.jpg
 share/doc/HTML/fr/kdissert/index.cache.bz2
 share/doc/HTML/fr/kdissert/index.docbook
-share/icons/crystalsvg/128x128/actions/kdissert_sort.png
-share/icons/crystalsvg/16x16/actions/kdissert_link.png
-share/icons/crystalsvg/16x16/actions/kdissert_point.png
-share/icons/crystalsvg/16x16/actions/kdissert_sort.png
-share/icons/crystalsvg/22x22/actions/kdissert_link.png
-share/icons/crystalsvg/22x22/actions/kdissert_point.png
-share/icons/crystalsvg/22x22/actions/kdissert_sort.png
-share/icons/crystalsvg/32x32/actions/kdissert_link.png
-share/icons/crystalsvg/32x32/actions/kdissert_point.png
-share/icons/crystalsvg/32x32/actions/kdissert_sort.png
-share/icons/crystalsvg/64x64/actions/kdissert_sort.png
+share/icons/hicolor/128x128/actions/kdissert_sort.png
 share/icons/hicolor/128x128/apps/kdissert.png
+share/icons/hicolor/16x16/actions/kdissert_link.png
+share/icons/hicolor/16x16/actions/kdissert_point.png
+share/icons/hicolor/16x16/actions/kdissert_sort.png
 share/icons/hicolor/16x16/apps/kdissert.png
+share/icons/hicolor/22x22/actions/kdissert_link.png
+share/icons/hicolor/22x22/actions/kdissert_point.png
+share/icons/hicolor/22x22/actions/kdissert_sort.png
 share/icons/hicolor/22x22/apps/kdissert.png
+share/icons/hicolor/32x32/actions/kdissert_link.png
+share/icons/hicolor/32x32/actions/kdissert_point.png
+share/icons/hicolor/32x32/actions/kdissert_sort.png
 share/icons/hicolor/32x32/apps/kdissert.png
+share/icons/hicolor/64x64/actions/kdissert_sort.png
 share/icons/hicolor/64x64/apps/kdissert.png
 share/locale/de/LC_MESSAGES/kdissert.mo
 share/locale/fr/LC_MESSAGES/kdissert.mo
@@ -60,7 +61,6 @@ share/locale/it/LC_MESSAGES/kdissert.mo
 share/locale/nl/LC_MESSAGES/kdissert.mo
 share/locale/pl/LC_MESSAGES/kdissert.mo
 share/mimelnk/application/x-kdissert.desktop
-share/services/kdissertpart.desktop
 @dirrm share/doc/HTML/fr/kdissert
 @dirrm share/doc/HTML/en/kdissert
 @dirrm share/apps/kdissertpart
