@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	root-doc
-PORTVERSION=	4.02
+PORTVERSION=	5.02
 CATEGORIES=	devel science math
 MASTER_SITES=	ftp://root.cern.ch/root/
 DISTNAME=	html${PORTVERSION:S/.//}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	simon@lang-clan.de
 COMMENT=	HTML Documentation for Root framework
 
 NO_BUILD=	yes
