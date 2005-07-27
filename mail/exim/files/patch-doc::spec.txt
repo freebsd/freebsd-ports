@@ -1,8 +1,11 @@
---- doc/spec.txt.orig	Wed May  5 12:08:37 2004
-+++ doc/spec.txt	Wed May  5 15:10:17 2004
-@@ -14962,6 +14962,19 @@
-       message_prefix = "\1\1\1\1\n"
-       message_suffix = "\1\1\1\1\n"
+
+$FreeBSD$
+
+--- doc/spec.txt.orig
++++ doc/spec.txt
+@@ -15622,6 +15622,19 @@
+ message_prefix = "\1\1\1\1\n"
+ message_suffix = "\1\1\1\1\n"
  
 +However, many clients require that the certificate presented by Exim be a user
 +(also called "leaf" or "site") certificate, and not a self-signed certificate.
@@ -17,6 +20,6 @@
 +
 +     http://ospkibook.sourceforge.net/
 +
- 
- create_directory                Type: boolean                   Default: true
- 
+ +-----------------------------------------------------------------------------+
+ |create_directory     |  Use: appendfile  |  Type: boolean  |    Default: true|
+ +-----------------------------------------------------------------------------+

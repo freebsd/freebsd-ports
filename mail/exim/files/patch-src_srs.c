@@ -3,7 +3,22 @@ $FreeBSD$
 
 --- src/srs.c.orig
 +++ src/srs.c
-@@ -11,196 +11,116 @@
+@@ -1,231 +1,126 @@
+-/* $Cambridge: exim/exim-src/src/srs.c,v 1.8 2005/06/27 18:10:30 tom Exp $ */
++/* $Cambridge: exim/exim-src/src/srs.c,v 1.4 2005/02/17 11:58:26 ph10 Exp $ */
+ 
+ /*************************************************
+ *     Exim - an Internet mail transport agent    *
+ *************************************************/
+ 
+ /* SRS - Sender rewriting scheme support
+-  (C)2004 Miles Wilton <miles@mirtol.com>
+-
+-  SRS Support Version: 1.0a
+-
++  ©2004 Miles Wilton <miles@mirtol.com>
+   License: GPL */
+ 
  #include "exim.h"
  #ifdef EXPERIMENTAL_SRS
  
@@ -28,72 +43,87 @@ $FreeBSD$
  
 -int eximsrs_init()
 -{
--  int co;
 -  uschar *list = srs_config;
--  char secret_buf[SRS_MAX_SECRET_LENGTH];
--  char *secret;
--  char sbuf[4];
--  char *sbufp;
--  int hashlen, maxage;
+-  uschar secret_buf[SRS_MAX_SECRET_LENGTH];
+-  uschar *secret = NULL;
+-  uschar sbuf[4];
+-  uschar *sbufp;
 -
--
--  if(!srs)
+-  /* Check if this instance of Exim has not initialized SRS */
+-  if(srs == NULL)
 -  {
--    /* Check config */
--    if(!srs_config)
--    {
--      log_write(0, LOG_MAIN | LOG_PANIC,
--          "SRS Configuration Error");
--      return DEFER;
--    }
+-    int co = 0;
+-    int hashlen, maxage;
+-    BOOL usetimestamp, usehash;
 -
--    /* Get config */
+-    /* Copy config vars */
+-    hashlen = srs_hashlength;
+-    maxage = srs_maxage;
+-    usetimestamp = srs_usetimestamp;
+-    usehash = srs_usehash;
+-
+-    /* Pass srs_config var (overrides new config vars) */
 -    co = 0;
--    if((secret = string_nextinlist(&list, &co, secret_buf,
--                                   SRS_MAX_SECRET_LENGTH)) == NULL)
+-    if(srs_config != NULL)
 -    {
--      log_write(0, LOG_MAIN | LOG_PANIC,
--          "SRS Configuration Error: No secret specified");
--      return DEFER;
+-      secret = string_nextinlist(&list, &co, secret_buf, SRS_MAX_SECRET_LENGTH);
+-
+-      if((sbufp = string_nextinlist(&list, &co, sbuf, sizeof(sbuf))) != NULL)
+-        maxage = atoi(sbuf);
+-
+-      if((sbufp = string_nextinlist(&list, &co, sbuf, sizeof(sbuf))) != NULL)
+-        hashlen = atoi(sbuf);
+-
+-      if((sbufp = string_nextinlist(&list, &co, sbuf, sizeof(sbuf))) != NULL)
+-        usetimestamp = atoi(sbuf);
+-
+-      if((sbufp = string_nextinlist(&list, &co, sbuf, sizeof(sbuf))) != NULL)
+-        usehash = atoi(sbuf);
 -    }
 -
--    if((sbufp = string_nextinlist(&list, &co, sbuf, sizeof(sbuf))) == NULL)
--      maxage = 31;
--    else
--      maxage = atoi(sbuf);
+-    if(srs_hashmin == -1)
+-      srs_hashmin = hashlen;
+-
+-    /* First secret specified in secrets? */
+-    co = 0;
+-    list = srs_secrets;
+-    if(secret == NULL || *secret == '\0')
+-    {
+-      if((secret = string_nextinlist(&list, &co, secret_buf, SRS_MAX_SECRET_LENGTH)) == NULL)
+-      {
+-        log_write(0, LOG_MAIN | LOG_PANIC,
+-            "SRS Configuration Error: No secret specified");
+-        return DEFER;
+-      }
+-    }
+-
+-    /* Check config */
 -    if(maxage < 0 || maxage > 365)
 -    {
 -      log_write(0, LOG_MAIN | LOG_PANIC,
 -          "SRS Configuration Error: Invalid maximum timestamp age");
 -      return DEFER;
 -    }
--
--    if((sbufp = string_nextinlist(&list, &co, sbuf, sizeof(sbuf))) == NULL)
--      hashlen = 6;
--    else
--      hashlen = atoi(sbuf);
--    if(hashlen < 1 || hashlen > 20)
+-    if(hashlen < 1 || hashlen > 20 || srs_hashmin < 1 || srs_hashmin > 20)
 -    {
 -      log_write(0, LOG_MAIN | LOG_PANIC,
 -          "SRS Configuration Error: Invalid hash length");
 -      return DEFER;
 -    }
 -
--
--    if((srs = srs_open(secret, strnlen(secret, SRS_MAX_SECRET_LENGTH),
--                      maxage, hashlen, hashlen)) == NULL)
+-    if((srs = srs_open(secret, Ustrlen(secret), maxage, hashlen, srs_hashmin)) == NULL)
 -    {
 -      log_write(0, LOG_MAIN | LOG_PANIC,
 -          "Failed to allocate SRS memory");
 -      return DEFER;
 -    }
 -
+-    srs_set_option(srs, SRS_OPTION_USETIMESTAMP, usetimestamp);
+-    srs_set_option(srs, SRS_OPTION_USEHASH, usehash);
 -
--    if((sbufp = string_nextinlist(&list, &co, sbuf, sizeof(sbuf))) != NULL)
--      srs_set_option(srs, SRS_OPTION_USETIMESTAMP, atoi(sbuf));
--
--    if((sbufp = string_nextinlist(&list, &co, sbuf, sizeof(sbuf))) != NULL)
--      srs_set_option(srs, SRS_OPTION_USEHASH, atoi(sbuf));
+-    /* Extra secrets? */
+-    while((secret = string_nextinlist(&list, &co, secret_buf, SRS_MAX_SECRET_LENGTH)) != NULL)
+-        srs_add_secret(srs, secret, (Ustrlen(secret) > SRS_MAX_SECRET_LENGTH) ? SRS_MAX_SECRET_LENGTH :  Ustrlen(secret));
 -
 -    DEBUG(D_any)
 -      debug_printf("SRS initialized\n");
@@ -107,7 +137,7 @@ $FreeBSD$
 +int
 +eximsrs_init()
  {
--  if(srs)
+-  if(srs != NULL)
 -    srs_close(srs);
 -
 -  srs = NULL;
@@ -190,11 +220,12 @@ $FreeBSD$
 +eximsrs_done()
  {
 -  if(reverse)
--    srs_db_reverse = string_copy(srs_db);
+-    srs_db_reverse = (srs_db == NULL ? NULL : string_copy(srs_db));
 -  else
--    srs_db_forward = string_copy(srs_db);
+-    srs_db_forward = (srs_db == NULL ? NULL : string_copy(srs_db));
 -
--  if(srs_set_db_functions(srs, eximsrs_db_insert, eximsrs_db_lookup) * SRS_RESULT_FAIL)
+-  if(srs_set_db_functions(srs, (srs_db_forward ? eximsrs_db_insert : NULL),
+-                               (srs_db_reverse ? eximsrs_db_lookup : NULL)) & SRS_RESULT_FAIL)
 -    return DEFER;
 -
 -  return OK;
@@ -210,11 +241,14 @@ $FreeBSD$
 +eximsrs_forward(uschar **result, uschar *sender, uschar *domain)
  {
 -  uschar *res;
--  char buf[64];
+-  uschar buf[64];
+-
+-  if(srs_db_forward == NULL)
+-    return SRS_RESULT_DBERROR;
 -
 -  srs_db_address = string_copyn(data, data_len);
 -  if(srs_generate_unique_id(srs, srs_db_address, buf, 64) & SRS_RESULT_FAIL)
--    return DEFER;
+-    return SRS_RESULT_DBERROR;
 -
 -  srs_db_key = string_copyn(buf, 16);
 -
@@ -226,7 +260,7 @@ $FreeBSD$
 +       char     res[1024];
 +       int              ret;
  
--  strncpy(result, srs_db_key, result_len);
+-  Ustrncpy(result, srs_db_key, result_len);
 +       ret = srs_forward(srs, res, sizeof(res), sender, domain);
 +       if (ret != SRS_SUCCESS) {
 +               DEBUG(D_any)
@@ -246,6 +280,9 @@ $FreeBSD$
 +eximsrs_reverse(uschar **result, uschar *sender)
  {
 -  uschar *res;
+-
+-  if(srs_db_reverse == NULL)
+-    return SRS_RESULT_DBERROR;
 -
 -  srs_db_key = string_copyn(data, data_len);
 -  if((res = expand_string(srs_db_reverse)) == NULL)
