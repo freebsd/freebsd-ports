@@ -96,6 +96,7 @@ GIFgraph	ports/graphics/GIFgraph
 GeoIP		ports/net/GeoIP
 GiNaC		ports/math/GiNaC
 Gofer		ports/lang/Gofer
+GraphicsMagick	ports/graphics/GraphicsMagick
 HVSC-Update	ports/audio/HVSC-Update
 Hermes		ports/graphics/Hermes
 HeroesOfMightAndMagic	ports/games/HeroesOfMightAndMagic
