@@ -1,0 +1,23 @@
+--- configure	Fri Mar 18 19:35:06 2005
++++ configure	Tue Jul 26 22:53:50 2005
+@@ -2092,5 +2092,5 @@
+ MagickLibConfigSubDir="${MagickLibSubdir}/config"
+ AC_DEFINE_UNQUOTED(MagickLibConfigSubDir,"$MagickLibConfigSubDir",Subdirectory of lib where architecture-dependent configuration files live.)
+-MagickLibConfigPath="${LIB_DIR}/${MagickLibConfigSubDir}"
++MagickLibConfigPath="${DATA_DIR}/GraphicsMagick/config"
+ MagickLibConfigPathDefine="${MagickLibConfigPath}/"
+ if test "$native_win32_build" = 'yes'
+@@ -2130,5 +2130,5 @@
+ # Path to GraphicsMagick share files
+ MagickShareSubdir="${PACKAGE_NAME}-${PACKAGE_VERSION}"
+-MagickSharePath="${DATA_DIR}/${MagickShareSubdir}"
++MagickSharePath="${DATA_DIR}/GraphicsMagick/"
+ MagickSharePathDefine="${MagickSharePath}/"
+ if test "$native_win32_build" = 'yes'
+@@ -2142,5 +2142,5 @@
+ MagickShareConfigSubDir="${MagickLibSubdir}/config"
+ AC_DEFINE_UNQUOTED(MagickShareConfigSubDir,"$MagickShareConfigSubDir",Subdirectory of lib where architecture-independent configuration files live.)
+-MagickShareConfigPath="${DATA_DIR}/${MagickShareConfigSubDir}"
++MagickShareConfigPath="${MagickLibConfigPath}"
+ MagickShareConfigPathDefine="${MagickShareConfigPath}/"
+ if test "$native_win32_build" = 'yes'
