@@ -1,21 +1,5 @@
 --- Makefile.in        Fri Mar 18 19:36:21 2005
 +++ Makefile.in        Sun Jul 24 18:21:35 2005
-@@ -100,5 +100,5 @@
- 
- # Architecture independent data files installed in the package's data directory
--pkgdatadir = @MagickSharePath@
-+pkgdatadir = ${DATA_DIR}/GraphicsMagick
- ACLOCAL = @ACLOCAL@
- AMDEP_FALSE = @AMDEP_FALSE@
-@@ -301,6 +301,6 @@
- MagickLibConfigPath = @MagickLibConfigPath@
- MagickLibPath = @MagickLibPath@
--MagickShareConfigPath = @MagickShareConfigPath@
--MagickSharePath = @MagickSharePath@
-+MagickShareConfigPath = ${DATADIR}/share/GraphicsMagick/config
-+MagickSharePath = ${DATADIR}/share/GraphicsMagick
- MogrifyDelegate = @MogrifyDelegate@
- NM = @NM@
 @@ -466,5 +466,5 @@
  
  # Install HTML files
@@ -69,18 +53,6 @@
 +	test -z "$(pkgdir)" -o -z '$(pkg_DATA)' || $(mkdir_p) "$(DESTDIR)$(pkgdir)"
  	@list='$(pkg_DATA)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
---- config/Makefile.in Fri Mar 18 19:36:16 2005
-+++ config/Makefile.in Sun Jul 24 19:25:34 2005
-@@ -274,7 +274,7 @@
- MagickCoderModulesPath = @MagickCoderModulesPath@
- MagickFilterModulesPath = @MagickFilterModulesPath@
--MagickLibConfigPath = @MagickLibConfigPath@
-+MagickLibConfigPath = ${DATA_DIR}/GraphicsMagick/config
- MagickLibPath = @MagickLibPath@
--MagickShareConfigPath = @MagickShareConfigPath@
-+MagickShareConfigPath = ${MagickLibConfigPath}
- MagickSharePath = @MagickSharePath@
- MogrifyDelegate = @MogrifyDelegate@
 --- magick/Makefile.in	Fri Mar 18 19:36:18 2005
 +++ magick/Makefile.in	Tue Jul 26 21:05:48 2005
 @@ -664,5 +664,5 @@
