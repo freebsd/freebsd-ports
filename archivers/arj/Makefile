@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	arj
-PORTVERSION=	3.10.21
+PORTVERSION=	3.10.22
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -31,6 +31,7 @@ post-extract:
 	@${REINPLACE_CMD} -e 's!/etc!${LOCALBASE}/etc!' \
 		 ${WRKSRC}/arj.c ${WRKSRC}/file_reg.c ${WRKSRC}/rearj.c
 	@${REINPLACE_CMD} -e 's!-O2!!' ${WRKSRC}/gnu/configure.in
+	@${REINPLACE_CMD} -e 's!^static !!' ${WRKSRC}/integr.c
 
 pre-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} prepare)
