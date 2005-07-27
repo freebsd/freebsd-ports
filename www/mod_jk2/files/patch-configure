@@ -1,0 +1,55 @@
+--- configure.orig	Wed Mar 24 14:46:12 2004
++++ configure	Wed Jul 27 03:36:21 2005
+@@ -20237,15 +20231,15 @@
+ 
+     echo "$as_me:$LINENO: checking for apr APR_LIBNAME" >&5
+ echo $ECHO_N "checking for apr APR_LIBNAME... $ECHO_C" >&6
+-    if ${TEST} ! -f "${APR_DIR}/apr-config" ; then
+-      { { echo "$as_me:$LINENO: error: cannot find apr-config file in ${APR_DIR}" >&5
+-echo "$as_me: error: cannot find apr-config file in ${APR_DIR}" >&2;}
++    if ${TEST} ! -f "${APR_DIR}/apr-1-config" ; then
++      { { echo "$as_me:$LINENO: error: cannot find apr-1-config file in ${APR_DIR}" >&5
++echo "$as_me: error: cannot find apr-1-config file in ${APR_DIR}" >&2;}
+    { (exit 1); exit 1; }; }
+     fi
+-    jk_apr_get_tempval=`${APR_DIR}/apr-config --link-libtool 2> /dev/null`
++    jk_apr_get_tempval=`${APR_DIR}/apr-1-config --link-libtool 2> /dev/null`
+     if ${TEST} -z "${jk_apr_get_tempval}" ; then
+-      { { echo "$as_me:$LINENO: error: ${APR_DIR}/apr-config --link-libtool failed" >&5
+-echo "$as_me: error: ${APR_DIR}/apr-config --link-libtool failed" >&2;}
++      { { echo "$as_me:$LINENO: error: ${APR_DIR}/apr-1-config --link-libtool failed" >&5
++echo "$as_me: error: ${APR_DIR}/apr-1-config --link-libtool failed" >&2;}
+    { (exit 1); exit 1; }; }
+     fi
+     jk_apr_get_tempval=`basename ${jk_apr_get_tempval}`
+@@ -20384,15 +20378,15 @@
+ 
+     echo "$as_me:$LINENO: checking for apr-util APR_UTIL_LIBNAME" >&5
+ echo $ECHO_N "checking for apr-util APR_UTIL_LIBNAME... $ECHO_C" >&6
+-    if ${TEST} ! -f "${APR_UTIL_DIR}/apu-config" ; then
+-      { { echo "$as_me:$LINENO: error: cannot find apu-config file in ${APR_UTIL_DIR}" >&5
+-echo "$as_me: error: cannot find apu-config file in ${APR_UTIL_DIR}" >&2;}
++    if ${TEST} ! -f "${APR_UTIL_DIR}/apu-1-config" ; then
++      { { echo "$as_me:$LINENO: error: cannot find apu-1-config file in ${APR_UTIL_DIR}" >&5
++echo "$as_me: error: cannot find apu-1-config file in ${APR_UTIL_DIR}" >&2;}
+    { (exit 1); exit 1; }; }
+     fi
+-    jk_apu_get_tempval=`${APR_UTIL_DIR}/apu-config --link-libtool 2> /dev/null`
++    jk_apu_get_tempval=`${APR_UTIL_DIR}/apu-1-config --link-libtool 2> /dev/null`
+     if ${TEST} -z "${jk_apu_get_tempval}" ; then
+-      { { echo "$as_me:$LINENO: error: ${APR_UTIL_DIR}/apu-config --link-libtool failed" >&5
+-echo "$as_me: error: ${APR_UTIL_DIR}/apu-config --link-libtool failed" >&2;}
++      { { echo "$as_me:$LINENO: error: ${APR_UTIL_DIR}/apu-1-config --link-libtool failed" >&5
++echo "$as_me: error: ${APR_UTIL_DIR}/apu-1-config --link-libtool failed" >&2;}
+    { (exit 1); exit 1; }; }
+     fi
+     jk_apu_get_tempval=`basename ${jk_apu_get_tempval}`
+@@ -20490,7 +20484,7 @@
+               APR_CLEAN=""
+               APR_DIR=""
+               APR_LIBDIR=${tempval}
+-              APR_LDFLAGS="`apr-config --link-ld` -L${tempval}"
++              APR_LDFLAGS="`apr-1-config --link-ld` -L${tempval}"
+               COMMON_APR_OBJECTS="\${COMMON_APR_OBJECTS}"
+ 			  use_apr=true
+             fi

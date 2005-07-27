@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_jk2
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	tomcat-connectors/jk2/source
@@ -15,17 +15,19 @@ DISTNAME=	jakarta-tomcat-connectors-jk2-${PORTVERSION}-src
 MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	Apache JK2 module for connecting to Tomcat using AJP1X
 
+DEPRECATED=	"JK2 is officially unsupported, no further development will take place."
+
 USE_APACHE=	yes
 USE_GMAKE=	YES
-USE_LIBTOOL_VER=	13
-USE_AUTOCONF_VER=	253
-USE_AUTOMAKE_VER=	15
-AUTOMAKE_ARGS=	--add-missing
 GNU_CONFIGURE=	YES
-CONFIGURE_ARGS+=	--with-apxs${APACHE2}=${APXS}
+CONFIGURE_ARGS=	--with-apxs${APACHE2}=${APXS}
+
 ALL_TARGET=	jk2-build-apxs
+INSTALL_TARGET=	jk2-install-apxs
 
 WRKSRC=		${WRKDIR}/jakarta-tomcat-connectors-jk2-${PORTVERSION}-src/jk/native2
+
+PKGMESSAGE=	${WRKDIR}/.pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -46,22 +48,26 @@ APACHE2=	2
 PLIST_SUB=	APACHE2=2
 PKGNAMESUFFIX=	-apache2
 APACHE=		apache2
-AP_EXT=		la
 .else
 APACHE2=
 PLIST_SUB=	APACHE2=
-AP_EXT=		so
 APACHE=		apache13
+BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/apr:patch
+APR_DIR=	`cd ${PORTSDIR}/devel/apr && make -V WRKDIR`
+APR_VERSION=	`cd ${PORTSDIR}/devel/apr && make -V PORTVERSION`
+CONFIGURE_ARGS+=--with-apr=${APR_DIR}/apr-${APR_VERSION} \
+		--with-apr-util=${APR_DIR}/apr-util-${APR_VERSION}
 .endif
 
-pre-patch:	build-depends
-
 post-patch:
-	cd ${WRKSRC}; ${ACLOCAL}; ${LIBTOOLIZE}
+	@ ${SED} "s|/usr/local|${PREFIX}|g" \
+	< ${MASTERDIR}/pkg-message \
+	> ${PKGMESSAGE}
 
-do-install:
-	cd ${WRKSRC}/server/${APACHE} ;\
-		${GMAKE} -f Makefile.apxs install ;\
-		${APXS} -e -A -n jk2 mod_jk2.${AP_EXT}
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/../conf/workers2.properties \
+		${PREFIX}/etc/apache${APACHE2}/workers2.properties.sample
+	- ${APXS} -e -A -n jk2 mod_jk2.so
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
