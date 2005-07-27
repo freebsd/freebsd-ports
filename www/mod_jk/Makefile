@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_jk
 PORTVERSION=	1.2.14.1
+PORTVERSION=	1
 PORTEPOCH?=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
@@ -45,7 +46,8 @@ CONFIGURE_ARGS+=	--with-apxs=${APXS}
 do-install:
 	${APXS} -i -n jk ${WRKSRC}/apache-${APACHE_VER}/mod_jk.so
 	- ${APXS} -e -A -n jk ${WRKSRC}/apache-${APACHE_VER}/mod_jk.so
-	${SED} -e "s#%%APACHE_CONF%%#${APACHE_CONF}#g" ${WRKSRC}/ > ${WRKDIR}/mod_jk.conf.sample
+	${SED} -e "s#%%APACHE_CONF%%#${APACHE_CONF}#g" ${FILESDIR}/mod_jk.conf.sample \
+		 > ${WRKDIR}/mod_jk.conf.sample
 	${INSTALL_DATA} ${WRKDIR}/mod_jk.conf.sample ${APACHE_CONF}
 	${INSTALL_DATA} ${FILESDIR}/workers.properties.sample ${APACHE_CONF}
 
