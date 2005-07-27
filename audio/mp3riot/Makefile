@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mp3riot
-PORTVERSION=	1.1
+PORTVERSION=	1.3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.linuxsecure.de/f2html/
 
