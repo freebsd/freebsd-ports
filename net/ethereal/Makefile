@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ethereal
-PORTVERSION=	0.10.11
-PORTREVISION=	1
+PORTVERSION=	0.10.12
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/all-versions/ \
 		ftp://gd.tuwien.ac.at/infosys/security/ethereal/all-versions/ \
@@ -34,6 +33,15 @@ CONFIGURE_ARGS+=	--enable-$x=no
 .else
 PLIST_SUB+=		${x:U}=bin/$x
 MAN1+=			$x.1
+.endif
+.endfor
+
+.for x in dftest randpkt
+.if defined(LITE)
+PLIST_SUB+=	${x:U}="@comment $x not installed"
+CONFIGURE_ARGS+=	--enable-$x=no
+.else
+PLIST_SUB+=	${x:U}=bin/$x
 .endif
 .endfor
 

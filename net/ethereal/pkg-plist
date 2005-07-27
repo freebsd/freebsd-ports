@@ -1,9 +1,10 @@
 %%CAPINFOS%%
-bin/dftest
+%%DFTEST%%
 %%EDITCAP%%
 %%ETHEREAL%%
 %%IDL2ETH%%
 %%MERGECAP%%
+%%RANDPKT%%
 bin/tethereal
 %%TEXT2PCAP%%
 lib/ethereal/plugins/%%PORTVERSION%%/acn.so
@@ -22,6 +23,7 @@ lib/ethereal/plugins/%%PORTVERSION%%/mate.so
 lib/ethereal/plugins/%%PORTVERSION%%/megaco.so
 lib/ethereal/plugins/%%PORTVERSION%%/mgcp.so
 lib/ethereal/plugins/%%PORTVERSION%%/opsi.so
+lib/ethereal/plugins/%%PORTVERSION%%/parlay.so
 lib/ethereal/plugins/%%PORTVERSION%%/pcli.so
 lib/ethereal/plugins/%%PORTVERSION%%/profinet.so
 lib/ethereal/plugins/%%PORTVERSION%%/rdm.so
@@ -29,6 +31,7 @@ lib/ethereal/plugins/%%PORTVERSION%%/rlm.so
 lib/ethereal/plugins/%%PORTVERSION%%/rtnet.so
 lib/ethereal/plugins/%%PORTVERSION%%/rudp.so
 lib/ethereal/plugins/%%PORTVERSION%%/stats_tree.so
+lib/ethereal/plugins/%%PORTVERSION%%/tango.so
 lib/ethereal/plugins/%%PORTVERSION%%/v5ua.so
 lib/ethereal/plugins/%%PORTVERSION%%/xml.so
 lib/libethereal.a
@@ -39,6 +42,9 @@ lib/libwiretap.so
 lib/libwiretap.so.0
 %%DATADIR%%/AUTHORS-SHORT
 %%DATADIR%%/capinfos.html
+%%DATADIR%%/cfilters
+%%DATADIR%%/colorfilters
+%%DATADIR%%/dfilters
 %%DATADIR%%/diameter/dictionary.dtd
 %%DATADIR%%/diameter/dictionary.xml
 %%DATADIR%%/diameter/imscxdx.xml
@@ -58,11 +64,73 @@ lib/libwiretap.so.0
 %%DATADIR%%/idl2eth.html
 %%DATADIR%%/manuf
 %%DATADIR%%/mergecap.html
+%%DATADIR%%/radius/dictionary
+%%DATADIR%%/radius/dictionary.3com
+%%DATADIR%%/radius/dictionary.3gpp
+%%DATADIR%%/radius/dictionary.3gpp2
+%%DATADIR%%/radius/dictionary.acc
+%%DATADIR%%/radius/dictionary.alcatel
+%%DATADIR%%/radius/dictionary.alteon
+%%DATADIR%%/radius/dictionary.altiga
+%%DATADIR%%/radius/dictionary.aptis
+%%DATADIR%%/radius/dictionary.ascend
+%%DATADIR%%/radius/dictionary.bay
+%%DATADIR%%/radius/dictionary.bintec
+%%DATADIR%%/radius/dictionary.bristol
+%%DATADIR%%/radius/dictionary.cablelabs
+%%DATADIR%%/radius/dictionary.cabletron
+%%DATADIR%%/radius/dictionary.cisco
+%%DATADIR%%/radius/dictionary.cisco.bbsm
+%%DATADIR%%/radius/dictionary.cisco.vpn3000
+%%DATADIR%%/radius/dictionary.cisco.vpn5000
+%%DATADIR%%/radius/dictionary.colubris
+%%DATADIR%%/radius/dictionary.columbia_university
+%%DATADIR%%/radius/dictionary.compat
+%%DATADIR%%/radius/dictionary.cosine
+%%DATADIR%%/radius/dictionary.erx
+%%DATADIR%%/radius/dictionary.extreme
+%%DATADIR%%/radius/dictionary.foundry
+%%DATADIR%%/radius/dictionary.freeradius
+%%DATADIR%%/radius/dictionary.gandalf
+%%DATADIR%%/radius/dictionary.garderos
+%%DATADIR%%/radius/dictionary.gemtek
+%%DATADIR%%/radius/dictionary.itk
+%%DATADIR%%/radius/dictionary.juniper
+%%DATADIR%%/radius/dictionary.karlnet
+%%DATADIR%%/radius/dictionary.livingston
+%%DATADIR%%/radius/dictionary.localweb
+%%DATADIR%%/radius/dictionary.merit
+%%DATADIR%%/radius/dictionary.microsoft
+%%DATADIR%%/radius/dictionary.mikrotik
+%%DATADIR%%/radius/dictionary.navini
+%%DATADIR%%/radius/dictionary.netscreen
+%%DATADIR%%/radius/dictionary.nokia
+%%DATADIR%%/radius/dictionary.nomadix
+%%DATADIR%%/radius/dictionary.propel
+%%DATADIR%%/radius/dictionary.quintum
+%%DATADIR%%/radius/dictionary.redback
+%%DATADIR%%/radius/dictionary.redcreek
+%%DATADIR%%/radius/dictionary.shasta
+%%DATADIR%%/radius/dictionary.shiva
+%%DATADIR%%/radius/dictionary.sonicwall
+%%DATADIR%%/radius/dictionary.springtide
+%%DATADIR%%/radius/dictionary.t_systems_nova
+%%DATADIR%%/radius/dictionary.telebit
+%%DATADIR%%/radius/dictionary.trapeze
+%%DATADIR%%/radius/dictionary.tunnel
+%%DATADIR%%/radius/dictionary.unisphere
+%%DATADIR%%/radius/dictionary.unix
+%%DATADIR%%/radius/dictionary.usr
+%%DATADIR%%/radius/dictionary.valemount
+%%DATADIR%%/radius/dictionary.versanet
+%%DATADIR%%/radius/dictionary.wispr
+%%DATADIR%%/radius/dictionary.xedia
 %%DATADIR%%/tethereal.html
 %%DATADIR%%/text2pcap.html
 @dirrm lib/ethereal/plugins/%%PORTVERSION%%
 @dirrm lib/ethereal/plugins
 @dirrm lib/ethereal
+@dirrm %%DATADIR%%/radius
 @dirrm %%DATADIR%%/diameter
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
