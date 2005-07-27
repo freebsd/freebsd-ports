@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mboxstats
-PORTVERSION=	2.8
+PORTVERSION=	2.9
 CATEGORIES=	mail
 MASTER_SITES=	http://vanheusden.com/mboxstats/
 EXTRACT_SUFX=	.tgz
