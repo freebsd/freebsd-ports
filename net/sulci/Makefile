@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	sulci
-PORTVERSION=	20050718
+PORTVERSION=	0.5.a.20050723
+PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://neva.vlink.ru/distfiles/
 
