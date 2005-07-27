@@ -1,0 +1,6 @@
+lib/tdom%%PORTVERSION%%/libtdom%%PORTVERSION%%.so
+lib/tdom%%PORTVERSION%%/libtdomstub%%PORTVERSION%%.a
+lib/tdom%%PORTVERSION%%/pkgIndex.tcl
+lib/tdom%%PORTVERSION%%/tdom.tcl
+lib/tdomConfig.sh
+@dirrm lib/tdom%%PORTVERSION%%
