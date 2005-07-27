@@ -41,8 +41,7 @@ do-install:
 	(cd ${FIREFOX_HOME}/defaults/pref; \
 	${MV} -f firefox-l10n.js firefox-l10n.js.orig)
 	(cd ${FIREFOX_HOME}/defaults/profile; \
-	${MV} -f bookmarks.html bookmarks.html.orig; \
-	${MV} -f prefs.js prefs.js.orig)
+	${MV} -f bookmarks.html bookmarks.html.orig)
 	(cd ${FIREFOX_HOME}/chrome; \
 	${MV} -f chrome.rdf chrome.rdf.orig; \
 	${MV} -f installed-chrome.txt installed-chrome.txt.orig)
