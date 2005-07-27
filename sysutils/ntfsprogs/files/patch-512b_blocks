@@ -1,0 +1,83 @@
+--- libntfs/attrib.c	Sat Sep  4 13:16:32 2004
++++ libntfs/attrib.c	Fri Jul 22 01:05:09 2005
+@@ -709,9 +709,9 @@
+  */
+ s64 ntfs_attr_pread(ntfs_attr *na, const s64 pos, s64 count, void *b)
+ {
+-	s64 br, to_read, ofs, total, total2;
++	s64 br, old_to_read, to_read, ofs, total, total2;
+ 	ntfs_volume *vol;
+ 	runlist_element *rl;
+ 
+ 	Dprintf("%s(): Entering for inode 0x%llx, attr 0x%x, pos 0x%llx, "
+ 			"count 0x%llx.\n", __FUNCTION__,
+@@ -741,6 +744,7 @@
+ 	if (pos + count > na->data_size) {
+ 		if (pos >= na->data_size)
+ 			return 0;
++		Dprintf("trunacting read pos=%lld, na->data_size=%lld, (old) count=%lld\n", pos, na->data_size, count);
+ 		count = na->data_size - pos;
+ 	}
+ 	vol = na->ni->vol;
+@@ -820,6 +825,10 @@
+ 		/* It is a real lcn, read it into @dst. */
+ 		to_read = min(count, (rl->length << vol->cluster_size_bits) -
+ 				ofs);
++		old_to_read = to_read;
++		to_read = (to_read + 511) / 512 * 512;
++		if(old_to_read != to_read)
++			Dprintf("adjusted %lld->%lld\n", old_to_read, to_read);
+ retry:
+ 		Dprintf("%s(): Reading 0x%llx bytes from vcn 0x%llx, lcn 0x%llx, "
+ 				"ofs 0x%llx.\n", __FUNCTION__, to_read,
+@@ -828,6 +837,8 @@
+ 				ofs, to_read, b);
+ 		/* If everything ok, update progress counters and continue. */
+ 		if (br > 0) {
++			if(br > old_to_read)
++				br = old_to_read;
+ 			total += br;
+ 			count -= br;
+ 			b = (u8*)b + br;
+--- libntfs/device.c	Sat Sep  4 13:16:32 2004
++++ libntfs/device.c	Mon Jul 11 23:27:55 2005
+@@ -441,10 +441,10 @@
+  */
+ static inline int ntfs_device_offset_valid(struct ntfs_device *dev, s64 ofs)
+ {
+-	char ch;
++	char ch[512];
+ 
+ 	if (dev->d_ops->seek(dev, ofs, SEEK_SET) >= 0 &&
+-			dev->d_ops->read(dev, &ch, 1) == 1)
++			dev->d_ops->read(dev, &ch, 512) > 0)
+ 		return 0;
+ 	return -1;
+ }
+--- ntfsprogs/ntfsclone.c	Mon Jul 25 12:31:30 2005
++++ ntfsprogs/ntfsclone.c	Mon Jul 25 12:33:32 2005
+@@ -1080,9 +1080,9 @@
+ 
+ static int device_offset_valid(int fd, s64 ofs)
+ {
+-	char ch;
++	char ch[512];
+ 
+-	if (lseek(fd, ofs, SEEK_SET) >= 0 && read(fd, &ch, 1) == 1)
++	if (lseek(fd, ofs, SEEK_SET) >= 0 && read(fd, &ch, 512) > 0)
+ 		return 0;
+ 	return -1;
+ }
+--- ntfsprogs/ntfsresize.c	Sat Sep  4 13:16:32 2004
++++ ntfsprogs/ntfsresize.c	Tue Jul 12 01:15:30 2005
+@@ -1783,6 +1783,10 @@
+ 
+ 	nr_clusters = resize->new_volume_size;
+ 	bm_bsize = nr_clusters_to_bitmap_byte_size(nr_clusters);
++	if(bm_bsize % 512 != 0) {
++		Dprintf("adjusted bm_bsize: %lld->%lld\n", bm_bsize, (bm_bsize + 511) / 512 * 512);
++		bm_bsize = (bm_bsize + 511) / 512 * 512;
++	}
+ 	nr_bm_clusters = rounded_up_division(bm_bsize, vol->cluster_size);
+ 
+ 	if (!(tmp = (u8 *)realloc(resize->lcn_bitmap.bm, bm_bsize)))
