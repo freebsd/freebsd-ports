@@ -25,4 +25,11 @@ PERL_CONFIGURE=	yes
 MAN1=	thickr_upload.1 flickr_upload.1
 MAN3=	Flickr::Upload.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
+.endif
+
+.include <bsd.port.post.mk>
+
