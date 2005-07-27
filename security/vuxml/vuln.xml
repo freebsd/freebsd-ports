@@ -86,13 +86,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	  installations where Apache is used as HTTP proxy in
 	  combination with the following web servers:</p>
 	<ul>
-	  <il>IIS/6.0 and 5.0</il>
-	  <il>Apache 2.0.45 (as web server)</il>
-	  <il>apache 1.3.29</il>
-	  <il>WebSphere 5.1 and 5.0</il>
-	  <il>WebLogic 8.1 SP1</il>
-	  <il>Oracle9iAS web server 9.0.2</il>
-	  <il>SunONE web server 6.1 SP4</il>
+	  <li>IIS/6.0 and 5.0</li>
+	  <li>Apache 2.0.45 (as web server)</li>
+	  <li>apache 1.3.29</li>
+	  <li>WebSphere 5.1 and 5.0</li>
+	  <li>WebLogic 8.1 SP1</li>
+	  <li>Oracle9iAS web server 9.0.2</li>
+	  <li>SunONE web server 6.1 SP4</li>
 	</ul>
       </body>
     </description>
