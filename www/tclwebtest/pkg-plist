@@ -1,0 +1,100 @@
+bin/tclwebtest
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/README
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/doc/api_all.html
+%%DOCSDIR%%/doc/api_public.html
+%%DOCSDIR%%/doc/index.html
+%%DOCSDIR%%/doc/matching.txt
+%%DOCSDIR%%/doc/others.html
+%%DOCSDIR%%/doc/others.txt
+%%DOCSDIR%%/doc/output.html
+%%DOCSDIR%%/doc/req.txt
+%%DOCSDIR%%/generate_docs.test
+%%DOCSDIR%%/index.html
+%%EXAMPLESDIR%%/openacs4tests/bboard_many_posts.test
+%%EXAMPLESDIR%%/openacs4tests/calendar/000_install_calendar.test
+%%EXAMPLESDIR%%/openacs4tests/calendar/001_mount_calendar.test
+%%EXAMPLESDIR%%/openacs4tests/calendar/010_add_date.test
+%%EXAMPLESDIR%%/openacs4tests/calendar/011_delete_date.test
+%%EXAMPLESDIR%%/openacs4tests/calendar/020_admin_not_allowed.test
+%%EXAMPLESDIR%%/openacs4tests/calendar/021_not_logged_in.test
+%%EXAMPLESDIR%%/openacs4tests/calendar/997_unmount_calendar.test
+%%EXAMPLESDIR%%/openacs4tests/calendar/998_delete_calendar_instance.test
+%%EXAMPLESDIR%%/openacs4tests/calendar/999_uninstall_calendar.test
+%%EXAMPLESDIR%%/openacs4tests/calendar/settings
+%%EXAMPLESDIR%%/openacs4tests/calendar/tmp.test
+%%EXAMPLESDIR%%/openacs4tests/cookies.test
+%%EXAMPLESDIR%%/openacs4tests/doc.test
+%%EXAMPLESDIR%%/openacs4tests/helloworld.test
+%%EXAMPLESDIR%%/openacs4tests/install_etp.test
+%%EXAMPLESDIR%%/openacs4tests/notes_mount.test
+%%EXAMPLESDIR%%/openacs4tests/openacs4tests.settings
+%%EXAMPLESDIR%%/openacs4tests/page-drop.test
+%%EXAMPLESDIR%%/openacs4tests/persistent_login.test
+%%EXAMPLESDIR%%/openacs4tests/sessions.test
+%%EXAMPLESDIR%%/openacs4tests/sitemap.test
+%%EXAMPLESDIR%%/openacs4tests/templating.test
+%%EXAMPLESDIR%%/openacs4tests/wp-slim-delete-all.test
+%%EXAMPLESDIR%%/openacs4tests/wp-slim.test
+tclwebtest
+%%TWTDIR%%/lib/entities.tcl
+%%TWTDIR%%/lib/from_openacs.tcl
+%%TWTDIR%%/lib/pkgIndex.tcl
+%%TWTDIR%%/lib/tclwebtest.tcl
+%%TWTDIR%%/selftest/ad_proc.test
+%%TWTDIR%%/selftest/asserts.test
+%%TWTDIR%%/selftest/caption.html
+%%TWTDIR%%/selftest/caption.test
+%%TWTDIR%%/selftest/caption2.html
+%%TWTDIR%%/selftest/caption3.html
+%%TWTDIR%%/selftest/caption3.test
+%%TWTDIR%%/selftest/checkboxes.html
+%%TWTDIR%%/selftest/checkboxes.test
+%%TWTDIR%%/selftest/directory_traversal.test
+%%TWTDIR%%/selftest/entity.test
+%%TWTDIR%%/selftest/field_order.test
+%%TWTDIR%%/selftest/field_order2.html
+%%TWTDIR%%/selftest/field_order2.test
+%%TWTDIR%%/selftest/fields_iterate.test
+%%TWTDIR%%/selftest/forms.html
+%%TWTDIR%%/selftest/forms.test
+%%TWTDIR%%/selftest/forms2.html
+%%TWTDIR%%/selftest/forms2.test
+%%TWTDIR%%/selftest/image_submit.gif
+%%TWTDIR%%/selftest/image_submit.html
+%%TWTDIR%%/selftest/image_submit.html~
+%%TWTDIR%%/selftest/image_submit.test
+%%TWTDIR%%/selftest/image_submit.test~
+%%TWTDIR%%/selftest/link_fail.test
+%%TWTDIR%%/selftest/links.html
+%%TWTDIR%%/selftest/links.test
+%%TWTDIR%%/selftest/links2.html
+%%TWTDIR%%/selftest/links2.test
+%%TWTDIR%%/selftest/links_empty.html
+%%TWTDIR%%/selftest/namespace.test
+%%TWTDIR%%/selftest/radio.html
+%%TWTDIR%%/selftest/radio.test
+%%TWTDIR%%/selftest/regsplit.test
+%%TWTDIR%%/selftest/reset_session.test
+%%TWTDIR%%/selftest/segfault
+%%TWTDIR%%/selftest/select.html
+%%TWTDIR%%/selftest/select.test
+%%TWTDIR%%/selftest/select2.test
+%%TWTDIR%%/selftest/select_many.html
+%%TWTDIR%%/selftest/select_many.test
+%%TWTDIR%%/selftest/simple_form.html
+%%TWTDIR%%/selftest/simple_form.test
+%%TWTDIR%%/selftest/strip_comments.test
+%%TWTDIR%%/selftest/url_anchor.test
+%%TWTDIR%%/tclwebtest
+@dirrm %%TWTDIR%%/selftest
+@dirrm %%TWTDIR%%/lib
+@dirrm %%TWTDIR%%
+@dirrm %%EXAMPLESDIR%%/openacs4tests/calendar
+@dirrm %%EXAMPLESDIR%%/openacs4tests
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%/doc
+@dirrm %%DOCSDIR%%
+@cwd %%LOCALBASE%%
+%%TCLLIB%%/tclwebtest
