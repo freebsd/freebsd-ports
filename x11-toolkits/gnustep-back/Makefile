@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep-back
-PORTVERSION=	0.9.6
+PORTVERSION=	0.10.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -38,11 +38,12 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=
 MAKE_FLAGS+=		OPTFLAG="${CFLAGS} -I${X11BASE}/include"
+BACKVERSION=		${PORTVERSION:C/([0-9])*[.]([0-9]*).*/\1\2/1}
 BREAKS_IF_PEDANTIC=	yes
 
 .if defined(WITH_GNUSTEP_XDPS)
 CONFIGURE_ARGS+=	--enable-graphics=xdps --with-name=xdps
-PLIST_SUB+=		BACK=xdps
+PLIST_SUB+=		BACK=xdps-${BACKVERSION}
 PLIST_SUB+=		USE_XLIB="@comment " USE_XDPS="" USE_ART="@comment "
 BACK_SUFFIX?=		-xdps
 CONFLICTS?=		gunstep-back-0.* gunstep-back-art-0.*
@@ -52,13 +53,13 @@ LIB_DEPENDS+=		art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
 LIB_DEPENDS+=		glitz-glx.1:${PORTSDIR}/graphics/glitz
 LIB_DEPENDS+=		cairo.1:${PORTSDIR}/graphics/cairo
 CONFIGURE_ARGS+=	--enable-graphics=art --with-name=art
-PLIST_SUB+=		BACK=art USE_XLIB="@comment "
+PLIST_SUB+=		BACK=art-${BACKVERSION}
 PLIST_SUB+=		USE_XLIB="@comment " USE_XDPS="@comment " USE_ART=""
 BACK_SUFFIX?=		-art
 CONFLICTS?=		gunstep-back-0.* gunstep-back-xdps-0.*
 .else
 CONFIGURE_ARGS+=	--enable-graphics=xlib --with-name=back
-PLIST_SUB+=		BACK=back
+PLIST_SUB+=		BACK=back-${BACKVERSION}
 PLIST_SUB+=		USE_XLIB="" USE_XDPS="@comment " USE_ART="@comment "
 CONFLICTS?=		gunstep-back-xdps-0.* gunstep-back-art-0.*
 .endif
@@ -71,6 +72,7 @@ TARGLIB!=	(cd ${PORTSDIR}/${GNUSTEP_OBJC_PORT} && make -V TARGLIB)
 ADDITIONAL_LDFLAGS+=	-L${TARGLIB}
 MAKE_ENV+=		ADDITIONAL_LDFLAGS="${ADDITIONAL_LDFLAGS}"
 MAKE_FLAGS+=		messages=yes
+PLIST_SUB+=		BACKVERSION=${PORTVERSION:C/([0-9])*[.]([0-9]*).*/\1\2/1}
 
 .if ${OSVERSION} < 500000
 ADDITIONAL_LDFLAGS+=	-L/usr/lib -lcipher
