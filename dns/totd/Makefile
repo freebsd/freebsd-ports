@@ -16,8 +16,12 @@ MAN8=		totd.8
 
 USE_RC_SUBR=	YES
 GNU_CONFIGURE=	YES
+USE_REINPLACE=	YES
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/%zd/%d/g' ${WRKSRC}/*.c
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/totd.conf.sample ${PREFIX}/etc
