@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomedocutils
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-doc-utils/0.2
@@ -16,7 +17,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME doc utils
 
 BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
-RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
+RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper \
+		${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
 
 PREFIX?=	${X11BASE}
 
