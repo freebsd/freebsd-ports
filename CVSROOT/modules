@@ -6979,6 +6979,7 @@ osgedit		ports/graphics/osgedit
 osh		ports/shells/osh
 osiris		ports/security/osiris
 oskit		ports/devel/oskit
+osmose		ports/emulators/osmose
 osrtspproxy	ports/net/osrtspproxy
 ossp-al		ports/devel/ossp-al
 ossp-cfg	ports/devel/ossp-cfg
