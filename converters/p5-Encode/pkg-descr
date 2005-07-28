@@ -1,0 +1,7 @@
+The "Encode" module provides the interfaces between Perl's
+strings and the rest of the system.  Perl strings are
+sequences of characters.
+
+See "perldoc Encode" for the rest of the story
+
+WWW: http://search.cpan.org/~dankogai/Encode/

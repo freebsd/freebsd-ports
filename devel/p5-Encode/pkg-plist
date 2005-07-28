@@ -1,0 +1,68 @@
+@comment $FreeBSD$
+bin/piconv
+bin/enc2xs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Encode.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Encode.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Byte/Byte.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Byte/Byte.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/CN/CN.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/CN/CN.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/EBCDIC/EBCDIC.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/EBCDIC/EBCDIC.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP/JP.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP/JP.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/KR/KR.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/KR/KR.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Symbol/Symbol.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Symbol/Symbol.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/TW/TW.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/TW/TW.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Unicode/Unicode.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Unicode/Unicode.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/encoding.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/Alias.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/README.e2x
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/PerlIO.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/Makefile_PL.e2x
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/Changes.e2x
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/Encoding.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/ConfigLocal_PM.e2x
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/encode.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/Guess.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/_T.e2x
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/Config.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/Supported.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/Encoder.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/_PM.e2x
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/CJKConstants.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/Byte.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/CN.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/EBCDIC.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/KR.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/Symbol.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/TW.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/Unicode.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP/H2Z.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP/JIS7.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/Unicode/UTF7.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/KR/2022_KR.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/MIME/Header.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/CN/HZ.pm
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Byte 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/CN 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/EBCDIC 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/KR 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Symbol 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/TW 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Unicode 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Encode/CN 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Encode/KR 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Encode/MIME 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Encode/Unicode 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Encode 2>/dev/null || true
