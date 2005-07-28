@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mk
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cminusminus.org/download/
 
