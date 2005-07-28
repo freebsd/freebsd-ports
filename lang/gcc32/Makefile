@@ -48,6 +48,7 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
 .endif
 
+WITHOUT_CPU_CFLAGS=true
 GCC_REV=	${PORTVERSION:C/\.0$//}
 SRCDIR=		${WRKDIR}/gcc-${GCC_REV}
 WRKSRC=		${WRKDIR}/build
