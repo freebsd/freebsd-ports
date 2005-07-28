@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fusenshi
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.4
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.ongs.co.jp/projects/fusenshi/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
