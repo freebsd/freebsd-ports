@@ -8,18 +8,14 @@
 PORTNAME=	HLaTeX
 PORTVERSION=	1.0.1
 CATEGORIES=	korean print
-MASTER_SITES=	ftp://ftp.ktug.or.kr/pub/ktug/hlatex \
-		ftp://ftp.ktug.or.kr/pub/ktug/hlatex/fonts
+MASTER_SITES=	ftp://ftp.ktug.or.kr/pub/ktug/hlatex/ \
+		ftp://ftp.ktug.or.kr/pub/ktug/hlatex/fonts/
 DISTFILES=	HLaTeX-1.0.1.tar.gz uhc-fonts-1.0.tar.gz ${HLATEX_FONTS_BASE}
 DIST_SUBDIR=	hlatex
 EXTRACT_ONLY=	HLaTeX-1.0.1.tar.gz uhc-fonts-1.0.tar.gz
 
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	LaTeX package to use Hangul(UTF-8/UHC/KSX1001)
-
-BROKEN=		Unfetchable
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
 
 # it depends on teTeX(lambda)
 BUILD_DEPENDS=	texhash:${PORTSDIR}/print/teTeX
