@@ -33,7 +33,7 @@ CONFIGURE_ARGS+=	--without-gnutls
 .endif
 
 .if defined(WITH_SASL)
-LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/mail/cyrus-sasl2
+LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 .else
 CONFIGURE_ARGS+=	--without-sasl
 .endif
