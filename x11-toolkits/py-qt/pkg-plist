@@ -453,4 +453,3 @@ share/sip/qtxml/qtxmlmod.sip
 @dirrm share/sip/qttable
 @dirrm share/sip/qtui
 @dirrm share/sip/qtxml
-@unexec rmdir %D/share/sip 2> /dev/null || true
