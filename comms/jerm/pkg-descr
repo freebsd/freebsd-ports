@@ -1,0 +1,7 @@
+The jerm is primarily intended to communicate with a remote machine through a
+serial interface.  Additionally jerm can communicate with another through
+a TCP/IP connection like telnet and relay a serial communication to a
+TCP/IP connection to another remote machine.
+
+Author:	KANDA Toshihiro
+WWW: http://www.bsddiary.net/jerm/
