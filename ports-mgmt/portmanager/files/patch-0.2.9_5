@@ -1,0 +1,11 @@
+--- portmanager/portmanager.c.orig	Fri Jul 29 00:26:53 2005
++++ portmanager/portmanager.c	Fri Jul 29 00:27:47 2005
+@@ -134,7 +134,7 @@
+ 	/*
+ 	 * set xterm title
+ 	 */
+-	if( !strncmp( getenv("TERM"), "xterm", 5 ) )
++	if( getenv("TERM") && !strncmp( getenv("TERM"), "xterm", 5 ) )
+ 	{
+ 		stringSize	= strlen( id )
+ 				+ 1
