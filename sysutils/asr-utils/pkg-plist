@@ -1,21 +1,21 @@
 @comment $FreeBSD$
-%%X11%%bin/dptcom
-%%X11%%bin/dpteng
 %%X11%%bin/dptmgr
 %%X11%%bin/dptscom
-%%X11%%bin/dptsig
 bin/raidutil
-%%X11%%dpt/dptcom
-%%X11%%dpt/dptcom.chk
-%%X11%%dpt/dpteng
+bin/dpteng
+bin/dptcom
+bin/dptsig
 %%X11%%dpt/dptmgr
 %%X11%%dpt/dptmgr.hlp
 %%X11%%dpt/dptmgr.ini
 %%X11%%dpt/dptmgr.rsc
 %%X11%%dpt/dptscom
-%%X11%%dpt/dptsig
 dpt/raidutil
 dpt/read.me
+dpt/dpteng
+dpt/dptcom
+dpt/dptcom.chk
+dpt/dptsig
+@dirrm dpt
 %%LIBXM%%@cwd %%X11BASE%%
 %%LIBXM%%lib/libXm.so.1
-@dirrm dpt
