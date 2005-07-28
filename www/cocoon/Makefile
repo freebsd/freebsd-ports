@@ -15,6 +15,7 @@ DISTNAME=	${PDISTNAME}-src
 MAINTAINER=	jb.quenot@caraldi.com
 COMMENT=	XML Web Development Framework
 
+USE_RC_SUBR=		yes
 USE_JAVA=		yes
 JAVA_VERSION=		1.3+
 USE_PYTHON=		1.6+
@@ -46,6 +47,7 @@ LOG_FILE?=	${APP_HOME}/${APP_NAME}.log
 SUBSTITUTIONS=	\
 	-e "s|%%APP_HOME%%|${APP_HOME}|g" \
 	-e "s|%%APP_NAME%%|${APP_NAME}|g" \
+	-e "s|%%RC_SUBR%%|${RC_SUBR}|g" \
 	-e "s|%%PREFIX%%|${PREFIX}|g" \
 	-e "s|%%PORT%%|${PORT}|g" \
 	-e "s|%%COCOON_LIB%%|${COCOON_LIB}|g" \
