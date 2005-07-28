@@ -4,3 +4,5 @@ MD5 (jdk-1_5_0-bin-scsl.zip) = 3c3b2c079628141fa28f5f0f1cde5bf0
 SIZE (jdk-1_5_0-bin-scsl.zip) = 2219433
 MD5 (bsd-jdk15-patches-1.tar.bz2) = 13f8027f86106f2cee68aa702afd63f5
 SIZE (bsd-jdk15-patches-1.tar.bz2) = 618044
+MD5 (java_koi8u.tgz) = a483f4ceaad6dff3614ff37135bd35cf
+SIZE (java_koi8u.tgz) = 7296
