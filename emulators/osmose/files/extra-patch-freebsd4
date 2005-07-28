@@ -1,0 +1,110 @@
+--- InputDevice.h.orig	Wed Jul 27 23:08:41 2005
++++ InputDevice.h	Wed Jul 27 23:09:05 2005
+@@ -17,6 +17,7 @@
+ #ifndef INPUT_DEVICE_H
+ #define INPUT_DEVICE_H
+ 
++#include <string>
+ #include <SDL/SDL.h>
+ #include <iostream>
+ 
+--- Options.h.orig	Wed Jul 27 22:33:50 2005
++++ Options.h	Wed Jul 27 22:34:08 2005
+@@ -14,6 +14,7 @@
+ #ifndef OPTIONS_H
+ #define OPTIONS_H
+ 
++#include <string.h>
+ #include <iostream>
+ #include <iomanip>
+ #include "Bits.h"
+--- OsmoseCore.cpp.orig	Wed Jul 27 03:33:44 2005
++++ OsmoseCore.cpp	Wed Jul 27 03:34:13 2005
+@@ -12,6 +12,7 @@
+ *
+ * URL: http://bcz.emu-france.com/
+ *****************************************************************************/
++#include <string>
+ #include "OsmoseCore.h"
+ 
+ #define TIME_LIMITE 7*60
+--- SN76489.h.orig	Wed Jul 27 22:26:47 2005
++++ SN76489.h	Wed Jul 27 22:31:08 2005
+@@ -13,6 +13,7 @@
+ *****************************************************************************/
+ #ifndef SN76489_H
+ #define SN76489_H
++#include <string.h>
+ #include <iomanip>
+ #include <iostream>
+ #include <SDL/SDL.h>
+--- TextWriter.h.orig	Wed Jul 27 23:06:45 2005
++++ TextWriter.h	Wed Jul 27 23:06:53 2005
+@@ -15,6 +15,7 @@
+ #ifndef TEXT_WRITER_H
+ #define TEXT_WRITER_H
+ 
++#include <string>
+ #include <iomanip>
+ #include <SDL/SDL.h>
+ 
+--- VDP.h.orig	Wed Jul 27 21:55:01 2005
++++ VDP.h	Wed Jul 27 21:55:33 2005
+@@ -13,6 +13,7 @@
+ *****************************************************************************/
+ #ifndef VDP_H
+ #define VDP_H
++#include <string.h>
+ #include <SDL/SDL.h>
+ #include <iomanip>
+ #include <iostream>
+--- VideoFilter.h.orig	Wed Jul 27 23:04:17 2005
++++ VideoFilter.h	Wed Jul 27 23:04:36 2005
+@@ -35,6 +35,7 @@
+ #ifndef VIDEO_FILTER_H
+ #define VIDEO_FILTER_H
+ 
++#include <string>
+ #include <SDL/SDL.h>
+ #include <iostream>
+ 
+--- main.cpp.orig	Sun May 22 19:43:10 2005
++++ main.cpp	Wed Jul 27 03:20:22 2005
+@@ -31,6 +31,7 @@
+ * URL: http://bcz.emu-france.com/
+ *****************************************************************************/
+ 
++#include <string>
+ #include <iostream>
+ #include <iomanip>
+ #include "OsmoseCore.h"
+@@ -155,7 +156,7 @@
+ 	    // If actual argument nbr < argument number eg is there any args ?
+ 	    if (i < a-1)
+ 	    {
+-                opt.acceleration = atof( rv[i+1]);
++		opt.acceleration = strtod(rv[i+1], (char **)NULL);
+ 		if (opt.acceleration == 0)
+ 		{
+ 	        cerr << "No valid acceleration parameter was given. Using default " << (float)DEFAULT_ACCELERATION << " value." << endl;
+--- MemoryMapper.h.orig	Mon Apr 11 20:07:36 2005
++++ MemoryMapper.h	Thu Jul 28 07:57:32 2005
+@@ -14,6 +14,8 @@
+ *****************************************************************************/
+ #ifndef MEMORY_MAPPER_H
+ #define MEMORY_MAPPER_H
++#include <stdlib.h>
++#include <string>
+ #include <iostream>
+ #include <fstream>
+ #include <iomanip>
+--- OsmoseConfiguration.h.orig	Mon Jan 24 11:28:46 2005
++++ OsmoseConfiguration.h	Thu Jul 28 07:59:39 2005
+@@ -15,6 +15,7 @@
+ #ifndef OSMOSE_CONFIGURATION_H
+ #define OSMOSE_CONFIGURATION_H
+ 
++#include <string>
+ #include <SDL/SDL.h>
+ #include <iostream>
+ #include <iomanip>
