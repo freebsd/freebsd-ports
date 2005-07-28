@@ -16,8 +16,8 @@ PostgreSQL	"PostgreSQL driver" ON \
 MySQL323	"MySQL 3.23 driver" OFF \
 MySQL40		"MySQL 4.0 driver" OFF \
 MySQL41		"MySQL 4.1 driver" OFF \
-OpenLDAP21	"OpenLDAP 2.1 backend" OFF \
 OpenLDAP22	"OpenLDAP 2.2 backend" OFF \
+OpenLDAP23	"OpenLDAP 2.3 backend" OFF \
 SQLite		"SQLite backend" OFF \
 Recursor	"Build Recursor" OFF \
 2> /tmp/checklist.tmp.$$
@@ -58,12 +58,12 @@ while [ "$1" ]; do
 			echo WITH_MYSQL_DRIVER=YES
 			echo WITH_MYSQL_VER?=41
 			;;
-		\"OpenLDAP21\")
-			echo WITH_LDAP=YES
-			;;
 		\"OpenLDAP22\")
 			echo WITH_LDAP=YES
-			echo WANT_OPENLDAP_VER?=22
+			;;
+		\"OpenLDAP23\")
+			echo WITH_LDAP=YES
+			echo WANT_OPENLDAP_VER?=23
 			;;
 		\"SQLite\")
 			echo WITH_SQLITE=YES
