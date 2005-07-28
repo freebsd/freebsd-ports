@@ -9304,6 +9304,7 @@ pixie		ports/graphics/pixie
 pixieplus	ports/graphics/pixieplus
 pixilate	ports/net-mgmt/pixilate
 pixmap		ports/graphics/pixmap
+pkcrack		ports/security/pkcrack
 pkfonts118	ports/print/pkfonts118
 pkfonts240	ports/print/pkfonts240
 pkfonts300	ports/print/pkfonts300
