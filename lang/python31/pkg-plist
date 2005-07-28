@@ -210,6 +210,9 @@ lib/%%PYTHON_VERSION%%/bsddb/test/test_associate.pyo
 lib/%%PYTHON_VERSION%%/bsddb/test/test_basics.py
 lib/%%PYTHON_VERSION%%/bsddb/test/test_basics.pyc
 lib/%%PYTHON_VERSION%%/bsddb/test/test_basics.pyo
+lib/%%PYTHON_VERSION%%/bsddb/test/test_compare.py
+lib/%%PYTHON_VERSION%%/bsddb/test/test_compare.pyc
+lib/%%PYTHON_VERSION%%/bsddb/test/test_compare.pyo
 lib/%%PYTHON_VERSION%%/bsddb/test/test_compat.py
 lib/%%PYTHON_VERSION%%/bsddb/test/test_compat.pyc
 lib/%%PYTHON_VERSION%%/bsddb/test/test_compat.pyo
@@ -442,6 +445,9 @@ lib/%%PYTHON_VERSION%%/distutils/command/register.pyo
 lib/%%PYTHON_VERSION%%/distutils/command/sdist.py
 lib/%%PYTHON_VERSION%%/distutils/command/sdist.pyc
 lib/%%PYTHON_VERSION%%/distutils/command/sdist.pyo
+lib/%%PYTHON_VERSION%%/distutils/command/upload.py
+lib/%%PYTHON_VERSION%%/distutils/command/upload.pyc
+lib/%%PYTHON_VERSION%%/distutils/command/upload.pyo
 lib/%%PYTHON_VERSION%%/distutils/command/wininst-6.exe
 lib/%%PYTHON_VERSION%%/distutils/command/wininst-7.1.exe
 lib/%%PYTHON_VERSION%%/distutils/core.py
@@ -516,6 +522,9 @@ lib/%%PYTHON_VERSION%%/distutils/tests/test_install.pyo
 lib/%%PYTHON_VERSION%%/distutils/tests/test_install_scripts.py
 lib/%%PYTHON_VERSION%%/distutils/tests/test_install_scripts.pyc
 lib/%%PYTHON_VERSION%%/distutils/tests/test_install_scripts.pyo
+lib/%%PYTHON_VERSION%%/distutils/tests/test_versionpredicate.py
+lib/%%PYTHON_VERSION%%/distutils/tests/test_versionpredicate.pyc
+lib/%%PYTHON_VERSION%%/distutils/tests/test_versionpredicate.pyo
 lib/%%PYTHON_VERSION%%/distutils/text_file.py
 lib/%%PYTHON_VERSION%%/distutils/text_file.pyc
 lib/%%PYTHON_VERSION%%/distutils/text_file.pyo
@@ -528,6 +537,9 @@ lib/%%PYTHON_VERSION%%/distutils/util.pyo
 lib/%%PYTHON_VERSION%%/distutils/version.py
 lib/%%PYTHON_VERSION%%/distutils/version.pyc
 lib/%%PYTHON_VERSION%%/distutils/version.pyo
+lib/%%PYTHON_VERSION%%/distutils/versionpredicate.py
+lib/%%PYTHON_VERSION%%/distutils/versionpredicate.pyc
+lib/%%PYTHON_VERSION%%/distutils/versionpredicate.pyo
 lib/%%PYTHON_VERSION%%/doctest.py
 lib/%%PYTHON_VERSION%%/doctest.pyc
 lib/%%PYTHON_VERSION%%/doctest.pyo
@@ -1285,6 +1297,7 @@ lib/%%PYTHON_VERSION%%/lib-dynload/datetime.so
 lib/%%PYTHON_VERSION%%/lib-dynload/dbm.so
 %%32BIT_ONLY%%lib/%%PYTHON_VERSION%%/lib-dynload/dl.so
 lib/%%PYTHON_VERSION%%/lib-dynload/fcntl.so
+lib/%%PYTHON_VERSION%%/lib-dynload/functional.so
 lib/%%PYTHON_VERSION%%/lib-dynload/grp.so
 %%X86_ONLY%%lib/%%PYTHON_VERSION%%/lib-dynload/imageop.so
 lib/%%PYTHON_VERSION%%/lib-dynload/itertools.so
@@ -1525,10 +1538,6 @@ lib/%%PYTHON_VERSION%%/pipes.pyo
 lib/%%PYTHON_VERSION%%/pkgutil.py
 lib/%%PYTHON_VERSION%%/pkgutil.pyc
 lib/%%PYTHON_VERSION%%/pkgutil.pyo
-lib/%%PYTHON_VERSION%%/plat-freebsd3/IN.py
-lib/%%PYTHON_VERSION%%/plat-freebsd3/IN.pyc
-lib/%%PYTHON_VERSION%%/plat-freebsd3/IN.pyo
-lib/%%PYTHON_VERSION%%/plat-freebsd3/regen
 lib/%%PYTHON_VERSION%%/plat-freebsd4/IN.py
 lib/%%PYTHON_VERSION%%/plat-freebsd4/IN.pyc
 lib/%%PYTHON_VERSION%%/plat-freebsd4/IN.pyo
@@ -1541,6 +1550,10 @@ lib/%%PYTHON_VERSION%%/plat-freebsd6/IN.py
 lib/%%PYTHON_VERSION%%/plat-freebsd6/IN.pyc
 lib/%%PYTHON_VERSION%%/plat-freebsd6/IN.pyo
 lib/%%PYTHON_VERSION%%/plat-freebsd6/regen
+lib/%%PYTHON_VERSION%%/plat-freebsd7/IN.py
+lib/%%PYTHON_VERSION%%/plat-freebsd7/IN.pyc
+lib/%%PYTHON_VERSION%%/plat-freebsd7/IN.pyo
+lib/%%PYTHON_VERSION%%/plat-freebsd7/regen
 lib/%%PYTHON_VERSION%%/platform.py
 lib/%%PYTHON_VERSION%%/platform.pyc
 lib/%%PYTHON_VERSION%%/platform.pyo
@@ -1769,7 +1782,6 @@ lib/%%PYTHON_VERSION%%/test/mapping_tests.py
 lib/%%PYTHON_VERSION%%/test/mapping_tests.pyc
 lib/%%PYTHON_VERSION%%/test/mapping_tests.pyo
 lib/%%PYTHON_VERSION%%/test/output/test_MimeWriter
-lib/%%PYTHON_VERSION%%/test/output/test_asynchat
 lib/%%PYTHON_VERSION%%/test/output/test_augassign
 lib/%%PYTHON_VERSION%%/test/output/test_cgi
 lib/%%PYTHON_VERSION%%/test/output/test_class
@@ -1810,6 +1822,7 @@ lib/%%PYTHON_VERSION%%/test/output/test_threadedtempfile
 lib/%%PYTHON_VERSION%%/test/output/test_tokenize
 lib/%%PYTHON_VERSION%%/test/output/test_types
 lib/%%PYTHON_VERSION%%/test/output/test_winreg
+lib/%%PYTHON_VERSION%%/test/output/test_xdrlib
 lib/%%PYTHON_VERSION%%/test/output/xmltests
 lib/%%PYTHON_VERSION%%/test/pickletester.py
 lib/%%PYTHON_VERSION%%/test/pickletester.pyc
@@ -2138,6 +2151,9 @@ lib/%%PYTHON_VERSION%%/test/test_filecmp.pyo
 lib/%%PYTHON_VERSION%%/test/test_fileinput.py
 lib/%%PYTHON_VERSION%%/test/test_fileinput.pyc
 lib/%%PYTHON_VERSION%%/test/test_fileinput.pyo
+lib/%%PYTHON_VERSION%%/test/test_float.py
+lib/%%PYTHON_VERSION%%/test/test_float.pyc
+lib/%%PYTHON_VERSION%%/test/test_float.pyo
 lib/%%PYTHON_VERSION%%/test/test_fnmatch.py
 lib/%%PYTHON_VERSION%%/test/test_fnmatch.pyc
 lib/%%PYTHON_VERSION%%/test/test_fnmatch.pyo
@@ -2156,6 +2172,9 @@ lib/%%PYTHON_VERSION%%/test/test_frozen.pyo
 lib/%%PYTHON_VERSION%%/test/test_funcattrs.py
 lib/%%PYTHON_VERSION%%/test/test_funcattrs.pyc
 lib/%%PYTHON_VERSION%%/test/test_funcattrs.pyo
+lib/%%PYTHON_VERSION%%/test/test_functional.py
+lib/%%PYTHON_VERSION%%/test/test_functional.pyc
+lib/%%PYTHON_VERSION%%/test/test_functional.pyo
 lib/%%PYTHON_VERSION%%/test/test_future.py
 lib/%%PYTHON_VERSION%%/test/test_future.pyc
 lib/%%PYTHON_VERSION%%/test/test_future.pyo
@@ -2714,6 +2733,9 @@ lib/%%PYTHON_VERSION%%/test/test_winreg.pyo
 lib/%%PYTHON_VERSION%%/test/test_winsound.py
 lib/%%PYTHON_VERSION%%/test/test_winsound.pyc
 lib/%%PYTHON_VERSION%%/test/test_winsound.pyo
+lib/%%PYTHON_VERSION%%/test/test_xdrlib.py
+lib/%%PYTHON_VERSION%%/test/test_xdrlib.pyc
+lib/%%PYTHON_VERSION%%/test/test_xdrlib.pyo
 lib/%%PYTHON_VERSION%%/test/test_xmllib.py
 lib/%%PYTHON_VERSION%%/test/test_xmllib.pyc
 lib/%%PYTHON_VERSION%%/test/test_xmllib.pyo
@@ -3377,10 +3399,10 @@ lib/%%PYTHON_VERSION%%/zipfile.pyo
 @dirrm lib/%%PYTHON_VERSION%%/test/decimaltestdata
 @dirrm lib/%%PYTHON_VERSION%%/test
 @dirrm lib/%%PYTHON_VERSION%%/site-packages
+@dirrm lib/%%PYTHON_VERSION%%/plat-freebsd7
 @dirrm lib/%%PYTHON_VERSION%%/plat-freebsd6
 @dirrm lib/%%PYTHON_VERSION%%/plat-freebsd5
 @dirrm lib/%%PYTHON_VERSION%%/plat-freebsd4
-@dirrm lib/%%PYTHON_VERSION%%/plat-freebsd3
 @dirrm lib/%%PYTHON_VERSION%%/logging
 @dirrm lib/%%PYTHON_VERSION%%/lib-tk
 @dirrm lib/%%PYTHON_VERSION%%/lib-old

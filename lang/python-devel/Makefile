@@ -5,15 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	python
-PORTVERSION=	2.5.a0.20050129
-PORTREVISION=	1
+PORTVERSION=	2.5.a0.20050728
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
 DISTFILES=	${PYTHON_DISTFILE}
-
-PATCH_SITES=	http://www.python.org/security/PSF-2005-001/
-PATCHFILES=	patch.txt
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT?=	An interpreted object-oriented programming language
@@ -22,7 +18,6 @@ DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-fpectl
 CONFIGURE_ENV=	OPT="${CFLAGS}"
 MAKE_ENV=	VPATH="${WRKSRC}"
 INSTALLS_SHLIB=	yes
@@ -44,7 +39,8 @@ OPTIONS=	THREADS "Enable thread support" on \
 		HUGE_STACK_SIZE "Use a larger thread stack" off \
 		UCS4 "Use UCS4 for unicode support" on \
 		PYMALLOC "Use python's internal malloc" on \
-		IPV6 "Enable IPv6 support" on
+		IPV6 "Enable IPv6 support" on \
+		FPECTL "Enable floating point exception handling" off
 
 .include <bsd.port.pre.mk>
 
@@ -98,14 +94,18 @@ CONFIGURE_ARGS+= --enable-ipv6
 CONFIGURE_ARGS+= --disable-ipv6
 .endif
 
-.if ${OSVERSION} >= 600000
-PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
-.elif ${OSVERSION} >= 500000
-PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd6
-.elif ${OSVERSION} >= 400000
-PLATFORMS=plat-freebsd3 plat-freebsd5 plat-freebsd6
-.else
+.if defined(WITH_FPECTL)
+CONFIGURE_ARGS+= --with-fpectl
+.endif
+
+.if ${OSVERSION} >= 700000
 PLATFORMS=plat-freebsd4 plat-freebsd5 plat-freebsd6
+.elif ${OSVERSION} >= 600000
+PLATFORMS=plat-freebsd4 plat-freebsd5 plat-freebsd7
+.elif ${OSVERSION} >= 500000
+PLATFORMS=plat-freebsd4 plat-freebsd6 plat-freebsd7
+.else
+PLATFORMS=plat-freebsd5 plat-freebsd6 plat-freebsd7
 .endif
 
 post-extract:
@@ -123,8 +123,6 @@ pre-patch:
 	${REINPLACE_CMD} -e \
 		's|^\( *prefixes = .*\)\]$$|\1, "${X11BASE}"]|g' \
 		${WRKSRC}/Lib/site.py
-	${MKDIR} ${WRKSRC}/Lib/plat-freebsd6
-	${CP} ${WRKSRC}/Lib/plat-freebsd5/regen ${WRKSRC}/Lib/plat-freebsd6/
 
 post-configure:
 	@# prepare a subdir for shared build
