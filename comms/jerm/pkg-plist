@@ -1,0 +1,5 @@
+bin/jerm
+bin/tiocdtr
+%%WITH_JUPITER%%libexec/jerm/init.sh
+%%WITH_JUPITER%%libexec/jerm/rock.pl
+%%WITH_JUPITER%%@dirrm libexec/jerm
