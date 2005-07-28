@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_UserAgent_Mobile
-PORTVERSION=	0.23.0
+PORTVERSION=	0.24.0
 CATEGORIES=	net www pear
 
 MAINTAINER=	smatsui@karashi.org
@@ -23,7 +23,7 @@ FILES=		Mobile.php Mobile/AirHPhone.php Mobile/Common.php \
 TESTS=		00-compile.phpt 01-request.phpt 02-docomo.phpt \
 		03-jphone.phpt 04-ezweb.phpt 05-display.phpt \
 		06-nonmobile.phpt 07-airhphone.phpt 08-display-xmlmap.phpt \
-		DoCoMoMap.xml
+		09-fallback-on-nomatch.phpt DoCoMoMap.xml
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
