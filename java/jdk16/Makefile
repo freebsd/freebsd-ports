@@ -7,14 +7,16 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
-MASTER_SITES=	# http://www.sun.com/software/java2/download.html
+MASTER_SITES=	http://www.kde.org.ua/data/java/:koi8u
+#		http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk15.html
 SCSL_SRCFILE=	jdk-${JDK_VERSION:S/./_/g}-src-scsl.zip
 SCSL_BINFILE=	jdk-${JDK_VERSION:S/./_/g}-bin-scsl.zip
 PATCHSETFILE=	bsd-jdk15-patches-${JDK_PATCHSET_VERSION}.tar.bz2
-DISTFILES=	${SCSL_SRCFILE} ${SCSL_BINFILE} ${PATCHSETFILE}
+ENCODINGS=	java_koi8u.tgz:koi8u
+DISTFILES=	${SCSL_SRCFILE} ${SCSL_BINFILE} ${PATCHSETFILE} ${ENCODINGS}
 
 MAINTAINER=	phantom@FreeBSD.org
 COMMENT=	Java Development Kit 1.5.0
@@ -188,6 +190,10 @@ pre-everything::
 	@${ECHO_MSG} "WARNING: This is ALPHA quality software, and suitable for testing ONLY!"
 	@${ECHO_MSG} "WARNING: "
 	@${ECHO_MSG}
+
+post-extract:
+	${TAR} -C ${WRKSRC:H:H}/j2se/src/share/classes/sun/io/ -xzvpf ${DISTDIR}/java_koi8u.tgz '*.java'
+	${LN} -s ${FILESDIR}/KOI8_U.java ${WRKSRC:H:H}/j2se/src/share/classes/sun/nio/cs/
 
 pre-patch:
 	@cd ${WRKDIR} &&  \
