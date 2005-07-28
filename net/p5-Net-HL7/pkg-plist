@@ -1,0 +1,15 @@
+%%SITE_PERL%%/Net/HL7.pm
+%%SITE_PERL%%/Net/HL7/Segment.pm
+%%SITE_PERL%%/Net/HL7/Message.pm
+%%SITE_PERL%%/Net/HL7/Request.pm
+%%SITE_PERL%%/Net/HL7/Response.pm
+%%SITE_PERL%%/Net/HL7/Connection.pm
+%%SITE_PERL%%/Net/HL7/Daemon.pm
+%%SITE_PERL%%/Net/HL7/Messages/ACK.pm
+%%SITE_PERL%%/Net/HL7/Segments/MSH.pm
+%%SITE_PERL%%/mach/auto/Net-HL7/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/Net-HL7/
+@dirrm %%SITE_PERL%%/Net/HL7/Segments
+@dirrm %%SITE_PERL%%/Net/HL7/Messages
+@unexec rmdir %D/%%SITE_PERL%%/Net/HL7 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
