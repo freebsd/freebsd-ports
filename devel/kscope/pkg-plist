@@ -1,4 +1,5 @@
 bin/kscope
+%%DOCSDIR%%/autocomp_dlg.png
 %%DOCSDIR%%/call_tree.png
 %%DOCSDIR%%/frontend.png
 %%DOCSDIR%%/index.docbook
@@ -8,6 +9,7 @@ bin/kscope
 %%DOCSDIR%%/project_new.png
 %%DOCSDIR%%/project_open.png
 %%DOCSDIR%%/query_dlg.png
+%%DOCSDIR%%/query_filter.png
 %%DOCSDIR%%/index.cache.bz2
 %%DOCSDIR%%/common
 share/icons/locolor/16x16/apps/kscope.png
@@ -16,11 +18,13 @@ share/icons/locolor/32x32/apps/kscope.png
 share/icons/hicolor/16x16/apps/kscope.png
 share/applnk/Utilities/kscope.desktop
 share/apps/kscope/kscopeui.rc
+share/apps/kscope/kscope_config
 share/apps/kscope/pics/file_ro.png
 share/apps/kscope/pics/file_rw.png
 share/apps/kscope/pics/file_save.png
 share/apps/kscope/pics/query_locked.png
 share/apps/kscope/pics/query_unlocked.png
+share/apps/kscope/pics/tab_list.png
 @unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
