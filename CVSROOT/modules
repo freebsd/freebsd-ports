@@ -7577,6 +7577,7 @@ p5-Email-Simple	ports/mail/p5-Email-Simple
 p5-Email-Simple-Creator	ports/mail/p5-Email-Simple-Creator
 p5-Email-Valid	ports/mail/p5-Email-Valid
 p5-Email-Valid-Loose	ports/mail/p5-Email-Valid-Loose
+p5-Encode	ports/devel/p5-Encode
 p5-Encode-compat	ports/devel/p5-Encode-compat
 p5-Env-PS1	ports/devel/p5-Env-PS1
 p5-Errno	ports/devel/p5-Errno
