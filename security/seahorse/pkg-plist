@@ -10,6 +10,7 @@ lib/libseahorse-internal.so.0
 share/gnome/applications/seahorse-pgp-preferences.desktop
 share/gnome/applications/seahorse.desktop
 share/gnome/applications/seahorse-pgp-encrypted.desktop
+share/gnome/applications/seahorse-pgp-keys.desktop
 share/gnome/applications/seahorse-pgp-signature.desktop
 share/gnome/control-center-2.0/capplets/seahorse-pgp-preferences.desktop
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
@@ -42,8 +43,10 @@ share/gnome/seahorse/glade/seahorse-generate-adv.glade
 share/gnome/seahorse/glade/seahorse-generate-druid.glade
 share/gnome/seahorse/glade/seahorse-generate-select.glade
 share/gnome/seahorse/glade/seahorse-key-manager.glade
+share/gnome/seahorse/glade/seahorse-key-manager.ui
 share/gnome/seahorse/glade/seahorse-key-properties.glade
 share/gnome/seahorse/glade/seahorse-keyserver-results.glade
+share/gnome/seahorse/glade/seahorse-keyserver-results.ui
 share/gnome/seahorse/glade/seahorse-keyserver-search.glade
 share/gnome/seahorse/glade/seahorse-keyserver-sync.glade
 share/gnome/seahorse/glade/seahorse-multi-encrypt.glade
@@ -93,6 +96,7 @@ share/locale/sv/LC_MESSAGES/seahorse.mo
 share/locale/tr/LC_MESSAGES/seahorse.mo
 share/locale/uk/LC_MESSAGES/seahorse.mo
 share/locale/zh_CN/LC_MESSAGES/seahorse.mo
+share/locale/zh_TW/LC_MESSAGES/seahorse.mo
 @dirrm share/gnome/help/seahorse/C/figures
 @dirrm share/gnome/help/seahorse/C
 @dirrm share/gnome/help/seahorse
