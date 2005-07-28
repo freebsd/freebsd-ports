@@ -1,0 +1,12 @@
+--- sim/arm/configure.orig	Wed Jul 20 13:40:44 2005
++++ sim/arm/configure	Wed Jul 20 13:42:23 2005
+@@ -3620,7 +3620,8 @@
+   echo "$ac_t""no" 1>&6
+ fi
+ #2004-09-29 chy define GTK_CONFIG
+-  GTK_CONFIG=/usr/bin/pkg-config
++#  GTK_CONFIG=/usr/bin/pkg-config
++  GTK_CONFIG=/usr/local/bin/pkg-config
+   min_gtk_version=1.1.3
+   echo $ac_n "checking for GTK - version >= $min_gtk_version""... $ac_c" 1>&6
+ echo "configure:3626: checking for GTK - version >= $min_gtk_version" >&5

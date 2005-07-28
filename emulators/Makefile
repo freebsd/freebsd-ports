@@ -98,6 +98,7 @@
     SUBDIR += sim
     SUBDIR += sim6811
     SUBDIR += ski
+    SUBDIR += skyeye
     SUBDIR += snes9express
     SUBDIR += snes9x
     SUBDIR += spim

@@ -1,0 +1,51 @@
+--- Makefile.in.orig	Tue Jul 19 22:33:06 2005
++++ Makefile.in	Tue Jul 19 22:36:07 2005
+@@ -668,7 +668,6 @@
+ 	install-autoconf \
+ 	install-automake \
+ 	install-bash \
+-	install-bfd \
+ 	install-bzip2 \
+ 	install-opcodes \
+ 	install-binutils \
+@@ -693,9 +692,6 @@
+ 	install-gzip \
+ 	install-hello \
+ 	install-indent \
+-	install-intl \
+-	install-tcl \
+-	install-itcl \
+ 	install-ld \
+ 	install-libgui \
+ 	install-libiberty \
+@@ -707,7 +703,6 @@
+ 	install-perl \
+ 	install-prms \
+ 	install-rcs \
+-	install-readline \
+ 	install-recode \
+ 	install-sed \
+ 	install-send-pr \
+@@ -748,10 +743,7 @@
+ INSTALL_X11_MODULES = \
+ 	install-gdb \
+ 	install-guile \
+-	install-expect \
+-	install-tclX \
+-	install-tk \
+-	install-tix
++	install-expect 
+ 
+ # This is a list of the targets for all of the modules which are compiled
+ # using $(TARGET_FLAGS_TO_PASS).
+@@ -1755,8 +1747,8 @@
+ all-target-libiberty: configure-target-libiberty
+ all-target: $(ALL_TARGET_MODULES)
+ install-target: $(INSTALL_TARGET_MODULES)
+-install-gdb: install-tcl install-tk install-itcl install-tix install-libgui
+-install-sid: install-tcl install-tk
++install-gdb: 
++install-sid: 
+ ### other supporting targets
+ 
+ MAKEDIRS= \

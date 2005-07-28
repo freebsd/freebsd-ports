@@ -1,0 +1,9 @@
+SkyEye is an Open Source Software Project. The goal of SkyEye is to provide an
+integrated simulation environment in Linux and Windows. SkyEye environment
+simulates typical Embedded Computer Systems (Now it supports Atmel AT91 board
+based on ARM7TDMI CPU, board based on ARM720T CPU, board based on StrongARM
+(SA1100/SA1110). You can run some Embedded Operation System such as ARM Linux,
+uClinux, uc/OS-II (ucos-ii) etc in SkyEye, and analyze or debug them at source
+level.
+
+WWW: http://www.skyeye.org/

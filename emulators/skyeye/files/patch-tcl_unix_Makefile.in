@@ -1,0 +1,19 @@
+*** tcl/unix/Makefile.in.orig	Tue Jul 19 00:29:52 2005
+--- tcl/unix/Makefile.in	Mon Jul 18 00:08:02 2005
+***************
+*** 194,200 ****
+  # once we have created the initial executable, but in some cases you
+  # may want to use a target without having made tclsh on these sources
+  # (like for make genstubs)
+! TCL_EXE			= tclsh
+  
+  # The symbols below provide support for dynamic loading and shared
+  # libraries.  See configure.in for a description of what the
+--- 194,200 ----
+  # once we have created the initial executable, but in some cases you
+  # may want to use a target without having made tclsh on these sources
+  # (like for make genstubs)
+! TCL_EXE			= tclsh${VERSION}
+  
+  # The symbols below provide support for dynamic loading and shared
+  # libraries.  See configure.in for a description of what the

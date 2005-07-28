@@ -1,0 +1,10 @@
+--- gdb/doc/Makefile.in.orig	Tue Jul 19 22:38:16 2005
++++ gdb/doc/Makefile.in	Tue Jul 19 22:38:36 2005
+@@ -449,6 +449,6 @@
+ maintainer-clean realclean: distclean
+ 	rm -f GDBvn.texi *.info* *.dvi *.ps *.html *.pdf
+ 
+-install: install-info
++install: 
+ 
+ uninstall: uninstall-info
