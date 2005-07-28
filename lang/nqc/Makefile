@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nqc
-PORTVERSION=	2.5.r3
-PORTREVISION=	1
+PORTVERSION=	3.1.r2
 CATEGORIES=	lang
 MASTER_SITES=	http://bricxcc.sourceforge.net/nqc/release/
 EXTRACT_SUFX=	.tgz
@@ -20,9 +19,6 @@ CC=		${CXX}
 
 MAN1=		nqc.1
 PLIST_FILES=	bin/nqc
-
-pre-configure:
-	${CP} ${FILESDIR}/RCX_USBTowerPipe_fbsd.cpp ${WRKSRC}/rcxlib/
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/nqc ${PREFIX}/bin
