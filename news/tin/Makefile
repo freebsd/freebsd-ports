@@ -98,7 +98,8 @@ post-patch:
 		<${WRKSRC}/doc/tin.1.dist >${WRKSRC}/doc/tin.1
 
 .if defined(WITH_TIN_CANLOCK)
-	${PATCH} ${PATCH_ARGS} ${WRKSRC}/src/Makefile.in -i ${FILESDIR}/canlock.patch
+MAKE_ARGS+=	CANLIB='-L../libcanlock -lcanlock' \
+		CANLOCK=-DUSE_CANLOCK
 .endif
 
 pre-build:

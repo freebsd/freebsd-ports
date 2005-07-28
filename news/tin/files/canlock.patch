@@ -1,8 +1,0 @@
-55c55
-< CANLOCK = # -DUSE_CANLOCK # -DEVIL_INSIDE
----
-> CANLOCK = -DUSE_CANLOCK # -DEVIL_INSIDE
-67c67
-< CANLIB		= # -L../libcanlock -lcanlock
----
-> CANLIB		= -L../libcanlock -lcanlock
