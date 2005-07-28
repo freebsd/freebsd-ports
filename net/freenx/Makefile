@@ -7,15 +7,18 @@
 
 PORTNAME=	freenx
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://debian.tu-bs.de/knoppix/nx/
+MASTER_SITES=	http://download.berlios.de/freenx/ \
+		http://debian.tu-bs.de/knoppix/nx/
 
 MAINTAINER=	freenx@deweyonline.com
-COMMENT=	Frontend (auth/session management) for nxserver backend compression libraries
+COMMENT=	Frontend (auth/session management) for nxserver libraries
 
 RUN_DEPENDS=	${NXPREFIX}/bin/nxagent:${PORTSDIR}/net/nxserver \
-		bash:${PORTSDIR}/shells/bash2 \
-		expect:${PORTSDIR}/lang/expect
+		bash:${PORTSDIR}/shells/bash \
+		expect:${PORTSDIR}/lang/expect \
+		xauth:${X_CLIENTS_PORT}
 
 NO_BUILD=	yes
 
