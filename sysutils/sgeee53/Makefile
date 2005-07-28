@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	ee
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Sun Grid Engine Enterprise Edition, a batch queueing system
 
-MASTERDIR=	${.CURDIR}/../sge
+MASTERDIR=	${.CURDIR}/../sge53
 
 SGEEE_FLAG=	-sgeee
 SGE_PRODUCT=	-pr-geee

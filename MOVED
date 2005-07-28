@@ -1585,3 +1585,5 @@ lang/gcc27|lang/gcc295|2005-07-18|long obsolete
 net/tramp-emacs20|net/tramp-emacs|2005-07-18|expired
 www/junkbuster||2005-07-18|security problems
 x11/eweather||2005-07-18|did not work with update wmweather
+sysutils/sge|sysutils/sge53|2005-07-28|SGE 6 is being imported and is incompatable with 5.3
+sysutils/sgeee|sysutils/sgeee53|2005-07-28|SGE 6 is being imported and is incompatable with 5.3

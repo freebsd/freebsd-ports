@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	brooks
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT?=	Sun Grid Engine, a batch queueing system
 
+NO_LATEST_LINK=	yes
+
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
