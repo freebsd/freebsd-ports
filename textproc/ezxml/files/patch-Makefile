@@ -1,0 +1,15 @@
+--- Makefile.orig	Wed Jun  1 10:58:04 2005
++++ Makefile	Thu Jul 28 10:13:03 2005
+@@ -21,10 +21,10 @@
+ # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ 
+-CC = gcc
++CC ?= gcc
+ AR = ar
+ RM = rm -f
+-CFLAGS = -Wall -O2
++CFLAGS ?= -Wall -O2
+ OBJS = ezxml.o
+ LIB = libezxml.a
+ TEST = ezxmltest
