@@ -1,0 +1,15 @@
+--- raddb/Makefile.in.orig	Wed Jul 27 21:46:31 2005
++++ raddb/Makefile.in	Wed Jul 27 21:52:38 2005
+@@ -556,10 +556,10 @@
+ 		echo '================================================================='; \
+ 	else \
+ 		for file in $(raddb_files_644); do \
+-			${INSTALL} -m 644 $(top_srcdir)/raddb/$$file $(DESTDIR)$(raddbdir)/$$file; \
++			${INSTALL} -m 644 $(top_srcdir)/raddb/$$file $(DESTDIR)$(raddbdir)/$${file}-dist; \
+ 		done; \
+ 		for file in $(raddb_files_600); do \
+-			${INSTALL} -m 600 $(top_srcdir)/raddb/$$file $(DESTDIR)$(raddbdir)/$$file; \
++			${INSTALL} -m 600 $(top_srcdir)/raddb/$$file $(DESTDIR)$(raddbdir)/$${file}-dist; \
+ 		done; \
+ 	        for file in $(dictionaries); do \
+ 		        ${INSTALL} -m 644 $(top_srcdir)/raddb/$$file $(DESTDIR)$(raddbdir)/$$file; \

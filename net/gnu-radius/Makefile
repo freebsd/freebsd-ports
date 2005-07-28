@@ -6,6 +6,7 @@
 
 PORTNAME=	gnu-radius
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	radius
@@ -19,13 +20,14 @@ USE_RC_SUBR=	yes
 USE_SUBMAKE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_LIBTOOL_VER=	15
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 USE_GETTEXT=	yes
 USE_LIBLTDL=	yes
 CONFIGURE_TARGET=	# empty
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
+SUB_FILES=	radiusd.sh
 DATADIR=	${PREFIX}/share/radius
 
 INFO=		radius
@@ -46,6 +48,12 @@ OPTIONS=	CLIENT "Enable build client" off \
 		SNMP "Enable SNMP support" off \
 		NOTIFY "Enable TTL notification" off \
 		EMACS "Enable emacs dotfiles install" off
+
+CONFIG_FILES=	access.deny client.conf clients config dictionary \
+		hints huntgroups naslist nastypes realms \
+		sqlserver users
+EXAMPLE_FILES=	README ascend.rw c3620.rw cisco.rw comos.rw config.syntax \
+		filter.rw hints-0.96 jetstream.rw nt.rw pam.conf radius.php
 
 .include <bsd.port.pre.mk>
 
@@ -104,11 +112,17 @@ CONFIGURE_ARGS+=	--without-lispdir
 PLIST_SUB+=	EMACS="@comment "
 .endif
 
-post-patch:
-	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%RC_SUBR%%|${RC_SUBR}|g" \
-		< ${FILESDIR}/radiusd.sh > ${WRKDIR}/radiusd.sh
-
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/radiusd.sh ${PREFIX}/etc/rc.d/radiusd.sh
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${EXAMPLESDIR}
+. for ex_file in ${EXAMPLE_FILES}
+	${INSTALL_DATA} ${WRKSRC}/examples/${ex_file} ${EXAMPLESDIR}
+. endfor
+.endif
+.for conf_file in ${CONFIG_FILES}
+	@test -f ${PREFIX}/etc/raddb/${conf_file} || ${CP} -p \
+	${PREFIX}/etc/raddb/${conf_file}-dist ${PREFIX}/etc/raddb/${conf_file}
+.endfor
 
 .include <bsd.port.post.mk>

@@ -9,10 +9,14 @@ bin/radzap
 sbin/radauth
 sbin/radctl
 sbin/radiusd
-etc/raddb/access.deny
-etc/raddb/client.conf
-etc/raddb/clients
-etc/raddb/config
+@unexec if cmp -s %D/etc/raddb/access.deny %D/etc/raddb/access.deny-dist; then rm -f %D/etc/raddb/access.deny; fi
+etc/raddb/access.deny-dist
+@unexec if cmp -s %D/etc/raddb/client.conf %D/etc/raddb/client.conf-dist; then rm -f %D/etc/raddb/client.conf; fi
+etc/raddb/client.conf-dist
+@unexec if cmp -s %D/etc/raddb/clients %D/etc/raddb/clients-dist; then rm -f %D/etc/raddb/clients; fi
+etc/raddb/clients-dist
+@unexec if cmp -s %D/etc/raddb/config %D/etc/raddb/config-dist; then rm -f %D/etc/raddb/config; fi
+etc/raddb/config-dist
 etc/raddb/dict/ascend
 etc/raddb/dict/ascend.vs
 etc/raddb/dict/cisco
@@ -23,15 +27,23 @@ etc/raddb/dict/standard
 etc/raddb/dict/tunnel
 etc/raddb/dict/usr
 etc/raddb/dict/voip
-etc/raddb/dictionary
-etc/raddb/hints
-etc/raddb/huntgroups
+@unexec if cmp -s %D/etc/raddb/dictionary %D/etc/raddb/dictionary-dist; then rm -f %D/etc/raddb/dictionary; fi
+etc/raddb/dictionary-dist
+@unexec if cmp -s %D/etc/raddb/hints %D/etc/raddb/hints-dist; then rm -f %D/etc/raddb/hints; fi
+etc/raddb/hints-dist
+@unexec if cmp -s %D/etc/raddb/huntgroups %D/etc/raddb/huntgroups-dist; then rm -f %D/etc/raddb/huntgroups; fi
+etc/raddb/huntgroups-dist
 etc/raddb/nas.rc
-etc/raddb/naslist
-etc/raddb/nastypes
-etc/raddb/realms
-etc/raddb/sqlserver
-etc/raddb/users
+@unexec if cmp -s %D/etc/raddb/naslist %D/etc/raddb/naslist-dist; then rm -f %D/etc/raddb/naslist; fi
+etc/raddb/naslist-dist
+@unexec if cmp -s %D/etc/raddb/nastypes %D/etc/raddb/nastypes-dist; then rm -f %D/etc/raddb/nastypes; fi
+etc/raddb/nastypes-dist
+@unexec if cmp -s %D/etc/raddb/realms %D/etc/raddb/realms-dist; then rm -f %D/etc/raddb/realms; fi
+etc/raddb/realms-dist
+@unexec if cmp -s %D/etc/raddb/sqlserver %D/etc/raddb/sqlserver-dist; then rm -f %D/etc/raddb/sqlserver; fi
+etc/raddb/sqlserver-dist
+@unexec if cmp -s %D/etc/raddb/users %D/etc/raddb/users-dist; then rm -f %D/etc/raddb/users; fi
+etc/raddb/users-dist
 etc/rc.d/radiusd.sh
 include/radius/argcv.h
 include/radius/argp.h
@@ -54,11 +66,17 @@ include/radius/symtab.h
 include/radius/types.h
 lib/libgnuradius.a
 lib/libgnuradius.so
+lib/libgnuradius.la
 lib/libgnuradius.so.0
 %%GUILE%%bin/radsession
 %%GUILE%%lib/libradscm.so
+%%GUILE%%lib/libradscm.la
 %%GUILE%%lib/libradscm.so.0
+%%GUILE%%lib/libguile-gnuradius-v-1.3.so
+%%GUILE%%lib/libradscm.a
+%%GUILE%%lib/libservscm.a
 %%CLIENT%%lib/security/pam_radius.so
+%%CLIENT%%lib/security/pam_radius.la
 %%CLIENT%%libexec/nas.scm
 share/locale/ca/LC_MESSAGES/radius.mo
 share/locale/es/LC_MESSAGES/radius.mo
@@ -73,13 +91,28 @@ share/locale/ru/LC_MESSAGES/radius.mo
 %%DATADIR%%/%%PORTVERSION%%/rewrite/log-hook.rw
 %%DATADIR%%/%%PORTVERSION%%/rewrite/nas-ip.rw
 %%MYSQL%%%%DATADIR%%/%%PORTVERSION%%/modules/mysql.so
+%%MYSQL%%%%DATADIR%%/%%PORTVERSION%%/modules/mysql.la
 %%PGSQL%%%%DATADIR%%/%%PORTVERSION%%/modules/postgres.so
+%%PGSQL%%%%DATADIR%%/%%PORTVERSION%%/modules/postgres.la
 %%EMACS%%%%EMACS_SITE_LISPDIR%%/radconf-mode.el
 %%EMACS%%%%EMACS_SITE_LISPDIR%%/radius-mode.el
 %%EMACS%%%%EMACS_SITE_LISPDIR%%/rewrite-mode.el
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/ascend.rw
+%%PORTDOCS%%%%EXAMPLESDIR%%/c3620.rw
+%%PORTDOCS%%%%EXAMPLESDIR%%/cisco.rw
+%%PORTDOCS%%%%EXAMPLESDIR%%/comos.rw
+%%PORTDOCS%%%%EXAMPLESDIR%%/config.syntax
+%%PORTDOCS%%%%EXAMPLESDIR%%/filter.rw
+%%PORTDOCS%%%%EXAMPLESDIR%%/hints-0.96
+%%PORTDOCS%%%%EXAMPLESDIR%%/jetstream.rw
+%%PORTDOCS%%%%EXAMPLESDIR%%/nt.rw
+%%PORTDOCS%%%%EXAMPLESDIR%%/pam.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/radius.php
 @dirrm etc/raddb/dict
-@dirrm etc/raddb
+@unexec rmdir %D/etc/raddb 2>/dev/null || true
 @dirrm include/radius
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%/%%PORTVERSION%%/scheme
 @dirrm %%DATADIR%%/%%PORTVERSION%%/rewrite
 @dirrm %%DATADIR%%/%%PORTVERSION%%/modules
