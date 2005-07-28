@@ -38,7 +38,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <package>
 	<name>apache</name>
 	<range><lt>2.0.54_1</lt></range>
-	<range><lt>2.1.6_1</lt></range>
+	<range>
+          <gt>2.1.0</gt>
+          <lt>2.1.6_1</lt>
+        </range>
       </package>
       <package>
 	<name>apache+ipv6</name>
