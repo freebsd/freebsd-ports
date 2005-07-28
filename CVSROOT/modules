@@ -2114,6 +2114,7 @@ ezmlm		ports/mail/ezmlm
 ezmlm-idx	ports/mail/ezmlm-idx
 ezmlm-web	ports/mail/ezmlm-web
 ezstream	ports/audio/ezstream
+ezxml		ports/textproc/ezxml
 f-prot		ports/security/f-prot
 f-prot-sig	ports/security/f-prot-sig
 f-spot		ports/graphics/f-spot
