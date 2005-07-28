@@ -1,0 +1,5 @@
+The HL7 toolkit provides a lightweight Perl API for creating,
+manipulating, sending, and receiving HL7 messages. For more
+information about HL7, see http://www.hl7.org
+
+WWW: http://hl7toolkit.sourceforge.net
