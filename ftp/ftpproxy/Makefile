@@ -6,27 +6,28 @@
 #
 
 PORTNAME=	ftpproxy
-PORTVERSION=	1.1.5
+PORTVERSION=	1.2.3
 CATEGORIES=	ftp
-MASTER_SITES=	http://www.ftpproxy.org/download/older_releases/
+MASTER_SITES=	http://www.ftpproxy.org/download/ \
+		http://www.ftpproxy.org/download/older_releases/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	philippe@le-berre.com
 COMMENT=	A ftp proxy
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
+CFLAGS +=-DVERSION=\\\"${PORTVERSION}\\\"
 
 MAN1=		ftp.proxy.1
 MANCOMPRESSED=	no
 PLIST_FILES=	sbin/ftp.proxy
 
-pre-patch:
-	@${RM} -Rf ${WRKSRC}/*.o ${WRKSRC}/src/ftp.proxy
-	@${REINPLACE_CMD} -e 's|SOL_TCP|SOL_SOCKET|' ${WRKSRC}/ftp.c
+pre-build:
+	@${REINPLACE_CMD} -e 's|^CFLAGS|#CFLAGS|' ${WRKSRC}/src/Makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/ftp.proxy ${PREFIX}/sbin
-	@${INSTALL_MAN} ${WRKSRC}/../doc/ftp.proxy.1 ${PREFIX}/man/man1
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/ftp.proxy ${PREFIX}/sbin
+	@${INSTALL_MAN} ${WRKSRC}/doc/ftp.proxy.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
