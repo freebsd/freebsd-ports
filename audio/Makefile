@@ -366,6 +366,7 @@
     SUBDIR += phatbeat
     SUBDIR += pimp3
     SUBDIR += play
+    SUBDIR += playgsf
     SUBDIR += playmidi
     SUBDIR += polypaudio
     SUBDIR += portaudio
