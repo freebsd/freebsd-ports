@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 include/libps/pslib-mp.h
 include/libps/pslib.h
 include/libps/psversion.h
@@ -5,7 +6,8 @@ lib/libps.a
 lib/libps.so
 lib/libps.so.2
 libdata/pkgconfig/libps.pc
-share/locale/de/LC_MESSAGES/pslib.mo
+%%GETTEXT%%share/locale/de/LC_MESSAGES/pslib.mo
+%%GETTEXT%%@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
 %%DATADIR%%/draft.ps
 %%DATADIR%%/exectime.ps
 %%DATADIR%%/grid.ps
