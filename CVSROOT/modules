@@ -367,6 +367,7 @@ antlr		ports/devel/antlr
 anubis		ports/mail/anubis
 aoi		ports/graphics/aoi
 aolserver	ports/www/aolserver
+aolserver-openacs-pg	ports/www/aolserver-openacs-pg
 aop		ports/games/aop
 ap-utils	ports/net-mgmt/ap-utils
 apache-ant	ports/devel/apache-ant
