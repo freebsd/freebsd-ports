@@ -1,5 +1,14 @@
---- configure.orig	Sun Jun 26 00:02:58 2005
-+++ configure	Sun Jun 26 00:20:51 2005
+--- configure.orig	Sat Nov 20 21:39:50 2004
++++ configure	Wed Jul 27 23:13:31 2005
+@@ -9662,7 +9662,7 @@
+ #define USE_SERVER_GUILE 1
+ _ACEOF
+ 
+-				RADIUSD_LDADD_LIST="$RADIUSD_LDADD_LIST -L../radscm -lradscm ../radscm/libservscm.a $GUILE_LIBS"
++				RADIUSD_LDADD_LIST="$RADIUSD_LDADD_LIST -L../radscm/.libs -lradscm ../radscm/libservscm.a $GUILE_LIBS"
+ 			 fi
+ else
+   USE_GUILE=no
 @@ -22804,7 +22804,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
