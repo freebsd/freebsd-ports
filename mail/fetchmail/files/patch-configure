@@ -1,10 +1,64 @@
-
-$FreeBSD$
-
---- configure.orig	Fri Oct 18 21:56:01 2002
-+++ configure	Mon Oct 21 11:56:31 2002
-@@ -13050,7 +13050,7 @@
-     CEFLAGS="$CEFLAGS -I$with_ssl/include"
+--- configure.orig	Fri Oct 10 09:39:54 2003
++++ configure	Tue Jul 26 12:39:04 2005
+@@ -12929,16 +12929,16 @@
+ echo "$as_me:$LINENO: result: $ac_cv_lib_des_des_string_to_key" >&5
+ echo "${ECHO_T}$ac_cv_lib_des_des_string_to_key" >&6
+ if test $ac_cv_lib_des_des_string_to_key = yes; then
+-  libk5crypto=-ldes
++  libk5crypto=-lcrypto
+ else
+ 
+-echo "$as_me:$LINENO: checking for MD5_Init in -lssl" >&5
+-echo $ECHO_N "checking for MD5_Init in -lssl... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for MD5_Init in -lcrypto" >&5
++echo $ECHO_N "checking for MD5_Init in -lcrypto... $ECHO_C" >&6
+ if test "${ac_cv_lib_ssl_MD5_Init+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lssl ${LDEFLAGS} ${ac_krblibs} $LIBS"
++LIBS="-lcrypto ${LDEFLAGS} ${ac_krblibs} $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -12991,7 +12991,7 @@
+ #define HAVE_LIBSSL 1
+ _ACEOF
+ 
+-  LIBS="-lssl $LIBS"
++  LIBS="-lcrypto $LIBS"
+ 
+ else
+   { { echo "$as_me:$LINENO: error: DES libraries not found. Try adding --with-ssl to enable OpenSSL support" >&5
+@@ -13238,7 +13238,7 @@
+ _ACEOF
+ 
+   CEFLAGS="$CEFLAGS -I/usr/include/kerberosIV"
+-  LIBS="$LIBS -lkrb -ldes"
++  LIBS="$LIBS -lkrb -lcrypto"
+ else
+   #we need to detect when we're building under a kerberosV compatibility
+   #layer, btw...
+@@ -13381,7 +13381,7 @@
+ fi
+ rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+ if test "$ac_cv_search_des_string_to_key" = no; then
+-  for ac_lib in des425 des; do
++  for ac_lib in crypto des425 des; do
+     LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
+     cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+@@ -13401,7 +13401,7 @@
+ int
+ main ()
+ {
+-des_string_to_key ();
++_ossl_old_des_string_to_key ();
+   ;
+   return 0;
+ }
+@@ -13639,7 +13639,7 @@
+     test "$with_ssl" != "/usr" && CEFLAGS="$CEFLAGS -I$with_ssl/include"
    fi
    LDEFLAGS="$LDEFLAGS -L$with_ssl/lib"
 -  LIBS="$LIBS -lssl -lcrypto"
@@ -12,3 +66,12 @@ $FreeBSD$
    cat >>confdefs.h <<\_ACEOF
  #define SSL_ENABLE 1
  _ACEOF
+@@ -13959,7 +13959,7 @@
+ 
+   if test -f "$with_gssapi/include/roken.h"
+   then
+-     LIBS="$LIBS -lkrb5 -lasn1 -ldes -lroken -ldb -ldl"
++     LIBS="$LIBS -lkrb5 -lasn1 -lcrypto -lroken -ldb -ldl"
+      echo "$as_me:$LINENO: checking for gss_init_sec_context in -lgssapi" >&5
+ echo $ECHO_N "checking for gss_init_sec_context in -lgssapi... $ECHO_C" >&6
+ if test "${ac_cv_lib_gssapi_gss_init_sec_context+set}" = set; then
