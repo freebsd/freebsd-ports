@@ -1,10 +1,10 @@
---- configure.orig	Sat Feb 12 15:01:31 2005
-+++ configure	Fri Feb 25 19:21:28 2005
-@@ -603,2 +603,3 @@
+--- configure.orig	Sun Jul 10 11:14:51 2005
++++ configure	Thu Jul 28 14:28:34 2005
+@@ -602,2 +602,3 @@
  APIVERSION
 +APIPVERSION
  pkgvdatadir
-@@ -2130,6 +2131,6 @@
+@@ -2098,6 +2099,6 @@
  APIVERSION=`echo "$VERSION" | sed -e 's/^\([0-9]*\.[0-9]*[a-z]*\).*$/\1/'`
 -
 +APIPVERSION=`echo "$VERSION" | sed -e 's/^\([0-9]*\)\.\([0-9]*[a-z]*\).*$/\1\2/'`
@@ -13,7 +13,16 @@
 -pkgvdatadir="\${datadir}/$PACKAGE-$APIVERSION"
 +pkgvdatadir="\${datadir}/automake${APIPVERSION}"
  
-@@ -3289,2 +3290,3 @@
- s,@APIVERSION@,$APIVERSION,;t t
-+s,@APIPVERSION@,$APIPVERSION,;t t
- s,@pkgvdatadir@,$pkgvdatadir,;t t
+@@ -3102,2 +3103,3 @@
+ APIVERSION=$APIVERSION
++APIPVERSION=$APIPVERSION
+ 
+@@ -3244,2 +3246,3 @@
+ APIVERSION!$APIVERSION$ac_delim
++APIPVERSION!$APIPVERSION$ac_delim
+ pkgvdatadir!$pkgvdatadir$ac_delim
+@@ -3256,3 +3259,3 @@
+ 
+-  if test `grep -c "$ac_delim\$" conf$$subs.sed` = 75; then
++  if test `grep -c "$ac_delim\$" conf$$subs.sed` = 76; then
+     break
