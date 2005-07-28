@@ -1,0 +1,24 @@
+This package implements an algorithm for breaking the PkZip cipher that was
+devised by Eli Biham and Paul Kocher.
+
+This program applies a known plaintext attack to an encrypted file.
+A known-plaintext-attack recovers a password using the encrypted file and
+(part of) the unencrypted file.
+
+Please note that cryptographers use the word 'plaintext' for any kind of
+unencrypted data - not necessarily readable ASCII text.
+
+Before you ask why somebody may want to know the password when he already knows
+the plaintext think of the following situations:
+
+ - Usually there's a large number of files in a ZIP-archive. Usually all these
+   files are encrypted using the same password. So if you know one of the files,
+   you can recover the password and decrypt the other files.
+ - You need to know only a part of the plaintext (at least 13 bytes). Many files
+   have commonly known headers, like DOS .EXE-files. Knowing a reasonably long
+   header you can recover the password and decrypt the entire file. 
+
+WWW: http://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack.html
+
+- ehaupt
+ehaupt@critical.ch
