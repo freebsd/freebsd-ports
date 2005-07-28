@@ -393,6 +393,7 @@
     SUBDIR += pinentry-gtk
     SUBDIR += pinentry-gtk2
     SUBDIR += pinentry-qt
+    SUBDIR += pkcrack
     SUBDIR += pks
     SUBDIR += pktsuckers
     SUBDIR += poc
