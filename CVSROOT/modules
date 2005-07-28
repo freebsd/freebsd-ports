@@ -4536,6 +4536,7 @@ jed		ports/editors/jed
 jedit		ports/editors/jedit
 jedit-devel	ports/editors/jedit-devel
 jep		ports/devel/jep
+jerm		ports/comms/jerm
 jesred		ports/www/jesred
 jetpack		ports/games/jetpack
 jetspeed	ports/www/jetspeed
