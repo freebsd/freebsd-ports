@@ -2,6 +2,8 @@ bin/kftpgrabber
 include/kftpgrabber/kftpbookmarkimportplugin.h
 lib/kde3/kftpimportplugin_gftp.la
 lib/kde3/kftpimportplugin_gftp.so
+lib/kde3/kftpimportplugin_ncftp.la
+lib/kde3/kftpimportplugin_ncftp.so
 lib/libkftpinterfaces.la
 lib/libkftpinterfaces.so
 lib/libkftpinterfaces.so.0
@@ -9,30 +11,46 @@ share/applications/kde/kftpgrabber.desktop
 share/apps/kftpgrabber/kftpgrabber-bi-wizard.png
 share/apps/kftpgrabber/kftpgrabber-logo.png
 share/apps/kftpgrabber/kftpgrabberui.rc
-share/doc/HTML/en/kftpgrabber/common
-share/doc/HTML/en/kftpgrabber/index.cache.bz2
-share/doc/HTML/en/kftpgrabber/index.docbook
 share/icons/hicolor/16x16/apps/kftpgrabber.png
+share/icons/hicolor/22x22/apps/kftpgrabber.png
 share/icons/hicolor/32x32/apps/kftpgrabber.png
 share/icons/hicolor/48x48/apps/kftpgrabber.png
+share/icons/hicolor/64x64/apps/kftpgrabber.png
+share/locale/br/LC_MESSAGES/kftpgrabber.mo
+share/locale/cs/LC_MESSAGES/kftpgrabber.mo
 share/locale/de/LC_MESSAGES/kftpgrabber.mo
+share/locale/el/LC_MESSAGES/kftpgrabber.mo
 share/locale/es/LC_MESSAGES/kftpgrabber.mo
+share/locale/fr/LC_MESSAGES/kftpgrabber.mo
+share/locale/ga/LC_MESSAGES/kftpgrabber.mo
 share/locale/hu/LC_MESSAGES/kftpgrabber.mo
+share/locale/sv/LC_MESSAGES/kftpgrabber.mo
+share/locale/zh_CN/LC_MESSAGES/kftpgrabber.mo
 share/services/kftpimportplugin_gftp.desktop
+share/services/kftpimportplugin_ncftp.desktop
 share/servicetypes/kftpbookmarkimportplugin.desktop
 @unexec rmdir %D/share/servicetypes 2>/dev/null || true
 @unexec rmdir %D/share/services 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_CN 2>/dev/null || true
+@unexec rmdir %D/share/locale/el/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/el 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/64x64/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/64x64 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
-@dirrm share/doc/HTML/en/kftpgrabber
-@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
 @dirrm share/apps/kftpgrabber
 @unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applications/kde 2>/dev/null || true
+@unexec rmdir %D/share/applications 2>/dev/null || true
 @dirrm include/kftpgrabber
