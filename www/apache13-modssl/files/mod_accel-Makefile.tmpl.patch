@@ -1,0 +1,11 @@
+--- src/modules/accel/Makefile.tmpl.orig	Wed Jul 27 23:56:21 2005
++++ src/modules/accel/Makefile.tmpl	Wed Jul 27 23:56:28 2005
+@@ -9,7 +9,7 @@
+ 
+ OBJS_PIC=\
+      mod_accel.lo accel_cachemgr.lo \
+-     accel_backend.o accel_cache.lo accel_gc.lo \
++     accel_backend.lo accel_cache.lo accel_gc.lo \
+      accel_lock.lo accel_http.lo accel_connect.lo accel_util.lo \
+      ap_other_child.lo ap_ext_accel.lo
+ 
