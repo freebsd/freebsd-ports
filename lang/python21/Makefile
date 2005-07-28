@@ -7,7 +7,7 @@
 
 PORTNAME=	python
 PORTVERSION=	2.1.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	lang python
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -46,20 +46,14 @@ DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 400000
-LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-CFLAGS+=	-I${LOCALBASE}/include/ncurses -I${LOCALBASE}/include
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
-.endif
-
-.if ${OSVERSION} >= 600000
-PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
-.elif ${OSVERSION} >= 500000
-PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd6
-.elif ${OSVERSION} >= 400000
-PLATFORMS=plat-freebsd3 plat-freebsd5 plat-freebsd6
-.else
+.if ${OSVERSION} >= 700000
 PLATFORMS=plat-freebsd4 plat-freebsd5 plat-freebsd6
+.elif ${OSVERSION} >= 600000
+PLATFORMS=plat-freebsd4 plat-freebsd5 plat-freebsd7
+.elif ${OSVERSION} >= 500000
+PLATFORMS=plat-freebsd4 plat-freebsd6 plat-freebsd7
+.else
+PLATFORMS=plat-freebsd5 plat-freebsd6 plat-freebsd7
 .endif
 
 post-extract:
@@ -73,8 +67,10 @@ pre-patch:
 	${REINPLACE_CMD} -e \
 		's|^\(prefixes = .*\)\]$$|\1, "${X11BASE}"]|g' \
 		${WRKSRC}/Lib/site.py
-	${MKDIR} ${WRKSRC}/Lib/plat-freebsd6
-	${CP} ${WRKSRC}/Lib/plat-freebsd5/regen ${WRKSRC}/Lib/plat-freebsd6/ 
+.for ver in 6 7
+	${MKDIR} ${WRKSRC}/Lib/plat-freebsd${ver}
+	${CP} ${WRKSRC}/Lib/plat-freebsd5/regen ${WRKSRC}/Lib/plat-freebsd${ver}/
+.endfor
 
 pre-su-install:
 .for platform in ${PLATFORMS}
