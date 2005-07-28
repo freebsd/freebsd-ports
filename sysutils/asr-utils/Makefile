@@ -8,6 +8,7 @@
 
 PORTNAME=	asr-utils
 PORTVERSION=	3.04
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.adaptec.com/raid/u160raid/unix/ \
 		ftp://ftp.adaptec.com/raid/u160raid/unix/
@@ -20,11 +21,12 @@ COMMENT=	Adaptec ASR RAID Management Software
 ONLY_FOR_ARCHS=	i386
 
 NO_WRKSUBDIR=	yes
-BINS=		raidutil
+BINS=		raidutil dpteng dptcom dptsig
 .ifndef (WITHOUT_X11)
 USE_XLIB=	yes
-BINS+=		dptcom dpteng dptscom dptsig dptmgr
+BINS+=		dptscom dptmgr
 .endif
+MAN8=		raidutil.8
 
 .if !defined(WITHOUT_X11) && !exists(${X11BASE}/lib/libXm.so.1)
 # we shall install our own libXm.so.1, enable it in pkg-plist
@@ -64,8 +66,13 @@ PLIST_SUB+=	X11="@comment "
 do-install:
 	${MKDIR} ${PREFIX}/dpt
 	cd ${WRKSRC} ; ${INSTALL_PROGRAM} ${BINS} ${PREFIX}/dpt ; \
-		${INSTALL_DATA} read.me ${PREFIX}/dpt
-	${LN} -sf ${PREFIX}/dpt/${BINS} ${PREFIX}/bin
+		${INSTALL_DATA} read.me dptcom.chk ${PREFIX}/dpt
+.for bin in ${BINS}
+ 	${LN} -sf ${PREFIX}/dpt/${bin} ${PREFIX}/bin
+.endfor
 .endif
+
+post-install:
+	@${INSTALL_MAN} ${WRKSRC}/raidutil.8 ${PREFIX}/man/man8/ 
 
 .include <bsd.port.post.mk>
