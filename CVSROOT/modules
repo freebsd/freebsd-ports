@@ -11099,6 +11099,7 @@ skribe		ports/textproc/skribe
 sks		ports/security/sks
 skstream	ports/net/skstream
 sky2000		ports/astro/sky2000
+skyeye		ports/emulators/skyeye
 skype		ports/net/skype
 skyutils	ports/misc/skyutils
 sl		ports/games/sl
