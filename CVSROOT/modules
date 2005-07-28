@@ -6135,6 +6135,7 @@ mnemo		ports/deskutils/mnemo
 mnogosearch	ports/www/mnogosearch
 mnogosearch31	ports/www/mnogosearch31
 mob		ports/devel/mob
+moc		ports/audio/moc
 mod_access_identd	ports/www/mod_access_identd
 mod_access_referer	ports/www/mod_access_referer
 mod_accesscookie	ports/www/mod_accesscookie
