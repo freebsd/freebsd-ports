@@ -1,0 +1,29 @@
+--- Makefile.orig	Thu Jul 28 07:51:45 2005
++++ Makefile	Thu Jul 28 07:53:34 2005
+@@ -43,11 +43,11 @@
+ 
+ # Compiler/Linker Flags
+ # add -O3 to CFLAGS for speedup -pg on LFLAGS and CFLAGS for gprof
+-CFLAGS =  -Wall -O3
+-LFLAGS =  -lSDL 
++CFLAGS =  -Dlinux `sdl-config --cflags` -O3
++LFLAGS =  `sdl-config --libs`
+ AFLAGS =  -f elf
+-CC  = g++
+-C_COMP = gcc
++CC  = ${CXX}
++C_COMP = ${CC}
+ ASM = nasm
+ 
+ # Our needed rules. $* is current file, without suffix.
+@@ -84,8 +84,8 @@
+ 	rm -f *.o core $(OSM_EXE)
+ 
+ libs: 
+-	cd $(Z_LIB_DIR) && make libz.a
+-	cd $(UNZIP_DIR) && make unzip.a
++	cd $(Z_LIB_DIR) && ${MAKE} libz.a
++	cd $(UNZIP_DIR) && ${MAKE} unzip.a
+ 
+ 	
+ 

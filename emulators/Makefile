@@ -85,6 +85,7 @@
     SUBDIR += mupen64-sound
     SUBDIR += o2em
     SUBDIR += osf1_base
+    SUBDIR += osmose
     SUBDIR += p-interp
     SUBDIR += pcemu
     SUBDIR += pearpc
