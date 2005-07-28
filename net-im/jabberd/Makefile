@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jabberd
-PORTVERSION=	2.0.8
+PORTVERSION=	2.0.9
 CATEGORIES=	net
 MASTER_SITES=	http://files.jabberstudio.org/jabberd2/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}s${PORTVERSION:E}
@@ -16,6 +16,13 @@ MAINTAINER=	kirk@strauser.com
 COMMENT=	Online presence and instant messaging server
 
 LIB_DEPENDS=	idn.16:${PORTSDIR}/devel/libidn
+
+OPTIONS=	POSTGRESQL "Use PostgreSQL for storage and authentication" off \
+		MYSQL "Use MySQL for storage and authentication" off \
+		LDAP "Use LDAP for authentication" off \
+		BDB "Use BDB for storage and authentication" off \
+		PAM "Use PAM for authentication" off \
+		DEBUG "Compile with debug information" on
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
@@ -27,7 +34,9 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-extra-library-path=${LOCALBASE}/lib${ELP} \
 		--enable-fs
 
-.if !defined(WITHOUT_DEBUG)
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
 .endif
 
@@ -71,16 +80,6 @@ CONFIGURE_ARGS+=--disable-pam
 
 MAN8=		c2s.8 jabberd.8 resolver.8 router.8 s2s.8 sm.8
 
-pre-everything::
-	@${ECHO}
-	@${ECHO} "You can build Jabber with the following options:"
-	@${ECHO} "WITH_POSTGRESQL		use PostgreSQL for storage and authentication"
-	@${ECHO} "WITH_BDB		use Berkeley DB for storage and authentication"
-	@${ECHO} "WITH_MYSQL		use MySQL for storage and authentication"
-	@${ECHO} "WITH_LDAP		use LDAP for authentication"
-	@${ECHO} "WITH_PAM		use PAM for authentication"
-	@${ECHO}
-
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
@@ -92,4 +91,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/tools/db-setup.mysql ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/tools/db-setup.pgsql ${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
