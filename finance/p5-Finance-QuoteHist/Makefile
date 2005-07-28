@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Finance-QuoteHist
-PORTVERSION=	0.32
+PORTVERSION=	1.00
 CATEGORIES=	finance perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Finance
@@ -22,10 +22,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Finance::QuoteHist::Yahoo.3 \
-		Finance::QuoteHist.3 \
-		Finance::QuoteHist::WallStreetCity.3 \
-		Finance::QuoteHist::SiliconInvestor.3 \
-		Finance::QuoteHist::Generic.3
+MAN3=		Finance::QuoteHist.3 \
+		Finance::QuoteHist::QuoteMedia.3 \
+		Finance::QuoteHist::Generic.3 \
+		Finance::QuoteHist::Yahoo.3
 
 .include <bsd.port.mk>
