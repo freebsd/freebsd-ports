@@ -16,6 +16,7 @@
     SUBDIR += amyc
     SUBDIR += analog
     SUBDIR += aolserver
+    SUBDIR += aolserver-openacs-pg
     SUBDIR += apache-contrib
     SUBDIR += apache-forrest
     SUBDIR += apache-jserv
