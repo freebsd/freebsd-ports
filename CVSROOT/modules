@@ -8054,6 +8054,7 @@ p5-Net-Finger	ports/net/p5-Net-Finger
 p5-Net-Gnats	ports/net/p5-Net-Gnats
 p5-Net-Google	ports/net/p5-Net-Google
 p5-Net-Gopher	ports/net/p5-Net-Gopher
+p5-Net-HL7	ports/net/p5-Net-HL7
 p5-Net-ICQ2000	ports/net/p5-Net-ICQ2000
 p5-Net-IMAP-Simple	ports/mail/p5-Net-IMAP-Simple
 p5-Net-IMAP-Simple-SSL	ports/mail/p5-Net-IMAP-Simple-SSL
