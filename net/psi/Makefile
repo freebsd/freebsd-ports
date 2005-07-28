@@ -7,7 +7,7 @@
 
 PORTNAME=	psi
 PORTVERSION=	0.9.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,7 +39,7 @@ OPTIONS=	KDE "Enable KDE tray support" off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_KDE)
-LIB_DEPENDS=	kdecore:${PORTSDIR}/x11/kdelibs3
+LIB_DEPENDS+=	kdecore:${PORTSDIR}/x11/kdelibs3
 _NO_KDE_CONFTARGET_HACK=	yes
 PLIST_SUB+=	KDE=""
 .else
