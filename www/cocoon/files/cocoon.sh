@@ -11,7 +11,7 @@
 # %%APP_NAME%%_enable="YES"
 #
 
-. /etc/rc.subr
+. %%RC_SUBR%%
 
 name=%%APP_NAME%%
 rcvar=`set_rcvar`
