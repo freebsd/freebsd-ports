@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-final-src
 MAINTAINER=	alejandro@varnet.biz
 COMMENT=	Sega Master System emulator
 
+BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+
 ONLY_FOR_ARCHS=	i386
 
 USE_ZIP=	yes
