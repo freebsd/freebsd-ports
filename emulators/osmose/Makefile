@@ -26,11 +26,7 @@ NO_WRKSUBDIR=	yes
 OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on
 
 PLIST_FILES=	bin/osmose
-
-.if !defined(NOPORTDOCS)
-PLIST_FILES+=	%%DOCSDIR%%/readme.txt
-PLIST_DIRS=	%%DOCSDIR%%
-.endif
+PORTDOCS=	readme.txt
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
