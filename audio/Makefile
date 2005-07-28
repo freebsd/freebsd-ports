@@ -283,6 +283,7 @@
     SUBDIR += mixer.app
     SUBDIR += mixmos
     SUBDIR += mixxx
+    SUBDIR += moc
     SUBDIR += modplugplay
     SUBDIR += mp32ogg
     SUBDIR += mp3_check

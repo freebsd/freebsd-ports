@@ -1,0 +1,16 @@
+bin/mocp
+share/doc/moc/README
+share/doc/moc/THANKS
+share/doc/moc/config.example
+share/doc/moc/keymap.example
+share/moc/themes/black_theme
+share/moc/themes/example_theme
+share/moc/themes/green_theme
+share/moc/themes/nightly_theme
+share/moc/themes/transparent-background
+share/moc/themes/yellow_red_theme
+@dirrm lib/moc/decoder_plugins
+@dirrm lib/moc
+@dirrm share/moc/themes
+@dirrm share/moc
+@dirrm share/doc/moc
