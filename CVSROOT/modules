@@ -9346,6 +9346,7 @@ plans		ports/deskutils/plans
 plasma-kmod	ports/graphics/plasma-kmod
 platon		ports/biology/platon
 play		ports/audio/play
+playgsf		ports/audio/playgsf
 playmidi	ports/audio/playmidi
 plb		ports/net/plb
 plconfig	ports/sysutils/plconfig
