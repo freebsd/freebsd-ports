@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bogofilter
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-qdbm
 
@@ -24,6 +24,5 @@ DESCR=		${PKGDIR}/pkg-descr
 PLIST_FILES=	bin/bogoQDBMupgrade
 
 MASTERDIR=	${.CURDIR}/../bogofilter
-PATCHDIR=	${.CURDIR}/files
 
 .include "${MASTERDIR}/Makefile"
