@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		visualworks
-PORTVERSION=		7.3
+PORTVERSION=		7.3.1
 CATEGORIES=		lang linux
 SUBDIR=			vwnc${PORTVERSION}
 MASTER_SITES=		http://www.cincomsmalltalk.com/bsdports/${SUBDIR}/
@@ -30,77 +30,148 @@ NO_CDROM=		${RESTRICTED}
 
 OPTIONS=	ATOOLS		"Advanced Tools"				off \
 		COM		"COM"						off \
-		DLLC		"DLLC Connect"					off \
+		DLLC		"DLLC Connect"					on \
 		DST		"Distributed Smalltalk"				off \
-		DATABASE	"Database Support"				off \
+		DATABASE	"Database Support"				on \
+		DOTNET		"DotNet Connect"				off \
 		GOODIES		"Goodies"					off \
 		ARAGON		"Goodies - Aragon"				off \
 		COAST		"Goodies - COAST"				off \
 		DOME		"Goodies - DOME"				off \
+		CMEM		"Goodies - Crafted Memory Policy"		off \
 		JUN		"Goodies - Jun 3D Framework"			off \
+		MOOSE		"Goodies - Moose"				off \
+		OBJECTIVITY	"Goodies - Objectivity"				off \
+		OMNIBASE	"Goodies - Omni Base"				off \
+		SEASIDE 	"Goodies - Seaside"				on \
 		SILVERMARK	"Goodies - Silvermark"				off \
+		SYBASE		"Goodies - STORE for Sybase"			off \
+		GEMSTONE	"Goodies - GemStone Server and Client"		off \
 		I18N		"Internationalization"				off \
+		OBSOLETE	"Obsolete stuff"				off \
 		OPENTALK	"Opentalk"					off \
 		PLUGIN		"Plugin"					off \
 		PREVIEW		"Preview Technology"				off \
 		STORE		"Store"						on \
 		WEBAPP		"Web Application Framework"			off \
 		WEBSERVICES	"Web Services"					off \
+		VMLINUX		"Virtual Machines for Linux ppc/sparc/x86-64"	off \
+		VMWINDOWS	"Virtual Machines for Windows NT/CEx86/CEarm"	off \
+		VMMAC		"Virtual Machines for Mac OSX/OSXX11/powermac"	off \
+		VMSOLARIS	"Virtual Machine for Solaris"			off \
+		VMAIX		"Virtual Machine for AIX"			off \
+		VMHPUX		"Virtual Machine for HPUX"			off \
+		VMSGI		"Virtual Machine for SGI"			off \
 
 .include <bsd.port.pre.mk>
 
-.if make(makesum) || defined(WITH_ATOOLS)
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_ATOOLS)
 DISTFILES+=	AdvancedTools.tar.gz
 .endif
-.if make(makesum) || defined(WITH_COM)
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_COM)
 DISTFILES+=	COM.tar.gz
 .endif
-.if make(makesum) || defined(WITH_DLLC)
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_DLLC)
 DISTFILES+=	DLLC.tar.gz
 .endif
-.if make(makesum) || defined(WITH_DST)
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_DST)
 DISTFILES+=	DST.tar.gz
 .endif
-.if make(makesum) || defined(WITH_DATABASE)
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_DATABASE)
 DISTFILES+=	Database.tar.gz
 .endif
-.if make(makesum) || defined(WITH_GOODIES)
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_DOTNET)
+DISTFILES+=	Database.tar.gz
+.endif
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_GOODIES)
 DISTFILES+=	Goodies.tar.gz
 .endif
-.if make(makesum) || defined(WITH_ARAGON)
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_ARAGON)
 DISTFILES+=	GoodiesAragon.tar.gz
 .endif
-.if make(makesum) || defined(WITH_COAST)
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_COAST)
 DISTFILES+=	GoodiesCOAST.tar.gz
 .endif
-.if make(makesum) || defined(WITH_DOME)
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_CMEM)
+DISTFILES+=	GoodiesCraftedMemPolicy.tar.gz
+.endif
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_DOME)
 DISTFILES+=	GoodiesDOME.tar.gz
 .endif
-.if make(makesum) || defined(WITH_JUN)
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_JUN)
 DISTFILES+=	GoodiesJun.tar.gz
 .endif
-.if make(makesum) || defined(WITH_SILVERMARK)
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_MOOSE)
+DISTFILES+=	GoodiesMoose.tar.gz
+.endif
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_OBJECTIVITY)
+DISTFILES+=	GoodiesObjectivity.tar.gz
+.endif
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_OMNIBASE)
+DISTFILES+=	GoodiesOmniBase.tar.gz
+.endif
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_SEASIDE)
+DISTFILES+=	GoodiesSeaside.tar.gz
+.endif
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_SILVERMARK)
 DISTFILES+=	GoodiesSilverMark.tar.gz
 .endif
-.if make(makesum) || defined(WITH_I18N)
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_SYBASE)
+DISTFILES+=	GoodiesStoreSybase.tar.gz
+.endif
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_GEMSTONE)
+DISTFILES+=	GoodyGemStoneClient.tar.gz \
+		GoodyGemStoneSvrLinux.tar.gz
+.endif
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_I18N)
 DISTFILES+=	I18NCatalogs.tar.gz
 .endif
-.if make(makesum) || defined(WITH_OPENTALK)
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_OBSOLETE)
+DISTFILES+=	Obsolete.tar.gz
+.endif
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_OPENTALK)
 DISTFILES+=	Opentalk.tar.gz
 .endif
-.if make(makesum) || defined(WITH_PLUGIN)
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_PLUGIN)
 DISTFILES+=	Plugin.tar.gz
 .endif
-.if make(makesum) || defined(WITH_PREVIEW)
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_PREVIEW)
 DISTFILES+=	Preview.tar.gz
 .endif
-.if make(makesum) || defined(WITH_STORE)
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_STORE)
 DISTFILES+=	Store.tar.gz
 .endif
-.if make(makesum) || defined(WITH_WEBAPP)
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_VMAIX)
+DISTFILES+=	VM-AIX.tar.gz
+.endif
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_VMHPUX)
+DISTFILES+=	VM-HPUX.tar.gz
+.endif
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_VMMAC)
+DISTFILES+=	VM-MacOSX.tar.gz \
+		VM-MacOSXX11.tar.gz \
+		VM-Powermac.tar.gz
+.endif
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_VMSGI)
+DISTFILES+=	VM-SGI.tar.gz
+.endif
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_VMSOLARIS)
+DISTFILES+=	VM-Solaris.tar.gz
+.endif
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_VMWINDOWS)
+DISTFILES+=	VM-Windows.tar.gz \
+		VM-WinCEARM.tar.gz \
+		VM-WinCEx86.tar.gz
+.endif
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_VMLINUX)
+DISTFILES+=	VM-LinuxPPC.tar.gz \
+		VM-LinuxSPARC.tar.gz \
+		VM-LinuxX86_64.tar.gz
+.endif
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_WEBAPP)
 DISTFILES+=	WebApplicationServer.tar.gz
 .endif
-.if make(makesum) || defined(WITH_WEBSERVICES)
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_WEBSERVICES)
 DISTFILES+=	WebServices.tar.gz
 .endif
 
