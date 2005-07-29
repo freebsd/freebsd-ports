@@ -64,6 +64,15 @@
  
  # Additional options to use when compiling libgcc2.a.
  # Some targets override this to -Iinclude
+@@ -2024,7 +2024,7 @@
+ # Install the driver last so that the window when things are
+ # broken is small.
+ install-normal: install-common $(INSTALL_HEADERS) $(INSTALL_LIBGCC) \
+-    install-libobjc install-man install-info lang.install-normal install-driver
++    install-libobjc install-man lang.install-normal install-driver
+ 
+ # Do nothing while making gcc with a cross-compiler. The person who
+ # makes gcc for the target machine has to know how to put a complete
 --- ./libgloss/m68k/Makefile.in~	Fri Apr 11 08:45:36 1997
 +++ ./libgloss/m68k/Makefile.in	Fri Apr 11 08:45:36 1997
 @@ -58,7 +58,7 @@

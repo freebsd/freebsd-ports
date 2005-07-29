@@ -97,40 +97,6 @@ include/ansidecl.h
 include/bfd.h
 include/bfdlink.h
 include/obstack.h
-@unexec install-info --delete %D/info/cpp.info %D/info/dir
-@unexec install-info --delete %D/info/gcc.info %D/info/dir
-info/cpp.info
-info/cpp.info-1
-info/cpp.info-2
-info/cpp.info-3
-info/gcc.info
-info/gcc.info-1
-info/gcc.info-10
-info/gcc.info-11
-info/gcc.info-12
-info/gcc.info-13
-info/gcc.info-14
-info/gcc.info-15
-info/gcc.info-16
-info/gcc.info-17
-info/gcc.info-18
-info/gcc.info-19
-info/gcc.info-2
-info/gcc.info-20
-info/gcc.info-21
-info/gcc.info-22
-info/gcc.info-23
-info/gcc.info-24
-info/gcc.info-25
-info/gcc.info-3
-info/gcc.info-4
-info/gcc.info-5
-info/gcc.info-6
-info/gcc.info-7
-info/gcc.info-8
-info/gcc.info-9
-@exec install-info %D/info/cpp.info %D/info/dir
-@exec install-info %D/info/gcc.info %D/info/dir
 lib/gcc-lib/i386-go32/2.7.2.2/SYSCALLS.c.X
 lib/gcc-lib/i386-go32/2.7.2.2/cc1
 lib/gcc-lib/i386-go32/2.7.2.2/cc1obj
