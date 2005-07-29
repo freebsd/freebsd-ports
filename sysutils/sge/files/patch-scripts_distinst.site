@@ -1,11 +1,15 @@
 
 $FreeBSD$
 
---- scripts/distinst.site.orig	Thu Mar 25 07:01:00 2004
-+++ scripts/distinst.site	Tue Mar 30 13:04:21 2004
-@@ -34,4 +34,4 @@
- BASEDIR=/dist/OS-SGEDIST
+--- scripts/distinst.site.orig
++++ scripts/distinst.site
+@@ -31,7 +31,7 @@
+ #___INFO__MARK_END__
  
- # Base directory where the openssl binary resides
--OPENSSL_HOME=/vol2/tools/SW/openssl-0.9.7d-static
-+OPENSSL_HOME=/usr
+ # Base directory where the openssl binary and libraries reside
+-OPENSSLBASE=/vol2/tools/SW/openssl-0.9.7e
++OPENSSLBASE=%%OPENSSLBASE%%
+ 
+ # Base directory where BDB resides
+-BERKELEYDBBASE=/vol2/SW/db-4.2.52
++BERKELEYDBBASE=%%LOCALBASE%%

@@ -3,10 +3,16 @@ After installation, you need to set up SGE.  Go to
 
 	%%PREFIX%%/%%SGE_BASE%%
 
-and run 'install_qmaster' to set up the master node of the cluster and
-run 'install_execd' for the back-end compute nodes.
+and run './install_qmaster' to set up the master node of the cluster and
+run './install_execd' for the back-end compute nodes.
+
+Before doing so, you should add sge_qmaster and sge_execd services to
+/etc/services or the appropriate network directory service.  Any free
+port numbers may be used.
+
 
 If you desire extra security, add the -csp flag to your qmaster install.
+
 
 If you wish to run PVM applications with SGE you will need to build a
 couple of binaries.  Go to
@@ -15,3 +21,4 @@ couple of binaries.  Go to
 
 and type './aimk' followed by './install.sh'.  See the documentation for
 how to set up a pvm environment.
+

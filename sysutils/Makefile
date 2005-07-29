@@ -456,6 +456,7 @@
     SUBDIR += setcdboot
     SUBDIR += setquota
     SUBDIR += sformat
+    SUBDIR += sge
     SUBDIR += sge53
     SUBDIR += sgeee53
     SUBDIR += shlock

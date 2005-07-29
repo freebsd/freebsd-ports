@@ -1,0 +1,51 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: sge
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# rc.conf variables:
+#
+# sge_cell		The SGE_CELL for this machine (default=default).
+# sge_qmaster_enable	Start the qmaster and scheduler (default=NO).
+# sge_execd_enable	Start the exec daemon (default=NO).
+
+. %%RC_SUBR%%
+
+SGE_ROOT=%%PREFIX%%/%%SGE_BASE%%
+
+name="sge"
+start_cmd="sge_start"
+stop_cmd="sge_stop"
+
+sge_start()
+{
+	if checkyesno sge_qmaster_enable; then
+		${sgemaster_script} start
+	fi
+	if checkyesno sge_execd_enable; then
+		${sgeexecd_script} start
+	fi
+}
+
+sge_stop()
+{
+	if checkyesno sge_execd_enable; then
+		${sgeexecd_script} stop
+	fi
+	if checkyesno sge_qmaster_enable; then
+		${sgemaster_script} stop
+	fi
+}
+
+load_rc_config $name
+
+sge_qmaster_enable=${sge_qmaster_enable-NO}
+sge_execd_enable=${sge_execd_enable-NO}
+sge_cell=${sge_cell:-default}
+sgemaster_script=${SGE_ROOT}/${sge_cell}/common/sgemaster
+sgeexecd_script=${SGE_ROOT}/${sge_cell}/common/sgeexecd
+
+run_rc_command $*
