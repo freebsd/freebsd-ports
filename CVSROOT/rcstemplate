@@ -5,6 +5,7 @@ Reviewed by:
 Approved by:	
 Obtained from:	
 MFC after:	
+Security:	
 CVS: ----------------------------------------------------------------------
 CVS: PR:              Fill this in if a GNATS PR is affected by the change.
 CVS: Submitted by:    Fill this in if someone else sent in the change.
@@ -13,3 +14,7 @@ CVS: Approved by:     Fill this in if you needed approval for this commit.
 CVS: Obtained from:   Fill this in if the change is from third party software.
 CVS: MFC after:       N [day[s]|week[s]|month[s]]
 CVS:	Fill in to get MFC notification later. (days assumed unless specified)
+CVS: Security:        vulnerability reference or description
+CVS:	If the change is related to a security vulnerability, include one or
+CVS:	more references (e.g. CVE names, VuXML IDs, URLs) or a description
+CVS:	of the issue.  Please use one `Security:' entry per reference.
