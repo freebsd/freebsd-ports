@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ipy
-PORTVERSION=	0.41
+PORTVERSION=	0.42
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	http://c0re.23.nu/c0de/IPy/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,5 +18,8 @@ COMMENT=	A Python module for handling IPv4 and IPv6 Addresses and Networks
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+
+test: install
+	${PYTHON_CMD} ${WRKSRC}/test/test_IPy.py
 
 .include <bsd.port.mk>
