@@ -4,8 +4,8 @@ well as high resolution/high color modes on many popular graphics adapters.  As
 of now, support for many more chipsets had been added.
 
 It supports transparent virtual console switching, that is, you can switch
-consoles to and from text and graphics mode consoles using alt-[function key].
-Also, SVGAlib corrects most of VGAlib's textmode corruption behaviour by
+consoles to and from text and graphics mode consoles using Alt-[function key].
+Also, SVGAlib corrects most of VGAlib's textmode corruption behavior by
 catching SIGSEGV, SIGFPE, SIGILL, and other fatal signals and ensuring that a
 program is running in the currently visible virtual console before setting a
 graphics mode.

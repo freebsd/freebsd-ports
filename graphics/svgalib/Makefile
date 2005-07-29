@@ -7,7 +7,7 @@
 
 PORTNAME=	svgalib
 PORTVERSION=	1.4.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.svgalib.org/
 
@@ -21,12 +21,6 @@ MANCOMPRESSED=	yes
 ALL_TARGET=	shared static
 
 ONLY_FOR_ARCHS=	i386
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400000
-BROKEN=		"3.* isn't supported - please upgrade to use the port"
-.endif
 
 .for i in 1 2 3 4 5 6 7 8 9
 .if exists(${FILESDIR}/man${i})
@@ -46,4 +40,4 @@ post-install:
 	cd ${WRKSRC}/include/linux && \
 		${INSTALL_DATA} keyboard.h kd.h ${PREFIX}/include/linux
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
