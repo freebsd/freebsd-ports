@@ -37,7 +37,7 @@ post-extract:
 	@${FIND} ${WRKSRC} -name CVS | ${XARGS} -t ${RM} -rf
 
 do-configure:
-	@${ECHO_MSG} "pcgen.filepaths=user" > ${WRKSRC}/filepaths.ini
+	@${ECHO_CMD} "pcgen.filepaths=user" > ${WRKSRC}/filepaths.ini
 	@${SED} \
 	  -e 's|^java|JAVA_VERSION="1.4+" "${LOCALBASE}/bin/java"|' \
 	  -e 's|`dirname $$0`|"${DATADIR}"|' \
