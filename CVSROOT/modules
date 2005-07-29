@@ -9415,6 +9415,7 @@ polipo		ports/www/polipo
 poly1305aes	ports/security/poly1305aes
 polygraph	ports/benchmarks/polygraph
 polymake	ports/math/polymake
+polyml		ports/lang/polyml
 polypaudio	ports/audio/polypaudio
 polypuzzle	ports/games/polypuzzle
 pop-before-smtp	ports/mail/pop-before-smtp
