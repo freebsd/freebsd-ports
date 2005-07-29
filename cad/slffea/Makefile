@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}13
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	San Le's Free Finite Element Analysis
 
 BROKEN=		Size mismatch
