@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+lib/php/pear/.registry/text_password.reg
+share/pear/Text/Password.php
+share/pear/packages/pear-Text_password-1.0/package.xml
+share/pear/tests/Text_password/01-text-password.phpt
+@dirrm share/pear/Text
+@dirrm share/pear/packages/pear-Text_password-1.0
+@dirrm share/pear/tests/Text_password
+@unexec rmdir %D/share/pear/packages 2>/dev/null || true
+@unexec rmdir %D/share/pear/tests 2>/dev/null || true
