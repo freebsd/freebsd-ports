@@ -1,0 +1,7 @@
+===============================================================================
+You should now copy the sample configuration file
+
+  %%DATADIR%%/ccmalloc.cfg
+
+to ~/.ccmalloc and edit it as appropriate.
+===============================================================================
