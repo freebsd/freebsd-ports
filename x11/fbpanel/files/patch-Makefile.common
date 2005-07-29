@@ -1,17 +1,18 @@
---- Makefile.common.orig	Sat Nov  6 07:36:35 2004
-+++ Makefile.common	Sat Dec 18 17:35:28 2004
-@@ -15,12 +15,9 @@
- endif
- endif
+--- Makefile.common.orig	Thu Jul 28 22:35:08 2005
++++ Makefile.common	Thu Jul 28 22:36:06 2005
+@@ -83,13 +83,11 @@
+ # compile flags
  
--CC = gcc
-+CC ?= gcc
- LIBS = $(shell pkg-config --libs gtk+-2.0 gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0) -L/usr/X11R6/lib  -lXmu
--INCS2 = $(shell pkg-config --cflags gtk+-2.0 gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0)
--INCS := $(INCS2:-I%=-isystem%)
--# first = may be overwriten by command line or env. variable	
--CFLAGS = -O2
+ RM      = rm -f
+-CC      = gcc
++CC      ?= gcc
+ AR      = ar
+ LIBS    = $(shell pkg-config --libs gtk+-2.0 gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0) -L/usr/X11R6/lib  -lXmu
+-INCS2   = $(shell pkg-config --cflags gtk+-2.0 gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0)
+-INCS   := $(INCS2:-I%=-isystem %)
 +INCS = $(shell pkg-config --cflags gtk+-2.0 gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0)
- # this one always applays
- CFLAGS += -Wall
- ifneq (,$(DEVEL))
+ 
+-CFLAGS = -O2
+ ifeq (1,$(DEVEL))
+ override CFLAGS += -g
+ endif

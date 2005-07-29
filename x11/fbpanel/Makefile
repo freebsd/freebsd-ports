@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fbpanel
-PORTVERSION=	4.1
-PORTREVISION=	1
+PORTVERSION=	4.3
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,10 +19,15 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --cpu=off
+CFLAGS+=	-I${WRKSRC}
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 MAN1=		fbpanel.1
 MANCOMPRESSED=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|share/man|man|g' ${WRKSRC}/man/Makefile
 
 post-install:
 	@${ECHO_MSG} ""
