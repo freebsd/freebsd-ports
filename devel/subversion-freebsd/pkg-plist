@@ -256,6 +256,29 @@ lib/libsvn_wc-1.so.0
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/wc.pyc
 %%WITH_PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/libsvn
 %%WITH_PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/svn
+%%WITH_RUBY%%lib/libsvn_swig_ruby-1.a
+%%WITH_RUBY%%lib/libsvn_swig_ruby-1.so
+%%WITH_RUBY%%lib/libsvn_swig_ruby-1.so.0
+%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/core.so
+%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/client.so
+%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/delta.so
+%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/fs.so
+%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/ra.so
+%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/repos.so
+%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/wc.so
+%%WITH_RUBY%%%%RUBY_SITELIBDIR%%/svn/client.rb
+%%WITH_RUBY%%%%RUBY_SITELIBDIR%%/svn/core.rb
+%%WITH_RUBY%%%%RUBY_SITELIBDIR%%/svn/delta.rb
+%%WITH_RUBY%%%%RUBY_SITELIBDIR%%/svn/error.rb
+%%WITH_RUBY%%%%RUBY_SITELIBDIR%%/svn/fs.rb
+%%WITH_RUBY%%%%RUBY_SITELIBDIR%%/svn/info.rb
+%%WITH_RUBY%%%%RUBY_SITELIBDIR%%/svn/ra.rb
+%%WITH_RUBY%%%%RUBY_SITELIBDIR%%/svn/repos.rb
+%%WITH_RUBY%%%%RUBY_SITELIBDIR%%/svn/util.rb
+%%WITH_RUBY%%%%RUBY_SITELIBDIR%%/svn/wc.rb
+%%WITH_RUBY%%@dirrm %%RUBY_SITEARCHLIBDIR%%/svn/ext
+%%WITH_RUBY%%@dirrm %%RUBY_SITEARCHLIBDIR%%/svn
+%%WITH_RUBY%%@dirrm %%RUBY_SITELIBDIR%%/svn
 @dirrm %%DATADIR%%/backup
 @dirrm %%DATADIR%%/bdb
 @dirrm %%DATADIR%%/client-side

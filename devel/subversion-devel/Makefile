@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/tarballs/
 
@@ -104,6 +104,16 @@ DEPENDS_ARGS+=		WANT_SWIG_PYTHON=yes
 PLIST_SUB+=		WITH_PYTHON=""
 .else
 PLIST_SUB+=		WITH_PYTHON="@comment "
+.endif
+
+.if defined(WITH_RUBY)
+USE_RUBY=		yes
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+SWIG_BINDINGS+=		ruby
+DEPENDS_ARGS+=		WANT_SWIG_RUBY=yes
+PLIST_SUB+=		WITH_RUBY=""
+.else
+PLIST_SUB+=		WITH_RUBY="@comment "
 .endif
 
 #.if defined(WITH_JAVA)
@@ -217,6 +227,12 @@ pre-extract:
 	@${ECHO_MSG} "You can enable Python bindings by defining WITH_PYTHON."
 .endif
 	@${ECHO_MSG} ""
+.if defined(WITH_RUBY)
+	@${ECHO_MSG} "Build with Ruby bindings."
+.else
+	@${ECHO_MSG} "You can enable Ruby bindings by defining WITH_RUBY."
+.endif
+	@${ECHO_MSG} ""
 #.if defined(WITH_JAVA)
 #	@${ECHO_MSG} "Build with Java (JavaHL) bindings."
 #.else
@@ -300,8 +316,8 @@ pre-configure:
 .if !defined(WITHOUT_BDB)
 	@if [ `${APR_APU_DIR}/${APU_CONFIG} --db-version` != "4" ] ; then \
 		${ECHO_MSG} "" ; \
- 		${ECHO_MSG} 'You should build `'"${APR_PORT}' with db4 support to use subversion with it." ; \
- 		${ECHO_MSG} 'Please rebuild `'"${APR_PORT}' with option "'`'"${OPT_NAME}' and try again." ; \
+		${ECHO_MSG} 'You should build `'"${APR_PORT}' with db4 support to use subversion with it." ; \
+		${ECHO_MSG} 'Please rebuild `'"${APR_PORT}' with option "'`'"${OPT_NAME}' and try again." ; \
 		${ECHO_MSG} "" ; \
 		${ECHO_MSG} "Or you can disable db4 support. Only 'fs' repository backend will be availible." ; \
 		${ECHO_MSG} "To disable db4 support, define WITHOUT_BDB." ; \
@@ -318,6 +334,10 @@ post-build:
 .if defined(WITH_PYTHON)
 	cd ${WRKSRC} ; \
 	  ${MAKE} swig-py
+.endif
+.if defined(WITH_RUBY)
+	cd ${WRKSRC} ; \
+	  ${MAKE} swig-rb
 .endif
 #.if defined(WITH_JAVA)
 #	@${MKDIR} ${WRKSRC}/subversion/bindings/java/javahl/classes
@@ -340,11 +360,8 @@ post-install:	${MKREPOS_TARGET}
 	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
 	done
 .if defined(WITH_BOOK)
-	@${MKDIR} ${DOCSDIR}/book/images
-	cd ${WRKSRC}/doc/book/book ; \
+	cd ${WRKSRC}/doc/book ; \
 	  ${INSTALL_DATA} svn-book.html svn-book.pdf ${DOCSDIR}/book
-	cd ${WRKSRC}/doc/book/book/images ; \
-	  ${INSTALL_DATA} *.png ${DOCSDIR}/book/images
 .endif
 .endif
 .if defined(WITH_PERL)
@@ -355,6 +372,10 @@ post-install:	${MKREPOS_TARGET}
 .if defined(WITH_PYTHON)
 	cd ${WRKSRC} ; \
 	  ${MAKE} install-swig-py
+.endif
+.if defined(WITH_RUBY)
+	cd ${WRKSRC} ; \
+	  ${MAKE} install-swig-rb
 .endif
 #.if defined(WITH_JAVA)
 #	cd ${WRKSRC} ; \
