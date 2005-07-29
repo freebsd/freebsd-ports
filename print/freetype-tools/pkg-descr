@@ -1,0 +1,9 @@
+This includes some tools that are in FreeType 1's contrib directory.
+
+ttf2pfb: Converting TrueType fonts to the Postscript Type 1 format.
+ttf2pk:  A simple conversion tool to bring TrueType quality to the
+         TeX world.
+ttf2bdf: Produce bitmapped fonts from TrueType files for your X11
+         applications.
+
+WWW: http://freetype.sourceforge.net/freetype1/projects.html
