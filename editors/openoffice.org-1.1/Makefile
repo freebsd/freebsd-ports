@@ -189,12 +189,12 @@ install-user:
 
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
-	@${CP} ${FILESDIR}/openoffice-wrapper ${WRKDIR}/
+	@${CP} ${FILESDIR}/openoffice.org-wrapper ${WRKDIR}/
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
 			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
 			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
-			${WRKDIR}/openoffice-wrapper
-	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice-wrapper \
+			${WRKDIR}/openoffice.org-wrapper
+	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice.org-wrapper \
 		${PREFIX}/bin/${EXECBASE}
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/openoffice.org
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-sagenda

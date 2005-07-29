@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-2-RC/files/Attic/openoffice-wrapper,v 1.15 2005-05-15 04:08:55 maho Exp $
+# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-3-RC/files/Attic/openoffice.org-wrapper,v 1.1 2005-07-29 01:44:40 maho Exp $
 
 oopath=%%PREFIX%%/%%INSTALLATION_BASEDIR%%/program/
 program=`echo $0 | sed -e 's|.*-%%RELEASE_NR%%m%%MILESTONE%%-||'`
