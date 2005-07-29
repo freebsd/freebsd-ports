@@ -1,0 +1,9 @@
+#!/bin/sh
+
+USERDB="$HOME/.polyml/ML_dbase"
+if [ ! -f "$USERDB" ]; then
+	USERDB=""
+fi
+
+exec %%PREFIX%%/lib/polyml/poly $USERDB $*
+

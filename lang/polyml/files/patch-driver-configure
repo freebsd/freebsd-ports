@@ -1,0 +1,13 @@
+--- configure.orig	Mon Sep 30 19:25:39 2002
++++ configure	Sun Jun 12 11:57:31 2005
+@@ -12,8 +12,8 @@
+ INCLUDES=""
+ LIBS=""
+ OBJS=""
+-INSTALLDIR="/usr/bin"
+-DEFAULT_POLYPATH=.:/usr/lib/poly:/usr/local/lib/poly
++INSTALLDIR=$1/lib/polyml
++DEFAULT_POLYPATH=.:$1/lib/polyml
+ 
+ # Basic operating system.  Use this to find the other parameters.
+ OS=`uname`
