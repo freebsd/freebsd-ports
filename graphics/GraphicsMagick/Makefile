@@ -28,6 +28,7 @@ OPTIONS+=	FPX "Build FPX backend -- broken on non-i386 systems" \
 		    ${ARCH:S,i386,on,:C,^[^o].*,off,}
 
 USE_BZIP2=	yes
+USE_GHOSTSCRIPT=yes
 USE_LIBTOOL_VER=15
 
 MAN1=	GraphicsMagick++-config.1 \
