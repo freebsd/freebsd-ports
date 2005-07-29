@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	svk
-PORTVERSION=	1.00
-PORTREVISION=	1
+PORTVERSION=	1.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLKAO
@@ -115,14 +114,16 @@ MAN3=		SVK.3 \
 IGNORE=		This program only support perl 5.8.0 or above
 .endif
 
+.if ${PERL_LEVEL} < 500807
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Encode.pm:${PORTSDIR}/devel/p5-Encode
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Encode.pm:${PORTSDIR}/devel/p5-Encode
+.endif
+
 pre-everything::
 	@${ECHO} ""
 	@${ECHO} "If you see some missing dependency, please update your"
-	@${ECHO} "ports tree and upgrade it by 'portupgrade -R svk'."
+	@${ECHO} "ports tree and upgrade it with 'portupgrade -R svk'."
 	@${ECHO} ""
-
-post-patch:
-	@${FIND} ${WRKSRC} -name "*.orig" -a -exec ${RM} -f {} \;
 
 post-install:
 	@${ECHO}
