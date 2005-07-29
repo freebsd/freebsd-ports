@@ -70,6 +70,7 @@
     SUBDIR += clockspeed-conf
     SUBDIR += cloop-utils
     SUBDIR += cmdwatch
+    SUBDIR += cmospwd
     SUBDIR += coaster
     SUBDIR += cog
     SUBDIR += colorize
