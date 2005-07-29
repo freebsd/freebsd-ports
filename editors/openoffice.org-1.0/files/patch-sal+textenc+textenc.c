@@ -1,5 +1,5 @@
---- ../sal/textenc/textenc.c.orig	Mon Feb 24 17:46:29 2003
-+++ ../sal/textenc/textenc.c	Tue Feb 25 16:51:28 2003
+--- sal/textenc/textenc.c.orig	Mon Feb 24 17:46:29 2003
++++ sal/textenc/textenc.c	Tue Feb 25 16:51:28 2003
 @@ -254,7 +254,8 @@
              &aImplJISX0212TextEncodingData, /* JIS_X_0212 */
              &aImplMS1361TextEncodingData, /* MS_1361 */

@@ -1,5 +1,5 @@
---- ../solenv/bin/mapgen.pl.orig	Sat Jul 20 22:30:21 2002
-+++ ../solenv/bin/mapgen.pl	Sat Jul 20 22:31:31 2002
+--- solenv/bin/mapgen.pl.orig	Sat Jul 20 22:30:21 2002
++++ solenv/bin/mapgen.pl	Sat Jul 20 22:31:31 2002
 @@ -112,7 +112,7 @@
  
  if ($ENV{OS} eq 'SOLARIS') {

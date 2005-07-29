@@ -1,5 +1,5 @@
---- ../stoc/source/servicemanager/makefile.mk.orig	Tue Jan  1 14:12:03 2002
-+++ ../stoc/source/servicemanager/makefile.mk
+--- stoc/source/servicemanager/makefile.mk.orig	Tue Jan  1 14:12:03 2002
++++ stoc/source/servicemanager/makefile.mk
 @@ -84,9 +84,9 @@
  SHL1VERSIONMAP=$(TARGET).map
  

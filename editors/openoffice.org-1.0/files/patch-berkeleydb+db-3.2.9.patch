@@ -1,14 +1,5 @@
---- ../berkeleydb/db-3.2.9.patch.orig	Sun Jan 19 14:58:19 2003
-+++ ../berkeleydb/db-3.2.9.patch	Sun Jan 19 15:00:02 2003
-@@ -51,7 +51,7 @@
-   	   CPPFLAGS="-D_REENTRANT $CPPFLAGS";;
-   mpeix*)	   CPPFLAGS="-D_POSIX_SOURCE -D_SOCKET_SOURCE $CPPFLAGS"
-   	   LIBS="-lsocket -lsvipc $LIBS";;
--+ netbsd*)   optimize_def="-O2";;
-++ netbsd*)   optimize_def="-O";;
-   osf*)	   CPPFLAGS="-D_REENTRANT $CPPFLAGS";;
-   *qnx)	   cat >> confdefs.h <<\EOF
-   #define HAVE_QNX 1
+--- berkeleydb/db-3.2.9.patch.orig	Sun Jan 19 14:58:19 2003
++++ berkeleydb/db-3.2.9.patch	Sun Jan 19 15:00:02 2003
 @@ -62,54 +62,57 @@
    	solaris*)	JINCSUBDIRS="solaris";;
    	linux*)		JINCSUBDIRS="linux genunix";;

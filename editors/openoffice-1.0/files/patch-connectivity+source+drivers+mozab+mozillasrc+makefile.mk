@@ -1,5 +1,5 @@
---- ../connectivity/source/drivers/mozab/mozillasrc/makefile.mk.orig	Tue Mar 19 12:56:24 2002
-+++ ../connectivity/source/drivers/mozab/mozillasrc/makefile.mk	Sat May 18 15:51:13 2002
+--- connectivity/source/drivers/mozab/mozillasrc/makefile.mk.orig	Tue Mar 19 12:56:24 2002
++++ connectivity/source/drivers/mozab/mozillasrc/makefile.mk	Sat May 18 15:51:13 2002
 @@ -64,8 +64,8 @@
  #mozilla specific stuff.
  MOZ_LIB=$(SOLARVERSION)$/$(INPATH)$/lib$(UPDMINOREXT)

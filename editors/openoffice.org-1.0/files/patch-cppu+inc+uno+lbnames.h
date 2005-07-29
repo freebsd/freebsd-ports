@@ -1,5 +1,5 @@
---- ../cppu/inc/uno/lbnames.h.orig	Fri May 31 00:06:58 2002
-+++ ../cppu/inc/uno/lbnames.h	Fri May 31 00:07:22 2002
+--- cppu/inc/uno/lbnames.h.orig	Fri May 31 00:06:58 2002
++++ cppu/inc/uno/lbnames.h	Fri May 31 00:07:22 2002
 @@ -94,7 +94,7 @@
  #define	__CPPU_ENV gcc2
  #elif (__GNUC__ == 2)

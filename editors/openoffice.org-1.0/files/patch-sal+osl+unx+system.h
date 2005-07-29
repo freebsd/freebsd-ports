@@ -1,5 +1,5 @@
---- ../sal/osl/unx/system.h.orig	Tue Aug 20 15:54:55 2002
-+++ ../sal/osl/unx/system.h	Thu May  8 20:31:08 2003
+--- sal/osl/unx/system.h.orig	Tue Aug 20 15:54:55 2002
++++ sal/osl/unx/system.h	Thu May  8 20:31:08 2003
 @@ -203,12 +203,19 @@
  #   include <dlfcn.h>
  #   include <sys/filio.h>

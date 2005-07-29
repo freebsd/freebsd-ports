@@ -1,5 +1,5 @@
---- ../stoc/source/tdmanager/makefile.mk.orig	Tue Jan  1 14:12:03 2002
-+++ ../stoc/source/tdmanager/makefile.mk
+--- stoc/source/tdmanager/makefile.mk.orig	Tue Jan  1 14:12:03 2002
++++ stoc/source/tdmanager/makefile.mk
 @@ -83,9 +83,10 @@
  SHL1TARGET=	$(TARGET)
  

@@ -1,5 +1,5 @@
---- ../tools/source/rc/resmgr.cxx.orig	Mon Feb 24 17:46:55 2003
-+++ ../tools/source/rc/resmgr.cxx	Tue Feb 25 17:09:39 2003
+--- tools/source/rc/resmgr.cxx.orig	Mon Feb 24 17:46:55 2003
++++ tools/source/rc/resmgr.cxx	Tue Feb 25 17:09:39 2003
 @@ -1189,6 +1189,8 @@
                  return "36";
              case LANGUAGE_RUSSIAN:

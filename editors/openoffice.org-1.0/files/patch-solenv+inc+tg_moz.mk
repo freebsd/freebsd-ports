@@ -1,5 +1,5 @@
---- ../solenv/inc/tg_moz.mk.orig	Sat Jul 20 23:57:37 2002
-+++ ../solenv/inc/tg_moz.mk	Sat Jul 20 23:57:55 2002
+--- solenv/inc/tg_moz.mk.orig	Sat Jul 20 23:57:37 2002
++++ solenv/inc/tg_moz.mk	Sat Jul 20 23:57:55 2002
 @@ -36,6 +36,14 @@
  CPUCFG=_linux.cfg
  .ENDIF

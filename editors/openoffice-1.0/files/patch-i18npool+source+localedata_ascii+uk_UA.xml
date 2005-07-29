@@ -1,5 +1,5 @@
---- ../i18npool/source/localedata_ascii/uk_UA.xml.orig	Thu Jan  1 00:00:00 1970
-+++ ../i18npool/source/localedata_ascii/uk_UA.xml	Fri Feb 28 13:04:01 2003
+--- i18npool/source/localedata_ascii/uk_UA.xml.orig	Thu Jan  1 00:00:00 1970
++++ i18npool/source/localedata_ascii/uk_UA.xml	Fri Feb 28 13:04:01 2003
 @@ -0,0 +1,451 @@
 +<?xml version="1.0" encoding="UTF-8"?>
 +<!DOCTYPE Locale SYSTEM 'locale.dtd'>

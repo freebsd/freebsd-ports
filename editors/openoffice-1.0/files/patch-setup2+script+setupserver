@@ -1,5 +1,5 @@
---- ../setup2/script/setupserver.orig	Sat Apr  6 12:22:21 2002
-+++ ../setup2/script/setupserver	Wed May  1 22:30:13 2002
+--- setup2/script/setupserver.orig	Sat Apr  6 12:22:21 2002
++++ setup2/script/setupserver	Wed May  1 22:30:13 2002
 @@ -234,6 +234,7 @@
  sd_platform=`uname -s`
  case $sd_platform in

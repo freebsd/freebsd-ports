@@ -1,5 +1,5 @@
---- ../external/dt/dtpatch.sh.orig	Wed Mar 13 17:09:43 2002
-+++ ../external/dt/dtpatch.sh	Wed Mar 13 17:09:47 2002
+--- external/dt/dtpatch.sh.orig	Wed Mar 13 17:09:43 2002
++++ external/dt/dtpatch.sh	Wed Mar 13 17:09:47 2002
 @@ -96,7 +96,7 @@
      done
  

@@ -1,5 +1,5 @@
---- ../bridges/prj/build.lst.orig	Tue Mar 19 22:06:50 2002
-+++ ../bridges/prj/build.lst	Tue Jun  4 12:24:46 2002
+--- bridges/prj/build.lst.orig	Tue Mar 19 22:06:50 2002
++++ bridges/prj/build.lst	Tue Jun  4 12:24:46 2002
 @@ -9,6 +9,8 @@
  br	bridges\source\cpp_uno\gcc2_linux_intel	nmake	-	u	br_gccli br_unotypes NULL
  br	bridges\source\cpp_uno\gcc3_linux_intel	nmake	-	u	br_gcc3li br_unotypes NULL

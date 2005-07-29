@@ -1,5 +1,5 @@
---- ../dmake/unix/linux/gnu/make.sh.orig	Wed Mar 13 20:32:53 2002
-+++ ../dmake/unix/linux/gnu/make.sh	Wed Mar 13 20:33:00 2002
+--- dmake/unix/linux/gnu/make.sh.orig	Wed Mar 13 20:32:53 2002
++++ dmake/unix/linux/gnu/make.sh	Wed Mar 13 20:33:00 2002
 @@ -3,188 +3,188 @@
  mkdir objects
  

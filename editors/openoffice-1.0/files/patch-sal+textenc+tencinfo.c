@@ -1,5 +1,5 @@
---- ../sal/textenc/tencinfo.c.orig	Wed Jul 31 11:44:35 2002
-+++ ../sal/textenc/tencinfo.c	Wed Jul 31 11:45:47 2002
+--- sal/textenc/tencinfo.c.orig	Wed Jul 31 11:44:35 2002
++++ sal/textenc/tencinfo.c	Wed Jul 31 11:45:47 2002
 @@ -532,6 +532,7 @@
      static ImplStrCharsetDef const aUnixCharsetKOI8Tab[] =
      {

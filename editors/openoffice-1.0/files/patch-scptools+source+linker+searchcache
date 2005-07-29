@@ -1,5 +1,5 @@
---- ../scptools/source/linker/searchcache.hxx.orig	Thu Mar 27 23:21:09 2003
-+++ ../scptools/source/linker/searchcache.hxx	Thu Mar 27 23:21:40 2003
+--- scptools/source/linker/searchcache.hxx.orig	Thu Mar 27 23:21:09 2003
++++ scptools/source/linker/searchcache.hxx	Thu Mar 27 23:21:40 2003
 @@ -72,11 +72,11 @@
  //	types
  ///////////////////////////////////////////////////////////////////////////////
@@ -14,8 +14,8 @@
  };
  DECLARE_LIST( IncludeList, Include* )
  
---- ../scptools/source/linker/searchcache.cxx.orig	Thu Mar 27 23:23:04 2003
-+++ ../scptools/source/linker/searchcache.cxx	Thu Mar 27 23:23:51 2003
+--- scptools/source/linker/searchcache.cxx.orig	Thu Mar 27 23:23:04 2003
++++ scptools/source/linker/searchcache.cxx	Thu Mar 27 23:23:51 2003
 @@ -218,7 +218,7 @@
  		rPath += aDelim;
  }

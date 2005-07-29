@@ -1,5 +1,5 @@
---- ../offapi/util/makefile.pmk.orig	Mon Mar 11 01:37:55 2002
-+++ ../offapi/util/makefile.pmk	Mon Mar 11 01:37:57 2002
+--- offapi/util/makefile.pmk.orig	Mon Mar 11 01:37:55 2002
++++ offapi/util/makefile.pmk	Mon Mar 11 01:37:57 2002
 @@ -85,7 +85,7 @@
  
  URDDOC=TRUE

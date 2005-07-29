@@ -1,5 +1,5 @@
---- ../sal/inc/rtl/textenc.h.orig	Mon Feb 24 17:46:26 2003
-+++ ../sal/inc/rtl/textenc.h	Tue Feb 25 16:45:00 2003
+--- sal/inc/rtl/textenc.h.orig	Mon Feb 24 17:46:26 2003
++++ sal/inc/rtl/textenc.h	Tue Feb 25 16:45:00 2003
 @@ -173,8 +173,9 @@
  #define RTL_TEXTENCODING_MS_1361                (RTL_TEXTENC_CAST( 84 ))
  #define RTL_TEXTENCODING_GB_18030               (RTL_TEXTENC_CAST( 85 ))

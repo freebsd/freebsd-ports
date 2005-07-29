@@ -1,5 +1,5 @@
---- ../setup2/source/custom/jvmsetup/jvmdlg.cxx.orig	Sat Jul 20 23:33:50 2002
-+++ ../setup2/source/custom/jvmsetup/jvmdlg.cxx	Sat Jul 20 23:34:00 2002
+--- setup2/source/custom/jvmsetup/jvmdlg.cxx.orig	Sat Jul 20 23:33:50 2002
++++ setup2/source/custom/jvmsetup/jvmdlg.cxx	Sat Jul 20 23:34:00 2002
 @@ -154,7 +154,7 @@
  
  #if defined (OS2)

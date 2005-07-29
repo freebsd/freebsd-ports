@@ -1,5 +1,5 @@
---- ../package/source/zippackage/ZipPackageFolder.cxx.orig	Wed Jun 12 23:09:16 2002
-+++ ../package/source/zippackage/ZipPackageFolder.cxx	Wed Jun 12 23:10:42 2002
+--- package/source/zippackage/ZipPackageFolder.cxx.orig	Wed Jun 12 23:09:16 2002
++++ package/source/zippackage/ZipPackageFolder.cxx	Wed Jun 12 23:10:42 2002
 @@ -212,7 +212,7 @@
  	return maContents.size() > 0;
  }

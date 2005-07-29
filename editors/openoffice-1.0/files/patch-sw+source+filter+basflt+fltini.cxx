@@ -1,5 +1,5 @@
---- ../sw/source/filter/basflt/fltini.cxx.orig	Mon Feb 24 17:46:43 2003
-+++ ../sw/source/filter/basflt/fltini.cxx	Tue Feb 25 16:59:03 2003
+--- sw/source/filter/basflt/fltini.cxx.orig	Mon Feb 24 17:46:43 2003
++++ sw/source/filter/basflt/fltini.cxx	Tue Feb 25 16:59:03 2003
 @@ -1007,7 +1007,8 @@
  		sToken081[] = "JIS_X_212",
  		sToken082[] = "MS_1361",

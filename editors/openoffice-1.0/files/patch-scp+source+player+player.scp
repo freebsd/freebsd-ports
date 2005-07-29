@@ -1,5 +1,5 @@
---- ../scp/source/player/player.scp.orig	Sun Jul 21 00:30:27 2002
-+++ ../scp/source/player/player.scp	Sun Jul 21 00:30:28 2002
+--- scp/source/player/player.scp.orig	Sun Jul 21 00:30:27 2002
++++ scp/source/player/player.scp	Sun Jul 21 00:30:28 2002
 @@ -62,7 +62,7 @@
  // directories
  ////////////////////////

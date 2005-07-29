@@ -1,6 +1,5 @@
-diff -ruN /dev/null ../bridges/source/cpp_uno/gcc2_freebsd_intel-sjlj/cpp2uno.cxx
 --- /dev/null	Thu Jan  1 01:00:00 1970
-+++ ../bridges/source/cpp_uno/gcc2_freebsd_intel-sjlj/cpp2uno.cxx	Tue Jun  4 10:49:43 2002
++++ bridges/source/cpp_uno/gcc2_freebsd_intel-sjlj/cpp2uno.cxx	Tue Jun  4 10:49:43 2002
 @@ -0,0 +1,615 @@
 +/*************************************************************************
 + *
@@ -617,9 +616,9 @@ diff -ruN /dev/null ../bridges/source/cpp_uno/gcc2_freebsd_intel-sjlj/cpp2uno.cx
 +	CPPU_CURRENT_NAMESPACE::cppu_ext_getMapping( ppMapping, pFrom, pTo );
 +}
 +
-diff -ruN /dev/null ../bridges/source/cpp_uno/gcc2_freebsd_intel-sjlj/except.cxx
+
 --- /dev/null	Thu Jan  1 01:00:00 1970
-+++ ../bridges/source/cpp_uno/gcc2_freebsd_intel-sjlj/except.cxx	Tue Jun  4 10:49:44 2002
++++ bridges/source/cpp_uno/gcc2_freebsd_intel-sjlj/except.cxx	Tue Jun  4 10:49:44 2002
 @@ -0,0 +1,365 @@
 +/*************************************************************************
 + *
@@ -986,9 +985,9 @@ diff -ruN /dev/null ../bridges/source/cpp_uno/gcc2_freebsd_intel-sjlj/except.cxx
 +
 +}
 +
-diff -ruN /dev/null ../bridges/source/cpp_uno/gcc2_freebsd_intel-sjlj/gcc2_freebsd_intel.hxx
+
 --- /dev/null	Thu Jan  1 01:00:00 1970
-+++ ../bridges/source/cpp_uno/gcc2_freebsd_intel-sjlj/gcc2_freebsd_intel.hxx	Tue Jun  4 10:49:36 2002
++++ bridges/source/cpp_uno/gcc2_freebsd_intel-sjlj/gcc2_freebsd_intel.hxx	Tue Jun  4 10:49:36 2002
 @@ -0,0 +1,153 @@
 +/*************************************************************************
 + *
@@ -1145,7 +1144,7 @@ diff -ruN /dev/null ../bridges/source/cpp_uno/gcc2_freebsd_intel-sjlj/gcc2_freeb
 +
 diff -ruN /dev/null ../bridges/source/cpp_uno/gcc2_freebsd_intel-sjlj/makefile.mk
 --- /dev/null	Thu Jan  1 01:00:00 1970
-+++ ../bridges/source/cpp_uno/gcc2_freebsd_intel-sjlj/makefile.mk	Tue Jun  4 12:20:58 2002
++++ bridges/source/cpp_uno/gcc2_freebsd_intel-sjlj/makefile.mk	Tue Jun  4 12:20:58 2002
 @@ -0,0 +1,109 @@
 +#*************************************************************************
 +#
@@ -1258,7 +1257,7 @@ diff -ruN /dev/null ../bridges/source/cpp_uno/gcc2_freebsd_intel-sjlj/makefile.m
 +
 diff -ruN /dev/null ../bridges/source/cpp_uno/gcc2_freebsd_intel-sjlj/uno2cpp.cxx
 --- /dev/null	Thu Jan  1 01:00:00 1970
-+++ ../bridges/source/cpp_uno/gcc2_freebsd_intel-sjlj/uno2cpp.cxx	Tue Jun  4 10:49:44 2002
++++ bridges/source/cpp_uno/gcc2_freebsd_intel-sjlj/uno2cpp.cxx	Tue Jun  4 10:49:44 2002
 @@ -0,0 +1,473 @@
 +/*************************************************************************
 + *

@@ -1,5 +1,5 @@
---- ../offapi/com/sun/star/setup/OSType.idl.orig	Mon Dec 18 16:34:26 2000
-+++ ../offapi/com/sun/star/setup/OSType.idl	Sun Jul 21 01:37:15 2002
+--- offapi/com/sun/star/setup/OSType.idl.orig	Mon Dec 18 16:34:26 2000
++++ offapi/com/sun/star/setup/OSType.idl	Sun Jul 21 01:37:15 2002
 @@ -88,6 +88,9 @@
  	UNIX_LINUX,
  

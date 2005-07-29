@@ -1,5 +1,5 @@
---- ../sal/osl/unx/system.c.orig	Tue Aug 20 08:49:46 2002
-+++ ../sal/osl/unx/system.c	Sat Apr 19 22:15:25 2003
+--- sal/osl/unx/system.c.orig	Tue Aug 20 08:49:46 2002
++++ sal/osl/unx/system.c	Sat Apr 19 22:15:25 2003
 @@ -74,7 +74,8 @@
  static pthread_mutex_t getrtl_mutex = PTHREAD_MUTEX_INITIALIZER;
  

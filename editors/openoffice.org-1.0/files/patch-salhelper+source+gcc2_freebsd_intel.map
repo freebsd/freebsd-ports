@@ -1,5 +1,5 @@
 --- /dev/null	Thu Jun  6 20:06:24 2002
-+++ ../salhelper/source/gcc2_freebsd_intel.map	Thu Jun  6 20:02:18 2002
++++ salhelper/source/gcc2_freebsd_intel.map	Thu Jun  6 20:02:18 2002
 @@ -0,0 +1,28 @@
 +SALHLP_1_0 {
 +global:

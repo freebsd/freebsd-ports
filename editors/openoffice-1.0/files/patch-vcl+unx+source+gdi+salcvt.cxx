@@ -1,5 +1,5 @@
---- ../vcl/unx/source/gdi/salcvt.cxx.orig	Mon Feb 24 17:46:21 2003
-+++ ../vcl/unx/source/gdi/salcvt.cxx	Tue Feb 25 17:21:50 2003
+--- vcl/unx/source/gdi/salcvt.cxx.orig	Mon Feb 24 17:46:21 2003
++++ vcl/unx/source/gdi/salcvt.cxx	Tue Feb 25 17:21:50 2003
 @@ -261,6 +261,17 @@
  					||	( nChar >= 0x2500 && nChar <= 0x25a0 );
  			break;

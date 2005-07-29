@@ -1,5 +1,5 @@
---- ../i18npool/source/localedata/localedata.cxx.orig	Mon Feb 24 17:47:22 2003
-+++ ../i18npool/source/localedata/localedata.cxx	Tue Feb 25 16:41:58 2003
+--- i18npool/source/localedata/localedata.cxx.orig	Mon Feb 24 17:47:22 2003
++++ i18npool/source/localedata/localedata.cxx	Tue Feb 25 16:41:58 2003
 @@ -150,6 +150,7 @@
  	{ "pt_BR",  lcl_ASCII },
  	{ "pt_PT",  lcl_ASCII },

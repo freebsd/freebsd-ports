@@ -1,5 +1,5 @@
---- ../cppu/source/uno/data.cxx.kan	Wed Jul 24 23:39:23 2002
-+++ ../cppu/source/uno/data.cxx	Wed Jul 24 23:38:49 2002
+--- cppu/source/uno/data.cxx.kan	Wed Jul 24 23:39:23 2002
++++ cppu/source/uno/data.cxx	Wed Jul 24 23:38:49 2002
 @@ -295,7 +295,7 @@
  #	pragma pack(8)
  #endif

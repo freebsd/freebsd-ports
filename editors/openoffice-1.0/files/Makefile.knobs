@@ -1,0 +1,49 @@
+.if defined(WITH_DEBUG)
+CFLAGS+=	-g
+.if ${WITH_DEBUG} == 2
+BUILD=		dmake debug="true"
+.else
+BUILD=		dmake
+.endif
+.else
+BUILD=		dmake strip="true"
+.endif
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+.endif
+
+pre-fetch:
+	@${ECHO}
+	@${ECHO} "OPTIONS:"
+.if !defined(WITH_DEBUG)
+	@${ECHO}
+	@${ECHO} "You can compile OO with debug symbols"
+	@${ECHO} "if you call make with WITH_DEBUG=1"
+	@${ECHO}
+	@${ECHO} "If you set WITH_DEBUG=2, you add internal"
+	@${ECHO} "OO.org debug support."
+	@${ECHO}
+.endif
+.if !defined(WITH_TTF_BYTECODE_ENABLED)
+	@${ECHO}
+	@${ECHO} "You may set WITH_TTF_BYTECODE_ENABLED=YES"
+	@${ECHO} "if you like to use the Freetype library to"
+	@${ECHO} "render TTF fonts. Normally the TTF lib is"
+	@${ECHO} "not used to render fonts."
+	@${ECHO}
+	@${ECHO} "If you have licensed the Apple patents"
+	@${ECHO} "US05155805 US05159668 and US05325479"
+	@${ECHO} "you can enable this option to get better"
+	@${ECHO} "quality of glyphs at small bitmap sizes."
+	@${ECHO}
+.endif
+	@${ECHO}
+	@${ECHO} "NOTICE:"
+	@${ECHO}
+	@${ECHO} "To build Openoffice, you should have a lot"
+.if defined(WITH_DEBUG)
+	@${ECHO} "of free diskspace (~ 8GB)."
+.else
+	@${ECHO} "of free diskspace (~ 4GB)."
+.endif

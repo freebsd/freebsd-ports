@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/editors/openoffice-1.0/files/Attic/openoffice.org-wrapper,v 1.1 2005-07-29 02:16:38 maho Exp $
+
+oopath=%%PREFIX%%/OpenOffice.org1.0.3/program/
+program=`echo $0 | sed -e 's|.*-%%RELEASE_NR%%-||'`
+
+case $program in
+$0)
+	exec $oopath/soffice "$@"
+	;;
+	*)
+	exec $oopath/$program "$@"
+	;;
+esac

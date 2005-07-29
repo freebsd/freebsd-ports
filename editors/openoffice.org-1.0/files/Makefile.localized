@@ -1,0 +1,157 @@
+# localized makefile
+# Whom:         Maho Nakata <maho@FreeBSD.org>
+# $FreeBSD$
+
+################################################################
+# consult oo_1.0.3_src/config_office/set_soenv.in for
+# available localized languages
+################################################################
+.if defined(LOCALIZED_LANG)
+################################################################
+.if ${LOCALIZED_LANG} == "ar"
+CATEGORIES=     arabic
+LANG_PKGNAME=   ar
+LANG_EXT=       96
+LANG_CONFIGURE_ARG=     ARAB
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "zh-CN"
+CATEGORIES=	chinese
+LANG_PKGNAME=	zh
+LANG_SUFFIX=	CN
+LANG_EXT=       86
+LANG_CONFIGURE_ARG=	CHINSIM
+BUILD_DEPENDS+=	${PREFIX}/share/fonts/TrueType/gbsn00lp.ttf:${PORTSDIR}/chinese/arphicttf
+L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "zh-TW"
+CATEGORIES=	chinese
+LANG_PKGNAME=	zh
+LANG_SUFFIX=	TW
+LANG_EXT=	88
+LANG_CONFIGURE_ARG=	CHINTRAD
+BUILD_DEPENDS+=	${PREFIX}/share/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf
+L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "dk"
+LANG_PKGNAME=   dk
+LANG_EXT=       45
+LANG_CONFIGURE_ARG=     DAN
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "nl"
+LANG_PKGNAME=	nl
+LANG_EXT=	31
+L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
+LANG_CONFIGURE_ARG=	DTCH
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "fr"
+CATEGORIES=     french
+LANG_PKGNAME=   fr
+LANG_EXT=       33
+L10NHELP=       helpcontent_${LANG_EXT}_unix.tgz
+LANG_CONFIGURE_ARG=     FREN
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "el"
+LANG_PKGNAME=	el
+LANG_EXT=	30
+L10NHELP=       helpcontent_${LANG_EXT}_unix.tgz
+LANG_CONFIGURE_ARG=	GREEK
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "de"
+CATEGORIES=	german
+LANG_PKGNAME=	de
+LANG_EXT=	49
+L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
+LANG_CONFIGURE_ARG=	GER
+COMMENT=	Office-Suite mit Textverarbeitung, Tabellenkalkulation, Datenbank und Praesentationsprogramm
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "it"
+LANG_PKGNAME=   it
+LANG_EXT=       39
+L10NHELP=       helpcontent_${LANG_EXT}_unix.tgz
+LANG_CONFIGURE_ARG=     ITAL
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ja"
+CATEGORIES=	japanese
+LANG_PKGNAME=   ja
+LANG_EXT=       81
+LANG_CONFIGURE_ARG=     JAPN
+MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/&,}
+RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/TrueType/sazanami-mincho.ttf:${PORTSDIR}/japanese/sazanami-ttf
+L10NHELP=       helpcontent_${LANG_EXT}_unix.tgz
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ko"
+CATEGORIES=     korean
+LANG_PKGNAME=   ko
+LANG_EXT=       82
+LANG_CONFIGURE_ARG=     KOREAN
+L10NHELP=       helpcontent_${LANG_EXT}_unix.tgz
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "pl"
+CATEGORIES=	polish
+LANG_PKGNAME=	pl
+LANG_EXT=	48
+LANG_CONFIGURE_ARG=	POL
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "pt"
+COMMENT=	Editor texto/grBaGico, banco de dados/planilha/navegador integrado
+CATEGORIES=	portuguese
+LANG_PKGNAME=	pt
+LANG_EXT=	03
+LANG_CONFIGURE_ARG=	PORT
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ru"
+CATEGORIES=	russian
+LANG_PKGNAME=	ru
+LANG_EXT=	07
+LANG_CONFIGURE_ARG=	RUSS
+L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "es"
+LANG_PKGNAME=   es
+LANG_EXT=       34
+L10NHELP=       helpcontent_${LANG_EXT}_unix.tgz
+LANG_CONFIGURE_ARG=     SPAN
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "tr"
+LANG_PKGNAME=	tr
+LANG_EXT=	90
+LANG_CONFIGURE_ARG=	TURK
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "sv"
+LANG_PKGNAME=	sv
+LANG_EXT=	46
+L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
+LANG_CONFIGURE_ARG=	SWED
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "tr"
+LANG_PKGNAME=	tr
+LANG_EXT=	90
+L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
+LANG_CONFIGURE_ARG=	TURK
+.endif
+################################################################
+.if defined(LANG_PKGNAME)
+PKGNAMEPREFIX=		${LANG_PKGNAME}-
+.endif
+.if defined(LANG_SUFFIX)
+PKGNAMESUFFIX?=		-${LANG_SUFFIX}
+.endif
+.endif
+

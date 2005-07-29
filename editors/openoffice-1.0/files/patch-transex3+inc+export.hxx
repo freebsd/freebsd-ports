@@ -1,5 +1,7 @@
---- ../transex3/inc/export.hxx.orig	Fri May 24 15:26:18 2002
-+++ ../transex3/inc/export.hxx	Tue Feb 25 17:13:09 2003
+Adding ukrainian language
+
+--- transex3/inc/export.hxx.orig	Fri May 24 15:26:18 2002
++++ transex3/inc/export.hxx	Tue Feb 25 17:13:09 2003
 @@ -187,18 +187,22 @@
  #define CATALAN_ISO				"ca"
  #define CATALAN_INDEX				28

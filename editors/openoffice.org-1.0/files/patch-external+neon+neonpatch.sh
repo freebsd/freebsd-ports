@@ -1,5 +1,5 @@
---- ../external/neon/neonpatch.sh.orig	Tue May 29 17:40:10 2001
-+++ ../external/neon/neonpatch.sh	Thu Aug  8 22:43:04 2002
+--- external/neon/neonpatch.sh.orig	Tue May 29 17:40:10 2001
++++ external/neon/neonpatch.sh	Thu Aug  8 22:43:04 2002
 @@ -119,10 +119,7 @@
  # apply the patches
  #

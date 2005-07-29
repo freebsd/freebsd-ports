@@ -1,5 +1,5 @@
---- ../sal/inc/osl/endian.h.orig	Thu May  8 20:19:09 2003
-+++ ../sal/inc/osl/endian.h	Thu May  8 20:29:00 2003
+--- sal/inc/osl/endian.h.orig	Thu May  8 20:19:09 2003
++++ sal/inc/osl/endian.h	Thu May  8 20:29:00 2003
 @@ -107,7 +107,9 @@
  #endif
  
