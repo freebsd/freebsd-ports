@@ -1,18 +1,6 @@
-
-$FreeBSD$
-
---- Makefile.in.orig
-+++ Makefile.in
-@@ -47,7 +47,7 @@
- LFLAGS	 = -i
- LDFLAGS	 = @LIBS@
- prefix   = @prefix@
--MANDIR 	 = @mandir@
-+MANDIR 	 = @prefix@/man
- FSRC	 = grammar.c scanner.c nftree.c netflow_v5.c launch.c nfstat.c util.c 
- FOBJ	 = $(FSRC:.c=.o)
- ASRC	 = $(FSRC) nfdump.c nftree_check.c nfreplay.c
-@@ -82,15 +82,15 @@
+--- Makefile.in.orig	Thu Apr 21 08:59:14 2005
++++ Makefile.in	Fri Jul 29 18:59:39 2005
+@@ -82,20 +82,16 @@
  	$(CC) $(CFLAGS) $(INCS) -o $@ nfreplay.o $(FOBJ) $(LDFLAGS)
  
  install: $(OBJECTS)
@@ -20,16 +8,25 @@ $FreeBSD$
 -	test -d $(prefix)/bin || install -d -o root -g bin -m 755 $(prefix)/bin
 -	test -d $(MANDIR) || install -d -o root -g bin -m 755 $(MANDIR)
 -	test -d $(MANDIR)/man1 || install -d -o root -g bin -m 755 $(MANDIR)/man1
-+	test -d $(prefix) || install -d -o root -g wheel -m 755 $(prefix)
-+	test -d $(prefix)/bin || install -d -o root -g wheel -m 755 $(prefix)/bin
-+	test -d $(MANDIR) || install -d -o root -g wheel -m 755 $(MANDIR)
-+	test -d $(MANDIR)/man1 || install -d -o root -g wheel -m 755 $(MANDIR)/man1
- 	$(INSTALL) -o root -g bin -m 755 nfcapd $(prefix)/bin
- 	$(INSTALL) -o root -g bin -m 755 nfdump $(prefix)/bin 
- 	$(INSTALL) -o root -g bin -m 755 nfprofile $(prefix)/bin
- 	$(INSTALL) -o root -g bin -m 755 nfreplay $(prefix)/bin
+-	$(INSTALL) -o root -g bin -m 755 nfcapd $(prefix)/bin
+-	$(INSTALL) -o root -g bin -m 755 nfdump $(prefix)/bin 
+-	$(INSTALL) -o root -g bin -m 755 nfprofile $(prefix)/bin
+-	$(INSTALL) -o root -g bin -m 755 nfreplay $(prefix)/bin
 -	test -f $(prefix)/bin/nfclean.pl || $(INSTALL) -o root -g bin -m 755 nfclean.pl $(prefix)/bin
-+	$(INSTALL) -o root -g bin -m 755 nfclean.pl $(prefix)/bin
++	$(BSD_INSTALL_PROGRAM) nfcapd $(prefix)/bin
++	$(BSD_INSTALL_PROGRAM) nfdump $(prefix)/bin 
++	$(BSD_INSTALL_PROGRAM) nfprofile $(prefix)/bin
++	$(BSD_INSTALL_PROGRAM) nfreplay $(prefix)/bin
++	$(BSD_INSTALL_SCRIPT) nfclean.pl $(prefix)/bin
  
- 	$(INSTALL) -o root -g bin -m 644 nfcapd.1 $(MANDIR)/man1
- 	$(INSTALL) -o root -g bin -m 644 nfdump.1 $(MANDIR)/man1
+-	$(INSTALL) -o root -g bin -m 644 nfcapd.1 $(MANDIR)/man1
+-	$(INSTALL) -o root -g bin -m 644 nfdump.1 $(MANDIR)/man1
+-	$(INSTALL) -o root -g bin -m 644 nfprofile.1 $(MANDIR)/man1
+-	$(INSTALL) -o root -g bin -m 644 nfreplay.1 $(MANDIR)/man1
++	$(BSD_INSTALL_MAN) nfcapd.1 $(MANDIR)/man1
++	$(BSD_INSTALL_MAN) nfdump.1 $(MANDIR)/man1
++	$(BSD_INSTALL_MAN) nfprofile.1 $(MANDIR)/man1
++	$(BSD_INSTALL_MAN) nfreplay.1 $(MANDIR)/man1
+ 
+ uninstall:
+ 	/bin/rm -f  $(prefix)/bin/nfcapd
