@@ -6,43 +6,50 @@
 #
 
 PORTNAME=	bash-completion
-PORTVERSION=	20050112
+PORTVERSION=	20050721
 CATEGORIES=	shells
 MASTER_SITES=	http://www.caliban.org/files/bash/
 
 MAINTAINER=	kirk@strauser.com
 COMMENT=	Programmable completion library for Bash 2.04 and up
 
+WRKSRC=		${WRKDIR}/bash_completion
+NO_BUILD=	yes
+USE_REINPLACE=	yes
+
+SUB_FILES=	pkg-message
+PLIST_FILES=	etc/bash_completion
+
+OPTIONS=	BASH2	"Use shells/bash2 instead of shells/bash"	off \
+		GSED	"Use GNU sed to enable additional completions"	off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_BASH2)
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash2
 .else
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 .endif
 
 .if defined(WITH_GSED)
 RUN_DEPENDS+=	gsed:${PORTSDIR}/textproc/gsed
 .endif
 
-WRKSRC=		${WRKDIR}/bash_completion
-NO_BUILD=	yes
-
-PKGMESSAGE=	${WRKDIR}/pkg-message
-PLIST_FILES=	etc/bash_completion
-
-pre-everything::
-	@${ECHO}
-	@${ECHO} "You can build ${PKGNAME} with the following options:"
-	@${ECHO} "WITH_BASH2	use shells/bash2 instead of shells/bash"
-	@${ECHO} "WITH_GSED	use GNU sed to enable additional completions"
-	@${ECHO}
-
-pre-patch:
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message >${PKGMESSAGE}
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; \
+		s|/etc/bash_completion|${PREFIX}&|g; \
+		s|/usr\(/sbin/postconf\)|${LOCALBASE}\1|g; \
+		s|/usr\(/lib/rpm/macros\)|${LOCALBASE}\1|g; \
+		s|/usr/share\(/ssl/openssl.cnf\)|/etc\1|g; \
+		s|/usr/ports|${PORTSDIR}|g; \
+		s|/usr/lib\(/aspell\)|${LOCALBASE}/share\1|g; \
+		s|/usr/share/info|&:${LOCALBASE}/info:${X11BASE}/info|g' \
+		${WRKSRC}/bash_completion
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/bash_completion ${PREFIX}/etc/bash_completion
+	${INSTALL_DATA} ${WRKSRC}/bash_completion ${PREFIX}/etc
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
