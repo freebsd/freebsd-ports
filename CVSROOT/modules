@@ -1158,6 +1158,7 @@ cmd5checkpw	ports/security/cmd5checkpw
 cmdftp		ports/ftp/cmdftp
 cmdwatch	ports/sysutils/cmdwatch
 cmios9		ports/converters/cmios9
+cmospwd		ports/sysutils/cmospwd
 cmp3		ports/audio/cmp3
 cmpsfont	ports/print/cmpsfont
 cmt		ports/audio/cmt
