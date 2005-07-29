@@ -1,25 +1,34 @@
---- Makefile.orig	Wed Jan 21 11:33:02 2004
-+++ Makefile	Wed Feb 18 10:43:15 2004
-@@ -26,12 +26,12 @@
- # along with this program; if not, write to the Free Software
- # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- 
--PREFIX=/usr
--MANDIR=$(PREFIX)/man/man8
+--- Makefile.orig      Tue Jul 26 13:25:59 2005
++++ Makefile   Tue Jul 26 15:00:51 2005
+@@ -34,20 +34,20 @@
+ LOGFAC="LOG_DAEMON"
+ LOGSET=-DLOGOPT=${LOGOPT} -DLOGFAC=${LOGFAC}
+ LANG=en
 -CC=gcc
--#CFLAGS=-Wall -ggdb
--CFLAGS=-Wall -O2
++CC?=gcc
+ SYSINS=ginstall
+-CFLAGS=-Wall -O2 ${LOGSET}
 -LDFLAGS=-L. -lripmime -lpcre #-static
-+PREFIX?=	/usr
-+MANDIR?=	$(PREFIX)/man/man8
-+CC?=		gcc
-+#CFLAGS=	-Wall -ggdb
-+CFLAGS+=	-Wall -O2 -I${PREFIX}/include
-+LDFLAGS+=	-L. -lripmime -lpcre ${_LDFLAGS}
++CFLAGS+=-Wall -O2 ${LOGSET} -I${PREFIX}/include -I/usr/local/include
++LDFLAGS+=-L. -lripmime -lpcre ${_LDFLAGS} #-static
+ 
+ PREFIX=/usr
+ #MANDIR=$(PREFIX)/share/man/man8
+-MANDIR=$(PREFIX)/man/man8
++MANDIR?=$(PREFIX)/man/man8
+ piddir=/var/run/$(PROGS)
+ datadir=/var/spool/$(PROGS)
+ notify=/var/spool/$(PROGS)/notify
+-user=mail.mail
+-userdir=/etc/$(PROGS)
+-docdir=/usr/doc/$(DISTNAME)
++user=mail:mail
++userdir=/usr/local/etc/$(PROGS)
++docdir=/usr/local/doc/$(DISTNAME)
+ # End user options
  
  OBJECTS=getline.o parsefile.o p3scan.o \
- 	scanner_basic.o scanner_avpd.o scanner_trophie.o
-@@ -62,8 +62,8 @@
+@@ -71,8 +71,8 @@
  
  dep depend .dep:
  	@echo "creating depencies"
@@ -28,9 +37,9 @@
 +	rm -f .tmp.dep
 +	@find . -name "*.c"   -maxdepth 1 -print0 | xargs -n 1 -0t $(CC) -M $(CFLAGS)  >>.tmp.dep
  	mv .tmp.dep .dep
- 	    
+ 
  install: p3scan
-@@ -143,9 +143,9 @@
+@@ -148,9 +148,9 @@
  
  fulltags:
  	@#VIM Users know why! *g*

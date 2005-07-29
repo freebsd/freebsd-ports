@@ -16,4 +16,8 @@ in kernel, and add the forwarding rule into your IPFW table,
 while 192.168.0.254 is the IP of your internal interface, 8110 is the
 default port of P3scan, and 192.168.0.0/24 is the IP range of your LAN.
 
+
+Don't forget  chown -R <clamavuser> /var/run/p3scan /var/spool/p3scan
+<clamavuser> must be same as in running clamd.
+
 **********************************************************************

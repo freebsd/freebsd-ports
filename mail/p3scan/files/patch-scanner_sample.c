@@ -1,11 +1,14 @@
---- scanner_sample.c.orig	Tue Feb 17 21:58:55 2004
-+++ scanner_sample.c	Tue Feb 17 21:59:01 2004
-@@ -31,7 +31,7 @@
+--- scanner_sample.c.orig	Fri Jul 29 10:08:05 2005
++++ scanner_sample.c	Fri Jul 29 10:08:37 2005
+@@ -31,10 +31,10 @@
   */
  
  #include <stdio.h>
 -#include <malloc.h>
-+#include <stdlib.h>
  #include <sys/un.h>
  #include <sys/socket.h>
  
++#include <stdlib.h>
+ 
+ /* we need p3scan.h */
+ #include "p3scan.h"
