@@ -22,6 +22,7 @@ OPTIONS=	POSTGRESQL "Use PostgreSQL for storage and authentication" off \
 		LDAP "Use LDAP for authentication" off \
 		BDB "Use BDB for storage and authentication" off \
 		PAM "Use PAM for authentication" off \
+		PIPE "Enable pipe auth/reg support" off \
 		DEBUG "Compile with debug information" on
 
 GNU_CONFIGURE=	yes
@@ -76,6 +77,10 @@ CONFIGURE_ARGS+=--disable-ldap
 CONFIGURE_ARGS+=--enable-pam
 .else
 CONFIGURE_ARGS+=--disable-pam
+.endif
+
+.if defined(WITH_PIPE)
+CONFIGURE_ARGS+=--enable-pipe
 .endif
 
 MAN8=		c2s.8 jabberd.8 resolver.8 router.8 s2s.8 sm.8
