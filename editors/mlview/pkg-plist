@@ -5,6 +5,7 @@ lib/libmlview.so
 lib/libmlview.so.8
 lib/libmlviewdbusclient.a
 lib/libmlviewdbusclient.so.8
+lib/libmlviewdbusclient.so
 share/gnome/applications/mlview.desktop
 share/gnome/application-registry/mlview.applications
 share/gnome/mime-info/mlview.keys
