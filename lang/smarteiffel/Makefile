@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.loria.fr/pub/loria/SmartEiffel/Oldies/
-DISTNAME=	se-${PORTVERSION}
+DISTNAME=	SmartEiffel-${PORTVERSION}
 
 MAINTAINER=	berend@pobox.com
 COMMENT=	SmartEiffel, the GNU compiler for the object-oriented language Eiffel
