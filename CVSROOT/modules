@@ -11355,7 +11355,6 @@ ssserver	ports/www/ssserver
 sst		ports/security/sst
 ssync		ports/sysutils/ssync
 st		ports/devel/st
-stackless_python	ports/lang/stackless_python
 stalepid	ports/sysutils/stalepid
 stamp		ports/graphics/stamp
 stan		ports/misc/stan
