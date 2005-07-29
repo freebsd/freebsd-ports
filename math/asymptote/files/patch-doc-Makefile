@@ -1,0 +1,13 @@
+$FreeBSD$
+--- doc/Makefile	Sat Feb 12 10:21:42 2005
++++ doc/Makefile.port	Sat Jul 23 22:03:59 2005
+@@ -46,7 +46,8 @@
+ 	${INSTALL} -d $(prefix)/info $(exampledir) $(mandir)/man1
+ 	${INSTALL} -m 644 asymptote.info $(prefix)/info
+ 	install-info --infodir=$(prefix)/info asymptote.info 
+-	${INSTALL} -m 644 asymptote.pdf $(exampledir)
++	mkdir -p $(prefix)/share/doc/asymptote
++	${INSTALL} -m 644 asymptote.pdf $(prefix)/share/doc/asymptote/
+ 	${INSTALL} -m 644 $(MANFILES) $(mandir)/man1
+ 
+ uninstall:
