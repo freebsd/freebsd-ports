@@ -268,7 +268,6 @@
     SUBDIR += spl
     SUBDIR += squeak
     SUBDIR += sr
-    SUBDIR += stackless_python
     SUBDIR += starlogo
     SUBDIR += stklos
     SUBDIR += stldoc
