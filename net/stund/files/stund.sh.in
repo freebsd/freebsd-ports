@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: stund
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+. %%RC_SUBR%%
+
+: ${stund_enable:=NO}
+: ${stund_pidfile:=/var/run/stund.pid}
+: ${stund_flags="-h \"\$stund_ip1\" -a \"\$stund_ip2\" -b"}
+
+name="stund"
+command="%%PREFIX%%/sbin/stund"
+rcvar=`set_rcvar`
+extra_commands="status"
+pidfile="$stund_pidfile"
+
+load_rc_config $name
+
+start_precmd=stund_prestart
+stund_prestart() {
+	if [ -z "$stund_ip1" -o -z "$stund_ip2" ]; then
+		echo stund: failed: you must set stund_ip1 and stund_ip2 1>&2
+		return 1
+	fi
+	return 0
+}
+
+run_rc_command "$1"
