@@ -1,2 +1,4 @@
 MD5 (ctorrent-1.3.4.tar.bz2) = 823010ec78215d476537c9eba9381cdd
 SIZE (ctorrent-1.3.4.tar.bz2) = 87333
+MD5 (patchset-ctorrent-1.3.4-dnh1.diff) = 319c7202281a87dc3a9e68f99b50741f
+SIZE (patchset-ctorrent-1.3.4-dnh1.diff) = 74172
