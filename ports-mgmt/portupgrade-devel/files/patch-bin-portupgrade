@@ -1,0 +1,22 @@
+Index: bin/portupgrade
+===================================================================
+--- bin/portupgrade	(revision 34)
++++ bin/portupgrade	(revision 36)
+@@ -1560,7 +1560,7 @@
+ 
+   timer_start(time_key = "Installation of #{pkgname}")
+ 
+-  cmdargs = [PkgDB::command(:pkg_add), '-f', pkgname]
++  cmdargs = [PkgDB::command(:pkg_add), '-f', pkgfile]
+ 
+   progress_message "Installing the new version via the package"
+ 
+@@ -1705,7 +1705,7 @@
+           id_pkgname, id_origin, pkgdep = identify_pkg(file)
+ 
+           if id_origin == origin
+-            pkglist << [PkgInfo.new(id_pkgname), file]
++            pkglist << [PkgInfo.new(id_pkgname), File.join(dir, file)]
+           end
+         }
+       }
