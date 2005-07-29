@@ -9,7 +9,8 @@ PORTNAME=	ocp
 PORTVERSION=	0.1.9
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://labs.nixia.no/
+MASTER_SITES=	http://labs.nixia.no/ \
+		http://critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@critical.ch
 COMMENT=	The legendary Open Cubic Player
