@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- libs/uti/sge_profiling.h.orig
++++ libs/uti/sge_profiling.h
+@@ -35,7 +35,7 @@
+ #include <time.h>
+ #include <sys/time.h>
+ #include <sys/times.h>
+-
++#include <pthread.h>
+ 
+ #include "basis_types.h"
+ 

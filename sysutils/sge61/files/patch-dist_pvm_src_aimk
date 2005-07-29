@@ -1,18 +1,18 @@
 
 $FreeBSD$
 
---- dist/pvm/src/aimk.orig	Fri Jul 20 01:20:20 2001
-+++ dist/pvm/src/aimk	Tue Jan 20 16:50:19 2004
-@@ -66,6 +66,8 @@
-    exit 1
- endif
+--- dist/pvm/src/aimk.orig
++++ dist/pvm/src/aimk
+@@ -73,6 +73,8 @@
+ 
+ setenv ARCH `$SGE_ROOT/util/arch`
  
 +set ARCH = `$SGE_ROOT/util/arch`
 +
  # common compiler and linker settings 
  #
  unsetenv LD_LIBRARY_PATH
-@@ -73,9 +75,9 @@
+@@ -80,9 +82,9 @@
  set MAKE       = make
  set MAKEFILE   = ../Makefile
  set SDIR       = ".."
@@ -24,17 +24,8 @@ $FreeBSD$
  set LIBS       = ""
  set PVM_ROOT   = "$PVM_ROOT"
  set PVM_ARCH   = "$PVM_ARCH"
-@@ -133,8 +135,6 @@
- set CTOR = ""
- set DTOR = ""
- 
--set ARCH = `$SGE_ROOT/util/arch`
--
- switch ($ARCH)
- 
- case aix41:
-@@ -193,6 +193,16 @@
- case linux:
+@@ -171,6 +173,16 @@
+ case lx24-x86:
     set CC = gcc
     set CFLAGS = "-O -Wall -Werror -Wstrict-prototypes -DLINUX $DEBUG_FLAG $CFLAGS"
 +   set LFLAGS = "$DEBUG_FLAG $LFLAGS"

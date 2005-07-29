@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- dist/util/arch_variables.orig	Tue Jan 20 16:27:10 2004
-+++ dist/util/arch_variables	Tue Jan 20 16:51:45 2004
-@@ -156,14 +156,14 @@
+--- dist/util/arch_variables.orig
++++ dist/util/arch_variables
+@@ -181,14 +181,14 @@
     AWK=/usr/bin/awk
     ECHO="/bin/echo"
     RC_FILE=freebsd
 -   RC_PREFIX=/usr/local/etc/rc.d
-+   RC_PREFIX=%%PREFIX%%/etc/rc.d
++   RC_PREFIX=%%LOCALBASE%%/etc/rc.d
     RC_SUFFIX=.sh
 -   XTERM=/usr/X11R6/bin/xterm
 +   XTERM=%%X11BASE%%/bin/xterm
@@ -18,6 +18,6 @@ $FreeBSD$
     RLOGIN_DAEMON=/usr/libexec/rlogind
 -   GETTEXT=/usr/local/bin/gettext
 +   GETTEXT=%%LOCALBASE%%/bin/gettext
+    RSH_DAEMON=undef
     ROOTGROUP=wheel
-    ;;
-  darwin)
+    LOADSENSOR_COMMAND=undef

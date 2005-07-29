@@ -1,14 +1,23 @@
 
 $FreeBSD$
 
---- dist/inst_sge.orig	Tue Jan 20 16:27:05 2004
-+++ dist/inst_sge	Tue Jan 20 16:50:19 2004
-@@ -2247,7 +2247,7 @@
-       SetCellDependentVariables
-    fi
- 
+--- dist/inst_sge.orig
++++ dist/inst_sge
+@@ -270,7 +270,7 @@
+    GetCell
+    GetQmasterSpoolDir $euid
+    SetCellDependentVariables
 -   SetPermissions
 +#   SetPermissions
-    MakeDirsMaster
     SelectHostNameResolving
-    AddConfiguration
+    SetProductMode
+    MakeDirsMaster
+@@ -344,7 +344,7 @@
+  GetQmasterSpoolDir $euid
+  SetCellDependentVariables
+  WindowsSupport
+- SetPermissions
++# SetPermissions
+  SelectHostNameResolving
+  SetProductMode
+  MakeDirsMaster
