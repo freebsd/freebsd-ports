@@ -15,6 +15,7 @@
     SUBDIR += arpack
     SUBDIR += arpack++
     SUBDIR += asir2000
+    SUBDIR += asymptote
     SUBDIR += atlas
     SUBDIR += atlas-devel
     SUBDIR += bamg
