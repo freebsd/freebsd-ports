@@ -7,6 +7,17 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 
+20050728:
+  AFFECTS: users of sysutils/sge and sysutils/sgeee
+  AUTHOR: brooks@FreeBSD.org
+
+  A port of SGE 6 has been installed in sysutils/sge.  SGE 6 is
+  significantly different from SGE 5 and an upgrade is only possible
+  by removing the SGE 5 install and replacing it.  The SGE vs SGEEE
+  distinction has been removed in SGE 6 so the sgeee port was removed.
+  The sge and sgeee ports were repo copied to sge53 and sgeee53
+  respectively and existing installations may continue to use them.
+
 20050727:
   AFFECTS: users of databases/firebird-server
   AUTHOR: skv@FreeBSD.org
