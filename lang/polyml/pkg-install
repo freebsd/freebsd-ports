@@ -1,0 +1,36 @@
+#!/bin/sh
+
+if [ "$2" = "POST-INSTALL" ]; then
+	if test `ulimit -Hd` -lt 917504; then
+		cat <<END
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Poly/ML memory regions (heaps, database and IO Area) are stored at !
+! fixed addresses in the processes virtual memory space, for reasons !
+! of speed.                                                          !
+!                                                                    !
+! The address space available to FreeBSD processes for heap and      !
+! data storage is limited by an administrative setting:              !
+!   sh:  ulimit -Hd                                                  !
+!   csh: limit -h datasize                                           !
+!                                                                    !
+! The maximum administrative setting is limited in turn by a kernel  !
+! parameter: maxdsiz. If the maximum datasize is too low, the        !
+! dynamic linker will load libraries into the memory regions used    !
+! by Poly/ML -- this may cause problems, including non-termination   !
+! when committing large databases.                                   !
+!                                                                    !
+! One fix is to add the following line to /boot/loader.conf before   !
+! restarting:                                                        !
+!    kern.maxdsiz="896M"                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! In order to be able to commit changes to Poly/ML's database, each  !
+! user needs to have her/his own writable copy.                      !
+!                                                                    !
+! Please login with the user you plan to use Poly/ML with and run    !
+! "make install-user" from ports/lang/polyml.                        !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+END
+	fi
+fi

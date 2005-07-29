@@ -203,6 +203,7 @@
     SUBDIR += pnet-base
     SUBDIR += pnetc
     SUBDIR += pnetlib
+    SUBDIR += polyml
     SUBDIR += ptoc
     SUBDIR += pugs
     SUBDIR += py-compiler

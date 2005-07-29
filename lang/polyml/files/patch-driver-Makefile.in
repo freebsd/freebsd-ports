@@ -1,0 +1,49 @@
+--- Makefile.in.orig	Tue Nov 14 22:01:18 2000
++++ Makefile.in	Fri Jun 10 15:27:34 2005
+@@ -15,6 +15,7 @@
+ AFLAGS    = $(CPUFLAGS) $(OSFLAGS)
+ ASFLAGS	  = $(AFLAGS)
+ CFLAGS    = $(CPUFLAGS) $(OSFLAGS) @OPTFLAGS@ @INCLUDES@ -DDEFAULT_POLYPATH=$(DEFAULT_POLYPATH)
++CFLAGSO1  = $(CPUFLAGS) $(OSFLAGS) -O1 @INCLUDES@ -DDEFAULT_POLYPATH=$(DEFAULT_POLYPATH)
+ LINTFLAGS = $(CPUFLAGS) $(OSFLAGS) @IFLAGS@
+ XLFLAGS   = @LIBS@
+ 
+@@ -32,7 +33,9 @@
+ all: $(TARGETS)
+ 
+ install: $(TARGETS)
+-	cp $(TARGETS) $(INSTALLDIR)
++	mkdir -p $(INSTALLDIR)
++	$(BSD_INSTALL_PROGRAM) $(TARGETS) $(INSTALLDIR)
++	$(BSD_INSTALL_DATA) LICENCE $(INSTALLDIR)
+  
+ POLYOBJS = \
+   mpoly.o \
+@@ -95,7 +98,26 @@
+ 	rm -f powtemp.s
+ 
+ xwindows.o: xwindows.c
+-	$(CC) $(CFLAGS) -c xwindows.c -o xwindows.o
++	$(CC) $(CFLAGSO1) -c xwindows.c -o xwindows.o
++
++# Use -O1 rather than -O2 to avoid:
++#    dereferencing type-punned pointer will break strict-aliasing rules
++# warnings (and subsequent problems with Isabelle logic compilation)
++
++arb.o: arb.c
++	$(CC) $(CFLAGSO1) -c $<
++
++processes.o: processes.c
++	$(CC) $(CFLAGSO1) -c $<
++
++realconv.o: realconv.c
++	$(CC) $(CFLAGSO1) -c $<
++
++run_time.o: run_time.c
++	$(CC) $(CFLAGSO1) -c $<
++
++i386_dep.o: i386_dep.c
++	$(CC) $(CFLAGSO1) -c $<
+ 
+ # Make sure the version is updated whenever anything is recompiled.
+ version.o: $(POLYOBJS) $(DISCGARBOBJS)
