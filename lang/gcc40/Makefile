@@ -8,15 +8,14 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.0.2
-PORTREVISION=	20050721
-CATEGORIES=	lang java
+PORTREVISION=	20050728
+CATEGORIES=	lang
 VERSIONSTRING=	4.0-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
 DISTFILES=	\
 		gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-java-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
 .if defined(WITH_FORTRAN)
@@ -50,12 +49,6 @@ CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
 
-.if ${ARCH} == amd64  ||  ${ARCH} == ia64  ||  ${ARCH} == sparc64
-WITHOUT_LIBJAVA=	yes
-.endif
-# FIXME: needed to make this port build at all.
-WITHOUT_LIBJAVA=	yes
-
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
 SUFFIX=		40
@@ -81,30 +74,10 @@ CONFIGURE_ARGS+=	--disable-shared
 ALL_TARGET=	bootstrap-lean
 PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET}
 MAN1=		cpp${SUFFIX}.1 \
-		fastjar${SUFFIX}.1 \
 		g++${SUFFIX}.1 \
 		gcc${SUFFIX}.1 \
-		gcov${SUFFIX}.1 \
-		gcj${SUFFIX}.1 \
-		gcj-dbtool${SUFFIX}.1 \
-		gcjh${SUFFIX}.1 \
-		gij${SUFFIX}.1 \
-		gjnih${SUFFIX}.1 \
-		grmic${SUFFIX}.1 \
-		grmiregistry${SUFFIX}.1 \
-		grepjar${SUFFIX}.1 \
-		jar${SUFFIX}.1 \
-		jcf-dump${SUFFIX}.1 \
-		jv-scan${SUFFIX}.1 jv-convert${SUFFIX}.1 \
-		rmic${SUFFIX}.1 rmiregistry${SUFFIX}.1
-INFO=		cpp cppinternals gcc gccinstall gccint gcj fastjar
-
-.if defined(WITHOUT_LIBJAVA)
-CONFIGURE_ARGS+=	--disable-libgcj
-PLIST_SUB+=	LIBJAVA="@comment "
-.else
-PLIST_SUB+=	LIBJAVA=""
-.endif
+		gcov${SUFFIX}.1
+INFO=		cpp cppinternals gcc gccinstall gccint
 
 .if defined(WITH_FORTRAN)
 MAN1+=	gfortran${SUFFIX}.1
@@ -116,9 +89,6 @@ PLIST_SUB+=	FORTRAN="@comment "
 
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
-.if defined(WITHOUT_LIBJAVA)
-	@${ECHO_MSG} "(without libgcj)"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
@@ -143,7 +113,7 @@ post-install:
 	for mp in ${_MANPAGES}; do \
 	  ${TEST} -e $${mp} || ${TOUCH} ${TOUCH_FLAGS} $${mp}; \
 	done
-.for f in c++ gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
+.for f in c++ gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++
 	# gij and jv-convert, for example, are not built on all platforms.
 	if [ -e ${PREFIX}/bin/${f}${SUFFIX} ]; then \
 	  ${STRIP_CMD} ${PREFIX}/bin/${f}${SUFFIX}; \
@@ -158,7 +128,7 @@ post-install:
 	         ${PREFIX}/man/man7/gfdl.7 ${PREFIX}/man/man7/gpl.7
 	# Add target libraries and include files to packaging list.
 	${RM} -f ${WRKDIR}/PLIST.lib
-.for d in ${TARGLIB:S/^${PREFIX}\///} ${TARGLIB:S/^${PREFIX}\///:S/lib/libexec/} include/gcj include/gnu include/java include/javax
+.for d in ${TARGLIB:S/^${PREFIX}\///} ${TARGLIB:S/^${PREFIX}\///:S/lib/libexec/}
 	cd ${PREFIX} ; if [ -d $d ]; then \
 	    ${FIND} $d -type f -o -type l >>${WRKDIR}/PLIST.lib ;\
 	    ${FIND} $d -type d | ${SORT} -r \
