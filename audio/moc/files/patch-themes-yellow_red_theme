@@ -1,0 +1,10 @@
+--- themes/yellow_red_theme.orig	Wed Jun 15 18:56:44 2005
++++ themes/yellow_red_theme	Fri Jul 29 10:29:23 2005
+@@ -1,7 +1,6 @@
+ # Yellow/Red theme - mostly Yellow. By Morten Grunnet Buhl
+ # Doesn't work on terminals when underline is not supported (like Linux console)
+ 
+-border			= red		default
+ background		= red		default
+ frame			= red		default
+ window_title		= yellow	default underline,dim
