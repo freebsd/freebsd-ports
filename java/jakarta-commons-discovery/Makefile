@@ -24,24 +24,19 @@ NO_BUILD=	YES
 PORTDOCS=	api LICENSE
 .endif
 JARFILE=	${PORTNAME}.jar
-PLIST_FILES+=	${JAVAJARDIR:S,^${PREFIX}/,,}/${JARFILE}
+PLIST_FILES+=	%%JAVAJARDIR%%/${JARFILE}
 
 post-extract:
 	@${MV} ${WRKSRC}/LICENSE ${WRKSRC}/docs/
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
-	@${MKDIR} ${JAVAJARDIR}
 	@${INSTALL_DATA} ${WRKSRC}/${JARFILE} ${JAVAJARDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation..."
-	@${MKDIR} ${DOCSDIR}
-.for DOCFILE in ${PORTDOCS}
-	@${CP} -r ${WRKSRC}/docs/${DOCFILE} ${DOCSDIR}/
-	@${ECHO_MSG} -n " ${DOCFILE}"
-.endfor
-	@${CHOWN} -h -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	@cd ${WRKSRC}/docs && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
+	@cd ${WRKSRC}/docs && ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 
