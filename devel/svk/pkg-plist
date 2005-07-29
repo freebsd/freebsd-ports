@@ -65,6 +65,7 @@ bin/svk
 %%SITE_PERL%%/SVK/Resolve/AraxisMerge.pm
 %%SITE_PERL%%/SVK/Resolve/Emacs.pm
 %%SITE_PERL%%/SVK/Resolve/FileMerge.pm
+%%SITE_PERL%%/SVK/Resolve/GVim.pm
 %%SITE_PERL%%/SVK/Resolve/GtkDiff.pm
 %%SITE_PERL%%/SVK/Resolve/Guiffy.pm
 %%SITE_PERL%%/SVK/Resolve/KDiff3.pm
@@ -72,6 +73,7 @@ bin/svk
 %%SITE_PERL%%/SVK/Resolve/P4WinMerge.pm
 %%SITE_PERL%%/SVK/Resolve/TkDiff.pm
 %%SITE_PERL%%/SVK/Resolve/TortoiseMerge.pm
+%%SITE_PERL%%/SVK/Resolve/Vim.pm
 %%SITE_PERL%%/SVK/Resolve/XXDiff.pm
 %%SITE_PERL%%/SVK/Target.pm
 %%SITE_PERL%%/SVK/Target/Universal.pm
