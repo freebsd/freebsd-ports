@@ -18,11 +18,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	San Le's Free Finite Element Analysis
 
-BROKEN=		Size mismatch
-DEPRECATED=	"${BROKEN}"
-EXPIRATION_DATE=2005-09-22
-
-CONFLICTS=	swi-pl-* TenDRA-*
+CONFLICTS=	swi-pl-[0-9]* TenDRA-[0-9]*
 USE_REINPLACE=	yes
 USE_MESA=	yes
 CFLAGS+=	-I${X11BASE}/include ${PTHREAD_CFLAGS}
@@ -43,6 +39,8 @@ EXEC=	beam/beam/bm \
 	shell/shell_gr/pvs \
 	truss/truss/ts \
 	truss/truss_gr/tspost
+
+PLIST_FILES=	${EXEC:T:S/^/bin\//}
 
 post-patch:
 	@(${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
