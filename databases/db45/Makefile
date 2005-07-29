@@ -48,6 +48,9 @@ pre-patch:
 pre-configure:
 	${CHMOD} u+w ${WRKSRC}/../dist/configure
 
+post-configure:
+	@${REINPLACE_CMD} -e '/^extern  void db_rpc_serverprog/ d;' ${WRKSRC}/db_server.h
+
 post-install:
 .for i in libdb libdb_cxx
 	${LN} -s -f ${PORTNAME}/${i}-${BDBVER}.so.0 ${PREFIX}/lib
