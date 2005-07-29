@@ -14,7 +14,6 @@ MASTERDIR=	${.CURDIR}/../festalon
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player
 
 USE_X_PREFIX=	yes
-#USE_GNOME=	glib12
 
 CONFIGURE_ARGS+=	--enable-interface=bmp
 
