@@ -1,5 +1,5 @@
---- ../desktop/source/pkgchk/pkgchk_packages.cxx.orig	Sun Jan 19 20:00:08 2003
-+++ ../desktop/source/pkgchk/pkgchk_packages.cxx	Sun Jan 19 20:01:51 2003
+--- desktop/source/pkgchk/pkgchk_packages.cxx.orig	Sun Jan 19 20:00:08 2003
++++ desktop/source/pkgchk/pkgchk_packages.cxx	Sun Jan 19 20:01:51 2003
 @@ -124,6 +124,10 @@
  static char const s_platform_path [] = "/macosx_powerpc.plt";
  #elif defined (NETBSD) && defined (SPARC)

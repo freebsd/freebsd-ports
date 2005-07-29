@@ -1,5 +1,5 @@
---- ../sal/osl/unx/process.c.orig	Wed Jun  5 16:24:42 2002
-+++ ../sal/osl/unx/process.c	Wed Jan 15 01:25:17 2003
+--- sal/osl/unx/process.c.orig	Wed Jun  5 16:24:42 2002
++++ sal/osl/unx/process.c	Wed Jan 15 01:25:17 2003
 @@ -222,7 +222,7 @@
  	/* Memory layout of CMD_ARG_PRG:
         progname\0arg1\0...argn[\0]\0environ\0env2\0...envn\0[\0] */

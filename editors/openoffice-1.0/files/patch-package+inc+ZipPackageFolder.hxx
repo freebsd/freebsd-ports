@@ -1,5 +1,5 @@
---- ../package/inc/ZipPackageFolder.hxx.orig	Thu Nov 15 21:01:49 2001
-+++ ../package/inc/ZipPackageFolder.hxx	Wed Jun 12 23:10:42 2002
+--- package/inc/ZipPackageFolder.hxx.orig	Thu Nov 15 21:01:49 2001
++++ package/inc/ZipPackageFolder.hxx	Wed Jun 12 23:10:42 2002
 @@ -106,7 +106,7 @@
  
  	void doInsertByName ( ZipPackageEntry *pEntry, sal_Bool bSetParent )

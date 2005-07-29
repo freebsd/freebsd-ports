@@ -1,5 +1,5 @@
---- ../svx/source/dialog/txenctab.src.orig	Thu Oct 31 23:18:23 2002
-+++ ../svx/source/dialog/txenctab.src	Tue Feb 25 16:57:06 2003
+--- svx/source/dialog/txenctab.src.orig	Thu Oct 31 23:18:23 2002
++++ svx/source/dialog/txenctab.src	Tue Feb 25 16:57:06 2003
 @@ -147,6 +147,7 @@
          < "Japanisch (ISO-2022-JP)"                         ; RTL_TEXTENCODING_ISO_2022_JP      ; > ;
          < "Chinesisch vereinfacht (ISO-2022-CN)"            ; RTL_TEXTENCODING_ISO_2022_CN      ; > ;

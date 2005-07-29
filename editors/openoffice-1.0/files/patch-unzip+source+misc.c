@@ -1,5 +1,6 @@
---- ../unzip/source/misc.c.orig	Mon Jul 15 14:25:32 2002
-+++ ../unzip/source/misc.c	Mon Jul 15 14:27:15 2002
+FreeBSD support
+--- unzip/source/misc.c.orig	Mon Jul 15 14:25:32 2002
++++ unzip/source/misc.c	Mon Jul 15 14:27:15 2002
 @@ -300,9 +300,9 @@
      static short yday[]={0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
      int yr, mo, dy, hh, mm, ss, leap;

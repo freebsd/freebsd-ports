@@ -1,5 +1,5 @@
---- ../stoc/source/defaultregistry/makefile.mk.orig	Tue Jan  1 14:12:02 2002
-+++ ../stoc/source/defaultregistry/makefile.mk
+--- stoc/source/defaultregistry/makefile.mk.orig	Tue Jan  1 14:12:02 2002
++++ stoc/source/defaultregistry/makefile.mk
 @@ -84,9 +84,9 @@
  SHL1TARGET=	$(TARGET)
  

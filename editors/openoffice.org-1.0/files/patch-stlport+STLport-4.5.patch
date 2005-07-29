@@ -1,5 +1,5 @@
---- ../stlport/STLport-4.5.patch.orig	Mon Jan 14 18:33:17 2002
-+++ ../stlport/STLport-4.5.patch	Tue May 28 23:55:42 2002
+--- stlport/STLport-4.5.patch.orig	Mon Jan 14 18:33:17 2002
++++ stlport/STLport-4.5.patch	Tue May 28 23:55:42 2002
 @@ -174,3 +174,110 @@
    class _STLP_CLASS_DECLSPEC __Named_exception : public _STLP_EXCEPTION_BASE {
    public:

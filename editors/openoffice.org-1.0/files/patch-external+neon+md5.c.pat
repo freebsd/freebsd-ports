@@ -1,5 +1,5 @@
 --- /dev/null	Thu Aug  8 22:39:51 2002
-+++ ../external/neon/md5.c.pat	Thu Aug  8 22:35:33 2002
++++ external/neon/md5.c.pat	Thu Aug  8 22:35:33 2002
 @@ -0,0 +1,109 @@
 +*** ..\download\neon-0.14.0\src\md5.c	Sun Apr 29 13:23:08 2001
 +--- sub\md5.c	Tue May 08 12:52:02 2001

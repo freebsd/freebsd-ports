@@ -1,5 +1,5 @@
---- ../stoc/source/invocation/makefile.mk.orig	Tue Jan  1 14:12:02 2002
-+++ ../stoc/source/invocation/makefile.mk
+--- stoc/source/invocation/makefile.mk.orig	Tue Jan  1 14:12:02 2002
++++ stoc/source/invocation/makefile.mk
 @@ -82,9 +82,9 @@
  SHL1TARGET=	$(TARGET)
  

@@ -1,5 +1,5 @@
---- ../scptools/source/linker/ziplst.cxx.orig	Sun Jul 21 00:32:40 2002
-+++ ../scptools/source/linker/ziplst.cxx	Sun Jul 21 00:32:43 2002
+--- scptools/source/linker/ziplst.cxx.orig	Sun Jul 21 00:32:40 2002
++++ scptools/source/linker/ziplst.cxx	Sun Jul 21 00:32:43 2002
 @@ -278,6 +278,7 @@
  #define OS_SOLI			"solia"
  #define OS_WINDOWS		"windows"

@@ -1,5 +1,5 @@
---- ../idlc/source/parser.yy.orig	Wed Jul 10 11:43:18 2002
-+++ ../idlc/source/parser.yy	Thu Oct 31 10:00:47 2002
+--- idlc/source/parser.yy.orig	Wed Jul 10 11:43:18 2002
++++ idlc/source/parser.yy	Thu Oct 31 10:00:47 2002
 @@ -995,7 +995,8 @@
  	{
  		idlc()->setParseState(PS_ConstantDeclSeen);

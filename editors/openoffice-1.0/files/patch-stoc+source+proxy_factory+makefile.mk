@@ -1,5 +1,5 @@
---- ../stoc/source/proxy_factory/makefile.mk.orig	Tue Jan  1 14:12:02 2002
-+++ ../stoc/source/proxy_factory/makefile.mk
+--- stoc/source/proxy_factory/makefile.mk.orig	Tue Jan  1 14:12:02 2002
++++ stoc/source/proxy_factory/makefile.mk
 @@ -85,9 +85,9 @@
  SHL1VERSIONMAP=$(TARGET).map
  

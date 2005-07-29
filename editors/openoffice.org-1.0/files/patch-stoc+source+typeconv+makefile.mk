@@ -1,5 +1,5 @@
---- ../stoc/source/typeconv/makefile.mk.orig	Tue Jan  1 14:12:03 2002
-+++ ../stoc/source/typeconv/makefile.mk
+--- stoc/source/typeconv/makefile.mk.orig	Tue Jan  1 14:12:03 2002
++++ stoc/source/typeconv/makefile.mk
 @@ -82,9 +82,9 @@
  SHL1TARGET=	$(TARGET)
  

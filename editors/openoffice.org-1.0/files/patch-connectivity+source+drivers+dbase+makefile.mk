@@ -1,5 +1,5 @@
---- ../connectivity/source/drivers/dbase/makefile.mk.orig	Wed Jun 12 01:26:39 2002
-+++ ../connectivity/source/drivers/dbase/makefile.mk	Wed Jun 12 01:26:48 2002
+--- connectivity/source/drivers/dbase/makefile.mk.orig	Wed Jun 12 01:26:39 2002
++++ connectivity/source/drivers/dbase/makefile.mk	Wed Jun 12 01:26:48 2002
 @@ -116,7 +116,7 @@
  	$(SLO)$/DDriver.obj
  

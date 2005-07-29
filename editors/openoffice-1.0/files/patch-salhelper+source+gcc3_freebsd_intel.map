@@ -1,5 +1,5 @@
 --- /dev/null	Thu Jun  6 20:06:34 2002
-+++ ../salhelper/source/gcc3_freebsd_intel.map	Thu Jun  6 20:02:29 2002
++++ salhelper/source/gcc3_freebsd_intel.map	Thu Jun  6 20:02:29 2002
 @@ -0,0 +1,31 @@
 +UDK_3_0_0 {
 +	global:

@@ -1,5 +1,5 @@
---- ../tools/source/inet/inetmime.cxx.orig	Mon Feb 24 17:46:55 2003
-+++ ../tools/source/inet/inetmime.cxx	Tue Feb 25 17:08:22 2003
+--- tools/source/inet/inetmime.cxx.orig	Mon Feb 24 17:46:55 2003
++++ tools/source/inet/inetmime.cxx	Tue Feb 25 17:08:22 2003
 @@ -1633,7 +1633,8 @@
  				"ISO-8859-10", // RTL_TEXTENCODING_ISO_8859_10, RFC 2047
  				"ISO-8859-13", // RTL_TEXTENCODING_ISO_8859_13, RFC 2047

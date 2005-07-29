@@ -1,5 +1,5 @@
---- ../sal/textenc/tcvtest1.tab.orig	Fri Oct 12 13:44:53 2001
-+++ ../sal/textenc/tcvtest1.tab	Tue Feb 25 16:47:50 2003
+--- sal/textenc/tcvtest1.tab.orig	Fri Oct 12 13:44:53 2001
++++ sal/textenc/tcvtest1.tab	Tue Feb 25 16:47:50 2003
 @@ -4328,3 +4328,170 @@
          "koi8-r",
          RTL_TEXTENCODING_INFO_ASCII | RTL_TEXTENCODING_INFO_MIME };

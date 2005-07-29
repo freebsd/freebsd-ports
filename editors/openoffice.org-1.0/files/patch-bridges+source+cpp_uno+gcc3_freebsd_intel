@@ -1,5 +1,5 @@
 --- /dev/null	Mon Mar  4 21:33:00 2002
-+++ ../bridges/source/cpp_uno/gcc3_freebsd_intel/cpp2uno.cxx	Mon Mar  4 21:23:27 2002
++++ bridges/source/cpp_uno/gcc3_freebsd_intel/cpp2uno.cxx	Mon Mar  4 21:23:27 2002
 @@ -0,0 +1,594 @@
 +/*************************************************************************
 + *
@@ -62,7 +62,7 @@
 + *
 + ************************************************************************/
 +
-+#include <malloc.h>
++#include <stdlib.h>
 +#include <hash_map>
 +
 +#include <rtl/alloc.h>
@@ -596,7 +596,7 @@
 +}
 +}
 --- /dev/null	Mon Mar  4 21:33:00 2002
-+++ ../bridges/source/cpp_uno/gcc3_freebsd_intel/except.cxx	Mon Mar  4 21:23:27 2002
++++ bridges/source/cpp_uno/gcc3_freebsd_intel/except.cxx	Mon Mar  4 21:23:27 2002
 @@ -0,0 +1,317 @@
 +/*************************************************************************
 + *
@@ -916,7 +916,7 @@
 +}
 +
 --- /dev/null	Mon Mar  4 21:33:00 2002
-+++ ../bridges/source/cpp_uno/gcc3_freebsd_intel/makefile.mk	Mon Mar  4 21:24:53 2002
++++ bridges/source/cpp_uno/gcc3_freebsd_intel/makefile.mk	Mon Mar  4 21:24:53 2002
 @@ -0,0 +1,112 @@
 +#*************************************************************************
 +#
@@ -1031,7 +1031,7 @@
 +.INCLUDE :  target.mk
 +
 --- /dev/null	Mon Mar  4 21:33:00 2002
-+++ ../bridges/source/cpp_uno/gcc3_freebsd_intel/share.hxx	Mon Mar  4 21:23:27 2002
++++ bridges/source/cpp_uno/gcc3_freebsd_intel/share.hxx	Mon Mar  4 21:23:27 2002
 @@ -0,0 +1,120 @@
 +/*************************************************************************
 + *
@@ -1154,7 +1154,7 @@
 +    __cxa_exception * header, uno_Any *, uno_Mapping * pCpp2Uno );
 +}
 --- /dev/null	Mon Mar  4 21:33:00 2002
-+++ ../bridges/source/cpp_uno/gcc3_freebsd_intel/uno2cpp.cxx	Mon Mar  4 21:23:27 2002
++++ bridges/source/cpp_uno/gcc3_freebsd_intel/uno2cpp.cxx	Mon Mar  4 21:23:27 2002
 @@ -0,0 +1,450 @@
 +/*************************************************************************
 + *

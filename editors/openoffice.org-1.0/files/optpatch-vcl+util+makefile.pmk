@@ -1,5 +1,5 @@
---- ../vcl/util/makefile.pmk.orig	Mon Apr 28 10:25:02 2003
-+++ ../vcl/util/makefile.pmk	Mon Apr 28 10:25:17 2003
+--- vcl/util/makefile.pmk.orig	Mon Apr 28 10:25:02 2003
++++ vcl/util/makefile.pmk	Mon Apr 28 10:25:17 2003
 @@ -67,7 +67,7 @@
  .IF "$(remote)" != ""
  USE_BUILTIN_RASTERIZER=true

@@ -1,5 +1,5 @@
---- ../solenv/inc/postset.mk.orig	Tue Jan  7 17:22:04 2003
-+++ ../solenv/inc/postset.mk	Tue Feb 25 16:52:34 2003
+--- solenv/inc/postset.mk.orig	Tue Jan  7 17:22:04 2003
++++ solenv/inc/postset.mk	Tue Feb 25 16:52:34 2003
 @@ -220,6 +220,19 @@
  RCLANGFLAGS_07+= -d RUSS
  iso_07=ru

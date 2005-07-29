@@ -1,5 +1,6 @@
---- ../transex3/source/export2.cxx.orig	Mon Feb 24 17:45:55 2003
-+++ ../transex3/source/export2.cxx	Tue Feb 25 17:19:19 2003
+adding ukrainian language
+--- transex3/source/export2.cxx.orig	Mon Feb 24 17:45:55 2003
++++ transex3/source/export2.cxx	Tue Feb 25 17:19:19 2003
 @@ -144,6 +144,7 @@
  	ARABIC,
  	HEBREW,

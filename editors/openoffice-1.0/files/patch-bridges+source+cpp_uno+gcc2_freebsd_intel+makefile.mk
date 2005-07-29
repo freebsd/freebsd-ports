@@ -1,5 +1,5 @@
---- ../bridges/source/cpp_uno/gcc2_freebsd_intel/makefile.mk.orig	Fri May 31 10:22:18 2002
-+++ ../bridges/source/cpp_uno/gcc2_freebsd_intel/makefile.mk	Fri May 31 10:22:46 2002
+--- bridges/source/cpp_uno/gcc2_freebsd_intel/makefile.mk.orig	Fri May 31 10:22:18 2002
++++ bridges/source/cpp_uno/gcc2_freebsd_intel/makefile.mk	Fri May 31 10:22:46 2002
 @@ -76,7 +76,7 @@
  
  # --- Files --------------------------------------------------------

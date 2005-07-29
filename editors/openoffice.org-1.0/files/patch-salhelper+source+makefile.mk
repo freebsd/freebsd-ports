@@ -1,5 +1,5 @@
---- ../salhelper/source/makefile.mk.orig	Wed Nov 14 14:19:21 2001
-+++ ../salhelper/source/makefile.mk	Sun Mar  3 17:58:15 2002
+--- salhelper/source/makefile.mk.orig	Wed Nov 14 14:19:21 2001
++++ salhelper/source/makefile.mk	Sun Mar  3 17:58:15 2002
 @@ -109,6 +109,10 @@
  SHL1VERSIONMAP=lngi.map
  .ELIF "$(OS)$(CPU)$(COMNAME)"=="LINUXIgcc3"

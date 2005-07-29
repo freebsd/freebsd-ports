@@ -1,5 +1,5 @@
---- ../sal/osl/unx/nlsupport.c.orig	Tue May 21 15:22:11 2002
-+++ ../sal/osl/unx/nlsupport.c	Tue Sep  3 12:58:48 2002
+--- sal/osl/unx/nlsupport.c.orig	Tue May 21 15:22:11 2002
++++ sal/osl/unx/nlsupport.c	Tue Sep  3 12:58:48 2002
 @@ -63,7 +63,7 @@
  #include <osl/diagnose.h>
  #include <osl/process.h>
@@ -9,16 +9,6 @@
  #include <pthread.h>
  #include <locale.h>
  #include <langinfo.h>
-@@ -114,8 +114,7 @@
-         comparison = _pair_compare( key, base + current );
-         if (comparison < 0)
-             upper = current;
--        else
--        if (comparison > 0)
-+        else if (comparison > 0)
-             lower = current + 1;
-         else
-             return base + current;
 @@ -241,12 +240,13 @@
      return NULL;
  }

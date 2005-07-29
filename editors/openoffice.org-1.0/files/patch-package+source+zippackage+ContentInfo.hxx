@@ -1,5 +1,5 @@
---- ../package/source/zippackage/ContentInfo.hxx.orig	Tue Oct 30 14:54:47 2001
-+++ ../package/source/zippackage/ContentInfo.hxx	Wed Jun 12 23:10:42 2002
+--- package/source/zippackage/ContentInfo.hxx.orig	Tue Oct 30 14:54:47 2001
++++ package/source/zippackage/ContentInfo.hxx	Wed Jun 12 23:10:42 2002
 @@ -75,7 +75,7 @@
  #endif
  #include <hash_map>

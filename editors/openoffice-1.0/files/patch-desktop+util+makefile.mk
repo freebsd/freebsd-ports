@@ -1,5 +1,5 @@
---- ../desktop/util/makefile.mk.orig	Sun Jul 21 00:04:35 2002
-+++ ../desktop/util/makefile.mk	Sun Jul 21 00:04:38 2002
+--- desktop/util/makefile.mk.orig	Sun Jul 21 00:04:35 2002
++++ desktop/util/makefile.mk	Sun Jul 21 00:04:38 2002
 @@ -81,7 +81,7 @@
  
  # --- Linken der Applikation ---------------------------------------

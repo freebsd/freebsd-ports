@@ -1,9 +1,9 @@
 --- /dev/null	Sun Jun  2 16:11:00 2002
-+++ ../external/glibc/flist.pat	Sun Jun  2 12:00:09 2002
++++ external/glibc/flist.pat	Sun Jun  2 12:00:09 2002
 @@ -0,0 +1 @@
 +patch-getopt.h
 --- /dev/null	Sun Jun  2 16:11:00 2002
-+++ ../external/glibc/patch-getopt.h	Sun Jun  2 16:14:52 2002
++++ external/glibc/patch-getopt.h	Sun Jun  2 16:14:52 2002
 @@ -0,0 +1,14 @@
 +--- rtufiles/getopt.h.orig	Fri May 31 16:46:21 2002
 ++++ rtufiles/getopt.h	Fri May 31 17:07:19 2002
@@ -19,8 +19,8 @@
 + # endif /* __GNU_LIBRARY__ */
 + 
 + # ifndef __need_getopt
---- ../external/glibc/glibcpatch.sh.orig	Sun Jun  2 11:46:42 2002
-+++ ../external/glibc/glibcpatch.sh	Sun Jun  2 16:13:51 2002
+--- external/glibc/glibcpatch.sh.orig	Sun Jun  2 11:46:42 2002
++++ external/glibc/glibcpatch.sh	Sun Jun  2 16:13:51 2002
 @@ -113,7 +113,10 @@
  # apply the patches
  #

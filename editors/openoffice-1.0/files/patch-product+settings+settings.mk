@@ -1,14 +1,14 @@
---- ../product/settings/settings.mk.orig	Sat Jan 18 18:23:17 2003
-+++ ../product/settings/settings.mk	Sat Jan 18 18:37:12 2003
+--- product/settings/settings.mk.orig	Sat Jan 18 18:23:17 2003
++++ product/settings/settings.mk	Sat Jan 18 18:37:12 2003
 @@ -225,3 +226,72 @@
  
  endif
  
 +ifeq "$(PLATFORM)" "FreeBSD"
-+# Settings for Linux using gcc compiler
++# Settings for FreeBSD using gcc compiler
 +
-+OS=LINUX
-+PLATFORM=linux
++OS=FREEBSD
++PLATFORM=freebsd
 +PS=/
 +LINK=$(CC)
 +LIB=$(CC)
@@ -19,7 +19,7 @@
 +SHAREDLIB_EXT=so
 +SHAREDLIB_PRE=lib
 +SHAREDLIB_OUT=$(OUT_LIB)
-+PACKAGE_LIB_DIR=linux_x86.plt
++PACKAGE_LIB_DIR=freebsd_x86.plt
 +    
 +GCC_VERSION=$(shell $(CC) -dumpversion)
 +
@@ -57,10 +57,10 @@
 +else
 +CC_FLAGS=-c -O
 +endif
-+SDK_JAVA_INCLUDES = -I$(OO_SDK_JAVA_HOME)/include -I$(OO_SDK_JAVA_HOME)/include/linux
++SDK_JAVA_INCLUDES = -I$(OO_SDK_JAVA_HOME)/include -I$(OO_SDK_JAVA_HOME)/include/freebsd -I$(OO_SDK_JAVA_HOME)/include/linux
 +CC_INCLUDES=-I. -I/usr/include -I$(OUT)/inc/examples -I$(PRJ)/include
 +STL_INCLUDES=-I$(OO_STLPORT_HOME)/stlport
-+CC_DEFINES=-DUNX -DGCC -DLINUX -DCPPU_ENV=$(CPPU_ENV)
++CC_DEFINES=-DUNX -DGCC -DFREEBSD -DCPPU_ENV=$(CPPU_ENV)
 +
 +# define for used compiler necessary for UNO
 +#-DCPPU_ENV=gcc2 -- gcc 2.91/2.95
@@ -70,6 +70,6 @@
 +
 +LIBRARY_LINK_FLAGS=-shared
 +EXE_LINK_FLAGS=-Wl -export-dynamic
-+LINK_LIBS=-L$(OUT)/lib -L$(PRJ)/$(PLATFORM)/lib -L$(OFFICE_PROGRAM_PATH)
++LINK_LIBS=-L$(OUT)/lib -L$(PRJ)/$(PLATFORM)/lib -L$(OFFICE_PROGRAM_PATH) -pthread
 +
 +endif

@@ -1,5 +1,5 @@
---- ../setup2/source/service/interface.cxx.orig	Sat Jul 20 23:29:33 2002
-+++ ../setup2/source/service/interface.cxx	Sat Jul 20 23:30:02 2002
+--- setup2/source/service/interface.cxx.orig	Sat Jul 20 23:29:33 2002
++++ setup2/source/service/interface.cxx	Sat Jul 20 23:30:02 2002
 @@ -126,6 +126,8 @@
  		aExtension = "UNIX_SOLIG";
  	else if( eType == OSType_UNIX_LINUX )

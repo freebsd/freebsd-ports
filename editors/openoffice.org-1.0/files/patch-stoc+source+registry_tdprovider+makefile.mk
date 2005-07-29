@@ -1,5 +1,5 @@
---- ../stoc/source/registry_tdprovider/makefile.mk.orig	Tue Jan  1 14:12:02 2002
-+++ ../stoc/source/registry_tdprovider/makefile.mk
+--- stoc/source/registry_tdprovider/makefile.mk.orig	Tue Jan  1 14:12:02 2002
++++ stoc/source/registry_tdprovider/makefile.mk
 @@ -88,10 +88,10 @@
  SHL1TARGET=	$(TARGET)
  

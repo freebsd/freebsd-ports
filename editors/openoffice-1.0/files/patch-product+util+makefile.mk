@@ -1,5 +1,5 @@
---- ../product/util/makefile.mk.orig	Sat Jan 18 13:31:50 2003
-+++ ../product/util/makefile.mk	Sat Jan 18 13:30:54 2003
+--- product/util/makefile.mk.orig	Sat Jan 18 13:31:50 2003
++++ product/util/makefile.mk	Sat Jan 18 13:30:54 2003
 @@ -131,13 +131,6 @@
  DESTDIRDLL=$(DESTDIRLIB)
  STLPORTLIBNAME=libstlport_gcc.so

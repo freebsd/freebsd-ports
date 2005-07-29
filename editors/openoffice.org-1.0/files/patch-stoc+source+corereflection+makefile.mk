@@ -1,5 +1,5 @@
---- ../stoc/source/corereflection/makefile.mk.orig	Tue Jan  1 14:12:02 2002
-+++ ../stoc/source/corereflection/makefile.mk
+--- stoc/source/corereflection/makefile.mk.orig	Tue Jan  1 14:12:02 2002
++++ stoc/source/corereflection/makefile.mk
 @@ -87,9 +87,9 @@
  SHL1TARGET=	$(TARGET)
  SHL1VERSIONMAP=	$(TARGET).map

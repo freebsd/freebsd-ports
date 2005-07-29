@@ -1,5 +1,5 @@
---- ../stlport/makefile.mk.orig	Tue Jan  7 13:13:37 2003
-+++ ../stlport/makefile.mk	Sat Jan 18 13:01:53 2003
+--- stlport/makefile.mk.orig	Tue Jan  7 13:13:37 2003
++++ stlport/makefile.mk	Sat Jan 18 13:01:53 2003
 @@ -98,16 +98,28 @@
  
  .IF "$(COM)"=="GCC"

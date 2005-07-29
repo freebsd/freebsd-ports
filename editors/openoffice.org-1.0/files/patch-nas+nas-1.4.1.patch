@@ -1,5 +1,5 @@
---- ../nas/nas-1.4.1.patch.orig	Wed Jan  8 02:52:13 2003
-+++ ../nas/nas-1.4.1.patch	Sat Jan 18 17:55:19 2003
+--- nas/nas-1.4.1.patch.orig	Wed Jan  8 02:52:13 2003
++++ nas/nas-1.4.1.patch	Sat Jan 18 17:55:19 2003
 @@ -1,5 +1,5 @@
 -*** misc/nas-1.4.1/config/NetAudio.tmpl	Sat Mar  4 21:40:50 2000
 ---- misc/build/nas-1.4.1/config/NetAudio.tmpl	Tue Jan  7 19:30:41 2003
