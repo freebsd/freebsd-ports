@@ -1,0 +1,28 @@
+--- contrib/ttf2pfb/Makefile.in.orig	Thu Jul 28 02:09:51 2005
++++ contrib/ttf2pfb/Makefile.in	Thu Jul 28 02:10:02 2005
+@@ -40,7 +40,7 @@
+ 	$(CC) $(CFLAGS) -o $@ $<
+ 
+ ttf2pfb: ttf2pfb.o $(LIBDIR)/libttf.la
+-	$(LIBTOOL) --mode=link $(CC) $(FT_CFLAGS) -o $@ $< \
++	$(LIBTOOL) --tag=CXX --mode=link $(CC) $(FT_CFLAGS) -o $@ $< \
+ 			       $(LIBDIR)/libttf.la $(LDFLAGS)
+ 
+ clean:
+
+--- contrib/ttf2pk/Makefile.in.orig	Tue Jul 26 01:52:45 2005
++++ contrib/ttf2pk/Makefile.in	Thu Sep  3 13:12:57 1998
+@@ -61,11 +61,11 @@
+ default all: $(PROGRAMS)
+ 
+ ttf2pk: $(ttf2pkobjs) $(LIBDIR)/libttf.la
+-	$(LIBTOOL) --mode=link $(CC) $(FT_CFLAGS) -o ttf2pk $(ttf2pkobjs) \
++	$(LIBTOOL) --tag=CXX --mode=link $(CC) $(FT_CFLAGS) -o ttf2pk $(ttf2pkobjs) \
+                                      $(LIBDIR)/libttf.la $(LDFLAGS)
+ 
+ ttf2tfm: $(ttf2tfmobjs) $(LIBDIR)/libttf.la
+-	$(LIBTOOL) --mode=link $(CC) $(FT_CFLAGS) -o ttf2tfm $(ttf2tfmobjs) \
++	$(LIBTOOL) --tag=CXX --mode=link $(CC) $(FT_CFLAGS) -o ttf2tfm $(ttf2tfmobjs) \
+                                      $(LIBDIR)/libttf.la $(LDFLAGS)
+ 
+ install: $(PROGRAMS)

@@ -72,6 +72,7 @@
     SUBDIR += foomatic-filters
     SUBDIR += fpdf
     SUBDIR += freetype
+    SUBDIR += freetype-tools
     SUBDIR += freetype2
     SUBDIR += ft2demos
     SUBDIR += gfontview
