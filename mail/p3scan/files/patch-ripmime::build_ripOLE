@@ -1,5 +1,5 @@
---- ripmime/build_ripOLE.orig	Wed Jul 16 21:18:54 2003
-+++ ripmime/build_ripOLE	Wed Feb 18 10:31:19 2004
+--- ripmime/build_ripOLE.orig  Wed Jan  5 20:53:04 2005
++++ ripmime/build_ripOLE       Tue Jul 26 12:48:42 2005
 @@ -1,4 +1,4 @@
  #!/bin/sh
  cd ripOLE
