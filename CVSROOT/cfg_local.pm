@@ -24,7 +24,8 @@ $UNEXPAND_RCSID = 1;
 	"Obtained from"		=> '.*',
 	"Approved by"		=> '.*',
 	"PR"			=> '.*',
-	"MFC after"		=> '\d+(\s+(days?|weeks?|months?))?'
+	"MFC after"		=> '\d+(\s+(days?|weeks?|months?))?',
+	"Security"		=> '.*'
 );
 
 $MAILCMD = "/usr/local/bin/mailsend -H";

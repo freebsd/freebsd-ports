@@ -112,7 +112,8 @@ $AVAIL_FILE = "$CVSROOT/CVSROOT/avail";
 #	"Obtained from"		=> '.*',
 #	"Approved by"		=> '.*',
 #	"PR"			=> '.*',
-#	"MFC after"		=> '\d+(\s+(days?|weeks?|months?))?'
+#	"MFC after"		=> '\d+(\s+(days?|weeks?|months?))?',
+#	"Security"		=> '.*'
 );
 
 
