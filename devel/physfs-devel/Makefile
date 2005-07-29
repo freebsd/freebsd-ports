@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	physfs
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://offload1.icculus.org/${PORTNAME}/downloads/
@@ -17,5 +17,6 @@ COMMENT=	A library to provide abstract access to various archives
 USE_GNOME=	gnometarget
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
+NO_LATEST_LINK=	yes
 
 .include <bsd.port.mk>

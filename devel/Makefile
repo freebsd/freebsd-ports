@@ -1266,6 +1266,7 @@
     SUBDIR += phpbt
     SUBDIR += phptags
     SUBDIR += physfs
+    SUBDIR += physfs-devel
     SUBDIR += picasm
     SUBDIR += picp
     SUBDIR += picprog
