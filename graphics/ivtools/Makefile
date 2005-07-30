@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drawing editors derived from idraw
 
+FORBIDDEN=	http://vuxml.FreeBSD.org/pkg-ivtools.html
+EXPIRATION_DATE=2005-08-30
+
 BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
 
 USE_XLIB=	yes
