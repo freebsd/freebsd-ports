@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portsnap
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.daemonology.net/portsnap/
 
@@ -24,6 +24,7 @@ RUN_DEPENDS+=	sha256:${PORTSDIR}/sysutils/freebsd-sha256
 MAN5=		portsnap.conf.5
 MAN8=		portsnap.8
 PLIST_FILES=	etc/portsnap.conf.sample sbin/portsnap		\
+		libexec/phttpget				\
 		libexec/make_index portsnap/.package.this.directory
 PLIST_DIRS=	portsnap
 
@@ -39,6 +40,7 @@ post-extract:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/portsnap ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/make_index ${PREFIX}/libexec
+	${INSTALL_PROGRAM} ${WRKSRC}/phttpget ${PREFIX}/libexec
 	${INSTALL_MAN} ${WRKSRC}/portsnap.conf.5 ${PREFIX}/man/man5/
 	${INSTALL_MAN} ${WRKSRC}/portsnap.8 ${PREFIX}/man/man8/
 	${INSTALL_DATA} ${WRKSRC}/portsnap.conf		\
