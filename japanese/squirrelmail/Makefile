@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	squirrelmail
-PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTVERSION=	1.4.5
+PORTREVISION=	0
 PORTEPOCH=	2
 CATEGORIES=	japanese mail www
 
@@ -18,14 +18,12 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	info@otsune.com
 COMMENT=	A webmail system which accesses mail over IMAP with Japanese patch
 
-BROKEN=		ja patch is not applied.
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
+#BROKEN=	ja patch is not applied.
 
 USE_GETTEXT=	YES
 
 CONFLICTS=	squirrelmail-1.*
-PATCHVERSION=	20050616
+PATCHVERSION=	20050714
 
 MASTERDIR=	${.CURDIR}/../../mail/squirrelmail
 MD5_FILE=	${.CURDIR}/distinfo
