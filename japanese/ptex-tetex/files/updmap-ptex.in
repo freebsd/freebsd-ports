@@ -5,11 +5,11 @@ SETENV=/usr/bin/env
 PATH=${PATH}:%%PREFIX%%/bin
 
 ${SETENV} \
+	WEB2C='$TEXMF/web2c{/ptex,}' \
 	TEXPSHEADERS='$TEXMF/{dvips{/ptex,},fonts/{enc,type1,type3}}//' \
 	TEXCONFIG='$TEXMF/dvips{/ptex,}//' \
 	TEXFONTMAPS='$TEXMF/fonts/map{/ptex,}//' \
 	%%PREFIX%%/bin/updmap \
-		--cnffile %%PREFIX%%/%%TEXMFDIR%%/web2c/ptex/updmap.cfg \
 		--dvipsoutputdir %%PREFIX%%/%%FONTSMAPVARDIR%%/dvips/updmap \
 		--dvipdfmoutputdir %%PREFIX%%/%%FONTSMAPVARDIR%%/dvipdfm/updmap \
 		--pdftexoutputdir %%PREFIX%%/%%FONTSMAPVARDIR%%/pdftex/updmap \

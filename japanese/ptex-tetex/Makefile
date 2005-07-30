@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ptex-tetex
-PORTVERSION=	3.1.8
-PORTREVISION=	3
+PORTVERSION=	3.1.8.1
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/:1 \
@@ -49,7 +48,8 @@ PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
 		TEXMFCONFIGDIR=${TEXMFCONFIGDIR} \
 		TEXMFVARDIR=${TEXMFVARDIR} \
 		TEXMFDIR=${TEXMFDIR} \
-		UPDMAP_SYS_PTEX=${UPDMAP_SYS_PTEX}
+		UPDMAP_SYS_PTEX=${UPDMAP_SYS_PTEX} \
+		SETENV=${SETENV}
 CONFLICTS=	ja-ptex-base-[0-9]*
 .if !make(do-patch)
 WRKSRC=		${WRKDIR}/${TETEX_SRC}/texk/web2c/ptex-${VER_PTEX}
@@ -193,6 +193,9 @@ post-install:
 		${PREFIX}/${TEXMFCONFIGDIR}/texconfig
 	${INSTALL_DATA} ${LOCALBASE}/${TEXMFDISTDIR}/web2c/updmap.cfg \
 		${PREFIX}/${TEXMFDIR}/web2c/ptex/updmap.cfg
+	${MKDIR} ${PREFIX}/${TEXMFCONFIGDIR}/web2c/ptex
+	${INSTALL_DATA} ${LOCALBASE}/${TEXMFDISTDIR}/web2c/updmap.cfg \
+		${PREFIX}/${TEXMFCONFIGDIR}/web2c/ptex/updmap.cfg
 	${MKDIR} ${PREFIX}/${TEXMFCONFIGDIR}/dvips/ptex
 .for F in dvips dvipdfm pdftex
 	${MKDIR} ${PREFIX}/${FONTSMAPDIR}/${F}/updmap
@@ -201,7 +204,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/updmap-ptex ${PREFIX}/bin/updmap-ptex
 	${INSTALL_SCRIPT} ${WRKDIR}/updmap-sys-ptex ${PREFIX}/bin/updmap-sys-ptex
 	${MKTEXLSR}
-	${SH} ${UPDMAP_SYS_PTEX}
+	${SETENV} PATH=$${PATH}:${LOCALBASE}/bin ${SH} ${UPDMAP_SYS_PTEX}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
