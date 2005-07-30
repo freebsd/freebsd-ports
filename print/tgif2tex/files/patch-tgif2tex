@@ -1,0 +1,33 @@
+--- tgif2tex.orig	Fri Nov 28 20:53:07 2003
++++ tgif2tex	Sat Jul 30 20:31:46 2005
+@@ -44,11 +44,14 @@
+ # Aug 5, 2002  font size bug fixed (Version 2.12)
+ # Aug 5, 2002  bug in handling BOX fixed (Version 2.13 thanks Mr. Tsuchimura)
+ 
+-$latex_command='/usr/bin/platex';	# latex command in your site.
+-$dvips_command='/usr/bin/pdvips';
+-$tgif_command='/usr/X11R6/bin/tgif';
+-$pnm_command='/usr/bin/gs -sDEVICE=pnmraw -sOutputFile=- -sNOPAUSE -dBATCH -q -r400';
+-$convert_command='/usr/bin/pnmcrop | /usr/bin/pnmmargin -white 10 | /usr/bin/convert - ';
++$LOCALBASE='%%LOCALBASE%%';
++$X11BASE='%%X11BASE%%';
++
++$latex_command="${LOCALBASE}/bin/platex";	# latex command in your site.
++$dvips_command="${LOCALBASE}/bin/dvips";
++$tgif_command="${X11BASE}/bin/tgif";
++$pnm_command="${LOCALBASE}/bin/gs -sDEVICE=pnmraw -sOutputFile=- -sNOPAUSE -dBATCH -q -r400";
++$convert_command="${LOCALBASE}/bin/pnmcrop | ${LOCALBASE}/bin/pnmmargin -white 10 | ${LOCALBASE}/bin/convert - ";
+ 
+ $version='tgif2tex version 2.13';
+ $copyright='Copyright (C) 1994-2003 Koji Nakano';
+@@ -106,8 +109,8 @@
+ $slitex=0;                      # 1 if slitex
+ $pt='11pt';
+ $size18=0;
+-$ryumin='\\mc';
+-$gothic='\\gt';
++$ryumin='\\mcfamily';
++$gothic='\\gtfamily';
+ $article='jarticle';
+ $eps=0;
+ $ps=0;

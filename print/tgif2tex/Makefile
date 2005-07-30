@@ -7,13 +7,15 @@
 
 PORTNAME=	tgif2tex
 PORTVERSION=	2.13
+PORTREVISION=	1
 CATEGORIES+=	print
 MASTER_SITES=	http://www.fse.hiroshima-u.ac.jp/~nakano/tgif2tex/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Converting texts in figure by tgif to LaTeX commands
 
-USE_PERL5=	yes
+USE_PERL5_RUN=	yes
+USE_REINPLACE=	yes
 
 DOCSRC=		how-to-use.aux how-to-use.dvi \
 		how-to-use.log how-to-use.ps how-to-use.tex \
@@ -28,11 +30,10 @@ DOCSRC=		how-to-use.aux how-to-use.dvi \
 		sample2.tex sample2.obj sample2.ps
 
 do-build:
-	@cd ${WRKSRC}; ${MV} tgif2tex tgif2tex.org; \
-	${SED}	-e 's,/usr/local/X11R6/bin/tgif,${X11BASE}/bin/tgif,' \
-		-e 's;^#! */usr/bin/perl *;#!${PERL5};' \
-		-e 's,/usr/local,${PREFIX},' \
-			tgif2tex.org > tgif2tex
+	${REINPLACE_CMD} \
+		-e "s,%%LOCALBASE%%,${LOCALBASE}," \
+		-e "s,%%X11BASE%%,${X11BASE}," \
+		${WRKSRC}/tgif2tex
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tgif2tex ${PREFIX}/bin/tgif2tex
