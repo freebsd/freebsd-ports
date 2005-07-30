@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	redet
-PORTVERSION=	6.12
+PORTVERSION=	6.13
 CATEGORIES=	textproc tk84
 MASTER_SITES=	http://www.cis.upenn.edu/~wjposer/.downloads/
 DISTNAME=	${PORTNAME}tiny-${PORTVERSION}
@@ -21,10 +21,9 @@ NO_BUILD=	yes
 USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-PORTDOCS=	BUGS COPYING CREDITS LICENSE README
+PORTDOCS=	BUGS COPYING CREDITS LICENSE README-General
 MAN1=		redet.1
 PLIST_FILES=	bin/redet
-PATCH_TK_SCRIPTS=	redet.tcl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/wish/wish8.4/' ${WRKSRC}/redet.tcl
