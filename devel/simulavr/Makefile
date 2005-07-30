@@ -7,26 +7,20 @@
 
 PORTNAME=	simulavr
 PORTVERSION=	0.1.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 # special name only this time, don't let this go into ${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}.1
+DISTNAME=	${PORTNAME}-${PORTVERSION}.2
 
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	A simulator for AVR microcontrollers
 
 BUILD_DEPENDS=	${LOCALBASE}/avr/include/avr/io.h:${PORTSDIR}/devel/avr-libc \
-		avr-ld:${PORTSDIR}/devel/avr-binutils \
-		doxygen:${PORTSDIR}/devel/doxygen \
-		latex:${PORTSDIR}/print/teTeX
+		avr-ld:${PORTSDIR}/devel/avr-binutils
 
-BROKEN=		"Does not build (latex generates pdf instead of dvi)"
-DEPRECATED=	"${BROKEN}"
-EXPIRATION_DATE=2005-09-22
-
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
