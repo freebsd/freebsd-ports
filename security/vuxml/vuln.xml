@@ -947,7 +947,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>pl-ekg</name>
-	<range><ge>0</ge></range>
+	<range><lt>1.6r2,1</lt></range>
       </package>
     </affects>
     <description>
@@ -968,6 +968,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-07-05</discovery>
       <entry>2005-07-08</entry>
+      <modified>2005-07-31</modified>
     </dates>
   </vuln>
 
