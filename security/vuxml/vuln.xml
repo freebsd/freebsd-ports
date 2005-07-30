@@ -32,6 +32,45 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="68222076-010b-11da-bc08-0001020eed82">
+    <topic>tiff -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>tiff</name>
+	<name>linux-tiff</name>
+	<range><lt>3.7.3</lt></range>
+      </package>
+      <package>
+	<name>pdflib</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Gentoo Linux Security Advisory reports:</p>
+	<blockquote cite="http://www.gentoo.org/security/en/glsa/glsa-200505-07.xml">
+	  <p>Tavis Ormandy of the Gentoo Linux Security Audit Team
+	    discovered a stack based buffer overflow in the libTIFF
+	    library when reading a TIFF image with a malformed
+	    BitsPerSample tag.</p>
+	  <p>Successful exploitation would require the victim to open
+	    a specially crafted TIFF image, resulting in the execution
+	    of arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1544</cvename>
+      <url>http://bugzilla.remotesensing.org/show_bug.cgi?id=843</url>
+      <url>http://www.gentoo.org/security/en/glsa/glsa-200505-07.xml</url>
+      <url>http://www.remotesensing.org/libtiff/v3.7.3.html</url>
+    </references>
+    <dates>
+      <discovery>2005-05-10</discovery>
+      <entry>2005-07-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="934b1de4-00d7-11da-bc08-0001020eed82">
     <topic>opera -- image dragging vulnerability</topic>
     <affects>
