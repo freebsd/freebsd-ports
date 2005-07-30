@@ -11742,6 +11742,7 @@ tk82		ports/x11-toolkits/tk82
 tk83		ports/x11-toolkits/tk83
 tk84		ports/x11-toolkits/tk84
 tkabber		ports/net/tkabber
+tkabber-devel	ports/net/tkabber-devel
 tkcon		ports/devel/tkcon
 tkcron		ports/misc/tkcron
 tkcvs		ports/devel/tkcvs
