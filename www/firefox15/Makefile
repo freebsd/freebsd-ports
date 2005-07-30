@@ -7,6 +7,7 @@
 
 PORTNAME=	firefox
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -225,6 +226,13 @@ pre-install:
 	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/browser_plugins 2>/dev/null || ${TRUE}" >> ${PLIST}
 	${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
 	${ECHO_CMD} "@unexec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
+	cd ${FAKEDIR}/share/idl/${FIREFOX}-${FF_VER} \
+		&& ${FIND} -s * -type f -o -type l | \
+		${SED} -e 's:^:share/idl/${FIREFOX}/:' >> ${PLIST} \
+		&& ${FIND} -d * -type d | \
+		${SED} -e 's:^:@dirrm share/idl/${FIREFOX}/:' >> ${PLIST}
+		${ECHO_CMD} "@dirrm share/idl/${FIREFOX}" >> ${PLIST}
+		${ECHO_CMD} "@unexec rmdir %D/share/idl 2>/dev/null || true" >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/${FIREFOX}
@@ -255,6 +263,9 @@ do-install:
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/${FIREFOX}
 	cd ${FAKEDIR}/lib/${FIREFOX}-${FF_VER} && ${FIND} . | \
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/${FIREFOX}
+	${MKDIR} ${PREFIX}/share/idl/${FIREFOX}
+	cd ${FAKEDIR}/share/idl/${FIREFOX}-${FF_VER} && ${FIND} . | \
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/idl/${FIREFOX}
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
