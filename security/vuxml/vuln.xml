@@ -32,6 +32,77 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5d51d245-00ca-11da-bc08-0001020eed82">
+    <topic>ethereal -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ethereal</name>
+	<name>ethereal-lite</name>
+	<name>tethereal</name>
+	<name>tethereal-lite</name>
+	<range><ge>0.8.5</ge><lt>0.10.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An Ethreal Security Advisories reports:</p>
+	<blockquote cite="http://www.ethereal.com/appnotes/enpa-sa-00020.html">
+	  <p>Our testing program has turned up several more security
+	    issues:</p>
+	  <ul>
+	    <li>The LDAP dissector could free static memory and crash.</li>
+	    <li>The AgentX dissector could crash.</li>
+	    <li>The 802.3 dissector could go into an infinite loop.</li>
+	    <li>The PER dissector could abort.</li>
+	    <li>The DHCP dissector could go into an infinite loop.</li>
+	    <li>The BER dissector could abort or loop infinitely.</li>
+	    <li>The MEGACO dissector could go into an infinite loop.</li>
+	    <li>The GIOP dissector could dereference a null pointer.</li>
+	    <li>The SMB dissector was susceptible to a buffer overflow.</li>
+	    <li>The WBXML could dereference a null pointer.</li>
+	    <li>The H1 dissector could go into an infinite loop.</li>
+	    <li>The DOCSIS dissector could cause a crash.</li>
+	    <li>The SMPP dissector could go into an infinite loop.</li>
+	    <li>SCTP graphs could crash.</li>
+	    <li>The HTTP dissector could crash.</li>
+	    <li>The SMB dissector could go into a large loop.</li>
+	    <li>The DCERPC dissector could crash.</li>
+	    <li>Several dissectors could crash while reassembling packets.</li>
+	  </ul>
+	  <p>Steve Grubb at Red Hat found the following issues:</p>
+	  <ul>
+	    <li>The CAMEL dissector could dereference a null pointer.</li>
+	    <li>The DHCP dissector could crash.</li>
+	    <li>The CAMEL dissector could crash.</li>
+	    <li>The PER dissector could crash.</li>
+	    <li>The RADIUS dissector could crash.</li>
+	    <li>The Telnet dissector could crash.</li>
+	    <li>The IS-IS LSP dissector could crash.</li>
+	    <li>The NCP dissector could crash.</li>
+	  </ul>
+	  <p>iDEFENSE found the following issues:</p>
+	  <ul>
+	    <li>Several dissectors were susceptible to a format string
+	      overflow.</li>
+	  </ul>
+	  <h1>Impact:</h1>
+	  <p>It may be possible to make Ethereal crash, use up
+	    available memory, or run arbitrary code by injecting a
+	    purposefully malformed packet onto the wire or by
+	    convincing someone to read a malformed packet trace
+	    file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.ethereal.com/appnotes/enpa-sa-00020.html</url>
+    </references>
+    <dates>
+      <discovery>2005-07-26</discovery>
+      <entry>2005-07-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="651996e0-fe07-11d9-8329-000e0c2e438a">
     <topic>apache -- http request smuggling</topic>
     <affects>
