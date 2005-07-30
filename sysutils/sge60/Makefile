@@ -136,6 +136,7 @@ post-patch:
 	    ${WRKSRC}/3rdparty/qmake/FREEBSD_*/glob/Makefile \
 	    ${WRKSRC}/3rdparty/qtcsh/FREEBSD_*/Makefile
 	@${RM} ${WRKSRC}/dist/util/arch_variables.orig
+	@${RM} ${WRKSRC}/dist/util/install_modules/inst_common.sh.orig
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
 	    ${REINPLACE_CMD} "s|-g -O2|${CFLAGS}|"
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
