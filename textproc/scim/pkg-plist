@@ -18,6 +18,9 @@ include/scim-1.0/scim_connection.h
 include/scim-1.0/scim_debug.h
 include/scim-1.0/scim_event.h
 include/scim-1.0/scim_exception.h
+include/scim-1.0/scim_filter.h
+include/scim-1.0/scim_filter_module.h
+include/scim-1.0/scim_filter_manager.h
 include/scim-1.0/scim_frontend.h
 include/scim-1.0/scim_frontend_module.h
 include/scim-1.0/scim_global_config.h
@@ -31,7 +34,9 @@ include/scim-1.0/scim_imengine_module.h
 include/scim-1.0/scim_lookup_table.h
 include/scim-1.0/scim_module.h
 include/scim-1.0/scim_object.h
-include/scim-1.0/scim_panel.h
+include/scim-1.0/scim_panel_agent.h
+include/scim-1.0/scim_panel_client.h
+include/scim-1.0/scim_panel_common.h
 include/scim-1.0/scim_pointer.h
 include/scim-1.0/scim_property.h
 include/scim-1.0/scim_signals.h
@@ -41,29 +46,34 @@ include/scim-1.0/scim_trans_commands.h
 include/scim-1.0/scim_transaction.h
 include/scim-1.0/scim_types.h
 include/scim-1.0/scim_utility.h
+include/scim-1.0/x11/scim_x11_utils.h
 lib/gtk-2.0/immodules/im-scim.so
 lib/libscim-1.0.a
 lib/libscim-1.0.so
-lib/libscim-1.0.so.7
+lib/libscim-1.0.so.8
 lib/libscim-gtkutils-1.0.a
 lib/libscim-gtkutils-1.0.so
-lib/libscim-gtkutils-1.0.so.7
-lib/scim-1.0/1.2.0/Config/simple.so
-lib/scim-1.0/1.2.0/Config/socket.so
-lib/scim-1.0/1.2.0/FrontEnd/socket.so
-lib/scim-1.0/1.2.0/FrontEnd/x11.so
-lib/scim-1.0/1.2.0/Helper/setup.so
-lib/scim-1.0/1.2.0/IMEngine/rawcode.so
-lib/scim-1.0/1.2.0/IMEngine/socket.so
-lib/scim-1.0/1.2.0/SetupUI/aaa-imengine-setup.so
-lib/scim-1.0/1.2.0/SetupUI/frontend-hotkeys-setup.so
-lib/scim-1.0/1.2.0/SetupUI/panel-gtk-setup.so
-lib/scim-1.0/1.2.0/SetupUI/x11-frontend-setup.so
+lib/libscim-gtkutils-1.0.so.8
+lib/libscim-x11utils-1.0.a
+lib/libscim-x11utils-1.0.so
+lib/libscim-x11utils-1.0.so.8
+lib/scim-1.0/1.4.0/Config/simple.so
+lib/scim-1.0/1.4.0/Config/socket.so
+lib/scim-1.0/1.4.0/Filter/sctc.so
+lib/scim-1.0/1.4.0/FrontEnd/socket.so
+lib/scim-1.0/1.4.0/FrontEnd/x11.so
+lib/scim-1.0/1.4.0/Helper/setup.so
+lib/scim-1.0/1.4.0/IMEngine/rawcode.so
+lib/scim-1.0/1.4.0/IMEngine/socket.so
+lib/scim-1.0/1.4.0/SetupUI/aaa-frontend-setup.so
+lib/scim-1.0/1.4.0/SetupUI/aaa-imengine-setup.so
+lib/scim-1.0/1.4.0/SetupUI/panel-gtk-setup.so
 lib/scim-1.0/scim-helper-launcher
 lib/scim-1.0/scim-helper-manager
 lib/scim-1.0/scim-launcher
 lib/scim-1.0/scim-panel-gtk
 libdata/pkgconfig/scim-gtkutils.pc
+libdata/pkgconfig/scim-x11utils.pc
 libdata/pkgconfig/scim.pc
 share/gnome/applications/scim-setup.desktop
 share/gnome/control-center-2.0/capplets/scim-setup.desktop
@@ -89,19 +99,24 @@ share/locale/zh_TW/LC_MESSAGES/scim.mo
 %%DATADIR%%/icons/pin-up.png
 %%DATADIR%%/icons/rawcode.png
 %%DATADIR%%/icons/right.png
+%%DATADIR%%/icons/sctc.png
+%%DATADIR%%/icons/sctc-sc-to-tc.png
+%%DATADIR%%/icons/sctc-tc-to-sc.png
 %%DATADIR%%/icons/setup.png
 %%DATADIR%%/icons/trademark.png
 %%DATADIR%%/icons/up.png
 @dirrm etc/scim
+@dirrm include/scim-1.0/x11
 @dirrm include/scim-1.0/gtk
 @dirrm include/scim-1.0
 @unexec rmdir %D/lib/gtk-2.0/immodules 2>/dev/null || true
-@dirrm lib/scim-1.0/1.2.0/Config
-@dirrm lib/scim-1.0/1.2.0/FrontEnd
-@dirrm lib/scim-1.0/1.2.0/Helper
-@dirrm lib/scim-1.0/1.2.0/IMEngine
-@dirrm lib/scim-1.0/1.2.0/SetupUI
-@dirrm lib/scim-1.0/1.2.0
+@dirrm lib/scim-1.0/1.4.0/Config
+@dirrm lib/scim-1.0/1.4.0/Filter
+@dirrm lib/scim-1.0/1.4.0/FrontEnd
+@dirrm lib/scim-1.0/1.4.0/Helper
+@dirrm lib/scim-1.0/1.4.0/IMEngine
+@dirrm lib/scim-1.0/1.4.0/SetupUI
+@dirrm lib/scim-1.0/1.4.0
 @dirrm lib/scim-1.0
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
