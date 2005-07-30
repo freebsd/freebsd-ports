@@ -5,58 +5,58 @@ bin/avr-c++
 bin/avr-cpp
 bin/avr-g++
 bin/avr-gcc
-bin/avr-gcc-3.4.3
+bin/avr-gcc-3.4.4
 bin/avr-gccbug
-lib/gcc/avr/3.4.3/avr3/libgcc.a
-lib/gcc/avr/3.4.3/avr3/libgcov.a
-lib/gcc/avr/3.4.3/avr4/libgcc.a
-lib/gcc/avr/3.4.3/avr4/libgcov.a
-lib/gcc/avr/3.4.3/avr5/libgcc.a
-lib/gcc/avr/3.4.3/avr5/libgcov.a
-lib/gcc/avr/3.4.3/include/README
-lib/gcc/avr/3.4.3/include/fixed
-lib/gcc/avr/3.4.3/include/float.h
-lib/gcc/avr/3.4.3/include/iso646.h
-lib/gcc/avr/3.4.3/include/limits.h
-lib/gcc/avr/3.4.3/include/stdarg.h
-lib/gcc/avr/3.4.3/include/stdbool.h
-lib/gcc/avr/3.4.3/include/stddef.h
-lib/gcc/avr/3.4.3/include/syslimits.h
-lib/gcc/avr/3.4.3/include/unwind.h
-lib/gcc/avr/3.4.3/include/varargs.h
-lib/gcc/avr/3.4.3/install-tools/gsyslimits.h
-lib/gcc/avr/3.4.3/install-tools/include/README
-lib/gcc/avr/3.4.3/install-tools/include/float.h
-lib/gcc/avr/3.4.3/install-tools/include/iso646.h
-lib/gcc/avr/3.4.3/install-tools/include/limits.h
-lib/gcc/avr/3.4.3/install-tools/include/stdarg.h
-lib/gcc/avr/3.4.3/install-tools/include/stdbool.h
-lib/gcc/avr/3.4.3/install-tools/include/stddef.h
-lib/gcc/avr/3.4.3/install-tools/include/unwind.h
-lib/gcc/avr/3.4.3/install-tools/include/varargs.h
-lib/gcc/avr/3.4.3/install-tools/mkheaders.conf
-lib/gcc/avr/3.4.3/libgcc.a
-lib/gcc/avr/3.4.3/libgcov.a
-lib/gcc/avr/3.4.3/specs
-libexec/gcc/avr/3.4.3/cc1
-libexec/gcc/avr/3.4.3/cc1plus
-libexec/gcc/avr/3.4.3/collect2
-libexec/gcc/avr/3.4.3/install-tools/fix-header
-libexec/gcc/avr/3.4.3/install-tools/fixinc.sh
-libexec/gcc/avr/3.4.3/install-tools/fixincl
-libexec/gcc/avr/3.4.3/install-tools/fixproto
-libexec/gcc/avr/3.4.3/install-tools/mkheaders
-libexec/gcc/avr/3.4.3/install-tools/mkinstalldirs
-@dirrm lib/gcc/avr/3.4.3/avr3
-@dirrm lib/gcc/avr/3.4.3/avr4
-@dirrm lib/gcc/avr/3.4.3/avr5
-@dirrm lib/gcc/avr/3.4.3/include
-@dirrm lib/gcc/avr/3.4.3/install-tools/include
-@dirrm lib/gcc/avr/3.4.3/install-tools
-@dirrm lib/gcc/avr/3.4.3
+lib/gcc/avr/3.4.4/avr3/libgcc.a
+lib/gcc/avr/3.4.4/avr3/libgcov.a
+lib/gcc/avr/3.4.4/avr4/libgcc.a
+lib/gcc/avr/3.4.4/avr4/libgcov.a
+lib/gcc/avr/3.4.4/avr5/libgcc.a
+lib/gcc/avr/3.4.4/avr5/libgcov.a
+lib/gcc/avr/3.4.4/include/README
+lib/gcc/avr/3.4.4/include/fixed
+lib/gcc/avr/3.4.4/include/float.h
+lib/gcc/avr/3.4.4/include/iso646.h
+lib/gcc/avr/3.4.4/include/limits.h
+lib/gcc/avr/3.4.4/include/stdarg.h
+lib/gcc/avr/3.4.4/include/stdbool.h
+lib/gcc/avr/3.4.4/include/stddef.h
+lib/gcc/avr/3.4.4/include/syslimits.h
+lib/gcc/avr/3.4.4/include/unwind.h
+lib/gcc/avr/3.4.4/include/varargs.h
+lib/gcc/avr/3.4.4/install-tools/gsyslimits.h
+lib/gcc/avr/3.4.4/install-tools/include/README
+lib/gcc/avr/3.4.4/install-tools/include/float.h
+lib/gcc/avr/3.4.4/install-tools/include/iso646.h
+lib/gcc/avr/3.4.4/install-tools/include/limits.h
+lib/gcc/avr/3.4.4/install-tools/include/stdarg.h
+lib/gcc/avr/3.4.4/install-tools/include/stdbool.h
+lib/gcc/avr/3.4.4/install-tools/include/stddef.h
+lib/gcc/avr/3.4.4/install-tools/include/unwind.h
+lib/gcc/avr/3.4.4/install-tools/include/varargs.h
+lib/gcc/avr/3.4.4/install-tools/mkheaders.conf
+lib/gcc/avr/3.4.4/libgcc.a
+lib/gcc/avr/3.4.4/libgcov.a
+lib/gcc/avr/3.4.4/specs
+libexec/gcc/avr/3.4.4/cc1
+libexec/gcc/avr/3.4.4/cc1plus
+libexec/gcc/avr/3.4.4/collect2
+libexec/gcc/avr/3.4.4/install-tools/fix-header
+libexec/gcc/avr/3.4.4/install-tools/fixinc.sh
+libexec/gcc/avr/3.4.4/install-tools/fixincl
+libexec/gcc/avr/3.4.4/install-tools/fixproto
+libexec/gcc/avr/3.4.4/install-tools/mkheaders
+libexec/gcc/avr/3.4.4/install-tools/mkinstalldirs
+@dirrm lib/gcc/avr/3.4.4/avr3
+@dirrm lib/gcc/avr/3.4.4/avr4
+@dirrm lib/gcc/avr/3.4.4/avr5
+@dirrm lib/gcc/avr/3.4.4/include
+@dirrm lib/gcc/avr/3.4.4/install-tools/include
+@dirrm lib/gcc/avr/3.4.4/install-tools
+@dirrm lib/gcc/avr/3.4.4
 @dirrm lib/gcc/avr
 @dirrm lib/gcc
-@dirrm libexec/gcc/avr/3.4.3/install-tools
-@dirrm libexec/gcc/avr/3.4.3
+@dirrm libexec/gcc/avr/3.4.4/install-tools
+@dirrm libexec/gcc/avr/3.4.4
 @dirrm libexec/gcc/avr
 @dirrm libexec/gcc
