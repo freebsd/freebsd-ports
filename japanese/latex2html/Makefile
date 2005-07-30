@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=     support/${PORTNAME}
-DISTNAME=       ${PORTNAME}-${VERSION:S/./-/g}
+DISTNAME=       ${PORTNAME}-${VERSION:S,.,-,g}
 
 PATCH_SITES=	http://takeno.iee.niit.ac.jp/~shige/TeX/latex2html/data/
 PATCHFILES=	l2h-2002-2-1+jp${JP_VERSION}.patch.gz
@@ -20,11 +20,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ixtl@utmc.or.jp
 COMMENT=	Japanese LaTeX2HTML with JA patch
 
-BROKEN=		"Conflicting dependencies (ja-ptex-base and teTeX)"
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	"${BROKEN}"
-
-RUN_DEPENDS=	platex:${PORTSDIR}/japanese/ptex \
+RUN_DEPENDS=	platex:${PORTSDIR}/japanese/ptex-tetex \
 		dvips:${PORTSDIR}/japanese/dvipsk \
 		gs:${PORTSDIR}/japanese/ghostscript-gnu-jpnfont \
 		anytopnm:${PORTSDIR}/graphics/netpbm
@@ -37,7 +33,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--shlibdir=${DATADIR} \
 		--disable-gif \
 		--with-perl=${PERL} \
-		--with-texpath=${PREFIX}/share/texmf/tex/latex/html
+		--with-texpath=${LOCALBASE}/${TEXMFDIR}/ptex/platex/html
+PLIST_SUB=	TEXMFDIR=${TEXMFDIR}
+
+TEXMFDIR?=	share/texmf
 
 DOC_FILES=	FAQ INSTALL LICENSE README README.patch-2002jp \
 		README.patch-99.1jp
