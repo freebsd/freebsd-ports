@@ -7,7 +7,7 @@
 
 PORTNAME?=	mozilla
 PORTVERSION=	1.8.b1
-PORTREVISION?=	2
+PORTREVISION?=	3
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -305,6 +305,13 @@ pre-install:
 	${ECHO_CMD} @dirrm include/${MOZILLA} >> ${PLIST}
 	${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
 	${ECHO_CMD} "@unexec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
+	cd ${FAKEDIR}/share/idl/${MOZILLA}-${PORTVERSION} \
+		&& ${FIND} -s * -type f -o -type l | \
+		${SED} -e 's:^:share/idl/${MOZILLA}/:' >> ${PLIST} \
+		&& ${FIND} -d * -type d | \
+		${SED} -e 's:^:@dirrm share/idl/${MOZILLA}/:' >> ${PLIST}
+		${ECHO_CMD} "@dirrm share/idl/${MOZILLA}" >> ${PLIST}
+		${ECHO_CMD} "@unexec rmdir %D/share/idl 2>/dev/null || true" >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/${MOZILLA}
@@ -344,6 +351,9 @@ do-install:
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIR}/mozilla-devel.desktop \
 		${PREFIX}/share/applications
+	${MKDIR} ${PREFIX}/share/idl/${MOZILLA}
+	cd ${FAKEDIR}/share/idl/${MOZILLA}-${PORTVERSION} && ${FIND} . | \
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/idl/${MOZILLA}
 
 post-install:
 	@-update-desktop-database
