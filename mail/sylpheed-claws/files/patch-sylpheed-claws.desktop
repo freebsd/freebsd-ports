@@ -1,0 +1,11 @@
+--- sylpheed-claws.desktop.orig	Sat Jul 30 11:17:58 2005
++++ sylpheed-claws.desktop	Sat Jul 30 11:18:16 2005
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Encoding=UTF-8
+ Name=Sylpheed-Claws
+-Exec=sylpheed
++Exec=sylpheed-claws
+ Icon=sylpheed-claws.png
+ Info="Sylpheed-Claws"
+ Categories=Application;Network;
