@@ -36,7 +36,7 @@ do-install:
 BADCFLAGS+=	-malign-double
 .endif
 
-.if ${ARCH} != "amd64" && ${ARCH} != "ia64"
+.if ${ARCH} != "amd64" && ${ARCH} != "i386"
 BADCFLAGS+=	-maccumulate-outgoing-args \
 		-minline-all-stringops \
 		-mno-align-stringops
@@ -53,8 +53,10 @@ post-patch:
 			s|\./exmars|exmars|' \
 				${WRKSRC}/bench.sh
 
-# Enable/disable compilation optimizations
+# Fix Makefile
 	@${REINPLACE_CMD} -e 's|\($${OPT}\)|${CFLAGS} \1|' ${WRKSRC}/${MAKEFILE}
+
+# Enable/disable compilation optimizations
 .if !defined(WITH_OPTIMIZED_CFLAGS) || ${OSVERSION} < 500035
 	@${REINPLACE_CMD} -e 's|$${OPT}||' ${WRKSRC}/${MAKEFILE}
 .endif
