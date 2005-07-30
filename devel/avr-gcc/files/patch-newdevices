@@ -1,0 +1,253 @@
+diff -ur /tmp/gcc-orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
+--- /tmp/gcc-orig/gcc/config/avr/avr.c	Sun Mar 20 22:14:28 2005
++++ ./gcc/config/avr/avr.c	Sat Jul 30 23:01:43 2005
+@@ -175,6 +175,12 @@
+   { "at90c8534", 2, "__AVR_AT90C8534__" },
+   { "at90s8535", 2, "__AVR_AT90S8535__" },
+   { "at86rf401", 2, "__AVR_AT86RF401__" },
++    /* Classic + MOVW, <= 8K.  */
++  { "attiny13",   2, "__AVR_ATtiny13__" },
++  { "attiny2313", 2, "__AVR_ATtiny2313__" },  
++  { "attiny25", 2, "__AVR_ATtiny25__" },
++  { "attiny45", 2, "__AVR_ATtiny45__" },
++  { "attiny85", 2, "__AVR_ATtiny85__" },
+     /* Classic, > 8K.  */
+   { "avr3",      3, NULL },
+   { "atmega103", 3, "__AVR_ATmega103__" },
+@@ -185,19 +191,36 @@
+     /* Enhanced, <= 8K.  */
+   { "avr4",      4, NULL },
+   { "atmega8",   4, "__AVR_ATmega8__" },
++  { "atmega48",   4, "__AVR_ATmega48__" },
++  { "atmega88",   4, "__AVR_ATmega88__" },
+   { "atmega8515", 4, "__AVR_ATmega8515__" },
+   { "atmega8535", 4, "__AVR_ATmega8535__" },
++  { "at90pwm2",  4, "__AVR_AT90PWM2__" },
++  { "at90pwm3",  4, "__AVR_AT90PWM3__" },
+     /* Enhanced, > 8K.  */
+   { "avr5",      5, NULL },
+   { "atmega16",  5, "__AVR_ATmega16__" },
+   { "atmega161", 5, "__AVR_ATmega161__" },
+   { "atmega162", 5, "__AVR_ATmega162__" },
+   { "atmega163", 5, "__AVR_ATmega163__" },
++  { "atmega164", 5, "__AVR_ATmega164__" },
++  { "atmega168", 5, "__AVR_ATmega168__" },
+   { "atmega169", 5, "__AVR_ATmega169__" },
+   { "atmega32",  5, "__AVR_ATmega32__" },
+   { "atmega323", 5, "__AVR_ATmega323__" },
++  { "atmega324", 5, "__AVR_ATmega324__" },
++  { "atmega325", 5, "__AVR_ATmega325__" },
++  { "atmega3250", 5, "__AVR_ATmega3250__" },
++  { "atmega329", 5, "__AVR_ATmega329__" },
++  { "atmega3290", 5, "__AVR_ATmega3290__" },
+   { "atmega64",  5, "__AVR_ATmega64__" },
++  { "atmega644", 5, "__AVR_ATmega644__" },
++  { "atmega645", 5, "__AVR_ATmega645__" },
++  { "atmega6450", 5, "__AVR_ATmega6450__" },
++  { "atmega649", 5, "__AVR_ATmega649__" },
++  { "atmega6490", 5, "__AVR_ATmega6490__" },
+   { "atmega128", 5, "__AVR_ATmega128__" },
++  { "at90can128", 5, "__AVR_AT90CAN128__" },
+   { "at94k",     5, "__AVR_AT94K__" },
+     /* Assembler only.  */
+   { "avr1",      1, NULL },
+diff -ur /tmp/gcc-orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
+--- /tmp/gcc-orig/gcc/config/avr/avr.h	Sat Jul 30 15:01:51 2005
++++ ./gcc/config/avr/avr.h	Sat Jul 30 23:03:48 2005
+@@ -2351,12 +2351,12 @@
+    Do not define this macro if it does not need to do anything.  */
+ 
+ #define LINK_SPEC " %{!mmcu*:-m avr2}\
+-%{mmcu=at90s1200|mmcu=attiny1*|mmcu=attiny28:-m avr1} \
+-%{mmcu=attiny22|mmcu=attiny26|mmcu=at90s2*|mmcu=at90s4*|mmcu=at90s8*|mmcu=at90c8*|mmcu=at86rf401:-m avr2}\
++%{mmcu=at90s1200|mmcu=attiny11|mmcu=attiny12|mmcu=attiny15|mmcu=attiny28:-m avr1} \
++%{mmcu=attiny22|mmcu=attiny26|mmcu=at90s2*|mmcu=at90s4*|mmcu=at90s8*|mmcu=at90c8*|mmcu=at86rf401|mmcu=attiny13|mmcu=attiny2313|mmcu=attiny25|mmcu=attiny45|mmcu=attiny85:-m avr2}\
+ %{mmcu=atmega103|mmcu=atmega603|mmcu=at43*|mmcu=at76*:-m avr3}\
+-%{mmcu=atmega8*:-m avr4}\
+-%{mmcu=atmega16*|mmcu=atmega32*|mmcu=atmega64|mmcu=atmega128|mmcu=at94k:-m avr5}\
+-%{mmcu=atmega64|mmcu=atmega128|mmcu=atmega162|mmcu=atmega169: -Tdata 0x800100} "
++%{mmcu=atmega8*|mmcu=atmega48|mmcu=at90pwm*:-m avr4}\
++%{mmcu=atmega16*|mmcu=atmega32*|mmcu=atmega64*|mmcu=atmega128|mmcu=at90can128|mmcu=at94k:-m avr5}\
++%{mmcu=atmega324|mmcu=atmega325|mmcu=atmega3250|mmcu=atmega329|mmcu=atmega3290|mmcu=atmega48|mmcu=atmega88|mmcu=atmega64|mmcu=atmega644|mmcu=atmega645|mmcu=atmega6450|mmcu=atmega649|mmcu=atmega6490|mmcu=atmega128|mmcu=at90can128|mmcu=atmega162|mmcu=atmega164|mmcu=atmega168|mmcu=atmega169: -Tdata 0x800100} "
+ 
+ /* A C string constant that tells the GCC driver program options to
+    pass to the linker.  It can also specify how to translate options
+@@ -2365,7 +2365,7 @@
+    Do not define this macro if it does not need to do anything.  */
+ 
+ #define LIB_SPEC \
+-  "%{!mmcu=at90s1*:%{!mmcu=attiny1*:%{!mmcu=attiny28: -lc }}}"
++  "%{!mmcu=at90s1*:%{!mmcu=attiny11:%{!mmcu=attiny12:%{!mmcu=attiny15:%{!mmcu=attiny28: -lc }}}}}"
+ /* Another C string constant used much like `LINK_SPEC'.  The
+    difference between the two is that `LIB_SPEC' is used at the end
+    of the command given to the linker.
+@@ -2377,7 +2377,7 @@
+ /* No libstdc++ for now.  Empty string doesn't work.  */
+ 
+ #define LIBGCC_SPEC \
+-  "%{!mmcu=at90s1*:%{!mmcu=attiny1*:%{!mmcu=attiny28: -lgcc }}}"
++  "%{!mmcu=at90s1*:%{!mmcu=attiny11:%{!mmcu=attiny12:%{!mmcu=attiny15:%{!mmcu=attiny28: -lgcc }}}}}"
+ /* Another C string constant that tells the GCC driver program how
+    and when to place a reference to `libgcc.a' into the linker
+    command line.  This constant is placed both before and after the
+@@ -2421,23 +2421,45 @@
+ %{mmcu=at90c8534:crtc8534.o%s} \
+ %{mmcu=at90s8535:crts8535.o%s} \
+ %{mmcu=at86rf401:crt86401.o%s} \
++%{mmcu=attiny13:crttn13.o%s} \
++%{mmcu=attiny2313:crttn2313.o%s} \
++%{mmcu=attiny25:crttn25.o%s} \
++%{mmcu=attiny45:crttn45.o%s} \
++%{mmcu=attiny85:crttn85.o%s} \
+ %{mmcu=atmega103|mmcu=avr3:crtm103.o%s} \
+ %{mmcu=atmega603:crtm603.o%s} \
+ %{mmcu=at43usb320:crt43320.o%s} \
+ %{mmcu=at43usb355:crt43355.o%s} \
+ %{mmcu=at76c711:crt76711.o%s} \
+ %{mmcu=atmega8|mmcu=avr4:crtm8.o%s} \
++%{mmcu=atmega48:crtm48.o%s} \
++%{mmcu=atmega88:crtm88.o%s} \
+ %{mmcu=atmega8515:crtm8515.o%s} \
+ %{mmcu=atmega8535:crtm8535.o%s} \
++%{mmcu=at90pwm2:crt90pwm2.o%s} \
++%{mmcu=at90pwm3:crt90pwm3.o%s} \
+ %{mmcu=atmega16:crtm16.o%s} \
+ %{mmcu=atmega161|mmcu=avr5:crtm161.o%s} \
+ %{mmcu=atmega162:crtm162.o%s} \
+ %{mmcu=atmega163:crtm163.o%s} \
++%{mmcu=atmega164:crtm164.o%s} \
++%{mmcu=atmega168:crtm168.o%s} \
+ %{mmcu=atmega169:crtm169.o%s} \
+ %{mmcu=atmega32:crtm32.o%s} \
+ %{mmcu=atmega323:crtm323.o%s} \
++%{mmcu=atmega324:crtm324.o%s} \
++%{mmcu=atmega325:crtm325.o%s} \
++%{mmcu=atmega3250:crtm3250.o%s} \
++%{mmcu=atmega329:crtm329.o%s} \
++%{mmcu=atmega3290:crtm3290.o%s} \
+ %{mmcu=atmega64:crtm64.o%s} \
++%{mmcu=atmega644:crtm644.o%s} \
++%{mmcu=atmega645:crtm645.o%s} \
++%{mmcu=atmega6450:crtm6450.o%s} \
++%{mmcu=atmega649:crtm649.o%s} \
++%{mmcu=atmega6490:crtm6490.o%s} \
+ %{mmcu=atmega128:crtm128.o%s} \
++%{mmcu=at90can128:crtcan128.o%s} \
+ %{mmcu=at94k:crtat94k.o%s}"
+ 
+ #define EXTRA_SPECS {"crt_binutils", CRT_BINUTILS_SPECS},
+diff -ur /tmp/gcc-orig/gcc/config/avr/avr.h.orig ./gcc/config/avr/avr.h.orig
+--- /tmp/gcc-orig/gcc/config/avr/avr.h.orig	Tue Mar  9 03:59:55 2004
++++ ./gcc/config/avr/avr.h.orig	Sat Jul 30 22:27:40 2005
+@@ -2351,12 +2351,12 @@
+    Do not define this macro if it does not need to do anything.  */
+ 
+ #define LINK_SPEC " %{!mmcu*:-m avr2}\
+-%{mmcu=at90s1200|mmcu=attiny1*|mmcu=attiny28:-m avr1} \
+-%{mmcu=attiny22|mmcu=attiny26|mmcu=at90s2*|mmcu=at90s4*|mmcu=at90s8*|mmcu=at90c8*|mmcu=at86rf401:-m avr2}\
++%{mmcu=at90s1200|mmcu=attiny11|mmcu=attiny12|mmcu=attiny15|mmcu=attiny28:-m avr1} \
++%{mmcu=attiny22|mmcu=attiny26|mmcu=at90s2*|mmcu=at90s4*|mmcu=at90s8*|mmcu=at90c8*|mmcu=at86rf401|mmcu=attiny13|mmcu=attiny2313|mmcu=attiny25|mmcu=attiny45|mmcu=attiny85:-m avr2}\
+ %{mmcu=atmega103|mmcu=atmega603|mmcu=at43*|mmcu=at76*:-m avr3}\
+-%{mmcu=atmega8*:-m avr4}\
+-%{mmcu=atmega16*|mmcu=atmega32*|mmcu=atmega64|mmcu=atmega128|mmcu=at94k:-m avr5}\
+-%{mmcu=atmega64|mmcu=atmega128|mmcu=atmega162|mmcu=atmega169: -Tdata 0x800100} "
++%{mmcu=atmega8*|mmcu=atmega48|mmcu=at90pwm*:-m avr4}\
++%{mmcu=atmega16*|mmcu=atmega32*|mmcu=atmega64*|mmcu=atmega128|mmcu=at90can128|mmcu=at94k:-m avr5}\
++%{mmcu=atmega325|mmcu=atmega3250|mmcu=atmega48|mmcu=atmega88|mmcu=atmega64|mmcu=atmega645|mmcu=atmega6450|mmcu=atmega128|mmcu=at90can128|mmcu=at90can128|mmcu=atmega162|mmcu=atmega168|mmcu=atmega169: -Tdata 0x800100} "
+ 
+ /* A C string constant that tells the GCC driver program options to
+    pass to the linker.  It can also specify how to translate options
+@@ -2365,7 +2365,7 @@
+    Do not define this macro if it does not need to do anything.  */
+ 
+ #define LIB_SPEC \
+-  "%{!mmcu=at90s1*:%{!mmcu=attiny1*:%{!mmcu=attiny28: -lc }}}"
++  "%{!mmcu=at90s1*:%{!mmcu=attiny11:%{!mmcu=attiny12:%{!mmcu=attiny15:%{!mmcu=attiny28: -lc }}}}}"
+ /* Another C string constant used much like `LINK_SPEC'.  The
+    difference between the two is that `LIB_SPEC' is used at the end
+    of the command given to the linker.
+@@ -2377,7 +2377,7 @@
+ /* No libstdc++ for now.  Empty string doesn't work.  */
+ 
+ #define LIBGCC_SPEC \
+-  "%{!mmcu=at90s1*:%{!mmcu=attiny1*:%{!mmcu=attiny28: -lgcc }}}"
++  "%{!mmcu=at90s1*:%{!mmcu=attiny11:%{!mmcu=attiny12:%{!mmcu=attiny15:%{!mmcu=attiny28: -lgcc }}}}}"
+ /* Another C string constant that tells the GCC driver program how
+    and when to place a reference to `libgcc.a' into the linker
+    command line.  This constant is placed both before and after the
+@@ -2421,23 +2421,38 @@
+ %{mmcu=at90c8534:crtc8534.o%s} \
+ %{mmcu=at90s8535:crts8535.o%s} \
+ %{mmcu=at86rf401:crt86401.o%s} \
++%{mmcu=attiny13:crttn13.o%s} \
++%{mmcu=attiny2313:crttn2313.o%s} \
++%{mmcu=attiny25:crttn25.o%s} \
++%{mmcu=attiny45:crttn45.o%s} \
++%{mmcu=attiny85:crttn85.o%s} \
+ %{mmcu=atmega103|mmcu=avr3:crtm103.o%s} \
+ %{mmcu=atmega603:crtm603.o%s} \
+ %{mmcu=at43usb320:crt43320.o%s} \
+ %{mmcu=at43usb355:crt43355.o%s} \
+ %{mmcu=at76c711:crt76711.o%s} \
+ %{mmcu=atmega8|mmcu=avr4:crtm8.o%s} \
++%{mmcu=atmega48:crtm48.o%s} \
++%{mmcu=atmega88:crtm88.o%s} \
+ %{mmcu=atmega8515:crtm8515.o%s} \
+ %{mmcu=atmega8535:crtm8535.o%s} \
++%{mmcu=at90pwm2:crt90pwm2.o%s} \
++%{mmcu=at90pwm3:crt90pwm3.o%s} \
+ %{mmcu=atmega16:crtm16.o%s} \
+ %{mmcu=atmega161|mmcu=avr5:crtm161.o%s} \
+ %{mmcu=atmega162:crtm162.o%s} \
+ %{mmcu=atmega163:crtm163.o%s} \
++%{mmcu=atmega168:crtm168.o%s} \
+ %{mmcu=atmega169:crtm169.o%s} \
+ %{mmcu=atmega32:crtm32.o%s} \
+ %{mmcu=atmega323:crtm323.o%s} \
++%{mmcu=atmega325:crtm325.o%s} \
++%{mmcu=atmega3250:crtm3250.o%s} \
+ %{mmcu=atmega64:crtm64.o%s} \
++%{mmcu=atmega645:crtm645.o%s} \
++%{mmcu=atmega6450:crtm6450.o%s} \
+ %{mmcu=atmega128:crtm128.o%s} \
++%{mmcu=at90can128:crtcan128.o%s} \
+ %{mmcu=at94k:crtat94k.o%s}"
+ 
+ #define EXTRA_SPECS {"crt_binutils", CRT_BINUTILS_SPECS},
+@@ -2479,4 +2494,5 @@
+ /* zero register r1 */
+ #define ZERO_REGNO 1
+ 
++#define DWARF2_DEBUGGING_INFO 1
+ #define PREFERRED_DEBUGGING_TYPE DBX_DEBUG
+diff -ur /tmp/gcc-orig/gcc/config/avr/t-avr ./gcc/config/avr/t-avr
+--- /tmp/gcc-orig/gcc/config/avr/t-avr	Mon Apr 25 06:17:34 2005
++++ ./gcc/config/avr/t-avr	Sat Jul 30 23:06:40 2005
+@@ -46,13 +46,22 @@
+ 	mmcu?avr3=mmcu?at43usb320 mmcu?avr3=mmcu?at43usb355 \
+ 	mmcu?avr3=mmcu?at76c711 \
+ 	mmcu?avr4=mmcu?atmega8515 mmcu?avr4=mmcu?atmega8535 \
+-	mmcu?avr4=mmcu?atmega8 \
++	mmcu?avr4=mmcu?atmega8 mmcu?avr4=mmcu?atmega48 \
++	mmcu?avr4=mmcu?atmega88 \
++	mmcu?avr4=mmcu?at90pwm2  mmcu?avr4=mmcu?at90pwm3 \
+ 	mmcu?avr5=mmcu?atmega161 mmcu?avr5=mmcu?atmega162 \
+-	mmcu?avr5=mmcu?atmega163 mmcu?avr5=mmcu?atmega169 \
++	mmcu?avr5=mmcu?atmega163 mmcu?avr5=mmcu?atmega164 \
++	mmcu?avr5=mmcu?atmega168 mmcu?avr5=mmcu?atmega169 \
+ 	mmcu?avr5=mmcu?atmega16 \
+-	mmcu?avr5=mmcu?atmega323 mmcu?avr5=mmcu?atmega32 \
+-	mmcu?avr5=mmcu?atmega64  mmcu?avr5=mmcu?atmega128 \
+-	mmcu?avr5=mmcu?at94k
++	mmcu?avr5=mmcu?atmega323 mmcu?avr5=mmcu?atmega324 \
++	mmcu?avr5=mmcu?atmega325 mmcu?avr5=mmcu?atmega3250 \
++	mmcu?avr5=mmcu?atmega329 mmcu?avr5=mmcu?atmega3290 \
++	mmcu?avr5=mmcu?atmega32 \
++	mmcu?avr5=mmcu?atmega644 mmcu?avr5=mmcu?atmega645 \
++	mmcu?avr5=mmcu?atmega6450 mmcu?avr5=mmcu?atmega649 \
++	mmcu?avr5=mmcu?atmega6490 mmcu?avr5=mmcu?atmega64 \
++	mmcu?avr5=mmcu?atmega128 \
++	mmcu?avr5=mmcu?at94k mmcu?avr5=mmcu?at90can128
+ 
+ MULTILIB_EXCEPTIONS =
+ 
