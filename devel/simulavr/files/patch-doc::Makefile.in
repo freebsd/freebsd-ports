@@ -1,0 +1,22 @@
+--- doc/Makefile.in.orig	Thu Feb 17 00:00:19 2005
++++ doc/Makefile.in	Sat Jul 30 23:54:10 2005
+@@ -516,7 +516,8 @@
+ 	uninstall-local
+ 
+ 
+-all-local: html $(TARGET_PS) $(TARGET_PDF)
++#all-local: html $(TARGET_PS) $(TARGET_PDF)
++all-local:
+ 
+ # Rule for generating postscript output.
+ ps: simulavr.ps $(TARGET_DOX_PS)
+@@ -547,7 +548,8 @@
+ 	done
+ 
+ # General rule for installing documentation
+-install-data-local: install-html install-ps $(INSTALL_PDF)
++#install-data-local: install-html install-ps $(INSTALL_PDF)
++install-data-local:
+ 
+ uninstall-local:
+ 	rm -rf $(DOC_INST_DIR)
