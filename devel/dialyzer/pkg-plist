@@ -13,7 +13,6 @@ lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer_gui.beam
 lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer_module_callgraph.beam
 lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer_options.beam
 lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer_plt.beam
-lib/erlang/lib/dialyzer-%%VERSION%%/plt/dialyzer_empty_plt
 lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer.app.src
 lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer.erl
 lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer.hrl
@@ -27,11 +26,11 @@ lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer_options.erl
 lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer_plt.erl
 lib/erlang/lib/dialyzer-%%VERSION%%/src/hipe_icode_type.hrl
 @dirrm lib/erlang/lib/dialyzer-%%VERSION%%/src
-@dirrm lib/erlang/lib/dialyzer-%%VERSION%%/plt
 @dirrm lib/erlang/lib/dialyzer-%%VERSION%%/ebin
 @dirrm lib/erlang/lib/dialyzer-%%VERSION%%/doc
-@dirrm lib/erlang/lib/dialyzer-%%VERSION%%
+@unexec rmdir %D/lib/erlang/lib/dialyzer-%%VERSION%%/plt >/dev/null 2>&1 || true
+@unexec rmdir %D/lib/erlang/lib/dialyzer-%%VERSION%% >/dev/null 2>&1 || true
 @exec ln -sf dialyzer-%%VERSION%% %D/lib/erlang/lib/dialyzer
-@unexec rm -f %D/lib/erlang/lib/dialyzer 2>&1 >/dev/null || true
+@unexec rm -f %D/lib/erlang/lib/dialyzer >/dev/null 2>&1 || true
 @exec ln -sf %D/lib/erlang/lib/dialyzer-%%VERSION%%/dialyzer %D/bin/dialyzer
-@unexec rm %D/bin/dialyzer 2>&1 >/dev/null || true
+@unexec rm %D/bin/dialyzer >/dev/null 2>&1 || true
