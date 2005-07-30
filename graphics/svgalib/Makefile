@@ -22,6 +22,8 @@ ALL_TARGET=	shared static
 
 ONLY_FOR_ARCHS=	i386
 
+.include <bsd.port.pre.mk>
+
 .for i in 1 2 3 4 5 6 7 8 9
 .if exists(${FILESDIR}/man${i})
 MAN${i}!=	${CAT} ${FILESDIR}/man${i}
@@ -40,4 +42,4 @@ post-install:
 	cd ${WRKSRC}/include/linux && \
 		${INSTALL_DATA} keyboard.h kd.h ${PREFIX}/include/linux
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
