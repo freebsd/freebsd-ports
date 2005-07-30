@@ -32,6 +32,84 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="934b1de4-00d7-11da-bc08-0001020eed82">
+    <topic>opera -- image dragging vulnerability</topic>
+    <affects>
+      <package>
+	<name>linux-opera</name>
+	<name>opera-devel</name>
+	<name>opera</name>
+	<range><lt>8.02</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/15756/">
+	  <p>Secunia Research has discovered a vulnerability in Opera,
+	    which can be exploited by malicious people to conduct
+	    cross-site scripting attacks and retrieve a user's
+	    files.</p>
+	  <p>The vulnerability is caused due to Opera allowing a user
+	    to drag e.g. an image, which is actually a "javascript:"
+	    URI, resulting in cross-site scripting if dropped over
+	    another site. This may also be used to populate a file
+	    upload form, resulting in uploading of arbitrary files to
+	    a malicious web site.</p>
+	  <p>Successful exploitation requires that the user is tricked
+	    into dragging and dropping e.g. an image or a link.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/15756/</url>
+      <url>http://www.opera.com/freebsd/changelogs/802/</url>
+    </references>
+    <dates>
+      <discovery>2005-07-28</discovery>
+      <entry>2005-07-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a2aa24fd-00d4-11da-bc08-0001020eed82">
+    <topic>opera -- download dialog spoofing vulnerability</topic>
+    <affects>
+      <package>
+	<name>linux-opera</name>
+	<name>opera-devel</name>
+	<name>opera</name>
+	<range><lt>8.02</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/15870/">
+	  <p>Secunia Research has discovered a vulnerability in Opera,
+	    which can be exploited by malicious people to trick users
+	    into executing malicious files.</p>
+	  <p>The vulnerability is caused due to an error in the
+	    handling of extended ASCII codes in the download
+	    dialog. This can be exploited to spoof the file extension
+	    in the file download dialog via a specially crafted
+	    "Content-Disposition" HTTP header.</p>
+	  <p>Successful exploitation may result in users being tricked
+	    into executing a malicious file via the download dialog,
+	    but requires that the "Arial Unicode MS" font
+	    (ARIALUNI.TTF) has been installed on the system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/15870/</url>
+      <url>http://www.opera.com/freebsd/changelogs/802/</url>
+    </references>
+    <dates>
+      <discovery>2005-07-28</discovery>
+      <entry>2005-07-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5d51d245-00ca-11da-bc08-0001020eed82">
     <topic>ethereal -- multiple vulnerabilities</topic>
     <affects>
