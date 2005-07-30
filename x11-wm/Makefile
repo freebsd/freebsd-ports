@@ -84,7 +84,6 @@
     SUBDIR += qvwm
     SUBDIR += ratmenu
     SUBDIR += ratpoison
-    SUBDIR += rox-pager
     SUBDIR += sapphire
     SUBDIR += sawfish2
     SUBDIR += selectwm
