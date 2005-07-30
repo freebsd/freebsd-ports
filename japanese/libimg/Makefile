@@ -15,6 +15,9 @@ DISTNAME=	img${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced Tk adding support for many other Image formats
 
+FORBIDDEN=	http://vuxml.FreeBSD.org/pkg-ja-libimg.html
+EXPIRATION_DATE=2005-08-30
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/tcl8.0jp/tclIndex:${PORTSDIR}/japanese/tcl80 \
 		${LOCALBASE}/lib/tk8.0jp/tk.tcl:${PORTSDIR}/japanese/tk80
 

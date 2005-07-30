@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fractal generation program
 
+FORBIDDEN=	http://vuxml.FreeBSD.org/pkg-fractorama.html
+EXPIRATION_DATE=2005-08-30
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_QT_VER=	3
