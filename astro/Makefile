@@ -33,6 +33,7 @@
     SUBDIR += mymoon
     SUBDIR += nightfall
     SUBDIR += nova
+    SUBDIR += openmap
     SUBDIR += openuniverse
     SUBDIR += orsa
     SUBDIR += p5-Astro-ADS
