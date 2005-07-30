@@ -111,7 +111,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="5d51d245-00ca-11da-bc08-0001020eed82">
-    <topic>ethereal -- multiple vulnerabilities</topic>
+    <topic>ethereal -- multiple protocol dissectors vulnerabilities</topic>
     <affects>
       <package>
 	<name>ethereal</name>
