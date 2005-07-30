@@ -10,7 +10,7 @@ PORTVERSION=	0.9.1
 CATEGORIES=	www
 MASTER_SITES=	http://monkeyd.sourceforge.net/versions/
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	az@inec.ru
 COMMENT=	A small, powerful, and fast Web server written in C
 
 USE_GMAKE=	yes
