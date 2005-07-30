@@ -1,0 +1,4 @@
+Feed::Find implements feed auto-discovery for finding syndication
+feeds, given a URI.
+
+WWW: http://search.cpan.org/dist/Feed-Find
