@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fltk
-PORTVERSION=	1.1.b2
+PORTVERSION=	1.1.b3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	pyfltk
@@ -23,17 +23,10 @@ USE_PYDISTUTILS=	yes
 USE_XLIB=	yes
 USE_REINPLACE=	yes
 
-#WRKSRC=		${WRKDIR}/${DISTNAME}
 MAKE_ENV+=	FLTK_HOME=${X11BASE}/include OPENGL_HOME=${X11BASE}/include
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 XTRADOCS=	CHANGES README TODO
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 600000
-BROKEN=		"Broken pkg-plist on FreeBSD >= 6.x"
-.endif
 
 post-build:
 	${REINPLACE_CMD} -e "s|\.\./docs|${DOCSDIR}/html|g" ${WRKSRC}/test/help.py
@@ -41,7 +34,6 @@ post-build:
 do-install:
 	@(cd ${INSTALL_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} install ${PYDISTUTILS_INSTALLARGS})
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}/html
 	${MKDIR} ${EXAMPLESDIR}
@@ -52,4 +44,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

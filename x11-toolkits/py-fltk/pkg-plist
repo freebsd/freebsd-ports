@@ -16,6 +16,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/pyFltk.html
 %%PORTDOCS%%%%DOCSDIR%%/html/setMenus.html
 %%PORTDOCS%%%%EXAMPLESDIR%%/HelpDialog.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/TextEditor.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/adjuster.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/arc.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/ask.py
@@ -37,6 +38,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/dials.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/doublebuffer.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/draw.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/file_chooser.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/formsbitmap.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/group.py
@@ -46,6 +48,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/iconize.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/idle.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/image.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/image_array.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/listSelect.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/menu.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/menubar.py
@@ -63,8 +66,8 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/tabs.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/testWrapper.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/testhelp.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/tile.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/timeout.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/tree_demo.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/valuators.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/widgets.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/window.py
