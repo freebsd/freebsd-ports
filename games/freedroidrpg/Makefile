@@ -15,14 +15,15 @@ DISTNAME=	${PORTNAME}-0.9.13-rc2
 MAINTAINER=	alejandro@varnet.biz
 COMMENT=	Modification of the classical Freedroid engine into an RPG
 
-USE_XLIB=	yes
 USE_BZIP2=	yes
-USE_SDL=	mixer image net sdl
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_GL=		yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
+USE_SDL=	mixer image net sdl
+USE_XLIB=	yes
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=
 
 MAN6=		freedroidRPG.6
@@ -31,6 +32,10 @@ MAN6=		freedroidRPG.6
 
 .if ${OSVERSION} < 500000
 BROKEN=		"does not compile (missing fenv.h)"
+.endif
+
+.if ${OSVERSION} < 600021
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-init.c
 .endif
 
 post-patch:
