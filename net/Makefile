@@ -816,6 +816,7 @@
     SUBDIR += tinyfugue
     SUBDIR += tinyldap
     SUBDIR += tkabber
+    SUBDIR += tkabber-devel
     SUBDIR += tn3270
     SUBDIR += tn5250
     SUBDIR += torrentsniff
