@@ -1,8 +1,9 @@
 bin/scim-panel-kde
 bin/skim
+include/skim/extra_utils.h
 include/skim/skimglobalactions.h
 include/skim/skimkeygrabber.h
-include/skim/skimplugin.h 
+include/skim/skimplugin.h
 include/skim/skimpluginmanager.h
 include/skim/socketserverthread.h
 include/skim/utils/kautocmodule.h
@@ -11,6 +12,8 @@ include/skim/utils/scimdragableframe.h
 include/skim/utils/scimmovehandle.h
 include/skim/utils/scimtoolbar.h
 include/skim/utils/scimxmlguibuilder.h
+lib/kde3/kcm_skimplugin_compmgrclient.la
+lib/kde3/kcm_skimplugin_compmgrclient.so
 lib/kde3/kcm_skimplugin_configplugin.la
 lib/kde3/kcm_skimplugin_configplugin.so
 lib/kde3/kcm_skimplugin_inputwindow.la
@@ -19,18 +22,16 @@ lib/kde3/kcm_skimplugin_mainwindow.la
 lib/kde3/kcm_skimplugin_mainwindow.so
 lib/kde3/kcm_skimplugin_scim_global.la
 lib/kde3/kcm_skimplugin_scim_global.so
-lib/kde3/kcm_skimplugin_scim_hangul.la
-lib/kde3/kcm_skimplugin_scim_hangul.so
 lib/kde3/kcm_skimplugin_scim_imengines.la
 lib/kde3/kcm_skimplugin_scim_imengines.so
-lib/kde3/kcm_skimplugin_scim_smartpinyin.la
-lib/kde3/kcm_skimplugin_scim_smartpinyin.so
-lib/kde3/kcm_skimplugin_scim_tables.la
-lib/kde3/kcm_skimplugin_scim_tables.so
 lib/kde3/kcm_skimplugin_scim_x.la
 lib/kde3/kcm_skimplugin_scim_x.so
 lib/kde3/kcm_skimplugin_systemtray.la
 lib/kde3/kcm_skimplugin_systemtray.so
+lib/kde3/skim_panelapplet.la
+lib/kde3/skim_panelapplet.so
+lib/kde3/skimplugin_compmgrclient.la
+lib/kde3/skimplugin_compmgrclient.so
 lib/kde3/skimplugin_inputwindow.la
 lib/kde3/skimplugin_inputwindow.so
 lib/kde3/skimplugin_mainwindow.la
@@ -44,22 +45,26 @@ lib/kde3/skimplugin_systemtray.so
 lib/libscim-kdeutils.la
 lib/libscim-kdeutils.so
 lib/libscim-kdeutils.so.0
+lib/libscim-kdeutils.so.0.1.0
 lib/libskim.la
 lib/libskim.so
 lib/libskim.so.0
+lib/libskim.so.0.1.0
 libdata/pkgconfig/scim_kdeutils.pc
 libdata/pkgconfig/skim.pc
 share/applnk/Utilities/skim.desktop
+share/apps/kicker/applets/skimapplet.desktop
 share/apps/skim/mainwindowui.rc
 share/apps/skim/pics/pin_down.png
 share/apps/skim/pics/pin_up.png
+share/apps/skim/pics/scim.png
 share/apps/skim/pics/scim_help.png
+share/apps/skim/pics/scim_keyboard.png
+share/apps/skim/pics/scim_setup.png
+share/apps/skim/pics/skim_minimize.png
+share/apps/skim/pics/skim_restore.png
 share/autostart/skim.desktop
-share/config.kcfg/generictable.kcfg
-share/config.kcfg/scim_hangul.kcfg
 share/config.kcfg/scimkdeconfig.kcfg
-share/config.kcfg/smartpinyin.kcfg
-share/doc/HTML/de/skim/common
 share/doc/HTML/de/skim/index.cache.bz2
 share/doc/HTML/de/skim/index.docbook
 share/doc/HTML/de/skim/skim01a.png
@@ -95,14 +100,12 @@ share/doc/HTML/de/skim/skim_toolbar3.png
 share/doc/HTML/de/skim/skim_toolbar4.png
 share/doc/HTML/de/skim/skim_toolbar6.png
 share/doc/HTML/de/skim/skim_toolbar8.png
-share/doc/HTML/en/skim/common
 share/doc/HTML/en/skim/index.cache.bz2
 share/doc/HTML/en/skim/index.docbook
 share/doc/HTML/en/skim/inputwindow.png
 share/doc/HTML/en/skim/kdesystray.png
 share/doc/HTML/en/skim/mainwindow.png
 share/doc/HTML/en/skim/setupwindow.png
-share/doc/HTML/skim/kdex.dtd
 share/icons/crystalsvg/32x32/apps/skim.png
 share/icons/crystalsvg/scalable/apps/skim.svgz
 share/locale/de/LC_MESSAGES/skim.mo
@@ -113,32 +116,34 @@ share/locale/ko/LC_MESSAGES/skim.mo
 share/locale/zh_CN/LC_MESSAGES/skim.mo
 share/locale/zh_TW/LC_MESSAGES/skim.mo
 share/services/skimconfiguredialog/kcm_skimplugin_configplugin_config.desktop
+share/services/skimconfiguredialog/skimplugin_compmgrclient_config.desktop
 share/services/skimconfiguredialog/skimplugin_inputwindow_config.desktop
 share/services/skimconfiguredialog/skimplugin_mainwindow_config.desktop
 share/services/skimconfiguredialog/skimplugin_scim_global_config.desktop
-share/services/skimconfiguredialog/skimplugin_scim_hangul_config.desktop
 share/services/skimconfiguredialog/skimplugin_scim_imengines_config.desktop
-share/services/skimconfiguredialog/skimplugin_scim_smartpinyin_config.desktop
-share/services/skimconfiguredialog/skimplugin_scim_table_config.desktop
 share/services/skimconfiguredialog/skimplugin_scim_x_config.desktop
 share/services/skimconfiguredialog/skimplugin_systemtray_config.desktop
+share/services/skimplugin_compmgrclient.desktop
 share/services/skimplugin_inputwindow.desktop
 share/services/skimplugin_mainwindow.desktop
 share/services/skimplugin_scim.desktop
 share/services/skimplugin_setupwindow.desktop
 share/services/skimplugin_systemtray.desktop
+share/services/skimsetupdir_frontend.desktop
+share/services/skimsetupdir_imengines.desktop
+share/services/skimsetupdir_panel.desktop
 share/servicetypes/skimkcmplugin.desktop
 share/servicetypes/skimplugin.desktop
+share/servicetypes/skimsetupcategory.desktop
 share/servicetypes/skimui.desktop
 @cwd %%X11BASE%%
-lib/scim-1.0/1.2.0/Config/kconfig.la
-lib/scim-1.0/1.2.0/Config/kconfig.so
+lib/scim-1.0/1.4.0/Config/kconfig.la
+lib/scim-1.0/1.4.0/Config/kconfig.so
 @cwd %%LOCALBASE%%
 @dirrm include/skim/utils
 @dirrm include/skim
 @dirrm share/services/skimconfiguredialog
 @dirrm share/doc/HTML/en/skim
 @dirrm share/doc/HTML/de/skim
-@dirrm share/doc/HTML/skim
 @dirrm share/apps/skim/pics
 @dirrm share/apps/skim
