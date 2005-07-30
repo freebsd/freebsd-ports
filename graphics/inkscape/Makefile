@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	inkscape
-PORTVERSION=	0.41
-PORTREVISION=	3
+PORTVERSION=	0.42
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -44,6 +43,7 @@ patch-autotools:
 	done);
 
 post-install:
+	${GZIP_CMD} ${PREFIX}/man/fr/man1/inkscape.1
 	@-update-desktop-database
 
 .include <bsd.port.mk>

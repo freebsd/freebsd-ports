@@ -1,11 +1,6 @@
 bin/inkscape
 bin/inkview
-lib/inkscape/plugins/libgimpgrad.a
-lib/inkscape/plugins/libgimpgrad.so
-lib/inkscape/plugins/libgimpgrad.so.0
-lib/inkscape/plugins/libgrid.a
-lib/inkscape/plugins/libgrid.so
-lib/inkscape/plugins/libgrid.so.0
+man/fr/man1/inkscape.1.gz
 share/gnome/applications/inkscape.desktop
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/inkscape/clipart/README
@@ -31,35 +26,78 @@ share/gnome/inkscape/examples/tiger.svgz
 share/gnome/inkscape/extensions/SpSVG.pm
 share/gnome/inkscape/extensions/ai_input.inx
 share/gnome/inkscape/extensions/ai_output.inx
+share/gnome/inkscape/extensions/bezmisc.py
+share/gnome/inkscape/extensions/cubicsuperpath.py
 share/gnome/inkscape/extensions/dia.inx
 share/gnome/inkscape/extensions/dia2svg.sh
+share/gnome/inkscape/extensions/dots.inx
+share/gnome/inkscape/extensions/dots.py
 share/gnome/inkscape/extensions/dropshadow.inx
 share/gnome/inkscape/extensions/embed_raster_in_svg.pl
 share/gnome/inkscape/extensions/eps_input.inx
 share/gnome/inkscape/extensions/epsi_output.inx
-share/gnome/inkscape/extensions/gimpgrad.inx
-share/gnome/inkscape/extensions/grid.inx
+share/gnome/inkscape/extensions/ffgeom.py
+share/gnome/inkscape/extensions/ffmet.inx
+share/gnome/inkscape/extensions/ffms.inx
+share/gnome/inkscape/extensions/ffproc.py
+share/gnome/inkscape/extensions/ffscale.py
+share/gnome/inkscape/extensions/ffset.inx
+share/gnome/inkscape/extensions/ffss.inx
+share/gnome/inkscape/extensions/fretfind.py
+share/gnome/inkscape/extensions/handles.inx
+share/gnome/inkscape/extensions/handles.py
 share/gnome/inkscape/extensions/ill2svg.pl
+share/gnome/inkscape/extensions/inkex.py
 share/gnome/inkscape/extensions/inkscape-shadow-white.sh
 share/gnome/inkscape/extensions/inkscape-shadow.sh
+share/gnome/inkscape/extensions/interp.inx
+share/gnome/inkscape/extensions/interp.py
+share/gnome/inkscape/extensions/kochify.inx
+share/gnome/inkscape/extensions/kochify.py
+share/gnome/inkscape/extensions/kochify_load.inx
+share/gnome/inkscape/extensions/kochify_load.py
+share/gnome/inkscape/extensions/lindenmayer.inx
+share/gnome/inkscape/extensions/lindenmayer.py
+share/gnome/inkscape/extensions/motion.inx
+share/gnome/inkscape/extensions/motion.py
+share/gnome/inkscape/extensions/pdf_output.inx
 share/gnome/inkscape/extensions/ps2epsi.sh
+share/gnome/inkscape/extensions/ps2pdf.sh
 share/gnome/inkscape/extensions/ps_input.inx
+share/gnome/inkscape/extensions/pturtle.py
+share/gnome/inkscape/extensions/radiusrand.inx
+share/gnome/inkscape/extensions/radiusrand.py
+share/gnome/inkscape/extensions/rtree.inx
+share/gnome/inkscape/extensions/rtree.py
+share/gnome/inkscape/extensions/simplepath.py
+share/gnome/inkscape/extensions/simplestyle.py
 share/gnome/inkscape/extensions/sk2svg.sh
 share/gnome/inkscape/extensions/sk_input.inx
+share/gnome/inkscape/extensions/straightseg.inx
+share/gnome/inkscape/extensions/straightseg.py
 share/gnome/inkscape/extensions/svg_dropshadow
 share/gnome/inkscape/extensions/svgz_input.inx
 share/gnome/inkscape/extensions/svgz_output.inx
 share/gnome/inkscape/extensions/txt2svg.inx
 share/gnome/inkscape/extensions/txt2svg.pl
+share/gnome/inkscape/extensions/wavy.inx
+share/gnome/inkscape/extensions/wavy.py
 share/gnome/inkscape/extensions/wmf_input.inx
 share/gnome/inkscape/fonts/README
 share/gnome/inkscape/gradients/README
+share/gnome/inkscape/icons/David_icons.svg
+share/gnome/inkscape/icons/README.icons
 share/gnome/inkscape/icons/icons.svg
+share/gnome/inkscape/icons/inkscape.svg
 share/gnome/inkscape/keyboards/README
 share/gnome/inkscape/markers/markers.svg
 share/gnome/inkscape/palettes/README
+share/gnome/inkscape/palettes/svg.gpl
+share/gnome/inkscape/palettes/webhex.gpl
+share/gnome/inkscape/palettes/websafe22.gpl
 share/gnome/inkscape/patterns/README
 share/gnome/inkscape/screens/about.svg
+share/gnome/inkscape/screens/keys.fr.svg
 share/gnome/inkscape/screens/keys.sl.svg
 share/gnome/inkscape/screens/keys.svg
 share/gnome/inkscape/templates/A4.svg
@@ -70,6 +108,10 @@ share/gnome/inkscape/templates/Letter_landscape.svg
 share/gnome/inkscape/templates/README
 share/gnome/inkscape/templates/black_opaque.svg
 share/gnome/inkscape/templates/business_card_90x50mm.svg
+share/gnome/inkscape/templates/default.cs.svg
+share/gnome/inkscape/templates/default.de.svg
+share/gnome/inkscape/templates/default.fr.svg
+share/gnome/inkscape/templates/default.it.svg
 share/gnome/inkscape/templates/default.svg
 share/gnome/inkscape/templates/default_mm.svg
 share/gnome/inkscape/templates/default_pt.svg
@@ -86,27 +128,49 @@ share/gnome/inkscape/templates/no_layers.svg
 share/gnome/inkscape/templates/web_banner_468x60.svg
 share/gnome/inkscape/templates/web_banner_728x90.svg
 share/gnome/inkscape/templates/white_opaque.svg
+share/gnome/inkscape/tutorials/README
 share/gnome/inkscape/tutorials/elementsofdesign.sl.svg
-share/gnome/inkscape/tutorials/elementsofdesign.svg
+share/gnome/inkscape/tutorials/gpl-2.svg
 share/gnome/inkscape/tutorials/making_markers.svg
 share/gnome/inkscape/tutorials/oldguitar.jpg
+share/gnome/inkscape/tutorials/potrace-fr.png
 share/gnome/inkscape/tutorials/potrace.png
 share/gnome/inkscape/tutorials/tipsandtricks.sl.svg
-share/gnome/inkscape/tutorials/tipsandtricks.svg
 share/gnome/inkscape/tutorials/tutorial-advanced.fr.svg
+share/gnome/inkscape/tutorials/tutorial-advanced.jp.svg
 share/gnome/inkscape/tutorials/tutorial-advanced.sl.svg
 share/gnome/inkscape/tutorials/tutorial-advanced.svg
+share/gnome/inkscape/tutorials/tutorial-basic.ca.svg
+share/gnome/inkscape/tutorials/tutorial-basic.es.svg
 share/gnome/inkscape/tutorials/tutorial-basic.fr.svg
+share/gnome/inkscape/tutorials/tutorial-basic.jp.svg
 share/gnome/inkscape/tutorials/tutorial-basic.nn.svg
 share/gnome/inkscape/tutorials/tutorial-basic.ru.svg
 share/gnome/inkscape/tutorials/tutorial-basic.sl.svg
 share/gnome/inkscape/tutorials/tutorial-basic.svg
+share/gnome/inkscape/tutorials/tutorial-calligraphy.es.svg
+share/gnome/inkscape/tutorials/tutorial-calligraphy.fr.svg
 share/gnome/inkscape/tutorials/tutorial-calligraphy.sl.svg
 share/gnome/inkscape/tutorials/tutorial-calligraphy.svg
+share/gnome/inkscape/tutorials/tutorial-elements.es.svg
+share/gnome/inkscape/tutorials/tutorial-elements.fr.svg
+share/gnome/inkscape/tutorials/tutorial-elements.svg
+share/gnome/inkscape/tutorials/tutorial-shapes.es.svg
+share/gnome/inkscape/tutorials/tutorial-shapes.fr.svg
+share/gnome/inkscape/tutorials/tutorial-shapes.jp.svg
 share/gnome/inkscape/tutorials/tutorial-shapes.sl.svg
 share/gnome/inkscape/tutorials/tutorial-shapes.svg
+share/gnome/inkscape/tutorials/tutorial-tips.fr.svg
+share/gnome/inkscape/tutorials/tutorial-tips.svg
+share/gnome/inkscape/tutorials/tutorial-tracing.es.svg
+share/gnome/inkscape/tutorials/tutorial-tracing.fr.svg
 share/gnome/inkscape/tutorials/tutorial-tracing.svg
 share/gnome/inkscape/tutorials/tux.png
+share/gnome/inkscape/ui/keybindings.rc
+share/gnome/inkscape/ui/menus-bars.xml
+share/gnome/inkscape/ui/toolbox.xml
+share/gnome/inkscape/ui/units.txt
+share/gnome/inkscape/ui/units.xml
 share/gnome/pixmaps/inkscape.png
 share/locale/am/LC_MESSAGES/inkscape.mo
 share/locale/az/LC_MESSAGES/inkscape.mo
@@ -140,6 +204,7 @@ share/locale/sv/LC_MESSAGES/inkscape.mo
 share/locale/tr/LC_MESSAGES/inkscape.mo
 share/locale/uk/LC_MESSAGES/inkscape.mo
 share/locale/zh_CN/LC_MESSAGES/inkscape.mo
+@dirrm share/gnome/inkscape/ui
 @dirrm share/gnome/inkscape/tutorials
 @dirrm share/gnome/inkscape/templates
 @dirrm share/gnome/inkscape/screens
@@ -154,6 +219,4 @@ share/locale/zh_CN/LC_MESSAGES/inkscape.mo
 @dirrm share/gnome/inkscape/examples
 @dirrm share/gnome/inkscape/clipart
 @dirrm share/gnome/inkscape
-@dirrm lib/inkscape/plugins
-@dirrm lib/inkscape
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
