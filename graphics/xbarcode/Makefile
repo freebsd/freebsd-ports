@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.nodetree.net/distfiles/
 
 DEPRECATED=	"master site is now a domain holder, try graphics/barcode"
-EXPIRATION_DATE=2005-07-31
+EXPIRATION_DATE=2005-08-31
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates bar codes in a variety of formats

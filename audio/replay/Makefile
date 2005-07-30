@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	X11/gtkbuffet/apps/replay
 DISTNAME=	${PORTNAME}-source-dgtk_${PORTVERSION}
 
 DEPRECATED=	"no longer on sunsite, home page gone"
-EXPIRATION_DATE=2005-07-31
+EXPIRATION_DATE=2005-08-31
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another GTK-based mp3 player

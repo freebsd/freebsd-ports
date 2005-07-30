@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.angelfire.com/va/powerpakgsdk/images/
 DISTNAME=	PowerPak
 
 DEPRECATED=	"master site disappeared"
-EXPIRATION_DATE=2005-07-31
+EXPIRATION_DATE=2005-08-31
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDL-based Game Software Development Kit

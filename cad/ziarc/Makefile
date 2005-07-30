@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.procoders.net/downloads/
 DISTNAME=	ziarc_src
 
 DEPRECATED=	"no longer available from author's site"
-EXPIRATION_DATE=2005-07-31
+EXPIRATION_DATE=2005-08-31
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ZiaRC is a Resistor Calculator

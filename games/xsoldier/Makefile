@@ -14,7 +14,7 @@ MASTER_SITES=	# http://www.surfline.ne.jp/hachi/xsoldier/
 # A new version is available at http://www.interq.or.jp/libra/oohara/xsoldier/
 # which will require a bit of porting.
 DEPRECATED=	"master site disappeared, see Makefile if you want to save this port"
-EXPIRATION_DATE=2005-07-31
+EXPIRATION_DATE=2005-08-31
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shooting game for x11

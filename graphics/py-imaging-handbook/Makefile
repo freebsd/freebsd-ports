@@ -27,7 +27,7 @@ DISTFILES=	blank.gif blurb-works-1.2.gif concepts.htm \
 		remote-light.gif support.htm tutorial.htm
 
 DEPRECATED=	"unmaintained port mirroring a website, maintenance problems"
-EXPIRATION_DATE=2005-07-31
+EXPIRATION_DATE=2005-08-31
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Python Imaging Library Handbook

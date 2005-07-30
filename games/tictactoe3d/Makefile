@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.che.iitm.ac.in/~ch99057/software/
 DISTNAME=	ttt3d
 
 DEPRECATED=	"master site disappeared"
-EXPIRATION_DATE=2005-07-31
+EXPIRATION_DATE=2005-08-31
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This is a simple "3D" tic tac toe game

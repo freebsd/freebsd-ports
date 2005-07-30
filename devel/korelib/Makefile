@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.smga3000.com/thekompany/Korelib/
 
 DEPRECATED=	"master site up but distfile not available, last release 2002"
-EXPIRATION_DATE=2005-07-31
+EXPIRATION_DATE=2005-08-31
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross-platform C++ library for developing modular applications

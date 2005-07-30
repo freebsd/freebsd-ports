@@ -16,7 +16,7 @@ COMMENT= 	A window decoration for KDE
 
 BROKEN=		"master site disappeared"
 DEPRECATED=	"master site disappeared"
-EXPIRATION_DATE=2005-07-31
+EXPIRATION_DATE=2005-08-31
 
 USE_BZIP2= 	yes
 USE_KDEBASE_VER=3

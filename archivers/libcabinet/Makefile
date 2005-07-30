@@ -13,7 +13,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	# http://trill.cis.fordham.edu/~barbacha/cabinet_library/
 
 DEPRECATED=	"master site disappeared"
-EXPIRATION_DATE=2005-07-31
+EXPIRATION_DATE=2005-08-31
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable library and utility to use Microsoft cabinet files (.cab)
