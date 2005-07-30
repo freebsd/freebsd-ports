@@ -484,6 +484,7 @@
     SUBDIR += p5-FAQ-OMatic
     SUBDIR += p5-FastCGI
     SUBDIR += p5-FastCGI-ProcManager
+    SUBDIR += p5-Feed-Find
     SUBDIR += p5-Flickr-API
     SUBDIR += p5-Flickr-Upload
     SUBDIR += p5-GtkHTML

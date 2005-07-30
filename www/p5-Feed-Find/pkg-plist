@@ -1,0 +1,2 @@
+%%SITE_PERL%%/Feed/Find.pm
+@unexec rmdir %D/%%SITE_PERL%%/Feed 2>/dev/null || true
