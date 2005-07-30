@@ -187,18 +187,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <package>
 	<name>apache</name>
 	<range><lt>2.0.54_1</lt></range>
-	<range>
-          <gt>2.1.0</gt>
-          <lt>2.1.6_1</lt>
-        </range>
-      </package>
-      <package>
-	<name>apache+ipv6</name>
-	<range><gt>0</gt></range>
-      </package>
-      <package>
-	<name>apache_fp</name>
-	<range><gt>0</gt></range>
+	<range><gt>2.1.0</gt><lt>2.1.6_1</lt></range>
       </package>
       <package>
 	<name>apache+ssl</name>
@@ -213,15 +202,11 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<range><lt>1.3.33+2.8.22_1</lt></range>
       </package>
       <package>
+	<name>apache_fp</name>
+	<name>apache+ipv6</name>
 	<name>apache+mod_ssl+ipv6</name>
-	<range><gt>0</gt></range>
-      </package>
-      <package>
-        <name>ru-apache</name>
-	<range><gt>0</gt></range>
-      </package>
-      <package>
 	<name>ru-apache+mod_ssl</name>
+	<name>ru-apache</name>
 	<range><gt>0</gt></range>
       </package>
     </affects>
@@ -19514,33 +19499,32 @@ misc.c:
       <entry>2005-05-19</entry>
     </dates>
   </vuln>
+
   <vuln vid="55041d37-ff62-11d9-a9a5-000ae4641456">
-    <topic>3 buffer overflows in jabberd</topic>
+    <topic>jabberd -- 3 buffer overflows</topic>
     <affects>
       <package>
-        <name>jabberd</name>
+	<name>jabberd</name>
 	<range><lt>2.0.9</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>
-        There are 3 buffer overflows in jid.c that are triggered during 
-	parsing of JID strings when components (user, host or resource) 
-	are too long. </p>
-	<p>
-	1). jid.c, line 103:  overflow in `str' buffer through strcpy() 
-	when "user" part is too long.</p>
-	<p>
-	2). jid.c, line 115:  overflow in `str' buffer through strcpy() 
-	when "host" part is too long.</p>
-	<p>
-	3). jid.c, line 127:  overflow in `str' buffer through strcpy()
-	when "resource" part is too long.</p>
-	<p>
-	These overflows can be used to perform a DoS attack on the server 
-	(sm process segfaults) and can possible be used for arbitrary code 
-	execution.</p>
+	<p>There are 3 buffer overflows in jid.c that are triggered
+	  during parsing of JID strings when components (user, host or
+	  resource) are too long.</p>
+	<ol>
+	  <li>jid.c, line 103: overflow in `str' buffer through
+	    <code>strcpy()</code> when "user" part is too long.</li>
+	  <li>jid.c, line 115: overflow in `str' buffer through
+	    <code>strcpy()</code> when "host" part is too long.</li>
+	  <li>jid.c, line 127: overflow in `str' buffer through
+	    <code>strcpy()</code> when "resource" part is too
+	    long.</li>
+	</ol>
+	<p>These overflows can be used to perform a DoS attack on the
+	  server (sm process segfaults) and can possible be used for
+	  arbitrary code execution.</p>
       </body>
     </description>
     <references>
@@ -19548,7 +19532,7 @@ misc.c:
     </references>
     <dates>
       <discovery>2005-07-25</discovery>
-      <entry>2005-07-28</entry>
+      <entry>2005-07-30</entry>
     </dates>
   </vuln>
 </vuxml>
