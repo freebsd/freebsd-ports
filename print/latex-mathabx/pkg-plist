@@ -16,6 +16,8 @@
 %%MFDIR%%/mathadrv.mf
 %%MFDIR%%/matharrw.mf
 %%MFDIR%%/mathastr.mf
+%%MFDIR%%/mathastrotest10.mf
+%%MFDIR%%/mathastrotestdrv.mf
 %%MFDIR%%/mathasym.mf
 %%MFDIR%%/mathb10.mf
 %%MFDIR%%/mathb12.mf
@@ -29,8 +31,10 @@
 %%MFDIR%%/mathbdrv.mf
 %%MFDIR%%/mathbigs.mf
 %%MFDIR%%/mathbsym.mf
+%%MFDIR%%/mathc10.mf
 %%MFDIR%%/mathcall.mf
-%%MFDIR%%/mathextr.mf
+%%MFDIR%%/mathcallgreek.mf
+%%MFDIR%%/mathcdrv.mf
 %%MFDIR%%/mathfine.mf
 %%MFDIR%%/mathgrey.mf
 %%MFDIR%%/mathhbrw.mf
@@ -41,7 +45,6 @@
 %%MFDIR%%/mathsmsy.mf
 %%MFDIR%%/mathsubs.mf
 %%MFDIR%%/mathsymb.mf
-%%MFDIR%%/matht10.mf
 %%MFDIR%%/mathu10.mf
 %%MFDIR%%/mathudrv.mf
 %%MFDIR%%/mathusym.mf
@@ -64,6 +67,7 @@
 %%TYPE1DIR%%/matha7.pfb
 %%TYPE1DIR%%/matha8.pfb
 %%TYPE1DIR%%/matha9.pfb
+%%TYPE1DIR%%/mathastrotest10.pfb
 %%TYPE1DIR%%/mathb10.pfb
 %%TYPE1DIR%%/mathb12.pfb
 %%TYPE1DIR%%/mathb5.pfb
@@ -71,6 +75,7 @@
 %%TYPE1DIR%%/mathb7.pfb
 %%TYPE1DIR%%/mathb8.pfb
 %%TYPE1DIR%%/mathb9.pfb
+%%TYPE1DIR%%/mathc10.pfb
 %%TYPE1DIR%%/mathu10.pfb
 %%TYPE1DIR%%/mathux10.pfb
 %%TYPE1DIR%%/mathx10.pfb
@@ -84,4 +89,6 @@
 %%DVIPSDIR%%/mathabx.map
 @dirrm %%DVIPSDIR%%
 @exec %%MKTEXLSR%%
+@exec %%UPDMAP_SYS%% --enable Map=mathabx.map
 @unexec %%MKTEXLSR%%
+@unexec %%UPDMAP_SYS%% --disable mathabx.map
