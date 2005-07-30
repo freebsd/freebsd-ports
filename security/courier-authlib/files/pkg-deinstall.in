@@ -10,7 +10,7 @@ USER=%%MAILOWN%%
 GROUP=%%MAILGRP%%
 
 if [ ":$2" = ":POST-DEINSTALL" ]; then
-    if [ -z "${PACKAGE_BUILDING}" ]; then
+    if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
         echo ""
         echo "Warning: Removing user courier will also delete any"
         echo "	 undelivered mail in the mail queue directories!!!"
