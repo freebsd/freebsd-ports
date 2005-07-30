@@ -10,7 +10,7 @@ PORTVERSION=	0.5.10
 CATEGORIES=	security
 DISTFILES=
 
-MAINTAINER=	security@FreeBSD.org
+MAINTAINER=	secteam@FreeBSD.org
 COMMENT=	Checks installed ports against a list of security vulnerabilities
 
 MAN1=		portaudit.1
