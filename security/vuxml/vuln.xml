@@ -19514,4 +19514,41 @@ misc.c:
       <entry>2005-05-19</entry>
     </dates>
   </vuln>
+  <vuln vid="55041d37-ff62-11d9-a9a5-000ae4641456">
+    <topic>3 buffer overflows in jabberd</topic>
+    <affects>
+      <package>
+        <name>jabberd</name>
+	<range><lt>2.0.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>
+        There are 3 buffer overflows in jid.c that are triggered during 
+	parsing of JID strings when components (user, host or resource) 
+	are too long. </p>
+	<p>
+	1). jid.c, line 103:  overflow in `str' buffer through strcpy() 
+	when "user" part is too long.</p>
+	<p>
+	2). jid.c, line 115:  overflow in `str' buffer through strcpy() 
+	when "host" part is too long.</p>
+	<p>
+	3). jid.c, line 127:  overflow in `str' buffer through strcpy()
+	when "resource" part is too long.</p>
+	<p>
+	These overflows can be used to perform a DoS attack on the server 
+	(sm process segfaults) and can possible be used for arbitrary code 
+	execution.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://j2.openaether.org/bugzilla/show_bug.cgi?id=99</url>
+    </references>
+    <dates>
+      <discovery>2005-07-25</discovery>
+      <entry>2005-07-28</entry>
+    </dates>
+  </vuln>
 </vuxml>
