@@ -19,7 +19,7 @@ COMMENT=	A verifier for FreeBSD port directory
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/src
-USE_PERL5=	yes
+USE_PERL5_RUN=	yes
 USE_REINPLACE=	yes
 
 SRC=		${.CURDIR}/src
