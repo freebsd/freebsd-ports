@@ -21,6 +21,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A toolkit from Stanford University and Silicon Graphics + Japanese patches
 
+FORBIDDEN=	http://vuxml.FreeBSD.org/pkg-ja-iv.html
+EXPIRATION_DATE=2005-08-30
+
 # Warning: we cannot use USE_IMAKE.
 BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
 
