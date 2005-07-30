@@ -8558,6 +8558,7 @@ p5-UNIVERSAL-exports	ports/devel/p5-UNIVERSAL-exports
 p5-UNIVERSAL-moniker	ports/devel/p5-UNIVERSAL-moniker
 p5-UPS-Nut	ports/sysutils/p5-UPS-Nut
 p5-URI		ports/net/p5-URI
+p5-URI-Fetch	ports/www/p5-URI-Fetch
 p5-URI-Find	ports/textproc/p5-URI-Find
 p5-URI-Sequin	ports/www/p5-URI-Sequin
 p5-URI-imap	ports/mail/p5-URI-imap
