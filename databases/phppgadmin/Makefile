@@ -18,7 +18,7 @@ COMMENT=	Web Based Postgres Administration
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
 .if !defined(WITHOUT_PHP_DEPENDS)
-USE_PHP=	ctype imap openssl pgsql pcre posix session tokenizer xml zlib
+USE_PHP=	pgsql pcre session
 .endif
 WRKSRC=		${WRKDIR}/phpPgAdmin
 NO_BUILD=	YES
