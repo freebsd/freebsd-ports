@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	skim
-PORTVERSION=	1.2.2
+PORTVERSION=	1.4.0
 PORTREVISION=	0
 CATEGORIES=	textproc kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -15,9 +15,7 @@ MASTER_SITE_SUBDIR=	scim
 MAINTAINER=	gaoj@cpsc.ucalgary.ca
 COMMENT=	An input method platform based on SCIM library and KDE/QT
 
-LIB_DEPENDS=	scim-1.0.7:${PORTSDIR}/textproc/scim
-
-EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
+LIB_DEPENDS=	scim-1.0.8:${PORTSDIR}/textproc/scim
 
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
@@ -26,10 +24,10 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_INC_LIBTOOL_VER=	15
 
-USE_GNOME=	gnomehack
-
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		PREFIX="${PREFIX}" \
+		QTDIR="${QT_PREFIX}" KDEDIR="${KDE_PREFIX}"
 
 .include <bsd.port.pre.mk>
 
@@ -43,10 +41,18 @@ CONFIGURE_ENV+=	CXXFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__ ${CFLAGS}"
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 .endif
 
-pre-configure:
-	${REINPLACE_CMD} "s,-pedantic,,g; \
-		s,-pthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
-	${REINPLACE_CMD} "s, | .*freebsd\*)$$,*),g" ${WRKSRC}/admin/ltmain.sh
+do-configure:
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./configure
+
+post-configure:
+	${REINPLACE_CMD} \
+		s,/usr/local/lib/pkgconfig,${PREFIX}/libdata/pkgconfig,g \
+		${WRKSRC}/cache/pkg.cache.py
+do-build:
+	@cd ${WRKSRC} && ./scons
+
+do-install:
+	@cd ${WRKSRC} && ./scons install
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
