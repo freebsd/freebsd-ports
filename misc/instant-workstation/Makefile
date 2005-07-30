@@ -6,17 +6,13 @@
 #
 
 PORTNAME=	instant-workstation
-PORTVERSION=	1.0
-PORTREVISION=	8
+PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.lemis.com/pub/
 
 MAINTAINER=	grog@lemis.com
 COMMENT=	Instant workstation installs a typical set of ports for a workstation
-
-BROKEN=		Unfetchable
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
 
 USE_GHOSTSCRIPT_RUN=	yes
 
