@@ -7,7 +7,7 @@
 
 PORTNAME=	eterm
 PORTVERSION=	0.9.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	x11
 MASTER_SITES=	http://www.eterm.org/download/
 DISTNAME=	Eterm-${PORTVERSION}
@@ -28,6 +28,7 @@ CONFIGURE_ARGS?=--enable-trans --enable-utmp \
 		--enable-multi-charset
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+OPTIONS=	MMX	"With MMX instruction set" off
 
 MAN1=		Eterm.1
 
