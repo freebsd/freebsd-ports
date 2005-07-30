@@ -13,7 +13,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	# http://www.zolera.com/opensrc/wizard/
 
 DEPRECATED=	"master site disappeared, author stopped work 2002"
-EXPIRATION_DATE=2005-07-31
+EXPIRATION_DATE=2005-08-31
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classes for writing MS-style 'wizards'

@@ -13,7 +13,7 @@ MASTER_SITES=	http://jgregor.ps.pl/software/xvs/download/
 DISTNAME=	xvs-${PORTVERSION}
 
 DEPRECATED=	"master site disappeared"
-EXPIRATION_DATE=2005-07-31
+EXPIRATION_DATE=2005-08-31
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Visualization System, a plugin for XMMS

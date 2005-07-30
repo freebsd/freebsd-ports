@@ -20,7 +20,7 @@ DISTFILES=	mgp-midgard-${PORTVERSION}.tgz \
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
 DEPRECATED=	"no longer available from master site"
-EXPIRATION_DATE=2005-07-31
+EXPIRATION_DATE=2005-08-31
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of various templates for magicpoint

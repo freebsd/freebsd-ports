@@ -15,7 +15,7 @@ MASTER_SITES=	# none left
 # informed maintainer - edwin 20021226
 
 DEPRECATED=	"master site disappeared"
-EXPIRATION_DATE=2005-07-31
+EXPIRATION_DATE=2005-08-31
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to rename mismatched and garbled MP3 filenames

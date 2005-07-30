@@ -13,7 +13,7 @@ CATEGORIES=	astro
 MASTER_SITES=	# http://www-personal.engin.umich.edu/~agorski/fooseti/
 
 DEPRECATED=	"master site disappeared, last release 2001"
-EXPIRATION_DATE=2005-07-31
+EXPIRATION_DATE=2005-08-31
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ frontend to SETI@Home
