@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	proftpd
-PORTVERSION=	1.2.10
-PORTREVISION=	3
+DISTVERSION=	1.3.0rc2
+PORTREVISION=	0
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -101,22 +101,22 @@ LIBDIRS=
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
 MODULES:=${MODULES}:mod_ldap
-INCLUDEDIRS:=${INCLUDEDIRS}:${PREFIX}/include
-LIBDIRS:=${LIBDIRS}:${PREFIX}/lib
+INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
+LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 .endif
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 MODULES:=${MODULES}:mod_sql:mod_sql_mysql
-INCLUDEDIRS:=${INCLUDEDIRS}:${PREFIX}/include
-LIBDIRS:=${LIBDIRS}:${PREFIX}/lib/mysql
+INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
+LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib/mysql
 .endif
 
 .if defined(WITH_POSTGRESQL)
 USE_PGSQL=	yes
 MODULES:=${MODULES}:mod_sql:mod_sql_postgres
-INCLUDEDIRS:=${INCLUDEDIRS}:${PREFIX}/include
-LIBDIRS:=${LIBDIRS}:${PREFIX}/lib
+INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
+LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 .endif
 
 .if defined(WITH_OPENSSL)
@@ -181,7 +181,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${PREFIX}/share/doc/proftpd
 .endfor
 .for f in ${PORTDOCScontrib}
-	@${INSTALL_DATA} ${WRKSRC}/contrib/${f} ${PREFIX}/share/doc/proftpd
+	@${INSTALL_DATA} ${WRKSRC}/doc/contrib/${f} ${PREFIX}/share/doc/proftpd
 .endfor
 .endif
 
