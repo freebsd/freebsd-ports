@@ -324,6 +324,8 @@ bin/updmap-sys-ptex
 @unexec rmdir %D/%%TEXMFCONFIGDIR%%/dvips/ptex 2> /dev/null || true
 %%TEXMFCONFIGDIR%%/texconfig/tcfmgr.map
 @dirrm %%TEXMFCONFIGDIR%%/texconfig
+%%TEXMFCONFIGDIR%%/web2c/ptex/updmap.cfg
+@unexec rmdir %D/%%TEXMFCONFIGDIR%%/web2c/ptex 2> /dev/null || true
 @exec %%MKTEXLSR%%
 @exec /bin/mkdir -p %D/%%TEXMFDIR%%/fonts/map/ptex/dvips/updmap
 @exec /bin/mkdir -p %D/%%TEXMFDIR%%/fonts/map/ptex/dvipdfm/updmap
@@ -331,7 +333,7 @@ bin/updmap-sys-ptex
 @exec /bin/mkdir -p %D/%%TEXMFVARDIR%%/fonts/map/ptex/dvips/updmap
 @exec /bin/mkdir -p %D/%%TEXMFVARDIR%%/fonts/map/ptex/dvipdfm/updmap
 @exec /bin/mkdir -p %D/%%TEXMFVARDIR%%/fonts/map/ptex/pdftex/updmap
-@exec %%UPDMAP_SYS_PTEX%%
+@exec %%SETENV%% PATH=${PATH}:%D/bin %%UPDMAP_SYS_PTEX%%
 @unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/ptex/dvips/updmap/download35.map
 @unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/ptex/dvips/updmap/builtin35.map
 @unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/ptex/dvips/updmap/psfonts_t1.map
