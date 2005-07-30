@@ -13,6 +13,23 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-devel-3.5.2.20050725.0800
+#
+
+Please read carefully distributed docs like README, UPGRADING and CHANGES.
+Notable new features:
+ LDAP Verification
+ Unified Spam Alias / UID in Signature Support
+ Integrated Clam A/V Support
+ Markovian Discrimination (CRM114)
+ CRM Sparse Spectra Storage Driver (css_drv)
+
+- drop local patch to put X-DSPAM-User in all emails.
+- some performance changes in PGSQL schema
+- BUGFIX: SQLITE purge scrip for 3.x
+
+
+###########################################################################
 # dspam-devel-3.5.0.20050512.1145
 #
 

@@ -19,21 +19,25 @@ MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sourc
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Bayesian spam filter - development version
 
-PORTVER_MAJ=	3.5.0
-SNAP_DATE=	.20050512.1145
+PORTVER_MAJ=	3.5.2
+SNAP_DATE=	.20050725.0800
 
 .ifdef(SNAP_DATE)
 WRKSRC=		${WRKDIR}/dspam-cvs-devel${SNAP_DATE}
+.else
+WRKSRC=		${WRKDIR}/dspam-${PORTVER_MAJ}
 .endif
 
 ## maintainer only
 .ifdef(MAINT)
 MASTER_SITES=	http://dspam.nuclearelephant.com/sources/
+DISTFILES=	dspam-${PORTVER_MAJ}.tar.gz
 NO_CHECKSUM=	yes
 .	ifdef(SNAP_DATE)
 DISTFILES=	snapshot-devel.tar.gz
-FETCH_BEFORE_ARGS=	-v -o ${DISTDIR}/${PORTNAME}-${PORTVERSION}.tar.gz
+#FETCH_BEFORE_ARGS=	-v -o ${DISTDIR}/${PORTNAME}-${PORTVERSION}.tar.gz
 .	endif
+FETCH_BEFORE_ARGS=	-v -o ${DISTDIR}/${PORTNAME}-${PORTVERSION}.tar.gz
 .endif
 
 ## debug / log / admin options
@@ -70,7 +74,9 @@ OPTIONS+=	ORACLE "Use Oracle as back-end (BROKEN)" off
 OPTIONS+=	BDB4 "Use BDB4 as back-end (not recomanded)" off
 OPTIONS+=	SQLITE2 "Use SQLite v2.x as back-end" off
 OPTIONS+=	SQLITE3 "Use SQLite v3.x as back-end" off
+OPTIONS+=	CSS "Use CRM114 Sparse Spectra driver (BROKEN)" off
 OPTIONS+=	VIRT_USERS "Enable virtual users (needs SQL back-end)" off
+OPTIONS+=	LDAP "Enable recipient verification via LDAP" off
 OPTIONS+=	LONG_USERNAMES "Usernames longer that OS supports" off
 OPTIONS+=	LARGE_SCALE "File structure for large scale" off
 OPTIONS+=	DOMAIN_SCALE "File structure for multiple domains" off
@@ -104,7 +110,7 @@ STRIP=
 
 PKGMESSAGE=	 ${WRKSRC}/src/README.FreeBSD
 
-_UPD_LINE_NO=	6
+_UPD_LINE_NO=	16
 
 CONFLICTS=	dspam-[0-9]*
 
@@ -139,7 +145,9 @@ CONFIGURE_ARGS+=	--with-dspam-group=${DSPAM_GROUP}
 
 _SED_SCRIPT=	-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
 		-e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR},g' \
-		-e 's,%%DSPAM_HOME%%,${DSPAM_HOME},g'
+		-e 's,%%DSPAM_HOME%%,${DSPAM_HOME},g' \
+		-e 's,%%PORTNAME%%,${PORTNAME},g' \
+		-e 's,%%_VAR_DIR%%,${_VAR_DIR},g'
 #		-e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 #		-e 's,%%PREFIX%%,${PREFIX},g' \
 #		-e 's,%%PKGNAME%%,${PKGNAME},g' \
@@ -168,15 +176,12 @@ WITH_DAEMON=	on
 
 .ifdef(WITH_DAEMON)
 CONFIGURE_ARGS+=	--enable-daemon
-RC_DIR=		${PREFIX}/etc/rc.d
 RC_SUFX=	.sh
-USE_RC_SUBR=	yes
-PLIST_FILES+=	etc/rc.d/dspam${RC_SUFX}
+USE_RC_SUBR=	${PORTNAME}${RC_SUFX}
 _SED_SCRIPT+=	-e 's,%%DAEMON%%,,g'
-_SED_RC_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%DSPAM_HOME%%,${DSPAM_HOME},g'
+SUB_LIST+=	DSPAM_HOME=${DSPAM_HOME}
 .else
-_SED_SCRIPT+=	-e ',%%DAEMON%%,D'
+_SED_SCRIPT+=	-e '/%%DAEMON%%/D'
 .endif
 
 .if !defined(WITH_GRAHAM_BAYES)
@@ -213,12 +218,17 @@ CONFIGURE_ARGS+=	--enable-neural-networking
 
 .if defined(WITH_CLAMAV)
 RUN_DEPENDS+=	${LOCALBASE}/etc/clamd.conf:${PORTSDIR}/security/clamav
-CONFIGURE_ARGS+=	--enable-clamav
 .endif
 
 .if defined(WITH_CLAMAV_DEVEL)
 RUN_DEPENDS+=	${LOCALBASE}/etc/clamd.conf:${PORTSDIR}/security/clamav-devel
+.endif
+
+.if defined(WITH_CLAMAV) || defined(WITH_CLAMAV_DEVEL)
 CONFIGURE_ARGS+=	--enable-clamav
+SUB_LIST+=	CLAMD=clamd
+.else
+SUB_LIST+=	CLAMD=
 .endif
 
 .if defined(WITH_USER_HOMEDIR)
@@ -229,7 +239,7 @@ CONFIGURE_ARGS+=	--enable-homedir
 CONFIGURE_ARGS+=	--disable-trusted-user-security
 .endif
 
-DBDRV_TOTAL_COUNT=	ooooooooo # 8
+DBDRV_TOTAL_COUNT=	oooooooooo # 9
 DBDRV_COUNT=	${DBDRV_TOTAL_COUNT}
 
 .if defined(WITH_POSTGRESQL)
@@ -298,6 +308,16 @@ PLIST_SUB+=	SQLITE=""
 DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
 .endif
 
+.ifdef(WITH_CSS)
+CONFIGURE_ARGS+=	--with-storage-driver=css_drv
+PLIST_SUB+=	DB4="@comment "
+PLIST_SUB+=	MYSQL="@comment "
+PLIST_SUB+=	PGSQL="@comment "
+PLIST_SUB+=	SQLITE="@comment "
+#PKGNAMESUFFIX=	-css
+DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
+.endif
+
 .ifdef(WITH_MYSQL40)
 WANT_MYSQL_VER=	40
 #PKGNAMESUFFIX=	-mysql40
@@ -325,13 +345,21 @@ DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
 .	if defined(WITH_MYSQL_COMPRESS)
 CONFIGURE_ARGS+=	--enable-client-compression
 .	endif
-_SED_RC_SCRIPT+=		-e 's,%%MYSQL%%,mysql,g'
+SUB_LIST+=	MYSQL=mysql
 .else
-_SED_RC_SCRIPT+=		-e 's,%%MYSQL%%,,'
+SUB_LIST+=	MYSQL=
 .endif
 
 .if defined(WITH_VIRT_USERS)
 CONFIGURE_ARGS+=	--enable-virtual-users
+.endif
+
+.if defined(WITH_LDAP)
+CONFIGURE_ARGS+=	--enable-ldap \
+USE_OPENLDAP=YES
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lldap -llber
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 .endif
 
 .if defined(WITH_LONG_USERNAMES)
@@ -424,7 +452,7 @@ CONFIGURE_ARGS+=--enable-user-logging
 USE_PERL5_RUN=	yes
 PLIST_SUB+=	CGI=""
 CGI_PATH?=	${PREFIX}/www/vhosts/dspam
-_SED_SCRIPT+=	-e 's,%%CGI%%,,g'
+_SED_SCRIPT+=	-e 's/%%CGI%%//g'
 _SED_SCRIPT+=	-e 's,%%CGI_PATH%%,${CGI_PATH},g'
 #SED_FILES=	${LS}  ${WRKSRC}/cgi/*.pl
 #SED_FILES+=	${LS} $PWRKSRC}/cgi/*.cgi
@@ -446,9 +474,9 @@ MLINKS+=	libdspam.3 dspam_destroy.3
 MLINKS+=	libdspam.3 dspam_detach.3
 
 _DOCS=	CHANGELOG LICENSE README README.FreeBSD RELEASE.NOTES UPGRADING
-_DOCSL=	appliance.txt exim.txt ora_drv.txt pgsql_drv.txt postfix.txt \
-	sendmail.txt courier.txt mysql_drv.txt pop3filter.txt qmail.txt \
-	sqlite_drv.txt
+_DOCSL=	courier.txt exim.txt markov.txt mysql_drv.txt ora_drv.txt \
+	pgsql_drv.txt pop3filter.txt postfix.txt qmail.txt relay.txt \
+	sendmail.txt sqlite_drv.txt
 
 .ifndef(MAINT)
 pre-everything::
@@ -522,11 +550,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|where @a-14 > to_days(created_on);|where @a-${SIGNATURE_LIFE} > to_days(created_on);|'  ${WRKSRC}/src/tools.mysql_drv/purge.sql
 	@${REINPLACE_CMD} -e 's|WHERE CURRENT_DATE - created_on > 14;|WHERE CURRENT_DATE - created_on > ${SIGNATURE_LIFE};|'  ${WRKSRC}/src/tools.pgsql_drv/purge.sql
 	@${REINPLACE_CMD} -e 's|where SYSDATE-created_on > 14|where SYSDATE-created_on > ${SIGNATURE_LIFE};|'  ${WRKSRC}/src/tools.ora_drv/purge.sql
-	@${REINPLACE_CMD} -e "s|where date('now')-date(created_on) > 14;|where date('now')-date(created_on) > ${SIGNATURE_LIFE};|"  ${WRKSRC}/src/tools.sqlite_drv/purge.sql
-.if defined(WITH_DAEMON)
-	@${CP} ${FILESDIR}/dspam.rc ${WRKSRC}
-	@${REINPLACE_CMD} ${_SED_RC_SCRIPT} ${WRKSRC}/dspam.rc
-.endif
+	@${REINPLACE_CMD} -e "s|where date('now')-date(created_on) > 14;|where date('now')-date(created_on) > ${SIGNATURE_LIFE};|"  ${WRKSRC}/src/tools.sqlite_drv/purge-2.sql
+	@${REINPLACE_CMD} -e "s|where julianday('now')-julianday(created_on) > 14;|where julianday('now')-julianday(created_on) > ${SIGNATURE_LIFE};|"  ${WRKSRC}/src/tools.sqlite_drv/purge-3.sql
 
 pre-configure:
 	@${ECHO_CMD}
@@ -559,6 +584,11 @@ pre-configure:
 	@${ECHO_CMD} "You need MySQL or Postgres for Daemon mode, because multithreading support is needed"
 	@${FALSE}
 .endif
+.if defined(WITH_LDAP) && !( defined(USE_MYSQL) || \
+	defined(WITH_POSTGRESQL) || defined(HAVE_SQLITE))
+	@${ECHO_CMD} "You need MySQL, Postgres or SQLITE for LDAP."
+	@${FALSE}
+.endif
 .if defined(WITH_USER_HOMEDIR) && defined(WITH_CGI)
 	@${ECHO_CMD} "USER_HOMEDIR and CGI are incopatible"
 	@${FALSE}
@@ -573,9 +603,6 @@ post-install:
 	cd ${WRKSRC}/src/ && \
 		${INSTALL} -o ${DSPAM_OWNER} -g ${DSPAM_GROUP} -m 0640 \
 			dspam.conf.sample ${PREFIX}/etc
-.if defined(WITH_DAEMON)
-	${INSTALL_SCRIPT} ${WRKSRC}/dspam.rc ${RC_DIR}/dspam${RC_SUFX}
-.endif
 
 ########
 # stupid hack until I figure out where/how to patch
@@ -612,19 +639,20 @@ post-install:
 
 .if defined(WITH_CGI)
 .	for I in admin.cgi admingraph.cgi configure.pl dspam.cgi graph.cgi
-		@${SED} -i '' -e "s,/usr/bin/perl,${PERL},g" ${WRKSRC}/cgi/${I}
+		@${SED} -i '' -e "s,/usr/bin/perl,${PERL},g" ${WRKSRC}/webui/cgi-bin/${I}
 .	endfor
-	cd ${WRKSRC}/cgi && ${MV} configure.pl configure.pl.sample
-	cd ${WRKSRC}/cgi && ${MKDIR} ${CGI_PATH} && \
+	cd ${WRKSRC}/webui/cgi-bin && ${MV} configure.pl configure.pl.sample
+	cd ${WRKSRC}/webui/cgi-bin && ${MKDIR} ${CGI_PATH} && \
 		${INSTALL_SCRIPT} configure.pl.sample ${CGI_PATH}/ && \
-		${INSTALL_SCRIPT} *.cgi ${CGI_PATH}
-	cd ${WRKSRC}/cgi && \
-		${INSTALL_DATA} base.css dspam-logo-small.gif rgb.txt ${CGI_PATH}/
-	cd ${WRKSRC}/cgi && \
+		${INSTALL_SCRIPT} *.cgi ${CGI_PATH} && \
+		${INSTALL_DATA} rgb.txt ${CGI_PATH}/
+	cd ${WRKSRC}/webui/htdocs && \
+		${INSTALL_DATA} base.css dspam-logo-small.gif ${CGI_PATH}/
+	cd ${WRKSRC}/webui/cgi-bin && \
 		${INSTALL_DATA} default.prefs ${CGI_PATH}/default.prefs.sample
-	cd ${WRKSRC}/cgi && \
+	cd ${WRKSRC}/webui/cgi-bin && \
 		${INSTALL_DATA} admins ${CGI_PATH}/admins.sample
-	@${MKDIR} ${CGI_PATH}/templates && cd ${WRKSRC}/cgi/templates && \
+	@${MKDIR} ${CGI_PATH}/templates && cd ${WRKSRC}/webui/cgi-bin/templates && \
 		${INSTALL_DATA} *.html ${CGI_PATH}/templates/
 .endif
 
