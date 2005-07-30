@@ -68,11 +68,11 @@ do-install:
 	cd ${WRKSRC} ; ${INSTALL_PROGRAM} ${BINS} ${PREFIX}/dpt ; \
 		${INSTALL_DATA} read.me dptcom.chk ${PREFIX}/dpt
 .for bin in ${BINS}
- 	${LN} -sf ${PREFIX}/dpt/${bin} ${PREFIX}/bin
+	${LN} -sf ${PREFIX}/dpt/${bin} ${PREFIX}/bin
 .endfor
 .endif
 
 post-install:
-	@${INSTALL_MAN} ${WRKSRC}/raidutil.8 ${PREFIX}/man/man8/ 
+	@${INSTALL_MAN} ${WRKSRC}/raidutil.8 ${PREFIX}/man/man8/
 
 .include <bsd.port.post.mk>
