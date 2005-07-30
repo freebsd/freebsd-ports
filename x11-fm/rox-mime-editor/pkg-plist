@@ -5,6 +5,8 @@ apps/MIME-Editor/Help/COPYING
 apps/MIME-Editor/Help/Changes
 apps/MIME-Editor/Help/README
 apps/MIME-Editor/Messages/dist
+apps/MIME-Editor/Messages/fr.gmo
+apps/MIME-Editor/Messages/fr.po
 apps/MIME-Editor/Messages/it.gmo
 apps/MIME-Editor/Messages/it.po
 apps/MIME-Editor/Messages/update-po
