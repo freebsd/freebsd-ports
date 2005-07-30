@@ -1,0 +1,4 @@
+%%SITE_PERL%%/URI/Fetch.pm
+%%SITE_PERL%%/URI/Fetch/Response.pm
+@dirrm %%SITE_PERL%%/URI/Fetch
+@unexec rmdir %D/%%SITE_PERL%%/URI 2>/dev/null || true
