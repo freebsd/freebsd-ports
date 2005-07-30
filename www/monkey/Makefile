@@ -31,10 +31,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
-.endif
-
 post-install:
 	@${INSTALL_SCRIPT} ${FILESDIR}/monkey.sh ${PREFIX}/etc/rc.d/monkey.sh.sample
 
