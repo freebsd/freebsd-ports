@@ -18,6 +18,8 @@ USE_REINPLACE=	yes
 PLIST_FILES=	bin/cmospwd
 PORTDOCS=	cmospwd.txt
 
+ONLY_FOR_ARCHS=	i386 amd64
+
 .include <bsd.port.pre.mk>
 
 post-patch:
