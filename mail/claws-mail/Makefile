@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	1.9.12
+PORTVERSION=	1.9.13
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -14,10 +14,11 @@ DISTFILES=	${EXTRACT_ONLY} \
 		${THEMEFILE}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
-
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
+
+LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan
+RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 THEMEVERSION=	20040929
 THEMEFILE=	sylpheed-iconset-${THEMEVERSION}.tar.gz
@@ -27,9 +28,9 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=15
 USE_GNOME=	gnomehack pkgconfig gtk20
 USE_REINPLACE=	yes
+USE_AUTOTOOLS=	autoconf:259 libtool:15
 WANT_GNOME=	yes
 
 MAN1=		sylpheed-claws.1
@@ -44,37 +45,51 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
+OPTIONS=	ALL		"Enable all options."			off \
+		ASPELL		"Enable spell checking support."	on \
+		CLAMAV		"Enable virus-checking support."	off \
+		COMPFACE	"Enable X-Face support."		on \
+		GNOMEPRINT	"Enable extended print support (GNOME)."	off \
+		GPGME		"Enable PGP/GnuPG support using GPGME."	off \
+		JPILOT		"Enable JPilot support."		off \
+		LDAP		"Enable LDAP support."			off \
+		SA_PLUG		"Enable SpamAssassin support."		off \
+		SSL		"Enable OpenSSL support."		on \
+		THEMES		"Install additional themes."		on
+		
+
 .if defined(NOPORTDOCS)
 EXTRA_PATCHES=		${FILESDIR}/extra-doc:Makefile.in
 .endif
 
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_SSL)
-USE_OPENSSL=		yes
+# we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--enable-openssl --with-openssl-includes=${OPENSSLINC} \
 			--with-openssl-libs=${OPENSSLLIB}
 .else
 CONFIGURE_ARGS+=	--disable-openssl
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_SSL)
-.if defined(OPENSSLVER)
-MYSSLVER=${OPENSSLVER}
-.else
-MYSSLVER!=openssl version | cut -d ' ' -f 2
-.endif
-SSLTEST!=test ${MYSSLVER} \< 0.9.7 && ${ECHO_CMD} bad || ${TRUE}
-. if ${SSLTEST} == "bad"
-IGNORE=You need at least OpenSSL v0.9.7
-. endif
-.endif
-
-.if ${HAVE_GNOME:Mgnomehier} != ""
+.if ${HAVE_GNOME:Mgnomehier} != "" || defined(WITH_GNOMEPRINT)
+USE_GNOME+=	gnomehier
 PLIST_SUB+=	GNOME=""
+USE_GNOME+=	gnomehier
 .else
 PLIST_SUB+=	GNOME="@comment "
 .endif
+
+.if ${HAVE_GNOME:Mgnomeprint} != "" || defined(WITH_GNOMEPRINT)
+PLIST_SUB+=     	GNOMEPRINT=""
+USE_GNOME+=		libgnomeprint libgnomeprintui
+CONFIGURE_ARGS+=	--enable-gnomeprint
+.else
+PLIST_SUB+=     	GNOMEPRINT="@comment "
+CONFIGURE_ARGS+=	--disable-gnomeprint
+.endif
+
 
 .if exists(${LOCALBASE}/include/clamav.h)
 WITH_CLAMAV=		yes
@@ -123,36 +138,20 @@ PLIST_SUB+=		SA_PLUG="@comment "
 .endif
 .if defined(WITH_GPGME) || defined(WITH_ALL)
 PLIST_SUB+=		GPGME=""
-CONFIGURE_ARGS+=	--enable-pgpmime-plugin
-LIB_DEPENDS+=		gpgme03.9:${PORTSDIR}/security/gpgme03
+CONFIGURE_ARGS+=	--enable-pgpmime-plugin --enable-pgpcore-plugin \
+			--enable-pgpinline-plugin
+LIB_DEPENDS+=		gpgme:${PORTSDIR}/security/gpgme
 RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
 .else
 PLIST_SUB+=		GPGME="@comment "
-CONFIGURE_ARGS+=	--disable-pgpmime-plugin
+CONFIGURE_ARGS+=	--disable-pgpmime-plugin --disable-pgpcore-plugin \
+			--disable-pgpinline-plugin
 .endif
 .if defined(WITHOUT_THEMES)
 PLIST_SUB+=	THEMES="@comment "
 .else
 PLIST_SUB+=	THEMES=""
 .endif
-
-pre-everything::
-	@${ECHO} ""
-	@${ECHO} "You may define the following build options:"
-	@${ECHO} ""
-	@${ECHO} "      WITH_ALL       Enable all options below"
-	@${ECHO} ""
-	@${ECHO} "      WITH_COMPFACE  Enable compface (X-Face) support"
-	@${ECHO} "      WITH_GPGME     Build the pgpmime plugin"
-	@${ECHO} "      WITH_ASPELL    Enable spell-checking support"
-	@${ECHO} "      WITH_JPILOT    Enable JPilot support"
-	@${ECHO} "      WITH_LDAP      Enable LDAP access support"
-	@${ECHO} "      WITH_SA_PLUG   Build Spamassassin plugin"
-	@${ECHO} "      WITH_CLAMAV    Build Clamav antivirus plugin"
-	@${ECHO} ""
-	@${ECHO} "      WITHOUT_SSL    Disable OpenSSL support"
-	@${ECHO} "      WITHOUT_THEMES Don't install additional themes"
-	@${ECHO} ""
 
 post-extract:
 .if !defined(WITHOUT_THEMES)
@@ -194,7 +193,7 @@ post-install:
 
 .if ${HAVE_GNOME:Mgnomehier} != ""
 	@${MKDIR} ${PREFIX}/share/gnome/applications
-	@${INSTALL_DATA} ${WRKSRC}/sylpheed.desktop ${PREFIX}/share/gnome/applications/sylpheed-claws.desktop
+	@${INSTALL_DATA} ${WRKSRC}/sylpheed-claws.desktop ${PREFIX}/share/gnome/applications/
 .endif
 
 .if !defined(WITHOUT_THEMES)
@@ -209,6 +208,6 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/sylprint.pl ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/tools/sylprint.rc ${PREFIX}/etc/sylprint.rc.example
 	@${MKDIR} ${PREFIX}/share/pixmaps
-	@${INSTALL_DATA} ${WRKSRC}/sylpheed.png ${PREFIX}/share/pixmaps/sylpheed-claws.png
+	@${INSTALL_DATA} ${WRKSRC}/sylpheed-claws*.png ${PREFIX}/share/pixmaps/
 
 .include <bsd.port.post.mk>

@@ -1,0 +1,34 @@
+--- configure.ac.orig	Sat Jul 30 10:54:42 2005
++++ configure.ac	Sat Jul 30 11:10:47 2005
+@@ -153,9 +153,9 @@
+ localedir='${prefix}/${DATADIRNAME}/locale'
+ AC_SUBST(localedir)
+ 
+-manualdir='${prefix}/${DATADIRNAME}/${PACKAGE}/manual'
++manualdir='${prefix}/${DATADIRNAME}/doc/${PACKAGE}/manual'
+ AC_SUBST(manualdir)
+-faqdir='${prefix}/${DATADIRNAME}/${PACKAGE}/faq'
++faqdir='${prefix}/${DATADIRNAME}/doc/${PACKAGE}/faq'
+ AC_SUBST(faqdir)
+ 
+ dnl Set PACKAGE_DATA_DIR in config.h.
+@@ -303,7 +303,18 @@
+ AC_MSG_CHECKING([whether to use OpenSSL])
+ if test x"$ac_cv_enable_openssl" = xyes; then
+ 	AC_MSG_RESULT(yes)
+-	PKG_CHECK_MODULES(OPENSSL, openssl >= 0.9.7, :, ac_cv_enable_openssl=no)
++	case $host_os in
++		*freebsd*)
++			if [ $(openssl version | cut -d ' ' -f 2) \< 0.9.7 ]; then
++				ac_cv_enable_openssl=no
++			else
++				OPENSSL_LIBS=${OPENSSL_LIBS-"-lcrypto -lssl"}
++			fi
++			;;
++		*)
++			PKG_CHECK_MODULES(OPENSSL, openssl >= 0.9.7, :, ac_cv_enable_openssl=no)
++			;;
++	esac
+ 	if test x$ac_cv_enable_openssl = xyes; then
+ 		AC_DEFINE(USE_OPENSSL, 1, Define if you want OpenSSL support)
+ 	else

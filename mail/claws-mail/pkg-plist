@@ -62,6 +62,11 @@ include/sylpheed-claws/editldap.h
 include/sylpheed-claws/editldap_basedn.h
 include/sylpheed-claws/editvcard.h
 include/sylpheed-claws/enriched.h
+include/sylpheed-claws/etpan/etpan-thread-manager-types.h
+include/sylpheed-claws/etpan/etpan-thread-manager.h
+include/sylpheed-claws/etpan/etpan-errors.h
+include/sylpheed-claws/etpan/etpan-log.h
+include/sylpheed-claws/etpan/imap-thread.h
 include/sylpheed-claws/exphtmldlg.h
 include/sylpheed-claws/expldifdlg.h
 include/sylpheed-claws/export.h
@@ -73,6 +78,7 @@ include/sylpheed-claws/folder_item_prefs.h
 include/sylpheed-claws/foldersel.h
 include/sylpheed-claws/folderutils.h
 include/sylpheed-claws/folderview.h
+include/sylpheed-claws/gedit-print.h
 include/sylpheed-claws/grouplistdialog.h
 include/sylpheed-claws/gtk/about.h
 include/sylpheed-claws/gtk/colorlabel.h
@@ -83,6 +89,7 @@ include/sylpheed-claws/gtk/foldersort.h
 include/sylpheed-claws/gtk/gtkaspell.h
 include/sylpheed-claws/gtk/gtksctree.h
 include/sylpheed-claws/gtk/gtkshruler.h
+include/sylpheed-claws/gtk/gtksourceprintjob.h
 include/sylpheed-claws/gtk/gtkutils.h
 include/sylpheed-claws/gtk/gtkvscrollbutton.h
 include/sylpheed-claws/gtk/inputdialog.h
@@ -133,11 +140,12 @@ include/sylpheed-claws/news_gtk.h
 include/sylpheed-claws/noticeview.h
 include/sylpheed-claws/partial_download.h
 include/sylpheed-claws/pine.h
-%%GPGME%%include/sylpheed-claws/plugins/pgpmime/passphrase.h
+%%GPGME%%include/sylpheed-claws/plugins/pgpcore/passphrase.h
+%%GPGME%%include/sylpheed-claws/plugins/pgpcore/prefs_gpg.h
+%%GPGME%%include/sylpheed-claws/plugins/pgpcore/select-keys.h
+%%GPGME%%include/sylpheed-claws/plugins/pgpcore/sgpgme.h
+%%GPGME%%include/sylpheed-claws/plugins/pgpinline/pgpinline.h
 %%GPGME%%include/sylpheed-claws/plugins/pgpmime/pgpmime.h
-%%GPGME%%include/sylpheed-claws/plugins/pgpmime/prefs_gpg.h
-%%GPGME%%include/sylpheed-claws/plugins/pgpmime/select-keys.h
-%%GPGME%%include/sylpheed-claws/plugins/pgpmime/sgpgme.h
 include/sylpheed-claws/pop.h
 include/sylpheed-claws/prefs_account.h
 include/sylpheed-claws/prefs_actions.h
@@ -193,13 +201,20 @@ lib/sylpheed-claws/plugins/dillo_viewer.so
 lib/sylpheed-claws/plugins/trayicon.so
 libdata/pkgconfig/sylpheed-claws.pc
 @dirrm include/sylpheed-claws/common
+@dirrm include/sylpheed-claws/etpan
 @dirrm include/sylpheed-claws/gtk
+%%GPGME%%@dirrm include/sylpheed-claws/plugins/pgpcore
+%%GPGME%%@dirrm include/sylpheed-claws/plugins/pgpinline
 %%GPGME%%@dirrm include/sylpheed-claws/plugins/pgpmime
 @unexec rmdir %D/include/sylpheed-claws/plugins 2>/dev/null >/dev/null || true
 @dirrm include/sylpheed-claws
 %%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin.so
 %%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin_gtk.so
+%%GPGME%%lib/sylpheed-claws/plugins/pgpcore.so
+%%GPGME%%lib/sylpheed-claws/plugins/pgpmime.deps
 %%GPGME%%lib/sylpheed-claws/plugins/pgpmime.so
+%%GPGME%%lib/sylpheed-claws/plugins/pgpinline.deps
+%%GPGME%%lib/sylpheed-claws/plugins/pgpinline.so
 %%SA_PLUG%%lib/sylpheed-claws/plugins/spamassassin.so
 %%SA_PLUG%%lib/sylpheed-claws/plugins/spamassassin_gtk.so
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
@@ -353,6 +368,7 @@ share/locale/hu/LC_MESSAGES/sylpheed-claws.mo
 share/locale/it/LC_MESSAGES/sylpheed-claws.mo
 share/locale/ja/LC_MESSAGES/sylpheed-claws.mo
 share/locale/ko/LC_MESSAGES/sylpheed-claws.mo
+share/locale/nb/LC_MESSAGES/sylpheed-claws.mo
 share/locale/nl/LC_MESSAGES/sylpheed-claws.mo
 share/locale/pl/LC_MESSAGES/sylpheed-claws.mo
 share/locale/pt_BR/LC_MESSAGES/sylpheed-claws.mo
@@ -362,6 +378,8 @@ share/locale/sr/LC_MESSAGES/sylpheed-claws.mo
 share/locale/sv/LC_MESSAGES/sylpheed-claws.mo
 share/locale/zh_CN/LC_MESSAGES/sylpheed-claws.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/sylpheed-claws.mo
+share/pixmaps/sylpheed-claws-128x128.png
+share/pixmaps/sylpheed-claws-64x64.png
 share/pixmaps/sylpheed-claws.png
 %%GNOME%%share/gnome/applications/sylpheed-claws.desktop
 %%DATADIR%%/OOo2sylpheed.pl
