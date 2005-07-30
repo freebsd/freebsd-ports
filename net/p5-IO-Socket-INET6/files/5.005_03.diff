@@ -1,0 +1,32 @@
+
+$FreeBSD$
+
+--- INET6.pm.orig
++++ INET6.pm
+@@ -10,7 +10,7 @@
+ package IO::Socket::INET6;
+ 
+ use strict;
+-our(@ISA, $VERSION);
++use vars qw(@ISA $VERSION);
+ use IO::Socket;
+ use Socket;
+ use Socket6;
+@@ -22,7 +22,7 @@
+ $VERSION = "2.51";
+ #Purpose: allow protocol independent protocol and original interface.
+ 
+-my $EINVAL = exists(&Errno::EINVAL) ? Errno::EINVAL() : 1;
++my $EINVAL = defined(&Errno::EINVAL) ? Errno::EINVAL() : 1;
+ 
+ IO::Socket::INET6->register_domain( AF_INET6 );
+ 
+@@ -190,7 +190,7 @@
+ 	}
+ 
+ 	if ($arg->{ReusePort}) {
+-	    $sock->sockopt(SO_REUSEPORT,1) or
++	    $sock->sockopt(0x0200,1) or
+ 		    return _error($sock, $!, "sockopt: $!");
+ 	}
+ 
