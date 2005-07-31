@@ -26,6 +26,8 @@ lib/gcfilms/GCImport/GCImportBase.pm
 lib/gcfilms/GCImport/GCImportCSV.pm
 lib/gcfilms/GCImport/GCImportDVDProfiler.pm
 lib/gcfilms/GCImport/GCImportGCfilms.pm
+lib/gcfilms/GCImport/GCImportList.pm
+lib/gcfilms/GCLang/DE.pm
 lib/gcfilms/GCLang/EN.pm
 lib/gcfilms/GCLang/ES.pm
 lib/gcfilms/GCLang/FR.pm
@@ -35,7 +37,10 @@ lib/gcfilms/GCPlugins/GCAllocine.pm
 lib/gcfilms/GCPlugins/GCAmazon.pm
 lib/gcfilms/GCPlugins/GCAmazonDE.pm
 lib/gcfilms/GCPlugins/GCAmazonFR.pm
+lib/gcfilms/GCPlugins/GCAniDB.pm
 lib/gcfilms/GCPlugins/GCAnimeka.pm
+lib/gcfilms/GCPlugins/GCAnimeNfoA.pm
+lib/gcfilms/GCPlugins/GCAnimeNfoM.pm
 lib/gcfilms/GCPlugins/GCCinemaClock.pm
 lib/gcfilms/GCPlugins/GCCinemotions.pm
 lib/gcfilms/GCPlugins/GCCulturalia.pm
@@ -47,10 +52,14 @@ lib/gcfilms/GCPlugins/GCImdb.pm
 lib/gcfilms/GCPlugins/GCMonsieurCinema.pm
 lib/gcfilms/GCPlugins/GCMovieClubFR.pm
 lib/gcfilms/GCPlugins/GCMovieClubNL.pm
+lib/gcfilms/GCPlugins/GCOFDb.pm
 lib/gcfilms/GCPlugins/GCPluginsBase.pm
 share/gcfilms/gcfilms.png
 share/gcfilms/no.jpg
 share/gcfilms/splash.jpg
+share/gcfilms/genres/EN.genres
+share/gcfilms/genres/ES.genres
+share/gcfilms/genres/FR.genres
 share/gcfilms/html_models/Tabs
 share/gcfilms/html_models/Tian
 share/gcfilms/html_models/rootII_design
@@ -65,6 +74,8 @@ share/gcfilms/plugins/allocine.png
 share/gcfilms/plugins/amazon.de.png
 share/gcfilms/plugins/amazon.fr.png
 share/gcfilms/plugins/amazon.png
+share/gcfilms/plugins/anidb.png
+share/gcfilms/plugins/animenfo.png
 share/gcfilms/plugins/animeka.png
 share/gcfilms/plugins/cinemaclock.png
 share/gcfilms/plugins/cinemotions.png
@@ -76,6 +87,7 @@ share/gcfilms/plugins/filmup.png
 share/gcfilms/plugins/imdb.png
 share/gcfilms/plugins/mcinema.png
 share/gcfilms/plugins/movieclub.png
+share/gcfilms/plugins/ofdb.png
 share/gcfilms/style/Gtk/gtkrc
 share/gcfilms/style/Gtk/lend.png
 share/gcfilms/style/Gtk/list_bg.xpm
@@ -197,6 +209,7 @@ share/gcfilms/xml_models/DVDProfiler
 @dirrm lib/gcfilms/GCLang
 @dirrm lib/gcfilms/GCPlugins
 @dirrm lib/gcfilms
+@dirrm share/gcfilms/genres
 @dirrm share/gcfilms/icons
 @dirrm share/gcfilms/plugins
 @dirrm share/gcfilms/style/Gtk
