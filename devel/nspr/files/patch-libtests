@@ -1,0 +1,611 @@
+--- ../lib/tests/string.c	Sun Apr 25 11:00:46 2004
++++ ../lib/tests/string.c	Mon Jul 25 20:14:12 2005
+@@ -160,5 +160,5 @@
+         if( array[i].rv != rv )
+         {
+-            printf("FAIL %d: (0x%x, %s)->0x%x\n", i, array[i].dest,
++            printf("FAIL %d: (%p, %s)->%p\n", i, array[i].dest,
+                    array[i].str ? array[i].str : "(null)", rv);
+             return PR_FALSE;
+@@ -270,6 +270,6 @@
+         if( array[i].rv != rv )
+         {
+-            printf("FAIL %d: (0x%x, %s, %lu)->0x%x\n", i, array[i].dest,
+-                   array[i].str ? array[i].str : "(null)", array[i].len, rv);
++            printf("FAIL %d: (%p, %s, %u)->%p\n", i, array[i].dest,
++                   array[i].str ? array[i].str : "(null)", (unsigned)array[i].len, rv);
+             return PR_FALSE;
+         }
+@@ -396,6 +396,6 @@
+         if( array[i].rv != rv )
+         {
+-            printf("FAIL %d: (0x%x, %s, %lu)->0x%x\n", i, array[i].dest,
+-                   array[i].str ? array[i].str : "(null)", array[i].len, rv);
++            printf("FAIL %d: (%p, %s, %u)->%p\n", i, array[i].dest,
++                   array[i].str ? array[i].str : "(null)", (unsigned)array[i].len, rv);
+             return PR_FALSE;
+         }
+@@ -448,5 +448,5 @@
+         if( (char *)0 == rv )
+         {
+-            printf("FAIL %d: 0x%x -> 0\n", i, array[i]);
++            printf("FAIL %d: %p -> 0\n", i, array[i]);
+             return PR_FALSE;
+         }
+@@ -532,6 +532,6 @@
+         if( (char *)0 == rv )
+         {
+-            printf("FAIL %d: %s,%lu -> 0\n", i, 
+-                   array[i].str ? array[i].str : "(null)", array[i].len);
++            printf("FAIL %d: %s,%u -> 0\n", i, 
++                   array[i].str ? array[i].str : "(null)", (unsigned)array[i].len);
+             return PR_FALSE;
+         }
+@@ -717,8 +717,8 @@
+             if( (char *)0 != rv )
+             {
+-                printf("FAIL %d: %s+%s/%lu -> %.32s, not zero\n", i,
++                printf("FAIL %d: %s+%s/%u -> %.32s, not zero\n", i,
+                        array[i].first ? array[i].first : "(null)",
+                        array[i].second ? array[i].second : "(null)",
+-                       array[i].length, rv);
++                       (unsigned)array[i].length, rv);
+                 return PR_FALSE;
+             }
+@@ -728,8 +728,8 @@
+             if( (char *)0 == rv )
+             {
+-                printf("FAIL %d: %s+%s/%lu -> null, not %s\n", i,
++                printf("FAIL %d: %s+%s/%u -> null, not %s\n", i,
+                        array[i].first ? array[i].first : "(null)",
+                        array[i].second ? array[i].second : "(null)",
+-                       array[i].length, array[i].result);
++                       (unsigned)array[i].length, array[i].result);
+                 return PR_FALSE;
+             }
+@@ -743,8 +743,8 @@
+                     if( *a != *b )
+                     {
+-                        printf("FAIL %d: %s+%s/%lu -> %.32s, not %s\n", i,
++                        printf("FAIL %d: %s+%s/%u -> %.32s, not %s\n", i,
+                                array[i].first ? array[i].first : "(null)",
+                                array[i].second ? array[i].second : "(null)",
+-                               array[i].length, rv, array[i].result);
++                               (unsigned)array[i].length, rv, array[i].result);
+                         return PR_FALSE;
+                     }
+@@ -758,8 +758,8 @@
+                     if( (char)0 != *b )
+                     {
+-                        printf("FAIL %d: %s+%s/%lu -> not nulled\n", i,
++                        printf("FAIL %d: %s+%s/%u -> not nulled\n", i,
+                                array[i].first ? array[i].first : "(null)",
+                                array[i].second ? array[i].second : "(null)",
+-                               array[i].length);
++                               (unsigned)array[i].length);
+                         return PR_FALSE;
+                     }
+@@ -769,8 +769,8 @@
+                     if( (char)0 == *b )
+                     {
+-                        printf("FAIL %d: %s+%s/%lu -> overrun\n", i,
++                        printf("FAIL %d: %s+%s/%u -> overrun\n", i,
+                                array[i].first ? array[i].first : "(null)",
+                                array[i].second ? array[i].second : "(null)",
+-                               array[i].length);
++                               (unsigned)array[i].length);
+                         return PR_FALSE;
+                     }
+@@ -847,8 +847,8 @@
+             if( (char *)0 != rv )
+             {
+-                printf("FAIL %d: %s+%s/%lu -> %.32s, not zero\n", i,
++                printf("FAIL %d: %s+%s/%u -> %.32s, not zero\n", i,
+                        array[i].first ? array[i].first : "(null)",
+                        array[i].second ? array[i].second : "(null)",
+-                       array[i].length, rv);
++                       (unsigned)array[i].length, rv);
+                 return PR_FALSE;
+             }
+@@ -858,8 +858,8 @@
+             if( (char *)0 == rv )
+             {
+-                printf("FAIL %d: %s+%s/%lu -> null, not %s\n", i,
++                printf("FAIL %d: %s+%s/%u -> null, not %s\n", i,
+                        array[i].first ? array[i].first : "(null)",
+                        array[i].second ? array[i].second : "(null)",
+-                       array[i].length, array[i].result);
++                       (unsigned)array[i].length, array[i].result);
+                 return PR_FALSE;
+             }
+@@ -873,8 +873,8 @@
+                     if( *a != *b )
+                     {
+-                        printf("FAIL %d: %s+%s/%lu -> %.32s, not %s\n", i,
++                        printf("FAIL %d: %s+%s/%u -> %.32s, not %s\n", i,
+                                array[i].first ? array[i].first : "(null)",
+                                array[i].second ? array[i].second : "(null)",
+-                               array[i].length, rv, array[i].result);
++                               (unsigned)array[i].length, rv, array[i].result);
+                         return PR_FALSE;
+                     }
+@@ -1105,8 +1105,8 @@
+         }
+ 
+-        printf("FAIL %d: %s-%s/%ld -> %d, not %d\n", i,
++        printf("FAIL %d: %s-%s/%d -> %d, not %d\n", i,
+                array[i].one ? array[i].one : "(null)",
+                array[i].two ? array[i].two : "(null)",
+-               array[i].max, rv, array[i].sign);
++               (int)array[i].max, rv, array[i].sign);
+         return PR_FALSE;
+     }
+@@ -1327,8 +1327,8 @@
+         }
+ 
+-        printf("FAIL %d: %s-%s/%ld -> %d, not %d\n", i,
++        printf("FAIL %d: %s-%s/%d -> %d, not %d\n", i,
+                array[i].one ? array[i].one : "(null)",
+                array[i].two ? array[i].two : "(null)",
+-               array[i].max, rv, array[i].sign);
++               (int)array[i].max, rv, array[i].sign);
+         return PR_FALSE;
+     }
+@@ -1400,6 +1400,6 @@
+             if( (char *)0 == rv )
+             {
+-                printf("FAIL %d: %s,%c -> null, not +%lu\n", i, array[i].str,
+-                       array[i].chr, array[i].off);
++                printf("FAIL %d: %s,%c -> null, not +%u\n", i, array[i].str,
++                       array[i].chr, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -1407,6 +1407,6 @@
+             if( &array[i].str[ array[i].off ] != rv )
+             {
+-                printf("FAIL %d: %s,%c -> 0x%x, not 0x%x+%lu\n", i, array[i].str,
+-                       array[i].chr, rv, array[i].str, array[i].off);
++                printf("FAIL %d: %s,%c -> %p, not %p+%u\n", i, array[i].str,
++                       array[i].chr, rv, array[i].str, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -1480,6 +1480,6 @@
+             if( (char *)0 == rv )
+             {
+-                printf("FAIL %d: %s,%c -> null, not +%lu\n", i, array[i].str,
+-                       array[i].chr, array[i].off);
++                printf("FAIL %d: %s,%c -> null, not +%u\n", i, array[i].str,
++                       array[i].chr, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -1487,6 +1487,6 @@
+             if( &array[i].str[ array[i].off ] != rv )
+             {
+-                printf("FAIL %d: %s,%c -> 0x%x, not 0x%x+%lu\n", i, array[i].str,
+-                       array[i].chr, rv, array[i].str, array[i].off);
++                printf("FAIL %d: %s,%c -> %p, not %p+%u\n", i, array[i].str,
++                       array[i].chr, rv, array[i].str, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -1555,6 +1555,6 @@
+             if( (char *)0 != rv )
+             {
+-                printf("FAIL %d: %s,%c/%lu -> %.32s, not zero\n", i, array[i].str,
+-                       array[i].chr, array[i].max, rv);
++                printf("FAIL %d: %s,%c/%u -> %.32s, not zero\n", i, array[i].str,
++                       array[i].chr, (unsigned)array[i].max, rv);
+                 return PR_FALSE;
+             }
+@@ -1564,6 +1564,6 @@
+             if( (char *)0 == rv )
+             {
+-                printf("FAIL %d: %s,%c/%lu -> null, not +%lu\n", i, array[i].str,
+-                       array[i].chr, array[i].max, array[i].off);
++                printf("FAIL %d: %s,%c/%u -> null, not +%u\n", i, array[i].str,
++                       array[i].chr, (unsigned)array[i].max, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -1571,6 +1571,6 @@
+             if( &array[i].str[ array[i].off ] != rv )
+             {
+-                printf("FAIL %d: %s,%c/%lu -> 0x%x, not 0x%x+%lu\n", i, array[i].str,
+-                       array[i].chr, array[i].max, rv, array[i].str, array[i].off);
++                printf("FAIL %d: %s,%c/%u -> %p, not %p+%u\n", i, array[i].str,
++                       array[i].chr, (unsigned)array[i].max, rv, array[i].str, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -1639,6 +1639,6 @@
+             if( (char *)0 != rv )
+             {
+-                printf("FAIL %d: %s,%c/%lu -> %.32s, not zero\n", i, array[i].str,
+-                       array[i].chr, array[i].max, rv);
++                printf("FAIL %d: %s,%c/%u -> %.32s, not zero\n", i, array[i].str,
++                       array[i].chr, (unsigned)array[i].max, rv);
+                 return PR_FALSE;
+             }
+@@ -1648,13 +1648,13 @@
+             if( (char *)0 == rv )
+             {
+-                printf("FAIL %d: %s,%c/%lu -> null, not +%lu\n", i, array[i].str,
+-                       array[i].chr, array[i].max, array[i].off);
++                printf("FAIL %d: %s,%c/%u -> null, not +%u\n", i, array[i].str,
++                       array[i].chr, (unsigned)array[i].max, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+ 
+-            if( &array[i].str[ array[i].off ] != rv )
++            if( &array[i].str[ array[i].off ] != rv)
+             {
+-                printf("FAIL %d: %s,%c/%lu -> 0x%x, not 0x%x+%lu\n", i, array[i].str,
+-                       array[i].chr, array[i].max, rv, array[i].str, array[i].off);
++                printf("FAIL %d: %s,%c/%u -> %p, not %p+%u\n", i, array[i].str,
++                       array[i].chr, (unsigned)array[i].max, rv, array[i].str, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -1735,8 +1735,8 @@
+             if( (char *)0 == rv )
+             {
+-                printf("FAIL %d: %s,%s -> null, not +%lu\n", i,
++                printf("FAIL %d: %s,%s -> null, not +%u\n", i,
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].chrs ? array[i].chrs : "(null)", 
+-                       array[i].off);
++                       (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -1744,8 +1744,8 @@
+             if( &array[i].str[ array[i].off ] != rv )
+             {
+-                printf("FAIL %d: %s,%s -> 0x%x, not 0x%x+%lu\n", i,
++                printf("FAIL %d: %s,%s -> %p, not %p+%u\n", i,
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].chrs ? array[i].chrs : "(null)", 
+-                       rv, array[i].str, array[i].off);
++                       rv, array[i].str, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -1826,8 +1826,8 @@
+             if( (char *)0 == rv )
+             {
+-                printf("FAIL %d: %s,%s -> null, not +%lu\n", i,
++                printf("FAIL %d: %s,%s -> null, not +%u\n", i,
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].chrs ? array[i].chrs : "(null)", 
+-                       array[i].off);
++                       (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -1835,8 +1835,8 @@
+             if( &array[i].str[ array[i].off ] != rv )
+             {
+-                printf("FAIL %d: %s,%s -> 0x%x, not 0x%x+%lu\n", i,
++                printf("FAIL %d: %s,%s -> %p, not %p+%u\n", i,
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].chrs ? array[i].chrs : "(null)", 
+-                       rv, array[i].str, array[i].off);
++                       rv, array[i].str, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -1912,8 +1912,8 @@
+             if( (char *)0 != rv )
+             {
+-                printf("FAIL %d: %s,%s/%lu -> %.32s, not null\n", i, 
++                printf("FAIL %d: %s,%s/%u -> %.32s, not null\n", i, 
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].chrs ? array[i].chrs : "(null)", 
+-                       array[i].max, rv);
++                       (unsigned)array[i].max, rv);
+                 return PR_FALSE;
+             }
+@@ -1923,8 +1923,8 @@
+             if( (char *)0 == rv )
+             {
+-                printf("FAIL %d: %s,%s/%lu -> null, not +%lu\n", i,
++                printf("FAIL %d: %s,%s/%u -> null, not +%u\n", i,
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].chrs ? array[i].chrs : "(null)", 
+-                       array[i].max, array[i].off);
++                       (unsigned)array[i].max, array[i].off);
+                 return PR_FALSE;
+             }
+@@ -1932,8 +1932,8 @@
+             if( &array[i].str[ array[i].off ] != rv )
+             {
+-                printf("FAIL %d: %s,%s/%lu -> 0x%x, not 0x%x+%lu\n", i,
++                printf("FAIL %d: %s,%s/%u -> %p, not %p+%u\n", i,
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].chrs ? array[i].chrs : "(null)", 
+-                       array[i].max, rv, array[i].str, array[i].off);
++                       (unsigned)array[i].max, rv, array[i].str, array[i].off);
+                 return PR_FALSE;
+             }
+@@ -2018,8 +2018,8 @@
+             if( (char *)0 != rv )
+             {
+-                printf("FAIL %d: %s,%s/%lu -> %.32s, not null\n", i, 
++                printf("FAIL %d: %s,%s/%u -> %.32s, not null\n", i, 
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].chrs ? array[i].chrs : "(null)", 
+-                       array[i].max, rv);
++                       (unsigned)array[i].max, rv);
+                 return PR_FALSE;
+             }
+@@ -2029,8 +2029,8 @@
+             if( (char *)0 == rv )
+             {
+-                printf("FAIL %d: %s,%s/%lu -> null, not +%lu\n", i,
++                printf("FAIL %d: %s,%s/%u -> null, not +%u\n", i,
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].chrs ? array[i].chrs : "(null)", 
+-                       array[i].max, array[i].off);
++                       (unsigned)array[i].max, array[i].off);
+                 return PR_FALSE;
+             }
+@@ -2038,8 +2038,8 @@
+             if( &array[i].str[ array[i].off ] != rv )
+             {
+-                printf("FAIL %d: %s,%s/%lu -> 0x%x, not 0x%x+%lu\n", i,
++                printf("FAIL %d: %s,%s/%u -> %p, not %p+%u\n", i,
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].chrs ? array[i].chrs : "(null)", 
+-                       array[i].max, rv, array[i].str, array[i].off);
++                       (unsigned)array[i].max, rv, array[i].str, array[i].off);
+                 return PR_FALSE;
+             }
+@@ -2137,8 +2137,8 @@
+             if( (char *)0 == rv )
+             {
+-                printf("FAIL %d: %s,%s -> null, not 0x%x+%lu\n", i,
++                printf("FAIL %d: %s,%s -> null, not %p+%u\n", i,
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].sub ? array[i].sub : "(null)",
+-                       array[i].str, array[i].off);
++                       array[i].str, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -2146,8 +2146,8 @@
+             if( &array[i].str[ array[i].off ] != rv )
+             {
+-                printf("FAIL %d: %s,%s -> 0x%x, not 0x%x+%lu\n", i, 
++                printf("FAIL %d: %s,%s -> %p, not %p+%u\n", i, 
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].sub ? array[i].sub : "(null)",
+-                       rv, array[i].str, array[i].off);
++                       rv, array[i].str, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -2245,8 +2245,8 @@
+             if( (char *)0 == rv )
+             {
+-                printf("FAIL %d: %s,%s -> null, not 0x%x+%lu\n", i,
++                printf("FAIL %d: %s,%s -> null, not %p+%u\n", i,
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].sub ? array[i].sub : "(null)",
+-                       array[i].str, array[i].off);
++                       array[i].str, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -2254,8 +2254,8 @@
+             if( &array[i].str[ array[i].off ] != rv )
+             {
+-                printf("FAIL %d: %s,%s -> 0x%x, not 0x%x+%lu\n", i, 
++                printf("FAIL %d: %s,%s -> %p, not %p+%u\n", i, 
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].sub ? array[i].sub : "(null)",
+-                       rv, array[i].str, array[i].off);
++                       rv, array[i].str, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -2364,8 +2364,8 @@
+             if( (char *)0 != rv )
+             {
+-                printf("FAIL %d: %s,%s/%lu -> %.32s, not null\n", i,
++                printf("FAIL %d: %s,%s/%u -> %.32s, not null\n", i,
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].sub ? array[i].sub : "(null)",
+-                       array[i].max, rv);
++                       (unsigned)array[i].max, rv);
+                 return PR_FALSE;
+             }
+@@ -2375,8 +2375,8 @@
+             if( (char *)0 == rv )
+             {
+-                printf("FAIL %d: %s,%s/%lu -> null, not 0x%x+%lu\n", i,
++                printf("FAIL %d: %s,%s/%u -> null, not %p+%u\n", i,
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].sub ? array[i].sub : "(null)",
+-                       array[i].max, array[i].str, array[i].off);
++                       (unsigned)array[i].max, array[i].str, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -2384,8 +2384,8 @@
+             if( &array[i].str[ array[i].off ] != rv )
+             {
+-                printf("FAIL %d: %s,%s/%lu -> 0x%x, not 0x%x+%lu\n", i, 
++                printf("FAIL %d: %s,%s/%u -> %p, not %p+%u\n", i, 
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].sub ? array[i].sub : "(null)",
+-                       array[i].max, rv, array[i].str, array[i].off);
++                       (unsigned)array[i].max, rv, array[i].str, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -2496,8 +2496,8 @@
+             if( (char *)0 != rv )
+             {
+-                printf("FAIL %d: %s,%s/%lu -> %.32s, not null\n", i,
++                printf("FAIL %d: %s,%s/%u -> %.32s, not null\n", i,
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].sub ? array[i].sub : "(null)",
+-                       array[i].max, rv);
++                       (unsigned)array[i].max, rv);
+                 return PR_FALSE;
+             }
+@@ -2507,8 +2507,8 @@
+             if( (char *)0 == rv )
+             {
+-                printf("FAIL %d: %s,%s/%lu -> null, not 0x%x+%lu\n", i,
++                printf("FAIL %d: %s,%s/%u -> null, not %p+%u\n", i,
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].sub ? array[i].sub : "(null)",
+-                       array[i].max, array[i].str, array[i].off);
++                       (unsigned)array[i].max, array[i].str, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -2516,8 +2516,8 @@
+             if( &array[i].str[ array[i].off ] != rv )
+             {
+-                printf("FAIL %d: %s,%s/%lu -> 0x%x, not 0x%x+%lu\n", i, 
++                printf("FAIL %d: %s,%s/%u -> %p, not %p+%u\n", i, 
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].sub ? array[i].sub : "(null)",
+-                       array[i].max, rv, array[i].str, array[i].off);
++                       (unsigned)array[i].max, rv, array[i].str, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -2615,8 +2615,8 @@
+             if( (char *)0 == rv )
+             {
+-                printf("FAIL %d: %s,%s -> null, not 0x%x+%lu\n", i,
++                printf("FAIL %d: %s,%s -> null, not %p+%u\n", i,
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].sub ? array[i].sub : "(null)",
+-                       array[i].str, array[i].off);
++                       array[i].str, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -2624,8 +2624,8 @@
+             if( &array[i].str[ array[i].off ] != rv )
+             {
+-                printf("FAIL %d: %s,%s -> 0x%x, not 0x%x+%lu\n", i, 
++                printf("FAIL %d: %s,%s -> %p, not %p+%u\n", i, 
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].sub ? array[i].sub : "(null)",
+-                       rv, array[i].str, array[i].off);
++                       rv, array[i].str, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -2723,8 +2723,8 @@
+             if( (char *)0 == rv )
+             {
+-                printf("FAIL %d: %s,%s -> null, not 0x%x+%lu\n", i,
++                printf("FAIL %d: %s,%s -> null, not %p+%u\n", i,
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].sub ? array[i].sub : "(null)",
+-                       array[i].str, array[i].off);
++                       array[i].str, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -2732,8 +2732,8 @@
+             if( &array[i].str[ array[i].off ] != rv )
+             {
+-                printf("FAIL %d: %s,%s -> 0x%x, not 0x%x+%lu\n", i, 
++                printf("FAIL %d: %s,%s -> %p, not %p+%u\n", i, 
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].sub ? array[i].sub : "(null)",
+-                       rv, array[i].str, array[i].off);
++                       rv, array[i].str, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -2842,8 +2842,8 @@
+             if( (char *)0 != rv )
+             {
+-                printf("FAIL %d: %s,%s/%lu -> %.32s, not null\n", i,
++                printf("FAIL %d: %s,%s/%u -> %.32s, not null\n", i,
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].sub ? array[i].sub : "(null)",
+-                       array[i].max, rv);
++                       (unsigned)array[i].max, rv);
+                 return PR_FALSE;
+             }
+@@ -2853,8 +2853,8 @@
+             if( (char *)0 == rv )
+             {
+-                printf("FAIL %d: %s,%s/%lu -> null, not 0x%x+%lu\n", i,
++                printf("FAIL %d: %s,%s/%u -> null, not %p+%u\n", i,
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].sub ? array[i].sub : "(null)",
+-                       array[i].max, array[i].str, array[i].off);
++                       (unsigned)array[i].max, array[i].str, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -2862,8 +2862,8 @@
+             if( &array[i].str[ array[i].off ] != rv )
+             {
+-                printf("FAIL %d: %s,%s/%lu -> 0x%x, not 0x%x+%lu\n", i, 
++                printf("FAIL %d: %s,%s/%u -> %p, not %p+%u\n", i, 
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].sub ? array[i].sub : "(null)",
+-                       array[i].max, rv, array[i].str, array[i].off);
++                       (unsigned)array[i].max, rv, array[i].str, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -2974,8 +2974,8 @@
+             if( (char *)0 != rv )
+             {
+-                printf("FAIL %d: %s,%s/%lu -> %.32s, not null\n", i,
++                printf("FAIL %d: %s,%s/%u -> %.32s, not null\n", i,
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].sub ? array[i].sub : "(null)",
+-                       array[i].max, rv);
++                       (unsigned)array[i].max, rv);
+                 return PR_FALSE;
+             }
+@@ -2985,8 +2985,8 @@
+             if( (char *)0 == rv )
+             {
+-                printf("FAIL %d: %s,%s/%lu -> null, not 0x%x+%lu\n", i,
++                printf("FAIL %d: %s,%s/%u -> null, not %p+%u\n", i,
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].sub ? array[i].sub : "(null)",
+-                       array[i].max, array[i].str, array[i].off);
++                       (unsigned)array[i].max, array[i].str, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+@@ -2994,8 +2994,8 @@
+             if( &array[i].str[ array[i].off ] != rv )
+             {
+-                printf("FAIL %d: %s,%s/%lu -> 0x%x, not 0x%x+%lu\n", i, 
++                printf("FAIL %d: %s,%s/%u -> %p, not %p+%u\n", i, 
+                        array[i].str ? array[i].str : "(null)",
+                        array[i].sub ? array[i].sub : "(null)",
+-                       array[i].max, rv, array[i].str, array[i].off);
++                       (unsigned)array[i].max, rv, array[i].str, (unsigned)array[i].off);
+                 return PR_FALSE;
+             }
+--- ../lib/tests/arena.c	Sun Apr 25 11:00:46 2004
++++ ../lib/tests/arena.c	Mon Jul 25 19:52:15 2005
+@@ -69,4 +69,5 @@
+ }
+ 
++#if 0
+ /*
+ ** Test Arena allocation.
+@@ -129,4 +130,5 @@
+     return;
+ } /* end ArenaGrow() */
++#endif
+ 
+ 
+--- ../lib/tests/base64t.c	Sun Apr 25 11:00:46 2004
++++ ../lib/tests/base64t.c	Mon Jul 25 20:16:54 2005
+@@ -2020,5 +2020,4 @@
+     {
+         PRUint32 plen = PL_strlen(array[i].plaintext);
+-        PRUint32 clen = ((plen + 2)/3)*4;
+ 
+         char *rv = PL_Base64Encode(array[i].plaintext, plen, (char *)0);
+@@ -2780,7 +2779,4 @@
+     for( i = 0; i < sizeof(array)/sizeof(array[0]); i++ )
+     {
+-        PRUint32 plen = PL_strlen(array[i].plaintext);
+-        PRUint32 clen = ((plen + 2)/3)*4;
+-
+         char *rv = PL_Base64Encode(array[i].plaintext, 0, (char *)0);
+ 
+@@ -2916,6 +2912,4 @@
+     for( i = 0; i < sizeof(array)/sizeof(array[0]); i++ )
+     {
+-        PRUint32 clen = PL_strlen(array[i].cyphertext);
+-
+         char *rv = PL_Base64Decode(array[i].cyphertext, 0, (char *)0);
+ 

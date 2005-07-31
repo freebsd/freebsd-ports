@@ -1,0 +1,67 @@
+--- ../pr/src/misc/prdtoa.c	Sun Apr 25 11:01:01 2004
++++ ../pr/src/misc/prdtoa.c	Sun Jul 24 23:55:19 2005
+@@ -3355,5 +3355,7 @@
+ 		}
+ 	else {
++#ifdef Honor_FLT_ROUNDS
+  trimzeros:
++#endif
+ 		while(*--s == '0');
+ 		s++;
+--- ../pr/src/pthreads/ptsynch.c	Mon Nov 22 16:24:53 2004
++++ ../pr/src/pthreads/ptsynch.c	Mon Jul 25 00:03:49 2005
+@@ -63,5 +63,5 @@
+ #endif  /* defined(DEBUG) */
+ 
+-#if defined(FREEBSD)
++#if defined(FREEBSD) && (defined(DEBUG) || defined(FORCE_PR_ASSERT))
+ /*
+  * On older versions of FreeBSD, pthread_mutex_trylock returns EDEADLK.
+@@ -343,5 +343,8 @@
+     if (cv != NULL)
+     {
+-        int rv = _PT_PTHREAD_COND_INIT(cv->cv, _pt_cvar_attr); 
++#if defined(DEBUG) || defined(FORCE_PR_ASSERT)
++        int rv =
++#endif
++	    _PT_PTHREAD_COND_INIT(cv->cv, _pt_cvar_attr); 
+         PR_ASSERT(0 == rv);
+         cv->lock = lock;
+@@ -358,5 +361,9 @@
+     if (0 > PR_AtomicDecrement(&cvar->notify_pending))
+     {
+-        PRIntn rv = pthread_cond_destroy(&cvar->cv); PR_ASSERT(0 == rv);
++#if defined(DEBUG) || defined(FORCE_PR_ASSERT)
++        PRIntn rv =
++#endif
++	    pthread_cond_destroy(&cvar->cv);
++	PR_ASSERT(0 == rv);
+ #if defined(DEBUG)
+         memset(cvar, 0xaf, sizeof(PRCondVar));
+@@ -1080,6 +1087,9 @@
+     if (cv != NULL)
+     {
++#if defined(DEBUG) || defined(FORCE_PR_ASSERT)
+         int rv;
+-        rv = _PT_PTHREAD_COND_INIT(cv->cv, _pt_cvar_attr); 
++        rv =
++#endif
++	    _PT_PTHREAD_COND_INIT(cv->cv, _pt_cvar_attr); 
+         PR_ASSERT(0 == rv);
+         cv->lock = _PR_NAKED_CV_LOCK;
+--- ../pr/include/prcountr.h	Sun Apr 25 11:00:47 2004
++++ ../pr/include/prcountr.h	Mon Jul 25 20:43:03 2005
+@@ -427,5 +427,5 @@
+     (counter) = PR_GetCounter((handle))
+ #else
+-#define PR_GET_COUNTER(counter,handle) 0
++#define PR_GET_COUNTER(counter,handle)
+ #endif
+ 
+@@ -501,5 +501,5 @@
+     (next) = PR_FindNextCounterQname((handle))
+ #else
+-#define PR_FIND_NEXT_COUNTER_QNAME(next,handle) NULL
++#define PR_FIND_NEXT_COUNTER_QNAME(next,handle)
+ #endif
+ 
