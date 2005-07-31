@@ -7,6 +7,7 @@
 
 PORTNAME=	Unix-Statgrab
 PORTVERSION=	0.03
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Unix
@@ -15,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tim@bishnet.net
 COMMENT=	Perl extension for collecting information about the machine
 
-LIB_DEPENDS=	statgrab.6:${PORTSDIR}/devel/libstatgrab
+LIB_DEPENDS=	statgrab.7:${PORTSDIR}/devel/libstatgrab
 
 USE_GNOME=	pkgconfig
 
@@ -27,9 +28,10 @@ MAN3=		Unix::Statgrab.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
 post-patch:
-	${PERL} -i -pe 's/}\(/}->(/' ${WRKSRC}/lib/Unix/Statgrab.pm
+.if ${PERL_LEVEL} < 500600
+	@${PERL} -i -pe 's/}\(/}->(/' ${WRKSRC}/lib/Unix/Statgrab.pm
 .endif
+	@${RM} ${WRKSRC}/lib/Unix/Statgrab.pm.orig
 
 .include <bsd.port.post.mk>

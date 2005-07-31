@@ -1,0 +1,43 @@
+diff -ruN Unix-Statgrab-0.03/Statgrab.xs Unix-Statgrab-0.03.new/Statgrab.xs
+--- Statgrab.xs	Sun Apr  3 06:32:41 2005
++++ Statgrab.xs	Sat Jul 30 12:10:10 2005
+@@ -1113,13 +1113,13 @@
+ 	RETVAL
+ 
+ IV
+-dup (self, num = 0)
++duplex (self, num = 0)
+ 	sg_network_iface_stats_my *self;
+ 	int num;
+     CODE:
+ 	if (num < 0 || num >= self->nifs)
+ 	    XSRETURN_UNDEF;
+-	RETVAL = IF(num)->dup;
++	RETVAL = IF(num)->duplex;
+     OUTPUT:
+ 	RETVAL
+ 
+diff -ruN Unix-Statgrab-0.03/lib/Unix/Statgrab.pm Unix-Statgrab-0.03.new/lib/Unix/Statgrab.pm
+--- lib/Unix/Statgrab.pm	Sun Apr  3 06:45:44 2005
++++ lib/Unix/Statgrab.pm	Sat Jul 30 12:09:53 2005
+@@ -479,7 +479,7 @@
+ 
+ The speed of the interface, in megabits/sec
+ 
+-=item * B<dup($if)>
++=item * B<duplex($if)>
+ 
+ One of C<SG_IFACE_DUPLEX_FULL>, C<SG_IFACE_DUPLEX_HALF> and C<SG_IFACE_DUPLEX_UNKNOWN>. Unknown could mean that duplex hasn't been negotiated yet.
+ 
+diff -ruN Unix-Statgrab-0.03/t/Unix-Statgrab.t Unix-Statgrab-0.03.new/t/Unix-Statgrab.t
+--- t/Unix-Statgrab.t	Sun Apr  3 06:35:08 2005
++++ t/Unix-Statgrab.t	Sat Jul 30 12:09:29 2005
+@@ -50,7 +50,7 @@
+ 					ierrors oerrors collisions systime/ ],
+     get_network_io_stats_diff	=> [ qw/num_ifaces interface_name tx rx ipackets opackets
+ 					ierrors oerrors collisions systime/ ],
+-    get_network_iface_stats	=> [ qw/num_ifaces interface_name speed dup up/ ],
++    get_network_iface_stats	=> [ qw/num_ifaces interface_name speed duplex up/ ],
+     get_page_stats		=> [ qw/pages_pagein pages_pageout systime/ ],
+     get_page_stats_diff		=> [ qw/pages_pagein pages_pageout systime/ ],
+     get_user_stats		=> [ qw/num_entries name_list/ ],
