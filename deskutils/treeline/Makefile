@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	treeline
-PORTVERSION=	0.11.1
+PORTVERSION=	0.12.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://www.bellz.org/treeline/ \
 		http://depot.fsck.ch/mirror/distfiles/
@@ -52,7 +52,6 @@ do-install:
 
 post-install:
 	${RM} ${DOCSDIR}/INSTALL ${DOCSDIR}/LICENSE
-	${RM} ${PREFIX}/lib/${PORTNAME}/uninstall.py*
 .if defined(NOPORTDOCS)
 	${RM} ${DOCSDIR}/*
 	${RMDIR} ${DOCSDIR}
