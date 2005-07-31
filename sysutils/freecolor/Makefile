@@ -7,14 +7,14 @@
 
 PORTNAME=	freecolor
 PORTVERSION=	0.8.4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rkeene.org/files/oss/freecolor/
 
 MAINTAINER=	tim@bishnet.net
 COMMENT=	Displays free memory as a bargraph
 
-LIB_DEPENDS=	statgrab.6:${PORTSDIR}/devel/libstatgrab
+LIB_DEPENDS=	statgrab.7:${PORTSDIR}/devel/libstatgrab
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/freecolor
