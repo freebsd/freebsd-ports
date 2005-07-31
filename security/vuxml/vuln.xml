@@ -32,6 +32,43 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8375a73f-01bf-11da-bc08-0001020eed82">
+    <topic>gnupg -- OpenPGP symmetric encryption vulnerability</topic>
+    <affects>
+      <package>
+	<name>gnupg</name>
+	<range><lt>1.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Serge Mister and Robert Zuccherato reports that the OpenPGP
+	  protocol is vulnerable to a cryptographic attack when using
+	  symmetric encryption in an automated way.</p>
+	<p>David Shaw reports about the impact:</p>
+	<blockquote cite="http://lists.gnupg.org/pipermail/gnupg-announce/2005q1/000191.html">
+	  <p>This attack, while very significant from a cryptographic
+	    point of view, is not generally effective in the real
+	    world.  To be specific, unless you have your OpenPGP
+	    program set up as part of an automated system to accept
+	    encrypted messages, decrypt them, and then provide a
+	    response to the submitter, then this does not affect you
+	    at all.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <certvu>303094</certvu>
+      <cvename>CAN-2005-0366</cvename>
+      <url>http://eprint.iacr.org/2005/033</url>
+      <url>http://lists.gnupg.org/pipermail/gnupg-announce/2005q1/000191.html</url>
+    </references>
+    <dates>
+      <discovery>2005-02-08</discovery>
+      <entry>2005-07-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="81f127a8-0038-11da-86bc-000e0c2e438a">
     <topic>vim -- vulnerabilities in modeline handling: glob, expand</topic>
     <affects>
