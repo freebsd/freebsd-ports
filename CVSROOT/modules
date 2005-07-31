@@ -9394,6 +9394,7 @@ pmail		ports/mail/pmail
 pmake		ports/devel/pmake
 pmap		ports/sysutils/pmap
 pmars		ports/games/pmars
+pmars-doc	ports/games/pmars-doc
 pmars-sdl	ports/games/pmars-sdl
 pmf		ports/net/pmf
 pmk		ports/devel/pmk
