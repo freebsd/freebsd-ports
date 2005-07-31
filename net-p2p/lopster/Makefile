@@ -7,8 +7,11 @@
 
 PORTNAME=	lopster
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://lopster.sourceforge.net/download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://lopster.sourceforge.net/download/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@oven.org
 COMMENT=	GTK+ client for Napster
@@ -18,7 +21,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ARGS=	--with-pthread=yes --with-zlib=yes
+CONFIGURE_ARGS=	--with-pthread=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
@@ -31,8 +34,19 @@ WITH_LIBOGG=	yes
 LIB_DEPENDS+=	ogg.5:${PORTSDIR}/audio/libogg
 .endif
 
+.if !defined(WITHOUT_ZLIB)
+CONFIGURE_ARGS+=	--with-zlib=yes
+.else
+CONFIGURE_ARGS+=	--with-zlib=no
+.endif
+
 pre-everything::
+.ifndef WITH_LIBOGG
 	@${ECHO_MSG} "You can specify WITH_LIBOGG to include Ogg support"
+.endif
+.ifndef WITHOUT_ZLIB
+	@${ECHO_MSG} "You can specify WITHOUT_ZLIB to disable compression for old servers"
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
