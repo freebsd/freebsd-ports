@@ -20,7 +20,7 @@ include/eb/zio.h
 @dirrm include/eb
 lib/libeb.a
 lib/libeb.so
-lib/libeb.so.9
+lib/libeb.so.10
 share/aclocal/eb4.m4
 %%DOCSDIR%%/eb-01.html
 %%DOCSDIR%%/eb-02.html

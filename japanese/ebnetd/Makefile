@@ -7,7 +7,7 @@
 
 PORTNAME=	ebnetd
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese ipv6
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/net/ndtp/eb/
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/ \
 MAINTAINER=	takamune2004@yahoo.co.jp
 COMMENT=	Servers for accessing CD-ROM books via TCP/IP
 
-LIB_DEPENDS=	eb.9:${PORTSDIR}/japanese/eb
+LIB_DEPENDS=	eb.10:${PORTSDIR}/japanese/eb
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
