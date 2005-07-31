@@ -155,6 +155,7 @@ share/xsessions/enlightenment.desktop
 @dirrm %%DATADIR%%/data/fonts
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
+@dirrm share/xsessions
 @dirrm lib/enlightenment/preload
 @dirrm lib/enlightenment/modules/test
 @dirrm lib/enlightenment/modules/temperature
