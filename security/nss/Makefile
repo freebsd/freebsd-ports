@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nss
-PORTVERSION=	3.9.2
+PORTVERSION=	3.10
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_RTM/src
@@ -28,21 +28,45 @@ MAKE_ENV=	BSD_LDOPTS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
 ALL_TARGET=	nss_build_all
 CFLAGS+=	-I${LOCALBASE}/include/nspr
 
-DIST=		${WRKSRC}/../../dist
+DIST=		${WRKSRC:H:H}/dist
 
-CONFLICTS=	btoa-5.* digest-* emboss-2.* oases-2.* p5-PAR-0.* \
-		qmail-ldap2-*
-
+CONFLICTS=	btoa-5.* digest-[0-9]* emboss-2.* oases-2.* p5-PAR-0.* \
+		qmail-ldap2-[0-9]*
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500035
-IGNORE=	"core dumps on alpha during build"
-.endif
+EXTERNALS=	CVS dbm security/nss/cmd/zlib
+EXTRACT_AFTER_ARGS=| ${TAR} -xf -	\
+	${EXTERNALS:C,^,--exclude ${DISTNAME}/mozilla/,}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" \
-		${WRKSRC}/../../security/coreconf/FreeBSD.mk
+		${WRKSRC:H:H}/security/coreconf/FreeBSD.mk
+
+BINS=${DIST}/${OPSYS}${OSREL}_OPT.OBJ
+
+test:
+	cd ${WRKSRC}/tests;	\
+		${SETENV} PATH="${BINS}/bin:${PATH}" \
+		    LD_LIBRARY_PATH="${BINS}/lib" \
+			./all.sh
+	@if ${GREP} -F '>Failed<'	\
+	    ${WRKSRC:H:H}/tests_results/security/*/results.html; then	\
+		echo "Some tests have failed. Let ${MAINTAINER} know.";	\
+		exit 1;	\
+	else	\
+		echo "All tests succeeded. Good news.";	\
+	fi
+
+.if defined(PARALLEL_PACKAGE_BUILD)
+post-build: test
+.else
+post-build:
+	#
+	# Please, consider running ``make test'' now and fixing any problems
+	# and/or reporting them to ${MAINTAINER} . Thanks!
+	#
+.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/include/nss

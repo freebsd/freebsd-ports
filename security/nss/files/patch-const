@@ -1,0 +1,46 @@
+--- cmd/modutil/modutil.h	Sun Apr 25 11:02:47 2004
++++ cmd/modutil/modutil.h	Fri Jul 22 17:35:20 2005
+@@ -53,6 +53,6 @@
+ #include "error.h"
+ 
+-Error FipsMode(char *arg);
+-Error ChkFipsMode(char *arg);
++Error FipsMode(const char *arg);
++Error ChkFipsMode(const char *arg);
+ Error AddModule(char *moduleName, char *libFile, char *ciphers,
+       char *mechanisms, char* modparms);
+--- cmd/modutil/pk11.c	Sun Apr 25 11:02:47 2004
++++ cmd/modutil/pk11.c	Fri Jul 22 17:36:48 2005
+@@ -53,5 +53,5 @@
+  */
+ Error
+-FipsMode(char *arg)
++FipsMode(const char *arg)
+ {
+     char *internal_name;
+@@ -62,14 +62,16 @@
+ 		SECMOD_GetInternalModule()->commonName);
+ 	    if(SECMOD_DeleteInternalModule(internal_name) != SECSuccess) {
+-		PR_fprintf(PR_STDERR, "%s\n", SECU_Strerror(PORT_GetError()));
++		PR_fprintf(PR_STDERR, "FipsMode(true): %s (%s)\n", SECU_Strerror(PORT_GetError()), internal_name);
+ 		PR_smprintf_free(internal_name);
+ 		PR_fprintf(PR_STDERR, errStrings[FIPS_SWITCH_FAILED_ERR]);
+ 		return FIPS_SWITCH_FAILED_ERR;
+ 	    }
+-	    PR_smprintf_free(internal_name);
+ 	    if (!PK11_IsFIPS()) {
++		PR_fprintf(PR_STDERR, "FipsMode(true): in module %s", internal_name);
++	        PR_smprintf_free(internal_name);
+ 		PR_fprintf(PR_STDERR, errStrings[FIPS_SWITCH_FAILED_ERR]);
+ 		return FIPS_SWITCH_FAILED_ERR;
+ 	    }
++	    PR_smprintf_free(internal_name);
+ 	    PR_fprintf(PR_STDOUT, msgStrings[FIPS_ENABLED_MSG]);
+ 	} else {
+@@ -112,5 +114,5 @@
+  */
+ Error
+-ChkFipsMode(char *arg)
++ChkFipsMode(const char *arg)
+ {
+     if(!PORT_Strcasecmp(arg, "true")) {

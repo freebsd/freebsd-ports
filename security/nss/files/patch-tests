@@ -1,0 +1,10 @@
+--- tests/common/init.sh	Mon Apr 11 22:24:17 2005
++++ tests/common/init.sh	Fri Jul 22 16:55:36 2005
+@@ -197,5 +197,6 @@
+     case $HOST in
+         *\.*)
+-            HOST=`echo $HOST | sed -e "s/\..*//"`
++	    DOMSUF=${HOST#*.}	# remove Smallest Prefix matching ``*.''
++	    HOST=${HOST%%.*}	# remove Largest Suffix ``.*''. See sh(1)
+             ;;
+         ?*)

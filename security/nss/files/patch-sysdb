@@ -1,0 +1,222 @@
+This patches NSS' code to use the Operating System's standard <db.h> header
+and the db-implementation from -lc. Seems to work on FreeBSD.
+
+	-mi
+
+--- lib/softoken/cdbhdl.h	Sun Apr 25 11:03:16 2004
++++ lib/softoken/cdbhdl.h	Fri Jul 22 00:25:16 2005
+@@ -43,6 +43,6 @@
+ #define _CDBHDL_H_
+ 
+-#include "nspr.h"
+-#include "mcom_db.h"
++#include <nspr.h>
++#include <db.h>
+ #include "pcertt.h"
+ 
+--- lib/softoken/dbinit.c	Tue Mar 29 13:21:18 2005
++++ lib/softoken/dbinit.c	Fri Jul 22 00:33:35 2005
+@@ -40,4 +40,5 @@
+ 
+ #include <ctype.h>
++#include <fcntl.h>
+ #include "seccomon.h"
+ #include "prinit.h"
+--- lib/softoken/dbmshim.c	Tue Mar 29 13:21:18 2005
++++ lib/softoken/dbmshim.c	Fri Jul 22 00:35:33 2005
+@@ -40,5 +40,6 @@
+  * $Id: dbmshim.c,v 1.11 2005/03/29 18:21:18 nelsonb%netscape.com Exp $
+  */
+-#include "mcom_db.h"
++#include <db.h>
++#include <fcntl.h>
+ #include "secitem.h"
+ #include "secder.h"
+--- lib/softoken/keydb.c	Fri Jun  4 20:50:32 2004
++++ lib/softoken/keydb.c	Fri Jul 22 00:37:01 2005
+@@ -46,5 +46,6 @@
+ #include "secitem.h"
+ #include "pcert.h"
+-#include "mcom_db.h"
++#include <db.h>
++#include <fcntl.h>
+ #include "lowpbe.h"
+ #include "secerr.h"
+--- lib/softoken/pcertdb.c	Tue Mar 29 13:21:18 2005
++++ lib/softoken/pcertdb.c	Fri Jul 22 00:40:00 2005
+@@ -44,5 +44,6 @@
+ #include "lowkeyti.h"
+ #include "pcert.h"
+-#include "mcom_db.h"
++#include <db.h>
++#include <fcntl.h>
+ #include "pcert.h"
+ #include "secitem.h"
+--- lib/softoken/pk11db.c	Fri Apr  1 19:46:13 2005
++++ lib/softoken/pk11db.c	Fri Jul 22 00:42:01 2005
+@@ -42,5 +42,6 @@
+ #include "pk11pars.h"
+ #include "pkcs11i.h"
+-#include "mcom_db.h"
++#include <db.h>
++#include <fcntl.h>
+ #include "cdbhdl.h"
+ #include "secerr.h"
+--- lib/softoken/keydbi.h	Tue Apr 27 19:04:38 2004
++++ lib/softoken/keydbi.h	Fri Jul 22 00:43:24 2005
+@@ -42,7 +42,7 @@
+ #define _KEYDBI_H_
+ 
+-#include "nspr.h"
++#include <nspr.h>
+ #include "seccomon.h"
+-#include "mcom_db.h"
++#include <db.h>
+ 
+ /*
+--- lib/softoken/config.mk	Mon May 24 20:13:11 2004
++++ lib/softoken/config.mk	Fri Jul 22 00:55:20 2005
+@@ -47,5 +47,4 @@
+ 	$(CRYPTOLIB) \
+ 	$(DIST)/lib/$(LIB_PREFIX)secutil.$(LIB_SUFFIX) \
+-	$(DIST)/lib/$(LIB_PREFIX)dbm.$(LIB_SUFFIX) \
+ 	$(NULL)
+ 
+--- lib/certdb/certdb.c	Sat Mar  5 03:03:03 2005
++++ lib/certdb/certdb.c	Fri Jul 22 01:02:11 2005
+@@ -53,5 +53,4 @@
+ #include "keyhi.h"
+ #include "secitem.h"
+-#include "mcom_db.h"
+ #include "certdb.h"
+ #include "prprf.h"
+--- lib/certdb/genname.c	Sun Apr 25 11:03:03 2004
++++ lib/certdb/genname.c	Fri Jul 22 01:02:59 2005
+@@ -39,5 +39,4 @@
+ #include "secitem.h"
+ #include "secoidt.h"
+-#include "mcom_db.h"
+ #include "secasn1.h"
+ #include "secder.h"
+--- lib/certdb/stanpcertdb.c	Thu Dec  2 16:34:15 2004
++++ lib/certdb/stanpcertdb.c	Fri Jul 22 01:03:19 2005
+@@ -38,5 +38,4 @@
+ 
+ #include "cert.h"
+-#include "mcom_db.h"
+ #include "certdb.h"
+ #include "secitem.h"
+--- lib/certdb/xauthkid.c	Sun Apr 25 11:03:03 2004
++++ lib/certdb/xauthkid.c	Fri Jul 22 01:03:54 2005
+@@ -40,6 +40,5 @@
+  */
+ 
+-#include "prtypes.h"
+-#include "mcom_db.h"
++#include <prtypes.h>
+ #include "seccomon.h"
+ #include "secdert.h"
+--- lib/certdb/xbsconst.c	Sun Apr 25 11:03:03 2004
++++ lib/certdb/xbsconst.c	Fri Jul 22 01:05:41 2005
+@@ -39,6 +39,6 @@
+  */
+ 
+-#include "prtypes.h"
+-#include "mcom_db.h"
++#include <limits.h>	/* LONG_MAX */
++#include <prtypes.h>
+ #include "seccomon.h"
+ #include "secdert.h"
+@@ -48,5 +48,5 @@
+ #include "certt.h"
+ #include "secder.h"
+-#include "prprf.h"
++#include <prprf.h>
+ #include "secerr.h"
+ 
+--- lib/certdb/xconst.c	Tue Nov  9 01:13:32 2004
++++ lib/certdb/xconst.c	Fri Jul 22 01:06:20 2005
+@@ -39,6 +39,5 @@
+  */
+ 
+-#include "prtypes.h"
+-#include "mcom_db.h"
++#include <prtypes.h>
+ #include "seccomon.h"
+ #include "secdert.h"
+@@ -48,5 +47,5 @@
+ #include "cert.h"
+ #include "secder.h"
+-#include "prprf.h"
++#include <prprf.h>
+ #include "xconst.h"
+ #include "genname.h"
+--- lib/ckfw/dbm/ckdbm.h	Wed Jan 19 21:25:47 2005
++++ lib/ckfw/dbm/ckdbm.h	Fri Jul 22 01:06:58 2005
+@@ -57,5 +57,5 @@
+ #endif /* CKT_H */
+ 
+-#include "mcom_db.h"
++#include <db.h>
+ 
+ NSS_EXTERN_DATA NSSCKMDInstance nss_dbm_mdInstance;
+--- lib/fortcrypt/swfort/swfortti.h	Sun Apr 25 11:03:07 2004
++++ lib/fortcrypt/swfort/swfortti.h	Fri Jul 22 01:07:34 2005
+@@ -45,5 +45,5 @@
+ #include "maci.h"
+ #include "seccomon.h"
+-#include "mcom_db.h"  /* really should be included by certt.h */
++#include <db.h>  /* really should be included by certt.h */
+ #include "certt.h"
+ /*#include "keyt.h"*/
+--- lib/freebl/mac_rand.c	Sun Apr 25 11:03:08 2004
++++ lib/freebl/mac_rand.c	Fri Jul 22 01:08:19 2005
+@@ -40,5 +40,4 @@
+ #endif
+ #include "secrng.h"
+-#include "mcom_db.h"
+ #ifdef XP_MAC
+ #include <Events.h>
+--- lib/pk11wrap/secmodi.h	Mon Mar 28 15:45:37 2005
++++ lib/pk11wrap/secmodi.h	Fri Jul 22 01:08:47 2005
+@@ -42,5 +42,5 @@
+ #include "pkcs11.h"
+ #include "nssilock.h"
+-#include "mcom_db.h"
++#include <db.h>
+ #include "secoidt.h"
+ #include "secdert.h"
+--- lib/fortcrypt/swfort/swflib.c	Sun Apr 25 11:03:07 2004
++++ lib/fortcrypt/swfort/swflib.c	Fri Jul 22 01:11:20 2005
+@@ -43,6 +43,7 @@
+  */
+ 
+-#include "prtypes.h"
+-#include "prio.h"
++#include <fcntl.h>
++#include <prtypes.h>
++#include <prio.h>
+ 
+ #include "swforti.h"
+--- lib/fortcrypt/swfort/swfutl.c	Sun Apr 25 11:03:07 2004
++++ lib/fortcrypt/swfort/swfutl.c	Fri Jul 22 01:14:05 2005
+@@ -38,7 +38,7 @@
+  */
+ 
+-#include "prtypes.h"
+-#include "prsystem.h"
+-#include "prio.h"
++#include <prtypes.h>
++#include <prsystem.h>
++#include <prio.h>
+ 
+ #include "swforti.h"
+@@ -48,7 +48,6 @@
+ #include "secport.h"
+ #include "secrng.h"
+-#ifdef XP_OS2
++#include <sys/types.h>
+ #include <sys/stat.h>
+-#endif
+ 
+ #ifdef XP_WIN

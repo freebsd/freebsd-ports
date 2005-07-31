@@ -1,0 +1,352 @@
+--- lib/freebl/unix_rand.c      Wed Dec  8 18:00:19 2004
++++ lib/freebl/unix_rand.c      Mon Jul 25 00:26:00 2005
+@@ -783,7 +783,7 @@
+     char *randfile;
+ #ifdef DARWIN
+-    char **environ = *_NSGetEnviron();
++    const char * const *environ = *_NSGetEnviron();
+ #else
+-    extern char **environ;
++    extern const char * const *environ;
+ #endif
+ #ifdef BEOS
+--- lib/pk11wrap/pk11obj.c	Sun Feb 27 10:25:46 2005
++++ lib/pk11wrap/pk11obj.c	Wed Jul 27 22:03:16 2005
+@@ -1075,6 +1075,6 @@
+  *    for (thisObj=firstObj; thisObj; 
+  *				thisObj=PK11_GetNextGenericObject(thisObj)) {
+- *	/* operate on thisObj */
+-/*    }
++ *	 operate on thisObj
++ *    }
+  *
+  * If you want a particular object from the list...
+@@ -1084,6 +1084,6 @@
+  * 	if (isMyObj(thisObj)) {
+  *	    if ( thisObj == firstObj) {
+- *              /* NOTE: firstObj could be NULL at this point */
+-/*		firstObj = PK11_GetNextGenericObject(thsObj); 
++ *              // NOTE: firstObj could be NULL at this point
++ *		firstObj = PK11_GetNextGenericObject(thsObj); 
+  *	    }
+  *	    PK11_UnlinkGenericObject(thisObj);
+@@ -1094,6 +1094,6 @@
+  *   PK11_DestroyGenericObjects(firstObj);
+  *
+- *    /* use myObj */
+-/*   PK11_DestroyGenericObject(myObj);
++ *    use myObj
++ *   PK11_DestroyGenericObject(myObj);
+  */
+ PK11GenericObject *
+@@ -1130,5 +1130,5 @@
+ 
+ 	/* link it in */
+-	if (firstObj == NULL) {
++	if (i == 0) {
+ 	    firstObj = obj;
+ 	} else {
+@@ -1248,5 +1248,5 @@
+ 				CK_ATTRIBUTE_TYPE attrType, SECItem *item)
+ {
+-    PK11SlotInfo *slot = NULL;
++    PK11SlotInfo *slot;
+     CK_OBJECT_HANDLE handle;
+ 
+@@ -1270,7 +1270,4 @@
+     case PK11_TypeCert: /* don't handle cert case for now */
+     default:
+-	break;
+-    }
+-    if (slot == NULL) {
+ 	PORT_SetError(SEC_ERROR_UNKNOWN_OBJECT_TYPE);
+ 	return SECFailure;
+--- lib/pk11wrap/pk11util.c	Sat Apr  2 01:02:53 2005
++++ lib/pk11wrap/pk11util.c	Wed Jul 27 22:07:54 2005
+@@ -862,5 +862,5 @@
+     int i, oldCount;
+     PRBool freeRef = PR_FALSE;
+-    void *mark;
++    void *mark = NULL;
+     CK_ULONG *slotIDs = NULL;
+     PK11SlotInfo **newSlots = NULL;
+--- cmd/certcgi/certcgi.c	Sat Apr  2 00:24:07 2005
++++ cmd/certcgi/certcgi.c	Wed Jul 27 22:01:50 2005
+@@ -112,5 +112,5 @@
+ 
+ static char *
+-make_copy_string(char  *read_pos, 
++make_copy_string(const char  *read_pos, 
+ 		 int   length, 
+ 		 char  sentinal_value)
+@@ -122,5 +122,5 @@
+     char               *new;
+ 
+-    new = write_pos = (char *) PORT_Alloc (length);
++    new = write_pos = PORT_Alloc (length);
+     if (new == NULL) {
+ 	error_allocate();
+@@ -145,5 +145,4 @@
+ }
+ 
+-
+ static SECStatus
+ clean_input(Pair *data)
+@@ -217,5 +216,5 @@
+ 
+ static char *
+-make_name(char  *new_data)
++make_name(const char  *new_data)
+     /* gets the next field name in the input string and returns
+        a pointer to a string containing a copy of it */
+@@ -229,11 +228,10 @@
+ 	
+ static char *
+-make_data(char  *new_data)
++make_data(const char  *new_data)
+     /* gets the data for the next field in the input string 
+        and returns a pointer to a string containing it */
+ {
+     int         length = 100;
+-    char        *data;
+-    char        *read_pos;
++    const char  *read_pos;
+ 
+     read_pos = new_data;
+@@ -241,11 +239,10 @@
+ 	++read_pos;
+     }
+-    data = make_copy_string(read_pos, length, '&');
+-    return data;
++    return make_copy_string(read_pos, length, '&');
+ }
+ 
+ 
+ static Pair
+-make_pair(char  *new_data)
++make_pair(const char  *new_data)
+     /* makes a pair name/data pair from the input string */
+ {
+@@ -298,77 +295,46 @@
+ }
+ 
+-static char *
+-return_name(Pair  *data_struct,
++#ifdef FILEOUT /* The two functions below are only used for FILEOUT */
++static const char *
++return_name(const Pair  *data_struct,
+ 	    int   n)
+     /* returns a pointer to the name of the nth 
+        (starting from 0) item in the data structure */
+ {
+-    char          *name;
+ 
+-    if ((data_struct + n)->name != NULL) {
+-	name = (data_struct + n)->name;
+-	return name;
+-    } else {
+-	return NULL;
+-    }
++    return data_struct[n].name;
+ }
+ 
+-static char *
+-return_data(Pair  *data_struct,int n)
++static const char *
++return_data(const Pair  *data_struct, int n)
+     /* returns a pointer to the data of the nth (starting from 0) 
+        itme in the data structure */
+ {
+-    char          *data;
+ 
+-    data = (data_struct + n)->data;
+-    return data;
++    return data_struct[n].data;
+ }
+-
+-
+-static char *
+-add_prefix(char  *field_name)
+-{
+-    extern char  prefix[PREFIX_LEN];
+-    int          i = 0;
+-    char         *rv;
+-    char         *write;
+-
+-    rv = write = PORT_Alloc(PORT_Strlen(prefix) + PORT_Strlen(field_name) + 1);
+-    for(i = 0; i < PORT_Strlen(prefix); i++) {
+-	*write = prefix[i];
+-	write++;
+-    }
+-    *write = '\0';
+-    rv = PORT_Strcat(rv,field_name);
+-    return rv;
+-}
+-
++#endif
+ 
+ static char *
+ find_field(Pair    *data, 
+-	   char    *field_name, 
++	   const char    *field_name,
+ 	   PRBool  add_pre)
+     /* returns a pointer to the data of the first pair 
+        thats name matches the string it is passed */
+ {
+-    int            i = 0;
+-    char           *retrieved;
+-    int            found = 0;
+-
+-    if (add_pre) {
+-	field_name = add_prefix(field_name);
+-    }
+-    while(return_name(data, i) != NULL) {
+-	if (PORT_Strcmp(return_name(data, i), field_name) == 0) {
+-	    retrieved = return_data(data, i);
+-	    found = 1;
+-	    break;
+-	}
+-	i++;
+-    }
+-    if (!found) {
+-	retrieved = NULL;
++    extern char    prefix[PREFIX_LEN];
++    size_t         plen;
++
++    plen = add_pre ? PORT_Strlen(prefix) : 0;
++ 
++    for (; data->name != NULL; data++) {
++	/* See if the name begins with the prefix, if any */
++	if (plen > 0 && PORT_Memcmp(data->name, prefix, plen) != 0)
++	    continue;
++	if (PORT_Strcmp(data->name + plen, field_name) == 0)
++	    return data->data;
+     }
+-    return retrieved;
++ 
++    return NULL;
+ }
+ 
+@@ -389,79 +355,4 @@
+ }
+ 
+-static char *
+-update_data_by_name(Pair  *data, 
+-		    char  *field_name,
+-                    char  *new_data)
+-    /* replaces the data in the data structure associated with 
+-       a name with new data, returns null if not found */
+-{
+-    int                   i = 0;
+-    int                   found = 0;
+-    int                   length = 100;
+-    char                  *new;
+-
+-    while (return_name(data, i) != NULL) {
+-	if (PORT_Strcmp(return_name(data, i), field_name) == 0) {
+-	    new = make_copy_string( new_data, length, '\0');
+-	    PORT_Free(return_data(data, i));
+-	    found = 1;
+-	    (*(data + i)).data = new;
+-	    break;
+-	}
+-	i++;
+-    }
+-    if (!found) {
+-	new = NULL;
+-    }
+-    return new;
+-}
+-
+-static char *
+-update_data_by_index(Pair  *data, 
+-		     int   n, 
+-		     char  *new_data)
+-    /* replaces the data of a particular index in the data structure */
+-{
+-    int                    length = 100;
+-    char                   *new;
+-
+-    new = make_copy_string(new_data, length, '\0');
+-    PORT_Free(return_data(data, n));
+-    (*(data + n)).data = new;
+-    return new;
+-}
+-
+-
+-static Pair *
+-add_field(Pair   *data, 
+-	  char*  field_name, 
+-	  char*  field_data)
+-    /* adds a new name/data pair to the data structure */
+-{
+-    int          i = 0;
+-    int          j;
+-    int          name_length = 100;
+-    int          data_length = 100;
+-
+-    while(return_name(data, i) != NULL) {
+-	i++;
+-    }
+-    j = START_FIELDS;
+-    while ( j < (i + 1) ) {
+-	j = j * 2;
+-    }
+-    if (j == (i + 1)) {
+-	data = (Pair *) PORT_Realloc(data, (j * 2) * sizeof(Pair));
+-	if (data == NULL) {
+-	    error_allocate();
+-	}
+-    }
+-    (*(data + i)).name = make_copy_string(field_name, name_length, '\0');
+-    (*(data + i)).data = make_copy_string(field_data, data_length, '\0');
+-    (data + i + 1)->name = NULL;
+-    return data;
+-}
+-
+-
+ static CERTCertificateRequest *
+ makeCertReq(Pair             *form_data,
+@@ -620,10 +511,10 @@
+ 	serialFile = fopen(filename, "r");
+ 	if (serialFile != NULL) {
+-	    fread(&serial, sizeof(int), 1, serialFile);
++	    fread(&serial, sizeof(serial), 1, serialFile);
+ 	    if (ferror(serialFile) != 0) {
+ 		error_out("Error: Unable to read serial number file");
+ 	    }
+-	    if (serial == 4294967295) {
+-		serial = 21;
++	    if (serial == 4294967295U) {
++		serial = 21U;
+ 	    }
+ 	    fclose(serialFile);
+@@ -633,5 +524,5 @@
+ 	        error_out("ERROR: Unable to open serial number file for writing");
+ 	    }
+-	    fwrite(&serial, sizeof(int), 1, serialFile);
++	    fwrite(&serial, sizeof(serial), 1, serialFile);
+ 	    if (ferror(serialFile) != 0) {
+ 		error_out("Error: Unable to write to serial number file");
+@@ -643,6 +534,6 @@
+ 		error_out("ERROR: Unable to open serial number file");
+ 	    }
+-	    serial = 21;
+-	    fwrite(&serial, sizeof(int), 1, serialFile);
++	    serial = 21U;
++	    fwrite(&serial, sizeof(serial), 1, serialFile);
+ 	    if (ferror(serialFile) != 0) {
+ 		error_out("Error: Unable to write to serial number file");
+@@ -672,6 +563,4 @@
+     return serial;
+ }
+-	
+-
+ 
+ typedef SECStatus (* EXTEN_VALUE_ENCODER)
+@@ -1396,5 +1285,4 @@
+     int      j = 0;
+     SECItem  *ipaddress;
+-    
+ 
+     while (*string == ' ') {
