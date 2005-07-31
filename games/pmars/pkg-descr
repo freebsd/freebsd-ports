@@ -1,9 +1,12 @@
-pMARS (portable Memory Array Redcode Simulator) is a corewar 
-interpreter with multi-platform support.
-pMARS implements the  ICWS'94 draft  standard, but can also be
-used in ICWS'88 mode.
-The base system includes a graphical core display for UNIX (curses, 
-X11 and Linux svgalib), PC/DOS, and the Mac.
+pMARS (portable Memory Array Redcode Simulator) is a corewar interpreter with
+multi-platform support.
+
+pMARS implements the ICWS'94 draft standard, but can also be used in ICWS'88
+mode.
+
+The base system includes a graphical core display for UNIX (curses, X11 and
+Linux svgalib), PC/DOS, and the Mac.
+
 A line-oriented debugger is included to help in writing warriors.
 
 Contributors:
@@ -11,8 +14,6 @@ Contributors:
  * Na'ndor Sieben          (sieben@imap1.asu.edu)
  * Stefan Strack           (stst@vuse.vanderbilt.edu)
  * Mintardjo Wangsawidjaja (wangsawm@kira.csos.orst.edu)
-
-distfile: pmars08s.tar.Z (about 220kb)
 
 WWW: http://www.koth.org/pmars/
 

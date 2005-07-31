@@ -1,9 +1,0 @@
-bin/pmars
-share/games/corewars/aeka.red
-share/games/corewars/pspace.red
-share/games/corewars/validate.red
-share/games/corewars/rave.red
-share/games/corewars/flashpaper.red
-share/games/corewars/README
-@dirrm share/games/corewars
-@unexec /bin/rmdir %D/share/games >/dev/null 2>&1 || true
