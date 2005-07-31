@@ -35,6 +35,10 @@ CONFLICTS=	btoa-5.* digest-[0-9]* emboss-2.* oases-2.* p5-PAR-0.* \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500035
+IGNORE=	core dumps on alpha during build
+.endif
+
 EXTERNALS=	CVS dbm security/nss/cmd/zlib
 EXTRACT_AFTER_ARGS=| ${TAR} -xf -	\
 	${EXTERNALS:C,^,--exclude ${DISTNAME}/mozilla/,}
