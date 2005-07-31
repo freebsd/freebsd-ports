@@ -1,2 +1,4 @@
 MD5 (courier-imap-4.0.4.tar.bz2) = cb5a1d394e622fe2c5ea7bcab68c6286
 SIZE (courier-imap-4.0.4.tar.bz2) = 3156707
+MD5 (courier-imap-4.0.2-drac.patch) = 9e1170e8df91fcfc6350f3e80b99d474
+SIZE(courier-imap-4.0.2-drac.patch) = 8407

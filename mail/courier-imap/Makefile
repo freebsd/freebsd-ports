@@ -20,6 +20,8 @@ BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 
 .if defined(WITH_DRAC)
+# move me below .include <bsd.port.pre.mk> when re-enabling
+BROKEN=		"right now, there is no 4.0.4 compatible drac patch available"
 PATCH_SITES=	http://www.smalltown.ne.jp/~usata/pub/patch/
 PATCHFILES=	courier-imap-4.0.2-drac.patch
 PATCH_DIST_STRIP=	-p1
@@ -45,11 +47,9 @@ CONFIGURE_ENV=	CFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 
 OPTIONS=	OPENSSL		"Build with OpenSSL support"			on \
 		FAM		"Build in fam support for IDLE command"		off \
-		DRAC		"Build in DRAC support"				off \
 		TRASHQUOTA	"Include deleted mails in the quota"		off \
 		GDBM		"Use gdbm db instead of system bdb"		off \
 		IPV6		"Build with IPv6 support"			on
-
 
 .if exists(${.CURDIR}/../../security/courier-authlib/Makefile.opt)
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.opt"
@@ -92,7 +92,7 @@ PLIST_SUB+=	OPENSSLFLAG="@comment "
 CONFIGURE_ARGS+=--with-syslog=${WITH_SYSLOG_FACILITY}
 .endif
 
-.if defined(WITH_AUTH_USERDB) 
+.if defined(WITH_AUTH_USERDB)
 .if defined(WITH_GDBM)
 CONFIGURE_ARGS+=--with-db=gdbm --with-userdb=${USERDB}
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
