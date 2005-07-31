@@ -6,23 +6,19 @@
 #
 
 PORTNAME=	Terminal
-PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTVERSION=	0.2.4
 CATEGORIES=	x11
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 
 MAINTAINER=	matt@bsdfly.org
 COMMENT=	Terminal emulator for the X windowing system
 
-LIB_DEPENDS=	exo-0.2:${PORTSDIR}/x11/libexo \
+LIB_DEPENDS=	exo-0.3:${PORTSDIR}/x11/libexo \
 		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui
 
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
 GNU_CONFIGURE=	yes
-USE_GNOME=	glib20 vte
+USE_GMAKE=	yes
+USE_GNOME=	glib20 vte intlhack
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 
@@ -30,12 +26,7 @@ MAN1=		Terminal.1
 
 post-patch:
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|	doc[	]*||' ${WRKSRC}/Makefile.in
-.else
-	@${REINPLACE_CMD} -e 's|$$(datadir)/doc/Terminal|${DOCSDIR}|g' \
-		${WRKSRC}/doc/C/images/Makefile.in \
-		${WRKSRC}/doc/C/Makefile.in \
-		${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -e 's|	doc[    ]*||' ${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.mk>
