@@ -1,5 +1,23 @@
 bin/getafm
 bin/t1asm
+bin/ttf2bdf
 bin/ttf2pfb
 bin/ttf2pk
 bin/ttf2tfm
+bin/ttfbanner
+share/texmf/ttf2pk/Big5.sfd
+share/texmf/ttf2pk/ET5.enc
+share/texmf/ttf2pk/EUC.sfd
+share/texmf/ttf2pk/SJIS.sfd
+share/texmf/ttf2pk/T1-WGL4.enc
+share/texmf/ttf2pk/UBg5plus.sfd
+share/texmf/ttf2pk/UBig5.sfd
+share/texmf/ttf2pk/UGB.sfd
+share/texmf/ttf2pk/UGBK.sfd
+share/texmf/ttf2pk/UJIS.sfd
+share/texmf/ttf2pk/UKS.sfd
+share/texmf/ttf2pk/Unicode.sfd
+share/texmf/ttf2pk/VPS.rpl
+share/texmf/ttf2pk/ttfonts.map
+share/texmf/ttf2tfm
+@dirrm share/texmf/ttf2pk
