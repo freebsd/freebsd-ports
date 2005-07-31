@@ -2624,7 +2624,6 @@ gcc-ooo		ports/lang/gcc-ooo
 gcc28		ports/lang/gcc28
 gcc295		ports/lang/gcc295
 gcc30		ports/lang/gcc30
-gcc31		ports/lang/gcc31
 gcc32		ports/lang/gcc32
 gcc33		ports/lang/gcc33
 gcc34		ports/lang/gcc34

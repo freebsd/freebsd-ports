@@ -70,7 +70,6 @@
     SUBDIR += gcc28
     SUBDIR += gcc295
     SUBDIR += gcc30
-    SUBDIR += gcc31
     SUBDIR += gcc32
     SUBDIR += gcc33
     SUBDIR += gcc34
