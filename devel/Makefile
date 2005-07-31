@@ -1202,6 +1202,7 @@
     SUBDIR += pear-HTML_Template_Flexy
     SUBDIR += pear-HTML_Template_IT
     SUBDIR += pear-HTML_Template_PHPLIB
+    SUBDIR += pear-HTML_Template_Sigma
     SUBDIR += pear-HTML_TreeMenu
     SUBDIR += pear-I18N
     SUBDIR += pear-OLE
