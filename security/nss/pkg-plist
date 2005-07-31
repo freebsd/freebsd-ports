@@ -1,4 +1,5 @@
 bin/atob
+bin/addbuiltin
 bin/bltest
 bin/btoa
 bin/certcgi
@@ -36,11 +37,6 @@ bin/symkeyutil
 bin/tstclnt
 bin/vfychain
 bin/vfyserv
-include/nss/dbm/cdefs.h
-include/nss/dbm/mcom_db.h
-include/nss/dbm/ncompat.h
-include/nss/dbm/nsres.h
-include/nss/dbm/winfile.h
 include/nss/nss/base64.h
 include/nss/nss/blapit.h
 include/nss/nss/cert.h
@@ -92,6 +88,8 @@ include/nss/nss/p12plcy.h
 include/nss/nss/p12t.h
 include/nss/nss/pk11func.h
 include/nss/nss/pk11pqg.h
+include/nss/nss/pk11priv.h
+include/nss/nss/pk11pub.h
 include/nss/nss/pk11sdr.h
 include/nss/nss/pkcs11.h
 include/nss/nss/pkcs11f.h
@@ -131,9 +129,6 @@ include/nss/nss/sslt.h
 include/nss/nss/swfort.h
 include/nss/nss/swfortt.h
 include/nss/nss/watcomfx.h
-include/nss/seccmd/secutil.h
-include/nss/seccmd/zconf.h
-include/nss/seccmd/zlib.h
 lib/libfort.so
 lib/libfort.so.1
 lib/libnss3.so
@@ -148,7 +143,5 @@ lib/libssl3.so
 lib/libssl3.so.1
 lib/libswft.so
 lib/libswft.so.1
-@dirrm include/nss/seccmd
 @dirrm include/nss/nss
-@dirrm include/nss/dbm
 @dirrm include/nss
