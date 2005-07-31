@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libexo
-PORTVERSION=	0.2.0
-PORTREVISION=	2
+PORTVERSION=	0.3.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 DISTNAME=	exo-${PORTVERSION}
@@ -15,8 +14,7 @@ DISTNAME=	exo-${PORTVERSION}
 MAINTAINER=	matt@bsdfly.org
 COMMENT=	Terminal library, extensions to Xfce by os-cillation
 
-LIB_DEPENDS=	xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui \
-		dbus-1.1:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
@@ -32,6 +30,16 @@ BUILD_DEPENDS+=	gtkdocize:${PORTSDIR}/textproc/gtk-doc
 CONFIGURE_ARGS+=--enable-gtk-doc
 .else
 CONFIGURE_ARGS+=--disable-gtk-doc
+.endif
+
+.if defined(WITH_PYTHON)
+CONFIGURE_ARGS+=--enable-python
+USE_PYTHON=	yes
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk
+PLIST_SUB+=	PYTHON=""
+.else
+CONFIGURE_ARGS+=--disable-python
+PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 post-patch:
