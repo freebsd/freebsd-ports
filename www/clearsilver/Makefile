@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	clearsilver
-PORTVERSION=	0.9.13
-PORTREVISION=	1
+PORTVERSION=	0.9.14
 CATEGORIES=	www
-MASTER_SITES=	http://www.clearsilver.net/downloads/
+MASTER_SITES=	http://www.clearsilver.net/downloads/ \
+		http://depot.fsck.ch/mirror/distfiles/
 
-MAINTAINER=	thinker@branda.to
+MAINTAINER=	ports@fsck.ch
 COMMENT=	A fast, powerful, and language-neutral template system
 
 GNU_CONFIGURE=	yes
@@ -64,19 +64,13 @@ MAN3=	cBroadcast.3 cCreate.3 cDestroy.3 cSignal.3 cWait.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
-
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64 (missing -fPIC from shared libraries)"
-.endif
-
 post-patch:
 	@# Remove CFLAGS when building the python module, pydistfile is used
 	@# and will do the right thing.
 	@${REINPLACE_CMD} -E 's,(\$$\(PYTHON\)),CFLAGS="" \1,g' ${WRKSRC}/python/Makefile
-	@# Avoid rebuiling man pages
+	@# insert -fPIC into CFLAGS to fix non-i386 builds
+	@${REINPLACE_CMD} -e 's|= @CFLAGS@|= @CFLAGS@ -fPIC|g' ${WRKSRC}/rules.mk.in
+	@# Avoid rebuilding man pages
 	@${REINPLACE_CMD} -e 's,all man,all,g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|`$$python_bin -c "import site; print site.sitedirs\[0\]"`|"${PYTHON_SITELIBDIR}"|' ${WRKSRC}/configure
 
