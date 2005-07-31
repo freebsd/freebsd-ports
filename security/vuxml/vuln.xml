@@ -32,6 +32,42 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="81f127a8-0038-11da-86bc-000e0c2e438a">
+    <topic>vim -- vulnerabilities in modeline handling: glob, expand</topic>
+    <affects>
+      <package>
+	<name>vim</name>
+	<name>vim-lite</name>
+	<name>vim+ruby</name>
+	<range><ge>6.3</ge><lt>6.3.82</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Georgi Guninski discovered a way to construct Vim modelines
+	  that execute arbitrary shell commands.  The vulnerability
+	  can be exploited by including shell commands in modelines
+	  that call the glob() or expand() functions.  An attacker
+	  could trick an user to read or edit a trojaned file with
+	  modelines enabled, after which the attacker is able to
+	  execute arbitrary commands with the privileges of the user.</p>
+	<p><strong>Note:</strong> It is generally recommended that VIM
+	  users use <code>set nomodeline</code> in
+	  <code>~/.vimrc</code> to avoid the possibility of trojaned
+	  text files.</p>
+      </body>
+    </description>
+    <references>
+      <bid>14374</bid>
+      <cvename>CAN-2005-2368</cvename>
+      <url>http://www.guninski.com/where_do_you_want_billg_to_go_today_5.html</url>
+    </references>
+    <dates>
+      <discovery>2005-07-25</discovery>
+      <entry>2005-07-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="68222076-010b-11da-bc08-0001020eed82">
     <topic>tiff -- buffer overflow vulnerability</topic>
     <affects>
