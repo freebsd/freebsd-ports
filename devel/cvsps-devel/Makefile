@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cvsps
-DISTVERSION=	2.0rc1
+DISTVERSION=	2.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cobite.com/cvsps/
 PKGNAMESUFFIX?=	-devel
