@@ -6,41 +6,14 @@
 #
 
 PORTNAME=	vile
-PORTVERSION=	9.4z
+PORTVERSION=	9.5
 CATEGORIES=	editors
-MASTER_SITES=   ftp://dickey.his.com/vile/ \
+MASTER_SITES=	ftp://dickey.his.com/vile/ \
+		ftp://invisible-island.net/vile/ \
 		ftp://ftp.phred.org/pub/vile/
-		
-DISTNAME=	vile-9.4
 EXTRACT_SUFX=	.tgz
 
 PATCH_SITES=    ${MASTER_SITES:S,vile/,vile/patches/,g}
-PATCHFILES=	vile-9.4a.patch.gz \
-		vile-9.4b.patch.gz \
-		vile-9.4c.patch.gz \
-		vile-9.4d.patch.gz \
-		vile-9.4e.patch.gz \
-		vile-9.4f.patch.gz \
-		vile-9.4g.patch.gz \
-		vile-9.4h.patch.gz \
-		vile-9.4i.patch.gz \
-		vile-9.4j.patch.gz \
-		vile-9.4k.patch.gz \
-		vile-9.4l.patch.gz \
-		vile-9.4m.patch.gz \
-		vile-9.4n.patch.gz \
-		vile-9.4o.patch.gz \
-		vile-9.4p.patch.gz \
-		vile-9.4q.patch.gz \
-		vile-9.4r.patch.gz \
-		vile-9.4s.patch.gz \
-		vile-9.4t.patch.gz \
-		vile-9.4u.patch.gz \
-		vile-9.4v.patch.gz \
-		vile-9.4w.patch.gz \
-		vile-9.4x.patch.gz \
-		vile-9.4y.patch.gz \
-		vile-9.4z.patch.gz
 
 MAINTAINER=	gj@FreeBSD.org
 COMMENT=	VI Like Emacs.  a vi "workalike", with many additional features
@@ -56,12 +29,12 @@ WITH_PERL=1
 .endif
 
 .if defined(WITH_PERL)
-CONFIGURE_ARGS=	--with-perl
+CONFIGURE_ARGS+= --with-perl
 PLIST=		${PKGDIR}/pkg-plist.perl
 .endif
 
 .if defined(WITH_FILTERS)
-CONFIGURE_ARGS+= --with-builtin-filters=all
+CONFIGURE_ARGS+= --with-loadable-filters
 PLIST=		${PKGDIR}/pkg-plist.filt
 .endif
 
@@ -75,8 +48,8 @@ pre-configure:
 	@${ECHO_MSG} "PERL functionality"
 .endif
 .if ! defined(WITH_FILTERS)
-	@${ECHO_MSG} "Define WITH_FILTERS if you want to make a vile which includes"
-	@${ECHO_MSG} "all filters in the binary"
+	@${ECHO_MSG} "Define WITH_FILTERS if you want to make a vile which will"
+	@${ECHO_MSG} "dynamically load filters as needed."
 .endif
 
 post-install:
