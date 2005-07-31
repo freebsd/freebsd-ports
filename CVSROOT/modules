@@ -830,6 +830,7 @@ boxes		ports/misc/boxes
 boxtools	ports/x11-wm/boxtools
 bozohttpd	ports/www/bozohttpd
 bpatch		ports/editors/bpatch
+bpfstat		ports/net/bpfstat
 bpft		ports/net-mgmt/bpft
 bpl+		ports/comms/bpl+
 bpm		ports/sysutils/bpm
