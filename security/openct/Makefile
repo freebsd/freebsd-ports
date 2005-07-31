@@ -19,6 +19,7 @@ USE_GNOME=	pkgconfig
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX}
+CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
 MAN1=		openct-tool.1
 
