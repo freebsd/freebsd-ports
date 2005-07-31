@@ -173,9 +173,21 @@ bin/gourmet
 %%PYTHON_SITELIBDIR%%/gourmet/importers/html_importer.py
 %%PYTHON_SITELIBDIR%%/gourmet/importers/html_importer.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/importers/html_importer.pyo
-%%PYTHON_SITELIBDIR%%/gourmet/importers/html_rules.py
-%%PYTHON_SITELIBDIR%%/gourmet/importers/html_rules.pyc
-%%PYTHON_SITELIBDIR%%/gourmet/importers/html_rules.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/allrecipes.py
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/allrecipes.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/allrecipes.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/eating_well.py
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/eating_well.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/eating_well.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/epicurious.py
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/epicurious.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/epicurious.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/html_helpers.py
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/html_helpers.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/html_helpers.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/recipezaar.py
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/recipezaar.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/recipezaar.pyo
 %%PYTHON_SITELIBDIR%%/gourmet/importers/importer.py
 %%PYTHON_SITELIBDIR%%/gourmet/importers/importer.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/importers/importer.pyo
@@ -209,6 +221,9 @@ bin/gourmet
 %%PYTHON_SITELIBDIR%%/gourmet/keymanager.py
 %%PYTHON_SITELIBDIR%%/gourmet/keymanager.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/keymanager.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/mnemonic_manager.py
+%%PYTHON_SITELIBDIR%%/gourmet/mnemonic_manager.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/mnemonic_manager.pyo
 %%PYTHON_SITELIBDIR%%/gourmet/optionTable.py
 %%PYTHON_SITELIBDIR%%/gourmet/optionTable.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/optionTable.pyo
@@ -265,9 +280,30 @@ share/gourmet/recipe.dtd
 share/gourmet/shopList.glade
 share/gourmet/splash.png
 share/pixmaps/recbox.png
+share/locale/bg/LC_MESSAGES/gourmet.mo
+share/locale/ca/LC_MESSAGES/gourmet.mo
+share/locale/cs/LC_MESSAGES/gourmet.mo
+share/locale/da/LC_MESSAGES/gourmet.mo
 share/locale/de_AT/LC_MESSAGES/gourmet.mo
 share/locale/de_DE/LC_MESSAGES/gourmet.mo
+share/locale/el/LC_MESSAGES/gourmet.mo
+share/locale/es/LC_MESSAGES/gourmet.mo
+share/locale/es_ES/LC_MESSAGES/gourmet.mo
+share/locale/fr/LC_MESSAGES/gourmet.mo
+share/locale/gl/LC_MESSAGES/gourmet.mo
+share/locale/he/LC_MESSAGES/gourmet.mo
+share/locale/hu/LC_MESSAGES/gourmet.mo
+share/locale/it/LC_MESSAGES/gourmet.mo
+share/locale/nb/LC_MESSAGES/gourmet.mo
+share/locale/nl/LC_MESSAGES/gourmet.mo
 share/locale/nl_BE/LC_MESSAGES/gourmet.mo
+share/locale/nl_NL/LC_MESSAGES/gourmet.mo
+share/locale/pl/LC_MESSAGES/gourmet.mo
+share/locale/pt/LC_MESSAGES/gourmet.mo
+share/locale/pt_BR/LC_MESSAGES/gourmet.mo
+share/locale/pt_PT/LC_MESSAGES/gourmet.mo
+share/locale/sk/LC_MESSAGES/gourmet.mo
+share/locale/sv/LC_MESSAGES/gourmet.mo
 share/locale/sv_SE/LC_MESSAGES/gourmet.mo
 share/locale/tr/LC_MESSAGES/gourmet.mo
 @dirrm share/locale/de_AT/LC_MESSAGES
@@ -279,6 +315,7 @@ share/locale/tr/LC_MESSAGES/gourmet.mo
 @dirrm share/locale/sv_SE/LC_MESSAGES
 @dirrm share/locale/sv_SE
 @dirrm share/gourmet
+@dirrm %%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/importers
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/exporters
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/backends
