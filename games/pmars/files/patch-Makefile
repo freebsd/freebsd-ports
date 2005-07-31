@@ -1,0 +1,20 @@
+--- Makefile.orig	Sun Dec 24 09:53:39 2000
++++ Makefile	Wed Jul  6 20:33:52 2005
+@@ -1,5 +1,4 @@
+ # generic UNIX makefile
+-CC = gcc			# req. for linux
+ #CC = cc				# if you don't have gcc
+ # Configuration options:
+ #
+@@ -16,11 +15,8 @@
+ # (6)   -DXWINGRAPHX    1                   X-Windows graphics (UNIX)
+ # (7)   -DPERMUTATE                         enables -P switch
+ 
+-CFLAGS = -O -DEXT94 -DXWINGRAPHX -DPERMUTATE
+-LFLAGS = -x
+ # LIB = -lcurses -ltermlib		# enable this one for curses display
+ # LIB = -lvgagl -lvga			# enable this one for Linux/SVGA
+-LIB = -L/usr/X11R6/lib -lX11		# enable this one for X11
+ 
+ .SUFFIXES: .o .c .c~ .man .doc .6
+ MAINFILE = pmars
