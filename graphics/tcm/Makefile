@@ -7,10 +7,13 @@
 
 PORTNAME=	tcm
 PORTVERSION=	2.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cs.utwente.nl/pub/tcm/ \
 		ftp://ftp.cs.vu.nl/pub/tcm/
+PATCHFILES=	patch-tcm-64bit
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	lawrance
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org

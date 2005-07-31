@@ -1,2 +1,4 @@
 MD5 (tcm-2.20.src.tar.gz) = ed9b7135995ff57c3ff0fea57b8b55c6
 SIZE (tcm-2.20.src.tar.gz) = 5389728
+MD5 (patch-tcm-64bit) = 07a5ec88cce0dc07150ee237e850ff3f
+SIZE (patch-tcm-64bit) = 83104
