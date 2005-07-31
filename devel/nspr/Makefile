@@ -19,19 +19,14 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/mozilla/nsprpub/build
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_SCRIPT=	../configure
+CONFIGURE_SCRIPT=../configure
 CONFIGURE_ARGS=	--disable-debug \
 		--with-pthreads
 CONFIGURE_ENV=	BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
+
 MAKE_ENV=	DIST=${WRKSRC}/dist
 
 LIBS=		libnspr4.so.1 libplc4.so.1 libplds4.so.1
-
-pre-configure:
-	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]'`" ]; then \
-		${ECHO_CMD} "${PKGNAME}: bind installed with PORT_REPLACES_BASE_BIND causes build problems."; \
-		${FALSE}; \
-	fi
 
 do-install:
 	${MKDIR} ${PREFIX}/include/nspr
@@ -41,11 +36,13 @@ do-install:
 		${TAR} -C ${PREFIX}/lib -xf -
 	${INSTALL_SCRIPT} ${WRKSRC}/config/nspr-config ${PREFIX}/bin
 .for lib in ${LIBS}
-	${LN} -sf ${lib} ${PREFIX}/lib/${lib:S/.1$//}
+	${LN} -sf ${lib} ${PREFIX}/lib/${lib:R}
 .endfor
 
 prtests:
-	${GMAKE} -C ${WRKSRC}/pr/tests runtests
+	${GMAKE} -C ${WRKSRC}/pr/tests
+	${LN} -sf libmy.so.1 ${WRKSRC}/pr/tests/dll/libmy.so
+	cd ${WRKSRC}/pr/tests && ../../../pr/tests/runtests.sh
 
 libtests:
 	${GMAKE} -C ${WRKSRC}/lib/tests
@@ -57,14 +54,16 @@ libtests:
 	#	${WRKSRC}/lib/tests/arena
 	#
 
-#post-build test: libtests	# prtests
+test: libtests prtests
+
+.if defined(PARALLEL_PACKAGE_BUILD)
+post-build: test
+.else
+post-build:
 	#
-	#######################################################
-	# Several parts of the NSPR's comprehensive self-test
-	# suite appear broken. Please, consider typing
-	#	make prtests
-	# To run them anyway. Your help in investigating
-	# any of the failures would be most appreciated.
-	# Please, contact ${MAINTAINER} with any patches. Thank you.
+	# Please, consider running ``make test'' to find any
+	# possible build problems.
+	#
+.endif
 
 .include <bsd.port.mk>

@@ -33,3 +33,11 @@ Better to just keep calling it pthread_t isntead of casting to anything.
 +    return thred->id;  /* and I don't know what they will do with it */
  #endif
  }
+@@ -1116,5 +1116,7 @@
+     PRStatus rv = PR_SUCCESS;
+     PRThread* thred = pt_book.first;
++#if !defined(_PR_DCETHREADS) && (defined(DEBUG) || defined(FORCE_PR_ASSERT))
+     PRThread *me = PR_CurrentThread();
++#endif
+ 
+     PR_LOG(_pr_gc_lm, PR_LOG_ALWAYS, ("Begin PR_EnumerateThreads\n"));
