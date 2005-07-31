@@ -8884,6 +8884,7 @@ pear-HTML_Table	ports/devel/pear-HTML_Table
 pear-HTML_Template_Flexy	ports/devel/pear-HTML_Template_Flexy
 pear-HTML_Template_IT	ports/devel/pear-HTML_Template_IT
 pear-HTML_Template_PHPLIB	ports/devel/pear-HTML_Template_PHPLIB
+pear-HTML_Template_Sigma	ports/devel/pear-HTML_Template_Sigma
 pear-HTML_TreeMenu	ports/devel/pear-HTML_TreeMenu
 pear-HTTP	ports/www/pear-HTTP
 pear-HTTP_Client	ports/www/pear-HTTP_Client
