@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smbldap-tools
-PORTVERSION=	0.8.7
+PORTVERSION=	0.9.1
 CATEGORIES=	net
 MASTER_SITES=	http://samba.idealx.org/dist/
 EXTRACT_SUFX=	.tgz
@@ -16,11 +16,20 @@ COMMENT=	Useful package for managing users and groups in a LDAP directory
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
 		${SITE_PERL}/Crypt/SmbHash.pm:${PORTSDIR}/security/p5-Crypt-SmbHash \
+		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
 NO_BUILD=	yes
+
+DOC_HTML_LIST =	contents_motif.gif index.html next_motif.gif \
+		previous_motif.gif smbldap-tools.html smbldap-tools001.html \
+		smbldap-tools002.html smbldap-tools003.html \
+		smbldap-tools004.html smbldap-tools005.html \
+		smbldap-tools006.html smbldap-tools007.html \
+		smbldap-tools008.html smbldap-tools009.html \
+		smbldap-tools010.html
 
 post-patch:
 	@${PERL} -pi -e 's#/etc/samba#${PREFIX}/etc/samba#' ${WRKSRC}/configure.pl \
@@ -41,11 +50,20 @@ do-install:
 .for i in smbldap-groupadd smbldap-groupdel smbldap-groupmod smbldap-groupshow smbldap-useradd smbldap-userdel smbldap-usermod smbldap-usershow smbldap-passwd smbldap-populate
 	${INSTALL_SCRIPT} ${WRKSRC}/$i ${PREFIX}/sbin
 .endfor
-.for i in smbldap-migrate-accounts smbldap-migrate-groups smbldap-migrate-unix-accounts smbldap-migrate-unix-groups
+.for i in smbldap-migrate-pwdump-accounts smbldap-migrate-pwdump-groups smbldap-migrate-unix-accounts smbldap-migrate-unix-groups
 	${INSTALL_SCRIPT} ${WRKSRC}/doc/$i ${PREFIX}/sbin
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/smbldap_tools.pm ${SITE_PERL}/
 	${INSTALL_DATA} ${WRKSRC}/smb.conf ${EXAMPLESDIR}/
 	${INSTALL_SCRIPT} ${WRKSRC}/configure.pl ${EXAMPLESDIR}/
+
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/doc/smbldap-tools.pdf ${DOCSDIR}/smbldap-tools.pdf
+.for i in ${DOC_HTML_LIST}
+	${INSTALL_DATA} ${WRKSRC}/doc/html/$i ${DOCSDIR}/html/$i
+.endfor
+.endif
 
 .include <bsd.port.mk>
