@@ -19,10 +19,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Maypole::Authentication::UserSessionCookie.3
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${PERL} -pi -e 's/^our (\S+)/use vars qw($$1); $$1/' ${WRKSRC}/UserSessionCookie.pm
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not build on FreeBSD 4.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
