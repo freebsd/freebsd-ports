@@ -33,7 +33,7 @@ OPTIONS=	MCS51   "Intel mcs51 port" on \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-USE_GCC=	3.1+
+USE_GCC=	3.2+
 .endif
 
 .if defined(WITHOUT_MCS51)
