@@ -1,31 +1,33 @@
-lib/libexo-0.2.a
-lib/libexo-0.2.so
-lib/libexo-0.2.so.0
-libdata/pkgconfig/exo-0.2.pc
-include/exo-0.2/exo/exo-binding.h
-include/exo-0.2/exo/exo-cell-renderer-ellipsized-text.h
-include/exo-0.2/exo/exo-config.h
-include/exo-0.2/exo/exo-dbus.h
-include/exo-0.2/exo/exo-ellipsized-label.h
-include/exo-0.2/exo/exo-enum-types.h
-include/exo-0.2/exo/exo-file-watch.h
-include/exo-0.2/exo/exo-gdk-pixbuf-extensions.h
-include/exo-0.2/exo/exo-gobject-extensions.h
-include/exo-0.2/exo/exo-gtk-extensions.h
-include/exo-0.2/exo/exo-ice.h
-include/exo-0.2/exo/exo-icon-bar.h
-include/exo-0.2/exo/exo-icon-view.h
-include/exo-0.2/exo/exo-md5.h
-include/exo-0.2/exo/exo-pango-extensions.h
-include/exo-0.2/exo/exo-property-proxy.h
-include/exo-0.2/exo/exo-string.h
-include/exo-0.2/exo/exo-toolbars-editor-dialog.h
-include/exo-0.2/exo/exo-toolbars-editor.h
-include/exo-0.2/exo/exo-toolbars-model.h
-include/exo-0.2/exo/exo-toolbars-view.h
-include/exo-0.2/exo/exo-uri.h
-include/exo-0.2/exo/exo-xsession-client.h
-include/exo-0.2/exo/exo.h
+include/exo-0.3/exo/exo-binding.h
+include/exo-0.3/exo/exo-cell-renderer-ellipsized-text.h
+include/exo-0.3/exo/exo-config.h
+include/exo-0.3/exo/exo-ellipsized-label.h
+include/exo-0.3/exo/exo-enum-types.h
+include/exo-0.3/exo/exo-gdk-pixbuf-extensions.h
+include/exo-0.3/exo/exo-gobject-extensions.h
+include/exo-0.3/exo/exo-gtk-extensions.h
+include/exo-0.3/exo/exo-icon-bar.h
+include/exo-0.3/exo/exo-icon-view.h
+include/exo-0.3/exo/exo-md5.h
+include/exo-0.3/exo/exo-pango-extensions.h
+include/exo-0.3/exo/exo-string.h
+include/exo-0.3/exo/exo-toolbars-editor-dialog.h
+include/exo-0.3/exo/exo-toolbars-editor.h
+include/exo-0.3/exo/exo-toolbars-model.h
+include/exo-0.3/exo/exo-toolbars-view.h
+include/exo-0.3/exo/exo-xsession-client.h
+include/exo-0.3/exo/exo.h
+lib/libexo-0.3.a
+lib/libexo-0.3.so
+lib/libexo-0.3.so.0
+%%PYTHON%%lib/python2.4/site-packages/exo-0.3/_exo.so
+%%PYTHON%%lib/python2.4/site-packages/exo-0.3/exo/__init__.py
+%%PYTHON%%lib/python2.4/site-packages/exo-0.3/exo/__init__.pyc
+%%PYTHON%%lib/python2.4/site-packages/exo-0.3/exo/__init__.pyo
+%%PYTHON%%lib/python2.4/site-packages/pyexo.py
+%%PYTHON%%lib/python2.4/site-packages/pyexo.pyc
+%%PYTHON%%lib/python2.4/site-packages/pyexo.pyo
+libdata/pkgconfig/exo-0.3.pc
 share/gtk-doc/html/exo/ExoCellRendererEllipsizedText.html
 share/gtk-doc/html/exo/ExoEllipsizedLabel.html
 share/gtk-doc/html/exo/ExoIconBar.html
@@ -54,10 +56,20 @@ share/gtk-doc/html/exo/index.sgml
 share/gtk-doc/html/exo/ix01.html
 share/gtk-doc/html/exo/left.png
 share/gtk-doc/html/exo/right.png
+share/gtk-doc/html/exo/style.css
 share/gtk-doc/html/exo/up.png
-@dirrm include/exo-0.2/exo
-@dirrm include/exo-0.2
-@dirrm share/gtk-doc/html/exo
+%%PYTHON%%share/pygtk/2.0/defs/exo-0.3/exo.defs
+%%PYTHON%%@dirrm share/pygtk/2.0/defs/exo-0.3
 @unexec rmdir %D/share/gtk-doc/html 2>/dev/null || true
-@unexec rmdir %D/share/gtk-doc 2>/dev/null || true
-@unexec rmdir %D/lib/pkgconfig 2>/dev/null || true
+%%PYTHON%%@unexec rmdir %D/share/pygtk/2.0/defs 2> /dev/null || true
+%%PYTHON%%@unexec rmdir %D/share/pygtk/2.0 2> /dev/null || true
+%%PYTHON%%@unexec rmdir %D/share/pygtk 2> /dev/null || true
+@dirrm share/gtk-doc/html/exo
+@unexec rmdir %D/share/gtk-doc/html 2> /dev/null || true
+@unexec rmdir %D/share/gtk-doc 2> /dev/null || true
+%%PYTHON%%@dirrm lib/python2.4/site-packages/exo-0.3/exo
+%%PYTHON%%@dirrm lib/python2.4/site-packages/exo-0.3
+%%PYTHON%%@unexec rmdir %D/lib/python2.4/site-packages 2> /dev/null || true
+%%PYTHON%%@unexec rmdir %D/lib/python2.4 2> /dev/null || true
+@dirrm include/exo-0.3/exo
+@dirrm include/exo-0.3
