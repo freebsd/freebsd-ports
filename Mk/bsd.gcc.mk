@@ -12,8 +12,8 @@
 # the version.
 #
 # For example:
-#	USE_GCC=	3.3		# port requires gcc 3.3 to build with.
-#	USE_GCC=	3.1+	# port requires gcc 3.1 or later to build with.
+#	USE_GCC=	3.3		# port requires GCC 3.3 to build with.
+#	USE_GCC=	3.4+	# port requires GCC 3.4 or later to build with.
 #
 # If you are wondering what your port exactly does, use "make test-gcc"
 # to see some debugging.
@@ -27,7 +27,7 @@ GCC_Include_MAINTAINER=		portmgr@FreeBSD.org
 # All GCC versions supported by the ports framework.
 # Please keep them in ascending order.
 #
-GCCVERSIONS=	020702 020801 029500 030100 030200 030301 030402 040000 040100
+GCCVERSIONS=	020702 020801 029500 030200 030301 030402 040000 040100
 
 #
 # Versions of GCC shipped.
@@ -39,7 +39,6 @@ GCCVERSIONS=	020702 020801 029500 030100 030200 030301 030402 040000 040100
 GCCVERSION_020702=	000000 000000 2.7
 GCCVERSION_020801=	000000 400012 2.8
 GCCVERSION_029500=	400012 500035 2.95
-GCCVERSION_030100=	500035 500039 3.1
 GCCVERSION_030200=	500039 501103 3.2
 GCCVERSION_030301=	501103 502126 3.3
 GCCVERSION_030402=	502126 999999 3.4
@@ -99,7 +98,7 @@ BROKEN=		"Couldn't find your current GCCVERSION (OSVERSION=${OSVERSION})"
 
 #
 # If the GCC package defined in USE_GCC does not exist, but a later
-# version is allowed (for example 3.1+), see if there is a later.
+# version is allowed (for example 3.4+), see if there is a later.
 # First check if the base installed version is good enough, otherwise
 # get the first available version.
 #
