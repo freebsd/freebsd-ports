@@ -1,0 +1,10 @@
+--- contrib/ttfbanner/ttfbanner.c.orig	Sat Jul 30 14:07:56 2005
++++ contrib/ttfbanner/ttfbanner.c	Sat Jul 30 14:08:02 2005
+@@ -4,7 +4,6 @@
+ 
+ #include <stdlib.h>
+ #include <stdio.h>
+-#include <malloc.h>
+ #include <string.h>
+ #include "freetype.h"
+ #include "ttfbanner.h"

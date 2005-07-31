@@ -26,3 +26,15 @@
                                       $(LIBDIR)/libttf.la $(LDFLAGS)
  
  install: $(PROGRAMS)
+
+--- contrib/ttfbanner/Makefile.in.orig	Sat Jul 30 14:09:54 2005
++++ contrib/ttfbanner/Makefile.in	Sat Jul 30 14:10:03 2005
+@@ -35,7 +35,7 @@
+ default all: ttfbanner
+ 
+ ttfbanner: ttfbanner.o $(LIBDIR)/libttf.la
+-	$(LIBTOOL) --mode=link $(CC) $(FT_CFLAGS) -o $@ $< \
++	$(LIBTOOL) --tag=CXX --mode=link $(CC) $(FT_CFLAGS) -o $@ $< \
+ 			       $(LIBDIR)/libttf.la $(LDFLAGS)
+ 
+ clean:
