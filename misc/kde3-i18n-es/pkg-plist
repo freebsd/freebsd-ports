@@ -157,6 +157,7 @@ share/doc/HTML/es/kamera/index.docbook
 share/doc/HTML/es/kandy/common
 share/doc/HTML/es/kandy/index.cache.bz2
 share/doc/HTML/es/kandy/index.docbook
+share/doc/HTML/es/kappfinder/man-kappfinder.1.docbook
 share/doc/HTML/es/kapptemplate/man-kapptemplate.1.docbook
 share/doc/HTML/es/karm/common
 share/doc/HTML/es/karm/index.cache.bz2
@@ -176,11 +177,15 @@ share/doc/HTML/es/kate-plugins/textfilter.docbook
 share/doc/HTML/es/kate-plugins/xmlcheck.docbook
 share/doc/HTML/es/kate-plugins/xmltools.docbook
 share/doc/HTML/es/kate/advanced.docbook
+share/doc/HTML/es/kate/common
 share/doc/HTML/es/kate/configdialog01.png
 share/doc/HTML/es/kate/configdialog02.png
 share/doc/HTML/es/kate/configuring.docbook
 share/doc/HTML/es/kate/fundamentals.docbook
+share/doc/HTML/es/kate/highlighted.png
 share/doc/HTML/es/kate/highlighting.docbook
+share/doc/HTML/es/kate/index.cache.bz2
+share/doc/HTML/es/kate/index.docbook
 share/doc/HTML/es/kate/kate.png
 share/doc/HTML/es/kate/mdi.docbook
 share/doc/HTML/es/kate/menus.docbook
@@ -188,6 +193,7 @@ share/doc/HTML/es/kate/mimetypechooser.png
 share/doc/HTML/es/kate/part.docbook
 share/doc/HTML/es/kate/plugins.docbook
 share/doc/HTML/es/kate/regular-expressions.docbook
+share/doc/HTML/es/kate/unhighlighted.png
 share/doc/HTML/es/katomic/common
 share/doc/HTML/es/katomic/index.cache.bz2
 share/doc/HTML/es/katomic/index.docbook
@@ -212,6 +218,16 @@ share/doc/HTML/es/kblackbox/index.docbook
 share/doc/HTML/es/kbounce/common
 share/doc/HTML/es/kbounce/index.cache.bz2
 share/doc/HTML/es/kbounce/index.docbook
+share/doc/HTML/es/kbruch/checked.png
+share/doc/HTML/es/kbruch/common
+share/doc/HTML/es/kbruch/compare.png
+share/doc/HTML/es/kbruch/convert.png
+share/doc/HTML/es/kbruch/factorize.png
+share/doc/HTML/es/kbruch/gui_main.png
+share/doc/HTML/es/kbruch/index.cache.bz2
+share/doc/HTML/es/kbruch/index.docbook
+share/doc/HTML/es/kbruch/reduced.png
+share/doc/HTML/es/kbruch/settings.png
 share/doc/HTML/es/kbugbuster/common
 share/doc/HTML/es/kbugbuster/index.cache.bz2
 share/doc/HTML/es/kbugbuster/index.docbook
@@ -265,6 +281,8 @@ share/doc/HTML/es/kcontrol/energy/index.docbook
 share/doc/HTML/es/kcontrol/filemanager/common
 share/doc/HTML/es/kcontrol/filemanager/index.cache.bz2
 share/doc/HTML/es/kcontrol/filemanager/index.docbook
+share/doc/HTML/es/kcontrol/filemanager/kfileman1.png
+share/doc/HTML/es/kcontrol/filemanager/kfileman2.png
 share/doc/HTML/es/kcontrol/filetypes/common
 share/doc/HTML/es/kcontrol/filetypes/index.cache.bz2
 share/doc/HTML/es/kcontrol/filetypes/index.docbook
@@ -404,6 +422,11 @@ share/doc/HTML/es/kdcop/index.docbook
 share/doc/HTML/es/kdebugdialog/common
 share/doc/HTML/es/kdebugdialog/index.cache.bz2
 share/doc/HTML/es/kdebugdialog/index.docbook
+share/doc/HTML/es/kdelibs/man-artsmessage.1.docbook
+share/doc/HTML/es/kdelibs/man-checkXML.1.docbook
+share/doc/HTML/es/kdelibs/man-dcop.1.docbook
+share/doc/HTML/es/kdelibs/man-kdeoptions.7.docbook
+share/doc/HTML/es/kdelibs/man-qtoptions.7.docbook
 share/doc/HTML/es/kdelirc/irkick/common
 share/doc/HTML/es/kdelirc/irkick/index.cache.bz2
 share/doc/HTML/es/kdelirc/irkick/index.docbook
@@ -426,6 +449,7 @@ share/doc/HTML/es/kdeprint/cupsserverconfiguration12_browsingtimeouts.png
 share/doc/HTML/es/kdeprint/cupsserverconfiguration14_browsingrelay.png
 share/doc/HTML/es/kdeprint/cupsserverconfiguration15a_resourceallprinters_defineaccess.png
 share/doc/HTML/es/kdeprint/cupsserverconfiguration15b_resourceallprinters_defineaccess.png
+share/doc/HTML/es/kdeprint/cupsserverconfiguration15c_resourceallprinters_defineaccess.png
 share/doc/HTML/es/kdeprint/cupsserverconfiguration1_welcome.png
 share/doc/HTML/es/kdeprint/cupsserverconfiguration2_general.png
 share/doc/HTML/es/kdeprint/cupsserverconfiguration3_logging.png
@@ -457,7 +481,7 @@ share/doc/HTML/es/kdeprint/lpd.docbook
 share/doc/HTML/es/kdeprint/lpr-bsd.docbook
 share/doc/HTML/es/kdeprint/lprng.docbook
 share/doc/HTML/es/kdeprint/rlpr.docbook
-share/doc/HTML/es/kdeprint/steinbrush_scaled.png
+share/doc/HTML/es/kdeprint/steinbruch_scaled.png
 share/doc/HTML/es/kdeprint/tech-overview.docbook
 share/doc/HTML/es/kdeprint/theory.docbook
 share/doc/HTML/es/kdesu/common
@@ -525,11 +549,14 @@ share/doc/HTML/es/khangman/khangman1.png
 share/doc/HTML/es/khelpcenter/common
 share/doc/HTML/es/khelpcenter/contact.docbook
 share/doc/HTML/es/khelpcenter/faq/about.docbook
+share/doc/HTML/es/khelpcenter/faq/common
 share/doc/HTML/es/khelpcenter/faq/configkde.docbook
 share/doc/HTML/es/khelpcenter/faq/contrib.docbook
 share/doc/HTML/es/khelpcenter/faq/desktop.docbook
 share/doc/HTML/es/khelpcenter/faq/filemng.docbook
 share/doc/HTML/es/khelpcenter/faq/getkde.docbook
+share/doc/HTML/es/khelpcenter/faq/index.cache.bz2
+share/doc/HTML/es/khelpcenter/faq/index.docbook
 share/doc/HTML/es/khelpcenter/faq/install.docbook
 share/doc/HTML/es/khelpcenter/faq/intro.docbook
 share/doc/HTML/es/khelpcenter/faq/kdeapps.docbook
@@ -1364,7 +1391,6 @@ share/doc/HTML/es/quanta/man-quanta.1.docbook
 share/doc/HTML/es/quanta/q-and-a.docbook
 share/doc/HTML/es/quanta/quanta-menus.docbook
 share/doc/HTML/es/quanta/quanta-projects.docbook
-share/doc/HTML/es/quanta/using-quanta.docbook
 share/doc/HTML/es/quanta/working-with-quanta.docbook
 share/doc/HTML/es/scripts/man-adddebug.1.docbook
 share/doc/HTML/es/scripts/man-cheatmake.1.docbook
@@ -2153,6 +2179,7 @@ share/locale/es/flag.png
 @dirrm share/doc/HTML/es/kdelirc/kcmlirc
 @dirrm share/doc/HTML/es/kdelirc/irkick
 @dirrm share/doc/HTML/es/kdelirc
+@dirrm share/doc/HTML/es/kdelibs
 @dirrm share/doc/HTML/es/kdebugdialog
 @dirrm share/doc/HTML/es/kdcop
 @dirrm share/doc/HTML/es/kdat
@@ -2214,6 +2241,7 @@ share/locale/es/flag.png
 @dirrm share/doc/HTML/es/kcharselect
 @dirrm share/doc/HTML/es/kcalc
 @dirrm share/doc/HTML/es/kbugbuster
+@dirrm share/doc/HTML/es/kbruch
 @dirrm share/doc/HTML/es/kbounce
 @dirrm share/doc/HTML/es/kblackbox
 @dirrm share/doc/HTML/es/kbattleship
@@ -2225,6 +2253,7 @@ share/locale/es/flag.png
 @dirrm share/doc/HTML/es/kasteroids
 @dirrm share/doc/HTML/es/karm
 @dirrm share/doc/HTML/es/kapptemplate
+@dirrm share/doc/HTML/es/kappfinder
 @dirrm share/doc/HTML/es/kandy
 @dirrm share/doc/HTML/es/kamera
 @dirrm share/doc/HTML/es/kalzium

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	koffice-i18n
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	misc kde
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -16,6 +16,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Localized messages and documentation for KDE
 
 RUN_DEPENDS+=\
+	${LOCALBASE}/share/locale/ar/LC_MESSAGES/kword.mo:${PORTSDIR}/arabic/koffice-i18n\
 	${LOCALBASE}/share/locale/de/LC_MESSAGES/kword.mo:${PORTSDIR}/german/koffice-i18n\
 	${LOCALBASE}/share/locale/fr/LC_MESSAGES/kword.mo:${PORTSDIR}/french/koffice-i18n\
 	${LOCALBASE}/share/locale/hu/LC_MESSAGES/kword.mo:${PORTSDIR}/hungarian/koffice-i18n\
@@ -25,11 +26,12 @@ RUN_DEPENDS+=\
 	${LOCALBASE}/share/locale/pt/LC_MESSAGES/kword.mo:${PORTSDIR}/portuguese/koffice-i18n\
 	${LOCALBASE}/share/locale/pt_BR/LC_MESSAGES/kword.mo:${PORTSDIR}/portuguese/koffice-i18n-pt_BR\
 	${LOCALBASE}/share/locale/ru/LC_MESSAGES/kword.mo:${PORTSDIR}/russian/koffice-i18n\
+	${LOCALBASE}/share/locale/uk/LC_MESSAGES/kword.mo:${PORTSDIR}/ukrainian/koffice-i18n\
 	${LOCALBASE}/share/locale/zh_CN/LC_MESSAGES/kword.mo:${PORTSDIR}/chinese/koffice-i18n-zh_CN \
 	${LOCALBASE}/share/locale/zh_TW/LC_MESSAGES/kword.mo:${PORTSDIR}/chinese/koffice-i18n-zh_TW
 
-.for LANG in af bg br ca cs cy da el en_GB eo es et fa fi hsb it \
-	lo mt nb nl nn se sk sl sr sv tg th tr ven xh zu
+.for LANG in af bg br bs ca cs cy da el en_GB eo es et fa fi hsb it \
+	lo lt lv mt nb nl nn se sk sl sr sr@Latn sv ta tg th tr ven xh zu
 RUN_DEPENDS+=\
 ${LOCALBASE}/share/locale/${LANG}/LC_MESSAGES/kword.mo:${PORTSDIR}/misc/koffice-i18n-${LANG}
 .endfor

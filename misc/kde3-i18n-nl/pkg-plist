@@ -1812,6 +1812,9 @@ share/locale/nl/LC_MESSAGES/webarchiver.mo
 share/locale/nl/charset
 share/locale/nl/entry.desktop
 share/locale/nl/flag.png
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/nl
+@dirrm share/locale
 @dirrm share/doc/HTML/nl/xsldbg
 @dirrm share/doc/HTML/nl/umbrello
 @dirrm share/doc/HTML/nl/scripts
@@ -2032,6 +2035,8 @@ share/locale/nl/flag.png
 @dirrm share/doc/HTML/nl/artsbuilder
 @dirrm share/doc/HTML/nl/ark
 @dirrm share/doc/HTML/nl/amor
+@dirrm share/doc/HTML/nl
+@dirrm share/doc/HTML
 @dirrm share/apps/kturtle/examples/nl
 @dirrm share/apps/kturtle/examples
 @dirrm share/apps/kturtle/data
@@ -2046,3 +2051,6 @@ share/locale/nl/flag.png
 @dirrm share/apps/khangman/data/nl
 @dirrm share/apps/khangman/data
 @dirrm share/apps/khangman
+@dirrm share/apps/katepart/syntax
+@dirrm share/apps/katepart
+@dirrm share/apps

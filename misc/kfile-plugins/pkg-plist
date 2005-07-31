@@ -13,7 +13,7 @@ lib/kde3/kfile_mhtml.la
 lib/kde3/kfile_mhtml.so
 lib/kde3/kfile_txt.la
 lib/kde3/kfile_txt.so
-share/applications/kdeaddons-kfile-plugins-3.4.1
+share/applications/kdeaddons-kfile-plugins-3.4.2
 share/applnk/.hidden/lnkforward.desktop
 share/mimelnk/application/x-win-lnk.desktop
 share/services/kfile_cert.desktop

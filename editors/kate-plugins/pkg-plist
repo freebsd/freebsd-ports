@@ -24,7 +24,7 @@ lib/kde3/katexmltoolsplugin.la
 lib/kde3/katexmltoolsplugin.so
 lib/kde3/libkatetabbarextensionplugin.la
 lib/kde3/libkatetabbarextensionplugin.so
-share/applications/kdeaddons-kate-plugins-3.4.1
+share/applications/kdeaddons-kate-plugins-3.4.2
 share/applnk/.hidden/katefll.desktop
 share/apps/kate/plugins/katecppsymbolviewer/ui.rc
 share/apps/kate/plugins/katefiletemplates/templates/cppgpl.cpp.katetemplate

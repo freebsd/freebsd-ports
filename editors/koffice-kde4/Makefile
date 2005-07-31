@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	koffice
-PORTVERSION=	1.4.0a
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 PORTEPOCH=	1
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
@@ -46,14 +45,20 @@ USE_PYTHON=	yes
 
 .if ${OSVERSION} < 500035
 EXTRA_PATCHES=	${PATCHDIR}/extrapatch-kexi-main-keximainwindowimpl.cpp
-CPPFLAGS+=	-I${LOCALBASE}/include/stlport
-LDFLAGS+=	-L${LOCALBASE}/lib -lstlport_gcc ${PTHREAD_LIBS}
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 .endif
 
-post-patch:
-	@env TZ=UTC ${TOUCH} -t 200506221316 ${WRKSRC}/subdirs ${WRKSRC}/Makefile.am \
-			${WRKSRC}/configure.files ${WRKSRC}/configure.in \
-			${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4
+#post-patch:
+#	@env TZ=UTC ${TOUCH} -t 200506221316 ${WRKSRC}/subdirs ${WRKSRC}/Makefile.am \
+#			${WRKSRC}/configure.files ${WRKSRC}/configure.in \
+#			${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4
+
+post-configure:
+.if ${OSVERSION} < 500035
+	${REINPLACE_CMD} -e 's|\(^CPPFLAGS =.*\)|\1 -I${LOCALBASE}/include/stlport|g' \
+	-e 's|\(^LDFLAGS =.*\)|\1 -L${LOCALBASE}/lib -lstlport_gcc ${PTHREAD_LIBS}|g' \
+		${WRKSRC}/filters/kspread/excel/sidewinder/Makefile \
+		${WRKSRC}/kexi/kexidb/drivers/pqxx/Makefile \
+		${WRKSRC}/kexi/migration/pqxx/Makefile
+.endif
 
 .include <bsd.port.post.mk>

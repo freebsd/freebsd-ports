@@ -60,6 +60,21 @@ share/doc/HTML/fi/common/web-docbottom.png
 share/doc/HTML/fi/common/web-doctop.png
 share/doc/HTML/fi/common/x11-license.html
 share/doc/HTML/fi/common/xml.dcl
+share/doc/HTML/fi/kfind/common
+share/doc/HTML/fi/kfind/index.cache.bz2
+share/doc/HTML/fi/kfind/index.docbook
+share/doc/HTML/fi/khelpcenter/common
+share/doc/HTML/fi/khelpcenter/contact.docbook
+share/doc/HTML/fi/khelpcenter/glossary/common
+share/doc/HTML/fi/khelpcenter/glossary/index.cache.bz2
+share/doc/HTML/fi/khelpcenter/glossary/index.docbook
+share/doc/HTML/fi/khelpcenter/glossary/kdeprintingglossary.docbook
+share/doc/HTML/fi/khelpcenter/help.docbook
+share/doc/HTML/fi/khelpcenter/index.cache.bz2
+share/doc/HTML/fi/khelpcenter/index.docbook
+share/doc/HTML/fi/khelpcenter/support.docbook
+share/doc/HTML/fi/khelpcenter/welcome.docbook
+share/doc/HTML/fi/khelpcenter/whatiskde.docbook
 share/locale/fi/LC_MESSAGES/akregator.mo
 share/locale/fi/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/fi/LC_MESSAGES/alsaplayerui.mo
@@ -344,6 +359,7 @@ share/locale/fi/LC_MESSAGES/kio_devices.mo
 share/locale/fi/LC_MESSAGES/kio_finger.mo
 share/locale/fi/LC_MESSAGES/kio_fish.mo
 share/locale/fi/LC_MESSAGES/kio_floppy.mo
+share/locale/fi/LC_MESSAGES/kio_groupwise.mo
 share/locale/fi/LC_MESSAGES/kio_help.mo
 share/locale/fi/LC_MESSAGES/kio_imap4.mo
 share/locale/fi/LC_MESSAGES/kio_lan.mo
@@ -352,6 +368,7 @@ share/locale/fi/LC_MESSAGES/kio_mac.mo
 share/locale/fi/LC_MESSAGES/kio_man.mo
 share/locale/fi/LC_MESSAGES/kio_media.mo
 share/locale/fi/LC_MESSAGES/kio_mobile.mo
+share/locale/fi/LC_MESSAGES/kio_newimap4.mo
 share/locale/fi/LC_MESSAGES/kio_nfs.mo
 share/locale/fi/LC_MESSAGES/kio_nntp.mo
 share/locale/fi/LC_MESSAGES/kio_pop3.mo
@@ -384,6 +401,7 @@ share/locale/fi/LC_MESSAGES/kmail_text_calendar_plugin.mo
 share/locale/fi/LC_MESSAGES/kmail_text_vcard_plugin.mo
 share/locale/fi/LC_MESSAGES/kmailcvt.mo
 share/locale/fi/LC_MESSAGES/kmathapplet.mo
+share/locale/fi/LC_MESSAGES/kmathtool.mo
 share/locale/fi/LC_MESSAGES/kmcop.mo
 share/locale/fi/LC_MESSAGES/kmenuapplet.mo
 share/locale/fi/LC_MESSAGES/kmenuedit.mo
@@ -488,6 +506,7 @@ share/locale/fi/LC_MESSAGES/kstars.mo
 share/locale/fi/LC_MESSAGES/kstart.mo
 share/locale/fi/LC_MESSAGES/kstartperf.mo
 share/locale/fi/LC_MESSAGES/kstyle_keramik_config.mo
+share/locale/fi/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/fi/LC_MESSAGES/kstyle_plastik_config.mo
 share/locale/fi/LC_MESSAGES/ksvgplugin.mo
 share/locale/fi/LC_MESSAGES/ksync.mo
@@ -622,6 +641,9 @@ share/locale/fi/LC_MESSAGES/webarchiver.mo
 share/locale/fi/charset
 share/locale/fi/entry.desktop
 share/locale/fi/flag.png
+@dirrm share/doc/HTML/fi/khelpcenter/glossary
+@dirrm share/doc/HTML/fi/khelpcenter
+@dirrm share/doc/HTML/fi/kfind
 @dirrm share/doc/HTML/fi/common
 @dirrm share/apps/khangman/data/fi
 @dirrm share/apps/khangman/data

@@ -152,11 +152,6 @@ kdevbdb/bin/db_recover
 kdevbdb/bin/db_stat
 kdevbdb/bin/db_upgrade
 kdevbdb/bin/db_verify
-kdevbdb/docs/CVS/Entries
-kdevbdb/docs/CVS/Repository
-kdevbdb/docs/CVS/Root
-kdevbdb/docs/CVS/Tag
-kdevbdb/docs/CVS/Template
 kdevbdb/docs/LICENSE
 kdevbdb/docs/README
 kdevbdb/include/db.h
@@ -1195,6 +1190,13 @@ share/apps/kdevprojectmanager/kdevprojectmanager.rc
 share/apps/kdevpythonsupport/kdevpythonsupport.rc
 share/apps/kdevquickopen/kdevpart_quickopen.rc
 share/apps/kdevrbdebugger/debuggee.rb
+share/apps/kdevrbdebugger/icons/hicolor/22x22/actions/dbgnext.png
+share/apps/kdevrbdebugger/icons/hicolor/22x22/actions/dbgrestart.png
+share/apps/kdevrbdebugger/icons/hicolor/22x22/actions/dbgrun.png
+share/apps/kdevrbdebugger/icons/hicolor/22x22/actions/dbgrunto.png
+share/apps/kdevrbdebugger/icons/hicolor/22x22/actions/dbgstep.png
+share/apps/kdevrbdebugger/icons/hicolor/22x22/actions/dbgstepout.png
+share/apps/kdevrbdebugger/icons/hicolor/22x22/actions/debugger.png
 share/apps/kdevrbdebugger/kdevrbdebugger.rc
 share/apps/kdevregexptest/kdevregexptest.rc
 share/apps/kdevreplace/kdevpart_replace.rc
@@ -1605,6 +1607,10 @@ share/servicetypes/kdevelopversioncontrol.desktop
 @dirrm share/apps/kdevrubysupport
 @dirrm share/apps/kdevreplace
 @dirrm share/apps/kdevregexptest
+@dirrm share/apps/kdevrbdebugger/icons/hicolor/22x22/actions
+@dirrm share/apps/kdevrbdebugger/icons/hicolor/22x22
+@dirrm share/apps/kdevrbdebugger/icons/hicolor
+@dirrm share/apps/kdevrbdebugger/icons
 @dirrm share/apps/kdevrbdebugger
 @dirrm share/apps/kdevquickopen
 @dirrm share/apps/kdevpythonsupport
@@ -1714,7 +1720,6 @@ share/servicetypes/kdevelopversioncontrol.desktop
 @dirrm share/apps/kdevabbrev
 @dirrm kdevbdb/lib
 @dirrm kdevbdb/include
-@dirrm kdevbdb/docs/CVS
 @dirrm kdevbdb/docs
 @dirrm kdevbdb/bin
 @dirrm kdevbdb

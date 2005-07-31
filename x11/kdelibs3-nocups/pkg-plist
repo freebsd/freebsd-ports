@@ -4871,6 +4871,7 @@ share/mimelnk/application/x-cpio.desktop
 share/mimelnk/application/x-cue.desktop
 share/mimelnk/application/x-dbase.desktop
 share/mimelnk/application/x-deb.desktop
+share/mimelnk/application/x-debian-package.desktop
 share/mimelnk/application/x-designer.desktop
 share/mimelnk/application/x-desktop.desktop
 share/mimelnk/application/x-dvi.desktop

@@ -23,8 +23,10 @@ DISTNAME?=	${PORTNAME}-${PKGNAMEPREFIX:S/-$//}-${PORTVERSION}
 # as part of the name of their toplevel directory, while the
 # koffice-i18n ones have not, so we need to take care of that.
 .if ${PORTNAME}==koffice-i18n && ${PORTVERSION}!="1.3.5"
+.if !defined(DISTNAME_OVERRIDE)
 DISTNAME=	${PORTNAME:S/i18n/l10n/}-${PKGNAMEPREFIX:S/-$//}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/koffice-l10n-${PKGNAMEPREFIX:S/-$//}-${PORTVERSION}
+.endif
 .endif
 DIST_SUBDIR=	KDE/kde-i18n
 

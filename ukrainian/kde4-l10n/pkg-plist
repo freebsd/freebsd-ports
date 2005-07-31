@@ -52,63 +52,20 @@ share/doc/HTML/uk/common/web-docbottom.png
 share/doc/HTML/uk/common/web-doctop.png
 share/doc/HTML/uk/common/x11-license.html
 share/doc/HTML/uk/common/xml.dcl
-share/doc/HTML/uk/kaddressbook/common
-share/doc/HTML/uk/kaddressbook/index.cache.bz2
-share/doc/HTML/uk/kaddressbook/index.docbook
-share/doc/HTML/uk/khelpcenter/common
-share/doc/HTML/uk/khelpcenter/contact.docbook
+share/doc/HTML/uk/kbabel/catman.docbook
+share/doc/HTML/uk/kbabel/faq.docbook
+share/doc/HTML/uk/kbabel/glossary.docbook
+share/doc/HTML/uk/kbabel/kbabeldict.docbook
 share/doc/HTML/uk/khelpcenter/faq/about.docbook
 share/doc/HTML/uk/khelpcenter/faq/getkde.docbook
-share/doc/HTML/uk/khelpcenter/faq/nonkdeapps.docbook
-share/doc/HTML/uk/khelpcenter/faq/tips.docbook
-share/doc/HTML/uk/khelpcenter/help.docbook
-share/doc/HTML/uk/khelpcenter/index.cache.bz2
-share/doc/HTML/uk/khelpcenter/index.docbook
-share/doc/HTML/uk/khelpcenter/links.docbook
-share/doc/HTML/uk/khelpcenter/support.docbook
-share/doc/HTML/uk/khelpcenter/welcome.docbook
-share/doc/HTML/uk/khelpcenter/whatiskde.docbook
 share/doc/HTML/uk/kinfocenter/protocols/common
 share/doc/HTML/uk/kinfocenter/protocols/index.cache.bz2
 share/doc/HTML/uk/kinfocenter/protocols/index.docbook
-share/doc/HTML/uk/kioslave/audiocd.docbook
 share/doc/HTML/uk/kioslave/bzip.docbook
 share/doc/HTML/uk/kioslave/bzip2.docbook
-share/doc/HTML/uk/kioslave/cgi.docbook
 share/doc/HTML/uk/kioslave/file.docbook
 share/doc/HTML/uk/kioslave/finger.docbook
-share/doc/HTML/uk/kioslave/fish.docbook
 share/doc/HTML/uk/kioslave/floppy.docbook
-share/doc/HTML/uk/kioslave/ftp.docbook
-share/doc/HTML/uk/kioslave/gopher.docbook
-share/doc/HTML/uk/kioslave/gzip.docbook
-share/doc/HTML/uk/kioslave/help.docbook
-share/doc/HTML/uk/kioslave/http.docbook
-share/doc/HTML/uk/kioslave/https.docbook
-share/doc/HTML/uk/kioslave/imap.docbook
-share/doc/HTML/uk/kioslave/imaps.docbook
-share/doc/HTML/uk/kioslave/info.docbook
-share/doc/HTML/uk/kioslave/lan.docbook
-share/doc/HTML/uk/kioslave/ldap.docbook
-share/doc/HTML/uk/kioslave/mac.docbook
-share/doc/HTML/uk/kioslave/mailto.docbook
-share/doc/HTML/uk/kioslave/man.docbook
-share/doc/HTML/uk/kioslave/news.docbook
-share/doc/HTML/uk/kioslave/nfs.docbook
-share/doc/HTML/uk/kioslave/nntp.docbook
-share/doc/HTML/uk/kioslave/pop3.docbook
-share/doc/HTML/uk/kioslave/pop3s.docbook
-share/doc/HTML/uk/kioslave/print.docbook
-share/doc/HTML/uk/kioslave/rlan.docbook
-share/doc/HTML/uk/kioslave/rlogin.docbook
-share/doc/HTML/uk/kioslave/sftp.docbook
-share/doc/HTML/uk/kioslave/smb.docbook
-share/doc/HTML/uk/kioslave/smtp.docbook
-share/doc/HTML/uk/kioslave/tar.docbook
-share/doc/HTML/uk/kioslave/telnet.docbook
-share/doc/HTML/uk/kioslave/thumbnail.docbook
-share/doc/HTML/uk/kioslave/webdav.docbook
-share/doc/HTML/uk/kioslave/webdavs.docbook
 share/doc/HTML/uk/knotes/common
 share/doc/HTML/uk/knotes/index.cache.bz2
 share/doc/HTML/uk/knotes/index.docbook
@@ -397,7 +354,6 @@ share/locale/uk/LC_MESSAGES/khtmlkttsd.mo
 share/locale/uk/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/uk/LC_MESSAGES/kicker.mo
 share/locale/uk/LC_MESSAGES/kiconedit.mo
-share/locale/uk/LC_MESSAGES/kig.mo
 share/locale/uk/LC_MESSAGES/kimagemapeditor.mo
 share/locale/uk/LC_MESSAGES/kinetd.mo
 share/locale/uk/LC_MESSAGES/kio.mo
@@ -469,7 +425,6 @@ share/locale/uk/LC_MESSAGES/kmobile.mo
 share/locale/uk/LC_MESSAGES/kmoon.mo
 share/locale/uk/LC_MESSAGES/kmousetool.mo
 share/locale/uk/LC_MESSAGES/kmouth.mo
-share/locale/uk/LC_MESSAGES/kmplot.mo
 share/locale/uk/LC_MESSAGES/kmrml.mo
 share/locale/uk/LC_MESSAGES/knetattach.mo
 share/locale/uk/LC_MESSAGES/knewsticker.mo
@@ -606,7 +561,6 @@ share/locale/uk/LC_MESSAGES/kviewscannerplugin.mo
 share/locale/uk/LC_MESSAGES/kviewshell.mo
 share/locale/uk/LC_MESSAGES/kviewtemplateplugin.mo
 share/locale/uk/LC_MESSAGES/kviewviewer.mo
-share/locale/uk/LC_MESSAGES/kvoctrain.mo
 share/locale/uk/LC_MESSAGES/kwalletmanager.mo
 share/locale/uk/LC_MESSAGES/kwatchgnupg.mo
 share/locale/uk/LC_MESSAGES/kweather.mo
@@ -621,6 +575,7 @@ share/locale/uk/LC_MESSAGES/kwriteconfig.mo
 share/locale/uk/LC_MESSAGES/kxkb.mo
 share/locale/uk/LC_MESSAGES/kxmlrpcd.mo
 share/locale/uk/LC_MESSAGES/kxsconfig.mo
+share/locale/uk/LC_MESSAGES/kxsldbg.mo
 share/locale/uk/LC_MESSAGES/libKTTSD.mo
 share/locale/uk/LC_MESSAGES/libcalendarresources.mo
 share/locale/uk/LC_MESSAGES/libdmctl.mo
@@ -699,5 +654,5 @@ share/locale/uk/flag.png
 @dirrm share/doc/HTML/uk/kinfocenter
 @dirrm share/doc/HTML/uk/khelpcenter/faq
 @dirrm share/doc/HTML/uk/khelpcenter
-@dirrm share/doc/HTML/uk/kaddressbook
+@dirrm share/doc/HTML/uk/kbabel
 @dirrm share/doc/HTML/uk/common

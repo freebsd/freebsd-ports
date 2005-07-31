@@ -22,13 +22,15 @@ RUN_DEPENDS+=\
 	${LOCALBASE}/share/locale/de/entry.desktop:${PORTSDIR}/german/kde3-i18n \
 	${LOCALBASE}/share/locale/he/entry.desktop:${PORTSDIR}/hebrew/kde3-i18n \
 	${LOCALBASE}/share/locale/hu/entry.desktop:${PORTSDIR}/hungarian/kde3-i18n \
+	${LOCALBASE}/share/locale/ko/entry.desktop:${PORTSDIR}/korean/kde3-i18n \
 	${LOCALBASE}/share/locale/ru/entry.desktop:${PORTSDIR}/russian/kde3-i18n \
 	${LOCALBASE}/share/locale/uk/entry.desktop:${PORTSDIR}/ukrainian/kde3-i18n \
 	${LOCALBASE}/share/locale/vi/entry.desktop:${PORTSDIR}/vietnamese/kde3-i18n \
 	${LOCALBASE}/share/locale/pl/entry.desktop:${PORTSDIR}/polish/kde3-i18n
 
-.for LANG in af az bg bn bs ca cs cy da el en_GB eo es et eu fa fi hr hsb is it lt \
-	mk mn ms mt nb nds nl nn nso pa ro se sk sl sr sr@Latn ss sv ta tg th tr uz ven xh zu
+.for LANG in af az bg bn bs ca cs cy da el en_GB eo es et eu fa fi hr hsb id \
+	is it lt lv mk mn ms mt nb nds nl nn nso pa ro se sk sl sr sr@Latn ss \
+	sv ta tg th tr uz ven xh zu
 RUN_DEPENDS+=\
 ${LOCALBASE}/share/locale/${LANG}/entry.desktop:${PORTSDIR}/misc/kde3-i18n-${LANG}
 .endfor

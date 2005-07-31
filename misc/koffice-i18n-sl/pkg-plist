@@ -29,6 +29,7 @@ share/locale/sl/LC_MESSAGES/kscan_plugin.mo
 share/locale/sl/LC_MESSAGES/kscreenshot_plugin.mo
 share/locale/sl/LC_MESSAGES/kspread.mo
 share/locale/sl/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/sl/LC_MESSAGES/kspreadinsertcalendar.mo
 share/locale/sl/LC_MESSAGES/kthesaurus.mo
 share/locale/sl/LC_MESSAGES/kugar.mo
 share/locale/sl/LC_MESSAGES/kword.mo
