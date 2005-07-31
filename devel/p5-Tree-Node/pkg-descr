@@ -1,0 +1,23 @@
+This module implements a memory-efficient node type (for trees, skip lists 
+and similar data structures) for Perl.
+
+You may ask "Why bother implementing an ordered structure such as a tree 
+when Perl has hashes built-in?" Since Perl is optimized for speed over 
+memory usage, hashes (and lists) use a lot of memory.
+
+So the purpose of this package is to provide a simple low-level Node class 
+which can be used as a base class to implement various kinds of tree 
+structures. Each node has a key/value pair and a variable number of 
+"children" pointers.
+
+How nodes are organized or the algorithm used to organize them is for you 
+to implement.
+
+There is no Pure-perl version because this package was written to overcome 
+limitations of Perl.
+
+WWW: http://search.cpan.org/dist/Tree-Node/
+Author: Robert Rothenberg <rrwo@cpan.org>
+
+- Aaron Dalton
+aaron@daltons.ca
