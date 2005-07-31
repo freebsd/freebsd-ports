@@ -38,6 +38,7 @@
     SUBDIR += cxsc
     SUBDIR += dcdflib
     SUBDIR += diehard
+    SUBDIR += dislin
     SUBDIR += djbfft
     SUBDIR += drgeo
     SUBDIR += e
@@ -109,7 +110,6 @@
     SUBDIR += libranlib
     SUBDIR += linalg
     SUBDIR += linpack
-    SUBDIR += linux-dislin
     SUBDIR += linux-relview
     SUBDIR += lp_solve
     SUBDIR += mathomatic

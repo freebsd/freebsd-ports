@@ -6,41 +6,40 @@
 #
 
 PORTNAME=	dislin
-PORTVERSION=	8.2
-PORTREVISION=	2
-CATEGORIES=	math linux
-MASTER_SITES=	ftp://ftp.gwdg.de/pub/grafik/dislin/linux/${MACHINE_ARCH}/
-PKGNAMEPREFIX=	linux-
-EXTRACT_SUFX=	.linux.tar.gz
-DIST_SUBDIR=	${MACHINE_ARCH}
+PORTVERSION=	8.3
+CATEGORIES=	math
+MASTER_SITES=	ftp://ftp.gwdg.de/pub/grafik/dislin/unix/
+DISTNAME=	${PORTNAME}-${PORTVERSION}.fbsd${BINVER}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scientific data plotting package
 
-BROKEN=		Unfetchable
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
-ONLY_FOR_ARCHS=	i386 alpha
-USE_LINUX=	yes
-USE_X_PREFIX=	yes
+ONLY_FOR_ARCHS=	i386
+USE_XLIB=	yes
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 LDCONFIG_DIRS=	${DISLIN_DIR}/lib
 
-MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
-PLIST=		${PKGDIR}/pkg-plist.${MACHINE_ARCH}
+MD5_FILE=	${MASTERDIR}/distinfo${BINVER}
+PLIST_SUB=	VER=${PORTVERSION}
+SUB_FILES=	dislin.sh pkg-message
+SUB_LIST=	DISLIN_DIR=${DISLIN_DIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 DISLIN_DIR=	${PREFIX}/dislin
-PROGRAMS=	clink disaps disdrv disdrv_nw disdrv_w disgif dishlp dishpj \
-		disimg disman dismov disprv distif dlink f2clink g77link
+PROGRAMS=	clink disaps disdrv disdrv_nw disdrv_w disgcl disgif dishlp	\
+		dishpj disimg disman dismov disprv distif dlink f2clink gclhelp	\
+		gclhlp gclman
 
-do-configure:
-	${SED} -e 's,%%DISLIN_DIR%%,${DISLIN_DIR},' \
-	    <${FILESDIR}/dislin-wrapper.sh >${WRKDIR}/dislin.sh
-	${SED} -e 's,%%DISLIN_DIR%%,${DISLIN_DIR},' \
-	    <${FILESDIR}/pkg-message >${WRKDIR}/pkg-message
+.include <bsd.port.pre.mk>
 
-# XXX: this is missing "${BRANDELF} -t Linux <executable>"
+.if ${OSVERSION} >= 501000
+BINVER=		-5.1
+.endif
+
+.if ${OSVERSION} >= 600000
+BROKEN=		"uses libc.so.5"
+#LIB_DEPENDS+=      c.5:${PORTSDIR}/misc/compat5x
+.endif
 
 do-install:
 	(cd ${WRKSRC} && ${ENV} DISLIN=${DISLIN_DIR} ${SH} INSTALL)
@@ -50,6 +49,6 @@ do-install:
 .endfor
 
 post-install:
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

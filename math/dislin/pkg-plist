@@ -3,6 +3,7 @@ bin/disaps
 bin/disdrv
 bin/disdrv_nw
 bin/disdrv_w
+bin/disgcl
 bin/disgif
 bin/dishlp
 bin/dishpj
@@ -13,7 +14,9 @@ bin/disprv
 bin/distif
 bin/dlink
 bin/f2clink
-bin/g77link
+bin/gclhelp
+bin/gclhlp
+bin/gclman
 dislin/DISLIN
 dislin/README
 dislin/bin/clink
@@ -21,6 +24,7 @@ dislin/bin/disaps
 dislin/bin/disdrv
 dislin/bin/disdrv_nw
 dislin/bin/disdrv_w
+dislin/bin/disgcl
 dislin/bin/disgif
 dislin/bin/dishlp
 dislin/bin/dishpj
@@ -32,7 +36,9 @@ dislin/bin/disprv
 dislin/bin/distif
 dislin/bin/dlink
 dislin/bin/f2clink
-dislin/bin/g77link
+dislin/bin/gclhelp
+dislin/bin/gclhlp
+dislin/bin/gclman
 dislin/device.dat
 dislin/dislin.h
 dislin/dislin.log
@@ -52,6 +58,29 @@ dislin/fonts/simplx10.bdf
 dislin/fonts/simplx12.bdf
 dislin/fonts/simplx14.bdf
 dislin/fonts/simplx8.bdf
+dislin/gcldir/bars.gcl
+dislin/gcldir/color3d.gcl
+dislin/gcldir/conshd.gcl
+dislin/gcldir/contour.gcl
+dislin/gcldir/curve.gcl
+dislin/gcldir/legend.gcl
+dislin/gcldir/pie.gcl
+dislin/gcldir/plot.gcl
+dislin/gcldir/plot.ini
+dislin/gcldir/plot3.gcl
+dislin/gcldir/plot3.ini
+dislin/gcldir/plot3cb.gcl
+dislin/gcldir/plot3r.gcl
+dislin/gcldir/plot3r.ini
+dislin/gcldir/plot3rcb.gcl
+dislin/gcldir/plotcb.gcl
+dislin/gcldir/scattr.gcl
+dislin/gcldir/scattr.ini
+dislin/gcldir/scattrcb.gcl
+dislin/gcldir/surface.gcl
+dislin/gcldir/surface2.gcl
+dislin/gcldir/widgets.gcl
+dislin/gcldir/world.gcl
 dislin/hlp/gclhlp0.txt
 dislin/hlp/gclhlp1.txt
 dislin/hlp/gclhlp2.txt
@@ -82,9 +111,8 @@ dislin/java/color3d.java
 dislin/java/conshd.java
 dislin/java/contour.java
 dislin/java/curve.java
-dislin/java/disjava-8.1.so
-dislin/java/disjava-8.2.so
-dislin/java/dislin-8.2.java.tar.gz
+dislin/java/disjava-%%VER%%.so
+dislin/java/dislin-%%VER%%.java.tar.gz
 dislin/java/dislin.jar
 dislin/java/intpol.java
 dislin/java/legend.java
@@ -98,12 +126,12 @@ dislin/java/surfcp.java
 dislin/java/symbols.java
 dislin/java/vectors.java
 dislin/java/world.java
-dislin/lib/dislin-8.2.a
-dislin/lib/dislin-8.2.so
-dislin/lib/dislin_d-8.2.so
-dislin/lib/dislnc-8.2.a
-dislin/lib/dislnc-8.2.so
-dislin/lib/dislnc_d-8.2.so
+dislin/lib/dislin-%%VER%%.a
+dislin/lib/dislin-%%VER%%.so
+dislin/lib/dislin_d-%%VER%%.so
+dislin/lib/dislnc-%%VER%%.a
+dislin/lib/dislnc-%%VER%%.so
+dislin/lib/dislnc_d-%%VER%%.so
 dislin/libdisjava.so
 dislin/libdisjava.so.7
 dislin/libdisjava.so.8
@@ -158,6 +186,7 @@ dislin/man/kap9.txt
 dislin/map/map1.dat
 dislin/map/map2.dat
 dislin/map/map3.dat
+dislin/map/map4.dat
 dislin/perl/Dislin.pm
 dislin/perl/Dislin.so
 dislin/perl/areaf.pl
@@ -165,7 +194,7 @@ dislin/perl/color3d.pl
 dislin/perl/conshd.pl
 dislin/perl/contour.pl
 dislin/perl/curve.pl
-dislin/perl/dislin-8.2.perl.tar.gz
+dislin/perl/dislin-%%VER%%.perl.tar.gz
 dislin/perl/intpol.pl
 dislin/perl/legend.pl
 dislin/perl/logscl.pl
@@ -184,7 +213,7 @@ dislin/python/color3d.py
 dislin/python/conshd.py
 dislin/python/contour.py
 dislin/python/curve.py
-dislin/python/dislin-8.2.python.tar.gz
+dislin/python/dislin-%%VER%%.python.tar.gz
 dislin/python/dislinmodule.so
 dislin/python/intpol.py
 dislin/python/legend.py
@@ -208,6 +237,7 @@ dislin/real64/dislin.h
 @dirrm dislin/lib
 @dirrm dislin/java
 @dirrm dislin/hlp
+@dirrm dislin/gcldir
 @dirrm dislin/fonts
 @dirrm dislin/examples
 @dirrm dislin/bin
