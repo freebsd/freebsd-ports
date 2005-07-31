@@ -24,7 +24,7 @@ PATCHFILES=	patchset-ctorrent-1.3.4-dnh1.diff
 PLIST_FILES=	bin/ctorrent
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
-PORTDOCS=	README-DNH.txt
+PORTDOCS=	README-DNH.TXT
 
 .if !defined(NOPORTDOCS)
 post-install:
