@@ -1,0 +1,66 @@
+--- features/org.eclipse.platform.source/build.xml.orig	Mon Jun 27 21:52:51 2005
++++ features/org.eclipse.platform.source/build.xml	Thu Jul 14 00:45:53 2005
+@@ -57,11 +57,21 @@
+ 			<property name="os" value="linux"/>
+ 			<property name="ws" value="motif"/>
+ 		</ant>
++		<ant antfile="build.xml" dir="../../plugins/org.eclipse.platform.source.freebsd.motif.x86" target="${target}">
++			<property name="arch" value="x86"/>
++			<property name="os" value="freebsd"/>
++			<property name="ws" value="motif"/>
++		</ant>
+ 		<ant antfile="build.xml" dir="../../plugins/org.eclipse.platform.source.linux.gtk.x86" target="${target}">
+ 			<property name="arch" value="x86"/>
+ 			<property name="os" value="linux"/>
+ 			<property name="ws" value="gtk"/>
+ 		</ant>
++		<ant antfile="build.xml" dir="../../plugins/org.eclipse.platform.source.freebsd.gtk.x86" target="${target}">
++			<property name="arch" value="x86"/>
++			<property name="os" value="freebsd"/>
++			<property name="ws" value="gtk"/>
++		</ant>
+ 		<ant antfile="build.xml" dir="../../plugins/org.eclipse.platform.source.hpux.motif.PA_RISC" target="${target}">
+ 			<property name="arch" value="PA_RISC"/>
+ 			<property name="os" value="hpux"/>
+@@ -72,6 +82,11 @@
+ 			<property name="os" value="linux"/>
+ 			<property name="ws" value="gtk"/>
+ 		</ant>
++		<ant antfile="build.xml" dir="../../plugins/org.eclipse.platform.source.freebsd.gtk.amd64" target="${target}">
++			<property name="arch" value="amd64"/>
++			<property name="os" value="freebsd"/>
++			<property name="ws" value="gtk"/>
++		</ant>
+ 		<ant antfile="build.xml" dir="../../plugins/org.eclipse.platform.doc.isv" target="${target}">
+ 			<property name="arch" value="x86"/>
+ 			<property name="os" value="win32"/>
+@@ -136,22 +151,28 @@
+ 		<copy todir="${feature.base}/features/org.eclipse.platform.source_3.1.0" failonerror="true" overwrite="false">
+ 			<fileset dir="${basedir}" includes="epl-v10.html,eclipse_update_120.jpg,feature.xml,feature.properties,license.html"			/>
+ 		</copy>
+-		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.platform.source_3.1.0/feature.xml"  selfVersion="3.1.0" featureIds="org.eclipse.rcp.source,3.1.0," pluginIds="org.eclipse.platform.doc.isv,3.1.0,org.eclipse.platform.source,3.1.0,org.eclipse.platform.source.linux.gtk.ia64,3.1.0,org.eclipse.platform.source.hpux.motif.ia64_32,3.1.0,org.eclipse.platform.source.qnx.photon.x86,3.1.0,org.eclipse.platform.source.linux.gtk.ppc,3.1.0,org.eclipse.platform.source.hpux.motif.PA_RISC,3.1.0,org.eclipse.platform.source.hpux.motif.ia64,3.1.0,org.eclipse.platform.source.linux.gtk.x86_64,3.1.0,org.eclipse.platform.source.linux.gtk.ppc64,3.1.0,org.eclipse.platform.source.macosx.carbon.ppc,3.1.0,org.eclipse.platform.source.linux.gtk.x86,3.1.0,org.eclipse.platform.source.win32.win32.x86,3.1.0,org.eclipse.platform.source.linux.motif.x86,3.1.0,"/>
++		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.platform.source_3.1.0/feature.xml"  selfVersion="3.1.0" featureIds="org.eclipse.rcp.source,3.1.0," pluginIds="org.eclipse.platform.doc.isv,3.1.0,org.eclipse.platform.source,3.1.0,org.eclipse.platform.source.linux.gtk.ia64,3.1.0,org.eclipse.platform.source.hpux.motif.ia64_32,3.1.0,org.eclipse.platform.source.qnx.photon.x86,3.1.0,org.eclipse.platform.source.linux.gtk.ppc,3.1.0,org.eclipse.platform.source.hpux.motif.PA_RISC,3.1.0,org.eclipse.platform.source.hpux.motif.ia64,3.1.0,org.eclipse.platform.source.linux.gtk.x86_64,3.1.0,org.eclipse.platform.source.freebsd.gtk.amd64,3.1.0,org.eclipse.platform.source.linux.gtk.ppc64,3.1.0,org.eclipse.platform.source.macosx.carbon.ppc,3.1.0,org.eclipse.platform.source.linux.gtk.x86,3.1.0,org.eclipse.platform.source.freebsd.gtk.x86,3.1.0,org.eclipse.platform.source.win32.win32.x86,3.1.0,org.eclipse.platform.source.linux.motif.x86,3.1.0,org.eclipse.platform.source.freebsd.motif.x86,3.1.0,"/>
+ 		<antcall target="rootFiles${os}_${ws}_${arch}"/>
+ 	</target>
+ 	<target name="rootFileswin32_win32_x86">
+ 	</target>
+ 	<target name="rootFileslinux_gtk_x86">
+ 	</target>
++	<target name="rootFilesfreebsd_gtk_x86">
++	</target>
+ 	<target name="rootFileslinux_gtk_ppc">
+ 	</target>
+ 	<target name="rootFileslinux_gtk_ppc64">
+ 	</target>
+ 	<target name="rootFileslinux_gtk_x86_64">
+ 	</target>
++	<target name="rootFilesfreebsd_gtk_amd64">
++	</target>
+ 	<target name="rootFileslinux_gtk_ia64">
+ 	</target>
+ 	<target name="rootFileslinux_motif_x86">
++	</target>
++	<target name="rootFilesfreebsd_motif_x86">
+ 	</target>
+ 	<target name="rootFilessolaris_motif_sparc">
+ 	</target>

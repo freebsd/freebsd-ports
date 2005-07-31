@@ -13,14 +13,16 @@ MASTER_SITE_SUBDIR=	S-${PORTVERSION}-200505131415
 DISTNAME=	${PORTNAME}-sourceBuild-srcIncluded-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	freebsd-ports@varju.ca
+MAINTAINER=	java@freebsd.org
 COMMENT=	An open extensible IDE for anything and nothing in particular
+
+IGNORE=		"Out-of-date, use java/eclipse instead for now"
 
 BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
 		zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+=	${EXTRACT_DEPENDS}
 
-CONFLICTS=	eclipse-3.0*
+CONFLICTS=	eclipse-3.1*
 LATEST_LINK=	${PORTNAME}-devel
 
 ONLY_FOR_ARCHS=	i386 amd64

@@ -1,0 +1,53 @@
+--- plugins/org.eclipse.core.resources.freebsd/build.xml.orig	Wed Jul 27 09:39:39 2005
++++ plugins/org.eclipse.core.resources.freebsd/build.xml	Wed Jul 27 22:09:53 2005
+@@ -19,6 +19,20 @@
+ 		</fileset>
+ 	</path>
+ 	<property name="bootclasspath" refid="path_bootclasspath"/>
++	<!-- The properties ${eclipse-home} ${jdk-path} should be passed into this script -->
++	<!-- Set a meaningful default value for when it is not. -->
++	<property name="eclipse-home" value="${basedir}/.."/>
++	<property environment="env" />
++	<property name="CC" value="${env.CC}"/>
++	<property name="jdk-path" value="${env.JAVA_HOME}"/>
++	<property name="destination" value="${eclipse-home}/org.eclipse.core.resources.freebsd/os/freebsd/x86/"/>
++	<property name="obj-path" value="${eclipse-home}/org.eclipse.core.resources/src/"/>
++	<property name="src-path" value="${eclipse-home}/org.eclipse.core.resources.freebsd/src/"/>  
++
++	<!-- sets the properties -->
++	<property name="library-name" value="libcore_3_1_0"/>  
++	<property name="library-platform" value="so"/>    
++	<property name="library-file" value="${library-name}.${library-platform}"/>
+ 
+ 	<target name="init" depends="properties">
+ 		<condition property="pluginTemp" value="${buildTempFolder}/plugins">
+@@ -50,6 +64,29 @@
+ 	</target>
+ 
+ 	<target name="build.jars" depends="init" description="Build all the jars for the plug-in: org.eclipse.core.resources.freebsd.">
++    <echo message="Building ${library-file}"/>
++
++    <property name="header-path" value="${jdk-path}/include"/>
++    <property name="header-freebsd-path" value="${header-path}/freebsd" />
++
++	<echo message="${CC} -o  ${library-file} -shared -fPIC -I${src-path} -I${header-path} -I${header-freebsd-path} ${library-file} -static -lc"/>
++
++    <apply executable="${CC}" dest="${eclipse-home}/" parallel="false">
++      <arg value="-o"/>
++      <arg value="${library-file}"/>
++      <arg value="-shared"/>
++      <arg value="-fPIC"/>
++      <arg value="-I${src-path}"/>
++      <arg value="-I${header-path}"/>      
++      <arg value="-I${header-freebsd-path}"/>  
++	  <srcfile/>
++	  <arg value="-static"/>           
++      <arg value="-lc"/>	  
++      <fileset dir="${src-path}" includes="*.c"/>
++      <mapper type="glob" from="*.c" to="*.o"/>
++    </apply>
++    
++	<move file="${library-file}" todir="${destination}"/>
+ 	</target>
+ 
+ 	<target name="build.sources" depends="init">

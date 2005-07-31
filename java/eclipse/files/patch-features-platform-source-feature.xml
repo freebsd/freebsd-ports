@@ -1,0 +1,15 @@
+--- features/org.eclipse.platform.source/feature.xml.orig	Mon Jun 27 21:52:50 2005
++++ features/org.eclipse.platform.source/feature.xml	Thu Jul 14 00:54:19 2005
+@@ -20,9 +20,12 @@
+ 	<plugin ws="motif"  os="hpux" fragment="true" arch="PA_RISC" download-size="0" install-size="0" id="org.eclipse.platform.source.hpux.motif.PA_RISC" version="3.1.0"/>
+ 	<plugin ws="motif"  os="hpux" fragment="true" arch="ia64" download-size="0" install-size="0" id="org.eclipse.platform.source.hpux.motif.ia64" version="3.1.0"/>
+ 	<plugin ws="gtk"  os="linux" fragment="true" arch="x86_64" download-size="0" install-size="0" id="org.eclipse.platform.source.linux.gtk.x86_64" version="3.1.0"/>
++	<plugin ws="gtk"  os="freebsd" fragment="true" arch="amd64" download-size="0" install-size="0" id="org.eclipse.platform.source.freebsd.gtk.amd64" version="3.1.0"/>
+ 	<plugin ws="gtk"  os="linux" fragment="true" arch="ppc64" download-size="0" install-size="0" id="org.eclipse.platform.source.linux.gtk.ppc64" version="3.1.0"/>
+ 	<plugin ws="carbon"  os="macosx" fragment="true" arch="ppc" download-size="0" install-size="0" id="org.eclipse.platform.source.macosx.carbon.ppc" version="3.1.0"/>
+ 	<plugin ws="gtk"  os="linux" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.linux.gtk.x86" version="3.1.0"/>
++	<plugin ws="gtk"  os="freebsd" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.freebsd.gtk.x86" version="3.1.0"/>
+ 	<plugin ws="win32"  os="win32" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.win32.win32.x86" version="3.1.0"/>
+ 	<plugin ws="motif"  os="linux" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.linux.motif.x86" version="3.1.0"/>
++	<plugin ws="motif"  os="freebsd" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.freebsd.motif.x86" version="3.1.0"/>
+ </feature>
