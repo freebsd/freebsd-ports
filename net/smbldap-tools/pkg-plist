@@ -2,8 +2,8 @@ sbin/smbldap-groupadd
 sbin/smbldap-groupdel
 sbin/smbldap-groupmod
 sbin/smbldap-groupshow
-sbin/smbldap-migrate-accounts
-sbin/smbldap-migrate-groups
+sbin/smbldap-migrate-pwdump-accounts
+sbin/smbldap-migrate-pwdump-groups
 sbin/smbldap-migrate-unix-accounts
 sbin/smbldap-migrate-unix-groups
 sbin/smbldap-passwd
@@ -21,6 +21,24 @@ sbin/smbldap-usershow
 %%EXAMPLESDIR%%/smb.conf
 %%EXAMPLESDIR%%/configure.pl
 %%SITE_PERL%%/smbldap_tools.pm
+%%PORTDOCS%%%%DOCSDIR%%/smbldap-tools.pdf
+%%PORTDOCS%%%%DOCSDIR%%/html/contents_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/next_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/previous_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/smbldap-tools.html
+%%PORTDOCS%%%%DOCSDIR%%/html/smbldap-tools001.html
+%%PORTDOCS%%%%DOCSDIR%%/html/smbldap-tools002.html
+%%PORTDOCS%%%%DOCSDIR%%/html/smbldap-tools003.html
+%%PORTDOCS%%%%DOCSDIR%%/html/smbldap-tools004.html
+%%PORTDOCS%%%%DOCSDIR%%/html/smbldap-tools005.html
+%%PORTDOCS%%%%DOCSDIR%%/html/smbldap-tools006.html
+%%PORTDOCS%%%%DOCSDIR%%/html/smbldap-tools007.html
+%%PORTDOCS%%%%DOCSDIR%%/html/smbldap-tools008.html
+%%PORTDOCS%%%%DOCSDIR%%/html/smbldap-tools009.html
+%%PORTDOCS%%%%DOCSDIR%%/html/smbldap-tools010.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/etc/smbldap-tools 2> /dev/null || true
 @dirrm %%EXAMPLESDIR%%/etc
 @dirrm %%EXAMPLESDIR%%
