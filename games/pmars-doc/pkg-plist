@@ -1,0 +1,19 @@
+%%DOCSDIR%%/README
+%%DOCSDIR%%/config/94x.opt
+%%DOCSDIR%%/config/icws.opt
+%%DOCSDIR%%/config/mw.mac
+%%DOCSDIR%%/config/pmars.mac
+%%DOCSDIR%%/config/x.opt
+%%DOCSDIR%%/doc/corewar-faq.html
+%%DOCSDIR%%/doc/primer.94
+%%DOCSDIR%%/doc/primer.cdb
+%%DOCSDIR%%/doc/redcode.ref
+%%DOCSDIR%%/warriors/aeka.red
+%%DOCSDIR%%/warriors/flashpaper.red
+%%DOCSDIR%%/warriors/pspace.red
+%%DOCSDIR%%/warriors/rave.red
+%%DOCSDIR%%/warriors/validate.red
+@dirrm %%DOCSDIR%%/config
+@dirrm %%DOCSDIR%%/doc
+@dirrm %%DOCSDIR%%/warriors
+@dirrm %%DOCSDIR%%
