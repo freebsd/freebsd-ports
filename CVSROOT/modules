@@ -4937,7 +4937,9 @@ koffice-i18n-se	ports/misc/koffice-i18n-se
 koffice-i18n-sk	ports/misc/koffice-i18n-sk
 koffice-i18n-sl	ports/misc/koffice-i18n-sl
 koffice-i18n-sr	ports/misc/koffice-i18n-sr
+koffice-i18n-sr@Latn	ports/misc/koffice-i18n-sr@Latn
 koffice-i18n-sv	ports/misc/koffice-i18n-sv
+koffice-i18n-ta	ports/misc/koffice-i18n-ta
 koffice-i18n-tg	ports/misc/koffice-i18n-tg
 koffice-i18n-th	ports/misc/koffice-i18n-th
 koffice-i18n-tr	ports/misc/koffice-i18n-tr
