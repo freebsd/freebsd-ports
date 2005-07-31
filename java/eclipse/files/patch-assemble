@@ -1,0 +1,39 @@
+--- assemble.org.eclipse.sdk.linux.motif.x86.xml.orig	Wed Jul 13 00:36:40 2005
++++ assemble.org.eclipse.sdk.linux.motif.x86.xml	Wed Jul 13 00:38:19 2005
+@@ -610,10 +610,5 @@
+ 		</exec>
+ 		<move file="${archiveFullPath}" tofile="${assemblyTempDir}/${collectingFolder}/tmp.tar"/>
+ 		<gzip src="${assemblyTempDir}/${collectingFolder}/tmp.tar" zipfile="${archiveFullPath}"/>
+-		<exec executable="rm">
+-			<arg line="-rf"/>
+-			<arg line="'${assemblyTempDir}'"/>
+-		</exec>
+-		<delete dir="${assemblyTempDir}"/>
+ 	</target>
+ </project>
+--- assemble.org.eclipse.sdk.linux.gtk.x86.xml.orig	Wed Jul 13 00:40:52 2005
++++ assemble.org.eclipse.sdk.linux.gtk.x86.xml	Wed Jul 13 00:40:58 2005
+@@ -610,10 +610,5 @@
+ 		</exec>
+ 		<move file="${archiveFullPath}" tofile="${assemblyTempDir}/${collectingFolder}/tmp.tar"/>
+ 		<gzip src="${assemblyTempDir}/${collectingFolder}/tmp.tar" zipfile="${archiveFullPath}"/>
+-		<exec executable="rm">
+-			<arg line="-rf"/>
+-			<arg line="'${assemblyTempDir}'"/>
+-		</exec>
+-		<delete dir="${assemblyTempDir}"/>
+ 	</target>
+ </project>
+--- assemble.org.eclipse.sdk.linux.gtk.x86_64.xml.orig	Wed Jul 13 00:43:03 2005
++++ assemble.org.eclipse.sdk.linux.gtk.x86_64.xml	Wed Jul 13 00:43:07 2005
+@@ -610,10 +610,5 @@
+ 		</exec>
+ 		<move file="${archiveFullPath}" tofile="${assemblyTempDir}/${collectingFolder}/tmp.tar"/>
+ 		<gzip src="${assemblyTempDir}/${collectingFolder}/tmp.tar" zipfile="${archiveFullPath}"/>
+-		<exec executable="rm">
+-			<arg line="-rf"/>
+-			<arg line="'${assemblyTempDir}'"/>
+-		</exec>
+-		<delete dir="${assemblyTempDir}"/>
+ 	</target>
+ </project>

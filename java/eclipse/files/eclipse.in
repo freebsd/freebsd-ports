@@ -10,6 +10,8 @@
 DEFAULT_JAVA_HOME=%%JAVA_HOME%%
 ECLIPSE_HOME=%%ECLIPSE_HOME%%
 DEFAULT_JAVA_CMD=java
+MOZILLA_FIVE_HOME=%%X11BASE%%/lib/%%BROWSER%%
+LD_LIBRARY_PATH=$MOZILLA_FIVE_HOME:$LD_LIBRARY_PATH
 
 
 #-----------------------------------------------------------------------------

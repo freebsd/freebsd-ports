@@ -1,9 +1,0 @@
---- features/org.eclipse.platform.source/feature.xml.orig	Sun Oct 17 22:47:27 2004
-+++ features/org.eclipse.platform.source/feature.xml	Sun Oct 17 22:57:32 2004
-@@ -23,4 +23,6 @@
- 	<plugin ws="motif"  os="solaris" fragment="true" arch="sparc" download-size="0" install-size="0" id="org.eclipse.platform.source.solaris.motif.sparc" version="3.0.1"/>
- 	<plugin ws="gtk"  os="linux" fragment="true" arch="amd64" download-size="0" install-size="0" id="org.eclipse.platform.source.linux.gtk.amd64" version="3.0.1"/>
- 	<plugin ws="motif"  os="linux" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.linux.motif.x86" version="3.0.1"/>
-+	<plugin ws="motif"  os="freebsd" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.freebsd.motif.x86" version="3.0.1"/>
-+	<plugin ws="gtk"  os="freebsd" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.freebsd.gtk.x86" version="3.0.1"/>
- </feature>

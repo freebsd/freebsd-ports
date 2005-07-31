@@ -1,0 +1,30 @@
+--- build.xml.orig	Mon Jun 27 21:55:26 2005
++++ build.xml	Sun Jul 17 18:50:50 2005
+@@ -63,11 +63,11 @@
+ 		<!--unzip launcher -->
+ 		<property name="launcherlibs" value="${buildDirectory}/launchertmp" />
+ 		<mkdir dir="${launcherlibs}" />
+-		<unzip dest="${launcherlibs}">
+-			<fileset dir="${buildDirectory}/plugins/org.eclipse.platform.source/src/">
+-				<include name="org.eclipse.platform_*/launchersrc.zip" />
++		<copy todir="${launcherlibs}">
++			<fileset dir="${buildDirectory}/features/org.eclipse.platform.launchers">
++				<include name ="**"/>
+ 			</fileset>
+-		</unzip>
++		</copy>
+		<exec dir="${launcherlibs}/library/${installWs}/" executable="sh" failonerror="true">
+ 			<arg line="build.sh" />
+ 		</exec>
+@@ -265,7 +265,10 @@
+ 
+ 		<!--used to add doc plug-ins to result after initial assembly-->
+ 		<condition property="archive.format" value="tar">
+-			<equals arg1="${installOs}" arg2="linux" />
++			<or>
++				<equals arg1="${installOs}" arg2="linux" />
++				<equals arg1="${installOs}" arg2="freebsd" />
++			</or>
+ 		</condition>
+ 		<property name="archive.format" value="zip" />
+ 	</target>
