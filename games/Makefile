@@ -183,7 +183,6 @@
     SUBDIR += gniffel
     SUBDIR += gnmm
     SUBDIR += gno3dtet
-    SUBDIR += gnocatan
     SUBDIR += gnome-music-quiz
     SUBDIR += gnomeattacks
     SUBDIR += gnomebreakout
@@ -391,6 +390,7 @@
     SUBDIR += phpua-ut
     SUBDIR += phpua-ut2003
     SUBDIR += pinball
+    SUBDIR += pioneers
     SUBDIR += pipenightdreams
     SUBDIR += pmars
     SUBDIR += pmars-doc
