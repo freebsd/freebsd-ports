@@ -7,7 +7,7 @@
 
 PORTNAME=	slony1
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://developer.postgresql.org/~wieck/slony1/download/
 
@@ -32,7 +32,7 @@ OPTIONS=	PERLTOOLS "Install perl configuration tools" Off
 
 .if defined(WITH_PERLTOOLS)
 USE_PERL5_RUN=	yes
-CONFIGURE_ARGS+= --with-perltools=${LOCALBASE}/sbin
+CONFIGURE_ARGS+=	--with-perltools=${LOCALBASE}/sbin
 PLIST_SUB+=	PERLTOOLS=""
 SUB_LIST+=	PERLTOOLS=""
 .else
@@ -57,8 +57,10 @@ post-install:
 .if ! defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/adminguide
-	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${WRKSRC}/INSTALL ${WRKSRC}/SAMPLE ${WRKSRC}/README ${WRKSRC}/UPGRADING ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/howto
+	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${WRKSRC}/INSTALL ${WRKSRC}/SAMPLE ${WRKSRC}/README ${WRKSRC}/HISTORY-1.1 ${WRKSRC}/UPGRADING ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*/*.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/howto/*.txt ${WRKSRC}/doc/howto/*.html ${DOCSDIR}/howto/
 	${INSTALL_DATA} ${WRKSRC}/doc/adminguide/prebuilt/*.html ${DOCSDIR}/adminguide/
 .endif
 	@${INSTALL_SCRIPT} ${WRKDIR}/slon-mkservice.sh ${PREFIX}/sbin/slon-mkservice

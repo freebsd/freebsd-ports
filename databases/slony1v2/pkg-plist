@@ -39,8 +39,17 @@ share/postgresql/xxid.v74.sql
 %%PORTDOCS%%%%DOCSDIR%%/SAMPLE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY-1.1
 %%PORTDOCS%%%%DOCSDIR%%/Slony-I-concept.pdf
 %%PORTDOCS%%%%DOCSDIR%%/Slony-I-implementation.pdf
+%%PORTDOCS%%%%DOCSDIR%%/howto/helpitsbroken.txt
+%%PORTDOCS%%%%DOCSDIR%%/howto/slony-I-failover.txt
+%%PORTDOCS%%%%DOCSDIR%%/howto/randomfacts.txt
+%%PORTDOCS%%%%DOCSDIR%%/howto/slony-I-install.txt
+%%PORTDOCS%%%%DOCSDIR%%/howto/schemadoc.html
+%%PORTDOCS%%%%DOCSDIR%%/howto/slonik_commands.html
+%%PORTDOCS%%%%DOCSDIR%%/howto/slony-I-overview.txt
+%%PORTDOCS%%%%DOCSDIR%%/howto/slony-I-basic-mstr-slv.txt
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/LEGALNOTICE.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/addthings.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/admconninfo.html
@@ -236,4 +245,5 @@ share/postgresql/xxid.v74.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/versionupgrade.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/view.sl-seqlastvalue.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/adminguide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/howto
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
