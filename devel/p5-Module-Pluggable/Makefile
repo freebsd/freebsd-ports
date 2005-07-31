@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Pluggable
-PORTVERSION=	2.9
+PORTVERSION=	2.95
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Module
@@ -25,6 +25,6 @@ MAN3=		Module::Pluggable.3
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} <= 500503
 post-patch:
-	@${PERL} -pi -e '$$_ = qq(    local \$$^W;\n) if /no warnings/' ${WRKSRC}/lib/Module/Pluggable.pm
+	@${PERL} -pi -e '$$_ = qq(    local \$$^W;\n) if m|no warnings|' ${WRKSRC}/lib/Module/Pluggable.pm
 .endif
 .include <bsd.port.post.mk>
