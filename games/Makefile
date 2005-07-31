@@ -393,6 +393,7 @@
     SUBDIR += pinball
     SUBDIR += pipenightdreams
     SUBDIR += pmars
+    SUBDIR += pmars-sdl
     SUBDIR += polypuzzle
     SUBDIR += powermanga
     SUBDIR += powerpak

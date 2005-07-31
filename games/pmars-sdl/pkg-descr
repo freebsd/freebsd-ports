@@ -1,0 +1,17 @@
+Port of pMARS using the Simple Directmedia Library. Currently the port is in
+beta testing stage testing and bug reports/feature requests are more than
+welcome. The latest release is version 0.9.2-5.
+
+Features/fixes:
+
+* Environment sensitive. Now looks for macro files in the directory specified
+  by the environment variable PMARSHOME if they are not found in the current
+  directory.
+* Both Win32 and X11 supported.
+* Command line history using Shift-Up and Shift-Down keys.
+* Rewrote text display and screen update routines for faster text panels (for
+  slow computers like mine.)
+* BIG core cells for those tiny cores. (Choose a display mode larger than 2,
+  e.g. -v 134.)
+
+WWW: http://www.cs.helsinki.fi/u/jpihlaja/cw/pmars-sdl/
