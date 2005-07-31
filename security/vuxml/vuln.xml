@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b1e8c810-01d0-11da-bc08-0001020eed82">
+    <topic>sylpheed -- MIME-encoded file name buffer overflow
+      vulnerability</topic>
+    <affects>
+      <package>
+	<name>sylpheed</name>
+	<name>sylpheed-gtk2</name>
+	<name>sylpheed-claws</name>
+	<range><lt>1.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Sylpheed is vulnerable to a buffer overflow when displaying
+	  emails with attachments that have MIME-encoded file names.
+	  This could be used by a remote attacker to crash sylpheed
+	  potentially allowing execution of arbitrary code with the
+	  permissions of the user running sylpheed.</p>
+      </body>
+    </description>
+    <references>
+      <bid>12934</bid>
+      <cvename>CAN-2005-0926</cvename>
+      <url>http://sylpheed.good-day.net/changelog.html.en</url>
+    </references>
+    <dates>
+      <discovery>2005-03-29</discovery>
+      <entry>2005-07-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="58247a96-01c8-11da-bc08-0001020eed82">
     <topic>phpmyadmin -- cross site scripting vulnerability</topic>
     <affects>
