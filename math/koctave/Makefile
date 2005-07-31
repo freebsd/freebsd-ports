@@ -9,16 +9,12 @@ PORTNAME=	koctave3
 PORTVERSION=	0.65
 PORTREVISION=	3
 CATEGORIES=	math kde
-MASTER_SITES=	http://bubben.homelinux.net/~matti/koctave/
+MASTER_SITES=	http://athlone.ath.cx/~matti/kde/koctave/
 
 MAINTAINER=	kay_lehmann@web.de
 COMMENT=	KDEGUI for octave
 
 RUN_DEPENDS=	octave:${PORTSDIR}/math/octave
-
-BROKEN=		Unfetchable
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
 
 USE_BZIP2=	yes
 USE_INC_LIBTOOL_VER=13
