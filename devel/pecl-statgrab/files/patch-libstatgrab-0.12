@@ -1,0 +1,12 @@
+diff -ruN Statgrab-0.4/statgrab.c Statgrab-0.4.new/statgrab.c
+--- statgrab.c	Tue Apr  5 16:00:34 2005
++++ statgrab.c	Sat Jul 30 12:13:18 2005
+@@ -553,7 +553,7 @@
+ 		array_init(tmpz);
+ 
+ 		PHP_SG_ADD_LVAL(tmpz, "speed", ifs->speed)
+-		PHP_SG_ADD_LVAL(tmpz, "duplex", ifs->dup)
++		PHP_SG_ADD_LVAL(tmpz, "duplex", ifs->duplex)
+ 		add_assoc_bool(tmpz, "active", ifs->up);
+ 
+ 		add_assoc_zval(return_value, ifs->interface_name, tmpz);
