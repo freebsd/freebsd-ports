@@ -34,6 +34,10 @@ DIRTCL=		demoapp ngsolve ngtcltk
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		"internal gcc error (Bug 23159)"
+.endif
+
 TK_VER?=	8.4
 SHORT_TK_VER=	${TK_VER:S/.//}
 
