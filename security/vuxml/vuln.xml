@@ -32,6 +32,36 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="58247a96-01c8-11da-bc08-0001020eed82">
+    <topic>phpmyadmin -- cross site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<name>phpMyAdmin</name>
+	<range><lt>2.6.2.r1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A phpMyAdmin security announcement reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-3">
+	  <p>The convcharset parameter was not correctly validated,
+	    opening the door to a XSS attack. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>12982</bid>
+      <cvename>CAN-2005-0992</cvename>
+      <mlist msgid="4f9e4516050404101223fbdeed@mail.gmail.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111264361622660</mlist>
+      <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-3</url>
+    </references>
+    <dates>
+      <discovery>2005-04-03</discovery>
+      <entry>2005-07-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8375a73f-01bf-11da-bc08-0001020eed82">
     <topic>gnupg -- OpenPGP symmetric encryption vulnerability</topic>
     <affects>
