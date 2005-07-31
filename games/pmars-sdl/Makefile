@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-5
 MAINTAINER=	alejandro@varnet.biz
 COMMENT=	Port of pMARS using the Simple Directmedia Library
 
-USE_GCC=	3.1+
+USE_GCC=	3.2+
 USE_SDL=	sdl
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
