@@ -1,0 +1,6 @@
+The bpfstat utility will print statistics associated with active bpf(4)
+devices.  These statistics contain information about device state as well
+as packets which have been received, dropped or matched by the bpf filter
+program.
+
+WWW: http://people.freebsd.org/~csjp/

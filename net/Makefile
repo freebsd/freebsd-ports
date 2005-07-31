@@ -54,6 +54,7 @@
     SUBDIR += boclient
     SUBDIR += boinc-client
     SUBDIR += bounce
+    SUBDIR += bpfstat
     SUBDIR += brutecopy
     SUBDIR += bsdproxy
     SUBDIR += bsflite
