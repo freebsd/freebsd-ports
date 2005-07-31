@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	elinks
-PORTVERSION=	0.10.3
+PORTVERSION=	0.10.5
 CATEGORIES=	www
 MASTER_SITES=	http://keyserver.kjsl.com/~jharris/distfiles/ \
 		http://elinks.or.cz/download/
@@ -26,6 +26,10 @@ USE_OPENSSL=	yes
 #USE_ICONV=	yes
 #CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
 CONFIGURE_ARGS+=	--disable-nls
+
+.if defined(WITH_256COLORS)
+CONFIGURE_ARGS+=	--enable-256-colors
+.endif
 
 MAN1=		elinks.1
 MAN5=		elinkskeys.5 elinks.conf.5
