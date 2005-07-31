@@ -171,12 +171,18 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>tiff</name>
-	<name>linux-tiff</name>
 	<range><lt>3.7.3</lt></range>
+      </package>
+      <package>
+	<name>linux-tiff</name>
+	<range><lt>3.6.1_3</lt></range>
       </package>
       <package>
 	<name>pdflib</name>
 	<name>pdflib-perl</name>
+	<range><lt>6.0.1_2</lt></range>
+      </package>
+      <package>
 	<name>fractorama</name>
 	<name>gdal</name>
 	<name>iv</name>
@@ -210,6 +216,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-05-10</discovery>
       <entry>2005-07-30</entry>
+      <modified>2005-08-01</modified>
     </dates>
   </vuln>
 
