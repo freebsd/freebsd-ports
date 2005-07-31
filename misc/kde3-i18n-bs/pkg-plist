@@ -130,6 +130,7 @@ share/locale/bs/LC_MESSAGES/kcmperformance.mo
 share/locale/bs/LC_MESSAGES/kcmprintmgr.mo
 share/locale/bs/LC_MESSAGES/kcmsamba.mo
 share/locale/bs/LC_MESSAGES/kcmscreensaver.mo
+share/locale/bs/LC_MESSAGES/kcmshell.mo
 share/locale/bs/LC_MESSAGES/kcmsmartcard.mo
 share/locale/bs/LC_MESSAGES/kcmsmserver.mo
 share/locale/bs/LC_MESSAGES/kcmsocks.mo
@@ -325,6 +326,10 @@ share/locale/bs/LC_MESSAGES/krdb.mo
 share/locale/bs/LC_MESSAGES/krdc.mo
 share/locale/bs/LC_MESSAGES/kreadconfig.mo
 share/locale/bs/LC_MESSAGES/krec.mo
+share/locale/bs/LC_MESSAGES/kres_exchange.mo
+share/locale/bs/LC_MESSAGES/kres_imap.mo
+share/locale/bs/LC_MESSAGES/kres_remote.mo
+share/locale/bs/LC_MESSAGES/kres_xmlrpc.mo
 share/locale/bs/LC_MESSAGES/krfb.mo
 share/locale/bs/LC_MESSAGES/kruler.mo
 share/locale/bs/LC_MESSAGES/krunapplet.mo

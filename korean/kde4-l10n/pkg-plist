@@ -8,7 +8,11 @@ share/doc/HTML/ko/common/6.png
 share/doc/HTML/ko/common/7.png
 share/doc/HTML/ko/common/8.png
 share/doc/HTML/ko/common/9.png
+share/doc/HTML/ko/common/appheader.html
 share/doc/HTML/ko/common/artistic-license.html
+share/doc/HTML/ko/common/bottom-left.png
+share/doc/HTML/ko/common/bottom-middle.png
+share/doc/HTML/ko/common/bottom-right.png
 share/doc/HTML/ko/common/bottom1.png
 share/doc/HTML/ko/common/bottom2.png
 share/doc/HTML/ko/common/bsd-license.html
@@ -33,6 +37,8 @@ share/doc/HTML/ko/common/kde-default.css
 share/doc/HTML/ko/common/kde-localised.css
 share/doc/HTML/ko/common/kde-localised.css.template
 share/doc/HTML/ko/common/kde-web.css
+share/doc/HTML/ko/common/kde_logo.png
+share/doc/HTML/ko/common/kde_logo_bg.png
 share/doc/HTML/ko/common/kmenu.png
 share/doc/HTML/ko/common/lgpl-license
 share/doc/HTML/ko/common/lgpl-license.html
@@ -41,6 +47,9 @@ share/doc/HTML/ko/common/mainfooter.html
 share/doc/HTML/ko/common/mainheader.html
 share/doc/HTML/ko/common/qpl-license.html
 share/doc/HTML/ko/common/shadow.png
+share/doc/HTML/ko/common/top-left.png
+share/doc/HTML/ko/common/top-middle.png
+share/doc/HTML/ko/common/top-right-konqueror.png
 share/doc/HTML/ko/common/web-docbottom.png
 share/doc/HTML/ko/common/web-doctop.png
 share/doc/HTML/ko/common/x11-license.html
@@ -233,5 +242,9 @@ share/locale/ko/LC_MESSAGES/taskbarextension.mo
 share/locale/ko/charset
 share/locale/ko/entry.desktop
 share/locale/ko/flag.png
+@dirrm share/locale/ko/LC_MESSAGES
+@dirrm share/locale/ko
+@dirrm share/locale
 @dirrm share/doc/HTML/ko/common
 @dirrm share/doc/HTML/ko
+@dirrm share/doc/HTML

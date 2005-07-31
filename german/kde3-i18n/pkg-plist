@@ -32,11 +32,13 @@ share/doc/HTML/de/KRegExpEditor/index.docbook
 share/doc/HTML/de/amor/common
 share/doc/HTML/de/amor/index.cache.bz2
 share/doc/HTML/de/amor/index.docbook
+share/doc/HTML/de/amor/man-amor.6.docbook
 share/doc/HTML/de/ark/common
 share/doc/HTML/de/ark/index.cache.bz2
 share/doc/HTML/de/ark/index.docbook
 share/doc/HTML/de/artsbuilder/apis.docbook
 share/doc/HTML/de/artsbuilder/artsbuilder.docbook
+share/doc/HTML/de/artsbuilder/common
 share/doc/HTML/de/artsbuilder/detail.docbook
 share/doc/HTML/de/artsbuilder/digitalaudio.docbook
 share/doc/HTML/de/artsbuilder/faq.docbook
@@ -44,6 +46,8 @@ share/doc/HTML/de/artsbuilder/future.docbook
 share/doc/HTML/de/artsbuilder/glossary.docbook
 share/doc/HTML/de/artsbuilder/gui.docbook
 share/doc/HTML/de/artsbuilder/helping.docbook
+share/doc/HTML/de/artsbuilder/index.cache.bz2
+share/doc/HTML/de/artsbuilder/index.docbook
 share/doc/HTML/de/artsbuilder/mcop.docbook
 share/doc/HTML/de/artsbuilder/midi.docbook
 share/doc/HTML/de/artsbuilder/midiintro.docbook
@@ -185,6 +189,7 @@ share/doc/HTML/de/kamera/index.docbook
 share/doc/HTML/de/kandy/common
 share/doc/HTML/de/kandy/index.cache.bz2
 share/doc/HTML/de/kandy/index.docbook
+share/doc/HTML/de/kappfinder/man-kappfinder.1.docbook
 share/doc/HTML/de/karm/common
 share/doc/HTML/de/karm/index.cache.bz2
 share/doc/HTML/de/karm/index.docbook
@@ -203,14 +208,11 @@ share/doc/HTML/de/kate-plugins/textfilter.docbook
 share/doc/HTML/de/kate-plugins/xmlcheck.docbook
 share/doc/HTML/de/kate-plugins/xmltools.docbook
 share/doc/HTML/de/kate/advanced.docbook
-share/doc/HTML/de/kate/common
 share/doc/HTML/de/kate/configdialog01.png
 share/doc/HTML/de/kate/configdialog02.png
 share/doc/HTML/de/kate/configuring.docbook
 share/doc/HTML/de/kate/fundamentals.docbook
 share/doc/HTML/de/kate/highlighting.docbook
-share/doc/HTML/de/kate/index.cache.bz2
-share/doc/HTML/de/kate/index.docbook
 share/doc/HTML/de/kate/kate.png
 share/doc/HTML/de/kate/mdi.docbook
 share/doc/HTML/de/kate/menus.docbook
@@ -435,9 +437,6 @@ share/doc/HTML/de/kcontrol/useragent/index.docbook
 share/doc/HTML/de/kcontrol/windowmanagement/common
 share/doc/HTML/de/kcontrol/windowmanagement/index.cache.bz2
 share/doc/HTML/de/kcontrol/windowmanagement/index.docbook
-share/doc/HTML/de/kcpuload/common
-share/doc/HTML/de/kcpuload/index.cache.bz2
-share/doc/HTML/de/kcpuload/index.docbook
 share/doc/HTML/de/kcron/common
 share/doc/HTML/de/kcron/index.cache.bz2
 share/doc/HTML/de/kcron/index.docbook
@@ -452,6 +451,11 @@ share/doc/HTML/de/kdcop/index.docbook
 share/doc/HTML/de/kdebugdialog/common
 share/doc/HTML/de/kdebugdialog/index.cache.bz2
 share/doc/HTML/de/kdebugdialog/index.docbook
+share/doc/HTML/de/kdelibs/man-artsmessage.1.docbook
+share/doc/HTML/de/kdelibs/man-checkXML.1.docbook
+share/doc/HTML/de/kdelibs/man-dcop.1.docbook
+share/doc/HTML/de/kdelibs/man-kdeoptions.7.docbook
+share/doc/HTML/de/kdelibs/man-qtoptions.7.docbook
 share/doc/HTML/de/kdeprint/add-printer-wiz.docbook
 share/doc/HTML/de/kdeprint/common
 share/doc/HTML/de/kdeprint/cups-config.docbook
@@ -641,18 +645,6 @@ share/doc/HTML/de/kig/test_run_macro.png
 share/doc/HTML/de/kig/text_label_attaching.png
 share/doc/HTML/de/kig/text_label_wizard.png
 share/doc/HTML/de/kig/text_label_wizard__select_property.png
-share/doc/HTML/de/kimdaba/browsing.docbook
-share/doc/HTML/de/kimdaba/common
-share/doc/HTML/de/kimdaba/generating-html.docbook
-share/doc/HTML/de/kimdaba/importexport.docbook
-share/doc/HTML/de/kimdaba/index.cache.bz2
-share/doc/HTML/de/kimdaba/index.docbook
-share/doc/HTML/de/kimdaba/introduction.docbook
-share/doc/HTML/de/kimdaba/options.docbook
-share/doc/HTML/de/kimdaba/plugins.docbook
-share/doc/HTML/de/kimdaba/setting-properties.docbook
-share/doc/HTML/de/kimdaba/thumbnail-view.docbook
-share/doc/HTML/de/kimdaba/viewer.docbook
 share/doc/HTML/de/kinfocenter/blockdevices/common
 share/doc/HTML/de/kinfocenter/blockdevices/index.cache.bz2
 share/doc/HTML/de/kinfocenter/blockdevices/index.docbook
@@ -844,9 +836,6 @@ share/doc/HTML/de/kmix/index.docbook
 share/doc/HTML/de/kmix/kmix-channel-playback.png
 share/doc/HTML/de/kmix/kmix-channel-record.png
 share/doc/HTML/de/kmix/kmix-window.png
-share/doc/HTML/de/kmldonkey/common
-share/doc/HTML/de/kmldonkey/index.cache.bz2
-share/doc/HTML/de/kmldonkey/index.docbook
 share/doc/HTML/de/kmoon/common
 share/doc/HTML/de/kmoon/index.cache.bz2
 share/doc/HTML/de/kmoon/index.docbook
@@ -1015,6 +1004,7 @@ share/doc/HTML/de/konqueror/index.cache.bz2
 share/doc/HTML/de/konqueror/index.docbook
 share/doc/HTML/de/konqueror/introduction.docbook
 share/doc/HTML/de/konqueror/konqorg.png
+share/doc/HTML/de/konqueror/man-kbookmarkmerger.1.docbook
 share/doc/HTML/de/konqueror/parts.png
 share/doc/HTML/de/konqueror/path-complete.docbook
 share/doc/HTML/de/konqueror/plugins.docbook
@@ -1204,24 +1194,34 @@ share/doc/HTML/de/kstars/altvstime.docbook
 share/doc/HTML/de/kstars/altvstime.png
 share/doc/HTML/de/kstars/astroinfo.docbook
 share/doc/HTML/de/kstars/blackbody.docbook
+share/doc/HTML/de/kstars/blackbody.png
+share/doc/HTML/de/kstars/calc-angdist.docbook
+share/doc/HTML/de/kstars/calc-angdist.png
 share/doc/HTML/de/kstars/calc-apcoords.docbook
 share/doc/HTML/de/kstars/calc-apcoords.png
 share/doc/HTML/de/kstars/calc-dayduration.docbook
 share/doc/HTML/de/kstars/calc-daylength.png
+share/doc/HTML/de/kstars/calc-ecliptic.docbook
+share/doc/HTML/de/kstars/calc-ecliptic.png
 share/doc/HTML/de/kstars/calc-eqgal.docbook
 share/doc/HTML/de/kstars/calc-eqgal.png
+share/doc/HTML/de/kstars/calc-equinox.docbook
+share/doc/HTML/de/kstars/calc-equinox.png
 share/doc/HTML/de/kstars/calc-geodetic.docbook
 share/doc/HTML/de/kstars/calc-geodetic.png
 share/doc/HTML/de/kstars/calc-horizontal.docbook
 share/doc/HTML/de/kstars/calc-horizontal.png
 share/doc/HTML/de/kstars/calc-julian.png
 share/doc/HTML/de/kstars/calc-julianday.docbook
+share/doc/HTML/de/kstars/calc-planetcoords.docbook
+share/doc/HTML/de/kstars/calc-planetcoords.png
 share/doc/HTML/de/kstars/calc-precess.docbook
 share/doc/HTML/de/kstars/calc-precess.png
 share/doc/HTML/de/kstars/calc-sidereal.docbook
 share/doc/HTML/de/kstars/calc-sidereal.png
 share/doc/HTML/de/kstars/calculator.docbook
 share/doc/HTML/de/kstars/cequator.docbook
+share/doc/HTML/de/kstars/color_indices.png
 share/doc/HTML/de/kstars/colorandtemp.docbook
 share/doc/HTML/de/kstars/commands.docbook
 share/doc/HTML/de/kstars/common
@@ -1244,9 +1244,6 @@ share/doc/HTML/de/kstars/flux.docbook
 share/doc/HTML/de/kstars/fovdialog.png
 share/doc/HTML/de/kstars/geocoords.docbook
 share/doc/HTML/de/kstars/geolocator.png
-share/doc/HTML/de/kstars/graph1.png
-share/doc/HTML/de/kstars/graph2.png
-share/doc/HTML/de/kstars/graph3.png
 share/doc/HTML/de/kstars/greatcircle.docbook
 share/doc/HTML/de/kstars/horizon.docbook
 share/doc/HTML/de/kstars/hourangle.docbook
@@ -1254,8 +1251,11 @@ share/doc/HTML/de/kstars/index.cache.bz2
 share/doc/HTML/de/kstars/index.docbook
 share/doc/HTML/de/kstars/indi.docbook
 share/doc/HTML/de/kstars/indiclient.png
+share/doc/HTML/de/kstars/indicontrolpanel.png
+share/doc/HTML/de/kstars/indiscript.png
 share/doc/HTML/de/kstars/install.docbook
 share/doc/HTML/de/kstars/jmoons.docbook
+share/doc/HTML/de/kstars/jmoons.png
 share/doc/HTML/de/kstars/julianday.docbook
 share/doc/HTML/de/kstars/leapyear.docbook
 share/doc/HTML/de/kstars/lightcurves.docbook
@@ -1263,22 +1263,23 @@ share/doc/HTML/de/kstars/luminosity.docbook
 share/doc/HTML/de/kstars/magnitude.docbook
 share/doc/HTML/de/kstars/meridian.docbook
 share/doc/HTML/de/kstars/newfov.png
+share/doc/HTML/de/kstars/observinglist.docbook
+share/doc/HTML/de/kstars/observinglist.png
 share/doc/HTML/de/kstars/parallax.docbook
 share/doc/HTML/de/kstars/popup.png
 share/doc/HTML/de/kstars/precession.docbook
 share/doc/HTML/de/kstars/quicktour.docbook
 share/doc/HTML/de/kstars/retrograde.docbook
 share/doc/HTML/de/kstars/screen1.png
-share/doc/HTML/de/kstars/screen2.png
-share/doc/HTML/de/kstars/screen3.png
-share/doc/HTML/de/kstars/screen4.png
 share/doc/HTML/de/kstars/scriptbuilder.docbook
 share/doc/HTML/de/kstars/scriptbuilder.png
 share/doc/HTML/de/kstars/sidereal.docbook
 share/doc/HTML/de/kstars/skycoords.docbook
 share/doc/HTML/de/kstars/skymapdevice.png
 share/doc/HTML/de/kstars/solarsys.docbook
+share/doc/HTML/de/kstars/solarsystem.png
 share/doc/HTML/de/kstars/spiralgalaxies.docbook
+share/doc/HTML/de/kstars/star_colors.png
 share/doc/HTML/de/kstars/stars.docbook
 share/doc/HTML/de/kstars/timezones.docbook
 share/doc/HTML/de/kstars/tools.docbook
@@ -1445,6 +1446,7 @@ share/doc/HTML/de/kwordquiz/kwq-qanda.png
 share/doc/HTML/de/kworldclock/common
 share/doc/HTML/de/kworldclock/index.cache.bz2
 share/doc/HTML/de/kworldclock/index.docbook
+share/doc/HTML/de/kworldclock/man-kworldclock.1.docbook
 share/doc/HTML/de/kworldclock/screenshot-clock-dialog.png
 share/doc/HTML/de/kworldclock/screenshot-mlb.png
 share/doc/HTML/de/kworldclock/screenshot-quairading-clock.png
@@ -1499,40 +1501,18 @@ share/doc/HTML/de/noatun/index.docbook
 share/doc/HTML/de/opengl/common
 share/doc/HTML/de/opengl/index.cache.bz2
 share/doc/HTML/de/opengl/index.docbook
-share/doc/HTML/de/quanta/action-script-out-error-options.png
 share/doc/HTML/de/quanta/adv-quanta.docbook
-share/doc/HTML/de/quanta/common
-share/doc/HTML/de/quanta/conf-action.png
-share/doc/HTML/de/quanta/conf-action1.png
-share/doc/HTML/de/quanta/conf-action2.png
-share/doc/HTML/de/quanta/conf-action3.png
 share/doc/HTML/de/quanta/config-quanta.docbook
 share/doc/HTML/de/quanta/credits-license.docbook
 share/doc/HTML/de/quanta/debugging-quanta.docbook
 share/doc/HTML/de/quanta/extending-quanta.docbook
 share/doc/HTML/de/quanta/fundamentals.docbook
 share/doc/HTML/de/quanta/glossary.docbook
-share/doc/HTML/de/quanta/index.cache.bz2
-share/doc/HTML/de/quanta/index.docbook
 share/doc/HTML/de/quanta/installation.docbook
 share/doc/HTML/de/quanta/introduction.docbook
-share/doc/HTML/de/quanta/project-1.png
-share/doc/HTML/de/quanta/project-3.png
-share/doc/HTML/de/quanta/project-add-local-files.png
-share/doc/HTML/de/quanta/project-tree-view-dir-rmb-menu.png
-share/doc/HTML/de/quanta/project-tree-view-file-rmb-menu.png
-share/doc/HTML/de/quanta/project-upload-dialog.png
 share/doc/HTML/de/quanta/q-and-a.docbook
 share/doc/HTML/de/quanta/quanta-menus.docbook
 share/doc/HTML/de/quanta/quanta-projects.docbook
-share/doc/HTML/de/quanta/quantamdi-editor.png
-share/doc/HTML/de/quanta/quantamdi-toolbar.png
-share/doc/HTML/de/quanta/quantamdi-treeview.png
-share/doc/HTML/de/quanta/quantamdi.png
-share/doc/HTML/de/quanta/set-conf-action.png
-share/doc/HTML/de/quanta/taginputex.png
-share/doc/HTML/de/quanta/template-rmb.png
-share/doc/HTML/de/quanta/toolbars.png
 share/doc/HTML/de/quanta/working-with-quanta.docbook
 share/doc/HTML/de/umbrello/activity-diagram.png
 share/doc/HTML/de/umbrello/add-remove-languages.png
@@ -1567,9 +1547,47 @@ share/doc/HTML/de/umbrello/working_with_umbrello.docbook
 share/doc/HTML/de/userguide/accessibility.docbook
 share/doc/HTML/de/userguide/base-kde-applications.docbook
 share/doc/HTML/de/userguide/browser-fine-tuning.docbook
+share/doc/HTML/de/userguide/burning-cds.docbook
+share/doc/HTML/de/userguide/control-center.docbook
+share/doc/HTML/de/userguide/creating-graphics.docbook
+share/doc/HTML/de/userguide/credits-and-license.docbook
+share/doc/HTML/de/userguide/email.docbook
+share/doc/HTML/de/userguide/file-sharing.docbook
+share/doc/HTML/de/userguide/font-installation.docbook
+share/doc/HTML/de/userguide/getting-help.docbook
+share/doc/HTML/de/userguide/glossary.docbook
+share/doc/HTML/de/userguide/internet-shortcuts.docbook
+share/doc/HTML/de/userguide/kde-as-root.docbook
+share/doc/HTML/de/userguide/kde-edutainment.docbook
+share/doc/HTML/de/userguide/kde-office.docbook
 share/doc/HTML/de/userguide/kmouth.png
 share/doc/HTML/de/userguide/kmouth2.png
 share/doc/HTML/de/userguide/kmouth3.png
+share/doc/HTML/de/userguide/konsole-intro.docbook
+share/doc/HTML/de/userguide/migrator-dictionary.docbook
+share/doc/HTML/de/userguide/networking-with-windows.docbook
+share/doc/HTML/de/userguide/panel-and-desktop.docbook
+share/doc/HTML/de/userguide/pdf-files.docbook
+share/doc/HTML/de/userguide/playing-audiocds.docbook
+share/doc/HTML/de/userguide/playing-movies.docbook
+share/doc/HTML/de/userguide/playing-music.docbook
+share/doc/HTML/de/userguide/printer-setup.docbook
+share/doc/HTML/de/userguide/printing-from-apps.docbook
+share/doc/HTML/de/userguide/programs-and-documents.docbook
+share/doc/HTML/de/userguide/programs-controlling.docbook
+share/doc/HTML/de/userguide/removable-disks.docbook
+share/doc/HTML/de/userguide/screen-captures.docbook
+share/doc/HTML/de/userguide/shared-sessions.docbook
+share/doc/HTML/de/userguide/standard-menu-entries.docbook
+share/doc/HTML/de/userguide/switching-sessions.docbook
+share/doc/HTML/de/userguide/the-filemanager.docbook
+share/doc/HTML/de/userguide/troubleshooting-network-x.docbook
+share/doc/HTML/de/userguide/troubleshooting-no-open.docbook
+share/doc/HTML/de/userguide/under-the-hood.docbook
+share/doc/HTML/de/userguide/usenet.docbook
+share/doc/HTML/de/userguide/where-next.docbook
+share/doc/HTML/de/userguide/windows-how-to.docbook
+share/doc/HTML/de/userguide/your-kde-account.docbook
 share/doc/HTML/de/visualdict/common
 share/doc/HTML/de/visualdict/index.cache.bz2
 share/doc/HTML/de/visualdict/index.docbook
@@ -2258,7 +2276,6 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/kmouth
 @dirrm share/doc/HTML/de/kmousetool
 @dirrm share/doc/HTML/de/kmoon
-@dirrm share/doc/HTML/de/kmldonkey
 @dirrm share/doc/HTML/de/kmix
 @dirrm share/doc/HTML/de/kmines
 @dirrm share/doc/HTML/de/kmid
@@ -2298,7 +2315,6 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/kinfocenter/devices
 @dirrm share/doc/HTML/de/kinfocenter/blockdevices
 @dirrm share/doc/HTML/de/kinfocenter
-@dirrm share/doc/HTML/de/kimdaba
 @dirrm share/doc/HTML/de/kig
 @dirrm share/doc/HTML/de/kiconedit
 @dirrm share/doc/HTML/de/kicker-applets
@@ -2328,10 +2344,10 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/kdf
 @dirrm share/doc/HTML/de/kdesu
 @dirrm share/doc/HTML/de/kdeprint
+@dirrm share/doc/HTML/de/kdelibs
 @dirrm share/doc/HTML/de/kdebugdialog
 @dirrm share/doc/HTML/de/kdcop
 @dirrm share/doc/HTML/de/kcron
-@dirrm share/doc/HTML/de/kcpuload
 @dirrm share/doc/HTML/de/kcontrol/windowmanagement
 @dirrm share/doc/HTML/de/kcontrol/useragent
 @dirrm share/doc/HTML/de/kcontrol/spellchecking
@@ -2402,6 +2418,7 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/kate
 @dirrm share/doc/HTML/de/kasteroids
 @dirrm share/doc/HTML/de/karm
+@dirrm share/doc/HTML/de/kappfinder
 @dirrm share/doc/HTML/de/kandy
 @dirrm share/doc/HTML/de/kamera
 @dirrm share/doc/HTML/de/kalzium

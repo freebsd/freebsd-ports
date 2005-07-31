@@ -331,6 +331,7 @@ share/locale/ro/LC_MESSAGES/kcmkabconfig.mo
 share/locale/ro/LC_MESSAGES/kcmkamera.mo
 share/locale/ro/LC_MESSAGES/kcmkclock.mo
 share/locale/ro/LC_MESSAGES/kcmkded.mo
+share/locale/ro/LC_MESSAGES/kcmkdnssd.mo
 share/locale/ro/LC_MESSAGES/kcmkeys.mo
 share/locale/ro/LC_MESSAGES/kcmkicker.mo
 share/locale/ro/LC_MESSAGES/kcmkio.mo
@@ -446,6 +447,7 @@ share/locale/ro/LC_MESSAGES/kfile_rpm.mo
 share/locale/ro/LC_MESSAGES/kfile_sid.mo
 share/locale/ro/LC_MESSAGES/kfile_tga.mo
 share/locale/ro/LC_MESSAGES/kfile_tiff.mo
+share/locale/ro/LC_MESSAGES/kfile_torrent.mo
 share/locale/ro/LC_MESSAGES/kfile_ts.mo
 share/locale/ro/LC_MESSAGES/kfile_txt.mo
 share/locale/ro/LC_MESSAGES/kfile_vcf.mo
@@ -467,6 +469,7 @@ share/locale/ro/LC_MESSAGES/kghostview.mo
 share/locale/ro/LC_MESSAGES/kgoldrunner.mo
 share/locale/ro/LC_MESSAGES/kgpg.mo
 share/locale/ro/LC_MESSAGES/kgreet_classic.mo
+share/locale/ro/LC_MESSAGES/kgreet_winbind.mo
 share/locale/ro/LC_MESSAGES/khangman.mo
 share/locale/ro/LC_MESSAGES/khelpcenter.mo
 share/locale/ro/LC_MESSAGES/khexedit.mo
@@ -490,6 +493,7 @@ share/locale/ro/LC_MESSAGES/kio_lan.mo
 share/locale/ro/LC_MESSAGES/kio_ldap.mo
 share/locale/ro/LC_MESSAGES/kio_mac.mo
 share/locale/ro/LC_MESSAGES/kio_man.mo
+share/locale/ro/LC_MESSAGES/kio_media.mo
 share/locale/ro/LC_MESSAGES/kio_mobile.mo
 share/locale/ro/LC_MESSAGES/kio_newimap4.mo
 share/locale/ro/LC_MESSAGES/kio_nfs.mo
@@ -505,6 +509,7 @@ share/locale/ro/LC_MESSAGES/kio_smtp.mo
 share/locale/ro/LC_MESSAGES/kio_svn.mo
 share/locale/ro/LC_MESSAGES/kio_system.mo
 share/locale/ro/LC_MESSAGES/kio_trash.mo
+share/locale/ro/LC_MESSAGES/kio_zeroconf.mo
 share/locale/ro/LC_MESSAGES/kioexec.mo
 share/locale/ro/LC_MESSAGES/kiten.mo
 share/locale/ro/LC_MESSAGES/kjobviewer.mo
@@ -545,6 +550,7 @@ share/locale/ro/LC_MESSAGES/kmousetool.mo
 share/locale/ro/LC_MESSAGES/kmouth.mo
 share/locale/ro/LC_MESSAGES/kmplot.mo
 share/locale/ro/LC_MESSAGES/kmrml.mo
+share/locale/ro/LC_MESSAGES/knetattach.mo
 share/locale/ro/LC_MESSAGES/knewsticker.mo
 share/locale/ro/LC_MESSAGES/knode.mo
 share/locale/ro/LC_MESSAGES/knotes.mo
@@ -612,6 +618,7 @@ share/locale/ro/LC_MESSAGES/kstars.mo
 share/locale/ro/LC_MESSAGES/kstart.mo
 share/locale/ro/LC_MESSAGES/kstartperf.mo
 share/locale/ro/LC_MESSAGES/kstyle_keramik_config.mo
+share/locale/ro/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/ro/LC_MESSAGES/kstyle_plastik_config.mo
 share/locale/ro/LC_MESSAGES/ksvgplugin.mo
 share/locale/ro/LC_MESSAGES/ksync.mo
@@ -662,6 +669,8 @@ share/locale/ro/LC_MESSAGES/kweather.mo
 share/locale/ro/LC_MESSAGES/kwifimanager.mo
 share/locale/ro/LC_MESSAGES/kwin.mo
 share/locale/ro/LC_MESSAGES/kwin4.mo
+share/locale/ro/LC_MESSAGES/kwin_art_clients.mo
+share/locale/ro/LC_MESSAGES/kwin_clients.mo
 share/locale/ro/LC_MESSAGES/kwireless.mo
 share/locale/ro/LC_MESSAGES/kwordquiz.mo
 share/locale/ro/LC_MESSAGES/kworldclock.mo
@@ -671,6 +680,7 @@ share/locale/ro/LC_MESSAGES/kxmlrpcd.mo
 share/locale/ro/LC_MESSAGES/kxsconfig.mo
 share/locale/ro/LC_MESSAGES/kxsldbg.mo
 share/locale/ro/LC_MESSAGES/libcalendarresources.mo
+share/locale/ro/LC_MESSAGES/libdmctl.mo
 share/locale/ro/LC_MESSAGES/libkaddrbk_geo_xxport.mo
 share/locale/ro/LC_MESSAGES/libkcal.mo
 share/locale/ro/LC_MESSAGES/libkcalsystem.mo
@@ -684,6 +694,8 @@ share/locale/ro/LC_MESSAGES/libkickermenu_kdeprint.mo
 share/locale/ro/LC_MESSAGES/libkickermenu_konsole.mo
 share/locale/ro/LC_MESSAGES/libkickermenu_prefmenu.mo
 share/locale/ro/LC_MESSAGES/libkickermenu_recentdocs.mo
+share/locale/ro/LC_MESSAGES/libkickermenu_remotemenu.mo
+share/locale/ro/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/ro/LC_MESSAGES/libkickermenu_tom.mo
 share/locale/ro/LC_MESSAGES/libkleopatra.mo
 share/locale/ro/LC_MESSAGES/libkonq.mo
@@ -698,6 +710,7 @@ share/locale/ro/LC_MESSAGES/libtaskmanager.mo
 share/locale/ro/LC_MESSAGES/lockout.mo
 share/locale/ro/LC_MESSAGES/lskat.mo
 share/locale/ro/LC_MESSAGES/lyrics.mo
+share/locale/ro/LC_MESSAGES/mediaapplet.mo
 share/locale/ro/LC_MESSAGES/mediacontrol.mo
 share/locale/ro/LC_MESSAGES/minitoolsplugin.mo
 share/locale/ro/LC_MESSAGES/naughtyapplet.mo
@@ -719,6 +732,7 @@ share/locale/ro/LC_MESSAGES/synaescope.mo
 share/locale/ro/LC_MESSAGES/taskbarextension.mo
 share/locale/ro/LC_MESSAGES/timezones.mo
 share/locale/ro/LC_MESSAGES/tippecanoe.mo
+share/locale/ro/LC_MESSAGES/trashapplet.mo
 share/locale/ro/LC_MESSAGES/tyler.mo
 share/locale/ro/LC_MESSAGES/uachangerplugin.mo
 share/locale/ro/LC_MESSAGES/umbrello.mo

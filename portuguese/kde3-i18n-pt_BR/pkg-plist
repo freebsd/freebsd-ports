@@ -382,6 +382,7 @@ share/doc/HTML/pt_BR/kdebugdialog/common
 share/doc/HTML/pt_BR/kdebugdialog/index.cache.bz2
 share/doc/HTML/pt_BR/kdebugdialog/index.docbook
 share/doc/HTML/pt_BR/kdelibs/man-artsmessage.1.docbook
+share/doc/HTML/pt_BR/kdelibs/man-checkXML.1.docbook
 share/doc/HTML/pt_BR/kdelibs/man-dcop.1.docbook
 share/doc/HTML/pt_BR/kdelibs/man-kdeoptions.7.docbook
 share/doc/HTML/pt_BR/kdelibs/man-qtoptions.7.docbook
@@ -1285,6 +1286,7 @@ share/doc/HTML/pt_BR/scripts/man-cheatmake.1.docbook
 share/doc/HTML/pt_BR/scripts/man-create_cvsignore.1.docbook
 share/doc/HTML/pt_BR/scripts/man-create_makefile.1.docbook
 share/doc/HTML/pt_BR/scripts/man-create_makefiles.1.docbook
+share/doc/HTML/pt_BR/scripts/man-cvscheck.1.docbook
 share/doc/HTML/pt_BR/scripts/man-cvslastchange.1.docbook
 share/doc/HTML/pt_BR/scripts/man-cvslastlog.1.docbook
 share/doc/HTML/pt_BR/scripts/man-cvsrevertlast.1.docbook

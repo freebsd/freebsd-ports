@@ -35,7 +35,6 @@ share/locale/hi/LC_MESSAGES/ffrs.mo
 share/locale/hi/LC_MESSAGES/filetypes.mo
 share/locale/hi/LC_MESSAGES/fontinst.mo
 share/locale/hi/LC_MESSAGES/fsview.mo
-share/locale/hi/LC_MESSAGES/gnome-applets-locations.HEAD.hi.mo
 share/locale/hi/LC_MESSAGES/htmlsearch.mo
 share/locale/hi/LC_MESSAGES/imagerename_plugin.mo
 share/locale/hi/LC_MESSAGES/imgalleryplugin.mo
@@ -97,7 +96,6 @@ share/locale/hi/LC_MESSAGES/kbstateapplet.mo
 share/locale/hi/LC_MESSAGES/kbugbuster.mo
 share/locale/hi/LC_MESSAGES/kcachegrind.mo
 share/locale/hi/LC_MESSAGES/kcalc.mo
-share/locale/hi/LC_MESSAGES/kcardchooser.mo
 share/locale/hi/LC_MESSAGES/kcharselect.mo
 share/locale/hi/LC_MESSAGES/kcharselectapplet.mo
 share/locale/hi/LC_MESSAGES/kcm_krfb.mo
@@ -379,7 +377,6 @@ share/locale/hi/LC_MESSAGES/korganizer.mo
 share/locale/hi/LC_MESSAGES/korn.mo
 share/locale/hi/LC_MESSAGES/kpackage.mo
 share/locale/hi/LC_MESSAGES/kpager.mo
-share/locale/hi/LC_MESSAGES/kpaint.mo
 share/locale/hi/LC_MESSAGES/kpartapp.mo
 share/locale/hi/LC_MESSAGES/kpartsaver.mo
 share/locale/hi/LC_MESSAGES/kpat.mo
@@ -401,7 +398,6 @@ share/locale/hi/LC_MESSAGES/krec.mo
 share/locale/hi/LC_MESSAGES/kregexpeditor.mo
 share/locale/hi/LC_MESSAGES/kres_blogging.mo
 share/locale/hi/LC_MESSAGES/kres_exchange.mo
-share/locale/hi/LC_MESSAGES/kres_imap.mo
 share/locale/hi/LC_MESSAGES/kres_kolab.mo
 share/locale/hi/LC_MESSAGES/kres_remote.mo
 share/locale/hi/LC_MESSAGES/kres_xmlrpc.mo

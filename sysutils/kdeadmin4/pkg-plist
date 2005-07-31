@@ -92,7 +92,6 @@ share/icons/crystalsvg/48x48/apps/kpackage.png
 share/icons/crystalsvg/48x48/apps/kuser.png
 share/icons/crystalsvg/64x64/apps/kpackage.png
 share/icons/crystalsvg/64x64/apps/kuser.png
-share/mimelnk/application/x-debian-package.desktop
 share/services/kfile_deb.desktop
 share/services/kfile_rpm.desktop
 @dirrm share/doc/HTML/en/kuser

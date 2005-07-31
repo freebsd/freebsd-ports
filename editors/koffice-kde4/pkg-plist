@@ -3826,12 +3826,14 @@ share/icons/crystalsvg/32x32/mimetypes/kexiproject_shortcut.png
 share/icons/crystalsvg/32x32/mimetypes/kexiproject_sqlite.png
 share/icons/crystalsvg/32x32/mimetypes/kexiproject_sqlite2.png
 share/icons/crystalsvg/32x32/mimetypes/kugardata.png
+share/icons/hicolor/128x128/apps/koshell.png
 share/icons/hicolor/128x128/apps/krita.png
 share/icons/hicolor/16x16/apps/karbon.png
 share/icons/hicolor/16x16/apps/kchart.png
 share/icons/hicolor/16x16/apps/kexi.png
 share/icons/hicolor/16x16/apps/kformula.png
 share/icons/hicolor/16x16/apps/kivio.png
+share/icons/hicolor/16x16/apps/koshell.png
 share/icons/hicolor/16x16/apps/kpresenter.png
 share/icons/hicolor/16x16/apps/krita.png
 share/icons/hicolor/16x16/apps/kspread.png
@@ -3841,6 +3843,7 @@ share/icons/hicolor/22x22/apps/karbon.png
 share/icons/hicolor/22x22/apps/kexi.png
 share/icons/hicolor/22x22/apps/kformula.png
 share/icons/hicolor/22x22/apps/kivio.png
+share/icons/hicolor/22x22/apps/koshell.png
 share/icons/hicolor/22x22/apps/kpresenter.png
 share/icons/hicolor/22x22/apps/krita.png
 share/icons/hicolor/22x22/apps/kspread.png
@@ -3851,6 +3854,7 @@ share/icons/hicolor/32x32/apps/kchart.png
 share/icons/hicolor/32x32/apps/kexi.png
 share/icons/hicolor/32x32/apps/kformula.png
 share/icons/hicolor/32x32/apps/kivio.png
+share/icons/hicolor/32x32/apps/koshell.png
 share/icons/hicolor/32x32/apps/kpresenter.png
 share/icons/hicolor/32x32/apps/krita.png
 share/icons/hicolor/32x32/apps/kspread.png
@@ -3861,14 +3865,17 @@ share/icons/hicolor/48x48/apps/kchart.png
 share/icons/hicolor/48x48/apps/kexi.png
 share/icons/hicolor/48x48/apps/kformula.png
 share/icons/hicolor/48x48/apps/kivio.png
+share/icons/hicolor/48x48/apps/koshell.png
 share/icons/hicolor/48x48/apps/kpresenter.png
 share/icons/hicolor/48x48/apps/krita.png
 share/icons/hicolor/48x48/apps/kspread.png
 share/icons/hicolor/48x48/apps/kugar.png
 share/icons/hicolor/48x48/apps/kword.png
+share/icons/hicolor/64x64/apps/koshell.png
 share/icons/hicolor/64x64/apps/krita.png
 share/icons/hicolor/scalable/apps/karbon.svgz
 share/icons/hicolor/scalable/apps/kexi.svgz
+share/icons/hicolor/scalable/apps/koshell.svgz
 share/icons/locolor/16x16/apps/kudesigner.png
 share/icons/locolor/32x32/apps/kudesigner.png
 share/mimelnk/application/x-kexiproject-shortcut.desktop
@@ -4034,8 +4041,8 @@ share/templates/TextDocument.desktop
 @exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kdgantt/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kdgantt/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/lib/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kdgantt/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kspread/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kdgantt/html
 @dirrm share/services/kformdesigner
 @dirrm share/services/kexi
 @dirrm share/icons/hicolor/scalable/apps

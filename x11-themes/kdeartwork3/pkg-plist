@@ -2,6 +2,7 @@ bin/kbanner.kss
 bin/kblob.kss
 bin/kclock.kss
 bin/keuphoria.kss
+bin/kfiresaver.kss
 bin/kflux.kss
 bin/kfountain.kss
 bin/kgravity.kss
@@ -50,6 +51,7 @@ share/applnk/System/ScreenSavers/KBanner.desktop
 share/applnk/System/ScreenSavers/KBlob.desktop
 share/applnk/System/ScreenSavers/KClock.desktop
 share/applnk/System/ScreenSavers/KEuphoria.desktop
+share/applnk/System/ScreenSavers/KFiresaver.desktop
 share/applnk/System/ScreenSavers/KFlux.desktop
 share/applnk/System/ScreenSavers/KFountain.desktop
 share/applnk/System/ScreenSavers/KGravity.desktop

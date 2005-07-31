@@ -300,6 +300,7 @@ share/locale/cs/LC_MESSAGES/katepart.mo
 share/locale/cs/LC_MESSAGES/katepartkttsd.mo
 share/locale/cs/LC_MESSAGES/kateprojectmanager.mo
 share/locale/cs/LC_MESSAGES/katepybrowse.mo
+share/locale/cs/LC_MESSAGES/katesnippets.mo
 share/locale/cs/LC_MESSAGES/katespell.mo
 share/locale/cs/LC_MESSAGES/katetabbarextension.mo
 share/locale/cs/LC_MESSAGES/katetextfilter.mo
@@ -660,6 +661,7 @@ share/locale/cs/LC_MESSAGES/ksokoban.mo
 share/locale/cs/LC_MESSAGES/kspaceduel.mo
 share/locale/cs/LC_MESSAGES/ksplash.mo
 share/locale/cs/LC_MESSAGES/ksplashthemes.mo
+share/locale/cs/LC_MESSAGES/kstars.mo
 share/locale/cs/LC_MESSAGES/kstart.mo
 share/locale/cs/LC_MESSAGES/kstartperf.mo
 share/locale/cs/LC_MESSAGES/kstyle_keramik_config.mo
@@ -727,7 +729,6 @@ share/locale/cs/LC_MESSAGES/kwin.mo
 share/locale/cs/LC_MESSAGES/kwin4.mo
 share/locale/cs/LC_MESSAGES/kwin_art_clients.mo
 share/locale/cs/LC_MESSAGES/kwin_clients.mo
-share/locale/cs/LC_MESSAGES/kwin_lib.mo
 share/locale/cs/LC_MESSAGES/kwireless.mo
 share/locale/cs/LC_MESSAGES/kwordquiz.mo
 share/locale/cs/LC_MESSAGES/kworldclock.mo

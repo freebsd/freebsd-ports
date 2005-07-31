@@ -10,14 +10,12 @@ PORTVERSION=	3.0.5
 PORTREVISION=	1
 CATEGORIES?=	korean kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}a/src/kde-i18n
+MASTER_SITE_SUBDIR=	Attic/${PORTVERSION}a/src/kde-i18n
 PKGNAMEPREFIX=	ko-
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Korean messages and documentation for KDE3
-
-IGNORE=		Needs update from vendor.
 
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 
@@ -26,6 +24,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 KDE_I18N=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PKGNAMEPREFIX:S/-//}
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
