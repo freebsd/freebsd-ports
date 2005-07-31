@@ -192,6 +192,8 @@ install-conf-file:
 			${CHMOD} ${POP_MODE_CONF} ${POPUSERS_FILE}${SAMPLE_EXT} ; \
 		fi ; \
 	fi
+	@${INSTALL} -c -m 0640 \
+		${WRKSRC}/samples/qpopper.config ${PREFIX}/etc/qpopper.config${SAMPLE_EXT}
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
 		${PKGINSTALL} ${PKGNAME} POST-INSTALL
 

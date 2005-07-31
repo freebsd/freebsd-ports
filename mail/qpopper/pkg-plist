@@ -6,6 +6,7 @@ libexec/qpopper
 @exec mkdir -p %D/etc/qpopper && chown %%POP_USER%%:%%POP_GROUP%% %D/etc/qpopper && chmod %%POP_MODE_DIR%% %D/etc/qpopper
 @mode %%POP_MODE_CONF%%
 etc/qpopper/popusers.sample
+etc/qpopper.config.sample
 %%PORTDOCS%%share/doc/qpopper/GUIDE.pdf
 %%PORTDOCS%%@dirrm share/doc/qpopper
 @unexec rmdir %D/etc/qpopper 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/qpopper`` to remove any configuration files and logs left." | fmt
