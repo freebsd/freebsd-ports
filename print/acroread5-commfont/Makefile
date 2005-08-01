@@ -6,6 +6,7 @@
 
 PORTNAME=	acroread5
 PORTVERSION=	2002.5
+PORTREVISION=	1
 PKGNAMESUFFIX=	-${DISTNAME}
 CATEGORIES+=	print linux
 MASTER_SITES=	http://download.adobe.com/pub/adobe/acrobatreader/unix/5.x/
@@ -15,10 +16,7 @@ DIST_SUBDIR=	Acrobat5
 MAINTAINER=	koma2@lovepeers.org
 COMMENT?=	Asian Font Packs for Acrobat Reader 5.0 (for common files)
 
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
+USE_X_PREFIX=	yes
 NO_BUILD=	yes
 SLAVEDIRS=	chinese/acroread-chsfont chinese/acroread-chtfont
 
