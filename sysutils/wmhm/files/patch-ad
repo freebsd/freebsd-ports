@@ -1,0 +1,11 @@
+--- wmhm.c.orig	Sun Jul 22 06:04:31 2001
++++ wmhm.c	Mon Aug  1 14:51:21 2005
+@@ -50,7 +50,7 @@
+ #include <machine/cpufunc.h>
+ 
+ #ifdef HAVE_SMBUS
+-#include <machine/smb.h>
++#include <dev/smbus/smb.h>
+ int SMBUS = 1;
+ #else
+ int SMBUS = 0;

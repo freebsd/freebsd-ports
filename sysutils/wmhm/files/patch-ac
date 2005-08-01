@@ -1,0 +1,11 @@
+--- operations.c.orig	Sun Jul 22 06:00:55 2001
++++ operations.c	Mon Aug  1 14:51:17 2005
+@@ -42,7 +42,7 @@
+ #include <machine/speaker.h>
+ 
+ #ifdef HAVE_SMBUS
+-#include <machine/smb.h>
++#include <dev/smbus/smb.h>
+ #endif
+ #include "machine/speaker.h"
+ 

@@ -1,0 +1,11 @@
+--- configure.orig	Sun Jul 22 03:00:38 2001
++++ configure	Mon Aug  1 14:51:09 2005
+@@ -1023,7 +1023,7 @@
+ 
+ fi
+ 
+-for ac_hdr in machine/smb.h
++for ac_hdr in dev/smbus/smb.h
+ do
+ ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
