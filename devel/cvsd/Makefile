@@ -9,7 +9,7 @@
 PORTNAME=	cvsd
 PORTVERSION=	1.0.8
 CATEGORIES=	devel
-MASTER_SITES=	http://tiefighter.et.tudelft.nl/~arthur/cvsd/ \
+MASTER_SITES=	http://ch.tudelft.nl/~arthur/cvsd/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
