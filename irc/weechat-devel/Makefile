@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	weechat
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	irc
 MASTER_SITES=	http://weechat.flashtux.org/download/
 
-MAINTAINER=	az@inec.ru>
+MAINTAINER=	az@inec.ru
 COMMENT=	A lightweight and user friendly ncurse based IRC client
 
 USE_BZIP2=	yes
@@ -22,6 +22,7 @@ CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		weechat-curses.1
+INFO=		weechat_doc_en weechat_doc_es weechat_doc_fr weechat_doc_pt
 
 PLIST_FILES=	bin/weechat-curses
 
