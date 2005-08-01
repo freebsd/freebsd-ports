@@ -82,6 +82,7 @@
     SUBDIR += coda5_server
     SUBDIR += coda6_client
     SUBDIR += coda6_server
+    SUBDIR += convey
     SUBDIR += corkscrew
     SUBDIR += courier-authlib-ldap
     SUBDIR += cphone

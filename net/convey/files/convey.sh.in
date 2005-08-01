@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+cd "%%DATADIR%%"
+JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -cp "classes:lib/muse-0.72.jar:lib/crimson-1.1.3.jar:lib/jaxp-1.1.jar:lib/jakarta-oro-2.0.4.jar:lib/jdom-b7.jar:lib/convey-0.3.jar" org.convey.ConveyFrame

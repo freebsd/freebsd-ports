@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+bin/convey
+%%DATADIR%%/lib/convey-0.3.jar
+%%DATADIR%%/lib/crimson-1.1.3.jar
+%%DATADIR%%/lib/jakarta-oro-2.0.4.jar
+%%DATADIR%%/lib/jaxp-1.1.jar
+%%DATADIR%%/lib/jdom-b7.jar
+%%DATADIR%%/lib/muse-0.72.jar
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%
