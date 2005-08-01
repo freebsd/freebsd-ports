@@ -17,27 +17,20 @@ COMMENT=	A C++ library helps development of 3D applications
 
 BUILD_DEPENDS=	${QMAKE}:${PORTSDIR}/devel/qmake
 
+WRKSRC=		${WRKDIR}/${DISTNAME}/QGLViewer
+
 USE_QT_VER=	3
-MAKE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
-		QTDIR=${X11BASE}
-MAKE_ARGS=	PREFIX=${PREFIX}
-QMAKE=		${LOCALBASE}/bin/qmake
+MAKE_ENV=	QTDIR="${QT_PREFIX}"
 INSTALLS_SHLIB=	yes
+NO_FILTER_SHLIBS=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/QGLViewer
-PORTDOCS=	*
 
-do-build:
-	@(cd ${WRKSRC}/QGLViewer && ${SETENV} ${MAKE_ENV} ${QMAKE} ${MAKE_ARGS} && \
-	  ${SETENV} ${MAKE_ENV} ${MAKE})
+QMAKE?=		${LOCALBASE}/bin/qmake
+QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
-do-install:
-	@(cd ${WRKSRC}/QGLViewer && ${SETENV} ${MAKE_ENV} ${MAKE} install)
-
-post-install:
-	@${FIND} ${PREFIX}/include/QGLViewer ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/include/QGLViewer -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+do-configure:
+	cd ${CONFIGURE_WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
+		-spec ${QMAKESPEC} QGLViewer.pro PREFIX="${PREFIX}"
 
 .include <bsd.port.mk>
