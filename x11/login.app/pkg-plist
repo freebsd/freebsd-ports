@@ -42,3 +42,4 @@ GNUstep/Apps/Login.app/Themes/Linux/stop.tiff
 @dirrm GNUstep/Apps/Login.app/Themes
 @dirrm GNUstep/Apps/Login.app/Scripts
 @dirrm GNUstep/Apps/Login.app
+@dirrm GNUstep/Apps
