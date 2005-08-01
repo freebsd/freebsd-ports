@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_chroot
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	www
 MASTER_SITES=	http://core.segfault.pl/~hobbit/mod_chroot/dist/
 
