@@ -8,10 +8,7 @@ PORTNAME=	avltree
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	# disappeared in 2001
-
-DEPRECATED=	"now only available on *BSD mirrors"
-EXPIRATION_DATE=2005-08-31
+MASTER_SITES=	http://keyserver.kjsl.com/~jharris/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An in-memory index w/ binary and string keys and key counts
