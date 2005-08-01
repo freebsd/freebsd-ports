@@ -1,0 +1,11 @@
+--- configure.in.orig	Sat Oct 16 22:26:10 1999
++++ configure.in	Mon Aug  1 04:41:12 2005
+@@ -12,7 +12,7 @@
+ dnl Checks for header files.
+ AC_HEADER_STDC
+ AC_CHECK_HEADERS(fcntl.h sys/ioctl.h sys/time.h unistd.h stdlib.h stdio.h string.h)
+-AC_CHECK_HEADERS(machine/smb.h,[AC_DEFINE(HAVE_SMBUS)])
++AC_CHECK_HEADERS(dev/smbus/smb.h,[AC_DEFINE(HAVE_SMBUS)])
+ dnl Checks for typedefs, structures, and compiler characteristics.
+ 
+ dnl Checks for library functions.
