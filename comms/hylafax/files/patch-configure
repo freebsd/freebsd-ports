@@ -47,6 +47,33 @@
  		}
  	if [ "x$PAMLIBS" = "x" ]; then
  		Note "... not found. Disabling PAM support"
+@@ -2661,5 +2661,4 @@
+     CheckFuncDecl strtoul \
+ 	'extern unsigned long strtoul(const char*, char**, int);' stdlib.h
+-    CheckFuncDecl cuserid 'extern char* cuserid(char*);' stdio.h
+     #
+     # unistd.h is for sco3.2v4.[0-2] and GNU libc (yech!)
+@@ -2677,8 +2676,4 @@
+     CheckStdio fdopen 'extern FILE* fdopen(int, const char*);'
+     CheckStdio snprintf 'extern int snprintf(char*, size_t, const char*,...);'
+-    CheckForFuncDecl vsnprintf stdio.h || {
+-	echo '#include <stdarg.h>'
+-	AddFuncDecl vsnprintf 'extern int vsnprintf(char*, size_t, const char*, va_list);'
+-    }
+     CheckForDefine fileno stdio.h || {
+ 	CheckStdio fileno 'extern int fileno(FILE*);'
+@@ -3010,5 +3005,4 @@
+ 
+ FUNCS="
+-    cuserid
+     flock
+     ftruncate
+@@ -3024,5 +3018,4 @@
+     strtod
+     strtoul
+-    vsnprintf
+     writev
+ "
 @@ -4326,18 +4326,8 @@
  
  HylaFAX configuration parameters (part 1 of 2) are:
