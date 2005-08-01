@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# eliminate own path from PATH (without this, cause a inifinite loop)
+PATH=${PATH#$(dirname $0)}
+
 # add your favorite browser in the top of the list
 for browser in mozilla linux-mozilla firefox linux-mozillafirebird opera linux-opera
 do

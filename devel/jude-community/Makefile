@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jude-community
-PORTVERSION=	1.5.2
+PORTVERSION=	1.6.1
 CATEGORIES=	devel java
 MASTER_SITES=	# you have to register yourself as a member to download
 DISTNAME=	${PORTNAME}-${PORTVERSION:S!.!_!g}
@@ -50,7 +50,7 @@ post-patch:
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/jude ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${FILESDIR}/netscape ${DATADIR}
+	${INSTALL_SCRIPT} ${FILESDIR}/mozilla ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/JudeDefaultModel.jude ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/jude.ico ${DATADIR}

@@ -1,5 +1,5 @@
 bin/jude
-%%DATADIR%%/netscape
+%%DATADIR%%/mozilla
 %%DATADIR%%/%%PORTNAME%%.jar
 %%DATADIR%%/JudeDefaultModel.jude
 %%DATADIR%%/jude.ico
