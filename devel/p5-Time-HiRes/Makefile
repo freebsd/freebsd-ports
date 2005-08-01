@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Time-HiRes
-PORTVERSION=	1.68
+PORTVERSION=	1.72
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -15,6 +15,10 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	A perl5 module implementing High resolution time, sleep, and alarm
+
+# rel2abs isn't in old File::Spec
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
