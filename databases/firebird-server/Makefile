@@ -203,8 +203,6 @@ do-install:
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/gen/firebird/examples/v5/* ${EXAMPLESDIR}
-	${CHOWN} firebird:firebird ${EXAMPLESDIR}/employee.*
-	${CHMOD} 0664 ${EXAMPLESDIR}/employee.*
 .endif
 
 .include <bsd.port.post.mk>
