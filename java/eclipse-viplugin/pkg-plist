@@ -1,0 +1,20 @@
+eclipse/features/viPluginFeature_%%RELEASEVERSION%%/feature.xml
+eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/doc/ChangeLog.txt
+eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/doc/LICENSE_Jakarta.txt
+eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/doc/License.txt
+eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/doc/viPlugin User Manual.html
+eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/doc/viplugin_rc.xml
+eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/icons/vi.gif
+eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib/ViImplementation.jar
+eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib/ViPluginLicenseChecker.jar
+eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib/commons-lang-2.0.jar
+eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib/jakarta-regexp-1.3.jar
+eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib/nanoxml-lite-2.2.3.jar
+eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/plugin.xml
+eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/viPlugin.jar
+eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/viPluginsrc.zip
+@dirrm eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib/
+@dirrm eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/icons/
+@dirrm eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/doc/
+@dirrm eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/
+@dirrm eclipse/features/viPluginFeature_%%RELEASEVERSION%%/

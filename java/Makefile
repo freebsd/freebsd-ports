@@ -39,6 +39,7 @@
     SUBDIR += eclipse-v4all
     SUBDIR += eclipse-vep
     SUBDIR += eclipse-vep-examples
+    SUBDIR += eclipse-viplugin
     SUBDIR += eclipseme
     SUBDIR += forte
     SUBDIR += gj
