@@ -211,8 +211,11 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<range><lt>6.0.1_2</lt></range>
       </package>
       <package>
-	<name>fractorama</name>
 	<name>gdal</name>
+	<range><lt>1.2.1_2</lt></range>
+      </package>
+      <package>
+	<name>fractorama</name>
 	<name>iv</name>
 	<name>ivtools</name>
 	<name>ja-iv</name>
@@ -8137,8 +8140,11 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<range><lt>6.0.1</lt></range>
       </package>
       <package>
-	<name>fractorama</name>
 	<name>gdal</name>
+	<range><lt>1.2.1_2</lt></range>
+      </package>
+      <package>
+	<name>fractorama</name>
 	<name>iv</name>
 	<name>ivtools</name>
 	<name>ja-iv</name>
@@ -8165,7 +8171,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2002-03-27</discovery>
       <entry>2005-01-18</entry>
-      <modified>2005-07-30</modified>
+      <modified>2005-08-01</modified>
     </dates>
   </vuln>
 
@@ -9012,8 +9018,11 @@ http_access deny Gopher</pre>
 	<range><lt>6.0.1_1</lt></range>
       </package>
       <package>
-	<name>fractorama</name>
 	<name>gdal</name>
+	<range><lt>1.2.1_2</lt></range>
+      </package>
+      <package>
+	<name>fractorama</name>
 	<name>iv</name>
 	<name>ivtools</name>
 	<name>ja-iv</name>
@@ -9048,7 +9057,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-12-17</discovery>
       <entry>2005-01-06</entry>
-      <modified>2005-07-30</modified>
+      <modified>2005-08-01</modified>
     </dates>
   </vuln>
 
@@ -12385,8 +12394,11 @@ http_access deny Gopher</pre>
 	<range><lt>6.0.1</lt></range>
       </package>
       <package>
-	<name>fractorama</name>
 	<name>gdal</name>
+	<range><lt>1.2.1_2</lt></range>
+      </package>
+      <package>
+	<name>fractorama</name>
 	<name>iv</name>
 	<name>ivtools</name>
 	<name>ja-iv</name>
@@ -12411,7 +12423,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-10-13</discovery>
       <entry>2004-10-13</entry>
-      <modified>2005-07-30</modified>
+      <modified>2005-08-01</modified>
     </dates>
   </vuln>
 
@@ -12488,8 +12500,11 @@ http_access deny Gopher</pre>
 	<range><lt>6.0.1</lt></range>
       </package>
       <package>
-	<name>fractorama</name>
 	<name>gdal</name>
+	<range><lt>1.2.1_2</lt></range>
+      </package>
+      <package>
+	<name>fractorama</name>
 	<name>iv</name>
 	<name>ivtools</name>
 	<name>ja-iv</name>
@@ -12514,7 +12529,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-10-13</discovery>
       <entry>2004-10-13</entry>
-      <modified>2005-07-30</modified>
+      <modified>2005-08-01</modified>
     </dates>
   </vuln>
 
