@@ -8,13 +8,10 @@
 PORTNAME=	dte
 PORTVERSION=	6.12
 CATEGORIES=	editors
-MASTER_SITES=	ftp://mugca.cc.monash.edu.au/pub/dougt/
+MASTER_SITES=	http://freebsd.t-hosting.hu/dte/
 EXTRACT_SUFX=	.tgz
 
-DEPRECATED=	"master site disappeared, last version in port is from 2000"
-EXPIRATION_DATE=2005-08-31
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	A simple text editor which uses many of the shortcuts used in MSDOS EDIT
 
 MAN1=		dte.1
