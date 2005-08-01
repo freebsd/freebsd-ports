@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	xeyes+
-PORTVERSION=	2.01
+PORTVERSION=	2.02
 CATEGORIES=	games
-MASTER_SITES=	http://yindy1.aist-nara.ac.jp/~tetu-s/sofken/software/
-DISTNAME=	xeyes+${PORTVERSION}
-EXTRACT_SUFX=	.tar.Z
-
-DEPRECATED=	no longer available from author's site
-EXPIRATION_DATE=2005-08-31
+MASTER_SITES=	http://www.asahi-net.or.jp/~fj9y-ynym/
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Horrible eyes looking at your mouse cursor
 
-PLIST_FILES=	bin/xeyes+
-USE_IMAKE=	yes
+USE_X_PREFIX=	yes
 USE_XPM=	yes
 
-post-install:
-	@${CHMOD} 755 ${PREFIX}/bin/xeyes+
-	@${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/bin/xeyes+
+PLIST_FILES=	bin/xeyes+
+
+do-build:
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${X11BASE}/include -DXPM -DUSLEEP \
+		-o xeyes+ xeyes+.c -L${X11BASE}/lib -lX11 -lXpm -lm
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/xeyes+ ${PREFIX}/bin
 
 .include <bsd.port.mk>
