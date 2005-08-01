@@ -29,6 +29,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/gnome-gsame.png
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/gnu-keys.png
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/gtk-logo-rgb.gif
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/hypertext.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/iconview.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/images.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/item_factory.rb
@@ -51,6 +52,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/buttonbox.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/calendar.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/checkbutton.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/colorselection.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/combo_check.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/combobox.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/cursor.rb
@@ -110,29 +112,17 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/check-y.xpm
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/checkbutton.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/circles.xbm
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/circles.xpm
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/colorpreview.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/colorselect.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/cursors.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/dialog.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/dnd.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/entry.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/filesel.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/fontselection.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/gammacurve.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/graypreview.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/handlebox.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/idle.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/labels.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/layout.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/line-arrow.xbm
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/line-wrap.xbm
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/liststore.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/mainloop.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/marble.xpm
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/menu.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/notebook.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/panes.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/pixmap.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/progressbar.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/radiobutton.rb
@@ -141,9 +131,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/rulers.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/sample.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/savedposition.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/scroll.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/scrolledwindow.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/selection.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/shapedwindow.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/spinbutton.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/statusbar.rb
@@ -151,15 +139,9 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/testgtk.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/testgtkrc
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/testgtkrc2
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/timeout.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/togglebutton.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/toolbar.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/tooltips.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/tree_minus.xbm
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/tree_minus.xpm
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/tree_plus.xbm
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/tree_plus.xpm
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/treestore.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/wmhints.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/testgtk
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/misc
