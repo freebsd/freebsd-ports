@@ -21,7 +21,7 @@
 -  int breakLoop = 0;
    unsigned long *lengths;
    
-@@ -1456,13 +1454,8 @@
+@@ -1456,13 +1454,7 @@
        case TCL_CONTINUE:
        case TCL_OK:
 -	break ;
@@ -29,7 +29,7 @@
 -	breakLoop=1;
 -	break;
 +	continue;
-       default:
+-      default:
 -	breakLoop=1;
 -	break;
        }
