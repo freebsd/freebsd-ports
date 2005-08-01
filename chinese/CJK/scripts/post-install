@@ -11,43 +11,36 @@ then
   rm ${PREFIX}/bin/mktexpk.CJK
 fi
 
-# Install ttf2pk binary in ${PORTSDIR}/print/freetype, data in ${TEXMF}/ttf2pk,
-# and link ${TEXMF}/ttf2tfm to ${TEXMF}/ttf2pk.
-(cd ${PORTSDIR}/print/freetype/work/freetype-1.3.1/contrib/ttf2pk;
- ./configure --prefix=${PREFIX} --with-kpathsea-dir=${PREFIX};
- make depend all install;
- rm -fr ${TEXMFMAIN}/ttf2pk ${TEXMFMAIN}/ttf2tfm;
- cp -R data ${TEXMFMAIN}/ttf2pk;
- cd ${TEXMFMAIN}; )
+SPECIALMAP="${TEXMFMAIN}-dist/fonts/map/fontname/special.map"
 
 # fontname/special.map: add arb5kai/arb5sung/argbkai/argbsung entries.
-if [ -n "`grep arb5kai ${TEXMFMAIN}/fontname/special.map`" ]
+if [ -n "`grep arb5kai ${SPECIALMAP}`" ]
 then
   echo Seems arb5kai already in special.map, file untouched.
 else
-  echo "@c Arphic BIG5 Kaiti TTF" >> ${TEXMFMAIN}/fontname/special.map
-  echo "arb5kai		big5		arb5kai" >> ${TEXMFMAIN}/fontname/special.map
+  echo "@c Arphic BIG5 Kaiti TTF" >> ${SPECIALMAP}
+  echo "arb5kai		big5		arb5kai" >> ${SPECIALMAP}
 fi
-if [ -n "`grep arb5sung ${TEXMFMAIN}/fontname/special.map`" ]
+if [ -n "`grep arb5sung ${SPECIALMAP}`" ]
 then
   echo Seems arb5sung already in special.map, file untouched.
 else
-  echo "@c Arphic BIG5 Mingti TTF" >> ${TEXMFMAIN}/fontname/special.map
-  echo "arb5sung		big5		arb5sung" >> ${TEXMFMAIN}/fontname/special.map
+  echo "@c Arphic BIG5 Mingti TTF" >> ${SPECIALMAP}
+  echo "arb5sung		big5		arb5sung" >> ${SPECIALMAP}
 fi
-if [ -n "`grep argbkai ${TEXMFMAIN}/fontname/special.map`" ]
+if [ -n "`grep argbkai ${SPECIALMAP}`" ]
 then
   echo Seems argbkai already in special.map, file untouched.
 else
-  echo "@c Arphic GB Kaiti TTF" >> ${TEXMFMAIN}/fontname/special.map
-  echo "argbkai		gb		argbkai" >> ${TEXMFMAIN}/fontname/special.map
+  echo "@c Arphic GB Kaiti TTF" >> ${SPECIALMAP}
+  echo "argbkai		gb		argbkai" >> ${SPECIALMAP}
 fi
-if [ -n "`grep argbsung ${TEXMFMAIN}/fontname/special.map`" ]
+if [ -n "`grep argbsung ${SPECIALMAP}`" ]
 then
   echo Seems argbsung already in special.map, file untouched.
 else
-  echo "@c Arphic GB Sungti TTF" >> ${TEXMFMAIN}/fontname/special.map
-  echo "argbsung		gb		argbsung" >> ${TEXMFMAIN}/fontname/special.map
+  echo "@c Arphic GB Sungti TTF" >> ${SPECIALMAP}
+  echo "argbsung		gb		argbsung" >> ${SPECIALMAP}
 fi
 
 # ttf2pk/ttfonts.map: add arb5kai/arb5sung/argbkai/argbsung entries.
@@ -75,11 +68,6 @@ then
 else
   echo "argbsung@UGB@   argb_sung Pid=3 Eid=1" >> ${TEXMFMAIN}/ttf2pk/ttfonts.map
 fi
-
-# ttf2pk/UBig5.sfd: apply patch to support Eten's extention
-(cd ${TEXMFMAIN}/ttf2pk;
- patch < ${FILESDIR}/UBig5.sfd.diff;
- rm -f UBig5.sfd.orig; )
 
 # web2c/texmf.cnf
 if [ -n "`grep TTF2PKINPUTS ${TEXMFMAIN}/web2c/texmf.cnf`" ]

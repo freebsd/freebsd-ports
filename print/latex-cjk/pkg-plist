@@ -13,57 +13,55 @@ bin/hbf2gf
 bin/pinyin
 bin/sjisconv
 bin/sjislatex
-bin/ttf2pk
-bin/ttf2tfm
-%%PORTDOCS%%share/doc/CJK/CEF.doc
-%%PORTDOCS%%share/doc/CJK/CJK.doc
-%%PORTDOCS%%share/doc/CJK/COPYING
-%%PORTDOCS%%share/doc/CJK/INSTALL
-%%PORTDOCS%%share/doc/CJK/TDS.doc
-%%PORTDOCS%%share/doc/CJK/chinese/README
-%%PORTDOCS%%share/doc/CJK/chinese/READMEb5.tex
-%%PORTDOCS%%share/doc/CJK/chinese/READMEgb.tex
-%%PORTDOCS%%share/doc/CJK/chinese/emTeXb5.doc
-%%PORTDOCS%%share/doc/CJK/chinese/teTeXb5.doc
-%%PORTDOCS%%share/doc/CJK/cjk-enc.doc
-%%PORTDOCS%%share/doc/CJK/commands.doc
-%%PORTDOCS%%share/doc/CJK/dvidrv.doc
-%%PORTDOCS%%share/doc/CJK/fonts.doc
-%%PORTDOCS%%share/doc/CJK/hbf2gf.doc
-%%PORTDOCS%%share/doc/CJK/history.2_5
-%%PORTDOCS%%share/doc/CJK/history.txt
-%%PORTDOCS%%share/doc/CJK/japanese/README
-%%PORTDOCS%%share/doc/CJK/japanese/ascii.doc
-%%PORTDOCS%%share/doc/CJK/japanese/japanese.doc
-%%PORTDOCS%%share/doc/CJK/japanese/japanese.jis
-%%PORTDOCS%%share/doc/CJK/japanese/jp-fonts.doc
-%%PORTDOCS%%share/doc/CJK/japanese/jp-tex.doc
-%%PORTDOCS%%share/doc/CJK/japanese/preview.doc
-%%PORTDOCS%%share/doc/CJK/japanese/shibuaki.doc
-%%PORTDOCS%%share/doc/CJK/pinyin.doc
-%%PORTDOCS%%share/doc/CJK/pyhyphen.doc
-%%PORTDOCS%%share/doc/CJK/ruby.doc
-%%PORTDOCS%%share/doc/CJK/thaifont.doc
-%%PORTDOCS%%share/doc/CJK/vertical.doc
+%%PORTDOCS%%%%DOCSDIR%%/CEF.doc
+%%PORTDOCS%%%%DOCSDIR%%/CJK.doc
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/TDS.doc
+%%PORTDOCS%%%%DOCSDIR%%/chinese/README
+%%PORTDOCS%%%%DOCSDIR%%/chinese/READMEb5.tex
+%%PORTDOCS%%%%DOCSDIR%%/chinese/READMEgb.tex
+%%PORTDOCS%%%%DOCSDIR%%/chinese/emTeXb5.doc
+%%PORTDOCS%%%%DOCSDIR%%/chinese/teTeXb5.doc
+%%PORTDOCS%%%%DOCSDIR%%/cjk-enc.doc
+%%PORTDOCS%%%%DOCSDIR%%/commands.doc
+%%PORTDOCS%%%%DOCSDIR%%/dvidrv.doc
+%%PORTDOCS%%%%DOCSDIR%%/fonts.doc
+%%PORTDOCS%%%%DOCSDIR%%/hbf2gf.doc
+%%PORTDOCS%%%%DOCSDIR%%/history.2_5
+%%PORTDOCS%%%%DOCSDIR%%/history.txt
+%%PORTDOCS%%%%DOCSDIR%%/japanese/README
+%%PORTDOCS%%%%DOCSDIR%%/japanese/ascii.doc
+%%PORTDOCS%%%%DOCSDIR%%/japanese/japanese.doc
+%%PORTDOCS%%%%DOCSDIR%%/japanese/japanese.jis
+%%PORTDOCS%%%%DOCSDIR%%/japanese/jp-fonts.doc
+%%PORTDOCS%%%%DOCSDIR%%/japanese/jp-tex.doc
+%%PORTDOCS%%%%DOCSDIR%%/japanese/preview.doc
+%%PORTDOCS%%%%DOCSDIR%%/japanese/shibuaki.doc
+%%PORTDOCS%%%%DOCSDIR%%/pinyin.doc
+%%PORTDOCS%%%%DOCSDIR%%/pyhyphen.doc
+%%PORTDOCS%%%%DOCSDIR%%/ruby.doc
+%%PORTDOCS%%%%DOCSDIR%%/thaifont.doc
+%%PORTDOCS%%%%DOCSDIR%%/vertical.doc
 share/emacs/site-lisp/CJK/cjkspace.el
 share/emacs/site-lisp/CJK/cjktilde.el
 share/emacs/site-lisp/CJK/emacs-20.3/cjk-enc.el
 share/emacs/site-lisp/CJK/emacs-20.3/thai-word.el
 share/emacs/site-lisp/CJK/mule-2.3/cjk-enc.el
-share/examples/CJK/Big5.tex
-share/examples/CJK/Big5vert.tex
-share/examples/CJK/CEF_test.tex
-share/examples/CJK/CJKbabel.tex
-share/examples/CJK/GB.tex
-share/examples/CJK/JIS.tex
-share/examples/CJK/KS.tex
-share/examples/CJK/README
-share/examples/CJK/SJIS.tex
-share/examples/CJK/UTF8.tex
-share/examples/CJK/muletest.tex
-share/examples/CJK/py_test.tex
-share/examples/CJK/rubytest.tex
-share/examples/CJK/thai.tex
+%%EXAMPLESDIR%%/Big5.tex
+%%EXAMPLESDIR%%/Big5vert.tex
+%%EXAMPLESDIR%%/CEF_test.tex
+%%EXAMPLESDIR%%/CJKbabel.tex
+%%EXAMPLESDIR%%/GB.tex
+%%EXAMPLESDIR%%/JIS.tex
+%%EXAMPLESDIR%%/KS.tex
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/SJIS.tex
+%%EXAMPLESDIR%%/UTF8.tex
+%%EXAMPLESDIR%%/muletest.tex
+%%EXAMPLESDIR%%/py_test.tex
+%%EXAMPLESDIR%%/rubytest.tex
+%%EXAMPLESDIR%%/thai.tex
 share/texmf/fonts/tfm/arphic/arb5kai/arb5kai01.tfm
 share/texmf/fonts/tfm/arphic/arb5kai/arb5kai02.tfm
 share/texmf/fonts/tfm/arphic/arb5kai/arb5kai03.tfm
@@ -461,27 +459,13 @@ share/texmf/tex/latex/CJK/thai/c90dbss.fd
 share/texmf/tex/latex/CJK/thai/c90nrsr.fd
 share/texmf/tex/latex/CJK/thai/thaicjk.ldf
 share/texmf/tex/latex/CJK/thai/c90enc.def
-share/texmf/ttf2pk/Big5.sfd
-share/texmf/ttf2pk/ET5.enc
-share/texmf/ttf2pk/EUC.sfd
-share/texmf/ttf2pk/SJIS.sfd
-share/texmf/ttf2pk/T1-WGL4.enc
-share/texmf/ttf2pk/UBg5plus.sfd
-share/texmf/ttf2pk/UBig5.sfd
-share/texmf/ttf2pk/UGB.sfd
-share/texmf/ttf2pk/UGBK.sfd
-share/texmf/ttf2pk/UJIS.sfd
-share/texmf/ttf2pk/UKS.sfd
-share/texmf/ttf2pk/Unicode.sfd
-share/texmf/ttf2pk/VPS.rpl
-share/texmf/ttf2pk/ttfonts.map
-%%PORTDOCS%%@dirrm share/doc/CJK/chinese
-%%PORTDOCS%%@dirrm share/doc/CJK/japanese
-%%PORTDOCS%%@dirrm share/doc/CJK
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/chinese
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/japanese
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/emacs/site-lisp/CJK/emacs-20.3
 @dirrm share/emacs/site-lisp/CJK/mule-2.3
 @dirrm share/emacs/site-lisp/CJK
-@dirrm share/examples/CJK
+@dirrm %%EXAMPLESDIR%%
 @dirrm share/texmf/fonts/tfm/arphic/arb5kai
 @dirrm share/texmf/fonts/tfm/arphic/arb5sung
 @dirrm share/texmf/fonts/tfm/arphic/argbkai
@@ -502,4 +486,3 @@ share/texmf/ttf2pk/ttfonts.map
 @dirrm share/texmf/tex/latex/CJK/mule
 @dirrm share/texmf/tex/latex/CJK/thai
 @dirrm share/texmf/tex/latex/CJK
-@dirrm share/texmf/ttf2pk

@@ -7,7 +7,7 @@ fi
 
 TEXMFMAIN=`kpsexpand '$TEXMFMAIN'`
 TEXMFCNF=${TEXMFMAIN}/web2c/texmf.cnf
-SPECIALMAP=${TEXMFMAIN}/fontname/special.map
+SPECIALMAP=${TEXMFMAIN}-dist/fonts/map/fontname/special.map
 
 # Edit web2c/texmf.cnf
 sed -e "/ttf2pk/d" ${TEXMFCNF} > ${TEXMFCNF}.tmp
@@ -21,7 +21,6 @@ sed -e "/^argb/d" ${SPECIALMAP} > ${SPECIALMAP}.tmp
 mv -f ${SPECIALMAP}.tmp ${SPECIALMAP}
 
 # Delete symbolic links
-rm -f ${TEXMFMAIN}/ttf2tfm
 rm -f ${TEXMFMAIN}/fonts/truetype/arphic/arb5_kai.ttf
 rm -f ${TEXMFMAIN}/fonts/truetype/arphic/arb5_sung.ttf
 rm -f ${TEXMFMAIN}/fonts/truetype/arphic/argb_kai.ttf
