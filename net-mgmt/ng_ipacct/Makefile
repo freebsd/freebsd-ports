@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ng_ipacct
-PORTVERSION=	20050228
-PORTREVISION=	1
+PORTVERSION=	20050731
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/kernel/ng_ipacct/
 
