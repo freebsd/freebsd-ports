@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	glib
-PORTVERSION=	2.6.5
-PORTREVISION=	1
+PORTVERSION=	2.6.6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/2.6,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.6/ \
