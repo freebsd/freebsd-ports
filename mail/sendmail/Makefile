@@ -126,13 +126,7 @@ CONFLICTS+=	sendmail+tls-8.* \
 		sendmail+sasl2+db*-8.* \
 		sendmail+db*-8.*
 CONFLICTS+=	sendmail-sasl-8.* sendmail-sasl2-8.* sendmail-tls-8.*
-.if defined(LDAP_PORT)
-OPENLDAP_LIB?=	libldap.so.2
-BUILD_DEPENDS+=	${LOCALBASE}/lib/${OPENLDAP_LIB}:${PORTSDIR}/${LDAP_PORT}
-RUN_DEPENDS+=	${LOCALBASE}/lib/${OPENLDAP_LIB}:${PORTSDIR}/${LDAP_PORT}
-.else
 USE_OPENLDAP=	yes
-.endif
 .else
 CONFLICTS+=	sendmail*+ldap*-8.*
 .endif
