@@ -8,12 +8,11 @@
 # Shamelessly stolen from will's mod_auth_any port.
 
 PORTNAME=	mod_auth_kerb
-PORTVERSION=	4.11
-PORTREVISION=	1
+PORTVERSION=	5.0.r6
+DISTNAME=	mod_auth_kerb-5.0-rc6
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=modauthkerb
-
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module for authenticating users with Kerberos v5
 
@@ -26,25 +25,13 @@ COMMENT=	An Apache module for authenticating users with Kerberos v5
 LIB_DEPENDS=	krb5.3:${PORTSDIR}/security/krb5
 
 USE_APACHE=	yes
-WRKSRC=		${WRKDIR}/src/modules/kerberos
 
 KRB5_HOME?=	${LOCALBASE}
-USE_REINPLACE=	yes
 
-post-patch:
-	@${REINPLACE_CMD} '379N;s/\n/ /' ${WRKSRC}/mod_auth_kerb.c
+# Don't fsck with CFLAGS
+CFLAGS:=
 
-do-build:
-	cd ${WRKSRC} && \
-		${APXS} -I${KRB5_HOME}/include \
-		-DKRB5 -DKRB5_VERIFY_TICKET -DKRB5_SAVE_CREDENTIALS \
-		-DKRB5_DEFAULT_KEYTAB=\"\\\"FILE:${LOCALBASE}/etc/apache/keytab\\\"\" \
-		-Dkerb_auth_module=auth_kerb_module \
-		-c ${PORTNAME}.c \
-		-L${KRB5_HOME}/lib -Wl,-rpath -Wl,${KRB5_HOME}/lib \
-		-lkrb5 -lk5crypto -lcom_err
-
-do-install:
-	${APXS} -i -A -n ${PORTNAME:S/mod_//g} ${WRKSRC}/${PORTNAME}.so
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-krb5=${KRB5_HOME} --without-krb4
 
 .include <bsd.port.mk>
