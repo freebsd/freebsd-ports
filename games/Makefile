@@ -213,6 +213,7 @@
     SUBDIR += gtkatlantic
     SUBDIR += gtkballs
     SUBDIR += gtklife
+    SUBDIR += gtkpool
     SUBDIR += gtktetcolor
     SUBDIR += gturing
     SUBDIR += gtypist
