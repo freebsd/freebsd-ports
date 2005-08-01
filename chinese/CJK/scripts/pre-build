@@ -2,7 +2,7 @@
 PATH=/bin:/usr/bin; export PATH
 
 # Check if teTeX is installed.
-if [ ! -f ${PREFIX}/share/texmf/doc/tetex/teTeX-FAQ ]; then
+if [ ! -f ${LOCALBASE}/share/texmf/doc/tetex/teTeX-FAQ ]; then
   echo "-----------------------------------------"
   echo "teTeX is not installed!"
   echo "It's recommended to use CJK upon teTeX!"
