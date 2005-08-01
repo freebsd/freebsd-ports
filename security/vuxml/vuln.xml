@@ -32,6 +32,34 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="debbb39c-fdb3-11d9-a30d-00b0d09acbfc">
+    <topic>nbsmtp -- format string vulnerability</topic>
+    <affects>
+      <package>
+        <name>nbsmtp</name>
+        <range><lt>0.99_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>When nbsmtp is executed in debug mode, server messages
+        will be printed to stdout and logged via syslog. Syslog is
+        used insecurely and user-supplied format characters are
+        directly fed to the syslog function, which results in a
+        format string vulnerability.</p>
+        <p>Under some circumstances, an SMTP server may be able to
+        abuse this vulnerability in order to alter the nbsmtp
+        process and execute malicious code.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://people.freebsd.org/~niels/issues/nbsmtp-20050726.txt</url>
+    </references>
+    <dates>
+      <discovery>2005-07-25</discovery>
+      <entry>2005-08-01</entry>
+    </dates>
+  </vuln>
   <vuln vid="b1e8c810-01d0-11da-bc08-0001020eed82">
     <topic>sylpheed -- MIME-encoded file name buffer overflow
       vulnerability</topic>
