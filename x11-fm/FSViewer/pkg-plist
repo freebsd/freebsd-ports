@@ -167,4 +167,5 @@ GNUstep/Apps/FSViewer.app/xpm/year.xpm
 @dirrm GNUstep/Apps/FSViewer.app/xpm
 @dirrm GNUstep/Apps/FSViewer.app/tiff
 @dirrm GNUstep/Apps/FSViewer.app
+@dirrm GNUstep/Apps
 @dirrm share/doc/FSViewer
