@@ -31,11 +31,6 @@ INSTALL_TARGET=	site-install
 
 DOCS_EN=	AUTHORS COPYING.LIB ChangeLog README README.gnome2-all
 
-post-patch:
-	@${REINPLACE_CMD} -e 's| /usr/local/bin/ruby|/usr/bin/env ruby|g' \
-		${WRKSRC}/sample/test-gnome/*.rb
-	@${FIND} ${WRKSRC} -name '*.bak' -delete
-
 post-build:
 	@${CP} ${RUBY_GNOME_WRKSRC}/AUTHORS ${WRKSRC}/AUTHORS
 	@${CP} ${RUBY_GNOME_WRKSRC}/README ${WRKSRC}/README.gnome2-all

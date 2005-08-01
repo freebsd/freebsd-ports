@@ -31,11 +31,6 @@ INSTALL_TARGET=	site-install
 
 DOCS=		COPYING.LIB ChangeLog README
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|local/bin/ruby|bin/env ruby|g' \
-		${WRKSRC}/sample/*.rb
-	@${FIND} ${WRKSRC} -name '*.bak' -delete
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${RUBY_MODEXAMPLESDIR}
