@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SVN-Mirror
-PORTVERSION=	0.63
+PORTVERSION=	0.64
 PORTREVISION=	0
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Data/UUID.pm:${PORTSDIR}/devel/p5-Data-
 		${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversion-perl \
 		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-DateTime \
+		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL}/File/chdir.pm:${PORTSDIR}/devel/p5-File-chdir \
 		${SITE_PERL}/SVN/Simple/Edit.pm:${PORTSDIR}/devel/p5-SVN-Simple \
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
