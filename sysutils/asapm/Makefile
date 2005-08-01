@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asapm
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tigr.net/afterstep/download/asapm/
 
