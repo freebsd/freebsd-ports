@@ -15,4 +15,6 @@ COMMENT=	Simple and efficient text editor
 
 WRKSRC=		${WRKDIR}/puff
 
+PLIST_FILES=	bin/puff etc/puff.conf.sample
+
 .include <bsd.port.mk>
