@@ -26,6 +26,7 @@
     SUBDIR += freeglut
     SUBDIR += fxscintilla
     SUBDIR += fxscintilla-fox10
+    SUBDIR += fxscintilla-fox12
     SUBDIR += gai
     SUBDIR += gal
     SUBDIR += gal2
