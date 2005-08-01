@@ -12,18 +12,20 @@ MASTER_SITES=	http://freebsd.t-hosting.hu/dte/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gkovesdan@t-hosting.hu
-COMMENT=	A simple text editor which uses many of the shortcuts used in MSDOS EDIT
+COMMENT=	A text editor which uses many of the shortcuts used in MSDOS EDIT
 
 MAN1=		dte.1
+PORTDOCS=	dte.doc dte.hlp dte.rc
+PLIST_FILES=	bin/dte
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dte ${PREFIX}/bin/dte
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/dte
-	${INSTALL_DATA} ${WRKSRC}/dte.doc ${PREFIX}/share/doc/dte/
-	${INSTALL_DATA} ${WRKSRC}/dte.hlp ${PREFIX}/share/doc/dte/
-	${INSTALL_DATA} ${WRKSRC}/dte.rc ${PREFIX}/share/doc/dte/
 	${INSTALL_MAN} ${WRKSRC}/dte.1 ${MANPREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
