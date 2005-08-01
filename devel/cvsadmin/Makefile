@@ -10,12 +10,9 @@ PORTNAME=	cvsadmin
 PORTVERSION=	1.0.3
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cooptel.qc.ca/~limitln/
+MASTER_SITES=	http://freebsd.t-hosting.hu/cvsadmin/
 
-DEPRECATED=	"master site disappeared"
-EXPIRATION_DATE=2005-08-31
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	A simple program to administrate users of a CVS repository
 
 GNU_CONFIGURE=	yes
