@@ -1,0 +1,11 @@
+--- configure.in.orig	Sun Jul 22 03:55:06 2001
++++ configure.in	Mon Aug  1 14:51:13 2005
+@@ -10,7 +10,7 @@
+ AC_PROG_INSTALL
+ 
+ AC_HEADER_STDC
+-AC_CHECK_HEADERS(machine/smb.h,[AC_DEFINE(HAVE_SMBUS)])
++AC_CHECK_HEADERS(dev/smbus/smb.h,[AC_DEFINE(HAVE_SMBUS)])
+ 
+ AC_PATH_X
+ VT_FIND_LIBXPM
