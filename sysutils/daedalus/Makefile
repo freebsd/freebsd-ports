@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	daedalus
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.insidesystems.net/daedalus/
 
