@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	tse3
-PORTVERSION=	0.2.7
-PORTREVISION=	2
+PORTVERSION=	0.3.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,20 +13,27 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A MIDI library
 
-LIB_DEPENDS=	artsc:${PORTSDIR}/audio/arts
-
-USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
-INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
+USE_LIBTOOL_VER=	15
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--without-doc-install
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
+INSTALLS_SHLIB=	yes
 
-MAN1=	tse3play.1
-MAN3=	tse3.3
+MAN1=		tse3play.1
+MAN3=		tse3.3
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
 BROKEN=		"Does not compile on !i386"
+.endif
+
+.if defined(WITH_ARTS)
+LIB_DEPENDS+=	artsmidi:${PORTSDIR}/multimedia/kdemultimedia3
+.else
+CONFIGURE_ARGS+=	--without-aRts
 .endif
 
 pre-everything::
@@ -52,11 +58,16 @@ pre-everything::
 	${ECHO_MSG} "Aborting."; exit 1;\
 	fi
 
-post-patch:
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e 's|prefix}/doc/$${PACKAGE}-$${VERSION}|prefix}/share/doc/$${PACKAGE}|'
-
-pre-configure:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} -x -n 10 \
-	${REINPLACE_CMD} -e 's|_LDFLAGS =|_LDFLAGS = ${PTHREAD_LIBS}|g'
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.gif ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.jpeg ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/History ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/songs
+	${INSTALL_DATA} ${WRKSRC}/demos/*.tse3 ${DOCSDIR}/songs
+.endif
 
 .include <bsd.port.post.mk>

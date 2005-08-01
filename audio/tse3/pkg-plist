@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/audio/tse3/pkg-plist,v 1.4 2005-05-31 21:34:44 oliver Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/audio/tse3/pkg-plist,v 1.5 2005-08-01 12:01:59 sem Exp $
 bin/tse3play
 include/tse3/DisplayParams.h
 include/tse3/Error.h
@@ -108,49 +108,46 @@ include/tse3/util/Track.h
 lib/libtse3.a
 lib/libtse3.so
 lib/libtse3.so.0
-share/doc/tse3/AUTHORS
-share/doc/tse3/About.html
-share/doc/tse3/Article.html
-share/doc/tse3/Bugs.html
-share/doc/tse3/Build.html
-share/doc/tse3/COPYING
-share/doc/tse3/Commands.html
-share/doc/tse3/Copyright.html
-share/doc/tse3/Error.html
-share/doc/tse3/Examples.html
-share/doc/tse3/Feedback.html
-share/doc/tse3/HOWTO.html
-share/doc/tse3/History
-share/doc/tse3/History.html
-share/doc/tse3/InsFiles.html
-share/doc/tse3/KDOC.html
-share/doc/tse3/Mutex.html
-share/doc/tse3/Notifier.html
-share/doc/tse3/Playable.html
-share/doc/tse3/Porting.html
-share/doc/tse3/Psalm150.html
-share/doc/tse3/Song.html
-share/doc/tse3/Structure.html
-share/doc/tse3/TSE3MDL.html
-share/doc/tse3/Trax.html
-share/doc/tse3/Trouble.html
-share/doc/tse3/Version.html
-share/doc/tse3/Whitepaper.html
-share/doc/tse3/index.html
-share/doc/tse3/pete.jpeg
-share/doc/tse3/songs/Ambient.tse3
-share/doc/tse3/songs/Bry.tse3
-share/doc/tse3/songs/Demo.tse2
-share/doc/tse3/songs/Demo.tse3
-share/doc/tse3/songs/Enigma.tse3
-share/doc/tse3/songs/FunkyJob.tse3
-share/doc/tse3/songs/Humphry.tse3
-share/doc/tse3/songs/Trip.tse3
-share/doc/tse3/trax.gif
-share/doc/tse3/tse3.gif
-share/doc/tse3/tse3logo.png
-@dirrm share/doc/tse3/songs
-@dirrm share/doc/tse3
+%%PORTDOCS%%%%DOCSDIR%%/About.html
+%%PORTDOCS%%%%DOCSDIR%%/Article.html
+%%PORTDOCS%%%%DOCSDIR%%/Bugs.html
+%%PORTDOCS%%%%DOCSDIR%%/Build.html
+%%PORTDOCS%%%%DOCSDIR%%/Commands.html
+%%PORTDOCS%%%%DOCSDIR%%/Copyright.html
+%%PORTDOCS%%%%DOCSDIR%%/Error.html
+%%PORTDOCS%%%%DOCSDIR%%/Examples.html
+%%PORTDOCS%%%%DOCSDIR%%/Feedback.html
+%%PORTDOCS%%%%DOCSDIR%%/HOWTO.html
+%%PORTDOCS%%%%DOCSDIR%%/History
+%%PORTDOCS%%%%DOCSDIR%%/History.html
+%%PORTDOCS%%%%DOCSDIR%%/InsFiles.html
+%%PORTDOCS%%%%DOCSDIR%%/KDOC.html
+%%PORTDOCS%%%%DOCSDIR%%/Mutex.html
+%%PORTDOCS%%%%DOCSDIR%%/Notifier.html
+%%PORTDOCS%%%%DOCSDIR%%/Playable.html
+%%PORTDOCS%%%%DOCSDIR%%/Porting.html
+%%PORTDOCS%%%%DOCSDIR%%/Psalm150.html
+%%PORTDOCS%%%%DOCSDIR%%/Song.html
+%%PORTDOCS%%%%DOCSDIR%%/Structure.html
+%%PORTDOCS%%%%DOCSDIR%%/TSE3MDL.html
+%%PORTDOCS%%%%DOCSDIR%%/Trax.html
+%%PORTDOCS%%%%DOCSDIR%%/Trouble.html
+%%PORTDOCS%%%%DOCSDIR%%/Version.html
+%%PORTDOCS%%%%DOCSDIR%%/Whitepaper.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/pete.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/songs/Ambient.tse3
+%%PORTDOCS%%%%DOCSDIR%%/songs/Bry.tse3
+%%PORTDOCS%%%%DOCSDIR%%/songs/Demo.tse3
+%%PORTDOCS%%%%DOCSDIR%%/songs/Enigma.tse3
+%%PORTDOCS%%%%DOCSDIR%%/songs/FunkyJob.tse3
+%%PORTDOCS%%%%DOCSDIR%%/songs/Humphry.tse3
+%%PORTDOCS%%%%DOCSDIR%%/songs/Trip.tse3
+%%PORTDOCS%%%%DOCSDIR%%/trax.gif
+%%PORTDOCS%%%%DOCSDIR%%/tse3.gif
+%%PORTDOCS%%%%DOCSDIR%%/tse3logo.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/songs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/tse3/util
 @dirrm include/tse3/plt
 @dirrm include/tse3/listen/ins
