@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	etox
-PORTVERSION=	0.9.0.003
+PORTVERSION=	0.9.0.004
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 

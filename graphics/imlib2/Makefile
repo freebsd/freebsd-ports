@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	imlib2
-PORTVERSION=	1.2.1
-PORTREVISION=	4
+PORTVERSION=	1.2.1.004
+PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
@@ -37,6 +37,7 @@ CONFIGURE_ARGS+=	--enable-mmx
 
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-x
+PKGNAMESUFFIX+=	-nox11
 PLIST_SUB=	X11="@comment "
 .else
 USE_XLIB=	yes

@@ -17,6 +17,7 @@ include/enlightenment/e_config.h
 include/enlightenment/e_container.h
 include/enlightenment/e_datastore.h
 include/enlightenment/e_desk.h
+include/enlightenment/e_dialog.h
 include/enlightenment/e_dnd.h
 include/enlightenment/e_error.h
 include/enlightenment/e_focus.h
@@ -68,6 +69,8 @@ lib/enlightenment/modules/clock/module_icon.png
 lib/enlightenment/modules/cpufreq/freqset
 lib/enlightenment/modules/cpufreq/module.so
 lib/enlightenment/modules/cpufreq/module_icon.png
+lib/enlightenment/modules/desktopname/module.so
+lib/enlightenment/modules/desktopname/module_icon.png
 lib/enlightenment/modules/dropshadow/menu_icon_close.png
 lib/enlightenment/modules/dropshadow/menu_icon_dark.png
 lib/enlightenment/modules/dropshadow/menu_icon_far.png
@@ -117,7 +120,6 @@ lib/libe.so.0
 %%DATADIR%%/data/fonts/fonts.dir
 %%DATADIR%%/data/fonts/kochi-gothic.ttf
 %%DATADIR%%/data/fonts/kochi.COPYING
-%%DATADIR%%/data/icons/default.edj
 %%DATADIR%%/data/images/button_in.png
 %%DATADIR%%/data/images/button_out.png
 %%DATADIR%%/data/images/e.png
@@ -143,6 +145,7 @@ share/locale/ja/LC_MESSAGES/enlightenment.mo
 share/locale/pl/LC_MESSAGES/enlightenment.mo
 share/locale/pt/LC_MESSAGES/enlightenment.mo
 share/locale/ru/LC_MESSAGES/enlightenment.mo
+share/locale/sk/LC_MESSAGES/enlightenment.mo
 share/locale/sl/LC_MESSAGES/enlightenment.mo
 share/locale/zh_CN/LC_MESSAGES/enlightenment.mo
 share/xsessions/enlightenment.desktop
@@ -151,7 +154,6 @@ share/xsessions/enlightenment.desktop
 @dirrm %%DATADIR%%/data/other
 @dirrm %%DATADIR%%/data/init
 @dirrm %%DATADIR%%/data/images
-@dirrm %%DATADIR%%/data/icons
 @dirrm %%DATADIR%%/data/fonts
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
@@ -164,6 +166,7 @@ share/xsessions/enlightenment.desktop
 @dirrm lib/enlightenment/modules/ibox
 @dirrm lib/enlightenment/modules/ibar
 @dirrm lib/enlightenment/modules/dropshadow
+@dirrm lib/enlightenment/modules/desktopname
 @dirrm lib/enlightenment/modules/cpufreq
 @dirrm lib/enlightenment/modules/clock
 @dirrm lib/enlightenment/modules/battery
