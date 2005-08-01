@@ -8,30 +8,21 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.1.0
-PORTREVISION=	20050723
+PORTREVISION=	20050730
 CATEGORIES=	lang java
 VERSIONSTRING=	4.1-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
-DISTFILES=	\
-		gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
+DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-java-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
-.if defined(WITH_FORTRAN)
-DISTFILES+=	gcc-fortran-${VERSIONSTRING}${EXTRACT_SUFX}
-.endif
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.1
 
 .if defined(WITH_FORTRAN)
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
-.endif
-.if defined(WITH_JAVA_AWT)
-LIB_DEPENDS+=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
-#LIB_DEPENDS+=	cairo:${PORTSDIR}/graphics/cairo
 .endif
 
 CONFLICTS=	gcc-3.3.* gcc-3.4.* gcc-4.0.*
@@ -53,18 +44,15 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == amd64  ||  ${ARCH} == ia64  ||  ${ARCH} == sparc64
+WITHOUT_JAVA=	yes
+.endif
+
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
-
-.if ${ARCH} == amd64  ||  ${ARCH} == ia64  ||  ${ARCH} == sparc64
-WITHOUT_LIBJAVA=	yes
-.endif
-# FIXME: we are currently getting weird build failures with libjava on
-# some 4.x and 5.x systems, which the following seems to work around. PR 81788.
-CONFIGURE_ARGS+=	--disable-rpath
 
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
@@ -77,12 +65,9 @@ CONFIGURE_ARGS+=	--disable-nls \
 		--program-suffix=${SUFFIX} \
 		--libdir=${TARGLIB} \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/
-.if defined(WITH_FORTRAN)
-CONFIGURE_ARGS+=	--with-gmp=${LOCALBASE}
-.endif
 .if defined(WITH_JAVA_AWT)
-CONFIGURE_ARGS+=      --enable-java-awt=xlib,gtk #--enable-gtk-cairo=yes
-WANT_SHAREDLIBS=yes #We need this atm
+CONFIGURE_ARGS+=	--enable-java-awt=xlib,gtk #--enable-gtk-cairo=yes
+WANT_SHAREDLIBS=yes	# We need this at the moment.
 .endif
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 .if defined(WANT_SHAREDLIBS)
@@ -95,10 +80,28 @@ CONFIGURE_ARGS+=	--disable-shared
 ALL_TARGET=	bootstrap-lean
 PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET}
 MAN1=		cpp${SUFFIX}.1 \
-		fastjar${SUFFIX}.1 \
 		g++${SUFFIX}.1 \
 		gcc${SUFFIX}.1 \
-		gcov${SUFFIX}.1 \
+		gcov${SUFFIX}.1
+INFO=		cpp cppinternals gcc gccinstall gccint
+
+.if defined(WITH_FORTRAN)
+DISTFILES+=	gcc-fortran-${VERSIONSTRING}${EXTRACT_SUFX}
+CONFIGURE_ARGS+=--with-gmp=${LOCALBASE}
+MAN1+=		gfortran${SUFFIX}.1
+INFO+=		gfortran
+PLIST_SUB+=	FORTRAN=""
+.else
+PLIST_SUB+=	FORTRAN="@comment "
+.endif
+
+.if ! defined(WITHOUT_JAVA)
+DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX}
+EXTRA_PATCHES=	${FILESDIR}/java-patch-hier
+# FIXME: we are currently getting weird build failures with libjava on
+# some 4.x and 5.x systems, which the following works around. PR 81788.
+CONFIGURE_ARGS+=--disable-rpath
+MAN1+=		fastjar${SUFFIX}.1 \
 		gcj${SUFFIX}.1 \
 		gcj-dbtool${SUFFIX}.1 \
 		gcjh${SUFFIX}.1 \
@@ -111,28 +114,17 @@ MAN1=		cpp${SUFFIX}.1 \
 		jcf-dump${SUFFIX}.1 \
 		jv-scan${SUFFIX}.1 jv-convert${SUFFIX}.1 \
 		rmic${SUFFIX}.1 rmiregistry${SUFFIX}.1
-INFO=		cpp cppinternals gcc gccinstall gccint gcj fastjar \
-		hacking vmintegration
-
-.if defined(WITHOUT_LIBJAVA)
-CONFIGURE_ARGS+=	--disable-libgcj
-PLIST_SUB+=	LIBJAVA="@comment "
+INFO+=		gcj fastjar hacking vmintegration
+PLIST_SUB+=	JAVA=""
 .else
-PLIST_SUB+=	LIBJAVA=""
-.endif
-
-.if defined(WITH_FORTRAN)
-MAN1+=	gfortran${SUFFIX}.1
-INFO+=	gfortran
-PLIST_SUB+=	FORTRAN=""
-.else
-PLIST_SUB+=	FORTRAN="@comment "
+CONFIGURE_ARGS+=--disable-libgcj
+PLIST_SUB+=	JAVA="@comment "
 .endif
 
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
-.if defined(WITHOUT_LIBJAVA)
-	@${ECHO_MSG} "(without libgcj)"
+.if ! defined(WITHOUT_JAVA)
+	@${ECHO_MSG} "(with Java)"
 .endif
 
 post-patch:
@@ -153,6 +145,8 @@ check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 post-install:
+	# FIXME: As of July 2005 libjava installs these bogus directories.
+	-${RMDIR} -p ${PREFIX}/share/classpath/api
 	# man pages can only be generated if Perl >= 5.6 is installed;
 	# fake them otherwise.
 	for mp in ${_MANPAGES}; do \
@@ -160,9 +154,6 @@ post-install:
 	done
 .for f in c++ gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
 	# gij and jv-convert, for example, are not built on all platforms.
-	if [ -e ${PREFIX}/bin/${f}${SUFFIX} ]; then \
-	  ${STRIP_CMD} ${PREFIX}/bin/${f}${SUFFIX}; \
-	fi
 	if [ -e ${PREFIX}/man/man1/${f}.1 ]; then \
 	  ${MV} -f ${PREFIX}/man/man1/${f}.1 \
 	           ${PREFIX}/man/man1/${f}${SUFFIX}.1; \
