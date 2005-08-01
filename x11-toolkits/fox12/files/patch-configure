@@ -1,0 +1,11 @@
+--- configure.orig	Tue Feb  4 18:33:38 2003
++++ configure	Tue Feb  4 18:34:51 2003
+@@ -7498,7 +7498,7 @@
+ if test "x$enable_release" = "xyes" ; then
+ CXXFLAGS="${CXXFLAGS} -O2 -DNDEBUG"
+ if test "${GXX}" = "yes" ; then
+-CXXFLAGS="${CXXFLAGS} -Wuninitialized -ffast-math -finline-functions -fomit-frame-pointer -fexpensive-optimizations"
++CXXFLAGS="${CXXFLAGS} -Wuninitialized"
+ fi
+ fi
+ 

@@ -22,6 +22,7 @@
     SUBDIR += flvw
     SUBDIR += fox
     SUBDIR += fox-devel
+    SUBDIR += fox12
     SUBDIR += freeglut
     SUBDIR += fxscintilla
     SUBDIR += fxscintilla-fox10
