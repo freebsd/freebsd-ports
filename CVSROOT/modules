@@ -6887,6 +6887,7 @@ op		ports/security/op
 open		ports/sysutils/open
 open-cobol	ports/lang/open-cobol
 open-motif	ports/x11-toolkits/open-motif
+openacs		ports/www/openacs
 openal		ports/audio/openal
 openam		ports/net/openam
 openbabel	ports/science/openbabel
