@@ -25,6 +25,7 @@
     SUBDIR += ooodict-de_DE
     SUBDIR += phone
     SUBDIR += php_doc
+    SUBDIR += schwobifyer
     SUBDIR += selfhtml
     SUBDIR += staroffice5
     SUBDIR += staroffice52

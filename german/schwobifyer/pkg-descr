@@ -1,0 +1,9 @@
+Schwobifyer is a command line utility for translating german into the
+schwaebisch dialect.
+
+It reads from the standard input and translates it to standard output.
+
+WWW: http://unimut.fsk.uni-heidelberg.de/schwob.html
+
+- ehaupt
+ehaupt@critical.ch
