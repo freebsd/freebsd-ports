@@ -1226,6 +1226,7 @@ consolehm	ports/sysutils/consolehm
 contact-lookup-applet	ports/mail/contact-lookup-applet
 contool		ports/sysutils/contool
 convertall	ports/math/convertall
+convey		ports/net/convey
 convmv		ports/converters/convmv
 cook		ports/devel/cook
 cooledit	ports/editors/cooledit
