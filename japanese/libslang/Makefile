@@ -17,6 +17,8 @@ DISTNAME=	slang-${VERSION}jp${JP_VERSION}
 MAINTAINER=	iwashita@cqmail.net
 COMMENT=	A library permits a programmer to develop software
 
+CONFLICTS=	libslang2-2.* libslang-1.*[^j]*
+
 VERSION=	1.4.5
 JP_VERSION=	2
 

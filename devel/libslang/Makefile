@@ -18,7 +18,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-CONFLICTS=	libslang2-2.*
+CONFLICTS=	libslang2-2.* libslang-1.*.j[0-9]
 
 ALL_TARGET=	all elf
 INSTALL_TARGET=	install install-elf
