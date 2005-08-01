@@ -115,6 +115,7 @@
     SUBDIR += intercal
     SUBDIR += ironpython
     SUBDIR += itcl
+    SUBDIR += jakarta-commons-jelly
     SUBDIR += jruby
     SUBDIR += jython
     SUBDIR += kawa
