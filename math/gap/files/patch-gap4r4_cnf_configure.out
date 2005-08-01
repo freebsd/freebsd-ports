@@ -1,0 +1,11 @@
+--- gap4r4/cnf/configure.out.orig       Fri Jul 22 16:39:30 2005
++++ gap4r4/cnf/configure.out    Fri Jul 22 16:39:27 2005
+@@ -3708,6 +3708,8 @@ if test "${gp_cv_cflags+set}" = set; the
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+    case "$host-$CC" in
++    *-freebsd* )
++       gp_cv_cflags="";;
+     *-gcc | *-linux*-cc )
+        gp_cv_cflags="-Wall -g -O2";;
+     i686-*-egcs )
