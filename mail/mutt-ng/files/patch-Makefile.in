@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Jun 14 17:36:12 2005
-+++ Makefile.in	Tue Jun 14 17:36:23 2005
+--- Makefile.in.orig	Tue Jul 26 07:01:12 2005
++++ Makefile.in	Wed Jul 27 15:45:51 2005
 @@ -41,7 +41,8 @@
  EXTRA_PROGRAMS = muttng_dotlock$(EXEEXT) pgpringng$(EXEEXT) \
  	pgpewrapng$(EXEEXT) makedoc$(EXEEXT)
@@ -18,7 +18,15 @@
  am_makedoc_OBJECTS = makedoc.$(OBJEXT)
  makedoc_OBJECTS = $(am_makedoc_OBJECTS)
  am__objects_1 = patchlist.$(OBJEXT)
-@@ -484,7 +486,7 @@
+@@ -467,7 +469,6 @@
+ 	@rm -f stamp-h1
+ 	cd $(top_builddir) && $(SHELL) ./config.status config.h
+ $(srcdir)/config.h.in:  $(am__configure_deps) $(top_srcdir)/acconfig.h
+-	cd $(top_srcdir) && $(AUTOHEADER)
+ 	rm -f stamp-h1
+ 	touch $@
+ 
+@@ -485,7 +486,7 @@
  	cd $(top_builddir) && $(SHELL) ./config.status $@
  doc/instdoc.sh: $(top_builddir)/config.status $(top_srcdir)/doc/instdoc.sh.in
  	cd $(top_builddir) && $(SHELL) ./config.status $@
@@ -27,7 +35,7 @@
  	@$(NORMAL_INSTALL)
  	test -z "$(bindir)" || $(mkdir_p) "$(DESTDIR)$(bindir)"
  	@list='$(bin_PROGRAMS)'; for p in $$list; do \
-@@ -496,6 +498,16 @@
+@@ -497,6 +498,16 @@
  	   $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) "$$p" "$(DESTDIR)$(bindir)/$$f" || exit 1; \
  	  else :; fi; \
  	done

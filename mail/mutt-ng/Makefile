@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mutt-ng
-PORTVERSION=	20050614
+PORTVERSION=	20050726
 CATEGORIES=	mail
 MASTER_SITES=	http://nion.modprobe.de/mutt-ng/snapshots/
 DISTNAME=	muttng-${PORTVERSION}
@@ -19,8 +19,7 @@ USE_OPENSSL=	yes
 USE_REINPLACE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-fcntl \
-		--with-ssl=${OPENSSLBASE} --sysconfdir=${PREFIX}/etc \
+CONFIGURE_ARGS=	--disable-fcntl --sysconfdir=${PREFIX}/etc \
 		--with-sharedir=${PREFIX}/share/mutt \
 		--with-docdir=${DOCSDIR} --with-charmaps
 MAKE_ENV=	"EXAMPLESDIR=${EXAMPLESDIR}"
@@ -30,8 +29,7 @@ USE_GETTEXT=	yes
 USE_ICONV=	yes
 PLIST_SUB+=	NLS=""
 .if defined(WITHOUT_MUTT_ICONV)
-.error the WITHOUT_MUTT_ICONV knob of the mutt port only works if \
-	WITHOUT_NLS is also given
+BROKEN=	"The WITHOUT_MUTT_ICONV knob of the mutt port only works if WITHOUT_NLS is also given"
 .endif
 .elif !defined(WITHOUT_MUTT_ICONV)
 USE_ICONV=	yes
@@ -64,6 +62,10 @@ CONFIGURE_ARGS+=	--enable-pop
 CONFIGURE_ARGS+=	--enable-imap
 .endif
 
+.if defined(WITH_POP) || defined(WITH_IMAP)
+CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
+.endif
+
 .if defined (WITH_NNTP)
 CONFIGURE_ARGS+=	--enable-nntp
 .endif
@@ -73,11 +75,8 @@ CONFIGURE_ARGS+=	--enable-compressed
 .endif
 
 .if defined (WITH_HCACHE)
-CONFIGURE_ARGS+=	--enable-hcache --without-qdbm --without-gdbm --with-bdb=${PREFIX}
+CONFIGURE_ARGS+=	--enable-hcache --without-qdbm --without-gdbm --with-bdb=${LOCALBASE}
 LIB_DEPENDS+=		db41.1:${PORTSDIR}/databases/db41
-PLIST_SUB+=		HCACHE=""
-.else
-PLIST_SUB+=		HCACHE="@comment "
 .endif
 
 .if defined (WITH_FLOCK)
@@ -90,19 +89,22 @@ LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 CONFIGURE_ARGS+=	--with-slang=${LOCALBASE}
 .elif defined(WITH_NCURSES_PORT) && !defined(WITH_SLANG)
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-CONFIGURE_ARGS+=	--with-ncurses=${PREFIX}
+CONFIGURE_ARGS+=	--with-ncurses=${LOCALBASE}
 .elif defined(WITH_SLANG) && defined(WITH_NCURSES_PORT)
 BROKEN=	"You may not specify both WITH_SLANG and WITH_NCURSES options"
 .endif
 
 .if defined(WITH_SASL2)
+.if !defined(WITH_POP) && !defined(WITH_IMAP)
+BROKEN=	"SASL2 only is useful for imap or pop"
+.endif
 LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
-CONFIGURE_ARGS+=	--with-sasl2=${PREFIX}
+CONFIGURE_ARGS+=	--with-sasl2=${LOCALBASE}
 .endif
 
 .if defined(WITH_ESMTP)
 LIB_DEPENDS+=	esmtp.6:${PORTSDIR}/mail/libesmtp
-CONFIGURE_ARGS+=	--with-libesmtp=${PREFIX}
+CONFIGURE_ARGS+=	--with-libesmtp=${LOCALBASE}
 .endif
 
 .if !defined (NOPORTDOCS)
@@ -125,10 +127,6 @@ post-build:
 		-e 's|\$$\{DOCSDIR\}|${DOCSDIR}|g' \
 		-e 's|\$$\{EXAMPLESDIR\}|${EXAMPLESDIR}|g' \
 		${WRKSRC}/doc/muttrc.man
-PLIST:=		${WRKDIR}/PLIST
-pre-install:
-	@${CAT} ${PKGDIR}/pkg-plist.htmlfiles > ${PLIST}
-	@${CAT} ${PKGDIR}/pkg-plist >> ${PLIST}
 .endif
 
 post-install:
@@ -138,6 +136,10 @@ post-install:
 	@${MKDIR} ${DOCSDIR} && ${CHMOD} a+rx ${DOCSDIR}
 	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt PGP-Notes.txt \
 		${DOCSDIR}
+	@${FIND} ${DOCSDIR}/html ! -type d | ${SED} -e 's,${PREFIX}/,,' \
+	>> ${TMPPLIST}
+	@${ECHO} "@dirrm share/doc/mutt-ng/html" >> ${TMPPLIST}
+	@${ECHO} "@dirrm ${DOCSDIR:S,${PREFIX},,}" >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.post.mk>
