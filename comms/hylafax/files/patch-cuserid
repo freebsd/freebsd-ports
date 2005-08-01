@@ -1,0 +1,99 @@
+--- util/SNPPClient.c++	Sat Feb  8 17:49:57 2003
++++ util/SNPPClient.c++	Sun Jul 24 14:54:33 2005
+@@ -247,17 +247,11 @@
+ SNPPClient::setupUserIdentity(fxStr& emsg)
+ {
+-    struct passwd* pwd = NULL;
+-    char* name = cuserid(NULL);
+-    if (!name) {
+-	name = getlogin();
+-	if (name)
+-	    pwd = getpwnam(name);
+-    }
+-    if (!pwd)
+-	pwd = getpwuid(getuid());
++    struct passwd* pwd;
++
++    pwd = getpwuid(getuid());
+     if (!pwd) {
+ 	emsg = fxStr::format(
+-	    "Can not locate your password entry (account name %s, uid %lu).",
+-	    (name ? name : "<unspecified>"), (u_long) getuid());
++	    "Can not locate your password entry (uid %lu): %s.",
++		(u_long) getuid(), strerror(errno));
+ 	return (false);
+     }
+--- util/TextFormat.c++	Thu Nov 20 16:23:17 2003
++++ util/TextFormat.c++	Sun Jul 24 14:55:47 2005
+@@ -510,5 +510,5 @@
+     time_t t = Sys::now();
+     fprintf(output, "%%%%CreationDate: %s", ctime(&t));
+-    char* cp = cuserid(NULL);
++    char* cp = getlogin();
+     fprintf(output, "%%%%For: %s\n", cp ? cp : "");
+     fputs("%%Origin: 0 0\n", output);
+--- util/FaxClient.c++	Wed Mar 10 08:58:47 2004
++++ util/FaxClient.c++	Thu Jul 28 13:40:39 2005
+@@ -180,20 +180,17 @@
+ {
+     struct passwd* pwd = NULL;
+-    char* name = getenv("FAXUSER");
++    const char* name = getenv("FAXUSER");
+     if (name)
+ 	pwd = getpwnam(name);
+     else
+-	name = cuserid(NULL);
+-    if (!name) {
+-	name = getlogin();
+-	if (name)
+-	    pwd = getpwnam(name);
+-    }
+-    if (!pwd)
+ 	pwd = getpwuid(getuid());
+     if (!pwd) {
+-	emsg = fxStr::format(
+-	    "Can not locate your password entry (account name %s, uid %lu).",
+-	    (name ? name : "<unspecified>"), (u_long) getuid());
++	if (name)
++	    emsg = fxStr::format("Can not locate FAXUSER password entry "
++		"(account name %s, uid %lu): %s", name, (u_long) getuid(),
++		strerror(errno));
++	else
++	    emsg = fxStr::format("Can not locate your password entry "
++		"(uid %lu): %s", (u_long) getuid(), strerror(errno));
+ 	return (false);
+     }
+@@ -621,4 +622,6 @@
+ FaxClient::vcommand(const char* fmt, va_list ap)
+ {
++    char *line = NULL;
++
+     if (getVerbose()) {
+         if (strncasecmp("PASS ", fmt, 5) == 0) {
+@@ -627,7 +630,11 @@
+             traceServer("-> ADMIN XXXX");
+         } else {
+-            fxStr s("-> ");
+-            s.append(fmt);
+-            vtraceServer(s, ap);
++           line = (char *)malloc(100);
++           if (line == NULL)
++               printError("Memory allocation failed");
++           else {
++               vsnprintf(line, 100, fmt, ap);
++               traceServer("-> %s", line);
++           }
+         }
+     }
+@@ -637,5 +644,10 @@
+         return (0);
+     }
+-    vfprintf(fdOut, fmt, ap);
++    if (line == NULL)
++       vfprintf(fdOut, fmt, ap);
++    else {
++       fputs(line, fdOut);
++       free(line);
++    }
+     fputs("\r\n", fdOut);
+     (void) fflush(fdOut);

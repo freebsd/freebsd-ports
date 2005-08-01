@@ -1,0 +1,311 @@
+--- util/faxwatch.c++	Fri Jun 14 15:24:04 2002
++++ util/faxwatch.c++	Sun Jul 24 14:32:23 2005
+@@ -49,5 +49,5 @@
+ writeData(void* arg, const char* buf, int cc, fxStr& emsg)
+ {
+-    if (Sys::write((int) arg, buf, cc) != cc) {
++    if (Sys::write((intptr_t) arg, buf, cc) != cc) {
+ 	emsg = fxStr::format("write error: %s", strerror(errno));
+ 	return (false);
+--- hfaxd/FileTransfer.c++	Wed Mar 17 13:26:54 2004
++++ hfaxd/FileTransfer.c++	Sun Jul 24 14:34:37 2005
+@@ -323,5 +323,5 @@
+ #define	TIFFdiroff(v) \
+     (uint32) (sizeof (TIFFHeader) + sizeof (uint16) + \
+-      (unsigned) &(((DirTemplate*) 0)->v))
++      (uintptr_t) &(((DirTemplate*) 0)->v))
+ 	{ TIFFTAG_SUBFILETYPE,		TIFF_LONG,	1 },
+ 	{ TIFFTAG_IMAGEWIDTH,		TIFF_LONG,	1 },
+--- util/Dispatcher.c++	Sat Feb  8 17:49:55 2003
++++ util/Dispatcher.c++	Sun Jul 24 15:23:45 2005
+@@ -579,10 +579,10 @@
+      */
+     if (!_cqueue->isReady()) {
+-    do {
+-        //note - this is an array copy, not a pointer assignment
+-        rmaskret = _rmask;
+-        wmaskret = _wmask;
+-        emaskret = _emask;
+-        howlong = calculateTimeout(howlong);
++	do {
++            //note - this is an array copy, not a pointer assignment
++            rmaskret = _rmask;
++            wmaskret = _wmask;
++            emaskret = _emask;
++            howlong = calculateTimeout(howlong);
+ 
+ #if CONFIG_BADSELECTPROTO
+@@ -594,5 +594,6 @@
+ 	    howlong = calculateTimeout(howlong);
+ 	} while (nfound < 0 && !handleError());
+-    }
++    } else
++	nfound = 0;
+     if (!_cqueue->isEmpty()) {
+ #if defined(SA_NOCLDSTOP)		// POSIX
+--- util/TimeOfDay.c++	Mon Jun  4 01:32:05 2001
++++ util/TimeOfDay.c++	Sun Jul 24 15:27:15 2005
+@@ -146,5 +146,5 @@
+ 	while (*cp && *cp != ',' && !isdigit(*cp))
+ 	    cp++;
+-	time_t start, end;
++	unsigned start, end;
+ 	if (sscanf(cp, "%u-%u", &start, &end) == 2) {
+ 	    // convert from military time to seconds
+--- util/Class2Params.c++	Tue Dec 28 16:13:04 2004
++++ util/Class2Params.c++	Sun Jul 24 15:29:15 2005
+@@ -348,7 +348,5 @@
+     // extension flags for 3 more bytes
+     u_int firstbyte  = 0;
+-    u_int secondbyte = (1<<24);
+     u_int thirdbyte  = (1<<24) | (1<<16);
+-    u_int fourthbyte = (1<<24) | (1<<16) | (1<<8);
+     u_int dcs_xinfo =
+ 	  (vr & VR_R8 ? (DCS_200X400 | thirdbyte) : 0)
+--- util/TypeRules.c++	Sat Oct  4 14:19:26 2003
++++ util/TypeRules.c++	Sun Jul 24 15:32:54 2005
+@@ -81,5 +81,5 @@
+ 		printf(" <any value>");
+ 	    else
+-		printf(" %#x", value.v);
++		printf(" %#llx", (long long)value.v);
+ 	}
+ 	printf(" -- ");
+--- util/cvtfacility.c	Mon Oct 12 16:47:48 1998
++++ util/cvtfacility.c	Sun Jul 24 15:37:21 2005
+@@ -32,58 +32,58 @@
+ } facilitynames[] = {
+ #ifdef LOG_AUDIT
+-	"audit",	LOG_AUDIT,
++	{ "audit",	LOG_AUDIT	},
+ #endif
+ #ifdef LOG_AUTH
+-	"auth",		LOG_AUTH,
++	{ "auth",		LOG_AUTH	},
+ #endif
+ #ifdef LOG_CRON
+-	"cron", 	LOG_CRON,
++	{ "cron", 	LOG_CRON	},
+ #endif
+ #ifdef LOG_DAEMON
+-	"daemon",	LOG_DAEMON,
++	{ "daemon",	LOG_DAEMON	},
+ #endif
+ #ifdef LOG_MAIL
+-	"mail",		LOG_MAIL,
++	{ "mail",		LOG_MAIL	},
+ #endif
+ #ifdef LOG_NEWS
+-	"news",		LOG_NEWS,
++	{ "news",		LOG_NEWS	},
+ #endif
+ #ifdef LOG_SAT
+-	"sat",		LOG_AUDIT,
++	{ "sat",		LOG_AUDIT	},
+ #endif
+ #ifdef LOG_SYSLOG
+-	"syslog",	LOG_SYSLOG,
++	{ "syslog",	LOG_SYSLOG	},
+ #endif
+ #ifdef LOG_USER
+-	"user",		LOG_USER,
++	{ "user",		LOG_USER	},
+ #endif
+ #ifdef LOG_UUCP
+-	"uucp",		LOG_UUCP,
++	{ "uucp",		LOG_UUCP	},
+ #endif
+ #ifdef LOG_LOCAL0
+-	"local0",	LOG_LOCAL0,
++	{ "local0",	LOG_LOCAL0	},
+ #endif
+ #ifdef LOG_LOCAL1
+-	"local1",	LOG_LOCAL1,
++	{ "local1",	LOG_LOCAL1	},
+ #endif
+ #ifdef LOG_LOCAL2
+-	"local2",	LOG_LOCAL2,
++	{ "local2",	LOG_LOCAL2	},
+ #endif
+ #ifdef LOG_LOCAL3
+-	"local3",	LOG_LOCAL3,
++	{ "local3",	LOG_LOCAL3	},
+ #endif
+ #ifdef LOG_LOCAL4
+-	"local4",	LOG_LOCAL4,
++	{ "local4",	LOG_LOCAL4	},
+ #endif
+ #ifdef LOG_LOCAL5
+-	"local5",	LOG_LOCAL5,
++	{ "local5",	LOG_LOCAL5	},
+ #endif
+ #ifdef LOG_LOCAL6
+-	"local6",	LOG_LOCAL6,
++	{ "local6",	LOG_LOCAL6	},
+ #endif
+ #ifdef LOG_LOCAL7
+-	"local7",	LOG_LOCAL7,
++	{ "local7",	LOG_LOCAL7	},
+ #endif
+-	NULL,		-1,
++	{ NULL,		-1	},
+ };
+ 
+--- util/faxmsg.c	Sat Feb  8 17:22:18 2003
++++ util/faxmsg.c	Sun Jul 24 15:43:58 2005
+@@ -59,15 +59,15 @@
+     int fifo, c;
+     char* spooldir = FAX_SPOOLDIR;
+-    const char* arg;
++    const char* arg = NULL;
+     char fifoname[256];
+     int cmdlen, fnlen;
+     char cmd[80];
+     char* appname;
+-    const char* opts;
+-    const char* usage;
+-    const char* cmdfmt;
++    const char* opts = NULL;
++    const char* usage = NULL;
++    const char* cmdfmt = NULL;
+     char* cp;
+     int facility = LOG_DAEMON;
+-    int modemRequired;
++    int modemRequired = 0;
+ 
+     (void) cvtFacility(LOG_FAX, &facility);
+@@ -123,6 +123,6 @@
+         } else {
+             fnlen = snprintf(fifoname, sizeof(fifoname), "%s.%.*s", FAX_FIFO,
+-                sizeof (fifoname) - sizeof (FAX_FIFO), argv[optind]);
+-            if (fnlen < 0 | fnlen >= sizeof(fifoname)) {
++                (int)(sizeof (fifoname) - sizeof (FAX_FIFO)), argv[optind]);
++            if (fnlen < 0 || fnlen >= sizeof(fifoname)) {
+                 fatal("Argument name too long: %s", argv[optind]);
+             }
+@@ -133,5 +133,5 @@
+         fatal("usage: %s %s", argv[0], usage);
+     }
+-    for (cp = fifoname; cp = strchr(cp, '/'); *cp++ = '_')
++    for (cp = fifoname; (cp = strchr(cp, '/')); *cp++ = '_')
+ 	;
+     if (chdir(spooldir) < 0) {
+--- util/faxconfig.c	Tue Apr 15 17:44:03 2003
++++ util/faxconfig.c	Sun Jul 24 15:47:52 2005
+@@ -89,5 +89,5 @@
+         } else {
+             snprintf(fifoname, sizeof(fifoname), "%s.%.*s", FAX_FIFO,
+-                sizeof (fifoname) - sizeof (FAX_FIFO), devid);
++                (int)(sizeof(fifoname) - sizeof(FAX_FIFO)), devid);
+         }
+     } else {
+--- util/faxstate.c	Sat Feb  8 17:22:18 2003
++++ util/faxstate.c	Sun Jul 24 15:49:29 2005
+@@ -141,5 +141,5 @@
+     } else {
+         snprintf(fifoname, sizeof(fifoname), "%s.%.*s", FAX_FIFO,
+-            sizeof (fifoname) - sizeof (FAX_FIFO), devid);
++            (int)(sizeof(fifoname) - sizeof(FAX_FIFO)), devid);
+         fifo = open(fifoname, O_WRONLY|O_NDELAY);
+         if (fifo < 0) {
+--- util/dialtest.c++	Sat Feb  8 17:32:35 2003
++++ util/dialtest.c++	Sun Jul 24 15:50:17 2005
+@@ -67,5 +67,5 @@
+     char* longDistancePrefix = "1";
+     bool verbose = false;
+-    extern int optind, opterr;
++    extern int optind;
+     extern char* optarg;
+     int c;
+--- util/tiffcheck.c++	Wed Sep  1 19:59:16 2004
++++ util/tiffcheck.c++	Sun Jul 24 15:51:11 2005
+@@ -98,5 +98,5 @@
+      * Suppress libtiff warning messages from becoming fatal.
+      */
+-    TIFFErrorHandler whandler = TIFFSetWarningHandler(NULL);
++    TIFFSetWarningHandler(NULL);
+ 
+     if (tif) {
+@@ -201,5 +201,5 @@
+      * we generate because we are careful to include valid info.
+      */
+-    float yres, yresinch;
++    float yres, yresinch = .0F;
+     if (TIFFGetField(tif, TIFFTAG_YRESOLUTION, &yres)) {
+ 	short resunit = RESUNIT_INCH;		// TIFF spec default
+--- faxcover/faxcover.c++	Wed Sep  3 11:15:17 2003
++++ faxcover/faxcover.c++	Sun Jul 24 16:01:29 2005
+@@ -97,6 +97,4 @@
+ faxCoverApp::initialize(int argc, char** argv)
+ {
+-    extern int optind;
+-    extern char* optarg;
+     int c;
+ 
+--- faxd/FaxRecv.c++	Tue Nov 16 09:55:04 2004
++++ faxd/FaxRecv.c++	Sun Jul 24 16:04:18 2005
+@@ -128,5 +128,5 @@
+     u_long seqnum = Sequence::getNext(FAX_RECVDIR "/" FAX_SEQF, emsg);
+ 
+-    if (seqnum == -1)
++    if (seqnum == (u_long)-1)
+ 	return -1;
+ 
++++ faxd/ModemServer.c++	Sun Jul 24 16:11:33 2005
+@@ -749,4 +749,7 @@
+ 	    changeState(LOCKWAIT, pollLockWait);
+ 	break;
++	default:
++	    traceServer("ModemServer::timerExpired() in an unexpected "
++		"state %d", state);
+     }
+ }
+--- faxd/ClassModem.c++	Sat Jan  1 16:27:14 2005
++++ faxd/ClassModem.c++	Sun Jul 24 16:13:14 2005
+@@ -96,13 +96,4 @@
+ };
+ 
+-static fxStr
+-stripAT(const fxStr& a0)
+-{
+-    fxStr s(a0);
+-    if (s.length() >= 2 && s.head(2) == "AT")
+-	s.remove(0, 2);
+-    return s;
+-}
+-
+ ClassModem::ClassModem(ModemServer& s, const ModemConfig& c)
+     : server(s)
+@@ -1334,5 +1325,5 @@
+ 	    /* fall thru... */
+ 	case AT_RING:			// normal ring
+-	    if (conf.ringResponse != "" && (rings+1) >= conf.ringsBeforeResponse) {
++	    if (conf.ringResponse != "" && rings+1U >= conf.ringsBeforeResponse) {
+ 		// With the MT1932ZDX we must respond ATH1>DT1 in order
+ 		// to hear DTMF tones which are DID data, and we configure
+--- faxd/Class1.c++	Fri Nov 26 23:28:13 2004
++++ faxd/Class1.c++	Sun Jul 24 16:17:28 2005
+@@ -164,5 +164,4 @@
+ 	// We could query the modem but that would require another
+ 	// config option, so we just trust the enable command.
+-	u_short pos = 0;
+ 	primaryV34Rate = 0;
+ 	const char* buf = conf.class1EnableV34Cmd;
+--- faxd/Class1Send.c++	Tue Dec 28 21:16:46 2004
++++ faxd/Class1Send.c++	Sun Jul 24 16:19:20 2005
+@@ -742,5 +742,5 @@
+ 		    switch (frame.getFCF()) {
+ 		    case FCF_NSF:
+-			{ u_int nsf = frame.getDataWord(); }
++			frame.getDataWord();
+ 			break;
+ 		    case FCF_CSI:
+--- faxd/Class2Send.c++	Tue Nov 23 13:11:02 2004
++++ faxd/Class2Send.c++	Sun Jul 24 16:23:12 2005
+@@ -193,6 +194,5 @@
+ 	 * so that we can read the input stream for DC1.
+ 	 */
+-	FlowControl oiFlow = getInputFlow();
+ 	if (flowControl == FLOW_XONXOFF)
+ 	    setXONXOFF(FLOW_NONE, getOutputFlow(), ACT_NOW);
+     }
