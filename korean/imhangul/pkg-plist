@@ -1,3 +1,4 @@
 lib/gtk-2.0/immodules/im-hangul.la
 lib/gtk-2.0/immodules/im-hangul.so
 @unexec %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
+@unexec rmdir %D/lib/gtk-2.0/immodules 2>/dev/null || true
