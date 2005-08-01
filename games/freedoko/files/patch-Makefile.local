@@ -1,5 +1,0 @@
---- /home/tg/.BACKUP/!home!tg!work!FreeBSD!ports!local!freedoko!work!FreeDoko_0.6.4!src!Makefile.local~	Tue Jun  1 13:46:45 2004
-+++ Makefile.local	Fri Jun  4 18:09:39 2004
-@@ -1 +1 @@
--override CPPFLAGS += -DPUBLIC_DATA_DIRECTORY_VALUE="\"../data\""
-+override CPPFLAGS += -DPUBLIC_DATA_DIRECTORY_VALUE="\"$(DATADIR)\""
