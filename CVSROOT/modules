@@ -1869,6 +1869,7 @@ eclipse-uml	ports/java/eclipse-uml
 eclipse-v4all	ports/java/eclipse-v4all
 eclipse-vep	ports/java/eclipse-vep
 eclipse-vep-examples	ports/java/eclipse-vep-examples
+eclipse-viplugin	ports/java/eclipse-viplugin
 eclipseme	ports/java/eclipseme
 ecore		ports/x11/ecore
 ecos-tools	ports/devel/ecos-tools
