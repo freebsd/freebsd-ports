@@ -154,6 +154,7 @@ share/locale/sr@Latn/LC_MESSAGES/glib20.mo
 share/locale/sr@ije/LC_MESSAGES/glib20.mo
 share/locale/sv/LC_MESSAGES/glib20.mo
 share/locale/ta/LC_MESSAGES/glib20.mo
+share/locale/te/LC_MESSAGES/glib20.mo
 share/locale/tl/LC_MESSAGES/glib20.mo
 share/locale/tr/LC_MESSAGES/glib20.mo
 share/locale/uk/LC_MESSAGES/glib20.mo
@@ -171,6 +172,8 @@ share/locale/zh_TW/LC_MESSAGES/glib20.mo
 @unexec rmdir %D/share/locale/sr@ije 2> /dev/null || true
 @unexec rmdir %D/share/locale/tl/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/tl 2> /dev/null || true
+@unexec rmdir %D/share/locale/te/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/te 2> /dev/null || true
 @unexec rmdir %D/share/locale/xh/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/xh 2> /dev/null || true
 @unexec rmdir %D/share/locale/yi/LC_MESSAGES 2> /dev/null || true
