@@ -1,0 +1,54 @@
+bin/umark
+%%DATADIR%%/install_umark_data.sh
+%%DATADIR%%/utxinfo.pl
+%%DATADIR%%/data/UMarkFly.txt
+%%DATADIR%%/data/UMarkBot.txt
+%%DATADIR%%/data/UT2003/UMarkMin.ini
+%%DATADIR%%/data/UT2003/UMarkMinUser.ini
+%%DATADIR%%/data/UT2003/UMarkMaxUser.ini
+%%DATADIR%%/data/UT2003/UMarkMax.ini
+%%DATADIR%%/data/UT2004/UMarkQualityUser.ini
+%%DATADIR%%/data/UT2004/UMarkQuality.ini
+%%DATADIR%%/data/UT2004/UMarkPerformanceUser.ini
+%%DATADIR%%/data/UT2004/UMarkPerformance.ini
+%%DATADIR%%/html/0..png
+%%DATADIR%%/html/00.png
+%%DATADIR%%/html/01.png
+%%DATADIR%%/html/02.png
+%%DATADIR%%/html/03.png
+%%DATADIR%%/html/04.png
+%%DATADIR%%/html/05.png
+%%DATADIR%%/html/06.png
+%%DATADIR%%/html/07.png
+%%DATADIR%%/html/08.png
+%%DATADIR%%/html/09.png
+%%DATADIR%%/html/about.png
+%%DATADIR%%/html/compare.png
+%%DATADIR%%/html/head0.png
+%%DATADIR%%/html/head0o.png
+%%DATADIR%%/html/foot.png
+%%DATADIR%%/html/results.png
+%%DATADIR%%/html/umarks.css
+%%DATADIR%%/html/b_b.png
+%%DATADIR%%/html/b_bl.png
+%%DATADIR%%/html/b_br.png
+%%DATADIR%%/html/b_c.png
+%%DATADIR%%/html/b_l.png
+%%DATADIR%%/html/b_r.png
+%%DATADIR%%/html/b_t.png
+%%DATADIR%%/html/b_tl.png
+%%DATADIR%%/html/b_tr.png
+%%DATADIR%%/html/headtrim.png
+%%DATADIR%%/pixmaps/umark.png
+%%DATADIR%%/pixmaps/umark_icon.png
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/html
+@dirrm %%DATADIR%%/data/UT2004
+@dirrm %%DATADIR%%/data/UT2003
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

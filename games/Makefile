@@ -534,6 +534,7 @@
     SUBDIR += twitch
     SUBDIR += typespeed
     SUBDIR += uhexen
+    SUBDIR += umark
     SUBDIR += uox3
     SUBDIR += uqm
     SUBDIR += urban
