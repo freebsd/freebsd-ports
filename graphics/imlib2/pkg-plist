@@ -1,7 +1,7 @@
 %%X11%%bin/imlib2_bumpmap
 %%X11%%bin/imlib2_colorspace
 bin/imlib2_conv
-%%X11%%bin/imlig2_grab
+%%X11%%bin/imlib2_grab
 %%X11%%bin/imlib2_poly
 %%X11%%bin/imlib2_show
 %%X11%%bin/imlib2_test
