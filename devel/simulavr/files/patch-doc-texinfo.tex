@@ -1,0 +1,259 @@
+--- doc/texinfo.tex.orig	Mon Feb 11 02:59:02 2002
++++ doc/texinfo.tex	Mon Aug  1 04:10:42 2005
+@@ -864,80 +864,146 @@
+ \newif\ifpdf
+ \newif\ifpdfmakepagedest
+ 
++% when pdftex is run in dvi mode, \pdfoutput is defined (so \pdfoutput=1
++% can be set).  So we test for \relax and 0 as well as \undefined,
++% borrowed from ifpdf.sty.
+ \ifx\pdfoutput\undefined
+-  \pdffalse
+-  \let\pdfmkdest = \gobble
+-  \let\pdfurl = \gobble
+-  \let\endlink = \relax
+-  \let\linkcolor = \relax
+-  \let\pdfmakeoutlines = \relax
+ \else
+-  \pdftrue
+-  \pdfoutput = 1
++  \ifx\pdfoutput\relax
++  \else
++    \ifcase\pdfoutput
++    \else
++      \pdftrue
++    \fi
++  \fi
++\fi
++%
++\ifpdf
+   \input pdfcolor
++  \pdfcatalog{/PageMode /UseOutlines}%
+   \def\dopdfimage#1#2#3{%
+     \def\imagewidth{#2}%
+     \def\imageheight{#3}%
++    % without \immediate, pdftex seg faults when the same image is
++    % included twice.  (Version 3.14159-pre-1.0-unofficial-20010704.)
+     \ifnum\pdftexversion < 14
+-      \pdfimage
++      \immediate\pdfimage
+     \else
+-      \pdfximage
++      \immediate\pdfximage
+     \fi
+       \ifx\empty\imagewidth\else width \imagewidth \fi
+       \ifx\empty\imageheight\else height \imageheight \fi
+-      {#1.pdf}%
++      \ifnum\pdftexversion<13
++         #1.pdf%
++       \else
++         {#1.pdf}%
++       \fi
+     \ifnum\pdftexversion < 14 \else
+       \pdfrefximage \pdflastximage
+     \fi}
+-  \def\pdfmkdest#1{\pdfdest name{#1@} xyz}
+-  \def\pdfmkpgn#1{#1@}
+-  \let\linkcolor = \Cyan
++  \def\pdfmkdest#1{{%
++    % We have to set dummies so commands such as @code in a section title
++    % aren't expanded.
++    \atdummies
++    \normalturnoffactive
++    \pdfdest name{#1} xyz%
++  }}
++  \def\pdfmkpgn#1{#1}
++  \let\linkcolor = \Blue  % was Cyan, but that seems light?
+   \def\endlink{\Black\pdfendlink}
+   % Adding outlines to PDF; macros for calculating structure of outlines
+   % come from Petr Olsak
+   \def\expnumber#1{\expandafter\ifx\csname#1\endcsname\relax 0%
+     \else \csname#1\endcsname \fi}
+   \def\advancenumber#1{\tempnum=\expnumber{#1}\relax
+-    \advance\tempnum by1
++    \advance\tempnum by 1
+     \expandafter\xdef\csname#1\endcsname{\the\tempnum}}
+-  \def\pdfmakeoutlines{{%
+-    \openin 1 \jobname.toc
+-    \ifeof 1\else\bgroup
+-      \closein 1 
+-      \indexnofonts
+-      \def\tt{}
+-      % thanh's hack / proper braces in bookmarks  
++  %
++  % #1 is the section text.  #2 is the pdf expression for the number
++  % of subentries (or empty, for subsubsections).  #3 is the node
++  % text, which might be empty if this toc entry had no
++  % corresponding node.  #4 is the page number.
++  %
++  \def\dopdfoutline#1#2#3#4{%
++    % Generate a link to the node text if that exists; else, use the
++    % page number.  We could generate a destination for the section
++    % text in the case where a section has no node, but it doesn't
++    % seem worthwhile, since most documents are normally structured.
++    \def\pdfoutlinedest{#3}%
++    \ifx\pdfoutlinedest\empty \def\pdfoutlinedest{#4}\fi
++    %
++    \pdfoutline goto name{\pdfmkpgn{\pdfoutlinedest}}#2{#1}%
++  }
++  %
++  \def\pdfmakeoutlines{%
++    \begingroup
++      % Thanh's hack / proper braces in bookmarks
+       \edef\mylbrace{\iftrue \string{\else}\fi}\let\{=\mylbrace
+       \edef\myrbrace{\iffalse{\else\string}\fi}\let\}=\myrbrace
+       %
+-      \def\chapentry ##1##2##3{}
+-      \def\unnumbchapentry ##1##2{}
+-      \def\secentry ##1##2##3##4{\advancenumber{chap##2}}
+-      \def\unnumbsecentry ##1##2{}
+-      \def\subsecentry ##1##2##3##4##5{\advancenumber{sec##2.##3}}
+-      \def\unnumbsubsecentry ##1##2{}
+-      \def\subsubsecentry ##1##2##3##4##5##6{\advancenumber{subsec##2.##3.##4}}
+-      \def\unnumbsubsubsecentry ##1##2{}
++      % Read toc silently, to get counts of subentries for \pdfoutline.
++      \def\numchapentry##1##2##3##4{%
++	\def\thischapnum{##2}%
++	\def\thissecnum{0}%
++	\def\thissubsecnum{0}%
++      }%
++      \def\numsecentry##1##2##3##4{%
++	\advancenumber{chap\thischapnum}%
++	\def\thissecnum{##2}%
++	\def\thissubsecnum{0}%
++      }%
++      \def\numsubsecentry##1##2##3##4{%
++	\advancenumber{sec\thissecnum}%
++	\def\thissubsecnum{##2}%
++      }%
++      \def\numsubsubsecentry##1##2##3##4{%
++	\advancenumber{subsec\thissubsecnum}%
++      }%
++      \def\thischapnum{0}%
++      \def\thissecnum{0}%
++      \def\thissubsecnum{0}%
++      %
++      % use \def rather than \let here because we redefine \chapentry et
++      % al. a second time, below.
++      \def\appentry{\numchapentry}%
++      \def\appsecentry{\numsecentry}%
++      \def\appsubsecentry{\numsubsecentry}%
++      \def\appsubsubsecentry{\numsubsubsecentry}%
++      \def\unnchapentry{\numchapentry}%
++      \def\unnsecentry{\numsecentry}%
++      \def\unnsubsecentry{\numsubsecentry}%
++      \def\unnsubsubsecentry{\numsubsubsecentry}%
+       \input \jobname.toc
+-      \def\chapentry ##1##2##3{%
+-        \pdfoutline goto name{\pdfmkpgn{##3}}count-\expnumber{chap##2}{##1}}
+-      \def\unnumbchapentry ##1##2{%
+-        \pdfoutline goto name{\pdfmkpgn{##2}}{##1}}
+-      \def\secentry ##1##2##3##4{%
+-        \pdfoutline goto name{\pdfmkpgn{##4}}count-\expnumber{sec##2.##3}{##1}}
+-      \def\unnumbsecentry ##1##2{%
+-        \pdfoutline goto name{\pdfmkpgn{##2}}{##1}}
+-      \def\subsecentry ##1##2##3##4##5{%
+-        \pdfoutline goto name{\pdfmkpgn{##5}}count-\expnumber{subsec##2.##3.##4}{##1}}
+-      \def\unnumbsubsecentry ##1##2{%
+-        \pdfoutline goto name{\pdfmkpgn{##2}}{##1}}
+-      \def\subsubsecentry ##1##2##3##4##5##6{%
+-        \pdfoutline goto name{\pdfmkpgn{##6}}{##1}}
+-      \def\unnumbsubsubsecentry ##1##2{%
+-        \pdfoutline goto name{\pdfmkpgn{##2}}{##1}}
++      %
++      % Read toc second time, this time actually producing the outlines.
++      % The `-' means take the \expnumber as the absolute number of
++      % subentries, which we calculated on our first read of the .toc above.
++      %
++      % We use the node names as the destinations.
++      \def\numchapentry##1##2##3##4{%
++        \dopdfoutline{##1}{count-\expnumber{chap##2}}{##3}{##4}}%
++      \def\numsecentry##1##2##3##4{%
++        \dopdfoutline{##1}{count-\expnumber{sec##2}}{##3}{##4}}%
++      \def\numsubsecentry##1##2##3##4{%
++        \dopdfoutline{##1}{count-\expnumber{subsec##2}}{##3}{##4}}%
++      \def\numsubsubsecentry##1##2##3##4{% count is always zero
++        \dopdfoutline{##1}{}{##3}{##4}}%
++      %
++      % PDF outlines are displayed using system fonts, instead of
++      % document fonts.  Therefore we cannot use special characters,
++      % since the encoding is unknown.  For example, the eogonek from
++      % Latin 2 (0xea) gets translated to a | character.  Info from
++      % Staszek Wawrykiewicz, 19 Jan 2004 04:09:24 +0100.
++      %
++      % xx to do this right, we have to translate 8-bit characters to
++      % their "best" equivalent, based on the @documentencoding.  Right
++      % now, I guess we'll just let the pdf reader have its way.
++      \indexnofonts
++      \turnoffactive
+       \input \jobname.toc
+-    \egroup\fi
+-  }}
++    \endgroup
++  }
++  %
+   \def\makelinks #1,{%
+     \def\params{#1}\def\E{END}%
+     \ifx\params\E
+@@ -946,7 +1012,7 @@
+       \let\nextmakelinks=\makelinks
+       \ifnum\lnkcount>0,\fi
+       \picknum{#1}%
+-      \startlink attr{/Border [0 0 0]} 
++      \startlink attr{/Border [0 0 0]}
+         goto name{\pdfmkpgn{\the\pgn}}%
+       \linkcolor #1%
+       \advance\lnkcount by 1%
+@@ -968,7 +1034,6 @@
+   \def\ppn#1{\pgn=#1\gobble}
+   \def\ppnn{\pgn=\first}
+   \def\pdfmklnk#1{\lnkcount=0\makelinks #1,END,}
+-  \def\addtokens#1#2{\edef\addtoks{\noexpand#1={\the#1#2}}\addtoks}
+   \def\skipspaces#1{\def\PP{#1}\def\D{|}%
+     \ifx\PP\D\let\nextsp\relax
+     \else\let\nextsp\skipspaces
+@@ -986,21 +1051,21 @@
+   \def\pdfurl#1{%
+     \begingroup
+       \normalturnoffactive\def\@{@}%
++      \makevalueexpandable
+       \leavevmode\Red
+       \startlink attr{/Border [0 0 0]}%
+         user{/Subtype /Link /A << /S /URI /URI (#1) >>}%
+-        % #1
+     \endgroup}
+   \def\pdfgettoks#1.{\setbox\boxA=\hbox{\toksA={#1.}\toksB={}\maketoks}}
+   \def\addtokens#1#2{\edef\addtoks{\noexpand#1={\the#1#2}}\addtoks}
+   \def\adn#1{\addtokens{\toksC}{#1}\global\countA=1\let\next=\maketoks}
+   \def\poptoks#1#2|ENDTOKS|{\let\first=#1\toksD={#1}\toksA={#2}}
+   \def\maketoks{%
+-    \expandafter\poptoks\the\toksA|ENDTOKS|
++    \expandafter\poptoks\the\toksA|ENDTOKS|\relax
+     \ifx\first0\adn0
+     \else\ifx\first1\adn1 \else\ifx\first2\adn2 \else\ifx\first3\adn3
+     \else\ifx\first4\adn4 \else\ifx\first5\adn5 \else\ifx\first6\adn6
+-    \else\ifx\first7\adn7 \else\ifx\first8\adn8 \else\ifx\first9\adn9 
++    \else\ifx\first7\adn7 \else\ifx\first8\adn8 \else\ifx\first9\adn9
+     \else
+       \ifnum0=\countA\else\makelink\fi
+       \ifx\first.\let\next=\done\else
+@@ -1013,11 +1078,16 @@
+   \def\makelink{\addtokens{\toksB}%
+     {\noexpand\pdflink{\the\toksC}}\toksC={}\global\countA=0}
+   \def\pdflink#1{%
+-    \startlink attr{/Border [0 0 0]} goto name{\mkpgn{#1}}
++    \startlink attr{/Border [0 0 0]} goto name{\pdfmkpgn{#1}}
+     \linkcolor #1\endlink}
+-  \def\mkpgn#1{#1@} 
+   \def\done{\edef\st{\global\noexpand\toksA={\the\toksB}}\st}
+-\fi % \ifx\pdfoutput
++\else
++  \let\pdfmkdest = \gobble
++  \let\pdfurl = \gobble
++  \let\endlink = \relax
++  \let\linkcolor = \relax
++  \let\pdfmakeoutlines = \relax
++\fi  % \ifx\pdfoutput
+ 
+ 
+ \message{fonts,}
