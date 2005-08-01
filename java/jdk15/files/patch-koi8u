@@ -1,0 +1,45 @@
+--- ../../j2se/src/share/classes/sun/nio/cs/standard-charsets	Tue Oct 19 14:57:57 2004
++++ ../../j2se/src/share/classes/sun/nio/cs/standard-charsets	Wed Jul 20 00:02:11 2005
+@@ -172,6 +172,11 @@
+ charset KOI8-R KOI8_R
+     alias koi8_r			# JDK historical
+-    alias koi8
+     alias cskoi8r
++
++charset KOI8-U KOI8_U		# Superset of KOI8-R covering other
++    alias koi8_u		# Cyrillics-using alphabets
++    alias koi8
++    alias cskoi8u
++    alias koi8u
+ 
+ charset windows-1250 MS1250
+--- ../../j2se/src/share/classes/sun/io/CharacterEncoding.java	Tue Oct 19 14:57:28 2004
++++ ../../j2se/src/share/classes/sun/io/CharacterEncoding.java	Wed Jul 20 01:10:16 2005
+@@ -75,4 +75,5 @@
+         aliasTable.put("gbk",                   "GBK");
+         aliasTable.put("koi8-r",                "KOI8_R");
++        aliasTable.put("koi8-u",                "KOI8_U");
+         aliasTable.put("tis620.2533",           "TIS620");
+         
+@@ -763,6 +764,11 @@
+             // Russian KOI8-R
+             aliasTable.put("koi8-r",                "KOI8_R");
+-            aliasTable.put("koi8",                  "KOI8_R");
+             aliasTable.put("cskoi8r",               "KOI8_R");
++
++            // Ukrainian and Bielorussian KOI8-U (includes KOI8-R)
++            aliasTable.put("koi8-u",                "KOI8_U");
++            aliasTable.put("koi8",                  "KOI8_U");
++            aliasTable.put("koi8u",                 "KOI8_U");
++            aliasTable.put("cskoi8u",               "KOI8_U");
+ 
+             // Simplified Chinese
+--- ../../j2se/make/java/sun_io/FILES_java.gmk	Tue Oct 19 14:44:54 2004
++++ ../../j2se/make/java/sun_io/FILES_java.gmk	Wed Jul 20 01:20:35 2005
+@@ -65,4 +65,6 @@
+     $(TARGDIR)sun/io/ByteToCharKOI8_R.java \
+     $(TARGDIR)sun/io/CharToByteKOI8_R.java \
++    $(TARGDIR)sun/io/ByteToCharKOI8_U.java \
++    $(TARGDIR)sun/io/CharToByteKOI8_U.java \
+     $(TARGDIR)sun/io/ByteToCharSingleByte.java \
+     $(TARGDIR)sun/io/CharToByteSingleByte.java \
