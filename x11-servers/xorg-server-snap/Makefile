@@ -98,13 +98,29 @@ PLIST_SUB+=	PPC_NA=""
 .if ${ARCH} == sparc64
 PLIST_SUB+=	SPARC64=""
 PLIST_SUB+=	SPARC64_NA="@comment "
-MAN4+=		sunbw2.4x \
+MAN4+=		apm.4x \
+		chips.4x \
+		cirrus.4x \
+		i128.4x \
+		i740.4x \
+		i810.4x \
+		imstt.4x \
+		neomagic.4x \
+		newport.4x \
+		nv.4x \
+		rendition.4x \
+		s3virge.4x \
+		savage.4x \
+		siliconmotion.4x \
+		sunbw2.4x \
 		suncg14.4x \
 		suncg3.4x \
 		suncg6.4x \
 		sunffb.4x \
 		sunleo.4x \
-		suntcx.4x
+		suntcx.4x \
+		trident.4x \
+		vmware.4x
 .else
 PLIST_SUB+=	SPARC64="@comment "
 PLIST_SUB+=	SPARC64_NA=""
