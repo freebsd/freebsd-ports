@@ -6,8 +6,7 @@ lib/libps.a
 lib/libps.so
 lib/libps.so.2
 libdata/pkgconfig/libps.pc
-%%GETTEXT%%share/locale/de/LC_MESSAGES/pslib.mo
-%%GETTEXT%%@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+%%NLS%%share/locale/de/LC_MESSAGES/pslib.mo
 %%DATADIR%%/draft.ps
 %%DATADIR%%/exectime.ps
 %%DATADIR%%/grid.ps

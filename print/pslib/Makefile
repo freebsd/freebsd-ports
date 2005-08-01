@@ -19,29 +19,18 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_GNOME=	gnomehack gnometarget intlhack pkgconfig
-USE_REINPLACE=	yes
 USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		ac_cv_prog_DOC_TO_MAN=""
 INSTALLS_SHLIB=	yes
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-PLIST_SUB=	GETTEXT=""
-.else
-PLIST_SUB=	GETTEXT="@comment "
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if (${OSVERSION} < 500000)
-BROKEN=	Doesn't build on < 5.x
-.endif
-
-post-configure:
 .if defined(WITHOUT_NLS)
-	@${REINPLACE_CMD} -E 's|(SUBDIRS = data include src) po|\1|' \
-		${WRKSRC}/Makefile
+CONFIGURE_ENV+=	ac_cv_header_libintl_h=no
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
