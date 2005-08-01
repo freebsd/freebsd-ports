@@ -1,0 +1,22 @@
+
+Before running this software, you'll need to configure it first.  This is
+best to be done with `install_umark_data.sh' script, which is installed
+here:
+
+	%%DATADIR%%/install_umark_data.sh
+
+It should be run from %%DATADIR%%.
+
+If you want to manually configure the UT200x install paths, you may edit
+your ~/.umarkrc file.  The ~/.umarkrc file format is as follows (in order):
+
+BuildNumber|/UT2003/Retail/install/path
+BuildNumber|/UT2004/Retail/install/path
+BuildNumber|/UT2003/Demo/install/path
+BuildNumber|/UT2004/Demo/install/path
+
+If one of the lines says "n/a|n/a", it means that `install_umark_data.sh'
+did not find where the respective version of the game is installed.  In this
+case, you should manually enter the game build number and root installation
+path.
+
