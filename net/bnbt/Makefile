@@ -9,9 +9,9 @@ PORTNAME=	bnbt
 PORTVERSION=	8.1b3
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://bnbt.go-dedicated.com/ \
-		http://www.oook.cz/bsd/distfiles/
-DISTNAME=	bnbt81b-3
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	bnbt
+DISTNAME=	bnbt81b-3-sf
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	A C++ BitTorrent Tracker
