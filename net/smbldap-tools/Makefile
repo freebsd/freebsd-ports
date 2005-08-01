@@ -7,6 +7,7 @@
 
 PORTNAME=	smbldap-tools
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://samba.idealx.org/dist/
 EXTRACT_SUFX=	.tgz
@@ -32,9 +33,10 @@ DOC_HTML_LIST =	contents_motif.gif index.html next_motif.gif \
 		smbldap-tools010.html
 
 post-patch:
-	@${PERL} -pi -e 's#/etc/samba#${PREFIX}/etc/samba#' ${WRKSRC}/configure.pl \
-								${WRKSRC}/smb.conf
-	@${PERL} -pi -e 's#/etc/smb#${PREFIX}/etc/smb#' ${WRKSRC}/configure.pl \
+	@${PERL} -pi -e 's#/etc/samba#${PREFIX}/etc#' ${WRKSRC}/configure.pl \
+							${WRKSRC}/smb.conf \
+							${WRKSRC}/smbldap_tools.pm
+	@${PERL} -pi -e 's#/etc/smb/#${PREFIX}/etc/smb/#' ${WRKSRC}/configure.pl \
 							${WRKSRC}/smbldap.conf \
 							${WRKSRC}/smbldap_tools.pm
 	@${PERL} -pi -e 's#/etc/opt/IDEALX#${PREFIX}/etc#' ${WRKSRC}/smbldap_tools.pm
