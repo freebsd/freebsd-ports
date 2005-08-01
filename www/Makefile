@@ -379,6 +379,7 @@
     SUBDIR += ocaml-wdialog
     SUBDIR += oops
     SUBDIR += openacs
+    SUBDIR += openacs-dotlrn
     SUBDIR += openvrml
     SUBDIR += opera
     SUBDIR += osb-browser

@@ -1,0 +1,17 @@
+.LRN (dotLRN) is an e-learning platform built upon openACS core. It includes 
+modules and configurations that are specific for learning communities.
+
+OpenACS (Open Architecture Community System) is a web application platform 
+designed for high traffic community websites. It is built on a free and 
+open source foundation. OpenACS is the foundation for many products 
+and websites including the (www.dotlrn.org).
+
+OpenACS runs on AOLserver and uses either the PostgreSQL or Oracle (which is 
+not open-source) relational databases. It uses TCL as its main language. 
+AOLserver, postgresql and Oracle are used in some of the most demanding, 
+high-traffic web applications in the world.
+
+WWW: http://dotlrn.org 
+
+- Aldert
+aldert@nooitgedagt.net
