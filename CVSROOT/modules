@@ -4454,6 +4454,7 @@ jakarta-commons-dbcp	ports/java/jakarta-commons-dbcp
 jakarta-commons-digester	ports/textproc/jakarta-commons-digester
 jakarta-commons-discovery	ports/java/jakarta-commons-discovery
 jakarta-commons-httpclient	ports/java/jakarta-commons-httpclient
+jakarta-commons-jelly	ports/lang/jakarta-commons-jelly
 jakarta-commons-lang	ports/java/jakarta-commons-lang
 jakarta-commons-logging	ports/java/jakarta-commons-logging
 jakarta-commons-math	ports/math/jakarta-commons-math
