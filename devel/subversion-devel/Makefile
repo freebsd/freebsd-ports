@@ -279,7 +279,7 @@ pre-extract:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Repository will be created at '${SVNREPOS}' with group '${SVNGROUP}'."
 	@${ECHO_MSG} "Type of repository will be '${SVNFSTYPE}'."
-	@${ECHO_MSG} "You could change these settings by defining SVNREPOS, SVNGROUP nad SVNFSTYPE"
+	@${ECHO_MSG} "You could change these settings by defining SVNREPOS, SVNGROUP and SVNFSTYPE"
 	@${ECHO_MSG} ""
 .endif
 	@${ECHO_MSG} ""
@@ -360,6 +360,7 @@ post-install:	${MKREPOS_TARGET}
 	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
 	done
 .if defined(WITH_BOOK)
+	${MKDIR} ${DOCSDIR}/book
 	cd ${WRKSRC}/doc/book ; \
 	  ${INSTALL_DATA} svn-book.html svn-book.pdf ${DOCSDIR}/book
 .endif
