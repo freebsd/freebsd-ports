@@ -11,7 +11,7 @@ if [ "${BINDDLZ_OPTIONS}" ]; then
 else
 	dialog --title "configuration options" --clear \
 				--checklist "\n\
-Please select desired options:" -1 -1 13 \
+Please select desired options:" -1 -1 12 \
 OldDLZ		"use old Bind9.2.2" OFF \
 OpenSSL		"OpenSSL support" ON \
 Threads		"Thread support" ON \
@@ -19,7 +19,6 @@ PostgreSQL	"PostgreSQL driver" ON \
 MySQL323	"MySQL 3.23 driver" OFF \
 MySQL40	"MySQL 4.0 driver" OFF \
 MySQL41	"MySQL 4.1 driver" OFF \
-OpenLDAP21	"OpenLDAP 2.1 backend" OFF \
 OpenLDAP22	"OpenLDAP 2.2 backend" OFF \
 BerkleyDB41	"BerkleyDB 4.1 backend" OFF \
 BerkleyDB42	"BerkleyDB 4.2 backend" OFF \
@@ -72,11 +71,6 @@ while [ "$1" ]; do
 		\"MySQL41\")
 			echo WITH_MYSQL_DRIVER=YES
 			echo MYSQL_PORT?=databases/mysql41-client
-			;;
-		\"OpenLDAP21\")
-			echo WITH_LDAP=YES
-			echo LDAP_PORT?=net/openldap21-client
-			echo OPENLDAP_LIB?=libldap.so.2
 			;;
 		\"OpenLDAP22\")
 			echo WITH_LDAP=YES
