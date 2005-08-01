@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	libtorrent
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.0.1
 CATEGORIES=	net
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
+DISTNAME=	${PORTNAME}-0.7.0-1
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	BitTorrent Library written in C++
