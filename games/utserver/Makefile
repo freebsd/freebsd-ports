@@ -19,10 +19,6 @@ COMMENT=	Unreal Tournament Dedicated Server for Linux
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 USE_PERL5=	yes
@@ -30,7 +26,7 @@ NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/ut-server
 
-UTDIR=		games/ut-server/
+UTDIR=		ut-server/
 PLIST_SUB=	UTDIR="${UTDIR}"
 EXTRA_PATCHES=	${WRKDIR}/patch-ngstatsut
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
