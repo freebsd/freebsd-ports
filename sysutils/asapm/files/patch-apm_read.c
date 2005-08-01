@@ -1,16 +1,16 @@
---- apm_read.c.orig	Tue May 17 06:49:13 2005
-+++ apm_read.c	Sun May 29 20:38:24 2005
-@@ -301,6 +301,9 @@
+--- apm_read.c.orig	Wed Jul 27 08:23:06 2005
++++ apm_read.c	Wed Jul 27 23:15:33 2005
+@@ -413,6 +413,9 @@
  	unsigned int remaining_capacity = 0;
  	unsigned int present_rate = 0;
  
 +	unsigned int percent;
 +	unsigned int time_left;
 +
-         /* First check if there is an ACPI system */
-         if ((fd = open("/proc/acpi/info", O_RDONLY)) == -1) {
-                 error_handle(1, "open_acpi_info_file");
-@@ -503,7 +506,7 @@
+ 	if ( ! acpi_available )
+ 		return -1;
+ 
+@@ -617,7 +620,7 @@
  	 * Calculate the percentage and time to full charge
  	 * or discharge based on the reported rate.
  	 */
@@ -19,7 +19,7 @@
  		last_full_capacity ?
  		(float)remaining_capacity / (float)last_full_capacity * 100
  		: 0;
-@@ -512,7 +515,6 @@
+@@ -626,7 +629,6 @@
  		++state.update;
  	}
  
