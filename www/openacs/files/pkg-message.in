@@ -1,0 +1,61 @@
+     ******** READ THIS *******
+
+Congratulations! You have just installed OpenACS/.LRN
+
+If you didn't  make install WITH_POSTCONFIG=yes
+to allow post-install configurations or run now:
+sh ${EXAMPLESDIR}/post-config.sh XX POST-INSTALL
+Make sure you stop Aolserver and Postgresql 
+before post-install configuration starts.
+
+Then use your browser to view the welcome page (http://<your-ip>:8000)
+and follow the instructions. (Find out your IP address by typing 
+"ifconfig" at the command line)
+
+If you want daemontools to restart aolserver, remember to:
+Copy the example svscan.sh from %%EXAMPLESDIR%%
+to %%LOCALBASE%%/etc/rc.d/svscan.sh
+Make a copy of the original file first, if you like.
+Then REBOOT (shutdown -r now)!
+
+Once the datamodel has been installed and aolserver restarts
+it can take a few MINUTES before the server becomes available. 
+Be patient! 
+
+Errors, if any, are in:
+%%VIRTUALBASE%%/aolserver/%%OPENACS_USER%%/log/error.log
+ 
+Go to the docs at http://openacs.org/doc/ to find out more.
+There are a few things different from the docs (!): For example, the 
+postgres user is pgsql not postgres, daemontools are in %%DTSERVICEBASE%%,
+openACS/.LRN is in %%LOCALBASE%%/share/ (with symlink in %%VIRTUALBASE%%), 
+nsd-postgres and some other files are in %%EXAMPLESDIR%%, but everything
+should work just fine.
+
+To view your pages at port 80 you will have to change:
+daemontools/run and config.tcl in
+%%VIRTUALBASE%%/aolserver/%%OPENACS_USER%%/etc.
+
+If you install .LRN as well as openACS the IP address in config.tcl
+should be different or you should shut one down (svc -d %%DTSERVICEBASE%%/...)
+before starting the other. Aolserver cannot listen on the same ip-address
+twice!
+
+If you want to remove openacs, type "make deinstall" or use pkg_delete
+(pkg_info).
+However, users and database are not removed. At (re)install an existing
+datadirectory with the same name is moved to <name>.old
+
+We use bash as shell in openACS. We didn't change the shells of
+current users like root and pgsql, yet. If you want, do:
+chsh -s %%LOCALBASE%%/bin/bash USERNAME 
+and change its profile by copying the openACS entries from
+/usr/share/skel/dot.profile to  ~/.profile. 
+Than login/out or type ". .profile".
+
+Remember: THIS MESSAGE is in PORTSDIR/www/openacs/pkg-message.
+
+-Aldert
+aldert@nooitgedagt.net
+
+     ******** READ THE INFORMATION ABOVE ******** 

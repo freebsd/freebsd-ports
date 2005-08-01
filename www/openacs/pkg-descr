@@ -1,0 +1,17 @@
+OpenACS (Open Architecture Community System) is a web application platform 
+designed for high traffic community websites. It is built on a free and 
+open source foundation. OpenACS is the foundation for many products 
+and websites including the .LRN e-learning platform (www.dotlrn.org).
+
+OpenACS runs on AOLserver and uses either the PostgreSQL or Oracle (which is 
+not open-source) relational databases. It uses TCL as its main language. 
+AOLserver, postgresql and Oracle are used in some of the most demanding, 
+high-traffic web applications in the world.
+
+DotLRN (.LRN) is built upon openACS core, but includes extra modules and
+configurations. DotLRN has its own tarball and port (openacs-dotlrn).
+
+WWW: http://openacs.org 
+
+- Aldert
+aldert@nooitgedagt.net

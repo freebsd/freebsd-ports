@@ -1,0 +1,84 @@
+#! /bin/sh
+
+PATH=/bin:/usr/sbin:/usr/bin
+LOCALBASE=%%LOCALBASE%%
+EXAMPLESDIR=%%EXAMPLESDIR%%
+RCCONF=%%RCCONF%%
+OPENACSBASE=%%OPENACSBASE%%
+OPENACS_GROUP=%%OPENACS_GROUP%%
+OPENACS_USER=%%OPENACS_USER%%
+DB=%%DB%%
+PGDATA=%%PGDATA%%
+PG_USER=%%PG_USER%%
+PGBASE=%%PGBASE%%
+DTSERVICEBASE=%%DTSERVICEBASE%%
+AOLSERVERBASE=%%AOLSERVERBASE%%
+VIRTUALBASE=%%VIRTUALBASE%%
+
+post-install() {
+	echo "Set permissions of files (post-config)"
+	chown -R :${OPENACS_GROUP} ${AOLSERVERBASE}
+
+if [ "${DB}" = "PG" ]; then
+	echo "Postgresql database is being configured."
+	if [ ! -d ${PGDATA} ]; then 
+		su -l ${PG_USER} -c "${LOCALBASE}/bin/initdb -D ${PGDATA}"; 
+	fi
+	if [ -e ${PGDATA}/postmaster.pid ]; then
+        	echo "Postgres is running. We don't want to stop it, because we don't know why you have it running."
+		pid0=`ps -ax | grep ${PGDATA}/server.log | grep -v grep| awk -F' ' '{print $1}'`;
+		if test "$pid0" != "" ; then
+			echo  "Since ${PGDATA}/server.log seems active you may be fine."
+		fi
+		echo "If you run into trouble: please stop Postgresql and Aolserver en restart them respectively, after this installation has completed."
+	else
+        	echo "Start Postgresql"
+		su -l ${PG_USER} -c "${LOCALBASE}/bin/pg_ctl -D ${PGDATA} -l ${PGDATA}/server.log start" 
+	fi	
+	sleep 5
+	su  -l ${PG_USER} -c "${LOCALBASE}/bin/createlang plpgsql template1"  > /dev/null 2>&1
+	su  -l ${PG_USER} -c "${LOCALBASE}/bin/createlang -l template1"  > /dev/null 2>&1
+	su  -l ${PG_USER} -c "${LOCALBASE}/bin/createuser -A -d ${OPENACS_USER}"  > /dev/null 2>&1
+	su  -l ${OPENACS_USER} -c "${LOCALBASE}/bin/createdb -E UNICODE ${OPENACS_USER}"  > /dev/null 2>&1
+	sleep 5
+	echo "Checking Aolserver before (re)start. Is it running?"
+	pid1=`ps -ax | grep sample-config | grep -v grep| awk -F' ' '{print $1}'`;
+	if test "$pid1" = "" ; then
+		:
+	else
+		echo "Killing sample-config process. pid: $pid1 ."
+		kill $pid1
+	fi	
+	pid2=`ps -ax | grep ${OPENACS_USER}/etc/config.tcl | grep -v grep| awk -F' ' '{print $1}'`;
+	if test "$pid2" = "" ; then
+		:
+	else
+		echo "Killing ${OPENACS_USER} config.tcl process. pid: $pid2 ."
+		kill $pid2
+	fi
+
+	pid3=`ps -ax | grep nsd | grep -v grep| awk -F' ' '{print $1}'`;
+	if test "$pid3" = "" ; then
+		echo "Good. No running Aolserver process.";
+	else
+		echo "Warning: at least still one Aolserver process is running..."
+		echo "We will start Aolserver now, but it may not be able to listen on the same address:port"
+		echo "FYI: killall -9 nsd  will stop all processes or change the IP-address in config.tcl, then start again."
+	fi
+	echo "Starting aolserver: ${EXAMPLESDIR}/nsd-postgres -t ${OPENACSBASE}/${OPENACS_USER}/etc/config.tcl -u ${OPENACS_USER} -g ${OPENACS_GROUP}"
+	${EXAMPLESDIR}/nsd-postgres -t ${OPENACSBASE}/${OPENACS_USER}/etc/config.tcl -u ${OPENACS_USER} -g ${OPENACS_GROUP}
+	sleep 10
+fi
+
+}
+
+case $2 in
+
+POST-INSTALL)
+	post-install
+	;;
+esac
+
+# ${EXAMPLESDIR}/svgroup ${OPENACS_GROUP} ${DTSERVICEBASE}/${OPENACS_USER}
+# KEEP ALIVE with DAEMONTOOLS + OPTION: see http://openacs.org/forums/message-view?message_id=291164
+# AOLSERVER RESTART SCRIPT: see http://openacs.org/doc/current/maintenance-web.html

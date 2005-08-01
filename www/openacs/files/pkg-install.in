@@ -1,0 +1,117 @@
+#! /bin/sh
+
+PATH=/bin:/usr/sbin:/usr/bin
+LOCALBASE=%%LOCALBASE%%
+EXAMPLESDIR=%%EXAMPLESDIR%%
+RCCONF=%%RCCONF%%
+OPENACSBASE=%%OPENACSBASE%%
+OPENACS_GROUP=%%OPENACS_GROUP%%
+OPENACS_USER=%%OPENACS_USER%%
+DB=%%DB%%
+PGDATA=%%PGDATA%%
+PG_USER=%%PG_USER%%
+PGBASE=%%PGBASE%%
+DTSERVICEBASE=%%DTSERVICEBASE%%
+AOLSERVERBASE=%%AOLSERVERBASE%%
+VIRTUALBASE=%%VIRTUALBASE%%
+
+pre-install() { echo "
+
+  First, make sure that you either have         
+  lang/tcl84-thread or no tcl84 installed
+
+  =========== BACKUP YOUR DATA! =============
+  As always, backup your data before
+  upgrading. This is *NOT* done by the port!
+
+  IMPORTANT: You may loose data by an upgrade.
+   Press ctrl-C *NOW* if you need to 
+           BACKUP YOUR DATA,
+   for example a pg_dump or custom openacs files.
+
+  =========  FOR UPGRADE SEE: ===============
+  http://openacs.org/doc/current/upgrade.html
+  ===========================================
+
+     make install WITH_POSTCONFIG=yes
+  
+  to allow post-install configurations 
+  Or run afterwards: 
+  sh ${EXAMPLESDIR}/post-config.sh XX POST-INSTALL 
+
+  Advice: stop Aolserver and Postgresql
+  before post-install configuration starts.
+
+  Press ctrl-C *NOW* if you need to. 
+  ===========================================
+"
+
+sleep 10
+
+for DIRS in /usr/share/skel/dot
+do
+if egrep 'OPENACS-entries in .profile' ${DIRS}.profile >/dev/null 2>&1; then
+	echo "You already have OPENACS-entries in .profile (skeleton)"
+else
+	echo "${DIRS}.profile: adding entries" && \
+	echo "# OPENACS-entries in .profile:" >> ${DIRS}.profile && \
+	echo "export PATH=\$$PATH:${PGBASE}/bin" >> ${DIRS}.profile && \
+	echo "export PGDATA=${PGDATA}" >> ${DIRS}.profile && \
+	echo "export LD_LIBRARY_PATH=\$$LD_LIBRARY_PATH:${PGBASE}/lib" >> ${DIRS}.profile && \
+	echo "export PS1=\"<\u-\W>\"" >> ${DIRS}.profile && \
+	echo "export PS2=\"continu>\"" >> ${DIRS}.profile && \
+	echo "export CVSROOT=/cvsroot" >> ${DIRS}.profile && \
+	echo "export EDITOR=emacs" >> ${DIRS}.profile && \
+	echo "# end of OPENACS-entries." >> ${DIRS}.profile
+fi 
+done
+
+if egrep 'OPENACS-entries in rc.conf' ${RCCONF} >/dev/null 2>&1; then
+	echo "You already have OPENACS-entries in ${RCCONF}"
+else
+	echo "${RCCONF}: adding entries" && \
+	echo "# OPENACS-entries in rc.conf:" >> ${RCCONF} && \
+	echo "ldconfig_paths=\"/usr/lib/compat /usr/X11R6/lib ${LOCALBASE}/lib ${PGBASE}/lib ${AOLSERVERBASE}/lib\" " >> ${RCCONF} && \
+	echo "# end of OPENACS-entries." >> ${RCCONF}
+fi
+
+if pw group show ${OPENACS_GROUP} >/dev/null 2>&1; then
+	echo "You already have a group \"${OPENACS_GROUP}\", so I will use it."
+else
+	pw groupadd -n ${OPENACS_GROUP} 
+fi
+
+if pw user show ${OPENACS_USER} >/dev/null 2>&1; then
+	echo "You already have a user \"${OPENACS_USER}\", so I will use it."
+else
+	pw useradd -n ${OPENACS_USER} -G ${OPENACS_GROUP} -c "OpenACS instance pseudo-user" \
+	-m -s ${LOCALBASE}/bin/bash -h - 
+fi
+
+	pw usermod nobody -G ${OPENACS_GROUP}
+	pw usermod pgsql -G ${OPENACS_GROUP}
+	pw usermod root -G ${OPENACS_GROUP}
+}
+
+post-install() {
+	echo "Set permissions of files"
+	chmod -R 770 ${OPENACSBASE}/${OPENACS_USER}
+	chmod -R 770 ${EXAMPLESDIR}
+	chmod -R 755 ${DTSERVICEBASE}/${OPENACS_USER}
+     	chmod 1755 ${DTSERVICEBASE}
+ 
+	chown -R ${OPENACS_USER}:${OPENACS_GROUP} ${OPENACSBASE}/${OPENACS_USER}
+	chown root:${OPENACS_GROUP} ${EXAMPLESDIR}/nsd-postgres ${EXAMPLESDIR}/nsd-oracle
+
+}
+
+case $2 in
+
+PRE-INSTALL)
+	pre-install
+	;;
+POST-INSTALL)
+	post-install
+	;;
+esac
+
