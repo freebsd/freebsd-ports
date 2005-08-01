@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ripmime
-PORTVERSION=	1.3.2.3
+PORTVERSION=	1.4.0.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.pldaniels.com/ripmime/
 
@@ -19,8 +19,9 @@ USE_REINPLACE=	yes
 
 pre-build:
 	@${REINPLACE_CMD} -e 's!CC=!CC?=!; s!/usr/local!${PREFIX}!; \
-		s!CFLAGS= -Wall -O2!CFLAGS+= -Wall!' \
-		${WRKSRC}/Makefile
+		s!^CFLAGS=!CFLAGS ?=!' \
+		${WRKSRC}/Makefile ${WRKSRC}/ripOLE/Makefile \
+		${WRKSRC}/tnef/Makefile
 
 do_install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ripmime ${PREFIX}/bin/
