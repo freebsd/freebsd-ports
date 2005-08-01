@@ -22,19 +22,26 @@ CONFIGURE_ARGS+=	--enable-shared --disable-static
 INSTALLS_SHLIB=	yes
 
 OPTIONS=	FOX10 "FOX1.0 support (FOX1.4 by default)" off
+OPTIONS=	FOX12 "FOX1.2 support (FOX1.4 by default)" off
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FOX10)
-LIB_DEPENDS+=	FOX-1.0.0:${PORTSDIR}/x11-toolkits/fox
+FOX_LIB_VER=	1.0.0
+LIB_DEPENDS+=	FOX-${FOX_LIB_VER}:${PORTSDIR}/x11-toolkits/fox
 CONFIGURE_ARGS+=	--with-fox-1-0
+.elif defined(WITH_FOX12)
+FOX_LIB_VER=	1.2
+LIB_DEPENDS+=	FOX-${FOX_LIB_VER}:${PORTSDIR}/x11-toolkits/fox12
+CONFIGURE_ARGS+=	--with-fox-1-2
 .else
-LIB_DEPENDS+=	FOX-1.4:${PORTSDIR}/x11-toolkits/fox-devel
+FOX_LIB_VER=	1.4
+LIB_DEPENDS+=	FOX-${FOX_LIB_VER}:${PORTSDIR}/x11-toolkits/fox-devel
 CONFIGURE_ARGS+=	--with-fox-1-4
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lFOX-1.4|"-lFOX-1.4 ${PTHREAD_LIBS}"|' \
+	@${REINPLACE_CMD} -e 's|-lFOX-${FOX_LIB_VER}|"-lFOX-${FOX_LIB_VER} ${PTHREAD_LIBS}"|' \
 		${WRKSRC}/configure ${WRKSRC}/tests/Makefile.in
 
 .include <bsd.port.post.mk>
