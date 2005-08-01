@@ -11,7 +11,6 @@ etc/muttng-mime.types
 @exec if [ ! -f %D/etc/Muttngrc ]; then cp %D/etc/Muttngrc.dist %D/etc/Muttngrc; fi
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.mutt
 %%PORTDOCS%%%%DOCSDIR%%/GPL
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
@@ -90,4 +89,3 @@ etc/muttng-mime.types
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/muttng.mo
 @dirrm %%EXAMPLESDIR%%/iconv
 @dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
