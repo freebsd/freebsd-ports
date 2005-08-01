@@ -559,7 +559,9 @@ pre-install:
 do-install:
 .for D in CLASS OFM TFM VF DVIPDFM DVIPS
 	${MKDIR} ${PREFIX}/${${D}DIR_DST}
-	${INSTALL_DATA} ${${D}FILES:S,^,${${D}DIR_SRC}/,} ${PREFIX}/${${D}DIR_DST}
+.for F in ${${D}FILES}
+	${INSTALL_DATA} ${${D}DIR_SRC}/${F} ${PREFIX}/${${D}DIR_DST}
+.endfor
 .endfor
 	${INSTALL_DATA} ${FILESDIR}/cid-otf-noembed.map ${PREFIX}/${DVIPDFMDIR_DST}
 .if !defined(NOPORTDOCS)
