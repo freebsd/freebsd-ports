@@ -1,15 +1,5 @@
 --- configure.orig	Thu Feb 17 00:00:18 2005
 +++ configure	Sat Jul 30 23:49:51 2005
-@@ -7166,7 +7166,8 @@
- 
- echo "$as_me:$LINENO: checking for doxygen" >&5
- echo $ECHO_N "checking for doxygen... $ECHO_C" >&6
--dox_ver=`doxygen --version 2>/dev/null`
-+#dox_ver=`doxygen --version 2>/dev/null`
-+dox_ver=
- if test "x$dox_ver" = "x"; then
- 	echo "$as_me:$LINENO: result: no" >&5
- echo "${ECHO_T}no" >&6
 @@ -7223,7 +7224,7 @@
  
  # If we are compiling with gcc, enable all warning and make warnings errors.
