@@ -14,7 +14,7 @@ $archdir = File.join($libdir, CONFIG["arch"])
 $site_libdir = CONFIG["sitelibdir"]
 
 $libdir = ["config", "plugins", "redist"]
-$libdir_excl = [ /i[36]86-mswin32/ ]
+$libdir_excl = [ /CVS[^\/]*$/, /i[36]86-/, /^rrb\//, /\.so\s*$/, /ripper/ ]
 $libdir_subst = [ [/i686-linux/, CONFIG["arch"] ] ]
 
 class Array
@@ -51,7 +51,7 @@ def dirmake( dir, noharm = false )
   for f in dir.sort.reverse
     next if f == "."
     next if f == "CVS"
-    odn = File.libdirPath( f )
+    odn = File.libdirPath( f ).gsub(/\/\.$/, "" )
     if noharm then
       $stdout << "@dirrm #{odn.rmLocal}\n"
     else
@@ -83,8 +83,7 @@ def install_rb(noharm = false, srcdir = nil)
     Find.find(ld) do |f|
       next unless FileTest.file?(f)
       next if (f = f[ld.length+1..-1]) == nil
-      next if (/CVS$/ =~ File.dirname(f))
-      next if libdir_excl.contains? { |p| (f =~ p) }
+      next if libdir_excl.contains? { |p| f =~ p }
       path.push File.join( ld, f )
       dir |= [File.join( ld, File.dirname(f) )]
       end
