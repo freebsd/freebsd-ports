@@ -18,10 +18,12 @@ DIST_SUBDIR=	gap
 MAINTAINER=	johans@stack.nl
 COMMENT=	GAP is a system for computational discrete algebra
 
+USE_REINPLACE=	yes
+
 .include <bsd.port.pre.mk>
 
 GAP_VERSION=	gap4r4
-GAP_PKGTIME=	2005_05_04-17_55_UTC
+GAP_PKGTIME=	2005_07_20-19_29_UTC
 GAP_PKGDATE=	${GAP_PKGTIME:C/-.*//:S/_//g}
 GAP_WRKSRC=	${WRKSRC}/${GAP_VERSION}
 GAP_LIBDIR=	${PREFIX}/lib/${GAP_VERSION}
@@ -34,6 +36,9 @@ do-extract:
 	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/xtom1r1p2.tar.bz2 ; \
 	cd ${GAP_WRKSRC}/pkg; \
 	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/packages-${GAP_PKGTIME}.tar.bz2 )
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|CC=\'.(CC)\' ||g" ${GAP_WRKSRC}/Makefile.in
 
 do-configure:
 	(cd ${GAP_WRKSRC}; ./configure)
