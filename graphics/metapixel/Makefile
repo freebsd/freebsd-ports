@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	metapixel
-PORTVERSION=	0.9
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.complang.tuwien.ac.at/~schani/metapixel/ \
 		http://dragon.roe.ch/mirrors/distfiles/metapixel/
@@ -24,8 +23,11 @@ MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I." \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 PLIST_FILES=	bin/metapixel bin/metapixel-convert bin/metapixel-imagesize \
-		bin/metapixel-prepare bin/metapixel-sizesort bin/metapixel-zoom
-PORTDOCS=	README
+		bin/metapixel-prepare bin/metapixel-sizesort bin/metapixel-zoom \
+		share/examples/metapixel/metapixelrc
+PLIST_DIRS=	share/examples/metapixel
+PORTDOCS=	README NEWS
+MAN1=		metapixel.1
 
 post-patch:
 	@${RM} ${WRKSRC}/getopt.h
@@ -40,9 +42,12 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/metapixel-prepare ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/metapixel-sizesort ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/metapixel-zoom ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/metapixel.1 ${PREFIX}/man/man1
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/metapixelrc ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
