@@ -78,6 +78,7 @@ CONFIGURE_ARGS+=	--enable-i18n \
 .endif
 
 .if defined(WITH_XMLDUMP)
+BROKEN=			Does not build with XML dump support
 LIB_DEPENDS+=		gdome.8:${PORTSDIR}/textproc/gdome2
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/libxml2 \
 			-I${LOCALBASE}/include/libxml2/libxml \
