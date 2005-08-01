@@ -1,0 +1,45 @@
+--- generic/mysqltcl.c	Mon Dec 27 07:34:33 2004
++++ generic/mysqltcl.c	Sun Jul 31 19:43:08 2005
+@@ -184,5 +184,4 @@
+ {
+     Tcl_ObjType *oldTypePtr = objPtr->typePtr;
+-    Tcl_HashEntry *entryPtr;
+ 
+     if ((oldTypePtr != NULL) && (oldTypePtr->freeIntRepProc != NULL)) {
+@@ -1389,6 +1388,6 @@
+ {
+   MysqltclState *statePtr = (MysqltclState *)clientData; 
+-  int code ;
+-  int count ;
++  int code = TCL_ERROR;
++  int count = 0;
+ 
+   MysqlTclHandle *handle;
+@@ -1398,5 +1397,4 @@
+   MYSQL_ROW row ;
+   int *val = NULL;
+-  int breakLoop = 0;
+   unsigned long *lengths;
+   
+@@ -1456,13 +1454,8 @@
+       case TCL_CONTINUE:
+       case TCL_OK:
+-	break ;
+-      case TCL_BREAK:
+-	breakLoop=1;
+-	break;
++	continue;
+       default:
+-	breakLoop=1;
+-	break;
+       }
+-      if (breakLoop==1) break;
++      break;
+     }
+   }
+@@ -2150,5 +2143,4 @@
+ static int Mysqltcl_NewNull(ClientData clientData, Tcl_Interp *interp, int objc, Tcl_Obj *const objv[])
+ {
+-  Tcl_Obj *objPtr;
+   if (objc != 1) {
+       Tcl_WrongNumArgs(interp, 1, objv, "");

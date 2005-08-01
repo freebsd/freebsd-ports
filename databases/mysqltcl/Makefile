@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mysqltcl
-PORTVERSION=	2.50
+PORTVERSION=	3.01
 CATEGORIES=	databases tcl83 tcl84
 MASTER_SITES=	http://www.xdobry.de/mysqltcl/
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	bkoenig@cs.tu-berlin.de
 COMMENT=	TCL module for accessing MySQL databases based on msqltcl
 
 LIB_DEPENDS=	${TCL_NODOT}:${PORTSDIR}/lang/${TCL_NODOT}
@@ -26,6 +26,11 @@ MAKE_ENV+=	PORTVERSION="${PORTVERSION}" \
 		TCL_NODOT="${TCL_NODOT}"
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 ALL_TARGET=	shlib
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ''
+
+pre-patch:
+	${REINPLACE_CMD} -e 's, *,,' ${WRKSRC}/generic/*.[ch]
 
 do-install:
 	${MKDIR} ${SQL_DIR}
