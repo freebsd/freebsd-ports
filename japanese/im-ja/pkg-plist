@@ -6,6 +6,7 @@ etc/gconf/schemas/im-ja.schemas
 lib/gtk-2.0/2.4.0/immodules/im-ja.so
 lib/im-ja/im-ja-applet
 lib/im-ja/kpengine
+lib/im-ja/im-ja-helper
 @dirrm lib/im-ja
 libdata/bonobo/servers/GNOME_ImJaApplet.server
 share/gnome/control-center-2.0/capplets/im-ja.desktop
@@ -44,5 +45,5 @@ share/locale/de/LC_MESSAGES/im-ja.mo
 share/locale/es/LC_MESSAGES/im-ja.mo
 share/locale/hu/LC_MESSAGES/im-ja.mo
 share/locale/ja/LC_MESSAGES/im-ja.mo
-@exec %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
-@unexec %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
+@exec if [ -f %D/bin/gtk-query-immodules-2.0 ]; then %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules; fi
+@unexec if [ -f %D/bin/gtk-query-immodules-2.0 ]; then %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules; fi
