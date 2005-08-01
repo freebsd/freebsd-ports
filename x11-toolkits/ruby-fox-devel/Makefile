@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	fox
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.2.6
 CATEGORIES=	x11-toolkits ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/1612/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/4003/
 MASTER_SITE_SUBDIR=	fxruby
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-devel
@@ -19,15 +18,12 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	Ruby extension module to use FOX 1.2, aka FXRuby
 
-LIB_DEPENDS=	FOX-1.4:${PORTSDIR}/x11-toolkits/fox-devel \
+LIB_DEPENDS=	FOX-1.2:${PORTSDIR}/x11-toolkits/fox12 \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		fxscintilla.17:${PORTSDIR}/x11-toolkits/fxscintilla
+		fxscintilla.17:${PORTSDIR}/x11-toolkits/fxscintilla-fox12
 
-BROKEN=		Does not build
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
+FETCH_CMD=	/usr/bin/fetch -Rr
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb

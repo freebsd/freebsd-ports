@@ -4,7 +4,9 @@
 %%RUBY_SITELIBDIR%%/fox12/chore.rb
 %%RUBY_SITELIBDIR%%/fox12/colors.rb
 %%RUBY_SITELIBDIR%%/fox12/core.rb
+%%RUBY_SITELIBDIR%%/fox12/dialogs.rb
 %%RUBY_SITELIBDIR%%/fox12/dict.rb
+%%RUBY_SITELIBDIR%%/fox12/execute_nonmodal.rb
 %%RUBY_SITELIBDIR%%/fox12/glgroup.rb
 %%RUBY_SITELIBDIR%%/fox12/glshapes.rb
 %%RUBY_SITELIBDIR%%/fox12/input.rb
@@ -19,6 +21,7 @@
 %%RUBY_SITELIBDIR%%/fox12/scintilla.rb
 %%RUBY_SITELIBDIR%%/fox12/settings.rb
 %%RUBY_SITELIBDIR%%/fox12/signal.rb
+%%RUBY_SITELIBDIR%%/fox12/splashscreen.rb
 %%RUBY_SITELIBDIR%%/fox12/timeout.rb
 %%RUBY_SITELIBDIR%%/fox12/undolist.rb
 %%RUBY_SITELIBDIR%%/fox12/version.rb
