@@ -1,8 +1,0 @@
---- doc/mysqltcl.n	Mon Jul  6 12:04:27 1998
-+++ doc/mysqltcl.n	Wed Sep  1 01:52:23 1999
-@@ -36,2 +36,5 @@
- MySQLTcl - MySQL server access commands for Tcl
-+.SH SYNOPSIS
-+.P
-+package require mysqltcl
- .SH "INTRODUCTION"
