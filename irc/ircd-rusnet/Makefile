@@ -19,10 +19,6 @@ DISTNAME=	rusnet-${PORTVERSION}
 MAINTAINER=	sead@mail.ru
 COMMENT=	RusNet Internet Relay Chat Server
 
-BROKEN=		Does not build
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
@@ -74,10 +70,6 @@ CONFIGURE_ARGS+=--enable-dsm
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"does not link"
-.endif
 
 pre-configure:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-CONFIGURE
