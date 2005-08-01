@@ -8,12 +8,7 @@
 PORTNAME=	libcabinet
 PORTVERSION=	0.30
 CATEGORIES=	archivers
-# mastersites have disappeared as of August 2003.  Perhaps consider
-# trying archivers/cabextract instead.
-MASTER_SITES=	# http://trill.cis.fordham.edu/~barbacha/cabinet_library/
-
-DEPRECATED=	"master site disappeared"
-EXPIRATION_DATE=2005-08-31
+MASTER_SITES=	http://www.pbxpress.com/~sobomax/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable library and utility to use Microsoft cabinet files (.cab)
