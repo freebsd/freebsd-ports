@@ -1,0 +1,24 @@
+#! /bin/sh
+
+PATH=$PATH:/bin:/usr/bin:/usr/sbin
+
+case $2 in
+
+POST-DEINSTALL)
+	echo "You are deinstalling this port:"
+	echo "  Remember to kill the associated Aolserver process in case"
+	echo "	you've changed the standard."       
+	echo "  We will try to kill the standard now:"
+	pid=`ps -ax | grep %%OPENACS_USER%%/etc/config.tcl | grep -v grep| awk -F' ' '{print $1}'`;
+	if test "$pid" = "" ; then
+		echo "  No %%OPENACS_USER%% process found."
+	else
+		echo "  Killing %%OPENACS_USER%% proces. pid: $pid . "
+		kill $pid
+	fi
+	echo " If no other openACS/.LRN instance needs it, you may want to "
+	echo " delete %%AOLSERVERBASE%% and %%VIRTUALBASE%% manually, "
+	echo " and possibly the %%OPENACS_USER%% users and database. "
+	;;
+esac
+ 
