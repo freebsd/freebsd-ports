@@ -94,7 +94,12 @@ CONFIGURE_ARGS+=	--enable-v4-mapped
 .   endif
 .endif
 
-.if !defined(WITHOUT_SSL) || defined(WITHOUT_SSL_MODULES)
+#backward compatibility
+.if defined(WITHOUT_SSL) 
+WITHOUT_SSL_MODULES=	YES
+.endif
+
+.if !defined(WITHOUT_SSL_MODULES)
 USE_OPENSSL=	yes
 .endif
 
