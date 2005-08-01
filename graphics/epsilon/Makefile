@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	epsilon
-PORTVERSION=	0.3.0.003
+PORTVERSION=	0.3.0.004
 CATEGORIES=	graphics
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
@@ -14,12 +14,12 @@ MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A small, display independent, and quick thumbnailing library
 
 LIB_DEPENDS=	epeg.9:${PORTSDIR}/graphics/epeg \
-		Imlib2.3:${PORTSDIR}/graphics/imlib2
+		edje.5:${PORTSDIR}/graphics/edje
 
 USE_LIBTOOL_VER=	15
 USE_GNOME=	gnomehack gnometarget
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 .include <bsd.port.mk>

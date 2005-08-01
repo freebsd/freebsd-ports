@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	entice
-PORTVERSION=	0.9.3.003
-PORTREVISION=	1
+PORTVERSION=	0.9.3.004
+PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	An image viewer written using libraries for Enlightenment 0.17 development
 
-LIB_DEPENDS=	ecore.1:${PORTSDIR}/x11/ecore \
-		evas.1:${PORTSDIR}/graphics/evas \
-		esmart_thumb.0:${PORTSDIR}/graphics/esmart
+LIB_DEPENDS=	esmart_thumb.0:${PORTSDIR}/graphics/esmart
 
 USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=	15

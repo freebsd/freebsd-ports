@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	evas
-PORTVERSION=	0.9.9.011
+PORTVERSION=	0.9.9.013
 CATEGORIES=	graphics
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
