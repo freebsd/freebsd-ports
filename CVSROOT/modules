@@ -3425,6 +3425,7 @@ gtkmathview	ports/x11-toolkits/gtkmathview
 gtkmm24		ports/x11-toolkits/gtkmm24
 gtkpasman	ports/security/gtkpasman
 gtkpod		ports/audio/gtkpod
+gtkpool		ports/games/gtkpool
 gtkportscan	ports/security/gtkportscan
 gtkscintilla	ports/x11-toolkits/gtkscintilla
 gtksee		ports/graphics/gtksee
@@ -11993,6 +11994,7 @@ uk-pine.language	ports/ukrainian/pine.language
 uk-postcodes	ports/misc/uk-postcodes
 uk-webalizer	ports/ukrainian/webalizer
 ulxmlrpcpp	ports/net/ulxmlrpcpp
+umark		ports/games/umark
 umatrix		ports/math/umatrix
 umfpack		ports/math/umfpack
 umix		ports/audio/umix
