@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	graphthing
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	math
 MASTER_SITES=	http://graph.seul.org/
 
@@ -24,6 +24,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-wx-config=${X11BASE}/bin/wxgtk2-2.6-config
+MAKEFILE=	GNUmakefile
 
 PLIST_FILES=	bin/graphthing bin/gt
 
