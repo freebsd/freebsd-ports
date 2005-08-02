@@ -10,12 +10,9 @@ PORTNAME=	sonice
 PORTVERSION=	2.0
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.cyclooctane.com/sonice/release/
+MASTER_SITES=	http://freebsd.t-hosting.hu/${PORTNAME}/
 
-DEPRECATED=	"master site is now a domain holder"
-EXPIRATION_DATE=2005-08-31
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gkovedan@t-hosting.hu
 COMMENT=	Sonice eases reencoding of .ogg files
 
 RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools \
