@@ -2969,7 +2969,6 @@ gngb		ports/emulators/gngb
 gniffel		ports/games/gniffel
 gnmm		ports/games/gnmm
 gno3dtet	ports/games/gno3dtet
-gnocatan	ports/games/gnocatan
 gnochm		ports/deskutils/gnochm
 gnocl		ports/x11-toolkits/gnocl
 gnoemoe		ports/net/gnoemoe
@@ -9278,6 +9277,7 @@ pinentry-gtk2	ports/security/pinentry-gtk2
 pinentry-qt	ports/security/pinentry-qt
 pinfo		ports/misc/pinfo
 pinstall	ports/devel/pinstall
+pioneers	ports/games/pioneers
 pipe		ports/misc/pipe
 pipebench	ports/benchmarks/pipebench
 pipemeter	ports/sysutils/pipemeter
