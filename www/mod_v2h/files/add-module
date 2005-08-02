@@ -47,7 +47,7 @@ if (@lmd or @amd) {
  if (open(FP, ">$CFG_SYSCONFDIR/$CFG_TARGET.conf.new")) {
   print FP $content;
   close(FP);
-  system("cp $CFG_SYSCONFDIR/$CFG_TARGET.conf $CFG_SYSCONFDIR/$CFG_TARGET.conf.bak && " . "cp $CFG_SYSCONFDIR/$CFG_TARGET.conf.new $CFG_SYSCONFDIR/$CFG_TARGET.conf && " . "rm $CFG_SYSCONFDIR/$CFG_TARGET.conf.new");
+  system("cp $CFG_SYSCONFDIR/$CFG_TARGET.conf.new $CFG_SYSCONFDIR/$CFG_TARGET.conf && " . "rm $CFG_SYSCONFDIR/$CFG_TARGET.conf.new");
 } else {
  notice("unable to open configuration file");
 }
