@@ -121,6 +121,9 @@ post-patch: .SILENT
 .if ${NVVERSION} >= 7174
 	${REINPLACE_CMD} '24,26d' ${WRKSRC}/src/nv-freebsd.h
 .endif
+.if ${OSVERSION} > 600028
+	${REINPLACE_CMD} '/bus_memio\.h/d' ${WRKSRC}/src/nv-freebsd.h
+.endif
 .if defined(WITH_FREEBSD_AGP)
 	${REINPLACE_CMD} 's/undef NV_SUPPORT_OS_AGP/define NV_SUPPORT_OS_AGP/' \
 		${WRKSRC}/src/nv-freebsd.h
