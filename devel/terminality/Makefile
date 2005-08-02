@@ -9,13 +9,10 @@
 PORTNAME=	terminality
 PORTVERSION=	2.1
 CATEGORIES=	devel
-MASTER_SITES=	http://members.optushome.com.au/emikulic/code/tn/
+MASTER_SITES=	http://freebsd.t-hosting.hu/${PORTNAME}/
 DISTNAME=	tn-${PORTVERSION}
 
-DEPRECATED=	"master site disappeared"
-EXPIRATION_DATE=2005-08-31
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	A cross-platform terminal manipulation library
 
 do-install:
