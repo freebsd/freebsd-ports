@@ -13,7 +13,7 @@
   # Call AM_AUTOMAKE_VERSION so it can be traced.
   # This function is AC_REQUIREd by AC_INIT_AUTOMAKE.
   AC_DEFUN([AM_SET_CURRENT_AUTOMAKE_VERSION],
-! 	 [AM_AUTOMAKE_VERSION([1.9.5])])
+! 	 [AM_AUTOMAKE_VERSION([1.9.6])])
   
   # AM_AUX_DIR_EXPAND
   
