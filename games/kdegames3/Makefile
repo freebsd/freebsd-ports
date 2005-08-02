@@ -7,6 +7,7 @@
 
 PORTNAME=	kdegames
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	games kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -24,6 +25,8 @@ GNU_CONFIGURE=	yes
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib
+
+CONFIGURE_ARGS=	--disable-setgid
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|root:root|${BINOWN}:${BINGRP}|g' \
