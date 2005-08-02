@@ -18,7 +18,10 @@ Alternatively to the above settings, you can enable postfix to start with
 the other local services, for example, after your database server starts if
 you need it to be running for postfix.  To do this, set in your rc.conf file:
 
-sendmail_enable="NONE"
+sendmail_enable="NO"
+sendmail_submit_enable="NO"
+sendmail_outbound_enable="NO"
+sendmail_msp_queue_enable="NO"
 
 Then make the following symbolic link:
 
