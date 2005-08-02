@@ -51,9 +51,7 @@ ALL_TARGET=	firebird_boot ref_databases msgs libfbembed intl otherfiles \
 		inet_server extlib embed_gfix embed_gbak embed_gdef embed_util
 
 SUB_FILES=	pkg-install pkg-message aliases.conf
-
-PKGMESSAGE=	${WRKDIR}/pkg-message
-PKGINSTALL=	${WRKDIR}/pkg-install
+SUB_LIST+=	LOCALSTATEDIR=${LOCALSTATEDIR}
 
 SUID_BIN=	fb_inet_server fb_lock_mgr gds_drop
 UTIL_BIN=	fb_lock_print gbak gdef gfix gsec gstat

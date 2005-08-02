@@ -15,13 +15,12 @@ And finally restart inetd.
 It is STRONGLY recommended that you change the SYSDBA
 password with:
 
-% cd %%PREFIX%%/firebird
 % gsec -user SYSDBA -pass masterkey
 GSEC> modify SYSDBA -pw newpassword
 GSEC> quit
 
 before doing anything serious with Firebird.
 
-See %%PREFIX%%/firebird/RELNOTES for more.
+See %%LOCALSTATEDIR%%/RELNOTES for more.
 ---------------------------------------------------------
 
