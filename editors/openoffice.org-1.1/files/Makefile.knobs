@@ -31,7 +31,7 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} "WARNING"
 	@${ECHO} "Your rtld seems to be old."
-	@${ECHO} "Please remake your rtld by:
+	@${ECHO} "Please remake your rtld by:"
 	@${ECHO} "[1] if you use 4-series:"
 	@${ECHO} "# fetch http://people.freebsd.org/~maho/ooo/patch-rtld.c-releng4"
 	@${ECHO} "# cd /usr/src/libexec/rtld-elf ; patch < patch-rtld.c-releng4"
