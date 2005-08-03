@@ -7,7 +7,7 @@
 
 PORTNAME=	latex2html
 PORTVERSION=	${VERSION}j${JP_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=     support/${PORTNAME}
@@ -20,8 +20,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ixtl@utmc.or.jp
 COMMENT=	Japanese LaTeX2HTML with JA patch
 
-RUN_DEPENDS=	platex:${PORTSDIR}/japanese/ptex-tetex \
-		dvips:${PORTSDIR}/japanese/dvipsk \
+BUILD_DEPENDS=	platex:${PORTSDIR}/japanese/ptex-tetex
+RUN_DEPENDS=	dvips:${PORTSDIR}/japanese/dvipsk \
 		gs:${PORTSDIR}/japanese/ghostscript-gnu-jpnfont \
 		anytopnm:${PORTSDIR}/graphics/netpbm
 
