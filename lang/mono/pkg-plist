@@ -691,6 +691,10 @@ share/jay/skeleton.cs
 @dirrm etc/mono/2.0
 @dirrm etc/mono/1.0
 @dirrm etc/mono
+@exec mkdir -p %%X11BASE%%/lib/mono/1.0
+@exec mkdir -p %%X11BASE%%/lib/mono/2.0
 @exec mkdir -p %%X11BASE%%/lib/mono/gac
 @unexec rmdir %%X11BASE%%/lib/mono/gac 2>/dev/null || true
+@unexec rmdir %%X11BASE%%/lib/mono/2.0 2>/dev/null || true
+@unexec rmdir %%X11BASE%%/lib/mono/1.0 2>/dev/null || true
 @unexec rmdir %%X11BASE%%/lib/mono 2>/dev/null || true

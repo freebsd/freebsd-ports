@@ -8,7 +8,7 @@
 
 PORTNAME=	mono
 PORTVERSION=	1.1.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/sources/mono-1.1/
 
@@ -73,6 +73,8 @@ tests: build
 		${MAKE_FLAGS} Makefile ${MAKE_ARGS} test)
 
 pre-su-install:
+	${MKDIR} ${X11BASE}/lib/mono/1.0
+	${MKDIR} ${X11BASE}/lib/mono/2.0
 	${MKDIR} ${X11BASE}/lib/mono/gac
 
 .include <bsd.port.post.mk>
