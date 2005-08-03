@@ -150,6 +150,15 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	    response to the submitter, then this does not affect you
 	    at all.</p>
 	</blockquote>
+	<p>Note that the <q>fix</q> in GnuPG does note completely
+	  eliminate the potential problem:</p>
+	<blockquote cite="http://lists.gnupg.org/pipermail/gnupg-announce/2005q1/000191.html">
+	  <p>These patches disable a portion of the OpenPGP protocol
+	    that the attack is exploiting.  This change should not be
+	    user visible.  With the patch in place, this attack will
+	    not work using a public-key encrypted message.  It will
+	    still work using a passphrase-encrypted message.</p>
+	</blockquote>
       </body>
     </description>
     <references>
