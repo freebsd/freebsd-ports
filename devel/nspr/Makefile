@@ -56,14 +56,14 @@ libtests:
 
 test: libtests prtests
 
-.if defined(PARALLEL_PACKAGE_BUILD)
-post-build: test
-.else
+#.if defined(PARALLEL_PACKAGE_BUILD)
+#post-build: test
+#.else
 post-build:
 	#
 	# Please, consider running ``make test'' to find any
 	# possible build problems.
 	#
-.endif
+#.endif
 
 .include <bsd.port.mk>
