@@ -62,7 +62,7 @@ test:
 		echo "All tests succeeded. Good news.";	\
 	fi
 
-.if defined(PARALLEL_PACKAGE_BUILD)
+.if defined(PARALLEL_PACKAGE_BUILD) && ${OSVERSION} >= 500000
 post-build: test
 .else
 post-build:
