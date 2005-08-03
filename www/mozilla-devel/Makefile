@@ -25,7 +25,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MOZILLA?=	mozilla-devel
 MOZ_SUFX?=	-devel
-MOZ_VER?=	${PORTVERSION:S/.b1/b1/}
+MOZ_VER?=	${PORTVERSION:S/.b1/b/}
 LATEST_LINK=	${MOZILLA}
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
 			--exclude */macbuild/*\
@@ -306,7 +306,7 @@ pre-install:
 	${ECHO_CMD} @dirrm include/${MOZILLA} >> ${PLIST}
 	${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
 	${ECHO_CMD} "@unexec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
-	cd ${FAKEDIR}/share/idl/${MOZILLA}-${MOZ_VER} \
+	cd ${FAKEDIR}/share/idl/${MOZILLA:S/-devel//}-${MOZ_VER} \
 		&& ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's:^:share/idl/${MOZILLA}/:' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
@@ -353,7 +353,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/mozilla-devel.desktop \
 		${PREFIX}/share/applications
 	${MKDIR} ${PREFIX}/share/idl/${MOZILLA}
-	cd ${FAKEDIR}/share/idl/${MOZILLA}-${MOZ_VER} && ${FIND} . | \
+	cd ${FAKEDIR}/share/idl/${MOZILLA:S/-devel//}-${MOZ_VER} && ${FIND} . | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/idl/${MOZILLA}
 
 post-install:
