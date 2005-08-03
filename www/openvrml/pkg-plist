@@ -36,4 +36,6 @@ lib/mozilla/plugins/openvrml.xpt
 @dirrm include/openvrml/openvrml
 @dirrm include/openvrml
 @dirrm share/idl/openvrml-%%VER%%
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+@unexec rmdir %D/share/gtk-doc/html/gtkglext 2>/dev/null || true
+@unexec rmdir %D/share/gtk-doc/html 2>/dev/null || true
+@unexec rmdir %D/share/gtk-doc 2>/dev/null || true
