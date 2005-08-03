@@ -19,20 +19,15 @@ COMMENT=	A complete - yet small - standard library for OCaml
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
 
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
 USE_GMAKE=	yes
 ALL_TARGET=	all opt
-ALL_TARGET=    all opt
 .if !defined(NOPORTDOCS)
 ALL_TARGET+=	doc
 PLIST_SUB+=	PORTDOCS=""
 .else
 PLIST_SUB+=	PORTDOCS="@comment "
 .endif
-DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 post-install:
 .if !defined(NOPORTDOCS)
