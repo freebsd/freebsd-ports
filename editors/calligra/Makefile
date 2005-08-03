@@ -47,10 +47,8 @@ USE_PYTHON=	yes
 EXTRA_PATCHES=	${PATCHDIR}/extrapatch-kexi-main-keximainwindowimpl.cpp
 .endif
 
-#post-patch:
-#	@env TZ=UTC ${TOUCH} -t 200506221316 ${WRKSRC}/subdirs ${WRKSRC}/Makefile.am \
-#			${WRKSRC}/configure.files ${WRKSRC}/configure.in \
-#			${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4
+post-patch:
+	@env TZ=UTC ${TOUCH} -t 200507191955.36 ${WRKSRC}/config.h.in
 
 post-configure:
 .if ${OSVERSION} < 500035
