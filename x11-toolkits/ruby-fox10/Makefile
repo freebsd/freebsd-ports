@@ -7,6 +7,7 @@
 
 PORTNAME=	fox
 PORTVERSION=	1.0.29
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fxruby
@@ -21,11 +22,7 @@ COMMENT=	Ruby extension module to use FOX, aka FXRuby
 LIB_DEPENDS=	FOX-1.0.0:${PORTSDIR}/x11-toolkits/fox \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		fxscintilla.16:${PORTSDIR}/x11-toolkits/fxscintilla-fox10
-
-BROKEN=		Broken dependency
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
+		fxscintilla.17:${PORTSDIR}/x11-toolkits/fxscintilla-fox10
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
