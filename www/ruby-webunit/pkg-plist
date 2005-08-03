@@ -18,6 +18,7 @@
 %%RUBY_SITELIBDIR%%/webunit/ui/cui/testrunner.rb
 %%RUBY_SITELIBDIR%%/webunit/utils.rb
 %%RUBY_SITELIBDIR%%/webunit/webunit.rb
+%%RUBY_SITELIBDIR%%/webunit.rb
 @dirrm %%RUBY_SITELIBDIR%%/webunit/ui/cui
 @dirrm %%RUBY_SITELIBDIR%%/webunit/ui
 @dirrm %%RUBY_SITELIBDIR%%/webunit
