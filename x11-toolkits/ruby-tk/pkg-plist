@@ -13,6 +13,10 @@
 %%RUBY_LIBDIR%%/tkscrollbox.rb
 %%RUBY_LIBDIR%%/tktext.rb
 %%RUBY_LIBDIR%%/tkvirtevent.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkconsole.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkmacpkg.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkwinpkg.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/multi-tk.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/remote-tk.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tk/after.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tk/autoload.rb
@@ -79,6 +83,39 @@
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tk/winpkg.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tk/wm.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tk/xim.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/barchart.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/bitmap.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/busy.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/component.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/container.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/cutbuffer.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/dragdrop.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/eps.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/graph.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/htext.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/setup.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/spline.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/stripchart.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/table.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/tabnotebook.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/tabset.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/ted.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/tile.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/tree.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/treeview.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/unix_dnd.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/vector.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/watch.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/win_printer.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/winop.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/tile/button.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/tile/checkbutton.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/tile/frame.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/tile/label.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/tile/radiobutton.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/tile/scrollbar.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/blt/tile/toplevel.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/ICONS.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/ICONS/icons.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/ICONS/setup.rb
@@ -261,6 +298,8 @@
 %%RUBY18_ONLY%%@dirrm %%RUBY_LIBDIR%%/tkextlib/iwidgets
 %%RUBY18_ONLY%%@dirrm %%RUBY_LIBDIR%%/tkextlib/itk
 %%RUBY18_ONLY%%@dirrm %%RUBY_LIBDIR%%/tkextlib/itcl
+%%RUBY18_ONLY%%@dirrm %%RUBY_LIBDIR%%/tkextlib/blt/tile
+%%RUBY18_ONLY%%@dirrm %%RUBY_LIBDIR%%/tkextlib/blt
 %%RUBY18_ONLY%%@dirrm %%RUBY_LIBDIR%%/tkextlib/bwidget
 %%RUBY18_ONLY%%@dirrm %%RUBY_LIBDIR%%/tkextlib/ICONS
 %%RUBY18_ONLY%%@dirrm %%RUBY_LIBDIR%%/tkextlib
