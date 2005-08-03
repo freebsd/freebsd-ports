@@ -17,10 +17,6 @@ COMMENT?=	Ruby interface to the Tk widget set
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
 RUN_DEPENDS=	${RUBY_ARCHLIBDIR}/tcltklib.so:${PORTSDIR}/${TCLTKLIB_CATEGORY}/ruby-tcltklib
 
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
