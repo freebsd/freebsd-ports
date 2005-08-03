@@ -32,6 +32,43 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c28f4705-043f-11da-bc08-0001020eed82">
+    <topic>proftpd -- format string vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>proftpd</name>
+	<name>proftpd-mysql</name>
+	<range><lt>1.3.0.rc2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The ProFTPD release notes states:</p>
+	<blockquote cite="http://www.proftpd.org/docs/RELEASE_NOTES-1.3.0rc2">
+	  <p>sean &lt;infamous42md at hotpop.com&gt; found two format
+	    string vulnerabilities, one in mod_sql's SQLShowInfo
+	    directive, and one involving the 'ftpshut' utility.	 Both
+	    can be considered low risk, as they require active
+	    involvement on the part of the site administrator in order
+	    to be exploited.</p>
+	</blockquote>
+	<p>These vulnerabilities could potentially lead to information
+	  disclosure, a denial-of-server situation, or execution of
+	  arbitrary code with the permissions of the user running
+	  ProFTPD.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2390</cvename>
+      <url>http://www.gentoo.org/security/en/glsa/glsa-200508-02.xml</url>
+      <url>http://www.proftpd.org/docs/RELEASE_NOTES-1.3.0rc2</url>
+    </references>
+    <dates>
+      <discovery>2005-07-26</discovery>
+      <entry>2005-08-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="debbb39c-fdb3-11d9-a30d-00b0d09acbfc">
     <topic>nbsmtp -- format string vulnerability</topic>
     <affects>
