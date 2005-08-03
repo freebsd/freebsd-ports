@@ -43,3 +43,20 @@
 +    $(TARGDIR)sun/io/CharToByteKOI8_U.java \
      $(TARGDIR)sun/io/ByteToCharSingleByte.java \
      $(TARGDIR)sun/io/CharToByteSingleByte.java \
+--- ../../j2se/src/solaris/classes/sun/awt/motif/MFontConfiguration.java	Tue Oct 19 15:01:53 2004
++++ ../../j2se/src/solaris/classes/sun/awt/motif/MFontConfiguration.java	Tue Aug  2 12:20:17 2005
+@@ -101,4 +101,5 @@
+ 	reorderMap.put("windows-1251", "cyrillic-cp1251");
+ 	reorderMap.put("KOI8-R", "cyrillic-koi8-r");
++	reorderMap.put("KOI8-U", "cyrillic-koi8-u");
+ 	reorderMap.put("ISO-8859-6", "arabic");
+ 	reorderMap.put("ISO-8859-7", "greek");
+--- ../../j2se/src/solaris/classes/sun/font/XMap.java	Tue Oct 19 15:01:55 2004
++++ ../../j2se/src/solaris/classes/sun/font/XMap.java	Tue Aug  2 12:21:16 2005
+@@ -84,4 +84,6 @@
+ 	} else if (encoding.equals("koi8-r")) {
+ 	    jclass = "io.CharToByteKOI8_R";
++	} else if (encoding.equals("koi8-u")) {
++	    jclass = "io.CharToByteKOI8_U";
+ 	} else if (encoding.equals("ansi-1251")) {
+ 	    jclass = "io.CharToByteCp1251";
