@@ -29,12 +29,15 @@ PORTDOCS=	LICENSE README NEWS
 
 .include <bsd.port.pre.mk>
 
-REP=	's|-pipe||; s|-fmerge-constants||; s|-fno-unit-at-a-time||; s|--fast-math||'
-.if ${ARCH} == "ia64"
 REP=	's|-pipe||; s|-fmerge-constants||; s|--fast-math||'
+.if ${OSVERSION} < 500000
+REP2+=	's|-fno-unit-at-a-time||;'
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e ${REP} ${WRKSRC}/Makefile
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e ${REP2} ${WRKSRC}/Makefile
+.endif
 
 .include <bsd.port.post.mk>
