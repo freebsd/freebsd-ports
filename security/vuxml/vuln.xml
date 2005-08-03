@@ -128,6 +128,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>gnupg</name>
 	<range><lt>1.4.1</lt></range>
       </package>
+      <package>
+	<name>p5-Crypt-OpenPGP</name>
+	<name>pgp</name>
+	<name>pgpin</name>
+	<range><gt>0</gt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -155,6 +161,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-02-08</discovery>
       <entry>2005-07-31</entry>
+      <modified>2005-08-03</modified>
     </dates>
   </vuln>
 
