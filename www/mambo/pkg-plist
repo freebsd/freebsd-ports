@@ -1,7 +1,6 @@
 @exec mkdir -p %D/%%MAMBO_DIR%%/cache/com_banners
 %%MAMBO_DIR%%/CHANGELOG
 %%MAMBO_DIR%%/INSTALL
-%%MAMBO_DIR%%/README
 %%MAMBO_DIR%%/LICENSE
 %%MAMBO_DIR%%/administrator/backups/index.html
 %%MAMBO_DIR%%/administrator/components/com_admin/admin.admin.html.php
@@ -831,6 +830,8 @@
 %%MAMBO_DIR%%/includes/patTemplate/tmpl/page.html
 %%MAMBO_DIR%%/includes/pathway.php
 %%MAMBO_DIR%%/includes/pdf.php
+%%MAMBO_DIR%%/includes/phpInputFilter/index.html
+%%MAMBO_DIR%%/includes/phpInputFilter/class.inputfilter.php
 %%MAMBO_DIR%%/includes/phpmailer/LICENSE
 %%MAMBO_DIR%%/includes/phpmailer/class.phpmailer.php
 %%MAMBO_DIR%%/includes/phpmailer/class.smtp.php
@@ -1194,6 +1195,7 @@
 @dirrm %%MAMBO_DIR%%/language
 @dirrm %%MAMBO_DIR%%/installation/sql
 @dirrm %%MAMBO_DIR%%/installation
+@dirrm %%MAMBO_DIR%%/includes/phpInputFilter/
 @dirrm %%MAMBO_DIR%%/includes/phpmailer/language
 @dirrm %%MAMBO_DIR%%/includes/phpmailer
 @dirrm %%MAMBO_DIR%%/includes/patTemplate/tmpl
