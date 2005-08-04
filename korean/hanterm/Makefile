@@ -16,6 +16,7 @@ COMMENT=	An xterm hacked for managing Korean languages
 
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/johabm16.pcf.gz:${PORTSDIR}/korean/johabfonts
 
+CONFLICTS=	ko-hanterm-xf-2.*
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES= yes
 ALL_TARGET=	hanterm

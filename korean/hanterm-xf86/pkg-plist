@@ -1,9 +1,6 @@
 bin/hanterm
-bin/resize
-bin/uxterm
 lib/X11/app-defaults/Hanterm
 lib/X11/app-defaults/Hanterm-color
-lib/X11/app-defaults/UXTerm
 share/hangul_keyboard/2bul.kbd
 share/hangul_keyboard/3bul_390.kbd
 share/hangul_keyboard/3bul_final.kbd

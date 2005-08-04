@@ -1,11 +1,28 @@
---- Makefile.in.orig	Tue Feb 18 18:56:34 2003
-+++ Makefile.in	Tue Feb 18 18:56:45 2003
-@@ -180,7 +180,7 @@
+--- Makefile.in.orig	Tue Feb 11 11:59:24 2003
++++ Makefile.in	Thu Aug  4 11:13:56 2005
+@@ -178,15 +178,12 @@
+ install-bin \
+ install-full :: $(BINNAME)$x resize$x $(BINDIR)
  	$(SHELL) $(srcdir)/sinstall.sh "$(INSTALL_PROGRAM)" $(BINNAME)$x  @XTERM_PATH@ $(BINDIR)/$(binary_xterm)
- 	$(INSTALL_PROGRAM) -s -m  755 resize$x $(BINDIR)/$(binary_resize)
+-	$(INSTALL_PROGRAM) -s -m  755 resize$x $(BINDIR)/$(binary_resize)
  	$(INSTALL_DATA) -m 444 $(srcdir)/keyboard/*.kbd $(srcdir)/keyboard/*.map $(KEYBDIR)
 -	$(INSTALL_PROGRAM) -m  755 $(srcdir)/uxterm $(BINDIR)/$(binary_uxterm)
-+	$(INSTALL_SCRIPT) -m  755 $(srcdir)/uxterm $(BINDIR)/$(binary_uxterm)
  
  install \
  install-man \
+ install-full :: $(MANDIR)
+ 	$(SHELL) $(srcdir)/minstall.sh "$(INSTALL_DATA)" $(srcdir)/$(BINNAME).man    $(MANDIR)/$(actual_xterm).$(manext)
+-	$(SHELL) $(srcdir)/minstall.sh "$(INSTALL_DATA)" $(srcdir)/resize.man   $(MANDIR)/$(actual_resize).$(manext)
+ 
+ install \
+ install-app \
+@@ -197,9 +194,6 @@
+ 	@echo installing $(APPSDIR)/$(CLASS)-color
+ 	@sed -e s/$(RESFNAME)/$(CLASS)/ $(srcdir)/$(RESFNAME)-col.ad >XTerm.tmp
+ 	@$(INSTALL_DATA) XTerm.tmp $(APPSDIR)/$(CLASS)-color
+-	@echo installing $(APPSDIR)/UXTerm
+-	@sed -e s/XTerm/$(CLASS)/ $(srcdir)/UXTerm.ad >XTerm.tmp
+-	@$(INSTALL_DATA) XTerm.tmp $(APPSDIR)/UXTerm
+ 	@rm -f XTerm.tmp
+ 
+ install ::
