@@ -472,7 +472,6 @@ share/texmf/tex/latex/CJK/thai/c90enc.def
 @dirrm share/texmf/fonts/tfm/arphic/argbsung
 @dirrm share/texmf/fonts/tfm/arphic
 @unexec rmdir %D/share/texmf/fonts/truetype/arphic 2>/dev/null || true
-@unexec rmdir %D/share/texmf/fonts/truetype 2>/dev/null || true
 @dirrm share/texmf/hbf2gf
 @dirrm share/texmf/tex/latex/CJK/Bg5
 @dirrm share/texmf/tex/latex/CJK/CEF
