@@ -24,7 +24,7 @@ upgrades.
   1.) Delete installed packages which conflict with the updated KDE
       ports.
 
-        pkg_deinstall -f kdeadmin-\[0-9\]*
+        pkg_deinstall -f kdeadmin-\[0-9\]\*
 
   2.) Now update the remaining KDE ports.
 
