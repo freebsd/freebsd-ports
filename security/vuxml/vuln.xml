@@ -471,12 +471,24 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </package>
       <package>
 	<name>apache+mod_ssl</name>
+	<name>apache+mod_ssl+ipv6</name>
+	<name>apache+mod_ssl+mod_accel</name>
+	<name>apache+mod_ssl+mod_accel+ipv6</name>
+	<name>apache+mod_ssl+mod_accel+mod_deflate</name>
+	<name>apache+mod_ssl+mod_accel+mod_deflate+ipv6</name>
+	<name>apache+mod_ssl+mod_deflate</name>
+	<name>apache+mod_ssl+mod_deflate+ipv6</name>
+	<name>apache+mod_ssl+mod_snmp</name>
+	<name>apache+mod_ssl+mod_snmp+mod_accel</name>
+	<name>apache+mod_ssl+mod_snmp+mod_accel+ipv6</name>
+	<name>apache+mod_ssl+mod_snmp+mod_deflate</name>
+	<name>apache+mod_ssl+mod_snmp+mod_deflate+ipv6</name>
+	<name>apache+mod_ssl+mod_snmp+mod_accel+mod_deflate+ipv6</name>
 	<range><lt>1.3.33+2.8.22_1</lt></range>
       </package>
       <package>
 	<name>apache_fp</name>
 	<name>apache+ipv6</name>
-	<name>apache+mod_ssl+ipv6</name>
 	<name>ru-apache+mod_ssl</name>
 	<name>ru-apache</name>
 	<range><gt>0</gt></range>
@@ -513,7 +525,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-07-25</discovery>
       <entry>2005-07-26</entry>
-      <modified>2005-07-28</modified>
+      <modified>2005-08-04</modified>
     </dates>
   </vuln>
 
