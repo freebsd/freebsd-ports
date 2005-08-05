@@ -17,12 +17,17 @@ COMMENT=	Local Area Multicomputer MPI implementation
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-rsh=ssh
 
 CONFLICTS=	lam-6.*
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -E -e 's|/usr/bin/env perl|${PERL} -w| ; \
+		s|use warnings;||' ${WRKSRC}/tools/mpiexec/mpiexec
 
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
