@@ -1,0 +1,10 @@
+--- source/term.c.orig	Fri Jul 23 01:10:02 2004
++++ source/term.c	Fri Jul 23 01:11:02 2004
+@@ -92,7 +92,6 @@
+ #endif
+ 
+ extern  char    *getenv();
+-extern	char	*tparm();
+ 
+ /*
+  * The old code assumed termcap. termcap is almost always present, but on
