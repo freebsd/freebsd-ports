@@ -9,6 +9,8 @@ PORTNAME=	nginx
 PORTVERSION=	0.1.41
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
+MASTER_SITES+=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	osa
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Robust and small WWW server
