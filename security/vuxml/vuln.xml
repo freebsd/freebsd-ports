@@ -38,7 +38,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <system>
 	<name>FreeBSD</name>
 	<range><ge>5.4</ge><lt>5.4_6</lt></range>
-	<range><ge>5.3</ge><lt>5.3_20</lt></range>
+	<range><ge>5.*</ge><lt>5.3_20</lt></range>
       </system>
     </affects>
     <description>
@@ -74,7 +74,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <system>
 	<name>FreeBSD</name>
 	<range><ge>5.4</ge><lt>5.4_6</lt></range>
-	<range><ge>5.3</ge><lt>5.4_20</lt></range>
+	<range><ge>5.3</ge><lt>5.3_20</lt></range>
       </system>
     </affects>
     <description>
@@ -108,7 +108,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <system>
 	<name>FreeBSD</name>
 	<range><ge>5.4</ge><lt>5.4_5</lt></range>
-	<range><ge>5.3</ge><lt>5.4_19</lt></range>
+	<range><ge>5.*</ge><lt>5.3_19</lt></range>
       </system>
     </affects>
     <description>
