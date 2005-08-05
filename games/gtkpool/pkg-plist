@@ -43,3 +43,4 @@ bin/gtkpool
 %%DATADIR%%/ball_hit.raw
 @dirrm %%DATADIR%%
 share/icons/gtkpool.png
+@unexec rmdir %D/share/icons 2>/dev/null || true
