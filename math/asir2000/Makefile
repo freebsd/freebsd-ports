@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asir
-PORTVERSION=	20050131
+PORTVERSION=	20050603
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.jssac.org/pub/distfiles/asir/ \
 		ftp://ftp.asir.org/pub/asir/src/
@@ -23,8 +23,8 @@ USE_AUTOCONF_VER=	253
 USE_AUTOMAKE_VER=	15
 USE_XLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-plot --enable-fep --enable-interval --with-pari
-ASIR_SRC_VERSION= 20050112
-ASIR_DOC_VERSION=	20050111
+ASIR_SRC_VERSION= 20050603
+ASIR_DOC_VERSION=	20050603
 ASIR_SRC=	asir-${ASIR_DOC_VERSION}.tar.gz
 ASIR_DOC=	asirdoc-${ASIR_DOC_VERSION}.tar.gz
 MAN1=		asir.1
