@@ -19,16 +19,11 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/xml2-config:${PORTSDIR}/textproc/libxml2
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/xml/libxml.so
+PLIST_DIRS=	%%RUBY_SITEARCHLIBDIR%%/xml
 USE_BZIP2=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Configure fails on FreeBSD >= 5.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
