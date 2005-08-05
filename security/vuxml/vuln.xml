@@ -32,6 +32,47 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0bf9d7fb-05b3-11da-bc08-0001020eed82">
+    <topic>mambo -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mambo</name>
+	<range><lt>4.5.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/15710/">
+	  <p>Some vulnerabilities have been reported in Mambo, where
+	    some have unknown impacts and others can be exploited by
+	    malicious people to conduct spoofing and SQL injection
+	    attacks.</p>
+	  <ol>
+	    <li>Input passed to the "user_rating" parameter when
+	      voting isn't properly sanitised before being used in a
+	      SQL query. This can be exploited to manipulate SQL
+	      queries by injecting arbitrary SQL code.</li>
+	    <li>Some unspecified vulnerabilities in the "mosDBTable"
+	      class and the "DOMIT" library have an unknown
+	      impact.</li>
+	    <li>An unspecified error in the "administrator/index3.php"
+	      script can be exploited to spoof session IDs.</li>
+	  </ol>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>13966</bid>
+      <cvename>CAN-2005-2002</cvename>
+      <url>http://secunia.com/advisories/15710/</url>
+    </references>
+    <dates>
+      <discovery>2005-06-15</discovery>
+      <entry>2005-08-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2b6e47b1-0598-11da-86bc-000e0c2e438a">
     <topic>ipsec -- Incorrect key usage in AES-XCBC-MAC</topic>
     <affects>
