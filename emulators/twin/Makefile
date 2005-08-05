@@ -7,7 +7,7 @@
 
 PORTNAME=	twin
 PORTVERSION=	3.1.14
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	emulators devel
 MASTER_SITES=	${MASTER_SITE_NETBSD} \
@@ -36,10 +36,6 @@ PLIST_SUB=	LIBVER="${LIBVER}"
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-USE_GCC=	3.2
-.endif
 
 FMT?=	/usr/bin/fmt
 
