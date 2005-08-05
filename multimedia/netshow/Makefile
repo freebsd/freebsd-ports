@@ -9,7 +9,8 @@ PORTNAME=	netshow
 PORTVERSION=	2.00.251
 PORTREVISION=	2
 CATEGORIES=	multimedia linux net
-MASTER_SITES=	http://www.microsoft.com/netshow/download/en/beta/
+MASTER_SITES=	ftp://ftp.mayn.de/pub/really_old_stuff/unix/browser/plugins/ \
+		http://voodoo.oberon.net/download/
 DISTNAME=	netshow_linux
 EXTRACT_SUFX=	.gz
 
@@ -17,9 +18,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft NetShow video stream player
 
 RESTRICTED=	"Commercial software"
-BROKEN=		Unfetchable
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
