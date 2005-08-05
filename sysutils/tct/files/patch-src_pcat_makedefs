@@ -1,0 +1,18 @@
+
+$FreeBSD$
+
+--- src/pcat/makedefs.orig
++++ src/pcat/makedefs
+@@ -13,6 +13,12 @@
+                 ;;
+   FreeBSD.5*)   DEFS="-DFREEBSD5"
+ 		SYSLIBS="-lkvm"
++		;;
++  FreeBSD.6*)	DEFS="-DFREEBSD6"
++		SYSLIBS="-lkvm"
++		;;
++  FreeBSD.7*)	DEFS="-DFREEBSD7"
++		SYSLIBS="-lkvm"
+                 ;;
+   OpenBSD.2*)   DEFS="-DOPENBSD2"
+ 		SYSLIBS="-lkvm"

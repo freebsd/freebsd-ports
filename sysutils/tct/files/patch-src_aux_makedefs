@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- src/aux/makedefs.orig
++++ src/aux/makedefs
+@@ -10,6 +10,10 @@
+                 ;;
+   FreeBSD.5*)   DEFS="-DFREEBSD5"
+                 ;;
++  FreeBSD.6*)	DEFS="-DFREEBSD6"
++		;;
++  FreeBSD.7*)	DEFS="-DFREEBSD7"
++		;;
+   OpenBSD.2*)   DEFS="-DOPENBSD2"
+                 ;;
+   OpenBSD.3*)   DEFS="-DOPENBSD3"
