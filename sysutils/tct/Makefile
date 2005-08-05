@@ -24,10 +24,6 @@ MYPORTDOCS=	CHANGES COPYRIGHT INSTALL LICENSE MANIFEST OS-NOTES README.FIRST TOD
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600000
-BROKEN=		"Does not build on FreeBSD >= 6.x"
-.endif
-
 post-patch:
 	${SED} -e 's,/usr/local,${PREFIX},g' pkg-message > ${PKGMESSAGE}
 
