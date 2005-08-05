@@ -34,10 +34,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 .if ${ARCH} == "sparc64"
 BROKEN=		"Does not compile on sparc64 (needs -fPIC)"
 .endif
