@@ -32,6 +32,111 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2b6e47b1-0598-11da-86bc-000e0c2e438a">
+    <topic>ipsec -- Incorrect key usage in AES-XCBC-MAC</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.4</ge><lt>5.4_6</lt></range>
+	<range><ge>5.3</ge><lt>5.3_20</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem description</h1>
+	<p>A programming error in the implementation of the
+	  AES-XCBC-MAC algorithm for authentication resulted in a
+	  constant key being used instead of the key specified by the
+	  system administrator.</p>
+	<h1>Impact</h1>
+	<p>If the AES-XCBC-MAC algorithm is used for authentication in
+	  the absence of any encryption, then an attacker may be able to
+	  forge packets which appear to originate from a different
+	  system and thereby succeed in establishing an IPsec session.
+	  If access to sensitive information or systems is controlled
+	  based on the identity of the source system, this may result
+	  in information disclosure or privilege escalation.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2359</cvename>
+      <freebsdsa>SA-05:19.ipsec</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2005-07-27</discovery>
+      <entry>2005-08-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="837b9fb2-0595-11da-86bc-000e0c2e438a">
+    <topic>zlib -- buffer overflow vulnerability</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.4</ge><lt>5.4_6</lt></range>
+	<range><ge>5.3</ge><lt>5.4_20</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem description</h1>
+	<p>A fixed-size buffer is used in the decompression of data
+	  streams.  Due to erronous analysis performed when zlib was
+	  written, this buffer, which was belived to be sufficiently
+	  large to handle any possible input stream, is in fact too
+	  small.</p>
+	<h1>Impact</h1>
+	<p>A carefully constructed compressed data stream can result in
+	  zlib overwriting some data structures.  This may cause
+	  applications to halt, resulting in a denial of service; or
+	  it may result in an attacker gaining elevated privileges.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1849</cvename>
+      <freebsdsa>SA-05:18.zlib</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2005-07-27</discovery>
+      <entry>2005-08-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7257b26f-0597-11da-86bc-000e0c2e438a">
+    <topic>devfs -- ruleset bypass</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.4</ge><lt>5.4_5</lt></range>
+	<range><ge>5.3</ge><lt>5.4_19</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem description</h1>
+	<p>Due to insufficient parameter checking of the node type
+	  during device creation, any user can expose hidden device
+	  nodes on devfs mounted file systems within their jail.
+	  Device nodes will be created in the jail with their normal
+	  default access permissions.</p>
+	<h1>Impact</h1>
+	<p>Jailed processes can get access to restricted resources on
+	  the host system.  For jailed processes running with superuser
+	  privileges this implies access to all devices on the system.
+	  This level of access can lead to information leakage and
+	  privilege escalation.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2218</cvename>
+      <freebsdsa>SA-05:17.devfs</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2005-07-20</discovery>
+      <entry>2005-08-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c28f4705-043f-11da-bc08-0001020eed82">
     <topic>proftpd -- format string vulnerabilities</topic>
     <affects>
