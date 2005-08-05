@@ -7,6 +7,7 @@
 
 PORTNAME=	libspf
 DISTVERSION=	1.0.0-p3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.libspf.org/files/src/
 
