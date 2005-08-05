@@ -7,7 +7,7 @@
 
 PORTNAME=	Bundle-Sledge
 PORTVERSION=	0.03
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Bundle
@@ -36,7 +36,7 @@ PM_DEPENDS+=	${SITE_PERL}/HTML/FillInForm.pm:${PORTSDIR}/www/p5-HTML-FillInForm
 PM_DEPENDS+=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template
 PM_DEPENDS+=	${SITE_PERL}/HTML/StickyQuery.pm:${PORTSDIR}/www/p5-HTML-StickyQuery
 PM_DEPENDS+=	${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy
-PM_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
+PM_DEPENDS+=	${JCODE}:${PORTSDIR}/japanese/p5-Jcode
 PM_DEPENDS+=	${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
 PM_DEPENDS+=	${SITE_PERL}/Test/Harness.pm:${PORTSDIR}/devel/p5-Test-Harness
 PM_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
@@ -51,4 +51,12 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Bundle::Sledge.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500801
+JCODE=	${SITE_PERL}/${PERL_ARCH}/Jcode.pm
+.else
+JCODE=	${SITE_PERL}/Jcode.pm
+.endif
+
+.include <bsd.port.post.mk>
