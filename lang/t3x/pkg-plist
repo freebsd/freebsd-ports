@@ -38,6 +38,7 @@ t3x/r8/classes/2/t3x.cls
 t3x/r8/classes/2/tcode.cls
 t3x/r8/classes/2/ttyctl.cls
 t3x/r8/classes/2/util.cls
+t3x/r8/classes/CLASSND-
 t3x/r8/classes/CLASSNDX
 t3x/r8/classes/char.cls
 t3x/r8/classes/char.dir
@@ -87,10 +88,6 @@ t3x/r8/static.txrc
 t3x/r8/system.txrc
 t3x/r8/txprint.rules
 t3x/r8/uc.txrc
-@unexec rm -f %D/t3x/r8/classes/CLASSND-
-@unexec rm -f %D/t3x/r8/classes/CLASSNDX
-@unexec rm -f %D/t3x/r8/classes/2/CLASSND-
-@unexec rm -f %D/t3x/r8/classes/2/CLASSNDX
 @dirrm t3x/r8/bin
 @dirrm t3x/r8/classes/2
 @dirrm t3x/r8/classes

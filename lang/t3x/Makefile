@@ -7,6 +7,7 @@
 
 PORTNAME=	t3x
 PORTVERSION=	8.1.5
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	http://www.holm-und-jeschag.de/files/
 DISTNAME=	t3x-${PORTVERSION:S/.//g}
