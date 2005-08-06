@@ -8,3 +8,4 @@ share/dict/kdrill/kata.edic
 share/dict/kdrill/kataplus.edic
 lib/X11/app-defaults/KDrill
 @dirrm share/dict/kdrill
+@unexec rmdir %D/share/dict 2>/dev/null || true
