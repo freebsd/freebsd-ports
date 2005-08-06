@@ -13,8 +13,8 @@ CATEGORIES=	x11 linux
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of gnome-libs
 
-RPM_SET=	gnome-libs-${PORTVERSION}-11.${MACHINE_ARCH}.rpm
+RPM_SET=	gnome-libs-${PORTVERSION}-11.${ARCH}.rpm
 
 .include "../../x11-toolkits/linux-gtk/Makefile"
 
-MASTER_SITES+= ftp://ftp.redhat.com/pub/redhat/linux/7.1/en/os/${MACHINE_ARCH}/RedHat/RPMS/
+MASTER_SITES+= ftp://ftp.redhat.com/pub/redhat/linux/7.1/en/os/${ARCH}/RedHat/RPMS/
