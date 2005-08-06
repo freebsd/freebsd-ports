@@ -22,6 +22,14 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 
+CFLAGS+=	-fPIC
+
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/nidsmodule.so
+
+post-patch:
+	${CP} -f ${TEMPLATES}/config.guess ${WRKSRC}
+	${CHMOD} a+rx ${WRKSRC}/config.guess
+	${CP} -f ${TEMPLATES}/config.sub ${WRKSRC}
+	${CHMOD} a+rx ${WRKSRC}/config.sub
 
 .include <bsd.port.mk>
