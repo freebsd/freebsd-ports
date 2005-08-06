@@ -30,8 +30,10 @@ MAN1=		msgfmt.1 xgettext.1 xview.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Broken by changes to make(1) on FreeBSD >= 5.x"
+.if ${X_WINDOW_SYSTEM:L} == "xorg"
+PLIST_SUB+=	XORG="@comment "
+.else
+PLIST_SUB+=	XORG=""
 .endif
 
 post-patch:
@@ -52,7 +54,7 @@ pre-configure:
 
 post-install:
 .if !defined{NOPORTDOCS}
-	@(cd ${WRKSRC}; ${MAKE} -k 'SUBDIRS=doc' install)
+	@(cd ${WRKSRC}/doc; ${MAKE} install)
 .endif
 
 .include <bsd.port.post.mk>

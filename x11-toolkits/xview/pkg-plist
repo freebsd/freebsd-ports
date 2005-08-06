@@ -510,7 +510,7 @@ include/xview_private/xv_color.h
 include/xview_private/xv_debug.h
 include/xview_private/xv_list.h
 include/xview_private/xv_path_util.h
-@unexec rmdir %D/include/bitmaps 2>/dev/null || true
+%%XORG%%@unexec rmdir %D/include/bitmaps 2>/dev/null || true
 @dirrm include/images
 @dirrm include/olgx
 @dirrm include/olgx_private
