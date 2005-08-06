@@ -15,7 +15,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 development tools
 
-RUN_DEPENDS=	mlv:${PORTSDIR}/editors/mlview \
+RUN_DEPENDS=	mlview:${PORTSDIR}/editors/mlview \
 		gnome-autogen.sh:${PORTSDIR}/devel/gnomecommon \
 		glade-2:${PORTSDIR}/devel/glade2 \
 		ghex2:${PORTSDIR}/editors/ghex \
