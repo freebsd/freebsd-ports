@@ -42,6 +42,9 @@ PLIST_SUB+=	CONFIGURE_TARGET="${CONFIGURE_TARGET}"
 BROKEN=		"does not compile"
 .endif
 
+post-patch:
+	@${RM} -rf ${WRKSRC}/autom4te.cache
+
 pre-configure:
 	@(${SED} -i.orig -e 's,[(]libdir[)],(prefix)/libdata,' ${WRKSRC}/Makefile.am)
 	@(${FIND} ${WRKSRC} -type f -name Makefile.am -print0 | ${XARGS} -0 ${SED} -i.orig -e 's#.libs/##')
