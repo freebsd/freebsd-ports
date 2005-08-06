@@ -1,5 +1,5 @@
---- Imakefile.orig	Mon Sep 29 00:02:44 2003
-+++ Imakefile	Mon Sep 29 00:02:44 2003
+--- Imakefile.orig	Sun Jun 26 03:47:22 1994
++++ Imakefile	Sat Aug  6 23:14:35 2005
 @@ -4,8 +4,8 @@
  /**/# Top level Imakefile for ProductNameAndRelease
  /**/# @(#)Imakefile	1.7 1/7/92 SMI
@@ -20,3 +20,30 @@
  #if InstallOpenLookFonts 
              FONTSDIR = fonts
  #else
+@@ -21,6 +21,9 @@
+ #endif
+           CLIENTSDIR = clients
+              SUBDIRS = $(COREDIRS) $(FONTSDIR) 
++.ifdef WITHDOCSUBDIR
++SUBDIRS+= doc
++.endif
+ /**/# even if these subdirs are not included in the general rules, be sure to
+ /**/# do a make clean in them.
+        CLEAN_SUBDIRS = clients contrib doc fonts bitmaps images lib misc util
+@@ -59,11 +62,11 @@
+ 	@echo ""
+ 	@date
+ 	@echo ""
+-	$(MAKE) $(MFLAGS) 'SUBDIRS=$(SUBDIRS) doc' Makefiles
+-	$(MAKE) $(MFLAGS) 'CLEAN_SUBDIRS=$(SUBDIRS)' clean
+-	$(MAKE) $(MFLAGS) 'SUBDIRS=$(SUBDIRS)' includes
+-	$(MAKE) $(MFLAGS) 'SUBDIRS=$(SUBDIRS)' depend
+-	$(MAKE) $(MFLAGS) 'SUBDIRS=$(SUBDIRS)' 'CDEBUGFLAGS=$(CDEBUGFLAGS)' $(WORLDOPTS)
++	$(MAKE) $(MFLAGS) -DWITHDOCSUBDIR Makefiles
++	$(MAKE) $(MFLAGS) clean
++	$(MAKE) $(MFLAGS) includes
++	$(MAKE) $(MFLAGS) depend
++	$(MAKE) $(MFLAGS) 'CDEBUGFLAGS=$(CDEBUGFLAGS)' $(WORLDOPTS)
+ 	@echo ""
+ 	@date
+ 	@echo ""

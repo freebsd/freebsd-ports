@@ -1,6 +1,6 @@
---- ./lib/libxview/win/win_input.c.orig	Sat Apr  1 18:25:30 2000
-+++ ./lib/libxview/win/win_input.c	Sat Apr  1 18:25:33 2000
-@@ -854,7 +854,9 @@ ContProcess:
+--- lib/libxview/win/win_input.c.orig	Sat Aug  6 21:47:27 2005
++++ lib/libxview/win/win_input.c	Sat Aug  6 22:12:06 2005
+@@ -853,7 +853,9 @@
  #ifdef X11R6
  	/* lumpi@dobag.in-berlin.de */
  		int ksym_pcc;
@@ -11,7 +11,7 @@
  		for (index = 0; index < ksym_pcc; index++) {
  #else
  		for (index = 0; index < display->keysyms_per_keycode; index++) {
-@@ -862,7 +864,7 @@ ContProcess:
+@@ -861,7 +863,7 @@
  		    if ((ksym = XLookupKeysym(ek, index)) != NoSymbol)
  			if (IsKeypadKey(ksym)) {
  			    /* See if key has been rebound. */
@@ -20,7 +20,16 @@
  					       buffer, BUFFERSIZE)) {
  			        (void)win_translate_KP_keysym(ksym, buffer);
  			    }
-@@ -2721,8 +2723,10 @@ win_translate_KP_keysym(keysym, buffer)
+@@ -2311,7 +2313,7 @@
+     XButtonEvent   *bEvent;
+     int             timeout;
+ {
+-    XEvent          xevent;
++    XEvent         *xevent;
+ 
+     /* XView does a passive grab on the SELECT button! */
+     window_x_allow_events(display);
+@@ -2720,8 +2722,10 @@
   * Xlib's.
   */
  
@@ -33,7 +42,7 @@
  static int
  translate_key(dpy, symbol, modifiers, buffer, nbytes)
      Display 		*dpy;
-@@ -2732,11 +2736,18 @@ translate_key(dpy, symbol, modifiers, bu
+@@ -2731,11 +2735,18 @@
      int 		 nbytes;
  {
  	/* This is _very_ rude ! */
@@ -54,9 +63,3 @@
  static int
  translate_key(dpy, symbol, modifiers, buffer, nbytes)
      Display 		*dpy;
-@@ -2762,4 +2773,4 @@ translate_key(dpy, symbol, modifiers, bu
-     }
-     return 0;
- }
--#endif
-+#endif 

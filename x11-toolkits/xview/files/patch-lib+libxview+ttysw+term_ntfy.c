@@ -1,5 +1,5 @@
---- lib/libxview/ttysw/term_ntfy.c.orig	Fri Oct 17 10:07:41 2003
-+++ lib/libxview/ttysw/term_ntfy.c	Fri Oct 17 10:07:41 2003
+--- lib/libxview/ttysw/term_ntfy.c.orig	Sat Aug  6 21:47:27 2005
++++ lib/libxview/ttysw/term_ntfy.c	Sat Aug  6 22:03:25 2005
 @@ -22,7 +22,8 @@
  #include <stdio.h>
  #include <ctype.h>
@@ -19,3 +19,15 @@
  #define GETDTABLESIZE() \
  (dtablesize_cache?dtablesize_cache:(dtablesize_cache=(int)sysconf(_SC_OPEN_MAX)))
  #else
+@@ -173,9 +174,11 @@
+      * again, this is the place to start looking.
+      */
+     if (ttysw->pending_remote != ttysw->remote) {
++#ifdef TIOCREMOTE
+ 	if (ioctl(ttysw->ttysw_pty, TIOCREMOTE, &ttysw->pending_remote) < 0)
+ 	    perror("ioctl: TIOCREMOTE");
+ 	else
++#endif
+ 	    ttysw->remote = ttysw->pending_remote;
+     }
+ 
