@@ -16,6 +16,8 @@ COMMENT=		Library for terminal-independent, full-screen output
 
 LIB_DEPENDS=		utf-8:${PORTSDIR}/converters/libutf-8
 
+NO_FILTER_SHLIBS=	no
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400000
@@ -27,7 +29,8 @@ CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
 		--disable-termcap --includedir=${PREFIX}/include/ncurses \
 		--with-profile --with-shared --without-debug \
 		--without-curses-h --with-termlib --program-prefix= \
-		--enable-safe-sprintf --disable-root-environ	#--enable-widec
+		--enable-safe-sprintf --disable-root-environ \
+		--with-manpage-format=gzip  #--enable-widec
 # needed by devel/py-ncurses port
 .if defined(WITH_TRACE)
 CONFIGURE_ARGS+=	--with-trace
@@ -69,7 +72,7 @@ MAN3=	COLOR_PAIR.3x PAIR_NUMBER.3x _nc_tracebits.3x _traceattr.3x \
 	del_curterm.3x del_panel.3x delay_output.3x delch.3x deleteln.3x \
 	delscreen.3x delwin.3x derwin.3x doupdate.3x dup_field.3x dupwin.3x \
 	dynamic_field_info.3x echo.3x echo_wchar.3x echochar.3x endwin.3x \
-	erase.3x erasechar.3x erasewchar.3x fgetu8.3 field_arg.3x \
+	erase.3x erasechar.3x erasewchar.3x field_arg.3x \
 	field_back.3x field_buffer.3x field_count.3x field_fore.3x \
 	field_index.3x field_info.3x field_just.3x field_opts.3x \
 	field_opts_off.3x field_opts_on.3x field_pad.3x field_status.3x \
@@ -179,8 +182,8 @@ MAN3=	COLOR_PAIR.3x PAIR_NUMBER.3x _nc_tracebits.3x _traceattr.3x \
 	wscanw.3x wscrl.3x wsetscrreg.3x wstandend.3x wstandout.3x \
 	wsyncdown.3x wsyncup.3x wtimeout.3x wtouchln.3x wunctrl.3x wvline.3x \
 	wvline_set.3x field_init.3x field_term.3x form_init.3x form_term.3x \
-	fputu8.3 item_init.3x item_term.3x key_defined.3x menu_init.3x \
-	menu_term.3x pecho_wchar.3x sgetu8.3 sputu8.3
+	item_init.3x item_term.3x key_defined.3x menu_init.3x \
+	menu_term.3x pecho_wchar.3x
 MAN5=	term.5 terminfo.5
 MAN7=	term.7
 
