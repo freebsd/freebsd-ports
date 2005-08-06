@@ -17,10 +17,6 @@ COMMENT=	A collection of classes for the T3X language
 BUILD_DEPENDS=	tx:${PORTSDIR}/lang/t3x
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		Changes ownership of installed files
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
 ONLY_FOR_ARCHS=	i386
 
 MAKE_ENV+=	T3XDIR=${LOCALBASE}/t3x/r8

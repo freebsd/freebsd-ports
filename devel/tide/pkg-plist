@@ -34,5 +34,6 @@ t3x/r8/classes/vedit.dir
 @exec echo 'prompt:t3x,string,ttyctl' >>%D/t3x/r8/classes/CLASSNDX
 @exec echo 'pstruct:t3x,char,string,iostream' >>%D/t3x/r8/classes/CLASSNDX
 @exec echo 'vedit:t3x,string,ttyctl,editor' >>%D/t3x/r8/classes/CLASSNDX
-@unexec sed -e '/^config:/,/^vedit:/d' <%D/t3x/r8/classes/CLASSNDX >%D/t3x/ndx.tmp && mv %D/t3x/ndx.tmp %D/t3x/r8/classes/CLASSNDX
-@unexec sed -e '/^config:/,/^vedit:/d' <%D/t3x/r8/classes/2/CLASSNDX >%D/t3x/ndx.tmp && mv %D/t3x/ndx.tmp %D/t3x/r8/classes/2/CLASSNDX
+@unexec [ -f %D/t3x/r8/classes/CLASSND- ] && sed -i '' '/^ttyctl:/,/^pstruct:/d' %D/t3x/r8/classes/CLASSND- || true
+@unexec [ -f %D/t3x/r8/classes/CLASSNDX ] && sed -i '' '/^config:/,/^vedit:/d' %D/t3x/r8/classes/CLASSNDX || true
+@unexec [ -f %D/t3x/r8/classes/2/CLASSNDX ] && sed -i '' '/^config:/,/^vedit:/d' %D/t3x/r8/classes/2/CLASSNDX || true
