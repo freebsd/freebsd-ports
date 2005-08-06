@@ -1,0 +1,12 @@
+diff -u -p -r1.7.4.1 desktop-entries.c
+--- libmenu/desktop-entries.c	5 Apr 2005 21:04:31 -0000	1.7.4.1
++++ libmenu/desktop-entries.c	5 Aug 2005 07:57:37 -0000
+@@ -554,7 +554,7 @@ desktop_entry_add_legacy_category (Deskt
+       for (; entry->categories[i]; i++);
+     }
+ 
+-  categories = g_new0 (GQuark, i + 1);
++  categories = g_new0 (GQuark, i + 2);
+ 
+   i = 0;
+   if (entry->categories != NULL)
