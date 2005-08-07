@@ -16,10 +16,6 @@ COMMENT=	Allows users to use PostgreSQL databases for user authentication
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${PORTSDIR}/${APACHE_PORT}
 
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
 USE_PGSQL=	yes
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
@@ -42,26 +38,21 @@ AP_INCLUDE?=	${PREFIX}/include/apache
 AP_LIBEXEC?=	${PREFIX}/libexec/apache
 .endif
 
-AUTH_PGSQL_DOCS=	apache/manual/mod/mod_auth_pgsql
-
-PLIST_SUB+=	AUTH_PGSQL_DOCS="${AUTH_PGSQL_DOCS}"
-
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pgsql=${PREFIX} \
 		--with-apxs=${APXS}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/${AUTH_PGSQL_DOCS}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README \
-		${PREFIX}/share/doc/${AUTH_PGSQL_DOCS}/
+		${DOCSDIR}
 	${TR} -d \\015 < ${WRKSRC}/mod_auth_pgsql.html \
-		> ${PREFIX}/share/doc/${AUTH_PGSQL_DOCS}/index.html
+		> ${DOCSDIR}/index.html
 	${CHMOD} ${SHAREMODE} \
-		${PREFIX}/share/doc/${AUTH_PGSQL_DOCS}/index.html
+		${DOCSDIR}/index.html
 	${CHOWN} ${SHAREOWN}:${SHAREGRP} \
-		${PREFIX}/share/doc/${AUTH_PGSQL_DOCS}/index.html
-	${LN} -sf ${AUTH_PGSQL_DOCS} ${PREFIX}/share/doc/
+		${DOCSDIR}/index.html
 .endif
 	${CAT} ${PKGMESSAGE}
 
