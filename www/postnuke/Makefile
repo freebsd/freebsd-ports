@@ -16,6 +16,9 @@ DISTNAME=	Rogue_714
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automated website package to distribute and manage content
 
+FORBIDDEN=	http://vuxml.FreeBSD.org/0274a9f1-0759-11da-bc08-0001020eed82.html
+EXPIRATION_DATE=2005-09-08
+
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear-PEAR
 
 USE_MYSQL=	YES
