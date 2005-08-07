@@ -11,7 +11,8 @@ PORTREVISION=		1
 CATEGORIES=		japanese print
 MASTER_SITES=		http://gaspra.kettering.edu/dvipdfm/
 
-PATCH_SITES=		http://hamilcar.phys.kyushu-u.ac.jp/~hirata/dvipdfm/distfiles/
+PATCH_SITES=		${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	pav
 PATCHFILES=		${DISTNAME}-jpatch-p1c.diff.gz
 PATCH_DIST_STRIP=	-p1
 
@@ -19,10 +20,10 @@ MAINTAINER=		yasu@asuka.net
 COMMENT=	DVI to PDF converter (Japanese version)
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/japanese/ptex-base \
-			${LOCALBASE}/share/doc/cmpsfont/README:${PORTSDIR}/print/cmpsfont
+			${LOCALBASE}/share/fonts/cmpsfont/README:${PORTSDIR}/print/cmpsfont
 LIB_DEPENDS=		png:${PORTSDIR}/graphics/png
 RUN_DEPENDS=		kpsewhich:${PORTSDIR}/japanese/ptex-base \
-			${LOCALBASE}/share/doc/cmpsfont/README:${PORTSDIR}/print/cmpsfont
+			${LOCALBASE}/share/fonts/cmpsfont/README:${PORTSDIR}/print/cmpsfont
 
 MAN1=			dvipdfm.1
 
