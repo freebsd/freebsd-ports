@@ -32,6 +32,53 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0274a9f1-0759-11da-bc08-0001020eed82">
+    <topic>postnuke -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>postnuke</name>
+	<range><lt>0.760</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Postnuke Security Announcementss reports of the following
+	  vulnerabilities:</p>
+	<blockquote cite="http://news.postnuke.com/Article2691.html">
+	  <ul>
+	    <li>missing input validation within /modules/Messages/readpmsg.php</li>
+	    <li>possible path disclosure within /user.php</li>
+	    <li>possible path disclosure within /modules/News/article.php</li>
+	    <li>possible remote code injection within /includes/pnMod.php</li>
+	    <li>possible cross-site-scripting in /index.php</li>
+	  </ul>
+	</blockquote>
+	<blockquote cite="http://news.postnuke.com/Article2699.html">
+	  <ul>
+	    <li>remote code injection via xml rpc library</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1621</cvename>
+      <cvename>CAN-2005-1695</cvename>
+      <cvename>CAN-2005-1696</cvename>
+      <cvename>CAN-2005-1698</cvename>
+      <cvename>CAN-2005-1777</cvename>
+      <cvename>CAN-2005-1778</cvename>
+      <cvename>CAN-2005-1921</cvename>
+      <mlist msgid="20050527223753.21735.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111721364707520</mlist>
+      <url>http://secunia.com/advisories/15450/</url>
+      <url>http://news.postnuke.com/Article2691.html</url>
+      <url>http://news.postnuke.com/Article2699.html</url>
+    </references>
+    <dates>
+      <discovery>2005-05-27</discovery>
+      <entry>2005-08-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0bf9d7fb-05b3-11da-bc08-0001020eed82">
     <topic>mambo -- multiple vulnerabilities</topic>
     <affects>
