@@ -18,12 +18,9 @@ BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${PORTSDIR}/${APACHE_PORT} \
 		${LOCALBASE}/sbin/pwcheck:${PORTSDIR}/security/cyrus-sasl
 
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 APACHE_PORT?=	${AP_CATEGORY}/${AP_PORT}
+MAKE_ARGS+=	DOC_DIR="${DOCSDIR}"
 
 .include <bsd.port.pre.mk>
 
@@ -43,9 +40,7 @@ AP_CATEGORY=	www
 .endif
 
 AP_PORT=	apache13${AP_MOD_SSL_SUFFIX}
-AUTH_PWCHECK_DOCS=	share/doc/apache/manual/mod/mod_auth_pwcheck
-PLIST_SUB=	AUTH_PWCHECK_DOCS="${AUTH_PWCHECK_DOCS}" \
-		AP_LIBEXEC="${AP_LIBEXEC}" \
+PLIST_SUB=	AP_LIBEXEC="${AP_LIBEXEC}" \
 		AP_SYSCONF="${AP_SYSCONF}" \
 		APXS="${APXS}"
 
