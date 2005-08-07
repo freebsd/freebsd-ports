@@ -7,6 +7,7 @@
 
 PORTNAME=	ignorance
 PORTVERSION=	1.3.1.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://bard.sytes.net/ignorance/
 PKGNAMEPREFIX=	gaim-
@@ -23,8 +24,7 @@ USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 
 EXAMPLESDIR_REL=${EXAMPLESDIR:S,^${PREFIX}/,,}
-PLIST_FILES=	lib/gaim/ignorance.so ${EXAMPLESDIR_REL}/ignorance
-PLIST_DIRS=	${EXAMPLESDIR_REL}
+PLIST_SUB=	EXAMPLESDIR_REL=${EXAMPLESDIR_REL}
 
 SUB_FILES=	pkg-message
 
@@ -32,16 +32,23 @@ SUB_FILES=	pkg-message
 PORTDOCS=	README
 .endif
 
+post-extract:
+	@${REINPLACE_CMD} -e "s/ignorance.conf/ignorance.conf.sample/g" ${WRKSRC}/Makefile.in
+	@${MV} ${WRKSRC}/ignorance.conf ${WRKSRC}/ignorance.conf.sample
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-g3||' ${WRKSRC}/configure
 
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/ignorance ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/ignorance ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
+	@if ${TEST} ! -f ${PREFIX}/etc/gaim/ignorance.conf; then \
+		${CP} ${PREFIX}/etc/gaim/ignorance.conf.sample ${PREFIX}/etc/gaim/ignorance.conf; \
+	fi
 
 .include <bsd.port.mk>
