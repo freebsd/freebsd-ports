@@ -108,8 +108,8 @@ WRKPCAPDIR=	${WRKDIR}/libpcap-0.8.3
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 503000
-BROKEN=		"Broken dependency"
+.if ${OSVERSION} >= 503000 && !defined(TCPDUMP_OVERWRITE_BASE)
+IGNORE=		Already in base system
 .endif
 
 # When building tcpdump against a particular pcap version, it expects to
