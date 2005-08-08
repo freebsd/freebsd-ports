@@ -20,12 +20,6 @@ LDFLAGS+=	-lpcap
 MAN8=		arping.8
 PLIST_FILES=	sbin/arping
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 600031
-BROKEN=		"Does not compile on FreeBSD >= 6.0"
-.endif
-
 do-build:
 	cd ${WRKSRC} &&  \
 	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib \
@@ -39,4 +33,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/arping ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/arping.8 ${PREFIX}/man/man8
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
