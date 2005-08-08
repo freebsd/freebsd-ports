@@ -1,6 +1,14 @@
---- configure.orig	Wed Jan 26 12:56:40 2005
-+++ configure	Wed Jan 26 12:56:06 2005
-@@ -22575,7 +22575,7 @@
+--- configure.orig	Tue Dec 28 12:35:39 2004
++++ configure	Mon Aug  8 16:26:11 2005
+@@ -19723,7 +19723,6 @@
+ #define HAVE_PTH
+ _ACEOF
+ 
+-	  CFLAGS="$CFLAGS $PTH_CFLAGS"
+ 	fi
+ 	echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+ echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6
+@@ -22575,7 +22574,7 @@
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
  
