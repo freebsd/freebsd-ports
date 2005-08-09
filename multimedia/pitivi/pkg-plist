@@ -53,10 +53,10 @@ lib/pitivi/ui/sourcefactories.py
 lib/pitivi/ui/timeline.py
 lib/pitivi/ui/timelineobjects.py
 lib/pitivi/ui/viewer.py
-share/gnome/pitivi/pixmaps/pitivi-file.png
-share/gnome/pitivi/pixmaps/pitivi-sound.png
-share/gnome/pitivi/pixmaps/pitivi-video.png
-@dirrm share/gnome/pitivi/pixmaps
-@dirrm share/gnome/pitivi
+share/pitivi/pixmaps/pitivi-file.png
+share/pitivi/pixmaps/pitivi-sound.png
+share/pitivi/pixmaps/pitivi-video.png
+@dirrm share/pitivi/pixmaps
+@dirrm share/pitivi
 @dirrm lib/pitivi/ui
 @dirrm lib/pitivi
