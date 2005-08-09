@@ -6,23 +6,22 @@
 #
 
 PORTNAME=		mail-notification
-PORTVERSION=		1.1
-PORTREVISION=		2
+PORTVERSION=		2.0
 CATEGORIES=		mail ipv6
-MASTER_SITES=		${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	mailnotify
+#MASTER_SITES=		${MASTER_SITE_SAVANNAH}
+#MASTER_SITE_SUBDIR=	mailnotify
+MASTER_SITES=		http://www.nongnu.org/mailnotify/downloads/
 
 MAINTAINER=		jylefort@FreeBSD.org
 COMMENT=		A mail notification for freedesktop.org-compliant system trays
 
 USE_X_PREFIX=		yes
 USE_GNOME=		gnomeprefix gnomehack eel2
-GNU_CONFIGURE=		yes
+USE_LIBTOOL_VER=	15
 USE_GMAKE=		yes
 CPPFLAGS=		-I${LOCALBASE}/include
 LDFLAGS=		-L${LOCALBASE}/lib
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-USE_GCC=		3.4
 GCONF_SCHEMAS=		mail-notification.schemas
 INSTALLS_OMF=		yes
 
@@ -31,11 +30,11 @@ OPTIONS=		MBOX "mbox support" on \
 			MAILDIR "Maildir support" on \
 			POP3 "POP3 support" on \
 			IMAP "IMAP support" on \
-			SSL "SSL support" on \
+			SSL "SSL/TLS support" on \
 			SASL "SASL authentication support" on \
-			SYLPHEED "Sylpheed support" on \
 			GMAIL "Gmail support" on \
-			GMAIL_TIMESTAMPS "Gmail timestamps support" on
+			EVOLUTION "Evolution support" off \
+			SYLPHEED "Sylpheed support" on
 
 .include <bsd.port.pre.mk>
 
@@ -59,19 +58,22 @@ CONFIGURE_ARGS+=	--disable-imap
 WITHOUT_SSL=		yes
 WITHOUT_SASL=		yes
 .endif
-.if defined(WITHOUT_SYLPHEED)
-CONFIGURE_ARGS+=	--disable-sylpheed
-.endif
 .if defined(WITHOUT_GMAIL)
 CONFIGURE_ARGS+=	--disable-gmail
-WITHOUT_GMAIL_TIMESTAMPS=	yes
-.else
-LIB_DEPENDS+=		soup-2.2:${PORTSDIR}/devel/libsoup
 .endif
-.if defined(WITHOUT_GMAIL_TIMESTAMPS)
-CONFIGURE_ARGS+=	--disable-gmail-timestamps
+.if defined(WITHOUT_EVOLUTION)
+CONFIGURE_ARGS+=	--disable-evolution
+PLIST_SUB+=		EVOLUTION="@comment "
 .else
-LIB_DEPENDS+=		icuuc:${PORTSDIR}/devel/icu
+BUILD_DEPENDS+=		${NONEXISTENT}:${PORTSDIR}/mail/evolution:patch \
+			${X11BASE}/libdata/pkgconfig/evolution-plugin-2.2.pc:${PORTSDIR}/mail/evolution
+RUN_DEPENDS+=		${X11BASE}/libdata/pkgconfig/evolution-plugin-2.2.pc:${PORTSDIR}/mail/evolution
+EVOLUTION_WRKSRC!=	cd ${PORTSDIR}/mail/evolution && ${MAKE} -V WRKSRC
+CONFIGURE_ARGS+=	--with-evolution-source-dir="${EVOLUTION_WRKSRC}"
+PLIST_SUB+=		EVOLUTION="" LITERAL_PREFIX="${PREFIX}"
+.endif
+.if defined(WITHOUT_SYLPHEED)
+CONFIGURE_ARGS+=	--disable-sylpheed
 .endif
 .if defined(WITH_MBOX) \
 	|| defined(WITH_MH) \
@@ -91,11 +93,6 @@ CONFIGURE_ARGS+=	--disable-ssl
 CONFIGURE_ARGS+=	--disable-sasl
 .else
 LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
-.endif
-.if defined(WITH_POP3) || defined(WITH_IMAP) || defined(WITH_GMAIL)
-PLIST_SUB+=		AUTHENTICATION=""
-.else
-PLIST_SUB+=		AUTHENTICATION="@comment "
 .endif
 
 .include <bsd.port.post.mk>
