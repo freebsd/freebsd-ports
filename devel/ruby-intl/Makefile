@@ -24,12 +24,6 @@ USE_RUBY_EXTCONF=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALL_TARGET=	site-install
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not build on FreeBSD >= 5.x"
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}/po/
@@ -40,4 +34,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README.jp ${RUBY_MODDOCDIR}/ja/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
