@@ -27,6 +27,12 @@ CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ALL_TARGET=	# empty
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,friend Queue,friend class Queue,' ${WRKSRC}/queue.h
 
@@ -38,4 +44,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ex/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

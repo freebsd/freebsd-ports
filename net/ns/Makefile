@@ -30,6 +30,10 @@ ALL_TARGET=
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ns ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/ns.1 ${PREFIX}/man/man1
