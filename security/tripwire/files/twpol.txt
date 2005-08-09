@@ -192,6 +192,9 @@ SIG_HI        = 100 ;                # Critical files that are significant point
   severity = $(SIG_HI)
 )
 {
+  # /boot is used by FreeBSD 5.X+
+  /boot					-> $(SEC_CRIT) ;
+  # /kernel is used by FreeBSD 4.X
   /kernel				-> $(SEC_CRIT) ;
   /kernel.old				-> $(SEC_CRIT) ;
   /kernel.GENERIC			-> $(SEC_CRIT) ;
@@ -207,8 +210,10 @@ SIG_HI        = 100 ;                # Critical files that are significant point
   severity = $(SIG_HI)
 )
 {
+  # /modules is used by FreeBSD 4.X
   /modules				-> $(SEC_CRIT) (recurse = true) ;
   /modules.old				-> $(SEC_CRIT) (recurse = true) ;
+  # /lkm is used by FreeBSD 2.X and 3.X
   # /lkm				-> $(SEC_CRIT) (recurse = true) ; # uncomment if using lkm kld
 }
 
@@ -250,6 +255,7 @@ SIG_HI        = 100 ;                # Critical files that are significant point
   severity = $(SIG_HI)
 )
 {
+  # XXX Do we really need to verify the integrity of /dev on 5.X?
   /dev					-> $(Device) (recurse = true) ;
   !/dev/vga ;
   !/dev/dri ;
