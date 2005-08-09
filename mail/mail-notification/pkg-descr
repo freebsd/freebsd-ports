@@ -1,20 +1,20 @@
-Mail Notification is a status icon (aka tray icon) that informs you if
-you have new mail.
+Mail Notification is a status icon (aka tray icon) that informs you if you
+have new mail.
 
-It works with system trays implementing the freedesktop.org System
-Tray Specification, such as the GNOME Panel Notification Area, the
-Xfce Notification Area and the KDE System Tray.
+It works with system trays implementing the freedesktop.org System Tray
+Specification, such as the GNOME Panel Notification Area, the Xfce
+Notification Area and the KDE System Tray.
 
 Mail Notification features include:
 
 	* multiple mailbox support
-	* mbox, MH, Maildir, Sylpheed, POP3, IMAP and Gmail support
+	* mbox, MH, Maildir, POP3, IMAP, Gmail, Evolution and Sylpheed support
 	* SASL authentication support
 	* APOP authentication support
 	* SSL/TLS support
 	* automatic detection of mailbox format
-	* immediate notification (the status icon is updated within
-	  seconds after a mailbox changes)
+	* immediate notification (the status icon is updated immediately or
+	  within seconds after a mailbox changes)
 	* a mail summary
 	* HIG 2.0 compliance
 

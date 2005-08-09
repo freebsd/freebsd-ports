@@ -1,26 +1,26 @@
 bin/mail-notification
 etc/sound/events/mail-notification.soundlist
-libdata/bonobo/servers/GNOME_MailNotification_Automation.server
+libdata/bonobo/servers/GNOME_MailNotification.server
+%%EVOLUTION%%libdata/bonobo/servers/GNOME_MailNotification_Evolution.server
+share/gnome/applications/mail-notification-properties.desktop
 share/gnome/applications/mail-notification.desktop
-share/gnome/control-center-2.0/capplets/mail-notification-properties.desktop
 share/gnome/help/mail-notification/C/documentation-license.xml
 share/gnome/help/mail-notification/C/figures/mail.png
+share/gnome/help/mail-notification/C/figures/mailbox-emblem-error.png
+share/gnome/help/mail-notification/C/figures/mailbox-emblem-polled.png
+share/gnome/help/mail-notification/C/figures/mailbox-emblem-unknown.png
 share/gnome/help/mail-notification/C/mail-notification.xml
 share/gnome/help/mail-notification/C/software-license.xml
-%%AUTHENTICATION%%share/gnome/mail-notification/ui/authentication.glade
-share/gnome/mail-notification/ui/edit-toolbars.glade
+share/gnome/mail-notification/ui/edit-toolbars-dialog.glade
 share/gnome/mail-notification/ui/gmail.png
 share/gnome/mail-notification/ui/hand-open.png
 share/gnome/mail-notification/ui/logo.png
-share/gnome/mail-notification/ui/mailbox-properties.glade
+share/gnome/mail-notification/ui/mail-summary-popup.glade
+share/gnome/mail-notification/ui/mailbox-properties-dialog.glade
 share/gnome/mail-notification/ui/main-window.png
-share/gnome/mail-notification/ui/main.glade
 share/gnome/mail-notification/ui/menus.xml
-share/gnome/mail-notification/ui/properties.glade
-share/gnome/mail-notification/ui/summary-popup.glade
+share/gnome/mail-notification/ui/properties-dialog.glade
 share/gnome/mail-notification/ui/toolbars.xml
-share/gnome/mail-notification/ui/unsupported.png
-share/gnome/mail-notification/ui/welcome.glade
 share/gnome/omf/mail-notification/mail-notification-C.omf
 share/gnome/pixmaps/mail-notification.png
 share/locale/bg/LC_MESSAGES/mail-notification.mo
@@ -31,6 +31,10 @@ share/locale/pt/LC_MESSAGES/mail-notification.mo
 share/locale/ru/LC_MESSAGES/mail-notification.mo
 share/locale/sr/LC_MESSAGES/mail-notification.mo
 share/locale/sr@Latn/LC_MESSAGES/mail-notification.mo
+%%EVOLUTION%%@cwd %%X11BASE%%
+%%EVOLUTION%%lib/evolution/2.2/plugins/liborg-gnome-mail-notification.so
+%%EVOLUTION%%lib/evolution/2.2/plugins/org-gnome-mail-notification.eplug
+%%EVOLUTION%%@cwd %%LITERAL_PREFIX%%
 @dirrm share/gnome/omf/mail-notification
 @dirrm share/gnome/mail-notification/ui
 @dirrm share/gnome/mail-notification
