@@ -18,6 +18,7 @@ COMMENT=	Fast Content/Anti-virus Scanner for qmail Written in C
 BUILD_DEPENDS=	${QMAIL_QUEUE}:${PORTSDIR}/mail/qmail
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 # A normal qmail installation puts everything into /var/qmail/.
 # Must match your qmail installation
@@ -42,7 +43,8 @@ OPTIONS=	CLAMAV "Support for ClamAV Virus Scanning" on \
 CONFIGURE_ARGS=--enable-clamavdb-path=/var/db/clamav \
 		--enable-qmaildir=${QMAIL_DIR} \
 	  	--enable-spamc-user=n \
-		--enable-workdir=${WORKDIR}
+		--enable-workdir=${WORKDIR} \
+		--enable-user=nobody
 
 .if defined(WITHOUT_CLAMAV)
 CONFIGURE_ARGS+=	--enable-clamav=n
@@ -130,9 +132,12 @@ pre-configure:
 	@${ECHO_MSG} "=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~="
 	@${ECHO_MSG} ""
 
+pre-install:
+	@${REINPLACE_CMD} -e 's|nobody|simscan|g' ${WRKSRC}/Makefile
+	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
 post-install:
-	@${CHMOD} 04711 ${QMAIL_DIR}/bin/simscan
-	@${CHOWN} simscan:simscan ${QMAIL_DIR}/bin/simscan ${QMAIL_DIR}/bin/simscanmk
+	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
