@@ -22,8 +22,8 @@ PLIST_SUB+=	PHPUADIR=${PHPUADIR}
 
 # Dynamic custom variables
 WWWDOC?=	www/data
-USER?=		www
-GROUP?=		www
+PHPUA_USER?=	www
+PHPUA_GROUP?=	www
 APPNAME?=	phpua
 
 # Static Variables
@@ -59,6 +59,6 @@ do-install:
 	@ ${CP} -R ${WRKDIR}/plugins ${PREFIX}/${PHPUADIR}/
 	@ ${CP} -R ${WRKDIR}/templates ${PREFIX}/${PHPUADIR}/
 	@ ${CP} -R ${WRKDIR}/wap ${PREFIX}/${PHPUADIR}/
-	@ ${CHOWN} -R ${USER}:${GROUP} ${PREFIX}/${PHPUADIR}/
+	@ ${CHOWN} -R ${PHPUA_USER}:${PHPUA_GROUP} ${PREFIX}/${PHPUADIR}/
 
 .include <bsd.port.mk>
