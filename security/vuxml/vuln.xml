@@ -32,6 +32,52 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d7cd5015-08c9-11da-bc08-0001020eed82">
+    <topic>gforge -- XSS and email flood vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gforge</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jose Antonio Coret reports that GForge contains multiple
+	  Cross Site Scripting vulnerabilities and an e-mail flood
+	  vulnerability:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112259845904350">
+	  <p>The login form is also vulnerable to XSS (Cross Site
+	    Scripting) attacks.	 This may be used to launch phising
+	    attacks by sending HTML e-mails (i.e.: saying that you
+	    need to upgrade to the latest GForge version due to a
+	    security problem) and putting in the e-mail an HTML link
+	    that points to an specially crafted url that inserts an
+	    html form in the GForge login page and when the user press
+	    the login button, he/she send the credentials to the
+	    attackers website.</p>
+
+	  <p>The 'forgot your password?' feature allows a remote user
+	    to load a certain URL to cause the service to send a
+	    validation e-mail to the specified user's e-mail address.
+	    There is no limit to the number of messages sent over a
+	    period of time, so a remote user can flood the target
+	    user's secondary e-mail address. E-Mail Flood, E-Mail
+	    bomber.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>14405</bid>
+      <cvename>CAN-2005-2430</cvename>
+      <cvename>CAN-2005-2431</cvename>
+      <mlist msgid="1122496636.26878.2.camel@localhost.localdomain">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112259845904350</mlist>
+    </references>
+    <dates>
+      <discovery>2005-07-27</discovery>
+      <entry>2005-08-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0274a9f1-0759-11da-bc08-0001020eed82">
     <topic>postnuke -- multiple vulnerabilities</topic>
     <affects>
