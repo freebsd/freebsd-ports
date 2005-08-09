@@ -13,6 +13,6 @@ CATEGORIES=	audio linux
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of audiofile
 
-RPM_SET=	audiofile-${PORTVERSION}-1.${MACHINE_ARCH}.rpm
+RPM_SET=	audiofile-${PORTVERSION}-1.${ARCH}.rpm
 
 .include "../../x11-toolkits/linux-gtk/Makefile"
