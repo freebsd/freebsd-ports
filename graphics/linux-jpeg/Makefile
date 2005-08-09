@@ -13,6 +13,6 @@ CATEGORIES=	graphics linux
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of the JPEG lib
 
-RPM_SET=	libjpeg-6b-15.${MACHINE_ARCH}.rpm
+RPM_SET=	libjpeg-6b-15.${ARCH}.rpm
 
 .include "../../x11-toolkits/linux-gtk/Makefile"
