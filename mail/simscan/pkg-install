@@ -43,6 +43,8 @@ elif [ "$2" = "POST-INSTALL" ]; then
 		/bin/mkdir -p "$SIMDIR" || exit 1
 		/usr/sbin/chown "$USER:$GROUP" "$SIMDIR" || exit 1
 		/bin/chmod 0750 "$SIMDIR" || exit 1
+		/bin/chmod 04711 ${QMAIL_DIR}/bin/simscan
+		/bin/chown $USER:$GROUP ${QMAIL_DIR}/bin/simscan ${QMAIL_DIR}/bin/simscanmk
 	fi
 fi
 
