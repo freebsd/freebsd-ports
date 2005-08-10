@@ -2,10 +2,10 @@
 > WWWDOC	[www/data]
   The DocumentRoot for your webserver under ${PREFIX}
 
-> USER		[www]
+> PHPUA_USER	[www]
   The user ID under which your webserver runs
 
-> GROUP		[www]
+> PHPUA_GROUP	[www]
   The group ID under which your webserver runs
 
 > APPNAME	[phpua]
