@@ -7,10 +7,10 @@
 
 PORTNAME=		mail-notification
 PORTVERSION=		2.0
+PORTREVISION=		1
 CATEGORIES=		mail ipv6
-#MASTER_SITES=		${MASTER_SITE_SAVANNAH}
-#MASTER_SITE_SUBDIR=	mailnotify
-MASTER_SITES=		http://www.nongnu.org/mailnotify/downloads/
+MASTER_SITES=		${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	mailnotify
 
 MAINTAINER=		jylefort@FreeBSD.org
 COMMENT=		A mail notification for freedesktop.org-compliant system trays
