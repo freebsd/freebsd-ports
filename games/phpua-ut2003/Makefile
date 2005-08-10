@@ -18,8 +18,8 @@ RUN_DEPENDS=	${PKG_DBDIR}/phpua-engine-1.1.0b:${PORTSDIR}/games/phpua-engine
 
 # Some variables you can change
 PHPUA?=		www/data/phpua
-USER?=		www
-GROUP?=		www
+PHPUA_USER?=	${WWWOWN}
+PHPUA_GROUP?=	${WWWGRP}
 
 # Static Variables
 PKGOPTS=	${FILESDIR}/pkg-opts
@@ -43,7 +43,7 @@ pre-everything::
 do-install:
 	@ ${CP} -R ${WRKDIR}/plugins ${PREFIX}/${PHPUA}/
 	@ ${CP} -R ${WRKDIR}/templates ${PREFIX}/${PHPUA}/
-	@ ${CHOWN} -R ${USER}:${GROUP} ${PREFIX}/${PHPUA}
+	@ ${CHOWN} -R ${PHPUA_USER}:${PHPUA_GROUP} ${PREFIX}/${PHPUA}
 	@ ${ECHO_MSG} ""
 	@ ${ECHO_MSG} "* Files have been installed in"
 	@ ${ECHO_MSG} "* ${PREFIX}/${PHPUA}"

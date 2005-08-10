@@ -22,8 +22,8 @@ PLIST_SUB+=	PHPUADIR=${PHPUADIR}
 
 # Dynamic custom variables
 WWWDOC?=	www/data
-PHPUA_USER?=	www
-PHPUA_GROUP?=	www
+PHPUA_USER?=	${WWWOWN}
+PHPUA_GROUP?=	${WWWGRP}
 APPNAME?=	phpua
 
 # Static Variables
