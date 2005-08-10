@@ -7,34 +7,31 @@
 #
 
 PORTNAME=	ustl
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	az@inec.ru
 COMMENT=	Codespace-frugal STL implementation
-
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 HAS_CONFIGURE=	yes
-USE_GMAKE=	yes
-MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+		INCDIR="${PREFIX}/include" \
+		LIBDIR="${PREFIX}/lib"
 ALL_TARGET=	# empty
 
 PLIST_FILES=	lib/libustl.a
 
-do-configure:
-	cd ${WRKSRC} && ./configure
-
 post-patch:
-	@${REINPLACE_CMD} -e "s,/bin/bash,${LOCALBASE}/bin/bash," ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s,/bin/bash,/bin/sh," ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s|SIZE_MAX|UINT_MAX|" ${WRKSRC}/memblock.h
-	@${REINPLACE_CMD} -e "s|-Werror||;s|-O3||" ${WRKSRC}/Common.mk.in
+	@${REINPLACE_CMD} -e "s|-O2|${CFLAGS}|" ${WRKSRC}/Common.mk.in
 
 post-install:
 	@${FIND} ${PREFIX}/include/ustl* ! -type d | \
