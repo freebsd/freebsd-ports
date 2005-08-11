@@ -1,23 +1,23 @@
 Index: src/installers/80x86/common/instr386.c
 ===================================================================
-RCS file: /usr/home/stefan/tendra/cvsup/tendra/src/installers/80x86/common/instr386.c,v
-retrieving revision 1.4
-diff -u -r1.4 instr386.c
---- src/installers/80x86/common/instr386.c	21 Dec 2002 21:31:56 -0000	1.4
-+++ src/installers/80x86/common/instr386.c	14 May 2003 17:14:29 -0000
-@@ -5250,7 +5250,7 @@
+RCS file: /usr/home/stefan/ten15/cvsup/tendra/src/installers/80x86/common/instr386.c,v
+retrieving revision 1.16
+diff -I.svn -u -r1.16 instr386.c
+--- src/installers/80x86/common/instr386.c	17 Oct 2004 03:17:01 -0000	1.16
++++ src/installers/80x86/common/instr386.c	18 Oct 2004 21:05:16 -0000
+@@ -5232,7 +5232,7 @@
  		if (sz == 64) {
  			int riu = regsinuse;
- 			regsinuse |= 0x2;
+ 			regsinuse |= REG_EDX;
 -			move (shb, bottom, reg2);
 +			move (ulongsh, bottom, reg2);	/* can only be a simple constant */
  			regsinuse = riu;
  		}
  		else
-@@ -5515,7 +5515,7 @@
+@@ -5497,7 +5497,7 @@
  		if (sz == 64) {
  			int riu = regsinuse;
- 			regsinuse |= 0x2;
+ 			regsinuse |= REG_EDX;
 -			move (shb, bottom, reg2);
 +			move (ulongsh, bottom, reg2);	/* can only be a simple constant */
  			regsinuse = riu;
