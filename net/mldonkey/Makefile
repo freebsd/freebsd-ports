@@ -26,6 +26,10 @@ CONFIGURE_ARGS=	--enable-pthread --enable-ocamlver=3
 USE_GMAKE=	yes
 ALL_TARGET=	depend opt
 
+.if !defined(WITHOUT_CORE)
+USE_RC_SUBR=	yes
+.endif
+
 .if defined(WITHOUT_GUI)
 .if defined(WITHOUT_CORE)
 .error "Cool, you defined both WITHOUT_GUI and WITHOUT_CORE. I think I'll do nothing."
@@ -41,7 +45,6 @@ PLIST_SUB+=	GUI=""
 CONFLICTS+=	mldonkey-gui-devel-[0.9]*
 .if !defined(WITHOUT_CORE)
 CONFLICTS+=	mldonkey-[0-9]*
-USE_RC_SUBR=	yes
 .endif
 BUILD_DEPENDS+=	lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk \
 		${LOCALBASE}/lib/ocaml/jabbr.cma:${PORTSDIR}/net/ocaml-jabbr
