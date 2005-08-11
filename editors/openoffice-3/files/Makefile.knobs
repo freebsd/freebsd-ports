@@ -72,15 +72,15 @@ pre-fetch:
 	@${ECHO} "You can compile OOo without Mozilla connectivity with"
 	@${ECHO} "make -DWITHOUT_MOZILLA"
 .endif
-.if !defined(WITH_TTF_BYTECODE_ENABLED)
-	@${ECHO}
-	@${ECHO} "You may get better quality of glyphs"
-	@${ECHO} "at small bitmap sizes if you have"
-	@${ECHO} "licensed the Apple patents"
-	@${ECHO} "US05155805 US05159668 and US05325479, with"
-	@${ECHO} "make -DWITH_TTF_BYTECODE_ENABLED"
-	@${ECHO} "See http://www.freetype.org/patents.html for details"
-.endif
+#.if !defined(WITH_TTF_BYTECODE_ENABLED)
+#	@${ECHO}
+#	@${ECHO} "You may get better quality of glyphs"
+#	@${ECHO} "at small bitmap sizes if you have"
+#	@${ECHO} "licensed the Apple patents"
+#	@${ECHO} "US05155805 US05159668 and US05325479, with"
+#	@${ECHO} "make -DWITH_TTF_BYTECODE_ENABLED"
+#	@${ECHO} "See http://www.freetype.org/patents.html for details"
+#.endif
 	@${ECHO}
 	@${ECHO} "You can select the language for OOo by making it with:"
 	@${ECHO} "make LOCALIZED_LANG=xx" 
