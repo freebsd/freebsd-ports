@@ -54,7 +54,7 @@ CUT?=	/usr/bin/cut
 .include <bsd.port.pre.mk>
 
 .if !defined(INSTALLATION_BASEDIR)
-INSTALLATION_BASEDIR=	OpenOffice.org1.1.4
+INSTALLATION_BASEDIR=	OpenOffice.org1.1.5
 .if defined(RDEP)
 BUILD_DEPENDS=	${DICT_LIST_INST}:${RDEP}
 RUN_DEPENDS=	${DICT_LIST_INST}:${RDEP}
