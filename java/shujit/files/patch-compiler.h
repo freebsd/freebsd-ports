@@ -7,7 +7,7 @@ $FreeBSD$
  
  // Additional type definition
  
--#if !(defined(_ILP32) || defined(_LP64) || defined(_SYS_INTTYPES_H_) /* for FreeBSD */)
+-#if !(defined(_ILP32) || defined(_LP64) || defined(_STDINT_H) || defined(_SYS_INTTYPES_H_) /* for FreeBSD */)
 +#if !(defined(_ILP32) || defined(_LP64) || defined(__FreeBSD__))
  #  ifndef _UINT16_T
  #    define _UINT16_T
