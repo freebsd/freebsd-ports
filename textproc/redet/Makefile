@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	redet
-PORTVERSION=	6.13
+PORTVERSION=	6.14
 CATEGORIES=	textproc tk84
-MASTER_SITES=	http://www.cis.upenn.edu/~wjposer/.downloads/
+MASTER_SITES=	http://www.billposer.org/Software/Downloads/
 DISTNAME=	${PORTNAME}tiny-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
