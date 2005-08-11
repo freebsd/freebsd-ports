@@ -1,0 +1,78 @@
+--- Makefile.ref	Fri Nov 14 19:10:55 2003
++++ Makefile.ref	Sat Aug  6 12:25:36 2005
+@@ -56,6 +56,4 @@
+ ifdef USE_MSVC
+ OTHER_LIBS += fdlibm/$(OBJDIR)/fdlibm.lib
+-else
+-OTHER_LIBS += -Lfdlibm/$(OBJDIR) -lfdm
+ endif
+ 
+@@ -242,10 +240,6 @@
+ 	$(NULL)
+ 
+-PREDIRS	+= fdlibm
+-
+ ifdef USE_MSVC
+ FDLIBM_LIBRARY = fdlibm/$(OBJDIR)/fdlibm.lib
+-else
+-FDLIBM_LIBRARY = fdlibm/$(OBJDIR)/libfdm.a
+ endif
+ JSMATH_PRELINK	= $(OBJDIR)/jsmathtemp.o
+@@ -301,6 +295,6 @@
+ 	link.exe -out:"$@" $(EXE_LINK_FLAGS) $^
+ else
+-$(PROGRAM): $(PROG_OBJS) $(LIBRARY) $(FDLIBM_LIBRARY)
+-	$(CC) -o $@ $(CFLAGS) $(PROG_OBJS) $(LIBRARY) $(LDFLAGS) $(OTHER_LIBS) \
++$(PROGRAM): $(PROG_OBJS) $(SHARED_LIBRARY) $(FDLIBM_LIBRARY)
++	$(CC) -o $@ $(CFLAGS) $(PROG_OBJS) -L$(OBJDIR) -ljs $(LDFLAGS) $(OTHER_LIBS) \
+ 	    $(PROG_LIBS)
+ endif
+--- config/Linux_All.mk	Thu May 15 20:21:08 2003
++++ config/Linux_All.mk	Wed Aug 10 23:46:05 2005
+@@ -37,7 +37,7 @@
+ #
+ 
+-CC = gcc
+-CCC = g++
+-CFLAGS +=  -Wall -Wno-format
++CC ?= gcc
++CCC ?= g++
++CFLAGS +=  -Wall -Werror	# XXX do these work with non-gcc and non-icc?
+ OS_CFLAGS = -DXP_UNIX -DSVR4 -DSYSV -D_BSD_SOURCE -DPOSIX_SOURCE -DHAVE_LOCALTIME_R
+ 
+@@ -70,5 +70,5 @@
+ GFX_ARCH = x
+ 
+-OS_LIBS = -lm -lc
++OS_LIBS = -lm
+ 
+ ASFLAGS += -x assembler-with-cpp
+@@ -84,15 +84,11 @@
+ 
+ # Use the editline library to provide line-editing support.
+-JS_EDITLINE = 1
++JS_READLINE = 1
+ 
+-ifeq ($(CPU_ARCH),x86_64)
+-# Use VA_COPY() standard macro on x86-64
+-# FIXME: better use it everywhere
+ OS_CFLAGS += -DHAVE_VA_COPY
+-endif
+ 
+-ifeq ($(CPU_ARCH),x86_64)
+-# We need PIC code for shared libraries
+-# FIXME: better patch rules.mk & fdlibm/Makefile*
++ifeq ($(CPU_ARCH),sparc64)
+ OS_CFLAGS += -DPIC -fPIC
++else
++OS_CFLAGS += -DPIC -fpic
+ endif
+--- rules.mk	Fri Nov 14 19:11:04 2003
++++ rules.mk	Mon Aug  8 14:40:36 2005
+@@ -59,5 +59,5 @@
+ TARGETS += $(SHARED_LIBRARY) $(PROGRAM)  # it is now
+ else
+-TARGETS += $(LIBRARY) $(SHARED_LIBRARY) $(PROGRAM) 
++TARGETS += $(SHARED_LIBRARY) $(PROGRAM) 
+ endif
+ 

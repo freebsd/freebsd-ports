@@ -1,0 +1,355 @@
+--- jspubtd.h	Thu Apr  7 15:54:07 2005
++++ jspubtd.h	Thu Aug  4 23:52:12 2005
+@@ -517,5 +517,5 @@
+ (* JS_DLL_CALLBACK JSArgumentFormatter)(JSContext *cx, const char *format,
+                                         JSBool fromJS, jsval **vpp,
+-                                        va_list *app);
++                                        va_list app);
+ #endif
+ 
+--- jsdhash.c	Wed Jan 14 21:00:53 2004
++++ jsdhash.c	Fri Aug  5 00:15:04 2005
+@@ -92,5 +92,5 @@
+ JS_DHashVoidPtrKeyStub(JSDHashTable *table, const void *key)
+ {
+-    return (JSDHashNumber)key >> 2;
++    return (JSDHashNumber)(uintptr_t)key >> 2;
+ }
+ 
+--- jsstr.c	Fri Jun  3 15:07:49 2005
++++ jsstr.c	Fri Aug  5 01:31:08 2005
+@@ -2596,5 +2596,5 @@
+ js_hash_string_pointer(const void *key)
+ {
+-    return (JSHashNumber)key >> JSVAL_TAGBITS;
++    return (JSHashNumber)(uintptr_t)key >> JSVAL_TAGBITS;
+ }
+ 
+--- jsobj.h	Wed Sep  1 17:33:16 2004
++++ jsobj.h	Fri Aug  5 01:16:56 2005
+@@ -238,12 +238,12 @@
+ };
+ 
+-#define SHARP_BIT       ((jsatomid) 1)
+-#define BUSY_BIT        ((jsatomid) 2)
++#define SHARP_BIT       ((uintptr_t) 1)
++#define BUSY_BIT        ((uintptr_t) 2)
+ #define SHARP_ID_SHIFT  2
+-#define IS_SHARP(he)    ((jsatomid)(he)->value & SHARP_BIT)
+-#define MAKE_SHARP(he)  ((he)->value = (void*)((jsatomid)(he)->value|SHARP_BIT))
+-#define IS_BUSY(he)     ((jsatomid)(he)->value & BUSY_BIT)
+-#define MAKE_BUSY(he)   ((he)->value = (void*)((jsatomid)(he)->value|BUSY_BIT))
+-#define CLEAR_BUSY(he)  ((he)->value = (void*)((jsatomid)(he)->value&~BUSY_BIT))
++#define IS_SHARP(he)    ((uintptr_t)(he)->value & SHARP_BIT)
++#define MAKE_SHARP(he)  ((he)->value = (void*)((uintptr_t)(he)->value|SHARP_BIT))
++#define IS_BUSY(he)     ((uintptr_t)(he)->value & BUSY_BIT)
++#define MAKE_BUSY(he)   ((he)->value = (void*)((uintptr_t)(he)->value|BUSY_BIT))
++#define CLEAR_BUSY(he)  ((he)->value = (void*)((uintptr_t)(he)->value&~BUSY_BIT))
+ 
+ extern JSHashEntry *
+--- jstypes.h	Fri Nov 14 19:11:04 2003
++++ jstypes.h	Thu Aug  4 23:54:13 2005
+@@ -378,6 +378,7 @@
+ ** A JSWord is an integer that is the same size as a void*
+ */
++#include <inttypes.h>
+-typedef long JSWord;
+-typedef unsigned long JSUword;
++typedef intptr_t JSWord;
++typedef uintptr_t JSUword;
+ 
+ #include "jsotypes.h"
+--- jsosdep.h	Fri Nov 14 19:10:59 2003
++++ jsosdep.h	Fri Aug  5 00:50:44 2005
+@@ -102,5 +102,5 @@
+ #define JS_HAVE_LONG_LONG
+ 
+-#elif defined(FREEBSD)
++#elif defined(FREEBSD) || defined(__FreeBSD__)
+ #define JS_HAVE_LONG_LONG
+ 
+--- jsdtoa.c	Sat Apr  3 17:11:11 2004
++++ jsdtoa.c	Fri Aug  5 00:28:15 2005
+@@ -258,5 +258,5 @@
+ #define set_word1(x, y) JSDOUBLE_SET_LO32(x, y)
+ 
+-#define Storeinc(a,b,c) (*(a)++ = (b) << 16 | (c) & 0xffff)
++#define Storeinc(a,b,c) (*(a)++ = (b) << 16 | ((c) & 0xffff))
+ 
+ /* #define P DBL_MANT_DIG */
+@@ -990,5 +990,6 @@
+ {
+     register Long L;
+-    double a;
++    double a = 0.;	/* only need to initialize to calm the compiler.
++			 * set_word0 and set_word1 set a, but in two stages */
+ 
+     L = (word0(x) & Exp_mask) - (P-1)*Exp_msk1;
+@@ -1021,5 +1022,5 @@
+     ULong *xa, *xa0, w, y, z;
+     int32 k;
+-    double d;
++    double d = 0.;
+ #define d0 word0(d)
+ #define d1 word1(d)
+@@ -1837,4 +1838,5 @@
+ #ifdef Avoid_Underflow
+     if (scale) {
++        rv0 = 0.; /* calm the compiler warning */
+         set_word0(rv0, Exp_1 - P*Exp_msk1);
+         set_word1(rv0, 0);
+--- jsatom.h	Wed Feb 11 02:21:59 2004
++++ jsatom.h	Fri Aug  5 01:21:44 2005
+@@ -96,5 +96,5 @@
+ 
+ #define ALE_ATOM(ale)   ((JSAtom *) (ale)->entry.key)
+-#define ALE_INDEX(ale)  ((jsatomid) (ale)->entry.value)
++#define ALE_INDEX(ale)  ((jsatomid)(uintptr_t)(ale)->entry.value)
+ #define ALE_JSOP(ale)   ((JSOp) (ale)->entry.value)
+ #define ALE_VALUE(ale)  ((jsval) (ale)->entry.value)
+--- jsatom.c	Tue Jul  6 03:49:18 2004
++++ jsatom.c	Fri Aug  5 01:23:29 2005
+@@ -137,5 +137,5 @@
+ #endif
+ 
+-#define HASH_OBJECT(o)  ((JSHashNumber)(o) >> JSVAL_TAGBITS)
++#define HASH_OBJECT(o)  ((JSHashNumber)(uintptr_t)(o) >> JSVAL_TAGBITS)
+ #define HASH_INT(i)     ((JSHashNumber)(i))
+ #define HASH_DOUBLE(dp) ((JSHashNumber)(JSDOUBLE_HI32(*dp) ^ JSDOUBLE_LO32(*dp)))
+@@ -834,5 +834,5 @@
+         }
+ 
+-        ALE_SET_INDEX(ale, al->count++);
++        ALE_SET_INDEX(ale, (intptr_t)al->count++);
+     }
+     return ale;
+--- jsscript.c	Fri Jul  8 21:48:08 2005
++++ jsscript.c	Fri Aug  5 01:29:26 2005
+@@ -322,5 +322,5 @@
+     if (!JS_XDRUint32(xdr, &index))
+         return JS_FALSE;
+-    ALE_SET_INDEX(ale, index);
++    ALE_SET_INDEX(ale, (uintptr_t)index);
+ 
+     if (!JS_XDRValue(xdr, &value))
+@@ -338,5 +338,5 @@
+ {
+     uint32 length;
+-    uintN i;
++    uintptr_t i;
+     JSBool ok;
+ 
+--- jsinterp.c	Fri Jun  4 21:39:32 2004
++++ jsinterp.c	Sat Aug  6 18:56:29 2005
+@@ -1382,9 +1382,9 @@
+     jsbytecode *pc, *pc2, *endpc;
+     JSOp op, op2;
+-    const JSCodeSpec *cs;
++    const JSCodeSpec *cs = NULL;
+     JSAtom *atom;
+     uintN argc, slot, attrs;
+     jsval *vp, lval, rval, ltmp, rtmp;
+-    jsid id;
++    jsid id = -1L; /* initialize to something awful */
+     JSObject *withobj, *origobj, *propobj;
+     jsval iter_state;
+@@ -1398,5 +1398,5 @@
+     JSType type;
+ #ifdef DEBUG
+-    FILE *tracefp;
++    FILE *tracefp = NULL;
+ #endif
+ #if JS_HAS_EXPORT_IMPORT
+@@ -1475,4 +1475,5 @@
+         JS_ReportErrorNumber(cx, js_GetErrorMessage, NULL, JSMSG_OVER_RECURSED);
+         ok = JS_FALSE;
++        sp = NULL;
+         goto out;
+     }
+@@ -1484,4 +1485,5 @@
+     if (!newsp) {
+         ok = JS_FALSE;
++        sp = NULL;
+         goto out;
+     }
+@@ -1517,5 +1519,5 @@
+                     }
+                 }
+-                fprintf(tracefp, " @ %d\n", sp - fp->spbase);
++                fprintf(tracefp, " @ %td\n", sp - fp->spbase);
+             }
+         }
+@@ -4209,5 +4211,5 @@
+                     }
+                 }
+-                fprintf(tracefp, " @ %d\n", sp - fp->spbase);
++                fprintf(tracefp, " @ %td\n", sp - fp->spbase);
+             }
+             fprintf(tracefp, "  stack: ");
+--- jsobj.c	Wed Jun  2 17:20:56 2004
++++ jsobj.c	Sat Aug  6 19:08:39 2005
+@@ -378,5 +378,5 @@
+ js_hash_object(const void *key)
+ {
+-    return (JSHashNumber)key >> JSVAL_TAGBITS;
++    return (JSHashNumber)(uintptr_t)key >> JSVAL_TAGBITS;
+ }
+ 
+@@ -407,5 +407,5 @@
+     if (!he) {
+         sharpid = 0;
+-        he = JS_HashTableRawAdd(table, hep, hash, obj, (void *)sharpid);
++        he = JS_HashTableRawAdd(table, hep, hash, obj, (void *)(uintptr_t)sharpid);
+         if (!he) {
+             JS_ReportOutOfMemory(cx);
+@@ -461,8 +461,8 @@
+             return NULL;
+     } else {
+-        sharpid = (jsatomid) he->value;
++        sharpid = (jsatomid)(uintptr_t)he->value;
+         if (sharpid == 0) {
+             sharpid = ++map->sharpgen << SHARP_ID_SHIFT;
+-            he->value = (void *) sharpid;
++            he->value = (void *)(uintptr_t)sharpid;
+         }
+         ida = NULL;
+@@ -505,5 +505,5 @@
+         if (!he)
+             goto bad;
+-        JS_ASSERT((((jsatomid) he->value) & SHARP_BIT) == 0);
++        JS_ASSERT((((uintptr_t)he->value) & SHARP_BIT) == 0);
+         if (!idap) {
+             JS_DestroyIdArray(cx, ida);
+@@ -534,5 +534,5 @@
+     }
+ 
+-    sharpid = (jsatomid) he->value;
++    sharpid = (jsatomid)(uintptr_t)he->value;
+     if (sharpid == 0) {
+         *sp = NULL;
+@@ -1104,5 +1104,5 @@
+     const JSResolvingKey *key = (const JSResolvingKey *)ptr;
+ 
+-    return ((JSDHashNumber)key->obj >> JSVAL_TAGBITS) ^ key->id;
++    return ((JSDHashNumber)(uintptr_t)key->obj >> JSVAL_TAGBITS) ^ key->id;
+ }
+ 
+--- jsopcode.c	Thu Jun 10 00:33:52 2004
++++ jsopcode.c	Sat Aug  6 19:13:50 2005
+@@ -181,5 +181,5 @@
+       case JOF_JUMPX:
+         off = GetJumpOffset(pc, pc);
+-        fprintf(fp, " %u (%d)", loc + off, off);
++        fprintf(fp, " %tu (%td)", loc + off, off);
+         break;
+ 
+@@ -216,8 +216,8 @@
+         high = GET_JUMP_OFFSET(pc2);
+         pc2 += JUMP_OFFSET_LEN;
+-        fprintf(fp, " defaultOffset %d low %d high %d", off, low, high);
++        fprintf(fp, " defaultOffset %td low %d high %d", off, low, high);
+         for (i = low; i <= high; i++) {
+             off = GetJumpOffset(pc, pc2);
+-            fprintf(fp, "\n\t%d: %d", i, off);
++            fprintf(fp, "\n\t%d: %td", i, off);
+             pc2 += jmplen;
+         }
+@@ -230,5 +230,5 @@
+       {
+         jsbytecode *pc2;
+-        jsint npairs;
++        int npairs;
+ 
+         jmplen = (type == JOF_LOOKUPSWITCH) ? JUMP_OFFSET_LEN
+@@ -237,7 +237,7 @@
+         off = GetJumpOffset(pc, pc2);
+         pc2 += jmplen;
+-        npairs = (jsint) GET_ATOM_INDEX(pc2);
++        npairs = GET_ATOM_INDEX(pc2);
+         pc2 += ATOM_INDEX_LEN;
+-        fprintf(fp, " offset %d npairs %u", off, (uintN) npairs);
++        fprintf(fp, " offset %td npairs %d", off, npairs);
+         while (npairs) {
+             atom = GET_ATOM(cx, script, pc2);
+@@ -253,5 +253,5 @@
+             if (!cstr)
+                 return 0;
+-            fprintf(fp, "\n\t%s: %d", cstr, off);
++            fprintf(fp, "\n\t%s: %td", cstr, off);
+             JS_free(cx, cstr);
+             npairs--;
+--- jsparse.c	Mon Mar 29 22:20:03 2004
++++ jsparse.c	Sat Aug  6 19:15:27 2005
+@@ -876,5 +876,5 @@
+                 return NULL;
+         }
+-        ALE_SET_JSOP(ale, tc->topStmt ? JSOP_CLOSURE : JSOP_DEFFUN);
++        ALE_SET_JSOP(ale, (uintptr_t)(tc->topStmt ? JSOP_CLOSURE : JSOP_DEFFUN));
+ 
+ #if JS_HAS_LEXICAL_CLOSURE
+--- jsprf.c	Wed Feb 25 08:33:42 2004
++++ jsprf.c	Sat Aug  6 19:18:26 2005
+@@ -56,5 +56,5 @@
+ */
+ #ifdef HAVE_VA_COPY
+-#define VARARGS_ASSIGN(foo, bar)        VA_COPY(foo,bar)
++#define VARARGS_ASSIGN(foo, bar)        va_copy(foo,bar)
+ #elif defined(HAVE_VA_LIST_AS_ARRAY)
+ #define VARARGS_ASSIGN(foo, bar)        foo[0] = bar[0]
+--- js.c	Wed Feb 11 02:21:59 2004
++++ js.c	Sat Aug  6 19:23:09 2005
+@@ -921,5 +921,5 @@
+         delta = SN_DELTA(sn);
+         offset += delta;
+-        fprintf(gOutFile, "%3u: %5u [%4u] %-8s",
++        fprintf(gOutFile, "%3tu: %5u [%4u] %-8s",
+                 PTRDIFF(sn, notes, jssrcnote), offset, delta,
+                 js_SrcNoteSpec[SN_TYPE(sn)].name);
+@@ -1006,5 +1006,5 @@
+     fprintf(gOutFile, "\nException table:\nstart\tend\tcatch\n");
+     while (tn->start && tn->catchStart) {
+-        fprintf(gOutFile, "  %d\t%d\t%d\n",
++        fprintf(gOutFile, "  %td\t%td\t%td\n",
+                tn->start, tn->start + tn->length, tn->catchStart);
+         tn++;
+@@ -1222,6 +1222,6 @@
+ #undef  DUMP_ATTR
+ 
+-        fprintf(fp, " slot %lu flags %x shortid %d\n",
+-                sprop->slot, sprop->flags, sprop->shortid);
++        fprintf(fp, " slot %u flags %x shortid %d\n",
++                (unsigned)sprop->slot, (int)sprop->flags, (int)sprop->shortid);
+     }
+ }
+--- jsapi.c	Wed Jun 16 17:42:39 2004
++++ jsapi.c	Mon Aug  8 02:32:15 2005
+@@ -126,5 +126,5 @@
+ static JSBool
+ TryArgumentFormatter(JSContext *cx, const char **formatp, JSBool fromJS,
+-                     jsval **vpp, va_list *app)
++                     jsval **vpp, va_list app)
+ {
+     const char *format;
+@@ -264,6 +264,5 @@
+           default:
+             format--;
+-            if (!TryArgumentFormatter(cx, &format, JS_TRUE, &sp,
+-                                      JS_ADDRESSOF_VA_LIST(ap))) {
++            if (!TryArgumentFormatter(cx, &format, JS_TRUE, &sp, ap)) {
+                 return JS_FALSE;
+             }
+@@ -367,6 +366,5 @@
+           default:
+             format--;
+-            if (!TryArgumentFormatter(cx, &format, JS_FALSE, &sp,
+-                                      JS_ADDRESSOF_VA_LIST(ap))) {
++            if (!TryArgumentFormatter(cx, &format, JS_FALSE, &sp, ap)) {
+                 goto bad;
+             }
+@@ -2190,5 +2188,5 @@
+ 
+     if (attrs & JSPROP_INDEX) {
+-        id = INT_TO_JSVAL((jsint)name);
++        id = INT_TO_JSVAL(name);
+         atom = NULL;
+         attrs &= ~JSPROP_INDEX;
