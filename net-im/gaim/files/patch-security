@@ -1,0 +1,123 @@
+Index: src/util.c
+===================================================================
+RCS file: /cvsroot/gaim/gaim/src/util.c,v
+retrieving revision 1.325.2.25
+diff -u -d -p -u -d -p -r1.325.2.25 util.c
+--- src/util.c	31 Jul 2005 15:21:01 -0000	1.325.2.25
++++ src/util.c	8 Aug 2005 02:48:15 -0000
+@@ -2141,8 +2141,7 @@ gchar *
+ gaim_str_sub_away_formatters(const char *str, const char *name)
+ {
+ 	char *c;
+-	gchar *cpy;
+-	int cnt = 0;
++	GString *cpy;
+ 	time_t t;
+ 	struct tm *tme;
+ 	char tmp[20];
+@@ -2150,12 +2149,12 @@ gaim_str_sub_away_formatters(const char 
+ 	g_return_val_if_fail(str  != NULL, NULL);
+ 	g_return_val_if_fail(name != NULL, NULL);
+ 
+-	cpy = g_malloc(BUF_LONG);
++	/* Create an empty GString that is hopefully big enough for most messages */
++	cpy = g_string_sized_new(1024);
+ 
+ 	t = time(NULL);
+ 	tme = localtime(&t);
+ 
+-	cpy[0] = '\0';
+ 	c = (char *)str;
+ 	while (*c) {
+ 		switch (*c) {
+@@ -2164,39 +2163,35 @@ gaim_str_sub_away_formatters(const char 
+ 				switch (*(c + 1)) {
+ 				case 'n':
+ 					/* append name */
+-					strcpy(cpy + cnt, name);
+-					cnt += strlen(name);
++					g_string_append(cpy, name);
+ 					c++;
+ 					break;
+ 				case 'd':
+ 					/* append date */
+ 					strftime(tmp, 20, "%m/%d/%Y", tme);
+-					strcpy(cpy + cnt, tmp);
+-					cnt += strlen(tmp);
++					g_string_append(cpy, tmp);
+ 					c++;
+ 					break;
+ 				case 't':
+ 					/* append time */
+ 					strftime(tmp, 20, "%I:%M:%S %p", tme);
+-					strcpy(cpy + cnt, tmp);
+-					cnt += strlen(tmp);
++					g_string_append(cpy, tmp);
+ 					c++;
+ 					break;
+ 				default:
+-					cpy[cnt++] = *c;
++					g_string_append_c(cpy, *c);
+ 				}
+ 			} else {
+-				cpy[cnt++] = *c;
++				g_string_append_c(cpy, *c);
+ 			}
+ 			break;
+ 		default:
+-			cpy[cnt++] = *c;
++			g_string_append_c(cpy, *c);
+ 		}
+ 		c++;
+ 	}
+-	cpy[cnt] = '\0';
+ 
+-	return cpy;
++	return g_string_free(cpy, FALSE);
+ }
+ 
+ gchar *
+
+Index: src/protocols/oscar/oscar.c
+===================================================================
+RCS file: /cvsroot/gaim/gaim/src/protocols/oscar/oscar.c,v
+retrieving revision 1.663.2.30
+diff -u -d -p -r1.663.2.30 oscar.c
+--- src/protocols/oscar/oscar.c	9 Jul 2005 21:48:21 -0000	1.663.2.30
++++ src/protocols/oscar/oscar.c	15 Jul 2005 04:02:59 -0000
+@@ -3534,7 +3534,18 @@ static int incomingim_chan2(aim_session_
+ 			xfer = gaim_xfer_new(gc->account, GAIM_XFER_RECEIVE, userinfo->sn);
+ 			xfer->remote_ip = g_strdup(args->verifiedip);
+ 			xfer->remote_port = args->port;
+-			gaim_xfer_set_filename(xfer, args->info.sendfile.filename);
++
++			if (g_utf8_validate(args->info.sendfile.filename, -1,
++						NULL)) {
++				gaim_xfer_set_filename(xfer,
++						args->info.sendfile.filename);
++			} else {
++				gchar * utf8_filename = gaim_utf8_salvage(
++						args->info.sendfile.filename);
++				gaim_xfer_set_filename(xfer, utf8_filename);
++				g_free(utf8_filename);
++			}
++
+ 			gaim_xfer_set_size(xfer, args->info.sendfile.totsize);
+ 			
+ 			/* Ignore <ICQ_COOL_FT> XML that is sent along with ICQ sendfile requests */
+
+--- src/protocols/gg/libgg.c.orig	Wed Aug 10 23:23:20 2005
++++ src/protocols/gg/libgg.c	Wed Aug 10 23:24:16 2005
+@@ -1099,7 +1099,11 @@ static int gg_watch_fd_connected(struct 
+ 			    e->event.status60.descr = buf;
+ 
+ 			    if (len > 4 && p[h->length - 5] == 0)
+-				    e->event.status60.time = *((int*) (p + h->length - 4));
++			    {
++				    uint32_t t;
++				    memcpy(&t, p + h->length - 4, sizeof(uint32_t));
++				    e->event.status60.time = t;
++			    }
+ 		    }
+ 
+ 		    break;
