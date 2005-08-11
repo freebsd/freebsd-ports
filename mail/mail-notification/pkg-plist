@@ -12,7 +12,7 @@ share/gnome/help/mail-notification/C/figures/mailbox-emblem-unknown.png
 share/gnome/help/mail-notification/C/mail-notification.xml
 share/gnome/help/mail-notification/C/software-license.xml
 share/gnome/mail-notification/ui/edit-toolbars-dialog.glade
-share/gnome/mail-notification/ui/gmail.png
+%%GMAIL%%share/gnome/mail-notification/ui/gmail.png
 share/gnome/mail-notification/ui/hand-open.png
 share/gnome/mail-notification/ui/logo.png
 share/gnome/mail-notification/ui/mail-summary-popup.glade
