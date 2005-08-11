@@ -1,5 +1,5 @@
 --- Imakefile.orig	Sun Jun 26 03:47:22 1994
-+++ Imakefile	Sat Aug  6 23:14:35 2005
++++ Imakefile	Thu Aug 11 14:26:34 2005
 @@ -4,8 +4,8 @@
  /**/# Top level Imakefile for ProductNameAndRelease
  /**/# @(#)Imakefile	1.7 1/7/92 SMI
@@ -11,7 +11,7 @@
  
  #define IHaveSubdirs
  #define PassCDebugFlags
-@@ -13,7 +13,7 @@
+@@ -13,14 +13,21 @@
             WORLDOPTS = 
  /**/# If you want to make only the library, then start the build in the lib
  /**/# subdirectory.  Be sure to do a 'make includes' in images and bitmaps first.
@@ -20,17 +20,22 @@
  #if InstallOpenLookFonts 
              FONTSDIR = fonts
  #else
-@@ -21,6 +21,9 @@
+             FONTSDIR = 
  #endif
            CLIENTSDIR = clients
-              SUBDIRS = $(COREDIRS) $(FONTSDIR) 
+-             SUBDIRS = $(COREDIRS) $(FONTSDIR) 
++.ifdef DOCLIENTS
++             SUBDIRS = $(CLIENTSDIR)
++.else
++             SUBDIRS = $(COREDIRS) $(FONTSDIR)
++.endif
 +.ifdef WITHDOCSUBDIR
-+SUBDIRS+= doc
++SUBDIRS+=doc
 +.endif
  /**/# even if these subdirs are not included in the general rules, be sure to
  /**/# do a make clean in them.
         CLEAN_SUBDIRS = clients contrib doc fonts bitmaps images lib misc util
-@@ -59,11 +62,11 @@
+@@ -59,11 +66,11 @@
  	@echo ""
  	@date
  	@echo ""
@@ -44,6 +49,19 @@
 +	$(MAKE) $(MFLAGS) includes
 +	$(MAKE) $(MFLAGS) depend
 +	$(MAKE) $(MFLAGS) 'CDEBUGFLAGS=$(CDEBUGFLAGS)' $(WORLDOPTS)
+ 	@echo ""
+ 	@date
+ 	@echo ""
+@@ -96,9 +103,9 @@
+ 	@echo ""
+ 	@date
+ 	@echo ""
+-	$(MAKE) $(MFLAGS) 'SUBDIRS=$(CLIENTSDIR)' Makefiles
+-	$(MAKE) $(MFLAGS) 'SUBDIRS=$(CLIENTSDIR)' depend
+-	$(MAKE) $(MFLAGS) 'SUBDIRS=$(CLIENTSDIR)' 'CDEBUGFLAGS=$(CDEBUGFLAGS)' $(WORLDOPTS)
++	$(MAKE) $(MFLAGS) -DDOCLIENTS Makefiles
++	$(MAKE) $(MFLAGS) -DDOCLIENTS depend
++	$(MAKE) $(MFLAGS) -DDOCLIENTS 'CDEBUGFLAGS=$(CDEBUGFLAGS)' $(WORLDOPTS)
  	@echo ""
  	@date
  	@echo ""
