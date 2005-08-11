@@ -19,15 +19,17 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenLook applications and man pages
 
-PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-toolkits/xview:build
+PATCH_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../xview:build
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIRPREFIX}${.CURDIR}/../xview/work/${DISTNAME}
 ALL_TARGET=	Clients
-INSTALL_TARGET=	'SUBDIRS=clients' install install.man
 
 MAN1=		clock.1 cmdtool.1 olwm.1 olwmslave.1 shelltool.1
 MANCOMPRESSED=	yes
+
+do-install:
+	@cd ${WRKSRC}/clients; ${MAKE} install install.man
 
 .include <bsd.port.mk>
