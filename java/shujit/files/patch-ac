@@ -1,10 +1,12 @@
+$FreeBSD$
+
 --- README	2000/09/23 21:59:50	1.1
 +++ README	2000/09/23 21:59:26
 @@ -33,6 +33,10 @@
  
  * Run Java applications with JIT compiler.
  
-+Fist you should set LD_LIBRARY_PATH enviropment variable as follows:
++First you should set LD_LIBRARY_PATH environment variable as follows:
 +
 +  export LD_LIBRARY_PATH=%%PREFIX%%/lib/shujit
 +
