@@ -43,11 +43,15 @@ MANLANG=	"" sk
 MAN1=		geticonset.1x getstyle.1x seticons.1x setstyle.1x wdwrite.1x \
 		wmaker.1x wmsetbg.1x wxcopy.1x wxpaste.1x
 
+.include <bsd.port.pre.mk>
+
 OPTIONS=	XINERAMA "Enable xinerama support" off \
 		XKB_STATUS "XKB keyboard language status support" off \
 		WM_LINGUAS "Enable support for additional locales" off
 
-.include <bsd.port.pre.mk>
+.if ${ARCH} == amd64
+CONFIGURE_ENV+=	ac_cv_c_inline_asm=no
+.endif
 
 .if defined(WITH_XINERAMA) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-xinerama
