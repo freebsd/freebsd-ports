@@ -60,6 +60,9 @@ WITHOUT_SASL=		yes
 .endif
 .if defined(WITHOUT_GMAIL)
 CONFIGURE_ARGS+=	--disable-gmail
+PLIST_SUB+=		GMAIL="@comment "
+.else
+PLIST_SUB+=		GMAIL=""
 .endif
 .if defined(WITHOUT_EVOLUTION)
 CONFIGURE_ARGS+=	--disable-evolution
