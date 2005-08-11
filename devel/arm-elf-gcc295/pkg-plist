@@ -1,10 +1,10 @@
-arm-elf/bin/gcc
 arm-elf/bin/g++
+arm-elf/bin/gcc
 arm-elf/include/assert.h
 bin/arm-elf-c++
+bin/arm-elf-cpp
 bin/arm-elf-g++
 bin/arm-elf-gcc
-bin/arm-elf-cpp
 bin/arm-elf-gcov
 bin/arm-elf-protoize
 bin/arm-elf-unprotoize
@@ -56,4 +56,5 @@ lib/gcc-lib/arm-elf/%%GCC_REV%%/specs
 @dirrm lib/gcc-lib/arm-elf/%%GCC_REV%%/include
 @dirrm lib/gcc-lib/arm-elf/%%GCC_REV%%
 @dirrm lib/gcc-lib/arm-elf
-@dirrm lib/gcc-lib
+@unexec /bin/rmdir %D/lib/gcc-lib 2>/dev/null || /usr/bin/true
+@dirrm arm-elf/include
