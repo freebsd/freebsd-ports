@@ -32,6 +32,51 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="24eee285-09c7-11da-bc08-0001020eed82">
+    <topic>xpdf -- disk fill DoS vulnerability</topic>
+    <affects>
+      <package>
+	<name>xpdf</name>
+	<range><lt>3.00_7</lt></range>
+      </package>
+      <package>
+	<name>kdegraphics</name>
+	<range><lt>3.4.2</lt></range>
+      </package>
+      <package>
+	<name>pdftohtml</name>
+	<range><lt>0.36_3</lt></range>
+      </package>
+      <package>
+	<name>gpdf</name>
+	<name>cups-base</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>xpdf is vulnerable to a denial of service vulnerability
+	  which can cause xpdf to create an infinitely large file,
+	  thereby filling up the /tmp partition, when opening a
+	  specially crafted PDF file.</p>
+	<p>Note that several applications contains an embedded version
+	  on xpdf, therefor making them the vulnerable to the same
+	  DoS.  In CUPS this vulnerability would cause the pdftops
+	  filter to crash.</p>
+      </body>
+    </description>
+    <references>
+      <bid>14529</bid>
+      <cvename>CAN-2005-2097</cvename>
+      <url>http://rhn.redhat.com/errata/RHSA-2005-670.html</url>
+      <url>http://www.kde.org/info/security/advisory-20050809-1.txt</url>
+    </references>
+    <dates>
+      <discovery>2005-08-09</discovery>
+      <entry>2005-08-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d7cd5015-08c9-11da-bc08-0001020eed82">
     <topic>gforge -- XSS and email flood vulnerabilities</topic>
     <affects>
