@@ -48,15 +48,20 @@ pre-everything::
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Check if procfs is running: YES"
 .else
-	@${ECHO_CMD} "-----------------------------------------------------------"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "Valgrind needs a running procfs, which is not"
-	@${ECHO_CMD} "activated on your system. Please read the procfs\(5\)"
-	@${ECHO_CMD} "manpage and add the following line to /etc/fstab:"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "proc /proc procfs rw 0 0"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "-----------------------------------------------------------"
+#
+# /proc is not mounted on the machine in the package building cluster that
+# that builds the list of IGNOREd ports (but it is on the build machines),
+# so we need to make an exception here.
+#
+.ifndef (PACKAGE_BUILDING)
+ECHO_MSG=/usr/bin/printf
+IGNORE= needs a running procfs, which is not\n\
+\ \ \ \ \ activated on your system. Please read the procfs\(5\)\n\
+\ \ \ \ \ man page and add the following line to /etc/fstab:\n\
+\n\
+\ \ \ \ \ proc /proc procfs rw 0 0\n\
+\n\n
+.endif
 .endif
 
 pre-patch:
@@ -79,11 +84,13 @@ post-install:
 	${ECHO_CMD} !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! || true
 .endif
 
+.ifndef (PACKAGE_BUILDING)
 	@yes | ${PREFIX}/bin/valgrind --tool=memcheck --gen-suppressions=yes true 2>&1 \
 		| ${SED} -e 's,.*{$$,{,'  \
 		| ${GREP} -v '^=' \
 		> ${WRKDIR}/freebsd-default.supp || \
 		${RM} ${WRKDIR}/freebsd-default.supp
+.endif
 
 	@${ECHO} ""
 	@${ECHO} ""
