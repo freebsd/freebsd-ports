@@ -17,6 +17,7 @@ USE_RC_SUBR=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 STARTUPSCRIPT=	${WRKDIR}/lookupd.sh
+MAKE_ENV=	WARNS=0
 
 MAN5=		lookupd.conf.5
 MAN8=		lookupd.8
@@ -31,10 +32,6 @@ post-install:
 
 .if ${OSVERSION} < 500112
 IGNORE=		This version of lookupd is only supported on FreeBSD 5.1 or later
-.endif
-
-.if ${OSVERSION} > 600021
-BROKEN=		"Does not compile on FreeBSD >= 6.x"
 .endif
 
 .include <bsd.port.post.mk>
