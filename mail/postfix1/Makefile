@@ -12,8 +12,7 @@
 # the options are the same names as in the scripts/configure.postfix file
 
 PORTNAME=	postfix
-PORTVERSION=	1.1.12
-PORTREVISION=	1
+PORTVERSION=	1.1.13
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -32,6 +31,7 @@ COMMENT=		An alternative to widely-used Sendmail
 CONFLICTS=	courier-0.* postfix-2.* sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 USE_SUBMAKE=	yes
 USE_REINPLACE=	yes
+PATCH_STRIP=	-p1
 LATEST_LINK=	postfix1
 
 MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postdrop.1 \
@@ -64,10 +64,6 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		POSTFIX_OPTIONS="${POSTFIX_OPTIONS}"
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 600000
-BROKEN=		"Does not build on FreeBSD 6.x"
-.endif
 
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.postfix

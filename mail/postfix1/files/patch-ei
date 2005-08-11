@@ -1,5 +1,5 @@
-*** ./src/smtpd/smtpd.h.orig	Thu Sep 14 10:17:23 2000
---- ./src/smtpd/smtpd.h	Thu Sep 14 10:17:38 2000
+*** postfix-1.1.13/src/smtpd/smtpd.h.orig	Thu Sep 14 10:17:23 2000
+--- postfix-1.1.13/src/smtpd/smtpd.h	Thu Sep 14 10:17:38 2000
 ***************
 *** 12,19 ****
     * SASL library.

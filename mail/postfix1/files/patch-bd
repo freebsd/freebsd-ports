@@ -1,5 +1,5 @@
-*** ./html/local.8.html.orig	Thu Feb  3 21:15:02 2000
---- ./html/local.8.html	Thu Jun  1 22:22:30 2000
+*** postfix-1.1.13/html/local.8.html.orig	Thu Feb  3 21:15:02 2000
+--- postfix-1.1.13/html/local.8.html	Thu Jun  1 22:22:30 2000
 ***************
 *** 99,101 ****
          The default per-user mailbox is a file in  the  UNIX  mail

@@ -1,5 +1,5 @@
-*** ./man/man8/local.8.orig	Thu Feb  3 21:14:53 2000
---- ./man/man8/local.8	Thu Jun  1 22:42:43 2000
+*** postfix-1.1.13/man/man8/local.8.orig	Thu Feb  3 21:14:53 2000
+--- postfix-1.1.13/man/man8/local.8	Thu Jun  1 22:42:43 2000
 ***************
 *** 96,98 ****
   The default per-user mailbox is a file in the UNIX mail spool

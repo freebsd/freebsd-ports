@@ -1,5 +1,5 @@
-*** ./src/smtp/smtp.h.orig	Thu Sep 14 13:04:43 2000
---- ./src/smtp/smtp.h	Thu Sep 14 13:04:53 2000
+*** postfix-1.1.13/src/smtp/smtp.h.orig	Thu Sep 14 13:04:43 2000
+--- postfix-1.1.13/src/smtp/smtp.h	Thu Sep 14 13:04:53 2000
 ***************
 *** 12,19 ****
     * SASL library.

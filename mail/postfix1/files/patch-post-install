@@ -1,5 +1,5 @@
---- ./conf/#post-install~	Fri Jan 18 12:32:54 2002
-+++ ./conf/post-install	Fri Jan 18 12:32:54 2002
+--- postfix-1.1.13/conf/#post-install~	Fri Jan 18 12:32:54 2002
++++ postfix-1.1.13/conf/post-install	Fri Jan 18 12:32:54 2002
 @@ -183,7 +183,7 @@
  
  umask 022

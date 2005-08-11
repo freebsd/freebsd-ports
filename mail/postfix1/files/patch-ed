@@ -1,5 +1,5 @@
-*** ./src/local/mailbox.c.orig	Fri Apr 28 16:55:53 2000
---- ./src/local/mailbox.c	Thu Jun  1 22:37:48 2000
+*** postfix-1.1.13/src/local/mailbox.c.orig	Fri Apr 28 16:55:53 2000
+--- postfix-1.1.13/src/local/mailbox.c	Thu Jun  1 22:37:48 2000
 ***************
 *** 15,17 ****
   /*	suppression. The default is direct mailbox delivery to
