@@ -41,7 +41,6 @@ post-install:
 .endfor
 	cd ${PREFIX}/lib ; ${MV} libiberty.a \
 		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/lib
-	${MKDIR} ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/include
 	${RM} ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info/*
 	${RMDIR} ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info
 

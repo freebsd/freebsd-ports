@@ -12,7 +12,6 @@ arm-elf/bin/readelf
 arm-elf/bin/size
 arm-elf/bin/strings
 arm-elf/bin/strip
-@comment arm-elf/include/symcat.h
 arm-elf/lib/ldscripts/armelf.x
 arm-elf/lib/ldscripts/armelf.xbn
 arm-elf/lib/ldscripts/armelf.xc
@@ -67,7 +66,6 @@ share/locale/tr/LC_MESSAGES/opcodes.mo
 share/locale/zh_CN/LC_MESSAGES/bfd.mo
 share/locale/zh_CN/LC_MESSAGES/binutils.mo
 @dirrm arm-elf/bin
-@dirrm arm-elf/include
 @dirrm arm-elf/lib/ldscripts
 @dirrm arm-elf/lib
 @dirrm arm-elf
