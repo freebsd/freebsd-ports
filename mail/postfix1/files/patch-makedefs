@@ -1,0 +1,13 @@
+--- postfix-1.1.13/makedefs.orig	Sat May  4 10:36:23 2002
++++ postfix-1.1.13/makedefs	Wed Aug 10 18:32:53 2005
+@@ -90,6 +90,10 @@
+ 		;;
+   FreeBSD.5*)	SYSTYPE=FREEBSD5
+ 		;;
++  FreeBSD.6*)	SYSTYPE=FREEBSD5
++		;;
++  FreeBSD.7*)	SYSTYPE=FREEBSD5
++		;;
+   OpenBSD.2*)	SYSTYPE=OPENBSD2
+ 		;;
+   OpenBSD.3*)	SYSTYPE=OPENBSD3

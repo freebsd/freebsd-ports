@@ -1,5 +1,5 @@
-*** ./src/global/mail_params.h.orig	Thu Jan  3 13:13:37 2002
---- ./src/global/mail_params.h	Tue Jan  8 22:18:22 2002
+*** postfix-1.1.13/src/global/mail_params.h.orig	Thu Jan  3 13:13:37 2002
+--- postfix-1.1.13/src/global/mail_params.h	Tue Jan  8 22:18:22 2002
 ***************
 *** 51,55 ****
   
