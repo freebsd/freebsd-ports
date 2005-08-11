@@ -1,0 +1,58 @@
+--- fofi/FoFiTrueType.cc.orig	Thu Jan 22 02:26:44 2004
++++ fofi/FoFiTrueType.cc	Thu Aug 11 16:55:52 2005
+@@ -1343,6 +1343,27 @@
+     return;
+   }
+ 
++  // make sure the loca table is sane (correct length and entries are
++  // in bounds)
++  i = seekTable("loca");
++  if (tables[i].len < (nGlyphs + 1) * (locaFmt ? 4 : 2)) {
++    parsedOk = gFalse;
++    return;
++  }
++  for (j = 0; j <= nGlyphs; ++j) {
++    if (locaFmt) {
++      pos = (int)getU32BE(tables[i].offset + j*4, &parsedOk);
++    } else {
++      pos = getU16BE(tables[i].offset + j*2, &parsedOk);
++    }
++    if (pos < 0 || pos > len) {
++      parsedOk = gFalse;
++    }
++  }
++  if (!parsedOk) {
++    return;
++  }
++
+   // read the post table
+   readPostTable();
+   if (!parsedOk) {
+--- xpdf/SplashOutputDev.cc.orig	Thu Aug 11 16:51:38 2005
++++ xpdf/SplashOutputDev.cc	Thu Aug 11 16:55:52 2005
+@@ -621,16 +621,19 @@
+       }
+       break;
+     case fontTrueType:
+-      if (!(ff = FoFiTrueType::load(fileName->getCString()))) {
+-	goto err2;
++      if ((ff = FoFiTrueType::load(fileName->getCString()))) {
++	codeToGID = ((Gfx8BitFont *)gfxFont)->getCodeToGIDMap(ff);
++	n = 256;
++	delete ff;
++      } else {
++	codeToGID = NULL;
++	n = 0;
+       }
+-      codeToGID = ((Gfx8BitFont *)gfxFont)->getCodeToGIDMap(ff);
+-      delete ff;
+       if (!(fontFile = fontEngine->loadTrueTypeFont(
+ 			   id,
+ 			   fileName->getCString(),
+ 			   fileName == tmpFileName,
+-			   codeToGID, 256))) {
++			   codeToGID, n))) {
+ 	error(-1, "Couldn't create a font for '%s'",
+ 	      gfxFont->getName() ? gfxFont->getName()->getCString()
+ 	                         : "(unnamed)");
+
