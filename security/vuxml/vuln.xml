@@ -44,10 +44,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<range><lt>3.4.2</lt></range>
       </package>
       <package>
-	<name>pdftohtml</name>
-	<range><lt>0.36_3</lt></range>
-      </package>
-      <package>
 	<name>gpdf</name>
 	<name>cups-base</name>
 	<range><gt>0</gt></range>
