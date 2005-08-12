@@ -7,7 +7,8 @@
 PORTNAME=	kftpgrabber
 PORTVERSION=	0.6.0
 CATEGORIES=	ftp kde
-MASTER_SITES=	http://kftpgrabber.sourceforge.net/releases/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Graphical FTP client for KDE
