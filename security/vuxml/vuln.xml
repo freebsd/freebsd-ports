@@ -32,6 +32,71 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="09db2844-0b21-11da-bc08-0001020eed82">
+    <topic>gaim -- AIM/ICQ non-UTF-8 filename crash</topic>
+    <affects>
+      <package>
+	<name>gaim</name>
+	<name>ja-gaim</name>
+	<name>ko-gaim</name>
+	<name>ru-gaim</name>
+	<range><lt>1.4.0_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GAIM team reports:</p>
+	<blockquote cite="http://gaim.sourceforge.net/security/?id=21">
+	  <p>A remote user could cause Gaim to crash on some systems
+	    by sending the Gaim user a file whose filename contains
+	    certain invalid characters. It is unknown what combination
+	    of systems are affected, but it is suspected that Windows
+	    users and systems with older versions of GTK+ are
+	    especially susceptible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2102</cvename>
+      <url>http://gaim.sourceforge.net/security/?id=21</url>
+    </references>
+    <dates>
+      <discovery>2005-08-09</discovery>
+      <entry>2005-08-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6d1761d2-0b23-11da-bc08-0001020eed82">
+    <topic>gaim -- AIM/ICQ away message buffer overflow</topic>
+    <affects>
+      <package>
+	<name>gaim</name>
+	<name>ja-gaim</name>
+	<name>ko-gaim</name>
+	<name>ru-gaim</name>
+	<range><lt>1.4.0_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GAIM team reports:</p>
+	<blockquote cite="http://gaim.sourceforge.net/security/?id=22">
+	  <p>A remote AIM or ICQ user can cause a buffer overflow in
+	    Gaim by setting an away message containing many AIM
+	    substitution strings (such as %t or %n).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2103</cvename>
+      <url>http://gaim.sourceforge.net/security/?id=22</url>
+    </references>
+    <dates>
+      <discovery>2005-08-09</discovery>
+      <entry>2005-08-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="24eee285-09c7-11da-bc08-0001020eed82">
     <topic>xpdf -- disk fill DoS vulnerability</topic>
     <affects>
