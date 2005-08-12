@@ -12,38 +12,17 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	mt@primats.org.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mailsync is a way of keeping a collection of mailboxes synchronized
 
 LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 
-BROKEN=		Configure fails
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-USE_GCC=	2.95+
-#CONFIGURE_ARGS=	CC=gcc --exec-prefix=${PREFIX}
-#CONFIGURE_ARGS+=	--exec-prefix=${PREFIX} \
-#		--includedir="${PREFIX}/include ${PREFIX}/include/c-client"
-#CONFIGURE_ENV+=	CPPFLAGS="-I${PREFIX}/include/c-client"
-
-USE_AUTOMAKE_VER=	19
-USE_AUTOCONF_VER=	259
-USE_AUTOHEADER_VER=	259
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-c-client=${LOCALBASE}
 USE_REINPLACE=	yes
-
-pre-patch:
-	@${REINPLACE_CMD} -e 's|^aclocal|${ACLOCAL}|; \
-		s|^autoconf|${AUTOCONF}|; s|automake|${AUTOMAKE}|; \
-		s|^autoheader|${AUTOHEADER}|; s|678|9|' ${WRKSRC}/autogen.sh
-
-run-autotools:
-
-do-configure:
-	cd ${WRKSRC} && ${SH} autogen.sh --exec-prefix=${PREFIX}
 
 MAN1=		mailsync.1
 

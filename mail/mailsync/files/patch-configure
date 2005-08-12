@@ -1,0 +1,94 @@
+--- configure.orig	Wed Jun 30 10:04:12 2004
++++ configure	Tue Aug  9 16:25:24 2005
+@@ -5012,7 +5012,7 @@
+ 
+ 
+ 
+- OPENSSLLOCATIONS="/usr,/usr/local,/usr/local/openssl,/opt/openssl,/usr/local/ssl,/usr/lib/ssl,/usr/ssl"
++ OPENSSLLOCATIONS="/usr"
+  HAVE_OPENSSL="no"
+  OPENSSL_LDFLAGS=""
+  OPENSSL_LIBS=""
+@@ -5035,14 +5035,13 @@
+  else
+   echo "$as_me:$LINENO: checking for libssl" >&5
+ echo $ECHO_N "checking for libssl... $ECHO_C" >&6
+-  for p in `eval "echo {${OPENSSLLOCATIONS}}{/lib,/lib64}"` ; do
++  p=${OPENSSLLOCATIONS}/lib
+    if test -r "${p}/libssl.a" -o -r "${p}/libssl.so" ; then
+     OPENSSL_LDFLAGS="-L${p}"
+     echo "$as_me:$LINENO: result: found in ${p}" >&5
+ echo "${ECHO_T}found in ${p}" >&6
+     break
+    fi
+-  done
+   if test -z "${OPENSSL_LDFLAGS}" ; then
+    echo "$as_me:$LINENO: result: not found" >&5
+ echo "${ECHO_T}not found" >&6
+@@ -5190,14 +5189,13 @@
+    else
+     echo "$as_me:$LINENO: checking for openssl/ssl.h" >&5
+ echo $ECHO_N "checking for openssl/ssl.h... $ECHO_C" >&6
+-    for p in `eval "echo {${OPENSSLLOCATIONS}}{/include,}"` ; do
++    p=${OPENSSLLOCATIONS}/include
+      if test -r "${p}/openssl/ssl.h" ; then
+       OPENSSL_INCLUDES="-I${p}"
+       echo "$as_me:$LINENO: result: found in ${p}" >&5
+ echo "${ECHO_T}found in ${p}" >&6
+       break
+      fi
+-    done
+     if test -z "${OPENSSL_INCLUDES}" ; then
+      echo "$as_me:$LINENO: result: not found" >&5
+ echo "${ECHO_T}not found" >&6
+@@ -5447,7 +5445,7 @@
+ 
+ 
+ 
+- CCLIENTLOCATIONS="/usr,/usr/local"
++ CCLIENTLOCATIONS=""
+  HAVE_CCLIENT="no"
+  CCLIENT_LIBS=""
+  CCLIENT_INCLUDES=""
+@@ -5462,7 +5460,7 @@
+    if test "$withval" = "no" ; then
+     CCLIENTLOCATIONS=""
+    else
+-    test "$withval" = "yes" || CCLIENTLOCATIONS="$withval,${CCLIENTLOCATIONS}"
++    test "$withval" = "yes" || CCLIENTLOCATIONS="$withval"
+    fi
+ 
+ 
+@@ -5477,7 +5475,7 @@
+ 
+          echo "$as_me:$LINENO: checking for c-client.h" >&5
+ echo $ECHO_N "checking for c-client.h... $ECHO_C" >&6
+-  for p in `eval "echo {${CCLIENTLOCATIONS}}{,/c-client,/lib/c-client,/include/c-client,/include,/include/imap}"` ; do
++  p=${CCLIENTLOCATIONS}/include/c-client
+    if test -r "${p}/c-client.h" -a -r "${p}/linkage.h" -a -r "${p}/linkage.c" ; then
+     CCLIENT_INCLUDES="-I${p}"
+     CCLIENT_LINKAGE_H="${p}/linkage.h"
+@@ -5486,7 +5484,6 @@
+ echo "${ECHO_T}found in ${p}" >&6
+     break
+    fi
+-  done
+   if test -z "${CCLIENT_INCLUDES}" ; then
+    echo "$as_me:$LINENO: result: not found" >&5
+ echo "${ECHO_T}not found" >&6
+@@ -5501,14 +5498,13 @@
+ 
+             echo "$as_me:$LINENO: checking for c-client library" >&5
+ echo $ECHO_N "checking for c-client library... $ECHO_C" >&6
+-   for l in `eval "echo {${CCLIENTLOCATIONS}}{,/c-client,/lib/c-client,/lib,/lib64}/{libc-client,libc-client4,c-client}{${SOP}}"` ; do
++   l=${CCLIENTLOCATIONS}/lib/libc-client4.so
+     if test -r "$l" ; then
+      echo "$as_me:$LINENO: result: found ${l}" >&5
+ echo "${ECHO_T}found ${l}" >&6
+      CCLIENT_LIBS="$l"
+      break
+     fi
+-   done
+    if test -z "${CCLIENT_LIBS}" ; then
+     echo "$as_me:$LINENO: result: not found" >&5
+ echo "${ECHO_T}not found" >&6
