@@ -32,6 +32,84 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3b4a6982-0b24-11da-bc08-0001020eed82">
+    <topic>libgadu -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gaim</name>
+	<name>ja-gaim</name>
+	<name>ko-gaim</name>
+	<name>ru-gaim</name>
+	<range><lt>1.5.0</lt></range>
+      </package>
+      <package>
+	<name>kdenetwork</name>
+	<range><gt>3.2.2</gt><lt>3.4.2</lt></range>
+      </package>
+      <package>
+	<name>pl-ekg</name>
+	<range><lt>1.6r3,1</lt></range>
+      </package>
+      <package>
+	<name>pl-gnugadu2</name>
+	<range><lt>2.2.8</lt></range>
+      </package>
+      <package>
+	<name>centericq</name>
+	<name>kadu</name>
+	<name>pl-gnugadu</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Wojtek Kaniewski reports:</p>
+	<blockquote cite="INSERT URL HERE">
+	  <p>Multiple vulnerabilities have been found in libgadu, a
+	    library for handling Gadu-Gadu instant messaging
+	    protocol. It is a part of ekg, a Gadu-Gadu client, but is
+	    widely used in other clients. Also some of the user
+	    contributed scripts were found to behave in an insecure
+	    manner.</p>
+	  <ul>
+	    <li>integer overflow in libgadu (CAN-2005-1852) that could
+	      be triggered by an incomming message and lead to
+	      application crash and/or remote code execution</li>
+	    <li>insecure file creation (CAN-2005-1850) and shell
+	      command injection (CAN-2005-1851) in other user
+	      contributed scripts (discovered by Marcin Owsiany and
+	      Wojtek Kaniewski)</li>
+	    <li>several signedness errors in libgadu that could be
+	      triggered by an incomming network data or an application
+	      passing invalid user input to the library</li>
+	    <li>memory alignment errors in libgadu that could be
+	      triggered by an incomming message and lead to bus errors
+	      on architectures like SPARC</li>
+	    <li>endianness errors in libgadu that could cause invalid
+	      behaviour of applications on big-endian
+	      architectures</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>14345</bid>
+      <cvename>CAN-2005-1850</cvename>
+      <cvename>CAN-2005-1851</cvename>
+      <cvename>CAN-2005-1852</cvename>
+      <cvename>CAN-2005-2369</cvename>
+      <cvename>CAN-2005-2370</cvename>
+      <cvename>CAN-2005-2448</cvename>
+      <mlist msgid="42DFF06F.7060005@toxygen.net">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112198499417250</mlist>
+      <url>http://gaim.sourceforge.net/security/?id=20</url>
+      <url>http://www.kde.org/info/security/advisory-20050721-1.txt</url>
+    </references>
+    <dates>
+      <discovery>2005-07-21</discovery>
+      <entry>2005-08-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="09db2844-0b21-11da-bc08-0001020eed82">
     <topic>gaim -- AIM/ICQ non-UTF-8 filename crash</topic>
     <affects>
