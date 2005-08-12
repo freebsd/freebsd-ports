@@ -40,7 +40,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>ja-gaim</name>
 	<name>ko-gaim</name>
 	<name>ru-gaim</name>
-	<range><lt>1.5.0</lt></range>
+	<range><lt>1.4.0_1</lt></range>
       </package>
       <package>
 	<name>kdenetwork</name>
@@ -52,7 +52,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </package>
       <package>
 	<name>centericq</name>
-	<name>pl-gnugadu</name>
 	<range><gt>0</gt></range>
       </package>
     </affects>
