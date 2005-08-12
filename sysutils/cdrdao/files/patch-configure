@@ -1,0 +1,29 @@
+--- configure.orig	Mon Oct  7 03:53:55 2002
++++ configure	Sat Oct 12 18:06:18 2002
+@@ -10250,7 +10250,7 @@
+     *-freebsd2*)
+ 			       scsilib_libs="$scsilib_libs"
+ 			       ;;
+-    *-freebsd[3456]*)
++    *-freebsd[34567]*)
+ 			       scsilib_libs="$scsilib_libs -lcam"
+ 			       ;;
+   esac
+@@ -10268,7 +10268,7 @@
+ 	       scsilib_objs="ScsiIf-linux.o sg_err.o"
+ 	       ;;
+ 
+-    *-freebsd[3456]*)
++    *-freebsd[34567]*)
+ 	       scsilib_libs="-lcam"
+ 	       scsilib_objs="ScsiIf-freebsd-cam.o"
+ 	       ;;
+@@ -10514,7 +10514,7 @@
+ esac
+ 
+ case "$host" in
+-  *-linux-* | *-freebsd[456]* | *-solaris*)
++  *-linux-* | *-freebsd[4567]* | *-solaris*)
+ 	     sound_if_obj=SoundIF-ao.o
+ 	     ;;
+ 
