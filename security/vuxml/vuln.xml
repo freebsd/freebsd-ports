@@ -51,12 +51,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<range><lt>1.6r3,1</lt></range>
       </package>
       <package>
-	<name>pl-gnugadu2</name>
-	<range><lt>2.2.8</lt></range>
-      </package>
-      <package>
 	<name>centericq</name>
-	<name>kadu</name>
 	<name>pl-gnugadu</name>
 	<range><gt>0</gt></range>
       </package>
