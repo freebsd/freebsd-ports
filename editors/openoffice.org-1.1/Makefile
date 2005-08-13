@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	1.1.5.rc2
+PORTVERSION=	1.1.5.rc2.1
 CATEGORIES+=	editors
 MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/rc/1.1.5rc2/&,} \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%,maho/openoffice.org/&,}:moz \
@@ -43,6 +43,7 @@ USE_PERL5=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+WITHOUT_CPU_CFLAGS=	true
 
 .if !defined(WITHOUT_JAVA)
 USE_JAVA=	yes
