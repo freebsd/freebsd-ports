@@ -1,3 +1,5 @@
+@owner www
+@group www
 %%PHPUA%%/plugins/plugin_ut2003/plugin_ut2003.inc
 %%PHPUA%%/plugins/plugin_ut2003/plugin_ut2003_mode_info.inc
 %%PHPUA%%/plugins/plugin_ut2003/plugin_ut2003_mode_rules.inc

@@ -1,3 +1,5 @@
+@owner www
+@group www
 %%PHPUA%%/images/plugin_ut/faces/CommandoSkins.Blake.jpg
 %%PHPUA%%/images/plugin_ut/faces/CommandoSkins.Boris.jpg
 %%PHPUA%%/images/plugin_ut/faces/CommandoSkins.Gorn.jpg
