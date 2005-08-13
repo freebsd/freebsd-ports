@@ -1,0 +1,30 @@
+--- fofi/FoFiTrueType.cc.orig	Thu Jan 22 02:26:44 2004
++++ fofi/FoFiTrueType.cc	Thu Aug 11 16:55:52 2005
+@@ -1343,6 +1343,27 @@
+     return;
+   }
+ 
++  // make sure the loca table is sane (correct length and entries are
++  // in bounds)
++  i = seekTable("loca");
++  if (tables[i].len < (nGlyphs + 1) * (locaFmt ? 4 : 2)) {
++    parsedOk = gFalse;
++    return;
++  }
++  for (j = 0; j <= nGlyphs; ++j) {
++    if (locaFmt) {
++      pos = (int)getU32BE(tables[i].offset + j*4, &parsedOk);
++    } else {
++      pos = getU16BE(tables[i].offset + j*2, &parsedOk);
++    }
++    if (pos < 0 || pos > len) {
++      parsedOk = gFalse;
++    }
++  }
++  if (!parsedOk) {
++    return;
++  }
++
+   // read the post table
+   readPostTable();
+   if (!parsedOk) {
