@@ -7,14 +7,14 @@
 
 PORTNAME=	ejabberd
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.jabber.ru/files/ejabberd/ \
 		http://www.process-one.net/en/projects/ejabberd/download/${PORTVERSION}/
-PATCH_SITES=	http://ejabberd.jabber.ru/files/badlop/
+PATCH_SITES=	http://www.jabber.ru/files/ejabberd/
 PATCHFILES=	ejabberd_ctl.erl.diff
 
-MAINTAINER=	gonzo@univ.kiev.ua
+MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
@@ -30,6 +30,7 @@ USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 USE_ICONV=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
+NOPRECIOUSMAKEVARS=	yes
 
 .include <bsd.port.pre.mk>
 
