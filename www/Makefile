@@ -10,7 +10,6 @@
     SUBDIR += admuser
     SUBDIR += adzap
     SUBDIR += adzap2squirm
-    SUBDIR += akregator
     SUBDIR += amaya
     SUBDIR += amphetadesk
     SUBDIR += amyc

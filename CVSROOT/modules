@@ -290,7 +290,6 @@ akode-plugins-polypaudio	ports/audio/akode-plugins-polypaudio
 akode-plugins-resampler	ports/audio/akode-plugins-resampler
 akode-plugins-xiph	ports/audio/akode-plugins-xiph
 akpop3d		ports/mail/akpop3d
-akregator	ports/www/akregator
 alac		ports/audio/alac
 ald		ports/devel/ald
 aldo		ports/comms/aldo
