@@ -1,3 +1,5 @@
+@owner www
+@group www
 %%PHPUADIR%%/index.php
 %%PHPUADIR%%/install.php
 %%PHPUADIR%%/phpua.cfg.php

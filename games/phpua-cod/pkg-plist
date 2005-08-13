@@ -1,3 +1,5 @@
+@owner www
+@group www
 %%PHPUA%%/images/plugin_cod/maps/mp_brecourt.jpg
 %%PHPUA%%/images/plugin_cod/maps/mp_carentan.jpg
 %%PHPUA%%/images/plugin_cod/maps/mp_chateau.jpg

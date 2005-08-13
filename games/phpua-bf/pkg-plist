@@ -1,3 +1,5 @@
+@owner www
+@group www
 %%PHPUA%%/plugins/plugin_bf/plugin_bf.inc
 %%PHPUA%%/plugins/plugin_bf/plugin_bf_mode_info.inc
 %%PHPUA%%/plugins/plugin_bf/plugin_bf_mode_rules.inc

@@ -1,3 +1,5 @@
+@owner www
+@group www
 %%PHPUA%%/images/templates/default/plugin_hl/bomb.png
 %%PHPUA%%/images/templates/default/plugin_hl/bomb_planted.png
 %%PHPUA%%/images/templates/default/plugin_hl/dispenser.png
