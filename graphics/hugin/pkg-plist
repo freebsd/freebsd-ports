@@ -9,9 +9,6 @@ share/hugin/xrc/about.xrc
 share/hugin/xrc/anchor_orientation.xrc
 share/hugin/xrc/cp_editor_panel.xrc
 share/hugin/xrc/cp_list_frame.xrc
-share/hugin/xrc/nona_panel.xrc
-share/hugin/xrc/pref_dialog.xrc
-share/hugin/xrc/ptstitcher_panel.xrc
 share/hugin/xrc/data/1leftarrow.png
 share/hugin/xrc/data/1rightarrow.png
 share/hugin/xrc/data/CPCursor0.png
@@ -91,12 +88,21 @@ share/hugin/xrc/main_frame.xrc
 share/hugin/xrc/main_menu.xrc
 share/hugin/xrc/main_menubar.xrc
 share/hugin/xrc/main_tool.xrc
+share/hugin/xrc/nona_panel.xrc
 share/hugin/xrc/optimize_panel.xrc
 share/hugin/xrc/pano_panel.xrc
+share/hugin/xrc/pref_dialog.xrc
 share/hugin/xrc/preview_frame.xrc
+share/hugin/xrc/ptstitcher_panel.xrc
 share/hugin/xrc/run_optimizer_frame.xrc
 share/hugin/xrc/run_stitcher_frame.xrc
 share/locale/de/LC_MESSAGES/hugin.mo
+share/locale/de/LC_MESSAGES/nona_gui.mo
+share/locale/fr/LC_MESSAGES/hugin.mo
+share/locale/fr/LC_MESSAGES/nona_gui.mo
+share/locale/it/LC_MESSAGES/hugin.mo
+share/locale/pl/LC_MESSAGES/hugin.mo
+share/locale/pl/LC_MESSAGES/nona_gui.mo
 @dirrm share/hugin/xrc/data
 @dirrm share/hugin/xrc
 @dirrm share/hugin
