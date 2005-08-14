@@ -1,5 +1,5 @@
 --- channels/Makefile.orig	Tue Aug 31 23:33:00 2004
-+++ channels/Makefile	Mon Feb 28 00:48:27 2005
++++ channels/Makefile	Tue Aug  9 17:34:28 2005
 @@ -57,10 +57,10 @@
  
  endif
@@ -15,14 +15,14 @@
  endif
  ifeq (${OSARCH},NetBSD)
  PTLIB=-lpt_NetBSD_x86_r
-@@ -72,19 +72,21 @@
+@@ -72,19 +72,23 @@
  endif
  
  CHANNEL_LIBS+=$(shell [ -f /usr/include/linux/ixjuser.h ] && echo chan_phone.so)
 -CHANNEL_LIBS+=$(shell [ -f /usr/local/include/ixjuser.h ] && echo chan_phone.so)
 -CHANNEL_LIBS+=$(shell [ -f h323/libchanh323.a ] && echo chan_h323.so)
 +CHANNEL_LIBS+=$(shell [ -f $(LOCALBASE)/include/ixjuser.h ] && echo chan_phone.so)
-+ifndef WITHOUT_H323
++ifdef WITH_H323
 +CHANNEL_LIBS+=chan_h323.so
 +endif
  
@@ -36,22 +36,27 @@
 -ZAPPRI=$(shell [ -f /usr/lib/libpri.so.1 ] && echo "-lpri")
 +ZAPPRI=$(shell [ -f $(LOCALBASE)/lib/libpri.so.1 ] && echo "-lpri")
  ZAPR2=$(shell [ -f /usr/lib/libmfcr2.so.1 ] && echo "-lmfcr2")
++ifdef WITH_ZAPTEL
  CFLAGS+=$(shell [ -f /usr/include/linux/zaptel.h ] && echo "-DIAX_TRUNKING")
 -CFLAGS+=$(shell [ -f /usr/local/include/zaptel.h ] && echo "-DIAX_TRUNKING")
 +CFLAGS+=$(shell [ -f $(LOCALBASE)/include/zaptel.h ] && echo "-DIAX_TRUNKING -I$(LOCALBASE)/include")
++endif
  CHANNEL_LIBS+=$(shell [ -f /usr/include/vpbapi.h ] && echo "chan_vpb.so" )
  CFLAGS+=$(shell [ -f /usr/include/vpbapi.h ] && echo " -DLINUX")
  
-@@ -107,7 +109,7 @@
+@@ -106,8 +110,10 @@
+ 
  ZAPDIR=/usr/lib
  
++ifdef WITH_ZAPTEL
  CHANNEL_LIBS+=$(shell [ -f /usr/include/linux/zaptel.h ] && echo "chan_zap.so")
 -CHANNEL_LIBS+=$(shell [ -f /usr/local/include/zaptel.h ] && echo "chan_zap.so")
 +CHANNEL_LIBS+=$(shell [ -f $(LOCALBASE)/include/zaptel.h ] && echo "chan_zap.so")
++endif
  
  CHANNEL_LIBS+=$(shell [ -f /usr/include/nbs.h ] && echo "chan_nbs.so" )
  
-@@ -156,6 +158,8 @@
+@@ -156,6 +162,8 @@
  chan_oss.so: chan_oss.o
  	$(CC) $(SOLINK) -o $@ chan_oss.o -lossaudio
  endif
@@ -60,7 +65,7 @@
  
  chan_iax2.so: chan_iax2.o iax2-parser.o iax2-provision.o
  ifeq ($(USE_MYSQL_FRIENDS),1)
-@@ -175,7 +179,7 @@
+@@ -175,7 +183,7 @@
  	$(CC) -c $(CFLAGS) -o chan_zap.o chan_zap.c
  
  chan_zap.so: chan_zap.o
@@ -69,7 +74,7 @@
  
  chan_sip.so: chan_sip.o
  ifeq ($(USE_SIP_MYSQL_FRIENDS),1)
-@@ -199,15 +203,17 @@
+@@ -199,15 +207,17 @@
  chan_vpb.so: chan_vpb.o
  	 $(CXX) $(SOLINK) -o $@ $< -lvpb -lpthread -lm -ldl
  

@@ -256,7 +256,7 @@ lib/asterisk/modules/app_zapateller.so
 %%WITH_ZAPTEL%%lib/asterisk/modules/app_zapscan.so
 lib/asterisk/modules/cdr_csv.so
 lib/asterisk/modules/cdr_manager.so
-lib/asterisk/modules/cdr_odbc.so
+%%WITH_ODBC%%lib/asterisk/modules/cdr_odbc.so
 lib/asterisk/modules/chan_agent.so
 %%WITH_H323%%lib/asterisk/modules/chan_h323.so
 lib/asterisk/modules/chan_iax2.so

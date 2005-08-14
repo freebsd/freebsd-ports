@@ -1,5 +1,5 @@
---- res/Makefile.orig	Tue Jul 12 01:28:04 2005
-+++ res/Makefile	Tue Jul 12 01:58:11 2005
+--- res/Makefile.orig	Tue Aug  9 17:18:55 2005
++++ res/Makefile	Tue Aug  9 17:33:36 2005
 @@ -13,15 +13,18 @@
  
  MODS=res_adsi.so res_features.so res_crypto.so res_musiconhold.so res_indications.so res_monitor.so \
@@ -16,7 +16,7 @@
  CFLAGS+=$(shell [ -f /usr/include/linux/zaptel.h ] && echo " -DZAPATA_MOH")
 -CFLAGS+=$(shell [ -f /usr/local/include/zaptel.h ] && echo " -DZAPATA_MOH")
 +CFLAGS+=-I$(LOCALBASE)/include
-+ifndef WITHOUT_ZAPTEL
++ifdef WITH_ZAPTEL
 +CFLAGS+=-DZAPATA_MOH
 +endif
  #
