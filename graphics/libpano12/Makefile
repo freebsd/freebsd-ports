@@ -10,6 +10,7 @@
 
 PORTNAME=	libpano12
 PORTVERSION=	2.7.0.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openit.com.br/distfiles/
 
@@ -22,8 +23,10 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
+JAVA_OS=	native
 
 MAKEFILE=	makefile.freebsd
+MAKE_ENV=	JAVA_HOME=${JAVA_HOME}
 
 INSTALLS_SHLIB=	yes
 
