@@ -32,6 +32,51 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e86fbb5f-0d04-11da-bc08-0001020eed82">
+    <topic>awstats -- arbitrary code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>awstats</name>
+	<range><lt>6.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An iDEFENSE Security Advisory reports:</p>
+	<blockquote cite="http://www.idefense.com/application/poi/display?id=290&amp;type=vulnerabilities">
+	  <p>Remote exploitation of an input validation vulnerability
+	    in AWStats allows remote attackers to execute arbitrary
+	    commands.</p>
+
+	  <p>The problem specifically exists because of insufficient
+	    input filtering before passing user-supplied data to an
+	    <code>eval()</code> function. As part of the statistics
+	    reporting function, AWStats displays information about the
+	    most common referrer values that caused users to visit the
+	    website. The referrer data is used without proper
+	    sanitation in an <code>eval()</code> statement, resulting
+	    in the execution of arbitrary perl code.</p>
+
+	  <p>Successful exploitation results in the execution of
+	    arbitrary commands with permissions of the web
+	    service. Exploitation will not occur until the stats page
+	    has been regenerated with the tainted referrer values from
+	    the http access log. Note that AWStats is only vulnerable
+	    in situations where at least one URLPlugin is enabled.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1527</cvename>
+      <mlist msgid="20050811155502.61E3C7A00B4@mail.idefense.com">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=112377934108902</mlist>
+      <url>http://www.idefense.com/application/poi/display?id=290&amp;type=vulnerabilities</url>
+    </references>
+    <dates>
+      <discovery>2005-08-09</discovery>
+      <entry>2005-08-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3b4a6982-0b24-11da-bc08-0001020eed82">
     <topic>libgadu -- multiple vulnerabilities</topic>
     <affects>
