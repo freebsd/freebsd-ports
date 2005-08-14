@@ -1,0 +1,11 @@
+--- configure.orig	Thu Aug 11 20:04:18 2005
++++ configure	Thu Aug 11 20:04:23 2005
+@@ -23388,7 +23388,7 @@
+     failed=0;
+     passed=0;
+     PANO_OLD_LDFLAGS=$LDFLAGS
+-    PANO_OLD_CPPFLAGS=$LDFLAGS
++    PANO_OLD_CPPFLAGS=$CPPFLAGS
+     if test "x$HCPU" = 'xamd64' ; then
+       LDFLAGS="$LDFLAGS -L$PANO_HOME/lib64"
+     else
