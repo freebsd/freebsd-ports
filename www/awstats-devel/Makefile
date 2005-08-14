@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	webmaster@lightningfire.net
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics
 
+FORBIDDEN=	http://vuxml.FreeBSD.org/e86fbb5f-0d04-11da-bc08-0001020eed82.html
+EXPIRATION_DATE=2005-09-14
+
 RUN_DEPENDS=	${SITE_PERL}/Net/XWhois.pm:${PORTSDIR}/net/p5-Net-XWhois
 
 NO_BUILD=	yes
