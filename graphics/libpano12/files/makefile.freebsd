@@ -8,7 +8,7 @@ objects=	filter.o parser.o  queryfeature.o correct.o perspect.o \
 
 ansobj =  sys_ansi.o ppm.o
 
-CFLAGS1 = -O -L${PREFIX}/lib/ -I${PREFIX}/jdk1.4.2/include/ -I${PREFIX}/jdk1.4.2/include/freebsd/ -I${PREFIX}/include/ -fPIC -D__Ansi__=1
+CFLAGS1 = -O -L${PREFIX}/lib/ -I${JAVA_HOME}/include/ -I${JAVA_HOME}/include/freebsd/ -I${PREFIX}/include/ -fPIC -D__Ansi__=1
 CFLAGS2 = -O -I./ -L./ 
 CFLAGS = $(CFLAGS1)
 
