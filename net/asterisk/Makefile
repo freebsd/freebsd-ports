@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -52,34 +52,47 @@ WITHOUT_ZAPTEL=	1
 .endif
 
 .if defined(WITHOUT_H323)
-MAKE_ENV+=	WITHOUT_H323=1
 PLIST_SUB+=	WITH_H323="@comment "
 .else
 BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/pwlib:build \
 		${NONEXISTENT}:${PORTSDIR}/net/openh323:build
 PLIST_SUB+=	WITH_H323=""
+MAKE_ENV+=	WITH_H323=1
 .endif
 
 .if defined(WITHOUT_ZAPTEL)
-MAKE_ENV+=	WITHOUT_ZAPTEL=1
 PLIST_SUB+=	WITH_ZAPTEL="@comment "
 .else
 LIB_DEPENDS+=	pri.1:${PORTSDIR}/misc/libpri
 BUILD_DEPENDS+=	${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
 RUN_DEPENDS+=	${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
 PLIST_SUB+=	WITH_ZAPTEL=""
+MAKE_ENV+=	WITH_ZAPTEL=1
+.endif
+
+#
+# WITH_FREETDS, WITH_PGSQL and WITH_SQLITE can also be added to MAKE_ENV
+# similarly
+.if defined(WITHOUT_ODBC)
+PLIST_SUB+=	WITH_ODBC="@comment "
+.else
+LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+PLIST_SUB+=	WITH_ODBC=""
+MAKE_ENV+=	WITH_ODBC=1
 .endif
 
 .if !defined(WITHOUT_MYSQL)
 USE_MYSQL=	yes
 .endif
 
-.if !defined(WITHOUT_FAX) && ${OSVERSION} >= 500000
+#
+# FAX apps can't be compiled on RELENG_4 at the moment
+.if defined(WITHOUT_FAX) || ${OSVERSION} < 500000
+PLIST_SUB+=	WITH_FAX="@comment "
+.else
 MAKE_ENV+=	WITH_FAX=1
 LIB_DEPENDS+=	spandsp.0:${PORTSDIR}/comms/spandsp
 PLIST_SUB+=	WITH_FAX=""
-.else
-PLIST_SUB+=	WITH_FAX="@comment "
 .endif
 
 post-patch:
