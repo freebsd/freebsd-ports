@@ -12,6 +12,8 @@ CATEGORIES=	devel www pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PHP implementation of the XML-RPC protocol
 
+FORBIDDEN=	http://vuxml.FreeBSD.org/e65ad1bf-0d8b-11da-90d0-00304823c0d3.html
+
 USE_PHP=	yes
 WANT_PHP_PEAR=	yes
 
