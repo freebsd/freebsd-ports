@@ -6,7 +6,7 @@
 
 PORTNAME=	sip
 PORTVERSION=	4.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/sip/ \
 		http://freebsd.ricin.com/ports/distfiles/
