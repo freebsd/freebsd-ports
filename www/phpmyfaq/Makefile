@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.zip
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	A multilingual, completely database-driven FAQ-system
 
+FORBIDDEN=	http://vuxml.FreeBSD.org/e65ad1bf-0d8b-11da-90d0-00304823c0d3.html
+
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 USE_ZIP=	YES
 
