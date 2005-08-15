@@ -1,0 +1,11 @@
+--- e2fsprogs-1.38/e2fsck/Makefile.in.orig	Wed Jun 29 19:42:20 2005
++++ e2fsprogs-1.38/e2fsck/Makefile.in	Mon Aug 15 13:21:58 2005
+@@ -14,7 +14,7 @@
+ 
+ PROGS=		e2fsck
+ MANPAGES=	e2fsck.8
+-XTRA_CFLAGS=	-DRESOURCE_TRACK
++XTRA_CFLAGS=	# -DRESOURCE_TRACK
+ 
+ LIBS= $(LIBEXT2FS) $(LIBCOM_ERR) $(LIBBLKID) $(LIBUUID) $(LIBINTL)
+ DEPLIBS= $(LIBEXT2FS) $(LIBCOM_ERR) $(LIBBLKID) $(DEPLIBUUID)
