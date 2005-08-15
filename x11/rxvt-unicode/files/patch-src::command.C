@@ -1,6 +1,14 @@
---- src/command.C.orig	Wed Dec 29 20:09:31 2004
-+++ src/command.C	Wed Dec 29 22:07:49 2004
-@@ -2716,7 +2716,9 @@
+--- src/command.C.orig	Tue Jul 12 22:11:42 2005
++++ src/command.C	Mon Aug 15 00:40:13 2005
+@@ -55,6 +55,7 @@
+ #endif
+ 
+ #include <csignal>
++#include <sys/param.h>
+ 
+ /*----------------------------------------------------------------------*/
+ 
+@@ -2716,7 +2717,9 @@
        if (len == (size_t)-2)
          {
            // the mbstate stores incomplete sequences. didn't know this :/
