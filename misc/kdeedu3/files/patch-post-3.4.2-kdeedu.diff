@@ -1,0 +1,63 @@
+Index: kvoctrain/kvoctrain/langen2kvtml
+===================================================================
+--- kvoctrain/kvoctrain/langen2kvtml	(revision 443975)
++++ kvoctrain/kvoctrain/langen2kvtml	(working copy)
+@@ -89,6 +89,9 @@
+ 
+ require "flush.pl";
+ use Getopt::Long;
++use File::Temp qw(tempdir);
++my $tmpdir = tempdir(TEMPDIR => 1, CLEANUP => 1 );
++
+ $/="\r\n";	# we work with dos files
+ 
+ #
+@@ -165,10 +168,6 @@
+     $country="GB";
+ }
+ 
+-# All logging information goes into this file
+-$logfile = "/tmp/langen2kvtml.log";
+-open(LOG, ">$logfile") || die "Cannot create $logfile: $!";
+-
+ &printflush(STDOUT,"Waiting for generating files ...\n");
+ $tmp1=$#ARGV+1;
+ &printflush(STDOUT,"... $tmp1 files given via command line ...\n");
+@@ -178,13 +177,11 @@
+     if ($proxy) {
+         &printflush(STDOUT,"... using proxy service $proxy ...\n");
+     }
+-    `lwp-request $proxy http://www.vokabeln.de/files/Voc-$country.zip >/tmp/Voc-$country.zip`;
+-    # unzip -u update only!
+-    # unzip -o overwrite!
+-    `unzip -u /tmp/Voc-$country.zip >/tmp/unzip.log`;
++    `lwp-request $proxy http://www.vokabeln.de/files/Voc-$country.zip >$tmpdir/Voc-$country.zip`;
+     &printflush(STDOUT,"... updating Voc-$country.zip ...\n");
+     $/="\n";	# we work with a unix file
+-    open(ZIP,"</tmp/unzip.log");
++    # unzip -u update only!
++    open(ZIP,"unzip -u $tmpdir/Voc-$country.zip |");
+     while(<ZIP>) {
+ 	chomp;
+ 	if( /voc/ ) {
+@@ -194,20 +191,16 @@
+ 	}
+     }
+     close(ZIP);
+-    unlink("/tmp/unzip.log");
+     $/="\r\n";	# we work with a dos file
+ }
+ 
+ for my $file (@res, @ARGV) {
+     $vocfile = $file;
+-    &printflush(LOG,"... generating \"$kvtfile\"...\n");
+     $lang		= "";		# initially unset
+     $filestage	= 0;		# file stage
+     &process_vocfile($vocfile);
+ }
+ print STDERR "...\tAll Complete.\n";
+-&printflush(LOG,"\nAll Complete.\n");
+-close(LOG);
+ 
+ exit;
+ 
