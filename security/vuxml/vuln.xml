@@ -32,6 +32,42 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e65ad1bf-0d8b-11da-90d0-00304823c0d3">
+    <topic>pear-XML_RPC -- remote PHP code injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>pear-XML_RPC</name>
+	<range><lt>1.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Hardened-PHP Project Security Advisory reports:</p>
+	<blockquote cite="http://www.hardened-php.net/advisory_142005.66.html">
+	  <p>When the library parses XMLRPC requests/responses, it constructs
+	    a string of PHP code, that is later evaluated.  This means any
+	    failure to properly handle the construction of this string can
+	    result in arbitrary execution of PHP code.</p>
+	  <p>This new injection vulnerability is cause by not properly
+	    handling the situation, when certain XML tags are nested
+	    in the parsed document, that were never meant to be nested
+	    at all. This can be easily exploited in a way, that
+	    user-input is placed outside of string delimiters within
+	    the evaluation string, which obviously results in
+	    arbitrary code execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2498</cvename>
+      <url>http://www.hardened-php.net/advisory_142005.66.html</url>
+    </references>
+    <dates>
+      <discovery>2005-08-15</discovery>
+      <entry>2005-08-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e86fbb5f-0d04-11da-bc08-0001020eed82">
     <topic>awstats -- arbitrary code execution vulnerability</topic>
     <affects>
