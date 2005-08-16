@@ -89,6 +89,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>drupal</name>
 	<range><lt>4.6.3</lt></range>
       </package>
+      <package>
+	<name>eGroupWare</name>
+	<range><lt>1.0.0.009</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -114,6 +118,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <cvename>CAN-2005-2498</cvename>
       <url>http://drupal.org/files/sa-2005-004/advisory.txt</url>
+      <url>http://sourceforge.net/project/shownotes.php?release_id=349626</url>
       <url>http://www.hardened-php.net/advisory_142005.66.html</url>
       <url>http://www.hardened-php.net/advisory_152005.67.html</url>
       <url>http://www.phpmyfaq.de/advisory_2005-08-15.php</url>
@@ -121,6 +126,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-08-15</discovery>
       <entry>2005-08-15</entry>
+      <modified>2005-08-16</modified>
     </dates>
   </vuln>
 
