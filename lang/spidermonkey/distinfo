@@ -4,5 +4,7 @@ MD5 (js-tests-20021118.tar.gz) = df89464084e583a075a782ad66da5370
 SIZE (js-tests-20021118.tar.gz) = 803198
 MD5 (spidermonkey-patch-tests-ecma.bz2) = 73ec1e37821deff69e68eac2192a2cd2
 SIZE (spidermonkey-patch-tests-ecma.bz2) = 5702
+MD5 (spidermonkey-patch-tests-timezone.bz2) = 9b392c970d878f3defcd7e3e7ddeb0b5
+SIZE (spidermonkey-patch-tests-timezone.bz2) = 7658
 MD5 (spidermonkey-patch-tests-js.bz2) = 20770d4e82fff61c1bbb5ff91d2551ec
 SIZE (spidermonkey-patch-tests-js.bz2) = 3685
