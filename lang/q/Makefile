@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	q
-PORTVERSION=	4.6
-PORTREVISION=	3
+PORTVERSION=	6.2
+PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	q-lang
@@ -23,16 +23,13 @@ LIB_DEPENDS=	Magick.8:${PORTSDIR}/graphics/ImageMagick \
 		ggi.2:${PORTSDIR}/graphics/libggi \
 		gmp.6:${PORTSDIR}/math/libgmp4
 
-BROKEN=		Does not compile
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
 USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_GNOME=	gnometarget
 CFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/dx/lib_freebsd" \
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/dx/lib_freebsd ${PTHREAD_LIBS}" \
+		CPPFLAGS="${PTHREAD_CFLAGS}" \
 		MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--with-dxl-includes=-I${LOCALBASE}/dx/include
 INSTALLS_SHLIB=	yes

@@ -1,14 +1,21 @@
 bin/q
 bin/qc
 bin/qcc
+bin/qcwrap
 bin/qld
 include/libq.h
+include/qint.h
 lib/libq.a
 lib/libq.so
-lib/libq.so.4
+lib/libq.so.6
+lib/libqint.a
+lib/libqint.so
+lib/libqint.so.2
 lib/libqmain.a
 lib/q/clib.a
 lib/q/clib.so
+lib/q/curl.a
+lib/q/curl.so
 lib/q/dxl.a
 lib/q/dxl.so
 lib/q/gdbm.a
@@ -22,62 +29,20 @@ lib/q/octave.a
 lib/q/octave.so
 lib/q/odbc.a
 lib/q/odbc.so
+lib/q/swig.a
+lib/q/swig.so
 lib/q/tk.a
 lib/q/tk.so
-%%DATADIR%%/etc/AUTHORS
-%%DATADIR%%/etc/COPYING
-%%DATADIR%%/etc/ChangeLog
-%%DATADIR%%/etc/NEWS
-%%DATADIR%%/etc/README
-%%DATADIR%%/etc/README-Clib
-%%DATADIR%%/etc/README-DXL
-%%DATADIR%%/etc/README-GGI
-%%DATADIR%%/etc/README-Gdbm
-%%DATADIR%%/etc/README-Magick
-%%DATADIR%%/etc/README-ODBC
-%%DATADIR%%/etc/README-Octave
-%%DATADIR%%/etc/README-Tk
-%%DATADIR%%/etc/q-mode.el
-%%DATADIR%%/etc/q.xml
-%%DATADIR%%/etc/qexitrc
-%%DATADIR%%/etc/qinitrc
-%%DATADIR%%/lib/array.q
-%%DATADIR%%/lib/assert.q
-%%DATADIR%%/lib/bag.q
-%%DATADIR%%/lib/clib.q
-%%DATADIR%%/lib/comp.q
-%%DATADIR%%/lib/complex.q
-%%DATADIR%%/lib/cond.q
-%%DATADIR%%/lib/dict.q
-%%DATADIR%%/lib/dxl.q
-%%DATADIR%%/lib/error.q
-%%DATADIR%%/lib/gdbm.q
-%%DATADIR%%/lib/ggi.q
-%%DATADIR%%/lib/graphics.q
-%%DATADIR%%/lib/hdict.q
-%%DATADIR%%/lib/heap.q
-%%DATADIR%%/lib/lambda.q
-%%DATADIR%%/lib/list.q
-%%DATADIR%%/lib/magick.q
-%%DATADIR%%/lib/math.q
-%%DATADIR%%/lib/octave.q
-%%DATADIR%%/lib/odbc.q
-%%DATADIR%%/lib/prelude.q
-%%DATADIR%%/lib/set.q
-%%DATADIR%%/lib/sort.q
-%%DATADIR%%/lib/stddecl.q
-%%DATADIR%%/lib/stdlib.q
-%%DATADIR%%/lib/stdtypes.q
-%%DATADIR%%/lib/stream.q
-%%DATADIR%%/lib/string.q
-%%DATADIR%%/lib/tk.q
-%%DATADIR%%/lib/typec.q
+lib/q/xml.a
+lib/q/xml.so
 %%EXAMPLESDIR%%/avltree.q
 %%EXAMPLESDIR%%/bintree.q
+%%EXAMPLESDIR%%/cgi.q
 %%EXAMPLESDIR%%/creverse.c
 %%EXAMPLESDIR%%/creverse.q
 %%EXAMPLESDIR%%/ctype.c
 %%EXAMPLESDIR%%/ctype.q
+%%EXAMPLESDIR%%/curl/curltest.q
 %%EXAMPLESDIR%%/daemon.q
 %%EXAMPLESDIR%%/dfs.q
 %%EXAMPLESDIR%%/dgram.q
@@ -124,15 +89,20 @@ lib/q/tk.so
 %%EXAMPLESDIR%%/primesum.q
 %%EXAMPLESDIR%%/print.q
 %%EXAMPLESDIR%%/pty.q
+%%EXAMPLESDIR%%/qint.c
 %%EXAMPLESDIR%%/queens.q
 %%EXAMPLESDIR%%/queens2.q
 %%EXAMPLESDIR%%/queens3.q
 %%EXAMPLESDIR%%/queue.q
 %%EXAMPLESDIR%%/regexamp.q
-%%EXAMPLESDIR%%/scan.q
 %%EXAMPLESDIR%%/searchtree.q
 %%EXAMPLESDIR%%/select.q
 %%EXAMPLESDIR%%/signal.q
+%%EXAMPLESDIR%%/swig/example.c
+%%EXAMPLESDIR%%/swig/example.i
+%%EXAMPLESDIR%%/swig/qt_examp.cxx
+%%EXAMPLESDIR%%/swig/qt_examp.h
+%%EXAMPLESDIR%%/swig/qt_examp.i
 %%EXAMPLESDIR%%/sys.q
 %%EXAMPLESDIR%%/testfont.q
 %%EXAMPLESDIR%%/time.q
@@ -140,14 +110,77 @@ lib/q/tk.so
 %%EXAMPLESDIR%%/tk/tk_examp.q
 %%EXAMPLESDIR%%/tk/tk_test.q
 %%EXAMPLESDIR%%/trees.q
-@dirrm lib/q
+%%EXAMPLESDIR%%/xml/catalog.q
+%%EXAMPLESDIR%%/xml/catalog.xsl
+%%EXAMPLESDIR%%/xml/recipes.q
+%%EXAMPLESDIR%%/xml/recipes.xml
+%%EXAMPLESDIR%%/xml/recipes.xsl
+%%EXAMPLESDIR%%/xml/sample.xml
+%%EXAMPLESDIR%%/xml/xml_examp.q
+%%DATADIR%%/etc/AUTHORS
+%%DATADIR%%/etc/COPYING
+%%DATADIR%%/etc/ChangeLog
+%%DATADIR%%/etc/NEWS
+%%DATADIR%%/etc/README
+%%DATADIR%%/etc/README-Clib
+%%DATADIR%%/etc/README-Curl
+%%DATADIR%%/etc/README-DXL
+%%DATADIR%%/etc/README-GGI
+%%DATADIR%%/etc/README-Gdbm
+%%DATADIR%%/etc/README-Magick
+%%DATADIR%%/etc/README-ODBC
+%%DATADIR%%/etc/README-Octave
+%%DATADIR%%/etc/README-SWIG
+%%DATADIR%%/etc/README-Tk
+%%DATADIR%%/etc/README-XML
+%%DATADIR%%/etc/q-mode.el
+%%DATADIR%%/etc/q.xml
+%%DATADIR%%/etc/qexitrc
+%%DATADIR%%/etc/qinitrc
+%%DATADIR%%/lib/array.q
+%%DATADIR%%/lib/assert.q
+%%DATADIR%%/lib/bag.q
+%%DATADIR%%/lib/clib.q
+%%DATADIR%%/lib/complex.q
+%%DATADIR%%/lib/cond.q
+%%DATADIR%%/lib/curl.q
+%%DATADIR%%/lib/dict.q
+%%DATADIR%%/lib/dxl.q
+%%DATADIR%%/lib/error.q
+%%DATADIR%%/lib/gdbm.q
+%%DATADIR%%/lib/ggi.q
+%%DATADIR%%/lib/graphics.q
+%%DATADIR%%/lib/hdict.q
+%%DATADIR%%/lib/heap.q
+%%DATADIR%%/lib/lambda.q
+%%DATADIR%%/lib/list.q
+%%DATADIR%%/lib/magick.q
+%%DATADIR%%/lib/math.q
+%%DATADIR%%/lib/octave.q
+%%DATADIR%%/lib/odbc.q
+%%DATADIR%%/lib/prelude.q
+%%DATADIR%%/lib/set.q
+%%DATADIR%%/lib/sort.q
+%%DATADIR%%/lib/stddecl.q
+%%DATADIR%%/lib/stdlib.q
+%%DATADIR%%/lib/stdtypes.q
+%%DATADIR%%/lib/stream.q
+%%DATADIR%%/lib/string.q
+%%DATADIR%%/lib/swig.q
+%%DATADIR%%/lib/tk.q
+%%DATADIR%%/lib/typec.q
+%%DATADIR%%/lib/xml.q
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/etc
 @dirrm %%DATADIR%%
+@dirrm %%EXAMPLESDIR%%/xml
 @dirrm %%EXAMPLESDIR%%/tk
+@dirrm %%EXAMPLESDIR%%/swig
 @dirrm %%EXAMPLESDIR%%/odbc
 @dirrm %%EXAMPLESDIR%%/magick
-@dirrm %%EXAMPLESDIR%%/gdbm
 @dirrm %%EXAMPLESDIR%%/ggi
+@dirrm %%EXAMPLESDIR%%/gdbm
 @dirrm %%EXAMPLESDIR%%/dxl
+@dirrm %%EXAMPLESDIR%%/curl
 @dirrm %%EXAMPLESDIR%%
+@dirrm lib/q
