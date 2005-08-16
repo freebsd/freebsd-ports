@@ -7,6 +7,7 @@
 
 PORTNAME=	gourmet
 PORTVERSION=	0.8.5.7
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	grecipe-manager
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	grecipe-manager
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	GNOME recipe manager
 
-RUN_DEPENDS=	${LOCALBASE}/lib/libmk4py.so:${PORTSDIR}/databases/metakit \
+RUN_DEPENDS=	${LOCALBASE}/lib/libmk4.so:${PORTSDIR}/databases/metakit \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
 USE_X_PREFIX=	yes
