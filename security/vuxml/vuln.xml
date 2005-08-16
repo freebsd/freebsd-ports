@@ -325,6 +325,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </package>
       <package>
 	<name>gpdf</name>
+	<range><lt>2.10.0_2</lt></range>
+      </package>
+      <package>
 	<name>cups-base</name>
 	<range><gt>0</gt></range>
       </package>
@@ -350,6 +353,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-08-09</discovery>
       <entry>2005-08-12</entry>
+      <modified>2005-08-16</modified>
     </dates>
   </vuln>
 
