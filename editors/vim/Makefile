@@ -173,6 +173,9 @@ post-install:
 	${ECHO_CMD} "x!"				>> ${WRKDIR}/ex.script
 	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-share-vim
 	cd ${WRKDIR} ; ex < ex.script
+	@${ECHO_CMD}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 
 cklatest:
 	@-ncftpls \
