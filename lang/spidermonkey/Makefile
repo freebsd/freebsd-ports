@@ -20,7 +20,9 @@ CONFLICTS=	njs-*
 
 .if !defined(WITHOUT_TEST)
 USE_PERL5_BUILD=test harness
-PATCHFILES=	spidermonkey-patch-tests-ecma.bz2 spidermonkey-patch-tests-js.bz2
+PATCHFILES=	spidermonkey-patch-tests-ecma.bz2	\
+		spidermonkey-patch-tests-timezone.bz2	\
+		spidermonkey-patch-tests-js.bz2
 PATCH_SITES=	http://virtual-estates.net/~mi/port-stuff/
 BUILD_DEPENDS+=	${SITE_PERL}/Getopt/Mixed.pm:${PORTSDIR}/devel/p5-Getopt-Mixed
 DISTFILES+=	js-tests-20021118${EXTRACT_SUFX}
