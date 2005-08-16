@@ -32,6 +32,48 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f74dc01b-0e83-11da-bc08-0001020eed82">
+    <topic>acroread -- plug-in buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>acroread</name>
+	<range><lt>7.0.1</lt></range>
+	<range><gt>5.*,1</gt><lt>7.0.1,1</lt></range>
+      </package>
+      <package>
+	<name>acroread4</name>
+	<name>acroread5</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>acroread7</name>
+	<range><lt>7.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Adobe Security Advisory reports:</p>
+	<blockquote cite="http://www.adobe.com/support/techdocs/321644.html">
+	  <p>The identified vulnerability is a buffer overflow within
+	    a core application plug-in, which is part of Adobe Acrobat
+	    and Adobe Reader. If a malicious file were opened it could
+	    trigger a buffer overflow as the file is being loaded into
+	    Adobe Acrobat and Adobe Reader. A buffer overflow can
+	    cause the application to crash and increase the risk of
+	    malicious code execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2005-2470</cvename>
+      <url>http://www.adobe.com/support/techdocs/321644.html</url>
+    </references>
+    <dates>
+      <discovery>2005-08-16</discovery>
+      <entry>2005-08-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e65ad1bf-0d8b-11da-90d0-00304823c0d3">
     <topic>pear-XML_RPC -- remote PHP code injection vulnerability</topic>
     <affects>
