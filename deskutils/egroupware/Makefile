@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-2
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	A web based GroupWare system
 
+FORBIDDEN=	http://vuxml.FreeBSD.org/e65ad1bf-0d8b-11da-90d0-00304823c0d3.html
+
 USE_BZIP2=	yes
 USE_PHP=	pcre session xml
 NO_BUILD=	yes
