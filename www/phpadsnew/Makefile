@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	phpadsnew
 MAINTAINER=	meno.abels@adviser.com
 COMMENT=	The phpAdsNew is an open-source ad server
 
+FORBIDDEN=	http://vuxml.FreeBSD.org/e65ad1bf-0d8b-11da-90d0-00304823c0d3.html
+
 USE_GZIP=	yes
 NO_BUILD=	yes
 USE_PHP=	mysql pcre zlib
