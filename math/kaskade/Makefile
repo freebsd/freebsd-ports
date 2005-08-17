@@ -16,15 +16,10 @@ COMMENT=	Adaptive linear scalar elliptic and parabolic problem solver
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 DIST_SUBDIR=	kaskade
 WRKSRC=		${WRKDIR}/3.2.1
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 post-patch:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
@@ -34,10 +29,11 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/data/*.cmd ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/data/*.dat ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/data/*.ex ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/data/*.geo ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/data/kaskade.init ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/data/*.mat ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

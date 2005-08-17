@@ -55,6 +55,7 @@ bin/k6
 %%PORTDOCS%%%%EXAMPLESDIR%%/holes-3d.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/holes-3d.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/holes-3d.mat
+%%PORTDOCS%%%%EXAMPLESDIR%%/integ.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/jump.cmd
 %%PORTDOCS%%%%EXAMPLESDIR%%/jump.ex
 %%PORTDOCS%%%%EXAMPLESDIR%%/jump.geo

@@ -1,0 +1,13 @@
+--- ./sources/general.h.in.orig	Tue Dec 14 15:27:41 1999
++++ ./sources/general.h.in	Tue Aug 16 21:27:57 2005
+@@ -3,8 +3,8 @@
+ #ifndef GENERAL_H
+ #define GENERAL_H
+ 
+-#include <iostream.h>
+-#include <stddef.h>  
++#include <iostream>
++#include <stddef.h>
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdlib.h>
