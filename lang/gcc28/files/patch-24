@@ -1,0 +1,10 @@
+--- protoize.c.orig	Fri Feb 27 01:39:03 1998
++++ protoize.c	Wed Aug 17 21:22:15 2005
+@@ -57,6 +57,7 @@
+ #define _POSIX_SOURCE
+ #endif
+ 
++#include <sys/cdefs.h>
+ #include <varargs.h>
+ /* On some systems stdio.h includes stdarg.h;
+    we must bring in varargs.h first.  */
