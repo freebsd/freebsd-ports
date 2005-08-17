@@ -124,6 +124,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>eGroupWare</name>
 	<range><lt>1.0.0.009</lt></range>
       </package>
+      <package>
+	<name>phpAdsNew</name>
+	<range><lt>2.0.5</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -149,6 +153,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <cvename>CAN-2005-2498</cvename>
       <url>http://drupal.org/files/sa-2005-004/advisory.txt</url>
+      <url>http://phpadsnew.com/two/nucleus/index.php?itemid=45</url>
       <url>http://sourceforge.net/project/shownotes.php?release_id=349626</url>
       <url>http://www.hardened-php.net/advisory_142005.66.html</url>
       <url>http://www.hardened-php.net/advisory_152005.67.html</url>
@@ -157,7 +162,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-08-15</discovery>
       <entry>2005-08-15</entry>
-      <modified>2005-08-16</modified>
+      <modified>2005-08-17</modified>
     </dates>
   </vuln>
 
