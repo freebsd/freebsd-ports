@@ -37,7 +37,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>tor</name>
-	<range><gt>0</gt></range>
+	<range><lt>0.1.0.14</lt></range>
       </package>
     </affects>
     <description>
@@ -45,12 +45,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<p>A tor advisory reports</p>
 	<blockquote cite="http://archives.seul.org/or/announce/Aug-2005/msg00002.html">
 	  <p>Tor clients can completely loose anonymity, confidentiality,
-	  and data integrity if the first Tor server in their path is
-	  malicious.  Specifically, if the Tor client chooses a
-	  malicious Tor server for her first hop in the circuit, that
-	  server can learn all the keys she negotiates for the rest of
-	  the circuit (or just spoof the whole circuit), and then read
-	  and/or modify all her traffic over that circuit.</p>
+	    and data integrity if the first Tor server in their path is
+	    malicious.  Specifically, if the Tor client chooses a
+	    malicious Tor server for her first hop in the circuit, that
+	    server can learn all the keys she negotiates for the rest of
+	    the circuit (or just spoof the whole circuit), and then read
+	    and/or modify all her traffic over that circuit.</p>
 	</blockquote>
       </body>
     </description>
