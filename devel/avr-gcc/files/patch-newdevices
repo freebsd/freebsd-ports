@@ -1,6 +1,6 @@
-diff -ur /tmp/gcc-orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
---- /tmp/gcc-orig/gcc/config/avr/avr.c	Sun Mar 20 22:14:28 2005
-+++ ./gcc/config/avr/avr.c	Sat Jul 30 23:01:43 2005
+diff -ur ../gcc-3.4.4-orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
+--- ../gcc-3.4.4-orig/gcc/config/avr/avr.c	2005-03-20 22:14:28.000000000 +0100
++++ ./gcc/config/avr/avr.c	2005-08-16 11:57:05.000000000 +0200
 @@ -175,6 +175,12 @@
    { "at90c8534", 2, "__AVR_AT90C8534__" },
    { "at90s8535", 2, "__AVR_AT90S8535__" },
@@ -51,9 +51,9 @@ diff -ur /tmp/gcc-orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
    { "at94k",     5, "__AVR_AT94K__" },
      /* Assembler only.  */
    { "avr1",      1, NULL },
-diff -ur /tmp/gcc-orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
---- /tmp/gcc-orig/gcc/config/avr/avr.h	Sat Jul 30 15:01:51 2005
-+++ ./gcc/config/avr/avr.h	Sat Jul 30 23:03:48 2005
+diff -ur ../gcc-3.4.4-orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
+--- ../gcc-3.4.4-orig/gcc/config/avr/avr.h	2004-03-09 03:59:55.000000000 +0100
++++ ./gcc/config/avr/avr.h	2005-08-16 11:58:10.000000000 +0200
 @@ -2351,12 +2351,12 @@
     Do not define this macro if it does not need to do anything.  */
  
@@ -68,7 +68,7 @@ diff -ur /tmp/gcc-orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
 -%{mmcu=atmega64|mmcu=atmega128|mmcu=atmega162|mmcu=atmega169: -Tdata 0x800100} "
 +%{mmcu=atmega8*|mmcu=atmega48|mmcu=at90pwm*:-m avr4}\
 +%{mmcu=atmega16*|mmcu=atmega32*|mmcu=atmega64*|mmcu=atmega128|mmcu=at90can128|mmcu=at94k:-m avr5}\
-+%{mmcu=atmega324|mmcu=atmega325|mmcu=atmega3250|mmcu=atmega329|mmcu=atmega3290|mmcu=atmega48|mmcu=atmega88|mmcu=atmega64|mmcu=atmega644|mmcu=atmega645|mmcu=atmega6450|mmcu=atmega649|mmcu=atmega6490|mmcu=atmega128|mmcu=at90can128|mmcu=atmega162|mmcu=atmega164|mmcu=atmega168|mmcu=atmega169: -Tdata 0x800100} "
++%{mmcu=atmega324|mmcu=atmega325|mmcu=atmega3250|mmcu=atmega329|mmcu=atmega3290|mmcu=atmega48|mmcu=atmega88|mmcu=atmega64|mmcu=atmega644|mmcu=atmega645|mmcu=atmega6450|mmcu=atmega649|mmcu=atmega6490|mmcu=atmega128|mmcu=at90can128|mmcu=atmega162|mmcu=atmega164|mmcu=atmega168|mmcu=atmega169|mmcu=at90pwm*: -Tdata 0x800100} "
  
  /* A C string constant that tells the GCC driver program options to
     pass to the linker.  It can also specify how to translate options
@@ -136,9 +136,9 @@ diff -ur /tmp/gcc-orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
  %{mmcu=at94k:crtat94k.o%s}"
  
  #define EXTRA_SPECS {"crt_binutils", CRT_BINUTILS_SPECS},
-diff -ur /tmp/gcc-orig/gcc/config/avr/t-avr ./gcc/config/avr/t-avr
---- /tmp/gcc-orig/gcc/config/avr/t-avr	Mon Apr 25 06:17:34 2005
-+++ ./gcc/config/avr/t-avr	Sat Jul 30 23:06:40 2005
+diff -ur ../gcc-3.4.4-orig/gcc/config/avr/t-avr ./gcc/config/avr/t-avr
+--- ../gcc-3.4.4-orig/gcc/config/avr/t-avr	2005-04-25 06:17:34.000000000 +0200
++++ ./gcc/config/avr/t-avr	2005-08-16 11:57:05.000000000 +0200
 @@ -46,13 +46,22 @@
  	mmcu?avr3=mmcu?at43usb320 mmcu?avr3=mmcu?at43usb355 \
  	mmcu?avr3=mmcu?at76c711 \
