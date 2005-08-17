@@ -9,7 +9,9 @@ PORTNAME=	nvidia-settings
 PORTVERSION=	1.0
 PORTREVISION=	4
 CATEGORIES=	x11
-MASTER_SITES=	http://download.nvidia.com/XFree86/nvidia-settings/
+MASTER_SITES=	http://download.nvidia.com/XFree86/nvidia-settings/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=     bland
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Display Control Panel for XFree86/X.org NVidia driver
