@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spambnc
-PORTVERSION=	20050808
+PORTVERSION=	20050816
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spambouncer.org/dist/sb/:tarball	\
 		http://www.spambouncer.org/configure/:doc
