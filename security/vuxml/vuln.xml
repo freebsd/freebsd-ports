@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5fde5c30-0f4e-11da-bc01-000e0c2e438a">
+    <topic>tor -- diffie-hellman handshake flaw</topic>
+    <affects>
+      <package>
+	<name>tor</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A tor advisory reports</p>
+	<blockquote cite="http://archives.seul.org/or/announce/Aug-2005/msg00002.html">
+	  <p>Tor clients can completely loose anonymity, confidentiality,
+	  and data integrity if the first Tor server in their path is
+	  malicious.  Specifically, if the Tor client chooses a
+	  malicious Tor server for her first hop in the circuit, that
+	  server can learn all the keys she negotiates for the rest of
+	  the circuit (or just spoof the whole circuit), and then read
+	  and/or modify all her traffic over that circuit.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://archives.seul.org/or/announce/Aug-2005/msg00002.html</url>
+    </references>
+    <dates>
+      <discovery>2005-08-11</discovery>
+      <entry>2005-08-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f74dc01b-0e83-11da-bc08-0001020eed82">
     <topic>acroread -- plug-in buffer overflow vulnerability</topic>
     <affects>
