@@ -15,8 +15,13 @@ MASTER_SITE_SUBDIR=	grecipe-manager
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	GNOME recipe manager
 
-RUN_DEPENDS=	${LOCALBASE}/lib/libmk4.so:${PORTSDIR}/databases/metakit \
+RUN_DEPENDS=	${LOCALBASE}/lib/libmk4py.so:${PORTSDIR}/databases/metakit \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
+
+# This is only for during the ports freeze for 6.0-RELEASE. gourmet
+# requires a python-aware metakit, and that cannot be specified with
+# the current metakit framework.
+IGNORE=		The python-aware metakit requirement cannot be fulfilled with the current ports framework
 
 USE_X_PREFIX=	yes
 USE_PYTHON=	yes
