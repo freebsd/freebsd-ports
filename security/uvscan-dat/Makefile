@@ -7,9 +7,10 @@
 
 PORTNAME=	uvscan_dat
 PORTVERSION=	4547
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://download.nai.com/products/datfiles/4.x/nai/ \
-		http://speedownload.nai.com/products/datfiles/4.x/nai/
+		ftp://ftp.nai.com/pub/datfiles/english/
 DISTNAME=	dat-${PORTVERSION}
 EXTRACT_SUFX=	.tar
 
