@@ -25,7 +25,7 @@ BUILD_DEPENDS+=	${LINUXBASE}/usr/lib/libglib-2.0.so.0:${PORTSDIR}/devel/linux-gl
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 DIST_SUBDIR=	rpm/i386/rh9
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 PLIST=		${PKGDIR}/pkg-plist
 USE_XLIB=	yes
 RESTRICTED=	"binaries under GNU LGPL without accompanying source"
