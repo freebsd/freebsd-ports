@@ -1593,3 +1593,4 @@ lang/gcc31|lang/gcc32|2005-07-31|outdated and unmaintained, and gcc32 is basical
 math/linux-dislin|math/dislin|2005-07-31|switch to native FreeBSD binaries
 games/gnocatan|games/pioneers|2005-07-31|project changed name
 www/akregator|deskutils/kdepim3|2005-08-13|akregator was integrated into the kdepim3 port
+devel/ogre||2005-08-17|port was committed without maintainer
