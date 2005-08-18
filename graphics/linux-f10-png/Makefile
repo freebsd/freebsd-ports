@@ -17,7 +17,7 @@ COMMENT=	RPM of the PNG lib
 
 DIST_SUBDIR=	rpm/i386/fc3
 # no alpha rpm is available
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 RPM_SET=	libpng-${PORTVERSION}-1.i386.rpm
 
 PLIST_FILES=	\
