@@ -6860,7 +6860,6 @@ ogle-gui	ports/multimedia/ogle-gui
 oglext		ports/graphics/oglext
 ogmrip		ports/multimedia/ogmrip
 ogmtools	ports/multimedia/ogmtools
-ogre		ports/devel/ogre
 ohphone		ports/net/ohphone
 ohugs		ports/lang/ohugs
 oidentd		ports/security/oidentd
