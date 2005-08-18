@@ -1,6 +1,6 @@
-%%PORTDOCS%%%%DOCDIR%%/README
-%%PORTDOCS%%%%DOCDIR%%/changelog
-%%PORTDOCS%%%%DOCDIR%%/copyright
-%%PORTDOCS%%@dirrm %%DOCDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/changelog
+%%PORTDOCS%%%%DOCSDIR%%/copyright
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @cwd /usr
 lib/pam_pgsql.so

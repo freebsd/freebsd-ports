@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed May 25 21:02:56 2005
++++ Makefile.in	Thu Aug 18 21:30:07 2005
+@@ -9,7 +9,7 @@
+ LDLIBS=		${LINK} -lpam -lpq @PAM_MISC_LD@ @MHASH_LD@
+ INCLUDE=	@PGSQL_INC@ @MHASH_INC@
+ DEBUG=      @DEBUG@
+-CFLAGS=		-O2 -frename-registers -fstrict-aliasing -fPIC -DPIC -Wall -W -Wdisabled-optimization -Wredundant-decls -Wmissing-format-attribute -Wmissing-noreturn -D_GNU_SOURCE ${INCLUDE} ${DEBUG}
++CFLAGS=		@CFLAGS@ -fPIC -DPIC -D_GNU_SOURCE ${INCLUDE} ${DEBUG}
+ 
+ 
+ all: ${LIBLIB}

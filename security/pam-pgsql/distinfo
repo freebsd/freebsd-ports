@@ -1,4 +1,2 @@
-MD5 (pam-pgsql_0.5.2.orig.tar.gz) = 3ee046cd64ad9c3e02ad486d0398ad13
-SIZE (pam-pgsql_0.5.2.orig.tar.gz) = 39892
-MD5 (pam-pgsql_0.5.2-5.diff.gz) = a9b445a7800b617cf962893c87c171a1
-SIZE (pam-pgsql_0.5.2-5.diff.gz) = 8726
+MD5 (libpam-pgsql-0.6.1.tar.bz2) = 1e700ba0ea0670e398a7102ff6adb590
+SIZE (libpam-pgsql-0.6.1.tar.bz2) = 63277
