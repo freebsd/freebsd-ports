@@ -1,0 +1,18 @@
+### ------------------------------------------------------------------------
+###  The OpenVPN port, since v2.0.1, uses rcNG to start OpenVPN.
+###  Edit /etc/rc.conf to start OpenVPN automatically at system startup.
+###  See %%PREFIX%%/etc/rc.d/openvpn.sh for details.
+### ------------------------------------------------------------------------
+###  To get OpenVPN 2.0 to talk with the 1.5/1.6 versions, you may need to
+###  edit the 1.X configuration file by adding these lines:
+###    tun-mtu 1500
+###    tun-mtu-extra 32
+###    mssfix 1450
+###    key-method 2       <- this key-method line only for TLS setups
+### - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+###  WARNING: THE DEFAULT PORT HAS CHANGED AND IS NOW 1194!
+###  OpenVPN 1.6 and older used 5000 rather than 1194 as their default
+###  port, so add the proper port options to your configuration file!
+### ------------------------------------------------------------------------
+###  For further compatibility, see <http://openvpn.net/relnotes.html>
+### ------------------------------------------------------------------------
