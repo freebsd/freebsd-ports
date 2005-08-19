@@ -23,8 +23,8 @@ LIB_DEPENDS=		gtkada.12:${PORTSDIR}/x11-toolkits/gtkada
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=		yes
-CONFIGURE_ENV=		CC=adagcc CFLAGS="${CFLAGS:S/-O2 -fno-strict-aliasing/-O/}"
-MAKE_ENV=		CC=adagcc CFLAGS="${CFLAGS:S/-O2 -fno-strict-aliasing/-O/}"
+CONFIGURE_ENV=		CC=adagcc CFLAGS=-O
+MAKE_ENV=		CC=adagcc CFLAGS=-O
 USE_X_PREFIX=		yes
 USE_GMAKE=		yes
 USE_REINPLACE=		yes
