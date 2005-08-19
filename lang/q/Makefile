@@ -21,11 +21,12 @@ LIB_DEPENDS=	Magick.8:${PORTSDIR}/graphics/ImageMagick \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
 		gii.0:${PORTSDIR}/devel/libgii \
 		ggi.2:${PORTSDIR}/graphics/libggi \
-		gmp.6:${PORTSDIR}/math/libgmp4
+		gmp.6:${PORTSDIR}/math/libgmp4 \
+		curl:${PORTSDIR}/ftp/curl
 
 USE_REINPLACE=	yes
 USE_BISON=	yes
-USE_GNOME=	gnometarget
+USE_GNOME=	gnometarget libxml2 libxslt
 CFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/dx/lib_freebsd ${PTHREAD_LIBS}" \
