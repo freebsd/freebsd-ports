@@ -1,5 +1,4 @@
 sbin/openvpn
-etc/rc.d/openvpn.sh.sample
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.GPL
@@ -26,6 +25,25 @@ etc/rc.d/openvpn.sh.sample
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/revoke-full
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/sign-req
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/vars
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/README
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/build-ca
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/build-dh
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/build-inter
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/build-key
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/build-key-pass
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/build-key-pkcs12
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/build-key-server
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/build-req
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/build-req-pass
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/clean-all
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/inherit-inter
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/list-crl
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/openssl.cnf
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/pkitool
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/revoke-full
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/scripts
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/sign-req
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/vars
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/README
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/client.conf
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/firewall.sh
@@ -49,5 +67,6 @@ etc/rc.d/openvpn.sh.sample
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/verify-cn
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/sample-scripts
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/sample-config-files
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/easy-rsa/2.0
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/easy-rsa
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

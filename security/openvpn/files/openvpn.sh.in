@@ -1,0 +1,99 @@
+#!/bin/sh
+#
+# openvpn.sh - load tun/tap driver and start OpenVPN daemon
+#
+# (C) Copyright 2005 by Matthias Andree
+# based on suggestions by Matthias Grimm and Dirk Gouders
+#
+# Made in Northrhine-Westphalia, Germany
+#
+# $FreeBSD$
+# 
+# This program is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
+# Foundation; either version 2 of the License, or (at your option) any later
+# version.
+#
+# This program is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+# FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+# details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program; if not, write to the Free Software Foundation, Inc., 51 Franklin
+# Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+# PROVIDE: openvpn
+# REQUIRE: DAEMON
+# BEFORE:
+# KEYWORD: FreeBSD shutdown
+
+# -----------------------------------------------------------------------------
+#
+# Add the following lines to /etc/rc.conf to enable openvpn at boot-up time:
+#
+# openvpn_enable="YES"	# YES or NO
+# openvpn_if="tun" 	# driver(s) to load, set to "tun", "tap" or "tun tap"
+#
+# # optional:
+# openvpn_flags=""	# openvpn command line flags
+# openvpn_config="%%PREFIX%%/etc/openvpn/openvpn.conf" 	# --config file
+# openvpn_dir="%%PREFIX%%/etc/openvpn"			# --cd directory
+#
+# You also need to set openvpn_configfile and openvpn_dir, if the configuration
+# file and directory where keys and certificates reside differ from the above
+# settings.
+#
+# Note that we deliberately refrain from unloading drivers.
+#
+# For further documentation, please see openvpn(8).
+#
+
+. %%RC_SUBR%%
+
+name=openvpn
+rcvar=`set_rcvar`
+
+prefix="%%PREFIX%%"
+
+openvpn_precmd()
+{
+	for i in $openvpn_if ; do
+		if ! sysctl debug.if_${i}_debug >/dev/null 2>&1 ; then
+			if ! kldload if_${i} ; then
+				warn "Could not load $i module."
+				return 1
+			fi
+		fi
+	done
+	return 0
+}
+
+stop_postcmd()
+{
+	rm -f "$pidfile" || warn "Could not remove $pidfile."
+}
+
+# support SIGHUP to reparse configuration file
+extra_commands="reload"
+
+# pidfile
+pidfile="/var/run/${name}.pid"
+
+# command and arguments
+command="%%PREFIX%%/sbin/${name}"
+
+# run this first
+start_precmd="openvpn_precmd"
+# and this last
+stop_postcmd="stop_postcmd"
+
+load_rc_config ${name}
+: ${openvpn_enable="NO"}
+: ${openvpn_flags=""}
+: ${openvpn_if=""}
+: ${openvpn_configfile="${prefix}/etc/openvpn/openvpn.conf"}
+: ${openvpn_dir="${prefix}/etc/openvpn"}
+required_files="${openvpn_configfile}"
+command_args="--cd ${openvpn_dir} --daemon --config ${openvpn_configfile} --writepid ${pidfile}"
+run_rc_command "$1"
