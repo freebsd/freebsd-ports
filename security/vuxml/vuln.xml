@@ -32,6 +32,129 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5ad3e437-e527-4514-b9ed-280b2ca1a8c9">
+    <topic>openvpn -- multiple TCP clients connecting with the same certificate at the same time can crash the server</topic>
+    <affects>
+      <package>
+	<name>openvpn</name>
+	<range><lt>2.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>James Yonan reports:</p>
+	<blockquote cite="http://openvpn.net/changelog.html">
+	  <p>If two or more client machines try to connect to the server
+	    at the same time via TCP, using the same client certificate,
+	    and when --duplicate-cn is not enabled on the server, a race
+	    condition can crash the server with "Assertion failed at
+	    mtcp.c:411"</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2534</cvename>
+      <url>http://openvpn.net/changelog.html</url>
+    </references>
+    <dates>
+      <discovery>2005-08-03</discovery>
+      <entry>2005-08-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1986449a-8b74-40fa-b7cc-0d8def8aad65">
+    <topic>openvpn -- denial of service: malicious authenticated &quot;tap&quot; client can deplete server virtual memory</topic>
+    <affects>
+      <package>
+	<name>openvpn</name>
+	<range><lt>2.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>James Yonan reports:</p>
+	<blockquote cite="http://openvpn.net/changelog.html">
+	  <p>A malicious [authenticated] client in &quot;dev tap&quot;
+	    ethernet bridging mode could theoretically flood the server
+	    with packets appearing to come from hundreds of thousands
+	    of different MAC addresses, causing the OpenVPN process to
+	    deplete system virtual memory as it expands its internal
+	    routing table.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2533</cvename>
+      <url>http://openvpn.net/changelog.html</url>
+    </references>
+    <dates>
+      <discovery>2005-07-27</discovery>
+      <entry>2005-08-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d1c39c8e-05ab-4739-870f-765490fa2052">
+    <topic>openvpn -- denial of service: undecryptable packet from authorized client can disconnect unrelated clients</topic>
+    <affects>
+      <package>
+	<name>openvpn</name>
+	<range><lt>2.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>James Yonan reports:</p>
+	<blockquote cite="http://openvpn.net/changelog.html">
+	  <p>If the client sends a packet which fails to decrypt on the
+	    server, the OpenSSL error queue is not properly flushed,
+	    which can result in another unrelated client instance on the
+	    server seeing the error and responding to it, resulting in
+	    disconnection of the unrelated client.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2532</cvename>
+      <url>http://openvpn.net/changelog.html</url>
+    </references>
+    <dates>
+      <discovery>2005-07-27</discovery>
+      <entry>2005-08-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a51ad838-2077-48b2-a136-e888a7db5f8d">
+    <topic>openvpn -- denial of service: client certificate validation can disconnect unrelated clients</topic>
+    <affects>
+      <package>
+	<name>openvpn</name>
+	<range><lt>2.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>James Yonan reports:</p>
+	<blockquote cite="http://openvpn.net/changelog.html">
+	  <p>DoS attack against server when run with "verb 0" and
+	    without "tls-auth".  If a client connection to the server
+	    fails certificate verification, the OpenSSL error queue is
+	    not properly flushed, which can result in another unrelated
+	    client instance on the server seeing the error and
+	    responding to it, resulting in disconnection of the
+	    unrelated client.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2531</cvename>
+      <url>http://openvpn.net/changelog.html</url>
+    </references>
+    <dates>
+      <discovery>2005-08-03</discovery>
+      <entry>2005-08-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5fde5c30-0f4e-11da-bc01-000e0c2e438a">
     <topic>tor -- diffie-hellman handshake flaw</topic>
     <affects>
