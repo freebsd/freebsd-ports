@@ -1,5 +1,3 @@
-@owner www
-@group www
 %%PHPUA%%/images/templates/default/plugin_hl/bomb.png
 %%PHPUA%%/images/templates/default/plugin_hl/bomb_planted.png
 %%PHPUA%%/images/templates/default/plugin_hl/dispenser.png
@@ -54,6 +52,7 @@
 %%PHPUA%%/templates/default/plugin_hl/x.js
 %%PHPUA%%/templates/javascript/plugin_hl/info.tpl
 %%PHPUA%%/templates/wap/plugin_hl/info.tpl
+@exec chown -R %%PHPUA_USER%%:%%PHPUA_GROUP%% %D/%%PHPUA%%
 @dirrm %%PHPUA%%/templates/wap/plugin_hl
 @dirrm %%PHPUA%%/templates/javascript/plugin_hl
 @dirrm %%PHPUA%%/templates/default/plugin_hl

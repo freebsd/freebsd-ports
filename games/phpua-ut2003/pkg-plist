@@ -1,5 +1,3 @@
-@owner www
-@group www
 %%PHPUA%%/plugins/plugin_ut2003/plugin_ut2003.inc
 %%PHPUA%%/plugins/plugin_ut2003/plugin_ut2003_mode_info.inc
 %%PHPUA%%/plugins/plugin_ut2003/plugin_ut2003_mode_rules.inc
@@ -11,6 +9,7 @@
 %%PHPUA%%/templates/default/plugin_ut2003/x.js
 %%PHPUA%%/templates/javascript/plugin_ut2003/info.tpl
 %%PHPUA%%/templates/wap/plugin_ut2003/info.tpl
+@exec chown -R %%PHPUA_USER%%:%%PHPUA_GROUP%% %D/%%PHPUA%%
 @dirrm %%PHPUA%%/templates/wap/plugin_ut2003
 @dirrm %%PHPUA%%/templates/javascript/plugin_ut2003
 @dirrm %%PHPUA%%/templates/default/plugin_ut2003
