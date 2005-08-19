@@ -1,5 +1,3 @@
-@owner www
-@group www
 %%PHPUA%%/images/plugin_ut/faces/CommandoSkins.Blake.jpg
 %%PHPUA%%/images/plugin_ut/faces/CommandoSkins.Boris.jpg
 %%PHPUA%%/images/plugin_ut/faces/CommandoSkins.Gorn.jpg
@@ -89,6 +87,7 @@
 %%PHPUA%%/templates/default/plugin_ut/x.js
 %%PHPUA%%/templates/javascript/plugin_ut/info.tpl
 %%PHPUA%%/templates/wap/plugin_ut/info.tpl
+@exec chown -R %%PHPUA_USER%%:%%PHPUA_GROUP%% %D/%%PHPUA%%
 @dirrm %%PHPUA%%/templates/wap/plugin_ut
 @dirrm %%PHPUA%%/templates/javascript/plugin_ut
 @dirrm %%PHPUA%%/templates/default/plugin_ut

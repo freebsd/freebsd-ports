@@ -26,7 +26,7 @@ PKGOPTS=	${FILESDIR}/pkg-opts
 
 NO_BUILD=	yes
 
-PLIST_SUB+=	PHPUA=${PHPUA}
+PLIST_SUB+=	PHPUA=${PHPUA} PHPUA_USER=${PHPUA_USER} PHPUA_GROUP=${PHPUA_GROUP}
 
 options:
 	@ ${ECHO_MSG} "===>  Build options for ${PKGNAME}:"

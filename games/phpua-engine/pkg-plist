@@ -1,5 +1,3 @@
-@owner www
-@group www
 %%PHPUADIR%%/index.php
 %%PHPUADIR%%/install.php
 %%PHPUADIR%%/phpua.cfg.php
@@ -166,6 +164,7 @@
 %%PHPUADIR%%/templates/wap/index_offline.tpl
 %%PHPUADIR%%/templates/wap/index_online.tpl
 %%PHPUADIR%%/wap/index.php
+@exec chown -R %%PHPUA_USER%%:%%PHPUA_GROUP%% %D/%%PHPUADIR%%
 
 @dirrm %%PHPUADIR%%/doc
 @dirrm %%PHPUADIR%%/images/templates/default

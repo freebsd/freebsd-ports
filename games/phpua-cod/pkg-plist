@@ -1,5 +1,3 @@
-@owner www
-@group www
 %%PHPUA%%/images/plugin_cod/maps/mp_brecourt.jpg
 %%PHPUA%%/images/plugin_cod/maps/mp_carentan.jpg
 %%PHPUA%%/images/plugin_cod/maps/mp_chateau.jpg
@@ -24,6 +22,7 @@
 %%PHPUA%%/templates/default/plugin_cod/x.js
 %%PHPUA%%/templates/javascript/plugin_cod/info.tpl
 %%PHPUA%%/templates/wap/plugin_cod/info.tpl
+@exec chown -R %%PHPUA_USER%%:%%PHPUA_GROUP%% %D/%%PHPUA%%
 @dirrm %%PHPUA%%/templates/wap/plugin_cod
 @dirrm %%PHPUA%%/templates/javascript/plugin_cod
 @dirrm %%PHPUA%%/templates/default/plugin_cod
