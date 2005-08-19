@@ -1,5 +1,5 @@
---- lib/libxview/wmgr/wmgr_menu.c.orig	Thu Aug 18 08:42:34 2005
-+++ lib/libxview/wmgr/wmgr_menu.c	Thu Aug 18 08:42:52 2005
+--- lib/libxview/wmgr/wmgr_menu.c.orig	Tue Jun 29 07:17:24 1993
++++ lib/libxview/wmgr/wmgr_menu.c	Fri Aug 19 15:57:04 2005
 @@ -14,13 +14,6 @@
  #include <stdio.h>
  #include <ctype.h>
@@ -9,7 +9,7 @@
 -#include <unistd.h>
 -#else
 -#include <vfork.h>
--#endif
+-#endif SVR4
 -#endif
  
  #include <xview/frame.h>
