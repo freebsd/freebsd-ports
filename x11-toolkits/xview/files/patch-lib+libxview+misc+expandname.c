@@ -1,5 +1,5 @@
---- lib/libxview/misc/expandname.c.orig	Thu Aug 18 08:06:28 2005
-+++ lib/libxview/misc/expandname.c	Thu Aug 18 08:23:13 2005
+--- lib/libxview/misc/expandname.c.orig	Tue Jun 29 07:16:30 1993
++++ lib/libxview/misc/expandname.c	Fri Aug 19 15:53:44 2005
 @@ -23,14 +23,6 @@
  #include <string.h>
  #include <sgtty.h>
@@ -9,12 +9,12 @@
 -#include <unistd.h>
 -#else
 -#include <vfork.h>
--#endif
+-#endif SVR4
 -#endif
 -
  #ifdef SVR4
  #include <sys/signal.h>
- #endif
+ #endif SVR4
 @@ -120,7 +112,9 @@
      }
      (void) close(pivec[0]);
@@ -22,6 +22,6 @@
 +#if !(defined(BSD) && (BSD >= 199103))
      while (wait((union wait *) & status) != pid);
 +#endif
- #else
+ #else SVR4
      while (wait( & status) != pid);
- #endif
+ #endif SVR4
