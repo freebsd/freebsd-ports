@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	acroread
-PORTVERSION=	7.0.0
+PORTVERSION=	7.0.1
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/reader/unix/7x/7.0/jpn/
-DISTNAME=	AdbeRdr70_linux_jpn
+DISTNAME=	AdbeRdr701_linux_jpn
 DIST_SUBDIR=	acroread
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -42,11 +42,11 @@ INSTALLEXEC=	${SETENV} UNAME_s=Linux \
 			${SH} ./INSTALL
 
 do-install:
-# XXX: This is missing a "${BRANDELF} -t Linux <executables>".
 	${MKDIR} ${INSTALLDIR}
 	cd ${WRKSRC} && ${INSTALLEXEC}
 	# disable the PPKLite plugin as it requires an LDAP share lib
 	${CHMOD} 0 ${INSTALLDIR}/Reader/intellinux/plug_ins/PPKLite.api
 	${INSTALL_SCRIPT} ${WRKDIR}/acroread ${PREFIX}/bin/acroread
+	${BRANDELF} -t Linux ${INSTALLDIR}/Reader/intellinux/bin/acroread
 
 .include <bsd.port.mk>
