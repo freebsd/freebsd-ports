@@ -8,7 +8,7 @@
 PORTNAME=	ftrack
 PORTVERSION=	3.1
 PORTEPOCH=	1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://ufm.kgb.ru/files/ \
 		http://forsite.ibch.ru/ports/
@@ -25,20 +25,13 @@ USE_GMAKE=	yes
 ALL_TARGET=	ftrack
 MAKEFILE=	${WRKSRC}/MakeFiles/FreeBSD/Makefile
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
-USE_GCC=	2.95
 USE_PERL5=	yes
 
 PORTDOCS=	ftrack.faq readme report.err
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 504001
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 pre-patch:
 	${REINPLACE_CMD} -e "s@-I../../hpp -I../../.. -O3@-Ihpp -I${LOCALBASE}/include ${CFLAGS}@g; \
-			s@../../src/@src/@g; s@g\+\+@${CC}@g; \
+			s@../../src/@src/@g; \
 			s@-L../../../smapi -lsmapibsd@-L${LOCALBASE}/lib -lsmapi@g" ${WRKSRC}/MakeFiles/FreeBSD/Makefile
 	${REINPLACE_CMD} -e "s@ftrack.cfg@${PREFIX}/etc/ftrack/ftrack.cfg@g" ${WRKSRC}/hpp/constant.hpp
 .for DIR in MakeFiles/FreeBSD src hpp doc/eng samples/tpl
@@ -69,4 +62,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/eng/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

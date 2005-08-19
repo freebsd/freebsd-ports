@@ -1,7 +1,7 @@
---- MakeFiles/FreeBSD/Makefile.orig	Thu Jan  6 13:36:31 2005
-+++ MakeFiles/FreeBSD/Makefile	Thu Jan  6 13:38:14 2005
+--- MakeFiles/FreeBSD/Makefile.orig	Fri Aug 19 17:20:22 2005
++++ MakeFiles/FreeBSD/Makefile	Fri Aug 19 17:20:23 2005
 @@ -1,5 +1,4 @@
--CC=	gcc295
+-CC=	cc
 -CFLAGS=	-Wall -W -fno-rtti `perl -MExtUtils::Embed -e ccopts`
 +CFLAGS+=-Wall -W -fno-rtti `perl -MExtUtils::Embed -e ccopts`
  CDEFS=	-DUNIX
