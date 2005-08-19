@@ -1,9 +1,0 @@
-
-ATTENTION:
-
-To start to use qmail-qsheff you need to overwrite qmail-queue program.
-Make a backup before do it.
-
-> cp %%PREFIX%%/bin/qmail-queue  %%PREFIX%%/bin/qmail-queue.orig
-> cp %%PREFIX%%/bin/qmail-qsheff  %%PREFIX%%/bin/qmail-queue
-
