@@ -33,10 +33,6 @@ GNUSTEP_WITHOUT_LIBOBJC=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 504000
-BROKEN=		"Configure fails on FreeBSD >= 5.x"
-.endif
-
 .if !defined(GNUSTEP_WITH_BASE_GCC)
 pre-configure:
 	@if test ! -f "${TARGLIB}/libobjc.so"; then \
@@ -52,6 +48,9 @@ pre-configure:
 		fi; \
 	fi;
 .endif
+
+post-install:
+	${LN} -s Library/Makefiles ${PREFIX}/System/
 
 .if defined(PARALLEL_PACKAGE_BUILD)
 NO_PACKAGE=	yes

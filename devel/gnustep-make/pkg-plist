@@ -122,6 +122,9 @@ System/share/config.site
 @dirrm System/Tools/Java
 @dirrm System/Tools
 @unexec rm -f %D/System/Makefiles
+@dirrm System/Library/Sounds
+@dirrm System/Library/Services
+@dirrm System/Library/PostScript
 @dirrm System/Library/Makefiles/%%GNU_ARCH%%
 @dirrm System/Library/Makefiles/Master
 @dirrm System/Library/Makefiles/Instance/Shared
@@ -130,9 +133,6 @@ System/share/config.site
 @dirrm System/Library/Makefiles/Auxiliary
 @dirrm System/Library/Makefiles/Additional
 @dirrm System/Library/Makefiles
-@dirrm System/Library/Sounds
-@dirrm System/Library/Services
-@dirrm System/Library/PostScript
 @dirrm System/Library/Libraries/Resources
 @dirrm System/Library/Libraries/Java
 @dirrm System/Library/Libraries
@@ -163,22 +163,22 @@ System/share/config.site
 @exec mkdir -p %D/System/Library/ColorPickers
 @exec mkdir -p %D/System/Library/Colors
 @exec mkdir -p %D/System/Library/DocTemplates
+@exec mkdir -p %D/System/Library/Documentation/man
+@exec mkdir -p %D/System/Library/Documentation/info
 @exec mkdir -p %D/System/Library/Documentation/Developer
 @exec mkdir -p %D/System/Library/Documentation/User
-@exec mkdir -p %D/System/Library/Documentation/info
-@exec mkdir -p %D/System/Library/Documentation/man
 @exec mkdir -p %D/System/Library/Fonts
 @exec mkdir -p %D/System/Library/Frameworks
 @exec mkdir -p %D/System/Library/Headers
 @exec mkdir -p %D/System/Library/Images
 @exec mkdir -p %D/System/Library/KeyBindings
 @exec mkdir -p %D/System/Library/Libraries/Java
-@exec mkdir -p %D/System/Library/Makefiles/%%GNU_ARCH%%
 @exec mkdir -p %D/System/Library/Libraries/Resources
+@exec mkdir -p %D/System/Library/Makefiles/Additional
+@exec mkdir -p %D/System/Library/Makefiles/Auxiliary
+@exec mkdir -p %D/System/Library/Makefiles/%%GNU_ARCH%%
 @exec mkdir -p %D/System/Library/PostScript
 @exec mkdir -p %D/System/Library/Sounds
 @exec mkdir -p %D/System/Library/Services
-@exec mkdir -p %D/System/Makefiles/Additional
-@exec mkdir -p %D/System/Makefiles/Auxiliary
 @exec mkdir -p %D/System/Tools/Java
 @exec mkdir -p %D/System/Tools/Resources
