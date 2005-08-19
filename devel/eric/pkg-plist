@@ -1423,6 +1423,9 @@ bin/eric3-unittest
 %%PYTHON_SITELIBDIR%%/eric3/XML/TasksWriter.pyc
 %%PYTHON_SITELIBDIR%%/eric3/__init__.py
 %%PYTHON_SITELIBDIR%%/eric3/__init__.pyc
+%%PYTHON_SITELIBDIR%%/eric3config.py
+%%PYTHON_SITELIBDIR%%/sitecustomize.py
+%%PYTHON_SITELIBDIR%%/sitecustomize.pyc
 @dirrm %%PYTHON_SITELIBDIR%%/eric3/pixmaps
 @dirrm %%PYTHON_SITELIBDIR%%/eric3/icons/default
 @dirrm %%PYTHON_SITELIBDIR%%/eric3/icons
