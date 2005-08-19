@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		Lingua-Ident
-PORTVERSION=		1.4
+PORTVERSION=		1.5
 CATEGORIES=		textproc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/MPIOTR
@@ -19,12 +19,5 @@ PERL_CONFIGURE=		yes
 
 MAN1=			trainlid.1
 MAN3=			Lingua::Ident.3
-MAN3PREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 500800
-BROKEN=			"Does not compile with perl >=5.8"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
