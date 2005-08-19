@@ -8,14 +8,14 @@ bin/gstat
 sbin/fb_inet_server
 sbin/fb_lock_mgr
 sbin/gds_drop
+@unexec (cmp -s %D/%%CONFDIR%%/aliases.conf %D/%%CONFDIR%%/aliases.conf.sample && rm -f %D/%%CONFDIR%%/aliases.conf) || true
 %%CONFDIR%%/aliases.conf.sample
 @exec [ -f %B/aliases.conf ] || cp %B/%f %B/aliases.conf
-@unexec if cmp -s %D/%%CONFDIR%%/aliases.conf %D/%%CONFDIR%%/aliases.conf.sample; then rm -f %D/%%CONFDIR%%/aliases.conf; fi
 @unexec rmdir %D/%%CONFDIR%% 2>/dev/null || true
 @cwd /
+@unexec (cmp -s %D/%%LOCALSTATEDIR%%/security.fdb %D/%%LOCALSTATEDIR%%/security.fdb.sample && rm -f %D/%%LOCALSTATEDIR%%/security.fdb) || true
 %%LOCALSTATEDIR%%/security.fdb.sample
-@exec [ -f %%LOCALSTATEDIR%%/security.fdb ] || cp %%LOCALSTATEDIR%%/security.fdb.sample %%LOCALSTATEDIR%%/security.fdb
-@unexec if cmp -s %%LOCALSTATEDIR%%/security.fdb %%LOCALSTATEDIR%%/security.fdb.sample; then rm -f %%LOCALSTATEDIR%%/security.fdb; fi
+@exec [ -f %D/%%LOCALSTATEDIR%%/security.fdb ] || cp %D/%F %D/%%LOCALSTATEDIR%%/security.fdb
 %%LOCALSTATEDIR%%/RELNOTES
 %%LOCALSTATEDIR%%/UDF/fbudf.so
 %%LOCALSTATEDIR%%/UDF/fbudf.sql
@@ -23,11 +23,11 @@ sbin/gds_drop
 %%LOCALSTATEDIR%%/UDF/ib_udf.sql
 %%LOCALSTATEDIR%%/help/help.fdb
 %%LOCALSTATEDIR%%/intl/fbintl
-@unexec [ -s %%LOCALSTATEDIR%%/firebird.log ] || rm -f %%LOCALSTATEDIR%%/firebird.log
-@unexec rm -f %%LOCALSTATEDIR%%/isc_event1.`hostname`
-@unexec rm -f %%LOCALSTATEDIR%%/isc_init1.`hostname`
-@unexec rm -f %%LOCALSTATEDIR%%/isc_lock1.`hostname`
+@unexec [ -s %D/%%LOCALSTATEDIR%%/firebird.log ] || rm -f %D/%%LOCALSTATEDIR%%/firebird.log
+@unexec rm -f %D/%%LOCALSTATEDIR%%/isc_event1.`hostname`
+@unexec rm -f %D/%%LOCALSTATEDIR%%/isc_init1.`hostname`
+@unexec rm -f %D/%%LOCALSTATEDIR%%/isc_lock1.`hostname`
 @dirrm %%LOCALSTATEDIR%%/UDF
 @dirrm %%LOCALSTATEDIR%%/help
 @dirrm %%LOCALSTATEDIR%%/intl
-@unexec rmdir %%LOCALSTATEDIR%% 2>/dev/null || true
+@unexec rmdir %D/%%LOCALSTATEDIR%% 2>/dev/null || true
