@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	2.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gcc
@@ -45,6 +45,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	bootstrap
 MAN1=		cccp28.1 g++28.1 gcc28.1
+INFO=		cpp gcc
 
 pre-everything::
 	@${ECHO_MSG} "GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}"
@@ -84,8 +85,5 @@ post-install:
 	@${MV} ${PREFIX}/man/man1/cccp.1 ${PREFIX}/man/man1/cccp28.1
 	@${MV} ${PREFIX}/man/man1/g++.1 ${PREFIX}/man/man1/g++28.1
 	@${MV} ${PREFIX}/man/man1/gcc.1 ${PREFIX}/man/man1/gcc28.1
-.for info in cpp gcc
-	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
-.endfor
 
 .include <bsd.port.post.mk>
