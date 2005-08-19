@@ -7,7 +7,7 @@
 
 PORTNAME?=	firebird
 PORTVERSION=	1.5.2
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=firebird
@@ -24,15 +24,15 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LIBTOOL_VER=	15
 USE_AUTOCONF_VER=	259
-USE_GCC=	3.4
+USE_GCC=	3.4+
 
 LOCALSTATEDIR=	/var/db/firebird
 CONFDIR=	${PREFIX}/etc/firebird
 PLIST_SUB=	FIREBIRD_VERSION=${PORTVERSION} \
-		LOCALSTATEDIR=${LOCALSTATEDIR} CONFDIR="etc/firebird"
+		LOCALSTATEDIR="var/db/firebird" CONFDIR="etc/firebird"
 
 # Don't use ld for linking, use gcc
-LD=	gcc
+LD=	${CC}
 
 # Don't strip binary files
 STRIP=
@@ -40,6 +40,8 @@ STRIP=
 ONLY_FOR_ARCHS=	i386
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
+
+INSTALL_FB=	${INSTALL} ${COPY} -g firebird
 
 .if !defined(CLIENT_ONLY)
 # Server part stuff
@@ -142,23 +144,22 @@ do-install:
 
 	${MKDIR} ${LOCALSTATEDIR}/UDF ${LOCALSTATEDIR}/help ${LOCALSTATEDIR}/intl
 
-	${INSTALL_DATA} -m 0440 ${UDF_SO:S!^!${WRKSRC}/gen/firebird/UDF/!} \
-		${UDF_SQL:S!^!${WRKSRC}/!} ${LOCALSTATEDIR}/UDF
+	${CHOWN} -R firebird:firebird ${LOCALSTATEDIR}
+
+	${INSTALL_FB} -m 0550 ${UDF_SO:S!^!${WRKSRC}/gen/firebird/UDF/!} ${LOCALSTATEDIR}/UDF
+	${INSTALL_FB} -m 0440 ${UDF_SQL:S!^!${WRKSRC}/!} ${LOCALSTATEDIR}/UDF
 
 .if !exists(${LOCALSTATEDIR}/security.fdb)
-	${INSTALL_DATA} -m 0660 -o firebird -g firebird ${WRKSRC}/gen/firebird/security.fdb \
+	${INSTALL_FB} -m 0660 -o firebird ${WRKSRC}/gen/firebird/security.fdb \
 		${LOCALSTATEDIR}/security.fdb
 .endif
-	${INSTALL_DATA} -m 0660 -o firebird -g firebird ${WRKSRC}/gen/firebird/security.fdb \
+	${INSTALL_FB} -m 0660 -o firebird ${WRKSRC}/gen/firebird/security.fdb \
 		${LOCALSTATEDIR}/security.fdb.sample
 
-	${INSTALL_DATA} -m 0440 -g firebird ${WRKSRC}/gen/firebird/help/help.fdb \
+	${INSTALL_FB} -m 0440 ${WRKSRC}/gen/firebird/help/help.fdb \
 		${LOCALSTATEDIR}/help
 
-	${INSTALL_DATA} ${WRKSRC}/gen/firebird/intl/libfbintl.so ${LOCALSTATEDIR}/intl/fbintl
-
-	# runtime files - lock, firebird.log, security.fdb
-	${CHOWN} -R firebird:firebird ${LOCALSTATEDIR}
+	${INSTALL_FB} -m 0550 ${WRKSRC}/gen/firebird/intl/libfbintl.so ${LOCALSTATEDIR}/intl/fbintl
 
 	${INSTALL_DATA} ${FILESDIR}/RELNOTES ${LOCALSTATEDIR}
 .else
