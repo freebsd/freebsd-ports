@@ -8,7 +8,7 @@
 PORTNAME=	bdc
 PORTVERSION=	7.0.1
 CATEGORIES=	security
-MASTER_SITES=	http://download.bitdefender.com/freebsd/${BDREL}/beta/
+MASTER_SITES=	# http://download.bitdefender.com/freebsd/${BDREL}/beta/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-fbsd${BDREL}
 
 MAINTAINER=	apircalabu@bitdefender.com
@@ -31,21 +31,16 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 ONLY_FOR_ARCHS=	i386
 RESTRICTED=     "License prohibits redistribution"
 
-do-fetch:
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-	@${ECHO} ""
-	@${ECHO} "You have to fetch ${DISTNAME}${EXTRACT_SUFX} manually after"
-	@${ECHO} "reading and agreeing to the license at:"
-	@${ECHO} ""
-	@${ECHO} "http://download.bitdefender.com/freebsd/${BDREL}/beta/LICENSE"
-	@${ECHO} ""
-	@${ECHO} "A direct link to the distribution file:"
-	@${ECHO} "http://download.bitdefender.com/freebsd/${BDREL}/beta/${DISTNAME}${EXTRACT_SUFX}"
-	@${ECHO} ""
-	@${ECHO} "Once the file has been downloaded move it to"
-	@${ECHO} "${DISTDIR} and restart the build."
-	@${ECHO} ""
-	@${FALSE}
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+ECHO_MSG=	/usr/bin/printf
+IGNORE=	:\n\
+You have to fetch ${DISTNAME}${EXTRACT_SUFX} manually after\n\
+reading and agreeing to the license at:\n\
+http://download.bitdefender.com/freebsd/${BDREL}/beta/LICENSE\n\
+A direct link to the distribution file:\n\
+http://download.bitdefender.com/freebsd/${BDREL}/beta/${DISTNAME}${EXTRACT_SUFX}\n\
+Once the file has been downloaded move it to\n\
+${DISTDIR} and restart the build.\n
 .endif
 
 do-install:
