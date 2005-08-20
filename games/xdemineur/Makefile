@@ -9,7 +9,7 @@ PORTNAME=	xdemineur
 PORTVERSION=	2.1.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
-		ftp://ftp.babafou.eu.org/pub/babafou/
+		http://www.babafou.eu.org/babafou/
 MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	ports@FreeBSD.org
