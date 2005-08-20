@@ -21,6 +21,8 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
+NOT_FOR_ARCHS=	ia64
+
 DBUS_SLAVE=	yes
 
 USE_GNOME=	gnomehack gnometarget
