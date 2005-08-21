@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	synaesthesia
-PORTVERSION=	2.2
-PORTREVISION=	2
+PORTVERSION=	2.3
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.logarithmic.net/pfh/Synaesthesia/
+MASTER_SITES=	http://www.logarithmic.net/pfh-files/synaesthesia/
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Graphically represents sound in real time
@@ -22,12 +21,6 @@ USE_X_PREFIX=	Yes
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--with-sdl-prefix=${LOCALBASE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,stdint.h,inttypes.h,' `${FIND} ${WRKSRC} -name \*.cc -or -name \*.c`
 	@${REINPLACE_CMD} -e 's,int16_t,u_int16_t,' \
@@ -36,8 +29,8 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/synaesthesia ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/synaesthesia
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/synaesthesia
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
