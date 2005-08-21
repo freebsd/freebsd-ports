@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	phpua
 MAINTAINER=	hido@coreblack.com
 COMMENT=	An Unreal Tournament 2003 plugin for phpUA
 
-RUN_DEPENDS=	${PKG_DBDIR}/phpua-engine-1.1.0b:${PORTSDIR}/games/phpua-engine
+RUN_DEPENDS=	${LOCALBASE}/${PHPUA}/index.php:${PORTSDIR}/games/phpua-engine
 
 # Some variables you can change
 PHPUA?=		www/data/phpua
