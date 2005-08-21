@@ -1,13 +1,13 @@
 bin/explosions
-%%PORTDOCS%%share/doc/explosions/BUGS.txt
-%%PORTDOCS%%share/doc/explosions/CHANGES.txt
-%%PORTDOCS%%share/doc/explosions/README.txt
-share/explosions/spark1.png
-share/explosions/spark2.png
-share/explosions/spark3.png
-share/explosions/spark4.png
-share/explosions/spark5.png
-share/explosions/spark6.png
-share/explosions/spark7.png
-@dirrm share/explosions
-%%PORTDOCS%%@dirrm share/doc/explosions
+%%PORTDOCS%%%%DOCSDIR%%/BUGS.txt
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%DATADIR%%/spark1.png
+%%DATADIR%%/spark2.png
+%%DATADIR%%/spark3.png
+%%DATADIR%%/spark4.png
+%%DATADIR%%/spark5.png
+%%DATADIR%%/spark6.png
+%%DATADIR%%/spark7.png
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

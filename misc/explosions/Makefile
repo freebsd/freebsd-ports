@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	explosions
-PORTVERSION=	0.2001.10.29
+PORTVERSION=	0.2005.07.31
 PORTREVISION=	2
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/explosions/
+MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/explosions/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/^0.//}
 
 MAINTAINER=	petef@FreeBSD.org
