@@ -37,8 +37,8 @@
 #
 # # optional:
 # openvpn_flags=""	# openvpn command line flags
-# openvpn_config="%%PREFIX%%/etc/openvpn/openvpn.conf" 	# --config file
-# openvpn_dir="%%PREFIX%%/etc/openvpn"			# --cd directory
+# openvpn_configfile="%%PREFIX%%/etc/openvpn/openvpn.conf" 	# --config file
+# openvpn_dir="%%PREFIX%%/etc/openvpn"				# --cd directory
 #
 # You also need to set openvpn_configfile and openvpn_dir, if the configuration
 # file and directory where keys and certificates reside differ from the above
