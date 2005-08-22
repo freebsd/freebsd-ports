@@ -21,14 +21,6 @@ CONFIGURE_ARGS=	--enable-tests=no --enable-maintainer=no --enable-pthread \
 		--disable-kernel-patch
 USE_GMAKE=	yes
 
-.include <bsd.port.pre.mk>
+ONLY_FOR_ARCHS=	amd64 i386
 
-.if ${ARCH} != "i386" && ${ARCH} != "amd64"
-BROKEN=		"Does not compile on !i386 and !amd64"
-.endif
-
-.if ${OSVERSION} >= 600031
-BROKEN=		"Does not compile on FreeBSD >= 6.0"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
