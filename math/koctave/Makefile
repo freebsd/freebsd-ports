@@ -9,7 +9,7 @@ PORTNAME=	koctave3
 PORTVERSION=	0.65
 PORTREVISION=	3
 CATEGORIES=	math kde
-MASTER_SITES=	http://athlone.ath.cx/~matti/kde/koctave/
+MASTER_SITES=	http://lehmann.in-berlin.de/bsd/
 
 MAINTAINER=	kay_lehmann@web.de
 COMMENT=	KDEGUI for octave
