@@ -24,7 +24,6 @@ LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
 		freetype:${PORTSDIR}/print/freetype2 \
 		lcms:${PORTSDIR}/graphics/lcms \
 		paper:${PORTSDIR}/print/libpaper \
-		pq:${PORTSDIR}/databases/postgresql74-client \
 		wpd-0.8:${PORTSDIR}/textproc/libwpd \
 		wv2:${PORTSDIR}/textproc/wv2 \
 		xml2:${PORTSDIR}/textproc/libxml2 \
@@ -39,6 +38,7 @@ USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_MYSQL=	yes
 USE_PYTHON=	yes
+USE_PGSQL=	yes
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
