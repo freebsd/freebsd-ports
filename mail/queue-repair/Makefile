@@ -8,7 +8,7 @@
 PORTNAME=	queue-repair
 PORTVERSION=	0.9.0
 CATEGORIES=	mail python
-MASTER_SITES=	http://www.qcc.ca/~charlesc/software/queue_repair/
+MASTER_SITES=	http://pyropus.ca/software/${PORTNAME}/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	A qmail queue diagnostic and repair tool
