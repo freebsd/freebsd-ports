@@ -1,0 +1,10 @@
+--- pthread.h.in.orig	Thu Aug 18 13:49:14 2005
++++ pthread.h.in	Thu Aug 18 13:49:07 2005
+@@ -50,6 +50,7 @@
+ #define _SYS_PTHREAD_H_
+ #define SYS_PTHREAD_INCLUDED
+ #define _SYS_PTHREAD_INCLUDED
++#define _SYS__PTHREADTYPES_H_
+ #ifdef _PTHREAD_PRIVATE
+ #define BITS_PTHREADTYPES_H
+ #define _BITS_PTHREADTYPES_H
