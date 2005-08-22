@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		ftp://ftp.Awfulhak.org/pub/radius/
 
-MAINTAINER=	thompsa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free RADIUS server implementation
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
