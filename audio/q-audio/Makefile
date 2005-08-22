@@ -7,7 +7,7 @@
 
 PORTNAME=	audio
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	q-lang
@@ -18,7 +18,7 @@ MAINTAINER=	ag@muwiinfa.geschichte.uni-mainz.de
 COMMENT=	Q-Audio -- digital audio interface for the Q language
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
-		q.4:${PORTSDIR}/lang/q
+		q.6:${PORTSDIR}/lang/q
 
 USE_REINPLACE=	yes
 USE_GNOME=	gnometarget
