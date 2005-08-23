@@ -328,7 +328,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>awstats</name>
-	<range><lt>6.5</lt></range>
+	<range><lt>6.4_1</lt></range>
       </package>
     </affects>
     <description>
@@ -365,6 +365,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-08-09</discovery>
       <entry>2005-08-14</entry>
+      <modified>2005-08-23</modified>
     </dates>
   </vuln>
 
