@@ -7,8 +7,8 @@
   database access method.
 
   To configure phpMyFAQ point your browser to
-	http://localhost/%%PHPMYFAQ_URL%%/install/installer.php
-	http://localhost/%%PHPMYFAQ_URL%%/admin/index.php
+	http://%%HOSTNAME%%/%%PHPMYFAQ_URL%%/install/installer.php
+	http://%%HOSTNAME%%/%%PHPMYFAQ_URL%%/admin/index.php
 
   Use the username admin and your selected password 
   for your first login into the admin section.

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpmyfaq
-PORTVERSION=	1.4.9
+PORTVERSION=	1.4.11
 CATEGORIES=	www
 MASTER_SITES=	http://www.phpmyfaq.de/download/
 DISTNAME=	${PORTNAME}.${PORTVERSION}.full
@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.zip
 
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	A multilingual, completely database-driven FAQ-system
-
-FORBIDDEN=	http://vuxml.FreeBSD.org/e65ad1bf-0d8b-11da-90d0-00304823c0d3.html
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 USE_ZIP=	YES
@@ -26,51 +24,59 @@ NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 
 pre-fetch:
-.if !defined(PHPMYFAQ_DIR)
+.if !defined(PHPMYFAQ_URL)
 	 @${ECHO_MSG} ""
-	 @${ECHO_MSG} "Define PHPMYFAQ_DIR to override default of '${PHPMYFAQ_DIR}'."
+	 @${ECHO_MSG} "Define PHPMYFAQ_URL to override default of ${PREFIX}/${WWWDOCROOT}/'${PHPMYFAQ_URL}'."
 	 @${ECHO_MSG} ""
+.endif
+
+
+# Get HOSTNAME
+.if exists(/sbin/sysctl)
+HOSTNAME!=	/sbin/sysctl -n kern.hostname
+.else
+HOSTNAME!=	/usr/sbin/sysctl -n kern.hostname
 .endif
 
 WWWDOCROOT?=	www/data
 PHPMYFAQ_URL?=	faq
 WWWOWN?=	www
 WWWGRP?=	www
-PHPMYFAQ_DIR?=	${WWWDOCROOT}/${PHPMYFAQ_URL}
+PHPMYFAQ_URL?=	${WWWDOCROOT}/${PHPMYFAQ_URL}
 PLIST=		${WRKDIR}/pkg-plist
 
 .include <bsd.port.pre.mk>
 
 pre-install:
 	cd ${WRKSRC} && ${FIND} -s . -type f | \
-		${SED} -e 's|^./||;s|^|${PHPMYFAQ_DIR}/|' > ${PLIST} \
+		${SED} -e 's|^./||;s|^|${PHPMYFAQ_URL}/|' > ${PLIST} \
 		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm ${PHPMYFAQ_DIR}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${PHPMYFAQ_DIR}/attachments/ >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${PHPMYFAQ_DIR}/data/ >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${PHPMYFAQ_DIR}/pdf/ >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${PHPMYFAQ_DIR} >> ${PLIST}
+		${SED} -e 's|^|@dirrm ${PHPMYFAQ_URL}/|' >> ${PLIST} \
+		&& ${ECHO_CMD} @dirrm ${PHPMYFAQ_URL}/attachments/ >> ${PLIST} \
+		&& ${ECHO_CMD} @dirrm ${PHPMYFAQ_URL}/data/ >> ${PLIST} \
+		&& ${ECHO_CMD} @dirrm ${PHPMYFAQ_URL}/pdf/ >> ${PLIST} \
+		&& ${ECHO_CMD} @dirrm ${PHPMYFAQ_URL} >> ${PLIST}
 
 do-install:
 	# Data files
-	-${MKDIR} ${PREFIX}/${PHPMYFAQ_DIR}
-	@${CHMOD} 755 ${PREFIX}/${PHPMYFAQ_DIR}
-	@${CP} -R ${WRKSRC}/ ${PREFIX}/${PHPMYFAQ_DIR}
-	@${MKDIR} ${PREFIX}/${PHPMYFAQ_DIR}/attachments/
-	@${MKDIR} ${PREFIX}/${PHPMYFAQ_DIR}/data/
-	@${MKDIR} ${PREFIX}/${PHPMYFAQ_DIR}/pdf/
+	-${MKDIR} ${PREFIX}/${PHPMYFAQ_URL}
+	@${CHMOD} 755 ${PREFIX}/${PHPMYFAQ_URL}
+	@${CP} -R ${WRKSRC}/ ${PREFIX}/${PHPMYFAQ_URL}
+	@${MKDIR} ${PREFIX}/${PHPMYFAQ_URL}/attachments/
+	@${MKDIR} ${PREFIX}/${PHPMYFAQ_URL}/data/
+	@${MKDIR} ${PREFIX}/${PHPMYFAQ_URL}/pdf/
 	# set the correct permissions
-	@${CHMOD} 777 ${PREFIX}/${PHPMYFAQ_DIR}/inc/
-	@${CHMOD} 777 ${PREFIX}/${PHPMYFAQ_DIR}/attachments/
-	@${CHMOD} 777 ${PREFIX}/${PHPMYFAQ_DIR}/data/
-	@${CHMOD} 777 ${PREFIX}/${PHPMYFAQ_DIR}/images/
-	@${CHMOD} 777 ${PREFIX}/${PHPMYFAQ_DIR}/pdf/
-	@${CHMOD} 777 ${PREFIX}/${PHPMYFAQ_DIR}/xml/
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${PHPMYFAQ_DIR}
+	@${CHMOD} 777 ${PREFIX}/${PHPMYFAQ_URL}/inc/
+	@${CHMOD} 777 ${PREFIX}/${PHPMYFAQ_URL}/attachments/
+	@${CHMOD} 777 ${PREFIX}/${PHPMYFAQ_URL}/data/
+	@${CHMOD} 777 ${PREFIX}/${PHPMYFAQ_URL}/images/
+	@${CHMOD} 777 ${PREFIX}/${PHPMYFAQ_URL}/pdf/
+	@${CHMOD} 777 ${PREFIX}/${PHPMYFAQ_URL}/xml/
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${PHPMYFAQ_URL}
 
 post-install:
 	@${SED} \
-	 -e 's|%%PHPMYFAQ_URL%%|${PHPMYFAQ_URL}|' \
-	 -e 's|%%PHPMYFAQ_DIR%%|${PREFIX}/${PHPMYFAQ_DIR}|' ${PKGMESSAGE}
+	 -e 's|%%HOSTNAME%%|${HOSTNAME}|' \
+	 -e 's|%%PHPMYFAQ_URL%%|${PREFIX}/${PHPMYFAQ_URL}|' ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
