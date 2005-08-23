@@ -32,6 +32,40 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f66e011d-13ff-11da-af41-0004614cc33d">
+    <topic>elm -- remote buffer overflow in Expires header</topic>
+    <affects>
+      <package>
+	<name>elm</name>
+	<range><lt>2.5.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Ulf Harnhammar has discovered a remotely exploitable buffer
+          overflow in Elm e-mail client when parsing the Expires header
+	  of an e-mail message:</p>
+        <blockquote cite="http://archives.neohapsis.com/archives/fulldisclosure/2005-08/0688.html">  
+	  <p>The attacker only needs to send the victim an e-mail
+	    message. When the victim with that message in his or her
+	    inbox starts Elm or simply views the inbox in an already
+	    started copy of Elm, the buffer overflow will happen
+	    immediately. The overflow is stack-based, and it gives full
+	    control over EIP, EBP and EBX. It is caused by a bad
+	    sscanf(3) call, using a format string containing &quot;%s&quot;
+	    to copy from a long char array to a shorter array.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://archives.neohapsis.com/archives/fulldisclosure/2005-08/0688.html</url>
+    </references>
+    <dates>
+      <discovery>2005-08-20</discovery>
+      <entry>2005-08-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5ad3e437-e527-4514-b9ed-280b2ca1a8c9">
     <topic>openvpn -- multiple TCP clients connecting with the same certificate at the same time can crash the server</topic>
     <affects>
