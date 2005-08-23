@@ -27,9 +27,6 @@ ALL_TARGET=	release
 MAKE_ARGS=	SYSPRE=${ARCH}-unknown-freebsd
 IS_INTERACTIVE=	yes
 
-USE_GCC=	2.95
-USE_REINPLACE=	YES
-
 # Tripwire config files are stored in TWCFG
 TWCFG?=		/usr/local/etc/tripwire
 # Tripwire policy files are stored in TWPOLICY.
@@ -55,6 +52,11 @@ TRIPWIRE_CLOBBER?=	NO
 
 PLIST_SUB+=	TWCFG=${TWCFG} TWDB=${TWDB}
 
+.if ${OSVERSION} > 501000
+USE_GCC=	2.95
+USE_REINPLACE=	YES
+.endif
+
 pre-configure:
 	@ ${CP} ${TWPOL_TXT} ${WRKSRC}/policy/twpol.txt
 	@ ${MV} ${WRKSRC}/src/core/stdcore.h ${WRKSRC}/src/core/stdcore.h.orig
@@ -62,7 +64,7 @@ pre-configure:
 	@ ${MV} ${WRKSRC}/man/man4/twconfig.4 ${WRKSRC}/man/man5/twconfig.5
 	@ ${MV} ${WRKSRC}/man/man4/twpolicy.4 ${WRKSRC}/man/man5/twpolicy.5
 
-
+.if ${OSVERSION} > 501000
 post-extract:
 	@ ${REINPLACE_CMD} -e "s|CC \= gcc|CC \= gcc295|g" ${WRKSRC}/src/STLport-4.0/src/gcc.mak
 	@ ${REINPLACE_CMD} -e "s|CXX \= c\+\+|CXX \= g\+\+295|g" ${WRKSRC}/src/STLport-4.0/src/gcc.mak
@@ -75,6 +77,7 @@ post-extract:
 	@ ${REINPLACE_CMD} -e "s|malloc.h|stdlib.h|g" ${WRKSRC}/src/core/msystem.cpp
 	@ ${REINPLACE_CMD} -e "s|malloc.h|stdlib.h|g" ${WRKSRC}/src/twparser/yylex.cpp
 	@ ${REINPLACE_CMD} -e "s|malloc.h|stdlib.h|g" ${WRKSRC}/src/tripwire/tripwiremain.cpp
+.endif
 	
 install-software:
 	@ ${ECHO_CMD} TWPOLICY=${TWPOLICY} >> ${WRKSRC}/install/install.cfg
