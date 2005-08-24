@@ -24,8 +24,8 @@
  set `echo $libc $libnames | tr ' ' '\012' | sort | uniq`
  $echo $n "Extracting names from $* for later perusal...$c"
  nm $nm_opts $* 2>/dev/null >libc.tmp
--$sed -n -e 's/^.* [ATDS]  *[_.]*//p' -e 's/^.* [ATDS] //p' <libc.tmp >libc.list
-+$sed -n -e 's/^.* [ATDSW]  *[_.]*//p' -e 's/^.* [ATDSW] //p' <libc.tmp >libc.list
+-$sed -n -e 's/^.* [ATDSU]  *[_.]*//p' -e 's/^.* [ATDSU] //p' <libc.tmp >libc.list
++$sed -n -e 's/^.* [ATDSUW]  *[_.]*//p' -e 's/^.* [ATDSUW] //p' <libc.tmp >libc.list
  if $contains '^printf$' libc.list >/dev/null 2>&1; then
      echo done
  elif $sed -n -e 's/^__*//' -e 's/^\([a-zA-Z_0-9$]*\).*xtern.*/\1/p' \
