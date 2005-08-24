@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Oct  4 11:48:46 2002
-+++ Makefile	Wed Feb 12 03:13:22 2003
+--- Makefile.orig	Fri Oct  4 15:48:46 2002
++++ Makefile	Mon Aug 22 16:31:13 2005
 @@ -15,7 +15,7 @@
  BRANCH			=	HEAD
  
@@ -97,6 +97,15 @@
  
  # }}}
  
+@@ -300,7 +300,7 @@
+ 	    && make \
+ 	    && make test \
+ 	    && $(PERL) -p -i -e " s'!!RT_VERSION!!'$(RT_VERSION)'g;" blib/lib/RT.pm ;\
+-	    make install \
++	    make pure_install \
+ 			   INSTALLSITEMAN1DIR=$(RT_MAN_PATH)/man1 \
+ 			   INSTALLSITEMAN3DIR=$(RT_MAN_PATH)/man3 \
+ 			   DESTDIR=$(DESTDIR) \
 @@ -312,7 +312,7 @@
  
  
