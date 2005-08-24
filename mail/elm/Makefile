@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	elm
-PORTVERSION=	2.5.6
-PORTREVISION=	2
+PORTVERSION=	2.5.8
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.virginia.edu/pub/elm/ \
 		http://www.dragondata.com/software/
@@ -17,6 +17,8 @@ MAINTAINER=	toasty@dragondata.com
 COMMENT=	A once-popular mail user agent, version 2.5.x
 
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+
+CFLAGS+= -D_SIZE_T
 
 WRKSRC=			${WRKDIR}/elm${PORTVERSION}
 NO_LATEST_LINK=		yes

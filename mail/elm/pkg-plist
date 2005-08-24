@@ -27,18 +27,3 @@ lib/help-attach
 lib/help-selfolder
 lib/mime-types
 lib/mlists.eg
-@comment This is to fix the catman install during de-install
-man/cat1/answer.1
-man/cat1/checkalias.1
-man/cat1/elm.1
-man/cat1/elmalias.1
-man/cat1/fastmail.1
-man/cat1/frm.1
-man/cat1/listalias.1
-man/cat1/messages.1
-man/cat1/mmencode.1
-man/cat1/newalias.1
-man/cat1/newmail.1
-man/cat1/printmail.1
-man/cat1/readmsg.1
-man/cat1/wnewmail.1
