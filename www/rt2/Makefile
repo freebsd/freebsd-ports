@@ -9,10 +9,10 @@ PORTNAME=	rt2
 PORTVERSION=	2.0.15
 PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	http://www.fsck.com/pub/rt/release/
+MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
 DISTNAME=	rt-${PORTVERSION:S/./-/g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	RT is an industrial-grade ticketing system written in Perl
 
 BUILD_DEPENDS=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \
@@ -154,9 +154,5 @@ do-install:
 
 post-install:
 	@${SED} s!%%PREFIX%%!${PREFIX}!g ${PKGMESSAGE}
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Broken pkg-plist"
-.endif
 
 .include <bsd.port.post.mk>
