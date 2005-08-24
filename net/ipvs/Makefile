@@ -7,14 +7,15 @@
 
 PORTNAME=	ipvs
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://dragon.linux-vs.org/~dragonfly/software/
-DISTNAME=	ipvs_freebsd-${PORTVERSION}
+MASTER_SITES=	http://www.cultdeadsheep.org/~clement/FreeBSD/ipvs/
+DISTNAME=	ipvs-${PORTVERSION}_${PORTREVISION}
 
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	FreeBSD port of Linux Virtual Server
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+#WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 SRCDIR?=	/usr/src
 
 MAN8=		ipvsadm.8 ipvsadm-restore.8 ipvsadm-save.8
@@ -37,26 +38,28 @@ pre-everything::
 
 
 .if !defined(SYSTEM_PATCHED)
-.if ${OSVERSION} < 503001 || ${OSVERSION} > 600000 || defined(PACKAGE_BUILDING)
+.if ${OSVERSION} < 503001 || defined(PACKAGE_BUILDING)
 IGNORE=	Does not compile. If your system is patched to support ipvs, please\
 	define SYSTEM_PATCHED
 .elif ${OSVERSION} == 503001
-FREEBSD_VERSION=	5.4
+FREEBSD_VERSION=	5.3-RELEASE
 .elif (${OSVERSION} == 504000 || defined(TRY_STABLE))
-FREEBSD_VERSION=	5.4
+FREEBSD_VERSION=	5.4-RELEASE
+.elif (${OSVERSION} >= 600029 || defined(TRY_STABLE6))
+FREEBSD_VERSION=	6.0-RELEASE
+.elif (${OSVERSION} >= 700000 || defined(TRY_CURRENT))
+FREEBSD_VERSION=	7.0-CURRENT
 .else
-IGNORE=	is designed for 5.3-RELEASE and 5.4-RELEASE, define TRY_STABLE\
-	to test it on 5-STABLE
+IGNORE=	is designed orginally for 5.3-RELEASE and 5.4-RELEASE, define TRY_STABLE\
+	to test it on 5-STABLE, TRY_STABLE6 on 6-STABLE or TRY_CURRENT\
+	on 7.0-CURRENT
 .endif
 .endif
 
 ONLY_FOR_ARCHS=		i386
 
 patch-system: extract
-	@${FIND} ${WRKSRC}/patch/${FREEBSD_VERSION}-RELEASE -type f \
+	@${FIND} ${WRKSRC}/patch/${FREEBSD_VERSION} -type f \
 		-name "*.patch" -exec ${PATCH} -p0 -d ${SRCDIR} -i {} \;
-
-post-patch:
-	@${INSTALL_DATA} ${FILESDIR}/Makefile ${WRKSRC}
 
 .include <bsd.port.post.mk>

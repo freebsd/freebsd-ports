@@ -1,5 +1,22 @@
 sbin/ipvsadm
 sbin/ipvsadm-restore
 sbin/ipvsadm-save
+include/ipvs/ip_vs.h
+include/libipvs/libipvs.h
+lib/libipvs.a
+lib/libipvs_p.a
+@dirrm include/ipvs
+@dirrm include/libipvs
 @cwd /boot/modules
 ipvs.ko
+ip_vs_dh.ko
+ip_vs_lblc.ko
+ip_vs_lblcr.ko
+ip_vs_lc.ko
+ip_vs_nq.ko
+ip_vs_rr.ko
+ip_vs_sed.ko
+ip_vs_sh.ko
+ip_vs_wlc.ko
+ip_vs_wrr.ko
+linker.hints
