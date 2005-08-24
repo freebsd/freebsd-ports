@@ -85,7 +85,7 @@ PATCH_DIST_STRIP+=	-p1
 PATCH_SITES+=	http://iain.cx/unix/qmail/download/:mysql
 PATCHFILES+=	qmail-mysql-${MYSQL_PATCH_VERSION}.patch:mysql
 .elif defined(SLAVE_SMTP_AUTH_TLS)
-PATCH_SITES+=	http://www.galle.com.br/~renato/qmail/:smtp_auth_tls
+PATCH_SITES+=	http://www.galle.com.br/~garga/qmail/:smtp_auth_tls
 PATCHFILES+=	qmail-1.03-starttls-smtp-auth.patch:smtp_auth_tls
 .elif defined(SLAVE_TLS)
 PATCH_SITES+=	http://inoa.net/qmail-tls/:tls
@@ -94,7 +94,7 @@ PATCH_DIST_STRIP+=	-p1
 .endif
 
 PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:local,dns,ldap,mysql,smtp_auth_tls,tls/}
-PATCH_SITE_SUBDIR+=	lioux/:local,dns,ldap,mysql,smtp_auth_tls,tls
+PATCH_SITE_SUBDIR+=	garga/qmail/:dns,sendmail_flagf,rfc2821,ldap,mysql,smtp_auth_tls,tls,quota,blockexec,doublebounce,spf,localtime
 
 NO_PACKAGE=	djb's packaging license does not allow non-standard \
 		qmail binary distributions
