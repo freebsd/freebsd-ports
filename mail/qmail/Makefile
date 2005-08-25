@@ -93,7 +93,7 @@ PATCHFILES+=	qmail-1.03-tls-${TLS_PATCH_DATE}.patch:tls
 PATCH_DIST_STRIP+=	-p1
 .endif
 
-PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:local,dns,ldap,mysql,smtp_auth_tls,tls/}
+PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:dns,sendmail_flagf,rfc2821,ldap,mysql,smtp_auth_tls,tls,quota,blockexec,doublebounce,spf,localtime/}
 PATCH_SITE_SUBDIR+=	garga/qmail/:dns,sendmail_flagf,rfc2821,ldap,mysql,smtp_auth_tls,tls,quota,blockexec,doublebounce,spf,localtime
 
 NO_PACKAGE=	djb's packaging license does not allow non-standard \
