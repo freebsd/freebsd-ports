@@ -6,20 +6,16 @@
 #
 
 PORTNAME=	waimea
-PORTVERSION=	0.5.0.20041204
+PORTVERSION=	0.5.0.20050825
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.ijs.si/~lesi/waimea/ \
-		http://www.daemon.li/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	danfe
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An X11 window manager designed for maximum efficiency
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
 		cairo.1:${PORTSDIR}/graphics/cairo
-
-BROKEN=		Does not compile
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
 
 LATEST_LINK=	${PORTNAME}-devel
 
