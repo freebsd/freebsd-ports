@@ -12,7 +12,7 @@ CATEGORIES=	java security
 MASTER_SITES=	http://www.bouncycastle.org/download/
 DISTNAME=	jce-jdk13-${PORTVERSION:S/.//}
 
-MAINTAINER=	rasputin@idoru.mine.nu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cleanroom build of Java Cryptography Extensions
 
 BUILD_DEPENDS=	${JAVADIR}/bin/java:${PORTSDIR}/java/jdk13
