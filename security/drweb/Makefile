@@ -26,6 +26,9 @@ RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd49
 .else
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd53
+.if ${OSVERSION} >= 600000
+LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
+.endif
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
