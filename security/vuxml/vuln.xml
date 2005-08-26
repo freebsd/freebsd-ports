@@ -32,6 +32,35 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b971d2a6-1670-11da-978e-0001020eed82">
+    <topic>pcre -- regular expression buffer overflow</topic>
+    <affects>
+      <package>
+	<name>pcre</name>
+	<name>pcre-utf8</name>
+	<range><lt>6.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The pcre library is vulnerable to a buffer overflow
+	  vulnerability due to insufficient validation of quantifier
+	  values.  This could lead execution of arbitrary code with
+	  the permissions of the program using pcre by way of a
+	  specially crated regular expression.</p>
+      </body>
+    </description>
+    <references>
+      <bid>14620</bid>
+      <cvename>CAN-2005-2491</cvename>
+      <url>http://www.pcre.org/changelog.txt</url>
+    </references>
+    <dates>
+      <discovery>2005-08-01</discovery>
+      <entry>2005-08-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f66e011d-13ff-11da-af41-0004614cc33d">
     <topic>elm -- remote buffer overflow in Expires header</topic>
     <affects>
