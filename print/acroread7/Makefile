@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	acroread7
-PORTVERSION=	7.0.0
+PORTVERSION=	7.0.1
 CATEGORIES=	print linux
 MASTER_SITES=	http://download.adobe.com/pub/adobe/reader/unix/7x/7.0/enu/ \
 		ftp://ftp.adobe.com/pub/adobe/reader/unix/7x/7.0/enu/
-DISTNAME=	AdobeReader_enu-7.0.0-2.i386.rpm
+DISTNAME=	AdobeReader_enu-7.0.1-1.i386.rpm
 EXTRACT_SUFX=
 DIST_SUBDIR=	acroread
 EXTRACT_ONLY=
