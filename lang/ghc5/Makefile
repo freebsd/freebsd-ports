@@ -31,9 +31,13 @@ DISTFILES=	${SRC_DIST}
 
 .if ${OSVERSION} < 500000
 DISTFILES+=	${BOOT_DIST}
-.else
-DISTFILES+=	${BOOT_DIST5}
+.elif ${OSVERSION} > 600000
+BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libreadline.so.5:${PORTSDIR}/misc/compat5x
 BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libreadline.so.4:${PORTSDIR}/misc/compat4x
+DISTFILES+=	${BOOT_DIST5}
+.else
+BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libreadline.so.4:${PORTSDIR}/misc/compat4x
+DISTFILES+=	${BOOT_DIST5}
 .endif
 
 WRKSRC=		${WRKDIR}/ghc-${PORTVERSION}
