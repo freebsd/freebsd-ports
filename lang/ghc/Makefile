@@ -31,10 +31,13 @@ DISTFILES=	${SRC_DIST}
 DISTFILES+=	${BOOT_DIST}
 .else
 DISTFILES+=	${BOOT_DIST5}
+.if ${OSVERSION} >= 600000
+LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
+.endif
 .endif
 
 WANT_AUTOCONF_VER=259	# Need this to regenerate patched configure in GLUT
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4 \
+LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4 \
 		glut.3:${PORTSDIR}/graphics/libglut \
 		openal.0:${PORTSDIR}/audio/openal
 
