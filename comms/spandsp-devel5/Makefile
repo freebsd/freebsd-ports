@@ -8,7 +8,9 @@
 PORTNAME=	spandsp
 DISTVERSION=	0.0.2pre18
 CATEGORIES=	comms
-MASTER_SITES=	ftp://soft-switch.org/pub/spandsp/${PORTNAME}-${DISTVERSION}/
+MASTER_SITES=	ftp://soft-switch.org/pub/spandsp/${PORTNAME}-${DISTVERSION}/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pav
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fax DSP library for Asterisk
