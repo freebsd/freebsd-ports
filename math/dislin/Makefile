@@ -37,8 +37,7 @@ BINVER=		-5.1
 .endif
 
 .if ${OSVERSION} >= 600000
-BROKEN=		"uses libc.so.5"
-#LIB_DEPENDS+=      c.5:${PORTSDIR}/misc/compat5x
+LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
 .endif
 
 do-install:
