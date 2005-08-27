@@ -1,0 +1,62 @@
+--- calendar/gui/e-cal-component-preview.c.orig	Sat Aug 27 18:48:58 2005
++++ calendar/gui/e-cal-component-preview.c	Sat Aug 27 18:49:14 2005
+@@ -284,7 +284,7 @@ write_html (GtkHTMLStream *stream, ECal 
+ 					str = g_string_append_c (str, text.value[i]);
+ 			}
+ 
+-			gtk_html_stream_printf (stream, str->str);
++			gtk_html_stream_printf (stream, "%s", str->str);
+ 			g_string_free (str, TRUE);
+ 		}
+ 
+--- addressbook/gui/widgets/eab-contact-display.c.orig	Sat Aug 27 18:50:22 2005
++++ addressbook/gui/widgets/eab-contact-display.c	Sat Aug 27 18:51:58 2005
+@@ -353,7 +353,7 @@ render_contact (GtkHTMLStream *html_stre
+ 	accum_multival_attribute (accum, contact, _("Yahoo"), E_CONTACT_IM_YAHOO, YAHOO_ICON, 0);
+ 
+ 	if (accum->len > 0)
+-		gtk_html_stream_printf (html_stream, accum->str);
++		gtk_html_stream_printf (html_stream, "%s", accum->str);
+ 
+ 	end_block (html_stream);
+ 
+@@ -368,7 +368,7 @@ render_contact (GtkHTMLStream *html_stre
+ 
+ 	if (accum->len > 0) {
+ 		start_block (html_stream, _("work"));
+-		gtk_html_stream_printf (html_stream, accum->str);
++		gtk_html_stream_printf (html_stream, "%s", accum->str);
+ 		end_block (html_stream);
+ 	}
+ 
+@@ -383,7 +383,7 @@ render_contact (GtkHTMLStream *html_stre
+ 
+ 	if (accum->len > 0) {
+ 		start_block (html_stream, _("personal"));
+-		gtk_html_stream_printf (html_stream, accum->str);
++		gtk_html_stream_printf (html_stream, "%s", accum->str);
+ 		end_block (html_stream);
+ 	}
+ 
+--- calendar/gui/e-calendar-view.c.orig	Sat Aug 27 18:52:46 2005
++++ calendar/gui/e-calendar-view.c	Sat Aug 27 18:53:10 2005
+@@ -1079,7 +1079,7 @@ on_save_as (EPopup *ep, EPopupItem *pite
+ 		return;
+ 	}
+ 	
+-	fprintf (file, ical_string);
++	fprintf (file, "%s", ical_string);
+ 	g_free (ical_string);
+ 	fclose (file);
+ 
+--- calendar/gui/e-calendar-table.c.orig	Sat Aug 27 18:53:42 2005
++++ calendar/gui/e-calendar-table.c	Sat Aug 27 18:53:58 2005
+@@ -1027,7 +1027,7 @@ e_calendar_table_on_save_as (EPopup *ep,
+ 		return;
+ 	}
+ 	
+-	fprintf (file, ical_string);
++	fprintf (file, "%s", ical_string);
+ 	g_free (ical_string);
+ 	fclose (file);
+ }
