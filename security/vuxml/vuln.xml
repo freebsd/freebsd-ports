@@ -32,6 +32,38 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="38c76fcf-1744-11da-978e-0001020eed82">
+    <topic>pam_ldap -- authentication bypass vulnerability</topic>
+    <affects>
+      <package>
+	<name>pam_ldap</name>
+	<range><lt>1.8.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Luke Howard reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=166163">
+	  <p>If a pam_ldap client authenticates against an LDAP server
+	    that returns a passwordPolicyResponse control, but omits
+	    the optional "error" field of the
+	    PasswordPolicyResponseValue, then the LDAP authentication
+	    result will be ignored and the authentication step will
+	    always succeed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2641</cvename>
+      <certvu>778916</certvu>
+      <url>https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=166163</url>
+    </references>
+    <dates>
+      <discovery>2005-08-22</discovery>
+      <entry>2005-08-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b971d2a6-1670-11da-978e-0001020eed82">
     <topic>pcre -- regular expression buffer overflow</topic>
     <affects>
