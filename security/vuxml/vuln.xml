@@ -32,6 +32,49 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e5afdf63-1746-11da-978e-0001020eed82">
+    <topic>evolution -- remote format string vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>evolution</name>
+	<range><gt>1.5</gt><lt>2.3.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SO-AND-SO reports:</p>
+	<blockquote cite="http://www.sitic.se/eng/advisories_and_recommendations/sa05-001.html">
+	  <p>Evolution suffers from several format string bugs when
+	    handling data from remote sources. These bugs lead to
+	    crashes or the execution of arbitrary assembly language
+	    code.</p>
+	  <ol>
+	    <li>The first format string bug occurs when viewing the
+	      full vCard data attached to an e-mail message.</li>
+	    <li>The second format string bug occurs when displaying
+	      contact data from remote LDAP servers.</li>
+	    <li>The third format string bug occurs when displaying
+	      task list data from remote servers.</li>
+	    <li>The fourth, and least serious, format string bug
+	      occurs when the user goes to the Calendars tab to save
+	      task list data that is vulnerable to problem 3
+	      above. Other calendar entries that do not come from task
+	      lists are also affected.</li>
+	  </ol>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2549</cvename>
+      <cvename>CAN-2005-2550</cvename>
+      <url>http://www.sitic.se/eng/advisories_and_recommendations/sa05-001.html</url>
+    </references>
+    <dates>
+      <discovery>2005-08-10</discovery>
+      <entry>2005-08-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="38c76fcf-1744-11da-978e-0001020eed82">
     <topic>pam_ldap -- authentication bypass vulnerability</topic>
     <affects>
