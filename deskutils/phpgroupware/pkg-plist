@@ -3144,6 +3144,7 @@ www/data-dist/phpgroupware/ftp/templates/idsociety/images/navbar.gif
 www/data-dist/phpgroupware/ftp/templates/idsociety/images/navbar.png
 www/data-dist/phpgroupware/ftp/templates/verdilak/images/navbar.gif
 www/data-dist/phpgroupware/ftp/templates/verdilak/images/navbar.png
+www/data-dist/phpgroupware/fudforum/CAN-2005-2600-fix.diff
 www/data-dist/phpgroupware/fudforum/README
 www/data-dist/phpgroupware/fudforum/inc/class.fud_sidebox_hooks.inc.php
 www/data-dist/phpgroupware/fudforum/inc/class.ufud.inc.php
@@ -5211,6 +5212,7 @@ www/data-dist/phpgroupware/phpgwapi/inc/class.contacts_shared.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.contacts_sql.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.country.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.crypto.inc.php
+www/data-dist/phpgroupware/phpgwapi/inc/class.data_cleaner.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.datetime.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.db.inc.php
 www/data-dist/phpgroupware/phpgwapi/inc/class.db_msql.inc.php
