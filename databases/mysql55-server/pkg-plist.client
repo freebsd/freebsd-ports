@@ -45,10 +45,10 @@ include/mysql/sslopt-vars.h
 include/mysql/typelib.h
 lib/mysql/libmysqlclient.a
 lib/mysql/libmysqlclient.so
-lib/mysql/libmysqlclient.so.14
+lib/mysql/libmysqlclient.so.15
 lib/mysql/libmysqlclient_r.a
 lib/mysql/libmysqlclient_r.so
-lib/mysql/libmysqlclient_r.so.14
+lib/mysql/libmysqlclient_r.so.15
 %%DATADIR%%/mysql_fix_privilege_tables.sql
 @dirrm include/mysql
 @dirrm lib/mysql
