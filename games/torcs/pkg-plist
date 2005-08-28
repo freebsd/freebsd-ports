@@ -5,17 +5,18 @@ bin/texmapper
 bin/torcs
 bin/trackgen
 lib/torcs/accc-bin
-%%OLETHROS%%lib/torcs/drivers/olethros/olethros.so
-%%BERNIW%%lib/torcs/drivers/berniw/berniw.so
-%%BERNIW%%lib/torcs/drivers/berniw2/berniw2.so
-%%BERNIW%%lib/torcs/drivers/berniw3/berniw3.so
-%%BT%%lib/torcs/drivers/bt/bt.so
+lib/torcs/drivers/berniw/berniw.so
+lib/torcs/drivers/berniw2/berniw2.so
+lib/torcs/drivers/berniw3/berniw3.so
+lib/torcs/drivers/bt/bt.so
 lib/torcs/drivers/cylos1/cylos1.so
+lib/torcs/drivers/cylos2/cylos2.so
 lib/torcs/drivers/damned/damned.so
 lib/torcs/drivers/human/human.so
 lib/torcs/drivers/inferno/inferno.so
 lib/torcs/drivers/inferno2/inferno2.so
 lib/torcs/drivers/lliaw/lliaw.so
+lib/torcs/drivers/olethros/olethros.so
 lib/torcs/drivers/sparkle/sparkle.so
 lib/torcs/drivers/tanhoj/tanhoj.so
 lib/torcs/drivers/tita/tita.so
@@ -38,7 +39,9 @@ lib/torcs/setup_linux.sh
 lib/torcs/texmapper-bin
 lib/torcs/torcs-bin
 lib/torcs/trackgen-bin
-%%TORCSDIR%%/cars/155-DTM/155-DTM-1024.xcf
+%%TORCSDIR%%/CHANGELOG.html
+%%TORCSDIR%%/Ticon.ico
+%%TORCSDIR%%/Ticon.png
 %%TORCSDIR%%/cars/155-DTM/155-DTM-lod1.acc
 %%TORCSDIR%%/cars/155-DTM/155-DTM-lod2.acc
 %%TORCSDIR%%/cars/155-DTM/155-DTM.acc
@@ -52,12 +55,10 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/360-modena/360-modena-lod3.acc
 %%TORCSDIR%%/cars/360-modena/360-modena.acc
 %%TORCSDIR%%/cars/360-modena/360-modena.rgb
-%%TORCSDIR%%/cars/360-modena/360-modena.xcf
 %%TORCSDIR%%/cars/360-modena/360-modena.xml
 %%TORCSDIR%%/cars/360-modena/readme.txt
 %%TORCSDIR%%/cars/360-modena/shadow.rgb
 %%TORCSDIR%%/cars/360-modena/tex-wheel.rgb
-%%TORCSDIR%%/cars/acura-nsx-sz/acura-nsx-sz-512.xcf
 %%TORCSDIR%%/cars/acura-nsx-sz/acura-nsx-sz-lod1.acc
 %%TORCSDIR%%/cars/acura-nsx-sz/acura-nsx-sz-lod2.acc
 %%TORCSDIR%%/cars/acura-nsx-sz/acura-nsx-sz.acc
@@ -70,7 +71,6 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/baja-bug/baja-bug-lod2.acc
 %%TORCSDIR%%/cars/baja-bug/baja-bug.acc
 %%TORCSDIR%%/cars/baja-bug/baja-bug.rgb
-%%TORCSDIR%%/cars/baja-bug/baja-bug.xcf
 %%TORCSDIR%%/cars/baja-bug/baja-bug.xml
 %%TORCSDIR%%/cars/baja-bug/readme.txt
 %%TORCSDIR%%/cars/baja-bug/shadow.rgb
@@ -79,7 +79,6 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/buggy/buggy-lod2.acc
 %%TORCSDIR%%/cars/buggy/buggy.acc
 %%TORCSDIR%%/cars/buggy/buggy.rgb
-%%TORCSDIR%%/cars/buggy/buggy.xcf
 %%TORCSDIR%%/cars/buggy/buggy.xml
 %%TORCSDIR%%/cars/buggy/shadow.rgb
 %%TORCSDIR%%/cars/buggy/tex-wheel.rgb
@@ -87,16 +86,15 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/cg-nascar-rwd/cg-nascar-rwd-lod2.acc
 %%TORCSDIR%%/cars/cg-nascar-rwd/cg-nascar-rwd.acc
 %%TORCSDIR%%/cars/cg-nascar-rwd/cg-nascar-rwd.rgb
-%%TORCSDIR%%/cars/cg-nascar-rwd/cg-nascar-rwd.xcf
 %%TORCSDIR%%/cars/cg-nascar-rwd/cg-nascar-rwd.xml
 %%TORCSDIR%%/cars/cg-nascar-rwd/readme.txt
 %%TORCSDIR%%/cars/cg-nascar-rwd/shadow.rgb
 %%TORCSDIR%%/cars/cg-nascar-rwd/tex-wheel.rgb
 %%TORCSDIR%%/cars/clkdtm/clkdtm-lod1.acc
 %%TORCSDIR%%/cars/clkdtm/clkdtm-lod2.acc
+%%TORCSDIR%%/cars/clkdtm/clkdtm-lod3.acc
 %%TORCSDIR%%/cars/clkdtm/clkdtm.acc
 %%TORCSDIR%%/cars/clkdtm/clkdtm.rgb
-%%TORCSDIR%%/cars/clkdtm/clkdtm.xcf
 %%TORCSDIR%%/cars/clkdtm/clkdtm.xml
 %%TORCSDIR%%/cars/clkdtm/readme.txt
 %%TORCSDIR%%/cars/clkdtm/shadow.rgb
@@ -107,14 +105,19 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/gt40/gt40-lod4.acc
 %%TORCSDIR%%/cars/gt40/gt40.acc
 %%TORCSDIR%%/cars/gt40/gt40.rgb
-%%TORCSDIR%%/cars/gt40/gt40.xcf
 %%TORCSDIR%%/cars/gt40/gt40.xml
 %%TORCSDIR%%/cars/gt40/readme.txt
 %%TORCSDIR%%/cars/gt40/shadow.rgb
 %%TORCSDIR%%/cars/gt40/tex-wheel.rgb
+%%TORCSDIR%%/cars/kc-2000gt/2000gt.ac
+%%TORCSDIR%%/cars/kc-2000gt/Makefile
+%%TORCSDIR%%/cars/kc-2000gt/kc-2000gt-lod1.ac
 %%TORCSDIR%%/cars/kc-2000gt/kc-2000gt-lod1.acc
+%%TORCSDIR%%/cars/kc-2000gt/kc-2000gt-lod2.ac
 %%TORCSDIR%%/cars/kc-2000gt/kc-2000gt-lod2.acc
+%%TORCSDIR%%/cars/kc-2000gt/kc-2000gt-lod3.ac
 %%TORCSDIR%%/cars/kc-2000gt/kc-2000gt-lod3.acc
+%%TORCSDIR%%/cars/kc-2000gt/kc-2000gt.ac
 %%TORCSDIR%%/cars/kc-2000gt/kc-2000gt.acc
 %%TORCSDIR%%/cars/kc-2000gt/kc-2000gt.rgb
 %%TORCSDIR%%/cars/kc-2000gt/kc-2000gt.xcf
@@ -122,9 +125,15 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/kc-2000gt/readme.txt
 %%TORCSDIR%%/cars/kc-2000gt/shadow.rgb
 %%TORCSDIR%%/cars/kc-2000gt/tex-wheel.rgb
+%%TORCSDIR%%/cars/kc-5300gt/5300gt.ac
+%%TORCSDIR%%/cars/kc-5300gt/Makefile
+%%TORCSDIR%%/cars/kc-5300gt/kc-5300gt-lod1.ac
 %%TORCSDIR%%/cars/kc-5300gt/kc-5300gt-lod1.acc
+%%TORCSDIR%%/cars/kc-5300gt/kc-5300gt-lod2.ac
 %%TORCSDIR%%/cars/kc-5300gt/kc-5300gt-lod2.acc
+%%TORCSDIR%%/cars/kc-5300gt/kc-5300gt-lod3.ac
 %%TORCSDIR%%/cars/kc-5300gt/kc-5300gt-lod3.acc
+%%TORCSDIR%%/cars/kc-5300gt/kc-5300gt.ac
 %%TORCSDIR%%/cars/kc-5300gt/kc-5300gt.acc
 %%TORCSDIR%%/cars/kc-5300gt/kc-5300gt.rgb
 %%TORCSDIR%%/cars/kc-5300gt/kc-5300gt.xcf
@@ -134,10 +143,16 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/kc-5300gt/rpm1.rgb
 %%TORCSDIR%%/cars/kc-5300gt/shadow.rgb
 %%TORCSDIR%%/cars/kc-5300gt/tex-wheel.rgb
+%%TORCSDIR%%/cars/kc-a110/Makefile
+%%TORCSDIR%%/cars/kc-a110/alpine.ac
 %%TORCSDIR%%/cars/kc-a110/infos.txt
+%%TORCSDIR%%/cars/kc-a110/kc-a110-lod1.ac
 %%TORCSDIR%%/cars/kc-a110/kc-a110-lod1.acc
+%%TORCSDIR%%/cars/kc-a110/kc-a110-lod2.ac
 %%TORCSDIR%%/cars/kc-a110/kc-a110-lod2.acc
+%%TORCSDIR%%/cars/kc-a110/kc-a110-lod3.ac
 %%TORCSDIR%%/cars/kc-a110/kc-a110-lod3.acc
+%%TORCSDIR%%/cars/kc-a110/kc-a110.ac
 %%TORCSDIR%%/cars/kc-a110/kc-a110.acc
 %%TORCSDIR%%/cars/kc-a110/kc-a110.rgb
 %%TORCSDIR%%/cars/kc-a110/kc-a110.xcf
@@ -145,9 +160,15 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/kc-a110/readme.txt
 %%TORCSDIR%%/cars/kc-a110/shadow.rgb
 %%TORCSDIR%%/cars/kc-a110/tex-wheel.rgb
+%%TORCSDIR%%/cars/kc-alfatz2/Makefile
+%%TORCSDIR%%/cars/kc-alfatz2/alfatz2.ac
+%%TORCSDIR%%/cars/kc-alfatz2/kc-alfatz2-lod1.ac
 %%TORCSDIR%%/cars/kc-alfatz2/kc-alfatz2-lod1.acc
+%%TORCSDIR%%/cars/kc-alfatz2/kc-alfatz2-lod2.ac
 %%TORCSDIR%%/cars/kc-alfatz2/kc-alfatz2-lod2.acc
+%%TORCSDIR%%/cars/kc-alfatz2/kc-alfatz2-lod3.ac
 %%TORCSDIR%%/cars/kc-alfatz2/kc-alfatz2-lod3.acc
+%%TORCSDIR%%/cars/kc-alfatz2/kc-alfatz2.ac
 %%TORCSDIR%%/cars/kc-alfatz2/kc-alfatz2.acc
 %%TORCSDIR%%/cars/kc-alfatz2/kc-alfatz2.rgb
 %%TORCSDIR%%/cars/kc-alfatz2/kc-alfatz2.xcf
@@ -157,9 +178,15 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/kc-alfatz2/rpm1.rgb
 %%TORCSDIR%%/cars/kc-alfatz2/shadow.rgb
 %%TORCSDIR%%/cars/kc-alfatz2/tex-wheel.rgb
+%%TORCSDIR%%/cars/kc-bigh/Makefile
+%%TORCSDIR%%/cars/kc-bigh/bigh.ac
+%%TORCSDIR%%/cars/kc-bigh/kc-bigh-lod1.ac
 %%TORCSDIR%%/cars/kc-bigh/kc-bigh-lod1.acc
+%%TORCSDIR%%/cars/kc-bigh/kc-bigh-lod2.ac
 %%TORCSDIR%%/cars/kc-bigh/kc-bigh-lod2.acc
+%%TORCSDIR%%/cars/kc-bigh/kc-bigh-lod3.ac
 %%TORCSDIR%%/cars/kc-bigh/kc-bigh-lod3.acc
+%%TORCSDIR%%/cars/kc-bigh/kc-bigh.ac
 %%TORCSDIR%%/cars/kc-bigh/kc-bigh.acc
 %%TORCSDIR%%/cars/kc-bigh/kc-bigh.rgb
 %%TORCSDIR%%/cars/kc-bigh/kc-bigh.xcf
@@ -167,9 +194,31 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/kc-bigh/readme.txt
 %%TORCSDIR%%/cars/kc-bigh/shadow.rgb
 %%TORCSDIR%%/cars/kc-bigh/tex-wheel.rgb
+%%TORCSDIR%%/cars/kc-cobra/Makefile
+%%TORCSDIR%%/cars/kc-cobra/cobra2.ac
+%%TORCSDIR%%/cars/kc-cobra/kc-cobra-lod1.ac
+%%TORCSDIR%%/cars/kc-cobra/kc-cobra-lod1.acc
+%%TORCSDIR%%/cars/kc-cobra/kc-cobra-lod2.ac
+%%TORCSDIR%%/cars/kc-cobra/kc-cobra-lod2.acc
+%%TORCSDIR%%/cars/kc-cobra/kc-cobra-lod3.ac
+%%TORCSDIR%%/cars/kc-cobra/kc-cobra-lod3.acc
+%%TORCSDIR%%/cars/kc-cobra/kc-cobra.ac
+%%TORCSDIR%%/cars/kc-cobra/kc-cobra.acc
+%%TORCSDIR%%/cars/kc-cobra/kc-cobra.rgb
+%%TORCSDIR%%/cars/kc-cobra/kc-cobra.xcf
+%%TORCSDIR%%/cars/kc-cobra/kc-cobra.xml
+%%TORCSDIR%%/cars/kc-cobra/readme.txt
+%%TORCSDIR%%/cars/kc-cobra/shadow.rgb
+%%TORCSDIR%%/cars/kc-cobra/tex-wheel.rgb
+%%TORCSDIR%%/cars/kc-coda/Makefile
+%%TORCSDIR%%/cars/kc-coda/coda.ac
+%%TORCSDIR%%/cars/kc-coda/kc-coda-lod1.ac
 %%TORCSDIR%%/cars/kc-coda/kc-coda-lod1.acc
+%%TORCSDIR%%/cars/kc-coda/kc-coda-lod2.ac
 %%TORCSDIR%%/cars/kc-coda/kc-coda-lod2.acc
+%%TORCSDIR%%/cars/kc-coda/kc-coda-lod3.ac
 %%TORCSDIR%%/cars/kc-coda/kc-coda-lod3.acc
+%%TORCSDIR%%/cars/kc-coda/kc-coda.ac
 %%TORCSDIR%%/cars/kc-coda/kc-coda.acc
 %%TORCSDIR%%/cars/kc-coda/kc-coda.rgb
 %%TORCSDIR%%/cars/kc-coda/kc-coda.xcf
@@ -177,9 +226,15 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/kc-coda/readme.txt
 %%TORCSDIR%%/cars/kc-coda/shadow.rgb
 %%TORCSDIR%%/cars/kc-coda/tex-wheel.rgb
+%%TORCSDIR%%/cars/kc-conrero/Makefile
+%%TORCSDIR%%/cars/kc-conrero/conrero.ac
+%%TORCSDIR%%/cars/kc-conrero/kc-conrero-lod1.ac
 %%TORCSDIR%%/cars/kc-conrero/kc-conrero-lod1.acc
+%%TORCSDIR%%/cars/kc-conrero/kc-conrero-lod2.ac
 %%TORCSDIR%%/cars/kc-conrero/kc-conrero-lod2.acc
+%%TORCSDIR%%/cars/kc-conrero/kc-conrero-lod3.ac
 %%TORCSDIR%%/cars/kc-conrero/kc-conrero-lod3.acc
+%%TORCSDIR%%/cars/kc-conrero/kc-conrero.ac
 %%TORCSDIR%%/cars/kc-conrero/kc-conrero.acc
 %%TORCSDIR%%/cars/kc-conrero/kc-conrero.rgb
 %%TORCSDIR%%/cars/kc-conrero/kc-conrero.xcf
@@ -189,9 +244,14 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/kc-conrero/rpm1.rgb
 %%TORCSDIR%%/cars/kc-conrero/shadow.rgb
 %%TORCSDIR%%/cars/kc-conrero/tex-wheel.rgb
+%%TORCSDIR%%/cars/kc-corvette-ttop/Makefile
+%%TORCSDIR%%/cars/kc-corvette-ttop/kc-corvette-ttop-lod1.ac
 %%TORCSDIR%%/cars/kc-corvette-ttop/kc-corvette-ttop-lod1.acc
+%%TORCSDIR%%/cars/kc-corvette-ttop/kc-corvette-ttop-lod2.ac
 %%TORCSDIR%%/cars/kc-corvette-ttop/kc-corvette-ttop-lod2.acc
+%%TORCSDIR%%/cars/kc-corvette-ttop/kc-corvette-ttop-lod3.ac
 %%TORCSDIR%%/cars/kc-corvette-ttop/kc-corvette-ttop-lod3.acc
+%%TORCSDIR%%/cars/kc-corvette-ttop/kc-corvette-ttop.ac
 %%TORCSDIR%%/cars/kc-corvette-ttop/kc-corvette-ttop.acc
 %%TORCSDIR%%/cars/kc-corvette-ttop/kc-corvette-ttop.rgb
 %%TORCSDIR%%/cars/kc-corvette-ttop/kc-corvette-ttop.xcf
@@ -202,9 +262,15 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/kc-corvette-ttop/sepcs.txt
 %%TORCSDIR%%/cars/kc-corvette-ttop/shadow.rgb
 %%TORCSDIR%%/cars/kc-corvette-ttop/tex-wheel.rgb
+%%TORCSDIR%%/cars/kc-daytona/Makefile
+%%TORCSDIR%%/cars/kc-daytona/daytona.ac
+%%TORCSDIR%%/cars/kc-daytona/kc-daytona-lod1.ac
 %%TORCSDIR%%/cars/kc-daytona/kc-daytona-lod1.acc
+%%TORCSDIR%%/cars/kc-daytona/kc-daytona-lod2.ac
 %%TORCSDIR%%/cars/kc-daytona/kc-daytona-lod2.acc
+%%TORCSDIR%%/cars/kc-daytona/kc-daytona-lod3.ac
 %%TORCSDIR%%/cars/kc-daytona/kc-daytona-lod3.acc
+%%TORCSDIR%%/cars/kc-daytona/kc-daytona.ac
 %%TORCSDIR%%/cars/kc-daytona/kc-daytona.acc
 %%TORCSDIR%%/cars/kc-daytona/kc-daytona.rgb
 %%TORCSDIR%%/cars/kc-daytona/kc-daytona.xcf
@@ -214,9 +280,14 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/kc-daytona/rpm1.rgb
 %%TORCSDIR%%/cars/kc-daytona/shadow.rgb
 %%TORCSDIR%%/cars/kc-daytona/tex-wheel.rgb
+%%TORCSDIR%%/cars/kc-db4z/Makefile
+%%TORCSDIR%%/cars/kc-db4z/kc-db4z-lod1.ac
 %%TORCSDIR%%/cars/kc-db4z/kc-db4z-lod1.acc
+%%TORCSDIR%%/cars/kc-db4z/kc-db4z-lod2.ac
 %%TORCSDIR%%/cars/kc-db4z/kc-db4z-lod2.acc
+%%TORCSDIR%%/cars/kc-db4z/kc-db4z-lod3.ac
 %%TORCSDIR%%/cars/kc-db4z/kc-db4z-lod3.acc
+%%TORCSDIR%%/cars/kc-db4z/kc-db4z.ac
 %%TORCSDIR%%/cars/kc-db4z/kc-db4z.acc
 %%TORCSDIR%%/cars/kc-db4z/kc-db4z.rgb
 %%TORCSDIR%%/cars/kc-db4z/kc-db4z.xcf
@@ -224,8 +295,13 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/kc-db4z/readme.txt
 %%TORCSDIR%%/cars/kc-db4z/shadow.rgb
 %%TORCSDIR%%/cars/kc-db4z/tex-wheel.rgb
+%%TORCSDIR%%/cars/kc-dbs/Makefile
+%%TORCSDIR%%/cars/kc-dbs/dbs.ac
+%%TORCSDIR%%/cars/kc-dbs/kc-dbs-lod1.ac
 %%TORCSDIR%%/cars/kc-dbs/kc-dbs-lod1.acc
+%%TORCSDIR%%/cars/kc-dbs/kc-dbs-lod2.ac
 %%TORCSDIR%%/cars/kc-dbs/kc-dbs-lod2.acc
+%%TORCSDIR%%/cars/kc-dbs/kc-dbs.ac
 %%TORCSDIR%%/cars/kc-dbs/kc-dbs.acc
 %%TORCSDIR%%/cars/kc-dbs/kc-dbs.rgb
 %%TORCSDIR%%/cars/kc-dbs/kc-dbs.xcf
@@ -233,8 +309,13 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/kc-dbs/readme.txt
 %%TORCSDIR%%/cars/kc-dbs/shadow.rgb
 %%TORCSDIR%%/cars/kc-dbs/tex-wheel.rgb
+%%TORCSDIR%%/cars/kc-dino/Makefile
+%%TORCSDIR%%/cars/kc-dino/dino.ac
+%%TORCSDIR%%/cars/kc-dino/kc-dino-lod1.ac
 %%TORCSDIR%%/cars/kc-dino/kc-dino-lod1.acc
+%%TORCSDIR%%/cars/kc-dino/kc-dino-lod2.ac
 %%TORCSDIR%%/cars/kc-dino/kc-dino-lod2.acc
+%%TORCSDIR%%/cars/kc-dino/kc-dino.ac
 %%TORCSDIR%%/cars/kc-dino/kc-dino.acc
 %%TORCSDIR%%/cars/kc-dino/kc-dino.rgb
 %%TORCSDIR%%/cars/kc-dino/kc-dino.xcf
@@ -244,9 +325,15 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/kc-dino/rpm1.rgb
 %%TORCSDIR%%/cars/kc-dino/shadow.rgb
 %%TORCSDIR%%/cars/kc-dino/tex-wheel.rgb
+%%TORCSDIR%%/cars/kc-ghibli/Makefile
+%%TORCSDIR%%/cars/kc-ghibli/ghibli.ac
+%%TORCSDIR%%/cars/kc-ghibli/kc-ghibli-lod1.ac
 %%TORCSDIR%%/cars/kc-ghibli/kc-ghibli-lod1.acc
+%%TORCSDIR%%/cars/kc-ghibli/kc-ghibli-lod2.ac
 %%TORCSDIR%%/cars/kc-ghibli/kc-ghibli-lod2.acc
+%%TORCSDIR%%/cars/kc-ghibli/kc-ghibli-lod3.ac
 %%TORCSDIR%%/cars/kc-ghibli/kc-ghibli-lod3.acc
+%%TORCSDIR%%/cars/kc-ghibli/kc-ghibli.ac
 %%TORCSDIR%%/cars/kc-ghibli/kc-ghibli.acc
 %%TORCSDIR%%/cars/kc-ghibli/kc-ghibli.rgb
 %%TORCSDIR%%/cars/kc-ghibli/kc-ghibli.xcf
@@ -254,10 +341,32 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/kc-ghibli/readme.txt
 %%TORCSDIR%%/cars/kc-ghibli/shadow.rgb
 %%TORCSDIR%%/cars/kc-ghibli/tex-wheel.rgb
+%%TORCSDIR%%/cars/kc-giulietta/Makefile
+%%TORCSDIR%%/cars/kc-giulietta/kc-giulietta-lod1.ac
+%%TORCSDIR%%/cars/kc-giulietta/kc-giulietta-lod1.acc
+%%TORCSDIR%%/cars/kc-giulietta/kc-giulietta-lod2.ac
+%%TORCSDIR%%/cars/kc-giulietta/kc-giulietta-lod2.acc
+%%TORCSDIR%%/cars/kc-giulietta/kc-giulietta-lod3.ac
+%%TORCSDIR%%/cars/kc-giulietta/kc-giulietta-lod3.acc
+%%TORCSDIR%%/cars/kc-giulietta/kc-giulietta-lod4.ac
+%%TORCSDIR%%/cars/kc-giulietta/kc-giulietta-lod4.acc
+%%TORCSDIR%%/cars/kc-giulietta/kc-giulietta.ac
+%%TORCSDIR%%/cars/kc-giulietta/kc-giulietta.acc
+%%TORCSDIR%%/cars/kc-giulietta/kc-giulietta.rgb
+%%TORCSDIR%%/cars/kc-giulietta/kc-giulietta.xml
+%%TORCSDIR%%/cars/kc-giulietta/readme.txt
+%%TORCSDIR%%/cars/kc-giulietta/shadow.rgb
+%%TORCSDIR%%/cars/kc-giulietta/tex-wheel.rgb
+%%TORCSDIR%%/cars/kc-grifo/Makefile
+%%TORCSDIR%%/cars/kc-grifo/kc-grifo-lod1.ac
 %%TORCSDIR%%/cars/kc-grifo/kc-grifo-lod1.acc
+%%TORCSDIR%%/cars/kc-grifo/kc-grifo-lod2.ac
 %%TORCSDIR%%/cars/kc-grifo/kc-grifo-lod2.acc
+%%TORCSDIR%%/cars/kc-grifo/kc-grifo-lod3.ac
 %%TORCSDIR%%/cars/kc-grifo/kc-grifo-lod3.acc
+%%TORCSDIR%%/cars/kc-grifo/kc-grifo-lod4.ac
 %%TORCSDIR%%/cars/kc-grifo/kc-grifo-lod4.acc
+%%TORCSDIR%%/cars/kc-grifo/kc-grifo.ac
 %%TORCSDIR%%/cars/kc-grifo/kc-grifo.acc
 %%TORCSDIR%%/cars/kc-grifo/kc-grifo.rgb
 %%TORCSDIR%%/cars/kc-grifo/kc-grifo.xml
@@ -266,10 +375,16 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/kc-grifo/rpm1.rgb
 %%TORCSDIR%%/cars/kc-grifo/shadow.rgb
 %%TORCSDIR%%/cars/kc-grifo/tex-wheel.rgb
+%%TORCSDIR%%/cars/kc-gt40/Makefile
+%%TORCSDIR%%/cars/kc-gt40/gt40.ac
 %%TORCSDIR%%/cars/kc-gt40/gt40.acc
+%%TORCSDIR%%/cars/kc-gt40/kc-gt40-lod1.ac
 %%TORCSDIR%%/cars/kc-gt40/kc-gt40-lod1.acc
+%%TORCSDIR%%/cars/kc-gt40/kc-gt40-lod2.ac
 %%TORCSDIR%%/cars/kc-gt40/kc-gt40-lod2.acc
+%%TORCSDIR%%/cars/kc-gt40/kc-gt40-lod3.ac
 %%TORCSDIR%%/cars/kc-gt40/kc-gt40-lod3.acc
+%%TORCSDIR%%/cars/kc-gt40/kc-gt40.ac
 %%TORCSDIR%%/cars/kc-gt40/kc-gt40.acc
 %%TORCSDIR%%/cars/kc-gt40/kc-gt40.rgb
 %%TORCSDIR%%/cars/kc-gt40/kc-gt40.xcf
@@ -279,10 +394,16 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/kc-gt40/rpm1.rgb
 %%TORCSDIR%%/cars/kc-gt40/shadow.rgb
 %%TORCSDIR%%/cars/kc-gt40/tex-wheel.rgb
+%%TORCSDIR%%/cars/kc-gto/Makefile
+%%TORCSDIR%%/cars/kc-gto/kc-gto-lod1.ac
 %%TORCSDIR%%/cars/kc-gto/kc-gto-lod1.acc
+%%TORCSDIR%%/cars/kc-gto/kc-gto-lod2.ac
 %%TORCSDIR%%/cars/kc-gto/kc-gto-lod2.acc
+%%TORCSDIR%%/cars/kc-gto/kc-gto-lod3.ac
 %%TORCSDIR%%/cars/kc-gto/kc-gto-lod3.acc
+%%TORCSDIR%%/cars/kc-gto/kc-gto-lod4.ac
 %%TORCSDIR%%/cars/kc-gto/kc-gto-lod4.acc
+%%TORCSDIR%%/cars/kc-gto/kc-gto.ac
 %%TORCSDIR%%/cars/kc-gto/kc-gto.acc
 %%TORCSDIR%%/cars/kc-gto/kc-gto.rgb
 %%TORCSDIR%%/cars/kc-gto/kc-gto.xcf
@@ -292,13 +413,19 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/kc-gto/rpm1.rgb
 %%TORCSDIR%%/cars/kc-gto/shadow.rgb
 %%TORCSDIR%%/cars/kc-gto/tex-wheel.rgb
+%%TORCSDIR%%/cars/kc-p4/Makefile
+%%TORCSDIR%%/cars/kc-p4/kc-p4-lod1.ac
 %%TORCSDIR%%/cars/kc-p4/kc-p4-lod1.acc
+%%TORCSDIR%%/cars/kc-p4/kc-p4-lod2.ac
 %%TORCSDIR%%/cars/kc-p4/kc-p4-lod2.acc
+%%TORCSDIR%%/cars/kc-p4/kc-p4-lod3.ac
 %%TORCSDIR%%/cars/kc-p4/kc-p4-lod3.acc
+%%TORCSDIR%%/cars/kc-p4/kc-p4.ac
 %%TORCSDIR%%/cars/kc-p4/kc-p4.acc
 %%TORCSDIR%%/cars/kc-p4/kc-p4.rgb
 %%TORCSDIR%%/cars/kc-p4/kc-p4.xcf
 %%TORCSDIR%%/cars/kc-p4/kc-p4.xml
+%%TORCSDIR%%/cars/kc-p4/p4.ac
 %%TORCSDIR%%/cars/kc-p4/readme.txt
 %%TORCSDIR%%/cars/kc-p4/shadow.rgb
 %%TORCSDIR%%/cars/kc-p4/tex-wheel.rgb
@@ -310,8 +437,6 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/lotus-gt1/readme.txt
 %%TORCSDIR%%/cars/lotus-gt1/shadow.rgb
 %%TORCSDIR%%/cars/lotus-gt1/tex-wheel.rgb
-%%TORCSDIR%%/cars/mclaren-f1/mclaren-f1-512.xcf
-%%TORCSDIR%%/cars/mclaren-f1/mclaren-f1-base.xcf
 %%TORCSDIR%%/cars/mclaren-f1/mclaren-f1-lod1.acc
 %%TORCSDIR%%/cars/mclaren-f1/mclaren-f1-lod2.acc
 %%TORCSDIR%%/cars/mclaren-f1/mclaren-f1.acc
@@ -321,7 +446,6 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/mclaren-f1/shadow.rgb
 %%TORCSDIR%%/cars/mclaren-f1/tex-wheel.rgb
 %%TORCSDIR%%/cars/p406/p406-1024.rgb
-%%TORCSDIR%%/cars/p406/p406-1024.xcf
 %%TORCSDIR%%/cars/p406/p406-512.rgb
 %%TORCSDIR%%/cars/p406/p406-lod1.acc
 %%TORCSDIR%%/cars/p406/p406-lod2.acc
@@ -342,7 +466,6 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/porsche-gt1/porsche-gt1-lod4.acc
 %%TORCSDIR%%/cars/porsche-gt1/porsche-gt1.acc
 %%TORCSDIR%%/cars/porsche-gt1/porsche-gt1.rgb
-%%TORCSDIR%%/cars/porsche-gt1/porsche-gt1.xcf
 %%TORCSDIR%%/cars/porsche-gt1/porsche-gt1.xml
 %%TORCSDIR%%/cars/porsche-gt1/readme.txt
 %%TORCSDIR%%/cars/porsche-gt1/shadow.rgb
@@ -352,7 +475,6 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/porsche-gt3rs/porsche-gt3rs-lod3.acc
 %%TORCSDIR%%/cars/porsche-gt3rs/porsche-gt3rs.acc
 %%TORCSDIR%%/cars/porsche-gt3rs/porsche-gt3rs.rgb
-%%TORCSDIR%%/cars/porsche-gt3rs/porsche-gt3rs.xcf
 %%TORCSDIR%%/cars/porsche-gt3rs/porsche-gt3rs.xml
 %%TORCSDIR%%/cars/porsche-gt3rs/readme.txt
 %%TORCSDIR%%/cars/porsche-gt3rs/shadow.rgb
@@ -426,7 +548,6 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/viper-gts-r/viper-gts-r-lod2.acc
 %%TORCSDIR%%/cars/viper-gts-r/viper-gts-r.acc
 %%TORCSDIR%%/cars/viper-gts-r/viper-gts-r.rgb
-%%TORCSDIR%%/cars/viper-gts-r/viper-gts-r.xcf
 %%TORCSDIR%%/cars/viper-gts-r/viper-gts-r.xml
 %%TORCSDIR%%/cars/vm-x2/readme.txt
 %%TORCSDIR%%/cars/vm-x2/shadow.rgb
@@ -438,7 +559,6 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/vm-x2/vm-x2-lod4.acc
 %%TORCSDIR%%/cars/vm-x2/vm-x2.acc
 %%TORCSDIR%%/cars/vm-x2/vm-x2.rgb
-%%TORCSDIR%%/cars/vm-x2/vm-x2.xcf
 %%TORCSDIR%%/cars/vm-x2/vm-x2.xml
 %%TORCSDIR%%/cars/vm-x4/readme.txt
 %%TORCSDIR%%/cars/vm-x4/shadow.rgb
@@ -450,7 +570,6 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/vm-x4/vm-x4-lod4.acc
 %%TORCSDIR%%/cars/vm-x4/vm-x4.acc
 %%TORCSDIR%%/cars/vm-x4/vm-x4.rgb
-%%TORCSDIR%%/cars/vm-x4/vm-x4.xcf
 %%TORCSDIR%%/cars/vm-x4/vm-x4.xml
 %%TORCSDIR%%/cars/xj-220/readme.txt
 %%TORCSDIR%%/cars/xj-220/shadow.rgb
@@ -459,7 +578,6 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/cars/xj-220/xj-220-lod2.acc
 %%TORCSDIR%%/cars/xj-220/xj-220.acc
 %%TORCSDIR%%/cars/xj-220/xj-220.rgb
-%%TORCSDIR%%/cars/xj-220/xj-220.xcf
 %%TORCSDIR%%/cars/xj-220/xj-220.xml
 %%TORCSDIR%%/categories/F1.xml
 %%TORCSDIR%%/categories/Historic.xml
@@ -526,13 +644,48 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/data/img/splash-simucfg.png
 %%TORCSDIR%%/data/img/splash-single-player.png
 %%TORCSDIR%%/data/img/splash.png
+%%TORCSDIR%%/data/objects/ad1.ac
+%%TORCSDIR%%/data/objects/bridge-arch.ac
+%%TORCSDIR%%/data/objects/bridge.ac
+%%TORCSDIR%%/data/objects/building1.ac
+%%TORCSDIR%%/data/objects/building2.ac
+%%TORCSDIR%%/data/objects/forest1.ac
+%%TORCSDIR%%/data/objects/forest2.ac
+%%TORCSDIR%%/data/objects/forest3.ac
+%%TORCSDIR%%/data/objects/needle.ac
+%%TORCSDIR%%/data/objects/stadium1.ac
+%%TORCSDIR%%/data/objects/stand-inter.ac
+%%TORCSDIR%%/data/objects/stand-main.ac
+%%TORCSDIR%%/data/objects/stand-wall.ac
+%%TORCSDIR%%/data/objects/tree1.ac
+%%TORCSDIR%%/data/objects/tree10.ac
+%%TORCSDIR%%/data/objects/tree11.ac
+%%TORCSDIR%%/data/objects/tree12.ac
+%%TORCSDIR%%/data/objects/tree13.ac
+%%TORCSDIR%%/data/objects/tree14.ac
+%%TORCSDIR%%/data/objects/tree15.ac
+%%TORCSDIR%%/data/objects/tree16.ac
+%%TORCSDIR%%/data/objects/tree17.ac
+%%TORCSDIR%%/data/objects/tree2.ac
+%%TORCSDIR%%/data/objects/tree3.ac
+%%TORCSDIR%%/data/objects/tree4.ac
+%%TORCSDIR%%/data/objects/tree5.ac
+%%TORCSDIR%%/data/objects/tree6.ac
+%%TORCSDIR%%/data/objects/tree7.ac
+%%TORCSDIR%%/data/objects/tree8.ac
+%%TORCSDIR%%/data/objects/tree9.ac
+%%TORCSDIR%%/data/objects/treeg1.ac
 %%TORCSDIR%%/data/sound/206_engine.wav
+%%TORCSDIR%%/data/sound/935.wav
+%%TORCSDIR%%/data/sound/944.wav
+%%TORCSDIR%%/data/sound/alpha-romeo.wav
 %%TORCSDIR%%/data/sound/axle.wav
 %%TORCSDIR%%/data/sound/backfire.wav
 %%TORCSDIR%%/data/sound/backfire_loop.wav
 %%TORCSDIR%%/data/sound/boom.wav
 %%TORCSDIR%%/data/sound/bottom_crash.wav
 %%TORCSDIR%%/data/sound/cleanviper.wav
+%%TORCSDIR%%/data/sound/clkdtmb2.wav
 %%TORCSDIR%%/data/sound/corolla1400hi2.wav
 %%TORCSDIR%%/data/sound/crash1.wav
 %%TORCSDIR%%/data/sound/crash2.wav
@@ -543,23 +696,32 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/data/sound/engine-1.wav
 %%TORCSDIR%%/data/sound/evo7_engine.wav
 %%TORCSDIR%%/data/sound/evo7_engine_f.wav
+%%TORCSDIR%%/data/sound/f360.wav
 %%TORCSDIR%%/data/sound/ferrarif355.wav
 %%TORCSDIR%%/data/sound/ferrarif50.wav
 %%TORCSDIR%%/data/sound/ford1b.wav
 %%TORCSDIR%%/data/sound/ford2c.wav
 %%TORCSDIR%%/data/sound/gear_change1.wav
+%%TORCSDIR%%/data/sound/gt40.wav
 %%TORCSDIR%%/data/sound/impreza2002_engine.wav
 %%TORCSDIR%%/data/sound/lamborghinidiablo.wav
 %%TORCSDIR%%/data/sound/locked.wav
+%%TORCSDIR%%/data/sound/lotus.wav
 %%TORCSDIR%%/data/sound/mclarenf1.wav
+%%TORCSDIR%%/data/sound/nsx.wav
 %%TORCSDIR%%/data/sound/out_of_road-3.wav
 %%TORCSDIR%%/data/sound/out_of_road.wav
 %%TORCSDIR%%/data/sound/porsche_engine.wav
+%%TORCSDIR%%/data/sound/renault-v10.wav
 %%TORCSDIR%%/data/sound/road-ride.wav
 %%TORCSDIR%%/data/sound/skid.wav
 %%TORCSDIR%%/data/sound/skid_metal.wav
 %%TORCSDIR%%/data/sound/skid_tyres.wav
+%%TORCSDIR%%/data/sound/turbo1.wav
 %%TORCSDIR%%/data/sound/viper2.wav
+%%TORCSDIR%%/data/sound/viper_long.wav
+%%TORCSDIR%%/data/sound/xj220.wav
+%%TORCSDIR%%/data/textures/arbor2_n.rgb
 %%TORCSDIR%%/data/textures/back-sign.rgb
 %%TORCSDIR%%/data/textures/background.png
 %%TORCSDIR%%/data/textures/breaklight1.rgb
@@ -736,571 +898,571 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/data/tracks/oval.xml
 %%TORCSDIR%%/data/tracks/road.xml
 %%TORCSDIR%%/data/tracks/surfaces.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/a-speedway.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/aalborg.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/alpine-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/cg-nascar-rwd.rgb
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/dirt-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/dirt-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/dirt-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/dirt-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/dirt-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/dirt-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/e-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/e-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/e-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/e-track-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/e-track-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/e-track-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/eroad.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/g-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/g-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/g-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/michigan.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/mixed-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/mixed-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/spring.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/1/wheel-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/a-speedway.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/aalborg.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/alpine-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/buggy.rgb
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/dirt-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/dirt-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/dirt-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/dirt-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/dirt-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/dirt-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/e-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/e-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/e-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/e-track-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/e-track-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/e-track-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/eroad.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/g-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/g-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/g-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/michigan.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/mixed-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/mixed-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/spring.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/10/wheel-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/a-speedway.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/aalborg.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/alpine-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/cg-nascar-rwd.rgb
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/dirt-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/dirt-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/dirt-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/dirt-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/dirt-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/dirt-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/e-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/e-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/e-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/e-track-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/e-track-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/e-track-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/eroad.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/g-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/g-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/g-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/michigan.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/mixed-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/mixed-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/spring.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/2/wheel-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/a-speedway.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/aalborg.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/alpine-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/dirt-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/dirt-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/dirt-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/dirt-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/dirt-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/dirt-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/e-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/e-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/e-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/e-track-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/e-track-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/e-track-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/eroad.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/g-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/g-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/g-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/michigan.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/mixed-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/mixed-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/porsche-gt1.rgb
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/spring.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/3/wheel-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/a-speedway.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/aalborg.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/alpine-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/dirt-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/dirt-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/dirt-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/dirt-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/dirt-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/dirt-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/e-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/e-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/e-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/e-track-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/e-track-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/e-track-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/eroad.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/g-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/g-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/g-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/michigan.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/mixed-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/mixed-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/spring.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/viper-gts-r.rgb
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/4/wheel-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/a-speedway.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/aalborg.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/alpine-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/dirt-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/dirt-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/dirt-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/dirt-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/dirt-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/dirt-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/e-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/e-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/e-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/e-track-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/e-track-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/e-track-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/eroad.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/g-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/g-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/g-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/gt40.rgb
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/michigan.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/mixed-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/mixed-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/spring.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/5/wheel-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/155-DTM.rgb
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/a-speedway.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/aalborg.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/alpine-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/dirt-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/dirt-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/dirt-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/dirt-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/dirt-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/dirt-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/e-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/e-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/e-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/e-track-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/e-track-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/e-track-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/eroad.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/g-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/g-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/g-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/michigan.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/mixed-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/mixed-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/spring.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/6/wheel-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/a-speedway.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/aalborg.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/alpine-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/dirt-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/dirt-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/dirt-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/dirt-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/dirt-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/dirt-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/e-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/e-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/e-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/e-track-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/e-track-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/e-track-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/eroad.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/g-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/g-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/g-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/lotus-gt1.rgb
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/michigan.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/mixed-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/mixed-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/spring.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/7/wheel-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/a-speedway.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/aalborg.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/alpine-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/baja-bug.rgb
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/dirt-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/dirt-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/dirt-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/dirt-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/dirt-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/dirt-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/e-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/e-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/e-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/e-track-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/e-track-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/e-track-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/eroad.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/g-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/g-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/g-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/michigan.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/mixed-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/mixed-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/spring.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/8/wheel-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/a-speedway.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/aalborg.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/alpine-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/dirt-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/dirt-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/dirt-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/dirt-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/dirt-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/dirt-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/e-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/e-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/e-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/e-track-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/e-track-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/e-track-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/eroad.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/g-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/g-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/g-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/mclaren-f1.rgb
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/michigan.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/mixed-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/mixed-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/spring.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/9/wheel-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/berniw.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/intcossqr.dat
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/intsinsqr.dat
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/logo.rgb
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw/parameter.dat
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/a-speedway.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/aalborg.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/alpine-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/dirt-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/dirt-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/dirt-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/dirt-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/dirt-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/dirt-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/e-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/e-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/e-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/e-track-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/e-track-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/e-track-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/eroad.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/g-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/g-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/g-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/michigan.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/mixed-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/mixed-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/spring.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/1/wheel-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/360-modena.rgb
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/a-speedway.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/aalborg.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/alpine-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/dirt-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/dirt-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/dirt-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/dirt-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/dirt-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/dirt-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/e-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/e-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/e-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/e-track-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/e-track-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/e-track-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/eroad.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/g-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/g-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/g-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/michigan.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/mixed-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/mixed-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/spring.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/10/wheel-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/a-speedway.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/aalborg.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/alpine-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/dirt-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/dirt-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/dirt-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/dirt-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/dirt-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/dirt-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/e-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/e-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/e-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/e-track-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/e-track-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/e-track-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/eroad.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/g-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/g-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/g-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/michigan.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/mixed-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/mixed-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/spring.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/2/wheel-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/a-speedway.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/aalborg.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/alpine-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/dirt-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/dirt-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/dirt-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/dirt-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/dirt-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/dirt-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/e-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/e-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/e-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/e-track-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/e-track-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/e-track-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/eroad.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/g-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/g-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/g-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/michigan.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/mixed-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/mixed-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/spring.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/3/wheel-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/a-speedway.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/aalborg.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/alpine-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/dirt-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/dirt-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/dirt-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/dirt-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/dirt-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/dirt-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/e-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/e-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/e-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/e-track-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/e-track-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/e-track-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/eroad.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/g-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/g-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/g-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/michigan.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/mixed-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/mixed-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/spring.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/4/wheel-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/a-speedway.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/aalborg.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/alpine-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/dirt-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/dirt-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/dirt-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/dirt-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/dirt-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/dirt-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/e-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/e-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/e-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/e-track-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/e-track-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/e-track-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/eroad.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/g-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/g-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/g-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/michigan.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/mixed-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/mixed-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/spring.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/5/wheel-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/a-speedway.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/aalborg.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/alpine-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/dirt-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/dirt-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/dirt-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/dirt-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/dirt-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/dirt-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/e-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/e-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/e-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/e-track-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/e-track-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/e-track-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/eroad.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/g-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/g-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/g-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/michigan.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/mixed-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/mixed-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/spring.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/6/wheel-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/a-speedway.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/aalborg.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/alpine-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/dirt-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/dirt-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/dirt-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/dirt-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/dirt-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/dirt-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/e-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/e-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/e-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/e-track-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/e-track-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/e-track-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/eroad.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/g-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/g-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/g-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/michigan.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/mixed-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/mixed-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/porsche-gt3rs.rgb
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/spring.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/7/wheel-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/a-speedway.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/aalborg.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/alpine-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/clkdtm.rgb
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/dirt-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/dirt-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/dirt-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/dirt-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/dirt-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/dirt-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/e-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/e-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/e-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/e-track-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/e-track-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/e-track-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/eroad.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/g-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/g-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/g-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/michigan.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/mixed-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/mixed-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/spring.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/8/wheel-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/a-speedway.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/aalborg.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/alpine-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/dirt-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/dirt-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/dirt-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/dirt-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/dirt-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/dirt-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/e-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/e-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/e-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/e-track-4.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/e-track-5.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/e-track-6.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/eroad.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/g-track-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/g-track-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/g-track-3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/mclaren-f1.rgb
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/michigan.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/mixed-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/mixed-2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/spring.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/9/wheel-1.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/berniw2.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/intcossqr.dat
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/intsinsqr.dat
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/logo.rgb
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw2/parameter.dat
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw3/1/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw3/10/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw3/2/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw3/3/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw3/4/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw3/5/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw3/6/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw3/7/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw3/8/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw3/9/default.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw3/berniw3.xml
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw3/intcossqr.dat
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw3/intsinsqr.dat
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw3/logo.rgb
-%%BERNIW%%%%TORCSDIR%%/drivers/berniw3/parameter.dat
-%%BT%%%%TORCSDIR%%/drivers/bt/0/cg-nascar-rwd.rgb
-%%BT%%%%TORCSDIR%%/drivers/bt/0/default.xml
-%%BT%%%%TORCSDIR%%/drivers/bt/0/practice/g-track-3.xml
-%%BT%%%%TORCSDIR%%/drivers/bt/0/practice/michigan.xml
-%%BT%%%%TORCSDIR%%/drivers/bt/0/practice/wheel-1.xml
-%%BT%%%%TORCSDIR%%/drivers/bt/0/qualifying/g-track-3.xml
-%%BT%%%%TORCSDIR%%/drivers/bt/0/race/g-track-3.xml
-%%BT%%%%TORCSDIR%%/drivers/bt/0/race/wheel-1.xml
-%%BT%%%%TORCSDIR%%/drivers/bt/1/cg-nascar-rwd.rgb
-%%BT%%%%TORCSDIR%%/drivers/bt/1/default.xml
-%%BT%%%%TORCSDIR%%/drivers/bt/1/practice/g-track-3.xml
-%%BT%%%%TORCSDIR%%/drivers/bt/1/practice/michigan.xml
-%%BT%%%%TORCSDIR%%/drivers/bt/1/practice/wheel-1.xml
-%%BT%%%%TORCSDIR%%/drivers/bt/1/qualifying/g-track-3.xml
-%%BT%%%%TORCSDIR%%/drivers/bt/1/race/g-track-3.xml
-%%BT%%%%TORCSDIR%%/drivers/bt/1/race/wheel-1.xml
-%%BT%%%%TORCSDIR%%/drivers/bt/2/default.xml
-%%BT%%%%TORCSDIR%%/drivers/bt/3/default.xml
-%%BT%%%%TORCSDIR%%/drivers/bt/4/default.xml
-%%BT%%%%TORCSDIR%%/drivers/bt/5/default.xml
-%%BT%%%%TORCSDIR%%/drivers/bt/6/default.xml
-%%BT%%%%TORCSDIR%%/drivers/bt/7/default.xml
-%%BT%%%%TORCSDIR%%/drivers/bt/8/default.xml
-%%BT%%%%TORCSDIR%%/drivers/bt/9/default.xml
-%%BT%%%%TORCSDIR%%/drivers/bt/bt.xml
-%%BT%%%%TORCSDIR%%/drivers/bt/logo.rgb
+%%TORCSDIR%%/drivers/berniw/1/a-speedway.xml
+%%TORCSDIR%%/drivers/berniw/1/aalborg.xml
+%%TORCSDIR%%/drivers/berniw/1/alpine-1.xml
+%%TORCSDIR%%/drivers/berniw/1/cg-nascar-rwd.rgb
+%%TORCSDIR%%/drivers/berniw/1/default.xml
+%%TORCSDIR%%/drivers/berniw/1/dirt-1.xml
+%%TORCSDIR%%/drivers/berniw/1/dirt-2.xml
+%%TORCSDIR%%/drivers/berniw/1/dirt-3.xml
+%%TORCSDIR%%/drivers/berniw/1/dirt-4.xml
+%%TORCSDIR%%/drivers/berniw/1/dirt-5.xml
+%%TORCSDIR%%/drivers/berniw/1/dirt-6.xml
+%%TORCSDIR%%/drivers/berniw/1/e-track-1.xml
+%%TORCSDIR%%/drivers/berniw/1/e-track-2.xml
+%%TORCSDIR%%/drivers/berniw/1/e-track-3.xml
+%%TORCSDIR%%/drivers/berniw/1/e-track-4.xml
+%%TORCSDIR%%/drivers/berniw/1/e-track-5.xml
+%%TORCSDIR%%/drivers/berniw/1/e-track-6.xml
+%%TORCSDIR%%/drivers/berniw/1/eroad.xml
+%%TORCSDIR%%/drivers/berniw/1/g-track-1.xml
+%%TORCSDIR%%/drivers/berniw/1/g-track-2.xml
+%%TORCSDIR%%/drivers/berniw/1/g-track-3.xml
+%%TORCSDIR%%/drivers/berniw/1/michigan.xml
+%%TORCSDIR%%/drivers/berniw/1/mixed-1.xml
+%%TORCSDIR%%/drivers/berniw/1/mixed-2.xml
+%%TORCSDIR%%/drivers/berniw/1/spring.xml
+%%TORCSDIR%%/drivers/berniw/1/wheel-1.xml
+%%TORCSDIR%%/drivers/berniw/10/a-speedway.xml
+%%TORCSDIR%%/drivers/berniw/10/aalborg.xml
+%%TORCSDIR%%/drivers/berniw/10/alpine-1.xml
+%%TORCSDIR%%/drivers/berniw/10/buggy.rgb
+%%TORCSDIR%%/drivers/berniw/10/default.xml
+%%TORCSDIR%%/drivers/berniw/10/dirt-1.xml
+%%TORCSDIR%%/drivers/berniw/10/dirt-2.xml
+%%TORCSDIR%%/drivers/berniw/10/dirt-3.xml
+%%TORCSDIR%%/drivers/berniw/10/dirt-4.xml
+%%TORCSDIR%%/drivers/berniw/10/dirt-5.xml
+%%TORCSDIR%%/drivers/berniw/10/dirt-6.xml
+%%TORCSDIR%%/drivers/berniw/10/e-track-1.xml
+%%TORCSDIR%%/drivers/berniw/10/e-track-2.xml
+%%TORCSDIR%%/drivers/berniw/10/e-track-3.xml
+%%TORCSDIR%%/drivers/berniw/10/e-track-4.xml
+%%TORCSDIR%%/drivers/berniw/10/e-track-5.xml
+%%TORCSDIR%%/drivers/berniw/10/e-track-6.xml
+%%TORCSDIR%%/drivers/berniw/10/eroad.xml
+%%TORCSDIR%%/drivers/berniw/10/g-track-1.xml
+%%TORCSDIR%%/drivers/berniw/10/g-track-2.xml
+%%TORCSDIR%%/drivers/berniw/10/g-track-3.xml
+%%TORCSDIR%%/drivers/berniw/10/michigan.xml
+%%TORCSDIR%%/drivers/berniw/10/mixed-1.xml
+%%TORCSDIR%%/drivers/berniw/10/mixed-2.xml
+%%TORCSDIR%%/drivers/berniw/10/spring.xml
+%%TORCSDIR%%/drivers/berniw/10/wheel-1.xml
+%%TORCSDIR%%/drivers/berniw/2/a-speedway.xml
+%%TORCSDIR%%/drivers/berniw/2/aalborg.xml
+%%TORCSDIR%%/drivers/berniw/2/alpine-1.xml
+%%TORCSDIR%%/drivers/berniw/2/cg-nascar-rwd.rgb
+%%TORCSDIR%%/drivers/berniw/2/default.xml
+%%TORCSDIR%%/drivers/berniw/2/dirt-1.xml
+%%TORCSDIR%%/drivers/berniw/2/dirt-2.xml
+%%TORCSDIR%%/drivers/berniw/2/dirt-3.xml
+%%TORCSDIR%%/drivers/berniw/2/dirt-4.xml
+%%TORCSDIR%%/drivers/berniw/2/dirt-5.xml
+%%TORCSDIR%%/drivers/berniw/2/dirt-6.xml
+%%TORCSDIR%%/drivers/berniw/2/e-track-1.xml
+%%TORCSDIR%%/drivers/berniw/2/e-track-2.xml
+%%TORCSDIR%%/drivers/berniw/2/e-track-3.xml
+%%TORCSDIR%%/drivers/berniw/2/e-track-4.xml
+%%TORCSDIR%%/drivers/berniw/2/e-track-5.xml
+%%TORCSDIR%%/drivers/berniw/2/e-track-6.xml
+%%TORCSDIR%%/drivers/berniw/2/eroad.xml
+%%TORCSDIR%%/drivers/berniw/2/g-track-1.xml
+%%TORCSDIR%%/drivers/berniw/2/g-track-2.xml
+%%TORCSDIR%%/drivers/berniw/2/g-track-3.xml
+%%TORCSDIR%%/drivers/berniw/2/michigan.xml
+%%TORCSDIR%%/drivers/berniw/2/mixed-1.xml
+%%TORCSDIR%%/drivers/berniw/2/mixed-2.xml
+%%TORCSDIR%%/drivers/berniw/2/spring.xml
+%%TORCSDIR%%/drivers/berniw/2/wheel-1.xml
+%%TORCSDIR%%/drivers/berniw/3/a-speedway.xml
+%%TORCSDIR%%/drivers/berniw/3/aalborg.xml
+%%TORCSDIR%%/drivers/berniw/3/alpine-1.xml
+%%TORCSDIR%%/drivers/berniw/3/default.xml
+%%TORCSDIR%%/drivers/berniw/3/dirt-1.xml
+%%TORCSDIR%%/drivers/berniw/3/dirt-2.xml
+%%TORCSDIR%%/drivers/berniw/3/dirt-3.xml
+%%TORCSDIR%%/drivers/berniw/3/dirt-4.xml
+%%TORCSDIR%%/drivers/berniw/3/dirt-5.xml
+%%TORCSDIR%%/drivers/berniw/3/dirt-6.xml
+%%TORCSDIR%%/drivers/berniw/3/e-track-1.xml
+%%TORCSDIR%%/drivers/berniw/3/e-track-2.xml
+%%TORCSDIR%%/drivers/berniw/3/e-track-3.xml
+%%TORCSDIR%%/drivers/berniw/3/e-track-4.xml
+%%TORCSDIR%%/drivers/berniw/3/e-track-5.xml
+%%TORCSDIR%%/drivers/berniw/3/e-track-6.xml
+%%TORCSDIR%%/drivers/berniw/3/eroad.xml
+%%TORCSDIR%%/drivers/berniw/3/g-track-1.xml
+%%TORCSDIR%%/drivers/berniw/3/g-track-2.xml
+%%TORCSDIR%%/drivers/berniw/3/g-track-3.xml
+%%TORCSDIR%%/drivers/berniw/3/michigan.xml
+%%TORCSDIR%%/drivers/berniw/3/mixed-1.xml
+%%TORCSDIR%%/drivers/berniw/3/mixed-2.xml
+%%TORCSDIR%%/drivers/berniw/3/porsche-gt1.rgb
+%%TORCSDIR%%/drivers/berniw/3/spring.xml
+%%TORCSDIR%%/drivers/berniw/3/wheel-1.xml
+%%TORCSDIR%%/drivers/berniw/4/a-speedway.xml
+%%TORCSDIR%%/drivers/berniw/4/aalborg.xml
+%%TORCSDIR%%/drivers/berniw/4/alpine-1.xml
+%%TORCSDIR%%/drivers/berniw/4/default.xml
+%%TORCSDIR%%/drivers/berniw/4/dirt-1.xml
+%%TORCSDIR%%/drivers/berniw/4/dirt-2.xml
+%%TORCSDIR%%/drivers/berniw/4/dirt-3.xml
+%%TORCSDIR%%/drivers/berniw/4/dirt-4.xml
+%%TORCSDIR%%/drivers/berniw/4/dirt-5.xml
+%%TORCSDIR%%/drivers/berniw/4/dirt-6.xml
+%%TORCSDIR%%/drivers/berniw/4/e-track-1.xml
+%%TORCSDIR%%/drivers/berniw/4/e-track-2.xml
+%%TORCSDIR%%/drivers/berniw/4/e-track-3.xml
+%%TORCSDIR%%/drivers/berniw/4/e-track-4.xml
+%%TORCSDIR%%/drivers/berniw/4/e-track-5.xml
+%%TORCSDIR%%/drivers/berniw/4/e-track-6.xml
+%%TORCSDIR%%/drivers/berniw/4/eroad.xml
+%%TORCSDIR%%/drivers/berniw/4/g-track-1.xml
+%%TORCSDIR%%/drivers/berniw/4/g-track-2.xml
+%%TORCSDIR%%/drivers/berniw/4/g-track-3.xml
+%%TORCSDIR%%/drivers/berniw/4/michigan.xml
+%%TORCSDIR%%/drivers/berniw/4/mixed-1.xml
+%%TORCSDIR%%/drivers/berniw/4/mixed-2.xml
+%%TORCSDIR%%/drivers/berniw/4/spring.xml
+%%TORCSDIR%%/drivers/berniw/4/viper-gts-r.rgb
+%%TORCSDIR%%/drivers/berniw/4/wheel-1.xml
+%%TORCSDIR%%/drivers/berniw/5/a-speedway.xml
+%%TORCSDIR%%/drivers/berniw/5/aalborg.xml
+%%TORCSDIR%%/drivers/berniw/5/alpine-1.xml
+%%TORCSDIR%%/drivers/berniw/5/default.xml
+%%TORCSDIR%%/drivers/berniw/5/dirt-1.xml
+%%TORCSDIR%%/drivers/berniw/5/dirt-2.xml
+%%TORCSDIR%%/drivers/berniw/5/dirt-3.xml
+%%TORCSDIR%%/drivers/berniw/5/dirt-4.xml
+%%TORCSDIR%%/drivers/berniw/5/dirt-5.xml
+%%TORCSDIR%%/drivers/berniw/5/dirt-6.xml
+%%TORCSDIR%%/drivers/berniw/5/e-track-1.xml
+%%TORCSDIR%%/drivers/berniw/5/e-track-2.xml
+%%TORCSDIR%%/drivers/berniw/5/e-track-3.xml
+%%TORCSDIR%%/drivers/berniw/5/e-track-4.xml
+%%TORCSDIR%%/drivers/berniw/5/e-track-5.xml
+%%TORCSDIR%%/drivers/berniw/5/e-track-6.xml
+%%TORCSDIR%%/drivers/berniw/5/eroad.xml
+%%TORCSDIR%%/drivers/berniw/5/g-track-1.xml
+%%TORCSDIR%%/drivers/berniw/5/g-track-2.xml
+%%TORCSDIR%%/drivers/berniw/5/g-track-3.xml
+%%TORCSDIR%%/drivers/berniw/5/gt40.rgb
+%%TORCSDIR%%/drivers/berniw/5/michigan.xml
+%%TORCSDIR%%/drivers/berniw/5/mixed-1.xml
+%%TORCSDIR%%/drivers/berniw/5/mixed-2.xml
+%%TORCSDIR%%/drivers/berniw/5/spring.xml
+%%TORCSDIR%%/drivers/berniw/5/wheel-1.xml
+%%TORCSDIR%%/drivers/berniw/6/155-DTM.rgb
+%%TORCSDIR%%/drivers/berniw/6/a-speedway.xml
+%%TORCSDIR%%/drivers/berniw/6/aalborg.xml
+%%TORCSDIR%%/drivers/berniw/6/alpine-1.xml
+%%TORCSDIR%%/drivers/berniw/6/default.xml
+%%TORCSDIR%%/drivers/berniw/6/dirt-1.xml
+%%TORCSDIR%%/drivers/berniw/6/dirt-2.xml
+%%TORCSDIR%%/drivers/berniw/6/dirt-3.xml
+%%TORCSDIR%%/drivers/berniw/6/dirt-4.xml
+%%TORCSDIR%%/drivers/berniw/6/dirt-5.xml
+%%TORCSDIR%%/drivers/berniw/6/dirt-6.xml
+%%TORCSDIR%%/drivers/berniw/6/e-track-1.xml
+%%TORCSDIR%%/drivers/berniw/6/e-track-2.xml
+%%TORCSDIR%%/drivers/berniw/6/e-track-3.xml
+%%TORCSDIR%%/drivers/berniw/6/e-track-4.xml
+%%TORCSDIR%%/drivers/berniw/6/e-track-5.xml
+%%TORCSDIR%%/drivers/berniw/6/e-track-6.xml
+%%TORCSDIR%%/drivers/berniw/6/eroad.xml
+%%TORCSDIR%%/drivers/berniw/6/g-track-1.xml
+%%TORCSDIR%%/drivers/berniw/6/g-track-2.xml
+%%TORCSDIR%%/drivers/berniw/6/g-track-3.xml
+%%TORCSDIR%%/drivers/berniw/6/michigan.xml
+%%TORCSDIR%%/drivers/berniw/6/mixed-1.xml
+%%TORCSDIR%%/drivers/berniw/6/mixed-2.xml
+%%TORCSDIR%%/drivers/berniw/6/spring.xml
+%%TORCSDIR%%/drivers/berniw/6/wheel-1.xml
+%%TORCSDIR%%/drivers/berniw/7/a-speedway.xml
+%%TORCSDIR%%/drivers/berniw/7/aalborg.xml
+%%TORCSDIR%%/drivers/berniw/7/alpine-1.xml
+%%TORCSDIR%%/drivers/berniw/7/default.xml
+%%TORCSDIR%%/drivers/berniw/7/dirt-1.xml
+%%TORCSDIR%%/drivers/berniw/7/dirt-2.xml
+%%TORCSDIR%%/drivers/berniw/7/dirt-3.xml
+%%TORCSDIR%%/drivers/berniw/7/dirt-4.xml
+%%TORCSDIR%%/drivers/berniw/7/dirt-5.xml
+%%TORCSDIR%%/drivers/berniw/7/dirt-6.xml
+%%TORCSDIR%%/drivers/berniw/7/e-track-1.xml
+%%TORCSDIR%%/drivers/berniw/7/e-track-2.xml
+%%TORCSDIR%%/drivers/berniw/7/e-track-3.xml
+%%TORCSDIR%%/drivers/berniw/7/e-track-4.xml
+%%TORCSDIR%%/drivers/berniw/7/e-track-5.xml
+%%TORCSDIR%%/drivers/berniw/7/e-track-6.xml
+%%TORCSDIR%%/drivers/berniw/7/eroad.xml
+%%TORCSDIR%%/drivers/berniw/7/g-track-1.xml
+%%TORCSDIR%%/drivers/berniw/7/g-track-2.xml
+%%TORCSDIR%%/drivers/berniw/7/g-track-3.xml
+%%TORCSDIR%%/drivers/berniw/7/lotus-gt1.rgb
+%%TORCSDIR%%/drivers/berniw/7/michigan.xml
+%%TORCSDIR%%/drivers/berniw/7/mixed-1.xml
+%%TORCSDIR%%/drivers/berniw/7/mixed-2.xml
+%%TORCSDIR%%/drivers/berniw/7/spring.xml
+%%TORCSDIR%%/drivers/berniw/7/wheel-1.xml
+%%TORCSDIR%%/drivers/berniw/8/a-speedway.xml
+%%TORCSDIR%%/drivers/berniw/8/aalborg.xml
+%%TORCSDIR%%/drivers/berniw/8/alpine-1.xml
+%%TORCSDIR%%/drivers/berniw/8/baja-bug.rgb
+%%TORCSDIR%%/drivers/berniw/8/default.xml
+%%TORCSDIR%%/drivers/berniw/8/dirt-1.xml
+%%TORCSDIR%%/drivers/berniw/8/dirt-2.xml
+%%TORCSDIR%%/drivers/berniw/8/dirt-3.xml
+%%TORCSDIR%%/drivers/berniw/8/dirt-4.xml
+%%TORCSDIR%%/drivers/berniw/8/dirt-5.xml
+%%TORCSDIR%%/drivers/berniw/8/dirt-6.xml
+%%TORCSDIR%%/drivers/berniw/8/e-track-1.xml
+%%TORCSDIR%%/drivers/berniw/8/e-track-2.xml
+%%TORCSDIR%%/drivers/berniw/8/e-track-3.xml
+%%TORCSDIR%%/drivers/berniw/8/e-track-4.xml
+%%TORCSDIR%%/drivers/berniw/8/e-track-5.xml
+%%TORCSDIR%%/drivers/berniw/8/e-track-6.xml
+%%TORCSDIR%%/drivers/berniw/8/eroad.xml
+%%TORCSDIR%%/drivers/berniw/8/g-track-1.xml
+%%TORCSDIR%%/drivers/berniw/8/g-track-2.xml
+%%TORCSDIR%%/drivers/berniw/8/g-track-3.xml
+%%TORCSDIR%%/drivers/berniw/8/michigan.xml
+%%TORCSDIR%%/drivers/berniw/8/mixed-1.xml
+%%TORCSDIR%%/drivers/berniw/8/mixed-2.xml
+%%TORCSDIR%%/drivers/berniw/8/spring.xml
+%%TORCSDIR%%/drivers/berniw/8/wheel-1.xml
+%%TORCSDIR%%/drivers/berniw/9/a-speedway.xml
+%%TORCSDIR%%/drivers/berniw/9/aalborg.xml
+%%TORCSDIR%%/drivers/berniw/9/alpine-1.xml
+%%TORCSDIR%%/drivers/berniw/9/default.xml
+%%TORCSDIR%%/drivers/berniw/9/dirt-1.xml
+%%TORCSDIR%%/drivers/berniw/9/dirt-2.xml
+%%TORCSDIR%%/drivers/berniw/9/dirt-3.xml
+%%TORCSDIR%%/drivers/berniw/9/dirt-4.xml
+%%TORCSDIR%%/drivers/berniw/9/dirt-5.xml
+%%TORCSDIR%%/drivers/berniw/9/dirt-6.xml
+%%TORCSDIR%%/drivers/berniw/9/e-track-1.xml
+%%TORCSDIR%%/drivers/berniw/9/e-track-2.xml
+%%TORCSDIR%%/drivers/berniw/9/e-track-3.xml
+%%TORCSDIR%%/drivers/berniw/9/e-track-4.xml
+%%TORCSDIR%%/drivers/berniw/9/e-track-5.xml
+%%TORCSDIR%%/drivers/berniw/9/e-track-6.xml
+%%TORCSDIR%%/drivers/berniw/9/eroad.xml
+%%TORCSDIR%%/drivers/berniw/9/g-track-1.xml
+%%TORCSDIR%%/drivers/berniw/9/g-track-2.xml
+%%TORCSDIR%%/drivers/berniw/9/g-track-3.xml
+%%TORCSDIR%%/drivers/berniw/9/mclaren-f1.rgb
+%%TORCSDIR%%/drivers/berniw/9/michigan.xml
+%%TORCSDIR%%/drivers/berniw/9/mixed-1.xml
+%%TORCSDIR%%/drivers/berniw/9/mixed-2.xml
+%%TORCSDIR%%/drivers/berniw/9/spring.xml
+%%TORCSDIR%%/drivers/berniw/9/wheel-1.xml
+%%TORCSDIR%%/drivers/berniw/berniw.xml
+%%TORCSDIR%%/drivers/berniw/intcossqr.dat
+%%TORCSDIR%%/drivers/berniw/intsinsqr.dat
+%%TORCSDIR%%/drivers/berniw/logo.rgb
+%%TORCSDIR%%/drivers/berniw/parameter.dat
+%%TORCSDIR%%/drivers/berniw2/1/a-speedway.xml
+%%TORCSDIR%%/drivers/berniw2/1/aalborg.xml
+%%TORCSDIR%%/drivers/berniw2/1/alpine-1.xml
+%%TORCSDIR%%/drivers/berniw2/1/default.xml
+%%TORCSDIR%%/drivers/berniw2/1/dirt-1.xml
+%%TORCSDIR%%/drivers/berniw2/1/dirt-2.xml
+%%TORCSDIR%%/drivers/berniw2/1/dirt-3.xml
+%%TORCSDIR%%/drivers/berniw2/1/dirt-4.xml
+%%TORCSDIR%%/drivers/berniw2/1/dirt-5.xml
+%%TORCSDIR%%/drivers/berniw2/1/dirt-6.xml
+%%TORCSDIR%%/drivers/berniw2/1/e-track-1.xml
+%%TORCSDIR%%/drivers/berniw2/1/e-track-2.xml
+%%TORCSDIR%%/drivers/berniw2/1/e-track-3.xml
+%%TORCSDIR%%/drivers/berniw2/1/e-track-4.xml
+%%TORCSDIR%%/drivers/berniw2/1/e-track-5.xml
+%%TORCSDIR%%/drivers/berniw2/1/e-track-6.xml
+%%TORCSDIR%%/drivers/berniw2/1/eroad.xml
+%%TORCSDIR%%/drivers/berniw2/1/g-track-1.xml
+%%TORCSDIR%%/drivers/berniw2/1/g-track-2.xml
+%%TORCSDIR%%/drivers/berniw2/1/g-track-3.xml
+%%TORCSDIR%%/drivers/berniw2/1/michigan.xml
+%%TORCSDIR%%/drivers/berniw2/1/mixed-1.xml
+%%TORCSDIR%%/drivers/berniw2/1/mixed-2.xml
+%%TORCSDIR%%/drivers/berniw2/1/spring.xml
+%%TORCSDIR%%/drivers/berniw2/1/wheel-1.xml
+%%TORCSDIR%%/drivers/berniw2/10/360-modena.rgb
+%%TORCSDIR%%/drivers/berniw2/10/a-speedway.xml
+%%TORCSDIR%%/drivers/berniw2/10/aalborg.xml
+%%TORCSDIR%%/drivers/berniw2/10/alpine-1.xml
+%%TORCSDIR%%/drivers/berniw2/10/default.xml
+%%TORCSDIR%%/drivers/berniw2/10/dirt-1.xml
+%%TORCSDIR%%/drivers/berniw2/10/dirt-2.xml
+%%TORCSDIR%%/drivers/berniw2/10/dirt-3.xml
+%%TORCSDIR%%/drivers/berniw2/10/dirt-4.xml
+%%TORCSDIR%%/drivers/berniw2/10/dirt-5.xml
+%%TORCSDIR%%/drivers/berniw2/10/dirt-6.xml
+%%TORCSDIR%%/drivers/berniw2/10/e-track-1.xml
+%%TORCSDIR%%/drivers/berniw2/10/e-track-2.xml
+%%TORCSDIR%%/drivers/berniw2/10/e-track-3.xml
+%%TORCSDIR%%/drivers/berniw2/10/e-track-4.xml
+%%TORCSDIR%%/drivers/berniw2/10/e-track-5.xml
+%%TORCSDIR%%/drivers/berniw2/10/e-track-6.xml
+%%TORCSDIR%%/drivers/berniw2/10/eroad.xml
+%%TORCSDIR%%/drivers/berniw2/10/g-track-1.xml
+%%TORCSDIR%%/drivers/berniw2/10/g-track-2.xml
+%%TORCSDIR%%/drivers/berniw2/10/g-track-3.xml
+%%TORCSDIR%%/drivers/berniw2/10/michigan.xml
+%%TORCSDIR%%/drivers/berniw2/10/mixed-1.xml
+%%TORCSDIR%%/drivers/berniw2/10/mixed-2.xml
+%%TORCSDIR%%/drivers/berniw2/10/spring.xml
+%%TORCSDIR%%/drivers/berniw2/10/wheel-1.xml
+%%TORCSDIR%%/drivers/berniw2/2/a-speedway.xml
+%%TORCSDIR%%/drivers/berniw2/2/aalborg.xml
+%%TORCSDIR%%/drivers/berniw2/2/alpine-1.xml
+%%TORCSDIR%%/drivers/berniw2/2/default.xml
+%%TORCSDIR%%/drivers/berniw2/2/dirt-1.xml
+%%TORCSDIR%%/drivers/berniw2/2/dirt-2.xml
+%%TORCSDIR%%/drivers/berniw2/2/dirt-3.xml
+%%TORCSDIR%%/drivers/berniw2/2/dirt-4.xml
+%%TORCSDIR%%/drivers/berniw2/2/dirt-5.xml
+%%TORCSDIR%%/drivers/berniw2/2/dirt-6.xml
+%%TORCSDIR%%/drivers/berniw2/2/e-track-1.xml
+%%TORCSDIR%%/drivers/berniw2/2/e-track-2.xml
+%%TORCSDIR%%/drivers/berniw2/2/e-track-3.xml
+%%TORCSDIR%%/drivers/berniw2/2/e-track-4.xml
+%%TORCSDIR%%/drivers/berniw2/2/e-track-5.xml
+%%TORCSDIR%%/drivers/berniw2/2/e-track-6.xml
+%%TORCSDIR%%/drivers/berniw2/2/eroad.xml
+%%TORCSDIR%%/drivers/berniw2/2/g-track-1.xml
+%%TORCSDIR%%/drivers/berniw2/2/g-track-2.xml
+%%TORCSDIR%%/drivers/berniw2/2/g-track-3.xml
+%%TORCSDIR%%/drivers/berniw2/2/michigan.xml
+%%TORCSDIR%%/drivers/berniw2/2/mixed-1.xml
+%%TORCSDIR%%/drivers/berniw2/2/mixed-2.xml
+%%TORCSDIR%%/drivers/berniw2/2/spring.xml
+%%TORCSDIR%%/drivers/berniw2/2/wheel-1.xml
+%%TORCSDIR%%/drivers/berniw2/3/a-speedway.xml
+%%TORCSDIR%%/drivers/berniw2/3/aalborg.xml
+%%TORCSDIR%%/drivers/berniw2/3/alpine-1.xml
+%%TORCSDIR%%/drivers/berniw2/3/default.xml
+%%TORCSDIR%%/drivers/berniw2/3/dirt-1.xml
+%%TORCSDIR%%/drivers/berniw2/3/dirt-2.xml
+%%TORCSDIR%%/drivers/berniw2/3/dirt-3.xml
+%%TORCSDIR%%/drivers/berniw2/3/dirt-4.xml
+%%TORCSDIR%%/drivers/berniw2/3/dirt-5.xml
+%%TORCSDIR%%/drivers/berniw2/3/dirt-6.xml
+%%TORCSDIR%%/drivers/berniw2/3/e-track-1.xml
+%%TORCSDIR%%/drivers/berniw2/3/e-track-2.xml
+%%TORCSDIR%%/drivers/berniw2/3/e-track-3.xml
+%%TORCSDIR%%/drivers/berniw2/3/e-track-4.xml
+%%TORCSDIR%%/drivers/berniw2/3/e-track-5.xml
+%%TORCSDIR%%/drivers/berniw2/3/e-track-6.xml
+%%TORCSDIR%%/drivers/berniw2/3/eroad.xml
+%%TORCSDIR%%/drivers/berniw2/3/g-track-1.xml
+%%TORCSDIR%%/drivers/berniw2/3/g-track-2.xml
+%%TORCSDIR%%/drivers/berniw2/3/g-track-3.xml
+%%TORCSDIR%%/drivers/berniw2/3/michigan.xml
+%%TORCSDIR%%/drivers/berniw2/3/mixed-1.xml
+%%TORCSDIR%%/drivers/berniw2/3/mixed-2.xml
+%%TORCSDIR%%/drivers/berniw2/3/spring.xml
+%%TORCSDIR%%/drivers/berniw2/3/wheel-1.xml
+%%TORCSDIR%%/drivers/berniw2/4/a-speedway.xml
+%%TORCSDIR%%/drivers/berniw2/4/aalborg.xml
+%%TORCSDIR%%/drivers/berniw2/4/alpine-1.xml
+%%TORCSDIR%%/drivers/berniw2/4/default.xml
+%%TORCSDIR%%/drivers/berniw2/4/dirt-1.xml
+%%TORCSDIR%%/drivers/berniw2/4/dirt-2.xml
+%%TORCSDIR%%/drivers/berniw2/4/dirt-3.xml
+%%TORCSDIR%%/drivers/berniw2/4/dirt-4.xml
+%%TORCSDIR%%/drivers/berniw2/4/dirt-5.xml
+%%TORCSDIR%%/drivers/berniw2/4/dirt-6.xml
+%%TORCSDIR%%/drivers/berniw2/4/e-track-1.xml
+%%TORCSDIR%%/drivers/berniw2/4/e-track-2.xml
+%%TORCSDIR%%/drivers/berniw2/4/e-track-3.xml
+%%TORCSDIR%%/drivers/berniw2/4/e-track-4.xml
+%%TORCSDIR%%/drivers/berniw2/4/e-track-5.xml
+%%TORCSDIR%%/drivers/berniw2/4/e-track-6.xml
+%%TORCSDIR%%/drivers/berniw2/4/eroad.xml
+%%TORCSDIR%%/drivers/berniw2/4/g-track-1.xml
+%%TORCSDIR%%/drivers/berniw2/4/g-track-2.xml
+%%TORCSDIR%%/drivers/berniw2/4/g-track-3.xml
+%%TORCSDIR%%/drivers/berniw2/4/michigan.xml
+%%TORCSDIR%%/drivers/berniw2/4/mixed-1.xml
+%%TORCSDIR%%/drivers/berniw2/4/mixed-2.xml
+%%TORCSDIR%%/drivers/berniw2/4/spring.xml
+%%TORCSDIR%%/drivers/berniw2/4/wheel-1.xml
+%%TORCSDIR%%/drivers/berniw2/5/a-speedway.xml
+%%TORCSDIR%%/drivers/berniw2/5/aalborg.xml
+%%TORCSDIR%%/drivers/berniw2/5/alpine-1.xml
+%%TORCSDIR%%/drivers/berniw2/5/default.xml
+%%TORCSDIR%%/drivers/berniw2/5/dirt-1.xml
+%%TORCSDIR%%/drivers/berniw2/5/dirt-2.xml
+%%TORCSDIR%%/drivers/berniw2/5/dirt-3.xml
+%%TORCSDIR%%/drivers/berniw2/5/dirt-4.xml
+%%TORCSDIR%%/drivers/berniw2/5/dirt-5.xml
+%%TORCSDIR%%/drivers/berniw2/5/dirt-6.xml
+%%TORCSDIR%%/drivers/berniw2/5/e-track-1.xml
+%%TORCSDIR%%/drivers/berniw2/5/e-track-2.xml
+%%TORCSDIR%%/drivers/berniw2/5/e-track-3.xml
+%%TORCSDIR%%/drivers/berniw2/5/e-track-4.xml
+%%TORCSDIR%%/drivers/berniw2/5/e-track-5.xml
+%%TORCSDIR%%/drivers/berniw2/5/e-track-6.xml
+%%TORCSDIR%%/drivers/berniw2/5/eroad.xml
+%%TORCSDIR%%/drivers/berniw2/5/g-track-1.xml
+%%TORCSDIR%%/drivers/berniw2/5/g-track-2.xml
+%%TORCSDIR%%/drivers/berniw2/5/g-track-3.xml
+%%TORCSDIR%%/drivers/berniw2/5/michigan.xml
+%%TORCSDIR%%/drivers/berniw2/5/mixed-1.xml
+%%TORCSDIR%%/drivers/berniw2/5/mixed-2.xml
+%%TORCSDIR%%/drivers/berniw2/5/spring.xml
+%%TORCSDIR%%/drivers/berniw2/5/wheel-1.xml
+%%TORCSDIR%%/drivers/berniw2/6/a-speedway.xml
+%%TORCSDIR%%/drivers/berniw2/6/aalborg.xml
+%%TORCSDIR%%/drivers/berniw2/6/alpine-1.xml
+%%TORCSDIR%%/drivers/berniw2/6/default.xml
+%%TORCSDIR%%/drivers/berniw2/6/dirt-1.xml
+%%TORCSDIR%%/drivers/berniw2/6/dirt-2.xml
+%%TORCSDIR%%/drivers/berniw2/6/dirt-3.xml
+%%TORCSDIR%%/drivers/berniw2/6/dirt-4.xml
+%%TORCSDIR%%/drivers/berniw2/6/dirt-5.xml
+%%TORCSDIR%%/drivers/berniw2/6/dirt-6.xml
+%%TORCSDIR%%/drivers/berniw2/6/e-track-1.xml
+%%TORCSDIR%%/drivers/berniw2/6/e-track-2.xml
+%%TORCSDIR%%/drivers/berniw2/6/e-track-3.xml
+%%TORCSDIR%%/drivers/berniw2/6/e-track-4.xml
+%%TORCSDIR%%/drivers/berniw2/6/e-track-5.xml
+%%TORCSDIR%%/drivers/berniw2/6/e-track-6.xml
+%%TORCSDIR%%/drivers/berniw2/6/eroad.xml
+%%TORCSDIR%%/drivers/berniw2/6/g-track-1.xml
+%%TORCSDIR%%/drivers/berniw2/6/g-track-2.xml
+%%TORCSDIR%%/drivers/berniw2/6/g-track-3.xml
+%%TORCSDIR%%/drivers/berniw2/6/michigan.xml
+%%TORCSDIR%%/drivers/berniw2/6/mixed-1.xml
+%%TORCSDIR%%/drivers/berniw2/6/mixed-2.xml
+%%TORCSDIR%%/drivers/berniw2/6/spring.xml
+%%TORCSDIR%%/drivers/berniw2/6/wheel-1.xml
+%%TORCSDIR%%/drivers/berniw2/7/a-speedway.xml
+%%TORCSDIR%%/drivers/berniw2/7/aalborg.xml
+%%TORCSDIR%%/drivers/berniw2/7/alpine-1.xml
+%%TORCSDIR%%/drivers/berniw2/7/default.xml
+%%TORCSDIR%%/drivers/berniw2/7/dirt-1.xml
+%%TORCSDIR%%/drivers/berniw2/7/dirt-2.xml
+%%TORCSDIR%%/drivers/berniw2/7/dirt-3.xml
+%%TORCSDIR%%/drivers/berniw2/7/dirt-4.xml
+%%TORCSDIR%%/drivers/berniw2/7/dirt-5.xml
+%%TORCSDIR%%/drivers/berniw2/7/dirt-6.xml
+%%TORCSDIR%%/drivers/berniw2/7/e-track-1.xml
+%%TORCSDIR%%/drivers/berniw2/7/e-track-2.xml
+%%TORCSDIR%%/drivers/berniw2/7/e-track-3.xml
+%%TORCSDIR%%/drivers/berniw2/7/e-track-4.xml
+%%TORCSDIR%%/drivers/berniw2/7/e-track-5.xml
+%%TORCSDIR%%/drivers/berniw2/7/e-track-6.xml
+%%TORCSDIR%%/drivers/berniw2/7/eroad.xml
+%%TORCSDIR%%/drivers/berniw2/7/g-track-1.xml
+%%TORCSDIR%%/drivers/berniw2/7/g-track-2.xml
+%%TORCSDIR%%/drivers/berniw2/7/g-track-3.xml
+%%TORCSDIR%%/drivers/berniw2/7/michigan.xml
+%%TORCSDIR%%/drivers/berniw2/7/mixed-1.xml
+%%TORCSDIR%%/drivers/berniw2/7/mixed-2.xml
+%%TORCSDIR%%/drivers/berniw2/7/porsche-gt3rs.rgb
+%%TORCSDIR%%/drivers/berniw2/7/spring.xml
+%%TORCSDIR%%/drivers/berniw2/7/wheel-1.xml
+%%TORCSDIR%%/drivers/berniw2/8/a-speedway.xml
+%%TORCSDIR%%/drivers/berniw2/8/aalborg.xml
+%%TORCSDIR%%/drivers/berniw2/8/alpine-1.xml
+%%TORCSDIR%%/drivers/berniw2/8/clkdtm.rgb
+%%TORCSDIR%%/drivers/berniw2/8/default.xml
+%%TORCSDIR%%/drivers/berniw2/8/dirt-1.xml
+%%TORCSDIR%%/drivers/berniw2/8/dirt-2.xml
+%%TORCSDIR%%/drivers/berniw2/8/dirt-3.xml
+%%TORCSDIR%%/drivers/berniw2/8/dirt-4.xml
+%%TORCSDIR%%/drivers/berniw2/8/dirt-5.xml
+%%TORCSDIR%%/drivers/berniw2/8/dirt-6.xml
+%%TORCSDIR%%/drivers/berniw2/8/e-track-1.xml
+%%TORCSDIR%%/drivers/berniw2/8/e-track-2.xml
+%%TORCSDIR%%/drivers/berniw2/8/e-track-3.xml
+%%TORCSDIR%%/drivers/berniw2/8/e-track-4.xml
+%%TORCSDIR%%/drivers/berniw2/8/e-track-5.xml
+%%TORCSDIR%%/drivers/berniw2/8/e-track-6.xml
+%%TORCSDIR%%/drivers/berniw2/8/eroad.xml
+%%TORCSDIR%%/drivers/berniw2/8/g-track-1.xml
+%%TORCSDIR%%/drivers/berniw2/8/g-track-2.xml
+%%TORCSDIR%%/drivers/berniw2/8/g-track-3.xml
+%%TORCSDIR%%/drivers/berniw2/8/michigan.xml
+%%TORCSDIR%%/drivers/berniw2/8/mixed-1.xml
+%%TORCSDIR%%/drivers/berniw2/8/mixed-2.xml
+%%TORCSDIR%%/drivers/berniw2/8/spring.xml
+%%TORCSDIR%%/drivers/berniw2/8/wheel-1.xml
+%%TORCSDIR%%/drivers/berniw2/9/a-speedway.xml
+%%TORCSDIR%%/drivers/berniw2/9/aalborg.xml
+%%TORCSDIR%%/drivers/berniw2/9/alpine-1.xml
+%%TORCSDIR%%/drivers/berniw2/9/default.xml
+%%TORCSDIR%%/drivers/berniw2/9/dirt-1.xml
+%%TORCSDIR%%/drivers/berniw2/9/dirt-2.xml
+%%TORCSDIR%%/drivers/berniw2/9/dirt-3.xml
+%%TORCSDIR%%/drivers/berniw2/9/dirt-4.xml
+%%TORCSDIR%%/drivers/berniw2/9/dirt-5.xml
+%%TORCSDIR%%/drivers/berniw2/9/dirt-6.xml
+%%TORCSDIR%%/drivers/berniw2/9/e-track-1.xml
+%%TORCSDIR%%/drivers/berniw2/9/e-track-2.xml
+%%TORCSDIR%%/drivers/berniw2/9/e-track-3.xml
+%%TORCSDIR%%/drivers/berniw2/9/e-track-4.xml
+%%TORCSDIR%%/drivers/berniw2/9/e-track-5.xml
+%%TORCSDIR%%/drivers/berniw2/9/e-track-6.xml
+%%TORCSDIR%%/drivers/berniw2/9/eroad.xml
+%%TORCSDIR%%/drivers/berniw2/9/g-track-1.xml
+%%TORCSDIR%%/drivers/berniw2/9/g-track-2.xml
+%%TORCSDIR%%/drivers/berniw2/9/g-track-3.xml
+%%TORCSDIR%%/drivers/berniw2/9/mclaren-f1.rgb
+%%TORCSDIR%%/drivers/berniw2/9/michigan.xml
+%%TORCSDIR%%/drivers/berniw2/9/mixed-1.xml
+%%TORCSDIR%%/drivers/berniw2/9/mixed-2.xml
+%%TORCSDIR%%/drivers/berniw2/9/spring.xml
+%%TORCSDIR%%/drivers/berniw2/9/wheel-1.xml
+%%TORCSDIR%%/drivers/berniw2/berniw2.xml
+%%TORCSDIR%%/drivers/berniw2/intcossqr.dat
+%%TORCSDIR%%/drivers/berniw2/intsinsqr.dat
+%%TORCSDIR%%/drivers/berniw2/logo.rgb
+%%TORCSDIR%%/drivers/berniw2/parameter.dat
+%%TORCSDIR%%/drivers/berniw3/1/default.xml
+%%TORCSDIR%%/drivers/berniw3/10/default.xml
+%%TORCSDIR%%/drivers/berniw3/2/default.xml
+%%TORCSDIR%%/drivers/berniw3/3/default.xml
+%%TORCSDIR%%/drivers/berniw3/4/default.xml
+%%TORCSDIR%%/drivers/berniw3/5/default.xml
+%%TORCSDIR%%/drivers/berniw3/6/default.xml
+%%TORCSDIR%%/drivers/berniw3/7/default.xml
+%%TORCSDIR%%/drivers/berniw3/8/default.xml
+%%TORCSDIR%%/drivers/berniw3/9/default.xml
+%%TORCSDIR%%/drivers/berniw3/berniw3.xml
+%%TORCSDIR%%/drivers/berniw3/intcossqr.dat
+%%TORCSDIR%%/drivers/berniw3/intsinsqr.dat
+%%TORCSDIR%%/drivers/berniw3/logo.rgb
+%%TORCSDIR%%/drivers/berniw3/parameter.dat
+%%TORCSDIR%%/drivers/bt/0/cg-nascar-rwd.rgb
+%%TORCSDIR%%/drivers/bt/0/default.xml
+%%TORCSDIR%%/drivers/bt/0/practice/g-track-3.xml
+%%TORCSDIR%%/drivers/bt/0/practice/michigan.xml
+%%TORCSDIR%%/drivers/bt/0/practice/wheel-1.xml
+%%TORCSDIR%%/drivers/bt/0/qualifying/g-track-3.xml
+%%TORCSDIR%%/drivers/bt/0/race/g-track-3.xml
+%%TORCSDIR%%/drivers/bt/0/race/wheel-1.xml
+%%TORCSDIR%%/drivers/bt/1/cg-nascar-rwd.rgb
+%%TORCSDIR%%/drivers/bt/1/default.xml
+%%TORCSDIR%%/drivers/bt/1/practice/g-track-3.xml
+%%TORCSDIR%%/drivers/bt/1/practice/michigan.xml
+%%TORCSDIR%%/drivers/bt/1/practice/wheel-1.xml
+%%TORCSDIR%%/drivers/bt/1/qualifying/g-track-3.xml
+%%TORCSDIR%%/drivers/bt/1/race/g-track-3.xml
+%%TORCSDIR%%/drivers/bt/1/race/wheel-1.xml
+%%TORCSDIR%%/drivers/bt/2/default.xml
+%%TORCSDIR%%/drivers/bt/3/default.xml
+%%TORCSDIR%%/drivers/bt/4/default.xml
+%%TORCSDIR%%/drivers/bt/5/default.xml
+%%TORCSDIR%%/drivers/bt/6/default.xml
+%%TORCSDIR%%/drivers/bt/7/default.xml
+%%TORCSDIR%%/drivers/bt/8/default.xml
+%%TORCSDIR%%/drivers/bt/9/default.xml
+%%TORCSDIR%%/drivers/bt/bt.xml
+%%TORCSDIR%%/drivers/bt/logo.rgb
 %%TORCSDIR%%/drivers/cylos1/car1.xml
 %%TORCSDIR%%/drivers/cylos1/cg-nascar-rwd.rgb
 %%TORCSDIR%%/drivers/cylos1/cylos1.xml
@@ -1310,6 +1472,10 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/drivers/cylos1/tracksdata/car_test-1.xml
 %%TORCSDIR%%/drivers/cylos1/tracksdata/lemans.xml
 %%TORCSDIR%%/drivers/cylos1/tracksdata/michigan.xml
+%%TORCSDIR%%/drivers/cylos2/car1.xml
+%%TORCSDIR%%/drivers/cylos2/cg-nascar-rwd.rgb
+%%TORCSDIR%%/drivers/cylos2/cylos2.xml
+%%TORCSDIR%%/drivers/cylos2/logo.rgb
 %%TORCSDIR%%/drivers/damned/1/buggy.rgb
 %%TORCSDIR%%/drivers/damned/1/car-dirt.xml
 %%TORCSDIR%%/drivers/damned/1/car.xml
@@ -1382,6 +1548,9 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/drivers/human/tracks/dirt-2/car-torcs.xml
 %%TORCSDIR%%/drivers/human/tracks/dirt-3/car-torcs.xml
 %%TORCSDIR%%/drivers/human/tracks/dirt-4/car-torcs.xml
+%%TORCSDIR%%/drivers/human/tracks/dirt-5/car-torcs.xml
+%%TORCSDIR%%/drivers/human/tracks/dirt-6/car-porsche-gt3rs.xml
+%%TORCSDIR%%/drivers/human/tracks/dirt-6/car-torcs.xml
 %%TORCSDIR%%/drivers/human/tracks/e-track-1/car-torcs.xml
 %%TORCSDIR%%/drivers/human/tracks/e-track-2/car-pw-206wrc.xml
 %%TORCSDIR%%/drivers/human/tracks/e-track-2/car-torcs.xml
@@ -1872,49 +2041,93 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/drivers/lliaw/tracksdata/car_eroad.xml
 %%TORCSDIR%%/drivers/lliaw/tracksdata/car_g-track-3.xml
 %%TORCSDIR%%/drivers/lliaw/viper-gts-r.rgb
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/0/default.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/0/practice/dirt-2.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/0/practice/g-track-3.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/0/practice/michigan.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/0/practice/wheel-1.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/0/qualifying/dirt-2.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/0/qualifying/g-track-3.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/0/race/dirt-2.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/0/race/g-track-3.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/0/race/wheel-1.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/1/cg-nascar-rwd.rgb
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/1/default.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/1/practice/g-track-3.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/1/practice/michigan.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/1/practice/wheel-1.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/1/qualifying/g-track-3.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/1/race/g-track-3.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/1/race/wheel-1.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/2/default.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/2/porsche-gt1.rgb
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/2/practice/e-track-3.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/2/qualifying/e-track-3.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/2/race/e-track-3.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/3/155-DTM.rgb
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/3/default.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/4/default.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/4/mclaren-f1.rgb
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/4/practice/e-track-3.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/4/qualifying/e-track-3.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/4/race/e-track-3.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/5/default.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/5/porsche-gt3rs.rgb
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/6/default.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/7/360-modena.rgb
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/7/default.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/7/practice/g-track-2.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/7/qualifying/g-track-2.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/7/race/g-track-2.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/8/default.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/8/xj-220.rgb
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/9/default.xml
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/logo.rgb
-%%OLETHROS%%%%TORCSDIR%%/drivers/olethros/olethros.xml
+%%TORCSDIR%%/drivers/olethros/0/default.xml
+%%TORCSDIR%%/drivers/olethros/0/practice/aalborg.xml
+%%TORCSDIR%%/drivers/olethros/0/practice/alpine-1.xml
+%%TORCSDIR%%/drivers/olethros/0/practice/dirt-2.xml
+%%TORCSDIR%%/drivers/olethros/0/practice/dirt-3.xml
+%%TORCSDIR%%/drivers/olethros/0/practice/e-track-2.xml
+%%TORCSDIR%%/drivers/olethros/0/practice/g-track-3.xml
+%%TORCSDIR%%/drivers/olethros/0/practice/michigan.xml
+%%TORCSDIR%%/drivers/olethros/0/practice/mixed-1.xml
+%%TORCSDIR%%/drivers/olethros/0/practice/mixed-2.xml
+%%TORCSDIR%%/drivers/olethros/0/practice/wheel-1.xml
+%%TORCSDIR%%/drivers/olethros/0/qualifying/aalborg.xml
+%%TORCSDIR%%/drivers/olethros/0/qualifying/alpine-1.xml
+%%TORCSDIR%%/drivers/olethros/0/qualifying/dirt-2.xml
+%%TORCSDIR%%/drivers/olethros/0/qualifying/dirt-3.xml
+%%TORCSDIR%%/drivers/olethros/0/qualifying/e-track-2.xml
+%%TORCSDIR%%/drivers/olethros/0/qualifying/g-track-3.xml
+%%TORCSDIR%%/drivers/olethros/0/qualifying/mixed-1.xml
+%%TORCSDIR%%/drivers/olethros/0/qualifying/mixed-2.xml
+%%TORCSDIR%%/drivers/olethros/0/race/aalborg.xml
+%%TORCSDIR%%/drivers/olethros/0/race/alpine-1.xml
+%%TORCSDIR%%/drivers/olethros/0/race/dirt-2.xml
+%%TORCSDIR%%/drivers/olethros/0/race/dirt-3.xml
+%%TORCSDIR%%/drivers/olethros/0/race/e-track-2.xml
+%%TORCSDIR%%/drivers/olethros/0/race/g-track-3.xml
+%%TORCSDIR%%/drivers/olethros/0/race/mixed-1.xml
+%%TORCSDIR%%/drivers/olethros/0/race/mixed-2.xml
+%%TORCSDIR%%/drivers/olethros/0/race/wheel-1.xml
+%%TORCSDIR%%/drivers/olethros/1/cg-nascar-rwd.rgb
+%%TORCSDIR%%/drivers/olethros/1/default.xml
+%%TORCSDIR%%/drivers/olethros/1/practice/g-track-3.xml
+%%TORCSDIR%%/drivers/olethros/1/practice/michigan.xml
+%%TORCSDIR%%/drivers/olethros/1/practice/wheel-1.xml
+%%TORCSDIR%%/drivers/olethros/1/qualifying/g-track-3.xml
+%%TORCSDIR%%/drivers/olethros/1/qualifying/wheel-1.xml
+%%TORCSDIR%%/drivers/olethros/1/race/g-track-3.xml
+%%TORCSDIR%%/drivers/olethros/1/race/wheel-1.xml
+%%TORCSDIR%%/drivers/olethros/2/default.xml
+%%TORCSDIR%%/drivers/olethros/2/porsche-gt1.rgb
+%%TORCSDIR%%/drivers/olethros/2/practice/e-track-3.xml
+%%TORCSDIR%%/drivers/olethros/2/practice/e-track-4.xml
+%%TORCSDIR%%/drivers/olethros/2/qualifying/e-track-3.xml
+%%TORCSDIR%%/drivers/olethros/2/qualifying/e-track-4.xml
+%%TORCSDIR%%/drivers/olethros/2/race/e-track-3.xml
+%%TORCSDIR%%/drivers/olethros/2/race/e-track-4.xml
+%%TORCSDIR%%/drivers/olethros/3/155-DTM.rgb
+%%TORCSDIR%%/drivers/olethros/3/default.xml
+%%TORCSDIR%%/drivers/olethros/4/default.xml
+%%TORCSDIR%%/drivers/olethros/4/mclaren-f1.rgb
+%%TORCSDIR%%/drivers/olethros/4/practice/e-track-3.xml
+%%TORCSDIR%%/drivers/olethros/4/practice/e-track-4.xml
+%%TORCSDIR%%/drivers/olethros/4/qualifying/e-track-3.xml
+%%TORCSDIR%%/drivers/olethros/4/qualifying/e-track-4.xml
+%%TORCSDIR%%/drivers/olethros/4/race/e-track-3.xml
+%%TORCSDIR%%/drivers/olethros/4/race/e-track-4.xml
+%%TORCSDIR%%/drivers/olethros/5/default.xml
+%%TORCSDIR%%/drivers/olethros/5/porsche-gt3rs.rgb
+%%TORCSDIR%%/drivers/olethros/6/clkdtm.rgb
+%%TORCSDIR%%/drivers/olethros/6/default.xml
+%%TORCSDIR%%/drivers/olethros/7/360-modena.rgb
+%%TORCSDIR%%/drivers/olethros/7/default.xml
+%%TORCSDIR%%/drivers/olethros/7/practice/b-speedway.xml
+%%TORCSDIR%%/drivers/olethros/7/practice/e-track-1.xml
+%%TORCSDIR%%/drivers/olethros/7/practice/e-track-3.xml
+%%TORCSDIR%%/drivers/olethros/7/practice/eroad.xml
+%%TORCSDIR%%/drivers/olethros/7/practice/g-track-2.xml
+%%TORCSDIR%%/drivers/olethros/7/practice/michigan.xml
+%%TORCSDIR%%/drivers/olethros/7/qualifying/b-speedway.xml
+%%TORCSDIR%%/drivers/olethros/7/qualifying/e-track-1.xml
+%%TORCSDIR%%/drivers/olethros/7/qualifying/e-track-3.xml
+%%TORCSDIR%%/drivers/olethros/7/qualifying/eroad.xml
+%%TORCSDIR%%/drivers/olethros/7/qualifying/g-track-2.xml
+%%TORCSDIR%%/drivers/olethros/7/qualifying/michigan.xml
+%%TORCSDIR%%/drivers/olethros/7/race/b-speedway.xml
+%%TORCSDIR%%/drivers/olethros/7/race/e-track-1.xml
+%%TORCSDIR%%/drivers/olethros/7/race/e-track-3.xml
+%%TORCSDIR%%/drivers/olethros/7/race/eroad.xml
+%%TORCSDIR%%/drivers/olethros/7/race/g-track-2.xml
+%%TORCSDIR%%/drivers/olethros/7/race/michigan.xml
+%%TORCSDIR%%/drivers/olethros/8/default.xml
+%%TORCSDIR%%/drivers/olethros/8/xj-220.rgb
+%%TORCSDIR%%/drivers/olethros/9/default.xml
+%%TORCSDIR%%/drivers/olethros/9/practice/michigan.xml
+%%TORCSDIR%%/drivers/olethros/9/qualifying/michigan.xml
+%%TORCSDIR%%/drivers/olethros/9/race/michigan.xml
+%%TORCSDIR%%/drivers/olethros/logo.rgb
+%%TORCSDIR%%/drivers/olethros/olethros.xml
 %%TORCSDIR%%/drivers/sparkle/0/baja-bug.rgb
 %%TORCSDIR%%/drivers/sparkle/0/default.xml
 %%TORCSDIR%%/drivers/sparkle/logo.rgb
@@ -1988,668 +2201,9 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/drivers/tita/tracksdata/michigan.xml
 %%TORCSDIR%%/drivers/tita/tracksdata/s2.xml
 %%TORCSDIR%%/drivers/tita/tracksdata/wheel-1.xml
+%%TORCSDIR%%/logo-skinner.png
 %%TORCSDIR%%/menu/entry.xml
 %%TORCSDIR%%/telemetry/telemetry.sh
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/cylos1/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/cylos1/car1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/cylos1/cg-nascar-rwd.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/cylos1/common.cpp
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/cylos1/common.h
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/cylos1/cylos1.cpp
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/cylos1/cylos1.def
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/cylos1/cylos1.dsp
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/cylos1/cylos1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/cylos1/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/cylos1/mkdepend
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/cylos1/tracksdata/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/cylos1/tracksdata/car_e-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/cylos1/tracksdata/car_lemans.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/cylos1/tracksdata/car_test-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/cylos1/tracksdata/lemans.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/cylos1/tracksdata/michigan.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/1/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/1/buggy.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/1/car-dirt.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/1/car.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/1/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/10/155-DTM.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/10/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/10/car.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/10/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/2/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/2/buggy.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/2/car-dirt.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/2/car.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/2/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/3/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/3/car-dirt.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/3/car.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/3/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/3/p406.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/4/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/4/car-dirt.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/4/car.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/4/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/4/p406.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/4/torcs.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/5/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/5/acura-nsx-sz-512.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/5/acura-nsx-sz.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/5/car-dirt.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/5/car.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/5/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/6/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/6/acura-nsx-sz.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/6/car-dirt.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/6/car.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/6/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/7/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/7/car-dirt.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/7/car.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/7/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/7/porsche-gt1.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/7/viper-gts-r.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/8/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/8/car.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/8/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/8/mclaren-f1.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/9/360-modena.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/9/360-modena.xcf
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/9/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/9/car.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/9/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/car1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/damned.cpp
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/damned.def
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/damned.dsp
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/damned.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/default.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/defaultcar.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/mclaren-f1.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/a-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/aalborg.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/alpine-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/b-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/c-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/car_a-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/car_aalborg.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/car_e-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/car_e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/car_e-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/car_e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/car_e-track-5.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/car_e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/car_eroad.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/car_g-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/car_g-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/car_g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/car_michigan.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/car_s2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/car_test-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/car_wheel-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/city-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/d-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/e-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/e-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/e-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/e-track-5.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/eroad.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/f-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/g-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/g-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/michigan.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/s2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata/wheel-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/default.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/defaultcar.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/a-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/aalborg.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/b-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/c-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/car_e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/car_e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/car_e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/car_g-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/car_g-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/car_g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/d-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/e-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/e-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/e-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/e-track-5.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/eroad.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/f-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/g-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/g-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/michigan.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata/wheel-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/vm-x4.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/360-modena.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/360-modena.xcf
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/default.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/defaultcar.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/a-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/aalborg.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/b-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/c-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/car_a-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/car_aalborg.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/car_e-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/car_e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/car_e-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/car_e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/car_e-track-5.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/car_e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/car_eroad.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/car_g-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/car_g-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/car_g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/car_michigan.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/car_s2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/car_test-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/car_wheel-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/d-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/e-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/e-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/e-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/e-track-5.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/eroad.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/f-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/g-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/g-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/michigan.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/s2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata/wheel-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/default.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/defaultcar.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/porsche-gt1.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/a-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/aalborg.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/alpine-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/b-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/c-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/car_a-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/car_aalborg.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/car_alpine-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/car_b-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/car_c-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/car_d-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/car_e-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/car_e-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/car_e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/car_e-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/car_e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/car_e-track-5.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/car_e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/car_eroad.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/car_f-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/car_g-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/car_g-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/car_g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/car_h-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/car_michigan.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/car_spring.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/car_wheel-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/d-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/e-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/e-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/e-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/e-track-5.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/eroad.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/f-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/g-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/g-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/h-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/michigan.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/spring.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata/wheel-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/clkdtm.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/default.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/defaultcar.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/a-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/aalborg.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/alpine-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/b-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/c-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/car_a-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/car_aalborg.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/car_e-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/car_e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/car_e-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/car_e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/car_e-track-5.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/car_e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/car_eroad.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/car_g-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/car_g-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/car_g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/car_g-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/car_michigan.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/car_test-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/car_wheel-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/d-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/dirt-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/e-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/e-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/e-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/e-track-5.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/eroad.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/f-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/g-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/g-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/g-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/michigan.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata/wheel-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/default.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/defaultcar.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/gt40.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/a-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/aalborg.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/b-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/c-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/car_e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/car_e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/car_e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/car_g-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/car_g-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/car_g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/d-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/e-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/e-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/e-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/e-track-5.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/eroad.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/f-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/g-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/g-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/michigan.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata/wheel-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/default.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/defaultcar.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/porsche-gt3rs.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/a-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/aalborg.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/b-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/c-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/car_b-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/car_c-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/car_d-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/car_e-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/car_e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/car_e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/car_e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/car_f-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/car_g-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/car_g-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/car_g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/car_g-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/car_michigan.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/car_wheel-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/d-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/e-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/e-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/e-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/e-track-5.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/eroad.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/f-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/g-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/g-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/g-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/michigan.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata/wheel-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/default.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/defaultcar.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/lotus-gt1.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/a-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/aalborg.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/alpine-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/b-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/c-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/car_a-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/car_aalborg.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/car_e-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/car_e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/car_e-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/car_e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/car_e-track-5.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/car_e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/car_eroad.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/car_g-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/car_g-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/car_g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/car_michigan.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/car_s2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/car_test-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/car_wheel-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/city-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/d-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/e-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/e-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/e-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/e-track-5.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/eroad.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/f-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/g-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/g-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/michigan.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/s2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata/wheel-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/default.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/defaultcar.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/p406.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/a-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/aalborg.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/alpine-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/b-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/c-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/car_dirt-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/car_dirt-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/car_dirt-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/car_dirt-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/car_dirt-5.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/car_dirt-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/car_g-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/car_mixed-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/car_mixed-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/d-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/e-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/e-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/e-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/e-track-5.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/eroad.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/f-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/g-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/g-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/g-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/michigan.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/spring.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata/wheel-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/default.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/defaultcar.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/a-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/aalborg.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/alpine-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/b-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/c-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/car_a-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/car_aalborg.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/car_e-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/car_e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/car_e-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/car_e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/car_e-track-5.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/car_e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/car_eroad.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/car_g-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/car_g-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/car_g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/car_michigan.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/car_s2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/car_test-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/car_wheel-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/city-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/d-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/e-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/e-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/e-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/e-track-5.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/eroad.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/f-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/g-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/g-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/michigan.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/s2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata/wheel-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/vm-x2.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/car1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/common.cpp
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/common.h
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/inferno.cpp
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/inferno.def
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/inferno.dsp
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/inferno.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/mclaren-f1.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/1/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/1/default.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/1/defaultcar.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/10/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/10/default.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/10/defaultcar.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/2/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/2/default.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/2/defaultcar.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/3/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/3/default.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/3/defaultcar.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/3/tracksdata/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/3/tracksdata/car_e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/3/tracksdata/car_e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/3/tracksdata/car_g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/3/tracksdata/car_g-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/3/tracksdata/e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/3/tracksdata/e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/3/tracksdata/g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/3/tracksdata/g-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/4/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/4/default.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/4/defaultcar.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/5/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/5/default.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/5/defaultcar.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/6/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/6/default.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/6/defaultcar.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/7/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/7/default.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/7/defaultcar.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/8/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/8/default.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/8/defaultcar.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/8/tracksdata/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/8/tracksdata/car_e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/8/tracksdata/car_e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/8/tracksdata/car_g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/8/tracksdata/car_g-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/8/tracksdata/e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/8/tracksdata/e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/8/tracksdata/g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/8/tracksdata/g-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/9/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/9/default.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/9/defaultcar.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/9/tracksdata/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/9/tracksdata/car_e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/9/tracksdata/car_e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/9/tracksdata/car_g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/9/tracksdata/e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/9/tracksdata/e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/9/tracksdata/g-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/car1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/common.cpp
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/common.h
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/inferno2.cpp
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/inferno2.def
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/inferno2.dsp
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/inferno2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/lliaw/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/lliaw/car-nascar.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/lliaw/car-torcs.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/lliaw/car-viper.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/lliaw/car.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/lliaw/common.cpp
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/lliaw/common.h
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/lliaw/lliaw.cpp
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/lliaw/lliaw.def
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/lliaw/lliaw.dsp
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/lliaw/lliaw.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/lliaw/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/lliaw/tracksdata/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/lliaw/tracksdata/car_e-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/lliaw/tracksdata/car_e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/lliaw/tracksdata/car_e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/lliaw/tracksdata/car_eroad.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/lliaw/tracksdata/car_g-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/lliaw/viper-gts-r.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/car1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/cg-nascar-rwd.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/common.cpp
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/common.h
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tanhoj.cpp
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tanhoj.def
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tanhoj.dsp
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tanhoj.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/a-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/aalborg.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/car_a-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/car_aalborg.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/car_e-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/car_e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/car_e-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/car_e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/car_e-track-5.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/car_e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/car_eroad.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/car_g-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/car_g-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/car_michigan.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/car_s2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/car_test-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/car_wheel-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/city-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/dirt-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/e-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/e-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/e-track-5.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/eroad.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/g-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/g-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/michigan.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/s2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata/wheel-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/car.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/common.cpp
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/common.h
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/logo.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/lotus-gt1-512.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/lotus-gt1.rgb
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tita.cpp
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tita.def
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tita.dsp
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tita.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/Makefile
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/a-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/aalborg.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/car_a-speedway.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/car_aalborg.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/car_e-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/car_e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/car_e-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/car_e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/car_e-track-5.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/car_e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/car_eroad.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/car_g-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/car_g-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/car_michigan.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/car_s2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/car_test-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/car_wheel-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/city-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/e-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/e-track-2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/e-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/e-track-4.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/e-track-5.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/e-track-6.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/eroad.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/g-track-1.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/g-track-3.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/michigan.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/s2.xml
-%%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata/wheel-1.xml
 %%TORCSDIR%%/tracks/dirt/dirt-1/background.png
 %%TORCSDIR%%/tracks/dirt/dirt-1/dirt-1.ac
 %%TORCSDIR%%/tracks/dirt/dirt-1/dirt-1.png
@@ -2750,11 +2304,34 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/tracks/oval/michigan/michigan.png
 %%TORCSDIR%%/tracks/oval/michigan/michigan.xml
 %%TORCSDIR%%/tracks/oval/michigan/readme.txt
-%%TORCSDIR%%/tracks/road/aalborg/aalborg.ac
+%%TORCSDIR%%/tracks/road/aalborg/aalborg.acc
 %%TORCSDIR%%/tracks/road/aalborg/aalborg.png
 %%TORCSDIR%%/tracks/road/aalborg/aalborg.xml
+%%TORCSDIR%%/tracks/road/aalborg/allborg-trees_n.rgb
+%%TORCSDIR%%/tracks/road/aalborg/background.png
+%%TORCSDIR%%/tracks/road/aalborg/barr1.rgb
+%%TORCSDIR%%/tracks/road/aalborg/grass-aa.rgb
+%%TORCSDIR%%/tracks/road/aalborg/poutre4.rgb
 %%TORCSDIR%%/tracks/road/aalborg/readme.txt
-%%TORCSDIR%%/tracks/road/alpine-1/Makefile
+%%TORCSDIR%%/tracks/road/aalborg/shadow2.rgb
+%%TORCSDIR%%/tracks/road/aalborg/spectator.rgb
+%%TORCSDIR%%/tracks/road/aalborg/tarmac-wall-1-g2.rgb
+%%TORCSDIR%%/tracks/road/aalborg/tarmac-wall-2-g2.rgb
+%%TORCSDIR%%/tracks/road/aalborg/torcs1.rgb
+%%TORCSDIR%%/tracks/road/aalborg/tr-asphalt-2-aa-r_n.rgb
+%%TORCSDIR%%/tracks/road/aalborg/tr-asphalt-aa-bw1_n.rgb
+%%TORCSDIR%%/tracks/road/aalborg/tr-asphalt-aa-bw2-e_n.rgb
+%%TORCSDIR%%/tracks/road/aalborg/tr-asphalt-aa-bw2-s_n.rgb
+%%TORCSDIR%%/tracks/road/aalborg/tr-asphalt-aa-bw2_n.rgb
+%%TORCSDIR%%/tracks/road/aalborg/tr-asphalt-aa-l_n.rgb
+%%TORCSDIR%%/tracks/road/aalborg/tr-asphalt-aa-pe-bw1_n.rgb
+%%TORCSDIR%%/tracks/road/aalborg/tr-asphalt-aa-pt-bw1_n.rgb
+%%TORCSDIR%%/tracks/road/aalborg/tr-asphalt-aa-ro-bw1_n.rgb
+%%TORCSDIR%%/tracks/road/aalborg/tr-asphalt-to-g-aa-l_n.rgb
+%%TORCSDIR%%/tracks/road/aalborg/tr-barrier-aa-1.rgb
+%%TORCSDIR%%/tracks/road/aalborg/tr-curb-bw-aa-r.rgb
+%%TORCSDIR%%/tracks/road/aalborg/tr-g-to-asphalt-aa-l_n.rgb
+%%TORCSDIR%%/tracks/road/aalborg/tr-grass-aa-l_n.rgb
 %%TORCSDIR%%/tracks/road/alpine-1/alpine-1.ac
 %%TORCSDIR%%/tracks/road/alpine-1/alpine-1.png
 %%TORCSDIR%%/tracks/road/alpine-1/alpine-1.xml
@@ -2762,10 +2339,8 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/tracks/road/alpine-1/asgrassr_n.rgb
 %%TORCSDIR%%/tracks/road/alpine-1/background.png
 %%TORCSDIR%%/tracks/road/alpine-1/barg3.rgb
-%%TORCSDIR%%/tracks/road/alpine-1/barrier.rgb
 %%TORCSDIR%%/tracks/road/alpine-1/cham2.rgb
 %%TORCSDIR%%/tracks/road/alpine-1/concdal.rgb
-%%TORCSDIR%%/tracks/road/alpine-1/elevation-map.png
 %%TORCSDIR%%/tracks/road/alpine-1/gconcrete.rgb
 %%TORCSDIR%%/tracks/road/alpine-1/ggrass3.rgb
 %%TORCSDIR%%/tracks/road/alpine-1/house.rgb
@@ -2773,7 +2348,6 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/tracks/road/alpine-1/murpub.rgb
 %%TORCSDIR%%/tracks/road/alpine-1/poutre3.rgb
 %%TORCSDIR%%/tracks/road/alpine-1/readme.txt
-%%TORCSDIR%%/tracks/road/alpine-1/relief.ac
 %%TORCSDIR%%/tracks/road/alpine-1/road1.rgb
 %%TORCSDIR%%/tracks/road/alpine-1/road4.rgb
 %%TORCSDIR%%/tracks/road/alpine-1/rockg0.rgb
@@ -2785,10 +2359,21 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/tracks/road/alpine-1/walls.rgb
 %%TORCSDIR%%/tracks/road/alpine-1/walls2.rgb
 %%TORCSDIR%%/tracks/road/e-track-1/background.png
-%%TORCSDIR%%/tracks/road/e-track-1/e-track-1.ac
+%%TORCSDIR%%/tracks/road/e-track-1/e-track-1.acc
 %%TORCSDIR%%/tracks/road/e-track-1/e-track-1.png
 %%TORCSDIR%%/tracks/road/e-track-1/e-track-1.xml
+%%TORCSDIR%%/tracks/road/e-track-1/geo-bw1.rgb
 %%TORCSDIR%%/tracks/road/e-track-1/readme.txt
+%%TORCSDIR%%/tracks/road/e-track-1/shadow2.rgb
+%%TORCSDIR%%/tracks/road/e-track-1/tr-asphalt-bw3-pit-e_n.rgb
+%%TORCSDIR%%/tracks/road/e-track-1/tr-asphalt-bw3-pit-l_n.rgb
+%%TORCSDIR%%/tracks/road/e-track-1/tr-asphalt-bw3-pit_n.rgb
+%%TORCSDIR%%/tracks/road/e-track-1/tr-asphalt-bw3_n.rgb
+%%TORCSDIR%%/tracks/road/e-track-1/tr-barrier-bw.rgb
+%%TORCSDIR%%/tracks/road/e-track-1/tr-curb-bw-l.rgb
+%%TORCSDIR%%/tracks/road/e-track-1/tr-curb-bw-r.rgb
+%%TORCSDIR%%/tracks/road/e-track-1/tr-grass-bw1.rgb
+%%TORCSDIR%%/tracks/road/e-track-1/tr-grass-bw2.rgb
 %%TORCSDIR%%/tracks/road/e-track-2/background.png
 %%TORCSDIR%%/tracks/road/e-track-2/e-track-2.acc
 %%TORCSDIR%%/tracks/road/e-track-2/e-track-2.png
@@ -2813,113 +2398,112 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/tracks/road/e-track-6/e-track-6.xml
 %%TORCSDIR%%/tracks/road/e-track-6/readme.txt
 %%TORCSDIR%%/tracks/road/eroad/background.png
-%%TORCSDIR%%/tracks/road/eroad/eroad.ac
+%%TORCSDIR%%/tracks/road/eroad/eroad.acc
 %%TORCSDIR%%/tracks/road/eroad/eroad.png
 %%TORCSDIR%%/tracks/road/eroad/eroad.xml
 %%TORCSDIR%%/tracks/road/eroad/readme.txt
-%%TORCSDIR%%/tracks/road/g-track-1/alltree.rgb
-%%TORCSDIR%%/tracks/road/g-track-1/alltree2.rgb
-%%TORCSDIR%%/tracks/road/g-track-1/asphalt2.rgb
-%%TORCSDIR%%/tracks/road/g-track-1/asphalt3.rgb
+%%TORCSDIR%%/tracks/road/eroad/shadow2.rgb
+%%TORCSDIR%%/tracks/road/eroad/tr-asphalt-bw1-pits_n.rgb
+%%TORCSDIR%%/tracks/road/eroad/tr-asphalt-l2bw1-pe_n.rgb
+%%TORCSDIR%%/tracks/road/eroad/tr-asphalt-l2bw1-pl_n.rgb
+%%TORCSDIR%%/tracks/road/eroad/tr-asphalt-l2bw1_n.rgb
+%%TORCSDIR%%/tracks/road/eroad/tr-barrier-bw2.rgb
+%%TORCSDIR%%/tracks/road/eroad/tr-wall-torcs1-left.rgb
+%%TORCSDIR%%/tracks/road/eroad/tr-wall-torcs1-right.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/asphalt-bw-g1-1_n.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/asphalt-bw-g1-patch-1_n.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/asphalt-bw-g1-patch-2_n.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/asphalt-bw-g1-patch-3_n.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/asphalt-bw-g1-pit_n.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/asphalt-bw-g1-pitentry-side_n.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/asphalt-bw-g1-pitentry_n.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/asphalt-bw-g1-sidel-end_n.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/asphalt-bw-g1-sidel-start_n.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/asphalt-bw-g1-sidel_n.rgb
 %%TORCSDIR%%/tracks/road/g-track-1/background.png
-%%TORCSDIR%%/tracks/road/g-track-1/env.rgb
-%%TORCSDIR%%/tracks/road/g-track-1/g-track-1.ac
+%%TORCSDIR%%/tracks/road/g-track-1/barr1.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/earth_and_grass.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/facade1-512.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/facade6-512.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/facade7.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/fence-arbor_n.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/g-track-1.acc
 %%TORCSDIR%%/tracks/road/g-track-1/g-track-1.png
 %%TORCSDIR%%/tracks/road/g-track-1/g-track-1.xml
-%%TORCSDIR%%/tracks/road/g-track-1/grassg1.rgb
-%%TORCSDIR%%/tracks/road/g-track-1/grassg2.rgb
-%%TORCSDIR%%/tracks/road/g-track-1/grassg3.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/grass-g1.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/poutre3_arbor_n.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/poutre4.rgb
 %%TORCSDIR%%/tracks/road/g-track-1/readme.txt
-%%TORCSDIR%%/tracks/road/g-track-1/rock2.rgb
-%%TORCSDIR%%/tracks/road/g-track-1/rock3.rgb
-%%TORCSDIR%%/tracks/road/g-track-1/texte1.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/roof1.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/roof3.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/shadow2.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/spectator.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/std.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/tarmac-wall-2-g2.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/tent.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/torcs0_arbor_n.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/torcs1.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/tr-asphalt-aa-bw1_n.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/tree53_n.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/truck_arbor_berniw_n.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/truck_arbor_bt_n.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/truck_arbor_inferno_n.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/truck_arbor_speedy_n.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/truck_arbor_tita_n.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/wall-green-yellow.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/wall-grey.rgb
+%%TORCSDIR%%/tracks/road/g-track-1/wall4.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/alltree.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/alltree2.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/arbor01.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/asasphr.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/asb2l.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/asb2r.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/asbl.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/asconcr.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/asgrassl.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/asgrassr.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/asp_n.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/asp_nmm.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/asphalt.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/asphalt2.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/asphalt3.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/asphalt4.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/asphaltr.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/assandr.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/astiled.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/background.png
-%%TORCSDIR%%/tracks/road/g-track-2/barg1_n.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/barg2.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/barg3.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/barr1.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/concdal.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/env.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/g-track-2-relief.ac
-%%TORCSDIR%%/tracks/road/g-track-2/g-track-2.ac
 %%TORCSDIR%%/tracks/road/g-track-2/g-track-2.acc
 %%TORCSDIR%%/tracks/road/g-track-2/g-track-2.png
 %%TORCSDIR%%/tracks/road/g-track-2/g-track-2.xml
 %%TORCSDIR%%/tracks/road/g-track-2/gconcrete.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/grassg1.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/grassg2.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/grassg3.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/grtiled.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/gsand.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/gsandtiled.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/gtirewall.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/gwall.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/poutre3.rgb
+%%TORCSDIR%%/tracks/road/g-track-2/poutre3_arbor_n.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/poutre4.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/readme.txt
-%%TORCSDIR%%/tracks/road/g-track-2/reflect.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/rock2.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/rock3.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/rock4.rgb
+%%TORCSDIR%%/tracks/road/g-track-2/shadow2.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/spec.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/std.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/tent.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/texte1.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/torcs0.rgb
+%%TORCSDIR%%/tracks/road/g-track-2/torcs0_arbor_n.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/torcs1.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/torcs2.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/trcurbl.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/trcurbr.rgb
-%%TORCSDIR%%/tracks/road/g-track-2/treecl1.rgb
 %%TORCSDIR%%/tracks/road/g-track-2/treewate.rgb
+%%TORCSDIR%%/tracks/road/g-track-3/arbor-wood_n.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/arbor01.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/asasphr.rgb
-%%TORCSDIR%%/tracks/road/g-track-3/asb2l.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/asconcr.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/asgrassr_n.rgb
-%%TORCSDIR%%/tracks/road/g-track-3/asp.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/asp_n.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/asphalt4.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/assandr.rgb
-%%TORCSDIR%%/tracks/road/g-track-3/astiled.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/background.png
-%%TORCSDIR%%/tracks/road/g-track-3/barg1_n.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/barg2.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/barg3.rgb
-%%TORCSDIR%%/tracks/road/g-track-3/barg4.rgb
-%%TORCSDIR%%/tracks/road/g-track-3/barr1.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/concdal.rgb
-%%TORCSDIR%%/tracks/road/g-track-3/env.png
-%%TORCSDIR%%/tracks/road/g-track-3/envshadow.png
 %%TORCSDIR%%/tracks/road/g-track-3/g-track-3.acc
 %%TORCSDIR%%/tracks/road/g-track-3/g-track-3.png
 %%TORCSDIR%%/tracks/road/g-track-3/g-track-3.xml
 %%TORCSDIR%%/tracks/road/g-track-3/gconcrete.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/ggrass3.rgb
-%%TORCSDIR%%/tracks/road/g-track-3/ground0.rgb
-%%TORCSDIR%%/tracks/road/g-track-3/ground1.rgb
-%%TORCSDIR%%/tracks/road/g-track-3/grtiled.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/gsand.rgb
-%%TORCSDIR%%/tracks/road/g-track-3/gsandtiled.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/gtirewall.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/house.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/mur2.rgb
@@ -2932,39 +2516,26 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/tracks/road/g-track-3/rockg0.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/shadow2.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/skid_m2.rgb
-%%TORCSDIR%%/tracks/road/g-track-3/torcs0.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/torcs1.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/torcs2.rgb
-%%TORCSDIR%%/tracks/road/g-track-3/trcurbl.rgb
-%%TORCSDIR%%/tracks/road/g-track-3/trcurbr.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/treebui1.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/treeg10.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/truck0.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/truck1.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/walls.rgb
 %%TORCSDIR%%/tracks/road/g-track-3/walls2.rgb
-%%TORCSDIR%%/tracks/road/ole-road-1/Makefile
 %%TORCSDIR%%/tracks/road/ole-road-1/background.png
 %%TORCSDIR%%/tracks/road/ole-road-1/close-bush.rgb
 %%TORCSDIR%%/tracks/road/ole-road-1/concrete-patch.png
 %%TORCSDIR%%/tracks/road/ole-road-1/cracked-asphalt.png
-%%TORCSDIR%%/tracks/road/ole-road-1/elevation-map.png
-%%TORCSDIR%%/tracks/road/ole-road-1/generate.sh
 %%TORCSDIR%%/tracks/road/ole-road-1/ole-concrete-pits.png
 %%TORCSDIR%%/tracks/road/ole-road-1/ole-concrete-side.png
-%%TORCSDIR%%/tracks/road/ole-road-1/ole-road-1-bak.ac
-%%TORCSDIR%%/tracks/road/ole-road-1/ole-road-1-elv.png
-%%TORCSDIR%%/tracks/road/ole-road-1/ole-road-1-elv3.png
-%%TORCSDIR%%/tracks/road/ole-road-1/ole-road-1-msh.ac
-%%TORCSDIR%%/tracks/road/ole-road-1/ole-road-1-shade.ac
-%%TORCSDIR%%/tracks/road/ole-road-1/ole-road-1-trk.ac
 %%TORCSDIR%%/tracks/road/ole-road-1/ole-road-1.acc
 %%TORCSDIR%%/tracks/road/ole-road-1/ole-road-1.png
 %%TORCSDIR%%/tracks/road/ole-road-1/ole-road-1.xml
 %%TORCSDIR%%/tracks/road/ole-road-1/patched-asphalt-1.png
 %%TORCSDIR%%/tracks/road/ole-road-1/patched-asphalt-2.png
 %%TORCSDIR%%/tracks/road/ole-road-1/readme.txt
-%%TORCSDIR%%/tracks/road/ole-road-1/road-shape.png
 %%TORCSDIR%%/tracks/road/ole-road-1/shadow2.rgb
 %%TORCSDIR%%/tracks/road/ole-road-1/tr-asphalt-l_nmm.rgb
 %%TORCSDIR%%/tracks/road/spring/readme.txt
@@ -2977,6 +2548,7 @@ lib/torcs/trackgen-bin
 %%TORCSDIR%%/tracks/road/wheel-1/wheel-1.ac
 %%TORCSDIR%%/tracks/road/wheel-1/wheel-1.png
 %%TORCSDIR%%/tracks/road/wheel-1/wheel-1.xml
+%%TORCSDIR%%/tux.png
 @dirrm %%TORCSDIR%%/tracks/road/wheel-1
 @dirrm %%TORCSDIR%%/tracks/road/spring
 @dirrm %%TORCSDIR%%/tracks/road/ole-road-1
@@ -3012,63 +2584,6 @@ lib/torcs/trackgen-bin
 @dirrm %%TORCSDIR%%/tracks/dirt/dirt-1
 @dirrm %%TORCSDIR%%/tracks/dirt
 @dirrm %%TORCSDIR%%/tracks
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita/tracksdata
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tita
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj/tracksdata
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/tanhoj
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/lliaw/tracksdata
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/lliaw
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/9/tracksdata
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/9
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/8/tracksdata
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/8
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/7
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/6
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/5
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/4
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/3/tracksdata
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/3
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/2
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/10
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2/1
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno2
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9/tracksdata
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/9
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8/tracksdata
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/8
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7/tracksdata
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/7
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6/tracksdata
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/6
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5/tracksdata
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/5
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4/tracksdata
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/4
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3/tracksdata
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/3
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2/tracksdata
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/2
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10/tracksdata
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/10
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1/tracksdata
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno/1
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/inferno
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/9
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/8
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/7
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/6
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/5
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/4
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/3
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/2
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/10
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned/1
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/damned
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/cylos1/tracksdata
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers/cylos1
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src/drivers
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%/src
-@dirrm %%TORCSDIR%%/torcs-%%TORCSVER%%
 @dirrm %%TORCSDIR%%/telemetry
 @dirrm %%TORCSDIR%%/results/quickrace
 @dirrm %%TORCSDIR%%/results/practice
@@ -3084,35 +2599,38 @@ lib/torcs/trackgen-bin
 @dirrm %%TORCSDIR%%/drivers/tanhoj
 @dirrm %%TORCSDIR%%/drivers/sparkle/0
 @dirrm %%TORCSDIR%%/drivers/sparkle
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/9
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/8
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/7/race
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/7/qualifying
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/7/practice
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/7
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/6
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/5
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/4/race
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/4/qualifying
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/4/practice
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/4
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/3/race
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/3/qualifying
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/3/practice
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/3
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/2/race
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/2/qualifying
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/2/practice
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/2
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/1/race
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/1/qualifying
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/1/practice
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/1
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/0/race
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/0/qualifying
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/0/practice
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros/0
-%%OLETHROS%%@dirrm %%TORCSDIR%%/drivers/olethros
+@dirrm %%TORCSDIR%%/drivers/olethros/9/race
+@dirrm %%TORCSDIR%%/drivers/olethros/9/qualifying
+@dirrm %%TORCSDIR%%/drivers/olethros/9/practice
+@dirrm %%TORCSDIR%%/drivers/olethros/9
+@dirrm %%TORCSDIR%%/drivers/olethros/8
+@dirrm %%TORCSDIR%%/drivers/olethros/7/race
+@dirrm %%TORCSDIR%%/drivers/olethros/7/qualifying
+@dirrm %%TORCSDIR%%/drivers/olethros/7/practice
+@dirrm %%TORCSDIR%%/drivers/olethros/7
+@dirrm %%TORCSDIR%%/drivers/olethros/6
+@dirrm %%TORCSDIR%%/drivers/olethros/5
+@dirrm %%TORCSDIR%%/drivers/olethros/4/race
+@dirrm %%TORCSDIR%%/drivers/olethros/4/qualifying
+@dirrm %%TORCSDIR%%/drivers/olethros/4/practice
+@dirrm %%TORCSDIR%%/drivers/olethros/4
+@dirrm %%TORCSDIR%%/drivers/olethros/3/race
+@dirrm %%TORCSDIR%%/drivers/olethros/3/qualifying
+@dirrm %%TORCSDIR%%/drivers/olethros/3/practice
+@dirrm %%TORCSDIR%%/drivers/olethros/3
+@dirrm %%TORCSDIR%%/drivers/olethros/2/race
+@dirrm %%TORCSDIR%%/drivers/olethros/2/qualifying
+@dirrm %%TORCSDIR%%/drivers/olethros/2/practice
+@dirrm %%TORCSDIR%%/drivers/olethros/2
+@dirrm %%TORCSDIR%%/drivers/olethros/1/race
+@dirrm %%TORCSDIR%%/drivers/olethros/1/qualifying
+@dirrm %%TORCSDIR%%/drivers/olethros/1/practice
+@dirrm %%TORCSDIR%%/drivers/olethros/1
+@dirrm %%TORCSDIR%%/drivers/olethros/0/race
+@dirrm %%TORCSDIR%%/drivers/olethros/0/qualifying
+@dirrm %%TORCSDIR%%/drivers/olethros/0/practice
+@dirrm %%TORCSDIR%%/drivers/olethros/0
+@dirrm %%TORCSDIR%%/drivers/olethros
 @dirrm %%TORCSDIR%%/drivers/lliaw/tracksdata
 @dirrm %%TORCSDIR%%/drivers/lliaw
 @dirrm %%TORCSDIR%%/drivers/inferno2/9/tracksdata
@@ -3162,6 +2680,8 @@ lib/torcs/trackgen-bin
 @dirrm %%TORCSDIR%%/drivers/human/tracks/e-track-3
 @dirrm %%TORCSDIR%%/drivers/human/tracks/e-track-2
 @dirrm %%TORCSDIR%%/drivers/human/tracks/e-track-1
+@dirrm %%TORCSDIR%%/drivers/human/tracks/dirt-6
+@dirrm %%TORCSDIR%%/drivers/human/tracks/dirt-5
 @dirrm %%TORCSDIR%%/drivers/human/tracks/dirt-4
 @dirrm %%TORCSDIR%%/drivers/human/tracks/dirt-3
 @dirrm %%TORCSDIR%%/drivers/human/tracks/dirt-2
@@ -3180,62 +2700,64 @@ lib/torcs/trackgen-bin
 @dirrm %%TORCSDIR%%/drivers/damned/10
 @dirrm %%TORCSDIR%%/drivers/damned/1
 @dirrm %%TORCSDIR%%/drivers/damned
+@dirrm %%TORCSDIR%%/drivers/cylos2
 @dirrm %%TORCSDIR%%/drivers/cylos1/tracksdata
 @dirrm %%TORCSDIR%%/drivers/cylos1
-%%BT%%@dirrm %%TORCSDIR%%/drivers/bt/9
-%%BT%%@dirrm %%TORCSDIR%%/drivers/bt/8
-%%BT%%@dirrm %%TORCSDIR%%/drivers/bt/7
-%%BT%%@dirrm %%TORCSDIR%%/drivers/bt/6
-%%BT%%@dirrm %%TORCSDIR%%/drivers/bt/5
-%%BT%%@dirrm %%TORCSDIR%%/drivers/bt/4
-%%BT%%@dirrm %%TORCSDIR%%/drivers/bt/3
-%%BT%%@dirrm %%TORCSDIR%%/drivers/bt/2
-%%BT%%@dirrm %%TORCSDIR%%/drivers/bt/1/race
-%%BT%%@dirrm %%TORCSDIR%%/drivers/bt/1/qualifying
-%%BT%%@dirrm %%TORCSDIR%%/drivers/bt/1/practice
-%%BT%%@dirrm %%TORCSDIR%%/drivers/bt/1
-%%BT%%@dirrm %%TORCSDIR%%/drivers/bt/0/race
-%%BT%%@dirrm %%TORCSDIR%%/drivers/bt/0/qualifying
-%%BT%%@dirrm %%TORCSDIR%%/drivers/bt/0/practice
-%%BT%%@dirrm %%TORCSDIR%%/drivers/bt/0
-%%BT%%@dirrm %%TORCSDIR%%/drivers/bt
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw3/9
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw3/8
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw3/7
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw3/6
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw3/5
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw3/4
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw3/3
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw3/2
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw3/10
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw3/1
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw3
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw2/9
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw2/8
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw2/7
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw2/6
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw2/5
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw2/4
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw2/3
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw2/2
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw2/10
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw2/1
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw2
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw/9
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw/8
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw/7
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw/6
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw/5
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw/4
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw/3
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw/2
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw/10
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw/1
-%%BERNIW%%@dirrm %%TORCSDIR%%/drivers/berniw
+@dirrm %%TORCSDIR%%/drivers/bt/9
+@dirrm %%TORCSDIR%%/drivers/bt/8
+@dirrm %%TORCSDIR%%/drivers/bt/7
+@dirrm %%TORCSDIR%%/drivers/bt/6
+@dirrm %%TORCSDIR%%/drivers/bt/5
+@dirrm %%TORCSDIR%%/drivers/bt/4
+@dirrm %%TORCSDIR%%/drivers/bt/3
+@dirrm %%TORCSDIR%%/drivers/bt/2
+@dirrm %%TORCSDIR%%/drivers/bt/1/race
+@dirrm %%TORCSDIR%%/drivers/bt/1/qualifying
+@dirrm %%TORCSDIR%%/drivers/bt/1/practice
+@dirrm %%TORCSDIR%%/drivers/bt/1
+@dirrm %%TORCSDIR%%/drivers/bt/0/race
+@dirrm %%TORCSDIR%%/drivers/bt/0/qualifying
+@dirrm %%TORCSDIR%%/drivers/bt/0/practice
+@dirrm %%TORCSDIR%%/drivers/bt/0
+@dirrm %%TORCSDIR%%/drivers/bt
+@dirrm %%TORCSDIR%%/drivers/berniw3/9
+@dirrm %%TORCSDIR%%/drivers/berniw3/8
+@dirrm %%TORCSDIR%%/drivers/berniw3/7
+@dirrm %%TORCSDIR%%/drivers/berniw3/6
+@dirrm %%TORCSDIR%%/drivers/berniw3/5
+@dirrm %%TORCSDIR%%/drivers/berniw3/4
+@dirrm %%TORCSDIR%%/drivers/berniw3/3
+@dirrm %%TORCSDIR%%/drivers/berniw3/2
+@dirrm %%TORCSDIR%%/drivers/berniw3/10
+@dirrm %%TORCSDIR%%/drivers/berniw3/1
+@dirrm %%TORCSDIR%%/drivers/berniw3
+@dirrm %%TORCSDIR%%/drivers/berniw2/9
+@dirrm %%TORCSDIR%%/drivers/berniw2/8
+@dirrm %%TORCSDIR%%/drivers/berniw2/7
+@dirrm %%TORCSDIR%%/drivers/berniw2/6
+@dirrm %%TORCSDIR%%/drivers/berniw2/5
+@dirrm %%TORCSDIR%%/drivers/berniw2/4
+@dirrm %%TORCSDIR%%/drivers/berniw2/3
+@dirrm %%TORCSDIR%%/drivers/berniw2/2
+@dirrm %%TORCSDIR%%/drivers/berniw2/10
+@dirrm %%TORCSDIR%%/drivers/berniw2/1
+@dirrm %%TORCSDIR%%/drivers/berniw2
+@dirrm %%TORCSDIR%%/drivers/berniw/9
+@dirrm %%TORCSDIR%%/drivers/berniw/8
+@dirrm %%TORCSDIR%%/drivers/berniw/7
+@dirrm %%TORCSDIR%%/drivers/berniw/6
+@dirrm %%TORCSDIR%%/drivers/berniw/5
+@dirrm %%TORCSDIR%%/drivers/berniw/4
+@dirrm %%TORCSDIR%%/drivers/berniw/3
+@dirrm %%TORCSDIR%%/drivers/berniw/2
+@dirrm %%TORCSDIR%%/drivers/berniw/10
+@dirrm %%TORCSDIR%%/drivers/berniw/1
+@dirrm %%TORCSDIR%%/drivers/berniw
 @dirrm %%TORCSDIR%%/drivers
 @dirrm %%TORCSDIR%%/data/tracks
 @dirrm %%TORCSDIR%%/data/textures
 @dirrm %%TORCSDIR%%/data/sound
+@dirrm %%TORCSDIR%%/data/objects
 @dirrm %%TORCSDIR%%/data/img
 @dirrm %%TORCSDIR%%/data/fonts
 @dirrm %%TORCSDIR%%/data
@@ -3263,6 +2785,7 @@ lib/torcs/trackgen-bin
 @dirrm %%TORCSDIR%%/cars/kc-gto
 @dirrm %%TORCSDIR%%/cars/kc-gt40
 @dirrm %%TORCSDIR%%/cars/kc-grifo
+@dirrm %%TORCSDIR%%/cars/kc-giulietta
 @dirrm %%TORCSDIR%%/cars/kc-ghibli
 @dirrm %%TORCSDIR%%/cars/kc-dino
 @dirrm %%TORCSDIR%%/cars/kc-dbs
@@ -3271,6 +2794,7 @@ lib/torcs/trackgen-bin
 @dirrm %%TORCSDIR%%/cars/kc-corvette-ttop
 @dirrm %%TORCSDIR%%/cars/kc-conrero
 @dirrm %%TORCSDIR%%/cars/kc-coda
+@dirrm %%TORCSDIR%%/cars/kc-cobra
 @dirrm %%TORCSDIR%%/cars/kc-bigh
 @dirrm %%TORCSDIR%%/cars/kc-alfatz2
 @dirrm %%TORCSDIR%%/cars/kc-a110
@@ -3296,16 +2820,17 @@ lib/torcs/trackgen-bin
 @dirrm lib/torcs/drivers/tita
 @dirrm lib/torcs/drivers/tanhoj
 @dirrm lib/torcs/drivers/sparkle
+@dirrm lib/torcs/drivers/olethros
 @dirrm lib/torcs/drivers/lliaw
 @dirrm lib/torcs/drivers/inferno2
 @dirrm lib/torcs/drivers/inferno
 @dirrm lib/torcs/drivers/human
 @dirrm lib/torcs/drivers/damned
+@dirrm lib/torcs/drivers/cylos2
 @dirrm lib/torcs/drivers/cylos1
-%%BT%%@dirrm lib/torcs/drivers/bt
-%%BERNIW%%@dirrm lib/torcs/drivers/berniw3
-%%BERNIW%%@dirrm lib/torcs/drivers/berniw2
-%%BERNIW%%@dirrm lib/torcs/drivers/berniw
-%%OLETHROS%%@dirrm lib/torcs/drivers/olethros
+@dirrm lib/torcs/drivers/bt
+@dirrm lib/torcs/drivers/berniw3
+@dirrm lib/torcs/drivers/berniw2
+@dirrm lib/torcs/drivers/berniw
 @dirrm lib/torcs/drivers
 @dirrm lib/torcs
