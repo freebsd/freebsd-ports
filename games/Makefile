@@ -303,6 +303,7 @@
     SUBDIR += linux-virtual-jay-peak
     SUBDIR += lm-solve
     SUBDIR += ltris
+    SUBDIR += lucidlife
     SUBDIR += macopix
     SUBDIR += madbomber
     SUBDIR += maelstrom

@@ -1,0 +1,406 @@
+bin/lucidlife
+share/applications/lucidlife.desktop
+share/locale/en_GB/LC_MESSAGES/lucidlife.mo
+share/pixmaps/lucidlife.png
+%%DATADIR%%/graphics/logo.png
+%%DATADIR%%/icons/description.png
+%%DATADIR%%/icons/draw.png
+%%DATADIR%%/icons/grab.png
+%%DATADIR%%/icons/select.png
+%%DATADIR%%/icons/zoom_16.png
+%%DATADIR%%/patterns/jslife/breeders/catacryst.glf
+%%DATADIR%%/patterns/jslife/breeders/metacatacryst.glf
+%%DATADIR%%/patterns/jslife/breeders/mosquito.glf
+%%DATADIR%%/patterns/jslife/breeders/pi_blink.glf
+%%DATADIR%%/patterns/jslife/breeders/pi_blink_2.glf
+%%DATADIR%%/patterns/jslife/breeders/rake_breeder.glf
+%%DATADIR%%/patterns/jslife/breeders/slide_breeder.glf
+%%DATADIR%%/patterns/jslife/build_&_burn/ess_burner.glf
+%%DATADIR%%/patterns/jslife/build_&_burn/fuse_builder.glf
+%%DATADIR%%/patterns/jslife/build_&_burn/fuse_builder_2.glf
+%%DATADIR%%/patterns/jslife/build_&_burn/loaf_burner.glf
+%%DATADIR%%/patterns/jslife/build_&_burn/p99fuse.glf
+%%DATADIR%%/patterns/jslife/build_&_burn/pond_burn.glf
+%%DATADIR%%/patterns/jslife/build_&_burn/skipper.glf
+%%DATADIR%%/patterns/jslife/builders/SS_factory.glf
+%%DATADIR%%/patterns/jslife/builders/SS_factory_2.glf
+%%DATADIR%%/patterns/jslife/builders/assembly_line.glf
+%%DATADIR%%/patterns/jslife/builders/barbershop.glf
+%%DATADIR%%/patterns/jslife/builders/block_stacker.glf
+%%DATADIR%%/patterns/jslife/builders/bricklayer.glf
+%%DATADIR%%/patterns/jslife/builders/rake_crystal.glf
+%%DATADIR%%/patterns/jslife/builders/snake_stretch.glf
+%%DATADIR%%/patterns/jslife/builders/tub_stretch.glf
+%%DATADIR%%/patterns/jslife/builders/tub_stretch_2.glf
+%%DATADIR%%/patterns/jslife/eaters/SS_eaters.glf
+%%DATADIR%%/patterns/jslife/eaters/eaters.glf
+%%DATADIR%%/patterns/jslife/eaters/eaters_misc.glf
+%%DATADIR%%/patterns/jslife/eaters/p34eater.glf
+%%DATADIR%%/patterns/jslife/fuses/blinker_fuses.glf
+%%DATADIR%%/patterns/jslife/fuses/pulsar_fuse.glf
+%%DATADIR%%/patterns/jslife/fuses/quadfuse.glf
+%%DATADIR%%/patterns/jslife/growers/bee_ladder.glf
+%%DATADIR%%/patterns/jslife/growers/growing_SS.glf
+%%DATADIR%%/patterns/jslife/growers/growing_SS_2.glf
+%%DATADIR%%/patterns/jslife/growers/oblique_growth.glf
+%%DATADIR%%/patterns/jslife/growers/one_per_gen.glf
+%%DATADIR%%/patterns/jslife/guns/MWSS_p165.glf
+%%DATADIR%%/patterns/jslife/guns/corder_p4140.glf
+%%DATADIR%%/patterns/jslife/guns/corder_p690.glf
+%%DATADIR%%/patterns/jslife/guns/corder_p784.glf
+%%DATADIR%%/patterns/jslife/guns/edgeshoot_p450.glf
+%%DATADIR%%/patterns/jslife/guns/period_133.glf
+%%DATADIR%%/patterns/jslife/guns/period_135.glf
+%%DATADIR%%/patterns/jslife/guns/period_150.glf
+%%DATADIR%%/patterns/jslife/guns/period_180.glf
+%%DATADIR%%/patterns/jslife/guns/period_432.glf
+%%DATADIR%%/patterns/jslife/guns/period_570.glf
+%%DATADIR%%/patterns/jslife/guns/sidecar.glf
+%%DATADIR%%/patterns/jslife/loops/emus.glf
+%%DATADIR%%/patterns/jslife/loops/period_160.glf
+%%DATADIR%%/patterns/jslife/loops/period_174.glf
+%%DATADIR%%/patterns/jslife/loops/period_936.glf
+%%DATADIR%%/patterns/jslife/mathematics/fermat_primes.glf
+%%DATADIR%%/patterns/jslife/mathematics/heisenburp_30.glf
+%%DATADIR%%/patterns/jslife/mathematics/heisenburp_30i.glf
+%%DATADIR%%/patterns/jslife/mathematics/heisenburp_46.glf
+%%DATADIR%%/patterns/jslife/mathematics/twin_primes.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/1xnothing.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/1xtumbler.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/SS_push.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/SS_transform.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/advancer.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/block_keeper.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/c4_puffer.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/crystal.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/eden.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/fanout.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/glider_cross.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/glider_dust.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/glider_union.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/hotel_1.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/hotel_2.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/lightspeed.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/loggrow_diam.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/move_fishhook.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/pi_blinker_climb.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/pi_ship_c3.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/shuttle.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/signal_turn.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/sniper.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/ss_to_glider.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/telegraph.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/tub_tail.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/vacuum.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/whatever.glf
+%%DATADIR%%/patterns/jslife/odds_&_ends/zigzag.glf
+%%DATADIR%%/patterns/jslife/oscillators/7n+1.glf
+%%DATADIR%%/patterns/jslife/oscillators/SS_loop.glf
+%%DATADIR%%/patterns/jslife/oscillators/p97307852711.glf
+%%DATADIR%%/patterns/jslife/oscillators/poly_osc.glf
+%%DATADIR%%/patterns/jslife/oscillators/queen_bee_turn.glf
+%%DATADIR%%/patterns/jslife/reflectors/reflectors.glf
+%%DATADIR%%/patterns/jslife/reflectors/reflectors_2.glf
+%%DATADIR%%/patterns/jslife/reflectors/reflectors_p46.glf
+%%DATADIR%%/patterns/jslife/sawtooth/sawtooth_6.glf
+%%DATADIR%%/patterns/jslife/sawtooth/sawtooth_6b.glf
+%%DATADIR%%/patterns/jslife/slideguns/slide_d_01_120.glf
+%%DATADIR%%/patterns/jslife/slideguns/slide_d_02_120.glf
+%%DATADIR%%/patterns/jslife/slideguns/slide_d_03_092.glf
+%%DATADIR%%/patterns/jslife/slideguns/slide_o_02b_060.glf
+%%DATADIR%%/patterns/jslife/slideguns/slide_o_02f_060.glf
+%%DATADIR%%/patterns/jslife/slideguns/slide_o_03b_120.glf
+%%DATADIR%%/patterns/jslife/slideguns/slide_o_03f_120.glf
+%%DATADIR%%/patterns/jslife/slideguns/slide_o_04b_060.glf
+%%DATADIR%%/patterns/jslife/slideguns/slide_o_04f_060.glf
+%%DATADIR%%/patterns/jslife/slideguns/teth_d_005_154.glf
+%%DATADIR%%/patterns/jslife/slideguns/teth_d_008_064.glf
+%%DATADIR%%/patterns/jslife/slideguns/teth_o_014b_090.glf
+%%DATADIR%%/patterns/jslife/slideguns/teth_o_014f_090.glf
+%%DATADIR%%/patterns/jslife/slideguns/teth_o_020b_060.glf
+%%DATADIR%%/patterns/jslife/slideguns/teth_o_030f_060.glf
+%%DATADIR%%/patterns/jslife/slideguns/teth_o_040f_060.glf
+%%DATADIR%%/patterns/jslife/slideguns/teth_o_120f_120.glf
+%%DATADIR%%/patterns/jslife/synthesis/make_osc_p11.glf
+%%DATADIR%%/patterns/jslife/synthesis/make_osc_p18.glf
+%%DATADIR%%/patterns/jslife/synthesis/make_osc_p33.glf
+%%DATADIR%%/patterns/jslife/synthesis/make_oscillators.glf
+%%DATADIR%%/patterns/jslife/synthesis/make_spaceship.glf
+%%DATADIR%%/patterns/jslife/velocity_2c5/puffer_2c5.glf
+%%DATADIR%%/patterns/jslife/velocity_2c5/rake_2c5.glf
+%%DATADIR%%/patterns/jslife/velocity_2c5/ships_2c5.glf
+%%DATADIR%%/patterns/jslife/velocity_c12d/fuse2_c12.glf
+%%DATADIR%%/patterns/jslife/velocity_c12d/fuse_c12.glf
+%%DATADIR%%/patterns/jslife/velocity_c12d/rakes_c12d.glf
+%%DATADIR%%/patterns/jslife/velocity_c12d/ships_c12d.glf
+%%DATADIR%%/patterns/jslife/velocity_c12d/stretch_c12.glf
+%%DATADIR%%/patterns/jslife/velocity_c2/puffer_p12.glf
+%%DATADIR%%/patterns/jslife/velocity_c2/puffer_p12blk.glf
+%%DATADIR%%/patterns/jslife/velocity_c2/puffer_p16.glf
+%%DATADIR%%/patterns/jslife/velocity_c2/puffers_c2p8.glf
+%%DATADIR%%/patterns/jslife/velocity_c2/ships_c2p6.glf
+%%DATADIR%%/patterns/jslife/velocity_c2/ships_c2p8.glf
+%%DATADIR%%/patterns/jslife/velocity_c2/ships_c2small.glf
+%%DATADIR%%/patterns/jslife/velocity_c2/ships_c2small2.glf
+%%DATADIR%%/patterns/jslife/velocity_c2/ships_owss.glf
+%%DATADIR%%/patterns/jslife/velocity_c2/sparkers_c2.glf
+%%DATADIR%%/patterns/jslife/velocity_c2/stretch_c2.glf
+%%DATADIR%%/patterns/jslife/velocity_c2/stretch_p16wick.glf
+%%DATADIR%%/patterns/jslife/velocity_c2/stretch_trafjam.glf
+%%DATADIR%%/patterns/jslife/velocity_c2/varwidth_p2.glf
+%%DATADIR%%/patterns/jslife/velocity_c2/wavestretch.glf
+%%DATADIR%%/patterns/jslife/velocity_c3/fuse_3c6.glf
+%%DATADIR%%/patterns/jslife/velocity_c3/puffer_c3p9.glf
+%%DATADIR%%/patterns/jslife/velocity_c3/ships_c3_hp.glf
+%%DATADIR%%/patterns/jslife/velocity_c4d/fuse_c4d.glf
+%%DATADIR%%/patterns/jslife/velocity_c4d/puffers_c4d.glf
+%%DATADIR%%/patterns/jslife/velocity_c4d/ships_c4d.glf
+%%DATADIR%%/patterns/jslife/velocity_c4d/ships_c4d_ct.glf
+%%DATADIR%%/patterns/jslife/velocity_c4d/ships_c4d_ext.glf
+%%DATADIR%%/patterns/jslife/velocity_c4d/ships_c4d_hp.glf
+%%DATADIR%%/patterns/jslife/velocity_c4d/ships_c4d_lg.glf
+%%DATADIR%%/patterns/jslife/velocity_c4d/ships_c4d_tags.glf
+%%DATADIR%%/patterns/jslife/velocity_c4o/puffers_c4o.glf
+%%DATADIR%%/patterns/jslife/velocity_c4o/rake_c4.glf
+%%DATADIR%%/patterns/jslife/velocity_c4o/ships_c4o.glf
+%%DATADIR%%/patterns/jslife/velocity_c4o/ships_c4o_hp.glf
+%%DATADIR%%/patterns/jslife/velocity_c4o/stretch_c4o.glf
+%%DATADIR%%/patterns/jslife/velocity_c5o/ships_c5o.glf
+%%DATADIR%%/patterns/jslife/velocity_c5o/ships_c5o_hp.glf
+%%DATADIR%%/patterns/jslife/velocity_other/ships_2c7.glf
+%%DATADIR%%/patterns/jslife/velocity_other/ships_c5d.glf
+%%DATADIR%%/patterns/jslife/velocity_other/ships_c6.glf
+%%DATADIR%%/patterns/lpa/basics/acorn.glf
+%%DATADIR%%/patterns/lpa/basics/b-heptomino.glf
+%%DATADIR%%/patterns/lpa/basics/pi.glf
+%%DATADIR%%/patterns/lpa/basics/r-pentomino.glf
+%%DATADIR%%/patterns/lpa/basics/rabbits.glf
+%%DATADIR%%/patterns/lpa/basics/still_life.glf
+%%DATADIR%%/patterns/lpa/breeders/breeder_1.glf
+%%DATADIR%%/patterns/lpa/breeders/breeder_2.glf
+%%DATADIR%%/patterns/lpa/breeders/breeder_3.glf
+%%DATADIR%%/patterns/lpa/breeders/breeder_4.glf
+%%DATADIR%%/patterns/lpa/breeders/breeder_5.glf
+%%DATADIR%%/patterns/lpa/breeders/jaws.glf
+%%DATADIR%%/patterns/lpa/breeders/stifled.glf
+%%DATADIR%%/patterns/lpa/corders/corder_ship.glf
+%%DATADIR%%/patterns/lpa/corders/corder_ship_2.glf
+%%DATADIR%%/patterns/lpa/corders/loop.glf
+%%DATADIR%%/patterns/lpa/fuses/fuses.glf
+%%DATADIR%%/patterns/lpa/fuses/rev_fuse.glf
+%%DATADIR%%/patterns/lpa/fuses/spark_to_pi.glf
+%%DATADIR%%/patterns/lpa/fuses/thunderbird.glf
+%%DATADIR%%/patterns/lpa/growth_limit/caber_tosser.glf
+%%DATADIR%%/patterns/lpa/growth_limit/e15_growth.glf
+%%DATADIR%%/patterns/lpa/growth_limit/log_growth.glf
+%%DATADIR%%/patterns/lpa/growth_limit/log_growth_2.glf
+%%DATADIR%%/patterns/lpa/growth_limit/sqrt_gun.glf
+%%DATADIR%%/patterns/lpa/growth_limit/sqrt_gun_2.glf
+%%DATADIR%%/patterns/lpa/guns/4_barrelled.glf
+%%DATADIR%%/patterns/lpa/guns/AK47.glf
+%%DATADIR%%/patterns/lpa/guns/HWSS_gun.glf
+%%DATADIR%%/patterns/lpa/guns/LWSS_gun.glf
+%%DATADIR%%/patterns/lpa/guns/MWSS_gun.glf
+%%DATADIR%%/patterns/lpa/guns/b-track_112.glf
+%%DATADIR%%/patterns/lpa/guns/b-track_256.glf
+%%DATADIR%%/patterns/lpa/guns/b-track_856.glf
+%%DATADIR%%/patterns/lpa/guns/bi-gun.glf
+%%DATADIR%%/patterns/lpa/guns/cyclotron.glf
+%%DATADIR%%/patterns/lpa/guns/gunstar.glf
+%%DATADIR%%/patterns/lpa/guns/gunstar_2.glf
+%%DATADIR%%/patterns/lpa/guns/gunstar_3.glf
+%%DATADIR%%/patterns/lpa/guns/period_104.glf
+%%DATADIR%%/patterns/lpa/guns/period_132.glf
+%%DATADIR%%/patterns/lpa/guns/period_136.glf
+%%DATADIR%%/patterns/lpa/guns/period_144.glf
+%%DATADIR%%/patterns/lpa/guns/period_184.glf
+%%DATADIR%%/patterns/lpa/guns/period_246.glf
+%%DATADIR%%/patterns/lpa/guns/period_30.glf
+%%DATADIR%%/patterns/lpa/guns/period_44.glf
+%%DATADIR%%/patterns/lpa/guns/period_46.glf
+%%DATADIR%%/patterns/lpa/guns/period_94.glf
+%%DATADIR%%/patterns/lpa/guns/thick_1.glf
+%%DATADIR%%/patterns/lpa/guns/thick_2.glf
+%%DATADIR%%/patterns/lpa/guns/thin_1.glf
+%%DATADIR%%/patterns/lpa/guns/thin_2.glf
+%%DATADIR%%/patterns/lpa/guns/thin_3.glf
+%%DATADIR%%/patterns/lpa/guns/thin_4.glf
+%%DATADIR%%/patterns/lpa/math_and_CS/adder.glf
+%%DATADIR%%/patterns/lpa/math_and_CS/block_puller.glf
+%%DATADIR%%/patterns/lpa/math_and_CS/memory.glf
+%%DATADIR%%/patterns/lpa/math_and_CS/primes.glf
+%%DATADIR%%/patterns/lpa/math_and_CS/random_LWSS.glf
+%%DATADIR%%/patterns/lpa/math_and_CS/random_gun.glf
+%%DATADIR%%/patterns/lpa/math_and_CS/random_gun_2.glf
+%%DATADIR%%/patterns/lpa/math_and_CS/thue.glf
+%%DATADIR%%/patterns/lpa/math_and_CS/turing_machine.glf
+%%DATADIR%%/patterns/lpa/math_and_CS/unit_cell.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/6_gliders.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/LWSS_around.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/SL_reflector.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/block_memory.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/block_pusher.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/crystal.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/double_x.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/eaters.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/eden.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/electric_fence.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/gliders_race.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/herschel.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/hotel.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/irrational.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/irrational_2.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/irrational_5.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/mirage.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/pinball.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/relay.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/relay_2.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/spiral_decay.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/stargate.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/switch_engine.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/tire_tracks.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/tire_tracks_2.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/tub_tracks.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/wick_stretcher.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/wire.glf
+%%DATADIR%%/patterns/lpa/miscellaneous/wire_with_sink.glf
+%%DATADIR%%/patterns/lpa/oscillators/b-track.glf
+%%DATADIR%%/patterns/lpa/oscillators/lone_dots.glf
+%%DATADIR%%/patterns/lpa/oscillators/period_10-22.glf
+%%DATADIR%%/patterns/lpa/oscillators/period_2.glf
+%%DATADIR%%/patterns/lpa/oscillators/period_24-50.glf
+%%DATADIR%%/patterns/lpa/oscillators/period_3.glf
+%%DATADIR%%/patterns/lpa/oscillators/period_3x.glf
+%%DATADIR%%/patterns/lpa/oscillators/period_4x.glf
+%%DATADIR%%/patterns/lpa/oscillators/period_5.glf
+%%DATADIR%%/patterns/lpa/oscillators/period_52-144.glf
+%%DATADIR%%/patterns/lpa/oscillators/period_6.glf
+%%DATADIR%%/patterns/lpa/oscillators/period_6x.glf
+%%DATADIR%%/patterns/lpa/oscillators/period_7-9.glf
+%%DATADIR%%/patterns/lpa/oscillators/poles.glf
+%%DATADIR%%/patterns/lpa/oscillators/quilt.glf
+%%DATADIR%%/patterns/lpa/oscillators/rot8.glf
+%%DATADIR%%/patterns/lpa/oscillators/twin_dots.glf
+%%DATADIR%%/patterns/lpa/oscillators/venetian.glf
+%%DATADIR%%/patterns/lpa/oscillators/venetian_2.glf
+%%DATADIR%%/patterns/lpa/oscillators/venetian_3.glf
+%%DATADIR%%/patterns/lpa/puffers/bhepto_puffer.glf
+%%DATADIR%%/patterns/lpa/puffers/blinker_ship.glf
+%%DATADIR%%/patterns/lpa/puffers/blinker_ship_2.glf
+%%DATADIR%%/patterns/lpa/puffers/classic.glf
+%%DATADIR%%/patterns/lpa/puffers/line_puffer_1.glf
+%%DATADIR%%/patterns/lpa/puffers/line_puffer_2.glf
+%%DATADIR%%/patterns/lpa/puffers/pi_puffer.glf
+%%DATADIR%%/patterns/lpa/puffers/pulsar_train.glf
+%%DATADIR%%/patterns/lpa/puffers/slow_puffer_1.glf
+%%DATADIR%%/patterns/lpa/puffers/slow_puffer_2.glf
+%%DATADIR%%/patterns/lpa/puffers/switch_puffer.glf
+%%DATADIR%%/patterns/lpa/rakes/LWSS_rake_1.glf
+%%DATADIR%%/patterns/lpa/rakes/LWSS_rake_2.glf
+%%DATADIR%%/patterns/lpa/rakes/MWSS_rake_1.glf
+%%DATADIR%%/patterns/lpa/rakes/MWSS_rake_2.glf
+%%DATADIR%%/patterns/lpa/rakes/coe_rake_1.glf
+%%DATADIR%%/patterns/lpa/rakes/coe_rake_2.glf
+%%DATADIR%%/patterns/lpa/rakes/fore_rake.glf
+%%DATADIR%%/patterns/lpa/rakes/program_rake.glf
+%%DATADIR%%/patterns/lpa/rakes/rake_1.glf
+%%DATADIR%%/patterns/lpa/rakes/rake_2.glf
+%%DATADIR%%/patterns/lpa/rakes/rake_3.glf
+%%DATADIR%%/patterns/lpa/rakes/rake_gun.glf
+%%DATADIR%%/patterns/lpa/rakes/spiders.glf
+%%DATADIR%%/patterns/lpa/rakes/thin_rake.glf
+%%DATADIR%%/patterns/lpa/sawtooth/cord_pull.glf
+%%DATADIR%%/patterns/lpa/sawtooth/hacksaw.glf
+%%DATADIR%%/patterns/lpa/sawtooth/sawtooth_1.glf
+%%DATADIR%%/patterns/lpa/sawtooth/sawtooth_2.glf
+%%DATADIR%%/patterns/lpa/sawtooth/sawtooth_3.glf
+%%DATADIR%%/patterns/lpa/sawtooth/sawtooth_4.glf
+%%DATADIR%%/patterns/lpa/sawtooth/sawtooth_5.glf
+%%DATADIR%%/patterns/lpa/sawtooth/sawtooth_6.glf
+%%DATADIR%%/patterns/lpa/sawtooth/sawtooth_7.glf
+%%DATADIR%%/patterns/lpa/space_fillers/max.glf
+%%DATADIR%%/patterns/lpa/space_fillers/max_2.glf
+%%DATADIR%%/patterns/lpa/space_fillers/max_3.glf
+%%DATADIR%%/patterns/lpa/spaceships/aquarium_20.glf
+%%DATADIR%%/patterns/lpa/spaceships/aquarium_25.glf
+%%DATADIR%%/patterns/lpa/spaceships/aquarium_25b.glf
+%%DATADIR%%/patterns/lpa/spaceships/aquarium_33.glf
+%%DATADIR%%/patterns/lpa/spaceships/aquarium_33w.glf
+%%DATADIR%%/patterns/lpa/spaceships/aquarium_40.glf
+%%DATADIR%%/patterns/lpa/spaceships/aquarium_50.glf
+%%DATADIR%%/patterns/lpa/spaceships/aquarium_50f.glf
+%%DATADIR%%/patterns/lpa/spaceships/aquarium_50fa.glf
+%%DATADIR%%/patterns/lpa/spaceships/aquarium_50fn.glf
+%%DATADIR%%/patterns/lpa/spaceships/aquarium_50s.glf
+%%DATADIR%%/patterns/lpa/spaceships/aquarium_50sb.glf
+%%DATADIR%%/patterns/lpa/spaceships/aquarium_50sh.glf
+%%DATADIR%%/patterns/lpa/spaceships/barge.glf
+%%DATADIR%%/patterns/lpa/spaceships/barge_2.glf
+%%DATADIR%%/patterns/lpa/spaceships/wing.glf
+%%DATADIR%%/patterns/lpa/synthesis/make_billiards.glf
+%%DATADIR%%/patterns/lpa/synthesis/make_fish.glf
+%%DATADIR%%/patterns/lpa/synthesis/make_fuse.glf
+%%DATADIR%%/patterns/lpa/synthesis/make_gun.glf
+%%DATADIR%%/patterns/lpa/synthesis/make_hustler.glf
+%%DATADIR%%/patterns/lpa/synthesis/make_osc.glf
+%%DATADIR%%/patterns/lpa/synthesis/make_pole.glf
+%%DOCSDIR%%/billiard.gif
+%%DOCSDIR%%/blinker_horizontal.gif
+%%DOCSDIR%%/blinker_vertical.gif
+%%DOCSDIR%%/draw.png
+%%DOCSDIR%%/glf_format.html
+%%DOCSDIR%%/glider.gif
+%%DOCSDIR%%/grab.png
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/max.gif
+%%DOCSDIR%%/patterns.html
+%%DOCSDIR%%/pulsar.gif
+%%DOCSDIR%%/select.png
+%%DOCSDIR%%/style.css
+%%DOCSDIR%%/window.gif
+@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrm %%DATADIR%%/patterns/lpa/synthesis
+@dirrm %%DATADIR%%/patterns/lpa/spaceships
+@dirrm %%DATADIR%%/patterns/lpa/space_fillers
+@dirrm %%DATADIR%%/patterns/lpa/sawtooth
+@dirrm %%DATADIR%%/patterns/lpa/rakes
+@dirrm %%DATADIR%%/patterns/lpa/puffers
+@dirrm %%DATADIR%%/patterns/lpa/oscillators
+@dirrm %%DATADIR%%/patterns/lpa/miscellaneous
+@dirrm %%DATADIR%%/patterns/lpa/math_and_CS
+@dirrm %%DATADIR%%/patterns/lpa/guns
+@dirrm %%DATADIR%%/patterns/lpa/growth_limit
+@dirrm %%DATADIR%%/patterns/lpa/fuses
+@dirrm %%DATADIR%%/patterns/lpa/corders
+@dirrm %%DATADIR%%/patterns/lpa/breeders
+@dirrm %%DATADIR%%/patterns/lpa/basics
+@dirrm %%DATADIR%%/patterns/lpa
+@dirrm %%DATADIR%%/patterns/jslife/velocity_other
+@dirrm %%DATADIR%%/patterns/jslife/velocity_c5o
+@dirrm %%DATADIR%%/patterns/jslife/velocity_c4o
+@dirrm %%DATADIR%%/patterns/jslife/velocity_c4d
+@dirrm %%DATADIR%%/patterns/jslife/velocity_c3
+@dirrm %%DATADIR%%/patterns/jslife/velocity_c2
+@dirrm %%DATADIR%%/patterns/jslife/velocity_c12d
+@dirrm %%DATADIR%%/patterns/jslife/velocity_2c5
+@dirrm %%DATADIR%%/patterns/jslife/synthesis
+@dirrm %%DATADIR%%/patterns/jslife/slideguns
+@dirrm %%DATADIR%%/patterns/jslife/sawtooth
+@dirrm %%DATADIR%%/patterns/jslife/reflectors
+@dirrm %%DATADIR%%/patterns/jslife/oscillators
+@dirrm %%DATADIR%%/patterns/jslife/odds_&_ends
+@dirrm %%DATADIR%%/patterns/jslife/mathematics
+@dirrm %%DATADIR%%/patterns/jslife/loops
+@dirrm %%DATADIR%%/patterns/jslife/guns
+@dirrm %%DATADIR%%/patterns/jslife/growers
+@dirrm %%DATADIR%%/patterns/jslife/fuses
+@dirrm %%DATADIR%%/patterns/jslife/eaters
+@dirrm %%DATADIR%%/patterns/jslife/builders
+@dirrm %%DATADIR%%/patterns/jslife/build_&_burn
+@dirrm %%DATADIR%%/patterns/jslife/breeders
+@dirrm %%DATADIR%%/patterns/jslife
+@dirrm %%DATADIR%%/patterns
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/graphics
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
