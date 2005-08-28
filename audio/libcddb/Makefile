@@ -3,9 +3,11 @@
 # Whom:			Michael Johnson <ahze@ahze.net>
 #
 # $FreeBSD$
+#    $MCom: ports-stable/audio/libcddb/Makefile,v 1.1 2005/08/09 04:21:26 ahze Exp $
+#
 
 PORTNAME=	libcddb
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
