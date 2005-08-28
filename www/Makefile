@@ -7,6 +7,7 @@
     SUBDIR += MT-PM
     SUBDIR += WebMagick
     SUBDIR += abcache
+    SUBDIR += adblock
     SUBDIR += admuser
     SUBDIR += adzap
     SUBDIR += adzap2squirm
