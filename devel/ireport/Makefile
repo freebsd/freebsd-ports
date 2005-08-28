@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ireport
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.5.1
 CATEGORIES=	devel databases java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +21,6 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper	\
 		${JAVALIBDIR}/tinylaf.jar:${PORTSDIR}/devel/tinylaf	\
 		${JAVALIBDIR}/jcmdline.jar:${PORTSDIR}/devel/jcmdline	\
 		${JAVALIBDIR}/barbecue.jar:${PORTSDIR}/graphics/barbecue	\
-		${JAVALIBDIR}/jfreechart.jar:${PORTSDIR}/java/jfreechart	\
 		${JAVALIBDIR}/jasperreports.jar:${PORTSDIR}/databases/jasperreports
 
 USE_JAVA=	yes
