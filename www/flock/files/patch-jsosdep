@@ -1,0 +1,9 @@
+--- js/src/jsosdep.h	Fri Nov 14 19:10:59 2003
++++ js/src/jsosdep.h	Fri Aug  5 00:50:44 2005
+@@ -102,5 +102,5 @@
+ #define JS_HAVE_LONG_LONG
+ 
+-#elif defined(FREEBSD)
++#elif defined(FREEBSD) || defined(__FreeBSD__)
+ #define JS_HAVE_LONG_LONG
+ 

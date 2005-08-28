@@ -1,0 +1,17 @@
+--- xpcom/reflect/xptcall/src/md/unix/xptcinvoke_x86_64_linux.cpp	Thu Apr 22 16:50:05 2004
++++ xpcom/reflect/xptcall/src/md/unix/xptcinvoke_x86_64_linux.cpp	Fri Aug  5 02:16:00 2005
+@@ -82,11 +82,11 @@
+     PRUint64 value;
+ 
+-    for (uint32 i = 0; i < paramCount; i++, s++) {
++    for (unsigned int i = 0; i < paramCount; i++, s++) {
+         if (s->IsPtrData())
+             value = (PRUint64) s->ptr;
+         else {
+             switch (s->type) {
+-            case nsXPTType::T_FLOAT:                                break;
+-            case nsXPTType::T_DOUBLE:                               break;
++            case nsXPTType::T_FLOAT:  
++            case nsXPTType::T_DOUBLE: value = 0; /* initialize */   break;
+             case nsXPTType::T_I8:     value = s->val.i8;            break;
+             case nsXPTType::T_I16:    value = s->val.i16;           break;
