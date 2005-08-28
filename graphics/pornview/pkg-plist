@@ -1,8 +1,8 @@
 bin/pornview
 share/gnome/apps/Graphics/pornview.desktop
 share/gnome/pixmaps/pornview.png
-share/locale/fr/LC_MESSAGES/pornview.mo
-share/locale/pl/LC_MESSAGES/pornview.mo
+%%WITH_NLS%%share/locale/fr/LC_MESSAGES/pornview.mo
+%%WITH_NLS%%share/locale/pl/LC_MESSAGES/pornview.mo
 share/gnome/pornview/scripts/helloworld
 @dirrm share/gnome/pornview/scripts
 @dirrm share/gnome/pornview
