@@ -17,7 +17,7 @@ esac
 
 USER=`/usr/bin/id -un`
 case "$USER" in
-  peter | jdp | markm | obrien | murray | jhb | bmah | scottl | kris | nik | marcus)
+  peter | jdp | markm | obrien | murray | jhb | bmah | scottl | kris | nik | marcus | krion)
     exit 0	# ok
     ;;
   *)
