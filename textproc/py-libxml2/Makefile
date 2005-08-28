@@ -5,9 +5,9 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	2
 CATEGORIES=	textproc gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-PORTREVISION=	2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python interface for XML parser library for GNOME
