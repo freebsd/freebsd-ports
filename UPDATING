@@ -6,6 +6,26 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050828:
+  AFFECTS: users of net/py-bittorrent-devel and net/py-bittorrent-core-devel
+  AUTHOR: lioux@FreeBSD.org
+
+  Developer renamed most BitTorrent command line scripts:
+
+  * btdownloadgui.py -> bittorrent.py
+  * btdownloadheadless.py -> bittorrent-console.py
+  * btdownloadcurses.py -> bittorrent-curses.py
+  * btmaketorrentgui.py -> maketorrent.py
+  * btmaketorrent.py -> maketorrent-console.py
+  * btlaunchmany.py -> launchmany-console.py
+  * btlaunchmanycurses.py -> launchmany-curses.py
+  * bttrack.py -> bittorrent-tracker.py
+  * btreannounce.py -> changetracker-console.py
+  * btrename.py has been REMOVED, use maketorrent*.py
+  * btshowmetainfo.py -> torrentinfo-console.py
+
+  Check http://www.bittorrent.com/bittorrent_versions.html
+
 20050804:
   AFFECTS: users of sysutils/kdeadmin3
   AUTHOR: kde@FreeBSD.org
