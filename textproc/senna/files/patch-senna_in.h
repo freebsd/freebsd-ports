@@ -1,17 +1,21 @@
---- lib/senna_in.h.orig	Fri Jun  3 23:59:02 2005
-+++ lib/senna_in.h	Wed Jun 29 01:59:39 2005
-@@ -14,6 +14,9 @@
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA */
- 
+--- lib/senna_in.h.orig	Sat Aug 27 23:59:02 2005
++++ lib/senna_in.h	Sun Aug 28 13:13:56 2005
+@@ -14,16 +14,28 @@
+   License along with this library; if not, write to the Free Software
+   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
 +#ifndef _SENNA_IN_H
 +#define _SENNA_IN_H
 +
  #include "config.h"
  
  #ifdef HAVE_STDLIB_H
-@@ -22,8 +25,14 @@
+ #include <stdlib.h>
+ #endif /* HAVE_STDLIB_H */
  
++/* #include <sys/types.h> */
++#include <unistd.h>
++
  #ifdef HAVE_STDINT_H
  #include <stdint.h>
 +#else
