@@ -1,0 +1,8 @@
+This is queryperf, a DNS server query performance testing tool.
+
+It is primarily intended for measuring the performance of authoritative
+DNS servers, but it has also been used for measuring caching server
+performance. 
+
+See /usr/local/share/docs/queryperf//queryperf.txt for more information
+on the command line option and the required configuration files.
