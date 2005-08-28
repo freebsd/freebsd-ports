@@ -7,6 +7,7 @@
 
 PORTNAME=	ttfm
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	chinese print
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/ttfm/
 
