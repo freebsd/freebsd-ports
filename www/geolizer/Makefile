@@ -7,18 +7,18 @@
 
 PORTNAME=	geolizer
 PORTVERSION=	2.1.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/:main \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/:main \
 		http://sysd.org/proj/:geo
 DISTNAME=       webalizer-2.01-10-src
 DISTFILES=	${DISTNAME}.tar.bz2:main \
-		geolizer_2.01-10-patch.20040216.tar.bz2:geo
+		geolizer_2.01-10-patch.20050520.tar.bz2:geo
 EXTRA_PATCHES=	${WRKDIR}/geolizer_2.01-10-patch/geolizer.patch
 PATCH_STRIP=	-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ache@FreeBSD.org
 COMMENT=	A web server log file analysis program, using GeoIP library
 
 LIB_DEPENDS=    png.5:${PORTSDIR}/graphics/png \
