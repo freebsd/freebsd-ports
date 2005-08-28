@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dateutil
-PORTVERSION=	0.9
+PORTVERSION=	1.0
 CATEGORIES=	devel python
 MASTER_SITES=	https://moin.conectiva.com.br/DateUtil?action=AttachFile&do=get&target=
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
