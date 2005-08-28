@@ -7,6 +7,7 @@
 
 PORTNAME=	dislin
 PORTVERSION=	8.3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gwdg.de/pub/grafik/dislin/unix/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.fbsd${BINVER}
@@ -34,6 +35,10 @@ PROGRAMS=	clink disaps disdrv disdrv_nw disdrv_w disgcl disgif dishlp	\
 
 .if ${OSVERSION} >= 501000
 BINVER=		-5.1
+.endif
+
+.if ${OSVERSION} >= 501111
+LIB_DEPENDS+=	m.2:${PORTSDIR}/misc/compat4x
 .endif
 
 .if ${OSVERSION} >= 600000
