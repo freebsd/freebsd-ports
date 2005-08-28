@@ -8,7 +8,7 @@
 PORTNAME=	openal
 PORTVERSION=	20050401
 CATEGORIES=	audio
-MASTER_SITES=	http://math.smsu.edu/~erik/files/fbsd/\
+MASTER_SITES=	http://math.missouristate.edu/~erik/files/fbsd/\
 		http://www.smluc.org/~erik/files/fbsd/
 
 MAINTAINER=	erik@smluc.org
