@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	ejabberd
-PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTVERSION=	0.9.8
 CATEGORIES=	net
 MASTER_SITES=	http://www.jabber.ru/files/ejabberd/ \
 		http://www.process-one.net/en/projects/ejabberd/download/${PORTVERSION}/
-PATCH_SITES=	http://www.jabber.ru/files/ejabberd/
-PATCHFILES=	ejabberd_ctl.erl.diff
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
@@ -21,35 +18,42 @@ BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
-PLIST_SUB=	VERSION="${PORTVERSION}"
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
-USE_OPENSSL=	yes
 USE_ICONV=	yes
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+USE_OPENSSL=	yes
+USE_RC_SUBR=	${PORTNAME}.sh
 NOPRECIOUSMAKEVARS=	yes
 
-.include <bsd.port.pre.mk>
+MAKE_ENV=	PORTVERSION=${PORTVERSION}
+PKGMESSAGE=	${WRKDIR}/pkg-message
+PLIST_SUB=	PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION}
+SUB_FILES=	${PORTNAME} pkg-message
+SUB_LIST=	PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/ejabberd ${WRKSRC}/ejabberd.sh
-	@${REINPLACE_CMD} -e 's|%%PORTVERSION%%|${PORTVERSION}|g' \
-		${WRKSRC}/Makefile.in
-	@${FIND} ${WRKSRC} -name \*.orig -or -name \*.bak | ${XARGS} ${RM}
+pre-install:
+	${FIND} ${WRKSRC} '(' -name \*.orig -or -name \*.bak ')' -delete
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/ejabberd ${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/ejabberd.sh ${PREFIX}/etc/rc.d
-	@${INSTALL_DATA} ${FILESDIR}/ejabberd.defaults ${PREFIX}/etc
-	@${INSTALL_SCRIPT} ${WRKSRC}/../tools/ejabberdctl ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${WRKSRC}/../tools/${PORTNAME}ctl ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/etc/rc.d
+
+	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.defaults ${PREFIX}/etc/${PORTNAME}/${PORTNAME}.defaults.example
+	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.inetrc ${PREFIX}/etc/${PORTNAME}/${PORTNAME}.inetrc.example
+.if !exists(${PREFIX}/etc/${PORTNAME}/${PORTNAME}.inetrc)
+	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.inetrc ${PREFIX}/etc/${PORTNAME}/${PORTNAME}.inetrc
+.endif
+
+	${FIND} ${PREFIX}/lib/erlang/lib/${DISTNAME} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
+	${FIND} ${PREFIX}/lib/erlang/lib/${DISTNAME} -type f -print0 | ${XARGS} -0 ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/../doc/* ${DOCSDIR}
 .endif
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>

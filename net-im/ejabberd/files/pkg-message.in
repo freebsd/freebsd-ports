@@ -1,0 +1,16 @@
+WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING!!!
+
+This version of port has several signigicant changes:
+  o To enable ejabberd you need to add following string to your /etc/rc.conf:
+
+	ejabberd_enable="YES"
+
+  o Configs are located in %%PREFIX%%/etc/ejabberd now.
+  o The home directory is /var/spool/ejabberd now instead of
+    /var/run/ejabberd. Please do:
+
+	pw usermod ejabberd -d /var/spool/ejabberd
+
+    if you need it.
+
+WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING!!!
