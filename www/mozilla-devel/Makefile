@@ -7,7 +7,7 @@
 
 PORTNAME?=	mozilla
 PORTVERSION=	1.8.b1
-PORTREVISION?=	3
+PORTREVISION?=	4
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -213,6 +213,8 @@ USE_GNOME+=	gnomehier
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e  's/%{idldir}/%idldir%/g' \
+		${WRKSRC}/build/unix/mozilla-config.in
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/build/unix/run-mozilla.sh
 	@${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
