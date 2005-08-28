@@ -3,17 +3,17 @@
 # Whom:			michael johnson <ahze@ahze.net>
 #
 # $FreeBSD$
+#    $MCom: ports-stable/devel/py-xdg/Makefile,v 1.4 2005/08/12 00:08:44 ahze Exp $
 #
 
 PORTNAME=	xdg
-PORTVERSION=	0.14
-PORTREVISION=	1
+PORTVERSION=	0.15
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.freedesktop.org/~lanius/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A python library to access freedesktop.org standards
 
 USE_PYTHON=	yes
