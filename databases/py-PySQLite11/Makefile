@@ -38,5 +38,7 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/examples/*.py ${EXAMPLESDIR}
 .endif
+# fix lib shared permission
+	@${CHMOD} ${BINMODE} ${PYTHON_SITELIBDIR}/_sqlite.so
 
 .include <bsd.port.mk>
