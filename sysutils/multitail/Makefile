@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	multitail
-PORTVERSION=	3.6.0
+PORTVERSION=	3.6.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.vanheusden.com/multitail/
 EXTRACT_SUFX=	.tgz
