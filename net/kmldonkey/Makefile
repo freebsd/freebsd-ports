@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kmldonkey
-PORTVERSION=	0.10
-PORTREVISION=	1
+PORTVERSION=	0.10.1
 CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,9 +14,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.pre/pre/}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	KDE integration for MLDonkey eDonkey P2P client
-
-#EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
-EXTRA_PATCHES=	${PORTSDIR}/x11/kde3/files/extrapatch-old_configure
 
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
