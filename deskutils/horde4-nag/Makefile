@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nag
-PORTVERSION=	2.0
+PORTVERSION=	2.0.2
 CATEGORIES=	deskutils www
 MASTER_SITES=	ftp://ftp.horde.org/pub/nag/				\
 		ftp://ftp.planetmirror.com/pub/horde/nag/		\
@@ -29,6 +29,8 @@ USE_REINPLACE=	yes
 
 PLIST_SUB=	NAGDIR=${LNAGDIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+SUB_LIST=	NAGDIR=${NAGDIR}
 
 DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL	\
 		docs/RELEASE_NOTES docs/TODO docs/UPGRADING
@@ -70,8 +72,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -e "s:%%NAGDIR%%:${NAGDIR}:g;s:%%DOCSDIR%%:${DOCSDIR}:g"	\
-		< ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
