@@ -21,7 +21,7 @@ DIST_MAIN=	${PORTNAME}_CRM_4_0_Source${EXTRACT_SUFX}
 DIST_ADDITIONAL=${PORTNAME}CRM_4_0_Patch_1${EXTRACT_SUFX}
 WRKSRC=		${WRKDIR}/vtiger_crm_source
 USE_ZIP=	yes
-USE_PHP=	mysql gd session pcre
+USE_PHP=	mysql gd session pcre xml
 
 NO_BUILD=	yes
 
