@@ -4664,6 +4664,7 @@ kb2mb2		ports/x11/kb2mb2
 kbarcode	ports/graphics/kbarcode
 kbear		ports/ftp/kbear
 kbedic		ports/textproc/kbedic
+kbibtex		ports/databases/kbibtex
 kbiff		ports/mail/kbiff
 kbilliards	ports/games/kbilliards
 kbirthday	ports/deskutils/kbirthday
