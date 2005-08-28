@@ -1,24 +1,24 @@
---- ./src/makefile.bsd.orig	Sun Oct 31 07:34:57 2004
-+++ ./src/makefile.bsd	Sat Feb  5 18:04:40 2005
-@@ -16,7 +16,7 @@
- # directories for target "make localinstall"
- lprefix	= $(root)/usr/local
- lbindir	= $(lprefix)/bin
--lhlpdir	= $(lprefix)/share/mined
-+lhlpdir	= $(lprefix)/share/doc/mined/help
+--- src/makefile.bsd.orig	Thu Apr 28 00:00:00 2005
++++ src/makefile.bsd	Wed Aug  3 18:50:24 2005
+@@ -20,7 +20,7 @@
+ mandir	= $(prefix)/share/man
+ rundir	= $(prefix)/share/mined
+ # FreeBSD:
+-#docdir	= $(lprefix)/share/doc/mined
++docdir	= $(lprefix)/share/doc/mined
+ # NetBSD (few packages), OpenBSD:
+ #docdir	= $(lprefix)/share/doc/html/mined
+ 
+@@ -30,7 +30,7 @@
  lmandir	= $(lprefix)/man
+ lrundir	= $(lprefix)/share/mined
+ # FreeBSD, OpenBSD:
+-#ldocdir	= $(lprefix)/share/doc/mined
++ldocdir	= $(lprefix)/share/doc/mined
  
  INSTALL = install
-@@ -87,7 +87,7 @@
- # link options
- 
- # link dynamically
--LDOPTS=-d y	# -d n links statically
-+LDOPTS=		# -d n links statically
- GLDOPTS=	# -static links statically
- 
- 
-@@ -95,7 +95,7 @@
+ #INSTALL = /bin/cp -p
+@@ -108,7 +108,7 @@
  # compiler selection and compiler-specific options
  # (source warnings, optimisation and debug)
  
