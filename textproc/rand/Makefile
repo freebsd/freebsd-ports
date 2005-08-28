@@ -9,7 +9,7 @@ PORTNAME=	rand
 PORTVERSION=	1.7
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://math.smsu.edu/~erik/files/
+MASTER_SITES=	http://math.missouristate.edu/~erik/files/
 
 MAINTAINER=	domi@saargate.de
 COMMENT=	Utility to display files or streams in random order
