@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	metromap
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	misc
 MASTER_SITES=	http://metromap.antex.ru/
 
