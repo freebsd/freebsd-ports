@@ -6,33 +6,42 @@
 #
 
 PORTNAME=		bush
-PORTVERSION=		1.0.1
+PORTVERSION=		1.0.2
 CATEGORIES=		shells
 MASTER_SITES=		http://www.pegasoft.ca/downloads/	\
 			http://66.11.182.223/downloads/
-EXTRACT_SUFX=		-src.tgz
+DISTNAME=		${PORTNAME}-${PORTVERSION}-src
+EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		The Business Shell
 
 BUILD_DEPENDS=		gnatmake:${PORTSDIR}/lang/gnat	\
 			bash:${PORTSDIR}/shells/bash
+
 USE_PGSQL=		yes
 
 HAS_CONFIGURE=		yes
 USE_GMAKE=		yes
-MAKE_ARGS=		GMAKE=${GMAKE} CPUTYPE=${CPUTYPE}	\
-			PTHREAD_LIBS=${PTHREAD_LIBS}
+MAKE_ARGS=		GMAKE=${GMAKE} CPUTYPE=${CPUTYPE} PTHREAD_LIBS=${PTHREAD_LIBS}	\
+			SDL_CONFIG=${SDL_CONFIG}
 MAKEFILE=		GNUmakefile
+USE_SDL=		sdl image
 USE_MYSQL=		yes
 BROKEN_WITH_MYSQL=	323
 USE_REINPLACE=		yes
+REINPLACE_ARGS=		-i ""
+
+WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=			bush.1
 
 PORTDOCS=		*
 
-BASH2FIX=		examples/benchmark.bash src/testsuite/test.sh
+BASH2FIX=		examples/benchmark.bash examples/export.sh src/testsuite/test.sh
+
+post-extract:
+	@${RMDIR} ${WRKSRC}/examples/test
 
 pre-build:
 .for FILE in ${BASH2FIX}
@@ -47,6 +56,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.bush ${EXAMPLESDIR}
 .endif
 
 post-install:

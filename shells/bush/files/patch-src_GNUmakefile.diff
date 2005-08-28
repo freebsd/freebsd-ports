@@ -1,0 +1,11 @@
+--- src/GNUmakefile.orig.orig	Wed Aug 17 22:59:07 2005
++++ src/GNUmakefile.orig	Wed Aug 24 23:45:36 2005
+@@ -11,7 +11,7 @@
+ GNATMAKE=gnatmake
+ SDLLIBS=SDLLIBSTYPE
+ SDLINCL=SDLINCLTYPE
+-CFLAGS=CFLAGSTYPE
++CFLAGS+=CFLAGSTYPE
+ # For SDL, sdl_config is not always available.
+ 
+ # RPM Directories For Building an RPM file
