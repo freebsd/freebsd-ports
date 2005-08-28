@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ "$2" = "POST-INSTALL" ]; then
+    mkdir -p ${PKG_PREFIX}/share/gnome/games
+    SCORES="atomix.scores"
+    for i in ${SCORES}; do
+	if [ ! -f ${PKG_PREFIX}/share/gnome/games/${i} ]; then
+	    touch -f ${PKG_PREFIX}/share/gnome/games/${i}
+	    chown games:games ${PKG_PREFIX}/share/gnome/games/${i}
+	    chmod 0664 ${PKG_PREFIX}/share/gnome/games/${i}
+	fi
+    done
+fi
