@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	eclipse-
 DISTNAME=	GEF-SDK-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	java@FreeBSD.ORG
+MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	Graphical Editing Framework for the Eclipse IDE
 
 RUN_DEPENDS=    ${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	S-${PORTVERSION}-200505131415
 DISTNAME=	${PORTNAME}-sourceBuild-srcIncluded-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	java@freebsd.org
+MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	An open extensible IDE for anything and nothing in particular
 
 IGNORE=		"Out-of-date, use java/eclipse instead for now"

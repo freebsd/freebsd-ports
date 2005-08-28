@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	eclipse-
 DISTNAME=	uml2-SDK-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	java@FreeBSD.org
+MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	A framework creating UML diagrams in Eclipse
 
 RUN_DEPENDS+=	${LOCALBASE}/eclipse/features/org.eclipse.emf_2.0.1/feature.xml:${PORTSDIR}/java/eclipse-emf

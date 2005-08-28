@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	eclipse-
 DISTNAME=	${PORTNAME}_${PORTVERSION}_E30
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	java@freebsd.org
+MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	Vi like keybinding Eclipse plugin FREETRIAL Version
 
 RUN_DEPENDS=	${LOCALBASE}/eclipse:${PORTSDIR}/java/eclipse
