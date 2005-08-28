@@ -1,8 +1,8 @@
---- btrename.py.orig	Tue May 24 03:01:08 2005
-+++ btrename.py	Sun May 29 22:47:32 2005
-@@ -12,6 +12,15 @@
+--- maketorrent.py.orig	Tue Aug 23 22:49:16 2005
++++ maketorrent.py	Tue Aug 23 22:50:45 2005
+@@ -14,6 +14,15 @@
  
- # Written by Henry 'Pi' James
+ from __future__ import division
  
 +from BitTorrent import PSYCO
 +if PSYCO.psyco:

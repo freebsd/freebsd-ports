@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	BitTorrent
-PORTVERSION=	4.1.3
+PORTVERSION=	4.1.4
 PORTEPOCH=	1
 CATEGORIES?=	net python
 MASTER_SITES=	http://www.bittorrent.com/dl/ \
@@ -18,7 +18,8 @@ PKGNAMESUFFIX?=	-devel
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT?=	A peer-to-peer tool for distributing files written in Python
 
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dns/__init__.py:${PORTSDIR}/dns/py-dnspython
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dns/__init__.py:${PORTSDIR}/dns/py-dnspython \
+		${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -40,6 +41,9 @@ PORTDOCS=	\
 EXTRA_PATCHES+=	${FILESDIR}/extra-noportdocs-setup.py
 .endif
 
+# always install the public key
+PORTDOCS+=	public.key
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
@@ -51,8 +55,8 @@ WITHOUT_PSYCO=	yes
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2
 
 PLIST_FILES+=	\
-		bin/btmaketorrentgui.py \
-		bin/btdownloadgui.py \
+		bin/maketorrent \
+		bin/bittorrent \
 		share/pixmaps/BitTorrent/bittorrent.ico \
 		share/pixmaps/BitTorrent/broken.png \
 		share/pixmaps/BitTorrent/finished.png \
@@ -77,17 +81,16 @@ PLIST_SUB+=	GUI="@comment "
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
 
 EXTRA_PATCHES+= \
-		${FILESDIR}/extra-psyco-patch-btdownloadcurses.py \
-		${FILESDIR}/extra-psyco-patch-btdownloadgui.py \
-		${FILESDIR}/extra-psyco-patch-btdownloadheadless.py \
-		${FILESDIR}/extra-psyco-patch-btlaunchmany.py \
-		${FILESDIR}/extra-psyco-patch-btlaunchmanycurses.py \
-		${FILESDIR}/extra-psyco-patch-btmaketorrent.py \
-		${FILESDIR}/extra-psyco-patch-btmaketorrentgui.py \
-		${FILESDIR}/extra-psyco-patch-btreannouce.py \
-		${FILESDIR}/extra-psyco-patch-btrename.py \
-		${FILESDIR}/extra-psyco-patch-btshowmetainfo.py \
-		${FILESDIR}/extra-psyco-patch-bttrack.py
+		${FILESDIR}/extra-psyco-patch-bittorrent-console.py \
+		${FILESDIR}/extra-psyco-patch-bittorrent-curses.py \
+		${FILESDIR}/extra-psyco-patch-bittorrent-tracker.py \
+		${FILESDIR}/extra-psyco-patch-bittorrent.py \
+		${FILESDIR}/extra-psyco-patch-changetracker-console.py \
+		${FILESDIR}/extra-psyco-patch-launchmany-console.py \
+		${FILESDIR}/extra-psyco-patch-launchmany-curses.py \
+		${FILESDIR}/extra-psyco-patch-maketorrent-console.py \
+		${FILESDIR}/extra-psyco-patch-maketorrent.py \
+		${FILESDIR}/extra-psyco-patch-torrentinfo-console.py
 
 PLIST_FILES+=	\
 		${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent/PSYCO.py \
@@ -128,10 +131,10 @@ post-install:
 	@${CHMOD} a+x \
 		${PREFIX}/share/pixmaps/${PORTNAME}/logo
 .endif
-.ifndef(NOPORTDOCS)
+#.ifndef(NOPORTDOCS)
 # docs
 	@${CHMOD} -R ${SHAREMODE} \
 		${DOCSDIR}/*
-.endif
+#.endif
 
 .include <bsd.port.post.mk>
