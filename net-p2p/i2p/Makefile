@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	i2p
-PORTVERSION=	0.5.0.7
+PORTVERSION=	0.6.0.3
 CATEGORIES=	net java security
 MASTER_SITES=	http://dev.i2p.net/i2p/
 
