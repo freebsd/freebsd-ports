@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ "$2" != "POST-INSTALL" ]; then
+if [ x"$2" != x"POST-INSTALL" ]; then
     exit 0
 fi
 
@@ -8,6 +8,7 @@ USER=ejabberd
 GROUP=${USER}
 UID=522
 GID=${UID}
+USERS_HOME="/var/spool/ejabberd"
 
 if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
 	if pw groupadd ${GROUP} -g ${GID}; then
@@ -20,8 +21,7 @@ fi
 
 if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
 	if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
-		-s "/bin/sh" -d "/var/run/ejabberd" \
-		-c "ejabberd pseudo user"; \
+		-s "/bin/sh" -d ${USERS_HOME} -c "ejabberd pseudo user"; \
 	then
 		echo "Added user \"${USER}\"."
 	else
@@ -30,14 +30,6 @@ if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
 	fi
 fi
 
-mkdir -m 750 /var/log/ejabberd /var/spool/ejabberd /var/run/ejabberd 2>/dev/null
-
-cat > /var/run/ejabberd/.inetrc << __EOF__
-{lookup,["file","native"]}.
-{host,{127,0,0,1}, ["localhost","hostalias"]}.
-__EOF__
-
-chown -R ejabberd:ejabberd /var/log/ejabberd /var/spool/ejabberd \
-    /var/run/ejabberd
+install -d -m 750 -o ${USER} -g ${GROUP} ${USERS_HOME} /var/log/ejabberd
 
 exit 0

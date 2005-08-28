@@ -1,0 +1,35 @@
+#!/bin/sh
+
+[ -f %%PREFIX%%/etc/%%PORTNAME%%/%%PORTNAME%%.defaults ] && . %%PREFIX%%/etc/%%PORTNAME%%/%%PORTNAME%%.defaults
+
+CONFIG=%%PREFIX%%/etc/%%PORTNAME%%/%%PORTNAME%%.cfg
+INETRC=%%PREFIX%%/etc/%%PORTNAME%%/%%PORTNAME%%.inetrc
+LOG=/var/log/%%PORTNAME%%/%%PORTNAME%%.log
+SASL_LOG=/var/log/%%PORTNAME%%/sasl.log
+SPOOL=/var/spool/%%PORTNAME%%
+
+ARGS=
+
+while [ $# -ne 0 ]
+do
+    PARAM=$1
+    shift
+    case $PARAM in
+	--) break ;;
+	--config) CONFIG=$1 ; shift ;;
+	--log) LOG=$1 ; shift ;;
+	--sasl-log) SASL_LOG=$1 ; shift ;;
+	--spool) SPOOL=$1 ; shift ;;
+	*) ARGS="$ARGS $PARAM" ;;
+    esac
+done
+
+cd $SPOOL &&
+exec erl +K true -sname %%PORTNAME%% \
+    -s %%PORTNAME%% \
+    -%%PORTNAME%% config \"$CONFIG\" log_path \"$LOG\" \
+    -sasl sasl_error_logger \{file,\"$SASL_LOG\"\} \
+    -mnesia dir \"$SPOOL\" \
+    -kernel inetrc \"${INETRC}\" \
+    $ERL_OPTIONS $ARGS "$@"
+
