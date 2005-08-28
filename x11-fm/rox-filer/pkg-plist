@@ -1,4 +1,3 @@
-apps/ROX-Filer/%%BINARIES%%/ROX-Filer
 apps/ROX-Filer/.DirIcon
 apps/ROX-Filer/AppInfo.xml
 apps/ROX-Filer/AppRun
@@ -15,6 +14,8 @@ apps/ROX-Filer/Messages/cs.gmo
 apps/ROX-Filer/Messages/da.gmo
 apps/ROX-Filer/Messages/de.gmo
 apps/ROX-Filer/Messages/es.gmo
+apps/ROX-Filer/Messages/et_EE.gmo
+apps/ROX-Filer/Messages/eu.gmo
 apps/ROX-Filer/Messages/fi.gmo
 apps/ROX-Filer/Messages/fr.gmo
 apps/ROX-Filer/Messages/hu.gmo
@@ -30,6 +31,7 @@ apps/ROX-Filer/Messages/sv.gmo
 apps/ROX-Filer/Messages/zh_CN.gmo
 apps/ROX-Filer/Messages/zh_TW.gmo
 apps/ROX-Filer/Options.xml
+apps/ROX-Filer/ROX-Filer
 apps/ROX-Filer/ROX/MIME/mime-application.png
 apps/ROX-Filer/ROX/MIME/mime-application:pdf.png
 apps/ROX-Filer/ROX/MIME/mime-application:pgp.png
@@ -74,7 +76,6 @@ apps/ROX-Filer/ROX/MIME/mime-application:x-java.png
 apps/ROX-Filer/ROX/MIME/mime-application:x-lyx.png
 apps/ROX-Filer/ROX/MIME/mime-application:x-object.png
 apps/ROX-Filer/ROX/MIME/mime-application:x-perl.png
-apps/ROX-Filer/ROX/MIME/mime-application:x-python.png
 apps/ROX-Filer/ROX/MIME/mime-application:x-rpm.png
 apps/ROX-Filer/ROX/MIME/mime-application:x-sharedlib.png
 apps/ROX-Filer/ROX/MIME/mime-application:x-shellscript.png
@@ -104,6 +105,7 @@ apps/ROX-Filer/ROX/MIME/mime-inode:directory.png
 apps/ROX-Filer/ROX/MIME/mime-inode:fifo.png
 apps/ROX-Filer/ROX/MIME/mime-inode:mount-point.png
 apps/ROX-Filer/ROX/MIME/mime-inode:socket.png
+apps/ROX-Filer/ROX/MIME/mime-message.png
 apps/ROX-Filer/ROX/MIME/mime-text.png
 apps/ROX-Filer/ROX/MIME/mime-text:html.png
 apps/ROX-Filer/ROX/MIME/mime-text:x-c++src.png
@@ -112,6 +114,7 @@ apps/ROX-Filer/ROX/MIME/mime-text:x-csrc.png
 apps/ROX-Filer/ROX/MIME/mime-text:x-diff.png
 apps/ROX-Filer/ROX/MIME/mime-text:x-java.png
 apps/ROX-Filer/ROX/MIME/mime-text:x-makefile.png
+apps/ROX-Filer/ROX/MIME/mime-text:x-python.png
 apps/ROX-Filer/ROX/MIME/mime-text:x-tcl.png
 apps/ROX-Filer/ROX/MIME/mime-text:x-tex.png
 apps/ROX-Filer/ROX/MIME/mime-text:xml.png
@@ -142,11 +145,7 @@ share/mime/packages/rox.xml
 @dirrm apps/ROX-Filer/ROX
 @dirrm apps/ROX-Filer/Messages
 @dirrm apps/ROX-Filer/Help
-@dirrm apps/ROX-Filer/%%BINARIES%%
 @dirrm apps/ROX-Filer
-@unexec rmdir %D/share/mime/packages 2>/dev/null || true
-@unexec rmdir %D/share/mime/mime-info 2>/dev/null || true
-@unexec rmdir %D/share/mime 2>/dev/null || true
 @unexec rmdir %D/apps 2>/dev/null || true
 @exec %%LOCALBASE%%/bin/update-mime-database %%LOCALBASE%%/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %%LOCALBASE%%/share/mime
