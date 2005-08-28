@@ -1,11 +1,13 @@
 include/libsoup-%%VERSION%%/libsoup/soup-address.h
 include/libsoup-%%VERSION%%/libsoup/soup-connection.h
+include/libsoup-%%VERSION%%/libsoup/soup-date.h
 include/libsoup-%%VERSION%%/libsoup/soup-headers.h
 include/libsoup-%%VERSION%%/libsoup/soup-message-filter.h
 include/libsoup-%%VERSION%%/libsoup/soup-message-queue.h
 include/libsoup-%%VERSION%%/libsoup/soup-message.h
 include/libsoup-%%VERSION%%/libsoup/soup-method.h
 include/libsoup-%%VERSION%%/libsoup/soup-misc.h
+include/libsoup-%%VERSION%%/libsoup/soup-portability.h
 include/libsoup-%%VERSION%%/libsoup/soup-server-auth.h
 include/libsoup-%%VERSION%%/libsoup/soup-server-message.h
 include/libsoup-%%VERSION%%/libsoup/soup-server.h
@@ -18,10 +20,38 @@ include/libsoup-%%VERSION%%/libsoup/soup-socket.h
 include/libsoup-%%VERSION%%/libsoup/soup-status.h
 include/libsoup-%%VERSION%%/libsoup/soup-types.h
 include/libsoup-%%VERSION%%/libsoup/soup-uri.h
+include/libsoup-%%VERSION%%/libsoup/soup-xmlrpc-message.h
+include/libsoup-%%VERSION%%/libsoup/soup-xmlrpc-response.h
 include/libsoup-%%VERSION%%/libsoup/soup.h
 lib/libsoup-%%VERSION%%.a
 lib/libsoup-%%VERSION%%.so
-lib/libsoup-%%VERSION%%.so.7
+lib/libsoup-%%VERSION%%.so.9
 libdata/pkgconfig/libsoup-%%VERSION%%.pc
+%%DOCSDIR%%/SoupAddress.html
+%%DOCSDIR%%/SoupAuth.html
+%%DOCSDIR%%/SoupConnection.html
+%%DOCSDIR%%/SoupConnectionNTLM.html
+%%DOCSDIR%%/SoupMessage.html
+%%DOCSDIR%%/SoupServer.html
+%%DOCSDIR%%/SoupServerMessage.html
+%%DOCSDIR%%/SoupSession.html
+%%DOCSDIR%%/SoupSessionAsync.html
+%%DOCSDIR%%/SoupSessionSync.html
+%%DOCSDIR%%/SoupSoapMessage.html
+%%DOCSDIR%%/SoupSocket.html
+%%DOCSDIR%%/ch01.html
+%%DOCSDIR%%/home.png
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/index.sgml
+%%DOCSDIR%%/left.png
+%%DOCSDIR%%/libsoup-soup-dns.html
+%%DOCSDIR%%/libsoup-soup-ssl.html
+%%DOCSDIR%%/libsoup-soup-status.html
+%%DOCSDIR%%/libsoup-soup-uri.html
+%%DOCSDIR%%/libsoup.devhelp
+%%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
+%%DOCSDIR%%/up.png
+@dirrm %%DOCSDIR%%
 @dirrm include/libsoup-%%VERSION%%/libsoup
 @dirrm include/libsoup-%%VERSION%%
