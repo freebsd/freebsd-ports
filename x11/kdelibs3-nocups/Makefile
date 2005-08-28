@@ -4,15 +4,13 @@
 #
 # $FreeBSD$
 
-PORTNAME=		kdelibs3
-PKGNAMESUFFIX=		-nocups
+PORTNAME?=		kdelibs3
+PKGNAMESUFFIX?=		-nocups
 
 MAINTAINER=		kde@FreeBSD.org
 
-MASTERDIR=		${.CURDIR}/../kdelibs3
-CONFLICTS+=		kdelibs-[0-9]*
-
-CONFIGURE_ARGS+=	--disable-cups
 PLIST=			${.CURDIR}/pkg-plist
+WITHOUT_CUPS=		yes
+MASTERDIR=		${.CURDIR}/../../x11/kdelibs3
 
 .include "${MASTERDIR}/Makefile"

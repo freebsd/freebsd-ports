@@ -36,11 +36,14 @@ RUN_DEPENDS=	iceauth:${X_CLIENTS_PORT} \
 		${FONTSCALE}:${X_FONTS_TTF_PORT} \
 		${FONTENCOD}:${X_FONTS_ENCODINGS_PORT}
 
-.if ${PKGNAMESUFFIX} == -nocups
 CONFLICTS+=	kdeadmin-3.[0-3].* kdeadmin-3.4.[0-1]* kdeartwork-3.[2-3]* kdebase-3.[0-3]* kdepim-3.2*
+.if defined(WITHOUT_CUPS) || defined(KDE_WITHOUT_CUPS)
+CONFLICTS+=	kdelibs-[0-9]*
+PKGNAMESUFFIX=	-nocups
+CONFIGURE_ARGS+=--disable-cups
 .else
-CONFLICTS+=	kdeadmin-3.[0-3].* kdeadmin-3.4.[0-1]* kdeartwork-3.[2-3]* kdebase-3.[0-3]* kdelibs-nocups-[0-9]* kdepim-3.2*
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+CONFLICTS+=	kdelibs-nocups-[0-9]*
+LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-base
 .endif
 
 USE_GETTEXT=	yes
