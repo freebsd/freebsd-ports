@@ -26,6 +26,7 @@ USE_GNUSTEP_INSTALL=	yes
 GNU_CONFIGURE=	yes
 LDCONFIG_DIRS=	${LOCALLIBDIR}
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 
 MAKE_ARGS+=	GNUSTEP_SYSTEM_ROOT=${PREFIX}/System
 CONFIGURE_ARGS+=	--with-gnustep
@@ -33,11 +34,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/GToolKit
 CONFIGURE_WRKSRC=	${WRKDIR}/${DISTNAME}
 
 post-patch:
-	@${MV} ${CONFIGURE_WRKSRC}/configure ${CONFIGURE_WRKSRC}/configure.sed
-	${SED} -e 's#gtk-config#gtk12-config#g' \
-		${CONFIGURE_WRKSRC}/configure.sed \
-		> ${CONFIGURE_WRKSRC}/configure
-	${CHMOD} +x ${CONFIGURE_WRKSRC}/configure
+	${REINPLACE_CMD} -e 's#gtk-config#gtk12-config#g' \
+		${CONFIGURE_WRKSRC}/configure
 
 .include <bsd.port.pre.mk>
 
