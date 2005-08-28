@@ -8,7 +8,7 @@
 
 PORTNAME=	otr
 PORTVERSION=	2.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security net
 MASTER_SITES=	http://www.cypherpunks.ca/otr/ \
 		http://www.xelerance.com/mirror/otr/
