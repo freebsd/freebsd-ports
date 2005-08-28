@@ -7,7 +7,7 @@
 
 PORTNAME=	psutils-${PAPERSIZE}
 PORTVERSION=	1.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.dcs.ed.ac.uk/pub/ajcd/ \
 		ftp://ftp.knackered.org/pub/psutils/
@@ -23,6 +23,8 @@ MAN1=		psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1 psresize.1 \
 		getafm.1 fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1 \
 		fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1 fixwwps.1 \
 		extractres.1 includeres.1 fixscribeps.1 psmerge.1
+
+SCRIPTS_ENV+=	PERL=${PERL}
 
 .if !defined(PAPERSIZE)
 PAPERSIZE=letter
