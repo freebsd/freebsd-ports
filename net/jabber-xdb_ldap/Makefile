@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.jabberstudio.org/files/xdb_ldap/
 PKGNAMEPREFIX=	jabber-
 DIST_SUBDIR=	jabber
 
-MAINTAINER=	martijn@pacno.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jabber xdb backend for an LDAP directory
 
 BUILD_DEPENDS=	${NON_EXISTENT}:${PORTSDIR}/net/jabber:configure
@@ -21,6 +21,8 @@ USE_GMAKE=	yes
 USE_OPENLDAP=	yes
 
 FORBIDDEN=	"Site is down after intrusion. Probably this project will never be revived"
+DEPRECATED=	${FORBIDDEN}
+EXPIRATION_DATE=	2005-09-28
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
