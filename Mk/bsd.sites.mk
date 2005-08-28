@@ -1535,7 +1535,6 @@ MASTER_SITE_XEMACS+= \
 MASTER_SITE_XFREE+= \
 	http://www.gtlib.cc.gatech.edu/pub/XFree86/%SUBDIR%/source/ \
 	ftp://ftp.xfree86.org/pub/XFree86/%SUBDIR%/source/ \
-	ftp://ftp.rge.com/pub/X/XFree86/%SUBDIR%/source/ \
 	ftp://archive.progeny.com/XFree86/%SUBDIR%/source/ \
 	ftp://ftp.mirrorcentral.com/pub/XFree86/%SUBDIR%/source/ \
 	ftp://ftp.dti.ad.jp/pub/X/XFree86/XFree86/%SUBDIR%/source/ \
