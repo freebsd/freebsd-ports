@@ -1,0 +1,7 @@
+bin/notify-send
+include/libnotify/notify.h
+lib/libnotify.a
+lib/libnotify.so
+lib/libnotify.so.0
+libdata/pkgconfig/libnotify.pc
+@dirrm include/libnotify
