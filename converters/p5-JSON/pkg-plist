@@ -1,0 +1,10 @@
+%%SITE_PERL%%/JSON.pm
+%%SITE_PERL%%/JSON/Converter.pm
+%%SITE_PERL%%/JSON/Parser.pm
+%%SITE_PERL%%/JSONRPC.pm
+%%SITE_PERL%%/JSONRPC/Transport/HTTP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/JSON
+@dirrm %%SITE_PERL%%/JSONRPC/Transport
+@dirrm %%SITE_PERL%%/JSONRPC
+@dirrm %%SITE_PERL%%/JSON
