@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdl
-PORTVERSION=	1.2.8
+PORTVERSION=	1.2.9
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
@@ -42,10 +42,6 @@ OPTIONS=	NAS	"Include support for the Network Audio System" Off \
 		GL	"Include support for OpenGL" On
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_video_SDL__yuv__mmx.c
-.endif
 
 .if exists(/usr/lib/libvgl.so.3)
 CONFIGURE_ARGS+=--enable-video-vgl

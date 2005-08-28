@@ -42,16 +42,12 @@ share/aclocal/sdl11.m4
 %%EXAMPLESDIR%%/aclocal.m4
 %%EXAMPLESDIR%%/autogen.sh
 %%EXAMPLESDIR%%/checkkeys.c
-%%EXAMPLESDIR%%/config.guess
-%%EXAMPLESDIR%%/config.sub
 %%EXAMPLESDIR%%/configure
 %%EXAMPLESDIR%%/configure.in
 %%EXAMPLESDIR%%/graywin.c
 %%EXAMPLESDIR%%/icon.bmp
-%%EXAMPLESDIR%%/install-sh
 %%EXAMPLESDIR%%/loopwave.c
 %%EXAMPLESDIR%%/missing
-%%EXAMPLESDIR%%/mkinstalldirs
 %%EXAMPLESDIR%%/moose.dat
 %%EXAMPLESDIR%%/picture.xbm
 %%EXAMPLESDIR%%/sail.bmp
@@ -59,6 +55,7 @@ share/aclocal/sdl11.m4
 %%EXAMPLESDIR%%/sample.wav
 %%EXAMPLESDIR%%/testalpha.c
 %%EXAMPLESDIR%%/testbitmap.c
+%%EXAMPLESDIR%%/testblitspeed.c
 %%EXAMPLESDIR%%/testcdrom.c
 %%EXAMPLESDIR%%/testcpuinfo.c
 %%EXAMPLESDIR%%/testdyngl.c
