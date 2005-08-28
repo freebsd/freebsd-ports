@@ -753,7 +753,7 @@ System/Library/Libraries/Resources/gnustep-base/TraditionalChinese.lproj/Localiz
 System/Library/Libraries/libgnustep-base.so
 System/Library/Libraries/libgnustep-base.so.%%BASEVERSION%%
 System/Library/Libraries/libgnustep-base.so.%%VERSION%%
-System/Makefiles/Additional/base.make
+System/Library/Makefiles/Additional/base.make
 System/Tools/autogsdoc
 System/Tools/cvtenc
 System/Tools/defaults

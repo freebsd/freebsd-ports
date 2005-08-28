@@ -81,7 +81,7 @@ MAKE_ENV+=		ADDITIONAL_LDFLAGS="${ADDITIONAL_LDFLAGS}"
 
 pre-configure:
 .for file in config.guess config.sub install-sh
-	@${CP} ${PREFIX}/System/Makefiles/${file} ${WRKSRC}
+	@${CP} ${PREFIX}/System/Library/Makefiles/${file} ${WRKSRC}
 .endfor
 
 .include <bsd.port.post.mk>

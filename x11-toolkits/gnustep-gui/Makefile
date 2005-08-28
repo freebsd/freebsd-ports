@@ -55,7 +55,7 @@ IGNORE=		requires procfs mounted to build or run, for details see procfs(5)
 
 pre-configure:
 .for file in config.guess config.sub install-sh
-	@${CP} ${PREFIX}/System/Makefiles/${file} ${WRKSRC}
+	@${CP} ${PREFIX}/System/Library/Makefiles/${file} ${WRKSRC}
 .endfor
 .if !defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e "s|doc=no|doc=yes|" ${WRKSRC}/GNUmakefile

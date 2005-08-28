@@ -34,7 +34,7 @@ System/Library/Libraries/libgg_base.so.1
 System/Library/Libraries/libgstep_guile.so
 System/Library/Libraries/libgstep_guile.so.%%VERSION%%
 System/Library/Libraries/libgstep_guile.so.1
-System/Makefiles/Additional/guile.make
+System/Library/Makefiles/Additional/guile.make
 System/Tools/go
 System/Tools/guile-base
 bin/greg
