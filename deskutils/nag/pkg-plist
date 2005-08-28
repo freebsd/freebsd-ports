@@ -46,6 +46,7 @@ etc/horde/httpd.conf.nag
 %%NAGDIR%%/locale/hu_HU/help.xml
 %%NAGDIR%%/locale/id_ID/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/it_IT/LC_MESSAGES/nag.mo
+%%NAGDIR%%/locale/ja_JP/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/ko_KR/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/lt_LT/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/lv_LV/LC_MESSAGES/nag.mo
@@ -76,6 +77,7 @@ etc/horde/httpd.conf.nag
 %%NAGDIR%%/po/hu_HU.po
 %%NAGDIR%%/po/id_ID.po
 %%NAGDIR%%/po/it_IT.po
+%%NAGDIR%%/po/ja_JP.po
 %%NAGDIR%%/po/ko_KR.po
 %%NAGDIR%%/po/lt_LT.po
 %%NAGDIR%%/po/lv_LV.po
@@ -95,6 +97,7 @@ etc/horde/httpd.conf.nag
 %%NAGDIR%%/scripts/migrate_to_datatree_driver.php
 %%NAGDIR%%/scripts/sql/nag.sql
 %%NAGDIR%%/scripts/upgrades/1.1_to_2.0.mysql.sql
+%%NAGDIR%%/scripts/upgrades/1.1_to_2.0.pgsql.sql
 %%NAGDIR%%/scripts/upgrades/2004-09-13_add_uid_field.php
 %%NAGDIR%%/search.php
 %%NAGDIR%%/task.php
@@ -113,23 +116,20 @@ etc/horde/httpd.conf.nag
 %%NAGDIR%%/templates/task/task.inc
 %%NAGDIR%%/templates/tasklists/tasklists.inc
 %%NAGDIR%%/templates/view/task.inc
-%%NAGDIR%%/themes/grey/screen.css
 %%NAGDIR%%/themes/graphics/add.png
 %%NAGDIR%%/themes/graphics/alarm.png
 %%NAGDIR%%/themes/graphics/alarm_small.png
 %%NAGDIR%%/themes/graphics/checkbox.png
 %%NAGDIR%%/themes/graphics/checked.png
+%%NAGDIR%%/themes/graphics/favicon.ico
 %%NAGDIR%%/themes/graphics/nag.png
 %%NAGDIR%%/themes/graphics/note.png
 %%NAGDIR%%/themes/graphics/tasklists.png
 %%NAGDIR%%/themes/graphics/unchecked.png
 %%NAGDIR%%/themes/screen.css
-%%NAGDIR%%/themes/simplex/screen.css
 %%NAGDIR%%/view.php
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%NAGDIR%%/themes/simplex
 @dirrm %%NAGDIR%%/themes/graphics
-@dirrm %%NAGDIR%%/themes/grey
 @dirrm %%NAGDIR%%/themes
 @dirrm %%NAGDIR%%/templates/view
 @dirrm %%NAGDIR%%/templates/tasklists
@@ -171,6 +171,8 @@ etc/horde/httpd.conf.nag
 @dirrm %%NAGDIR%%/locale/lt_LT
 @dirrm %%NAGDIR%%/locale/ko_KR/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/ko_KR
+@dirrm %%NAGDIR%%/locale/ja_JP/LC_MESSAGES
+@dirrm %%NAGDIR%%/locale/ja_JP
 @dirrm %%NAGDIR%%/locale/it_IT/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/it_IT
 @dirrm %%NAGDIR%%/locale/id_ID/LC_MESSAGES
