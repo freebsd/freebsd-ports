@@ -31,12 +31,4 @@
              {
  #ifdef USE_GEOIP
                 if (use_geoip)
-@@ -2918,7 +2925,7 @@
-    static char warpbuf[32][32];
-    static int index = -1;
- 
--   if (index<0 || index>32)
-+   if (index<0 || index>=32)
-       index=0;
- 
-    while (n>=base && usesuf<=10)
+
