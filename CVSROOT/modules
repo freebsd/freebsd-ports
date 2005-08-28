@@ -10270,6 +10270,7 @@ quat-gui	ports/graphics/quat-gui
 qucs		ports/cad/qucs
 queequeg	ports/textproc/queequeg
 quelcom		ports/audio/quelcom
+queryperf	ports/dns/queryperf
 quesa		ports/graphics/quesa
 queso		ports/net/queso
 queue-fix	ports/mail/queue-fix
