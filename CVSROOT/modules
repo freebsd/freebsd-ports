@@ -5793,6 +5793,7 @@ lzop		ports/archivers/lzop
 m17n-db		ports/devel/m17n-db
 m17n-docs	ports/devel/m17n-docs
 m17n-lib	ports/devel/m17n-lib
+m2000		ports/emulators/m2000
 m3gdb		ports/lang/m3gdb
 m6811-binutils	ports/devel/m6811-binutils
 m6811-gcc	ports/devel/m6811-gcc
