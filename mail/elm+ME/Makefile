@@ -24,7 +24,6 @@ MASTER_SITES+=	ftp://ftp.lip6.fr/pub/unix/mail/elm-me/ \
 
 # the following repositories maybe conform to the main repository.
 # MASTER_SITES+=	ftp://ftp.unina.it/pub/Unix/pkgs/network/mail/elm-me+/ \
-# 		ftp://ftp.rge.com/pub/mail/elm/elm-2.4ME+/ \
 # 		ftp://ftp.uni-trier.de/pub/unix/network/mail/elm-me+/
 
 PATCH_SITES=	${MASTER_SITES}
