@@ -1,9 +1,9 @@
---- activation-server/Makefile.in.orig	Wed May  7 16:36:09 2003
-+++ activation-server/Makefile.in	Wed May  7 16:36:51 2003
-@@ -159,7 +159,7 @@
- 	-I$(top_builddir) 			\
+--- activation-server/Makefile.in.orig	Fri Aug 19 16:24:14 2005
++++ activation-server/Makefile.in	Fri Aug 19 16:25:12 2005
+@@ -225,7 +225,7 @@
  	-I$(top_builddir)/bonobo-activation	\
  	-I$(top_srcdir)/bonobo-activation	\
+ 	-DPREFIX=\""$(prefix)"\"		\
 -	-DSERVERINFODIR=\"$(prefix)/libdata/bonobo/servers\" \
 +	-DSERVERINFODIR=\"$(prefix)/libdata/bonobo/servers:${X11BASE}/libdata/bonobo/servers:${LOCALBASE}/libdata/bonobo/servers\" \
          -DSERVER_LOCALEDIR=\""${prefix}/${DATADIRNAME}/locale"\" \
