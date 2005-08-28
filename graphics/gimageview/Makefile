@@ -34,7 +34,7 @@ PKGNAMESUFFIX=	-imlib
 WITH_IMLIB=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libexif.so.10)
+.if exists(${LOCALBASE}/lib/libexif.so.12)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-exit_view.c
 .endif
 
