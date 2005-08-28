@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	10.21
+PORTVERSION=	11.0
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lafn.org/~av832/ \
 		http://voodoo.oberon.net/download/
@@ -32,7 +32,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/raw.data/NUT_DATA.txt	${PREFIX}/etc/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/raw.data/WEIGHT.lib ${PREFIX}/etc/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/raw.data/WEIGHT.txt ${PREFIX}/etc/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/raw.data/sr17.nut ${PREFIX}/etc/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/raw.data/sr18.nut ${PREFIX}/etc/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/nut.1 ${MANPREFIX}/man/man1
 
 post-install:
