@@ -3152,6 +3152,7 @@ golddig		ports/games/golddig
 golded+		ports/news/golded+
 goldstr		ports/misc/goldstr
 golem		ports/x11-wm/golem
+gollem		ports/ftp/gollem
 gomoku.app	ports/games/gomoku.app
 gone		ports/misc/gone
 gonvert		ports/misc/gonvert
