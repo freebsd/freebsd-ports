@@ -1,0 +1,32 @@
+bin/kbibtex
+lib/kde3/libkbibtexpart.la
+lib/kde3/libkbibtexpart.so
+share/applnk/Office/kbibtex.desktop
+share/apps/kbibtex/kbibtex_shell.rc
+share/apps/kbibtexpart/kbibtex_part.rc
+share/icons/crystalsvg/128x128/apps/kbibtex.png
+share/icons/crystalsvg/16x16/apps/kbibtex.png
+share/icons/crystalsvg/22x22/apps/kbibtex.png
+share/icons/crystalsvg/32x32/apps/kbibtex.png
+share/icons/crystalsvg/48x48/apps/kbibtex.png
+share/icons/crystalsvg/64x64/apps/kbibtex.png
+share/services/kbibtex_part.desktop
+@unexec rmdir %D/share/icons/crystalsvg/64x64/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/64x64 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/22x22/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/22x22 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/128x128/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/128x128 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/apps/kbibtexpart
+@dirrm share/apps/kbibtex
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Office 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true

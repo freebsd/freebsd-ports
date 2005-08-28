@@ -72,6 +72,7 @@
     SUBDIR += jdb
     SUBDIR += jdbc-oracle8i
     SUBDIR += jdbc-oracle9i
+    SUBDIR += kbibtex
     SUBDIR += kinterbasdb
     SUBDIR += knoda
     SUBDIR += libdbi
