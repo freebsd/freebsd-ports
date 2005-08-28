@@ -1,9 +1,8 @@
 bin/gossip
+etc/sound/events/gossip.soundlist
 share/gnome/applications/gossip.desktop
 share/gnome/gossip/channel-old4.png
 share/gnome/gossip/chat.glade
-share/gnome/gossip/chat1.wav
-share/gnome/gossip/chat2.wav
 share/gnome/gossip/connect.glade
 share/gnome/gossip/emoticon-face1.png
 share/gnome/gossip/emoticon-face10.png
@@ -21,28 +20,33 @@ share/gnome/gossip/gossip-about.png
 share/gnome/gossip/gossip-available.png
 share/gnome/gossip/gossip-away.png
 share/gnome/gossip/gossip-busy.png
+share/gnome/gossip/gossip-contact-groups.dtd
 share/gnome/gossip/gossip-extended-away.png
 share/gnome/gossip/gossip-group-message.png
 share/gnome/gossip/gossip-log.xsl
 share/gnome/gossip/gossip-logo.png
 share/gnome/gossip/gossip-message.png
 share/gnome/gossip/gossip-offline.png
+share/gnome/gossip/gossip-status-presets.dtd
 share/gnome/gossip/gossip-typing.png
 share/gnome/gossip/group-chat.glade
 share/gnome/gossip/main.glade
 share/gnome/gossip/my-user_48.png
-share/gnome/gossip/offline.wav
-share/gnome/gossip/online.wav
 share/gnome/gossip/query_48.png
-share/gnome/gossip/send.wav
+share/gnome/gossip/vcard_16.png
 share/gnome/gossip/vcard_48.png
 share/gnome/gossip/watermark.png
-share/gnome/pixmaps/gossip.png
 share/gnome/gossip/protocols/aim.protocol
 share/gnome/gossip/protocols/gossip-protocol.dtd
 share/gnome/gossip/protocols/icq.protocol
 share/gnome/gossip/protocols/msn.protocol
 share/gnome/gossip/protocols/yahoo.protocol
+share/gnome/pixmaps/gossip.png
+share/gnome/sounds/gossip/chat1.wav
+share/gnome/sounds/gossip/chat2.wav
+share/gnome/sounds/gossip/offline.wav
+share/gnome/sounds/gossip/online.wav
+share/gnome/sounds/gossip/send.wav
 share/locale/ar/LC_MESSAGES/gossip.mo
 share/locale/az/LC_MESSAGES/gossip.mo
 share/locale/bg/LC_MESSAGES/gossip.mo
@@ -59,6 +63,7 @@ share/locale/eu/LC_MESSAGES/gossip.mo
 share/locale/fr/LC_MESSAGES/gossip.mo
 share/locale/ga/LC_MESSAGES/gossip.mo
 share/locale/hr/LC_MESSAGES/gossip.mo
+share/locale/hu/LC_MESSAGES/gossip.mo
 share/locale/it/LC_MESSAGES/gossip.mo
 share/locale/lt/LC_MESSAGES/gossip.mo
 share/locale/ml/LC_MESSAGES/gossip.mo
@@ -78,5 +83,6 @@ share/locale/tr/LC_MESSAGES/gossip.mo
 share/locale/uk/LC_MESSAGES/gossip.mo
 share/locale/zh_CN/LC_MESSAGES/gossip.mo
 share/locale/zh_TW/LC_MESSAGES/gossip.mo
+@dirrm share/gnome/sounds/gossip
 @dirrm share/gnome/gossip/protocols
 @dirrm share/gnome/gossip
