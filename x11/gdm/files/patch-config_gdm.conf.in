@@ -1,5 +1,5 @@
---- config/gdm.conf.in.orig	Mon Feb 14 17:49:35 2005
-+++ config/gdm.conf.in	Mon Mar  7 20:53:24 2005
+--- config/gdm.conf.in.orig	Fri Aug  5 00:34:59 2005
++++ config/gdm.conf.in	Tue Aug  9 02:02:44 2005
 @@ -76,7 +76,7 @@
  # To try to kill all clients started at greeter time or in the Init script.
  # doesn't always work, only if those clients have a window of their own
@@ -24,12 +24,12 @@
  # Should double login be treated with a warning (and possibility to change
  # vts on linux and freebsd systems for console logins)
  #DoubleLoginWarning=true
-@@ -240,7 +240,7 @@
+@@ -250,7 +250,7 @@
  # The specific gtkrc file we use.  It should be the full path to the gtkrc
  # that we need.  Unless you need a specific gtkrc that doesn't correspond to
  # a specific theme, then just use the GtkTheme key
--#GtkRC=@EXPANDED_DATADIR@/themes/Default/gtk/gtkrc
-+GtkRC=@EXPANDED_DATADIR@/../themes/Default/gtk-2.0/gtkrc
+-#GtkRC=@EXPANDED_DATADIR@/themes/Default/gtk-2.0/gtkrc
++#GtkRC=@EXPANDED_DATADIR@/../themes/Default/gtk-2.0/gtkrc
  
  # The GTK+ theme to use for the gui
  #GtkTheme=Default
