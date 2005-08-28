@@ -13,6 +13,7 @@
 
 PORTNAME=	libxml2
 PORTVERSION=	2.6.20
+PORTREVISION=	1
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
@@ -63,7 +64,10 @@ CONFIGURE_ARGS+=	--with-thread-alloc
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/catalog.c ${WRKSRC}/xmlcatalog.c
+.for f in catalog.c xmlcatalog.c xmllint.c doc/xmllint.1
+	@${REINPLACE_CMD} -e \
+		's|/etc/xml/catalog|${LOCALBASE}/share/xml/catalog|g; \
+		 s|/etc/sgml/catalog|${LOCALBASE}/share/sgml/catalog|g' ${WRKSRC}/${f}
+.endfor
 
 .include <bsd.port.mk>
