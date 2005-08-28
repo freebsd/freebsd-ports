@@ -10,8 +10,10 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.uni-kl.de/pub/informatik/software/ \
 		http://www.breuninger.org/files/distfiles/
 
-MAINTAINER=	ob@breuninger.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Oberon-2 compiler
+DEPRECATED=	"o2c is supplanted by lang/oo2c"
+EXPIRATION_DATE=	2005-09-28
 
 # does not support 64-bit platforms
 ONLY_FOR_ARCHS=	i386
