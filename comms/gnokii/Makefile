@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnokii
-PORTVERSION=	0.6.7
+PORTVERSION=	0.6.8
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
@@ -143,14 +143,13 @@ post-patch:
 
 post-build:
 .if defined(WITH_SMSD)
-	@cd ${WRKSRC}/smsd && ${GMAKE} all
-	@cd ${WRKSRC}/smsd && ${GMAKE} libfile.la LOCALBASE=${LOCALBASE}
 .if defined(WITH_MYSQL)
-	@cd ${WRKSRC}/smsd && ${GMAKE} libmysql.la LOCALBASE=${LOCALBASE}
+	@${REINPLACE_CMD} -e 's/^DB_LIBS := libfile.la$$/DB_LIBS = libfile.la libmysql.la/' ${WRKSRC}/smsd/Makefile
 .endif
 .if defined(WITH_PGSQL)
-	@cd ${WRKSRC}/smsd && ${GMAKE} libpq.la LOCALBASE=${LOCALBASE}
+	@${REINPLACE_CMD} -e 's/^DB_LIBS := libfile.la$$/DB_LIBS = libfile.la libpq.la/' -e 's/^DB_LIBS = libfile.la libmysql.la$$/DB_LIBS = libfile.la libpq.la libmysql.la' ${WRKSRC}/smsd/Makefile
 .endif
+	@cd ${WRKSRC}/smsd && ${GMAKE} all
 .endif
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 
