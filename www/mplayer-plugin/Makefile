@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mplayerplug-in
-PORTVERSION=	2.85
-PORTREVISION=	
+PORTVERSION=	3.05
 CATEGORIES=	www multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mplayerplug-in
@@ -30,7 +29,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-PLUGINSFILES=	mplayerplug-in.so mplayerplug-in.xpt
+PLUGINSFILES=	mplayerplug-in.so mplayerplug-in.xpt mplayerplug-in-wmp.so \
+		mplayerplug-in-qt.so mplayerplug-in-rm.so mplayerplug-in-gmp.so
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -DBSD" \
@@ -82,21 +82,23 @@ post-patch:
 		${WRKSRC}/Source/plugin-setup.cpp
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/browser_plugins
+	${MKDIR} ${PREFIX}/lib/browser_plugins
 .for moo in ${PLUGINSFILES}
-	@${INSTALL_DATA} ${WRKSRC}/${moo} ${PREFIX}/lib/browser_plugins/
+	${INSTALL_DATA} ${WRKSRC}/${moo} ${PREFIX}/lib/browser_plugins
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/mplayerplug-in.conf \
+	${INSTALL_DATA} ${WRKSRC}/mplayerplug-in.conf \
 		${PREFIX}/etc/mplayerplug-in.conf.dist
 	if [ ! -f ${PREFIX}/etc/mplayerplug-in.conf ]; then \
 		${INSTALL_DATA} ${WRKSRC}/mplayerplug-in.conf \
 			${PREFIX}/etc/mplayerplug-in.conf ; \
 	fi
-	@${INSTALL_DATA} ${WRKSRC}/mplayerplug-in.types \
+	${INSTALL_DATA} ${WRKSRC}/mplayerplug-in.types \
 		${PREFIX}/etc/mplayerplug-in.types.dist
 	if [ ! -f ${PREFIX}/etc/mplayerplug-in.types ]; then \
 		${INSTALL_DATA} ${WRKSRC}/mplayerplug-in.types \
 			${PREFIX}/etc/mplayerplug-in.types ;\
 	fi
+	cd ${WRKSRC}/po && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+		Makefile ${MAKE_ARGS} install
 
 .include <bsd.port.post.mk>
