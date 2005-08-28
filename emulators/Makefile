@@ -68,6 +68,7 @@
     SUBDIR += linux_base-suse-9.1
     SUBDIR += linux_base-suse-9.2
     SUBDIR += linux_base-suse-9.3
+    SUBDIR += m2000
     SUBDIR += mastergear
     SUBDIR += minivmac
     SUBDIR += mips64emul

@@ -1,0 +1,41 @@
+#!/bin/sh
+
+#
+# m2000 doesn't seem to like tapes which are not writable.
+# Therefor the tapes are installed to ${HOME}/.m2000 and need to
+# be started from there
+#
+
+if [ -z "$1" ]; then
+	echo "Usage: $0 [tape] [options...]"
+	cd %%PREFIX%%/share/m2000
+	./m2000
+	exit
+fi
+
+if [ "`echo $1 | cut -c 1`" = "-" ]; then
+	cd %%PREFIX%%/share/m2000
+	./m2000 $*
+	exit
+fi
+
+tape=$1
+shift
+
+if [ "`dirname ${tape}`" = "." ]; then
+	tape=${HOME}/.m2000/${tape}
+fi
+if [ ! -f ${tape} ]; then
+	tape=${tape}.cas
+fi
+if [ ! -f ${tape} ]; then
+	echo "m2000-wrapper: ${tape} not found."
+	exit
+fi
+if [ ! -w ${tape} ]; then
+	echo "m2000-wrapper: ${tape} not writable."
+	exit
+fi
+
+cd %%PREFIX%%/share/m2000 
+./m2000 -tape ${tape} $*
