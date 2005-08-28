@@ -114,7 +114,7 @@ LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 .endif
 
 GNU_CONFIGURE=	yes
-USE_AUTOCONF_VER=      259
+USE_AUTOCONF_VER=      259 #workaround:bad config_office/configure of m126
 WRKSRC=		${WRKDIR}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 ANT?=		${LOCALBASE}/bin/ant
