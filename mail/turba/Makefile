@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	turba
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/turba/				\
 		ftp://ftp.planetmirror.com/pub/horde/turba/		\
@@ -41,7 +41,7 @@ NO_BUILD=	yes
 USE_REINPLACE=	yes
 
 REINPLACE_ARGS=	-i ""
-DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL	\
+DOCS=		README docs/CHANGES docs/CREDITS docs/INSTALL	\
 		docs/LDAP docs/RELEASE_NOTES docs/TODO docs/UPGRADING
 CONFFILE=	attributes.php menu.php prefs.php sources.php
 SUB_DIRS=	config lib locale po scripts templates themes
@@ -51,6 +51,8 @@ LTURBADIR?=	${LHORDEDIR}/turba
 
 PLIST_SUB=	TURBADIR=${LTURBADIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+SUB_LIST=	TURBADIR=${TURBADIR} CONFDIR=${CONFDIR}
 
 TURBADIR=	${PREFIX}/${LTURBADIR}
 CONFDIR=	${TURBADIR}/config
@@ -97,8 +99,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -e "s:%%TURBADIR%%:${TURBADIR}:;s:%%CONFDIR%%:${CONFDIR}:"	\
-		< ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
