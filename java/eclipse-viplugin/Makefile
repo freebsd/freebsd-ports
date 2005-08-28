@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	viPlugin
-PORTVERSION=	1.12.1
+PORTVERSION=	1.12.2
 CATEGORIES=	java devel editors
 MASTER_SITES=	http://www.satokar.com/viplugin/files/
-MASTER_SITES+=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	nork
 PKGNAMEPREFIX=	eclipse-
-DISTNAME=	${PORTNAME}_${PORTVERSION}_E30_trial
+DISTNAME=	${PORTNAME}_${PORTVERSION}_E30
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	java@freebsd.org
