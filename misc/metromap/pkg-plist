@@ -3,7 +3,6 @@ share/locale/ru/LC_MESSAGES/metromap.mo
 %%DATADIR%%/data/Berlin/Metro.ini
 %%DATADIR%%/data/KievUkr/Metro.ini
 %%DATADIR%%/data/London/Metro.ini
-%%DATADIR%%/data/Metro.ini
 %%DATADIR%%/data/Moscow/Metro.ini
 %%DATADIR%%/data/Peterburg/Metro.ini
 %%DATADIR%%/modules/FindPath.py
