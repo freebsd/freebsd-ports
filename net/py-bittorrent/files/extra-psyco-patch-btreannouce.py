@@ -1,5 +1,5 @@
---- btreannounce.py.orig	Fri Mar 11 23:15:59 2005
-+++ btreannounce.py	Fri Mar 11 23:16:05 2005
+--- btreannounce.py.orig	Wed Aug 17 15:24:19 2005
++++ btreannounce.py	Mon Aug 22 23:06:19 2005
 @@ -12,6 +12,15 @@
  
  # Written by Henry 'Pi' James and Bram Cohen
@@ -13,6 +13,6 @@
 +    except:
 +       pass
 +
- from sys import argv
+ from os.path import basename
+ from sys import argv, exit
  from BitTorrent.bencode import bencode, bdecode
- 
