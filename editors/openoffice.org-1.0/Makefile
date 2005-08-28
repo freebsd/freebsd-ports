@@ -7,7 +7,7 @@
 
 PORTNAME=	openoffice
 PORTVERSION=	1.0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES+=	editors
 MASTER_SITES+=  ${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/${PORTVERSION}/&,} \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%,maho/openoffice.org/&,}:moz \
@@ -16,8 +16,8 @@ MASTER_SITES+=  ${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/${POR
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent-1.0/&,}:help \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent-1.0/:help \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent-1.0/:help \
-		http://people.freebsd.org/~mbr/ooo/:mbr
-DISTFILES+=	OOo_${RELEASE_NR}_source.tar.gz gpc231.tar.Z:gpc patch-translation-ru-1.0.3.bz2:mbr
+		${MASTER_SITE_LOCAL:S,%SUBDIR%,maho/openoffice.org/&,}:ru
+DISTFILES+=	OOo_${RELEASE_NR}_source.tar.gz gpc231.tar.Z:gpc patch-translation-ru-1.0.3.bz2:ru
 EXTRACT_ONLY=	OOo_${RELEASE_NR}_source.tar.gz
 
 MAINTAINER=	openoffice@FreeBSD.org
@@ -37,6 +37,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.3
 JAVA_BUILD=	jdk
 NO_LATEST_LINK=	yes
+WITHOUT_CPU_CFLAGS=	true
 
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
@@ -47,15 +48,15 @@ L10NHELP?=     helpcontent_01_unix.tgz
 
 DISTFILES+=	${L10NHELP}:help
 .if defined(ALL_LOCALIZED_LANGS)
-DISTFILES+=	helpcontent_01_unix.tgz:help helpcontent_07_unix.tgz:help \
-		helpcontent_31_unix.tgz:help helpcontent_33_unix.tgz:help \
+DISTFILES+=	helpcontent_07_unix.tgz:help \
+		helpcontent_30_unix.tgz:help helpcontent_33_unix.tgz:help \
 		helpcontent_34_unix.tgz:help helpcontent_35_unix.tgz:help \
 		helpcontent_39_unix.tgz:help helpcontent_42_unix.tgz:help \
 		helpcontent_46_unix.tgz:help helpcontent_49_unix.tgz:help \
 		helpcontent_81_unix.tgz:help helpcontent_82_unix.tgz:help \
 		helpcontent_86_unix.tgz:help helpcontent_88_unix.tgz:help
 L10NHELPS=	helpcontent_01_unix.tgz helpcontent_07_unix.tgz \
-		helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
+		helpcontent_30_unix.tgz helpcontent_33_unix.tgz \
 		helpcontent_34_unix.tgz helpcontent_35_unix.tgz \
 		helpcontent_39_unix.tgz helpcontent_42_unix.tgz \
 		helpcontent_46_unix.tgz helpcontent_49_unix.tgz \
@@ -69,7 +70,7 @@ INSTALLATION_BASEDIR=   OpenOffice.org${RELEASE_NR}
 EXECBASE=               openoffice.org-${RELEASE_NR}
 DIST_SUBDIR=		openoffice.org1.0
 SIMPLEOSVER=		${OSREL:C/\.//g}
-PACKAGE_BASENAME=       OOo_${RELEASE_NR}m${MILESTONE}_${OPSYS}${SIMPLEOSVER}Intel
+PACKAGE_BASENAME=       OOo_${RELEASE_NR}_${OPSYS}${SIMPLEOSVER}Intel
 DICT_DIR=               ${PREFIX}/${INSTALLATION_BASEDIR}/share/dict/ooo/
 
 # FIXME (Somehow INDEX build fails)
@@ -94,7 +95,9 @@ CXX=	g++32
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		imake:${X_IMAKE_PORT} \
-		Xvfb:${X_VFBSERVER_PORT}
+		gcp:${PORTSDIR}/sysutils/coreutils \
+		Xvfb:${X_VFBSERVER_PORT} \
+		${X11BASE}/lib/X11/fonts/misc/cursor.pcf.gz:${X_FONTS_MISC_PORT}
 GNU_CONFIGURE=	yes
 USE_AUTOCONF_VER= 253
 WRKSRC=		${WRKDIR}/oo_${PORTVERSION}_src
@@ -129,12 +132,10 @@ post-extract:
 .if defined(WITH_TTF_BYTECODE_ENABLED)
 	@cd ${WRKSRC} ; ${PATCH} < ${FILESDIR}/optpatch-freetype
 .endif
-#fix for gnome/kde wrapper
-	#${REINPLACE_CMD} -e 's|"Exec", "\\"\<progpath\>/program/|"Exec", "\\"${PREFIX}/bin/openoffice.org-|' ${WRKSRC}/sysui/oounix/office/kde2/kdeint
-	#${REINPLACE_CMD} -e 's|"Exec", "<progpath>/program/|"Exec", "${PREFIX}/bin/openoffice.org-|' ${WRKSRC}/sysui/oounix/office/gnome/gnomeint
-#Russian and Ukrainian support
-	#cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/patch-support-RU-1.0.3.bz2 | ${BUNZIP2}
-	#cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/patch-support-UA-1.0.3.bz2 | ${BUNZIP2}
+#XXX not yet: fix for gnome/kde wrapper
+	@#${REINPLACE_CMD} -e 's|"Exec", "\\"\<progpath\>/program/|"Exec", "\\"${PREFIX}/bin/openoffice.org-|' ${WRKSRC}/sysui/oounix/office/kde2/kdeint
+	@#${REINPLACE_CMD} -e 's|"Exec", "<progpath>/program/|"Exec", "${PREFIX}/bin/openoffice.org-|' ${WRKSRC}/sysui/oounix/office/gnome/gnomeint
+	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/patch-translation-ru-1.0.3.bz2 | ${BZIP2_CMD} | ${PATCH}
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/gpc231.tar.Z | ${TAR} xfz -
 	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/external/gpc/
 	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/external/gpc/
@@ -153,9 +154,16 @@ post-extract:
 	@${MKDIR} ${WRKSRC}/moz/download
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${MOZILLA_SOURCE} ${WRKSRC}/moz/download
 
+post-patch:
+#patch for SDK
+	@${REINPLACE_CMD} 's|%%GNUTR%%|${LOCALBASE}/bin/gtr|g'   ${WRKSRC}/odk/util/makefile.pmk
+	@${REINPLACE_CMD} 's|%%GNUCOPY%%|${LOCALBASE}/bin/gcp|g' ${WRKSRC}/solenv/inc/unitools.mk
+	${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g' \
+			  -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
+				${WRKSRC}/product/settings/settings.mk
 do-build:
-	cd ${WRKSRC} ; ./bootstrap
-	cd ${WRKSRC}/moz ; ${SETENV} "BUILD_MOZAB=TRUE" ${TCSH} -c 'source ../FreeBSDEnv.Set ; build.pl ; dmake zip' ; ${CP} unxfbsd.pro/zipped/FREEBSD*.zip ../moz/zipped
+	@cd ${WRKSRC} ; ./bootstrap
+	@cd ${WRKSRC}/moz ; ${SETENV} "BUILD_MOZAB=TRUE" ${TCSH} -c 'source ../FreeBSDEnv.Set ; build.pl ; dmake zip' ; ${CP} unxfbsd.pro/zipped/FREEBSD*.zip ../moz/zipped
 	@${MKDIR} ${WRKSRC}/solver/${CODELINE}/unxfbsd.pro/pck
 	@${CP} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/solver/${CODELINE}/unxfbsd.pro/pck
 .if exists(${WRKDIR}/.Xvfb.pid)
@@ -164,21 +172,21 @@ do-build:
 .endif
 	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
 	@sleep 5
-	cd ${WRKSRC} && DISPLAY=${DISPLAYHACK} ${TCSH} -c 'source FreeBSDEnv.Set ; ${BUILD}'
-	-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
-	${RM} -f ${WRKDIR}/.Xvfb.pid
+	@cd ${WRKSRC} ; ${SETENV} "LC_ALL=C" "LANG=C" DISPLAY=${DISPLAYHACK} ${TCSH} -c 'source FreeBSDEnv.Set ; ${BUILD}'
+	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
+	@${RM} -f ${WRKDIR}/.Xvfb.pid
 
 do-install:
 .if exists(${WRKDIR}/.Xvfb.pid)
 	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
 .endif
-	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
+	@${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
 	@sleep 5
-	${SETENV} DISPLAY=${DISPLAYHACK} ${TCSH} -c "cd ${WRKSRC}/instsetoo/*.pro/${LANG_EXT}/normal ; ./install --prefix=${PREFIX}"
+	@${SETENV} "LC_ALL=C" "LANG=C" DISPLAY=${DISPLAYHACK} ${TCSH} -c "cd ${WRKSRC}/instsetoo/*.pro/${LANG_EXT}/normal ; ./install --prefix=${PREFIX}"
 	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
-#temporary hack (contains space in dir name)
+#XXX temporary hack (contains space in dir name)
 	@${RM} -rf ${PREFIX}/${INSTALLATION_BASEDIR}/share/kde/net/applnk
 
 install-user:
@@ -228,17 +236,23 @@ package-rename:
 	@${MV} ${PKGFILE} \
 	    ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel_install_${LANG_PKGNAME}-${LANG_SUFFIX}${PKG_SUFX}
 .elif defined(LANG_PKGNAME)
-	@${MV} ${PKGFILE} \
-	    ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel_install_${LANG_PKGNAME}${PKG_SUFX}
+	@${MV} ${PKGFILE} ${WRKDIR}/../${PACKAGE_BASENAME}_install_${LANG_PKGNAME}${PKG_SUFX}
 .else
-	@${MV} ${PKGFILE} \
-	    ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel_install${PKG_SUFX}
+	@${MV} ${PKGFILE} ${WRKDIR}/../${PACKAGE_BASENAME}_install${PKG_SUFX}
 .endif
 
 sdk:
 	@${ECHO_MSG} "===>   Make SDK of OpenOffice.org"
-	@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd sdk_oo ; build.pl ; deliver.pl'
-	@${MV} ${WRKSRC}/solver/${CODELINE}/unxfbsd.pro/bin/OpenOffice.org${RELEASE_NR}_SDK.tar.gz ${WRKDIR}/../${PACKAGE_BASENAME}_sdk.tar.gz
+	@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd odk/source/bean/native/unix ; dmake ; deliver.pl'
+	@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd odk/source/bean/com/sun/star/beans ; dmake ; deliver.pl'
+	@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd netbeans_integration ; build.pl ; deliver.pl'
+	@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd odk/source/OOSupport ; dmake ; deliver.pl'
+	@${MKDIR} -p ${WRKSRC}/odk/unxfbsd.pro/bin/OpenOffice.org1.0.2SDK/freebsd/lib
+	@${TOUCH} ${WRKSRC}/odk/unxfbsd.pro/misc/deltree.txt
+	@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd odk/pack/copying ; dmake ; deliver.pl'
+	@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd odk/util ; dmake ; deliver.pl'
+#somehow SDK's version is 1.0.2 and not 1.0.3
+	${MV} ${WRKSRC}/odk/unxfbsd.pro/bin/OpenOffice.org1.0.2SDK.tar.gz ${WRKDIR}/../${PACKAGE_BASENAME}_sdk.tar.gz
 
 solver:
 	@${ECHO_MSG} "===>   Make Solver of OpenOffice.org"

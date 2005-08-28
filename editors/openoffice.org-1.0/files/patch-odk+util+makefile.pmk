@@ -1,0 +1,31 @@
+Index: odk/util/makefile.pmk
+===================================================================
+RCS file: /cvs/api/odk/util/makefile.pmk,v
+retrieving revision 1.26.2.4
+diff -u -r1.26.2.4 makefile.pmk
+--- odk/util/makefile.pmk	17 Feb 2003 15:51:33 -0000	1.26.2.4
++++ odk/util/makefile.pmk	29 Jul 2005 13:57:12 -0000
+@@ -76,7 +76,7 @@
+ #--------------------
+ MY_DELETE_RECURSIVE=rm -rf
+ MY_DIRCMP=dircmp 
+-MY_TEXTCOPY= tr -d "\015"
++MY_TEXTCOPY=%%GNUTR%% -d "\015"
+ #MY_COPY=cat
+ 
+ MY_DLLPREFIX=lib
+@@ -116,6 +116,14 @@
+ DESTDIRLIB=$(DESTDIR)$/netbsd$/lib
+ DESTDIRDLL=$(DESTDIRLIB)
+ 
++.ELIF "$(OS)"=="FREEBSD"
++###########
++# FREEBSD
++###########
++DESTDIRBIN=$(DESTDIR)$/freebsd$/bin
++DESTDIRLIB=$(DESTDIR)$/freebsd$/lib
++DESTDIRDLL=$(DESTDIRLIB)
++
+ .ELIF "$(OS)"=="IRIX "
+ ###########
+ # IRIX

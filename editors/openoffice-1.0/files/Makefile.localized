@@ -44,7 +44,6 @@ LANG_CONFIGURE_ARG=     DAN
 .if ${LOCALIZED_LANG} == "nl"
 LANG_PKGNAME=	nl
 LANG_EXT=	31
-L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 LANG_CONFIGURE_ARG=	DTCH
 .endif
 ################################################################

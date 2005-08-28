@@ -13,6 +13,12 @@ BUILD=		dmake strip="true"
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
+.if defined(ALL_LOCALIZED_LANGS)
+CONFIGURE_ARGS+=	--with-lang=ALL
+.else
+CONFIGURE_ARGS+=	--with-lang=${LANG_CONFIGURE_ARG}
+.endif
+
 pre-fetch:
 	@${ECHO}
 	@${ECHO} "OPTIONS:"
@@ -23,6 +29,14 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} "If you set WITH_DEBUG=2, you add internal"
 	@${ECHO} "OO.org debug support."
+	@${ECHO}
+.endif
+.if !defined(LOCALIZED_LANG)
+	@${ECHO}
+	@${ECHO} "You can select the language for OOo by making it with 'make LOCALIZED_LANG=xx'"
+	@${ECHO} "while xx can be one of the following:"
+	@${ECHO} "ar de dk el es fr it ja ko nl pl pt ru"
+	@${ECHO} "sv tr zh-CN zh-TW"
 	@${ECHO}
 .endif
 .if !defined(WITH_TTF_BYTECODE_ENABLED)
