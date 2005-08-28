@@ -3,6 +3,7 @@
 # Whom:			Brian Somers <brian@FreeBSD.org>
 #
 # $FreeBSD$
+#    $MCom: ports-stable/multimedia/vlc-devel/Makefile,v 1.2 2005/08/15 05:48:27 mezz Exp $
 #
 # NOTES about VLC Knobs:
 # Below you will see a number of knobs, if it starts with WITHOUT_ it is
@@ -216,11 +217,9 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.8.2.20050723
+DISTVERSION=	0.8.2.20050813
 CATEGORIES=	multimedia audio ipv6 net www
-MASTER_SITES=	http://download.videolan.org/pub/vlc/snapshots/ \
-		${MASTER_SITE_LOCAL:S|$|:mozilla|} \
-		http://people.freebsd.org/~ahze/distfiles/:mozilla
+MASTER_SITES=	http://download.videolan.org/pub/vlc/snapshots/
 #		http://download2.videolan.org/pub/videolan/testing/${PORTNAME}-${DISTVERSION}/ \
 #		http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 #		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${PORTVERSION}/ \
@@ -228,8 +227,7 @@ MASTER_SITES=	http://download.videolan.org/pub/vlc/snapshots/ \
 #		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${PORTVERSION}/ \
 MASTER_SITE_SUBDIR=	ahze/:mozilla
 PKGNAMESUFFIX?=	-devel${ESOUND_SUFFIX}${MOZILLA_SUFFIX}${PKGNAMESUFFIX2}
-DISTFILES=	${PORTNAME}-snapshot-${DISTVERSION:S/0.8.2.//}${EXTRACT_SUFX} \
-		vlc-intf-mozilla-plugin-0.1${EXTRACT_SUFX}:mozilla
+DISTNAME=	${PORTNAME}-snapshot-${DISTVERSION:S/0.8.2.//}
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Multimedia streaming server and player for various audio/video formats
@@ -242,7 +240,6 @@ CONFLICTS=	vlc-*-0.8.2*
 WRKSRC=		${WRKDIR}/${PORTNAME}-snapshot-${PORTVERSION:S/0.8.2.//}
 ### BROKEN -- Needs newer verision of toolame ###
 WITHOUT_TOOLAME=	yes
-WITHOUT_MOZILLA_PLUGIN=	yes
 ### BROKEN ###
 
 WITH_VLC_DEFAULT_FONT?=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
@@ -264,7 +261,7 @@ PLIST=		${WRKDIR}/plist
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include/vlc/ -I${LOCALBASE}/ffmpeg ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include/vlc/ ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 
 CONFIGURE_ARGS+=	--enable-ffmpeg \
@@ -278,16 +275,22 @@ MAN1=		vlc.1 \
 		vlc-config.1
 
 .if defined(WITH_MOZILLA_PLUGIN) && !defined(WITHOUT_MOZILLA_PLUGIN)
+### Remove comment when gnome 2.12 hits the streets.
+#WITH_MOZILLA?=	firefox
 .if ${WITH_MOZILLA}=="firefox"
 BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
 RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
 
-CONFIGURE_ENV+=	MOZILLA_CONFIG="${X11BASE}/bin/firefox-config"
+CONFIGURE_ENV+=	MOZILLA_CONFIG="${X11BASE}/bin/firefox-config" \
+		XPIDL="${X11BASE}/lib/firefox/xpidl"\
+		XPIDL_INCL="-I${X11BASE}/share/idl/firefox"
 .else
 BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
 RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
 
-CONFIGURE_ENV+=	MOZILLA_CONFIG="${X11BASE}/lib/mozilla${HEADERS_SUFX}/mozilla-config"
+CONFIGURE_ENV+=	MOZILLA_CONFIG="${X11BASE}/lib/mozilla${HEADERS_SUFX}/mozilla-config" \
+		XPIDL="${X11BASE}/lib/mozilla${HEADERS_SUFX}/xpidl" \
+		XPIDL_INCL="-I${X11BASE}/share/idl/mozilla${HEADERS_SUFX}"
 .endif
 MOZILLA_SUFFIX=-mozilla
 CONFIGURE_ARGS+=--enable-mozilla
@@ -409,8 +412,8 @@ DEFAULT_CDROM_DEVICE=/dev/acd0
 
 .if defined(WITH_SKINS) && !defined(WITHOUT_SKINS)
 LIB_DEPENDS+=	tar.0:${PORTSDIR}/devel/libtar
-CONFIGURE_ARGS+=--enable-skins2 --enable-skins
-USE_XLIB=	yes
+CONFIGURE_ARGS+=--enable-skins2
+WITH_WXGTK=	yes
 .else
 CONFIGURE_ARGS+=--disable-skins2
 .endif
@@ -425,10 +428,10 @@ CONFIGURE_ARGS+=--disable-loader
 .if !defined(WITHOUT_WXGTK)
 BUILD_DEPENDS+=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/${WXGTK2_PORT}
 RUN_DEPENDS+=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/${WXGTK2_PORT}
-CONFIGURE_ARGS+=--enable-wxwindows
+CONFIGURE_ARGS+=--enable-wxwidgets
 CONFIGURE_ENV+=	WX_CONFIG="${X11BASE}/bin/${WX_CONFIG}"
 .else
-CONFIGURE_ARGS+=--disable-wxwindows
+CONFIGURE_ARGS+=--disable-wxwidgets
 .endif
 
 .if (defined(WITH_ARTS) || exists(${LOCALBASE}/lib/libartsc.so)) && !defined(WITHOUT_ARTS)
@@ -778,13 +781,9 @@ post-patch:
 	's|/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf|${WITH_VLC_DEFAULT_FONT}|' \
 		${WRKSRC}/modules/misc/freetype.c
 # mozilla plugin
-.if defined(WITH_MOZILLA_PLUGIN) && !defined(WITHOUT_MOZILLA_PLUGIN)
-	@${CP} -f ${WRKDIR}/vlc-intf-mozilla-plugin/vlcintf.h ${WRKSRC}/mozilla
-	@${CP} -f ${WRKDIR}/vlc-intf-mozilla-plugin/vlcintf.xpt ${WRKSRC}/mozilla
 	@${REINPLACE_CMD} -e 's|$$(libdir)/mozilla/plugins|${FAKEDIR}/mozilla|; \
 		s|$$(libdir)/mozilla/components|${FAKEDIR}/mozilla|' \
 			${WRKSRC}/mozilla/Makefile.in
-.endif
 # skins2 interface, no lrint on < 504000
 .if ${OSVERSION} < 504000
 	@${REINPLACE_CMD} -e 's|lrint|rint|' \
@@ -809,6 +808,8 @@ post-patch:
 .if ${ARCH}=="i386" && defined(WITH_WIN32_CODECS)
 	@${REINPLACE_CMD} -e 's|-DWIN32_PATH=\\"\\"|-DWIN32_PATH=\\"${LOCALBASE}/lib/win32\\"|' \
 		${WRKSRC}/loader/Makefile.in
+	@${REINPLACE_CMD} -e 's|/usr/lib/win32|${LOCALBASE}/lib/win32|' \
+		${WRKSRC}/loader/module.c
 .endif
 
 pre-install:
