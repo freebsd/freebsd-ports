@@ -47,6 +47,7 @@ share/locale/fa/LC_MESSAGES/vte.mo
 share/locale/fi/LC_MESSAGES/vte.mo
 share/locale/fr/LC_MESSAGES/vte.mo
 share/locale/ga/LC_MESSAGES/vte.mo
+share/locale/gl/LC_MESSAGES/vte.mo
 share/locale/gu/LC_MESSAGES/vte.mo
 share/locale/he/LC_MESSAGES/vte.mo
 share/locale/hi/LC_MESSAGES/vte.mo
@@ -86,6 +87,7 @@ share/locale/sr/LC_MESSAGES/vte.mo
 share/locale/sr@Latn/LC_MESSAGES/vte.mo
 share/locale/sv/LC_MESSAGES/vte.mo
 share/locale/ta/LC_MESSAGES/vte.mo
+share/locale/th/LC_MESSAGES/vte.mo
 share/locale/tr/LC_MESSAGES/vte.mo
 share/locale/ug/LC_MESSAGES/vte.mo
 share/locale/uk/LC_MESSAGES/vte.mo
