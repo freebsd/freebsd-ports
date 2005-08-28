@@ -12,6 +12,6 @@ group|penaltybox|!badcommitters,!badcommitters.global
 
 unavail
 avail||CVSROOT
-avail||ports
+avail|krion|ports
 avail|:meisters
 unavail|:penaltybox
