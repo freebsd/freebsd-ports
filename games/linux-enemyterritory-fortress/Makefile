@@ -37,8 +37,8 @@ do-extract:
 
 do-build:
 .for f in et etded
-	@${ECHO} '#!/bin/sh' > ${WRKSRC}/${f}-fortress
-	@${ECHO} 'exec ${PREFIX}/bin/${f} +set fs_game etf "$$@"' >> ${WRKSRC}/${f}-fortress
+	@${ECHO_CMD} '#!/bin/sh' > ${WRKSRC}/${f}-fortress
+	@${ECHO_CMD} 'exec ${PREFIX}/bin/${f} +set fs_game etf "$$@"' >> ${WRKSRC}/${f}-fortress
 .endfor
 
 do-install:
