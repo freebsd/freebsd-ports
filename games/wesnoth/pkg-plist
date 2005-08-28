@@ -1472,9 +1472,7 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/giant-mudcrawler.png
 %%DATADIR%%/images/goblin-direwolver-attack.png
 %%DATADIR%%/images/goblin-direwolver-defend.png
-%%DATADIR%%/images/goblin-direwolver-die-1.png
-%%DATADIR%%/images/goblin-direwolver-die-2.png
-%%DATADIR%%/images/goblin-direwolver-die-3.png
+%%DATADIR%%/images/goblin-direwolver-moving.png
 %%DATADIR%%/images/goblin-direwolver.png
 %%DATADIR%%/images/goblin-impaler-attack-ranged1.png
 %%DATADIR%%/images/goblin-impaler-attack-ranged2.png
@@ -1599,9 +1597,7 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/halo/white-mage-halo3.png
 %%DATADIR%%/images/halo/white-mage-halo4.png
 %%DATADIR%%/images/help/closed_section.png
-%%DATADIR%%/images/help/hp-green.png
-%%DATADIR%%/images/help/hp-red.png
-%%DATADIR%%/images/help/hp-yellow.png
+%%DATADIR%%/images/help/hp-bars.png
 %%DATADIR%%/images/help/hpxp.png
 %%DATADIR%%/images/help/moving1.png
 %%DATADIR%%/images/help/moving2.png
@@ -1651,12 +1647,25 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/human-dragoon.png
 %%DATADIR%%/images/human-duelist-attack.png
 %%DATADIR%%/images/human-duelist-defend.png
-%%DATADIR%%/images/human-duelist-die-1.png
-%%DATADIR%%/images/human-duelist-die-2.png
+%%DATADIR%%/images/human-duelist-die1.png
+%%DATADIR%%/images/human-duelist-die2.png
+%%DATADIR%%/images/human-duelist-die3.png
+%%DATADIR%%/images/human-duelist-die4.png
+%%DATADIR%%/images/human-duelist-die5.png
+%%DATADIR%%/images/human-duelist-die6.png
+%%DATADIR%%/images/human-duelist-die7.png
+%%DATADIR%%/images/human-duelist-die8.png
 %%DATADIR%%/images/human-duelist-ranged.png
 %%DATADIR%%/images/human-duelist.png
 %%DATADIR%%/images/human-fencer-attack.png
+%%DATADIR%%/images/human-fencer-defend-1-1.png
+%%DATADIR%%/images/human-fencer-defend-1-2.png
 %%DATADIR%%/images/human-fencer-defend.png
+%%DATADIR%%/images/human-fencer-die1.png
+%%DATADIR%%/images/human-fencer-die2.png
+%%DATADIR%%/images/human-fencer-die3.png
+%%DATADIR%%/images/human-fencer-die4.png
+%%DATADIR%%/images/human-fencer-die5.png
 %%DATADIR%%/images/human-fencer.png
 %%DATADIR%%/images/human-general-attack-crossbow.png
 %%DATADIR%%/images/human-general-attack-sword1.png
@@ -2288,6 +2297,7 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/owaec-lord-moving.png
 %%DATADIR%%/images/owaec-lord.png
 %%DATADIR%%/images/paladin-attack-sword.png
+%%DATADIR%%/images/paladin-defend.png
 %%DATADIR%%/images/paladin-healing.png
 %%DATADIR%%/images/paladin-moving.png
 %%DATADIR%%/images/paladin.png
@@ -2325,6 +2335,15 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/portraits/The_Rise_of_Wesnoth/logalmier.png
 %%DATADIR%%/images/portraits/The_Rise_of_Wesnoth/rithrandil.png
 %%DATADIR%%/images/portraits/The_Rise_of_Wesnoth/typhon.png
+%%DATADIR%%/images/portraits/core/Alex_Jarocha-Ernst/elvish-shaman.png
+%%DATADIR%%/images/portraits/core/Alex_Jarocha-Ernst/ghoul.png
+%%DATADIR%%/images/portraits/core/Alex_Jarocha-Ernst/mermaid-initiate.png
+%%DATADIR%%/images/portraits/core/Alex_Jarocha-Ernst/merman-fighter.png
+%%DATADIR%%/images/portraits/core/Alex_Jarocha-Ernst/merman-hunter.png
+%%DATADIR%%/images/portraits/core/Alex_Jarocha-Ernst/naga-fighter.png
+%%DATADIR%%/images/portraits/core/Alex_Jarocha-Ernst/nagini-fighter.png
+%%DATADIR%%/images/portraits/core/Alex_Jarocha-Ernst/orcish-assassin.png
+%%DATADIR%%/images/portraits/core/Alex_Jarocha-Ernst/saurian-skirmisher.png
 %%DATADIR%%/images/portraits/core/James_Woo/orc-warlord.png
 %%DATADIR%%/images/portraits/core/James_Woo/orc-warlord2.png
 %%DATADIR%%/images/portraits/core/James_Woo/orc-warlord3.png
@@ -3988,6 +4007,7 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 @dirrm %%DATADIR%%/images/projectiles
 @dirrm %%DATADIR%%/images/portraits/core/Jason_Lutes
 @dirrm %%DATADIR%%/images/portraits/core/James_Woo
+@dirrm %%DATADIR%%/images/portraits/core/Alex_Jarocha-Ernst
 @dirrm %%DATADIR%%/images/portraits/core
 @dirrm %%DATADIR%%/images/portraits/The_Rise_of_Wesnoth
 @dirrm %%DATADIR%%/images/portraits/The_Dark_Hordes
