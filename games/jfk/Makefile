@@ -9,9 +9,9 @@ PORTNAME=	jfk
 PORTVERSION=	0.1.1
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://relax.ath.cx/jfk/
+MASTER_SITES=	http://se-linux.inso.tuwien.ac.at/fame/
 
-MAINTAINER=	stefan@fafoe.narf.at
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multiplayer 2D shoot'em up game
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
