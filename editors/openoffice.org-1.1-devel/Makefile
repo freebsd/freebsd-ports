@@ -18,8 +18,8 @@ MASTER_SITES+=	ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent/:help \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help \
 		ftp://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/Files/:help2
-DISTFILES+=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2 gpc231.tar.Z:gpc
-EXTRACT_ONLY=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2
+DISTFILES+=	OOo_${RELEASE_NR}m${MILESTONE}.${SNAPDATE}_source.tar.bz2 gpc231.tar.Z:gpc
+EXTRACT_ONLY=	OOo_${RELEASE_NR}m${MILESTONE}.${SNAPDATE}_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
@@ -40,6 +40,7 @@ USE_BISON=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
+WITHOUT_CPU_CFLAGS=	true
 
 .if !defined(WITHOUT_JAVA)
 USE_JAVA=	yes
@@ -60,7 +61,7 @@ L10NHELP?=     helpcontent_01_unix.tgz
 
 DISTFILES+=	${L10NHELP}:help
 .if defined(ALL_LOCALIZED_LANGS)
-DISTFILES+=	helpcontent_01_unix.tgz:help helpcontent_07_unix.tgz:help3 \
+DISTFILES+=	helpcontent_07_unix.tgz:help3 \
 		helpcontent_31_unix.tgz:help  helpcontent_33_unix.tgz:help \
 		helpcontent_34_unix.tgz:help  helpcontent_39_unix.tgz:help \
 		helpcontent_42_unix.tgz:help2 helpcontent_43_unix.tgz:help2 \
@@ -83,7 +84,7 @@ L10NHELPS=	helpcontent_01_unix.tgz helpcontent_07_unix.tgz \
 CODELINE=		645
 RELEASE_NR=		1.1.5
 MILESTONE=		57
-SNAPDATE=		20050705
+SNAPDATE=		20050816
 INSTALLATION_BASEDIR=	OpenOffice.org${RELEASE_NR}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org1.1
@@ -122,7 +123,6 @@ TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NUMOFPROCESSES?=	1
 
-DISPLAYHACK=localhost:1001
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --enable-pasf
 
 .include <${FILESDIR}/Makefile.knobs>
@@ -174,10 +174,11 @@ do-build:
 .endif
 	@${MKDIR} ${WRKSRC}/solver/${CODELINE}/unxfbsd.pro/pck
 	@${CP} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/solver/${CODELINE}/unxfbsd.pro/pck
+# PR:84786
 .if (${NUMOFPROCESSES}>1)
-	@cd ${WRKSRC} ; DISPLAY=${DISPLAYHACK} ; ${TCSH} -c "source FreeBSDEnv.Set ; cd instsetoo ; build.pl -P${NUMOFPROCESSES} --all"
+	@cd ${WRKSRC} ; ${SETENV} "LC_ALL=C" "LANG=C" ${TCSH} -c "source FreeBSDEnv.Set ; cd instsetoo ; build.pl -P${NUMOFPROCESSES} --all"
 .else
-	@cd ${WRKSRC} ; DISPLAY=${DISPLAYHACK} ; ${TCSH} -c "source FreeBSDEnv.Set ; dmake"
+	@cd ${WRKSRC} ; ${SETENV} "LC_ALL=C" "LANG=C" ${TCSH} -c "source FreeBSDEnv.Set ; dmake"
 .endif
 
 do-install:
