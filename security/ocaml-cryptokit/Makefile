@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cryptokit
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	security
 MASTER_SITES=	http://caml.inria.fr/distrib/bazar-ocaml/
 PKGNAMEPREFIX=	ocaml-
@@ -22,6 +22,8 @@ ALL_TARGET=	all allopt
 
 .ifndef(NOPORTDOCS)
 ALL_TARGET+=	doc
+
+PORTDOCS=	*
 .endif
 
 DOC_FILES=	Changes LICENSE README
@@ -41,7 +43,7 @@ pre-install:
 		's|cp |${INSTALL_DATA} |' \
 		${WRKSRC}/Makefile
 # create installation dir
-	@${MKDIR} ${PREFIX}/lib/ocaml
+	@${MKDIR} ${PREFIX}/lib/ocaml/stublibs
 
 post-install:
 .ifndef(NOPORTDOCS)
@@ -52,4 +54,8 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+
+.include <bsd.port.post.mk>
