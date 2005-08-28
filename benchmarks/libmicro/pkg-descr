@@ -1,0 +1,7 @@
+LibMicro is a portable set of microbenchmarks that many Solaris engineers used
+during Solaris 10 development to measure the performance of various system and
+library calls. LibMicro was developed by Bart Smaalders and Phil Harman as part
+of their If another OS is faster it's a Solaris bug performance campaign.
+LibMicro is being released as Open Source under the CDDL license.
+
+WWW:	http://opensolaris.org/os/community/performance/libmicro/

@@ -1,0 +1,38 @@
+--- setcontext.c.orig	Sat Aug  6 16:18:46 2005
++++ setcontext.c	Sat Aug  6 16:19:29 2005
+@@ -57,7 +57,7 @@
+ benchmark(void *tsd, result_t *res)
+ {
+ 	volatile int		i;
+-
++#if 0
+ 	ucontext_t uc;
+ 
+ 	i = 0;
+@@ -68,6 +68,7 @@
+ 		(void) setcontext(&uc);
+ 
+ 	res->re_count += lm_optB;
++#endif
+ 
+ 	return (0);
+ }
+--- getcontext.c.orig	Sat Aug  6 16:18:39 2005
++++ getcontext.c	Sat Aug  6 16:19:06 2005
+@@ -59,7 +59,7 @@
+ benchmark(void *tsd, result_t *res)
+ {
+ 	int			i;
+-
++#if 0
+ 	for (i = 0; i < lm_optB; i += 10) {
+ 		ucontext_t uc;
+ 		(void) getcontext(&uc);
+@@ -74,6 +74,6 @@
+ 		(void) getcontext(&uc);
+ 	}
+ 	res->re_count = i;
+-
++#endif
+ 	return (0);
+ }
