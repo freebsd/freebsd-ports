@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	eclipse-
 DISTNAME=	emf-sdo-xsd-SDK-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	java@FreeBSD.ORG
+MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	Eclipse Modeling Framework
 
 RUN_DEPENDS=    ${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse

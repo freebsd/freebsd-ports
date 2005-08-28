@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-langpack
 DISTNAME=	NLpack-eclipse-SDK-3.0.x-linux-gtk
 DIST_SUBDIR=    eclipse
 
-MAINTAINER=	java@FreeBSD.ORG
+MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	Eclipse Language Pack Feature
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse

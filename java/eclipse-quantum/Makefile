@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	eclipse-
 DISTNAME=	quantum${PORTVERSION}_e3.0
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	java@freebsd.org
+MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	Database access and SQL editor for the Eclipse IDE
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse

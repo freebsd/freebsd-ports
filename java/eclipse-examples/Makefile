@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	eclipse-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	java@FreeBSD.ORG
+MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	Examples for the Eclipse IDE
 
 RUN_DEPENDS=    ${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
