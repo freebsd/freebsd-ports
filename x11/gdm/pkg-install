@@ -34,8 +34,12 @@ POST-INSTALL)
 			exit 1
 		fi
 	fi
-	${CHOWN} -R root:${GROUP} ${PKG_PREFIX}/share/gnome/gdm
-	${CHMOD} 1770 ${PKG_PREFIX}/share/gnome/gdm
+	${MKDIR} -p /var/gdm
+	${MKDIR} -p /var/log/gdm
+	${CHOWN} -R root:${GROUP} /var/gdm
+	${CHMOD} 1770 /var/gdm
+	${CHOWN} root:wheel ${PKG_PREFIX}/share/gnome/gdm
+	${CHMOD} 0755 ${PKG_PREFIX}/share/gnome/gdm
 
 	${MKDIR} -p ${PKG_PREFIX}/etc/dm/Sessions
 	exit 0

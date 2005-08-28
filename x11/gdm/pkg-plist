@@ -36,10 +36,11 @@ sbin/gdm-stop
 sbin/gdmsetup
 share/gnome/applications/gdmflexiserver-xnest.desktop
 share/gnome/applications/gdmflexiserver.desktop
+share/gnome/applications/gdmphotosetup.desktop
 share/gnome/applications/gdmsetup.desktop
-share/gnome/capplets/gdmphotosetup.desktop
 share/gnome/gdm/BuiltInSessions/default.desktop
 share/gnome/gdm/gdmchooser.glade
+share/gnome/gdm/gdmphotosetup.glade
 share/gnome/gdm/gdmsetup.glade
 share/gnome/gdm/themes/circles/GdmGreeterTheme.desktop
 share/gnome/gdm/themes/circles/background.svg
@@ -109,6 +110,30 @@ share/gnome/omf/gdm/gdm-sv.omf
 share/gnome/omf/gdm/gdm-zh_CN.omf
 share/gnome/omf/gdm/gdm-zh_HK.omf
 share/gnome/omf/gdm/gdm-zh_TW.omf
+share/gnome/pixmaps/faces/astronaut.jpg
+share/gnome/pixmaps/faces/baseball.png
+share/gnome/pixmaps/faces/butterfly.png
+share/gnome/pixmaps/faces/cat-eye.jpg
+share/gnome/pixmaps/faces/chess.jpg
+share/gnome/pixmaps/faces/coffee.jpg
+share/gnome/pixmaps/faces/dice.jpg
+share/gnome/pixmaps/faces/energy-arc.jpg
+share/gnome/pixmaps/faces/fish.jpg
+share/gnome/pixmaps/faces/flake.jpg
+share/gnome/pixmaps/faces/flower.jpg
+share/gnome/pixmaps/faces/grapes.jpg
+share/gnome/pixmaps/faces/guitar.jpg
+share/gnome/pixmaps/faces/launch.jpg
+share/gnome/pixmaps/faces/leaf.jpg
+share/gnome/pixmaps/faces/lightning.jpg
+share/gnome/pixmaps/faces/penguin.jpg
+share/gnome/pixmaps/faces/puppy.jpg
+share/gnome/pixmaps/faces/sky.jpg
+share/gnome/pixmaps/faces/soccerball.png
+share/gnome/pixmaps/faces/sunflower.jpg
+share/gnome/pixmaps/faces/sunset.jpg
+share/gnome/pixmaps/faces/tennis-ball.png
+share/gnome/pixmaps/faces/yellow-rose.jpg
 share/gnome/pixmaps/gdm-foot-logo.png
 share/gnome/pixmaps/gdm-setup.png
 share/gnome/pixmaps/gdm-xnest.png
@@ -116,16 +141,6 @@ share/gnome/pixmaps/gdm.png
 share/gnome/pixmaps/login-photo.png
 share/gnome/pixmaps/nobody.png
 share/gnome/pixmaps/nohost.png
-share/gnome/pixmaps/faces/bonfire.jpg
-share/gnome/pixmaps/faces/cdrom.jpg
-share/gnome/pixmaps/faces/clock.jpg
-share/gnome/pixmaps/faces/daisy.jpg
-share/gnome/pixmaps/faces/dice.jpg
-share/gnome/pixmaps/faces/hollyleaf.jpg
-share/gnome/pixmaps/faces/lamas.jpg
-share/gnome/pixmaps/faces/seal.jpg
-share/gnome/pixmaps/faces/sky.jpg
-share/gnome/pixmaps/faces/skyline.jpg
 share/gnome/xsessions/gnome.desktop
 share/icons/hicolor/16x16/apps/gdm-xnest.png
 share/icons/hicolor/32x32/apps/gdm-setup.png
@@ -245,3 +260,5 @@ share/locale/zu/LC_MESSAGES/gdm.mo
 @unexec /bin/rmdir %D/sbin 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/share/gnome/log/gdm 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/share/gnome/log 2>/dev/null || /usr/bin/true
+@unexec /bin/rm -rf /var/gdm 2>/dev/null || /usr/bin/true
+@unexec /bin/rm -rf /var/log/gdm 2>/dev/null || /usr/bin/true

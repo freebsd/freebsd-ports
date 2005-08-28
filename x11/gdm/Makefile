@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	gdm
-PORTVERSION=	2.8.0.1
+PORTVERSION=	2.8.0.3
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=		sources/${PORTNAME:S/2$//}/2.8
@@ -20,11 +21,15 @@ USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 USE_RC_SUBR=	gdm.sh
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gnomehier libgnomeui librsvg2
+USE_GNOME=	gnomehack intlhack gnomehier libgnomeui librsvg2
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
+CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share/gnome \
+		--with-html-dir=${GNOME_HTML_DIR} \
+		--disable-gtk-doc \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		GTKDOC="false"
 
 GDMDIR?=	${PREFIX}/etc/gdm
 PKGMESSAGE=	${WRKDIR}/pkg-message
