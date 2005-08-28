@@ -255,10 +255,13 @@ System/Library/Headers/GormCore/GormInspectorsManager.h
 System/Library/Headers/GormCore/GormInternalViewEditor.h
 System/Library/Headers/GormCore/GormMatrixEditor.h
 System/Library/Headers/GormCore/GormNSSplitViewInspector.h
+System/Library/Headers/GormCore/GormObjectEditor.h
+System/Library/Headers/GormCore/GormOpenGLView.h
 System/Library/Headers/GormCore/GormOutlineView.h
 System/Library/Headers/GormCore/GormPalettesManager.h
 System/Library/Headers/GormCore/GormPlacementInfo.h
 System/Library/Headers/GormCore/GormPrivate.h
+System/Library/Headers/GormCore/GormProtocol.h
 System/Library/Headers/GormCore/GormResource.h
 System/Library/Headers/GormCore/GormResourceEditor.h
 System/Library/Headers/GormCore/GormScrollViewAttributesInspector.h
@@ -274,6 +277,7 @@ System/Library/Headers/GormCore/GormViewResourceManager.h
 System/Library/Headers/GormCore/GormViewWindow.h
 System/Library/Headers/GormCore/GormViewWithContentViewEditor.h
 System/Library/Headers/GormCore/GormViewWithSubviewsEditor.h
+System/Library/Headers/GormCore/GormWindowEditor.h
 System/Library/Headers/GormCore/NSCell+GormAdditions.h
 System/Library/Headers/GormCore/NSColorWell+GormExtensions.h
 System/Library/Headers/GormCore/NSFontManager+GormExtensions.h
@@ -301,6 +305,7 @@ System/Library/Headers/InterfaceBuilder/IBDocuments.h
 System/Library/Headers/InterfaceBuilder/IBEditors.h
 System/Library/Headers/InterfaceBuilder/IBInspector.h
 System/Library/Headers/InterfaceBuilder/IBInspectorManager.h
+System/Library/Headers/InterfaceBuilder/IBInspectorMode.h
 System/Library/Headers/InterfaceBuilder/IBObjectAdditions.h
 System/Library/Headers/InterfaceBuilder/IBObjectProtocol.h
 System/Library/Headers/InterfaceBuilder/IBPalette.h
