@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xterm
-PORTVERSION=	203
+PORTVERSION=	204
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/ \
 		http://voodoo.oberon.net/download/
