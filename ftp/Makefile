@@ -34,6 +34,7 @@
     SUBDIR += ftpsearch
     SUBDIR += ftptool
     SUBDIR += gftp
+    SUBDIR += gollem
     SUBDIR += greed
     SUBDIR += gwget
     SUBDIR += hsftp
