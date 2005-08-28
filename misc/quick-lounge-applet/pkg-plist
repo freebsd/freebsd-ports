@@ -102,6 +102,7 @@ share/gnome/omf/quick-lounge-applet/quick-lounge-zh_TW.omf
 share/gnome/pixmaps/quick-lounge-applet.png
 share/gnome/quick-lounge/glade/quick-lounge.glade
 share/locale/az/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/bg/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/bs/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/ca/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/cs/LC_MESSAGES/quick-lounge-applet.mo
@@ -112,6 +113,7 @@ share/locale/en_GB/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/es/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/fi/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/fr/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/gl/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/gu/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/hr/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/hu/LC_MESSAGES/quick-lounge-applet.mo
