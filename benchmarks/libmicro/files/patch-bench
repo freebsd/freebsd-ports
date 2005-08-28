@@ -1,0 +1,32 @@
+--- bench.orig	Fri Aug  5 06:35:13 2005
++++ bench	Tue Aug  9 12:32:52 2005
+@@ -67,7 +67,7 @@
+ 
+ touch $IFILE
+ 
+-ARCH=`arch -k`
++ARCH=`uname -m`
+ 
+ # produce benchmark header for easier comparisons
+ 
+@@ -85,6 +85,12 @@
+ 	p_type=`awk -F: '/model name/{print $2; exit}' /proc/cpuinfo`
+ fi
+ 
++if [ F"`uname -s`" = F"FreeBSD" ] ; then
++	p_count=`sysctl -n hw.ncpu`
++	p_mhz=`sysctl -n hw.clockrate`
++	p_type=`sysctl -n hw.model`
++fi
++
+ printf "!Libmicro_#:   %30s\n" $libmicro_version
+ printf "!Options:      %30s\n" "$OPTS"
+ printf "!Machine_name: %30s\n" $hostname
+@@ -156,7 +162,6 @@
+ memset		$OPTS -N "memset_10k"	-s 10k	-I 600	 
+ memset		$OPTS -N "memset_1m"	-s 1m	-I 200000
+ memset		$OPTS -N "memset_10m"	-s 10m -I 2000000 
+-memset		$OPTS -N "memsetP2_10m"	-s 10m -P 2 -I 2000000 
+ 
+ memrand		$OPTS -N "memrand"	-s 40m -B 10000
+ cachetocache	$OPTS -N "cachetocache" -s 100k -T 2 -I 200

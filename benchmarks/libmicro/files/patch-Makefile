@@ -1,0 +1,11 @@
+--- Makefile.orig	Sat Aug  6 14:07:26 2005
++++ Makefile	Sat Aug  6 14:07:43 2005
+@@ -67,7 +67,7 @@
+ 	wrapper		\
+ 	README
+ 
+-default $(ALL) run cstyle lint tattle: $(BINS)
++all $(ALL) run cstyle lint tattle: $(BINS)
+ 	@chmod +x bench multiview
+ 	@mkdir -p bin-`uname -m`; cd bin-`uname -m`; MACH=`uname -m` $(MAKE) -f ../Makefile.`uname -s` $@
+ 

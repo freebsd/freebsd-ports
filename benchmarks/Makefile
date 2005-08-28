@@ -18,6 +18,7 @@
     SUBDIR += iozone
     SUBDIR += iozone21
     SUBDIR += iperf
+    SUBDIR += libmicro
     SUBDIR += lmbench
     SUBDIR += nbench
     SUBDIR += netio
