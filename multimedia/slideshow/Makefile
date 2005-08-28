@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION:S/.p/-pre/}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-pre/}
 
-MAINTAINER=	stefan@fafoe.narf.at
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A slideshow presentation tool to write slides in Python or XML
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
