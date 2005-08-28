@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		gambas
-PORTVERSION=		1.0.9
+PORTVERSION=		1.0.10
 CATEGORIES=		lang
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,6 +28,7 @@ CONFIGURE_ARGS=		--with-conv-includes=${LOCALBASE}/include	\
 			--with-moc=${X11BASE}/bin
 CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"		\
 			PTHREAD_LIBS="${PTHREAD_LIBS}"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=		yes
 
 LIBS2FIX=		libqt-mt libkdecore libkdeui libDCOP libkio
