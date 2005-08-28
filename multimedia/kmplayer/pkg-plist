@@ -12,8 +12,12 @@ share/applications/kde/kmplayer.desktop
 share/apps/kmplayer/bookmarks.xml
 share/apps/kmplayer/kmplayerpartui.rc
 share/apps/kmplayer/kmplayerui.rc
+share/apps/kmplayer/noise.gif
 share/apps/kmplayer/pluginsinfo
 share/config/kmplayerrc
+share/doc/HTML/en/kmplayer/common
+share/doc/HTML/en/kmplayer/index.cache.bz2
+share/doc/HTML/en/kmplayer/index.docbook
 share/icons/hicolor/128x128/apps/kmplayer.png
 share/icons/hicolor/16x16/apps/kmplayer.png
 share/icons/hicolor/22x22/apps/kmplayer.png
@@ -39,6 +43,9 @@ share/services/kmplayer_part.desktop
 @unexec rmdir %D/share/icons/hicolor/128x128 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/en/kmplayer
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
 @unexec rmdir %D/share/config 2>/dev/null || true
 @dirrm share/apps/kmplayer
 @unexec rmdir %D/share/apps 2>/dev/null || true
