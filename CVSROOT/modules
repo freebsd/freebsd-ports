@@ -5374,6 +5374,7 @@ libnetdude	ports/net/libnetdude
 libneural	ports/math/libneural
 libnewmail	ports/mail/libnewmail
 libnids		ports/net/libnids
+libnotify	ports/devel/libnotify
 libnova		ports/astro/libnova
 libnss-mysql	ports/net/libnss-mysql
 libntlm		ports/security/libntlm
