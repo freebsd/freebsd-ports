@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pdflib
-PORTVERSION=	6.0.1
-PORTREVISION=	2
+PORTVERSION=	6.0.2
 CATEGORIES=	print
-MASTER_SITES=	http://voodoo.oberon.net/download/
+MASTER_SITES=	http://pdflib.com/products/pdflib/download/${PORTVERSION:S/.//g}src/
 DISTNAME=	PDFlib-Lite-${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
