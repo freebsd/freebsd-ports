@@ -3,24 +3,27 @@
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports-stable/games/atomix/Makefile,v 1.2 2005/08/04 04:03:32 marcus Exp $
 #
 
 PORTNAME=	atomix
-PORTVERSION=	1.0
-PORTREVISION=	4
+PORTVERSION=	1.2.2a
 CATEGORIES=	games gnome
-MASTER_SITES=	http://jens.triq.net/download/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A yet another little mind game
 
-USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libgnome libgnomeui libgnomecanvas libxml2
+USE_GMAKE=	yes
+USE_BZIP2=	yes
+USE_REINPLACE=	yes
+USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
-USE_REINPLACE=	yes
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/games\.games/games:games/' ${WRKSRC}/Makefile.in
