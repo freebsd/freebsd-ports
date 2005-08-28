@@ -29,7 +29,3 @@ share/locale/sr@Latn/LC_MESSAGES/alleyoop.mo
 share/locale/sv/LC_MESSAGES/alleyoop.mo
 share/locale/uk/LC_MESSAGES/alleyoop.mo
 share/locale/zh_CN/LC_MESSAGES/alleyoop.mo
-@exec rmdir %D/share/pixmaps 2>/dev/null || true
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
-@unexec rmdir %D/etc/gconf/schemas 2>/dev/null || true
-@unexec rmdir %D/etc/gconf 2>/dev/null || true
