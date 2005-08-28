@@ -64,7 +64,7 @@ L10NHELP?=     helpcontent_01_unix.tgz
 
 DISTFILES+=	${L10NHELP}:help
 .if defined(ALL_LOCALIZED_LANGS)
-DISTFILES+=	helpcontent_01_unix.tgz:help helpcontent_07_unix.tgz:help3 \
+DISTFILES+=	helpcontent_07_unix.tgz:help3 \
 		helpcontent_31_unix.tgz:help  helpcontent_33_unix.tgz:help \
 		helpcontent_34_unix.tgz:help  helpcontent_39_unix.tgz:help \
 		helpcontent_42_unix.tgz:help2 helpcontent_43_unix.tgz:help2 \
@@ -124,7 +124,6 @@ TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NUMOFPROCESSES?=	1
 
-DISPLAYHACK=localhost:1001
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --enable-pasf
 
 .include <${FILESDIR}/Makefile.knobs>
@@ -176,10 +175,11 @@ do-build:
 .endif
 	@${MKDIR} ${WRKSRC}/solver/${CODELINE}/unxfbsd.pro/pck
 	@${CP} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/solver/${CODELINE}/unxfbsd.pro/pck
+# PR:84786
 .if (${NUMOFPROCESSES}>1)
-	@cd ${WRKSRC} ; DISPLAY=${DISPLAYHACK} ; ${TCSH} -c "source FreeBSDEnv.Set ; cd instsetoo ; build.pl -P${NUMOFPROCESSES} --all"
+	@cd ${WRKSRC} ; ${SETENV} "LC_ALL=C" "LANG=C" ${TCSH} -c "source FreeBSDEnv.Set ; cd instsetoo ; build.pl -P${NUMOFPROCESSES} --all"
 .else
-	@cd ${WRKSRC} ; DISPLAY=${DISPLAYHACK} ; ${TCSH} -c "source FreeBSDEnv.Set ; dmake"
+	@cd ${WRKSRC} ; ${SETENV} "LC_ALL=C" "LANG=C" ${TCSH} -c "source FreeBSDEnv.Set ; dmake"
 .endif
 
 do-install:
