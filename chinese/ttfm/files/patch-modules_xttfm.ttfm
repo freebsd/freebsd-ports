@@ -1,0 +1,54 @@
+--- modules/xttfm.ttfm.orig	Tue Nov  4 07:08:32 2003
++++ modules/xttfm.ttfm	Sun Aug 28 18:03:43 2005
+@@ -87,15 +87,11 @@
+         targetname=`basename $f`
+ 
+         # Update fonts.scale
+-        rm -f $TEMPFILE
+-        if [ ! -r $XTTFFONTPATH/fonts.scale ]; then
+-            touch $XTTFFONTPATH/fonts.scale
+-        fi
+-        sed -e "/$targetname/d" $XTTFFONTPATH/fonts.scale > $TEMPFILE
+-        i=`cat $TEMPFILE |wc -l`
+-        sed -e "1s/[0-9]*/`expr $i - 1`/" $TEMPFILE > $XTTFFONTPATH/fonts.scale
++	rm -f $XTTFFONTPATH/fonts.scale
++	mkfontscale $XTTFFONTPATH
+ 
+         # Update fonts.dir, encodings.dir is needed for the sake of xfs.
++	rm -f $XTTFFONTPATH/fonts.dir
+         if [ -r $XTTFFONTPATH/../encodings/large/encodings.dir ]; then
+             mkfontdir -e $XTTFFONTPATH/../encodings/large $XTTFFONTPATH
+         else
+@@ -133,29 +129,11 @@
+     fontencoding=${10}
+ 
+     # Create and update fonts.scale
+-    touch $XTTFFONTPATH/fonts.scale
+-    # Delete the first line, and duplicate entries if exist.
+-    # We can't use uniq(1) here, since filenames may start with numbers.
+-    sed -e "1d" $XTTFFONTPATH/fonts.scale |grep -iv "$fontfoundry-$fontfamily.*-$fontencoding$" > $TEMPFILE
+-
+-    # Set font parameters
+-    # Speed up font rendering
+-    fontparam="vl=y:"
+-    # Specify the font face index
+-    if [ $facenum -gt 1 ]; then
+-        fontparam="fn=$faceindex:$fontparam"
+-    fi
+-    echo "${fontparam}$targetname -$fontfoundry-$fontfamily-$fontweight-$fontslant-$fontwidth--0-0-0-0-$fontproperties-0-$fontencoding" >> $TEMPFILE
+-    # If it's medium-r, make a {medium,bold}-{i,r} full suite
+-    if [ "X$fontweight" = "Xmedium" ] && [ "X$fontslant" = "Xr" ]; then
+-        echo "${fontparam}ai=0.3:$targetname -$fontfoundry-$fontfamily-medium-i-$fontwidth--0-0-0-0-$fontproperties-0-$fontencoding" >> $TEMPFILE
+-        echo "${fontparam}ds=y:$targetname -$fontfoundry-$fontfamily-bold-r-$fontwidth--0-0-0-0-$fontproperties-0-$fontencoding" >> $TEMPFILE
+-        echo "${fontparam}ds=y:ai=0.3:$targetname -$fontfoundry-$fontfamily-bold-i-$fontwidth--0-0-0-0-$fontproperties-0-$fontencoding" >> $TEMPFILE
+-    fi
+-    echo `cat $TEMPFILE |wc -l` > $XTTFFONTPATH/fonts.scale
+-    cat $TEMPFILE >> $XTTFFONTPATH/fonts.scale
++    rm -f $XTTFFONTPATH/fonts.scale
++    mkfontscale $XTTFFONTPATH
+ 
+     # Update fonts.dir, encodings.dir is needed for the sake of xfs.
++    rm -f $XTTFFONTPATH/fonts.dir
+     if [ -r $XTTFFONTPATH/../encodings/large/encodings.dir ]; then
+         mkfontdir -e $XTTFFONTPATH/../encodings/large $XTTFFONTPATH
+     else
