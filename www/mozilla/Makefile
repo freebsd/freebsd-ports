@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.7.10
-PORTREVISION?=	1
+PORTVERSION=	1.7.11
+PORTREVISION?=	0
 PORTEPOCH=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -215,6 +215,8 @@ CONFIGURE_ARGS+=	--enable-optimize=-O2
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e  's/%{idldir}/%idldir%/g' \
+		${WRKSRC}/build/unix/mozilla-config.in
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/build/unix/run-mozilla.sh
 	@${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
