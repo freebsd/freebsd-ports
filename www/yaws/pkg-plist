@@ -21,7 +21,6 @@ lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_revproxy.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_rss.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_server.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_session_server.beam
-lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_ssl.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_sup.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_ticker.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_vsn.beam
