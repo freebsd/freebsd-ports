@@ -2,34 +2,25 @@ bin/haddock
 bin/haddock-%%HADDOCK_VERSION%%
 lib/haddock-%%HADDOCK_VERSION%%/haddock.bin
 share/haddock-%%HADDOCK_VERSION%%/haddock.css
+share/haddock-%%HADDOCK_VERSION%%/haddock.js
 share/haddock-%%HADDOCK_VERSION%%/haskell_icon.gif
-%%PORTDOCS%%%%DOCSDIR%%/docbook.css
-%%PORTDOCS%%%%DOCSDIR%%/haddock.html
+share/haddock-%%HADDOCK_VERSION%%/minus.gif
+share/haddock-%%HADDOCK_VERSION%%/plus.gif
+%%PORTDOCS%%%%DOCSDIR%%/ch01s03.html
+%%PORTDOCS%%%%DOCSDIR%%/ch03s02.html
+%%PORTDOCS%%%%DOCSDIR%%/ch03s03.html
+%%PORTDOCS%%%%DOCSDIR%%/ch03s04.html
+%%PORTDOCS%%%%DOCSDIR%%/ch03s05.html
+%%PORTDOCS%%%%DOCSDIR%%/ch03s08.html
+%%PORTDOCS%%%%DOCSDIR%%/fptools.css
+%%PORTDOCS%%%%DOCSDIR%%/hyperlinking.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/invoking.html
+%%PORTDOCS%%%%DOCSDIR%%/ix01.html
 %%PORTDOCS%%%%DOCSDIR%%/license.html
 %%PORTDOCS%%%%DOCSDIR%%/markup.html
 %%PORTDOCS%%%%DOCSDIR%%/module-attributes.html
-%%PORTDOCS%%%%DOCSDIR%%/x57.html
-%%PORTDOCS%%%%DOCSDIR%%/x444.html
-%%PORTDOCS%%%%DOCSDIR%%/x468.html
-%%PORTDOCS%%%%DOCSDIR%%/x473.html
-%%PORTDOCS%%%%DOCSDIR%%/x516.html
-%%PORTDOCS%%%%DOCSDIR%%/x531.html
-%%PORTDOCS%%%%DOCSDIR%%/x599.html
-%%PORTDOCS%%%%DOCSDIR%%/stylesheet-images/caution.gif
-%%PORTDOCS%%%%DOCSDIR%%/stylesheet-images/home.gif
-%%PORTDOCS%%%%DOCSDIR%%/stylesheet-images/important.gif
-%%PORTDOCS%%%%DOCSDIR%%/stylesheet-images/next.gif
-%%PORTDOCS%%%%DOCSDIR%%/stylesheet-images/note.gif
-%%PORTDOCS%%%%DOCSDIR%%/stylesheet-images/prev.gif
-%%PORTDOCS%%%%DOCSDIR%%/stylesheet-images/tip.gif
-%%PORTDOCS%%%%DOCSDIR%%/stylesheet-images/toc-blank.gif
-%%PORTDOCS%%%%DOCSDIR%%/stylesheet-images/toc-minus.gif
-%%PORTDOCS%%%%DOCSDIR%%/stylesheet-images/toc-plus.gif
-%%PORTDOCS%%%%DOCSDIR%%/stylesheet-images/up.gif
-%%PORTDOCS%%%%DOCSDIR%%/stylesheet-images/warning.gif
 @dirrm lib/haddock-%%HADDOCK_VERSION%%
 @dirrm share/haddock-%%HADDOCK_VERSION%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/stylesheet-images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
