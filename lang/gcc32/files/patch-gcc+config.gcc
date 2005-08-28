@@ -1,0 +1,10 @@
+--- gcc/config.gcc.org	Sat Mar  1 03:38:19 2003
++++ gcc/config.gcc	Sat Aug 13 10:11:06 2005
+@@ -445,6 +445,7 @@
+ 	*-*-freebsd4 | *-*-freebsd[4].*) fbsd_tm_file="freebsd4.h";;
+ 	*-*-freebsd5 | *-*-freebsd[5].*) fbsd_tm_file="freebsd5.h";;
+ 	*-*-freebsd6 | *-*-freebsd[6].*) fbsd_tm_file="freebsd6.h";;
++	*-*-freebsd7 | *-*-freebsd[7].*) fbsd_tm_file="freebsd7.h";;
+ 	*) echo 'Please update *-*-freebsd* in gcc/config.gcc'; exit 1;;
+ 	esac
+ 	tmake_file="t-slibgcc-elf-ver t-freebsd"
