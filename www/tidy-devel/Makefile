@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	tidy
-PORTVERSION=	050722
+PORTVERSION=	050826
 CATEGORIES=	www
 MASTER_SITES=	http://tidy.sourceforge.net/src/%SUBDIR%/	\
 		http://tidy.sourceforge.net/docs/:docs
@@ -25,11 +25,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
 PLIST_SUB=	SHLIB="@comment " NSHLIB=""
 .else
-USE_AUTOMAKE_VER=	15
+USE_AUTOTOOLS=	automake:15 autoconf:213 libtool:13
 AUTOMAKE_ARGS+=	-a -c --foreign
-USE_AUTOCONF_VER=	213
-CONFIGURE_TARGET=	 --target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
-USE_LIBTOOL_VER=13
+CONFIGURE_TARGET=	 --target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	SHLIB="" NSHLIB="@comment "
 .endif
