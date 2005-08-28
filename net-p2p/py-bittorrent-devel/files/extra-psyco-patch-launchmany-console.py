@@ -1,5 +1,5 @@
---- btlaunchmany.py.orig	Fri Mar 11 23:14:47 2005
-+++ btlaunchmany.py	Fri Mar 11 23:14:54 2005
+--- launchmany-console.py.orig	Tue Aug 23 22:49:16 2005
++++ launchmany-console.py	Tue Aug 23 22:50:30 2005
 @@ -12,6 +12,15 @@
  
  # Written by John Hoffman
@@ -13,6 +13,6 @@
 +    except:
 +       pass
 +
- import sys
- import os
- 
+ if __name__ == '__main__':
+     import gettext
+     gettext.install('bittorrent', 'locale')

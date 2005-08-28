@@ -1,5 +1,5 @@
---- btdownloadgui.py.orig	Sun May 29 23:28:15 2005
-+++ btdownloadgui.py	Sun May 29 23:31:03 2005
+--- bittorrent.py.orig	Tue Aug 23 22:49:16 2005
++++ bittorrent.py	Tue Aug 23 22:50:20 2005
 @@ -14,6 +14,15 @@
  
  from __future__ import division
@@ -13,6 +13,6 @@
 +    except:
 +       pass
 +
- import gettext
- gettext.install('bittorrent', 'locale')
+ from BitTorrent.platform import locale_root
  
+ import gettext

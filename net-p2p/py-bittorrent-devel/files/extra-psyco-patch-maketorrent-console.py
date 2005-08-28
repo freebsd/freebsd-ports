@@ -1,5 +1,5 @@
---- btmaketorrent.py.orig	Fri Mar 11 23:15:38 2005
-+++ btmaketorrent.py	Fri Mar 11 23:15:43 2005
+--- maketorrent-console.py.orig	Tue Aug 23 22:49:16 2005
++++ maketorrent-console.py	Tue Aug 23 22:50:41 2005
 @@ -12,6 +12,15 @@
  
  # Written by Bram Cohen
@@ -13,6 +13,6 @@
 +    except:
 +       pass
 +
- import sys
- from BitTorrent.makemetafile import make_meta_files
- from BitTorrent.parseargs import parseargs, printHelp
+ if __name__ == '__main__':
+     import gettext
+     gettext.install('bittorrent', 'locale')

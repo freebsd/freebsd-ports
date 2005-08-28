@@ -1,5 +1,5 @@
---- bttrack.py.orig	Fri Mar 11 23:17:26 2005
-+++ bttrack.py	Fri Mar 11 23:17:31 2005
+--- bittorrent-tracker.py.orig	Tue Aug 23 22:49:16 2005
++++ bittorrent-tracker.py	Tue Aug 23 22:50:14 2005
 @@ -12,6 +12,15 @@
  
  # Written by Bram Cohen
@@ -13,6 +13,6 @@
 +    except:
 +       pass
 +
- from sys import argv
- from BitTorrent.track import track
- 
+ if __name__ == '__main__':
+     import gettext
+     gettext.install('bittorrent', 'locale')

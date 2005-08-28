@@ -1,8 +1,8 @@
---- btdownloadcurses.py.orig	Sun May 29 23:28:15 2005
-+++ btdownloadcurses.py	Sun May 29 23:30:23 2005
-@@ -15,6 +15,15 @@
+--- changetracker-console.py.orig	Tue Aug 23 22:49:16 2005
++++ changetracker-console.py	Tue Aug 23 22:50:25 2005
+@@ -12,6 +12,15 @@
  
- from __future__ import division
+ # Written by Henry 'Pi' James and Bram Cohen
  
 +from BitTorrent import PSYCO
 +if PSYCO.psyco:

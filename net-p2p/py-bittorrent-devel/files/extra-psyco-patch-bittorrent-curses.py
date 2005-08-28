@@ -1,8 +1,8 @@
---- btreannounce.py.orig	Tue May 24 03:01:08 2005
-+++ btreannounce.py	Sun May 29 22:46:38 2005
-@@ -12,6 +12,15 @@
+--- bittorrent-curses.py.orig	Tue Aug 23 22:49:16 2005
++++ bittorrent-curses.py	Tue Aug 23 22:49:59 2005
+@@ -15,6 +15,15 @@
  
- # Written by Henry 'Pi' James and Bram Cohen
+ from __future__ import division
  
 +from BitTorrent import PSYCO
 +if PSYCO.psyco:

@@ -1,5 +1,5 @@
---- btmaketorrentgui.py.orig	Sun May 29 23:28:15 2005
-+++ btmaketorrentgui.py	Sun May 29 23:31:51 2005
+--- bittorrent-console.py.orig	Tue Aug 23 22:49:16 2005
++++ bittorrent-console.py	Tue Aug 23 22:49:55 2005
 @@ -14,6 +14,15 @@
  
  from __future__ import division
