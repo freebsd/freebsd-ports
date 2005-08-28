@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kgeography
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.4
 CATEGORIES=	games kde
 MASTER_SITES=	http://download.berlios.de/kgeography/
 
