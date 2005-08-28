@@ -1,0 +1,61 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+PATH=/usr/sbin:/usr/bin:/bin ; export PATH
+
+handle_config() {
+    # Try to restore httpd.conf when deinstalling Horde
+
+    if [ -f %%APACHE_CONF%%.beforeHorde ] ; then
+    	echo "Restoring httpd.conf..."
+    	cp %%APACHE_CONF%% %%APACHE_CONF%%.deinstHorde
+    	sed -i.tmp -e "s:Include ${PKG_PREFIX}/etc/horde:# Include ${PKG_PREFIX}/etc/horde:g" \
+    		%%APACHE_CONF%%
+    	rm %%APACHE_CONF%%.tmp
+    fi
+
+    # Backup Horde config files, if needed.
+
+    if [ -z "${PACKAGE_BUILDING}" ]; then
+      for cf in `ls %%HORDEDIR%%/config/*php`; do
+        diff -bBqw $cf $cf.dist >/dev/null 2>&1
+        case $? in
+          0)  # original config file, will be deleted by pkg-plist
+              ;;
+          1)  # config file has been updated, must be backuped
+              cp -p $cf $cf.previous
+              echo "===> Backing-up..."
+              echo "--->   $cf has been saved ***"
+              echo "--->      as $cf.previous ***"
+              ;;
+          *)  # not found?
+              ;;
+        esac
+      done
+    fi
+}
+
+case $2 in
+    DEINSTALL)
+      handle_config
+      ;;
+    POST-DEINSTALL)
+      if [ x%%HORDEADMUSR%% != x ]; then
+            cat <<EOMSG
+The horde port has been deleted.
+If you are not upgrading and don't intend to use
+Horde any more then you may wish to delete
+the %%HORDEADMUSR%% account, which can be done with
+the following command:
+
+    # pw userdel %%HORDEADMUSR%%
+EOMSG
+      if [ -d %%PREFIX%%/%%MYADMDIR%% ] ; then
+	echo "    # rm -rf %%PREFIX%%/%%HORDEDIR%%/"
+      fi
+      echo
+    fi
+    ;;
+esac

@@ -1,0 +1,17 @@
+--- config/registry.php.dist.orig	Wed Aug  3 16:27:41 2005
++++ config/registry.php.dist	Wed Aug 17 22:33:03 2005
+@@ -347,6 +347,14 @@
+     'provides' => 'files',
+ );
+ 
++// r1.255.2.9
++$this->applications['gollem-menu'] = array(
++    'status' => 'block',
++    'app' => 'gollem',
++    'blockname' => 'tree_menu',
++    'menu_parent' => 'gollem',
++);
++
+ $this->applications['passwd'] = array(
+     'fileroot' => dirname(__FILE__) . '/../passwd',
+     'webroot' => $this->applications['horde']['webroot'] . '/passwd',

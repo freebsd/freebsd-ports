@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	horde
-PORTVERSION=	3.0.4
-PORTREVISION=	1
+PORTVERSION=	3.0.5
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 		ftp://ftp.planetmirror.com/pub/horde/horde/		\
@@ -36,7 +35,7 @@ COMMENT=	A common code-base used by Horde applications, written in PHP
 #
 # - WITHOUT_MYSQL:	this port is built with MySQL by default
 #			but you might choose any other database
-#			supported by PHP (e.g. WITH_POSTGRESQL).
+#			supported by PHP (e.g. WITH_POSTGRESQL / WITH_SQLITE).
 #
 # - WITHOUT_IMAP:	this port uses IMAP as a default authentication
 #			backend; use this knob if for
@@ -80,6 +79,8 @@ COMMENT=	A common code-base used by Horde applications, written in PHP
 #
 # - WITH_DEB:		handle Debian packages.
 #
+# - WITH_SUPHP:		Install appropriately for use with the www/suphp port.
+#
 #----------------------------------------------------------------------------
 
 RUN_DEPENDS+=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
@@ -94,10 +95,20 @@ CONFLICTS=	horde-2.*
 
 NO_BUILD=	yes
 USE_PHP=	ctype gettext session
-WANT_PHP_MOD=	yes
 USE_REINPLACE=	yes
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message pkg-deinstall
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+.if defined(WITH_SUPHP) && !defined(WITHOUT_SUPHP)
+RUN_DEPENDS+=	${LOCALBASE}/sbin/suphp:${PORTSDIR}/www/suphp
+WANT_PHP_CGI=	yes
+HORDEADMUSR?=	horde
+PKGINSTALL=	${WRKDIR}/pkg-install
+SUB_FILES+=	pkg-install
+.else
+WANT_PHP_MOD=	yes
+.endif
 
 .if !defined(WITHOUT_FILEINFO)
 USE_PHP+=	fileinfo
@@ -129,6 +140,9 @@ USE_PHP+=	mysql
 . endif
 . if defined(WITH_POSTGRESQL)
 USE_PHP+=	pgsql
+. endif
+. if defined(WITH_SQLITE)
+USE_PHP+=	sqlite
 . endif
 .endif
 .if !defined(WITHOUT_ZLIB)
@@ -208,7 +222,8 @@ LHORDEDIR?=	www/horde
 LHORDESBIN?=	sbin
 
 PLIST_SUB=	HORDEDIR=${LHORDEDIR} HORDESBIN=${LHORDESBIN}
-SUB_LIST=	HORDEDIR=${HORDEDIR} APACHE_CONF=${APACHE_CONF} HORDESBIN=${HORDESBIN}
+SUB_LIST=	HORDEDIR=${HORDEDIR} APACHE_CONF=${APACHE_CONF} HORDESBIN=${HORDESBIN}	\
+		HORDEADMUSR=${HORDEADMUSR} HORDEGRP=${WWWGRP}
 
 HORDEDIR=	${PREFIX}/${LHORDEDIR}
 HORDESBIN=	${PREFIX}/${LHORDESBIN}
@@ -233,13 +248,15 @@ USE_PHP+=	mcal
 . endif
 .endif
 
+PATCHES2RM=	po/translation.php config/conf.xml scripts/sql/README	\
+		config/mime_drivers.php.dist config/registry.php.dist
+SEDIN2RM=	lib/Horde/Auth/mcal.php config/conf.xml docs/INSTALL	\
+		config/mime_drivers.php.dist
+
 .include <bsd.port.pre.mk>	# Required to test PHP_VER
 
 pre-configure:
-	@${RM} ${WRKSRC}/po/translation.php.orig	\
-		${WRKSRC}/config/conf.xml.orig		\
-		${WRKSRC}/scripts/sql/README.orig	\
-		${WRKSRC}/config/mime_drivers.php.dist.orig
+	@${RM} ${PATCHES2RM:S|^|${WRKSRC}/|:S|$|.orig|}
 	@${SED} -e "s:/home/httpd/html/horde:${HORDEDIR}:"				\
 		-e "s:php_value auto_prepend_file:# php_value auto_prepend_file:"	\
 		-e "s:/home/httpd/phplib:${PEARDIR}:"					\
@@ -280,28 +297,30 @@ pre-configure:
 		${WRKSRC}/lib/Horde/Auth/mcal.php
 	@${REINPLACE_CMD} -e "s:/usr/local/apache/htdocs:${PREFIX}/www:g"	\
 		${WRKSRC}/docs/INSTALL
-	@${RM} ${WRKSRC}/lib/Horde/Auth/mcal.php.beforeHorde	\
-		${WRKSRC}/config/conf.xml.beforeHorde		\
-		${WRKSRC}/config/mime_drivers.php.dist.beforeHorde	\
-		${WRKSRC}/docs/INSTALL.beforeHorde
+	@${RM} ${SEDIN2RM:S|^|${WRKSRC}/|:S|$|.beforeHorde|}
 
 pre-install:
 .if !defined(WITHOUT_SUPPORTED_DB)
 	@if ! php -m | ${GREP} -q -e "mysql" ; then \
 	 if ! php -m | ${GREP} -q -e "pgsql" ; then \
 	  if ! php -m | ${GREP} -q -e "sybase" ; then \
+	   if ! php -m | ${GREP} -q -e "SQLite" ; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with a database support." ; \
-	    ${ECHO_MSG} "MySQL, PostgreSQL and Sybase (CTLIB or DBLIB)" ; \
+	    ${ECHO_MSG} "MySQL, PostgreSQL, SQLite and Sybase (CTLIB or DBLIB)" ; \
 	    ${ECHO_MSG} "can be used with PHP AND Horde." ; \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "(If everything will run on this machine, do not" ; \
 	    ${ECHO_MSG} " forget to install the database server-side!)" ; \
 	    ${ECHO_MSG} "" ; \
 	    ${FALSE} ; \
+	   fi ; \
 	  fi ; \
 	 fi ; \
 	fi
+.endif
+.if defined(WITH_SUPHP)
+	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .endif
 
 do-install:
@@ -337,6 +356,9 @@ do-install:
 .endif
 
 post-install:
+.if defined(WITH_SUPHP)
+	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.endif
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}

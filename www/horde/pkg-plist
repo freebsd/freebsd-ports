@@ -48,7 +48,9 @@ etc/horde/httpd.conf.horde
 %%HORDEDIR%%/config/registry.php
 %%HORDEDIR%%/config/registry.php.dist
 %%HORDEDIR%%/index.php
+%%HORDEDIR%%/js/addEvent.php
 %%HORDEDIR%%/js/alphaImageLoader.php
+%%HORDEDIR%%/js/ieEscGuard.js
 %%HORDEDIR%%/js/enter_key_trap.js
 %%HORDEDIR%%/js/form_assign.js
 %%HORDEDIR%%/js/form_helpers.js
@@ -58,6 +60,7 @@ etc/horde/httpd.conf.horde
 %%HORDEDIR%%/js/open_colorpicker.js
 %%HORDEDIR%%/js/popup.js
 %%HORDEDIR%%/js/sorter.js
+%%HORDEDIR%%/js/stripe.js
 %%HORDEDIR%%/js/tooltip.js
 %%HORDEDIR%%/lib/.htaccess
 %%HORDEDIR%%/lib/Block/color.php
@@ -69,6 +72,7 @@ etc/horde/httpd.conf.horde
 %%HORDEDIR%%/lib/Block/sunrise.php
 %%HORDEDIR%%/lib/Block/time.php
 %%HORDEDIR%%/lib/Block/weatherdotcom.php
+%%HORDEDIR%%/lib/Block/weatherdotcom_strings.php
 %%HORDEDIR%%/lib/File/PDF.php
 %%HORDEDIR%%/lib/File/PDF/fonts/courier.php
 %%HORDEDIR%%/lib/File/PDF/fonts/helvetica.php
@@ -211,7 +215,6 @@ etc/horde/httpd.conf.horde
 %%HORDEDIR%%/lib/Horde/MIME/Viewer/enriched.php
 %%HORDEDIR%%/lib/Horde/MIME/Viewer/enscript.php
 %%HORDEDIR%%/lib/Horde/MIME/Viewer/html.php
-%%HORDEDIR%%/lib/Horde/MIME/Viewer/icalendar.php
 %%HORDEDIR%%/lib/Horde/MIME/Viewer/images.php
 %%HORDEDIR%%/lib/Horde/MIME/Viewer/msexcel.php
 %%HORDEDIR%%/lib/Horde/MIME/Viewer/mspowerpoint.php
@@ -295,7 +298,10 @@ etc/horde/httpd.conf.horde
 %%HORDEDIR%%/lib/Horde/Serialize.php
 %%HORDEDIR%%/lib/Horde/SessionHandler.php
 %%HORDEDIR%%/lib/Horde/SessionHandler/dbm.php
+%%HORDEDIR%%/lib/Horde/SessionHandler/ldap.php
+%%HORDEDIR%%/lib/Horde/SessionHandler/memcached.php
 %%HORDEDIR%%/lib/Horde/SessionHandler/mysql.php
+%%HORDEDIR%%/lib/Horde/SessionHandler/none.php
 %%HORDEDIR%%/lib/Horde/SessionHandler/oci8.php
 %%HORDEDIR%%/lib/Horde/SessionHandler/pgsql.php
 %%HORDEDIR%%/lib/Horde/SessionHandler/sapdb.php
@@ -304,29 +310,26 @@ etc/horde/httpd.conf.horde
 %%HORDEDIR%%/lib/Horde/Share.php
 %%HORDEDIR%%/lib/Horde/String.php
 %%HORDEDIR%%/lib/Horde/SyncML.php
+%%HORDEDIR%%/lib/Horde/SyncML/Backend.php
 %%HORDEDIR%%/lib/Horde/SyncML/Command.php
 %%HORDEDIR%%/lib/Horde/SyncML/Command/Alert.php
 %%HORDEDIR%%/lib/Horde/SyncML/Command/Final.php
 %%HORDEDIR%%/lib/Horde/SyncML/Command/Get.php
 %%HORDEDIR%%/lib/Horde/SyncML/Command/Map.php
 %%HORDEDIR%%/lib/Horde/SyncML/Command/Put.php
-%%HORDEDIR%%/lib/Horde/SyncML/Command/Replace.php
 %%HORDEDIR%%/lib/Horde/SyncML/Command/Results.php
 %%HORDEDIR%%/lib/Horde/SyncML/Command/Status.php
 %%HORDEDIR%%/lib/Horde/SyncML/Command/Sync.php
-%%HORDEDIR%%/lib/Horde/SyncML/Command/Sync/Add.php
-%%HORDEDIR%%/lib/Horde/SyncML/Command/Sync/ContentSyncElement.php
-%%HORDEDIR%%/lib/Horde/SyncML/Command/Sync/Delete.php
-%%HORDEDIR%%/lib/Horde/SyncML/Command/Sync/Replace.php
-%%HORDEDIR%%/lib/Horde/SyncML/Command/Sync/SyncElement.php
+%%HORDEDIR%%/lib/Horde/SyncML/Command/SyncElement.php
+%%HORDEDIR%%/lib/Horde/SyncML/Constants.php
+%%HORDEDIR%%/lib/Horde/SyncML/Device.php
+%%HORDEDIR%%/lib/Horde/SyncML/Device/P800.php
+%%HORDEDIR%%/lib/Horde/SyncML/Device/Sync4j.php
+%%HORDEDIR%%/lib/Horde/SyncML/Device/Synthesis.php
+%%HORDEDIR%%/lib/Horde/SyncML/DeviceInfo.php
+%%HORDEDIR%%/lib/Horde/SyncML/ResultsSender.php
 %%HORDEDIR%%/lib/Horde/SyncML/State.php
 %%HORDEDIR%%/lib/Horde/SyncML/Sync.php
-%%HORDEDIR%%/lib/Horde/SyncML/Sync/OneWayFromClientSync.php
-%%HORDEDIR%%/lib/Horde/SyncML/Sync/OneWayFromServerSync.php
-%%HORDEDIR%%/lib/Horde/SyncML/Sync/RefreshFromClientSync.php
-%%HORDEDIR%%/lib/Horde/SyncML/Sync/RefreshFromServerSync.php
-%%HORDEDIR%%/lib/Horde/SyncML/Sync/SlowSync.php
-%%HORDEDIR%%/lib/Horde/SyncML/Sync/TwoWaySync.php
 %%HORDEDIR%%/lib/Horde/Template.php
 %%HORDEDIR%%/lib/Horde/Text.php
 %%HORDEDIR%%/lib/Horde/Text/Filter.php
@@ -435,6 +438,7 @@ etc/horde/httpd.conf.horde
 %%HORDEDIR%%/locale/ar_SY/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/bg_BG/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/bg_BG/help.xml
+%%HORDEDIR%%/locale/bs_BA/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/ca_ES/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/cs_CZ/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/cs_CZ/help.xml
@@ -450,6 +454,7 @@ etc/horde/httpd.conf.horde
 %%HORDEDIR%%/locale/et_EE/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/et_EE/help.xml
 %%HORDEDIR%%/locale/fa_IR/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/fa_IR/help.xml
 %%HORDEDIR%%/locale/fi_FI/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/fi_FI/help.xml
 %%HORDEDIR%%/locale/fr_FR/LC_MESSAGES/horde.mo
@@ -501,6 +506,7 @@ etc/horde/httpd.conf.horde
 %%HORDEDIR%%/po/README
 %%HORDEDIR%%/po/ar_SY.po
 %%HORDEDIR%%/po/bg_BG.po
+%%HORDEDIR%%/po/bs_BA.po
 %%HORDEDIR%%/po/ca_ES.po
 %%HORDEDIR%%/po/cs_CZ.po
 %%HORDEDIR%%/po/da_DK.po
@@ -551,6 +557,7 @@ etc/horde/httpd.conf.horde
 %%HORDEDIR%%/scripts/setup.php
 %%HORDEDIR%%/scripts/sql/README
 %%HORDEDIR%%/scripts/sql/README.OCI8
+%%HORDEDIR%%/scripts/sql/create.msde.sql
 %%HORDEDIR%%/scripts/sql/create.mysql.sql
 %%HORDEDIR%%/scripts/sql/create.oci8.sql
 %%HORDEDIR%%/scripts/sql/create.pgsql.sql
@@ -1491,6 +1498,8 @@ etc/horde/httpd.conf.horde
 @dirrm %%HORDEDIR%%/locale/cs_CZ
 @dirrm %%HORDEDIR%%/locale/ca_ES/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/ca_ES
+@dirrm %%HORDEDIR%%/locale/bs_BA/LC_MESSAGES
+@dirrm %%HORDEDIR%%/locale/bs_BA
 @dirrm %%HORDEDIR%%/locale/bg_BG/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/bg_BG
 @dirrm %%HORDEDIR%%/locale/ar_SY/LC_MESSAGES
@@ -1531,8 +1540,7 @@ etc/horde/httpd.conf.horde
 @dirrm %%HORDEDIR%%/lib/Horde/Text/tests
 @dirrm %%HORDEDIR%%/lib/Horde/Text/Filter
 @dirrm %%HORDEDIR%%/lib/Horde/Text
-@dirrm %%HORDEDIR%%/lib/Horde/SyncML/Sync
-@dirrm %%HORDEDIR%%/lib/Horde/SyncML/Command/Sync
+@dirrm %%HORDEDIR%%/lib/Horde/SyncML/Device
 @dirrm %%HORDEDIR%%/lib/Horde/SyncML/Command
 @dirrm %%HORDEDIR%%/lib/Horde/SyncML
 @dirrm %%HORDEDIR%%/lib/Horde/SessionHandler
@@ -1577,6 +1585,7 @@ etc/horde/httpd.conf.horde
 @dirrm %%HORDEDIR%%/lib/File/PDF
 @dirrm %%HORDEDIR%%/lib/File
 @dirrm %%HORDEDIR%%/lib/Block
+@unexec rmdir %D/%%HORDEDIR%%/lib/data 2>/dev/null || true
 @dirrm %%HORDEDIR%%/lib
 @dirrm %%HORDEDIR%%/js
 @unexec rmdir %D/%%HORDEDIR%%/config 2>/dev/null || true
