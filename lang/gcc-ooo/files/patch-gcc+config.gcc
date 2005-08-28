@@ -1,0 +1,11 @@
+--- gcc/config.gcc.orig	Thu Apr 22 00:12:35 2004
++++ gcc/config.gcc	Sat Aug 13 10:17:42 2005
+@@ -400,6 +400,8 @@
+       tm_defines="${tm_defines} FBSD_MAJOR=5" ;;
+     *-*-freebsd6 | *-*-freebsd[6].*)
+       tm_defines="${tm_defines} FBSD_MAJOR=6" ;;
++    *-*-freebsd7 | *-*-freebsd[7].*)
++      tm_defines="${tm_defines} FBSD_MAJOR=7" ;;
+     *)
+       echo 'Please update *-*-freebsd* in gcc/config.gcc'
+       exit 1
