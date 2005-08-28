@@ -13,7 +13,7 @@ MASTER_SITES=	http://zarb.org/~gc/fb//
 DISTNAME=	frozen-bubble-${PORTVERSION}
 EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER=	klaus.goger@reflex.at
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Throw colourful bubbles to build groups and destroy the groups
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SDL_perl.pm:${PORTSDIR}/devel/p5-SDL
