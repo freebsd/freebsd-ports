@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p./pre/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	PornView is an image viewer/manager
 
 LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif
@@ -31,6 +31,12 @@ CONFIGURE_ARGS+=	--enable-xine
 .elif defined(WITH_MPLAYER)
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 CONFIGURE_ARGS+=	--enable-mplayer
+.endif
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	WITH_NLS="@comment "
+.else
+PLIST_SUB+=	WITH_NLS=""
 .endif
 
 post-patch:
