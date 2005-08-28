@@ -34,8 +34,8 @@ ETDIR=		${PREFIX}/lib/enemyterritory
 
 do-build:
 .for f in et etded
-	@${ECHO} '#!/bin/sh' > ${WRKSRC}/${f}-tce
-	@${ECHO} 'exec ${PREFIX}/bin/${f} +set fs_game tcetest "$$@"' >> ${WRKSRC}/${f}-tce
+	@${ECHO_CMD} '#!/bin/sh' > ${WRKSRC}/${f}-tce
+	@${ECHO_CMD} 'exec ${PREFIX}/bin/${f} +set fs_game tcetest "$$@"' >> ${WRKSRC}/${f}-tce
 .endfor
 
 do-install:
