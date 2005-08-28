@@ -31,7 +31,6 @@
     SUBDIR += bogofilter
     SUBDIR += bogofilter-qdbm
     SUBDIR += bogofilter-sqlite
-    SUBDIR += bogofilter-tdb
     SUBDIR += bsfilter
     SUBDIR += bsmtp
     SUBDIR += bulk_mailer
