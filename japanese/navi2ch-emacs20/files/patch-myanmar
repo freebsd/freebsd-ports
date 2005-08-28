@@ -1,0 +1,110 @@
+--- navi2ch-board.el.orig	Sun May  2 23:41:51 2004
++++ navi2ch-board.el	Sun Aug 28 22:56:08 2005
+@@ -531,6 +531,15 @@
+   (navi2ch-load-info
+    (navi2ch-board-get-file-name board "spid.txt")))
+ 
++(defun navi2ch-board-save-cookies (board cookies)
++  (navi2ch-save-info
++   (navi2ch-board-get-file-name board "cookies.txt")
++   cookies))
++
++(defun navi2ch-board-load-cookies (board)
++  (navi2ch-load-info
++   (navi2ch-board-get-file-name board "cookies.txt")))
++
+ (defun navi2ch-board-select-view-range ()
+   (interactive)
+   (setq-default navi2ch-article-view-range
+--- navi2ch-multibbs.el.orig	Sun Sep 12 12:55:25 2004
++++ navi2ch-multibbs.el	Sun Aug 28 22:56:08 2005
+@@ -243,13 +243,13 @@
+   (let ((func (or (navi2ch-fboundp
+ 		   navi2ch-multibbs-send-message-retry-confirm-function)
+ 		  #'yes-or-no-p))
+-	spid)
++	cookies)
+     (unwind-protect
+ 	(let ((result (funcall func "Retry? ")))
+ 	  (when result
+-	    (setq spid (navi2ch-board-load-spid board)))
++	    (setq cookies (navi2ch-board-load-cookies board)))
+ 	  result)
+-      (navi2ch-board-save-spid board spid))))
++      (navi2ch-board-save-cookies board cookies))))
+ 
+ (defun navi2ch-multibbs-send-message
+   (from mail message subject board article)
+@@ -413,7 +413,7 @@
+   (from mail message subject bbs key time board article)
+   (let ((url         (navi2ch-board-get-bbscgi-url board))
+ 	(referer     (navi2ch-board-get-uri board))
+-	(spid        (navi2ch-board-load-spid board))
++	(cookies     (navi2ch-board-load-cookies board))
+ 	(param-alist (list
+ 		      (cons "submit" "書き込む")
+ 		      (cons "FROM"   (or from ""))
+@@ -424,21 +424,30 @@
+ 		      (if subject
+ 			  (cons "subject" subject)
+ 			(cons "key"    key)))))
+-    (setq spid
+-	  (when (and (consp spid)
+-		     (navi2ch-compare-times (cdr spid) (current-time)))
+-	    (car spid)))
++    (setq cookies
++	  (nconc (list (list "NAME" from)
++		       (list "MAIL" mail))
++		 (delq nil
++		       (mapcar (lambda (elt)
++				 (and (navi2ch-compare-times (cddr elt)
++							     (current-time))
++				      (not (member (car elt)
++						   '("NAME" "MAIL")))
++				      elt))
++			       cookies))))
+     (let ((proc
+ 	   (navi2ch-net-send-request
+ 	    url "POST"
+ 	    (list (cons "Content-Type" "application/x-www-form-urlencoded")
+-		  (cons "Cookie" (concat "NAME=" from "; MAIL=" mail
+-					 (if spid (concat "; SPID=" spid
+-							  "; PON=" spid))))
++		  (cons "Cookie"  (mapconcat (lambda (elt)
++					       (concat (car elt)
++						       "="
++						       (cadr elt)))
++					     cookies "; "))
+ 		  (cons "Referer" referer))
+ 	    (navi2ch-net-get-param-string param-alist))))
+-      (setq spid (navi2ch-net-send-message-get-spid proc))
+-      (if spid (navi2ch-board-save-spid board spid))
++      (navi2ch-board-save-cookies board
++				  (navi2ch-net-get-cookies proc cookies))
+       proc)))
+ 
+ (defun navi2ch-2ch-article-to-url
+--- navi2ch-net.el.orig	Sun Aug 28 22:55:41 2005
++++ navi2ch-net.el	Sun Aug 28 22:56:08 2005
+@@ -808,6 +808,21 @@
+ 		((string-match "^PON=\\([^;]+\\);" str)
+ 		 (return (cons (match-string 1 str) date))))))))
+ 
++(defun navi2ch-net-get-cookies (proc old-cookies)
++  (let ((case-fold-search t)
++	(cookies (reverse old-cookies)))
++    (dolist (pair (navi2ch-net-get-header proc) (nreverse cookies))
++      (when (string-equal (car pair) "Set-Cookie")
++	(let* ((str (cdr pair))
++	       (date (when (string-match "expires=\\([^;]+\\);" str)
++		       (navi2ch-http-date-decode (match-string 1 str)))))
++	  (when (string-match "^\\([^=]+\\)=\\([^;]*\\)" str)
++	    (let ((old (assoc (match-string 1 str) cookies)))
++	      (when old (setq cookies (delq old cookies))))
++	    (push (cons (match-string 1 str)
++			(cons (match-string 2 str) date))
++		  cookies)))))))
++
+ (defun navi2ch-net-download-logo (board)
+   (let ((coding-system-for-read 'binary)
+ 	(coding-system-for-write 'binary)
