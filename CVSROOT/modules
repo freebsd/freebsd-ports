@@ -13455,3 +13455,4 @@ ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
 zu-ooodict-ZA	ports/editors/ooodict-zu_ZA
 zziplib		ports/devel/zziplib
+p5-JSON		ports/converters/p5-JSON
