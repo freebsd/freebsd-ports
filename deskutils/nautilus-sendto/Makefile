@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	nautilus-sendto
-PORTVERSION=	0.3
-PORTREVISION=	5
+PORTVERSION=	0.4
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/nautilus-sendto/0.3
+MASTER_SITE_SUBDIR=	sources/nautilus-sendto/0.4
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integration between nautilus, evolution, and gaim
