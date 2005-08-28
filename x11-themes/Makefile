@@ -2,7 +2,7 @@
 #
     SUBDIR += xfce4-icon-theme
 
-    COMMENT = X Windows System themes
+    COMMENT = X11 themes
 
     SUBDIR += baghira
     SUBDIR += bluecurve-themes
