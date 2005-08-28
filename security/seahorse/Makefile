@@ -7,6 +7,7 @@
 
 PORTNAME=	seahorse
 PORTVERSION=	0.7.9
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=sources/${PORTNAME}/0.7
@@ -65,7 +66,7 @@ CONFIGURE_ARGS+=--disable-ldap
 .endif
 
 .if !defined(WITHOUT_HKP)
-LIB_DEPENDS+=	soup-2.2.7:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS+=	soup-2.2.9:${PORTSDIR}/devel/libsoup
 .else
 CONFIGURE_ARGS+=--disable-hkp
 .endif
