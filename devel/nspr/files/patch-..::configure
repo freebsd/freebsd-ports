@@ -1,7 +1,7 @@
---- ../configure.orig	Wed Mar 26 21:21:19 2003
-+++ ../configure	Sun Jun  1 13:08:11 2003
-@@ -3300,16 +3300,21 @@
- #define HAVE_BSD_FLOCK 1
+--- ../configure.orig	Thu Aug  4 21:32:00 2005
++++ ../configure	Thu Aug  4 21:35:41 2005
+@@ -3379,16 +3379,21 @@
+ #define HAVE_SOCKLEN_T 1
  EOF
  
 -    CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
@@ -24,3 +24,11 @@
      MDCPUCFG_H=_freebsd.cfg
      PR_MD_CSRCS=freebsd.c
      ;;
+@@ -5729,6 +5734,7 @@
+ config/nsprincl.mk
+ config/nsprincl.sh
+ config/nspr-config
++config/nspr.pc
+ lib/Makefile 
+ lib/ds/Makefile 
+ lib/libc/Makefile 
