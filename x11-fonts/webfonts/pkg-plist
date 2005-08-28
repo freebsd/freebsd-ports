@@ -1,5 +1,4 @@
 @comment $FreeBSD$
-%%FONTSDIR%%/LICENSE
 %%FONTSDIR%%/andalemo.ttf
 %%FONTSDIR%%/arial.ttf
 %%FONTSDIR%%/arialbd.ttf
@@ -12,7 +11,7 @@
 %%FONTSDIR%%/courbd.ttf
 %%FONTSDIR%%/courbi.ttf
 %%FONTSDIR%%/couri.ttf
-%%PKG_NSALIAS%%%%FONTSDIR%%/fonts.alias
+%%FCACHE%%@unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
 %%FONTSDIR%%/fonts.dir
 %%FONTSDIR%%/fonts.scale
 %%FONTSDIR%%/georgia.ttf
@@ -33,6 +32,9 @@
 %%FONTSDIR%%/verdanai.ttf
 %%FONTSDIR%%/verdanaz.ttf
 %%FONTSDIR%%/webdings.ttf
+%%DOCSDIR%%/LICENSE
+@dirrm %%DOCSDIR%%
 @dirrm %%FONTSDIR%%
-%%PKG_OLDXF86%%@exec ln -fs %D/%%FONTSDIR%% %D/%%TTFONTSDIR%%/%%FONTNAME%%
-%%PKG_OLDXF86%%@unexec rm -f %D/%%TTFONTSDIR%%/%%FONTNAME%%
+%%OLDXF86%%@exec ln -fs %D/%%FONTSDIR%% %D/%%TTFONTSDIR%%/%%FONTNAME%%
+%%OLDXF86%%@unexec rm -f %D/%%TTFONTSDIR%%/%%FONTNAME%%
+%%FCACHE%%@exec %%X11BASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true
