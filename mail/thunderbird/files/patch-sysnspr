@@ -1,0 +1,21 @@
+--- directory/c-sdk/ldap/include/Makefile.in.orig	Sat Aug 20 02:15:05 2005
++++ directory/c-sdk/ldap/include/Makefile.in	Sat Aug 20 02:15:55 2005
+@@ -76,7 +76,6 @@
+ 	$(INSTALL) $(INSTALLFLAGS) -m 644 $(HEADERS) $(INCLUDEDIR)
+ 	$(INSTALL) $(INSTALLFLAGS) -m 644 $(PRIVATEHEADERS) $(PRIVATEINCDIR)
+ 	rm -rf $(NSPRINCDIR)/*
+-	cp -r $(DIST)/$(OBJDIR_NAME)/include/nspr/* $(NSPRINCDIR)
+ 
+ $(INCLUDEDIR):	FORCE
+ 	$(NSINSTALL) -D $(INCLUDEDIR)
+--- directory/c-sdk/ldap/libraries/libprldap/Makefile.in.orig	Sat Aug 20 02:14:33 2005
++++ directory/c-sdk/ldap/libraries/libprldap/Makefile.in	Sat Aug 20 02:14:39 2005
+@@ -58,7 +58,7 @@
+ 
+ LOCAL_INCLUDES  = -I$(PUBLIC)/nspr
+ INCLUDES	+= -I$(DISTHDIR) -I$(HDIR) -I$(INSTALLDIR)/include \
+-                   -I$(DIST)/include/nspr
++                   $(shell nspr-config --cflags)
+ DEFINES		+= $(DEFS)
+ 
+ PLATFORMCFLAGS	= -DUSE_WAITPID -DNEEDPROTOS

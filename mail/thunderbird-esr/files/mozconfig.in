@@ -33,12 +33,13 @@ mk_add_options XP_UNIX=1
 export PERL="@PERL@"
 mk_add_options PERL=$PERL
 # Configure options for installation
-ac_add_options --prefix=@PREFIX@
+ac_add_options --prefix=@FAKEDIR@
 ######################################################################
 # Use ports for these libraries
 ac_add_options --with-system-jpeg=@LOCALBASE@
 ac_add_options --with-system-zlib
 ac_add_options --with-system-png=@LOCALBASE@
+ac_add_options --with-system-nspr
 ######################################################################
 # set compile/link features
 ac_add_options --with-pthreads
