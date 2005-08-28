@@ -6,26 +6,19 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.2
 CATEGORIES+=	net
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-${DOWNLOADVERSION}
-
-PATCH_SITES=	http://download.berlios.de/pub/mldonkey/spiralvoice/patchpacks/
-#PATCHFILES=	patch_pack${PORTVERSION:C/^.\..\.(.)/\1/:C/\.//}.gz
 
 MAINTAINER?=	lioux@FreeBSD.org
 COMMENT?=	A OCAML client for multiple peer-to-peer networks
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
-#DOWNLOADVERSION=${PORTVERSION:R}
-DOWNLOADVERSION=${PORTVERSION}
-
 NO_LATEST_LINK=	yes
-CONFLICTS=	mldonkey-[0-9]* mldonkey-{core,gui}-[0.9]*
+CONFLICTS=	mldonkey-[0-9]*
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
@@ -44,8 +37,6 @@ CONFIGURE_ENV+=	\
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-#WRKSRC=		${WRKDIR}/${PORTNAME}-${DOWNLOADVERSION}
-
 ###
 ## Options activation
 ###
@@ -57,12 +48,20 @@ CONFIGURE_ENV+=	\
 CONFIGURE_ARGS+=--disable-gui \
 		--disable-gd
 PLIST_SUB+=	CORE="" GUI="@comment " GUICORE="@comment "
+CONFLICTS+=	mldonkey-core-[0.9]* mldonkey-core-stable-[0.9]* \
+		mldonkey-devel-[0-9]*
 PKGNAMESUFFIX=	-core-devel
 .else
 PLIST_SUB+=	GUI=""
+CONFLICTS+=	mldonkey-gui-[0.9]*
+.if !defined(WITHOUT_CORE)
+CONFLICTS+=	mldonkey-devel-[0-9]*
+.endif
 BUILD_DEPENDS+=	lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk \
 		${LOCALBASE}/lib/ocaml/jabbr.cma:${PORTSDIR}/net/ocaml-jabbr
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
+
+CONFIGURE_ARGS+=--enable-gui=newgui1
 # we don't need lablgtk as RUN dependency, but we need gtk+glib
 USE_GNOME=	gtk12
 
@@ -78,6 +77,7 @@ PLIST_SUB+=	CORE=""	GUICORE=""
 DOCFILES=	Authors.txt Bugs.txt ChangeLog Developers.txt FAQ.html \
 		Install.txt Readme.txt Todo.txt ed2k_links.txt
 PORTDOCS=	${DOCFILES}
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -122,6 +122,10 @@ post-configure:
 		-e 's|^(PTHREAD_CFLAGS[^=]*=).*$$|\1${PTHREAD_CFLAGS}|' \
 		-e 's|^(PTHREAD_LIBS[^=]*=).*$$|\1${PTHREAD_LIBS}|' \
 		${BUILD_WRKSRC}/config/Makefile.config
+
+pre-install:
+	@${SED} -e 's,%%DOCSDIR%%,${DOCSDIR},' \
+		< ${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
 do-install:
 .ifndef(WITHOUT_CORE)
