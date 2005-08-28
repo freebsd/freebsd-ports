@@ -114,6 +114,7 @@
     SUBDIR += narval
     SUBDIR += nautilus-sendto
     SUBDIR += notebook
+    SUBDIR += notification-daemon
     SUBDIR += offix-trash
     SUBDIR += pal
     SUBDIR += phpgroupware
