@@ -17,9 +17,9 @@ include/kmldonkey/hostmanager.h
 include/kmldonkey/infoiface.h
 include/kmldonkey/kmldonkeyiface.h
 include/kmldonkey/mldonkeyappletiface.h
+include/kmldonkey/mldplugin.h
 include/kmldonkey/network.h
 include/kmldonkey/page.h
-include/kmldonkey/plugin.h
 include/kmldonkey/roominfo.h
 include/kmldonkey/searchinfo.h
 include/kmldonkey/searchquery.h
@@ -33,9 +33,8 @@ lib/kde3/kio_mldonkey.la
 lib/kde3/kio_mldonkey.so
 lib/kde3/kmldonkey_debugpage.la
 lib/kde3/kmldonkey_debugpage.so
-lib/kde3/mldonkeyapplet.la
-lib/kde3/mldonkeyapplet.so
-lib/kde3/mldonkeyapplet.so.1
+lib/kde3/mldonkey_panelapplet.la
+lib/kde3/mldonkey_panelapplet.so
 lib/libkmldonkey.la
 lib/libkmldonkey.so
 lib/libkmldonkey.so.4
@@ -46,11 +45,40 @@ share/applnk/Internet/kmldonkey.desktop
 share/applnk/Settings/Network/kcmdonkey.desktop
 share/apps/kicker/applets/mldonkeyapplet.desktop
 share/apps/kmldonkey/eventsrc
+share/apps/kmldonkey/images/networks/bittorrent.png
+share/apps/kmldonkey/images/networks/directconnect.png
+share/apps/kmldonkey/images/networks/donkey.png
+share/apps/kmldonkey/images/networks/fasttrack.png
+share/apps/kmldonkey/images/networks/gnutella.png
+share/apps/kmldonkey/images/networks/opennapster.png
+share/apps/kmldonkey/images/networks/soulseek.png
+share/apps/kmldonkey/images/networks/unknown.png
 share/apps/kmldonkey/kmldonkeyui.rc
 share/apps/konqueror/servicemenus/ed2k_slurp.desktop
 share/apps/mldonkeyapplet/pics/mld-launchgui.png
 share/apps/mldonkeyapplet/pics/mld-mutedonkey.png
 share/apps/mldonkeyapplet/pics/mld-unmutedonkey.png
+share/doc/HTML/de/kmldonkey/common
+share/doc/HTML/de/kmldonkey/index.cache.bz2
+share/doc/HTML/de/kmldonkey/index.docbook
+share/doc/HTML/et/kmldonkey/common
+share/doc/HTML/et/kmldonkey/index.cache.bz2
+share/doc/HTML/et/kmldonkey/index.docbook
+share/doc/HTML/it/kmldonkey/common
+share/doc/HTML/it/kmldonkey/index.cache.bz2
+share/doc/HTML/it/kmldonkey/index.docbook
+share/doc/HTML/nl/kmldonkey/common
+share/doc/HTML/nl/kmldonkey/index.cache.bz2
+share/doc/HTML/nl/kmldonkey/index.docbook
+share/doc/HTML/pt/kmldonkey/common
+share/doc/HTML/pt/kmldonkey/index.cache.bz2
+share/doc/HTML/pt/kmldonkey/index.docbook
+share/doc/HTML/ru/kmldonkey/common
+share/doc/HTML/ru/kmldonkey/index.cache.bz2
+share/doc/HTML/ru/kmldonkey/index.docbook
+share/doc/HTML/sv/kmldonkey/common
+share/doc/HTML/sv/kmldonkey/index.cache.bz2
+share/doc/HTML/sv/kmldonkey/index.docbook
 share/icons/hicolor/128x128/apps/kmldonkey.png
 share/icons/hicolor/128x128/apps/mldonkey.png
 share/icons/hicolor/16x16/apps/kmldonkey.png
@@ -63,30 +91,25 @@ share/icons/hicolor/48x48/apps/kmldonkey.png
 share/icons/hicolor/48x48/apps/mldonkey.png
 share/icons/hicolor/64x64/apps/kmldonkey.png
 share/icons/hicolor/64x64/apps/mldonkey.png
-share/locale/br/LC_MESSAGES/kmldonkey.mo
 share/locale/ca/LC_MESSAGES/kmldonkey.mo
 share/locale/cy/LC_MESSAGES/kmldonkey.mo
-share/locale/da/LC_MESSAGES/kmldonkey.mo
 share/locale/de/LC_MESSAGES/kmldonkey.mo
-share/locale/en_GB/LC_MESSAGES/kmldonkey.mo
+share/locale/el/LC_MESSAGES/kmldonkey.mo
 share/locale/es/LC_MESSAGES/kmldonkey.mo
 share/locale/et/LC_MESSAGES/kmldonkey.mo
-share/locale/fr/LC_MESSAGES/kmldonkey.mo
-share/locale/ga/LC_MESSAGES/kmldonkey.mo
 share/locale/hu/LC_MESSAGES/kmldonkey.mo
 share/locale/is/LC_MESSAGES/kmldonkey.mo
 share/locale/it/LC_MESSAGES/kmldonkey.mo
+share/locale/lt/LC_MESSAGES/kmldonkey.mo
+share/locale/mt/LC_MESSAGES/kmldonkey.mo
 share/locale/nb/LC_MESSAGES/kmldonkey.mo
 share/locale/nl/LC_MESSAGES/kmldonkey.mo
-share/locale/pl/LC_MESSAGES/kmldonkey.mo
 share/locale/pt/LC_MESSAGES/kmldonkey.mo
 share/locale/pt_BR/LC_MESSAGES/kmldonkey.mo
 share/locale/ro/LC_MESSAGES/kmldonkey.mo
 share/locale/ru/LC_MESSAGES/kmldonkey.mo
-share/locale/sr/LC_MESSAGES/kmldonkey.mo
 share/locale/sv/LC_MESSAGES/kmldonkey.mo
 share/locale/ta/LC_MESSAGES/kmldonkey.mo
-share/locale/tr/LC_MESSAGES/kmldonkey.mo
 share/locale/zh_CN/LC_MESSAGES/kmldonkey.mo
 share/services/ed2k.protocol
 share/services/kded/kmldonkeyd.desktop
@@ -100,14 +123,12 @@ share/servicetypes/kmldonkey_plugin.desktop
 @unexec rmdir %D/share/services 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_CN 2>/dev/null || true
-@unexec rmdir %D/share/locale/sr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/sr 2>/dev/null || true
 @unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/ro 2>/dev/null || true
 @unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/pt 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl 2>/dev/null || true
+@unexec rmdir %D/share/locale/el/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/el 2>/dev/null || true
 @unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/ca 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/64x64/apps 2>/dev/null || true
@@ -124,10 +145,31 @@ share/servicetypes/kmldonkey_plugin.desktop
 @unexec rmdir %D/share/icons/hicolor/128x128 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/sv/kmldonkey
+@unexec rmdir %D/share/doc/HTML/sv 2>/dev/null || true
+@dirrm share/doc/HTML/ru/kmldonkey
+@unexec rmdir %D/share/doc/HTML/ru 2>/dev/null || true
+@dirrm share/doc/HTML/pt/kmldonkey
+@unexec rmdir %D/share/doc/HTML/pt 2>/dev/null || true
+@dirrm share/doc/HTML/nl/kmldonkey
+@unexec rmdir %D/share/doc/HTML/nl 2>/dev/null || true
+@dirrm share/doc/HTML/it/kmldonkey
+@unexec rmdir %D/share/doc/HTML/it 2>/dev/null || true
+@dirrm share/doc/HTML/et/kmldonkey
+@unexec rmdir %D/share/doc/HTML/et 2>/dev/null || true
+@dirrm share/doc/HTML/en/kmldonkey-apidocs/src/html
+@dirrm share/doc/HTML/en/kmldonkey-apidocs/src
+@dirrm share/doc/HTML/en/kmldonkey-apidocs
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@dirrm share/doc/HTML/de/kmldonkey
+@unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
 @dirrm share/apps/mldonkeyapplet/pics
 @dirrm share/apps/mldonkeyapplet
 @unexec rmdir %D/share/apps/konqueror/servicemenus 2>/dev/null || true
 @unexec rmdir %D/share/apps/konqueror 2>/dev/null || true
+@dirrm share/apps/kmldonkey/images/networks
+@dirrm share/apps/kmldonkey/images
 @dirrm share/apps/kmldonkey
 @unexec rmdir %D/share/apps/kicker/applets 2>/dev/null || true
 @unexec rmdir %D/share/apps/kicker 2>/dev/null || true
