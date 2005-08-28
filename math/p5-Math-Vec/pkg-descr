@@ -1,0 +1,11 @@
+This module was adapted from Math::Vector.
+
+It uses most of the same algorithms, and currently preserves the same
+names as the original functions, though some aliases have been added
+to make the interface more natural.
+
+The "object" for the object oriented calling style is a blessed array
+reference which contains a vector of the form [x,y,z]. Methods will
+typically return a list.
+
+WWW: http://search.cpan.org/dist/Math-Vec/
