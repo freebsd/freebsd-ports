@@ -1,0 +1,96 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# Copied from databases/phpmyadmin.
+# Used if WITH_SUPHP has been defined.
+
+PATH=/usr/sbin:/usr/bin:/bin ; export PATH
+
+hordedir=%%HORDEDIR%%
+hordeusr=%%HORDEADMUSR%%
+hordegrp=%%HORDEGRP%%
+
+hordegcos="Horde Owner"
+hordehome=/nonexistent
+hordeshell=/sbin/nologin
+
+create_group() {
+    local user group gcos home shell
+
+    user=$1
+    group=$2
+    gcos=$3
+    home=$4
+    shell=$5
+
+    if pw groupadd -n $group ; then
+	echo "===> Group $group created"
+    else
+	cat <<-EOERRORMSG
+	*** Failed to create the $group group.
+
+	Please add the $user user and $group group
+	manually with the commands:
+
+	    pw groupadd -n $group
+	    pw useradd -n $user -g $group -c "$gcos" \\
+	        -d $home -s $shell -h -
+
+	and retry installing this package.
+	EOERRORMSG
+	exit 1
+    fi
+}
+
+
+create_user() {
+    local user group gcos home shell
+
+    user=$1
+    group=$2
+    gcos=$3
+    home=$4
+    shell=$5
+
+    if pw useradd -n $user -g $group -c "$gcos" -d $home -s $shell -h - ; then
+	echo "===> Created $user user"
+    else
+	cat <<-EOERRORMSG
+	*** Failed to create the $user user.
+
+	Please add the $user user manually with the command:
+
+	    pw useradd -n $user -g $group -c "$gcos" \\
+		        -d $home -s $shell -h -
+
+	and retry installing this package.
+	EOERRORMSG
+	exit 1
+    fi
+}
+
+
+case $2 in
+    PRE-INSTALL)
+
+        # Create the horde user and group if they do not already exist
+
+        if pw user show -n $hordeusr >/dev/null 2>&1 ; then
+	    echo "===> Using pre-existing user $hordeusr"
+	else
+	    if ! pw group show -n $hordegrp >/dev/null 2>&1 ; then
+		create_group $hordeusr $hordegrp "$hordegcos" $hordehome \
+		    $hordeshell
+	    fi
+	    create_user $hordeusr $hordegrp "$hordegcos" $hordehome $hordeshell
+	fi
+	;;
+    POST-INSTALL)
+
+    	# Change ownership of the Horde directory
+
+        echo "===> Adjusting file ownership in $hordedir"
+        chown -R $hordeusr:$hordegrp $hordedir || exit 1
+	;;
+esac
