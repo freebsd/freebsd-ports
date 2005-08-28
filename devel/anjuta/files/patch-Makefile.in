@@ -1,30 +1,24 @@
---- Makefile.in.orig	Wed May 14 13:01:45 2003
-+++ Makefile.in	Wed May 14 13:02:02 2003
-@@ -281,17 +281,17 @@
+--- Makefile.in.orig	Wed Aug 17 02:27:09 2005
++++ Makefile.in	Wed Aug 17 02:27:33 2005
+@@ -395,14 +395,14 @@
+ 	  rm -f "$(DESTDIR)$(anjuta_glade_filedir)/$$f"; \
  	done
- 
  install-anjutadocDATA: $(anjutadoc_DATA)
 -	@$(NORMAL_INSTALL)
--	$(mkinstalldirs) $(DESTDIR)$(anjutadocdir)
+-	test -z "$(anjutadocdir)" || $(mkdir_p) "$(DESTDIR)$(anjutadocdir)"
 -	@list='$(anjutadoc_DATA)'; for p in $$list; do \
--	  if test -f $(srcdir)/$$p; then \
--	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(anjutadocdir)/$$p"; \
--	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(anjutadocdir)/$$p; \
--	  else if test -f $$p; then \
--	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(anjutadocdir)/$$p"; \
--	    $(INSTALL_DATA) $$p $(DESTDIR)$(anjutadocdir)/$$p; \
--	  fi; fi; \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  f=$(am__strip_dir) \
+-	  echo " $(anjutadocDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(anjutadocdir)/$$f'"; \
+-	  $(anjutadocDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(anjutadocdir)/$$f"; \
 -	done
 +#	@$(NORMAL_INSTALL)
-+#	$(mkinstalldirs) $(DESTDIR)$(anjutadocdir)
++#	test -z "$(anjutadocdir)" || $(mkdir_p) "$(DESTDIR)$(anjutadocdir)"
 +#	@list='$(anjutadoc_DATA)'; for p in $$list; do \
-+#	  if test -f $(srcdir)/$$p; then \
-+#	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(anjutadocdir)/$$p"; \
-+#	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(anjutadocdir)/$$p; \
-+#	  else if test -f $$p; then \
-+#	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(anjutadocdir)/$$p"; \
-+#	    $(INSTALL_DATA) $$p $(DESTDIR)$(anjutadocdir)/$$p; \
-+#	  fi; fi; \
++#	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
++#	  f=$(am__strip_dir) \
++#	  echo " $(anjutadocDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(anjutadocdir)/$$f'"; \
++#	  $(anjutadocDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(anjutadocdir)/$$f"; \
 +#	done
  
  uninstall-anjutadocDATA:
