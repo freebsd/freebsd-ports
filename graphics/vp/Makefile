@@ -9,7 +9,7 @@ PORTNAME=	vp
 PORTVERSION=	1.5
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	http://math.smsu.edu/~erik/files/
+MASTER_SITES=	http://math.missouristate.edu/~erik/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image viewer for X
