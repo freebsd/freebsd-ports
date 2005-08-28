@@ -6,13 +6,18 @@
 #
 
 PORTNAME=	rar
-PORTVERSION=	3.41
+PORTVERSION=	3.5
 PORTEPOCH=	1
 CATEGORIES=	archivers
-MASTER_SITES=	http://files10.rarlab.com/rar/
-DISTNAME=	rarbsd-3.4.1
+MASTER_SITES=	http://files1.rarlab.com/rar/ \
+		http://files2.rarlab.com/rar/ \
+		http://files3.rarlab.com/rar/ \
+		http://files4.rarlab.com/rar/ \
+		http://files5.rarlab.com/rar/ \
+		http://files6.rarlab.com/rar/
+DISTNAME=	rarbsd-3.5.0
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File archiver (binary port)
 
 ONLY_FOR_ARCHS=	i386
