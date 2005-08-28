@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mercury
-DISTVERSION=	1709_RC13
-PORTEPOCH=	1
+DISTVERSION=	1710_B02
+PORTEPOCH=	2
 CATEGORIES=	net java
 MASTER_SITES=	http://70.25.151.230/		\
 		http://download.mercury.to/	\
@@ -37,6 +37,7 @@ LINSTDIR?=	share/Mercury
 INSTDIR=	${PREFIX}/${LINSTDIR}
 PLIST_SUB=	INSTDIR=${LINSTDIR}
 SUB_DIRS=	lib resources
+DIR2PRUNE=	resources/AppData/Games
 
 .if defined(WITH_VIDEO)	# Experimental
 VIDJAR=		VidConf-libs.jar
@@ -55,6 +56,7 @@ do-install:
 	cd ${WRKDIR} && ${FIND} ${sd} -type d -exec ${MKDIR} ${INSTDIR}/{} \;
 	cd ${WRKDIR} && ${FIND} ${sd} -type f -exec ${INSTALL_DATA} {} ${INSTDIR}/{} \;
 .endfor
+	@${RMDIR} ${DIR2PRUNE:S|^|${INSTDIR}/|}
 .if defined(WITH_VIDEO)
 	${INSTALL_DATA} ${_DISTDIR}/${VIDJAR} ${INSTDIR}/lib
 .endif

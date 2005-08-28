@@ -1,19 +1,14 @@
 bin/Mercury_Messenger
 %%INSTDIR%%/Mercury_Messenger
 %%INSTDIR%%/lib/JFlash.jar
-%%INSTDIR%%/lib/Skins.jar
-%%VID%%%%INSTDIR%%/lib/%%VIDJAR%%
+%%VID%%%%INSTDIR%%/lib/VidConf-libs.jar
+%%INSTDIR%%/lib/XML.jar
 %%INSTDIR%%/lib/dMSN.jar
 %%INSTDIR%%/lib/dllStuff.jar
 %%INSTDIR%%/lib/jdom1_0.jar
-%%INSTDIR%%/lib/looks-1.3b1.jar
 %%INSTDIR%%/lib/xmlpull.jar
 %%INSTDIR%%/resources/AppData/Backgrounds/Default.png
 %%INSTDIR%%/resources/AppData/CustomEmoticons/MSN6.zip
-%%INSTDIR%%/resources/AppData/Games/ExampleGame/Game$1.class
-%%INSTDIR%%/resources/AppData/Games/ExampleGame/Game.class
-%%INSTDIR%%/resources/AppData/Games/ExampleGame/Game.java
-%%INSTDIR%%/resources/AppData/Games/ExampleGame/compile.bat
 %%INSTDIR%%/resources/AppData/LoginImages/Default.gif
 %%INSTDIR%%/resources/AppData/Plugins/ContactExample/Plugin.class
 %%INSTDIR%%/resources/AppData/Plugins/ContactExample/Plugin.java
@@ -142,11 +137,10 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/UI/dialogs/RemovedContact.xml
 %%INSTDIR%%/resources/UI/dialogs/RenameGroup.xml
 %%INSTDIR%%/resources/UI/panels/ConferencePanel.xml
-%%INSTDIR%%/resources/lang/Test/it.xml
-%%INSTDIR%%/resources/lang/Test/nl.xml
 %%INSTDIR%%/resources/lang/en.xml
-%%INSTDIR%%/resources/menu/AccountTab.xml
+%%INSTDIR%%/resources/menu/FirstTab.xml
 %%INSTDIR%%/resources/menu/MSN.xml
+%%INSTDIR%%/resources/menu/RSS.xml
 %%INSTDIR%%/resources/menu/Tray.xml
 %%INSTDIR%%/resources/menu/XMPP.xml
 %%INSTDIR%%/resources/settings/Default_Account.xml
@@ -171,7 +165,6 @@ bin/Mercury_Messenger
 @dirrm %%INSTDIR%%/resources/text
 @dirrm %%INSTDIR%%/resources/settings
 @dirrm %%INSTDIR%%/resources/menu
-@dirrm %%INSTDIR%%/resources/lang/Test
 @dirrm %%INSTDIR%%/resources/lang
 @dirrm %%INSTDIR%%/resources/UI/panels
 @dirrm %%INSTDIR%%/resources/UI/dialogs
@@ -203,8 +196,6 @@ bin/Mercury_Messenger
 @dirrm %%INSTDIR%%/resources/AppData/Plugins/ContactExample
 @dirrm %%INSTDIR%%/resources/AppData/Plugins
 @dirrm %%INSTDIR%%/resources/AppData/LoginImages
-@dirrm %%INSTDIR%%/resources/AppData/Games/ExampleGame
-@dirrm %%INSTDIR%%/resources/AppData/Games
 @dirrm %%INSTDIR%%/resources/AppData/CustomEmoticons
 @dirrm %%INSTDIR%%/resources/AppData/Backgrounds
 @dirrm %%INSTDIR%%/resources/AppData
