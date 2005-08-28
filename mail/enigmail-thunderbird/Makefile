@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	-thunderbird
 
 COMMENT=	A GnuPG extension for the Thunderbird mail client
@@ -18,6 +19,6 @@ PKGINSTALL=	${.CURDIR}/pkg-install
 PKGDEINSTALL=	${.CURDIR}/pkg-deinstall
 
 LOCAL_SRCDIR=	mail/thunderbird
-LOCAL_SUBDIR=	lib/thunderbird/lib/thunderbird-1.0.6
+LOCAL_SUBDIR=	lib/thunderbird
 
 .include "${MASTERDIR}/Makefile"
