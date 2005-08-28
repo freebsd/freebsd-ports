@@ -8,3 +8,6 @@ when starting fMSX and you're using -DBPP32, try compiling with
 For FreeBSD users: run "make clean config" and unselect BPP32 and
 select BPP16 or BPP24 as options.
 *******************************************************************
+
+See ftp://ftp.komkon.org//pub/EMUL8/MSX/Carts for cartridge ROMs
+

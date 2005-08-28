@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Dec 31 20:01:16 2001
-+++ Makefile	Sat Feb 28 11:20:12 2004
+--- Makefile.orig	Sun Aug 21 13:35:41 2005
++++ Makefile	Sun Aug 21 13:36:51 2005
 @@ -51,10 +51,10 @@
  # If you are getting linker errors about not found X11 functions,
  # change the -L/usr/X11R6/lib to the directory where X11
@@ -12,15 +12,6 @@
 +DEFINES = -DFMSX -DUNIX -DLSB_FIRST -DMITSHM \
 +          -DDISK -DNARROW -DSOUND -D%%BPP%% -DZLIB
 +CFLAGS  = -O3 -Wall -I${X11BASE}/include -L${X11BASE}/lib ${DEFINES}
- OBJECTS = fMSX.o MSX.o Patch.o Debug.o Disk.o Sound.o \
+ OBJECTS = fMSX.o MSX.o Patch.o Debug.o Disk.o Floppy.o Sound.o \
  	  Z80.o I8255.o AY8910.o YM2413.o SCC.o V9938.o I8251.o \
  	  Unix.o LibUnix.o SndUnix.o 
-@@ -71,7 +71,7 @@
- # fMSX Unix/X requires X11 libraries. See note above if you are
- # experiencing any problems.
- fmsx:	${OBJECTS}
--	${CC} ${CFLAGS} -o fmsx ${OBJECTS} -lXext -lX11 -lz
-+	${CC} ${CFLAGS} -o fmsx ${OBJECTS} -lXext -lX11 -L${X11BASE}/lib -lz
- 
- # Clean up.
- clean:

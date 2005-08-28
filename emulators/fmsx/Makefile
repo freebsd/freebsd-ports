@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	fmsx
-PORTVERSION=	2.7
+PORTVERSION=	3.0
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.mavetju.org/download/adopted/ \
-		http://fms.komkon.org/fMSX/
-DISTNAME=	fMSX27
-EXTRACT_SUFX=	.tar.Z
-
+MASTER_SITES=	http://www.mavetju.org/download/adopted/:code \
+		http://fms.komkon.org/fMSX/:code \
+		http://fms.komkon.org/fMSX/src/:rom
+DIST_SUBDIR=	fmsx30
+DISTFILES=	fMSX30.tar.Z:code \
+		MSX.ROM:rom MSX2.ROM:rom MSX2EXT.ROM:rom MSX2P.ROM:rom \
+		MSX2PEXT.ROM:rom FMPAC.ROM:rom DISK.ROM:rom MSXDOS2.ROM:rom \
+		PAINTER.ROM:rom KANJI.ROM:rom
 MAINTAINER=	dk@farm.org
 COMMENT=	The Portable MSX/MSX2/MSX2+ Emulator
 
@@ -51,7 +54,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rddsk ${PREFIX}/bin/fmsx-rddsk
 	${INSTALL_PROGRAM} ${WRKSRC}/wrdsk ${PREFIX}/bin/fmsx-wrdsk
 	${MKDIR} ${PREFIX}/share/fmsx
-	${INSTALL_DATA} ${WRKSRC}/*.ROM ${WRKSRC}/*.FNT ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.FNT ${DATADIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/*.ROM ${DATADIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
