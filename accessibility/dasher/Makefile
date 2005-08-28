@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dasher
-PORTVERSION=	3.2.15
+PORTVERSION=	3.2.17
 CATEGORIES=	accessibility editors x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/3.2
@@ -24,9 +24,10 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomehier libgnomeui atspi \
 		libwnck
 WANT_GNOME=	yes
-USE_LIBTOOL_VER=15
+USE_INC_LIBTOOL_VER=15
 INSTALLS_OMF=	yes
 USE_REINPLACE=	yes
+USE_GCC=	3.4+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -44,5 +45,15 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-O2||g'
+
+patch-autotools:
+	@(cd ${PATCH_WRKSRC}; \
+	for file in ${LIBTOOLFILES}; do \
+		${CP} $$file $$file.tmp; \
+		${SED} -e "/^ltmain=/s^\$$ac_aux_dir/ltmain.sh^${LTMAIN}^g" \
+			$$file.tmp > $$file; \
+		${RM} $$file.tmp; \
+	done);
+
 
 .include <bsd.port.post.mk>
