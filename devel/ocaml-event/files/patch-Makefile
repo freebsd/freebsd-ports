@@ -1,0 +1,7 @@
+--- Makefile.orig	Thu Aug 25 12:57:52 2005
++++ Makefile	Thu Aug 25 12:57:55 2005
+@@ -98,4 +98,3 @@
+ .c.o:
+ 	$(OCAMLC) -c -ccopt "$(CFLAGS)" $<
+ 
+-include depend
