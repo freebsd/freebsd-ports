@@ -9,10 +9,13 @@ PORTNAME=	upsd
 PORTVERSION=	2.0.1.6
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.rge.com/pub/admin/upsd/
+MASTER_SITES=	# disappeared
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	APC Smart UPS Monitoring Daemon
+
+DEPRECATED=		mastersite disappeared
+EXPIRATION_DATE=	2005-10-28
 
 WRKSRC=		${WRKDIR}/upsd-2.0
 
