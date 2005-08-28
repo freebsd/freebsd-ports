@@ -3,10 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
+#    $MCom: ports-stable/graphics/openclipart/Makefile,v 1.1 2005/08/09 02:14:05 ahze Exp $
 #
 
 PORTNAME=	openclipart
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	graphics misc
 MASTER_SITES=	http://www.openclipart.org/downloads/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}${SVGPNG}
@@ -22,7 +23,7 @@ NO_BUILD=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_PNG)
-SVGPNG=		# empty
+SVGPNG=	-full
 .else
 SVGPNG=	-svgonly
 .endif
