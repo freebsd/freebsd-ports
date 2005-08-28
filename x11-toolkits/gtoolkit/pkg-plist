@@ -103,7 +103,7 @@ Local/Library/Headers/GToolKit/GToolKit.h
 Local/Library/Libraries/libGToolKit.so
 Local/Library/Libraries/libGToolKit.so.%%MAJORVERSION%%
 Local/Library/Libraries/libGToolKit.so.%%VERSION%%
-System/Makefiles/gtk-tool.make
+System/Library/Makefiles/gtk-tool.make
 @dirrm Local/Library/Libraries
 @dirrm Local/Library/Headers/GToolKit
 @dirrm Local/Library/Headers
