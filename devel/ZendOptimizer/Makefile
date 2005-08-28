@@ -32,6 +32,9 @@ IGNORE=		This port is for FreeBSD 4 or above
 VER=		4.3
 .else
 VER=		5.1
+.if ${OSVERSION} >= 501111
+LIB_DEPENDS+=	m.2:${PORTSDIR}/misc/compat4x
+.endif
 .endif
 # Check for ZendOptimizer sources
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
