@@ -3,5 +3,4 @@ Default plugins for lineakd. Mainly contains some macros
 functional at the moment since there is some more work to
 do (we need a new port for it).
 
-Author:	Kay Lehmann <kay_lehmann@web.de>
 WWW:	http://lineak.sf.net/
