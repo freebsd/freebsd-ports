@@ -69,7 +69,7 @@ GNU_ARCH=	${MACHINE_ARCH}
 .endif
 
 SYSTEMDIR=	${PREFIX}/System
-SYSMAKEDIR=	${SYSTEMDIR}/Makefiles
+SYSMAKEDIR=	${SYSTEMDIR}/Library/Makefiles
 BUNDLEDIR=	${SYSTEMDIR}/Library/Bundles
 SYSLIBDIR=	${SYSTEMDIR}/Library/Libraries
 COMBOLIBDIR=	${SYSTEMDIR}/Library/Libraries
