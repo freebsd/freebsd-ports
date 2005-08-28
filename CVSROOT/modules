@@ -6733,6 +6733,7 @@ nosefart	ports/audio/nosefart
 notebook	ports/deskutils/notebook
 notftp		ports/www/notftp
 notif2		ports/x11-themes/notif2
+notification-daemon	ports/deskutils/notification-daemon
 nova		ports/astro/nova
 novawm		ports/x11-wm/novawm
 noweb		ports/devel/noweb
