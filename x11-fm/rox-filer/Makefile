@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rox
-PORTVERSION=	2.2.0
-PORTREVISION=	2
+PORTVERSION=	2.3
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
@@ -29,23 +28,15 @@ MAN1=		rox.1
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == "i386")
-BINARIES=	FreeBSD-ix86
-.else
-BINARIES=	FreeBSD-${ARCH}
-.endif
-
-PLIST_SUB=	BINARIES="${BINARIES}"
-
 CONFIGURE_ENV=		APP_DIR=${WRKSRC}/ROX-Filer
-CONFIGURE_ARGS=		--enable-rox --with-platform=${BINARIES}
+CONFIGURE_ARGS=		--enable-rox
 CONFIGURE_WRKSRC=	${WRKSRC}/ROX-Filer/src
 BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
 ALL_TARGET=
 
 do-install:
 	@${MKDIR} ${PREFIX}/apps/ROX-Filer
-	@cd ${WRKSRC}/ROX-Filer && ${CP} -r .DirIcon  AppInfo.xml AppRun ${BINARIES} Help Messages Options.xml ROX images style.css ${PREFIX}/apps/ROX-Filer
+	@cd ${WRKSRC}/ROX-Filer && ${CP} -r .DirIcon AppInfo.xml AppRun Help Messages Options.xml ROX ROX-Filer images style.css ${PREFIX}/apps/ROX-Filer
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/apps/ROX-Filer
 	@cd ${WRKSRC} && ${CP} -r Choices ${PREFIX}/share/
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/Choices
