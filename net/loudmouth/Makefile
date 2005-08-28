@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	loudmouth
-PORTVERSION=	0.17.2
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.17
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Lightweight Jabber client library
@@ -24,22 +23,14 @@ CONFIGURE_ARGS=	--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+OPTIONS=	GNUTLS "Enable SSL (via GnuTLS) support" on
+
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libgnutls.so)
-WITH_GNUTLS=	yes
-.endif
-
-.if defined(WITH_GNUTLS)
+.if !defined(WITHOUT_GNUTLS)
 LIB_DEPENDS+=		gnutls.12:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--without-ssl
 .endif
-
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Loudmouth has the following tunable option(s):"
-	@${ECHO_MSG} "	WITH_GNUTLS	Enable SSL (via GnuTLS) support"
-	@${ECHO_MSG} ""
 
 .include <bsd.port.post.mk>
