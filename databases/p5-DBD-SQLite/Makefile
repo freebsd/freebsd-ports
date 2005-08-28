@@ -30,6 +30,9 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 .endif
 
 post-extract:
-	${RM} -f ${WRKSRC}/getsqlite.pl
+	@${RM} -f ${WRKSRC}/getsqlite.pl
+
+post-patch:
+	@${PERL} -i.bak -pe 's/\$$Config{d_usleep}/1/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.post.mk>
