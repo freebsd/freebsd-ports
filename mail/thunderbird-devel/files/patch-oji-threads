@@ -1,0 +1,60 @@
+--- modules/oji/public/nsIThreadManager.h	Fri Sep 28 16:08:27 2001
++++ modules/oji/public/nsIThreadManager.h	Sat Aug  6 03:27:26 2005
+@@ -113,5 +113,5 @@
+ 	 */
+ 	NS_IMETHOD
+-	CreateThread(PRUint32* threadID, nsIRunnable* runnable) = 0;
++	CreateThread(uintptr_t* threadID, nsIRunnable* runnable) = 0;
+ 	
+ 	/**
+@@ -122,5 +122,5 @@
+ 	 */
+ 	NS_IMETHOD
+-	PostEvent(PRUint32 threadID, nsIRunnable* runnable, PRBool async) = 0;
++	PostEvent(uintptr_t threadID, nsIRunnable* runnable, PRBool async) = 0;
+ };
+ 
+--- modules/oji/src/nsJVMManager.cpp	Mon Feb  9 17:48:48 2004
++++ modules/oji/src/nsJVMManager.cpp	Sat Aug  6 03:29:19 2005
+@@ -268,9 +268,9 @@
+ 
+ NS_METHOD
+-nsJVMManager::CreateThread(PRUint32* outThreadID, nsIRunnable* runnable)
++nsJVMManager::CreateThread(uintptr_t* outThreadID, nsIRunnable* runnable)
+ {
+ 	PRThread* thread = PR_CreateThread(PR_USER_THREAD, &thread_starter, (void*) runnable,
+ 									PR_PRIORITY_NORMAL, PR_GLOBAL_THREAD, PR_JOINABLE_THREAD, 0);
+-	*outThreadID = NS_PTR_TO_INT32(thread);
++	*outThreadID = (uintptr_t)(thread);
+ 	return (thread != NULL ?  NS_OK : NS_ERROR_FAILURE);
+ }
+@@ -308,5 +308,5 @@
+ 
+ NS_METHOD
+-nsJVMManager::PostEvent(PRUint32 threadID, nsIRunnable* runnable, PRBool async)
++nsJVMManager::PostEvent(uintptr_t threadID, nsIRunnable* runnable, PRBool async)
+ {
+     nsresult rv;
+@@ -873,5 +873,5 @@
+ 
+ 	do {
+-		static PRBool registeredLiveConnectFactory = NS_SUCCEEDED(JSJ_RegisterLiveConnectFactory());
++		JSJ_RegisterLiveConnectFactory();
+         if (IsLiveConnectEnabled() && StartupJVM() == nsJVMStatus_Running) {
+             JVM_InitLCGlue();
+--- modules/oji/src/nsJVMManager.h	Sat Nov 29 13:56:08 2003
++++ modules/oji/src/nsJVMManager.h	Sat Aug  6 03:30:01 2005
+@@ -122,5 +122,5 @@
+ 	 */
+ 	NS_IMETHOD
+-	CreateThread(PRUint32* threadID, nsIRunnable* runnable);
++	CreateThread(uintptr_t* threadID, nsIRunnable* runnable);
+ 	
+ 	/**
+@@ -131,5 +131,5 @@
+ 	 */
+ 	NS_IMETHOD
+-	PostEvent(PRUint32 threadID, nsIRunnable* runnable, PRBool async);
++	PostEvent(uintptr_t threadID, nsIRunnable* runnable, PRBool async);
+ 
+ 	/* from nsILiveConnectManager: */
