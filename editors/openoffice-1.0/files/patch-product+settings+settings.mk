@@ -60,7 +60,7 @@
 +SDK_JAVA_INCLUDES = -I$(OO_SDK_JAVA_HOME)/include -I$(OO_SDK_JAVA_HOME)/include/freebsd -I$(OO_SDK_JAVA_HOME)/include/linux
 +CC_INCLUDES=-I. -I/usr/include -I$(OUT)/inc/examples -I$(PRJ)/include
 +STL_INCLUDES=-I$(OO_STLPORT_HOME)/stlport
-+CC_DEFINES=-DUNX -DGCC -DFREEBSD -DCPPU_ENV=$(CPPU_ENV)
++CC_DEFINES=-DUNX -DGCC -DFREEBSD -DCPPU_ENV=$(CPPU_ENV) %%PTHREAD_CFLAGS%%
 +
 +# define for used compiler necessary for UNO
 +#-DCPPU_ENV=gcc2 -- gcc 2.91/2.95
@@ -70,6 +70,6 @@
 +
 +LIBRARY_LINK_FLAGS=-shared
 +EXE_LINK_FLAGS=-Wl -export-dynamic
-+LINK_LIBS=-L$(OUT)/lib -L$(PRJ)/$(PLATFORM)/lib -L$(OFFICE_PROGRAM_PATH) -pthread
++LINK_LIBS=-L$(OUT)/lib -L$(PRJ)/$(PLATFORM)/lib -L$(OFFICE_PROGRAM_PATH) %%PTHREAD_LIBS%%
 +
 +endif

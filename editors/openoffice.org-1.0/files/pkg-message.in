@@ -3,7 +3,7 @@ OpenOffice.org Build 1.0.3 Personal Install How-To
 Written by:	Martin Blapp <mbr@freebsd.org>
 
 OpenOffice.org will soon been installed in
-${PREFIX}/OpenOffice.org1.0/
+${PREFIX}/OpenOffice.org1.0.3/
 
 1 User installation
 -------------------
@@ -17,7 +17,7 @@ in your homedir.
 
 If the setup tells you there is already an installed
 version, you may look at the file ".sversionrc" in
-your homedir. In this file OpenOffice and StarOffice
+your homedir. In this file OpenOffice.org and StarOffice
 have both a line for each version which is installed.
 After removing the problematic line you should be able to
 install again.
@@ -29,19 +29,18 @@ There are some wrappers installed for fast startup.
 Add "${PREFIX}/bin/" to your PATH and you will be able
 to use them.
 
-${PREFIX}/bin/openoffice.org-1.0
-${PREFIX}/bin/openoffice.org-1.0-sagenda
-${PREFIX}/bin/openoffice.org-1.0-scalc
-${PREFIX}/bin/openoffice.org-1.0-sdraw
-${PREFIX}/bin/openoffice.org-1.0-setup
-${PREFIX}/bin/openoffice.org-1.0-sfax
-${PREFIX}/bin/openoffice.org-1.0-simpress
-${PREFIX}/bin/openoffice.org-1.0-spadmin
-${PREFIX}/bin/openoffice.org-1.0-sweb
-${PREFIX}/bin/openoffice.org-1.0-swriter
+${PREFIX}/bin/openoffice.org-1.0.3
+${PREFIX}/bin/openoffice.org-1.0.3-sagenda
+${PREFIX}/bin/openoffice.org-1.0.3-scalc
+${PREFIX}/bin/openoffice.org-1.0.3-sdraw
+${PREFIX}/bin/openoffice.org-1.0.3-setup
+${PREFIX}/bin/openoffice.org-1.0.3-sfax
+${PREFIX}/bin/openoffice.org-1.0.3-simpress
+${PREFIX}/bin/openoffice.org-1.0.3-spadmin
+${PREFIX}/bin/openoffice.org-1.0.3-sweb
+${PREFIX}/bin/openoffice.org-1.0.3-swriter
 
 OO.org does need $LANG to be set to a suitable value.
-If it is not already set, a default value is chosen.
 Some old X-Servers before XFree86 4.2 do not like the
 western locale with Euro symbol (ISO_8859-15).
 You should ignore the warning message then or upgrade to
