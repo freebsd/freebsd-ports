@@ -5351,6 +5351,7 @@ libmcal		ports/misc/libmcal
 libmcrypt	ports/security/libmcrypt
 libmcve		ports/devel/libmcve
 libmemcache	ports/databases/libmemcache
+libmicro	ports/benchmarks/libmicro
 libmikmod	ports/audio/libmikmod
 libmimedir	ports/devel/libmimedir
 libmms		ports/net/libmms
