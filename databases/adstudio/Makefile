@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adstudio
-PORTVERSION=	4.0
+PORTVERSION=	4.5.1
 CATEGORIES=	databases devel java
 MASTER_SITES=	http://aquafold.fileburst.com/download/linux/
 DISTNAME=	${PORTNAME}-novm
@@ -15,8 +15,10 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A database query and administration tool
 
+RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
+
 USE_JAVA=	yes
-JAVA_VERSION=	1.4
+JAVA_VERSION=	1.4+
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 
@@ -30,7 +32,8 @@ INSTFILES=	License.txt PAD_FILE.XML changelog.txt datastudio.gif	\
 
 pre-configure:
 	${REINPLACE_CMD} -e "s|%%ADS_HOME%%|${DATADIR}|"	\
-		-e "s|^java |${JAVA} -Xmx256M |" ${WRKSRC}/datastudio.sh
+		-e "s|^java |JAVA_VERSION=${JAVA_VERSION} ${LOCALBASE}/bin/java -Xmx256M |"	\
+		${WRKSRC}/datastudio.sh
 
 do-install:
 	${MKDIR} ${DATADIR}

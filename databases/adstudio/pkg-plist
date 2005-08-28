@@ -12,6 +12,7 @@ bin/datastudio.sh
 %%DATADIR%%/lib/ifxjdbc.jar
 %%DATADIR%%/lib/jconnect45.jar
 %%DATADIR%%/lib/jconnect55.jar
+%%DATADIR%%/lib/jconnect60.jar
 %%DATADIR%%/lib/jtds.jar
 %%DATADIR%%/lib/mail.jar
 %%DATADIR%%/lib/mysql-jdbc.zip
@@ -21,9 +22,9 @@ bin/datastudio.sh
 %%DATADIR%%/lib/postgresql.jar
 %%DATADIR%%/lib/xdb.jar
 %%DATADIR%%/lib/xmlparserv2.jar
+%%DATADIR%%/license/Apache-POI.txt
 %%DATADIR%%/license/DB2-JDBC-LICENSE.txt
 %%DATADIR%%/license/JGoodies-LICENSE.txt
-%%DATADIR%%/license/JGraph-LICENSE.txt
 %%DATADIR%%/license/L2FProd-LICENSE.txt
 %%DATADIR%%/license/MySQL-JDBC-LICENSE.txt
 %%DATADIR%%/license/Oracle-JDBC-LICENSE.txt
