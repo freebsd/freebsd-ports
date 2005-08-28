@@ -1,4 +1,5 @@
 bin/gajim
+bin/gajim-remote
 lib/gajim/gtkspell.so
 lib/gajim/idle.so
 lib/gajim/trayicon.so
@@ -41,135 +42,229 @@ lib/gajim/trayicon.so
 %%DATADIR%%/data/emoticons/unhappy.png
 %%DATADIR%%/data/emoticons/wink.png
 %%DATADIR%%/data/emoticons/yes.png
-%%DATADIR%%/data/iconsets/gossip/away.png
-%%DATADIR%%/data/iconsets/gossip/chat.png
-%%DATADIR%%/data/iconsets/gossip/closed.xpm
-%%DATADIR%%/data/iconsets/gossip/connecting.gif
-%%DATADIR%%/data/iconsets/gossip/dnd.png
-%%DATADIR%%/data/iconsets/gossip/error.png
-%%DATADIR%%/data/iconsets/gossip/invisible.png
-%%DATADIR%%/data/iconsets/gossip/message.png
-%%DATADIR%%/data/iconsets/gossip/not_in_the_roster.png
-%%DATADIR%%/data/iconsets/gossip/offline.png
-%%DATADIR%%/data/iconsets/gossip/online.png
-%%DATADIR%%/data/iconsets/gossip/opened.xpm
-%%DATADIR%%/data/iconsets/gossip/requested.png
-%%DATADIR%%/data/iconsets/gossip/typing.png
-%%DATADIR%%/data/iconsets/gossip/xa.png
-%%DATADIR%%/data/iconsets/stellar/away.png
-%%DATADIR%%/data/iconsets/stellar/chat.png
-%%DATADIR%%/data/iconsets/stellar/closed.xpm
-%%DATADIR%%/data/iconsets/stellar/connecting.gif
-%%DATADIR%%/data/iconsets/stellar/dnd.png
-%%DATADIR%%/data/iconsets/stellar/error.png
-%%DATADIR%%/data/iconsets/stellar/invisible.png
-%%DATADIR%%/data/iconsets/stellar/message.gif
-%%DATADIR%%/data/iconsets/stellar/not_in_the_roster.png
-%%DATADIR%%/data/iconsets/stellar/offline.png
-%%DATADIR%%/data/iconsets/stellar/online.png
-%%DATADIR%%/data/iconsets/stellar/opened.xpm
-%%DATADIR%%/data/iconsets/stellar/requested.png
-%%DATADIR%%/data/iconsets/stellar/xa.png
-%%DATADIR%%/data/iconsets/sun/away.xpm
-%%DATADIR%%/data/iconsets/sun/chat.xpm
-%%DATADIR%%/data/iconsets/sun/closed.xpm
-%%DATADIR%%/data/iconsets/sun/connecting.gif
-%%DATADIR%%/data/iconsets/sun/dnd.xpm
-%%DATADIR%%/data/iconsets/sun/error.xpm
-%%DATADIR%%/data/iconsets/sun/invisible.xpm
-%%DATADIR%%/data/iconsets/sun/message.gif
-%%DATADIR%%/data/iconsets/sun/not_in_the_roster.xpm
-%%DATADIR%%/data/iconsets/sun/offline.xpm
-%%DATADIR%%/data/iconsets/sun/online.xpm
-%%DATADIR%%/data/iconsets/sun/opened.xpm
-%%DATADIR%%/data/iconsets/sun/requested.xpm
-%%DATADIR%%/data/iconsets/sun/xa.xpm
-%%DATADIR%%/data/iconsets/transports/aim/away.png
-%%DATADIR%%/data/iconsets/transports/aim/chat.png
-%%DATADIR%%/data/iconsets/transports/aim/closed.xpm
-%%DATADIR%%/data/iconsets/transports/aim/dnd.png
-%%DATADIR%%/data/iconsets/transports/aim/error.xpm
-%%DATADIR%%/data/iconsets/transports/aim/invisible.png
-%%DATADIR%%/data/iconsets/transports/aim/message.gif
-%%DATADIR%%/data/iconsets/transports/aim/not_in_the_roster.png
-%%DATADIR%%/data/iconsets/transports/aim/offline.png
-%%DATADIR%%/data/iconsets/transports/aim/online.png
-%%DATADIR%%/data/iconsets/transports/aim/opened.xpm
-%%DATADIR%%/data/iconsets/transports/aim/requested.png
-%%DATADIR%%/data/iconsets/transports/aim/xa.png
-%%DATADIR%%/data/iconsets/transports/gadugadu/away.png
-%%DATADIR%%/data/iconsets/transports/gadugadu/chat.png
-%%DATADIR%%/data/iconsets/transports/gadugadu/closed.xpm
-%%DATADIR%%/data/iconsets/transports/gadugadu/dnd.png
-%%DATADIR%%/data/iconsets/transports/gadugadu/error.xpm
-%%DATADIR%%/data/iconsets/transports/gadugadu/invisible.png
-%%DATADIR%%/data/iconsets/transports/gadugadu/message.gif
-%%DATADIR%%/data/iconsets/transports/gadugadu/not_in_the_roster.png
-%%DATADIR%%/data/iconsets/transports/gadugadu/offline.png
-%%DATADIR%%/data/iconsets/transports/gadugadu/online.png
-%%DATADIR%%/data/iconsets/transports/gadugadu/opened.xpm
-%%DATADIR%%/data/iconsets/transports/gadugadu/requested.png
-%%DATADIR%%/data/iconsets/transports/gadugadu/xa.png
-%%DATADIR%%/data/iconsets/transports/icq/away.png
-%%DATADIR%%/data/iconsets/transports/icq/chat.png
-%%DATADIR%%/data/iconsets/transports/icq/closed.xpm
-%%DATADIR%%/data/iconsets/transports/icq/dnd.png
-%%DATADIR%%/data/iconsets/transports/icq/error.xpm
-%%DATADIR%%/data/iconsets/transports/icq/invisible.png
-%%DATADIR%%/data/iconsets/transports/icq/message.gif
-%%DATADIR%%/data/iconsets/transports/icq/not_in_the_roster.png
-%%DATADIR%%/data/iconsets/transports/icq/offline.png
-%%DATADIR%%/data/iconsets/transports/icq/online.png
-%%DATADIR%%/data/iconsets/transports/icq/opened.xpm
-%%DATADIR%%/data/iconsets/transports/icq/requested.png
-%%DATADIR%%/data/iconsets/transports/icq/xa.png
-%%DATADIR%%/data/iconsets/transports/irc/away.png
-%%DATADIR%%/data/iconsets/transports/irc/chat.png
-%%DATADIR%%/data/iconsets/transports/irc/dnd.png
-%%DATADIR%%/data/iconsets/transports/irc/error.xpm
-%%DATADIR%%/data/iconsets/transports/irc/invisible.png
-%%DATADIR%%/data/iconsets/transports/irc/message.gif
-%%DATADIR%%/data/iconsets/transports/irc/not_in_the_roster.png
-%%DATADIR%%/data/iconsets/transports/irc/offline.png
-%%DATADIR%%/data/iconsets/transports/irc/online.png
-%%DATADIR%%/data/iconsets/transports/irc/requested.png
-%%DATADIR%%/data/iconsets/transports/irc/xa.png
-%%DATADIR%%/data/iconsets/transports/msn/away.png
-%%DATADIR%%/data/iconsets/transports/msn/chat.png
-%%DATADIR%%/data/iconsets/transports/msn/closed.xpm
-%%DATADIR%%/data/iconsets/transports/msn/dnd.png
-%%DATADIR%%/data/iconsets/transports/msn/invisible.png
-%%DATADIR%%/data/iconsets/transports/msn/message.gif
-%%DATADIR%%/data/iconsets/transports/msn/not_in_the_roster.png
-%%DATADIR%%/data/iconsets/transports/msn/offline.png
-%%DATADIR%%/data/iconsets/transports/msn/online.png
-%%DATADIR%%/data/iconsets/transports/msn/opened.xpm
-%%DATADIR%%/data/iconsets/transports/msn/requested.png
-%%DATADIR%%/data/iconsets/transports/msn/xa.png
-%%DATADIR%%/data/iconsets/transports/msn/error.xpm
-%%DATADIR%%/data/iconsets/transports/sms/away.png
-%%DATADIR%%/data/iconsets/transports/sms/chat.png
-%%DATADIR%%/data/iconsets/transports/sms/dnd.png
-%%DATADIR%%/data/iconsets/transports/sms/error.xpm
-%%DATADIR%%/data/iconsets/transports/sms/invisible.png
-%%DATADIR%%/data/iconsets/transports/sms/message.gif
-%%DATADIR%%/data/iconsets/transports/sms/offline.png
-%%DATADIR%%/data/iconsets/transports/sms/online.png
-%%DATADIR%%/data/iconsets/transports/sms/requested.png
-%%DATADIR%%/data/iconsets/transports/sms/xa.png
-%%DATADIR%%/data/iconsets/transports/yahoo/away.png
-%%DATADIR%%/data/iconsets/transports/yahoo/chat.png
-%%DATADIR%%/data/iconsets/transports/yahoo/closed.xpm
-%%DATADIR%%/data/iconsets/transports/yahoo/dnd.png
-%%DATADIR%%/data/iconsets/transports/yahoo/error.xpm
-%%DATADIR%%/data/iconsets/transports/yahoo/invisible.png
-%%DATADIR%%/data/iconsets/transports/yahoo/message.gif
-%%DATADIR%%/data/iconsets/transports/yahoo/not_in_the_roster.png
-%%DATADIR%%/data/iconsets/transports/yahoo/offline.png
-%%DATADIR%%/data/iconsets/transports/yahoo/online.png
-%%DATADIR%%/data/iconsets/transports/yahoo/opened.xpm
-%%DATADIR%%/data/iconsets/transports/yahoo/requested.png
-%%DATADIR%%/data/iconsets/transports/yahoo/xa.png
+%%DATADIR%%/data/iconsets/dcraven/16x16/away.png
+%%DATADIR%%/data/iconsets/dcraven/16x16/chat.png
+%%DATADIR%%/data/iconsets/dcraven/16x16/closed.png
+%%DATADIR%%/data/iconsets/dcraven/16x16/connecting.png
+%%DATADIR%%/data/iconsets/dcraven/16x16/dnd.png
+%%DATADIR%%/data/iconsets/dcraven/16x16/error.png
+%%DATADIR%%/data/iconsets/dcraven/16x16/invisible.png
+%%DATADIR%%/data/iconsets/dcraven/16x16/message.png
+%%DATADIR%%/data/iconsets/dcraven/16x16/not_in_the_roster.png
+%%DATADIR%%/data/iconsets/dcraven/16x16/offline.png
+%%DATADIR%%/data/iconsets/dcraven/16x16/online.png
+%%DATADIR%%/data/iconsets/dcraven/16x16/opened.png
+%%DATADIR%%/data/iconsets/dcraven/16x16/requested.png
+%%DATADIR%%/data/iconsets/dcraven/16x16/xa.png
+%%DATADIR%%/data/iconsets/dcraven/32x32/away.png
+%%DATADIR%%/data/iconsets/dcraven/32x32/chat.png
+%%DATADIR%%/data/iconsets/dcraven/32x32/closed.png
+%%DATADIR%%/data/iconsets/dcraven/32x32/connecting.png
+%%DATADIR%%/data/iconsets/dcraven/32x32/dnd.png
+%%DATADIR%%/data/iconsets/dcraven/32x32/error.png
+%%DATADIR%%/data/iconsets/dcraven/32x32/invisible.png
+%%DATADIR%%/data/iconsets/dcraven/32x32/message.png
+%%DATADIR%%/data/iconsets/dcraven/32x32/not_in_the_roster.png
+%%DATADIR%%/data/iconsets/dcraven/32x32/offline.png
+%%DATADIR%%/data/iconsets/dcraven/32x32/online.png
+%%DATADIR%%/data/iconsets/dcraven/32x32/opened.png
+%%DATADIR%%/data/iconsets/dcraven/32x32/requested.png
+%%DATADIR%%/data/iconsets/dcraven/32x32/xa.png
+%%DATADIR%%/data/iconsets/gnome/16x16/away.png
+%%DATADIR%%/data/iconsets/gnome/16x16/chat.png
+%%DATADIR%%/data/iconsets/gnome/16x16/closed.png
+%%DATADIR%%/data/iconsets/gnome/16x16/connecting.gif
+%%DATADIR%%/data/iconsets/gnome/16x16/dnd.png
+%%DATADIR%%/data/iconsets/gnome/16x16/error.png
+%%DATADIR%%/data/iconsets/gnome/16x16/invisible.png
+%%DATADIR%%/data/iconsets/gnome/16x16/message.gif
+%%DATADIR%%/data/iconsets/gnome/16x16/not_in_the_roster.png
+%%DATADIR%%/data/iconsets/gnome/16x16/offline.png
+%%DATADIR%%/data/iconsets/gnome/16x16/online.png
+%%DATADIR%%/data/iconsets/gnome/16x16/opened.png
+%%DATADIR%%/data/iconsets/gnome/16x16/requested.png
+%%DATADIR%%/data/iconsets/gnome/16x16/xa.png
+%%DATADIR%%/data/iconsets/gnome/32x32/away.png
+%%DATADIR%%/data/iconsets/gnome/32x32/chat.png
+%%DATADIR%%/data/iconsets/gnome/32x32/dnd.png
+%%DATADIR%%/data/iconsets/gnome/32x32/not_in_the_roster.png
+%%DATADIR%%/data/iconsets/gnome/32x32/offline.png
+%%DATADIR%%/data/iconsets/gnome/32x32/online.png
+%%DATADIR%%/data/iconsets/gnome/32x32/requested.png
+%%DATADIR%%/data/iconsets/gnome/32x32/xa.png
+%%DATADIR%%/data/iconsets/gossip/16x16/away.png
+%%DATADIR%%/data/iconsets/gossip/16x16/chat.png
+%%DATADIR%%/data/iconsets/gossip/16x16/closed.png
+%%DATADIR%%/data/iconsets/gossip/16x16/connecting.gif
+%%DATADIR%%/data/iconsets/gossip/16x16/dnd.png
+%%DATADIR%%/data/iconsets/gossip/16x16/error.png
+%%DATADIR%%/data/iconsets/gossip/16x16/invisible.png
+%%DATADIR%%/data/iconsets/gossip/16x16/message.png
+%%DATADIR%%/data/iconsets/gossip/16x16/not_in_the_roster.png
+%%DATADIR%%/data/iconsets/gossip/16x16/offline.png
+%%DATADIR%%/data/iconsets/gossip/16x16/online.png
+%%DATADIR%%/data/iconsets/gossip/16x16/opened.png
+%%DATADIR%%/data/iconsets/gossip/16x16/requested.png
+%%DATADIR%%/data/iconsets/gossip/16x16/typing.png
+%%DATADIR%%/data/iconsets/gossip/16x16/xa.png
+%%DATADIR%%/data/iconsets/gota/16x16/away.png
+%%DATADIR%%/data/iconsets/gota/16x16/chat.png
+%%DATADIR%%/data/iconsets/gota/16x16/closed.png
+%%DATADIR%%/data/iconsets/gota/16x16/connecting.gif
+%%DATADIR%%/data/iconsets/gota/16x16/dnd.png
+%%DATADIR%%/data/iconsets/gota/16x16/error.png
+%%DATADIR%%/data/iconsets/gota/16x16/invisible.png
+%%DATADIR%%/data/iconsets/gota/16x16/message.gif
+%%DATADIR%%/data/iconsets/gota/16x16/not_in_the_roster.png
+%%DATADIR%%/data/iconsets/gota/16x16/offline.png
+%%DATADIR%%/data/iconsets/gota/16x16/online.png
+%%DATADIR%%/data/iconsets/gota/16x16/opened.png
+%%DATADIR%%/data/iconsets/gota/16x16/requested.png
+%%DATADIR%%/data/iconsets/gota/16x16/xa.png
+%%DATADIR%%/data/iconsets/gota/32x32/away.png
+%%DATADIR%%/data/iconsets/gota/32x32/chat.png
+%%DATADIR%%/data/iconsets/gota/32x32/closed.png
+%%DATADIR%%/data/iconsets/gota/32x32/connecting.gif
+%%DATADIR%%/data/iconsets/gota/32x32/dnd.png
+%%DATADIR%%/data/iconsets/gota/32x32/error.png
+%%DATADIR%%/data/iconsets/gota/32x32/invisible.png
+%%DATADIR%%/data/iconsets/gota/32x32/message.gif
+%%DATADIR%%/data/iconsets/gota/32x32/not_in_the_roster.png
+%%DATADIR%%/data/iconsets/gota/32x32/offline.png
+%%DATADIR%%/data/iconsets/gota/32x32/online.png
+%%DATADIR%%/data/iconsets/gota/32x32/opened.png
+%%DATADIR%%/data/iconsets/gota/32x32/requested.png
+%%DATADIR%%/data/iconsets/gota/32x32/xa.png
+%%DATADIR%%/data/iconsets/nuvola/16x16/away.png
+%%DATADIR%%/data/iconsets/nuvola/16x16/chat.png
+%%DATADIR%%/data/iconsets/nuvola/16x16/closed.png
+%%DATADIR%%/data/iconsets/nuvola/16x16/connecting.png
+%%DATADIR%%/data/iconsets/nuvola/16x16/dnd.png
+%%DATADIR%%/data/iconsets/nuvola/16x16/error.png
+%%DATADIR%%/data/iconsets/nuvola/16x16/invisible.png
+%%DATADIR%%/data/iconsets/nuvola/16x16/message.gif
+%%DATADIR%%/data/iconsets/nuvola/16x16/not_in_the_roster.png
+%%DATADIR%%/data/iconsets/nuvola/16x16/offline.png
+%%DATADIR%%/data/iconsets/nuvola/16x16/online.png
+%%DATADIR%%/data/iconsets/nuvola/16x16/opened.png
+%%DATADIR%%/data/iconsets/nuvola/16x16/requested.png
+%%DATADIR%%/data/iconsets/nuvola/16x16/xa.png
+%%DATADIR%%/data/iconsets/stellar/16x16/away.png
+%%DATADIR%%/data/iconsets/stellar/16x16/chat.png
+%%DATADIR%%/data/iconsets/stellar/16x16/closed.png
+%%DATADIR%%/data/iconsets/stellar/16x16/connecting.gif
+%%DATADIR%%/data/iconsets/stellar/16x16/dnd.png
+%%DATADIR%%/data/iconsets/stellar/16x16/error.png
+%%DATADIR%%/data/iconsets/stellar/16x16/invisible.png
+%%DATADIR%%/data/iconsets/stellar/16x16/message.gif
+%%DATADIR%%/data/iconsets/stellar/16x16/not_in_the_roster.png
+%%DATADIR%%/data/iconsets/stellar/16x16/offline.png
+%%DATADIR%%/data/iconsets/stellar/16x16/online.png
+%%DATADIR%%/data/iconsets/stellar/16x16/opened.png
+%%DATADIR%%/data/iconsets/stellar/16x16/requested.png
+%%DATADIR%%/data/iconsets/stellar/16x16/xa.png
+%%DATADIR%%/data/iconsets/sun/16x16/away.png
+%%DATADIR%%/data/iconsets/sun/16x16/chat.png
+%%DATADIR%%/data/iconsets/sun/16x16/closed.png
+%%DATADIR%%/data/iconsets/sun/16x16/connecting.gif
+%%DATADIR%%/data/iconsets/sun/16x16/dnd.png
+%%DATADIR%%/data/iconsets/sun/16x16/error.png
+%%DATADIR%%/data/iconsets/sun/16x16/invisible.png
+%%DATADIR%%/data/iconsets/sun/16x16/message.gif
+%%DATADIR%%/data/iconsets/sun/16x16/not_in_the_roster.png
+%%DATADIR%%/data/iconsets/sun/16x16/offline.png
+%%DATADIR%%/data/iconsets/sun/16x16/online.png
+%%DATADIR%%/data/iconsets/sun/16x16/opened.png
+%%DATADIR%%/data/iconsets/sun/16x16/requested.png
+%%DATADIR%%/data/iconsets/sun/16x16/xa.png
+%%DATADIR%%/data/iconsets/transports/aim/16x16/away.png
+%%DATADIR%%/data/iconsets/transports/aim/16x16/chat.png
+%%DATADIR%%/data/iconsets/transports/aim/16x16/dnd.png
+%%DATADIR%%/data/iconsets/transports/aim/16x16/error.png
+%%DATADIR%%/data/iconsets/transports/aim/16x16/invisible.png
+%%DATADIR%%/data/iconsets/transports/aim/16x16/message.gif
+%%DATADIR%%/data/iconsets/transports/aim/16x16/not_in_the_roster.png
+%%DATADIR%%/data/iconsets/transports/aim/16x16/offline.png
+%%DATADIR%%/data/iconsets/transports/aim/16x16/online.png
+%%DATADIR%%/data/iconsets/transports/aim/16x16/requested.png
+%%DATADIR%%/data/iconsets/transports/aim/16x16/xa.png
+%%DATADIR%%/data/iconsets/transports/gadugadu/16x16/away.png
+%%DATADIR%%/data/iconsets/transports/gadugadu/16x16/chat.png
+%%DATADIR%%/data/iconsets/transports/gadugadu/16x16/dnd.png
+%%DATADIR%%/data/iconsets/transports/gadugadu/16x16/error.png
+%%DATADIR%%/data/iconsets/transports/gadugadu/16x16/invisible.png
+%%DATADIR%%/data/iconsets/transports/gadugadu/16x16/message.gif
+%%DATADIR%%/data/iconsets/transports/gadugadu/16x16/not_in_the_roster.png
+%%DATADIR%%/data/iconsets/transports/gadugadu/16x16/offline.png
+%%DATADIR%%/data/iconsets/transports/gadugadu/16x16/online.png
+%%DATADIR%%/data/iconsets/transports/gadugadu/16x16/requested.png
+%%DATADIR%%/data/iconsets/transports/gadugadu/16x16/xa.png
+%%DATADIR%%/data/iconsets/transports/icq/16x16/away.png
+%%DATADIR%%/data/iconsets/transports/icq/16x16/chat.png
+%%DATADIR%%/data/iconsets/transports/icq/16x16/dnd.png
+%%DATADIR%%/data/iconsets/transports/icq/16x16/error.png
+%%DATADIR%%/data/iconsets/transports/icq/16x16/invisible.png
+%%DATADIR%%/data/iconsets/transports/icq/16x16/message.gif
+%%DATADIR%%/data/iconsets/transports/icq/16x16/not_in_the_roster.png
+%%DATADIR%%/data/iconsets/transports/icq/16x16/offline.png
+%%DATADIR%%/data/iconsets/transports/icq/16x16/online.png
+%%DATADIR%%/data/iconsets/transports/icq/16x16/requested.png
+%%DATADIR%%/data/iconsets/transports/icq/16x16/xa.png
+%%DATADIR%%/data/iconsets/transports/irc/16x16/away.png
+%%DATADIR%%/data/iconsets/transports/irc/16x16/chat.png
+%%DATADIR%%/data/iconsets/transports/irc/16x16/dnd.png
+%%DATADIR%%/data/iconsets/transports/irc/16x16/error.png
+%%DATADIR%%/data/iconsets/transports/irc/16x16/invisible.png
+%%DATADIR%%/data/iconsets/transports/irc/16x16/message.gif
+%%DATADIR%%/data/iconsets/transports/irc/16x16/not_in_the_roster.png
+%%DATADIR%%/data/iconsets/transports/irc/16x16/offline.png
+%%DATADIR%%/data/iconsets/transports/irc/16x16/online.png
+%%DATADIR%%/data/iconsets/transports/irc/16x16/requested.png
+%%DATADIR%%/data/iconsets/transports/irc/16x16/xa.png
+%%DATADIR%%/data/iconsets/transports/msn/16x16/away.png
+%%DATADIR%%/data/iconsets/transports/msn/16x16/chat.png
+%%DATADIR%%/data/iconsets/transports/msn/16x16/dnd.png
+%%DATADIR%%/data/iconsets/transports/msn/16x16/error.png
+%%DATADIR%%/data/iconsets/transports/msn/16x16/invisible.png
+%%DATADIR%%/data/iconsets/transports/msn/16x16/message.gif
+%%DATADIR%%/data/iconsets/transports/msn/16x16/not_in_the_roster.png
+%%DATADIR%%/data/iconsets/transports/msn/16x16/offline.png
+%%DATADIR%%/data/iconsets/transports/msn/16x16/online.png
+%%DATADIR%%/data/iconsets/transports/msn/16x16/requested.png
+%%DATADIR%%/data/iconsets/transports/msn/16x16/xa.png
+%%DATADIR%%/data/iconsets/transports/sms/16x16/away.png
+%%DATADIR%%/data/iconsets/transports/sms/16x16/chat.png
+%%DATADIR%%/data/iconsets/transports/sms/16x16/dnd.png
+%%DATADIR%%/data/iconsets/transports/sms/16x16/error.png
+%%DATADIR%%/data/iconsets/transports/sms/16x16/invisible.png
+%%DATADIR%%/data/iconsets/transports/sms/16x16/message.gif
+%%DATADIR%%/data/iconsets/transports/sms/16x16/offline.png
+%%DATADIR%%/data/iconsets/transports/sms/16x16/online.png
+%%DATADIR%%/data/iconsets/transports/sms/16x16/requested.png
+%%DATADIR%%/data/iconsets/transports/sms/16x16/xa.png
+%%DATADIR%%/data/iconsets/transports/tlen/16x16/away.png
+%%DATADIR%%/data/iconsets/transports/tlen/16x16/chat.png
+%%DATADIR%%/data/iconsets/transports/tlen/16x16/dnd.png
+%%DATADIR%%/data/iconsets/transports/tlen/16x16/error.png
+%%DATADIR%%/data/iconsets/transports/tlen/16x16/invisible.png
+%%DATADIR%%/data/iconsets/transports/tlen/16x16/message.png
+%%DATADIR%%/data/iconsets/transports/tlen/16x16/not_in_the_roster.png
+%%DATADIR%%/data/iconsets/transports/tlen/16x16/offline.png
+%%DATADIR%%/data/iconsets/transports/tlen/16x16/online.png
+%%DATADIR%%/data/iconsets/transports/tlen/16x16/requested.png
+%%DATADIR%%/data/iconsets/transports/tlen/16x16/xa.png
+%%DATADIR%%/data/iconsets/transports/yahoo/16x16/away.png
+%%DATADIR%%/data/iconsets/transports/yahoo/16x16/chat.png
+%%DATADIR%%/data/iconsets/transports/yahoo/16x16/dnd.png
+%%DATADIR%%/data/iconsets/transports/yahoo/16x16/error.png
+%%DATADIR%%/data/iconsets/transports/yahoo/16x16/invisible.png
+%%DATADIR%%/data/iconsets/transports/yahoo/16x16/message.gif
+%%DATADIR%%/data/iconsets/transports/yahoo/16x16/not_in_the_roster.png
+%%DATADIR%%/data/iconsets/transports/yahoo/16x16/offline.png
+%%DATADIR%%/data/iconsets/transports/yahoo/16x16/online.png
+%%DATADIR%%/data/iconsets/transports/yahoo/16x16/requested.png
+%%DATADIR%%/data/iconsets/transports/yahoo/16x16/xa.png
+%%DATADIR%%/data/pixmaps/gajim_about.png
 %%DATADIR%%/data/pixmaps/gajim.png
 %%DATADIR%%/data/sounds/connected.wav
 %%DATADIR%%/data/sounds/disconnected.wav
@@ -184,6 +279,8 @@ lib/gajim/trayicon.so
 %%DATADIR%%/po/pl/LC_MESSAGES/gajim.mo
 %%DATADIR%%/po/pt/LC_MESSAGES/gajim.mo
 %%DATADIR%%/po/ru/LC_MESSAGES/gajim.mo
+%%DATADIR%%/po/cs/LC_MESSAGES/gajim.mo
+%%DATADIR%%/po/nb/LC_MESSAGES/gajim.mo
 %%DATADIR%%/src/advanced.py
 %%DATADIR%%/src/cell_renderer_image.py
 %%DATADIR%%/src/chat.py
@@ -223,24 +320,55 @@ lib/gajim/trayicon.so
 %%DATADIR%%/src/systray.py
 %%DATADIR%%/src/tabbed_chat_window.py
 %%DATADIR%%/src/vcard.py
+%%DATADIR%%/src/common/socks5.py
+%%DATADIR%%/src/filetransfers_window.py
+%%DATADIR%%/src/gajim_themes_window.py
+%%DATADIR%%/src/gtkgui_helpers.py
+%%DATADIR%%/src/remote_control.py
+%%DATADIR%%/src/systraywin32.py
+%%DATADIR%%/src/tooltips.py
 share/applications/gajim.desktop
 share/pixmaps/gajim.png
+share/pixmaps/gajim_about.png
 @dirrm lib/gajim
 @dirrm %%DATADIR%%/src/common/xmpp
 @dirrm %%DATADIR%%/src/common
 @dirrm %%DATADIR%%/src
 @dirrm %%DATADIR%%/data/emoticons
-@dirrm %%DATADIR%%/data/iconsets/gossip
-@dirrm %%DATADIR%%/data/iconsets/stellar
-@dirrm %%DATADIR%%/data/iconsets/sun
-@dirrm %%DATADIR%%/data/iconsets/transports/aim
-@dirrm %%DATADIR%%/data/iconsets/transports/gadugadu
-@dirrm %%DATADIR%%/data/iconsets/transports/icq
-@dirrm %%DATADIR%%/data/iconsets/transports/irc
-@dirrm %%DATADIR%%/data/iconsets/transports/msn
-@dirrm %%DATADIR%%/data/iconsets/transports/sms
+@dirrm %%DATADIR%%/data/iconsets/transports/yahoo/16x16
 @dirrm %%DATADIR%%/data/iconsets/transports/yahoo
+@dirrm %%DATADIR%%/data/iconsets/transports/tlen/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/tlen
+@dirrm %%DATADIR%%/data/iconsets/transports/sms/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/sms
+@dirrm %%DATADIR%%/data/iconsets/transports/msn/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/msn
+@dirrm %%DATADIR%%/data/iconsets/transports/irc/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/irc
+@dirrm %%DATADIR%%/data/iconsets/transports/icq/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/icq
+@dirrm %%DATADIR%%/data/iconsets/transports/gadugadu/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/gadugadu
+@dirrm %%DATADIR%%/data/iconsets/transports/aim/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/aim
 @dirrm %%DATADIR%%/data/iconsets/transports
+@dirrm %%DATADIR%%/data/iconsets/sun/16x16
+@dirrm %%DATADIR%%/data/iconsets/sun
+@dirrm %%DATADIR%%/data/iconsets/stellar/16x16
+@dirrm %%DATADIR%%/data/iconsets/stellar
+@dirrm %%DATADIR%%/data/iconsets/nuvola/16x16
+@dirrm %%DATADIR%%/data/iconsets/nuvola
+@dirrm %%DATADIR%%/data/iconsets/gota/32x32
+@dirrm %%DATADIR%%/data/iconsets/gota/16x16
+@dirrm %%DATADIR%%/data/iconsets/gota
+@dirrm %%DATADIR%%/data/iconsets/gossip/16x16
+@dirrm %%DATADIR%%/data/iconsets/gossip
+@dirrm %%DATADIR%%/data/iconsets/gnome/32x32
+@dirrm %%DATADIR%%/data/iconsets/gnome/16x16
+@dirrm %%DATADIR%%/data/iconsets/gnome
+@dirrm %%DATADIR%%/data/iconsets/dcraven/32x32
+@dirrm %%DATADIR%%/data/iconsets/dcraven/16x16
+@dirrm %%DATADIR%%/data/iconsets/dcraven
 @dirrm %%DATADIR%%/data/iconsets
 @dirrm %%DATADIR%%/data/pixmaps
 @dirrm %%DATADIR%%/data/sounds
@@ -261,6 +389,10 @@ share/pixmaps/gajim.png
 @dirrm %%DATADIR%%/po/pt
 @dirrm %%DATADIR%%/po/ru/LC_MESSAGES/
 @dirrm %%DATADIR%%/po/ru
+@dirrm %%DATADIR%%/po/cs/LC_MESSAGES/
+@dirrm %%DATADIR%%/po/cs
+@dirrm %%DATADIR%%/po/nb/LC_MESSAGES/
+@dirrm %%DATADIR%%/po/nb
 @dirrm %%DATADIR%%/po
 @dirrm %%DATADIR%%
 @unexec rmdir %D/share/applications > /dev/null 2>&1 | true

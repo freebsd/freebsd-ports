@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8
 CATEGORIES=	net
 MASTER_SITES=	http://www.gajim.org/downloads/
 
@@ -26,7 +26,8 @@ MAKE_ENV+=	PY_CFLAGS=-I${PYTHON_INCLUDEDIR} \
 		PY_PREFIX=${LOCALBASE} \
 		CC=${CC} LDFLAGS=-L${LOCALBASE}/lib
 
-MAN1=		gajim.1
+MAN1=		gajim.1 \
+		gajim-remote.1
 
 post-patch:
 	@${REINPLACE_CMD} -e \
