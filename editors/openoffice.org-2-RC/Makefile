@@ -34,6 +34,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
+WITHOUT_CPU_CFLAGS=	true
 
 .if !defined(WITHOUT_JAVA) && !defined(WITH_GNUGCJ)
 USE_JAVA=	yes
@@ -47,11 +48,14 @@ JAVA_BUILD=	jdk
 .if (${OSVERSION} < 503001 && ${OSVERSION} >= 500000) || (${OSVERSION} <= 492000)
 BROKEN=		"rtld depends on _end symbol. type make -DTRYBROKEN to see how to upgrade your rtld"
 .endif
+.if ${PERL_LEVEL} < 500600
+IGNORE=		Install lang/perl5.8 then try again
+.endif
 
 CODELINE=		680
 RELEASE_NR=		1.9
-MILESTONE=		121
-SNAPDATE=		20050725
+MILESTONE=		126
+SNAPDATE=		20050827
 INSTALLATION_BASEDIR=	openoffice.org${RELEASE_NR}m${MILESTONE}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org2.0
@@ -106,9 +110,11 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 .else
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 .endif
 
 GNU_CONFIGURE=	yes
+USE_AUTOCONF_VER=      259
 WRKSRC=		${WRKDIR}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 ANT?=		${LOCALBASE}/bin/ant
@@ -151,10 +157,11 @@ post-extract:
 
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
+# PR:84786 #i53289#
 .if (${NUMOFPROCESSES}>1)
-	@cd ${WRKSRC} ;	${TCSH} -c "source FreeBSDEnv.Set ; cd instsetoo_native ; build.pl -P${NUMOFPROCESSES} --all"
+	@cd ${WRKSRC} ;	${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source FreeBSDEnv.Set ; cd instsetoo_native ; build.pl -P${NUMOFPROCESSES} --all"
 .else
-	@cd ${WRKSRC} ;	${TCSH} -c "source FreeBSDEnv.Set ; dmake"
+	@cd ${WRKSRC} ;	${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source FreeBSDEnv.Set ; dmake"
 .endif
 
 do-install:
@@ -163,7 +170,7 @@ do-install:
 	@${MKDIR} ${WRKDIR}/tmp
 	@for i in `${CAT} ${WRKDIR}/INSTALLFILES`; do \
 		${CP} ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice/install/${LOCALIZED_LANG}/freebsd-*/$$i ${WRKDIR}/tmp ; \
-		cd ${WRKDIR}/tmp ; ${TAR} xf ${WRKDIR}/tmp/$$i ; \
+		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKDIR}/tmp/$$i ; \
 	done
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
 	@cd ${WRKDIR}/tmp/opt/openoffice* ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}

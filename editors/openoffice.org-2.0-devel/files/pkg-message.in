@@ -16,13 +16,6 @@ install some files and choose an installed JDK.
 The setup installs a ".openoffice.org%%RELEASE_NR%%.%%MILESTONE%%" folder
 in your homedir.
 
-If the setup tells you there is already an installed
-version, you may look in the file ".sversionrc" located
-in your homedir. In this file, OpenOffice and StarOffice
-will have a line for each version that is installed.
-After removing the problematic line you should be able to
-install the package again.
-
 2. Starting OO.org
 ------------------
 
@@ -46,6 +39,13 @@ OO.org does need $LANG to be set to a suitable value.
 3. If you run into problems
 --------------------------------------------------
 If you somehow run into problems, please remove the already installed
-".openoffice.org%%RELEASE_NR%%.%%MILESTONE%%" dir in your homedir
-along with the appropriate entry in ".sversionrc". Redo the user
-installation and the problems should go away.
+".openoffice.org%%RELEASE_NR%%.%%MILESTONE%%" dir in your homedir.
+Redo the user installation and the problems should go away.
+
+4. Known issue
+--------------------------------------------------
+If you invoke English version of OOo setting LANG as C or not
+setting LANG environment,
+`I18N: Operating system doesn't support locale "en_US"'
+in this case you should set LANG as en_US.ISO8859-15
+or en_US.ISO8859-1.
