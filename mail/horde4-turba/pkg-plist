@@ -1,5 +1,4 @@
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/LDAP
@@ -35,15 +34,9 @@
 %%TURBADIR%%/lib/Driver/sql.php
 %%TURBADIR%%/lib/Group.php
 %%TURBADIR%%/lib/List.php
-%%TURBADIR%%/lib/List/Plain.php
-%%TURBADIR%%/lib/List/Tree.php
 %%TURBADIR%%/lib/ListView.php
-%%TURBADIR%%/lib/ListView/Rolodex.php
-%%TURBADIR%%/lib/ListView/Tree.php
 %%TURBADIR%%/lib/Object.php
 %%TURBADIR%%/lib/ObjectView.php
-%%TURBADIR%%/lib/ObjectView/List.php
-%%TURBADIR%%/lib/ObjectView/PhotoID.php
 %%TURBADIR%%/lib/Renderer.php
 %%TURBADIR%%/lib/Turba.php
 %%TURBADIR%%/lib/api.php
@@ -89,6 +82,7 @@
 %%TURBADIR%%/locale/sk_SK/help.xml
 %%TURBADIR%%/locale/sl_SI/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/sv_SE/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/tr_TR/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/uk_UA/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/zh_CN/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/zh_TW/LC_MESSAGES/turba.mo
@@ -126,6 +120,7 @@
 %%TURBADIR%%/po/sk_SK.po
 %%TURBADIR%%/po/sl_SI.po
 %%TURBADIR%%/po/sv_SE.po
+%%TURBADIR%%/po/tr_TR.po
 %%TURBADIR%%/po/turba.pot
 %%TURBADIR%%/po/uk_UA.po
 %%TURBADIR%%/po/zh_CN.po
@@ -141,7 +136,7 @@
 %%TURBADIR%%/scripts/sql/turba_objects.pgsql.sql
 %%TURBADIR%%/scripts/sql/turba_objects.sql
 %%TURBADIR%%/scripts/sql/turba_weddingguests.sql
-%%TURBADIR%%/scripts/upgrades/1.2_to_2.0.mysql.sql
+%%TURBADIR%%/scripts/upgrades/1.2_to_2.0.sql
 %%TURBADIR%%/scripts/upgrades/2004-10-26_create_default_histories.php
 %%TURBADIR%%/search.php
 %%TURBADIR%%/templates/.htaccess
@@ -164,6 +159,7 @@
 %%TURBADIR%%/templates/prefs/columnselect.inc
 %%TURBADIR%%/test.php
 %%TURBADIR%%/themes/graphics/contact.png
+%%TURBADIR%%/themes/graphics/favicon.ico
 %%TURBADIR%%/themes/graphics/group.png
 %%TURBADIR%%/themes/graphics/menu/browse.png
 %%TURBADIR%%/themes/graphics/menu/new.png
@@ -175,9 +171,6 @@ etc/horde/httpd.conf.turba
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%TURBADIR%%/lib/Block
 @dirrm %%TURBADIR%%/lib/Driver
-@dirrm %%TURBADIR%%/lib/List
-@dirrm %%TURBADIR%%/lib/ListView
-@dirrm %%TURBADIR%%/lib/ObjectView
 @dirrm %%TURBADIR%%/lib
 @dirrm %%TURBADIR%%/locale/ar_SY/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/ar_SY
@@ -242,6 +235,8 @@ etc/horde/httpd.conf.turba
 @dirrm %%TURBADIR%%/locale/sl_SI
 @dirrm %%TURBADIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/sv_SE
+@dirrm %%TURBADIR%%/locale/tr_TR/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/tr_TR
 @dirrm %%TURBADIR%%/locale/uk_UA/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/uk_UA
 @dirrm %%TURBADIR%%/locale/zh_CN/LC_MESSAGES
