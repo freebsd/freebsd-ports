@@ -9312,6 +9312,7 @@ pips870		ports/print/pips870
 pips870-cups	ports/print/pips870-cups
 pips880		ports/print/pips880
 pips900		ports/print/pips900
+pips930		ports/print/pips930
 pips940		ports/print/pips940
 pips970		ports/print/pips970
 pips970-cups	ports/print/pips970-cups
