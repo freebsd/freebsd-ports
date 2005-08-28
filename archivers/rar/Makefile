@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rar
-PORTVERSION=	3.5
+PORTVERSION=	3.50
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://files1.rarlab.com/rar/ \
