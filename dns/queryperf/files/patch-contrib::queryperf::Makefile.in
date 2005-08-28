@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Aug 21 18:28:34 2005
++++ Makefile.in	Sun Aug 21 18:29:20 2005
+@@ -5,6 +5,8 @@
+ LIBS = @LIBS@
+ DEFS = @DEFS@
+ 
++all: queryperf
++
+ queryperf: queryperf.o $(LIBOBJS)
+ 	$(CC) $(CFLAGS) $(DEFS) $(LDFLAGS) queryperf.o $(LIBOBJS) $(LIBS) -lm -o queryperf
+ 
