@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrelltop
 PORTVERSION=	2.2.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://psychology.rutgers.edu/~zaimi/html/gkrelltop/
 DISTNAME=	${PORTNAME}_2.2-6
@@ -27,13 +27,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_FILES=	libexec/gkrellm2/plugins/gkrelltop.so \
 		libexec/gkrellm2/plugins/gkrelltopd.so
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
-.endif
-
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
