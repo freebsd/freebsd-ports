@@ -1,12 +1,13 @@
 bin/bush
 @exec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells
 @unexec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells
+%%PORTDOCS%%%%EXAMPLESDIR%%/archive.bush
+%%PORTDOCS%%%%EXAMPLESDIR%%/archive.html
 %%PORTDOCS%%%%EXAMPLESDIR%%/arrow.wav
 %%PORTDOCS%%%%EXAMPLESDIR%%/bats.wav
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchdata.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmark.adb
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmark.bash
-%%PORTDOCS%%%%EXAMPLESDIR%%/benchmark.bash.bak
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmark.bush
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmark.ksh
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmark.sh
@@ -62,6 +63,8 @@ bin/bush
 %%PORTDOCS%%%%EXAMPLESDIR%%/scripting.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/validate_name.bush
 %%PORTDOCS%%%%EXAMPLESDIR%%/validate_name.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/web_summary.bush
+%%PORTDOCS%%%%EXAMPLESDIR%%/web_summary.html
 %%PORTDOCS%%%%EXAMPLESDIR%%/wumpus.bush
 %%PORTDOCS%%%%EXAMPLESDIR%%/wumpus.gif
 %%PORTDOCS%%%%EXAMPLESDIR%%/wumpus.html
