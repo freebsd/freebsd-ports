@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	4.1.13
+PORTVERSION=	4.1.14
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
@@ -114,7 +114,6 @@ LATEST_LINK=	mysql41-server
 
 CONFLICTS=	mysql-server-3.* mysql-server-4.[02-9].* mysql-server-5.*
 
-PLIST_SUB=	VER=${PORTVERSION}
 .if defined(WITH_NDB)
 PLIST_SUB+=	NDB=""
 .else

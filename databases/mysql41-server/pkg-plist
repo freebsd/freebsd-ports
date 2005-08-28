@@ -12,6 +12,7 @@ bin/mysql_install_db
 bin/mysql_tzinfo_to_sql
 bin/mysql_waitpid
 bin/mysqld_safe
+%%NDB%%bin/ndb_config
 %%NDB%%bin/ndb_delete_all
 %%NDB%%bin/ndb_desc
 %%NDB%%bin/ndb_drop_index
@@ -72,12 +73,7 @@ libexec/mysqld
 %%NDB%%libexec/ndb_cpcd
 %%NDB%%libexec/ndb_mgmd
 %%NDB%%libexec/ndbd
-%%DATADIR%%/Description.plist
-%%DATADIR%%/Info.plist
-%%DATADIR%%/MySQL-shared-compat.spec
-%%DATADIR%%/StartupParameters.plist
-%%DATADIR%%/postinstall
-%%DATADIR%%/preinstall
+%%DATADIR%%/binary-configure
 %%DATADIR%%/charsets/Index.xml
 %%DATADIR%%/charsets/README
 %%DATADIR%%/charsets/armscii8.xml
@@ -138,7 +134,6 @@ libexec/mysqld
 %%DATADIR%%/my-large.cnf
 %%DATADIR%%/my-medium.cnf
 %%DATADIR%%/my-small.cnf
-%%DATADIR%%/mysql-%%VER%%.spec
 %%DATADIR%%/mysql-log-rotate
 %%DATADIR%%/mysql.server
 %%DATADIR%%/ndb-config-2-node.ini
