@@ -475,6 +475,7 @@
     SUBDIR += libmtrie
     SUBDIR += libmusclecard
     SUBDIR += libnaji
+    SUBDIR += libnotify
     SUBDIR += liboil
     SUBDIR += libol
     SUBDIR += libole2
