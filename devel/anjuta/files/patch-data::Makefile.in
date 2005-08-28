@@ -1,16 +1,15 @@
---- data/Makefile.in.orig	Wed May 14 17:19:02 2003
-+++ data/Makefile.in	Wed May 14 17:19:32 2003
-@@ -176,11 +176,11 @@
- 	autogen.sh.wxwin
- 
+--- data/Makefile.in.orig	Wed Aug 17 02:30:12 2005
++++ data/Makefile.in	Wed Aug 17 02:29:02 2005
+@@ -270,10 +270,10 @@
+ 	welcome.txt\
+ 	autogen.sh
  
 -anjuta_mimedir = $(prefix)/share/mime-info
 +anjuta_mimedir = $(prefix)/share/gnome/mime-info
  anjuta_mime_DATA = anjuta.mime
- 
  anjuta_mimelnkdir = $(prefix)/share/mimelnk/application
 -anjuta_mimelnk_DATA = x-anjuta-project.desktop
 +anjuta_mimelnk_DATA =
+ EXTRA_DIST = $(anjuta_data_DATA) $(anjuta_mime_DATA) $(anjuta_mimelnk_DATA)
+ all: all-recursive
  
- MACROS = \
- 	ChangeLog \

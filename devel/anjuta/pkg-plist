@@ -22,13 +22,7 @@ lib/anjuta/libanjuta_sample1.so.0
 %%PORTDOCS%%share/doc/anjuta/TODO
 share/gnome/anjuta/README.stock_libs
 share/gnome/anjuta/anjuta_project.template
-share/gnome/anjuta/autogen.sh.generic
-share/gnome/anjuta/autogen.sh.gnome
-share/gnome/anjuta/autogen.sh.gnome2
-share/gnome/anjuta/autogen.sh.gnomemm
-share/gnome/anjuta/autogen.sh.gtk
-share/gnome/anjuta/autogen.sh.gtkmm
-share/gnome/anjuta/autogen.sh.wxwin
+share/gnome/anjuta/autogen.sh
 share/gnome/anjuta/gdb.init
 share/gnome/anjuta/gdl/glade/layout.glade
 share/gnome/anjuta/glade/anjuta.glade
@@ -36,50 +30,6 @@ share/gnome/anjuta/glade/applogo.png
 share/gnome/anjuta/glade/start-with-import.png
 share/gnome/anjuta/glade/start-with-open.png
 share/gnome/anjuta/glade/start-with-wizard.png
-share/gnome/anjuta/gnome/ChangeLog
-share/gnome/anjuta/gnome/Makefile.am
-share/gnome/anjuta/gnome/aclocal-include.m4
-share/gnome/anjuta/gnome/autogen.sh
-share/gnome/anjuta/gnome/compiler-flags.m4
-share/gnome/anjuta/gnome/curses.m4
-share/gnome/anjuta/gnome/gnome-bonobo-check.m4
-share/gnome/anjuta/gnome/gnome-common.m4
-share/gnome/anjuta/gnome/gnome-cxx-check.m4
-share/gnome/anjuta/gnome/gnome-fileutils.m4
-share/gnome/anjuta/gnome/gnome-gettext.m4
-share/gnome/anjuta/gnome/gnome-ghttp-check.m4
-share/gnome/anjuta/gnome/gnome-gnorba-check.m4
-share/gnome/anjuta/gnome/gnome-guile-checks.m4
-share/gnome/anjuta/gnome/gnome-libgtop-check.m4
-share/gnome/anjuta/gnome/gnome-objc-checks.m4
-share/gnome/anjuta/gnome/gnome-orbit-check.m4
-share/gnome/anjuta/gnome/gnome-pilot.m4
-share/gnome/anjuta/gnome/gnome-print-check.m4
-share/gnome/anjuta/gnome/gnome-pthread-check.m4
-share/gnome/anjuta/gnome/gnome-support.m4
-share/gnome/anjuta/gnome/gnome-undelfs.m4
-share/gnome/anjuta/gnome/gnome-vfs.m4
-share/gnome/anjuta/gnome/gnome-x-checks.m4
-share/gnome/anjuta/gnome/gnome-xml-check.m4
-share/gnome/anjuta/gnome/gnome.m4
-share/gnome/anjuta/gnome/gperf-check.m4
-share/gnome/anjuta/gnome/linger.m4
-share/gnome/anjuta/gnome/need-declaration.m4
-share/gnome/anjuta/gnome/psiconv.m4
-share/gnome/anjuta/gnome2/ChangeLog
-share/gnome/anjuta/gnome2/Makefile.am
-share/gnome/anjuta/gnome2/autogen.sh
-share/gnome/anjuta/gnome2/check-utmp.m4
-share/gnome/anjuta/gnome2/compiler-flags.m4
-share/gnome/anjuta/gnome2/curses.m4
-share/gnome/anjuta/gnome2/gnome-common.m4
-share/gnome/anjuta/gnome2/gnome-cxx-check.m4
-share/gnome/anjuta/gnome2/gnome-gettext.m4
-share/gnome/anjuta/gnome2/gnome-pkgconfig.m4
-share/gnome/anjuta/gnome2/gnome-platform.m4
-share/gnome/anjuta/gnome2/gnome-pthread-check.m4
-share/gnome/anjuta/gnome2/gnome-x-checks.m4
-share/gnome/anjuta/gnome2/linger.m4
 share/gnome/anjuta/header.c
 share/gnome/anjuta/properties/ada.properties
 share/gnome/anjuta/properties/anjuta.properties
@@ -452,12 +402,14 @@ share/locale/fr/LC_MESSAGES/anjuta.mo
 share/locale/ga/LC_MESSAGES/anjuta.mo
 share/locale/hi/LC_MESSAGES/anjuta.mo
 share/locale/hr/LC_MESSAGES/anjuta.mo
+share/locale/hu/LC_MESSAGES/anjuta.mo
 share/locale/it/LC_MESSAGES/anjuta.mo
 share/locale/ja/LC_MESSAGES/anjuta.mo
 share/locale/ko/LC_MESSAGES/anjuta.mo
 share/locale/mk/LC_MESSAGES/anjuta.mo
 share/locale/ml/LC_MESSAGES/anjuta.mo
 share/locale/ms/LC_MESSAGES/anjuta.mo
+share/locale/nb/LC_MESSAGES/anjuta.mo
 share/locale/nl/LC_MESSAGES/anjuta.mo
 share/locale/no/LC_MESSAGES/anjuta.mo
 share/locale/pl/LC_MESSAGES/anjuta.mo
@@ -484,12 +436,10 @@ share/locale/zh_TW/LC_MESSAGES/anjuta.mo
 @dirrm share/gnome/help/anjuta/C/figures
 @dirrm share/gnome/help/anjuta/C
 @dirrm share/gnome/help/anjuta
+@dirrm share/gnome/anjuta/properties
+@dirrm share/gnome/anjuta/glade
 @dirrm share/gnome/anjuta/gdl/glade
 @dirrm share/gnome/anjuta/gdl
-@dirrm share/gnome/anjuta/properties
-@dirrm share/gnome/anjuta/gnome2
-@dirrm share/gnome/anjuta/gnome
-@dirrm share/gnome/anjuta/glade
 @dirrm share/gnome/anjuta
 %%PORTDOCS%%@dirrm share/doc/anjuta
 @dirrm lib/anjuta
