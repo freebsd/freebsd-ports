@@ -7,6 +7,7 @@
 
 PORTNAME=	nspr
 PORTVERSION=	4.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	nspr/releases/v${PORTVERSION}/src
@@ -35,6 +36,8 @@ do-install:
 	${TAR} -C ${WRKSRC}/dist/lib --dereference -cf - . | \
 		${TAR} -C ${PREFIX}/lib -xf -
 	${INSTALL_SCRIPT} ${WRKSRC}/config/nspr-config ${PREFIX}/bin
+	${MKDIR} ${PREFIX}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKSRC}/config/nspr.pc ${PREFIX}/libdata/pkgconfig
 .for lib in ${LIBS}
 	${LN} -sf ${lib} ${PREFIX}/lib/${lib:R}
 .endfor

@@ -1,0 +1,13 @@
+--- ../config/nspr.pc.in.orig	Thu Aug  4 21:38:50 2005
++++ ../config/nspr.pc.in	Thu Aug  4 21:38:59 2005
+@@ -0,0 +1,10 @@
++prefix=@prefix@
++exec_prefix=@exec_prefix@
++libdir=@libdir@
++includedir=@includedir@
++
++Name: NSPR
++Description: The Netscape Portable Runtime
++Version: @MOD_MAJOR_VERSION@.@MOD_MINOR_VERSION@.@MOD_PATCH_VERSION@
++Libs: -L${libdir} -lplds@MOD_MAJOR_VERSION@ -lplc@MOD_MAJOR_VERSION@ -lnspr@MOD_MAJOR_VERSION@ @OS_LIBS@
++Cflags: -I${includedir}

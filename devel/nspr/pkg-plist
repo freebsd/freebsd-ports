@@ -51,8 +51,8 @@ include/nspr/md/_rhapsody.cfg
 include/nspr/md/_rhapsody.h
 include/nspr/md/_scoos.cfg
 include/nspr/md/_scoos.h
-include/nspr/md/_solaris.h
 include/nspr/md/_solaris.cfg
+include/nspr/md/_solaris.h
 include/nspr/md/_sony.cfg
 include/nspr/md/_sony.h
 include/nspr/md/_sunos4.cfg
@@ -136,6 +136,7 @@ lib/libplc4.so.1
 lib/libplds4.a
 lib/libplds4.so
 lib/libplds4.so.1
+libdata/pkgconfig/nspr.pc
 @dirrm include/nspr/private
 @dirrm include/nspr/obsolete
 @dirrm include/nspr/md
