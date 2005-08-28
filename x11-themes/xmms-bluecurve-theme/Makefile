@@ -9,7 +9,8 @@ PORTNAME=	xmms-bluecurve-theme
 
 COMMENT=	The Bluecurve XMMS skin
 
-RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
+RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
+		unzip:${PORTSDIR}/archivers/unzip
 
 MASTERDIR=	${.CURDIR}/../bluecurve-themes
 
