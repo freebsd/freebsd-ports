@@ -11,11 +11,12 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.mavetju.org/download/adopted/:code \
 		http://fms.komkon.org/fMSX/:code \
 		http://fms.komkon.org/fMSX/src/:rom
-DIST_SUBDIR=	fmsx30
 DISTFILES=	fMSX30.tar.Z:code \
 		MSX.ROM:rom MSX2.ROM:rom MSX2EXT.ROM:rom MSX2P.ROM:rom \
 		MSX2PEXT.ROM:rom FMPAC.ROM:rom DISK.ROM:rom MSXDOS2.ROM:rom \
 		PAINTER.ROM:rom KANJI.ROM:rom
+DIST_SUBDIR=	fmsx30
+
 MAINTAINER=	dk@farm.org
 COMMENT=	The Portable MSX/MSX2/MSX2+ Emulator
 
