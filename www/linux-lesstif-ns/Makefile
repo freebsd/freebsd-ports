@@ -11,8 +11,6 @@ PORTREVISION=	3
 CATEGORIES=	www x11-toolkits linux
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/ \
 		ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/obsolete/ \
-		ftp://ftp.rge.com/pub/X/lesstif/srcdist/ \
-		ftp://ftp.rge.com/pub/X/lesstif/srcdist/obsolete/ \
 		ftp://ftp.kddlabs.co.jp/X11/lesstif/srcdist/ \
 		ftp://ftp.kddlabs.co.jp/X11/lesstif/srcdist/obsolete/
 PKGNAMEPREFIX=	linux-
