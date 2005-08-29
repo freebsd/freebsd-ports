@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsigsegv
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libsigsegv
@@ -16,5 +16,8 @@ COMMENT=	Handling page faults in user mode
 
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386
+
+check: build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check
 
 .include <bsd.port.mk>
