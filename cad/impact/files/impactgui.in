@@ -2,6 +2,6 @@
 #
 # $FreeBSD$
 
-cd %%DIR%%/bin
-"%%LOCALBASE%%/bin/java" -Xmx500m gui.ImpactGUI
+cd %%DATADIR%%/bin
+JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -Xmx500m gui.ImpactGUI
 cd -

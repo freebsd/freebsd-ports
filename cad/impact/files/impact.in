@@ -2,6 +2,6 @@
 #
 # $FreeBSD$
 
-cd %%DIR%%/bin
-"%%LOCALBASE%%/bin/java" -Xmx500m run.Impact $1
+cd %%DATADIR%%/bin
+JAVA_VERSION="%%JAVA_VERSION" "%%LOCALBASE%%/bin/java" -Xmx500m run.Impact "$@"
 cd -

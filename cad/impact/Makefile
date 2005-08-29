@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	impact
-PORTVERSION=	0.5.3
-CATEGORIES=	cad
+PORTVERSION=	0.6.1
+CATEGORIES=	cad java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	Impact-${PORTVERSION}
@@ -22,20 +22,20 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 NO_BUILD=	yes
 
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 SUB_FILES=	impact impactgui
-SUB_LIST=	DIR=${PREFIX}/impact
 
 PLIST_FILES=	bin/impact bin/impactgui
 
 do-install:
-	@${MKDIR} ${PREFIX}/impact
-	${CP} -R ${WRKSRC}/ ${PREFIX}/impact
+	cd ${WRKSRC} && ${FIND} . -type d -exec ${MKDIR} ${DATADIR}/{} \;
+	cd ${WRKSRC} && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
 	${INSTALL_SCRIPT} ${WRKDIR}/impact ${WRKDIR}/impactgui ${PREFIX}/bin
 
 post-install:
-	@${FIND} ${PREFIX}/impact ! -type d | \
+	@${FIND} ${DATADIR} ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/impact -type d | ${SORT} -r | \
+	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
