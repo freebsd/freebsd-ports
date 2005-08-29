@@ -15,6 +15,6 @@ LANGDIST+=	it_IT.zip
 HYPHDIST+=	hyph_it_IT.zip
 THESDIST+=	thes_it_IT.zip
 MASTERDIR=	${.CURDIR}/../ooodict-all
-RDEP=		${PORTSDIR}/editors/openoffice-1.1
+RDEP=		${PORTSDIR}/editors/openoffice.org-1.1
 
 .include "${MASTERDIR}/Makefile"

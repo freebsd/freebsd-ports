@@ -12,6 +12,6 @@ LANGPREFIX=	cy
 LANGSUFFIX=	GB
 LANGDIST+=	cy_GB.zip
 MASTERDIR=	${.CURDIR}/../ooodict-all
-RDEP=		${PORTSDIR}/editors/openoffice-1.1
+RDEP=		${PORTSDIR}/editors/openoffice.org-1.1
 
-.include "${MASTERDIR}/Makefile"
+.include "${masterdir}/makefile"
