@@ -1,8 +1,7 @@
 #!/usr/bin/perl
-
 # generate full build shell script for OpenOffice.org
 # Whom:         Maho Nakata <maho@FreeBSD.org>
-# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-3-RC/files/Attic/generate.pl,v 1.5 2005-08-28 08:41:59 maho Exp $
+# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-3-RC/files/Attic/generate.pl,v 1.6 2005-08-29 01:06:13 maho Exp $
 
 print "#!/bin/csh\n";
 print "make deinstall clean\n";
@@ -20,4 +19,3 @@ if ( $tmp[0] eq ".if" && $tmp[1] eq "\${LOCALIZED_LANG}" ) { $LANG=$tmp2[1];
 	}
 }
 close FILE;
-
