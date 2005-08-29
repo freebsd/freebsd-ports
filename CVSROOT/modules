@@ -10014,6 +10014,7 @@ py-pydot	ports/graphics/py-pydot
 py-pyx12	ports/textproc/py-pyx12
 py-pyxmpp	ports/net/py-pyxmpp
 py-qt		ports/x11-toolkits/py-qt
+py-radix	ports/net/py-radix
 py-rdflib	ports/textproc/py-rdflib
 py-repl		ports/devel/py-repl
 py-reportlab	ports/print/py-reportlab
