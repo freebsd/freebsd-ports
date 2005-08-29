@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.qmail.org/pub/software/ \
 DISTFILES=	dot-forward-${DF_VER}.tar.gz \
 		fastforward-${FF_VER}.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Contributed programs for qmail
 
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
@@ -36,7 +36,7 @@ QMAIL_DIR?=	/var/qmail
 PREFIX?=	/var/qmail
 .endif
 
-.if (${PREFIX} == "/usr/local")
+.if (${PREFIX} == ${LOCALBASE})
 DOCDIR=		share/doc/qmail
 .else
 DOCDIR=		doc
@@ -50,21 +50,20 @@ WRKFF=		${WRKDIR}/fastforward-${FF_VER}
 WRKDF=		${WRKDIR}/dot-forward-${DF_VER}
 
 NO_MTREE=	yes
-USE_PERL5_BUILD=yes
+
+USE_REINPLACE=	yes
 
 pre-patch:
 	@cd ${WRKFF} \
 	&& ${PATCH} -s <${PATCHDIR}/extra-patch-newaliases
-#	&& ${PATCH} <${PATCHDIR}/extra-patch-striplocal
-#	apparently the above patch is no longer needed
 
 post-patch:
-	@perl -pi.bak -e "s|-O2|${CFLAGS}|" ${WRKFF}/conf-cc
-	@perl -pi.bak -e "s|.var.qmail|${QMAIL_DIR}|" ${WRKFF}/conf-qmail
-	@perl -pi.bak -e '$$_ = "" if /cat/' ${WRKFF}/hier.c
-	@perl -pi.bak -e "s|-O2|${CFLAGS}|" ${WRKDF}/conf-cc
-	@perl -pi.bak -e "s|.var.qmail|${QMAIL_DIR}|" ${WRKDF}/conf-qmail
-	@perl -pi.bak -e '$$_ = "" if /cat/' ${WRKDF}/hier.c
+	@${REINPLACE_CMD} -e "s|-O2|${CFLAGS}|" ${WRKFF}/conf-cc
+	@${REINPLACE_CMD} -e "s|.var.qmail|${QMAIL_DIR}|" ${WRKFF}/conf-qmail
+	@${REINPLACE_CMD} -e '/cat/d' ${WRKFF}/hier.c
+	@${REINPLACE_CMD} -e "s|-O2|${CFLAGS}|" ${WRKDF}/conf-cc
+	@${REINPLACE_CMD} -e "s|.var.qmail|${QMAIL_DIR}|" ${WRKDF}/conf-qmail
+	@${REINPLACE_CMD} -e '/cat/d' ${WRKDF}/hier.c
 
 do-build:
 	@cd ${WRKDIR}/dot-forward-${DF_VER} \
