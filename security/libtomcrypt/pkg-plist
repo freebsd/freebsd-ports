@@ -1,4 +1,3 @@
-include/ltc_tommath.h
 include/tomcrypt.h
 include/tomcrypt_argchk.h
 include/tomcrypt_cfg.h
@@ -7,13 +6,12 @@ include/tomcrypt_custom.h
 include/tomcrypt_hash.h
 include/tomcrypt_mac.h
 include/tomcrypt_macros.h
+include/tomcrypt_math.h
 include/tomcrypt_misc.h
 include/tomcrypt_pk.h
 include/tomcrypt_pkcs.h
 include/tomcrypt_prng.h
 include/tomcrypt_test.h
-include/tommath_class.h
-include/tommath_superclass.h
 lib/libtomcrypt.a
 %%PORTDOCS%%%%DOCSDIR%%/pdf/crypt.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
