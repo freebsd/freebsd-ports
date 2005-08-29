@@ -8,7 +8,7 @@
 PORTNAME=	notification-daemon
 PORTVERSION=	0.2.1
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://www.galago.info/files/releases/source/
+MASTER_SITES=	http://www.galago.info/files/releases/source/notification-daemon/
 
 MAINTAINER=	andreas@syndrom23.de
 COMMENT=	Send small notifications to your desktop
