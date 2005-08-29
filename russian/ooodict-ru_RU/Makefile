@@ -15,6 +15,6 @@ LANGSUFFIX=	RU
 LANGDIST+=	ru_RU.zip
 HYPHDIST+=      hyph_ru_RU.zip
 MASTERDIR=	${.CURDIR}/../../editors/ooodict-all
-RDEP=		${PORTSDIR}/editors/openoffice-1.1
+RDEP=		${PORTSDIR}/editors/openoffice.org-1.1
 
 .include "${MASTERDIR}/Makefile"

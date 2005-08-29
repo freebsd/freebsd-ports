@@ -13,6 +13,6 @@ LANGPREFIX=	ny
 LANGSUFFIX=	MW
 LANGDIST+=	ny_MW.zip
 MASTERDIR=	${.CURDIR}/../ooodict-all
-RDEP=		${PORTSDIR}/editors/openoffice-1.1
+RDEP=		${PORTSDIR}/editors/openoffice.org-1.1
 
 .include "${MASTERDIR}/Makefile"
