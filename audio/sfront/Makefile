@@ -1,23 +1,20 @@
-# ex:ts=8
 # New ports collection makefile for:	sfront
-# Date created:			Nov 4, 2001
-# Whom:				ijliao
+# Date created:				Nov 4, 2001
+# Whom:					ijliao
 #
 # $FreeBSD$
 #
 
 PORTNAME=	sfront
-PORTVERSION=	0.88
+PORTVERSION=	0.89
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cs.berkeley.edu/~lazzaro/sa/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@critical.ch
 COMMENT=	A translator that converts MP4-SA files into efficient C programs
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	book sfman
-.endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
@@ -27,11 +24,13 @@ ALL_TARGET=	${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sfront ${PREFIX}/bin
-	${MKDIR} ${DOCSDIR}
-.if !defined(NOPORTDOCS)
-	${CP} -R ${WRKDIR}/sfront/sfman ${DOCSDIR}/
-	${CP} -R ${WRKDIR}/sfront/book ${DOCSDIR}/
-.endif
 	${CP} -R ${WRKDIR}/sfront/examples/ ${EXAMPLESDIR}
+
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for d in ${PORTDOCS}
+	${CP} -R ${WRKDIR}/sfront/${d} ${DOCSDIR}/
+.endfor
+.endif
 
 .include <bsd.port.mk>
