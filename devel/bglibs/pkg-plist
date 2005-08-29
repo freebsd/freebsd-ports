@@ -58,62 +58,69 @@ include/bglibs/unix/sig.h
 include/bglibs/unix/trigger.h
 include/bglibs/vmailmgr/client.h
 include/bglibs/vmailmgr/vpwentry.h
-lib/libbase64/base64.a
-lib/libbg-adt.a
-lib/libbg-base64.a
-lib/libbg-cdb.a
-lib/libbg-cli.a
-lib/libbg-crc.a
-lib/libbg-crypto.a
-lib/libbg-dict.a
-lib/libbg-fmt.a
-lib/libbg-installer.a
-lib/libbg-instcheck.a
-lib/libbg-instshow.a
-lib/libbg-iobuf.a
-lib/libbg-misc.a
-lib/libbg-msg.a
-lib/libbg-net.a
-lib/libbg-path.a
-lib/libbg-str.a
-lib/libbg-sysdeps.a
-lib/libbg-unix.a
-lib/libbg.a
-lib/libcdb/cdb.a
-lib/libcdb/make.a
-lib/libcdb/str.a
-lib/libcli/cli.a
-lib/libcrypto/md5.a
-lib/libcrypto/sha1.a
-lib/libcrypto/sha256.a
-lib/libcrypto/sha512a.a
-lib/libdict/dict.a
-lib/libdict/load.a
-lib/libinstaller.a
-lib/libinstcheck.a
-lib/libinstshow.a
-lib/libiobuf/iobuf.a
-lib/libiobuf/str.a
-lib/libmisc/misc.a
-lib/libmsg/msg.a
-lib/libmsg/wrap.a
-lib/libnet/ipv4.a
-lib/libnet/resolve.a
-lib/libnet/socket.a
-lib/libpath/path.a
-lib/libpwcmp-module.a
-lib/libpwcmp.a
-lib/libpwcmp/client.a
-lib/libpwcmp/hex.a
-lib/libpwcmp/module.a
-lib/libstr/iter.a
-lib/libstr/str.a
-lib/libsysdeps.a
-lib/libunix/nonblock.a
-lib/libunix/sig.a
-lib/libvmailmgr.a
-lib/libvmailmgr/client.a
-lib/libvmailmgr/vpwentry.a
+lib/bglibs/base64/base64.a
+lib/bglibs/cdb/cdb.a
+lib/bglibs/cdb/make.a
+lib/bglibs/cdb/str.a
+lib/bglibs/cli/cli.a
+lib/bglibs/crypt.lib
+lib/bglibs/crypto/md5
+lib/bglibs/crypto/sha1.a
+lib/bglibs/crypto/sha256.a
+lib/bglibs/crypto/sha512a.a
+lib/bglibs/dict/dict.a
+lib/bglibs/dict/load.a
+lib/bglibs/iobuf/iobuf.a
+lib/bglibs/iobuf/str.a
+lib/bglibs/libbg-adt.a
+lib/bglibs/libbg-base64.a
+lib/bglibs/libbg-cdb.a
+lib/bglibs/libbg-cli.a
+lib/bglibs/libbg-crc.a
+lib/bglibs/libbg-crypto.a
+lib/bglibs/libbg-dict.a
+lib/bglibs/libbg-fmt.a
+lib/bglibs/libbg-installer.a
+lib/bglibs/libbg-instcheck.a
+lib/bglibs/libbg-instshow.a
+lib/bglibs/libbg-iobuf.a
+lib/bglibs/libbg-misc.a
+lib/bglibs/libbg-msg.a
+lib/bglibs/libbg-net.a
+lib/bglibs/libbg-path.a
+lib/bglibs/libbg-str.a
+lib/bglibs/libbg-sysdeps.a
+lib/bglibs/libbg-unix.a
+lib/bglibs/libbg.a
+lib/bglibs/libinstaller.a
+lib/bglibs/libinstcheck.a
+lib/bglibs/libinstshow.a
+lib/bglibs/libpwcmp-module.a
+lib/bglibs/libpwcmp.a
+lib/bglibs/libsysdeps.a
+lib/bglibs/libvmailmgr.a
+lib/bglibs/m.lib
+lib/bglibs/misc/misc.a
+lib/bglibs/msg/msg.a
+lib/bglibs/msg/wrap.a
+lib/bglibs/net.lib
+lib/bglibs/net/ipv4.a
+lib/bglibs/net/resolve.a
+lib/bglibs/net/socket.a
+lib/bglibs/path/path.a
+lib/bglibs/pwcmp/client.a
+lib/bglibs/pwcmp/hex.a
+lib/bglibs/pwcmp/module.a
+lib/bglibs/rt.lib
+lib/bglibs/s.lib
+lib/bglibs/shadow.lib
+lib/bglibs/socket.lib
+lib/bglibs/str/iter.a
+lib/bglibs/str/str.a
+lib/bglibs/unix/nonblock.a
+lib/bglibs/unix/sig.a
+lib/bglibs/vmailmgr/client.a
+lib/bglibs/vmailmgr/vpwentry.a
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
@@ -123,6 +130,15 @@ lib/libvmailmgr/vpwentry.a
 %%PORTDOCS%%%%DOCSDIR%%/cmsg_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/common_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/deprecated.html
+%%PORTDOCS%%%%DOCSDIR%%/dir_000000.html
+%%PORTDOCS%%%%DOCSDIR%%/dir_000001.html
+%%PORTDOCS%%%%DOCSDIR%%/dir_000002.html
+%%PORTDOCS%%%%DOCSDIR%%/dir_000003.html
+%%PORTDOCS%%%%DOCSDIR%%/dir_000004.html
+%%PORTDOCS%%%%DOCSDIR%%/dir_000005.html
+%%PORTDOCS%%%%DOCSDIR%%/dir_000006.html
+%%PORTDOCS%%%%DOCSDIR%%/dir_000007.html
+%%PORTDOCS%%%%DOCSDIR%%/dirs.html
 %%PORTDOCS%%%%DOCSDIR%%/djb_2sig_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/doxygen.png
@@ -133,9 +149,14 @@ lib/libvmailmgr/vpwentry.a
 %%PORTDOCS%%%%DOCSDIR%%/functions_vars.html
 %%PORTDOCS%%%%DOCSDIR%%/group__envstr.html
 %%PORTDOCS%%%%DOCSDIR%%/group__fmt.html
+%%PORTDOCS%%%%DOCSDIR%%/group__ibuf.html
+%%PORTDOCS%%%%DOCSDIR%%/group__installer.html
+%%PORTDOCS%%%%DOCSDIR%%/group__instlib.html
 %%PORTDOCS%%%%DOCSDIR%%/group__iobuf.html
 %%PORTDOCS%%%%DOCSDIR%%/group__ipv4.html
 %%PORTDOCS%%%%DOCSDIR%%/group__ipv6.html
+%%PORTDOCS%%%%DOCSDIR%%/group__obuf.html
+%%PORTDOCS%%%%DOCSDIR%%/group__path.html
 %%PORTDOCS%%%%DOCSDIR%%/group__resolve.html
 %%PORTDOCS%%%%DOCSDIR%%/group__selfpipe.html
 %%PORTDOCS%%%%DOCSDIR%%/group__socket.html
@@ -144,15 +165,19 @@ lib/libvmailmgr/vpwentry.a
 %%PORTDOCS%%%%DOCSDIR%%/group__trigger.html
 %%PORTDOCS%%%%DOCSDIR%%/ibuf_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/installer_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/iobuf_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/ipv4_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/ipv6_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/iter_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/misc_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/modules.html
+%%PORTDOCS%%%%DOCSDIR%%/multi_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/nonblock_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/number_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/obuf_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/pages.html
+%%PORTDOCS%%%%DOCSDIR%%/path_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/resolve_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/selfpipe_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/sig_8h-source.html
@@ -186,17 +211,18 @@ lib/libvmailmgr/vpwentry.a
 @dirrm include/bglibs/unix
 @dirrm include/bglibs/vmailmgr
 @dirrm include/bglibs
-@dirrm lib/libbase64
-@dirrm lib/libcdb
-@dirrm lib/libcli
-@dirrm lib/libcrypto
-@dirrm lib/libdict
-@dirrm lib/libiobuf
-@dirrm lib/libmisc
-@dirrm lib/libmsg
-@dirrm lib/libnet
-@dirrm lib/libpath
-@dirrm lib/libpwcmp
-@dirrm lib/libstr
-@dirrm lib/libunix
-@dirrm lib/libvmailmgr
+@dirrm lib/bglibs/base64
+@dirrm lib/bglibs/cdb
+@dirrm lib/bglibs/cli
+@dirrm lib/bglibs/crypto
+@dirrm lib/bglibs/dict
+@dirrm lib/bglibs/iobuf
+@dirrm lib/bglibs/misc
+@dirrm lib/bglibs/msg
+@dirrm lib/bglibs/net
+@dirrm lib/bglibs/path
+@dirrm lib/bglibs/pwcmp
+@dirrm lib/bglibs/str
+@dirrm lib/bglibs/unix
+@dirrm lib/bglibs/vmailmgr
+@dirrm lib/bglibs

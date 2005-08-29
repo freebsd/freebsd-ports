@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bglibs
-PORTVERSION=	1.019
+PORTVERSION=	1.027
 CATEGORIES=	devel
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
@@ -15,7 +15,11 @@ COMMENT=	One stop library package by Bruce Guenter
 
 NOT_FOR_ARCHS=	alpha
 
+USE_GPG=	yes
+SIG_SUFFIX=	.sig
 LDFLAGS?=	-s
+BGLIBS_INC=	${PREFIX}/include/${PORTNAME}
+BGLIBS_LIB=	${PREFIX}/lib/${PORTNAME}
 
 DOCS=		NEWS README TODO doc/html/*
 
@@ -23,10 +27,11 @@ do-configure:
 	${ECHO_CMD} "${PREFIX}"		> ${WRKSRC}/conf-home
 	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/conf-cc
 	${ECHO_CMD} "${CC} ${LDFLAGS}"	> ${WRKSRC}/conf-ld
+	${ECHO_CMD} "${BGLIBS_INC}"	> ${WRKSRC}/conf-include
+	${ECHO_CMD} "${BGLIBS_LIB}"	> ${WRKSRC}/conf-lib
 
-do-install:
-	cd ${WRKSRC} && ./installer
 .if !defined(NOPORTDOCS)
+post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
