@@ -6,20 +6,18 @@
 #
 
 PORTNAME=	selfhtml
-PORTVERSION=	80
-PORTREVISION=	1
+PORTVERSION=	81
 CATEGORIES=	german www
-MASTER_SITES=	http://www.fsai.fh-trier.de/~gielj/files/ \
-		http://home.t-online.de/home/b.michna/selfhtml/ \
-		http://dj5nu.bei.t-online.de/ \
-		http://www.mtory.de/selfhtml/ \
-		http://www.unet.univie.ac.at/~a9105535/ \
-		http://www.jonasstein.de/mirror/ \
-		http://home.t-online.de/home/AundG.Hofmann/selfhtml/ \
-		http://selfhtml.occuris.de/download/ \
-		http://studwww.ira.uka.de/~s_buerk/selfhtml/ \
-		http://www.stud.uni-goettingen.de/software/ \
-		http://www.meta-text.net/
+MASTER_SITES=	http://ftp.join.uni-muenster.de/pub/documents/selfhtml/ \
+		ftp://ftp.uni-ulm.de/mirrors/selfhtml/ \
+		http://free.w3research.com/ \
+		http://selfhtml.hegglin.net/ \
+		http://www.meta-text.net/ \
+		http://www.lichteinfall.de/ \
+		http://www.mastko.de/ \
+		http://www.a-mazing.de/downloads/ \
+		http://download.iansview.com/mirror/selfhtml.org/ \
+		ftp://ftp.rub.de/pub/selfhtml/
 PKGNAMEPREFIX=	de-
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
@@ -29,11 +27,9 @@ COMMENT=	Extensive german HTML reference
 USE_REINPLACE=	yes
 USE_ZIP=	yes
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
 
 PORTDOCS=	\
 		index.htm \
-		cgiperl \
 		css \
 		dhtml \
 		diverses \
@@ -46,9 +42,11 @@ PORTDOCS=	\
 		javascript \
 		layouts \
 		navigation \
+		perl \
 		php \
 		projekt \
 		quellen \
+		servercgi \
 		src \
 		xml
 
