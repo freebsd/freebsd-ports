@@ -1,0 +1,16 @@
+--- makefile.orig	Fri Aug  5 10:44:08 2005
++++ makefile	Fri Aug  5 10:45:03 2005
+@@ -49,11 +49,11 @@
+ HEADERS=tfm.h
+ 
+ ifndef LIBPATH
+-   LIBPATH=/usr/lib
++   LIBPATH=${PREFIX}/lib
+ endif
+ 
+ ifndef INCPATH
+-   INCPATH=/usr/include
++   INCPATH=${PREFIX}/include
+ endif
+ 
+ ifndef INSTALL_GROUP
