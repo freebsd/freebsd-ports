@@ -6,8 +6,9 @@ firebird/UDF/fbudf.sql
 firebird/UDF/ib_udf.so
 firebird/UDF/ib_udf.sql
 firebird/WhatsNew
-firebird/aliases.conf
+@unexec if cmp -s %D/firebird/aliases.conf %D/firebird/aliases.conf.sample; then rm -f %D/firebird/aliases.conf; fi
 firebird/aliases.conf.sample
+@exec [ -f %B/aliases.conf ] || cp %B/%f %B/aliases.conf
 firebird/bin/fb_inet_server
 firebird/bin/fb_lock_mgr
 firebird/bin/fb_lock_print
@@ -21,54 +22,61 @@ firebird/bin/gsplit
 firebird/bin/gstat
 firebird/bin/isql
 firebird/bin/qli
-firebird/doc/README.NTSecurity
-firebird/doc/README.Optimizer.txt
-firebird/doc/README.Win32LibraryInstallation.txt
-firebird/doc/README.build.mingw.html
-firebird/doc/README.build.msvc.html
-firebird/doc/README.coding.style
-firebird/doc/README.instsvc
-firebird/doc/README.isql_enhancements.txt
-firebird/doc/README.makefiles
-firebird/doc/README.performance_monitoring
-firebird/doc/README.sha1
-firebird/doc/README.user
-firebird/doc/README.user.embedded
-firebird/doc/README.user.troubleshooting
-firebird/doc/README.xnet
-firebird/doc/sql.extensions/README.PSQL_stack_trace.txt
-firebird/doc/sql.extensions/README.aggregate_tracking
-firebird/doc/sql.extensions/README.case
-firebird/doc/sql.extensions/README.coalesce
-firebird/doc/sql.extensions/README.context_variables
-firebird/doc/sql.extensions/README.context_variables2
-firebird/doc/sql.extensions/README.cursors
-firebird/doc/sql.extensions/README.data_type_results_of_aggregations.txt
-firebird/doc/sql.extensions/README.data_types
-firebird/doc/sql.extensions/README.ddl.txt
-firebird/doc/sql.extensions/README.default_parameters
-firebird/doc/sql.extensions/README.derived_tables.txt
-firebird/doc/sql.extensions/README.distinct
-firebird/doc/sql.extensions/README.exception_handling
-firebird/doc/sql.extensions/README.execute_block
-firebird/doc/sql.extensions/README.execute_statement
-firebird/doc/sql.extensions/README.explicit_locks
-firebird/doc/sql.extensions/README.expression_indices
-firebird/doc/sql.extensions/README.iif
-firebird/doc/sql.extensions/README.keywords
-firebird/doc/sql.extensions/README.leave_labels
-firebird/doc/sql.extensions/README.null_value
-firebird/doc/sql.extensions/README.nullif
-firebird/doc/sql.extensions/README.order_by_expressions_nulls
-firebird/doc/sql.extensions/README.plan
-firebird/doc/sql.extensions/README.rows
-firebird/doc/sql.extensions/README.savepoints
-firebird/doc/sql.extensions/README.select_expressions
-firebird/doc/sql.extensions/README.sequence_generators
-firebird/doc/sql.extensions/README.universal_triggers
-firebird/doc/sql.extensions/README.view_updates
-firebird/firebird.conf
+%%PORTDOCS%%%%DOCSDIR%%/README.NTSecurity
+%%PORTDOCS%%%%DOCSDIR%%/README.Optimizer.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.Win32LibraryInstallation.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.build.mingw.html
+%%PORTDOCS%%%%DOCSDIR%%/README.build.msvc.html
+%%PORTDOCS%%%%DOCSDIR%%/README.coding.style
+%%PORTDOCS%%%%DOCSDIR%%/README.intl
+%%PORTDOCS%%%%DOCSDIR%%/README.instsvc
+%%PORTDOCS%%%%DOCSDIR%%/README.isql_enhancements.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.makefiles
+%%PORTDOCS%%%%DOCSDIR%%/README.performance_monitoring
+%%PORTDOCS%%%%DOCSDIR%%/README.sha1
+%%PORTDOCS%%%%DOCSDIR%%/README.user
+%%PORTDOCS%%%%DOCSDIR%%/README.user.embedded
+%%PORTDOCS%%%%DOCSDIR%%/README.user.troubleshooting
+%%PORTDOCS%%%%DOCSDIR%%/README.xnet
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.PSQL_stack_trace.txt
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.aggregate_tracking
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.case
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.coalesce
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.context_variables
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.context_variables2
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.cursors
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.data_type_results_of_aggregations.txt
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.data_types
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.ddl.txt
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.default_parameters
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.derived_tables.txt
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.distinct
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.exception_handling
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.execute_block
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.execute_statement
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.explicit_locks
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.expression_indices
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.iif
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.keywords
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.leave_labels
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.length
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.null_value
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.nullif
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.order_by_expressions_nulls
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.plan
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.returning
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.rows
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.savepoints
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.select_expressions
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.sequence_generators
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.trim
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.universal_triggers
+%%PORTDOCS%%%%DOCSDIR%%/sql.extensions/README.view_updates
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/sql.extensions
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec if cmp -s %D/firebird/firebird.conf %D/firebird/firebird.conf.sample; then rm -f %D/firebird/firebird.conf; fi
 firebird/firebird.conf.sample
+@exec [ -f %B/firebird.conf ] || cp %B/%f %B/firebird.conf
 @unexec rm -f %D/firebird/firebird.log
 firebird/firebird.msg
 firebird/help/help.fdb
@@ -92,8 +100,6 @@ firebird/security2.fdb.sample
 firebird/security2.fdb
 @dirrm firebird/UDF
 @dirrm firebird/bin
-@dirrm firebird/doc/sql.extensions
-@dirrm firebird/doc
 @dirrm firebird/help
 @dirrm firebird/include
 @dirrm firebird/intl

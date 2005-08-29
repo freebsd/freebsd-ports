@@ -1,0 +1,11 @@
+--- builds/posix/prefix.freebsd.orig	Mon Aug  8 12:08:47 2005
++++ builds/posix/prefix.freebsd	Mon Aug  8 12:10:25 2005
+@@ -20,6 +20,8 @@
+ 
+ OS_ServerFiles=inet_server.cpp
+ 
++LINK_OPTS+=-Wl,-rpath,../gen/firebird/lib
++
+ PROD_FLAGS=-O -fno-builtin -DNDEBUG -DFREEBSD -pipe -MMD -fPIC
+ DEV_FLAGS=-ggdb -DFREEBSD -pipe -MMD -p -fPIC -Wall
+ EMBED_UTIL_TARGETS=gstat gds_drop gds_relay gsec nbackup fb_lock_print
