@@ -186,6 +186,7 @@
     SUBDIR += p5-DBIWrapper
     SUBDIR += p5-DBIx-AnyDBD
     SUBDIR += p5-DBIx-Browse
+    SUBDIR += p5-DBIx-Class
     SUBDIR += p5-DBIx-ContextualFetch
     SUBDIR += p5-DBIx-DBSchema
     SUBDIR += p5-DBIx-DataSource
