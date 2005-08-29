@@ -1,0 +1,11 @@
+This is a sql to oop mapper, inspired by the Class::DBI framework, and
+meant to support compability with it, while restructuring the insides,
+and making it possible to support some new features like self-joins,
+distinct, group bys and more.
+
+It's currently considered EXPERIMENTAL - bring this near a production
+database at your own risk! The API is *not* fixed yet, although most of
+the primitives should be good for the future and any API changes will be
+posted to the mailing list before they're committed.
+
+WWW: http://search.cpan.org/dist/DBIx-Class/
