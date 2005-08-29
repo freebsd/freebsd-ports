@@ -7,7 +7,7 @@
 
 PORTNAME=	dsnake
 PORTVERSION=	3.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games linux
 MASTER_SITES=	http://bitblaze.com/downloads/
 DISTNAME=	${PORTNAME}-linux-${PORTVERSION}
@@ -19,21 +19,32 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/liballeg.so.4.0:${PORTSDIR}/devel/linux-allegr
 
 NO_PACKAGE=	Licence forbids any repacking and reselling
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/DeluxeSnake
+
+SUB_FILES=	pkg-install pkg-deinstall
+SUB_LIST=	CONFIG_FILES="config.dat hiscores.dat stats.dat"
+
+PORTDOCS=	*
 
 do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/dsnake
 
 do-install:
-	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}; ${TAR} -cf - *) | (cd ${DATADIR}; ${TAR} -xf -)
-	${TOUCH} ${DATADIR}/config.dat ${DATADIR}/hiscores.dat ${DATADIR}/stats.dat
-	${CHMOD} 0666 ${DATADIR}/config.dat ${DATADIR}/hiscores.dat ${DATADIR}/stats.dat
+.for d in data midi
+	${MKDIR} ${DATADIR}/${d}
+	${INSTALL_DATA} ${WRKSRC}/${d}/* ${DATADIR}/${d}
+.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/dsnake ${DATADIR}
 	${ECHO_CMD} "#!/bin/sh" > ${WRKDIR}/dsnake.sh
-	${ECHO_CMD} "cd ${DATADIR} && ./dsnake -win" >> ${WRKDIR}/dsnake.sh
+	${ECHO_CMD} "cd ${DATADIR} && exec ./dsnake \"\$$@\"" >> ${WRKDIR}/dsnake.sh
 	${INSTALL_SCRIPT} ${WRKDIR}/dsnake.sh ${PREFIX}/bin/dsnake
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ReadMe.txt ${DOCSDIR}
+.endif
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
