@@ -13467,3 +13467,4 @@ zu-ooodict-ZA	ports/editors/ooodict-zu_ZA
 zziplib		ports/devel/zziplib
 p5-JSON		ports/converters/p5-JSON
 p5-Math-Vec	ports/math/p5-Math-Vec
+p5-Senna	ports/textproc/p5-Senna
