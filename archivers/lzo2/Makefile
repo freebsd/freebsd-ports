@@ -5,18 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	lzo
+PORTNAME=	lzo2
 PORTVERSION=	2.01
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/
 MASTER_SITE_SUBDIR=	libs/compression
+DISTNAME=	lzo-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	Portable speedy, lossless data compression library
-
-LATEST_LINK=	lzo2
-
-CONFLICTS=	lzo-1.*
 
 USE_LIBTOOL_VER=	15
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
