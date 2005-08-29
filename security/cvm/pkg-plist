@@ -1,31 +1,41 @@
 @comment $FreeBSD$
 bin/cvm-benchclient
+bin/cvm-chain
 bin/cvm-checkpassword
 bin/cvm-pwfile
 bin/cvm-qmail
 bin/cvm-testclient
 bin/cvm-unix
+bin/cvm-v1benchclient
+bin/cvm-v1checkpassword
+bin/cvm-v1testclient
 bin/cvm-vmailmgr
 bin/cvm-vmailmgr-local
 bin/cvm-vmailmgr-udp
 include/cvm-sasl.h
 include/cvm/client.h
+include/cvm/credentials.h
 include/cvm/errors.h
 include/cvm/facts.h
 include/cvm/module.h
+include/cvm/protocol.h
 include/cvm/sasl.h
+include/cvm/v1client.h
+include/cvm/v2client.h
 lib/libcvm-client.a
 lib/libcvm-command.a
 lib/libcvm-local.a
 lib/libcvm-module.a
 lib/libcvm-sasl.a
 lib/libcvm-udp.a
+lib/libcvm-v1client.a
+lib/libcvm-v2client.a
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/client.html
 %%PORTDOCS%%%%DOCSDIR%%/credentials.html
 %%PORTDOCS%%%%DOCSDIR%%/cvm-benchclient.html
+%%PORTDOCS%%%%DOCSDIR%%/cvm-chain.html
 %%PORTDOCS%%%%DOCSDIR%%/cvm-checkpassword.html
 %%PORTDOCS%%%%DOCSDIR%%/cvm-mysql.html
 %%PORTDOCS%%%%DOCSDIR%%/cvm-pgsql.html
@@ -38,10 +48,12 @@ lib/libcvm-udp.a
 %%PORTDOCS%%%%DOCSDIR%%/errors.html
 %%PORTDOCS%%%%DOCSDIR%%/facts.html
 %%PORTDOCS%%%%DOCSDIR%%/module.html
+%%PORTDOCS%%%%DOCSDIR%%/protocol-1.html
 %%PORTDOCS%%%%DOCSDIR%%/protocol-2.html
-%%PORTDOCS%%%%DOCSDIR%%/protocol.html
 %%PORTDOCS%%%%DOCSDIR%%/rationale.html
 %%PORTDOCS%%%%DOCSDIR%%/sasl.html
 %%PORTDOCS%%%%DOCSDIR%%/sql.html
+%%PORTDOCS%%%%DOCSDIR%%/v1client.html
+%%PORTDOCS%%%%DOCSDIR%%/v2client.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/cvm
