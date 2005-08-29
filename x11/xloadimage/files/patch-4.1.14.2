@@ -1,0 +1,92 @@
+--- new.c.orig	Sun Aug 28 23:41:17 2005
++++ new.c	Sun Aug 28 23:44:11 2005
+@@ -67,6 +67,18 @@
+ }
+ 
+ 
++static unsigned int ovmul(unsigned int a, unsigned int b)
++{
++  unsigned int r;
++
++  r = a * b;
++  if (r / a != b) {
++    memoryExhausted();
++  }
++
++  return r;
++}
++
+ void goodImage(image, func)
+      Image *image;
+      char  *func;
+@@ -132,7 +144,7 @@
+   image->height= height;
+   image->depth= 1;
+   linelen= (width / 8) + (width % 8 ? 1 : 0); /* thanx johnh@amcc.com */
+-  image->data= (unsigned char *)lcalloc(linelen * height);
++  image->data= (unsigned char *)lcalloc(ovmul(linelen, height));
+   return(image);
+ }
+ 
+@@ -153,7 +165,7 @@
+   image->height= height;
+   image->depth= depth;
+   image->pixlen= pixlen;
+-  image->data= (unsigned char *)lmalloc(width * height * pixlen);
++  image->data= (unsigned char *)lmalloc(ovmul(ovmul(width, height), pixlen));
+   return(image);
+ }
+ 
+@@ -169,6 +181,7 @@
+   image->height= height;
+   image->depth= 24;
+   image->pixlen= 3;
++  image->data= (unsigned char *)lmalloc(ovmul(ovmul(width, height), 3));
+   image->data= (unsigned char *)lmalloc(width * height * 3);
+   return(image);
+ }
+--- ./zio.c~	Sun Aug 28 23:07:13 2005
++++ ./zio.c	Sun Jun  5 22:59:23 2005
+@@ -143,7 +143,7 @@
+      char *name;
+ { int    a;
+   ZFILE *zf;
+-  char   buf[BUFSIZ];
++  char *buf, *s, *t;
+   struct filter *filter;
+ 
+   debug(("zopen(\"%s\") called\n", name));
+@@ -211,9 +211,30 @@
+     if ((strlen(name) > strlen(filter->extension)) &&
+ 	!strcmp(filter->extension,
+ 		name + (strlen(name) - strlen(filter->extension)))) {
+-      debug(("Filtering image through '%s'\n", filter->filter));
+-      zf->type= ZPIPE;
+-      sprintf(buf, "%s %s", filter->filter, name);
++            char *fname, *t, *s;
++            
++            /* meta-char protection from xli.
++             *
++             * protect in single quotes, replacing single quotes
++             * with '"'"', so worst-case expansion is 5x
++             */
++            
++            s = fname = (char *) lmalloc(1 + (5 * strlen(name)) + 1 + 1);
++			*s++ = '\'';
++            for (t = name; *t; ++t) {
++                if ('\'' == *t) {
++					/* 'foo'bar' -> 'foo'"'"'bar' */
++                    strcpy(s, "'\"'\"'");
++					s += strlen(s);
++                } else {
++                    *s++ = *t;
++                }
++            }
++            strcpy (s, "'");
++            debug(("Filtering image through '%s'\n", filter->filter));
++            zf->type= ZPIPE;
++            sprintf(buf, "%s %s", filter->filter, fname);
++            lfree (fname);
+       if (! (zf->stream= popen(buf, "r"))) {
+ 	lfree((byte *)zf->filename);
+ 	zf->filename= NULL;
