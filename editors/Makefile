@@ -156,10 +156,10 @@
     SUBDIR += ooodict-tl_PH
     SUBDIR += ooodict-tn_ZA
     SUBDIR += ooodict-zu_ZA
-    SUBDIR += openoffice-1.0
-    SUBDIR += openoffice-1.1
-    SUBDIR += openoffice-1.1-devel
-    SUBDIR += openoffice-2.0-devel
+    SUBDIR += openoffice.org-1.0
+    SUBDIR += openoffice.org-1.1
+    SUBDIR += openoffice.org-1.1-devel
+    SUBDIR += openoffice.org-2.0-devel
     SUBDIR += pico
     SUBDIR += poedit
     SUBDIR += psgml
