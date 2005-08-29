@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hatari
-PORTVERSION=	0.60
+PORTVERSION=	0.70
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,5 +18,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_SDL=	yes
+
+PLIST_FILES=	bin/hatari %%DATADIR%%/tos.img
+PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.mk>
