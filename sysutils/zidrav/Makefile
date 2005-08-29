@@ -6,30 +6,21 @@
 #
 
 PORTNAME=	zidrav
-PORTVERSION=	1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://hehipc.phy.uic.edu/~cosmin/distfiles/:MAN\
-		http://eff.dyndns.ws/distfiles/:MAN
-MASTER_SITE_SUBDIR=	zidrav
-DISTNAME=	zidrav4unix-1.1
-DISTFILES=	zidrav4unix-1.1.tar.gz \
-		zidrav.1.gz:MAN
-EXTRACT_ONLY=	zidrav4unix-1.1.tar.gz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	zidrav4unix-${PORTVERSION}
 
 MAINTAINER=	cstroe1@uic.edu
 COMMENT=	A file corruption detection and repair program
 
 ALL_TARGET=	zidrav
-MAN1=		zidrav.1.gz
-MANCOMPRESSED=	maybe
-NOMANCOMPRESS=	true
-MANEXT=		# empty
-NO_INSTALL_MANPAGES=	yes
+MAN1=		zidrav.1
 PLIST_FILES=	bin/zidrav
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/zidrav ${PREFIX}/bin
-	${INSTALL_MAN} ${DISTDIR}/zidrav.1.gz ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/zidrav.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
