@@ -1,14 +1,14 @@
 # New ports collection makefile for:	xmms-uade
-# Date created:			12 Oct 2002
-# Whom:				Martin Blapp <mbr@freebsd.org>
+# Date created:				12 Oct 2002
+# Whom:					Martin Blapp <mbr@freebsd.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	xmms-uade
-PORTVERSION=	1.00
+PORTVERSION=	1.03
 CATEGORIES=	audio
-MASTER_SITES=	http://uade.ton.tut.fi/uade/
+MASTER_SITES=	http://zakalwe.virtuaalipalvelin.net/uade/uade/
 DISTNAME=	uade-${PORTVERSION}
 
 MAINTAINER=	mbr@FreeBSD.org
@@ -21,7 +21,7 @@ USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=13
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${X11BASE}/lib/xmms \
