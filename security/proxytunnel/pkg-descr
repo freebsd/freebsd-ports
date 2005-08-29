@@ -1,5 +1,5 @@
-A program that connects stdin and stdout to an origin server somewhere
-in the Internet through an industry standard HTTPS proxy.
+A program that connects stdin and stdout to an origin server somewhere in the
+Internet through an industry standard HTTPS proxy.
 
 Author: Jos Visser <josv@osp.nl>, Mark Janssen <maniac@maniac.nl>
 WWW: http://proxytunnel.sourceforge.net/
