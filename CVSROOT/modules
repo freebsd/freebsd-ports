@@ -11836,6 +11836,7 @@ tolua4		ports/lang/tolua4
 tomatoes	ports/games/tomatoes
 tomboy		ports/deskutils/tomboy
 tome		ports/games/tome
+tomsfastmath	ports/math/tomsfastmath
 toolame		ports/audio/toolame
 topaz		ports/math/topaz
 topless		ports/sysutils/topless
