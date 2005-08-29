@@ -18,6 +18,9 @@ COMMENT=	Easy to use CD Ripping and MP3 Encoding tool
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame/ \
 		dagrab:${PORTSDIR}/audio/dagrab
 
+BROKEN=		"Does not fetch, website is gone"
+EXPIRATION_DATE=2005-09-29
+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/cd2mp3
 
