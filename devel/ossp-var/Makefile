@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
 PKGNAMEPREFIX=	ossp-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marcus@corp.grupos.com.br
 COMMENT=	A flexible, full-featured and fast variable expansion library
 
 USE_GMAKE=	yes

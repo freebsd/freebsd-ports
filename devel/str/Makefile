@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marcus@corp.grupos.com.br
 COMMENT=	Generic String Library
 
 USE_LIBTOOL_VER=	15

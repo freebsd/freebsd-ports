@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
 PKGNAMEPREFIX=	ossp-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marcus@corp.grupos.com.br
 COMMENT=	A C library for a flexible and sophisticated Unix logging facility
 
 USE_LIBTOOL_VER=	15
