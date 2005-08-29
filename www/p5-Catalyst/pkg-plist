@@ -39,6 +39,7 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/Manual/SuccessStories.pod
 %%SITE_PERL%%/Catalyst/Manual/Troubleshooting.pod
 %%SITE_PERL%%/Catalyst/Manual/Tutorial.pod
+%%SITE_PERL%%/Catalyst/Manual/WritingPlugins.pod
 %%SITE_PERL%%/Catalyst/Request.pm
 %%SITE_PERL%%/Catalyst/Request/Upload.pm
 %%SITE_PERL%%/Catalyst/Response.pm
