@@ -70,6 +70,7 @@
     SUBDIR += php4-zlib
     SUBDIR += php5-bz2
     SUBDIR += php5-zlib
+    SUBDIR += ppmd
     SUBDIR += ppunpack
     SUBDIR += py-bzip2
     SUBDIR += py-lzma
