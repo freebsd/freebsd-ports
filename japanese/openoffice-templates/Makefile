@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	templates
-PORTVERSION=	${OPENOFFICE_VER}.20041007
+PORTVERSION=	${OPENOFFICE.ORG_VER}.20041007
 PORTREVISION=	2
 CATEGORIES=	japanese editors
 MASTER_SITES=	http://ooosupport.good-day.net/
-PKGNAMEPREFIX=	ja-openoffice-
-DIST_SUBDIR?=	openoffice1.1
+PKGNAMEPREFIX=	ja-openoffice.org-
+DIST_SUBDIR?=	openoffice.org1.1
 DISTNAME=	impress_${PORTNAME}
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT=	OpenOffice.org 1.1 Impress Templates
 
-RUN_DEPENDS=	${LOCALBASE}/${OPENOFFICE}/program/soffice:${PORTSDIR}/editors/openoffice-1.1
+RUN_DEPENDS=	${LOCALBASE}/${OPENOFFICE.ORG}/program/soffice:${PORTSDIR}/editors/openoffice.org-1.1
 
 BROKEN=		Install fails
 DEPRECATED=	${BROKEN}
@@ -26,11 +26,11 @@ EXPIRATION_DATE=2005-09-22
 NO_BUILD=	yes
 PLIST_FILES=	${OOTEMPLATES:S|^|${TEMPLATEDIR}/|}
 
-OPENOFFICE=	OpenOffice.org${OPENOFFICE_VER}
-OPENOFFICE_VER=	1.1.5
-TEMPLATEDIR=	${OPENOFFICE}/share/template/japanese/layout
+OPENOFFICE.ORG=	OpenOffice.org${OPENOFFICE_VER}
+OPENOFFICE.ORG_VER=	1.1.5
+TEMPLATEDIR=	${OPENOFFICE.ORG}/share/template/japanese/layout
 
-OOTEMPLATES=	\
+OOOTEMPLATES=	\
 		A4-kariert.sti			\
 		Black-cyan-yellow.ja.sti	\
 		Black-orange.ja.sti		\
@@ -116,7 +116,7 @@ OOTEMPLATES=	\
 		templatecopyright
 
 do-install:
-.for FILE in ${OOTEMPLATES}
+.for FILE in ${OOOTEMPLATES}
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${TEMPLATEDIR}/${FILE}
 .endfor
 
