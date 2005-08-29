@@ -42,10 +42,12 @@ lib/slang/v2/modules/varray-module.so
 %%DATADIR%%/pcre.sl
 %%DATADIR%%/png.sl
 %%DATADIR%%/print.sl
+%%DATADIR%%/profile.sl
 %%DATADIR%%/require.sl
 %%DATADIR%%/scripts/jpegsize
 %%DATADIR%%/scripts/lsrpm
 %%DATADIR%%/scripts/sldb
+%%DATADIR%%/scripts/slprof
 %%DATADIR%%/scripts/svnsh
 %%DATADIR%%/select.sl
 %%DATADIR%%/sldb.sl

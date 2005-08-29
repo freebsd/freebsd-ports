@@ -6,9 +6,12 @@
 #
 
 PORTNAME=	libslang2
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	devel
-MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v2.0/
+MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v2.0/ \
+		ftp://ftp.fu-berlin.de/pub/unix/misc/slang/v2.0/ \
+		ftp://ftp.ntua.gr/pub/lang/slang/slang/v2.0/ \
+		ftp://ftp.plig.org/pub/slang/v2.0/
 DISTNAME=	slang-${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
