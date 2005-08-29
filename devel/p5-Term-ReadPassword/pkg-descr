@@ -1,0 +1,8 @@
+This module lets you ask the user for a password in the traditional
+way, from the keyboard, without echoing.
+
+This is not intended for use over the web; user authentication over
+the web is another matter entirely.  Also, this module should generally
+be used in conjunction with Perl's crypt() function, sold separately.
+
+WWW: http://search.cpan.org/dist/Term-ReadPassword/
