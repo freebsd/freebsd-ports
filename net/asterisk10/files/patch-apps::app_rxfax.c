@@ -1,6 +1,9 @@
---- apps/app_rxfax.c.orig	Fri Jun 17 21:13:01 2005
-+++ apps/app_rxfax.c	Fri Jun 17 21:04:12 2005
-@@ -0,0 +1,367 @@
+
+$FreeBSD$
+
+--- apps/app_rxfax.c.orig
++++ apps/app_rxfax.c
+@@ -0,0 +1,371 @@
 +/*
 + * Asterisk -- A telephony toolkit for Linux.
 + *
@@ -25,7 +28,11 @@
 +#include <asterisk/manager.h>
 +#include <string.h>
 +#include <stdlib.h>
++#if defined(__FreeBSD__) && __FreeBSD_version < 500028
++#include <inttypes.h>
++#else
 +#include <stdint.h>
++#endif
 +#include <pthread.h>
 +#include <errno.h>
 +#include <math.h>
