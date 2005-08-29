@@ -9,17 +9,20 @@
 #
 
 PORTNAME=	qmail-autoresponder
-PORTVERSION=	0.96.1
-PORTREVISION=	1
+PORTVERSION=	0.96.2
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Rate-limited autoresponder for qmail
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libbg-iobuf.a:${PORTSDIR}/devel/bglibs
+BUILD_DEPENDS=	${BGLIBS_LIB}/libbg.a:${PORTSDIR}/devel/bglibs
 
+USE_GPG=	yes
+SIG_SUFFIX=	.sig
 LDFLAGS?=	-s
+BGLIBS_INC=	${LOCALBASE}/include/bglibs
+BGLIBS_LIB=	${LOCALBASE}/lib/bglibs
 
 PROGS=		qmail-autoresponder
 MAN1=		qmail-autoresponder.1
@@ -43,8 +46,8 @@ do-configure:
 	${ECHO_CMD} "${MANPREFIX}/man"		> ${WRKSRC}/conf-man
 	${ECHO_CMD} "${CC} ${CFLAGS}"		> ${WRKSRC}/conf-cc
 	${ECHO_CMD} "${CC} ${LDFLAGS}"		> ${WRKSRC}/conf-ld
-	${ECHO_CMD} "${LOCALBASE}/include/bglibs" > ${WRKSRC}/conf-bgincs
-	${ECHO_CMD} "${LOCALBASE}/lib"		> ${WRKSRC}/conf-bglibs
+	${ECHO_CMD} "${BGLIBS_INC}"		> ${WRKSRC}/conf-bgincs
+	${ECHO_CMD} "${BGLIBS_LIB}"		> ${WRKSRC}/conf-bglibs
 
 do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PROGS} ${PREFIX}/bin
