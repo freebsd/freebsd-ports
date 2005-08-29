@@ -6,22 +6,16 @@
 #
 
 PORTNAME=	vifm
-PORTVERSION=	0.2a
-PORTREVISION=	1
+PORTVERSION=	0.3a
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	vifm
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sw@gegenunendlich.de
 COMMENT=	Ncurses based file manager with vi like keybindings
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 .if defined(WITH_VIFM_SCREEN)
 RUN_DEPENDS=	screen:${PORTSDIR}/misc/screen
-.else
-pre-everything::
-	@${ECHO_CMD} "You can define WITH_VIFM_SCREEN to add screen as a dependency."
 .endif
 
 GNU_CONFIGURE=	yes
@@ -29,16 +23,17 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/pauseme \
+		bin/screen-open-region-with-program \
+		bin/screen-run-program-in-region \
 		bin/vifm \
 		share/vifm/vifm-0.2.help.txt \
 		share/vifm/vifm.txt \
-		share/vifm/vifm.vim \
-		share/vifm/vifmrc0.2
+		share/vifm/vifm.vim
 PLIST_DIRS=	share/vifm
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's/resize_term/resizeterm/g' \
+		${WRKSRC}/src/ui.c
 
 .if defined(WITH_VIFM_SCREEN)
 pre-build:
@@ -46,6 +41,9 @@ pre-build:
 		${WRKSRC}/src/config.c
 	@${REINPLACE_CMD} -e "s/USE_SCREEN=0/USE_SCREEN=1/" \
 		${WRKSRC}/src/vifmrc0.2
+.else
+pre-everything::
+	@${ECHO_CMD} "You can define WITH_VIFM_SCREEN to add screen as a dependency."
 .endif
 
 .include <bsd.port.mk>
