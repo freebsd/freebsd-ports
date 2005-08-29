@@ -69,6 +69,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's,firefox-,$$gecko_provider-,g' \
 		-e 's,\(gecko_provider=\).*$$,\1${MOZ_BUILD},' \
 		-e 's,-gtkmozembed,-gtkmozembed${MOZ_SUFFIX},' \
+		-e 's,{print $$1},{print $$2},g' \
 		${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's,%FREEBSD_MOZILLA_HOME%,${X11BASE}/lib/${MOZILLA},' \
 		${WRKSRC}/src/liferea
