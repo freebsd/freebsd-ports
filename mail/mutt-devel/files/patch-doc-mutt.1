@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Sun Aug 14 11:27:21 2005
++++ doc/Makefile.in	Sun Aug 14 11:28:38 2005
+@@ -179,7 +179,7 @@
+ 	-e 's,@docdir\@,$(docdir),g'
+ 
+ mutt.1: $(srcdir)/mutt.man
+-	$(EDIT) $< > $@
++	$(EDIT) $(srcdir)/mutt.man > $@
+ 
+ muttrc.man stamp-doc-man: ../makedoc$(EXEEXT) $(top_srcdir)/init.h muttrc.man.head muttrc.man.tail
+ 	$(MAKEDOC_CPP) $(top_srcdir)/init.h | ../makedoc -m | 	    \
