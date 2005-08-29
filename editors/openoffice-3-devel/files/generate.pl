@@ -20,4 +20,3 @@ if ( $tmp[0] eq ".if" && $tmp[1] eq "\${LOCALIZED_LANG}" ) { $LANG=$tmp2[1];
 	}
 }
 close FILE;
-

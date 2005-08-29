@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	openoffice
+PORTNAME=	openoffice.org
 PORTVERSION=	1.1.5.rc2.1
 CATEGORIES+=	editors
 MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/rc/1.1.5rc2/&,} \
