@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	ups-3.38-beta1
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X based source level debugger for C, C++, and Fortran
 
 GNU_CONFIGURE=	yes
@@ -30,7 +30,7 @@ ONLY_FOR_ARCHS=	i386
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
-IGNORE=	"does not currently support FreeBSD 5.x"
+IGNORE=		does not currently support FreeBSD 5.x or newer
 .endif
 
 post-install:
