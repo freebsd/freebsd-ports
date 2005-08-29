@@ -375,6 +375,7 @@
     SUBDIR += quick-lounge-applet
     SUBDIR += quotes
     SUBDIR += quranref
+    SUBDIR += ree
     SUBDIR += renamedlgplugins
     SUBDIR += rfc
     SUBDIR += ringtonetools
