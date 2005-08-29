@@ -1,0 +1,8 @@
+Httping is like ping but for http-requests. Give it an url, and it will show
+you how long it takes to connect, send a request and retrieve the reply (only
+the headers).
+
+WWW: http://www.vanheusden.com/httping/
+
+- ehaupt
+ehaupt@critical.ch

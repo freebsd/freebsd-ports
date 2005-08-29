@@ -234,6 +234,7 @@
     SUBDIR += howl
     SUBDIR += htpdate
     SUBDIR += http_ping
+    SUBDIR += httping
     SUBDIR += hx
     SUBDIR += i2p
     SUBDIR += icb
