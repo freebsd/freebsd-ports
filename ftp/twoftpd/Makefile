@@ -7,19 +7,22 @@
 
 PORTNAME=	twoftpd
 PORTVERSION=	1.20
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	A simple, secure, efficient FTP server
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libbg-unix.a:${PORTSDIR}/devel/bglibs \
+BUILD_DEPENDS=	${BGLIBS_LIB}/libbg-unix.a:${PORTSDIR}/devel/bglibs \
 		${LOCALBASE}/lib/libcvm-client.a:${PORTSDIR}/security/cvm
 
 USE_REINPLACE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS?=	-s
+LDFLAGS+=	-s -L${LOCALBASE}/lib
+BGLIBS_LIB=	${LOCALBASE}/lib/bglibs
+BGLIBS_INCLUDE=	${LOCALBASE}/include/bglibs
 
 DOCS=		NEWS README TODO
 MAN1=		twoftpd-auth.1 twoftpd-switch.1 twoftpd-xfer.1
@@ -32,8 +35,8 @@ do-configure:
 	${ECHO_CMD} "${MANPREFIX}/man"	> ${WRKSRC}/conf-man
 	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/conf-cc
 	${ECHO_CMD} "${CC} ${LDFLAGS}"	> ${WRKSRC}/conf-ld
-	${ECHO_CMD} "${LOCALBASE}/include/bglibs" > ${WRKSRC}/conf-bgincs
-	${ECHO_CMD} "${LOCALBASE}/lib"	> ${WRKSRC}/conf-bglibs
+	${ECHO_CMD} "${BGLIBS_INCLUDE}"	> ${WRKSRC}/conf-bgincs
+	${ECHO_CMD} "${BGLIBS_LIB}"	> ${WRKSRC}/conf-bglibs
 
 do-install:
 	cd ${WRKSRC} && ./installer
