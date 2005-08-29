@@ -6,4 +6,4 @@ CRC-32 checksums for all the files that comprise the package.
 cksfv (Check SFV) can both create simple file verification (SFV) files, and
 test file integrity against existing SFV files.
 
-WWW: http://www.modeemi.fi/~shd/foss/cksfv/
+WWW: http://freshmeat.net/projects/cksfv
