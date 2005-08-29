@@ -10371,6 +10371,7 @@ redet		ports/textproc/redet
 redir		ports/net/redir
 redland		ports/textproc/redland
 redland-bindings	ports/textproc/redland-bindings
+ree		ports/misc/ree
 reed		ports/sysutils/reed
 reed-solomon	ports/math/reed-solomon
 refdb		ports/textproc/refdb
