@@ -13,7 +13,7 @@ CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/LZO-v1/
 MASTER_SITE_SUBDIR=	libs/compression
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	Portable speedy, lossless data compression library
 
 USE_LIBTOOL_VER=	15
