@@ -1,0 +1,18 @@
+Ree stands for ROM extension extractor. Ree will scan your system memory,
+address c0000 - f0000 in 512 steps for identification of ROM extensions
+(55,aa), if found it will calculate its size (byte after id, multiplied by
+512byte steps) and save the output to a .rom file.
+
+This package also comes with fontdump, a program to extract the fonts from your
+video BIOS ROMs.
+
+You might ask yourself why collect x86 ROM extensions? It's like collecting
+butterflies.
+
+A collection of various .rom files can be found on the project page. Please
+submit your ROMs there.
+
+WWW: http://www.linuks.mine.nu/ree/
+
+- ehaupt
+ehaupt@critical.ch
