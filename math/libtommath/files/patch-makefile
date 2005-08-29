@@ -1,0 +1,15 @@
+--- makefile.orig	Fri Aug  5 09:34:54 2005
++++ makefile	Fri Aug  5 09:36:36 2005
+@@ -48,9 +48,9 @@
+ #INCPATH-The directory to install the header files for libtommath.
+ #DATAPATH-The directory to install the pdf docs.
+ DESTDIR=
+-LIBPATH=/usr/lib
+-INCPATH=/usr/include
+-DATAPATH=/usr/share/doc/libtommath/pdf
++LIBPATH=${PREFIX}/lib
++INCPATH=${PREFIX}/include
++DATAPATH=${PREFIX}/share/doc/libtommath/pdf
+ 
+ OBJECTS=bncore.o bn_mp_init.o bn_mp_clear.o bn_mp_exch.o bn_mp_grow.o bn_mp_shrink.o \
+ bn_mp_clamp.o bn_mp_zero.o  bn_mp_set.o bn_mp_set_int.o bn_mp_init_size.o bn_mp_copy.o \
