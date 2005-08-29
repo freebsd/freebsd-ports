@@ -1167,6 +1167,7 @@
     SUBDIR += p5-VCS-CVS
     SUBDIR += p5-Want
     SUBDIR += p5-base
+    SUBDIR += p5-capitalization
     SUBDIR += p5-enum
     SUBDIR += p5-iCal-Parser
     SUBDIR += p5-mixin
