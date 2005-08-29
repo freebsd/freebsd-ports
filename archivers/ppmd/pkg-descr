@@ -1,0 +1,10 @@
+PPMD is a fast archiver with a good compression ratio. It is written for
+embedding in user programs mainly it is not intended for immediate use.
+
+Speed and performance improvements of abstract PPM model 1-6 are the main
+goal.
+
+WWW: http://packages.debian.org/unstable/utils/ppmd
+
+- ehaupt
+ehaupt@critical.ch
