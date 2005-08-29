@@ -261,6 +261,7 @@
     SUBDIR += surf
     SUBDIR += taucs
     SUBDIR += thx_1138
+    SUBDIR += tomsfastmath
     SUBDIR += topaz
     SUBDIR += triangle
     SUBDIR += tvmet
