@@ -1874,6 +1874,7 @@ eclipse-vep	ports/java/eclipse-vep
 eclipse-vep-examples	ports/java/eclipse-vep-examples
 eclipse-viplugin	ports/java/eclipse-viplugin
 eclipseme	ports/java/eclipseme
+ecm		ports/archivers/ecm
 ecore		ports/x11/ecore
 ecos-tools	ports/devel/ecos-tools
 ecu		ports/comms/ecu
