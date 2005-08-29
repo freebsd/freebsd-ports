@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lighttpd
-PORTVERSION=	1.3.16
+PORTVERSION=	1.4.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/ \
 		http://dl.fkb.wormulon.net/lighttpd/ \
@@ -19,14 +19,12 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_AUTOCONF_VER=	259
 USE_REINPLACE=		yes
-USE_RC_SUBR=		yes
+USE_RC_SUBR=		lighttpd.sh
 USE_LIBTOOL_VER=	15
 USE_GNOME=		lthack
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		CPPFLAGS=-I${PREFIX}/include LIBS=-L${PREFIX}/lib
 CONFIGURE_ARGS=		--libdir=${PREFIX}/lib/lighttpd
-STARTUP_FILE=		${PREFIX}/etc/rc.d/lighttpd.sh
-RC_SCRIPTS_SUB=		PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 MAN1=		lighttpd.1 spawn-fcgi.1
 
@@ -39,7 +37,6 @@ OPTIONS=	OPENSSL		"Enable SSL support"	on \
 
 .if !defined(WITHOUT_OPENSSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
-USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-openssl
 .endif
 
@@ -58,9 +55,6 @@ CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 post-install:
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/lighttpd.sh.tmpl > ${STARTUP_FILE}
-	@${CHMOD} 755 ${STARTUP_FILE}
 	@${INSTALL_DATA} ${FILESDIR}/lighttpd.conf.sample ${PREFIX}/etc/
 	@${LIBTOOL} --finish ${PREFIX}/lib
 
