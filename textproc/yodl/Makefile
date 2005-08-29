@@ -15,7 +15,6 @@ MASTER_SITES=	ftp://ftp.lilypond.org/pub/yodl/development/ \
 					http://mirrors.sunsite.dk/ \
 					http://www.math.technion.ac.il/pub/zsh/GPL/ \
 					http://litterbug.lut.ac.uk/zsh/ \
-					http://ftp.rge.com/pub/shells/zsh/GPL/ \
 					http://ftp.dmz.digex.net/pub/packages/ \
 					http://linux.sarang.net/ftp/mirror/system/shell/zsh/GPL/
 

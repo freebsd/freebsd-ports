@@ -10,7 +10,6 @@ PORTVERSION=	${VER}p5
 PORTREVISION=	9
 CATEGORIES=	devel perl5 python tcl84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://ftp.rge.com/pub/languages/swig/${VER}/ \
 		ftp://ftp.mcc.ac.uk/pub/mvc/swig/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}${PORTVERSION}
