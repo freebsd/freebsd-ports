@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mutt-ng
-PORTVERSION=	20050726
+PORTVERSION=	20050825
 CATEGORIES=	mail
 MASTER_SITES=	http://nion.modprobe.de/mutt-ng/snapshots/
 DISTNAME=	muttng-${PORTVERSION}
@@ -44,44 +44,67 @@ CONFIGURE_ARGS+=	--disable-iconv
 OPTIONS=	POP "Enable pop3 support" on \
 		IMAP "Enable imap support" on \
 		NNTP "Enable nntp support" off \
-		COMPRESSED "Enable compressed folder support" off \
-		FLOCK "Enable flock to lock files" off \
-		HCACHE "Enable headers caching" on \
+		COMPRESSED "Enable compressed folder support" on \
+		FLOCK "Enable flock to lock files" on \
+		HCACHE_DB4 "Enable headers caching via DB4" on \
+		HCACHE_GDBM "Enable headers caching via gdbm" off \
+		HCACHE_QDBM "Enable headers caching via qdbm" off \
 		ESMTP "Enable libesmtp support for sending mail" off \
 		SLANG "Compile with SLANG frontend" off \
-		NCURSES_PORT "Compile with ncurses frontend" off \
-		SASL2 "Compile with sasl2 support for authentication" off
+		NCURSES_PORT "Compile with ncurses frontend via port" off \
+		SASL2 "Compile with sasl2 support for authentication" off \
+		GNUTLS "Compile with SSL support via GNUTLS" off \
+		LIBIDN "Enable international domain names" off \
+		DEBUG "Compile a debug version" on
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
+WITH_MUTT_IMAP_HEADER_CACHE=  yes
+.endif
 
 .if defined (WITH_POP)
 CONFIGURE_ARGS+=	--enable-pop
 .endif
 
-.if defined (WITH_IMAP)
+.if defined (WITH_IMAP) || defined(WITH_MUTT_IMAP_HEADER_CACHE)
 CONFIGURE_ARGS+=	--enable-imap
 .endif
 
-.if defined(WITH_POP) || defined(WITH_IMAP)
+.if defined(WITH_POP) || defined(WITH_IMAP) || defined(WITH_NNTP) || defined(WITH_SSL)
+.if !defined(WITH_GNUTLS)
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
+.else
+CONFIGURE_ARGS+=	--with-gnutls=${LOCALBASE}
+LIB_DEPENDS+=		gnutls.12:${PORTSDIR}/security/gnutls
+.endif
 .endif
 
-.if defined (WITH_NNTP)
+.if defined (WITH_NNTP) || defined(WITH_MUTT_NNTP)
 CONFIGURE_ARGS+=	--enable-nntp
 .endif
 
-.if defined (WITH_COMPRESSED)
+.if defined (WITH_COMPRESSED) || defined(WITH_MUTT_COMPRESSED_FOLDERS)
 CONFIGURE_ARGS+=	--enable-compressed
 .endif
 
-.if defined (WITH_HCACHE)
+.if defined (WITH_HCACHE_DB4) || defined(WITH_MUTT_IMAP_HEADER_CACHE)
 CONFIGURE_ARGS+=	--enable-hcache --without-qdbm --without-gdbm --with-bdb=${LOCALBASE}
 LIB_DEPENDS+=		db41.1:${PORTSDIR}/databases/db41
+.elif defined (WITH_HCACHE_GDBM)
+CONFIGURE_ARGS+=	--enable-hcache --without-qdbm
+LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
+.elif defined (WITH_HCACHE_QDBM)
+CONFIGURE_ARGS+=	--enable-hcache
+LIB_DEPENDS+=		qdbm.11:${PORTSDIR}/databases/qdbm
 .endif
 
 .if defined (WITH_FLOCK)
 CONFIGURE_ARGS+=	--enable-flock
 CONFIGURE_ARGS+=	--disable-fcntl
+.elif defined(WITHOUT_MUTT_FLOCK)
+CONFIGURE_ARGS+=	--disable-flock
+CONFIGURE_ARGS+=	--enable-fcntl
 .endif
 
 .if defined(WITH_SLANG) && !defined(WITH_NCURSES_PORT)
@@ -89,12 +112,12 @@ LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 CONFIGURE_ARGS+=	--with-slang=${LOCALBASE}
 .elif defined(WITH_NCURSES_PORT) && !defined(WITH_SLANG)
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-CONFIGURE_ARGS+=	--with-ncurses=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-curses=${LOCALBASE}
 .elif defined(WITH_SLANG) && defined(WITH_NCURSES_PORT)
 BROKEN=	"You may not specify both WITH_SLANG and WITH_NCURSES options"
 .endif
 
-.if defined(WITH_SASL2)
+.if defined(WITH_SASL2) || defined(WITH_MUTT_CYRUS_SASL2)
 .if !defined(WITH_POP) && !defined(WITH_IMAP)
 BROKEN=	"SASL2 only is useful for imap or pop"
 .endif
@@ -105,6 +128,15 @@ CONFIGURE_ARGS+=	--with-sasl2=${LOCALBASE}
 .if defined(WITH_ESMTP)
 LIB_DEPENDS+=	esmtp.6:${PORTSDIR}/mail/libesmtp
 CONFIGURE_ARGS+=	--with-libesmtp=${LOCALBASE}
+.endif
+
+.if defined(WITH_LIBIDN)
+LIB_DEPENDS+=	idn.16:${PORTSDIR}/devel/libidn
+CONFIGURE_ARGS+=	--with-idn=${LOCALBASE}
+.endif
+
+.if defined (WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 .if !defined (NOPORTDOCS)
