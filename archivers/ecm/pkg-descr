@@ -1,0 +1,10 @@
+ECM (Error Code Modeler) compresses CD image files (such as BIN, CDI, NRG, CCD,
+or similar) by stripping unnecessary EDC/ECC data.
+
+The space saved depends on the number of sectors with unnecessary EDC/ECC data
+in them, which will depend on the specific type of CD.
+
+WWW: http://www.neillcorlett.com/ecm/
+
+- ehaupt
+ehaupt@critical.ch
