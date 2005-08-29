@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lesspipe
-PORTVERSION=	1.43
+PORTVERSION=	1.52
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lesspipe
@@ -33,16 +33,21 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 
 USE_PERL5=	yes
 
+NO_BUILD=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--default --prefix=${PREFIX}
 
 PLIST_FILES=	bin/lesspipe.sh \
 		bin/code2color
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
-do-build:
+MAN1=		lesspipe.1
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/code2color  ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/lesspipe.sh ${PREFIX}/bin
+	${INSTALL_MAN}    ${WRKSRC}/lesspipe.1  ${PREFIX}/man/man1
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
