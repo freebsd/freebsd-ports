@@ -1,24 +1,23 @@
 # New ports collection makefile for:	nbsmtp
-# Date created:		5 May 2001
-# Whom:			Anders Nordby <anders@fix.no>
+# Date created:				5 May 2001
+# Whom:					Anders Nordby <anders@fix.no>
 #
 # $FreeBSD$
 #
-# WITH_SSL=yes	"Support for secure connection to mail server"
+# WITH_SSL=yes  "Support for secure connection to mail server"
 #
 
 PORTNAME=	nbsmtp
-PORTVERSION=	0.99
+PORTVERSION=	1.00
 CATEGORIES=	mail
-PORTREVISION=	1
 MASTER_SITES=	http://www.gentoo-es.org/~ferdy/ \
 		http://www.it.uc3m.es/~ferdy/nbsmtp/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@critical.ch
 COMMENT=	Simple program for outgoing SMTP delivery
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 OPTIONS=	IPV6	"Support for IPv6 connections"			off \
 		DEBUG	"Enable debug information (for developers)"	off \
@@ -26,8 +25,8 @@ OPTIONS=	IPV6	"Support for IPv6 connections"			off \
 
 PLIST_FILES=	bin/nbsmtp
 
-MAN5=	nbsmtprc.5
-MAN8=	nbsmtp.8
+MAN5=		nbsmtprc.5
+MAN8=		nbsmtp.8
 
 .include <bsd.port.pre.mk>
 
