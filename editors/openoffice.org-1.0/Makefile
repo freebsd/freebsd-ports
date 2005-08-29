@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	openoffice
+PORTNAME=	openoffice.org
 PORTVERSION=	1.0.3
 PORTREVISION=	5
 CATEGORIES+=	editors
