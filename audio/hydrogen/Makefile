@@ -5,63 +5,116 @@
 # $FreeBSD$
 #
 
-PORTNAME=		hydrogen
-PORTVERSION=		0.9.0.b1
-PORTREVISION=		1
-CATEGORIES=		audio
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=		${PORTNAME}-0.9.0beta1
+PORTNAME=	hydrogen
+PORTVERSION=	0.9.2
+CATEGORIES=	audio
+MASTER_SITES=	http://www.hydrogen-music.org/download/sources/
 
-MAINTAINER=		jylefort@FreeBSD.org
-COMMENT=		An advanced drum machine
+MAINTAINER=	jylefort@FreeBSD.org
+COMMENT=	An advanced drum machine
 
-LIB_DEPENDS=		sndfile:${PORTSDIR}/audio/libsndfile \
-			FLAC:${PORTSDIR}/audio/flac
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile
 
-USE_X_PREFIX=		yes
-GNU_CONFIGURE=		yes
-USE_GMAKE=		yes
-USE_REINPLACE=		yes
-USE_GETOPT_LONG=	yes
-USE_QT_VER=		3
-CPPFLAGS=		-I${LOCALBASE}/include -I${X11BASE}/include
-LDFLAGS=		-L${LOCALBASE}/lib -L${X11BASE}/lib
-CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=		--program-prefix="" --disable-alsa-seq
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
+USE_GETOPT_LONG=yes
+USE_QT_VER=	3
+CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+		QTDIR="${X11BASE}" ac_qmake="${LOCALBASE}/bin/qmake" \
+		ac_libraries="${LDFLAGS}"
+CONFIGURE_ARGS=	--disable-alsa
+MAKE_ENV=	QTDIR="${X11BASE}" QMAKESPEC="freebsd-g++"
 
-MAN1=			hydrogen.1
+PLIST=		${WRKDIR}/pkg-plist
 
-OPTIONS=		JACK "JACK support" off \
-			OSS "OSS support" on \
-			LRDF "LRDF support" off
+PLIST_FILES=	bin/hydrogen bin/hydrogenPlayer share/applications/hydrogen.desktop
+PLIST_DIRS=	%%DATADIR%%
+
+MAN1=		hydrogen.1
+MANLANG=	"" ru.KOI8-R
+
+OPTIONS=	JACK "JACK support" off \
+		OSS "OSS support" on \
+		PORTAUDIO "PortAudio support" off \
+		LRDF "LRDF support" off \
+		FLAC "FLAC support" on
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_JACK)
-LIB_DEPENDS+=		jack:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
+CPPFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 .else
-CONFIGURE_ARGS+=	--disable-jack-support
+CONFIGURE_ARGS+=--disable-jack-support
 .endif
 
 .if defined(WITHOUT_OSS)
-CONFIGURE_ARGS+=	--disable-oss-support
+CONFIGURE_ARGS+=--disable-oss-support
+.endif
+
+.if defined(WITH_PORTAUDIO)
+CONFIGURE_ENV+=	PORTAUDIOPATH="${LOCALBASE}"
+LIB_DEPENDS+=	portaudio.0:${PORTSDIR}/audio/portaudio
 .endif
 
 .if defined(WITH_LRDF)
-LIB_DEPENDS+=		lrdf:${PORTSDIR}/textproc/liblrdf
+LIB_DEPENDS+=	lrdf:${PORTSDIR}/textproc/liblrdf
 .else
-CONFIGURE_ARGS+=	--disable-lrdf-support
+CONFIGURE_ARGS+=--disable-lrdf-support
+.endif
+
+.if defined(WITH_FLAC)
+LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
+.else
+CONFIGURE_ARGS+=--disable-flac-support
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|-O2||g' \
-		-e 's|CXXFLAGS="-O3"||' \
-		-e 's|-pthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${MV} -f ${WRKSRC}/data/doc/man ${WRKSRC}
+	@${FIND} ${WRKSRC}/data -type f -path '*/CVS/*' -delete
+	@${FIND} ${WRKSRC}/data -type d -name CVS -delete
+	@${RM} -f \
+		${WRKSRC}/data/doc/*.docbook \
+		${WRKSRC}/data/doc/updateManuals.sh \
+		${WRKSRC}/data/i18n/*.ts \
+		${WRKSRC}/data/i18n/update-Translations.sh
+	@${REINPLACE_CMD} -e 's|pa_unix_oss|lib|; s|pa_common|include|' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|' \
-		${WRKSRC}/lib/fx/LadspaFX.cpp \
-		${WRKSRC}/lib/PreferencesMng.cpp
+		${WRKSRC}/src/lib/Preferences.cpp \
+		${WRKSRC}/src/lib/fx/LadspaFX.cpp \
+		${WRKSRC}/src/tools/HydrogenPlayer.cpp
+	@${REINPLACE_CMD} -e 's|/usr/share/hydrogen|${DATADIR}|' \
+		${WRKSRC}/data/doc/img/Tutorial2.h2song
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+		${WRKSRC}/data/doc/manual_fr.html \
+		${WRKSRC}/data/doc/manual_it.html
+
+pre-install:
+	@${RM} -f ${PLIST}
+	@cd ${WRKSRC} && \
+	${FIND} data ! -type d | ${SORT} | \
+		${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
+	${FIND} data -type d ! -empty | ${SORT} -r | \
+		${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
+	@${ECHO_CMD} '@unexec rmdir %D/share/applications 2>/dev/null || true' >> ${PLIST}
+	@${ECHO_CMD} '@unexec rmdir %D/man/ru.KOI8-R/man1 2>/dev/null || true' >> ${PLIST}
+	@${ECHO_CMD} '@unexec rmdir %D/man/ru.KOI8-R 2>/dev/null || true' >> ${PLIST}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/hydrogen ${WRKSRC}/hydrogenPlayer ${PREFIX}/bin
+	cd ${WRKSRC} && \
+	${FIND} data -type d ! -empty -exec ${MKDIR} "${DATADIR}/{}" \; && \
+	${FIND} data ! -type d -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
+	${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/hydrogen.desktop ${PREFIX}/share/applications
+	${INSTALL_MAN} ${WRKSRC}/man/C/hydrogen.1 ${MAN1PREFIX}/man/man1
+	${MKDIR} ${MAN1PREFIX}/man/ru.KOI8-R/man1
+	${INSTALL_MAN} ${WRKSRC}/man/ru/hydrogen.1 ${MAN1PREFIX}/man/ru.KOI8-R/man1
 
 .include <bsd.port.post.mk>
