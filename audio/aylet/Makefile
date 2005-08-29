@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aylet
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.ibiblio.org/pub/Linux/apps/sound/players/
 PKGNAMEPREFIX?=
