@@ -4,8 +4,8 @@
  topsrcdir_DOCFILES = COPYRIGHT GPL INSTALL ChangeLog	\
  	README NEWS TODO README.SECURITY README.SSL 
  
--all:
-+all: muttrc.man try-html try-txt try-latin1 try-ps
+-all: mutt.1
++all: mutt.1 muttrc.man try-html try-txt try-latin1 try-ps
  
  try-html: ../makedoc
  	rm -f *.html && $(MAKE) manual.html || cp $(srcdir)/manual*.html ./

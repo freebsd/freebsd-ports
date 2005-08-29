@@ -71,9 +71,6 @@
 # If you want mutt to use the ispell spelling checker define:
 #  WITH_MUTT_ISPELL
 #
-# If you want to use the rethreading functions define:
-#  WITH_MUTT_EDIT_THREADS
-#
 # If you want to use the signature menu define:
 #  WITH_MUTT_SIGNATURE_MENU
 #
@@ -98,8 +95,7 @@
 #
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.5.9
-PORTREVISION=	3
+PORTVERSION=	1.5.10
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -282,15 +278,15 @@ WITH_MUTT_IDN=	yes
 LIB_DEPENDS+=	idn:${PORTSDIR}/devel/libidn
 .endif
 .if ! defined(WITHOUT_MUTT_SMIME_OUTLOOK_COMPAT)
-pre-configure::
+post-patch::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-smime-outlook
 .endif
 .if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
-pre-configure::
+post-patch::
 	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-maildir-header-cache
 .endif
 .if defined(WITH_MUTT_MAILDIR_MTIME_PATCH)
-pre-configure::
+post-patch::
 .if defined(WITH_MUTT_NNTP)
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-maildir-mtime-nntp
 .else
@@ -298,23 +294,18 @@ pre-configure::
 .endif
 .endif
 
-.if defined(WITH_MUTT_EDIT_THREADS)
-pre-configure::
-	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-edit-threads
-.endif
-
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
-pre-configure::
+post-patch::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-sidebar
 .endif
 
 .if defined(WITH_MUTT_ASPELL)
-pre-configure::
+post-patch::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-aspell
 .endif
 
 .if defined(WITH_MUTT_REVERSE_REPLY_PATCH)
-pre-configure::
+post-patch::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-reverse_reply
 .endif
 
@@ -375,10 +366,6 @@ PATCHFILES+=	patch-${VVV_PATCH_VERSION}.vvv.initials.gz:vvv \
 		patch-${VVV_PATCH_VERSION}.vvv.quote.gz:vvv
 SGML_NEEDED=	yes
 .endif
-.if defined(WITH_MUTT_EDIT_THREADS)
-CONFIGURE_ARGS+=	--enable-imap-edit-threads
-SGML_NEEDED=	yes
-.endif
 .if defined(WITH_MUTT_SIGNATURE_MENU)
 PATCHFILES+=	patch-${CD_PATCH_VERSION}.cd.signatures_menu.2.1:cd
 SGML_NEEDED=	yes
@@ -391,11 +378,11 @@ SGML_NEEDED=	yes
 PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
-SIDEBAR_PATCH=	patch-1.5.9i.sidebar.20050628.txt
-DISTFILES+=	$(SIDEBAR_PATCH):thomer
+SIDEBAR_PATCH=	patch-1.5.10i.sidebar.20050816.txt
+DISTFILES+=	${SIDEBAR_PATCH}:thomer
 SGML_NEEDED=	yes
 pre-patch::
-	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/$(SIDEBAR_PATCH) > ${WRKDIR}/patch-sidebar
+	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/${SIDEBAR_PATCH} > ${WRKDIR}/patch-sidebar
 	@${REINPLACE_CMD} -E '/^diff.*\/Makefile.in$$/,/^diff/d' \
 		 ${WRKDIR}/patch-sidebar
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-sidebar
@@ -429,18 +416,15 @@ SCRIPTS_ENV+=	MUTT_COMPRESSED_FOLDERS="yes"
 SCRIPTS_ENV+=	MUTT_QUOTE_PATCH="yes"
 .endif
 .if defined(WITH_MUTT_IMAP_HEADER_CACHE)
-SCRIPTS_ENV+=	MUTT_IMAP_HEADER_CACHE="yes"
 CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --with-bdb
+.else
+CONFIGURE_ARGS+=	--disable-hcache
 .endif
 .if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
-SCRIPTS_ENV+=	MUTT_MAILDIR_HEADER_CACHE="yes"
-CONFIGURE_ARGS+=	 --disable-inodesort
+CONFIGURE_ARGS+=	 --disable-inodesort --without-qdbm
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
 SCRIPTS_ENV+=	MUTT_SIDEBAR_PATCH="yes"
-.endif
-.if defined(WITH_MUTT_EDIT_THREADS)
-SCRIPTS_ENV+=	MUTT_EDIT_THREADS="yes"
 .endif
 .if defined(WITH_MUTT_SIGNATURE_MENU)
 SCRIPTS_ENV+=	MUTT_SIGNATURE_MENU="yes"
@@ -453,9 +437,6 @@ SCRIPTS_ENV+=	MUTT_HTML="yes"
 .endif
 .if !defined(WITHOUT_NLS)
 SCRIPTS_ENV+=	MUTT_NLS="yes"
-.endif
-.if defined(WITH_MUTT_IDN)
-SCRIPTS_ENV+=	MUTT_IDN="yes"
 .endif
 .if defined(WITH_MUTT_REVERSE_REPLY_PATCH)
 SCRIPTS_ENV+=	MUTT_REVERSE_REPLY_PATCH="yes"

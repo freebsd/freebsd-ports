@@ -126,7 +126,7 @@ EOF
   fi
 
   if [ "$MUTT_HTML" = "yes" ]; then
-    html=383
+    html=395
     if [ "$MUTT_COMPRESSED_FOLDERS" = "yes" ]; then
       html=$(($html + 5))
     fi
@@ -136,15 +136,6 @@ EOF
     if [ "$MUTT_QUOTE_PATCH" = "yes" ]; then
       html=$(($html + 2))
     fi
-    if [ "$MUTT_EDIT_THREADS" = "yes" ]; then
-      html=$(($html + 3))
-    fi
-    if [ "$MUTT_IMAP_HEADER_CACHE" = "yes" ]; then
-      html=$(($html + 2))
-    fi
-    if [ "$MUTT_MAILDIR_HEADER_CACHE" = "yes" ]; then
-      html=$(($html + 1))
-    fi
     if [ "$MUTT_SIDEBAR_PATCH" = "yes" ]; then
       html=$(($html + 2))
     fi
@@ -152,9 +143,6 @@ EOF
       html=$(($html + 1))
     fi
     if [ "$MUTT_IFDEF_PATCH" = "yes" ]; then
-      html=$(($html + 1))
-    fi
-    if [ "$MUTT_IDN" = "yes" ]; then
       html=$(($html + 1))
     fi
     if [ "$MUTT_REVERSE_REPLY_PATCH" = "yes" ]; then

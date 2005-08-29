@@ -1,34 +1,34 @@
---- doc/Makefile.in.orig	Tue Feb 15 20:28:24 2005
-+++ doc/Makefile.in	Mon Mar 14 08:08:25 2005
-@@ -63,13 +63,23 @@
+--- doc/Makefile.in.orig	Thu Aug 11 21:37:02 2005
++++ doc/Makefile.in	Sun Aug 14 11:09:10 2005
+@@ -64,13 +64,23 @@
  	ChangeLog.old					\
  	README NEWS TODO README.SECURITY README.SSL 
  
--all: muttrc.man try-html try-txt
-+all:
+-all: mutt.1 muttrc.man try-html try-txt
++all: mutt.1
  
- try-html: ../makedoc
+ try-html: ../makedoc$(EXEEXT)
 -	test -f manual.html || $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
 +	rm -f *.html && $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
 +	touch $@
  
- try-txt: ../makedoc
+ try-txt: ../makedoc$(EXEEXT)
 -	test -f manual.txt || $(MAKE) manual.txt || cp $(srcdir)/manual.txt ./
 +	$(MAKE) manual.txt || cp $(srcdir)/manual.txt ./
 +	touch $@
 +
-+try-latin1: 
++try-latin1: ../makedoc$(EXEEXT)
 +	$(MAKE) manual.latin1 || cp $(srcdir)/manual.latin1 ./
 +	touch $@
 +
-+try-ps: 
-+	$(MAKE) manual.ps || cp $(srcdir)/manual.ps ./
++try-ps: ../makedoc$(EXEEXT)
++	$(MAKE) manual.ps || cp $(srcdir)/manual.latin1 ./
 +	touch $@
  
  install: all instdoc
  	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
-@@ -90,10 +100,6 @@
- 		$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
+@@ -91,10 +101,6 @@
+ 		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
  	done
  	$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir) || true
 -	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/html
@@ -37,12 +37,12 @@
 -	done
  
  uninstall:
- 	-rm -f $(DESTDIR)$(mandir)/man1/mutt.1
-@@ -103,17 +109,20 @@
+ 	for f in mutt.1 mutt_dotlock.1 flea.1 muttbug.1 ; do \
+@@ -114,17 +120,20 @@
  
  check:
  manual.txt: manual.sgml
--	if linuxdoc -B txt --pass='-P -c' manual ; then \
+-	if linuxdoc -B txt -c latin --pass='-P -c' manual ; then \
 -		uniq < manual.txt | expand > _manual.txt ; \
 -		rm manual.txt ; \
 +	if sgmlfmt -f ascii manual; then \
