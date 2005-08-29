@@ -13,6 +13,7 @@ sbin/runsvchdir
 sbin/runsvctrl
 sbin/runsvdir
 sbin/runsvstat
+sbin/sv
 sbin/svlogd
 sbin/svwaitdown
 sbin/svwaitup
@@ -36,6 +37,7 @@ sbin/utmpset
 %%PORTDOCS%%%%DOCSDIR%%/runsvctrl.8.html
 %%PORTDOCS%%%%DOCSDIR%%/runsvdir.8.html
 %%PORTDOCS%%%%DOCSDIR%%/runsvstat.8.html
+%%PORTDOCS%%%%DOCSDIR%%/sv.8.html
 %%PORTDOCS%%%%DOCSDIR%%/svlogd.8.html
 %%PORTDOCS%%%%DOCSDIR%%/svwaitdown.8.html
 %%PORTDOCS%%%%DOCSDIR%%/svwaitup.8.html

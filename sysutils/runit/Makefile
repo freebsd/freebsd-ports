@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	runit
-PORTVERSION=	1.2.3
+PORTVERSION=	1.3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://smarden.org/${PORTNAME}/
 
@@ -20,7 +20,7 @@ ALL_TARGET=	default
 SERVICE_DIR?=	/var/service
 
 MAN8=		chpst.8 runit-init.8 runit.8 runsv.8 runsvchdir.8 \
-		runsvctrl.8 runsvdir.8 runsvstat.8 svlogd.8 \
+		runsvctrl.8 runsvdir.8 runsvstat.8 sv.8 svlogd.8 \
 		svwaitdown.8 svwaitup.8 utmpset.8
 DOCS=		package/CHANGES package/COPYING package/README \
 		package/THANKS doc/*.html
