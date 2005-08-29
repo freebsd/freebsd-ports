@@ -1,6 +1,11 @@
 #!/bin/sh
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/net-mgmt/cricket/files/Attic/pkg-install.in,v 1.1 2005-08-29 15:10:43 vs Exp $
 #
+
+GROUP=%%GROUP%%
+USER=%%USER%%
+UID=%%UID%%
+GID=%%GID%%
 
 if [ "$2" != "PRE-INSTALL" ]; then
 	exit 0
