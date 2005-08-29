@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	logging
-PORTVERSION=	0.4.9.5
+PORTVERSION=	0.4.9.6
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.red-dove.com/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,6 @@ COMMENT=	Logging System for Python as in PEP282
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_PYTHON_PREFIX=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-logging
 
