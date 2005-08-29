@@ -1,9 +1,7 @@
 @comment $FreeBSD$
-%%APP_NAME%%/lib/LICENSE.isorelax
 %%APP_NAME%%/lib/aopalliance.jar
 %%APP_NAME%%/lib/ejb-20.jar
 %%APP_NAME%%/lib/ejb-30.jar
-%%APP_NAME%%/lib/isorelax.jar
 %%APP_NAME%%/lib/j2eedeploy.jar
 %%APP_NAME%%/lib/jca-15.jar
 %%APP_NAME%%/lib/jms-11.jar
