@@ -1,18 +1,46 @@
+@comment $FreeBSD$
 bin/txt2tags
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.html
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/RULES
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README-FIRST
+%%PORTDOCS%%%%DOCSDIR%%/TEAM
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/userguide.html
-%%PORTDOCS%%%%DOCSDIR%%/userguide.t2t
+%%PORTDOCS%%%%DOCSDIR%%/userguide.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/abuseme.html
-%%EXAMPLESDIR%%/abuseme.t2t
-%%EXAMPLESDIR%%/photo.jpg
-%%EXAMPLESDIR%%/pwrbytxt2tags-1.png
-%%EXAMPLESDIR%%/pwrbytxt2tags-2.png
+%%EXAMPLESDIR%%/css/color.css
+%%EXAMPLESDIR%%/css/color.html
+%%EXAMPLESDIR%%/css/modern.css
+%%EXAMPLESDIR%%/css/modern.html
+%%EXAMPLESDIR%%/css/tech.css
+%%EXAMPLESDIR%%/css/tech.html
+%%EXAMPLESDIR%%/extras/README
+%%EXAMPLESDIR%%/extras/css-reference.txt
+%%EXAMPLESDIR%%/extras/gvim-menu.vim
+%%EXAMPLESDIR%%/extras/html-update.sh
+%%EXAMPLESDIR%%/extras/nanorc
+%%EXAMPLESDIR%%/extras/pagemaker.vim
+%%EXAMPLESDIR%%/extras/t2tconv
+%%EXAMPLESDIR%%/extras/t2tmake.rb
+%%EXAMPLESDIR%%/extras/txt2tags-compiler.vim
+%%EXAMPLESDIR%%/extras/txt2tags-kate.xml
+%%EXAMPLESDIR%%/extras/txt2tags-mode.el
+%%EXAMPLESDIR%%/extras/txt2tags.php
+%%EXAMPLESDIR%%/extras/txt2tags.vim
+%%EXAMPLESDIR%%/extras/unhtml.vim
+%%EXAMPLESDIR%%/img/madeinbr.png
+%%EXAMPLESDIR%%/img/old-poweredby-1.png
+%%EXAMPLESDIR%%/img/old-poweredby-2.png
+%%EXAMPLESDIR%%/img/photo.jpg
+%%EXAMPLESDIR%%/img/t2tbutton.png
+%%EXAMPLESDIR%%/img/t2tpowered.png
+%%EXAMPLESDIR%%/img/valid-css.png
+%%EXAMPLESDIR%%/img/valid-html.png
+%%EXAMPLESDIR%%/img/valid-xhtml.png
+%%EXAMPLESDIR%%/module/README
+%%EXAMPLESDIR%%/module/module-body.py
+%%EXAMPLESDIR%%/module/module-full.py
 %%EXAMPLESDIR%%/sample.html
+%%EXAMPLESDIR%%/sample.lout
 %%EXAMPLESDIR%%/sample.man
 %%EXAMPLESDIR%%/sample.mgp
 %%EXAMPLESDIR%%/sample.moin
@@ -21,11 +49,9 @@ bin/txt2tags
 %%EXAMPLESDIR%%/sample.t2t
 %%EXAMPLESDIR%%/sample.tex
 %%EXAMPLESDIR%%/sample.txt
+%%EXAMPLESDIR%%/sample.xhtml
+@dirrm %%EXAMPLESDIR%%/module
+@dirrm %%EXAMPLESDIR%%/img
+@dirrm %%EXAMPLESDIR%%/extras
+@dirrm %%EXAMPLESDIR%%/css
 @dirrm %%EXAMPLESDIR%%
-%%DATADIR%%/pagemaker.vim
-%%DATADIR%%/txt2tags-mode.el
-%%DATADIR%%/txt2tags-reverse_title.patch
-%%DATADIR%%/txt2tags.php
-%%DATADIR%%/txt2tags.vim
-%%DATADIR%%/unhtml.vim
-@dirrm %%DATADIR%%
