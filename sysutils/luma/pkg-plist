@@ -25,6 +25,12 @@ lib/luma/base/gui/BaseSelector.pyc
 lib/luma/base/gui/BaseSelectorDesign.py
 lib/luma/base/gui/BaseSelectorDesign.pyc
 lib/luma/base/gui/BaseSelectorDesign.ui
+lib/luma/base/gui/ImprovedServerDialog.py
+lib/luma/base/gui/ImprovedServerDialog.ui
+lib/luma/base/gui/ImprovedServerDialogDesign.py
+lib/luma/base/gui/ImprovedServerDialogDesign.ui
+lib/luma/base/gui/ImprovedServerDialog.pyc
+lib/luma/base/gui/ImprovedServerDialogDesign.pyc
 lib/luma/base/gui/LanguageDialog.py
 lib/luma/base/gui/LanguageDialog.pyc
 lib/luma/base/gui/LanguageDialogDesign.py
@@ -121,6 +127,7 @@ lib/luma/base/utils/gui/PasswordDialogDesign.ui
 lib/luma/base/utils/gui/PluginInformation.py
 lib/luma/base/utils/gui/PluginInformation.pyc
 lib/luma/base/utils/gui/PluginInformation.ui
+lib/luma/base/utils/gui/PromptPasswordDialog.ui
 lib/luma/base/utils/gui/SearchForm.py
 lib/luma/base/utils/gui/SearchForm.pyc
 lib/luma/base/utils/gui/SearchFormDesign.py
@@ -233,21 +240,13 @@ lib/luma/plugins/schemabrowser/SchemaView.pyc
 lib/luma/plugins/schemabrowser/SchemaViewDesign.py
 lib/luma/plugins/schemabrowser/SchemaViewDesign.pyc
 lib/luma/plugins/schemabrowser/SchemaViewDesign.ui
+lib/luma/plugins/schemabrowser/SearchView.py
+lib/luma/plugins/schemabrowser/SearchView.pyc
 lib/luma/plugins/schemabrowser/__init__.py
 lib/luma/plugins/schemabrowser/__init__.pyc
 lib/luma/plugins/schemabrowser/plugin.meta
 lib/luma/plugins/schemabrowser/schemabrowser.py
 lib/luma/plugins/schemabrowser/schemabrowser.pyc
-lib/luma/plugins/schemaeditor/schemaeditor.pyc
-lib/luma/plugins/schemaeditor/SchemaEditorDesign.py
-lib/luma/plugins/schemaeditor/SchemaEditorDesign.ui
-lib/luma/plugins/schemaeditor/__init__.py
-lib/luma/plugins/schemaeditor/plugin.meta
-lib/luma/plugins/schemaeditor/schemaeditor.py
-lib/luma/plugins/schemaeditor/SchemaEditor.pyc
-lib/luma/plugins/schemaeditor/SchemaEditorDesign.pyc
-lib/luma/plugins/schemaeditor/__init__.pyc
-lib/luma/plugins/schemaeditor/SchemaEditor.py
 lib/luma/plugins/template_plugin/AddAttributeDialog.py
 lib/luma/plugins/template_plugin/AddAttributeDialog.pyc
 lib/luma/plugins/template_plugin/AddAttributeDialogDesign.py
@@ -328,9 +327,11 @@ lib/luma/plugins/usermanagement/usermanagement_plugin.pyc
 %%DATADIR%%/icons/AdvancedObjectWidget/save.png
 %%DATADIR%%/icons/AdvancedObjectWidget/single.png
 %%DATADIR%%/icons/addattribute.png
+%%DATADIR%%/icons/auth32.png
 %%DATADIR%%/icons/binary.png
 %%DATADIR%%/icons/bomb.png
 %%DATADIR%%/icons/binary_big.png
+%%DATADIR%%/icons/certificate48.png
 %%DATADIR%%/icons/clear.png
 %%DATADIR%%/icons/config.png
 %%DATADIR%%/icons/delete.png
@@ -369,6 +370,8 @@ lib/luma/plugins/usermanagement/usermanagement_plugin.pyc
 %%DATADIR%%/icons/mainwin/logger.png
 %%DATADIR%%/icons/mainwin/reload.png
 %%DATADIR%%/icons/manage.png
+%%DATADIR%%/icons/network32.png
+%%DATADIR%%/icons/network48.png
 %%DATADIR%%/icons/new.png
 %%DATADIR%%/icons/newEntry.png
 %%DATADIR%%/icons/no.png
@@ -410,6 +413,7 @@ lib/luma/plugins/usermanagement/usermanagement_plugin.pyc
 %%DATADIR%%/icons/save.png
 %%DATADIR%%/icons/secure.png
 %%DATADIR%%/icons/secure-alias.png
+%%DATADIR%%/icons/security48.png
 %%DATADIR%%/icons/server.png
 %%DATADIR%%/icons/single.png
 %%DATADIR%%/icons/tip.png
@@ -436,7 +440,6 @@ lib/luma/plugins/usermanagement/usermanagement_plugin.pyc
 @dirrm lib/luma/plugins/mass_creation_plugin
 @dirrm lib/luma/plugins/search_plugin
 @dirrm lib/luma/plugins/schemabrowser
-@dirrm lib/luma/plugins/schemaeditor
 @dirrm lib/luma/plugins/template_plugin
 @dirrm lib/luma/plugins/usermanagement
 @dirrm lib/luma/plugins
