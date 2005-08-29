@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	transcode
-DISTVERSION=	1.0.0rc1
-PORTREVISION=	1
+DISTVERSION=	1.0.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dl.fkb.wormulon.net/transcode/ \
 		http://dl.kel.wormulon.net/transcode/ \
@@ -140,6 +139,13 @@ PLIST_SUB+=	WITH_OGG=""
 .else
 PLIST_SUB+=	WITH_OGG="@comment "
 CONFIGURE_ARGS+=	--enable-ogg=no
+.endif
+
+.if defined(WITH_BKTR)
+PLIST_SUB+=	WITH_BKTR=""
+CONFIGURE_ARGS+=	--enable-bktr
+.else
+PLIST_SUB+=	WITH_BKTR="@comment "
 .endif
 
 .if defined(WITH_VORBIS)
@@ -284,7 +290,6 @@ PLIST_SUB+=	WITH_LZO="@comment "
 .if defined(WITH_DIVX5)
 BUILD_DEPENDS+=	${LINUXBASE}/usr/lib/libdivxdecore.so:${PORTSDIR}/multimedia/linux-divx4linux
 CFLAGS+=	-I${LINUXBASE}/usr/include/divx
-CPPFLAGS+=	-I${LINUXBASE}/usr/include/divx
 .else
 .endif
 
@@ -388,6 +393,10 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can enable experimental DivX 5 support by defining WITH_DIVX5."
 .endif
+.if !defined(WITH_BKTR)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You can enable support for bktr(4) devices by defining WITH_BKTR."
+.endif
 
 post-patch:
 .if ${OSVERSION} <= 500027
@@ -415,7 +424,7 @@ pre-configure:
 		${WRKSRC}/import/decode_mov.c \
 		${WRKSRC}/import/import_mov.c \
 		${WRKSRC}/import/probe_mov.c
-	
+
 post-install:
 .if defined(WITH_XVID)
 	@${LN} -sf ${LOCALBASE}/lib/libxvidcore.so \
