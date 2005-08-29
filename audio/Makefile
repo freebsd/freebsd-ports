@@ -286,6 +286,7 @@
     SUBDIR += mixxx
     SUBDIR += moc
     SUBDIR += modplugplay
+    SUBDIR += mp-player
     SUBDIR += mp32ogg
     SUBDIR += mp3_check
     SUBDIR += mp3asm
