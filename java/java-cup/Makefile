@@ -5,42 +5,28 @@
 # $FreeBSD$
 #
 
-PORTNAME=	java_cup
-PORTVERSION=	10.k
-CATEGORIES=	java
-MASTER_SITES=	http://www.cs.princeton.edu/~appel/modern/java/CUP/
-DISTNAME=	${PORTNAME}_v${PORTVERSION:S|.||}
+PORTNAME=	cup
+PORTVERSION=	11.a
+CATEGORIES=	java devel
+MASTER_SITES=	http://www2.cs.tum.edu/projects/cup/
+PKGNAMEPREFIX=	java-
+DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-v${PORTVERSION:S|.||}-20050516-sources
 
-MAINTAINER=	nordwick@xcf.berkeley.edu
+MAINTAINER=	ports@mcdermottroe.com
 COMMENT=	An LALR parser generator in Java
 
-USE_JAVA=	1.1+
-NEED_JAVAC=	yes
-NO_WRKSUBDIR=	yes
+USE_JAVA=	yes
+USE_ANT=	yes
+WRKSRC=		${WRKDIR}/cup-tum
 
-PLIST_SUB=	JAVAJARDIR=${JAVAJARDIR:S|^${PREFIX}/||} PORTNAME=${PORTNAME}
+# Silly hack because the naming in CUP is all over the place
+DISTJARNAME=	${PKGNAMEPREFIX}${PORTNAME}-10k-TUM
 
-do-build:
-	${SETENV} CLASSPATH=${WRKSRC} ${JAVAC} ${WRKSRC}/java_cup/*.java \
-		${WRKSRC}/java_cup/runtime/*.java
-	cd ${WRKSRC} && \
-		${JAR} cf ${PORTNAME}.jar java_cup/*.class \
-		java_cup/runtime/*.class
+PLIST_FILES=	%%JAVAJARDIR%%/${DISTJARNAME}.jar \
+		%%JAVAJARDIR%%/${DISTJARNAME}-runtime.jar
 
 do-install:
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.jar ${JAVAJARDIR}
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/manual.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/cup_logo.gif ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
-	@${ECHO_MSG} "Documentation installed in ${DOCSDIR}"
-	@${ECHO_MSG} "   manual.html --  How to build a grammar."
-	@${ECHO_MSG} "   README -- How to get it working."
-	@${ECHO_MSG} "   LICENSE -- How not to get sued."
-.endif
+	${INSTALL_DATA} ${WRKSRC}/dist/${DISTJARNAME}.jar ${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/dist/${DISTJARNAME}-runtime.jar ${JAVAJARDIR}
 
 .include <bsd.port.mk>
