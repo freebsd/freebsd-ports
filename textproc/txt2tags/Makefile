@@ -6,27 +6,29 @@
 #
 
 PORTNAME=	txt2tags
-PORTVERSION=	1.5
+PORTVERSION=	2.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://txt2tags.sourceforge.net/src/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sergei@FreeBSD.org
-COMMENT=	Utility to turn simply formatted text into markup (e.g., HTML)
+COMMENT=	Convert simply formatted text into markup (e.g., HTML)
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-DOCS=		ChangeLog.txt README.html README.txt RULES TODO userguide/*
-CONTRIB=	contrib/* extras/*
-EXAMPLES=	samples/*
+DOCS=		ChangeLog README README-FIRST TEAM TODO doc/userguide.pdf
+SAMPLE_DIRS=	css img module
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/txt2tags ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${CONTRIB} ${DATADIR}
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
+.for dir in ${SAMPLE_DIRS}
+	@${MKDIR} ${EXAMPLESDIR}/${dir}
+	${INSTALL_DATA} ${WRKSRC}/samples/${dir}/* ${EXAMPLESDIR}/${dir}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/samples/sample* ${EXAMPLESDIR}/
+	@${MKDIR} ${EXAMPLESDIR}/extras
+	${INSTALL_DATA} ${WRKSRC}/extras/* ${EXAMPLESDIR}/extras
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
