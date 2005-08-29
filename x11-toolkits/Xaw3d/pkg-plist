@@ -68,6 +68,8 @@ include/X11/Xaw3d/TextSrc.h
 include/X11/Xaw3d/TextSrcP.h
 include/X11/Xaw3d/ThreeD.h
 include/X11/Xaw3d/ThreeDP.h
+include/X11/Xaw3d/Tip.h
+include/X11/Xaw3d/TipP.h
 include/X11/Xaw3d/Toggle.h
 include/X11/Xaw3d/ToggleP.h
 include/X11/Xaw3d/Tree.h
@@ -75,6 +77,7 @@ include/X11/Xaw3d/TreeP.h
 include/X11/Xaw3d/VendorEP.h
 include/X11/Xaw3d/Viewport.h
 include/X11/Xaw3d/ViewportP.h
+include/X11/Xaw3d/Xaw3dP.h
 include/X11/Xaw3d/XawImP.h
 include/X11/Xaw3d/XawInit.h
 share/doc/Xaw3d/README.XAW3D

@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	Xaw3d
-PORTVERSION=	1.5
+PORTVERSION=	1.5E
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	widgets/Xaw3d/R6.3
+MASTER_SITES=	ftp://ftp.visi.com/users/hawkeyd/X/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3-D Athena Widget set that looks like Motif
