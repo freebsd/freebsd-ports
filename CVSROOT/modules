@@ -6315,6 +6315,7 @@ moztraybiff	ports/mail/moztraybiff
 mp		ports/editors/mp
 mp-a4		ports/print/mp-a4
 mp-letter	ports/print/mp-letter
+mp-player	ports/audio/mp-player
 mp32ogg		ports/audio/mp32ogg
 mp3_check	ports/audio/mp3_check
 mp3asm		ports/audio/mp3asm
