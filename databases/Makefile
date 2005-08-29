@@ -217,6 +217,7 @@
     SUBDIR += p5-Pg
     SUBDIR += p5-ResourcePool-Resource-DBI
     SUBDIR += p5-SQL-Abstract
+    SUBDIR += p5-SQL-Abstract-Limit
     SUBDIR += p5-SQL-Statement
     SUBDIR += p5-SQL-Translator
     SUBDIR += p5-Search-InvertedIndex
