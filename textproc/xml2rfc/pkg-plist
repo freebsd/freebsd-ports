@@ -10,6 +10,8 @@ bin/xml2txt
 %%PORTDOCS%%%%DOCSDIR%%/dot.xml2rfc.rc
 %%PORTDOCS%%%%DOCSDIR%%/draft-mrose-writing-rfcs.html
 %%PORTDOCS%%%%DOCSDIR%%/draft-mrose-writing-rfcs.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc2629-other.ent
+%%PORTDOCS%%%%DOCSDIR%%/rfc2629-xhtml.ent
 %%PORTDOCS%%%%DOCSDIR%%/rfc2629.dtd
 %%PORTDOCS%%%%DOCSDIR%%/rfc2629.html
 %%PORTDOCS%%%%DOCSDIR%%/rfc2629.rnc

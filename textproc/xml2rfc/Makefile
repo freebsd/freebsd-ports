@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xml2rfc
-PORTVERSION=	1.29
+PORTVERSION=	1.30
 CATEGORIES=	textproc tcl83
 MASTER_SITES=	http://xml.resource.org/authoring/
 EXTRACT_SUFX=	.tgz
@@ -31,6 +31,7 @@ do-install:
 	${MKDIR} ${DOCSDIR} ${DOCSDIR}/contrib
 .for doc in LICENSE README.html README.txt README.xml \
 	    draft-mrose-writing-rfcs.html draft-mrose-writing-rfcs.txt \
+	    rfc2629-other.ent rfc2629-xhtml.ent \
 	    rfc2629.dtd rfc2629.html rfc2629.rnc rfc2629.txt rfc2629.xml \
 	    rfc2629.xsd sample.html sample.txt sample.xml xml2rfc-win.png
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
