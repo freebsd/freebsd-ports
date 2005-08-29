@@ -531,6 +531,7 @@
     SUBDIR += uwatch
     SUBDIR += vcp
     SUBDIR += videogen
+    SUBDIR += vii
     SUBDIR += virtualmin
     SUBDIR += vobcopy
     SUBDIR += vttest

@@ -1,0 +1,14 @@
+Vii (pronounced seven) is a simple program which accepts input from the
+standard input and displays pages of the input on the terminal.
+
+These pages are delimited by form-feeds (or EOF). The display can be scrolled
+if the output is wider or longer than the screen.
+
+Vii can also repeatedly execute a command (at a configurable interval) and the
+most recent output is displayed. This is useful for status monitoring where the
+command itself does not have a repeatable or curses interface. 
+
+WWW: http://vii.sourceforge.net/
+
+- ehaupt
+ehaupt@critical.ch
