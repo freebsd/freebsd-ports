@@ -6348,6 +6348,7 @@ mpegaudio	ports/audio/mpegaudio
 mpegedit	ports/multimedia/mpegedit
 mpeglib_artsplug	ports/audio/mpeglib_artsplug
 mpexpr		ports/math/mpexpr
+mpfr		ports/math/mpfr
 mpg123		ports/audio/mpg123
 mpg123.el	ports/audio/mpg123.el
 mpg321		ports/audio/mpg321
