@@ -3677,6 +3677,7 @@ http_load	ports/www/http_load
 http_ping	ports/net/http_ping
 httperf		ports/benchmarks/httperf
 httpgrabber	ports/www/httpgrabber
+httping		ports/net/httping
 httplog		ports/sysutils/httplog
 httptunnel	ports/www/httptunnel
 httrack		ports/www/httrack
