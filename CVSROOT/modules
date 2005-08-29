@@ -12177,6 +12177,7 @@ viewklass	ports/x11-toolkits/viewklass
 vifm		ports/misc/vifm
 vigor		ports/editors/vigor
 vigra		ports/graphics/vigra
+vii		ports/sysutils/vii
 vile		ports/editors/vile
 vilearn		ports/editors/vilearn
 vim		ports/editors/vim
