@@ -602,6 +602,7 @@ balance		ports/net/balance
 balsa		ports/mail/balsa
 bamg		ports/math/bamg
 bandwidthd	ports/net-mgmt/bandwidthd
+bannerfilter	ports/www/bannerfilter
 bar		ports/textproc/bar
 barbecue	ports/graphics/barbecue
 barcode		ports/graphics/barcode
