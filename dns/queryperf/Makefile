@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=     bind9/${BINDVERSION}
 DISTNAME=       bind-${BINDVERSION}
 
 MAINTAINER=	edwin@mavetju.org
-COMMENT=	DNS Query Perforamnce Testing Tool
+COMMENT=	DNS Query Performance Testing Tool
 
 BINDVERSION=	9.3.1
 WRKSRC=		${WRKDIR}/bind-${BINDVERSION}/contrib/queryperf/
