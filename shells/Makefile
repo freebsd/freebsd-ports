@@ -32,6 +32,5 @@
     SUBDIR += zoidberg
     SUBDIR += zsh
     SUBDIR += zsh+euc_hack
-    SUBDIR += zsh-devel
 
 .include <bsd.port.subdir.mk>
