@@ -1,59 +1,59 @@
-share/tinybsd/CHANGES
-share/tinybsd/COPYRIGHT
-share/tinybsd/README
-share/tinybsd/TODO
-share/tinybsd/conf/bridge/TINYBSD
-share/tinybsd/conf/bridge/tinybsd.basefiles
-share/tinybsd/conf/bridge/etc/fstab
-share/tinybsd/conf/bridge/etc/rc.conf
-share/tinybsd/conf/bridge/etc/sysctl.conf
-@dirrm share/tinybsd/conf/bridge/etc
-@dirrm share/tinybsd/conf/bridge
-share/tinybsd/conf/default/TINYBSD
-share/tinybsd/conf/default/tinybsd.basefiles
-share/tinybsd/conf/default/etc/fstab
-share/tinybsd/conf/default/etc/rc.conf
-@dirrm share/tinybsd/conf/default/etc
-@dirrm share/tinybsd/conf/default
-share/tinybsd/conf/firewall/TINYBSD
-share/tinybsd/conf/firewall/tinybsd.basefiles
-share/tinybsd/conf/firewall/etc/authpf/authpf.rules
-@dirrm share/tinybsd/conf/firewall/etc/authpf
-share/tinybsd/conf/firewall/etc/fstab
-share/tinybsd/conf/firewall/etc/natd.conf
-share/tinybsd/conf/firewall/etc/pf.conf
-share/tinybsd/conf/firewall/etc/pf.os
-share/tinybsd/conf/firewall/etc/rc.conf
-share/tinybsd/conf/firewall/etc/rc.firewall
-share/tinybsd/conf/firewall/etc/sysctl.conf
-@dirrm share/tinybsd/conf/firewall/etc
-@dirrm share/tinybsd/conf/firewall
-share/tinybsd/conf/minimal/TINYBSD
-share/tinybsd/conf/minimal/tinybsd.basefiles
-share/tinybsd/conf/minimal/etc/fstab
-share/tinybsd/conf/minimal/etc/rc.conf
-@dirrm share/tinybsd/conf/minimal/etc
-@dirrm share/tinybsd/conf/minimal
-share/tinybsd/conf/vpn/TINYBSD
-share/tinybsd/conf/vpn/tinybsd.basefiles
-share/tinybsd/conf/vpn/etc/fstab
-share/tinybsd/conf/vpn/etc/rc.conf
-share/tinybsd/conf/vpn/etc/setkey.conf
-@dirrm share/tinybsd/conf/vpn/etc
-@dirrm share/tinybsd/conf/vpn
-share/tinybsd/conf/wireless/TINYBSD
-share/tinybsd/conf/wireless/tinybsd.basefiles
-share/tinybsd/conf/wireless/etc/authpf/authpf.rules
-@dirrm share/tinybsd/conf/wireless/etc/authpf
-share/tinybsd/conf/wireless/etc/fstab
-share/tinybsd/conf/wireless/etc/natd.conf
-share/tinybsd/conf/wireless/etc/pf.conf
-share/tinybsd/conf/wireless/etc/pf.os
-share/tinybsd/conf/wireless/etc/rc.conf
-share/tinybsd/conf/wireless/etc/rc.firewall
-@dirrm share/tinybsd/conf/wireless/etc
-@dirrm share/tinybsd/conf/wireless
-@dirrm share/tinybsd/conf
-@dirrm share/tinybsd
+@comment $FreeBSD$
 bin/tinybsd
-
+%%DATADIR%%/CHANGES
+%%DATADIR%%/COPYRIGHT
+%%DATADIR%%/README
+%%DATADIR%%/TODO
+%%DATADIR%%/conf/bridge/TINYBSD
+%%DATADIR%%/conf/bridge/tinybsd.basefiles
+%%DATADIR%%/conf/bridge/etc/fstab
+%%DATADIR%%/conf/bridge/etc/rc.conf
+%%DATADIR%%/conf/bridge/etc/sysctl.conf
+@dirrm %%DATADIR%%/conf/bridge/etc
+@dirrm %%DATADIR%%/conf/bridge
+%%DATADIR%%/conf/default/TINYBSD
+%%DATADIR%%/conf/default/tinybsd.basefiles
+%%DATADIR%%/conf/default/etc/fstab
+%%DATADIR%%/conf/default/etc/rc.conf
+@dirrm %%DATADIR%%/conf/default/etc
+@dirrm %%DATADIR%%/conf/default
+%%DATADIR%%/conf/firewall/TINYBSD
+%%DATADIR%%/conf/firewall/tinybsd.basefiles
+%%DATADIR%%/conf/firewall/etc/authpf/authpf.rules
+@dirrm %%DATADIR%%/conf/firewall/etc/authpf
+%%DATADIR%%/conf/firewall/etc/fstab
+%%DATADIR%%/conf/firewall/etc/natd.conf
+%%DATADIR%%/conf/firewall/etc/pf.conf
+%%DATADIR%%/conf/firewall/etc/pf.os
+%%DATADIR%%/conf/firewall/etc/rc.conf
+%%DATADIR%%/conf/firewall/etc/rc.firewall
+%%DATADIR%%/conf/firewall/etc/sysctl.conf
+@dirrm %%DATADIR%%/conf/firewall/etc
+@dirrm %%DATADIR%%/conf/firewall
+%%DATADIR%%/conf/minimal/TINYBSD
+%%DATADIR%%/conf/minimal/tinybsd.basefiles
+%%DATADIR%%/conf/minimal/etc/fstab
+%%DATADIR%%/conf/minimal/etc/rc.conf
+@dirrm %%DATADIR%%/conf/minimal/etc
+@dirrm %%DATADIR%%/conf/minimal
+%%DATADIR%%/conf/vpn/TINYBSD
+%%DATADIR%%/conf/vpn/tinybsd.basefiles
+%%DATADIR%%/conf/vpn/etc/fstab
+%%DATADIR%%/conf/vpn/etc/rc.conf
+%%DATADIR%%/conf/vpn/etc/setkey.conf
+@dirrm %%DATADIR%%/conf/vpn/etc
+@dirrm %%DATADIR%%/conf/vpn
+%%DATADIR%%/conf/wireless/TINYBSD
+%%DATADIR%%/conf/wireless/tinybsd.basefiles
+%%DATADIR%%/conf/wireless/etc/authpf/authpf.rules
+@dirrm %%DATADIR%%/conf/wireless/etc/authpf
+%%DATADIR%%/conf/wireless/etc/fstab
+%%DATADIR%%/conf/wireless/etc/natd.conf
+%%DATADIR%%/conf/wireless/etc/pf.conf
+%%DATADIR%%/conf/wireless/etc/pf.os
+%%DATADIR%%/conf/wireless/etc/rc.conf
+%%DATADIR%%/conf/wireless/etc/rc.firewall
+@dirrm %%DATADIR%%/conf/wireless/etc
+@dirrm %%DATADIR%%/conf/wireless
+@dirrm %%DATADIR%%/conf
+@dirrm %%DATADIR%%
