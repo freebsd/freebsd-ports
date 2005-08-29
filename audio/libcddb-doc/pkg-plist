@@ -1,3 +1,4 @@
+%%DOCSDIR%%/libcddb.css
 %%DOCSDIR%%/API/annotated.html
 %%DOCSDIR%%/API/cddb_8h-source.html
 %%DOCSDIR%%/API/cddb_8h.html
@@ -13,11 +14,10 @@
 %%DOCSDIR%%/API/cddb__log_8h.html
 %%DOCSDIR%%/API/cddb__net_8h-source.html
 %%DOCSDIR%%/API/cddb__net_8h.html
+%%DOCSDIR%%/API/cddb__site_8h.html
+%%DOCSDIR%%/API/cddb__site_8h-source.html
 %%DOCSDIR%%/API/cddb__track_8h-source.html
 %%DOCSDIR%%/API/cddb__track_8h.html
-%%DOCSDIR%%/API/dir_000000.html
-%%DOCSDIR%%/API/dir_000001.html
-%%DOCSDIR%%/API/dirs.html
 %%DOCSDIR%%/API/doxygen.css
 %%DOCSDIR%%/API/doxygen.png
 %%DOCSDIR%%/API/files.html
@@ -37,16 +37,15 @@
 %%DOCSDIR%%/API/structcddb__disc__s.html
 %%DOCSDIR%%/API/structcddb__track__s-members.html
 %%DOCSDIR%%/API/structcddb__track__s.html
-%%DOCSDIR%%/contact.html
-%%DOCSDIR%%/download.html
-%%DOCSDIR%%/faq.html
-%%DOCSDIR%%/images/arrow_dn.png
 %%DOCSDIR%%/images/arrow_up.png
+%%DOCSDIR%%/images/arrow_dn.png
 %%DOCSDIR%%/images/bullet.png
 %%DOCSDIR%%/index.html
-%%DOCSDIR%%/libcddb.css
-%%DOCSDIR%%/links.html
 %%DOCSDIR%%/tutorial.html
-@dirrm %%DOCSDIR%%/images
+%%DOCSDIR%%/download.html
+%%DOCSDIR%%/faq.html
+%%DOCSDIR%%/links.html
+%%DOCSDIR%%/contact.html
 @dirrm %%DOCSDIR%%/API
+@dirrm %%DOCSDIR%%/images
 @dirrm %%DOCSDIR%%
