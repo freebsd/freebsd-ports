@@ -6937,10 +6937,11 @@ openmortal	ports/games/openmortal
 opennap		ports/audio/opennap
 openntpd	ports/net/openntpd
 openobex	ports/comms/openobex
-openoffice-1.0	ports/editors/openoffice-1.0
-openoffice-1.1	ports/editors/openoffice-1.1
-openoffice-1.1-devel	ports/editors/openoffice-1.1-devel
-openoffice-2.0-devel	ports/editors/openoffice-2.0-devel
+openoffice.org-1.0	ports/editors/openoffice.org-1.0
+openoffice.org-1.1	ports/editors/openoffice.org-1.1
+openoffice.org-1.1-devel	ports/editors/openoffice.org-1.1-devel
+openoffice.org-2.0	ports/editors/openoffice.org-2.0
+openoffice.org-2.0-devel	ports/editors/openoffice.org-2.0-devel
 openorb		ports/devel/openorb
 openproducer	ports/graphics/openproducer
 openquicktime	ports/multimedia/openquicktime
