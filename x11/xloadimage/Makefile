@@ -6,7 +6,7 @@
 #
 
 VERSION=	4.1
-REVISION=	10
+REVISION=	14.2
 PORTREVISION=	0
 
 PORTNAME=	xloadimage
@@ -15,7 +15,7 @@ CATEGORIES=	x11 graphics
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTNAME=	${PORTNAME}.${VERSION}
 PATCH_SITES=	${MASTER_SITE_DEBIAN_POOL}
-PATCHFILES=	xloadimage_${VERSION}-${REVISION}.diff.gz
+PATCHFILES=	xloadimage_4.1-10.diff.gz
 PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	jmz@FreeBSD.org
