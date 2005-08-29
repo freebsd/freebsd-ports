@@ -7,6 +7,7 @@
 
 PORTNAME=	nexfontsel
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.netlab.is.tsukuba.ac.jp/~yokota/archive/ \
 		${MASTER_SITE_LOCAL}
@@ -24,7 +25,8 @@ USE_REINPLACE=	yes
 MAN1=		nexfontsel.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^CDEBUG|XCOMM CDEBUG|g' ${WRKSRC}/Imakefile
+	@${REINPLACE_CMD} -e 's|^CDEBUG|XCOMM CDEBUG|g ; \
+		s|= XawClientLibs|= -lneXtaw|g' ${WRKSRC}/Imakefile
 
 post-install:
 	@${MKDIR} ${PREFIX}/lib/X11/ja_JP.eucJP/app-defaults
