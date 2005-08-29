@@ -37,10 +37,15 @@ BARRIER_LOCALTIME_PATCH=	yes
 .endif
 
 .if defined(SLAVE_LDAP) || \
-    defined(SLAVE_SMTP_AUTH_TLS) || \
     defined(SLAVE_SPAMCONTROL) || \
     defined(SLAVE_TLS)
 BARRIER_OUTGOINGIP_PATCH=	yes
+.endif
+
+.if defined(SLAVE_LDAP) || \
+    defined(SLAVE_SMTP_AUTH_TLS) || \
+    defined(SLAVE_SPAMCONTROL) || \
+    defined(SLAVE_TLS)
 BARRIER_RFC2821_PATCH=		yes
 .endif
 
@@ -84,9 +89,6 @@ PATCH_DIST_STRIP+=	-p1
 .elif defined(SLAVE_MYSQL)
 PATCH_SITES+=	http://iain.cx/unix/qmail/download/:mysql
 PATCHFILES+=	qmail-mysql-${MYSQL_PATCH_VERSION}.patch:mysql
-.elif defined(SLAVE_SMTP_AUTH_TLS)
-PATCH_SITES+=	http://www.galle.com.br/~garga/qmail/:smtp_auth_tls
-PATCHFILES+=	qmail-1.03-starttls-smtp-auth.patch:smtp_auth_tls
 .elif defined(SLAVE_TLS)
 PATCH_SITES+=	http://inoa.net/qmail-tls/:tls
 PATCHFILES+=	qmail-1.03-tls-${TLS_PATCH_DATE}.patch:tls
@@ -338,6 +340,17 @@ PLIST_SUB+=	EXTERNAL_TODO="@comment "
 .if (defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH)) &&\
     (defined(WITH_QMTPC_PATCH)      && !defined(BARRIER_QMTPC_PATCH))
 BROKEN=	"OUTGOINGIP and QMTPC conflicts! Please, make your choice"
+.endif
+
+.if defined(SLAVE_SMTP_AUTH_TLS)
+PATCH_SITES+=	http://www.galle.com.br/~garga/qmail/:smtp_auth_tls
+
+.if defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH)
+PATCHFILES+=	qmail-1.03-starttls-smtp-auth_outgoingip.patch:smtp_auth_tls
+.else
+PATCHFILES+=	qmail-1.03-starttls-smtp-auth.patch:smtp_auth_tls
+.endif
+
 .endif
 
 .if defined(WITH_MAILDIRQUOTA_PATCH) && !defined(BARRIER_MAILDIRQUOTA_PATCH)
