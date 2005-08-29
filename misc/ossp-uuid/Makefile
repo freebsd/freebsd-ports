@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
 PKGNAMEPREFIX=	ossp-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marcus@corp.grupos.com.br
 COMMENT=	ISO-C & Perl API and CLI for generating Universally Unique Identifiers
 
 CONFLICTS=	e2fsprogs-[0-9]*

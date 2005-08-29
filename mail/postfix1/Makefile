@@ -25,8 +25,8 @@ MASTER_SITE_SUBDIR=	. old related/postfix
 DISTNAME=	postfix-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=		An alternative to widely-used Sendmail
+MAINTAINER=	marcus@corp.grupos.com.br
+COMMENT=	An alternative to widely-used Sendmail
 
 CONFLICTS=	courier-0.* postfix-2.* sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 USE_SUBMAKE=	yes

@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
 PKGNAMEPREFIX=	ossp-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marcus@corp.grupos.com.br
 COMMENT=	A library for parsing arbitrary C/C++-style configuration files
 
 LIB_DEPENDS=	ex.10:${PORTSDIR}/devel/ossp-ex
