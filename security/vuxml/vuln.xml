@@ -59,7 +59,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>evolution</name>
-	<range><gt>1.5</gt><lt>2.3.7</lt></range>
+	<range><gt>1.5</gt><lt>2.2.3_1</lt></range>
       </package>
     </affects>
     <description>
@@ -94,6 +94,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-08-10</discovery>
       <entry>2005-08-27</entry>
+      <modified>2005-08-29</modified>
     </dates>
   </vuln>
 
