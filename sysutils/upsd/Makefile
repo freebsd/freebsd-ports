@@ -9,7 +9,7 @@ PORTNAME=	upsd
 PORTVERSION=	2.0.1.6
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	# disappeared
+MASTER_SITES=	http://www.mavetju.org/download/adopted/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	APC Smart UPS Monitoring Daemon
