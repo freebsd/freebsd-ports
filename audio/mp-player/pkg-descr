@@ -1,0 +1,10 @@
+MP is a module player using libmikmod. It is able to play 18 module formats,
+such as MOD, XM, S3M, and IT.
+
+MP features real volume gauges, sound effects control, various options,
+easy-to-manage playing lists, and more.
+
+WWW: http://mp.waw.cx/
+
+- ehaupt
+ehaupt@critical.ch
