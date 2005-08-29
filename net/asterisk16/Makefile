@@ -85,9 +85,7 @@ MAKE_ENV+=	WITH_ODBC=1
 USE_MYSQL=	yes
 .endif
 
-#
-# FAX apps can't be compiled on RELENG_4 at the moment
-.if defined(WITHOUT_FAX) || ${OSVERSION} < 500000
+.if defined(WITHOUT_FAX)
 PLIST_SUB+=	WITH_FAX="@comment "
 .else
 MAKE_ENV+=	WITH_FAX=1
