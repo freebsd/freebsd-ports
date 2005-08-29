@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	openoffice.org
+PORTNAME=	openoffice
 PORTVERSION=	2.0.${SNAPDATE}
 CATEGORIES+=	editors
 MASTER_SITES+=	ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
