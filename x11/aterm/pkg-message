@@ -1,0 +1,10 @@
+
+				ATTENTION:
+
+Due to a BSD related bug in aterm in some cases the $COLUMNS and $LINES
+envirement variables are not being updated to the corresponding window geometry
+values. This will cause problems with applications such as 'man' or 'ee'. You
+need to adjust the window geometry manually at least once in order for the two
+envirement variable mentioned above to get adjusted correctly.
+
+The AfterStep/aterm developers know about this problem and are working on it.
