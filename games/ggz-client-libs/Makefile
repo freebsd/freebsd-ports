@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GGZ Gaming Zone - Core Client Libraries
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		ggz.3:${PORTSDIR}/games/libggz \
+LIB_DEPENDS=	ggz.3:${PORTSDIR}/games/libggz \
 		expat.5:${PORTSDIR}/textproc/expat2
 
 USE_GNOME=	gnometarget
