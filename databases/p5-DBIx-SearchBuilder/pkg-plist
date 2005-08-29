@@ -11,6 +11,7 @@
 %%SITE_PERL%%/DBIx/SearchBuilder/Handle/Oracle.pm
 %%SITE_PERL%%/DBIx/SearchBuilder/Handle/SQLite.pm
 %%SITE_PERL%%/DBIx/SearchBuilder/Handle/Sybase.pm
+%%SITE_PERL%%/DBIx/SearchBuilder/SchemaGenerator.pm
 %%SITE_PERL%%/DBIx/SearchBuilder/Union.pm
 %%SITE_PERL%%/DBIx/SearchBuilder/Unique.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/SearchBuilder
