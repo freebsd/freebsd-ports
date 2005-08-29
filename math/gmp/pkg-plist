@@ -1,12 +1,8 @@
 include/gmp.h
 include/gmpxx.h
-include/mpf2mpfr.h
-include/mpfr.h
-include/mpfrxx.h
 lib/libgmp.a
 lib/libgmp.so
 lib/libgmp.so.6
 lib/libgmpxx.a
 lib/libgmpxx.so
 lib/libgmpxx.so.3
-lib/libmpfr.a
