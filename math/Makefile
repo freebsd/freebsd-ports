@@ -108,6 +108,7 @@
     SUBDIR += libneural
     SUBDIR += libqalculate
     SUBDIR += libranlib
+    SUBDIR += libtommath
     SUBDIR += linalg
     SUBDIR += linpack
     SUBDIR += linux-relview
