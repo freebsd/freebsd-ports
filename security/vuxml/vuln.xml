@@ -3572,9 +3572,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <package>
 	<name>jabber</name>
 	<name>bnc</name>
-	<name>dante</name>
 	<name>rinetd</name>
 	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>dante</name>
+	<range><lt>1.1.15</lt></range>
       </package>
       <package>
 	<name>bld</name>
@@ -3603,7 +3606,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-12-12</discovery>
       <entry>2005-06-17</entry>
-      <modified>2005-07-27</modified>
+      <modified>2005-08-29</modified>
     </dates>
   </vuln>
 
