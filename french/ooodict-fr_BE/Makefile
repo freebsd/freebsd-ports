@@ -15,6 +15,6 @@ LANGSUFFIX=	BE
 LANGDIST+=	fr_BE.zip
 HYPHDIST+=	hyph_fr_BE.zip
 MASTERDIR=	${.CURDIR}/../../editors/ooodict-all
-RDEP=		${PORTSDIR}/editors/openoffice-1.1
+RDEP=		${PORTSDIR}/editors/openoffice.org-1.1
 
 .include "${MASTERDIR}/Makefile"
