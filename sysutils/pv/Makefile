@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pv
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://dragon.roe.ch/mirrors/distfiles/pv/
@@ -18,15 +18,23 @@ COMMENT=	A pipe throughput monitor
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAN1=		pv.1
-INFO=		pv
 
 PLIST_FILES=	bin/pv
+MAN1=		pv.1
+INFO=		pv
+PORTDOCS=	README NEWS TODO manual.html
+
+post-patch:
+	@${CP} ${WRKSRC}/README ${WRKSRC}/doc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pv ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/quickref.1 ${PREFIX}/man/man1/pv.1
 	${INSTALL_MAN} ${WRKSRC}/doc/pv.info ${PREFIX}/info
 	install-info ${PREFIX}/info/pv.info ${PREFIX}/info/dir
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
