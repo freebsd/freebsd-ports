@@ -119,6 +119,7 @@ lib/transcode/parse_csv.awk
 lib/transcode/import_ac3.so
 %%WITH_AVIFILE%%lib/transcode/import_af6.so
 lib/transcode/import_avi.so
+%%WITH_BKTR%%lib/transcode/import_bktr.so
 lib/transcode/import_bsdav.so
 lib/transcode/import_divx.so
 lib/transcode/import_dv.so
