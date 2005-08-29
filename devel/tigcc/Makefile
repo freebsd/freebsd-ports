@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	tigcc
-PORTVERSION=	0.95
-PORTREVISION=	3
+PORTVERSION=	0.96.b5
 CATEGORIES=	devel
 MASTER_SITES=	http://tigcc.ticalc.org/sources/\
 		http://tigcc.ticalc.org/linux/
 DISTNAME=	tigcc_src
 DISTFILES=	tigcc_src.tar.bz2 gcc-3.3.3.tar.bz2 gas-2.14.tar.bz2
 
-MAINTAINER=	tuximus@tuximus.mine.nu
+MAINTAINER=	gabor.kovesdan@t-hosting.hu
 COMMENT=	C compiler for the TI89, 92, and 92+ calculators
 
 BUILD_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog \
