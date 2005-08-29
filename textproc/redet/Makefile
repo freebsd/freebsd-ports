@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	redet
-PORTVERSION=	6.14
+PORTVERSION=	7.0
 CATEGORIES=	textproc tk84
-MASTER_SITES=	http://www.billposer.org/Software/Downloads/
+MASTER_SITES=	http://www.billposer.org/Software/Downloads/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	vsevolod
 DISTNAME=	${PORTNAME}tiny-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
