@@ -1,5 +1,5 @@
---- builds/install/arch-specific/freebsd/install.sh.in.orig	Fri Mar  4 22:43:39 2005
-+++ builds/install/arch-specific/freebsd/install.sh.in	Mon Apr 25 19:36:50 2005
+--- builds/install/arch-specific/freebsd/install.sh.in.orig	Fri May 27 19:14:45 2005
++++ builds/install/arch-specific/freebsd/install.sh.in	Mon Aug  8 15:50:33 2005
 @@ -55,13 +55,6 @@
  InstallFirebirdPrefix=@prefix@
  InstallPrefix=${InstallFirebirdPrefix%/firebird}
@@ -14,7 +14,7 @@
  if [ `id -u` -ne 0 ]; then
  	echo; echo "You must be root to run this step!"; echo; echo
  	exit 1
-@@ -113,7 +106,6 @@
+@@ -113,13 +106,12 @@
  
  mkdir -p $DestDir 
  mkdir $DestDir/bin 
@@ -22,6 +22,14 @@
  mkdir $DestDir/help 
  mkdir $DestDir/include 
  mkdir $DestDir/intl 
+ mkdir $DestDir/lib
+-mkdir $DestDir/doc 
+-mkdir $DestDir/doc/sql.extensions 
++#mkdir $DestDir/doc 
++#mkdir $DestDir/doc/sql.extensions 
+ mkdir $DestDir/UDF 
+ #mkdir $DestDir/misc
+ 
 @@ -143,18 +135,6 @@
  #cp $BuiltFBDir/bin/CSrestoreRootRunUser.sh $DestDir/bin
  #cp $BuiltFBDir/bin/changeDBAPassword.sh $DestDir/bin
@@ -41,6 +49,34 @@
  copyIfExists $BuiltFBDir/help/help.gbak $DestDir/help 
  cp $BuiltFBDir/help/help.fdb $DestDir/help 
  
+@@ -184,8 +164,8 @@
+ 	    
+ # Note that this copies files from outside the build tree.
+ #cp $BuildRootDir/doc/*.pdf $DestDir/doc
+-cp $BuildRootDir/doc/README.* $DestDir/doc
+-cp $BuildRootDir/doc/sql.extensions/* $DestDir/doc/sql.extensions
++#cp $BuildRootDir/doc/README.* $DestDir/doc
++#cp $BuildRootDir/doc/sql.extensions/* $DestDir/doc/sql.extensions
+ cp $BuildRootDir/doc/WhatsNew $DestDir/WhatsNew
+ cp $BuildRootDir/doc/README.user $DestDir/README
+ 
+@@ -219,11 +199,11 @@
+ chown -R root:wheel $InstallFirebirdPrefix/lib
+ 
+ # make the following read-only
+-chmod -R a=r $InstallFirebirdPrefix/WhatsNew
+-for i in `find $InstallFirebirdPrefix/doc -type f -print`
+-do
+-	chmod a=r $i
+-done
++#chmod -R a=r $InstallFirebirdPrefix/WhatsNew
++#for i in `find $InstallFirebirdPrefix/doc -type f -print`
++#do
++#	chmod a=r $i
++#done
+ #chmod -R a=r $InstallFirebirdPrefix/examples/*
+ chmod -R a=r $InstallFirebirdPrefix/include/*
+ chmod -R a=r $InstallFirebirdPrefix/intl/*
 @@ -276,32 +256,12 @@
  
  # make databases writable by firebird only

@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	firebird
-PORTVERSION=	2.0.a2
+PORTVERSION=	2.0.a3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.ramenzoni.com.br/~garga/firebird/ \
 		http://www.galle.com.br/~garga/firebird/ \
 		http://www.brainsoft.com.br/~garga/firebird/
 MASTER_SITE_SUBDIR=	firebird
 PKGNAMESUFFIX=	-devel
-DISTNAME=	firebird2-20050505
+DISTNAME=	firebird2-20050726
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
@@ -26,7 +26,9 @@ GNU_CONFIGURE=		yes
 USE_GCC=		3.4
 USE_REINPLACE=		yes
 
-CONFLICTS=	firebird-1.*
+DOCSDIR=	${PREFIX}/firebird/doc
+
+CONFLICTS=	firebird-client-1.*
 
 WRKSRC=		${WRKDIR}/firebird2
 INSTALLS_SHLIB=	yes
@@ -71,6 +73,12 @@ do-build:
 	)
 
 post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/sql.extensions
+	${INSTALL_DATA} ${WRKSRC}/doc/README.* ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/sql.extensions/* \
+		${DOCSDIR}/sql.extensions
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
