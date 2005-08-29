@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Catalyst
-PORTVERSION=	5.30
+PORTVERSION=	5.33
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MR/MRAMBERG
@@ -73,6 +73,7 @@ MAN3=	Catalyst.3 \
 	Catalyst::Manual::SuccessStories.3 \
 	Catalyst::Manual::Troubleshooting.3 \
 	Catalyst::Manual::Tutorial.3 \
+	Catalyst::Manual::WritingPlugins.3 \
 	Catalyst::Request.3 \
 	Catalyst::Request::Upload.3 \
 	Catalyst::Response.3 \
