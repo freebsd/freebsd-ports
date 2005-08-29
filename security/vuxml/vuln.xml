@@ -32,6 +32,28 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6e27f3b6-189b-11da-b6be-0090274e8dbb">
+    <topic>fswiki - command injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>fswiki</name>
+	<range><lt>3.5.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>There is a command injection vulnerability in admin page
+	  of fswiki.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://jvn.jp/jp/JVN%2342435855/index.html</url>
+    </references>
+    <dates>
+      <discovery>2005-08-29</discovery>
+      <entry>2005-08-29</entry>
+    </dates>
+  </vuln>
   <vuln vid="e5afdf63-1746-11da-978e-0001020eed82">
     <topic>evolution -- remote format string vulnerabilities</topic>
     <affects>
