@@ -120,6 +120,7 @@
     SUBDIR += metis-edf
     SUBDIR += miracl
     SUBDIR += mpexpr
+    SUBDIR += mpfr
     SUBDIR += mprime
     SUBDIR += mtl
     SUBDIR += mtrxmath
