@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	t-prot
-PORTVERSION=	1.47
+PORTVERSION=	2.0.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.escape.de/users/tolot/mutt/t-prot/downloads/
 
@@ -20,7 +20,7 @@ USE_PERL5=	yes
 NO_BUILD=	yes
 
 MAN1=		t-prot.1
-DOCS=		BUGS ChangeLog README TODO
+DOCS=		ChangeLog README TODO
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/t-prot ${PREFIX}/bin
