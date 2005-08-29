@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Format-ISO8601
-PORTVERSION=	0.04.02
+PORTVERSION=	0.04.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -29,7 +29,7 @@ MAN3=		DateTime::Format::ISO8601.3
 .if ${PERL_LEVEL} < 500600
 post-patch:
 	@${PERL} -pi -e '$$_ = "" if /use warnings/;' \
-		 ${WRKSRC}/lib/DateTime/Format/ISO8601.pm
+		 ${WRKSRC}/lib/DateTime/Format/ISO8601.pm ${WRKSRC}/t/*.t
 .endif
 
 .include <bsd.port.post.mk>
