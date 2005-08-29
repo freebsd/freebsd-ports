@@ -59,14 +59,14 @@ INSTALLATION_BASEDIR=	OpenOffice.org1.1.5
 BUILD_DEPENDS=	${DICT_LIST_INST}:${RDEP}
 RUN_DEPENDS=	${DICT_LIST_INST}:${RDEP}
 .else
-BUILD_DEPENDS=	${DICT_LIST_INST}:${PORTSDIR}/editors/openoffice-1.1
-RUN_DEPENDS=	${DICT_LIST_INST}:${PORTSDIR}/editors/openoffice-1.1
+BUILD_DEPENDS=	${DICT_LIST_INST}:${PORTSDIR}/editors/openoffice.org-1.1
+RUN_DEPENDS=	${DICT_LIST_INST}:${PORTSDIR}/editors/openoffice.org-1.1
 .endif
 .endif
 # needed for install stage
 RUN_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 
-DIST_SUBDIR=		openoffice
+DIST_SUBDIR=		openoffice.org1.1
 DICT_DIR=		${INSTALLATION_BASEDIR}/share/dict/ooo
 DICT_PATH=		${LOCALBASE}/${DICT_DIR}
 DICT_LIST_INST=		${DICT_PATH}/dictionary.lst
