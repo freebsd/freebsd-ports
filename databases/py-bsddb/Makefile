@@ -42,8 +42,12 @@ DBHEADER=	db41
 LIB_DEPENDS=	db-4.2.2:${PORTSDIR}/databases/db42
 DBVERSION=	db-4.2
 DBHEADER=	db42
+.elif ${WITH_BDB_VER} == 43
+LIB_DEPENDS=	db-4.3:${PORTSDIR}/databases/db43
+DBVERSION=	db-4.3
+DBHEADER=	db43
 .else
-BROKEN=         "WITH_BDB_VER must be 3, 4, 41 or 42"
+BROKEN=         "WITH_BDB_VER must be 3, 4, 41, 42 or 43"
 .endif
 .endif
 
