@@ -33,7 +33,6 @@ stop_postcmd()
 # set defaults
 
 amavisd_enable=${amavisd_enable:-"NO"}
-amavisd_flags=${amavisd_flags:-"-u %%AMAVISUSER%%"}
 
 load_rc_config $name
 run_rc_command "$1"
