@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	aterm
-PORTVERSION=	0.4.2
+PORTVERSION=	1.0.0
 CATEGORIES+=	x11	# `+=' is for slave ports
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A color vt102 terminal emulator with transparency support
+
+LIB_DEPENDS+=	AfterImage.0:${PORTSDIR}/graphics/libafterimage
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
@@ -50,9 +52,22 @@ CONFIGURE_ARGS+=	--enable-menubar
 CONFIGURE_ARGS+=	--enable-next-scroll
 .endif
 
+.if defined(WITH_KANJI)
+CONFIGURE_ARGS+=	--enable-kanji
+.endif
+
+.if defined(WITH_BIG5)
+CONFIGURE_ARGS+=	--enable-big5
+.endif
+
+.if defined(WITH_GREEK)
+CONFIGURE_ARGS+=	--enable-greek
+.endif
+
 MAN1=		aterm.1
 
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/aterm
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
