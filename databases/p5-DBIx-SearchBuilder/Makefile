@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-SearchBuilder
-PORTVERSION=	1.27
+PORTVERSION=	1.31
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
@@ -17,7 +17,11 @@ COMMENT=	Perl extension for easy SQL SELECT Statement generation
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/ReturnValue.pm:${PORTSDIR}/devel/p5-Class-ReturnValue \
 		${SITE_PERL}/Cache/Simple/TimedExpiry.pm:${PORTSDIR}/devel/p5-Cache-Simple-TimedExpiry \
-		${SITE_PERL}/${PERL_ARCH}/Want.pm:${PORTSDIR}/devel/p5-Want
+		${SITE_PERL}/${PERL_ARCH}/Want.pm:${PORTSDIR}/devel/p5-Want \
+		${SITE_PERL}/capitalization.pm:${PORTSDIR}/devel/p5-capitalization \
+		${SITE_PERL}/DBIx/DBSchema.pm:${PORTSDIR}/databases/p5-DBIx-DBSchema \
+		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
+		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -33,6 +37,7 @@ MAN3=	DBIx::SearchBuilder.3 DBIx::SearchBuilder::Handle.3 \
 	DBIx::SearchBuilder::Handle::mysqlPP.3 \
 	DBIx::SearchBuilder::Record.3 \
 	DBIx::SearchBuilder::Record::Cachable.3 \
+	DBIx::SearchBuilder::SchemaGenerator.3 \
 	DBIx::SearchBuilder::Union.3 \
 	DBIx::SearchBuilder::Unique.3
 
