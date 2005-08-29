@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		resin
-PORTVERSION=		3.0.13
+PORTVERSION=		3.0.14
 CATEGORIES=		www java
 MASTER_SITES=		http://www.caucho.com/download/
 
@@ -127,8 +127,10 @@ defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES))
 	@${ECHO_CMD} "</IfModule>" >> ${PKGMESSAGE}
 .endif
 
-# Resin does not handle installation, so proceed now
-post-install:
+post-build:
+	cd ${WRKSRC}/modules/c/src && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} install
+
+do-install:
 	@${SETENV} RUNASUSER=${RUNASUSER} GROUP=${GROUP} ${SH} ${WRKDIR}/install.sh
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO_MSG}
