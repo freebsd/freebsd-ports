@@ -1,2 +1,4 @@
-MD5 (crypt-1.02.tar.bz2) = f571fb2f984ec59d229a7f691c35b4d1
-SIZE (crypt-1.02.tar.bz2) = 1025539
+MD5 (crypt-1.06.tar.bz2) = f7b5fd2a5d4b2917576da7885f27e4a0
+SIZE (crypt-1.06.tar.bz2) = 1160330
+MD5 (makefile.diff) = 76b18782400494589c35e12e6cdd081d
+SIZE (makefile.diff) = 1372

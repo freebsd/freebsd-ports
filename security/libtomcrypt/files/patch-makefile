@@ -1,0 +1,52 @@
+--- makefile.orig	Thu Aug 18 13:07:13 2005
++++ makefile	Thu Aug 18 13:10:14 2005
+@@ -15,7 +15,7 @@
+ #ARFLAGS=r
+ 
+ # Compilation flags. Note the += does not write over the user's CFLAGS!
+-CFLAGS += -c -I./testprof/ -I./src/headers/ -Wall -Wsign-compare -W -Wshadow -Wno-unused-parameter -DLTC_SOURCE
++CFLAGS += -c -I./testprof/ -I./src/headers/ -Wall -Wsign-compare -W -Wshadow -DLTC_SOURCE
+ 
+ # additional warnings (newer GCC 3.4 and higher)
+ #CFLAGS += -Wsystem-headers -Wdeclaration-after-statement -Wbad-function-cast -Wcast-align -Wstrict-prototypes -Wmissing-prototypes \
+@@ -24,10 +24,10 @@
+ ifndef IGNORE_SPEED
+ 
+ # optimize for SPEED
+-CFLAGS += -O3 -funroll-loops
++#CFLAGS += -O3 -funroll-loops
+ 
+ # add -fomit-frame-pointer.  hinders debugging!
+-CFLAGS += -fomit-frame-pointer
++#CFLAGS += -fomit-frame-pointer
+ 
+ # optimize for SIZE
+ #CFLAGS += -Os -DLTC_SMALL_CODE
+@@ -249,10 +249,16 @@
+ install: library docs
+ 	install -d -g $(GROUP) -o $(USER) $(DESTDIR)$(LIBPATH)
+ 	install -d -g $(GROUP) -o $(USER) $(DESTDIR)$(INCPATH)
+-	install -d -g $(GROUP) -o $(USER) $(DESTDIR)$(DATAPATH)
++	install -d -g $(GROUP) -o $(USER) $(DATAPATH)
++	install -g $(GROUP) -o $(USER) $(LIBNAME) $(DESTDIR)$(LIBPATH)
++	install -g $(GROUP) -o $(USER) $(HEADERS) $(DESTDIR)$(INCPATH)
++	install -g $(GROUP) -o $(USER) doc/crypt.pdf $(DATAPATH)
++
++install_lib: library
++	install -d -g $(GROUP) -o $(USER) $(DESTDIR)$(LIBPATH)
++	install -d -g $(GROUP) -o $(USER) $(DESTDIR)$(INCPATH)
+ 	install -g $(GROUP) -o $(USER) $(LIBNAME) $(DESTDIR)$(LIBPATH)
+ 	install -g $(GROUP) -o $(USER) $(HEADERS) $(DESTDIR)$(INCPATH)
+-	install -g $(GROUP) -o $(USER) doc/crypt.pdf $(DESTDIR)$(DATAPATH)
+ 
+ install_test: testprof/$(LIBTEST)
+ 	install -d -g $(GROUP) -o $(USER) $(DESTDIR)$(LIBPATH)
+@@ -305,7 +311,7 @@
+ 	latex crypt > /dev/null
+ 	makeindex crypt.idx > /dev/null
+ 	latex crypt > /dev/null
+-	dvipdf crypt
++	dvipdft crypt
+ 	mv -ivf crypt.pdf doc/crypt.pdf
+ 	rm -f $(LEFTOVERS)
+ 

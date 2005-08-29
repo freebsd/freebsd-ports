@@ -6,24 +6,47 @@
 #
 
 PORTNAME=	libtomcrypt
-PORTVERSION=	1.02
+PORTVERSION=	1.06
 CATEGORIES=	security
 MASTER_SITES=	http://libtomcrypt.org/files/
 DISTNAME=	crypt-${PORTVERSION}
 
-MAINTAINER=	onatan@gmail.com
+PATCH_SITES=	http://www.libtomcrypt.org/files/patch-1.06/
+PATCHFILES=	makefile.diff
+
+MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	Comprehensive, modular and portable cryptographic toolkit
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	makefile
+MAKE_ARGS=	DESTDIR="${PREFIX}" LIBPATH="/lib" INCPATH="/include" \
+		DATAPATH="${DOCSDIR}/pdf"
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 ALL_TARGET=	library
 
-OPTIONS=	DOCS "build documentation (depends on teTeX)" off
+CFLAGS+=	-I${PREFIX}/include
+
+OPTIONS=	DOCS "build documentation (depends on teTeX)" off \
+		LIBTOMMATH "Use LibTomMath" on \
+		TOMSFASTMATH "Use TomsFastMath" off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_LIBTOMMATH) && defined(WITHOUT_TOMSFASTMATH)
+IGNORE=	You must choose either LibTomMath or TomsFastMath (or both)
+.endif
+
+.if !defined(WITHOUT_LIBTOMMATH)
+BUILD_DEPENDS+=	${LOCALBASE}/include/tommath.h:${PORTSDIR}/math/libtommath
+CFLAGS+=	-DLTM_DESC
+.endif
+
+.if defined(WITH_TOMSFASTMATH)
+BUILD_DEPENDS+=	${LOCALBASE}/include/tfm.h:${PORTSDIR}/math/tomsfastmath
+CFLAGS+=	-DTFM_DESC
+.endif
 
 .if defined(WITH_DOCS)
 BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
@@ -32,16 +55,9 @@ NOPORTDOCS=	yes
 INSTALL_TARGET=	install_lib
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|/usr|${PREFIX}|; s|dvipdf|dvipdft|; \
-		 s|-O3||; s|-funroll-loops||; s|-fomit-frame-pointer||; \
-		 s|-Wno-unused-parameter||' \
-		${WRKSRC}/makefile
-
 .if defined(MAINTAINER_MODE)
 test:	build
-	(cd ${WRKSRC}/demos/test && ${MAKE} test ${MAKE_ARGS} && ${WRKSRC}/demos/test/test)
+	(cd ${WRKSRC} && ${GMAKE} test && ${WRKSRC}/test)
 .endif
 
 .include <bsd.port.post.mk>
