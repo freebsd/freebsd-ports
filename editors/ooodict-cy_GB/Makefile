@@ -14,4 +14,4 @@ LANGDIST+=	cy_GB.zip
 MASTERDIR=	${.CURDIR}/../ooodict-all
 RDEP=		${PORTSDIR}/editors/openoffice.org-1.1
 
-.include "${masterdir}/makefile"
+.include "${MASTERDIR}/Makefile"
