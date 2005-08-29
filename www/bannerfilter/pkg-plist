@@ -1,0 +1,47 @@
+bin/update-bannerfilter-rules
+@unexec if cmp -s %D/etc/bannerfilter/bannerfilter.conf %D/etc/bannerfilter/bannerfilter.conf.default; then rm -f %D/etc/bannerfilter/bannerfilter.conf; fi
+etc/bannerfilter/bannerfilter.conf.default
+@exec [ -f %B/bannerfilter.conf ] || cp %B/%f %B/bannerfilter.conf
+@unexec if cmp -s %D/etc/bannerfilter/banners.data %D/etc/bannerfilter/banners.data.default; then rm -f %D/etc/bannerfilter/banners.data; fi
+etc/bannerfilter/banners.data.default
+@exec [ -f %B/banners.data ] || cp %B/%f %B/banners.data
+@unexec if cmp -s %D/etc/bannerfilter/banners.local.data %D/etc/bannerfilter/banners.local.data.default; then rm -f %D/etc/bannerfilter/banners.local.data; fi
+etc/bannerfilter/banners.local.data.default
+@exec [ -f %B/banners.local.data ] || cp %B/%f %B/banners.local.data
+@unexec if cmp -s %D/etc/bannerfilter/exceptions.data %D/etc/bannerfilter/exceptions.data.default; then rm -f %D/etc/bannerfilter/exceptions.data; fi
+etc/bannerfilter/exceptions.data.default
+@exec [ -f %B/exceptions.data ] || cp %B/%f %B/exceptions.data
+@unexec if cmp -s %D/etc/bannerfilter/exceptions.local.data %D/etc/bannerfilter/exceptions.local.data.default; then rm -f %D/etc/bannerfilter/exceptions.local.data; fi
+etc/bannerfilter/exceptions.local.data.default
+@exec [ -f %B/exceptions.local.data ] || cp %B/%f %B/exceptions.local.data
+@unexec if cmp -s %D/etc/bannerfilter/frames.data %D/etc/bannerfilter/frames.data.default; then rm -f %D/etc/bannerfilter/frames.data; fi
+etc/bannerfilter/frames.data.default
+@exec [ -f %B/frames.data ] || cp %B/%f %B/frames.data
+@unexec if cmp -s %D/etc/bannerfilter/frames.local.data %D/etc/bannerfilter/frames.local.data.default; then rm -f %D/etc/bannerfilter/frames.local.data; fi
+etc/bannerfilter/frames.local.data.default
+@exec [ -f %B/frames.local.data ] || cp %B/%f %B/frames.local.data
+@unexec if cmp -s %D/etc/bannerfilter/popups.data %D/etc/bannerfilter/popups.data.default; then rm -f %D/etc/bannerfilter/popups.data; fi
+etc/bannerfilter/popups.data.default
+@exec [ -f %B/popups.data ] || cp %B/%f %B/popups.data
+@unexec if cmp -s %D/etc/bannerfilter/popups.local.data %D/etc/bannerfilter/popups.local.data.default; then rm -f %D/etc/bannerfilter/popups.local.data; fi
+etc/bannerfilter/popups.local.data.default
+@exec [ -f %B/popups.local.data ] || cp %B/%f %B/popups.local.data
+libexec/bannerfilter/redirector.pl
+%%WWW_ROOT%%/bannerfilter/banner.gif
+%%WWW_ROOT%%/bannerfilter/blocked.html
+%%WWW_ROOT%%/bannerfilter/empty.js
+%%WWW_ROOT%%/bannerfilter/flash.swf
+%%WWW_ROOT%%/bannerfilter/goatsecx.gif
+%%WWW_ROOT%%/bannerfilter/header_tile.gif
+%%WWW_ROOT%%/bannerfilter/hometown.html
+%%WWW_ROOT%%/bannerfilter/namezero.html
+%%WWW_ROOT%%/bannerfilter/nbci.html
+%%WWW_ROOT%%/bannerfilter/null.gif
+%%WWW_ROOT%%/bannerfilter/popup.html
+%%WWW_ROOT%%/bannerfilter/test.html
+%%WWW_ROOT%%/bannerfilter/xbbackground.gif
+%%WWW_ROOT%%/bannerfilter/xoom.html
+%%WWW_ROOT%%/bannerfilter/yahoo.html
+@unexec rmdir %D/etc/bannerfilter 2> /dev/null || true
+@dirrm libexec/bannerfilter
+@dirrm %%WWW_ROOT%%/bannerfilter

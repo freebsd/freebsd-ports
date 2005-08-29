@@ -42,6 +42,7 @@
     SUBDIR += awstats
     SUBDIR += axis
     SUBDIR += b2evo
+    SUBDIR += bannerfilter
     SUBDIR += bblog
     SUBDIR += bins
     SUBDIR += bk2site

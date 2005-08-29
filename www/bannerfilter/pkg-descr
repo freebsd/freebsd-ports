@@ -1,0 +1,8 @@
+BannerFilter is a redirect script for the Squid proxy server, designed to block
+advertising banners on the Web. Unlike most other solutions, it also
+automatically closes popup windows.
+
+WWW: http://phroggy.com/bannerfilter/
+
+- ehaupt
+ehaupt@critical.ch
