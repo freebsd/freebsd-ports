@@ -7,7 +7,7 @@
 
 PORTNAME=	cricket
 PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,13 +29,13 @@ HAS_CONFIGURE=	yes
 USE_PERL5=	yes
 NO_BUILD=	yes
 PLIST_SUB+=	VERSION=${PORTVERSION}
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message pkg-install
+SUB_LIST=	USER="${CRICKET_USER}" GROUP="${CRICKET_GROUP}" UID="${CRICKET_UID}" GID="${CRICKET_GID}"
 CRICKET_USER?=	wwwadm
 CRICKET_UID?=	81
 CRICKET_GROUP?=	www
 CRICKET_GID?=	80
 USE_REINPLACE=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/home/cricket,${PREFIX},g' \
@@ -44,9 +44,7 @@ post-patch:
 		${WRKSRC}/sample-config/news-server/Defaults
 
 do-install:
-	@PREFIX="${PREFIX}" USER="${CRICKET_USER}" GROUP="${CRICKET_GROUP}" \
-		 UID="${CRICKET_UID}" GID="${CRICKET_GID}" ${SH} \
-		 ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
+	@PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 	@${MKDIR} -m 755 ${PREFIX}/cricket/cricket-${PORTVERSION}
 	@${CP} -R ${WRKSRC}/* ${PREFIX}/cricket/cricket-${PORTVERSION}
 	@${FIND} ${PREFIX}/cricket/cricket-${PORTVERSION} -name \*.orig -or \
