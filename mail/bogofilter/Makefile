@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	0.95.2
+PORTVERSION=	0.96.0
 PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -32,7 +32,7 @@ PATCH_STRIP=	-p1
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_BASH)
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 .endif
 
 BF_LIBS?=		-ldb-4.3
@@ -48,7 +48,7 @@ LIB_DEPENDS+=		gsl:${PORTSDIR}/math/gsl
 .else
 CONFIGURE_ARGS+=	--with-included-gsl
 .endif
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" LIBS="${BF_LIBS}" \
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib" LIBS="${BF_LIBS}" \
 		PERL="${PERL}" CPPFLAGS="${BF_CPPFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALL_TARGET=	install-strip prefix=${PREFIX}
@@ -88,7 +88,7 @@ post-install::
 	RELEASE.NOTES doc/README.db doc/README.sqlite \
 	doc/integrating-with-postfix doc/integrating-with-qmail \
 	doc/bogofilter-tuning.HOWTO.html doc/bogofilter-SA-2002-01 \
-	doc/README.tdb doc/bogofilter-SA-2004-01 GETTING.STARTED \
+	doc/bogofilter-SA-2004-01 GETTING.STARTED \
 	doc/bogofilter-faq.html doc/bogofilter-faq-fr.html
 	  ${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
