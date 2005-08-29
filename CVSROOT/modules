@@ -5476,6 +5476,7 @@ libticables	ports/comms/libticables
 libticalcs	ports/devel/libticalcs
 libtifiles	ports/devel/libtifiles
 libtomcrypt	ports/security/libtomcrypt
+libtommath	ports/math/libtommath
 libtool13	ports/devel/libtool13
 libtool15	ports/devel/libtool15
 libtorrent	ports/net/libtorrent
