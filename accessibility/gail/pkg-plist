@@ -6,10 +6,6 @@ lib/libgailutil.a
 lib/libgailutil.so
 lib/libgailutil.so.17
 libdata/pkgconfig/gail.pc
-share/doc/gail-libgail-util/home.png
-share/doc/gail-libgail-util/left.png
-share/doc/gail-libgail-util/right.png
-share/doc/gail-libgail-util/up.png
 share/locale/ar/LC_MESSAGES/gail.mo
 share/locale/as/LC_MESSAGES/gail.mo
 share/locale/az/LC_MESSAGES/gail.mo
@@ -34,6 +30,7 @@ share/locale/fr/LC_MESSAGES/gail.mo
 share/locale/ga/LC_MESSAGES/gail.mo
 share/locale/gl/LC_MESSAGES/gail.mo
 share/locale/gu/LC_MESSAGES/gail.mo
+share/locale/he/LC_MESSAGES/gail.mo
 share/locale/hi/LC_MESSAGES/gail.mo
 share/locale/hr/LC_MESSAGES/gail.mo
 share/locale/hu/LC_MESSAGES/gail.mo
@@ -59,6 +56,7 @@ share/locale/pt_BR/LC_MESSAGES/gail.mo
 share/locale/ro/LC_MESSAGES/gail.mo
 share/locale/ru/LC_MESSAGES/gail.mo
 share/locale/rw/LC_MESSAGES/gail.mo
+share/locale/sk/LC_MESSAGES/gail.mo
 share/locale/sq/LC_MESSAGES/gail.mo
 share/locale/sr/LC_MESSAGES/gail.mo
 share/locale/sr@Latn/LC_MESSAGES/gail.mo
@@ -71,7 +69,6 @@ share/locale/uk/LC_MESSAGES/gail.mo
 share/locale/xh/LC_MESSAGES/gail.mo
 share/locale/zh_CN/LC_MESSAGES/gail.mo
 share/locale/zh_TW/LC_MESSAGES/gail.mo
-@dirrm share/doc/gail-libgail-util
 @dirrm include/gail-1.0/libgail-util
 @dirrm include/gail-1.0
 @unexec rmdir %D/share/locale/as/LC_MESSAGES 2> /dev/null || true
