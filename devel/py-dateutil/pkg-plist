@@ -22,7 +22,6 @@
 %%PYTHON_SITELIBDIR%%/dateutil/zoneinfo/__init__.py
 %%PYTHON_SITELIBDIR%%/dateutil/zoneinfo/__init__.pyc
 %%PYTHON_SITELIBDIR%%/dateutil/zoneinfo/__init__.pyo
-%%PYTHON_SITELIBDIR%%/dateutil/zoneinfo/zoneinfo-2005e.tar.gz
 %%PYTHON_SITELIBDIR%%/dateutil/zoneinfo/zoneinfo-2005k.tar.gz
 @dirrm %%PYTHON_SITELIBDIR%%/dateutil/zoneinfo
 @dirrm %%PYTHON_SITELIBDIR%%/dateutil
