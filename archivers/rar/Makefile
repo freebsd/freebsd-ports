@@ -20,7 +20,7 @@ DISTNAME=	rarbsd-3.5.0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File archiver (binary port)
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 NO_PACKAGE=	Only unmodified original package can be distributed
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/rar
@@ -29,6 +29,10 @@ WRKSRC=		${WRKDIR}/rar
 
 .if ${OSVERSION} < 503000
 IGNORE=is unsupported on versions prior to FreeBSD 5.3
+.endif
+
+.if ${OSVERSION} >= 600000
+LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
 .endif
 
 .if ${PORTOBJFORMAT} == "elf"
