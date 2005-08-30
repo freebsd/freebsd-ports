@@ -3141,7 +3141,6 @@ gnustep-slideshow	ports/graphics/gnustep-slideshow
 gnustep-slideshowkit	ports/graphics/gnustep-slideshowkit
 gnustep-xdps	ports/x11-toolkits/gnustep-xdps
 gnutls		ports/security/gnutls
-gnutls-devel	ports/security/gnutls-devel
 goats		ports/deskutils/goats
 gob		ports/x11-toolkits/gob
 gob2		ports/devel/gob2
