@@ -7,17 +7,12 @@
 #
 
 PORTNAME=	mhwaveedit
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/mhwaveedit/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical program for editing sound files
-
-BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		sndfile.1:${PORTSDIR}/audio/libsndfile \
-		portaudio.0:${PORTSDIR}/audio/portaudio
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget gtk20
@@ -30,8 +25,18 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--disable-optimization --without-alsalib
 
 PLIST_FILES=	bin/mhwaveedit \
+		share/locale/fr/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/ru/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/sv/LC_MESSAGES/mhwaveedit.mo
+
+OPTIONS=	DOUBLE_SAMPLES "increase quality for 24/32-bit samplerates" off \
+		SNDFILE "libsndfile support" on \
+		SAMPLERATE "libsamplerate support" on \
+		OSS "OSS sound driver" on \
+		PORTAUDIO "PortAudio sound driver" off \
+		SDL "SDL sound driver" off \
+		JACK "JACK sound driver" off \
+		ESD "EsounD sound driver" off
 
 .include <bsd.port.pre.mk>
 
@@ -39,39 +44,49 @@ PLIST_FILES=	bin/mhwaveedit \
 CONFIGURE_ARGS+=	--with-double-samples
 .endif
 
-.if defined(WITH_JACK)
-LIB_DPENDS+=	jack:${PORTSDIR}/audio/jack
+.if defined(WITH_SNDFILE)
+LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
 .else
-CONFIGURE_ARGS+=	--without-jack
+CONFIGURE_ARGS+=	--without-libsndfile
 .endif
 
-.if ${HAVE_SDL:Msdl}!=""
+.if defined(WITH_SAMPLERATE)
+LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
+.else
+CONFIGURE_ARGS+=	--without-libsamplerate
+.endif
+
+.if defined(WITHOUT_OSS)
+CONFIGURE_ARGS+=	--without-oss
+.endif
+
+.if defined(WITH_PORTAUDIO)
+LIB_DEPENDS+=	portaudio.0:${PORTSDIR}/audio/portaudio
+.else
+CONFIGURE_ARGS+=	--without-portaudio
+.endif
+
+.if defined(WITH_SDL)
 USE_SDL+=	sdl
 .else
 CONFIGURE_ARGS+=	--without-sdl
 .endif
 
-.if ${HAVE_GNOME:Mesound}!=""
+.if defined(WITH_JACK)
+LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+.else
+CONFIGURE_ARGS+=	--without-jack
+.endif
+
+.if defined(WITH_ESD)
 USE_GNOME+=	esound
 .else
 CONFIGURE_ARGS+=	--without-esound
 .endif
 
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "mhWaveEdit has the following tunable option:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	WITH_DOUBLE_SAMPLES=yes"
-	@${ECHO_MSG} "		Use double precision floating point numbers for sound"
-	@${ECHO_MSG} "		processing (slows down program but may increase"
-	@${ECHO_MSG} "		quality for 24/32-bit samplerates)"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	WITH_JACK=yes"
-	@${ECHO_MSG} "		Support JACK driver"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	WITH_GNOME=esound"
-	@${ECHO_MSG} "		Support EsounD driver"
-	@${ECHO_MSG} ""
+.if exists(${LOCALBASE}/include/ladspa.h)
+RUN_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^AM_CFLAGS=|#AM_CFLAGS=|g ; \
