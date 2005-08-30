@@ -9,5 +9,4 @@
 @dirrm %%DATADIR%%
 bin/words
 %%PORTDOCS%%%%DOCSDIR%%/wordsdoc.htm
-%%PORTDOCS%%%%DOCSDIR%%/wordsdev.htm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
