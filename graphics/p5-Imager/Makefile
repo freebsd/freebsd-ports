@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Imager
-PORTVERSION=	0.44
+PORTVERSION=	0.45
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.eecs.umich.edu/~addi/perl/%SUBDIR%/
@@ -36,6 +36,6 @@ MAN3=	Imager.3 Imager::Color.3 Imager::Color::Float.3 Imager::Expr.3 \
 	Imager::interface.3 Imager::regmach.3 Imager::Engines.3 \
 	Imager::Transformations.3 Imager::Draw.3 Imager::Files.3 \
 	Imager::ImageTypes.3 Imager::Filters.3 Imager::Font::BBox.3 \
-	Imager::Color::Table.3 Imager::Font::Wrap.3
+	Imager::Color::Table.3 Imager::Font::Wrap.3 Imager::Cookbook.3
 
 .include <bsd.port.mk>
