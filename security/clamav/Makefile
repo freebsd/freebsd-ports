@@ -96,6 +96,10 @@ PLIST_SUB+=	RC_DIR=${RC_DIR} RC_SUFX=${RC_SUFX}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} == 502010
+PTHREAD_LIBS=	-pthread
+.endif
+
 .if defined(WITH_MILTER)
 SUB_FILES+=	clamav-milter.sh
 .if !defined(WITHOUT_LDAP) && exists(${LOCALBASE}/lib/libldap.so)
