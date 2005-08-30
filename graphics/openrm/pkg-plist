@@ -8,6 +8,7 @@ include/rm/rmi.h
 include/rm/rmjpeg.h
 include/rm/rmpipe.h
 include/rm/rmppm.h
+include/rm/rmps.h
 include/rm/rmpublic.h
 include/rm/rmthread.h
 include/rm/rmtypes.h
@@ -57,14 +58,18 @@ lib/librmv.so.1
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/data/orangegrid.x
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/data/prairie.jpg
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/data/right.x
+%%WITH_DEMOS%%%%EXAMPLESDIR%%/data/seaSurfaceTemperature.jpg
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/data/topo256.dio
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/data/volume.dat
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/data/volume.dio
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/data/waves.dio
+%%WITH_DEMOS%%%%EXAMPLESDIR%%/data/weather.jpg
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/data/wu.x
 %%WITH_DEMOS%%@dirrm %%EXAMPLESDIR%%/data
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/Makefile.x11
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/README
+%%WITH_DEMOS%%%%EXAMPLESDIR%%/appTexturedPrims.c
+%%WITH_DEMOS%%%%EXAMPLESDIR%%/autoTmap.c
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/barrier.c
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/barrier.h
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/clipper.c
@@ -75,6 +80,7 @@ lib/librmv.so.1
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/elev-2vu.c
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/elev.c
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/elevImage.c
+%%WITH_DEMOS%%%%EXAMPLESDIR%%/extensions.c
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/fogtest.c
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/fpsVis3d.c
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/glxinfo.c
@@ -90,6 +96,7 @@ lib/librmv.so.1
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/lines2d.c
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/makeinclude
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/markers2d.c
+%%WITH_DEMOS%%%%EXAMPLESDIR%%/multiTexture2D.c
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/offscreen.c
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/orderTest.c
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/pdb.c
@@ -102,6 +109,7 @@ lib/librmv.so.1
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/skeleton.c
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/spotlight.c
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/spriteTest.c
+%%WITH_DEMOS%%%%EXAMPLESDIR%%/strands.c
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/switchtest.c
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/tcube.c
 %%WITH_DEMOS%%%%EXAMPLESDIR%%/text2d.c
@@ -134,6 +142,7 @@ lib/librmv.so.1
 %%PORTDOCS%%%%DOCSDIR%%/rmcmpmgr.h.html
 %%PORTDOCS%%%%DOCSDIR%%/rmcr.c.html
 %%PORTDOCS%%%%DOCSDIR%%/rmcreatw.c.html
+%%PORTDOCS%%%%DOCSDIR%%/rmdefaults.c.html
 %%PORTDOCS%%%%DOCSDIR%%/rmerror.c.html
 %%PORTDOCS%%%%DOCSDIR%%/rmflyui.c.html
 %%PORTDOCS%%%%DOCSDIR%%/rmfog.c.html
@@ -149,6 +158,8 @@ lib/librmv.so.1
 %%PORTDOCS%%%%DOCSDIR%%/rmpipe.c.html
 %%PORTDOCS%%%%DOCSDIR%%/rmppm.c.html
 %%PORTDOCS%%%%DOCSDIR%%/rmprim.c.html
+%%PORTDOCS%%%%DOCSDIR%%/rmprivat.h.html
+%%PORTDOCS%%%%DOCSDIR%%/rmps.c.html
 %%PORTDOCS%%%%DOCSDIR%%/rmrstate.c.html
 %%PORTDOCS%%%%DOCSDIR%%/rmscene.c.html
 %%PORTDOCS%%%%DOCSDIR%%/rmstats.h.html
@@ -167,9 +178,7 @@ lib/librmv.so.1
 %%PORTDOCS%%%%DOCSDIR%%/rmvmesh.c.html
 %%PORTDOCS%%%%DOCSDIR%%/rmvmeshv.c.html
 %%PORTDOCS%%%%DOCSDIR%%/rmvsignal.c.html
-%%PORTDOCS%%%%DOCSDIR%%/rmvutil.c.html
 %%PORTDOCS%%%%DOCSDIR%%/rmwin.c.html
 %%PORTDOCS%%%%DOCSDIR%%/rmx.c.html
-%%PORTDOCS%%%%DOCSDIR%%/rmx.h.html
 %%PORTDOCS%%%%DOCSDIR%%/rmxtext.c.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
