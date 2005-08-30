@@ -27,10 +27,4 @@ CONFIGURE_ARGS=	--enable-static=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"does not compile"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
