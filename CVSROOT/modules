@@ -10227,6 +10227,7 @@ qmail-scanner	ports/mail/qmail-scanner
 qmail-smtp_auth+tls	ports/mail/qmail-smtp_auth+tls
 qmail-spamcontrol	ports/mail/qmail-spamcontrol
 qmail-tls	ports/mail/qmail-tls
+qmail-vida	ports/mail/qmail-vida
 qmailadmin	ports/mail/qmailadmin
 qmailadmin-devel	ports/mail/qmailadmin-devel
 qmailanalog	ports/mail/qmailanalog
