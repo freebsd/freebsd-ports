@@ -8,8 +8,7 @@
 PORTNAME=	ftp-tls
 PORTVERSION=	20031008
 CATEGORIES=	ftp security
-MASTER_SITES=	ftp://ftp.zeist.de/pub/distfiles/ \
-		ftp://ftp.runestig.com/pub/ftp-tls/
+MASTER_SITES=	ftp://ftp.zeist.de/pub/distfiles/
 
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	Ftp client supporting FTP AUTH TLS
