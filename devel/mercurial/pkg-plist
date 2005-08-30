@@ -57,13 +57,12 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/templates/header-raw.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/header-rss.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/header.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/index.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/manifest.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-raw
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-rss
 %%PYTHON_SITELIBDIR%%/mercurial/templates/search.tmpl
-%%PYTHON_SITELIBDIR%%/mercurial/templates/searchentry.tmpl
-%%PYTHON_SITELIBDIR%%/mercurial/templates/tags.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/transaction.py
 %%PYTHON_SITELIBDIR%%/mercurial/transaction.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/transaction.pyo
