@@ -1,16 +1,5 @@
 --- configure.orig	Fri Jul 22 11:36:56 2005
 +++ configure	Sat Jul 23 11:27:41 2005
-@@ -2371,8 +2371,8 @@
- 	;;
-     *)
- 	DCCUID=root
--	BINUID=bin
--	BIN_GRP=bin
-+	BINUID=root
-+	BIN_GRP=dcc
- 	;;
- esac
- 
 @@ -2445,6 +2445,13 @@
      SENDMAIL="$with_sendmail"
      SENDMAIL_EVAL="$SENDMAIL"
