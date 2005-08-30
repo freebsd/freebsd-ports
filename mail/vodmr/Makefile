@@ -9,7 +9,7 @@
 #
 
 PORTNAME=	vodmr
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://romana.now.ie/software/ \
 		http://www.lecter.phlegethon.org/vodmr/
@@ -27,30 +27,27 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/CDB_File.pm:${PORTSDIR}/databases/p5-CDB_
 RUN_DEPENDS+=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 .endif
 
-NO_BUILD=	YES
-USE_PERL5_RUN=	YES
-USE_REINPLACE=	YES
+NO_BUILD=	yes
+USE_PERL5_RUN=	yes
+USE_REINPLACE=	yes
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+SUB_LIST=	SCRIPT="${PREFIX}/sbin/odmrd"
 
-post-extract:
-	@${SED} -e 's|DOCSDIR|${PREFIX}/share/doc/vodmr|' \
-		-e 's|SCRIPT|${PREFIX}/sbin/odmrd|' ${MASTERDIR}/pkg-message \
-		> ${WRKDIR}/pkg-message
+PORTDOCS=	FAQ README INSTALL INTERNALS TODO sample-odmrd.rules
 
 do-configure:
-	${REINPLACE_CMD} -e 's|^\#!/usr/bin/perl|\#!${PERL}|' ${WRKSRC}/odmrd
+	@${REINPLACE_CMD} -e 's|^\#!/usr/bin/perl|\#!${PERL}|' ${WRKSRC}/odmrd
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/odmrd ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${FILESDIR}/odmrd.sh-sample ${PREFIX}/etc/rc.d
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	FAQ README INSTALL INTERNALS TODO sample-odmrd.rules
-
 post-install:
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
