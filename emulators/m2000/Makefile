@@ -9,8 +9,11 @@
 PORTNAME=	m2000
 PORTVERSION=	0.6
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.komkon.org/~dekogel/files/p2000/:code \
-		ftp://ftp.komkon.org/pub/EMUL8/P2000/Tapes/:tapes
+MASTER_SITES=	\
+		http://www.komkon.org/~dekogel/files/p2000/:code \
+		http://www.mavetju.org/download/adopted/:tapes \
+		ftp://ftp.komkon.org/pub/EMUL8/P2000/Tapes/:tapes \
+		http://www.mavetju.org/download/adopted/:code
 DISTFILES=	${PORTNAME:U}${EXTRACT_SUFX}:code \
 		tapeconv.zip:code \
 		${M2000TAPES:S/$/.gz:tapes/}
