@@ -9,8 +9,7 @@ PORTNAME=	ftpd-tls
 PORTVERSION=	20031008
 PORTREVISION=	1
 CATEGORIES=	ftp security
-MASTER_SITES=	ftp://ftp.zeist.de/pub/distfiles/ \
-		ftp://ftp.runestig.com/pub/ftpd-tls/
+MASTER_SITES=	ftp://ftp.zeist.de/pub/distfiles/
 
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	Ftp server supporting FTP AUTH TLS
