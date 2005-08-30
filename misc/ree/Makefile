@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.linuks.mine.nu/ree/ \
 MAINTAINER=	ehaupt@critical.ch
 COMMENT=	A tool to dump your ROM extensions
 
-PLIST_FILES=	bin/ree bin/fontdump
+PLIST_FILES=	bin/rom-ree bin/fontdump
 PORTDOCS=	readme
 
 ONLY_FOR_ARCHS=	i386
@@ -25,7 +25,8 @@ do-build:
 .endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${WRKSRC}/fontdump ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/rom-${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/fontdump ${PREFIX}/bin
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
