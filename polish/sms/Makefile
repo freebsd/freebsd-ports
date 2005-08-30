@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.ceti.pl/~miki/komputery/download/sms/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Send SMS to cellular phones in Poland (Idea, ERA, Plus)
 
+DEPRECATED=	No longer supported, use polish/sms2
+EXPIRATION_DATE=2005-12-01
+
 WRKSRC=	${WRKDIR}/sms
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
