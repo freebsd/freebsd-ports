@@ -15,7 +15,7 @@
 # NOTE: PCRE is enabled by default unless you specifically disable it.
 
 PORTNAME=	postfix
-DISTVERSION=	2.3-20050726
+DISTVERSION=	2.3-20050829
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -86,11 +86,6 @@ POSTFIX_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
 .endif
 
-post-patch:
-	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles ${MAKEFILEFLAGS} \
-	CCARGS="${POSTFIX_CCARGS}" AUXLIBS="${POSTFIX_AUXLIBS}" && \
-	${ECHO} "all: default" >> Makefile)
-
 pre-patch:
 	@${ECHO} "<body>See <A HREF="header_checks.5.html">header_checks.5.html</A></BODY>" > ${WRKSRC}/html/body_checks.5.html
 	@for f in `${FIND} -P ${WRKSRC}/man -type f`; do \
@@ -102,6 +97,13 @@ pre-patch:
 	@for f in `${FIND} -P ${WRKSRC}/conf -type f`; do \
 		${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" $${f}; \
 	done
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,!!PREFIX!!,${PREFIX},g" \
+		${WRKSRC}/conf/main.cf ${WRKSRC}/src/global/mail_params.h
+	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles ${MAKEFILEFLAGS} \
+	CCARGS="${POSTFIX_CCARGS}" AUXLIBS="${POSTFIX_AUXLIBS}" && \
+	${ECHO} "all: default" >> Makefile)
 
 pre-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -153,7 +155,8 @@ post-install:
 # man pages, since the ports software compresses them after this step, and
 # if we run etc/postfix/post-install again during package installation,
 # it will complain about missing files.
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/fix-files-list
+	@${REINPLACE_CMD} -E -e "s|(man[158]/.*.[158]):|\1.gz:|g" ${PREFIX}/etc/postfix/postfix-files
+	@${RM} -f ${PREFIX}/etc/postfix/postfix-files.bak
 	@${CAT} ${PKGMESSAGE}
 
 post-clean:
