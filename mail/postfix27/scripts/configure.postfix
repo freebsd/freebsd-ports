@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix27/scripts/Attic/configure.postfix,v 1.63 2005-07-06 16:37:35 jylefort Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix27/scripts/Attic/configure.postfix,v 1.64 2005-08-30 17:54:17 garga Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -34,6 +34,7 @@ DB43		"Berkeley DB4.3 (required if SASL also built with DB4.3)" "$status_DB43" \
 MySQL		"MySQL map lookups (choose version with WITH_MYSQL_VER)" "$status_MySQL" \
 PgSQL		"PostgreSQL map lookups (choose with DEFAULT_PGSQL_VER)" "$status_PgSQL" \
 OpenLDAP	"OpenLDAP map lookups (choose ver. with WITH_OPENLDAP_VER)" "$status_OpenLDAP" \
+CDB		"CDB map lookups" "$status_CDB" \
 NIS		"NIS map lookups" "$status_NIS" \
 VDA		"VDA (Virtual Delivery Agent)" "$status_VDA" \
 Test		"SMTP/LMTP test server and generator" "$status_Test" \
@@ -205,6 +206,12 @@ while [ "$1" ]; do
  			/bin/echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -lldap -llber"
 			/bin/echo "OPENLDAP_SUFFIX=	+openldap"
 			;;
+		CDB)
+			/bin/echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libcdb.a:\${PORTSDIR}/databases/tinycdb"
+			/bin/echo "POSTFIX_CCARGS+=	-DHAS_CDB -I\${LOCALBASE}/include"
+ 			/bin/echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -lcdb"
+			/bin/echo "CDB_SUFFIX=		+cdb"
+			;;
 		NIS)
 			/bin/echo "POSTFIX_CCARGS+=	-DHAS_NIS"
 			/bin/echo "NIS_SUFFIX=		+nis"
@@ -253,4 +260,4 @@ fi
 # we ask the configure questions) doesn't pick up the extensions, but
 # any subsequent build will. so "make; make install" will build twice.
 # don't do this for now.
-#/bin/echo "PKGNAMESUFFIX=	\${NOPCRE_SUFFIX}\${SASL_SUFFIX}\${DB_SUFFIX}\${MYSQL_SUFFIX}\${PGSQL_SUFFIX}\${OPENLDAP_SUFFIX}\${TLS_SUFFIX}\${NIS_SUFFIX}\${SPF_SUFFIX}"
+#/bin/echo "PKGNAMESUFFIX=	\${NOPCRE_SUFFIX}\${SASL_SUFFIX}\${DB_SUFFIX}\${MYSQL_SUFFIX}\${PGSQL_SUFFIX}\${OPENLDAP_SUFFIX}\${CDB_SUFFIX}\${TLS_SUFFIX}\${NIS_SUFFIX}\${SPF_SUFFIX}"
