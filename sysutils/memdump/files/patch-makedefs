@@ -1,12 +1,14 @@
 --- makedefs.orig	Sun Feb 20 15:41:41 2005
 +++ makedefs	Sun Feb 20 15:42:41 2005
-@@ -8,6 +8,10 @@
+@@ -8,6 +8,12 @@
                  ;;
    FreeBSD.4*)   DEFS="-DFREEBSD4"
                  ;;
 +  FreeBSD.5*)   DEFS="-DFREEBSD5"
 +                ;;
 +  FreeBSD.6*)   DEFS="-DFREEBSD6"
++                ;;
++  FreeBSD.7*)   DEFS="-DFREEBSD7"
 +                ;;
    OpenBSD.2*)   DEFS="-DOPENBSD2"
                  ;;
