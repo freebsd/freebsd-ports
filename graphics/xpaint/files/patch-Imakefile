@@ -1,5 +1,5 @@
---- Imakefile.orig	Thu Apr 28 05:59:37 2005
-+++ Imakefile	Mon May  9 00:54:49 2005
+--- Imakefile.orig	Fri Jun  3 21:26:03 2005
++++ Imakefile	Thu Aug 18 19:25:01 2005
 @@ -102,7 +102,7 @@
  #endif
  
@@ -9,52 +9,7 @@
  
  SUBDIRS = rw
  
-@@ -152,7 +152,7 @@
- 
- xaw::
- 	-$(RM) $(XAWDEPENDS)
--	-$(RM) xaw_incdir ; ln -sf /usr/include/X11/Xaw xaw_incdir
-+	-$(RM) xaw_incdir ; ln -sf $(INCDIR)/X11/Xaw xaw_incdir
- 	echo "XAWLIB_DEFINES = -DXAWPLAIN" > Local.xawdefs			
- 	echo "SYS_LIBRARIES = XawClientLibs -lm" >> Local.xawdefs
- 	xmkmf -a ; make
-@@ -164,7 +164,7 @@
- 
- xaw3d::
- 	-$(RM) $(XAWDEPENDS)
--	-$(RM) xaw_incdir ; ln -sf /usr/include/X11/Xaw3d xaw_incdir	
-+	-$(RM) xaw_incdir ; ln -sf $(INCDIR)/X11/Xaw3d xaw_incdir	
- 	echo "XAWLIB_DEFINES = -DXAW3D" > Local.xawdefs
- 	echo "SYS_LIBRARIES = -lXaw3d -L." >> Local.xawdefs
- 	xmkmf ; cd rw ; xmkmf ; cd .. ; make
-@@ -175,7 +175,7 @@
- 	
- xaw3dg::
- 	-$(RM) $(XAWDEPENDS)
--	-$(RM) xaw_incdir ; ln -sf /usr/include/X11/Xaw3d xaw_incdir	
-+	-$(RM) xaw_incdir ; ln -sf $(INCDIR)/X11/Xaw3d xaw_incdir	
- 	echo "XAWLIB_DEFINES = -DXAW3D -DXAW3DG" > Local.xawdefs
- 	echo "SYS_LIBRARIES = -lXaw3d -L." >> Local.xawdefs
- 	xmkmf ; cd rw ; xmkmf ; cd .. ; make
-@@ -186,7 +186,7 @@
- 
- nextaw::
- 	-$(RM) $(XAWDEPENDS)
--	-$(RM) xaw_incdir ; ln -sf /usr/include/X11/neXtaw xaw_incdir	
-+	-$(RM) xaw_incdir ; ln -sf $(INCDIR)/X11/neXtaw xaw_incdir	
- 	echo "XAWLIB_DEFINES = -DXAW3D" > Local.xawdefs
- 	echo "SYS_LIBRARIES = -lneXtaw -L." >> Local.xawdefs
- 	xmkmf ; cd rw ; xmkmf ; cd .. ; make
-@@ -197,7 +197,7 @@
- 
- xaw95::
- 	-$(RM) $(XAWDEPENDS)
--	-$(RM) xaw_incdir ; ln -sf /usr/include/X11/Xaw95 xaw_incdir	
-+	-$(RM) xaw_incdir ; ln -sf $(INCDIR)/X11/Xaw95 xaw_incdir	
- 	echo "XAWLIB_DEFINES = -DXAW95" > Local.xawdefs
- 	echo "SYS_LIBRARIES = -lXaw95 -L." >> Local.xawdefs
- 	xmkmf -a ; make
-@@ -229,7 +229,7 @@
+@@ -199,7 +199,7 @@
  		    XPAINT_PRINT_COMMAND "$(PRINT_COMMAND)" \
  		    XPAINT_POSTSCRIPT_VIEWER "$(POSTSCRIPT_VIEWER)" \
  		    XPAINT_EXTERN_VIEWER "$(EXTERN_VIEWER)"
