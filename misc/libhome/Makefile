@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libhome
-PORTVERSION=	0.9
+PORTVERSION=	0.10
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pll
@@ -19,7 +19,6 @@ OPTIONS+=	MYSQL "Support for MySQL queries" on
 OPTIONS+=	DB3 "Support for DB3" on
 OPTIONS+=	DB4 "Support for DB4" off
 OPTIONS+=	PAM "Support for PAM (Experimental)" off
-OPTIONS+=	PROXY "Support for Proxy Driver (Experimental)" off
 OPTIONS+=	PGSQL "Support for PostgreSQL (Experimental)" off
 
 USE_LIBTOOL_VER=	15
@@ -31,6 +30,8 @@ INSTALLS_SHLIB=	yes
 .if defined(WITH_DB3) && defined(WITH_DB4)
 .error You cannot use DB3 and DB4 in the same time.
 .endif
+
+CONFIGURE_ARGS+=	--with-proxy --with-nss
 
 .if !defined(WITHOUT_LDAP)
 USE_OPENLDAP=	yes
@@ -66,12 +67,6 @@ CONFIGURE_ARGS+=	--with-pam
 CONFIGURE_ARGS+=	--without-pam
 .endif
 
-.if defined(WITH_PROXY)
-CONFIGURE_ARGS+=	--with-proxy
-.else
-CONFIGURE_ARGS+=	--without-proxy
-.endif
-
 .if defined(WITH_PGSQL)
 CONFIGURE_ARGS+=	--with-pgsql
 USE_PGSQL=	YES
@@ -80,8 +75,10 @@ CONFIGURE_ARGS+=	--without-pgsql
 .endif
 
 MAN5=		home.conf.5
+MAN8=		home_proxy.8
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/home.conf ${PREFIX}/etc/home.conf.dist
+	${INSTALL_SCRIPT} ${WRKSRC}/rc/freebsd/home_proxy.sh ${PREFIX}/etc/rc.d/home_proxy.sh
 
 .include <bsd.port.post.mk>

@@ -1,7 +1,9 @@
 bin/home_finger
 bin/home_su
 bin/libhome.sh
+sbin/home_proxy
 etc/home.conf.dist
+etc/rc.d/home_proxy.sh
 include/home/home_version.h
 include/home/hparam.h
 include/home/hpwd.h
@@ -15,3 +17,7 @@ lib/libhome-preload.a
 lib/libhome-preload.la
 lib/libhome-preload.so
 lib/libhome-preload.so.1
+lib/nss_home_proxy.a
+lib/nss_home_proxy.la
+lib/nss_home_proxy.so
+lib/nss_home_proxy.so.1
