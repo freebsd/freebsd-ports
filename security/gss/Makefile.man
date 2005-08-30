@@ -31,7 +31,6 @@ MAN3+=	gss_process_context_token.3
 MAN3+=	gss_release_buffer.3
 MAN3+=	gss_release_cred.3
 MAN3+=	gss_release_name.3
-MAN3+=	gss_release_oid.3
 MAN3+=	gss_release_oid_set.3
 MAN3+=	gss_test_oid_set_member.3
 MAN3+=	gss_unwrap.3

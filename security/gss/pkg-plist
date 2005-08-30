@@ -11,5 +11,7 @@ libdata/pkgconfig/gss.pc
 %%NLS%%share/locale/fr/LC_MESSAGES/gss.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gss.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/gss.mo
+%%NLS%%share/locale/rw/LC_MESSAGES/gss.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gss.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/gss.mo
 @dirrm include/gss
