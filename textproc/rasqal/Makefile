@@ -8,6 +8,7 @@
 
 PORTNAME=	redland
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://librdf.org/dist/source/
@@ -38,7 +39,8 @@ USE_GNOME=	gnomehack gnometarget lthack pkgconfig
 USE_OPENSSL=	yes
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	15
+USE_INC_LIBTOOL_VER=15
+LIBTOOLFLAGS=	--enable-ltlibs
 LIBTOOLFILES=	configure rasqal/configure
 
 CPPFLAGS=	-I${LOCALBASE}/include/db${WITH_BDB_VER} -I${LOCALBASE}/include
