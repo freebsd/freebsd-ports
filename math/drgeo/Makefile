@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	drgeo
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ofset
@@ -19,9 +18,14 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libglade2
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!/bin/sh|g' \
+		${WRKSRC}/plugin/drgeo/progs/tm_drgeo
 
 .include <bsd.port.mk>

@@ -1,4 +1,5 @@
 bin/drgeo
+bin/tm_drgeo
 share/gnome/applications/drgeo.desktop
 share/gnome/drgeo/encode/latin1.ps
 share/gnome/drgeo/examples/figures/accel.big5.fgeo
@@ -47,6 +48,7 @@ share/gnome/drgeo/examples/scheme/baravelle.scm
 share/gnome/drgeo/examples/scheme/baum.scm
 share/gnome/drgeo/examples/scheme/figure.scm
 share/gnome/drgeo/examples/scheme/fractale.scm
+share/gnome/drgeo/examples/scheme/koch.scm
 share/gnome/drgeo/examples/scheme/pappo.scm
 share/gnome/drgeo/examples/scheme/polygon.scm
 share/gnome/drgeo/examples/scheme/polygon2.scm
@@ -54,6 +56,7 @@ share/gnome/drgeo/examples/scheme/premier.scm
 share/gnome/drgeo/examples/scheme/spiral.scm
 share/gnome/drgeo/examples/scheme/square.scm
 share/gnome/drgeo/examples/scheme/steiner.scm
+share/gnome/drgeo/examples/scheme/tilings.scm
 share/gnome/drgeo/glade/angle.png
 share/gnome/drgeo/glade/angle.xpm
 share/gnome/drgeo/glade/axial_symetry.png
@@ -179,6 +182,7 @@ share/locale/el/LC_MESSAGES/drgeo.mo
 share/locale/en_CA/LC_MESSAGES/drgeo.mo
 share/locale/en_GB/LC_MESSAGES/drgeo.mo
 share/locale/es/LC_MESSAGES/drgeo.mo
+share/locale/eu/LC_MESSAGES/drgeo.mo
 share/locale/fr/LC_MESSAGES/drgeo.mo
 share/locale/ga/LC_MESSAGES/drgeo.mo
 share/locale/gl/LC_MESSAGES/drgeo.mo
@@ -190,13 +194,15 @@ share/locale/it/LC_MESSAGES/drgeo.mo
 share/locale/ja/LC_MESSAGES/drgeo.mo
 share/locale/ml/LC_MESSAGES/drgeo.mo
 share/locale/mr/LC_MESSAGES/drgeo.mo
-share/locale/nb_NO/LC_MESSAGES/drgeo.mo
+share/locale/nb/LC_MESSAGES/drgeo.mo
+share/locale/ne/LC_MESSAGES/drgeo.mo
 share/locale/nl/LC_MESSAGES/drgeo.mo
-share/locale/no_NO/LC_MESSAGES/drgeo.mo
+share/locale/no/LC_MESSAGES/drgeo.mo
 share/locale/pl/LC_MESSAGES/drgeo.mo
 share/locale/pt/LC_MESSAGES/drgeo.mo
 share/locale/pt_BR/LC_MESSAGES/drgeo.mo
 share/locale/ru/LC_MESSAGES/drgeo.mo
+share/locale/rw/LC_MESSAGES/drgeo.mo
 share/locale/sl/LC_MESSAGES/drgeo.mo
 share/locale/sq/LC_MESSAGES/drgeo.mo
 share/locale/sr/LC_MESSAGES/drgeo.mo
@@ -205,10 +211,6 @@ share/locale/sv/LC_MESSAGES/drgeo.mo
 share/locale/uk/LC_MESSAGES/drgeo.mo
 share/locale/zh_CN/LC_MESSAGES/drgeo.mo
 share/locale/zh_TW/LC_MESSAGES/drgeo.mo
-@unexec rmdir %D/share/locale/no_NO/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/no_NO 2>/dev/null || true
-@unexec rmdir %D/share/locale/nb_NO/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/nb_NO 2>/dev/null || true
 @unexec rmdir %D/share/gnome/texmacs/TeXmacs/plugins/drgeo/progs 2>/dev/null || true
 @unexec rmdir %D/share/gnome/texmacs/TeXmacs/plugins/drgeo 2>/dev/null || true
 @unexec rmdir %D/share/gnome/texmacs/TeXmacs/plugins 2>/dev/null || true
