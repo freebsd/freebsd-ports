@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	shishi
-PORTVERSION=	0.0.21
+PORTVERSION=	0.0.22
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/ \
 		${MASTER_SITE_GNU_ALPHA}
