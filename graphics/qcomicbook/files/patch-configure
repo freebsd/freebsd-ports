@@ -1,0 +1,21 @@
+--- configure.orig	Thu Aug  4 05:30:42 2005
++++ configure	Fri Aug  5 21:55:54 2005
+@@ -5598,7 +5598,7 @@
+ }
+ EOF
+ 
+-      bnv_cv_qt_test_result="failure"
++      bnv_cv_qt_test_result=""
+       bnv_try_1="$QT_MOC bnv_qt_test.h -o moc_bnv_qt_test.$ac_ext >/dev/null 2>bnv_qt_test_1.out"
+       { (eval echo "$as_me:$LINENO: \"$bnv_try_1\"") >&5
+   (eval $bnv_try_1) 2>&5
+@@ -5702,7 +5702,8 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+-#include <qglobal.h> #include <stdlib.h>
++#include <qglobal.h>
++#include <stdlib.h>
+ int
+ main ()
+ {
