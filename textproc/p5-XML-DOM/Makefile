@@ -42,7 +42,7 @@ PBASE=		${SITE_PERL}
 
 .if ${OSVERSION} < 500007
 post-patch:
-	@${PERL} -i -pe 's/^use bytes;.*//;' ${WRKSRC}/lib/XML/DOM.pm
+	@${PERL} -i -pe 's/^ *use bytes;.*//;' ${WRKSRC}/lib/XML/DOM.pm
 .endif
 
 .include <bsd.port.post.mk>
