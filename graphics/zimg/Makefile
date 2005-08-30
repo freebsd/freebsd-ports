@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zimg
-PORTVERSION=	4.22.0
+PORTVERSION=	5.0.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,5 +27,7 @@ CONFIGURE_ARGS=	--with-dynaload-cc="${CC}" \
 
 MAN1=		zimg.1
 PLIST_FILES=	include/zimg.h bin/zimg
+
+CFLAGS+=	-DHAVE_GD_FREETYPE
 
 .include <bsd.port.mk>
