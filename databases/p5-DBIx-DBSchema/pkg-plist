@@ -10,6 +10,7 @@
 %%SITE_PERL%%/DBIx/DBSchema/DBD/Sybase.pm
 %%SITE_PERL%%/DBIx/DBSchema/DBD/mysql.pm
 %%SITE_PERL%%/DBIx/DBSchema/Table.pm
+%%SITE_PERL%%/DBIx/DBSchema/_util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/DBSchema/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/DBSchema
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx 2>/dev/null || true
