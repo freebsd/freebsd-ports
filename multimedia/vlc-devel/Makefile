@@ -240,6 +240,7 @@ CONFLICTS=	vlc-*-0.8.2*
 WRKSRC=		${WRKDIR}/${PORTNAME}-snapshot-${PORTVERSION:S/0.8.2.//}
 ### BROKEN -- Needs newer verision of toolame ###
 WITHOUT_TOOLAME=	yes
+WITHOUT_MOZILLA_PLUGIN=	yes
 ### BROKEN ###
 
 WITH_VLC_DEFAULT_FONT?=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
