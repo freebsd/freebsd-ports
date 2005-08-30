@@ -9,15 +9,17 @@
 #
 # WITH_RUNAS_USER:
 #	Whe building with "WITH_SERVER" defined, the username of the
-#	account Yule will run as. Defaults to "yule".
+#	account Yule will run as. Defaults to "yule". If using
+#	WITH_GPG, ensure that this user exists and has a pgp
+#	keypair before installing.
 #
 # WITH_LOG_SERVER, WITH_ALT_LOG_SERVER. When "WITH_CLIENT" is defined,
-# 	these specify what server the client will fetch configuration
+#	these specify what server the client will fetch configuration
 #	and database files from. This can also be defined at runtime.
 #
 
 PORTNAME=	samhain
-PORTVERSION=	2.0.8
+PORTVERSION=	2.0.9
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://cold.darkambient.net/
@@ -30,6 +32,7 @@ OPTIONS=	KCHECK "Enable rogue KLD detection" off \
 		GPG "Enable GnuPG support" off \
 		MYSQL "Enable MySQL logging" off \
 		POSTGRESQL "Enable PostgreSQL logging" off \
+		XML_LOGS "Enable XML-formatted logs" on \
 		LIBWRAP "Enable TCP wrapper support" on \
 		CLIENT "Build as Samhain network client" off \
 		SERVER "Build as Yule network server" off
@@ -44,8 +47,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-login-watch --localstatedir=/var \
 		--mandir=${PREFIX}/man --enable-suidcheck
 
+.if !defined(WITHOUT_XML_LOGS)
+CONFIGURE_ARGS+=	--enable-xml-log
+.endif
 .if defined(WITH_RUNAS_USER)
 CONFIGURE_ARGS+=	--enable-identity=${WITH_RUNAS_USER}
+.else
+CONFIGURE_ARGS+=	--enable-identity=yule
 .endif
 .if defined(WITH_KCHECK)
 CONFIGURE_ARGS+=	--with-kcheck
@@ -56,10 +64,10 @@ CONFIGURE_ARGS+=	--with-gpg=${PREFIX}/bin/gpg
 .if defined(WITH_MYSQL)
 CONFIGURE_ARGS+=	--with-database=mysql \
 			--with-cflags=-I${LOCALBASE}/include/mysql \
-			--with-libs=-L${LOCALBASE}/lib/mysql --enable-xml-log
+			--with-libs=-L${LOCALBASE}/lib/mysql
 .endif
 .if defined(WITH_POSTGRESQL)
-CONFIGURE_ARGS+=	--with-database=postgresql --enable-xml-log
+CONFIGURE_ARGS+=	--with-database=postgresql
 .endif
 .if !defined(WITHOUT_LIBWRAP)
 CONFIGURE_ARGS+=	--with-libwrap
@@ -117,6 +125,20 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
+.if defined(WITH_MYSQL) && !defined(WITH_XML_LOGS)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "XML logging is required to log to MySQL."
+	@${ECHO_MSG}
+.error "XML logging is required to log to MySQL."
+.endif
+
+.if defined(WITH_POSTGRESQL) && !defined(WITH_XML_LOGS)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "XML logging is required to log to Postgres."
+	@${ECHO_MSG}
+.error "XML logging is required to log to Postgres."
+.endif
+
 post-extract:
 	@${TAR} -C ${WRKDIR} -xzf ${WRKSRC}.tar.gz
 	@${RM} ${WRKSRC}.tar.gz ${WRKSRC}.tar.gz.asc
@@ -125,6 +147,7 @@ post-install:
 .if !defined(WITH_SERVER)
 	@${CP} ${WRKSRC}/init/samhain.startFreeBSD ${PREFIX}/etc/rc.d/samhain.sh.sample
 	@${CP} ${WRKSRC}/samhainrc ${PREFIX}/etc/samhainrc.sample
+	@${CHGRP} wheel ${PREFIX}/etc/samhainrc.sample
 .else
 	@${CP} ${WRKSRC}/init/samhain.startFreeBSD ${PREFIX}/etc/rc.d/yule.sh.sample
 	@${CP} ${WRKSRC}/yulerc ${PREFIX}/etc/yulerc.sample
