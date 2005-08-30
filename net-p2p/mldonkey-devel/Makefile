@@ -124,8 +124,13 @@ post-configure:
 		${BUILD_WRKSRC}/config/Makefile.config
 
 pre-install:
+.if exists(${.CURDIR}/pkg-message)
 	@${SED} -e 's,%%DOCSDIR%%,${DOCSDIR},' \
 		< ${.CURDIR}/pkg-message > ${PKGMESSAGE}
+.elif exists(${MASTERDIR}/pkg-message)
+	@${SED} -e 's,%%DOCSDIR%%,${DOCSDIR},' \
+		< ${MASTERDIR}/pkg-message > ${PKGMESSAGE}
+.endif
 
 do-install:
 .ifndef(WITHOUT_CORE)
