@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: ringd
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+# /etc/rc.conf lines:
+# ringd_enable="YES"       # enable ringd
+# ringd_socket_user="pop"  # user to own /var/run sockets
+
+. %%RC_SUBR%%
+
+name="ringd"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${ringd_enable="NO"}
+: ${ringd_socket_user="pop"}
+
+command="%%PREFIX%%/sbin/ringd"
+command_args="--user ${ringd_socket_user}"
+start_precmd="${name}_prestart"
+
+ringd_prestart()
+{
+	mkdir -p /var/log/popular
+	chown ${ringd_socket_user} /var/log/popular
+	mkdir -p /var/run/popular
+	chown ${ringd_socket_user} /var/run/popular
+}
+
+run_rc_command "$1"

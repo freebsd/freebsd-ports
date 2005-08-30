@@ -1,0 +1,47 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: pproxy
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+# /etc/rc.conf lines:
+# pproxy_enable="YES"   # enable pproxy
+# pproxy_user="pop"     # user to pproxy
+
+. %%RC_SUBR%%
+
+name="pproxy"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${pproxy_enable="NO"}
+: ${pproxy_user="pop"}
+
+command="%%PREFIX%%/sbin/pproxy"
+start_precmd="${name}_prestart"
+start_postcmd="${name}_configure"
+extra_commands="reload"
+reload_cmd="${name}_configure"
+
+pproxy_prestart()
+{
+	mkdir -p /var/log/popular
+	chown ${pproxy_user} /var/log/popular
+	mkdir -p /var/run/popular
+	chown ${pproxy_user} /var/run/popular
+}
+
+pproxy_configure()
+{
+	if [ -f %%PREFIX%%/etc/popular/pproxy.rc ]; then
+		sleep 1;
+		su -m ${pproxy_user} -c "%%PREFIX%%/bin/pcontrol --program=pproxy %%PREFIX%%/etc/popular/pproxy.rc"
+	fi
+}
+
+run_rc_command "$1"

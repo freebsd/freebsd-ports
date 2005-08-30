@@ -1,0 +1,47 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: pserv
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+# /etc/rc.conf lines:
+# pserv="YES"   # enable pserv
+# pserv="pop"   # user for pserv
+
+. %%RC_SUBR%%
+
+name="pserv"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${pserv="NO"}
+: ${pserv="pop"}
+
+command="%%PREFIX%%/sbin/pserv"
+start_precmd="${name}_prestart"
+start_postcmd="${name}_configure"
+extra_commands="reload"
+reload_cmd="${name}_configure"
+
+pproxy_prestart()
+{
+	mkdir -p /var/log/popular
+	chown ${pproxy_user} /var/log/popular
+	mkdir -p /var/run/popular
+	chown ${pproxy_user} /var/run/popular
+}
+
+pproxy_configure()
+{
+	if [ -f %%PREFIX%%/etc/popular/pserv.rc ]; then
+		sleep 1;
+		su -m ${pproxy_user} -c "%%PREFIX%%/bin/pcontrol --program=pserv %%PREFIX%%/etc/popular/pserv.rc"
+	fi
+}
+
+run_rc_command "$1"
