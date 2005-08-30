@@ -415,6 +415,7 @@
     SUBDIR += qmail-smtp_auth+tls
     SUBDIR += qmail-spamcontrol
     SUBDIR += qmail-tls
+    SUBDIR += qmail-vida
     SUBDIR += qmailadmin
     SUBDIR += qmailadmin-devel
     SUBDIR += qmailanalog

@@ -1,0 +1,15 @@
+s!QMAIL/!%%PREFIX%%/!
+s!^\(exec\)!case "\$1" in\
+start)\
+\	\1!
+s!\(qmail\)$!\1\&\
+\	exit 0\
+\	;;\
+stop)\
+\	exec killall qmail-send\
+\	;;\
+*)\
+\	%%ECHO_CMD%% "Usage: `basename \$0` {start|stop}" >\&2\
+\	exit 64\
+\	;;\
+esac!

@@ -1,0 +1,109 @@
+#!/usr/bin/perl
+#
+#  Script to populate a Qmail ~alias directory with entries from
+#  an [SZ]mail{er} or sendmail-like aliases file
+#
+# $FreeBSD: /tmp/pcvs/ports/mail/qmail-vida/files/Attic/mkaliasdir,v 1.1 2005-08-30 14:44:26 garga Exp $
+#
+#  Dan Cross <tenser@spitfire.ecsel.psu.edu>
+#
+
+require 'getopts.pl';
+
+$ALIASES = "/etc/aliases";
+
+die "$0 must be run as root!\n" if ($< != 0);
+
+do Getopts('vf:');
+
+$verbose = 0 unless ($verbose = $opt_v);
+$aliases = $ALIASES unless ($aliases = $opt_f);
+
+if (($aliasdir = (getpwnam("qalias"))[7]) eq "")
+{
+	die "User qalias does not exist, bailing!\n";
+}
+
+if (($qmaildir = (getpwnam("qmaild"))[7]) eq "")
+{
+	die "User qmaild does not exist, bailing!\n";
+}
+
+$ME = "$qmaildir/control/me";
+
+die "Error opening $ME: $!\n" unless open(ME, "$ME");
+chop($me = <ME>);
+close (ME);
+
+die "Error opening $aliases: $!\n" unless open(ALIASES, "$aliases");
+
+while (<ALIASES>)
+{
+	chop;
+
+	$mode = ">";
+
+	s/#.*$//;
+
+	($target, $data) = split(/:/, $_, 2);
+
+	$data =~ s/^\s+//;
+	$data =~ s/\s+$//;
+
+	next if (/^$/);
+
+	if ($data =~ /^$/)
+	{
+		while (chop($data = <ALIASES>))
+		{
+			$data =~ s/^\s+//;
+			$data =~ s/\s+$//;
+
+			last if ($data !~ /^$/);
+		}
+	}
+
+	$f = "$aliasdir/.qmail-$target";
+
+	@data = split(/\,/, $data);
+	$datum = $data[0];
+
+	if ($datum =~ /^:include:/i)
+	{
+		$datum =~ s/^:include://i;
+		$verbose && print "Symlinking $f to $datum...\n";
+		symlink($datum, $f);
+		shift(@data);
+		$f = $datum;
+		$mode = ">>";
+	}
+
+	open(ALIAS, "$mode$f") || die "Error creating $f: $!\n";
+
+	$verbose && print "Creating $f...\n";
+
+	foreach $datum (@data)
+	{
+		$datum =~ s/"$// if ($datum =~ s/^"// ||
+					$datum =~ s/^\|[ \t]*"/|/);
+
+		if ($datum =~ /^[|\/]/)
+		{
+			print ALIAS $datum, "\n";
+		}
+		else
+		{
+			$datum = "&" . $datum;
+			$datum .= "\@$me" unless ($datum =~ /\@/);
+			print ALIAS "$datum\n";
+		}
+
+		$verbose && print "\tPopulating $f with $datum...\n";
+	}
+
+	close(ALIAS);
+}
+
+close(ALIASES);
+
+exit 0;

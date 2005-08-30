@@ -1,0 +1,61 @@
+In addition to PORT_NOTES_FreeBSD_40-RELEASE, there are many
+other potentially important qmail documents there such as PORT_NOTES
+and INSTALL.
+
+As with all ports, the ports maintainer (me!) makes NO WARRANTIES of
+any kind: expressed, implied, or other; about the reliability or
+security of this package.  Any damage or problems derived from its
+usage or related to it are neither my responsibility nor the software
+author's.  This package is provided AS IS.
+
+Although I am probably sounding cold and harsh, believe me: qmail is
+one of the most reliable and easy-to-use softwares around.  However,
+this also is NOT a WARRANTY.  It is just an opinion.  :)
+
+The qmail port will normally install into /var/qmail/.  If you changed
+this to /usr/local/, then please note that the docs have been
+installed into /usr/local/share/doc/qmail/ (as opposed to
+/usr/local/doc/).
+
+##
+### Document starts here
+##
+
+If you read PORT_NOTES, you may have noticed I mentioned step 12 should
+be changed for FreeBSD versions 4.0-Release and later.
+
+FreeBSD 4.0-Release and later come with a program named mailwrapper (8)
+which eases the replacement of sendmail. No binaries need to be touched,
+"chmod"ed, erased, deleted or, otherwise, modified.
+
+Whenever you call /usr/sbin/sendmail, /usr/bin/mail, or /usr/bin/newaliases;
+in fact, you are calling a symbolic link to mailwrapper. Mailwrapper
+then calls the appropriate binary according to its configuration file.
+
+An excerpt from the mailwrapper manual: 
+
+"The mailwrapper program is designed to replace /usr/sbin/sendmail and to
+ invoke an appropriate MTA instead of sendmail(8) based on configuration
+ information placed in /etc/mail/mailer.conf. This permits the administra-
+ tor to configure which MTA is to be invoked on the system at run time."
+
+Configuration for mailwrapper is kept in /etc/mail/mailer.conf.
+
+Here follows my personal /etc/mail/mailer.conf
+
+sendmail        /var/qmail/bin/sendmail
+send-mail       /var/qmail/bin/sendmail
+mailq           /var/qmail/bin/qmail-qread
+newaliases      /var/qmail/bin/newaliases
+
+There is a sample mailer.conf in this directory, please install
+over the /etc/mail/mailer.conf to unfold qmail as your default MTA.
+Please don´t forget to backup /etc/mail/mailer.conf before doing
+so. Better safe then sorry.
+
+So, whenever you call sendmail, in fact, you are using the appropriate
+"qmail-clones".
+
+You should notice, though, that the programs do not behave exactly as
+their sendmail counterparts. Therefore, reading the appropriate
+/var/qmail/doc files and man pages is highly advisable.

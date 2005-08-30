@@ -1,0 +1,125 @@
+This text was originally taken from the qmail INSTALL file that you
+will find in /var/qmail/doc/.  In addition to INSTALL, there are many
+other potentially important qmail documents there.
+
+As with all ports, the ports maintainer (me!) makes NO WARRANTIES of
+any kind: expressed, implied, or other; about the reliability or
+security of this package.  Any damage or problems derived from its
+usage or related to it are neither my responsibility nor the software
+author's.  This package is provided AS IS.
+
+Although I am probably sounding cold and harsh, believe me: qmail is
+one of the most reliable and easy-to-use softwares around.  However,
+this also is NOT a WARRANTY.  It is just an opinion.  :)
+
+The qmail port will normally install into /var/qmail/.  If you changed
+this to /usr/local/, then please note that the docs have been
+installed into /usr/local/share/doc/qmail/ (as opposed to
+/usr/local/doc/).
+
+If you wish to rerun the automatic configuration utility, do:
+
+# cd /var/qmail/configure ; ./config
+
+If you are upgrading from a previous version of qmail, you should read
+/var/qmail/doc/UPGRADE and follow all the steps after #6.
+
+
+[from /var/qmail/doc/INSTALL]
+
+SAVE COPIES OF YOUR OUTGOING MAIL! Like any other piece of software (and
+information generally), the qmail system comes with NO WARRANTY. It's
+much more secure and reliable than sendmail, but that's not saying much.
+
+[pre-build instructions elided]
+
+To create /var/qmail and configure qmail (won't interfere with sendmail):
+
+[#1 - #3 elided]
+
+ 4. Read INSTALL.ctl and FAQ. Minimal survival command:
+       # ./config
+
+[The "minimal" command has already been performed.]
+
+ 5. Read INSTALL.alias. Minimal survival command:
+       # (cd ~alias; touch .qmail-postmaster .qmail-mailer-daemon .qmail-root)
+       # chmod 644 ~alias/.qmail*
+
+[The "minimal" command has already been performed.]
+
+ 6. Read INSTALL.mbox and INSTALL.vsm.
+
+ 7. Read INSTALL.maildir.
+
+ 8. Copy /var/qmail/boot/home (or proc) to /var/qmail/rc.
+
+[When you do this, qmail will be started automatically the next time
+ you boot.  This is because the command
+ ``ln -s /var/qmail/rc /usr/local/etc/rc.d'' has been executed.  There
+ is a number of sample bootfiles provided.  Not all of them will work.]
+
+To test qmail deliveries (won't interfere with sendmail):
+
+ 9. Enable deliveries of messages injected into qmail:
+       # csh -cf '/var/qmail/rc &'
+
+10. Read TEST.deliver.
+
+
+To upgrade from sendmail to qmail:
+
+11. Read SENDMAIL. This is what your users will want to know about the
+    switch from sendmail to qmail.
+
+12. Read REMOVE.sendmail. You must remove sendmail before installing
+    qmail.
+
+[Do not disable sendmail as instructed in REMOVE.sendmail step #1.
+ Instead, change the sendmail_enable line in /etc/rc.conf to read
+
+        sendmail_enable="NO"
+
+ If you are running a FreeBSD 4.0-RELEASE or later, read
+ PORT_NOTES_FreeBSD_40-RELEASE before executing step 12.
+ ]
+
+13. Read REMOVE.binmail.
+
+14. Add
+            csh -cf '/var/qmail/rc &'
+    to your boot scripts, so that the qmail daemons are restarted
+    whenever your system reboots. Make sure you include the &.
+
+[Do not do this.  Unless you remove the symlink
+ /usr/local/etc/rc.d/qmail.sh, the script /var/qmail/rc will be run
+ everytime you boot.  See also "local_startup" in /etc/rc.conf.]
+
+15. Make qmail's ``sendmail'' wrapper available to MUAs:
+       # ln -s /var/qmail/bin/sendmail /usr/lib/sendmail
+       # ln -s /var/qmail/bin/sendmail /usr/sbin/sendmail
+    /usr/sbin might not exist on your system.
+
+16. Set up qmail-smtpd in /etc/inetd.conf (all on one line):
+            smtp stream tcp nowait qmaild /var/qmail/bin/tcp-env
+            tcp-env /var/qmail/bin/qmail-smtpd
+
+[A freshly-updated /etc/inetd.conf will have a sample qmail entry that
+ you can simply uncomment.]
+
+17. Reboot. (Or kill -HUP your inetd and make sure the qmail daemons
+    are running.)
+
+18. Read TEST.receive.
+
+
+
+That's it! To report success:
+       % ( echo 'First M. Last'; cat /var/qmail/doc/SYSDEPS ) \
+		| mail djb-qst@cr.yp.to
+Replace First M. Last with your name.
+
+[Note that "cat `cat SYSDEPS`" has changed to "cat /var/qmail/doc/SYSDEPS"]
+
+If you have questions about qmail, join the qmail mailing list; see
+http://pobox.com/~djb/qmail.html.

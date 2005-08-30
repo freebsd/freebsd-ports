@@ -1,0 +1,105 @@
+@comment $FreeBSD$
+%%RCDLINK%%@unexec rm -f %%LOCALBASE%%/etc/rc.d/qmail.sh
+bin/qmail-queue
+bin/qmail-lspawn
+bin/qmail-start
+bin/qmail-getpw
+bin/qmail-local
+bin/qmail-remote
+bin/qmail-rspawn
+bin/qmail-clean
+bin/qmail-send
+bin/splogger
+bin/qmail-newu
+bin/qmail-newmrh
+bin/qmail-pw2u
+bin/qmail-inject
+bin/predate
+bin/datemail
+bin/mailsubj
+bin/qmail-showctl
+bin/qmail-qread
+bin/qmail-qstat
+bin/qmail-tcpto
+bin/qmail-tcpok
+bin/qmail-pop3d
+bin/qmail-popup
+bin/qmail-qmqpc
+bin/qmail-qmqpd
+bin/qmail-qmtpd
+bin/qmail-smtpd
+bin/qmail-smtpup
+bin/sendmail
+bin/tcp-env
+bin/qreceipt
+bin/qsmhook
+bin/qbiff
+bin/forward
+bin/preline
+bin/condredirect
+bin/bouncesaying
+bin/except
+bin/maildirmake
+bin/maildir2mbox
+bin/maildirwatch
+bin/qail
+bin/elq
+bin/pinq
+bin/checkpassword
+bin/addcr
+bin/argv0
+bin/delcr
+bin/fixcrio
+bin/mconnect-io
+bin/rblsmtpd
+bin/recordio
+bin/tcpclient
+bin/tcprules
+bin/tcprulescheck
+bin/tcpserver
+bin/date@
+bin/finger@
+bin/http@
+bin/mconnect
+bin/who@
+bin/tcpcat
+bin/vida-pwdbinit
+bin/vida-pwdbmake
+bin/vida-passwd
+bin/vida-assign
+bin/vida-maildirmake
+boot/home
+boot/home+df
+boot/proc
+boot/proc+df
+boot/binm1
+boot/binm1+df
+boot/binm2
+boot/binm2+df
+boot/binm3
+boot/binm3+df
+boot/maildir
+boot/maildir+vida
+configure/install
+configure/dnsfq
+configure/hostname
+configure/dnsip
+configure/ipmeprint
+configure/dnsptr
+configure/config
+configure/config-fast
+scripts/mkaliasdir
+scripts/enable-qmail
+@dirrm boot
+@dirrm bin
+@dirrm configure
+@dirrm man/man1
+@dirrm man/man5
+@dirrm man/man7
+@dirrm man/man8
+@dirrm man
+@dirrm scripts
+@dirrm users
+@unexec echo "1) If you are permanently removing qmail, you should also ``rm -Rf ${PKG_PREFIX}/alias ${PKG_PREFIX}/control ${PKG_PREFIX}/queue ${PKG_PREFIX}/users'' and remove the qmail and qmail-vida users/groups." | /usr/bin/fmt
+@unexec echo "2) Do not forget to reconfigure your /etc/mail/mailer.conf to use your older MTA, or reconfigure your old MTA binaries if you decided to replace them." | /usr/bin/fmt
+@unexec echo "3) Do not forget to enable sendmail as your default MTA if you have to. You can do it just executing 'echo sendmail_enable=\"YES\" >> /etc/rc.conf" | /usr/bin/fmt
