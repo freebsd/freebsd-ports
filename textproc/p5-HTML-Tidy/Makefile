@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	HTML-Tidy
-PORTVERSION=	1.05.01
+PORTVERSION=	1.06
 CATEGORIES=	textproc www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	HTML/PETDANCE
+MASTER_SITE_SUBDIR=	HTML
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/_\1/}
 
 
 MAINTAINER=	mat@FreeBSD.org
@@ -36,8 +35,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		Needs perl 5.6 or higher, install lang/perl5 or lang/perl5.8 and try again
+.if ${PERL_LEVEL} < 500800
+IGNORE=		Needs perl 5.8 or higher, install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
