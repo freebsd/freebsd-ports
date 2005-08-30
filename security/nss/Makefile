@@ -8,11 +8,8 @@
 PORTNAME=	nss
 PORTVERSION=	3.10
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://people.freebsd.org/~pav/
-MASTER_SITE_SUBDIR=	pav
-#MASTER_SITES=	${MASTER_SITE_MOZILLA}
-#MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_RTM/src
+MASTER_SITES=	${MASTER_SITE_MOZILLA}
+MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_RTM/src
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Libraries to support development of security-enabled applications
