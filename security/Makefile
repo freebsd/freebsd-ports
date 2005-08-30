@@ -129,7 +129,6 @@
     SUBDIR += gnupg-devel
     SUBDIR += gnupg-idea
     SUBDIR += gnutls
-    SUBDIR += gnutls-devel
     SUBDIR += gpa
     SUBDIR += gpasman
     SUBDIR += gpgme
