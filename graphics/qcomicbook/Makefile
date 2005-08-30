@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qcomicbook
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://linux.bydg.org/~yogin/
 
@@ -18,7 +18,6 @@ RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 
 USE_X_PREFIX=	yes
 USE_QT_VER=	3
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -30,8 +29,5 @@ MAN1=		qcomicbook.1
 # pthread by default. That might *gasp* make them work!
 QTCPPFLAGS+=	${PTHREAD_CFLAGS}
 QTCFGLIBS+=	${PTHREAD_LIBS}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|="failure"|=""|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
