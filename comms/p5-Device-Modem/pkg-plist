@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Device/Modem/Log/File.pm
 %%SITE_PERL%%/Device/Modem/Log/Syslog.pm
 %%SITE_PERL%%/Device/Modem/Protocol/Xmodem.pm
+%%SITE_PERL%%/Device/Modem/UsRobotics.pm
 %%SITE_PERL%%/Device/Modem.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Device/Modem/.packlist
 @dirrm %%SITE_PERL%%/Device/Modem/Log
