@@ -1,8 +1,11 @@
 bin/g3dviewer
 include/g3dviewer_plugin.h
 lib/g3dviewer/plugins/image/img_bmp.so
+lib/g3dviewer/plugins/image/img_gdkpixbuf.so
+lib/g3dviewer/plugins/image/img_sgi.so
 lib/g3dviewer/plugins/import/imp_3dmf.so
 lib/g3dviewer/plugins/import/imp_3ds.so
+lib/g3dviewer/plugins/import/imp_ac3d.so
 lib/g3dviewer/plugins/import/imp_cob.so
 lib/g3dviewer/plugins/import/imp_dxf.so
 lib/g3dviewer/plugins/import/imp_heightfield.so
