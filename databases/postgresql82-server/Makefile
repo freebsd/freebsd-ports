@@ -104,6 +104,7 @@ OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
 .  if defined(SERVER_ONLY) && defined(WITH_HIER)
 PATCH_SITES+=	http://gppl.moonbone.ru/:hier801054
 PATCHFILES+=	hier-Pg8.0.1-0.5.4.diff.gz:hier801054
+USE_BISON=	yes
 .  endif
 
 .  if defined(SERVER_ONLY) && defined(WITH_ICU)
@@ -111,7 +112,7 @@ USE_AUTOCONF_VER=253
 CONFIGURE_ARGS+=--with-icu
 LIB_DEPENDS=	icudata.32:${PORTSDIR}/devel/icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
-PATCHFILES+=	pg-802-icu-2005-05-06.diff.gz:icu
+PATCHFILES+=	pg-803-icu-2005-08-16.diff.gz:icu
 .  endif
 
 PATCH_DIST_STRIP=-p1

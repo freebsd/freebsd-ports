@@ -8,5 +8,5 @@ MD5 (postgresql/postgresql-test-8.0.3.tar.bz2) = 4dac47d2c87bb83ba6f2cd788ec794a
 SIZE (postgresql/postgresql-test-8.0.3.tar.bz2) = 959642
 MD5 (postgresql/hier-Pg8.0.1-0.5.4.diff.gz) = 1d410cfb38253675fee36c8f9ee655e2
 SIZE (postgresql/hier-Pg8.0.1-0.5.4.diff.gz) = 30662
-MD5 (postgresql/pg-802-icu-2005-05-06.diff.gz) = 67b1a4104f447ddcdd59ff616bdb263e
-SIZE (postgresql/pg-802-icu-2005-05-06.diff.gz) = 4184
+MD5 (postgresql/pg-803-icu-2005-08-16.diff.gz) = 83cb174132c5dd7aeec622bc5c9a8b0d
+SIZE (postgresql/pg-803-icu-2005-08-16.diff.gz) = 4190
