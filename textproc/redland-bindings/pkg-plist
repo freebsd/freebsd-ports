@@ -1,11 +1,10 @@
 @comment $FreeBSD$
 %%WITH_JAVA%%lib/java/librdf-java.a
-@comment %%WITH_JAVA%%lib/java/librdf-java.la
+%%WITH_JAVA%%lib/java/librdf-java.la
 %%WITH_JAVA%%lib/java/librdf-java.so
 %%WITH_JAVA%%lib/java/librdf-java.so.0
 %%WITH_JAVA%%share/java/librdf-java.jar
-%%WITH_JAVA%%@dirrm lib/java
-%%WITH_JAVA%%@dirrm share/java
+%%WITH_JAVA%%@unexec rmdir %D/lib/java
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RDF/Redland.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RDF/Redland/CORE.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RDF/Redland/Iterator.pm
@@ -20,13 +19,10 @@
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RDF/Redland/Storage.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RDF/Redland/Stream.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RDF/Redland/URI.pm
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Redland/CORE.bs
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Redland/CORE.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Redland/CORE/CORE.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Redland/CORE/CORE.so
 %%WITH_PHP%%lib/php/%%PHP_EXT_DIR%%/redland.so
-%%WITH_PHP%%@dirrm lib/php/%%PHP_EXT_DIR%%
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/Redland.so
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/RDF.py
-%%WITH_PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%
-%%WITH_PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%
 %%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/redland.so
 %%WITH_TCL%%%%TCL_DIR%%/Redland.so

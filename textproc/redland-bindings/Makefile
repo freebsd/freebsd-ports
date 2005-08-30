@@ -6,16 +6,12 @@
 #
 
 PORTNAME=	redland-bindings
-PORTVERSION=	1.0.1.1
+PORTVERSION=	1.0.2.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/
 
 MAINTAINER=	russell@rucus.ru.ac.za
 COMMENT=	Language bindings for the Redland package
-
-BROKEN=		Configure fails
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
 
 #OPTIONS=	JAVA "Add Java bindings" off \
 #		PERL "Add Perl bindings" off \
@@ -24,13 +20,12 @@ EXPIRATION_DATE=2005-09-22
 #		RUBY "Add Ruby bindings" off \
 #		TCL "Add TCL bindings" off
 LIB_DEPENDS=	rdf.0:${PORTSDIR}/textproc/redland
-.if defined(WITH_JAVA)
-BUILD_DEPENDS=	${LOCALBASE}/lib/librdf.la:${PORTSDIR}/textproc/redland
-.endif
+
+USE_REINPLACE=	yes
 
 .if defined(WITH_JAVA)
 USE_JAVA=	yes
-JAVA_VESION=	1.3+
+JAVA_VERSION=	1.3+
 CONFIGURE_ARGS+=	--with-java --with-jdk=${JAVA_HOME}
 PLIST_SUB+=	WITH_JAVA=""
 .else
@@ -88,8 +83,8 @@ TCL_SHORT_V=	84
 TCL_LONG_V=	8.4
 .endif
 PLIST_SUB+=	WITH_TCL=""
-PLIST_SUB+=	TCL_DIR="lib/tcl/${TCL_LONG_V}"
-CONFIGURE_ARGS+=	--with-tcltk=${LOCALBASE}/bin/tclsh${TCL_LONG_V}
+PLIST_SUB+=	TCL_DIR="lib/tcl${TCL_LONG_V}"
+CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/bin/tclsh${TCL_LONG_V}
 LIB_DEPENDS+=	tcl${TCL_SHORT_V}:${PORTSDIR}/lang/tcl${TCL_SHORT_V}
 .else
 PLIST_SUB+=	WITH_TCL="@comment "
@@ -111,5 +106,9 @@ pre-everything::
 	@${ECHO_MSG} "WITH_TCL    - TCL bindings"
 	@${ECHO_MSG} "**********************************************"
 	@${ECHO_MSG} ""
+
+post-patch:
+	${REINPLACE_CMD} 's/^tcllib =.*/tcllib = -ltcl${TCL_SHORT_V}/' \
+		${WRKSRC}/tcl/Makefile.in
 
 .include <bsd.port.mk>
