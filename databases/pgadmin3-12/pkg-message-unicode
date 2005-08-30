@@ -2,9 +2,9 @@
 == NOTICE                                                                ==
 ==                                                                       ==
 
-Make sure that your system is older than
+Make sure that your system is newer than
 
-- 600014 for 6.0-CURRENT
+- 600014 for 6.x and later
 - 503105 for 5.x
 
 or please apply this patch: http://people.freebsd.org/~fjoe/vswprintf.c.diff
