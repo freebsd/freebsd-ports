@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xpaint
-PORTVERSION=	2.7.7
+PORTVERSION=	2.7.8
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.ac-grenoble.fr/Office/
@@ -26,15 +26,18 @@ MAN1=		xpaint.1
 
 .if defined(WITH_NEXTAW)
 LIB_DEPENDS+=	neXtaw:${PORTSDIR}/x11-toolkits/neXtaw
-ALL_TARGET=	nextaw
 XAW_INCDIR=	${X11BASE}/include/X11/neXtaw
+XAW_LIBS=	-lneXtaw
 .else
 LIB_DEPENDS+=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
-ALL_TARGET=	xaw3d
 XAW_INCDIR=	${X11BASE}/include/X11/Xaw3d
+XAW_LIBS=	-lXaw3d
 .endif
 
 pre-configure:
-	@cd ${WRKSRC} && ${LN} -sf ${XAW_INCDIR} xaw_incdir
+	@cd ${WRKSRC} && ${LN} -sf ${XAW_INCDIR} xaw_incdir \
+		&& ${ECHO_CMD} -n > Local.xawdefs \
+		&& ${ECHO_CMD} "XAWLIB_DEFINES=-DXAW3D" >> Local.xawdefs \
+		&& ${ECHO_CMD} "SYS_LIBRARIES=${XAW_LIBS}" >> Local.xawdefs
 
 .include <bsd.port.mk>
