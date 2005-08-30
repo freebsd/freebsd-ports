@@ -23,16 +23,16 @@ lib/libyacasplatform.so
 lib/libyacasplatform.so.0
 lib/yacas/example.la
 lib/yacas/example.so
-lib/yacas/filescanner.so
 lib/yacas/filescanner.la
+lib/yacas/filescanner.so
 lib/yacas/forth.la
 lib/yacas/forth.so
 lib/yacas/libmath.a
 lib/yacas/libmath.la
 lib/yacas/libmath.so
 lib/yacas/libmath.so.0
-lib/yacas/pcre.so
 lib/yacas/pcre.la
+lib/yacas/pcre.so
 %%X11%%lib/yacas/opengl.la
 %%X11%%lib/yacas/opengl.so
 lib/yacas/yacas_gsl.la
@@ -123,6 +123,8 @@ lib/yacas/yacas_gsl.so
 %%DATADIR%%/documentation/codingmanual.html
 %%DATADIR%%/documentation/essays.html
 %%DATADIR%%/documentation/essayschapter1.html
+%%DATADIR%%/documentation/essayschapter10.html
+%%DATADIR%%/documentation/essayschapter11.html
 %%DATADIR%%/documentation/essayschapter12.html
 %%DATADIR%%/documentation/essayschapter2.html
 %%DATADIR%%/documentation/essayschapter3.html
@@ -134,6 +136,7 @@ lib/yacas/yacas_gsl.so
 %%DATADIR%%/documentation/essayschapter9.html
 %%DATADIR%%/documentation/essayschapters.html
 %%DATADIR%%/documentation/essaysmanual.html
+%%DATADIR%%/documentation/hints
 %%DATADIR%%/documentation/intro.html
 %%DATADIR%%/documentation/introchapter1.html
 %%DATADIR%%/documentation/introchapter2.html
@@ -182,9 +185,6 @@ lib/yacas/yacas_gsl.so
 %%DATADIR%%/documentation/refprogchapters.html
 %%DATADIR%%/documentation/refprogmanual.html
 %%DATADIR%%/documentation/yacaslogo.gif
-%%DATADIR%%/documentation/hints
-%%DATADIR%%/documentation/essayschapter10.html
-%%DATADIR%%/documentation/essayschapter11.html
 %%DATADIR%%/example.rep/code.ys
 %%DATADIR%%/example.rep/code.ys.def
 %%DATADIR%%/examples/ABIN.ys
@@ -273,6 +273,7 @@ lib/yacas/yacas_gsl.so
 %%DATADIR%%/include/plat/linux32/platfileio.h
 %%DATADIR%%/include/plat/linux32/stubs.inl
 %%DATADIR%%/include/platmath.h
+%%DATADIR%%/include/plugins_available.h
 %%DATADIR%%/include/refcount.h
 %%DATADIR%%/include/standard.h
 %%DATADIR%%/include/standard.inl
@@ -296,6 +297,7 @@ lib/yacas/yacas_gsl.so
 %%DATADIR%%/include/yacasprivate.h
 %%DATADIR%%/integrate.rep/code.ys
 %%DATADIR%%/integrate.rep/code.ys.def
+%%DATADIR%%/integrate.rep/om.ys
 %%DATADIR%%/io.rep/code.ys
 %%DATADIR%%/io.rep/code.ys.def
 %%DATADIR%%/io.rep/defaultprint.ys
@@ -386,6 +388,7 @@ lib/yacas/yacas_gsl.so
 %%DATADIR%%/specfunc.rep/gamma.ys.def
 %%DATADIR%%/specfunc.rep/gammaconst.ys
 %%DATADIR%%/specfunc.rep/gammaconst.ys.def
+%%DATADIR%%/specfunc.rep/om.ys
 %%DATADIR%%/specfunc.rep/zeta.ys
 %%DATADIR%%/specfunc.rep/zeta.ys.def
 %%DATADIR%%/standard.ys
@@ -403,6 +406,8 @@ lib/yacas/yacas_gsl.so
 %%DATADIR%%/statistics.rep/statistics.ys.def
 %%DATADIR%%/stats.rep/code.ys
 %%DATADIR%%/stats.rep/code.ys.def
+%%DATADIR%%/stdarith.ys
+%%DATADIR%%/stdarith.ys.def
 %%DATADIR%%/stdfuncs.rep/code.ys
 %%DATADIR%%/stdfuncs.rep/code.ys.def
 %%DATADIR%%/stdfuncs.rep/elemfuncs.ys
@@ -420,6 +425,7 @@ lib/yacas/yacas_gsl.so
 %%DATADIR%%/substitute.rep/code.ys.def
 %%DATADIR%%/sums.rep/code.ys
 %%DATADIR%%/sums.rep/code.ys.def
+%%DATADIR%%/sums.rep/om.ys
 %%DATADIR%%/sums.rep/taylor.ys
 %%DATADIR%%/sums.rep/taylor.ys.def
 %%DATADIR%%/sums.rep/taylor3.ys
@@ -442,8 +448,6 @@ lib/yacas/yacas_gsl.so
 %%DATADIR%%/univar.rep/sparse.ys.def
 %%DATADIR%%/univar.rep/sturm.ys
 %%DATADIR%%/univar.rep/sturm.ys.def
-%%DATADIR%%/stdarith.ys
-%%DATADIR%%/stdarith.ys.def
 %%DATADIR%%/yacas-gmtplot2d.sh
 %%DATADIR%%/yacas-gmtplot3d.sh
 %%DATADIR%%/yacasinit.ys
