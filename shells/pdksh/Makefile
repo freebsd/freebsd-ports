@@ -11,8 +11,7 @@ CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.cs.mun.ca/pub/pdksh/ \
 		http://gd.tuwien.ac.at/utils/shells/pdksh/ \
 		ftp://ftp.lip6.fr/pub/unix/shells/pdksh/ \
-		ftp://ftp.demon.net/pub/mirrors/pdksh/ \
-		ftp://ftp.rge.com/pub/shells/pdksh/
+		ftp://ftp.demon.net/pub/mirrors/pdksh/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/p.*//}
 
 PATCH_SITES=	${MASTER_SITES}
