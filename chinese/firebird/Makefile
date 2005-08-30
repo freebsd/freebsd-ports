@@ -10,7 +10,7 @@ CATEGORIES=	chinese net
 MASTER_SITES=	ftp://ftp4.firebird.org.tw/Network/BBS/Firebird/
 DISTNAME=	3.0-RELEASE
 
-MAINTAINER=	edwardc@firebird.org.tw
+MAINTAINER=	edwardchuang@gmail.com
 COMMENT=	A Common BBS Server with its own customized INN News Server
 
 WRKSRC=		${WRKDIR}/bbs/bbssrc
