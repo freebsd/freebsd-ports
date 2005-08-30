@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-Dump-Streamer
-PORTVERSION=	1.12
+PORTVERSION=	1.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -21,8 +21,9 @@ BUILD_DEPENDS=	${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Dif
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS=	DDS
 
-MAN3=		Data::Dump::Streamer.3
+MAN3=		DDS.3 Data::Dump::Streamer.3
 
 .include <bsd.port.pre.mk>
 
