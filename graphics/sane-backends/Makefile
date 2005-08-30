@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	sane-backends
-PORTVERSION=	1.0.15
+PORTVERSION=	1.0.16
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/%SUBDIR%/ \
+MASTER_SITES=	http://alioth.debian.org/download.php/1079/ \
+		ftp://ftp.sane-project.org/pub/sane/%SUBDIR%/ \
 		ftp://ftp2.sane-project.org/pub/sane/%SUBDIR%/ \
 		ftp://ftp3.sane-project.org/pub/sane/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/hci/sane/%SUBDIR%/ \
@@ -20,20 +21,21 @@ COMMENT=	API for access to scanners, digitals camera, frame grabbers etc
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_GNOME=	gnometarget lthack
-USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
-USE_REINPLACE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-MAKE_ENV=	NOPORTDOCS=${NOPORTDOCS} \
-		DOCSDIR="${DOCSDIR}"
-INSTALLS_SHLIB=	yes
-
 OPTIONS=	USB "USB support" on \
 		NLS "NLS support" on \
 		GPHOTO2 "gPhoto2 support" off
 
+USE_GNOME=	gnometarget
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
+USE_LIBTOOL_VER=	15
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}
+MAKE_ENV=	NOPORTDOCS=${NOPORTDOCS}
+INSTALLS_SHLIB=	yes
+
+.include "Makefile.man"
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_USB)
@@ -61,10 +63,7 @@ PLIST_SUB+=	GPHOTO2="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|LIBTOOL =.*|LIBTOOL = ${LIBTOOL}|' \
-		${WRKSRC}/backend/Makefile.in ${WRKSRC}/frontend/Makefile.in \
-		${WRKSRC}/japi/Makefile.in ${WRKSRC}/lib/Makefile.in \
-		${WRKSRC}/sanei/Makefile.in ${WRKSRC}/tools/Makefile.in
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|= \.\./libtool|= @LIBTOOL@|g'
 
-.include "Makefile.man"
 .include <bsd.port.post.mk>
