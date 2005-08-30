@@ -14,17 +14,20 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A color vt102 terminal emulator with transparency support
 
-LIB_DEPENDS+=	AfterImage.0:${PORTSDIR}/graphics/libafterimage
-
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
 # `+=' is for slave ports
-CONFIGURE_ARGS+=	\
-			--enable-transparency --enable-background-image \
-			--enable-fading --enable-utmp --enable-wtmp
+CONFIGURE_ARGS+=	--enable-transparency \
+			--enable-fading --enable-utmp --enable-wtmp \
+			--without-afterstep-config
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+
+.if !defined(WITHOUT_BACKGROUND_IMAGE)
+LIB_DEPENDS+=	AfterImage.0:${PORTSDIR}/graphics/libafterimage
+CONFIGURE_ARGS+=	--enable-background-image
+.endif
 
 .if !defined(WITHOUT_PNG)
 CONFIGURE_ARGS+=	--with-png
