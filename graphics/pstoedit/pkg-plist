@@ -15,34 +15,30 @@ include/pstoedit/pstoedll.h
 lib/libpstoedit.a
 lib/libpstoedit.so
 lib/libpstoedit.so.0
-lib/pstoedit/libp2edrvlplot.a
-lib/pstoedit/libp2edrvlplot.so
-lib/pstoedit/libp2edrvlplot.so.0
-lib/pstoedit/libp2edrvmagick++.a
-lib/pstoedit/libp2edrvmagick++.so
-lib/pstoedit/libp2edrvmagick++.so.0
-lib/pstoedit/libp2edrvstd.a
+%%PLOTUTILS%%lib/pstoedit/libp2edrvlplot.so
+%%PLOTUTILS%%lib/pstoedit/libp2edrvlplot.so.0
+%%IMAGEMAGICK%%lib/pstoedit/libp2edrvmagick++.so
+%%IMAGEMAGICK%%lib/pstoedit/libp2edrvmagick++.so.0
 lib/pstoedit/libp2edrvstd.so
 lib/pstoedit/libp2edrvstd.so.0
-lib/pstoedit/libp2edrvswf.a
-lib/pstoedit/libp2edrvswf.so
-lib/pstoedit/libp2edrvswf.so.0
-lib/pstoedit/libp2edrvwmf.a
-lib/pstoedit/libp2edrvwmf.so
-lib/pstoedit/libp2edrvwmf.so.0
+%%MING%%lib/pstoedit/libp2edrvswf.so
+%%MING%%lib/pstoedit/libp2edrvswf.so.0
+%%EMF%%lib/pstoedit/libp2edrvwmf.so
+%%EMF%%lib/pstoedit/libp2edrvwmf.so.0
 libdata/pkgconfig/pstoedit.pc
 share/aclocal/pstoedit.m4
 %%PORTDOCS%%%%DOCSDIR%%/changelog.htm
 %%PORTDOCS%%%%DOCSDIR%%/index.htm
 %%PORTDOCS%%%%DOCSDIR%%/pstoedit.htm
-share/pstoedit/latex2e.fmp
-share/pstoedit/mpost.fmp
-share/pstoedit/safer.ps
-share/pstoedit/svg.fmp
-share/pstoedit/swffonts/default.fdb
-share/pstoedit/wemf.fmp
-@dirrm share/pstoedit/swffonts
-@dirrm share/pstoedit
+%%DATADIR%%/examplefigmap.fmp
+%%DATADIR%%/latex2e.fmp
+%%DATADIR%%/mpost.fmp
+%%DATADIR%%/safer.ps
+%%DATADIR%%/svg.fmp
+%%DATADIR%%/swffonts/default.fdb
+%%DATADIR%%/wemf.fmp
+@dirrm %%DATADIR%%/swffonts
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/pstoedit
 @dirrm include/pstoedit
