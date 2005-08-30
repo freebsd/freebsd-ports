@@ -37,13 +37,13 @@ IGNORE=		requires FreeBSD 4.0 or higher
 IGNORE=		requires Sendmail 8.12
 .endif
 
-.if ${OSVERSION} >= 503001 && ${OSVERSION} <= 600004
+.if ${OSVERSION} >= 503001
 BINSRC=		${WRKSRC}/bin/freebsd5
+.if ${OSVERSION} > 600004
+LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
+.endif
 .else
 BINSRC=		${WRKSRC}/bin/freebsd
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
-.endif
 .endif
 
 post-extract:
