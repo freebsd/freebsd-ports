@@ -1,15 +1,15 @@
---- homedir/Makefile.in.orig	Sun Jun 12 11:09:03 2005
-+++ homedir/Makefile.in	Sun Jun 12 11:10:04 2005
-@@ -44,11 +44,7 @@
- 	for nm in $(INST_HOMEDIR) $(INST_HOMEDIR)/log; do \
- 	  if test ! -d $$nm; then \
- 	    $(HINSTALL) -m 755 -d $$nm; fi; done
+--- homedir/Makefile.in.orig	Tue Aug  2 18:04:26 2005
++++ homedir/Makefile.in	Tue Aug  2 18:05:28 2005
+@@ -45,11 +45,7 @@
+ 	  $(HINSTALL) -m 755 -d $(INST_HOMEDIR); fi
+ 	if test ! -d $(INST_HOMEDIR)/log; then \
+ 	  $(HINSTALL) -m 711 -d $(INST_HOMEDIR)/log; fi
 -	if test -s $(INST_HOMEDIR)/dcc_conf; then \
 -	  sh make-dcc_conf -h $(INST_HOMEDIR); \
 -	else \
 -	  $(HINSTALL) -m 644 dcc_conf $(INST_HOMEDIR)/dcc_conf; \
 -	fi
-+	$(HINSTALL) -m 644 dcc_conf $(INST_HOMEDIR)/dcc_conf.dist
++	$(HINSTALL) -m 644 dcc_conf $(INST_HOMEDIR)/dcc_conf.dist; \
  	for nm in flod grey_flod whitelist grey_whitelist \
  		whiteclnt whitecommon; do \
  	  if test ! -f $(INST_HOMEDIR)/$$nm; then \
