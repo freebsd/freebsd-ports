@@ -1599,3 +1599,4 @@ editors/openoffice-1.1|editors/openoffice.org-1.1|2005-08-29|port should have a 
 editors/openoffice-1.1-devel|editors/openoffice.org-1.1-devel|2005-08-29|port should have a correct PORTNAME
 editors/openoffice-2.0-devel|editors/openoffice.org-2.0-devel|2005-08-29|port should have a correct PORTNAME
 shells/zsh-devel|shells/zsh|2005-08-29|Development version of Zsh is no longer being released
+russian/nagios||2005-08-30|Obsoleted; new version is not planned

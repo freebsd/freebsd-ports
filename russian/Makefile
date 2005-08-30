@@ -23,7 +23,6 @@
     SUBDIR += mtc
     SUBDIR += mueller-dic
     SUBDIR += muttprint
-    SUBDIR += nagios
     SUBDIR += napster
     SUBDIR += ooodict-ru_RU
     SUBDIR += p5-Lingua-RU-Charset
