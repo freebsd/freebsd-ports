@@ -16,7 +16,7 @@ MASTER_SITES=	${MASTER_SITE_GNUPG} \
 		ftp://ftp.gnutls.org/pub/gnutls/opencdk/
 MASTER_SITE_SUBDIR=	alpha/gnutls/opencdk
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Open Crypto Development Kit
 
 LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt
