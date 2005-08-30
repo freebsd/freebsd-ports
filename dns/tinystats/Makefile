@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tinystats
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.morettoni.net/bsd/
 
@@ -18,17 +18,21 @@ ALL_TARGET=
 
 PLIST_FILES=	bin/tinystats \
 		%%EXAMPLESDIR%%/tinydns.log.run.sample \
-		%%EXAMPLESDIR%%/tinydns.sh.sample
+		%%EXAMPLESDIR%%/tinydns.sh.sample \
+		%%EXAMPLESDIR%%/update_slave.sh.sample \
+		%%EXAMPLESDIR%%/start_slave.sh.sample \
+		%%EXAMPLESDIR%%/Makefile.sample
 PLIST_DIRS=	%%EXAMPLESDIR%%
-PORTDOCS=	README
+PORTDOCS=	README LICENSE THANKS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tinystats ${PREFIX}/bin
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/tinydns.sh.sample ${WRKSRC}/tinydns.log.run.sample ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/tinydns.sh.sample ${WRKSRC}/tinydns.log.run.sample \
+			${WRKSRC}/update_slave.sh.sample ${WRKSRC}/start_slave.sh.sample ${WRKSRC}/Makefile.sample ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/LICENSE ${WRKSRC}/THANKS ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
