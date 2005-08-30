@@ -872,10 +872,10 @@ MASTER_SITE_NETBSD+=	\
 	ftp://ftp.iastate.edu/pub/netbsd/packages/distfiles/%SUBDIR%/ \
 	ftp://netbsd.secsup.org/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.plig.net/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
-     ftp://ftp.proxad.net/mirrors/ftp.netbsd.org/packages/distfiles/%SUBDIR%/\
+	ftp://ftp.proxad.net/mirrors/ftp.netbsd.org/packages/distfiles/%SUBDIR%/\
 	ftp://ftp.weird.com/pub/NetBSD/distfiles/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/unix/NetBSD/packages/distfiles/%SUBDIR%/ \
-     ftp://sunsite.rediris.es/sites/ftp.netbsd.org/packages/distfiles/%SUBDIR%/\
+	ftp://sunsite.rediris.es/sites/ftp.netbsd.org/packages/distfiles/%SUBDIR%/\
 	ftp://ftp.funet.fi/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.cz.netbsd.org/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.unina.it/pub/Unix/NetBSD/packages/distfiles/%SUBDIR%/ \
@@ -1142,15 +1142,15 @@ MASTER_SITE_REDHAT_LINUX+= \
 	ftp://ftp.uci.edu/mirrors/redhat/linux/%SUBDIR%/ \
 	ftp://mirror.cs.wisc.edu/pub/mirrors/linux/redhat/%SUBDIR%/ \
 	ftp://ftp.redhat.com/pub/redhat/linux/%SUBDIR%/ \
-     ftp://ftp.crc.ca/pub/systems/linux/redhat/ftp.redhat.com/linux/%SUBDIR%/ \
-     ftp://ftp.univie.ac.at/systems/linux/ftp.redhat.com/redhat/linux/%SUBDIR%/\
+	ftp://ftp.crc.ca/pub/systems/linux/redhat/ftp.redhat.com/linux/%SUBDIR%/ \
+	ftp://ftp.univie.ac.at/systems/linux/ftp.redhat.com/redhat/linux/%SUBDIR%/\
 	ftp://ftp.redhat.de/pub/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.lip6.fr/pub/linux/distributions/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.inet.it/pub/Linux/redhat/%SUBDIR%/ \
 	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.icm.edu.pl/pub/linux/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.redhat.com/pub/redhat/linux/%SUBDIR%/ \
-     ftp://ftp.cs.nott.ac.uk/Mirrors/ftp.redhat.com/pub/redhat/linux/%SUBDIR%/ \
+	ftp://ftp.cs.nott.ac.uk/Mirrors/ftp.redhat.com/pub/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.carrier.kiev.ua/pub/Linux/RedHat/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.riken.go.jp/pub/Linux/redhat/releases/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/pub/Linux/packages/RedHat/redhat/linux/%SUBDIR%/ \
