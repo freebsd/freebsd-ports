@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-Size
-PORTVERSION=	0.59
+PORTVERSION=	0.63
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Devel
@@ -28,4 +28,10 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=		Need perl 5.6.1, try installing lang/perl5
+.endif
+
+.include <bsd.port.post.mk>
