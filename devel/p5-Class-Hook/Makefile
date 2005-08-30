@@ -25,10 +25,8 @@ MAN3=			Class::Hook.3
 
 ARCH_PERL=		${SITE_PERL}/${PERL_ARCH}
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${PERL} -pi -e 's/^our (\S+)/use vars qw($$1); $$1/' \
+		${WRKSRC}/lib/Class/Hook.pm
 
-.if ${OSVERSION} < 500000
-BROKEN=			"Does not compile"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
