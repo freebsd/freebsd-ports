@@ -1,0 +1,20 @@
+--- src/dlg-scale-image.c.orig	Tue Aug 30 15:32:36 2005
++++ src/dlg-scale-image.c	Tue Aug 30 20:34:34 2005
+@@ -182,7 +182,7 @@
+ 						 w_spinbutton_value_changed,
+ 						 data);
+ 
+-		gtk_spin_button_set_value (GTK_SPIN_BUTTON (data->s_new_width_spinbutton), round (width));
++		gtk_spin_button_set_value (GTK_SPIN_BUTTON (data->s_new_width_spinbutton), rint (width));
+ 		
+ 		g_signal_handlers_unblock_by_func (data->s_new_width_spinbutton,
+ 						   w_spinbutton_value_changed,
+@@ -215,7 +215,7 @@
+ 						 h_spinbutton_value_changed,
+ 						 data);
+ 
+-		gtk_spin_button_set_value (GTK_SPIN_BUTTON (data->s_new_height_spinbutton), round (height));
++		gtk_spin_button_set_value (GTK_SPIN_BUTTON (data->s_new_height_spinbutton), rint (height));
+ 
+ 		g_signal_handlers_unblock_by_func (data->s_new_height_spinbutton,
+ 						   h_spinbutton_value_changed,

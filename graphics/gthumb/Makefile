@@ -38,7 +38,7 @@ LIB_DEPENDS+=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 .endif
 
 .if ${OSVERSION} < 500000
-BROKEN=		"does not compile, requires round() in libm"
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-round.diff
 .endif
 
 .include <bsd.port.post.mk>
