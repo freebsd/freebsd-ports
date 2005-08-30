@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	codeworker
-PORTVERSION=	3.12
+PORTVERSION=	4.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://codeworker.free.fr/downloads/
 DISTNAME=	CodeWorker_SRC${PORTVERSION:S/./_/g}
@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/CodeWorker${PORTVERSION:S/./_/g}
 USE_ZIP=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CXX}" CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" LFLAGS="-lm"
+ALL_TARGET=	build
 
 CFLAGS+=	-Dstricmp=strcasecmp
 
