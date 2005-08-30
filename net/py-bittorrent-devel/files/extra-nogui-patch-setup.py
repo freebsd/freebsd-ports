@@ -11,3 +11,11 @@
                            "launchmany-curses", "launchmany-console",
                                                 "changetracker-console",
                                                 "torrentinfo-console",
+@@ -53,5 +53,5 @@
+     translations.append (("%s/%s/LC_MESSAGES"          % (locale_root, l),
+                           ["locale/%s/LC_MESSAGES/bittorrent.mo" % l]))
+ 
+-data_files = [ (img_root        , glob.glob('images/*png')+['images/bittorrent.ico',]),
+-               (img_root+'/logo', glob.glob('images/logo/bittorrent_[0-9]*.png')     ),
++data_files = [ 
++               
