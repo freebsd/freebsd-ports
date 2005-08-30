@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gthumb
-PORTVERSION=	2.6.6
+PORTVERSION=	2.6.7
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.6
@@ -33,8 +33,12 @@ MAN1=		gthumb.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GPHOTO2) || exists(${LOCALBASE}/lib/libgphoto2.so.2)
+.if !defined(WITHOUT_GPHOTO2) || exists(${LOCALBASE}/lib/libgphoto2.so.2)
 LIB_DEPENDS+=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
+.endif
+
+.if ${OSVERSION} < 500000
+BROKEN=		"does not compile, requires round() in libm"
 .endif
 
 .include <bsd.port.post.mk>
