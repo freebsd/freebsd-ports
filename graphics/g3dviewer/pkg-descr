@@ -9,9 +9,12 @@ G3DViewer is a 3D file viewer for GTK+ supporting a variety of file types:
    - 3D Metafile (.3dmf, .3mf, .b3d)
    - Caligari TrueSpace Objects (.cob)
    - Quick3D Objects & Scenes (.q3o, q3s)
+   - VRML 1.0 files (.wrl, .vrml) (still buggy)
+   - AC3D objects (.ac, .acc)
 
 Some of the features are:
    - Wireframe mode
+   - Texture support
    - Specular lighting (not really nice at the moment)
    - changable background color :)
 

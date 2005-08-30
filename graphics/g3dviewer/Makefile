@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	g3dviewer
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://automagically.de/files/
 
@@ -28,11 +28,7 @@ CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|DBG_CFLAGS="-O2"|DBG_CFLAGS=""|g ; \
-		 s|$$datadir/$$PACKAGE/|$$libdir/$$PACKAGE/|g' ${WRKSRC}/configure
-.for file in plugins/image/Makefile.in plugins/import/Makefile.in
-	@${REINPLACE_CMD} -e 's|= $$(pkgdatadir)|= $$(pkglibdir)|g ; \
-		 s|= -Wall|= -fPIC -Wall|g' ${WRKSRC}/${file}
-.endfor
+	@${REINPLACE_CMD} -e \
+		's|DBG_CFLAGS="-O2"|DBG_CFLAGS=""|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
