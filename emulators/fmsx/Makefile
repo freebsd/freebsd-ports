@@ -16,6 +16,7 @@ DISTFILES=	fMSX30.tar.Z:code \
 		MSX2PEXT.ROM:rom FMPAC.ROM:rom DISK.ROM:rom MSXDOS2.ROM:rom \
 		PAINTER.ROM:rom KANJI.ROM:rom
 DIST_SUBDIR=	fmsx30
+EXTRACT_ONLY=	fMSX30.tar.Z
 
 MAINTAINER=	dk@farm.org
 COMMENT=	The Portable MSX/MSX2/MSX2+ Emulator
