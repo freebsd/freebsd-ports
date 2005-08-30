@@ -18,4 +18,5 @@ bin/munger
 %%DATADIR%%/library.munger
 %%DATADIR%%/transform.munger
 %%DATADIR%%/view.munger
-@dirrm %%DATADIR%%/
+%%DATADIR%%/tk.munger
+@dirrm %%DATADIR%%
