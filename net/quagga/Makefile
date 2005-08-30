@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	quagga
-PORTVERSION=	0.98.3
-PORTREVISION=	2
+PORTVERSION=	0.98.5
+PORTREVISION=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/
 
@@ -22,9 +22,9 @@ GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 USE_REINPLACE=		yes
 INSTALLS_SHLIB=		yes
-USE_AUTOCONF_VER=	259
-USE_LIBTOOL_VER=	15
 USE_PERL5_BUILD=	yes
+USE_LIBTOOL_VER=	15
+LIBTOOLFILES=		configure
 
 MAN1=		vtysh.1
 MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
@@ -41,9 +41,12 @@ OPTIONS=	ISISD		"Enable experimental ISIS daemon"	off \
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS+=--includedir=${PREFIX}/include --enable-exampledir=${PREFIX}/share/examples/quagga
+CONFIGURE_ARGS+=--includedir=${PREFIX}/include --enable-exampledir=${PREFIX}/share/examples/quagga \
+		--program-transform-name=""
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
+		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
+		LIBTOOL_VERSION=${LIBTOOL_VERSION}
 
 .if !defined(ENABLE_USER)
 ENABLE_USER=quagga
@@ -125,10 +128,10 @@ LIB_DEPENDS+=netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp:install
 
 .if defined(WITH_TCPMD5) && !defined(WITHOUT_TCPMD5)
 .if ${OSVERSION} < 491000
-BROKEN=	This version of FreeBSD does not have TCP MD5 signature support
+BROKEN=	"This version of FreeBSD does not have TCP MD5 signature support"
 .endif
-CONFIGURE_ARGS+=--enable-tcp-signature
-EXTRA_PATCHES+=${PATCHDIR}/extra-tcpmd5-patch-bgpd::bgp_network.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd::bgp_vty.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd::bgpd.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd::bgpd.h ${PATCHDIR}/extra-tcpmd5-patch-configure.ac ${PATCHDIR}/extra-tcpmd5-patch-lib::sockopt.c ${PATCHDIR}/extra-tcpmd5-patch-lib::sockopt.h
+EXTRA_PATCHES+=${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgp_network.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgp_vty.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgpd.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgpd.h ${PATCHDIR}/extra-tcpmd5-patch-lib-sockopt.c ${PATCHDIR}/extra-tcpmd5-patch-lib-sockopt.h
+CFLAGS+=	-DQUAGGA_TCP_MD5SIG
 .endif
 
 USE_RC_SUBR=	watchquagga.sh
