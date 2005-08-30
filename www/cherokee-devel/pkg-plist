@@ -1,10 +1,12 @@
 bin/cget
 bin/cherokee-config
 bin/cherokee-panic
+bin/cherokee_logrotate
 etc/cherokee/advanced.conf
 etc/cherokee/cherokee.conf
 etc/cherokee/icons.conf
 etc/cherokee/mime.conf
+etc/cherokee/mods-available/admin
 etc/cherokee/mods-available/ssl
 etc/cherokee/sites-available/default
 etc/cherokee/sites-available/example.com
@@ -29,6 +31,7 @@ include/cherokee/macros.h
 include/cherokee/mime.h
 include/cherokee/module.h
 include/cherokee/module_loader.h
+include/cherokee/resolv_cache.h
 include/cherokee/server.h
 include/cherokee/table.h
 include/cherokee/url.h
@@ -93,7 +96,7 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/icons/unknown.png
 %%DATADIR%%/mime_types.txt
 %%PORTDOCS%%%%DOCSDIR%%/Behavior_configuration.html
-%%PORTDOCS%%%%DOCSDIR%%/CGI_Executing.html
+%%PORTDOCS%%%%DOCSDIR%%/CGI_executing.html
 %%PORTDOCS%%%%DOCSDIR%%/Cget.html
 %%PORTDOCS%%%%DOCSDIR%%/Common_behavior.html
 %%PORTDOCS%%%%DOCSDIR%%/Compiling_and_Installing.html
