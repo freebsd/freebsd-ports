@@ -1,11 +1,26 @@
---- src/Makefile.in.orig	Wed May 21 05:56:37 2003
-+++ src/Makefile.in	Wed May 21 12:55:31 2003
-@@ -809,7 +809,7 @@
+--- src/Makefile.in.orig	Sun Aug  7 17:56:40 2005
++++ src/Makefile.in	Sun Aug  7 22:02:49 2005
+@@ -878,12 +878,12 @@
  # The libmath.cpp source file is generated as follows
  
- $(srcdir)/libmath.cpp: $(top_srcdir)/scripts/base.rep/math.ys yacas$(EXEEXT)
+ $(srcdir)/libmath.cpp: $(top_srcdir)/scripts/base.rep/math.ys yacas$(EXEEXT) check_plugins
 -	(cd ../scripts && make packages.ys corefunctions.ys)
 +	(cd ../scripts && $(MAKE) packages.ys corefunctions.ys)
  	echo "Set(LoadPlugIns,False);Use(\"yacasinit.ys\");" > compileinit.txt
  	echo "CompileCpp(\"base.rep/math.ys\",\"libmath\");" > compile.txt
  	./yacas$(EXEEXT) --rootdir  $(top_srcdir)/scripts -pc --init compileinit.txt compile.txt
+ 	./check_plugins
+-	make
++	$(MAKE)
+ 
+ $(srcdir)/platmath.cpp: fastprimes.c
+ 
+@@ -917,7 +917,7 @@
+ 
+ pcre_plugin_stub.cpp:plugin_stub_gen $(srcdir)/plugins_available.h
+ 	./plugin_stub_gen pcre_plugin_stub.cpp ../plugins/pcre/plugin.cpp
+-	cd ../plugins/pcre/ ; make chartables.c
++	cd ../plugins/pcre/ ; $(MAKE) chartables.c
+ 
+ filescanner_stub.cpp:plugin_stub_gen $(srcdir)/plugins_available.h
+ 	./plugin_stub_gen filescanner_stub.cpp filescanner.cpp

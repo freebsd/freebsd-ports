@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	yacas
-PORTVERSION=	1.0.57
-PORTREVISION=	1
+PORTVERSION=	1.0.58
 CATEGORIES=	math
 MASTER_SITES=	http://yacas.sourceforge.net/backups/
 
@@ -39,7 +38,7 @@ PLIST_SUB+=	GMP="@comment " NOGMP=""
 
 .if defined(WITH_X11)
 USE_GL=		yes
-CONFIGURE_ARGS+=--with-x
+CONFIGURE_ARGS+=	--with-x
 PLIST_SUB+=	X11=""
 CPPFLAGS+=	-I${X11BASE}/include
 LDFLAGS+=	-L${X11BASE}/lib
