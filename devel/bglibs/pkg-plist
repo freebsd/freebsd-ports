@@ -1,4 +1,6 @@
 @comment $FreeBSD$
+bin/bg-installer
+bin/crc-gentab
 include/bglibs/adt/common.h
 include/bglibs/adt/ghash.h
 include/bglibs/adt/gqueue.h
