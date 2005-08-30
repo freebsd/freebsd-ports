@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mc
-PORTVERSION=	4.6.0
-PORTREVISION=	15
+PORTVERSION=	4.6.1
 CATEGORIES=	misc shells
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file/managers/mc/
@@ -80,13 +79,13 @@ CONFIGURE_ARGS+=--without-subshell
 
 .if defined(WITH_PERL_MODULES) || !(defined(WITHOUT_PERL_MODULES) || defined(MINIMAL))
 .if ${PERL_LEVEL} < 500800
-RUN_DEPENDS=    ${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .endif
 .endif
 
 MAN1=		mc.1 mcedit.1 mcview.1
 _MAN1=		mc.1
-_MANLANG=	es hu it pl ru.KOI8-R
+_MANLANG=	es hu it pl sr
 .for lang in ${_MANLANG}
 _MANPAGES+=	${_MAN1:S%^%${MAN1PREFIX}/man/${lang}/man1/%}
 .endfor

@@ -1,6 +1,6 @@
-bin/mcmfmt
 bin/mc
 %%EDITOR%%bin/mcedit
+bin/mcmfmt
 bin/mcview
 bin/midc
 share/locale/az/LC_MESSAGES/mc.mo
@@ -19,7 +19,9 @@ share/locale/hu/LC_MESSAGES/mc.mo
 share/locale/it/LC_MESSAGES/mc.mo
 share/locale/ja/LC_MESSAGES/mc.mo
 share/locale/ko/LC_MESSAGES/mc.mo
+share/locale/lt/LC_MESSAGES/mc.mo
 share/locale/lv/LC_MESSAGES/mc.mo
+share/locale/mn/LC_MESSAGES/mc.mo
 share/locale/nl/LC_MESSAGES/mc.mo
 share/locale/no/LC_MESSAGES/mc.mo
 share/locale/pl/LC_MESSAGES/mc.mo
@@ -29,6 +31,7 @@ share/locale/ro/LC_MESSAGES/mc.mo
 share/locale/ru/LC_MESSAGES/mc.mo
 share/locale/sk/LC_MESSAGES/mc.mo
 share/locale/sl/LC_MESSAGES/mc.mo
+share/locale/sr/LC_MESSAGES/mc.mo
 share/locale/sv/LC_MESSAGES/mc.mo
 share/locale/ta/LC_MESSAGES/mc.mo
 share/locale/tr/LC_MESSAGES/mc.mo
@@ -54,6 +57,7 @@ share/mc/extfs/debd
 share/mc/extfs/dpkg
 share/mc/extfs/extfs.ini
 share/mc/extfs/hp48
+share/mc/extfs/iso9660
 share/mc/extfs/lslR
 share/mc/extfs/mailfs
 share/mc/extfs/patchfs
@@ -78,6 +82,7 @@ share/mc/mc.hint.it
 share/mc/mc.hint.nl
 share/mc/mc.hint.pl
 share/mc/mc.hint.ru
+share/mc/mc.hint.sr
 share/mc/mc.hint.uk
 share/mc/mc.hint.zh
 share/mc/mc.hlp
@@ -86,21 +91,29 @@ share/mc/mc.hlp.hu
 share/mc/mc.hlp.it
 share/mc/mc.hlp.pl
 share/mc/mc.hlp.ru
+share/mc/mc.hlp.sr
 share/mc/mc.lib
 share/mc/mc.menu
+share/mc/mc.menu.sr
 share/mc/syntax/Syntax
 share/mc/syntax/ada95.syntax
+share/mc/syntax/aspx.syntax
+share/mc/syntax/assembler.syntax
 share/mc/syntax/c.syntax
 share/mc/syntax/changelog.syntax
+share/mc/syntax/cs.syntax
 share/mc/syntax/diff.syntax
 share/mc/syntax/dos.syntax
+share/mc/syntax/eiffel.syntax
 share/mc/syntax/fortran.syntax
 share/mc/syntax/html.syntax
+share/mc/syntax/idl.syntax
 share/mc/syntax/java.syntax
 share/mc/syntax/js.syntax
 share/mc/syntax/latex.syntax
 share/mc/syntax/lisp.syntax
 share/mc/syntax/lsm.syntax
+share/mc/syntax/lua.syntax
 share/mc/syntax/m4.syntax
 share/mc/syntax/mail.syntax
 share/mc/syntax/makefile.syntax
@@ -111,7 +124,9 @@ share/mc/syntax/pascal.syntax
 share/mc/syntax/perl.syntax
 share/mc/syntax/php.syntax
 share/mc/syntax/po.syntax
+share/mc/syntax/povray.syntax
 share/mc/syntax/python.syntax
+share/mc/syntax/ruby.syntax
 share/mc/syntax/sh.syntax
 share/mc/syntax/slang.syntax
 share/mc/syntax/smalltalk.syntax
@@ -123,29 +138,7 @@ share/mc/syntax/tcl.syntax
 share/mc/syntax/texinfo.syntax
 share/mc/syntax/unknown.syntax
 share/mc/syntax/xml.syntax
-share/mc/term/README.xterm
-share/mc/term/ansi.ti
-share/mc/term/linux.ti
-share/mc/term/vt100.ti
-share/mc/term/xterm.ad
-share/mc/term/xterm.tcap
-share/mc/term/xterm.ti
 @dirrm share/mc/syntax
-@dirrm share/mc/term
 @dirrm share/mc/extfs
 @dirrm share/mc/bin
 @dirrm share/mc
-@unexec rmdir %D/share/locale/wa/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/wa 2>/dev/null || true
-@unexec rmdir %D/man/es/man1 2>/dev/null || true
-@unexec rmdir %D/man/es/cat1 2>/dev/null || true
-@unexec rmdir %D/man/es 2>/dev/null || true
-@unexec rmdir %D/man/hu/man1 2>/dev/null || true
-@unexec rmdir %D/man/hu/cat1 2>/dev/null || true
-@unexec rmdir %D/man/hu 2>/dev/null || true
-@unexec rmdir %D/man/it/man1 2>/dev/null || true
-@unexec rmdir %D/man/it/cat1 2>/dev/null || true
-@unexec rmdir %D/man/it 2>/dev/null || true
-@unexec rmdir %D/man/pl/man1 2>/dev/null || true
-@unexec rmdir %D/man/pl/cat1 2>/dev/null || true
-@unexec rmdir %D/man/pl 2>/dev/null || true
