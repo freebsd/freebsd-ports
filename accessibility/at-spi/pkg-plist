@@ -46,10 +46,6 @@ libdata/pkgconfig/cspi-1.0.pc
 libdata/pkgconfig/libloginhelper-1.0.pc
 libdata/pkgconfig/libspi-1.0.pc
 libexec/at-spi-registryd
-share/doc/at-spi-cspi/home.png
-share/doc/at-spi-cspi/left.png
-share/doc/at-spi-cspi/right.png
-share/doc/at-spi-cspi/up.png
 share/gnome/idl/at-spi-1.0/Accessibility.idl
 share/gnome/idl/at-spi-1.0/Accessibility_Accessible.idl
 share/gnome/idl/at-spi-1.0/Accessibility_Action.idl
@@ -72,7 +68,6 @@ share/gnome/idl/at-spi-1.0/Accessibility_Table.idl
 share/gnome/idl/at-spi-1.0/Accessibility_Text.idl
 share/gnome/idl/at-spi-1.0/Accessibility_Value.idl
 @dirrm share/gnome/idl/at-spi-1.0
-@dirrm share/doc/at-spi-cspi
 @dirrm lib/orbit-2.0
 @dirrm include/at-spi-1.0/login-helper
 @dirrm include/at-spi-1.0/libspi
