@@ -371,6 +371,7 @@
     SUBDIR += popper
     SUBDIR += poppwd
     SUBDIR += poppy
+    SUBDIR += popular
     SUBDIR += postfinger
     SUBDIR += postfix
     SUBDIR += postfix-current

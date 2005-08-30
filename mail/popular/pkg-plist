@@ -1,0 +1,38 @@
+bin/pcheck
+bin/pstatus
+bin/pdeliver
+bin/pcontrol
+bin/ptestpdm
+etc/popular/pproxy.rc.sample
+etc/popular/pserv.rc.sample
+include/popular/ctrl.h
+include/popular/daemon.h
+include/popular/info.h
+include/popular/io.h
+include/popular/mailbox.h
+include/popular/net.h
+include/popular/pconfig.h
+include/popular/pdm.h
+include/popular/pop3.h
+include/popular/popular.h
+include/popular/pproxy.h
+include/popular/pserv.h
+include/popular/ringd.h
+include/popular/sig.h
+include/popular/smtp_after_pop.h
+include/popular/uds.h
+include/popular/util.h
+include/popular/xlog.h
+lib/popular/libpdm_any-1.5.5.so
+lib/popular/libpdm_any.so
+lib/popular/libpdm_master-1.5.5.so
+lib/popular/libpdm_master.so
+%%WITH_DB4%%lib/popular/libpdm_db4-1.5.5.so
+%%WITH_DB4%%lib/popular/libpdm_db4.so
+sbin/pcheckd
+sbin/pproxy
+sbin/pserv
+sbin/ringd
+@dirrm include/popular
+@dirrm lib/popular
+@unexec rmdir %D/etc/popular 2>/dev/null || true

@@ -1,0 +1,27 @@
+--- src/Makefile.in.orig	Sat Aug 21 12:26:23 2004
++++ src/Makefile.in	Mon Jul 11 16:47:17 2005
+@@ -132,7 +132,7 @@
+ have_sgml = @have_sgml@
+ prefix = @prefix@
+ 
+-CFLAGS = -g -O2 -Wall
++CFLAGS += -Wall
+ 
+ #LDFLAGS = -static -lc_p
+ 
+@@ -166,13 +166,13 @@
+ 
+ LDADD = @LIB_STRL@ @LIB_GETOPT@
+ 
+-pproxy_LDADD = $(LDADD) @SSL_LIBS@ -ldl
++pproxy_LDADD = $(LDADD) @SSL_LIBS@
+ 
+ pserv_LDADD = $(LDADD) @SSL_LIBS@
+ 
+ pcontrol_LDADD = $(LDADD) @LIB_READLINE@
+ 
+-ptestpdm_LDADD = $(LDADD) -ldl
++ptestpdm_LDADD = $(LDADD)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
