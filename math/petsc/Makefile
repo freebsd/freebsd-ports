@@ -163,7 +163,7 @@ RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 .if !defined(WITHOUT_SPOOLES)
 . if exists(${LOCALBASE}/lib/libspooles.a)	\
   && !exists(${LOCALBASE}/include/spooles/MPI/spoolesMPI.h)
-BROKEN=	Please deinstall spooles and reinstall spooles-mpich
+BROKEN=	"Please deinstall spooles and reinstall spooles-mpich"
 . else
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libspooles.a:${PORTSDIR}/math/spooles-mpich
 . endif
