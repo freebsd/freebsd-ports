@@ -693,7 +693,6 @@
     SUBDIR += py-pullparser
     SUBDIR += py-scgi
     SUBDIR += py-twistedWeb
-    SUBDIR += py-websvcs
     SUBDIR += py-webware
     SUBDIR += py-webware-component
     SUBDIR += pyblosxom
