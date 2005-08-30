@@ -9,9 +9,10 @@
 PORTNAME=	le
 PORTVERSION=	1.12.5
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/util/texteditors/
+MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/util/texteditors/ \
+		http://core.inec.ru/~az/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	az@inec.ru
 COMMENT=	Text editor
 
 USE_BZIP2=	yes
@@ -19,11 +20,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		le.1
+PORTDOCS=	FEATURES HISTORY NEWS README TODO
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in FEATURES HISTORY NEWS README TODO
+	${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
