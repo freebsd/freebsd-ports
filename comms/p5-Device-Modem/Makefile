@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Device-Modem
-PORTVERSION=	1.43
+PORTVERSION=	1.44
 CATEGORIES=	comms perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Device
@@ -21,7 +21,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		Device::Modem.3 Device::Modem::Log::File.3 \
-		Device::Modem::Log::Syslog.3 Device::Modem::Protocol::Xmodem.3
+		Device::Modem::Log::Syslog.3 Device::Modem::Protocol::Xmodem.3 \
+		Device::Modem::UsRobotics.3
 
 post-install:
 .ifndef(NOPORTDOCS)
