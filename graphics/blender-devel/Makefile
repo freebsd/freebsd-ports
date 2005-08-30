@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.36
+PORTVERSION=	2.37a
 CATEGORIES=	graphics games
 MASTER_SITES=	http://public.planetmirror.com/pub/blender/source/ \
 		http://download.blender.org/source/ \

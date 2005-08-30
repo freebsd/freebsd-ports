@@ -5,7 +5,7 @@
  	openal_include = ['/usr/include']
  	
 -elif sys.platform=='freebsd4' or sys.platform=='freebsd5':
-+elif sys.platform=='freebsd4' or sys.platform=='freebsd5' or sys.platform=='freebsd6':
++elif sys.platform=='freebsd4' or sys.platform=='freebsd5' or sys.platform=='freebsd6' or sys.platform=='freebsd7':
  	print "Building for FreeBSD"
  	use_international = 'false'
  	use_gameengine = 'false'
