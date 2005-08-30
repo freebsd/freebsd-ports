@@ -9477,6 +9477,7 @@ poppwd		ports/mail/poppwd
 poppy		ports/mail/poppy
 popt		ports/devel/popt
 poptop		ports/net/poptop
+popular		ports/mail/popular
 pork		ports/net/pork
 pornview	ports/graphics/pornview
 port-authoring-tools	ports/sysutils/port-authoring-tools
