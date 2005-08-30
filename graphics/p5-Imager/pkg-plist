@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Color/Float.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Expr/Assem.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/BBox.pm
@@ -9,6 +10,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Truetype.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Color.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Color/Table.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Cookbook.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Draw.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Engines.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Expr.pm
