@@ -12,6 +12,3 @@ exception fault.  If the DIE signal handler itself throws an exception,
 POE::Exceptions will shut the program down and bail out.
 
 WWW: http://search.cpan.org/dist/POE-Exceptions/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
