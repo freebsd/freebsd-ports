@@ -23,9 +23,11 @@ include/rdf_uri.h
 include/rdf_utf8.h
 include/redland.h
 lib/librasqal.a
+lib/librasqal.la
 lib/librasqal.so
 lib/librasqal.so.0
 lib/librdf.a
+lib/librdf.la
 lib/librdf.so
 lib/librdf.so.0
 libdata/pkgconfig/rasqal.pc
