@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Tester
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -39,7 +39,8 @@ RUN_DEPENDS+=	${BUILD_DEPENDS}
 .if ${PERL_LEVEL} < 500601
 post-patch:
 	@${PERL} -pi -e '$$_ = "" if /(use|no) warnings/g;' \
-		${WRKSRC}/lib/Test/Tester.pm ${WRKSRC}/lib/Test/Tester/Delegate.pm
+		${WRKSRC}/lib/Test/Tester.pm ${WRKSRC}/lib/Test/Tester/Delegate.pm \
+		${WRKSRC}/t/*
 .endif
 .endif
 
