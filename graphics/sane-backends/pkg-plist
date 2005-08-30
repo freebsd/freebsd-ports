@@ -20,6 +20,7 @@ etc/sane.d/dll.conf
 etc/sane.d/dmc.conf
 etc/sane.d/epson.conf
 etc/sane.d/fujitsu.conf
+etc/sane.d/genesys.conf
 %%GPHOTO2%%etc/sane.d/gphoto2.conf
 etc/sane.d/gt68xx.conf
 etc/sane.d/hp.conf
@@ -42,6 +43,7 @@ etc/sane.d/s9036.conf
 etc/sane.d/saned.conf
 etc/sane.d/sceptre.conf
 etc/sane.d/sharp.conf
+etc/sane.d/sm3840.conf
 etc/sane.d/snapscan.conf
 etc/sane.d/sp15c.conf
 etc/sane.d/st400.conf
@@ -97,6 +99,8 @@ lib/sane/libsane-epson.so
 lib/sane/libsane-epson.so.1
 lib/sane/libsane-fujitsu.so
 lib/sane/libsane-fujitsu.so.1
+lib/sane/libsane-genesys.so
+lib/sane/libsane-genesys.so.1
 %%GPHOTO2%%lib/sane/libsane-gphoto2.so
 %%GPHOTO2%%lib/sane/libsane-gphoto2.so.1
 lib/sane/libsane-gt68xx.so
@@ -143,6 +147,8 @@ lib/sane/libsane-sharp.so
 lib/sane/libsane-sharp.so.1
 %%USB%%lib/sane/libsane-sm3600.so
 %%USB%%lib/sane/libsane-sm3600.so.1
+lib/sane/libsane-sm3840.so
+lib/sane/libsane-sm3840.so.1
 lib/sane/libsane-snapscan.so
 lib/sane/libsane-snapscan.so.1
 lib/sane/libsane-sp15c.so
@@ -189,6 +195,7 @@ sbin/saned
 %%PORTDOCS%%%%DOCSDIR%%/README.unixware2
 %%PORTDOCS%%%%DOCSDIR%%/README.unixware7
 %%PORTDOCS%%%%DOCSDIR%%/README.windows
+%%PORTDOCS%%%%DOCSDIR%%/README.zeta
 %%PORTDOCS%%%%DOCSDIR%%/canon/canon.changes
 %%PORTDOCS%%%%DOCSDIR%%/canon/canon.install2700F.txt
 %%PORTDOCS%%%%DOCSDIR%%/gt68xx/gt68xx.CHANGES
@@ -256,6 +263,7 @@ sbin/saned
 %%NLS%%share/locale/it/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/no/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/sane-backends.mo
