@@ -13,10 +13,6 @@ MASTER_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	KAME racoon IKE daemon
 
-.if !exists(/usr/lib/libipsec.so.1) && !exists(/lib/libipsec.so.1)
-BROKEN=		"You must upgrade the OS"
-.endif
-
 USE_RC_SUBR=	YES
 USE_OPENSSL=	YES
 
