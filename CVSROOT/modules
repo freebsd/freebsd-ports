@@ -6491,6 +6491,7 @@ mysql-administrator	ports/databases/mysql-administrator
 mysql-connector-java	ports/databases/mysql-connector-java
 mysql-editor	ports/databases/mysql-editor
 mysql-navigator	ports/databases/mysql-navigator
+mysql2odbc	ports/databases/mysql2odbc
 mysql2pgsql	ports/databases/mysql2pgsql
 mysql323-client	ports/databases/mysql323-client
 mysql323-scripts	ports/databases/mysql323-scripts
@@ -6989,6 +6990,8 @@ oqtencoder	ports/multimedia/oqtencoder
 oqtplayer	ports/multimedia/oqtplayer
 or-aspell	ports/textproc/or-aspell
 oracle7-client	ports/databases/oracle7-client
+oracle8-client	ports/databases/oracle8-client
+oracle_odbc_driver	ports/databases/oracle_odbc_driver
 orange		ports/archivers/orange
 orbital_eunuchs_sniper	ports/games/orbital_eunuchs_sniper
 orbitcpp	ports/devel/orbitcpp
