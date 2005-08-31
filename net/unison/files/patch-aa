@@ -1,27 +1,31 @@
---- Makefile.orig	Tue Aug 28 16:27:01 2001
-+++ Makefile	Wed Aug 29 09:15:09 2001
-@@ -62,12 +62,12 @@
+--- Makefile.orig	Sat Aug 27 15:49:56 2005
++++ Makefile	Sat Aug 27 15:51:55 2005
+@@ -68,15 +68,15 @@
  ######################################################################
  # Installation
  
 -INSTALLDIR = $(HOME)/bin/
 +INSTALLDIR = ${PREFIX}/bin/
  
- install: $(NAME)$(EXEC_EXT)
+ # This has two names because on OSX the file INSTALL shadows the target 'install'!
+ install: doinstall
+ 
+ doinstall: $(NAME)$(EXEC_EXT)
 -	-mv $(INSTALLDIR)/$(NAME)$(EXEC_EXT) /tmp/$(NAME)-$(shell echo $$$$)
+-	cp $(NAME)$(EXEC_EXT) $(INSTALLDIR)
+-	cp $(NAME)$(EXEC_EXT) $(INSTALLDIR)$(NAME)-$(MAJORVERSION)$(EXEC_EXT)
 +#	-mv $(INSTALLDIR)/$(NAME)$(EXEC_EXT) /tmp/$(NAME)-$(shell echo $$$$)
- 	cp $(NAME)$(EXEC_EXT) $(INSTALLDIR)
--	cp $(NAME)$(EXEC_EXT) $(INSTALLDIR)$(NAME)-$(VERSION)$(EXEC_EXT)
-+#	cp $(NAME)$(EXEC_EXT) $(INSTALLDIR)$(NAME)-$(VERSION)$(EXEC_EXT)
- 	@# If we're running at Penn, install a public version too
- 	if [ -d /plclub/bin ]; then cp $(NAME)$(EXEC_EXT) /plclub/bin/$(NAME)-$(VERSION)$(EXEC_EXT); fi
++	${BSD_INSTALL_PROGRAM} $(NAME)$(EXEC_EXT) $(INSTALLDIR)
++#	cp $(NAME)$(EXEC_EXT) $(INSTALLDIR)$(NAME)-$(MAJORVERSION)$(EXEC_EXT)
  
-@@ -231,7 +231,7 @@
+ 
+ ######################################################################
+@@ -353,7 +353,7 @@
+ .PHONY: tags
+ 
  tags:
- 	-$(ETAGS) *.ml *.mli *.txt
+-	-$(ETAGS) *.mli */*.mli *.ml */*.ml *.m */*.m *.c */*.c *.txt
++	-$(ETAGS) *.mli */*.mli *.ml */*.ml */*.m *.c */*.c *.txt
  
--all:: TAGS
-+#all:: TAGS
+ all:: TAGS
  
- TAGS: 
- 	$(MAKE) tags

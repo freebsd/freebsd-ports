@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	unison
-PORTVERSION=	2.10.2
+PORTVERSION=	2.13.16
 CATEGORIES=	net
-MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/beta-test/${DIST_SUBDIR}/
+MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/
 DISTFILES=	${EXTRACT_ONLY} ${EXTRA_DOCS}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
