@@ -18,6 +18,8 @@ COMMENT=	Powerful 100% pure Java text editor
 RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jdk13
 
+BROKEN=		Incomplete pkg-plist
+
 NO_WRKSUBDIR=	yes
 USE_XLIB=	yes
 USE_REINPLACE=	yes
