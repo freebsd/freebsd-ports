@@ -1,0 +1,11 @@
+bin/colorscheme
+share/gnome/applications/colorscheme.desktop
+share/gnome/colorscheme/ui/colorscheme.ui
+share/gnome/pixmaps/colorscheme-icon.png
+share/gnome/pixmaps/colorscheme-logo.png
+share/gnome/pixmaps/darken.png
+share/gnome/pixmaps/desaturate.png
+share/gnome/pixmaps/lighten.png
+share/gnome/pixmaps/saturate.png
+@dirrm share/gnome/colorscheme/ui
+@dirrm share/gnome/colorscheme

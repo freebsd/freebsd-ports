@@ -156,6 +156,7 @@
     SUBDIR += gltt
     SUBDIR += gmt
     SUBDIR += gnofract4d
+    SUBDIR += gnome-colorscheme
     SUBDIR += gnomecanvas
     SUBDIR += gnomeiconedit
     SUBDIR += gnustep-slideshow
