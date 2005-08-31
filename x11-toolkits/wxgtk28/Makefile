@@ -65,7 +65,6 @@ INSTALLS_SHLIB=	yes
 .endif # *-common
 
 .if ${WXGTK_FLAVOR:M*-contrib*} != ""
-.if ${WXGTK_FLAVOR} != "gtk2-contrib-utils"
 BUILD_WRKSRC=	${WRKSRC}/contrib
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
@@ -85,7 +84,6 @@ pre-configure:
 		-e "s|@CPPFLAGS@||"
 
 .endif # !gtk2-contrib-common
-.endif # !gtk2-contrib-utils
 .endif # *-contrib*
 
 .include <bsd.port.pre.mk>
