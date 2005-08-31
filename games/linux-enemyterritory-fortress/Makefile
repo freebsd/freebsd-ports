@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	enemyterritory-fortress
-PORTVERSION=	1.4
-PORTREVISON=	1
+PORTVERSION=	1.6
 CATEGORIES=	games linux
-MASTER_SITES=	http://ftp.games.skynet.be/pub/wolfenstein/etf/ \
-		http://www.playlinux.net/pub/files/native/
+MASTER_SITES=	http://www.etf-center.com/files/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	etf_${PORTVERSION}-english-2
 EXTRACT_SUFX=	.run
@@ -23,15 +21,16 @@ RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
-NO_PACKAGE=	Distfile is 249MB, set FORCE_PACKAGE if you really want to build this package
+NO_PACKAGE=	Distfile is 263MB, set FORCE_PACKAGE if you really want to build this package
 RESTRICTED=	Redistribution is limited, see license
 NO_WRKSUBDIR=	yes
 ETDIR=		${PREFIX}/lib/enemyterritory
+PORTDOCS=	*
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@(cd ${WRKSRC} && \
-		${TAIL} -c +8497 ${DISTDIR}/${DISTFILES} | ${TAR} zxf - && \
+		${TAIL} -c +8768 ${DISTDIR}/${DISTFILES} | ${TAR} zxf - && \
 		${TAR} zxf etf.tar.gz && \
 		${TAR} zxf cfgnormal.tar.gz)
 
@@ -47,15 +46,12 @@ do-install:
 .endfor
 
 	${MKDIR} ${ETDIR}/etf
-.for f in autoexec.cfg etconfig.cfg etf_dissect.pk3 etf_pak0.pk3 \
-	etf_pak1.pk3 etf_pak2.pk3 etf_pak3.pk3 etf_server.cfg \
-	mp_bin.pk3 preset_normal.cfg servercache.dat
+.for f in autoexec.cfg etconfig.cfg etf_server.cfg preset_normal.cfg \
+	servercache.dat *.pk3
 	${INSTALL_DATA} ${WRKSRC}/etf/${f} ${ETDIR}/etf
 .endfor
-.for f in cgame.mp.i386.so omnibot_etf.so qagame.mp.i386.so ui.mp.i386.so
-	${INSTALL} -o ${LIBOWN} -g ${LIBGRP} -m ${LIBMODE} ${WRKSRC}/etf/${f} \
+	${INSTALL} -o ${LIBOWN} -g ${LIBGRP} -m ${LIBMODE} ${WRKSRC}/etf/*.so \
 		${ETDIR}/etf
-.endfor
 
 .for d in classconfigs nav scripts ui/usermenu video
 	${MKDIR} ${ETDIR}/etf/${d}
@@ -72,9 +68,12 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for f in LICENSE README etf/ChangeLog
+.for f in LICENSE README README.etf
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
+	cd ${WRKSRC}/etf/docs && \
+	${FIND} * -type d ! -empty -exec ${MKDIR} "${DOCSDIR}/guide/{}" \; && \
+	${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/guide/{}" \;
 .endif
 
 .include <bsd.port.mk>
