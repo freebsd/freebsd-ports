@@ -340,6 +340,7 @@
     SUBDIR += p5-Pod-Escapes
     SUBDIR += p5-Pod-POM
     SUBDIR += p5-Pod-Parser
+    SUBDIR += p5-Pod-ProjectDocs
     SUBDIR += p5-Pod-Simple
     SUBDIR += p5-Pod-Stripper
     SUBDIR += p5-Pod-Tree

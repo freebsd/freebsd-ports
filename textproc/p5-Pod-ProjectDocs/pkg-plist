@@ -1,0 +1,18 @@
+bin/pod2projdocs
+%%SITE_PERL%%/Pod/ProjectDocs.pm
+%%SITE_PERL%%/Pod/ProjectDocs/ArrowImage.pm
+%%SITE_PERL%%/Pod/ProjectDocs/CSS.pm
+%%SITE_PERL%%/Pod/ProjectDocs/Config.pm
+%%SITE_PERL%%/Pod/ProjectDocs/Doc.pm
+%%SITE_PERL%%/Pod/ProjectDocs/DocManager.pm
+%%SITE_PERL%%/Pod/ProjectDocs/File.pm
+%%SITE_PERL%%/Pod/ProjectDocs/IndexPage.pm
+%%SITE_PERL%%/Pod/ProjectDocs/Parser.pm
+%%SITE_PERL%%/Pod/ProjectDocs/Parser/PerlPod.pm
+%%SITE_PERL%%/Pod/ProjectDocs/Template.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/ProjectDocs/.packlist
+@dirrm %%SITE_PERL%%/Pod/ProjectDocs/Parser
+@dirrm %%SITE_PERL%%/Pod/ProjectDocs
+@unexec rmdir %D/%%SITE_PERL%%/Pod 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/ProjectDocs
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod 2>/dev/null || true
