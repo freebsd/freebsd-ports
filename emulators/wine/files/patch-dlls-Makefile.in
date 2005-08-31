@@ -1,0 +1,26 @@
+--- dlls/Makefile.in.orig	Fri Aug 26 14:05:12 2005
++++ dlls/Makefile.in	Tue Aug 30 23:16:02 2005
+@@ -172,7 +172,6 @@ BASEDIRS = \
+ 	winspool \
+ 	wintab32 \
+ 	wintrust \
+-	wldap32 \
+ 	wow32 \
+ 	wsock32 \
+ 	wtsapi32
+@@ -420,7 +419,6 @@ SYMLINKS_SO = \
+ 	winspool.drv.so \
+ 	wintab32.dll.so \
+ 	wintrust.dll.so \
+-	wldap32.dll.so \
+ 	wnaspi32.dll.so \
+ 	wow32.dll.so \
+ 	ws2_32.dll.so \
+@@ -1189,7 +1187,6 @@ IMPORT_LIBS = \
+ 	winspool/libwinspool.$(IMPLIBEXT) \
+ 	wintab32/libwintab32.$(IMPLIBEXT) \
+ 	wintrust/libwintrust.$(IMPLIBEXT) \
+-	wldap32/libwldap32.$(IMPLIBEXT) \
+ 	winaspi/libwnaspi32.$(IMPLIBEXT) \
+ 	wow32/libwow32.$(IMPLIBEXT) \
+ 	winsock/libws2_32.$(IMPLIBEXT) \
