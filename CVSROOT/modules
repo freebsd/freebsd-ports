@@ -12557,7 +12557,6 @@ wxgtk26		ports/x11-toolkits/wxgtk26
 wxgtk26-common	ports/x11-toolkits/wxgtk26-common
 wxgtk26-contrib	ports/x11-toolkits/wxgtk26-contrib
 wxgtk26-contrib-common	ports/x11-toolkits/wxgtk26-contrib-common
-wxgtk26-contrib-utils	ports/x11-toolkits/wxgtk26-contrib-utils
 wxgtk26-unicode	ports/x11-toolkits/wxgtk26-unicode
 wxgtk26-unicode-contrib	ports/x11-toolkits/wxgtk26-unicode-contrib
 wxmozilla	ports/x11-toolkits/wxmozilla
