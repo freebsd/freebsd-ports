@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	swftools
-PORTVERSION=	0.6.3
+PORTVERSION=	0.7.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.quiss.org/swftools/
+MASTER_SITES=	http://www.swftools.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SWF manipulation and generation utilities
