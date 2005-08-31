@@ -1,0 +1,6 @@
+This is a facility for creating non-modifiable variables.  This is
+useful for configuration files, headers, etc.  It can also be useful as
+a development and debugging tool, for catching updates to variables that
+should not be changed.
+
+WWW: http://search.cpan.org/dist/Readonly/
