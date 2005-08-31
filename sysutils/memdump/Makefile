@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memdump
-PORTVERSION=	1.0
+PORTVERSION=	1.01
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.porcupine.org/forensics/
 
