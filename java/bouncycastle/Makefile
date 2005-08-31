@@ -17,6 +17,8 @@ COMMENT=	Cleanroom build of Java Cryptography Extensions
 
 BUILD_DEPENDS=	${JAVADIR}/bin/java:${PORTSDIR}/java/jdk13
 
+BROKEN=		Unfetchable
+
 JAVADIR?=	${LOCALBASE}/jdk1.3.1
 JAVALIBDIR=	${PREFIX}/share/java/classes
 API_DOCDIR=	${PREFIX}/share/doc/java/${PORTNAME}/api
