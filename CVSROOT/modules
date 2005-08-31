@@ -1219,6 +1219,7 @@ concorde	ports/math/concorde
 cone		ports/mail/cone
 confregdecode	ports/net-mgmt/confregdecode
 conglomerate	ports/editors/conglomerate
+conky		ports/sysutils/conky
 connect4	ports/games/connect4
 conquest	ports/games/conquest
 cons		ports/devel/cons
