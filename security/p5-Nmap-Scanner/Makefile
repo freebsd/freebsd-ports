@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Nmap-Scanner
-PORTVERSION=	0.7a
+PORTVERSION=	0.9
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/M/MA/MAXSCHUBE
@@ -18,8 +18,6 @@ COMMENT=	Perform and manipulate nmap scans using perl
 BUILD_DEPENDS=	${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		nmap:${PORTSDIR}/security/nmap
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.7
 
 PERL_CONFIGURE=	yes
 
@@ -33,8 +31,8 @@ MAN3=		Nmap::Scanner.3 Nmap::Scanner::Address.3 \
 		Nmap::Scanner::OS::PortUsed.3 Nmap::Scanner::OS::TCPSequence.3 \
 		Nmap::Scanner::OS::TCPTSSequence.3 Nmap::Scanner::OS::Uptime.3 \
 		Nmap::Scanner::Port.3 Nmap::Scanner::RunStats.3 \
-		Nmap::Scanner::ScanInfo.3 Nmap::Scanner::Scanner.3 \
-		Nmap::Scanner::Service.3
+		Nmap::Scanner::RunStats::Finished.3 Nmap::Scanner::ScanInfo.3 \
+		Nmap::Scanner::Scanner.3 Nmap::Scanner::Service.3
 
 post-configure:
 	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
