@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	notification-daemon
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	0.2.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.galago.info/files/releases/source/notification-daemon/
 
@@ -22,4 +21,10 @@ USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-dbus-services=${PREFIX}/share/dbus-1/services
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-main.cc
+.endif
+
+.include <bsd.port.post.mk>
