@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Chess/PGN/Parse.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chess/PGN/Parse/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chess/PGN/Parse
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chess/PGN 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chess 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Chess/PGN 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Chess 2>/dev/null || true
