@@ -1,0 +1,11 @@
+streamTranscoder takes the output from
+SHOUTcast/Icecast/Peercast/KasterBlaster servers or a soundcard input and
+transcodes them to another SHOUTcast, Icecast, or Peercast server in MP3 or
+Ogg Vorbis format. It can transcode the input audio by resampling or
+re-encoding, as well as changing the format from MP3 to Ogg Vorbis (or vice
+versa).
+
+WWW: http://www.oddsock.org/tools/streamTranscoder/
+
+- Mark
+mark@mkproductions.org

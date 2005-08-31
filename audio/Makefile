@@ -450,6 +450,7 @@
     SUBDIR += splaytk
     SUBDIR += squash
     SUBDIR += streamripper
+    SUBDIR += streamtranscoder
     SUBDIR += streamtuner
     SUBDIR += swami
     SUBDIR += sweep
