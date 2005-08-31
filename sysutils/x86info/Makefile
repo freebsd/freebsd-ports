@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	x86info
-PORTVERSION=	1.12b
+PORTVERSION=	1.14
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.codemonkey.org.uk/projects/x86info/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -16,9 +16,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	erik@smluc.org
 COMMENT=	Utility to display information about the systems x86 processor(s)
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 PLIST_FILES=	bin/x86info
 USE_REINPLACE=	yes
+MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
 post-patch:
 .for file in x86info.h mptable.c

@@ -1,13 +1,13 @@
---- cpuid_UP.S.orig	Tue Nov 26 20:20:07 2002
-+++ cpuid_UP.S	Sun Aug 24 16:12:12 2003
-@@ -1,25 +1,8 @@
+--- cpuid_UP.S.orig	Wed Aug 24 20:15:46 2005
++++ cpuid_UP.S	Wed Aug 24 20:16:16 2005
+@@ -1,24 +1,9 @@
  	.align 4
  	.text
  
 -#ifdef linux
 -
  .globl cpuid_UP
--	.type	cpuid_UP,@function
+ 	.type	cpuid_UP,@function
  cpuid_UP:
 -
 -#else /* BSD or WIN32 */
@@ -22,7 +22,6 @@
 -
 -_cpuid_UP:
 -#endif /* linux */
--
- 	pushl %ebp
- 	movl %esp,%ebp
- 	pushl %edi
+ 
+ #ifdef __x86_64__
+ /* x86_64 calling convention: Args passed in rdi, rsi, rdx, rcx, r8, r9;
