@@ -9735,6 +9735,7 @@ prom-mew	ports/mail/prom-mew
 prom-wl		ports/mail/prom-wl
 proma		ports/ftp/proma
 pronto		ports/mail/pronto
+proofgeneral	ports/math/proofgeneral
 props		ports/x11/props
 prosper		ports/textproc/prosper
 prototype	ports/devel/prototype
