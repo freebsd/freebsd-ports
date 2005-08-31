@@ -165,7 +165,6 @@
     SUBDIR += gdesklets-lt-network
     SUBDIR += gdesklets-networkinfo
     SUBDIR += gdesklets-sensor-psi_network
-    SUBDIR += gdesklets-sensor-psi_ping
     SUBDIR += generic-nqs
     SUBDIR += geotrace
     SUBDIR += ggsd

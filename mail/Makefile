@@ -109,7 +109,6 @@
     SUBDIR += gbuffy
     SUBDIR += gdesklets-enhallmail
     SUBDIR += gdesklets-imapmail
-    SUBDIR += gdesklets-sensor-psi_popmail
     SUBDIR += gensig
     SUBDIR += getmail
     SUBDIR += gkrellmmailwatch

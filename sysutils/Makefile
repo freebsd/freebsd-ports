@@ -173,9 +173,6 @@
     SUBDIR += gcombust
     SUBDIR += gconf-editor
     SUBDIR += gdesklets-multitail
-    SUBDIR += gdesklets-sensor-psi_cpu
-    SUBDIR += gdesklets-sensor-psi_disk
-    SUBDIR += gdesklets-sensor-psi_memory
     SUBDIR += gfslicer
     SUBDIR += gkfreq
     SUBDIR += gkleds2

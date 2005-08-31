@@ -34,16 +34,11 @@
     SUBDIR += gdesklets-calendar
     SUBDIR += gdesklets-gnomebar
     SUBDIR += gdesklets-ltvariations
-    SUBDIR += gdesklets-psi_displaypackage
     SUBDIR += gdesklets-psi_themes
     SUBDIR += gdesklets-recentlyused
     SUBDIR += gdesklets-sensor-displayconstraints
-    SUBDIR += gdesklets-sensor-psi_externalinterval
     SUBDIR += gdesklets-sensor-psi_iconbutton
-    SUBDIR += gdesklets-sensor-psi_memo
-    SUBDIR += gdesklets-sensor-psi_memoover
     SUBDIR += gdesklets-sensor-psi_theme
-    SUBDIR += gdesklets-sensor-psi_variableborder
     SUBDIR += gdesklets-starterbar
     SUBDIR += gemcal
     SUBDIR += genius
