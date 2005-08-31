@@ -1053,6 +1053,7 @@
     SUBDIR += p5-Rcs-Agent
     SUBDIR += p5-ReadLine-Gnu
     SUBDIR += p5-ReadLine-Perl
+    SUBDIR += p5-Readonly
     SUBDIR += p5-Regexp-Assemble
     SUBDIR += p5-Regexp-Shellish
     SUBDIR += p5-Religion
