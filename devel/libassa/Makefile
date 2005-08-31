@@ -33,4 +33,8 @@ pre-configure:
 BROKEN=	"Compilation fails and passing -fhuge-objects does not help"
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not build on sparc64"
+.endif
+
 .include <bsd.port.post.mk>

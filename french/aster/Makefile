@@ -75,6 +75,10 @@ BROKEN=	"Does not compile on FreeBSD-4.x, and cannot be patched easily."
 BROKEN=	"Seg. fault on ${ARCH} during compilation of elements."
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not build on sparc64"
+.endif
+
 .if defined(WITH_BLAS)
 LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
 .else
