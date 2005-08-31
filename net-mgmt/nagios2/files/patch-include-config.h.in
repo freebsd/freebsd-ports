@@ -1,0 +1,26 @@
+--- include/config.h.in.orig	Mon Aug 29 17:34:30 2005
++++ include/config.h.in	Mon Aug 29 17:41:03 2005
+@@ -108,11 +108,6 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ 
+-#undef HAVE_SYS_RESOURCE_H
+-#ifdef HAVE_SYS_RESOURCE_H
+-#include <sys/resource.h>
+-#endif
+-
+ #undef HAVE_PWD_H
+ #ifdef HAVE_PWD_H
+ #include <pwd.h>
+@@ -190,6 +185,11 @@
+ #else
+ #include <time.h>
+ #endif
++#endif
++
++#undef HAVE_SYS_RESOURCE_H
++#ifdef HAVE_SYS_RESOURCE_H
++#include <sys/resource.h>
+ #endif
+ 
+ #undef HAVE_SYS_TIMEB_H
