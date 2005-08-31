@@ -1,0 +1,15 @@
+JavaSVN is a pure Java Subversion client library.
+
+You would like to use JavaSVN when you need to access or modify Subversion
+repository from your Java application, be it a standalone program, plugin or
+web application. Being a pure Java program, JavaSVN doesn't need any
+additional configuration or native binaries to work on any OS that runs Java.
+
+JavaSVN Features:
+
+* No external binaries or libraries are needed.
+* JavaSVN supports http, https, svn and svn+ssh connection protocols.
+* Low level API allows effective direct Subversion repository access.
+* Compatible with applications that already use native javahl bindings.
+
+WWW: http://tmate.org/svn/

@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+JAVASVN_HOME=${JAVASVN_HOME:-"%%DATADIR%%"}
+JAVASVN_CP=${JAVASVN_HOME}/javasvn.jar:${JAVASVN_HOME}/javasvn-cli.jar:${JAVASVN_HOME}/jsch.jar
+JAVASVN_LOGDIR=${JAVASVN_LOGDIR:-"${HOME}/.javasvn"}
+
+if [ ! -d ${JAVASVN_LOGDIR} ]; then
+	mkdir ${JAVASVN_LOGDIR}
+fi
+
+JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" \
+	${JAVASVN_OPTS} \
+	-Djava.util.logging.config.file="${JAVASVN_HOME}/logging.properties" \
+	-cp "${JAVASVN_CP}" \
+	org.tmatesoft.svn.cli.SVN "$@"
