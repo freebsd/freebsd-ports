@@ -25,6 +25,8 @@ RUN_DEPENDS=	dvips:${PORTSDIR}/japanese/dvipsk \
 		gs:${PORTSDIR}/japanese/ghostscript-gnu-jpnfont \
 		anytopnm:${PORTSDIR}/graphics/netpbm
 
+BROKEN=		Incorrect pkg-plist
+
 VERSION=	2002.2.1
 JP_VERSION=	2.0
 
