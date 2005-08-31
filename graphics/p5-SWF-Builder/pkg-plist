@@ -7,9 +7,12 @@ bin/asc.plx
 %%SITE_PERL%%/SWF/Builder/Character/Bitmap.pm
 %%SITE_PERL%%/SWF/Builder/Character/Bitmap/Lossless/Custom.pm
 %%SITE_PERL%%/SWF/Builder/Character/Bitmap/Lossless/GD.pm
+%%SITE_PERL%%/SWF/Builder/Character/Bitmap/Lossless/GDPixel.pm
 %%SITE_PERL%%/SWF/Builder/Character/Bitmap/Lossless/ImageMagick.pm
 %%SITE_PERL%%/SWF/Builder/Character/EditText.pm
 %%SITE_PERL%%/SWF/Builder/Character/Font.pm
+%%SITE_PERL%%/SWF/Builder/Character/Font/FreeType.pm
+%%SITE_PERL%%/SWF/Builder/Character/Font/TTF.pm
 %%SITE_PERL%%/SWF/Builder/Character/MovieClip.pm
 %%SITE_PERL%%/SWF/Builder/Character/Shape.pm
 %%SITE_PERL%%/SWF/Builder/Character/Sound.pm
@@ -21,6 +24,7 @@ bin/asc.plx
 @dirrm %%SITE_PERL%%/SWF/Builder/ActionScript
 @dirrm %%SITE_PERL%%/SWF/Builder/Character/Bitmap/Lossless
 @dirrm %%SITE_PERL%%/SWF/Builder/Character/Bitmap
+@dirrm %%SITE_PERL%%/SWF/Builder/Character/Font
 @dirrm %%SITE_PERL%%/SWF/Builder/Character/Sound
 @dirrm %%SITE_PERL%%/SWF/Builder/Character
 @dirrm %%SITE_PERL%%/SWF/Builder
