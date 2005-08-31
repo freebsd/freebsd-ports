@@ -44,6 +44,12 @@ PLIST_SUB+=	POSTGRESQL="@comment "
 MAKE_ENV+=	POSTGRESQL=postgres
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64" || ${ARCH} == "ia64"
+BROKEN=		"Does not compile completely on sparc64 or ia64"
+.endif
+
 post-install:
 	${SED} 's|%%LOCALBASE%%|${LOCALBASE}|g ; s|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/modules/acc/etc/radiusclient.conf > \
@@ -59,4 +65,4 @@ post-install:
 			${PREFIX}/etc/ser/radiusclient.conf; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
