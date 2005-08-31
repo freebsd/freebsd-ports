@@ -5,7 +5,7 @@
 
 print "#!/bin/csh\n";
 print "make deinstall clean\n";
-print "/usr/bin/time -h make WITH_CCACHE=yes install package package-rename solver sdk deinstall clean >& log.en\n";
+print "/usr/bin/time -h make WITH_CCACHE=yes install package package-rename solver sdk deinstall >& log.en\n";
 print "rm work/.configure* work/.build* \n";
 print "/usr/bin/time -h make ALL_LOCALIZED_LANGS=yes >& log.all\n";
 
