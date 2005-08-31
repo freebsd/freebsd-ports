@@ -10,6 +10,8 @@ PORTREVISION=	2
 
 COMMENT=	Gstreamer mpeg encoder plugin
 
+BROKEN=		Does not compile
+
 GST_PLUGIN=	mpeg2enc
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
