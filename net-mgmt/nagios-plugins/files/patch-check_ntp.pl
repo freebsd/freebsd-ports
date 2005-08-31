@@ -1,20 +1,10 @@
---- plugins-scripts/check_ntp.pl.orig	Fri Nov 19 04:59:43 2004
-+++ plugins-scripts/check_ntp.pl	Fri Dec  3 23:54:19 2004
-@@ -274,7 +274,7 @@
+--- plugins-scripts/check_ntp.pl.orig	Wed May 25 16:05:41 2005
++++ plugins-scripts/check_ntp.pl	Wed Aug  3 10:23:37 2005
+@@ -309,7 +309,6 @@
+ 				}
+ 			} else {
+ 				print "No match!\n" if $verbose;
+-				$jitter = '(not parsed)';
  			}
  			
- 			# match sys.peer or pps.peer
--			if (/^(\*|o)([-0-9.\s]+)\s+([-0-9A-Za-z.]+)\s+([-0-9.]+)\s+([lumb-]+)\s+([-0-9m.]+)\s+([-0-9.]+)\s+([-0-9.]+)\s+([-0-9.]+)\s+([-0-9.]+)\s+([-0-9.]+)/) {
-+			if (/^(\*|o)([-0-9.\s]+)\s+([-0-9A-Za-z.]+)\s+([-0-9.]+)\s+([lumb-]+)\s+([-0-9m.]+)\s+([-0-9m.]+)\s+([-0-9.]+)\s+([-0-9.]+)\s+([-0-9.]+)\s+([-0-9.]+)/) {
- 				$syspeer = $2;
- 				$stratum = $4;
- 				$jitter = $11;
-@@ -299,7 +299,7 @@
- 		unless (defined $syspeer) {
- 			if ($#candidates >0) {
- 				foreach my $c (@candidates) {
--					$c =~ /^(#)([-0-9.\s]+)\s+([-0-9A-Za-z.]+)\s+([-0-9.]+)\s+([lumb-]+)\s+([-0-9m.]+)\s+([-0-9.]+)\s+([-0-9.]+)\s+([-0-9.]+)\s+([-0-9.]+)\s+([-0-9.]+)/;
-+					$c =~ /^(#)([-0-9.\s]+)\s+([-0-9A-Za-z.]+)\s+([-0-9.]+)\s+([lumb-]+)\s+([-0-9m.]+)\s+([-0-9m.]+)\s+([-0-9.]+)\s+([-0-9.]+)\s+([-0-9.]+)\s+([-0-9.]+)/;
- 					$syspeer = $2;
- 					$stratum = $4;
- 					$jitter = $11;
+ 		}
