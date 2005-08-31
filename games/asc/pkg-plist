@@ -17,4 +17,4 @@ share/games/asc/units-mk3.con
 %%MUSIC:%%share/games/asc/music/machine_wars.mp3
 %%MUSIC:%%@dirrm share/games/asc/music
 @dirrm share/games/asc
-@dirrm share/games
+@unexec rmdir %D/share/games 2>/dev/null || true
