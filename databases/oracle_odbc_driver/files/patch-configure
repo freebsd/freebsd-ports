@@ -1,0 +1,38 @@
+--- configure.orig	Thu Jun  9 07:30:50 2005
++++ configure	Thu Jun  9 19:03:32 2005
+@@ -4719,7 +4719,7 @@
+ echo $ECHO_N "checking for libclntsh.so ... $ECHO_C" >&6
+ for d in $oraclehome/lib /usr/lib /usr/local/lib
+ do
+-if test -f $d/libclntsh.so || test -f $d/libclntsh.a
++if test -f $d/libclntsh.so || test -f $d/libclntsh.a || test -f $d/libclntst8.a
+ then
+    echo "$as_me:$LINENO: result: found libclntsh.so in $d" >&5
+ echo "${ECHO_T}found libclntsh.so in $d" >&6
+@@ -4756,7 +4756,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lclntsh "-L$oraldir" $LIBS"
++LIBS="-lclntst8 "-L$oraldir" $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -4812,7 +4812,7 @@
+ fi
+ 
+ 
+-    ORALIB="-lclntsh"
++    ORALIB="-lclntst8 -lcompat -lpthread -lm"
+ 
+ 
+ 
+@@ -4822,7 +4822,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lclntsh "-L$oraldir" $LIBS"
++LIBS="-lclntst8 "-L$oraldir" $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */

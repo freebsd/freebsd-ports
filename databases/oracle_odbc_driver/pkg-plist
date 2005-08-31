@@ -1,0 +1,4 @@
+lib/liboraodbc.a
+lib/liboraodbc.la
+lib/liboraodbc.so
+lib/liboraodbc.so.1
