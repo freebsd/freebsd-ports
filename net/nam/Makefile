@@ -29,7 +29,7 @@ ALL_TARGET=	# empty
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64"
+.if ${ARCH} != "i386"
 BROKEN=		"Does not compile"
 .endif
 

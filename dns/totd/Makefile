@@ -20,6 +20,12 @@ USE_REINPLACE=	YES
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/%zd/%d/g' ${WRKSRC}/*.c
 
@@ -29,4 +35,4 @@ post-install:
 		${FILESDIR}/totd.sh > ${PREFIX}/etc/rc.d/totd.sh
 	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/totd.sh
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
