@@ -1,0 +1,22 @@
+--- Makefile.in.orig	Sun Aug 25 10:29:52 2002
++++ Makefile.in	Tue Aug  9 15:09:49 2005
+@@ -14,8 +14,8 @@
+ # 
+ 
+ # if you have libXss.so, then uncomment the next two lines
+-#CFLAGS_XSS	= -DHAVE_SHARED_XSS
+-#LIB_XSS	= -L/usr/X11R6/lib -lXss 
++CFLAGS_XSS	= -DHAVE_SHARED_XSS
++LIB_XSS	= -L/usr/X11R6/lib -lXss 
+ 
+ 
+ SHELL = @SHELL@
+@@ -145,7 +145,7 @@
+ 
+ tkXwin_version = 1:0:0
+ 
+-INCLUDES = $(TCL_INCLUDES) $(TK_XINCLUDES) $(CFLAGS_XSS)
++INCLUDES = $(TCL_INCLUDES) $(TK_INCLUDES) $(TK_XINCLUDES) $(CFLAGS_XSS)
+ 
+ common_sources = tkXwin.c
+ 

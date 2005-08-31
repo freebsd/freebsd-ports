@@ -174,6 +174,7 @@
     SUBDIR += sxpc
     SUBDIR += temperature.app
     SUBDIR += thinglaunch
+    SUBDIR += tkXwin
     SUBDIR += tkgoodstuff
     SUBDIR += tycoon
     SUBDIR += vdesk
