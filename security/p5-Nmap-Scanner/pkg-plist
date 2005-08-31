@@ -22,6 +22,7 @@
 %%SITE_PERL%%/Nmap/Scanner/Port.pm
 %%SITE_PERL%%/Nmap/Scanner/PortList.pm
 %%SITE_PERL%%/Nmap/Scanner/RunStats.pm
+%%SITE_PERL%%/Nmap/Scanner/RunStats/Finished.pm
 %%SITE_PERL%%/Nmap/Scanner/ScanInfo.pm
 %%SITE_PERL%%/Nmap/Scanner/Scanner.pm
 %%SITE_PERL%%/Nmap/Scanner/Service.pm
@@ -29,6 +30,7 @@
 %%SITE_PERL%%/Nmap/Scanner/Util/BannerScanner.pm
 @dirrm %%SITE_PERL%%/Nmap/Scanner/Backend
 @dirrm %%SITE_PERL%%/Nmap/Scanner/OS
+@dirrm %%SITE_PERL%%/Nmap/Scanner/RunStats
 @dirrm %%SITE_PERL%%/Nmap/Scanner/Util
 @dirrm %%SITE_PERL%%/Nmap/Scanner
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nmap/Scanner
