@@ -1,11 +1,11 @@
 #!/usr/bin/perl
 # generate full build shell script for OpenOffice.org
 # Whom:         Maho Nakata <maho@FreeBSD.org>
-# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-1.0/files/Attic/generate.pl,v 1.3 2005-08-28 08:25:09 maho Exp $
+# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-1.0/files/Attic/generate.pl,v 1.4 2005-08-31 04:28:55 maho Exp $
 
 print "#!/bin/csh\n";
 print "make deinstall clean\n";
-print "/usr/bin/time -h make WITH_CCACHE=yes install package package-rename solver sdk deinstall clean >& log.en\n";
+print "/usr/bin/time -h make WITH_CCACHE=yes install package package-rename solver sdk deinstall >& log.en\n";
 print "rm work/.configure* work/.build* \n";
 print "/usr/bin/time -h make ALL_LOCALIZED_LANGS=yes >& log.all\n";
 
