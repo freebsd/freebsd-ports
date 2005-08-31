@@ -1602,3 +1602,4 @@ shells/zsh-devel|shells/zsh|2005-08-29|Development version of Zsh is no longer b
 russian/nagios||2005-08-30|Obsoleted; new version is not planned
 security/gnutls-devel|security/gnutls|2005-08-30|Development version of GnuTLS is no longer being released
 www/py-websvcs|net/py-soappy|2005-08-30|duplicate port
+x11-toolkits/wxgtk26-contrib-utils|2005-08-31|Deprecated
