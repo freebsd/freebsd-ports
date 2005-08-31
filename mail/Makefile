@@ -495,6 +495,7 @@
     SUBDIR += sqwebmail
     SUBDIR += ssmtp
     SUBDIR += stuphead
+    SUBDIR += svnmailer
     SUBDIR += swaks
     SUBDIR += sylpheed
     SUBDIR += sylpheed2
