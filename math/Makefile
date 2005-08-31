@@ -207,6 +207,7 @@
     SUBDIR += ploticus-nox11
     SUBDIR += plplot
     SUBDIR += polymake
+    SUBDIR += proofgeneral
     SUBDIR += pspp
     SUBDIR += py-fpconst
     SUBDIR += py-gato
