@@ -30,10 +30,16 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-docs-build
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Configure fails on !i386"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/python|${LOCALBASE}/bin/python|g' \
 		${WRKSRC}/bin/pitivi.in
 	@${REINPLACE_CMD} -e 's|0.1.9|0.1.10|g' \
 		${WRKSRC}/pitivi/ui/mainwindow.py
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
