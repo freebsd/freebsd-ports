@@ -1,0 +1,11 @@
+--- src/lib/plt/acf/Makefile.orig	Wed Aug 31 22:36:40 2005
++++ src/lib/plt/acf/Makefile	Wed Aug 31 22:36:40 2005
+@@ -48,7 +48,7 @@
+ # build the ccnf generator
+ 
+ ccnf: ccnf.cpp
+-	@$(CC) $(CNFDEFINES) -o ccnf ccnf.cpp
++	@$(CC) $(CXXFLAGS) $(CNFDEFINES) -o ccnf ccnf.cpp
+ 
+ # rule: distri
+ # this rule install the acf directory in the distribution

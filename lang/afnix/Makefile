@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	afnix
-PORTVERSION=	1.0.3
+PORTVERSION=	1.1.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.afnix.org/ftp/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION:S,.,-,g}
@@ -17,19 +17,26 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	johans@stack.nl
 COMMENT=	A multi-threaded functional programming language
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_SCRIPT=	cnf/bin/afnix-setup
+CONFIGURE_ARGS=		-o --prefix "${PREFIX}" --compiler freebsd
+MAKE_ENV=	CXX="${CXX}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 PLIST_SUB=	PORTVER=${PORTVERSION:R}
 
-MAN1=	afnix.1 axc.1 axd.1 axl.1
+MAN1=	axc.1 axd.1 axi.1 axl.1 axs.1
 
 .include <bsd.port.pre.mk>
 
-do-configure:
-	@${WRKSRC}/cnf/bin/${PORTNAME}-setup -o
+post-extract:
+	@cd ${WRKSRC}/cnf/mak && ${CP} -f afnix-gcc-3.mak afnix-freebsd.mak
 
-post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/${PORTNAME}
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$(CP)|$$(BSD_INSTALL_PROGRAM)|' \
+		${WRKSRC}/src/*/*/exe/Makefile
 
 .include <bsd.port.post.mk>

@@ -1,14 +1,13 @@
-bin/afnix
 bin/axc
 bin/axd
+bin/axi
 bin/axl
-bin/axo
-share/doc/afnix/afnix-gud.el
-share/doc/afnix/afnix-mode.el
-share/doc/afnix/license.txt
-share/doc/afnix/what-long.txt
-share/doc/afnix/what-short.txt
-@dirrm share/doc/afnix
+bin/axs
+etc/afnix/afnix-gud.el
+etc/afnix/afnix-mode.el
+etc/afnix/license.txt
+etc/afnix/what-long.txt
+etc/afnix/what-short.txt
 include/afnix/eng/Argument.hpp
 include/afnix/eng/Builtin.hpp
 include/afnix/eng/Class.hpp
@@ -23,9 +22,9 @@ include/afnix/eng/Function.hpp
 include/afnix/eng/Globalset.hpp
 include/afnix/eng/Instance.hpp
 include/afnix/eng/Interp.hpp
-include/afnix/eng/Item.hpp
 include/afnix/eng/Lexer.hpp
 include/afnix/eng/Lexical.hpp
+include/afnix/eng/Librarian.hpp
 include/afnix/eng/Localset.hpp
 include/afnix/eng/Meta.hpp
 include/afnix/eng/Module.hpp
@@ -38,15 +37,16 @@ include/afnix/eng/Reader.hpp
 include/afnix/eng/Reserved.hpp
 include/afnix/eng/Resolver.hpp
 include/afnix/eng/Return.hpp
+include/afnix/eng/Superset.hpp
 include/afnix/eng/Symbol.hpp
 include/afnix/eng/Token.hpp
 include/afnix/net/Address.hpp
 include/afnix/net/Datagram.hpp
-include/afnix/net/Libanet.hpp
+include/afnix/net/Libnet.hpp
 include/afnix/net/Mail.hpp
 include/afnix/net/Multicast.hpp
-include/afnix/net/Netcalls.hpp
-include/afnix/net/Predanet.hpp
+include/afnix/net/NetCalls.hpp
+include/afnix/net/Prednet.hpp
 include/afnix/net/Socket.hpp
 include/afnix/net/TcpClient.hpp
 include/afnix/net/TcpServer.hpp
@@ -54,21 +54,12 @@ include/afnix/net/TcpSocket.hpp
 include/afnix/net/UdpClient.hpp
 include/afnix/net/UdpServer.hpp
 include/afnix/net/UdpSocket.hpp
-include/afnix/odc/Cell.hpp
-include/afnix/odc/Collection.hpp
-include/afnix/odc/Importer.hpp
-include/afnix/odc/Libaodc.hpp
-include/afnix/odc/Odccalls.hpp
-include/afnix/odc/Odcsid.hpp
-include/afnix/odc/Persist.hpp
-include/afnix/odc/Predaodc.hpp
-include/afnix/odc/Record.hpp
-include/afnix/odc/Table.hpp
 include/afnix/plt/cclk.hpp
 include/afnix/plt/ccnf.hpp
 include/afnix/plt/ccnv.hpp
 include/afnix/plt/cdir.hpp
 include/afnix/plt/cerr.hpp
+include/afnix/plt/cgen.hpp
 include/afnix/plt/cmem.hpp
 include/afnix/plt/cmth.hpp
 include/afnix/plt/cnet.hpp
@@ -78,14 +69,33 @@ include/afnix/plt/cstr.hpp
 include/afnix/plt/csys.hpp
 include/afnix/plt/cthr.hpp
 include/afnix/plt/ctrm.hpp
-include/afnix/sci/Digest.hpp
+include/afnix/sci/Aes.hpp
+include/afnix/sci/Cipher.hpp
+include/afnix/sci/Crypto.hpp
+include/afnix/sci/Hasher.hpp
+include/afnix/sci/InputCipher.hpp
+include/afnix/sci/Key.hpp
 include/afnix/sci/Md5.hpp
+include/afnix/sci/Privsci.hpp
 include/afnix/sci/Sha1.hpp
+include/afnix/sci/Sha256.hpp
+include/afnix/sci/Sha384.hpp
+include/afnix/sci/Sha512.hpp
 include/afnix/sio/Directory.hpp
-include/afnix/sio/Libasio.hpp
-include/afnix/sio/Pathasio.hpp
-include/afnix/sio/Predasio.hpp
+include/afnix/sio/Libsio.hpp
+include/afnix/sio/Pathsio.hpp
+include/afnix/sio/Predsio.hpp
 include/afnix/sio/Selector.hpp
+include/afnix/sps/Cell.hpp
+include/afnix/sps/Folio.hpp
+include/afnix/sps/Importer.hpp
+include/afnix/sps/Libsps.hpp
+include/afnix/sps/Persist.hpp
+include/afnix/sps/Predsps.hpp
+include/afnix/sps/Record.hpp
+include/afnix/sps/Sheet.hpp
+include/afnix/sps/SpsCalls.hpp
+include/afnix/sps/Spssid.hpp
 include/afnix/std/BitSet.hpp
 include/afnix/std/Boolean.hpp
 include/afnix/std/Buffer.hpp
@@ -101,15 +111,17 @@ include/afnix/std/HashTable.hpp
 include/afnix/std/Input.hpp
 include/afnix/std/InputFile.hpp
 include/afnix/std/InputMapped.hpp
+include/afnix/std/InputOutput.hpp
 include/afnix/std/InputString.hpp
 include/afnix/std/InputTerm.hpp
 include/afnix/std/Integer.hpp
+include/afnix/std/Item.hpp
 include/afnix/std/Iterable.hpp
 include/afnix/std/Iterator.hpp
-include/afnix/std/Librarian.hpp
 include/afnix/std/Library.hpp
 include/afnix/std/List.hpp
 include/afnix/std/Literal.hpp
+include/afnix/std/Loader.hpp
 include/afnix/std/Lockrw.hpp
 include/afnix/std/Method.hpp
 include/afnix/std/Monitor.hpp
@@ -131,6 +143,7 @@ include/afnix/std/Regex.hpp
 include/afnix/std/Relatif.hpp
 include/afnix/std/Runnable.hpp
 include/afnix/std/Serial.hpp
+include/afnix/std/Set.hpp
 include/afnix/std/Sorter.hpp
 include/afnix/std/Stack.hpp
 include/afnix/std/String.hpp
@@ -141,18 +154,16 @@ include/afnix/std/Thread.hpp
 include/afnix/std/Thrmap.hpp
 include/afnix/std/Time.hpp
 include/afnix/std/Vector.hpp
-include/afnix/sys/Libasys.hpp
-include/afnix/sys/Predasys.hpp
-include/afnix/sys/Syscalls.hpp
-include/afnix/txt/Hasher.hpp
+include/afnix/sys/Libsys.hpp
+include/afnix/sys/Predsys.hpp
+include/afnix/sys/SysCalls.hpp
 include/afnix/txt/Lexeme.hpp
-include/afnix/txt/Libatxt.hpp
+include/afnix/txt/Libtxt.hpp
 include/afnix/txt/Literate.hpp
 include/afnix/txt/Pattern.hpp
-include/afnix/txt/Predatxt.hpp
+include/afnix/txt/Predtxt.hpp
 include/afnix/txt/Scanner.hpp
 include/afnix/txt/Sort.hpp
-include/afnix/txt/Txtcalls.hpp
 include/afnix/www/CgiQuery.hpp
 include/afnix/www/Cookie.hpp
 include/afnix/www/HtmlDiv.hpp
@@ -161,48 +172,39 @@ include/afnix/www/HtmlPage.hpp
 include/afnix/www/HtmlRef.hpp
 include/afnix/www/HtmlTable.hpp
 include/afnix/www/HtmlTag.hpp
-include/afnix/www/Libawww.hpp
-include/afnix/www/Predawww.hpp
+include/afnix/www/Libwww.hpp
+include/afnix/www/Predwww.hpp
 include/afnix/www/Url.hpp
 include/afnix/www/XHtmlPage.hpp
+lib/libafnix-eng.a
+lib/libafnix-eng.so
+lib/libafnix-net.a
+lib/libafnix-net.so
+lib/libafnix-plt.a
+lib/libafnix-plt.so
+lib/libafnix-sci.a
+lib/libafnix-sci.so
+lib/libafnix-sio.a
+lib/libafnix-sio.so
+lib/libafnix-sps.a
+lib/libafnix-sps.so
+lib/libafnix-std.a
+lib/libafnix-std.so
+lib/libafnix-sys.a
+lib/libafnix-sys.so
+lib/libafnix-txt.a
+lib/libafnix-txt.so
+lib/libafnix-www.a
+lib/libafnix-www.so
+@dirrm etc/afnix
 @dirrm include/afnix/eng
 @dirrm include/afnix/net
-@dirrm include/afnix/odc
 @dirrm include/afnix/plt
 @dirrm include/afnix/sci
 @dirrm include/afnix/sio
+@dirrm include/afnix/sps
 @dirrm include/afnix/std
 @dirrm include/afnix/sys
 @dirrm include/afnix/txt
 @dirrm include/afnix/www
 @dirrm include/afnix
-lib/libafnix-eng.a
-lib/libafnix-eng.so
-lib/libafnix-eng.so.%%PORTVER%%
-lib/libafnix-net.a
-lib/libafnix-net.so
-lib/libafnix-net.so.%%PORTVER%%
-lib/libafnix-odc.a
-lib/libafnix-odc.so
-lib/libafnix-odc.so.%%PORTVER%%
-lib/libafnix-plt.a
-lib/libafnix-plt.so
-lib/libafnix-plt.so.%%PORTVER%%
-lib/libafnix-sci.a
-lib/libafnix-sci.so
-lib/libafnix-sci.so.%%PORTVER%%
-lib/libafnix-sio.a
-lib/libafnix-sio.so
-lib/libafnix-sio.so.%%PORTVER%%
-lib/libafnix-std.a
-lib/libafnix-std.so
-lib/libafnix-std.so.%%PORTVER%%
-lib/libafnix-sys.a
-lib/libafnix-sys.so
-lib/libafnix-sys.so.%%PORTVER%%
-lib/libafnix-txt.a
-lib/libafnix-txt.so
-lib/libafnix-txt.so.%%PORTVER%%
-lib/libafnix-www.a
-lib/libafnix-www.so
-lib/libafnix-www.so.%%PORTVER%%
