@@ -33,6 +33,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
 
 MAN1=		inkscape.1 inkview.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=	Requires symbols not present on 4.X
+.endif
+
 patch-autotools:
 	@(cd ${PATCH_WRKSRC}; \
 	for file in ${LIBTOOLFILES}; do \
@@ -46,4 +52,4 @@ post-install:
 	${GZIP_CMD} ${PREFIX}/man/fr/man1/inkscape.1
 	@-update-desktop-database
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
