@@ -4,7 +4,7 @@ user of something without interrupting their work with a dialog box that they
 must close. Passive popups can automatically disappear after a short period
 of time.
 
-This port contains the only library and a small command line client.
+This port contains the library and a small command line client.
 See deskutils/notification-daemon for the daemon.
 
 WWW: http://www.galago.info/specs/notification/index.php
