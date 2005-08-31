@@ -1,0 +1,11 @@
+--- configure.orig	Tue Aug 30 14:52:03 2005
++++ configure	Tue Aug 30 14:52:18 2005
+@@ -1798,7 +1798,7 @@
+ AS="$AS" DLLTOOL="$DLLTOOL" OBJDUMP="$OBJDUMP" \
+ objext="$OBJEXT" exeext="$EXEEXT" reload_flag="$reload_flag" \
+ deplibs_check_method="$deplibs_check_method" file_magic_cmd="$file_magic_cmd" \
+-${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
++$ac_aux_dir/ltconfig --no-reexec \
+ $libtool_flags --no-verify --build="$build" $ac_aux_dir/ltmain.sh $host \
+ || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
+ 
