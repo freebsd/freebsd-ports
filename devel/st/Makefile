@@ -16,7 +16,7 @@ MAINTAINER=	alfred@FreeBSD.org
 COMMENT=	State Threads Library for Internet Applications
 
 INSTALLS_SHLIB=	yes
-ONLY_FOR_ARCHS=	i386 alpha
+ONLY_FOR_ARCHS=	i386 alpha amd64
 
 .include <bsd.port.pre.mk>
 
