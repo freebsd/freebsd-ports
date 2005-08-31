@@ -32,7 +32,6 @@ include/taglib/tag_c.h
 include/taglib/taglib.h
 include/taglib/tbytevector.h
 include/taglib/tbytevectorlist.h
-include/taglib/tdebug.h
 include/taglib/textidentificationframe.h
 include/taglib/tfile.h
 include/taglib/tlist.h
@@ -49,7 +48,7 @@ include/taglib/xingheader.h
 include/taglib/xiphcomment.h
 lib/libtag.la
 lib/libtag.so
-lib/libtag.so.4
+lib/libtag.so.5
 lib/libtag_c.la
 lib/libtag_c.so
 lib/libtag_c.so.0
