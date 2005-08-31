@@ -210,7 +210,6 @@
     SUBDIR += wxgtk26-common
     SUBDIR += wxgtk26-contrib
     SUBDIR += wxgtk26-contrib-common
-    SUBDIR += wxgtk26-contrib-utils
     SUBDIR += wxgtk26-unicode
     SUBDIR += wxgtk26-unicode-contrib
     SUBDIR += wxmozilla
