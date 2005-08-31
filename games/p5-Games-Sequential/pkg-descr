@@ -1,0 +1,17 @@
+Games::Sequential is a framework for producing sequential games. Among 
+other things it keeps track of the sequence of moves, and provides an 
+unlimited undo() mechanism. It also has methods to clone() or take a 
+snapshot() of a game.
+
+Users must pass an object representing the initial state of the game as the 
+first argument to new(). This object must provide the two methods copy() 
+and apply(). You can use Games::Sequential::Position as a base class, in 
+which case the copy() method will be provided for you. The apply() method 
+must take a move and apply it to the current position, producing the next 
+position in the game.
+
+WWW: http://search.cpan.org/dist/Games-Sequential
+Author: Stig Brautaset <stig@brautaset.org>
+
+- Aaron Dalton
+aaron@daltons.ca
