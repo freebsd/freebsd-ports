@@ -12,7 +12,7 @@ CATEGORIES=	editors java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jext
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vd@datamax.bg
 COMMENT=	Powerful 100% pure Java text editor
 
 USE_JAVA=	yes
