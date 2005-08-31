@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.43.8
+PORTVERSION=	4.44.6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -41,7 +41,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 
 CONFLICTS=	MailScanner-devel-[0-9]*
 
-PATCHLEVEL=	1
+PATCHLEVEL=	2
 
 USE_PERL5=	yes
 
@@ -154,10 +154,11 @@ do-install:
 	# Step 3: Install files in share
 	#
 	@${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/etc && ${FIND} reports -type d -exec \
+	cd ${WRKSRC}/etc && ${FIND} reports -type d ! -name "*.old" -exec \
 		${MKDIR} ${DATADIR}/{} \;
-	cd ${WRKSRC}/etc && ${FIND} reports -type f ! -name "*.orig" -exec \
-		${INSTALL_DATA} {} ${DATADIR}/{}.sample \;
+	# cd ${WRKSRC}/etc && ${FIND} reports -type f ! -name "*.orig" -exec ...
+	cd ${WRKSRC}/etc && ${FIND} reports \( -type d -name "*.old" -prune \) \
+		-o \( -type f ! -name "*.orig" -exec ${INSTALL_DATA} {} ${DATADIR}/{}.sample \; \)
 	${CHMOD} -R ${BINMODE} ${DATADIR}/reports
 	#
 	# Step 4: Install lib

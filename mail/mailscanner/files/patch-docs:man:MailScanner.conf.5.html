@@ -1,9 +1,9 @@
---- ../MailScanner-install-4.43.8.orig/docs/man/MailScanner.conf.5.html	Fri Jul  8 14:17:05 2005
-+++ docs/man/MailScanner.conf.5.html	Fri Jul  8 14:17:25 2005
+--- ../MailScanner-install-4.44.6.orig/docs/man/MailScanner.conf.5.html	Mon Aug 22 16:18:05 2005
++++ docs/man/MailScanner.conf.5.html	Mon Aug 22 16:18:30 2005
 @@ -1,5 +1,5 @@
  <!-- Creator     : groff version 1.19 -->
 -<!-- CreationDate: Wed Jun  1 11:29:47 2005 -->
-+<!-- CreationDate: Fri Jul  8 14:16:24 2005 -->
++<!-- CreationDate: Thu Aug 18 11:23:58 2005 -->
  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
  "http://www.w3.org/TR/html4/loose.dtd">
  <html>
@@ -15,7 +15,38 @@
  <a href="#What to do with spam">What to do with spam</a><br>
  <a href="#System logging">System logging</a><br>
  <a href="#Advanced SpamAssassin Settings">Advanced SpamAssassin Settings</a><br>
-@@ -4909,10 +4910,239 @@
+@@ -953,6 +954,30 @@
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="89%">
++<p><b>Scan Messages</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: yes</p>
++<!-- INDENTATION -->
++<p>If this is set to yes, then email messages passing
++through MailScanner will be processed and checked, and all
++the other options in this file will be used to control what
++checks are made on the message. If this is set to no, then
++email messages will NOT be processed or checked *at all*,
++and so any viruses or other problems will be ignored.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
+ <p><b>Maximum Attachments Per Message</b></p></td>
+ </table>
+ <!-- INDENTATION -->
+@@ -4909,10 +4934,239 @@
  <td width="78%">
  <p>Default: no</p>
  <!-- INDENTATION -->
