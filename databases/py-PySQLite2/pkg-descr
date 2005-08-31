@@ -4,6 +4,6 @@ powerful embedded relational database management system in a compact C library.
 It offers support for a large subset of SQL92, multiple tables, indices,
 transactions and triggers.
 
-WWW: http://sourceforge.net/projects/pysqlite
+WWW: http://pysqlite.org
 
 Marcus Grando <marcus@corp.grupos.com.br>
