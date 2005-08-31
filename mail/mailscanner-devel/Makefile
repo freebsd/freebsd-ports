@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.42.1
-PORTREVISION=	1
+PORTVERSION=	4.45.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 PKGNAMESUFFIX=	-devel
@@ -35,7 +34,11 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef \
 		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip \
-		${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar
+		${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar \
+		${LOCALBASE}/bin/zoo:${PORTSDIR}/archivers/zoo \
+		${LOCALBASE}/bin/unarj:${PORTSDIR}/archivers/unarj \
+		${LOCALBASE}/bin/unace:${PORTSDIR}/archivers/unace \
+		${LOCALBASE}/bin/lha:${PORTSDIR}/archivers/lha
 
 CONFLICTS=	MailScanner-[0-9]*
 
@@ -152,10 +155,10 @@ do-install:
 	# Step 3: Install files in share
 	#
 	@${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/etc && ${FIND} reports -type d -exec \
+	cd ${WRKSRC}/etc && ${FIND} reports -type d ! -name "*.old" -exec \
 		${MKDIR} ${DATADIR}/{} \;
-	cd ${WRKSRC}/etc && ${FIND} reports -type f ! -name "*.orig" -exec \
-		${INSTALL_DATA} {} ${DATADIR}/{}.sample \;
+	cd ${WRKSRC}/etc && ${FIND} reports \( -type d -name "*.old" -prune \) \
+		-o \( -type f ! -name "*.orig" -exec ${INSTALL_DATA} {} ${DATADIR}/{}.sample \; \)
 	${CHMOD} -R ${BINMODE} ${DATADIR}/reports
 	#
 	# Step 4: Install lib
