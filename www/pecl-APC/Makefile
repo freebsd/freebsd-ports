@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	APC
-PORTVERSION=	3.0.6
+PORTVERSION=	3.0.8
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--enable-apc
 
 OPTIONS=	MMAP       "Enable mmap memory support (default: IPC shm)" off \
 		SEMAPHORES "Enable sysv IPC semaphores (default: fcntl())" off \
-		PHP4_OPT   "Little optimization for PHP4" off
+		PHP4_OPT   "Little optimization to PHP4" off
 
 .include <bsd.port.pre.mk>
 
