@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.esper.net/ircservices/ \
 DISTNAME=	${PORTNAME}-5.0.0
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHLEVEL=	53
+PATCHLEVEL=	54
 PATCHFILES!=	/usr/bin/jot -s " " -w ${DISTNAME:C/[0-9]*$//}%d.diff.gz  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 PATCH_DIST_STRIP=	-p1
