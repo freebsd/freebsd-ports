@@ -1,0 +1,38 @@
+#!/bin/sh
+# Start or stop widentd
+#
+# $FreeBSD$
+#
+# PROVIDE: widentd
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: FreeBSD startup and shutdown
+#
+prefix=%%PREFIX%%
+
+# Define these widentd_* variables in one of these files:
+#
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#
+# e.g. 
+#       widentd_enable="YES"
+#
+# see the man page at widentd(8) for
+# some additional flags to set the IP address
+# beeing bound to, or how to set a differernt
+# fake user id beeing replied as.
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+widentd_enable=${widentd_enable-"NO"}
+
+. %%RC_SUBR%%
+
+name="widentd"
+rcvar=`set_rcvar`
+command="${prefix}/sbin/widentd"
+
+load_rc_config $name
+
+run_rc_command "$1"
