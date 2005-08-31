@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--enable-shaped-decorations \
 		--with-mkfontdir=${NONEXISTENT}
 
 OPTIONS=	GNOMEDESKTOP	"Enable GNOME desktop support"		off \
-		IMLIB		"Build with Imlib support"		off \
+		IMLIB		"Build with Imlib support"		on \
 		ESOUND		"Enable EsounD daemon support"		off \
 		XFT		"Enable Xft support for fonts"		on \
 		XINERAMA	"Enable Xinerama support"		on \
