@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	revelation
-PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTVERSION=	0.4.5
 CATEGORIES=	security gnome
 MASTER_SITES=	ftp://oss.codepoet.no/revelation/
 
@@ -24,16 +23,21 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	pygnome2 gnomeprefix gnomehack desktopfileutils
+USE_GNOME=	pygnome2 pygnomeextras gnomeprefix gnomehack desktopfileutils
 USE_PYTHON=	yes
-GCONF_SCHEMAS=	revelation.schemas
+GCONF_SCHEMAS=	revelation.schemas revelation-applet.schemas
 USE_REINPLACE=	yes
+
+.if defined(PACKAGE_BUILDING)
+BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
+		${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(-Wl\)|$$(LDFLAGS) \1|' \
-		${WRKSRC}/wrap/crack/Makefile.in
+		${WRKSRC}/src/wrap/crack/Makefile.in
 	@${REINPLACE_CMD} -e 's|#include <crack.h>||' \
-		${WRKSRC}/wrap/crack/crack.c.in
+		${WRKSRC}/src/wrap/crack/crack.c.in
 
 post-install:
 	-@update-desktop-database
