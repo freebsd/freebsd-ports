@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		gnomebaker
-PORTVERSION=		0.3
-PORTREVISION=		1
+PORTVERSION=		0.4.2
 CATEGORIES=		sysutils gnome
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnomebaker
@@ -16,11 +15,11 @@ MAINTAINER=		dominique.goncalves@gmail.com
 COMMENT=		A CD/DVD recording GUI for Gnome
 
 RUN_DEPENDS=		cdrecord:${PORTSDIR}/sysutils/cdrtools-cjk \
-			cdrdao:${PORTSDIR}/sysutils/cdrdao \
-			sox:${PORTSDIR}/audio/sox \
-			mpg123:${PORTSDIR}/audio/mpg123 \
-			ogg123:${PORTSDIR}/audio/vorbis-tools
-LIB_DEPENDS=		vorbis.3:${PORTSDIR}/audio/libvorbis
+			cdrdao:${PORTSDIR}/sysutils/cdrdao
+
+.if defined(WITH_DVD)
+RUN_DEPENDS+=		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
+.endif
 
 USE_X_PREFIX=		yes
 USE_GNOME=		gnomeprefix gnomehack libgnomeui desktopfileutils
@@ -29,12 +28,9 @@ USE_GMAKE=		yes
 INSTALLS_OMF=		yes
 USE_GCC=		3.4+
 USE_INC_LIBTOOL_VER=	15
+USE_GSTREAMER=		vorbis mad flac
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-.if defined(WITH_DVD)
-RUN_DEPENDS+=		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
-.endif
 
 pre-everything::
 	@${ECHO_MSG} ""
