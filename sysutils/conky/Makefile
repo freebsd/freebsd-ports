@@ -15,6 +15,7 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	An advanced, highly configurable system monitor for X
 
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 
@@ -45,6 +46,9 @@ CONFIGURE_ARGS+=	--disable-mpd
 .if defined(WITHOUT_DOUBLE_BUFFER)
 CONFIGURE_ARGS+=	--disable-double-buffer
 .endif
+
+post-extract:
+	${REINPLACE_CMD} -e "s|== xyes|= xyes|g" ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/conky ${PREFIX}/bin
