@@ -18,10 +18,8 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Maypole::Component.3
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${PERL} -pi -e 's/use 5.006/use 5.005/' ${WRKSRC}/Makefile.PL
+	@${PERL} -pi -e 's/^our (\S+)/use vars qw($$1); $$1/' ${WRKSRC}/Component.pm
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not build on FreeBSD 4.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
