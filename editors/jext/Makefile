@@ -7,7 +7,7 @@
 
 PORTNAME=	jext
 PORTVERSION=	3.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jext
@@ -15,37 +15,31 @@ MASTER_SITE_SUBDIR=	jext
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful 100% pure Java text editor
 
-RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
-		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jdk13
-
-BROKEN=		Incomplete pkg-plist
-
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
 NO_WRKSUBDIR=	yes
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
-JAVAVM?=	${LOCALBASE}/bin/javavm
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
-INSTSBDR=	${PREFIX}/share/java/jext
+SUB_FILES=	jext.sh
 
-do-configure:
-	@${REINPLACE_CMD} -e 's|%%JAVAVM%%|${JAVAVM}|g ; \
-		s|%%JEXT_HOME%%|${INSTSBDR}|g'	${WRKSRC}/bin/jext
+INSTALL_FILES=	Jython-LICENSE LICENSE README History.txt Names.txt bin lib
 
 do-install:
-	@${MKDIR} ${INSTSBDR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/jext ${PREFIX}/bin/jext
-	@(cd ${WRKSRC} && ${TAR} -c -f - Jython-LICENSE LICENSE README \
-		History.txt Names.txt bin lib) | \
-		(cd ${INSTSBDR} && ${TAR} --unlink -x -f -)
-	@CLASSPATH=${INSTSBDR}/lib/jython.jar javavm org.python.util.jython \
-		${INSTSBDR}/lib/Lib/compileall.py ${INSTSBDR}
+	${MKDIR} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/jext.sh ${PREFIX}/bin/jext
+	${TAR} -C ${WRKSRC} -c -f - ${INSTALL_FILES} | ${TAR} -C ${DATADIR} --unlink -x -f -
+	CLASSPATH=${DATADIR}/lib/jython.jar ${LOCALBASE}/bin/java org.python.util.jython \
+		${DATADIR}/lib/Lib/compileall.py ${DATADIR}
 
 post-install:
-	@${ECHO_MSG} "-------------------------------------------------------------------------------"
-	@${ECHO_MSG} " Please note that Java2 platform (jdk/jre-1.2.x or later) is required to run"
-	@${ECHO_MSG} " this program."
-	@${ECHO_MSG} "-------------------------------------------------------------------------------"
+	@${FIND} ${DATADIR}/lib/cachedir -type f | ${SED} 's|^${PREFIX}/||' \
+		| ${SORT} >> ${TMPPLIST}
+	@${ECHO_CMD} '@dirrm ${DATADIR:S|${PREFIX}/||}/lib/cachedir/packages' >> ${TMPPLIST}
+	@${ECHO_CMD} '@dirrm ${DATADIR:S|${PREFIX}/||}/lib/cachedir' >> ${TMPPLIST}
+	@${ECHO_CMD} '@dirrm ${DATADIR:S|${PREFIX}/||}/lib' >> ${TMPPLIST}
+	@${ECHO_CMD} '@dirrm ${DATADIR:S|${PREFIX}/||}' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
