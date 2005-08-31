@@ -7274,6 +7274,7 @@ p5-Chart-Math-Axis	ports/math/p5-Chart-Math-Axis
 p5-Chart-PNGgraph	ports/graphics/p5-Chart-PNGgraph
 p5-Chatbot-Eliza	ports/misc/p5-Chatbot-Eliza
 p5-Chemistry-Elements	ports/science/p5-Chemistry-Elements
+p5-Chess-PGN-Parse	ports/textproc/p5-Chess-PGN-Parse
 p5-Class-Accessor	ports/devel/p5-Class-Accessor
 p5-Class-Accessor-Chained	ports/devel/p5-Class-Accessor-Chained
 p5-Class-Accessor-Lvalue	ports/devel/p5-Class-Accessor-Lvalue
