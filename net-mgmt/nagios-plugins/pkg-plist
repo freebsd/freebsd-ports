@@ -48,6 +48,7 @@ libexec/nagios/check_smtp
 %%SUB_SNMP%%libexec/nagios/check_snmp
 libexec/nagios/check_spop
 libexec/nagios/check_ssh
+libexec/nagios/check_ssmtp
 libexec/nagios/check_swap
 libexec/nagios/check_tcp
 libexec/nagios/check_time
