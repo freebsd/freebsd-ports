@@ -1,24 +1,6 @@
---- src/Makefile.in.orig	Fri Dec 24 04:47:06 2004
-+++ src/Makefile.in	Sat Dec 25 00:18:14 2004
-@@ -168,7 +168,7 @@
- YFLAGS =  -d -t
- @INTERNAL_MPFR_TRUE@MPFR_INCLUDEDIR = 	-I$(top_srcdir)/mpfr						-I$(top_builddir)/mpfr
- @INTERNAL_MPFR_FALSE@MPFR_INCLUDEDIR = 
--@INTERNAL_MPFR_TRUE@MPFR_LIBDIR = 	-L$(top_srcdir)/mpfr						-L$(top_builddir)/mpfr
-+@INTERNAL_MPFR_TRUE@MPFR_LIBDIR = 	$(top_builddir)/mpfr/libmpfr.a
- @INTERNAL_MPFR_FALSE@MPFR_LIBDIR = 
- 
- INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\"		-DG_LOG_DOMAIN=\"Genius\"					-DDATADIR=\""$(datadir)"\"					-DLIBEXECDIR=\""$(libexecdir)"\"				-DICONDIR=\""$(datadir)/pixmaps/genius"\"			-DLIBRARY_DIR=\""$(datadir)/genius/"\"				-I$(srcdir)							-I$(includedir)							-I$(top_srcdir)							-I$(top_srcdir)/vicious-extensions				-I$(top_srcdir)/gtkextra					-I$(top_builddir)						-I$(top_builddir)/vicious-extensions				-I$(top_builddir)/gtkextra					$(MPFR_INCLUDEDIR)						$(GMP_INCLUDEDIR)						$(GENIUS_CFLAGS)						$(EXTRA_WARNING_CFLAGS)
-@@ -183,7 +183,7 @@
- gnome_genius_SOURCES =  	genius-i18n.h		calc.c			calc.h			eval.c			eval.h			gnome-genius.c		gnome-genius.h		util.c			util.h			dict.c			dict.h			funclib.c		funclib.h		mpwrap.c		mpwrap.h		mpzextra.c		mpzextra.h		matrix.c		matrix.h		matrixw.c		matrixw.h		matop.c			matop.h			compil.c		compil.h		structs.h		lexer.l			lexer.h			parseutil.h		parseutil.c		inter.c			inter.h			plugin.c		plugin.h		plugread.c		plugread.h		plug_api.h		parse.h			parse.y		 	genius_lists.c	 	utype.c			utype.h			extra.h			geloutput.c		geloutput.h		graphing.h		graphing.c
- 
- 
--gnome_genius_LDADD =  	-L$(top_builddir)/vicious-extensions		-lviciousui					-L$(top_builddir)/gtkextra			-lgtkextra-genius				-lm						@GMP_LIB@					$(MPFR_LIBDIR)					-lmpfr						@LEXLIB@					$(GENIUS_LIBS)					@READLINE_LIB@					@TERMCAP_LIB@
-+gnome_genius_LDADD =  	-L$(top_builddir)/vicious-extensions		-lviciousui					-L$(top_builddir)/gtkextra			-lgtkextra-genius				-lm						@GMP_LIB@					$(MPFR_LIBDIR)					@LEXLIB@					$(GENIUS_LIBS)					@READLINE_LIB@					@TERMCAP_LIB@
- 
- 
- genius_readline_helper_fifo_SOURCES =   	genius_lists.c				genius-readline-helper.c
-@@ -230,7 +230,7 @@
+--- src/Makefile.in.orig	Sat Jul 23 02:12:33 2005
++++ src/Makefile.in	Wed Aug 31 19:57:16 2005
+@@ -232,7 +232,7 @@
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I..
  LIBS = @LIBS@

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arbitrary precision calculator for Gnome Desktop Environment
 
+BUILD_DPENDS=	${LOCALBASE}/include/mpfr.h:${PORTSDIR}/math/mpfr
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
 USE_X_PREFIX=	yes
