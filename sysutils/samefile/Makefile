@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	samefile
-PORTVERSION=	2.10
+PORTVERSION=	2.12
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schweikhardt.net/
 
