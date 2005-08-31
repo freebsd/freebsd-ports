@@ -11506,6 +11506,7 @@ svg2swf		ports/graphics/svg2swf
 svgalib		ports/graphics/svgalib
 svk		ports/devel/svk
 svnc		ports/net/svnc
+svnmailer	ports/mail/svnmailer
 svr4_base	ports/emulators/svr4_base
 sw-aspell	ports/textproc/sw-aspell
 sw-ooodict-KE	ports/editors/ooodict-sw_KE
