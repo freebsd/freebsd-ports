@@ -1,0 +1,8 @@
+This module allows you to generates CPAN like pod pages from your
+modules (not only perl but also javascript including pod) for your
+projects.  Set your library modules' root directory with libroot option.
+And you have to set output directory's path with outroot option.  And
+this module searches your pm and pod files from your libroot, and
+generates html files, and an index page lists up all your modules there.
+
+WWW: http://search.cpan.org/dist/Pod-ProjectDocs/
