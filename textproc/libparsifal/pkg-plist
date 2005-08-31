@@ -16,6 +16,7 @@ lib/libparsifal.so
 %%PORTDOCS%%%%DOCSDIR%%/cvs.html
 %%PORTDOCS%%%%DOCSDIR%%/download.html
 %%PORTDOCS%%%%DOCSDIR%%/elsewhere.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/links.html
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
@@ -27,6 +28,7 @@ lib/libparsifal.so
 %%PORTDOCS%%%%DOCSDIR%%/toc.html
 %%PORTDOCS%%%%DOCSDIR%%/xmlconf_results.html
 %%PORTDOCS%%%%DOCSDIR%%/xmlconf_results_valid.html
+%%PORTDOCS%%%%DOCSDIR%%/xmlplint.html
 %%PORTDOCS%%%%DOCSDIR%%/csrchtml/canonxml_c.html
 %%PORTDOCS%%%%DOCSDIR%%/csrchtml/datatype_c.html
 %%PORTDOCS%%%%DOCSDIR%%/csrchtml/dtddecl_c.html
@@ -44,6 +46,8 @@ lib/libparsifal.so
 %%PORTDOCS%%%%DOCSDIR%%/pics/backg.gif
 %%PORTDOCS%%%%DOCSDIR%%/pics/semail.gif
 %%PORTDOCS%%%%DOCSDIR%%/pics/testsuite.gif
+%%PORTDOCS%%%%DOCSDIR%%/pics/uetool1.gif
+%%PORTDOCS%%%%DOCSDIR%%/pics/uevalid1.gif
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pics
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/csrchtml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
