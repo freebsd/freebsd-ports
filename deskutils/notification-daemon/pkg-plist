@@ -1,2 +1,3 @@
 etc/dbus-1/system.d/notification-daemon.conf
 libexec/notification-daemon
+share/dbus-1/services/org.freedesktop.Notifications.service
