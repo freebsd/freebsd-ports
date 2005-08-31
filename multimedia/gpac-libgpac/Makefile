@@ -27,7 +27,7 @@ INSTALL_WRKSRC=	${WRKSRC}/bin/gcc
 
 CONFIGURE_ARGS=	--cc="${CC}" \
 		--extra-cflags="${CFLAGS} ${PTHREAD_CFLAGS} -fPIC" \
-		--extra-ldflags="${LDFLAGS} ${PTHREAD_LDFLAGS}"
+		--extra-ldflags="${LDFLAGS} ${PTHREAD_LIBS}"
 
 .include <bsd.port.pre.mk>
 

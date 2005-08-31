@@ -57,7 +57,7 @@
 +ifeq ($(USE_FREEBSD),1)
 +  GNUC = 1
 +  VPATH = ../run-freebsd
-+  FEATURES = ${PTHREAD_FLAGS}
++  FEATURES = ${PTHREAD_CFLAGS}
 +  LIBS = ${PTHREAD_LIBS}
 +  UNIX = 1
 +endif
