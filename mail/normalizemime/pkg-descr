@@ -1,0 +1,12 @@
+[ excerpt from developer's www site with modifications ]
+
+This is a mime email message parser to be used as a preprocessor
+for email classification software.
+
+Tries to normalize the content to 8bit encoding with utf-8 character
+set. Also appends a copy of message body with HTML removed (IMG and
+A tags remain unaffected).
+
+WWW: http://hyvatti.iki.fi/~jaakko/spam/
+
+-- lioux@FreeBSD.org
