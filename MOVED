@@ -1603,3 +1603,13 @@ russian/nagios||2005-08-30|Obsoleted; new version is not planned
 security/gnutls-devel|security/gnutls|2005-08-30|Development version of GnuTLS is no longer being released
 www/py-websvcs|net/py-soappy|2005-08-30|duplicate port
 x11-toolkits/wxgtk26-contrib-utils|2005-08-31|Deprecated
+deskutils/gdesklets-psi_displaypackage||2005-08-31|removed; broken with recent gdesklets
+deskutils/gdesklets-sensor-psi_externalinterval||2005-08-31|removed; broken with recent gdesklets
+deskutils/gdesklets-sensor-psi_memo||2005-08-31|removed; broken with recent gdesklets
+deskutils/gdesklets-sensor-psi_memoover||2005-08-31|removed; broken with recent gdesklets
+sysutils/gdesklets-sensor-psi_memory||2005-08-31|removed; broken with recent gdesklets
+sysutils/gdesklets-sensor-psi_cpu||2005-08-31|removed; broken with recent gdesklets
+sysutils/gdesklets-sensor-psi_disk||2005-08-31|removed; broken with recent gdesklets
+net/gdesklets-sensor-psi_ping||2005-08-31|removed; broken with recent gdesklets
+mail/gdesklets-sensor-psi_popmail||2005-08-31|removed; broken with recent gdesklets
+deskutils/gdesklets-sensor-psi_variableborder||2005-08-31|removed; broken with recent gdesklets

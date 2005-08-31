@@ -1,8 +1,0 @@
-##
-To view the README, do the command following:
-
-	cat ${PREFIX}/share/gnome/gdesklets/Sensors/Memo/README
-
-This is just a sensor, to actually see the data it collects, you have to install
-an appropriate display plugin.
-##
