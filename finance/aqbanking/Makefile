@@ -31,7 +31,7 @@ INSTALLS_SHLIB=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OFX)
-LIB_DEPENDS+=	ofx.1:${PORTSDIR}/finance/libofx
+LIB_DEPENDS+=	ofx.2:${PORTSDIR}/finance/libofx
 CONFIGURE_ARGS+=--enable-libofx
 PLIST_SUB+=	OFX=""
 .else

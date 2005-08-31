@@ -7,6 +7,7 @@
 
 PORTNAME=	grisbi
 PORTVERSION=	0.5.7
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A personnal accounting application
 
-LIB_DEPENDS=	ofx.1:${PORTSDIR}/finance/libofx
+LIB_DEPENDS=	ofx.2:${PORTSDIR}/finance/libofx
 .if !defined(WITHOUT_LATEX)
 RUN_DEPENDS=	${UCS_CLASSDIR}/ucs.sty:${PORTSDIR}/print/latex-ucs
 .endif
