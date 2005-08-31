@@ -18,11 +18,13 @@ lib/MailScanner/MailScanner/BinHex.pm
 lib/MailScanner/MailScanner/Config.pm
 lib/MailScanner/MailScanner/ConfigDefs.pl
 lib/MailScanner/MailScanner/CustomConfig.pm
+lib/MailScanner/MailScanner/CustomFunctions/GenericSpamScanner.pm
 lib/MailScanner/MailScanner/CustomFunctions/MyExample.pm
 lib/MailScanner/MailScanner/CustomFunctions/DavidHooton.pm
 lib/MailScanner/MailScanner/CustomFunctions/ZMRouterDirHash.pm
 lib/MailScanner/MailScanner/Exim.pm
 lib/MailScanner/MailScanner/EximDiskStore.pm
+lib/MailScanner/MailScanner/GenericSpam.pm
 lib/MailScanner/MailScanner/Lock.pm
 lib/MailScanner/MailScanner/Log.pm
 lib/MailScanner/MailScanner/MCP.pm
@@ -142,10 +144,12 @@ libexec/MailScanner/vexira-wrapper.sample
 %%DATADIR%%/reports/cy+en/stored.content.message.txt.sample
 %%DATADIR%%/reports/cy+en/stored.filename.message.txt.sample
 %%DATADIR%%/reports/cy+en/stored.virus.message.txt.sample
+%%DATADIR%%/reports/cz.tar.gz.sample
 %%DATADIR%%/reports/cz/deleted.content.message.txt.sample
 %%DATADIR%%/reports/cz/deleted.filename.message.txt.sample
 %%DATADIR%%/reports/cz/deleted.virus.message.txt.sample
 %%DATADIR%%/reports/cz/disinfected.report.txt.sample
+%%DATADIR%%/reports/cz/filename.rules.txt.sample
 %%DATADIR%%/reports/cz/inline.sig.html.sample
 %%DATADIR%%/reports/cz/inline.sig.txt.sample
 %%DATADIR%%/reports/cz/inline.spam.warning.txt.sample
@@ -443,6 +447,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%DATADIR%%/reports/sk/stored.content.message.txt.sample
 %%DATADIR%%/reports/sk/stored.filename.message.txt.sample
 %%DATADIR%%/reports/sk/stored.virus.message.txt.sample
+%%PORTDOCS%%%%DOCSDIR%%/Book.Dec04-Aug05.pdf
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/FreeBSD.html
@@ -473,6 +478,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%PORTDOCS%%%%DOCSDIR%%/images/thumb_JulianField5.jpg
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/index.new.html
+%%PORTDOCS%%%%DOCSDIR%%/index.old.html
 %%PORTDOCS%%%%DOCSDIR%%/install/ClamAVModule.shtml
 %%PORTDOCS%%%%DOCSDIR%%/install/OS-virus-scan-web.htm
 %%PORTDOCS%%%%DOCSDIR%%/install/README.trend
@@ -492,12 +498,18 @@ libexec/MailScanner/vexira-wrapper.sample
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.2.61
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.2.63
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.3.0.0
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.3.0.3
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.3.0.4
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/Message.pm.patch.3.0.0
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/Message.pm.patch.3.0.3
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/Message.pm.patch.3.0.4
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.55
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.60
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.61
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.63
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.3.0.0
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.3.0.3
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.3.0.4
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/index.html
 %%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/install/tcp
 %%PORTDOCS%%%%DOCSDIR%%/install/mime-tools-patch.txt
@@ -515,7 +527,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%PORTDOCS%%%%DOCSDIR%%/install/tnef.shtml
 %%PORTDOCS%%%%DOCSDIR%%/install/zmailer.shtml
 %%PORTDOCS%%%%DOCSDIR%%/introduction.shtml
-%%PORTDOCS%%%%DOCSDIR%%/jobs
+%%PORTDOCS%%%%DOCSDIR%%/last-spam-logo.jpg
 %%PORTDOCS%%%%DOCSDIR%%/mailscanner_trans.gif
 %%PORTDOCS%%%%DOCSDIR%%/man/MailScanner.8
 %%PORTDOCS%%%%DOCSDIR%%/man/MailScanner.8.html
@@ -528,12 +540,15 @@ libexec/MailScanner/vexira-wrapper.sample
 %%PORTDOCS%%%%DOCSDIR%%/osdir.png
 %%PORTDOCS%%%%DOCSDIR%%/performance.shtml
 %%PORTDOCS%%%%DOCSDIR%%/phishing3.png
+%%PORTDOCS%%%%DOCSDIR%%/phishingcartoon.gif
 %%PORTDOCS%%%%DOCSDIR%%/poetry.shtml
 %%PORTDOCS%%%%DOCSDIR%%/poweredby.google.gif
 %%PORTDOCS%%%%DOCSDIR%%/poweredby.transtec.gif
 %%PORTDOCS%%%%DOCSDIR%%/phishing.html
 %%PORTDOCS%%%%DOCSDIR%%/phishing.jpg
 %%PORTDOCS%%%%DOCSDIR%%/phishing2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/phishingnet.info/index.html
+%%PORTDOCS%%%%DOCSDIR%%/phishingnet.info/PhishingNet.gif
 %%PORTDOCS%%%%DOCSDIR%%/pressreleases.html
 %%PORTDOCS%%%%DOCSDIR%%/presentations.html
 %%PORTDOCS%%%%DOCSDIR%%/press.html
@@ -541,6 +556,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%PORTDOCS%%%%DOCSDIR%%/readme.shtml
 %%PORTDOCS%%%%DOCSDIR%%/reject.html
 %%PORTDOCS%%%%DOCSDIR%%/sobig.html
+%%PORTDOCS%%%%DOCSDIR%%/store.html
 %%PORTDOCS%%%%DOCSDIR%%/support.html
 %%PORTDOCS%%%%DOCSDIR%%/transtec.logo.gif
 %%PORTDOCS%%%%DOCSDIR%%/users.shtml
@@ -550,6 +566,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/install/mcp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/install
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/phishingnet.info
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/reports/sk
 @dirrm %%DATADIR%%/reports/se
