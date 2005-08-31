@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libofx
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,17 +14,20 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenSource implementation of the OFX (Open Financial eXchange)
 
-LIB_DEPENDS=	osp.3:${PORTSDIR}/textproc/opensp
+LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl \
+		osp.3:${PORTSDIR}/textproc/opensp
 
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget
-USE_LIBTOOL_VER=	15
 USE_GETOPT_LONG=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-doxygen --disable-dot \
+USE_LIBTOOL_VER=	15
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--disable-doxygen --disable-dot --disable-gengetopt \
 		--with-opensp-includes=${LOCALBASE}/include/OpenSP
 INSTALLS_SHLIB=	yes
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-install:
 .if !defined(NOPORTDOCS)

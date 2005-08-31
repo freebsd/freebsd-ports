@@ -1,0 +1,11 @@
+--- ofxconnect/Makefile.in.orig	Mon Aug  1 03:34:47 2005
++++ ofxconnect/Makefile.in	Mon Aug  1 14:26:47 2005
+@@ -201,7 +201,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-ofxconnect_LDADD = $(top_builddir)/lib/libofx.la -L/usr/lib -lcurl -lz -lssl -lcrypto -ldl
++ofxconnect_LDADD = $(top_builddir)/lib/libofx.la `curl-config --libs`
+ ofxconnect_SOURCES = cmdline.h cmdline.c ofxconnect.cpp 
+ AM_CPPFLAGS = \
+ 	-I${top_srcdir}/inc

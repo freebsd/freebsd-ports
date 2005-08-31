@@ -1,20 +1,20 @@
---- Makefile.in.orig	Fri Oct  8 17:34:45 2004
-+++ Makefile.in	Thu Feb 10 20:30:55 2005
-@@ -102,7 +102,7 @@
- enable_latex_docs = @enable_latex_docs@
- have_gengetopt = @have_gengetopt@
+--- Makefile.in.orig	Mon Aug  1 03:46:41 2005
++++ Makefile.in	Mon Aug  1 14:09:23 2005
+@@ -206,7 +206,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = inc dtd lib doc . ofx2qif ofxdump ofxconnect 
++SUBDIRS = inc dtd lib . ofx2qif ofxdump ofxconnect 
+ docdir = ${prefix}/share/doc/libofx
+ doc_DATA = \
+   AUTHORS \
+@@ -621,7 +621,7 @@
  
--SUBDIRS = inc dtd lib doc . ofx2qif ofxdump 
-+SUBDIRS = inc dtd lib . ofx2qif ofxdump 
- 
- docdir = ${prefix}/share/doc/libofx-@VERSION@
- 
-@@ -353,7 +353,7 @@
- install-exec-am:
- install-exec: install-exec-recursive
+ info-am:
  
 -install-data-am: install-docDATA
 +install-data-am:
- install-data: install-data-recursive
  
- install-am: all-am
+ install-exec-am:
+ 
