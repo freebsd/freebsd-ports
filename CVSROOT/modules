@@ -7705,6 +7705,7 @@ p5-GD-TextUtil	ports/graphics/p5-GD-TextUtil
 p5-GDBM		ports/databases/p5-GDBM
 p5-GIFgraph	ports/graphics/GIFgraph
 p5-GPS		ports/astro/p5-GPS
+p5-Games-AlphaBeta	ports/games/p5-Games-AlphaBeta
 p5-Games-Bingo	ports/games/p5-Games-Bingo
 p5-Games-Bingo-Bot	ports/games/p5-Games-Bingo-Bot
 p5-Games-Bingo-Print	ports/games/p5-Games-Bingo-Print
