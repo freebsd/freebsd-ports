@@ -1,31 +1,47 @@
---- cnf/mak/afnix-rule.mak.orig	Wed Jan 12 06:05:00 2005
-+++ cnf/mak/afnix-rule.mak	Wed Feb 16 19:18:04 2005
-@@ -62,8 +62,8 @@
+--- cnf/mak/afnix-rule.mak.orig	Thu Aug 25 07:13:37 2005
++++ cnf/mak/afnix-rule.mak	Wed Aug 31 22:43:14 2005
+@@ -22,7 +22,7 @@
+ 
+ ifeq ($(CCMODE),optimized)
+   CPPFLAGS      = $(STDCCFLAGS) $(PLTCCFLAGS) $(CPPCCFLAGS) $(OPTCCFLAGS)
+-  CXXFLAGS      = $(STDCCFLAGS) $(PLTCCFLAGS) $(CXXCCFLAGS) $(OPTCCFLAGS)
++  CXXFLAGS      += $(STDCCFLAGS) $(PLTCCFLAGS) $(CXXCCFLAGS) $(OPTCCFLAGS)
+   CCDEFINE      = $(STDDEFINES) $(PLTDEFINES) $(OPTDEFINES)
  endif
  
- ifeq ($(LKMODE),soname)
--SONAME		= $(SOLIB).$(MAJOR).$(MINOR)
--SOVERS		= $(SOLIB).$(MAJOR).$(MINOR).$(PATCH)
-+SONAME		= $(SOLIB).$(MAJOR)
-+SOVERS		= $(SOLIB).$(MAJOR)
+@@ -78,7 +78,7 @@
+ -include *.d
+ 
+ %.o   : %.cpp 
+-	$(CC) $(PPFLAGS) $(DEFINES) $(PPINCLS) -o $@ -c $<
++	$(CC) $(CXXFLAGS) $(PPFLAGS) $(DEFINES) $(PPINCLS) -o $@ -c $<
+ 
+ %.o   : %.cxx 
+ 	$(CC) $(XXFLAGS) $(DEFINES) $(XXINCLS) -o $@ -c $<
+@@ -95,7 +95,7 @@
+ 
+ install-arlib: $(ARLIB)
+ 	@$(MKDIR) $(LIBDIR)
+-	@$(CP)    $(ARLIB) $(LIBDIR)
++	@$(BSD_INSTALL_DATA)    $(ARLIB) $(LIBDIR)
+ .PHONY: install-arlib
+ else
+ install-arlib: $(ARLIB)
+@@ -117,7 +117,7 @@
+ 
+ install-solib : $(SOLIB)
+ 	@$(MKDIR)       $(LIBDIR)
+-	@$(CP) $(SOLIB) $(LIBDIR)
++	@$(BSD_INSTALL_PROGRAM) $(SOLIB) $(LIBDIR)
+ .PHONY: install-solib
  endif
  
- # ----------------------------------------------------------------------------
-@@ -124,17 +124,13 @@
- $(SOLIB) : $(SOVERS)
- 	@$(MKDIR)        $(BLDLIB)
- 	@$(CP) $(SOVERS) $(BLDLIB)
--	@$(RM) $(BLDLIB)/$(SOLIB)
- 	@$(RM) $(BLDLIB)/$(SONAME)
--	@$(LN) $(SOVERS) $(BLDLIB)/$(SONAME)
- 	@$(LN) $(SONAME) $(BLDLIB)/$(SOLIB)
+@@ -136,7 +136,7 @@
  
  install-solib : $(SOVERS)
  	@$(MKDIR)        $(LIBDIR)
- 	@$(CP) $(SOVERS) $(LIBDIR)
--	@$(RM) $(LIBDIR)/$(SONAME)
+-	@$(CP) $(SOVERS) $(LIBDIR)
++	@$(BSD_INSTALL_PROGRAM) $(SOVERS) $(LIBDIR)
+ 	@$(RM) $(LIBDIR)/$(SONAME)
  	@$(RM) $(LIBDIR)/$(SOLIB)
--	@$(LN) $(SOVERS) $(LIBDIR)/$(SONAME)
- 	@$(LN) $(SONAME) $(LIBDIR)/$(SOLIB)
- .PHONY: install-solib
- endif
+ 	@$(LN) $(SOVERS) $(LIBDIR)/$(SONAME)
