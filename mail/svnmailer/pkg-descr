@@ -1,0 +1,10 @@
+The svnmailer is a tool, which is usually called by a subversion hook
+to submit commit notifications in various ways (at the moment: mail via
+SMTP or a pipe to a sendmail like program, news via NNTP, CIA live
+tracker notification via XML-RPC). It is derived from the original
+mailer.py distributed with subversion, but supposed to be much more
+consistent, better extensible and to have much more features. Have a
+look at the documentation for further details
+
+Author:	nd@perlig.de
+WWW:	http://opensource.perlig.de/svnmailer/
