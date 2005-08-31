@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkabber
-PORTVERSION=	0.9.8.a.20050621
+PORTVERSION=	0.9.8.a.20050814
 CATEGORIES=	net
 MASTER_SITES=	http://neva.vlink.ru/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -14,6 +14,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	Tcl/Tk based jabber client, development version
 
+LIB_DEPENDS=	img.1:${PORTSDIR}/graphics/libimg \
+		tkXwin.1:${PORTSDIR}/x11/tkXwin
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 		${LOCALBASE}/lib/tcllib1.7/pkgIndex.tcl:${PORTSDIR}/devel/tcllib \
 		${LOCALBASE}/lib/tls/pkgIndex.tcl:${PORTSDIR}/devel/tcltls \
@@ -34,20 +36,26 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/tkabber.sh ${PREFIX}/bin/tkabber
 
 	${MKDIR} ${DATADIR}
-	${CP} ${WRKSRC}/*.tcl ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/*.tcl ${DATADIR}
 .for i in ${SUBDIRS}
-	${CP} -R ${WRKSRC}/${i} ${DATADIR}/
+	${CP} -R ${WRKSRC}/${i} ${DATADIR}
 .endfor
+	${HEAD} -1 ${WRKSRC}/ChangeLog > ${DATADIR}/version
 
 	${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}/
+	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
+
+.for i in ${DATADIR} ${EXAMPLESDIR}
+	${FIND} ${i} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
+	${FIND} ${i} -type f -print0 | ${XARGS} -0 ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+.endfor
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in AUTHORS COPYING ChangeLog
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}/
+.  for i in AUTHORS COPYING ChangeLog
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.  endfor
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

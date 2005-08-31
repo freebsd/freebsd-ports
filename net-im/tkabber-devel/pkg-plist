@@ -41,8 +41,10 @@ bin/tkabber
 %%DATADIR%%/iq.tcl
 %%DATADIR%%/itemedit.tcl
 %%DATADIR%%/jabberlib-tclxml/jabberlib.tcl
+%%DATADIR%%/jabberlib-tclxml/jlibsasl.tcl
 %%DATADIR%%/jabberlib-tclxml/ntlm.tcl
 %%DATADIR%%/jabberlib-tclxml/pkgIndex.tcl
+%%DATADIR%%/jabberlib-tclxml/streamerror.tcl
 %%DATADIR%%/jabberlib-tclxml/tclxml/pkgIndex.tcl
 %%DATADIR%%/jabberlib-tclxml/tclxml/sgml-8.1.tcl
 %%DATADIR%%/jabberlib-tclxml/tclxml/sgmlparser.tcl
@@ -517,9 +519,11 @@ bin/tkabber
 %%DATADIR%%/plugins/filetransfer/http.tcl
 %%DATADIR%%/plugins/filetransfer/jidlink.tcl
 %%DATADIR%%/plugins/filetransfer/si.tcl
+%%DATADIR%%/plugins/general/annotations.tcl
 %%DATADIR%%/plugins/general/autoaway.tcl
 %%DATADIR%%/plugins/general/avatars.tcl
 %%DATADIR%%/plugins/general/clientinfo.tcl
+%%DATADIR%%/plugins/general/conferences.tcl
 %%DATADIR%%/plugins/general/conferenceinfo.tcl
 %%DATADIR%%/plugins/general/message_archive.tcl
 %%DATADIR%%/plugins/general/offline.tcl
@@ -573,6 +577,7 @@ bin/tkabber
 %%DATADIR%%/tkabber.tcl
 %%DATADIR%%/userinfo.tcl
 %%DATADIR%%/utils.tcl
+%%DATADIR%%/version
 %%DATADIR%%/xmppmime.tcl
 %%EXAMPLESDIR%%/badlop-config-home.tcl
 %%EXAMPLESDIR%%/badlop-config.tcl
@@ -607,13 +612,11 @@ bin/tkabber
 @dirrm %%DATADIR%%/emoticons-tkabber
 @dirrm %%DATADIR%%/ifaceck
 @dirrm %%DATADIR%%/ifacetk
-@dirrm %%DATADIR%%/plugins/mac
 @dirrm %%DATADIR%%/plugins/filetransfer
 @dirrm %%DATADIR%%/plugins/general
 @dirrm %%DATADIR%%/plugins/iq
 @dirrm %%DATADIR%%/plugins/jidlink
 @dirrm %%DATADIR%%/plugins/chat
-@dirrm %%DATADIR%%/plugins/macintosh
 @dirrm %%DATADIR%%/plugins/si
 @dirrm %%DATADIR%%/plugins/unix
 @dirrm %%DATADIR%%/plugins/windows
