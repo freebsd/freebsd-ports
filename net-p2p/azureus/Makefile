@@ -22,6 +22,8 @@ RUN_DEPENDS=	\
 		${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk_${ECLIPSE_VERSION}/ws/gtk/swt-pi.jar:${PORTSDIR}/java/eclipse \
 		${BUILD_DEPENDS}
 
+BROKEN=		Broken dependency
+
 ONLY_FOR_ARCHS=	i386
 
 USE_JAVA=	yes
