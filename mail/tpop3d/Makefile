@@ -28,7 +28,8 @@ OPTIONS=	MYSQL		"Use MySQL authentication"			off \
 		LDAP		"Use LDAP authentication"			off \
 		PERLAUTH	"Use Perl authentication"			off \
 		FLATAUTH	"Enable /etc/passwd-style authentication"	off \
-		MAILDIR		"Compile Maildir support"			on
+		MAILDIR		"Compile Maildir support"			on \
+		DRAC		"Enable DRAC RFC for POP-before-SMTP relaying"	off
 
 .include <bsd.port.pre.mk>
 
@@ -69,6 +70,12 @@ CONFIGURE_ARGS+=	--enable-auth-flatfile
 
 .if defined(WITH_MAILDIR) && !defined(WITHOUT_MAILDIR)
 CONFIGURE_ARGS+=	--enable-mbox-maildir
+.endif
+
+.if defined(WITH_DRAC) && !defined(WITHOUT_DRAC)
+CONFIGURE_ARGS+=	--enable-drac
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
+LDFLAGS+=		-L${LOCALBASE}/lib
 .endif
 
 USE_RC_SUBR=	tpop3d.sh
