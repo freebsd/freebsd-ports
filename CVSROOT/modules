@@ -2985,6 +2985,7 @@ gnome-backgrounds	ports/x11-themes/gnome-backgrounds
 gnome-bluecurve-theme	ports/x11-themes/gnome-bluecurve-theme
 gnome-btdownload	ports/net/gnome-btdownload
 gnome-clipboard-daemon	ports/x11/gnome-clipboard-daemon
+gnome-colorscheme	ports/graphics/gnome-colorscheme
 gnome-commander	ports/x11-fm/gnome-commander
 gnome-commander2	ports/x11-fm/gnome-commander2
 gnome-cups-manager	ports/print/gnome-cups-manager
