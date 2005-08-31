@@ -7,6 +7,7 @@
 
 PORTNAME=	event
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.xs4all.nl/~mmzeeman/ocaml/
 PKGNAMEPREFIX=	ocaml-
@@ -46,6 +47,7 @@ LIB_STUB_FILES=	\
 		dllmlevent.so
 
 # examples to install
+PLIST_DIRS+=	${EXAMPLESDIR:S,^${PREFIX}/,,}
 .for file in ${EXAMPLE_FILES}
 PLIST_FILES+=	${EXAMPLESDIR:S,^${PREFIX}/,,}/${file}
 .endfor
