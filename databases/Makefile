@@ -107,6 +107,7 @@
     SUBDIR += mysql-connector-java
     SUBDIR += mysql-editor
     SUBDIR += mysql-navigator
+    SUBDIR += mysql2odbc
     SUBDIR += mysql2pgsql
     SUBDIR += mysql323-client
     SUBDIR += mysql323-scripts
@@ -128,6 +129,8 @@
     SUBDIR += mytop
     SUBDIR += namazu2
     SUBDIR += oracle7-client
+    SUBDIR += oracle8-client
+    SUBDIR += oracle_odbc_driver
     SUBDIR += p5-ApacheDBILogConfig
     SUBDIR += p5-ApacheDBILogger
     SUBDIR += p5-AsciiDB-TagFile
