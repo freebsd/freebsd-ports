@@ -13,12 +13,18 @@ lib/enemyterritory/etf/classconfigs/recon.cfg
 lib/enemyterritory/etf/classconfigs/sniper.cfg
 lib/enemyterritory/etf/classconfigs/soldier.cfg
 lib/enemyterritory/etf/etconfig.cfg
+lib/enemyterritory/etf/etf_border.pk3
+lib/enemyterritory/etf/etf_bringit.pk3
 lib/enemyterritory/etf/etf_dissect.pk3
 lib/enemyterritory/etf/etf_pak0.pk3
 lib/enemyterritory/etf/etf_pak1.pk3
+lib/enemyterritory/etf/etf_pak2.28249d08.pk3
 lib/enemyterritory/etf/etf_pak2.pk3
 lib/enemyterritory/etf/etf_pak3.pk3
+lib/enemyterritory/etf/etf_pak4.pk3
+lib/enemyterritory/etf/etf_pak5.pk3
 lib/enemyterritory/etf/etf_server.cfg
+lib/enemyterritory/etf/etf_smartbases2.pk3
 lib/enemyterritory/etf/mp_bin.pk3
 lib/enemyterritory/etf/nav/etf_official_wps.zip
 lib/enemyterritory/etf/omnibot_etf.so
@@ -34,9 +40,6 @@ lib/enemyterritory/etf/ui/usermenu/default_offense.cfg
 lib/enemyterritory/etf/ui/usermenu/default_team.cfg
 lib/enemyterritory/etf/ui.mp.i386.so
 lib/enemyterritory/etf/video/etintro.roq
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/etf.xpm
 %%EXAMPLESDIR%%/sample_server/ACTF.zip
 %%EXAMPLESDIR%%/sample_server/DUEL.zip
@@ -50,7 +53,6 @@ lib/enemyterritory/etf/video/etintro.roq
 @dirrm lib/enemyterritory/etf/ui
 @dirrm lib/enemyterritory/etf/video
 @dirrm lib/enemyterritory/etf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%/sample_server
 @dirrm %%EXAMPLESDIR%%
