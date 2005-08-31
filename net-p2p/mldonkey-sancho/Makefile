@@ -33,6 +33,8 @@ RUN_DEPENDS=	\
 	${JAVAJARDIR:S!^${PREFIX}/!${LOCALBASE}/!}/trove.jar:${PORTSDIR}/java/trove4j \
 	${JAVAJARDIR:S!^${PREFIX}/!${LOCALBASE}/!}/jsch.jar:${PORTSDIR}/net/jsch
 
+BROKEN=		Broken dependency
+
 ONLY_FOR_ARCHS=	i386
 
 USE_JAVA=	yes
