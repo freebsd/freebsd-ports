@@ -29,6 +29,12 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 MAKEFILE=	Makefile.UNIX
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Internal compiler error on sparc64"
+.endif
+
 post-extract:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -i '' -e "s/`/usr/bin/printf '\r'`//g ; \
 		s|\"SDL/|\"|g ; s|<SDL/|<|g"
@@ -46,4 +52,4 @@ do-install:
 	  fi
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
