@@ -416,6 +416,7 @@
     SUBDIR += pysol-cardsets
     SUBDIR += pysol-music
     SUBDIR += pythoong
+    SUBDIR += q15
     SUBDIR += q3-paks
     SUBDIR += q3server
     SUBDIR += q3server-excessive
