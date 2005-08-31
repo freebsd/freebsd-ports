@@ -24,6 +24,12 @@ ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 post-extract:
 	@${FIND} -E ${WRKDIR} -type f -print0 | \
 		${XARGS} -0 ${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//'
@@ -35,4 +41,4 @@ post-extract:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
