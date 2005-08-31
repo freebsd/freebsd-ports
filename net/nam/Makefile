@@ -7,7 +7,7 @@
 
 PORTNAME=	nam
 PORTVERSION=	1.11
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.isi.edu/nsnam/dist/
 DISTNAME=	nam-src-${PORTVERSION}
@@ -16,32 +16,28 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Animation tool for network simulation traces
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtclcl.a:${PORTSDIR}/devel/tclcl
-LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
+LIB_DEPENDS=	otcl.1:${PORTSDIR}/lang/otcl
 
-MAN1=		nam.1
-MANCOMPRESSED=	no
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-ALL_TARGET=	# empty
+MAKE_ARGS=	CCOPT="${CXXFLAGS}"
+ALL_TARGET=	${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile"
-.endif
+MAN1=		nam.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,friend Queue,friend class Queue,' ${WRKSRC}/queue.h
+	@${REINPLACE_CMD} -e 's|const = NULL|const = 0|g' ${WRKSRC}/agent.h
+	@${REINPLACE_CMD} -e 's|friend Queue|friend class Queue|g' ${WRKSRC}/queue.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nam ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/nam.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/nam.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/ex/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
