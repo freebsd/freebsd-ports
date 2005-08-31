@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Please register your interest in this software before use:
+        http://proofgeneral.inf.ed.ac.uk/register
+
+To load Proof General automatically when starting x/emacs, add the following
+line to the .emacs or .xemacs/init.el file:
+  (load-file "%%PREFIX%%/%%EMACS_SITE_LISPDIR%%/proofgeneral/generic/proof-site.el")
+
+------------------------------------------------------------------------------
