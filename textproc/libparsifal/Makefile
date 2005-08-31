@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libparsifal
-PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTVERSION=	0.9.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.saunalahti.fi/~samiuus/toni/xmlproc/
 
@@ -22,12 +21,6 @@ INSTALLS_SHLIB=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386" && ${ARCH} != "sparc64"
-BROKEN=		"Does not compile on !i386 and !sparc64"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's| -O3||g' ${WRKSRC}/src/Makefile.in
 
@@ -40,4 +33,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
