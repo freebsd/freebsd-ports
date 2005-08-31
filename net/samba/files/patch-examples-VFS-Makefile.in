@@ -1,0 +1,16 @@
+--- examples/VFS/Makefile.in.orig	Thu Aug 12 20:24:58 2004
++++ examples/VFS/Makefile.in	Wed Aug 31 22:11:55 2005
+@@ -17,11 +17,11 @@
+ 
+ %.so: %.lo
+ 	@echo Linking $<
+-	@$(LIBTOOL) --mode=link $(CC) -o $@ $< $(LDFLAGS)
++	@$(LIBTOOL) --mode=link --tag=CC $(CC) -o $@ $< $(LDFLAGS)
+ 
+ %.lo: %.c
+ 	@echo Compiling $<
+-	@$(LIBTOOL) --mode=compile $(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
++	@$(LIBTOOL) --mode=compile --tag=CC $(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+ 
+ # Misc targets
+ 
