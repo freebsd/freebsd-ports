@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Graphics-ColorNames
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Graphics
@@ -24,10 +24,8 @@ MAN3=	Graphics::ColorNames.3 \
 	Graphics::ColorNames::X.3 \
 	Graphics::ColourNames.3
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${PERL} -pi -e 's/^our (\S+)/use vars qw($$1); $$1/' \
+		${WRKSRC}/lib/Graphics/ColorNames.pm
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not build on FreeBSD 4.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
