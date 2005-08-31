@@ -9,7 +9,6 @@ PORTNAME=	oracle_odbc_driver
 PORTVERSION=	0.5.5
 CATEGORIES=	databases
 MASTER_SITES=	http://fndapl.fnal.gov/~dbox/oracle/odbc/
-MASTER_SITE_SUBDIR=	fjoe
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	fjoe@FreeBSD.org
