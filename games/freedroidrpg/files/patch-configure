@@ -1,0 +1,11 @@
+--- configure.orig	Thu Aug  4 11:00:41 2005
++++ configure	Fri Aug 26 18:33:02 2005
+@@ -4978,6 +4978,8 @@
+ 	;;
+ 
+ 	*bsd*)
++	CFLAGS="$CFLAGS  -DFD_DATADIR='\"\$(pkgdatadir)\"'"   #avoid expansion of $pkgdatadir !
++	SYS_GL_LIB=GL
+ 	bsd=true
+ 	;;
+ 

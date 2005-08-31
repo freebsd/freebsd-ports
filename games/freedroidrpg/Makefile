@@ -6,27 +6,30 @@
 #
 
 PORTNAME=	freedroidrpg
-PORTVERSION=	0.9.13.r2
+PORTVERSION=	0.9.13.r3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freedroid
-DISTNAME=	${PORTNAME}-0.9.13-rc2
+DISTNAME=	${PORTNAME:S/rpg/RPG/}-${PORTVERSION:S/.r3/-rc3/}
 
 MAINTAINER=	alejandro@varnet.biz
 COMMENT=	Modification of the classical Freedroid engine into an RPG
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.r3/-rc3/}
+
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
-USE_GL=		yes
-USE_GMAKE=	yes
-USE_GNOME=	gtk12
+USE_GETOPT_LONG=yes
 USE_SDL=	mixer image net sdl
-USE_XLIB=	yes
+WANT_GNOME=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=
 
 MAN6=		freedroidRPG.6
+
+OPTIONS=	BACKTRACE "Use backtrace() to generate nice bug reports" on \
+		EDITORS "Build the GTK editors" on \
+		OPENGL "Enable the OpenGL support (highly recommended!)" on
 
 .include <bsd.port.pre.mk>
 
@@ -34,12 +37,28 @@ MAN6=		freedroidRPG.6
 BROKEN=		"does not compile (missing fenv.h)"
 .endif
 
-.if ${OSVERSION} < 600021
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-init.c
+.if defined(WITH_BACKTRACE)
+LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+CONFIGURE_ARGS+=	--enable-backtrace
+STRIP=		# keep debugging symbols
+.else
+CONFIGURE_ARGS+=	--disable-backtrace
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's#-lSDL # #' \
-				${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.if defined(WITH_EDITORS)
+USE_GNOME+=	gtk12
+CONFIGURE_ARGS+=	--enable-editors
+PLIST_SUB+=	EDITORS=""
+.else
+CONFIGURE_ARGS+=	--disable-editors
+PLIST_SUB+=	EDITORS="@comment "
+.endif
+
+.if defined(WITH_OPENGL)
+USE_GL=		yes
+CONFIGURE_ARGS+=	--enable-opengl
+.else
+CONFIGURE_ARGS+=	--disable-opengl
+.endif
 
 .include <bsd.port.post.mk>

@@ -1,8 +1,8 @@
-bin/DialogEditor
-bin/ItemEditor
-bin/croppy
+%%EDITORS%%bin/DialogEditor
+%%EDITORS%%bin/ItemEditor
+%%EDITORS%%bin/croppy
 bin/freedroidRPG
-bin/pngtoico
+%%EDITORS%%bin/pngtoico
 %%DATADIR%%/dialogs/614.dialog
 %%DATADIR%%/dialogs/Bender.dialog
 %%DATADIR%%/dialogs/Benjamin.dialog
@@ -1088,6 +1088,7 @@ bin/pngtoico
 %%DATADIR%%/graphics/droids/493/portrait_0031.jpg
 %%DATADIR%%/graphics/droids/493/portrait_0032.jpg
 %%DATADIR%%/graphics/droids/516.png
+%%DATADIR%%/graphics/droids/516/516.tux_image_archive
 %%DATADIR%%/graphics/droids/516/ingame_0001.offset
 %%DATADIR%%/graphics/droids/516/ingame_0001.png
 %%DATADIR%%/graphics/droids/516/ingame_0002.offset
@@ -2038,6 +2039,22 @@ bin/pngtoico
 %%DATADIR%%/graphics/items/ammo_plasma_bullet/portrait_0014.jpg
 %%DATADIR%%/graphics/items/ammo_plasma_bullet/portrait_0015.jpg
 %%DATADIR%%/graphics/items/ammo_plasma_bullet/portrait_0016.jpg
+%%DATADIR%%/graphics/items/ammo_plasma_bullet/portrait_0017.jpg
+%%DATADIR%%/graphics/items/ammo_plasma_bullet/portrait_0018.jpg
+%%DATADIR%%/graphics/items/ammo_plasma_bullet/portrait_0019.jpg
+%%DATADIR%%/graphics/items/ammo_plasma_bullet/portrait_0020.jpg
+%%DATADIR%%/graphics/items/ammo_plasma_bullet/portrait_0021.jpg
+%%DATADIR%%/graphics/items/ammo_plasma_bullet/portrait_0022.jpg
+%%DATADIR%%/graphics/items/ammo_plasma_bullet/portrait_0023.jpg
+%%DATADIR%%/graphics/items/ammo_plasma_bullet/portrait_0024.jpg
+%%DATADIR%%/graphics/items/ammo_plasma_bullet/portrait_0025.jpg
+%%DATADIR%%/graphics/items/ammo_plasma_bullet/portrait_0026.jpg
+%%DATADIR%%/graphics/items/ammo_plasma_bullet/portrait_0027.jpg
+%%DATADIR%%/graphics/items/ammo_plasma_bullet/portrait_0028.jpg
+%%DATADIR%%/graphics/items/ammo_plasma_bullet/portrait_0029.jpg
+%%DATADIR%%/graphics/items/ammo_plasma_bullet/portrait_0030.jpg
+%%DATADIR%%/graphics/items/ammo_plasma_bullet/portrait_0031.jpg
+%%DATADIR%%/graphics/items/ammo_plasma_bullet/portrait_0032.jpg
 %%DATADIR%%/graphics/items/antigrav_unit/ingame.offset
 %%DATADIR%%/graphics/items/antigrav_unit/ingame.png
 %%DATADIR%%/graphics/items/antigrav_unit/inv_image.png
@@ -2498,6 +2515,22 @@ bin/pngtoico
 %%DATADIR%%/graphics/items/desk_lamp/portrait_0014.jpg
 %%DATADIR%%/graphics/items/desk_lamp/portrait_0015.jpg
 %%DATADIR%%/graphics/items/desk_lamp/portrait_0016.jpg
+%%DATADIR%%/graphics/items/desk_lamp/portrait_0017.jpg
+%%DATADIR%%/graphics/items/desk_lamp/portrait_0018.jpg
+%%DATADIR%%/graphics/items/desk_lamp/portrait_0019.jpg
+%%DATADIR%%/graphics/items/desk_lamp/portrait_0020.jpg
+%%DATADIR%%/graphics/items/desk_lamp/portrait_0021.jpg
+%%DATADIR%%/graphics/items/desk_lamp/portrait_0022.jpg
+%%DATADIR%%/graphics/items/desk_lamp/portrait_0023.jpg
+%%DATADIR%%/graphics/items/desk_lamp/portrait_0024.jpg
+%%DATADIR%%/graphics/items/desk_lamp/portrait_0025.jpg
+%%DATADIR%%/graphics/items/desk_lamp/portrait_0026.jpg
+%%DATADIR%%/graphics/items/desk_lamp/portrait_0027.jpg
+%%DATADIR%%/graphics/items/desk_lamp/portrait_0028.jpg
+%%DATADIR%%/graphics/items/desk_lamp/portrait_0029.jpg
+%%DATADIR%%/graphics/items/desk_lamp/portrait_0030.jpg
+%%DATADIR%%/graphics/items/desk_lamp/portrait_0031.jpg
+%%DATADIR%%/graphics/items/desk_lamp/portrait_0032.jpg
 %%DATADIR%%/graphics/items/dixons_toolbox/ingame.offset
 %%DATADIR%%/graphics/items/dixons_toolbox/ingame.png
 %%DATADIR%%/graphics/items/dixons_toolbox/inv_image.png
@@ -5446,6 +5479,8 @@ bin/pngtoico
 %%DATADIR%%/sound/speeches/Tux_STO_Some_Of_My_0.ogg
 %%DATADIR%%/sound/speeches/Tux_See_You_Later_0.ogg
 %%DATADIR%%/sound/speeches/Tux_Why_Did_I_0.ogg
+@dirrm share/nls/en_US.US-ASCII
+@dirrm share/nls/POSIX
 @dirrm %%DATADIR%%/sound/speeches/Spencer
 @dirrm %%DATADIR%%/sound/speeches/OldTown614Guard
 @dirrm %%DATADIR%%/sound/speeches/Michelangelo
@@ -5466,6 +5501,7 @@ bin/pngtoico
 @dirrm %%DATADIR%%/sound/effects
 @dirrm %%DATADIR%%/sound
 @dirrm %%DATADIR%%/map
+@dirrm %%DATADIR%%/graphics/wm_icon
 @dirrm %%DATADIR%%/graphics/tux_motion_parts/sword_motion/shield_items
 @dirrm %%DATADIR%%/graphics/tux_motion_parts/sword_motion
 @dirrm %%DATADIR%%/graphics/tux_motion_parts/gun_motion/shield_items
@@ -5473,9 +5509,18 @@ bin/pngtoico
 @dirrm %%DATADIR%%/graphics/tux_motion_parts
 @dirrm %%DATADIR%%/graphics/tux_flags
 @dirrm %%DATADIR%%/graphics/skill_icons
+@dirrm %%DATADIR%%/graphics/rotation_models/portraits
+@dirrm %%DATADIR%%/graphics/rotation_models/items/item_blender_sources
+@dirrm %%DATADIR%%/graphics/rotation_models/items
+@dirrm %%DATADIR%%/graphics/rotation_models
+@dirrm %%DATADIR%%/graphics/portraits
+@dirrm %%DATADIR%%/graphics/para90_theme
 @dirrm %%DATADIR%%/graphics/obstacles
 @dirrm %%DATADIR%%/graphics/mouse_buttons
+@dirrm %%DATADIR%%/graphics/map_inserts/BlenderSources
+@dirrm %%DATADIR%%/graphics/map_inserts
 @dirrm %%DATADIR%%/graphics/light_radius_chunks
+@dirrm %%DATADIR%%/graphics/lanzz_theme/single_map_tiles
 @dirrm %%DATADIR%%/graphics/lanzz_theme
 @dirrm %%DATADIR%%/graphics/items/wheel_drive
 @dirrm %%DATADIR%%/graphics/items/warrior_wristband
@@ -5501,6 +5546,9 @@ bin/pngtoico
 @dirrm %%DATADIR%%/graphics/items/monkey_wrench
 @dirrm %%DATADIR%%/graphics/items/map_maker
 @dirrm %%DATADIR%%/graphics/items/mace
+@dirrm %%DATADIR%%/graphics/items/light_sabre_yellow
+@dirrm %%DATADIR%%/graphics/items/light_sabre_red
+@dirrm %%DATADIR%%/graphics/items/light_sabre_green
 @dirrm %%DATADIR%%/graphics/items/laser_sword_yellow
 @dirrm %%DATADIR%%/graphics/items/laser_sword_red
 @dirrm %%DATADIR%%/graphics/items/laser_sword_green
@@ -5542,6 +5590,7 @@ bin/pngtoico
 @dirrm %%DATADIR%%/graphics/items
 @dirrm %%DATADIR%%/graphics/font
 @dirrm %%DATADIR%%/graphics/floor_tiles
+@dirrm %%DATADIR%%/graphics/floor
 @dirrm %%DATADIR%%/graphics/droids/red_guard
 @dirrm %%DATADIR%%/graphics/droids/professor
 @dirrm %%DATADIR%%/graphics/droids/kevin
@@ -5577,7 +5626,10 @@ bin/pngtoico
 @dirrm %%DATADIR%%/graphics/droids/247
 @dirrm %%DATADIR%%/graphics/droids/139
 @dirrm %%DATADIR%%/graphics/droids/123
+@dirrm %%DATADIR%%/graphics/droids/001
 @dirrm %%DATADIR%%/graphics/droids
+@dirrm %%DATADIR%%/graphics/default_theme
+@dirrm %%DATADIR%%/graphics/classic_theme
 @dirrm %%DATADIR%%/graphics/bullets
 @dirrm %%DATADIR%%/graphics/blender_sources
 @dirrm %%DATADIR%%/graphics/blasts
