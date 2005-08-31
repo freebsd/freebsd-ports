@@ -43,7 +43,6 @@ include/wx-2.6/wx/dataobj.h
 include/wx-2.6/wx/datectrl.h
 include/wx-2.6/wx/dateevt.h
 include/wx-2.6/wx/datetime.h
-include/wx-2.6/wx/datetime.inl
 include/wx-2.6/wx/datstrm.h
 include/wx-2.6/wx/db.h
 include/wx-2.6/wx/dbgrid.h
