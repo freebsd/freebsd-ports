@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.97
+PORTVERSION?=	0.99
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.arcade-history.com/download/:history \
@@ -130,7 +130,7 @@ PLIST_SUB+=	DATFILES=""
 
 EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
-HIVER=		096
+HIVER=		099
 
 DISTFILES+=	uhsdat${HIVER}.zip:highscore \
 		history${PORTVERSION:S/./_/}.zip:history \
@@ -313,7 +313,7 @@ post-install:
 	@${ECHO_MSG}
 	@${ECHO_MSG}	"**************************************************************"
 	@${ECHO_MSG}    "* HEADSUP: The OpenGL code is now built on top of the X11"
-	@${ECHO_MSG}    "* drivers. You can enable OpenGL rendering with the -vidmode 2"
+	@${ECHO_MSG}    "* drivers. You can enable OpenGL rendering with the -vidmod 2"
 	@${ECHO_MSG}    "* option."
 	@${ECHO_MSG}    "**************************************************************"
 	@${ECHO_MSG}
