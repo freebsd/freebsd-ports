@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Games/AlphaBeta.pm
+%%SITE_PERL%%/Games/AlphaBeta/Position.pm
+%%SITE_PERL%%/Games/AlphaBeta/Reversi.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/AlphaBeta/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/AlphaBeta
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Games 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Games/AlphaBeta
+@unexec rmdir %D/%%SITE_PERL%%/Games 2>/dev/null || true

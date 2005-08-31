@@ -374,6 +374,7 @@
     SUBDIR += openmortal
     SUBDIR += openttd
     SUBDIR += orbital_eunuchs_sniper
+    SUBDIR += p5-Games-AlphaBeta
     SUBDIR += p5-Games-Bingo
     SUBDIR += p5-Games-Bingo-Bot
     SUBDIR += p5-Games-Bingo-Print
