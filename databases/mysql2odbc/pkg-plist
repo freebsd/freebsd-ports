@@ -1,0 +1,5 @@
+mysql2odbc/libmysqlclient.a
+mysql2odbc/libmysqlclient.la
+mysql2odbc/libmysqlclient.so
+mysql2odbc/libmysqlclient.so.10
+@dirrm mysql2odbc
