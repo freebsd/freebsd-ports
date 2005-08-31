@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+bin/conky
+%%EXAMPLESDIR%%/conkyrc.sample
+@dirrm %%EXAMPLESDIR%%

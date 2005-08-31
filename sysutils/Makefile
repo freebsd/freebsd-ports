@@ -75,6 +75,7 @@
     SUBDIR += cog
     SUBDIR += colorize
     SUBDIR += comconsole
+    SUBDIR += conky
     SUBDIR += consolehm
     SUBDIR += contool
     SUBDIR += copytape
