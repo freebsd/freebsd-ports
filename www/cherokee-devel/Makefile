@@ -18,6 +18,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GETOPT_LONG=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -45,6 +46,10 @@ PLIST_SUB+=	PAM=""
 .else
 PLIST_SUB+=	PAM="@comment "
 .endif
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|@mkdir_p@|${MKDIR} --|g'
 
 pre-build:
 .for file in advanced.conf cherokee.conf mods-ssl sites-default sites-example
