@@ -139,6 +139,7 @@
     SUBDIR += ingo
     SUBDIR += isoqlog
     SUBDIR += isync
+    SUBDIR += itraxp
     SUBDIR += jamlib
     SUBDIR += jboss-mailservices
     SUBDIR += junkfilter

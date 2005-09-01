@@ -1,0 +1,49 @@
+bin/itraxp
+%%PORTDOCS%%%%DOCSDIR%%/itraxp.txt
+%%PORTDOCS%%%%DOCSDIR%%/misc/st_itraxp.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/include/attribute.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/include/data.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/include/dirarea.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/include/macro.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/include/nodelist.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/include/points.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/include/readdres.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/include/routing.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/itraxp.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/procin.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/procmain.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/procout.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/readme
+%%PORTDOCS%%%%EXAMPLESDIR%%/tab/alt2koi8.tbl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tab/koi82alt.tbl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/arqsend.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/ashole.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/bad_dest.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/bad_orig.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/badpoint.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/bbs_head.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/echoact.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/echocrt.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/echopost.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/fattach.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/logmsgs.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/loopdest.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/looping.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/nofrom.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/nofrouto.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/nolink.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/noroute.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/notfound.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/noto.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/origin.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/orphan.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/readdrde.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/readdror.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/rrqsend.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tpl/wronpoint.tpl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tpl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tab
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/include
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/misc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
