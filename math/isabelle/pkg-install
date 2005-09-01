@@ -1,0 +1,23 @@
+#!/bin/sh
+
+if [ "$2" = "POST-INSTALL" ]; then
+	if test `ulimit -Hd` -lt 917504; then
+		cat <<END
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! The system process data segment value is too low!                  !
+!                                                                    !
+! Under these circumstances Isabelle may not function reliably, or   !
+! may fail completely.                                               !
+!                                                                    !
+! The setting may be viewed and modified with the commands:          !
+!   sh:  ulimit -Hd                                                  !
+!   csh: limit -h datasize                                           !
+!                                                                    !
+! It may be necessary to lift the maximum limit. One way of doing    !
+! this is to add a line to /boot/loader.conf and then to restart the !
+! system:                                                            !
+!    kern.maxdsiz="896M"                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+END
+	fi
+fi

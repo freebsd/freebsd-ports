@@ -1,0 +1,18 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! The system process data segment value is too low!                  !
+!                                                                    !
+! Under these circumstances the Isabelle build process for logics    !
+! such as HOL will not terminate, or otherwise fail.                 !
+!                                                                    !
+! The setting may be viewed and modified with the commands:          !
+!   sh:  ulimit -Hd                                                  !
+!   csh: limit -h datasize                                           !
+!                                                                    !
+! It may be necessary to lift the maximum limit. One way of doing    !
+! this is to add a line to /boot/loader.conf and then to restart the !
+! system:                                                            !
+!    kern.maxdsiz="896M"                                             !
+!                                                                    !
+! This problem only affects Poly/ML. Isabelle may also be configured !
+! to use SML/NJ (build with WITH_SMLNJ=yes).                         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

@@ -85,6 +85,7 @@
     SUBDIR += gsl
     SUBDIR += guppi
     SUBDIR += hexcalc
+    SUBDIR += isabelle
     SUBDIR += it++
     SUBDIR += itl
     SUBDIR += jacal
