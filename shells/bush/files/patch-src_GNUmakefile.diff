@@ -1,11 +1,21 @@
 --- src/GNUmakefile.orig.orig	Wed Aug 17 22:59:07 2005
-+++ src/GNUmakefile.orig	Wed Aug 24 23:45:36 2005
-@@ -11,7 +11,7 @@
++++ src/GNUmakefile.orig	Wed Aug 31 22:35:03 2005
+@@ -11,7 +11,8 @@
  GNATMAKE=gnatmake
  SDLLIBS=SDLLIBSTYPE
  SDLINCL=SDLINCLTYPE
 -CFLAGS=CFLAGSTYPE
 +CFLAGS+=CFLAGSTYPE
++ADACFLAGS+=CFLAGSTYPE
  # For SDL, sdl_config is not always available.
  
  # RPM Directories For Building an RPM file
+@@ -75,7 +76,7 @@
+ 	@echo
+ 
+ c_os.o:	c_os.c
+-	$(CC) $(CFLAGS) $(INCLUDE) -Wall -c c_os.c
++	$(CC) $(ADACFLAGS) $(INCLUDE) -Wall -c c_os.c
+ 
+ #apq-2.1/Makeincl:
+ #	@echo "---------------------------------------------------------------"
