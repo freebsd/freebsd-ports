@@ -16,6 +16,7 @@ Locally added support for the following AVR devices:
   ATmega48/ATmega88/ATmega168
   AT90PWM2/AT90PWM3
   ATmega164/ATmega324/ATmega644
+  ATmega165
   ATmega325/ATmega3250/ATmega645/ATmega6450
   ATmega329/ATmega3290/ATmega649/ATmega6490
   AT90CAN128

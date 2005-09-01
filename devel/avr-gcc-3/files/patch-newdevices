@@ -1,6 +1,6 @@
-diff -ur ../gcc-3.4.4-orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
---- ../gcc-3.4.4-orig/gcc/config/avr/avr.c	2005-03-20 22:14:28.000000000 +0100
-+++ ./gcc/config/avr/avr.c	2005-08-16 11:57:05.000000000 +0200
+diff -ur ../gcc-3.4.4.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
+--- ../gcc-3.4.4.orig/gcc/config/avr/avr.c	Sun Mar 20 22:14:28 2005
++++ ./gcc/config/avr/avr.c	Thu Sep  1 07:02:53 2005
 @@ -175,6 +175,12 @@
    { "at90c8534", 2, "__AVR_AT90C8534__" },
    { "at90s8535", 2, "__AVR_AT90S8535__" },
@@ -14,7 +14,7 @@ diff -ur ../gcc-3.4.4-orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
      /* Classic, > 8K.  */
    { "avr3",      3, NULL },
    { "atmega103", 3, "__AVR_ATmega103__" },
-@@ -185,19 +191,36 @@
+@@ -185,19 +191,37 @@
      /* Enhanced, <= 8K.  */
    { "avr4",      4, NULL },
    { "atmega8",   4, "__AVR_ATmega8__" },
@@ -31,6 +31,7 @@ diff -ur ../gcc-3.4.4-orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
    { "atmega162", 5, "__AVR_ATmega162__" },
    { "atmega163", 5, "__AVR_ATmega163__" },
 +  { "atmega164", 5, "__AVR_ATmega164__" },
++  { "atmega165", 5, "__AVR_ATmega165__" },
 +  { "atmega168", 5, "__AVR_ATmega168__" },
    { "atmega169", 5, "__AVR_ATmega169__" },
    { "atmega32",  5, "__AVR_ATmega32__" },
@@ -51,9 +52,9 @@ diff -ur ../gcc-3.4.4-orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
    { "at94k",     5, "__AVR_AT94K__" },
      /* Assembler only.  */
    { "avr1",      1, NULL },
-diff -ur ../gcc-3.4.4-orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
---- ../gcc-3.4.4-orig/gcc/config/avr/avr.h	2004-03-09 03:59:55.000000000 +0100
-+++ ./gcc/config/avr/avr.h	2005-08-16 11:58:10.000000000 +0200
+diff -ur ../gcc-3.4.4.orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
+--- ../gcc-3.4.4.orig/gcc/config/avr/avr.h	Tue Mar  9 03:59:55 2004
++++ ./gcc/config/avr/avr.h	Thu Sep  1 07:03:20 2005
 @@ -2351,12 +2351,12 @@
     Do not define this macro if it does not need to do anything.  */
  
@@ -68,7 +69,7 @@ diff -ur ../gcc-3.4.4-orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
 -%{mmcu=atmega64|mmcu=atmega128|mmcu=atmega162|mmcu=atmega169: -Tdata 0x800100} "
 +%{mmcu=atmega8*|mmcu=atmega48|mmcu=at90pwm*:-m avr4}\
 +%{mmcu=atmega16*|mmcu=atmega32*|mmcu=atmega64*|mmcu=atmega128|mmcu=at90can128|mmcu=at94k:-m avr5}\
-+%{mmcu=atmega324|mmcu=atmega325|mmcu=atmega3250|mmcu=atmega329|mmcu=atmega3290|mmcu=atmega48|mmcu=atmega88|mmcu=atmega64|mmcu=atmega644|mmcu=atmega645|mmcu=atmega6450|mmcu=atmega649|mmcu=atmega6490|mmcu=atmega128|mmcu=at90can128|mmcu=atmega162|mmcu=atmega164|mmcu=atmega168|mmcu=atmega169|mmcu=at90pwm*: -Tdata 0x800100} "
++%{mmcu=atmega324|mmcu=atmega325|mmcu=atmega3250|mmcu=atmega329|mmcu=atmega3290|mmcu=atmega48|mmcu=atmega88|mmcu=atmega64|mmcu=atmega644|mmcu=atmega645|mmcu=atmega6450|mmcu=atmega649|mmcu=atmega6490|mmcu=atmega128|mmcu=at90can128|mmcu=atmega162|mmcu=atmega164||mmcu=atmega165|mmcu=atmega168|mmcu=atmega169|mmcu=at90pwm*: -Tdata 0x800100} "
  
  /* A C string constant that tells the GCC driver program options to
     pass to the linker.  It can also specify how to translate options
@@ -90,7 +91,7 @@ diff -ur ../gcc-3.4.4-orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
  /* Another C string constant that tells the GCC driver program how
     and when to place a reference to `libgcc.a' into the linker
     command line.  This constant is placed both before and after the
-@@ -2421,23 +2421,45 @@
+@@ -2421,23 +2421,46 @@
  %{mmcu=at90c8534:crtc8534.o%s} \
  %{mmcu=at90s8535:crts8535.o%s} \
  %{mmcu=at86rf401:crt86401.o%s} \
@@ -116,6 +117,7 @@ diff -ur ../gcc-3.4.4-orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
  %{mmcu=atmega162:crtm162.o%s} \
  %{mmcu=atmega163:crtm163.o%s} \
 +%{mmcu=atmega164:crtm164.o%s} \
++%{mmcu=atmega165:crtm165.o%s} \
 +%{mmcu=atmega168:crtm168.o%s} \
  %{mmcu=atmega169:crtm169.o%s} \
  %{mmcu=atmega32:crtm32.o%s} \
@@ -136,10 +138,10 @@ diff -ur ../gcc-3.4.4-orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
  %{mmcu=at94k:crtat94k.o%s}"
  
  #define EXTRA_SPECS {"crt_binutils", CRT_BINUTILS_SPECS},
-diff -ur ../gcc-3.4.4-orig/gcc/config/avr/t-avr ./gcc/config/avr/t-avr
---- ../gcc-3.4.4-orig/gcc/config/avr/t-avr	2005-04-25 06:17:34.000000000 +0200
-+++ ./gcc/config/avr/t-avr	2005-08-16 11:57:05.000000000 +0200
-@@ -46,13 +46,22 @@
+diff -ur ../gcc-3.4.4.orig/gcc/config/avr/t-avr ./gcc/config/avr/t-avr
+--- ../gcc-3.4.4.orig/gcc/config/avr/t-avr	Mon Apr 25 06:17:34 2005
++++ ./gcc/config/avr/t-avr	Thu Sep  1 07:03:38 2005
+@@ -46,13 +46,23 @@
  	mmcu?avr3=mmcu?at43usb320 mmcu?avr3=mmcu?at43usb355 \
  	mmcu?avr3=mmcu?at76c711 \
  	mmcu?avr4=mmcu?atmega8515 mmcu?avr4=mmcu?atmega8535 \
@@ -150,6 +152,7 @@ diff -ur ../gcc-3.4.4-orig/gcc/config/avr/t-avr ./gcc/config/avr/t-avr
  	mmcu?avr5=mmcu?atmega161 mmcu?avr5=mmcu?atmega162 \
 -	mmcu?avr5=mmcu?atmega163 mmcu?avr5=mmcu?atmega169 \
 +	mmcu?avr5=mmcu?atmega163 mmcu?avr5=mmcu?atmega164 \
++	mmcu?avr5=mmcu?atmega165 \
 +	mmcu?avr5=mmcu?atmega168 mmcu?avr5=mmcu?atmega169 \
  	mmcu?avr5=mmcu?atmega16 \
 -	mmcu?avr5=mmcu?atmega323 mmcu?avr5=mmcu?atmega32 \
