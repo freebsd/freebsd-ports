@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gforge
-PORTVERSION=	4.0.1
+PORTVERSION=	4.5.0.1
 CATEGORIES=	www devel
-MASTER_SITES=	http://gforge.org/frs/download.php/85/
+MASTER_SITES=	http://gforge.org/frs/download.php/103/
 
 MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Open Source collaborative software development tool
@@ -41,10 +41,10 @@ NO_PACKAGE=	"The configure process uses hostname."
 
 ### Misc checks
 .if !exists(${MOD_PHP}) && !exists(${BIN_PHP})
-IGNORE=		"You MUST have installed PHP from lang/php4 \(mod_php et php-cli are required\)"
+IGNORE=		You MUST have installed PHP from lang/php4 \(mod_php et php-cli are required\)
 .endif
 .if !exists(${PQ_LIB})
-IGNORE+=	"PHP needs PostgreSQL support"
+IGNORE+=	PHP needs PostgreSQL support
 .endif
 
 .if defined(WITH_JABBER)
@@ -80,9 +80,11 @@ CONFIGURE_ARGS+=--enable-defaults=FreeBSD --with-domain-name=${DOMAINNAME} \
 CONFIGURE_ENV+=	"WWWROOT=${WWWROOT}/gforge"
 
 WWW_STUFF=	common www
-BACKEND_STUFF=	backend cronjobs monitor utils
+BACKEND_STUFF=	backend cronjobs monitor utils plugins
 SHARE_STUFF=	contrib db
-
+ETC_STUFF=	database.inc.example gforge-httpd.conf.example gforge.conf.example \
+		httpd.conf.example httpd.secrets.example local.inc.example \
+		local.pl.example nss-pgsql.conf.example
 pre-everything::
 .if defined(SYSTEM_NAME)
 	CONFIGURE_ARGS+= --with-sys-name=${SYSTEM_NAME}
@@ -91,6 +93,7 @@ pre-everything::
 .endif
 
 post-patch:
+	@${CHMOD} 744 ${WRKSRC}/contrib/autoconf/configure
 	@${ECHO_MSG} "    ==> Patching CLI php scripts"
 	@${FIND} ${WRKSRC} -name "*.php" | ${XARGS} ${REINPLACE_CMD} -e \
 		"s,/usr/bin/php4,${LOCALBASE}/bin/php,"
@@ -126,6 +129,13 @@ do-install:
 	@${MKDIR} ${ETCDIR}
 	@${CP} ${WRKSRC}/contrib/autoconf/local.inc ${ETCDIR}/local.inc-dist
 	@${CP} ${WRKSRC}/contrib/autoconf/sample-apache.vhost ${ETCDIR}/sample-apache.vhost-dist
+.for f in ${ETC_STUFF}
+	@${CP} -Rvf ${WRKSRC}/etc/${f} ${ETCDIR}
+.endfor
+.for dir in httpd.d local.d templates
+	@${MKDIR} ${ETCDIR}/${dir}
+	@${CP} -Rvf ${WRKSRC}/etc/${dir} ${ETCDIR}/${dir}
+.endfor
 .for dir in ${WWW_STUFF}
 	@${MKDIR} ${WWWROOT}/gforge/${dir}
 	@${CP} -Rvf ${WRKSRC}/${dir}/* ${WWWROOT}/gforge/${dir}
