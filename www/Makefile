@@ -594,6 +594,7 @@
     SUBDIR += p5-Sledge-Plugin-XSLT
     SUBDIR += p5-Sledge-SessionManager-CookieStore
     SUBDIR += p5-Sledge-Template-Expr
+    SUBDIR += p5-Syntax-Highlight-HTML
     SUBDIR += p5-Template-Multilingual
     SUBDIR += p5-Template-Plugin-Class
     SUBDIR += p5-Template-Plugin-Comma
