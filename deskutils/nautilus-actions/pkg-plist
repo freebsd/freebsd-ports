@@ -1,0 +1,9 @@
+bin/nact
+lib/nautilus/extensions-1.0/nautilus-action.so
+share/gnome/applications/nact.desktop
+share/gnome/nautilus-actions/config_newaction.xml
+share/gnome/nautilus-actions/nact/nautilus-actions-config.glade
+share/gnome/nautilus-actions/nact/nautilus-actions-config.py
+share/gnome/nautilus-actions/nact/nautilus-launch-icon.png
+@dirrm share/gnome/nautilus-actions/nact
+@dirrm share/gnome/nautilus-actions

@@ -107,6 +107,7 @@
     SUBDIR += multisync-syncml
     SUBDIR += nag
     SUBDIR += narval
+    SUBDIR += nautilus-actions
     SUBDIR += nautilus-sendto
     SUBDIR += notebook
     SUBDIR += notification-daemon
