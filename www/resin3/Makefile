@@ -132,6 +132,12 @@ post-build:
 
 do-install:
 	@${SETENV} RUNASUSER=${RUNASUSER} GROUP=${GROUP} ${SH} ${WRKDIR}/install.sh
+.if (defined(WITH_APACHE2) && (${WITH_APACHE2} == yes || ${WITH_APACHE2} == YES))
+	${APXS} -i -n caucho -a ${WRKSRC}/modules/c/src/apache2/.libs/mod_caucho.so
+.endif
+.if (defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES))
+	${APXS} -i -n caucho -a ${WRKSRC}/modules/c/src/apache1/.libs/mod_caucho.so
+.endif
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO_MSG}
 	@${ECHO_MSG} "********************************************************************************"
