@@ -60,6 +60,12 @@ LIB_DEPENDS+=	qdbm.11:${PORTSDIR}/databases/qdbm
 
 post-patch:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+.if ${SLAVEPORT}=="ruby"
+	${FIND} ${WRKSRC} -type f | \
+		${XARGS} -n 10 ${REINPLACE_CMD} -e \
+		's|/usr/bin/ruby -w|${SETENV} ruby|'
+	${FIND} ${WRKSRC} -name '*.bak' | ${XARGS} ${RM} -f
+.endif
 .endif
 
 .include <bsd.port.pre.mk>
