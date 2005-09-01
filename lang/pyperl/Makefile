@@ -7,7 +7,7 @@
 
 PORTNAME=	pyperl
 PORTVERSION=	1.0.1
-CATEGORIES=	lang python perl
+CATEGORIES=	lang python perl5
 MASTER_SITES=	http://downloads.activestate.com/Zope-Perl/
 
 MAINTAINER=	ports@FreeBSD.org
