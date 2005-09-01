@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openssh
-PORTVERSION=	4.1.0.1
+PORTVERSION=	4.2.0.0
 .if defined(OPENSSH_SNAPSHOT)
 PORTREVISION!=	date -v-1d +%Y%m%d
 .endif
@@ -21,7 +21,8 @@ DISTNAME=	${DISTNAME2}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The portable version of OpenBSD's OpenSSH
 
-OPENSSHVERSION=	4.1p1
+OPENSSHVERSION=	4.2p1
+
 .if defined(OPENSSH_SNAPSHOT)
 MASTER_SITE_SUBDIR2=	snapshot/
 DISTNAME2=	${PORTNAME}-SNAP-${PORTREVISION}
@@ -52,6 +53,13 @@ PRECIOUS=	ssh_config sshd_config \
 ETCOLD=		${PREFIX}/etc
 PORTABLE_SUFFIX=	-portable
 
+SUDO?=
+MAKE_ENV+=	SUDO="${SUDO}"
+
+OPTIONS=	SUID_SSH	"Enable suid SSH (Recommended off)"	off \
+		GSSAPI		"Enable GSSAPI support"			off \
+		OPENSSH_CHROOT	"Enable CHROOT support"			off
+
 .if exists(/usr/include/security/pam_modules.h)
 CONFIGURE_ARGS+=	--with-pam
 .endif
@@ -60,7 +68,9 @@ CONFIGURE_ARGS+=	--with-pam
 CONFIGURE_ARGS+=	--with-tcp-wrappers
 .endif
 
-.if !defined(ENABLE_SUID_SSH)
+.include <bsd.port.pre.mk>
+
+.if !defined(WITH_SUID_SSH)
 CONFIGURE_ARGS+=	--disable-suid-ssh
 .endif
 
@@ -69,12 +79,20 @@ PORTABLE_SUFFIX=
 GSSAPI_SUFFIX=	-gssapi
 CONFLICTS+=	openssh-portable-*
 CONFIGURE_ARGS+=	--with-kerberos5=${KRB5_HOME}
+.if ${OPENSSLBASE} == "/usr"
+CONFIGURE_ARGS+=	--without-rpath
+LDFLAGS=
+.endif
 .else
 CONFLICTS+=	openssh-gssapi-*
+CONFIGURE_ARGS+=	--with-rpath=${OPENSSLRPATH}
 .if !defined(WITHOUT_KERBEROS) && exists(/usr/include/krb5.h)
 CONFIGURE_ARGS+=	--with-kerberos5
 EXTRA_PATCHES+=		${FILESDIR}/gss-serv.c.patch
 .endif
+.endif
+.if ${OPENSSLBASE} != "/usr"
+CONFIGURE_ARGS+=	--with-ssl-dir=${OPENSSLBASE}
 .endif
 
 .if defined(BATCH)
@@ -118,52 +136,35 @@ post-configure:
 		${FILESDIR}/sshd.sh > ${WRKSRC}/sshd.sh
 
 pre-install:
-.if defined(OPENSSH_OVERWRITE_BASE)
-	-${MKDIR} ${EMPTYDIR}
-.else
-	-${MKDIR} ${PREFIX}/empty
-.endif
+.	if defined(OPENSSH_OVERWRITE_BASE)
+		-${MKDIR} ${EMPTYDIR}
+.	else
+		-${MKDIR} ${PREFIX}/empty
+.	endif
 	if ! pw groupshow sshd; then pw groupadd sshd -g 22; fi
 	if ! pw usershow sshd; then pw useradd sshd -g sshd -u 22 \
 		-h - -d ${EMPTYDIR} -s /nonexistent -c "sshd privilege separation"; fi
 	-@[ ! -d ${ETCSSH} ] && ${MKDIR} ${ETCSSH}
-.for i in ${PRECIOUS}
-	-@[ -f ${ETCOLD}/${i} ] && [ ! -f ${ETCSSH}/${i} ] && \
-		${ECHO_MSG} ">> Linking ${ETCSSH}/${i} from old layout." && \
-		${LN} ${ETCOLD}/${i} ${ETCSSH}/${i}
-.endfor
+.	for i in ${PRECIOUS}
+		-@[ -f ${ETCOLD}/${i} ] && [ ! -f ${ETCSSH}/${i} ] && \
+			${ECHO_MSG} ">> Linking ${ETCSSH}/${i} from old layout." && \
+			${LN} ${ETCOLD}/${i} ${ETCSSH}/${i}
+.	endfor
 
 post-install:
-.if !defined(OPENSSH_OVERWRITE_BASE)
-	${INSTALL_SCRIPT} ${WRKSRC}/sshd.sh ${PREFIX}/etc/rc.d/sshd.sh.sample
-.endif
+.	if !defined(OPENSSH_OVERWRITE_BASE)
+		${INSTALL_SCRIPT} ${WRKSRC}/sshd.sh ${PREFIX}/etc/rc.d/sshd.sh.sample
+.	endif
 	${INSTALL_DATA} -c ${WRKSRC}/ssh_config.out ${ETCSSH}/ssh_config-dist
 	${INSTALL_DATA} -c ${WRKSRC}/sshd_config.out ${ETCSSH}/sshd_config-dist
-.if !defined(OPENSSH_OVERWRITE_BASE)
-	@${CAT} ${PKGMESSAGE}
-.endif
+.	if !defined(OPENSSH_OVERWRITE_BASE)
+		@${CAT} ${PKGMESSAGE}
+.	endif
 
 test:
 	(cd ${WRKSRC}/regress && ${SETENV} ${MAKE_ENV} \
 	TEST_SHELL=/bin/sh \
 	PATH=${WRKSRC}:${PREFIX}/bin:${PREFIX}/sbin:${PATH} \
 	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} )
-
-.include <bsd.port.pre.mk>
-
-SUDO?=
-MAKE_ENV+=	SUDO="${SUDO}"
-
-.if defined(KRB5_HOME) && exists(${KRB5_HOME}) || defined(WITH_GSSAPI)
-.if ${OPENSSLBASE} == "/usr"
-CONFIGURE_ARGS+=	--without-rpath
-LDFLAGS=
-.endif
-.else
-CONFIGURE_ARGS+=	--with-rpath=${OPENSSLRPATH}
-.endif
-.if ${OPENSSLBASE} != "/usr"
-CONFIGURE_ARGS+=	--with-ssl-dir=${OPENSSLBASE}
-.endif
 
 .include <bsd.port.post.mk>
