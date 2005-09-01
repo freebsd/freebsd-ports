@@ -4647,6 +4647,7 @@ kalbum		ports/graphics/kalbum
 kallers		ports/comms/kallers
 kallery		ports/graphics/kallery
 kamera		ports/graphics/kamera
+kamikaze	ports/games/kamikaze
 kanatest	ports/games/kanatest
 kannel		ports/www/kannel
 kappdock	ports/x11-wm/kappdock
