@@ -1,0 +1,13 @@
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/ConfigLocal.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/HanExtra/HanExtra.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/HanExtra/HanExtra.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/HanExtra/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/HanExtra.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/TW/Unisys/SOSI1.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/TW/Unisys/SOSI2.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/HanExtra
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Encode/TW/Unisys
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Encode/TW
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Encode

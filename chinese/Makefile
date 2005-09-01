@@ -91,6 +91,7 @@
     SUBDIR += oxford
     SUBDIR += p5-Date-Chinese
     SUBDIR += p5-Encode-HanConvert
+    SUBDIR += p5-Encode-HanExtra
     SUBDIR += p5-Lingua-ZH-Keywords
     SUBDIR += p5-Lingua-ZH-Numbers
     SUBDIR += p5-Lingua-ZH-Summarize

@@ -1,0 +1,13 @@
+Perl 5.7.3 and later ships with an adequate set of Chinese encodings,
+including the commonly used CP950, CP936 (also known as GBK), Big5
+(alias for Big5-Eten), Big5-HKSCS, EUC-CN, HZ, and ISO-IR-165.
+
+However, the numbers of Chinese encodings are staggering, and a complete
+coverage will easily increase the size of perl distribution by several
+megabytes; hence, this CPAN module tries to provide the rest of them.
+
+If you are using perl 5.8 or later, Encode::CN and Encode::TW will
+automatically load the extra encodings for you, so there's no need to
+explicitly write use Encode::HanExtra if you are using one of them already.
+
+WWW: http://search.cpan.org/dist/Encode-HanExtra/
