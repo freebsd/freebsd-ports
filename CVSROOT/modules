@@ -6538,6 +6538,7 @@ nast		ports/net/nast
 nat		ports/net-mgmt/nat
 naturaldocs	ports/devel/naturaldocs
 naturalmath	ports/math/naturalmath
+nautilus-actions	ports/deskutils/nautilus-actions
 nautilus-cd-burner	ports/sysutils/nautilus-cd-burner
 nautilus-sendto	ports/deskutils/nautilus-sendto
 nautilus2	ports/x11-fm/nautilus2
