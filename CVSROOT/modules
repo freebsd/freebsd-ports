@@ -3934,6 +3934,7 @@ irssi-scripts	ports/irc/irssi-scripts
 irssistats	ports/irc/irssistats
 is-aspell	ports/textproc/is-aspell
 isaac-cfd	ports/science/isaac-cfd
+isabelle	ports/math/isabelle
 isakmpd		ports/security/isakmpd
 isc-dhcp3-client	ports/net/isc-dhcp3-client
 isc-dhcp3-devel	ports/net/isc-dhcp3-devel
