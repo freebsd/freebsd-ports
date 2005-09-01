@@ -36,6 +36,7 @@
     SUBDIR += angband
     SUBDIR += antipolix
     SUBDIR += aop
+    SUBDIR += apoolGL
     SUBDIR += asc
     SUBDIR += atitd
     SUBDIR += atlantikdesigner
