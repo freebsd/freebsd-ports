@@ -142,6 +142,7 @@
     SUBDIR += fpc-inet
     SUBDIR += fping
     SUBDIR += freebsd-uucp
+    SUBDIR += freedbd
     SUBDIR += freenet
     SUBDIR += freenet6
     SUBDIR += freenx

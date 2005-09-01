@@ -1,0 +1,5 @@
+FreeDBD is a lightweight daemon for answering FreeDB queries, used to identify
+CD's. It understands text (ini-like) and XML databases and is very useful if
+you need a local CDDB server.
+
+WWW: http://rink.nu/
