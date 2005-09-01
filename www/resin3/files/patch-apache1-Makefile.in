@@ -1,14 +1,14 @@
-$FreeBSD$
-
---- modules/c/src/apache1/Makefile.in.orig	Mon Oct 11 11:34:53 2004
-+++ modules/c/src/apache1/Makefile.in	Mon Oct 11 12:44:59 2004
-@@ -38,8 +38,7 @@
- 	$(LIBTOOL) --mode=install $(CP) mod_caucho.la $(apache_libexec)
- 	- rm -f $(apache_libexec)/mod_caucho.la
- 	- rm -f $(apache_libexec)/mod_caucho.a
+--- modules/c/src/apache1/Makefile.in.orig	Sat Mar  5 22:18:38 2005
++++ modules/c/src/apache1/Makefile.in	Thu Sep  1 12:44:50 2005
+@@ -35,11 +35,6 @@
+ 	$(CC) -c $(INCLUDES) $(CFLAGS) $<
+ 
+ install	: mod_caucho.la
+-	$(LIBTOOL) --mode=install $(CP) mod_caucho.la $(apache_libexec)
+-	- rm -f $(apache_libexec)/mod_caucho.la
+-	- rm -f $(apache_libexec)/mod_caucho.a
 -	sh install.sh -conf $(apache_conf) -libexec $(apache_libexec) \
 -	   -resin_home $(resin_home)
-+	%%APXS%% -e -a -n caucho mod_caucho.so
  
  clean	:
  	- rm *.o *.lo *.la *.so .libs
