@@ -1034,6 +1034,7 @@
     SUBDIR += p5-Path-Class
     SUBDIR += p5-Penguin
     SUBDIR += p5-Penguin-Easy
+    SUBDIR += p5-Perl-Tidy
     SUBDIR += p5-Perl6-Export
     SUBDIR += p5-Perl6-Form
     SUBDIR += p5-PerlIO-eol
