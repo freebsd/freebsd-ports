@@ -1,6 +1,6 @@
-@comment $FreeBSD$
 bin/argouml
 %%DATADIR%%/antlrall.jar
+%%DATADIR%%/argouml-model.jar
 %%DATADIR%%/argouml.jar
 %%DATADIR%%/commons-logging.jar
 %%DATADIR%%/gef.jar
@@ -9,6 +9,9 @@ bin/argouml
 %%DATADIR%%/log4j.jar
 %%DATADIR%%/nsuml.jar
 %%DATADIR%%/ocl-argo.jar
+%%DATADIR%%/swidgets.jar
 %%DATADIR%%/toolbar.jar
-%%DATADIR%%/xerces.jar
+%%DATADIR%%/xalan.jar
+%%DATADIR%%/xercesImpl.jar
+%%DATADIR%%/xml-apis.jar
 @dirrm %%DATADIR%%
