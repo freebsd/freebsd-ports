@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	skype
-PORTVERSION=	1.1.0.20
-PORTREVISION=	1
+PORTVERSION=	1.2.0.11
 CATEGORIES=	net
 MASTER_SITES=	http://download.skype.com/linux/
 DISTNAME=	skype_staticQT-${PORTVERSION}
@@ -47,7 +46,8 @@ do-build:
 
 do-install:
 	${INSTALL} ${WRKSRC}/skype ${PREFIX}/bin/skype_bin
-	${ECHO_CMD} -e "#!/bin/sh\n\nSKYPE_RESOURCES_PATH='${DATADIR}' exec skype_bin \"\$$@\"" >${PREFIX}/bin/skype
+#	${INSTALL} ${WRKSRC}/skype-callto-handler ${PREFIX}/bin/
+	${ECHO_CMD} -e "#!/bin/sh\n\nSKYPE_RESOURCES_PATH='${DATADIR}' skype_bin \"\$$@\" 2>&1 | grep -v 'SOUND_MIXER_WRITE_IGAIN failed'" >${PREFIX}/bin/skype
 	${CHMOD} a+rx ${PREFIX}/bin/skype
 .if ${HAVE_GNOME:Mgnomehier} != ""
 	${INSTALL_DATA} ${WRKSRC}/skype.desktop ${PREFIX}/share/gnome/applications/
@@ -60,9 +60,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DATADIR}/
 
 post-install:
-	@${ECHO} "##########################################################################"
-	@${ECHO} "Do not worry if you see 'volume_adjust: SOUND_MIXER_WRITE_IGAIN failed: No such device or address' errors from skype, the skype sound code is overly verbose in this regard. It would be enough to print it only once." | fmt
-	@${ECHO} "##########################################################################"
 	@${ECHO} "There are known problems with some soundcards in 5.x. This is due to a bug in the kernel. It is fixed in 6.x. Additionally there is some further work in the sound subsystem going on which fixes some related problems. This work will not be available in 6.0-RELEASE. If you experience problems update to the most recent 6.x-RELEASE, if this does not fix your problems ask on multimedia@FreeBSD.org." | fmt
 
 .include <bsd.port.post.mk>
