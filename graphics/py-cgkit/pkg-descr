@@ -11,4 +11,5 @@ vectors and matrices or the noise module don't depend on RenderMan at all and
 can also be used inside an OpenGL program or to produce input for other
 renderers, such as POV-Ray or Virtualight.
 
+Author:	Matthias Baas
 WWW: http://cgkit.sourceforge.net/
