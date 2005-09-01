@@ -167,7 +167,6 @@ aalib		ports/graphics/aalib
 aamath		ports/math/aamath
 aap		ports/devel/aap
 abacus		ports/deskutils/abacus
-abe		ports/games/abe
 abc2mtex	ports/print/abc2mtex
 abcache		ports/www/abcache
 abcde		ports/audio/abcde
@@ -176,6 +175,7 @@ abclock		ports/x11-clocks/abclock
 abcm2ps		ports/print/abcm2ps
 abcmidi		ports/audio/abcmidi
 abcselect	ports/audio/abcselect
+abe		ports/games/abe
 abinit		ports/science/abinit
 abiword		ports/editors/abiword
 abiword-devel	ports/editors/abiword-devel
@@ -5877,12 +5877,12 @@ mapchan		ports/sysutils/mapchan
 mapedit		ports/www/mapedit
 maplay		ports/audio/maplay
 mapserver	ports/graphics/mapserver
+mar		ports/archivers/mar
 maradns		ports/dns/maradns
 marathon-evil	ports/games/marathon-evil
 marathon2-data	ports/games/marathon2-data
 marbles		ports/games/marbles
 marlin		ports/audio/marlin
-mar		ports/archivers/mar
 mars		ports/cad/mars
 mars_nwe	ports/net/mars_nwe
 masqmail	ports/mail/masqmail
@@ -7292,8 +7292,8 @@ p5-Class-DBI-AbstractSearch	ports/databases/p5-Class-DBI-AbstractSearch
 p5-Class-DBI-AsForm	ports/databases/p5-Class-DBI-AsForm
 p5-Class-DBI-AutoLoader	ports/databases/p5-Class-DBI-AutoLoader
 p5-Class-DBI-BaseDSN	ports/databases/p5-Class-DBI-BaseDSN
-p5-Class-DBI-DDL	ports/databases/p5-Class-DBI-DDL
 p5-Class-DBI-DATA-Schema	ports/databases/p5-Class-DBI-DATA-Schema
+p5-Class-DBI-DDL	ports/databases/p5-Class-DBI-DDL
 p5-Class-DBI-FromCGI	ports/databases/p5-Class-DBI-FromCGI
 p5-Class-DBI-FromForm	ports/www/p5-Class-DBI-FromForm
 p5-Class-DBI-Loader	ports/databases/p5-Class-DBI-Loader
@@ -7815,9 +7815,9 @@ p5-IMAP-Sieve	ports/mail/p5-IMAP-Sieve
 p5-IMDB-Movie	ports/www/p5-IMDB-Movie
 p5-IO		ports/devel/p5-IO
 p5-IO-All	ports/devel/p5-IO-All
+p5-IO-CSVHeaderFile	ports/textproc/p5-IO-CSVHeaderFile
 p5-IO-Capture	ports/devel/p5-IO-Capture
 p5-IO-CaptureOutput	ports/devel/p5-IO-CaptureOutput
-p5-IO-CSVHeaderFile	ports/textproc/p5-IO-CSVHeaderFile
 p5-IO-Digest	ports/devel/p5-IO-Digest
 p5-IO-INET6	ports/net/p5-IO-INET6
 p5-IO-Interface	ports/net/p5-IO-Interface
@@ -7861,6 +7861,7 @@ p5-Inline-Filters	ports/devel/p5-Inline-Filters
 p5-Inline-Java	ports/devel/p5-Inline-Java
 p5-Inline-Tcl	ports/devel/p5-Inline-Tcl
 p5-Ioctl	ports/devel/p5-Ioctl
+p5-JSON		ports/converters/p5-JSON
 p5-Jabber-Connection	ports/net/p5-Jabber-Connection
 p5-JavaScript-SpiderMonkey	ports/lang/p5-JavaScript-SpiderMonkey
 p5-Kwiki	ports/www/p5-Kwiki
@@ -8035,6 +8036,7 @@ p5-Math-Round		ports/math/p5-Math-Round
 p5-Math-SimpleVariable	ports/math/p5-Math-SimpleVariable
 p5-Math-Spline	ports/math/p5-Math-Spline
 p5-Math-TrulyRandom	ports/math/p5-Math-TrulyRandom
+p5-Math-Vec	ports/math/p5-Math-Vec
 p5-Math-VecStat	ports/math/p5-Math-VecStat
 p5-MatrixReal	ports/math/p5-MatrixReal
 p5-Maypole	ports/www/p5-Maypole
@@ -8320,9 +8322,9 @@ p5-ResourcePool-Resource-Net-LDAP	ports/net/p5-ResourcePool-Resource-Net-LDAP
 p5-ResourcePool-Resource-SOAP-Lite	ports/net/p5-ResourcePool-Resource-SOAP-Lite
 p5-Resources	ports/devel/p5-Resources
 p5-Roman	ports/math/p5-Roman
+p5-SAVI-Perl	ports/security/p5-SAVI-Perl
 p5-SDL		ports/devel/p5-SDL
 p5-SETI-Stats	ports/astro/p5-SETI-Stats
-p5-SAVI-Perl	ports/security/p5-SAVI-Perl
 p5-SHA		ports/security/p5-SHA
 p5-SNMP		ports/net-mgmt/p5-SNMP
 p5-SNMP-Info	ports/net-mgmt/p5-SNMP-Info
@@ -8359,6 +8361,7 @@ p5-Search-Saryer	ports/textproc/p5-Search-Saryer
 p5-Search-VectorSpace	ports/textproc/p5-Search-VectorSpace
 p5-Sendmail-AccessDB	ports/mail/p5-Sendmail-AccessDB
 p5-Sendmail-Milter	ports/mail/p5-Sendmail-Milter
+p5-Senna	ports/textproc/p5-Senna
 p5-Set-Array	ports/devel/p5-Set-Array
 p5-Set-Crontab	ports/devel/p5-Set-Crontab
 p5-Set-Infinite	ports/devel/p5-Set-Infinite
@@ -8454,12 +8457,12 @@ p5-Template-Timer	ports/www/p5-Template-Timer
 p5-Template-Toolkit	ports/www/p5-Template-Toolkit
 p5-Term-ANSIColor	ports/devel/p5-Term-ANSIColor
 p5-Term-ANSIScreen	ports/devel/p5-Term-ANSIScreen
-p5-Text-Aspell	ports/textproc/p5-Text-Aspell
 p5-Term-ProgressBar	ports/devel/p5-Term-ProgressBar
 p5-Term-Prompt	ports/devel/p5-Term-Prompt
 p5-Term-Query	ports/devel/p5-Term-Query
 p5-Term-ReadKey	ports/devel/p5-Term-ReadKey
 p5-Term-ReadLine-Zoid	ports/devel/p5-Term-ReadLine-Zoid
+p5-Term-ReadPassword	ports/devel/p5-Term-ReadPassword
 p5-Term-Screen	ports/devel/p5-Term-Screen
 p5-Term-Shell	ports/devel/p5-Term-Shell
 p5-Term-Size	ports/devel/p5-Term-Size
@@ -8486,9 +8489,11 @@ p5-Test-Simple	ports/devel/p5-Test-Simple
 p5-Test-Tester	ports/devel/p5-Test-Tester
 p5-Test-Unit	ports/devel/p5-Test-Unit
 p5-Test-WWW-Mechanize	ports/devel/p5-Test-WWW-Mechanize
+p5-Test-Warn		ports/devel/p5-Test-Warn
 p5-Text-ASCIITable	ports/textproc/p5-Text-ASCIITable
 p5-Text-Affixes	ports/textproc/p5-Text-Affixes
 p5-Text-Aligner		ports/textproc/p5-Text-Aligner
+p5-Text-Aspell	ports/textproc/p5-Text-Aspell
 p5-Text-Autoformat	ports/textproc/p5-Text-Autoformat
 p5-Text-Balanced	ports/textproc/p5-Text-Balanced
 p5-Text-BibTeX	ports/textproc/p5-Text-BibTeX
@@ -8541,7 +8546,6 @@ p5-Text-Textile	ports/textproc/p5-Text-Textile
 p5-Text-Tmpl	ports/textproc/p5-Text-Tmpl
 p5-Text-Unidecode	ports/converters/p5-Text-Unidecode
 p5-Text-VimColor	ports/textproc/p5-Text-VimColor
-p5-Test-Warn		ports/devel/p5-Test-Warn
 p5-Text-WikiFormat	ports/textproc/p5-Text-WikiFormat
 p5-Text-Wrapper	ports/textproc/p5-Text-Wrapper
 p5-Text-vFile-asData	ports/devel/p5-Text-vFile-asData
@@ -8893,15 +8897,16 @@ pear-Crypt_HMAC	ports/security/pear-Crypt_HMAC
 pear-Crypt_RC4	ports/security/pear-Crypt_RC4
 pear-Crypt_RSA	ports/security/pear-Crypt_RSA
 pear-DB		ports/databases/pear-DB
+pear-DBA	ports/databases/pear-DBA
 pear-DB_DataObject	ports/databases/pear-DB_DataObject
 pear-DB_DataObject_FormBuilder	ports/databases/pear-DB_DataObject_FormBuilder
 pear-DB_Pager	ports/databases/pear-DB_Pager
 pear-DB_QueryTool	ports/databases/pear-DB_QueryTool
 pear-DB_Table	ports/databases/pear-DB_Table
 pear-DB_ldap	ports/databases/pear-DB_ldap
-pear-DBA	ports/databases/pear-DBA
 pear-Date	ports/devel/pear-Date
 pear-Event_Dispatcher	ports/devel/pear-Event_Dispatcher
+pear-FSM	ports/devel/pear-FSM
 pear-File	ports/sysutils/pear-File
 pear-File_Archive	ports/archivers/pear-File_Archive
 pear-File_Find	ports/sysutils/pear-File_Find
@@ -8910,7 +8915,6 @@ pear-File_Gettext	ports/sysutils/pear-File_Gettext
 pear-File_HtAccess	ports/security/pear-File_HtAccess
 pear-File_Passwd	ports/security/pear-File_Passwd
 pear-File_SMBPasswd	ports/security/pear-File_SMBPasswd
-pear-FSM	ports/devel/pear-FSM
 pear-HTML_BBCodeParser	ports/devel/pear-HTML_BBCodeParser
 pear-HTML_CSS	ports/devel/pear-HTML_CSS
 pear-HTML_Common	ports/devel/pear-HTML_Common
@@ -9238,9 +9242,9 @@ php_doc-ar	ports/arabic/php_doc
 php_doc-de	ports/german/php_doc
 php_doc-en	ports/lang/php_doc
 php_doc-fr	ports/french/php_doc
-php_doc-ja	ports/japanese/php_doc
 php_doc-hk	ports/chinese/php_doc-hk
 php_doc-hu	ports/hungarian/php_doc
+php_doc-ja	ports/japanese/php_doc
 php_doc-ko	ports/korean/php_doc
 php_doc-pl	ports/polish/php_doc
 php_doc-pt	ports/portuguese/php_doc-br
@@ -9600,6 +9604,7 @@ ports_smbfs	ports/net/smbfs
 ports_stat	ports/sysutils/stat
 ports_sysutils	ports/sysutils
 ports_tcpdump	ports/net/tcpdump
+ports_texinfo		ports/print/texinfo
 ports_textproc	ports/textproc
 ports_tn3270	ports/net/tn3270
 ports_traceroute	ports/net/traceroute
@@ -11545,8 +11550,8 @@ sybase_ase	ports/databases/sybase_ase
 sybtcl		ports/databases/sybtcl
 syck		ports/textproc/syck
 sylpheed	ports/mail/sylpheed
-sylpheed2	ports/mail/sylpheed2
 sylpheed-claws	ports/mail/sylpheed-claws
+sylpheed2	ports/mail/sylpheed2
 symlinks	ports/sysutils/symlinks
 symon		ports/sysutils/symon
 sympa		ports/mail/sympa
@@ -11565,11 +11570,11 @@ synce-trayicon	ports/palm/synce-trayicon
 syndigator	ports/www/syndigator
 synergy 	ports/sysutils/synergy
 sysconftool	ports/devel/sysconftool
-sysutils_gag	ports/sysutils/gag
 syslog-ng	ports/sysutils/syslog-ng
 sysmon		ports/net-mgmt/sysmon
 system-tools-backends	ports/sysutils/system-tools-backends
 systemg		ports/x11-fm/systemg
+sysutils_gag	ports/sysutils/gag
 szip		ports/archivers/szip
 t-gnus		ports/news/t-gnus
 t-gnus-emacs20	ports/news/t-gnus-emacs20
@@ -11715,7 +11720,6 @@ tex2im		ports/textproc/tex2im
 texcm-ttf	ports/x11-fonts/texcm-ttf
 texi2db		ports/textproc/texi2db
 texi2html	ports/textproc/texi2html
-ports_texinfo		ports/print/texinfo
 texmacs		ports/editors/texmacs
 texmaker	ports/editors/texmaker
 texpower	ports/print/texpower
@@ -11827,8 +11831,8 @@ tkregexp	ports/misc/tkregexp
 tkrunit		ports/misc/tkrunit
 tkscanfax	ports/comms/tkscanfax
 tkseti		ports/astro/tkseti
-tksol		ports/games/tksol
 tkshape		ports/x11-toolkits/tkshape
+tksol		ports/games/tksol
 tkstep80	ports/x11-toolkits/tkstep80
 tktable		ports/x11-toolkits/tktable
 tkxanim		ports/multimedia/tkxanim
@@ -12575,9 +12579,9 @@ x11-chameleon	ports/x11/chameleon
 x11amp		ports/audio/x11amp
 x11iraf		ports/science/x11iraf
 x11vnc		ports/net/x11vnc
+x264		ports/multimedia/x264
 x2vnc		ports/x11-servers/x2vnc
 x2x		ports/x11-servers/x2x
-x264		ports/multimedia/x264
 x3270		ports/x11/x3270
 x3eyes		ports/games/x3eyes
 x48		ports/emulators/x48
@@ -12739,9 +12743,9 @@ xfce4-fsguard-plugin	ports/sysutils/xfce4-fsguard-plugin
 xfce4-genmon-plugin	ports/sysutils/xfce4-genmon-plugin
 xfce4-icon-theme	ports/x11-themes/xfce4-icon-theme
 xfce4-iconbox	ports/misc/xfce4-iconbox
-xfce4-media	ports/multimedia/xfce4-media
 xfce4-mcs-manager	ports/sysutils/xfce4-mcs-manager
 xfce4-mcs-plugins	ports/sysutils/xfce4-mcs-plugins
+xfce4-media	ports/multimedia/xfce4-media
 xfce4-minicmd-plugin	ports/sysutils/xfce4-minicmd-plugin
 xfce4-mixer	ports/audio/xfce4-mixer
 xfce4-netload-plugin	ports/sysutils/xfce4-netload-plugin
@@ -13499,7 +13503,3 @@ ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
 zu-ooodict-ZA	ports/editors/ooodict-zu_ZA
 zziplib		ports/devel/zziplib
-p5-JSON		ports/converters/p5-JSON
-p5-Math-Vec	ports/math/p5-Math-Vec
-p5-Senna	ports/textproc/p5-Senna
-p5-Term-ReadPassword	ports/devel/p5-Term-ReadPassword
