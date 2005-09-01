@@ -1,0 +1,23 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Python.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Python/Err.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Python/Object.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Python/Object/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Python/Object/Object.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Python/Object/Object.so
+lib/%%PYTHON_VERSION%%/site-packages/dbi.py
+lib/%%PYTHON_VERSION%%/site-packages/dbi.pyc
+lib/%%PYTHON_VERSION%%/site-packages/dbi.pyo
+lib/%%PYTHON_VERSION%%/site-packages/dbi2.py
+lib/%%PYTHON_VERSION%%/site-packages/dbi2.pyc
+lib/%%PYTHON_VERSION%%/site-packages/dbi2.pyo
+lib/%%PYTHON_VERSION%%/site-packages/perl.so
+lib/%%PYTHON_VERSION%%/site-packages/perl2.so
+lib/%%PYTHON_VERSION%%/site-packages/perlmod.py
+lib/%%PYTHON_VERSION%%/site-packages/perlmod.pyc
+lib/%%PYTHON_VERSION%%/site-packages/perlmod.pyo
+lib/%%PYTHON_VERSION%%/site-packages/perlpickle.py
+lib/%%PYTHON_VERSION%%/site-packages/perlpickle.pyc
+lib/%%PYTHON_VERSION%%/site-packages/perlpickle.pyo
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Python/Object
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Python
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Python
