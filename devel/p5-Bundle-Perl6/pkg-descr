@@ -1,0 +1,6 @@
+This bundle defines modules that may be of interest to those discussing
+and implementing the Perl 6 language. Some of these are proof-of-concepts
+that the respective authors have implemented to show how things might
+work in Perl 6.
+
+WWW: http://search.cpan.org/src/MARCEL/Bundle-Perl6-0.07
