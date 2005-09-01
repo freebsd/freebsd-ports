@@ -13,10 +13,13 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ahze@FreeBSD.org
-COMMENT=	Quick Database Manager
+COMMENT?=	Quick Database Manager
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+INSTALLS_SHLIB=	yes
+
+.if !defined(SLAVEPORT)
 USE_ICONV=	yes
 CONFIGURE_ARGS=	--enable-zlib \
 		--enable-iconv
@@ -39,18 +42,6 @@ MLINKS=	curia.3 cropen.3 depot.3 dpopen.3 \
 OPTIONS=	PTHREAD "Enable pthread support" Off \
 		DEBUG "Enable debug" Off
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--enable-debug
-.endif
-
-.if defined(WITH_PTHREAD)
-USE_REINPLACE=	yes
-CONFIGURE_ARGS+=	--enable-pthread
-CFLAGS+=	${PTHREAD_CFLAGS}
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
@@ -62,5 +53,33 @@ post-build:
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lab/fmtcnv031127 ${PREFIX}/bin
+
+.else
+
+LIB_DEPENDS+=	qdbm.11:${PORTSDIR}/databases/qdbm
+
+post-patch:
+	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if !defined(SLAVEPORT)
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+.endif
+
+.if defined(WITH_PTHREAD)
+USE_REINPLACE=	yes
+CONFIGURE_ARGS+=	--enable-pthread
+CFLAGS+=		${PTHREAD_CFLAGS}
+.endif
+.endif
+
+.if defined(SLAVEPORT) && ${SLAVEPORT}=="perl"
+.if ${PERL_LEVEL} < 500600
+IGNORE=	This port requires perl 5.6.0 or later, Install lang/perl5 then try again
+.endif
+.endif
 
 .include <bsd.port.post.mk>
