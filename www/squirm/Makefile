@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	squirm
-PORTVERSION=	1.23
-PORTREVISION=	2
+PORTVERSION=	1.26
 CATEGORIES=	www
 MASTER_SITES=	http://squirm.foote.com.au/
 EXTRACT_SUFX=	.tgz
@@ -17,30 +16,31 @@ COMMENT=	A fast & configurable redirector for the Squid
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
-NO_PACKAGE=	must set SQUID_UID and SQUID_GID before building
+SQUID_UID?=	squid
+SQUID_GID?=	squid
 
 MAKE_ENV+=	SQUID_UID=${SQUID_UID} SQUID_GID=${SQUID_GID}
 
 PLIST_SUB=	SQUID_UID=${SQUID_UID} SQUID_GID=${SQUID_GID}
 
 pre-install:
-.if defined(SQUID_UID) && defined(SQUID_GID)
 .if (${SQUID_UID} == "nobody") || (${SQUID_GID} == "nogroup")
 	@${ECHO_MSG}
 	@${ECHO_MSG}	'WARNING! You are going to install squirm files with either nobody owner or'
 	@${ECHO_MSG}	'nogroup group, which may be insecure.'
 	@${ECHO_MSG}
 .endif
-.else
-	@${ECHO_MSG}
-	@${ECHO_MSG} 	'You should set SQUID_UID and SQUID_GID variables to your squid effective'
-	@${ECHO_MSG}	'user/group. For example: SQUID_UID=squid SQUID_GID=squid.'
-	@${ECHO_MSG}
-	@${FALSE}
-.endif
-
 post-install:
 	@${ECHO_MSG}
+.if (${SQUID_UID} == "squid") && (${SQUID_GID} == "squid")
+	@${ECHO_MSG}
+	@${ECHO_MSG} 'INFO: Your SQUID_UID and SQUID_GID variables are set to the default'
+	@${ECHO_MSG} '      squid user/group: SQUID_UID = ${SQUID_UID}  SQUID_GID = ${SQUID_GID}'
+	@${ECHO_MSG} '      These values are used by the www/squid port. They must match what you have chosen'
+	@${ECHO_MSG} '      for the www/squid port. If you are using different UID/GID they must match,'
+	@${ECHO_MSG} '      or else you are asking for problems !'
+	@${ECHO_MSG}
+.endif
 	@${ECHO_MSG} ' +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 	@${ECHO_MSG} '  You have to manually add "redirect_program ${PREFIX}/bin/squirm"'
 	@${ECHO_MSG} '  into your squid.conf file.'
