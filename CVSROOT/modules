@@ -7174,6 +7174,7 @@ p5-BIND-Conf_Parser	ports/dns/p5-BIND-Conf_Parser
 p5-BSD-Resource	ports/devel/p5-BSD-Resource
 p5-BSD-stat	ports/devel/p5-BSD-stat
 p5-BerkeleyDB	ports/databases/p5-BerkeleyDB
+p5-Bio-Das	ports/biology/p5-Bio-Das
 p5-Bit-ShiftReg	ports/math/p5-Bit-ShiftReg
 p5-Bit-Vector	ports/math/p5-Bit-Vector
 p5-Bit-Vector-Minimal	ports/math/p5-Bit-Vector-Minimal
