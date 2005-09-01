@@ -1,0 +1,6 @@
+******************************************************************
+
+If you are using perl 5.00503, please disable define HAS_SIGSETJMP
+in /usr/libdata/perl/5.00503/mach/CORE/config.h
+
+******************************************************************
