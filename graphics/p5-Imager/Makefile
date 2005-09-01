@@ -25,8 +25,8 @@ LIB_DEPENDS=	t1:${PORTSDIR}/devel/t1lib \
 USE_FREETYPE=	yes
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	IM_LIBPATH="${LOCALBASE}/lib" \
+		IM_CFLAGS="${CFLAGS}" \
 		IM_INCPATH="${LOCALBASE}/include/freetype1/freetype"
-USE_GMAKE=	yes
 
 MAN3=	Imager.3 Imager::Color.3 Imager::Color::Float.3 Imager::Expr.3 \
 	Imager::Expr::Assem.3 Imager::Fill.3 Imager::Font.3 \
@@ -38,4 +38,12 @@ MAN3=	Imager.3 Imager::Color.3 Imager::Color::Float.3 Imager::Expr.3 \
 	Imager::ImageTypes.3 Imager::Filters.3 Imager::Font::BBox.3 \
 	Imager::Color::Table.3 Imager::Font::Wrap.3 Imager::Cookbook.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+post-configure:
+	@perl -pi.bak -e 's/^PASTHRU =/$$& INC="\$$(INC)" CCFLAGS="\$$(CCFLAGS)" /' \
+		${WRKSRC}/Makefile
+.endif
+
+.include <bsd.port.post.mk>
