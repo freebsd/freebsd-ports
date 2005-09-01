@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		bush
-PORTVERSION=		1.0.2
+PORTVERSION=		1.0.3
 CATEGORIES=		shells
 MASTER_SITES=		http://www.pegasoft.ca/downloads/	\
 			http://66.11.182.223/downloads/
@@ -41,9 +41,6 @@ MAN1=			bush.1
 PORTDOCS=		*
 
 BASH2FIX=		examples/benchmark.bash examples/export.sh src/testsuite/test.sh
-
-post-extract:
-	@${RMDIR} ${WRKSRC}/examples/test
 
 pre-build:
 .for FILE in ${BASH2FIX}
