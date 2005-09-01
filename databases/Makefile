@@ -233,6 +233,7 @@
     SUBDIR += p5-Time-Piece-MySQL
     SUBDIR += p5-hp200lx-db
     SUBDIR += p5-postgresql-plperl
+    SUBDIR += p5-qdbm
     SUBDIR += p5-sqlrelay
     SUBDIR += pear-DB
     SUBDIR += pear-DB_DataObject
