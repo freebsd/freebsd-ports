@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Syntax/Highlight/HTML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight/HTML/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight/HTML
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Highlight 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Syntax/Highlight 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Syntax 2>/dev/null || true
