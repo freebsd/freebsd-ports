@@ -34,4 +34,10 @@ do-build:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME:R} ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+USE_GCC=3.4+
+.endif
+
+.include <bsd.port.post.mk>
