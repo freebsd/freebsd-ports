@@ -8,6 +8,454 @@ bin/pugscc
 %%SITE_PERL%%/pugs/hack.pod
 %%SITE_PERL%%/pugs/run.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Pugs/.packlist
+lib/perl6/site_perl/Algorithm/TokenBucket.pm
+lib/perl6/site_perl/Benchmark.pm
+lib/perl6/site_perl/CGI.pm
+lib/perl6/site_perl/CGI/Remote.pm
+lib/perl6/site_perl/CGI/Server.pm
+lib/perl6/site_perl/CGI/Util.pm
+lib/perl6/site_perl/Config/Tiny.pm
+lib/perl6/site_perl/Date.pm
+lib/perl6/site_perl/Date/Span.pm
+lib/perl6/site_perl/DateTime/Set.pm
+lib/perl6/site_perl/DateTime/Span.pm
+lib/perl6/site_perl/File/Find.pm
+lib/perl6/site_perl/File/Spec.pm
+lib/perl6/site_perl/File/Spec/Unix.pm
+lib/perl6/site_perl/File/Spec/Win32.pm
+lib/perl6/site_perl/FindBin.pm
+lib/perl6/site_perl/HTML/Entities.pm
+lib/perl6/site_perl/HTTP/Cookies.pm
+lib/perl6/site_perl/HTTP/Date.pm
+lib/perl6/site_perl/HTTP/Headers.pm
+lib/perl6/site_perl/HTTP/Headers/Util.pm
+lib/perl6/site_perl/HTTP/Message.pm
+lib/perl6/site_perl/HTTP/Request.pm
+lib/perl6/site_perl/HTTP/Response.pm
+lib/perl6/site_perl/HTTP/Server/Simple.pm
+lib/perl6/site_perl/HTTP/Status.pm
+lib/perl6/site_perl/Kwid/Event/Parser.pm
+lib/perl6/site_perl/LWP/Simple.pm
+lib/perl6/site_perl/Locale/KeyedText.pm
+lib/perl6/site_perl/Module/Pluggable/Fast.pm
+lib/perl6/site_perl/Net/IRC-OO.pm
+lib/perl6/site_perl/Net/IRC.pm
+lib/perl6/site_perl/Net/IRC/JoinOnInvite.pm
+lib/perl6/site_perl/Net/IRC/SeenExt.pm
+lib/perl6/site_perl/Perl/Compiler/CodeGen.pm
+lib/perl6/site_perl/Perl/Compiler/CodeGen/NameGen.pm
+lib/perl6/site_perl/Perl/Compiler/CodeGen/Perl5_Str.pm
+lib/perl6/site_perl/Perl/Compiler/PIL.pm
+lib/perl6/site_perl/Perl/Compiler/PIL/Util.pm
+lib/perl6/site_perl/Perldoc/DOM.pm
+lib/perl6/site_perl/Perldoc/DOM/Element.pm
+lib/perl6/site_perl/Perldoc/DOM/Node.pm
+lib/perl6/site_perl/Perldoc/DOM/PI.pm
+lib/perl6/site_perl/Perldoc/DOM/Text.pm
+lib/perl6/site_perl/Perldoc/DOM/WS.pm
+lib/perl6/site_perl/Pod/Event/Handler/HTML.pm
+lib/perl6/site_perl/Pod/Event/Handler/POD.pm
+lib/perl6/site_perl/Pod/Event/Parser.pm
+lib/perl6/site_perl/Set.pm
+lib/perl6/site_perl/Set/Hash.pm
+lib/perl6/site_perl/Set/Infinite.pm
+lib/perl6/site_perl/Set/Infinite/Functional.pm
+lib/perl6/site_perl/Span.pm
+lib/perl6/site_perl/Span/Int.pm
+lib/perl6/site_perl/Span/Num.pm
+lib/perl6/site_perl/Test.pm
+lib/perl6/site_perl/Test/Builder.pm
+lib/perl6/site_perl/Test/Builder/Output.pm
+lib/perl6/site_perl/Test/Builder/Test.pm
+lib/perl6/site_perl/Test/Builder/TestPlan.pm
+lib/perl6/site_perl/Text/Glob.pm
+lib/perl6/site_perl/Tree.pm
+lib/perl6/site_perl/Tree/Visitor.pm
+lib/perl6/site_perl/Tree/Visitor/FindByPath.pm
+lib/perl6/site_perl/WTemplate.pm
+lib/perl6/site_perl/fp.pm
+lib/perl6/site_perl/lib.pm
+lib/perl6/site_perl/mach/CORE/pugs/Data/Yaml/Syck.hi
+lib/perl6/site_perl/mach/CORE/pugs/Data/Yaml/Syck.hs
+lib/perl6/site_perl/mach/CORE/pugs/Data/Yaml/Syck.hsc
+lib/perl6/site_perl/mach/CORE/pugs/Data/Yaml/Syck.o
+lib/perl6/site_perl/mach/CORE/pugs/Data/Yaml/Syck_stub.c
+lib/perl6/site_perl/mach/CORE/pugs/Data/Yaml/Syck_stub.h
+lib/perl6/site_perl/mach/CORE/pugs/Data/Yaml/Syck_stub.o
+lib/perl6/site_perl/mach/CORE/pugs/Emit/Common.hi
+lib/perl6/site_perl/mach/CORE/pugs/Emit/Common.hs
+lib/perl6/site_perl/mach/CORE/pugs/Emit/Common.o
+lib/perl6/site_perl/mach/CORE/pugs/Emit/PIR.hi
+lib/perl6/site_perl/mach/CORE/pugs/Emit/PIR.hs
+lib/perl6/site_perl/mach/CORE/pugs/Emit/PIR.o
+lib/perl6/site_perl/mach/CORE/pugs/Emit/PIR/ParrotObject.hs
+lib/perl6/site_perl/mach/CORE/pugs/IMC.hs
+lib/perl6/site_perl/mach/CORE/pugs/IMC/AST.hs
+lib/perl6/site_perl/mach/CORE/pugs/IMC/Compile.hs
+lib/perl6/site_perl/mach/CORE/pugs/IMC/Lexer.hs
+lib/perl6/site_perl/mach/CORE/pugs/Main.hi
+lib/perl6/site_perl/mach/CORE/pugs/Main.hs
+lib/perl6/site_perl/mach/CORE/pugs/Main.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/AST.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/AST.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/AST.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/AST/Internals.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/AST/Internals.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/AST/Internals.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/AST/Pad.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/AST/Pad.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/AST/Pad.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/AST/Pos.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/AST/Pos.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/AST/Pos.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/AST/SIO.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/AST/SIO.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/AST/SIO.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/AST/Scope.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/AST/Scope.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/AST/Scope.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/AST/Types.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Bind.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Bind.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Bind.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Class.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/CodeGen.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/CodeGen.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/CodeGen.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/CodeGen/PIL.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/CodeGen/PIL.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/CodeGen/PIL.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/CodeGen/PIR.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/CodeGen/PIR.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/CodeGen/PIR.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/CodeGen/PIR/Prelude.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/CodeGen/PIR/Prelude.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/CodeGen/PIR/Prelude.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Compat.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Compat.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Compat.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Compile.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Compile.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Compile.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Compile/Haskell.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Compile/Haskell.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Compile/Haskell.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Compile/Pugs.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Compile/Pugs.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Compile/Pugs.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Compile/Pugs2.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Config.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Config.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Config.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Cont.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Cont.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Cont.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Cont/CC_2CPST.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Cont/PromptTR.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Cont/SeqTR.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Context.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Context.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Context.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Embed.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Embed.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Embed.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Embed/Haskell.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Embed/Haskell.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Embed/Haskell.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Embed/Parrot.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Embed/Parrot.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Embed/Parrot.hsc
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Embed/Parrot.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Embed/Parrot_hsc.c
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Embed/Parrot_hsc.h
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Embed/Perl5.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Embed/Perl5.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Embed/Perl5.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Eval.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Eval.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Eval.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Eval/Var.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Eval/Var.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Eval/Var.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/External.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/External.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/External.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/External/C.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/External/Haskell.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/External/Haskell.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/External/Haskell.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Frontend/P5AST.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Help.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Help.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Help.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Internals.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Internals.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Internals.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Junc.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Junc.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Junc.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Lexer.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Lexer.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Lexer.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Monads.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Monads.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Monads.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Parser.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Parser.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Parser.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Parser/Number.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Parser/Number.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Parser/Number.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Parser/Program.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Parser/Program.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Parser/Program.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Parser/Types.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Parser/Types.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Parser/Types.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Parser/Unsafe.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Parser/Unsafe.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Parser/Unsafe.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prelude.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/PreludePC.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/PreludePC.hs-null
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Pretty.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Pretty.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Pretty.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Code.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Code.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Code.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Eval.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Eval.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Eval.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/FileTest.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/FileTest.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/FileTest.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Keyed.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Keyed.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Keyed.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Lifts.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Lifts.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Lifts.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/List.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/List.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/List.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Match.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Match.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Match.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Numeric.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Numeric.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Numeric.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Param.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Param.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Param.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Yaml.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Yaml.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim/Yaml.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Char.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Char.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Char.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Combinator.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Combinator.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Combinator.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Error.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Error.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Error.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Expr.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Expr.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Expr.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/LICENSE
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Language.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Language.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Language.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Perm.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Pos.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Pos.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Pos.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Prim.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Prim.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Prim.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Token.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Token.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule/Token.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Run.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Run.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Run.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Run/Args.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Run/Args.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Run/Args.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Run/Perl5.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Run/Perl5.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Run/Perl5.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Shell.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Shell.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Shell.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Types.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Types.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Types.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Types/Array.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Types/Code.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Types/Handle.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Types/Hash.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Types/Object.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Types/Pair.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Types/Rule.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Types/Scalar.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Types/Thunk.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Version.hi
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Version.hs
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/Version.o
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/pugs_config.h
+lib/perl6/site_perl/mach/CORE/pugs/Pugs/pugs_version.h
+lib/perl6/site_perl/mach/CORE/pugs/RRegex.hi
+lib/perl6/site_perl/mach/CORE/pugs/RRegex.hs
+lib/perl6/site_perl/mach/CORE/pugs/RRegex.o
+lib/perl6/site_perl/mach/CORE/pugs/RRegex/LICENSE
+lib/perl6/site_perl/mach/CORE/pugs/RRegex/PCRE.hi
+lib/perl6/site_perl/mach/CORE/pugs/RRegex/PCRE.hs
+lib/perl6/site_perl/mach/CORE/pugs/RRegex/PCRE.o
+lib/perl6/site_perl/mach/CORE/pugs/RRegex/Syntax.hi
+lib/perl6/site_perl/mach/CORE/pugs/RRegex/Syntax.hs
+lib/perl6/site_perl/mach/CORE/pugs/RRegex/Syntax.o
+lib/perl6/site_perl/mach/CORE/pugs/UTF8.hi
+lib/perl6/site_perl/mach/CORE/pugs/UTF8.lhs
+lib/perl6/site_perl/mach/CORE/pugs/UTF8.o
+lib/perl6/site_perl/mach/CORE/pugs/Unicode.hi
+lib/perl6/site_perl/mach/CORE/pugs/Unicode.hs
+lib/perl6/site_perl/mach/CORE/pugs/Unicode.o
+lib/perl6/site_perl/mach/CORE/pugs/UnicodeC.c
+lib/perl6/site_perl/mach/CORE/pugs/UnicodeC.h
+lib/perl6/site_perl/mach/CORE/pugs/UnicodeC.o
+lib/perl6/site_perl/mach/CORE/pugs/gen_prelude
+lib/perl6/site_perl/mach/CORE/pugs/gen_prelude.hi
+lib/perl6/site_perl/mach/CORE/pugs/gen_prelude.hs
+lib/perl6/site_perl/mach/CORE/pugs/gen_prelude.o
+lib/perl6/site_perl/mach/CORE/pugs/pcre/LICENCE
+lib/perl6/site_perl/mach/CORE/pugs/pcre/chartables.c
+lib/perl6/site_perl/mach/CORE/pugs/pcre/config.h
+lib/perl6/site_perl/mach/CORE/pugs/pcre/get.c
+lib/perl6/site_perl/mach/CORE/pugs/pcre/internal.h
+lib/perl6/site_perl/mach/CORE/pugs/pcre/pcre.c
+lib/perl6/site_perl/mach/CORE/pugs/pcre/pcre.h
+lib/perl6/site_perl/mach/CORE/pugs/pcre/pcre.o
+lib/perl6/site_perl/mach/CORE/pugs/pcre/pcreposix.c
+lib/perl6/site_perl/mach/CORE/pugs/pcre/pcreposix.h
+lib/perl6/site_perl/mach/CORE/pugs/pcre/printint.c
+lib/perl6/site_perl/mach/CORE/pugs/pcre/study.c
+lib/perl6/site_perl/mach/CORE/pugs/pcre/ucp.c
+lib/perl6/site_perl/mach/CORE/pugs/pcre/ucp.h
+lib/perl6/site_perl/mach/CORE/pugs/pcre/ucpinternal.h
+lib/perl6/site_perl/mach/CORE/pugs/pcre/ucptable.c
+lib/perl6/site_perl/mach/CORE/pugs/pcre/ucptypetable.c
+lib/perl6/site_perl/mach/CORE/pugs/perl5/README
+lib/perl6/site_perl/mach/CORE/pugs/perl5/perl5.c
+lib/perl6/site_perl/mach/CORE/pugs/perl5/perl5.h
+lib/perl6/site_perl/mach/CORE/pugs/perl5/perlxsi.c
+lib/perl6/site_perl/mach/CORE/pugs/perl5/pugsembed.c
+lib/perl6/site_perl/mach/CORE/pugs/perl5/pugsembed.h
+lib/perl6/site_perl/mach/CORE/pugs/perl6/Prelude.pm
+lib/perl6/site_perl/mach/CORE/pugs/perl6/Prelude/PIR.pm
+lib/perl6/site_perl/mach/CORE/pugs/pge/README
+lib/perl6/site_perl/mach/CORE/pugs/pge/run_pge.pir
+lib/perl6/site_perl/mach/CORE/pugs/syck/COPYING
+lib/perl6/site_perl/mach/CORE/pugs/syck/bytecode.c
+lib/perl6/site_perl/mach/CORE/pugs/syck/bytecode.o
+lib/perl6/site_perl/mach/CORE/pugs/syck/emitter.c
+lib/perl6/site_perl/mach/CORE/pugs/syck/emitter.o
+lib/perl6/site_perl/mach/CORE/pugs/syck/gram.c
+lib/perl6/site_perl/mach/CORE/pugs/syck/gram.h
+lib/perl6/site_perl/mach/CORE/pugs/syck/gram.o
+lib/perl6/site_perl/mach/CORE/pugs/syck/handler.c
+lib/perl6/site_perl/mach/CORE/pugs/syck/handler.o
+lib/perl6/site_perl/mach/CORE/pugs/syck/implicit.c
+lib/perl6/site_perl/mach/CORE/pugs/syck/implicit.o
+lib/perl6/site_perl/mach/CORE/pugs/syck/node.c
+lib/perl6/site_perl/mach/CORE/pugs/syck/node.o
+lib/perl6/site_perl/mach/CORE/pugs/syck/syck.c
+lib/perl6/site_perl/mach/CORE/pugs/syck/syck.h
+lib/perl6/site_perl/mach/CORE/pugs/syck/syck.o
+lib/perl6/site_perl/mach/CORE/pugs/syck/syck_st.c
+lib/perl6/site_perl/mach/CORE/pugs/syck/syck_st.h
+lib/perl6/site_perl/mach/CORE/pugs/syck/syck_st.o
+lib/perl6/site_perl/mach/CORE/pugs/syck/token.c
+lib/perl6/site_perl/mach/CORE/pugs/syck/token.o
+lib/perl6/site_perl/mach/CORE/pugs/syck/yaml2byte.c
+lib/perl6/site_perl/mach/CORE/pugs/syck/yaml2byte.o
+lib/perl6/site_perl/mach/CORE/pugs/syck/yamlbyte.h
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/syck
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/pge
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/perl6/Prelude
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/perl6
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/perl5
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/pcre
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/RRegex
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/Pugs/Types
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/Pugs/Run
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/Pugs/Rule
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/Pugs/Prim
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/Pugs/Parser
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/Pugs/Frontend
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/Pugs/External
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/Pugs/Eval
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/Pugs/Embed
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/Pugs/Cont
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/Pugs/Compile
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/Pugs/CodeGen/PIR
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/Pugs/CodeGen
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/Pugs/AST
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/Pugs
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/IMC
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/Emit/PIR
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/Emit
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/Data/Yaml
+@dirrm lib/perl6/site_perl/mach/CORE/pugs/Data
+@dirrm lib/perl6/site_perl/mach/CORE/pugs
+@dirrm lib/perl6/site_perl/mach/CORE
+@dirrm lib/perl6/site_perl/mach
+@dirrm lib/perl6/site_perl/Tree/Visitor
+@dirrm lib/perl6/site_perl/Tree
+@dirrm lib/perl6/site_perl/Text
+@dirrm lib/perl6/site_perl/Test/Builder
+@dirrm lib/perl6/site_perl/Test
+@dirrm lib/perl6/site_perl/Span
+@dirrm lib/perl6/site_perl/Set/Infinite
+@dirrm lib/perl6/site_perl/Set
+@dirrm lib/perl6/site_perl/Pod/Event/Handler
+@dirrm lib/perl6/site_perl/Pod/Event
+@dirrm lib/perl6/site_perl/Pod
+@dirrm lib/perl6/site_perl/Perldoc/DOM
+@dirrm lib/perl6/site_perl/Perldoc
+@dirrm lib/perl6/site_perl/Perl/Compiler/PIL
+@dirrm lib/perl6/site_perl/Perl/Compiler/CodeGen
+@dirrm lib/perl6/site_perl/Perl/Compiler
+@dirrm lib/perl6/site_perl/Perl
+@dirrm lib/perl6/site_perl/Net/IRC
+@dirrm lib/perl6/site_perl/Net
+@dirrm lib/perl6/site_perl/Module/Pluggable
+@dirrm lib/perl6/site_perl/Module
+@dirrm lib/perl6/site_perl/Locale
+@dirrm lib/perl6/site_perl/LWP
+@dirrm lib/perl6/site_perl/Kwid/Event
+@dirrm lib/perl6/site_perl/Kwid
+@dirrm lib/perl6/site_perl/HTTP/Server
+@dirrm lib/perl6/site_perl/HTTP/Headers
+@dirrm lib/perl6/site_perl/HTTP
+@dirrm lib/perl6/site_perl/HTML
+@dirrm lib/perl6/site_perl/File/Spec
+@dirrm lib/perl6/site_perl/File
+@dirrm lib/perl6/site_perl/DateTime
+@dirrm lib/perl6/site_perl/Date
+@dirrm lib/perl6/site_perl/Config
+@dirrm lib/perl6/site_perl/CGI
+@dirrm lib/perl6/site_perl/Algorithm
+@dirrm lib/perl6/site_perl
+@dirrm lib/perl6
+@dirrm %%SITE_PERL%%/Perl6/Pugs
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Pugs
 @unexec rmdir %D/lib/perl6/mach 2>/dev/null || true
 @unexec rmdir %D/lib/perl6 2>/dev/null || true
