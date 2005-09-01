@@ -2435,6 +2435,7 @@ freeciv		ports/games/freeciv
 freeciv-gtk	ports/games/freeciv-gtk
 freeciv-gtk2	ports/games/freeciv-gtk2
 freecolor	ports/sysutils/freecolor
+freedbd		ports/net/freedbd
 freedialog	ports/misc/freedialog
 freedoko	ports/games/freedoko
 freedroid	ports/games/freedroid
