@@ -1,0 +1,20 @@
+Recent versions of FreeBSD default to installing libraries with 0444
+permissions which causes ranlib, that GCC rans after installation, to
+fail.  Just replace RANLIB by a dummy program to avoid that.
+
+Index: gcc/Makefile.in
+===================================================================
+RCS file: /cvs/gcc/gcc/gcc/Makefile.in,v
+retrieving revision 1.1223.2.23
+diff -u -3 -p -r1.1223.2.23 Makefile.in
+--- gcc/Makefile.in	24 Feb 2005 09:26:57 -0000	1.1223.2.23
++++ gcc/Makefile.in	31 Aug 2005 20:15:42 -0000
+@@ -213,7 +213,7 @@ FLEX = @FLEX@
+ FLEXFLAGS =
+ AR = ar
+ AR_FLAGS = rc
+-RANLIB = @RANLIB@
++RANLIB = echo 
+ 
+ # -------------------------------------------
+ # Programs which operate on the build machine
