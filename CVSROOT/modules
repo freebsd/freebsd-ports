@@ -13379,6 +13379,7 @@ zh-oto			ports/chinese/oto
 zh-oxford		ports/chinese/oxford
 zh-p5-Date-Chinese	ports/chinese/p5-Date-Chinese
 zh-p5-Encode-HanConvert	ports/chinese/p5-Encode-HanConvert
+zh-p5-Encode-HanExtra	ports/chinese/p5-Encode-HanExtra
 zh-p5-Lingua-ZH-Keywords	ports/chinese/p5-Lingua-ZH-Keywords
 zh-p5-Lingua-ZH-Numbers	ports/chinese/p5-Lingua-ZH-Numbers
 zh-p5-Lingua-ZH-Summarize	ports/chinese/p5-Lingua-ZH-Summarize
