@@ -16,7 +16,6 @@ MASTER_SITES=	http://www.seanet.com/~kylemonger/vm/ \
 		ftp://ftp.uu.net/networking/mail/vm/ \
 		http://www.interhack.net/projects/vm/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/VM/ \
-		http://www.rge.com/pub/mail/vm/ \
 		http://ftp.lip6.fr/pub/unix/mail/vm/ \
 		ftp://ftp.surfnet.nl/pub/mail/vm/ \
 		http://ftp.gwdg.de/pub/gnu2/vm/ \

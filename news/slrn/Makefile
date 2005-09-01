@@ -9,7 +9,6 @@ PORTNAME=	slrn
 PORTVERSION=	0.9.8.1
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://ftp.rge.com/pub/usenet/readers/unix/slrn/ \
 		ftp://angel.sovam.com/pub/tools/net/news/ \
 		ftp://ftp.fu-berlin.de/pub/unix/news/slrn/ \
 		ftp://ftp.ntua.gr/pub/lang/slang/slrn/ \

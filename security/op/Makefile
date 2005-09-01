@@ -10,7 +10,6 @@ PORTVERSION=	1.11
 PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/%SUBDIR%/ \
-		ftp://ftp.rge.com/pub/security/cerias/tools/%SUBDIR%/ \
 		ftp://ftp.hacktic.nl/pub/security/coast.cs.purdue.edu/%SUBDIR%/ \
 		ftp://ftp.nask.pl/pub/mirror/coast.cs.purdue.edu/%SUBDIR%/
 MASTER_SITE_SUBDIR=	unix/sysutils/${PORTNAME}
