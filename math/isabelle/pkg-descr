@@ -1,0 +1,20 @@
+Isabelle is a generic proof assistant. It allows mathematical
+formulas to be expressed in a formal language and provides tools
+for proving those formulas in a logical calculus. The main application
+is the formalization of mathematical proofs and in particular formal
+verification, which includes proving the correctness of computer
+hardware or software and proving properties of computer languages
+and protocols.
+
+Compared with similar tools, Isabelle's distinguishing feature is
+its flexibility. Most proof assistants are built around a single
+formal calculus, typically higher-order logic. Isabelle has the
+capacity to accept a variety of formal calculi. The distributed
+version supports higher-order logic but also axiomatic set theory
+and several other formalisms. See logics for more details.
+
+Isabelle is a joint project between Lawrence C. Paulson (University
+of Cambridge, UK) and Tobias Nipkow (Technical University of Munich,
+Germany).
+
+WWW: http://isabelle.in.tum.de
