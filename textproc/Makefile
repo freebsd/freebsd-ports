@@ -339,6 +339,7 @@
     SUBDIR += p5-Pod-DocBook
     SUBDIR += p5-Pod-Escapes
     SUBDIR += p5-Pod-POM
+    SUBDIR += p5-Pod-POM-View-HTML-Filter
     SUBDIR += p5-Pod-Parser
     SUBDIR += p5-Pod-ProjectDocs
     SUBDIR += p5-Pod-Simple
