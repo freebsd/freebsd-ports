@@ -4820,6 +4820,7 @@ kinterbasdb	ports/databases/kinterbasdb
 kipi-plugins	ports/graphics/kipi-plugins
 kismet		ports/net-mgmt/kismet
 kisomandel	ports/graphics/kisomandel
+kissd		ports/net/kissd
 kix-kmod	ports/graphics/kix-kmod
 kkbswitch	ports/sysutils/kkbswitch
 kkeyled		ports/sysutils/kkeyled
