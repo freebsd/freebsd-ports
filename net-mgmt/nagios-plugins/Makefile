@@ -64,7 +64,7 @@ PLIST_SUB+=	SUB_SNMP="@comment "
 .endif
 
 .if defined(WITH_RADIUS)
-LIB_DEPENDS+=	radiusclient.2:${PORTSDIR}/net/radiusclient
+LIB_DEPENDS+=	radiusclient-ng.2:${PORTSDIR}/net/radiusclient
 CONFIGURE_ARGS+=--enable-radius
 PLIST_SUB+=	SUB_RADIUS=""
 .else
