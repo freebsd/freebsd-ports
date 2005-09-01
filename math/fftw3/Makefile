@@ -63,9 +63,12 @@ USE_GCC=	3.4
 .endif
 .if ${MACHINE_CPU:M3dnow}
 CONFIGURE_ARGS+=--enable-k7
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS:N-O:N-O*} -O3 -fomit-frame-pointer -fno-schedule-insns \
-		-malign-double -fstrict-aliasing -mpreferred-stack-boundary=4 \
-		-ffast-math"
+CFLAGS_3DNOW=	${CFLAGS:N-O:N-O*} -O3 -fomit-frame-pointer -fno-schedule-insns \
+		-fstrict-aliasing -mpreferred-stack-boundary=4 -ffast-math
+.if ${ARCH} != "amd64"
+CFLAGS_3DNOW+=	-malign-double
+.endif
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS_3DNOW}"
 .endif
 .endif # end WITH_OPTIMIZED_CFLAGS
 
