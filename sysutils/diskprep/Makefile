@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	diskprep
-PORTVERSION=	0.9.2
+PORTVERSION=	1.0.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.freebsd.org/~brooks/diskprep/
 
@@ -17,7 +17,15 @@ USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
 MAKE_ENV+=	EXAMPLESDIR=${EXAMPLESDIR}
 
+USE_RCORDER=	${NAME}
+
 MAN8=		diskprep.8
 MANCOMPRESSED=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 503000
+IGNORE=		Requires glabel(8) and thus >= FreeBSD-5.3
+.endif
+
+.include <bsd.port.post.mk>
