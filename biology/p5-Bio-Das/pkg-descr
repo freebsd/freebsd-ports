@@ -1,0 +1,10 @@
+Bio::Das provides access to genome sequencing and annotation databases
+that export their data in Distributed Annotation System (DAS) format
+version 1.5.  This system is described at http://biodas.org.  Both
+unencrypted (http:) and SSL-encrypted (https:) DAS servers are sup-
+ported.  (To run SSL, you will need IO::Socket::SSL and Net::SSLeay
+installed).
+
+WWW: http://www.biodas.org
+
+-- Razi Khaja <razi@genet.sickkids.on.ca>

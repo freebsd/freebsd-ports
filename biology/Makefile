@@ -43,6 +43,7 @@
     SUBDIR += nclever
     SUBDIR += ortep3
     SUBDIR += p5-AcePerl
+    SUBDIR += p5-Bio-Das
     SUBDIR += p5-bioperl
     SUBDIR += paml
     SUBDIR += phylip
