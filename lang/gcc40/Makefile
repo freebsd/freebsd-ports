@@ -26,6 +26,7 @@ COMMENT=	GNU Compiler Collection 4.0
 
 .if defined(WITH_FORTRAN)
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+BUILD_DEPENDS=	${LOCALBASE}/lib/libmpfr.a:${PORTSDIR}/math/mpfr
 .endif
 
 CONFLICTS=	gcc-3.3.* gcc-3.4.* gcc-4.1.*
