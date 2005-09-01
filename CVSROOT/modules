@@ -3965,6 +3965,7 @@ itext		ports/devel/itext
 ithought	ports/deskutils/ithought
 itk		ports/x11-toolkits/itk
 itl		ports/math/itl
+itraxp		ports/mail/itraxp
 its		ports/emulators/its
 its4		ports/security/its4
 iverilog	ports/cad/iverilog
