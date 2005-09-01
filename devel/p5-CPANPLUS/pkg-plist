@@ -8,7 +8,6 @@ bin/cpanp
 %%SITE_PERL%%/CPANPLUS/Configure.pm
 %%SITE_PERL%%/CPANPLUS/Configure/Setup.pm
 %%SITE_PERL%%/CPANPLUS/Dist.pm
-%%SITE_PERL%%/CPANPLUS/Dist/Build.pm
 %%SITE_PERL%%/CPANPLUS/Dist/MM.pm
 %%SITE_PERL%%/CPANPLUS/Dist/Sample.pm
 %%SITE_PERL%%/CPANPLUS/Error.pm
@@ -23,6 +22,7 @@ bin/cpanp
 %%SITE_PERL%%/CPANPLUS/Internals/Search.pm
 %%SITE_PERL%%/CPANPLUS/Internals/Source.pm
 %%SITE_PERL%%/CPANPLUS/Internals/Utils.pm
+%%SITE_PERL%%/CPANPLUS/Internals/Utils/Autoflush.pm
 %%SITE_PERL%%/CPANPLUS/Module.pm
 %%SITE_PERL%%/CPANPLUS/Module/Author.pm
 %%SITE_PERL%%/CPANPLUS/Module/Author/Fake.pm
@@ -39,6 +39,7 @@ bin/cpanp
 %%SITE_PERL%%/CPANPLUS/inc/Archive/Tar/Constant.pm
 %%SITE_PERL%%/CPANPLUS/inc/Archive/Tar/File.pm
 %%SITE_PERL%%/CPANPLUS/inc/Config/Auto.pm
+%%SITE_PERL%%/CPANPLUS/inc/DBIx/Simple/OO.pm
 %%SITE_PERL%%/CPANPLUS/inc/File/Fetch.pm
 %%SITE_PERL%%/CPANPLUS/inc/File/Fetch/Item.pm
 %%SITE_PERL%%/CPANPLUS/inc/File/Spec.pm
@@ -65,6 +66,7 @@ bin/cpanp
 %%SITE_PERL%%/CPANPLUS/inc/Log/Message/Config.pm
 %%SITE_PERL%%/CPANPLUS/inc/Log/Message/Handlers.pm
 %%SITE_PERL%%/CPANPLUS/inc/Log/Message/Item.pm
+%%SITE_PERL%%/CPANPLUS/inc/Log/Message/Simple.pm
 %%SITE_PERL%%/CPANPLUS/inc/Module/CoreList.pm
 %%SITE_PERL%%/CPANPLUS/inc/Module/Load.pm
 %%SITE_PERL%%/CPANPLUS/inc/Module/Load/Conditional.pm
@@ -72,32 +74,12 @@ bin/cpanp
 %%SITE_PERL%%/CPANPLUS/inc/Object/Accessor.pm
 %%SITE_PERL%%/CPANPLUS/inc/Params/Check.pm
 %%SITE_PERL%%/CPANPLUS/inc/Term/UI.pm
+%%SITE_PERL%%/CPANPLUS/inc/Term/UI/History.pm
 %%SITE_PERL%%/CPANPLUS/inc/installers/.installers
-%%SITE_PERL%%/CPANPLUS/inc/installers/Module/Build.pm
-%%SITE_PERL%%/CPANPLUS/inc/installers/Module/Build/Base.pm
-%%SITE_PERL%%/CPANPLUS/inc/installers/Module/Build/Compat.pm
-%%SITE_PERL%%/CPANPLUS/inc/installers/Module/Build/Cookbook.pm
-%%SITE_PERL%%/CPANPLUS/inc/installers/Module/Build/PPMMaker.pm
-%%SITE_PERL%%/CPANPLUS/inc/installers/Module/Build/Platform/Amiga.pm
-%%SITE_PERL%%/CPANPLUS/inc/installers/Module/Build/Platform/Default.pm
-%%SITE_PERL%%/CPANPLUS/inc/installers/Module/Build/Platform/EBCDIC.pm
-%%SITE_PERL%%/CPANPLUS/inc/installers/Module/Build/Platform/MPEiX.pm
-%%SITE_PERL%%/CPANPLUS/inc/installers/Module/Build/Platform/MacOS.pm
-%%SITE_PERL%%/CPANPLUS/inc/installers/Module/Build/Platform/RiscOS.pm
-%%SITE_PERL%%/CPANPLUS/inc/installers/Module/Build/Platform/Unix.pm
-%%SITE_PERL%%/CPANPLUS/inc/installers/Module/Build/Platform/VMS.pm
-%%SITE_PERL%%/CPANPLUS/inc/installers/Module/Build/Platform/VOS.pm
-%%SITE_PERL%%/CPANPLUS/inc/installers/Module/Build/Platform/Windows.pm
-%%SITE_PERL%%/CPANPLUS/inc/installers/Module/Build/Platform/aix.pm
-%%SITE_PERL%%/CPANPLUS/inc/installers/Module/Build/Platform/cygwin.pm
-%%SITE_PERL%%/CPANPLUS/inc/installers/Module/Build/Platform/darwin.pm
-%%SITE_PERL%%/CPANPLUS/inc/installers/Module/Build/Platform/os2.pm
-%%SITE_PERL%%/CPANPLUS/inc/installers/Module/Build/PodParser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPANPLUS/.packlist
-@dirrm %%SITE_PERL%%/CPANPLUS/inc/installers/Module/Build/Platform
-@dirrm %%SITE_PERL%%/CPANPLUS/inc/installers/Module/Build
-@dirrm %%SITE_PERL%%/CPANPLUS/inc/installers/Module
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPANPLUS
 @dirrm %%SITE_PERL%%/CPANPLUS/inc/installers
+@dirrm %%SITE_PERL%%/CPANPLUS/inc/Term/UI
 @dirrm %%SITE_PERL%%/CPANPLUS/inc/Term
 @dirrm %%SITE_PERL%%/CPANPLUS/inc/Params
 @dirrm %%SITE_PERL%%/CPANPLUS/inc/Object
@@ -113,17 +95,19 @@ bin/cpanp
 @dirrm %%SITE_PERL%%/CPANPLUS/inc/File/Spec
 @dirrm %%SITE_PERL%%/CPANPLUS/inc/File/Fetch
 @dirrm %%SITE_PERL%%/CPANPLUS/inc/File
+@dirrm %%SITE_PERL%%/CPANPLUS/inc/DBIx/Simple
+@dirrm %%SITE_PERL%%/CPANPLUS/inc/DBIx
 @dirrm %%SITE_PERL%%/CPANPLUS/inc/Config
 @dirrm %%SITE_PERL%%/CPANPLUS/inc/Archive/Tar
 @dirrm %%SITE_PERL%%/CPANPLUS/inc/Archive
 @dirrm %%SITE_PERL%%/CPANPLUS/inc
+@dirrm %%SITE_PERL%%/CPANPLUS/Shell
 @dirrm %%SITE_PERL%%/CPANPLUS/Module/Author
 @dirrm %%SITE_PERL%%/CPANPLUS/Module
+@dirrm %%SITE_PERL%%/CPANPLUS/Internals/Utils
 @dirrm %%SITE_PERL%%/CPANPLUS/Internals/Constants
 @dirrm %%SITE_PERL%%/CPANPLUS/Internals
+@dirrm %%SITE_PERL%%/CPANPLUS/Dist
 @dirrm %%SITE_PERL%%/CPANPLUS/Configure
 @dirrm %%SITE_PERL%%/CPANPLUS/Backend
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPANPLUS
-@unexec rmdir %D/%%SITE_PERL%%/CPANPLUS/Dist 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/CPANPLUS/Shell 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/CPANPLUS 2>/dev/null || true
+@dirrm %%SITE_PERL%%/CPANPLUS

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CPANPLUS
-PORTVERSION=	0.053
+PORTVERSION=	0.0562
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/K/KA/KANE
@@ -20,7 +20,7 @@ CONFIGURE_ARGS=	AUTOINSTALL=1
 INSTALL_TARGET=	pure_install
 USE_REINPLACE=	yes
 
-OPTIONS=	TEST_REPORTER "Send report to cpan-testers" off \
+OPTIONS=	TEST_REPORTER "Send reports to cpan-testers" off \
 		YAML "Check reports from cpan-testers" off
 
 .include <bsd.port.pre.mk>
@@ -46,7 +46,6 @@ MAN3=		CPANPLUS.3 \
 		CPANPLUS::Config.3 \
 		CPANPLUS::Configure.3 \
 		CPANPLUS::Dist.3 \
-		CPANPLUS::Dist::Build.3 \
 		CPANPLUS::Dist::MM.3 \
 		CPANPLUS::Dist::Sample.3 \
 		CPANPLUS::Error.3 \
@@ -71,6 +70,7 @@ MAN3=		CPANPLUS.3 \
 		CPANPLUS::inc::Archive::Tar.3 \
 		CPANPLUS::inc::Archive::Tar::File.3 \
 		CPANPLUS::inc::Config::Auto.3 \
+		CPANPLUS::inc::DBIx::Simple::OO.3 \
 		CPANPLUS::inc::File::Fetch.3 \
 		CPANPLUS::inc::File::Spec.3 \
 		CPANPLUS::inc::File::Spec::Cygwin.3 \
@@ -96,6 +96,7 @@ MAN3=		CPANPLUS.3 \
 		CPANPLUS::inc::Log::Message::Config.3 \
 		CPANPLUS::inc::Log::Message::Handlers.3 \
 		CPANPLUS::inc::Log::Message::Item.3 \
+		CPANPLUS::inc::Log::Message::Simple.3 \
 		CPANPLUS::inc::Module::CoreList.3 \
 		CPANPLUS::inc::Module::Load.3 \
 		CPANPLUS::inc::Module::Load::Conditional.3 \
@@ -103,25 +104,7 @@ MAN3=		CPANPLUS.3 \
 		CPANPLUS::inc::Object::Accessor.3 \
 		CPANPLUS::inc::Params::Check.3 \
 		CPANPLUS::inc::Term::UI.3 \
-		CPANPLUS::inc::installers::Module::Build.3 \
-		CPANPLUS::inc::installers::Module::Build::Base.3 \
-		CPANPLUS::inc::installers::Module::Build::Compat.3 \
-		CPANPLUS::inc::installers::Module::Build::Cookbook.3 \
-		CPANPLUS::inc::installers::Module::Build::PPMMaker.3 \
-		CPANPLUS::inc::installers::Module::Build::Platform::Amiga.3 \
-		CPANPLUS::inc::installers::Module::Build::Platform::Default.3 \
-		CPANPLUS::inc::installers::Module::Build::Platform::EBCDIC.3 \
-		CPANPLUS::inc::installers::Module::Build::Platform::MPEiX.3 \
-		CPANPLUS::inc::installers::Module::Build::Platform::MacOS.3 \
-		CPANPLUS::inc::installers::Module::Build::Platform::RiscOS.3 \
-		CPANPLUS::inc::installers::Module::Build::Platform::Unix.3 \
-		CPANPLUS::inc::installers::Module::Build::Platform::VMS.3 \
-		CPANPLUS::inc::installers::Module::Build::Platform::VOS.3 \
-		CPANPLUS::inc::installers::Module::Build::Platform::Windows.3 \
-		CPANPLUS::inc::installers::Module::Build::Platform::aix.3 \
-		CPANPLUS::inc::installers::Module::Build::Platform::cygwin.3 \
-		CPANPLUS::inc::installers::Module::Build::Platform::darwin.3 \
-		CPANPLUS::inc::installers::Module::Build::Platform::os2.3
+		CPANPLUS::inc::Term::UI::History.3
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*\.orig" -delete
