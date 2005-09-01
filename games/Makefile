@@ -260,6 +260,7 @@
     SUBDIR += jumpnbump
     SUBDIR += jzip
     SUBDIR += kaid
+    SUBDIR += kamikaze
     SUBDIR += kanatest
     SUBDIR += kbilliards
     SUBDIR += kcheckers
