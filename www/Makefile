@@ -474,6 +474,7 @@
     SUBDIR += p5-Catalyst-Helper-Controller-Scaffold
     SUBDIR += p5-Catalyst-Model-CDBI
     SUBDIR += p5-Catalyst-Model-CDBI-Sweet
+    SUBDIR += p5-Catalyst-Plugin-Authentication-CDBI
     SUBDIR += p5-Catalyst-Plugin-FillInForm
     SUBDIR += p5-Catalyst-Plugin-FormValidator
     SUBDIR += p5-Catalyst-Plugin-Prototype
