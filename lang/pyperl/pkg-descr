@@ -1,0 +1,7 @@
+This is a Python extension module that makes it possible to embed Perl
+interpreter(s) in any Python program.  It can be used to invoke
+arbitrary Perl code, load any Perl modules and make calls directly
+into Perl functions.  The Perl code invoked can call back into Python
+as it see fit.
+
+WWW: http://www.zope.org/Wikis/zope-perl/
