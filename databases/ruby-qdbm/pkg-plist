@@ -1,0 +1,18 @@
+bin/rbcrtest
+bin/rbdptest
+bin/rbvltest
+%%RUBY_SITEARCHLIBDIR%%/mod_depot.so
+%%RUBY_SITEARCHLIBDIR%%/mod_curia.so
+%%RUBY_SITEARCHLIBDIR%%/mod_villa.so
+%%RUBY_SITELIBDIR%%/depot.rb
+%%RUBY_SITELIBDIR%%/curia.rb
+%%RUBY_SITELIBDIR%%/villa.rb
+%%DATADIR%%/ruby/rbapidoc/curia.rb.html
+%%DATADIR%%/ruby/rbapidoc/depot.rb.html
+%%DATADIR%%/ruby/rbapidoc/index.html
+%%DATADIR%%/ruby/rbapidoc/villa.rb.html
+%%DATADIR%%/ruby/rbspex-ja.html
+%%DATADIR%%/ruby/rbspex.html
+@dirrm %%DATADIR%%/ruby/rbapidoc
+@dirrm %%DATADIR%%/ruby
+@dirrm %%DATADIR%%
