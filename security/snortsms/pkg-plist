@@ -1,4 +1,3 @@
-www/snortsms/DefaultLayout.php
 www/snortsms/barnctrl/act_Save-Update.php
 www/snortsms/barnctrl/act_action.php
 www/snortsms/barnctrl/dsp_AddEdit.php
@@ -35,11 +34,25 @@ www/snortsms/classifications/qry_selected.php
 www/snortsms/conf/act_init_vars.php
 www/snortsms/conf/act_read_conf.php
 www/snortsms/conf/act_save_conf.php
+www/snortsms/conf/act_test.php
 www/snortsms/conf/act_verify_install.php
 www/snortsms/conf/dsp_conf.php
+www/snortsms/conf/dsp_header.php
 www/snortsms/conf/dsp_save_conf.php
 www/snortsms/conf/fbx_Switch.php
 www/snortsms/conf/index.php
+www/snortsms/configs/act_AddRemove.php
+www/snortsms/configs/act_Save-Update.php
+www/snortsms/configs/act_action.php
+www/snortsms/configs/dsp_AddEdit.php
+www/snortsms/configs/dsp_home.php
+www/snortsms/configs/dsp_import.php
+www/snortsms/configs/dsp_selected.php
+www/snortsms/configs/fbx_Switch.php
+www/snortsms/configs/index.php
+www/snortsms/configs/qry_config.php
+www/snortsms/configs/qry_configs.php
+www/snortsms/configs/qry_selected.php
 www/snortsms/contrib/SNORTSMS.mysql
 www/snortsms/contrib/SNORT_fix.mysql
 www/snortsms/css/calendar_icon.png
@@ -51,20 +64,22 @@ www/snortsms/dsp_menu.php
 www/snortsms/events/act_action.php
 www/snortsms/events/act_checkdb.php
 www/snortsms/events/act_scope.php
-www/snortsms/events/dsp_.php
+www/snortsms/events/act_searchredir.php
+www/snortsms/events/dsp_header.php
 www/snortsms/events/dsp_home.php
-www/snortsms/events/dsp_mywindows.php
 www/snortsms/events/dsp_pagenate.php
+www/snortsms/events/dsp_searchform.php
+www/snortsms/events/dsp_windows.php
 www/snortsms/events/fbx_Settings.php
 www/snortsms/events/fbx_Switch.php
 www/snortsms/events/index.php
-www/snortsms/events/qry_mywindows.php
 www/snortsms/events/qry_otheralerts.php
 www/snortsms/events/qry_search.php
 www/snortsms/events/qry_sig_recon.php
 www/snortsms/events/qry_sig_summary.php
 www/snortsms/events/qry_sigcat.php
 www/snortsms/events/qry_sigzoom.php
+www/snortsms/events/qry_windows.php
 www/snortsms/fbx_Circuits.php
 www/snortsms/fbx_Fusebox3.0_PHP4.0.6.php
 www/snortsms/fbx_Fusebox3.0_PHP4.1.x.php
@@ -73,6 +88,17 @@ www/snortsms/fbx_ListFunctions.php
 www/snortsms/fbx_SaveContent.php
 www/snortsms/fbx_Settings.php
 www/snortsms/fbx_Switch.php
+www/snortsms/help/dsp_main.php
+www/snortsms/help/fbx_Switch.php
+www/snortsms/help/inc_addrule.php
+www/snortsms/help/inc_barnctrl.php
+www/snortsms/help/inc_configdirct.php
+www/snortsms/help/inc_search.php
+www/snortsms/help/inc_sensorconf.php
+www/snortsms/help/inc_snortctrl.php
+www/snortsms/help/index.php
+www/snortsms/images/arrow_1.png
+www/snortsms/images/blue_quest.png
 www/snortsms/images/btn_add.gif
 www/snortsms/images/btn_delete.gif
 www/snortsms/images/btn_preview.gif
@@ -116,7 +142,10 @@ www/snortsms/import/index.php
 www/snortsms/index.php
 www/snortsms/java/cssmenu.js
 www/snortsms/java/datepickercontrol.js
+www/snortsms/layouts/Layout-Default.php
+www/snortsms/layouts/Layout-Help.php
 www/snortsms/lib/func_DrawRepHeader.php
+www/snortsms/lib/func_EventLib.php
 www/snortsms/lib/func_GenBarnConf.php
 www/snortsms/lib/func_GenSnortConf.php
 www/snortsms/lib/func_GenToken.php
@@ -132,6 +161,7 @@ www/snortsms/main/dsp_home.php
 www/snortsms/main/fbx_Switch.php
 www/snortsms/main/index.php
 www/snortsms/monitor/act_stats.php
+www/snortsms/monitor/cron_stats.php
 www/snortsms/monitor/fbx_Switch.php
 www/snortsms/monitor/index.php
 www/snortsms/monitor/query_sensor.php
@@ -200,6 +230,7 @@ www/snortsms/rules/dsp_results.php
 www/snortsms/rules/dsp_view.php
 www/snortsms/rules/fbx_Switch.php
 www/snortsms/rules/index.php
+www/snortsms/rules/qry_policies.php
 www/snortsms/rules/qry_rule.php
 www/snortsms/rules/qry_rulecats.php
 www/snortsms/rules/qry_rules.php
@@ -281,13 +312,16 @@ www/snortsms/variables/qry_variables.php
 @dirrm www/snortsms/monitor
 @dirrm www/snortsms/main
 @dirrm www/snortsms/lib
+@dirrm www/snortsms/layouts
 @dirrm www/snortsms/java
 @dirrm www/snortsms/import
 @dirrm www/snortsms/images
+@dirrm www/snortsms/help
 @dirrm www/snortsms/events
 @dirrm www/snortsms/docs
 @dirrm www/snortsms/css
 @dirrm www/snortsms/contrib
+@dirrm www/snortsms/configs
 @unexec rmdir %D/www/snortsms/conf 2>/dev/null || true
 @dirrm www/snortsms/classifications
 @dirrm www/snortsms/barnyard
