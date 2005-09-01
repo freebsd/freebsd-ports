@@ -1,0 +1,28 @@
+bin/plcrtest
+bin/pldptest
+bin/plvltest
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/perllocal.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Curia.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Depot.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Villa.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Curia/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Curia/Curia.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Curia/Curia.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Depot/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Depot/Depot.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Depot/Depot.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Villa/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Villa/Villa.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Villa/Villa.so
+%%DATADIR%%/perl/plapidoc/Curia.pm.html
+%%DATADIR%%/perl/plapidoc/Depot.pm.html
+%%DATADIR%%/perl/plapidoc/Villa.pm.html
+%%DATADIR%%/perl/plapidoc/index.html
+%%DATADIR%%/perl/plspex-ja.html
+%%DATADIR%%/perl/plspex.html
+@dirrm %%DATADIR%%/perl/plapidoc
+@dirrm %%DATADIR%%/perl
+@dirrm %%DATADIR%%
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Villa
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Depot
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Curia
