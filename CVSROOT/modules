@@ -8753,6 +8753,7 @@ p5-perl-ldap	ports/net/p5-perl-ldap
 p5-podlators	ports/textproc/p5-podlators
 p5-postgresql-plperl	ports/databases/p5-postgresql-plperl
 p5-prefork	ports/devel/p5-prefork
+p5-qdbm		ports/databases/p5-qdbm
 p5-qt		ports/x11-toolkits/p5-qt
 p5-release	ports/devel/p5-release
 p5-sqlrelay	ports/databases/p5-sqlrelay
