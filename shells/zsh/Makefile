@@ -46,7 +46,6 @@ MASTER_SITES=	\
 		ftp://ftp.kappa.ro/pub/mirrors/ftp.zsh.org/pub/zsh/ \
 		ftp://ftp.lysator.liu.se/pub/unix/zsh/ \
 		ftp://sunsite.org.uk/package/zsh/ \
-		ftp://ftp.rge.com/pub/shells/zsh/ \
 		http://zsh.open-mirror.com/
 DISTNAME=	${PORTNAME}-${ZSH_VER}
 .if !defined(NOPORTDOCS)
