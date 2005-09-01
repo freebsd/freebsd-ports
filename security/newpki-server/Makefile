@@ -27,7 +27,7 @@ USE_OPENLDAP=	yes
 USE_REINPLACE=	yes
 MANCOMPRESSED=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DLDAP_DEPRECATED" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--with-newpki-include=${LOCALBASE}/include/newpki \
 			--with-newpki-lib=${LOCALBASE}/lib \
 			--with-mysql-lib=${LOCALBASE}/lib/mysql \
