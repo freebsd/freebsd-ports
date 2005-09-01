@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snortsms
-PORTVERSION=	0.14.9
+PORTVERSION=	1.0.0
 CATEGORIES=	security www
 MASTER_SITES=	http://snortsms.servangle.net/dnloads/
 
