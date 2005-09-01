@@ -1,0 +1,11 @@
+%%SITE_PERL%%/Pod/POM/View/HTML/Filter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/POM/View/HTML/Filter/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/POM/View/HTML/Filter
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/POM/View/HTML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/POM/View 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Pod/POM/View/HTML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/POM 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Pod/POM/View 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Pod/POM 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Pod 2>/dev/null || true

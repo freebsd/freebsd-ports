@@ -1,0 +1,5 @@
+The whole idea of this module is to take advantage of all the syntax
+colouring modules that exist (such as Perl::Tidy) to produce colourful
+code examples in a POD document (after conversion to HTML).
+
+WWW: http://search.cpan.org/dist/Pod-POM-View-HTML-Filter
