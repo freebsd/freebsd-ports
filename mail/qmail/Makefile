@@ -59,6 +59,10 @@ BARRIER_RFC2821_PATCH=		yes
 BARRIER_SPF_PATCH=		yes
 .endif
 
+.if !defined(SLAVE_SMTP_AUTH_TLS)
+BARRIER_MAXRCPT_PATCH=		yes
+.endif
+
 .if !defined(BARRIER_DNS_PATCH)
 # Patch necessary to cope with non-RFC >512 dns entries
 # Since AOL has been using those, the problem has skyrocketed from minor to
@@ -138,6 +142,9 @@ OPTIONS+=	DISCBOUNCES_PATCH "discard double-bounces" off
 .endif
 .if !defined(BARRIER_SPF_PATCH)
 OPTIONS+=	SPF_PATCH "Implement SPF checker" off
+.endif
+.if !defined(BARRIER_MAXRCPT_PATCH)
+OPTIONS+=	MAXRCPT_PATCH "Limit max RCPT's allowed per message" off
 .endif
 .if defined(SLAVE_TLS) || defined(SLAVE_SMTP_AUTH_TLS)
 OPTIONS+=	TLS_DEBUG "enable additional debug information" off
@@ -351,6 +358,11 @@ PATCH_SITES+=	http://www.galle.com.br/~garga/qmail/:smtp_auth_tls
 PATCHFILES+=	qmail-1.03-starttls-smtp-auth_outgoingip.patch:smtp_auth_tls
 .else
 PATCHFILES+=	qmail-1.03-starttls-smtp-auth.patch:smtp_auth_tls
+.endif
+
+.if defined(WITH_MAXRCPT_PATCH) && !defined(BARRIER_MAXRCPT_PATCH)
+PATCH_SITES+=	http://www.unixlike.com.br/coisas/qmail/:maxrcpt
+PATCHFILES+=	qmail-1.03-maxrcpt.freebsd_qmail-smtp+tls_port.patch:maxrcpt
 .endif
 
 .endif
