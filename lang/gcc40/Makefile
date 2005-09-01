@@ -60,6 +60,7 @@ CONFIGURE_ARGS+=	--disable-nls \
 		--program-suffix=${SUFFIX} \
 		--libdir=${TARGLIB} \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/
+CONFIGURE_ENV=	RANLIB=:
 .if defined(WITH_FORTRAN)
 CONFIGURE_ARGS+=	--with-gmp=${LOCALBASE}
 .endif
