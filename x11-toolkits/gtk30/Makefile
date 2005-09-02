@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	2.6.10
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/gtk+/2.6,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.6/ \
@@ -71,6 +72,16 @@ STRIP=
 .endif
 .endif
 
+.include <bsd.port.pre.mk>
+
+# There is a SSE2 bug in either GCC or in our libc, when use p4, p-m or else
+# is being use in CPUTYPE that enable SSE2 will causing Java with GTK2 and
+# Mono/gtk-sharp crash. Disable SSE2 to solve the crash and see ports/72014
+# for detail.
+.if ( ${ARCH} == "i386" || ${ARCH} == "amd64" ) && ${CC} != "icc"
+CFLAGS+=	-mno-sse2
+.endif
+
 pre-everything::
 .if !defined(WITH_DROPSHADOW)
 	@${ECHO_MSG}
@@ -106,4 +117,4 @@ post-install:
 	@${MKDIR} ${PREFIX}/lib/gtk-2.0/modules
 	@${MKDIR} ${PREFIX}/lib/gtk-2.0/${GTK_VERSION}/engines
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
