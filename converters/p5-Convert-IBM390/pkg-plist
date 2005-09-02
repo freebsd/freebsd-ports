@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Convert/IBM390.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/IBM390/IBM390.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/IBM390/IBM390.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/IBM390/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/IBM390/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/IBM390
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Convert 2>/dev/null || true
