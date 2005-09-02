@@ -1,29 +1,29 @@
---- src/readword.cpp.orig	Sat Nov 27 22:35:44 2004
-+++ src/readword.cpp	Sat Nov 27 22:36:00 2004
-@@ -18,7 +18,7 @@
- 	have_data_file = g_file_test(filename, G_FILE_TEST_EXISTS);
- 	g_free(filename);
+--- src/readword.cpp.orig	Mon Jul 18 21:06:15 2005
++++ src/readword.cpp	Thu Aug  4 16:42:21 2005
+@@ -17,7 +17,7 @@
+ 	  g_file_test((gStarDictDataDir+G_DIR_SEPARATOR+"WyabdcRealPeopleTTS").c_str(), 
+ 		      G_FILE_TEST_EXISTS);
  #else
 -	have_data_file = g_file_test("/usr/share/WyabdcRealPeopleTTS", G_FILE_TEST_EXISTS);
 +	have_data_file = g_file_test("/usr/local/share/WyabdcRealPeopleTTS", G_FILE_TEST_EXISTS);
  #endif
  }
  
-@@ -34,7 +34,7 @@
- #ifdef _WIN32
- 		gchar *filename = g_strdup_printf("%s/WyabdcRealPeopleTTS/%c/%s.wav", stardict_data_dir, lowerword[0],lowerword);
+@@ -35,7 +35,7 @@
+     filename = gStarDictDataDir+"/WyabdcRealPeopleTTS/"+
+       lowerword[0]+"/"+lowerword+".wav";
  #else
--		gchar *filename = g_strdup_printf("/usr/share/WyabdcRealPeopleTTS/%c/%s.wav", lowerword[0],lowerword);		
-+		gchar *filename = g_strdup_printf("/usr/local/share/WyabdcRealPeopleTTS/%c/%s.wav", lowerword[0],lowerword);		
+-    filename = std::string("/usr/share/WyabdcRealPeopleTTS/")+lowerword[0]+"/"+
++    filename = std::string("/usr/local/share/WyabdcRealPeopleTTS/")+lowerword[0]+"/"+
+       lowerword+".wav";
  #endif
- 		return_val = g_file_test(filename, G_FILE_TEST_EXISTS);
- 		g_free(filename);
-@@ -56,7 +56,7 @@
- 		filename = g_strdup_printf("%s/WyabdcRealPeopleTTS/%c/%s.wav", stardict_data_dir, lowerword[0],lowerword);
- 		PlaySound(filename, 0, SND_ASYNC | SND_FILENAME);
+     return_val = g_file_test(filename.c_str(), G_FILE_TEST_EXISTS);
+@@ -58,7 +58,7 @@
+     filename = gStarDictDataDir+"/WyabdcRealPeopleTTS/"+
+       lowerword[0]+"/"+lowerword+".wav";
  #else
--		filename = g_strdup_printf("/usr/share/WyabdcRealPeopleTTS/%c/%s.wav", lowerword[0],lowerword);		
-+		filename = g_strdup_printf("/usr/local/share/WyabdcRealPeopleTTS/%c/%s.wav", lowerword[0],lowerword);		
- 		gnome_sound_play(filename);
+-    filename = std::string("/usr/share/WyabdcRealPeopleTTS/")+
++    filename = std::string("/usr/local/share/WyabdcRealPeopleTTS/")+
+       lowerword[0]+"/"+lowerword+".wav";
  #endif
- 		g_free(filename);
+     play_wav_file(filename.c_str());
