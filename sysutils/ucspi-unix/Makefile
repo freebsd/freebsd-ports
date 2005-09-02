@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://untroubled.org/ucspi-unix/
 
-MAINTAINER=	patrick@rinke-bochum.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UNIX-domain socket client-server command-line tools
 
 BUILD_DEPENDS=	${LOCALBASE}/include/bglibs/sysdeps.h:${PORTSDIR}/devel/bglibs
