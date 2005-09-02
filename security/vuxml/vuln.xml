@@ -48,6 +48,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<p>Issue discovered and fixed by &lt;shaun@rsc.cx&gt;.</p>
       </body>
     </description>
+    <references>
+      <!--
+            XXX, this is bogus, but there currently really is no other
+            public reference than this entry.
+      -->
+      <url>http://vuxml.FreeBSD.org/08df5d46-1baf-11da-8038-0040f42d58c6.html</url>
+    </references>
     <dates>
       <discovery>2005-09-02</discovery>
       <entry>2005-09-02</entry>
