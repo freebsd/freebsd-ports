@@ -20,9 +20,10 @@ USE_REINPLACE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-	's|$$(PACKAGE).d|$$(PACKAGE)|g' \
+	@${REINPLACE_CMD} -e 's|$$(PACKAGE).d|$$(PACKAGE)|g' \
 		${WRKSRC}/etc/Makefile.in
+	@${REINPLACE_CMD} -e 's|@PACKAGE@.d|@PACKAGE@|g' \
+		${WRKSRC}/src/Makefile.in
 
 MAN3=	priv_bind.3 priv_custom.3 priv_daemon.3 priv_execve.3 \
 	priv_fopen.3 priv_fork.3 priv_init.3 priv_invoke_cap_fn.3 \
