@@ -20,6 +20,7 @@ RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 CONFLICTS=	bison-1.8[0-9]* bison-2.[0-9]*
 
+NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
