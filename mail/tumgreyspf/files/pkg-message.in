@@ -5,7 +5,7 @@
 Add to your postfix master.cf:
 
 tumgreyspf  unix  -       n       n       -       -       spawn
-	user=%%TUMGREYSPF_USER%% argv=%%PREFIX%%/bin/tumgreyspf
+  user=%%TUMGREYSPF_USER%% argv=%%PYTHON_CMD%% %%PREFIX%%/bin/tumgreyspf
       
 Next, main.cf must be configured so that "smtpd_sender_restrictions"
 includes a call to the tumgreyspf policy filter.  If you already have
