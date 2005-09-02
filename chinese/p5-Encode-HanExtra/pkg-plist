@@ -6,8 +6,7 @@ lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode/ConfigLocal.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/TW/Unisys/SOSI1.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/TW/Unisys/SOSI2.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/HanExtra
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode 2>/dev/null || true
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Encode/TW/Unisys
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Encode/TW
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Encode
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Encode 2>/dev/null || true
