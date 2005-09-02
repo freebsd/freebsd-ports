@@ -23,6 +23,7 @@ COMMENT=	GNU Compiler Collection 4.1
 
 .if defined(WITH_FORTRAN)
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+BUILD_DEPENDS=	${LOCALBASE}/lib/libmpfr.a:${PORTSDIR}/math/mpfr
 .endif
 
 CONFLICTS=	gcc-3.3.* gcc-3.4.* gcc-4.0.*
@@ -44,7 +45,7 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == i386  ||  ${ARCH} == amd64  ||  ${ARCH} == ia64  ||  ${ARCH} == sparc64
+.if ${ARCH} == amd64  ||  ${ARCH} == ia64  ||  ${ARCH} == sparc64
 WITHOUT_JAVA=	yes
 .endif
 
@@ -65,6 +66,7 @@ CONFIGURE_ARGS+=	--disable-nls \
 		--program-suffix=${SUFFIX} \
 		--libdir=${TARGLIB} \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/
+CONFIGURE_ENV=	RANLIB=:
 .if defined(WITH_JAVA_AWT)
 CONFIGURE_ARGS+=	--enable-java-awt=xlib,gtk #--enable-gtk-cairo=yes
 WANT_SHAREDLIBS=yes	# We need this at the moment.
