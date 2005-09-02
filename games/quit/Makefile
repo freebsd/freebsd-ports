@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	quit
-PORTVERSION=	1.02
+PORTVERSION=	1.2a
 CATEGORIES?=	games
 MASTER_SITES=	http://megaui.net/fukuchi/archive/shortshort/
-DISTNAME=	${PORTNAME}
 
 MAINTAINER?=	umeno@rr.iij4u.or.jp
 COMMENT=	A bicycle with trailers like "sl"
@@ -17,14 +16,16 @@ COMMENT=	A bicycle with trailers like "sl"
 MAN1=		quit.1
 MANLANG=	ja
 
+PLIST_FILES=	bin/quit
+PORTDOCS=	README quit.txt
+
 do-build:
 	${CC} ${CFLAGS} ${CPPFLAGS} -o ${WRKSRC}/quit ${WRKSRC}/quit.c -lncurses
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/quit ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/quit.1 ${PREFIX}/man/ja/man1
-	${MKDIR} ${PREFIX}/share/doc/quit
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/quit
-	${INSTALL_DATA} ${WRKSRC}/quit.txt ${PREFIX}/share/doc/quit
+	${INSTALL_MAN} ${WRKSRC}/quit.1 ${MAN1PREFIX}/man/ja/man1
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/quit.txt ${DOCSDIR}
 
 .include <bsd.port.mk>
