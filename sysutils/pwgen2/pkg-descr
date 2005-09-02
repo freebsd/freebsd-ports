@@ -1,7 +1,10 @@
-pwgen is a password generator.
+Pwgen is a small, powerful, GPL'ed password generator.
 
-It was originally posted to alt.sources in 1989 by Brandon S. Allbery.
-This version is pulled from Debian, which contains modifications by
-Olaf Titz.
+This   version   of   pwgen    was    written    by    Theodore    Ts'o
+<tytso@alum.mit.edu>. It is modelled after a program originally written
+by Brandon S. Allbery, and then later extensively modified by Olaf Titz,
+Jim Lynch, and others. It was  rewritten  from scratch by Theodore Ts'o
+because  the original program  was somewhat of a hack, and thus hard to 
+maintain, and because the licensing status of the program was unclear.
 
-- oddbjorn (oddbjorn@tricknology.org)
+WWW: http://sourceforge.net/projects/pwgen/
