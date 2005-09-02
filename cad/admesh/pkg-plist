@@ -1,3 +1,0 @@
-bin/admesh
-%%PORTDOCS%%%%DOCSDIR%%/admesh.doc
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
