@@ -5,13 +5,6 @@
 # $FreeBSD$
 #
 
-# To pre-select options in batch mode, run make like this:
-#
-#  make -DBATCH POSTFIX_OPTIONS="DB3 TLS"
-#
-# the options are the same names as in the scripts/configure.postfix file.
-# POSTFIX_OPTIONS can be set in /etc/make.conf also.
-
 # NOTE: PCRE is enabled by default unless you specifically disable it.
 
 PORTNAME=	postfix
@@ -19,13 +12,10 @@ DISTVERSION=	2.3-20050829
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
-		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/%SUBDIR%/ \
+		ftp://postfix.mirrors.pair.com/experimental/ \
 		ftp://ftp.tux.org/pub/net/postfix/experimental/ \
-		ftp://ftp.utoronto.ca/mirror/packages/postfix/experimental/ \
-		ftp://ftp.samurai.com/pub/postfix/experimental/ \
-		http://people.FreeBSD.org/~seanc/ports/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/postfix/experimental/&,}
-MASTER_SITE_SUBDIR=	. old related/postfix
+		http://mirrors.rootservices.net/postfix/experimental/ \
+		ftp://ftp.samurai.com/pub/postfix/experimental/
 DISTNAME=	postfix-${DISTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
@@ -34,9 +24,28 @@ COMMENT=	A secure alternative to widely-used Sendmail
 
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.0.* postfix-2.1.* postfix-2.2.* \
 		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
+
 NO_LATEST_LINK=	yes
 USE_SUBMAKE=	yes
 USE_REINPLACE=	yes
+
+OPTIONS=	PCRE		"Perl Compatible Regular Expressions" on \
+		SASL		"Cyrus SASLv1 (Simple Auth. and Sec. Layer)" off \
+		SASL2		"Cyrus SASLv2 (Simple Auth. and Sec. Layer)" off \
+		SASLKRB		"If your SASL requires Kerberos select this option" off \
+		SASLKRB5	"If your SASL requires Kerberos5 select this option" off \
+		TLS		"Enable SSL and TLS support" off \
+		DB3		"Berkeley DB3 (required if SASL built with DB3)" off \
+		DB40		"Berkeley DB4.0 (required if SASL built with DB4.0)" off \
+		DB41		"Berkeley DB4.1 (required if SASL built with DB4.1)" off \
+		DB42		"Berkeley DB4.2 (required if SASL built with DB4.2)" off \
+		DB43		"Berkeley DB4.3 (required if SASL built with DB4.3)" off \
+		MYSQL		"MySQL maps (choose version with WITH_MYSQL_VER)" off \
+		PGSQL		"PostgreSQL maps (choose with DEFAULT_PGSQL_VER)" off \
+		OPENLDAP	"OpenLDAP maps (choose ver. with WITH_OPENLDAP_VER)" off \
+		CDB		"CDB maps lookups" off \
+		NIS		"NIS maps lookups" off \
+		TEST		"SMTP/LMTP test server and generator" off
 
 MAN1=	postalias.1 postcat.1 postconf.1 postdrop.1 postfix.1 postkick.1 \
 	postlock.1 postlog.1 postmap.1 postqueue.1 postsuper.1 sendmail.1
@@ -71,23 +80,189 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		MKDIR="${MKDIR}" \
 		POSTFIX_OPTIONS="${POSTFIX_OPTIONS}"
 
-pre-fetch:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.postfix
+.include <bsd.port.pre.mk>
 
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
-.endif
-
-.if defined(WITHOUT_PCRE)
-POSTFIX_CCARGS+=	-DNO_PCRE
-.else
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+.if defined(WITH_PCRE)
+LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
 POSTFIX_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
+.else
+POSTFIX_CCARGS+=	-DNO_PCRE
+.endif
+
+.if defined(WITH_SASL)
+.if defined(WITH_SASL2)
+BROKEN=			"Select only one SASL version"
+.endif
+LIB_DEPENDS+=		sasl.8:${PORTSDIR}/security/cyrus-sasl
+POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -I${LOCALBASE}/include -I${LOCALBASE}/include/sasl1
+POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl -lpam -lcrypt
+.endif
+
+.if defined(WITH_SASL2)
+.if defined(WITH_SASL)
+BROKEN=			"Select only one SASL version"
+.endif
+LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -I${LOCALBASE}/include -I${LOCALBASE}/include/sasl
+POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2 -lpam -lcrypt
+.endif
+
+.if defined(WITH_SASLKRB)
+.if defined(WITH_SASLKRB5)
+BROKEN=			"Select only one SASL Kerberos option"
+.endif
+POSTFIX_AUXLIBS+=	-lkrb -lcrypto -lcom_err
+.endif
+
+.if defined(WITH_SASLKRB5)
+.if defined(WITH_SASLKRB)
+BROKEN=			"Select only one SASL Kerberos option"
+.endif
+POSTFIX_AUXLIBS+=	-lkrb5 -lcrypto -lcrypt -lcom_err -lasn1 -lroken
+.endif
+
+.if defined(WITH_TLS)
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+POSTFIX_CCARGS+=	-DUSE_TLS -I${OPENSSLINC}
+POSTFIX_AUXLIBS+=	-L${OPENSSLLIB} -lssl -lcrypto
+.endif
+
+.if defined(WITH_DB3)
+.if defined(WITH_DB40) || defined(WITH_DB41) || defined(WITH_DB42) || defined(WITH_DB43)
+BROKEN=			"Select only one Berkeley DB version"
+.endif
+LIB_DEPENDS+=		db3.3:${PORTSDIR}/databases/db3
+POSTFIX_CCARGS+=	-I${LOCALBASE}/include/db3
+POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -ldb3
+.endif
+
+.if defined(WITH_DB40)
+.if defined(WITH_DB3) || defined(WITH_DB41) || defined(WITH_DB42) || defined(WITH_DB43)
+BROKEN=			"Select only one Berkeley DB version"
+.endif
+LIB_DEPENDS+=		db4.0:${PORTSDIR}/databases/db4
+POSTFIX_CCARGS+=	-I${LOCALBASE}/include/db4
+POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -ldb4
+.endif
+
+.if defined(WITH_DB40)
+.if defined(WITH_DB3) || defined(WITH_DB41) || defined(WITH_DB42) || defined(WITH_DB43)
+BROKEN=			"Select only one Berkeley DB version"
+.endif
+LIB_DEPENDS+=		db4.0:${PORTSDIR}/databases/db4
+POSTFIX_CCARGS+=	-I${LOCALBASE}/include/db4
+POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -ldb4
+.endif
+
+.if defined(WITH_DB41)
+.if defined(WITH_DB3) || defined(WITH_DB40) || defined(WITH_DB42) || defined(WITH_DB43)
+BROKEN=			"Select only one Berkeley DB version"
+.endif
+LIB_DEPENDS+=		db41.1:${PORTSDIR}/databases/db41
+POSTFIX_CCARGS+=	-I${LOCALBASE}/include/db41
+POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -ldb41
+.endif
+
+.if defined(WITH_DB42)
+.if defined(WITH_DB3) || defined(WITH_DB40) || defined(WITH_DB41) || defined(WITH_DB43)
+BROKEN=			"Select only one Berkeley DB version"
+.endif
+LIB_DEPENDS+=		db-4.2.2:${PORTSDIR}/databases/db42
+POSTFIX_CCARGS+=	-I${LOCALBASE}/include/db42
+POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib/db42/ -ldb
+.endif
+
+.if defined(WITH_DB43)
+.if defined(WITH_DB3) || defined(WITH_DB40) || defined(WITH_DB41) || defined(WITH_DB42)
+BROKEN=			"Select only one Berkeley DB version"
+.endif
+LIB_DEPENDS+=		db-4.3.0:${PORTSDIR}/databases/db43
+POSTFIX_CCARGS+=	-I${LOCALBASE}/include/db43
+POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib/db43/ -ldb
+.endif
+
+.if defined(WITH_MYSQL)
+USE_MYSQL=YES
+POSTFIX_CCARGS+=	-DHAS_MYSQL -I${LOCALBASE}/include/mysql
+POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient -lz -lcrypt -lm
+.endif
+
+.if defined(WITH_PGSQL)
+USE_PGSQL=YES
+POSTFIX_CCARGS+=	-DHAS_PGSQL -I${LOCALBASE}/include -I${LOCALBASE}/pgsql/include
+POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/pgsql/lib -lpq -lcrypt
+.endif
+
+.if defined(WITH_OPENLDAP)
+USE_OPENLDAP=YES
+POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include
+POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
+.endif
+
+.if defined(WITH_CDB)
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libcdb.a:${PORTSDIR}/databases/tinycdb
+POSTFIX_CCARGS+=	-DHAS_CDB -I${LOCALBASE}/include
+POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lcdb
+.endif
+
+.if defined(WITH_NIS)
+POSTFIX_CCARGS+=	 -DHAS_NIS
+.endif
+
+.if defined(WITH_TEST)
+BINTEST=	smtp-sink smtp-source qmqp-source
+PLIST_SUB+=	SUB_TEST=""
+.else
+PLIST_SUB+=	SUB_TEST="@comment "
+.endif
+
+.if defined(NOPORTDOCS)
+READMEDIR=no
+.else
+READMEDIR=${PREFIX}/share/doc/postfix
 .endif
 
 pre-patch:
-	@${ECHO} "<body>See <A HREF="header_checks.5.html">header_checks.5.html</A></BODY>" > ${WRKSRC}/html/body_checks.5.html
+.	if defined(POSTFIX_OPTIONS)
+		@${ECHO_MSG}
+		@${ECHO_MSG}
+		@${ECHO_MSG}
+		@${ECHO_MSG} "***** ALERT *****"
+		@${ECHO_MSG} "POSTFIX_OPTIONS don't work anymore, now"
+		@${ECHO_MSG} "${PORTNAME} use OPTIONS, consider use:"
+		@${ECHO_MSG} "# make config"
+		@${ECHO_MSG}
+		@${ECHO_MSG}
+		@${ECHO_MSG}
+		@sleep 10
+.	endif
+
+.	if defined(WITH_SASL) && !defined(WITH_MYSQL) && exists(${LOCALBASE}/lib/libsasl.a)
+		@if /usr/bin/nm ${LOCALBASE}/lib/libsasl.a | ${GREP} -wq "mysql_init"; then \
+			${ECHO_MSG}; \
+			${ECHO_MSG} "Your SASL library it's compiled with MYSQL"; \
+			${ECHO_MSG} "If you use MYSQL in ${PORTNAME} consider CTRL+C and"; \
+			${ECHO_MSG} "select MYSQL OPTION in config menu."; \
+			${ECHO_MSG} "# make clean config"; \
+			${ECHO_MSG}; \
+			sleep 5; \
+		fi
+.	endif
+.	if defined(WITH_SASL2) && !defined(WITH_MYSQL) && exists(${LOCALBASE}/lib/libsasl2.a)
+		@if /usr/bin/nm ${LOCALBASE}/lib/libsasl2.a | ${GREP} -wq "mysql_init"; then \
+			${ECHO_MSG}; \
+			${ECHO_MSG} "Your SASL2 library it's compiled with MYSQL"; \
+			${ECHO_MSG} "If you use MYSQL in ${PORTNAME} consider CTRL+C and"; \
+			${ECHO_MSG} "select MYSQL OPTION in config menu."; \
+			${ECHO_MSG} "# make clean config"; \
+			${ECHO_MSG}; \
+			sleep 5; \
+		fi
+.	endif
+
+	@${ECHO} "<HTML><BODY>See <A HREF="header_checks.5.html">header_checks.5.html</A></BODY></HTML>" \
+		> ${WRKSRC}/html/body_checks.5.html
 	@for f in `${FIND} -P ${WRKSRC}/man -type f`; do \
 		${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" $${f}; \
 	done
@@ -99,20 +274,17 @@ pre-patch:
 	done
 
 post-patch:
+# All files modified with ${FILESDIR}/patch-* to use !!PREFIX!! need REINPLACE. Put below.
 	@${REINPLACE_CMD} -e "s,!!PREFIX!!,${PREFIX},g" \
 		${WRKSRC}/conf/main.cf ${WRKSRC}/src/global/mail_params.h
+
+do-configure:
 	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles ${MAKEFILEFLAGS} \
 	CCARGS="${POSTFIX_CCARGS}" AUXLIBS="${POSTFIX_AUXLIBS}" && \
 	${ECHO} "all: default" >> Makefile)
 
 pre-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
-.if defined(NOPORTDOCS)
-READMEDIR=no
-.else
-READMEDIR=${PREFIX}/share/doc/postfix
-.endif
 
 do-install:
 	cd ${WRKSRC}; ${SH} postfix-install -non-interactive install_root=/ tempdir=/tmp \
@@ -129,32 +301,26 @@ do-install:
 	sample_directory=${PREFIX}/etc/postfix \
 	readme_directory=${READMEDIR}
 
+	@${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/rmail/rmail ${PREFIX}/bin/rmail
+
+.	for f in ${BINTEST}
+		@${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/sbin
+.	endfor
+
 	@${MKDIR} ${PREFIX}/etc/postfix/dist
-.for f in ${CONF1}
-	${INSTALL_DATA} ${WRKSRC}/conf/${f} ${PREFIX}/etc/postfix/dist
-.endfor
+.	for f in ${CONF1}
+		${INSTALL_DATA} ${WRKSRC}/conf/${f} ${PREFIX}/etc/postfix/dist
+.	endfor
 
-	@${INSTALL_SCRIPT} \
-		${WRKSRC}/auxiliary/rmail/rmail \
-		${PREFIX}/bin/rmail
-
-# optional TEST binaries
-.for f in ${BIN1}
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/sbin
-.endfor
-
-.if !defined(NOPORTDOCS)
-	@${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${DOCSDIR}
-	@cd ${WRKSRC}/html && ${INSTALL_DATA} *.html *.jpg *.png ${DOCSDIR} && \
-		${ECHO_MSG} "Installed HTML documentation in ${DOCSDIR}"
-.endif
+.	if !defined(NOPORTDOCS)
+		@${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${DOCSDIR}
+		@cd ${WRKSRC}/html && ${INSTALL_DATA} *.html *.jpg *.png ${DOCSDIR} && \
+			${ECHO_MSG} "Installed HTML documentation in ${DOCSDIR}"
+.	endif
 
 post-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-# need to fixup ${PREFIX}/etc/postfix/postfix-files to indicate compressed
-# man pages, since the ports software compresses them after this step, and
-# if we run etc/postfix/post-install again during package installation,
-# it will complain about missing files.
+# Fix compressed man pages
 	@${REINPLACE_CMD} -E -e "s|(man[158]/.*.[158]):|\1.gz:|g" ${PREFIX}/etc/postfix/postfix-files
 	@${RM} -f ${PREFIX}/etc/postfix/postfix-files.bak
 	@${CAT} ${PKGMESSAGE}
@@ -162,4 +328,4 @@ post-install:
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
