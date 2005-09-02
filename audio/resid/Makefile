@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	resid
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	audio emulators
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	sidplay2
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	ftp://ftp.funet.fi/pub/cbm/crossplatform/emulators/resid/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@critical.ch
 COMMENT=	Cycle-based SID emulator engine
 
 USE_LIBTOOL_VER=15

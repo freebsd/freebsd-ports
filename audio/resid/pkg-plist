@@ -9,5 +9,5 @@ include/resid/voice.h
 include/resid/wave.h
 lib/libresid.a
 lib/libresid.so
-lib/libresid.so.4
+lib/libresid.so.5
 @dirrm include/resid
