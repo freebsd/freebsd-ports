@@ -1,9 +1,9 @@
 bin/ringtonetools
-share/ringtonetools/face.icon
-share/ringtonetools/hemglass.mid
-share/ringtonetools/ionian.rtttl
-share/ringtonetools/usa.emelody
-share/ringtonetools/yngwie_trilogy.rtttl
-@dirrm share/ringtonetools
-%%PORTDOCS%%share/doc/ringtonetools/README
-%%PORTDOCS%%@dirrm share/doc/ringtonetools
+%%DATADIR%%/face.txt
+%%DATADIR%%/hemglass.mid
+%%DATADIR%%/ionian.rtttl
+%%DATADIR%%/usa.emelody
+%%DATADIR%%/yngwie_trilogy.rtttl
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
