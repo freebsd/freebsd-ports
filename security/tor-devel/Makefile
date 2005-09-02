@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-PORTVERSION=	0.1.0.12
+PORTVERSION=	0.1.0.14
 CATEGORIES=	security net
 MASTER_SITES=	http://tor.eff.org/dist/
 
