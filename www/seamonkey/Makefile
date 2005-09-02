@@ -95,8 +95,7 @@ JPI_LIST?=\
 	${LOCALBASE}/diablo-jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
 	${LOCALBASE}/jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so
 
-OPTIONS=CALENDAR "Enable the Calendar module" off \
-	MAILNEWS "Enable Mail and News modules" on \
+OPTIONS=MAILNEWS "Enable Mail and News modules" on \
 	COMPOSER "Enable the HTML Composer module" on \
 	DEBUG "Enable debugging (i.e. gdb) support" off \
 	LDAP "Enable LDAP support for Mailnews" on \
@@ -122,10 +121,10 @@ BROKEN=		Mozilla${MOZ_SUFX} and Xft2 render the mozilla-fonts \
 		illegibly. Please remove the mozilla-fonts package
 .endif
 
-.if defined(WITH_CALENDAR) && (defined(WITHOUT_MAILNEWS) || \
-	defined(WITHOUT_COMPOSER))
-BROKEN=		Calendar requires Composer and Mailnews support.
-.endif
+#.if defined(WITH_CALENDAR) && (defined(WITHOUT_MAILNEWS) || \
+#	defined(WITHOUT_COMPOSER))
+#BROKEN=		Calendar requires Composer and Mailnews support.
+#.endif
 
 .if ${OSVERSION} < 500000
 USE_GCC=	3.4
@@ -183,9 +182,9 @@ CONFIGURE_ARGS+=	--disable-jsd \
 			--disable-dtd-debug
 .endif
 
-.if defined(WITH_CALENDAR)
-CONFIGURE_ARGS+=	--enable-calendar
-.endif
+#.if defined(WITH_CALENDAR)
+#CONFIGURE_ARGS+=	--enable-calendar
+#.endif
 
 .if defined(WITHOUT_COMPOSER)
 CONFIGURE_ARGS+=	--disable-composer
