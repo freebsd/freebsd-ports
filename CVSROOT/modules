@@ -9844,6 +9844,7 @@ pwd_unmkdb	ports/sysutils/pwd_unmkdb
 pwebstats	ports/www/pwebstats
 pwg		ports/sysutils/pwg
 pwgen		ports/sysutils/pwgen
+pwgen2		ports/sysutils/pwgen2
 pwlib		ports/devel/pwlib
 pwm		ports/x11-wm/pwm
 pwman		ports/security/pwman
