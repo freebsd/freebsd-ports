@@ -1,5 +1,5 @@
 --- configure.in.orig	Mon Aug  1 23:24:51 2005
-+++ configure.in	Wed Aug  3 09:31:30 2005
++++ configure.in	Mon Aug 15 21:20:53 2005
 @@ -10,7 +10,7 @@
  RELEASE=1
  AC_SUBST(RELEASE)
@@ -18,7 +18,29 @@
  
  AC_ARG_WITH(trusted_path,
  	ACX_HELP_STRING([--with-trusted-path=PATH],
-@@ -193,27 +191,35 @@
+@@ -149,11 +147,12 @@
+ 	ACX_HELP_STRING([--with-pgsql=DIR],
+ 		[sets path to pgsql installation]),
+ 	PGSQL=$withval,)
++if test -d "$PGSQL"; then
+ AC_CHECK_LIB(crypt,main)
+ if test "$ac_cv_lib_crypt_main" = "yes"; then
+   if test -n "$PGSQL"; then
+-    LDFLAGS="$LDFLAGS -L$PGSQL/lib"
+-    CPPFLAGS="$CPPFLAGS -I$PGSQL/include"
++    LDFLAGS="{$LDFLAGS} -L$PGSQL/lib"
++    CPPFLAGS="{$CPPFLAGS} -I$PGSQL/include"
+   fi
+   AC_CHECK_LIB(pq,PQsetdbLogin,,,-lcrypt)
+   if test "$ac_cv_lib_pq_PQsetdbLogin" = "yes"; then
+@@ -190,30 +189,42 @@
+   AC_MSG_WARN([Skipping PostgreSQL plugin (check_pgsql)])
+   AC_MSG_WARN([install lib crypt and PostgreSQL libs to compile this plugin (see REQUIREMENTS).])
+ fi
++else
++  AC_MSG_WARN([Skipping PostgreSQL plugin (check_pgsql)])
++  AC_MSG_WARN([PostgreSQL directory has not been found])
++fi
  LIBS="$_SAVEDLIBS"
  CPPFLAGS="$_SAVEDCPPFLAGS"
  
@@ -27,11 +49,12 @@
  dnl Check for radius libraries
  _SAVEDLIBS="$LIBS"
 -AC_CHECK_LIB(radiusclient,rc_read_config)
-+AC_CHECK_LIB(radiusclient,rc_read_config,,,-L${LOCALBASE}/lib)
- if test "$ac_cv_lib_radiusclient_rc_read_config" = "yes"; then
+-if test "$ac_cv_lib_radiusclient_rc_read_config" = "yes"; then
++AC_CHECK_LIB(radiusclient-ng,rc_read_config,,,-L${LOCALBASE}/lib)
++if test "$ac_cv_lib_radiusclient_ng_rc_read_config" = "yes"; then
    EXTRAS="$EXTRAS check_radius"
 -	RADIUSLIBS="-lradiusclient"
-+  RADIUSLIBS="-L${LOCALBASE}/lib -lradiusclient"\
++  RADIUSLIBS="-L${LOCALBASE}/lib -lradiusclient-ng"\
 +  RADIUSINCLUDE="-I${LOCALBASE}/include"
    AC_SUBST(RADIUSLIBS)
 +  AC_SUBST(RADIUSINCLUDE)
@@ -60,7 +83,7 @@
    AC_CHECK_FUNCS(ldap_set_option)
    EXTRAS="$EXTRAS check_ldap"
  	AC_CHECK_FUNCS(ldap_init ldap_set_option ldap_get_option ldap_start_tls_s)
-@@ -222,6 +228,7 @@
+@@ -222,6 +233,7 @@
    AC_MSG_WARN([install LDAP libs to compile this plugin (see REQUIREMENTS).])
  fi
  LIBS="$_SAVEDLIBS"
@@ -68,7 +91,7 @@
  
  
  dnl Check for mysql libraries
-@@ -597,247 +604,11 @@
+@@ -597,247 +609,11 @@
  
  AC_PATH_PROG(PATH_TO_PS,ps)
  
@@ -321,7 +344,7 @@
  
  if test -n "$ac_cv_ps_varlist" ; then
  	AC_DEFINE_UNQUOTED(PS_VARLIST,$ac_cv_ps_varlist,
-@@ -1198,6 +969,8 @@
+@@ -1198,6 +974,8 @@
  AC_DEFINE_UNQUOTED(WHO_COMMAND,"$ac_cv_path_to_who",
  	[path and arguments for invoking 'who'])
  
@@ -330,7 +353,7 @@
  AC_PATH_PROG(PATH_TO_SNMPGET,snmpget)
  if test -x "$PATH_TO_SNMPGET"
  then
-@@ -1220,7 +993,10 @@
+@@ -1220,7 +998,10 @@
  else
  	AC_MSG_WARN([Tried $PERL - install Net::SNMP perl module if you want to use the perl snmp plugins])
  fi
@@ -341,7 +364,7 @@
  AC_PATH_PROG(PATH_TO_QUAKESTAT,quakestat)
  AC_PATH_PROG(PATH_TO_QSTAT,qstat)
  
-@@ -1242,7 +1018,10 @@
+@@ -1242,7 +1023,10 @@
  	AC_DEFINE_UNQUOTED(PATH_TO_QSTAT,"$ac_cv_path_to_qstat",
  		[path to qstat/quakestat])
  fi
@@ -352,7 +375,7 @@
  AC_PATH_PROG(PATH_TO_FPING,fping)
  if test -x "$PATH_TO_FPING"
  then
-@@ -1251,6 +1030,7 @@
+@@ -1251,6 +1035,7 @@
  else
  	AC_MSG_WARN([Get fping from http://www.fping.com in order to make check_fping plugin])
  fi
@@ -360,7 +383,7 @@
  
  AC_PATH_PROG(PATH_TO_SSH,ssh)
  
-@@ -1313,32 +1093,12 @@
+@@ -1313,32 +1098,12 @@
  dnl end if for PATH_TO_SWAP
  fi
  
