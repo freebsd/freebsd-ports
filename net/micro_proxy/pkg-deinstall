@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+case $2 in
+POST-DEINSTALL)
+cat << "EOF"
+===============================================================================
+Micro_proxy has been successfully deinstalled. If you ran it with inetd(8) make
+sure you remove all the manual configuration.
+===============================================================================
+EOF
+;;
+esac
