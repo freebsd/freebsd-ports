@@ -7489,6 +7489,7 @@ p5-Data-Hexdumper	ports/devel/p5-Data-Hexdumper
 p5-Data-Hierarchy	ports/devel/p5-Data-Hierarchy
 p5-Data-JavaScript	ports/lang/p5-Data-JavaScript
 p5-Data-Page	ports/databases/p5-Data-Page
+p5-Data-Password	ports/security/p5-Data-Password
 p5-Data-Properties	ports/devel/p5-Data-Properties
 p5-Data-Random	ports/devel/p5-Data-Random
 p5-Data-Serializer	ports/devel/p5-Data-Serializer
