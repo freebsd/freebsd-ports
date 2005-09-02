@@ -10,7 +10,7 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "ar"
-CATEGORIES=	arabic
+CATEGORIES+=	arabic
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
@@ -43,7 +43,7 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "de"
-CATEGORIES=	german
+CATEGORIES+=	german
 LANG_PKGNAME=	${LOCALIZED_LANG}
 COMMENT=	Office-Suite mit Textverarbeitung, Tabellenkalkulation, Datenbank und Praesentationsprogramm
 .endif
@@ -77,7 +77,7 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "fr"
-CATEGORIES=	french
+CATEGORIES+=	french
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
@@ -102,7 +102,7 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "hu"
-CATEGORIES=     hungarian
+CATEGORIES+=     hungarian
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
@@ -111,7 +111,7 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "ja"
-CATEGORIES=	japanese
+CATEGORIES+=	japanese
 LANG_PKGNAME=	${LOCALIZED_LANG}
 RUN_DEPENDS+=   ${X11BASE}/lib/X11/fonts/TrueType/sazanami-mincho.ttf:${PORTSDIR}/japanese/sazanami-ttf
 .endif
@@ -126,7 +126,7 @@ LANG_SUFFIX=	IN
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "ko"
-CATEGORIES=     korean
+CATEGORIES+=     korean
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
@@ -159,13 +159,13 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "pl"
-CATEGORIES=	polish
+CATEGORIES+=	polish
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "pt"
 COMMENT=	Editor texto/grBaGico, banco de dados/planilha/navegador integrado
-CATEGORIES=	portuguese
+CATEGORIES+=	portuguese
 LANG_PKGNAME=	${LOCALIZED_LANG}
 LANG_EXT=	03
 LANG_CONFIGURE_ARG=	PORT
@@ -173,18 +173,18 @@ LANG_CONFIGURE_ARG=	PORT
 ################################################################
 .if ${LOCALIZED_LANG} == "pt-BR"
 COMMENT=        Editor texto/grBaGico, banco de dados/planilha/navegador integrado
-CATEGORIES=     portuguese
+CATEGORIES+=     portuguese
 LANG_PKGNAME=	pt
 LANG_SUFFIX=	BR
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "ru"
-CATEGORIES=	russian
+CATEGORIES+=	russian
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "rw"
-CATEGORIES=	russian
+CATEGORIES+=	russian
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
@@ -225,14 +225,14 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "zh-CN"
-CATEGORIES=	chinese
+CATEGORIES+=	chinese
 LANG_PKGNAME=	zh
 LANG_SUFFIX=	CN
 BUILD_DEPENDS+=	${PREFIX}/share/fonts/TrueType/gbsn00lp.ttf:${PORTSDIR}/chinese/arphicttf
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "zh-TW"
-CATEGORIES=	chinese
+CATEGORIES+=	chinese
 LANG_PKGNAME=	zh
 LANG_SUFFIX=	TW
 BUILD_DEPENDS+=	${PREFIX}/share/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf
