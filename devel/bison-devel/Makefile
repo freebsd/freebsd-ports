@@ -19,7 +19,7 @@ COMMENT=	Alpha version of bison
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-CONFLICTS=	bison-1.7[0-9]*
+CONFLICTS=	bison-1.7[0-9]* bison-2.[0-9]*
 NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
