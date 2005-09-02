@@ -11,6 +11,11 @@ share/gnome/help/stardict/mk/figures/stardict_main_window.png
 share/gnome/help/stardict/mk/figures/stardict_notification_area.png
 share/gnome/help/stardict/mk/legal.xml
 share/gnome/help/stardict/mk/stardict.xml
+share/gnome/help/stardict/nl/figures/stardict_float_window.png
+share/gnome/help/stardict/nl/figures/stardict_main_window.png
+share/gnome/help/stardict/nl/figures/stardict_notification_area.png
+share/gnome/help/stardict/nl/legal.xml
+share/gnome/help/stardict/nl/stardict.xml
 share/gnome/help/stardict/ru/figures/stardict_float_window.png
 share/gnome/help/stardict/ru/figures/stardict_main_window.png
 share/gnome/help/stardict/ru/figures/stardict_notification_area.png
@@ -34,6 +39,7 @@ share/gnome/help/stardict/zh_TW/stardict.xml
 share/gnome/idl/GNOME_Stardict.idl
 share/gnome/omf/stardict/stardict-C.omf
 share/gnome/omf/stardict/stardict-mk.omf
+share/gnome/omf/stardict/stardict-nl.omf
 share/gnome/omf/stardict/stardict-ru.omf
 share/gnome/omf/stardict/stardict-uk.omf
 share/gnome/omf/stardict/stardict-zh_CN.omf
@@ -51,6 +57,7 @@ share/locale/cs/LC_MESSAGES/stardict.mo
 share/locale/de/LC_MESSAGES/stardict.mo
 share/locale/hu/LC_MESSAGES/stardict.mo
 share/locale/mk/LC_MESSAGES/stardict.mo
+share/locale/nl/LC_MESSAGES/stardict.mo
 share/locale/ru/LC_MESSAGES/stardict.mo
 share/locale/sk/LC_MESSAGES/stardict.mo
 share/locale/uk/LC_MESSAGES/stardict.mo
@@ -69,6 +76,8 @@ share/locale/zh_TW/LC_MESSAGES/stardict.mo
 @dirrm share/gnome/help/stardict/uk
 @dirrm share/gnome/help/stardict/ru/figures
 @dirrm share/gnome/help/stardict/ru
+@dirrm share/gnome/help/stardict/nl/figures
+@dirrm share/gnome/help/stardict/nl
 @dirrm share/gnome/help/stardict/mk/figures
 @dirrm share/gnome/help/stardict/mk
 @dirrm share/gnome/help/stardict/C/figures
