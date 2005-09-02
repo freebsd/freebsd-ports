@@ -48,7 +48,7 @@ CONFIGURE_ARGS+=	--disable-double-buffer
 .endif
 
 post-extract:
-	${REINPLACE_CMD} -e "s|== xyes|= xyes|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|== xyes|= xyes|g" ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/conky ${PREFIX}/bin
