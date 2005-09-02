@@ -1,15 +1,24 @@
---- plugins/check_radius.c.orig	Wed Nov 24 01:46:39 2004
-+++ plugins/check_radius.c	Fri Dec  3 20:37:30 2004
-@@ -103,6 +103,7 @@
- 	int result;
+--- plugins/check_radius.c.orig	Sun Dec 26 02:17:44 2004
++++ plugins/check_radius.c	Fri Aug 12 13:53:36 2005
+@@ -27,7 +27,7 @@
+ #include "utils.h"
+ #include "netutils.h"
+ 
+-#include <radiusclient.h>
++#include <radiusclient-ng.h>
+ 
+ int process_arguments (int, char **);
+ void print_help (void);
+@@ -108,6 +108,7 @@
+ 	int result = STATE_UNKNOWN;
  	UINT4 client_id;
  	char *str;
 +	rc_handle *rh;
  
  	setlocale (LC_ALL, "");
  	bindtextdomain (PACKAGE, LOCALEDIR);
-@@ -112,32 +113,35 @@
- 		usage (_("Could not parse arguments\n"));
+@@ -117,32 +118,35 @@
+ 		usage4 (_("Could not parse arguments"));
  
  	str = strdup ("dictionary");
 -	if ((config_file && rc_read_config (config_file)) ||
