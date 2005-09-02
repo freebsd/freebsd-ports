@@ -13,8 +13,7 @@ MASTER_SITES=	http://gforge.org/frs/download.php/103/
 MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Open Source collaborative software development tool
 
-RUN_DEPENDS=	${LOCALBASE}/bin/php:${PORTSDIR}/lang/php4 \
-		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \
+RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \
 		${LOCALBASE}/share/jpgraph/imgdata_balls.inc:${PORTSDIR}/graphics/jpgraph
 
 USE_BZIP2=		YES
@@ -24,28 +23,13 @@ HAS_CONFIGURE=		YES
 USE_APACHE=		YES
 USE_AUTOCONF_VER=	253
 NO_BUILD=		YES
-
-.if defined(WITH_APACHE2)
-MOD_DIR=	libexec/apache2
-.else
-MOD_DIR=	libexec/apache
-.endif
-
-MOD_PHP=	${LOCALBASE}/${MOD_DIR}/libphp4.so
-BIN_PHP=	${LOCALBASE}/bin/php
-PQ_LIB=		${LOCALBASE}/lib/libpq.so
+USE_PHP=		pgsql session
+WANT_PHP_CLI=		YES
+WANT_PHP_MOD=		YES
 
 NO_PACKAGE=	"The configure process uses hostname."
 
 .include <bsd.port.pre.mk>
-
-### Misc checks
-.if !exists(${MOD_PHP}) && !exists(${BIN_PHP})
-IGNORE=		You MUST have installed PHP from lang/php4 \(mod_php et php-cli are required\)
-.endif
-.if !exists(${PQ_LIB})
-IGNORE+=	PHP needs PostgreSQL support
-.endif
 
 .if defined(WITH_JABBER)
 CONFIGURE_ARGS+=	--enable-jabber
