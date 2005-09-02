@@ -20,7 +20,7 @@
 @unexec if cmp -s %D/%%T%%/conf/workers2.properties %D/%%T%%/conf/workers2.properties.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/workers2.properties; else echo If permanently deleting this package, %D/%%T%%/conf/workers2.properties must be removed manually; fi
 @unexec if cmp -s %D/%%T%%/conf/workers2.properties.minimal %D/%%T%%/conf/workers2.properties.minimal.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/workers2.properties.minimal; else echo If permanently deleting this package, %D/%%T%%/conf/workers2.properties.minimal must be removed manually; fi
 bin/tomcat55ctl
-etc/rc.d/020.jakarta-tomcat55.sh
+etc/rc.d/jakarta-tomcat55.sh
 %%T%%/LICENSE
 %%T%%/NOTICE
 %%T%%/RELEASE-NOTES
