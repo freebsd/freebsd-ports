@@ -6037,6 +6037,7 @@ miau		ports/irc/miau
 mico		ports/devel/mico
 micq		ports/net/micq
 micro_httpd	ports/www/micro_httpd
+micro_proxy	ports/net/micro_proxy
 middleman	ports/www/middleman
 midimountain	ports/audio/midimountain
 mifluz		ports/textproc/mifluz
