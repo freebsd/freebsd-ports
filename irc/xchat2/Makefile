@@ -60,7 +60,7 @@ PLIST_SUB+=	TCL="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${PERL_LEVEL} < 500600 || defined(WITHOUT_PERL)
+.if ${PERL_LEVEL} < 500600 || defined(WITHOUT_PERL)
 CONFIGURE_ARGS+=--disable-perl
 PLIST_SUB+=	PERL="@comment "
 .else
@@ -83,7 +83,7 @@ pre-everything::
 .if !defined(WITH_TCL)
 	@${ECHO_MSG} "WITH_TCL=yes for tcl support"
 .endif
-.if ${ARCH} != "amd64" && !defined(WITHOUT_PERL)
+.if !defined(WITHOUT_PERL)
 	@${ECHO_MSG} "WITHOUT_PERL=yes to disable Perl support"
 .endif
 
