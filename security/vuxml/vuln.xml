@@ -32,6 +32,28 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="08df5d46-1baf-11da-8038-0040f42d58c6">
+    <topic>urban -- stack overflow vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>urban</name>
+	<range><lt>1.5.3_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Several filename-related stack overflow bugs allow a local
+	  attacker to elevate its privileges to the games group, since
+	  urban is installed setgid games.</p>
+	<p>Issue discovered and fixed by &lt;shaun@rsc.cx&gt;.</p>
+      </body>
+    </description>
+    <dates>
+      <discovery>2005-09-02</discovery>
+      <entry>2005-09-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6e27f3b6-189b-11da-b6be-0090274e8dbb">
     <topic>fswiki - command injection vulnerability</topic>
     <affects>
