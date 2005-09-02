@@ -1,0 +1,9 @@
+Net::Daemon is an abstract base class for implementing portable server
+applications in a very simple way. The module is designed for Perl 5.005
+and threads, but can work with fork() and Perl 5.004.
+
+The Net::Daemon class offers methods for the most common tasks a daemon
+needs: Starting up, logging, accepting clients, authorization,
+restricting its own environment for security and doing the true work.
+You only have to override those methods that aren't appropriate for you,
+but typically inheriting will safe you a lot of work anyways.
