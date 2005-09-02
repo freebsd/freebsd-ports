@@ -7372,6 +7372,7 @@ p5-Convert-ASN1	ports/converters/p5-Convert-ASN1
 p5-Convert-BER	ports/converters/p5-Convert-BER
 p5-Convert-BinHex	ports/converters/p5-Convert-BinHex
 p5-Convert-Binary-C	ports/converters/p5-Convert-Binary-C
+p5-Convert-IBM390	ports/converters/p5-Convert-IBM390
 p5-Convert-Morse	ports/converters/p5-Convert-Morse
 p5-Convert-PEM	ports/converters/p5-Convert-PEM
 p5-Convert-Recode	ports/converters/p5-Convert-Recode
