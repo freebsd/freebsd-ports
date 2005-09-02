@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ne
-PORTVERSION=	1.40
+PORTVERSION=	1.41
 CATEGORIES=	editors
 MASTER_SITES=	http://ne.dsi.unimi.it/
 
@@ -29,6 +29,7 @@ MAKE_ARGS=	CFLAGS="${CFLAGS} -DNOWCHAR" CC="${CC}" \
 		GLOBALDIR="${DATADIR}"
 
 MAN1=	ne.1
+PORTDOCS=	ne.txt
 
 post-patch:
 	@${PERL5} -pi -e 's|tmpnam\(|mkstemp\(|g' ${WRKSRC}/actions.c
@@ -39,5 +40,9 @@ do-install:
 	${INSTALL_DATA}	${WRKSRC}/../doc/default.keys ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/../doc/default.menus ${DATADIR}/
 	${INSTALL_MAN}	${WRKSRC}/../doc/ne.1	${PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC:S/src//}doc/ne.txt ${DOCSDIR}
+.endif
 
 .include <bsd.port.post.mk>
