@@ -8095,6 +8095,7 @@ p5-Net-DNS-ZoneCheck	ports/dns/p5-Net-DNS-ZoneCheck
 p5-Net-DNS-ZoneFile	ports/dns/p5-Net-DNS-ZoneFile
 p5-Net-DNS-ZoneFile-Fast	ports/dns/p5-Net-DNS-ZoneFile-Fast
 p5-Net-Daemon	ports/net/p5-Net-Daemon
+p5-Net-Daemon-SSL	ports/security/p5-Net-Daemon-SSL
 p5-Net-Delicious	ports/net/p5-Net-Delicious
 p5-Net-Dict	ports/net/p5-Net-Dict
 p5-Net-Divert	ports/net/p5-Net-Divert
