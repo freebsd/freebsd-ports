@@ -722,6 +722,7 @@ birda		ports/comms/birda
 birthday	ports/misc/birthday
 bison		ports/devel/bison
 bison-devel	ports/devel/bison-devel
+bisongen	ports/devel/bisongen
 bison1875	ports/devel/bison1875
 bitchx		ports/irc/bitchx
 bitedit		ports/editors/bitedit
