@@ -14,8 +14,14 @@ MASTER_SITE_SUBDIR= ${PORTNAME}
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Layer 2 vulnerability scanner (switches, spanning tree, 802.1q ...)
 
+.include <bsd.port.pre.mk>
+
 # Dependency on file that is not also installed by libnet (1.0.2) port!
 BUILD_DEPENDS=	${LOCALBASE}/share/examples/libnet/ip_raw.c:${PORTSDIR}/net/libnet-devel
+
+.if ${OSVERSION} < 500000
+BUILD_DEPENDS=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
+.endif
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -30,4 +36,4 @@ do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/src/yersinia ${PREFIX}/sbin/
 		${INSTALL_MAN} ${WRKSRC}/yersinia.8 ${PREFIX}/man/man8/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
