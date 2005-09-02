@@ -16,6 +16,8 @@ COMMENT=	A Java based gnutella client
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
+BROKEN=		"Distfile is not related to version 4.8.1"
+
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
