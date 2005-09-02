@@ -1,6 +1,20 @@
---- Makefile.orig	Sun Aug 15 13:15:04 2004
-+++ Makefile	Sun Aug 15 13:38:32 2004
-@@ -70,7 +70,7 @@
+--- Makefile.orig	Fri Jul 29 22:30:54 2005
++++ Makefile	Tue Aug 16 00:48:33 2005
+@@ -37,7 +37,7 @@
+ # default definitions; can be overwritten by users
+ 
+ SHELL = /bin/sh
+-INSTALL = install -m 755
++INSTALL = $(BSD_INSTALL_PROGRAM)
+ BUILD_OS := $(shell uname)
+ BUILD_ARCH := $(shell uname -m)
+ 
+@@ -74,12 +74,11 @@
+   ifndef STRIP
+     STRIP = strip
+   endif
+-  CFLAGS += -O
+ endif
  
  # default prefix
  ifdef ROOT
@@ -9,3 +23,11 @@
  else
    prefix = /usr/local
  endif
+@@ -177,7 +176,6 @@
+ all: $(NVIDIA_SETTINGS)
+ 
+ install: $(NVIDIA_SETTINGS)
+-	$(STRIP) $<
+ 	$(INSTALL_RULE)
+ 
+ $(OBJS_DIR)/%.o: %.c
