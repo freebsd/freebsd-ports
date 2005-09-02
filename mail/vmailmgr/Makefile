@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.vmailmgr.org/current/
 
-MAINTAINER=	patrick@rinke-bochum.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual MAIL ManaGeR for virtual mailboxes and domains
 
 RUN_DEPENDS=	/var/qmail/bin/qmail-start:${PORTSDIR}/mail/qmail \
