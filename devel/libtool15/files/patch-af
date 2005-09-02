@@ -1,10 +1,5 @@
 --- libltdl/Makefile.in.orig	Mon May 16 02:34:13 2005
 +++ libltdl/Makefile.in	Thu Jun 16 19:29:09 2005
-@@ -224,3 +224,3 @@
- libltdlc_la_LIBADD = $(LIBADD_DL)
--ltdldatadir = $(datadir)/libtool/libltdl
-+ltdldatadir = $(datadir)/libtool15/libltdl
- ltdldatafiles = COPYING.LIB README acinclude.m4 aclocal.m4 \
 @@ -437,9 +437,7 @@
  	    if test -d $(srcdir)/$$file && test $$d != $(srcdir); then \
 -	      cp -pR $(srcdir)/$$file $(distdir)$$dir || exit 1; \
