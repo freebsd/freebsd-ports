@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pv
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://dragon.roe.ch/mirrors/distfiles/pv/
