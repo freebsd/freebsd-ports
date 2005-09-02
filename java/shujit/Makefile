@@ -40,8 +40,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/libshujit.so ${PREFIX}/lib
 
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 	@${ENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
