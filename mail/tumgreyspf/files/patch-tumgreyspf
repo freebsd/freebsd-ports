@@ -1,0 +1,10 @@
+--- tumgreyspf.orig	Wed Aug 31 21:42:35 2005
++++ tumgreyspf	Wed Aug 31 21:43:01 2005
+@@ -11,7 +11,6 @@
+ 
+ 
+ import syslog, os, sys, string, re, time, popen2, urllib, stat
+-sys.path.append('/usr/local/lib/tumgreyspf')
+ import tumgreyspfsupp
+ 
+ syslog.openlog(os.path.basename(sys.argv[0]), syslog.LOG_PID, syslog.LOG_MAIL)

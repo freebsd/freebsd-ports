@@ -1,0 +1,10 @@
+--- tumgreyspf-stat.orig	Wed Aug 31 21:44:32 2005
++++ tumgreyspf-stat	Wed Aug 31 21:44:42 2005
+@@ -7,7 +7,6 @@
+ #  <jafo@tummy.com>
+ 
+ import os, re, string, syslog, sys, time
+-sys.path.append('/usr/local/lib/tumgreyspf')
+ import tumgreyspfsupp
+ 
+ ###################
