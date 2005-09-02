@@ -6,7 +6,7 @@ It can also be used an an interactive login shell or to generate Java
 Virtual Machine or .Net applications. BUSH is a robust and readable
 alternative to BASH, CSH, and (to a certain extent) Python and PERL.
 
-BUSH comes with 12 built-in packages including numerics, string processing,
+BUSH comes with many built-in packages including numerics, string processing,
 sound and database access.
 
 WWW: http://www.pegasoft.ca/bush.html
