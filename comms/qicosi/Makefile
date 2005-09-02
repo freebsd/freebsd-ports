@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	qicosi
-PORTVERSION=	0.54.1
+PORTVERSION=	0.57.1
 CATEGORIES=	comms
-MASTER_SITES=	http://santinel.bas-net.by/files/
-DISTNAME=	qico-${PORTVERSION}si
+MASTER_SITES=	http://193.232.248.13:8080/qicoxe/
+DISTNAME=	qico-${PORTVERSION}xe
 
 MAINTAINER=	anrays@gmail.com
 COMMENT=	Ip/modem fido compatible mailer
@@ -27,8 +27,8 @@ CONFIGURE_ARGS+=	--with-config=${CONFDIR}/qico.conf \
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 DOCS=		Changes FAQ README
-EXAMPLES=	fts-0001 onchat qhistory qico.xpm qlinks sfreq \
-		stat.run synctime tossing
+EXAMPLES=	koi8r_866.cp onchat qhistory qico.xpm qlinks sfreq \
+		stat.run synctime test.pl tossing
 
 MAN8=		qcc.8 qctl.8 qico.8
 
