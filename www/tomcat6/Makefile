@@ -19,6 +19,8 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 NO_BUILD=	YES
 
+USE_RC_SUBR=	yes
+
 .if !defined(NOPORTDOCS)
 MAN1=	${CONTROL_SCRIPT_NAME}.1
 .endif
@@ -49,7 +51,6 @@ STOP_TIMEOUT?=	5
 PID_FILE=	/var/run/${APP_SHORTNAME}.pid
 REPLACE_FILES=	${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.c \
 		${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.1 \
-		${PORTSDIR}/www/jakarta-tomcat4/files/startup.sh \
 		${WRKSRC}/conf/server.xml
 JAR_FILE=	bin/bootstrap.jar
 WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
@@ -57,6 +58,13 @@ PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} WWWOWN=${USER} WWWGRP=${GROUP}
 LATEST_LINK=	${APP_SHORTNAME}
 CONF_EXT=	sample
 PLIST_SUB+=	CONF_EXT=${CONF_EXT}
+
+SUB_FILES=	tomcat.sh
+SUB_LIST=	TOMCAT_VERSION=${MAJOR_VER:S/.//} \
+		TOMCAT_HOME=${APP_HOME} \
+		USER=${USER} \
+		STDOUT_LOG=${STDOUT_LOG} \
+		STDERR_LOG=${STDERR_LOG}
 
 .include <bsd.port.pre.mk>
 
@@ -149,14 +157,10 @@ do-install:
 	-e "/%%JAR_ARGS%%/s//\"start\",/g" \
 	${WRKDIR}/daemonctl.c > ${WRKDIR}/daemonctl_.c
 	@cd ${WRKDIR} && ${CC} -ansi -o ${CONTROL_SCRIPT_NAME} daemonctl_.c
-	@${CP} ${WRKDIR}/${CONTROL_SCRIPT_NAME} ${CONTROL_SCRIPT}
-	@${CHOWN} ${USER}:${GROUP} ${CONTROL_SCRIPT}
-	@${CHMOD} 6754 ${CONTROL_SCRIPT}
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} -n ">> Installing startup script..."
-	@${CP} ${WRKDIR}/startup.sh ${STARTUP_SCRIPT}
-	@${CHMOD} 0544 ${STARTUP_SCRIPT}
+	@${INSTALL_SCRIPT} ${WRKDIR}/tomcat.sh ${PREFIX}/etc/rc.d/jakarta-tomcat${MAJOR_VER:S/.//}.sh
 	@${ECHO_MSG} " [ DONE ]"
 
 .if !defined(NOPORTDOCS)
@@ -166,8 +170,8 @@ do-install:
 .endif
 
 	@${ECHO_MSG} -n ">> Creating log files..."
-	@${INSTALL} /dev/null ${STDOUT_LOG}
-	@${INSTALL} /dev/null ${STDERR_LOG}
+	@${INSTALL} -m 664 -o ${USER} -g ${GROUP} /dev/null ${STDOUT_LOG}
+	@${INSTALL} -m 664 -o ${USER} -g ${GROUP} /dev/null ${STDERR_LOG}
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} -n ">> Creating symlink to tools.jar..."
