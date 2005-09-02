@@ -7,6 +7,17 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20050902:
+  AFFECTS: users of www/jakarta-tomcat55
+  AUTHOR: hq@FreeBSD.org
+
+  The port installs a new RCng stratup script wich no longer use tomcat55ctl to
+  control the Tomcat daemon. Furthermore, the behavior of Tomcat may be
+  configured through switches and variables from /etc/rc.conf. They are
+  documented in the header of the RCng script:
+
+    ${PREFIX}/etc/rc.d/jakarta-tomcat55.sh
+
+20050902:
   AFFECTS: users of mail/postfix-current
   AUTHOR: marcus@corp.grupos.com.br
 
