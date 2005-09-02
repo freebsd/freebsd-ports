@@ -376,6 +376,7 @@
     SUBDIR += merlinmon
     SUBDIR += mgen
     SUBDIR += micq
+    SUBDIR += micro_proxy
     SUBDIR += minder
     SUBDIR += minisapserver
     SUBDIR += mknbi
