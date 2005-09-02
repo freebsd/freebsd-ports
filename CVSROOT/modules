@@ -11969,6 +11969,7 @@ tua		ports/sysutils/tua
 tuareg-mode.el	ports/lang/tuareg-mode.el
 tuc		ports/converters/tuc
 tulip		ports/graphics/tulip
+tumgreyspf	ports/mail/tumgreyspf
 tund		ports/net/tund
 tuneradio	ports/audio/tuneradio
 tunesbrowser	ports/audio/tunesbrowser
