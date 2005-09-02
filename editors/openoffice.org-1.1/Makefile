@@ -22,8 +22,7 @@ MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/rc/1.
 		ftp://ftp.kddlabs.co.jp/office/openoffice/contrib/helpcontent/:help \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent/:help \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help \
-	ftp://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/Files/:help2
-
+		ftp://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/Files/:help2
 DISTFILES+=	OOo_${RELEASE_NR}rc2_src.tar.gz gpc231.tar.Z:gpc
 EXTRACT_ONLY=	OOo_${RELEASE_NR}rc2_src.tar.gz
 
@@ -44,6 +43,8 @@ USE_BISON=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 WITHOUT_CPU_CFLAGS=	true
+
+ONLY_FOR_ARCHS=	i386
 
 .if !defined(WITHOUT_JAVA)
 USE_JAVA=	yes

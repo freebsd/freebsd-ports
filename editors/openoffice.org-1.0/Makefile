@@ -40,6 +40,8 @@ JAVA_BUILD=	jdk
 NO_LATEST_LINK=	yes
 WITHOUT_CPU_CFLAGS=	true
 
+ONLY_FOR_ARCHS=	i386
+
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
 
@@ -248,7 +250,7 @@ sdk:
 	@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd odk/source/bean/com/sun/star/beans ; dmake ; deliver.pl'
 	@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd netbeans_integration ; build.pl ; deliver.pl'
 	@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd odk/source/OOSupport ; dmake ; deliver.pl'
-	@${MKDIR} -p ${WRKSRC}/odk/unxfbsd.pro/bin/OpenOffice.org1.0.2SDK/freebsd/lib
+	@${MKDIR} ${WRKSRC}/odk/unxfbsd.pro/bin/OpenOffice.org1.0.2SDK/freebsd/lib
 	@${TOUCH} ${WRKSRC}/odk/unxfbsd.pro/misc/deltree.txt
 	@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd odk/pack/copying ; dmake ; deliver.pl'
 	@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd odk/util ; dmake ; deliver.pl'
