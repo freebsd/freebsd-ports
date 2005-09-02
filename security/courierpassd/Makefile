@@ -14,7 +14,7 @@ MAINTAINER=	ade@FreeBSD.org
 COMMENT=	User authentication and password changing daemon utility
 
 BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 
 WRKSRC=		${WRKDIR}/courierpassd-1.1.0-RC1
 
