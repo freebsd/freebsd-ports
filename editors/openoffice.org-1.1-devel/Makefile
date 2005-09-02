@@ -46,6 +46,7 @@ WITHOUT_CPU_CFLAGS=	true
 USE_JAVA=	yes
 JAVA_VERSION=	1.4
 JAVA_BUILD=	jdk
+JAVA_VENDOR=	bsdjava
 .endif
 
 .include <bsd.port.pre.mk>
