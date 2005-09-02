@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-pub-${PORTVERSION}a37
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System for detecting Network Intruders in real-time
 
+BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison175
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-pub-${PORTVERSION}a37
 
 USE_REINPLACE=	yes
@@ -23,7 +25,6 @@ GNU_CONFIGURE=	yes
 MAKE_ENV+=	CC="${CC}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
-USE_BISON=	yes
 USE_PERL5=	yes
 
 post-extract:
