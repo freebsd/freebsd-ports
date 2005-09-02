@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abook
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An addressbook program with mutt mail client support
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+LIB_DEPENDS=	readline.5:${PORTSDIR}/devel/readline
+.endif
+
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		abook.1
 MAN5=		abookrc.5
@@ -29,4 +37,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
