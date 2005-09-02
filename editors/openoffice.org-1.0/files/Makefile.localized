@@ -9,14 +9,14 @@
 .if defined(LOCALIZED_LANG)
 ################################################################
 .if ${LOCALIZED_LANG} == "ar"
-CATEGORIES=     arabic
+CATEGORIES+=     arabic
 LANG_PKGNAME=   ar
 LANG_EXT=       96
 LANG_CONFIGURE_ARG=     ARAB
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "zh-CN"
-CATEGORIES=	chinese
+CATEGORIES+=	chinese
 LANG_PKGNAME=	zh
 LANG_SUFFIX=	CN
 LANG_EXT=       86
@@ -26,7 +26,7 @@ L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "zh-TW"
-CATEGORIES=	chinese
+CATEGORIES+=	chinese
 LANG_PKGNAME=	zh
 LANG_SUFFIX=	TW
 LANG_EXT=	88
@@ -48,7 +48,7 @@ LANG_CONFIGURE_ARG=	DTCH
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "fr"
-CATEGORIES=     french
+CATEGORIES+=     french
 LANG_PKGNAME=   fr
 LANG_EXT=       33
 L10NHELP=       helpcontent_${LANG_EXT}_unix.tgz
@@ -63,7 +63,7 @@ LANG_CONFIGURE_ARG=	GREEK
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "de"
-CATEGORIES=	german
+CATEGORIES+=	german
 LANG_PKGNAME=	de
 LANG_EXT=	49
 L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
@@ -79,7 +79,7 @@ LANG_CONFIGURE_ARG=     ITAL
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "ja"
-CATEGORIES=	japanese
+CATEGORIES+=	japanese
 LANG_PKGNAME=   ja
 LANG_EXT=       81
 LANG_CONFIGURE_ARG=     JAPN
@@ -89,7 +89,7 @@ L10NHELP=       helpcontent_${LANG_EXT}_unix.tgz
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "ko"
-CATEGORIES=     korean
+CATEGORIES+=     korean
 LANG_PKGNAME=   ko
 LANG_EXT=       82
 LANG_CONFIGURE_ARG=     KOREAN
@@ -97,7 +97,7 @@ L10NHELP=       helpcontent_${LANG_EXT}_unix.tgz
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "pl"
-CATEGORIES=	polish
+CATEGORIES+=	polish
 LANG_PKGNAME=	pl
 LANG_EXT=	48
 LANG_CONFIGURE_ARG=	POL
@@ -105,14 +105,14 @@ LANG_CONFIGURE_ARG=	POL
 ################################################################
 .if ${LOCALIZED_LANG} == "pt"
 COMMENT=	Editor texto/grBaGico, banco de dados/planilha/navegador integrado
-CATEGORIES=	portuguese
+CATEGORIES+=	portuguese
 LANG_PKGNAME=	pt
 LANG_EXT=	03
 LANG_CONFIGURE_ARG=	PORT
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "ru"
-CATEGORIES=	russian
+CATEGORIES+=	russian
 LANG_PKGNAME=	ru
 LANG_EXT=	07
 LANG_CONFIGURE_ARG=	RUSS
