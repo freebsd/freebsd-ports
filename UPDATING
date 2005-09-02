@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050902:
+  AFFECTS: users of mail/postfix-current
+  AUTHOR: marcus@corp.grupos.com.br
+
+  Now mail/postfix-current use OPTIONS menu instead of 
+  POSTFIX_OPTIONS batch. Please run "make config" and
+  select your options in menu.
+
 20050828:
   AFFECTS: users of net/py-bittorrent-devel and net/py-bittorrent-core-devel
   AUTHOR: lioux@FreeBSD.org
