@@ -1,0 +1,15 @@
+#!/bin/sh
+
+case "$2" in
+	POST-INSTALL)
+		echo "===> Create %%TUMGREYSPF_DIR%% directories"
+		install -d -o %%TUMGREYSPF_USER%% -g %%TUMGREYSPF_GROUP%% -m 755 %%TUMGREYSPF_DIR%%
+		install -d -o %%TUMGREYSPF_USER%% -g %%TUMGREYSPF_GROUP%% -m 700 %%TUMGREYSPF_DIR%%/data
+		install -d -m 755 %%TUMGREYSPF_DIR%%/config
+		if [ ! -f %%TUMGREYSPF_DIR%%/config/__default__ ]; then
+			install %%DATADIR%%/__default__.dist %%TUMGREYSPF_DIR%%/config/__default__
+		fi
+		;;
+	*)
+		;;
+esac

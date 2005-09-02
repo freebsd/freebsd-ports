@@ -1,0 +1,21 @@
+#!/bin/sh
+
+case "$2" in
+	DEINSTALL)
+		if cmp -s %%DATADIR%%/__default__.dist %%TUMGREYSPF_DIR%%/config/__default__; then
+			rm %%TUMGREYSPF_DIR%%/config/__default__ 2>/dev/null
+		fi
+		rmdir %%TUMGREYSPF_DIR%%/config 2>/dev/null
+		rmdir %%TUMGREYSPF_DIR%%/data 2>/dev/null
+		rmdir %%TUMGREYSPF_DIR%% 2>/dev/null
+		if [ -d %%TUMGREYSPF_DIR%% ]; then
+			echo ""
+			echo "If you are deinstalling completely tumgreyspf, run:"
+			echo ""
+			echo "# rm -rf %%TUMGREYSPF_DIR%%"
+			echo ""
+		fi
+		;;
+	*)
+		;;
+esac

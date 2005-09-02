@@ -510,6 +510,7 @@
     SUBDIR += tlb
     SUBDIR += tmda
     SUBDIR += tpop3d
+    SUBDIR += tumgreyspf
     SUBDIR += turba
     SUBDIR += uebimiau
     SUBDIR += up-imapproxy

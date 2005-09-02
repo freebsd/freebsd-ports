@@ -1,0 +1,10 @@
+@unexec if cmp -s %D/etc/tumgreyspf.conf.default %D/etc/tumgreyspf.conf; then rm -f %D/etc/tumgreyspf.conf; fi
+etc/tumgreyspf.conf.default
+bin/tumgreyspf
+bin/tumgreyspf-clean
+bin/tumgreyspf-configtest
+bin/tumgreyspf-gentest
+bin/tumgreyspf-stat
+%%PYTHON_SITELIBDIR%%/tumgreyspfsupp.py
+%%DATADIR%%/__default__.dist
+@dirrm %%DATADIR%%
