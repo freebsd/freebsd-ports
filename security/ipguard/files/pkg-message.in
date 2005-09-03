@@ -1,0 +1,8 @@
+
+===>  INSTALL NOTES:
+      Now create %%ETHERS%% file
+      (see ethers(5))
+      and then start ipguard:
+      (cd %%PREFIX%%/etc/rc.d
+      mv ipguard.sh.sample ipguard.sh
+      %%PREFIX%%/etc/rc.d/ipguard.sh start)
