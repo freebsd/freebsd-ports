@@ -1,0 +1,17 @@
+The CCard program is a program to validate credit card numbers.
+
+It can also determine the following credit card types:
+
+   * Mastercard
+   * Visa
+   * American Express
+   * Diners Club/Carte Blanche
+   * Discover
+   * enRoute
+   * Japanese Credit Bureau
+   * Australian Bankcard
+
+WWW: http://www.canb.auug.org.au/~millerp/ccard.html
+
+- ehaupt
+ehaupt@critical.ch
