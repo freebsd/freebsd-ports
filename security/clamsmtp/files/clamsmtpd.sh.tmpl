@@ -24,9 +24,9 @@ load_rc_config ${name}
 clamsmtpd_enable=${clamsmtpd_enable-"NO"}
 clamsmtpd_conf=${clamsmtpd_conf-"%%PREFIX%%/etc/clamsmtpd.conf"}
 clamsmtpd_pid=${clamsmtpd_pid-"%%CLAMAV_PID_DIR%%/clamsmtpd.pid"}
-clamsmtpd_debug=${clamsmtpd_debug-"0"}
+clamsmtpd_debug=${clamsmtpd_debug-"4"}
 
-command_args="-f ${clamsmtpd_conf} -p ${clamsmtpd_pid}"
+command_args="-f ${clamsmtpd_conf} -p ${clamsmtpd_pid} -d ${clamsmtpd_debug}"
 
 pidfile=${clamsmtpd_pid}
 
