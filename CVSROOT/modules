@@ -5669,6 +5669,7 @@ linux-sunbird	ports/www/linux-sunbird
 linux-tiff	ports/graphics/linux-tiff
 linux-ungif	ports/graphics/linux-ungif
 linux-urw-fonts	ports/x11-fonts/linux-urw-fonts
+linux-ut2003-demo	ports/games/linux-ut2003-demo
 linux-ut2004-demo	ports/games/linux-ut2004-demo
 linux-virtual-jay-peak	ports/games/linux-virtual-jay-peak
 linux-vmware-toolbox2 ports/emulators/linux-vmware-toolbox2
