@@ -1,4 +1,5 @@
 bin/taglib-config
+lib/pkgconfig/taglib.pc
 include/taglib/apefooter.h
 include/taglib/apeitem.h
 include/taglib/apetag.h
@@ -53,3 +54,4 @@ lib/libtag_c.la
 lib/libtag_c.so
 lib/libtag_c.so.0
 @dirrm include/taglib
+@unexec rmdir %D/lib/pkgconfig 2>/dev/null || true
