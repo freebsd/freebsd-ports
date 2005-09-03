@@ -1,0 +1,18 @@
+--- configure.orig	Fri Sep  2 22:46:37 2005
++++ configure	Sat Sep  3 13:43:48 2005
+@@ -14315,12 +14315,15 @@
+       ac_prev=prefix ;;
+     -prefix=* | --prefix=* | --prefi=* | --pref=* | --pre=* | --pr=* | --p=*)
+       ;;
++    *alias=* )
++      ;;
+     *) ac_sub_configure_args="$ac_sub_configure_args $ac_arg" ;;
+     esac
+   done
+ 
+   # Always prepend --prefix to ensure using the same prefix
+   # in subdir configurations.
++  ac_sub_configure_args=`echo $ac_sub_configure_args | sed "s,'[A-Z][^']*',,g"`
+   ac_sub_configure_args="--prefix=$prefix $ac_sub_configure_args"
+ 
+   ac_popdir=`pwd`
