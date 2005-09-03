@@ -791,6 +791,7 @@ bmp-rootvis	ports/graphics/bmp-rootvis
 bmp-scrobbler	ports/audio/bmp-scrobbler
 bmp-songchange	ports/audio/bmp-songchange
 bmp-wma		ports/audio/bmp-wma
+bmp2html	ports/graphics/bmp2html
 bn-aspell	ports/textproc/bn-aspell
 bnbt		ports/net/bnbt
 bnc		ports/irc/bnc
