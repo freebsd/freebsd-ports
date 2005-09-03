@@ -1,0 +1,27 @@
+--- Makefile.orig	Mon Aug 22 17:34:48 2005
++++ Makefile	Sat Sep  3 19:27:19 2005
+@@ -3,18 +3,19 @@
+ ##  copyright (c) 2005 SeaD
+ ##
+ 
+-PREFIX=/usr/local
+-ETHERS=/etc/ethers
++PREFIX?=/usr/local
++LOCALBASE?=/usr/local
++ETHERS?=/etc/ethers
+ 
+ NAME=ipguard
+ VERSION=0.04
+-INCLUDES=-I/usr/local/include
+-LIBS=-lpcap `libnet-config --libs` -L/usr/local/lib
++INCLUDES=-I${LOCALBASE}/include
++LIBS=-lpcap `libnet-config --libs` -L${LOCALBASE}/lib
+ DEFINES=`libnet-config --defines`
+ STATIC=
+ CC=gcc
+ 
+-CFLAGS+=-g -Wall -O2 -DETHERS='"$(ETHERS)"'
++CFLAGS+=-g -Wall -DETHERS='"$(ETHERS)"'
+ 
+ OBJS=ethers.o ipguard.o packet.o system.o
+ DOCS=ethers.sample ipguard.sh.sample NEWS README TODO

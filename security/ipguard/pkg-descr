@@ -1,0 +1,8 @@
+ipguard listens network for ARP packets. All permitted MAC/IP pairs
+listed in 'ethers' file. If it recieves one with MAC/IP pair, which is
+not listed in 'ethers' file, it will send ARP reply with configured
+fake address. This will prevent not permitted host to work properly
+in this ethernet segment. Especially Windows(TM) hosts.
+
+Author SeaD <sead@mail.ru>
+WWW: http://ipguard.deep.perm.ru/
