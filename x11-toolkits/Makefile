@@ -216,6 +216,7 @@
     SUBDIR += xbae
     SUBDIR += xclasses
     SUBDIR += xforms
+    SUBDIR += xforms-i18n
     SUBDIR += xg
     SUBDIR += xmhtml
     SUBDIR += xview
