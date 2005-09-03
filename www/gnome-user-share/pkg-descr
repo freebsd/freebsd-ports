@@ -5,7 +5,7 @@ masses.
 The program is meant to run in the background when the user is logged
 in, and when file sharing is enabled a webdav server is started that
 shares the $HOME/Public folder. The share is then published to all
-computers on the local network using mDNS/rendezvous, so that it shows
+computers on the local network using mDNS/bonjour, so that it shows
 up in the Network location in Gnome.
 
 -- gnome-user-share README
