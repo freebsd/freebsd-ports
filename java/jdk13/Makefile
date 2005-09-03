@@ -9,8 +9,8 @@ PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
 PORTREVISION=	5
 CATEGORIES=	java devel
-MASTER_SITES=	# http://www.sun.com/software/java2/download.html
-#		 http://www.eyesbeyond.com/freebsddom/java/jdk13.html
+MASTER_SITES=	# http://www.sun.com/software/communitysource/j2se/java2/download.xml
+#		  http://www.eyesbeyond.com/freebsddom/java/jdk13.html
 SRCFILE=	j2sdk-${JDK_VERSION:S/./_/g}-src${EXTRACT_SUFX}
 PATCHSETFILE=	bsd-jdk131-patches-${JDK_PATCHSET_VERSION}.tar.gz
 DISTFILES=	${SRCFILE} ${PATCHSETFILE}
@@ -144,30 +144,35 @@ EXTRACT_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
 TAR=			gtar	# Necessary for proper extraction of sources
 .endif
 
-# Check for patchset
-.if !exists(${DISTDIR}/${PATCHSETFILE}) && !defined(PACKAGE_BUILDING)
+# Check for JDK sources and patchset
+.if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${SRCFILE}) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
 ECHO_MSG=/usr/bin/printf
-IGNORE= :\n\
-The source distribution exists on your system, but due to\n\
-licensing restrictions you still need to download the\n\
-patchset, ${PATCHSETFILE}, from\n\
-http://www.eyesbeyond.com/freebsddom/java/jdk13.html.\n\
-Please place the patchset in ${DISTDIR}.\n
-.endif
-
-# Check for JDK sources
-.if !exists(${DISTDIR}/${SRCFILE}) && !defined(PACKAGE_BUILDING)
-ECHO_MSG=/usr/bin/printf
-IGNORE= :\n\
-Because of licensing restrictions, you must fetch the source distribution\n\
-manually.  Please access http://www.sun.com/software/java2/download.html\n\
-with a web browser and follow the \"Download\" link for the\n\
-\"Java(TM) SDK ${JDK_VERSION}\". You will be required to log in and register,\n\
+IGNORE= :\n\n\
+Due to licensing restrictions, certain files must be fetched manually.\n\n
+.if !exists(${DISTDIR}/${SRCFILE})#{
+IGNORE += Please open http://www.sun.com/software/communitysource/j2se/java2/download.xml\n\
+in a web browser and follow the \"Download\" link for the\n\
+\"Java(TM) 2 SDK ${JDK_VERSION}\".  You will be required to log in and register,\n\
 but you can create an account on this page.  After registration and\n\
-accepting the Sun Community Source License, select \"J2SESDK\" and\n\
-download the source file, ${SRCFILE}.  Please place this file in\n\
-${DISTDIR}.\n
-.endif
+accepting the Sun Community Source License, download the SCSL Source file,\n\
+${SRCFILE}.\n
+.if !exists(${DISTDIR}/${PATCHSETFILE})#{
+IGNORE += \n In addition, please
+.endif#}
+.elif !exists(${DISTDIR}/${PATCHSETFILE})
+IGNORE += Please
+.endif#}
+.if !exists(${DISTDIR}/${PATCHSETFILE})#{
+IGNORE += download the patchset, ${PATCHSETFILE}, from\n\
+http://www.eyesbeyond.com/freebsddom/java/jdk13.html.\n
+.endif#}
+.if !exists(${DISTDIR}/${SRCFILE}) && !exists(${DISTDIR}/${PATCHSETFILE})#{
+IGNORE += \n Then place the downloaded files in ${DISTDIR}
+.else
+IGNORE += \n Then place the downloaded file in ${DISTDIR}
+.endif#}
+IGNORE += and restart the build.\n\n
+.endif#}
 
 # HotSpot and/or native threads require a recent version of FreeBSD
 .if ( defined(WITH_NATIVE_THREADS) || defined(WITH_HOTSPOT) ) && ( ${OSVERSION} < 470101 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500043 ) )
