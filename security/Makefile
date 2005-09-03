@@ -27,6 +27,7 @@
     SUBDIR += avcheck
     SUBDIR += barnyard
     SUBDIR += base
+    SUBDIR += bcrypt
     SUBDIR += bcwipe
     SUBDIR += bdc
     SUBDIR += beecrypt

@@ -1,0 +1,11 @@
+Bcrypt is a blowfish file encryption utility which aims for cross-platform
+portability.
+
+In addition to providing 448-bit encryption, bcrypt overwrites input files with
+random garbage before deletion in order to make low-level data recovery much
+more difficult.
+
+WWW: http://bcrypt.sourceforge.net/
+
+- ehaupt
+ehaupt@critical.ch
