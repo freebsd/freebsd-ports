@@ -12792,6 +12792,7 @@ xflame		ports/games/xflame
 xfm		ports/x11-fm/xfm
 xfmail		ports/mail/xfmail
 xforms		ports/x11-toolkits/xforms
+xforms-i18n	ports/x11-toolkits/xforms-i18n
 xfpovray	ports/graphics/xfpovray
 xfractint	ports/graphics/xfractint
 xfree86-dri	ports/graphics/xfree86-dri
