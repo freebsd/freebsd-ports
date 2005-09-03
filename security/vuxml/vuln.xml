@@ -32,6 +32,50 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="30e4ed7b-1ca6-11da-bc01-000e0c2e438a">
+    <topic>bind9 -- denial of service</topic>
+    <affects>
+      <package>
+	<name>bind9</name>
+	<range><eq>9.3.0</eq></range>
+      </package>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.3</ge><lt>5.3_16</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Problem description</p>
+	<p>A DNSSEC-related validator function in BIND 9.3.0 contains an
+	  inappropriate internal consistency test.  When this test is
+	  triggered, named(8) will exit.</p>
+	<p>Impact</p>
+	<p>On systems with DNSSEC enabled, a remote attacker may be able
+	  to inject a specially crafted packet that will cause the
+	  internal consistency test to trigger, and named(8) to
+	  terminate.  As a result, the name server will no longer be
+	  available to service requests.</p>
+	<p>Workaround</p>
+	<p>DNSSEC is not enabled by default, and the "dnssec-enable"
+	  directive is not normally present.  If DNSSEC has been
+	  enabled, disable it by changing the "dnssec-enable" directive
+	  to "dnssec-enable no;" in the named.conf(5) configuration
+	  file.</p>
+      </body>
+    </description>
+    <references>
+      <certvu>938617</certvu>
+      <cvename>CAN-2005-0034</cvename>
+      <url>http://www.uniras.gov.uk/niscc/docs/al-20050125-00060.html?lang=en</url>
+      <url>http://www.isc.org/sw/bind/bind9.3.php#security</url>
+    </references>
+    <dates>
+      <discovery>2005-01-25</discovery>
+      <entry>2005-09-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="947f4b14-1c89-11da-bc01-000e0c2e438a">
     <topic>bind -- buffer overrun vulnerability</topic>
     <affects>
