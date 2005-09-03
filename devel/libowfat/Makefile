@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	libowfat
-PORTVERSION=	0.23
+PORTVERSION=	0.24
 CATEGORIES=	devel ipv6
 MASTER_SITES=	http://dl.fefe.de/
 
 MAINTAINER=	tmseck@netcologne.de
 COMMENT=	A general purpose library based on code by D. J. Bernstein
 
-USE_BZIP2=	YES
-USE_GMAKE=	YES
+USE_BZIP2=	yes
+USE_GMAKE=	yes
 
 MAKEFILE=	GNUmakefile
-MAKE_ENV+=	INSTALL="${INSTALL}"
+MAKE_ENV=	INSTALL="${INSTALL}" CC="${CC}"
 
 OPTIONS=	LIBOWFAT_OPTIMIZED_CFLAGS "Use optimized CFLAGS" on
 
@@ -36,9 +36,7 @@ include=	array.h buffer.h byte.h case.h dns.h errmsg.h fmt.h \
 		uint16.h uint32.h uint64.h
 PLIST_DIRS=	include/libowfat
 PLIST_FILES=	${include:S,^,include/libowfat/,} lib/libowfat.a
-.if!defined(NOPORTDOCS)
 PORTDOCS=	CHANGES README TODO
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
