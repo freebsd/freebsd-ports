@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	redet
-PORTVERSION=	7.0
+PORTVERSION=	7.1
 CATEGORIES=	textproc tk84
 MASTER_SITES=	http://www.billposer.org/Software/Downloads/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	vsevolod
-DISTNAME=	${PORTNAME}tiny-${PORTVERSION}
+DISTNAME=	${PORTNAME}tiny
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	vsevolod@FreeBSD.org
