@@ -1,4 +1,4 @@
-# You'll need graphics/libglut in order to build example program
+# You'll need graphics/libglut in order to build example programs
 
 CC=%%CC%%
 RM=%%RM%%
@@ -9,8 +9,11 @@ LDFLAGS=	-lgl2ps -lGL -lGLU -lglut -L%%X11BASE%%/lib -lX11 -lXi -lXmu -lm -lz
 gl2psTest: gl2psTest.o
 	${CC} ${LDFLAGS} $> -o $@
 
+gl2psTestSimple: gl2psTestSimple.o
+	${CC} ${LDFLAGS} $> -o $@
+
 .c.o:
 	${CC} -c ${CFLAGS} $*.c
 
 clean:
-	${RM} -f gl2psTest gl2psTest.o
+	${RM} -f gl2psTest gl2psTest.o gl2psTestSimple gl2psTestSimple.o
