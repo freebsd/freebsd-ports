@@ -17,7 +17,7 @@ MASTER_SITES=	http://files1.rarlab.com/rar/ \
 		http://files6.rarlab.com/rar/
 DISTNAME=	rarbsd-3.5.0
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	File archiver (binary port)
 
 ONLY_FOR_ARCHS=	i386 amd64
