@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	chicken
-PORTVERSION=	1.89
-PORTREVISION=	2
+PORTVERSION=	2.0
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.call-with-current-continuation.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alejandro@varnet.biz
 COMMENT=	A Scheme-to-C compiler
 
+USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=	15
-USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 MAN1=		chicken-config.1 chicken-profile.1 chicken-setup.1 chicken.1 \
@@ -24,7 +23,7 @@ MAN1=		chicken-config.1 chicken-profile.1 chicken-setup.1 chicken.1 \
 INFO=		chicken
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	FAQ.html format.txt README LICENSE chicken.html chicken.pdf
+PORTDOCS=	README chicken.html format.txt
 .endif
 
 OPTIONS=	PCRE "With PCRE support" off
@@ -43,20 +42,15 @@ CONFIGURE_ENV+=	ac_cv_header_pcre_h=no
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's/\(install-data-am: \)install-data-local/\1/' \
+	@${REINPLACE_CMD} -e 's/\(install-data-am: \)install-data-local/\1/' \
 		${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e 's|"/usr/local/include" ||' ${WRKSRC}/csc.scm.in
+	@${REINPLACE_CMD} -e 's|"/usr/local/include" ||' ${WRKSRC}/csc.scm.in
 
 post-install:
-	${MKDIR} ${PREFIX}/lib/chicken
+	@${MKDIR} ${PREFIX}/lib/${PORTNAME}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
 .endif
-
-test:
-	cd ${WRKSRC}; ${MAKE} test
 
 .include <bsd.port.post.mk>
