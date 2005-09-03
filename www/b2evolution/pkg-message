@@ -1,7 +1,29 @@
+==================================================================
+b2evolution is now installed. If you intall it for the first time,
+you may have to follow this steps to make it work correctly.
 
-          **** NOTE ****
-For first use of b2evolution, remember to point your browser to
+1. Create the MySQL database:
 
-  http://localhost/%%B2EVO_URL%%/blogs/install/
+  # mysqladmin --user=root -p create b2evolution
 
-and follow the instructions. 
+2. Create a mysql user/password for b2evolution(database):
+  (change user and/or password if requered)
+
+  # mysql -u root -p
+  mysql> GRANT ALL ON b2evolution.* TO b2evouser@localhost 
+	 IDENTIFIED BY 'b2evopassword';
+  mysql> FLUSH PRIVILEGES;
+  mysql> QUIT;
+
+3.Open b2evo installation page in your web browser 
+  and login with b2evouser/b2evopassword
+
+  http://%%HOSTNAME%%/%%B2EVO_URL%%/blogs/install/
+
+  If you are doing a fresh install...
+  Note that password carefully! It is a random password that is given to you 
+  when you install b2evolution.
+  If you lose it, you will have to delete the database tables and reinstall.
+
+  Have fun!
+==================================================================
