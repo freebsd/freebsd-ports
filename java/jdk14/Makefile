@@ -184,17 +184,11 @@ Please place the patchset in ${DISTDIR}.\n
 
 TESTPROG=testos
 
-.if ${OSVERSION} > 500000
-LINKIT=	-lc_r
-.else
-LINKIT=	-pthread
-.endif
-
 check-os:
 .if !defined(SKIP_OS_TEST)
 	-@mkdir -p ${WRKDIR} ; \
 	rm -f ${WRKDIR}/${TESTPROG} ; \
-	gcc ${LINKIT} -o ${WRKDIR}/${TESTPROG} \
+	gcc ${PTHREAD_LIBS} -o ${WRKDIR}/${TESTPROG} \
 		${FILESDIR}/${TESTPROG}.c > /dev/null 2>&1
 	@if [ ! -f ${WRKDIR}/${TESTPROG} ] ; \
 	then \
