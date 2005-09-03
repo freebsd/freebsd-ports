@@ -962,6 +962,7 @@ cbrpager	ports/graphics/cbrpager
 cbview		ports/graphics/cbview
 cc65		ports/devel/cc65
 ccache		ports/devel/ccache
+ccard		ports/finance/ccard
 ccaudio		ports/audio/ccaudio
 cccc		ports/devel/cccc
 ccd2iso		ports/sysutils/ccd2iso
