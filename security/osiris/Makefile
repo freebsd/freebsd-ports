@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	osiris
-PORTVERSION=	4.1.8
+PORTVERSION=	4.1.9
 CATEGORIES=	security
-MASTER_SITES=	http://osiris.shmoo.com/data/ \
+MASTER_SITES=	http://www.hostintegrity.com/osiris/data/ \
 		http://darkambient.net/
 
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	The Shmoo client/server host integrity checker
 
-OPTIONS=	OSIRISMD "Enable to build the management daemon" off \
-		OSIRISD "Enable to build the osirisd scan agent" on \
-		CLI "Enable to build the management CLI" off
+#OPTIONS=	OSIRISMD "Enable to build the management daemon" off \
+#		OSIRISD "Enable to build the osirisd scan agent" on \
+#		PRINTDB "Build database print tool" off \
+#		CLI "Enable to build the management CLI" off
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LIBTOOL_VER=	15
@@ -43,12 +44,25 @@ PLIST_SUB+=	CLI=""
 .else
 PLIST_SUB+=	CLI="@comment "
 .endif
+.if defined(WITH_PRINTDB)
+PLIST_SUB+=	PRINTDB=""
+.else
+PLIST_SUB+=	PRINTDB="@comment "
+.endif
+
+post-build:
+.if defined(WITH_PRINTDB)
+	cd ${WRKSRC}/src/tools && ${MAKE}
+.endif
 
 do-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${MKDIR} ${PREFIX}/osiris
 .if defined(WITH_CLI)
 	${INSTALL_PROGRAM} ${WRKSRC}/src/cli/osiris ${PREFIX}/sbin
+.endif
+.if defined(WITH_PRINTDB)
+	${INSTALL_PROGRAM} ${WRKSRC}/src/tools/printdb ${PREFIX}/bin
 .endif
 .if !defined(WITHOUT_OSIRISD)
 	${SED} -e 's|@INSTALLDIR@|${PREFIX}/sbin|g' \
