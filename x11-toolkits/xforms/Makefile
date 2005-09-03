@@ -14,14 +14,23 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	${PORTNAME}/stable.pkg/${PORTVERSION} \
 			mikeh
+
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
-MAINTAINER=	mikeh@FreeBSD.ORG
-COMMENT=	A graphical user interface toolkit for X Window System
+MAINTAINER?=	mikeh@FreeBSD.ORG
+COMMENT?=	A graphical user interface toolkit for X Window System
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
+
+.if defined(WITH_I18N)
+PKGNAMESUFFIX=	-i18n
+PATCH_SITES=	ftp://cellular.phys.pusan.ac.kr/CJK-LyX/xforms/ \
+		http://www.otaru-uc.ac.jp/~yokota/comp/
+PATCHFILES=	xforms-1.0-i18n_7.patch
+PATCH_DIST_STRIP=	-p1
+.endif
 
 USE_XPM=	yes
 USE_IMAKE=	yes

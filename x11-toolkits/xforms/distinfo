@@ -1,2 +1,4 @@
 MD5 (xforms-1.0.tar.gz) = 64adf1c489b629a92218f7c140f4bdaf
 SIZE (xforms-1.0.tar.gz) = 1012878
+MD5 (xforms-1.0-i18n_7.patch) = 56a19c84ba63af99902a21c21e27ec1f
+SIZE (xforms-1.0-i18n_7.patch) = 48814
