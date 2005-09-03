@@ -28,8 +28,8 @@
    if test -n "$PGSQL"; then
 -    LDFLAGS="$LDFLAGS -L$PGSQL/lib"
 -    CPPFLAGS="$CPPFLAGS -I$PGSQL/include"
-+    LDFLAGS="{$LDFLAGS} -L$PGSQL/lib"
-+    CPPFLAGS="{$CPPFLAGS} -I$PGSQL/include"
++    LDFLAGS="${LDFLAGS} -L$PGSQL/lib"
++    CPPFLAGS="${CPPFLAGS} -I$PGSQL/include"
    fi
    AC_CHECK_LIB(pq,PQsetdbLogin,,,-lcrypt)
    if test "$ac_cv_lib_pq_PQsetdbLogin" = "yes"; then
