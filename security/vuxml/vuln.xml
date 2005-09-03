@@ -32,6 +32,34 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="947f4b14-1c89-11da-bc01-000e0c2e438a">
+    <topic>bind -- buffer overrun vulnerability</topic>
+    <affects>
+      <package>
+	<name>bind</name>
+	<range><ge>8.4.4</ge><lt>8.4.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An ISC advisory reports a buffer overrun vulnerability within
+	  bind.  The vulnerability could result in a Denial of Service.
+	  A workaround is available by disabling recursion and glue
+	  fetching.</p>
+      </body>
+    </description>
+    <references>
+      <certvu>327633</certvu>
+      <cvename>CAN-2005-0033</cvename>
+      <url>http://www.uniras.gov.uk/niscc/docs/al-20050125-00059.html?lang=en</url>
+      <url>http://www.isc.org/sw/bind/bind-security.php</url>
+    </references>
+    <dates>
+      <discovery>2005-01-25</discovery>
+      <entry>2005-09-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="08df5d46-1baf-11da-8038-0040f42d58c6">
     <topic>urban -- stack overflow vulnerabilities</topic>
     <affects>
