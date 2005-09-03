@@ -647,6 +647,7 @@ bcc		ports/devel/bcc
 bchunk		ports/sysutils/bchunk
 bclock		ports/x11-clocks/bclock
 bcpp		ports/devel/bcpp
+bcrypt		ports/security/bcrypt
 bcwipe		ports/security/bcwipe
 bdc		ports/security/bdc
 bdelta		ports/misc/bdelta
