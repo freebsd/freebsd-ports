@@ -12,53 +12,15 @@ include/chicken.h
 lib/libchicken.a
 lib/libchicken.so
 lib/libchicken.so.0
-lib/libsrfi-chicken.a
-lib/libsrfi-chicken.so
-lib/libsrfi-chicken.so.0
-lib/libstuffed-chicken.a
-lib/libstuffed-chicken.so
-lib/libstuffed-chicken.so.0
 lib/libuchicken.a
 lib/libuchicken.so
 lib/libuchicken.so.0
-lib/libusrfi-chicken.a
-lib/libusrfi-chicken.so
-lib/libusrfi-chicken.so.0
-lib/libustuffed-chicken.a
-lib/libustuffed-chicken.so
-lib/libustuffed-chicken.so.0
 %%DATADIR%%/banner.scm
 %%DATADIR%%/chicken-default-entry-points.scm
 %%DATADIR%%/chicken-entry-points.scm
 %%DATADIR%%/chicken-ffi-macros.scm
-%%DATADIR%%/chicken-highlevel-macros.scm
 %%DATADIR%%/chicken-match-macros.scm
 %%DATADIR%%/chicken-more-macros.scm
-%%DATADIR%%/test-infrastructure-hygienic-local.scm
-%%DATADIR%%/test-infrastructure-hygienic.scm
-%%DATADIR%%/test-infrastructure-lowlevel-local.scm
-%%DATADIR%%/test-infrastructure-lowlevel.scm
-%%DATADIR%%/test-infrastructure.scm
 @dirrm %%DATADIR%%
-%%PORTDOCS%%%%EXAMPLESDIR%%/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/calendar.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/cube.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/ctclsh.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/eval-client.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/eval-server.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/hellowin.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/makefile.vc
-%%PORTDOCS%%%%EXAMPLESDIR%%/mandelbrot.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/nqueens.prolog
-%%PORTDOCS%%%%EXAMPLESDIR%%/prolog.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/schelog-macros.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/schelog-support.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/tclAppInit.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/tcp-client.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/tcp-server.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/x11cplot.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/x11cplot.h
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @exec mkdir -p %D/lib/chicken
 @dirrm lib/chicken
