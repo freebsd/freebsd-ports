@@ -5,5 +5,3 @@ pure LISP.
 
 This package contains the ArrowLISP interpreter and library,
 the reference manual, and example programs.
-
-WWW: http://www.t3x.org/scipl/
