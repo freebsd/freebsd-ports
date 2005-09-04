@@ -7,10 +7,11 @@
 
 PORTNAME=	firefox
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	chinese www
 MASTER_SITES=	http://bbs.ilc.edu.tw/~chinsan/firefox/
 PKGNAMESUFFIX=	-zh_CN
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}.${PORTVERSION}
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}.${PORTVERSION}b
 
 # Maintainership available: drop me a line if interested :p
 MAINTAINER=	chinsan.tw@gmail.com
@@ -20,9 +21,7 @@ BUILD_DEPENDS=	${X11BASE}/lib/${FIREFOX}/regxpcom:${PORTSDIR}/www/firefox
 RUN_DEPENDS=	${FIREFOX}:${PORTSDIR}/www/firefox
 
 USE_X_PREFIX=	yes
-USE_ZIP=	yes
 NO_BUILD=	yes
-EXTRACT_BEFORE_ARGS=	-qo
 
 FIREFOX=	${PORTNAME}
 FIREFOX_HOME=	${PREFIX}/lib/${FIREFOX}
@@ -35,7 +34,7 @@ PLIST_SUB=	FIREFOX=${FIREFOX}
 .include <bsd.port.pre.mk>
 
 do-install:
-	echo "===> Backup setting files..."
+	@${ECHO_MSG} "===> Backup setting files..."
 	(cd ${FIREFOX_HOME}; \
 	${MV} -f browserconfig.properties browserconfig.properties.orig)
 	(cd ${FIREFOX_HOME}/defaults/pref; \
@@ -43,21 +42,22 @@ do-install:
 	(cd ${FIREFOX_HOME}/defaults/profile; \
 	${MV} -f bookmarks.html bookmarks.html.orig)
 	(cd ${FIREFOX_HOME}/chrome; \
+	${MV} -f browser.jar browser.jar.orig; \
 	${MV} -f chrome.rdf chrome.rdf.orig; \
 	${MV} -f installed-chrome.txt installed-chrome.txt.orig)
 
-	echo "===> Copying locale files..."
-	(cd ${WRKDIR}; ${TAR} -cf - *) | \
+	@${ECHO_MSG} "===> Copying locale files..."
+	(cd ${WRKSRC}; ${TAR} -cf - *) | \
 	${TAR} -xf - -C ${FIREFOX_HOME}
 
-	echo "===> Cleaning Chrome's registry..."
+	@${ECHO_MSG} "===> Cleaning Chrome's registry..."
 	${RM} -rf ${FIREFOX_HOME}/chrome/overlayinfo
 	${RM} -f ${FIREFOX_HOME}/chrome/*.rdf
 	${MKDIR} ${FIREFOX_HOME}/chrome/overlayinfo
 	${RM} -f ${FIREFOX_HOME}/component.reg
 	${RM} -rf ${FIREFOX_HOME}/extensions
 
-	echo "===> Building Chrome's registry..."
+	@${ECHO_MSG} "===> Building Chrome's registry..."
 	(cd ${FIREFOX_HOME} || exit 1 ; \
 	./run-mozilla.sh ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. \
 		${REGXPCOM} || true ; \
