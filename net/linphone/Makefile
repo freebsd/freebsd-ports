@@ -7,7 +7,6 @@
 
 PORTNAME=	${LINPHONE_PORTNAME}
 PORTVERSION=	${LINPHONE_PORTVERSION}
-PORTREVISION=	2
 PORTREVISION=	${LINPHONE_PORTREVISION}
 PORTEPOCH=	${LINPHONE_PORTEPOCH}
 CATEGORIES=	net gnome
@@ -16,7 +15,7 @@ MASTER_SITES=	${LINPHONE_MASTER_SITES}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web phone that supports SIP protocol
 
-LIB_DEPENDS=	linphone.1:${PORTSDIR}/net/linphone-base
+LIB_DEPENDS=	linphone.2:${PORTSDIR}/net/linphone-base
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomepanel

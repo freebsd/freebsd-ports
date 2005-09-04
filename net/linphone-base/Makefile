@@ -7,7 +7,6 @@
 
 PORTNAME=	${LINPHONE_PORTNAME}
 PORTVERSION=	${LINPHONE_PORTVERSION}
-PORTREVISION=	1
 PORTREVISION=	${LINPHONE_PORTREVISION}
 PORTEPOCH=	${LINPHONE_PORTEPOCH}
 CATEGORIES=	net
@@ -24,12 +23,14 @@ LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm \
 		osip2.3:${PORTSDIR}/net/libosip2
 
 USE_GNOME=	glib20 gnomehack gnometarget intlhack pkgconfig
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	15
 LIBTOOLFILES=	configure oRTP/configure
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--disable-ipv6 --disable-gtk-doc --enable-gnome_ui=no \
+		--disable-ewarning --without-ilbc \
 		--with-speex=${LOCALBASE} --with-osip=${LOCALBASE} \
 		--with-html-dir=${DOCSDIR}
 INSTALLS_SHLIB=	yes
@@ -42,6 +43,9 @@ CFLAGS+=	-DPACKAGE_LOCALE_DIR='\"${PREFIX}/share/locale\"' \
 
 .include "Makefile.common"
 .include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|docs||g' ${WRKSRC}/oRTP/Makefile.in
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/share/C/linphonec.1 ${MANPREFIX}/man/man1
