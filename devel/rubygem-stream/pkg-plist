@@ -1,0 +1,144 @@
+%%CACHE_DIR%%/stream-%%PORTVERSION%%.gem
+%%SPEC_DIR%%/stream-%%PORTVERSION%%.gemspec
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Array.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Array.src/M000002.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Enumerable.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Enumerable.src/M000086.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Generator.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Generator.src/M000001.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000003.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000004.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000005.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000006.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000007.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000008.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000009.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000010.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000011.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000012.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000013.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000014.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000015.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000016.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000017.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000018.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000019.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000020.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000021.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000022.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000023.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000024.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000025.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000026.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000027.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src/M000028.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/BasicStream.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/CollectionStream.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/CollectionStream.src/M000072.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/CollectionStream.src/M000073.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/CollectionStream.src/M000074.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/CollectionStream.src/M000075.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/CollectionStream.src/M000076.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/CollectionStream.src/M000077.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/CollectionStream.src/M000078.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ConcatenatedStream.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ConcatenatedStream.src/M000040.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ConcatenatedStream.src/M000041.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ConcatenatedStream.src/M000042.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ConcatenatedStream.src/M000043.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ConcatenatedStream.src/M000044.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ConcatenatedStream.src/M000045.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ConcatenatedStream.src/M000046.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/EmptyStream.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/EmptyStream.src/M000070.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/EmptyStream.src/M000071.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/EndOfStreamException.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/FilteredStream.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/FilteredStream.src/M000032.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/FilteredStream.src/M000033.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/FilteredStream.src/M000034.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/FilteredStream.src/M000035.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/FilteredStream.src/M000036.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/FilteredStream.src/M000037.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/FilteredStream.src/M000038.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/FilteredStream.src/M000039.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ImplicitStream.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ImplicitStream.src/M000079.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ImplicitStream.src/M000080.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ImplicitStream.src/M000081.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ImplicitStream.src/M000082.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ImplicitStream.src/M000083.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ImplicitStream.src/M000084.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ImplicitStream.src/M000085.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/IntervalStream.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/IntervalStream.src/M000055.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/IntervalStream.src/M000056.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/IntervalStream.src/M000057.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/IntervalStream.src/M000058.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/IntervalStream.src/M000059.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/IntervalStream.src/M000060.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/IntervalStream.src/M000061.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/IntervalStream.src/M000062.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/MappedStream.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/MappedStream.src/M000029.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/MappedStream.src/M000030.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/MappedStream.src/M000031.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ReversedStream.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ReversedStream.src/M000063.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ReversedStream.src/M000064.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ReversedStream.src/M000065.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ReversedStream.src/M000066.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ReversedStream.src/M000067.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ReversedStream.src/M000068.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ReversedStream.src/M000069.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/WrappedStream.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/WrappedStream.src/M000047.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/WrappedStream.src/M000048.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/WrappedStream.src/M000049.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/WrappedStream.src/M000050.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/WrappedStream.src/M000051.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/WrappedStream.src/M000052.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/WrappedStream.src/M000053.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/WrappedStream.src/M000054.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/created.rid
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/files/lib/generator2stream_rb.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/files/lib/stream_rb.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/fr_class_index.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/fr_file_index.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/fr_method_index.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/index.html
+%%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/rdoc-style.css
+%%GEMS_DIR%%/stream-%%PORTVERSION%%/README
+%%GEMS_DIR%%/stream-%%PORTVERSION%%/Rakefile
+%%GEMS_DIR%%/stream-%%PORTVERSION%%/examples/examples.rb
+%%GEMS_DIR%%/stream-%%PORTVERSION%%/examples/streamtester.rb
+%%GEMS_DIR%%/stream-%%PORTVERSION%%/install.rb
+%%GEMS_DIR%%/stream-%%PORTVERSION%%/lib/generator2stream.rb
+%%GEMS_DIR%%/stream-%%PORTVERSION%%/lib/stream.rb
+%%GEMS_DIR%%/stream-%%PORTVERSION%%/test/bm.rb
+%%GEMS_DIR%%/stream-%%PORTVERSION%%/test/testgenerator.rb
+%%GEMS_DIR%%/stream-%%PORTVERSION%%/test/teststream.rb
+@dirrm %%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/files/lib
+@dirrm %%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/files
+@dirrm %%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/WrappedStream.src
+@dirrm %%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ReversedStream.src
+@dirrm %%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/MappedStream.src
+@dirrm %%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/IntervalStream.src
+@dirrm %%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ImplicitStream.src
+@dirrm %%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/FilteredStream.src
+@dirrm %%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/EmptyStream.src
+@dirrm %%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/ConcatenatedStream.src
+@dirrm %%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream/CollectionStream.src
+@dirrm %%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream.src
+@dirrm %%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Stream
+@dirrm %%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Generator.src
+@dirrm %%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Enumerable.src
+@dirrm %%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes/Array.src
+@dirrm %%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc/classes
+@dirrm %%DOC_DIR%%/stream-%%PORTVERSION%%/rdoc
+@dirrm %%DOC_DIR%%/stream-%%PORTVERSION%%
+@dirrm %%GEMS_DIR%%/stream-%%PORTVERSION%%/test
+@dirrm %%GEMS_DIR%%/stream-%%PORTVERSION%%/lib
+@dirrm %%GEMS_DIR%%/stream-%%PORTVERSION%%/examples
+@dirrm %%GEMS_DIR%%/stream-%%PORTVERSION%%
