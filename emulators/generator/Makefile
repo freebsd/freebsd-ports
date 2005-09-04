@@ -53,28 +53,15 @@ post-patch:
 .endif
 .endif
 
-# Generator needs GCC 2.95.x or GCC >= 3.4.2 to work properly.
 # Generator does not automatically determine the GCC version.
 
-.if ${OSVERSION} < 400012
-# GCC < 2.95 is in the base system.
-USE_GCC=		2.95
-.endif
-
-.if ${OSVERSION} >= 500035 && ${OSVERSION} < 502126
-# GCC > 2.95 (3.X) && GCC < 3.4.2 is in the base system.
-USE_GCC=		3.4
-.endif
-
-.if ${OSVERSION} < 500035
+.if defined(WITH_OPTIMIZED_CFLAGS)
+.	if ${OSVERSION} < 500035
 CONFIGURE_ARGS+=	--with-gcc=2
-.endif
-
-.if ${OSVERSION} >= 500035
+.	elif ${OSVERSION} >= 500035
 CONFIGURE_ARGS+=	--with-gcc=3
-.endif
-
-.if defined(WITHOUT_OPTIMIZED_CFLAGS)
+.	endif
+.else
 CONFIGURE_ARGS+=	--without-gcc
 .endif
 
