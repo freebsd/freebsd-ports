@@ -11520,6 +11520,7 @@ suckblow	ports/net/suckblow
 sudo		ports/security/sudo
 sudoscript	ports/security/sudoscript
 sudosh		ports/security/sudosh
+sudsol		ports/games/sudsol
 sugarcrm	ports/deskutils/sugarcrm
 sulci		ports/net/sulci
 sun-wtk		ports/java/sun-wtk
