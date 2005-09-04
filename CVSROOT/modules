@@ -2450,6 +2450,7 @@ freefem++	ports/math/freefem++
 freefonts	ports/x11-fonts/freefonts
 freeglut	ports/x11-toolkits/freeglut
 freegrep	ports/textproc/freegrep
+freeimage	ports/graphics/freeimage
 freeipmi	ports/sysutils/freeipmi
 freelibiberty	ports/devel/freelibiberty
 freemat		ports/math/freemat
