@@ -337,6 +337,7 @@
     SUBDIR += mesa-demos
     SUBDIR += mesagl
     SUBDIR += meshviewer
+    SUBDIR += metacam
     SUBDIR += metapixel
     SUBDIR += mgp-gallery
     SUBDIR += ming
