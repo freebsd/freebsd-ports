@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asymptote
-PORTVERSION=	0.83
+PORTVERSION=	0.86
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,9 +26,10 @@ BUILD_DEPENDS=	${DISTDIR}/${GC_DISTNAME}:${PORTSDIR}/devel/boehm-gc:fetch \
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
-# boehm-gc
+# devel/boehm-gc
 ONLY_FOR_ARCHS=	i386
 
+USE_GCC=	3.3+
 USE_GHOSTSCRIPT=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
@@ -61,11 +62,7 @@ GC_DISTNAME=	gc${GCVERSION}.tar.gz
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-# require exact version of gcc on 4.X
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
-USE_GCC=	3.3
-.else
-USE_GCC=	3.3+
 .endif
 
 pre-configure:
