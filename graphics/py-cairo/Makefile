@@ -12,7 +12,7 @@ MASTER_SITES=	http://cairographics.org/snapshots/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python bindings for Cairo
 
 BUILD_DEPENDS=	${PYNUMERIC}
