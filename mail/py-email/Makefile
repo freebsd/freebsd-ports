@@ -5,25 +5,30 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mimelib
-PORTVERSION=	2.5
+PORTNAME=	email
+PORTVERSION=	3.0
 CATEGORIES=	mail python
-MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=     mimelib
-PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
-DISTNAME=       email-${PORTVERSION}
+MASTER_SITES=	ftp://ftp.python.org/pub/python/contrib/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	email-${PORTVERSION}
 
 MAINTAINER=	estartu@augusta.de
-COMMENT=	Email package for Python
+COMMENT=	Email package for Python 2.3 or upper
 
 DIST_SUBDIR=	python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+CONFLICTS=	py*-mimelib-2.* py*-email-2.*
+
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} >= 220
-IGNORE=		is part of the Python base distribution since python 2.2
+.if ${PYTHON_REL} >= 240
+IGNORE=		Python 2.4 or upper don't need this port
+.else
+.if ${PYTHON_REL} < 230
+IGNORE=		For your Python version use ${PORTSDIR}/mail/${PORTNAME}2
+.endif
 .endif
 
 .include <bsd.port.post.mk>

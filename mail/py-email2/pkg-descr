@@ -3,4 +3,4 @@ mimetools, multifile, MIMEWriter, etc. It intends to be the be-all end-all
 package for parsing, manipulating, and generating MIME and rfc822 style 
 messages in Python.
 
-WWW: http://sourceforge.net/projects/mimelib/
+WWW: http://www.python.org/sigs/email-sig/
