@@ -11,6 +11,8 @@ POST-INSTALL)
 	HOME_DIR=/nonexistent
 	LOGDIR=/var/log/pvpgn
 	PIDDIR=/var/run/pvpgn
+	PKGNAME=$1
+	PVPGN_CONFDIR=${PKG_PREFIX:-/usr/local}/etc/pvpgn
 
 	if pw group show "${GROUP}" 2>/dev/null; then
 		echo "You already have a group \"${GROUP}\", so I will use it."
@@ -53,6 +55,15 @@ POST-INSTALL)
 	chown -R ${USER}:${GROUP} %%PVPGN_DIR%%
 	mkdir -m 750 ${LOGDIR} ${PIDDIR} 2> /dev/null
 	chown -R ${USER}:${GROUP} ${LOGDIR} ${PIDDIR}
+
+	echo "===> Post-installation informations for ${PKGNAME}"
+   echo ""
+   echo "     o You can find the configuration files for this"
+	echo "       package in the directory ${PVPGN_CONFDIR}."
+	echo "       Please note, that the files were installed as *.conf-sample"
+	echo "       In order to run server, you must rename them."
+	echo ""
+
 	exit 0
 	;;
 esac

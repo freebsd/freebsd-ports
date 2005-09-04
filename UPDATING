@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050904:
+  AFFECTS: users of games/pvpgn
+  AUTHOR: mek@mek.uz.ua
+
+  sql_DB_layout.conf-sample: includes changes needed for the new "username" SQL
+  field; if you update to 1.7.8 YOU MUST update this file too if you have your
+  accounts on SQL
+
+  bnetd.conf-sample: changed "servaddrs" directive to not be totally commented
+  and be as ":" by default in bnetd.conf (if "servaddrs" is commented this
+  means "bnetd" will not listen for b.net services at all)
+
 20050902:
   AFFECTS: users of www/jakarta-tomcat55
   AUTHOR: hq@FreeBSD.org

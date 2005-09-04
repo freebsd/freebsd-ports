@@ -31,9 +31,9 @@ etc/pvpgn/bnxpcalc.conf-sample
 etc/pvpgn/bnxplevel.conf-sample
 etc/pvpgn/channel.conf-sample
 etc/pvpgn/command_groups.conf-sample
-etc/pvpgn/d2cs.conf-sample
-etc/pvpgn/d2dbs.conf-sample
-etc/pvpgn/d2server.ini-sample
+%%WITH_D2%%etc/pvpgn/d2cs.conf-sample
+%%WITH_D2%%etc/pvpgn/d2dbs.conf-sample
+%%WITH_D2%%etc/pvpgn/d2server.ini-sample
 etc/pvpgn/news.txt-sample
 etc/pvpgn/realm.conf-sample
 etc/pvpgn/sql_DB_layout.conf-sample
@@ -44,8 +44,8 @@ etc/pvpgn/versioncheck.conf-sample
 etc/rc.d/bnetd%%RC_SUFX%%
 sbin/bnetd
 sbin/bntrackd
-sbin/d2cs
-sbin/d2dbs
+%%WITH_D2%%sbin/d2cs
+%%WITH_D2%%sbin/d2dbs
 %%DATADIR%%/files/IX86ver1.mpq
 %%DATADIR%%/files/PMACver1.mpq
 %%DATADIR%%/files/WAR3IX86.mpq
