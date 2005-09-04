@@ -222,6 +222,7 @@
     SUBDIR += imlib2
     SUBDIR += imlib2_loaders
     SUBDIR += inkscape
+    SUBDIR += intergif
     SUBDIR += inventor
     SUBDIR += ipe
     SUBDIR += irit
