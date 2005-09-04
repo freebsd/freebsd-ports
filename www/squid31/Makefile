@@ -66,7 +66,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -86,7 +86,24 @@ PATCHFILES=	squid-2.5.STABLE10-content_length.patch \
 		squid-2.5.STABLE10-transparent-2.patch \
 		squid-2.5.STABLE10-redirect_flags.patch \
 		squid-2.5.STABLE10-cache_dir_change.patch \
-		squid-2.5.STABLE10-snmp_getnext.patch
+		squid-2.5.STABLE10-snmp_getnext.patch \
+		squid-2.5.STABLE10-ftp_title-2.patch \
+		squid-2.5.STABLE10-ftp_basehref.patch \
+		squid-2.5.STABLE10-wbinfo_groups.patch \
+		squid-2.5.STABLE10-64bit_cleanup.patch \
+		squid-2.5.STABLE10-wb_ntlm_auth_silent.patch \
+		squid-2.5.STABLE10-mail_program.patch \
+		squid-2.5.STABLE10-sslConnectTimeout.patch \
+		squid-2.5.STABLE10-statHistAssert.patch \
+		squid-2.5.STABLE10-chroot_dir.patch \
+		squid-2.5.STABLE10-errmsg.patch \
+		squid-2.5.STABLE10-FORTIFY_SOURCE.patch \
+		squid-2.5.STABLE10-ftp_250.patch \
+		squid-2.5.STABLE10-Greek.patch \
+		squid-2.5.STABLE10-STORE_PENDING.patch \
+		squid-2.5.STABLE10-ldap_auth-U.patch \
+		squid-2.5.STABLE10-cacheClientTable.patch \
+		squid-2.5.STABLE10-mail_from.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -327,7 +344,7 @@ rc_state=	rcold
 
 SQUID_LANGUAGES?=	\
 	Bulgarian Catalan Czech Danish Dutch English Estonian Finnish      \
-	French German Hebrew Hungarian Italian Japanese Korean Lithuanian  \
+	French German Greek Hebrew Hungarian Italian Japanese Korean Lithuanian \
 	Polish Portuguese Romanian Russian-1251 Russian-koi8-r Serbian     \
 	Simplify_Chinese Slovak Spanish Swedish Traditional_Chinese Turkish
 SQUID_DEFAULT_LANG?=	English
