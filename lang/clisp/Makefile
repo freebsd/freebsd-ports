@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	clisp
-PORTVERSION=	2.33.2
-PORTREVISION=	1
+PORTVERSION=	2.35
 CATEGORIES=	lang lisp
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=${PORTNAME}/release/${PORTVERSION}
 
 MAINTAINER=	jakub@rehor.net
-COMMENT=	An ANSI Common Lisp
+COMMENT=	A Common Lisp implementation
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libsigsegv.a:${PORTSDIR}/devel/libsigsegv
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
@@ -23,18 +24,12 @@ USE_GETTEXT=	yes
 # Build subdirectory
 BUILD_DIRNAME=${CONFIGURE_TARGET}
 
-# Check ./configure --help in the distribution to see all modules
-MAKEMAKE_ARGS=--prefix=${PREFIX} --with-readline --with-gettext \
-	--with-dynamic-ffi --with-module=regexp --with-export-syscalls
+# Check ./configure --list-modules in the distribution to see all modules
+MAKEMAKE_ARGS=--prefix=${PREFIX} --mandir=${PREFIX}/man --with-dynamic-ffi \
+	--with-module=rawsock --with-module=wildcard \
+	--with-module=clx/new-clx --srcdir=${WRKSRC}/src
 
 .include <bsd.port.pre.mk>
-
-# Does not compile on 64-bit architectures
-# See http://sourceforge.net/mailarchive/message.php?msg_id=7103089
-# for discussion.
-.if ${ARCH} == "alpha" || ${ARCH} == "ia64" || ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on 64-bit architectures"
-.endif
 
 # The source doesn't include a top-level Makefile, so we'll fake one.
 post-extract:
