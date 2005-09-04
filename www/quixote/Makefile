@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	quixote
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	www python
 MASTER_SITES=	http://www.mems-exchange.org/software/files/quixote/ \
 		http://bsdchat.com/dist/dryice/
