@@ -9,6 +9,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-400.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-500.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-500.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-addon-modules.el
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-addon-modules.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-addon.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-addon.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-alias.el
@@ -41,6 +43,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-doctor.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-emacs.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-emacs.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-eval-ruby.el
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-eval-ruby.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-eval.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-eval.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-filter.el
@@ -97,8 +101,12 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-options.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-rdcc.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-rdcc.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-ruby.el
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-ruby.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-server.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-server.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-shrink-buffer.el
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-shrink-buffer.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-signal.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-signal.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-skk-kakutei.el
@@ -119,7 +127,18 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-yank.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/aproxy.rb
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/server.rb
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-command-next-channel.xpm
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-command-previous-channel.xpm
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-submit-bug-report.xpm
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/riece
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.ja
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.ja
+%%PORTDOCS%%%%DOCSDIR%%/HACKING
+%%PORTDOCS%%%%DOCSDIR%%/HACKING.ja
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

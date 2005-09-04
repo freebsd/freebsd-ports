@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	riece
-PORTVERSION=	1.0.8
+PORTVERSION=	2.0.0
 PORTEPOCH=	1
 CATEGORIES=	irc elisp
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
@@ -20,10 +20,18 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
 		--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
 USE_GMAKE=	yes
+USE_RUBY=	yes
+RUBY_VER=	1.8
 
 INFO=	riece-en riece-ja
 
 post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for f in AUTHORS ChangeLog NEWS NEWS.ja README README.ja doc/HACKING doc/HACKING.ja
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
