@@ -1,7 +1,15 @@
 
 ===========================================================
 
-If you are upgrading from an older version of eventum, please 
-check upgrade scripts located at %%PREFIX%%/%%EVENTUM%%/misc/upgrade
+* To set up eventum, copy these files inside
+  %%PREFIX%%/%%EVENTUM%%:
+	setup.conf.php-dist -> setup.conf.php
+	config.inc.php-dist -> config.inc.php
+
+* If you are upgrading from an older version of eventum, please 
+  check upgrade scripts located at %%PREFIX%%/%%EVENTUM%%/misc/upgrade
+
+* You may need to change memory_limit in php.ini file if the images
+  are not displayed correctly
 
 ===========================================================
