@@ -18,29 +18,36 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	DOOM III demo
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
-
 ONLY_FOR_ARCHS=	i386
-PREFIX?=	${X11BASE}	# USE_X_PREFIX would pull in USE_XLIB
+USE_X_PREFIX=	yes
 USE_LINUX=	yes
 NO_PACKAGE=	Distfile is 462MB, set FORCE_PACKAGE if you really want to build this package
 RESTRICTED=	Redistribution is limited, see license
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 DOOMDIR=	${PREFIX}/lib/${PORTNAME}
-STRIP=		# do not brand Linux binaries as FreeBSD on INSTALL_PROGRAM
+
+SUB_FILES=	doom3-demo
+SUB_LIST=	DOOMDIR="${DOOMDIR}"
+
+.include <bsd.port.pre.mk>
+
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
+.if defined(WITH_NVIDIA_GL)
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+.else
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
+.endif
+.else
+RUN_DEPENDS+=	${LINUXBASE}/lib/libGL.so.1:${PORTSDIR}/graphics/linux_glx
+.endif
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@cd ${WRKSRC} && ${TAIL} -c +8767 ${_DISTDIR}/${DISTFILES} | ${TAR} zxf -
 
-post-patch:
-	@${SED} -e 's|@DOOMDIR@|${DOOMDIR}|' ${FILESDIR}/doom3-demo.in \
-		> ${WRKSRC}/doom3-demo
-
 do-install:
-	${MKDIR} ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/doom3-demo ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/doom3-demo ${PREFIX}/bin
 
 	${MKDIR} ${DOOMDIR}/demo
 	${INSTALL_DATA} ${WRKSRC}/demo/demo00.pk4 ${DOOMDIR}/demo
@@ -59,4 +66,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
