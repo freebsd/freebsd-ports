@@ -1,0 +1,22 @@
+--- Makefile.orig	Sat Aug 21 19:56:53 2004
++++ Makefile	Fri Sep  2 12:14:20 2005
+@@ -27,10 +27,8 @@
+ # -- Cygwin under Windows 2000
+ #OSCXXFLAGS=
+ 
+-CXX=g++
+ INCLUDES=
+ 
+-CXXFLAGS=-Wall $(OSCXXFLAGS) -D_GNU_SOURCE -O2 $(INCLUDES)
+ 
+ LIBOBJS=rationals.o exiftags.o \
+      nikontags.o olympustags.o canontags.o casiotags.o dpyfuncs.o \
+@@ -65,7 +63,7 @@
+ 	mv -f libmetacam.a- libmetacam.a
+ 
+ metacam:	$(EXEOBJS) libmetacam.a
+-	$(CXX) $(CXXFLAGS) $(EXEOBJS) -o metacam -lm -L. -lmetacam
++	$(CXX) $(CXXFLAGS) $(EXEOBJS) -o metacam -lm -L. -lmetacam $(LDFLAGS)
+ 
+ # Dependency rules
+ dependencies:	Makefile $(DEPS)
