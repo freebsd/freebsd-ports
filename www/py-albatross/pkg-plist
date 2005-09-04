@@ -54,23 +54,7 @@ bin/al-httpd
 @dirrm %%PYTHON_SITELIBDIR%%/albatross
 %%PORTDOCS%%%%DOCSDIR%%/.cvsignore
 %%PORTDOCS%%%%DOCSDIR%%/AlbatrossObjects.dia
-%%PORTDOCS%%%%DOCSDIR%%/AppContext-methods.tex
-%%PORTDOCS%%%%DOCSDIR%%/Application-methods.tex
-%%PORTDOCS%%%%DOCSDIR%%/BranchingSessionContext-methods.tex
 %%PORTDOCS%%%%DOCSDIR%%/Makefile
-%%PORTDOCS%%%%DOCSDIR%%/ModularApp-methods.tex
-%%PORTDOCS%%%%DOCSDIR%%/ModularSessionApp-methods.tex
-%%PORTDOCS%%%%DOCSDIR%%/ModularSessionFileApp-methods.tex
-%%PORTDOCS%%%%DOCSDIR%%/RandomModularApp-methods.tex
-%%PORTDOCS%%%%DOCSDIR%%/RandomModularSessionApp-methods.tex
-%%PORTDOCS%%%%DOCSDIR%%/RandomModularSessionFileApp-methods.tex
-%%PORTDOCS%%%%DOCSDIR%%/SessionAppContext-methods.tex
-%%PORTDOCS%%%%DOCSDIR%%/SessionFileAppContext-methods.tex
-%%PORTDOCS%%%%DOCSDIR%%/SimpleApp-methods.tex
-%%PORTDOCS%%%%DOCSDIR%%/SimpleAppContext-methods.tex
-%%PORTDOCS%%%%DOCSDIR%%/SimpleContext-methods.tex
-%%PORTDOCS%%%%DOCSDIR%%/SimpleSessionApp-methods.tex
-%%PORTDOCS%%%%DOCSDIR%%/SimpleSessionFileApp-methods.tex
 %%PORTDOCS%%%%DOCSDIR%%/albatross.tex
 %%PORTDOCS%%%%DOCSDIR%%/albmvc.dia
 %%PORTDOCS%%%%DOCSDIR%%/appcontext.dia
@@ -379,6 +363,13 @@ bin/al-httpd
 %%PORTDOCS%%%%DOCSDIR%%/html/rel-1.30-simplecookie.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rel-1.30-tbcycle.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rel-1.30.html
+%%PORTDOCS%%%%DOCSDIR%%/html/rel-1.31-bug.html
+%%PORTDOCS%%%%DOCSDIR%%/html/rel-1.31-randompage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/rel-1.31.html
+%%PORTDOCS%%%%DOCSDIR%%/html/rel-1.32.html
+%%PORTDOCS%%%%DOCSDIR%%/html/rel-1.32-bug.html
+%%PORTDOCS%%%%DOCSDIR%%/html/rel-1.32-bug-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/html/rel-1.32-start-page.html
 %%PORTDOCS%%%%DOCSDIR%%/html/simple-2.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/simple-3.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/simple-4.txt
