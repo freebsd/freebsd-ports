@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sdcc
-PORTVERSION=	2.5.1.2005.07.09
+PORTVERSION=	2.5.2.2005.09.03
 CATEGORIES=	lang
 MASTER_SITES=	http://sdcc.sourceforge.net/snapshots/sdcc-src/ \
 		http://www.kalimero.be/mirror/
-DISTNAME=	${PORTNAME}-src-20050709
+DISTNAME=	${PORTNAME}-src-20050903
 
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	Small Device C Compiler
@@ -68,7 +68,6 @@ CONFIGURE_ARGS+=	--disable-pic16-port
 PLIST_SUB+=		PIC16="@comment "
 .else
 BUILD_DEPENDS+=		gpasm:${PORTSDIR}/devel/gputils
-USE_AUTOCONF_VER=	259
 PLIST_SUB+=		PIC16=""
 .endif
 

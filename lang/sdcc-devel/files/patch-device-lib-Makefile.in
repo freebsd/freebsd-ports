@@ -1,26 +1,15 @@
---- device/lib/Makefile.in.orig	Sat Mar 19 19:47:47 2005
-+++ device/lib/Makefile.in	Fri Apr  8 16:44:43 2005
-@@ -167,7 +167,7 @@
- 
- # Compiling entire program or any subproject
- # ------------------------------------------
--all: checkconf models model-ds390 model-ds400 model-z80 model-gbz80 model-hc08
-+all: checkconf models model-ds390 model-ds400 model-z80 model-gbz80 model-hc08 model-pic16
- 
- # model-pic16
- # (needs gputils curently not available of sourceforge's compile farm)
-@@ -272,9 +272,7 @@
- # Compiling and installing everything and runing test
+--- device/lib/Makefile.in.orig	Sat Sep  3 21:35:14 2005
++++ device/lib/Makefile.in	Sat Sep  3 21:35:45 2005
+@@ -280,8 +280,6 @@
  # ---------------------------------------------------
  install: all installdirs
--	cp -r -u $(BUILDDIR)/* $(sdcc_libdir)
--	cp -r -u ds390 ds400 gbz80 z80 hc08 *.c $(sdcc_libdir)/src
--	rm -r `find $(sdcc_libdir)/src -name '*.rel' -or -name '*.dump*' -or -name '*.sym' -or -name '*.o' -or -name '*.lst' -or -name '*.asm' -or -name 'CVS'`
-+	-cp -r $(BUILDDIR)/* $(sdcc_libdir)
+ 	$(CP_U) -r $(BUILDDIR)/* $(sdcc_libdir)
+-	$(CP_U) -r ds390 ds400 gbz80 z80 hc08 *.c $(sdcc_libdir)/src
+-	rm -r `find $(sdcc_libdir)/src -name '*.rel' -o -name '*.dump*' -o -name '*.sym' -o -name '*.o' -o -name '*.lst' -o -name '*.asm' -o -name 'CVS'`
  
  # Deleting all the installed files
  # --------------------------------
-@@ -295,15 +293,6 @@
+@@ -302,15 +300,6 @@
  # ---------------------------------
  installdirs:
  	[ -d $(sdcc_libdir) ] || mkdir -p $(sdcc_libdir)

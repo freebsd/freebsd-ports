@@ -1,0 +1,11 @@
+--- device/lib/pic16/Makefile.rules.orig	Sat Sep  3 20:19:06 2005
++++ device/lib/pic16/Makefile.rules	Sat Sep  3 20:19:50 2005
+@@ -48,7 +48,7 @@
+ ifneq (,$(strip $(SUBDIRS)))
+ recurse : force
+ 	$(Q)+for DIR in $(SUBDIRS) ; do \
+-		$(GREP) "^$${ARCH}$$" "$${DIR}.ignore" &> /dev/null || ( \
++		$(GREP) "^$${PICARCH}$$" "$${DIR}.ignore" 2>&1 > /dev/null || ( \
+ 			[ -d "$(topsrcdir)/$(builddir)/$${DIR}" ] || $(MKDIR) "$(topsrcdir)/$(builddir)/$${DIR}"; \
+ 			$(MAKE) -C "$${DIR}" builddir="$(builddir)/$${DIR}" $(MAKECMDGOALS); \
+ 		) || exit 1; \

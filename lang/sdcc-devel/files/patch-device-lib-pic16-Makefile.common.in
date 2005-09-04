@@ -1,0 +1,32 @@
+--- device/lib/pic16/Makefile.common.in.orig	Sat Aug 20 12:27:03 2005
++++ device/lib/pic16/Makefile.common.in	Sat Sep  3 20:21:43 2005
+@@ -16,7 +16,6 @@
+ ### $Id: Makefile.common.in,v 1.10 2005/08/20 10:27:03 sdcc-builder Exp $
+ ###
+ 
+-SHELL = bash
+ 
+ #################################################
+ ### verboseness
+@@ -27,10 +26,10 @@
+ 
+ #################################################
+ ### compiler switches
+-ARCH   ?= 452		# might be overwritten in libio
++PICARCH   ?= 452		# might be overwritten in libio
+ 
+ CFLAGS ?=
+-CFLAGS += -mpic16 -p18f$(ARCH)
++CFLAGS += -mpic16 -p18f$(PICARCH)
+ CFLAGS += --std-c99
+ CFLAGS += -I. -I$(topsrcdir)/../../include/pic16
+ 
+@@ -63,7 +62,7 @@
+ #################################################
+ ### assembler switches
+ ASFLAGS ?=
+-ASFLAGS += -pp18f$(ARCH)
++ASFLAGS += -pp18f$(PICARCH)
+ ASFLAGS += -I$(topsrcdir)/../../include/pic16
+ 
+ #################################################
