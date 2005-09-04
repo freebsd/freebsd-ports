@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eventum
-PORTVERSION=	1.5.5
+PORTVERSION=	1.6.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	eventum
@@ -35,8 +35,6 @@ pre-install:
 
 do-install:
 	@${MKDIR} ${PREFIX}/${EVENTUM}
-	@${CP} ${WRKSRC}/setup.conf.php-dist ${WRKSRC}/setup.conf.php
-	@${CP} ${WRKSRC}/config.inc.php-dist ${WRKSRC}/config.inc.php
 	@${CP} -R ${WRKSRC}/ ${PREFIX}/${EVENTUM}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${EVENTUM}
 	@${CHMOD} -R 755 ${PREFIX}/${EVENTUM}
