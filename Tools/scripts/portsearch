@@ -43,9 +43,12 @@ use vars qw/ $key @list %fields %list %opts /;
 # Global variables
 #
 
+my $osrel = `/usr/bin/uname -r`;
+$osrel =~ s/\..+$//s;
+
 my $VERSION = "1.0";
-my $file  = "/usr/ports/INDEX";
-my $match  = 1;
+my $file = "/usr/ports/INDEX" . ($osrel <= 4 ? "" : "-$osrel");
+my $match = 1;
 my $count = 0;
 
 # We only need 7 of the 10 fields in a record; define which ones in a
