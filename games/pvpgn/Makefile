@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pvpgn
-PORTVERSION=	1.7.7
+PORTVERSION=	1.7.8
 CATEGORIES=	games
 MASTER_SITES=	http://download.berlios.de/pvpgn/
 DISTFILES=	${EXTRACT_ONLY} pvpgn-support-1.0.tar.gz
@@ -43,7 +43,8 @@ MAN5=		bnetd.conf.5 bntext.5
 
 OPTIONS=	MYSQL "Include MySQL user accounts support" off \
 		PGSQL "Include PostgreSQL user accounts support" off \
-		SQLITE3 "Include SQLite3 user accounts support" off
+		SQLITE3 "Include SQLite3 user accounts support" off \
+		D2 "Enable Diablo II server (D2CS/D2DBS)" on
 
 .include <bsd.port.pre.mk>
 
@@ -60,6 +61,13 @@ CONFIGURE_ARGS+=--with-pgsql
 .if defined(WITH_SQLITE3)
 CONFIGURE_ARGS+=--with-sqlite3
 LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+.endif
+
+.if defined(WITHOUT_D2)
+CONFIGURE_ARGS+=	--disable-d2cs --disable-d2dbs
+PLIST_SUB+=	WITH_D2="@comment "
+.else
+PLIST_SUB+=	WITH_D2=""
 .endif
 
 ## support files
