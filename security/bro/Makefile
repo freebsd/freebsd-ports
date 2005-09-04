@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-pub-${PORTVERSION}a37
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System for detecting Network Intruders in real-time
 
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison175
+BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-pub-${PORTVERSION}a37
 
