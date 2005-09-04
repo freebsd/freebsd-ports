@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bruteforceblocker
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	security
 MASTER_SITES=	http://danger.rulez.sk/projects/bruteforceblocker/ \
 		${MASTER_SITE_LOCAL}
@@ -15,11 +15,8 @@ MASTER_SITE_SUBDIR=	pav
 MAINTAINER=	danger@rulez.sk
 COMMENT=	Checks for failed login attempts and blocks given IPs
 
-RUN_DEPENDS=	${SITE_PERL}/File/Tail.pm:${PORTSDIR}/devel/p5-File-Tail
-
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
-USE_RC_SUBR=	${PORTNAME}.sh
 
 WRKSRC=		${WRKDIR}
 PLIST_FILES=	bin/${PORTNAME}.pl
