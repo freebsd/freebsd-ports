@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	narray_miss
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	math ruby
 MASTER_SITES=	http://ruby.gfd-dennou.org/products/narray_miss/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
