@@ -9928,6 +9928,8 @@ py-docutils	ports/textproc/py-docutils
 py-dosage	ports/deskutils/py-dosage
 py-dsv		ports/textproc/py-dsv
 py-elementtree	ports/devel/py-elementtree
+py-email	ports/mail/py-email
+py-email2	ports/mail/py-email2
 py-empy		ports/textproc/py-empy
 py-excelerator	ports/textproc/py-excelerator
 py-exif		ports/graphics/py-exif
@@ -10014,7 +10016,6 @@ py-memcached	ports/databases/py-memcached
 py-metar	ports/astro/py-metar
 py-mhash	ports/security/py-mhash
 py-milter	ports/mail/py-milter
-py-mimelib	ports/mail/py-mimelib
 py-ming		ports/graphics/py-ming
 py-mp-random	ports/net/py-mp-random
 py-mpz		ports/math/py-mpz
