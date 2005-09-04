@@ -9,15 +9,21 @@ PORTNAME=	webalizer
 PORTVERSION=	2.1.10
 PORTREVISION=	5
 CATEGORIES+=	www
-MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/ \
-		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
+MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/:main \
+		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/:main \
+		http://sysd.org/proj/:geo
+PKGNAMESUFFIX?=	${WEBALIZER_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	${PORTNAME}-2.01-10-src
+DISTFILES=	${DISTNAME}.tar.bz2:main
 
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT=	A web server log file analysis program
 
 .if !defined(LIB_DEPENDS)
 LIB_DEPENDS=	gd.4:${PORTSDIR}/${GD_PORT}
+.endif
+.if defined(WITH_GEOIP)
+LIB_DEPENDS+=	GeoIP.4:${PORTSDIR}/net/GeoIP
 .endif
 
 USE_BZIP2=	yes
@@ -27,6 +33,25 @@ EXAMPLESDIR?=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 GD_PORT?=	graphics/gd
 
 CONFLICTS=	geolizer-2*
+
+.if defined(WITH_GEOIP) || make(makesum) || defined(FETCH_ALL)
+DISTFILES+=	geolizer_2.01-10-patch.20050520.tar.bz2:geo
+.endif
+
+.if defined(WITH_GEOIP)
+WEBALIZER_SUFFIX=	-geoip
+CONFLICTS+=	${PKGNAMEPREFIX}webalizer-2*
+EXTRA_PATCHES+=	${WRKDIR}/geolizer_2.01-10-patch/geolizer.patch
+EXTRA_PATCHES+=	${FILESDIR}/output.geo.patch
+EXTRA_PATCHES+=	${FILESDIR}/linklist.geo.patch
+PATCH_STRIP=	-p1
+PLIST_SUB+=	WITH_GEOIP=""
+.else
+CONFLICTS+=	${PKGNAMEPREFIX}webalizer-geoip-2*
+EXTRA_PATCHES+=	${FILESDIR}/output.patch
+EXTRA_PATCHES+=	${FILESDIR}/linklist.patch
+PLIST_SUB+=	WITH_GEOIP="@comment "
+.endif
 
 .if defined(BATCH)
 # no cosmetique spaces allowed
@@ -45,6 +70,7 @@ MAKE_ARGS+=	CFLAGS="${CFLAGS}"
 MAN1=		${PKGNAMEPREFIX}webalizer.1
 DOC1=		CHANGES Copyright INSTALL \
 		README README.FIRST DNS.README country-codes.txt
+DOC2=		INSTALL GeoIP.README
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src$//}
 PLIST_SUB+=	PKGNAMEPREFIX=${PKGNAMEPREFIX}
 SUPP_LANG=	catalan chinese croatian czech danish dutch english \
@@ -109,6 +135,13 @@ post-install:
 .for i in msfree.png sample.conf webalizer.png
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${EXAMPLESDIR}/${i}
 .endfor
+.if defined(WITH_GEOIP)
+	${MKDIR} ${DOCSDIR}/geolizer
+.for i in ${DOC2}
+	@${INSTALL_DATA} ${WRKDIR}/geolizer_2.01-10-patch/${i} \
+		${DOCSDIR}/geolizer/${i}
+.endfor
+.endif
 .endif
 
 .include <bsd.port.post.mk>

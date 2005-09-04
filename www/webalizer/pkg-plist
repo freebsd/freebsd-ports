@@ -2,6 +2,9 @@ bin/%%PKGNAMEPREFIX%%webalizer
 @exec ln -f %B/%%PKGNAMEPREFIX%%webalizer %B/%%PKGNAMEPREFIX%%webazolver
 @unexec rm -f %B/%%PKGNAMEPREFIX%%webazolver
 etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
+%%PORTDOCS%%%%WITH_GEOIP%%%%DOCSDIR%%/geolizer/GeoIP.README
+%%PORTDOCS%%%%WITH_GEOIP%%%%DOCSDIR%%/geolizer/INSTALL
+%%PORTDOCS%%%%WITH_GEOIP%%@dirrm %%DOCSDIR%%/geolizer
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/Copyright
 %%PORTDOCS%%%%DOCSDIR%%/DNS.README
