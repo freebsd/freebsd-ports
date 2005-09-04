@@ -162,7 +162,7 @@
     SUBDIR += html2fo
     SUBDIR += html2text
     SUBDIR += htmldoc
-    SUBDIR += htmlize
+    SUBDIR += htmlise
     SUBDIR += htmlize.el
     SUBDIR += htmlsection
     SUBDIR += htmltolatex
