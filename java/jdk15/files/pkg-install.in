@@ -1,19 +1,25 @@
 #!/bin/sh
 
 # System preference location
-PREFS_LOCATION=%%JRE_HOME%%
+JRE_HOME=%%JRE_HOME%%
 
-# Set up system preferences during post install
+# Post-install actions
 if [ "$2" = "POST-INSTALL" ]; then
-	if [ ! -d "${PREFS_LOCATION}/.systemPrefs" ] ; then
-		mkdir -m 755 "${PREFS_LOCATION}/.systemPrefs"
+	# Set up system preferences
+	if [ ! -d "${JRE_HOME}/.systemPrefs" ] ; then
+		mkdir -m 755 "${JRE_HOME}/.systemPrefs"
 	fi
-	if [ ! -f "${PREFS_LOCATION}/.systemPrefs/.system.lock" ] ; then
-		touch "${PREFS_LOCATION}/.systemPrefs/.system.lock"
-		chmod 644 "${PREFS_LOCATION}/.systemPrefs/.system.lock"
+	if [ ! -f "${JRE_HOME}/.systemPrefs/.system.lock" ] ; then
+		touch "${JRE_HOME}/.systemPrefs/.system.lock"
+		chmod 644 "${JRE_HOME}/.systemPrefs/.system.lock"
 	fi
-	if [ ! -f "${PREFS_LOCATION}/.systemPrefs/.systemRootModFile" ] ; then
-		touch "${PREFS_LOCATION}/.systemPrefs/.systemRootModFile"
-		chmod 644 "${PREFS_LOCATION}/.systemPrefs/.systemRootModFile"
+	if [ ! -f "${JRE_HOME}/.systemPrefs/.systemRootModFile" ] ; then
+		touch "${JRE_HOME}/.systemPrefs/.systemRootModFile"
+		chmod 644 "${JRE_HOME}/.systemPrefs/.systemRootModFile"
+	fi
+
+	# Set up class data sharing
+	if [ -x "${JRE_HOME}/bin/java" ]; then
+		"${JRE_HOME}/bin/java" -Xshare:dump
 	fi
 fi
