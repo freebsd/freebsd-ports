@@ -84,7 +84,7 @@ diff -u -r1.4.4.1 unxfbsdi.mk
 +#LINKOUTPUT_FILTER=" |& $(SOLARENV)$/bin$/msg_filter"
 +
 +# options for C and C++ Compiler
-+CDEFS+=-DX86 -D_PTHREADS -D_REENTRANT -DNEW_SOLAR -D_USE_NAMESPACE=1 -DSTLPORT_VERSION=400 -DOSVERSION=$(OSVERSION) $(PTHREAD_CFLAGS)
++CDEFS+=-DX86 -D_PTHREADS -D_REENTRANT -DNEW_SOLAR -D_USE_NAMESPACE=1 -DSTLPORT_VERSION=450 -DOSVERSION=$(OSVERSION) $(PTHREAD_CFLAGS)
 +
 +# this is a platform with JAVA support
 +.IF "$(SOLAR_JAVA)"!=""
@@ -250,9 +250,9 @@ diff -u -r1.4.4.1 unxfbsdi.mk
 +STDSHLCUIMT=$(PTHREAD_LIBS) -lm
 +STDSHLGUIST=-lX11 -lXext -lm
 +STDSHLCUIST=-lm
-+
-+LIBSTLPORT=$(DYNAMIC) -lstlport_gcc -lstdc++
-+LIBSTLPORTST=$(STATIC) -lstlport_gcc $(DYNAMIC)
++# adding $(PTHREAD_LIBS) is just a workaround for FreeBSD 4. no side effects for othre FreeBSDs.
++LIBSTLPORT=$(DYNAMIC) -lstlport_gcc -lstdc++ $(PTHREAD_LIBS)
++LIBSTLPORTST=$(STATIC) -lstlport_gcc $(DYNAMIC) $(PTHREAD_LIBS)
 +
 +#FILLUPARC=$(STATIC) -lsupc++ $(DYNAMIC)
 +
