@@ -24,6 +24,7 @@ include/libxml2/libxml/parserInternals.h
 include/libxml2/libxml/pattern.h
 include/libxml2/libxml/relaxng.h
 include/libxml2/libxml/schemasInternals.h
+include/libxml2/libxml/schematron.h
 include/libxml2/libxml/threads.h
 include/libxml2/libxml/tree.h
 include/libxml2/libxml/uri.h
@@ -87,6 +88,7 @@ share/aclocal/libxml.m4
 %%DOCSDIR%%/html/libxml-pattern.html
 %%DOCSDIR%%/html/libxml-relaxng.html
 %%DOCSDIR%%/html/libxml-schemasInternals.html
+%%DOCSDIR%%/html/libxml-schematron.html
 %%DOCSDIR%%/html/libxml-threads.html
 %%DOCSDIR%%/html/libxml-tree.html
 %%DOCSDIR%%/html/libxml-uri.html
