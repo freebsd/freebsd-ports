@@ -3663,6 +3663,7 @@ html2ps-letter	ports/print/html2ps-letter
 html2text	ports/textproc/html2text
 html2wml	ports/www/html2wml
 htmldoc		ports/textproc/htmldoc
+htmlise		ports/textproc/htmlise
 htmlize.el	ports/textproc/htmlize.el
 htmlobject	ports/www/htmlobject
 htmlpp		ports/www/htmlpp
