@@ -1,0 +1,320 @@
+%%CACHE_DIR%%/rgl-%%PORTVERSION%%.gem
+%%SPEC_DIR%%/rgl-%%PORTVERSION%%.gemspec
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT.src/M000100.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTDigraph.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTDigraph.src/M000114.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTDirectedEdge.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTDirectedEdge.src/M000121.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTEdge.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTEdge.src/M000122.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTEdge.src/M000123.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTEdge.src/M000124.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTElement.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTElement.src/M000107.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTElement.src/M000108.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTElement.src/M000109.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTNode.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTNode.src/M000101.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTNode.src/M000102.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTNode.src/M000103.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTNode.src/M000104.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTNode.src/M000105.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTNode.src/M000106.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTPort.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTPort.src/M000112.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTPort.src/M000113.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTSimpleElement.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTSimpleElement.src/M000110.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTSimpleElement.src/M000111.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTSubgraph.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTSubgraph.src/M000115.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTSubgraph.src/M000116.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTSubgraph.src/M000117.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTSubgraph.src/M000118.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTSubgraph.src/M000119.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTSubgraph.src/M000120.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/Enumerable.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/Enumerable.src/M000098.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/Enumerable.src/M000099.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/AdjacencyGraph.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/AdjacencyGraph.src/M000096.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/AdjacencyGraph.src/M000097.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/BFSIterator.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/BFSIterator.src/M000074.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/BFSIterator.src/M000075.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/BFSIterator.src/M000076.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/BidirectionalGraph.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/BidirectionalGraph.src/M000001.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/BidirectionalGraph.src/M000002.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/BidirectionalGraph.src/M000003.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/DFSIterator.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/DFSIterator.src/M000080.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/DFSVisitor.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/DirectedAdjacencyGraph.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/DirectedAdjacencyGraph.src/M000086.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/DirectedAdjacencyGraph.src/M000087.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/DirectedAdjacencyGraph.src/M000088.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/DirectedAdjacencyGraph.src/M000089.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/DirectedAdjacencyGraph.src/M000090.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/DirectedAdjacencyGraph.src/M000091.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/DirectedAdjacencyGraph.src/M000092.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/DirectedAdjacencyGraph.src/M000093.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/DirectedAdjacencyGraph.src/M000094.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/DirectedAdjacencyGraph.src/M000095.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Edge.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Edge/DirectedEdge.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Edge/DirectedEdge.src/M000007.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Edge/DirectedEdge.src/M000008.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Edge/DirectedEdge.src/M000009.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Edge/DirectedEdge.src/M000011.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Edge/DirectedEdge.src/M000012.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Edge/DirectedEdge.src/M000013.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Edge/DirectedEdge.src/M000014.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Edge/DirectedEdge.src/M000015.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Edge/UnDirectedEdge.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Edge/UnDirectedEdge.src/M000004.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Edge/UnDirectedEdge.src/M000005.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Edge/UnDirectedEdge.src/M000006.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000026.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000027.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000028.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000029.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000030.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000031.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000032.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000033.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000034.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000035.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000036.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000037.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000038.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000039.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000040.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000041.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000042.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000043.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000044.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000045.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000046.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000047.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000048.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000049.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000050.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000051.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000052.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000053.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000054.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000055.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000056.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000058.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000059.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000060.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000061.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src/M000062.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph/TarjanSccVisitor.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph/TarjanSccVisitor.src/M000063.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph/TarjanSccVisitor.src/M000064.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph/TarjanSccVisitor.src/M000065.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph/TarjanSccVisitor.src/M000066.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/GraphIterator.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/GraphVisitor.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/GraphVisitor.src/M000019.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/GraphVisitor.src/M000020.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/GraphVisitor.src/M000021.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/GraphVisitor.src/M000022.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/GraphVisitor.src/M000023.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/GraphVisitor.src/M000024.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/GraphVisitor.src/M000025.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/GraphXML.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/GraphXML/MutableGraph.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/GraphXML/MutableGraph.src/M000016.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/GraphXML/MutableGraphParser.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/GraphXML/MutableGraphParser.src/M000017.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/GraphXML/MutableGraphParser.src/M000018.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/ImplicitGraph.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/ImplicitGraph.src/M000081.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/ImplicitGraph.src/M000082.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/ImplicitGraph.src/M000083.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/ImplicitGraph.src/M000084.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/ImplicitGraph.src/M000085.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/MutableGraph.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/MutableGraph.src/M000067.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/MutableGraph.src/M000068.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/MutableGraph.src/M000069.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/MutableGraph.src/M000070.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/MutableGraph.src/M000071.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/MutableGraph.src/M000072.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/MutableGraph.src/M000073.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/NoEdgeError.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/NoVertexError.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/NotDirectedError.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/NotUndirectedError.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/TopsortIterator.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/TopsortIterator.src/M000077.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/TopsortIterator.src/M000078.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/TopsortIterator.src/M000079.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/created.rid
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/files/README.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/files/lib/rgl/adjacency_rb.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/files/lib/rgl/base_rb.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/files/lib/rgl/connected_components_rb.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/files/lib/rgl/dot_rb.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/files/lib/rgl/graphxml_rb.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/files/lib/rgl/implicit_rb.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/files/lib/rgl/mutable_rb.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/files/lib/rgl/rdot_rb.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/files/lib/rgl/topsort_rb.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/files/lib/rgl/transitiv_closure_rb.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/files/lib/rgl/traversal_rb.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/fr_class_index.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/fr_file_index.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/fr_method_index.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/index.html
+%%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/rdoc-style.css
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/ChangeLog
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/README
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/Rakefile
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/TAGS
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/install.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/canvas.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/codegraph
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/debgraph.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/example.jpg
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/examples.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/graph.dot
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/insel.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/module_graph.jpg
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/Graph.log
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.0.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.1.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.11.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.12.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.13.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.14.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.15.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.16.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.17.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.19.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.2.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.20.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.22.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.24.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.25.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.27.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.28.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.29.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.3.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.30.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.31.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.34.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.37.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.38.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.39.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.4.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.40.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.41.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.42.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.45.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.46.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.5.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.50.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.56.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.57.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.58.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.6.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.60.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.61.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.62.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.68.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.69.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.7.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.70.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.71.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.72.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.74.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.75.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.78.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.79.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.8.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.80.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.82.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.83.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.85.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.86.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.88.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.89.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.9.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.90.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.91.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.92.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.93.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.10.94.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.12.8.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north/g.14.9.graphml
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north2.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/rdep-rgl.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/lib/rgl/adjacency.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/lib/rgl/base.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/lib/rgl/connected_components.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/lib/rgl/dot.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/lib/rgl/graphxml.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/lib/rgl/implicit.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/lib/rgl/mutable.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/lib/rgl/rdot.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/lib/rgl/topsort.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/lib/rgl/transitiv_closure.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/lib/rgl/traversal.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/tests/TestComponents.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/tests/TestDirectedGraph.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/tests/TestEdge.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/tests/TestGraphXML.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/tests/TestImplicit.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/tests/TestTransitiveClosure.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/tests/TestTraversal.rb
+%%GEMS_DIR%%/rgl-%%PORTVERSION%%/tests/TestUnDirectedGraph.rb
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/files/lib/rgl
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/files/lib
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/files
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/TopsortIterator.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/MutableGraph.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/ImplicitGraph.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/GraphXML/MutableGraphParser.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/GraphXML/MutableGraph.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/GraphXML
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/GraphVisitor.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph/TarjanSccVisitor.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Graph
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Edge/UnDirectedEdge.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Edge/DirectedEdge.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/Edge
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/DirectedAdjacencyGraph.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/DFSIterator.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/BidirectionalGraph.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/BFSIterator.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL/AdjacencyGraph.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/RGL
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/Enumerable.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTSubgraph.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTSimpleElement.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTPort.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTNode.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTElement.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTEdge.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTDirectedEdge.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT/DOTDigraph.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT.src
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes/DOT
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc/classes
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%/rdoc
+@dirrm %%DOC_DIR%%/rgl-%%PORTVERSION%%
+@dirrm %%GEMS_DIR%%/rgl-%%PORTVERSION%%/tests
+@dirrm %%GEMS_DIR%%/rgl-%%PORTVERSION%%/lib/rgl
+@dirrm %%GEMS_DIR%%/rgl-%%PORTVERSION%%/lib
+@dirrm %%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples/north
+@dirrm %%GEMS_DIR%%/rgl-%%PORTVERSION%%/examples
+@dirrm %%GEMS_DIR%%/rgl-%%PORTVERSION%%
