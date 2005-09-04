@@ -14,6 +14,7 @@ MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	Indexing and searching in Maildir or MH folders
 
 HAS_CONFIGURE=	yes
+USE_BISON=	yes
 
 CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
 
