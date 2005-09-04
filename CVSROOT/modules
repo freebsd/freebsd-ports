@@ -3869,6 +3869,7 @@ integrit	ports/security/integrit
 intel2gas	ports/lang/intel2gas
 intercal	ports/lang/intercal
 interchange	ports/www/interchange
+intergif	ports/graphics/intergif
 inti		ports/x11-toolkits/inti
 inti-gconf	ports/x11-toolkits/inti-gconf
 inti-gl		ports/x11-toolkits/inti-gl
