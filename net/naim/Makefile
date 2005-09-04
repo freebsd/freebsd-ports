@@ -7,6 +7,7 @@
 
 PORTNAME=	naim
 PORTVERSION=	0.11.7.3.1
+PORTREVISION=	1
 CATEGORIES=	net irc
 MASTER_SITES=	http://shell.n.ml.org/n/naim/
 
