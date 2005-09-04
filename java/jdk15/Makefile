@@ -102,7 +102,8 @@ MAKE_ENV+=	DONT_ENABLE_IPV6="YES"
 ALL_TARGET=	all
 
 PLIST_FILES=	jdk${JDK_VERSION}/jre/.systemPrefs/.system.lock \
-		jdk${JDK_VERSION}/jre/.systemPrefs/.systemRootModFile
+		jdk${JDK_VERSION}/jre/.systemPrefs/.systemRootModFile \
+		jdk${JDK_VERSION}/jre/lib/${ARCH}/client/classes.jsa
 PLIST_DIRS=	jdk${JDK_VERSION}/jre/.systemPrefs
 
 .if (${ARCH} == amd64)
