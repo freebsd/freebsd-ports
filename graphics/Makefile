@@ -453,6 +453,7 @@
     SUBDIR += py-cgkit
     SUBDIR += py-chart
     SUBDIR += py-exif
+    SUBDIR += py-freeimagepy
     SUBDIR += py-gd
     SUBDIR += py-gdchart
     SUBDIR += py-graphviz
