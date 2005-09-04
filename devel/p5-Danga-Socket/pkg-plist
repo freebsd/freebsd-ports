@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Danga/Socket.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Danga/Socket/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Danga/Socket
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Danga 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Danga 2>/dev/null || true
