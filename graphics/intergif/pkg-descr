@@ -1,0 +1,24 @@
+INTERGIF 6.15 is a program for joining GIFs together (for animation),
+or splitting animations apart, or for optimising animations created
+by other programs.
+* Supports the animation, transparency and interleaving features of GIF89a.
+* Eliminates unused palette entries.
+* Minimises the final size of the GIF with a devious and cunning optimisation
+  routine: almost every animated GIF the author has found on the web ends up
+  smaller when run through InterGif.
+* Can forcibly reduce a GIF's palette to the standard Acorn 256-colour palette,
+  or to a 216-entry "web safe" colour cube (as used on the Macintosh and by
+  most Windows browsers),or to a palette file you supply. Alternatively, it can
+  calculate the best palette for displaying the GIF, and then reduce to that.
+* From version 6.03, this also works with 16bpp and 24bpp input images -- and
+  with GIFs which use more than 256 colours in total. (GIFs can only use 256
+  colours per frame, but each frame can have its own palette.)
+* Lets you trim away any wholly transparent rows or columns from the edges of
+  your GIF (whether single-frame or animated).
+* Can dither 16bpp or 24bpp input files to whatever palette is required (error
+  diffusion implementation kindly donated by Martin Wurthner).
+
+WWW: http://utter.chaos.org.uk/~pdh/software/intergif.htm
+
+- Jamie
+jamie@bishopston.net
