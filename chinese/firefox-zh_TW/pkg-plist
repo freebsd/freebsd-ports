@@ -1,9 +1,11 @@
 @exec mv %D/lib/%%FIREFOX%%/browserconfig.properties %D/lib/%%FIREFOX%%/browserconfig.properties.orig
+@exec mv %D/lib/%%FIREFOX%%/chrome/browser.jar %D/lib/%%FIREFOX%%/chrome/browser.jar.orig
 @exec mv %D/lib/%%FIREFOX%%/chrome/chrome.rdf %D/lib/%%FIREFOX%%/chrome/chrome.rdf.orig
 @exec mv %D/lib/%%FIREFOX%%/chrome/installed-chrome.txt %D/lib/%%FIREFOX%%/chrome/installed-chrome.txt.orig
 @exec mv %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js.orig
 @exec mv %D/lib/%%FIREFOX%%/defaults/profile/bookmarks.html %D/lib/%%FIREFOX%%/defaults/profile/bookmarks.html.orig
 lib/%%FIREFOX%%/browserconfig.properties
+lib/%%FIREFOX%%/chrome/browser.jar
 lib/%%FIREFOX%%/chrome/chrome.rdf
 lib/%%FIREFOX%%/chrome/installed-chrome.txt
 lib/%%FIREFOX%%/chrome/zh-TW.jar
@@ -13,6 +15,7 @@ lib/%%FIREFOX%%/defaults/profile/user.js
 lib/%%FIREFOX%%/searchplugins/FreeBSD_PR.png
 lib/%%FIREFOX%%/searchplugins/FreeBSD_PR.src
 @unexec mv %D/lib/%%FIREFOX%%/browserconfig.properties.orig %D/lib/%%FIREFOX%%/browserconfig.properties
+@unexec mv %D/lib/%%FIREFOX%%/chrome/browser.jar.orig %D/lib/%%FIREFOX%%/chrome/browser.jar
 @unexec mv %D/lib/%%FIREFOX%%/chrome/chrome.rdf.orig %D/lib/%%FIREFOX%%/chrome/chrome.rdf
 @unexec mv %D/lib/%%FIREFOX%%/chrome/installed-chrome.txt.orig %D/lib/%%FIREFOX%%/chrome/installed-chrome.txt
 @unexec mv %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js.orig %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js
