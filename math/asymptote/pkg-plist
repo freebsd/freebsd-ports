@@ -7,7 +7,7 @@ bin/xasy
 %%DATADIR%%/feynman.asy
 %%DATADIR%%/geometry.asy
 %%DATADIR%%/graph.asy
-%%DATADIR%%/graph3d.asy
+%%DATADIR%%/graph3.asy
 %%DATADIR%%/latin1.asy
 %%DATADIR%%/math.asy
 %%DATADIR%%/metapost.asy
@@ -21,6 +21,7 @@ bin/xasy
 %%DATADIR%%/tree.asy
 %%DATADIR%%/unicode.asy
 %%EXAMPLESDIR%%/Bode.asy
+%%EXAMPLESDIR%%/Gouraud.asy
 %%EXAMPLESDIR%%/Pythagoras.asy
 %%EXAMPLESDIR%%/PythagoreanTree.asy
 %%EXAMPLESDIR%%/asy-mode.el
@@ -58,6 +59,7 @@ bin/xasy
 %%EXAMPLESDIR%%/helix.asy
 %%EXAMPLESDIR%%/hierarchy.asy
 %%EXAMPLESDIR%%/histogram.asy
+%%EXAMPLESDIR%%/icon.asy
 %%EXAMPLESDIR%%/image.asy
 %%EXAMPLESDIR%%/integraltest.asy
 %%EXAMPLESDIR%%/join.asy
@@ -65,6 +67,7 @@ bin/xasy
 %%EXAMPLESDIR%%/labelsquare.asy
 %%PORTDOCS%%%%EXAMPLESDIR%%/latexusage.asy
 %%EXAMPLESDIR%%/latexusage.tex
+%%EXAMPLESDIR%%/latticeshading.asy
 %%EXAMPLESDIR%%/lever.asy
 %%EXAMPLESDIR%%/lineargraph.asy
 %%EXAMPLESDIR%%/lineargraph0.asy
@@ -72,6 +75,7 @@ bin/xasy
 %%EXAMPLESDIR%%/linetype.asy
 %%EXAMPLESDIR%%/log.asy
 %%EXAMPLESDIR%%/loggraph.asy
+%%EXAMPLESDIR%%/loggrid.asy
 %%EXAMPLESDIR%%/logo.asy
 %%EXAMPLESDIR%%/lowint.asy
 %%EXAMPLESDIR%%/lowupint.asy
