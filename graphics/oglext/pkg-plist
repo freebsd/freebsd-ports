@@ -4,6 +4,6 @@ lib/libOglExt.a
 lib/libOglExt.so
 lib/libOglExt.so.1
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/extensionlist.html
+%%PORTDOCS%%%%DOCSDIR%%/extensions.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/oglext
