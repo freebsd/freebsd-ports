@@ -5,29 +5,54 @@
 # $FreeBSD$
 #
 
-PORTNAME=		ut2004-demo
-PORTVERSION=		3334
-CATEGORIES=		games linux
-MASTER_SITES=		${MASTER_SITE_GENTOO} \
-			http://ftp.games.skynet.be/pub/misc/
+PORTNAME=	ut2004-demo
+PORTVERSION=	3334
+CATEGORIES=	games linux
+MASTER_SITES=	${MASTER_SITE_GENTOO} \
+		http://ftp.games.skynet.be/pub/misc/
 MASTER_SITE_SUBDIR=	distfiles		# for MASTER_SITE_GENTOO
-PKGNAMEPREFIX=		linux-
-DISTNAME=		ut2004-lnx-demo${PORTVERSION}
-EXTRACT_SUFX=		.run
+PKGNAMEPREFIX=	linux-
+DISTNAME=	ut2004-lnx-demo${PORTVERSION}
+EXTRACT_SUFX=	.run
 
-MAINTAINER=		jylefort@FreeBSD.org
-COMMENT=		Unreal Tournament 2004 demo
+MAINTAINER=	jylefort@FreeBSD.org
+COMMENT=	Unreal Tournament 2004 demo
 
-RUN_DEPENDS=		${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
+ONLY_FOR_ARCHS=	i386
+USE_X_PREFIX=	yes
+USE_LINUX=	yes
+NO_PACKAGE=	Distfile is 275MB, set FORCE_PACKAGE if you really want to build this package
+RESTRICTED=	Redistribution is limited, see license
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
-ONLY_FOR_ARCHS=		i386
-PREFIX?=		${X11BASE}	# USE_X_PREFIX would pull in USE_XLIB
-USE_LINUX=		yes
-NO_PACKAGE=		Distfile is 275MB, set FORCE_PACKAGE if you really want to build this package
-RESTRICTED=		Redistribution is limited, see license
-NO_BUILD=		yes
-NO_WRKSUBDIR=		yes
-UTDIR=			${PREFIX}/lib/${PORTNAME}
+UTDIR=		${PREFIX}/lib/${PORTNAME}
+UTDIR_REL=	${UTDIR:S,^${PREFIX}/,,}
+
+PLIST=		${WRKDIR}/pkg-plist
+
+SUB_FILES=	ut2004-demo
+SUB_LIST=	UTDIR="${UTDIR}"
+
+PLIST_FILES=	bin/ut2004-demo \
+		%%DATADIR%%/UT2004Logo.bmp %%DATADIR%%/ut2004.xpm
+PLIST_DIRS=	${UTDIR_REL} %%DATADIR%%
+PORTDOCS=	*
+
+LIBDIRS=	Animations Benchmark ForceFeedback KarmaData Maps Music \
+		Sounds Speech StaticMeshes System Textures Web
+
+.include <bsd.port.pre.mk>
+
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
+.if defined(WITH_NVIDIA_GL)
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+.else
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
+.endif
+.else
+RUN_DEPENDS+=	${LINUXBASE}/lib/libGL.so.1:${PORTSDIR}/graphics/linux_glx
+.endif
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
@@ -37,33 +62,28 @@ do-extract:
 .endfor
 	@cd ${WRKSRC} && ${TAR} zxf setupstuff.tar.gz
 
-post-patch:
-	@${SED} -e 's|@UTDIR@|${UTDIR}|' ${FILESDIR}/ut2004-demo.in \
-		> ${WRKSRC}/ut2004-demo
+pre-install:
+	@${RM} -f ${PLIST}
+	@cd ${WRKSRC} && \
+	${FIND} ${LIBDIRS} -type f | ${SORT} \
+		| ${SED} -e 's|^|${UTDIR_REL}/|' >> ${PLIST} && \
+	${FIND} ${LIBDIRS} -type d ! -empty | ${SORT} -r \
+		| ${SED} -e 's|^|@dirrm ${UTDIR_REL}/|' >> ${PLIST}
 
 do-install:
-	${MKDIR} ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/ut2004-demo ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/ut2004-demo ${PREFIX}/bin
 
-	${MKDIR} ${UTDIR}
-.for d in Animations Benchmark ForceFeedback KarmaData Maps Music Sounds \
-	Speech StaticMeshes System Textures Web
-	${CP} -R ${WRKSRC}/${d} ${UTDIR}
-.endfor
+	cd ${WRKSRC} && \
+	${FIND} ${LIBDIRS} -type d ! -empty -exec \
+		${MKDIR} "${UTDIR}/{}" \; && \
+	${FIND} ${LIBDIRS} -type f -exec \
+		${INSTALL_DATA} "{}" "${UTDIR}/{}" \;
 
-	-${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${UTDIR}/*
-	${FIND} ${UTDIR}/* -type f -exec ${CHMOD} ${SHAREMODE} {} \;
-	${FIND} ${UTDIR}/* -type d -exec ${CHMOD} ${BINMODE} {} \;
+	-${CHOWN} ${BINOWN}:${BINGRP} ${UTDIR}/System/*-bin
+	${CHMOD} ${BINMODE} ${UTDIR}/System/*-bin
 
-.for f in libSDL-1.2.so.0 openal.so
-	-${CHOWN} ${LIBOWN}:${LIBGRP} ${UTDIR}/System/${f}
-	${CHMOD} ${LIBMODE} ${UTDIR}/System/${f}
-.endfor
-
-.for f in ucc-bin ut2004-bin
-	-${CHOWN} ${BINOWN}:${BINGRP} ${UTDIR}/System/${f}
-	${CHMOD} ${BINMODE} ${UTDIR}/System/${f}
-.endfor
+	-${CHOWN} ${LIBOWN}:${LIBGRP} ${UTDIR}/System/*.so*
+	${CHMOD} ${LIBMODE} ${UTDIR}/System/*.so*
 
 	${MKDIR} ${DATADIR}
 .for f in Help/UT2004Logo.bmp ut2004.xpm
@@ -77,4 +97,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
