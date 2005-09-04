@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geonext
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	math graphics java
 MASTER_SITES=	http://geonext.uni-bayreuth.de/data/download/\
 		http://home.arcor.de/fehlner/inhalt/download/\
@@ -14,17 +14,18 @@ MASTER_SITES=	http://geonext.uni-bayreuth.de/data/download/\
 DISTNAME=	geonext.${PORTVERSION}
 
 MAINTAINER=	fehlner@gmx.de
-COMMENT?=	Interactive (dynamic) elementary Geometry Software
+COMMENT=	Interactive (dynamic) elementary Geometry Software
 
-WRKSRC=		${WRKDIR}/geonext_install
+WRKSRC=		${WRKDIR}/geonext
 NO_BUILD=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4
+JAVA_VERSION=	1.4+
 DATA=	cacerts didmat.crt geonext.html geonext.jar license.txt index.html
-IMG=	g.gif gn.gif gni.gif geoint.png pixel.gif gx.gif gxt.gif ubt.gif x.ico
+IMG=	geoint.png gxt.gif ubt.gif x.ico
 
-# available languages: bg, cz, de, en, es, fr, hu, sk, ja, ro
+# available languages:	al, bg, cz, de, en, es, fr, hu, it, ja, lv,
+# 			pt_BR, ro, ru, sk, sl, uk
 # default: en
 .if !defined(WITH_LANG)
 WITH_LANG=	en
@@ -47,7 +48,11 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "WITH_LANG=lang     - Choose language"
 	@${ECHO_MSG} "Default language: en"
-	@${ECHO_MSG} "available languages: en, fr, bg, cz, de, es, hu, sk, ja, ro"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "available languages: al, bg, cz, de, en, es, fr, "
+	@${ECHO_MSG} "hu, it, ja, lv, pt_BR, ro, ru, sk, sl, uk"
+	@${ECHO_MSG} "-------------------------------------------------"
+	@${ECHO_MSG} ""
 	@${ECHO_MSG} "example: make WITH_LANG=fr install"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Your current setting is:"
