@@ -32,6 +32,61 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4e210d72-1c5c-11da-92ce-0048543d60ce">
+    <topic>squid -- Denial Of Service Vulnerability in sslConnectTimeout</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><lt>2.5.10_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The squid patches page notes:</p>
+	<blockquote cite="http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE10-sslConnectTimeout">
+	  <p>After certain slightly odd requests Squid crashes with a segmentation fault in sslConnectTimeout.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE10-sslConnectTimeout</url>
+	<url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1355</url>
+	<url>http://secunia.com/advisories/16674/</url>
+    </references>
+    <dates>
+      <discovery>2005-07-21</discovery>
+      <entry>2005-09-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0c0dc409-1c5e-11da-92ce-0048543d60ce">
+    <topic>squid -- Possible Denial Of Service Vulnerability in store.c</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><lt>2.5.10_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The squid patches page notes:</p>
+	<blockquote cite="http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE10-STORE_PENDING">
+	  <p>Squid crashes with the above assertion failure [assertion failed:
+	    store.c:523: "e->store_status == STORE_PENDING"] in certain
+	    conditions involving aborted requests.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE10-STORE_PENDING</url>
+	<url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1368</url>
+    </references>
+    <dates>
+      <discovery>2005-08-02</discovery>
+      <entry>2005-09-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="30e4ed7b-1ca6-11da-bc01-000e0c2e438a">
     <topic>bind9 -- denial of service</topic>
     <affects>
