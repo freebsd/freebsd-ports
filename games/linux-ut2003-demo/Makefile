@@ -41,6 +41,18 @@ PORTDOCS=	*
 LIBDIRS=	Animations Benchmark ForceFeedback KarmaData Maps Music \
 		Sounds StaticMeshes System Textures Web
 
+.include <bsd.port.pre.mk>
+
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
+.if defined(WITH_NVIDIA_GL)
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+.else
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
+.endif
+.else
+RUN_DEPENDS+=	${LINUXBASE}/lib/libGL.so.1:${PORTSDIR}/graphics/linux_glx
+.endif
+
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@cd ${WRKSRC} && ${TAIL} -c +6360 ${_DISTDIR}/${DISTFILES} | ${TAR} zxf -
@@ -82,4 +94,4 @@ do-install:
 .  endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
