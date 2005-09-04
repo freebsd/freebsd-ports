@@ -1,29 +1,4 @@
 %%RUBY_SITEARCHLIBDIR%%/xml/xslt.so
-@unexec /bin/rmdir %%RUBY_SITEARCHLIBDIR%%/xml 2>/dev/null || true
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/AUTHORS
+@unexec /bin/rmdir %D/%%RUBY_SITEARCHLIBDIR%%/xml 2>/dev/null || true
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/xslt.en.rd
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/XML.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/XML/XSLT.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/XML/XSLT.src/M000001.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/XML/XSLT.src/M000002.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/XML/XSLT.src/M000003.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/XML/XSLT.src/M000004.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/XML/XSLT.src/M000005.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/XML/XSLT.src/M000006.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/XML/XSLT.src/M000007.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/XML/XSLT.src/M000008.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/XML/XSLT.src/M000009.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/created.rid
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/xslt_c.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_class_index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_file_index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_method_index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/rdoc-style.css
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/XML/XSLT.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/XML
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

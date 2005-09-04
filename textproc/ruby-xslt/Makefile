@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xslt
-PORTVERSION=	0.3.0
+PORTVERSION=	0.8.1
 CATEGORIES=	textproc ruby
-MASTER_SITES=	http://www.webtime-project.net/ruby-xslt/
+MASTER_SITES=	http://gregoire.lejeune.free.fr/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}_${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -16,28 +16,16 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	An XSLT processor in pure Ruby
 
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		xslt.2:${PORTSDIR}/textproc/libxslt
-
+USE_GNOME=	libxslt
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
 WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
 
-DOCS=		AUTHORS README docs/*.rd doc
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Configure fails on FreeBSD >= 5.x"
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
-.for f in ${DOCS}
-	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_MODDOCDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
