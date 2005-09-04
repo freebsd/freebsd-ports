@@ -22,7 +22,7 @@ upgrades.
   AFFECTS: users of www/jakarta-tomcat55
   AUTHOR: hq@FreeBSD.org
 
-  The port installs a new RCng stratup script wich no longer use tomcat55ctl to
+  The port installs a new RCng startup script wich no longer use tomcat55ctl to
   control the Tomcat daemon. Furthermore, the behavior of Tomcat may be
   configured through switches and variables from /etc/rc.conf. They are
   documented in the header of the RCng script:
@@ -33,7 +33,7 @@ upgrades.
   AFFECTS: users of mail/postfix-current
   AUTHOR: marcus@corp.grupos.com.br
 
-  Now mail/postfix-current use OPTIONS menu instead of 
+  Now mail/postfix-current use OPTIONS menu instead of
   POSTFIX_OPTIONS batch. Please run "make config" and
   select your options in menu.
 
@@ -62,8 +62,8 @@ upgrades.
   AUTHOR: kde@FreeBSD.org
 
   One data file has been moved from kdeadmin to kdelibs between
-  KDE 3.4.1 and KDE 3.4.2.  This means that 
-  
+  KDE 3.4.1 and KDE 3.4.2.  This means that
+
   *********if you currently have the kdeadmin port installed*********
 
   you will have to take some precautions to update your KDE
