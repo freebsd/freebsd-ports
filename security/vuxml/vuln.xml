@@ -32,6 +32,35 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="673aec6f-1cae-11da-bc01-000e0c2e438a">
+    <topic>htdig -- cross site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>htdig</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Michael Krax reports a vulnerability within htdig.  The
+	  vulnerability lies within an unsanitized config parameter,
+	  allowing a malicious attacker to execute arbitrary scripting
+	  code on the target's browser.  This might allow the attacker
+	  to obtain the user's cookies which are associated with the
+	  site, including cookies used for authentication.</p>
+      </body>
+    </description>
+    <references>
+      <bid>12442</bid>
+      <cvename>CAN-2005-0085</cvename>
+      <url>http://www.securitytracker.com/alerts/2005/Feb/1013078.html</url>
+    </references>
+    <dates>
+      <discovery>2005-02-03</discovery>
+      <entry>2005-09-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4e210d72-1c5c-11da-92ce-0048543d60ce">
     <topic>squid -- Denial Of Service Vulnerability in sslConnectTimeout</topic>
     <affects>
