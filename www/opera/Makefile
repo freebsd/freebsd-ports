@@ -54,6 +54,10 @@ LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
 .endif
 
+.if ${OSVERSION} >= 600000
+LIB_DEPENDS+=	z.2:${PORTSDIR}/misc/compat5x
+.endif
+
 .if ${HAVE_GNOME:Mgnomehier}!=""
 PLIST_SUB+=	GNOME=""
 .else
