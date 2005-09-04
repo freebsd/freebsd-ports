@@ -4,6 +4,18 @@
 %%RUBY_SITELIBDIR%%/rss/content.rb
 %%RUBY_SITELIBDIR%%/rss/converter.rb
 %%RUBY_SITELIBDIR%%/rss/dublincore.rb
+%%RUBY_SITELIBDIR%%/rss/dublincore/2.0.rb
+%%RUBY_SITELIBDIR%%/rss/image.rb
+%%RUBY_SITELIBDIR%%/rss/maker.rb
+%%RUBY_SITELIBDIR%%/rss/maker/0.9.rb
+%%RUBY_SITELIBDIR%%/rss/maker/1.0.rb
+%%RUBY_SITELIBDIR%%/rss/maker/2.0.rb
+%%RUBY_SITELIBDIR%%/rss/maker/base.rb
+%%RUBY_SITELIBDIR%%/rss/maker/content.rb
+%%RUBY_SITELIBDIR%%/rss/maker/dublincore.rb
+%%RUBY_SITELIBDIR%%/rss/maker/image.rb
+%%RUBY_SITELIBDIR%%/rss/maker/syndication.rb
+%%RUBY_SITELIBDIR%%/rss/maker/trackback.rb
 %%RUBY_SITELIBDIR%%/rss/parser.rb
 %%RUBY_SITELIBDIR%%/rss/rexmlparser.rb
 %%RUBY_SITELIBDIR%%/rss/rss.rb
@@ -11,30 +23,12 @@
 %%RUBY_SITELIBDIR%%/rss/taxonomy.rb
 %%RUBY_SITELIBDIR%%/rss/trackback.rb
 %%RUBY_SITELIBDIR%%/rss/utils.rb
+%%RUBY_SITELIBDIR%%/rss/xml-stylesheet.rb
 %%RUBY_SITELIBDIR%%/rss/xmlparser.rb
 %%RUBY_SITELIBDIR%%/rss/xmlscanner.rb
+@dirrm %%RUBY_SITELIBDIR%%/rss/maker
+@dirrm %%RUBY_SITELIBDIR%%/rss/dublincore
 @dirrm %%RUBY_SITELIBDIR%%/rss
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/articles.rss
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/content.xml
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/index.rdf.ja
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/list_description.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/news.rss
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/php.rss
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/raa-rdf10.xml
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rnn.rdf
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rss.xml
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rss2dc.xml
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rssMarkPilgrimExample.xml
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rssTwoExample.xml
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rss_recent.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sampleRss.xml
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/slashdot.rdf
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/slashdotorg.rdf
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tdiary_plugin/rss-recent.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/w3c.rdf
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/wiliki.rss
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tdiary_plugin
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.en
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/Tutorial.en
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
