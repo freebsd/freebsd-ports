@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pixie
-PORTVERSION=	1.3.26
+PORTVERSION=	1.4.5
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -37,7 +37,8 @@ WRKSRC=		${WRKDIR}/Pixie
 PIXIE_EXES=	precomp rndr sdrc sdrinfo show texmake
 PIXIE_SHLIBS=	file framebuffer rgbe
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+SUB_LIST+=	PORTNAME=${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
@@ -109,7 +110,6 @@ do-install:
 .endif
 
 post-install:
-	@(${SED} -e 's|%%PREFIX%%|${PREFIX}|; s|%%PORTNAME%%|${PORTNAME}|' \
-		<pkg-message >${PKGMESSAGE} && ${CAT} ${PKGMESSAGE})
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
