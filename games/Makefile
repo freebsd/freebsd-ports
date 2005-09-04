@@ -492,6 +492,7 @@
     SUBDIR += stratagus
     SUBDIR += stvef-paks
     SUBDIR += stvef-server
+    SUBDIR += sudsol
     SUBDIR += super_methane_brothers
     SUBDIR += supertux
     SUBDIR += sxsame

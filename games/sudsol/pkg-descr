@@ -1,0 +1,18 @@
+Sudsol is a small utility to solve Sudoku puzzles.
+
+The usage is very simple; add your puzzle to a textfile in the following
+format:
+
+7.94...18
+.3......2
+....974..
+...13.5..
+.....83..
+.4..7...9
+5683...7.
+2.3....51
+.7..2....
+
+and run 'sudsol puzzle.txt'
+
+WWW: http://rink.nu/
