@@ -22,12 +22,3 @@
           r_reg--;
        }
     }
-@@ -1932,7 +1939,7 @@
-          {
-             domain = hptr->string+strlen(hptr->string)-1;
-             while ( (*domain!='.')&&(domain!=hptr->string)) domain--;
--            if ((domain==hptr->string)||(isdigit((int)*++domain)))
-+	    if ((domain==hptr->string)||(isdigit((unsigned char)*++domain)))
-             {
-                ctry[0].count+=hptr->count;
-                ctry[0].files+=hptr->files;

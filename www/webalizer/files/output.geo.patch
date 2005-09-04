@@ -1,0 +1,11 @@
+--- output.c.orig	Sun Sep  4 07:40:09 2005
++++ output.c	Sun Sep  4 07:47:06 2005
+@@ -2037,7 +2044,7 @@
+             while ( (*domain!='.')&&(domain!=hptr->string)) domain--;
+             if (domain==hptr->string)
+ 	       country=NULL;
+-            else if (isdigit((int)*++domain))
++            else if (isdigit((unsigned char)*++domain))
+             {
+ #ifdef USE_GEOIP
+                if (use_geoip)
