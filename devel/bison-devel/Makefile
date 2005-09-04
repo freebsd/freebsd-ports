@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-devel
 DISTNAME=	bison-${PORTVERSION}
 
-MAINTAINER=	openoffice@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 COMMENT=	Alpha version of bison
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4

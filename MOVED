@@ -1613,4 +1613,3 @@ sysutils/gdesklets-sensor-psi_disk||2005-08-31|removed; broken with recent gdesk
 net/gdesklets-sensor-psi_ping||2005-08-31|removed; broken with recent gdesklets
 mail/gdesklets-sensor-psi_popmail||2005-08-31|removed; broken with recent gdesklets
 deskutils/gdesklets-sensor-psi_variableborder||2005-08-31|removed; broken with recent gdesklets
-devel/bison|devel/bison175|2005-09-02|devel/bison is now at 2.0
