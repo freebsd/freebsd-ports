@@ -7484,6 +7484,7 @@ p5-DNS-Config	ports/dns/p5-DNS-Config
 p5-DNS-Zone	ports/dns/p5-DNS-Zone
 p5-DNS-ZoneParse	ports/dns/p5-DNS-ZoneParse
 p5-DWH_File	ports/databases/p5-DWH_File
+p5-Danga-Socket	ports/devel/p5-Danga-Socket
 p5-Data-Buffer	ports/misc/p5-Data-Buffer
 p5-Data-Compare	ports/devel/p5-Data-Compare
 p5-Data-Dump	ports/devel/p5-Data-Dump
