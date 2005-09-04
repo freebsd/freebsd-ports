@@ -1,0 +1,76 @@
+--- Makefile.orig	Tue Aug 30 21:50:09 2005
++++ Makefile	Tue Aug 30 21:27:37 2005
+@@ -26,11 +26,11 @@
+ 	    $(call mkdir,$(install_libdir)) ; \
+ 	fi
+ 
+-	@if test ! -d $(install_slicedir) ; \
+-	then \
+-	    echo "Creating $(install_slicedir)..." ; \
+-	    $(call mkdir,$(install_slicedir)) ; \
+-	fi
++#	@if test ! -d $(install_slicedir) ; \
++#	then \
++#	    echo "Creating $(install_slicedir)..." ; \
++#	    $(call mkdir,$(install_slicedir)) ; \
++#	fi
+ 
+ 	@if test ! -d $(install_pythondir) ; \
+ 	then \
+@@ -45,32 +45,32 @@
+ 	    ( cd $$subdir && $(MAKE) $@ ) || exit 1; \
+ 	done
+ 
+-install::
+-	@if test -d slice ; \
+-	then \
+-	    cd slice ; \
+-	    for i in * ; \
+-	    do \
+-		if test ! -d $(install_slicedir)/$$i ; \
+-		then \
+-		    echo "Creating $(install_slicedir)/$$i..." ; \
+-		    mkdir $(install_slicedir)/$$i ; \
+-		    chmod a+rx $(install_slicedir)/$$i ; \
+-		fi ; \
+-		cd $$i ; \
+-		for f in *.ice ; \
+-		do \
+-		    echo "Installing $$i/$$f" ; \
+-		    $(INSTALL_DATA) $$f $(install_slicedir)/$$i ; \
+-		    chmod a+r $(install_slicedir)/$$i/$$f ; \
+-		done ; \
+-		cd .. ; \
+-	    done \
+-	fi
++#install::
++#	@if test -d slice ; \
++#	then \
++#	    cd slice ; \
++#	    for i in * ; \
++#	    do \
++#		if test ! -d $(install_slicedir)/$$i ; \
++#		then \
++#		    echo "Creating $(install_slicedir)/$$i..." ; \
++#		    mkdir $(install_slicedir)/$$i ; \
++#		    chmod a+rx $(install_slicedir)/$$i ; \
++#		fi ; \
++#		cd $$i ; \
++#		for f in *.ice ; \
++#		do \
++#		    echo "Installing $$i/$$f" ; \
++#		    $(INSTALL_DATA) $$f $(install_slicedir)/$$i ; \
++#		    chmod a+r $(install_slicedir)/$$i/$$f ; \
++#		done ; \
++#		cd .. ; \
++#	    done \
++#	fi
+ 
+ install::
+-	$(call installdata,ICE_LICENSE,$(prefix))
+-	$(call installdata,LICENSE,$(prefix))
++	$(call installdata,ICE_LICENSE,$(install_libdir))
++	$(call installdata,LICENSE,$(install_libdir))
+ 
+ test::
+ 	@python $(top_srcdir)/allTests.py

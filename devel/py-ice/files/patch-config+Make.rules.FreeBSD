@@ -1,0 +1,18 @@
+--- config/Make.rules.FreeBSD.orig	Tue Aug 30 16:02:02 2005
++++ config/Make.rules.FreeBSD	Tue Aug 30 16:02:50 2005
+@@ -26,12 +26,12 @@
+ #
+ CXXLIBS			=
+ 
+-mkshlib                 = $(CXX) -shared $(LDFLAGS) -o $(1) -Wl,-h,$(2) $(3) $(4) -lc_r
++mkshlib                 = $(CXX) -shared $(LDFLAGS) -o $(1) -Wl,-h,$(2) $(3) $(4)
+ 
+-BASELIBS		= -lIceUtil -lc_r
++BASELIBS		= -lIceUtil %%PTHREAD_LIBS%%
+ LIBS			= -lIce $(BASELIBS)
+ 
+-ICEUTIL_OS_LIBS         = 
++ICEUTIL_OS_LIBS         = %%PTHREAD_LIBS%%
+ ICE_OS_LIBS             = 
+ 
+ PLATFORM_HAS_READLINE   := yes

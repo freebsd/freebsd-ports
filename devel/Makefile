@@ -1333,6 +1333,7 @@
     SUBDIR += py-getargs
     SUBDIR += py-grouch
     SUBDIR += py-icalendar
+    SUBDIR += py-ice
     SUBDIR += py-istring
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue

@@ -1,0 +1,12 @@
+--- python/Makefile.orig	Thu Feb 17 00:48:17 2005
++++ python/Makefile	Tue Aug 30 19:16:53 2005
+@@ -94,7 +94,8 @@
+ 	$(INSTALL_DATA) *.py $(install_pythondir)
+ 	@for i in $(PACKAGES) ; \
+ 	do \
+-	    $(INSTALL_DATA) -r $$i $(install_pythondir) ; \
++	    $(INSTALL_DATA) -d $(install_pythondir)/$$i ; \
++	    $(INSTALL_DATA) $$i/*.py $(install_pythondir)/$$i ; \
+ 	done
+ 
+ clean::
