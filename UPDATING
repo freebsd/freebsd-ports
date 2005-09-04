@@ -22,7 +22,7 @@ upgrades.
   AFFECTS: users of www/jakarta-tomcat55
   AUTHOR: hq@FreeBSD.org
 
-  The port installs a new RCng startup script wich no longer use tomcat55ctl to
+  The port installs a new RCng startup script which no longer uses tomcat55ctl to
   control the Tomcat daemon. Furthermore, the behavior of Tomcat may be
   configured through switches and variables from /etc/rc.conf. They are
   documented in the header of the RCng script:
