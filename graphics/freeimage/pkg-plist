@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+lib/libfreeimage.a
+lib/libfreeimage.so
+lib/libfreeimage.so.3
