@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	logjam
-PORTVERSION=	4.4.1
-PORTREVISION=	1
+PORTVERSION=	4.5.1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://logjam.danga.com/download/
 
@@ -41,6 +40,11 @@ LIB_DEPENDS+=		gtkspell.0:${PORTSDIR}/textproc/gtkspell2
 CONFIGURE_ARGS+=	--without-gtkspell
 .endif
 
+.if defined(WITH_SQLITE)
+CONFIGURE_ARGS+=	--with-sqlite3
+LIB_DEPENDS+=		sqlite3.8:${PORTSDIR}/databases/sqlite3
+.endif
+
 .if defined(WITH_XMMS)
 LIB_DEPENDS+=		xmms.4:${PORTSDIR}/multimedia/xmms
 PLIST_SUB+=		WITH_XMMS=""
@@ -72,8 +76,5 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|libgtkhtml-3.0|libgtkhtml-3.1|g' ${WRKSRC}/configure
-.if defined(WITH_TAGS_PATCH)
-	@cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/extra-logjam_tags.patch
-.endif
 
 .include <bsd.port.post.mk>

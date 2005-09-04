@@ -10,6 +10,7 @@ share/locale/es/LC_MESSAGES/logjam.mo
 share/locale/he/LC_MESSAGES/logjam.mo
 share/locale/ru_RU/LC_MESSAGES/logjam.mo
 share/locale/uk_UA/LC_MESSAGES/logjam.mo
+share/locale/ja/LC_MESSAGES/logjam.mo
 @unexec rmdir %D/share/locale/en_US.UTF-8/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/en_US.UTF-8 2> /dev/null || true
 @unexec rmdir %D/share/locale/ru_RU/LC_MESSAGES 2> /dev/null || true
