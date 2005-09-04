@@ -392,8 +392,9 @@
     SUBDIR += prom-wl
     SUBDIR += pronto
     SUBDIR += proxsmtp
+    SUBDIR += py-email
+    SUBDIR += py-email2
     SUBDIR += py-milter
-    SUBDIR += py-mimelib
     SUBDIR += py-spambayes
     SUBDIR += py-spf
     SUBDIR += py-twistedMail
