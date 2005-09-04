@@ -1,0 +1,11 @@
+--- device/lib/pic16/libio/Makefile.orig	Sat Sep  3 20:23:48 2005
++++ device/lib/pic16/libio/Makefile	Sat Sep  3 20:22:58 2005
+@@ -35,7 +35,7 @@
+ 		| while read arch; do \
+ 			[ "x$${arch}" = "x" ] \
+ 			|| ( [ -d "$(builddir)/$${arch}" ] || $(MKDIR) "$(builddir)/$${arch}"; \
+-				$(MAKE) MKLIB=libio18f$${arch}.lib builddir=$(builddir)/$${arch} ARCH=$${arch} IO_ARCH=$${arch} $(MAKECMDGOALS); ) \
++				$(MAKE) MKLIB=libio18f$${arch}.lib builddir=$(builddir)/$${arch} PICARCH=$${arch} IO_ARCH=$${arch} $(MAKECMDGOALS); ) \
+ 			|| exit 1; \
+ 	done
+ 
