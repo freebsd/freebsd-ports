@@ -1,9 +1,0 @@
-sbin/vpnc
-sbin/vpnc-script
-sbin/vpnc-disconnect
-etc/vpnc.conf.sample
-etc/rc.d/vpnc.sh.sample
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
