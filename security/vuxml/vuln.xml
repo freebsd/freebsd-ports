@@ -601,6 +601,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>phpgroupware</name>
 	<range><lt>0.9.16.007</lt></range>
       </package>
+      <package>
+	<name>b2evolution</name>
+	<range><lt>0.9.0.12_2</lt></range>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -625,6 +628,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <cvename>CAN-2005-2498</cvename>
+      <url>http://b2evolution.net/news/2005/08/31/fix_for_xml_rpc_vulnerability_again_1</url>
       <url>http://downloads.phpgroupware.org/changelog</url>
       <url>http://drupal.org/files/sa-2005-004/advisory.txt</url>
       <url>http://phpadsnew.com/two/nucleus/index.php?itemid=45</url>
@@ -636,7 +640,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-08-15</discovery>
       <entry>2005-08-15</entry>
-      <modified>2005-08-27</modified>
+      <modified>2005-09-04</modified>
     </dates>
   </vuln>
 
