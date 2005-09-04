@@ -1464,6 +1464,7 @@
     SUBDIR += ruby-tzfile
     SUBDIR += rubygem-activesupport
     SUBDIR += rubygem-rake
+    SUBDIR += rubygem-rgl
     SUBDIR += rubygem-stream
     SUBDIR += rudiments
     SUBDIR += rvi
