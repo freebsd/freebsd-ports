@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	dumb
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	devel audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dumb
-DISTNAME=	${PORTNAME}-${PORTVERSION}-fixed
 
 MAINTAINER=	andreas@syndrom23.de
 COMMENT=	IT, XM, S3M and MOD player library
 
-WRKSRC=		${WRKDIR}/dumb
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
@@ -24,8 +22,10 @@ USE_GMAKE=	yes
 .if defined(WITH_ALLEGRO)
 LIB_DEPENDS+=	alleg.41:${PORTSDIR}/devel/allegro
 PLIST_SUB+=	ALLEGRO=""
+MAKE_ARGS=	_PORT_ALLEGRO_CFLAGS="`allegro-config --cflags`"
 .else
 PLIST_SUB+=	ALLEGRO="@comment "
+MAKE_ARGS=	_PORT_ALLEGRO_CFLAGS=
 .endif
 
 post-patch:

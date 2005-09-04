@@ -1,16 +1,23 @@
---- Makefile.orig	Sat Feb 26 15:24:14 2005
-+++ Makefile	Sat Feb 26 15:25:07 2005
-@@ -186,10 +186,10 @@
- OFLAGS := -O2 -ffast-math -fomit-frame-pointer
- DBGFLAGS := -DDEBUGMODE=1 -g3
+--- Makefile.orig	Mon Aug  8 02:18:41 2005
++++ Makefile	Tue Aug 23 02:21:13 2005
+@@ -22,7 +22,7 @@
+ #                    (Note that this is unable to delete the dumbask
+ #                    executable if the configuration is absent.)
+ 
+-MAKEFILE = Makefile.rdy
++MAKEFILE = Makefile
+ 
+ .PHONY: all install uninstall clean veryclean distclean config config-if-necessary make-outdirs
+ 
+@@ -231,10 +231,10 @@
+ endif
+ endif
  
 -CFLAGS_RELEASE := -Iinclude $(WFLAGS) $(OFLAGS)
 -CFLAGS_DEBUG := -Iinclude $(WFLAGS) $(DBGFLAGS)
-+CFLAGS_RELEASE := -Iinclude -I$(PREFIX)/include $(WFLAGS) $(OFLAGS) 
-+CFLAGS_DEBUG := -Iinclude -I$(PREFIX)/include $(WFLAGS) $(DBGFLAGS)
++CFLAGS_RELEASE := -Iinclude -I$(PREFIX)/include $(_PORT_ALLEGRO_CFLAGS) $(WFLAGS) $(OFLAGS) 
++CFLAGS_DEBUG := -Iinclude -I$(PREFIX)/include $(_PORT_ALLEGRO_CFLAGS) $(WFLAGS) $(DBGFLAGS)
  
--LDFLAGS := -s
-+LDFLAGS := -s -L$(PREFIX)/lib
+ LDFLAGS := -s
  
- 
- CORE_EXAMPLES_OBJ := $(addprefix examples/, $(notdir $(patsubst %.c, %.o, $(CORE_EXAMPLES))))
+
