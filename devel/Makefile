@@ -80,7 +80,6 @@
     SUBDIR += bison
     SUBDIR += bison-devel
     SUBDIR += bisongen
-    SUBDIR += bison175
     SUBDIR += bison1875
     SUBDIR += bitkeeper
     SUBDIR += bnf
