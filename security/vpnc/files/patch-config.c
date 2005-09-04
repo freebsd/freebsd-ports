@@ -1,6 +1,6 @@
---- config.c.bak	Sun May 15 15:06:20 2005
-+++ config.c	Sun May 15 15:06:52 2005
-@@ -125,7 +125,7 @@
+--- config.c.orig	Sun May  1 22:06:36 2005
++++ config.c	Tue Aug  2 20:18:29 2005
+@@ -125,12 +125,12 @@
  
  static const char *config_def_script(void)
  {
@@ -9,6 +9,12 @@
  }
  
  static const char *config_def_pid_file(void)
+ {
+-	return "/var/run/vpnc/pid";
++	return "/var/run/vpnc.pid";
+ }
+ 
+ static const struct config_names_s {
 @@ -520,8 +520,8 @@
  	}
  

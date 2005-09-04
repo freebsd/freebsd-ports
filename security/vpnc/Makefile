@@ -7,22 +7,26 @@
 
 PORTNAME=	vpnc
 PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	delta@lackas.net
 COMMENT=	Client for Cisco 3000 VPN Concentrator
 
 LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt
 
-STARTSCRIPT=	vpnc-wrapper-1.25
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 ALL_TARGET=	vpnc
 
+PLIST_FILES=	sbin/vpnc \
+		sbin/vpnc-script \
+		sbin/vpnc-disconnect \
+		etc/vpnc.conf.sample \
+		etc/rc.d/vpnc.sh.sample
+
+PORTDOCS=	README ChangeLog TODO
 MAN8=		vpnc.8
 
 .include <bsd.port.pre.mk>
@@ -48,9 +52,7 @@ do-install:
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 post-install:
