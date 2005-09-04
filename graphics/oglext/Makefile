@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oglext
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.julius.caesar.de/oglext/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -31,6 +31,12 @@ ALL_TARGET=	all staticlib
 TMAKE?=		${LOCALBASE}/bin/tmake
 TMAKEPATH?=	${LOCALBASE}/share/tmake/freebsd-g++
 
+# a quick hack to fix dir's permissions
+post-extract:
+	@(for i in 1 2; do \
+		${CHMOD} u+x `${FIND} ${WRKSRC} -type d`; \
+	done)
+
 pre-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e "s/`${PRINTF} '\r'`//"
 
@@ -48,7 +54,7 @@ do-install:
 .ifndef (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
