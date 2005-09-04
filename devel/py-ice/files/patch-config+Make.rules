@@ -1,0 +1,56 @@
+--- config/Make.rules.orig	Fri Jun 24 01:36:53 2005
++++ config/Make.rules	Tue Aug 30 20:31:34 2005
+@@ -7,6 +7,8 @@
+ #
+ # **********************************************************************
+ 
++ICE_HOME		= %%LOCALBASE%%
++
+ ifndef ICE_HOME
+     $(error ICE_HOME is not defined)
+ endif
+@@ -16,7 +18,7 @@
+ # if it does not exist.
+ #
+ 
+-prefix			= /opt/IcePy-$(VERSION)
++prefix			= %%PREFIX%%
+ 
+ #
+ # Define OPTIMIZE as yes if you want to build with optimization.
+@@ -65,13 +67,13 @@
+     # version used for building the Ice extension, then set PYTHON_VERSION
+     # to "python2.3" or "python2.4".
+     #
+-    PYTHON_VERSION	?= $(word 1,$(notdir $(wildcard /usr/include/python2.[34]*)))
++    PYTHON_VERSION	?= $(word 1,$(notdir $(wildcard %%LOCALBASE%%/include/python2.[34]*)))
+     ifeq ($(PYTHON_VERSION),)
+       python_darwin_home = /System/Library/Frameworks/Python.framework/Versions/Current
+       PYTHON_VERSION 	= $(word 1,$(notdir $(wildcard $(python_darwin_home)/include/python2.[34]*)))
+     endif
+-    PYTHON_INCLUDE_DIR	= /usr/include/$(PYTHON_VERSION)
+-    PYTHON_LIB_DIR	= /usr/lib/$(PYTHON_VERSION)/config
++    PYTHON_INCLUDE_DIR	= %%LOCALBASE%%/include/$(PYTHON_VERSION)
++    PYTHON_LIB_DIR	= %%LOCALBASE%%/lib/$(PYTHON_VERSION)
+ endif
+ 
+ ifeq ($(PYTHON_VERSION),)
+@@ -103,14 +105,14 @@
+ ifeq ($(LP64),yes)
+     install_libdir	= $(prefix)/lib$(lp64suffix)
+ else
+-    install_libdir	= $(prefix)/lib
++    install_libdir	= %%PYTHON_SITELIBDIR%%/Ice
+ endif
+ 
+ install_slicedir	= $(prefix)/slice
+-install_pythondir	= $(prefix)/python
++install_pythondir	= %%PYTHON_SITELIBDIR%%/Ice
+ 
+-INSTALL			= cp -fp
+-INSTALL_PROGRAM		= ${INSTALL}
++INSTALL			= install -C  -o root -g wheel -m 444
++INSTALL_PROGRAM		= install -C  -s -o root -g wheel -m 555
+ INSTALL_LIBRARY		= ${INSTALL}
+ INSTALL_DATA		= ${INSTALL}
+ 

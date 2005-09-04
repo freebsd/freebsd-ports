@@ -1,0 +1,61 @@
+%%PYTHON_SITELIBDIR%%/Ice/Glacier2_PermissionsVerifierF_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Glacier2_PermissionsVerifier_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Glacier2_RouterF_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Glacier2_Router_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Glacier2_SessionF_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Glacier2_Session_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice.py
+%%PYTHON_SITELIBDIR%%/Ice/IceBox_IceBox_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/IcePack_Admin_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/IcePack_Exception_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/IcePack_Query_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/IcePatch2_FileInfo_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/IcePatch2_FileServer_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/IceStorm_IceStorm_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_BuiltinSequences_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_CommunicatorF_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_Communicator_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_ConnectionF_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_Connection_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_Current_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_FacetMap_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_Identity_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_LocalException_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_LocatorF_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_Locator_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_LoggerF_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_Logger_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_ObjectAdapterF_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_ObjectAdapter_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_ObjectFactoryF_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_ObjectFactory_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_PluginF_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_Plugin_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_ProcessF_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_Process_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_PropertiesF_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_Properties_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_RouterF_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_Router_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_ServantLocatorF_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_ServantLocator_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_SliceChecksumDict_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_StatsF_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_Stats_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/IcePy.so
+%%PYTHON_SITELIBDIR%%/Ice/IcePy.so.2.1.2
+%%PYTHON_SITELIBDIR%%/Ice/IcePy.so.21
+%%PYTHON_SITELIBDIR%%/Ice/LICENSE
+%%PYTHON_SITELIBDIR%%/Ice/ICE_LICENSE
+%%PYTHON_SITELIBDIR%%/Ice/Glacier2/__init__.py
+%%PYTHON_SITELIBDIR%%/Ice/IceBox/__init__.py
+%%PYTHON_SITELIBDIR%%/Ice/IcePack/__init__.py
+%%PYTHON_SITELIBDIR%%/Ice/IcePatch2/__init__.py
+%%PYTHON_SITELIBDIR%%/Ice/IceStorm/__init__.py
+%%PYTHON_SITELIBDIR%%/Ice.pth
+@dirrm %%PYTHON_SITELIBDIR%%/Ice/Glacier2
+@dirrm %%PYTHON_SITELIBDIR%%/Ice/IceBox
+@dirrm %%PYTHON_SITELIBDIR%%/Ice/IcePack
+@dirrm %%PYTHON_SITELIBDIR%%/Ice/IcePatch2
+@dirrm %%PYTHON_SITELIBDIR%%/Ice/IceStorm
+@dirrm %%PYTHON_SITELIBDIR%%/Ice
