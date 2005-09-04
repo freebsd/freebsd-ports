@@ -10877,6 +10877,7 @@ rubygem-activesupport	ports/devel/rubygem-activesupport
 rubygem-rails	ports/www/rubygem-rails
 rubygem-rake	ports/devel/rubygem-rake
 rubygem-redcloth	ports/www/rubygem-redcloth
+rubygem-stream	ports/devel/rubygem-stream
 rubyphoto	ports/graphics/rubyphoto
 rude		ports/net/rude
 rudiments	ports/devel/rudiments
