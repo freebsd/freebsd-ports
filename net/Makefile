@@ -901,6 +901,7 @@
     SUBDIR += xnap
     SUBDIR += xprobe
     SUBDIR += xpvm
+    SUBDIR += xrdesktop
     SUBDIR += xsmbrowser
     SUBDIR += xtraceroute
     SUBDIR += xwhois
