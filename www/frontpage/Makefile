@@ -7,7 +7,7 @@
 
 PORTNAME=	frontpage
 PORTVERSION=	5.0.2.2635
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	# Needs to be manually fetched from http://www.rtr.com
 
@@ -51,6 +51,10 @@ EXTRA_PATCHES=	fp_install.alpha
 EXTRA_PATCHES=	fp_install.sparc
 .elif defined(WANT_BSDI_EXTENSIONS)
 EXTRA_PATCHES=	fp_install.bsdi
+.elif ${ARCH} == i386
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+.endif
 .endif
 
 do-extract:

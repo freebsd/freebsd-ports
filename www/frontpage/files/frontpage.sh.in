@@ -22,7 +22,7 @@
 frontpage_key() {
 
 	CUR_UMASK=`umask`
-	skdir=${prefix}/frontpage/version%%FP_VER%%/apache-fp
+	skdir=%%PREFIX%%/frontpage/version%%FP_VER%%/apache-fp
 	PERL=%%PERL5%%
 
 	# Alternate way of generating the suidkey file with out PERL
