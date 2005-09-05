@@ -9661,6 +9661,7 @@ postfix		ports/mail/postfix
 postfix-current	ports/mail/postfix-current
 postfix-gps	ports/mail/postfix-gps
 postfix-gps-devel	ports/mail/postfix-gps-devel
+postfix-policyd-sf	ports/mail/postfix-policyd-sf
 postfix-policyd-spf	ports/mail/postfix-policyd-spf
 postfix-policyd-weight	ports/mail/postfix-policyd-weight
 postfix1	ports/mail/postfix1
