@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ifc
-PORTVERSION=	8.1.028
+PORTVERSION=	8.1.030
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_fc_pc_${PORTVERSION:C/p.+$//}
@@ -204,10 +204,6 @@ post-install:
 	@${ECHO} "put your license into your \$${INTEL_FLEXLM_LICENSE} (default:"
 	@${ECHO} "${PREFIX}/${COMPILERDIR}/licenses) directory and add"
 	@${ECHO} "${PREFIX}/${COMPILERDIR}/bin to your PATH."
-	@${ECHO}
-	@${ECHO} "If you use ifc on a Pentium 4 make sure you have 'options CPU_ENABLE_SSE'"
-	@${ECHO} "in your kernel config (have a look at http://www.FreeBSD.org/handbook/"
-	@${ECHO} "if you do not know how to do this), else ifc will hang forever."
 	@${ECHO}
 	@${ECHO} "WARNING: If you use ifc while having linux_devtools installed, ifc will use"
 	@${ECHO} "the wrong includes and therefore will generate bogus (not working) binaries!"
