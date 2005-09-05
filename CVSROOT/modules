@@ -10128,6 +10128,7 @@ py-twistedNews	ports/news/py-twistedNews
 py-twistedPair	ports/net/py-twistedPair
 py-twistedRunner	ports/devel/py-twistedRunner
 py-twistedWeb	ports/www/py-twistedWeb
+py-twistedWeb2	ports/www/py-twistedWeb2
 py-twistedWords	ports/net/py-twistedWords
 py-twistedXish	ports/devel/py-twistedXish
 py-twofish	ports/security/py-twofish
