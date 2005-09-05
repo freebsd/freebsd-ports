@@ -147,6 +147,9 @@ post-extract:
 #.if defined(WITH_TTF_BYTECODE_ENABLED)
 #	@cd ${WRKSRC} ; ${PATCH} < ${FILESDIR}/optpatch-freetype
 #.endif
+.if (${OSVERSION} <= 492000)
+	@cd ${WRKSRC} ; ${PATCH} < ${FILESDIR}/fbsd4-workaroundpatch
+.endif
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/gpc231.tar.Z | ${TAR} xfz -
 	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/external/gpc/
 	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/external/gpc/

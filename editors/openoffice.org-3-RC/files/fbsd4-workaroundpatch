@@ -1,0 +1,81 @@
+Issutracker : #iXXXXX#
+CWS         : N/A
+Author:     : 
+Description :
+
+making libbf_svx680fi.so fails for FreeBSD 4.11 like:
+
+Making: ../../unxfbsd.pro/lib/libbf_svx680fi.so
+ccache g++-ooo -Wl,-z,combreloc -Wl,-rpath,'$ORIGIN' -shared -L../../unxfbsd.pro/lib -L../lib -L/work/ports/editors/openoffice.org-2.0/work/OOo_2.0beta2/solenv/unxfbsd/lib -L/work/ports/editors/openoffice.org-2.0/work/OOo_2.0beta2/solver/680/unxfbsd.pro/lib -L/work/ports/editors/openoffice.org-2.0/work/OOo_2.0beta2/solenv/unxfbsd/lib -L/usr/local/jdk1.4.2/lib -L/usr/local/jdk1.4.2/jre/lib/i386 -L/usr/local/jdk1.4.2/jre/lib/i386/client -L/usr/local/jdk1.4.2/jre/lib/i386/native_threads -L/usr/X11R6/lib ../../unxfbsd.pro/slo/bf_svx_dflt_version.o ../../unxfbsd.pro/slo/bf_svx_dflt_description.o -o ../../unxfbsd.pro/lib/libbf_svx680fi.so ../../unxfbsd.pro/slo/svx_writingmodeitem.o ../../unxfbsd.pro/slo/svx_frmitems.o ../../unxfbsd.pro/slo/svx_paraitem.o ../../unxfbsd.pro/slo/svx_textitem.o ../../unxfbsd.pro/slo/svx_postattr.o ../../unxfbsd.pro/slo/svx_flditem.o ../../unxfbsd.pro/slo/svx_hlnkitem.o ../../unxfbsd.pro/slo/svx_svxfont.o ../../unxfbsd.pro/slo/svx_pageitem.o ../../unxfbsd.pro/slo/svx_paperinf.o ../../unxfbsd.pro/slo/svx_drawitem.o ../../unxfbsd.pro/slo/svx_algitem.o ../../unxfbsd.pro/slo/svx_itemtype.o ../../unxfbsd.pro/slo/svx_rotmodit.o ../../unxfbsd.pro/slo/svx_numinf.o ../../unxfbsd.pro/slo/svx_svxerr.o ../../unxfbsd.pro/slo/svx_numfmtsh.o ../../unxfbsd.pro/slo/svx_zoomitem.o ../../unxfbsd.pro/slo/svx_chrtitem.o ../../unxfbsd.pro/slo/svx_bulitem.o ../../unxfbsd.pro/slo/svx_e3ditem.o ../../unxfbsd.pro/slo/svx_numitem.o ../../unxfbsd.pro/slo/svx_grfitem.o ../../unxfbsd.pro/slo/svx_clipfmtitem.o ../../unxfbsd.pro/slo/svx_svxempty.o ../../unxfbsd.pro/slo/svx_xmlcnitm.o ../../unxfbsd.pro/slo/svx_linkmgr.o ../../unxfbsd.pro/slo/svx_fileobj.o ../../unxfbsd.pro/slo/svx_txtrange.o ../../unxfbsd.pro/slo/svx_svxacorr.o ../../unxfbsd.pro/slo/svx_SvXMLAutoCorrectImport.o ../../unxfbsd.pro/slo/svx_forbiddencharacterstable.o ../../unxfbsd.pro/slo/svx_swafopt.o ../../unxfbsd.pro/slo/svx_editattr.o ../../unxfbsd.pro/slo/svx_editdbg.o ../../unxfbsd.pro/slo/svx_editdoc.o ../../unxfbsd.pro/slo/svx_editdoc2.o ../../unxfbsd.pro/slo/svx_editeng.o ../../unxfbsd.pro/slo/svx_editobj.o ../../unxfbsd.pro/slo/svx_editsel.o ../../unxfbsd.pro/slo/svx_editundo.o ../../unxfbsd.pro/slo/svx_edtspell.o ../../unxfbsd.pro/slo/svx_editview.o ../../unxfbsd.pro/slo/svx_eerdll.o ../../unxfbsd.pro/slo/svx_impedit.o ../../unxfbsd.pro/slo/svx_impedit2.o ../../unxfbsd.pro/slo/svx_impedit3.o ../../unxfbsd.pro/slo/svx_impedit4.o ../../unxfbsd.pro/slo/svx_impedit5.o ../../unxfbsd.pro/slo/svx_unolingu.o ../../unxfbsd.pro/slo/svx_outliner.o ../../unxfbsd.pro/slo/svx_outlin2.o ../../unxfbsd.pro/slo/svx_paralist.o ../../unxfbsd.pro/slo/svx_outlvw.o ../../unxfbsd.pro/slo/svx_outleeng.o ../../unxfbsd.pro/slo/svx_outlobj.o ../../unxfbsd.pro/slo/svx__bmpmask.o ../../unxfbsd.pro/slo/svx__contdlg.o ../../unxfbsd.pro/slo/svx_charmap.o ../../unxfbsd.pro/slo/svx_hyperdlg.o ../../unxfbsd.pro/slo/svx_imapdlg.o ../../unxfbsd.pro/slo/svx_dlgutil.o ../../unxfbsd.pro/slo/svx_fontwork.o ../../unxfbsd.pro/slo/svx_impgrf.o ../../unxfbsd.pro/slo/svx_rlrcitem.o ../../unxfbsd.pro/slo/svx_rulritem.o ../../unxfbsd.pro/slo/svx_rubydialog.o ../../unxfbsd.pro/slo/svx_srchdlg.o ../../unxfbsd.pro/slo/svx_svxruler.o ../../unxfbsd.pro/slo/svx_txencbox.o ../../unxfbsd.pro/slo/svx_clipboardctl.o ../../unxfbsd.pro/slo/svx_fntctl.o ../../unxfbsd.pro/slo/svx_fntszctl.o ../../unxfbsd.pro/slo/svx_asiancfg.o ../../unxfbsd.pro/slo/svx_adritem.o ../../unxfbsd.pro/slo/svx_optgrid.o ../../unxfbsd.pro/slo/svx_insctrl.o ../../unxfbsd.pro/slo/svx_zoomctrl.o ../../unxfbsd.pro/slo/svx_pszctrl.o ../../unxfbsd.pro/slo/svx_selctrl.o ../../unxfbsd.pro/slo/svx_modctrl.o ../../unxfbsd.pro/slo/svx_colrctrl.o ../../unxfbsd.pro/slo/svx_fillctrl.o ../../unxfbsd.pro/slo/svx_grafctrl.o ../../unxfbsd.pro/slo/svx_itemwin.o ../../unxfbsd.pro/slo/svx_layctrl.o ../../unxfbsd.pro/slo/svx_lboxctrl.o ../../unxfbsd.pro/slo/svx_linectrl.o ../../unxfbsd.pro/slo/svx_tbcontrl.o ../../unxfbsd.pro/slo/svx_tbxalign.o ../../unxfbsd.pro/slo/svx_tbxdraw.o ../../unxfbsd.pro/slo/svx_tbxdrctl.o ../../unxfbsd.pro/slo/svx_verttexttbxctrl.o ../../unxfbsd.pro/slo/svx_UnoForbiddenCharsTable.o ../../unxfbsd.pro/slo/svx_unoedsrc.o ../../unxfbsd.pro/slo/svx_unoedhlp.o ../../unxfbsd.pro/slo/svx_unopracc.o ../../unxfbsd.pro/slo/svx_unoedprx.o ../../unxfbsd.pro/slo/svx_unoviwed.o ../../unxfbsd.pro/slo/svx_unoviwou.o ../../unxfbsd.pro/slo/svx_unofored.o ../../unxfbsd.pro/slo/svx_unoforou.o ../../unxfbsd.pro/slo/svx_unotext.o ../../unxfbsd.pro/slo/svx_unotext2.o ../../unxfbsd.pro/slo/svx_unofield.o ../../unxfbsd.pro/slo/svx_UnoNamespaceMap.o ../../unxfbsd.pro/slo/svx_UnoGraphicExporter.o ../../unxfbsd.pro/slo/svx_unopool.o ../../unxfbsd.pro/slo/svx_XPropertyTable.o ../../unxfbsd.pro/slo/svx_UnoNameItemTable.o ../../unxfbsd.pro/slo/svx_unoshape.o ../../unxfbsd.pro/slo/svx_unoipset.o ../../unxfbsd.pro/slo/svx_unoctabl.o ../../unxfbsd.pro/slo/svx_unoshap2.o ../../unxfbsd.pro/slo/svx_unoshap3.o ../../unxfbsd.pro/slo/svx_unoshap4.o ../../unxfbsd.pro/slo/svx_unopage.o ../../unxfbsd.pro/slo/svx_unoshtxt.o ../../unxfbsd.pro/slo/svx_unoshcol.o ../../unxfbsd.pro/slo/svx_unoprov.o ../../unxfbsd.pro/slo/svx_unomod.o ../../unxfbsd.pro/slo/svx_unonrule.o ../../unxfbsd.pro/slo/svx_unofdesc.o ../../unxfbsd.pro/slo/svx_unomlstr.o ../../unxfbsd.pro/slo/svx_unogtabl.o ../../unxfbsd.pro/slo/svx_unohtabl.o ../../unxfbsd.pro/slo/svx_unobtabl.o ../../unxfbsd.pro/slo/svx_unottabl.o ../../unxfbsd.pro/slo/svx_unomtabl.o ../../unxfbsd.pro/slo/svx_unodtabl.o ../../unxfbsd.pro/slo/svx_gluepts.o ../../unxfbsd.pro/slo/svx_galexpl.o ../../unxfbsd.pro/slo/svx_galdlg.o ../../unxfbsd.pro/slo/svx_galctrl.o ../../unxfbsd.pro/slo/svx_gallery1.o ../../unxfbsd.pro/slo/svx_galtheme.o ../../unxfbsd.pro/slo/svx_galmisc.o ../../unxfbsd.pro/slo/svx_galobj.o ../../unxfbsd.pro/slo/svx_codec.o ../../unxfbsd.pro/slo/svx_galbrws.o ../../unxfbsd.pro/slo/svx_galbrws1.o ../../unxfbsd.pro/slo/svx_galbrws2.o ../../unxfbsd.pro/slo/svx_svdoutlinercache.o ../../unxfbsd.pro/slo/svx_dialdll.o ../../unxfbsd.pro/slo/svx_gradtrns.o ../../unxfbsd.pro/slo/svx_svdattr.o ../../unxfbsd.pro/slo/svx_svdcrtmt.o ../../unxfbsd.pro/slo/svx_svdcrtv.o ../../unxfbsd.pro/slo/svx_svddrag.o ../../unxfbsd.pro/slo/svx_svddrgmt.o ../../unxfbsd.pro/slo/svx_svddrgv.o ../../unxfbsd.pro/slo/svx_svdedtv.o ../../unxfbsd.pro/slo/svx_svdedtv1.o ../../unxfbsd.pro/slo/svx_svdedtv2.o ../../unxfbsd.pro/slo/svx_svdedxv.o ../../unxfbsd.pro/slo/svx_svdetc.o ../../unxfbsd.pro/slo/svx_svdfmtf.o ../../unxfbsd.pro/slo/svx_svdfppt.o ../../unxfbsd.pro/slo/svx_svdglev.o ../../unxfbsd.pro/slo/svx_svdglue.o ../../unxfbsd.pro/slo/svx_svdhdl.o ../../unxfbsd.pro/slo/svx_svdhlpln.o ../../unxfbsd.pro/slo/svx_svdibrow.o ../../unxfbsd.pro/slo/svx_svdio.o ../../unxfbsd.pro/slo/svx_svditer.o ../../unxfbsd.pro/slo/svx_svdlayer.o ../../unxfbsd.pro/slo/svx_svdmark.o ../../unxfbsd.pro/slo/svx_svdmodel.o ../../unxfbsd.pro/slo/svx_svdmrkv.o ../../unxfbsd.pro/slo/svx_svdmrkv1.o ../../unxfbsd.pro/slo/svx_svdoattr.o ../../unxfbsd.pro/slo/svx_svdobj.o ../../unxfbsd.pro/slo/svx_impgrfll.o ../../unxfbsd.pro/slo/svx_svdocapt.o ../../unxfbsd.pro/slo/svx_svdocirc.o ../../unxfbsd.pro/slo/svx_svdoedge.o ../../unxfbsd.pro/slo/svx_svdograf.o ../../unxfbsd.pro/slo/svx_svdogrp.o ../../unxfbsd.pro/slo/svx_svdomeas.o ../../unxfbsd.pro/slo/svx_svdoole2.o ../../unxfbsd.pro/slo/svx_svdopage.o ../../unxfbsd.pro/slo/svx_svdopath.o ../../unxfbsd.pro/slo/svx_svdorect.o ../../unxfbsd.pro/slo/svx_svdotext.o ../../unxfbsd.pro/slo/svx_svdotxat.o ../../unxfbsd.pro/slo/svx_svdotxdr.o ../../unxfbsd.pro/slo/svx_svdotxed.o ../../unxfbsd.pro/slo/svx_svdotxfl.o ../../unxfbsd.pro/slo/svx_svdotxln.o ../../unxfbsd.pro/slo/svx_svdotxtr.o ../../unxfbsd.pro/slo/svx_svdouno.o ../../unxfbsd.pro/slo/svx_svdoutl.o ../../unxfbsd.pro/slo/svx_svdovirt.o ../../unxfbsd.pro/slo/svx_svdpage.o ../../unxfbsd.pro/slo/svx_svdpagv.o ../../unxfbsd.pro/slo/svx_svdpntv.o ../../unxfbsd.pro/slo/svx_svdpoev.o ../../unxfbsd.pro/slo/svx_svdscrol.o ../../unxfbsd.pro/slo/svx_svdsnpv.o ../../unxfbsd.pro/slo/svx_svdsuro.o ../../unxfbsd.pro/slo/svx_svdtouch.o ../../unxfbsd.pro/slo/svx_svdtrans.o ../../unxfbsd.pro/slo/svx_svdtxhdl.o ../../unxfbsd.pro/slo/svx_svdundo.o ../../unxfbsd.pro/slo/svx_svdview.o ../../unxfbsd.pro/slo/svx_svdviter.o ../../unxfbsd.pro/slo/svx_svdvmark.o ../../unxfbsd.pro/slo/svx_svdxcgv.o ../../unxfbsd.pro/slo/svx_clonelist.o ../../unxfbsd.pro/slo/svx_dbcharsethelper.o ../../unxfbsd.pro/slo/svx_ParseContext.o ../../unxfbsd.pro/slo/svx_typeconversionclient.o ../../unxfbsd.pro/slo/svx_confirmdelete.o ../../unxfbsd.pro/slo/svx_dbtoolsclient.o ../../unxfbsd.pro/slo/svx_sqlparserclient.o ../../unxfbsd.pro/slo/svx_dataaccessdescriptor.o ../../unxfbsd.pro/slo/svx_fmpage.o ../../unxfbsd.pro/slo/svx_fmPropBrw.o ../../unxfbsd.pro/slo/svx_fmundo.o ../../unxfbsd.pro/slo/svx_fmprop.o ../../unxfbsd.pro/slo/svx_fmmodel.o ../../unxfbsd.pro/slo/svx_navigatortree.o ../../unxfbsd.pro/slo/svx_navigatortreemodel.o ../../unxfbsd.pro/slo/svx_fmexpl.o ../../unxfbsd.pro/slo/svx_fmctrler.o ../../unxfbsd.pro/slo/svx_fmpgeimp.o ../../unxfbsd.pro/slo/svx_fmvwimp.o ../../unxfbsd.pro/slo/svx_taborder.o ../../unxfbsd.pro/slo/svx_fmdpage.o ../../unxfbsd.pro/slo/svx_fmitems.o ../../unxfbsd.pro/slo/svx_tbxform.o ../../unxfbsd.pro/slo/svx_fmobj.o ../../unxfbsd.pro/slo/svx_fmdmod.o ../../unxfbsd.pro/slo/svx_fmobjfac.o ../../unxfbsd.pro/slo/svx_fmsrccfg.o ../../unxfbsd.pro/slo/svx_fmservs.o ../../unxfbsd.pro/slo/svx_typemap.o ../../unxfbsd.pro/slo/svx_fmexch.o ../../unxfbsd.pro/slo/svx_tabwin.o ../../unxfbsd.pro/slo/svx_multipro.o ../../unxfbsd.pro/slo/svx_fmurl.o ../../unxfbsd.pro/slo/svx_filtnav.o ../../unxfbsd.pro/slo/svx_fmimplids.o ../../unxfbsd.pro/slo/svx_fmtools.o ../../unxfbsd.pro/slo/svx_fmshimp.o ../../unxfbsd.pro/slo/svx_fmshell.o ../../unxfbsd.pro/slo/svx_fmsearch.o ../../unxfbsd.pro/slo/svx_fmsrcimp.o ../../unxfbsd.pro/slo/svx_fmview.o ../../unxfbsd.pro/slo/svx_siimport.o ../../unxfbsd.pro/slo/svx_sdbdatacolumn.o ../../unxfbsd.pro/slo/svx_svx3ditems.o ../../unxfbsd.pro/slo/svx_deflt3d.o ../../unxfbsd.pro/slo/svx_class3d.o ../../unxfbsd.pro/slo/svx_e3dundo.o ../../unxfbsd.pro/slo/svx_volume3d.o ../../unxfbsd.pro/slo/svx_viewpt3d.o ../../unxfbsd.pro/slo/svx_camera3d.o ../../unxfbsd.pro/slo/svx_poly3d.o ../../unxfbsd.pro/slo/svx_polygn3d.o ../../unxfbsd.pro/slo/svx_volmrk3d.o ../../unxfbsd.pro/slo/svx_objfac3d.o ../../unxfbsd.pro/slo/svx_obj3d.o ../../unxfbsd.pro/slo/svx_light3d.o ../../unxfbsd.pro/slo/svx_dlight3d.o ../../unxfbsd.pro/slo/svx_plight3d.o ../../unxfbsd.pro/slo/svx_pntobj3d.o ../../unxfbsd.pro/slo/svx_polyob3d.o ../../unxfbsd.pro/slo/svx_scene3d.o ../../unxfbsd.pro/slo/svx_polysc3d.o ../../unxfbsd.pro/slo/svx_cube3d.o ../../unxfbsd.pro/slo/svx_sphere3d.o ../../unxfbsd.pro/slo/svx_extrud3d.o ../../unxfbsd.pro/slo/svx_lathe3d.o ../../unxfbsd.pro/slo/svx_label3d.o ../../unxfbsd.pro/slo/svx_dragmt3d.o ../../unxfbsd.pro/slo/svx_view3d.o ../../unxfbsd.pro/slo/svx_view3d1.o ../../unxfbsd.pro/slo/svx_e3dcmpt.o ../../unxfbsd.pro/slo/svx_float3d.o ../../unxfbsd.pro/slo/svx_svxmsbas.o ../../unxfbsd.pro/slo/svx_xcpoly.o ../../unxfbsd.pro/slo/svx_xout.o ../../unxfbsd.pro/slo/svx_xout1.o ../../unxfbsd.pro/slo/svx_xattr.o ../../unxfbsd.pro/slo/svx_xattr2.o ../../unxfbsd.pro/slo/svx_xattrbmp.o ../../unxfbsd.pro/slo/svx_xline.o ../../unxfbsd.pro/slo/svx_xpool.o ../../unxfbsd.pro/slo/svx_xtable.o ../../unxfbsd.pro/slo/svx_xtabcolr.o ../../unxfbsd.pro/slo/svx_xtablend.o ../../unxfbsd.pro/slo/svx_xtabdash.o ../../unxfbsd.pro/slo/svx_xtabhtch.o ../../unxfbsd.pro/slo/svx_xtabgrdt.o ../../unxfbsd.pro/slo/svx_xtabbtmp.o ../../unxfbsd.pro/slo/svx_xexch.o ../../unxfbsd.pro/slo/svx_xiocomp.o ../../unxfbsd.pro/slo/svx__xpoly.o ../../unxfbsd.pro/slo/svx__ximp.o ../../unxfbsd.pro/slo/svx__xoutbmp.o ../../unxfbsd.pro/slo/svx__xfont.o ../../unxfbsd.pro/slo/svx_xmlexport.o ../../unxfbsd.pro/slo/svx_xmltxtimp.o ../../unxfbsd.pro/slo/svx_xmltxtexp.o ../../unxfbsd.pro/slo/svx_xmlxtimp.o ../../unxfbsd.pro/slo/svx_xmlxtexp.o ../../unxfbsd.pro/slo/svx_xmlgrhlp.o ../../unxfbsd.pro/slo/svx_xmleohlp.o -lbf_xo680fi -lgo680fi -lsb680fi -lso680fi -lsvt680fi -ltk680fi -lvcl680fi -lsvl680fi -lsot680fi -lutl680fi -ltl680fi -lcomphelp4gcc3 -lucbhelper3gcc3 -luno_cppuhelpergcc3 -luno_cppu -lvos3gcc3 -luno_sal -licuuc -lfwe680fi -llegacy_binfilters680fi -luno_salhelpergcc3 -lxcr680fi -lsysshell -lbf_sfx -lsysshell -pthread -lm -Wl,-Bdynamic -lstlport_gcc -pthread
+/usr/libexec/elf/ld: ../../unxfbsd.pro/lib/libbf_svx680fi.so: undefined versioned symbol name typeinfo for com::sun::star::beans::XFastPropertySet@@UDK_3_0_0
+/usr/libexec/elf/ld: failed to set dynamic section sizes: Bad value
+collect2: ld returned 1 exit status
+dmake:  Error code 1, while making '../../unxfbsd.pro/lib/libbf_svx680fi.so'
+'---* tg_merge.mk *---'
+
+ERROR: Error 65280 occurred while making /work/ports/editors/openoffice.org-2.0/work/OOo_2.0beta2/binfilter/bf_svx/util
+dmake:  Error code 1, while making 'build_instsetoo_native'
+'---* tg_merge.mk *---'
+*** Error code 255
+
+Stop in /work/ports/editors/openoffice.org-2.0.
+
+--- /dev/null	Sun Sep  4 19:33:13 2005
++++ binfilter/bf_svx/util/bf_svx.map	Sun Sep  4 18:41:25 2005
+@@ -0,0 +1 @@
++UDK_3_0_0 { global: _ZTI*; _ZTS*; };
+
+Index: binfilter/bf_svx/util/makefile.mk
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_svx/util/makefile.mk,v
+retrieving revision 1.5
+diff -u -r1.5 makefile.mk
+--- binfilter/bf_svx/util/makefile.mk	5 Dec 2003 15:10:56 -0000	1.5
++++ binfilter/bf_svx/util/makefile.mk	4 Sep 2005 09:55:49 -0000
+@@ -91,6 +91,7 @@
+ SHL1IMPLIB= bf_svx
+ SVXLOKAL=	$(LB)$/bf_svx.lib
+ SHL1BASE  = 0x1d800000
++SHL1VERSIONMAP= bf_svx.map
+ 
+ SHL1STDLIBS= \
+ 	$(BFXMLOFFLIB) \
+#########################################################################
+Issutracker : #i52984#, #i54178#
+CWS         : N/A
+Reported by : <yury_tarasievich@yahoo.com>
+Description :
+Workaround for FreeBSD4. For rsc/rscpp,  -pthread is ignored although it is
+specifled, so specified twice. it does solve the probem. this is redundant
+for other FreeBSDs, I believe it is safe. otherwise rsc bombs like:
+libstlport_gcc.so which claims `Undefined symbol "pthread_mutex_lock"'.
+
+Index: solenv/inc/unxfbsdi.mk
+===================================================================
+RCS file: /cvs/tools/solenv/inc/unxfbsdi.mk,v
+retrieving revision 1.17
+diff -u -r1.17 unxfbsdi.mk
+--- solenv/inc/unxfbsdi.mk	18 Aug 2005 12:04:47 -0000	1.17
++++ solenv/inc/unxfbsdi.mk	3 Sep 2005 11:10:07 -0000
+@@ -72,7 +72,7 @@
+ #LINKOUTPUT_FILTER=" |& $(SOLARENV)$/bin$/msg_filter"
+ 
+ # _PTHREADS is needed for the stl
+-CDEFS+=$(PTHREAD_CFLAGS) -DX86 -D_PTHREADS -D_REENTRANT -DNEW_SOLAR -D_USE_NAMESPACE=1 -DSTLPORT_VERSION=400
++CDEFS+=$(PTHREAD_CFLAGS) -DX86 -D_PTHREADS -D_REENTRANT -DNEW_SOLAR -D_USE_NAMESPACE=1 -DSTLPORT_VERSION=450
+ 
+ # enable visibility define in "sal/types.h"
+ .IF "$(HAVE_GCC_VISIBILITY_FEATURE)" == "TRUE"
+@@ -217,8 +217,10 @@
+ 
+ LIBSALCPPRT*=-Wl,--whole-archive -lsalcpprt -Wl,--no-whole-archive
+ 
+-LIBSTLPORT=$(DYNAMIC) -lstlport_gcc
+-LIBSTLPORTST=$(STATIC) -lstlport_gcc $(DYNAMIC)
++# Workaround for FreeBSD4. In some case $(PTHREAD_LIBS), namely -pthread
++# is ignored although it is specifled. This is redundant for other FreeBSDs.
++LIBSTLPORT=$(DYNAMIC) -lstlport_gcc $(PTHREAD_LIBS)
++LIBSTLPORTST=$(STATIC) -lstlport_gcc $(DYNAMIC) $(PTHREAD_LIBS)
+ 
+ #FILLUPARC=$(STATIC) -lsupc++ $(DYNAMIC)
+ 
