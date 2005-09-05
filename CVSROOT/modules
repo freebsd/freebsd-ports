@@ -2584,6 +2584,7 @@ gaim-encryption	ports/security/gaim-encryption
 gaim-festival	ports/audio/gaim-festival
 gaim-guifications	ports/misc/gaim-guifications
 gaim-ignorance	ports/misc/gaim-ignorance
+gaim-irchelper	ports/irc/gaim-irchelper
 gaim-latex	ports/net/gaim-latex
 gaim-openq	ports/net/gaim-openq
 gaim-otr	ports/security/gaim-otr
