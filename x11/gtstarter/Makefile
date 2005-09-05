@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtstarter
-PORTVERSION=	0.4.6.1
-PORTREVISION=	1
+PORTVERSION=	0.4.6.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://webonaut.com/distfiles/${PORTNAME}/
 
@@ -18,11 +17,11 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
-USE_GNOME=	pygnome2 gnomeprefix
+USE_GNOME=	pygnome2 pygnomeextras gnomeprefix
 
 do-build:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${PREFIX}|g' \
-		${WRKSRC}/*.py
+		${WRKSRC}/*.py ${WRKSRC}/*.server
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
