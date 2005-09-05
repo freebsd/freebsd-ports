@@ -23,6 +23,8 @@ EXTRACT_ONLY=	${PORTNAME:U}${EXTRACT_SUFX}
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	M2000 is a portable emulator for the P2000 home computer
 
+EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
+
 M2000TAPES=	3DDoolhof2.cas		\
 		BrickWall.cas		\
 		Componist.cas		\
