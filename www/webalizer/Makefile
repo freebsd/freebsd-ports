@@ -45,6 +45,9 @@ EXTRA_PATCHES+=	${WRKDIR}/geolizer_2.01-10-patch/geolizer.patch
 EXTRA_PATCHES+=	${FILESDIR}/output.geo.patch
 EXTRA_PATCHES+=	${FILESDIR}/linklist.geo.patch
 PATCH_STRIP=	-p1
+CONFIGURE_ARGS+=	--enable-geoip \
+			--with-geoip-lib=${LOCALBASE}/lib \
+			--with-geoip-inc=${LOCALBASE}/include
 PLIST_SUB+=	WITH_GEOIP=""
 .else
 CONFLICTS+=	${PKGNAMEPREFIX}webalizer-geoip-2*
@@ -62,11 +65,11 @@ WEBALIZER_LANG?=english
 
 CONFIGURE_ARGS+=	--enable-dns \
 			--with-etcdir=${PREFIX}/etc \
-			--with-gdlib=${PREFIX}/lib \
-			--with-gd=${PREFIX}/include
+			--with-gdlib=${LOCALBASE}/lib \
+			--with-gd=${LOCALBASE}/include
+
 CONFIGURE_ENV+=	LDFLAGS="-L${PREFIX}/lib"
 CFLAGS+=	-DLINKLIST_MAX_STRING=256
-MAKE_ARGS+=	CFLAGS="${CFLAGS}"
 MAN1=		${PKGNAMEPREFIX}webalizer.1
 DOC1=		CHANGES Copyright INSTALL \
 		README README.FIRST DNS.README country-codes.txt
@@ -97,7 +100,7 @@ USE_ICONV=yes
 EXTRA_PATCHES+=		${FILESDIR}/webalizer-a-urasim_2.patch
 CONFIGURE_ARGS+=	--enable-mininls
 CONFIGURE_ENV+=		LIBS="-L${LOCALBASE}/lib -liconv"
-CFLAGS+=		-I${PREFIX}/include
+CFLAGS+=		-I${LOCALBASE}/include
 .endif
 
 pre-configure:
