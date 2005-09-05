@@ -8,8 +8,8 @@
 PORTNAME=	libpri
 PORTVERSION=	1.0.9
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.asterisk.org/pub/libpri/ \
-		ftp://ftp.asterisk.org/pub/libpri/old/
+MASTER_SITES=	ftp://ftp.digium.com/pub/libpri/ \
+		ftp://ftp.digium.com/pub/libpri/old/
 
 PATCHFILES=	${PORTNAME}-1.0.8-${BRIVER}.patch.gz
 PATCH_SITES=	${MASTER_SITE_LOCAL}
