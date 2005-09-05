@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	postfix-
 PKGNAMESUFFIX=	-sf
 DISTNAME=	policyd-v${PORTVERSION}
 
-MAINTAINER=	rafan@infor.org
+MAINTAINER=	kiwi@oav.net
 COMMENT=	Anti-spam plugin for Postfix (written in C)
 
 USE_MYSQL=	yes
