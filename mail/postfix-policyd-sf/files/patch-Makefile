@@ -1,0 +1,45 @@
+--- Makefile.orig	Sat Jul 23 12:17:05 2005
++++ Makefile	Tue Aug  2 22:53:14 2005
+@@ -1,20 +1,8 @@
+-#
+-# systems which install in /usr
+-inc  = -I/usr/include/mysql
+-lib  = -L/usr/lib/mysql
+-# systems with single mysql subdir
+-inc += -I/usr/local/mysql/include -I/usr/local/mysql/include/mysql
+-lib += -L/usr/local/mysql/lib -L/usr/local/mysql/lib/mysql
+-# freebsd ports
+-inc += -I/usr/local/include/mysql
+-lib += -L/usr/local/lib/mysql
+-# netbsd pkgsrc
+-inc += -I/usr/pkg/include/mysql
+-lib += -L/usr/pkg/lib/mysql
+-
+-CC       := gcc
+-CPPFLAGS := -O $(inc)
+-CFLAGS   := -g -W -Wall
++inc      := -I$(LOCALBASE)/include/mysql
++lib      := -L$(LOCALBASE)/lib/mysql
++CC       ?= gcc
++CPPFLAGS += $(inc)
++CFLAGS   ?= -g -W -Wall
+ OS_NAME  := $(shell uname | tr [A-Z] [a-z])
+ LDLIBS    = $(lib) -lmysqlclient -lz
+ 
+@@ -22,15 +10,7 @@
+ LDLIBS   += -lsocket -lnsl -lm
+ endif
+ 
+-all:
+-	@echo ""
+-	@echo "Possible options are:"
+-	@echo ""
+-	@echo "  make build"
+-	@echo "  make install | install-strip"
+-	@echo "  make clean"
+-	@echo ""
+-	@exit
++all: build
+ 
+ build: policyd cleanup
+ 

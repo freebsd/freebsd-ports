@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: policyd
+# REQUIRE: LOGIN
+# BEFORE: mail
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable policyd:
+#
+# %%REALNAME%%_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name=%%REALNAME%%
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/%%REALNAME%%
+
+stop_postcmd=stop_postcmd
+
+stop_postcmd()
+{
+  rm -f $pidfile
+}
+
+# set defaults
+
+%%REALNAME%%_enable=${%%REALNAME%%_enable:-"NO"}
+%%REALNAME%%_pidfile=${%%REALNAME%%_pidfile:-"/var/run/%%REALNAME%%.pid"}
+%%REALNAME%%_flags=${%%REALNAME%%_flags:-"-c %%PREFIX%%/etc/%%REALNAME%%.conf"}
+
+pidfile="${%%REALNAME%%_pidfile}"
+
+load_rc_config $name
+run_rc_command "$1"
