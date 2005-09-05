@@ -1,0 +1,8 @@
+StreamDVD is a fast tool to backup Video DVDs 'on the fly', there will
+be no ripping, demultiplexing, recoding, remultiplexing...
+
+You can select the wanted title, chapters, video, audio and subpicture
+streams, a resize factor, and StreamDVD will write a 'ready to author'
+vob file to stdout.
+
+WWW: http://www.badabum.de/streamdvd.html

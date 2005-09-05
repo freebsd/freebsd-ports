@@ -149,6 +149,7 @@
     SUBDIR += smpeg-xmms
     SUBDIR += spigot
     SUBDIR += splitmpg
+    SUBDIR += streamdvd
     SUBDIR += subconv
     SUBDIR += tcmplex-panteltje
     SUBDIR += tkxanim
