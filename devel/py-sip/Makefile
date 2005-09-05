@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	sip
-PORTVERSION=	4.2.1
-PORTREVISION=	3
+PORTVERSION=	4.3
+PORTREVISION=	
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/sip/ \
 		http://freebsd.ricin.com/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	sip-snapshot-20050709
+DISTNAME=	sip-${PORTVERSION}
 
 MAINTAINER=	danny@ricin.com
 COMMENT=	Python to C and C++ bindings generator
@@ -19,28 +19,47 @@ COMMENT=	Python to C and C++ bindings generator
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 USE_PYTHON=	yes
-USE_QT_VER=	3
 
+OPTIONS=	DEBUG "Build with debugging symbols" off \
+		DOCS "Install documentation" on \
+		QT "Enable Qt support" on
+
+DATADIR=	${PREFIX}/share/py-${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
+
+SPEC=		${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+ARGS=		-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR} \
+		-e ${PYTHON_INCLUDEDIR} -v ${DATADIR}
 
 .include <bsd.port.pre.mk>
 
+.if defined(NOPORTDOCS) || defined(WITHOUT_DOCS)
+PLIST_SUB+=	DOCS="@comment "
+.else
+PLIST_SUB+=	DOCS=""
+.endif
+.if defined(WITH_DEBUG)
+ARGS+=		-u
+.endif
+.if defined(WITHOUT_QT)
+ARGS+=		-x
+.else
+BUILD_DEPENDS+=	moc:${PORTSDIR}/x11-toolkits/qt33
+RUN_DEPENDS+=	moc:${PORTSDIR}/x11-toolkits/qt33
+.endif
+
 do-configure:
-	@( cd ${WRKSRC} && ${SETENV} QTDIR=${X11BASE} \
-		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
-		${PYTHON_CMD} configure.py \
-		-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR} \
-		-e ${PYTHON_INCLUDEDIR} -v ${DATADIR} )
+	( cd ${WRKSRC} && ${SETENV} QTDIR=${X11BASE} QMAKESPEC=${SPEC} \
+		${PYTHON_CMD} configure.py ${ARGS} )
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@( ${MKDIR} ${DOCSDIR} && cd ${WRKSRC} && ${INSTALL_DATA} \
-		doc/default.css doc/sipref.txt NEWS LICENSE ${DOCSDIR} && \
-		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} )
+.if !defined(NOPORTDOCS) && !defined(WITHOUT_DOCS)
+	( ${MKDIR} -m 0755 ${DOCSDIR} && cd ${WRKSRC} && ${INSTALL_DATA} \
+		doc/default.css doc/sipref.txt NEWS LICENSE ${DOCSDIR} )
 .endif
-	@# pyqt/pykde use this
-	@${MKDIR} ${DATADIR}
-	@${PYTHON_CMD} -c "import sipconfig"
-	@${PYTHON_CMD} -O -c "import sipconfig"
+	( ${MKDIR} -m 0755 ${DATADIR} && \
+		${PYTHON_CMD} -c "import sipconfig" && \
+		${PYTHON_CMD} -O -c "import sipconfig" )
 
 .include <bsd.port.post.mk>
