@@ -3908,6 +3908,7 @@ iplog		ports/net/iplog
 ipmitool	ports/sysutils/ipmitool
 ipplan		ports/net-mgmt/ipplan
 ipsc		ports/sysutils/ipsc
+ipsec-tools	ports/security/ipsec-tools
 ipsorc		ports/net/ipsorc
 ipsumdump	ports/net/ipsumdump
 ipsvd		ports/net/ipsvd
