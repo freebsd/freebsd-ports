@@ -41,9 +41,9 @@ CONFIGURE_ARGS+="--enable-dbus=yes"
 
 pre-everything::
 .if !defined (WITH_DBUS)
-	${ECHO_CMD}
-	${ECHO_CMD} Re-run with -DWITH_DBUS in order to enable dbus support!
-	${ECHO_CMD}
+	@${ECHO_CMD}
+	@${ECHO_CMD} Re-run with -DWITH_DBUS in order to enable dbus support!
+	@${ECHO_CMD}
 .endif
 
 .include <bsd.port.post.mk>
