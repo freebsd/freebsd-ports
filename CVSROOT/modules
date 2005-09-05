@@ -7278,6 +7278,7 @@ p5-Catalyst-Model-CDBI-Sweet	ports/www/p5-Catalyst-Model-CDBI-Sweet
 p5-Catalyst-Plugin-Authentication-CDBI	ports/www/p5-Catalyst-Plugin-Authentication-CDBI
 p5-Catalyst-Plugin-FillInForm	ports/www/p5-Catalyst-Plugin-FillInForm
 p5-Catalyst-Plugin-FormValidator	ports/www/p5-Catalyst-Plugin-FormValidator
+p5-Catalyst-Plugin-Pluggable	ports/www/p5-Catalyst-Plugin-Pluggable
 p5-Catalyst-Plugin-Prototype	ports/www/p5-Catalyst-Plugin-Prototype
 p5-Catalyst-Plugin-Session-FastMmap	ports/www/p5-Catalyst-Plugin-Session-FastMmap
 p5-Catalyst-Plugin-Static	ports/www/p5-Catalyst-Plugin-Static
