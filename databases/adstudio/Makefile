@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adstudio
-PORTVERSION=	4.5.1
+PORTVERSION=	4.5.2
 CATEGORIES=	databases devel java
 MASTER_SITES=	http://aquafold.fileburst.com/download/linux/
 DISTNAME=	${PORTNAME}-novm
