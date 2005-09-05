@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	curlpp
-PORTVERSION=	0.3.3
+PORTVERSION=	0.5.2
 CATEGORIES=	ftp
 MASTER_SITES=	http://rrette.com/
 
@@ -29,6 +29,12 @@ INSTALLS_SHLIB=	yes
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000
 BROKEN=		"Does not compile on alpha 4.x"
 .endif
+
+pre-everything::
+	@${ECHO} ""
+	@${ECHO} "NOTE to people using 0.3.x: cURLpp 0.3.x is dead!"
+	@${ECHO} "The current version ${PORTVERSION} is incompatible with the old 0.3.x versions"
+	@${ECHO} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
