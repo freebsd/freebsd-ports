@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Aug 19 16:51:51 2005
++++ Makefile.in	Fri Aug 19 16:52:13 2005
+@@ -23,7 +23,7 @@
+ exec_prefix = @exec_prefix@
+ libdir = @libdir@
+ 
+-pkgdir = $(libdir)/pkgconfig
++pkgdir = $(prefix)/libdata/pkgconfig
+ 
+ MV = mv -f
+ RM = rm -f

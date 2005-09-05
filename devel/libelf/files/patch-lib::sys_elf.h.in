@@ -1,0 +1,16 @@
++++ lib/sys_elf.h.in.orig	Mon Sep  5 22:31:49 2005
+--- lib/sys_elf.h.in	Mon Sep  5 22:33:06 2005
+@@ -77,6 +77,13 @@
+  */
+ #ifdef __LIBELF_HEADER_ELF_H
+ 
++#ifndef ELFMAG
++#define ELFMAG		"\177ELF"
++#endif /* ELFMAG */
++#ifndef SELFMAG
++#define SELFMAG		4
++#endif /* SELFMAG */
++
+ # ifndef ELF32_FSZ_ADDR
+ #  define ELF32_FSZ_ADDR	4
+ #  define ELF32_FSZ_HALF	2

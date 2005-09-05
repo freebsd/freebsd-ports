@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	libelf
-PORTVERSION=	0.8.5
-PORTREVISION=	1
+PORTVERSION=	0.8.6
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://www.mr511.de/software/
+MASTER_SITES=	http://www.mr511.de/software/ \
+		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs .
 
 MAINTAINER=	roam@FreeBSD.org
@@ -25,5 +24,15 @@ PLIST_SUB+=	LIBVER=${PORTVERSION:R}
 USE_GETTEXT=	yes
 
 NOMAN=		defined
+
+USE_REINPLACE=	yes
+
+FILES_TO_PATCH=lib/32.fsize.c lib/64.xlatetof.c lib/cook.c lib/gelf.h lib/gelftrans.c
+
+post-patch:
+	${REINPLACE_CMD} \
+	-e 's/Elf64_Xword/Elf64_Word/g' \
+	-e 's/Elf64_Sxword/Elf64_Sword/g' \
+	${FILES_TO_PATCH:S,^,${WRKSRC}/,}
 
 .include <bsd.port.mk>

@@ -6,5 +6,6 @@ include/libelf/elf_repl.h
 lib/libelf.a
 lib/libelf.so
 lib/libelf.so.%%LIBVER%%
+libdata/pkgconfig/libelf.pc
 share/locale/de/LC_MESSAGES/libelf.mo
 @dirrm include/libelf
