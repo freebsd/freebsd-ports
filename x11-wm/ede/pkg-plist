@@ -14,7 +14,6 @@ bin/erun
 bin/esvrconf
 bin/etimedate
 bin/etip
-bin/evolume
 bin/ewmconf
 bin/eworkpanel
 bin/startede
@@ -465,7 +464,6 @@ share/ede/programs/Games/xbill.desktop
 share/ede/programs/Graphics/.directory
 share/ede/programs/Graphics/GIMP.desktop
 share/ede/programs/Graphics/acroread.desktop
-share/ede/programs/Graphics/eimgviewer.desktop
 share/ede/programs/Graphics/gv.desktop
 share/ede/programs/Graphics/xdvi.desktop
 share/ede/programs/Graphics/xpdf.desktop
@@ -489,12 +487,10 @@ share/ede/programs/Settings/.directory
 share/ede/programs/Settings/colorsconf.desktop
 share/ede/programs/Settings/control.desktop
 share/ede/programs/Settings/edisplayconf.desktop
-share/ede/programs/Settings/ehardware.desktop
 share/ede/programs/Settings/eiconconf.desktop
 share/ede/programs/Settings/epanelconf.desktop
 share/ede/programs/Settings/etimedate.desktop
 share/ede/programs/Settings/ewmconf.desktop
-share/ede/programs/Settings/printers.desktop
 share/ede/programs/Settings/scrsaver.desktop
 share/ede/programs/System/.directory
 share/ede/programs/System/Eterm.desktop
@@ -523,7 +519,6 @@ share/locale/hu/LC_MESSAGES/emenueditor.mo
 share/locale/hu/LC_MESSAGES/epanelconf.mo
 share/locale/hu/LC_MESSAGES/esvrconf.mo
 share/locale/hu/LC_MESSAGES/etimedate.mo
-share/locale/hu/LC_MESSAGES/evolume.mo
 share/locale/hu/LC_MESSAGES/ewmconf.mo
 share/locale/hu/LC_MESSAGES/eworkpanel.mo
 share/locale/ru/LC_MESSAGES/ecolorconf.mo
@@ -541,7 +536,6 @@ share/locale/ru/LC_MESSAGES/erun.mo
 share/locale/ru/LC_MESSAGES/esvrconf.mo
 share/locale/ru/LC_MESSAGES/etimedate.mo
 share/locale/ru/LC_MESSAGES/etip.mo
-share/locale/ru/LC_MESSAGES/evolume.mo
 share/locale/ru/LC_MESSAGES/ewmconf.mo
 share/locale/ru/LC_MESSAGES/eworkpanel.mo
 share/locale/sk/LC_MESSAGES/ecolorconf.mo
@@ -559,7 +553,6 @@ share/locale/sk/LC_MESSAGES/erun.mo
 share/locale/sk/LC_MESSAGES/esvrconf.mo
 share/locale/sk/LC_MESSAGES/etimedate.mo
 share/locale/sk/LC_MESSAGES/etip.mo
-share/locale/sk/LC_MESSAGES/evolume.mo
 share/locale/sk/LC_MESSAGES/ewmconf.mo
 share/locale/sk/LC_MESSAGES/eworkpanel.mo
 share/locale/sr/LC_MESSAGES/ecolorconf.mo
