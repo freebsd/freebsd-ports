@@ -1,17 +1,5 @@
 --- configure.ac.orig	Sat Jul 30 10:54:42 2005
 +++ configure.ac	Sat Jul 30 11:10:47 2005
-@@ -153,9 +153,9 @@
- localedir='${prefix}/${DATADIRNAME}/locale'
- AC_SUBST(localedir)
- 
--manualdir='${prefix}/${DATADIRNAME}/${PACKAGE}/manual'
-+manualdir='${prefix}/${DATADIRNAME}/doc/${PACKAGE}/manual'
- AC_SUBST(manualdir)
--faqdir='${prefix}/${DATADIRNAME}/${PACKAGE}/faq'
-+faqdir='${prefix}/${DATADIRNAME}/doc/${PACKAGE}/faq'
- AC_SUBST(faqdir)
- 
- dnl Set PACKAGE_DATA_DIR in config.h.
 @@ -303,7 +303,18 @@
  AC_MSG_CHECKING([whether to use OpenSSL])
  if test x"$ac_cv_enable_openssl" = xyes; then
