@@ -14,7 +14,7 @@ MASTER_SITES+=	${MASTER_SITE_SOURCEFORGE_JP:S/$/:vida/}	\
 		http://cr.yp.to/ucspi-tcp/:tcpserver
 MASTER_SITE_SUBDIR=${PORTNAME}/2100/:vida
 
-MAINTAINER?=	future@future-ta.com
+MAINTAINER=	futurebsd@infoseek.to
 COMMENT=	SMTP_AUTH/APOP support for qmail
 
 DISTFILES=	${DISTNAME}.tar.gz:vida	\
@@ -65,6 +65,7 @@ PLIST_SUB+=	TLS="@comment "
 
 SUB_FILES+=	pkg-message${PKGMESSAGE_SUFFIX} mailer.conf.sample \
 		bootfiles.sed enable-qmail
+SUB_LIST+=	ECHO_CMD=${ECHO_CMD}
 PKGINSTALL?=	${WRKDIR}/pkg-install
 PKGMESSAGE?=	${WRKDIR}/pkg-message${PKGMESSAGE_SUFFIX}
 
@@ -136,7 +137,6 @@ PATCH_SITE_SUBDIR+=	lioux/:dns
 PATCH_DIST_STRIP+=	-p1
 
 .if defined(WITH_QMAILQUEUE_PATCH)
-PATCH_SITES+=	${MASTER_SITE_QMAIL}
 PATCHFILES+=	qmailqueue-patch
 .endif
 .if defined(WITH_BIG_CONCURRENCY_PATCH)
@@ -163,8 +163,7 @@ PATCH_SITES+=	http://www.alexdupre.com/qmail/:doublebounce
 PATCHFILES+=	qmail-discard-double-bounces.patch:doublebounce
 .endif
 .if defined(WITH_RELAY_REJECT_PATCH)
-PATCH_SITES+=	${MASTER_SITE_QMAIL:S/$/:reject/}
-PATCHFILES+=	qmail-smtpd-relay-reject:reject
+PATCHFILES+=	qmail-smtpd-relay-reject
 .endif
 .if defined(WITH_RCDLINK)
 PLIST_SUB+=	RCDLINK=""
@@ -252,7 +251,7 @@ do-install:
 	@if  [ -f ${WRKSRC_QMAIL}/${i}.sh ] ; then \
 		${SED} -f ${WRKDIR}/bootfiles.sed ${WRKSRC_QMAIL}/$i.sh > ${WRKDIR}/${i} ; \
 	elif [ -f ${FILESDIR}/${i}.in ] ; then \
-		${SED} -e 's,%%PREFIX%%,${PREFIX},g ; s,%%TCPSERVERDB%%,${TCPSERVER_DB_DIR},g' ${FILESDIR}/$i.in > ${WRKDIR}/${i} ; \
+		${SED} -e 's,%%PREFIX%%,${PREFIX},g ; s,%%TCPSERVERDB%%,${TCPSERVER_DB_DIR},g ; s,%%ECHO_CMD%%,${ECHO_CMD},g' ${FILESDIR}/$i.in > ${WRKDIR}/${i} ; \
 	elif [ -f ${FILESDIR}/${i} ] ; then \
 		${SED} -f ${WRKDIR}/bootfiles.sed ${FILESDIR}/$i > ${WRKDIR}/${i} ; \
 	fi

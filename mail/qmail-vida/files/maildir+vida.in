@@ -4,16 +4,30 @@
 # Using qmail-local to deliver messages to Maildir format by default
 # Using tcpserver and checkpassword
 
-exec env - PATH="%%PREFIX%%/bin:$PATH" \
-qmail-start ./Maildir/ \
-splogger qmail &
+case "$1" in
 
-exec env - PATH="%%PREFIX%%/bin:$PATH" \
-tcpserver -vHR -x %%TCPSERVERDB%% -c 40 0 \
-smtp qmail-smtpup $HOST checkpassword qmail-smtpd 2>&1 | \
-%%PREFIX%%/bin/splogger smtpd 4 &
+start)
+	exec env - PATH="%%PREFIX%%/bin:$PATH" \
+	qmail-start ./Maildir/ \
+	splogger qmail &
+	exec env - PATH="%%PREFIX%%/bin:$PATH" \
+	tcpserver -vHR -x %%TCPSERVERDB%% -c 40 0 \
+	smtp qmail-smtpup "$HOST" checkpassword qmail-smtpd 2>&1 | \
+	%%PREFIX%%/bin/splogger smtpd 4 &
+	exec env - PATH="%%PREFIX%%/bin:$PATH" \
+	tcpserver -vHR -x %%TCPSERVERDB%% 0 \
+	pop3 qmail-popup "$HOST" checkpassword qmail-pop3d Maildir 2>&1 | \
+	%%PREFIX%%/bin/splogger pop3d 4 &
+	;;
+stop)
+	# Stop all qmail process
+	killall qmail-send
+	killall splogger
+	killall tcpserver
+	;;
+*)
+    %%ECHO_CMD%% "Usage: `basename $0` {start|stop}" >&2
+    exit 64
+    ;;
+esac
 
-exec env - PATH="%%PREFIX%%/bin:$PATH" \
-tcpserver -vHR -x %%TCPSERVERDB%% 0 \
-pop3 qmail-popup $HOST checkpassword qmail-pop3d Maildir 2>&1 | \
-%%PREFIX%%/bin/splogger pop3d 4 &
