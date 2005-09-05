@@ -284,6 +284,7 @@
     SUBDIR += magicrescue
     SUBDIR += maint
     SUBDIR += makefs
+    SUBDIR += managepkg
     SUBDIR += manck
     SUBDIR += mapchan
     SUBDIR += mcron
