@@ -1,8 +1,7 @@
 bin/glpsol
+bin/tspsol
 include/glpavl.h
-include/glpchol.h
 include/glpdmp.h
-include/glpies.h
 include/glpiet.h
 include/glpinv.h
 include/glpios.h
@@ -12,18 +11,17 @@ include/glplib.h
 include/glplpp.h
 include/glplpx.h
 include/glpluf.h
-include/glplpt.h
 include/glpmat.h
 include/glpmip.h
 include/glpmpl.h
-include/glpmps.h
 include/glpqmd.h
+include/glprng.h
 include/glpspx.h
 include/glpstr.h
 include/glptsp.h
 lib/libglpk.a
-%%PORTDOCS%%share/doc/glpk/GLPK_FAQ.txt
-%%PORTDOCS%%share/doc/glpk/bench.txt
-%%PORTDOCS%%share/doc/glpk/lang.ps
-%%PORTDOCS%%share/doc/glpk/refman.ps
-%%PORTDOCS%%@dirrm share/doc/glpk
+%%PORTDOCS%%%%DOCSDIR%%/GLPK_FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/bench.txt
+%%PORTDOCS%%%%DOCSDIR%%/lang.ps
+%%PORTDOCS%%%%DOCSDIR%%/refman.ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
