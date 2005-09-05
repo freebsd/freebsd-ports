@@ -7,6 +7,7 @@
 
 PORTNAME=	linpsk
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +17,7 @@ COMMENT=	A qt psk31 client
 
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		portaudio:${PORTSDIR}/audio/portaudio
+RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/bitstream-vera/fonts.dir:${PORTSDIR}/x11-fonts/bitstream-vera
 
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
