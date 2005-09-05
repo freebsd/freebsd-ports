@@ -156,6 +156,7 @@ include/sylpheed-claws/prefs_display_header.h
 include/sylpheed-claws/prefs_ext_prog.h
 include/sylpheed-claws/prefs_filtering.h
 include/sylpheed-claws/prefs_filtering_action.h
+include/sylpheed-claws/prefs_folder_column.h
 include/sylpheed-claws/prefs_folder_item.h
 include/sylpheed-claws/prefs_fonts.h
 include/sylpheed-claws/prefs_gtk.h
@@ -216,6 +217,7 @@ libdata/pkgconfig/sylpheed-claws.pc
 %%GPGME%%lib/sylpheed-claws/plugins/pgpinline.deps
 %%GPGME%%lib/sylpheed-claws/plugins/pgpinline.so
 %%SA_PLUG%%lib/sylpheed-claws/plugins/spamassassin.so
+%%SA_PLUG%%lib/sylpheed-claws/plugins/spamassassin_gtk.deps
 %%SA_PLUG%%lib/sylpheed-claws/plugins/spamassassin_gtk.so
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
