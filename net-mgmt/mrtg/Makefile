@@ -20,11 +20,10 @@ MASTER_SITE_SUBDIR=	net/mrtg
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	The multi-router traffic grapher
 
-RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
-		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser \
-		${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6
-
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
+RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
+		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser
+
 CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
 		--with-gd-inc=${LOCALBASE}/include
 
@@ -39,6 +38,12 @@ MAN1=		cfgmaker.1 indexmaker.1 mrtg-contrib.1 mrtg-faq.1 mrtg-forum.1 \
 		mrtg-ipv6.1 mrtg-logfile.1 mrtg-mibhelp.1 mrtg-nt-guide.1 \
 		mrtg-nw-guide.1 mrtg-reference.1 mrtg-rrd.1 mrtg-squid.1 \
 		mrtg-unix-guide.1 mrtg-webserver.1 mrtg.1 mrtglib.1
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_IPV6)
+RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6
+.endif
 
 post-patch:
 	${RM} ${WRKSRC}/lib/mrtg2/BER.pm ${WRKSRC}/lib/mrtg2/SNMP_*.pm
@@ -72,4 +77,4 @@ post-install:
 	@${ECHO} "############################################################################"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
