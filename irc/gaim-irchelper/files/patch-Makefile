@@ -1,0 +1,24 @@
+--- Makefile.orig	Mon Jul 25 00:54:12 2005
++++ Makefile	Sun Sep  4 20:31:58 2005
+@@ -7,10 +7,10 @@
+ 
+   # *nix Plugin Directory Settings
+ 
+-  PLUGINDIR=$(HOME)/.gaim/plugins
++  #PLUGINDIR=$(HOME)/.gaim/plugins
+ 
+   # Uncomment this to install the plugin for all users.
+-  #PLUGINDIR=$(shell pkg-config --variable=libdir gaim)/gaim
++  PLUGINDIR=$(shell pkg-config --variable=libdir gaim)/gaim
+ 
+ else
+ 
+@@ -45,7 +45,7 @@
+ endif
+ 
+ # Common Compiler Stuff
+-CC = gcc
++CC ?= gcc
+ DEFINES=-DPACKAGE=\"$(PACKAGE)\" -DVERSION=\"$(VERSION)\"
+ CFLAGS ?= -g3 -O2 -Wall
+ override CFLAGS += $(DEFINES)

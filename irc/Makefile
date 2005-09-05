@@ -26,6 +26,7 @@
     SUBDIR += evangeline
     SUBDIR += ezbounce
     SUBDIR += fisg
+    SUBDIR += gaim-irchelper
     SUBDIR += garnaxfs
     SUBDIR += gdesklets-irc
     SUBDIR += gruftistats
