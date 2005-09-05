@@ -9,7 +9,7 @@ PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
 PORTREVISION=	4
 CATEGORIES=	java devel
-MASTER_SITES=	# http://www.sun.com/software/java2/download.html
+MASTER_SITES=	# http://www.sun.com/software/communitysource/j2se/java2/download.xml
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk.html
 SRCFILE=	${PORTNAME}${JDK_VERSION:S/./_/g}-src${EXTRACT_SUFX}
 PATCHSETFILE=	bsd-jdk122-patches-${JDK_PATCHSET_VERSION}.tar.gz
@@ -82,30 +82,35 @@ BUILD_DEPENDS+=	${JDK12DIR}/bin/javac:${PORTSDIR}/java/jbootstrap
 .endif
 .endif
 
-# Check for patchset
-.if !exists(${DISTDIR}/${PATCHSETFILE}) && !defined(PACKAGE_BUILDING)
+# Check for JDK sources and patchset
+.if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${SRCFILE}) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
 ECHO_MSG=/usr/bin/printf
-IGNORE= :\n\
-The source distribution exists on your system, but due to\n\
-licensing restrictions you still need to download the\n\
-patchset, ${PATCHSETFILE}, from\n\
-http://www.eyesbeyond.com/freebsddom/java/jdk.html.\n\
-Please place the patchset in ${DISTDIR}.\n
-.endif
-
-# Check for JDK sources
-.if !exists(${DISTDIR}/${SRCFILE}) && !defined(PACKAGE_BUILDING)
-ECHO_MSG=/usr/bin/printf
-IGNORE= :\n\
-Because of licensing restrictions, you must fetch the source distribution\n\
-manually.  Please access http://www.sun.com/software/java2/download.html\n\
-with a web browser and follow the second \"Download\" link for the\n\
-\"Java(TM) SDK ${JDK_VERSION}\".  You will be required to log in and register,\n\
+IGNORE= :\n\n\
+Due to licensing restrictions, certain files must be fetched manually.\n\n
+.if !exists(${DISTDIR}/${SRCFILE})#{
+IGNORE += Please open http://www.sun.com/software/communitysource/j2se/java2/download.xml\n\
+in a web browser and follow the \"Download\" link for the\n\
+\"Java(TM) 2 SDK ${JDK_VERSION}\".  You will be required to log in and register,\n\
 but you can create an account on this page.  After registration and\n\
-accepting the Sun Community Source License, select \"JDK-${JDK_VERSION}\" and\n\
-download the file \"${SRCFILE}\".  Please place this file in\n\
-${DISTDIR}.\n
-.endif
+accepting the Sun Community Source License, download the SCSL Source file,\n\
+${SRCFILE}.\n
+.if !exists(${DISTDIR}/${PATCHSETFILE})#{
+IGNORE += \n In addition, please
+.endif#}
+.elif !exists(${DISTDIR}/${PATCHSETFILE})
+IGNORE += Please
+.endif#}
+.if !exists(${DISTDIR}/${PATCHSETFILE})#{
+IGNORE += download the patchset, ${PATCHSETFILE}, from\n\
+http://www.eyesbeyond.com/freebsddom/java/jdk.html.\n
+.endif#}
+.if !exists(${DISTDIR}/${SRCFILE}) && !exists(${DISTDIR}/${PATCHSETFILE})#{
+IGNORE += \n Then place the downloaded files in ${DISTDIR}
+.else
+IGNORE += \n Then place the downloaded file in ${DISTDIR}
+.endif#}
+IGNORE += and restart the build.\n\n
+.endif#}
 
 pre-patch:
 	@${MKDIR} ${WRKSRC}
