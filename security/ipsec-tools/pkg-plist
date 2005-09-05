@@ -1,0 +1,51 @@
+sbin/racoon
+sbin/setkey
+etc/rc.d/racoon.sh
+include/libipsec/libpfkey.h
+include/racoon/admin.h
+include/racoon/evt.h
+include/racoon/gcmalloc.h
+include/racoon/ipsec_doi.h
+include/racoon/isakmp.h
+include/racoon/isakmp_cfg.h
+include/racoon/isakmp_unity.h
+include/racoon/isakmp_var.h
+include/racoon/isakmp_xauth.h
+include/racoon/misc.h
+include/racoon/racoonctl.h
+include/racoon/schedule.h
+include/racoon/sockmisc.h
+include/racoon/var.h
+include/racoon/vmbuf.h
+lib/libipsec.so.0
+lib/libipsec.so
+lib/libipsec.a
+lib/libracoon.a
+lib/libracoon.so
+lib/libracoon.so.0
+sbin/plainrsa-gen
+sbin/racoonctl
+%%EXAMPLESDIR%%/psk.txt
+%%EXAMPLESDIR%%/psk.txt.in
+%%EXAMPLESDIR%%/psk.txt.sample
+%%EXAMPLESDIR%%/racoon.conf
+%%EXAMPLESDIR%%/racoon.conf.in
+%%EXAMPLESDIR%%/racoon.conf.sample
+%%EXAMPLESDIR%%/racoon.conf.sample-gssapi
+%%EXAMPLESDIR%%/racoon.conf.sample-inherit
+%%EXAMPLESDIR%%/racoon.conf.sample-natt
+%%EXAMPLESDIR%%/racoon.conf.sample-plainrsa
+%%EXAMPLESDIR%%/roadwarrior/README
+%%EXAMPLESDIR%%/roadwarrior/client/phase1-down.sh
+%%EXAMPLESDIR%%/roadwarrior/client/phase1-up.sh
+%%EXAMPLESDIR%%/roadwarrior/client/racoon.conf
+%%EXAMPLESDIR%%/roadwarrior/server/racoon.conf
+%%EXAMPLESDIR%%/roadwarrior/server/racoon.conf-radius
+@unexec rmdir %D/etc/racoon 2>/dev/null || true
+@dirrm include/racoon
+@dirrm include/libipsec
+@dirrm %%EXAMPLESDIR%%/roadwarrior/server
+@dirrm %%EXAMPLESDIR%%/roadwarrior/client
+@dirrm %%EXAMPLESDIR%%/roadwarrior
+@dirrm %%EXAMPLESDIR%%
+@unexec rmdir %D/var/racoon 2>/dev/null || true
