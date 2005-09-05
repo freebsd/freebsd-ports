@@ -3,21 +3,7 @@ jails/addons/dellist.txt
 jails/addons/etc/login.conf
 jails/addons/etc/make.conf
 jails/addons/runme.sh
-jails/addons/usr/share/examples/cvsup/README
-jails/addons/usr/share/examples/cvsup/cvs-supfile
-jails/addons/usr/share/examples/cvsup/doc-supfile
-jails/addons/usr/share/examples/cvsup/gnats-supfile
-jails/addons/usr/share/examples/cvsup/ports-supfile
-jails/addons/usr/share/examples/cvsup/refuse
-jails/addons/usr/share/examples/cvsup/refuse.README
-jails/addons/usr/share/examples/cvsup/stable-supfile
-jails/addons/usr/share/examples/cvsup/standard-supfile
-jails/addons/usr/share/examples/cvsup/www-supfile
 sbin/jailctl
 @dirrm jails/addons/etc
-@dirrm jails/addons/usr/share/examples/cvsup
-@dirrm jails/addons/usr/share/examples
-@dirrm jails/addons/usr/share
-@dirrm jails/addons/usr
 @dirrm jails/addons
 @dirrm jails
