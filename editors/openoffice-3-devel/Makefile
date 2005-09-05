@@ -107,7 +107,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
 		gpatch:${PORTSDIR}/devel/patch \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-		bison-devel:${PORTSDIR}/devel/bison-devel \
+		bison:${PORTSDIR}/devel/bison \
 		imake:${X_IMAKE_PORT}
 .if !defined(WITHOUT_JAVA)
 BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
