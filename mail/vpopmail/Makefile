@@ -7,7 +7,7 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	5.4.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -62,6 +62,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 # WITHOUT_SEEKABLE - disables vdelivermail's attempt to make its input seekable
 # WITH_DOMAIN_QUOTAS	- enable domain quotas
 # WITH_SPAMASSASSIN	- enable SpamAssassin checks before Maildir delivery
+# WITH_SUID_VCHKPW	- set the setuid bit on the vchkpw program
 #
 # Set these to the values you'd prefer
 #
@@ -346,14 +347,11 @@ pre-configure:
 
 post-install:
 	${MKDIR} ${PREFIX}/vpopmail/etc
-	if [ ! -e "${PREFIX}/vpopmail/etc/tcp.smtp" ]; then \
-		if [ -e "${VCFGDIR}/tcp.smtp" ]; then \
-			${INSTALL_DATA} ${VCFGDIR}/tcp.smtp ${PREFIX}/vpopmail/etc/tcp.smtp-dist; \
-		else \
-			${TOUCH} ${PREFIX}/vpopmail/etc/tcp.smtp-dist; \
-		fi; \
-		${CP} -p ${PREFIX}/vpopmail/etc/tcp.smtp-dist ${PREFIX}/vpopmail/etc/tcp.smtp; \
-	fi
+	if [ -e "${VCFGDIR}/tcp.smtp" ]; then \
+		${INSTALL_DATA} ${VCFGDIR}/tcp.smtp ${PREFIX}/vpopmail/etc/tcp.smtp-dist; \
+	else \
+		${TOUCH} ${PREFIX}/vpopmail/etc/tcp.smtp-dist; \
+	fi;
 .if defined(DEFAULT_DOMAIN)
 	${ECHO_CMD} ${DEFAULT_DOMAIN} > ${PREFIX}/vpopmail/etc/defaultdomain
 .endif
@@ -373,6 +371,9 @@ post-install:
 .if defined(WITH_LDAP)
 	${MKDIR} ${PREFIX}/vpopmail/ldap
 	${INSTALL_DATA} ${LDAP_FILES} ${PREFIX}/vpopmail/ldap
+.endif
+.if defined(WITH_SUID_VCHKPW)
+	${CHMOD} u+s ${PREFIX}/vpopmail/bin/vchkpw
 .endif
 
 .include <bsd.port.post.mk>
