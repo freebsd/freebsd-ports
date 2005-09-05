@@ -11501,6 +11501,7 @@ strace		ports/devel/strace
 stratagus	ports/games/stratagus
 straw		ports/net/straw
 stream		ports/benchmarks/stream
+streamdvd	ports/multimedia/streamdvd
 streamripper	ports/audio/streamripper
 streamtranscoder	ports/audio/streamtranscoder
 streamtuner	ports/audio/streamtuner
