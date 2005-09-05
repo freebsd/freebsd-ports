@@ -1,4 +1,4 @@
-bin/tkjpeg
+bin/tkjpeg-lite
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/JPEG/Lite.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/JPEG/Lite/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/JPEG/Lite/Lite.bs
