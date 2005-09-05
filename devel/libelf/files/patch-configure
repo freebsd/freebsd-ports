@@ -1,18 +1,15 @@
-
-$FreeBSD$
-
---- configure.old	Sun Dec 14 14:11:54 2003
-+++ configure	Sun Dec 14 14:13:28 2003
-@@ -1139,7 +1139,7 @@
+--- configure.orig	Fri Aug 19 16:00:37 2005
++++ configure	Fri Aug 19 16:05:31 2005
+@@ -1142,7 +1142,7 @@
  
  fi
  
--for ac_hdr in unistd.h fcntl.h elf.h sys/elf.h link.h sys/link.h
-+for ac_hdr in unistd.h fcntl.h sys/elf.h link.h sys/link.h
+-for ac_hdr in unistd.h stdint.h fcntl.h
++for ac_hdr in unistd.h stdint.h fcntl.h elf.h
  do
  ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
  echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
-@@ -3055,7 +3055,7 @@
+@@ -3218,7 +3218,7 @@
  fi
  
      case "$host" in
@@ -21,12 +18,12 @@ $FreeBSD$
  	if test "$GCC" = yes; then
  	  
    
-@@ -3112,13 +3112,12 @@
- 	    then
- 	      SHLIB_SFX='-$(VERSION).so'
- 	    else
--	      SHLIB_SFX='.so.$(VERSION)'
-+	      SHLIB_SFX='.so.$(MAJOR)'
+@@ -3273,13 +3273,12 @@
+ 	    PICFLAGS='-fPIC -DPIC'
+ 	    if test "$mr_enable_gnu_names" = yes
+ 	    then SHLIB_SFX='-$(VERSION).so'
+-	    else SHLIB_SFX='.so.$(VERSION)'
++	    else SHLIB_SFX='.so.$(MAJOR)'
  	    fi
  	    SHLINK_SFX='.so'
  	    SONAME_SFX='.so.$(MAJOR)'
