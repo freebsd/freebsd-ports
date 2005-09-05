@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	spamass-rules
-PORTVERSION=	20050515
+PORTVERSION=	20050821
 CATEGORIES=	mail
-MASTER_SITES=	http://www.ranner.jawa.at/stuff/ \
-		http://web.inforum.at/downloads/
+MASTER_SITES=	http://www.ranner.jawa.at/stuff/
 
 MAINTAINER=	mranner@inode.at
 COMMENT=	Custom rulesets for SpamAssassin
@@ -118,14 +117,14 @@ SPAMASS_FILES+=	blacklist_ro.cf
 .for i in 70_sare_adult.cf 70_sare_bayes_poison_nxm.cf 70_sare_header0.cf \
 	70_sare_html0.cf 70_sare_genlsubj0.cf 70_sare_oem.cf 70_sare_obfu0.cf \
 	70_sare_random.cf 70_sare_specific.cf 70_sare_spoof.cf \
-	70_sare_unsub.cf 70_sare_uri.cf 72_sare_redirect_post3.0.0.cf \
+	70_sare_unsub.cf 70_sare_uri0.cf 72_sare_redirect_post3.0.0.cf \
 	72_sare_bml_post25x.cf 99_sare_fraud_post25x.cf
 SPAMASS_FILES+=	$i
 .endfor
 .endif
 
 .if defined(WITH_SARE1)
-.for i in 70_sare_header1.cf 70_sare_html1.cf 70_sare_genlsubj1.cf 70_sare_obfu1.cf
+.for i in 70_sare_header1.cf 70_sare_html1.cf 70_sare_genlsubj1.cf 70_sare_obfu1.cf 70_sare_uri1.cf
 SPAMASS_FILES+=	$i
 .endfor
 .endif
@@ -137,7 +136,7 @@ SPAMASS_FILES+=	$i
 .endif
 
 .if defined(WITH_SARE3)
-.for i in 70_sare_header3.cf 70_sare_html3.cf 70_sare_genlsubj3.cf 70_sare_obfu3.cf
+.for i in 70_sare_header3.cf 70_sare_html3.cf 70_sare_genlsubj3.cf 70_sare_obfu3.cf 70_sare_uri3.cf
 SPAMASS_FILES+=	$i
 .endfor
 .endif
