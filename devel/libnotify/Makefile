@@ -8,7 +8,9 @@
 PORTNAME=	libnotify
 PORTVERSION=	0.2.2
 CATEGORIES=	devel gnome
-MASTER_SITES=	http://www.galago.info/files/releases/source/libnotify/
+MASTER_SITES=	http://www.galago.info/files/releases/source/libnotify/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pav
 
 MAINTAINER=	andreas@syndrom23.de
 COMMENT=	A library for desktop notifications
