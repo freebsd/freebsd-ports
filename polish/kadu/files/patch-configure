@@ -1,0 +1,51 @@
+--- configure.orig	Tue Aug  9 22:53:04 2005
++++ configure	Wed Aug 10 00:03:04 2005
+@@ -4111,20 +4111,14 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ 
+-int
+-main ()
++#include <execinfo.h>
++int main()
+ {
+-
+-		#include <execinfo.h>
+-		int main()
+-		{
+-			char* data;
+-			backtrace(&data, 100);
+-		}
+-
+-  ;
++  char* data;
++  backtrace(&data, 100);
+   return 0;
+ }
++
+ _ACEOF
+ rm -f conftest.$ac_objext conftest$ac_exeext
+ if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
+@@ -4179,18 +4173,11 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ 
+-int
+-main ()
++#include <execinfo.h>
++int main ()
+ {
+-
+-		#include <execinfo.h>
+-		int main()
+-		{
+-			char* data;
+-			backtrace(&data, 100);
+-		}
+-
+-  ;
++  char* data;
++  backtrace(&data, 100);
+   return 0;
+ }
+ _ACEOF

@@ -6,43 +6,34 @@
 #
 
 PORTNAME=		kadu
-PORTVERSION=		0.3.9
-PORTREVISION=		2
+PORTVERSION=		0.4.1
 PORTEPOCH=		1
 CATEGORIES=		polish net
 MASTER_SITES=		http://www.kadu.net/download/stable/
 DISTNAME=		${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=		jacek@combit.com.pl
+MAINTAINER=		mwisnicki+freebsd@gmail.com
 COMMENT=		QT Gadu-Gadu client
 
 LIB_DEPENDS=		gadu.3:${PORTSDIR}/polish/ekg\
-			gsm.1:${PORTSDIR}/audio/gsm
+			sndfile.1:${PORTSDIR}/audio/libsndfile
 
 USE_BZIP2=		yes
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-existing-libgadu \
+			--with-includes="${LOCALBASE}/include" \
+			--with-libs="${LOCALBASE}/lib" \
 			--program-transform-name=''\
 			--mandir=${PREFIX}/man
-CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"\
-			GADU_INCLUDES="-I${LOCALBASE}/include"\
-			GSM_LIB="-L${LOCALBASE}/lib"\
-			GSM_INCLUDES="-I${LOCALBASE}/include"
+CONFIGURE_ENV=		QTDIR="${QT_PREFIX}"
 
 USE_QT_VER=		3
+QT_NONSTANDARD=		yes
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
-
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} "  **************************************************************"
-	@${ECHO_MSG} "  * This version of kadu requires polish/ekg-1.4.20040208,1 or *"
-	@${ECHO_MSG} "  * higher, so upgrade it first if necessary.                  *"
-	@${ECHO_MSG} "  **************************************************************"
-	@${ECHO_MSG}
 
 post-install:
 	${MKDIR} ${X11BASE}/share/gnome/apps/Internet

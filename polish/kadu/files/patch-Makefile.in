@@ -1,6 +1,6 @@
---- kadu/Makefile.in	Mon Jun 28 23:49:06 2004
-+++ kadu/Makefile.in	Thu Jul  1 23:41:16 2004
-@@ -524,33 +524,19 @@
+--- kadu/Makefile.in	Tue Jul 19 21:52:02 2005
++++ kadu/Makefile.in	Tue Aug  9 01:01:22 2005
+@@ -515,42 +515,29 @@
  install-data-local:
  	$(mkinstalldirs) "$(DESTDIR)/$(includedir)/kadu/"
  	$(INSTALL_DATA) *.h "$(DESTDIR)/$(includedir)/kadu/"
@@ -16,6 +16,8 @@
 -		$(mkinstalldirs) "$(DESTDIR)/usr/share/pixmaps/"; \
 -		$(INSTALL_DATA) hi48-app-kadu.png "$(DESTDIR)/usr/share/pixmaps/kadu-48.png"; \
 -		$(INSTALL_DATA) hi32-app-kadu.png "$(DESTDIR)/usr/share/pixmaps/kadu.png"; \
+-		$(INSTALL_DATA) hi24-app-kadu.png "$(DESTDIR)/usr/share/pixmaps/kadu-24.png"; \
+-		$(INSTALL_DATA) hi22-app-kadu.png "$(DESTDIR)/usr/share/pixmaps/kadu-22.png"; \
 -		$(INSTALL_DATA) hi16-app-kadu.png "$(DESTDIR)/usr/share/pixmaps/kadu-16.png"; \
 -		echo ""; \
 -		echo "Icons installed to $(DESTDIR)/usr/share/pixmaps"; \
@@ -31,19 +33,32 @@
 -		echo "         *******************************************************************"; \
 -		echo $(DESTDIR)"";\
 -	fi;
-+		echo "[Desktop Entry]" > "$(srcdir)/kadu.desktop"
-+		echo "Type=Application" >> "$(srcdir)/kadu.desktop"
-+		echo "Exec=$(bindir)/kadu" >> "$(srcdir)/kadu.desktop"
-+		echo "Icon=kadu.png" >> "$(srcdir)/kadu.desktop"
-+		echo "MiniIcon=kadu-16.png" >> "$(srcdir)/kadu.desktop"
-+		echo "Terminal=0" >> "$(srcdir)/kadu.desktop"
-+		echo "Name=Kadu" >> "$(srcdir)/kadu.desktop"
-+		$(mkinstalldirs) $(DESTDIR)$(datadir)/icons/hicolor/48x48/apps
-+		$(INSTALL_DATA) hi48-app-kadu.png "$(DESTDIR)$(datadir)/icons/hicolor/48x48/apps/kadu.png"
-+		$(mkinstalldirs) $(DESTDIR)$(datadir)/icons/hicolor/32x32/apps
-+		$(INSTALL_DATA) hi32-app-kadu.png "$(DESTDIR)$(datadir)/icons/hicolor/32x32/apps/kadu.png"
-+		$(mkinstalldirs) $(DESTDIR)$(datadir)/icons/hicolor/16x16/apps
-+		$(INSTALL_DATA) hi16-app-kadu.png "$(DESTDIR)$(datadir)/icons/hicolor/16x16/apps/kadu.png"
++	echo "[Desktop Entry]" > "$(srcdir)/kadu.desktop"
++	echo "Type=Application" >> "$(srcdir)/kadu.desktop"
++	echo "Exec=$(bindir)/kadu" >> "$(srcdir)/kadu.desktop"
++	echo "Icon=kadu.png" >> "$(srcdir)/kadu.desktop"
++	echo "MiniIcon=kadu-16.png" >> "$(srcdir)/kadu.desktop"
++	echo "Terminal=0" >> "$(srcdir)/kadu.desktop"
++	echo "Name=Kadu" >> "$(srcdir)/kadu.desktop"
++	$(mkinstalldirs) $(DESTDIR)$(datadir)/icons/hicolor/48x48/apps
++	$(INSTALL_DATA) hi48-app-kadu.png "$(DESTDIR)$(datadir)/icons/hicolor/48x48/apps/kadu.png"
++	$(mkinstalldirs) $(DESTDIR)$(datadir)/icons/hicolor/32x32/apps
++	$(INSTALL_DATA) hi32-app-kadu.png "$(DESTDIR)$(datadir)/icons/hicolor/32x32/apps/kadu.png"
++	$(mkinstalldirs) $(DESTDIR)$(datadir)/icons/hicolor/22x22/apps
++	$(INSTALL_DATA) hi22-app-kadu.png "$(DESTDIR)$(datadir)/icons/hicolor/22x22/apps/kadu.png"
++	$(mkinstalldirs) $(DESTDIR)$(datadir)/icons/hicolor/16x16/apps
++	$(INSTALL_DATA) hi16-app-kadu.png "$(DESTDIR)$(datadir)/icons/hicolor/16x16/apps/kadu.png"
  
  uninstall-local:
  	rm -f "$(DESTDIR)/$(includedir)/kadu"/*.h
+ 	rm -f "$(DESTDIR)/usr/share/applnk/Internet/kadu.desktop"
+-	rm -f "$(DESTDIR)/usr/share/pixmaps/kadu-48.png"
+-	rm -f "$(DESTDIR)/usr/share/pixmaps/kadu.png"
+-	rm -f "$(DESTDIR)/usr/share/pixmaps/kadu-16.png"
++	rm -f "$(DESTDIR)$(datadir)/icons/hicolor/48x48/apps/kadu.png"
++	rm -f "$(DESTDIR)$(datadir)/icons/hicolor/32x32/apps/kadu.png"
++	rm -f "$(DESTDIR)$(datadir)/icons/hicolor/22x22/apps/kadu.png"
++	rm -f "$(DESTDIR)$(datadir)/icons/hicolor/16x16/apps/kadu.png"
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
