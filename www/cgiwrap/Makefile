@@ -55,18 +55,6 @@ USER_CGIDIR?=	public_html/cgi-bin
 ALLOW_FILE?=	${PREFIX}/etc/${PORTNAME}.allow
 DENY_FILE?=	${PREFIX}/etc/${PORTNAME}.deny
 
-##
-# LOG_FILE
-#
-# Enables cgiwrap logging (when a user called cgiwrap, its arguments,
-# and who ran it).  Specify the full path to the logfile.
-#
-.if defined(LOG_FILE)
-CONFIGURE_ARGS+=	--with-logging-file=${LOG_FILE}
-.else
-CONFIGURE_ARGS+=	--without-logging-file
-.endif
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-httpd-user=${WWWOWN} \
 		--with-install-group=${WWWGRP} \
@@ -78,6 +66,17 @@ CONFIGURE_ARGS=	--with-httpd-user=${WWWOWN} \
 
 .include <bsd.port.pre.mk>
 
+##
+# LOG_FILE
+#
+# Enables cgiwrap logging (when a user called cgiwrap, its arguments,
+# and who ran it).  Specify the full path to the logfile.
+#
+.if defined(LOG_FILE)
+CONFIGURE_ARGS+=	--with-logging-file=${LOG_FILE}
+.else
+CONFIGURE_ARGS+=	--without-logging-file
+.endif
 .if !defined(WITH_CGI_OWNER)
 CONFIGURE_ARGS+=	--without-check-owner
 .endif
