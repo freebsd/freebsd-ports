@@ -46,6 +46,36 @@ libdata/pkgconfig/cspi-1.0.pc
 libdata/pkgconfig/libloginhelper-1.0.pc
 libdata/pkgconfig/libspi-1.0.pc
 libexec/at-spi-registryd
+share/doc/at-spi-cspi/at-spi-cspi-Accessible-Objects.html
+share/doc/at-spi-cspi/at-spi-cspi-AccessibleAction-Interface.html
+share/doc/at-spi-cspi/at-spi-cspi-AccessibleApplication-API.html
+share/doc/at-spi-cspi/at-spi-cspi-AccessibleComponent-Interface.html
+share/doc/at-spi-cspi/at-spi-cspi-AccessibleEditableText-Interface.html
+share/doc/at-spi-cspi/at-spi-cspi-AccessibleHyperlink-Interface.html
+share/doc/at-spi-cspi/at-spi-cspi-AccessibleHypertext-Interface.html
+share/doc/at-spi-cspi/at-spi-cspi-AccessibleImage-Interface.html
+share/doc/at-spi-cspi/at-spi-cspi-AccessibleRelations-and-RelationSets.html
+share/doc/at-spi-cspi/at-spi-cspi-AccessibleSelection-Interface.html
+share/doc/at-spi-cspi/at-spi-cspi-AccessibleTable-Interface.html
+share/doc/at-spi-cspi/at-spi-cspi-AccessibleText-Interface.html
+share/doc/at-spi-cspi/at-spi-cspi-AccessibleValue-Interface.html
+share/doc/at-spi-cspi/at-spi-cspi-Event-Listener-Support.html
+share/doc/at-spi-cspi/at-spi-cspi-Registry-queries.html
+share/doc/at-spi-cspi/at-spi-cspi-SPI-main-loop-and-initialization.html
+share/doc/at-spi-cspi/at-spi-cspi-State-and-StateSets.html
+share/doc/at-spi-cspi/at-spi-cspi.devhelp
+share/doc/at-spi-cspi/ch05.html
+share/doc/at-spi-cspi/home.png
+share/doc/at-spi-cspi/index.html
+share/doc/at-spi-cspi/index.sgml
+share/doc/at-spi-cspi/left.png
+share/doc/at-spi-cspi/right.png
+share/doc/at-spi-cspi/spi-accessible.html
+share/doc/at-spi-cspi/spi-application.html
+share/doc/at-spi-cspi/spi-component.html
+share/doc/at-spi-cspi/spi-main.html
+share/doc/at-spi-cspi/style.css
+share/doc/at-spi-cspi/up.png
 share/gnome/idl/at-spi-1.0/Accessibility.idl
 share/gnome/idl/at-spi-1.0/Accessibility_Accessible.idl
 share/gnome/idl/at-spi-1.0/Accessibility_Action.idl
@@ -68,6 +98,7 @@ share/gnome/idl/at-spi-1.0/Accessibility_Table.idl
 share/gnome/idl/at-spi-1.0/Accessibility_Text.idl
 share/gnome/idl/at-spi-1.0/Accessibility_Value.idl
 @dirrm share/gnome/idl/at-spi-1.0
+@dirrm share/doc/at-spi-cspi
 @dirrm lib/orbit-2.0
 @dirrm include/at-spi-1.0/login-helper
 @dirrm include/at-spi-1.0/libspi
