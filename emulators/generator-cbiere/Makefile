@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	generator
-PORTVERSION=	0.35.r1
+PORTVERSION=	0.35.r2
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.ghostwhitecrab.com/generator/ \
 		http://www.ghostwhitecrab.de/generator/
 PKGNAMESUFFIX=	-cbiere
-DISTNAME=	${PORTNAME}-0.35${PKGNAMESUFFIX}-r1
+DISTNAME=	${PORTNAME}-0.35${PKGNAMESUFFIX}-r2
 
 MAINTAINER=	alejandro@varnet.biz
 COMMENT=	SEGA Genesis emulator
