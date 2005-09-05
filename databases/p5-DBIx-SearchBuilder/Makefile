@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-SearchBuilder
-PORTVERSION=	1.31
+PORTVERSION=	1.32
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
@@ -20,8 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/ReturnValue.pm:${PORTSDIR}/devel/p5-Class-Retu
 		${SITE_PERL}/${PERL_ARCH}/Want.pm:${PORTSDIR}/devel/p5-Want \
 		${SITE_PERL}/capitalization.pm:${PORTSDIR}/devel/p5-capitalization \
 		${SITE_PERL}/DBIx/DBSchema.pm:${PORTSDIR}/databases/p5-DBIx-DBSchema \
-		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
