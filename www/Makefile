@@ -477,6 +477,7 @@
     SUBDIR += p5-Catalyst-Plugin-Authentication-CDBI
     SUBDIR += p5-Catalyst-Plugin-FillInForm
     SUBDIR += p5-Catalyst-Plugin-FormValidator
+    SUBDIR += p5-Catalyst-Plugin-Pluggable
     SUBDIR += p5-Catalyst-Plugin-Prototype
     SUBDIR += p5-Catalyst-Plugin-Session-FastMmap
     SUBDIR += p5-Catalyst-Plugin-Static
