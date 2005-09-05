@@ -7,7 +7,7 @@
 
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 MASTERDIR?=	${.CURDIR}/../webalizer
 WITH_GEOIP=	yes
