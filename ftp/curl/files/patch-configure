@@ -1,17 +1,17 @@
---- configure.orig	Mon Dec 20 11:39:59 2004
-+++ configure	Thu Feb 17 19:07:53 2005
-@@ -24438,8 +24438,10 @@
-   *)
+--- configure.orig	Fri Sep  2 20:22:43 2005
++++ configure	Fri Sep  2 20:37:36 2005
+@@ -24917,8 +24917,10 @@
          PKGTEST="no"
-     EXTRA_SSL=$OPT_SSL
-+    if ! [ "$EXTRA_SSL" = "/usr" ]; then
-     LDFLAGS="$LDFLAGS -L$EXTRA_SSL/lib$libsuff"
-     CPPFLAGS="$CPPFLAGS -I$EXTRA_SSL/include/openssl -I$EXTRA_SSL/include"
+     PREFIX_OPENSSL=$OPT_SSL
+     LIB_OPENSSL="$PREFIX_OPENSSL/lib$libsuff"
++    if ! [ "$PREFIX_OPENSSL" = "/usr" ]; then
+     LDFLAGS="$LDFLAGS -L$LIB_OPENSSL"
+     CPPFLAGS="$CPPFLAGS -I$PREFIX_OPENSSL/include/openssl -I$PREFIX_OPENSSL/include"
 +    fi
      ;;
    esac
  
-@@ -31950,7 +31952,7 @@
+@@ -32576,7 +32578,7 @@
  main ()
  {
  #ifndef basename

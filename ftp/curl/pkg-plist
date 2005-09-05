@@ -16,6 +16,7 @@ lib/libcurl.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/BINDINGS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTE
+%%PORTDOCS%%%%DOCSDIR%%/DISTRO-DILEMMA
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/FEATURES
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
@@ -47,6 +48,8 @@ lib/libcurl.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/examples/Makefile.in
 %%PORTDOCS%%%%DOCSDIR%%/examples/README
 %%PORTDOCS%%%%DOCSDIR%%/examples/anyauthput.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/cacertinmem.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/cookie_interface.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/curlgtk.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/curlx.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/debug.c
@@ -190,6 +193,7 @@ lib/libcurl.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_version_info.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_version_info.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_version_info.pdf
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/getinfo-times
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/index.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/libcurl-easy.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/libcurl-easy.html
