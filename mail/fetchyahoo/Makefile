@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fetchyahoo
-PORTVERSION=	2.8.6
+PORTVERSION=	2.8.8
 CATEGORIES=	mail
 MASTER_SITES=	http://fetchyahoo.sourceforge.net/
 
