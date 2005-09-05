@@ -1,0 +1,26 @@
+racoon speaks IKE (ISAKMP/Oakley) key management protocol, to
+establish security association with other hosts.
+
+This is the IPSec-tools version of racoon.
+
+Enchancements:
+- Support of NAT-T.
+- Support of IKE fragmentation.
+- Support of many authentication algorithms.
+- Tons of bugfixes.
+
+Known issues:
+- Too many use of dynamic memory allocation, which leads to memory leak.
+- Non-threaded implementation.  Simultaneous key negotiation performance
+  should be improved.
+- Cannot negotiate keys for per-socket policy.
+- Cryptic configuration syntax - blame IPsec specification too...
+- Needs more documentation.
+
+Design choice, not a bug:
+- racoon negotiate IPsec keys only.  It does not negotiate policy.  Policy must
+  be configured into the kernel separately from racoon.  If you want to
+  support roaming clients, you may need to have a mechanism to put policy
+  for the roaming client after phase 1 finishes.
+
+WWW: http://www.kame.net/ and http://ipsec-tools.sf.net

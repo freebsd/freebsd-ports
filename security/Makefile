@@ -166,6 +166,7 @@
     SUBDIR += ipfmeta
     SUBDIR += ipfw2dshield
     SUBDIR += ipguard
+    SUBDIR += ipsec-tools
     SUBDIR += isakmpd
     SUBDIR += its4
     SUBDIR += john
