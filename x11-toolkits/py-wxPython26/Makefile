@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wxPython
-PORTVERSION=	2.6.0.0
+PORTVERSION=	2.6.1.0
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wxpython
@@ -16,8 +16,8 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	neal@nelson.name
 COMMENT=	Python bindings for the wxWidgets/GTK GUI toolkit
 
-LIB_DEPENDS=	wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26 \
-		wx_gtk2_gizmos-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26-contrib
+LIB_DEPENDS=	wx_gtk2_core-2.6:${PORTSDIR}/x11-toolkits/wxgtk26 \
+		wx_gtk2_gizmos-2.6:${PORTSDIR}/x11-toolkits/wxgtk26-contrib
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wxPython
@@ -30,7 +30,7 @@ PYDISTUTILS_CONFIGUREARGS+=	WX_CONFIG="${WX_CONFIG}"
 DEMO_DIR=	${PYTHONPREFIX_SITELIBDIR}/wxPython/demo
 
 INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PYTHON_SITELIBDIR%%/wx-2.6.0-gtk2-ansi/wx/
+LDCONFIG_DIRS=	%%PREFIX%%/%%PYTHON_SITELIBDIR%%/wx-2.6-gtk2-ansi/wx/
 
 post-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/demo
