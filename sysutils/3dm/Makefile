@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	3dm
-PORTVERSION=	2.02.00.015
+PORTVERSION=	2.03.00.028
 PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.3ware.com/download/Escalade9000Series/9.1.5.2/
-DISTNAME=	3dm-x86-bsd
+MASTER_SITES=	http://www.3ware.com/download/Escalade9000Series/9.2.1.1/
+DISTNAME=	3dm2-freebsd-x86-9.2.1.1
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -27,7 +27,7 @@ IGNORE=		"3ware 3ware ATA RAID (twe) is not supported in versions earlier than 4
 
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/x86
+WRKSRC=		${WRKDIR}
 
 SHAREDIR=	${PREFIX}/share/3dm2/en
 
@@ -36,12 +36,13 @@ SED_SCRIPT=	-e 's,%%NAME%%,3dm2,g' \
 		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
 
 post-configure:
-	${SED} ${SED_SCRIPT} ${FILESDIR}/3dm2.sh > ${WRKSRC}/3dm2.sh
-	${SED} ${SED_SCRIPT} ${FILESDIR}/3dm2.conf.sample > ${WRKSRC}/3dm2.conf.sample
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/3dm2.sh > ${WRKSRC}/3dm2.sh
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/3dm2.conf.sample > ${WRKSRC}/3dm2.conf.sample
 
 pre-install:
 	@cd ${WRKSRC}; ${TAR} zxf 3dm-bsd.tgz
 	@cd ${WRKSRC}; ${TAR} zxf 3dm-help.tgz
+	@${REINPLACE_CMD} -e 's|images/amcc-logo.gif|images/amcc-logo75.gif|g' ${WRKSRC}/*.html
 
 do-install:
 
@@ -53,10 +54,10 @@ do-install:
 	${MKDIR} ${SHAREDIR}/scripts
 .endif
 
-	${INSTALL_DATA} ${WRKSRC}/en/*.html ${SHAREDIR}
-	${INSTALL_DATA} ${WRKSRC}/en/*.css ${SHAREDIR}
-	${INSTALL_DATA} ${WRKSRC}/en/images/* ${SHAREDIR}/images
-	${INSTALL_DATA} ${WRKSRC}/en/scripts/*.js ${SHAREDIR}/scripts
+	${INSTALL_DATA} ${WRKSRC}/*.html ${SHAREDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.css ${SHAREDIR}
+	${INSTALL_DATA} ${WRKSRC}/images/* ${SHAREDIR}/images
+	${INSTALL_DATA} ${WRKSRC}/scripts/*.js ${SHAREDIR}/scripts
 	${INSTALL_PROGRAM} ${WRKSRC}/3dm2 ${PREFIX}/sbin
 	${CHMOD} 500 ${PREFIX}/sbin/3dm2
 
