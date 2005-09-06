@@ -26,7 +26,7 @@ PORTDOCS=	CHANGELOG INSTALL LICENSE README README.spread \
 .endif
 
 do-build:
-	cd ${WRKSRC} && ${APXS} -I${PREFIX}/include -c mod_log_spread.c
+	cd ${WRKSRC} && ${APXS} -c -I ${PREFIX}/include -L ${PREFIX}/lib -l spread mod_log_spread.c
 
 do-install:
 	${APXS} -i -a -n log_spread ${WRKSRC}/mod_log_spread.so
