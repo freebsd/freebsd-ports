@@ -9,7 +9,8 @@ PORTNAME=	qca-tls
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://psi.affinix.com/beta/
+MASTER_SITES=	http://delta.affinix.com/qca/ \
+		http://psi.affinix.com/beta/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	SSL/TLS plugin for Qt
