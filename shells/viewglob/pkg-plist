@@ -1,9 +1,12 @@
-bin/gviewglob
+bin/vgd
+bin/vgseer
 bin/viewglob
 lib/viewglob/.zshrc
+lib/viewglob/conf-to-args.sh
 lib/viewglob/getopt.sh
-lib/viewglob/glob-expand
-lib/viewglob/gviewglob
 lib/viewglob/init-viewglob.bashrc
-lib/viewglob/seer
+lib/viewglob/vgclassic
+lib/viewglob/vgexpand
+lib/viewglob/vgmini
+lib/viewglob/vgping
 @dirrm lib/viewglob
