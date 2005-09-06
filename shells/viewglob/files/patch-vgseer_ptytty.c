@@ -1,6 +1,6 @@
---- src/ptytty.c.orig	Fri Nov 19 07:43:59 2004
-+++ src/ptytty.c	Tue Jan 18 19:26:30 2005
-@@ -48,7 +48,6 @@
+--- vgseer/ptytty.c.orig	Mon Apr 25 18:21:55 2005
++++ vgseer/ptytty.c	Tue Sep  6 15:43:01 2005
+@@ -60,7 +60,6 @@
  # include <sys/ioctl.h>
  #endif
  #if defined(PTYS_ARE_PTMX) && !defined(__CYGWIN32__)
@@ -8,7 +8,7 @@
  #endif
  
  
-@@ -71,6 +70,11 @@
+@@ -83,6 +82,11 @@
  rxvt_get_pty(int *fd_tty, const char **ttydev)
  {
      int             pfd;
