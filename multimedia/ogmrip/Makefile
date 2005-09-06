@@ -18,6 +18,7 @@ BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
 		lame:${PORTSDIR}/audio/lame \
+		gsed:${PORTSDIR}/textproc/gsed \
 		gocr:${PORTSDIR}/graphics/gocr
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	xvidcore:${PORTSDIR}/multimedia/xvid \
