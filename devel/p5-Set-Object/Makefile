@@ -17,10 +17,10 @@ COMMENT=	Perl module to manage sets of objects
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Set::Object.3
+MAN3=		Set::Changes.3 Set::Object.3
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	Changes README
+PORTDOCS=	Changes.pod README
 
 post-install:
 	@${MKDIR} ${DOCSDIR}
