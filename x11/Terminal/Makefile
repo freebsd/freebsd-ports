@@ -1,6 +1,6 @@
 # New ports collection makefile for:	Terminal
 # Date created:		23 October 2004
-# Whom:			Matt Lancereau <matt@bsdfly.org>
+# Whom:			Matt Lancereau <ports@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.2.4
 CATEGORIES=	x11
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 
-MAINTAINER=	matt@bsdfly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal emulator for the X windowing system
 
 LIB_DEPENDS=	exo-0.3:${PORTSDIR}/x11/libexo \

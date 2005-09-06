@@ -1,6 +1,6 @@
 # New ports collection makefile for:	Xfce4-media
 # Date created:		23 October 2004
-# Whom:			Matt Lancereau <matt@bsdfly.org>
+# Whom:			Matt Lancereau <ports@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://spuriousinterrupt.org/projects/xfmedia/files/
 DISTNAME=	xfmedia-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	matt@bsdfly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight media player for Xfce4 based on the xine engine
 
 LIB_DEPENDS=	xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui \
