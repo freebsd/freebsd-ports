@@ -28,10 +28,4 @@ MAN3=		archive_entry.3 \
 MAN5=		libarchive-formats.5 \
 		tar.5
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502103
-IGNORE=		is in the base system
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
