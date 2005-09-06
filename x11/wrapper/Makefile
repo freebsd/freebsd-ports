@@ -24,7 +24,6 @@ USE_X_PREFIX=	yes
 XSERVER=	-DXSERVER_PATH=\"/usr/X11R6/bin/Xorg\"
 PKGNAMEPREFIX=	xorg-
 COMMENT=	Wrapper for X.org X11 server
-BROKEN=		Incomplete pkg-plist
 .elif ${X_WINDOW_SYSTEM:L} == xfree86-4
 XSERVER=	-DXSERVER_PATH=\"/usr/X11R6/bin/XFree86\"
 RUN_DEPENDS=	XFree86:${PORTSDIR}/x11-servers/XFree86-4-Server
