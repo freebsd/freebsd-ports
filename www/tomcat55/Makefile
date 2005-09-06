@@ -157,6 +157,9 @@ do-install:
 	-e "/%%JAR_ARGS%%/s//\"start\",/g" \
 	${WRKDIR}/daemonctl.c > ${WRKDIR}/daemonctl_.c
 	@cd ${WRKDIR} && ${CC} -ansi -o ${CONTROL_SCRIPT_NAME} daemonctl_.c
+	@${CP} ${WRKDIR}/${CONTROL_SCRIPT_NAME} ${CONTROL_SCRIPT}
+	@${CHOWN} ${USER}:${GROUP} ${CONTROL_SCRIPT}
+	@${CHMOD} 6754 ${CONTROL_SCRIPT}
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} -n ">> Installing startup script..."
