@@ -31,8 +31,8 @@ MAN3=		Net::HL7.3 \
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} < 500000)
-IGNORE=	Doesn't build on 4.x
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6 or better. Please install lang/perl5.8 and retry
 .endif
 
 post-install:
