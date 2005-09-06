@@ -1,5 +1,5 @@
 --- configure.orig	Wed Dec 17 23:54:50 2003
-+++ configure	Tue Nov 16 12:33:52 2004
++++ configure	Fri Aug 26 11:59:28 2005
 @@ -20,17 +20,17 @@
  while [ $# -gt 0 ]; do
  	case "$1" in
@@ -21,15 +21,6 @@
  			shift
  			;;
  
-@@ -43,6 +43,8 @@
- 	esac
- done
- 
-+QC_WITH_OPENSSL_INC=/usr/include
-+QC_WITH_OPENSSL_LIB=/usr/lib
- 
- echo "Configuring qca-tls ..."
- 
 @@ -84,7 +86,7 @@
  		echo Warning: qmake not in \$QTDIR/bin/qmake
  		echo trying to find it in \$PATH
@@ -48,7 +39,27 @@
  			lib = s;
  		}
  		else {
-@@ -570,13 +570,6 @@
+@@ -175,6 +175,19 @@
+ 		if(ret == 0)
+ 			conf->addDefine("OSSL_097");
+ 
++		// is it at least openssl 0.9.8?
++		str =
++			"#include<openssl/opensslv.h>\n"
++			"int main()\n"
++			"{\n"
++			"  unsigned long x = OPENSSL_VERSION_NUMBER;\n"
++			"  if(x >= 0x00908000) return 0; else return 1;\n"
++			"}\n";
++		if(!conf->doCompileAndLink(str, ext, &ret))
++			return false;
++		if(ret == 0)
++			conf->addDefine("OSSL_098");
++
+ 		if(!inc.isEmpty())
+ 			conf->addIncludePath(inc);
+ 		if(kb)
+@@ -570,13 +583,6 @@
  	echo
  	exit 1;
  fi
