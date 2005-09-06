@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uuid
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 CATEGORIES=	misc devel
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
@@ -17,8 +17,9 @@ COMMENT=	ISO-C & Perl API and CLI for generating Universally Unique Identifiers
 
 CONFLICTS=	e2fsprogs-[0-9]*
 
+USE_REINPLACE=		yes
 USE_LIBTOOL_VER=	15
-INSTALLS_SHLIB=	yes
+INSTALLS_SHLIB=		yes
 CONFIGURE_ARGS+=	--disable-shared --enable-static
 
 MAN1=		uuid-config.1 uuid.1
@@ -39,6 +40,10 @@ test:
 	cd ${WRKSRC}; ${MAKE} check
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,\$$.libdir./pkgconfig,\$$\(prefix\)/libdata/pkgconfig,g' \
+		${WRKSRC}/Makefile.in
 
 .if defined(WITH_PERL) && ${PERL_LEVEL} < 500800
 IGNORE=	supports Perl 5.8.0 or above only
