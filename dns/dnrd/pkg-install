@@ -1,0 +1,42 @@
+#!/bin/sh
+
+
+USER=${DNRDUSER:-dnrd}
+GROUP=${USER}
+SYSCONF_DIR=${SYSCONF_DIR:-${PKG_PREFIX}/etc/dnrd}
+
+case $2 in
+	PRE-INSTALL)
+		if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
+			if pw groupadd ${GROUP}; then
+				echo "Added group \"${GROUP}\"."
+			else
+				echo "Adding group \"${GROUP}\" failed..."
+				exit 1
+			fi
+		fi
+
+		if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
+			if pw useradd ${USER} -g ${GROUP} -h - \
+				-s "/sbin/nologin" -d "/var/empty" \
+				-c "DNRD daemon"; \
+			then
+				echo "Added user \"${USER}\"."
+			else
+				echo "Adding user \"${USER}\" failed..."
+				exit 1
+			fi
+		fi
+		;;
+
+	POST-INSTALL)
+		if [ ! -d ${SYSCONF_DIR} ]; then
+			mkdir -p ${SYSCONF_DIR}
+			if [ ! -d ${SYSCONF_DIR} ]; then
+				echo "Creating \"${SYSCONF_DIR}\" failed."
+				exit 1
+			fi
+		fi
+		;;
+esac
+exit 0
