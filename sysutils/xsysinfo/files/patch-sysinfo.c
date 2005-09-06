@@ -1,5 +1,5 @@
---- sysinfo.c.orig	Tue Oct  6 07:21:18 1998
-+++ sysinfo.c	Thu May 12 15:49:32 2005
+--- sysinfo.c.orig	Tue Oct  6 22:21:18 1998
++++ sysinfo.c	Tue Sep  6 14:07:41 2005
 @@ -13,7 +13,9 @@
  #include <sys/ioctl_compat.h>	/* XXX NTTYDISC is too well hidden */
  #include <sys/tty.h>
@@ -17,7 +17,7 @@
 +#if __FreeBSD_version >= 500000
 +#include <nfs/nfsproto.h>
 +#include <nfsclient/nfs.h>
-+#include <nfsserver/nfsrvstats.h>
++#include <nfsserver/nfs.h>
 +#else
  #include <nfs/nfsv2.h>
  #include <nfs/nfs.h>
@@ -56,7 +56,7 @@
 +	{ "_numvnodes" },
 +#define	FNL_NFILE	4
 +/* nfiles changes name to openfiles near this FreeBSD version */
-+#if __FreeBSD_version > 503101
++#if XXX && __FreeBSD_version > 503101
 +	{"_openfiles"},
 +#else
 +	{"_nfiles"},
@@ -91,7 +91,7 @@
  
  	/* NPROCS=0, CPU */
    if (cpuflag) {
-@@ -356,19 +402,30 @@
+@@ -356,19 +402,39 @@
  	for (i=0; i<10; i++)
  	    states[i] = 0;
  	size = sizeof(nfsstats);
@@ -116,8 +116,17 @@
  #endif
  	mib[2] = NFS_NFSSTATS;
 +#if __FreeBSD_version >= 500000
-+	if (sysctl( mib, 3, &nfsstats, &size, NULL, 0) < 0 || sysctl( mib, 3, &nfsrvstats, &rvsize, NULL, 0) < 0)
-+	    return;
++	if (sysctl( mib, 3, &nfsstats, &size, NULL, 0) < 0) {
++	  return;
++	}
++	else {
++	  size_t len = 3;
++	  sysctlnametomib("vfs.nfsrv", mib, &len);
++	  mib[2] = NFS_NFSRVSTATS;
++	}
++	if (sysctl( mib, 3, &nfsrvstats, &rvsize, NULL, 0) < 0) {
++	  return;
++	}
 +#else
  	if (sysctl( mib, 3, &nfsstats, &size, NULL, 0) < 0)
  	    goto nfs_out;
@@ -125,7 +134,7 @@
  	else {
  	    old_nfsStats = nfsStats;
  
-@@ -395,6 +452,22 @@
+@@ -395,6 +461,22 @@
  #else
  				 nfsstats.rpccnt[NFSPROC_READDIR];
  #endif
@@ -148,7 +157,7 @@
  	    nfsStats.nfsServer = nfsstats.srvrpccnt[NFSPROC_GETATTR] + 
  	                         nfsstats.srvrpccnt[NFSPROC_SETATTR] +
  	                         nfsstats.srvrpccnt[NFSPROC_LOOKUP] +
-@@ -418,6 +491,7 @@
+@@ -418,6 +500,7 @@
  #else
  				 nfsstats.srvrpccnt[NFSPROC_READDIR];
  #endif
@@ -156,7 +165,7 @@
  	}
  	scale_bar(250, nfsStats.nfsClient-old_nfsStats.nfsClient, 25, states, 0);
  	draw_bar(nfsflag-1, states, 10);
-@@ -428,7 +502,7 @@
+@@ -428,7 +511,7 @@
    }
  nfs_out:
  
@@ -165,7 +174,7 @@
  
  
  /* swapmode is derived from freebsd's pstat source ...
-@@ -438,6 +512,21 @@
+@@ -438,6 +521,21 @@
  void
  swapmode(int *used, int *avail)
  {
@@ -187,7 +196,7 @@
  	char *header;
  	int hlen, nswap, nswdev, dmmax;
  	int i, div, nfree, npfree;
-@@ -546,6 +635,7 @@
+@@ -546,6 +644,7 @@
  	*used = *avail - nfree;
  	free(sw);
  	free(perdev);
@@ -195,7 +204,7 @@
  }
  
  /*
-@@ -623,13 +713,21 @@
+@@ -623,13 +722,21 @@
  	 * Make sure that the userland devstat version matches the kernel
  	 * devstat version.
  	 */
@@ -217,19 +226,19 @@
  		nodisk++;
  		return;
  	}
-@@ -644,7 +742,11 @@
+@@ -644,7 +751,11 @@
  	 * changed here, since it almost certainly has.  We only look for
  	 * errors.
  	 */
 +#if __FreeBSD_version >= 500000
-+	if (devstat_getdevs(kd,&cur) == -1) {
++	if (devstat_getdevs(NULL,&cur) == -1) {
 +#else
  	if (getdevs(&cur) == -1) {
 +#endif
  		nodisk++;
  		return;
  	}
-@@ -656,7 +758,11 @@
+@@ -656,7 +767,11 @@
  
  	/* only interested in disks */
  	matches = NULL;
@@ -241,7 +250,7 @@
  		nodisk++;
  		return;
  	}
-@@ -671,7 +777,11 @@
+@@ -671,7 +786,11 @@
  	 * device list has changed, so we don't look for return values of 0
  	 * or 1.  If we get back -1, though, there is an error.
  	 */
@@ -253,19 +262,19 @@
  		       &num_selections, &select_generation,
  		       generation, cur.dinfo->devices, num_devices,
  		       matches, num_matches,
-@@ -697,7 +807,11 @@
+@@ -697,7 +816,11 @@
  		 * the selection process again, in case a device that we
  		 * were previously displaying has gone away.
  		 */
 +#if __FreeBSD_version >= 500000
-+		switch (devstat_getdevs(kd,&cur)) {
++		switch (devstat_getdevs(NULL,&cur)) {
 +#else
  		switch (getdevs(&cur)) {
 +#endif
  		case -1:
  			return (0);
  		case 1: {
-@@ -705,7 +819,11 @@
+@@ -705,7 +828,11 @@
  
  			num_devices = cur.dinfo->numdevs;
  			generation = cur.dinfo->generation;
@@ -277,7 +286,7 @@
  					    &num_selections, &select_generation,
  					    generation, cur.dinfo->devices,
  					    num_devices, matches, num_matches,
-@@ -729,14 +847,22 @@
+@@ -729,14 +856,22 @@
  		 * Calculate elapsed time up front, since it's the same for all
  		 * devices.
  		 */
@@ -300,7 +309,7 @@
  			return (0);
  		}
  
-@@ -764,7 +890,11 @@
+@@ -764,7 +899,11 @@
  		last.dinfo = cur.dinfo;
  		cur.dinfo = tmp_dinfo;
  
