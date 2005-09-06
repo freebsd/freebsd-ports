@@ -1,14 +1,18 @@
 bin/opml2snow
+bin/snow2opml
 bin/snownews
 bin/snowsync
 %%NLS%%share/locale/de/LC_MESSAGES/snownews.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/snownews.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/snownews.mo
-%%NLS%%share/locale/sl/LC_MESSAGES/snownews.mo
 %%NLS%%share/locale/es/LC_MESSAGES/snownews.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/snownews.mo
 %%NLS%%share/locale/it/LC_MESSAGES/snownews.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/snownews.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/snownews.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/snownews.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/snownews.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/snownews.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/snownews.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/snownews.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/snownews.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/snownews.mo
 @unexec rmdir %D/man/fr/man1 2>/dev/null || true
 @unexec rmdir %D/man/fr 2>/dev/null || true
