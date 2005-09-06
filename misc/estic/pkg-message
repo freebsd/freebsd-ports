@@ -1,0 +1,2 @@
+To support more than ASCII, please set in your enviroment:
+SPUNK_CTYPE=iso_8859_1
