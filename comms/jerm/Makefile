@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jerm
-PORTVERSION=	8094
+PORTVERSION=	8095
 CATEGORIES=	comms
 MASTER_SITES=	http://www.bsddiary.net/jerm/
 
