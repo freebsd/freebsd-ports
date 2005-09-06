@@ -15,8 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${B2EVO_DATE}${EXTRACT_SUFX} \
 		${PATCH_VER}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-${B2EVO_DATE}
 
-# Maintainership available: drop me a line if interested :p
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multilingual, multiuser, multi-blog engine
 
 PATCH_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip

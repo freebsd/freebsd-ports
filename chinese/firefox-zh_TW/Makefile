@@ -13,8 +13,7 @@ MASTER_SITES=	http://bbs.ilc.edu.tw/~chinsan/firefox/
 PKGNAMESUFFIX=	-zh_TW
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}.${PORTVERSION}b
 
-# Maintainership available: drop me a line if interested :p
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Firefox Traditional Chinese(zh-TW) Language Pack
 
 BUILD_DEPENDS=	${X11BASE}/lib/${FIREFOX}/regxpcom:${PORTSDIR}/www/firefox
