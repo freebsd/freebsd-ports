@@ -18,7 +18,6 @@ lib/clisp/clisp-link
 lib/clisp/data/UnicodeDataFull.txt
 lib/clisp/data/clhs.txt
 lib/clisp/full/calls.o
-lib/clisp/full/clx.o
 lib/clisp/full/gettext.o
 lib/clisp/full/libavcall.a
 lib/clisp/full/libcallback.a

@@ -7,6 +7,7 @@
 
 PORTNAME=	clisp
 PORTVERSION=	2.35
+PORTREVISION=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=${PORTNAME}/release/${PORTVERSION}
@@ -26,8 +27,7 @@ BUILD_DIRNAME=${CONFIGURE_TARGET}
 
 # Check ./configure --list-modules in the distribution to see all modules
 MAKEMAKE_ARGS=--prefix=${PREFIX} --mandir=${PREFIX}/man --with-dynamic-ffi \
-	--with-module=rawsock --with-module=wildcard \
-	--with-module=clx/new-clx --srcdir=${WRKSRC}/src
+	--with-module=rawsock --with-module=wildcard --srcdir=${WRKSRC}/src
 
 .include <bsd.port.pre.mk>
 
