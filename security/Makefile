@@ -222,6 +222,7 @@
     SUBDIR += mindterm-binary
     SUBDIR += mussh
     SUBDIR += nbaudit
+    SUBDIR += ncrypt
     SUBDIR += nessus
     SUBDIR += nessus-devel
     SUBDIR += nessus-libnasl
