@@ -45,9 +45,9 @@ M2000TAPES=	3DDoolhof2.cas		\
 
 WRKSRC=		${WRKDIR}/P2000
 ALL_TARGET=	x
+USE_XLIB=	yes
 
 SUB_FILES=	m2000.sh
-USE_UNZIP=	yes
 
 post-extract:
 	${MKDIR} ${WRKDIR}/tapeconv
