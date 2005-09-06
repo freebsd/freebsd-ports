@@ -1,4 +1,16 @@
 #!/bin/sh
 if [ -e ${PKG_PREFIX}/bin/X.bck ]; then
 	mv ${PKG_PREFIX}/bin/X.bck ${PKG_PREFIX}/bin/X
+else
+	if [ -x ${PKG_PREFIX}/bin/XFree86 ]; then
+		ln -sf ${PKG_PREFIX}/bin/XFree86 ${PKG_PREFIX}/bin/X
+		exit 0
+	elif [ -x ${PKG_PREFIX}/bin/Xorg ]; then
+		ln -sf ${PKG_PREFIX}/bin/Xorg ${PKG_PREFIX}/bin/X
+		exit 0
+	else
+		rm -f ${PKG_PREFIX}/bin/X
+	fi
 fi
+[ -x ${PKG_PREFIX}/bin/XFree86 ] && chmod u+s ${PKG_PREFIX}/bin/XFree86
+[ -x ${PKG_PREFIX}/bin/Xorg ] && chmod u+s ${PKG_PREFIX}/bin/Xorg
