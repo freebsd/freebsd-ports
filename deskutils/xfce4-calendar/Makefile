@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	xfce4-calendar
-PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTVERSION=	4.2.2
+PORTREVISION=	0
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		http://spuriousinterrupt.org/projects/xfce4/files/mirror/xfce-${PORTVERSION}/src/ \
+		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://public.fh-wolfenbuettel.de/~luedickj/xfce4/xfce-${PORTVERSION}/
 DISTNAME=	xfcalendar-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	matt@bsdfly.org
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A calendar application to manage your time with XFce 4
 
 BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
