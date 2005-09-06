@@ -17,15 +17,14 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Mail client for X which supports POP and PGP
 
 LIB_DEPENDS=	Xclasses.1:${PORTSDIR}/x11-toolkits/xclasses
-RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	arm i386
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 
-CONFIGURE_ARGS=	\
-		--includedir=${X11BASE}/include/ \
+CONFIGURE_ARGS=	--includedir=${X11BASE}/include/ \
 		--libdir=${X11BASE}/lib/ \
 		--x-includes=${X11BASE}/include/ \
 		--x-libraries=${X11BASE}/lib/
@@ -36,8 +35,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 
 .include <bsd.port.pre.mk>
 
+post-patch:
 .if ${OSVERSION} > 502014
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
+	@${REINPLACE_CMD} -e "s|expr $1|expr -- $1|g" ${WRKSRC}/plugins/linkshared.in
+	@${REINPLACE_CMD} -e "s|expr $1|expr -- $1|g" ${WRKSRC}/src/linktool
 .endif
 
 post-install:
