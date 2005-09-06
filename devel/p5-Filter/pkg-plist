@@ -1,12 +1,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Filter/Util/Call.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Filter/Util/Exec.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Filter/cpp.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Filter/cpp.pm.bak
 %%SITE_PERL%%/%%PERL_ARCH%%/Filter/decrypt.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Filter/exec.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Filter/exec.pm.bak
 %%SITE_PERL%%/%%PERL_ARCH%%/Filter/sh.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Filter/sh.pm.bak
 %%SITE_PERL%%/%%PERL_ARCH%%/Filter/tee.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Util/Call/Call.bs
