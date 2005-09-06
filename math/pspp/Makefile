@@ -6,15 +6,28 @@
 #
 
 PORTNAME=	pspp
-PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
+MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for statistical analysis of sampled data
 
-GNU_CONFIGURE=	yes
+LIB_DEPENDS=	plot.4:${PORTSDIR}/graphics/plotutils \
+		gslcblas.0:${PORTSDIR}/math/gsl
 
-.include <bsd.port.mk>
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+INFO=		pspp
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"does not compile"
+.endif
+
+.include <bsd.port.post.mk>
