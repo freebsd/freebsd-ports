@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-Proxy
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTTP
@@ -41,6 +41,9 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/INET.pm:${PORTSDIR}/devel/p5
 
 post-patch:
 	@${PERL} -i -pe '$$_ = "" if /use warnings/' ${WRKSRC}/Build.PL
+	@${PERL} -i -pe 's/^our ([^\s;]+)/use vars qw($$1); $$1/;' \
+		${WRKSRC}/lib/HTTP/Proxy/Engine/NoFork.pm \
+		${WRKSRC}/lib/HTTP/Proxy/Engine/Legacy.pm
 .endif
 
 .include <bsd.port.post.mk>
