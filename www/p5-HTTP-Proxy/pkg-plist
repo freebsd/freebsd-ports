@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/HTTP/Proxy.pm
 %%SITE_PERL%%/HTTP/Proxy/BodyFilter.pm
 %%SITE_PERL%%/HTTP/Proxy/BodyFilter/complete.pm
@@ -7,10 +8,14 @@
 %%SITE_PERL%%/HTTP/Proxy/BodyFilter/save.pm
 %%SITE_PERL%%/HTTP/Proxy/BodyFilter/simple.pm
 %%SITE_PERL%%/HTTP/Proxy/BodyFilter/tags.pm
+%%SITE_PERL%%/HTTP/Proxy/Engine.pm
+%%SITE_PERL%%/HTTP/Proxy/Engine/Legacy.pm
+%%SITE_PERL%%/HTTP/Proxy/Engine/NoFork.pm
 %%SITE_PERL%%/HTTP/Proxy/HeaderFilter.pm
 %%SITE_PERL%%/HTTP/Proxy/HeaderFilter/simple.pm
 %%SITE_PERL%%/HTTP/Proxy/HeaderFilter/standard.pm
 @dirrm %%SITE_PERL%%/HTTP/Proxy/HeaderFilter
+@dirrm %%SITE_PERL%%/HTTP/Proxy/Engine
 @dirrm %%SITE_PERL%%/HTTP/Proxy/BodyFilter
 @dirrm %%SITE_PERL%%/HTTP/Proxy
 @unexec rmdir %D/%%SITE_PERL%%/HTTP 2>/dev/null || true

@@ -30,6 +30,9 @@ MAN3=		\
 		HTTP::Proxy::BodyFilter::save.3 \
 		HTTP::Proxy::BodyFilter::simple.3 \
 		HTTP::Proxy::BodyFilter::tags.3 \
+		HTTP::Proxy::Engine.3 \
+		HTTP::Proxy::Engine::Legacy.3 \
+		HTTP::Proxy::Engine::NoFork.3 \
 		HTTP::Proxy::HeaderFilter.3 \
 		HTTP::Proxy::HeaderFilter::simple.3 \
 		HTTP::Proxy::HeaderFilter::standard.3
