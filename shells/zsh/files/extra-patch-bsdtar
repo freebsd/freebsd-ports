@@ -1,0 +1,18 @@
+--- Completion/Unix/Type/_tar_archive	Mon Jul  4 17:16:10 2005
++++ Completion/Unix/Type/_tar_archive	Tue Jul  5 20:44:52 2005
+@@ -14,13 +14,8 @@
+ _description files expl 'archive file'
+ 
+ if [[ "$1" = *[urtx]* ]]; then
+-  if [[ "$1" = *[zZ]* ]]; then
+-    _files "$expl[@]" -g '*.((tar|TAR).(gz|GZ|Z)|tgz)(-.)'
+-  elif [[ "$1" = *[Ijy]* ]]; then
+-    _files "$expl[@]" -g '*.(tar|TAR).bz2(-.)'
+-  else
+-    _files "$expl[@]" -g '*.(tar|TAR)(-.)'
+-  fi
++# bsdtar/libarchive handle these automagically
++  _files "$expl[@]" -g '*.((tar|TAR|iso|ISO|cpio).(|(gz|GZ|Z|bz2))|tgz|tbz|jar|zip)(-.)'
+ else
+   _files "$expl[@]"
+ fi
