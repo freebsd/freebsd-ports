@@ -1,0 +1,7 @@
+NCrypt is intended to give you security in an insecure environment.
+If you are wanting to encrypt files (particularly on a multi-user
+system where you don't have root), wishing to hide your activites
+from prying eyes, and want to "cover your tracks", then NCrypt is
+for you.
+
+WWW: http://ncrypt.sourceforge.net/
