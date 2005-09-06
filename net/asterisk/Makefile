@@ -9,7 +9,9 @@ PORTNAME=	asterisk
 PORTVERSION=	1.0.9
 PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
+MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
+		http://ftp.digium.com/pub/asterisk/old-releases/ \
+		ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/
 
 PATCHFILES=	${PORTNAME}-1.0.8-${BRIVER}.patch.gz
