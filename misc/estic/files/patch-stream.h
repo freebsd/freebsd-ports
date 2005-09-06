@@ -1,10 +1,10 @@
---- spunk/stream.h.orig	Sat Feb 26 17:47:07 2000
-+++ spunk/stream.h	Sat Feb 26 17:47:53 2000
-@@ -33,17 +33,17 @@
+--- spunk/stream.h.orig	Thu Nov  7 18:06:52 1996
++++ spunk/stream.h	Tue Sep  6 09:54:21 2005
+@@ -50,19 +50,19 @@
  
  
  
--static const stOk	    =  0;   // things are allright
+-static const stOk           =  0;   // things are allright
 -static const stInitError    =  1;   // error initializing the stream
 -static const stReadError    =  2;   // error reading from the stream
 -static const stWriteError   =  3;   // error writing to the stream
@@ -15,6 +15,8 @@
 -static const stLoadError    =  8;   // Keine Load-Methode oder Fehler bei Load
 -static const stCopyError    =  9;   // CopyFrom: error of source stream
 -static const stSeekError    = 10;   // error using Seek, GetPos etc.
+-static const stReadTimeout  = 11;   // Timeout on read (CharacterStream only)
+-static const stWriteTimeout = 12;   // Timeout on write (CharcterStream only)
 +static const int stOk           =  0;   // things are allright
 +static const int stInitError    =  1;   // error initializing the stream
 +static const int stReadError    =  2;   // error reading from the stream
@@ -26,6 +28,8 @@
 +static const int stLoadError    =  8;   // Keine Load-Methode oder Fehler bei Load
 +static const int stCopyError    =  9;   // CopyFrom: error of source stream
 +static const int stSeekError    = 10;   // error using Seek, GetPos etc.
++static const int stReadTimeout  = 11;   // Timeout on read (CharacterStream only)
++static const int stWriteTimeout = 12;   // Timeout on write (CharcterStream only)
  
  
  

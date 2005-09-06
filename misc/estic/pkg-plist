@@ -1,14 +1,15 @@
 bin/estic.res
-bin/xestic
+%%WITHOUT_X%%bin/estic
+%%WITH_X%%bin/xestic
 etc/pbx/aliases.example
 etc/pbx/config
 etc/pbx/estic.ini.freebsd_example
 etc/pbx/estic.ini.generic_example
-%%DOCSDIR%%/README
-%%DOCSDIR%%/estic.doc
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/estic.doc
 var/log/pbx/debug
 @dirrm etc/pbx
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm var/log/pbx
 @dirrm var/log
 @dirrm var

@@ -10,4 +10,3 @@
  void (*CheckFailed) (const char* Msg, const char* Cond, int Code,
  			    const char* File, int Line);
  // Function pointer that is called from Check if the condition code is true.
-Only in foo/spunk: check.o

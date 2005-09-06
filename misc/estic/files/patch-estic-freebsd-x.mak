@@ -1,6 +1,6 @@
---- estic/make/freebsd-x.mak.orig	Sat Sep 14 15:40:16 1996
-+++ estic/make/freebsd-x.mak	Fri Mar  9 23:10:30 2001
-@@ -27,7 +27,8 @@
+--- estic/make/freebsd-x.mak.orig	Fri Jan 31 03:57:24 1997
++++ estic/make/freebsd-x.mak	Tue Sep  6 09:54:21 2005
+@@ -27,12 +27,13 @@
  AR = ar
  LD = ld
  ZIP = zip
@@ -10,21 +10,44 @@
  
  LIB	= ../spunk/spunk.a
  INCDIR	= ../spunk
-@@ -35,7 +36,7 @@
- # Both configurations of CFLAGS will probably work since FreeBSD has a
- # smart linker...
- #CFLAGS = -DFREEBSD -DUSE_OLD_TTY -g -Wall -I$(INCDIR) -x c++ -L /usr/X11R6/lib
--CFLAGS	= -DFREEBSD -DUSE_OLD_TTY -g -Wall -I$(INCDIR) -x c++ -L /usr/X11R6/lib -fno-implicit-templates -DEXPLICIT_TEMPLATES
+ 
+-CFLAGS	= -DFREEBSD -g -Wall -I$(INCDIR) -x c++ -L /usr/X11R6/lib -fno-implicit-templates -DEXPLICIT_TEMPLATES
 +CFLAGS	+= -DFREEBSD -g -Wall -I$(INCDIR) -x c++ -L $(X11BASE)/lib -fno-implicit-templates -DEXPLICIT_TEMPLATES
  
  
  # ------------------------------------------------------------------------------
-@@ -79,7 +80,7 @@
+@@ -71,10 +72,10 @@
+ 		icintcon.o	\
+ 		iclog.o		\
+ 		icmsgwin.o	\
+-		icprefix.o	\
+ 		icshort.o	\
+ 		icver.o		\
+-		istecmsg.o
++		istecmsg.o	\
++		../areacode/areacode.o
+ 
+ # ------------------------------------------------------------------------------
+ #
+@@ -82,7 +83,7 @@
  all:	xestic
  
  xestic: $(LIB) $(OBJS)
 -	$(CC) -o xestic $(OBJS) $(LIB) -ltermcap -lg++ -lX11
-+	$(CC) -L /usr/X11R6/lib -o xestic $(OBJS) $(LIB) -ltermcap -lX11
++	$(CC) -L $(X11BASE)/lib -o xestic $(OBJS) $(LIB) -ltermcap -lX11
  
  
  # ------------------------------------------------------------------------------
+@@ -114,10 +115,10 @@
+ 
+ clean:
+ 	-rm -f *.bak *~
++	-rm -f *.o
++	-rm -f xestic
+ 
+ zap:	clean
+-	-rm -f *.o
+ 	-rm -f .depend
+-
+ 
+ 
