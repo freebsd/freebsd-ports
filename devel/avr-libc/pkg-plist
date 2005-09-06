@@ -97,6 +97,7 @@ avr/lib/avr5/crtm16.o
 avr/lib/avr5/crtm161.o
 avr/lib/avr5/crtm162.o
 avr/lib/avr5/crtm163.o
+avr/lib/avr5/crtm165.o
 avr/lib/avr5/crtm168.o
 avr/lib/avr5/crtm169.o
 avr/lib/avr5/crtm32.o
