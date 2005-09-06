@@ -7,10 +7,11 @@
 
 PORTNAME=	adstudio
 PORTVERSION=	4.5.2
+PORTREVISION=	1
 CATEGORIES=	databases devel java
 MASTER_SITES=	http://aquafold.fileburst.com/download/linux/
 DISTNAME=	${PORTNAME}-novm
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}_${PORTREVISION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A database query and administration tool
