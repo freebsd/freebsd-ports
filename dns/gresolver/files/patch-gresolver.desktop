@@ -1,0 +1,10 @@
+--- gresolver.desktop.orig	Tue Sep  6 16:57:31 2005
++++ gresolver.desktop	Tue Sep  6 16:57:35 2005
+@@ -3,7 +3,6 @@
+ Version=1.0
+ Type=Application
+ Exec=gresolver
+-TryExec=
+ X-GNOME-DocPath=
+ Terminal=false
+ StartupNotify=true
