@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	OOTools
-PORTVERSION=	2
+PORTVERSION=	2.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/D/DO/DOMIZIO
@@ -23,7 +23,9 @@ MAN3=		Class::constr.3 \
 		Class::Util.3	\
 		Class::Error.3	\
 		Object::groups.3 \
-		Object::props.3
+		Object::props.3 \
+		Package::groups.3 \
+		Package::props.3
 
 .include <bsd.port.pre.mk>
 
