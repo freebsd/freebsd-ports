@@ -10,11 +10,3 @@ share/locale/pt_BR/LC_MESSAGES/fwlogwatch.mo
 share/locale/sv/LC_MESSAGES/fwlogwatch.mo
 share/locale/zh_TW/LC_MESSAGES/fwlogwatch.mo
 share/locale/zh_CN/LC_MESSAGES/fwlogwatch.mo
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale/zh_CN/LC_MESSAGES
-@dirrm share/locale/zh_CN
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/de/LC_MESSAGES
