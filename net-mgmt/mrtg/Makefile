@@ -39,9 +39,11 @@ MAN1=		cfgmaker.1 indexmaker.1 mrtg-contrib.1 mrtg-faq.1 mrtg-forum.1 \
 		mrtg-nw-guide.1 mrtg-reference.1 mrtg-rrd.1 mrtg-squid.1 \
 		mrtg-unix-guide.1 mrtg-webserver.1 mrtg.1 mrtglib.1
 
+OPTIONS=	IPV6 "Enable IPv6 support" OFF
+
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_IPV6)
+.if defined(WITH_IPV6)
 RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6
 .endif
 
