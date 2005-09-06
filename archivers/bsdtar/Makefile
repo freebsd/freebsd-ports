@@ -32,8 +32,4 @@ MAN1=		bsdtar.1
 USE_GETOPT_LONG=yes
 .endif
 
-.if ${OSVERSION} >= 502111
-IGNORE=		is in the base system
-.endif
-
 .include <bsd.port.post.mk>
