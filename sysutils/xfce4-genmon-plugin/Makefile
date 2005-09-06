@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xfce4-genmon-plugin
-PORTVERSION=	1.0
-PORTREVISION=	3
+PORTVERSION=	1.1
+PORTREVISION=	0
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
 		http://matt.nerim.net/xfce-goodies/
@@ -24,7 +24,7 @@ RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 
 USE_GNOME=	gtk20 libxml2
 USE_X_PREFIX=	yes
-USE_INC_LIBTOOL_VER=15
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
