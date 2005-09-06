@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Ima-DBI
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class/TMTM
@@ -15,8 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Database connection caching and organization
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/WhiteHole.pm:${PORTSDIR}/devel/p5-Class-WhiteHole \
-		${SITE_PERL}/DBIx/ContextualFetch.pm:${PORTSDIR}/databases/p5-DBIx-ContextualFetch \
+BUILD_DEPENDS=	${SITE_PERL}/DBIx/ContextualFetch.pm:${PORTSDIR}/databases/p5-DBIx-ContextualFetch \
 		${SITE_PERL}/Class/Data/Inheritable.pm:${PORTSDIR}/devel/p5-Class-Data-Inheritable
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
