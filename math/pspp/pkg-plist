@@ -1,29 +1,7 @@
 bin/pspp
-@unexec install-info --delete %D/info/pspp.info %D/info/dir
-info/pspp.info
-info/pspp.info-1
-info/pspp.info-2
-info/pspp.info-3
-info/pspp.info-4
-info/pspp.info-5
-info/pspp.info-6
-info/pspp.info-7
-info/pspp.info-8
-@exec install-info %D/info/pspp.info %D/info/dir
-share/doc/pspp/NEWS
-share/doc/pspp/README
-share/doc/pspp/TODO
-@dirrm share/doc/pspp
-@unexec if [ -f %D/etc/pspp/devices ] && cmp -s %D/etc/pspp/devices %D/etc/pspp/devices.default ; then rm -f %D/etc/pspp/devices; fi
-etc/pspp/devices.default
-@exec if [ ! -f %D/etc/pspp/devices ] ; then cp -p %D/%F %B/devices; fi
-@unexec if [ -f %D/etc/pspp/html-prologue ] && cmp -s %D/etc/pspp/html-prologue %D/etc/pspp/html-prologue.default ; then rm -f %D/etc/pspp/html-prologue; fi
-etc/pspp/html-prologue.default
-@exec if [ ! -f %D/etc/pspp/html-prologue ] ; then cp -p %D/%F %B/html-prologue; fi
-@unexec if [ -f %D/etc/pspp/papersize ] && cmp -s %D/etc/pspp/papersize %D/etc/pspp/papersize.default ; then rm -f %D/etc/pspp/papersize; fi
-etc/pspp/papersize.default
-@exec if [ ! -f %D/etc/pspp/papersize ] ; then cp -p %D/%F %B/papersize; fi
-@unexec if [ -f %D/etc/pspp/ps-prologue ] && cmp -s %D/etc/pspp/ps-prologue %D/etc/pspp/ps-prologue.default ; then rm -f %D/etc/pspp/ps-prologue; fi
-etc/pspp/ps-prologue.default
-@exec if [ ! -f %D/etc/pspp/ps-prologue ] ; then cp -p %D/%F %B/ps-prologue; fi
+share/locale/en_GB/LC_MESSAGES/pspp.mo
+etc/pspp/devices
+etc/pspp/html-prologue
+etc/pspp/papersize
+etc/pspp/ps-prologue
 @unexec rmdir %D/etc/pspp 2>/dev/null || true
