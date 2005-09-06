@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		pfqueue
-PORTVERSION=		0.4.2
+PORTVERSION=		0.5.0
 CATEGORIES=		mail
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,12 +20,6 @@ INSTALLS_SHLIB=		yes
 CONFIGURE_ENV=		CPPFLAGS="${PTHREAD_CFLAGS}"
 
 MAN1=			pfqueue.1
-PLIST_FILES=		bin/pfqueue
-.for backend in exim postfix1 postfix2
-.  for ext in so so.0
-PLIST_FILES+=		lib/libpfq_${backend}.${ext}
-.  endfor
-.endfor
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|-lc_r|${PTHREAD_LIBS}|g; s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
