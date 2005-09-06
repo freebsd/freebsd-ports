@@ -163,6 +163,8 @@
 %%SITE_PERL%%/PDF/API2/Resource/ColorSpace/Indexed/WebColor.pm
 %%SITE_PERL%%/PDF/API2/Resource/ColorSpace/Indexed/ACTFile.pm
 %%SITE_PERL%%/PDF/API2/Resource/ColorSpace/Indexed/Hue.pm
+%%SITE_PERL%%/PDF/API2/Resource/unicolor.txt
+%%SITE_PERL%%/PDF/API2/Resource/unipaper.txt
 %%SITE_PERL%%/PDF/API2/Content/symbols.pm
 %%SITE_PERL%%/PDF/API2/Content/Text.pm
 %%SITE_PERL%%/PDF/API2/Content/Text/Markup.pm
