@@ -11,7 +11,7 @@ PORTVERSION=	0.74
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.corpit.ru/pub/tinycdb/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marcus@corp.grupos.com.br
 COMMENT=	Analogous to cdb, but faster
 
 USE_GMAKE=	yes
