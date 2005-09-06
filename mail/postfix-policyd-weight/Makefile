@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	policyd-weight
-PORTVERSION=	0.1.8
+PORTVERSION=	0.1.10
 CATEGORIES=	mail
 MASTER_SITES=	http://robtone.mine.nu/postfix/releases/
 PKGNAMEPREFIX=	postfix-
@@ -18,10 +18,11 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
 		postfix:${PORTSDIR}/mail/postfix-current
 
 SUB_FILES=	pkg-message
-PLIST_FILES=	libexec/postfix/${PORTNAME}
+PLIST_FILES=	libexec/postfix/${PORTNAME} etc/${PORTNAME}.conf.sample
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/libexec/postfix
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.sample ${PREFIX}/etc
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
