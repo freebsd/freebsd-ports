@@ -20,6 +20,6 @@ if [ "$2" = "POST-INSTALL" ]; then
 
 	# Set up class data sharing
 	if [ -x "${JRE_HOME}/bin/java" ]; then
-		"${JRE_HOME}/bin/java" -Xshare:dump
+		"${JRE_HOME}/bin/java" -client -Xshare:dump
 	fi
 fi
