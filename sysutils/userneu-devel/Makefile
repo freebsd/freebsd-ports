@@ -9,8 +9,9 @@ PORTNAME=	userneu
 PORTVERSION=	1.43
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://btmdxm.mat.uni-bayreuth.de/~johannes/files/userneu/ \
-		http://home.arcor.de/fehlner/inhalt/download/
+MASTER_SITES=	http://btw23.de/johannes/files/userneu/\
+		http://home.arcor.de/fehlner/inhalt/download/\
+		http://home.arcor.de/teambushido/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${PORTVERSION}b
 
