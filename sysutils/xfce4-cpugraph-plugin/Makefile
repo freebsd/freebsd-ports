@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
 		http://matt.nerim.net/xfce-goodies/
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	matt@bsdfly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XFce4 systemload plugin with multiple CPU display modes
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel

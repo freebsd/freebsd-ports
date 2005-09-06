@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
 		http://xfce.org/~kelnos/mirrors/xfce-goodies/
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	matt@bsdfly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XFce4 panel plugin to check a mountpoint for free disk space
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel

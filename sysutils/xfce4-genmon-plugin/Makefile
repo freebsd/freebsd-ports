@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xfce4-genmon-plugin
 # Date created:		2004-09-12
-# Whom:			Matt Lancereau <matt@bsdfly.org>
+# Whom:			Matt Lancereau <ports@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
 		http://matt.nerim.net/xfce-goodies/
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	matt@bsdfly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic Monitor XFce4 panel plugin
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	libexo
 # Date created:		23 October 2004
-# Whom:			Matt Lancereau <matt@bsdfly.org>
+# Whom:			Matt Lancereau <ports@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	x11 xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 DISTNAME=	exo-${PORTVERSION}
 
-MAINTAINER=	matt@bsdfly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal library, extensions to Xfce by os-cillation
 
 LIB_DEPENDS=	xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui

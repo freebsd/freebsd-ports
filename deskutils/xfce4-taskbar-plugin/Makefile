@@ -15,7 +15,7 @@ MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
 DISTNAME=	xfce4-taskbar-plugin-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	matt@bsdfly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A taskbar plugin for xfce4-panel
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
