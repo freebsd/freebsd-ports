@@ -1,0 +1,12 @@
+--- pdftops/FontFile.cxx.orig	Tue Feb  3 09:41:09 2004
++++ pdftops/FontFile.cxx	Tue Sep  6 16:16:04 2005
+@@ -3572,6 +3573,9 @@
+     } else {
+       origLocaTable[i].pos = 2 * getUShort(pos + 2*i);
+     }
++
++    if (origLocaTable[i].pos < 0 || origLocaTable[i].pos > len)
++      error(1, 0, "bad loca table pos value");
+   }
+   qsort(origLocaTable, nGlyphs + 1, sizeof(TrueTypeLoca), &cmpTrueTypeLocaPos);
+   for (i = 0; i < nGlyphs; ++i) {
