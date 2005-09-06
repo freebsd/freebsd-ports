@@ -26,6 +26,7 @@
 
 PORTNAME=	zsh
 PORTVERSION=	4.2.5
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	\
 		http://archive.progeny.com/zsh/ \
@@ -103,8 +104,21 @@ DOCS=		LICENCE META-FAQ README Etc/BUGS Etc/CONTRIBUTORS Etc/FAQ \
 		Doc/zsh*.html Doc/zsh.dvi Doc/zsh_a4.ps Doc/zsh_us.ps
 EXAMPLES=	zlogin zshenv zshrc
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 503000
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-bsdtar
+.endif
+
 post-patch:
-	${REINPLACE_CMD} -e 's/link=dynamic/link=either/' ${WRKSRC}/Src/Modules/*.mdd
+	${REINPLACE_CMD} -e "s,link=dynamic,link=either," \
+		${WRKSRC}/Src/Modules/*.mdd
+	${REINPLACE_CMD} -e "s,/etc/,${LOCALBASE}/etc/," \
+		${WRKSRC}/Functions/MIME/zsh-mime-setup
+	${RM} -f ${WRKSRC}/Functions/MIME/zsh-mime-setup.bak
+.if ${OSVERSION} >= 503000
+	${RM} -f ${WRKSRC}/Completion/Unix/Type/_tar_archive.orig
+.endif
 
 post-build:
 	# Fix ".so" macro problem by using "soelim" command.
@@ -135,10 +149,8 @@ post-install:
 .endif
 	@${ECHO_MSG} "Updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak
-	@(${GREP} -v ${PREFIX}/bin/zsh /etc/shells.bak \
-	  | ${GREP} -v ${PREFIX}/bin/rzsh; \
-	  ${ECHO_CMD} ${PREFIX}/bin/zsh; \
-	  ${ECHO_CMD} ${PREFIX}/bin/rzsh) > /etc/shells
+	@(${GREP} -v ${PREFIX}/bin/zsh /etc/shells.bak; \
+	  ${ECHO_CMD} ${PREFIX}/bin/zsh) > /etc/shells
 	@${RM} /etc/shells.bak
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
