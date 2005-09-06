@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM add-on to input various symbols with on-screen pad
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim

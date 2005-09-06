@@ -12,8 +12,7 @@ MASTER_SITES=	http://pcmanx.csie.net/release/ \
 		http://bbs.ilc.edu.tw/~chinsan/pcmanx/
 DISTNAME=	pcmanx-pure-gtk2-${PORTVERSION}
 
-# Maintainership available: drop me a line if interested :p
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PCManX is a BBS client using GTK+ 2.x
 
 USE_GNOME=	gtk20 intlhack

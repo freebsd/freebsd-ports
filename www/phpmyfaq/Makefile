@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.phpmyfaq.de/download/
 DISTNAME=	${PORTNAME}.${PORTVERSION}.full
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multilingual, completely database-driven FAQ-system
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}

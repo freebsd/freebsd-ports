@@ -12,8 +12,7 @@ MASTER_SITES=	http://www.splitbrain.org/Programming/PHP/DokuWiki/
 DISTNAME=	${PORTNAME}-2005-07-13
 EXTRACT_SUFX=	.tgz
 
-# Maintainership available: drop me a line if interested :p
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple and easy to use wiki, no database required
 
 USE_PHP=	gd pcre session xml zlib
