@@ -6200,6 +6200,7 @@ mod_bf		ports/www/mod_bf
 mod_blosxom	ports/www/mod_blosxom
 mod_blowchunks	ports/www/mod_blowchunks
 mod_bunzip2	ports/www/mod_bunzip2
+mod_cband	ports/www/mod_cband
 mod_cfg_ldap	ports/www/mod_cfg_ldap
 mod_cgi_debug	ports/www/mod_cgi_debug
 mod_chroot	ports/www/mod_chroot
