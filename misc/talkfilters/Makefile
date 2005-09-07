@@ -7,8 +7,9 @@
 
 PORTNAME=	talkfilters
 PORTVERSION=	2.3.4
+PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	http://www2.dystance.net/software/talkfilters/
+MASTER_SITES=	http://www.hyperrealm.com/talkfilters/
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Set of filters to convert English text to various stereotyped dialects
@@ -43,8 +44,8 @@ INFO=	talkfilters
 pre-everything::
 	@${ECHO_MSG} "Please note that some of the filters contain language that may"
 	@${ECHO_MSG} "be objectionable to some. They are provided uncensored, in their"
-	@${ECHO_MSG} "original form. By downloading this software, you agree to accept"
-	@${ECHO_MSG} "these terms.
+	@${ECHO_MSG} "original form. Please don't use the filters to do anything that"
+	@${ECHO_MSG} "you shouldn't."
 
 post-patch:
 	@${RM} -f ${WRKSRC}/*.info*
