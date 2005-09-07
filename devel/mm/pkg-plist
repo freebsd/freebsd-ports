@@ -3,4 +3,4 @@ include/mm.h
 lib/libmm.a
 lib/libmm.la
 lib/libmm.so
-lib/libmm.so.13
+lib/libmm.so.14
