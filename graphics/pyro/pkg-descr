@@ -1,0 +1,16 @@
+PyroTechnics is a simple OpenGL-based firework simulator.
+
+Features
+--------
+ o a bunch of nifty kinds of fireworks
+ o the ability to choreograph firework displays
+ o a texture-mapped water surface
+ o reflections in the water
+ o fogging
+ o a moving camera
+ o the ability to save screenshots
+
+WWW: http://nostatic.org/pyro/pyro.html
+
+- Igor Pokrovsky
+ip@doom.homeunix.org
