@@ -2544,6 +2544,7 @@ funnelweb	ports/devel/funnelweb
 fuse		ports/emulators/fuse
 fusenshi	ports/deskutils/fusenshi
 fuzz		ports/security/fuzz
+fv		ports/graphics/fv
 fvcool		ports/sysutils/fvcool
 fvwm		ports/x11-wm/fvwm
 fvwm-themes	ports/x11-themes/fvwm-themes
