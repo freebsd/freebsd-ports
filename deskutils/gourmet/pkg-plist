@@ -80,6 +80,9 @@ bin/gourmet
 %%PYTHON_SITELIBDIR%%/gourmet/defaults.py
 %%PYTHON_SITELIBDIR%%/gourmet/defaults.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/defaults.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/defaults_fr.py
+%%PYTHON_SITELIBDIR%%/gourmet/defaults_fr.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/defaults_fr.pyo
 %%PYTHON_SITELIBDIR%%/gourmet/defaults_pt.py
 %%PYTHON_SITELIBDIR%%/gourmet/defaults_pt.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/defaults_pt.pyo
@@ -173,6 +176,9 @@ bin/gourmet
 %%PYTHON_SITELIBDIR%%/gourmet/importers/html_importer.py
 %%PYTHON_SITELIBDIR%%/gourmet/importers/html_importer.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/importers/html_importer.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/__init__.py
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/__init__.pyo
 %%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/allrecipes.py
 %%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/allrecipes.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/allrecipes.pyo
@@ -182,6 +188,9 @@ bin/gourmet
 %%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/epicurious.py
 %%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/epicurious.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/epicurious.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/foodnetwork.py
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/foodnetwork.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/foodnetwork.pyo
 %%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/html_helpers.py
 %%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/html_helpers.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins/html_helpers.pyo
