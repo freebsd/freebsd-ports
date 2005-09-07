@@ -9,8 +9,6 @@ CATEGORIES=	chinese
 
 MAINTAINER=	ports@FreeBSD.org
 
-BROKEN=		"Patch fails"
-
 MASTERDIR=	${.CURDIR}/../../archivers/unrar
 
 EXTRA_PATCHES=	${.CURDIR}/files/patch-arcread.cpp \
