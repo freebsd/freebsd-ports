@@ -1,0 +1,7 @@
+mod_cband is an Apache 2 module provided to solve the problem of
+limiting virtualhosts bandwidth usage. When the configured
+virtualhost's transfer limit is exceeded, mod_cband will redirect all
+further requests to a location specified in the configuration file.
+
+
+WWW: http://dembol.nasa.pl/mod_cband
