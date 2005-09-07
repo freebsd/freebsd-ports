@@ -50,6 +50,10 @@ MAN1=	k3d.1
 BROKEN=		"Does not compile on FreeBSD 4.x"
 .endif
 
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64"
+.endif
+
 post-install:
 .for dir in ${PREFIX}/include/k3d ${PREFIX}/share/k3d ${PREFIX}/lib/k3d
 	@${FIND} ${dir} ! -type d | \
