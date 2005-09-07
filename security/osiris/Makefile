@@ -14,10 +14,10 @@ MASTER_SITES=	http://www.hostintegrity.com/osiris/data/ \
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	The Shmoo client/server host integrity checker
 
-#OPTIONS=	OSIRISMD "Enable to build the management daemon" off \
-#		OSIRISD "Enable to build the osirisd scan agent" on \
-#		PRINTDB "Build database print tool" off \
-#		CLI "Enable to build the management CLI" off
+OPTIONS=	OSIRISMD "Enable to build the management daemon" off \
+		OSIRISD "Enable to build the osirisd scan agent" on \
+		PRINTDB "Build database print tool" off \
+		CLI "Enable to build the management CLI" off
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LIBTOOL_VER=	15
