@@ -46,6 +46,10 @@ MAN8+=		x-gw.8
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500000
+BROKEN=		"does not build on 5.x and above, requires S/Key libraries and headers"
+.endif
+
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/fwtk2.1${EXTRACT_SUFX}) \
 	&& !exists(${DISTDIR}/${DIST_SUBDIR}fwtk-doc-only${EXTRACT_SUFX})
 IGNORE='Please read ftp://ftp.tislabs.com/pub/firewalls/toolkit/dist/README for details of how to obtain the FTWK source.  Put the files fwtk2.1${EXTRACT_SUFX} and fwtk-doc-only${EXTRACT_SUFX} into the directory ${DISTDIR}/${DIST_SUBDIR} and run make again'
