@@ -7,7 +7,7 @@
 
 PORTNAME=	geonext
 PORTVERSION=	1.12
-CATEGORIES=	math graphics java
+CATEGORIES+=	math graphics java
 MASTER_SITES=	http://geonext.uni-bayreuth.de/data/download/\
 		http://home.arcor.de/fehlner/inhalt/download/\
 		http://home.arcor.de/teambushido/
