@@ -31,7 +31,7 @@ do-install:	# empty
 
 .else					# master port
 
-PORTVERSION=	0.126
+PORTVERSION=	0.128
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	development/SRPMS
@@ -50,9 +50,8 @@ FILESDIR=	${.CURDIR}/files
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} && \
-	rpm2cpio.pl ${_DISTDIR}/${DISTFILES} | ${CPIO} -i --quiet redhat-artwork-${PORTVERSION}.tar.gz && \
-	${TAR} -zxf redhat-artwork-${PORTVERSION}.tar.gz && \
-	${RM} redhat-artwork-${PORTVERSION}.tar.gz
+	rpm2cpio.pl ${_DISTDIR}/${DISTFILES} | ${CPIO} -id --quiet && \
+	${TAR} -zxf redhat-artwork-${PORTVERSION}.tar.gz
 
 .if defined(BC_HIERS)
 
