@@ -48,7 +48,6 @@
     SUBDIR += countrycodes
     SUBDIR += cpuid
     SUBDIR += crosspad
-    SUBDIR += cs
     SUBDIR += cstream
     SUBDIR += cuecat
     SUBDIR += cwish
