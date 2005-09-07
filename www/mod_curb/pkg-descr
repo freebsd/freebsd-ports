@@ -1,0 +1,4 @@
+mod_curb is an "volume" limiter apache module. It works on a per-server
+basis. It can't be used with virtualhosts.
+
+WWW: http://www.steve.org.uk/Software/mod_curb/

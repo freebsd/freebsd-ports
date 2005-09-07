@@ -273,6 +273,7 @@
     SUBDIR += mod_blowchunks
     SUBDIR += mod_bunzip2
     SUBDIR += mod_cband
+    SUBDIR += mod_curb
     SUBDIR += mod_cfg_ldap
     SUBDIR += mod_cgi_debug
     SUBDIR += mod_chroot
