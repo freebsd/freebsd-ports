@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sbd
-PORTVERSION=	1.36
+PORTVERSION=	1.37
 CATEGORIES=	net security
 MASTER_SITES=	http://tigerteam.se/dl/sbd/
 
