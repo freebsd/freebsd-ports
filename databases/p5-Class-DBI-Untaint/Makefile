@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Class-DBI-Untaint
-PORTVERSION=	0.01
+PORTVERSION=	1.00
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -22,11 +22,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Class::DBI::Untaint.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-post-configure:
-	${PERL} -pi -e 's,/usr/local/,\$$(PREFIX)/,g' ${WRKSRC}/Makefile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
