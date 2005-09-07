@@ -1319,6 +1319,7 @@ cryptlib	ports/security/cryptlib
 cryptopp	ports/security/cryptopp
 cryptoslam	ports/games/cryptoslam
 cryptplug	ports/security/cryptplug
+cs		ports/misc/cs
 cs-aspell	ports/textproc/cs-aspell
 cs-ooodict-CZ	ports/editors/ooodict-cs_CZ
 csb-aspell	ports/textproc/csb-aspell
