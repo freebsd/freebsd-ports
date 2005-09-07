@@ -179,6 +179,7 @@ share/locale/is/LC_MESSAGES/gdm.mo
 share/locale/it/LC_MESSAGES/gdm.mo
 share/locale/ja/LC_MESSAGES/gdm.mo
 share/locale/ko/LC_MESSAGES/gdm.mo
+share/locale/ku/LC_MESSAGES/gdm.mo
 share/locale/lt/LC_MESSAGES/gdm.mo
 share/locale/lv/LC_MESSAGES/gdm.mo
 share/locale/mi/LC_MESSAGES/gdm.mo
@@ -216,6 +217,8 @@ share/locale/xh/LC_MESSAGES/gdm.mo
 share/locale/zh_CN/LC_MESSAGES/gdm.mo
 share/locale/zh_TW/LC_MESSAGES/gdm.mo
 share/locale/zu/LC_MESSAGES/gdm.mo
+@unexec rmdir %D/share/locale/ku/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ku 2> /dev/null || true
 @dirrm share/gnome/xsessions
 @dirrm share/gnome/omf/gdm
 @dirrm share/gnome/help/gdm/zh_TW/figures
