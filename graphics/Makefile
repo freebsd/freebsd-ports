@@ -111,6 +111,7 @@
     SUBDIR += fly
     SUBDIR += fnlib
     SUBDIR += fractorama
+    SUBDIR += fraqtive
     SUBDIR += freeimage
     SUBDIR += frontline
     SUBDIR += ftgl
