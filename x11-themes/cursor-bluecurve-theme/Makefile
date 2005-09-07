@@ -14,12 +14,22 @@ BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdk-pixbuf-2.0.pc:${PORTSDIR}/x11-to
 
 MASTERDIR=	${.CURDIR}/../bluecurve-themes
 
+USE_REINPLACE=	yes
+
 THEMES=		Bluecurve Bluecurve-inverse
 
 .for t in ${THEMES}
 BC_HIERS+=	${WRKSRC}/art/cursor/${t}/${t}:${PREFIX}/lib/X11/icons/${t}/cursors
 PLIST_DIRS+=	lib/X11/icons/${t}/cursors lib/X11/icons/${t}
 .endfor
+
+post-patch:
+.for t in ${THEMES}
+	@${REINPLACE_CMD} -e 's|dnd_|dnd-|' \
+		${WRKSRC}/art/cursor/${t}/${t}.cursortheme
+.endfor
+	@${REINPLACE_CMD} -e 's|left-ptr-watch|left_ptr_watch|' \
+		${WRKSRC}/art/cursor/Bluecurve-inverse/Bluecurve-inverse.cursortheme
 
 do-build:
 	cd ${WRKSRC}/art/cursor/cursorthemegen \
