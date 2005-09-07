@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050907:
+  AFFECTS: users of databases/metakit
+  AUTHOR: adamw@FreeBSD.org
+
+  The metakit build now enables python support by default. Everybody who
+  was happy with their python-less metakit should begin specifying
+  METAKIT_WITHOUT_PYTHON=yes on build.
+
 20050904:
   AFFECTS: users of games/pvpgn
   AUTHOR: mek@mek.uz.ua
