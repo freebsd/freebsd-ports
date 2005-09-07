@@ -153,7 +153,7 @@ pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.samba
 
 post-patch:
-	#${FIND} ${PATCH_WRKSRC} -type f -name '*.orig' -exec ${RM} {} \;
+	${FIND} ${PATCH_WRKSRC} -type f -name '*.orig' -exec ${RM} {} \;
 	${FIND} ${PATCH_WRKSRC} -type f -empty -exec ${RM} {} \;
 	${CP} ${FILESDIR}/winbind_nss_bsd.c ${WRKSRC}/nsswitch/
 	${CHMOD} a+x ${WRKSRC}/../examples/VFS/configure
