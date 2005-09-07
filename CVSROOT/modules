@@ -10194,6 +10194,7 @@ pyperl		ports/lang/pyperl
 pyphany		ports/www/pyphany
 pypvm		ports/net/pypvm
 pyrex		ports/devel/pyrex
+pyro		ports/graphics/pyro
 pyslsk		ports/net/pyslsk
 pysol		ports/games/pysol
 pysol-cardsets	ports/games/pysol-cardsets
