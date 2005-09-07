@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	linux-
 
 COMMENT=	MBROLA speech synthesizer for Linux
 
+BROKEN=		Size mismatch
+
 CONFLICTS=	mbrola-*
 DIST_SUBDIR=	mbrola-linux
 MASTERDIR=	${PORTSDIR}/audio/mbrola
