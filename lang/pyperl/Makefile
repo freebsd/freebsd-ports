@@ -17,11 +17,12 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PERL_CONFIGURE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/Python-Object
+INSTALL_TARGET=	pure_install
 
 MAN3=		Python.3 Python::Err.3 Python::Object.3
 
 post-extract:
-	${RM} ${WRKSRC}/MULTI_PERL
+	@${RM} -f ${WRKSRC}/MULTI_PERL
 
 post-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
