@@ -47,7 +47,7 @@ MAN8+=		x-gw.8
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
-BROKEN=		"does not build on 5.x and above, requires S/Key libraries and headers"
+IGNORE=		does not build on 5.x and above, requires S/Key libraries and headers
 .endif
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/fwtk2.1${EXTRACT_SUFX}) \
