@@ -1,0 +1,17 @@
+fv is an HDRI viewer. Currently supported formats are the followings:
+* Greg Ward's HDR (also known as Radiance/PIC/RGBE). See
+  http://www.graphics.cornell.edu/~bjw/rgbe.html for details.
+* Paul Debevec's PFM (Portable Float Map). See
+  http://netpbm.sourceforge.net/doc/pfm.html for details.
+
+fv reads data from the standard input or files specified as
+arguments. In the latter case, each file may be compressed one with
+gzip or bzip2. The file may also change after fv is invoked, except
+its header part. fv checks whether the file changes and updates the
+display if necessary. This feature is useful for checking intermediate
+outputs from renderers.
+
+WWW: http://www.eaflux.com/fv/
+
+- Igor Pokrovsky
+ip@doom.homeunix.org
