@@ -10,7 +10,6 @@ PORTVERSION=	2.4.9.3
 PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.equi4.com/pub/mk/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ embedded database engine, supports Python and Tcl
@@ -72,7 +71,7 @@ pre-patch:
 		-e "s/= tclsh/=tclsh${TCL_V}/" -e "s/tcl8.4/tcl${TCL_V}/" \
 		${WRKSRC}/../unix/Makefile.in
 .endif
-.if defined(METAKIT_WITH_PYTHON)
+.if !defined(METAKIT_WITHOUT_PYTHON)
 	${REINPLACE_CMD} -e "s=python2.[0-9]=${PYTHON_VERSION}=" \
 		${WRKSRC}/../unix/Makefile.in ${WRKSRC}/../unix/configure
 .endif
@@ -88,7 +87,7 @@ post-install:
 		${PREFIX}/lib/libmk4.so.0
 	@${LN} -sf libmk4.so.0 ${PREFIX}/lib/libmk4.so
 	@${MV}  ${PREFIX}/lib/libmk4.al ${PREFIX}/lib/libmk4.a
-.if defined(METAKIT_WITH_PYTHON)
+.if !defined(METAKIT_WITHOUT_PYTHON)
 	@${INSTALL_PROGRAM} ${WRKSRC}/.libs/libmk4py.a ${PREFIX}/lib
 	@${INSTALL_PROGRAM} ${WRKSRC}/.libs/libmk4py.so ${PREFIX}/lib
 .endif
