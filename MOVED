@@ -1614,4 +1614,3 @@ net/gdesklets-sensor-psi_ping||2005-08-31|removed; broken with recent gdesklets
 mail/gdesklets-sensor-psi_popmail||2005-08-31|removed; broken with recent gdesklets
 deskutils/gdesklets-sensor-psi_variableborder||2005-08-31|removed; broken with recent gdesklets
 mail/py-mimelib|mail/py-email|2005-09-04|renamed
-misc/cs||2005-09-06|port was added without a maintainer
