@@ -464,6 +464,7 @@
     SUBDIR += py-paint
     SUBDIR += py-pydot
     SUBDIR += py-visual
+    SUBDIR += pyro
     SUBDIR += q-graph
     SUBDIR += qcamview
     SUBDIR += qcomicbook
