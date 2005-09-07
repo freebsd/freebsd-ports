@@ -1,4 +1,3 @@
-[ Based off text from WWW site: ]
 The GNU Talk Filters are filter programs that convert ordinary English text
 into text that mimics a stereotyped or otherwise humorous dialect. Each
 program reads from standard input and writes to standard output.
@@ -9,4 +8,4 @@ The filters include:
 	fudd, funetak, jethro, jive, kraut, pansy, pirate,
 	postmodern, redneck, valspeak, and warez.
 
-WWW: http://www.dystance.net/software/talkfilters/
+WWW: http://www.hyperrealm.com/talkfilters/talkfilters.html
