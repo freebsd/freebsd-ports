@@ -1,6 +1,15 @@
---- configure.orig	Fri Jul 22 11:36:56 2005
-+++ configure	Sat Jul 23 11:27:41 2005
-@@ -2445,6 +2445,13 @@
+--- configure.orig	Sun Jul 31 18:57:46 2005
++++ configure	Thu Sep  8 00:02:36 2005
+@@ -998,7 +998,7 @@
+ 	;;
+     FreeBSD)
+ 	PTHREAD_LDFLAGS="$PTHREAD_LDFLAGS -pthread"
+-	PTHREAD_LIBS="$PTHREAD_LIBS -lc_r"
++	PTHREAD_LIBS="$PTHREAD_LIBS"
+ 	;;
+     DragonFly)
+ 	PTHREAD_LDFLAGS="$PTHREAD_LDFLAGS -pthread"
+@@ -2487,6 +2487,13 @@
      SENDMAIL="$with_sendmail"
      SENDMAIL_EVAL="$SENDMAIL"
      with_sendmail=yes
