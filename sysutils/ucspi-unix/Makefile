@@ -16,6 +16,7 @@ COMMENT=	UNIX-domain socket client-server command-line tools
 
 BUILD_DEPENDS=	${LOCALBASE}/include/bglibs/sysdeps.h:${PORTSDIR}/devel/bglibs
 
+BROKEN=		Does not build
 
 MAN1=	unixclient.1 unixserver.1
 
