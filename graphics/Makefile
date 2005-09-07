@@ -116,6 +116,7 @@
     SUBDIR += frontline
     SUBDIR += ftgl
     SUBDIR += fujiplay
+    SUBDIR += fv
     SUBDIR += fyre
     SUBDIR += g2
     SUBDIR += g3dviewer
