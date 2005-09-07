@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jailctl
-PORTVERSION=	0.60
+PORTVERSION=	0.61
 CATEGORIES=	sysutils
 MASTER_SITES=	http://anduin.net/jailctl/
 

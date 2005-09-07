@@ -4,6 +4,7 @@ jails/addons/etc/login.conf
 jails/addons/etc/make.conf
 jails/addons/runme.sh
 sbin/jailctl
+etc/rc.d/jails.sh
 @dirrm jails/addons/etc
 @dirrm jails/addons
 @dirrm jails
