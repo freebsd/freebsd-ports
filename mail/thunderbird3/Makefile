@@ -8,7 +8,7 @@
 
 PORTNAME=	thunderbird
 PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}/source
@@ -161,6 +161,10 @@ post-patch:
 	@${FIND} ${WRKSRC} -name all.js | ${XARGS} ${REINPLACE_CMD} -e \
 		'/accessibility.typeaheadfind.enablesound/s/true/false/ ; \
 		/dom.disable_window_open_feature.toolbar/s/false/true/'
+	@${REINPLACE_CMD} -e 's|<iconv.h>|\"${LOCALBASE}/include/iconv.h\"|g' \
+		${WRKSRC}/configure \
+		${WRKSRC}/intl/uconv/native/nsNativeUConvService.cpp \
+		${WRKSRC}/xpcom/io/nsNativeCharsetUtils.cpp
 
 pre-configure:
 	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]'`" ]; then \
@@ -175,6 +179,7 @@ pre-install:
 	@${MKDIR} ${SCRIPTS_DIR}
 	@${MKDIR} ${MOZ_PIS_DIR}
 	${ECHO_CMD} 'share/applications/${PORTNAME}.desktop' >> ${PLIST}
+	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
 	${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g; \
 		s|${PORTNAME}-${PORTVERSION}|${PORTNAME}|' \
 		${FAKEDIR}/bin/${PORTNAME} \
