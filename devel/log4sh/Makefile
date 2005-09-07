@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	log4sh
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.7
 CATEGORIES=	devel
-MASTER_SITES=	http://forestent.com/dist/log4sh/ \
-		http://darkambient.net/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lx@redundancy.redundancy.org
