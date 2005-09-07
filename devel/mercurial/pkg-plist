@@ -63,6 +63,7 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-raw
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-rss
 %%PYTHON_SITELIBDIR%%/mercurial/templates/search.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/tags.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/transaction.py
 %%PYTHON_SITELIBDIR%%/mercurial/transaction.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/transaction.pyo

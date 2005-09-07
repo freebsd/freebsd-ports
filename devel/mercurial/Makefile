@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.selenic.com/mercurial/release/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast, lightweight source control management system
 
-BROKEN=		Incomplete pkg-plist
-
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=yes
 
