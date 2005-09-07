@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	runit
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://smarden.org/${PORTNAME}/
 
@@ -18,6 +18,7 @@ WRKSRC=		${WRKDIR}/admin/${DISTNAME}
 ALL_TARGET=	default
 
 SERVICE_DIR?=	/var/service
+SUB_LIST=	SERVICE_DIR="${SERVICE_DIR}"
 
 MAN8=		chpst.8 runit-init.8 runit.8 runsv.8 runsvchdir.8 \
 		runsvctrl.8 runsvdir.8 runsvstat.8 sv.8 svlogd.8 \
