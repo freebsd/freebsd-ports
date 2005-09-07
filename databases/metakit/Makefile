@@ -7,6 +7,7 @@
 
 PORTNAME=	metakit
 PORTVERSION=	2.4.9.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.equi4.com/pub/mk/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -31,7 +32,7 @@ INSTALLS_SHLIB=	yes
 MAKE_ARGS=	CXXFLAGS="-Dq4_INLINE ${CFLAGS} -fpermissive"
 ONLY_FOR_ARCHS=	i386 alpha
 
-.if defined(METAKIT_WITH_PYTHON)
+.if !defined(METAKIT_WITHOUT_PYTHON)
 USE_PYTHON=	yes
 CONFIGURE_ARGS+=	--with-python=${LOCALBASE}
 CATEGORIES+=	python
