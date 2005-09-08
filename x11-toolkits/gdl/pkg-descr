@@ -6,7 +6,7 @@ shared between Scaffold, the new GNOME 2 development system.
 
 The current pieces of GDL include:
 
- - A code-editing bonboo component based on GtkSourceView
+ - A code-editing bonobo component based on GtkSourceView
 
  - An utility library that also contains the stubs and skels for
    the above components (gdl).
