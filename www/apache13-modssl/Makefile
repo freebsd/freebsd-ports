@@ -7,7 +7,7 @@
 
 PORTNAME=	apache+mod_ssl
 PORTVERSION=	${VERSION_APACHE}+${VERSION_MODSSL}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	www security
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITES_MODSSL:S/$/:mod_ssl/} \
@@ -30,7 +30,7 @@ PATCHFILES+=	apache-1.3.32modssl-v6-20041023.diff.gz
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT?=	The Apache 1.3 webserver with SSL/TLS functionality
 
-LIB_DEPENDS=	mm.13:${PORTSDIR}/devel/mm
+LIB_DEPENDS=	mm.14:${PORTSDIR}/devel/mm
 PATCH_DEPENDS=	${BUILD_DEPENDS}
 
 CONFLICTS?=	apache+ipv6-1.* apache+ssl-1.* apache-1.* apache-2.* \
