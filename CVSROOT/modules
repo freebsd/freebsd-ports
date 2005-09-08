@@ -1325,6 +1325,7 @@ cs-ooodict-CZ	ports/editors/ooodict-cs_CZ
 csb-aspell	ports/textproc/csb-aspell
 cscope		ports/devel/cscope
 cscout		ports/devel/cscout
+cscout-devel	ports/devel/cscout-devel
 csmash		ports/games/csmash
 csound		ports/audio/csound
 csound-manual	ports/audio/csound-manual
