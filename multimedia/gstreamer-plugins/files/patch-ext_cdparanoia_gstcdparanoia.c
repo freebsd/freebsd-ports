@@ -1,5 +1,5 @@
---- ext/cdparanoia/gstcdparanoia.c.orig	Mon Jul 11 14:36:25 2005
-+++ ext/cdparanoia/gstcdparanoia.c	Mon Jul 11 14:38:41 2005
+--- ext/cdparanoia/gstcdparanoia.c.orig	Mon Aug 29 13:50:49 2005
++++ ext/cdparanoia/gstcdparanoia.c	Thu Sep  1 15:30:11 2005
 @@ -562,6 +562,7 @@
      gint16 *cdda_buf;
      gint64 timestamp;
@@ -8,32 +8,15 @@
  
      /* convert the sequence sector number to a timestamp */
      format = GST_FORMAT_TIME;
-@@ -575,7 +576,6 @@
-       gst_pad_convert (src->srcpad, sector_format,
-           get_relative (src, src->cur_track, src->cur_sector), &format,
-           &timestamp);
+@@ -572,7 +573,6 @@
+ 
+     if (!src->discont_sent && (is_track_switch (src, src->cur_sector) ||
+             (src->prev_sec != src->cur_sector))) {
 -      GstEvent *discont_ev;
  
-       if (src->flush_pending) {
-         src->flush_pending = FALSE;
-@@ -788,9 +788,15 @@
- 
-   /* fail if the device couldn't be found */
-   if (src->d == NULL) {
-+#if defined(__FreeBSD__)
-     GST_ELEMENT_ERROR (src, RESOURCE, OPEN_READ,
-         (_("Could not open CD device %s for reading."),
--            src->d->cdda_device_name), ("cdda_identify failed"));
-+	     src->d->dev->device_path), ("cdda_identify failed"));
-+#else
-+    GST_ELEMENT_ERROR (src, RESOURCE, OPEN_READ,
-+        (_("Could not open CD device %s for reading."),
-+	     src->d->cdda_device_name), ("cdda_identify failed"));
-+#endif
-     return FALSE;
-   }
- 
-@@ -805,9 +811,15 @@
+       if (src->cur_track == src->d->tracks) {
+         GST_DEBUG_OBJECT (src, "End of CD");
+@@ -815,9 +815,15 @@
  
    /* open the disc */
    if (cdda_open (src->d)) {

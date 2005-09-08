@@ -6,7 +6,7 @@
 #
 
 CATEGORIES=	audio
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	Gstreamer MPEG-2 and MPEG-4 AAC encoder plugin
 

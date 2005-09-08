@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-CATAGORIES=	multimedia
-PORTREVISION=	1
+CATEGORIES=	multimedia
+PORTREVISION=	0
 
 COMMENT=	Gstreamer dirac plugin
 

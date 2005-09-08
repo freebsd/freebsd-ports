@@ -6,7 +6,7 @@
 #
 
 CATEGORIES=	multimedia
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	Gstreamer dv plugin
 

@@ -75,6 +75,7 @@ GST_ALL_PLUGINS= \
 		vorbis \
 		vorbistest \
 		wavpack \
+		x264 \
 		xvid
 
 # Disable all plugins by default\
@@ -104,14 +105,15 @@ CONFIGURE_ARGS+=--disable-tests \
 		--enable-xshm \
 		--enable-xvideo
 
-.if (${ARCH} == "i386")
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
-CONFIGURE_ARGS+=--enable-spc
-PLIST_SUB+=	SPC=""
-.else
+# spc is broken a the moment
+#.if (${ARCH} == "i386")
+#BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
+#CONFIGURE_ARGS+=--enable-spc
+#PLIST_SUB+=	SPC=""
+#.else
 CONFIGURE_ARGS+=--disable-spc
 PLIST_SUB+=	SPC="@comment "
-.endif
+#.endif
 
 .if ${GST_PLUGIN}!="base"
 
@@ -461,6 +463,12 @@ LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
 # wavpack
 .if ${GST_PLUGIN}=="wavpack"
 LIB_DEPENDS+=	wavpack.0:${PORTSDIR}/audio/wavpack
+.endif
+
+# x264
+.if ${GST_PLUGIN}=="x264"
+LIB_DEPENDS+=	x264.1:${PORTSDIR}/multimedia/x264
+PLIST_FILES=	${GST_LIB_DIR}/libx264.so
 .endif
 
 # xvid

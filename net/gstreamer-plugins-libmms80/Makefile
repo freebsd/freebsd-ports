@@ -6,7 +6,7 @@
 #
 
 CATEGORIES=	net
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	Gstreamer mms:// and mmsh:// plugin
 

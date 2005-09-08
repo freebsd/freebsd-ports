@@ -1,16 +1,16 @@
-# New ports collection makefile for:	gstreamer-plugins-gconf
-# Date created:			10 Mar 2004
+# New ports collection makefile for:	gstreamer-plugins-x264
+# Date created:			6 Sep 2005
 # Whom:				Koop Mast <kwm@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-CATEGORIES=	devel
+CATEGORIES=	multimedia
 PORTREVISION=	0
 
-COMMENT=	Gstreamer gconf plugin
+COMMENT=	Gstreamer x264 plugin
 
-GST_PLUGIN=	gconf
+GST_PLUGIN=	x264
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
