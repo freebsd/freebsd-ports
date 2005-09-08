@@ -1,0 +1,14 @@
+Weex is an utility designed to automate the task of remotely maintaining a web
+page or other FTP archive. It will synchronize a set of local files to a remote
+server by performing uploads and remote deletes as required.
+
+Main features:
+
+    * easy configuration to easily maintain your remote Web sites
+    * nice colour output useful for tracking mistakes before you loose files
+    * caching to speed up the synchronization process
+
+WWW: http://weex.sourceforge.net/
+
+- ehaupt
+ehaupt@critical.ch
