@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gotmail
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.6
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,13 +19,7 @@ RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		${SITE_PERL}/Net/libnet.cfg:${PORTSDIR}/net/p5-Net
 
 MAN1=		${PORTNAME}.1
-NO_BUILD=	yes
 USE_PERL5=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-pre-patch:
-	${PERL} -pi -e 's|\r$$||' ${WRKSRC}/${PORTNAME}
-	${PERL} -pi -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/${PORTNAME}
 
 do-install:
 .for i in ${MAN1}
