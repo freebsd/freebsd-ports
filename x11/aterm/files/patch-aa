@@ -1,6 +1,6 @@
---- src/command.c.orig Mon Oct 22 23:02:47 2001
-+++ src/command.c      Mon Oct 22 22:43:26 2001
-@@ -69,12 +69,18 @@
+--- src/command.c.orig	Tue Jun 21 22:08:16 2005
++++ src/command.c	Tue Sep  6 00:35:28 2005
+@@ -73,12 +73,18 @@
  #ifndef NO_XLOCALE
  # if (XtSpecificationRelease < 6)
  #  define NO_XLOCALE
@@ -22,7 +22,7 @@
  #ifdef TTY_GID_SUPPORT
  # include <grp.h>
  #endif
-@@ -534,7 +540,7 @@
+@@ -600,7 +606,7 @@
      ttydev = tty_name;
  
  # define PTYCHAR1	"pqrstuvwxyz"
@@ -31,3 +31,20 @@
      for (c1 = PTYCHAR1; *c1; c1++) {
  	ptydev[len - 2] = ttydev[len - 2] = *c1;
  	for (c2 = PTYCHAR2; *c2; c2++) {
+@@ -1043,8 +1049,6 @@
+     signal(SIGTERM, Exit_signal);
+     signal(SIGCHLD, Child_signal);
+ 
+-	tt_winsize(ptyfd);		/* set window size */
+-
+ /* need to trap SIGURG for SVR4 (Unixware) rlogin */
+ /* signal (SIGURG, SIG_DFL); */
+ 
+@@ -1084,6 +1088,7 @@
+ 	    }
+ #endif				/* SRIOCSREDIR */
+ 	}
++	tt_winsize(0);		/* set window size */
+ 
+     /* reset signals and spin off the command interpreter */
+ 	signal(SIGINT, SIG_DFL);
