@@ -1,5 +1,14 @@
 --- texk/kpathsea/Makefile.in.orig	Mon Jan 31 01:56:30 2005
-+++ texk/kpathsea/Makefile.in	Sun Feb  6 08:09:44 2005
++++ texk/kpathsea/Makefile.in	Wed Sep  7 04:26:21 2005
+@@ -33,7 +33,7 @@
+ library = kpathsea
+ 
+ # We want to compile almost everything with libtool ...
+-KPATHSEA_CC = $(LIBTOOL) --mode=compile $(CC)
++KPATHSEA_CC = $(LIBTOOL) --mode=compile $(CC) -prefer-pic
+ .SUFFIXES: .lo
+ .c.lo:
+ 	$(KPATHSEA_CC) $(ALL_CFLAGS) -DMAKE_KPSE_DLL -c $<
 @@ -182,13 +182,13 @@
  	$(INSTALL_SCRIPT) $(srcdir)/mktexnam $(web2cdir)/mktexnam
  	$(INSTALL_DATA) $(srcdir)/mktexnam.opt $(web2cdir)/mktexnam.opt
