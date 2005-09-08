@@ -42,4 +42,7 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/UNIX.pm:${PORTSDIR}/devel/p5
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/UNIX.pm:${PORTSDIR}/devel/p5-IO
 .endif
 
+post-patch:
+	${FIND} ${WRKSRC} -name '*.orig' -delete
+
 .include <bsd.port.post.mk>
