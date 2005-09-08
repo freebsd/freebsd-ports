@@ -2,12 +2,32 @@
 #
 # INDEX build tinderbox script.  Build an INDEX for all supported FreeBSD branches
 # using the latest value of OSVERSION according to the src trees.  If the build
-# fails, yowl about it on ports@.  If not, copy the index to www.freebsd.org so
+# fails, yowl about it on ${REPORT_ADDRESS}  If not, copy the index to www.freebsd.org so
 # that 'make fetchindex' sees it.
 #
 # When INDEX is broken, assemble the list of committers who touched files
 # on the most recent 'cvs update', and put those committers "on the hook".
 # These committers all stay on the hook until INDEX is buildable again.
+
+# --------------------------------------------------------
+# Change these!
+
+# Address for success/failure reports
+REPORT_ADDRESS=root@localhost
+
+# Address for script errors
+ERROR_ADDRESS=root@localhost
+
+# Where to scp the resulting indexes after build
+SCP_DEST=root@localhost:/usr/local/www/ports
+
+# Location of ports tree and source trees
+export PORTSDIR=/vol/vol0/users/kris/ports.clean
+export SRCDIR4=/vol/vol0/users/kris/src.4
+export SRCDIR5=/vol/vol0/users/kris/src.5
+export SRCDIR6=/vol/vol0/users/kris/src.6
+
+# --------------------------------------------------------
 
 blame() {
   # Find out who is responsible for current version of file $1
@@ -69,7 +89,7 @@ indexfail() {
     echo 
     echo "Most recent CVS update was:";
     grep -v '/work$' cvs.log | grep -v '^\?'
-  ) | mail -s "INDEX build failed for ${BRANCH}" ports@FreeBSD.org
+  ) | mail -s "INDEX build failed for ${BRANCH}" ${REPORT_ADDRESS}
   exit 1
 }
 
@@ -80,7 +100,7 @@ checkfixed() {
   # INDEX succeeded, so announce this.
   if [ -e ${PORTSDIR}/broken.${BRANCH} ]; then
     rm -f ${PORTSDIR}/broken.${BRANCH}
-    mail -s "INDEX now builds successfully on ${BRANCH}" ports@FreeBSD.org < /dev/null
+    mail -s "INDEX now builds successfully on ${BRANCH}" ${REPORT_ADDRESS} < /dev/null
   fi
 }
 
@@ -89,11 +109,6 @@ checkfixed() {
 export __MAKE_CONF=/dev/null
 export PORT_DBDIR=/nonexistent
 export PKG_DBDIR=/nonexistent
-
-export PORTSDIR=/vol/vol0/users/kris/ports.clean
-export SRCDIR4=/vol/vol0/users/kris/src.4
-export SRCDIR5=/vol/vol0/users/kris/src.5
-export SRCDIR6=/vol/vol0/users/kris/src.6
 
 # First update the source trees to get current OSVERSION
 cd ${SRCDIR4}/sys/sys
@@ -113,7 +128,7 @@ rm -f INDEX INDEX.bz2 INDEX-5 INDEX-5.bz2 INDEX-6 INDEX-6.bz2
 (cvs -Rq update -PdA 2>1 ) > cvs.log
 if grep -q ^C cvs.log ; then
   (echo "cvs update failed with conflicts:";
-    grep ^C cvs.log) | mail -s "Ports cvsup failed" kris@FreeBSD.org
+    grep ^C cvs.log) | mail -s "Ports cvsup failed" ${PRIVATE_ADDRESS}
     exit 1
 fi
   
@@ -132,7 +147,7 @@ fi
 checkfixed ${BRANCH}
 
 bzip2 -kf ${PORTSDIR}/INDEX
-scp ${PORTSDIR}/INDEX ${PORTSDIR}/INDEX.bz2 kris@www.freebsd.org:/usr/local/www/ports || mail -s "Cannot copy INDEX" kris@FreeBSD.org < /dev/null
+scp ${PORTSDIR}/INDEX ${PORTSDIR}/INDEX.bz2 ${SCP_DEST} || mail -s "Cannot copy INDEX" ${ERROR_ADDRESS} < /dev/null
 
 BRANCH=5.x
 export OSVERSION=${OSVERSION5}
@@ -145,7 +160,7 @@ fi
 checkfixed ${BRANCH}
 
 bzip2 -kf ${PORTSDIR}/INDEX-5
-scp ${PORTSDIR}/INDEX-5 ${PORTSDIR}/INDEX-5.bz2 kris@www.freebsd.org:/usr/local/www/ports || mail -s "Cannot copy INDEX-5" kris@FreeBSD.org < /dev/null
+scp ${PORTSDIR}/INDEX-5 ${PORTSDIR}/INDEX-5.bz2 ${SCP_DEST} || mail -s "Cannot copy INDEX-5" ${ERROR_ADDRESS} < /dev/null
 
 BRANCH=6.x
 export OSVERSION=${OSVERSION6}
@@ -158,7 +173,7 @@ fi
 checkfixed ${BRANCH}
 
 bzip2 -kf ${PORTSDIR}/INDEX-6
-scp ${PORTSDIR}/INDEX-6 ${PORTSDIR}/INDEX-6.bz2 kris@www.freebsd.org:/usr/local/www/ports || mail -s "Cannot copy INDEX-6" kris@FreeBSD.org < /dev/null
+scp ${PORTSDIR}/INDEX-6 ${PORTSDIR}/INDEX-6.bz2 ${SCP_DEST} || mail -s "Cannot copy INDEX-6" ${ERROR_ADDRESS} < /dev/null
 
 # All indexes built successfully, clear the hook
 rm -f ${PORTSDIR}/hook
