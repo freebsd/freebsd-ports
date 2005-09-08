@@ -15,6 +15,7 @@ sbin/portfwd
 %%EXAMPLESDIR%%/dns.cfg
 %%EXAMPLESDIR%%/empty.cfg
 %%EXAMPLESDIR%%/external-director.cfg
+%%EXAMPLESDIR%%/fragile.cfg
 %%EXAMPLESDIR%%/ftp.cfg
 %%EXAMPLESDIR%%/load-balance.cfg
 %%EXAMPLESDIR%%/mail.cfg
