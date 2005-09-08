@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.insecure.org/nmap/dist/ \
 		http://shadow.cc.columbia.edu/pub/software/nmap/
 DISTNAME=	nmap-${DISTVERSION}	# needed for security/nmapfe
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	daniel@roe.ch
 COMMENT?=	Port scanning utility for large networks
 
 DISTVERSION=	3.90
