@@ -1,4 +1,3 @@
-include/libgdl-1.0/gdl/GDL.h
 include/libgdl-1.0/gdl/gdl-combo-button.h
 include/libgdl-1.0/gdl/gdl-dock-bar.h
 include/libgdl-1.0/gdl/gdl-dock-item.h
@@ -24,10 +23,6 @@ share/gdl/images/stock-close-12.png
 share/gdl/images/stock-menu-left-12.png
 share/gdl/images/stock-menu-right-12.png
 share/gnome/gdl/glade/layout.glade
-share/gnome/idl/libgdl-1.0/GDL.idl
-share/gnome/idl/libgdl-1.0/editor-buffer.idl
-share/gnome/idl/libgdl-1.0/editor-gutter.idl
-share/gnome/idl/libgdl-1.0/symbol-browser.idl
 share/locale/am/LC_MESSAGES/gdl-1.mo
 share/locale/az/LC_MESSAGES/gdl-1.mo
 share/locale/ca/LC_MESSAGES/gdl-1.mo
@@ -61,7 +56,6 @@ share/locale/sr@Latn/LC_MESSAGES/gdl-1.mo
 share/locale/sv/LC_MESSAGES/gdl-1.mo
 share/locale/vi/LC_MESSAGES/gdl-1.mo
 share/locale/zh_CN/LC_MESSAGES/gdl-1.mo
-@dirrm share/gnome/idl/libgdl-1.0
 @dirrm share/gnome/gdl/glade
 @dirrm share/gnome/gdl
 @dirrm share/gdl/images
