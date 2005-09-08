@@ -559,6 +559,8 @@ share/icons/hicolor/32x32/apps/kadu.png
 share/icons/hicolor/48x48/apps/kadu.png
 @unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
