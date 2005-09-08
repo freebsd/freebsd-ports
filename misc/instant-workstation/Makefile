@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.lemis.com/pub/
 MAINTAINER=	grog@lemis.com
 COMMENT=	Instant workstation installs a typical set of ports for a workstation
 
+BROKEN=		Incomplete pkg-plist
+
 USE_GHOSTSCRIPT_RUN=	yes
 
 RUN_DEPENDS=	acroread:${PORTSDIR}/print/acroread \
