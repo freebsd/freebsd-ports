@@ -1,0 +1,30 @@
+@exec mkdir -p %D/etc/keepalived 2> /dev/null
+@unexec if cmp -s %D/etc/keepalived/keepalived.conf %D/%%EXAMPLESDIR%%/keepalived.conf; then rm -f %D/etc/keepalived/keepalived.conf; fi
+bin/genhash
+sbin/keepalived
+%%EXAMPLESDIR%%/samples/client.pem
+%%EXAMPLESDIR%%/samples/dh1024.pem
+%%EXAMPLESDIR%%/samples/keepalived.conf.HTTP_GET.port
+%%EXAMPLESDIR%%/samples/keepalived.conf.SMTP_CHECK
+%%EXAMPLESDIR%%/samples/keepalived.conf.SSL_GET
+%%EXAMPLESDIR%%/samples/keepalived.conf.fwmark
+%%EXAMPLESDIR%%/samples/keepalived.conf.inhibit
+%%EXAMPLESDIR%%/samples/keepalived.conf.misc_check
+%%EXAMPLESDIR%%/samples/keepalived.conf.misc_check_arg
+%%EXAMPLESDIR%%/samples/keepalived.conf.sample
+%%EXAMPLESDIR%%/samples/keepalived.conf.status_code
+%%EXAMPLESDIR%%/samples/keepalived.conf.track_interface
+%%EXAMPLESDIR%%/samples/keepalived.conf.virtual_server_group
+%%EXAMPLESDIR%%/samples/keepalived.conf.virtualhost
+%%EXAMPLESDIR%%/samples/keepalived.conf.vrrp
+%%EXAMPLESDIR%%/samples/keepalived.conf.vrrp.lvs_syncd
+%%EXAMPLESDIR%%/samples/keepalived.conf.vrrp.routes
+%%EXAMPLESDIR%%/samples/keepalived.conf.vrrp.scripts
+%%EXAMPLESDIR%%/samples/keepalived.conf.vrrp.static_ipaddress
+%%EXAMPLESDIR%%/samples/keepalived.conf.vrrp.sync
+%%EXAMPLESDIR%%/samples/root.pem
+%%EXAMPLESDIR%%/samples/sample.misccheck.smbcheck.sh
+%%EXAMPLESDIR%%/keepalived.conf
+@dirrm %%EXAMPLESDIR%%/samples
+@dirrm %%EXAMPLESDIR%%
+@unexec rmdir %D/etc/keepalived 2> /dev/null || echo "===> If you plan to do not reinstall keepalived, you can safely remove %D/etc/keepalived."

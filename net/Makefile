@@ -289,6 +289,7 @@
     SUBDIR += jumpgate
     SUBDIR += jwhois
     SUBDIR += kdenetwork3
+    SUBDIR += keepalived
     SUBDIR += kf
     SUBDIR += kissd
     SUBDIR += kmerlin

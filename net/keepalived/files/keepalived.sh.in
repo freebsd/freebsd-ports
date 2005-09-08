@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: keepalived
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable apache2:
+# apache2_keepalived (bool):  Set to "NO" by default.
+#                             Set it to "YES" to enable keepalived
+# apache2_profiles (string):  Undefined by default. Define here your profiles.
+
+. %%RC_SUBR%%
+
+name="keepalived"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/keepalived"
+pidfile="/var/run/keepalived.pid"
+required_files=%%PREFIX%%/etc/keepalived/keepalived.conf
+
+[ -z "${keepalived_enable}" ]       && keepalived_enable="NO"
+
+load_rc_config $name
+
+sig_reload=SIGHUP
+
+extra_commands="reload"
+run_rc_command "$1"

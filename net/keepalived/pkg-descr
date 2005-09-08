@@ -1,0 +1,5 @@
+Keepalived is an ipvs wrapper and a service health-checker. FreeBSD 
+port does not support keepalived VRRP stack, but it can be easily
+replaced by carp interfaces.
+
+WWW: http://www.keepalived.org/
