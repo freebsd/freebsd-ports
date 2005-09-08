@@ -1,0 +1,25 @@
+--- keepalived/Makefile.in.orig	Sat Aug 20 16:54:34 2005
++++ keepalived/Makefile.in	Thu Sep  8 21:25:25 2005
+@@ -16,6 +16,7 @@
+ sysconfdir  = @sysconfdir@
+ init_script = etc/init.d/keepalived.init
+ conf_file   = etc/keepalived/keepalived.conf
++examplesdir = @prefix@/share/examples
+ 
+ CC = @CC@
+ STRIP = @STRIP@
+@@ -103,11 +104,9 @@
+ install:
+ 	install -d $(DESTDIR)$(sbindir)
+ 	install -m 700 $(BIN)/$(EXEC) $(DESTDIR)$(sbindir)/
+-	install -d $(DESTDIR)$(sysconfdir)/init.d
+-	install -m 755 $(init_script) $(DESTDIR)$(sysconfdir)/init.d/keepalived
+-	install -d $(DESTDIR)$(sysconfdir)/keepalived/samples
+-	install -m 644 $(conf_file) $(DESTDIR)$(sysconfdir)/keepalived/
+-	install -m 644 ../doc/samples/* $(DESTDIR)$(sysconfdir)/keepalived/samples/
++	install -d $(DESTDIR)$(examplesdir)/keepalived/samples
++	install -m 644 $(conf_file) $(DESTDIR)$(examplesdir)/keepalived/
++	install -m 644 ../doc/samples/* $(DESTDIR)$(examplesdir)/keepalived/samples/
+ 	install -d $(DESTDIR)@mandir@/man/man5
+ 	install -d $(DESTDIR)@mandir@/man/man8
+ 	install -m 644 ../doc/man/man5/keepalived.conf.5 $(DESTDIR)@mandir@/man/man5
