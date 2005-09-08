@@ -1,5 +1,5 @@
---- scripts/Makefile.frag.orig	Mon Feb 28 06:28:25 2005
-+++ scripts/Makefile.frag	Fri Apr  1 15:42:21 2005
+--- scripts/Makefile.frag.orig	Tue Jun  7 23:57:06 2005
++++ scripts/Makefile.frag	Wed Sep  7 17:50:23 2005
 @@ -34,21 +34,12 @@
  	/ \
  	Zend/ \
@@ -17,7 +17,7 @@
 -	ext/xml/expat/ \
 -	ext/mbstring/ \
 -	ext/mbstring/libmbfl/ \
--    ext/mbstring/libmbfl/mbfl/ \
+-	ext/mbstring/libmbfl/mbfl/ \
 -	ext/sqlite/libsqlite/src/sqlite.h
 +	ext/spl/
  

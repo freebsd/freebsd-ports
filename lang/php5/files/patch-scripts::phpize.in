@@ -1,15 +1,13 @@
---- scripts/phpize.in.orig	Fri Apr  1 15:42:47 2005
-+++ scripts/phpize.in	Fri Apr  1 15:43:04 2005
-@@ -102,9 +102,9 @@
+--- scripts/phpize.in.orig	Wed Jun 15 19:19:41 2005
++++ scripts/phpize.in	Wed Sep  7 17:52:24 2005
+@@ -94,8 +94,8 @@
  
- phpize_autotools()
+ phpize_check_autotools()
  {
--  aclocal    || exit 1
--  autoconf   || exit 1
--  autoheader || exit 1
-+  aclocal15    || exit 1
-+  autoconf253   || exit 1
-+  autoheader253 || exit 1
- }
- 
- # Main script
+-  test -z "$PHP_AUTOCONF" && PHP_AUTOCONF=autoconf
+-  test -z "$PHP_AUTOHEADER" && PHP_AUTOHEADER=autoheader
++  test -z "$PHP_AUTOCONF" && PHP_AUTOCONF=autoconf259
++  test -z "$PHP_AUTOHEADER" && PHP_AUTOHEADER=autoheader259
+   
+   if ! test -x "`$php_shtool path $PHP_AUTOCONF`"; then
+     cat <<EOF

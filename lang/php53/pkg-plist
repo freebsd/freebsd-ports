@@ -1,6 +1,5 @@
 %%CLI%%bin/php
 bin/php-config
-bin/phpextdist
 bin/phpize
 etc/php.conf
 etc/php.ini-dist
@@ -141,7 +140,6 @@ include/php/ext/standard/url_scanner_ex.h
 @unexec [ -s %D/include/php/ext/php_config.h ] || rm %D/include/php/ext/php_config.h
 include/php/main/SAPI.h
 include/php/main/build-defs.h
-include/php/main/config.nw.h
 include/php/main/config.w32.h
 include/php/main/fopen_wrappers.h
 include/php/main/internal_functions_registry.h
