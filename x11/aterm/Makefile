@@ -7,6 +7,7 @@
 
 PORTNAME=	aterm
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES+=	x11	# `+=' is for slave ports
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -71,6 +72,5 @@ MAN1=		aterm.1
 
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/aterm
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
