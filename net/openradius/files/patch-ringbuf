@@ -1,0 +1,62 @@
+--- common/ringbuf.c.orig	Mon Feb 14 16:10:51 2005
++++ common/ringbuf.c	Tue Aug 30 13:55:42 2005
+@@ -355,7 +355,7 @@
+ ssize_t ring_count(RING *r, RINGCNTFUNC func, ...)
+ {
+ 	va_list ap;
+-	ssize_t len, ret;
++	ssize_t len, ret = 0;
+ 
+ 	len = ring_maxget(r);
+ 
+@@ -363,37 +363,41 @@
+ 
+ 		/* There is data available */
+ 
+-		va_start(ap, func);
+-
+ 		if (r->r + len <= r->size) {
+ 
+ 			/* Message ends before end of buffer */
+ 
+ 			/* peek at single part, return whatever the
+ 			   closure returns. */
+-			return func(r->buf + r->r, len, 0, ap);
++			va_start(ap, func);
++			ret = func(r->buf + r->r, len, 0, ap);
++			va_end(ap);
+ 		}
+ 		else {
+ 
+ 			/* Message doesn't end before end of buffer */
+ 
+ 			/* peek at first part, till end of buffer */
++			va_start(ap, func);
+ 			ret = func(r->buf + r->r, r->size - r->r, 0, ap);
++			va_end(ap);
+ 
+ 			if (ret < r->size - r->r) {
+ 				/* Satisfied by first part; return whatever
+ 				   the closure gave us. */
+-				return ret;
+ 			}
+-
+-			/* peek at rest, from start of buffer */
+-			return ret + func(r->buf, len - (r->size - r->r), 
+-					  ret, ap);
++			else {
++				/* peek at rest, from start of buffer */
++				va_start(ap, func);
++				ret += func(r->buf, len - (r->size - r->r), 
++					    ret, ap);
++				va_end(ap);
++			}
+ 		}
+ 	}
+ 
+ 	/* No data available, return 0. */
+-	return 0;
++	return ret;
+ }
+ 
+ 
