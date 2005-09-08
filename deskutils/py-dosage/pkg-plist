@@ -74,6 +74,7 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/Goats.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/Supafine.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/AstronomyPOTD.py
+%%PYTHON_SITELIBDIR%%/dosage/modules/DrunkDuck.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/UserFriendly.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/WhiteNinja.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/MinesBigger.py
@@ -91,6 +92,7 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/AsylumOn5thStreet.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/LethalDoses.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/TheParkingLotIsFull.py
+%%PYTHON_SITELIBDIR%%/dosage/modules/EverybodyLovesEricRaymond.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/NuklearPower.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/FauxPas.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/SpellsAndWhistles.py
@@ -101,8 +103,10 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/PreludesEnd.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/TheFray.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/InkTank.py
+%%PYTHON_SITELIBDIR%%/dosage/modules/Sokora.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/AllGrownUp.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/Girly.py
+%%PYTHON_SITELIBDIR%%/dosage/modules/FantasyRealms.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/KiagiSwordscat.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/RealLife.py
 %%PYTHON_SITELIBDIR%%/dosage/modules/ChroniclesOfGaras.py
@@ -220,6 +224,7 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/Goats.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/Supafine.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/AstronomyPOTD.pyc
+%%PYTHON_SITELIBDIR%%/dosage/modules/DrunkDuck.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/UserFriendly.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/WhiteNinja.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/MinesBigger.pyc
@@ -237,6 +242,7 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/AsylumOn5thStreet.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/LethalDoses.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/TheParkingLotIsFull.pyc
+%%PYTHON_SITELIBDIR%%/dosage/modules/EverybodyLovesEricRaymond.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/NuklearPower.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/FauxPas.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/SpellsAndWhistles.pyc
@@ -247,8 +253,10 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/PreludesEnd.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/TheFray.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/InkTank.pyc
+%%PYTHON_SITELIBDIR%%/dosage/modules/Sokora.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/AllGrownUp.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/Girly.pyc
+%%PYTHON_SITELIBDIR%%/dosage/modules/FantasyRealms.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/KiagiSwordscat.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/RealLife.pyc
 %%PYTHON_SITELIBDIR%%/dosage/modules/ChroniclesOfGaras.pyc
@@ -357,6 +365,7 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/Goats.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/Supafine.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/AstronomyPOTD.pyo
+%%PYTHON_SITELIBDIR%%/dosage/modules/DrunkDuck.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/UserFriendly.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/WhiteNinja.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/MinesBigger.pyo
@@ -374,6 +383,7 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/AsylumOn5thStreet.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/LethalDoses.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/TheParkingLotIsFull.pyo
+%%PYTHON_SITELIBDIR%%/dosage/modules/EverybodyLovesEricRaymond.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/NuklearPower.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/FauxPas.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/SpellsAndWhistles.pyo
@@ -384,8 +394,10 @@ bin/mainline
 %%PYTHON_SITELIBDIR%%/dosage/modules/PreludesEnd.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/TheFray.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/InkTank.pyo
+%%PYTHON_SITELIBDIR%%/dosage/modules/Sokora.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/AllGrownUp.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/Girly.pyo
+%%PYTHON_SITELIBDIR%%/dosage/modules/FantasyRealms.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/RealLife.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/KiagiSwordscat.pyo
 %%PYTHON_SITELIBDIR%%/dosage/modules/ChroniclesOfGaras.pyo
