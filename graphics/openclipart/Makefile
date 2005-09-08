@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	openclipart
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	graphics misc
 MASTER_SITES=	http://www.openclipart.org/downloads/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}${SVGPNG}
@@ -17,7 +17,7 @@ COMMENT=	Open Clip Art Library
 
 USE_BZIP2=	yes
 PLIST=		${WRKDIR}/pkg-plist
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}${SVGPNG}
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
