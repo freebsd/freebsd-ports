@@ -95,6 +95,7 @@
     SUBDIR += urlgfe
     SUBDIR += vcheck
     SUBDIR += vsftpd
+    SUBDIR += weex
     SUBDIR += wget
     SUBDIR += wgetpro
     SUBDIR += wmget
