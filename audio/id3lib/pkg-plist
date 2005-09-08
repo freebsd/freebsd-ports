@@ -16,6 +16,7 @@ include/id3/tag.h
 include/id3/utils.h
 include/id3/writer.h
 include/id3/writers.h
+lib/libid3-3.8.so
 lib/libid3-3.8.so.3
 lib/libid3.a
 lib/libid3.so

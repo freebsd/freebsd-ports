@@ -1,10 +1,11 @@
---- configure.orig	Sun Nov 24 09:23:00 2002
-+++ configure	Fri Jan 24 01:05:47 2003
-@@ -7612,6 +7612,7 @@
+# $FreeBSD$
+--- configure.orig	Sun Aug 14 11:21:37 2005
++++ configure	Sun Aug 14 11:29:43 2005
+@@ -9134,6 +9134,7 @@
+ else
+   ID3_NEEDZLIB_TRUE='#'
+   ID3_NEEDZLIB_FALSE=
++  LIBS="-lz $LIBS"
+ fi
  
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
  
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
