@@ -571,6 +571,7 @@
     SUBDIR += worldtools
     SUBDIR += wots
     SUBDIR += wtail
+    SUBDIR += wuzzah
     SUBDIR += x86info
     SUBDIR += xacpim
     SUBDIR += xapply
