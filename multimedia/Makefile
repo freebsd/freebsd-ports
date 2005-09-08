@@ -53,6 +53,7 @@
     SUBDIR += gstreamer-plugins-mpeg2enc
     SUBDIR += gstreamer-plugins-mplex
     SUBDIR += gstreamer-plugins-theora
+    SUBDIR += gstreamer-plugins-x264
     SUBDIR += gstreamer-plugins-xvid
     SUBDIR += gsubedit
     SUBDIR += gtksubtitler

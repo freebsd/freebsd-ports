@@ -3348,6 +3348,7 @@ gstreamer-plugins-swfdec	ports/graphics/gstreamer-plugins-swfdec
 gstreamer-plugins-theora	ports/multimedia/gstreamer-plugins-theora
 gstreamer-plugins-vorbis	ports/audio/gstreamer-plugins-vorbis
 gstreamer-plugins-wavpack	ports/audio/gstreamer-plugins-wavpack
+gstreamer-plugins-x264		ports/multimedia/gstreamer-plugins-x264
 gstreamer-plugins-xvid		ports/multimedia/gstreamer-plugins-xvid
 gsubedit	ports/multimedia/gsubedit
 gsystem		ports/science/gsystem
