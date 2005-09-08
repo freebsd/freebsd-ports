@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	djvu
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	DjVu viewers, encoders, browser plugin, and utilities
+COMMENT?=	DjVu viewers, encoders, browser plugin, and utilities
 
 .if !defined(WITHOUT_X11)
 USE_X_PREFIX=	yes
