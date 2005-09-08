@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+[ \! -d "${HOME}/.pcgen" ] && mkdir "${HOME}/.pcgen"
+cd "%%DATADIR%%"
+JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" ${PCGEN_OPTS} -jar ./pcgen.jar "$@"
