@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.79 2005/07/03 04:49:07 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.82 2005/08/19 17:06:55 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 7;
-my $micro = 2;
+my $micro = 3;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -1025,10 +1025,10 @@ sub checkmakefile {
 	# whole file: use of .elseif
 	#
 	print "OK: checking for use of .elseif.\n" if ($verbose);
-	if ($whole =~ /^\.\s*elseif/m) {
+	if ($whole =~ /^\.\s*else\s*if/m) {
 		my $lineno = &linenumber($`);
-		&perror("FATAL: $file [$lineno]: use of .elseif is not supported ".
-			"in all versions of FreeBSD.  Use .elif instead.");
+		&perror("FATAL: $file [$lineno]: use of .elseif (or .else if) is not
+			supported in all versions of FreeBSD.  Use .elif instead.");
 	}
 
 	#
@@ -1082,7 +1082,6 @@ sub checkmakefile {
 			LINUX_PREFIX
 			OPENSSL
 			PHP
-			PYTHON
 			QT2?
 			QT_VER
 			X_PREFIX
@@ -1316,7 +1315,7 @@ pax perl printf rm rmdir ruby sed sh sort touch tr which xargs xmkmf
 				&& $curline !~ /^NO_CDROM(.)?=[^\n]+$i/m
 				&& $curline !~ /^MAINTAINER(.)?=[^\n]+$i/m
 				&& $curline !~ /^CATEGORIES(.)?=[^\n]+$i/m
-				&& $curline !~ /^#.+$/m
+				&& $curline !~ /^\s*#.+$/m
 				&& $curline !~ /\-\-$i/m
 				&& $curline !~ /^COMMENT(.)?=[^\n]+$i/m) {
 					&perror("WARN: $file [$lineno]: possible direct use of ".
@@ -1341,7 +1340,8 @@ pax perl printf rm rmdir ruby sed sh sort touch tr which xargs xmkmf
 				&& $lm !~ /^NO_CDROM(.)?=[^\n]+($i\d*)/m
 				&& $lm !~ /^MAINTAINER(.)?=[^\n]+($i\d*)/m
 				&& $lm !~ /^CATEGORIES(.)?=[^\n]+($i\d*)/m
-				&& $lm !~ /^#.+$/m
+				&& $lm !~ /^USE_AUTOTOOLS(.)?=[^\n]+($i\d*)/m
+				&& $lm !~ /^\s*#.+$/m
 				&& $lm !~ /^COMMENT(.)?=[^\n]+($i\d*)/m) {
 					&perror("WARN: $file [$lineno]: possible direct use of ".
 						"command \"$sm\" found. Use $autocmdnames{$i} ".
