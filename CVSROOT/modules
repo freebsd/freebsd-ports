@@ -12402,6 +12402,7 @@ webstone-ssl	ports/www/webstone-ssl
 websvn		ports/devel/websvn
 weechat		ports/irc/weechat
 weewm		ports/x11-wm/weewm
+weex		ports/ftp/weex
 wesnoth		ports/games/wesnoth
 westhawksnmp	ports/java/westhawksnmp
 wfb2sql		ports/databases/wfb2sql
