@@ -531,6 +531,7 @@
     SUBDIR += pear-XML_HTMLSax
     SUBDIR += pear-XML_Wddx
     SUBDIR += perl2html
+    SUBDIR += permute
     SUBDIR += php4-ctype
     SUBDIR += php4-domxml
     SUBDIR += php4-pspell
