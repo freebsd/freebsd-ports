@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	portfwd
-PORTVERSION=	0.26
-PORTREVISION=	1
+PORTVERSION=	0.28
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,20 +15,14 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A Port Forwarding Daemon
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
 MAN5=	portfwd.cfg.5
 MAN8=	portfwd.8
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-USE_GCC=	3.3
-.endif
-
 post-patch:
+	@${ECHO_CMD} -n > ${WRKSRC}/config/missing
 	@${REINPLACE_CMD} -e "s|-Wall -ggdb -O3|${CFLAGS}|g" \
 		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e "s|-Wall -g -O3|${CFLAGS}|g" \
@@ -46,6 +39,6 @@ post-configure:
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/cfg/* ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/cfg/*.cfg ${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
