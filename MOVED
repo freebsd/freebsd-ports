@@ -1614,3 +1614,4 @@ net/gdesklets-sensor-psi_ping||2005-08-31|removed; broken with recent gdesklets
 mail/gdesklets-sensor-psi_popmail||2005-08-31|removed; broken with recent gdesklets
 deskutils/gdesklets-sensor-psi_variableborder||2005-08-31|removed; broken with recent gdesklets
 mail/py-mimelib|mail/py-email|2005-09-04|renamed
+cad/fig2sxd|graphics/fig2sxd|2005-0908|accurate category
