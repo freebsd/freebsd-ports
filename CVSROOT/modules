@@ -1656,6 +1656,7 @@ djbdns		ports/dns/djbdns
 djbdns-tools	ports/dns/djbdns-tools
 djbfft		ports/math/djbfft
 djvulibre	ports/graphics/djvulibre
+djvulibre-nox11	ports/graphics/djvulibre-nox11
 dk-milter	ports/mail/dk-milter
 dkftpbench	ports/benchmarks/dkftpbench
 dkimap4		ports/mail/dkimap4
