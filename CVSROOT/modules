@@ -12594,6 +12594,7 @@ wterm		ports/x11/wterm
 wtf		ports/games/wtf
 wu-ftpd		ports/ftp/wu-ftpd
 wu-ftpd+ipv6	ports/ftp/wu-ftpd+ipv6
+wuzzah		ports/sysutils/wuzzah
 wv		ports/textproc/wv
 wv2		ports/textproc/wv2
 wwl		ports/comms/wwl
