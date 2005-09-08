@@ -6,7 +6,7 @@
 #
 
 CATEGORIES=	x11-toolkits
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	Gstreamer pango textoverlay plugin
 

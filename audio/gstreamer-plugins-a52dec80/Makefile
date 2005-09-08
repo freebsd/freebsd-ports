@@ -6,7 +6,7 @@
 #
 
 CATEGORIES=	audio
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	Gstreamer ATSC A/52 stream aka AC-3 (dvd audio) plugin
 

@@ -56,6 +56,7 @@ lib/gstreamer-%%VERSION%%/libgstdebug.so
 lib/gstreamer-%%VERSION%%/libgstdecodebin.so
 lib/gstreamer-%%VERSION%%/libgstdeinterlace.so
 lib/gstreamer-%%VERSION%%/libgstdvdlpcmdec.so
+lib/gstreamer-%%VERSION%%/libgstdvdsubdec.so
 lib/gstreamer-%%VERSION%%/libgstefence.so
 lib/gstreamer-%%VERSION%%/libgsteffectv.so
 lib/gstreamer-%%VERSION%%/libgstequalizer.so
@@ -68,6 +69,7 @@ lib/gstreamer-%%VERSION%%/libgstgamma.so
 lib/gstreamer-%%VERSION%%/libgstgoom.so
 lib/gstreamer-%%VERSION%%/libgstidct.so
 lib/gstreamer-%%VERSION%%/libgstinterleave.so
+lib/gstreamer-%%VERSION%%/libgstimagemixer.so
 lib/gstreamer-%%VERSION%%/libgstlevel.so
 lib/gstreamer-%%VERSION%%/libgstmatroska.so
 lib/gstreamer-%%VERSION%%/libgstmedian.so

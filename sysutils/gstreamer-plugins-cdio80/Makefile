@@ -6,7 +6,7 @@
 #
 
 CATEGORIES=	sysutils
-PORTREVISION=	2
+PORTREVISION=	0
 
 COMMENT=	Gstreamer compact disc input and control library
 

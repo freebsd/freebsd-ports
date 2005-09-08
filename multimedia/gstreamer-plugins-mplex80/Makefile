@@ -6,7 +6,7 @@
 #
 
 CATEGORIES=	multimedia
-PORTREVISION=	2
+PORTREVISION=	0
 
 COMMENT=	Gstreamer mplex plugin
 

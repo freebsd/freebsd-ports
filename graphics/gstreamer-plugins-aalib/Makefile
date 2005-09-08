@@ -6,7 +6,7 @@
 #
 
 CATEGORIES=	graphics
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	Gstreamer ascii art plugin
 
