@@ -103,6 +103,7 @@
     SUBDIR += fbm
     SUBDIR += feh
     SUBDIR += fig2pstricks
+    SUBDIR += fig2sxd
     SUBDIR += figurine
     SUBDIR += flashplayer
     SUBDIR += flasm
