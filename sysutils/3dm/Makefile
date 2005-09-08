@@ -25,7 +25,7 @@ USE_REINPLACE=	yes
 IGNORE=		"3ware 3ware ATA RAID (twe) is not supported in versions earlier than 4.5-RELEASE"
 .endif
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
 
@@ -93,7 +93,7 @@ post-install:
 	${LN} -s ${PREFIX}/etc/3dm2.pem /etc/3dm2/3dm2.pem
 
 	@${ECHO} ""
-	@${ECHO} "Add twdm2_enable="YES" to /etc/rc.conf to run 3dm2 from startup."
+	@${ECHO} "Add twdm2_enable=\"YES\" to /etc/rc.conf to run 3dm2 from startup."
 	@${ECHO} ""
 
 .include <bsd.port.post.mk>
