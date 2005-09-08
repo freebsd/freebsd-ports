@@ -18,6 +18,7 @@ COMMENT=	Python bindings for the Qt toolkit
 
 LIB_DEPENDS=	qscintilla.6:${PORTSDIR}/x11-toolkits/qscintilla
 BUILD_DEPENDS=	${LOCALBASE}/bin/sip:${PORTSDIR}/devel/py-sip
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_QT_VER=	3
 USE_PYTHON=	yes
