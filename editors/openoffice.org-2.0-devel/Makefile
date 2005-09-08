@@ -57,8 +57,8 @@ IGNORE=		Install lang/perl5.8 then try again
 
 CODELINE=		680
 RELEASE_NR=		1.9
-MILESTONE=		126
-SNAPDATE=		20050827
+MILESTONE=		128
+SNAPDATE=		20050907
 INSTALLATION_BASEDIR=	openoffice.org${RELEASE_NR}m${MILESTONE}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org2.0
@@ -117,7 +117,6 @@ LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 .endif
 
 GNU_CONFIGURE=	yes
-USE_AUTOCONF_VER=      259 #workaround:bad config_office/configure of m126
 WRKSRC=		${WRKDIR}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 ANT?=		${LOCALBASE}/bin/ant
