@@ -9,9 +9,9 @@
 +		LD=gcc
 +		XTEST_LIB_PATH=$X11BASE/lib
 +		GECKO_I=${X11BASE}/include/${BROWSER}
-+		GECKO_INCLUDES="-I${GECKO_I} -I${GECKO_I}/nspr -I${GECKO_I}/xpcom -I${GECKO_I}/string -I${GECKO_I}/embed_base -I${GECKO_I}/embedstring"
++		GECKO_INCLUDES="-I${GECKO_I} -I${LOCALBASE}/include/nspr -I${GECKO_I}/xpcom -I${GECKO_I}/string -I${GECKO_I}/embed_base -I${GECKO_I}/embedstring"
 +		GECKO_L=${X11BASE}/lib/${BROWSER}
-+		GECKO_LIBS="-L${GECKO_L} -lxpcom -lnspr4 -lplds4 -lplc4 -lgtkembedmoz"
++		GECKO_LIBS="-L${GECKO_L} -L${LOCALBASE}/lib -lxpcom -lnspr4 -lplds4 -lplc4 -lgtkembedmoz"
 +		case $MODEL in
 +			"amd64")
 +				AWT_LIB_PATH=$JAVA_HOME/jre/lib/amd64
