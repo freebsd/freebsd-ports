@@ -1,4 +1,4 @@
-PORTREVISION=	4
+PORTREVISION=	0
 
 USE_GNOME=	libxml2
 
@@ -9,6 +9,7 @@ CONFIGURE_ARGS= --with-layout=GNU \
                 --disable-all \
                 --with-pcre-regex=yes \
                 --enable-xml \
+		--enable-libxml \
                 --with-libxml-dir=${LOCALBASE} \
                 --with-zlib-dir=/usr \
                 --with-pear
