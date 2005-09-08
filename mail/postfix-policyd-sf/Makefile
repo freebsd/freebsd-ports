@@ -1,4 +1,4 @@
-# New ports collection makefile for:	policyd-sf
+# New ports collection makefile for:	postfix-policyd-sf
 # Date created:				2005-08-02
 # Whom:					Xavier Beaudouin <kiwi@oav.net>
 #
@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	policyd
-PORTVERSION=	1.66
+PORTVERSION=	1.67
 CATEGORIES=	mail
 MASTER_SITES=	http://policyd.sourceforge.net/
 PKGNAMEPREFIX=	postfix-
@@ -27,19 +27,27 @@ SUB_LIST+=	REALNAME=${REALNAME}
 
 ALL_TARGET=	linux
 
-PORTDOCS=	Changelog.txt README.txt License.txt WHITELIST.sql
+DOCS=		Changelog.txt README.txt License.txt DATABASE.mysql \
+		doc/WHITELIST.sql doc/SUPPORT.txt
+PORTDOCS=	*
 
 PLIST_FILES=	sbin/${REALNAME}-cleanup \
+		sbin/${REALNAME}-stats \
 		sbin/${REALNAME} \
 		etc/${REALNAME}.conf.sample
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,policyd.pid,postfix-policyd-sf.pid,' \
+		${WRKSRC}/policyd.conf
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cleanup ${PREFIX}/sbin/${REALNAME}-cleanup
+	${INSTALL_PROGRAM} ${WRKSRC}/stats ${PREFIX}/sbin/${REALNAME}-stats
 	${INSTALL_PROGRAM} ${WRKSRC}/policyd ${PREFIX}/sbin/${REALNAME}
 	${INSTALL_DATA} ${WRKSRC}/policyd.conf ${PREFIX}/etc/${REALNAME}.conf.sample
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	for f in ${PORTDOCS}; do \
+	for f in ${DOCS}; do \
 	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
 	done
 .endif
