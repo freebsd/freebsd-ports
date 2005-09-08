@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 
-# PROVIDE: policyd
+# PROVIDE: postfix-policyd-sf
 # REQUIRE: LOGIN
 # BEFORE: mail
 # KEYWORD: FreeBSD shutdown
@@ -11,12 +11,12 @@
 #
 # Add the following lines to /etc/rc.conf to enable policyd:
 #
-# %%REALNAME%%_enable="YES"
+# postfix_policyd_sf_enable="YES"
 #
 
 . %%RC_SUBR%%
 
-name=%%REALNAME%%
+name=postfix_policyd_sf
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/%%REALNAME%%
@@ -30,11 +30,11 @@ stop_postcmd()
 
 # set defaults
 
-%%REALNAME%%_enable=${%%REALNAME%%_enable:-"NO"}
-%%REALNAME%%_pidfile=${%%REALNAME%%_pidfile:-"/var/run/%%REALNAME%%.pid"}
-%%REALNAME%%_flags=${%%REALNAME%%_flags:-"-c %%PREFIX%%/etc/%%REALNAME%%.conf"}
+postfix_policyd_sf_enable=${postfix_policyd_sf_enable:-"NO"}
+postfix_policyd_sf_pidfile=${postfix_policyd_sf_pidfile:-"/var/run/%%REALNAME%%.pid"}
+postfix_policyd_sf_flags=${postfix_policyd_sf_flags:-"-c %%PREFIX%%/etc/%%REALNAME%%.conf"}
 
-pidfile="${%%REALNAME%%_pidfile}"
+pidfile="${postfix_policyd_sf_pidfile}"
 
 load_rc_config $name
 run_rc_command "$1"
