@@ -49,7 +49,7 @@ If it is not already set, a default value is chosen.
 --------------------------------------------------
 Somehow you can stuck into a trouble. 
 To solve this issue, please remove the already installed
-"OpenOffice.org%%RELEASE_NR%%" dir in your homedir and remove the
+".OpenOffice.org%%RELEASE_NR%%" dir in your homedir and remove the
 appropriate entry from ".sversionrc". After you have done
 this, redo the user installation and the problem will
 go away.

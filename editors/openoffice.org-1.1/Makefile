@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	openoffice.org
-PORTVERSION=	1.1.5.rc2.1
+PORTVERSION=	1.1.5.rc4
 CATEGORIES+=	editors
-MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/rc/1.1.5rc2/&,} \
+MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/rc/1.1.5rc4/&,} \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%,maho/openoffice.org/&,}:moz \
 		${MASTER_SITE_MOZILLA:S,%SUBDIR%,mozilla/releases/mozilla1.0/src/&,}:mozsrc \
-		ftp://ftp.kddlabs.co.jp/office/openoffice/contrib/rc/1.1.5rc2/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/rc/1.1.5rc2/ \
-		ftp://ftp.tu-chemnitz.de/pub/openoffice/contrib/rc/1.1.5rc2/ \
-		ftp://ftp.stardiv.de/pub/OpenOffice.org/contrib/rc/1.1.5rc2/ \
-		http://ftp.gwdg.de/pub/misc/openoffice/contrib/rc/1.1.5rc2/ \
+		ftp://ftp.kddlabs.co.jp/office/openoffice/contrib/rc/1.1.5rc4/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/rc/1.1.5rc4/ \
+		ftp://ftp.tu-chemnitz.de/pub/openoffice/contrib/rc/1.1.5rc4/ \
+		ftp://ftp.stardiv.de/pub/OpenOffice.org/contrib/rc/1.1.5rc4/ \
+		http://ftp.gwdg.de/pub/misc/openoffice/contrib/rc/1.1.5rc4/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent/&,}:help \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent-1.0/&,}:help3 \
@@ -23,8 +23,8 @@ MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/rc/1.
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent/:help \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help \
 		ftp://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/Files/:help2
-DISTFILES+=	OOo_${RELEASE_NR}rc2_src.tar.gz gpc231.tar.Z:gpc
-EXTRACT_ONLY=	OOo_${RELEASE_NR}rc2_src.tar.gz
+DISTFILES+=	OOo_${RELEASE_NR}rc4_src.tar.gz gpc231.tar.Z:gpc
+EXTRACT_ONLY=	OOo_${RELEASE_NR}rc4_src.tar.gz
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
