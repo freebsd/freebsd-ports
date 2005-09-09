@@ -315,10 +315,10 @@ share/locale/sk/LC_MESSAGES/gourmet.mo
 share/locale/sv/LC_MESSAGES/gourmet.mo
 share/locale/sv_SE/LC_MESSAGES/gourmet.mo
 share/locale/tr/LC_MESSAGES/gourmet.mo
-@dirrm share/locale/de_AT/LC_MESSAGES
-@dirrm share/locale/de_AT
 @dirrm share/locale/de_DE/LC_MESSAGES
 @dirrm share/locale/de_DE
+@dirrm share/locale/nl_NL/LC_MESSAGES
+@dirrm share/locale/nl_NL
 @dirrm share/locale/nl_BE/LC_MESSAGES
 @dirrm share/locale/nl_BE
 @dirrm share/locale/sv_SE/LC_MESSAGES
@@ -329,3 +329,5 @@ share/locale/tr/LC_MESSAGES/gourmet.mo
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/exporters
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/backends
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet
+@unexec /bin/rmdir %%PYTHON_SITELIBDIR%% 2>/dev/null || /bin/true
+@unexec /bin/rmdir %%PYTHON_LIBDIR%% 2>/dev/null || /bin/true
