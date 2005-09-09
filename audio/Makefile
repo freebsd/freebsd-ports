@@ -96,6 +96,7 @@
     SUBDIR += ecasound
     SUBDIR += ecawave
     SUBDIR += enscribe
+    SUBDIR += epos-devel
     SUBDIR += ermixer
     SUBDIR += esound
     SUBDIR += etktab
