@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	sge
-PORTVERSION=	${SGE_VERSION}.${SGE_SNAPDATE}
+PORTVERSION=	${SGE_VERSION}
 PORTREVISION=	0
 CATEGORIES=	sysutils parallel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/32/
+MASTER_SITES+=	${MASTER_SITE_LOCAL}
+DISTNAME=	sge-V60u6_TAG-src
 MASTER_SITE_SUBDIR=	brooks
 
 MAINTAINER=	brooks@FreeBSD.org
@@ -26,7 +28,6 @@ EXTRA_PATCHES=	${FILESDIR}/pthread-types.diff
 .endif
 NOT_FOR_ARCHS=	alpha
 
-USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
@@ -34,12 +35,17 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${SGE_ROOT}/lib/${SGE_ARCH}
 
+# We have to use fetch because the master site required cookies to
+# download the file.
+FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+DISABLE_SIZE=	yes
+FETCH_CMD=	wget -c
+
 SGE_BASE?=	sge
 SGE_ROOT=	${PREFIX}/${SGE_BASE}
 SGE_ARCH=	fbsd-${ARCH}
-SGE_VERSION=	6.0.4
-SGE_SNAPDATE=	20050726
-SGE_RELEASE=	6.0u4
+SGE_VERSION=	6.0.6
+SGE_RELEASE=	6.0u6
 
 PLIST_SUB+=	SGE_ARCH=${SGE_ARCH}
 PLIST_SUB+=	SGE_BASE=${SGE_BASE}
@@ -51,7 +57,7 @@ USE_RC_SUBR=	sge.sh
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGINSTALL=	${WRKDIR}/pkg-install
-WRKSRC=		${WRKDIR}/${DISTNAME}/source
+WRKSRC=		${WRKDIR}/gridengine/source
 TMP_SGE_ROOT=	${WRKDIR}/sgeroot
 AIMK_CMD=	${SETENV} ${AIMK_ENV} ./aimk ${AIMK_ARGS}
 
@@ -165,7 +171,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/../doc && ${FIND} * \( -name nonexistant \
-	    ${EXCEPTFILES:S/^/-o -name /} \) -a -prune -o -print \
+	    ${EXCEPTFILES:S/^/-o -name /} -o -name CVS \) -a -prune -o -print \
 	    | ${TAR} cTf - - | ${TAR} xUCf ${DOCSDIR} -
 .endif
 
@@ -186,21 +192,6 @@ release-tar: build
 # Maintainer support below this line.  No user servicable parts inside. #
 #########################################################################
 
-# Produce a distfile snapshot for today
-SGE_TAG=	V60u4win_BRANCH
-TODAY!=		date +%Y%m%d
-XDISTNAME=	sge-${SGE_VERSION}.${TODAY}
-XDISTFILE=	${DISTDIR}/${XDISTNAME}.tar.bz2
-distfile:
-	${MKDIR} ${WRKDIR}
-	cd ${WRKDIR}; \
-	    cvs -d :pserver:guest@cvs.gridengine.sunsource.net:/cvs co \
-	    -r ${SGE_TAG} -d ${XDISTNAME} gridengine
-	${FIND} ${WRKDIR}/${XDISTNAME} -name CVS | ${XARGS} ${RM} -rf
-	cd ${WRKDIR}; ${TAR} cfy ${XDISTFILE} ${XDISTNAME}
-	@${RM} -rf ${WRKDIR}/${XDISTNAME}
-	@${RMDIR} ${WRKDIR} 2> /dev/null || true
-
 # Build a pkg-plist and Makefile.man
 build-plist: build
 #.if defined(WITHOUT_BDB) || defined(WITHOUT_JAVA) || defined(WITHOUT_QMON)
@@ -215,7 +206,7 @@ build-plist: build
 		-e 's|\(.*libXltree.so\)|%%QMON%%\1|' \
 		-e 's|\(.*qmon.*\)|%%QMON%%\1|' \
 	    > ${PLIST}
-	@${FIND} ${WRKSRC}/../doc \( -name nonexistant \
+	@${FIND} ${WRKSRC}/../doc \( -name CVS \
 	    ${EXCEPTFILES:S/^/-o -name /} \) -a -prune -o -type f -print | \
 	    ${SORT} | \
 	    ${SED} -e 's|${WRKSRC}/../doc|%%PORTDOCS%%%%DOCSDIR%%|' \
@@ -226,7 +217,7 @@ build-plist: build
 		-e 's|${SGE_ARCH}|%%SGE_ARCH%%|' \
 		-e 's|\(.*qmon.*\)|%%QMON%%\1|' \
 	    >> ${PLIST}
-	@${FIND} ${WRKSRC}/../doc \( -name nonexistant \
+	@${FIND} ${WRKSRC}/../doc \( -name CVS \
 	    ${EXCEPTFILES:S/^/-o -name /} \) -a -prune -o -type d -print | \
 	    ${SORT} -r | \
 	    ${SED} -e 's|${WRKSRC}/../doc|%%PORTDOCS%%@dirrm %%DOCSDIR%%|' \
