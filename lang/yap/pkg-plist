@@ -81,11 +81,15 @@ share/Yap/chr.yap
 share/Yap/cleanup.yap
 share/Yap/clpbn/aggregates.yap
 share/Yap/clpbn/bnt.yap
+share/Yap/clpbn/discrete_utils.yap
 share/Yap/clpbn/evidence.yap
+share/Yap/clpbn/gibbs.yap
 share/Yap/clpbn/graphs.yap
 share/Yap/clpbn/graphviz.yap
+share/Yap/clpbn/topsort.yap
 share/Yap/clpbn/utils.yap
 share/Yap/clpbn/vel.yap
+share/Yap/clpbn/viterbi.yap
 share/Yap/clpbn/xbif.yap
 share/Yap/clpbn.yap
 share/Yap/clpq/arith_q.yap
@@ -236,6 +240,7 @@ share/Yap/timeout.yap
 share/Yap/trees.yap
 share/Yap/tries.yap
 share/Yap/ugraphs.yap
+share/Yap/ypp.yap
 @dirrm share/Yap/pl
 @dirrm share/Yap/logtalk
 @dirrm share/Yap/clpr
