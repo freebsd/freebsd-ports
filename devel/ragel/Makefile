@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ragel
-PORTVERSION=	3.6
+PORTVERSION=	4.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.elude.ca/ragel/
 
