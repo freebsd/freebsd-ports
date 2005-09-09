@@ -1,0 +1,92 @@
+diff -urN class/mime/Rfc822Header.class.php class/mime/Rfc822Header.class.php
+--- class/mime/Rfc822Header.class.php	2005-02-07 12:26:49.000000000 +0200
++++ class/mime/Rfc822Header.class.php	2005-07-14 09:13:44.000000000 +0300
+@@ -505,8 +505,9 @@
+      * functions/imap_messages. I'm not sure if it's ok here to call
+      * that function?
+      */
+-    function parsePriority($value) {
+-        $value = strtolower(array_shift(split('/\w/',trim($value))));
++    function parsePriority($sValue) {
++	$aValue = split('/\w/',trim($sValue));
++        $value = strtolower(array_shift($aValue));
+         if ( is_numeric($value) ) {
+             return $value;
+         }
+diff -urN functions/imap_messages.php functions/imap_messages.php
+--- functions/imap_messages.php	2005-04-17 18:50:14.000000000 +0300
++++ functions/imap_messages.php	2005-07-14 09:23:02.991592896 +0300
+@@ -476,8 +476,9 @@
+  * NOTE: this is actually a duplicate from the function in
+  * class/mime/Rfc822Header.php.
+  */
+-function parsePriority($value) {
+-    $value = strtolower(array_shift(split('/\w/',trim($value))));
++function parsePriority($sValue) {
++    $aValue=split('/\w/',trim($sValue));
++    $value = strtolower(array_shift($aValue));
+     if ( is_numeric($value) ) {
+         return $value;
+     }
+diff -urN plugins/listcommands/setup.php plugins/listcommands/setup.php
+--- plugins/listcommands/setup.php	2005-03-02 20:22:17.000000000 +0200
++++ plugins/listcommands/setup.php	2005-07-14 09:16:29.762372824 +0300
+@@ -51,8 +51,9 @@
+         }
+ 
+         /* proto = {mailto,href} */
+-	$proto = array_shift(array_keys($actions));
+-	$act   = array_shift($actions);
++	$aActionKeys = array_keys($actions);
++	$proto = array_shift($aActionKeys);
++	$act   = array_shift($aActionKeys);
+ 
+         if ($proto == 'mailto') {
+ 
+diff -urN src/configtest.php src/configtest.php
+--- src/configtest.php	2005-05-23 20:12:39.000000000 +0300
++++ src/configtest.php	2005-07-14 09:44:30.071926944 +0300
+@@ -314,7 +314,7 @@
+ echo "$IND iconv - ";
+ if (function_exists('iconv')) {
+     echo "Iconv functions are available.<br />\n";
+-} elseif ($use_php_iconv) {
++} elseif (isset($use_php_iconv) && $use_php_iconv) {
+     echo "Iconv functions are unavailable.<br />\n";
+     do_err('Your configuration requires iconv support, but iconv support is missing.');
+ } else {
+@@ -365,7 +365,8 @@
+         }
+ 
+         foreach($dsns as $type => $dsn) {
+-            $dbtype = array_shift(explode(':', $dsn));
++            $aDsn = explode(':', $dsn);
++            $dbtype = array_shift($aDsn);
+             if(isset($db_functions[$dbtype]) && function_exists($db_functions[$dbtype])) {
+                 echo "$IND$dbtype database support present.<br />\n";
+ 
+@@ -380,7 +381,7 @@
+                 echo "$IND$type database connect successful.<br />\n";
+ 
+             } else {
+-                do_err($db.' database support not present!');
++                do_err($dbtype.' database support not present!');
+             }
+         }
+     } else {
+diff -urN src/search.php src/search.php
+--- src/search.php	2005-06-22 17:24:12.000000000 +0300
++++ src/search.php	2005-07-14 09:35:24.000000000 +0300
+@@ -297,7 +297,11 @@
+ /*  update the recent and saved searches from the pref files  */
+ $attributes = get_recent($username, $data_dir);
+ $saved_attributes = get_saved($username, $data_dir);
+-$saved_count = count($saved_attributes['saved_what']);
++if (isset($saved_attributes['saved_what'])) {
++    $saved_count = count($saved_attributes['saved_what']);
++} else {
++    $saved_count = 0;
++}
+ $count_all = 0;
+ 
+ /* Saved Search Table */

@@ -7,6 +7,7 @@
 
 PORTNAME=	squirrelmail
 PORTVERSION?=	1.4.5
+PORTREVISION?=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	squirrelmail
@@ -63,7 +64,12 @@ slaveport-post-patch:
 
 post-patch: slaveport-post-patch
 .ifndef PATCH_DEBUG
-	@${RM} -f ${WRKSRC}/config/config_default.php.orig
+	@${RM} -f ${WRKSRC}/config/config_default.php.orig \
+		  ${WRKSRC}/src/configtest.php.orig \
+		  ${WRKSRC}/src/search.php.orig \
+		  ${WRKSRC}/class/mime/Rfc822Header.class.php.orig \
+		  ${WRKSRC}/functions/imap_messages.php.orig \
+		  ${WRKSRC}/plugins/listcommands/setup.php.orig
 .endif
 	@${SED} -e "s;%%SQUIRRELDIR%%;${SQUIRRELDIR};g" \
 		${MASTERDIR}/pkg-install > ${PKGINSTALL}
