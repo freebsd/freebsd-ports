@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gramps
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.8
 CATEGORIES=	science gnome python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gramps
@@ -29,8 +29,10 @@ MAN1=		gramps.1
 GCONF_SCHEMAS=	gramps.schemas
 
 post-patch:
+.for l in C fr
 	@${REINPLACE_CMD} -e 's|/@PACKAGE@/gnome||' \
-		${WRKSRC}/doc/gramps-manual/C/Makefile.in
+		${WRKSRC}/doc/gramps-manual/${l}/Makefile.in
+.endfor
 	@${REINPLACE_CMD} -e 's|share/gramps|share/gnome|' \
 		${WRKSRC}/src/gramps_main.py
 	@${REINPLACE_CMD} -e 's|share/gramps|share/gnome/gramps|' \
@@ -47,8 +49,5 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/share/gramps|${PREFIX}/share/gnome/gramps|' \
 		${WRKSRC}/src/data/gramps.keys
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
