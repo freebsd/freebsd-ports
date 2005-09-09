@@ -1,45 +1,105 @@
-nfsen/bin/GenGraph.pl
-nfsen/bin/nfsen
-nfsen/bin/nfsen-run
-nfsen/bin/nfsen.rc
-nfsen/bin/testPlugin
-nfsen/etc/nfsen-dist.conf
-nfsen/etc/nfsen-dist.conf.orig
-nfsen/etc/nfsen-shell-param
-nfsen/etc/nfsen.conf
-nfsen/libexec/Log.pm
-nfsen/libexec/NfConf.pm
-nfsen/libexec/NfProfile.pm
-nfsen/libexec/NfSen.pm
-nfsen/libexec/NfSenRRD.pm
-nfsen/libexec/Notification.pm
-nfsen/libexec/PluginTemplate.pm
-nfsen/libexec/demoplugin.pm
-nfsen/profiles/live/profile.dat
-www/nfsen/conf.php
-www/nfsen/css-admin.html
-www/nfsen/css.html
-www/nfsen/details.php
-www/nfsen/edit.png
-www/nfsen/info.php
-www/nfsen/invisible.gif
-www/nfsen/navigator.php
-www/nfsen/nfsen.php
-www/nfsen/nfsenutil.php
-www/nfsen/overview.php
-www/nfsen/pic.gif
-www/nfsen/pic.php
-www/nfsen/process.php
-www/nfsen/profileadmin.php
-www/nfsen/rrdgraph.php
-www/nfsen/trash.png
-@dirrm www/nfsen
-@dirrm nfsen/var/run
-@dirrm nfsen/var/filters
-@dirrm nfsen/var
-@dirrm nfsen/profiles/live
-@dirrm nfsen/profiles
-@dirrm nfsen/libexec
-@dirrm nfsen/etc
-@dirrm nfsen/bin
-@dirrm nfsen
+bin/nfsen
+bin/nfsen-run
+bin/nfsen.rc
+bin/pid_check.pl
+bin/testPlugin
+etc/nfsen-dist.conf
+etc/nfsen-dist.conf.orig
+@exec [ -f %D/etc/nfsen.conf ] || cp %D/etc/nfsen-dist.conf %D/etc/nfsen.conf
+libexec/%%PORTNAME%%/GenGraph.pl
+libexec/%%PORTNAME%%/Log.pm
+libexec/%%PORTNAME%%/NfConf.pm
+libexec/%%PORTNAME%%/NfProfile.pm
+libexec/%%PORTNAME%%/NfSen.pm
+libexec/%%PORTNAME%%/NfSenRRD.pm
+libexec/%%PORTNAME%%/Notification.pm
+libexec/%%PORTNAME%%/plugins/demoplugin.pm
+www/%%PORTNAME%%/conf.php
+www/%%PORTNAME%%/EmptyGraph.gif
+www/%%PORTNAME%%/ErrorGraph.gif
+www/%%PORTNAME%%/css-admin.html
+www/%%PORTNAME%%/css.html
+www/%%PORTNAME%%/details.php
+www/%%PORTNAME%%/edit.png
+www/%%PORTNAME%%/info.php
+www/%%PORTNAME%%/invisible.gif
+www/%%PORTNAME%%/navigator.php
+www/%%PORTNAME%%/navigator.php.orig
+www/%%PORTNAME%%/nfsen.php
+www/%%PORTNAME%%/nfsenutil.php
+www/%%PORTNAME%%/overview.php
+www/%%PORTNAME%%/pic.php
+www/%%PORTNAME%%/process.php
+www/%%PORTNAME%%/profileadmin.php
+www/%%PORTNAME%%/rrdgraph.php
+www/%%PORTNAME%%/trash.png
+www/%%PORTNAME%%/plugins/demoplugin.php
+www/%%PORTNAME%%/doc/BSD-license.html
+www/%%PORTNAME%%/doc/Bookmark.png
+www/%%PORTNAME%%/doc/BuildingProfile.png
+www/%%PORTNAME%%/doc/ConfirmDelete.png
+www/%%PORTNAME%%/doc/DefaultFilter.png
+www/%%PORTNAME%%/doc/DeleteProfile.png
+www/%%PORTNAME%%/doc/DisabledSources.png
+www/%%PORTNAME%%/doc/InputEnd.png
+www/%%PORTNAME%%/doc/Navigating.png
+www/%%PORTNAME%%/doc/NewProfile.png
+www/%%PORTNAME%%/doc/NfSen.html
+www/%%PORTNAME%%/doc/OutOfData.png
+www/%%PORTNAME%%/doc/ProcessingControls.png
+www/%%PORTNAME%%/doc/ProcessingOutput.png
+www/%%PORTNAME%%/doc/ProfileCreated.png
+www/%%PORTNAME%%/doc/ResetWindow.png
+www/%%PORTNAME%%/doc/SelectLeft.png
+www/%%PORTNAME%%/doc/SelectRight.png
+www/%%PORTNAME%%/doc/StatSummary.png
+www/%%PORTNAME%%/doc/TimeWindow.png
+www/%%PORTNAME%%/doc/WinScale.png
+www/%%PORTNAME%%/doc/bytes.png
+www/%%PORTNAME%%/doc/cursor_control.png
+www/%%PORTNAME%%/doc/details-graphs.png
+www/%%PORTNAME%%/doc/details-processing.png
+www/%%PORTNAME%%/doc/dirstruct.png
+www/%%PORTNAME%%/doc/edit.png
+www/%%PORTNAME%%/doc/exiisting.png
+www/%%PORTNAME%%/doc/flows.png
+www/%%PORTNAME%%/doc/linegraph.png
+www/%%PORTNAME%%/doc/nfsen-options.png
+www/%%PORTNAME%%/doc/overview.png
+www/%%PORTNAME%%/doc/packets.png
+www/%%PORTNAME%%/doc/plugins.png
+www/%%PORTNAME%%/doc/processing-1.png
+www/%%PORTNAME%%/doc/selectprofile.png
+www/%%PORTNAME%%/doc/stat.png
+www/%%PORTNAME%%/doc/views-2.png
+www/%%PORTNAME%%/doc/views.png
+@dirrm www/%%PORTNAME%%/plugins
+@dirrm www/%%PORTNAME%%/doc
+@dirrm www/%%PORTNAME%%
+@exec mkdir -p %D/var/%%PORTNAME%%/profiles/live/upstream1
+var/%%PORTNAME%%/profiles/live/flows.rrd
+var/%%PORTNAME%%/profiles/live/flows_tcp.rrd
+var/%%PORTNAME%%/profiles/live/flows_udp.rrd
+var/%%PORTNAME%%/profiles/live/flows_icmp.rrd
+var/%%PORTNAME%%/profiles/live/flows_other.rrd
+var/%%PORTNAME%%/profiles/live/packets.rrd
+var/%%PORTNAME%%/profiles/live/packets_tcp.rrd
+var/%%PORTNAME%%/profiles/live/packets_udp.rrd
+var/%%PORTNAME%%/profiles/live/packets_icmp.rrd
+var/%%PORTNAME%%/profiles/live/packets_other.rrd
+var/%%PORTNAME%%/profiles/live/traffic.rrd
+var/%%PORTNAME%%/profiles/live/traffic_tcp.rrd
+var/%%PORTNAME%%/profiles/live/traffic_udp.rrd
+var/%%PORTNAME%%/profiles/live/traffic_icmp.rrd
+var/%%PORTNAME%%/profiles/live/traffic_other.rrd
+var/%%PORTNAME%%/profiles/live/profile.dat
+@exec mkdir -p %D/var/%%PORTNAME%%/run
+@exec mkdir -p %D/var/%%PORTNAME%%/filters
+@dirrm var/%%PORTNAME%%/run
+@dirrm var/%%PORTNAME%%/filters
+@unexec rmdir %D/var/%%PORTNAME%%/profiles/live/upstream1 2>/dev/null || true
+@unexec rmdir %D/var/%%PORTNAME%%/profiles/live 2>/dev/null || true
+@unexec rmdir %D/var/%%PORTNAME%%/profiles 2>/dev/null || true
+@unexec rmdir %D/var/%%PORTNAME%% 2>/dev/null || true
+@dirrm libexec/%%PORTNAME%%/plugins
+@dirrm libexec/%%PORTNAME%%
