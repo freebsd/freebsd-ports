@@ -31,21 +31,22 @@ PLIST_DIRS=	${THEME_DIR}/gtk-2.0 ${THEME_DIR}
 WITH_GTKENGINES=	yes
 .endif
 
-.if !defined(WITHOUT_GTKENGINES) || defined(WITH_GTKENGINES)
+#.if !defined(WITHOUT_GTKENGINES) || defined(WITH_GTKENGINES)
 RUN_DEPENDS+=	gtk-engines2>=2.6.4:${PORTSDIR}/x11-themes/gtk-engines2 \
-		gnome-themes>=2.11.91:${PORTSDIR}/x11-themes/gnome-themes
-.else
-RUN_DEPENDS+=	clearlooks>=0.6.0:${PORTSDIR}/x11-themes/clearlooks \
 		clearlooks-metacity>=0.6:${PORTSDIR}/x11-themes/clearlooks-metacity
-.endif
+#		gnome-themes>=2.11.91:${PORTSDIR}/x11-themes/gnome-themes
+#.else
+#RUN_DEPENDS+=	clearlooks>=0.6.0:${PORTSDIR}/x11-themes/clearlooks \
+#		clearlooks-metacity>=0.6:${PORTSDIR}/x11-themes/clearlooks-metacity
+#.endif
 
-pre-everything::
-.if !defined(WITHOUT_GTKENGINES) && !defined(WITH_GTKENGINES)
-	@${ECHO_MSG} "You can disable gtk-engines support (clearlooks)"
-	@${ECHO_MSG} "and use x11-themes/clearlooks for the clearlooks"
-	@${ECHO_MSG} "engine by defining"
-	@${ECHO_MSG} "WITHOUT_GTKENGINES=yes"
-.endif
+#pre-everything::
+#.if !defined(WITHOUT_GTKENGINES) && !defined(WITH_GTKENGINES)
+#	@${ECHO_MSG} "You can disable gtk-engines support (clearlooks)"
+#	@${ECHO_MSG} "and use x11-themes/clearlooks for the clearlooks"
+#	@${ECHO_MSG} "engine by defining"
+#	@${ECHO_MSG} "WITHOUT_GTKENGINES=yes"
+#.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/${THEME_DIR}/gtk-2.0
