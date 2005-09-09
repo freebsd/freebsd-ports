@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.cs.princeton.edu/~diego/professional/luasocket/old/luasocket-1.4/
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPv4 Sockets support for the Lua language
 
 BUILD_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua4
