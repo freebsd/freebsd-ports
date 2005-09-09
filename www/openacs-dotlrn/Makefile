@@ -15,6 +15,7 @@ COMMENT=	Modular web application platform for high traffic elearning community
 OPENACS_USER=	dotlrn0
 
 DESCR=		${.CURDIR}/pkg-descr
+MD5_FILE=	${.CURDIR}/distinfo
 
 MASTERDIR=	${.CURDIR}/../openacs
 
