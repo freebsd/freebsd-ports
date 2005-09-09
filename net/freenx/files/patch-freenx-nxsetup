@@ -1,40 +1,54 @@
---- freenx-0.4.1/nxsetup.orig	Tue Feb 15 19:00:31 2005
-+++ freenx-0.4.1/nxsetup	Mon Mar 28 15:53:10 2005
+--- freenx-0.4.4/nxsetup.orig	Tue Aug  2 13:29:59 2005
++++ freenx-0.4.4/nxsetup	Tue Aug  9 17:04:45 2005
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/local/bin/bash
  
  # Coypright (c) 2004-2005 by Fabian Franz <freenx@fabian-franz.de>.
  #                    2005 by Jon Severinsson <jonno@users.berlios.de>.
-@@ -97,7 +97,9 @@
+@@ -96,7 +96,7 @@
+ 	then
+ 		egrep "^nx:" /etc/passwd >/dev/null
+ 	else
+-		getent passwd nx >/dev/null
++		cat /etc/passwd |egrep -q "^nx:" >/dev/null
+ 	fi
+ }	
+ 
+@@ -113,6 +113,16 @@
+ 		USERADD_OPTIONS="--system --home $NX_HOME_DIR --shell $PATH_BIN/nxserver"
+ 		[ -n "$SETUP_GID" ] && USERADD_OPTIONS="--gid $SETUP_GID $USERADD_OPTIONS"
+ 		adduser $USERADD_OPTIONS nx
++
++	# FreeBSD?
++	elif [ "$(uname)" = "FreeBSD" ]
++	then
++		USERADD_OPTIONS="-d $NX_HOME_DIR -s $PATH_BIN/nxserver"
++		[ -n $SETUP_UID ] && USERADD_OPTIONS="-u $SETUP_UID $USERADD_OPTIONS"
++		[ -n $SETUP_GID ] && USERADD_OPTIONS="-g $SETUP_GID $USERADD_OPTIONS"
++		[ -n $SETUP_GID ] && pw groupadd nx -g $SETUP_GID
++		pw useradd nx $USERADD_OPTIONS
++
+ 	# no, its a "normal" useradd
+ 	else
+ 		USERADD_OPTIONS="-d $NX_HOME_DIR -s $PATH_BIN/nxserver"
+@@ -143,7 +153,9 @@
  {
  	set -e
  	
--	if [ "$(pidof sshd)" = "" ]
-+	#if [ "$(pidof sshd)" = "" ]
-+	MAYBE_PID=`cat /var/run/sshd.pid`
+-	if [ "$(pidof sshd 2>/dev/null)" = "" ]
++	MAYBE_PID=`cat /var/run/sshd.pid 2>/dev/null`
 +	if test -z "$MAYBE_PID"
++
  	then 
  		echo -n "Starting ssh service ..."
  		# Generate Host keys if they are not available, yet
-@@ -129,10 +131,12 @@
- 	chmod 600 "$NX_LOGFILE"
- 	echo "done"
- 	
--	if ! { getent passwd | egrep -q "^nx:"; }
-+	#if ! { getent passwd | egrep -q "^nx:"; }
-+	if ! { cat /etc/passwd |egrep -q "^nx:"; }
- 	then
- 		echo -n "Setting up user nx ..."
--		useradd_nx
-+		#useradd_nx
-+		pw useradd nx -d $NX_HOME_DIR -s $PATH_BIN/nxserver
- 		echo "done"
+@@ -248,13 +260,12 @@
+ 		cat /etc/ssh/ssh_host_rsa_key.pub >> $NX_HOME_DIR/.ssh/known_hosts
  	fi
  	
-@@ -173,19 +177,22 @@
- 	echo "done"
- 	
+-	echo "done"
+-	
  	echo -n "Setting up permissions ..."
 -	chown -R nx:root $NX_SESS_DIR
 -	chown -R nx:root $NX_ETC_DIR
@@ -48,16 +62,12 @@
  	echo "done"
  }
  
- uninstall_nx() 
- {
--	if { getent passwd | egrep -q "^nx:"; }
-+	#if { getent passwd | egrep -q "^nx:"; }
-+	if { cat /etc/passwd | egrep -q "^nx:"; }
- 	then
- 		echo -n "Removing user nx ..."
--		userdel nx
-+		#userdel nx
-+		pw userdel nx
+@@ -268,7 +279,7 @@
+ 		then
+ 			luserdel nx
+ 		else
+-			userdel nx
++			pw userdel nx
+ 		fi
+ 			
  		echo "done"
- 	fi
- 	

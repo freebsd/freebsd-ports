@@ -1,5 +1,5 @@
---- freenx-0.4.1/nxkeygen.orig	Sun Feb 13 20:52:08 2005
-+++ freenx-0.4.1/nxkeygen	Mon Mar 28 15:26:50 2005
+--- freenx-0.4.4/nxkeygen.orig	Sun Feb 13 20:52:08 2005
++++ freenx-0.4.4/nxkeygen	Mon Mar 28 15:26:50 2005
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/local/bin/bash

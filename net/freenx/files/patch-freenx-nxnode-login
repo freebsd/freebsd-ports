@@ -1,5 +1,5 @@
---- freenx-0.4.1/nxnode-login.orig	Tue Jun 28 12:15:43 2005
-+++ freenx-0.4.1/nxnode-login	Tue Jun 28 11:53:16 2005
+--- freenx-0.4.4/nxnode-login.orig	Tue Jun 28 12:15:43 2005
++++ freenx-0.4.4/nxnode-login	Tue Jun 28 11:53:16 2005
 @@ -1,4 +1,4 @@
 -#!/usr/bin/expect
 +#!/usr/local/bin/expect
