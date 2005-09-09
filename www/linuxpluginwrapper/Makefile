@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linuxpluginwrapper
-PORTVERSION=	20050613
+PORTVERSION=	20050909
 PORTREVISION=	0
 CATEGORIES=	www linux emulators
 MASTER_SITES=	http://people.FreeBSD.org/~nork/distfiles/ \
@@ -21,9 +21,8 @@ COMMENT=	A wrapper allowing use of linux-plugins with native applications
 .if		!defined(WITHOUT_PLUGINS)
 RUN_DEPENDS=	${X11BASE}/lib/linux-flashplugin6/libflashplayer.so:${PORTSDIR}/www/linux-flashplugin6
 RUN_DEPENDS+=	${X11BASE}/lib/linux-mozilla/plugins/nphelix.so:${PORTSDIR}/multimedia/linux-realplayer
-.if		${OSVERSION} >= 500000
 RUN_DEPENDS+=	${LINUXBASE}/usr/local/Adobe/Acrobat7.0/Browser/intellinux/nppdf.so:${PORTSDIR}/print/acroread7
-.else
+.if		${OSVERSION} < 500000
 USE_MOTIF=	yes
 .endif
 .endif
@@ -40,7 +39,11 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST=		${WRKDIR}/pkg-plist
 .endif
 
-.if		${OSVERSION} >= 503001
+.if		${OSVERSION} >= 700001
+LIBMAPCONF=	${EXAMPLESDIR}/libmap.conf-FreeBSD6
+.elif		${OSVERSION} >= 600033 && ${OSVERSION} < 700000
+LIBMAPCONF=	${EXAMPLESDIR}/libmap.conf-FreeBSD6
+.elif		${OSVERSION} >= 503001
 LIBMAPCONF=	${EXAMPLESDIR}/libmap.conf-FreeBSD5-stable
 .elif		${OSVERSION} >= 500000
 LIBMAPCONF=	${EXAMPLESDIR}/libmap.conf-FreeBSD5-current
@@ -76,12 +79,6 @@ pre-everything::
 .endif
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} \
-		-e "s:/usr/local/lib/linux-:${X11BASE}/lib/linux-:g" \
-		-e "s:/usr/local/Acrobat5:${X11BASE}/Acrobat5:g" \
-		${WRKSRC}/misc/libmap*
-
 post-build:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},' \
 		-e 's,%%LOCALBASE%%,${LOCALBASE},' \
@@ -91,19 +88,13 @@ post-build:
 		< ${.CURDIR}/pkg-message > ${PKGMESSAGE}
 .if		defined(WITHOUT_PLUGINS)
 	@${SED} -e "/exec/d" ${.CURDIR}/pkg-plist > ${PLIST}
-.else
-.if		${OSVERSION} < 500000
-	@${SED} -e "/nppdf\.so/d" ${.CURDIR}/pkg-plist > ${PLIST}
-.endif
 .endif
 
 pre-install:
 	@${MKDIR} ${X11BASE}/lib/browser_plugins
 .if		!defined(WITHOUT_PLUGINS)
-.if		${OSVERSION} >= 500000
 	@${LN} -sf ${LINUXBASE}/usr/local/Adobe/Acrobat7.0/Browser/intellinux/nppdf.so \
 		${X11BASE}/lib/browser_plugins/
-.endif
 	@${LN} -sf ${X11BASE}/lib/linux-flashplugin6/flashplayer.xpt \
 		${X11BASE}/lib/browser_plugins/
 	@${LN} -sf ${X11BASE}/lib/linux-flashplugin6/libflashplayer.so \

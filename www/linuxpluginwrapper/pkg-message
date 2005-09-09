@@ -1,19 +1,18 @@
 ================================================================
-** PLEASE CHANGE FOLLOWING LINES FROM /etc/libmap.conf **
-libpthread.so.0			liblthread.so.3
-	to
-libpthread.so.0			pluginwrapper/flash6.so
-
 ** PLEASE NOTICE TO USER USING FROM 5.0 TO 5.3-BETA6 **
 libm.so was version-bumped on 5.3-BETA7. Please change libm.so.2
 to libm.so.3.
 
+** PLEASE NOTICE TO USER USING FROM 6.0-BETA3 or AFTER **
+shared libraries were version-bumped on 6.0-BETA3. Please overhaul
+you libmap.conf.
+
 ** PLEASE NOTE Macromedia Flash7 SUPPORT IS ALPHA VERSION. **
 If you find any problem,  please send me report(s) with debug
-information like 'make -DDEBUG install' or patch(es).
+information like 'make -DDEBUG install' or patch(es). :-)
 
-Firefox has a double free problem wih Flash7.  So I don't
-support it.  Please don't send me a report about firefox.
+Flash7 support is unstable.  I know well that there are offten
+crash or freeze with flash7.  So don't send me a such report.
 Of course, I always welcome to recieve fixed problems report.
 
 Please get and apply a dlsym(3) hook patch.
