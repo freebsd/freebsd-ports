@@ -29,8 +29,6 @@ LIB_DEPENDS+=	opencdk.8:${PORTSDIR}/security/opencdk
 LIB_DEPENDS+=	tasn1.2:${PORTSDIR}/security/libtasn1
 .endif
 
-CONFLICTS=	gnutls-devel-[0-9]*
-
 USE_GPG?=	yes
 SIG_SUFFIX=	.sig
 USE_ICONV=	yes
