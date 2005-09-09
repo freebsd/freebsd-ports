@@ -1,5 +1,5 @@
 bin/wmbutton
-share/examples/wmbutton/wmbutton
-share/doc/wmbutton/README
-@dirrm share/examples/wmbutton
-@dirrm share/doc/wmbutton
+%%EXAMPLESDIR%%/dot.wmbutton
+%%PORTDOCS%%%%DOCSDIR%%/README
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%
