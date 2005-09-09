@@ -1999,6 +1999,7 @@ enscript-a4	ports/print/enscript-a4
 enscript-letter	ports/print/enscript-letter
 enscript-letterdj	ports/print/enscript-letterdj
 enscriptfonts	ports/print/enscriptfonts
+ensemblist	ports/games/ensemblist
 enteruser	ports/sysutils/enteruser
 entice		ports/graphics/entice
 entity		ports/devel/entity
