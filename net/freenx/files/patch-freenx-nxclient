@@ -1,5 +1,5 @@
---- freenx-0.4.1/nxclient.orig	Fri Sep 10 10:04:51 2004
-+++ freenx-0.4.1/nxclient	Fri Sep 17 12:24:22 2004
+--- freenx-0.4.4/nxclient.orig	Fri Sep 10 10:04:51 2004
++++ freenx-0.4.4/nxclient	Fri Sep 17 12:24:22 2004
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/local/bin/bash

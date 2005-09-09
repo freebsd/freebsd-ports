@@ -1,27 +1,8 @@
---- freenx-0.4.1/nxnode.orig	Thu Jun 23 11:42:52 2005
-+++ freenx-0.4.1/nxnode	Tue Jun 28 09:38:40 2005
+--- freenx-0.4.4/nxnode.orig	Tue Aug  2 11:20:18 2005
++++ freenx-0.4.4/nxnode	Tue Aug  9 15:08:43 2005
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/local/bin/bash
  
  # Free implementation of nxserver components
  #
-@@ -42,7 +42,7 @@
- # Reread boot command line; echo last parameter's argument or return false.
- getparam(){
- stringinstring "&$1=" "$CMDLINE" || return 1
--echo "$CMDLINE" | awk "/^$1=/"' { VAL=$2 } END { print VAL }' FS="=" RS="(&|\n)"
-+echo "$CMDLINE" |  tr "&" "\n" | egrep "^"$1"=" | awk -F= '{ VAL=$2 } END { print VAL }'
- return 0
- }
- 
-@@ -621,7 +621,7 @@
- 	# TODO: imagecompressionmethod ...
- 	[ "$imagecompressionmethod" = "0" ] && PACK="pack=nopack,"
- 	
--	proxy_cookie=$(echo $[$RANDOM*$RANDOM] | md5sum | cut -d" " -f1)
-+	proxy_cookie=$(echo $[$RANDOM*$RANDOM] | md5 | cut -d" " -f1)
- 
- 	# write options file
- 	[ -z "$samba" ] && samba=0
- 
