@@ -1,20 +1,9 @@
---- audio_conversion.c.orig	Wed Jun 15 18:56:46 2005
-+++ audio_conversion.c	Fri Jul 29 01:19:15 2005
-@@ -27,7 +27,8 @@
- #define __USE_ISOC99    1
- 
- #include <assert.h>
--#include <stdint.h>
-+#include <inttypes.h>
-+#include <limits.h>
- #include <stdlib.h>
- #include <math.h>
- #include <string.h>
-@@ -43,6 +44,32 @@
- #include "main.h"
+--- audio_conversion.c.orig	Fri Jul 29 10:46:36 2005
++++ audio_conversion.c	Fri Sep  9 12:50:22 2005
+@@ -52,6 +52,32 @@
  #include "log.h"
  #include "options.h"
-+
+ 
 +/* FreeBSD 4.x lacks these */
 +
 +#ifndef INT8_MIN
@@ -40,6 +29,7 @@
 +#ifndef INT32_MAX
 +#define INT32_MAX	INT_MAX
 +#endif
- 
++
  /* Byte order conversion */
  /* TODO: use functions from byteswap.h if available */
+ #define SWAP_INT16(l) ((int16_t) \
