@@ -11,7 +11,7 @@ MASTER_SITES=	 	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=		openhbci-0.9.17-2
 
-MAINTAINER=		heiner@bilch.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		HBCI is a bank-independent homebanking standard
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-0.9.17
