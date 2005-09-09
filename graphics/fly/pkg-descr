@@ -1,4 +1,5 @@
-fly is a tool to interpret simple drawing commands and generate
-an GIF as the result.
+fly is a C program that creates PNG, JPEG or GIF images on the fly from
+CGI and other programs. Using GD graphics library for fast image creation,
+it provides a command-file interface for creating and modifying images.
 
-WWW:	http://www.unimelb.edu.au/fly/fly.html
+WWW:	http://martin.gleeson.com/fly/

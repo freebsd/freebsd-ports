@@ -6,20 +6,30 @@
 #
 
 PORTNAME=	fly
-PORTVERSION=	1.6.5
+PORTVERSION=	2.0.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://members.optushome.com.au/martingleeson/fly/dist/
+MASTER_SITES=	http://members.optushome.com.au/martingleeson/%SUBDIR%/ \
+		http://martin.gleeson.com/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTNAME}/dist
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple drawing language to generate GIFs on the fly
 
-#this doesn't matter.. the program builds its own libgd.a.
-#BUILD_DEPENDS=	${PREFIX}/lib/libgd\.a #can't use ports' gd..
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
-MAKE_ENV=	PREFIX="${PREFIX}"
-PLIST_FILES=	bin/fly
+do-build:
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${LOCALBASE}/include fly.c -o fly \
+		-L${LOCALBASE}/lib -lgd
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fly ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${FIND} . | \
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${FIND} . | \
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
