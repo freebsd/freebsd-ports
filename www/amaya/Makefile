@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amaya
-PORTVERSION=	8.5
+PORTVERSION=	9.2.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.w3.org/pub/amaya/ \
@@ -18,80 +18,64 @@ MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.ntua.gr/pub/www/W3C/amaya/ \
 		ftp://nic.funet.fi/index/WWW/W3/amaya/ \
 		http://www.nic.funet.fi/index/WWW/W3/amaya/
-DISTNAME=	${PORTNAME}-src-${PORTVERSION}
+DISTNAME=	${PORTNAME}-fullsrc-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	amaya
 
 MAINTAINER=	adam-ports@blacktabby.org
 COMMENT=	The W3C's testbed web editor/browser
 
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png
+
 WRKSRC=		${WRKDIR}/Amaya/obj
 
-USE_GNOME=	gnometarget imlib
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
+USE_GNOME=	gtk12 imlib
+USE_ICONV=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../configure
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LIBS="${LDFLAGS}"
+CONFIGURE_ARGS=		--with-gtk
 
-CFLAGS+=	-fpermissive
+OPTIONS=	BOOKMARKS "Enable bookmark support (experimental)" off \
+		OPENGL "Enable OpenGL support" off \
+		TEMPLATES "Enable template support (experimental)" off
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
-
-DICT?=		none
-
-.if ${DICT} != "none"
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-.if ${DICT} == "all"
-DISTFILES+=	Dutch.tgz
-DISTFILES+=	English.tgz
-DISTFILES+=	French.tgz
-DISTFILES+=	German.tgz
-DISTFILES+=	Italian.tgz
-DISTFILES+=	Spanish.tgz
-DISTFILES+=	Swedish.tgz
-.else
-DISTFILES+=	${DICT:S/$/.tgz/g}
-.endif
-.endif
+REALVERSION=	8.8.1
+DATADIR=	${PREFIX}/Amaya-${REALVERSION}
+PLIST_SUB=	REALVERSION="${REALVERSION}"
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
+.if defined(WITH_BOOKMARKS)
+CONFIGURE_ARGS+=	--enable-bookmarks
+.else
+CONFIGURE_ARGS+=	--disable-bookmarks
 .endif
 
-.if ${X_WINDOW_SYSTEM:L} != xfree86-3 && defined(WITH_OPENGL)
+.if defined(WITH_OPENGL)
 LIB_DEPENDS+=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 USE_GL=		yes
 CONFIGURE_ARGS+=	--with-gl
-CFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	-lcompat ${PTHREAD_LIBS}
+CONFIGURE_ENV+=	LIBS="-lcompat"
+PLIST_SUB+=	GUI="gl"
+.else
+PLIST_SUB+=	GUI="gtk"
 .endif
 
-pre-everything::
-.if ${DICT} == "none"
-	@${ECHO_MSG} Several spellchecking dictionaries are available.  To use
-	@${ECHO_MSG} one of them, define DICT to be the appropriate language.
+.if defined(WITH_TEMPLATES)
+CONFIGURE_ARGS+=	--enable-templates
+.else
+CONFIGURE_ARGS+=	--disable-templates
 .endif
 
 post-extract:
 	@${MKDIR} ${WRKSRC}
 
 post-patch:
-	@${GREP} -lR "<malloc\.h>" ${WRKDIR} | ${XARGS} ${REINPLACE_CMD} -e \
-		's|<malloc\.h>|<stdlib.h>|g'
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/../amaya/COPYRIGHT.html ${PREFIX}/Amaya/amaya
-.if ${DICT} != "none"
-	${INSTALL_DATA} ${WRKDIR}/*.dic ${PREFIX}/Amaya/dicopar
-	${MV} ${TMPPLIST} ${TMPPLIST}.new
-	cd ${WRKDIR} && ${LS} -1 *.dic | \
-		${SED} -e 's|^|Amaya/dicopar/|' > ${TMPPLIST}
-	${CAT} ${TMPPLIST}.new >> ${TMPPLIST}
-	${RM} ${TMPPLIST}.new
-.endif
+	@${GREP} -lR "<malloc\.h>" ${WRKDIR} | \
+		${XARGS} ${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g'
 
 .include <bsd.port.post.mk>
