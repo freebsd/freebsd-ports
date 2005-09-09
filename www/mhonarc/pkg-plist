@@ -294,6 +294,7 @@ share/MHonArc/readmail.pl
 %%PORTDOCS%%share/doc/MHonArc/resources/mimedecoders.html
 %%PORTDOCS%%share/doc/MHonArc/resources/mimeexcs.html
 %%PORTDOCS%%share/doc/MHonArc/resources/mimefilters.html
+%%PORTDOCS%%share/doc/MHonArc/resources/mimeincs.html
 %%PORTDOCS%%share/doc/MHonArc/resources/modifybodyaddresses.html
 %%PORTDOCS%%share/doc/MHonArc/resources/modtime.html
 %%PORTDOCS%%share/doc/MHonArc/resources/months.html
@@ -328,6 +329,7 @@ share/MHonArc/readmail.pl
 %%PORTDOCS%%share/doc/MHonArc/resources/otherindexes.html
 %%PORTDOCS%%share/doc/MHonArc/resources/outdir.html
 %%PORTDOCS%%share/doc/MHonArc/resources/perlinc.html
+%%PORTDOCS%%share/doc/MHonArc/resources/printxcomments.html
 %%PORTDOCS%%share/doc/MHonArc/resources/posixstrftime.html
 %%PORTDOCS%%share/doc/MHonArc/resources/prevbutton.html
 %%PORTDOCS%%share/doc/MHonArc/resources/prevbuttonia.html
