@@ -17,7 +17,7 @@ POST-DEINSTALL)
 		kill $pid
 	fi
 	echo " If no other openACS/.LRN instance needs it, you may want to "
-	echo " delete %%AOLSERVERBASE%% and %%VIRTUALBASE%% manually, "
+	echo " delete %%VIRTUALBASE%%/aolserver and %%VIRTUALBASE%% manually, "
 	echo " and possibly the %%OPENACS_USER%% users and database. "
 	;;
 esac

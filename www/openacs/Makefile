@@ -32,11 +32,12 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 .if defined(WITH_POSTCONFIG)
-POSTCONFIG=	${WRKDIR}/post-config
+POSTCONFIG=	true
+PKGNAMESUFFIX= -withconfig
 .endif
 
 SUB_FILES=	pkg-install pkg-message pkg-deinstall post-config
-SUB_LIST+=	RCCONF=${RCCONF} \
+SUB_LIST+=	RCCONF=${RCCONF} POSTCONFIG=${POSTCONFIG} \
 		OPENACSBASE=${OPENACSBASE} OPENACS_GROUP=${OPENACS_GROUP} \
 		OPENACS_USER=${OPENACS_USER} DB=${DB} PGDATA=${PGDATA} \
 		PG_USER=${PG_USER} PGBASE=${PGBASE} \
@@ -82,14 +83,10 @@ do-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${MKDIR} ${OPENACSBASE}
 	@${MKDIR} ${VIRTUALBASE}
-	@ ${MKDIR} ${DTSERVICEBASE}
+	@${MKDIR} ${DTSERVICEBASE}
 
 	@${ECHO_CMD} "Installing files"
-	@if [ ! -d ${OPENACSBASE}/${OPENACS_USER} ] ; then \
-	   ${CP} -R ${WRKSRC} ${OPENACSBASE}/${OPENACS_USER}; else \
-	   ${RM} -Rf ${OPENACSBASE}/${OPENACS_USER}.old && \
-	   ${MV} ${OPENACSBASE}/${OPENACS_USER} ${OPENACSBASE}/${OPENACS_USER}.old && \
-	   ${CP} -R ${WRKSRC} ${OPENACSBASE}/${OPENACS_USER}; fi
+	@${CP} -R ${WRKSRC} ${OPENACSBASE}/${OPENACS_USER}
 
 	@${TEST} -e ${VIRTUALBASE}/aolserver || ${LN} -s ${OPENACSBASE} ${VIRTUALBASE}/aolserver
 	@${TEST} -L ${VIRTUALBASE}/aolserver || ${ECHO_MSG} "${VIRTUALBASE}/aolserver is no symbolic link"
@@ -132,9 +129,6 @@ post-install:
 	@${ECHO_CMD} "@unexec rmdir ${DTSERVICEBASE} 2>&1 > /dev/null || true" >> ${TMPPLIST}
 
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.if defined(WITH_POSTCONFIG)
-	@${SH} ${POSTCONFIG} ${PKGNAME} POST-INSTALL
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -2,10 +2,11 @@
 
 Congratulations! You have just installed OpenACS/.LRN
 
-If you didn't  make install WITH_POSTCONFIG=yes
-to allow post-install configurations or run now:
-sh ${EXAMPLESDIR}/post-config.sh XX POST-INSTALL
-Make sure you stop Aolserver and Postgresql 
+If you didn't do make install WITH_POSTCONFIG=yes,
+inspect post-config.sh now and/or run:
+sh %%EXAMPLESDIR%%/post-config.sh XX POST-INSTALL
+If you can, stop Aolserver and Postgresql first
+(killall -9 nsd ; %%PREFIX%%/etc/rc.d/010.pgsql.sh stop) 
 before post-install configuration starts.
 
 Then use your browser to view the welcome page (http://<your-ip>:8000)
@@ -43,17 +44,17 @@ twice!
 
 If you want to remove openacs, type "make deinstall" or use pkg_delete
 (pkg_info).
-However, users and database are not removed. At (re)install an existing
-datadirectory with the same name is moved to <name>.old
+However, users and database are not removed.
 
 We use bash as shell in openACS. We didn't change the shells of
 current users like root and pgsql, yet. If you want, do:
 chsh -s %%LOCALBASE%%/bin/bash USERNAME 
 and change its profile by copying the openACS entries from
 /usr/share/skel/dot.profile to  ~/.profile. 
-Than login/out or type ". .profile".
+Then login/out or type ". .profile".
 
-Remember: THIS MESSAGE is in PORTSDIR/www/openacs/pkg-message.
+Remember: THIS MESSAGE is in PORTSDIR/www/openacs/
+files/pkg-message.in or work/pkg-message
 
 -Aldert
 aldert@nooitgedagt.net
