@@ -22,7 +22,13 @@ USE_GMAKE=	yes
 ALL_TARGET=	default
 USE_REINPLACE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not build on sparc64"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|||' ${WRKSRC}/fp_montgomery_reduce.c
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
