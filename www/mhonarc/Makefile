@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mhonarc
-PORTVERSION=	2.6.11
+PORTVERSION=	2.6.15
 CATEGORIES=	www mail
-MASTER_SITES=	http://www.mhonarc.org/tar/ \
+MASTER_SITES=	http://www.mhonarc.org/release/MHonArc/tar/ \
 		http://www.oac.uci.edu/indiv/ehood/tar/ \
 		http://mirror.ncsa.uiuc.edu/mhonarc.org/\
 		ftp://hhobel.phl.univie.ac.at/MHonArc/ \
