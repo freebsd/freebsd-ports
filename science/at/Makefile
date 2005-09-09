@@ -11,7 +11,7 @@ MASTER_SITES=		http://oalib.saic.com/Modes/AcousticsToolbox/
 DISTNAME=		at_Unix
 EXTRACT_SUFX=		.tar.Z
 
-MAINTAINER=		heiner@bilch.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		The Acoustic ToolBox includes four acoustic models
 
 WRKSRC=                 ${WRKDIR}/at
