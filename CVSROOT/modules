@@ -659,6 +659,7 @@ beacon		ports/net/beacon
 beacon-server	ports/net/beacon-server
 beagle		ports/devel/beagle
 beast		ports/audio/beast
+beastie		ports/x11-themes/beastie
 beav		ports/editors/beav
 beaver		ports/editors/beaver
 bebocd		ports/audio/bebocd
