@@ -105,7 +105,6 @@ lib/X11/xcircuit/xcstartup.tcl
 %%PORTDOCS%%%%EXAMPLESDIR%%/diffamp_test3.ps
 %%PORTDOCS%%%%EXAMPLESDIR%%/envelope.ps
 %%PORTDOCS%%%%EXAMPLESDIR%%/fourttest.ps
-%%PORTDOCS%%%%EXAMPLESDIR%%/logic.fspc
 %%PORTDOCS%%%%EXAMPLESDIR%%/logic.sim
 %%PORTDOCS%%%%EXAMPLESDIR%%/logic8.ps
 %%PORTDOCS%%%%EXAMPLESDIR%%/prelude.ps

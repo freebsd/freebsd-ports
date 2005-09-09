@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xcircuit
-PORTVERSION=	3.3.19
+PORTVERSION=	3.3.33
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://xcircuit.ece.jhu.edu/archive/
@@ -14,7 +14,8 @@ MASTER_SITES=	http://xcircuit.ece.jhu.edu/archive/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 drawing program [especially for circuit schematics]
 
-LIB_DEPENDS=	tk84:${PORTSDIR}/x11-toolkits/tk84
+LIB_DEPENDS=	tk84:${PORTSDIR}/x11-toolkits/tk84 \
+		tcl84:${PORTSDIR}/lang/tcl84
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
