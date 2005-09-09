@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libwmf
-PORTVERSION=	0.2.8.3
+PORTVERSION=	0.2.8.4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wvware
@@ -17,7 +17,7 @@ COMMENT=	Tools and library for converting Microsoft WMF (windows metafile)
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2     # XXX
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
-		freetype.9:${PORTSDIR}/print/freetype2 \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_GNOME=	gnometarget libxml2
 USE_REINPLACE=	yes
