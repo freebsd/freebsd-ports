@@ -53,13 +53,34 @@ bin/viewer.py
 %%PYTHON_SITELIBDIR%%/cgkit/Interfaces/iworldobject.py
 %%PYTHON_SITELIBDIR%%/cgkit/Interfaces/iworldobject.pyc
 %%PYTHON_SITELIBDIR%%/cgkit/Interfaces/iworldobject.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/_Image.py
+%%PYTHON_SITELIBDIR%%/cgkit/_Image.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/_Image.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/_ImageDraw.py
+%%PYTHON_SITELIBDIR%%/cgkit/_ImageDraw.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/_ImageDraw.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/_OpenGL/GL.py
+%%PYTHON_SITELIBDIR%%/cgkit/_OpenGL/GL.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/_OpenGL/GL.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/_OpenGL/GLU.py
+%%PYTHON_SITELIBDIR%%/cgkit/_OpenGL/GLU.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/_OpenGL/GLU.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/_OpenGL/GLUT.py
+%%PYTHON_SITELIBDIR%%/cgkit/_OpenGL/GLUT.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/_OpenGL/GLUT.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/_OpenGL/__init__.py
+%%PYTHON_SITELIBDIR%%/cgkit/_OpenGL/__init__.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/_OpenGL/__init__.pyo
 %%PYTHON_SITELIBDIR%%/cgkit/__init__.py
 %%PYTHON_SITELIBDIR%%/cgkit/__init__.pyc
 %%PYTHON_SITELIBDIR%%/cgkit/__init__.pyo
-%%PYTHON_SITELIBDIR%%/cgkit/_core.so
+%%CGKIT_LIGHT%%%%PYTHON_SITELIBDIR%%/cgkit/_core.so
 %%PYTHON_SITELIBDIR%%/cgkit/_slparser.py
 %%PYTHON_SITELIBDIR%%/cgkit/_slparser.pyc
 %%PYTHON_SITELIBDIR%%/cgkit/_slparser.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/all/__init__.py
+%%PYTHON_SITELIBDIR%%/cgkit/all/__init__.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/all/__init__.pyo
 %%PYTHON_SITELIBDIR%%/cgkit/application.py
 %%PYTHON_SITELIBDIR%%/cgkit/application.pyc
 %%PYTHON_SITELIBDIR%%/cgkit/application.pyo
@@ -72,6 +93,12 @@ bin/viewer.py
 %%PYTHON_SITELIBDIR%%/cgkit/autocam.py
 %%PYTHON_SITELIBDIR%%/cgkit/autocam.pyc
 %%PYTHON_SITELIBDIR%%/cgkit/autocam.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/beziercurve.py
+%%PYTHON_SITELIBDIR%%/cgkit/beziercurve.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/beziercurve.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/beziercurvegeom.py
+%%PYTHON_SITELIBDIR%%/cgkit/beziercurvegeom.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/beziercurvegeom.pyo
 %%PYTHON_SITELIBDIR%%/cgkit/boundingbox.py
 %%PYTHON_SITELIBDIR%%/cgkit/boundingbox.pyc
 %%PYTHON_SITELIBDIR%%/cgkit/boundingbox.pyo
@@ -195,6 +222,30 @@ bin/viewer.py
 %%PYTHON_SITELIBDIR%%/cgkit/keydefs.py
 %%PYTHON_SITELIBDIR%%/cgkit/keydefs.pyc
 %%PYTHON_SITELIBDIR%%/cgkit/keydefs.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/light/__init__.py
+%%PYTHON_SITELIBDIR%%/cgkit/light/__init__.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/light/__init__.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/light/_core.py
+%%PYTHON_SITELIBDIR%%/cgkit/light/_core.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/light/_core.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/light/cgtypes/__init__.py
+%%PYTHON_SITELIBDIR%%/cgkit/light/cgtypes/__init__.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/light/cgtypes/__init__.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/light/cgtypes/mat3.py
+%%PYTHON_SITELIBDIR%%/cgkit/light/cgtypes/mat3.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/light/cgtypes/mat3.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/light/cgtypes/mat4.py
+%%PYTHON_SITELIBDIR%%/cgkit/light/cgtypes/mat4.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/light/cgtypes/mat4.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/light/cgtypes/quat.py
+%%PYTHON_SITELIBDIR%%/cgkit/light/cgtypes/quat.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/light/cgtypes/quat.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/light/cgtypes/vec3.py
+%%PYTHON_SITELIBDIR%%/cgkit/light/cgtypes/vec3.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/light/cgtypes/vec3.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/light/cgtypes/vec4.py
+%%PYTHON_SITELIBDIR%%/cgkit/light/cgtypes/vec4.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/light/cgtypes/vec4.pyo
 %%PYTHON_SITELIBDIR%%/cgkit/lightsource.py
 %%PYTHON_SITELIBDIR%%/cgkit/lightsource.pyc
 %%PYTHON_SITELIBDIR%%/cgkit/lightsource.pyo
@@ -213,6 +264,9 @@ bin/viewer.py
 %%PYTHON_SITELIBDIR%%/cgkit/mayaascii.py
 %%PYTHON_SITELIBDIR%%/cgkit/mayaascii.pyc
 %%PYTHON_SITELIBDIR%%/cgkit/mayaascii.pyo
+%%PYTHON_SITELIBDIR%%/cgkit/motionpath.py
+%%PYTHON_SITELIBDIR%%/cgkit/motionpath.pyc
+%%PYTHON_SITELIBDIR%%/cgkit/motionpath.pyo
 %%PYTHON_SITELIBDIR%%/cgkit/noise.py
 %%PYTHON_SITELIBDIR%%/cgkit/noise.pyc
 %%PYTHON_SITELIBDIR%%/cgkit/noise.pyo
@@ -365,7 +419,11 @@ bin/viewer.py
 %%PYTHON_SITELIBDIR%%/cgkit/x3dimport.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/cgkit/GUI
 @dirrm %%PYTHON_SITELIBDIR%%/cgkit/Interfaces
+@dirrm %%PYTHON_SITELIBDIR%%/cgkit/_OpenGL
+@dirrm %%PYTHON_SITELIBDIR%%/cgkit/all
 @dirrm %%PYTHON_SITELIBDIR%%/cgkit/glove
+@dirrm %%PYTHON_SITELIBDIR%%/cgkit/light/cgtypes
+@dirrm %%PYTHON_SITELIBDIR%%/cgkit/light
 @dirrm %%PYTHON_SITELIBDIR%%/cgkit/spacedevice
 @dirrm %%PYTHON_SITELIBDIR%%/cgkit/wintab
 @dirrm %%PYTHON_SITELIBDIR%%/cgkit
