@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $NetBSD$
+# $FreeBSD$
 
 PKGNAME=$1
 STAGE=$2
@@ -14,7 +14,7 @@ POST-DEINSTALL)
 If you won't be using ${PKGNAME} any longer, you may want to remove the
 following directories and files:
 
-	/usr/local/etc/pksd.conf
+        ${PREFIX}/etc/pksd.conf
 	/var/pks
 ===========================================================================
 EOF

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $NetBSD$
+# $FreeBSD$
 
 PKGNAME=$1
 STAGE=$2
