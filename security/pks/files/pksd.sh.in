@@ -1,0 +1,63 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+#
+# PROVIDE: pksd
+# REQUIRE: DAEMON
+
+. %%RC_SUBR%%
+
+name="pksd"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/pksd"
+command_args="%%PREFIX%%/etc/${name}.conf &"
+required_files="%%PREFIX%%/etc/${name}.conf"
+start_precmd="pksd_precmd"
+start_postcmd="pksd_runqueue"
+stop_command="pksd_clean_stop"
+
+pksd_precmd()
+{
+	if [ ! -f %%PREFIX%%/etc/${name}.conf ]
+        then
+                exit 0
+        else
+                dbdir=`awk '/db_dir/ { print $2 }' < %%PREFIX%%/etc/${name}.conf`
+        fi
+        if [ ! -f ${dbdir}/keydb000 -a -x %%PREFIX%%/bin/pksclient ]
+        then
+                %%PREFIX%%/bin/pksclient ${dbdir} create
+	fi
+}
+
+pksd_runqueue()
+{
+	if [ -x %%PREFIX%%/bin/${name} -a -x %%PREFIX%%/bin/pks-queue-run.sh ]
+        then
+        	echo "Doing queue run for ${name}."
+		sleep 5
+        	%%PREFIX%%/bin/pks-queue-run.sh %%PREFIX%%/etc/${name}.conf
+	fi
+}
+
+pksd_clean_stop()
+{
+        if [ ! -f %%PREFIX%%/etc/${name}.conf ]
+        then
+                exit 0
+        else
+                socket=`awk '/socket_name/ { print $2 }' < %%PREFIX%%/etc/${name}.conf`
+        fi
+        if [ -x %%PREFIX%%/bin/${name}ctl -a -S ${socket} ]
+        then
+                echo "Shutting down ${name} socket connections using pksdctl."
+                %%PREFIX%%/bin/${name}ctl ${socket} shutdown
+        else
+                echo "couldn't stop ${name}."
+        fi
+}
+
+
+load_rc_config $name
+run_rc_command "$1"

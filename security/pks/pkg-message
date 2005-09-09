@@ -1,0 +1,11 @@
+
+
+	##################################
+
+	  To enable adding keys via the
+	  web interface please edit the
+	  configuration file at:
+
+	   /usr/local/etc/pks/pksd.conf
+
+	##################################

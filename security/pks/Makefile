@@ -6,41 +6,47 @@
 #
 
 PORTNAME=	pks
-PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTVERSION=	0.9.6
 CATEGORIES=	security www
-MASTER_SITES=	${PATCH_SITES} \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-PATCH_SITES=	http://www.mit.edu/people/marc/pks/
-PATCHFILES=	pks094-patch2 \
-		x509patch
-PATCH_DIST_STRIP=-p1
-
-MAINTAINER=	jharris@widomaker.com
+MAINTAINER=	gtodd@bellanet.org
 COMMENT=	PGP Public Key Server
 
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --datadir=${PREFIX}/share/pks --localstatedir=/var/pks \
+CONFIGURE_ARGS=	--datadir=${PREFIX}/share/pks --localstatedir=/var/pks \
 		--sysconfdir=${PREFIX}/share/examples \
-		--libdir=${LOCALBASE}/lib
-MAKE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib
+		--libdir=${LOCALBASE}/lib --with-libwrap
+CFLAGS+=	-I/usr/local/include/db2
+MAKE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib SUBDIRS=
 
-MAN5=	pksd.conf.5
-MAN8=	pks-intro.8 pksclient.8 pksd.8 pksdctl.8
+USE_RC_SUBR=	pksd.sh
+MAN5=		pksd.conf.5
+MAN8=		pks-intro.8 pksclient.8 pksd.8 pksdctl.8
+USE_REINPLACE=	yes
 
-post-build:
-	${SED} -e "s,@PREFIX@,${PREFIX},g" \
-		< ${FILESDIR}/pksd.sh > ${WRKDIR}/pksd.sh
+# remove embedded sleepycat, remove associated build commands, make
+# the build use the headers and libraries from the db2 port
+post-patch:
+	${RM} -rf ${WRKSRC}/db2-sleepycat
+	${REINPLACE_CMD} 's|SUBDIRS =.*|SUBDIRS =|; \
+			  s|LIBDB =.*|LIBDB = -L/usr/local/lib -ldb2|; \
+			  s|DBDIR =.*|DBDIR = /usr/local/include/db2|' \
+			  ${WRKSRC}/Makefile.in 
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/pksd.sh ${PREFIX}/etc/rc.d/pksd.sh
-.if !exists(${PREFIX}/etc/pksd.conf)
-	${INSTALL_DATA} ${WRKSRC}/pksd.conf ${PREFIX}/etc/pksd.conf
-.endif
+	${INSTALL_DATA} ${WRKSRC}/pksd.conf ${PREFIX}/etc/pksd.conf.sample
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/pks_help.en ${WRKSRC}/pks_help.es ${WRKSRC}/pks_help.fr \
+       	${WRKSRC}/pks_help.cz ${WRKSRC}/pks_help.de ${WRKSRC}/pks_help.ja \
+	${WRKSRC}/mail_intro ${DOCSDIR}
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
