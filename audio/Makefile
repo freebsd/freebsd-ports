@@ -489,6 +489,7 @@
     SUBDIR += vorbis-tools
     SUBDIR += vorbisgain
     SUBDIR += vsound
+    SUBDIR += wav2cdr
     SUBDIR += wavbreaker
     SUBDIR += waveplay
     SUBDIR += wavpack
