@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	nfsen
-PORTVERSION=	1.1r3
+PORTVERSION=	1.2
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://nfsen.sourceforge.net/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/rc/}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Web based frontend to nfdump netflow collector
@@ -23,14 +23,28 @@ USE_ICONV=	yes
 USE_PERL5=	yes
 USE_PHP=	session pcre
 NO_BUILD=	yes
+USE_REINPLACE=	yes
+PLIST_SUB+=	PORTNAME=${PORTNAME}
+
+.include <bsd.port.pre.mk>
+
+pre-everything::
+.if ${PERL_LEVEL} < 500600
+IGNORE=	This backage requires at least perl 5.6.0
+.endif
 
 do-configure:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/etc/nfsen-dist.conf > \
-		${WRKSRC}/etc/nfsen.conf
+	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' -e 's,%%PORTNAME%%,${PORTNAME},' \
+		${WRKSRC}/etc/nfsen-dist.conf
+	${REINPLACE_CMD} -e 's,%%PERL%%,${PERL},' ${WRKSRC}/install.pl
 
 do-install:
-	@${MKDIR} -m 755 ${PREFIX}/${PORTNAME}
-	cd ${WRKSRC} ;${PERL} ${WRKSRC}/install.pl
-	@${ECHO_MSG} "Configure your etc/nfsen.conf correctly to have necessary profiles ";
+	${MKDIR} ${PREFIX}/var/${PORTNAME}/profiles/live
+	cd ${WRKSRC} ;${PERL} ${WRKSRC}/install.pl ${WRKSRC}/etc/nfsen-dist.conf
+	@${ECHO_MSG} "Configure your ${LOCALBASE}/etc/nfsen.conf to have necessary profiles ";
+	@${ECHO_MSG} "Then run 'make reconfigure' to correctly setup profile files";
 
-.include <bsd.port.mk>
+reconfigure:
+	cd ${WRKSRC} ;${PERL} ${WRKSRC}/install.pl ${LOCALBASE}/etc/nfsen.conf
+
+.include <bsd.port.post.mk>
