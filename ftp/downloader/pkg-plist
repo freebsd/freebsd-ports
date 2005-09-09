@@ -15,12 +15,160 @@ bin/nt
 %%DATADIR%%/sounds/fail.wav
 %%DATADIR%%/sounds/finish.wav
 %%DATADIR%%/sounds/startup.wav
+%%DATADIR%%/themes/bluecurve.xml
+%%DATADIR%%/themes/bluecurve/buttons/add.png
+%%DATADIR%%/themes/bluecurve/buttons/clean.png
+%%DATADIR%%/themes/bluecurve/buttons/clear.png
+%%DATADIR%%/themes/bluecurve/buttons/conf.png
+%%DATADIR%%/themes/bluecurve/buttons/del.png
+%%DATADIR%%/themes/bluecurve/buttons/dnd.png
+%%DATADIR%%/themes/bluecurve/buttons/down.png
+%%DATADIR%%/themes/bluecurve/buttons/high.png
+%%DATADIR%%/themes/bluecurve/buttons/log.png
+%%DATADIR%%/themes/bluecurve/buttons/low.png
+%%DATADIR%%/themes/bluecurve/buttons/med.png
+%%DATADIR%%/themes/bluecurve/buttons/open.png
+%%DATADIR%%/themes/bluecurve/buttons/paste.png
+%%DATADIR%%/themes/bluecurve/buttons/prog1.png
+%%DATADIR%%/themes/bluecurve/buttons/prog2.png
+%%DATADIR%%/themes/bluecurve/buttons/prog3.png
+%%DATADIR%%/themes/bluecurve/buttons/save.png
+%%DATADIR%%/themes/bluecurve/buttons/start.png
+%%DATADIR%%/themes/bluecurve/buttons/stop.png
+%%DATADIR%%/themes/bluecurve/buttons/up.png
+%%DATADIR%%/themes/bluecurve/dnd.png
+%%DATADIR%%/themes/bluecurve/queue/bad.png
+%%DATADIR%%/themes/bluecurve/queue/comp.png
+%%DATADIR%%/themes/bluecurve/queue/fail.png
+%%DATADIR%%/themes/bluecurve/queue/part.png
+%%DATADIR%%/themes/bluecurve/queue/pause.png
+%%DATADIR%%/themes/bluecurve/queue/run.png
+%%DATADIR%%/themes/bluecurve/queue/stop.png
+%%DATADIR%%/themes/bluecurve/queue/wait.png
+%%DATADIR%%/themes/bluecurve/toolbar/down.png
+%%DATADIR%%/themes/bluecurve/toolbar/filt.png
+%%DATADIR%%/themes/bluecurve/toolbar/find.png
+%%DATADIR%%/themes/bluecurve/toolbar/log.png
+%%DATADIR%%/themes/bluecurve/toolbar/sch.png
+%%DATADIR%%/themes/bluecurve/toolbar/url.png
 %%DATADIR%%/themes/glass.xml
 %%DATADIR%%/themes/glass/dnd1.png
 %%DATADIR%%/themes/glass/dnd2.png
 %%DATADIR%%/themes/glass2.xml
 %%DATADIR%%/themes/glass2/dnd1.png
 %%DATADIR%%/themes/glass2/dnd2.png
+%%DATADIR%%/themes/gnome.xml
+%%DATADIR%%/themes/gnome/components/filters.png
+%%DATADIR%%/themes/gnome/components/log.png
+%%DATADIR%%/themes/gnome/components/queue.png
+%%DATADIR%%/themes/gnome/components/scheduler.png
+%%DATADIR%%/themes/gnome/components/search.png
+%%DATADIR%%/themes/gnome/components/url_manager.png
+%%DATADIR%%/themes/gnome/misc/down.png
+%%DATADIR%%/themes/gnome/misc/error.png
+%%DATADIR%%/themes/gnome/misc/offline.png
+%%DATADIR%%/themes/gnome/misc/okay.png
+%%DATADIR%%/themes/gnome/misc/online.png
+%%DATADIR%%/themes/gnome/misc/receive.png
+%%DATADIR%%/themes/gnome/misc/send.png
+%%DATADIR%%/themes/gnome/misc/up.png
+%%DATADIR%%/themes/gnome/misc/warning.png
+%%DATADIR%%/themes/gnome/popup/down.png
+%%DATADIR%%/themes/gnome/popup/log.png
+%%DATADIR%%/themes/gnome/popup/pause.png
+%%DATADIR%%/themes/gnome/popup/remove.png
+%%DATADIR%%/themes/gnome/popup/remove_completed.png
+%%DATADIR%%/themes/gnome/popup/start.png
+%%DATADIR%%/themes/gnome/popup/up.png
+%%DATADIR%%/themes/gnome/queue/complete.png
+%%DATADIR%%/themes/gnome/queue/failed.png
+%%DATADIR%%/themes/gnome/queue/paused.png
+%%DATADIR%%/themes/gnome/queue/run.png
+%%DATADIR%%/themes/gnome/queue/run1.png
+%%DATADIR%%/themes/gnome/queue/run2.png
+%%DATADIR%%/themes/gnome/queue/run3.png
+%%DATADIR%%/themes/gnome/queue/run4.png
+%%DATADIR%%/themes/gnome/queue/run5.png
+%%DATADIR%%/themes/gnome/queue/run6.png
+%%DATADIR%%/themes/gnome/queue/run7.png
+%%DATADIR%%/themes/gnome/queue/run8.png
+%%DATADIR%%/themes/gnome/queue/run_noresume.png
+%%DATADIR%%/themes/gnome/queue/run_noresume1.png
+%%DATADIR%%/themes/gnome/queue/run_noresume2.png
+%%DATADIR%%/themes/gnome/queue/run_noresume3.png
+%%DATADIR%%/themes/gnome/queue/run_noresume4.png
+%%DATADIR%%/themes/gnome/queue/run_noresume5.png
+%%DATADIR%%/themes/gnome/queue/run_noresume6.png
+%%DATADIR%%/themes/gnome/queue/run_noresume7.png
+%%DATADIR%%/themes/gnome/queue/run_noresume8.png
+%%DATADIR%%/themes/gnome/queue/run_part.png
+%%DATADIR%%/themes/gnome/queue/run_part1.png
+%%DATADIR%%/themes/gnome/queue/run_part2.png
+%%DATADIR%%/themes/gnome/queue/run_part3.png
+%%DATADIR%%/themes/gnome/queue/run_part4.png
+%%DATADIR%%/themes/gnome/queue/run_part5.png
+%%DATADIR%%/themes/gnome/queue/run_part6.png
+%%DATADIR%%/themes/gnome/queue/run_part7.png
+%%DATADIR%%/themes/gnome/queue/run_part8.png
+%%DATADIR%%/themes/gnome/queue/size.png
+%%DATADIR%%/themes/gnome/queue/waiting.png
+%%DATADIR%%/themes/gnome/queue/waiting_stop.png
+%%DATADIR%%/themes/gnome/toolbar/add.png
+%%DATADIR%%/themes/gnome/toolbar/add_from_clipboard.png
+%%DATADIR%%/themes/gnome/toolbar/basket.png
+%%DATADIR%%/themes/gnome/toolbar/clear.png
+%%DATADIR%%/themes/gnome/toolbar/down.png
+%%DATADIR%%/themes/gnome/toolbar/load.png
+%%DATADIR%%/themes/gnome/toolbar/log.png
+%%DATADIR%%/themes/gnome/toolbar/pause.png
+%%DATADIR%%/themes/gnome/toolbar/preferences.png
+%%DATADIR%%/themes/gnome/toolbar/progress_none.png
+%%DATADIR%%/themes/gnome/toolbar/progress_normal.png
+%%DATADIR%%/themes/gnome/toolbar/progress_segmented.png
+%%DATADIR%%/themes/gnome/toolbar/remove.png
+%%DATADIR%%/themes/gnome/toolbar/remove_completed.png
+%%DATADIR%%/themes/gnome/toolbar/save.png
+%%DATADIR%%/themes/gnome/toolbar/speed_high.png
+%%DATADIR%%/themes/gnome/toolbar/speed_low.png
+%%DATADIR%%/themes/gnome/toolbar/speed_medium.png
+%%DATADIR%%/themes/gnome/toolbar/start.png
+%%DATADIR%%/themes/gnome/toolbar/stock_media-play.png
+%%DATADIR%%/themes/gnome/toolbar/up.png
+%%DATADIR%%/themes/gnomeria.xml
+%%DATADIR%%/themes/gnomeria/buttons/add.png
+%%DATADIR%%/themes/gnomeria/buttons/clearlist.png
+%%DATADIR%%/themes/gnomeria/buttons/clipboardadd.png
+%%DATADIR%%/themes/gnomeria/buttons/continue.png
+%%DATADIR%%/themes/gnomeria/buttons/del.png
+%%DATADIR%%/themes/gnomeria/buttons/delcompleted.png
+%%DATADIR%%/themes/gnomeria/buttons/dnd.png
+%%DATADIR%%/themes/gnomeria/buttons/load.png
+%%DATADIR%%/themes/gnomeria/buttons/movedown.png
+%%DATADIR%%/themes/gnomeria/buttons/moveup.png
+%%DATADIR%%/themes/gnomeria/buttons/openlog.png
+%%DATADIR%%/themes/gnomeria/buttons/percent1.png
+%%DATADIR%%/themes/gnomeria/buttons/percent2.png
+%%DATADIR%%/themes/gnomeria/buttons/percent3.png
+%%DATADIR%%/themes/gnomeria/buttons/preferences.png
+%%DATADIR%%/themes/gnomeria/buttons/save.png
+%%DATADIR%%/themes/gnomeria/buttons/speedhigh.png
+%%DATADIR%%/themes/gnomeria/buttons/speedlow.png
+%%DATADIR%%/themes/gnomeria/buttons/speedmedium.png
+%%DATADIR%%/themes/gnomeria/buttons/stop.png
+%%DATADIR%%/themes/gnomeria/queue/complete.png
+%%DATADIR%%/themes/gnomeria/queue/failed.png
+%%DATADIR%%/themes/gnomeria/queue/paused.png
+%%DATADIR%%/themes/gnomeria/queue/run.png
+%%DATADIR%%/themes/gnomeria/queue/runbad.png
+%%DATADIR%%/themes/gnomeria/queue/runpart.png
+%%DATADIR%%/themes/gnomeria/queue/stopwait.png
+%%DATADIR%%/themes/gnomeria/queue/wait.png
+%%DATADIR%%/themes/gnomeria/toolbar/filter.png
+%%DATADIR%%/themes/gnomeria/toolbar/find.png
+%%DATADIR%%/themes/gnomeria/toolbar/klog.png
+%%DATADIR%%/themes/gnomeria/toolbar/queue.png
+%%DATADIR%%/themes/gnomeria/toolbar/sch.png
+%%DATADIR%%/themes/gnomeria/toolbar/url.png
 %%DATADIR%%/themes/nuvola32.xml
 %%DATADIR%%/themes/nuvola32/buttons/add.png
 %%DATADIR%%/themes/nuvola32/buttons/clearlist.png
@@ -81,6 +229,8 @@ bin/nt
 %%DATADIR%%/themes/old_theme/dnd1.png
 %%DATADIR%%/themes/old_theme/dnd2.png
 %%DATADIR%%/themes/old_theme/dndmini.png
+%%DATADIR%%/themes/old_theme/offline.png
+%%DATADIR%%/themes/old_theme/online.png
 %%DATADIR%%/themes/old_theme/queue/complete.png
 %%DATADIR%%/themes/old_theme/queue/failed.png
 %%DATADIR%%/themes/old_theme/queue/paused.png
@@ -91,12 +241,14 @@ bin/nt
 %%DATADIR%%/themes/old_theme/queue/wait.png
 %%DATADIR%%/themes/tooltip.xml
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.cs
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.de
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.es
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.fr
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.gr
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.cs
 %%PORTDOCS%%%%DOCSDIR%%/README.de
 %%PORTDOCS%%%%DOCSDIR%%/README.en
 %%PORTDOCS%%%%DOCSDIR%%/README.es
@@ -108,6 +260,7 @@ bin/nt
 %%PORTDOCS%%%%DOCSDIR%%/TROUBLES
 share/locale/bg/LC_MESSAGES/d4x.mo
 share/locale/ca/LC_MESSAGES/d4x.mo
+share/locale/cs/LC_MESSAGES/d4x.mo
 share/locale/de/LC_MESSAGES/d4x.mo
 share/locale/es/LC_MESSAGES/d4x.mo
 share/locale/fr/LC_MESSAGES/d4x.mo
@@ -130,8 +283,22 @@ share/locale/zh_CN/LC_MESSAGES/d4x.mo
 @dirrm %%DATADIR%%/themes/nuvola32/queue
 @dirrm %%DATADIR%%/themes/nuvola32/buttons
 @dirrm %%DATADIR%%/themes/nuvola32
+@dirrm %%DATADIR%%/themes/gnomeria/toolbar
+@dirrm %%DATADIR%%/themes/gnomeria/queue
+@dirrm %%DATADIR%%/themes/gnomeria/buttons
+@dirrm %%DATADIR%%/themes/gnomeria
+@dirrm %%DATADIR%%/themes/gnome/toolbar
+@dirrm %%DATADIR%%/themes/gnome/queue
+@dirrm %%DATADIR%%/themes/gnome/popup
+@dirrm %%DATADIR%%/themes/gnome/misc
+@dirrm %%DATADIR%%/themes/gnome/components
+@dirrm %%DATADIR%%/themes/gnome
 @dirrm %%DATADIR%%/themes/glass2
 @dirrm %%DATADIR%%/themes/glass
+@dirrm %%DATADIR%%/themes/bluecurve/toolbar
+@dirrm %%DATADIR%%/themes/bluecurve/queue
+@dirrm %%DATADIR%%/themes/bluecurve/buttons
+@dirrm %%DATADIR%%/themes/bluecurve
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%

@@ -7,23 +7,26 @@
 #
 
 PORTNAME=	downloader
-PORTVERSION=	2.5.0
-PORTREVISION=	2
+PORTVERSION=	2.5.4
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.krasu.ru/soft/chuchelo/files/ \
 		ftp://ftp.chg.ru/pub/X11/applications/Xdownloader/
-DISTNAME=	d4x-${PORTVERSION}final
+DISTNAME=	d4x-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for downloading via ftp or http with GUI
 
-USE_GNOME=	esound gtk20
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+
+USE_BZIP2=	yes
+USE_GNOME=	esound gnometarget gtk20
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--enable-release
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
+		ac_cv_path_GENGETOPT=no
+CONFIGURE_ARGS=	--disable-openssl
 
 MAN1=		nt.1
 
@@ -37,13 +40,13 @@ BROKEN=		"Does not compile on sparc64"
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's| $$OPTFLAGS||g ; \
-		s| $$OS_CXXFLAGS||g ; \
-		s|-lpthread||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/bin/sh|${LOCALBASE}/bin/bash|g ; \
+		 s| == "xno"| = "xno"|g ; \
+		 s| $$OPTFLAGS||g ; \
+		 s| $$OS_CXXFLAGS||g ; \
+		 s|-lpthread||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's| DOC||g ; \
-		s| share||g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|GtkCellRendererProgress|tCellRendererProgress|g' \
-		${WRKSRC}/main/face/lod.cc
+		 s| share||g' ${WRKSRC}/Makefile.in
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/DOC/nt.1 ${MANPREFIX}/man/man1
