@@ -10,8 +10,7 @@ PORTVERSION=	3.3.5
 PORTREVISION=	3
 CATEGORIES?=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	afbackup
-DISTNAME=	${PORTNAME}-3.3.5
+MASTER_SITE_SUBDIR=	${PORTNAME}
 # XXX Remember to remove the comment if the actual variable is needed by someone.
 #SLAVEDIRS=misc/afbackup-client misc/afbackup-server
 
@@ -21,7 +20,12 @@ COMMENT=	AF's backup system
 WRKSRC=		${WRKDIR}/afbackup-3.3.5
 PLIST=		${WRKSRC}/pkg-plist
 
+.if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
+.else
+CONFIGURE_ARGS+=	--disable-nls
+.endif
+
 .if ! defined(NO_DES)
 USE_OPENSSL=	yes
 CONFIG_WITH_DES=	--with-des --with-des-header=openssl/des.h \
@@ -157,8 +161,9 @@ pre-configure:
 	@${CP} ${WRKSRC}/changer.conf.chio ${WRKSRC}/changer.conf
 
 .if !defined(NO_AUTOKEY) && !defined(NO_DES)
+PLIST_SRC+=	pkg-plist.autokey
 pre-build:
-	@perl -le 'print( ( "a".."z", "A".."Z", "0".."9")[ map { rand( 62)} 0..( rand( 10)+10)])' >${WRKSRC}/cryptkey
+	@${PERL} -le 'print( ( "a".."z", "A".."Z", "0".."9")[ map { rand( 62)} 0..( rand( 10)+10)])' >${WRKSRC}/cryptkey
 .endif
 
 pre-install:
@@ -168,7 +173,7 @@ pre-install:
 	@for docfile in $(AFBACKUP_DOCS:S/^/share\/doc\/${PORTNAME}\//); do ${ECHO_CMD} $$docfile >>${PLIST}; done
 .endif
 	@for plistfile in ${PLIST_SRC}; do ${CAT} ${FILESDIR}/$$plistfile >>${PLIST}; done
-	@${CAT} ${PLIST} | perl -nle 'print unless $$lines{$$_}++' >${PLIST}.tmp
+	@${CAT} ${PLIST} | ${PERL} -nle 'print unless $$lines{$$_}++' >${PLIST}.tmp
 	@${CAT} ${PLIST}.tmp ${FILESDIR}/pkg-plist.fixedorder >${PLIST}
 .if !defined(NOPORTDOCS)
 	@${ECHO_CMD} @cwd ${PREFIX} >>${PLIST}
@@ -177,7 +182,7 @@ pre-install:
 	@${SETENV} ${PKGINSTALL_ENV} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-.if !defined(NO_AUTOKEY)
+.if !defined(NO_AUTOKEY) && !defined(NO_DES)
 	${INSTALL} ${COPY} -o afbackup -g operator -m 0400 ${WRKSRC}/cryptkey ${PREFIX}/etc/afbackup
 .endif
 .if !defined(NOPORTDOCS)
