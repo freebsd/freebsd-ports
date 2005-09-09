@@ -6,3 +6,4 @@
 @dirrm share/afbackup/locale/de
 @dirrm share/afbackup/locale
 @dirrm share/afbackup
+@dirrm etc/afbackup
