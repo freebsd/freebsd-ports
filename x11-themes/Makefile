@@ -5,6 +5,7 @@
     COMMENT = X11 themes
 
     SUBDIR += baghira
+    SUBDIR += beastie
     SUBDIR += bluecurve-themes
     SUBDIR += buffy
     SUBDIR += clean-theme-gtk
