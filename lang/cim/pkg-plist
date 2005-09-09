@@ -7,6 +7,3 @@ lib/libcim-atr.a
 lib/libcim.a
 lib/libcim.so
 lib/libcim.so.3
-@unexec install-info --delete %D/info/cim.info %D/info/dir
-info/cim.info
-@exec install-info %D/info/cim.info %D/info/dir
