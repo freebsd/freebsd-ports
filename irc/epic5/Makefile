@@ -7,6 +7,7 @@
 
 PORTNAME=	epic5
 PORTVERSION=	0.0.5
+PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.tcbug.org/ \
 		ftp://ftp.epicsol.org/pub/epic/EPIC5-BETA/
@@ -28,18 +29,13 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--without-ipv6
 .endif
 
-##  WITH_TCL:       enable Tcl support
+##  WITHOUT_TCL:    disable Tcl support
 #
-.if defined(WITH_TCL)
+.if !defined(WITHOUT_TCL)
 LIB_DEPENDS+=		tcl84:${PORTSDIR}/lang/tcl84
 CONFIGURE_ARGS+=	--with-tcl
-.endif
-
-##  WITH_SOCKS5:    enable SOCKS5 support
-#
-.if defined(WITH_SOCKS5)
-LIB_DEPENDS+=		socks5:${PORTSDIR}/net/socks5
-CONFIGURE_ARGS+=	--with-socks5
+.else
+CONFIGURE_ARGS+=	--without-tcl
 .endif
 
 ##  WITH_PERL:      enable perl5 support (requires perl 5.6.1 or newer)
