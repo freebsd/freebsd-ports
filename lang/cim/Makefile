@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	cim
-PORTVERSION=	3.36
+PORTVERSION=	3.37
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/cim/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compiler for the SIMULA programming language
 
-USE_LIBTOOL_VER=15
-USE_REINPLACE=	yes
+USE_PERL5=	yes
+USE_LIBTOOL_VER=	15
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
-MAN1=		cim.1
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
-		${WRKSRC}/configure
+MAN1=		cim.1
+INFO=		cim
 
 .include <bsd.port.mk>
