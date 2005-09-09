@@ -19,7 +19,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	The Russian Apache webserver with SSL/TLS functionality
 
-LIB_DEPENDS=	mm.13:${PORTSDIR}/devel/mm
+LIB_DEPENDS=	mm.14:${PORTSDIR}/devel/mm
 
 MASTER_SITES_MODSSL=	http://www.modssl.org/source/ \
 			ftp://ftp.modssl.org/source/ \

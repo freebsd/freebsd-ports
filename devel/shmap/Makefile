@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shared-memory-based hashmaps
 
-LIB_DEPENDS=	mm.13:${PORTSDIR}/devel/mm
+LIB_DEPENDS=	mm.14:${PORTSDIR}/devel/mm
 
 USE_LIBTOOL_VER=15
 GNU_CONFIGURE=	yes
