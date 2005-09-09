@@ -1,0 +1,245 @@
+bin/eposd
+bin/say-epos
+%%DATADIR%%/cfg/ansi.ini
+%%DATADIR%%/cfg/rtf.ini
+%%DATADIR%%/cfg/winepos.ini
+%%DATADIR%%/cfg/rtfftr.txt
+%%DATADIR%%/cfg/ansihdr.txt
+%%DATADIR%%/cfg/restr.ini
+%%DATADIR%%/cfg/rtfhdr.txt
+%%DATADIR%%/cfg/ansiftr.txt
+%%DATADIR%%/cfg/epos.ini
+%%DATADIR%%/cfg/fixed.ini
+%%DATADIR%%/lng/czech/prosody/fadeoutp.dic
+%%DATADIR%%/lng/czech/prosody/fadeoutq.dic
+%%DATADIR%%/lng/czech/prosody/fadeouts.dic
+%%DATADIR%%/lng/czech/prosody/fadeoutw.dic
+%%DATADIR%%/lng/czech/prosody/irony.dic
+%%DATADIR%%/lng/czech/prosody/nonterm.dic
+%%DATADIR%%/lng/czech/prosody/exclaim.dic
+%%DATADIR%%/lng/czech/prosody/wh.dic
+%%DATADIR%%/lng/czech/prosody/accent.dic
+%%DATADIR%%/lng/czech/prosody/exclafad.dic
+%%DATADIR%%/lng/czech/prosody/stress.dic
+%%DATADIR%%/lng/czech/prosody/ir_unter.dic
+%%DATADIR%%/lng/czech/prosody/questup.dic
+%%DATADIR%%/lng/czech/prosody/questend.dic
+%%DATADIR%%/lng/czech/prosody/shorten.dic
+%%DATADIR%%/lng/czech/prosody/shortiso.dic
+%%DATADIR%%/lng/czech/prosody/README
+%%DATADIR%%/lng/czech/prosody/naive.rul
+%%DATADIR%%/lng/czech/nnet/bang.txt
+%%DATADIR%%/lng/czech/nnet/lpcbang.txt
+%%DATADIR%%/lng/czech/nnet/lpcbangphone.txt
+%%DATADIR%%/lng/czech/postps.dic
+%%DATADIR%%/lng/czech/preps.dic
+%%DATADIR%%/lng/czech/text.txt
+%%DATADIR%%/lng/czech/wh.dic
+%%DATADIR%%/lng/czech/czech.rul
+%%DATADIR%%/lng/czech/numerals.rul
+%%DATADIR%%/lng/czech/textm.txt
+%%DATADIR%%/lng/czech/czech.ini
+%%DATADIR%%/lng/czech/syll.dic
+%%DATADIR%%/lng/czech/casual.dic
+%%DATADIR%%/lng/czech/mathsign.dic
+%%DATADIR%%/lng/czech/ptacek97.dph
+%%DATADIR%%/lng/czech/traditnl.dph
+%%DATADIR%%/lng/czech/spellurl.dic
+%%DATADIR%%/lng/czech/trans.rul
+%%DATADIR%%/lng/czech/prosody.rul
+%%DATADIR%%/lng/czech/textn.txt
+%%DATADIR%%/lng/czech/basenum.dic
+%%DATADIR%%/lng/czech/encoding.ini
+%%DATADIR%%/lng/czech/betty.dph
+%%DATADIR%%/lng/czech/betty.rul
+%%DATADIR%%/lng/czech/dubeda.dph
+%%DATADIR%%/lng/czech/lpcpros.rul
+%%DATADIR%%/lng/czech/prosody.neu
+%%DATADIR%%/lng/czech/prosody_bang.neu
+%%DATADIR%%/lng/czech/prosody_lpc_bang.neu
+%%DATADIR%%/lng/czech/prosody_lpc_bang_phone.neu
+%%DATADIR%%/lng/czech/main.dic
+%%DATADIR%%/lng/czech/spellout.dic
+%%DATADIR%%/lng/czech/short.dic
+%%DATADIR%%/lng/czech/nonsyllprep.dic
+%%DATADIR%%/lng/czech/interj.dic
+%%DATADIR%%/lng/czech/neurallog.txt
+%%DATADIR%%/lng/czech/stress.rul
+%%DATADIR%%/lng/czech/machac_seg.tim
+%%DATADIR%%/lng/czech/machac_pros.tim
+%%DATADIR%%/lng/french/french.ini
+%%DATADIR%%/lng/french/french.rul
+%%DATADIR%%/lng/french/text.txt
+%%DATADIR%%/lng/french/encoding.ini
+%%DATADIR%%/lng/german/german.rul
+%%DATADIR%%/lng/german/german.ini
+%%DATADIR%%/lng/german/text.txt
+%%DATADIR%%/lng/german/lengths.dic
+%%DATADIR%%/lng/german/encoding.ini
+%%DATADIR%%/lng/german/joerg.dph
+%%DATADIR%%/lng/latin/quantitas.dic
+%%DATADIR%%/lng/latin/latin.rul
+%%DATADIR%%/lng/latin/trans.rul
+%%DATADIR%%/lng/latin/latin.ini
+%%DATADIR%%/lng/latin/accentus.dic
+%%DATADIR%%/lng/latin/encoding.ini
+%%DATADIR%%/lng/latin/numerals.rul
+%%DATADIR%%/lng/latin/basenum.dic
+%%DATADIR%%/lng/latin/mathsign.dic
+%%DATADIR%%/lng/latin/wh.dic
+%%DATADIR%%/lng/latin/syll.dic
+%%DATADIR%%/lng/latin/lpcpros.rul
+%%DATADIR%%/lng/latin/prosody.rul
+%%DATADIR%%/lng/latin/stress.rul
+%%DATADIR%%/lng/latin/traditnl.dph
+%%DATADIR%%/lng/latin/betty.dph
+%%DATADIR%%/lng/latin/dubeda.dph
+%%DATADIR%%/lng/latin/ptacek97.dph
+%%DATADIR%%/lng/latin/betty.rul
+%%DATADIR%%/lng/latin/classical.dph
+%%DATADIR%%/lng/slovak/slovak.rul
+%%DATADIR%%/lng/slovak/slovak.ini
+%%DATADIR%%/lng/slovak/trans.rul
+%%DATADIR%%/lng/slovak/traditnl.dph
+%%DATADIR%%/lng/slovak/hard.dic
+%%DATADIR%%/lng/slovak/TOCHECK
+%%DATADIR%%/lng/slovak/numerals.rul
+%%DATADIR%%/lng/slovak/basenum.dic
+%%DATADIR%%/lng/slovak/mathsign.dic
+%%DATADIR%%/lng/slovak/main.dic
+%%DATADIR%%/lng/slovak/wh.dic
+%%DATADIR%%/lng/slovak/preps.dic
+%%DATADIR%%/lng/slovak/nonsyl.dic
+%%DATADIR%%/lng/slovak/roman.dic
+%%DATADIR%%/lng/slovak/slovak.dph
+%%DATADIR%%/lng/slovak/encoding.ini
+%%DATADIR%%/lng/slovak/spellout.dic
+%%DATADIR%%/lng/slovak/roman.rul
+%%DATADIR%%/lng/slovak/spellurl.dic
+%%DATADIR%%/lng/slovak.prev/txt/jumis.txt
+%%DATADIR%%/lng/slovak.prev/txt/kofi.txt
+%%DATADIR%%/lng/slovak.prev/txt/sedlak.txt
+%%DATADIR%%/lng/slovak.prev/txt/text.txt.rozhlas
+%%DATADIR%%/lng/slovak.prev/txt/text.txt.sedlak
+%%DATADIR%%/lng/slovak.prev/txt/text.txt.sikula
+%%DATADIR%%/lng/slovak.prev/txt/blondinka.txt
+%%DATADIR%%/lng/slovak.prev/nonsyl.dic
+%%DATADIR%%/lng/slovak.prev/postps.dic
+%%DATADIR%%/lng/slovak.prev/preps.dic
+%%DATADIR%%/lng/slovak.prev/nnet.rul
+%%DATADIR%%/lng/slovak.prev/main.dic
+%%DATADIR%%/lng/slovak.prev/wh.dic
+%%DATADIR%%/lng/slovak.prev/numerals.rul
+%%DATADIR%%/lng/slovak.prev/textm.txt
+%%DATADIR%%/lng/slovak.prev/slovak.rul
+%%DATADIR%%/lng/slovak.prev/syll.dic
+%%DATADIR%%/lng/slovak.prev/mathsign.dic
+%%DATADIR%%/lng/slovak.prev/postp2.dic
+%%DATADIR%%/lng/slovak.prev/abbrevs.dic
+%%DATADIR%%/lng/slovak.prev/trans.rul
+%%DATADIR%%/lng/slovak.prev/traditnl.dph.sk
+%%DATADIR%%/lng/slovak.prev/textn.txt
+%%DATADIR%%/lng/slovak.prev/slovak.ini
+%%DATADIR%%/lng/slovak.prev/traditnl.dph.all
+%%DATADIR%%/lng/slovak.prev/palkova.rul
+%%DATADIR%%/lng/slovak.prev/skratky.dic
+%%DATADIR%%/lng/slovak.prev/text.txt
+%%DATADIR%%/lng/slovak.prev/basenum.dic
+%%DATADIR%%/lng/vogon/vogon.ini
+%%DATADIR%%/lng/vogon/vogon.rul
+%%DATADIR%%/lng/vogon/relabel.dic
+%%DATADIR%%/lng/vogon/encoding.ini
+%%DATADIR%%/voice/czech/kubec-f.ini
+%%DATADIR%%/voice/czech/kubec-vq.ini
+%%DATADIR%%/voice/czech/kubec.ini
+%%DATADIR%%/voice/czech/vichova.ini
+%%DATADIR%%/voice/czech/theimer.ini
+%%DATADIR%%/voice/czech/r-kubec.ini
+%%DATADIR%%/voice/czech/r-vichov.ini
+%%DATADIR%%/voice/czech/violka.ini
+%%DATADIR%%/voice/czech/violka16.ini
+%%DATADIR%%/voice/czech/violka8.ini
+%%DATADIR%%/voice/czech/r-machac.ini
+%%DATADIR%%/voice/czech/machac.ini
+%%DATADIR%%/voice/czech/machac8.ini
+%%DATADIR%%/voice/czech/r-violka.ini
+%%DATADIR%%/voice/czech/bob8.ini
+%%DATADIR%%/voice/czech/bob.ini
+%%DATADIR%%/voice/czech/machac_lpp.ini
+%%DATADIR%%/voice/czech/violka_lpp.ini
+%%DATADIR%%/voice/czech/mbr.ini
+%%DATADIR%%/voice/czech/machac_bang.ini
+%%DATADIR%%/voice/czech/machac_bang8.ini
+%%DATADIR%%/voice/czech/machac_bang_smooth.ini
+%%DATADIR%%/voice/czech/machac_lpc_bang.ini
+%%DATADIR%%/voice/czech/machac_lpc_bang8.ini
+%%DATADIR%%/voice/czech/machac_lpc_bang_phone.ini
+%%DATADIR%%/voice/czech/machac_lpc_bang_phone8.ini
+%%DATADIR%%/voice/czech/machac_lpp8.ini
+%%DATADIR%%/voice/czech/jiri.ini
+%%DATADIR%%/voice/czech/kubec-f8.ini
+%%DATADIR%%/voice/czech/vichova-f.ini
+%%DATADIR%%/voice/czech/vichova-vq.ini
+%%DATADIR%%/voice/slovak/igor.ini
+%%DATADIR%%/voice/german/joerg.ini
+%%DATADIR%%/voice/latin/hildegard.ini
+%%DATADIR%%/voice/latin/caesar.ini
+%%DATADIR%%/voice/latin/benedictus.ini
+%%DATADIR%%/voice/latin/linnaeus.ini
+%%DATADIR%%/voice/vogon/jeltz.ini
+%%DATADIR%%/inv/lpc/README-vq
+%%DATADIR%%/inv/lpc/lkubec.dat
+%%DATADIR%%/inv/lpc/mkubec.vq
+%%DATADIR%%/inv/lpc/mkubec.vqc
+%%DATADIR%%/inv/lpc/traditnl.dpt
+%%DATADIR%%/inv/lpc/mvichova.vq
+%%DATADIR%%/inv/lpc/mvichova.vqc
+%%DATADIR%%/inv/lpc/lvichova.dat
+%%DATADIR%%/inv/lpc/kubec.snl
+%%DATADIR%%/inv/lpc/kubec.lab
+%%DATADIR%%/inv/README
+%%DATADIR%%/mappings/8859-2.txt
+%%DATADIR%%/mappings/cp1250.txt
+%%DATADIR%%/mappings/us-ascii.txt
+%%DATADIR%%/mappings/8859-1.txt
+%%DATADIR%%/mappings/README
+%%DATADIR%%/mappings/sampa-std.txt
+%%DATADIR%%/mappings/sampa-alt-cz1.txt
+%%DATADIR%%/ttscp/help/help
+%%DATADIR%%/ttscp/help/appl
+%%DATADIR%%/ttscp/help/data
+%%DATADIR%%/ttscp/help/setl
+%%DATADIR%%/ttscp/help/setg
+%%DATADIR%%/ttscp/help/show
+%%DATADIR%%/ttscp/help/strm
+%%DATADIR%%/ttscp/help/user
+%%DATADIR%%/ttscp/help/delh
+%%DATADIR%%/ttscp/help/pass
+%%DATADIR%%/ttscp/help/done
+%%DATADIR%%/ttscp/help/intr
+%%DATADIR%%/ttscp/help/down
+%%DATADIR%%/version
+@dirrm %%DATADIR%%/cfg
+@dirrm %%DATADIR%%/lng/czech/prosody
+@dirrm %%DATADIR%%/lng/czech/nnet
+@dirrm %%DATADIR%%/lng/czech
+@dirrm %%DATADIR%%/lng/french
+@dirrm %%DATADIR%%/lng/german
+@dirrm %%DATADIR%%/lng/latin
+@dirrm %%DATADIR%%/lng/slovak.prev/txt
+@dirrm %%DATADIR%%/lng/slovak.prev
+@dirrm %%DATADIR%%/lng/slovak
+@dirrm %%DATADIR%%/lng/vogon
+@dirrm %%DATADIR%%/lng
+@dirrm %%DATADIR%%/voice/czech
+@dirrm %%DATADIR%%/voice/slovak
+@dirrm %%DATADIR%%/voice/german
+@dirrm %%DATADIR%%/voice/latin
+@dirrm %%DATADIR%%/voice/vogon
+@dirrm %%DATADIR%%/voice
+@dirrm %%DATADIR%%/inv/lpc
+@dirrm %%DATADIR%%/inv
+@dirrm %%DATADIR%%/mappings
+@dirrm %%DATADIR%%/ttscp/help
+@dirrm %%DATADIR%%/ttscp
+@dirrm %%DATADIR%%
