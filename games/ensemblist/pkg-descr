@@ -1,0 +1,12 @@
+Ensemblist is a unique reflexion game created for the video game coding
+compo held in March 2003 in Paris.
+In this game, you have to put together several simple geometric
+primitives to build a given shape. For this, you can move, rotate and
+compose the primitives with the boolean operators union, intersection
+and minus. This is building what is called a C.S.G, for Constructive
+Solid Geometry.
+
+WWW: http://www.nongnu.org/ensemblist/index_en.html
+
+- Igor Pokrovsky
+ip@doom.homeunix.org

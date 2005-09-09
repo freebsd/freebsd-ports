@@ -131,6 +131,7 @@
     SUBDIR += emacs-chess
     SUBDIR += empire
     SUBDIR += enigma
+    SUBDIR += ensemblist
     SUBDIR += euchre
     SUBDIR += evilfinder
     SUBDIR += exmars

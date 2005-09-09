@@ -1,0 +1,26 @@
+--- Makefile.orig	Mon Jan 26 16:37:05 2004
++++ Makefile	Fri Sep  9 01:38:30 2005
+@@ -6,8 +6,8 @@
+ LINK_FLAGS=-g -lm -L /usr/X11R6/lib -lXmu -lGL -lglut -lGLU -lpng `libmikmod-config --libs` -lefence -lpthread
+ else
+ DATADIR=$(DESTDIR)/usr/share/$(NAME)
+-COMPILE_FLAGS=-Wall -O3 -fomit-frame-pointer `libmikmod-config --cflags` -DNDEBUG -DDATADIR=$(DATADIR)
+-LINK_FLAGS=-lm -L /usr/X11R6/lib -lXmu -lGL -lglut -lGLU -lpng `libmikmod-config --libs` -lpthread
++COMPILE_FLAGS=$(CFLAGS) -Wall -I$(LOCALBASE)/include -I$(X11BASE)/include `$(LOCALBASE)/bin/libmikmod-config --cflags` -DNDEBUG -DDATADIR=$(DATADIR) $(PTHREAD_CFLAGS)
++LINK_FLAGS=-lm -L$(LOCALBASE)/lib -L$(X11BASE)/lib -lXmu -lGL -lglut -lGLU -lpng `$(LOCALBASE)/bin/libmikmod-config --libs` $(PTHREAD_LIBS)
+ endif
+ APPLE_FRAMEWORKS=-framework GLUT -framework Cocoa -framework OpenGL
+ #uncomment the following if you want to compile on MacOS/X
+@@ -25,7 +25,6 @@
+ 	@echo '$(COL)$@$(NORM)'
+ 	$(CC) $(COMPILE_FLAGS) $(LINK_FLAGS) $^ -o $@
+ ifndef DEBUG
+-	strip $(NAME)
+ endif
+ 
+ .c.o:
+@@ -54,4 +53,3 @@
+ 	@install -m755 $(NAME) $(DESTDIR)/usr/games
+ 	@find datas/ -\( -name CVS -prune -\) -o -type f -exec install -m644 \{\} $(DATADIR) \;
+ 
+-include depends
