@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dazuko
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.0
 CATEGORIES=	security
 MASTER_SITES=	http://dazuko.org/files/
 
@@ -15,10 +15,6 @@ COMMENT=	A common interface for 3rd party file access control
 HAS_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
-
-.if !${OSVERSION} < 500000
-IGNORE=	"Only compiles on 4.x"
-.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/modules/
