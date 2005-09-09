@@ -2020,6 +2020,7 @@ epiphany-extensions	ports/www/epiphany-extensions
 epiwm		ports/x11-wm/epiwm
 epix		ports/graphics/epix
 epm		ports/devel/epm
+epos-devel	ports/audio/epos-devel
 epplets		ports/x11-wm/epplets
 eps		ports/mail/eps
 eps2png		ports/graphics/eps2png
