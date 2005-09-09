@@ -14,6 +14,7 @@ PGBASE=%%PGBASE%%
 DTSERVICEBASE=%%DTSERVICEBASE%%
 AOLSERVERBASE=%%AOLSERVERBASE%%
 VIRTUALBASE=%%VIRTUALBASE%%
+POSTCONFIG=%%POSTCONFIG%%
 
 pre-install() { echo "
 
@@ -33,13 +34,14 @@ pre-install() { echo "
   http://openacs.org/doc/current/upgrade.html
   ===========================================
 
+  To allow post-install configurations, use:
      make install WITH_POSTCONFIG=yes
   
-  to allow post-install configurations 
-  Or run afterwards: 
-  sh ${EXAMPLESDIR}/post-config.sh XX POST-INSTALL 
+  Or after installation has completed, do: 
+     sh ${EXAMPLESDIR}/post-config.sh XX POST-INSTALL 
 
-  Advice: stop Aolserver and Postgresql
+  Advice: 
+  stop a running Aolserver and/or Postgresql
   before post-install configuration starts.
 
   Press ctrl-C *NOW* if you need to. 
@@ -47,6 +49,14 @@ pre-install() { echo "
 "
 
 sleep 10
+
+if [ -d ${OPENACSBASE}/${OPENACS_USER} ] ; then 
+	echo "WARNING: ${OPENACSBASE}/${OPENACS_USER} already exists !"
+	echo "It may be a valid tree or the result of an aborted previous install"
+	echo "TO CONTINUE: Move it, Delete it or do:"
+	echo "   make install OPENACS_USER=ChooseName < WITH_POSTCONFIG=yes >"
+	echo " "
+	exit 1 ; fi
 
 for DIRS in /usr/share/skel/dot
 do
@@ -102,6 +112,14 @@ post-install() {
  
 	chown -R ${OPENACS_USER}:${OPENACS_GROUP} ${OPENACSBASE}/${OPENACS_USER}
 	chown root:${OPENACS_GROUP} ${EXAMPLESDIR}/nsd-postgres ${EXAMPLESDIR}/nsd-oracle
+
+if test "${POSTCONFIG}" = "true" ; then
+	echo "Performing post-config changes"
+	sh ${EXAMPLESDIR}/post-config.sh XX POST-INSTALL
+else
+	echo "No post-config changes performed"
+	echo "Run sh ${EXAMPLESDIR}/post-config.sh XX POST-INSTALL later"
+fi
 
 }
 
