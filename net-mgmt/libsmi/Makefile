@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsmi
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/libsmi/
 
