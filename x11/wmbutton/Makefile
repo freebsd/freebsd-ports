@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	wmbutton
-PORTVERSION=	0.4
+PORTVERSION=	0.6.1
 CATEGORIES=	x11 windowmaker
-MASTER_SITES=	http://www.cs.mun.ca/~gstarkes/wmaker/dockapps/files/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	jim
+MASTER_SITES=	http://greek0.net/~greek0/wmbutton/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockapp that displays 9 buttons to run apps of your choice
@@ -18,20 +16,22 @@ COMMENT=	A dockapp that displays 9 buttons to run apps of your choice
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 
+SUB_FILES=	pkg-message
+
 do-build:
-	@(cd ${WRKSRC} && make)
+	cd ${BUILD_WRKSRC} && ${CC} ${CFLAGS} \
+		-I${X11BASE}/include/X11 -I${X11BASE}/include \
+		wmb_libs.c wmbutton.c -o wmbutton \
+		-L${X11BASE}/lib -lXpm -lXext -lX11
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/wmbutton ${PREFIX}/bin
-
-post-install:
-	@${ECHO} "===>   Installing .wmbutton as ${PREFIX}/share/examples/wmbutton/wmbutton"
-	@${ECHO} "===>   Modify if you wish and copy to ~/.wmbutton"
-	@${MKDIR} ${PREFIX}/share/examples/wmbutton && ${CHMOD} a+rx ${PREFIX}/share/examples/wmbutton
-	@${INSTALL_DATA} ${WRKSRC}/.wmbutton ${PREFIX}/share/examples/wmbutton/wmbutton
-	@${ECHO} "===>   Installing README in ${PREFIX}/share/doc/wmbutton"
-	@${ECHO} "===>   Please read it for usage instructions"
-	@${MKDIR} ${PREFIX}/share/doc/wmbutton && ${CHMOD} a+rx ${PREFIX}/share/doc/wmbutton
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/wmbutton
+	${INSTALL_PROGRAM} ${WRKSRC}/wmbutton ${PREFIX}/bin/wmbutton
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/.wmbutton ${EXAMPLESDIR}/dot.wmbutton
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
+.endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
