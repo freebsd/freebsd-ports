@@ -7,7 +7,7 @@
 
 PORTNAME=		snd
 PORTVERSION=		7.8
-PORTREVISION=	2
+PORTREVISION=		3
 CATEGORIES=		audio
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -45,7 +45,7 @@ PLIST_FILES+=	share/doc/snd/tutorial/files/.snd \
 
 .if defined(WITH_ESD)
 CONFIGURE_ARGS+=	--with-esd
-RUN_DEPENDS=		esd:${PORTSDIR}/audio/esound
+RUN_DEPENDS+=		esd:${PORTSDIR}/audio/esound
 .endif
 
 .if defined(WITH_RUBY)
@@ -80,16 +80,11 @@ USE_X_PREFIX=	yes
 USE_XLIB=	yes
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 503000
-BROKEN=			"Does not install on FreeBSD >= 5.x"
-.endif
-
 post-build:
 	${MV} ${WRKSRC}/sndinfo ${WRKSRC}/snd-info
 
 pre-install:
+	@${ECHO_CMD} "" > ${PLIST}
 .if !defined(WITHOUT_X11)
 	${ECHO_CMD} lib/X11/app-defaults/Snd.ad >> ${PLIST}
 	${ECHO_CMD} share/examples/snd/Snd.gtkrc >> ${PLIST}
@@ -118,9 +113,11 @@ pre-install:
 .if defined(WITH_GUILE)
 	${FIND} ${WRKSRC} -name '*.scm' | \
 		${SED} -e "s:^${WRKSRC}/:share/snd/:g" >> ${PLIST}
-	${ECHO_CMD} "share/snd/contrib/dlp/README" >> ${PLIST}
-	${ECHO_CMD} "@dirrm share/snd/contrib/dlp" >> ${PLIST}
-	${ECHO_CMD} "@dirrm share/snd/contrib" >> ${PLIST}
+	${ECHO_CMD} "share/snd/dlp/README" >> ${PLIST}
+	${ECHO_CMD} "@dirrm share/snd/sndins/samples" >> ${PLIST}
+	${ECHO_CMD} "@dirrm share/snd/sndins" >> ${PLIST}
+	${ECHO_CMD} "@dirrm share/snd/tools" >> ${PLIST}
+	${ECHO_CMD} "@dirrm share/snd/dlp" >> ${PLIST}
 	${ECHO_CMD} "@dirrm share/snd" >> ${PLIST}
 .endif
 
@@ -154,7 +151,16 @@ do-install:
 	cd ${WRKSRC} && ${PAX} -r -w tutorial ${DOCSDIR}
 .endif
 .if defined(WITH_GUILE)
+	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${DATADIR}/dlp
+	@${MKDIR} ${DATADIR}/tools
+	@${MKDIR} ${DATADIR}/sndins
+	@${MKDIR} ${DATADIR}/sndins/samples
 	${INSTALL_DATA} ${WRKSRC}/*.scm ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/dlp/*.scm ${DATADIR}/dlp
+	${INSTALL_DATA} ${WRKSRC}/dlp/README ${DATADIR}/dlp
+	${INSTALL_DATA} ${WRKSRC}/tools/*.scm ${DATADIR}/tools
+	${INSTALL_DATA} ${WRKSRC}/sndins/samples/*.scm ${DATADIR}/sndins/samples
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
