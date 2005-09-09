@@ -16,17 +16,12 @@ COMMENT=	AtariST emulator
 
 RESTRICTED=	"tos.img is copyrighted"
 
-TOSIMG=		tos.img
+TOSIMG?=	tos.img
 USE_X_PREFIX=	yes
 HAS_CONFIGURE=	yes
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
-IGNORE="Please get a ROM dump from your AtariST and save it as"\
-"\"${TOSIMG}\" in \"${DISTDIR}\" manually, and then make install again"
-.endif
-
 pre-build:
-	${CP} ${DISTDIR}/tos.img ${WRKSRC}
+	${CP} ${DISTDIR}/${TOSIMG} ${WRKSRC}/tos.img
 
 post-build:
 	(cd ${WRKSRC}; make fnttobdf fonts)
@@ -79,4 +74,11 @@ do-install:
 post-install:
 	${X11BASE}/bin/mkfontdir ${FNTDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if !exists(${DISTDIR}/${TOSIMG})
+IGNORE="Please get a ROM dump from your AtariST and save it as"\
+"\"${TOSIMG}\" in \"${DISTDIR}\" manually, and then make install again"
+.endif
+
+.include <bsd.port.post.mk>
