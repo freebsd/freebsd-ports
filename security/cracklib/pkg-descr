@@ -17,7 +17,4 @@ The idea is that you wire it into your _own_ "passwd" program (if you
 have source); alternatively, you wire it into something like "shadow"
 from off of the net.  You can use it in other things, too.
 
-
-WWW: http://www.users.dircon.co.uk/~crypto/
-
-Andrew J. Korty <ajk@iu.edu>
+WWW: http://www.crypticide.com/users/alecm/
