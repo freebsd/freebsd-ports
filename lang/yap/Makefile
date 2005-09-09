@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	yap
-PORTVERSION=	4.5.6
+PORTVERSION=	5.0.0
 CATEGORIES=	lang
-MASTER_SITES=	http://www.ncc.up.pt/~vsc/Yap/Yap4.5/
+MASTER_SITES=	http://www.ncc.up.pt/~vsc/Yap/%SUBDIR%/
+MASTER_SITE_SUBDIR=	Yap-${PORTVERSION:R}
 DISTNAME=	Yap-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,6 +18,7 @@ COMMENT=	A high-performance Prolog compiler
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -26,10 +28,16 @@ INFO=		yap
 
 .include <bsd.port.pre.mk>
 
-ONLY_FOR_ARCHS=	i386
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
 
 post-extract:
 	@${RM} -f ${WRKSRC}/docs/*.info*
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|@value{VERSION}|${PORTVERSION}|g' ${WRKSRC}/docs/yap.tex
 
 post-build:
 	cd ${WRKSRC}/docs && makeinfo --no-split yap.tex
