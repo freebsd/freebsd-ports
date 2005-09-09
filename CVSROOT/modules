@@ -635,7 +635,7 @@ bbdb-emacs20	ports/databases/bbdb-emacs20
 bbjd		ports/misc/bbjd
 bbkeys		ports/x11-wm/bbkeys
 bblimage	ports/science/bblimage
-bbllog		ports/www/bblog
+bblog		ports/www/bblog
 bbmail		ports/mail/bbmail
 bbpager		ports/x11-wm/bbpager
 bbrb		ports/graphics/bbrb
