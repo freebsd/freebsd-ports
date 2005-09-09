@@ -9,8 +9,9 @@ lib/libmk4.so.0
 @unexec rm -f %D/lib/libmk4.so
 %%WITH_PYTHON%%lib/libmk4py.a
 %%WITH_PYTHON%%lib/libmk4py.so
-%%WITH_PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/Mk4py.so
-%%WITH_PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/metakit.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/Mk4py.so
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/metakit.py
+%%WITH_PYTHON%%@unexec /bin/rm %D/%%PYTHON_SITELIBDIR%%/metakit.pyc 2>/dev/null || /bin/true
 %%WITH_TCL%%lib/libmk4tcl.a
 %%WITH_TCL%%lib/libmk4tcl.so
 %%WITH_TCL%%lib/tcl%%TCL_V%%/Mk4tcl/Mk4tcl.so
