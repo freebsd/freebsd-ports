@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	imgseek
 EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER=	tuximus@tuximus.mine.nu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A photo manager and viewer with content-based search
 
 BUILD_DEPENDS=  pyuic:${PORTSDIR}/x11-toolkits/py-qt \
