@@ -7,28 +7,35 @@
 #
 
 PORTNAME=	cgkit
-PORTVERSION=	2.0.0a
+PORTVERSION=	2.0.0a5
 CATEGORIES=	graphics python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION}lpha4
+DISTNAME=	${PORTNAME}-${PORTVERSION}lpha5
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Computer Graphics Kit
 
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-python scons:${PORTSDIR}/devel/scons
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL:${PORTSDIR}/graphics/py-opengl \
-		${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-numarray \
-		${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \
-		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
-		${PYTHON_SITELIBDIR}/protocols/__init__.py:${PORTSDIR}/devel/py-protocols \
-		aqsis:${PORTSDIR}/graphics/aqsis
 
 USE_XLIB=	yes
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+
+.if defined(INSTALL_CGKIT_LIGHT)
+PLIST_SUB+=	CGKIT_LIGHT="@comment "
+.else
+PLIST_SUB+=	CGKIT_LIGHT=""
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/OpenGL:${PORTSDIR}/graphics/py-opengl \
+		${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-numarray \
+		${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \
+		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_SITELIBDIR}/protocols/__init__.py:${PORTSDIR}/devel/py-protocols \
+		${PYTHON_SITELIBDIR}/serial/__init__.py:${PORTSDIR}/comms/py-serial \
+		aqsis:${PORTSDIR}/graphics/aqsis
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -48,6 +55,13 @@ pre-everything::
 	@${ECHO_MSG} "Define WITH_LIB3DS if you want to be able to import 3ds files"
 	@${ECHO_MSG}
 .endif
+
+.if !defined(INSTALL_CGKIT_LIGHT)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Define INSTALL_CGKIT_LIGHT if you do not want to install any external dependencies"
+	@${ECHO_MSG}
+.endif
+
 post-extract:
 	@cd ${WRKSRC}; \
 	for FILE in $($$DOS2UNIX_FILES); do \
@@ -61,6 +75,9 @@ pre-configure:
 	${CP} ${FILESDIR}/config.cfg ${WRKSRC};
 .if defined(WITH_LIB3DS)
 	@${REINPLACE_CMD} -e "s/^#//1" ${WRKSRC}/config.cfg;
+.endif
+.if defined(INSTALL_CGKIT_LIGHT)
+	@${ECHO} "INSTALL_CGKIT_LIGHT = True" >> ${WRKSRC}/config.cfg;
 .endif
 	@${REINPLACE_CMD} -e "/%%LOCALBASE%%/s//${LOCALBASE:S/\//\\\//g}/g" \
 	    -e "/%%X11BASE%%/s//${X11BASE:S/\//\\\//g}/g" ${WRKSRC}/supportlib/cpp_config.cfg ${WRKSRC}/config.cfg; \
