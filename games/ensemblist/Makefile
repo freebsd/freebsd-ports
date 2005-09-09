@@ -44,7 +44,8 @@ do-install:
 	cd ${WRKSRC}/html && \
 	${FIND} * -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
 	${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
-	${INSTALL_MAN} ${WRKSRC}/ensemblist.6 ${MAN6PREFIX}/man/man6
 .endif
+
+	${INSTALL_MAN} ${WRKSRC}/ensemblist.6 ${MAN6PREFIX}/man/man6
 
 .include <bsd.port.mk>
