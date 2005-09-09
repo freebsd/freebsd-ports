@@ -5,12 +5,13 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-thunderbird
 
 COMMENT=	A GnuPG extension for the Thunderbird mail client
 
 EXTRACT_DEPENDS=${WRKDIR}/../../../${LOCAL_SRCDIR}/work/mozilla/Makefile:${PORTSDIR}/${LOCAL_SRCDIR}:configure
+LIB_DEPENDS=	nspr4:${PORTSDIR}/devel/nspr
 RUN_DEPENDS=	thunderbird:${PORTSDIR}/${LOCAL_SRCDIR}
 
 MASTERDIR=	${.CURDIR}/../enigmail
