@@ -12373,6 +12373,7 @@ warppipe	ports/net/warppipe
 washerdryer	ports/x11-clocks/washerdryer
 watchdog	ports/sysutils/watchdog
 watchfolder	ports/sysutils/watchfolder
+wav2cdr		ports/audio/wav2cdr
 wavbreaker	ports/audio/wavbreaker
 waveplay	ports/audio/waveplay
 wavpack		ports/audio/wavpack
