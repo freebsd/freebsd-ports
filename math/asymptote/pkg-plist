@@ -105,6 +105,7 @@ bin/xasy
 %%EXAMPLESDIR%%/sqrtx01.asy
 %%EXAMPLESDIR%%/sqrtx01y1.asy
 %%EXAMPLESDIR%%/square.asy
+%%EXAMPLESDIR%%/subpictures.asy
 %%EXAMPLESDIR%%/superpath.asy
 %%EXAMPLESDIR%%/surface.asy
 %%EXAMPLESDIR%%/tanh.asy
@@ -113,6 +114,7 @@ bin/xasy
 %%EXAMPLESDIR%%/triads.asy
 %%EXAMPLESDIR%%/triangle.asy
 %%EXAMPLESDIR%%/unitcircle.asy
+%%EXAMPLESDIR%%/unitcircle3.asy
 %%EXAMPLESDIR%%/upint.asy
 %%EXAMPLESDIR%%/venn.asy
 %%EXAMPLESDIR%%/wedge.asy
