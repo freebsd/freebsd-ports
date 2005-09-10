@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gurlchecker
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	www gnome
 MASTER_SITES=	http://labs.libre-entreprise.org/download.php/${DOWNNUM}/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	gnutls.12:${PORTSDIR}/security/gnutls \
 		gnet-2.0.0:${PORTSDIR}/net/gnet2
 
 USE_X_PREFIX=	yes
-DOWNNUM=	373
+DOWNNUM=	382
 USE_GNOME=	gnomeprefix gnomehack libgnomeui intlhack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
