@@ -561,6 +561,7 @@
     SUBDIR += vips
     SUBDIR += visionegg
     SUBDIR += vp
+    SUBDIR += vvv
     SUBDIR += whirlgif
     SUBDIR += white_dune
     SUBDIR += wings

@@ -1,0 +1,24 @@
+--- Makefile.orig	Thu Feb  3 22:03:08 2005
++++ Makefile	Sat Sep 10 13:11:30 2005
+@@ -28,9 +28,10 @@
+ 
+ ifeq ($(OS),unix)
+ 	RM = rm
+-	LFLAG1 = -L/usr/lib -L/usr/X11R6/lib
++	IFLAG1 = -I$(X11BASE)/include
++	LFLAG1 = -L$(X11BASE)/lib
+ 	# Where the GLUI library is:
+-	LFLAG2 = -L/home/thomas/graphics/OpenGL/glui_v2_2/lib
++	LFLAG2 = 
+ 	LIBS =  -lglui -lglut -lGLU -lGL -lXmu -lXext -lX11 -lXi -lm
+ endif
+ ifeq ($(OS),Windows_NT)
+@@ -55,7 +56,7 @@
+ 
+ IFLAGGLUI = -I.
+ 
+-IFLAGS = $(IFLAGGLUI)
++IFLAGS = $(IFLAGGLUI) $(IFLAG1)
+ 
+ 
+ 

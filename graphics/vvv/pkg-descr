@@ -1,0 +1,12 @@
+Viewing Volume Visualizer is a tutorial tool for understanding
+viewing and projection in OpenGL. It allows user to see effects
+of changing viewing and projection parameters on seeing a scene.
+Additionally it is possible to dump a C file which specifies viewing
+and projection of the current principal view in one routine. It could
+be incorporated into another program that wants to define a specific
+view and projection. VVV can therefore be used as a preview tool.
+
+WWW:	http://www.inf.ufes.br/~thomas/graphics/vvv/vvv.html
+
+- Igor Pokrovsky
+ip@doom.homeunix.org
