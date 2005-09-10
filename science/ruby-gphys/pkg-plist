@@ -1,5 +1,11 @@
 bin/gdir_client
 bin/gdir_server
+bin/gpaop
+bin/gpcat
+bin/gpcut
+bin/gplist
+bin/gpmath
+bin/gpmaxmin
 bin/gpprint
 bin/gpview
 bin/grads2nc_with_gphys
@@ -9,6 +15,7 @@ bin/grads2nc_with_gphys
 %%RUBY_SITELIBDIR%%/numru/ggraph.rb
 %%RUBY_SITELIBDIR%%/numru/ggraph_on_merdional_section.rb
 %%RUBY_SITELIBDIR%%/numru/gphys.rb
+%%RUBY_SITELIBDIR%%/numru/htdir.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/attribute.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/attributenetcdf.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/axis.rb
@@ -16,6 +23,7 @@ bin/grads2nc_with_gphys
 %%RUBY_SITELIBDIR%%/numru/gphys/coordtransform.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/derivative.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/ep_flux.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/gpcommon.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/gphys.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/gphys_fft.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/gphys_grads_io.rb
@@ -67,7 +75,12 @@ bin/grads2nc_with_gphys
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/coordmapping.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/coordtransform.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/gdir.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gdir_client.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gdir_connect_ftp-like.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gdir_server.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ggraph.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gpcat.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gpcut.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/gphys.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/gphys_fft.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/gphys_grads_io.html
@@ -75,6 +88,9 @@ bin/grads2nc_with_gphys
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/gphys_io.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/gphys_io_common.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/gphys_netcdf_io.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gplist.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gpmath.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gpmaxmin.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/gpprint.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/gpview.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/grads2nc_with_gphys.html
