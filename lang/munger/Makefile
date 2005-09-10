@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	munger
-PORTVERSION=	4.71
+PORTVERSION=	4.73
 CATEGORIES=	lang
 MASTER_SITES=	http://www.jamesbailie.com/
 
@@ -14,6 +14,7 @@ MAINTAINER=	jimmy@jamesbailie.com
 COMMENT=	Static lisp interpreter with text processing abilities
 
 RUN_DEPENDS=	nc:${PORTSDIR}/net/netcat
+
 DATADIR=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 
 MAN1=		munger.1
