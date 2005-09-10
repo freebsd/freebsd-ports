@@ -984,7 +984,6 @@ cdargs		ports/sysutils/cdargs
 cdb		ports/databases/cdb
 cdbakeoven	ports/sysutils/cdbakeoven
 cdbkup		ports/sysutils/cdbkup
-cdce		ports/comms/cdce
 cdcl		ports/science/cdcl
 cdecl		ports/devel/cdecl
 cdf		ports/sysutils/cdf
