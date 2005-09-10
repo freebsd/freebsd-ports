@@ -16,6 +16,10 @@ HAS_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 600000
+IGNORE=		"Only supports FreeBSD 4.X and 5.X"
+.endif
+
 do-install:
 	${MKDIR} ${PREFIX}/modules/
 	${INSTALL_DATA} ${WRKSRC}/dazuko.ko ${PREFIX}/modules/dazuko.ko
