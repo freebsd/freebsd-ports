@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.54
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/clement/}:powerlogo
@@ -43,6 +43,10 @@ IGNORE=		: Please define WITH_KQUEUE_SUPPORT instead
 
 .if defined(WITH_KQUEUE_SUPPORT)
 EXTRA_PATCHES+=		${FILESDIR}/exp-apr-kqueue.patch
+.endif
+
+.if defined(WITH_OPENSSL_BETA)
+EXTRA_PATCHES+=		${FILESDIR}/build-fix-openssl_beta
 .endif
 
 SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
@@ -95,7 +99,7 @@ CONFIGURE_ARGS+=	--enable-v4-mapped
 .endif
 
 #backward compatibility
-.if defined(WITHOUT_SSL) 
+.if defined(WITHOUT_SSL)
 WITHOUT_SSL_MODULES=	YES
 .endif
 
