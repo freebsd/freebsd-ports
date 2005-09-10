@@ -9,17 +9,18 @@ PORTNAME=	mod_vhost_ldap
 PORTVERSION=	0.2.4
 CATEGORIES=	www
 MASTER_SITES=	http://alioth.debian.org/download.php/1113/
-DIST_SUBDIR=	apache2
-USE_BZIP2=	YES
 DISTNAME=	${PORTNAME:S/_/-/g}-${PORTVERSION}
+DIST_SUBDIR=	apache2
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Virtual Hosting from ldap built on top of mod_ldap
 
+USE_BZIP2=	YES
+USE_OPENLDAP=	YES
+
 WANT_APACHE=	2
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
-USE_OPENLDAP=	YES
 AP_LIB+=	${LOCALBASE}/lib -lldap
 AP_EXTRAS+=	-DMOD_VHOST_LDAP_VERSION=\\\"mod_vhost_ldap/${PORTVERSION}\\\"
 
