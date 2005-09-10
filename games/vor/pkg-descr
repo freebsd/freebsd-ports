@@ -1,0 +1,12 @@
+Variations on Rockdodger (VoR) is a fork of Paul Holt's little gem Rock
+Dodger, which has now accumulated enough differences to be worth releasing
+on its own.  The premise is simple: dodge the rocks until you die. No
+shields, no weapons, no bonus lives, just pure rockdodgin' fun for your
+spare moments. VoR has ray-traced rocks, a free-scrolling screen, and
+"real" physics for your ship.  Warning: this game is, if anything, harder
+than the original. It is intended to be a quickie game to kill a few spare
+moments here and there, not an epic space adventure.
+
+WWW: http://herkamire.com/jason/vor
+
+- Dmitry Marakasov <amdmi3@mail.ru>

@@ -556,6 +556,7 @@
     SUBDIR += vectoroids
     SUBDIR += virt
     SUBDIR += viruskiller
+    SUBDIR += vor
     SUBDIR += wanderer
     SUBDIR += wargus
     SUBDIR += wesnoth
