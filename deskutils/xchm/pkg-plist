@@ -10,6 +10,8 @@ share/locale/pl/LC_MESSAGES/xchm.mo
 share/locale/pt/LC_MESSAGES/xchm.mo
 share/locale/ro/LC_MESSAGES/xchm.mo
 share/locale/ru/LC_MESSAGES/xchm.mo
+share/locale/zh_CN/LC_MESSAGES/xchm.mo
+share/locale/zh_TW/LC_MESSAGES/xchm.mo
 share/pixmaps/xchmdoc-128.xpm
 share/pixmaps/xchmdoc-16.xpm
 share/pixmaps/xchmdoc-32.xpm
