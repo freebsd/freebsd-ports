@@ -229,12 +229,12 @@ post-install:
 
 #	@sh ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.if (defined(NOPROFILE) && ${OSVERSION} < 600007) || (defined(NO_PROFILE) && ${OSVERSION} >= 600007)
+.if (defined(NOPROFILE) && ${OSVERSION} < 600007 ) || (defined(NO_PROFILE) && ${OSVERSION} >= 600007 )
 PLIST_SUB=	PROFILE:="@comment "
 .else
 PLIST_SUB=	PROFILE:=""
 .endif
-.if (defined(NOPIC) && ${OSVERSION} < 600007) || (defined(NO_PIC) && ${OSVERSION} >= 600007)
+.if (defined(NOPIC) && ${OSVERSION} < 600007 ) || (defined(NO_PIC) && ${OSVERSION} >= 600007 )
 PLIST_SUB+=	PIC:="@comment "
 .else
 PLIST_SUB+=	PIC:=""
