@@ -6193,6 +6193,7 @@ mod_auth_imap	ports/www/mod_auth_imap
 mod_auth_imap2	ports/www/mod_auth_imap2
 mod_auth_kerb	ports/www/mod_auth_kerb
 mod_auth_mysql	ports/www/mod_auth_mysql
+mod_auth_mysql2	ports/www/mod_auth_mysql2
 mod_auth_mysql41_ap2	ports/www/mod_auth_mysql41_ap2
 mod_auth_mysql_another	ports/www/mod_auth_mysql_another
 mod_auth_pam	ports/www/mod_auth_pam
