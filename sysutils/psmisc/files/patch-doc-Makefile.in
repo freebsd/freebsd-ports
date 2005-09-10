@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Tue May 25 02:55:07 2004
++++ doc/Makefile.in	Sat Sep 10 04:02:32 2005
+@@ -159,7 +159,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-man_MANS = fuser.1 killall.1 pstree.1
++man_MANS = killall.1 pstree.1
+ EXTRA_DIST = $(man_MANS)
+ all: all-am
+ 

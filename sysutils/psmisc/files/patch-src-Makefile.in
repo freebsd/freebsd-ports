@@ -1,0 +1,60 @@
+--- src/Makefile.in.orig	Tue May 25 02:55:10 2004
++++ src/Makefile.in	Sat Sep 10 02:45:34 2005
+@@ -15,7 +15,7 @@
+ @SET_MAKE@
+ 
+ 
+-SOURCES = $(fuser_SOURCES) $(killall_SOURCES) $(pstree_SOURCES)
++SOURCES = $(killall_SOURCES) $(pstree_SOURCES)
+ 
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
+@@ -38,7 +38,7 @@
+ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+ host_triplet = @host@
+-bin_PROGRAMS = fuser$(EXEEXT) killall$(EXEEXT) pstree$(EXEEXT)
++bin_PROGRAMS = killall$(EXEEXT) pstree$(EXEEXT)
+ subdir = src
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -75,8 +75,8 @@
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+-SOURCES = $(fuser_SOURCES) $(killall_SOURCES) $(pstree_SOURCES)
+-DIST_SOURCES = $(fuser_SOURCES) $(killall_SOURCES) $(pstree_SOURCES)
++SOURCES = $(killall_SOURCES) $(pstree_SOURCES)
++DIST_SOURCES = $(killall_SOURCES) $(pstree_SOURCES)
+ ETAGS = etags
+ CTAGS = ctags
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+@@ -193,9 +193,9 @@
+ bin_SCRIPTS = pstree.x11
+ fuser_SOURCES = fuser.c comm.h signals.c signals.h loop.h
+ killall_SOURCES = killall.c comm.h signals.c signals.h 
+-killall_LDADD = @FLASK_LIB@
++killall_LDADD = @FLASK_LIB@ $(LIBINTL)
+ pstree_SOURCES = pstree.c comm.h
+-pstree_LDADD = @TERMCAP_LIB@ @FLASK_LIB@
++pstree_LDADD = @TERMCAP_LIB@ @FLASK_LIB@ $(LIBINTL)
+ BUILT_SOURCES = signames.h
+ EXTRA_DIST = signames.c 
+ CLEANFILES = signames.h pstree.x11
+@@ -504,12 +504,11 @@
+ 
+ signames.h: signames.c Makefile
+ 		@CPP@ -dM $< |\
+-		tr -s '\t ' ' ' | sort -n -k 3 | sed \
+-	's:#define SIG\([A-Z]\+[0-9]*\) \([0-9]\+\) *\(\|/\*.*\)$$:{\
+-\2,"\1" },:p;d' | \
+-		  grep -v '[0-9][0-9][0-9]' >signames.h || \
++		sed 's|\t | |g; s| $$||' | sort -n -k 3 |\
++		grep '^#define SIG[A-Z0-9]* [0-9]*$$'|sed 's|#define SIG||'|\
++		awk '{print "{" $$2 ",\"" $$1 "\" },"}' >signames.h || \
+ 		  { rm -f signames.h; exit 1; }
+-		grep '^{ 1,"HUP" },$$' signames.h >/dev/null || \
++		grep '^{1,"HUP" },$$' signames.h >/dev/null || \
+ 		  { rm -f signames.h; exit 1; }
+ 
+ Makefile:	signames.h
