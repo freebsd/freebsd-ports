@@ -1,0 +1,15 @@
+Shotgun Debugger is a 2D, top-down action game. It is The Future, and your
+habit of computer network exploration has finally done you in. You are
+captured and taken to a strange underground complex populated by robot
+soldiers. Your task is to escape the facility--but the hordes of walking
+death machines aren't just gonna let you.
+
+Shotgun Debugger is pseudo-3D -- while gameplay is strictly two-dimensional,
+the world is rendered in three dimensions. Worlds are not tile-based, but
+polygon-based -- rooms and hallways can be made to any shape imaginable,
+allowing for some rather impressive architecture.
+
+WWW: http://sdb.gamecreation.org/
+
+- Dmitry Marakasov
+amdmi3@mail.ru

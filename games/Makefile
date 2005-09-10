@@ -464,6 +464,7 @@
     SUBDIR += scorched3d
     SUBDIR += scummvm
     SUBDIR += scummvm-tools
+    SUBDIR += sdb
     SUBDIR += sdlroids
     SUBDIR += seabattle
     SUBDIR += seahaven
