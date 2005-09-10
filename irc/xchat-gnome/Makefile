@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	xchat
-PORTVERSION=	0.2
-PORTREVISION=	2
+PORTVERSION=	0.5
 CATEGORIES=	irc gnome ipv6
-MASTER_SITES=	http://flapjack.navi.cx/releases/xchat-gnome/ \
-		http://members.chello.nl/~g.mast/distfiles/
+MASTER_SITES=	http://flapjack.navi.cx/releases/xchat-gnome/
 PKGNAMESUFFIX=	-gnome
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
@@ -18,8 +16,9 @@ MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	An IRC client for GNOME 2 (development version)
 
 USE_X_PREFIX=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomeui
+USE_GNOME=	gnomehack libgnomeui
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
@@ -27,6 +26,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 CONFIGURE_ARGS=	--enable-nls \
 		--enable-ipv6 \
 		--enable-gnomefe
+
+GCONF_SCHEMAS=	apps_xchat.schemas notification.schemas urlscraper.schemas
 
 CONFLICTS=	xchat-1* xchat2-2*
 
@@ -61,7 +62,7 @@ PLIST_SUB+=	TCL="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${PERL_LEVEL} < 500600 || defined(WITHOUT_PERL)
+.if ${PERL_LEVEL} < 500600 || defined(WITHOUT_PERL)
 CONFIGURE_ARGS+=--disable-perl
 PLIST_SUB+=	PERL="@comment "
 .else
@@ -84,7 +85,7 @@ pre-everything::
 .if !defined(WITH_TCL)
 	@${ECHO_MSG} "WITH_TCL=yes for tcl support"
 .endif
-.if ${ARCH} != "amd64" && !defined(WITHOUT_PERL)
+.if !defined(WITHOUT_PERL)
 	@${ECHO_MSG} "WITHOUT_PERL=yes to disable Perl support"
 .endif
 
