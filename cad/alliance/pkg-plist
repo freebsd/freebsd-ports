@@ -121,7 +121,6 @@ alliance/lib/libMgn.la
 alliance/lib/libMgn.a
 alliance/lib/libPgn.la
 alliance/lib/libPgn.a
-@dirrm alliance/lib
 alliance/include/mlu.h
 alliance/include/mlo.h
 alliance/include/mpu.h
@@ -174,7 +173,6 @@ alliance/include/mbkgen.h
 alliance/include/genlib.h
 alliance/include/dgn.h
 alliance/include/genpat.h
-@dirrm alliance/include
 alliance/etc/spimodel.cfg
 alliance/etc/cmos.rds
 alliance/etc/prol.elp
@@ -190,7 +188,6 @@ alliance/etc/xfsm.par
 alliance/etc/xpat.par
 alliance/etc/xsch.par
 alliance/etc/xvpn.par
-@unexec rmdir %D/alliance/etc > /dev/null 2>&1 || true
 alliance/bin/x2vy
 alliance/bin/druc
 alliance/bin/alcbanner
@@ -216,10 +213,12 @@ alliance/bin/lvx
 alliance/bin/cougar
 alliance/bin/flatrds
 alliance/bin/m2e
+alliance/bin/mips_asm
 alliance/bin/moka
 alliance/bin/nero
 alliance/bin/pdv
 alliance/bin/ocp
+alliance/bin/pat2spi
 alliance/bin/proof
 alliance/bin/ring
 alliance/bin/s2r
@@ -238,61 +237,111 @@ alliance/bin/xfsm
 alliance/bin/xpat
 alliance/bin/xsch
 alliance/bin/xvpn
-@dirrm alliance/bin
-alliance/doc/html/attila/attila.html
-alliance/doc/html/attila/ref_attila.html
-alliance/doc/html/attila/man_attila.html
-@dirrm alliance/doc/html/attila
-alliance/doc/html/genlib/genlib.html
-alliance/doc/html/genlib/ref_genlib.html
-alliance/doc/html/genlib/man_genlib.html
-alliance/doc/html/genlib/man_genlib_macro.html
-alliance/doc/html/genlib/man_dpgen_inv.html
-alliance/doc/html/genlib/man_dpgen_buff.html
-alliance/doc/html/genlib/man_dpgen_nand2.html
-alliance/doc/html/genlib/man_dpgen_nand3.html
-alliance/doc/html/genlib/man_dpgen_nand4.html
-alliance/doc/html/genlib/man_dpgen_and2.html
-alliance/doc/html/genlib/man_dpgen_and3.html
-alliance/doc/html/genlib/man_dpgen_and4.html
-alliance/doc/html/genlib/man_dpgen_nor2.html
-alliance/doc/html/genlib/man_dpgen_nor3.html
-alliance/doc/html/genlib/man_dpgen_nor4.html
-alliance/doc/html/genlib/man_dpgen_or2.html
-alliance/doc/html/genlib/man_dpgen_or3.html
-alliance/doc/html/genlib/man_dpgen_or4.html
-alliance/doc/html/genlib/man_dpgen_xnor2.html
-alliance/doc/html/genlib/man_dpgen_xor2.html
-alliance/doc/html/genlib/man_dpgen_nmux2.html
-alliance/doc/html/genlib/man_dpgen_mux2.html
-alliance/doc/html/genlib/man_dpgen_nbuse.html
-alliance/doc/html/genlib/man_dpgen_buse.html
-alliance/doc/html/genlib/man_dpgen_nand2mask.html
-alliance/doc/html/genlib/man_dpgen_nor2mask.html
-alliance/doc/html/genlib/man_dpgen_xnor2mask.html
-alliance/doc/html/genlib/man_dpgen_adsb2f.html
-alliance/doc/html/genlib/man_dpgen_shift.html
-alliance/doc/html/genlib/man_dpgen_nul.html
-alliance/doc/html/genlib/man_dpgen_const.html
-alliance/doc/html/genlib/man_dpgen_rom2.html
-alliance/doc/html/genlib/man_dpgen_rom4.html
-alliance/doc/html/genlib/man_dpgen_rf1.html
-alliance/doc/html/genlib/man_dpgen_rf1d.html
-alliance/doc/html/genlib/man_dpgen_dff.html
-alliance/doc/html/genlib/man_dpgen_dfft.html
-alliance/doc/html/genlib/man_dpgen_sff.html
-alliance/doc/html/genlib/man_dpgen_sfft.html
-@dirrm alliance/doc/html/genlib
-alliance/doc/html/nero/nero.html
-alliance/doc/html/nero/ref_nero.html
-alliance/doc/html/nero/man_nero.html
-@dirrm alliance/doc/html/nero
-@dirrm alliance/doc/html
+alliance/doc/html/alliance/attila.html
+alliance/doc/html/alliance/ref_attila.html
+alliance/doc/html/alliance/man_attila.html
+alliance/doc/html/alliance/genlib.html
+alliance/doc/html/alliance/ref_genlib.html
+alliance/doc/html/alliance/man_genlib.html
+alliance/doc/html/alliance/man_genlib_macro.html
+alliance/doc/html/alliance/man_dpgen_inv.html
+alliance/doc/html/alliance/man_dpgen_buff.html
+alliance/doc/html/alliance/man_dpgen_nand2.html
+alliance/doc/html/alliance/man_dpgen_nand3.html
+alliance/doc/html/alliance/man_dpgen_nand4.html
+alliance/doc/html/alliance/man_dpgen_and2.html
+alliance/doc/html/alliance/man_dpgen_and3.html
+alliance/doc/html/alliance/man_dpgen_and4.html
+alliance/doc/html/alliance/man_dpgen_nor2.html
+alliance/doc/html/alliance/man_dpgen_nor3.html
+alliance/doc/html/alliance/man_dpgen_nor4.html
+alliance/doc/html/alliance/man_dpgen_or2.html
+alliance/doc/html/alliance/man_dpgen_or3.html
+alliance/doc/html/alliance/man_dpgen_or4.html
+alliance/doc/html/alliance/man_dpgen_xnor2.html
+alliance/doc/html/alliance/man_dpgen_xor2.html
+alliance/doc/html/alliance/man_dpgen_nmux2.html
+alliance/doc/html/alliance/man_dpgen_mux2.html
+alliance/doc/html/alliance/man_dpgen_nbuse.html
+alliance/doc/html/alliance/man_dpgen_buse.html
+alliance/doc/html/alliance/man_dpgen_nand2mask.html
+alliance/doc/html/alliance/man_dpgen_nor2mask.html
+alliance/doc/html/alliance/man_dpgen_xnor2mask.html
+alliance/doc/html/alliance/man_dpgen_adsb2f.html
+alliance/doc/html/alliance/man_dpgen_shift.html
+alliance/doc/html/alliance/man_dpgen_nul.html
+alliance/doc/html/alliance/man_dpgen_const.html
+alliance/doc/html/alliance/nero.html
+alliance/doc/html/alliance/man_dpgen_rom2.html
+alliance/doc/html/alliance/man_dpgen_rom4.html
+alliance/doc/html/alliance/man_dpgen_rf1.html
+alliance/doc/html/alliance/man_dpgen_fifo.html
+alliance/doc/html/alliance/man_dpgen_rf1d.html
+alliance/doc/html/alliance/man_dpgen_dff.html
+alliance/doc/html/alliance/man_dpgen_dfft.html
+alliance/doc/html/alliance/man_dpgen_sff.html
+alliance/doc/html/alliance/man_dpgen_sfft.html
+alliance/doc/html/alliance/ref_nero.html
+alliance/doc/html/alliance/man_nero.html
 alliance/doc/pdf/attila.pdf
 alliance/doc/pdf/genlib.pdf
 alliance/doc/pdf/nero.pdf
-@dirrm alliance/doc/pdf
-@dirrm alliance/doc
+alliance/doc/overview/datapath.gif
+alliance/doc/overview/genview.gif
+alliance/doc/overview/graal.gif
+alliance/doc/overview/Makefile
+alliance/doc/overview/na3dp.ps
+alliance/doc/overview/na3y.ps
+alliance/doc/overview/nmx2_dp.ps
+alliance/doc/overview/nmx2_y.ps
+alliance/doc/overview/overview.blg
+alliance/doc/overview/overview.tex
+alliance/doc/overview/overview.pdf
+alliance/doc/overview/stacs.gif
+alliance/doc/overview/thesis.bib
+alliance/doc/overview/tools.fig
+alliance/doc/design-flow/beh-spec-alliance.gif
+alliance/doc/design-flow/beh-spec-asimut.gif
+alliance/doc/design-flow/beh-spec-fsm.gif
+alliance/doc/design-flow/beh-spec-mocha.gif
+alliance/doc/design-flow/beh-spec-rtl.gif
+alliance/doc/design-flow/beh-spec-split.gif
+alliance/doc/design-flow/beh-spec-struct.gif
+alliance/doc/design-flow/beh-spec-syf.gif
+alliance/doc/design-flow/beh-spec-vasy.gif
+alliance/doc/design-flow/dreal.gif
+alliance/doc/design-flow/flow.html
+alliance/doc/design-flow/future.html
+alliance/doc/design-flow/graal.gif
+alliance/doc/design-flow/index.html
+alliance/doc/design-flow/intro.html
+alliance/doc/design-flow/logo.gif
+alliance/doc/design-flow/mips-small.jpg
+alliance/doc/design-flow/mips.html
+alliance/doc/design-flow/mips.jpg
+alliance/doc/design-flow/place-route-ocpr.gif
+alliance/doc/design-flow/place-route-ring.gif
+alliance/doc/design-flow/place-route-s2r.gif
+alliance/doc/design-flow/place-route-valid.gif
+alliance/doc/design-flow/rtl-synth-dp.gif
+alliance/doc/design-flow/rtl-synth-fmi.gif
+alliance/doc/design-flow/rtl-synth-genlib.gif
+alliance/doc/design-flow/rtl-synth-logic.gif
+alliance/doc/design-flow/tools.html
+alliance/doc/design-flow/xfsm.gif
+alliance/doc/design-flow/xpat.gif
+alliance/doc/design-flow/xsch.gif
+alliance/doc/alliance-run/Makefile
+alliance/doc/alliance-run/README
+alliance/doc/alliance-run/amd2901_chip.c
+alliance/doc/alliance-run/amd2901_chip.rin
+alliance/doc/alliance-run/amd2901_core.c
+alliance/doc/alliance-run/amd2901_core.ioc
+alliance/doc/alliance-run/amd2901_ctl.lax
+alliance/doc/alliance-run/amd2901_ctl.vbe
+alliance/doc/alliance-run/amd2901_dpt.c
+alliance/doc/alliance-run/bench.zsh
+alliance/doc/alliance-run/pattern.c
 alliance/cells/dp_sxlib/CATAL
 alliance/cells/dp_sxlib/dp_dff_scan_x4.ap
 alliance/cells/dp_sxlib/dp_dff_scan_x4.vbe
@@ -343,7 +392,6 @@ alliance/cells/dp_sxlib/dp_ts_x8.ap
 alliance/cells/dp_sxlib/dp_ts_x8.vbe
 alliance/cells/dp_sxlib/dp_ts_x8_buf.ap
 alliance/cells/dp_sxlib/dp_ts_x8_buf.vbe
-@dirrm alliance/cells/dp_sxlib
 alliance/cells/padlib/CATAL
 alliance/cells/padlib/corner_sp.ap
 alliance/cells/padlib/corner_sp.vbe
@@ -414,7 +462,6 @@ alliance/cells/padlib/pvssi_sp.vbe
 alliance/cells/padlib/pvssick_sp.al
 alliance/cells/padlib/pvssick_sp.ap
 alliance/cells/padlib/pvssick_sp.vbe
-@dirrm alliance/cells/padlib
 alliance/cells/rflib/CATAL
 alliance/cells/rflib/rf_dec_bufad0.ap
 alliance/cells/rflib/rf_dec_bufad0.vbe
@@ -477,7 +524,44 @@ alliance/cells/rflib/rf_out_buf_4.vbe
 alliance/cells/rflib/rf_out_mem.ap
 alliance/cells/rflib/rf_out_mem.vbe
 alliance/cells/rflib/rflib.lef
-@dirrm alliance/cells/rflib
+alliance/cells/rf2lib/CATAL
+alliance/cells/rf2lib/rf2lib.lef
+alliance/cells/rf2lib/rf2_dec_bufad0.ap
+alliance/cells/rf2lib/rf2_dec_bufad0.vbe
+alliance/cells/rf2lib/rf2_dec_bufad1_l.ap
+alliance/cells/rf2lib/rf2_dec_bufad1_l.vbe
+alliance/cells/rf2lib/rf2_dec_bufad1_r.ap
+alliance/cells/rf2lib/rf2_dec_bufad1_r.vbe
+alliance/cells/rf2lib/rf2_dec_bufad2_l.ap
+alliance/cells/rf2lib/rf2_dec_bufad2_l.vbe
+alliance/cells/rf2lib/rf2_dec_bufad2_r.ap
+alliance/cells/rf2lib/rf2_dec_bufad2_r.vbe
+alliance/cells/rf2lib/rf2_dec_nand2.ap
+alliance/cells/rf2lib/rf2_dec_nand2.vbe
+alliance/cells/rf2lib/rf2_dec_nand3.ap
+alliance/cells/rf2lib/rf2_dec_nand3.vbe
+alliance/cells/rf2lib/rf2_dec_nand4.ap
+alliance/cells/rf2lib/rf2_dec_nand4.vbe
+alliance/cells/rf2lib/rf2_dec_nao3.ap
+alliance/cells/rf2lib/rf2_dec_nao3.vbe
+alliance/cells/rf2lib/rf2_dec_nbuf.ap
+alliance/cells/rf2lib/rf2_dec_nbuf.vbe
+alliance/cells/rf2lib/rf2_dec_nor3.ap
+alliance/cells/rf2lib/rf2_dec_nor3.vbe
+alliance/cells/rf2lib/rf2_inmux_buf.ap
+alliance/cells/rf2lib/rf2_inmux_buf.vbe
+alliance/cells/rf2lib/rf2_inmux_mem.ap
+alliance/cells/rf2lib/rf2_inmux_mem.vbe
+alliance/cells/rf2lib/rf2_mid_buf.ap
+alliance/cells/rf2lib/rf2_mid_buf.vbe
+alliance/cells/rf2lib/rf2_mid_mem.ap
+alliance/cells/rf2lib/rf2_mid_mem_r0.ap
+alliance/cells/rf2lib/rf2_mid_mem_r0.vbe
+alliance/cells/rf2lib/rf2_mid_mem.vbe
+alliance/cells/rf2lib/rf2_out_buf.ap
+alliance/cells/rf2lib/rf2_out_buf.vbe
+alliance/cells/rf2lib/rf2_out_mem.ap
+alliance/cells/rf2lib/rf2_out_mem.vbe
 alliance/cells/ramlib/ramlib.lef
 alliance/cells/ramlib/CATAL
 alliance/cells/ramlib/ram_mem_buf0.ap
@@ -520,7 +604,6 @@ alliance/cells/ramlib/ram_sense_decad4.ap
 alliance/cells/ramlib/ram_sense_decad4.vbe
 alliance/cells/ramlib/ram_sense_decad5.ap
 alliance/cells/ramlib/ram_sense_decad5.vbe
-@dirrm alliance/cells/ramlib
 alliance/cells/romlib/romlib.lef
 alliance/cells/romlib/CATAL
 alliance/cells/romlib/rom_data_insel.ap
@@ -581,7 +664,6 @@ alliance/cells/romlib/rom_dec_selmux67.ap
 alliance/cells/romlib/rom_dec_selmux67_ts.ap
 alliance/cells/romlib/rom_dec_selmux67_ts.vbe
 alliance/cells/romlib/rom_dec_selmux67.vbe
-@dirrm alliance/cells/romlib
 alliance/cells/sxlib/a2_x2.al
 alliance/cells/sxlib/a2_x4.al
 alliance/cells/sxlib/a3_x2.al
@@ -865,6 +947,7 @@ alliance/cells/sxlib/000000092.dat
 alliance/cells/sxlib/000000093.dat
 alliance/cells/sxlib/000000094.dat
 alliance/cells/sxlib/000000095.dat
+alliance/cells/sxlib/CATAL
 alliance/cells/sxlib/CIRCUIT.IDX
 alliance/cells/sxlib/sxlib.cct
 alliance/cells/sxlib/sxlib.db
@@ -877,7 +960,6 @@ alliance/cells/sxlib/a2_x4.sym
 alliance/cells/sxlib/a3_x2.sym
 alliance/cells/sxlib/a3_x4.sym
 alliance/cells/sxlib/a4_x2.sym
-alliance/cells/sxlib/nao2o22_x1.sym
 alliance/cells/sxlib/a4_x4.sym
 alliance/cells/sxlib/an12_x1.sym
 alliance/cells/sxlib/an12_x4.sym
@@ -902,7 +984,7 @@ alliance/cells/sxlib/na4_x1.sym
 alliance/cells/sxlib/na4_x4.sym
 alliance/cells/sxlib/nao22_x1.sym
 alliance/cells/sxlib/nao22_x4.sym
-alliance/cells/sxlib/CATAL
+alliance/cells/sxlib/nao2o22_x1.sym
 alliance/cells/sxlib/nao2o22_x4.sym
 alliance/cells/sxlib/nmx2_x1.sym
 alliance/cells/sxlib/nmx2_x4.sym
@@ -923,7 +1005,6 @@ alliance/cells/sxlib/noa2a2a2a24_x4.sym
 alliance/cells/sxlib/noa2ao222_x2.sym
 alliance/cells/sxlib/noa2ao222_x4.sym
 alliance/cells/sxlib/noa3ao322_x4.sym
-alliance/cells/sxlib/noa22_x1.vbe
 alliance/cells/sxlib/nts_x1.sym
 alliance/cells/sxlib/nts_x2.sym
 alliance/cells/sxlib/nxr2_x1.sym
@@ -1004,6 +1085,7 @@ alliance/cells/sxlib/no3_x1.vbe
 alliance/cells/sxlib/no3_x4.vbe
 alliance/cells/sxlib/no4_x1.vbe
 alliance/cells/sxlib/no4_x4.vbe
+alliance/cells/sxlib/noa22_x1.vbe
 alliance/cells/sxlib/noa22_x4.vbe
 alliance/cells/sxlib/noa2a22_x1.vbe
 alliance/cells/sxlib/noa2a22_x4.vbe
@@ -1015,7 +1097,6 @@ alliance/cells/sxlib/noa2ao222_x1.vbe
 alliance/cells/sxlib/noa2ao222_x4.vbe
 alliance/cells/sxlib/noa3ao322_x1.vbe
 alliance/cells/sxlib/noa3ao322_x4.vbe
-alliance/cells/sxlib/fulladder_x2.vhd
 alliance/cells/sxlib/nts_x1.vbe
 alliance/cells/sxlib/nts_x2.vbe
 alliance/cells/sxlib/nxr2_x1.vbe
@@ -1067,6 +1148,7 @@ alliance/cells/sxlib/buf_x2.vhd
 alliance/cells/sxlib/ao2o22_x4.vhd
 alliance/cells/sxlib/buf_x4.vhd
 alliance/cells/sxlib/buf_x8.vhd
+alliance/cells/sxlib/fulladder_x2.vhd
 alliance/cells/sxlib/fulladder_x4.vhd
 alliance/cells/sxlib/halfadder_x2.vhd
 alliance/cells/sxlib/halfadder_x4.vhd
@@ -1086,7 +1168,6 @@ alliance/cells/sxlib/na4_x1.vhd
 alliance/cells/sxlib/na4_x4.vhd
 alliance/cells/sxlib/nao22_x1.vhd
 alliance/cells/sxlib/nao22_x4.vhd
-alliance/cells/sxlib/noa3ao322_x1.vhd
 alliance/cells/sxlib/nao2o22_x1.vhd
 alliance/cells/sxlib/nao2o22_x4.vhd
 alliance/cells/sxlib/nmx2_x1.vhd
@@ -1109,6 +1190,7 @@ alliance/cells/sxlib/noa2a2a2a24_x1.vhd
 alliance/cells/sxlib/noa2a2a2a24_x4.vhd
 alliance/cells/sxlib/noa2ao222_x1.vhd
 alliance/cells/sxlib/noa2ao222_x4.vhd
+alliance/cells/sxlib/noa3ao322_x1.vhd
 alliance/cells/sxlib/noa3ao322_x4.vhd
 alliance/cells/sxlib/nts_x1.vhd
 alliance/cells/sxlib/nts_x2.vhd
@@ -1130,7 +1212,6 @@ alliance/cells/sxlib/oa2a2a2a24_x2.vhd
 alliance/cells/sxlib/oa2a2a2a24_x4.vhd
 alliance/cells/sxlib/oa2ao222_x2.vhd
 alliance/cells/sxlib/oa2ao222_x4.vhd
-alliance/cells/sxlib/zero_x0.vhd
 alliance/cells/sxlib/oa3ao322_x2.vhd
 alliance/cells/sxlib/oa3ao322_x4.vhd
 alliance/cells/sxlib/on12_x1.vhd
@@ -1153,6 +1234,539 @@ alliance/cells/sxlib/ts_x4.vhd
 alliance/cells/sxlib/ts_x8.vhd
 alliance/cells/sxlib/xr2_x1.vhd
 alliance/cells/sxlib/xr2_x4.vhd
+alliance/cells/sxlib/zero_x0.vhd
+alliance/tutorials/place_and_route/src/amd2901/Makefile
+alliance/tutorials/place_and_route/src/amd2901/amd2901_chip.c
+alliance/tutorials/place_and_route/src/amd2901/amd2901_chip.rin
+alliance/tutorials/place_and_route/src/amd2901/amd2901_core.c
+alliance/tutorials/place_and_route/src/amd2901/amd2901_core.ioc
+alliance/tutorials/place_and_route/src/amd2901/amd2901_ctl.lax
+alliance/tutorials/place_and_route/src/amd2901/amd2901_ctl.vbe
+alliance/tutorials/place_and_route/src/amd2901/amd2901_dpt.c
+alliance/tutorials/place_and_route/src/amd2901/amd2901_dpt.vbe
+alliance/tutorials/place_and_route/src/amd2901/pattern.c
+alliance/tutorials/place_and_route/src/Makefile
+alliance/tutorials/place_and_route/src/buffer/Makefile
+alliance/tutorials/place_and_route/src/buffer/buf_x2.ap
+alliance/tutorials/place_and_route/src/buffer/buffer.vbe
+alliance/tutorials/place_and_route/src/inv/Makefile
+alliance/tutorials/place_and_route/src/inv/inv.vbe
+alliance/tutorials/place_and_route/src/inv/inv_x1.ap
+alliance/tutorials/place_and_route/tex/Makefile
+alliance/tutorials/place_and_route/tex/amd2901.epsi
+alliance/tutorials/place_and_route/tex/bloc.fig
+alliance/tutorials/place_and_route/tex/buff_x1.fig
+alliance/tutorials/place_and_route/tex/colonnes.fig
+alliance/tutorials/place_and_route/tex/controleplace.fig
+alliance/tutorials/place_and_route/tex/dpt-all-1.fig
+alliance/tutorials/place_and_route/tex/gabarit2_sx.fig
+alliance/tutorials/place_and_route/tex/gabarit3_sx.fig
+alliance/tutorials/place_and_route/tex/gabarit_sx.fig
+alliance/tutorials/place_and_route/tex/hier.fig
+alliance/tutorials/place_and_route/tex/hierarchie.fig
+alliance/tutorials/place_and_route/tex/inv_x1.fig
+alliance/tutorials/place_and_route/tex/place_and_route.tex
+alliance/tutorials/place_and_route/tex/placement.fig
+alliance/tutorials/place_and_route/tex/preplacement.fig
+alliance/tutorials/place_and_route/tex/stick.fig
+alliance/tutorials/simulation/src/addaccu_beh/Makefile
+alliance/tutorials/simulation/src/addaccu_beh/addaccu.vbe
+alliance/tutorials/simulation/src/addaccu_beh/addaccu4.vhdl
+alliance/tutorials/simulation/src/addaccu_beh/addaccu_dly.vbe
+alliance/tutorials/simulation/src/addaccu_beh/patterns.pat
+alliance/tutorials/simulation/src/addaccu_beh/patterns_dly.pat
+alliance/tutorials/simulation/src/Makefile
+alliance/tutorials/simulation/src/addaccu_struct/Makefile
+alliance/tutorials/simulation/src/addaccu_struct/accu.vbe
+alliance/tutorials/simulation/src/addaccu_struct/accu.vst
+alliance/tutorials/simulation/src/addaccu_struct/addaccu.vbe
+alliance/tutorials/simulation/src/addaccu_struct/addaccu.vst
+alliance/tutorials/simulation/src/addaccu_struct/alu.vbe
+alliance/tutorials/simulation/src/addaccu_struct/alu.vst
+alliance/tutorials/simulation/src/addaccu_struct/mux.vbe
+alliance/tutorials/simulation/src/addaccu_struct/mux.vst
+alliance/tutorials/simulation/src/addaccu_struct/pat_new.c
+alliance/tutorials/simulation/tex/Makefile
+alliance/tutorials/simulation/tex/addac.fig
+alliance/tutorials/simulation/tex/addac.jpg
+alliance/tutorials/simulation/tex/cpt3.epsi
+alliance/tutorials/simulation/tex/simulation.tex
+alliance/tutorials/place_and_route.pdf
+alliance/tutorials/start/Makefile
+alliance/tutorials/start/start.tex
+alliance/tutorials/simulation.pdf
+alliance/tutorials/synthesis/src/amd2901/Makefile
+alliance/tutorials/synthesis/src/amd2901/amd.vst
+alliance/tutorials/synthesis/src/amd2901/amd2901_chip.c
+alliance/tutorials/synthesis/src/amd2901/amd2901_core.c
+alliance/tutorials/synthesis/src/amd2901/amd2901_ctl.c
+alliance/tutorials/synthesis/src/amd2901/amd2901_ctl.vbe
+alliance/tutorials/synthesis/src/amd2901/amd2901_dpt.c
+alliance/tutorials/synthesis/src/amd2901/amd2901_dpt.vbe
+alliance/tutorials/synthesis/src/amd2901/circuit.c
+alliance/tutorials/synthesis/src/amd2901/data_path.c
+alliance/tutorials/synthesis/src/amd2901/pat.pat
+alliance/tutorials/synthesis/src/amd2901/pattern.c
+alliance/tutorials/synthesis/src/amd2901/pattern.pat
+alliance/tutorials/synthesis/src/Makefile
+alliance/tutorials/synthesis/src/amdbug/Makefile
+alliance/tutorials/synthesis/src/amdbug/amd_0.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_1.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_10.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_11.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_12.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_13.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_14.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_15.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_16.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_17.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_18.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_19.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_2.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_20.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_21.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_22.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_23.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_24.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_3.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_4.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_5.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_6.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_7.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_8.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_9.vbe
+alliance/tutorials/synthesis/src/amdbug/amd_ok.vbe
+alliance/tutorials/synthesis/src/amdbug/amdfindbug.c
+alliance/tutorials/synthesis/src/digicode/Makefile
+alliance/tutorials/synthesis/src/digicode/digicode.fsm
+alliance/tutorials/synthesis/src/digicode/digicode.pat
+alliance/tutorials/synthesis/src/digicode/paramfile.lax
+alliance/tutorials/synthesis/src/digicode/scan.path
+alliance/tutorials/synthesis/src/meter5/Makefile
+alliance/tutorials/synthesis/src/meter5/cpt5.fsm
+alliance/tutorials/synthesis/src/meter5/cpt5.pat
+alliance/tutorials/synthesis/tex/Makefile
+alliance/tutorials/synthesis/tex/T_RC.fig
+alliance/tutorials/synthesis/tex/amd2901.epsi
+alliance/tutorials/synthesis/tex/automate.fig
+alliance/tutorials/synthesis/tex/bloc.fig
+alliance/tutorials/synthesis/tex/clavier.fig
+alliance/tutorials/synthesis/tex/ctl-alu-1.fig
+alliance/tutorials/synthesis/tex/ctl-mrs-1.fig
+alliance/tutorials/synthesis/tex/ctl-wen-1.fig
+alliance/tutorials/synthesis/tex/ctldecode.fig
+alliance/tutorials/synthesis/tex/ctldecodebw.fig
+alliance/tutorials/synthesis/tex/datap.fig
+alliance/tutorials/synthesis/tex/dpt-all-1.fig
+alliance/tutorials/synthesis/tex/dpt-alu-1.fig
+alliance/tutorials/synthesis/tex/dptbanc.fig
+alliance/tutorials/synthesis/tex/ex_digicode.fig
+alliance/tutorials/synthesis/tex/exemple1.fig
+alliance/tutorials/synthesis/tex/exemple2.fig
+alliance/tutorials/synthesis/tex/graphe1.fig
+alliance/tutorials/synthesis/tex/hier.fig
+alliance/tutorials/synthesis/tex/graphe_solution_digicode.fig
+alliance/tutorials/synthesis/tex/synthese.fig
+alliance/tutorials/synthesis/tex/synthesis.tex
+alliance/tutorials/start.pdf
+alliance/tutorials/synthesis.pdf
+alliance/examples/alliance-examples/addaccu16/Makefile
+alliance/examples/alliance-examples/addaccu16/README
+alliance/examples/alliance-examples/addaccu16/addaccu.ioc
+alliance/examples/alliance-examples/addaccu16/addaccu.pat
+alliance/examples/alliance-examples/addaccu16/addaccu.vhdl
+alliance/examples/alliance-examples/adder4/Makefile
+alliance/examples/alliance-examples/adder4/README
+alliance/examples/alliance-examples/adder4/adder4.ioc
+alliance/examples/alliance-examples/adder4/adder4.pat
+alliance/examples/alliance-examples/adder4/adder4.vhdl
+alliance/examples/alliance-examples/amd2901/Makefile
+alliance/examples/alliance-examples/amd2901/amd2901_chip.c
+alliance/examples/alliance-examples/amd2901/amd2901_chip.rin
+alliance/examples/alliance-examples/amd2901/amd2901_core.c
+alliance/examples/alliance-examples/amd2901/amd2901_core.ioc
+alliance/examples/alliance-examples/amd2901/amd2901_ctl.lax
+alliance/examples/alliance-examples/amd2901/amd2901_ctl.vbe
+alliance/examples/alliance-examples/amd2901/amd2901_dpt.c
+alliance/examples/alliance-examples/amd2901/amd2901_dpt.vbe
+alliance/examples/alliance-examples/amd2901/pattern.c
+alliance/examples/alliance-examples/amd2901/pattern.pat
+alliance/examples/alliance-examples/amd2901/pattern_core.spi
+alliance/examples/alliance-examples/amd2901-vasy/Makefile
+alliance/examples/alliance-examples/amd2901-vasy/amd2901.ioc
+alliance/examples/alliance-examples/amd2901-vasy/amd2901.pat
+alliance/examples/alliance-examples/amd2901-vasy/amd2901.vhdl
+alliance/examples/alliance-examples/digi/Makefile
+alliance/examples/alliance-examples/digi/digi.fsm
+alliance/examples/alliance-examples/digi/digi.ioc
+alliance/examples/alliance-examples/digi/digi.pat
+alliance/examples/alliance-examples/divcas4/CATAL_ASIMUT_VASY
+alliance/examples/alliance-examples/divcas4/Makefile
+alliance/examples/alliance-examples/divcas4/README
+alliance/examples/alliance-examples/divcas4/cas.lax
+alliance/examples/alliance-examples/divcas4/cas.vhdl
+alliance/examples/alliance-examples/divcas4/divcas4.ioc
+alliance/examples/alliance-examples/divcas4/divcas4.pat
+alliance/examples/alliance-examples/divcas4/divcas4.vhdl
+alliance/examples/alliance-examples/divcas4/divcas4_model.lax
+alliance/examples/alliance-examples/etc/techno-035.rds
+alliance/examples/alliance-examples/etc/techno-symb.rds
+alliance/examples/alliance-examples/hadamard/CATAL_ASIMUT_VASY
+alliance/examples/alliance-examples/hadamard/Makefile
+alliance/examples/alliance-examples/hadamard/calcul.vhdl
+alliance/examples/alliance-examples/hadamard/compteur.vhdl
+alliance/examples/alliance-examples/hadamard/hadamard.ioc
+alliance/examples/alliance-examples/hadamard/hadamard.vhdl
+alliance/examples/alliance-examples/hadamard/hadamard_1.pat
+alliance/examples/alliance-examples/hadamard/hadamard_2.pat
+alliance/examples/alliance-examples/hadamard/hadamard_3.pat
+alliance/examples/alliance-examples/hadamard/ram.vhdl
+alliance/examples/alliance-examples/hadamard/rom.vhdl
+alliance/examples/alliance-examples/hadamard/sequenceur.vhdl
+alliance/examples/alliance-examples/mipsR3000/asm/CATAL
+alliance/examples/alliance-examples/mipsR3000/asm/CATAL_VBE
+alliance/examples/alliance-examples/mipsR3000/asm/CATAL_VBE_DPT
+alliance/examples/alliance-examples/mipsR3000/asm/CATAL_VST_FSM
+alliance/examples/alliance-examples/mipsR3000/asm/CATAL_VST_FSM_STS
+alliance/examples/alliance-examples/mipsR3000/asm/CATAL_VST_FSM_STS_DPT
+alliance/examples/alliance-examples/mipsR3000/asm/CATAL_VST_STS
+alliance/examples/alliance-examples/mipsR3000/asm/Makefile_alu
+alliance/examples/alliance-examples/mipsR3000/asm/Makefile_bm
+alliance/examples/alliance-examples/mipsR3000/asm/Makefile_excp
+alliance/examples/alliance-examples/mipsR3000/asm/Makefile_int
+alliance/examples/alliance-examples/mipsR3000/asm/Makefile_misc
+alliance/examples/alliance-examples/mipsR3000/asm/add000.pat
+alliance/examples/alliance-examples/mipsR3000/asm/add000.u
+alliance/examples/alliance-examples/mipsR3000/asm/add001.u
+alliance/examples/alliance-examples/mipsR3000/asm/add002.u
+alliance/examples/alliance-examples/mipsR3000/asm/add003.u
+alliance/examples/alliance-examples/mipsR3000/asm/add004.u
+alliance/examples/alliance-examples/mipsR3000/asm/add005.u
+alliance/examples/alliance-examples/mipsR3000/asm/addu000.u
+alliance/examples/alliance-examples/mipsR3000/asm/addu001.u
+alliance/examples/alliance-examples/mipsR3000/asm/addu002.u
+alliance/examples/alliance-examples/mipsR3000/asm/addu003.u
+alliance/examples/alliance-examples/mipsR3000/asm/and000.u
+alliance/examples/alliance-examples/mipsR3000/asm/and001.u
+alliance/examples/alliance-examples/mipsR3000/asm/beq000.u
+alliance/examples/alliance-examples/mipsR3000/asm/beq001.u
+alliance/examples/alliance-examples/mipsR3000/asm/bgez000.u
+alliance/examples/alliance-examples/mipsR3000/asm/bgez001.u
+alliance/examples/alliance-examples/mipsR3000/asm/bgezal000.u
+alliance/examples/alliance-examples/mipsR3000/asm/bgtz000.u
+alliance/examples/alliance-examples/mipsR3000/asm/blez000.u
+alliance/examples/alliance-examples/mipsR3000/asm/bltz000.u
+alliance/examples/alliance-examples/mipsR3000/asm/bltzal000.u
+alliance/examples/alliance-examples/mipsR3000/asm/bne000.u
+alliance/examples/alliance-examples/mipsR3000/asm/bne001.u
+alliance/examples/alliance-examples/mipsR3000/asm/break_00.e
+alliance/examples/alliance-examples/mipsR3000/asm/break_00.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc000.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc000.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc001.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc001.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc002.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc002.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc003.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc003.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc004.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc004.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc005.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc005.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc006.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc006.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc007.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc007.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc008.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc008.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc009.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc009.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc010.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc010.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc011.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc011.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc012.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc012.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc013.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc013.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc014.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc014.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc015.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc015.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc016.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc016.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc017.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc017.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc018.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc018.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc019.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc019.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc020.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc020.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc021.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc021.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc022.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc022.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc023.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc023.u
+alliance/examples/alliance-examples/mipsR3000/asm/exc024.e
+alliance/examples/alliance-examples/mipsR3000/asm/exc024.u
+alliance/examples/alliance-examples/mipsR3000/asm/foo.vbe
+alliance/examples/alliance-examples/mipsR3000/asm/go-all.sh
+alliance/examples/alliance-examples/mipsR3000/asm/go-bench.sh
+alliance/examples/alliance-examples/mipsR3000/asm/it000.e
+alliance/examples/alliance-examples/mipsR3000/asm/it000.u
+alliance/examples/alliance-examples/mipsR3000/asm/it001.e
+alliance/examples/alliance-examples/mipsR3000/asm/it001.u
+alliance/examples/alliance-examples/mipsR3000/asm/it002.e
+alliance/examples/alliance-examples/mipsR3000/asm/it002.u
+alliance/examples/alliance-examples/mipsR3000/asm/it003.e
+alliance/examples/alliance-examples/mipsR3000/asm/it003.u
+alliance/examples/alliance-examples/mipsR3000/asm/it004.e
+alliance/examples/alliance-examples/mipsR3000/asm/it004.u
+alliance/examples/alliance-examples/mipsR3000/asm/it005.e
+alliance/examples/alliance-examples/mipsR3000/asm/it005.u
+alliance/examples/alliance-examples/mipsR3000/asm/it006.e
+alliance/examples/alliance-examples/mipsR3000/asm/it006.u
+alliance/examples/alliance-examples/mipsR3000/asm/jal000.u
+alliance/examples/alliance-examples/mipsR3000/asm/jal001.u
+alliance/examples/alliance-examples/mipsR3000/asm/jalr000.u
+alliance/examples/alliance-examples/mipsR3000/asm/jalr001.u
+alliance/examples/alliance-examples/mipsR3000/asm/jr000.u
+alliance/examples/alliance-examples/mipsR3000/asm/jr001.u
+alliance/examples/alliance-examples/mipsR3000/asm/lhi000.u
+alliance/examples/alliance-examples/mipsR3000/asm/lhi001.u
+alliance/examples/alliance-examples/mipsR3000/asm/lhi2000.u
+alliance/examples/alliance-examples/mipsR3000/asm/lhi2001.u
+alliance/examples/alliance-examples/mipsR3000/asm/lsb000.u
+alliance/examples/alliance-examples/mipsR3000/asm/lsb001.u
+alliance/examples/alliance-examples/mipsR3000/asm/lsb002.u
+alliance/examples/alliance-examples/mipsR3000/asm/lsb003.u
+alliance/examples/alliance-examples/mipsR3000/asm/lsb004.u
+alliance/examples/alliance-examples/mipsR3000/asm/lsb005.u
+alliance/examples/alliance-examples/mipsR3000/asm/lsb006.u
+alliance/examples/alliance-examples/mipsR3000/asm/lsb007.u
+alliance/examples/alliance-examples/mipsR3000/asm/lsbu000.u
+alliance/examples/alliance-examples/mipsR3000/asm/lsbu001.u
+alliance/examples/alliance-examples/mipsR3000/asm/lsbu002.u
+alliance/examples/alliance-examples/mipsR3000/asm/lsbu003.u
+alliance/examples/alliance-examples/mipsR3000/asm/lsh000.u
+alliance/examples/alliance-examples/mipsR3000/asm/lsh001.u
+alliance/examples/alliance-examples/mipsR3000/asm/lsh002.u
+alliance/examples/alliance-examples/mipsR3000/asm/lsh003.u
+alliance/examples/alliance-examples/mipsR3000/asm/lshu000.u
+alliance/examples/alliance-examples/mipsR3000/asm/lshu001.u
+alliance/examples/alliance-examples/mipsR3000/asm/lsw000.u
+alliance/examples/alliance-examples/mipsR3000/asm/lsw001.u
+alliance/examples/alliance-examples/mipsR3000/asm/mftc0_00.e
+alliance/examples/alliance-examples/mipsR3000/asm/mftc0_00.u
+alliance/examples/alliance-examples/mipsR3000/asm/mfthi_00.e
+alliance/examples/alliance-examples/mipsR3000/asm/mfthi_00.u
+alliance/examples/alliance-examples/mipsR3000/asm/mftlo_00.e
+alliance/examples/alliance-examples/mipsR3000/asm/mftlo_00.u
+alliance/examples/alliance-examples/mipsR3000/asm/mips_defs.h
+alliance/examples/alliance-examples/mipsR3000/asm/nor000.u
+alliance/examples/alliance-examples/mipsR3000/asm/or000.u
+alliance/examples/alliance-examples/mipsR3000/asm/or001.u
+alliance/examples/alliance-examples/mipsR3000/asm/or002.u
+alliance/examples/alliance-examples/mipsR3000/asm/reg000.u
+alliance/examples/alliance-examples/mipsR3000/asm/res_test
+alliance/examples/alliance-examples/mipsR3000/asm/rome.u
+alliance/examples/alliance-examples/mipsR3000/asm/rome.vbe
+alliance/examples/alliance-examples/mipsR3000/asm/romr.e
+alliance/examples/alliance-examples/mipsR3000/asm/roms.vbe.orig
+alliance/examples/alliance-examples/mipsR3000/asm/romu.vbe
+alliance/examples/alliance-examples/mipsR3000/asm/sle000.u
+alliance/examples/alliance-examples/mipsR3000/asm/sle001.u
+alliance/examples/alliance-examples/mipsR3000/asm/sle002.u
+alliance/examples/alliance-examples/mipsR3000/asm/sle003.u
+alliance/examples/alliance-examples/mipsR3000/asm/sle004.u
+alliance/examples/alliance-examples/mipsR3000/asm/sle005.u
+alliance/examples/alliance-examples/mipsR3000/asm/sle006.u
+alliance/examples/alliance-examples/mipsR3000/asm/sle007.u
+alliance/examples/alliance-examples/mipsR3000/asm/sll000.u
+alliance/examples/alliance-examples/mipsR3000/asm/sll001.u
+alliance/examples/alliance-examples/mipsR3000/asm/sltiu000.u
+alliance/examples/alliance-examples/mipsR3000/asm/sltiu001.u
+alliance/examples/alliance-examples/mipsR3000/asm/sltiu002.u
+alliance/examples/alliance-examples/mipsR3000/asm/sltiu003.u
+alliance/examples/alliance-examples/mipsR3000/asm/sltiu004.u
+alliance/examples/alliance-examples/mipsR3000/asm/sltu000.u
+alliance/examples/alliance-examples/mipsR3000/asm/sltu001.u
+alliance/examples/alliance-examples/mipsR3000/asm/sltu002.u
+alliance/examples/alliance-examples/mipsR3000/asm/sltu003.u
+alliance/examples/alliance-examples/mipsR3000/asm/sltu004.u
+alliance/examples/alliance-examples/mipsR3000/asm/sra000.u
+alliance/examples/alliance-examples/mipsR3000/asm/sra001.u
+alliance/examples/alliance-examples/mipsR3000/asm/srl000.u
+alliance/examples/alliance-examples/mipsR3000/asm/srl001.u
+alliance/examples/alliance-examples/mipsR3000/asm/sub000.u
+alliance/examples/alliance-examples/mipsR3000/asm/sub001.u
+alliance/examples/alliance-examples/mipsR3000/asm/syscall_00.e
+alliance/examples/alliance-examples/mipsR3000/asm/syscall_00.u
+alliance/examples/alliance-examples/mipsR3000/asm/xor000.u
+alliance/examples/alliance-examples/mipsR3000/asm/xor001.u
+alliance/examples/alliance-examples/mipsR3000/asm/xor002.u
+alliance/examples/alliance-examples/mipsR3000/sce/CATAL_CTL
+alliance/examples/alliance-examples/mipsR3000/sce/CATAL_VBE
+alliance/examples/alliance-examples/mipsR3000/sce/CATAL_VST
+alliance/examples/alliance-examples/mipsR3000/sce/Makefile
+alliance/examples/alliance-examples/mipsR3000/sce/local-cmos-035.rds
+alliance/examples/alliance-examples/mipsR3000/sce/local-cmos.graal
+alliance/examples/alliance-examples/mipsR3000/sce/local-cmos.rds
+alliance/examples/alliance-examples/mipsR3000/sce/mips_chip.rin
+alliance/examples/alliance-examples/mipsR3000/sce/mips_chip.vst
+alliance/examples/alliance-examples/mipsR3000/sce/mips_core.c
+alliance/examples/alliance-examples/mipsR3000/sce/mips_core.ioc
+alliance/examples/alliance-examples/mipsR3000/sce/mips_core.vst
+alliance/examples/alliance-examples/mipsR3000/sce/mips_cpu-orig.pat
+alliance/examples/alliance-examples/mipsR3000/sce/mips_cpu.pat
+alliance/examples/alliance-examples/mipsR3000/sce/mips_cpu.vst
+alliance/examples/alliance-examples/mipsR3000/sce/mips_ctl.lax
+alliance/examples/alliance-examples/mipsR3000/sce/mips_ctl.path
+alliance/examples/alliance-examples/mipsR3000/sce/mips_ctl.scapin
+alliance/examples/alliance-examples/mipsR3000/sce/mips_ctl_nt.vst
+alliance/examples/alliance-examples/mipsR3000/sce/mips_dec.vbe
+alliance/examples/alliance-examples/mipsR3000/sce/mips_dpt.c
+alliance/examples/alliance-examples/mipsR3000/sce/mips_dpt.vbe
+alliance/examples/alliance-examples/mipsR3000/sce/mips_scan.c
+alliance/examples/alliance-examples/mipsR3000/sce/mips_scan.pat
+alliance/examples/alliance-examples/mipsR3000/sce/mips_seq.fsm
+alliance/examples/alliance-examples/mipsR3000/sce/mips_sts.vbe
+alliance/examples/alliance-examples/mipsR3000/sce/res_vst.pat
+alliance/examples/alliance-examples/mipsR3000/sce/rome.vbe
+alliance/examples/alliance-examples/mipsR3000/sce/romr.vbe
+alliance/examples/alliance-examples/mipsR3000/sce/roms.vbe
+alliance/examples/alliance-examples/mipsR3000/sce/romu.vbe
+alliance/examples/alliance-examples/mipsR3000/sce/sr64_1a.vbe
+alliance/examples/alliance-examples/mipsR3000/sce/sr64_32a.vst
+alliance/examples/alliance-examples/mipsR3000/sce/sr64_8a.vst
+alliance/examples/alliance-examples/mipsR3000/sce/timer.vbe
+alliance/examples/alliance-examples/multi16b-reg/Makefile
+alliance/examples/alliance-examples/multi16b-reg/multi16.ioc
+alliance/examples/alliance-examples/multi16b-reg/multi16.lax
+alliance/examples/alliance-examples/multi16b-reg/multi16.pat
+alliance/examples/alliance-examples/multi16b-reg/multi16.vhdl
+alliance/examples/alliance-examples/multi4b/Makefile
+alliance/examples/alliance-examples/multi4b/README
+alliance/examples/alliance-examples/multi4b/multi4.ioc
+alliance/examples/alliance-examples/multi4b/multi4.pat
+alliance/examples/alliance-examples/multi4b/multi4.vhdl
+alliance/examples/alliance-examples/multi8/CATAL_ASIMUT_VASY
+alliance/examples/alliance-examples/multi8/Makefile
+alliance/examples/alliance-examples/multi8/README
+alliance/examples/alliance-examples/multi8/addaccu.vhdl
+alliance/examples/alliance-examples/multi8/controller.vhdl
+alliance/examples/alliance-examples/multi8/multi8.ioc
+alliance/examples/alliance-examples/multi8/multi8.pat
+alliance/examples/alliance-examples/multi8/multi8.vhdl
+alliance/examples/alliance-examples/multi8/sra.vhdl
+alliance/examples/alliance-examples/multi8/srb.vhdl
+alliance/examples/alliance-examples/multi8b/Makefile
+alliance/examples/alliance-examples/multi8b/README
+alliance/examples/alliance-examples/multi8b/multi8.ioc
+alliance/examples/alliance-examples/multi8b/multi8.lax
+alliance/examples/alliance-examples/multi8b/multi8.pat
+alliance/examples/alliance-examples/multi8b/multi8.vhdl
+alliance/examples/alliance-examples/pgcd/CATAL_ASIMUT_VASY
+alliance/examples/alliance-examples/pgcd/Makefile
+alliance/examples/alliance-examples/pgcd/README
+alliance/examples/alliance-examples/pgcd/calcul.vhdl
+alliance/examples/alliance-examples/pgcd/pgcd.ioc
+alliance/examples/alliance-examples/pgcd/pgcd.pat
+alliance/examples/alliance-examples/pgcd/pgcd.vhdl
+alliance/examples/alliance-examples/pgcd/sequenceur.vhdl
+alliance/examples/alliance-examples/sqrt32/CATAL_ASIMUT_VASY
+alliance/examples/alliance-examples/sqrt32/Makefile
+alliance/examples/alliance-examples/sqrt32/README
+alliance/examples/alliance-examples/sqrt32/s0.vhdl
+alliance/examples/alliance-examples/sqrt32/s0b.vhdl
+alliance/examples/alliance-examples/sqrt32/s1.vhdl
+alliance/examples/alliance-examples/sqrt32/s1b.vhdl
+alliance/examples/alliance-examples/sqrt32/sb.vhdl
+alliance/examples/alliance-examples/sqrt32/sm.vhdl
+alliance/examples/alliance-examples/sqrt32/sn.vhdl
+alliance/examples/alliance-examples/sqrt32/sqrt32.ioc
+alliance/examples/alliance-examples/sqrt32/sqrt32.pat
+alliance/examples/alliance-examples/sqrt32/sqrt32.vhdl
+alliance/examples/alliance-examples/sqrt8/CATAL_ASIMUT_VASY
+alliance/examples/alliance-examples/sqrt8/Makefile
+alliance/examples/alliance-examples/sqrt8/README
+alliance/examples/alliance-examples/sqrt8/sm.vhdl
+alliance/examples/alliance-examples/sqrt8/sqrt8.ioc
+alliance/examples/alliance-examples/sqrt8/sqrt8.pat
+alliance/examples/alliance-examples/sqrt8/sqrt8.vhdl
+alliance/examples/alliance-examples/tuner/README
+alliance/examples/alliance-examples/tuner/build_tuner
+alliance/examples/alliance-examples/tuner/circuit.c
+alliance/examples/alliance-examples/tuner/core.c
+alliance/examples/alliance-examples/tuner/fake05.dreal
+alliance/examples/alliance-examples/tuner/fake05.rds
+alliance/examples/alliance-examples/tuner/padreal.cif
+alliance/examples/alliance-examples/tuner/padreal.gds
+alliance/examples/alliance-examples/tuner/tuner-fr.pdf
+alliance/examples/alliance-examples/tuner/tuner.ioc
+alliance/examples/alliance-examples/tuner/tuner.rin
+alliance/examples/alliance-examples/tuner/tuner.vbe
+alliance/examples/alliance-examples/tuner/tuner_io.c
+@dirrm alliance/lib
+@dirrm alliance/include
+@dirrm alliance/bin
+@dirrm alliance/doc/html/alliance
+@dirrm alliance/doc/html
+@dirrm alliance/doc/pdf
+@dirrm alliance/doc/overview
+@dirrm alliance/doc/design-flow
+@dirrm alliance/doc/alliance-run
+@dirrm alliance/doc
+@dirrm alliance/cells/dp_sxlib
+@dirrm alliance/cells/padlib
+@dirrm alliance/cells/rflib
+@dirrm alliance/cells/rf2lib
+@dirrm alliance/cells/ramlib
+@dirrm alliance/cells/romlib
 @dirrm alliance/cells/sxlib
 @dirrm alliance/cells
+@dirrm alliance/tutorials/place_and_route/src/amd2901
+@dirrm alliance/tutorials/place_and_route/src/buffer
+@dirrm alliance/tutorials/place_and_route/src/inv
+@dirrm alliance/tutorials/place_and_route/src
+@dirrm alliance/tutorials/place_and_route/tex
+@dirrm alliance/tutorials/place_and_route
+@dirrm alliance/tutorials/simulation/src/addaccu_beh
+@dirrm alliance/tutorials/simulation/src/addaccu_struct
+@dirrm alliance/tutorials/simulation/src
+@dirrm alliance/tutorials/simulation/tex
+@dirrm alliance/tutorials/simulation
+@dirrm alliance/tutorials/start
+@dirrm alliance/tutorials/synthesis/src/amd2901
+@dirrm alliance/tutorials/synthesis/src/amdbug
+@dirrm alliance/tutorials/synthesis/src/digicode
+@dirrm alliance/tutorials/synthesis/src/meter5
+@dirrm alliance/tutorials/synthesis/src
+@dirrm alliance/tutorials/synthesis/tex
+@dirrm alliance/tutorials/synthesis
+@dirrm alliance/tutorials
+@dirrm alliance/examples/alliance-examples/addaccu16
+@dirrm alliance/examples/alliance-examples/adder4
+@dirrm alliance/examples/alliance-examples/amd2901
+@dirrm alliance/examples/alliance-examples/amd2901-vasy
+@dirrm alliance/examples/alliance-examples/digi
+@dirrm alliance/examples/alliance-examples/divcas4
+@dirrm alliance/examples/alliance-examples/etc
+@dirrm alliance/examples/alliance-examples/hadamard
+@dirrm alliance/examples/alliance-examples/mipsR3000/asm
+@dirrm alliance/examples/alliance-examples/mipsR3000/sce
+@dirrm alliance/examples/alliance-examples/mipsR3000
+@dirrm alliance/examples/alliance-examples/multi16b-reg
+@dirrm alliance/examples/alliance-examples/multi4b
+@dirrm alliance/examples/alliance-examples/multi8
+@dirrm alliance/examples/alliance-examples/multi8b
+@dirrm alliance/examples/alliance-examples/pgcd
+@dirrm alliance/examples/alliance-examples/sqrt32
+@dirrm alliance/examples/alliance-examples/sqrt8
+@dirrm alliance/examples/alliance-examples/tuner
+@dirrm alliance/examples/alliance-examples
+@dirrm alliance/examples
+@unexec rmdir %D/alliance/etc > /dev/null 2>&1 || true
 @unexec rmdir %D/alliance > /dev/null 2>&1 || true
