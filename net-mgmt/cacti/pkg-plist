@@ -182,6 +182,7 @@
 %%CACTIDIR%%/include/top_graph_header.php
 %%CACTIDIR%%/include/top_header.php
 %%CACTIDIR%%/include/treeview/ftiens4.js
+%%CACTIDIR%%/include/treeview/ftiens4_export.js
 %%CACTIDIR%%/include/treeview/ftv2blank.gif
 %%CACTIDIR%%/include/treeview/ftv2lastnode.gif
 %%CACTIDIR%%/include/treeview/ftv2mlastnode.gif
@@ -202,6 +203,7 @@
 %%CACTIDIR%%/install/0_8_6_to_0_8_6a.php
 %%CACTIDIR%%/install/0_8_6c_to_0_8_6d.php
 %%CACTIDIR%%/install/0_8_6d_to_0_8_6e.php
+%%CACTIDIR%%/install/0_8_6f_to_0_8_6g.php
 %%CACTIDIR%%/install/0_8_to_0_8_1.php
 %%CACTIDIR%%/install/index.php
 %%CACTIDIR%%/install/install_finish.gif
@@ -330,6 +332,8 @@
 %%CACTIDIR%%/log/cacti.log
 %%CACTIDIR%%/logout.php
 %%CACTIDIR%%/poller.php
+%%CACTIDIR%%/poller_commands.php
+%%CACTIDIR%%/poller_export.php
 %%CACTIDIR%%/resource/script_queries/host_cpu.xml
 %%CACTIDIR%%/resource/script_queries/host_disk.xml
 %%CACTIDIR%%/resource/script_queries/unix_disk.xml
@@ -356,6 +360,7 @@
 %%CACTIDIR%%/scripts/query_host_partitions.php
 %%CACTIDIR%%/scripts/query_unix_partitions.pl
 %%CACTIDIR%%/scripts/sql.php
+%%CACTIDIR%%/scripts/ss_fping.php
 %%CACTIDIR%%/scripts/ss_host_cpu.php
 %%CACTIDIR%%/scripts/ss_host_disk.php
 %%CACTIDIR%%/scripts/ss_sql.php
@@ -387,7 +392,6 @@
 @dirrm %%CACTIDIR%%/include/jscalendar/lang
 @dirrm %%CACTIDIR%%/include/jscalendar
 @dirrm %%CACTIDIR%%/include/html
-@dirrm %%CACTIDIR%%/include/gettext
 @dirrm %%CACTIDIR%%/include
 @dirrm %%CACTIDIR%%/images
 @dirrm %%CACTIDIR%%/docs/text
