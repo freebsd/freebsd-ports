@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	azureus
-PORTVERSION=	2.2.0.2
-PORTREVISION=	6
+PORTVERSION=	2.3.0.4
 CATEGORIES=	net java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,17 +16,19 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A BitTorrent client written in Java
 
 BUILD_DEPENDS=	\
-		${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk_${ECLIPSE_VERSION}/ws/gtk/swt.jar:${PORTSDIR}/java/eclipse
+		${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j \
+		${LOCALBASE}/eclipse/plugins/org.eclipse.swt_${ECLIPSE_VERSION}.0.jar:${PORTSDIR}/java/eclipse \
+		${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.0.jar:${PORTSDIR}/java/eclipse \
+		${JAVALIBDIR}/commons-cli.jar:${PORTSDIR}/java/jakarta-commons-cli \
+		${JAVALIBDIR}/seda.jar:${PORTSDIR}/net/seda
 RUN_DEPENDS=	\
-		${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk_${ECLIPSE_VERSION}/ws/gtk/swt-pi.jar:${PORTSDIR}/java/eclipse \
-		${BUILD_DEPENDS}
-
-BROKEN=		Broken dependency
+		${LOCALBASE}/eclipse/plugins/org.eclipse.swt_${ECLIPSE_VERSION}.0.jar:${PORTSDIR}/java/eclipse \
+		${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.0.jar:${PORTSDIR}/java/eclipse
 
 ONLY_FOR_ARCHS=	i386
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.4
 JAVA_OS=	native
 USE_ANT=	yes
 USE_JIKES=	no
@@ -43,8 +44,23 @@ CLASSPATH_JARS=	${BUILD_DEPENDS:C/:.+$//:M*.jar}
 
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE} bin/${PORTNAME}
 
+# hack for eclipse 3.1
+PLIST_DIRS=	%%DATADIR%%
+PLIST_FILES+=	\
+		%%DATADIR%%/libswt-atk-gtk-3138.so \
+		%%DATADIR%%/libswt-awt-gtk-3138.so \
+		%%DATADIR%%/libswt-cairo-gtk-3138.so \
+		%%DATADIR%%/libswt-gnome-gtk-3138.so \
+		%%DATADIR%%/libswt-gtk-3138.so \
+		%%DATADIR%%/libswt-mozilla-gtk-3138.so \
+		%%DATADIR%%/libswt-pi-gtk-3138.so
+
+post-extract:
+	@${MKDIR} ${WRKDIR}/eclipse && cd ${WRKDIR}/eclipse && ${JAR} -xf ${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.0.jar
+		
 do-configure:
 	${SED} -e "s+%%PREFIX%%+${PREFIX}+" -e "s+%%LOCALBASE%%+${LOCALBASE}+" \
+		-e "s|%%DATADIR%%|${DATADIR}|" \
 		-e "s|%%JAVAJARDIR%%|${JAVAJARDIR}|" \
 		-e "s|%%JAVA%%|${LOCALBASE}/bin/java|" \
 		-e "s|%%JAVA_VERSION%%|${JAVA_VERSION}|" \
@@ -57,6 +73,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/dist/lib/${JARFILE} \
 		${JAVAJARDIR}/
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+# hack for eclipse 3.1
+	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} ${WRKDIR}/eclipse/*so ${DATADIR}
 
 .include <bsd.port.pre.mk>
 

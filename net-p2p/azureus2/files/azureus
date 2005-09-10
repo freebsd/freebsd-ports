@@ -10,12 +10,10 @@ JAVA_VERSION="%%JAVA_VERSION%%"
 JAVA_OS="%%JAVA_OS%%"
 
 ECLIPSE_BASE=%%LOCALBASE%%/eclipse
-ECLIPSE_SWT=`find "${ECLIPSE_BASE}" -name '*swt.*' -type d | grep -e "plugins/org.eclipse.swt.[motif|gtk]" | head -n 1`
-ECLIPSE_WS=`echo "${ECLIPSE_SWT}" | sed -e "s+^${ECLIPSE_BASE}/plugins/org.eclipse.swt.++" -e "s+_.*$++"`
-ECLIPSE_SWT_JAR=${ECLIPSE_SWT}/ws/${ECLIPSE_WS}
-LIB_PATH=${ECLIPSE_SWT}/os/freebsd/x86/
+ECLIPSE_SWT_JAR=`find ${ECLIPSE_BASE} -name "org.eclipse.swt*jar" | tr "\n" ":"`
+LIB_PATH=%%DATADIR%%
 
-CLASS_PATH=:%%JAVAJARDIR%%/%%JARFILE%%:${ECLIPSE_SWT_JAR}/swt-pi.jar:${ECLIPSE_SWT_JAR}/swt.jar
+CLASS_PATH=:%%JAVAJARDIR%%/%%JARFILE%%:${ECLIPSE_SWT_JAR}
 
 if [ "${DEBUG}" ]
 then
