@@ -7,6 +7,7 @@
 
 PORTNAME=	epic4
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.prbh.org/pub/epic/EPIC4-PRODUCTION/ \
 		ftp://ftp.irc.org/irc/clients/unix/epic/EPIC4-PRODUCTION/ \
@@ -36,16 +37,9 @@ CONFIGURE_ARGS+=	--without-ipv6
 
 ##  WITH_TCL:       enable Tcl support
 #
-.if defined(WITH_TCL)
+.if !defined(WITHOUT_TCL)
 LIB_DEPENDS+=		tcl84:${PORTSDIR}/lang/tcl84
 CONFIGURE_ARGS+=	--with-tcl
-.endif
-
-##  WITH_SOCKS5:    enable SOCKS5 support
-#
-.if defined(WITH_SOCKS5)
-LIB_DEPENDS+=		socks5:${PORTSDIR}/net/socks5
-CONFIGURE_ARGS+=	--with-socks5
 .endif
 
 ##  WITH_PERL:      enable perl5 support (requires perl 5.6.1 or newer)
