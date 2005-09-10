@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libnss-mysql
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libnss-mysql
@@ -16,6 +15,7 @@ MAINTAINER=	vd@datamax.bg
 COMMENT=	NSS module using a MySQL database for backend
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-mysql-lib=${LOCALBASE}/lib/mysql \
 		--with-mysql-inc=${LOCALBASE}/include/mysql
 INSTALLS_SHLIB=	yes
