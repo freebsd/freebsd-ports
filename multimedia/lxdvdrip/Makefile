@@ -7,6 +7,7 @@
 
 PORTNAME=	lxdvdrip
 PORTVERSION=	1.46
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.berlios.de/lxdvdrip/
 EXTRACT_SUFX=	.tgz
@@ -15,6 +16,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command Line Tool to make a copy from a Video DVD
 
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
+RUN_DEPENDS=	streamdvd:${PORTSDIR}/multimedia/streamdvd \
+		transcode:${PORTSDIR}/multimedia/transcode \
+		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
+		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -23,21 +28,39 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN1=		lxdvdrip.1
 
+MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
+
+.include <bsd.port.pre.mk>
+
+# vamps needs strtof()
+.if ${OSVERSION} > 500000
+PLIST_SUB=	VAMPS=""
+.else
+PLIST_SUB=	VAMPS="@comment "
+.endif
+
 do-build:
 	(cd ${WRKSRC}; \
 	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib \
 	-ldvdread -lm -o lxdvdrip lxdvdrip.c; \
-	${CC} ${CFLAGS} -lm -o lxac3scan lxac3scan.c)
+	${CC} ${CFLAGS} -lm -o lxac3scan lxac3scan.c);
+.if ${OSVERSION} > 500000
+	(cd ${WRKSRC}/vamps; \
+	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET});
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lxdvdrip ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/lxac3scan ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/lxdvdrip.1 ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/doc-pak/lxdvdrip.conf.* ${PREFIX}/etc
+.if ${OSVERSION} > 500000
+	${INSTALL_PROGRAM} ${WRKSRC}/vamps/vamps ${PREFIX}/bin
+.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc-pak && ${CP} Changelog* README.* TODO freebsd.doc ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
