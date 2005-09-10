@@ -4,7 +4,7 @@ etc/amd.conf-sample
 etc/lostaltmail.conf-sample
 lib/libamu.a
 lib/libamu.so
-lib/libamu.so.3
+lib/libamu.so.4
 sbin/am-eject
 sbin/amd
 sbin/amd2ldif
