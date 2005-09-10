@@ -111,10 +111,7 @@ pre-everything::
 .endif
 
 .if defined(WITH_CLIENT) && defined(WITH_SERVER)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Can't build client and server at once!"
-	@${ECHO_MSG}
-.error "Can't build client and server at once!"
+IGNORE=		Can't build client and server at once
 .endif
 
 .if defined(WITH_KCHECK)
@@ -126,17 +123,11 @@ pre-everything::
 .endif
 
 .if defined(WITH_MYSQL) && !defined(WITH_XML_LOGS)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "XML logging is required to log to MySQL."
-	@${ECHO_MSG}
-.error "XML logging is required to log to MySQL."
+IGNORE=		XML logging is required to log to MySQL
 .endif
 
 .if defined(WITH_POSTGRESQL) && !defined(WITH_XML_LOGS)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "XML logging is required to log to Postgres."
-	@${ECHO_MSG}
-.error "XML logging is required to log to Postgres."
+IGNORE=		XML logging is required to log to Postgres
 .endif
 
 post-extract:
