@@ -6289,6 +6289,7 @@ mod_tsunami	ports/www/mod_tsunami
 mod_uid		ports/www/mod_uid
 mod_v2h		ports/www/mod_v2h
 mod_vdbh	ports/www/mod_vdbh
+mod_vhost_ldap	ports/www/mod_vhost_ldap
 mod_vhs		ports/www/mod_vhs
 mod_webapp	ports/www/mod_webapp
 mod_zap		ports/www/mod_zap
