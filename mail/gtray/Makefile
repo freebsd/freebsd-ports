@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gtray
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	1.3
 CATEGORIES=	mail gnome
-MASTER_SITES=	http://fraggle.alkali.org/projects/gtray/
+MASTER_SITES=	http://gnome-gtray.sourceforge.net/
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Tray applet that checks your GMail account status
