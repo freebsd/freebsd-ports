@@ -32,6 +32,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		anjuta.1 anjuta_launcher.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=	Uses symbols not available on 4.X
+.endif
+
 post-configure:
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
 		s|%%PREFIX%%|${PREFIX}|g' < ${FILESDIR}/anjuta \
@@ -50,4 +56,4 @@ post-install:
 	${MV} ${PREFIX}/bin/anjuta ${PREFIX}/bin/anjuta-bin
 	${INSTALL_SCRIPT} ${WRKDIR}/anjuta ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
