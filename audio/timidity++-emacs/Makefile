@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.timidity.jp/dist/
 PKGNAMESUFFIX=	-${INTERFACE}
 DISTNAME=	TiMidity++-${PORTVERSION}
 
-MAINTAINER?=	yatt@luna2.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Emacs interface for TiMidity++
 
 RUN_DEPENDS=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++

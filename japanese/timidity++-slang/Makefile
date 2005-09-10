@@ -7,7 +7,7 @@
 
 CATEGORIES=	japanese
 
-MAINTAINER=	yatt@luna2.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Slang interface for TiMidity++ with Japanese support
 
 BROKEN=		Incomplete distinfo file
