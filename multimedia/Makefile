@@ -73,7 +73,7 @@
     SUBDIR += konverter
     SUBDIR += kplayer
     SUBDIR += ksubeditor
-    SUBDIR += ldvd9to5
+    SUBDIR += ldvd
     SUBDIR += libdivxdecore
     SUBDIR += libdivxdecore-devel
     SUBDIR += libdivxencore
