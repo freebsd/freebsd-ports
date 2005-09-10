@@ -11,7 +11,6 @@
     SUBDIR += bforce-kst
     SUBDIR += birda
     SUBDIR += bpl+
-    SUBDIR += cdce
     SUBDIR += cdr_read
     SUBDIR += comserv
     SUBDIR += conserver
