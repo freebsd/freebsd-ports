@@ -1,0 +1,14 @@
+--- src/folderview.c.orig	Sat Sep 10 15:12:41 2005
++++ src/folderview.c	Sat Sep 10 15:12:59 2005
+@@ -1956,9 +1956,10 @@
+ 	FolderItem *item;
+ 	GSList *mlist = NULL;
+ 	GSList *cur = NULL;
+-	if (!folderview->selected) return;
+ 	FolderItem *special_trash = NULL;
+ 	PrefsAccount *ac;
++
++	if (!folderview->selected) return;
+ 
+ 	item = gtk_ctree_node_get_row_data(ctree, folderview->selected);
+ 	g_return_if_fail(item != NULL);
