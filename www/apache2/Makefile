@@ -99,7 +99,7 @@ CONFIGURE_ARGS+=	--enable-v4-mapped
 .endif
 
 #backward compatibility
-.if defined(WITHOUT_SSL) 
+.if defined(WITHOUT_SSL)
 WITHOUT_SSL_MODULES=	YES
 .endif
 
