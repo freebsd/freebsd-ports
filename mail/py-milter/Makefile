@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	milter
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	mail python
-MASTER_SITES=	http://www.bmsi.com/python/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://www.bmsi.com/python/
 MASTER_SITE_SUBDIR=	pymilter
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
