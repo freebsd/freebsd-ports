@@ -19,10 +19,11 @@
 
    <target name="compile" depends="init" description="compile the source " >
      <!-- Compile the java code from ${src} into ${build} -->
-     <javac srcdir="." destdir="${build}">
+     <javac srcdir="." destdir="${build}" fork="yes" memoryMaximumSize="64m">
        <include name="**/*.java"/>
        <exclude name="**/Win32*.java"/>
        <exclude name="**/swt/osx/**"/>
+       <exclude name="**/macosx/**"/>
        <classpath path="%%CLASSPATH%%"/>
      </javac>
    </target>
@@ -33,6 +34,9 @@
 
      <copy todir="${build}">
        <fileset dir="." includes="**/*.gif **/*.jpg, **/*.png **/*.properties" />
+       <fileset dir="." includes="**/*.dat **/*.stf **/*.xsd" />
+       <fileset dir="." includes="**/*.css **/*.html **/*.js **/*.php **/*.tmpl **/*.txt" />
+       <fileset dir="." includes="**/*.ico **/*.wav" />
      </copy>
      <!-- Put everything in ${build} into the azureus.jar file -->
      <jar jarfile="${dist}/lib/azureus.jar" basedir="${build}"/>
