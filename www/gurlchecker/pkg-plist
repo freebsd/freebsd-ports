@@ -40,5 +40,6 @@ share/locale/es/LC_MESSAGES/gurlchecker.mo
 share/locale/fr/LC_MESSAGES/gurlchecker.mo
 share/locale/it/LC_MESSAGES/gurlchecker.mo
 share/locale/ja/LC_MESSAGES/gurlchecker.mo
+share/locale/sk/LC_MESSAGES/gurlchecker.mo
 @dirrm share/gnome/gurlchecker/ui
 @dirrm share/gnome/gurlchecker
