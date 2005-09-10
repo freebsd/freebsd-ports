@@ -6,7 +6,7 @@
 	There are also methods for dealing with creating and
 	parsing dynamic updates packets.
 
-WWW: http://search.cpan.org/search?module=Net::DNS
+WWW: http://search.cpan.org/dist/Net-DNS/
 
 - Doug Barton
 DougB@FreeBSD.org
