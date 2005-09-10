@@ -6,58 +6,57 @@
 #
 
 PORTNAME=	mendexk
-PORTVERSION=	2.5
-PORTREVISION=	1
+PORTVERSION=	2.6c
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/mendex/
-PKGNAMESUFFIX=	-${KANJICODE}
-DISTNAME=	${PORTNAME}${PORTVERSION}
+MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/mendex/:1 \
+		${MASTER_SITE_TEX_CTAN}
+DISTFILES=	${PORTNAME}${PORTVERSION}${EXTRACT_SUFX}:1 \
+		${TETEX_SRC}${EXTRACT_SUFX}
+DIST_SUBDIR=	teTeX
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Index formatter for Japanese
 
-KANJICODE?=	euc
-
-EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/japanese/ptex-base:configure
-.if ${KANJICODE} == "sjis"
-EXTRACT_DEPENDS+=	nkf:${PORTSDIR}/japanese/nkf
-.endif
-
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	${KANJICODE}
+CONFIGURE_ENV=	INSTALL_MAN="${INSTALL_MAN}" \
+		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
+MAKE_ENV=	INSTALL_MAN="${INSTALL_MAN}" \
+		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 USE_GMAKE=	yes
-DIST_SUBDIR=	teTeX
-WRKSRC=	${WRKDIRPREFIX}${.CURDIR}/../ptex-base/work/tetex-src-${TETEX_VERSION}/texk/${DISTNAME}
 ALL_TARGET=	mendex
-
-TETEX_VERSION=	2.0.2
-KANJI_FILES=	kana.h ktable.h
-
-MANLANG=	ja
 MAN1=		mendex.1
+MANLANG=	ja
+
+WRKSRC=		${WRKSRC_TETEX}/texk/${PORTNAME}${PORTVERSION}
+WRKSRC_MENDEX=	${WRKDIR}/${PORTNAME}${PORTVERSION}
+WRKSRC_TETEX=	${WRKDIR}/${TETEX_SRC}
+TETEX_SRC=	tetex-src-3.0
+
+KANJICODE?=	EUC
 
 post-extract:
-	@${RM} -rf ${WRKSRC}
-	@${MV} ${WRKDIR}/${DISTNAME} ${WRKSRC}
-.if ${KANJICODE} == "sjis"
-	@( cd ${WRKSRC} ; \
-	    for i in ${KANJI_FILES}; do \
-	      ${MV} $$i $$i.orig ; \
-	      nkf -s $$i.orig > $$i ; \
-	    done )
-.endif
+	${MV} ${WRKSRC_MENDEX} ${WRKSRC_TETEX}/texk
 
-pre-build:
-	@(cd ${WRKSRC}/../kpathsea; ${MAKE})
+pre-configure:
+	cd ${WRKSRC_TETEX} && \
+		${SETENV} ${CONFIGURE_ENV} ${SH} ${CONFIGURE_SCRIPT} \
+			--prefix=${PREFIX} \
+			--disable-multiplatform \
+			--without-texinfo --without-dialog \
+			--with-system-ncurses --with-system-zlib \
+			--without-xdvik --without-oxdvik \
+			--without-dvipsk --without-odvipsk \
+			--without-x11 --without-dvipdfm \
+			--without-pdftex --without-pdfetex --without-pdfxtex \
+			--without-omega --without-eomega \
+			--without-etex
+	cd ${WRKSRC}/../kpathsea && ${SETENV} ${MAKE_ENV} ${MAKE}
 
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/mendex ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/man/${MANLANG}/man1
-	@${INSTALL_MAN} ${WRKSRC}/mendex.1 ${PREFIX}/man/${MANLANG}/man1
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
-
-pre-clean:
-	@${RM} -rf ${WRKSRC}
 
 .include <bsd.port.mk>
