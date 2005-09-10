@@ -7,7 +7,7 @@
 
 INTERFACE=	motif
 
-MAINTAINER=	yatt@luna2.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Motif interface for TiMidity++
 
 MASTERDIR=	${.CURDIR}/../../audio/timidity++-emacs
