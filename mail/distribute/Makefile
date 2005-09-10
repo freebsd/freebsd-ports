@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	distribute
-PORTVERSION= 	2.1.26
+PORTVERSION=	2.1.26
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.foretune.co.jp/pub/network/mail/distribute/
+MASTER_SITES=	${MASTER_SITE_NETBSD}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-2.1-pl19
 
-PATCH_SITES=	${MASTER_SITES}BETA/
+PATCH_SITES=	${MASTER_SITES}
+PATCH_SITE_SUBDIR=	${PORTNAME}
 PATCHFILES=	patch.20.gz patch.21e.gz patch.22e.gz patch.23e.gz \
 		patch.24e.gz patch.25e.gz patch.26e.gz
 
