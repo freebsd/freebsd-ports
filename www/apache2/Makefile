@@ -45,6 +45,10 @@ IGNORE=		: Please define WITH_KQUEUE_SUPPORT instead
 EXTRA_PATCHES+=		${FILESDIR}/exp-apr-kqueue.patch
 .endif
 
+.if defined(WITH_OPENSSL_BETA)
+EXTRA_PATCHES+=		${FILESDIR}/build-fix-openssl_beta
+.endif
+
 SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
 			LIBTOOL_VERSION=${LIBTOOL_VERSION} AUTOCONF=${AUTOCONF} \
 			LIBTOOL_M4=${LOCALBASE}/share/aclocal/libtool${LIBTOOL_VERSION}.m4 \
