@@ -5117,7 +5117,7 @@ ldapsdk		ports/net/ldapsdk
 ldapsh		ports/net/ldapsh
 ldmud		ports/games/ldmud
 ldouble		ports/math/ldouble
-ldvd9to5	ports/multimedia/ldvd9to5
+ldvd		ports/multimedia/ldvd
 le		ports/editors/le
 leafnode	ports/news/leafnode
 leafnode+	ports/news/leafnode+
