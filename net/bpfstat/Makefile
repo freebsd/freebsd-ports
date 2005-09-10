@@ -22,4 +22,8 @@ PLIST_FILES=	sbin/bpfstat
 IGNORE=		will only work on systems >= 600033
 .endif
 
+.if ${OSVERSION} >= 700000
+IGNORE=		this has been merged into netstat
+.endif
+
 .include <bsd.port.post.mk>
