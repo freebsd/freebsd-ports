@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES?=	http://www.sympa.org/distribution/old/
 
-MAINTAINER=	autrijus@autrijus.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Sympa is an electronic mailing list manager
 
 BUILD_DEPENDS+=	${SITE_PERL}/Mail/Mailer.pm:${PORTSDIR}/mail/p5-Mail-Tools \

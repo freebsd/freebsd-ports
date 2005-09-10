@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	autrijus@autrijus.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Organize Data in Tables
 
 BUILD_DEPENDS=	${SITE_PERL}/Text/Aligner.pm:${PORTSDIR}/textproc/p5-Text-Aligner
