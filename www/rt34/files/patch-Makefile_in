@@ -1,0 +1,38 @@
+--- Makefile.in.orig	Fri Apr  1 11:18:10 2005
++++ Makefile.in	Wed May  4 17:00:58 2005
+@@ -224,9 +224,6 @@
+ 	@echo "very dangerous.  Note that you do not have to manually add a "
+ 	@echo "database user or set up a database for RT.  These actions will be "
+ 	@echo "taken care of in the next step.)"
+-	@echo ""
+-	@echo "After that, you need to initialize RT's database by running" 
+-	@echo " 'make initialize-database'"
+ 
+ #	@echo " or by executing "       
+ #	@echo " '$(RT_SBIN_PATH)/rt-setup-database --action init \ "
+@@ -284,7 +281,7 @@
+ 	chgrp -R $(RTGROUP) $(DESTDIR)/$(RT_ETC_PATH)
+ 
+ 	chmod 0550 $(DESTDIR)/$(CONFIG_FILE)
+-	chmod 0550 $(DESTDIR)/$(SITE_CONFIG_FILE)
++	chmod 0550 $(DESTDIR)/$(SITE_CONFIG_FILE)-dist
+ 
+ 	# Make the interfaces executable
+ 	chown $(BIN_OWNER) $(BINARIES)
+@@ -331,13 +328,13 @@
+ config-install:
+ 	mkdir -p $(DESTDIR)/$(CONFIG_FILE_PATH)	
+ 	-cp etc/RT_Config.pm $(DESTDIR)/$(CONFIG_FILE)
+-	[ -f $(DESTDIR)/$(SITE_CONFIG_FILE) ] || cp etc/RT_SiteConfig.pm $(DESTDIR)/$(SITE_CONFIG_FILE) 
++	-cp etc/RT_SiteConfig.pm $(DESTDIR)/$(SITE_CONFIG_FILE)-dist
+ 
+ 	chgrp $(RTGROUP) $(DESTDIR)/$(CONFIG_FILE)
+ 	chown $(BIN_OWNER) $(DESTDIR)/$(CONFIG_FILE)
+ 
+-	chgrp $(RTGROUP) $(DESTDIR)/$(SITE_CONFIG_FILE)
+-	chown $(BIN_OWNER) $(DESTDIR)/$(SITE_CONFIG_FILE)
++	chgrp $(RTGROUP) $(DESTDIR)/$(SITE_CONFIG_FILE)-dist
++	chown $(BIN_OWNER) $(DESTDIR)/$(SITE_CONFIG_FILE)-dist
+ 
+ 	@echo "Installed configuration. about to install rt in  $(RT_PATH)"
+ 

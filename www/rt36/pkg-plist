@@ -1,574 +1,582 @@
 @comment $FreeBSD$
-@unexec if cmp -s %D/rt3/etc/RT_SiteConfig.pm %D/rt3/etc/RT_SiteConfig.pm-dist; then rm -f %D/rt3/etc/RT_SiteConfig.pm; fi
-rt3/etc/RT_SiteConfig.pm-dist
-@exec [ -f %D/rt3/etc/RT_SiteConfig.pm ] || cp -p %D/rt3/etc/RT_SiteConfig.pm-dist %D/rt3/etc/RT_SiteConfig.pm
-rt3/README
-rt3/bin/mason_handler.fcgi
-rt3/bin/mason_handler.scgi
-rt3/bin/mason_handler.svc
-rt3/bin/rt
-rt3/bin/rt-crontool
-rt3/bin/rt-mailgate
-rt3/bin/standalone_httpd
-rt3/bin/webmux.pl
-rt3/etc/RT_Config.pm
-rt3/etc/acl.Informix
-rt3/etc/acl.Oracle
-rt3/etc/acl.Pg
-rt3/etc/acl.Sybase
-rt3/etc/acl.mysql
-rt3/etc/initialdata
-rt3/etc/schema.Informix
-rt3/etc/schema.Oracle
-rt3/etc/schema.Pg
-rt3/etc/schema.SQLite
-rt3/etc/schema.Sybase
-rt3/etc/schema.mysql
-rt3/lib/RT.pm
-rt3/lib/RT.pm.in
-rt3/lib/RT/ACE.pm
-rt3/lib/RT/ACE_Overlay.pm
-rt3/lib/RT/ACL.pm
-rt3/lib/RT/ACL_Overlay.pm
-rt3/lib/RT/Action/AutoOpen.pm
-rt3/lib/RT/Action/Autoreply.pm
-rt3/lib/RT/Action/CreateTickets.pm
-rt3/lib/RT/Action/EscalatePriority.pm
-rt3/lib/RT/Action/Generic.pm
-rt3/lib/RT/Action/Notify.pm
-rt3/lib/RT/Action/NotifyAsComment.pm
-rt3/lib/RT/Action/RecordComment.pm
-rt3/lib/RT/Action/RecordCorrespondence.pm
-rt3/lib/RT/Action/ResolveMembers.pm
-rt3/lib/RT/Action/SendEmail.pm
-rt3/lib/RT/Action/SetPriority.pm
-rt3/lib/RT/Action/UserDefined.pm
-rt3/lib/RT/Attachment.pm
-rt3/lib/RT/Attachment_Overlay.pm
-rt3/lib/RT/Attachments.pm
-rt3/lib/RT/Attachments_Overlay.pm
-rt3/lib/RT/Attribute.pm
-rt3/lib/RT/Attribute_Overlay.pm
-rt3/lib/RT/Attributes.pm
-rt3/lib/RT/Attributes_Overlay.pm
-rt3/lib/RT/Base.pm
-rt3/lib/RT/CachedGroupMember.pm
-rt3/lib/RT/CachedGroupMember_Overlay.pm
-rt3/lib/RT/CachedGroupMembers.pm
-rt3/lib/RT/CachedGroupMembers_Overlay.pm
-rt3/lib/RT/Condition/AnyTransaction.pm
-rt3/lib/RT/Condition/BeforeDue.pm
-rt3/lib/RT/Condition/Generic.pm
-rt3/lib/RT/Condition/Overdue.pm
-rt3/lib/RT/Condition/OwnerChange.pm
-rt3/lib/RT/Condition/PriorityChange.pm
-rt3/lib/RT/Condition/PriorityExceeds.pm
-rt3/lib/RT/Condition/QueueChange.pm
-rt3/lib/RT/Condition/StatusChange.pm
-rt3/lib/RT/Condition/UserDefined.pm
-rt3/lib/RT/CurrentUser.pm
-rt3/lib/RT/CustomField.pm
-rt3/lib/RT/CustomFieldValue.pm
-rt3/lib/RT/CustomFieldValues.pm
-rt3/lib/RT/CustomFieldValues_Overlay.pm
-rt3/lib/RT/CustomField_Overlay.pm
-rt3/lib/RT/CustomFields.pm
-rt3/lib/RT/CustomFields_Overlay.pm
-rt3/lib/RT/Date.pm
-rt3/lib/RT/EmailParser.pm
-rt3/lib/RT/Group.pm
-rt3/lib/RT/GroupMember.pm
-rt3/lib/RT/GroupMember_Overlay.pm
-rt3/lib/RT/GroupMembers.pm
-rt3/lib/RT/GroupMembers_Overlay.pm
-rt3/lib/RT/Group_Overlay.pm
-rt3/lib/RT/Groups.pm
-rt3/lib/RT/Groups_Overlay.pm
-rt3/lib/RT/Handle.pm
-rt3/lib/RT/I18N.pm
-rt3/lib/RT/I18N/cs.pm
-rt3/lib/RT/I18N/cs.po
-rt3/lib/RT/I18N/da.po
-rt3/lib/RT/I18N/de.po
-rt3/lib/RT/I18N/en.po
-rt3/lib/RT/I18N/es.po
-rt3/lib/RT/I18N/fi.po
-rt3/lib/RT/I18N/fr.po
-rt3/lib/RT/I18N/he.po
-rt3/lib/RT/I18N/hu.po
-rt3/lib/RT/I18N/i_default.pm
-rt3/lib/RT/I18N/it.po
-rt3/lib/RT/I18N/ja.po
-rt3/lib/RT/I18N/nl.po
-rt3/lib/RT/I18N/no.po
-rt3/lib/RT/I18N/pl.po
-rt3/lib/RT/I18N/pt_br.po
-rt3/lib/RT/I18N/ru.po
-rt3/lib/RT/I18N/zh_cn.po
-rt3/lib/RT/I18N/zh_tw.po
-rt3/lib/RT/Interface/CLI.pm
-rt3/lib/RT/Interface/Email.pm
-rt3/lib/RT/Interface/Email/Auth/GnuPG.pm
-rt3/lib/RT/Interface/Email/Auth/MailFrom.pm
-rt3/lib/RT/Interface/Email/Filter/SpamAssassin.pm
-rt3/lib/RT/Interface/REST.pm
-rt3/lib/RT/Interface/Web.pm
-rt3/lib/RT/Interface/Web/Handler.pm
-rt3/lib/RT/Interface/Web/Standalone.pm
-rt3/lib/RT/Link.pm
-rt3/lib/RT/Link_Overlay.pm
-rt3/lib/RT/Links.pm
-rt3/lib/RT/Links_Overlay.pm
-rt3/lib/RT/ObjectCustomFields.pm
-rt3/lib/RT/ObjectCustomFields_Overlay.pm
-rt3/lib/RT/ObjectCustomField.pm
-rt3/lib/RT/ObjectCustomFieldValues.pm
-rt3/lib/RT/ObjectCustomFieldValue.pm
-rt3/lib/RT/ObjectCustomField_Overlay.pm
-rt3/lib/RT/ObjectCustomFieldValues_Overlay.pm
-rt3/lib/RT/ObjectCustomFieldValue_Overlay.pm
-rt3/lib/RT/Principal.pm
-rt3/lib/RT/Principal_Overlay.pm
-rt3/lib/RT/Principals.pm
-rt3/lib/RT/Principals_Overlay.pm
-rt3/lib/RT/Queue.pm
-rt3/lib/RT/Queue_Overlay.pm
-rt3/lib/RT/Queues.pm
-rt3/lib/RT/Queues_Overlay.pm
-rt3/lib/RT/Record.pm
-rt3/lib/RT/SavedSearch.pm
-rt3/lib/RT/SavedSearches.pm
-rt3/lib/RT/Scrip.pm
-rt3/lib/RT/ScripAction.pm
-rt3/lib/RT/ScripAction_Overlay.pm
-rt3/lib/RT/ScripActions.pm
-rt3/lib/RT/ScripActions_Overlay.pm
-rt3/lib/RT/ScripCondition.pm
-rt3/lib/RT/ScripCondition_Overlay.pm
-rt3/lib/RT/ScripConditions.pm
-rt3/lib/RT/ScripConditions_Overlay.pm
-rt3/lib/RT/Scrip_Overlay.pm
-rt3/lib/RT/Scrips.pm
-rt3/lib/RT/Scrips_Overlay.pm
-rt3/lib/RT/Search/ActiveTicketsInQueue.pm
-rt3/lib/RT/Search/FromSQL.pm
-rt3/lib/RT/Search/Generic.pm
-rt3/lib/RT/SearchBuilder.pm
-rt3/lib/RT/StyleGuide.pod
-rt3/lib/RT/System.pm
-rt3/lib/RT/Template.pm
-rt3/lib/RT/Template_Overlay.pm
-rt3/lib/RT/Templates.pm
-rt3/lib/RT/Templates_Overlay.pm
-rt3/lib/RT/Ticket.pm
-rt3/lib/RT/Ticket_Overlay.pm
-rt3/lib/RT/Tickets.pm
-rt3/lib/RT/Tickets_Overlay.pm
-rt3/lib/RT/Tickets_Overlay_SQL.pm
-rt3/lib/RT/Transaction.pm
-rt3/lib/RT/Transaction_Overlay.pm
-rt3/lib/RT/Transactions.pm
-rt3/lib/RT/Transactions_Overlay.pm
-rt3/lib/RT/URI.pm
-rt3/lib/RT/URI/base.pm
-rt3/lib/RT/URI/fsck_com_rt.pm
-rt3/lib/RT/URI/t.pm
-rt3/lib/RT/User.pm
-rt3/lib/RT/User_Overlay.pm
-rt3/lib/RT/Users.pm
-rt3/lib/RT/Users_Overlay.pm
-rt3/lib/t/00smoke.t
-rt3/lib/t/data/8859-15-message-series/dir
-rt3/lib/t/data/8859-15-message-series/msg1
-rt3/lib/t/data/8859-15-message-series/msg2
-rt3/lib/t/data/8859-15-message-series/msg3
-rt3/lib/t/data/8859-15-message-series/msg4
-rt3/lib/t/data/8859-15-message-series/msg5
-rt3/lib/t/data/8859-15-message-series/msg6
-rt3/lib/t/data/8859-15-message-series/msg7
-rt3/lib/t/data/crashes-file-based-parser
-rt3/lib/t/data/multipart-alternative-with-umlaut
-rt3/lib/t/data/multipart-report
-rt3/lib/t/data/nested-mime-sample
-rt3/lib/t/data/nested-rfc-822
-rt3/lib/t/data/new-ticket-from-iso-8859-1
-rt3/lib/t/data/new-ticket-from-iso-8859-1-full
-rt3/lib/t/data/notes-uuencoded
-rt3/lib/t/data/rt-send-cc
-rt3/lib/t/data/russian-subject-no-content-type
-rt3/lib/t/data/text-html-in-russian
-rt3/lib/t/data/text-html-with-umlaut
-rt3/lib/t/regression/01ticket_link_searching.t
-rt3/lib/t/regression/02basic_web.t
-rt3/lib/t/regression/03web_compiliation_errors.t
-rt3/lib/t/regression/04send_email.t
-rt3/lib/t/regression/05cronsupport.t
-rt3/lib/t/regression/06mailgateway.t
-rt3/lib/t/regression/07acl.t
-rt3/lib/t/regression/08web_cf_access.t
-rt3/lib/t/regression/09record_cf_api.t
-rt3/lib/t/regression/10merge.t
-rt3/lib/t/regression/11-template-insert.t
-rt3/lib/t/regression/12-search.t
-rt3/lib/t/regression/13-attribute-tests.t
-rt3/lib/t/regression/14merge.t
-rt3/lib/t/regression/15cf_single_values_are_single.t
-rt3/lib/t/regression/16-transaction_cf_tests.t
-rt3/lib/t/regression/17multiple_deleg_revocation.t
-rt3/lib/t/regression/18stale_delegations_cleanup.t
-rt3/lib/t/regression/19-rtname.t
-rt3/lib/t/regression/20savedsearch.t
-rt3/lib/t/regression/mime_tests
-rt3/lib/t/setup_regression.t
-rt3/lib/t/create_data.pl
-rt3/sbin/rt-setup-database
-rt3/sbin/rt-test-dependencies
-rt3/sbin/rt-dump-database
-rt3/share/doc/README
-rt3/share/html/Admin/Elements/AddCustomFieldValue
-rt3/share/html/Admin/Elements/CreateUserCalled
-rt3/share/html/Admin/Elements/CustomFieldTabs
-rt3/share/html/Admin/Elements/EditCustomField
-rt3/share/html/Admin/Elements/EditCustomFieldValues
-rt3/share/html/Admin/Elements/EditCustomFields
-rt3/share/html/Admin/Elements/EditQueueWatchers
-rt3/share/html/Admin/Elements/EditScrip
-rt3/share/html/Admin/Elements/EditScrips
-rt3/share/html/Admin/Elements/EditTemplates
-rt3/share/html/Admin/Elements/EditUserComments
-rt3/share/html/Admin/Elements/GlobalCustomFieldTabs
-rt3/share/html/Admin/Elements/GroupTabs
-rt3/share/html/Admin/Elements/Header
-rt3/share/html/Admin/Elements/ListGlobalCustomFields
-rt3/share/html/Admin/Elements/ListGlobalScrips
-rt3/share/html/Admin/Elements/ModifyTemplate
-rt3/share/html/Admin/Elements/ObjectCustomFields
-rt3/share/html/Admin/Elements/PickObjects
-rt3/share/html/Admin/Elements/PickCustomFields
-rt3/share/html/Admin/Elements/QueueRightsForUser
-rt3/share/html/Admin/Elements/QueueTabs
-rt3/share/html/Admin/Elements/SelectCustomFieldLookupType
-rt3/share/html/Admin/Elements/SelectCustomFieldType
-rt3/share/html/Admin/Elements/SelectGroups
-rt3/share/html/Admin/Elements/SelectModifyGroup
-rt3/share/html/Admin/Elements/SelectModifyQueue
-rt3/share/html/Admin/Elements/SelectModifyUser
-rt3/share/html/Admin/Elements/SelectNewGroupMembers
-rt3/share/html/Admin/Elements/SelectRights
-rt3/share/html/Admin/Elements/SelectScrip
-rt3/share/html/Admin/Elements/SelectScripAction
-rt3/share/html/Admin/Elements/SelectScripCondition
-rt3/share/html/Admin/Elements/SelectSingleOrMultiple
-rt3/share/html/Admin/Elements/SelectStage
-rt3/share/html/Admin/Elements/SelectTemplate
-rt3/share/html/Admin/Elements/SelectUsers
-rt3/share/html/Admin/Elements/SystemTabs
-rt3/share/html/Admin/Elements/Tabs
-rt3/share/html/Admin/Elements/ToolTabs
-rt3/share/html/Admin/Elements/UserTabs
-rt3/share/html/Admin/Global/GroupRights.html
-rt3/share/html/Admin/Global/Scrip.html
-rt3/share/html/Admin/Global/Scrips.html
-rt3/share/html/Admin/Global/Template.html
-rt3/share/html/Admin/Global/Templates.html
-rt3/share/html/Admin/Global/UserRights.html
-rt3/share/html/Admin/Global/index.html
-rt3/share/html/Admin/Global/CustomFields/Groups.html
-rt3/share/html/Admin/Global/CustomFields/Users.html
-rt3/share/html/Admin/Global/CustomFields/index.html
-rt3/share/html/Admin/Global/CustomFields/Queue-Transactions.html
-rt3/share/html/Admin/Global/CustomFields/Queue-Tickets.html
-rt3/share/html/Admin/CustomFields/GroupRights.html
-rt3/share/html/Admin/CustomFields/UserRights.html
-rt3/share/html/Admin/CustomFields/Modify.html
-rt3/share/html/Admin/CustomFields/index.html
-rt3/share/html/Admin/CustomFields/Objects.html
-rt3/share/html/Admin/Groups/CustomFields.html
-rt3/share/html/Admin/Groups/GroupRights.html
-rt3/share/html/Admin/Groups/History.html
-rt3/share/html/Admin/Groups/Members.html
-rt3/share/html/Admin/Groups/Modify.html
-rt3/share/html/Admin/Groups/UserRights.html
-rt3/share/html/Admin/Groups/index.html
-rt3/share/html/Admin/Users/CustomFields.html
-rt3/share/html/Admin/Users/Memberships.html
-rt3/share/html/Admin/Users/Modify.html
-rt3/share/html/Admin/Users/History.html
-rt3/share/html/Admin/Users/index.html
-rt3/share/html/Admin/Queues/CustomField.html
-rt3/share/html/Admin/Queues/CustomFields.html
-rt3/share/html/Admin/Queues/GroupRights.html
-rt3/share/html/Admin/Queues/Modify.html
-rt3/share/html/Admin/Queues/People.html
-rt3/share/html/Admin/Queues/Scrip.html
-rt3/share/html/Admin/Queues/Scrips.html
-rt3/share/html/Admin/Queues/Template.html
-rt3/share/html/Admin/Queues/Templates.html
-rt3/share/html/Admin/Queues/UserRights.html
-rt3/share/html/Admin/Queues/index.html
-rt3/share/html/Admin/Tools/Configuration.html
-rt3/share/html/Admin/Tools/index.html
-rt3/share/html/Admin/autohandler
-rt3/share/html/Admin/index.html
-rt3/share/html/Approvals/Display.html
-rt3/share/html/Approvals/Elements/Approve
-rt3/share/html/Approvals/Elements/PendingMyApproval
-rt3/share/html/Approvals/Elements/ShowDependency
-rt3/share/html/Approvals/Elements/Tabs
-rt3/share/html/Approvals/index.html
-rt3/share/html/Download/Tabular/dhandler
-rt3/share/html/Download/CustomFieldValue/dhandler
-rt3/share/html/Elements/BevelBoxRaisedEnd
-rt3/share/html/Elements/BevelBoxRaisedStart
-rt3/share/html/Elements/Callback
-rt3/share/html/Elements/Checkbox
-rt3/share/html/Elements/CollectionAsTable/ParseFormat
-rt3/share/html/Elements/CollectionAsTable/Row
-rt3/share/html/Elements/CollectionAsTable/Header
-rt3/share/html/Elements/CreateTicket
-rt3/share/html/Elements/EditLinks
-rt3/share/html/Elements/EditCustomField
-rt3/share/html/Elements/EditCustomFieldImage
-rt3/share/html/Elements/EditCustomFieldSelect
-rt3/share/html/Elements/EditCustomFieldBinary
-rt3/share/html/Elements/EditCustomFieldFreeform
-rt3/share/html/Elements/EditCustomFieldText
-rt3/share/html/Elements/EditCustomFieldWikitext
-rt3/share/html/Elements/Error
-rt3/share/html/Elements/Footer
-rt3/share/html/Elements/GotoTicket
-rt3/share/html/Elements/Header
-rt3/share/html/Elements/ListActions
-rt3/share/html/Elements/Login
-rt3/share/html/Elements/Menu
-rt3/share/html/Elements/MessageBox
-rt3/share/html/Elements/MyRequests
-rt3/share/html/Elements/MyTickets
-rt3/share/html/Elements/PageLayout
-rt3/share/html/Elements/QueryString
-rt3/share/html/Elements/QuickCreate
-rt3/share/html/Elements/Quicksearch
-rt3/share/html/Elements/RT__Ticket/ColumnMap
-rt3/share/html/Elements/Refresh
-rt3/share/html/Elements/ScrubHTML
-rt3/share/html/Elements/Section
-rt3/share/html/Elements/SelectAttachmentField
-rt3/share/html/Elements/SelectBoolean
-rt3/share/html/Elements/SelectCustomFieldOperator
-rt3/share/html/Elements/SelectCustomFieldValue
-rt3/share/html/Elements/SelectDate
-rt3/share/html/Elements/SelectDateRelation
-rt3/share/html/Elements/SelectDateType
-rt3/share/html/Elements/SelectEqualityOperator
-rt3/share/html/Elements/SelectGroups
-rt3/share/html/Elements/SelectLang
-rt3/share/html/Elements/SelectLinkType
-rt3/share/html/Elements/SelectMatch
-rt3/share/html/Elements/SelectNewTicketQueue
-rt3/share/html/Elements/SelectOwner
-rt3/share/html/Elements/SelectQueue
-rt3/share/html/Elements/SelectResultsPerPage
-rt3/share/html/Elements/SelectSortOrder
-rt3/share/html/Elements/SelectStatus
-rt3/share/html/Elements/SelectTicketSortBy
-rt3/share/html/Elements/SelectTicketTypes
-rt3/share/html/Elements/SelectUsers
-rt3/share/html/Elements/SelectWatcherType
-rt3/share/html/Elements/SetupSessionCookie
-rt3/share/html/Elements/ShowCustomFields
-rt3/share/html/Elements/ShowCustomFieldImage
-rt3/share/html/Elements/ShowCustomFieldWikitext
-rt3/share/html/Elements/ShowLink
-rt3/share/html/Elements/ShowLinks
-rt3/share/html/Elements/ShowMemberships
-rt3/share/html/Elements/SimpleSearch
-rt3/share/html/Elements/Submit
-rt3/share/html/Elements/Tabs
-rt3/share/html/Elements/TicketList
-rt3/share/html/Elements/TitleBox
-rt3/share/html/Elements/TitleBoxEnd
-rt3/share/html/Elements/TitleBoxStart
-rt3/share/html/NoAuth/Logout.html
-rt3/share/html/NoAuth/Reminder.html
-rt3/share/html/NoAuth/images/autohandler
-rt3/share/html/NoAuth/images/bplogo.gif
-rt3/share/html/NoAuth/images/favicon.png
-rt3/share/html/NoAuth/images/space.gif
-rt3/share/html/NoAuth/webrt.css
-rt3/share/html/REST/1.0/Forms/queue/default
-rt3/share/html/REST/1.0/Forms/queue/ns
-rt3/share/html/REST/1.0/Forms/ticket/attachments
-rt3/share/html/REST/1.0/Forms/ticket/default
-rt3/share/html/REST/1.0/Forms/ticket/history
-rt3/share/html/REST/1.0/Forms/ticket/links
-rt3/share/html/REST/1.0/Forms/user/default
-rt3/share/html/REST/1.0/Forms/user/ns
-rt3/share/html/REST/1.0/NoAuth/mail-gateway
-rt3/share/html/REST/1.0/autohandler
-rt3/share/html/REST/1.0/dhandler
-rt3/share/html/REST/1.0/logout
-rt3/share/html/REST/1.0/search/dhandler
-rt3/share/html/REST/1.0/search/ticket
-rt3/share/html/REST/1.0/ticket/comment
-rt3/share/html/REST/1.0/ticket/link
-rt3/share/html/REST/1.0/ticket/merge
-rt3/share/html/Search/Build.html
-rt3/share/html/Search/Bulk.html
-rt3/share/html/Search/Edit.html
-rt3/share/html/Search/Elements/BuildFormatString
-rt3/share/html/Search/Elements/DisplayOptions
-rt3/share/html/Search/Elements/EditFormat
-rt3/share/html/Search/Elements/EditQuery
-rt3/share/html/Search/Elements/EditSearches
-rt3/share/html/Search/Elements/NewListActions
-rt3/share/html/Search/Elements/PickBasics
-rt3/share/html/Search/Elements/PickCFs
-rt3/share/html/Search/Elements/PickCriteria
-rt3/share/html/Search/Elements/SearchPrivacy
-rt3/share/html/Search/Elements/SelectAndOr
-rt3/share/html/Search/Elements/SelectGroup
-rt3/share/html/Search/Elements/SelectLinks
-rt3/share/html/Search/Elements/SelectPersonType
-rt3/share/html/Search/Elements/SelectSearchObject
-rt3/share/html/Search/Elements/SelectSearchesForObjects
-rt3/share/html/Search/Results.html
-rt3/share/html/Search/Results.rdf
-rt3/share/html/Search/Results.tsv
-rt3/share/html/SelfService/Attachment/dhandler
-rt3/share/html/SelfService/Closed.html
-rt3/share/html/SelfService/Create.html
-rt3/share/html/SelfService/CreateTicketInQueue.html
-rt3/share/html/SelfService/Display.html
-rt3/share/html/SelfService/Elements/GotoTicket
-rt3/share/html/SelfService/Elements/Header
-rt3/share/html/SelfService/Elements/MyRequests
-rt3/share/html/SelfService/Elements/Tabs
-rt3/share/html/SelfService/Error.html
-rt3/share/html/SelfService/Prefs.html
-rt3/share/html/SelfService/Update.html
-rt3/share/html/SelfService/index.html
-rt3/share/html/Ticket/Attachment/dhandler
-rt3/share/html/Ticket/Create.html
-rt3/share/html/Ticket/Display.html
-rt3/share/html/Ticket/Elements/AddWatchers
-rt3/share/html/Ticket/Elements/BulkLinks
-rt3/share/html/Ticket/Elements/EditBasics
-rt3/share/html/Ticket/Elements/EditCustomField
-rt3/share/html/Ticket/Elements/EditCustomFields
-rt3/share/html/Ticket/Elements/EditDates
-rt3/share/html/Ticket/Elements/EditPeople
-rt3/share/html/Ticket/Elements/EditWatchers
-rt3/share/html/Ticket/Elements/FindAttachments
-rt3/share/html/Ticket/Elements/LoadTextAttachments
-rt3/share/html/Ticket/Elements/PreviewScrips
-rt3/share/html/Ticket/Elements/ShowAttachments
-rt3/share/html/Ticket/Elements/ShowBasics
-rt3/share/html/Ticket/Elements/ShowCustomFields
-rt3/share/html/Ticket/Elements/ShowDates
-rt3/share/html/Ticket/Elements/ShowDependencies
-rt3/share/html/Ticket/Elements/ShowGroupMembers
-rt3/share/html/Ticket/Elements/ShowHistory
-rt3/share/html/Ticket/Elements/ShowMemberOf
-rt3/share/html/Ticket/Elements/ShowMembers
-rt3/share/html/Ticket/Elements/ShowMessageHeaders
-rt3/share/html/Ticket/Elements/ShowMessageStanza
-rt3/share/html/Ticket/Elements/ShowPeople
-rt3/share/html/Ticket/Elements/ShowReferences
-rt3/share/html/Ticket/Elements/ShowRequestor
-rt3/share/html/Ticket/Elements/ShowSummary
-rt3/share/html/Ticket/Elements/ShowTransaction
-rt3/share/html/Ticket/Elements/ShowTransactionAttachments
-rt3/share/html/Ticket/Elements/ShowUserEntry
-rt3/share/html/Ticket/Elements/Tabs
-rt3/share/html/Ticket/History.html
-rt3/share/html/Ticket/Modify.html
-rt3/share/html/Ticket/ModifyAll.html
-rt3/share/html/Ticket/ModifyDates.html
-rt3/share/html/Ticket/ModifyLinks.html
-rt3/share/html/Ticket/ModifyPeople.html
-rt3/share/html/Ticket/ShowEmailRecord.html
-rt3/share/html/Ticket/Update.html
-rt3/share/html/Tools/Elements/Tabs
-rt3/share/html/Tools/MyDay.html
-rt3/share/html/Tools/Offline.html
-rt3/share/html/User/Delegation.html
-rt3/share/html/User/Elements/DelegateRights
-rt3/share/html/User/Elements/GroupTabs
-rt3/share/html/User/Elements/Tabs
-rt3/share/html/User/Groups/Members.html
-rt3/share/html/User/Groups/Modify.html
-rt3/share/html/User/Groups/index.html
-rt3/share/html/User/Prefs.html
-rt3/share/html/autohandler
-rt3/share/html/index.html
-rt3/share/html/l
-@unexec rm -R %D/rt3/var 2> /dev/null || true
-@dirrm rt3/share/html/User/Groups
-@dirrm rt3/share/html/User/Elements
-@dirrm rt3/share/html/User
-@dirrm rt3/share/html/Tools/Elements
-@dirrm rt3/share/html/Tools
-@dirrm rt3/share/html/Ticket/Elements
-@dirrm rt3/share/html/Ticket/Attachment
-@dirrm rt3/share/html/Ticket
-@dirrm rt3/share/html/SelfService/Elements
-@dirrm rt3/share/html/SelfService/Attachment
-@dirrm rt3/share/html/SelfService
-@dirrm rt3/share/html/Search/Elements
-@dirrm rt3/share/html/Search
-@dirrm rt3/share/html/REST/1.0/ticket
-@dirrm rt3/share/html/REST/1.0/search
-@dirrm rt3/share/html/REST/1.0/NoAuth
-@dirrm rt3/share/html/REST/1.0/Forms/user
-@dirrm rt3/share/html/REST/1.0/Forms/ticket
-@dirrm rt3/share/html/REST/1.0/Forms/queue
-@dirrm rt3/share/html/REST/1.0/Forms
-@dirrm rt3/share/html/REST/1.0
-@dirrm rt3/share/html/REST
-@dirrm rt3/share/html/NoAuth/images
-@dirrm rt3/share/html/NoAuth
-@dirrm rt3/share/html/Elements/RT__Ticket
-@dirrm rt3/share/html/Elements/CollectionAsTable
-@dirrm rt3/share/html/Elements
-@dirrm rt3/share/html/Download/Tabular
-@dirrm rt3/share/html/Download/CustomFieldValue
-@dirrm rt3/share/html/Download
-@dirrm rt3/share/html/Approvals/Elements
-@dirrm rt3/share/html/Approvals
-@dirrm rt3/share/html/Admin/Users
-@dirrm rt3/share/html/Admin/Tools
-@dirrm rt3/share/html/Admin/Queues
-@dirrm rt3/share/html/Admin/Groups
-@dirrm rt3/share/html/Admin/Global/CustomFields
-@dirrm rt3/share/html/Admin/Global
-@dirrm rt3/share/html/Admin/CustomFields
-@dirrm rt3/share/html/Admin/Elements
-@dirrm rt3/share/html/Admin
-@dirrm rt3/share/html
-@dirrm rt3/share/doc
-@dirrm rt3/share
-@dirrm rt3/sbin
-@dirrm rt3/local/po
-@dirrm rt3/local/lib
-@dirrm rt3/local/html
-@dirrm rt3/local/etc
-@dirrm rt3/local
-@dirrm rt3/lib/t/regression
-@dirrm rt3/lib/t/data/8859-15-message-series
-@dirrm rt3/lib/t/data
-@dirrm rt3/lib/t
-@dirrm rt3/lib/RT/URI
-@dirrm rt3/lib/RT/Search
-@dirrm rt3/lib/RT/Interface/Web
-@dirrm rt3/lib/RT/Interface/Email/Filter
-@dirrm rt3/lib/RT/Interface/Email/Auth
-@dirrm rt3/lib/RT/Interface/Email
-@dirrm rt3/lib/RT/Interface
-@dirrm rt3/lib/RT/I18N
-@dirrm rt3/lib/RT/Condition
-@dirrm rt3/lib/RT/Action
-@dirrm rt3/lib/RT
-@dirrm rt3/lib
-@unexec rmdir %D/rt3/etc 2> /dev/null || true
-@dirrm rt3/bin
-@dirrm rt3
+@unexec if cmp -s %%RT_PATH%%/etc/RT_SiteConfig.pm %%RT_PATH%%/etc/RT_SiteConfig.pm-dist; then rm -f %%RT_PATH%%/etc/RT_SiteConfig.pm; fi
+%%RTPLIST%%/etc/RT_SiteConfig.pm-dist
+@exec [ -f %%RT_PATH%%/etc/RT_SiteConfig.pm ] || cp -p %%RT_PATH%%/etc/RT_SiteConfig.pm-dist %%RT_PATH%%/etc/RT_SiteConfig.pm
+%%RTPLIST%%/README
+%%RTPLIST%%/bin/mason_handler.fcgi
+%%RTPLIST%%/bin/mason_handler.scgi
+%%RTPLIST%%/bin/mason_handler.svc
+%%RTPLIST%%/bin/rt
+%%RTPLIST%%/bin/rt-crontool
+%%RTPLIST%%/bin/rt-mailgate
+%%RTPLIST%%/bin/standalone_httpd
+%%RTPLIST%%/bin/webmux.pl
+%%RTPLIST%%/etc/RT_Config.pm
+%%RTPLIST%%/etc/acl.Informix
+%%RTPLIST%%/etc/acl.Oracle
+%%RTPLIST%%/etc/acl.Pg
+%%RTPLIST%%/etc/acl.Sybase
+%%RTPLIST%%/etc/acl.mysql
+%%RTPLIST%%/etc/initialdata
+%%RTPLIST%%/etc/schema.Informix
+%%RTPLIST%%/etc/schema.Oracle
+%%RTPLIST%%/etc/schema.Pg
+%%RTPLIST%%/etc/schema.SQLite
+%%RTPLIST%%/etc/schema.Sybase
+%%RTPLIST%%/etc/schema.mysql
+%%RTPLIST%%/lib/RT.pm
+%%RTPLIST%%/lib/RT/ACE.pm
+%%RTPLIST%%/lib/RT/ACE_Overlay.pm
+%%RTPLIST%%/lib/RT/ACL.pm
+%%RTPLIST%%/lib/RT/ACL_Overlay.pm
+%%RTPLIST%%/lib/RT/Action/AutoOpen.pm
+%%RTPLIST%%/lib/RT/Action/Autoreply.pm
+%%RTPLIST%%/lib/RT/Action/CreateTickets.pm
+%%RTPLIST%%/lib/RT/Action/EscalatePriority.pm
+%%RTPLIST%%/lib/RT/Action/Generic.pm
+%%RTPLIST%%/lib/RT/Action/Notify.pm
+%%RTPLIST%%/lib/RT/Action/NotifyAsComment.pm
+%%RTPLIST%%/lib/RT/Action/RecordComment.pm
+%%RTPLIST%%/lib/RT/Action/RecordCorrespondence.pm
+%%RTPLIST%%/lib/RT/Action/ResolveMembers.pm
+%%RTPLIST%%/lib/RT/Action/SendEmail.pm
+%%RTPLIST%%/lib/RT/Action/SetPriority.pm
+%%RTPLIST%%/lib/RT/Action/UserDefined.pm
+%%RTPLIST%%/lib/RT/Attachment.pm
+%%RTPLIST%%/lib/RT/Attachment_Overlay.pm
+%%RTPLIST%%/lib/RT/Attachments.pm
+%%RTPLIST%%/lib/RT/Attachments_Overlay.pm
+%%RTPLIST%%/lib/RT/Attribute.pm
+%%RTPLIST%%/lib/RT/Attribute_Overlay.pm
+%%RTPLIST%%/lib/RT/Attributes.pm
+%%RTPLIST%%/lib/RT/Attributes_Overlay.pm
+%%RTPLIST%%/lib/RT/Base.pm
+%%RTPLIST%%/lib/RT/CachedGroupMember.pm
+%%RTPLIST%%/lib/RT/CachedGroupMember_Overlay.pm
+%%RTPLIST%%/lib/RT/CachedGroupMembers.pm
+%%RTPLIST%%/lib/RT/CachedGroupMembers_Overlay.pm
+%%RTPLIST%%/lib/RT/Condition/AnyTransaction.pm
+%%RTPLIST%%/lib/RT/Condition/BeforeDue.pm
+%%RTPLIST%%/lib/RT/Condition/Generic.pm
+%%RTPLIST%%/lib/RT/Condition/Overdue.pm
+%%RTPLIST%%/lib/RT/Condition/OwnerChange.pm
+%%RTPLIST%%/lib/RT/Condition/PriorityChange.pm
+%%RTPLIST%%/lib/RT/Condition/PriorityExceeds.pm
+%%RTPLIST%%/lib/RT/Condition/QueueChange.pm
+%%RTPLIST%%/lib/RT/Condition/StatusChange.pm
+%%RTPLIST%%/lib/RT/Condition/UserDefined.pm
+%%RTPLIST%%/lib/RT/CurrentUser.pm
+%%RTPLIST%%/lib/RT/CustomField.pm
+%%RTPLIST%%/lib/RT/CustomFieldValue.pm
+%%RTPLIST%%/lib/RT/CustomFieldValue_Overlay.pm
+%%RTPLIST%%/lib/RT/CustomFieldValues.pm
+%%RTPLIST%%/lib/RT/CustomFieldValues_Overlay.pm
+%%RTPLIST%%/lib/RT/CustomField_Overlay.pm
+%%RTPLIST%%/lib/RT/CustomFields.pm
+%%RTPLIST%%/lib/RT/CustomFields_Overlay.pm
+%%RTPLIST%%/lib/RT/Date.pm
+%%RTPLIST%%/lib/RT/EmailParser.pm
+%%RTPLIST%%/lib/RT/Group.pm
+%%RTPLIST%%/lib/RT/GroupMember.pm
+%%RTPLIST%%/lib/RT/GroupMember_Overlay.pm
+%%RTPLIST%%/lib/RT/GroupMembers.pm
+%%RTPLIST%%/lib/RT/GroupMembers_Overlay.pm
+%%RTPLIST%%/lib/RT/Group_Overlay.pm
+%%RTPLIST%%/lib/RT/Groups.pm
+%%RTPLIST%%/lib/RT/Groups_Overlay.pm
+%%RTPLIST%%/lib/RT/Handle.pm
+%%RTPLIST%%/lib/RT/I18N.pm
+%%RTPLIST%%/lib/RT/I18N/cs.pm
+%%RTPLIST%%/lib/RT/I18N/cs.po
+%%RTPLIST%%/lib/RT/I18N/da.po
+%%RTPLIST%%/lib/RT/I18N/de.po
+%%RTPLIST%%/lib/RT/I18N/en.po
+%%RTPLIST%%/lib/RT/I18N/es.po
+%%RTPLIST%%/lib/RT/I18N/fi.po
+%%RTPLIST%%/lib/RT/I18N/fr.po
+%%RTPLIST%%/lib/RT/I18N/he.po
+%%RTPLIST%%/lib/RT/I18N/hu.po
+%%RTPLIST%%/lib/RT/I18N/i_default.pm
+%%RTPLIST%%/lib/RT/I18N/id.po
+%%RTPLIST%%/lib/RT/I18N/it.po
+%%RTPLIST%%/lib/RT/I18N/ja.po
+%%RTPLIST%%/lib/RT/I18N/nl.po
+%%RTPLIST%%/lib/RT/I18N/no.po
+%%RTPLIST%%/lib/RT/I18N/pl.po
+%%RTPLIST%%/lib/RT/I18N/pt_br.po
+%%RTPLIST%%/lib/RT/I18N/ru.po
+%%RTPLIST%%/lib/RT/I18N/zh_cn.po
+%%RTPLIST%%/lib/RT/I18N/zh_tw.po
+%%RTPLIST%%/lib/RT/Interface/CLI.pm
+%%RTPLIST%%/lib/RT/Interface/Email.pm
+%%RTPLIST%%/lib/RT/Interface/Email/Auth/GnuPG.pm
+%%RTPLIST%%/lib/RT/Interface/Email/Auth/MailFrom.pm
+%%RTPLIST%%/lib/RT/Interface/Email/Filter/SpamAssassin.pm
+%%RTPLIST%%/lib/RT/Interface/REST.pm
+%%RTPLIST%%/lib/RT/Interface/Web.pm
+%%RTPLIST%%/lib/RT/Interface/Web/Handler.pm
+%%RTPLIST%%/lib/RT/Interface/Web/Standalone.pm
+%%RTPLIST%%/lib/RT/Interface/Web/QueryBuilder.pm
+%%RTPLIST%%/lib/RT/Interface/Web/QueryBuilder/Tree.pm
+%%RTPLIST%%/lib/RT/Link.pm
+%%RTPLIST%%/lib/RT/Link_Overlay.pm
+%%RTPLIST%%/lib/RT/Links.pm
+%%RTPLIST%%/lib/RT/Links_Overlay.pm
+%%RTPLIST%%/lib/RT/ObjectCustomFields.pm
+%%RTPLIST%%/lib/RT/ObjectCustomFields_Overlay.pm
+%%RTPLIST%%/lib/RT/ObjectCustomField.pm
+%%RTPLIST%%/lib/RT/ObjectCustomFieldValues.pm
+%%RTPLIST%%/lib/RT/ObjectCustomFieldValue.pm
+%%RTPLIST%%/lib/RT/ObjectCustomField_Overlay.pm
+%%RTPLIST%%/lib/RT/ObjectCustomFieldValues_Overlay.pm
+%%RTPLIST%%/lib/RT/ObjectCustomFieldValue_Overlay.pm
+%%RTPLIST%%/lib/RT/Principal.pm
+%%RTPLIST%%/lib/RT/Principal_Overlay.pm
+%%RTPLIST%%/lib/RT/Principals.pm
+%%RTPLIST%%/lib/RT/Principals_Overlay.pm
+%%RTPLIST%%/lib/RT/Queue.pm
+%%RTPLIST%%/lib/RT/Queue_Overlay.pm
+%%RTPLIST%%/lib/RT/Queues.pm
+%%RTPLIST%%/lib/RT/Queues_Overlay.pm
+%%RTPLIST%%/lib/RT/Record.pm
+%%RTPLIST%%/lib/RT/SavedSearch.pm
+%%RTPLIST%%/lib/RT/SavedSearches.pm
+%%RTPLIST%%/lib/RT/Scrip.pm
+%%RTPLIST%%/lib/RT/ScripAction.pm
+%%RTPLIST%%/lib/RT/ScripAction_Overlay.pm
+%%RTPLIST%%/lib/RT/ScripActions.pm
+%%RTPLIST%%/lib/RT/ScripActions_Overlay.pm
+%%RTPLIST%%/lib/RT/ScripCondition.pm
+%%RTPLIST%%/lib/RT/ScripCondition_Overlay.pm
+%%RTPLIST%%/lib/RT/ScripConditions.pm
+%%RTPLIST%%/lib/RT/ScripConditions_Overlay.pm
+%%RTPLIST%%/lib/RT/Scrip_Overlay.pm
+%%RTPLIST%%/lib/RT/Scrips.pm
+%%RTPLIST%%/lib/RT/Scrips_Overlay.pm
+%%RTPLIST%%/lib/RT/Search/ActiveTicketsInQueue.pm
+%%RTPLIST%%/lib/RT/Search/FromSQL.pm
+%%RTPLIST%%/lib/RT/Search/Generic.pm
+%%RTPLIST%%/lib/RT/SearchBuilder.pm
+%%RTPLIST%%/lib/RT/StyleGuide.pod
+%%RTPLIST%%/lib/RT/System.pm
+%%RTPLIST%%/lib/RT/Template.pm
+%%RTPLIST%%/lib/RT/Template_Overlay.pm
+%%RTPLIST%%/lib/RT/Templates.pm
+%%RTPLIST%%/lib/RT/Templates_Overlay.pm
+%%RTPLIST%%/lib/RT/Ticket.pm
+%%RTPLIST%%/lib/RT/Ticket_Overlay.pm
+%%RTPLIST%%/lib/RT/Tickets.pm
+%%RTPLIST%%/lib/RT/Tickets_Overlay.pm
+%%RTPLIST%%/lib/RT/Tickets_Overlay_SQL.pm
+%%RTPLIST%%/lib/RT/Transaction.pm
+%%RTPLIST%%/lib/RT/Transaction_Overlay.pm
+%%RTPLIST%%/lib/RT/Transactions.pm
+%%RTPLIST%%/lib/RT/Transactions_Overlay.pm
+%%RTPLIST%%/lib/RT/URI.pm
+%%RTPLIST%%/lib/RT/URI/base.pm
+%%RTPLIST%%/lib/RT/URI/fsck_com_rt.pm
+%%RTPLIST%%/lib/RT/URI/t.pm
+%%RTPLIST%%/lib/RT/User.pm
+%%RTPLIST%%/lib/RT/User_Overlay.pm
+%%RTPLIST%%/lib/RT/Users.pm
+%%RTPLIST%%/lib/RT/Users_Overlay.pm
+%%RTPLIST%%/lib/t/00smoke.t
+%%RTPLIST%%/lib/t/data/8859-15-message-series/dir
+%%RTPLIST%%/lib/t/data/8859-15-message-series/msg1
+%%RTPLIST%%/lib/t/data/8859-15-message-series/msg2
+%%RTPLIST%%/lib/t/data/8859-15-message-series/msg3
+%%RTPLIST%%/lib/t/data/8859-15-message-series/msg4
+%%RTPLIST%%/lib/t/data/8859-15-message-series/msg5
+%%RTPLIST%%/lib/t/data/8859-15-message-series/msg6
+%%RTPLIST%%/lib/t/data/8859-15-message-series/msg7
+%%RTPLIST%%/lib/t/data/crashes-file-based-parser
+%%RTPLIST%%/lib/t/data/multipart-alternative-with-umlaut
+%%RTPLIST%%/lib/t/data/multipart-report
+%%RTPLIST%%/lib/t/data/nested-mime-sample
+%%RTPLIST%%/lib/t/data/nested-rfc-822
+%%RTPLIST%%/lib/t/data/new-ticket-from-iso-8859-1
+%%RTPLIST%%/lib/t/data/new-ticket-from-iso-8859-1-full
+%%RTPLIST%%/lib/t/data/notes-uuencoded
+%%RTPLIST%%/lib/t/data/rt-send-cc
+%%RTPLIST%%/lib/t/data/russian-subject-no-content-type
+%%RTPLIST%%/lib/t/data/text-html-in-russian
+%%RTPLIST%%/lib/t/data/text-html-with-umlaut
+%%RTPLIST%%/lib/t/regression/01ticket_link_searching.t
+%%RTPLIST%%/lib/t/regression/02basic_web.t
+%%RTPLIST%%/lib/t/regression/03web_compiliation_errors.t
+%%RTPLIST%%/lib/t/regression/04send_email.t
+%%RTPLIST%%/lib/t/regression/05cronsupport.t
+%%RTPLIST%%/lib/t/regression/06mailgateway.t
+%%RTPLIST%%/lib/t/regression/07acl.t
+%%RTPLIST%%/lib/t/regression/07rights.t
+%%RTPLIST%%/lib/t/regression/08web_cf_access.t
+%%RTPLIST%%/lib/t/regression/09record_cf_api.t
+%%RTPLIST%%/lib/t/regression/10merge.t
+%%RTPLIST%%/lib/t/regression/11-template-insert.t
+%%RTPLIST%%/lib/t/regression/12-search.t
+%%RTPLIST%%/lib/t/regression/13-attribute-tests.t
+%%RTPLIST%%/lib/t/regression/14merge.t
+%%RTPLIST%%/lib/t/regression/15cf_single_values_are_single.t
+%%RTPLIST%%/lib/t/regression/16-transaction_cf_tests.t
+%%RTPLIST%%/lib/t/regression/17multiple_deleg_revocation.t
+%%RTPLIST%%/lib/t/regression/18stale_delegations_cleanup.t
+%%RTPLIST%%/lib/t/regression/19-rtname.t
+%%RTPLIST%%/lib/t/regression/20savedsearch.t
+%%RTPLIST%%/lib/t/regression/21query-builder.t
+%%RTPLIST%%/lib/t/regression/22search_tix_by_txn.t
+%%RTPLIST%%/lib/t/regression/mime_tests
+%%RTPLIST%%/lib/t/setup_regression.t
+%%RTPLIST%%/lib/t/create_data.pl
+%%RTPLIST%%/sbin/rt-setup-database
+%%RTPLIST%%/sbin/rt-test-dependencies
+%%RTPLIST%%/sbin/rt-dump-database
+%%RTPLIST%%/share/doc/README
+%%RTPLIST%%/share/html/Admin/Elements/AddCustomFieldValue
+%%RTPLIST%%/share/html/Admin/Elements/CreateUserCalled
+%%RTPLIST%%/share/html/Admin/Elements/CustomFieldTabs
+%%RTPLIST%%/share/html/Admin/Elements/EditCustomField
+%%RTPLIST%%/share/html/Admin/Elements/EditCustomFieldValues
+%%RTPLIST%%/share/html/Admin/Elements/EditCustomFields
+%%RTPLIST%%/share/html/Admin/Elements/EditQueueWatchers
+%%RTPLIST%%/share/html/Admin/Elements/EditScrip
+%%RTPLIST%%/share/html/Admin/Elements/EditScrips
+%%RTPLIST%%/share/html/Admin/Elements/EditTemplates
+%%RTPLIST%%/share/html/Admin/Elements/EditUserComments
+%%RTPLIST%%/share/html/Admin/Elements/GlobalCustomFieldTabs
+%%RTPLIST%%/share/html/Admin/Elements/GroupTabs
+%%RTPLIST%%/share/html/Admin/Elements/Header
+%%RTPLIST%%/share/html/Admin/Elements/ListGlobalCustomFields
+%%RTPLIST%%/share/html/Admin/Elements/ListGlobalScrips
+%%RTPLIST%%/share/html/Admin/Elements/ModifyTemplate
+%%RTPLIST%%/share/html/Admin/Elements/ObjectCustomFields
+%%RTPLIST%%/share/html/Admin/Elements/PickObjects
+%%RTPLIST%%/share/html/Admin/Elements/PickCustomFields
+%%RTPLIST%%/share/html/Admin/Elements/QueueRightsForUser
+%%RTPLIST%%/share/html/Admin/Elements/QueueTabs
+%%RTPLIST%%/share/html/Admin/Elements/SelectCustomFieldLookupType
+%%RTPLIST%%/share/html/Admin/Elements/SelectCustomFieldType
+%%RTPLIST%%/share/html/Admin/Elements/SelectGroups
+%%RTPLIST%%/share/html/Admin/Elements/SelectModifyGroup
+%%RTPLIST%%/share/html/Admin/Elements/SelectModifyQueue
+%%RTPLIST%%/share/html/Admin/Elements/SelectModifyUser
+%%RTPLIST%%/share/html/Admin/Elements/SelectNewGroupMembers
+%%RTPLIST%%/share/html/Admin/Elements/SelectRights
+%%RTPLIST%%/share/html/Admin/Elements/SelectScrip
+%%RTPLIST%%/share/html/Admin/Elements/SelectScripAction
+%%RTPLIST%%/share/html/Admin/Elements/SelectScripCondition
+%%RTPLIST%%/share/html/Admin/Elements/SelectSingleOrMultiple
+%%RTPLIST%%/share/html/Admin/Elements/SelectStage
+%%RTPLIST%%/share/html/Admin/Elements/SelectTemplate
+%%RTPLIST%%/share/html/Admin/Elements/SelectUsers
+%%RTPLIST%%/share/html/Admin/Elements/SystemTabs
+%%RTPLIST%%/share/html/Admin/Elements/Tabs
+%%RTPLIST%%/share/html/Admin/Elements/ToolTabs
+%%RTPLIST%%/share/html/Admin/Elements/UserTabs
+%%RTPLIST%%/share/html/Admin/Global/GroupRights.html
+%%RTPLIST%%/share/html/Admin/Global/Scrip.html
+%%RTPLIST%%/share/html/Admin/Global/Scrips.html
+%%RTPLIST%%/share/html/Admin/Global/Template.html
+%%RTPLIST%%/share/html/Admin/Global/Templates.html
+%%RTPLIST%%/share/html/Admin/Global/UserRights.html
+%%RTPLIST%%/share/html/Admin/Global/index.html
+%%RTPLIST%%/share/html/Admin/Global/CustomFields/Groups.html
+%%RTPLIST%%/share/html/Admin/Global/CustomFields/Users.html
+%%RTPLIST%%/share/html/Admin/Global/CustomFields/index.html
+%%RTPLIST%%/share/html/Admin/Global/CustomFields/Queue-Transactions.html
+%%RTPLIST%%/share/html/Admin/Global/CustomFields/Queue-Tickets.html
+%%RTPLIST%%/share/html/Admin/CustomFields/GroupRights.html
+%%RTPLIST%%/share/html/Admin/CustomFields/UserRights.html
+%%RTPLIST%%/share/html/Admin/CustomFields/Modify.html
+%%RTPLIST%%/share/html/Admin/CustomFields/index.html
+%%RTPLIST%%/share/html/Admin/CustomFields/Objects.html
+%%RTPLIST%%/share/html/Admin/Groups/CustomFields.html
+%%RTPLIST%%/share/html/Admin/Groups/GroupRights.html
+%%RTPLIST%%/share/html/Admin/Groups/History.html
+%%RTPLIST%%/share/html/Admin/Groups/Members.html
+%%RTPLIST%%/share/html/Admin/Groups/Modify.html
+%%RTPLIST%%/share/html/Admin/Groups/UserRights.html
+%%RTPLIST%%/share/html/Admin/Groups/index.html
+%%RTPLIST%%/share/html/Admin/Users/CustomFields.html
+%%RTPLIST%%/share/html/Admin/Users/Memberships.html
+%%RTPLIST%%/share/html/Admin/Users/Modify.html
+%%RTPLIST%%/share/html/Admin/Users/History.html
+%%RTPLIST%%/share/html/Admin/Users/index.html
+%%RTPLIST%%/share/html/Admin/Queues/CustomField.html
+%%RTPLIST%%/share/html/Admin/Queues/CustomFields.html
+%%RTPLIST%%/share/html/Admin/Queues/GroupRights.html
+%%RTPLIST%%/share/html/Admin/Queues/Modify.html
+%%RTPLIST%%/share/html/Admin/Queues/People.html
+%%RTPLIST%%/share/html/Admin/Queues/Scrip.html
+%%RTPLIST%%/share/html/Admin/Queues/Scrips.html
+%%RTPLIST%%/share/html/Admin/Queues/Template.html
+%%RTPLIST%%/share/html/Admin/Queues/Templates.html
+%%RTPLIST%%/share/html/Admin/Queues/UserRights.html
+%%RTPLIST%%/share/html/Admin/Queues/index.html
+%%RTPLIST%%/share/html/Admin/Tools/Configuration.html
+%%RTPLIST%%/share/html/Admin/Tools/index.html
+%%RTPLIST%%/share/html/Admin/autohandler
+%%RTPLIST%%/share/html/Admin/index.html
+%%RTPLIST%%/share/html/Approvals/Display.html
+%%RTPLIST%%/share/html/Approvals/Elements/Approve
+%%RTPLIST%%/share/html/Approvals/Elements/PendingMyApproval
+%%RTPLIST%%/share/html/Approvals/Elements/ShowDependency
+%%RTPLIST%%/share/html/Approvals/Elements/Tabs
+%%RTPLIST%%/share/html/Approvals/index.html
+%%RTPLIST%%/share/html/Download/Tabular/dhandler
+%%RTPLIST%%/share/html/Download/CustomFieldValue/dhandler
+%%RTPLIST%%/share/html/Elements/BevelBoxRaisedEnd
+%%RTPLIST%%/share/html/Elements/BevelBoxRaisedStart
+%%RTPLIST%%/share/html/Elements/Callback
+%%RTPLIST%%/share/html/Elements/Checkbox
+%%RTPLIST%%/share/html/Elements/CollectionAsTable/ParseFormat
+%%RTPLIST%%/share/html/Elements/CollectionAsTable/Row
+%%RTPLIST%%/share/html/Elements/CollectionAsTable/Header
+%%RTPLIST%%/share/html/Elements/CreateTicket
+%%RTPLIST%%/share/html/Elements/EditLinks
+%%RTPLIST%%/share/html/Elements/EditCustomField
+%%RTPLIST%%/share/html/Elements/EditCustomFieldImage
+%%RTPLIST%%/share/html/Elements/EditCustomFieldSelect
+%%RTPLIST%%/share/html/Elements/EditCustomFieldBinary
+%%RTPLIST%%/share/html/Elements/EditCustomFieldFreeform
+%%RTPLIST%%/share/html/Elements/EditCustomFieldText
+%%RTPLIST%%/share/html/Elements/EditCustomFieldWikitext
+%%RTPLIST%%/share/html/Elements/Error
+%%RTPLIST%%/share/html/Elements/Footer
+%%RTPLIST%%/share/html/Elements/GotoTicket
+%%RTPLIST%%/share/html/Elements/Header
+%%RTPLIST%%/share/html/Elements/ListActions
+%%RTPLIST%%/share/html/Elements/Login
+%%RTPLIST%%/share/html/Elements/Menu
+%%RTPLIST%%/share/html/Elements/MessageBox
+%%RTPLIST%%/share/html/Elements/MyRequests
+%%RTPLIST%%/share/html/Elements/MyTickets
+%%RTPLIST%%/share/html/Elements/PageLayout
+%%RTPLIST%%/share/html/Elements/QueryString
+%%RTPLIST%%/share/html/Elements/QuickCreate
+%%RTPLIST%%/share/html/Elements/Quicksearch
+%%RTPLIST%%/share/html/Elements/RT__Ticket/ColumnMap
+%%RTPLIST%%/share/html/Elements/Refresh
+%%RTPLIST%%/share/html/Elements/ScrubHTML
+%%RTPLIST%%/share/html/Elements/Section
+%%RTPLIST%%/share/html/Elements/SelectAttachmentField
+%%RTPLIST%%/share/html/Elements/SelectBoolean
+%%RTPLIST%%/share/html/Elements/SelectCustomFieldOperator
+%%RTPLIST%%/share/html/Elements/SelectCustomFieldValue
+%%RTPLIST%%/share/html/Elements/SelectDate
+%%RTPLIST%%/share/html/Elements/SelectDateRelation
+%%RTPLIST%%/share/html/Elements/SelectDateType
+%%RTPLIST%%/share/html/Elements/SelectEqualityOperator
+%%RTPLIST%%/share/html/Elements/SelectGroups
+%%RTPLIST%%/share/html/Elements/SelectLang
+%%RTPLIST%%/share/html/Elements/SelectLinkType
+%%RTPLIST%%/share/html/Elements/SelectMatch
+%%RTPLIST%%/share/html/Elements/SelectNewTicketQueue
+%%RTPLIST%%/share/html/Elements/SelectOwner
+%%RTPLIST%%/share/html/Elements/SelectQueue
+%%RTPLIST%%/share/html/Elements/SelectResultsPerPage
+%%RTPLIST%%/share/html/Elements/SelectSortOrder
+%%RTPLIST%%/share/html/Elements/SelectStatus
+%%RTPLIST%%/share/html/Elements/SelectTicketSortBy
+%%RTPLIST%%/share/html/Elements/SelectTicketTypes
+%%RTPLIST%%/share/html/Elements/SelectUsers
+%%RTPLIST%%/share/html/Elements/SelectWatcherType
+%%RTPLIST%%/share/html/Elements/SetupSessionCookie
+%%RTPLIST%%/share/html/Elements/ShowCustomFields
+%%RTPLIST%%/share/html/Elements/ShowCustomFieldBinary
+%%RTPLIST%%/share/html/Elements/ShowCustomFieldImage
+%%RTPLIST%%/share/html/Elements/ShowCustomFieldWikitext
+%%RTPLIST%%/share/html/Elements/ShowLink
+%%RTPLIST%%/share/html/Elements/ShowLinks
+%%RTPLIST%%/share/html/Elements/ShowMemberships
+%%RTPLIST%%/share/html/Elements/SimpleSearch
+%%RTPLIST%%/share/html/Elements/Submit
+%%RTPLIST%%/share/html/Elements/Tabs
+%%RTPLIST%%/share/html/Elements/TicketList
+%%RTPLIST%%/share/html/Elements/TitleBox
+%%RTPLIST%%/share/html/Elements/TitleBoxEnd
+%%RTPLIST%%/share/html/Elements/TitleBoxStart
+%%RTPLIST%%/share/html/NoAuth/Logout.html
+%%RTPLIST%%/share/html/NoAuth/Reminder.html
+%%RTPLIST%%/share/html/NoAuth/images/autohandler
+%%RTPLIST%%/share/html/NoAuth/images/bplogo.gif
+%%RTPLIST%%/share/html/NoAuth/images/favicon.png
+%%RTPLIST%%/share/html/NoAuth/images/space.gif
+%%RTPLIST%%/share/html/NoAuth/webrt.css
+%%RTPLIST%%/share/html/REST/1.0/Forms/queue/default
+%%RTPLIST%%/share/html/REST/1.0/Forms/queue/ns
+%%RTPLIST%%/share/html/REST/1.0/Forms/ticket/attachments
+%%RTPLIST%%/share/html/REST/1.0/Forms/ticket/default
+%%RTPLIST%%/share/html/REST/1.0/Forms/ticket/history
+%%RTPLIST%%/share/html/REST/1.0/Forms/ticket/links
+%%RTPLIST%%/share/html/REST/1.0/Forms/user/default
+%%RTPLIST%%/share/html/REST/1.0/Forms/user/ns
+%%RTPLIST%%/share/html/REST/1.0/NoAuth/mail-gateway
+%%RTPLIST%%/share/html/REST/1.0/autohandler
+%%RTPLIST%%/share/html/REST/1.0/dhandler
+%%RTPLIST%%/share/html/REST/1.0/logout
+%%RTPLIST%%/share/html/REST/1.0/search/dhandler
+%%RTPLIST%%/share/html/REST/1.0/search/ticket
+%%RTPLIST%%/share/html/REST/1.0/ticket/comment
+%%RTPLIST%%/share/html/REST/1.0/ticket/link
+%%RTPLIST%%/share/html/REST/1.0/ticket/merge
+%%RTPLIST%%/share/html/Search/Build.html
+%%RTPLIST%%/share/html/Search/Bulk.html
+%%RTPLIST%%/share/html/Search/Edit.html
+%%RTPLIST%%/share/html/Search/Elements/BuildFormatString
+%%RTPLIST%%/share/html/Search/Elements/DisplayOptions
+%%RTPLIST%%/share/html/Search/Elements/EditFormat
+%%RTPLIST%%/share/html/Search/Elements/EditQuery
+%%RTPLIST%%/share/html/Search/Elements/EditSearches
+%%RTPLIST%%/share/html/Search/Elements/NewListActions
+%%RTPLIST%%/share/html/Search/Elements/PickBasics
+%%RTPLIST%%/share/html/Search/Elements/PickCFs
+%%RTPLIST%%/share/html/Search/Elements/PickCriteria
+%%RTPLIST%%/share/html/Search/Elements/SearchPrivacy
+%%RTPLIST%%/share/html/Search/Elements/SelectAndOr
+%%RTPLIST%%/share/html/Search/Elements/SelectGroup
+%%RTPLIST%%/share/html/Search/Elements/SelectLinks
+%%RTPLIST%%/share/html/Search/Elements/SelectPersonType
+%%RTPLIST%%/share/html/Search/Elements/SelectSearchObject
+%%RTPLIST%%/share/html/Search/Elements/SelectSearchesForObjects
+%%RTPLIST%%/share/html/Search/Results.html
+%%RTPLIST%%/share/html/Search/Results.rdf
+%%RTPLIST%%/share/html/Search/Results.tsv
+%%RTPLIST%%/share/html/SelfService/Attachment/dhandler
+%%RTPLIST%%/share/html/SelfService/Closed.html
+%%RTPLIST%%/share/html/SelfService/Create.html
+%%RTPLIST%%/share/html/SelfService/CreateTicketInQueue.html
+%%RTPLIST%%/share/html/SelfService/Display.html
+%%RTPLIST%%/share/html/SelfService/Elements/GotoTicket
+%%RTPLIST%%/share/html/SelfService/Elements/Header
+%%RTPLIST%%/share/html/SelfService/Elements/MyRequests
+%%RTPLIST%%/share/html/SelfService/Elements/Tabs
+%%RTPLIST%%/share/html/SelfService/Error.html
+%%RTPLIST%%/share/html/SelfService/Prefs.html
+%%RTPLIST%%/share/html/SelfService/Update.html
+%%RTPLIST%%/share/html/SelfService/index.html
+%%RTPLIST%%/share/html/Ticket/Attachment/dhandler
+%%RTPLIST%%/share/html/Ticket/Create.html
+%%RTPLIST%%/share/html/Ticket/Display.html
+%%RTPLIST%%/share/html/Ticket/Elements/AddWatchers
+%%RTPLIST%%/share/html/Ticket/Elements/BulkLinks
+%%RTPLIST%%/share/html/Ticket/Elements/EditBasics
+%%RTPLIST%%/share/html/Ticket/Elements/EditCustomField
+%%RTPLIST%%/share/html/Ticket/Elements/EditCustomFields
+%%RTPLIST%%/share/html/Ticket/Elements/EditDates
+%%RTPLIST%%/share/html/Ticket/Elements/EditPeople
+%%RTPLIST%%/share/html/Ticket/Elements/EditWatchers
+%%RTPLIST%%/share/html/Ticket/Elements/FindAttachments
+%%RTPLIST%%/share/html/Ticket/Elements/LoadTextAttachments
+%%RTPLIST%%/share/html/Ticket/Elements/PreviewScrips
+%%RTPLIST%%/share/html/Ticket/Elements/ShowAttachments
+%%RTPLIST%%/share/html/Ticket/Elements/ShowBasics
+%%RTPLIST%%/share/html/Ticket/Elements/ShowCustomFields
+%%RTPLIST%%/share/html/Ticket/Elements/ShowDates
+%%RTPLIST%%/share/html/Ticket/Elements/ShowDependencies
+%%RTPLIST%%/share/html/Ticket/Elements/ShowGroupMembers
+%%RTPLIST%%/share/html/Ticket/Elements/ShowHistory
+%%RTPLIST%%/share/html/Ticket/Elements/ShowMemberOf
+%%RTPLIST%%/share/html/Ticket/Elements/ShowMembers
+%%RTPLIST%%/share/html/Ticket/Elements/ShowMessageHeaders
+%%RTPLIST%%/share/html/Ticket/Elements/ShowMessageStanza
+%%RTPLIST%%/share/html/Ticket/Elements/ShowPeople
+%%RTPLIST%%/share/html/Ticket/Elements/ShowReferences
+%%RTPLIST%%/share/html/Ticket/Elements/ShowRequestor
+%%RTPLIST%%/share/html/Ticket/Elements/ShowSummary
+%%RTPLIST%%/share/html/Ticket/Elements/ShowTransaction
+%%RTPLIST%%/share/html/Ticket/Elements/ShowTransactionAttachments
+%%RTPLIST%%/share/html/Ticket/Elements/ShowUserEntry
+%%RTPLIST%%/share/html/Ticket/Elements/Tabs
+%%RTPLIST%%/share/html/Ticket/History.html
+%%RTPLIST%%/share/html/Ticket/Modify.html
+%%RTPLIST%%/share/html/Ticket/ModifyAll.html
+%%RTPLIST%%/share/html/Ticket/ModifyDates.html
+%%RTPLIST%%/share/html/Ticket/ModifyLinks.html
+%%RTPLIST%%/share/html/Ticket/ModifyPeople.html
+%%RTPLIST%%/share/html/Ticket/ShowEmailRecord.html
+%%RTPLIST%%/share/html/Ticket/Update.html
+%%RTPLIST%%/share/html/Tools/Elements/Tabs
+%%RTPLIST%%/share/html/Tools/MyDay.html
+%%RTPLIST%%/share/html/Tools/Offline.html
+%%RTPLIST%%/share/html/User/Delegation.html
+%%RTPLIST%%/share/html/User/Elements/DelegateRights
+%%RTPLIST%%/share/html/User/Elements/GroupTabs
+%%RTPLIST%%/share/html/User/Elements/Tabs
+%%RTPLIST%%/share/html/User/Groups/Members.html
+%%RTPLIST%%/share/html/User/Groups/Modify.html
+%%RTPLIST%%/share/html/User/Groups/index.html
+%%RTPLIST%%/share/html/User/Prefs.html
+%%RTPLIST%%/share/html/autohandler
+%%RTPLIST%%/share/html/index.html
+%%RTPLIST%%/share/html/l
+@unexec rm -R %%RT_PATH%%/var 2> /dev/null || true
+@dirrm %%RTPLIST%%/share/html/User/Groups
+@dirrm %%RTPLIST%%/share/html/User/Elements
+@dirrm %%RTPLIST%%/share/html/User
+@dirrm %%RTPLIST%%/share/html/Tools/Elements
+@dirrm %%RTPLIST%%/share/html/Tools
+@dirrm %%RTPLIST%%/share/html/Ticket/Elements
+@dirrm %%RTPLIST%%/share/html/Ticket/Attachment
+@dirrm %%RTPLIST%%/share/html/Ticket
+@dirrm %%RTPLIST%%/share/html/SelfService/Elements
+@dirrm %%RTPLIST%%/share/html/SelfService/Attachment
+@dirrm %%RTPLIST%%/share/html/SelfService
+@dirrm %%RTPLIST%%/share/html/Search/Elements
+@dirrm %%RTPLIST%%/share/html/Search
+@dirrm %%RTPLIST%%/share/html/REST/1.0/ticket
+@dirrm %%RTPLIST%%/share/html/REST/1.0/search
+@dirrm %%RTPLIST%%/share/html/REST/1.0/NoAuth
+@dirrm %%RTPLIST%%/share/html/REST/1.0/Forms/user
+@dirrm %%RTPLIST%%/share/html/REST/1.0/Forms/ticket
+@dirrm %%RTPLIST%%/share/html/REST/1.0/Forms/queue
+@dirrm %%RTPLIST%%/share/html/REST/1.0/Forms
+@dirrm %%RTPLIST%%/share/html/REST/1.0
+@dirrm %%RTPLIST%%/share/html/REST
+@dirrm %%RTPLIST%%/share/html/NoAuth/images
+@dirrm %%RTPLIST%%/share/html/NoAuth
+@dirrm %%RTPLIST%%/share/html/Elements/RT__Ticket
+@dirrm %%RTPLIST%%/share/html/Elements/CollectionAsTable
+@dirrm %%RTPLIST%%/share/html/Elements
+@dirrm %%RTPLIST%%/share/html/Download/Tabular
+@dirrm %%RTPLIST%%/share/html/Download/CustomFieldValue
+@dirrm %%RTPLIST%%/share/html/Download
+@dirrm %%RTPLIST%%/share/html/Approvals/Elements
+@dirrm %%RTPLIST%%/share/html/Approvals
+@dirrm %%RTPLIST%%/share/html/Admin/Users
+@dirrm %%RTPLIST%%/share/html/Admin/Tools
+@dirrm %%RTPLIST%%/share/html/Admin/Queues
+@dirrm %%RTPLIST%%/share/html/Admin/Groups
+@dirrm %%RTPLIST%%/share/html/Admin/Global/CustomFields
+@dirrm %%RTPLIST%%/share/html/Admin/Global
+@dirrm %%RTPLIST%%/share/html/Admin/CustomFields
+@dirrm %%RTPLIST%%/share/html/Admin/Elements
+@dirrm %%RTPLIST%%/share/html/Admin
+@dirrm %%RTPLIST%%/share/html
+@dirrm %%RTPLIST%%/share/doc
+@dirrm %%RTPLIST%%/share
+@dirrm %%RTPLIST%%/sbin
+@dirrm %%RTPLIST%%/local/po
+@dirrm %%RTPLIST%%/local/lib
+@dirrm %%RTPLIST%%/local/html
+@dirrm %%RTPLIST%%/local/etc
+@dirrm %%RTPLIST%%/local
+@dirrm %%RTPLIST%%/lib/t/regression
+@dirrm %%RTPLIST%%/lib/t/data/8859-15-message-series
+@dirrm %%RTPLIST%%/lib/t/data
+@dirrm %%RTPLIST%%/lib/t
+@dirrm %%RTPLIST%%/lib/RT/URI
+@dirrm %%RTPLIST%%/lib/RT/Search
+@dirrm %%RTPLIST%%/lib/RT/Interface/Web/QueryBuilder
+@dirrm %%RTPLIST%%/lib/RT/Interface/Web
+@dirrm %%RTPLIST%%/lib/RT/Interface/Email/Filter
+@dirrm %%RTPLIST%%/lib/RT/Interface/Email/Auth
+@dirrm %%RTPLIST%%/lib/RT/Interface/Email
+@dirrm %%RTPLIST%%/lib/RT/Interface
+@dirrm %%RTPLIST%%/lib/RT/I18N
+@dirrm %%RTPLIST%%/lib/RT/Condition
+@dirrm %%RTPLIST%%/lib/RT/Action
+@dirrm %%RTPLIST%%/lib/RT
+@dirrm %%RTPLIST%%/lib
+@unexec rmdir %%RT_PATH%%/etc 2> /dev/null || true
+@dirrm %%RTPLIST%%/bin
+@dirrm %%RTPLIST%%

@@ -1,0 +1,16 @@
+Index: bin/webmux.pl.in
+--- rt-3.4.2-pristine/bin/webmux.pl.in  2005-05-11 20:36:48.064856616 -0400
++++ rt-3.4.2/bin/webmux.pl.in   2005-05-11 20:39:43.540180312 -0400
+@@ -64,6 +64,12 @@
+ }
+
+ use lib ( "@LOCAL_LIB_PATH@", "@RT_LIB_PATH@" );
++if ($ENV{RT_INSTANCE_PATH}) {
++    lib->import("$ENV{RT_INSTANCE_PATH}/local/lib");
++}
++if ($ENV{RT_VENDOR_PATH}) {
++    lib->import($ENV{RT_VENDOR_PATH});
++}
+ use RT;
+
+ package RT::Mason;
