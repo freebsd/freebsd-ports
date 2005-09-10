@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rt
-PORTVERSION?=	3.4.2
+PORTVERSION?=	3.4.4
 CATEGORIES=	www
 MASTER_SITES?=	http://download.bestpractical.com/pub/rt/release/ \
 		http://download.bestpractical.com/pub/rt/devel/ \
@@ -28,6 +28,7 @@ BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/HTML/FormatText.pm:${PORTSDIR}/textproc/p5-HTML-Format \
 		${SITE_PERL}/HTML/Scrubber.pm:${PORTSDIR}/www/p5-HTML-Scrubber \
 		${SITE_PERL}/HTML/TreeBuilder.pm:${PORTSDIR}/www/p5-HTML-Tree \
+		${SITE_PERL}/HTTP/Server/Simple/Mason.pm:${PORTSDIR}/www/p5-HTTP-Server-Simple-Mason \
 		${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Maketext \
 		${SITE_PERL}/Locale/Maketext/Fuzzy.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Fuzzy \
 		${SITE_PERL}/Locale/Maketext/Lexicon.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
@@ -45,6 +46,7 @@ BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/Text/Autoformat.pm:${PORTSDIR}/textproc/p5-Text-Autoformat \
 		${SITE_PERL}/Text/Quoted.pm:${PORTSDIR}/textproc/p5-Text-Quoted \
 		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
+		${SITE_PERL}/Text/WikiFormat.pm:${PORTSDIR}/textproc/p5-Text-WikiFormat \
 		${SITE_PERL}/Text/Wrapper.pm:${PORTSDIR}/textproc/p5-Text-Wrapper \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time-modules \
@@ -82,7 +84,6 @@ DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
 .else
 BUILD_DEPENDS+=	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI
 .if defined(WITH_APACHE2)
-BROKEN=		Broken due the new mod_perl2 API
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
 DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
 DEPENDS_ARGS+=	WITH_MODPERL2=yes
@@ -91,6 +92,9 @@ DEPENDS_ARGS+=	WITH_MODPERL2=yes
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
 .endif
+.endif
+.if defined(MULTIPLE_INSTANCES)
+EXTRA_PATCHES+=	${FILESDIR}/multiple*
 .endif
 
 DB_TYPE?=	mysql
@@ -112,6 +116,7 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-
 
 USE_PERL5=	yes
 RT_PATH?=	${PREFIX}/rt3
+PLIST_SUB=	RT_PATH=${RT_PATH}  RTPLIST=${RT_PATH:S/^${PREFIX}\///}
 LAYOUT?=	RT3
 
 DB_DBA_USER?=	root
@@ -147,6 +152,8 @@ pre-fetch:
 	@${ECHO} "      INITIAL_INSTALL                 Do initialize DB (for initial install only)"
 	@${ECHO} "      WITH_FASTCGI                    Use FastCGI instead of mod_perl"
 	@${ECHO} "      WITH_APACHE2                    Use Apache2 as the web server"
+	@${ECHO} "      MULTIPLE_INSTANCES              Patch RT to allow for multiple instances"
+	@${ECHO} "                 (see: http://wiki.bestpractical.com/index.cgi?MultipleInstances)"
 	@${ECHO} ""
 	@${ECHO} "      DB_TYPE=type                    mysql, Oracle, Pg or SQLite (mysql)"
 	@${ECHO} "      DB_HOST=hostname                The database host (localhost)"
@@ -163,6 +170,7 @@ pre-install:
 	@${RM} -f ${WRKSRC}/html/Admin/Queues/*orig 2>/dev/null
 	@${RM} -f ${WRKSRC}/html/Search/Elements/*orig 2>/dev/null
 	@${RM} -f ${WRKSRC}/lib/RT/I18N/*orig 2>/dev/null
+	@${RM} -f ${WRKSRC}/lib/*orig ${WRKSRC}/lib/*.in 2>/dev/null
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} \
 		${PKGNAME} PRE-INSTALL
 

@@ -1,0 +1,22 @@
+Index: sbin/rt-setup-database.in
+--- rt-3.4.2-pristine/sbin/rt-setup-database.in 2005-05-11 20:36:48.128846888 -0400
++++ rt-3.4.2/sbin/rt-setup-database.in  2005-05-11 20:45:35.800628584 -0400
+@@ -50,11 +50,17 @@
+   qw(@Groups @Users @ACL @Queues @ScripActions @ScripConditions @Templates @CustomFields @Scrips);
+
+ use lib "@RT_LIB_PATH@";
++## RT_INSTANCE_PATH can be passed on command line.
++## Can change where RT_SiteConfig is read from.
++my $RT_INSTANCE_PATH;
++BEGIN {
++    $RT_INSTANCE_PATH = shift || $ENV{RT_INSTANCE_PATH};
++}
+
+ #This drags in  RT's config.pm
+ # We do it in a begin block because RT::Handle needs to know the type to do its
+ # inheritance
+-use RT;
++use RT (RT_INSTANCE_PATH => $RT_INSTANCE_PATH);
+ use Carp;
+ use RT::User;
+ use RT::CurrentUser;
