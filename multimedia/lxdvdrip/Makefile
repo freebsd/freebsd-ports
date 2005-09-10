@@ -11,7 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://download.berlios.de/lxdvdrip/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	q@galgenberg.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command Line Tool to make a copy from a Video DVD
 
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
