@@ -8,7 +8,7 @@ case $2 in
 	if pw user show netmon 2>/dev/null ; then 
 	    echo "User 'netmon' exists." ; 
 	else 
-	    pw useradd -n netmon -g wheel -c 'Network monitor account' -m ;
+	    pw useradd -n netmon -g wheel -c 'Network monitor account' -s /usr/sbin/nologin ;
 	fi
 	if pw group show netmon 2>/dev/null ; then 
 	    echo "Group 'netmon' exists." ;  
