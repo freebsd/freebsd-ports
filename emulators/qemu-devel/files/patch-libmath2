@@ -1,0 +1,67 @@
+Index: qemu/bsd/Makefile
+@@ -16,7 +16,8 @@
+ 	${MACHINE_ARCH}/s_rintl.c	\
+ 	${MACHINE_ARCH}/s_round.c	\
+ 	${MACHINE_ARCH}/s_sinl.S	\
+-	${MACHINE_ARCH}/s_tanl.S
++	${MACHINE_ARCH}/s_tanl.S	\
++	${MACHINE_ARCH}/s_ldexpl.c
+ 
+ OBJS=	${SRCS:R:S/$/.o/}
+ 
+Index: qemu/bsd/i386/s_ldexpl.c
+@@ -0,0 +1,21 @@
++#include <math.h>
++#include <errno.h>
++#include <sysdep.h>
++
++long double __ldexpl(long double x, int expn)
++{
++  long double res;
++  if (!isfinite (x) || x == 0.0L)
++    return x;
++
++  __asm__ ("fscale"
++  	    : "=t" (res)
++	    : "0" (x), "u" ((long double) expn));
++
++  if (!isfinite (res) || res == 0.0L)
++    errno = ERANGE;
++
++  return res;
++}
++
++weak_alias(__ldexpl,ldexpl)
+Index: qemu/bsd/amd64/s_ldexpl.c
+@@ -0,0 +1,21 @@
++#include <math.h>
++#include <errno.h>
++#include <sysdep.h>
++
++long double __ldexpl(long double x, int expn)
++{
++  long double res;
++  if (!isfinite (x) || x == 0.0L)
++    return x;
++
++  __asm__ ("fscale"
++  	    : "=t" (res)
++	    : "0" (x), "u" ((long double) expn));
++
++  if (!isfinite (res) || res == 0.0L)
++    errno = ERANGE;
++
++  return res;
++}
++
++weak_alias(__ldexpl,ldexpl)
+Index: qemu/target-i386/helper.c
+@@ -2886,6 +2886,8 @@
+     ST0 = floatx_round_to_int(ST0, &env->fp_status);
+ }
+ 
++long double	ldexpl(long double, int);
++
+ void helper_fscale(void)
+ {
+     ST0 = ldexp (ST0, (int)(ST1)); 

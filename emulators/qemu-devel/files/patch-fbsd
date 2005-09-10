@@ -13,7 +13,7 @@ Index: qemu/Makefile
  	$(MAKE) -C kqemu -f Makefile.winnt
  else
 -	$(MAKE) -C kqemu
-+	cd kqemu && $(BSD_MAKE)
++	( cd kqemu && $(BSD_MAKE) )
  endif
  endif
  

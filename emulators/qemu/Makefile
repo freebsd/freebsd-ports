@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.7.0s.20050717
+PORTVERSION=	0.7.2s.20050909
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.qemu.org/ \
 		http://people.fruitsalad.org/nox/qemu/ \
 		http://dad-answers.com/qemu/
-DISTNAME=	${PORTNAME}-snapshot-2005-07-17_23
+DISTNAME=	${PORTNAME}-snapshot-2005-09-09_23
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	nox@jelal.kn-bremen.de
@@ -23,8 +23,9 @@ RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba
 .endif
 
 .if defined(WITH_KQEMU)
-DISTKQEMU=	kqemu-0.6.2-1.tar.gz
+DISTKQEMU=	kqemu-0.7.2.tar.gz
 DISTFILES=	${EXTRACT_ONLY} ${DISTKQEMU}
+EXTRA_PATCHES=	${FILESDIR}/kqemu-freebsd-patch
 .endif
 
 HAS_CONFIGURE=	yes
@@ -40,9 +41,11 @@ MAN1=		qemu.1 qemu-img.1
 ONLY_FOR_ARCHS=	amd64 i386
 .if defined(WITH_KQEMU)
 NO_PACKAGE=	Depends on kernel, and module not redistributable
+CONFIGURE_ARGS+=	--enable-kqemu
 PLIST_SUB=	WITH_KQEMU=""
 PLIST_SUB+=	KMODDIR=${KMODDIR}
 .else
+CONFIGURE_ARGS+=	--disable-kqemu
 PLIST_SUB=	WITH_KQEMU="@comment "
 .endif
 
@@ -52,7 +55,7 @@ PLIST_SUB=	WITH_KQEMU="@comment "
 
 .if ${ARCH} == "amd64"
 ARCH=		x86_64
-.if ${OSVERSION} >= 502126
+.if ${OSVERSION} >= 502126 && ${OSVERSION} <= 600029
 BUILD_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
 GCCVERSION=	030402
 CC=		gcc34
@@ -63,16 +66,12 @@ USE_GCC=	3.4
 USE_GCC=	3.4
 .endif
 
-.if defined(WITH_KQEMU) && ${ARCH} != "i386"
-IGNORE=		kqemu only supported on i386
-.endif
-
 .if defined(WITH_KQEMU) && !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		kqemu requires kernel source to be installed
 .endif
 
 pre-everything::
-.if !defined(WITH_KQEMU) && ${ARCH} == "i386"
+.if !defined(WITH_KQEMU)
 	@${ECHO_MSG} "Notice: you can build qemu with the (alpha!) kqemu accelerator kernel module"
 	@${ECHO_MSG} "by defining WITH_KQEMU."
 .endif
@@ -85,7 +84,7 @@ pre-everything::
 .if defined(WITH_KQEMU)
 post-extract:
 	@cd ${WRKSRC} && ${TAR} xfz ${_DISTDIR}/${DISTKQEMU}
-	@${CP} ${FILESDIR}/BSDmakefile ${FILESDIR}/kmod_bsd.c ${WRKSRC}/kqemu
+	@${LN} -s Makefile.freebsd ${WRKSRC}/kqemu/BSDmakefile
 .endif
 
 pre-patch:
