@@ -352,6 +352,7 @@
     SUBDIR += mod_uid
     SUBDIR += mod_v2h
     SUBDIR += mod_vdbh
+    SUBDIR += mod_vhost_ldap
     SUBDIR += mod_vhs
     SUBDIR += mod_webapp
     SUBDIR += mod_zap
