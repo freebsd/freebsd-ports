@@ -32,6 +32,103 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8665ebb9-2237-11da-978e-0001020eed82">
+    <topic>firefox &amp; mozilla -- buffer overflow
+      vulnerability</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>1.0.6_5,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>mozilla</name>
+	<range><lt>1.7.11_1,2</lt></range>
+	<range><ge>1.8.*,2</ge><lt>1.8.b1_5,2</lt></range>
+      </package>
+      <package>
+	<name>linux-mozilla</name>
+	<name>linux-mozilla-devel</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>netscape7</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<!-- These ports are obsolete. -->
+	<name>de-linux-mozillafirebird</name>
+	<name>el-linux-mozillafirebird</name>
+	<name>ja-linux-mozillafirebird-gtk1</name>
+	<name>ja-mozillafirebird-gtk2</name>
+	<name>linux-mozillafirebird</name>
+	<name>ru-linux-mozillafirebird</name>
+	<name>zhCN-linux-mozillafirebird</name>
+	<name>zhTW-linux-mozillafirebird</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<!-- These package names are obsolete. -->
+	<name>de-linux-netscape</name>
+	<name>de-netscape7</name>
+	<name>fr-linux-netscape</name>
+	<name>fr-netscape7</name>
+	<name>ja-linux-netscape</name>
+	<name>ja-netscape7</name>
+	<name>linux-netscape</name>
+	<name>linux-phoenix</name>
+	<name>mozilla+ipv6</name>
+	<name>mozilla-embedded</name>
+	<name>mozilla-firebird</name>
+	<name>mozilla-gtk1</name>
+	<name>mozilla-gtk2</name>
+	<name>mozilla-gtk</name>
+	<name>mozilla-thunderbird</name>
+	<name>phoenix</name>
+	<name>pt_BR-netscape7</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tom Ferris reports:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=112624614008387">
+	  <p>A buffer overflow vulnerability exists within Firefox
+	    version 1.0.6 and all other prior versions which allows
+	    for an attacker to remotely execute arbitrary code on an
+	    affected host.</p>
+	  <p>The problem seems to be when a hostname which has all
+	    dashes causes the NormalizeIDN call in
+	    nsStandardURL::BuildNormalizedSpec to return true, but is
+	    sets encHost to an empty string.  Meaning, Firefox appends
+	    0 to approxLen and then appends the long string of dashes
+	    to the buffer instead.</p>
+	</blockquote>
+	<p><strong>Note:</strong> It is possible to disable IDN
+	  support as a workaround to protect against this buffer
+	  overflow. How to do this is described on the <em><a
+	  href="http://www.mozilla.org/security/idn.html">What Firefox
+	  and Mozilla users should know about the IDN buffer overflow
+	  security issue</a></em> web page.</p>
+      </body>
+    </description>
+    <references>
+      <bid>14784</bid>
+      <certvu>573857</certvu>
+      <cvename>CAN-2005-2871</cvename>
+      <url>http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=112624614008387</url>
+      <url>http://www.mozilla.org/security/idn.html</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=307259</url>
+    </references>
+    <dates>
+      <discovery>2005-09-08</discovery>
+      <entry>2005-09-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="673aec6f-1cae-11da-bc01-000e0c2e438a">
     <topic>htdig -- cross site scripting vulnerability</topic>
     <affects>
