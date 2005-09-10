@@ -21,6 +21,7 @@ OPTIONS=	POSTGRESQL "Use PostgreSQL for storage and authentication" off \
 		MYSQL "Use MySQL for storage and authentication" off \
 		LDAP "Use LDAP for authentication" off \
 		BDB "Use BDB for storage and authentication" off \
+		SQLITE "Use SQLITE3 for storage" off \
 		PAM "Use PAM for authentication" off \
 		PIPE "Enable pipe auth/reg support" off \
 		DEBUG "Compile with debug information" on
@@ -46,6 +47,13 @@ USE_PGSQL=	yes
 CONFIGURE_ARGS+=--enable-pgsql
 .else
 CONFIGURE_ARGS+=--disable-pgsql
+.endif
+
+.if defined(WITH_SQLITE)
+CONFIGURE_ARGS+=--enable-sqlite
+LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+.else
+CONFIGURE_ARGS+=--disable-sqlite
 .endif
 
 .if defined(WITH_MYSQL)
