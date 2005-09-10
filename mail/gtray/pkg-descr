@@ -3,4 +3,4 @@ GMail account and display if you have any new email.  It uses the
 GNOME libraries but it uses the freedesktop.org standard for tray
 apps, so it ought to work fine in KDE and other desktops.
 
-WWW: http://fraggle.alkali.org/projects/gtray/
+WWW: http://gnome-gtray.sourceforge.net/
