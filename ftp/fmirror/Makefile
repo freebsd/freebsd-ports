@@ -7,8 +7,8 @@
 
 PORTNAME=	fmirror
 PORTVERSION=	0.8.4
-PORTREVISION=	3
-CATEGORIES=	ftp
+PORTREVISION=	4
+CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.guardian.no/pub/free/ftp/fmirror/ \
 		ftp://ftp.oav.net/pkg_freebsd/distfiles/
 
