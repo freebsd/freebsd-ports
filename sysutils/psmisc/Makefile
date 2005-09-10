@@ -6,22 +6,29 @@
 #
 
 PORTNAME=	psmisc
-PORTVERSION=	17
+PORTVERSION=	21.5
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.uni-bremen.de/pub/mirrors/sunsite/system/status/ps/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	psmisc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pav@FreeBSD.org
 COMMENT=	A port of the Linux pstree, killall and pidof commands
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-nls
+USE_GMAKE=	yes
+USE_GETOPT_LONG=yes
 
 CONFLICTS=	pstree-2.* \
 		pidof-*
 
 PLIST_FILES=	bin/killall \
 		bin/pidof \
-		bin/pstree
+		bin/pstree bin/pstree.x11
 
-INSTALL_TARGET=	install-all
-MAN1=		pidof.1 pstree.1 killall.1
-WRKSRC=		${WRKDIR}/psmisc
+MAN1=		pstree.1 killall.1
+
+post-install:
+	@${LN} -sf killall ${PREFIX}/bin/pidof
 
 .include <bsd.port.mk>
