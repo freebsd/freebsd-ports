@@ -1,0 +1,92 @@
+Index: netwerk/base/src/nsStandardURL.cpp
+===================================================================
+RCS file: /cvs/mozilla/netwerk/base/src/nsStandardURL.cpp,v
+retrieving revision 1.82
+diff -p -u -1 -2 -r1.82 nsStandardURL.cpp
+--- netwerk/base/src/nsStandardURL.cpp	20 Jun 2005 05:23:20 -0000	1.82
++++ netwerk/base/src/nsStandardURL.cpp	9 Sep 2005 16:34:42 -0000
+@@ -458,24 +458,25 @@ nsStandardURL::AppendToBuf(char *buf, PR
+ //  4- update url segment positions and lengths
+ nsresult
+ nsStandardURL::BuildNormalizedSpec(const char *spec)
+ {
+     // Assumptions: all member URLSegments must be relative the |spec| argument
+     // passed to this function.
+ 
+     // buffers for holding escaped url segments (these will remain empty unless
+     // escaping is required).
+     nsCAutoString encUsername;
+     nsCAutoString encPassword;
+     nsCAutoString encHost;
++    PRBool useEncHost;
+     nsCAutoString encDirectory;
+     nsCAutoString encBasename;
+     nsCAutoString encExtension;
+     nsCAutoString encParam;
+     nsCAutoString encQuery;
+     nsCAutoString encRef;
+ 
+     //
+     // escape each URL segment, if necessary, and calculate approximate normalized
+     // spec length.
+     //
+     PRInt32 approxLen = 3; // includes room for "://"
+@@ -497,25 +498,25 @@ nsStandardURL::BuildNormalizedSpec(const
+         approxLen += encoder.EncodeSegmentCount(spec, mParam,     esc_Param,         encParam);
+         approxLen += encoder.EncodeSegmentCount(spec, mQuery,     esc_Query,         encQuery);
+         approxLen += encoder.EncodeSegmentCount(spec, mRef,       esc_Ref,           encRef);
+     }
+ 
+     // do not escape the hostname, if IPv6 address literal, mHost will
+     // already point to a [ ] delimited IPv6 address literal.
+     // However, perform Unicode normalization on it, as IDN does.
+     mHostEncoding = eEncoding_ASCII;
+     if (mHost.mLen > 0) {
+         const nsCSubstring& tempHost =
+             Substring(spec + mHost.mPos, spec + mHost.mPos + mHost.mLen);
+-        if (NormalizeIDN(tempHost, encHost))
++        if ((useEncHost = NormalizeIDN(tempHost, encHost)))
+             approxLen += encHost.Length();
+         else
+             approxLen += mHost.mLen;
+     }
+ 
+     //
+     // generate the normalized URL string
+     //
+     mSpec.SetLength(approxLen + 32);
+     char *buf;
+     mSpec.BeginWriting(buf);
+     PRUint32 i = 0;
+@@ -530,25 +531,30 @@ nsStandardURL::BuildNormalizedSpec(const
+     mAuthority.mPos = i;
+ 
+     // append authority
+     if (mUsername.mLen > 0) {
+         i = AppendSegmentToBuf(buf, i, spec, mUsername, &encUsername);
+         if (mPassword.mLen >= 0) {
+             buf[i++] = ':';
+             i = AppendSegmentToBuf(buf, i, spec, mPassword, &encPassword);
+         }
+         buf[i++] = '@';
+     }
+     if (mHost.mLen > 0) {
+-        i = AppendSegmentToBuf(buf, i, spec, mHost, &encHost);
++        if (useEncHost) {
++            mHost.mPos = i;
++            mHost.mLen = encHost.Length();
++            i = AppendToBuf(buf, i, encHost.get(), mHost.mLen);
++        } else
++            i = AppendSegmentToBuf(buf, i, spec, mHost);
+         net_ToLowerCase(buf + mHost.mPos, mHost.mLen);
+         if (mPort != -1 && mPort != mDefaultPort) {
+             nsCAutoString portbuf;
+             portbuf.AppendInt(mPort);
+             buf[i++] = ':';
+             i = AppendToBuf(buf, i, portbuf.get(), portbuf.Length());
+         }
+     }
+ 
+     // record authority length
+     mAuthority.mLen = i - mAuthority.mPos;
+ 
