@@ -5,34 +5,33 @@
 # $FreeBSD$
 #
 
-PORTNAME=      firefox
-PORTVERSION=   1.0.5
-CATEGORIES?=   www linux
-MASTER_SITES=  ${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR?=firefox/releases/${PORTVERSION}/linux-i686/en-US
-PKGNAMEPREFIX?=linux-
-DISTNAME?=     firefox-${PORTVERSION}
+PORTNAME=	firefox
+PORTVERSION=	1.0.6
+CATEGORIES?=	www linux
+MASTER_SITES=	${MASTER_SITE_MOZILLA}
+MASTER_SITE_SUBDIR?=	firefox/releases/${PORTVERSION}/linux-i686/en-US
+PKGNAMEPREFIX?=	linux-
+DISTNAME?=	firefox-${PORTVERSION}
 
-MAINTAINER=    voisine@gmail.com
-COMMENT=       Web browser branched from Mozilla
+MAINTAINER=	voisine@gmail.com
+COMMENT=	Web browser branched from Mozilla
 
-RUN_DEPENDS?=  \
-${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
-${LINUXBASE}/usr/lib/libatk-1.0.so.0:${PORTSDIR}/accessibility/linux-atk \
-${LINUXBASE}/usr/lib/libpangoxft-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango\
-${LINUXBASE}/usr/lib/libgobject-2.0.so.0:${PORTSDIR}/devel/linux-glib2 \
-${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig
+RUN_DEPENDS?=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
+		${LINUXBASE}/usr/lib/libatk-1.0.so.0:${PORTSDIR}/accessibility/linux-atk \
+		${LINUXBASE}/usr/lib/libpangoxft-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango\
+		${LINUXBASE}/usr/lib/libgobject-2.0.so.0:${PORTSDIR}/devel/linux-glib2 \
+		${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig
 
-NO_BUILD=      yes
+NO_BUILD=	yes
 ONLY_FOR_ARCHS=i386 amd64
-FIREFOX_NAME=  ${PKGNAMEPREFIX}${PORTNAME}
-DESCR=         ${.CURDIR}/pkg-descr
-MD5_FILE=      ${.CURDIR}/distinfo
-PKGMESSAGE=    ${WRKDIR}/pkg-message
-PLIST=         ${WRKDIR}/pkg-plist
-USE_LINUX=     yes
-USE_X_PREFIX=  yes
-WRKSRC=        ${WRKDIR}/firefox
+FIREFOX_NAME=	${PKGNAMEPREFIX}${PORTNAME}
+DESCR=		${.CURDIR}/pkg-descr
+MD5_FILE=	${.CURDIR}/distinfo
+PKGMESSAGE=	${WRKDIR}/pkg-message
+PLIST=		${WRKDIR}/pkg-plist
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
+WRKSRC=		${WRKDIR}/firefox
 
 do-patch:
 	${ECHO_CMD} "#!/bin/sh" > ${WRKDIR}/linkfarm
@@ -53,7 +52,7 @@ do-patch:
 	lib/linux-flashplugin6 \
 	lib/linux-flashplugin7 \
 	linux-blackdown-jdk1.3.1/jre/plugin/i386/mozilla \
-	linux-blackdown-jdk1.4.1/jre/plugin/i386/mozilla
+	linux-blackdown-jdk1.4.2/jre/plugin/i386/mozilla
 	${ECHO_CMD} -n "${FIND} ${LOCALBASE}/${ii}/*" \
 		>>${WRKDIR}/linkfarm
 	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null" \
