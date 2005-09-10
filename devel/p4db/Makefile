@@ -8,7 +8,7 @@
 PORTNAME=	p4db
 PORTVERSION=	2.01
 CATEGORIES=	devel www
-MASTER_SITES=	http://www.mydata.se/ftp/P4DB/
+MASTER_SITES=	ftp://public.perforce.com/public/perforce/utils/p4db/
 DISTNAME=	${PORTNAME:U}_${PORTVERSION}
 
 MAINTAINER=	knu@FreeBSD.org
