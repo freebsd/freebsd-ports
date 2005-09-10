@@ -5,13 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ldvd9to5
-PORTVERSION=	1.12
-PORTREVISION=	2
+PORTNAME=	ldvd
+PORTVERSION=	2.0.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://files.gff-clan.net/pub/ldvd/
-DISTNAME=	${PORTNAME}-v${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	fehlner@gmx.de
 COMMENT=	Gui, which shall simplify shrinking a DVD-9 to a DVD-5
@@ -23,25 +20,33 @@ RUN_DEPENDS=	transcode:${PORTSDIR}/multimedia/transcode \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		buffer:${PORTSDIR}/misc/buffer \
 		lsdvd:${PORTSDIR}/multimedia/lsdvd \
+		mplex:${PORTSDIR}/multimedia/mjpegtools \
 		${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 
+USE_BZIP2=	yes
 USE_PERL=	yes
 USE_REINPLACE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
-DATA=		INSTALL.de INSTALL.en README.de README.en COPYING
+DATA=		de.lang en.lang
+PORTDOCS=	AUTHORS HISTORY README.de README.en
+PLIST_FILES=	bin/ldvd etc/ldvd.conf.sample ${DATA:S|^|%%DATADIR%%/|}
+PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|LSDVD=/opt/ldvd9to5|LSDVD=${LOCALBASE}/bin|g' ${WRKSRC}/ldvd9to5.conf
-	@${REINPLACE_CMD} -e 's|/opt|${LOCALBASE}/share|g' -e 's|/etc|${LOCALBASE}/etc|g' ${WRKSRC}/ldvd9to5
+	@${REINPLACE_CMD} -e 's|ldvd-ls|lsdvd|g' \
+		${WRKSRC}/ldvd.conf ${WRKSRC}/ldvd
+	@${REINPLACE_CMD} -e 's|/usr/share/$$sh_name-$$version|${DATADIR}|g; \
+		s|/etc|${PREFIX}/etc|g' ${WRKSRC}/ldvd
 
 do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/ldvd ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/ldvd.conf ${PREFIX}/etc/ldvd.conf.sample
 	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DATA} ${DATADIR}
-	${MKDIR} ${DATADIR}/modules
-	${CP} -rv ${WRKSRC}/modules ${DATADIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ldvd9to5.conf ${PREFIX}/etc
-	cd ${WRKSRC} && ${INSTALL_SCRIPT} ldvd9to5 ${PREFIX}/bin
+	${INSTALL_DATA} ${DATA:S|^|${WRKSRC}/|} ${DATADIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
