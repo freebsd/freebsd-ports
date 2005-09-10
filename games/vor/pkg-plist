@@ -1,0 +1,76 @@
+bin/vor
+%%DATADIR%%/indicators/life.png
+%%DATADIR%%/music/4est_fulla3s.mod
+%%DATADIR%%/music/getzznew.mod
+%%DATADIR%%/music/magic.mod
+%%DATADIR%%/banners/on.png
+%%DATADIR%%/banners/game.png
+%%DATADIR%%/banners/variations.png
+%%DATADIR%%/banners/rockdodger.png
+%%DATADIR%%/banners/over.png
+%%DATADIR%%/sprites/ship.png
+%%DATADIR%%/sprites/rock00.png
+%%DATADIR%%/sprites/rock01.png
+%%DATADIR%%/sprites/rock02.png
+%%DATADIR%%/sprites/rock03.png
+%%DATADIR%%/sprites/rock04.png
+%%DATADIR%%/sprites/rock05.png
+%%DATADIR%%/sprites/rock06.png
+%%DATADIR%%/sprites/rock07.png
+%%DATADIR%%/sprites/rock08.png
+%%DATADIR%%/sprites/rock09.png
+%%DATADIR%%/sprites/rock10.png
+%%DATADIR%%/sprites/rock11.png
+%%DATADIR%%/sprites/rock12.png
+%%DATADIR%%/sprites/rock13.png
+%%DATADIR%%/sprites/rock14.png
+%%DATADIR%%/sprites/rock15.png
+%%DATADIR%%/sprites/rock16.png
+%%DATADIR%%/sprites/rock17.png
+%%DATADIR%%/sprites/rock18.png
+%%DATADIR%%/sprites/rock19.png
+%%DATADIR%%/sprites/rock20.png
+%%DATADIR%%/sprites/rock21.png
+%%DATADIR%%/sprites/rock22.png
+%%DATADIR%%/sprites/rock23.png
+%%DATADIR%%/sprites/rock24.png
+%%DATADIR%%/sprites/rock25.png
+%%DATADIR%%/sprites/rock26.png
+%%DATADIR%%/sprites/rock27.png
+%%DATADIR%%/sprites/rock28.png
+%%DATADIR%%/sprites/rock29.png
+%%DATADIR%%/sprites/rock30.png
+%%DATADIR%%/sprites/rock31.png
+%%DATADIR%%/sprites/rock32.png
+%%DATADIR%%/sprites/rock33.png
+%%DATADIR%%/sprites/rock34.png
+%%DATADIR%%/sprites/rock35.png
+%%DATADIR%%/sprites/rock36.png
+%%DATADIR%%/sprites/rock37.png
+%%DATADIR%%/sprites/rock38.png
+%%DATADIR%%/sprites/rock39.png
+%%DATADIR%%/sprites/rock40.png
+%%DATADIR%%/sprites/rock41.png
+%%DATADIR%%/sprites/rock42.png
+%%DATADIR%%/sprites/rock43.png
+%%DATADIR%%/sprites/rock44.png
+%%DATADIR%%/sprites/rock45.png
+%%DATADIR%%/sprites/rock46.png
+%%DATADIR%%/sprites/rock47.png
+%%DATADIR%%/sprites/rock48.png
+%%DATADIR%%/sprites/rock49.png
+%%DATADIR%%/fonts/score.png
+%%DATADIR%%/icons/spacerocks.xpm
+%%DATADIR%%/icons/rockdodger.xpm
+%%DATADIR%%/sounds/bzboom.wav
+%%DATADIR%%/sounds/booom.wav
+%%DATADIR%%/sounds/boom.wav
+%%DATADIR%%/sounds/cboom.wav
+@dirrm %%DATADIR%%/banners
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/indicators
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/sprites
+@dirrm %%DATADIR%%
