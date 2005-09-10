@@ -5,6 +5,7 @@ share/gnome/lookup-applet/contact-lookup-applet.glade
 share/locale/bg/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/cs/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/de/LC_MESSAGES/contact-lookup-applet.mo
+share/locale/el/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/en_CA/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/es/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/eu/LC_MESSAGES/contact-lookup-applet.mo
@@ -13,6 +14,7 @@ share/locale/hu/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/it/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/ja/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/nb/LC_MESSAGES/contact-lookup-applet.mo
+share/locale/ne/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/no/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/pa/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/pt_BR/LC_MESSAGES/contact-lookup-applet.mo
