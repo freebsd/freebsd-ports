@@ -1,6 +1,9 @@
 ====
 FreeBSD host notes:
 - needs to run as root in order to use /dev/tap* networking (why?)
+(actually RELENG_6 and above now has a sysctl net.link.tap.user_open
+to allow users to use it too.  don't forget to adjust device node
+permissions in /etc/devfs.rules.)
 - slirp (usermode networking) is fixed now in cvs, on FreeSBIE 1.0 guests
 you still have to manually do:
 	echo nameserver 10.0.2.3 >/etc/resolv.conf
@@ -18,4 +21,9 @@ its kernel is built with HZ=5000, and FreeBSD's default is 100...
 ioctl.)
 - the -smb option (smb-export local dir to guest) needs the net/samba
 port/package installed in addition to qemu.
+- RELENG_6 and up guests often crash while accessing the emulated cdrom
+(see kern/84102, http://www.freebsd.org/cgi/query-pr.cgi?pr=kern/84102),
+using a kernel without PREEMPTION has been reported to fix this problem.
+(or do an ftp install instead of installing from the emulated cdrom, and
+then make a new kernel.)
 ====
