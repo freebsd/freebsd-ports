@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	am-utils
-PORTVERSION=	6.1
+PORTVERSION=	6.1.1
 PORTEPOCH=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	ftp://ftp.am-utils.org/pub/am-utils/
