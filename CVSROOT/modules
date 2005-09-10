@@ -11034,6 +11034,7 @@ scummvm		ports/games/scummvm
 scummvm-tools	ports/games/scummvm-tools
 scwm-icons	ports/graphics/scwm-icons
 scx		ports/x11-toolkits/scx
+sdb		ports/games/sdb
 sdcc		ports/lang/sdcc
 sdcc-devel	ports/lang/sdcc-devel
 sdd		ports/sysutils/sdd
