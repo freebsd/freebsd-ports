@@ -12112,7 +12112,6 @@ unfs3		ports/net/unfs3
 unicornscan	ports/security/unicornscan
 unidesc		ports/sysutils/unidesc
 unison		ports/net/unison
-unison-devel	ports/net/unison-devel
 unix2dos	ports/converters/unix2dos
 unix2tcp	ports/net/unix2tcp
 unixODBC	ports/databases/unixODBC
