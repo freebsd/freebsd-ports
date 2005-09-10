@@ -1,0 +1,35 @@
+--- vamps/Makefile.orig	Wed Sep 15 21:21:37 2004
++++ vamps/Makefile	Sat Sep 10 18:48:20 2005
+@@ -12,23 +12,20 @@
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307, USA.
+ 
+-CC     = gcc
+-CFLAGS = -Wall -O3 -fomit-frame-pointer -fexpensive-optimizations \
+-         -funroll-loops -march=i686 -mcpu=i686 -falign-functions=4
+-STATIC =
+-STRIP  = strip
++CC?= cc
+ 
++STATIC =
+ 
+-all:			vamps
++all:	vamps
+ 
+-vamps:			vamps.o requant.o
+-			$(CC) -o $@ $(STATIC) vamps.o requant.o -lpthread
+-			$(STRIP) $@
++vamps:	vamps.o requant.o
++	$(CC) -o $@ $(STATIC) vamps.o requant.o ${PTHREAD_LIBS} -lm
+ 
+-requant.o:		requant.h putvlc.h getvlc.h
++requant.o:	requant.h putvlc.h getvlc.h
+ 
+ clean:
+-			rm -f vamps vamps.o requant.o 
++	rm -f vamps vamps.o requant.o
+ 
+ install:
+-			cp vamps /usr/local/bin 
++	cp vamps /usr/local/bin
++

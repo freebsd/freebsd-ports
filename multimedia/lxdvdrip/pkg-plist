@@ -1,5 +1,6 @@
 bin/lxdvdrip
 bin/lxac3scan
+%%VAMPS%%bin/vamps
 etc/lxdvdrip.conf.DE
 etc/lxdvdrip.conf.EN
 etc/lxdvdrip.conf.FR
