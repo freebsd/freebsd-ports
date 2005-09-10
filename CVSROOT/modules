@@ -12340,6 +12340,7 @@ vtun		ports/net/vtun
 vtwm		ports/x11-wm/vtwm
 vulnerability-test-port	ports/security/vulnerability-test-port
 vuxml		ports/security/vuxml
+vvv		ports/graphics/vvv
 vx68k		ports/emulators/vx68k
 vxquery		ports/security/vxquery
 vxtools		ports/emulators/vxtools
