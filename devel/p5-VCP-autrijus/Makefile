@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	p5-
 PKGNAMESUFFIX=	-autrijus
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-snapshot-${PORTVERSION:C/\.([^.]*)$/-\1/}
 
-MAINTAINER=	autrijus@autrijus.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for copying files between various SCM repositories
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \

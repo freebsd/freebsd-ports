@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	MasonX
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	autrijus@autrijus.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mason/mod_perl2 interface
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache2/ModPerl/Config.pm:${PORTSDIR}/www/mod_perl2 \

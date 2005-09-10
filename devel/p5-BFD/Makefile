@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/R/RB/RBS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	autrijus@autrijus.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Impromptu dumping of data structures for debugging purposes
 
 PERL_CONFIGURE=	yes

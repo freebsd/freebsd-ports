@@ -16,7 +16,7 @@ DISTNAME=	slash-${PORTVERSION}
 PATCH_SITES=	http://p4.elixus.org/hist/
 PATCHFILES=	metalist-${PORTREVISION}${EXTRACT_SUFX}
 
-MAINTAINER=	autrijus@autrijus.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Chinese port of Slash-Like Automatic Storytelling Homepage system
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \

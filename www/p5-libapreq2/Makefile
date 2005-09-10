@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=libapreq
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-dev
 
-MAINTAINER=	autrijus@autrijus.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic Apache2 Request Library
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \

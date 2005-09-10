@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/A/AU/AUTRIJUS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	autrijus@autrijus.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create and manipulate PAR distributions
 
 PERL_CONFIGURE=	yes
