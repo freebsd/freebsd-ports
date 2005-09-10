@@ -31,6 +31,9 @@ WITH_BDB_VER=	41
 .elif defined(WITH_BDB42) || defined(WITH_DB42)
 WITH_BDB_VER=	42
 LIB_SUFFIX=	-4.2
+.elif defined(WITH_BDB43) || defined(WITH_DB43)
+WITH_BDB_VER=	43
+LIB_SUFFIX=	-4.3
 .endif
 WITH_BDB_VER?=	4
 LIB_SUFFIX?=	${WITH_BDB_VER}
