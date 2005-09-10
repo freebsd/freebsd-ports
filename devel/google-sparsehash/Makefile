@@ -16,6 +16,7 @@ MAINTAINER=	vd@datamax.bg
 COMMENT=	Google's hashtable implementations optimized for space or speed
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	yes
 
 post-patch:
