@@ -213,7 +213,6 @@
     SUBDIR += mecab-razil
     SUBDIR += mell
     SUBDIR += mendexk-euc
-    SUBDIR += mendexk-sjis
     SUBDIR += mh
     SUBDIR += migemo
     SUBDIR += migemo-emacs20
