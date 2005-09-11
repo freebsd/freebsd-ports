@@ -8,7 +8,8 @@
 PORTNAME=	mod_mya
 PORTVERSION=	3.0.1
 CATEGORIES=	www
-MASTER_SITES=	http://www.synthemesc.com/downloads/mod_mya/
+MASTER_SITES=	http://www.synthemesc.com/downloads/mod_mya/ \
+		${MASTER_SITE_LOCAL:S/%SUBDIR%/clement/}
 DIST_SUBDIR=	apache
 
 MAINTAINER=	apache@FreeBSD.org
