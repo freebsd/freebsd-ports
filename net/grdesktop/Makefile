@@ -7,7 +7,7 @@
 
 PORTNAME=	grdesktop
 PORTVERSION=	0.23
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,13 +21,18 @@ USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui gnomeprefix gnomehack
+GCONF_SCHEMAS=	grdesktop.schemas
+INSTALLS_OMF=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-keymap-path=${LOCALBASE}/share/rdesktop/keymaps
 
+MAN1=		grdesktop.1
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(GETTEXT_PACKAGE =\).*|\1 grdesktop|' ${WRKSRC}/po/Makefile.in.in
 
-MAN1=		grdesktop.1
+post-install:
+	@${INSTALL_DATA} ${PREFIX}/share/gnome/pixmaps/grdesktop/icon.png ${PREFIX}/share/gnome/pixmaps/grdesktop.png
 
 .include <bsd.port.mk>

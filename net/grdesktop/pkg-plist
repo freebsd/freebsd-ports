@@ -1,7 +1,4 @@
 bin/grdesktop
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/grdesktop.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/grdesktop.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/grdesktop.schemas > /dev/null || /usr/bin/true
 share/gnome/application-registry/grdesktop.applications
 share/gnome/applications/grdesktop.desktop
 share/gnome/help/grdesktop/C/grdesktop.xml
@@ -9,8 +6,6 @@ share/gnome/help/grdesktop/C/legal.xml
 share/gnome/mime-info/grdesktop.keys
 share/gnome/mime-info/grdesktop.mime
 share/gnome/omf/grdesktop/grdesktop-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/grdesktop/grdesktop-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/grdesktop/grdesktop-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/grdesktop/animation.gif
 share/gnome/pixmaps/grdesktop/colors_1.png
 share/gnome/pixmaps/grdesktop/colors_2.png
@@ -27,6 +22,7 @@ share/gnome/pixmaps/grdesktop/settings.png
 share/gnome/pixmaps/grdesktop/sound.png
 share/gnome/pixmaps/grdesktop/topimage.png
 share/gnome/pixmaps/grdesktop/topimage2.png
+share/gnome/pixmaps/grdesktop.png
 share/locale/de/LC_MESSAGES/grdesktop.mo
 share/locale/es/LC_MESSAGES/grdesktop.mo
 share/locale/fr/LC_MESSAGES/grdesktop.mo
