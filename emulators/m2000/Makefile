@@ -21,7 +21,7 @@ DIST_SUBDIR=	m2000
 EXTRACT_ONLY=	${PORTNAME:U}${EXTRACT_SUFX}
 
 MAINTAINER=	edwin@mavetju.org
-COMMENT=	M2000 is a portable emulator for the P2000 home computer
+COMMENT=	A portable emulator for the Philips P2000 home computer
 
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 
@@ -48,6 +48,7 @@ ALL_TARGET=	x
 USE_XLIB=	yes
 
 SUB_FILES=	m2000.sh
+PORTDOCS=	M2000.txt
 
 post-extract:
 	${MKDIR} ${WRKDIR}/tapeconv
@@ -61,15 +62,17 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/m2000.sh ${PREFIX}/bin/m2000
 	@${INSTALL_PROGRAM} ${WRKDIR}/tapeconv/PCM2CAS ${PREFIX}/bin/tapeconv
 	@${MKDIR} ${PREFIX}/share/m2000/
-	@${INSTALL_PROGRAM} ${WRKSRC}/m2000 ${PREFIX}/share/m2000
-	@${INSTALL_DATA} ${WRKSRC}/P2000ROM.bin ${PREFIX}/share/m2000
-	@${INSTALL_DATA} ${WRKSRC}/Default.fnt ${PREFIX}/share/m2000
-	@${INSTALL_DATA} ${WRKSRC}/BASIC.bin ${PREFIX}/share/m2000
+	@${INSTALL_PROGRAM} ${WRKSRC}/m2000 ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/P2000ROM.bin ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/Default.fnt ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/BASIC.bin ${DATADIR}
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/M2000.txt ${DOCSDIR}
+.endif
 .for f in ${M2000TAPES}
 	@${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/${f}.gz > ${WRKDIR}/${f}
-	@${INSTALL_DATA} ${WRKDIR}/${f} ${PREFIX}/share/m2000
+	@${INSTALL_DATA} ${WRKDIR}/${f} ${DATADIR}
 .endfor
 
 post-install:
