@@ -1,0 +1,54 @@
+--- configure.orig	Wed Feb 23 23:14:51 2005
++++ configure	Thu Jul 28 20:12:32 2005
+@@ -19332,10 +19332,10 @@
+ 
+ 
+ # This can be used to rebuild libtool when needed
+-LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++LIBTOOL_DEPS="--disable-ltlibs /usr/local/share/libtool15/ltmain.sh"
+ 
+ # Always use our own libtool.
+-LIBTOOL='$(SHELL) $(top_builddir)/libtool'
++LIBTOOL='$(SHELL) /usr/local/bin/libtool15'
+ 
+ # Prevent multiple expansion
+ 
+@@ -22349,13 +22349,13 @@
+ fi
+ 
+ 
+-echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
++echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6
+ if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -22418,7 +22418,7 @@
+ #define HAVE_LIBPTHREAD 1
+ _ACEOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ fi
+ 
+@@ -23661,12 +23661,6 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ 
+-	#ifdef HAVE_SYS_SOCKET_H
+-	# include <sys/socket.h>		/* inet_ functions / structs */
+-	#endif
+-	#ifdef HAVE_NETINET_IN_H
+-	# include <netinet/in.h>		/* inet_ functions / structs */
+-	#endif
+ 	#ifdef HAVE_ARPA_NAMESER_H
+ 	#  include <arpa/nameser.h> /* DNS HEADER struct */
+ 	#endif

@@ -157,6 +157,7 @@
     SUBDIR += libspf
     SUBDIR += libspf-alt
     SUBDIR += libspf2
+    SUBDIR += libspf2-10
     SUBDIR += libsrs
     SUBDIR += libsrs2
     SUBDIR += listmanager

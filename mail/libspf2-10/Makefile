@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	spf
 MAINTAINER=		mail-libspf2-freebsd-ports@snowchyld.org
 COMMENT=		Sender Rewriting Scheme 2 C Implementation
 
+CONFLICTS=		${PORTNAME}-1.2.*
+
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
 USE_LIBTOOL_VER=	15
