@@ -8,12 +8,14 @@
 PORTNAME=	pgp
 PORTVERSION=	2.6.3
 CATEGORIES=	japanese security
-MASTER_SITES=	ftp://ftp.win.or.jp/pub/network/pgp/2.x/lang/ \
-		ftp://ftp.ifi.uio.no/pub/pgp/2.x/lang/
+MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/pgp/2.x/lang/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}i-japanese
 
 MAINTAINER=	hikura@kaisei.org
 COMMENT=	Japanese language module for PGP
+
+DEPRECATED=		obsolete -- current version of base program is 7.0
+EXPIRATION_DATE=	2005-10-11
 
 RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 
