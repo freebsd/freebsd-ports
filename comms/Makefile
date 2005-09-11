@@ -67,6 +67,7 @@
     SUBDIR += openobex
     SUBDIR += p5-Device-Modem
     SUBDIR += p5-Device-SerialPort
+    SUBDIR += p5-Fax-Hylafax-Client
     SUBDIR += plp
     SUBDIR += pr
     SUBDIR += predict
