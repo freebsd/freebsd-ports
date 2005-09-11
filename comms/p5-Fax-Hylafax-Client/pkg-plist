@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Fax/Hylafax/Client.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Fax/Hylafax/Client/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/Fax/Hylafax 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Fax 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Fax/Hylafax/Client 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Fax/Hylafax 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Fax 2>/dev/null || true
