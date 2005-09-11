@@ -486,6 +486,7 @@
     SUBDIR += speak
     SUBDIR += spellcast
     SUBDIR += speyes
+    SUBDIR += spicetrade
     SUBDIR += spider
     SUBDIR += ssamtse
     SUBDIR += ssc
