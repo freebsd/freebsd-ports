@@ -215,6 +215,7 @@
     SUBDIR += vim6+ruby
     SUBDIR += vimpart
     SUBDIR += wily
+    SUBDIR += winefish
     SUBDIR += xcoral
     SUBDIR += xed
     SUBDIR += xemacs
