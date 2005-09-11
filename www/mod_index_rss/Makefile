@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mod_index_rss
-PORTVERSION=	0.10
+PORTVERSION=	1.0
 CATEGORIES=	www
 MASTER_SITES=	http://download.tangent.org/
 
