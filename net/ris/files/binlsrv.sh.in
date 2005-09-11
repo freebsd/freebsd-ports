@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# PROVIDE: binlsrv
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: FreeBSD shutdown
+
+# Define these variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/binlsrv
+#
+# binlsrv_enable="YES"
+# binlsrv_infdir="/path/to/dir_with_inf_files"
+
+. /etc/rc.subr
+
+name="binlsrv"
+rcvar=`set_rcvar`
+command="%%PYTHON_CMD%%"
+command_args="%%PREFIX%%/sbin/${name}.py -d"
+required_dirs="${binlsrv_infdir}"
+pidfile="%%PID_FILE%%"
+start_precmd="binlsrv_start_precmd"
+stop_postcmd="binlsrv_stop_postcmd"
+
+binlsrv_start_precmd()
+{
+	%%PREFIX%%/sbin/infparser.py ${binlsrv_infdir}
+}
+
+binlsrv_stop_postcmd()
+{
+	rm -f ${pidfile}
+}
+
+load_rc_config "$name"
+: ${binlsrv_enable="NO"}
+: ${binlsrv_infdir=""}
+
+run_rc_command "$1"
