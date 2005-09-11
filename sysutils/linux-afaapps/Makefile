@@ -13,7 +13,7 @@ MASTER_SITES=		ftp://ftp.us.dell.com/scsi-raid/
 PKGNAMEPREFIX=		linux-
 DISTNAME=		aacraid-util-rh8.0-${MACHINE_ARCH}
 
-MAINTAINER=		bms@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		DELL PowerEdge Raid Controller 2 (apps)
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
