@@ -7,6 +7,7 @@
 
 PORTNAME=	nautilus-actions
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~ahze/distfiles/
@@ -15,14 +16,19 @@ MASTER_SITE_SUBDIR=	ahze
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Extension for Nautilus to configure programs to launch on files
 
-USE_GNOME=	nautilus2 pygtk2 intlhack
+USE_GNOME=	nautilus2 intlhack pygtk2
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INTLTOOLIZE?=	${LOCALBASE}/bin/intltoolize
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|@datadir@datadir@/pixmaps|${DATADIR}/nact|' \
+		${WRKSRC}/nact/nact.desktop.in.in
 
 pre-configure:
 	cd ${WRKSRC} && ${INTLTOOLIZE} --force
