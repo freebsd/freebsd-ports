@@ -581,21 +581,21 @@ sub find_master($) {
     while (<FILE>) {
 	my $master;		# Master directory
 
-	if (/^(?:MAIN|MASTER)DIR\s*=\s*(\S+)\s*$/) {
+	if (/^MASTERDIR\s*=\s*(\S+)\s*$/) {
 	    $master = $1;
-	} elsif (/^\.?include \"([^\"]+)\/Makefile(?:[^\/\"]*)\"\s*$/) {
+	} elsif (/^\.?include \"([^\s\"]+)\/(?:[^\s\/\"]*)\"\s*$/) {
 	    $master = $1;
 	}
 	if (defined($master) && $master !~ m/WRKDIRPREFIX/) {
 	    $master =~ s/^\$\{.CURDIR\}//;
-	    $master =~ s/^\$\{PORTSDIR}/..\/../;
+	    $master =~ s/^\$\{PORTSDIR\}/..\/../;
 	    $master = "/$port/$master";
 	    $master =~ s|/+|/|g;
 	    1 while ($master =~ s|/[^\./]*/\.\./|/|);
 	    $master =~ s|^/||;
 	    $master =~ s|/$||;
 	    if ($master eq $port) {
-		bsd::warnx("master port heuristics failed for %s", $port);
+		#bsd::warnx("master port heuristics failed for %s", $port);
 		next;
 	    }
 	    if ($master !~ m|^[^/]+/[^/]+$|) {
