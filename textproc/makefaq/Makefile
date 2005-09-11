@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	makefaq
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	textproc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,15 +19,17 @@ USE_PYTHON=	yes
 NO_BUILD=	yes
 
 MAN1=		makefaq.1
+PLIST_FILES=	bin/makefaq.py
+PORTDOCS=	README UPGRADING faq.html
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/makefaq.py ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/makefaq.1  ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/makefaq.1  ${MAN1PREFIX}/man/man1
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in README UPGRADING faq.html
+.for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
