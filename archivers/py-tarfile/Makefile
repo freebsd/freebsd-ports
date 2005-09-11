@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tarfile
-PORTVERSION=	0.7.6
+PORTVERSION=	0.7.7
 CATEGORIES=	archivers python
 MASTER_SITES=	http://www.gustaebel.de/lars/tarfile/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
