@@ -1,0 +1,16 @@
+Full-text search system. You can search lots of documents for some documents
+including specified words. If you run a web site, it is useful as your own
+search engine for pages in your site. Also, it is useful as search utilities
+of mail boxes and file servers.
+
+The characteristic of Hyper Estraier is the following.
+  * High performance of search
+  * High scalability of target documents
+  * Perfect recall ratio by N-gram method
+  * Phrase search, attribute search, and similarity search
+  * Multilingualism with Unicode
+  * Independent of file format and repository
+  * Simple and powerful API
+  * Supporting P2P architecture
+
+WWW: http://hyperestraier.sourceforge.net/

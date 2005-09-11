@@ -166,6 +166,7 @@
     SUBDIR += htmlize.el
     SUBDIR += htmlsection
     SUBDIR += htmltolatex
+    SUBDIR += hyperestraier
     SUBDIR += ia-aspell
     SUBDIR += id-aspell
     SUBDIR += idnits
