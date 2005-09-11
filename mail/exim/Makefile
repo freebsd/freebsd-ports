@@ -473,9 +473,9 @@ SEDLIST+=	-e 's,^(ALT_CONFIG_PREFIX=),\# \1,'
 .endif
 
 .if defined(WITH_SPF)
-LIB_DEPENDS+=	spf2.1:${PORTSDIR}/mail/libspf2
+LIB_DEPENDS+=	spf2.2:${PORTSDIR}/mail/libspf2
 SEDLIST+=	-e 's,XX_SPF_FLAGS_XX,-DSPF,' \
-		-e 's,XX_SPF_LIBS_XX,-lspf2,' \
+		-e 's,XX_SPF_LIBS_XX,-lspf2 ${PTHREAD_LIBS},' \
 		-e 's,^\# (EXPERIMENTAL_SPF=),\1,'
 .else
 SEDLIST+=	-e 's,XX_SPF_FLAGS_XX,,' \
