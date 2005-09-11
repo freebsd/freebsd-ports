@@ -22,7 +22,7 @@ MAN3=		Tree::Node.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-BROKEN=		"This module only for perl >= 5.8"
+IGNORE=		requires Perl 5.8 or above
 .endif
 
 .include <bsd.port.post.mk>

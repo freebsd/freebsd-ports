@@ -24,8 +24,8 @@ MAN3=		Games::Sequential.3 Games::Sequential::Position.3
 
 .include <bsd.port.pre.mk>
 
-.if (${PERL_LEVEL} < 500601)
-BROKEN=	"Perl 5.6.1 or above is required"
+.if ${PERL_LEVEL} < 500601
+IGNORE=		requires Perl 5.6.1 or above
 .endif
 
 .include <bsd.port.post.mk>
