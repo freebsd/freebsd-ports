@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_auth_cookie_mysql2
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	www
 MASTER_SITES=	http://home.digithi.de/digithi/dev/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -24,7 +24,7 @@ AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 AP_INC?=	${LOCALBASE}/include/mysql
 AP_LIB?=	${LOCALBASE}/lib/mysql -lmysqlclient -lz
-PORTDOCS=	mod_auth_cookie_mysql2.html
+PORTDOCS=	mod_auth_cookie_mysql.html
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
