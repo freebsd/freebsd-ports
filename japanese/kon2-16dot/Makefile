@@ -10,11 +10,7 @@ PORTVERSION=	0.3
 PORTREVISION=	3
 # '+=' is for slave ports
 CATEGORIES+=	japanese
-# note kon is only in first directory and fonts are only in second directory
-MASTER_SITES=	ftp://ftp.tut.ac.jp/Linux/Packages/Utils/ \
-		${MASTER_SITE_PORTS_JP} \
-		ftp://ftp.xfree86.org/pub/XFree86/3.3.3/untarred/xc/fonts/bdf/misc/ \
-		ftp://ftp.iij.ad.jp/pub/X/XFree86/3.3.3/untarred/xc/fonts/bdf/misc/
+MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 PKGNAMESUFFIX=	-${KONFONT}
 DISTNAME=	kon2-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -25,6 +21,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 # '+=' is for slave ports
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Kanji On Console -- Display kanji characters on your own console
+
+DEPRECATED=		this font package was last updated for XFree86 3.3.3
+EXPIRATION_DATE=	2005-10-11
 
 ONLY_FOR_ARCHS=	i386
 
