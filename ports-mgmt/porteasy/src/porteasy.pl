@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 #-
-# Copyright (c) 2000-2004 Dag-Erling Coïdan Smørgrav
+# Copyright (c) 2000-2005 Dag-Erling Coïdan Smørgrav
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -12,19 +12,18 @@
 # 2. Redistributions in binary form must reproduce the above copyright
 #    notice, this list of conditions and the following disclaimer in the
 #    documentation and/or other materials provided with the distribution.
-# 3. The name of the author may not be used to endorse or promote products
-#    derived from this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
-# IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-# OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-# IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
-# INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
-# NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-# THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
-# THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
 #
 # $FreeBSD$
 #
@@ -33,8 +32,8 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.8.3";
-my $COPYRIGHT	= "Copyright (c) 2000-2004 Dag-Erling Smørgrav. " .
+my $VERSION	= "2.8.4";
+my $COPYRIGHT	= "Copyright (c) 2000-2005 Dag-Erling Smørgrav. " .
 		  "All rights reserved.";
 
 # Constants
@@ -899,12 +898,15 @@ sub show_port_plist($) {
     local *FILE;		# File handle
     my $file;			# File name
     my %files;			# Files to list
-    my %plist_sub;		# Substitution list
+    my $plist_sub;		# Substitution list (text)
+    my %plist_sub;		# Substitution list (hash)
     my $prefix;			# Prefix
 
-    foreach (split(' ', capture(\&make, ($port, "-VPLIST_SUB")))) {
-	next unless m/^(\w+)=\"?(.*?)\"?$/;
-	$plist_sub{$1} = $2;
+    $plist_sub = capture(\&make, ($port, "-VPLIST_SUB"));
+    while ($plist_sub =~ m/\G\s*(\w+)=(\"[^\"]*\"|[^\"\s]*)/g) {
+	my ($lhs, $rhs) = ($1, $2);
+	$rhs =~ s/^\"(.*)\"$/$1/;
+	$plist_sub{$lhs} = $rhs;
     }
     $prefix = capture(\&make, ($port, "-VPREFIX"));
     chomp($prefix);
@@ -912,7 +914,7 @@ sub show_port_plist($) {
 	or bsd::err(1, "can't read packing list for $port");
     while (<FILE>) {
 	chomp();
-	s/\%\%(\w+)\%\%/$plist_sub{$1}/g;
+	s{\%\%(\w+)\%\%}{exists($plist_sub{$1}) ? $plist_sub{$1} : "%%$1%%"}eg;
 	$file = undef;
 	if (m/^[^\@]/) {
 	    $file = $_;
