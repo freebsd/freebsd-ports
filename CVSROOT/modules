@@ -10513,6 +10513,7 @@ ripetools	ports/net/ripetools
 ripit		ports/audio/ripit
 ripmime		ports/mail/ripmime
 ripole		ports/textproc/ripole
+ris		ports/net/ris
 rkhunter	ports/security/rkhunter
 rkive		ports/news/rkive
 rl		ports/textproc/rl
