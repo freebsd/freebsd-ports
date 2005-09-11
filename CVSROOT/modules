@@ -6322,6 +6322,7 @@ moria		ports/games/moria
 morpheus	ports/graphics/morpheus
 moscow_ml	ports/lang/moscow_ml
 most		ports/sysutils/most
+moth		ports/graphics/moth
 motor		ports/devel/motor
 mount.app	ports/sysutils/mount.app
 mouseclock	ports/x11-clocks/mouseclock
