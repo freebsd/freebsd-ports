@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	imhangul
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.13
 CATEGORIES=	korean x11-toolkits
-MASTER_SITES=	http://kldp.net/frs/download.php/2570/
+MASTER_SITES=	http://kldp.net/frs/download.php/2808/
 
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	GTK+-2.0 hangul input module
