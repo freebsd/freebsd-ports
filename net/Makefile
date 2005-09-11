@@ -712,6 +712,7 @@
     SUBDIR += rinetd
     SUBDIR += ripe-whois
     SUBDIR += ripetools
+    SUBDIR += ris
     SUBDIR += rmsg
     SUBDIR += roadrunner
     SUBDIR += rp-pppoe
