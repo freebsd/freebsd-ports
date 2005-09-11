@@ -52,10 +52,10 @@
 %%SITE_PERL%%/Plucene/Index/SegmentInfo.pm
 %%SITE_PERL%%/Plucene/Index/Reader.pm
 %%SITE_PERL%%/Plucene/Index/TermInfosWriter.pm
-%%SITE_PERL%%/Plucene/Index/FieldInfo.pm
 %%SITE_PERL%%/Plucene/Index/SegmentInfos.pm
 %%SITE_PERL%%/Plucene/Index/SegmentMergeInfo.pm
 %%SITE_PERL%%/Plucene/Index/SegmentsReader.pm
+%%SITE_PERL%%/Plucene/Index/SegmentsTermEnum.pm
 %%SITE_PERL%%/Plucene/Index/Writer.pm
 %%SITE_PERL%%/Plucene/Index/SegmentMerger.pm
 %%SITE_PERL%%/Plucene/Index/TermInfosReader.pm
