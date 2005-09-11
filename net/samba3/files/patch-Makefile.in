@@ -1,14 +1,14 @@
---- Makefile.in.orig	Sun Nov  7 21:43:23 2004
-+++ Makefile.in	Mon Nov  8 17:40:48 2004
-@@ -99,6 +99,7 @@
+--- Makefile.in.orig	Tue Jul 12 18:42:55 2005
++++ Makefile.in	Fri Jul 22 04:03:37 2005
+@@ -97,6 +97,7 @@
  LIBSMBCLIENT_MAJOR=0
  LIBSMBCLIENT_MINOR=1
  
 +NSS_VERSION=1
  
- FLAGS1 = $(CFLAGS) @FLAGS1@ -Iinclude -I$(srcdir)/include -I$(srcdir)/ubiqx -I$(srcdir)/smbwrapper  -I. $(CPPFLAGS) -I$(srcdir)
+ FLAGS1 = $(CFLAGS) @FLAGS1@ -Iinclude -I$(srcdir)/include -I$(srcdir)/ubiqx @SMBWRAP_INC@ -I. $(CPPFLAGS) -I$(srcdir)
  FLAGS2 = 
-@@ -989,8 +990,8 @@
+@@ -987,8 +988,8 @@
  		@SONAMEFLAG@`basename $@`
  
  bin/libsmbclient.@SHLIBEXT@: $(LIBSMBCLIENT_PICOBJS)
@@ -19,7 +19,7 @@
  		$(KRB5LIBS) $(LDAP_LIBS) \
  		@SONAMEFLAG@`basename $@`.$(LIBSMBCLIENT_MAJOR)
  
-@@ -1074,13 +1075,13 @@
+@@ -1082,13 +1083,13 @@
  @WINBIND_NSS@: $(WINBIND_NSS_PICOBJS)
  	@echo "Linking $@"
  	@$(SHLD) $(WINBIND_NSS_LDSHFLAGS) -o $@ $(WINBIND_NSS_PICOBJS) \
@@ -35,10 +35,10 @@
  
  nsswitch/pam_winbind.@SHLIBEXT@: $(PAM_WINBIND_PICOBJ) bin/.dummy
  	@echo "Linking $@"
-@@ -1276,7 +1277,7 @@
+@@ -1295,7 +1296,7 @@
  
  bin/t_snprintf@EXEEXT@: lib/snprintf.c
- 	$(CC) $(FLAGS) -o $@ $(DYNEXP) -DTEST_SNPRINTF lib/snprintf.c -lm
+ 	$(CC) $(FLAGS) @PIE_LDFLAGS@ -o $@ $(DYNEXP) -DTEST_SNPRINTF lib/snprintf.c -lm
 -install: installbin installman installscripts installdat installswat installmodules @INSTALLCLIENT@
 +install: installbin installscripts installdat installswat installmodules
  

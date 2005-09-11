@@ -6,8 +6,8 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.0.14a
-PORTREVISION?=		1
+PORTVERSION?=		3.0.20
+PORTREVISION?=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
@@ -20,8 +20,7 @@ COMMENT?=		A free SMB and CIFS client and server for UNIX
 CONFLICTS?=		ja-samba-2.* ja-samba-3.* samba-2.* sharity-light-1.*
 
 USE_ICONV=		yes
-USE_AUTOHEADER_VER=	259
-USE_AUTOCONF_VER=	259
+GNU_CONFIGURE=		yes
 
 LATEST_LINK?=		${PKGNAMEPREFIX}${PORTNAME}3${PKGNAMESUFFIX}
 EXAMPLESDIR=		${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
@@ -40,9 +39,6 @@ SAMBA_LIBDIR=		${PREFIX}/lib
 RC_DIR=			${PREFIX}/etc/rc.d
 SAMBA_CONFIG=		${SAMBA_CONFDIR}/smb.conf
 
-CONFIGURE_ENV+=		CPPFLAGS=-I${LOCALBASE}/include \
-			LDFLAGS=-L${LOCALBASE}/lib
-
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 CONFIGURE_ARGS+=	--exec-prefix=${PREFIX} \
@@ -53,8 +49,7 @@ CONFIGURE_ARGS+=	--exec-prefix=${PREFIX} \
 			--with-piddir=${SAMBA_RUNDIR} \
 			--with-lockdir=${SAMBA_LOCKDIR} \
 			--with-privatedir=${SAMBA_PRIVATE} \
-			--with-logfilebase=${SAMBA_LOGDIR} \
-			--with-manpages-langs=en
+			--with-logfilebase=${SAMBA_LOGDIR}
 
 CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}
 
@@ -65,6 +60,7 @@ OPTIONS=	LDAP		"With LDAP support" on \
 		CUPS		"With CUPS printing support" on \
 		WINBIND		"With WinBIND support" on \
 		ACL_SUPPORT	"With ACL support" off \
+		AIO_SUPPORT	"With experimental AIO support" off \
 		SYSLOG		"With Syslog support" off \
 		QUOTAS		"With Quota support" off \
 		UTMP		"With UTMP support" on \
@@ -178,7 +174,7 @@ CONFIGURE_ARGS+=	--with-expsam=${WANT_EXPSAM_MODULES}
 # SAM
 .if defined(WITH_EXP_MODULES)
 .if !defined(WANT_EXP_MODULES) || empty(WANT_EXP_MODULES)
-WANT_EXP_MODULES=	rpc_echo idmap_rid charset_weird
+WANT_EXP_MODULES=	rpc_echo idmap_ad idmap_rid charset_weird
 .endif
 WANT_EXP_MODULES!=	${ECHO_CMD} ${WANT_EXP_MODULES} | ${SED} -e 's/ /,/g'
 CONFIGURE_ARGS+=	--with-shared-modules=${WANT_EXP_MODULES}
@@ -198,6 +194,10 @@ BROKEN=			"ACL support requires FreeBSD 5.x at least after 20010326"
 .else
 CONFIGURE_ARGS+=	--with-acl-support
 .endif
+.endif
+
+.if defined(WITH_AIO_SUPPORT)
+CONFIGURE_ARGS+=	--with-aio-support
 .endif
 
 .if !defined(WITHOUT_POPT)
@@ -220,7 +220,7 @@ IGNORE=			"Broken dependency between OpenSSL, OpenLDAP and Heimdal for FreeBSD 4
 WITHOUT_ADS=		on
 .endif
 
-.if !defined(PACKAGE_BUILDING) && !defined(WITHOUT_ADS)
+.if !defined(WITHOUT_ADS)
 WANT_LDAP=		yes
 WANT_KRB5=		yes
 CONFIGURE_ARGS+=	--with-ads
@@ -251,10 +251,10 @@ CONFIGURE_ARGS+=	--without-ldap
 .endif
 
 .if !defined(SAMBA_SUBPORT)
-MAN1=		findsmb.1 nmblookup.1 log2pcap.1 rpcclient.1 \
-		smbget.1 smbcacls.1 smbclient.1 smbcontrol.1 smbsh.1 \
-		smbstatus.1 smbtar.1 testparm.1 testprns.1 vfstest.1 \
-		ntlm_auth.1 profiles.1 smbcquotas.1 smbtree.1
+MAN1=		findsmb.1 log2pcap.1 nmblookup.1 ntlm_auth.1 profiles.1 \
+		rpcclient.1 smbcacls.1 smbclient.1 smbcontrol.1 smbcquotas.1 \
+		smbget.1 smbsh.1 smbstatus.1 smbtar.1 smbtree.1 testparm.1 \
+		testprns.1 vfstest.1
 MAN5=		lmhosts.5 smb.conf.5 smbgetrc.5 smbpasswd.5
 MAN7=		samba.7
 MAN8=		nmbd.8 smbd.8 net.8 pdbedit.8 smbpasswd.8 smbspool.8 \
@@ -294,6 +294,9 @@ post-patch:
 	@${RM} -rf ${WRKDIR}/${DISTNAME}/examples/LDAP/smbldap-tools-*
 	@${RM} -rf ${WRKDIR}/${DISTNAME}/examples/libsmbclient
 	@${RM} -rf ${WRKDIR}/${DISTNAME}/swat/lang
+	-@${MV} -f ${WRKDIR}/${DISTNAME}/docs/htmldocs/manpages-3 \
+	    ${WRKDIR}/${DISTNAME}/docs/htmldocs/manpages
+	@${RM} -f ${WRKDIR}/${DISTNAME}/docs/htmldocs/manpages/libsmbclient.8
 	@${FIND} ${WRKSRC} -name CVS -o -name .cvsignore | ${XARGS} ${RM}
 	@${FIND} ${WRKDIR}/${DISTNAME} -type d | ${XARGS} ${CHMOD} u+w,a+rx
 	@${FIND} ${WRKDIR}/${DISTNAME} -type f | ${XARGS} ${CHMOD} u+w,a+r
@@ -371,7 +374,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${CP} -Rp ${WRKDIR}/${DISTNAME}/docs/registry ${DOCSDIR}
-.for f in Samba-Developers-Guide.pdf Samba-Guide.pdf Samba-HOWTO-Collection.pdf
+.for f in Samba3-ByExample.pdf Samba3-HOWTO.pdf Samba3-Developers-Guide.pdf
 	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/docs/${f} ${DOCSDIR}
 .endfor
 	@${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${DOCSDIR}

@@ -154,10 +154,16 @@
 # via DNS nslookups. The default is NO.
    dns proxy = no 
 
-# charset settings
-;   display charset = ASCII
-;   unix charset = ASCII
-;   dos charset = ASCII
+# Charset settings
+;   display charset = koi8-r
+;   unix charset = koi8-r
+;   dos charset = cp866
+
+# Use extended attributes to store file modes
+;    store dos attributes = yes
+;    map hidden = no
+;    map system = no
+;    map archive = no
 
 # These scripts are used on a domain controller or stand-alone 
 # machine to add or delete corresponding unix accounts
