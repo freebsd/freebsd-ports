@@ -8,11 +8,14 @@
 PORTNAME=	ebw3
 PORTVERSION=	${VERSION:S/-//}
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.imasy.or.jp/pub/unix/net/www/ebw3/
+MASTER_SITES=	# disappeared
 DISTNAME=	${PORTNAME}-${VERSION}
 
 MAINTAINER=	hikura@kaisei.org
 COMMENT=	Access to Japanese EPWING or Electric-Book based CD-ROM via HTTP
+
+DEPRECATED=		mastersite disappeared
+EXPIRATION_DATE=	2005-10-11
 
 VERSION=	0.2-b4
 
