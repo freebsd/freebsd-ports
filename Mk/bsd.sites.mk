@@ -1117,7 +1117,6 @@ MASTER_SITE_QMAIL+= \
 	http://qmail.blueyonder.co.uk/%SUBDIR%/ \
 	http://qmail.usp.br/%SUBDIR%/ \
 	http://madhaus.utcs.utoronto.ca/qmail/%SUBDIR%/ \
-	http://qmail.freezer-burn.org/%SUBDIR%/ \
 	http://qmail.ru.ac.za/%SUBDIR%/ \
 	http://www.qmail.org/%SUBDIR%/
 .endif
@@ -1526,7 +1525,6 @@ MASTER_SITE_XEMACS+= \
 	ftp://ftp.lab.kdd.co.jp/xemacs/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/unix/editor/xemacs/%SUBDIR%/ \
 	ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/%SUBDIR%/ \
-	ftp://ftp.th-darmstadt.de/pub/editors/xemacs/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/xemacs/&,}
 .endif
 
