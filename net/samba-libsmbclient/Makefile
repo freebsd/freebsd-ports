@@ -33,11 +33,20 @@ CONFIGURE_ARGS+=	--without-winbind
 CONFIGURE_ARGS+=	--without-ldapsam
 CONFIGURE_ARGS+=	--without-pam_smbpass
 
+CONFIGURE_ARGS+=	--without-krb5
+CONFIGURE_ARGS+=	--without-ads
+
+MAN8=			libsmbclient.8
+
 do-build:
 	cd ${WRKSRC} && ${MAKE} proto
 	cd ${WRKSRC} && ${MAKE} libsmbclient
 
 do-install:
+	-@${MKDIR} ${MAN8PREFIX}/man/man8
+.for man in ${MAN8}
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/docs/manpages/${man} ${MAN8PREFIX}/man/man8
+.endfor
 	-@${MKDIR} ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/include/libsmbclient.h ${PREFIX}/include
 	-@${MKDIR} ${PREFIX}/lib
