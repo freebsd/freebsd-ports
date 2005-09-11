@@ -4,6 +4,6 @@ share/locale/es/LC_MESSAGES/nautilus-actions.mo
 %%DATADIR%%/config_newaction.xml
 %%DATADIR%%/nact/nautilus-actions-config.glade
 %%DATADIR%%/nact/nautilus-launch-icon.png
-@dirrm %%DATADIR%%/nact
-@dirrm %%DATADIR%%
+@unexec rmdir %D/%%DATADIR%%/nact 2> /dev/null || true
+@unexec rmdir %D/%%DATADIR%% 2> /dev/null || true
 @unexec rmdir %D/share/applications 2> /dev/null || true
