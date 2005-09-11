@@ -7,7 +7,7 @@
 
 PORTNAME=	tinystats
 PORTVERSION=	1.1
-CATEGORIES=	dns
+CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.morettoni.net/bsd/
 
 MAINTAINER=	filippo.natali@gmail.com
@@ -15,6 +15,8 @@ COMMENT=	DJB's tinydns statistics generator
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=
+
+OPTIONS=	IPV6 "Enable IPv6 support" off
 
 PLIST_FILES=	bin/tinystats \
 		%%EXAMPLESDIR%%/tinydns.log.run.sample \
@@ -24,6 +26,12 @@ PLIST_FILES=	bin/tinystats \
 		%%EXAMPLESDIR%%/Makefile.sample
 PLIST_DIRS=	%%EXAMPLESDIR%%
 PORTDOCS=	README LICENSE THANKS
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_IPV6)
+MAKE_ARGS+=	-DWITH_IPV6
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tinystats ${PREFIX}/bin
@@ -35,4 +43,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/LICENSE ${WRKSRC}/THANKS ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
