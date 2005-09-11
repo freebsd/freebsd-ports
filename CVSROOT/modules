@@ -10176,6 +10176,7 @@ py-xmms		ports/audio/py-xmms
 py-xoltar-toolkit	ports/devel/py-xoltar-toolkit
 py-yaml		ports/devel/py-yaml
 py-yapsnmp	ports/net-mgmt/py-yapsnmp
+py-zconfig	ports/devel/py-zconfig
 py-zopeInterface	ports/devel/py-zopeInterface
 py-zpt		ports/textproc/py-zpt
 py-zsi		ports/net/py-zsi
