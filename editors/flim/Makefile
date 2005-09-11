@@ -10,9 +10,6 @@ PORTVERSION=	${FLIM_VER}
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/flim/flim-1.14/ \
 		http://www.kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/flim/flim-1.14/ \
-		ftp://ftp.etl.go.jp/pub/mule/flim/flim-1.14/ \
-		ftp://ftp.media.kyoto-u.ac.jp/pub/mule/flim/flim-1.14/ \
-		ftp://ftp.win.or.jp/pub/word/mule/flim/flim-1.14/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/emacs/mule/flim/flim-1.14/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 

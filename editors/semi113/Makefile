@@ -10,9 +10,6 @@ PORTVERSION=	${SEMI_VER}
 PORTREVISION?=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/semi/semi-1.13-for-flim-1.13/ \
-		ftp://ftp.etl.go.jp/pub/mule/semi/semi-1.13-for-flim-1.13/ \
-		ftp://ftp.media.kyoto-u.ac.jp/pub/mule/semi/semi-1.13-for-flim-1.13/ \
-		ftp://ftp.win.or.jp/pub/word/mule/semi/semi-1.13-for-flim-1.13/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/emacs/mule/semi/semi-1.13-for-flim-1.13/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 

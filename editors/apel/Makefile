@@ -10,9 +10,6 @@ PORTVERSION=	${APEL_VER}
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/apel/ \
 		ftp://ftp.jpl.org/pub/elisp/apel/ \
-		ftp://ftp.etl.go.jp/pub/mule/apel/ \
-		ftp://ftp.media.kyoto-u.ac.jp/pub/mule/apel/ \
-		ftp://ftp.win.or.jp/pub/word/mule/apel/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/emacs/mule/apel/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
