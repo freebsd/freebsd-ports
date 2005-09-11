@@ -3723,6 +3723,7 @@ hybserv		ports/irc/hybserv
 hydra		ports/www/hydra
 hydrogen	ports/audio/hydrogen
 hylafax		ports/comms/hylafax
+hyperestraier	ports/textproc/hyperestraier
 hyperlatex	ports/print/hyperlatex
 hypermail	ports/www/hypermail
 hypersrc	ports/devel/hypersrc
