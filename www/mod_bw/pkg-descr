@@ -1,0 +1,6 @@
+Bandwidth and Connection control per Virtual Host or Directory.
+It can:
+ * Restrict the number of simultaneous connections per vhost/dir
+ * Limit the bandwidth for files on vhost/dir
+
+WWW: http://www.ivn.cl/apache/
