@@ -1,5 +1,5 @@
---- script/installswat.sh.orig	Fri Dec 17 03:59:34 2004
-+++ script/installswat.sh	Fri Dec 17 04:01:34 2004
+--- script/installswat.sh.orig	Thu Jul 28 19:44:16 2005
++++ script/installswat.sh	Wed Aug  3 02:33:04 2005
 @@ -8,8 +8,7 @@
  echo Installing SWAT in $SWATDIR
  echo Installing the Samba Web Administration Tool

@@ -42,7 +42,7 @@ fi
 if test -n ${samba_enable:-""} && checkyesno samba_enable; then
     nmbd_enable=${nmbd_enable:-"YES"}
     smbd_enable=${smbd_enable:-"YES"}
-%%WINBIND%%    # Check, that winbind is actally configured
+%%WINBIND%%    # Check that winbind is actually configured
 %%WINBIND%%    if [ "`egrep -i '(idmap.*uid|winbind.*uid)' ${samba_config} 2>/dev/null | egrep -v [\#\;]`" ]; then
 %%WINBIND%%	winbindd_enable="YES"
 %%WINBIND%%    fi

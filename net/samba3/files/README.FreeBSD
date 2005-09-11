@@ -12,7 +12,7 @@ are encouraged to use 'tdbsam' backend instead:
     passdb backend = tdbsam, smbpasswd
 
 You can use pdbedit to migrate accounts from 'smbpasswd' to 'tdbsam',
-see the Samba-HOWTO-Collection.
+see the Samba3-HOWTO-Collection.
 
 You still can create 'smbpasswd' file with the supplied 'make_smbpasswd'
 script:
