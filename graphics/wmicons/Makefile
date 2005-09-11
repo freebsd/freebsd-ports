@@ -11,11 +11,8 @@ CATEGORIES=	graphics windowmaker
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|kiri/wmicons|} \
 		${MASTER_SITE_WINDOWMAKER} \
 		${MASTER_SITE_PORTS_JP} \
-		http://nether.tky.hut.fi/iconstore/ \
-		http://www.itlb.te.noda.tus.ac.jp/~manome/wmaker/archive/ \
-		http://www.slip.net/~seto/images/ \
-		http://www.lab06.ee.u-tokai.ac.jp/~7jeem005/WindowMaker/Archives/
-MASTER_SITE_SUBDIR=	. contrib/icons beta/srcs
+		http://www.itlb.te.noda.tus.ac.jp/~manome/wmaker/archive/
+MASTER_SITE_SUBDIR=	. contrib/old/icons
 DISTFILES=	${EXTRACT_ONLY} isiconpack4.tgz
 EXTRACT_ONLY=	DWiconpack1.tar.gz DWiconpack2.tar.gz IconFest-1.2.tgz \
 		NeXT_XEmacs_tar.gz  wm_icons_png.tar.gz wm_icons_tif.tar.gz \
