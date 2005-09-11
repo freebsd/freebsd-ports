@@ -1,0 +1,25 @@
+@comment $FreeBSD$
+bin/winefish
+share/gnome/application-registry/winefish.applications
+share/gnome/applications/winefish.desktop
+share/gnome/mime-info/winefish.mime
+share/gnome/mime-info/winefish.keys
+share/locale/it/LC_MESSAGES/winefish.mo
+share/locale/vi/LC_MESSAGES/winefish.mo
+share/mime/packages/winefish.xml
+%%DATADIR%%/autotext.default
+%%DATADIR%%/custom_menu.default
+%%DATADIR%%/encodings.default
+%%DATADIR%%/filetypes.default
+%%DATADIR%%/funcref_bib.xml
+%%DATADIR%%/funcref_packages.xml
+%%DATADIR%%/funcref_symbols.xml
+%%DATADIR%%/highlighting.default
+%%DATADIR%%/icon_dir.png
+%%DATADIR%%/icon_image.png
+%%DATADIR%%/icon_tex.png
+%%DATADIR%%/icon_unknown.png
+%%DATADIR%%/icon_xml.png
+%%DATADIR%%/winefish_splash.png
+%%DATADIR%%/words.default
+@dirrm %%DATADIR%%
