@@ -7,21 +7,24 @@
 #
 
 PORTNAME=	ngrep
-PORTVERSION=	1.43
+PORTVERSION=	1.44
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Network grep
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-pcre \
-		--disable-pcap-restart \
-		--enable-dropprivs-onlyroot \
-		--mandir=${PREFIX}/man/
-ALL_TARGET=	ngrep
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
+ALL_TARGET=	ngrep
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man/ --disable-pcap-restart
+
+OPTIONS=	PCRE	"Use PCRE instead of GNU regex"	on \
+		PORTS_PCAP	"Use ports PCAP instead of system PCAP" off \
+		IPV6	"Enable IPv6 support" on
 
 MAN8=		ngrep.8
 PLIST_FILES=	bin/ngrep
@@ -31,11 +34,19 @@ PORTDOCS=	CHANGES.txt CREDITS.txt INSTALL.txt LICENSE.txt \
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_PCRE)
+CONFIGURE_ARGS+=	--enable-pcre
+.endif
+
 .if !defined(WITH_PORTS_PCAP)
-CONFIGURE_ARGS+=--with-pcap-includes=/usr/include
+CONFIGURE_ARGS+=	--with-pcap-includes=/usr/include
 .else
-CONFIGURE_ARGS+=--with-pcap-includes=${LOCALBASE}/include
-LIB_DEPENDS=   pcap.2:${PORTSDIR}/net/libpcap
+CONFIGURE_ARGS+=	--with-pcap-includes=${LOCALBASE}/include
+LIB_DEPENDS=		pcap.2:${PORTSDIR}/net/libpcap
+.endif
+
+.if !defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 post-install:
@@ -43,9 +54,9 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
 	@if [ -f ${WRKSRC}/${file} ]; then \
-	    ${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}; \
+		${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}; \
 	else \
-	    ${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}; \
+		${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}; \
 	fi
 .endfor
 .endif
