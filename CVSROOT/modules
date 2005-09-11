@@ -6209,6 +6209,7 @@ mod_bf		ports/www/mod_bf
 mod_blosxom	ports/www/mod_blosxom
 mod_blowchunks	ports/www/mod_blowchunks
 mod_bunzip2	ports/www/mod_bunzip2
+mod_bw		ports/www/mod_bw
 mod_cband	ports/www/mod_cband
 mod_curb	ports/www/mod_curb
 mod_cfg_ldap	ports/www/mod_cfg_ldap
