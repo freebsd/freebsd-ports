@@ -15,8 +15,7 @@ MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/%SUBDIR%/ \
 		ftp://ftp.cs.tu-berlin.de/pub/gnat/%SUBDIR%/ \
 		ftp://ftp.informatik.rwth-aachen.de/pub/mirror/cs.nyu.edu/pub/gnat/%SUBDIR%/ \
 		ftp://ftp.lip6.fr/pub/gnat/%SUBDIR%/ \
-		ftp://ftp.cnam.fr/pub/Ada/PAL/compiler/gnat/%SUBDIR%/ \
-		ftp://ftp.fss.bme.hu/pub/ada/gnat/%SUBDIR%/
+		ftp://ftp.cnam.fr/pub/Ada/PAL/compiler/gnat/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMESUFFIX=	-${DOCFORMAT}
 DISTNAME=	gnat-${PORTVERSION}-unx-docs
