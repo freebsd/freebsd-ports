@@ -29,6 +29,8 @@ LIB_DEPENDS+=	opencdk.8:${PORTSDIR}/security/opencdk
 LIB_DEPENDS+=	tasn1.2:${PORTSDIR}/security/libtasn1
 .endif
 
+CONFLICTS=	gnutls-devel-[0-9]*
+
 USE_GPG?=	yes
 SIG_SUFFIX=	.sig
 USE_ICONV=	yes
@@ -41,7 +43,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-included-lzo
+CONFIGURE_ARGS=	--with-included-lzo --disable-static
 
 MAN1=		certtool.1 gnutls-cli.1 gnutls-cli-debug.1 \
        		gnutls-serv.1 srptool.1
