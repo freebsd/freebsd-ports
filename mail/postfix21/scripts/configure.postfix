@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix21/scripts/Attic/configure.postfix,v 1.59 2005-02-18 08:51:18 pav Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix21/scripts/Attic/configure.postfix,v 1.60 2005-09-11 21:43:50 vsevolod Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -24,10 +24,10 @@ SASL		"Cyrus SASLv1 (Simple Authentication and Security Layer)" "$status_SASL" \
 SASL2		"Cyrus SASLv2 (Simple Authentication and Security Layer)" "$status_SASL2" \
 SASLKRB		"If your SASL requires Kerberos select this option" "$status_SASLKRB" \
 SASLKRB5	"If your SASL requires Kerberos5 select this option" "$status_SASLKRB5" \
-SPF		"SPF support" "$status_SPF" \
 TLS		"SSL and TLS" "$status_TLS" \
 IPv6		"IPv6 support" "$status_IPv6" \
 IPv6TLS		"IPv6 support with SSL and TLS" "$status_IPv6TLS" \
+SPF		"SPF support" "$status_SPF" \
 DB3		"Berkeley DB3 (required if SASL also built with DB3)" "$status_DB3" \
 DB40		"Berkeley DB4.0 (required if SASL also built with DB4.0)" "$status_DB40" \
 DB41		"Berkeley DB4.1 (required if SASL also built with DB4.1)" "$status_DB41" \
@@ -74,20 +74,20 @@ while [ "$1" ]; do
 			echo "NOPCRE_SUFFIX=	+nopcre"
 			SUB_NOPCRE=""
 			;;
-                SASL)
-                        echo "LIB_DEPENDS+=     sasl.8:\${PORTSDIR}/security/cyrus-sasl"
-                        echo "POSTFIX_CCARGS+=  -DUSE_SASL_AUTH -I\${LOCALBASE}/include -I\${LOCALBASE}/include/sasl1"
-                        echo "POSTFIX_AUXLIBS+= -L\${LOCALBASE}/lib -lsasl -lpam -lcrypt"
-                        echo "SASL_SUFFIX=      +sasl"
-                        if [ -f ${PREFIX}/lib/libsasl.a ]; then
-                                if nm ${PREFIX}/lib/libsasl.a | grep -wq "mysql_verify_password"; then
+		SASL)
+			echo "LIB_DEPENDS+=	sasl.8:\${PORTSDIR}/security/cyrus-sasl"
+			echo "POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -I\${LOCALBASE}/include -I\${LOCALBASE}/include/sasl1"
+			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -lsasl -lpam -lcrypt"
+			echo "SASL_SUFFIX=	+sasl"
+			if [ -f ${PREFIX}/lib/libsasl.a ]; then
+				if nm ${PREFIX}/lib/libsasl.a | grep -wq "mysql_verify_password"; then
 					echo "USE_MYSQL=YES"
-                                        echo "POSTFIX_CCARGS+=  -DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
-                                        echo "POSTFIX_AUXLIBS+= \${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
-                                fi
-                        fi
-                        SUB_SASL=""
-                        ;;
+					echo "POSTFIX_CCARGS+=	-DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
+					echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
+				fi
+			fi
+			SUB_SASL=""
+			;;
 		SASL2)
 			echo "LIB_DEPENDS+=	sasl2.2:\${PORTSDIR}/security/cyrus-sasl2"
 			echo "POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -I\${LOCALBASE}/include -I\${LOCALBASE}/include/sasl"
@@ -96,17 +96,17 @@ while [ "$1" ]; do
 			if [ -f ${PREFIX}/lib/libsasl2.a ]; then
 				if nm ${PREFIX}/lib/libsasl2.a | grep -wq "mysql_verify_password"; then
 					echo "USE_MYSQL=YES"
-					echo "POSTFIX_CCARGS+=  -DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
-					echo "POSTFIX_AUXLIBS+= \${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
+					echo "POSTFIX_CCARGS+=	-DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
+					echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
 				fi
 			fi
 			SUB_SASL=""
 			;;
 		SASLKRB)
-                        echo "POSTFIX_AUXLIBS+= -lkrb -lcrypto -lcom_err"
+			echo "POSTFIX_AUXLIBS+=	-lkrb -lcrypto -lcom_err"
 			;;
 		SASLKRB5)
-                        echo "POSTFIX_AUXLIBS+= -lkrb5 -lcrypto -lcom_err -lasn1 -lroken"
+			echo "POSTFIX_AUXLIBS+=	-lkrb5 -lcrypto -lcom_err -lasn1 -lroken"
 			;;
 		TLS)
 			echo "MAN8+=		tlsmgr.8"
@@ -175,7 +175,7 @@ while [ "$1" ]; do
 			;;
 		PgSQL)
 			echo "USE_PGSQL=YES"
-			echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include  -I\${LOCALBASE}/pgsql/include"
+			echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include -I\${LOCALBASE}/pgsql/include"
 			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
 			echo "PGSQL_SUFFIX=	+pgsql"
 			;;
@@ -186,32 +186,19 @@ while [ "$1" ]; do
 			echo "OPENLDAP_SUFFIX=	+openldap"
 			;;
 		Test)
-			echo "BIN1=		smtp-sink smtp-source qmqp-source"
-#			echo "MAN1+=		smtp-sink.1 smtp-source.1 qmqp-sink.1 qmqp-source.1"
+			echo "BINTEST=		smtp-sink smtp-source qmqp-source"
 			SUB_TEST=""
-			;;
-		SPF)
-			# see http://www.ipnet6.org/postfix/spf/
-			echo "LIB_DEPENDS+=	spf2.1:\${PORTSDIR}/mail/libspf2"
-			echo "PATCH_SITES+=	http://www.ipnet6.org/postfix/download/"
-			echo "PATCHFILES+=	postfix-libspf2-2.1.5-5.patch"
-			echo "PATCH_DIST_STRIP=	-p1"
-			echo "POSTFIX_CCARGS+=	-I\${LOCALBASE}/include"
-			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -lspf2"
-			echo "SPF_SUFFIX=	+spf"
-##			echo "README+=	SPF_README"
-			echo ""
-			SUB_SPF=""
 			;;
 		IPv6)
 			if [ X$SUB_TLS = "X" ]; then
-				/usr/bin/dialog --msgbox "Select exactly one of the IPv6 and TLS patches" 5 60 > /dev/stderr
+				/usr/bin/dialog --msgbox "Select one of the IPv6 and TLS patches or select IPv6TLS patch" 5 60 > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 				exit 1
 			fi
 			echo "PATCH_SITES+=	ftp://ftp.stack.nl/pub/postfix/tls+ipv6/1.25/"
 			echo "PATCHFILES+=	ipv6-1.25-pf-2.1.5.patch.gz"
 			echo "PATCH_DIST_STRIP=	-p1"
+			echo "EXTRA_PATCHES+=	\${PATCHDIR}/extra_ipv6.patch"
 			echo "IPv6_SUFFIX=	+ipv6"
 			echo ""
 			IPv6SELECTED=YES
@@ -219,7 +206,7 @@ while [ "$1" ]; do
 			;;
 		IPv6TLS)
 			if [ X$SUB_TLS = "X" -o X$IPv6SELECTED != X ]; then
-				/usr/bin/dialog --msgbox "Select exactly one of the IPv6 and TLS patches" 5 60 > /dev/stderr
+				/usr/bin/dialog --msgbox "Select one of the IPv6 and TLS patches or select IPv6TLS patch" 5 60 > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 				exit 1
 			fi
@@ -230,13 +217,31 @@ while [ "$1" ]; do
 			echo "PATCH_SITES+=	ftp://ftp.stack.nl/pub/postfix/tls+ipv6/1.25/"
 			echo "PATCHFILES+=	tls+ipv6-1.25-pf-2.1.5.patch.gz"
 			echo "PATCH_DIST_STRIP=	-p1"
+			echo "EXTRA_PATCHES+=	\${PATCHDIR}/extra_ipv6.patch"
 			echo "TLS_SUFFIX=	+tls+ipv6"
+			IPv6TLSSELECTED=YES
 			SUB_TLS=""
 			SUB_IPV6=""
 			;;
+		SPF)
+			if [ X$SUB_TLS = "X" -o X$IPv6TLSSELECTED != X ]; then
+				/usr/bin/dialog --msgbox "SPF patch don't apply cleany with TLS or IPv6TLS" 5 60 > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+				exit 1
+			fi
+			# see http://www.ipnet6.org/postfix/spf/
+			echo "LIB_DEPENDS+=	spf2.1:\${PORTSDIR}/mail/libspf2-10"
+			echo "PATCH_SITES+=	http://www.ipnet6.org/postfix/download/"
+			echo "PATCHFILES+=	postfix-libspf2-2.1.5-5.patch"
+			echo "PATCH_DIST_STRIP=	-p1"
+			echo "POSTFIX_CCARGS+=	-I\${LOCALBASE}/include"
+			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -lspf2"
+			echo "SPF_SUFFIX=	+spf"
+			SUB_SPF=""
+			;;
 		VDA)
 			echo "PATCH_SITES+=	http://web.onda.com.br/nadal/postfix/VDA/"
-			echo "PATCHFILES+=	postfix-2.1.5-trash.patch.gz"
+			echo "PATCHFILES+=	postfix-2.1.6-vda.patch.gz"
 			echo "PATCH_DIST_STRIP=	-p1"
 			;;
 		*)
@@ -255,6 +260,6 @@ echo "PLIST_SUB+=	SUB_SPF=\"${SUB_SPF}\""
 
 # for some reason, if we alter the pkg name this way, the first build (where
 # we ask the configure questions) doesn't pick up the extensions, but
-# any subsequent build will.  so "make; make install" will build twice.
+# any subsequent build will. so "make; make install" will build twice.
 # don't do this for now.
 #echo "PKGNAMESUFFIX=	\${NOPCRE_SUFFIX}\${SASL_SUFFIX}\${DB_SUFFIX}\${MYSQL_SUFFIX}\${PGSQL_SUFFIX}\${OPENLDAP_SUFFIX}\${TLS_SUFFIX}\${IPv6_SUFFIX}\${SPF_SUFFIX}"
