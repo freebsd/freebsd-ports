@@ -1,0 +1,10 @@
+Moth is a simple to use triangle mesh editor based on standardized OpenGL and
+XML (file format) technologies. Its major field of application is the creation
+of 3D models for interactive applications like games, visualizations,
+simulations, virtual worlds and similar uses. Another field of application is
+3D sketching.
+
+WWW: http://moth.titanothere.com/
+
+- Igor Pokrovsky
+ip@doom.homeunix.org
