@@ -1467,10 +1467,8 @@ MASTER_SITE_VIM+= \
 MASTER_SITE_WINDOWMAKER+= \
 	ftp://ftp.windowmaker.org/pub/%SUBDIR%/ \
 	ftp://ftp.minet.net/pub/windowmaker/%SUBDIR%/ \
-	ftp://ftp.zcu.cz/pub/X11/windowmaker/%SUBDIR%/ \
 	ftp://ftp.informatik.uni-hamburg.de/pub/soft/X/contrib/window_managers/windowmaker/%SUBDIR%/ \
 	ftp://ftp.uvsq.fr/pub8/X11/window-managers/windowmaker/%SUBDIR%/ \
-	ftp://ftp.maisel.int-evry.fr/pub/windowmaker/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/X/WindowMaker/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/X11/windowmanagers/windowmaker/%SUBDIR%/
 .endif
