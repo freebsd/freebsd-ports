@@ -490,7 +490,6 @@ MASTER_SITE_GCC+=	\
 	ftp://ftp.iij.ad.jp/pub/gcc/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/lang/gcc/%SUBDIR%/ \
 	ftp://ring.aist.go.jp/pub/GNU/gcc/%SUBDIR%/ \
-	ftp://ring.etl.go.jp/pub/lang/egcs/%SUBDIR%/ \
 	ftp://ring.crl.go.jp/pub/GNU/gcc/%SUBDIR%/ \
 	ftp://core.ring.gr.jp/pub/GNU/gcc/%SUBDIR%/ \
 	ftp://ftp.ring.gr.jp/pub/GNU/gcc/%SUBDIR%/ \
