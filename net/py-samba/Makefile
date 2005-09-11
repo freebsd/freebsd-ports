@@ -35,6 +35,9 @@ CONFIGURE_ARGS+=	--without-winbind
 CONFIGURE_ARGS+=	--without-ldapsam
 CONFIGURE_ARGS+=	--without-pam_smbpass
 
+CONFIGURE_ARGS+=--without-krb5
+CONFIGURE_ARGS+=--without-ads
+
 do-build:
 	cd ${WRKSRC} && ${MAKE} proto
 	cd ${WRKSRC} && ${MAKE} python_ext
@@ -42,6 +45,6 @@ do-build:
 post-install:
 	-@${MKDIR} ${EXAMPLESDIR}
 	@${CP} -Rp ${WRKSRC}/python/examples/* ${EXAMPLESDIR}
-	@${CP} -Rp ${WRKDIR}/${DISTNAME}/examples/scripts/python/* ${EXAMPLESDIR}
+	@${CP} -Rp ${WRKDIR}/${DISTNAME}/examples/scripts/shares/python/* ${EXAMPLESDIR}
 
 .include "${MASTERDIR}/Makefile"

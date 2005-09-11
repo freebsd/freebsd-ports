@@ -14,6 +14,7 @@
 %%PYTHON_SITELIBDIR%%/samba/winbind.so
 %%PYTHON_SITELIBDIR%%/samba/winreg.so
 %%EXAMPLESDIR%%/SambaConfig.py
+%%EXAMPLESDIR%%/SambaParm.py
 %%EXAMPLESDIR%%/generate_parm_table.py
 %%EXAMPLESDIR%%/modify_samba_config.py
 %%EXAMPLESDIR%%/smbparm.py
