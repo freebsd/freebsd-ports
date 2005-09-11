@@ -390,6 +390,7 @@ bin/acroread
 %%ACRODIR%%/Browser/intellinux/nppdf.so
 %%ACRODIR%%/Browser/install_browser_plugin
 %%ACRODIR%%/Browser/Browser_Plugin_HowTo.txt
+%%PLUGINDIR%%/nppdf.so
 @dirrm %%ACRODIR%%/bin
 @dirrm %%ACRODIR%%/Resource/Support
 @dirrm %%ACRODIR%%/Resource/Linguistics/Providers/Proximity
