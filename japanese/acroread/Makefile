@@ -7,6 +7,7 @@
 
 PORTNAME=	acroread
 PORTVERSION=	7.0.1
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/reader/unix/7x/7.0/jpn/
 DISTNAME=	AdbeRdr701_linux_jpn
@@ -28,12 +29,14 @@ ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
-PLIST_SUB=	ACRODIR=${ACRODIR}
+PLIST_SUB=	ACRODIR=${ACRODIR} \
+		PLUGINDIR=${PLUGINDIR}
 SUB_FILES=	acroread
 SUB_LIST=	INSTALLDIR=${INSTALLDIR}
 WRKSRC=		${WRKDIR}/AdobeReader
 
 ACRODIR=	Acrobat7
+PLUGINDIR=	lib/browser_plugins
 INSTALLDIR=	${PREFIX}/${ACRODIR}
 INSTALLEXEC=	${SETENV} UNAME_s=Linux \
 			UNAME_r="Linux Compatibility on FreeBSD" \
@@ -48,5 +51,10 @@ do-install:
 	${CHMOD} 0 ${INSTALLDIR}/Reader/intellinux/plug_ins/PPKLite.api
 	${INSTALL_SCRIPT} ${WRKDIR}/acroread ${PREFIX}/bin/acroread
 	${BRANDELF} -t Linux ${INSTALLDIR}/Reader/intellinux/bin/acroread
+
+post-install:
+	${LN} -s -f \
+		${PREFIX}/${ACRODIR}/Browser/intellinux/nppdf.so \
+		${PREFIX}/${PLUGINDIR}/nppdf.so
 
 .include <bsd.port.mk>
