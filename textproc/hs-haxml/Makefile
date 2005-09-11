@@ -29,13 +29,9 @@ WITH_NHC98=	yes
 .if exists(${LOCALBASE}/bin/ghc)
 WITH_GHC=	yes
 .endif
-.if exists(${LOCALBASE}/bin/hugs)
-WITH_HUGS=	yes
-.endif
 
 .if defined(PACKAGE_BUILDING)
 WITH_GHC=	yes
-#WITH_HUGS=	yes
 .endif
 
 .if defined(WITH_NHC98)
@@ -45,10 +41,6 @@ RUN_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
 .if defined(WITH_GHC)
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
-.endif
-.if defined(WITH_HUGS)
-BUILD_DEPENDS+=	hugs:${PORTSDIR}/lang/hugs
-RUN_DEPENDS+=	hugs:${PORTSDIR}/lang/hugs
 .endif
 
 .if defined(WITH_NHC98)
@@ -61,11 +53,6 @@ GHC_VERSION=	`${LOCALBASE}/bin/ghc --numeric-version`
 PLIST_SUB+=	GHC="" GHC_VERSION="${GHC_VERSION}"
 .else
 PLIST_SUB+=	GHC="@comment "
-.endif
-.if defined(WITH_HUGS)
-PLIST_SUB+=	HUGS=""
-.else
-PLIST_SUB+=	HUGS="@comment "
 .endif
 
 pre-everything::
@@ -80,18 +67,16 @@ pre-everything::
 .else
 	@${ECHO_CMD} " Define WITH_GHC   to install HaXml for ghc."
 .endif
-.if defined(WITH_HUGS)
-	@${ECHO_CMD} " HaXml will be installed for hugs"
-.else
-	@${ECHO_CMD} " Define WITH_HUGS  to install HaXml for hugs"
-.endif
-.if !defined(WITH_GHC) && !defined(WITH_NHC98) && !defined(WITH_HUGS)
+.if !defined(WITH_GHC) && !defined(WITH_NHC98)
 	@${FALSE}
 .endif
 	@${ECHO_CMD} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/bin/false,/usr/bin/false,' ${WRKSRC}/configure
+
+post-configure:
+	@${REINPLACE_CMD} -e '/hugs/d' ${WRKSRC}/obj/compilers
 
 post-install:
 .if defined(WITH_GHC)

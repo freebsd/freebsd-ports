@@ -48,29 +48,6 @@ bin/Xtract
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/HSHaXml.o
 %%GHC%%lib/ghc-%%GHC_VERSION%%/libHSHaXml.a
-%%HUGS%%lib/hugs/libraries/Text/ParserCombinators/HuttonMeijerWallace.hs
-%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Combinators.hs
-%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/DtdToHaskell/Convert.hs
-%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/DtdToHaskell/Instance.hs
-%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/DtdToHaskell/TypeDef.hs
-%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Escape.hs
-%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Haskell2Xml.hs
-%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Html/Generate.hs
-%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Html/Parse.hs
-%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Html/Pretty.hs
-%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Lex.hs
-%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/OneOfN.hs
-%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Parse.hs
-%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Pretty.hs
-%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Types.hs
-%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Validate.hs
-%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Verbatim.hs
-%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Wrappers.hs
-%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Xml2Haskell.hs
-%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Xtract/Combinators.hs
-%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Xtract/Lex.hs
-%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Xtract/Parse.hs
-%%HUGS%%lib/hugs/libraries/Text/XML/HaXml.hs
 %%PORTDOCS%%%%DOCSDIR%%/Combinators.html
 %%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.ParserCombinators.HuttonMeijerWallace.html
 %%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.PrettyPrint.HughesPJ.html
@@ -176,11 +153,6 @@ bin/Xtract
 %%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML
 %%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text
 %%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml
-%%HUGS%%@dirrm lib/hugs/libraries/Text/XML/HaXml/DtdToHaskell
-%%HUGS%%@dirrm lib/hugs/libraries/Text/XML/HaXml/Html
-%%HUGS%%@dirrm lib/hugs/libraries/Text/XML/HaXml/Xtract
-%%HUGS%%@dirrm lib/hugs/libraries/Text/XML/HaXml
-%%HUGS%%@dirrm lib/hugs/libraries/Text/XML
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/HaXml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%GHC%%@exec %D/bin/ghc-pkg register %D/lib/ghc-%%GHC_VERSION%%/imports/HaXml/HaXml.pkgconf
