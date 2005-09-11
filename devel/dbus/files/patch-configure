@@ -1,5 +1,5 @@
---- configure.orig	Fri Jul  1 00:49:18 2005
-+++ configure	Fri Jul  1 00:52:48 2005
+--- configure.orig	Sun Sep 11 15:30:46 2005
++++ configure	Sun Sep 11 15:30:46 2005
 @@ -1059,6 +1059,7 @@
                            optimize for fast installation [default=yes]
    --disable-libtool-lock  avoid locking (might break parallel builds)
@@ -8,7 +8,7 @@
  
  Optional Packages:
    --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
-@@ -4471,7 +4472,7 @@
+@@ -4485,7 +4486,7 @@
  
    case " $CFLAGS " in
    *[\ \	]-Wfloat-equal[\ \	]*) ;;
@@ -17,10 +17,14 @@
    esac
  
    case " $CFLAGS " in
-@@ -28059,6 +28060,32 @@
+@@ -28088,6 +28089,32 @@
  
- fi
- 
+ cat >>confdefs.h <<\_ACEOF
+ #define DBUS_BUS_ENABLE_DNOTIFY_ON_LINUX 1
++_ACEOF
++
++fi
++
 +# kqueue checks
 +case "${target_os}" in
 +    freebsd*)
@@ -43,28 +47,6 @@
 +
 +cat >>confdefs.h <<\_ACEOF
 +#define DBUS_BUS_ENABLE_KQUEUE_ON_FREEBSD 1
-+_ACEOF
-+
-+fi
-+
+ _ACEOF
  
- #### Set up final flags
- DBUS_CLIENT_CFLAGS=
-@@ -28621,14 +28648,14 @@
- echo "${ECHO_T}not found" >&6
  fi
- 
--if (! kde-config >& /dev/null); then
-+if (! kde-config > /dev/null 2>&1); then
-     have_qt=no
- else
-     kdelibs=`kde-config --install lib --expandvars 2>/dev/null`
--    if test -z $kdelibs -o ! -f $kdelibs/libkdecore.la; then
-+    if test -z $kdelibs -o ! -f $kdelibs/libkdecore.so; then
-         have_qt=no
-     else
--        DBUS_QT_LIBS="$kdelibs/libkdecore.la"
-+        DBUS_QT_LIBS="$kdelibs/libkdecore.so"
-     fi
- fi
- 
