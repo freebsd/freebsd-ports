@@ -7,7 +7,7 @@
 
 # To pre-select options in batch mode, run make like this:
 #
-#  make -DBATCH POSTFIX_OPTIONS="DB3 TLS"
+#  make -DBATCH POSTFIX_OPTIONS="DB43 TLS"
 #
 # the options are the same names as in the scripts/configure.postfix file.
 # POSTFIX_OPTIONS can be set in /etc/make.conf also.
@@ -16,6 +16,7 @@
 
 PORTNAME=	postfix
 PORTVERSION=	2.2.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -85,13 +86,9 @@ POSTFIX_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
 .endif
 
-post-patch:
-	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles ${MAKEFILEFLAGS} \
-	CCARGS="${POSTFIX_CCARGS}" AUXLIBS="${POSTFIX_AUXLIBS}" && \
-	${ECHO} "all: default" >> Makefile)
-
 pre-patch:
-	@${ECHO} "<body>See <A HREF="header_checks.5.html">header_checks.5.html</A></BODY>" > ${WRKSRC}/html/body_checks.5.html
+	@${ECHO} "<HTML><BODY>See <A HREF="header_checks.5.html">header_checks.5.html</A></BODY></HTML>" \
+		> ${WRKSRC}/html/body_checks.5.html
 	@for f in `${FIND} -P ${WRKSRC}/man -type f`; do \
 		${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" $${f}; \
 	done
@@ -101,6 +98,16 @@ pre-patch:
 	@for f in `${FIND} -P ${WRKSRC}/conf -type f`; do \
 		${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" $${f}; \
 	done
+
+post-patch:
+# All files modified with ${FILESDIR}/patch-* to use !!PREFIX!! need REINPLACE. Put below.
+	@${REINPLACE_CMD} -e "s,!!PREFIX!!,${PREFIX},g" \
+		${WRKSRC}/conf/main.cf ${WRKSRC}/src/global/mail_params.h
+
+do-configure:
+	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles ${MAKEFILEFLAGS} \
+	CCARGS="${POSTFIX_CCARGS}" AUXLIBS="${POSTFIX_AUXLIBS}" && \
+	${ECHO} "all: default" >> Makefile)
 
 pre-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -126,33 +133,28 @@ do-install:
 	sample_directory=${PREFIX}/etc/postfix \
 	readme_directory=${READMEDIR}
 
+	@${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/rmail/rmail ${PREFIX}/bin/rmail
+
+.	for file in ${BINTEST}
+		@${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${PREFIX}/sbin
+.	endfor
+
 	@${MKDIR} ${PREFIX}/etc/postfix/dist
-.for f in ${CONF1}
-	${INSTALL_DATA} ${WRKSRC}/conf/${f} ${PREFIX}/etc/postfix/dist
-.endfor
+.	for f in ${CONF1}
+		${INSTALL_DATA} ${WRKSRC}/conf/${f} ${PREFIX}/etc/postfix/dist
+.	endfor
 
-	@${INSTALL_SCRIPT} \
-		${WRKSRC}/auxiliary/rmail/rmail \
-		${PREFIX}/bin/rmail
-
-# optional TEST binaries
-.for file in ${BIN1}
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${PREFIX}/sbin
-.endfor
-
-.if !defined(NOPORTDOCS)
-	@${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${DOCSDIR}
-	@cd ${WRKSRC}/html && ${INSTALL_DATA} *.html *.jpg *.png ${DOCSDIR} && \
-		${ECHO_MSG} "Installed HTML documentation in ${DOCSDIR}"
-.endif
+.	if !defined(NOPORTDOCS)
+		@${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${DOCSDIR}
+		@cd ${WRKSRC}/html && ${INSTALL_DATA} *.html *.jpg *.png ${DOCSDIR} && \
+			${ECHO_MSG} "Installed HTML documentation in ${DOCSDIR}"
+.	endif
 
 post-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-# need to fixup ${PREFIX}/etc/postfix/postfix-files to indicate compressed
-# man pages, since the ports software compresses them after this step, and
-# if we run etc/postfix/post-install again during package installation,
-# it will complain about missing files.
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/fix-files-list
+# Fix compressed man pages
+	@${REINPLACE_CMD} -E -e "s|(man[158]/.*.[158]):|\1.gz:|g" ${PREFIX}/etc/postfix/postfix-files
+	@${RM} -f ${PREFIX}/etc/postfix/postfix-files.bak
 	@${CAT} ${PKGMESSAGE}
 
 post-clean:
