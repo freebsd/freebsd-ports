@@ -3,51 +3,29 @@ bin/DtdToHaskell
 bin/MkOneOf
 bin/Validate
 bin/Xtract
-%%NHC98%%include/nhc98/HaXml/Text/ParserCombinators/HuttonMeijerWallace.hi
-%%NHC98%%include/nhc98/HaXml/Text/PrettyPrint/HughesPJ.hi
-%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Combinators.hi
-%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Escape.hi
-%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Haskell2Xml.hi
-%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Html/Generate.hi
-%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Html/Parse.hi
-%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Html/Pretty.hi
-%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Lex.hi
-%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/OneOfN.hi
-%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Parse.hi
-%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Pretty.hi
-%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Types.hi
-%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Validate.hi
-%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Verbatim.hi
-%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Wrappers.hi
-%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Xml2Haskell.hi
-%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml.hi
-%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Xtract/Combinators.hi
-%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Xtract/Lex.hi
-%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Xtract/Parse.hi
-%%NHC98%%lib/nhc98/ix86-FreeBSD/libHSHaXml.a
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/HaXml.pkgconf
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/ParserCombinators/HuttonMeijerWallace.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Combinators.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Escape.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Haskell2Xml.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Html/Generate.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Html/Parse.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Html/Pretty.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Lex.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/OneOfN.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Parse.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Pretty.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Types.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Validate.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Verbatim.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Wrappers.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Xml2Haskell.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Xtract/Combinators.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Xtract/Lex.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Xtract/Parse.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml.hi
-%%GHC%%lib/ghc-%%GHC_VERSION%%/HSHaXml.o
-%%GHC%%lib/ghc-%%GHC_VERSION%%/libHSHaXml.a
+lib/ghc-%%GHC_VERSION%%/imports/HaXml/HaXml.pkgconf
+lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/ParserCombinators/HuttonMeijerWallace.hi
+lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Combinators.hi
+lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Escape.hi
+lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Haskell2Xml.hi
+lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Html/Generate.hi
+lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Html/Parse.hi
+lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Html/Pretty.hi
+lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Lex.hi
+lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/OneOfN.hi
+lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Parse.hi
+lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Pretty.hi
+lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Types.hi
+lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Validate.hi
+lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Verbatim.hi
+lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Wrappers.hi
+lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Xml2Haskell.hi
+lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Xtract/Combinators.hi
+lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Xtract/Lex.hi
+lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Xtract/Parse.hi
+lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml.hi
+lib/ghc-%%GHC_VERSION%%/HSHaXml.o
+lib/ghc-%%GHC_VERSION%%/libHSHaXml.a
 %%PORTDOCS%%%%DOCSDIR%%/Combinators.html
 %%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.ParserCombinators.HuttonMeijerWallace.html
 %%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.PrettyPrint.HughesPJ.html
@@ -138,24 +116,16 @@ bin/Xtract
 %%PORTDOCS%%%%DOCSDIR%%/icfp99.html
 %%PORTDOCS%%%%DOCSDIR%%/icfp99.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%NHC98%%@dirrm include/nhc98/HaXml/Text/ParserCombinators
-%%NHC98%%@dirrm include/nhc98/HaXml/Text/PrettyPrint
-%%NHC98%%@dirrm include/nhc98/HaXml/Text/XML/HaXml/Html
-%%NHC98%%@dirrm include/nhc98/HaXml/Text/XML/HaXml/Xtract
-%%NHC98%%@dirrm include/nhc98/HaXml/Text/XML/HaXml
-%%NHC98%%@dirrm include/nhc98/HaXml/Text/XML
-%%NHC98%%@dirrm include/nhc98/HaXml/Text
-%%NHC98%%@dirrm include/nhc98/HaXml
-%%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/ParserCombinators
-%%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Html
-%%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Xtract
-%%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml
-%%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML
-%%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text
-%%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/ParserCombinators
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Html
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Xtract
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/HaXml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%GHC%%@exec %D/bin/ghc-pkg register %D/lib/ghc-%%GHC_VERSION%%/imports/HaXml/HaXml.pkgconf
-%%GHC%%@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-%%GHC%%@unexec %D/bin/ghc-pkg unregister HaXml
-%%GHC%%@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@exec %D/bin/ghc-pkg register %D/lib/ghc-%%GHC_VERSION%%/imports/HaXml/HaXml.pkgconf
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister HaXml
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

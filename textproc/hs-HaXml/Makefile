@@ -15,79 +15,33 @@ DISTNAME=	HaXml-${PORTVERSION}
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A collection of utilities for using Haskell and XML together
 
+BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
+RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
+
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX}/bin
 
-.include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/bin/nhc98)
-WITH_NHC98=	yes
-.endif
-.if exists(${LOCALBASE}/bin/ghc)
-WITH_GHC=	yes
-.endif
-
-.if defined(PACKAGE_BUILDING)
-WITH_GHC=	yes
-.endif
-
-.if defined(WITH_NHC98)
-BUILD_DEPENDS+=	nhc98:${PORTSDIR}/lang/nhc98
-RUN_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
-.endif
-.if defined(WITH_GHC)
-BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
-RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
-.endif
-
-.if defined(WITH_NHC98)
-PLIST_SUB+=	NHC98=""
-.else
-PLIST_SUB+=	NHC98="@comment "
-.endif
-.if defined(WITH_GHC)
 GHC_VERSION=	`${LOCALBASE}/bin/ghc --numeric-version`
-PLIST_SUB+=	GHC="" GHC_VERSION="${GHC_VERSION}"
-.else
-PLIST_SUB+=	GHC="@comment "
-.endif
-
-pre-everything::
-	@${ECHO_CMD} ""
-.if defined(WITH_NHC98)
-	@${ECHO_CMD} " HaXml will be installed for nhc98."
-.else
-	@${ECHO_CMD} " Define WITH_NHC98 to install HaXml for nhc98."
-.endif
-.if defined(WITH_GHC)
-	@${ECHO_CMD} " HaXml will be installed for ghc."
-.else
-	@${ECHO_CMD} " Define WITH_GHC   to install HaXml for ghc."
-.endif
-.if !defined(WITH_GHC) && !defined(WITH_NHC98)
-	@${FALSE}
-.endif
-	@${ECHO_CMD} ""
+PLIST_SUB+=	GHC_VERSION="${GHC_VERSION}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/bin/false,/usr/bin/false,' ${WRKSRC}/configure
 
 post-configure:
 	@${REINPLACE_CMD} -e '/hugs/d' ${WRKSRC}/obj/compilers
+	@${REINPLACE_CMD} -e '/nhc98/d' ${WRKSRC}/obj/compilers
 
 post-install:
-.if defined(WITH_GHC)
 	@${INSTALL_DATA} ${WRKSRC}/obj/ghc/HaXml.pkgconf \
 		${PREFIX}/lib/ghc-${GHC_VERSION}/imports/HaXml/
 	@${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
-.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC} && ${RM} -rf docs/HaXml/CVS)
 	@(cd ${WRKSRC} && ${CP} -R docs/* ${DOCSDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
