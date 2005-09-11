@@ -985,6 +985,7 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/cursors-bw/move.png
 %%DATADIR%%/images/cursors-bw/normal.png
 %%DATADIR%%/images/cursors-bw/select.png
+%%DATADIR%%/images/cursors-bw/wait-16x16.png
 %%DATADIR%%/images/cursors-bw/wait.png
 %%DATADIR%%/images/cursors/attack.png
 %%DATADIR%%/images/cursors/move.png
@@ -1514,15 +1515,8 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/great-troll-attack.png
 %%DATADIR%%/images/great-troll-defend.png
 %%DATADIR%%/images/great-troll.png
-%%DATADIR%%/images/gryphon-attack1.png
-%%DATADIR%%/images/gryphon-attack2.png
 %%DATADIR%%/images/gryphon-defend.png
-%%DATADIR%%/images/gryphon-master-attack1.png
-%%DATADIR%%/images/gryphon-master-attack2.png
-%%DATADIR%%/images/gryphon-master-defend.png
 %%DATADIR%%/images/gryphon-master.png
-%%DATADIR%%/images/gryphon-rider-attack.png
-%%DATADIR%%/images/gryphon-rider-defend.png
 %%DATADIR%%/images/gryphon-rider.png
 %%DATADIR%%/images/gryphon-sleeping.png
 %%DATADIR%%/images/gryphon.png
@@ -4074,6 +4068,8 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 @unexec rmdir %D/share/locale/el_GR 2> /dev/null || true
 @unexec rmdir %D/man/sv/man6 2> /dev/null || true
 @unexec rmdir %D/man/sv 2> /dev/null || true
+@unexec rmdir %D/man/hu/man6 2> /dev/null || true
+@unexec rmdir %D/man/hu 2> /dev/null || true
 @unexec rmdir %D/man/de/man6 2> /dev/null || true
 @unexec rmdir %D/man/de 2> /dev/null || true
 %%GNOME:%%share/gnome/applications/wesnoth.desktop
