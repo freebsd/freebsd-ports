@@ -2,10 +2,26 @@ include/libsmbclient.h
 lib/libsmbclient.a
 lib/libsmbclient.so
 lib/libsmbclient.so.0
+%%EXAMPLESDIR%%/get_auth_data_fn.h
+%%EXAMPLESDIR%%/smbwrapper/Makefile
+%%EXAMPLESDIR%%/smbwrapper/README
+%%EXAMPLESDIR%%/smbwrapper/opendir_smbsh.c
+%%EXAMPLESDIR%%/smbwrapper/select.c
+%%EXAMPLESDIR%%/smbwrapper/smbsh.c
+%%EXAMPLESDIR%%/smbwrapper/smbw.c
+%%EXAMPLESDIR%%/smbwrapper/smbw.h
+%%EXAMPLESDIR%%/smbwrapper/smbw_dir.c
+%%EXAMPLESDIR%%/smbwrapper/smbw_stat.c
+%%EXAMPLESDIR%%/smbwrapper/wrapper.c
+%%EXAMPLESDIR%%/smbwrapper/wrapper.h
 %%EXAMPLESDIR%%/Makefile
 %%EXAMPLESDIR%%/README
 %%EXAMPLESDIR%%/testacl.c
 %%EXAMPLESDIR%%/testbrowse.c
+%%EXAMPLESDIR%%/testchmod.c
 %%EXAMPLESDIR%%/testsmbc.c
+%%EXAMPLESDIR%%/teststat.c
+%%EXAMPLESDIR%%/testutime.c
 %%EXAMPLESDIR%%/tree.c
+@dirrm %%EXAMPLESDIR%%/smbwrapper
 @dirrm %%EXAMPLESDIR%%
