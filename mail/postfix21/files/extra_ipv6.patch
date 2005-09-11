@@ -1,0 +1,132 @@
+--- src/util/inet_addr_list.c.old	Thu Aug 18 11:09:16 2005
++++ src/util/inet_addr_list.c	Thu Aug 18 11:09:53 2005
+@@ -133,7 +133,11 @@
+ #ifdef INET6
+     char   ha[NI_MAXHOST], hb[NI_MAXHOST];
+     int    nierr;
++#ifdef NI_WITHSCOPEID
+     int    niflags = NI_NUMERICHOST | NI_WITHSCOPEID;
++#else
++    int    niflags = NI_NUMERICHOST;
++#endif
+     struct sockaddr *sa, *sb;
+ 
+     sa = (struct sockaddr *)a, sb = (struct sockaddr *)b;
+--- src/global/wildcard_inet_addr.c.old	Thu Aug 18 11:10:42 2005
++++ src/global/wildcard_inet_addr.c	Thu Aug 18 11:11:05 2005
+@@ -38,7 +38,11 @@
+     struct addrinfo hints, *res, *res0;
+     char hbuf[NI_MAXHOST];
+     int error;
++#ifdef NI_WITHSCOPEID
+     const int niflags = NI_NUMERICHOST | NI_WITHSCOPEID;
++#else
++    const int niflags = NI_NUMERICHOST;
++#endif
+ 
+     inet_addr_list_init(addr_list);
+ 
+--- src/smtpd/smtpd_peer.c.old	Thu Aug 18 11:11:44 2005
++++ src/smtpd/smtpd_peer.c	Thu Aug 18 11:13:37 2005
+@@ -163,7 +163,11 @@
+ 
+ #ifdef INET6
+ 	error = getnameinfo(sa, len, abuf, sizeof(abuf), NULL, 0,
++#ifdef NI_WITHSCOPEID
+ 			    NI_NUMERICHOST | NI_WITHSCOPEID);
++#else
++			    NI_NUMERICHOST);
++#endif
+ 	if (error)
+ 	    msg_fatal("%s: numeric getnameinfo lookup for peer: error %s",
+ 		      myname, GAI_STRERROR(error));
+@@ -277,7 +281,11 @@
+ 			continue;
+ 		    error = getnameinfo(res->ai_addr, res->ai_addrlen,
+ 					rabuf, sizeof(rabuf), NULL, 0,
++#ifdef NI_WITHSCOPEID
+ 					NI_NUMERICHOST | NI_WITHSCOPEID);
++#else
++					NI_NUMERICHOST);
++#endif
+ 		    if (error) {
+ 			msg_warn("%s: %s: hostname %s verification failed: %s",
+ 				 myname, state->addr, state->name,
+--- src/lmtp/lmtp_connect.c.old	Thu Aug 18 11:14:16 2005
++++ src/lmtp/lmtp_connect.c	Thu Aug 18 11:15:07 2005
+@@ -202,7 +202,11 @@
+ 	return;
+     }
+     aierr = getnameinfo(res->ai_addr, res->ai_addrlen, hbuf, sizeof(hbuf),
++#ifdef NI_WITHSCOPEID
+ 			NULL, 0, NI_NUMERICHOST | NI_WITHSCOPEID);
++#else
++			NULL, 0, NI_NUMERICHOST);
++#endif
+     if (aierr != 0) {
+ 	msg_warn("%s: getnameinfo(): %s",
+ 		 myname, GAI_STRERROR(aierr));
+@@ -276,7 +280,11 @@
+ 
+     sa = (struct sockaddr *)&addr_list->addrs[i - 1];
+     aierr = getnameinfo(sa, SA_LEN(sa), hbuf, sizeof(hbuf),
++#ifdef NI_WITHSCOPEID
+ 			NULL, 0, NI_NUMERICHOST | NI_WITHSCOPEID);
++#else
++			NULL, 0, NI_NUMERICHOST);
++#endif
+     if (aierr != 0)
+ 	msg_fatal("%s: getnameinfo() (AF=%d): %s",
+ 		  myname, af, GAI_STRERROR(aierr));
+--- src/smtp/smtp_connect.c.old	Thu Aug 18 11:15:43 2005
++++ src/smtp/smtp_connect.c	Thu Aug 18 11:16:28 2005
+@@ -135,7 +135,11 @@
+ 	return;
+     }
+     aierr = getnameinfo(res->ai_addr, res->ai_addrlen, hbuf, sizeof(hbuf),
++#ifdef NI_WITHSCOPEID
+ 			NULL, 0, NI_NUMERICHOST | NI_WITHSCOPEID);
++#else
++			NULL, 0, NI_NUMERICHOST);
++#endif
+     if (aierr != 0) {
+ 	msg_warn("%s: getnameinfo(): %s",
+ 		 myname, GAI_STRERROR(aierr));
+@@ -210,7 +214,11 @@
+ 
+     sa = (struct sockaddr *)&addr_list->addrs[pos];
+     aierr = getnameinfo(sa, SA_LEN(sa), hbuf, sizeof(hbuf),
++#ifdef NI_WITHSCOPEID
+ 			NULL, 0, NI_NUMERICHOST | NI_WITHSCOPEID);
++#else
++			NULL, 0, NI_NUMERICHOST);
++#endif
+     if (aierr != 0)
+ 	msg_fatal("%s: getnameinfo() (AF=%d): %s",
+ 		  myname, af, GAI_STRERROR(aierr));
+--- src/qmqpd/qmqpd_peer.c.old	Thu Aug 18 11:17:03 2005
++++ src/qmqpd/qmqpd_peer.c	Thu Aug 18 11:17:49 2005
+@@ -146,7 +146,11 @@
+ 
+ #ifdef INET6
+ 	error = getnameinfo(sa, len, abuf, sizeof(abuf), NULL, 0,
++#ifdef NI_WITHSCOPEID
+ 			    NI_NUMERICHOST | NI_WITHSCOPEID);
++#else
++			    NI_NUMERICHOST);
++#endif
+ 	if (error)
+ 	    msg_fatal("%s: numeric getnameinfo lookup for peer: error %s",
+ 		      myname, GAI_STRERROR(error));
+@@ -216,7 +220,11 @@
+ 			continue;
+ 		    error = getnameinfo(res->ai_addr, res->ai_addrlen,
+ 			    rabuf, sizeof(rabuf), NULL, 0,
++#ifdef NI_WITHSCOPEID
+ 			    NI_NUMERICHOST | NI_WITHSCOPEID);
++#else
++			    NI_NUMERICHOST);
++#endif
+ 		    if (error) {
+ 			msg_warn("%s: %s: hostname %s verification failed: %s",
+ 				 myname, state->addr, state->name,

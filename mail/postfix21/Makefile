@@ -15,8 +15,7 @@
 # NOTE: PCRE is enabled by default unless you specifically disable it.
 
 PORTNAME=	postfix
-PORTVERSION=	2.1.5
-PORTREVISION=	1
+PORTVERSION=	2.1.6
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -32,7 +31,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	vivek@khera.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
-CONFLICTS=	courier-0.* postfix-1.* postfix-2.0.* postfix-2.2.* sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
+CONFLICTS=	courier-0.* postfix-1.* postfix-2.0.* postfix-2.2.* postfix-2.3.* \
+		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 NO_LATEST_LINK=	yes
 USE_SUBMAKE=	yes
 USE_REINPLACE=	yes
@@ -96,34 +96,40 @@ POSTFIX_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
 .endif
 
+pre-patch:
+	${ECHO} "<HTML><BODY>See <A HREF="header_checks.5.html">header_checks.5.html</A></BODY></HTML>" \
+		> ${WRKSRC}/html/body_checks.5.html
+.	for file in ${MAN1}
+		@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
+			${WRKSRC}/man/man1/${file} ${WRKSRC}/html/${file}.html
+.	endfor
+.	for file in ${MAN5}
+		@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
+			${WRKSRC}/man/man5/${file} ${WRKSRC}/html/${file}.html
+.	endfor
+.	for file in ${MAN8base}
+		@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
+			${WRKSRC}/man/man8/${file} ${WRKSRC}/html/${file}.html
+.	endfor
+.	for file in ${README}
+		@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
+			${WRKSRC}/html/${file}.html
+		@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
+			${WRKSRC}/README_FILES/${file}
+.	endfor
+.	for file in ${CONF1}
+		@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" ${WRKSRC}/conf/${file}
+.	endfor
+
 post-patch:
+# All files modified with ${FILESDIR}/patch-* to use !!PREFIX!! need REINPLACE. Put below.
+	@${REINPLACE_CMD} -e "s,!!PREFIX!!,${PREFIX},g" \
+		${WRKSRC}/conf/main.cf ${WRKSRC}/src/global/mail_params.h
+
+do-configure:
 	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles ${MAKEFILEFLAGS} \
 	CCARGS="${POSTFIX_CCARGS}" AUXLIBS="${POSTFIX_AUXLIBS}" && \
 	${ECHO} "all: default" >> Makefile)
-
-pre-patch:
-	${ECHO} "<body>See <A HREF="header_checks.5.html">header_checks.5.html</A></BODY>" > ${WRKSRC}/html/body_checks.5.html
-.for file in ${MAN1}
-	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
-		${WRKSRC}/man/man1/${file} ${WRKSRC}/html/${file}.html
-.endfor
-.for file in ${MAN5}
-	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
-		${WRKSRC}/man/man5/${file} ${WRKSRC}/html/${file}.html
-.endfor
-.for file in ${MAN8base}
-	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
-		${WRKSRC}/man/man8/${file} ${WRKSRC}/html/${file}.html
-.endfor
-.for file in ${README}
-	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
-		${WRKSRC}/html/${file}.html
-	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
-		${WRKSRC}/README_FILES/${file}
-.endfor
-.for file in ${CONF1}
-	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" ${WRKSRC}/conf/${file}
-.endfor
 
 pre-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -136,46 +142,41 @@ READMEDIR=${PREFIX}/share/doc/postfix
 
 do-install:
 	cd ${WRKSRC}; ${SH} postfix-install -non-interactive install_root=/ tempdir=/tmp \
-	 config_directory=${PREFIX}/etc/postfix \
-	 daemon_directory=${PREFIX}/libexec/postfix \
-	 command_directory=${PREFIX}/sbin \
-	 queue_directory=/var/spool/postfix \
-	 sendmail_path=${PREFIX}/sbin/sendmail \
-	 newaliases_path=${PREFIX}/bin/newaliases \
-	 mailq_path=${PREFIX}/bin/mailq \
-	 mail_owner=postfix \
-	 setgid_group=maildrop \
-	 manpage_directory=${PREFIX}/man \
-	 sample_directory=${PREFIX}/etc/postfix \
-	 readme_directory=${READMEDIR}
+	config_directory=${PREFIX}/etc/postfix \
+	daemon_directory=${PREFIX}/libexec/postfix \
+	command_directory=${PREFIX}/sbin \
+	queue_directory=/var/spool/postfix \
+	sendmail_path=${PREFIX}/sbin/sendmail \
+	newaliases_path=${PREFIX}/bin/newaliases \
+	mailq_path=${PREFIX}/bin/mailq \
+	mail_owner=postfix \
+	setgid_group=maildrop \
+	manpage_directory=${PREFIX}/man \
+	sample_directory=${PREFIX}/etc/postfix \
+	readme_directory=${READMEDIR}
 
-.for file in ${CONF1}
-	${INSTALL_DATA} ${WRKSRC}/conf/${file} \
-		${PREFIX}/etc/postfix/dist-${file}
-.endfor
+	@${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/rmail/rmail ${PREFIX}/bin/rmail
 
-	@${INSTALL_SCRIPT} \
-		${WRKSRC}/auxiliary/rmail/rmail \
-		${PREFIX}/bin/rmail
+.	for file in ${BINTEST}
+		@${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${PREFIX}/sbin
+.	endfor
 
-# optional TEST binaries
-.for file in ${BIN1}
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${PREFIX}/sbin
-.endfor
+.	for file in ${CONF1}
+		${INSTALL_DATA} ${WRKSRC}/conf/${file} \
+			${PREFIX}/etc/postfix/dist-${file}
+.	endfor
 
-.if !defined(NOPORTDOCS)
-	@${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${DOCSDIR}
-	@cd ${WRKSRC}/html && ${INSTALL_DATA} *.html *.jpg *.png ${DOCSDIR} && \
-		${ECHO_MSG} "Installed HTML documentation in ${DOCSDIR}"
-.endif
+.	if !defined(NOPORTDOCS)
+		@${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${DOCSDIR}
+		@cd ${WRKSRC}/html && ${INSTALL_DATA} *.html *.jpg *.png ${DOCSDIR} && \
+			${ECHO_MSG} "Installed HTML documentation in ${DOCSDIR}"
+.	endif
 
 post-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-# need to fixup ${PREFIX}/etc/postfix/postfix-files to indicate compressed
-# man pages, since the ports software compresses them after this step, and
-# if we run etc/postfix/post-install again during package installation,
-# it will complain about missing files.
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/fix-files-list
+# Fix compressed man pages
+	@${REINPLACE_CMD} -E -e "s|(man[158]/.*.[158]):|\1.gz:|g" ${PREFIX}/etc/postfix/postfix-files
+	@${RM} -f ${PREFIX}/etc/postfix/postfix-files.bak
 	@${CAT} ${PKGMESSAGE}
 
 post-clean:
