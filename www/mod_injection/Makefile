@@ -8,7 +8,7 @@
 PORTNAME=	mod_injection
 PORTVERSION=	0.3.1
 CATEGORIES=	www
-MASTER_SITES=	http://pmade.org/software/mod_injection/download/
+MASTER_SITES=	http://pmade.org/distfiles/oss-releases/
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Injects text in the HTTP response after a HTML tag
