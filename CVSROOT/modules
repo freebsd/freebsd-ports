@@ -12440,6 +12440,7 @@ win32-codecs	ports/multimedia/win32-codecs
 windowlab	ports/x11-wm/windowlab
 windowmaker	ports/x11-wm/windowmaker
 wine		ports/emulators/wine
+winefish	ports/editors/winefish
 wings		ports/graphics/wings
 wingz		ports/math/wingz
 wingz3		ports/math/wingz3
