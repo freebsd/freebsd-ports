@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Plucene
-PORTVERSION=	1.21
-PORTREVISION=	1
+PORTVERSION=	1.24
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/T/TM/TMTM
@@ -56,7 +55,6 @@ MAN3=	Plucene.3 \
 	Plucene::Document::DateSerializer.3 \
 	Plucene::Document::Field.3 \
 	Plucene::Index::DocumentWriter.3 \
-	Plucene::Index::FieldInfo.3 \
 	Plucene::Index::FieldInfos.3 \
 	Plucene::Index::FieldsReader.3 \
 	Plucene::Index::FieldsWriter.3 \
@@ -70,6 +68,7 @@ MAN3=	Plucene.3 \
 	Plucene::Index::SegmentTermEnum.3 \
 	Plucene::Index::SegmentTermPositions.3 \
 	Plucene::Index::SegmentsReader.3 \
+	Plucene::Index::SegmentsTermEnum.3 \
 	Plucene::Index::Term.3 \
 	Plucene::Index::TermInfo.3 \
 	Plucene::Index::TermInfosReader.3 \
