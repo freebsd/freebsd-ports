@@ -1,0 +1,8 @@
+ZConfig is a general use Python configuration library. It supports a
+hierarchical schema-driven configuration model that allows a schema to
+specify data conversion routines written in Python. ZConfig's model is
+very different from the model support by the ConfigParser module
+found in Python's standard library, and is more suitable to
+configuration-intensive applications.
+
+WWW: http://www.zope.org/Members/fdrake/zconfig/
