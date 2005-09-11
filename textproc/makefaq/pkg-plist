@@ -1,5 +1,0 @@
-bin/makefaq.py
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
-%%PORTDOCS%%%%DOCSDIR%%/faq.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
