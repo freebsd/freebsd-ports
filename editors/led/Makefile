@@ -11,7 +11,7 @@ CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}-editor
 
-MAINTAINER=	fracture@allusion.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tiny text editor, with a number of useful programming features
 
 GNU_CONFIGURE=	yes
