@@ -1,5 +1,5 @@
 --- src/GNUmakefile.orig.orig	Wed Aug 17 22:59:07 2005
-+++ src/GNUmakefile.orig	Wed Aug 31 22:35:03 2005
++++ src/GNUmakefile.orig	Sun Sep 11 23:17:51 2005
 @@ -11,7 +11,8 @@
  GNATMAKE=gnatmake
  SDLLIBS=SDLLIBSTYPE
@@ -10,7 +10,24 @@
  # For SDL, sdl_config is not always available.
  
  # RPM Directories For Building an RPM file
-@@ -75,7 +76,7 @@
+@@ -25,6 +26,7 @@
+ 
+ #INCLUDE=-I./adacgi-1.6/ -I./apq-2.1/ -I./ADAVOX-0.51/bc -I./ADAVOX-0.51/wc -I./ADAVOX-0.51/main -I/usr/include/SDL
+ INCLUDE=-I./adacgi-1.6/ -I./apq-2.1/ -I./ADAVOX-0.51/bc -I./ADAVOX-0.51/wc -I./ADAVOX-0.51/main ${SDLINCL}
++INCLUDEB=`echo ${INCLUDE} | sed -e 's/-D_THREAD_SAFE//'`
+ #LIBS=-L`pg_config --libdir` -L./apq-1.92/ -lpq -lSDL ${PTHREAD_LIBS}
+ #LIBS=-L`pg_config --libdir` -L./apq-2.1/ ./apq-2.1/c_mysql.o -l SDL -l SDL_image ${PTHREAD_LIBS}
+ LIBS=-L`pg_config --libdir` -L./apq-2.1/ ./apq-2.1/c_mysql.o ${SDLLIBS}
+@@ -66,7 +68,7 @@
+ 	@echo "---------------------------------------------------------------"
+ 	@echo
+ 	$(GNATMAKE) -c -i -O1 -march=$(CPU) -gnatfaon -fstack-check -c $(INCLUDE) bush
+-	gnatbind -x $(INCLUDE) bush.ali
++	gnatbind -x $(INCLUDEB) bush.ali
+ 	gnatlink bush.ali ./ADAVOX-0.51/wc/cglue.o c_os.o $(LIBS)
+ 	@echo
+ 	@echo "---------------------------------------------------------------"
+@@ -75,7 +77,7 @@
  	@echo
  
  c_os.o:	c_os.c
@@ -19,3 +36,21 @@
  
  #apq-2.1/Makeincl:
  #	@echo "---------------------------------------------------------------"
+@@ -110,7 +112,7 @@
+ 	@echo "---------------------------------------------------------------"
+ 	@echo
+ 	$(GNATMAKE) -c -i -O3 -march=$(CPU) -gnatf -gnatn -gnatp -ffast-math -c $(INCLUDE) bush
+-	gnatbind -x $(INCLUDE) bush.ali
++	gnatbind -x $(INCLUDEB) bush.ali
+ 	gnatlink bush.ali ./ADAVOX-0.51/wc/cglue.o c_os.o $(LIBS)
+ 
+ clean:
+@@ -151,7 +153,7 @@
+ rpm:	all
+ 
+ bintar: c_os.o all
+-	gnatbind -x $(INCLUDE) bush.ali
++	gnatbind -x $(INCLUDEB) bush.ali
+ 	gnatlink bush.ali ./ADAVOX-0.51/wc/cglue.o c_os.o $(LIBS)
+ 	(cd ..; rm -f bush.tgz; tar cfvz bush.tgz src/bush src/bush.1 README COPYING INSTALL examples doc GNUmakefile; rm -f bush )
+ 	@echo "Don't forget to unpack and repack under a descriptive directory"
