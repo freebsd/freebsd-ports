@@ -7,7 +7,7 @@
 
 PORTNAME=		policyd
 PORTVERSION=		1.0.1
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		mail
 MASTER_SITES=		http://www.libspf2.org/patch/
 PKGNAMEPREFIX=		postfix-
@@ -16,7 +16,7 @@ PKGNAMESUFFIX=		-spf
 MAINTAINER=		marcus@corp.grupos.com.br
 COMMENT=		Implements SPF for postfix, as a policy daemon
 
-LIB_DEPENDS=		spf2.1:${PORTSDIR}/mail/libspf2
+LIB_DEPENDS=		spf2.1:${PORTSDIR}/mail/libspf2-10
 
 CONFLICTS=		policyd-1.*
 
