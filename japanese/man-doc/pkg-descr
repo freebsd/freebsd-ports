@@ -1,9 +1,3 @@
-This is the Japanese manual.  Note that to build it, you need the
-source to be on your machine, in which case you can build and install
-it by just going to /usr/opt/doc/ja/man and typing
-"make all install".  (It will also be built automatically if you have
-DOC_LANG set to "ja" or have ALLLANG set to anything during a "make 
-world".)
-
-In other words, this pretty useless as a port, but is here so I can
-build a package.
+This is a Japanese translation of FreeBSD manual pages.
+Note that to build it, you need the CVS repository in
+${CVSROOT} (/home/ncvs by default) on your machine.

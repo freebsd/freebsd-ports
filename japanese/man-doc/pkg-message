@@ -1,22 +1,16 @@
 ***********************************************************************
 * Japanese online manual has been successfully installed.             *
 *                                                                     *
-* (0) First, you may need to install ja-man-1.1j or later:            *
-*        # pkg_add ja-man-1.1j.tgz                                    *
-*                                                                     *
-* (1) Then, see jman(1) with following command sequence:              *
+* (1) To read jman(1), use the following command sequence:            *
 *        % setenv LC_CTYPE ja_JP.eucJP                                *
 *        % setenv PAGER jless                                         *
 *        % jman jman                                                  *
 *                                                                     *
-* (2) To get more info, please visit following web page (Japanese):   *
+* (2) For more info, please visit following web page (Japanese):      *
 *        Jpman project <URL:http://www.jp.FreeBSD.org/man-jp/>        *
 *                                                                     *
 * (3) If you have any questions, comments, bug reports, suggestions,  *
 *     and/or requests for modifications, please send e-mail to:       *
 *        Jpman project mailing list <man-jp@jp.FreeBSD.org>           *
 *                                                                     *
-*     When we receive your reports, we will be pleased to append your *
-*     name to the contributor list on the above web page with great   *
-*     thanks.                                                         *
 ***********************************************************************
