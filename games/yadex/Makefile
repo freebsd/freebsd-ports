@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.teaser.fr/~amajorel/yadex/ \
 		http://hjem.get2net.dk/RasII/amajorel/yadex/
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	fracture@allusion.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A WAD-file editor, for games like Doom and Hexen
 
 BROKEN=		Does not compile

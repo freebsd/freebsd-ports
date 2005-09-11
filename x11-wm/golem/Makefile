@@ -11,7 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	fracture@allusion.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small window manager with themes and plugins
 
 .if defined(WANT_SOUND)
