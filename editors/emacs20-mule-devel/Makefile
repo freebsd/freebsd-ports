@@ -9,16 +9,14 @@ PORTNAME=	emacs-${MULE}
 PORTVERSION=	${EMACS_VER}.${MULE_VER}
 PORTREVISION=	2
 CATEGORIES=	editors ipv6
-MASTER_SITES=	http://www.ainet.or.jp/~inoue/software/emacs-xim/ \
-		${MASTER_SITE_GNU}
+MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
 DISTNAME=	emacs-${EMACS_VER}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${XIM_PATCH}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://www.teu.ac.jp/nsit/~yatagawa/comp/emacs/ \
-		ftp://ftp.m17n.org/pub/mule/dynamic-loading/ \
-		http://www.etl.go.jp/~tomo/comp/emacsen/
+		ftp://ftp.m17n.org/pub/mule/dynamic-loading/
 PATCHFILES=	emacs-${EMACS_VER}-mule-${MULE_VER}.patch \
 		emacs-20.4-dl3.diff.gz
 PATCH_DIST_STRIP=	-p1

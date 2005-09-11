@@ -9,15 +9,13 @@ PORTNAME=	emacs-dl
 PORTVERSION=	${EMACS_VER}
 PORTREVISION=	2
 CATEGORIES=	editors ipv6
-MASTER_SITES=	http://www.ainet.or.jp/~inoue/software/emacs-xim/ \
-		${MASTER_SITE_GNU}
+MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
 DISTNAME=	emacs-${EMACS_VER}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${XIM_PATCH}${EXTRACT_SUFX}
 
 PATCH_SITES=		ftp://ftp.m17n.org/pub/mule/dynamic-loading/ \
-			http://www.etl.go.jp/~tomo/comp/emacsen/ \
 			${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	. shige/emacs
 PATCHFILES=		emacs-20.4-dl3.diff.gz emacs-20.7-linespace-patch.gz
