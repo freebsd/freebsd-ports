@@ -37,6 +37,10 @@ MD5_FILE=	${.CURDIR}/../abiword/distinfo
 ABIVERSION=	2.2
 PLIST_SUB+=	ABIVERSION=${ABIVERSION}
 
+EXCLUDE_EXTRACT=	MSVC6 MSVC71 abidistfiles abipbx abiword-docs expat \
+			fribidi libiconv libpng pbx popt wv zlib
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${EXCLUDE_EXTRACT:S/^/--exclude /}
+
 # NOTE: Please, keep those knobs in the ABC's order.
 
 .if defined(WITH_AIKSAURUS) || defined(PACKAGE_BUILDING)
