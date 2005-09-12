@@ -1388,6 +1388,7 @@
     SUBDIR += pychecker
     SUBDIR += pylint
     SUBDIR += pyobfuscate
+    SUBDIR += pymacs
     SUBDIR += pyrex
     SUBDIR += pyumlgraph
     SUBDIR += qca
