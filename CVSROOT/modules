@@ -2788,7 +2788,7 @@ ggz-txt-client	ports/games/ggz-txt-client
 ghc		ports/lang/ghc
 ghc-doc		ports/lang/ghc-doc
 ghc5		ports/lang/ghc5
-ghc6-doc	ports/lang/ghc6-doc
+ghc5-doc	ports/lang/ghc5-doc
 ghemical	ports/science/ghemical
 ghex		ports/editors/ghex
 ghfaxviewer	ports/comms/ghfaxviewer
