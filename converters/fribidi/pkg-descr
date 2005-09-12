@@ -17,4 +17,4 @@ every Unicode character will be treated in strict accordance with the Unicode
 specification. The same is true for the mirroring of characters, which also
 works for all the characters listed as mirrorable in the Unicode specification.
 
-WWW: http://freedesktop.org/Software/FriBidi
+WWW: http://fribidi.org/wiki/
