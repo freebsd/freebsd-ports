@@ -43,6 +43,12 @@
 %%PYTHON_SITELIBDIR%%/SOAPpy/version.py
 %%PYTHON_SITELIBDIR%%/SOAPpy/version.pyc
 %%PYTHON_SITELIBDIR%%/SOAPpy/version.pyo
+%%PYTHON_SITELIBDIR%%/SOAPpy/wstools/c14n.py
+%%PYTHON_SITELIBDIR%%/SOAPpy/wstools/c14n.pyc
+%%PYTHON_SITELIBDIR%%/SOAPpy/wstools/c14n.pyo
+%%PYTHON_SITELIBDIR%%/SOAPpy/wstools/logging.py
+%%PYTHON_SITELIBDIR%%/SOAPpy/wstools/logging.pyc
+%%PYTHON_SITELIBDIR%%/SOAPpy/wstools/logging.pyo
 %%PYTHON_SITELIBDIR%%/SOAPpy/wstools/Namespaces.py
 %%PYTHON_SITELIBDIR%%/SOAPpy/wstools/Namespaces.pyc
 %%PYTHON_SITELIBDIR%%/SOAPpy/wstools/Namespaces.pyo
@@ -67,5 +73,14 @@
 %%PYTHON_SITELIBDIR%%/SOAPpy/wstools/__init__.py
 %%PYTHON_SITELIBDIR%%/SOAPpy/wstools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/SOAPpy/wstools/__init__.pyo
+%%DATADIR%%/interop2html.py
+%%DATADIR%%/server.pem
+%%DATADIR%%/silab.servers
+%%DATADIR%%/silabclient.py
+%%DATADIR%%/silabserver.py
+%%DATADIR%%/soap_cli.py
+%%DATADIR%%/soap_handler.py
+%%DATADIR%%/soapware.py
+@dirrm %%DATADIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/SOAPpy/wstools
 @dirrm %%PYTHON_SITELIBDIR%%/SOAPpy
