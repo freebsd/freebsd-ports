@@ -170,8 +170,8 @@ do-install:
 	cd ${SGE_ROOT} && ${SETENV} SGE_ROOT=${SGE_ROOT} util/setfileperm.sh -auto ${SGE_ROOT}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/../doc && ${FIND} * \( -name nonexistant \
-	    ${EXCEPTFILES:S/^/-o -name /} -o -name CVS \) -a -prune -o -print \
+	cd ${WRKSRC}/../doc && ${FIND} * \( -name CVS \
+	    ${EXCEPTFILES:S/^/-o -name /} \) -a -prune -o -type f -print \
 	    | ${TAR} cTf - - | ${TAR} xUCf ${DOCSDIR} -
 .endif
 
