@@ -8,6 +8,7 @@
 
 PORTNAME=	fribidi
 PORTVERSION=	0.10.4
+PORTREVISION=	1
 CATEGORIES=	converters
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://freedesktop.org/~fribidi/download/
