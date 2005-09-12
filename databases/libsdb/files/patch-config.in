@@ -1,0 +1,29 @@
+--- config.in.orig	Sat Feb 19 01:20:21 2005
++++ config.in	Tue Sep 13 01:40:14 2005
+@@ -78,21 +78,22 @@
+ 	$(CC) -I. -L. -lsdb $(LDFLAGS) -o $@ sdbd.o
+ 
+ install-man:
+-	mkdir -p $(MANDIR)/man3 && cp $(MAN3) $(MANDIR)/man3
+-	mkdir -p $(MANDIR)/man8 && cp $(MAN8) $(MANDIR)/man8
++	$(BSD_INSTALL_MAN) $(MAN3) $(MANDIR)/man3
++	$(BSD_INSTALL_MAN) $(MAN8) $(MANDIR)/man8
+ 
+ uninstall-man:
+ 	cd $(MANDIR)/man3 && rm -f $(MAN3)
+ 	cd $(MANDIR)/man8 && rm -f $(MAN8)
+ 
+ install-prog: $(PROGS)
+-	mkdir -p $(BINDIR) && cp $(PROGS) $(BINDIR)
++	$(BSD_INSTALL_PROGRAM) sdb_client sdbd_client sdbd $(BINDIR)
++	$(BSD_INSTALL_SCRIPT) sdb-config $(BINDIR)
+ 
+ uninstall-prog:
+ 	cd $(BINDIR) && rm -f $(PROGS)
+ 
+ install-header:
+-	mkdir -p $(INCDIR) && cp $(HEADERS) $(INCDIR)
++	$(BSD_INSTALL_DATA) $(HEADERS) $(INCDIR)
+ 
+ uninstall-header:
+ 	cd $(INCDIR) && rm -f $(HEADERS)

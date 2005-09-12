@@ -1,0 +1,22 @@
+--- Makefiles/Other.orig	Tue Sep 13 00:26:50 2005
++++ Makefiles/Other	Tue Sep 13 00:27:45 2005
+@@ -24,16 +24,13 @@
+ 
+ $(SHAREDLIB): $(SHAREDOBJ)
+ 	rm -f $(SHAREDLIB)
+-	gcc -fPIC -shared -lc \
++	$(CC) -fPIC -shared \
+ 		-o $(SOVERSION) $(SHAREDOBJ)
+ 	ln -s $(SOVERSION) $(SHAREDLIB)
+ 
+ install-lib: $(STATICLIB) $(SHAREDLIB)
+-	make uninstall-lib
+-	make all
+-	mkdir -p $(LIBDIR)
+-	cp $(SOVERSION) $(LIBDIR)
+-	cp $(STATICLIB) $(LIBDIR)
++	$(BSD_INSTALL_PROGRAM) $(SOVERSION) $(LIBDIR)
++	$(BSD_INSTALL_DATA) $(STATICLIB) $(LIBDIR)
+ 	cd $(LIBDIR) && ln -s $(SOVERSION) $(SHAREDLIB)
+ 	cd $(LIBDIR) && ln -s $(SOVERSION) $(SONAME)
+ 
