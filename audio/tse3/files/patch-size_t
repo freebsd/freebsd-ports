@@ -1,0 +1,27 @@
+--- src/tse3/file/XML.h	Tue Aug 23 08:37:53 2005
++++ src/tse3/file/XML.h	Sun Sep 11 20:29:45 2005
+@@ -154,5 +154,5 @@
+                 void element(const std::string &name, const char        *value);
+                 void element(const std::string &name, int                value);
+-                void element(const std::string &name, unsigned int       value);
++                void element(const std::string &name, size_t             value);
+                 void element(const std::string &name, bool               value);
+ 
+--- src/tse3/file/XML.cpp	Tue Aug 23 08:32:53 2005
++++ src/tse3/file/XML.cpp	Sun Sep 11 20:29:22 2005
+@@ -111,5 +111,5 @@
+ 
+ 
+-void TSE3::File::XmlFileWriter::element(const std::string &name, unsigned int value)
++void TSE3::File::XmlFileWriter::element(const std::string &name, size_t value)
+ {
+     indent(out);
+--- src/tse3/file/MidiFilter.cpp	Tue Aug 23 08:32:31 2005
++++ src/tse3/file/MidiFilter.cpp	Sun Sep 11 20:33:13 2005
+@@ -11,5 +11,5 @@
+ 
+     writer.element("Status",        mf.status());
+-    unsigned int c_filter = 0, p_filter = 0;
++    size_t c_filter = 0, p_filter = 0;
+     for (int n = 0; n < 16; n++) if (mf.channelFilter(n)) c_filter |= (1<<n);
+     writer.element("ChannelFilter", c_filter);
