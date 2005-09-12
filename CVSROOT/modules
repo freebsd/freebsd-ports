@@ -10201,6 +10201,7 @@ pykawari	ports/games/pykawari
 pyla		ports/comms/pyla
 pylint		ports/devel/pylint
 pylize		ports/misc/pylize
+pymacs		ports/devel/pymacs
 pymol		ports/biology/pymol
 pymsgauth	ports/mail/pymsgauth
 pyne		ports/news/pyne
