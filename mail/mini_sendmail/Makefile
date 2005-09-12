@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mini_sendmail
-PORTVERSION=	1.3.5
+PORTVERSION=	1.3.6
 CATEGORIES+=	mail
 MASTER_SITES=	http://www.acme.com/software/mini_sendmail/
 
