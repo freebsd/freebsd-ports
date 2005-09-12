@@ -6,35 +6,32 @@
 #
 
 PORTNAME=	bicyclerepair
-PORTVERSION=	0.7.1
+PORTVERSION=	0.9
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
+PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
 MAINTAINER=	mwm@mired.org
 COMMENT=	A python refactoring tool
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.2+
 USE_PYDISTUTILS=yes
-USE_PYTHON_PREFIX=yes
 
-DOCDIR=		${PYTHONBASE}/share/bicyclerepairman
+.if defined(EMACS_PORT_NAME)
+RUN_DEPENDS+=	${LOCALBASE}/bin/pymacs-services:${PORTSDIR}/devel/pymacs
+.endif
 
-PYVERSION=	${PYTHON_VERSION:S/^python//}
-.if defined(PYTHON_VERSION) && ${PYVERSION:S/.//} < 22
-.undef          NO_IGNORE
-BROKEN=		This port requires python 2.2 or later
-.endif # defined(PYVERSION) && ${PYVERSION:S/.//} < 22
-
+.if !defined(NOPORTDOCS)
 post-install:
-	@${RM} ${PYTHONBASE}/bin/bikeemacs.bat
-	@${MKDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/ide-integration/bike.el ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.emacs ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.idle ${DOCDIR}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ide-integration/bike.vim ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.emacs ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.idle ${DOCSDIR}
 	@${ECHO} "================================================================"
-	@${ECHO} "* See" ${DOCDIR} "for instructions on configuring IDLE"
-	@${ECHO} "* and emacs to use Bicycle Repair Man."
+	@${ECHO} "* See" ${DOCSDIR} "for instructions on configuring IDLE"
+	@${ECHO} "* and vim to use Bicycle Repair Man."
 	@${ECHO} "================================================================"
+.endif
 
 .include <bsd.port.mk>
