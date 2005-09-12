@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_cband
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	www
 MASTER_SITES=	http://dembol.nasa.pl/download/
 EXTRACT_SUFX=	.tgz
