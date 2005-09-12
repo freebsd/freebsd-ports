@@ -1,0 +1,9 @@
+Add the following to your emacs initialization file to enable pymacs:
+
+(autoload 'pymacs-load "pymacs" nil t)
+(autoload 'pymacs-eval "pymacs" nil t)
+(autoload 'pymacs-apply "pymacs")
+(autoload 'pymacs-call "pymacs")
+
+See http://pymacs.progiciels-bpi.ca/manual/index.html for
+documentation on using pymacs.

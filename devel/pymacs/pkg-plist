@@ -1,0 +1,28 @@
+%%EMACS_SITE_LISPDIR%%/pymacs.el
+%%EMACS_SITE_LISPDIR%%/pymacs.elc
+bin/pymacs-services
+bin/rebox
+%%PYTHON_SITELIBDIR%%/Pymacs/pymacs.py
+%%PYTHON_SITELIBDIR%%/Pymacs/__init__.py
+%%PYTHON_SITELIBDIR%%/Pymacs/Nn/nncourriel.py
+%%PYTHON_SITELIBDIR%%/Pymacs/Nn/folder.py
+%%PYTHON_SITELIBDIR%%/Pymacs/Nn/__init__.py
+%%PYTHON_SITELIBDIR%%/Pymacs/Nn/nncourriel.pyc
+%%PYTHON_SITELIBDIR%%/Pymacs/Nn/folder.pyc
+%%PYTHON_SITELIBDIR%%/Pymacs/Nn/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Pymacs/Nn/nncourriel.pyo
+%%PYTHON_SITELIBDIR%%/Pymacs/Nn/folder.pyo
+%%PYTHON_SITELIBDIR%%/Pymacs/Nn/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Pymacs/Rebox/__init__.py
+%%PYTHON_SITELIBDIR%%/Pymacs/Rebox/rebox.py
+%%PYTHON_SITELIBDIR%%/Pymacs/Rebox/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Pymacs/Rebox/rebox.pyc
+%%PYTHON_SITELIBDIR%%/Pymacs/Rebox/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Pymacs/Rebox/rebox.pyo
+%%PYTHON_SITELIBDIR%%/Pymacs/pymacs.pyc
+%%PYTHON_SITELIBDIR%%/Pymacs/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Pymacs/pymacs.pyo
+%%PYTHON_SITELIBDIR%%/Pymacs/__init__.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/Pymacs/Nn
+@dirrm %%PYTHON_SITELIBDIR%%/Pymacs/Rebox
+@dirrm %%PYTHON_SITELIBDIR%%/Pymacs
