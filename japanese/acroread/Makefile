@@ -53,8 +53,10 @@ do-install:
 	${BRANDELF} -t Linux ${INSTALLDIR}/Reader/intellinux/bin/acroread
 
 post-install:
-	${LN} -s -f \
+	if [ -d ${PREFIX}/${PLUGINDIR} ]; then \
+		${LN} -s -f \
 		${PREFIX}/${ACRODIR}/Browser/intellinux/nppdf.so \
-		${PREFIX}/${PLUGINDIR}/nppdf.so
+		${PREFIX}/${PLUGINDIR}/nppdf.so; \
+	fi
 
 .include <bsd.port.mk>
