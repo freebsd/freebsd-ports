@@ -711,6 +711,7 @@
     SUBDIR += txt2man
     SUBDIR += txt2tags
     SUBDIR += ua-ispell
+    SUBDIR += uni2ascii
     SUBDIR += unroff
     SUBDIR += unrtf
     SUBDIR += urlview
