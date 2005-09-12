@@ -84,6 +84,9 @@ EXTRA_PATCHES+=	${FILESDIR}/6113-patch-lib::Makefile
 .else
 NVVERSION=	7676
 EXTRA_PATCHES+=	${FILESDIR}/7667-*
+.if ${OSVERSION} >= 600033
+LIB_DEPENDS+=	m.3:${PORTSDIR}/misc/compat5x
+.endif
 .endif
 PLIST_SUB+=	DIFFS="@comment " DRVSO=""
 .endif
