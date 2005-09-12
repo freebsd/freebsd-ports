@@ -12120,6 +12120,7 @@ unclutter	ports/misc/unclutter
 undernet-ircu	ports/irc/undernet-ircu
 undms		ports/archivers/undms
 unfs3		ports/net/unfs3
+uni2ascii	ports/textproc/uni2ascii
 unicornscan	ports/security/unicornscan
 unidesc		ports/sysutils/unidesc
 unison		ports/net/unison
