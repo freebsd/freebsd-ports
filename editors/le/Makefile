@@ -1,4 +1,3 @@
-# ex:ts=8
 # New ports collection makefile for:	le
 # Date created:				16 October 1997
 # Whom:					Andrey Zakhvatov
@@ -9,13 +8,12 @@
 PORTNAME=	le
 PORTVERSION=	1.12.5
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/util/texteditors/ \
+MASTER_SITES=	ftp://ftp.yars.free.net/pub/source/le/ \
 		http://core.inec.ru/~az/
 
 MAINTAINER=	az@inec.ru
 COMMENT=	Text editor
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
