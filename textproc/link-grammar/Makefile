@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	link-grammar
-PORTVERSION=	4.1.1
+PORTVERSION=	4.1.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.abisource.com/downloads/${PORTNAME}/${PORTVERSION}/
 
@@ -24,8 +24,6 @@ DOCS=		LICENSE README
 post-patch:
 	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|/words/|/en/words/|g' \
-		${WRKSRC}/data/en/4.0.dict
 
 .ifndef (NOPORTDOCS)
 post-install:
