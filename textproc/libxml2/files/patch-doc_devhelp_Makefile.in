@@ -1,0 +1,11 @@
+--- doc/devhelp/Makefile.in.orig	Mon Sep 12 18:42:04 2005
++++ doc/devhelp/Makefile.in	Mon Sep 12 18:42:20 2005
+@@ -258,7 +258,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-DEVHELP_DIR = $(datadir)/gtk-doc/html/libxml2
++DEVHELP_DIR = $(datadir)/doc/libxml2/html
+ HTML_FILES = index.html general.html $(HTML_MODULES)
+ HTML_MODULES = \
+ 	libxml2-c14n.html		\
