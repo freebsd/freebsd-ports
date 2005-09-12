@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	tse3
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,10 +25,6 @@ MAN1=		tse3play.1
 MAN3=		tse3.3
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
 
 .if defined(WITH_ARTS)
 LIB_DEPENDS+=	artsmidi:${PORTSDIR}/multimedia/kdemultimedia3
