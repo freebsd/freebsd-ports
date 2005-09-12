@@ -17,6 +17,3 @@ convenient way for managing parallel tasks and communications without
 need for rexec or socket level programming.
 
 WWW: http://search.cpan.org/dist/Parallel-Pvm/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
