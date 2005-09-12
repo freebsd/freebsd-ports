@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.iu.hio.no/pub/cfengine/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	A systems administration tool for networks
 
 USE_OPENSSL=	yes
@@ -36,7 +36,7 @@ LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
 CPPFLAGS+=	-I${LOCALBASE}/include/db41
 LDFLAGS+=	-L${LOCALBASE}/lib/db41 -ldb41
 .else
-IGNORE=	WITH_BDB_VER must be 41 or 42
+IGNORE=		WITH_BDB_VER must be 41 or 42
 .endif
 
 .include <bsd.port.mk>
