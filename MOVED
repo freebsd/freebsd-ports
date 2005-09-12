@@ -1618,3 +1618,4 @@ cad/fig2sxd|graphics/fig2sxd|2005-09-08|accurate category
 comms/cdce||2005-09-10|Obsolete; imported into the src tree in 5.4 release
 multimedia/ldvd9to5|multimedia/ldvd|2005-09-10|project renamed
 japanese/mendexk-sjis|japanese/mendexk-euc|2005-09-11|obsolete
+lang/ghc6-doc|lang/ghc-doc|2005-09-12|relocated
