@@ -329,5 +329,5 @@ share/locale/tr/LC_MESSAGES/gourmet.mo
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/exporters
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/backends
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet
-@unexec /bin/rmdir %%PYTHON_SITELIBDIR%% 2>/dev/null || /bin/true
-@unexec /bin/rmdir %%PYTHON_LIBDIR%% 2>/dev/null || /bin/true
+@unexec /bin/rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/%%PYTHON_LIBDIR%% 2>/dev/null || /usr/bin/true
