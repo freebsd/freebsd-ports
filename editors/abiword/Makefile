@@ -41,6 +41,10 @@ CONFIGURE_ARGS=	--enable-xft \
 		--disable-peer-config
 MAKEFILE=	GNUmakefile
 
+EXCLUDE_EXTRACT=	MSVC6 MSVC71 abipbx abiword-docs abiword-plugins expat \
+			fribidi libiconv libpng pbx popt wv zlib
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${EXCLUDE_EXTRACT:S/^/--exclude /}
+
 ABIVERSION=	2.2
 PLIST_SUB+=	ABIVERSION=${ABIVERSION}
 WRKSRC=		${WRKDIR}/abiword-${PORTVERSION}/abi
