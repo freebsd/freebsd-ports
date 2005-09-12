@@ -159,6 +159,7 @@
     SUBDIR += ohugs
     SUBDIR += onyx
     SUBDIR += oo2c
+    SUBDIR += oorexx
     SUBDIR += open-cobol
     SUBDIR += osb-jscore
     SUBDIR += otcl
