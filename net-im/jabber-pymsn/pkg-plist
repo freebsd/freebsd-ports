@@ -6,6 +6,7 @@ lib/jabber/pymsn/tlib/jabber/client.py
 lib/jabber/pymsn/tlib/jabber/component.py
 lib/jabber/pymsn/tlib/jabber/jid.py
 lib/jabber/pymsn/tlib/jabber/jstrports.py
+lib/jabber/pymsn/tlib/jabber/xmpp_stringprep.py
 lib/jabber/pymsn/tlib/domish.py
 lib/jabber/pymsn/tlib/__init__.py
 lib/jabber/pymsn/tlib/msn.py
