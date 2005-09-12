@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	exilog
-PORTVERSION=	0.3
+PORTVERSION=	0.5
 CATEGORIES=	mail
 MASTER_SITES=	http://duncanthrax.net/exilog/
 
