@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.matem.unam.mx/~micho/download/
 MAINTAINER=	micho@matem.unam.mx
 COMMENT=	A powerful typeless object-oriented scripting language
 
-CONFLICTS=	rexx-regina-[0-9]*
+CONFLICTS=	rexx-imc-[0-9]* rexx-regina-[0-9]*
 
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
