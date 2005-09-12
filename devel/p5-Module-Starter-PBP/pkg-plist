@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Module/Starter/PBP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Starter/PBP/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Starter/PBP
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Starter 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Module/Starter 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Module 2>/dev/null || true
