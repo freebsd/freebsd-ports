@@ -7,6 +7,7 @@
 
 PORTNAME=	dislin
 PORTVERSION=	8.4
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gwdg.de/pub/grafik/dislin/unix/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.fbsd${BINVER}
