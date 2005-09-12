@@ -993,6 +993,7 @@
     SUBDIR += p5-Module-Reload
     SUBDIR += p5-Module-ScanDeps
     SUBDIR += p5-Module-Starter
+    SUBDIR += p5-Module-Starter-PBP
     SUBDIR += p5-Module-Versions-Report
     SUBDIR += p5-NEXT
     SUBDIR += p5-Net-LibIDN
