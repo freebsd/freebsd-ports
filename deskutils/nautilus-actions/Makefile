@@ -7,7 +7,7 @@
 
 PORTNAME=	nautilus-actions
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~ahze/distfiles/
@@ -24,6 +24,8 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-nautilus-extdir=${X11BASE}/lib/nautilus/extensions-1.0
+
 INTLTOOLIZE?=	${LOCALBASE}/bin/intltoolize
 
 post-patch:
