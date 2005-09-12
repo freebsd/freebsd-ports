@@ -25,10 +25,6 @@ CONFIGURE_ARGS=	LD="${PREFIX}/mpich/bin/mpicc" INC="-I${PREFIX}/mpich/include"
 
 MAN3=		Parallel::MPI.3
 
-.include <bsd.port.pre.mk>
+NOT_FOR_ARCHS=	ia64 amd64
 
-.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
-BROKEN=		"Does not build on ${ARCH}"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
