@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymsn
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.5
 CATEGORIES=	net
 MASTER_SITES=	http://msn-transport.jabberstudio.org/tarballs/
 PKGNAMEPREFIX=	jabber-
