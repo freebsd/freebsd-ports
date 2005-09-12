@@ -7,7 +7,7 @@
 
 PORTNAME=	rexx-imc
 PORTVERSION=	1.76
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://users.comlab.ox.ac.uk/ian.collier/distribution/ \
 		ftp://ftp.sai.msu.su/pub/unix/rexx/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://users.comlab.ox.ac.uk/ian.collier/distribution/ \
 MAINTAINER=	g.gonter@ieee.org
 COMMENT=	A procedural programming language designed by IBM's UK Laboratories
 
-CONFLICTS=	rexx-regina-*
+CONFLICTS=	rexx-regina-* oorexx-[0-9]*
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Make
