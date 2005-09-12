@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ghc-doc
+PORTNAME=	ghc5-doc
 PORTVERSION=	5.04.3
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/docs/${PORTVERSION}/ \
@@ -20,17 +20,18 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Documentation (HTML, PS) for the Glasgow Haskell Compiler
 
 NO_BUILD=	yes
+DOCSDIR=	${PREFIX}/share/doc/ghc5
 
 do-install:
-	@${MKDIR} ${LOCALBASE}/share/doc/ghc
+	@${MKDIR} ${DOCSDIR}
 .for FILE in building.ps.gz hslibs.ps.gz users_guide.ps.gz index.html
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${FILE} \
-		${LOCALBASE}/share/doc/ghc
+		${DOCSDIR}
 .endfor
 .for FILE in building.html.tar.gz hslibs.html.tar.gz \
 	libraries.html.tar.gz users_guide.html.tar.gz
 	@${TAR} xfz ${DISTDIR}/${DIST_SUBDIR}/${FILE} \
-		-C ${LOCALBASE}/share/doc/ghc
+		-C ${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>

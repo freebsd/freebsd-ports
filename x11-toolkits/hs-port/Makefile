@@ -37,7 +37,7 @@ PLIST_SUB+=	GHC_VERSION="${GHC_VERSION}"
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock \
-		${LOCALBASE}/share/doc/ghc6/index.html:${PORTSDIR}/lang/ghc6-doc
+		${LOCALBASE}/share/doc/ghc6/index.html:${PORTSDIR}/lang/ghc-doc
 CONFIGURE_ARGS+=	-haddock-libs ${LOCALBASE}/share/doc/ghc6/libraries/base \
 			-haddock-html ${LOCALBASE}/share/doc/ghc6/libraries/
 ALL_TARGET=	release doc
