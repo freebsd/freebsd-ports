@@ -7,6 +7,7 @@
 
 PORTNAME=	xorg-server
 PORTVERSION=	6.8.99.12
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://xorg.freedesktop.org/snapshots/
 DISTNAME=	xorg-x11-${PORTVERSION}
