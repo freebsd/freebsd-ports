@@ -36,4 +36,6 @@ post-install:
 .endfor
 .endif
 
+NOT_FOR_ARCHS=	amd64
+
 .include <bsd.port.mk>
