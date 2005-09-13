@@ -1,0 +1,24 @@
+Beautify PHP
+WWW: http://www.bierkandt.org/beautify/index.php
+
+What it does:
+This program tries to reformat and beautify PHP source code files automatically.
+The program is Open Source and distributed under the terms of GNU GPL.
+It is written in PHP and has a web frontend.
+
+Who needs it:
+- people, who get PHP code from other coders and are slightly confused
+- people, who can't read their own PHP code anymore
+- people, who want to share their PHP code
+
+Basic features:
+- automatic indentation of PHP source code according to given number of spaces
+- automatic newlines, if required
+- includes settings for braces according to C or PEAR style
+- can make use of PHPs integrated code highlight option
+- can limit number of chars per line. This will break the code at a space and
+  outputs the rest on the next line with an additional indent. (I used this to
+  reformat my code to put it in a LATEX document. This PHP code normally can't
+  be executed anymore, it is only useful for printout.)
+- turn off and on beautifying by inserting "// NO_BEAUTIFY" or "// BEAUTIFY"
+  in source code

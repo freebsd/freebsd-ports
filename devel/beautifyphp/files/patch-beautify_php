@@ -1,0 +1,10 @@
+--- beautify_php.orig	Thu Aug  4 02:28:56 2005
++++ beautify_php	Thu Aug  4 02:29:09 2005
+@@ -3,6 +3,7 @@
+     /**
+     * Console script to use Beautify PHP from the command line
+     */
++    ini_set('include_path', '/usr/local/share/pear:/usr/local/share/pear/bootstrap');
+     /**
+     * Require PEAR Class
+     */
