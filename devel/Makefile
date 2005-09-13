@@ -74,6 +74,7 @@
     SUBDIR += bcc
     SUBDIR += bcpp
     SUBDIR += beagle
+    SUBDIR += beautifyphp
     SUBDIR += bglibs
     SUBDIR += bicyclerepair
     SUBDIR += bin86
