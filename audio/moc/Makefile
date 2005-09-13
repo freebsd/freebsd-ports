@@ -7,6 +7,7 @@
 
 PORTNAME=	moc
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.daper.net/pub/soft/moc/stable/
 
@@ -47,7 +48,7 @@ CONFIGURE_ARGS+=	--without-jack
 .endif
 
 .if defined(WITH_MP3)
-LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/mad \
+LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
 		id3tag.2:${PORTSDIR}/audio/libid3tag
 PLIST_FILES+=	lib/moc/decoder_plugins/libmp3_decoder.so
 .else
