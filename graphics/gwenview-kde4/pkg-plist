@@ -13,8 +13,6 @@ lib/libkdeinit_gwenview.so
 share/applications/kde/gwenview.desktop
 share/apps/gvdirpart/gvdirpart.rc
 share/apps/gvimagepart/gvimagepart.rc
-share/apps/gwenview/cursors/drag.png
-share/apps/gwenview/cursors/dragging.png
 share/apps/gwenview/cursors/zoom.png
 share/apps/gwenview/gwenviewui.rc
 share/apps/gwenview/icons/hicolor/16x16/actions/dnd1.png
@@ -31,69 +29,153 @@ share/apps/gwenview/icons/hicolor/16x16/actions/rotate_left.png
 share/apps/gwenview/icons/hicolor/16x16/actions/rotate_right.png
 share/apps/gwenview/icons/hicolor/16x16/actions/slideshow.png
 share/apps/gwenview/icons/hicolor/22x22/actions/flip.png
-share/apps/gwenview/icons/hicolor/22x22/actions/gvfirst.png
-share/apps/gwenview/icons/hicolor/22x22/actions/gvlast.png
-share/apps/gwenview/icons/hicolor/22x22/actions/gvnext.png
-share/apps/gwenview/icons/hicolor/22x22/actions/gvprevious.png
-share/apps/gwenview/icons/hicolor/22x22/actions/largethumbnails.png
-share/apps/gwenview/icons/hicolor/22x22/actions/medthumbnails.png
 share/apps/gwenview/icons/hicolor/22x22/actions/mirror.png
 share/apps/gwenview/icons/hicolor/22x22/actions/rotate_left.png
 share/apps/gwenview/icons/hicolor/22x22/actions/rotate_right.png
 share/apps/gwenview/icons/hicolor/22x22/actions/slideshow.png
-share/apps/gwenview/icons/hicolor/22x22/actions/smallthumbnails.png
 share/apps/gwenview/icons/hicolor/32x32/actions/flip.png
-share/apps/gwenview/icons/hicolor/32x32/actions/gvfirst.png
-share/apps/gwenview/icons/hicolor/32x32/actions/gvlast.png
-share/apps/gwenview/icons/hicolor/32x32/actions/gvnext.png
-share/apps/gwenview/icons/hicolor/32x32/actions/gvprevious.png
-share/apps/gwenview/icons/hicolor/32x32/actions/largethumbnails.png
-share/apps/gwenview/icons/hicolor/32x32/actions/medthumbnails.png
 share/apps/gwenview/icons/hicolor/32x32/actions/mirror.png
 share/apps/gwenview/icons/hicolor/32x32/actions/rotate_left.png
 share/apps/gwenview/icons/hicolor/32x32/actions/rotate_right.png
 share/apps/gwenview/icons/hicolor/32x32/actions/slideshow.png
-share/apps/gwenview/icons/hicolor/32x32/actions/smallthumbnails.png
 share/apps/gwenview/icons/hicolor/48x48/actions/flip.png
 share/apps/gwenview/icons/hicolor/48x48/actions/mirror.png
 share/apps/gwenview/icons/hicolor/48x48/actions/rotate_left.png
 share/apps/gwenview/icons/hicolor/48x48/actions/rotate_right.png
 share/apps/gwenview/icons/hicolor/48x48/actions/slideshow.png
+share/apps/gwenview/icons/hicolor/scalable/actions/slideshow.svgz
 share/apps/gwenview/thumbnail/wait.png
 share/apps/gwenview/tools/gimp.desktop
 share/apps/gwenview/tools/konqueror.desktop
 share/apps/gwenview/tools/tiledwallpaper.desktop
 share/apps/gwenview/tools/wallpaper.desktop
+share/apps/kconf_update/gwenview_thumbnail_size.sh
+share/apps/kconf_update/gwenview_thumbnail_size.upd
 share/apps/konqueror/servicemenus/konqgwenview.desktop
+share/config.kcfg/gvconfig.kcfg
+share/doc/HTML/da/gwenview/common
+share/doc/HTML/da/gwenview/docked_windows.docbook
+share/doc/HTML/da/gwenview/external_tools.docbook
+share/doc/HTML/da/gwenview/index.cache.bz2
+share/doc/HTML/da/gwenview/index.docbook
+share/doc/HTML/da/gwenview/interface.docbook
+share/doc/HTML/da/gwenview/introduction.docbook
+share/doc/HTML/da/gwenview/keybindings.docbook
+share/doc/HTML/da/gwenview/mouse.docbook
+share/doc/HTML/de/gwenview/browse_mode.png
+share/doc/HTML/de/gwenview/common
+share/doc/HTML/de/gwenview/dock_grip.png
+share/doc/HTML/de/gwenview/docked_windows.docbook
+share/doc/HTML/de/gwenview/external_tools.docbook
+share/doc/HTML/de/gwenview/external_tools_dialog.png
+share/doc/HTML/de/gwenview/index.cache.bz2
+share/doc/HTML/de/gwenview/index.docbook
+share/doc/HTML/de/gwenview/interface.docbook
+share/doc/HTML/de/gwenview/introduction.docbook
+share/doc/HTML/de/gwenview/keybindings.docbook
+share/doc/HTML/de/gwenview/mouse.docbook
+share/doc/HTML/de/gwenview/view_mode.png
 share/doc/HTML/en/gwenview/browse_mode.png
 share/doc/HTML/en/gwenview/common
 share/doc/HTML/en/gwenview/dock_grip.png
 share/doc/HTML/en/gwenview/docked_windows.docbook
-share/doc/HTML/en/gwenview/docked_windows.html
 share/doc/HTML/en/gwenview/external_tools.docbook
-share/doc/HTML/en/gwenview/external_tools.html
 share/doc/HTML/en/gwenview/external_tools_dialog.png
 share/doc/HTML/en/gwenview/index.cache.bz2
 share/doc/HTML/en/gwenview/index.docbook
-share/doc/HTML/en/gwenview/index.html
 share/doc/HTML/en/gwenview/interface.docbook
-share/doc/HTML/en/gwenview/interface.html
 share/doc/HTML/en/gwenview/introduction.docbook
-share/doc/HTML/en/gwenview/introduction.html
 share/doc/HTML/en/gwenview/keybindings.docbook
-share/doc/HTML/en/gwenview/keybindings.html
 share/doc/HTML/en/gwenview/mouse.docbook
-share/doc/HTML/en/gwenview/mouse.html
-share/doc/HTML/en/gwenview/tips.html
 share/doc/HTML/en/gwenview/view_mode.png
-share/icons/crystalsvg/128x128/apps/gwenview.png
-share/icons/crystalsvg/16x16/apps/gwenview.png
-share/icons/crystalsvg/16x16/apps/imagegallery.png
-share/icons/crystalsvg/22x22/apps/gwenview.png
-share/icons/crystalsvg/22x22/apps/imagegallery.png
-share/icons/crystalsvg/32x32/apps/gwenview.png
-share/icons/crystalsvg/48x48/apps/gwenview.png
-share/icons/crystalsvg/64x64/apps/gwenview.png
+share/doc/HTML/et/gwenview/common
+share/doc/HTML/et/gwenview/docked_windows.docbook
+share/doc/HTML/et/gwenview/external_tools.docbook
+share/doc/HTML/et/gwenview/index.cache.bz2
+share/doc/HTML/et/gwenview/index.docbook
+share/doc/HTML/et/gwenview/interface.docbook
+share/doc/HTML/et/gwenview/introduction.docbook
+share/doc/HTML/et/gwenview/keybindings.docbook
+share/doc/HTML/et/gwenview/mouse.docbook
+share/doc/HTML/fr/gwenview/common
+share/doc/HTML/fr/gwenview/index.cache.bz2
+share/doc/HTML/fr/gwenview/index.docbook
+share/doc/HTML/it/gwenview/browse_mode.png
+share/doc/HTML/it/gwenview/common
+share/doc/HTML/it/gwenview/docked_windows.docbook
+share/doc/HTML/it/gwenview/external_tools.docbook
+share/doc/HTML/it/gwenview/external_tools_dialog.png
+share/doc/HTML/it/gwenview/index.cache.bz2
+share/doc/HTML/it/gwenview/index.docbook
+share/doc/HTML/it/gwenview/interface.docbook
+share/doc/HTML/it/gwenview/introduction.docbook
+share/doc/HTML/it/gwenview/keybindings.docbook
+share/doc/HTML/it/gwenview/mouse.docbook
+share/doc/HTML/it/gwenview/view_mode.png
+share/doc/HTML/nl/gwenview/browse_mode.png
+share/doc/HTML/nl/gwenview/common
+share/doc/HTML/nl/gwenview/docked_windows.docbook
+share/doc/HTML/nl/gwenview/external_tools.docbook
+share/doc/HTML/nl/gwenview/external_tools_dialog.png
+share/doc/HTML/nl/gwenview/index.cache.bz2
+share/doc/HTML/nl/gwenview/index.docbook
+share/doc/HTML/nl/gwenview/interface.docbook
+share/doc/HTML/nl/gwenview/introduction.docbook
+share/doc/HTML/nl/gwenview/keybindings.docbook
+share/doc/HTML/nl/gwenview/mouse.docbook
+share/doc/HTML/nl/gwenview/view_mode.png
+share/doc/HTML/pt/gwenview/common
+share/doc/HTML/pt/gwenview/docked_windows.docbook
+share/doc/HTML/pt/gwenview/external_tools.docbook
+share/doc/HTML/pt/gwenview/index.cache.bz2
+share/doc/HTML/pt/gwenview/index.docbook
+share/doc/HTML/pt/gwenview/interface.docbook
+share/doc/HTML/pt/gwenview/introduction.docbook
+share/doc/HTML/pt/gwenview/keybindings.docbook
+share/doc/HTML/pt/gwenview/mouse.docbook
+share/doc/HTML/pt_BR/gwenview/browse_mode.png
+share/doc/HTML/pt_BR/gwenview/common
+share/doc/HTML/pt_BR/gwenview/docked_windows.docbook
+share/doc/HTML/pt_BR/gwenview/index.cache.bz2
+share/doc/HTML/pt_BR/gwenview/index.docbook
+share/doc/HTML/pt_BR/gwenview/interface.docbook
+share/doc/HTML/pt_BR/gwenview/introduction.docbook
+share/doc/HTML/pt_BR/gwenview/keybindings.docbook
+share/doc/HTML/pt_BR/gwenview/mouse.docbook
+share/doc/HTML/pt_BR/gwenview/view_mode.png
+share/doc/HTML/ru/gwenview/common
+share/doc/HTML/ru/gwenview/docked_windows.docbook
+share/doc/HTML/ru/gwenview/external_tools.docbook
+share/doc/HTML/ru/gwenview/index.cache.bz2
+share/doc/HTML/ru/gwenview/index.docbook
+share/doc/HTML/ru/gwenview/interface.docbook
+share/doc/HTML/ru/gwenview/introduction.docbook
+share/doc/HTML/ru/gwenview/keybindings.docbook
+share/doc/HTML/ru/gwenview/mouse.docbook
+share/doc/HTML/sv/gwenview/common
+share/doc/HTML/sv/gwenview/docked_windows.docbook
+share/doc/HTML/sv/gwenview/external_tools.docbook
+share/doc/HTML/sv/gwenview/index.cache.bz2
+share/doc/HTML/sv/gwenview/index.docbook
+share/doc/HTML/sv/gwenview/interface.docbook
+share/doc/HTML/sv/gwenview/introduction.docbook
+share/doc/HTML/sv/gwenview/keybindings.docbook
+share/doc/HTML/sv/gwenview/mouse.docbook
+share/icons/crystalsvg/16x16/apps/gvdirpart.png
+share/icons/crystalsvg/22x22/apps/gvdirpart.png
+share/icons/crystalsvg/32x32/apps/gvdirpart.png
+share/icons/crystalsvg/scalable/apps/gvdirpart.svg
+share/icons/hicolor/128x128/apps/gwenview.png
+share/icons/hicolor/16x16/apps/gvdirpart.png
+share/icons/hicolor/16x16/apps/gwenview.png
+share/icons/hicolor/22x22/apps/gvdirpart.png
+share/icons/hicolor/22x22/apps/gwenview.png
+share/icons/hicolor/32x32/apps/gvdirpart.png
+share/icons/hicolor/32x32/apps/gwenview.png
+share/icons/hicolor/48x48/apps/gwenview.png
+share/icons/hicolor/64x64/apps/gwenview.png
+share/icons/hicolor/scalable/apps/gvdirpart.svg
+share/icons/hicolor/scalable/apps/gwenview.svgz
 share/locale/ar/LC_MESSAGES/gwenview.mo
 share/locale/az/LC_MESSAGES/gwenview.mo
 share/locale/br/LC_MESSAGES/gwenview.mo
@@ -121,11 +203,13 @@ share/locale/lt/LC_MESSAGES/gwenview.mo
 share/locale/nb/LC_MESSAGES/gwenview.mo
 share/locale/nl/LC_MESSAGES/gwenview.mo
 share/locale/nso/LC_MESSAGES/gwenview.mo
+share/locale/pa/LC_MESSAGES/gwenview.mo
 share/locale/pl/LC_MESSAGES/gwenview.mo
 share/locale/pt/LC_MESSAGES/gwenview.mo
 share/locale/pt_BR/LC_MESSAGES/gwenview.mo
 share/locale/ro/LC_MESSAGES/gwenview.mo
 share/locale/ru/LC_MESSAGES/gwenview.mo
+share/locale/rw/LC_MESSAGES/gwenview.mo
 share/locale/sr/LC_MESSAGES/gwenview.mo
 share/locale/sr@Latn/LC_MESSAGES/gwenview.mo
 share/locale/sv/LC_MESSAGES/gwenview.mo
@@ -139,7 +223,6 @@ share/locale/zh_TW/LC_MESSAGES/gwenview.mo
 share/locale/zu/LC_MESSAGES/gwenview.mo
 share/services/gvdirpart.desktop
 share/services/gvimagepart.desktop
-@unexec rmdir %D/share/services 2>/dev/null || true
 @unexec rmdir %D/share/locale/zu/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/zu 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2>/dev/null || true
@@ -154,6 +237,8 @@ share/services/gvimagepart.desktop
 @unexec rmdir %D/share/locale/uk 2>/dev/null || true
 @unexec rmdir %D/share/locale/sr/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/sr 2>/dev/null || true
+@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/rw 2>/dev/null || true
 @unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/ro 2>/dev/null || true
 @unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
@@ -174,27 +259,22 @@ share/services/gvimagepart.desktop
 @unexec rmdir %D/share/locale/cs 2>/dev/null || true
 @unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/ca 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/64x64/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/64x64 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/48x48/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/48x48 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/22x22/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/22x22 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/128x128/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/128x128 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg 2>/dev/null || true
-@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/sv/gwenview
+@dirrm share/doc/HTML/ru/gwenview
+@dirrm share/doc/HTML/pt_BR/gwenview
+@dirrm share/doc/HTML/pt/gwenview
+@dirrm share/doc/HTML/nl/gwenview
+@dirrm share/doc/HTML/it/gwenview
+@dirrm share/doc/HTML/fr/gwenview
+@dirrm share/doc/HTML/et/gwenview
 @dirrm share/doc/HTML/en/gwenview
-@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
-@unexec rmdir %D/share/apps/konqueror/servicemenus 2>/dev/null || true
-@unexec rmdir %D/share/apps/konqueror 2>/dev/null || true
+@dirrm share/doc/HTML/de/gwenview
+@dirrm share/doc/HTML/da/gwenview
+@unexec rmdir %D/share/apps/kconf_update 2>/dev/null || true
 @dirrm share/apps/gwenview/tools
 @dirrm share/apps/gwenview/thumbnail
+@dirrm share/apps/gwenview/icons/hicolor/scalable/actions
+@dirrm share/apps/gwenview/icons/hicolor/scalable
 @dirrm share/apps/gwenview/icons/hicolor/48x48/actions
 @dirrm share/apps/gwenview/icons/hicolor/48x48
 @dirrm share/apps/gwenview/icons/hicolor/32x32/actions
@@ -209,6 +289,4 @@ share/services/gvimagepart.desktop
 @dirrm share/apps/gwenview
 @dirrm share/apps/gvimagepart
 @dirrm share/apps/gvdirpart
-@unexec rmdir %D/share/apps 2>/dev/null || true
 @unexec rmdir %D/share/applications/kde 2>/dev/null || true
-@unexec rmdir %D/share/applications 2>/dev/null || true
