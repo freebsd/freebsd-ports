@@ -1,0 +1,13 @@
+%%PYTHON_SITELIBDIR%%/tunepimp/__init__.py
+%%PYTHON_SITELIBDIR%%/tunepimp/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tunepimp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tunepimp/metadata.py
+%%PYTHON_SITELIBDIR%%/tunepimp/metadata.pyc
+%%PYTHON_SITELIBDIR%%/tunepimp/metadata.pyo
+%%PYTHON_SITELIBDIR%%/tunepimp/track.py
+%%PYTHON_SITELIBDIR%%/tunepimp/track.pyc
+%%PYTHON_SITELIBDIR%%/tunepimp/track.pyo
+%%PYTHON_SITELIBDIR%%/tunepimp/tunepimp.py
+%%PYTHON_SITELIBDIR%%/tunepimp/tunepimp.pyc
+%%PYTHON_SITELIBDIR%%/tunepimp/tunepimp.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/tunepimp
