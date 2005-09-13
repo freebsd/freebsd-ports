@@ -2746,6 +2746,7 @@ generator	ports/emulators/generator
 generator-cbiere	ports/emulators/generator-cbiere
 generic-haskell	ports/lang/generic-haskell
 generic-nqs	ports/net/generic-nqs
+geneweb		ports/www/geneweb
 gengameng	ports/devel/gengameng
 gengetopt	ports/devel/gengetopt
 genius		ports/deskutils/genius
