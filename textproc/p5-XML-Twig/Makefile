@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	XML-Twig
-PORTVERSION=	3.17
+PORTVERSION=	3.21
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Process huge XML documents by chunks via a tree interface
 
 # On Perl < 5.8.0, XML::Twig has a further optional dependency on WeakRef.
