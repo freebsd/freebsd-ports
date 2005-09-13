@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	portaltransforms
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.7
 CATEGORIES=	www zope
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	archetypes
 PKGNAMEPREFIX=	zope-
-DISTNAME=	PortalTransforms-${PORTVERSION}-4
-EXTRACT_SUFX=	.tgz
+DISTNAME=	PortalTransforms-${PORTVERSION}-final01
 
 MAINTAINER=	filippo.natali@gmail.com
 COMMENT=	PortalTransforms product for Zope/CMF
@@ -22,10 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFDefault/__init__.
 		lynx:${PORTSDIR}/www/lynx \
 		${PYTHON_SITELIBDIR}/docutils/__init__.py:${PORTSDIR}/textproc/py-docutils
 
-BROKEN=		Broken dependency
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
+NO_PACKAGE=	Double python dependency
 USE_PYTHON=	yes
 USE_ZOPE=	yes
 DIST_SUBDIR=	zope
