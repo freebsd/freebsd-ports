@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	getargs
-PORTVERSION=	2.12
+PORTVERSION=	2.14
 CATEGORIES=	devel python
 MASTER_SITES=	http://iamroot.beigetower.org/pkgs/getargs/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parse command line arguments in sys.argv
 
-USE_BZIP2=	yes
-USE_PYTHON=	yes
+USE_BZIP2=		yes
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>
