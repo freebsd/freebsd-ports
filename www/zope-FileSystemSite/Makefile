@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	FileSystemSite
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	www zope
-MASTER_SITES=	http://www.zope.org/Members/infrae/FileSystemSite/${PORTNAME}-${PORTVERSION}/
+MASTER_SITES=	http://www.infrae.com/download/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	zope-
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	x@Vex.Net
+MAINTAINER=	x@vex.net
 COMMENT=	Enable file system based sites within Zope
 
 USE_PYTHON=	yes
