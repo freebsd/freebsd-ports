@@ -1,0 +1,13 @@
+--- Makefile.orig	Thu Apr 28 22:15:06 2005
++++ Makefile	Wed Sep 14 01:04:46 2005
+@@ -1,8 +1,8 @@
+ VERSION = $(shell grep '^Version' ChangeLog | head -n 1 | cut -d' ' -f2 | tr -d ' ')
+ BIN = telak
+ O = telak.o fetch.o image.o parse.o
+-LDFLAGS = $(shell imlib2-config --libs) $(shell curl-config --libs) -lgcrypt
+-CFLAGS = -W -Wall $(shell curl-config --cflags) $(shell imlib2-config --cflags) -DTELAK_USER_AGENT="\"$(BIN) $(VERSION)\"" -DTELAK_VERSION="\"$(VERSION)\"" -g
++LDFLAGS += -L$(LOCALBASE)/lib $(shell imlib2-config --libs) $(shell curl-config --libs) -lgcrypt
++CFLAGS += -I$(LOCALBASE)/include $(shell curl-config --cflags) $(shell imlib2-config --cflags) -DTELAK_USER_AGENT="\"$(BIN) $(VERSION)\"" -DTELAK_VERSION="\"$(VERSION)\""
+ 
+ BINDIR=$(DESTDIR)/usr/bin
+ MANDIR=$(DESTDIR)/usr/share/man/man1
