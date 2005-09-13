@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gwenview
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,8 +27,6 @@ CONFIGURE_ARGS+=	--enable-kipi
 MAN1=	gwenview.1
 
 post-patch:
-	@${TOUCH} -t 200504010000 ${WRKSRC}/Makefile.am.in
-	@${REINPLACE_CMD} -e 's|xx||g' ${WRKSRC}/po/Makefile.in
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
