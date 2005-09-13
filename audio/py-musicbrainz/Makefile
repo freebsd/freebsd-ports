@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	musicbrainz
-PORTVERSION=	1.0.b1
+PORTVERSION=	1.0.b3
 PORTEPOCH=	1
 CATEGORIES=	audio python
-MASTER_SITES=	http://icepick.info/projects/python-musicbrainz/
+MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	python-${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
+DISTNAME=	python-${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}-picard
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	MusicBrainz bindings for Python
