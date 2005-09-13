@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	4.0.25
+PORTVERSION=	4.0.26
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
@@ -103,8 +103,6 @@ WANT_MYSQL_VER=	40
 LATEST_LINK=	mysql40-server
 
 CONFLICTS=	mysql-server-3.* mysql-server-4.[1-9].* mysql-server-5.*
-
-PLIST_SUB=	VER=${PORTVERSION}
 
 MAN1=		isamchk.1 isamlog.1 mysqld.1 \
 		mysqld_safe.1 perror.1 replace.1
