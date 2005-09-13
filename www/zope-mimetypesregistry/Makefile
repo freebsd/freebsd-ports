@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	mimetypesregistry
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.6
 CATEGORIES=	www zope
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	archetypes
 PKGNAMEPREFIX=	zope-
-DISTNAME=	MimetypesRegistry-${PORTVERSION}-4
-EXTRACT_SUFX=	.tgz
+DISTNAME=	MimetypesRegistry-${PORTVERSION}-final01
 
 MAINTAINER=	filippo.natali@gmail.com
 COMMENT=	MimetypesRegistry product for Zope/CMF
