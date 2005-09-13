@@ -1,0 +1,11 @@
+--- Makefile.in.orig    Tue Sep 13 10:26:47 2005
++++ Makefile.in Tue Sep 13 10:26:58 2005
+@@ -370,7 +370,7 @@
+ subdirs = @subdirs@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = libltdl
++SUBDIRS = #libltdl
+ SYMBOLFLAGS = -export-symbol-regex '^(gl[A-Z]|budgie_|bugle_|gldb_)'
+ # Misc extra files to include
+ noinst_HEADERS = budgie/tree.def budgie/c-common.def
