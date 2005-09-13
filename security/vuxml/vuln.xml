@@ -32,6 +32,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9750cf22-216d-11da-bc01-000e0c2e438a">
+    <topic>unzip -- permission race vulnerability</topic>
+    <affects>
+      <package>
+	<name>unzip</name>
+	<name>zh-unzip</name>
+	<name>ko-unzip</name>
+	<range><lt>5.52_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Imran Ghory reports a vulnerability within unzip.  The
+	  vulnerability is caused by a race condition between
+	  extracting an archive and changing the permissions of the
+	  extracted files.  This would give an attacker enough time to
+	  remove a file and hardlink it to another file owned by the
+	  user running unzip.  When unzip changes the permissions of
+	  the file it could give the attacker access to files that
+	  normally would not have been accessible for others.</p>
+      </body>
+    </description>
+    <references>
+      <bid>14450</bid>
+      <cvename>CAN-2005-2475</cvename>
+      <mlist msgid="7389fc4b05080116031536adf7@mail.gmail.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112300046224117</mlist>
+    </references>
+    <dates>
+      <discovery>2005-08-02</discovery>
+      <entry>2005-09-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8665ebb9-2237-11da-978e-0001020eed82">
     <topic>firefox &amp; mozilla -- buffer overflow
       vulnerability</topic>
@@ -134,7 +167,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>htdig</name>
-	<range><gt>0</gt></range>
+	<range><lt>3.2.0b6_1</lt></range>
       </package>
     </affects>
     <description>
@@ -155,6 +188,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-02-03</discovery>
       <entry>2005-09-04</entry>
+      <modified>2005-09-13</modified>
     </dates>
   </vuln>
 
