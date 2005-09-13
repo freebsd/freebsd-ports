@@ -212,7 +212,7 @@ post-install:
 .endfor
 .endif
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Add the following line to your /etc/crontab to make shure the"
+	@${ECHO_MSG} "Add the following line to your /etc/crontab to make sure the"
 	@${ECHO_MSG} "sqwebmail cache directory gets cleaned up."
 	@${ECHO_MSG} "0 * * * * ${CACHEOWNER} ${PREFIX}/share/sqwebmail/cleancache.pl"
 	@${ECHO_MSG} ""
