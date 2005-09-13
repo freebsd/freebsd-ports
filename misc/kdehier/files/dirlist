@@ -541,6 +541,12 @@ share/icons/hicolor/64x64/apps
 share/icons/hicolor/64x64/devices
 share/icons/hicolor/64x64/filesystems
 share/icons/hicolor/64x64/mimetypes
+share/icons/hicolor/scalable
+share/icons/hicolor/scalable/actions
+share/icons/hicolor/scalable/apps
+share/icons/hicolor/scalable/devices
+share/icons/hicolor/scalable/filesystems
+share/icons/hicolor/scalable/mimetype
 share/icons/locolor
 share/icons/locolor/128x128
 share/icons/locolor/128x128/actions
