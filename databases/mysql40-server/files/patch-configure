@@ -1,6 +1,6 @@
---- configure.orig	Mon Dec 27 16:30:01 2004
-+++ configure	Sun Jan  9 10:17:14 2005
-@@ -19609,8 +19609,6 @@
+--- configure.orig	Sat Sep  3 00:38:41 2005
++++ configure	Tue Sep 13 07:48:06 2005
+@@ -19611,8 +19611,6 @@
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
  
@@ -9,51 +9,7 @@
  
  # Prevent multiple expansion
  
-@@ -20786,43 +20784,7 @@
- echo "$as_me:$LINENO: checking \"how to check if pid exists\"" >&5
- echo $ECHO_N "checking \"how to check if pid exists\"... $ECHO_C" >&6
- PS=$ac_cv_path_PS
--# Linux style
--if $PS p $$ 2> /dev/null | grep $0 > /dev/null
--then
--  FIND_PROC="$PS p \$\$PID | grep mysqld > /dev/null"
--# Solaris
--elif $PS -fp $$ 2> /dev/null | grep $0 > /dev/null
--then
--  FIND_PROC="$PS -p \$\$PID | grep mysqld > /dev/null"
--# BSD style
--elif $PS -uaxww 2> /dev/null | grep $0 > /dev/null
--then
-   FIND_PROC="$PS -uaxww | grep mysqld | grep \" \$\$PID \" > /dev/null"
--# SysV style
--elif $PS -ef 2> /dev/null | grep $0 > /dev/null
--then
--  FIND_PROC="$PS -ef | grep mysqld | grep \" \$\$PID \" > /dev/null"
--# Do anybody use this?
--elif $PS $$ 2> /dev/null | grep $0 > /dev/null
--then
--  FIND_PROC="$PS \$\$PID | grep mysqld > /dev/null"
--else
--  case $SYSTEM_TYPE in
--    *darwin*)
--      FIND_PROC="$PS -uaxww | grep mysqld | grep \" \$\$PID \" > /dev/null"
--      ;;
--    *cygwin*)
--      FIND_PROC="$PS -e | grep mysqld | grep \" \$\$PID \" > /dev/null"
--      ;;
--    *netware* | *modesto*)
--      FIND_PROC=
--      ;;
--    *)
--      { { echo "$as_me:$LINENO: error: Could not find the right ps switches. Which OS is this ?. See the Installation chapter in the Reference Manual." >&5
--echo "$as_me: error: Could not find the right ps switches. Which OS is this ?. See the Installation chapter in the Reference Manual." >&2;}
--   { (exit 1); exit 1; }; }
--  esac
--fi
- 
- echo "$as_me:$LINENO: result: \"$FIND_PROC\"" >&5
- echo "${ECHO_T}\"$FIND_PROC\"" >&6
-@@ -24753,8 +24715,8 @@
+@@ -24767,8 +24765,8 @@
  # Some system specific hacks
  #
  
@@ -64,7 +20,7 @@
  
  # workaround for Sun Forte/x86 see BUG#4681
  case $SYSTEM_TYPE-$MACHINE_TYPE-$ac_cv_c_compiler_gnu in
-@@ -35738,7 +35700,7 @@
+@@ -35775,7 +35773,7 @@
  	/* ) rel_srcdir="$srcdir" ;;
  	* )  rel_srcdir="../$srcdir" ;;
      esac

@@ -26,13 +26,7 @@ lib/mysql/libmysys.a
 lib/mysql/libnisam.a
 lib/mysql/libvio.a
 libexec/mysqld
-%%DATADIR%%/Description.plist
-%%DATADIR%%/Info.plist
-%%DATADIR%%/MySQL-shared-compat.spec
-%%DATADIR%%/StartupParameters.plist
 %%DATADIR%%/binary-configure
-%%DATADIR%%/postinstall
-%%DATADIR%%/preinstall
 %%DATADIR%%/charsets/Index
 %%DATADIR%%/charsets/README
 %%DATADIR%%/charsets/cp1251.conf
@@ -88,7 +82,6 @@ libexec/mysqld
 %%DATADIR%%/my-large.cnf
 %%DATADIR%%/my-medium.cnf
 %%DATADIR%%/my-small.cnf
-%%DATADIR%%/mysql-%%VER%%.spec
 %%DATADIR%%/mysql-log-rotate
 %%DATADIR%%/mysql.server
 %%DATADIR%%/norwegian-ny/errmsg.sys
