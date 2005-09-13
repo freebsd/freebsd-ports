@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memcache
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	databases
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -21,6 +21,8 @@ RUN_DEPENDS=	memcached:${PORTSDIR}/databases/memcached
 USE_PHP=	zlib
 USE_PHPEXT=	yes
 PHP_MODNAME=	memcache
+
+CONFIGURE_ARGS+=--with-zlib-dir=/usr
 
 .if !defined(NOPORTDOCS)
 post-install:
