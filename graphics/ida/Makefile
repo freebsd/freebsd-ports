@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	anrays@gmail.com
 COMMENT=	Small and fast motif-based image viewer and editor
 
+OPTIONS=	LIBEXIF "Build with libexif" on
+
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
@@ -30,9 +32,17 @@ MAKEFILE=	${WRKSRC}/GNUmakefile
 MAN1=		ida.1
 PORTDOCS=	README TODO INSTALL
 
-PLIST_FILES=	bin/ida lib/X11/app-defaults/Ida
+PLIST_FILES=	bin/exiftran bin/ida lib/X11/app-defaults/Ida
 
 .include <bsd.port.pre.mk>
+
+pre-fetch:
+.if exists(${LOCALBASE}/lib/libexif.so)
+WITH_LIBEXIF=	yes
+.endif
+.if defined(WITH_LIBEXIF)
+LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif
+.endif
 
 post-patch:
 .if ${OSVERSION} < 500000
@@ -40,8 +50,9 @@ post-patch:
 		${WRKSRC}/tiff.c ${WRKSRC}/xwd.c
 .endif
 
-.if !defined(NOPORTDOCS)
 post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/exiftran ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for a in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${a} ${DOCSDIR}
