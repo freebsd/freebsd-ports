@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DBD-InterBase
-PORTVERSION=	0.43
-PORTREVISION=	2
+PORTVERSION=	0.44
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dbi-interbase
@@ -24,7 +23,7 @@ post-patch:
 		@${PERL} -pi -e 's,%%IB_BASE%%,${LOCALBASE},g' \
 			${WRKSRC}/Makefile.PL
 
-MAN3=		Bundle::DBD::InterBase.3 DBD::InterBase.3 DBD::InterBase::FAQ.3
+MAN3=		DBD::InterBase.3
 
 .include <bsd.port.pre.mk>
 
