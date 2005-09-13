@@ -7,7 +7,7 @@
 
 PORTNAME=	nntpcache
 PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/net/news/nntpcache/ \
 		ftp://ftp.sbs.de/pub/news/servers/nntpcache/ \
