@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	marcus@corp.grupos.com.br
-COMMENT=	Tool to send the mails over remote smtp server
+COMMENT=	Tool to send e-mail via a remote smtp server
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
