@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	formulator
-PORTVERSION=	1.8.0
+PORTVERSION=	1.10
 CATEGORIES=	www zope
 MASTER_SITES=	http://www.infrae.com/download/Formulator/${PORTVERSION}/
 PKGNAMEPREFIX=	zope-
