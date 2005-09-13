@@ -7,6 +7,7 @@
 
 PORTNAME=	mysql2odbc
 PORTVERSION=	0.99.2
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.iodbc.org/downloads/mysql2odbc/
 
@@ -16,8 +17,14 @@ COMMENT=	Openlink MySQL-ODBC Gateway
 OPTIONS=	UNIXODBC	"Build with unixODBC" on \
 		IODBC		"Build with iODBC" off \
 
+.include <bsd.port.pre.mk>
+
 .if !defined(WITH_UNIXODBC) && !defined(WITH_IODBC)
 WITH_UNIXODBC=	yes
+.endif
+
+.if defined(WITH_UNIXODBC) && defined(WITH_IODBC)
+.error "UNIXODBC and IODBC options are mutually exclusive"
 .endif
 
 .if defined(WITH_UNIXODBC)
@@ -32,9 +39,10 @@ CONFIGURE_ARGS=	--with-iodbc
 
 CONFIGURE_ARGS+=--libdir=${PREFIX}/mysql2odbc
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:13
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
