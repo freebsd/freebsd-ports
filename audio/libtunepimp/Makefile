@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libtunepimp
-PORTVERSION=	0.3.0
-PORTREVISION=	2
+DISTVERSION=	0.4.0-pre5
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/
+MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/
 
 MAINTAINER=	lauri@kde.org
 COMMENT=	Client library for musicbrainz
@@ -24,10 +23,11 @@ LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
 CONFLICTS=	trm-0*
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_ICONV=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=15
 
