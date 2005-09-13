@@ -12,10 +12,16 @@ CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/32/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
 DISTNAME=	sge-V60u6_TAG-src
-MASTER_SITE_SUBDIR=	brooks
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Sun Grid Engine, a batch queueing system
+
+FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+
+# We have to use wget because the master site required cookies to
+# download the file.
+DISABLE_SIZE=	yes
+FETCH_CMD=	wget -c
 
 OPTIONS=	BDB "Use DB based spooler (currently broken)" off \
 		DRMAA "Support the Java DRMAA API (requires native Java)" on \
@@ -34,12 +40,6 @@ USE_OPENSSL=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${SGE_ROOT}/lib/${SGE_ARCH}
-
-# We have to use fetch because the master site required cookies to
-# download the file.
-FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget
-DISABLE_SIZE=	yes
-FETCH_CMD=	wget -c
 
 SGE_BASE?=	sge
 SGE_ROOT=	${PREFIX}/${SGE_BASE}
@@ -94,9 +94,9 @@ EXCEPTFILES=	arc_depend_irix.asc arc_depend_solaris.asc man testsuite
 
 .if ${OSVERSION} < 503000
 .if ${OSVERSION} < 500000
-BROKEN= 	"Does not build without libpthread"
+BROKEN= 	"does not build without libpthread"
 .else
-IGNORE= 	"Not supported for FreeBSD < 5.3"
+IGNORE= 	is not supported for FreeBSD < 5.3
 .endif
 .endif
 
