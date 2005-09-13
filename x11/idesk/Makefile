@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/
 EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Place launch icons and background directly on your desktop
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
