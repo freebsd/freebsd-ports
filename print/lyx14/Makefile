@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	1.3.5
-PORTREVISION=	1
+PORTVERSION=	1.3.6
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://planetmirror.com/pub/lyx/stable/ \
 		http://www-ftp.lip6.fr/ftp/pub/lyx/stable/ \
 		ftp://gd.tuwien.ac.at/publishing/tex/lyx/stable/
 
-MAINTAINER=	thompsa@FreeBSD.org
+MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
@@ -25,32 +24,43 @@ RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 
 CONFLICTS=	cjk-lyx-*
 
+OPTIONS=	QT	"Use Qt (instead of XForms)"	${QT_PRESENT}	\
+		ASPELL	"Utilize ASPELL library"	on	\
+		ISPELL	"Depend on ISPELL as well"	off
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget lthack
 USE_PERL5=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+GNU_CONFIGURE=	yes
+EXTRACT_AFTER_ARGS=| ${TAR} -xf - --exclude ${PORTNAME}-${PORTVERSION}/intl/*.[ch]
 CONFIGURE_ARGS=	--with-extra-lib="${LOCALBASE}/lib" \
 		--with-extra-inc="${LOCALBASE}/include"
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 MAN1=		lyx.1 reLyX.1
+USE_REINPLACE=	yes
+
+post-configure:
+	# Removing explicit linking with -lc
+	${REINPLACE_CMD} -e 's,-lc ,,' ${WRKSRC}/*/Makefile
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_QT)
-USE_QT_VER=	3
+LIB_DEPENDS+=	qt-mt:${PORTSDIR}/x11-toolkits/qt33
 CONFIGURE_ARGS+=	--with-frontend=qt
-QTCPPFLAGS+=	${PTHREAD_CFLAGS}
-QTCFGLIBS+=	${PTHREAD_LIBS}
+CFLAGS+=	${PTHREAD_CFLAGS}
+CONFIGURE_ENV+=	LDFLAGS=${PTHREAD_LIBS}
 RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/texcm-ttf/cmex10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf
 .else
-LIB_DEPENDS+=	forms.1:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS+=	forms:${PORTSDIR}/x11-toolkits/xforms
 USE_XPM=	yes
 .endif
 
 .if defined(WITH_ASPELL)
-LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=	--with-pspell \
 			--with-pspell-lib="${LOCALBASE}/lib" \
 			--with-pspell-include="${LOCALBASE}/include"
@@ -60,32 +70,14 @@ CONFIGURE_ARGS+=	--with-pspell \
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 .endif
 
-.include <bsd.port.pre.mk>
+.if exists(${LOCALBASE}/lib/libqt-mt.prl)
+QT_PRESENT=	on
+.else
+QT_PRESENT=	off
+.endif
 
 .if ${OSVERSION} < 500035
 CFLAGS+=	-Wno-non-template-friend -ftemplate-depth-30
-.endif
-
-pre-everything::
-.if !defined(WITH_QT)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want to build with the Qt3 frontend,"
-	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_QT=yes\""
-	@${ECHO_MSG}
-.endif
-
-.if !defined(WITH_ASPELL)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want to compile with Aspell/Pspell support,"
-	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_ASPELL=yes\""
-	@${ECHO_MSG}
-.endif
-
-.if !defined(WITH_ISPELL)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want to compile with Ispell support,"
-	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_ISPELL=yes\""
-	@${ECHO_MSG}
 .endif
 
 .include <bsd.port.post.mk>
