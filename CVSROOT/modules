@@ -9065,6 +9065,10 @@ pear-apd	ports/devel/pear-apd
 pearpc		ports/emulators/pearpc
 pebrot		ports/net/pebrot
 pecl-APC	ports/www/pecl-APC
+pecl-PDO	ports/databases/pecl-PDO
+pecl-PDO_MYSQL	ports/databases/pecl-PDO_MYSQL
+pecl-PDO_PGSQL	ports/databases/pecl-PDO_PGSQL
+pecl-PDO_SQLITE	ports/databases/pecl-PDO_SQLITE
 pecl-big_int	ports/math/pecl-big_int
 pecl-fileinfo	ports/sysutils/pecl-fileinfo
 pecl-fribidi	ports/converters/pecl-fribidi
