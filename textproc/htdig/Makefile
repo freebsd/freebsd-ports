@@ -7,6 +7,7 @@
 
 PORTNAME=	htdig
 PORTVERSION=	3.2.0.b6
+PORTREVISION=	1
 CATEGORIES=	textproc www
 MASTER_SITES=	http://htdig.sourceforge.net/files/ \
 		http://www.htdig.org/files/ \
