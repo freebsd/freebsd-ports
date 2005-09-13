@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	viewcvs
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marcus@corp.grupos.com.br
 COMMENT=	Python version of Zeller's cvsweb
 
 USE_PYTHON=	yes
