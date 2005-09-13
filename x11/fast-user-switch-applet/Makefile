@@ -7,6 +7,7 @@
 
 PORTNAME=	fast-user-switch-applet
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://ignore-your.tv/downloads/fusa/ \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/bland/}
@@ -20,8 +21,12 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gtk20 gnomepanel
 USE_LIBTOOL_VER=	15
 CONFIGURE_ARGS=	--with-gdm-config=${X11BASE}/etc/gdm/gdm.conf
+USE_REINPLACE=	yes
 
 GCONF_SCHEMAS=	fast-user-switch-applet.schemas
 INSTALLS_OMF=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|\$$"\$$|"$$|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
