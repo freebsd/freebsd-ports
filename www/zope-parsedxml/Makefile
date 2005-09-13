@@ -14,14 +14,11 @@ DISTNAME=	ParsedXML-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	x@Vex.Net
-COMMENT=	ParsedXML - access and manipulated XML documents within Zope
+COMMENT=	Access and manipulate XML documents within Zope
 
 RUN_DEPENDS=	${PYTHON_LIBDIR}/site-packages/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 
-BROKEN=		Broken dependency
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
+NO_PACKAGE=	Double python dependency
 USE_PYTHON=	yes
 USE_ZOPE=	yes
 DIST_SUBDIR=	zope
