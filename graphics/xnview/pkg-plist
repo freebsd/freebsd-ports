@@ -2,8 +2,8 @@ bin/nconvert
 bin/nv
 bin/xnview
 lib/X11/app-defaults/XnView
-lib/libformat.so
-lib/libformat.so.4
+%%FREEBSD4%%lib/libformat.so
+%%FREEBSD4%%lib/libformat.so.4
 %%PORTDOCS%%%%DOCSDIR%%/Formats.txt
 %%PORTDOCS%%%%DOCSDIR%%/ReadMe.txt
 %%PORTDOCS%%%%DOCSDIR%%/Usage.txt
