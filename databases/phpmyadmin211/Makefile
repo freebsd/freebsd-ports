@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	phpMyAdmin
-PORTVERSION=	2.6.4.r1
-#DISTVERSION=	2.6.4-rc1
+PORTVERSION=	2.6.4
+#DISTVERSION=	2.6.4
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpmyadmin
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\..(.)$/-rc\1/}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	A set of PHP-scripts to manage MySQL over the web
@@ -54,7 +54,7 @@ WANT_PHP_WEB=	yes
 
 OPTIONS=	BZ2	 "bzip2 library support" on \
 		GD	 "GD library support" on \
-		MYSQLI	 "Improved MySQL support (PHP5, MySQL 4.1 only)" off \
+		MYSQLI	 "Improved MySQL support" off \
 		OPENSSL	 "OpenSSL support" on \
 		PDF	 "PDFlib support (implies GD)" on \
 		ZLIB	 "ZLIB support" on \
@@ -103,6 +103,8 @@ pre-everything::
 	${ECHO_MSG} "    WITH_SUPHP=yes   Install appropriately for use with"
 	${ECHO_MSG} "                     the www/suphp port [default: no]"
 	${ECHO_MSG} ""
+	${ECHO_MSG} "Note that selecting the MYSQLI option will only work"
+	${ECHO_MSG} "with PHP5 and MySQL 4.1.x"
 
 post-patch:
 	${MV} ${WRKSRC}/${CFGFILE} ${WRKSRC}/${CFGFILE}.sample
