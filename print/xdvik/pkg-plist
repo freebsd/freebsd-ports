@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+bin/oxdvi
 bin/xdvi
 bin/xdvi-motif.bin
 bin/xdvizilla

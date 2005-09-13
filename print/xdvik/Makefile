@@ -44,6 +44,7 @@ CONFLICTS=	xdvi-[0-9]* xdvi-*-[0-9]* \
 		*-xdvik-[0-9]* ja-ptex-tetex-[0-9]*
 
 MAN1=		xdvi.1 xdvizilla.1
+MLINKS=		xdvi.1 oxdvi.1
 
 TEXMFDIR=	share/texmf
 TEXMFDISTDIR=	share/texmf-dist
