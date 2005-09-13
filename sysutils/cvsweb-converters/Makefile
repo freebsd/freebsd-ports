@@ -8,7 +8,8 @@
 PORTNAME=	cvsweb-converters
 PORTVERSION=	0.3.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.sbox.TUGraz.at/home/d/dada/distfiles/
+MASTER_SITES=	http://www.sbox.TUGraz.at/home/d/dada/distfiles/ \
+		http://mitglied.lycos.de/mkamm/distfiles/
 
 MAINTAINER=	mkamm@gmx.net
 COMMENT=	Create hyperlinks to cvsweb from cvs[up] output or FreeBSD commitlogs
