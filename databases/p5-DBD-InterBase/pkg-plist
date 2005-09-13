@@ -1,12 +1,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/InterBase/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/Bundle/DBD/InterBase.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/InterBase.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/DBD/InterBase/FAQ.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/InterBase/GetInfo.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/DBD/InterBase/TypeInfo.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/InterBase/InterBase.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/InterBase/InterBase.so
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Bundle/DBD 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Bundle 2>/dev/null || true
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/DBD/InterBase
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/DBD 2>/dev/null || true
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/InterBase
