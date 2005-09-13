@@ -202,6 +202,12 @@ share/icons/hicolor/64x64/apps/.keep_me
 share/icons/hicolor/64x64/devices/.keep_me
 share/icons/hicolor/64x64/filesystems/.keep_me
 share/icons/hicolor/64x64/mimetypes/.keep_me
+share/icons/hicolor/scalable/.keep_me
+share/icons/hicolor/scalable/actions/.keep_me
+share/icons/hicolor/scalable/apps/.keep_me
+share/icons/hicolor/scalable/devices/.keep_me
+share/icons/hicolor/scalable/filesystems/.keep_me
+share/icons/hicolor/scalable/mimetype/.keep_me
 share/icons/locolor/.keep_me
 share/icons/locolor/128x128/.keep_me
 share/icons/locolor/128x128/actions/.keep_me
@@ -314,6 +320,12 @@ share/wallpapers/.keep_me
 @dirrm share/icons/locolor/128x128/actions
 @dirrm share/icons/locolor/128x128
 @dirrm share/icons/locolor
+@dirrm share/icons/hicolor/scalable/mimetype
+@dirrm share/icons/hicolor/scalable/filesystems
+@dirrm share/icons/hicolor/scalable/devices
+@dirrm share/icons/hicolor/scalable/apps
+@dirrm share/icons/hicolor/scalable/actions
+@dirrm share/icons/hicolor/scalable
 @dirrm share/icons/hicolor/64x64/mimetypes
 @dirrm share/icons/hicolor/64x64/filesystems
 @dirrm share/icons/hicolor/64x64/devices
