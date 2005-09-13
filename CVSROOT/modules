@@ -11759,6 +11759,7 @@ tei-p3		ports/textproc/tei-p3
 tei-p4		ports/textproc/tei-p4
 tei-xlite	ports/textproc/tei-xlite
 teknap		ports/audio/teknap
+telak		ports/graphics/telak
 telbook		ports/misc/telbook
 tellico		ports/misc/tellico
 telnetx		ports/net/telnetx
