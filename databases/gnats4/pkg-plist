@@ -18,6 +18,7 @@ etc/gnats/defaults/gnatsd.user_access
 etc/gnats/defaults/responsible
 etc/gnats/defaults/states
 etc/gnats/defaults/submitters
+etc/gnats/send-pr.conf
 @dirrm etc/gnats/defaults
 @unexec rmdir %D/etc/gnats 2>/dev/null || true
 %%SERVER%%libexec/gnats/at-pr

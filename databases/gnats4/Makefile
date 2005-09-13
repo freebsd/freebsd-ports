@@ -6,14 +6,12 @@
 #
 
 PORTNAME=		gnats
-PORTVERSION=		4.0.1
-PORTREVISION=		0
+PORTVERSION=		4.1.0
 CATEGORIES=		databases devel
-MASTER_SITES=		http://savannah.gnu.org/download/%SUBDIR%/ \
-			${MASTER_SITE_GNU}
+MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnats
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		vd@datamax.bg
 COMMENT=		GNATS, the GNU Problem Report Management System
 
 GNU_CONFIGURE=		yes
@@ -58,8 +56,8 @@ PLIST_SUB=		GNATSDBDIR=${GNATSDBDIR}
 MAN1=			edit-pr.1 query-pr.1 send-pr.1
 MAN5=			databases.5 dbconfig.5
 MAN7=			gnats.7
-MAN8=			delete-pr.8 file-pr.8 gen-index.8 gnatsd.8 \
-			mkcat.8 mkdb.8 pr-edit.8 queue-pr.8 rmcat.8
+MAN8=			delete-pr.8 getclose.8 file-pr.8 gen-index.8 gnatsd.8 \
+			install-sid.8 mkcat.8 mkdb.8 pr-edit.8 queue-pr.8 rmcat.8
 INFO=			gnats-faq gnats
 DOCFILES=		NEWS UPGRADING
 

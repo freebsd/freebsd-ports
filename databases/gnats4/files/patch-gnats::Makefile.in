@@ -1,6 +1,6 @@
---- gnats/Makefile.in.orig	Sun Jul 27 01:23:17 2003
-+++ gnats/Makefile.in	Thu Sep 25 02:30:32 2003
-@@ -91,7 +91,7 @@
+--- gnats/Makefile.in.orig	Thu Feb 24 22:35:55 2005
++++ gnats/Makefile.in	Mon Aug  1 15:08:51 2005
+@@ -93,7 +93,7 @@
  
  INSTALL = $(srcdir)/../install-sh -c
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
@@ -9,7 +9,7 @@
  INSTALL_DATA = @INSTALL_DATA@
  
  SUB_INSTALL = `echo $(INSTALL) | sed 's,^\([^/]\),../\1,'`
-@@ -107,6 +107,7 @@
+@@ -109,6 +109,7 @@
  libdir = @libdir@
  libexecdir = @libexecdir@
  statedir = @datadir@
@@ -17,84 +17,84 @@
  sysconfdir = @sysconfdir@
  
  program_transform_name =
-@@ -163,7 +164,7 @@
+@@ -162,7 +163,7 @@
  	check-db delete-pr dbconfig gnats-databases gnats-pwconv $(EXTRA_STUFF)
  
  all-tools: libgnats.a query-pr pr-age pr-edit edit-pr file-pr getclose \
--	config-send-pr mail-agent dbconfig
-+	mail-agent dbconfig
+-	config-send-pr mail-agent dbconfig diff-prs
++	mail-agent dbconfig diff-prs
  
  libgnats.a: $(LIBOBJS)
  	-rm -f tmplibgnats.a libgnats.a
-@@ -363,15 +364,17 @@
+@@ -368,15 +369,17 @@
  install-tools-arch-dep: install-tools-bin
  
  install-tools-arch-indep: all-tools
--	$(SHELL) $(srcdir)/../mkinstalldirs $(datadir)/gnats
-+	$(SHELL) $(srcdir)/../mkinstalldirs $(sharedstatedir)
- 	$(SHELL) $(srcdir)/../mkinstalldirs $(sysconfdir)/gnats/defaults
+-	$(SHELL) $(srcdir)/../mkinstalldirs $(DESTDIR)$(datadir)/gnats
++	$(SHELL) $(srcdir)/../mkinstalldirs $(DESTDIR)$(sharedstatedir)/gnats
+ 	$(SHELL) $(srcdir)/../mkinstalldirs $(DESTDIR)$(sysconfdir)/gnats/defaults
  	@if [ `whoami` = root -o `whoami` = $(GNATS_USER) ] ; then \
--	  echo "chown $(GNATS_USER) $(datadir)/gnats" ; \
--	  chown $(GNATS_USER) $(datadir)/gnats ; \
-+	  echo "chown $(GNATS_USER) $(sharedstatedir)" ; \
-+	  chown $(GNATS_USER) $(sharedstatedir) ; \
+-	  echo "chown $(GNATS_USER) $(DESTDIR)$(datadir)/gnats" ; \
+-	  chown $(GNATS_USER) $(DESTDIR)$(datadir)/gnats ; \
++	  echo "chown $(GNATS_USER) $(DESTDIR)$(sharedstatedir)/gnats" ; \
++	  chown $(GNATS_USER) $(DESTDIR)$(sharedstatedir)/gnats ; \
          else \
--	  echo "*** Warning: Must chown $(GNATS_USER) $(datadir)/gnats" ; \
-+	  echo "*** Warning: Must chown $(GNATS_USER) $(sharedstatedir)" ; \
+-	  echo "*** Warning: Must chown $(GNATS_USER) $(DESTDIR)$(datadir)/gnats" ; \
++	  echo "*** Warning: Must chown $(GNATS_USER) $(DESTDIR)$(sharedstatedir)/gnats" ; \
 +	fi
 +	@if [ x"$(lispdir)" != x ]; then \
-+	  $(INSTALL_DATA) $(srcdir)/gnats.el $(lispdir)/gnats.el ; \
++	  $(INSTALL_DATA) $(srcdir)/gnats.el $(DESTDIR)$(lispdir)/gnats.el ; \
  	fi
--	$(INSTALL_DATA) $(srcdir)/gnats.el $(lispdir)/gnats.el
+-	$(INSTALL_DATA) $(srcdir)/gnats.el $(DESTDIR)$(lispdir)/gnats.el
  	for i in categories submitters responsible gnatsd.user_access addresses states classes dbconfig ; do \
  	    if [ -f "$$i" ] ; then \
- 		$(INSTALL_DATA) $$i $(sysconfdir)/gnats/defaults/$$i ; \
-@@ -386,7 +389,7 @@
- 	$(INSTALL_SCRIPT) edit-pr $(bindir)/edit-pr
- 	$(INSTALL_SCRIPT) $(srcdir)/diff-prs $(libexecdir)/gnats/diff-prs
- 	$(INSTALL_SCRIPT) mail-agent $(libexecdir)/gnats/mail-agent
--	$(INSTALL_PROGRAM) file-pr $(libexecdir)/gnats/file-pr
-+	$(INSTALL_SCRIPT) file-pr $(libexecdir)/gnats/file-pr
- 	$(INSTALL_PROGRAM) pr-age $(libexecdir)/gnats/pr-age
- 	$(INSTALL_PROGRAM) pr-edit $(libexecdir)/gnats/pr-edit
+ 		$(INSTALL_DATA) $$i $(DESTDIR)$(sysconfdir)/gnats/defaults/$$i ; \
+@@ -391,7 +394,7 @@
+ 	$(INSTALL_SCRIPT) edit-pr $(DESTDIR)$(bindir)/edit-pr
+ 	$(INSTALL_SCRIPT) diff-prs $(DESTDIR)$(libexecdir)/gnats/diff-prs
+ 	$(INSTALL_SCRIPT) mail-agent $(DESTDIR)$(libexecdir)/gnats/mail-agent
+-	$(INSTALL_PROGRAM) file-pr $(DESTDIR)$(libexecdir)/gnats/file-pr
++	$(INSTALL_SCRIPT) file-pr $(DESTDIR)$(libexecdir)/gnats/file-pr
+ 	$(INSTALL_PROGRAM) pr-age $(DESTDIR)$(libexecdir)/gnats/pr-age
+ 	$(INSTALL_PROGRAM) pr-edit $(DESTDIR)$(libexecdir)/gnats/pr-edit
  	@if [ `whoami` = root -o `whoami` = $(GNATS_USER) ] ; then \
-@@ -404,29 +407,29 @@
+@@ -409,29 +412,29 @@
  install-gnats-arch-dep: install-gnats-bin $(EXTRA_INSTALL)
  
  install-gnats-arch-indep: all-gnats install-tools-arch-indep
--	@if [ -f $(GLOBAL_DB_LIST_FILE) ]; then \
--	  echo "Not putting gnats-databases file in $(GLOBAL_DB_LIST_FILE), it's already there." ; \
-+	@if [ -f $(GLOBAL_DB_LIST_FILE).default ]; then \
-+	  echo "Not putting gnats-databases file in $(GLOBAL_DB_LIST_FILE).default, it's already there." ; \
+-	@if [ -f $(DESTDIR)$(GLOBAL_DB_LIST_FILE) ]; then \
+-	  echo "Not putting gnats-databases file in $(DESTDIR)$(GLOBAL_DB_LIST_FILE), it's already there." ; \
++	@if [ -f $(DESTDIR)$(GLOBAL_DB_LIST_FILE).default ]; then \
++	  echo "Not putting gnats-databases file in $(DESTDIR)$(GLOBAL_DB_LIST_FILE).default, it's already there." ; \
  	  true ; \
  	else \
  	  if [ `whoami` = root -o `whoami` = $(GNATS_USER) ] ; then \
  	    $(INSTALL_DATA) -o $(GNATS_USER) gnats-databases \
--	                    $(GLOBAL_DB_LIST_FILE) ; \
-+	                    $(GLOBAL_DB_LIST_FILE).default ; \
+-	                    $(DESTDIR)$(GLOBAL_DB_LIST_FILE) ; \
++	                    $(DESTDIR)$(GLOBAL_DB_LIST_FILE).default ; \
  	  else \
--	    $(INSTALL_DATA) gnats-databases $(GLOBAL_DB_LIST_FILE) ; \
--	    echo "*** Warning: Must chown $(GNATS_USER) $(GLOBAL_DB_LIST_FILE)" ; \
-+	    $(INSTALL_DATA) gnats-databases $(GLOBAL_DB_LIST_FILE).default ; \
-+	    echo "*** Warning: Must chown $(GNATS_USER) $(GLOBAL_DB_LIST_FILE).default" ; \
+-	    $(INSTALL_DATA) gnats-databases $(DESTDIR)$(GLOBAL_DB_LIST_FILE) ; \
+-	    echo "*** Warning: Must chown $(GNATS_USER) $(DESTDIR)$(GLOBAL_DB_LIST_FILE)" ; \
++	    $(INSTALL_DATA) gnats-databases $(DESTDIR)$(GLOBAL_DB_LIST_FILE).default ; \
++	    echo "*** Warning: Must chown $(GNATS_USER) $(DESTDIR)$(GLOBAL_DB_LIST_FILE).default" ; \
  	  fi \
  	fi
--	@if [ -f $(GNATSD_HOST_ACCESS_FILE) ]; then \
--	   echo "Not putting gnats.host_access file in $(GNATSD_HOST_ACCESS_FILE), it's already there." ; \
-+	@if [ -f $(GNATSD_HOST_ACCESS_FILE).default ]; then \
-+	   echo "Not putting gnats.host_access file in $(GNATSD_HOST_ACCESS_FILE).default, it's already there." ; \
+-	@if [ -f $(DESTDIR)$(GNATSD_HOST_ACCESS_FILE) ]; then \
+-	   echo "Not putting gnats.host_access file in $(DESTDIR)$(GNATSD_HOST_ACCESS_FILE), it's already there." ; \
++	@if [ -f $(DESTDIR)$(GNATSD_HOST_ACCESS_FILE).default ]; then \
++	   echo "Not putting gnats.host_access file in $(DESTDIR)$(GNATSD_HOST_ACCESS_FILE).default, it's already there." ; \
  	   true ; \
  	else \
  	  if [ `whoami` = root -o `whoami` = $(GNATS_USER) ] ; then \
  	    $(INSTALL_DATA) -o $(GNATS_USER) $(srcdir)/gnatsd.host_access \
--	                    $(GNATSD_HOST_ACCESS_FILE) ; \
-+	                    $(GNATSD_HOST_ACCESS_FILE).default ; \
+-	                    $(DESTDIR)$(GNATSD_HOST_ACCESS_FILE) ; \
++	                    $(DESTDIR)$(GNATSD_HOST_ACCESS_FILE).default ; \
            else \
  	    $(INSTALL_DATA) $(srcdir)/gnatsd.host_access \
--	                    $(GNATSD_HOST_ACCESS_FILE) ; \
--	    echo "*** Warning: Must chown $(GNATS_USER) $(GNATSD_HOST_ACCESS_FILE)" ; \
-+	                    $(GNATSD_HOST_ACCESS_FILE).default ; \
-+	    echo "*** Warning: Must chown $(GNATS_USER) $(GNATSD_HOST_ACCESS_FILE).default" ; \
+-	                    $(DESTDIR)$(GNATSD_HOST_ACCESS_FILE) ; \
+-	    echo "*** Warning: Must chown $(GNATS_USER) $(DESTDIR)$(GNATSD_HOST_ACCESS_FILE)" ; \
++	                    $(DESTDIR)$(GNATSD_HOST_ACCESS_FILE).default ; \
++	    echo "*** Warning: Must chown $(GNATS_USER) $(DESTDIR)$(GNATSD_HOST_ACCESS_FILE).default" ; \
  	  fi \
  	fi
  	@echo "*** If you're a first-time user, you'll want to create a new database";
