@@ -7,7 +7,7 @@
 
 PORTNAME=	mc
 PORTVERSION=	4.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc shells
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file/managers/mc/
@@ -68,10 +68,7 @@ WITHOUT_SLANG=	yes
 .if !defined(WITH_SLANG) && (defined(WITHOUT_SLANG) || defined(MINIMAL))
 CONFIGURE_ARGS+=--with-screen=ncurses
 .else
-CONFIGURE_ARGS+=--with-screen=slang
-CONFIGURE_ENV=	CPPFLAGS="-I ${LOCALBASE}/include" \
-		LDFLAGS="-ltermcap -L ${LOCALBASE}/lib"
-LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
+CONFIGURE_ARGS+=--with-screen=mcslang
 .endif
 
 .if !defined(WITH_SUBSHELL) && (defined(WITHOUT_SUBSHELL) || defined(MINIMAL))
