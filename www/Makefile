@@ -145,6 +145,7 @@
     SUBDIR += gatling
     SUBDIR += gecko-sharp
     SUBDIR += geeklog
+    SUBDIR += geneweb
     SUBDIR += geolizer
     SUBDIR += gforge
     SUBDIR += glibwww
