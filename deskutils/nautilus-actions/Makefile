@@ -23,13 +23,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-nautilus-extdir=${X11BASE}/lib/nautilus/extensions-1.0
 
-INTLTOOLIZE?=	${LOCALBASE}/bin/intltoolize
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|@datadir@datadir@/pixmaps|${DATADIR}/nact|' \
 		${WRKSRC}/nact/nact.desktop.in.in
-
-pre-configure:
-	cd ${WRKSRC} && ${INTLTOOLIZE} --force
 
 .include <bsd.port.mk>
