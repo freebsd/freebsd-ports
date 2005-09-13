@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dosunix
-PORTVERSION=	1.0.13
+PORTVERSION=	1.0.14
 CATEGORIES=	converters
 MASTER_SITES=	http://dosunix.sourceforge.net/
 
