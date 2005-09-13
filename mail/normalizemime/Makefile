@@ -7,6 +7,7 @@
 
 PORTNAME=	normalizemime
 PORTVERSION=	1.16.20050628
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://hyvatti.iki.fi/~jaakko/spam/
 DISTNAME=	normalizemime.cc
@@ -34,10 +35,4 @@ do-build:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME:R} ${PREFIX}/bin
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-USE_GCC=3.4+
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
