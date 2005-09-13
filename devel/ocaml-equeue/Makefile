@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	equeue
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml-programming.de/packages/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	david.julien@gmail.com
+MAINTAINER=	djulien.bsd@gmail.com
 COMMENT=	The Equeue library for OCaml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
