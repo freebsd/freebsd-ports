@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libedit
-PORTVERSION=	2.6.7
-PORTREVISION=	1
+PORTVERSION=	2.6.9
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.astron.com/pub/libedit/ \
 		http://www.canonware.com/download/libedit/
@@ -17,8 +16,9 @@ COMMENT=	Command line editing library
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-readline
 INSTALLS_SHLIB=	yes
+
+OPTIONS=	READLINE	"Enable readline compatibility"	off
 
 MAN3=		editline.3
 MAN5=		editrc.5
@@ -41,8 +41,14 @@ MLINKS=		editline.3 el_init.3 \
 		editline.3 history.3
 MANCOMPRESSED=	no
 
+.include <bsd.port.pre.mk>
+
+.if !defined(WITH_READLINE)
+CONFIGURE_ARGS+=	--disable-readline
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS -O|CFLAGS|g ; \
 		 s|MAJOR="2"|MAJOR="5"|g' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
