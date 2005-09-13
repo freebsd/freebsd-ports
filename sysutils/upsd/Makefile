@@ -9,15 +9,15 @@ PORTNAME=	upsd
 PORTVERSION=	2.0.1.6
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.mavetju.org/download/adopted/
+MASTER_SITES=	http://www.mavetju.org/download/adopted/ \
+		http://core.inec.ru/~az/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	az@inec.ru
 COMMENT=	APC Smart UPS Monitoring Daemon
 
-DEPRECATED=		mastersite disappeared
-EXPIRATION_DATE=	2005-10-28
-
 WRKSRC=		${WRKDIR}/upsd-2.0
+
+PLIST_FILES=	sbin/upsd etc/upsd.conf etc/rc.d/upsd.sh
 
 pre-build:
 	@${MV} ${WRKSRC}/config.h ${WRKSRC}/conf.h.orig
