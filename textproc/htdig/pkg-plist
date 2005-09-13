@@ -150,17 +150,17 @@ lib/htdig_db/libhtdb-3.2.0.so
 lib/htdig_db/libhtdb.a
 lib/htdig_db/libhtdb.la
 lib/htdig_db/libhtdb.so
-share/htdig/common/bad_words
-share/htdig/common/english.0
-share/htdig/common/english.aff
-share/htdig/common/footer.html
-share/htdig/common/header.html
-share/htdig/common/long.html
-share/htdig/common/nomatch.html
-share/htdig/common/short.html
-share/htdig/common/synonyms
-share/htdig/common/syntax.html
-share/htdig/common/wrapper.html
+%%DATADIR%%/common/bad_words
+%%DATADIR%%/common/english.0
+%%DATADIR%%/common/english.aff
+%%DATADIR%%/common/footer.html
+%%DATADIR%%/common/header.html
+%%DATADIR%%/common/long.html
+%%DATADIR%%/common/nomatch.html
+%%DATADIR%%/common/short.html
+%%DATADIR%%/common/synonyms
+%%DATADIR%%/common/syntax.html
+%%DATADIR%%/common/wrapper.html
 www/cgi-bin/htsearch
 www/cgi-bin/qtest
 www/data/search.html
@@ -265,7 +265,7 @@ www/icons/htdig/star_blank.png
 @dirrm lib/htdig
 @dirrm lib/htdig_db
 @dirrm www/icons/htdig
-@unexec rmdir %D/share/htdig/common 2>/dev/null || true
-@unexec rmdir %D/share/htdig/database 2>/dev/null || true
-@unexec rmdir %D/share/htdig 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%%/common 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%%/database 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
 @unexec rmdir %D/etc/htdig 2>/dev/null || true
