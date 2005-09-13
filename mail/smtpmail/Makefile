@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	smtpmail
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.5
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
-		http://voodoo.oberon.net/download/
-MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marcus@corp.grupos.com.br
 COMMENT=	Tool to send the mails over remote smtp server
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
 PLIST_FILES=	bin/smtpmail
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} \
-		${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
 
 .include <bsd.port.mk>
