@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	nautilus-actions
-PORTVERSION=	0.6
-PORTREVISION=	2
+PORTVERSION=	0.7
 CATEGORIES=	deskutils
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://people.freebsd.org/~ahze/distfiles/
-MASTER_SITE_SUBDIR=	ahze
+MASTER_SITES=	ftp://ftp2.grumz.net/grumz/
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Extension for Nautilus to configure programs to launch on files
