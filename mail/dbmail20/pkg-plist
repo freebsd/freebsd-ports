@@ -1,14 +1,14 @@
 etc/dbmail.conf-dist
-lib/dbmail/libauthdbmail.0
+lib/dbmail/libauthdbmail.so.0
 lib/dbmail/libauthdbmail.a
 lib/dbmail/libauthdbmail.la
-lib/dbmail/libauthdbmail
-lib/dbmail/libsortdbmail.0
+lib/dbmail/libauthdbmail.so
+lib/dbmail/libsortdbmail.so.0
 lib/dbmail/libsortdbmail.a
 lib/dbmail/libsortdbmail.la
-lib/dbmail/libsortdbmail
-lib/libdbmail
-lib/libdbmail.0
+lib/dbmail/libsortdbmail.so
+lib/libdbmail.so
+lib/libdbmail.so.0
 lib/libdbmail.a
 lib/libdbmail.la
 sbin/dbmail-imapd
@@ -21,16 +21,16 @@ sbin/dbmail-util
 %%MYSQL%%%%DATADIR%%/sql/create_tables_innoDB.mysql
 %%MYSQL%%%%DATADIR%%/sql/migrate_from_1.x_to_2.0.mysql
 %%MYSQL%%%%DATADIR%%/sql/migrate_from_1.x_to_2.0_innodb.mysql
-%%MYSQL%%lib/dbmail/libmysqldbmail.0
+%%MYSQL%%lib/dbmail/libmysqldbmail.so.0
 %%MYSQL%%lib/dbmail/libmysqldbmail.a
 %%MYSQL%%lib/dbmail/libmysqldbmail.la
-%%MYSQL%%lib/dbmail/libmysqldbmail
+%%MYSQL%%lib/dbmail/libmysqldbmail.so
 %%PGSQL%%%%DATADIR%%/sql/create_tables.pgsql
 %%PGSQL%%%%DATADIR%%/sql/migrate_from_1.x_to_2.0.pgsql
-%%PGSQL%%/lib/dbmail/libpgsqldbmail.0
+%%PGSQL%%/lib/dbmail/libpgsqldbmail.so.0
 %%PGSQL%%/lib/dbmail/libpgsqldbmail.a
 %%PGSQL%%/lib/dbmail/libpgsqldbmail.la
-%%PGSQL%%/lib/dbmail/libpgsqldbmail
+%%PGSQL%%/lib/dbmail/libpgsqldbmail.so
 @dirrm lib/dbmail
 @dirrm %%DATADIR%%/sql
 @dirrm %%DATADIR%%

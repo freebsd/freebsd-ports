@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	dbmail
-PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTVERSION=	2.0.7
 CATEGORIES=	mail
-MASTER_SITES=	http://www.dbmail.org/download/
+MASTER_SITES=	http://www.dbmail.org/download/2.0/
 PKGNAMESUFFIX=	-${DATABASE}
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	seanc@FreeBSD.org
+MAINTAINER=	mark_sf@kikg.ifmo.ru
 COMMENT=	An SQL database-based mail system (POP3 and IMAP)
 
 USE_REINPLACE=	YES
@@ -22,6 +20,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_GMAKE=	YES
 USE_OPENSSL=	YES
 USE_RC_SUBR=	dbmail-pop3d.sh dbmail-lmtpd.sh dbmail-imapd.sh
+INSTALLS_SHLIB=	yes
 
 CFLAGS += -fPIC
 
