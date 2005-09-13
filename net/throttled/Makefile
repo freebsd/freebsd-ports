@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	throttled
-PORTVERSION=	0.3.2
+PORTVERSION=	0.4.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.intrarts.com/Files/
 EXTRACT_SUFX=	.tgz
@@ -14,24 +14,15 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	quest@mac.com
 COMMENT=	Bandwidth shaping and QoS solution
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 PLIST_FILES=	sbin/throttled sbin/throttled-startup
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 499999
-IGNORE=		"is for FreeBSD 4.X only"
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e "s|install: all|install: $$\{APPNAME\}|" \
-		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" \
-		${WRKSRC}/Makefile \
-		${WRKSRC}/throttled-startup
-	@${REINPLACE_CMD} -e "s|c++|${CXX}|;s|-O3|${CXXFLAGS}|" \
-		${WRKSRC}/src/Makefile
+	${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s|c++|${CXX}|;s|-O3|${CXXFLAGS}| \
+	;s|-pthread|${PTHREAD_LIBS}|" ${WRKSRC}/src/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
