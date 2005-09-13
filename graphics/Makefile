@@ -541,6 +541,7 @@
     SUBDIR += synaesthesia
     SUBDIR += tcm
     SUBDIR += teddy
+    SUBDIR += telak
     SUBDIR += tgif
     SUBDIR += tgif-nls
     SUBDIR += threeDS
