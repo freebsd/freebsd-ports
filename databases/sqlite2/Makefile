@@ -16,7 +16,7 @@ PORTVERSION=	2.8.16
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marcus@corp.grupos.com.br
 COMMENT=	An SQL database engine in a C library w/ Tcl wrapper
 
 DOCSDIR=	${PREFIX}/share/doc/sqlite2
