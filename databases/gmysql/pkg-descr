@@ -6,5 +6,3 @@ database and modify its design in the following ways:
 * modify columns or indices while preserving the data in them where possible.
 
 It is also possible to add and remove databases.
-
-WWW: http://www.loth.demon.co.uk/people/steved/projects/gmysql/

@@ -9,8 +9,7 @@ PORTNAME=	gmysql
 PORTVERSION=	0.3.4
 PORTREVISION=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://www.loth.demon.co.uk/people/steved/projects/gmysql/ \
-		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
+MASTER_SITES=	http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ frontend for mysql
