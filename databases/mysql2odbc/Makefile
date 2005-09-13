@@ -24,7 +24,7 @@ WITH_UNIXODBC=	yes
 .endif
 
 .if defined(WITH_UNIXODBC) && defined(WITH_IODBC)
-.error "UNIXODBC and IODBC options are mutually exclusive"
+BROKEN=		UNIXODBC and IODBC options are mutually exclusive
 .endif
 
 .if defined(WITH_UNIXODBC)
