@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	http_ping
-PORTVERSION=	20020403
+PORTVERSION=	20050629
 CATEGORIES=	net www
-MASTER_SITES=	http://www.acme.com/software/http_ping/
-DISTNAME=	${PORTNAME}_03apr2002
+MASTER_SITES=	http://www.acme.com/software/${PORTNAME}/
+DISTNAME=	${PORTNAME}_29jun2005
 
 MAINTAINER=	dd@FreeBSD.org
 COMMENT=	Sends HTTP requests every few seconds and times how long they take
