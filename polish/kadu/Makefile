@@ -7,6 +7,7 @@
 
 PORTNAME=		kadu
 PORTVERSION=		0.4.1
+PORTREVISION=		1
 PORTEPOCH=		1
 CATEGORIES=		polish net
 MASTER_SITES=		http://www.kadu.net/download/stable/
@@ -20,12 +21,12 @@ LIB_DEPENDS=		gadu.3:${PORTSDIR}/polish/ekg\
 
 USE_BZIP2=		yes
 USE_GMAKE=		yes
+USE_OPENSSL=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-existing-libgadu \
 			--with-includes="${LOCALBASE}/include" \
 			--with-libs="${LOCALBASE}/lib" \
-			--program-transform-name=''\
-			--mandir=${PREFIX}/man
+			--program-transform-name=''
 CONFIGURE_ENV=		QTDIR="${QT_PREFIX}"
 
 USE_QT_VER=		3
@@ -34,6 +35,11 @@ QT_NONSTANDARD=		yes
 WRKSRC=			${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+post-patch:
+	@${ECHO} "MODULE_LDFLAGS=\"-lcrypto\"" >> ${WRKSRC}/modules/encryption/spec
+.endif
 
 post-install:
 	${MKDIR} ${X11BASE}/share/gnome/apps/Internet
