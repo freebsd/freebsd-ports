@@ -9,8 +9,7 @@ PORTNAME=	hx
 PORTVERSION=	0.7.14
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://hx.fortyoz.org/ \
-		http://members.macconnect.com/users/j/jalex/
+MASTER_SITES=	http://members.macconnect.com/users/j/jalex/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A text based Hotline (http://www.bigredh.com) client for Unix
