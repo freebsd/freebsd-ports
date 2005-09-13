@@ -1,0 +1,14 @@
+
+******************************************************************
+
+Note that you cannot perform any database functions using
+the PDO extension by itself; you must install a database-specific
+PDO driver like
+
+ * databases/pecl-PDO_MYSQL
+ * databases/pecl-PDO_PGSQL
+ * databases/pecl-PDO_SQLITE
+
+to access a database server.
+
+******************************************************************
