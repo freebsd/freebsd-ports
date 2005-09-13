@@ -17,8 +17,7 @@ COMMENT=	Command line editing library
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-
-OPTIONS=	READLINE	"Enable readline compatibility"	off
+CONFIGURE_ARGS=	--disable-readline
 
 MAN3=		editline.3
 MAN5=		editrc.5
@@ -41,14 +40,8 @@ MLINKS=		editline.3 el_init.3 \
 		editline.3 history.3
 MANCOMPRESSED=	no
 
-.include <bsd.port.pre.mk>
-
-.if !defined(WITH_READLINE)
-CONFIGURE_ARGS+=	--disable-readline
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS -O|CFLAGS|g ; \
 		 s|MAJOR="2"|MAJOR="5"|g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
