@@ -7,5 +7,3 @@ language bindings more efficient.  This includes:
   - use of the ORBit_small_invoke_stub() call for operation
     invocation, which allows for short circuited invocation on local
     objects.
-
-WWW:    http://orbit-python.sault.org/
