@@ -68,6 +68,8 @@ jakarta_tomcat%%TOMCAT_VERSION%%_stderr_log="${jakarta_tomcat%%TOMCAT_VERSION%%_
 name="jakarta_tomcat%%TOMCAT_VERSION%%"
 rcvar=`set_rcvar`
 
+load_rc_config "${name}"
+
 if [ -n "${jakarta_tomcat%%TOMCAT_VERSION%%_java_home}" ] ; then
 	export JAVA_HOME="${jakarta_tomcat%%TOMCAT_VERSION%%_java_home}"
 fi
@@ -110,5 +112,4 @@ jakarta_tomcat%%TOMCAT_VERSION%%_stop() {
 	wait_for_pids
 }
 
-load_rc_config "${name}"
 run_rc_command "$1"
