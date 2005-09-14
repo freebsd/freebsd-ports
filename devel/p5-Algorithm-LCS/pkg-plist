@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Algorithm/LCS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/LCS/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/LCS/LCS.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/LCS/LCS.so
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/LCS 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Algorithm 2>/dev/null || true

@@ -657,6 +657,7 @@
     SUBDIR += p5-Algorithm-Diff
     SUBDIR += p5-Algorithm-Evolutionary
     SUBDIR += p5-Algorithm-Interval2Prefix
+    SUBDIR += p5-Algorithm-LCS
     SUBDIR += p5-Algorithm-LUHN
     SUBDIR += p5-Algorithm-MDiff
     SUBDIR += p5-Algorithm-MarkovChain
