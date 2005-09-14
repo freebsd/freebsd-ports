@@ -8,7 +8,9 @@
 PORTNAME=	vvv
 PORTVERSION=	1.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.inf.ufes.br/~thomas/graphics/vvv/
+MASTER_SITES=	http://www.inf.ufes.br/~thomas/graphics/vvv/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pav
 DISTNAME=	${PORTNAME}_unix
 EXTRACT_SUFX=	.tgz
 
