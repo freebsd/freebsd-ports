@@ -7,4 +7,4 @@ used as a de facto measurement service -- and it avoids increasing
 problems with ICMP-based network measurement (blocking, spoofing, rate
 limiting, etc).
 
-WWW: http://www.cs.washington.edu/homes/savage/sting/
+WWW: http://www.cs.ucsd.edu/~savage/sting/
