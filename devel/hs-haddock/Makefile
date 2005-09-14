@@ -30,6 +30,12 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 PLIST_SUB+=	HADDOCK_VERSION=${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		Needs perl >= 5.6
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/share/sgml/catalog||' ${WRKSRC}/configure
 
@@ -44,4 +50,4 @@ post-install:
 	@(cd ${WRKSRC}/haddock/doc && ${CP} -R haddock ${PREFIX}/share/doc)
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
