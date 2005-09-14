@@ -1,0 +1,9 @@
+Net Ldap is a clone of Perls Net::LDAP object interface to
+ldapservers. It does not contain all of Net::LDAPs features,
+but has:
+* A simple OO-interface to connections, searches and entries.
+* Support for tls and ldap v3.
+* Simple modification, deletion and creation of ldapentries.
+* Support for schema handling.
+
+WWW: http://pear.php.net/package/Net_LDAP/
