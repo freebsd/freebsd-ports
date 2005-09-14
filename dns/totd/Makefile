@@ -22,12 +22,13 @@ RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
-
+.if ${OSVERSION} >= 500000
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-ne_mesg.c \
+		${FILESDIR}/extra-patch-tcp_response.c
+.else
 post-patch:
 	@${REINPLACE_CMD} -e 's/%zd/%d/g' ${WRKSRC}/*.c
+.endif
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/totd.conf.sample ${PREFIX}/etc
