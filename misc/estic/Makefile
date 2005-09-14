@@ -7,8 +7,9 @@
 
 PORTNAME=		estic
 PORTVERSION=		1.61
-CATEGORIES=		misc
-MASTER_SITES=		ftp://ftp.gwdg.de/pub/misc/isdn/linux/estic/
+CATEGORIES=		misc comms
+MASTER_SITES=		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dinoex
 PKGNAMESUFFIX?=		${NOX11_SUFFIX}${PKGNAMESUFFIX2}
 DISTFILES=		estic-1.60-sources.zip estic-1.61-patch-from-1.60.zip
 
