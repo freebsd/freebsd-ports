@@ -16,16 +16,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Open 802.11 Splash Screen
 
-BUILD_DEPENDS= \
-	${LOCALBASE}/sbin/pfctl:${PORTSDIR}/security/pf
-RUN_DEPENDS= \
-	${LOCALBASE}/sbin/pfctl:${PORTSDIR}/security/pf
-
 USE_GNOME=	glib12
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
+.if ${OSVERSION} < 502105
 IGNORE=		Requires 5.x or later for pf(4) firewall support
 .endif
 
