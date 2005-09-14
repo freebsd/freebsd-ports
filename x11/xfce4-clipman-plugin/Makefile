@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
 		http://xfce.org/~kelnos/mirrors/xfce-goodies/
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	matt@bsdfly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XFce 4 clipboard module for xfce4-panel
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
