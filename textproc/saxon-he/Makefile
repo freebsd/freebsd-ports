@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	saxon
-PORTVERSION=	8.5
+PORTVERSION=	8.5.1
 PORTEPOCH=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -27,7 +27,7 @@ NO_BUILD=	yes
 
 CONFLICTS=	saxon-6.*
 
-JARFILES=	saxon8-sql.jar saxon8-jdom.jar saxon8.jar
+JARFILES=	saxon8-sql.jar saxon8.jar
 PLIST_FILES+=	${JARFILES:S,^,%%JAVAJARDIR%%/,} bin/saxon bin/saxon-xquery
 .if !defined(NOPORTDOCS)
 PORTDOCS=	background documentation img index.html
