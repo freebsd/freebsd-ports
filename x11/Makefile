@@ -257,6 +257,7 @@
     SUBDIR += xrsh
     SUBDIR += xscreensaver
     SUBDIR += xscreensaver-gnome
+    SUBDIR += xscreensaver-gnome-hacks
     SUBDIR += xscreensaver-kde
     SUBDIR += xscreensaver.app
     SUBDIR += xsel
