@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	py-game
-PORTVERSION=	1.6
-PORTREVISION=	2
+PORTVERSION=	1.7.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://pygame.seul.org/ftp/
-DISTNAME=	${PORTNAME:S/-//}-${PORTVERSION}
+DISTNAME=	${PORTNAME:S/-//}-${PORTVERSION}release
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mva@sysfault.org
 COMMENT=	A module designed to write games in Python
 
 BUILD_DEPENDS=	${PYNUMERIC}
@@ -21,7 +20,8 @@ RUN_DEPENDS=	${PYNUMERIC}
 
 USE_SDL=	ttf image mixer sdl
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=yes
+USE_XLIB=	yes
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} config.py

@@ -1,3 +1,5 @@
+include/%%PYTHON_VERSION%%/pygame/fastevents.h
+include/%%PYTHON_VERSION%%/pygame/ffmovie.h
 include/%%PYTHON_VERSION%%/pygame/font.h
 include/%%PYTHON_VERSION%%/pygame/mixer.h
 include/%%PYTHON_VERSION%%/pygame/pygame.h
@@ -19,6 +21,7 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/cursors.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pygame/display.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/draw.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/event.so
+lib/%%PYTHON_VERSION%%/site-packages/pygame/fastevent.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/font.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/freesansbold.ttf
 lib/%%PYTHON_VERSION%%/site-packages/pygame/image.so
@@ -35,6 +38,10 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/mixer.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/mixer_music.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/mouse.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/movie.so
+lib/%%PYTHON_VERSION%%/site-packages/pygame/overlay.so
+lib/%%PYTHON_VERSION%%/site-packages/pygame/pkgdata.py
+lib/%%PYTHON_VERSION%%/site-packages/pygame/pkgdata.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pygame/pkgdata.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pygame/pygame.ico
 lib/%%PYTHON_VERSION%%/site-packages/pygame/pygame_icon.bmp
 lib/%%PYTHON_VERSION%%/site-packages/pygame/pygame_icon.icns
@@ -57,6 +64,7 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.py
 lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyo
 %%PORTDOCS%%%%DOCSDIR%%/LGPL
+%%PORTDOCS%%%%DOCSDIR%%/howto_release_pygame.txt
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/logos.html
 %%PORTDOCS%%%%DOCSDIR%%/pygame_logo.gif
@@ -69,6 +77,7 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyo
 %%PORTDOCS%%%%DOCSDIR%%/ref/Font.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/Joystick.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/Movie.html
+%%PORTDOCS%%%%DOCSDIR%%/ref/Overlay.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/Rect.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/Sound.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/Surface.html
@@ -76,6 +85,7 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyo
 %%PORTDOCS%%%%DOCSDIR%%/ref/pygame_cdrom.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/pygame_color.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/pygame_constants.html
+%%PORTDOCS%%%%DOCSDIR%%/ref/pygame_cursor.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/pygame_cursors.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/pygame_display.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/pygame_draw.html
@@ -101,6 +111,10 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyo
 %%PORTDOCS%%%%DOCSDIR%%/tut/chimp/ChimpLineByLine.html
 %%PORTDOCS%%%%DOCSDIR%%/tut/chimp/chimp.py.html
 %%PORTDOCS%%%%DOCSDIR%%/tut/chimp/chimpshot.gif
+%%PORTDOCS%%%%DOCSDIR%%/tut/intro/ball.gif
+%%PORTDOCS%%%%DOCSDIR%%/tut/intro/blade.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tut/intro/freedom.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tut/intro/intro.html
 %%PORTDOCS%%%%DOCSDIR%%/tut/newbieguide.html
 %%PORTDOCS%%%%DOCSDIR%%/tut/surfarray/SurfarrayIntro.html
 %%PORTDOCS%%%%DOCSDIR%%/tut/surfarray/allblack.jpg
@@ -126,6 +140,7 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyo
 %%PORTDOCS%%%%DOCSDIR%%/util/listlate.html
 %%PORTDOCS%%%%DOCSDIR%%/util/makedocs.py
 %%PORTDOCS%%%%DOCSDIR%%/util/pagelate.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/.#stars.py.1.7
 %%PORTDOCS%%%%EXAMPLESDIR%%/aliens.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/arraydemo.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/chimp.py
@@ -135,7 +150,6 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyo
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/arraydemo.bmp
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/background.gif
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/bomb.gif
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/bong.wav
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/boom.wav
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/car_door.wav
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/chimp.bmp
@@ -150,22 +164,41 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyo
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/secosmic_lo.wav
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/shot.gif
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/whiff.wav
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/yuv_1.pgm
 %%PORTDOCS%%%%EXAMPLESDIR%%/eventlist.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/fastevents.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/fonty.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/glcube.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/liquid.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/MainMenu.nib/JavaCompiling.plist
+%%PORTDOCS%%%%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/MainMenu.nib/_MainMenu_EOArchive_English.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/MainMenu.nib/classes.nib
+%%PORTDOCS%%%%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/MainMenu.nib/info.nib
+%%PORTDOCS%%%%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/MainMenu.nib/keyedobjects.nib
+%%PORTDOCS%%%%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/aliens.icns
+%%PORTDOCS%%%%EXAMPLESDIR%%/macosx/aliens_app_example/README.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/macosx/aliens_app_example/aliens.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/macosx/aliens_app_example/aliens_bootstrap.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/macosx/aliens_app_example/setup.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/macosx/macfont.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/moveit.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/oldalien.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/overlay.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/readme.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/sound.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/sound_array_demos.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/stars.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/uberball.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/vgrade.py
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/MainMenu.nib
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/macosx/aliens_app_example
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/macosx
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/util
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tut/tom
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tut/surfarray
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tut/intro
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tut/chimp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tut
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ref
