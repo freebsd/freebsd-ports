@@ -19,6 +19,7 @@ COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4, IS-IS route software
 CONFLICTS=	zebra-devel-[0-9]* zebra-0*
 
 GNU_CONFIGURE=		yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=		yes
 USE_REINPLACE=		yes
 INSTALLS_SHLIB=		yes
@@ -41,8 +42,7 @@ OPTIONS=	ISISD		"Enable experimental ISIS daemon"	off \
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS+=--includedir=${PREFIX}/include --enable-exampledir=${PREFIX}/share/examples/quagga \
-		--program-transform-name=""
+CONFIGURE_ARGS+=--includedir=${PREFIX}/include --enable-exampledir=${PREFIX}/share/examples/quagga
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \

@@ -1,0 +1,42 @@
+--- configure.orig	Sun Aug 28 21:37:37 2005
++++ configure	Wed Sep 14 12:07:40 2005
+@@ -14751,13 +14751,13 @@
+   fi
+ 
+   if test "${HAVE_SNMP}" = "yes"; then
+-    for ac_snmp in /usr/include/net-snmp/library/asn1.h /usr/include/ucd-snmp/asn1.h /usr/local/include/ucd-snmp/asn1.h /dev/null
++    for ac_snmp in /usr/local/include/net-snmp/library/asn1.h /usr/local/include/ucd-snmp/asn1.h /usr/local/include/ucd-snmp/asn1.h /dev/null
+     do
+       test -f "${ac_snmp}" && break
+     done
+ 
+     case ${ac_snmp} in
+-      /usr/include/net-snmp/*)
++      /usr/local/include/net-snmp/*)
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_SNMP
+@@ -14773,20 +14773,20 @@
+ #define UCD_COMPATIBLE
+ _ACEOF
+ 
+-                  CFLAGS="${CFLAGS} -I/usr/include/net-snmp -I/usr/include/net-snmp/library"
++                  CFLAGS="${CFLAGS} -I/usr/local/include/net-snmp -I/usr/local/include/net-snmp/library"
+ 		  if test "${HAVE_NETSNMP}" = "yes"; then
+ 		        LIBS="${LIBS} -lnetsnmp"
+ 		  else
+ 			LIBS="${LIBS} -lsnmp"
+ 		  fi
+                   ;;
+-      /usr/include/ucd-snmp/*)
++      /usr/local/include/ucd-snmp/*)
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_SNMP
+ _ACEOF
+ 
+-                  CFLAGS="${CFLAGS} -I/usr/include/ucd-snmp"
++                  CFLAGS="${CFLAGS} -I/usr/local/include/ucd-snmp"
+     		  LIBS="${LIBS} -lsnmp"
+                   ;;
+       /usr/local/include/ucd-snmp/*)
