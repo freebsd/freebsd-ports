@@ -8,7 +8,7 @@
 PORTNAME=	sting
 PORTVERSION=	0.7
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.cs.washington.edu/homes/savage/sting/
+MASTER_SITES=	http://www.cs.ucsd.edu/~savage/sting/
 DISTNAME=	sting
 
 MAINTAINER=	ports@FreeBSD.org
