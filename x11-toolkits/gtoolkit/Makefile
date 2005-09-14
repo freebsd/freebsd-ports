@@ -36,6 +36,8 @@ CONFIGURE_WRKSRC=	${WRKDIR}/${DISTNAME}
 post-patch:
 	${REINPLACE_CMD} -e 's#gtk-config#gtk12-config#g' \
 		${CONFIGURE_WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|)/Makefiles|)/Library/Makefiles|' \
+		${WRKSRC}/Makefile.gnustep
 
 .include <bsd.port.pre.mk>
 
