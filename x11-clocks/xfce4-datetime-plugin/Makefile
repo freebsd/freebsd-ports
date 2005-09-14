@@ -10,7 +10,6 @@ PORTVERSION=	0.3.1
 PORTREVISION=	1
 CATEGORIES=	x11-clocks xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
-		http://matt.nerim.net/xfce-goodies/ \
 		http://xfce.org/~kelnos/mirrors/xfce-goodies/
 DIST_SUBDIR=	xfce4
 
