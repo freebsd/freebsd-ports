@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20050712
+PORTVERSION=	0.0.20050914
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|$|ahze/|} \
 		http://people.freebsd.org/~ahze/distfiles/
@@ -35,10 +35,11 @@ PLIST_FILES=	bin/x264 \
 
 OPTIONS=	GPAC "Enable MPEG-4 Output" On \
 		DEBUG "Enable Debugging" Off \
-		OPTIMIZED_CFLAGS "Enable Optimized CFLAGS" Off
+		OPTIMIZED_CFLAGS "Enable Optimized CFLAGS" Off \
+		X11_OUTPUT "Enable X11 Output" Off
 
-CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/include" \
-			--extra-ldflags="${LDFLAGS} -L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/include -I${X11BASE}/include" \
+			--extra-ldflags="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
 #			--enable-pthread
 
 .include <bsd.port.pre.mk>
@@ -64,6 +65,11 @@ CFLAGS+=	-O2 -funroll-loops -ffast-math
 .if !defined(WITHOUT_GPAC)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libm4systems_static.a:${PORTSDIR}/multimedia/gpac-libm4systems
 CONFIGURE_ARGS+=	--enable-mp4-output
+.endif
+
+.if defined(WITH_X11_OUTPUT)
+CONFIGURE_ARGS+=	--enable-visualize
+USE_XLIB=		yes
 .endif
 
 do-install:

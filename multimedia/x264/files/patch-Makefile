@@ -1,5 +1,5 @@
---- Makefile.orig	Wed May 18 22:55:05 2005
-+++ Makefile	Wed May 18 22:56:31 2005
+--- Makefile.orig	Wed Sep 14 04:50:13 2005
++++ Makefile	Wed Sep 14 04:55:01 2005
 @@ -15,7 +15,7 @@
  endif
  
@@ -9,33 +9,27 @@
  SRCS   += common/i386/mc-c.c common/i386/dct-c.c common/i386/predict.c
  ASMSRC  = common/i386/dct-a.asm common/i386/cpu-a.asm \
            common/i386/pixel-a.asm common/i386/mc-a.asm \
-@@ -40,19 +40,25 @@
+@@ -55,14 +55,20 @@
  OBJS = $(SRCS:%.c=%.o)
  DEP  = depend
  
 -default: $(DEP) x264$(EXE)
 +SHARED_LIB = libx264.so
 +SHARED_LIB_VER = $(SHARED_LIB).1
-+
++ 
 +default: $(DEP) x264$(EXE) $(SHARED_LIB_VER)
  
  libx264.a: .depend $(OBJS) $(OBJASM)
  	ar rc libx264.a $(OBJS) $(OBJASM)
  	ranlib libx264.a
  
--x264$(EXE): libx264.a x264.o
--	$(CC) -o $@ x264.o libx264.a $(LDFLAGS)
-+x264$(EXE): $(SHARED_LIB_VER) x264.o
-+	$(CC) -o $@ x264.o $(SHARED_LIB_VER) $(LDFLAGS)
+-x264$(EXE): libx264.a x264.o matroska.o
+-	$(CC) -o $@ x264.o matroska.o libx264.a $(LDFLAGS)
++x264$(EXE): $(SHARED_LIB_VER) x264.o matroska.o
++	$(CC) -o $@ x264.o matroska.o $(SHARED_LIB_VER) $(LDFLAGS)
 +
 +$(SHARED_LIB_VER): $(OBJS) libx264.a
 +	$(CC) $(CFLAGS) -shared -Wl,-soname,$(SHARED_LIB_VER) -o $(SHARED_LIB_VER) $(OBJS) $(OBJASM) $(LDFLAGS)
  
  x264vfw.dll: libx264.a $(wildcard vfw/*.c vfw/*.h)
  	make -C vfw/build/cygwin
- 
--checkasm: testing/checkasm.o libx264.a
-+checkasm: testing/checkasm.o $(SHARED_LIB_VER)
- 	$(CC) -o $@ $< libx264.a $(LDFLAGS)
- 
- %.o: %.asm
