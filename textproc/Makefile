@@ -126,7 +126,6 @@
     SUBDIR += freegrep
     SUBDIR += ga-aspell
     SUBDIR += galax
-    SUBDIR += gauche-sxml
     SUBDIR += gd-aspell
     SUBDIR += gdict
     SUBDIR += gdome2

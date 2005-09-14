@@ -1,7 +1,0 @@
-share/gauche/%%VERSION%%/lib/sxml/adaptor.scm
-share/gauche/%%VERSION%%/lib/sxml/ssax.scm
-share/gauche/%%VERSION%%/lib/sxml/to-html.scm
-share/gauche/%%VERSION%%/lib/sxml/tree-trans.scm
-@dirrm share/gauche/%%VERSION%%/lib/sxml
-%%PORTDOCS%%share/doc/gauche/sxml/README
-%%PORTDOCS%%@dirrm share/doc/gauche/sxml
