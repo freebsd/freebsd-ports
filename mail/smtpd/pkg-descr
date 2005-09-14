@@ -2,19 +2,12 @@ The smtpd daemon talks the Simple Mail Transfer Protocol (SMTP) with other
 SMTP daemons to receive mail from them, and saves it into a spool directory
 for later processing.  It is the store portion of an SMTP store and forward
 proxy.  The symbiotic companion program smtpfwdd is used to forward the
-spooled mail on to its eventual destination. 
+spooled mail on to its eventual destination.
 
-smtpd is invoked from a super-server such as inetd or juniperd. 
-
-There is a patch available to do MAPS RBL style lookups at
-ftp://ftp.obtuse.com/pub/smtpd/patch-smtpd-2.0-RBL.gz. 
-
-Documentation is avaialble online with the juniper documentation.
-See the docs for smtpd as a starting point, at
-http://www.obtuse.com/juniper-docs/man/smtpd.html
+smtpd is invoked from a super-server such as inetd or juniperd.
 
 Access control rules based on the connecting host, and the smtp envelope are
 supported.  It contains some powerful features for stopping inbound or
-outbound SPAM. 
+outbound SPAM.
 
-WWW: http://www.obtuse.com/smtpd.html
+WWW: http://www.obtuse.com/
