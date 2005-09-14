@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	metaocaml
-PORTVERSION=	3.08.a20
+PORTVERSION=	3.08.a23
 CATEGORIES=	lang
 MASTER_SITES=	http://www.metaocaml.org/dist/ \
+		http://www.metaocaml.org/dist/old/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jylefort
-DISTNAME=	MetaOCaml_308_alpha_020
+DISTNAME=	MetaOCaml_308_alpha_023
 
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	The MetaOCaml compiler and programming environment
-
-CONFLICTS=	ocaml-[0-9]* ocaml-notk-[0-9]* ocaml-nox11-[0-9]*
 
 ONLY_FOR_ARCHS=	i386	# feel free to test on other archs and send a PR
 
@@ -24,11 +23,16 @@ USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	-prefix ${PREFIX} -cc "${CC} ${CFLAGS}"
+CONFIGURE_ARGS=	-prefix ${PREFIX} -cc "${CC} ${CFLAGS}" -with-pthread \
+		-libdir ${PREFIX}/lib/metaocaml/lib \
+	        -bindir ${PREFIX}/lib/metaocaml/bin \
+		-mandir ${DATADIR}/man
 
 USE_GMAKE=	yes
 ALL_TARGET=	world opt metaocamlopt opt.opt
 STRIP=
+
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN1=		ocamlcp.1 ocamldep.1 ocamldebug.1 ocamldoc.1 ocamlopt.1 \
 		ocamlrun.1 ocamlyacc.1 ocamlmktop.1 ocaml.1 ocamlc.1 \
@@ -51,7 +55,7 @@ MANN=		Arg.n Array.n ArrayLabels.n Bigarray.Array1.n \
 		Scanf.n Set.Make.n Set.OrderedType.n Set.S.n Set.n Sort.n \
 		Stack.n StdLabels.Array.n StdLabels.List.n StdLabels.String.n \
 		StdLabels.n Str.n Stream.n String.n StringLabels.n Sys.n \
-		Trxtime.n Unix.LargeFile.n Unix.n Weak.Make.n Weak.S.n Weak.n
+		Unix.LargeFile.n Unix.n Weak.Make.n Weak.S.n Weak.n
 MLINKS=		ocamlc.1 ocamlc.opt.1 ocamlopt.1 ocamlopt.opt.1 \
 		camlp4.1 camlp4o.1 camlp4.1 camlp4r.1 camlp4.1 mkcamlp4.1 \
 		camlp4.1 camlp4o.opt.1 camlp4.1 camlp4r.opt.1 \
@@ -61,6 +65,8 @@ OPTIONS=	X11 "build the X11 graphics library" on \
 		LABLTK "build the LablTk library" on
 
 .include <bsd.port.pre.mk>
+# Have to set this here and can't use ${DATADIR} or MLINKS get screwed up
+MANPREFIX=	${PREFIX}/share/metaocaml
 
 .if defined(WITH_X11)
 USE_XLIB=	yes
@@ -98,7 +104,6 @@ post-patch:
 		 s,([[:space:]]*(do|then)[[:space:]]*)(\$$\(CP\)|cp)([[:space:]]+.*(MANDIR|MANODIR|MANEXT)),\1\$${BSD_INSTALL_MAN} \4,;' {} \;
 
 post-install:
-	${TOUCH} ${PREFIX}/lib/ocaml/ocamldoc/custom/.keep
 .if defined(WITH_LABLTK)
 .  for d in camltk labltk
 	${MKDIR} ${EXAMPLESDIR}/${d}
@@ -108,10 +113,16 @@ post-install:
 	${FIND} ${EXAMPLESDIR}/* -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 	${FIND} ${EXAMPLESDIR}/* -type d -exec ${CHMOD} ${BINMODE} {} \;
 .endif
+	${LN} -sf ${PREFIX}/lib/metaocaml/bin/metaocaml ${PREFIX}/bin/metaocaml
+	${LN} -sf ${PREFIX}/lib/metaocaml/bin/metaocamlopt ${PREFIX}/bin/metaocamlopt
+	${LN} -sf ${PREFIX}/lib/metaocaml/bin/metaocamlc ${PREFIX}/bin/metaocamlc
 .for p in camlp4o.opt camlp4r.opt ocamlc.opt ocamldep.opt ocamldoc.opt \
 	ocamllex.opt ocamlopt.opt ocamlrun ocamlyacc
-	${STRIP_CMD} ${PREFIX}/bin/${p}
+	${STRIP_CMD} ${PREFIX}/lib/metaocaml/bin/${p}
 .endfor
-	${CHMOD} u+w ${PREFIX}/lib/ocaml/ld.conf
+	${CHMOD} u+w ${PREFIX}/lib/metaocaml/lib/ld.conf
+	@${SED} "s|%%PORTNAME%%|${PORTNAME}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%DATADIR%%|${DATADIR}|g" \
+		${.CURDIR}/pkg-message > ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

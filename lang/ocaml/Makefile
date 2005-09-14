@@ -17,8 +17,6 @@ PKGNAMESUFFIX=	${SFX}
 MAINTAINER?=	marwan.burelle@lri.fr
 COMMENT?=	The Objective Caml compiler and programming environment
 
-CONFLICTS=	metaocaml-[0-9]*
-
 .if defined(WITHOUT_X11)
 PLIST_SUB+=	X11="@comment " TK="@comment "
 WITHOUT_TK=	yes
