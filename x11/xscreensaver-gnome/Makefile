@@ -5,8 +5,9 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xscreensaver-gnome
+PORTNAME?=	xscreensaver-gnome
 PORTVERSION=	4.22
+PORTREVISION?=	0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 DISTNAME=	xscreensaver-${PORTVERSION}
@@ -16,7 +17,7 @@ COMMENT=	Save your screen while you entertain your cat (for GNOME users)
 
 LIB_DEPENDS=	gle.3:${PORTSDIR}/graphics/gle
 
-CONFLICTS=	xscreensaver-[0-9]*
+CONFLICTS?=	xscreensaver-[0-9]*
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
@@ -34,10 +35,10 @@ CONFIGURE_ARGS=	--with-gl --with-gle --with-xpm --with-xml \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-OPTIONS=	PAM "Pluggable Authentication Module support" off \
+OPTIONS?=	PAM "Pluggable Authentication Module support" off \
 		ALL_FORTUNES "Enable support for all fortunes" off
 
-MAN1=	anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
+MAN1?=	anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 	blitspin.1 bouboule.1 boxed.1 braid.1 bsod.1 bubble3d.1 bubbles.1 \
 	bumps.1 cage.1 ccurve.1 circuit.1 compass.1 coral.1 critical.1 \
 	crystal.1 cubenetic.1 cynosure.1 dangerball.1 decayscreen.1 deco.1 \
