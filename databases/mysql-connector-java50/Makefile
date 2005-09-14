@@ -89,7 +89,14 @@ do-install-apidocs:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${APIDOCSDIR}
-	@${CP} -r ${JAVADOCDIR}/* ${APIDOCSDIR}
+	@cd ${JAVADOCDIR} && for src in $$( ${FIND} . ) ; do \
+	    dst=${APIDOCSDIR}$${src#.} ; \
+	    if ${TEST} -d $$src ; then \
+	        ${MKDIR} $$dst ; \
+	    else \
+	        ${INSTALL_DATA} $$src $$dst ; \
+	    fi \
+	done
 	@for extradoc in ${EXTRADOCS} ; do                          \
 	  ${INSTALL_DATA} ${INSTALL_WRKSRC}/$$extradoc ${DOCSDIR} ; \
 	done
