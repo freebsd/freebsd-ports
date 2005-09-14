@@ -536,7 +536,6 @@ aunit		ports/devel/aunit
 aureal-kmod	ports/audio/aureal-kmod
 auth_ldap	ports/www/auth_ldap
 authforce	ports/security/authforce
-authpf		ports/security/authpf
 autobench	ports/benchmarks/autobench
 autobook	ports/devel/autobook
 autocd		ports/audio/autocd
@@ -9114,7 +9113,6 @@ personality	ports/sysutils/personality
 petsc		ports/math/petsc
 petsc-mpich	ports/math/petsc-mpich
 pexts		ports/lang/pexts
-pf		ports/security/pf
 pfbtopfa	ports/print/pfbtopfa
 pfe-devel	ports/lang/pfe-devel
 pfflowd		ports/net/pfflowd
