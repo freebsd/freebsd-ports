@@ -7,7 +7,7 @@
 
 PORTNAME=	faad2
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	faac
@@ -19,7 +19,8 @@ COMMENT=	XMMS plugin for faad
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		xmms.4:${PORTSDIR}/multimedia/xmms \
-		faad.0:${PORTSDIR}/audio/faad
+		faad.0:${PORTSDIR}/audio/faad \
+		mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
