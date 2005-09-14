@@ -4,7 +4,7 @@ is written in Perl and implements TripleDES encryption for the data in
 transit. It is also designed to run under inetd and make use of the
 TCP Wrappers package for access control.
 
-WWW: www.netsaint.org
+WWW: http://www.netsaint.org
 
 - Jon
 jon@netcraft.com
