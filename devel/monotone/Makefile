@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monotone
-PORTVERSION=	0.19
+PORTVERSION=	0.22
 CATEGORIES=	devel
 MASTER_SITES=	http://www.venge.net/monotone/downloads/ \
 		http://norton.kettering.edu/freebsd/
