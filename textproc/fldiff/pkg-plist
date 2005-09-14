@@ -1,0 +1,4 @@
+bin/fldiff
+share/applications/fldiff.desktop
+share/pixmaps/fldiff.png
+@unexec rmdir %D/share/applications 2>/dev/null || true
