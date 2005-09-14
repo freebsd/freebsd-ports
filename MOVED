@@ -1621,3 +1621,5 @@ japanese/mendexk-sjis|japanese/mendexk-euc|2005-09-11|obsolete
 lang/ghc6-doc|lang/ghc-doc|2005-09-12|relocated
 textproc/gauche-sxml|lang/gauche|2005-09-14|sxml now comes with gauche
 graphics/mgp-gallery||2005-09-15|disappeared from web
+security/pf||2005-09-15|included in base system since 5.3
+security/authpf||2005-09-15|included in base system since 5.3
