@@ -1,6 +1,5 @@
 bin/Sk
 bin/sketchy
-bin/sk_install
 %%DATADIR%%/lib/abs.l
 %%DATADIR%%/lib/anyp.l
 %%DATADIR%%/lib/append.l
@@ -72,9 +71,7 @@ bin/sk_install
 %%DATADIR%%/lib/maplist.l
 %%DATADIR%%/lib/max.l
 %%DATADIR%%/lib/member.l
-%%DATADIR%%/lib/memberp.l
 %%DATADIR%%/lib/memq.l
-%%DATADIR%%/lib/memqp.l
 %%DATADIR%%/lib/min.l
 %%DATADIR%%/lib/minus.l
 %%DATADIR%%/lib/modulo.l
@@ -106,7 +103,6 @@ bin/sk_install
 %%DATADIR%%/lib/permute.l
 %%DATADIR%%/lib/plus.l
 %%DATADIR%%/lib/positivep.l
-%%DATADIR%%/lib/pred.l
 %%DATADIR%%/lib/product.l
 %%DATADIR%%/lib/quicksort.l
 %%DATADIR%%/lib/quotient.l
@@ -137,7 +133,6 @@ bin/sk_install
 %%DATADIR%%/lib/sublist.l
 %%DATADIR%%/lib/subst.l
 %%DATADIR%%/lib/substring.l
-%%DATADIR%%/lib/succ.l
 %%DATADIR%%/lib/sum.l
 %%DATADIR%%/lib/tailp.l
 %%DATADIR%%/lib/times.l
@@ -232,9 +227,7 @@ bin/sk_install
 %%DOCSDIR%%/library/max.html
 %%DOCSDIR%%/library/maplist.html
 %%DOCSDIR%%/library/member.html
-%%DOCSDIR%%/library/memberp.html
 %%DOCSDIR%%/library/memq.html
-%%DOCSDIR%%/library/memqp.html
 %%DOCSDIR%%/library/min.html
 %%DOCSDIR%%/library/minus.html
 %%DOCSDIR%%/library/modulo.html
@@ -266,7 +259,6 @@ bin/sk_install
 %%DOCSDIR%%/library/permute.html
 %%DOCSDIR%%/library/plus.html
 %%DOCSDIR%%/library/positivep.html
-%%DOCSDIR%%/library/pred.html
 %%DOCSDIR%%/library/product.html
 %%DOCSDIR%%/library/quicksort.html
 %%DOCSDIR%%/library/quotient.html
@@ -297,7 +289,6 @@ bin/sk_install
 %%DOCSDIR%%/library/sublist.html
 %%DOCSDIR%%/library/subst.html
 %%DOCSDIR%%/library/substring.html
-%%DOCSDIR%%/library/succ.html
 %%DOCSDIR%%/library/sum.html
 %%DOCSDIR%%/library/tailp.html
 %%DOCSDIR%%/library/times.html
@@ -318,7 +309,7 @@ bin/sk_install
 %%DOCSDIR%%/sk08.html
 %%DOCSDIR%%/sk09.html
 %%DOCSDIR%%/toc.html
-%%DOCSDIR%%/sketchy.css
+%%DOCSDIR%%/retro.css
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/src
 @dirrm %%DATADIR%%
