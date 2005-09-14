@@ -478,6 +478,7 @@
     SUBDIR += sha
     SUBDIR += shishi
     SUBDIR += sig2dot
+    SUBDIR += signing-party
     SUBDIR += skip
     SUBDIR += sks
     SUBDIR += slurpie
