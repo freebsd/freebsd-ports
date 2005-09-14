@@ -6,17 +6,12 @@
 #
 
 PORTNAME=	pykawari
-PORTVERSION=	8.2.2
-PORTREVISION=	3
+PORTVERSION=	8.2.3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kawari
 DISTNAME=	kawari-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.zip
-
-PATCH_SITES=	http://ninix-aya.sourceforge.jp/
-PATCHFILES=	kawari-822.diff.gz \
-		kawari-822-2.diff.gz
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	A real kawari8 module for ninix-aya
