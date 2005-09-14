@@ -1,4 +1,5 @@
 bin/mayavi
+bin/vtk_doc.py
 %%PYTHON_SITELIBDIR%%/mayavi/Base/DataVizManager.py
 %%PYTHON_SITELIBDIR%%/mayavi/Base/DataVizManager.pyc
 %%PYTHON_SITELIBDIR%%/mayavi/Base/DataVizManager.pyo
@@ -56,6 +57,9 @@ bin/mayavi
 %%PYTHON_SITELIBDIR%%/mayavi/Filters/UserDefined.py
 %%PYTHON_SITELIBDIR%%/mayavi/Filters/UserDefined.pyc
 %%PYTHON_SITELIBDIR%%/mayavi/Filters/UserDefined.pyo
+%%PYTHON_SITELIBDIR%%/mayavi/Filters/Vorticity.py
+%%PYTHON_SITELIBDIR%%/mayavi/Filters/Vorticity.pyc
+%%PYTHON_SITELIBDIR%%/mayavi/Filters/Vorticity.pyo
 %%PYTHON_SITELIBDIR%%/mayavi/Filters/WarpScalar.py
 %%PYTHON_SITELIBDIR%%/mayavi/Filters/WarpScalar.pyc
 %%PYTHON_SITELIBDIR%%/mayavi/Filters/WarpScalar.pyo
@@ -71,6 +75,9 @@ bin/mayavi
 %%PYTHON_SITELIBDIR%%/mayavi/Misc/CTFEditor.py
 %%PYTHON_SITELIBDIR%%/mayavi/Misc/CTFEditor.pyc
 %%PYTHON_SITELIBDIR%%/mayavi/Misc/CTFEditor.pyo
+%%PYTHON_SITELIBDIR%%/mayavi/Misc/GradientEditor.py
+%%PYTHON_SITELIBDIR%%/mayavi/Misc/GradientEditor.pyc
+%%PYTHON_SITELIBDIR%%/mayavi/Misc/GradientEditor.pyo
 %%PYTHON_SITELIBDIR%%/mayavi/Misc/Lights.py
 %%PYTHON_SITELIBDIR%%/mayavi/Misc/Lights.pyc
 %%PYTHON_SITELIBDIR%%/mayavi/Misc/Lights.pyo
@@ -236,10 +243,10 @@ bin/mayavi
 %%PYTHON_SITELIBDIR%%/vtkPipeline/vtkPipeline.py
 %%PYTHON_SITELIBDIR%%/vtkPipeline/vtkPipeline.pyc
 %%PYTHON_SITELIBDIR%%/vtkPipeline/vtkPipeline.pyo
-%%PORTDOCS%%%%EXAMPLESDIR%%/custom16.lut
-%%PORTDOCS%%%%EXAMPLESDIR%%/heart.mv
-%%PORTDOCS%%%%EXAMPLESDIR%%/heart.vtk
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%EXAMPLESDIR%%/custom16.lut
+%%EXAMPLESDIR%%/heart.mv
+%%EXAMPLESDIR%%/heart.vtk
+@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/vtkPipeline/Icons
 @dirrm %%PYTHON_SITELIBDIR%%/vtkPipeline
 @dirrm %%PYTHON_SITELIBDIR%%/mayavi/tools

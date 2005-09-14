@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mayavi
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	science python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,9 +24,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.* ${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>
