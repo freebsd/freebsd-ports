@@ -1221,6 +1221,7 @@
     SUBDIR += pear-OLE
     SUBDIR += pear-PEAR
     SUBDIR += pear-PEAR_PackageFileManager
+    SUBDIR += pear-PHPDoc
     SUBDIR += pear-PHPUnit
     SUBDIR += pear-PHPUnit2
     SUBDIR += pear-PHP_Beautifier
