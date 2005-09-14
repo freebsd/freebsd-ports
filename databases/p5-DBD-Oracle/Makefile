@@ -7,6 +7,7 @@
 
 PORTNAME=	DBD-Oracle
 PORTVERSION=	1.16
+PORTREVISION=	3
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
@@ -44,7 +45,6 @@ ORACLE_HOME=	${LOCALBASE}/oracle8-client
 BUILD_DEPENDS=	${ORACLE_HOME}/lib/libclntst8.a:${PORTSDIR}/databases/oracle8-client
 .else
 PORTVERSION=	1.14
-PORTREVISION=	2
 ORACLE_HOME=	${LOCALBASE}/oracle7
 BUILD_DEPENDS=	${ORACLE_HOME}/rdbms/demo/oracle.mk:${PORTSDIR}/databases/oracle7-client
 CONFIGURE_ARGS=	-m ${ORACLE_HOME}/rdbms/demo/oracle.mk
