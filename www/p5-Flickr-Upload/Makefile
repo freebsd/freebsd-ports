@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Flickr-Upload
-PORTVERSION=	1.18
+PORTVERSION=	1.22
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Flickr
@@ -22,8 +22,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN1=	thickr_upload.1 flickr_upload.1
-MAN3=	Flickr::Upload.3
+MAN1=		flickr_upload.1
+MAN3=		Flickr::Upload.3
 
 .include <bsd.port.pre.mk>
 
