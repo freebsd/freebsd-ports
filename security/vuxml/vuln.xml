@@ -32,6 +32,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a863aa74-24be-11da-8882-000e0c33c2dc">
+    <topic>X11 server -- pixmap allocation vulnerability</topic>
+    <affects>
+      <package>
+	<name>XFree86-Server</name>
+	<range><lt>4.5.0_2</lt></range>
+      </package>
+      <package>
+	<name>xorg-server</name>
+	<range><lt>6.8.2_5</lt></range>
+	<range><gt>6.8.99</gt><lt>6.8.99.12_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Allocating large pixmaps by a client can trigger an integer
+	  overflow in the X server, potentially leading to execution of
+	  arbitrary code with elevated (root) privileges.</p>
+      </body>
+    </description>
+    <references>
+      <bid>14807</bid>
+      <certvu>102441</certvu>
+      <cvename>CAN-2005-2495</cvename>
+      <url>https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=166856</url>
+      <url>https://bugs.freedesktop.org/show_bug.cgi?id=594</url>
+    </references>
+    <dates>
+      <discovery>2005-09-12</discovery>
+      <entry>2005-09-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9750cf22-216d-11da-bc01-000e0c2e438a">
     <topic>unzip -- permission race vulnerability</topic>
     <affects>
