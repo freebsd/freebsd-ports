@@ -21,8 +21,8 @@ MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		Only for 5.0 and above
+.if ${OSVERSION} < 502106
+IGNORE=		Only for 5.3 and above
 .endif
 
 .if ${OSVERSION} < 502116
@@ -36,16 +36,6 @@ CFLAGS+=	-DHAVE_ALTQ=1 -DHAVE_RULE_ANCHOR=1
 .else
 MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=37
 CFLAGS+=	-DHAVE_ALTQ=1
-.endif
-
-.if ${OSVERSION} < 502106
-BUILD_DEPENDS=	${LOCALBASE}/include/pf/net/pfvar.h:${PORTSDIR}/security/pf
-.if defined(WITH_ALTQ) && (${WITH_ALTQ} == "yes")
-BUILD_DEPENDS+=${LOCALBASE}/include/pf/altq/altq.h:${PORTSDIR}/security/pf
-.endif
-RUN_DEPENDS=	${LOCALBASE}/modules/pf.ko:${PORTSDIR}/security/pf
-
-CFLAGS+=	-I${LOCALBASE}/include/pf
 .endif
 
 PLIST_FILES=	sbin/pftop

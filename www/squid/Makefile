@@ -296,10 +296,7 @@ CONFIGURE_ARGS+=	--enable-arp-acl
 .if defined(WITH_SQUID_PF)
 CONFIGURE_ARGS+=	--enable-pf-transparent
 .if ${OSVERSION} < 502106
-pf_includedir=	${LOCALBASE}/include/pf
-BUILD_DEPENDS+=	${pf_includedir}/net/pfvar.h:${PORTSDIR}/security/pf
-CFLAGS+=	-I${pf_includedir}
-EXTRA_PATCHES+=	${WRKDIR}/pf_from_ports.patch
+IGNORE=		pf available only in FreeBSD 5.3 and newer
 .endif
 .endif
 # IPFilter-headers are not installed on FreeBSD 4 since 4.7-RELEASE,
