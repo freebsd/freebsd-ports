@@ -7092,6 +7092,7 @@ p5-Algorithm-Cluster	ports/devel/p5-Algorithm-Cluster
 p5-Algorithm-Diff	ports/devel/p5-Algorithm-Diff
 p5-Algorithm-Evolutionary	ports/devel/p5-Algorithm-Evolutionary
 p5-Algorithm-Interval2Prefix	ports/devel/p5-Algorithm-Interval2Prefix
+p5-Algorithm-LCS	ports/devel/p5-Algorithm-LCS
 p5-Algorithm-LUHN	ports/devel/p5-Algorithm-LUHN
 p5-Algorithm-MDiff	ports/devel/p5-Algorithm-MDiff
 p5-Algorithm-MarkovChain	ports/devel/p5-Algorithm-MarkovChain
