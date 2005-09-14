@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libhome
-PORTVERSION=	0.10
+PORTVERSION=	0.10.1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pll
@@ -76,6 +76,12 @@ CONFIGURE_ARGS+=	--without-pgsql
 
 MAN5=		home.conf.5
 MAN8=		home_proxy.8
+
+.if ${OSVERSION} < 500000
+PLIST_SUB=	NSS="@comment "
+.else
+PLIST_SUB=	NSS=""
+.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/home.conf ${PREFIX}/etc/home.conf.dist
