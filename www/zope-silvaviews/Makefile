@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	silvaviews
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	www zope
 MASTER_SITES=	http://www.infrae.com/download/SilvaViews/${PORTVERSION}/
 PKGNAMEPREFIX=	zope-
 DISTNAME=	SilvaViews-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	x@Vex.Net
+MAINTAINER=	x@vex.net
 COMMENT=	A component used by Silva to attach views to objects
 
 USE_PYTHON=	yes
