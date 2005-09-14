@@ -17,7 +17,7 @@ COMMENT=	Save your screen while you entertain your cat (for GNOME users)
 
 LIB_DEPENDS=	gle.3:${PORTSDIR}/graphics/gle
 
-CONFLICTS?=	xscreensaver-[0-9]*
+CONFLICTS?=	xscreensaver-[0-9]* xscreensaver-gnome-hacks-[0-9]*
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
