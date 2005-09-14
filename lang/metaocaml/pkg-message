@@ -1,0 +1,4 @@
+********************************************************************************
+The %%PORTNAME%% port installs all man pages in %%DATADIR%%/man.
+Please edit your MANPATH (or /etc/manpath.config) appropriately.
+********************************************************************************
