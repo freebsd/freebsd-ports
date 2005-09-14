@@ -11182,6 +11182,7 @@ sidplug		ports/www/sidplug
 siege		ports/benchmarks/siege
 sig2dot		ports/security/sig2dot
 sigit		ports/mail/sigit
+signing-party	ports/security/signing-party
 sigrot		ports/mail/sigrot
 sigslot		ports/devel/sigslot
 silc-client	ports/net/silc-client
