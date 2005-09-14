@@ -13209,6 +13209,7 @@ xscorch		ports/games/xscorch
 xscrabble	ports/games/xscrabble
 xscreensaver	ports/x11/xscreensaver
 xscreensaver-gnome	ports/x11/xscreensaver-gnome
+xscreensaver-gnome-hacks	ports/x11/xscreensaver-gnome-hacks
 xscreensaver-kde	ports/x11/xscreensaver-kde
 xscreensaver.app	ports/x11/xscreensaver.app
 xsel		ports/x11/xsel
