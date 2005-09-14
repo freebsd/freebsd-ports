@@ -99,10 +99,7 @@ MASTER_SITE_APACHE_XML+=	\
 .if !defined(IGNORE_MASTER_SITE_COMP_SOURCES)
 MASTER_SITE_COMP_SOURCES+=	\
 	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/Unix/com.sources.%SUBDIR%/ \
-	ftp://ftp.uu.net/usenet/comp.sources.%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/archive/comp.sources.%SUBDIR%/ \
-	ftp://rtfm.mit.edu/pub/usenet/comp.sources.%SUBDIR%/
+	ftp://ftp.uu.net/usenet/comp.sources.%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_DEBIAN)
