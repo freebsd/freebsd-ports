@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmlenc
-PORTVERSION=	0.47
+PORTVERSION=	0.49
 CATEGORIES=	textproc java
 MASTER_SITES=	http://${PORTNAME}.sourceforge.net/
 
@@ -38,7 +38,6 @@ do-configure:
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
-	@${MKDIR} ${JAVAJARDIR}
 	@${INSTALL_DATA} ${WRKSRC}/build/${JARFILE} ${JAVAJARDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 
