@@ -18,13 +18,13 @@ COMMENT=	Library to read digital camera file meta-data
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 INSTALLS_SHLIB=	yes
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -lintl"
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
