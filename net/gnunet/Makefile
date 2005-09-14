@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.ovmj.org/GNUnet/download/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	GNUnet-${PORTVERSION}
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An anonymous, distributed, reputation-based network
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4

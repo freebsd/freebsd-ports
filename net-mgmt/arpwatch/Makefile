@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.Awfulhak.org/arpwatch/ \
 		ftp://ftp.ee.lbl.gov/
 DISTNAME=	arpwatch-2.1a13
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitor arp & rarp requests
 
 CONFLICTS=	arpwatch-devel-2.*

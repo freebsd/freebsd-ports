@@ -13,7 +13,7 @@ MASTER_SITES=	http://micq.org/source/ \
 		http://http.bg.micq.org/source/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text-based ICQ implementation
 
 USE_GMAKE=	yes

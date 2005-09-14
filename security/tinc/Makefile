@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.tinc-vpn.org/packages/ \
 		ftp://ftp.wiretapped.net/pub/security/network-security/tinc/ \
 		http://www.mirrors.wiretapped.net/security/network-security/tinc/
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Virtual Private Network (VPN) daemon
 
 LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo

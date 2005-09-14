@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://voodoo.oberon.net/download/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C library for creating IP packets (development version)
 
 CONFLICTS=	libnet-1.*
