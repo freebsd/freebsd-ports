@@ -12,7 +12,9 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-erc.el
 %%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-experimental.el
 %%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-export-diary.el
+%%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-gnats.el
 %%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-gnus.el
+%%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-ical.el
 %%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-id.el
 %%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-ledger.el
 %%EMACS_VERSION_SITE_LISPDIR%%/planner/planner-lisp.el
