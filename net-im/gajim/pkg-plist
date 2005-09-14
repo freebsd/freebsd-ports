@@ -264,6 +264,16 @@ lib/gajim/trayicon.so
 %%DATADIR%%/data/iconsets/transports/yahoo/16x16/online.png
 %%DATADIR%%/data/iconsets/transports/yahoo/16x16/requested.png
 %%DATADIR%%/data/iconsets/transports/yahoo/16x16/xa.png
+%%DATADIR%%/data/iconsets/transports/weather/16x16/away.png
+%%DATADIR%%/data/iconsets/transports/weather/16x16/chat.png
+%%DATADIR%%/data/iconsets/transports/weather/16x16/dnd.png
+%%DATADIR%%/data/iconsets/transports/weather/16x16/error.png
+%%DATADIR%%/data/iconsets/transports/weather/16x16/invisible.png
+%%DATADIR%%/data/iconsets/transports/weather/16x16/message.gif
+%%DATADIR%%/data/iconsets/transports/weather/16x16/not_in_the_roster.png
+%%DATADIR%%/data/iconsets/transports/weather/16x16/offline.png
+%%DATADIR%%/data/iconsets/transports/weather/16x16/online.png
+%%DATADIR%%/data/iconsets/transports/weather/16x16/xa.png
 %%DATADIR%%/data/pixmaps/gajim_about.png
 %%DATADIR%%/data/pixmaps/gajim.png
 %%DATADIR%%/data/sounds/connected.wav
@@ -271,16 +281,19 @@ lib/gajim/trayicon.so
 %%DATADIR%%/data/sounds/message1.wav
 %%DATADIR%%/data/sounds/message2.wav
 %%DATADIR%%/data/sounds/sent.wav
-%%DATADIR%%/po/bg/LC_MESSAGES/gajim.mo
-%%DATADIR%%/po/de/LC_MESSAGES/gajim.mo
-%%DATADIR%%/po/el/LC_MESSAGES/gajim.mo
-%%DATADIR%%/po/es/LC_MESSAGES/gajim.mo
-%%DATADIR%%/po/fr/LC_MESSAGES/gajim.mo
-%%DATADIR%%/po/pl/LC_MESSAGES/gajim.mo
-%%DATADIR%%/po/pt/LC_MESSAGES/gajim.mo
-%%DATADIR%%/po/ru/LC_MESSAGES/gajim.mo
-%%DATADIR%%/po/cs/LC_MESSAGES/gajim.mo
-%%DATADIR%%/po/nb/LC_MESSAGES/gajim.mo
+share/locale/bg/LC_MESSAGES/gajim.mo
+share/locale/de/LC_MESSAGES/gajim.mo
+share/locale/el/LC_MESSAGES/gajim.mo
+share/locale/es/LC_MESSAGES/gajim.mo
+share/locale/fr/LC_MESSAGES/gajim.mo
+share/locale/pl/LC_MESSAGES/gajim.mo
+share/locale/pt/LC_MESSAGES/gajim.mo
+share/locale/pt_BR/LC_MESSAGES/gajim.mo
+share/locale/nl/LC_MESSAGES/gajim.mo
+share/locale/ru/LC_MESSAGES/gajim.mo
+share/locale/cs/LC_MESSAGES/gajim.mo
+share/locale/nb/LC_MESSAGES/gajim.mo
+%%DATADIR%%/src/gajim-remote.py
 %%DATADIR%%/src/advanced.py
 %%DATADIR%%/src/cell_renderer_image.py
 %%DATADIR%%/src/chat.py
@@ -325,7 +338,6 @@ lib/gajim/trayicon.so
 %%DATADIR%%/src/gajim_themes_window.py
 %%DATADIR%%/src/gtkgui_helpers.py
 %%DATADIR%%/src/remote_control.py
-%%DATADIR%%/src/systraywin32.py
 %%DATADIR%%/src/tooltips.py
 share/applications/gajim.desktop
 share/pixmaps/gajim.png
@@ -335,6 +347,8 @@ share/pixmaps/gajim_about.png
 @dirrm %%DATADIR%%/src/common
 @dirrm %%DATADIR%%/src
 @dirrm %%DATADIR%%/data/emoticons
+@dirrm %%DATADIR%%/data/iconsets/transports/weather/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/weather
 @dirrm %%DATADIR%%/data/iconsets/transports/yahoo/16x16
 @dirrm %%DATADIR%%/data/iconsets/transports/yahoo
 @dirrm %%DATADIR%%/data/iconsets/transports/tlen/16x16
@@ -373,26 +387,5 @@ share/pixmaps/gajim_about.png
 @dirrm %%DATADIR%%/data/pixmaps
 @dirrm %%DATADIR%%/data/sounds
 @dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/po/bg/LC_MESSAGES/
-@dirrm %%DATADIR%%/po/bg
-@dirrm %%DATADIR%%/po/de/LC_MESSAGES/
-@dirrm %%DATADIR%%/po/de
-@dirrm %%DATADIR%%/po/el/LC_MESSAGES/
-@dirrm %%DATADIR%%/po/el
-@dirrm %%DATADIR%%/po/es/LC_MESSAGES/
-@dirrm %%DATADIR%%/po/es
-@dirrm %%DATADIR%%/po/fr/LC_MESSAGES
-@dirrm %%DATADIR%%/po/fr
-@dirrm %%DATADIR%%/po/pl/LC_MESSAGES
-@dirrm %%DATADIR%%/po/pl
-@dirrm %%DATADIR%%/po/pt/LC_MESSAGES
-@dirrm %%DATADIR%%/po/pt
-@dirrm %%DATADIR%%/po/ru/LC_MESSAGES/
-@dirrm %%DATADIR%%/po/ru
-@dirrm %%DATADIR%%/po/cs/LC_MESSAGES/
-@dirrm %%DATADIR%%/po/cs
-@dirrm %%DATADIR%%/po/nb/LC_MESSAGES/
-@dirrm %%DATADIR%%/po/nb
-@dirrm %%DATADIR%%/po
 @dirrm %%DATADIR%%
 @unexec rmdir %D/share/applications > /dev/null 2>&1 | true
