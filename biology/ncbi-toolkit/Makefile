@@ -8,6 +8,7 @@
 
 PORTNAME=	ncbi-toolkit
 PORTVERSION=	2004.10.20
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools/old/${PORTVERSION:S/.//g}/
 DISTNAME=	ncbi
@@ -74,7 +75,7 @@ do-install:
 .endfor
 
 	@${MKDIR} ${PREFIX}/lib/${DISTNAME}
-	(cd ${WRKSRC}/lib && ${INSTALL_PROGRAM} *.a ${PREFIX}/lib/${DISTNAME})
+	(cd ${WRKSRC}/lib && ${INSTALL_DATA} *.a ${PREFIX}/lib/${DISTNAME})
 	@${MKDIR} ${PREFIX}/include/${DISTNAME}/connect
 	(cd ${WRKSRC}/include && ${INSTALL_DATA} *.h ${PREFIX}/include/${DISTNAME})
 	(cd ${WRKSRC}/include/connect && ${INSTALL_DATA} *.h ${PREFIX}/include/${DISTNAME}/connect)
