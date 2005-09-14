@@ -8,8 +8,8 @@
 #
 
 PORTNAME=	kodos
-PORTVERSION=	2.4.6
-CATEGORIES=	devel
+PORTVERSION=	2.4.7
+CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://bsdchat.com/dist/dryice/
 MASTER_SITE_SUBDIR=	${PORTNAME}
