@@ -41,12 +41,6 @@ CONFIGURE_ARGS=	--program-transform-name='s/^${CONFIGURE_TARGET}-//' \
 
 MAN1=		est-epsilon.1 fgfs.1 fgjs.1 gl-info.1 js_demo.1 pstest.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
-.endif
-
 post-extract:
 	@${FIND} ${WRKSRC} \( -name '.#*' -or -name '*~' \) -delete
 
@@ -54,4 +48,4 @@ do-install:
 	@${ECHO} ">> Installing program"
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
