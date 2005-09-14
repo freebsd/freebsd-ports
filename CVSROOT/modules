@@ -2634,7 +2634,6 @@ gauche-gl	ports/graphics/gauche-gl
 gauche-gtk	ports/x11-toolkits/gauche-gtk
 gauche-readline	ports/devel/gauche-readline
 gauche-sdl	ports/devel/gauche-sdl
-gauche-sxml	ports/textproc/gauche-sxml
 gaul		ports/devel/gaul
 gave		ports/science/gave
 gavl		ports/multimedia/gavl
