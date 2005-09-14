@@ -9,8 +9,7 @@ PORTNAME=	httplog
 PORTVERSION=	2.1
 PORTREVISION=	1
 CATEGORIES=	sysutils www
-MASTER_SITES=	http://nutbar.chemlab.org/downloads/programs/ \
-		ftp://ftp.nuug.no/pub/anders/distfiles/
+MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache log rollover program with strftime(3) filename support
