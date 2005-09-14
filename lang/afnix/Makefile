@@ -9,7 +9,8 @@
 PORTNAME=	afnix
 PORTVERSION=	1.1.1
 CATEGORIES=	lang
-MASTER_SITES=	http://www.afnix.org/ftp/%SUBDIR%/
+MASTER_SITES=	http://www.afnix.org/ftp/%SUBDIR%/ \
+		ftp://ftp.stack.nl/pub/users/johans/afnix/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION:S,.,-,g}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION:S,.,-,g}
 EXTRACT_SUFX=	.tgz
