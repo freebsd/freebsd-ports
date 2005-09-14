@@ -1620,3 +1620,4 @@ multimedia/ldvd9to5|multimedia/ldvd|2005-09-10|project renamed
 japanese/mendexk-sjis|japanese/mendexk-euc|2005-09-11|obsolete
 lang/ghc6-doc|lang/ghc-doc|2005-09-12|relocated
 textproc/gauche-sxml|lang/gauche|2005-09-14|sxml now comes with gauche
+graphics/mgp-gallery||2005-09-15|disappeared from web
