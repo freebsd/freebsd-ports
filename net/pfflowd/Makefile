@@ -20,17 +20,12 @@ PLIST_FILES=	sbin/pfflowd \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		"Only for 5.0 and above"
+.if ${OSVERSION} < 502106
+IGNORE=		"Only for 5.3 and above"
 .endif
 
 .if ${OSVERSION} < 502119
 EXTRA_PATCHES+=	${FILESDIR}/pf34-Makefile
-.endif
-
-.if ${OSVERSION} < 502106
-BUILD_DEPENDS=	${LOCALBASE}/include/pf/net/pfvar.h:${PORTSDIR}/security/pf
-RUN_DEPENDS=	${LOCALBASE}/modules/pf.ko:${PORTSDIR}/security/pf
 .endif
 
 post-patch:

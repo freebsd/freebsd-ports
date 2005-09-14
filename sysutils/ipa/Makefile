@@ -23,8 +23,7 @@ MAKE_ENV=	NOPORTDOCS="${NOPORTDOCS}"
 .endif
 
 .ifdef WITH_PF
-DEPENDS=	${PORTSDIR}/security/pf
-PF_INCLUDE_DIR?=	${PREFIX}/include/pf
+PF_INCLUDE_DIR?=	/usr/include/net
 MAKE_ARGS+=	PF_INCLUDE_DIR=${PF_INCLUDE_DIR}
 .endif
 

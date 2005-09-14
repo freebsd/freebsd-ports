@@ -28,10 +28,8 @@ SUB_LIST=	PFW_PREFIX=${PFW_PREFIX}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		pf is only in 5.x
-.elif ${OSVERSION} < 502105
-RUN_DEPENDS+=	pf:${PORTSDIR}/security/pf
+.if ${OSVERSION} < 502105
+IGNORE=		pf is only in 5.x and newer
 .endif
 
 do-install:
