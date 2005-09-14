@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	emelfm2
-PORTVERSION=	0.0.9
-PORTREVISION=	2
+PORTVERSION=	0.1.2
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.emelfm2.org/rel/
 
@@ -20,25 +19,18 @@ USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
 INSTALLS_SHLIB=	yes
 
-MAKE_ENV=	CC=${CC} LDFLAGS="${LDFLAGS}" DOCSDIR="${DOCSDIR}"
+MAKE_ENV=	CC=${CC} LDFLAGS="${LDFLAGS}" DOC_DIR="${DOCSDIR}"
 
 PLUGINDIR=	${WRKSRC}/objs/plugins
-PLUGINS=	cdburner.so clone.so copy_to_clipboard.so cpbar.so du.so for_each.so \
-		glob.so mvbar.so pack.so rename_ext.so sort_by_ext.so unpack.so view.so
+PLUGINS=	e2p_clone.so e2p_cpbar.so e2p_du.so e2p_find.so \
+		e2p_for_each.so e2p_glob.so e2p_mvbar.so e2p_names_clip.so \
+		e2p_pack.so e2p_rename_ext.so e2p_sort_by_ext.so \
+		e2p_upgrade.so e2p_unpack.so e2p_view.so
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
 USE_GCC=	3.4
-.endif
-
-.if defined(NOPORTDOCS)
-do-install::
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.for pfile in ${PLUGINS}
-	@${MKDIR} ${PREFIX}/lib/emelfm2/plugins
-	${INSTALL_PROGRAM} ${PLUGINDIR}/${pfile} ${PREFIX}/lib/emelfm2/plugins
-.endfor
 .endif
 
 .include <bsd.port.post.mk>
