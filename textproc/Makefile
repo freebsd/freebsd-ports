@@ -118,6 +118,7 @@
     SUBDIR += fi-aspell
     SUBDIR += filepp
     SUBDIR += fist
+    SUBDIR += fldiff
     SUBDIR += flip
     SUBDIR += fo-aspell
     SUBDIR += foiltex

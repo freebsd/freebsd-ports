@@ -1,0 +1,10 @@
+Fldiff is a graphical diff program that shows the differences between two
+files/directories, or a file/directory and a CVS or Subversion repository.
+
+It is inspired by xdiff (Motif-based) and xxdiff (Qt-based), whose choice of
+GUI toolkit has hampered their portability to many of the systems I work with.
+
+WWW: http://www.easysw.com/~mike/fldiff/
+
+- ehaupt
+ehaupt@critical.ch
