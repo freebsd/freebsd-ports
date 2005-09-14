@@ -15,10 +15,6 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A WAD-file editor, for games like Doom and Hexen
 
-BROKEN=		Does not compile
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
@@ -35,14 +31,15 @@ OPTIONS=	WHITE_BG "Use alternative (black-on-white) color scheme" off \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_3D_RENDER) || defined(WITH_SEARCH) \
-	|| defined(WITH_EXTRA_TOOLS) || defined(WITH_LAPTOP_KEYS)
 PATCH_SITES=	http://glbsp.sourceforge.net/%SUBDIR%/
 PATCH_SITE_SUBDIR=	${PORTNAME}
 PATCH_DIST_STRIP=	-p1
 PATCH_PREFIX=	${PORTNAME:U:C/^(.).*$/\1/g}${PORTNAME:C/^(.)//}_${PORTVERSION:S/.//g}
 PATCH_SUFFIX=	.diff
 PATCHFILES=	${PATCH_PREFIX}_Depend${PATCH_SUFFIX}
+
+.if defined(WITH_3D_RENDER) || defined(WITH_SEARCH) \
+	|| defined(WITH_EXTRA_TOOLS) || defined(WITH_LAPTOP_KEYS)
 . if defined(WITH_3D_RENDER)
 PATCHFILES+=	${PATCH_PREFIX}_Render3D${PATCH_SUFFIX}
 PLIST_SUB+=	3DRENDER=""
