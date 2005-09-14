@@ -2298,6 +2298,7 @@ flashplugin-mozilla	ports/www/flashplugin-mozilla
 flashpluginwrapper	ports/www/flashpluginwrapper
 flasm		ports/graphics/flasm
 flawfinder	ports/security/flawfinder
+fldiff		ports/textproc/fldiff
 flexbackup	ports/sysutils/flexbackup
 fli2gif		ports/graphics/fli2gif
 flick		ports/devel/flick
