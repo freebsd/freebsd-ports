@@ -7,7 +7,7 @@
 
 PORTNAME=	eclipse
 PORTVERSION=	3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
 MASTER_SITE_SUBDIR=	R-${PORTVERSION}-200506271435
@@ -90,9 +90,10 @@ MAKE_ENV+=	BROWSER=${BROWSER} \
 		MAKE_GNOME=${MAKE_GNOME} \
 		MAKE_MOZILLA=${MAKE_MOZILLA} \
 		MAKE_CAIRO=${MAKE_CAIRO} \
+		MACHINE_ARCH=${MACHINE_ARCH} \
 		MOTIF_HOME=${X11_HOME}
 
-PLIST_FILES=	bin/eclipse
+PLIST_FILES=	bin/eclipse share/gnome/applications/eclipse.desktop
 
 SWTGTK=${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library
 SWTMOTIF=${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI/motif/library
@@ -122,6 +123,11 @@ do-install:
 	  -e "s+%%BROWSER%%+${BROWSER}+g" \
 	${FILESDIR}/eclipse.in > ${WRKSRC}/eclipse.tmp
 	${INSTALL_SCRIPT} ${WRKSRC}/eclipse.tmp ${PREFIX}/bin/eclipse
+	@${SED} \
+	  -e "s+%%ECLIPSE_HOME%%+${PORTDESTDIR}+g" \
+	  -e "s+%%PREFIX%%+${PREFIX}+g" \
+	${FILESDIR}/eclipse.desktop > ${WRKSRC}/eclipse.desktop.tmp
+	${INSTALL_DATA} ${WRKSRC}/eclipse.desktop.tmp ${X11BASE}/share/gnome/applications/eclipse.desktop
 	${INSTALL_PROGRAM} ${WRKSRC}/launchertmp/eclipse ${PREFIX}/eclipse/eclipse
 	@(cd ${WRKSRC}; ${FIND} -s eclipse -not -type d) >> ${TMPPLIST}
 	@(cd ${WRKSRC}; ${FIND} -s -d eclipse -type d) \
