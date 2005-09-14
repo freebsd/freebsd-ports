@@ -77,7 +77,6 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/ftests/test_zwiki_org.py
 %%ZOPEPRODUCTDIR%%/ZWiki/ftests/test_zwiki_org.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-de.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-en.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-es.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-fi.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-fr-CA.po
@@ -91,7 +90,6 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-nl.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-pl.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-de.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-en.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-es.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-fi.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-fr-CA.po
@@ -104,13 +102,13 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-nl.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-pl.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-pt-BR.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-pt-PT.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-pt.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-ru.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-zh-CN.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone-zh-TW.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone.pot
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-pt-BR.po
-%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-pt-PT.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-pt.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-ru.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-zh-CN.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-zh-TW.po
@@ -126,8 +124,6 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/pagetypes/html.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/pagetypes/moin.py
 %%ZOPEPRODUCTDIR%%/ZWiki/pagetypes/moin.pyc
-%%ZOPEPRODUCTDIR%%/ZWiki/pagetypes/moin_support.py
-%%ZOPEPRODUCTDIR%%/ZWiki/pagetypes/moin_support.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/pagetypes/plaintext.py
 %%ZOPEPRODUCTDIR%%/ZWiki/pagetypes/plaintext.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/pagetypes/rst.py
