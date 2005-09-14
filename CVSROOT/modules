@@ -9030,6 +9030,7 @@ pear-Numbers_Roman	ports/textproc/pear-Numbers_Roman
 pear-OLE	ports/devel/pear-OLE
 pear-PEAR	ports/devel/pear-PEAR
 pear-PEAR_PackageFileManager	ports/devel/pear-PEAR_PackageFileManager
+pear-PHPDoc	ports/devel/pear-PHPDoc
 pear-PHPUnit	ports/devel/pear-PHPUnit
 pear-PHPUnit2	ports/devel/pear-PHPUnit2
 pear-PHP_Beautifier	ports/devel/pear-PHP_Beautifier
