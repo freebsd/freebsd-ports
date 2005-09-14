@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-Table
-PORTVERSION=	1.102
+PORTVERSION=	1.107
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
@@ -25,7 +25,7 @@ MAN3=		Text::Table.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=                This program only support perl 5.6.1 or above
+IGNORE=		requires perl 5.6.1 or above
 .endif
 
 .include <bsd.port.post.mk>
