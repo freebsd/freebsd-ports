@@ -192,6 +192,12 @@ share/gauche/%%VERSION%%/lib/srfi-5.scm
 share/gauche/%%VERSION%%/lib/srfi-55.scm
 share/gauche/%%VERSION%%/lib/srfi-7.scm
 share/gauche/%%VERSION%%/lib/srfi-9.scm
+share/gauche/%%VERSION%%/lib/sxml/sxpath.scm
+share/gauche/%%VERSION%%/lib/sxml/ssax.scm
+share/gauche/%%VERSION%%/lib/sxml/tree-trans.scm
+share/gauche/%%VERSION%%/lib/sxml/tools.scm
+share/gauche/%%VERSION%%/lib/sxml/to-html.scm
+share/gauche/%%VERSION%%/lib/sxml/adaptor.scm
 share/gauche/%%VERSION%%/lib/text/csv.scm
 share/gauche/%%VERSION%%/lib/text/diff.scm
 share/gauche/%%VERSION%%/lib/text/gettext.scm
@@ -221,6 +227,7 @@ share/gauche/site/lib/.packages/.keepme
 @dirrm share/gauche/%%VERSION%%/lib/www
 @dirrm share/gauche/%%VERSION%%/lib/util
 @dirrm share/gauche/%%VERSION%%/lib/text
+@dirrm share/gauche/%%VERSION%%/lib/sxml
 @dirrm share/gauche/%%VERSION%%/lib/srfi-29
 @dirrm share/gauche/%%VERSION%%/lib/srfi-19
 @dirrm share/gauche/%%VERSION%%/lib/srfi-14
