@@ -1,0 +1,11 @@
+--- phpdoc	Fri Jul 26 16:49:39 2002
++++ phpdoc	Sun Aug  7 15:37:40 2005
+@@ -17,7 +17,7 @@
+ // save the generated docs here:
+ $dest_apidoc_dir = '@doc_dir@';
+ // default template dir:
+-$template_dir = '@data_dir@/PHPDoc';
++$template_dir = '@data_dir@';
+ $template     = 'default';
+ // force the deletion of the target apidocs directory
+ $dest_apidoc_delete = false;
