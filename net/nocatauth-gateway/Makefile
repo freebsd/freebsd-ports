@@ -16,8 +16,6 @@ MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Open 802.11 Authentication Gateway
 
 RUN_DEPENDS= \
-	${LOCALBASE}/sbin/pfctl:${PORTSDIR}/security/pf
-RUN_DEPENDS= \
 	${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg
 
 CONFLICTS=	nocatauth-server-*
