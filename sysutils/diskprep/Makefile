@@ -7,6 +7,7 @@
 
 PORTNAME=	diskprep
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.freebsd.org/~brooks/diskprep/
 
@@ -17,7 +18,7 @@ USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
 MAKE_ENV+=	EXAMPLESDIR=${EXAMPLESDIR}
 
-USE_RCORDER=	${NAME}
+USE_RCORDER=	${PORTNAME}
 
 MAN8=		diskprep.8
 MANCOMPRESSED=	yes
