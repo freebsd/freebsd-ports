@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.lafn.org/~av832/ \
 		http://voodoo.oberon.net/download/
 PKGNAMEPREFIX=	health-
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nut is nutrition software to record what you eat
 
 MAN1=		nut.1

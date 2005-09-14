@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.ibiblio.org/icpld/download/ \
 		http://voodoo.oberon.net/download/
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet connection performance logging daemon
 
 USE_BZIP2=	yes

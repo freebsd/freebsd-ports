@@ -11,7 +11,7 @@ CATEGORIES=		net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ojnk
 
-MAINTAINER=		krion@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Console-based AIM client
 
 USE_PERL5=		yes

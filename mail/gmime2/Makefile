@@ -10,7 +10,7 @@ PORTVERSION=	2.1.16
 CATEGORIES=	mail
 MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/v2.1/
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library (written in C) for parsing and creating messages using MIME
 
 CONFLICTS=	gmime-1.0.*
