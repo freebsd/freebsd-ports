@@ -15,7 +15,7 @@ MASTER_SITES=	http://libre.act-europe.fr/GtkAda/ \
 DISTNAME=	GtkAda-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sam@inf.enst.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk binding for Ada
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
