@@ -6,20 +6,18 @@
 #
 
 PORTNAME=       queryperf
-PORTVERSION=    1.1.1.2.2.5.4.3
+PORTVERSION=    2.1
 CATEGORIES=     dns net benchmarks
-MASTER_SITES=   ${MASTER_SITE_ISC}
+MASTER_SITES=   ftp://ftp.nominum.com/pub/nominum/
 MASTER_SITE_SUBDIR=     bind9/${BINDVERSION}
-DISTNAME=       bind-${BINDVERSION}
+DISTNAME=       ${PORTNAME}-nominum-${PORTVERSION}
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	DNS Query Performance Testing Tool
 
-BINDVERSION=	9.3.1
-WRKSRC=		${WRKDIR}/bind-${BINDVERSION}/contrib/queryperf/
 HAS_CONFIGURE=	yes
-USE_PYTHON_RUN=	yes
 PORTDOCS=	queryperf.txt
+USE_PYTHON_RUN=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/queryperf ${PREFIX}/bin
