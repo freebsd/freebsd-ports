@@ -668,6 +668,7 @@
     SUBDIR += py-mp-random
     SUBDIR += py-msnp
     SUBDIR += py-pcap
+    SUBDIR += py-pcapy
     SUBDIR += py-pyxmpp
     SUBDIR += py-radix
     SUBDIR += py-rrdpipe
