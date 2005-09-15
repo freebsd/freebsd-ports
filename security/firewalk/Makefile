@@ -16,7 +16,7 @@ MAINTAINER=	onatan@gmail.com
 COMMENT=	A remote firewall auditing tool
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet	\
-		${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel
+		${LOCALBASE}/include/libnet/libnet-types.h:${PORTSDIR}/net/libnet-devel
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/Firewalk
