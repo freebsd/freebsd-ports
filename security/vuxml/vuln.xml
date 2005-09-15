@@ -21126,4 +21126,32 @@ misc.c:
       <entry>2005-07-30</entry>
     </dates>
   </vuln>
+
+  <vuln vid="44e7764c-2614-11da-9e1e-c296ac722cb3">
+    <topic>squid -- possible denial of service condition regarding NTLM authentication</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><lt>2.5.10_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The squid patches page notes:</p>
+	<blockquote cite="http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE10-NTLM-scheme_assert">
+	  <p>Squid may crash with the above error [FATAL: Incorrect scheme in auth header] when given certain request sentences.</p>
+	  <p>Workaround: disable NTLM authentication.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2917</cvename>
+      <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1391</url>
+      <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE10-NTLM-scheme_assert</url>
+    </references>
+    <dates>
+      <discovery>2005-09-12</discovery>
+      <entry>2005-09-15</entry>
+    </dates>
+  </vuln>
 </vuxml>
