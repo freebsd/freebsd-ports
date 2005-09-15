@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBD-File
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
@@ -20,8 +20,7 @@ RUN_DEPENDS=	${SITE_PERL}/SQL/Statement.pm:${PORTSDIR}/databases/p5-SQL-Statemen
 
 PERL_CONFIGURE=	yes
 
-MAN3=		DBD::File.3 \
-		DBI::SQL::Nano.3
+MAN3=		DBD::File.3
 
 .include <bsd.port.pre.mk>
 
@@ -29,7 +28,7 @@ MAN3=		DBD::File.3 \
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
 .else
-IGNORE=		This module is useless with p5-DBI
+IGNORE=		is useless with p5-DBI
 .endif
 
 .include <bsd.port.post.mk>
