@@ -34,7 +34,7 @@ CPPFLAGS=	${PTHREAD_CFLAGS} -D_BSD_WCHAR_T_DEFINED_
 LDFLAGS=	${PTHREAD_LIBS}
 INIDIR=		${PREFIX}/etc/${PORTNAME}
 
-.if !defined(WITHOUT_GUI)
+.if !defined(WITHOUT_GUI) && !defined(WITHOUT_X11)
 USE_GNOME+=	gtk12
 MAN1+=		iodbcadm-gtk.1
 PLIST_SUB+=	GUI=""
