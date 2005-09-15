@@ -378,3 +378,6 @@ share/icons/hicolor/48x48/proofgeneral.png
 share/mime-info/proofgeneral.keys
 share/mime-info/proofgeneral.mime
 share/pixmaps/proofgeneral.png
+@unexec /bin/rmdir %D/share/pixmaps 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/mime-info 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/application-registry 2>/dev/null || /usr/bin/true
