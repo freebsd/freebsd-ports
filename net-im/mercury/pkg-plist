@@ -70,6 +70,26 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/StatusIcons/M_Scarecrow 24p.zip
 %%INSTDIR%%/resources/AppData/StatusIcons/M_Scarecrow 32p.zip
 %%INSTDIR%%/resources/AppData/StatusIcons/M_jMSN.zip
+%%INSTDIR%%/resources/AppData/Views/Default_CLContact/Alias.html
+%%INSTDIR%%/resources/AppData/Views/Default_CLContact/Alias_MSNName.html
+%%INSTDIR%%/resources/AppData/Views/Default_CLContact/DP_SI.html
+%%INSTDIR%%/resources/AppData/Views/Default_CLContact/Email.html
+%%INSTDIR%%/resources/AppData/Views/Default_CLContact/LargeDP_Alias_PM_Song.html
+%%INSTDIR%%/resources/AppData/Views/Default_CLContact/LargeDP_MsnName_PM_Song.html
+%%INSTDIR%%/resources/AppData/Views/Default_CLContact/MSNName.html
+%%INSTDIR%%/resources/AppData/Views/Default_CLContact/View.xml
+%%INSTDIR%%/resources/AppData/Views/Default_CLGroup/Default.html
+%%INSTDIR%%/resources/AppData/Views/Default_CLGroup/View.xml
+%%INSTDIR%%/resources/AppData/Views/Default_Chat/Default.html
+%%INSTDIR%%/resources/AppData/Views/Default_Chat/View.xml
+%%INSTDIR%%/resources/AppData/Views/Default_General/Alias.txt
+%%INSTDIR%%/resources/AppData/Views/Default_General/Alias_MSNName.txt
+%%INSTDIR%%/resources/AppData/Views/Default_General/Email.txt
+%%INSTDIR%%/resources/AppData/Views/Default_General/MSNName.txt
+%%INSTDIR%%/resources/AppData/Views/Default_General/View.xml
+%%INSTDIR%%/resources/AppData/Views/Default_IM/Colors1.html
+%%INSTDIR%%/resources/AppData/Views/Default_IM/Default.html
+%%INSTDIR%%/resources/AppData/Views/Default_IM/View.xml
 %%INSTDIR%%/resources/AppData/Winks/L0g4WmxDZ1JTOXlsZmFvTCtnd0ZIektleXA4PQ==/Wink.cab
 %%INSTDIR%%/resources/AppData/Winks/L0g4WmxDZ1JTOXlsZmFvTCtnd0ZIektleXA4PQ==/content.xml
 %%INSTDIR%%/resources/AppData/Winks/L0g4WmxDZ1JTOXlsZmFvTCtnd0ZIektleXA4PQ==/crying.png
@@ -185,6 +205,12 @@ bin/Mercury_Messenger
 @dirrm %%INSTDIR%%/resources/AppData/Winks/NVNZQXpvRkwyR3VtL0VOMnVMc2tPaURNMGFFPQ==
 @dirrm %%INSTDIR%%/resources/AppData/Winks/L0g4WmxDZ1JTOXlsZmFvTCtnd0ZIektleXA4PQ==
 @dirrm %%INSTDIR%%/resources/AppData/Winks
+@dirrm %%INSTDIR%%/resources/AppData/Views/Default_IM
+@dirrm %%INSTDIR%%/resources/AppData/Views/Default_General
+@dirrm %%INSTDIR%%/resources/AppData/Views/Default_Chat
+@dirrm %%INSTDIR%%/resources/AppData/Views/Default_CLGroup
+@dirrm %%INSTDIR%%/resources/AppData/Views/Default_CLContact
+@dirrm %%INSTDIR%%/resources/AppData/Views
 @dirrm %%INSTDIR%%/resources/AppData/StatusIcons/J_ICQ
 @dirrm %%INSTDIR%%/resources/AppData/StatusIcons
 @dirrm %%INSTDIR%%/resources/AppData/SplashWindow
