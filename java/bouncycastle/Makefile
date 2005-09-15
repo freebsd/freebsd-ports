@@ -18,6 +18,8 @@ COMMENT=	Cleanroom build of Java Cryptography Extensions
 BUILD_DEPENDS=	${JAVADIR}/bin/java:${PORTSDIR}/java/jdk13
 
 BROKEN=		Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-11-15
 
 JAVADIR?=	${LOCALBASE}/jdk1.3.1
 JAVALIBDIR=	${PREFIX}/share/java/classes
