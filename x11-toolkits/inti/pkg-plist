@@ -311,15 +311,15 @@ include/inti-1.0/inti/utf-string.h
 @dirrm include/inti-1.0/inti/gdk/private
 @dirrm include/inti-1.0/inti/gdk-pixbuf/private
 @dirrm include/inti-1.0/inti/gdk-pixbuf
+@dirrm include/inti-1.0/inti/gdk
 @dirrm include/inti-1.0/inti/atk/private
 @dirrm include/inti-1.0/inti/atk
-@unexec rmdir %D/include/inti-1.0/inti/gdk 2>/dev/null || true
-@unexec rmdir %D/include/inti-1.0/inti/gtk 2>/dev/null || true
-@unexec rmdir %D/include/inti-1.0/inti 2>/dev/null || true
-@unexec rmdir %D/include/inti-1.0 2>/dev/null || true
+@dirrm include/inti-1.0/inti/gtk
+@dirrm include/inti-1.0/inti
+@dirrm include/inti-1.0
 lib/inti-1.0/include/inti-config.h
-@unexec rmdir %D/lib/inti-1.0/include 2>/dev/null || true
-@unexec rmdir %D/lib/inti-1.0 2>/dev/null || true
+@dirrm lib/inti-1.0/include
+@dirrm lib/inti-1.0
 lib/libinti-1.0.so
 lib/libinti-1.0.so.9
 libdata/pkgconfig/inti-1.0.pc
