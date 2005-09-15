@@ -62,6 +62,7 @@
     SUBDIR += spacechart
     SUBDIR += squeuer
     SUBDIR += sscalc
+    SUBDIR += stardates
     SUBDIR += starplot
     SUBDIR += stars
     SUBDIR += stellarium
