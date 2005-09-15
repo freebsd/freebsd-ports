@@ -230,6 +230,9 @@ class TdiaryInstall
     FileUtils16.chmod(0755, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/update.rb", *@fileutilOptions)
     FileUtils16.cp("#{@tdiarymaster}/tdiary.rb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", *@fileutilOptions)
     FileUtils16.cp("#{@tdiarymaster}/README", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", *@fileutilOptions)
+    if @lang == 'ja' then
+       FileUtils16.ln_s("#{@passwd.dir}/#{@httpdir}/#{@diarydir}/misc/plugin/jdate.rb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/plugin/000jdate.rb", *@fileutilOptions)
+    end
   end
 
   def installConfig
@@ -260,6 +263,11 @@ class TdiaryInstall
     FileUtils16.chmod(0777, "#{@passwd.dir}/#{@diarydir}", *@fileutilOptions) if ! defined?($OPT_SUEXEC)
     FileUtils16.chmod(0777, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", *@fileutilOptions) if ! defined?($OPT_SUEXEC)
     FileUtils16.rm("#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary-FreeBSD.sh", :force, *@fileutilOptions)
+
+    FileUtils16.chmod(0701, "#{@passwd.dir}/#{@diarydir}", *@fileutilOptions) if defined?($OPT_SUEXEC)
+    FileUtils16.chmod(0701, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", *@fileutilOptions) if defined?($OPT_SUEXEC)
+    FileUtils16.chmod(0700, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/index.rb", *@fileutilOptions) if defined?($OPT_SUEXEC)
+    FileUtils16.chmod(0700, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/update.rb", *@fileutilOptions) if defined?($OPT_SUEXEC)
 
     if @euid == 0 then
       Find.find("#{@passwd.dir}/#{@diarydir}", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}") do |f|
