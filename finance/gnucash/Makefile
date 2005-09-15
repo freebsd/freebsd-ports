@@ -10,8 +10,6 @@ PORTVERSION=	1.8.11
 PORTREVISION=	1
 CATEGORIES=	finance gnome
 MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
-		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
-		http://www.linas.org/pub/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnucash
 
