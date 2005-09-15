@@ -4,3 +4,4 @@
 %%JAVAJARDIR%%/cryptix-jce-tests.jar
 %%PORTDOCS%%%%DOCSDIR%%/README.TXT
 %%PORTDOCS%%%%DOCSDIR%%/LICENCE.TXT
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
