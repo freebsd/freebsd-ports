@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fluxbox
-PORTVERSION=	0.9.13
+PORTVERSION=	0.9.14
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fluxbox
@@ -18,7 +18,6 @@ MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A small and fast window manager based on BlackBox
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
-RUN_DEPENDS=	bsetroot:${PORTSDIR}/x11-wm/boxtools
 
 CONFLICTS=	fluxbox-0.1.*
 
@@ -30,7 +29,8 @@ USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
 
 DOCS=		AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
-MAN1=		fbrun.1 fbsetbg.1 fluxbox.1 fluxstyle.1 startfluxbox.1
+MAN1=		fbrun.1 fbsetbg.1 fbsetroot.1 fluxbox.1 fluxstyle.1 \
+		startfluxbox.1
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
@@ -157,8 +157,13 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g; s|%%X11BASE%%|${X11BASE}|g' \
-		${WRKSRC}/util/fluxbox-generate_menu.in
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
+		s|%%X11BASE%%|${X11BASE}|g' \
+			${WRKSRC}/util/fluxbox-generate_menu.in
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
+		s|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/util/fbsetbg
+	@${FIND} ${WRKSRC}/data/styles -type f | ${XARGS} ${REINPLACE_CMD} -e \
+		's|bsetroot|fbsetroot|g'
 .if defined(WITHOUT_NLS)
 	@${REINPLACE_CMD} -e 's|HAVE_ICONV=yes|HAVE_ICONV=no|g' \
 		${WRKSRC}/configure

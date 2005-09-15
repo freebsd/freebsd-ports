@@ -1,5 +1,6 @@
 bin/fbrun
 bin/fbsetbg
+bin/fbsetroot
 bin/fluxbox
 bin/fluxbox-generate_menu
 bin/startfluxbox
@@ -68,10 +69,12 @@ bin/startfluxbox
 %%DATADIR%%/keys
 %%DATADIR%%/menu
 %%NLS:%%%%DATADIR%%/nls/C/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/be_BY/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/bg_BG/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/cs_CZ/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/da_DK/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/de_DE/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/el_GR/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/es_ES/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/et_EE/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/fr_FR/fluxbox.cat
@@ -87,6 +90,7 @@ bin/startfluxbox
 %%NLS:%%%%DATADIR%%/nls/sl_SI/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/sv_SE/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/tr_TR/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/uk_UA/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/vi_VN/fluxbox.cat
 %%DATADIR%%/styles/Artwiz
 %%DATADIR%%/styles/BlueFlux/pixmaps/button_close_active.xpm
@@ -155,6 +159,7 @@ bin/startfluxbox
 @dirrm %%DATADIR%%/styles/BlueFlux
 @dirrm %%DATADIR%%/styles
 %%NLS:%%@dirrm %%DATADIR%%/nls/vi_VN
+%%NLS:%%@dirrm %%DATADIR%%/nls/uk_UA
 %%NLS:%%@dirrm %%DATADIR%%/nls/tr_TR
 %%NLS:%%@dirrm %%DATADIR%%/nls/sv_SE
 %%NLS:%%@dirrm %%DATADIR%%/nls/sl_SI
@@ -170,10 +175,12 @@ bin/startfluxbox
 %%NLS:%%@dirrm %%DATADIR%%/nls/fr_FR
 %%NLS:%%@dirrm %%DATADIR%%/nls/et_EE
 %%NLS:%%@dirrm %%DATADIR%%/nls/es_ES
+%%NLS:%%@dirrm %%DATADIR%%/nls/el_GR
 %%NLS:%%@dirrm %%DATADIR%%/nls/de_DE
 %%NLS:%%@dirrm %%DATADIR%%/nls/da_DK
 %%NLS:%%@dirrm %%DATADIR%%/nls/cs_CZ
 %%NLS:%%@dirrm %%DATADIR%%/nls/bg_BG
+%%NLS:%%@dirrm %%DATADIR%%/nls/be_BY
 %%NLS:%%@dirrm %%DATADIR%%/nls/C
 %%NLS:%%@dirrm %%DATADIR%%/nls
 @dirrm %%DATADIR%%

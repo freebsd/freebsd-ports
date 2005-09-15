@@ -1,6 +1,6 @@
---- util/fluxbox-generate_menu.in.orig	Fri May 13 23:17:44 2005
-+++ util/fluxbox-generate_menu.in	Fri May 13 23:53:48 2005
-@@ -47,7 +47,7 @@
+--- util/fluxbox-generate_menu.in.orig	Wed Sep 14 19:35:32 2005
++++ util/fluxbox-generate_menu.in	Wed Sep 14 19:47:50 2005
+@@ -48,7 +48,7 @@
  
  
  WHOAMI=`whoami`
@@ -9,7 +9,16 @@
  
  # Check for Imlib2-support
  if fluxbox -info 2> /dev/null | grep -q "^IMLIB"; then
-@@ -97,7 +97,7 @@
+@@ -81,7 +81,7 @@
+     -d  other path(s) to recursively search for *.desktop files
+     -ds wider search for *.desktop files (takes more time)
+     -i  other path(s) to search for icons
+-        e.g., "/usr/kde/3.3/share/icons/crystalsvg/16x16/*"
++        e.g., "%%LOCALBASE%%/share/icons/crystalsvg/16x16/*"
+     -is wider search for icons (worth the extra time)
+     -in skip icon search
+ 
+@@ -98,7 +98,7 @@
    Only for packagers:
  
      -p  prefix; default is @PREFIX@
@@ -18,7 +27,7 @@
      -q  KDE-prefix; idem dito
  
  
-@@ -152,7 +152,7 @@
+@@ -153,7 +153,7 @@
  else
      # can rely on return value
      find_it() {
@@ -27,7 +36,7 @@
      }
  
      find_it_options() {
-@@ -284,7 +284,9 @@
+@@ -285,7 +285,9 @@
      # echo -n "for $temp_icon"
      eval doSearchLoop $USER_ICONPATHS \
        "$FB_ICONDIR" \
@@ -38,7 +47,7 @@
        ${OTHER_ICONPATHS} \
  
  
-@@ -1164,19 +1166,19 @@
+@@ -1166,19 +1168,19 @@
  # FBRUNOPTIONS='-font 10x20 -fg grey -bg black -title run'
  
  # --- PREFIX'es
@@ -64,7 +73,7 @@
  
  
  # --- Boolean variables.
-@@ -1244,16 +1246,22 @@
+@@ -1246,16 +1248,22 @@
          -g) GNOMEMENU=yes; shift;;
          -in) NO_ICON=yes; shift;;
          -is) OTHER_ICONPATHS="
@@ -91,7 +100,7 @@
              "
              # /usr/share/apps \
              shift;;
-@@ -1328,7 +1336,7 @@
+@@ -1330,7 +1338,7 @@
  
  
  # gnome prefix
@@ -100,7 +109,7 @@
      if [ -n "${GNOME_PREFIX}" -a -d "$GNOME_PREFIX/share/gnome" ]; then
          break;
      fi
-@@ -1336,7 +1344,7 @@
+@@ -1338,7 +1346,7 @@
  # Will remain $PREFIX if all else fails
  
  # kde prefix
@@ -109,7 +118,7 @@
      if [ -n "${KDE_PREFIX}" -a -d "$KDE_PREFIX/share/applnk" ]; then
          break;
      fi
-@@ -1424,7 +1432,7 @@
+@@ -1426,7 +1434,7 @@
  else
      [ -n "$MY_BROWSER" ] && echo "Warning: you chose an invalid browser." >&2
      #The precise order is up for debate.
@@ -118,7 +127,7 @@
          if find_it $browser; then
              DEFAULT_BROWSER=$browser
              break
-@@ -1464,7 +1472,8 @@
+@@ -1466,7 +1474,8 @@
      links|w3m|lynx)  append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_TERM} -e ${DEFAULT_BROWSER} ${HOMEPAGE}}" ;;
      firefox|firebird|mozilla|phoenix|galeon|dillo|netscape) append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_BROWSER}}" ;;
      konqueror) append "[exec] (konqueror) {kfmclient openProfile webbrowsing}" ;;
@@ -128,7 +137,7 @@
      MozillaFirebird) append "[exec] (firebird) {MozillaFirebird}" ;;
      MozillaFirefox) append "[exec] (firefox) {MozillaFirefox}" ;;
      *) append "[exec] ($DEFAULT_BROWSERNAME) {$DEFAULT_BROWSER}" ;;
-@@ -1482,7 +1491,8 @@
+@@ -1485,7 +1494,8 @@
      append_submenu "${BROWSERMENU}"
          normal_find firefox mozilla-firefox MozillaFirefox galeon mozilla dillo netscape vncviewer
          find_it links       append "[exec]   (links-graphic) {links -driver x ${HOMEPAGE}}"
@@ -138,12 +147,3 @@
          find_it konqueror   append "[exec]   (konqueror) {kfmclient openProfile webbrowsing}"
          find_it links       append "[exec]   (links) {${DEFAULT_TERM} -e links ${HOMEPAGE}}"
          find_it w3m         append "[exec]   (w3m) {${DEFAULT_TERM} -e w3m ${HOMEPAGE}}"
-@@ -1562,7 +1572,7 @@
- 
- 
-        append_submenu "${VIDEOMENU}"
--           normal_find xine aviplay gtv gmplayer xmovie xcdroast xgdb realplay xawtv fxtv ogle goggles
-+           normal_find xine aviplay gtv gmplayer vlc xmovie xcdroast xgdb realplay xawtv fxtv ogle goggles
-            find_it dvdrip append "[exec] (dvdrip) {nohup dvdrip}"
-        append_menu_end
- 
