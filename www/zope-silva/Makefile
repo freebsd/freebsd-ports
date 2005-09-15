@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	silva
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 PORTEPOCH=	1
 CATEGORIES=	www zope
 MASTER_SITES=	http://www.infrae.com/download/%SUBDIR%/:silva,document,metadata,sprout
 MASTER_SITE_SUBDIR=	Silva/${PORTVERSION}/:silva \
-			SilvaDocument/1.2/:document \
-			SilvaMetadata/0.8/:metadata \
-			Sprout/0.6.1/:sprout
+			SilvaDocument/1.3/:document \
+			SilvaMetadata/0.10/:metadata \
+			Sprout/0.6.2/:sprout
 PKGNAMEPREFIX=	zope-
 DISTFILES=	Silva-${PORTVERSION}.tgz:silva \
-		SilvaDocument-1.2.tgz:document \
-		SilvaMetadata-0.8.tgz:metadata \
-		Sprout-0.6.1.tgz:sprout
+		SilvaDocument-1.3.tgz:document \
+		SilvaMetadata-0.10.tgz:metadata \
+		Sprout-0.6.2.tgz:sprout
 
-MAINTAINER=	x@Vex.Net
+MAINTAINER=	x@vex.net
 COMMENT=	Web application (CMS) to manage/edit structured documents
 
 RUN_DEPENDS=	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/Annotations/__init__.py:${PORTSDIR}/www/zope-annotations \
