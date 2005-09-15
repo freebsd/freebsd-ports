@@ -8,8 +8,8 @@
 PORTNAME=	wsmake
 PORTVERSION=	0.6.4
 CATEGORIES=	www
-MASTER_SITES=	http://www.wsmake.org/dwnlds/stable/ \
-		http://www.wsmake.org/docs/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	wsmake
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} examples.tar.gz
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -26,10 +26,6 @@ DISTFILES+=	user-manual-html.tar.gz
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,void\*,char\*,g' ${WRKSRC}/libwsmake/wsUtil.cpp
