@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	freedroidrpg
-PORTVERSION=	0.9.13.r3
+PORTVERSION=	0.9.13
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freedroid
-DISTNAME=	${PORTNAME:S/rpg/RPG/}-${PORTVERSION:S/.r3/-rc3/}
 
 MAINTAINER=	alejandro@varnet.biz
 COMMENT=	Modification of the classical Freedroid engine into an RPG
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.r3/-rc3/}
 
 USE_BZIP2=	yes
 USE_GETOPT_LONG=yes
@@ -39,26 +36,26 @@ BROKEN=		"does not compile (missing fenv.h)"
 
 .if defined(WITH_BACKTRACE)
 LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
-CONFIGURE_ARGS+=	--enable-backtrace
+CONFIGURE_ARGS+=--enable-backtrace
 STRIP=		# keep debugging symbols
 .else
-CONFIGURE_ARGS+=	--disable-backtrace
+CONFIGURE_ARGS+=--disable-backtrace
 .endif
 
 .if defined(WITH_EDITORS)
 USE_GNOME+=	gtk12
-CONFIGURE_ARGS+=	--enable-editors
+CONFIGURE_ARGS+=--enable-editors
 PLIST_SUB+=	EDITORS=""
 .else
-CONFIGURE_ARGS+=	--disable-editors
+CONFIGURE_ARGS+=--disable-editors
 PLIST_SUB+=	EDITORS="@comment "
 .endif
 
 .if defined(WITH_OPENGL)
 USE_GL=		yes
-CONFIGURE_ARGS+=	--enable-opengl
+CONFIGURE_ARGS+=--enable-opengl
 .else
-CONFIGURE_ARGS+=	--disable-opengl
+CONFIGURE_ARGS+=--disable-opengl
 .endif
 
 .include <bsd.port.post.mk>
