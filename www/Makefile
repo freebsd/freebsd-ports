@@ -749,6 +749,7 @@
     SUBDIR += scout
     SUBDIR += screem
     SUBDIR += script4rss
+    SUBDIR += selenium
     SUBDIR += shttpd
     SUBDIR += sidplug
     SUBDIR += simplog
