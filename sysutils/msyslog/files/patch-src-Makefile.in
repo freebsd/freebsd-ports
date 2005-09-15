@@ -1,0 +1,12 @@
+--- src/Makefile.in.orig	Fri Apr 11 20:36:26 2003
++++ src/Makefile.in	Thu Sep 15 11:01:15 2005
+@@ -74,9 +74,3 @@
+ 	$(INSTALL) -s $(PROG) $(INSTALL_DIR)/ ;
+ 
+ install: install-prog
+-	@echo -e \
+-	" **********************************************************\n"\
+-	"**       A new syslog daemon was installed !!           **\n"\
+-	"**   Please read the INSTALL and README files           **\n"\
+-	"**   to get your syslog configuration ready             **\n"\
+-	"**********************************************************\n"

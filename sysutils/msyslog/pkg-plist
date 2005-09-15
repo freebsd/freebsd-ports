@@ -1,21 +1,24 @@
-etc/rc.d/msyslog.sh.sample
-lib/alat/libmsyslog.so.1
 sbin/peochk
 sbin/syslogd
-share/examples/msyslog/im_mymodule.c
-share/examples/msyslog/om_mymodule.c
-share/examples/msyslog/syslog.conf.classic
-share/examples/msyslog/syslog.conf.mysql
-share/examples/msyslog/syslog.conf.peo
-share/examples/msyslog/syslog.conf.pgsql
-share/examples/msyslog/syslog.conf.regex
-@dirrm share/examples/msyslog
-%%PORTDOCS%%share/doc/msyslog/AUTHORS
-%%PORTDOCS%%share/doc/msyslog/COPYING
-%%PORTDOCS%%share/doc/msyslog/HOW-TO-UPGRADE
-%%PORTDOCS%%share/doc/msyslog/HOW_TO_WRITE_A_MODULE
-%%PORTDOCS%%share/doc/msyslog/NEWS
-%%PORTDOCS%%share/doc/msyslog/README
-%%PORTDOCS%%share/doc/msyslog/TODO
-%%PORTDOCS%%@dirrm share/doc/msyslog
-@unexec rmdir %D/lib/alat 2>/dev/null || true
+lib/libmsyslog.so.1
+man/man5/syslog.conf.5.gz
+man/man8/im_bsd.8.gz
+man/man8/im_file.8.gz
+man/man8/im_tcp.8.gz
+man/man8/im_udp.8.gz
+man/man8/im_unix.8.gz
+man/man8/om_classic.8.gz
+man/man8/om_peo.8.gz
+man/man8/om_regex.8.gz
+man/man8/om_tcp.8.gz
+man/man8/om_udp.8.gz
+man/man8/peochk.8.gz
+man/man8/syslogd.8.gz
+%%EXAMPLESDIR%%/im_mymodule.c
+%%EXAMPLESDIR%%/om_mymodule.c
+%%EXAMPLESDIR%%/syslog.conf.classic
+%%EXAMPLESDIR%%/syslog.conf.mysql
+%%EXAMPLESDIR%%/syslog.conf.peo
+%%EXAMPLESDIR%%/syslog.conf.pgsql
+%%EXAMPLESDIR%%/syslog.conf.regex
+@dirrm %%EXAMPLESDIR%%
