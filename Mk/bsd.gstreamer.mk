@@ -205,6 +205,7 @@ mplex_DEPENDS=	multimedia/gstreamer-plugins-mplex
 theora_DEPENDS=	multimedia/gstreamer-plugins-theora
 
 x264_DEPENDS=	multimedia/gstreamer-plugins-x264
+x264_PLIST=	libx264
 
 xvid_DEPENDS=	multimedia/gstreamer-plugins-xvid
 
