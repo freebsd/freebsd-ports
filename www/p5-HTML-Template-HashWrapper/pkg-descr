@@ -1,0 +1,3 @@
+A module to use the associate option from HTML::Template via hash references.
+
+WWW: http://search.cpan.org/~gregfast/HTML-Template-HashWrapper-1.3/
