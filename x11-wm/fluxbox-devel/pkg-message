@@ -8,7 +8,7 @@ upcoming versions.
 
 ATTENTION: Now, the bsetroot has been renamed to fbsetroot at 0.9.14, be
 	   expect for many unoffical themes' background will not working
-	   unless you rename bsetroot -> fbsetroot by yourself. Other way can
-	   be done is to install the x11-wm/boxtools that has bsetroot if you
-	   don't want to edit any theme.
+	   unless you edit in the style for rename bsetroot -> fbsetroot by
+	   yourself. Other way can be done is to install the x11-wm/boxtools
+	   that has bsetroot if you don't want to edit any theme.
 *******************************************************************************
