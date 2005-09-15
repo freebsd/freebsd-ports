@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		openldap
-DISTVERSION=		2.3.4
+DISTVERSION=		2.3.7
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -40,8 +40,30 @@ WANT_OPENLDAP_VER?=	23
 BROKEN=			"incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}"
 .endif
 
-PORTREVISION_CLIENT=	1
+PORTREVISION_CLIENT=	0
 PORTREVISION_SERVER=	0
+
+.if !defined(CLIENT_ONLY)
+OPTIONS=	SASL "With (Cyrus) SASL2 support" on \
+		PERL "With Perl backend" off \
+		SHELL "With Shell backend" on \
+		ODBC "With SQL backend" off \
+		SLP "With SLPv2 (RFC 2608) support" off \
+		SLAPI "With Netscape SLAPI plugin API" off \
+		TCP_WRAPPERS "With tcp wrapper support" on \
+		BDB "With BerkeleyDB support" on \
+		DYNGROUP "With Dynamic Group overlay" off \
+		PROXYCACHE "With Proxy Cache overlay" off \
+		ACI "With per-object ACIs (experimental)" off \
+		UNIQUE "With attribute Uniqueness overlay" off \
+		PPOLICY "With Password Policy overlay" off \
+		SYNCPROV "With Syncprov overlay" off \
+		RWM "With Rewrite/Remap overlay" off \
+		DYNAMIC_BACKENDS "Build dynamic backends" on \
+		RCORDER "Add rc order for slapd(1)" off
+.endif
+
+.include <bsd.port.pre.mk>
 
 .if defined(CLIENT_ONLY)
 OPENLDAP_PORTREVISION=	${PORTREVISION_CLIENT}
@@ -57,9 +79,7 @@ CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.[!3].* \
 BROKEN=			"Unknown PKGNAMESUFFIX ${PKGNAMESUFFIX}"
 .endif
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=		CHANGES drafts rfc
-.endif
 
 .if defined(USE_OPENLDAP)
 IGNORE=			: You have \`USE_OPENLDAP' defined either in your environment or in make(1) arguments
@@ -68,20 +88,12 @@ IGNORE=			: You have \`USE_OPENLDAP' defined either in your environment or in ma
 OPENLDAP_PORTREVISION=	${PORTREVISION_SERVER}
 OPENLDAP_PKGFILESUFX=
 
-.if defined(WITH_SASL)
-RUN_DEPENDS=		${LOCALBASE}/lib/libldap-2.3.so.0:${PORTSDIR}/net/openldap23-sasl-client
+.if defined(WITH_SASL) && !defined(WITHOUT_SASL)
+RUN_DEPENDS=		${LOCALBASE}/lib/libldap-2.3.so.1:${PORTSDIR}/net/openldap23-sasl-client
+CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.*
 .else
-RUN_DEPENDS=		${LOCALBASE}/lib/libldap-2.3.so.0:${PORTSDIR}/net/openldap23-client
-.endif
-
-.if ${PKGNAMESUFFIX} == "-sasl-server"
-CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-server-2.* \
-			${PKGNAMEPREFIX}${PORTNAME}-sasl-server-2.[!3].*
-.elif ${PKGNAMESUFFIX} == "-server"
-CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-server-2.[!3].* \
-			${PKGNAMEPREFIX}${PORTNAME}-sasl-server-2.*
-.else
-BROKEN=			"Unknown PKGNAMESUFFIX ${PKGNAMESUFFIX}"
+RUN_DEPENDS=		${LOCALBASE}/lib/libldap-2.3.so.1:${PORTSDIR}/net/openldap23-client
+CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.*
 .endif
 
 .endif
@@ -119,14 +131,12 @@ CONFIGURE_ARGS=		--with-threads=posix \
 			--with-tls=openssl \
 			--enable-dynamic
 
-.if defined(WITH_SASL)
+.if defined(WITH_SASL) && !defined(WITHOUT_SASL)
 LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-cyrus-sasl
 .else
 CONFIGURE_ARGS+=	--without-cyrus-sasl
 .endif
-
-CONFIGURE_SED+=		-e 's,(-lssl) +(-lcrypto),\2 \1,'
 
 .if defined(CLIENT_ONLY)
 # client specific configuration
@@ -205,6 +215,10 @@ CONFIGURE_ARGS+=	--enable-syncprov
 CONFIGURE_ARGS+=	--disable-syncprov
 .endif
 
+.if defined(WITH_RWM)
+CONFIGURE_ARGS+=	--enable-rwm
+.endif
+
 .if defined(WITHOUT_BDB)
 CONFIGURE_ARGS+=	--disable-bdb \
 			--disable-hdb \
@@ -272,7 +286,7 @@ PLIST_SUB+=		BACK_PERL=${BACKEND_PLIST}
 PLIST_SUB+=		BACK_PERL="@comment "
 .endif
 
-.if defined(WITH_SASL)
+.if defined(WITH_SASL) && !defined(WITHOUT_SASL)
 CONFIGURE_ARGS+=	--enable-spasswd
 .endif
 
@@ -326,8 +340,6 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}" \
 			LIBS="${LIBS}"
 
-.include <bsd.port.pre.mk>
-
 .if defined(CLIENT_ONLY)
 .include "${FILESDIR}/manpages"
 .else
@@ -345,39 +357,6 @@ SED_SCRIPT+=		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
 			-e 's,%%RC_SUFX%%,${RC_SUFX},g'
 PLIST_SUB+=		RC_SUFX=${RC_SUFX}
 .endif
-
-pre-everything::
-	@${ECHO} "============================================================="
-	@${ECHO}
-	@${ECHO} "You can build ${PKGNAME} with the following options:"
-	@${ECHO}
-.if defined(CLIENT_ONLY)
-	@${ECHO} "WITH_SASL             with (Cyrus) SASL2 support"
-.else
-	@${ECHO} "WITH_BDB_VER          select BerkeleyDB version (default 43)"
-	@${ECHO} "WITH_SASL             with (Cyrus) SASL2 password verification"
-	@${ECHO} "WITH_PERL             with Perl backend"
-	@${ECHO} "WITHOUT_SHELL         without Shell backend"
-	@${ECHO} "WITH_ODBC             with SQL backend"
-	@${ECHO} "WITH_ODBC_TYPE        select ODBC interface (iODBC or unixODBC)"
-	@${ECHO} "WITH_SLP              with SLPv2 (RFC 2608) support"
-	@${ECHO} "WITH_SLAPI            with Netscape SLAPI plugin API"
-	@${ECHO} "WITHOUT_TCP_WRAPPERS  without tcp wrapper support"
-	@${ECHO} "WITHOUT_BDB           without BerkeleyDB support"
-	@${ECHO} "WITH_DYNGROUP         with Dynamic Group overlay"
-	@${ECHO} "WITH_PROXYCACHE       with Proxy Cache overlay"
-	@${ECHO} "WITH_ACI              with per-object ACIs (experimental)"
-	@${ECHO} "WITH_UNIQUE           with attribute Uniqueness overlay"
-	@${ECHO} "WITH_PPOLICY          with Password Policy overlay"
-	@${ECHO} "WITH_SYNCPROV		with Syncprov overlay"
-	@${ECHO} "WITHOUT_DYNAMIC_BACKENDS build static backends"
-.if defined(DFOSVERSION) || ${OSVERSION} >= 500038
-	@${ECHO} "WITH_RCORDER          slapd(1) should start early in the boot process"
-.endif
-.endif
-	@${ECHO}
-	@${ECHO} "============================================================="
-	@${ECHO}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%LOCALSTATEDIR%/run/,${LDAP_RUN_DIR}/,g' \

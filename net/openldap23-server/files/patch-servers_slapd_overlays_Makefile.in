@@ -1,13 +1,12 @@
---- servers/slapd/overlays/Makefile.in.orig	Fri May 13 17:44:48 2005
-+++ servers/slapd/overlays/Makefile.in	Fri May 13 17:46:31 2005
-@@ -28,6 +28,9 @@
- 	unique.c
+--- servers/slapd/overlays/Makefile.in.orig	Fri Sep  2 03:28:11 2005
++++ servers/slapd/overlays/Makefile.in	Sun Sep  4 16:11:22 2005
+@@ -30,6 +30,9 @@
+ 	valsort.c
  OBJS = overlays.o \
  	@SLAPD_STATIC_OVERLAYS@
 +LIBTOOL_OBJS = overlays.lo \
 +	       glue.lo \
 +	       version.lo
  
- LDAP_INCDIR= ../../../include       
- LDAP_LIBDIR= ../../../libraries
- 
+ # Add here the objs that are needed by overlays, but do not make it
+ # into SLAPD_STATIC_OVERLAYS...
