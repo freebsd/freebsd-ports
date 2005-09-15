@@ -6,15 +6,9 @@ This is one version of many to come before a stable 1.0.0 release. Check out the
 RoadMap on http://fluxbox.sourceforge.net/roadmap.php for more information about
 upcoming versions.
 
-ATTENTION: Now, the -devel has been removed and the CONFLICTS to x11-wm/fluxbox
-	   has been added. The x11-wm/fluxbox-devel is stable enough to use
-	   daily and we doubt someone will install both fluxbox and
-	   fluxbox-devel.
-
-	   Since the '-devel' suffix has been removed, you should either use
-	   fluxbox-generate_menu to regenerate the menu or edit your
-	   ~/.fluxbox/menu to remove the -devel suffix.
-
-	   As of 0.9.6 the shell script 'startfluxbox' has been added. It should
-	   be executed instead of fluxbox itself from ~/.xinitrc or ~/.xsession.
+ATTENTION: Now, the bsetroot has been renamed to fbsetroot at 0.9.14, be
+	   expect for many unoffical themes' background will not working
+	   unless you rename bsetroot -> fbsetroot by yourself. Other way can
+	   be done is to install the x11-wm/boxtools that has bsetroot if you
+	   don't want to edit any theme.
 *******************************************************************************
