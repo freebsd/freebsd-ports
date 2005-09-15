@@ -6,36 +6,25 @@
 #
 
 PORTNAME=	bouncycastle
-PORTVERSION=	1.16
-PORTREVISION=	1
+PORTVERSION=	1.29
 CATEGORIES=	java security
-MASTER_SITES=	http://www.bouncycastle.org/download/
-DISTNAME=	jce-jdk13-${PORTVERSION:S/.//}
+MASTER_SITES=	http://www.bouncycastle.org/download/ \
+		http://polydistortion.net/bc/download/
+DISTNAME=	crypto-${PORTVERSION:S/.//}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Cleanroom build of Java Cryptography Extensions
 
-BUILD_DEPENDS=	${JAVADIR}/bin/java:${PORTSDIR}/java/jdk13
-
-BROKEN=		Unfetchable
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-11-15
-
-JAVADIR?=	${LOCALBASE}/jdk1.3.1
-JAVALIBDIR=	${PREFIX}/share/java/classes
-API_DOCDIR=	${PREFIX}/share/doc/java/${PORTNAME}/api
-JAR_CMD?=	${JAVADIR}/bin/jar
-
-JAR_NAME=	bouncycastle.jar
-
+USE_JAVA=	yes
+JAVA_VERSION=	1.1+
 NO_BUILD=	yes
 
 do-install:
-	@${ECHO} "Installing ${JAR_NAME}..."
-	@${MKDIR} ${JAVALIBDIR}
-	@${JAR_CMD} cf ${JAVALIBDIR}/${JAR_NAME} -C ${WRKSRC}/classes .
-	@${ECHO} "Installing docs in ${API_DOCDIR}..."
-	@${MKDIR} ${API_DOCDIR}
-	@${CP} -R ${WRKSRC}/docs/* ${API_DOCDIR}
+	@${MKDIR} ${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/jars/*.jar ${JAVAJARDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
