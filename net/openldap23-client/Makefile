@@ -10,6 +10,7 @@ PKGNAMESUFFIX=		-client
 COMMENT=		Open source LDAP client implementation
 
 CLIENT_ONLY=		yes
+WITHOUT_SASL=		yes
 
 MASTERDIR=		${.CURDIR}/../openldap23-server
 

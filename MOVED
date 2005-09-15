@@ -1623,3 +1623,4 @@ textproc/gauche-sxml|lang/gauche|2005-09-14|sxml now comes with gauche
 graphics/mgp-gallery||2005-09-15|disappeared from web
 security/pf||2005-09-15|included in base system since 5.3
 security/authpf||2005-09-15|included in base system since 5.3
+net/openldap23-sasl-server||2005-09-15|Is no longer needed as separated port

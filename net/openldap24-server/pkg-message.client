@@ -11,12 +11,3 @@ Try `man ldap.conf' and visit the OpenLDAP FAQ-O-Matic at
 for more information.
 
 ************************************************************
-
-############################################################
-
-  CAUTION: This is an alpha release, for evaluation only.
-
-  Do not use in a production environment!
-  Please use OpenLDAP 2.2 instead. 
-
-############################################################
