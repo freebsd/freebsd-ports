@@ -91,6 +91,7 @@
     SUBDIR += dansguardian-devel
     SUBDIR += decss
     SUBDIR += demoroniser
+    SUBDIR += dfileserver
     SUBDIR += dhttpd
     SUBDIR += dillo
     SUBDIR += dokuwiki
