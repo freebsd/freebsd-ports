@@ -7,6 +7,7 @@
 
 PORTNAME=	tdiary
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES?=	www ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.tdiary.org/download/
