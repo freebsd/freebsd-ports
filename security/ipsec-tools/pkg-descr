@@ -10,7 +10,6 @@ Enchancements:
 - Tons of bugfixes.
 
 Known issues:
-- Too many use of dynamic memory allocation, which leads to memory leak.
 - Non-threaded implementation.  Simultaneous key negotiation performance
   should be improved.
 - Cannot negotiate keys for per-socket policy.
