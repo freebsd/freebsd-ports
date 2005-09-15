@@ -10,17 +10,20 @@ PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://download.berlios.de/klog/
 
-MAINTAINER=	matt@mattsnetwork.co.uk
+MAINTAINER=	az@az.inec.ru
 COMMENT=	ADIF compatible logging application
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 USE_KDELIBS_VER=3
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.cpp" -and -not -name "main.cpp"| \
+	${XARGS} ${REINPLACE_CMD} -e "s|^};|}|;s|{};|{}|;s|;};|;}|g"
 .endif
 
 .include <bsd.port.post.mk>
