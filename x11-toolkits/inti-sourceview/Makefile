@@ -18,11 +18,8 @@ COMMENT=	An Inti binding for GtkSourceView
 
 LIB_DEPENDS=	inti-1.0.9:${PORTSDIR}/x11-toolkits/inti
 
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
 USE_GNOME=	gtksourceview gnomehack gnomeprefix
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/lib${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

@@ -19,10 +19,7 @@ COMMENT=	An Inti binding for GtkGLExt, the Open-GL extension to GTK+
 LIB_DEPENDS=	inti-1.0.9:${PORTSDIR}/x11-toolkits/inti \
 		gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
 
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
+USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GNOME=	gnomehack gnomeprefix
 GNU_CONFIGURE=	yes
