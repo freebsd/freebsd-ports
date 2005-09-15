@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jpeg@thilelli.net
 COMMENT=	Small weblog engine for the UNIX command line
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
@@ -20,29 +20,24 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 USE_REINPLACE=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/nb etc/nb.conf.default
-
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-.endif
+SUB_FILES=	pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/nb
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/nb ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/nb.conf ${PREFIX}/etc/nb.conf.default
-	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/nb.conf ${PREFIX}/etc/nb.conf.sample
+	${MKDIR} ${DATADIR}
 .for dir in default moods plugins
 	${CP} -R ${WRKSRC}/${dir} ${DATADIR}
 .endfor
-	@${FIND} ${DATADIR} ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+
+post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/nanoblogger.html ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/docs/nanoblogger.html ${DOCSDIR}
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

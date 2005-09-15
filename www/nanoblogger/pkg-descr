@@ -16,14 +16,9 @@ Features include:
     * plugins for calendar, recent entries, weblog status, fortunes, etc.
     * auto-formatting, e.g. line breaks translate to HTML
     * support for relative and absolute links
-    * extensibility through reusability
-    * global configuration to set defaults (nb.conf)
-    * per-weblog configuration to override global defaults (blog.conf)
-    * intelligent build system, only rebuilds relative parts for a modified entry
-    * simple cache system, for faster content generation
-    * auto-detection of weblog from current directory
-    * no dependency on any java-script, server-side scripting, or server-side includes
-    * no dependency on any special database (uses flat-file)
-    * multi-platform portability (or at least wherever there's bash and the required commands)
+    * [...]
 
 WWW: http://nanoblogger.sourceforge.net/
+
+- Julien Gabel
+jpeg@thilelli.net
