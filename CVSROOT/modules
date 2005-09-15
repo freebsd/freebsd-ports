@@ -6971,7 +6971,6 @@ openldap22-sasl-server	ports/net/openldap22-sasl-server
 openldap22-server	ports/net/openldap22-server
 openldap23-client	ports/net/openldap23-client
 openldap23-sasl-client	ports/net/openldap23-sasl-client
-openldap23-sasl-server	ports/net/openldap23-sasl-server
 openldap23-server	ports/net/openldap23-server
 openmap		ports/astro/openmap
 openmcu		ports/net/openmcu
