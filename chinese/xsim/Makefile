@@ -25,9 +25,8 @@ CONFIGURE_ARGS=	--with-cn-locale=eucCN
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-BROKEN=		"Does not compile on amd64 or ia64 (missing -fPIC)"
-.endif
+CFLAGS+=	-fPIC
+MAKE_ARGS+=	gcclib=`${CXX} -print-file-name=libgcc_pic.a`
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
