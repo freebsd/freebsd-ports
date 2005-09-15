@@ -1222,6 +1222,7 @@ compupic	ports/graphics/compupic
 comserv		ports/comms/comserv
 concorde	ports/math/concorde
 cone		ports/mail/cone
+configgen	ports/devel/configgen
 confregdecode	ports/net-mgmt/confregdecode
 conglomerate	ports/editors/conglomerate
 conky		ports/sysutils/conky
