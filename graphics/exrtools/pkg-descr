@@ -1,0 +1,18 @@
+exrtools is a set of simple command-line utilities for manipulating
+with high dynamic range images in OpenEXR format. OpenEXR is a high
+dynamic-range (HDR) image file format developed by Industrial Light
+& Magic for use in computer imaging applications.
+
+exrtools was developed to help experiment with batch processing of
+HDR images for tone mapping. Each application is small and
+reasonably self-contained such that the source code may be of most
+value to others.
+
+exrtools currently only works with RGBA OpenEXR files. As well, the
+code assumes that the EXR files and PNG files all use sRGB primaries
+and gamma function.
+
+WWW: http://scanline.ca/exrtools/
+
+- ehaupt
+ehaupt@critical.ch
