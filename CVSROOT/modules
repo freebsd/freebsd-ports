@@ -1581,6 +1581,7 @@ devil		ports/graphics/devil
 devilspie	ports/x11-wm/devilspie
 devisor		ports/science/devisor
 devtodo		ports/devel/devtodo
+dfileserver	ports/www/dfileserver
 dfm		ports/x11-fm/dfm
 dft++		ports/science/dft++
 dgd		ports/net/dgd
