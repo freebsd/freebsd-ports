@@ -7,19 +7,21 @@
 #
 
 PORTNAME=	xist
-PORTVERSION=	2.8
+PORTVERSION=	2.10
 CATEGORIES=	www python
 MASTER_SITES=	ftp://ftp.livinglogic.de/pub/livinglogic/xist/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	ll-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	An XML-based extensible HTML generator
 
 RUN_DEPENDS=	${PYXML} \
-		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging \
-		${PYTHON_SITELIBDIR}/mx/Tidy/mxTidy/mxTidy.so:${PORTSDIR}/devel/py-mx-experimental
+		${PYTHON_SITELIBDIR}/ll/url.py:${PORTSDIR}/devel/py-ll-url \
+		${PYTHON_SITELIBDIR}/ll/_ansistyle.so:${PORTSDIR}/devel/py-ansistyle \
+		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 
-USE_PYTHON=	2.4
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 USE_BZIP2=	yes
 

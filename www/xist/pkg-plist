@@ -11,13 +11,7 @@ bin/tld2xsc
 %%PYTHON_SITELIBDIR%%/ll/xist/cssparsers.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/cssparsers.pyo
 %%PYTHON_SITELIBDIR%%/ll/xist/csstokenizer.so
-%%PYTHON_SITELIBDIR%%/ll/xist/errors.py
-%%PYTHON_SITELIBDIR%%/ll/xist/errors.pyc
-%%PYTHON_SITELIBDIR%%/ll/xist/errors.pyo
 %%PYTHON_SITELIBDIR%%/ll/xist/helpers.so
-%%PYTHON_SITELIBDIR%%/ll/xist/xfind.py
-%%PYTHON_SITELIBDIR%%/ll/xist/xfind.pyc
-%%PYTHON_SITELIBDIR%%/ll/xist/xfind.pyo
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/__init__.py
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/__init__.pyo
@@ -33,12 +27,6 @@ bin/tld2xsc
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/cond.py
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/cond.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/cond.pyo
-%%PYTHON_SITELIBDIR%%/ll/xist/ns/css.py
-%%PYTHON_SITELIBDIR%%/ll/xist/ns/css.pyc
-%%PYTHON_SITELIBDIR%%/ll/xist/ns/css.pyo
-%%PYTHON_SITELIBDIR%%/ll/xist/ns/cssspecials.py
-%%PYTHON_SITELIBDIR%%/ll/xist/ns/cssspecials.pyc
-%%PYTHON_SITELIBDIR%%/ll/xist/ns/cssspecials.pyo
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/doc.py
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/doc.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/doc.pyo
@@ -120,9 +108,6 @@ bin/tld2xsc
 %%PYTHON_SITELIBDIR%%/ll/xist/publishers.py
 %%PYTHON_SITELIBDIR%%/ll/xist/publishers.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/publishers.pyo
-%%PYTHON_SITELIBDIR%%/ll/xist/sandbox.py
-%%PYTHON_SITELIBDIR%%/ll/xist/sandbox.pyc
-%%PYTHON_SITELIBDIR%%/ll/xist/sandbox.pyo
 %%PYTHON_SITELIBDIR%%/ll/xist/sims.py
 %%PYTHON_SITELIBDIR%%/ll/xist/sims.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/sims.pyo
@@ -132,6 +117,9 @@ bin/tld2xsc
 %%PYTHON_SITELIBDIR%%/ll/xist/wwi.py
 %%PYTHON_SITELIBDIR%%/ll/xist/wwi.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/wwi.pyo
+%%PYTHON_SITELIBDIR%%/ll/xist/xfind.py
+%%PYTHON_SITELIBDIR%%/ll/xist/xfind.pyc
+%%PYTHON_SITELIBDIR%%/ll/xist/xfind.pyo
 %%PYTHON_SITELIBDIR%%/ll/xist/xnd.py
 %%PYTHON_SITELIBDIR%%/ll/xist/xnd.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/xnd.pyo
@@ -140,4 +128,3 @@ bin/tld2xsc
 %%PYTHON_SITELIBDIR%%/ll/xist/xsc.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/ll/xist/ns
 @dirrm %%PYTHON_SITELIBDIR%%/ll/xist
-@dirrm %%PYTHON_SITELIBDIR%%/ll
