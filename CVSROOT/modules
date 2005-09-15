@@ -8272,6 +8272,7 @@ p5-POE-Component-SMTP	ports/mail/p5-POE-Component-SMTP
 p5-POE-Component-SNMP	ports/net-mgmt/p5-POE-Component-SNMP
 p5-POE-Component-SSLify	ports/security/p5-POE-Component-SSLify
 p5-POE-Component-Server-HTTP	ports/www/p5-POE-Component-Server-HTTP
+p5-POE-Component-Server-HTTPServer	ports/www/p5-POE-Component-Server-HTTPServer
 p5-POE-Component-Server-XMLRPC	ports/devel/p5-POE-Component-Server-XMLRPC
 p5-POE-Component-Spread	ports/net/p5-POE-Component-Spread
 p5-POE-Component-TSTP	ports/devel/p5-POE-Component-TSTP
