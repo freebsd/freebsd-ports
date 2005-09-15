@@ -24,6 +24,7 @@ USE_X_PREFIX=	yes
 USE_LINUX=	yes
 NO_BUILD=	yes
 RESTRICTED=	Redistribution is limited, see license
+NO_PACKAGE=	Package will be 745MB, set FORCE_PACKAGE if you really
 NO_WRKSUBDIR=	yes
 ARMYDIR=	${PREFIX}/lib/${PORTNAME}
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
