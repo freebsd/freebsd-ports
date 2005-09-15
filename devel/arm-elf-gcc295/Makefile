@@ -16,7 +16,7 @@ DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-objc-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-g77-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	esk@ira.uka.de
+MAINTAINER=	jflemer@alum.rpi.edu
 COMMENT=	GNU cross compiler suite for vanilla ARM targets
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \

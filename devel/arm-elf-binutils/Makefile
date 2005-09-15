@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
 PKGNAMEPREFIX=	arm-elf-
 
-MAINTAINER=	esk@ira.uka.de
+MAINTAINER=	jflemer@alum.rpi.edu
 COMMENT=	GNU binutils for vanilla ARM cross-development
 
 USE_BZIP2=	yes
