@@ -7825,6 +7825,7 @@ p5-HTML-Tagset	ports/www/p5-HTML-Tagset
 p5-HTML-Template	ports/www/p5-HTML-Template
 p5-HTML-Template-Associate	ports/www/p5-HTML-Template-Associate
 p5-HTML-Template-Expr	ports/www/p5-HTML-Template-Expr
+p5-HTML-Template-HashWrapper	ports/www/p5-HTML-Template-HashWrapper
 p5-HTML-Template-JIT	ports/www/p5-HTML-Template-JIT
 p5-HTML-Tidy	ports/textproc/p5-HTML-Tidy
 p5-HTML-TokeParser-Simple	ports/www/p5-HTML-TokeParser-Simple
