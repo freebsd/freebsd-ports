@@ -1,0 +1,11 @@
+--- src/modules/Makefile.in.orig	Fri Apr 11 20:36:36 2003
++++ src/modules/Makefile.in	Wed Sep 14 16:44:15 2005
+@@ -35,7 +35,7 @@
+ CPPFLAGS=	-I.. @CPPFLAGS@
+ 
+ INSTALL=	@INSTALL@
+-INSTALL_LIBDIR=	@prefix@/lib/alat
++INSTALL_LIBDIR=	@prefix@/lib
+ 
+ MLIBNAME=	@MLIBNAME@
+ MSRCS=		@MSRCS@

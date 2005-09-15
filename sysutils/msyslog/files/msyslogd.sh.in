@@ -1,0 +1,47 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: syslogd
+# REQUIRE: mountcritremote cleanvar
+# BEFORE:  SERVERS
+#
+# Add the following lines to /etc/rc.conf to enable msyslogd:
+#
+#msyslogd_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name=msyslogd
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/syslogd
+pidfile=/var/run/syslog.pid
+required_files=%%PREFIX%%/etc/syslogd.conf
+
+start_precmd=start_precmd
+stop_postcmd=stop_postcmd
+
+extra_commands="reload"
+
+start_precmd()
+{
+  case $syslogd_enable in
+  [Yy][Ee][Ss]|1)
+    warn "syslogd_enable should be set to NO"
+    ;;
+    esac
+}
+
+stop_postcmd()
+{
+  rm -f $pidfile
+}
+
+# read settings, set default values
+load_rc_config $name
+: ${msyslogd_enable="NO"}
+
+run_rc_command "$1"

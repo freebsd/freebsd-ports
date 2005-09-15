@@ -1,5 +1,5 @@
---- configure.orig	Sat Jan  4 15:45:31 2003
-+++ configure	Sat Jan  4 15:51:07 2003
+--- configure.orig	Fri Apr 11 23:07:44 2003
++++ configure	Wed Sep 14 16:39:00 2005
 @@ -2941,7 +2941,7 @@
  echo "$as_me:2941: result: $ac_cv_lib_dl_dlopen" >&5
  echo "${ECHO_T}$ac_cv_lib_dl_dlopen" >&6
@@ -21,6 +21,15 @@
  cat >>confdefs.h <<EOF
  #define MLIBNAME_STR "$MLIBNAME"
  EOF
+@@ -3587,7 +3587,7 @@
+ 	prefix=$ac_default_prefix
+ fi
+ cat >>confdefs.h <<EOF
+-#define INSTALL_LIBDIR "$prefix/lib/alat"
++#define INSTALL_LIBDIR "$prefix/lib"
+ EOF
+ 
+ echo "$as_me:3593: checking wheter optreset is needed" >&5
 @@ -3644,14 +3644,6 @@
  #define PID_DIR "$dir"
  EOF
