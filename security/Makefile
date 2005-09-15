@@ -54,6 +54,7 @@
     SUBDIR += clamav
     SUBDIR += clamav-devel
     SUBDIR += clamsmtp
+    SUBDIR += clusterssh
     SUBDIR += cmd5checkpw
     SUBDIR += courier-authlib
     SUBDIR += courier-authlib-base
