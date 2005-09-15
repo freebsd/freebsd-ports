@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bricolage
-PORTVERSION=	1.8.5
+PORTVERSION=	1.8.6
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bricolage
@@ -23,6 +23,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p
 		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
 		${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
 		${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Maketext \
+		${SITE_PERL}/Term/ReadPassword.pm:${PORTSDIR}/devel/p5-Term-ReadPassword \
 		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump \
 		${SITE_PERL}/Test/Class.pm:${PORTSDIR}/devel/p5-Test-Class \
@@ -51,8 +52,12 @@ APXS?=		${LOCALBASE}/sbin/apxs
 
 MAKE_ENV+=	INSTALL_VERBOSITY="QUIET"
 
-# Used to determine which versions we can upgrade from
-PREVIOUS_VERSIONS=	1.8.0 1.8.1 1.8.2 1.8.3 1.8.4 # Skip ${PORTVERSION} for 1.8.5
+# Used to determine which versions have perl scripts
+# that need to run for an upgrade. These should be listed
+# in the same order as found within inst/versions.txt
+#
+# Skip 1.8.5
+PREVIOUS_VERSIONS=	1.8.0 1.8.1 1.8.2 1.8.3 1.8.4 1.8.6
 
 USE_REINPLACE=	yes
 PERL_CONFIGURE=	yes

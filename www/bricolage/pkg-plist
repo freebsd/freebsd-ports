@@ -33,6 +33,10 @@ bricolage/upgrade/1.8.3/media_uri_pk.pl
 bricolage/upgrade/1.8.3/story_uri_pk.pl
 bricolage/upgrade/1.8.3/worfkow_type_ck.pl
 bricolage/upgrade/1.8.4/replace_action_media_types.pl
+bricolage/upgrade/1.8.6/fix_autopopulateds.pl
+bricolage/upgrade/1.8.6/fix_published_version.pl
+bricolage/upgrade/1.8.6/fix_resource_idx.pl
+bricolage/upgrade/1.8.6/fix_story_category_seq.pl
 bricolage/comp/admin/alerts/dhandler
 bricolage/comp/admin/alerts/recip
 bricolage/comp/admin/control/change_user/dhandler
@@ -2594,6 +2598,7 @@ bricolage/comp/workflow/profile/media/container/edit.html
 bricolage/comp/workflow/profile/media/container/edit_bulk.html
 bricolage/comp/workflow/profile/media/container/edit_related_media.html
 bricolage/comp/workflow/profile/media/container/edit_related_story.html
+bricolage/comp/workflow/profile/media/container/edit_super_bulk.html
 bricolage/comp/workflow/profile/media/contributor_role.html
 bricolage/comp/workflow/profile/media/contributors.html
 bricolage/comp/workflow/profile/media/dhandler
@@ -2948,6 +2953,7 @@ share/bricolage/Pg.sql
 @dirrm %%SITE_PERL%%/Bric
 @dirrm %%SITE_PERL%%/mach/auto/Bric
 @dirrm %%SITE_PERL%%/mach/auto/bric_bin
+@dirrm bricolage/upgrade/1.8.6
 @dirrm bricolage/upgrade/1.8.4
 @dirrm bricolage/upgrade/1.8.3
 @dirrm bricolage/upgrade/1.8.2
