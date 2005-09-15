@@ -6,21 +6,18 @@
 #
 
 PORTNAME=	cryptix-jce
-PORTVERSION=	20011118
+PORTVERSION=	20050328
 CATEGORIES=	java security
-MASTER_SITES=	http://opensores.thebunker.net/pub/mirrors/cryptix/dist/ \
-		http://www.mirrors.wiretapped.net/security/cryptography/libraries/cryptix/cryptix-jce/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	znerd
+MASTER_SITES=	http://www.cryptix.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-snap
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JCE (Java Cryptography Extension) by Cryptix
 
 USE_JAVA=	yes
+JAVA_VERSION=	1.1+
 USE_ZIP=	yes
 NO_BUILD=	yes
-RESTRICTED=	Testing purpose only (from README.TXT).
 
 do-install:
 	@${MKDIR} ${JAVAJARDIR}
@@ -28,5 +25,10 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/bin/${PORTNAME}-compat.jar ${JAVAJARDIR}/
 	${INSTALL_DATA} ${WRKDIR}/bin/${PORTNAME}-provider.jar ${JAVAJARDIR}/
 	${INSTALL_DATA} ${WRKDIR}/bin/${PORTNAME}-tests.jar ${JAVAJARDIR}/
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/README.TXT ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKDIR}/LICENCE.TXT ${DOCSDIR}/
+.endif
 
 .include <bsd.port.mk>
