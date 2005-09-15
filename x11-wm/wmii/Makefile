@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmii
-DISTVERSION=	1
+DISTVERSION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://wmi.modprobe.de/download/
 
@@ -23,8 +23,7 @@ MAKE_ARGS=	PREFIX="${PREFIX}" X11DIR="${X11BASE}" CC="${CC}" \
 OPTIONS=	CAIRO	"Enable Cairo rendering backend"	off \
 		STRL	"Use strlcpy()/strlcat() functions"	off
 
-MAN1=		wmibar.1 wmifs.1 wmii.1 wmiinput.1 wmikeys.1 wmiplumb.1 \
-		wmir.1 wmiwarp.1
+MAN1=		wmibar.1 wmifs.1 wmii.1 wmikeys.1 wmimenu.1 wmir.1
 MAN5=		wmii.rc.5
 
 .include <bsd.port.pre.mk>
