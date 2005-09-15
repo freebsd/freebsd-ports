@@ -2,4 +2,5 @@ bin/corelist
 %%SITE_PERL%%/Module/CoreList.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/CoreList/.packlist
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/CoreList 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Module 2>/dev/null || true
