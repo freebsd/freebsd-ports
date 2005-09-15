@@ -13224,6 +13224,7 @@ xsel		ports/x11/xsel
 xshipwars-client	ports/games/xshipwars-client
 xshisen		ports/games/xshisen
 xshogi		ports/games/xshogi
+xshttpd		ports/www/xshttpd
 xsidplay	ports/audio/xsidplay
 xskat		ports/games/xskat
 xskewb		ports/games/xskewb
