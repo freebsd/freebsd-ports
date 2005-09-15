@@ -17,19 +17,34 @@ DISTNAME=	ProofGeneral-3.5
 MAINTAINER=	timbob@bigpond.com
 COMMENT=	A generic interface for proof assistants
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-	 	${EMACS_NAME}:${EMACS_PORTSDIR}
+PKGNAMESUFFIX+=	-${EMACS_NAME}
 
-.if exists(${LOCALBASE}/bin/xemacs)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/xemacs/xemacs-packages:${PORTSDIR}/editors/xemacs-packages
+BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS+=	${LOCALBASE}/share/applications/.keep_me:${PORTSDIR}/misc/kdehier
-.endif
 
-.if exists(${LOCALBASE}/bin/xemacs) || !exists(${LOCALBASE}/bin/emacs)
+.include <bsd.port.pre.mk>
+
+#
+# Unless EMACS_PORT_NAME is overriden by the user,
+# use any installed version of [X]Emacs.
+#
+# If there is none installed, use xemacs21-mule.
+#
+.if !defined(EMACS_PORT_NAME)
+.if !exists(${LOCALBASE}/bin/emacs)
 EMACS_PORT_NAME=xemacs21-mule
+
+# xemacs21-mule does not depend on xemacs-packages, so add a dependency here
+BUILD_DEPENDS+=	${LOCALBASE}/lib/xemacs/xemacs-packages/lisp/xlib/xlib-xlib.el:${PORTSDIR}/editors/xemacs-packages
+RUN_DEPENDS+=	${LOCALBASE}/lib/xemacs/xemacs-packages/lisp/xlib/xlib-xlib.el:${PORTSDIR}/editors/xemacs-packages
 .else
 EMACS_PORT_NAME=emacs21
 .endif
+.endif
+
+# Needed for proper build- and run-time [x]xemacs dependencies,
+# and the definition of EMACS_NAME and EMACS_SITE_LISPDIR
+.include "${PORTSDIR}/Mk/bsd.emacs.mk"
 
 MAKE_ARGS+=	EMACS_NAME=${EMACS_NAME} EMACS_SITE_LISPDIR=${EMACS_SITE_LISPDIR}
 USE_GMAKE=	yes
@@ -73,4 +88,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
