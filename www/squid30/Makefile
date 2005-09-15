@@ -66,7 +66,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -103,7 +103,14 @@ PATCHFILES=	squid-2.5.STABLE10-content_length.patch \
 		squid-2.5.STABLE10-STORE_PENDING.patch \
 		squid-2.5.STABLE10-ldap_auth-U.patch \
 		squid-2.5.STABLE10-cacheClientTable.patch \
-		squid-2.5.STABLE10-mail_from.patch
+		squid-2.5.STABLE10-mail_from.patch \
+		squid-2.5.STABLE10-LDAP_TLS.patch \
+		squid-2.5.STABLE10-storedir_objsize_debug.patch \
+		squid-2.5.STABLE10-header_id_enum.patch \
+		squid-2.5.STABLE10-allow_coredump.patch \
+		squid-2.5.STABLE10-delay_pools.patch \
+		squid-2.5.STABLE10-pipeline-CONNECT.patch \
+		squid-2.5.STABLE10-NTLM-scheme_assert.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -363,15 +370,6 @@ PLIST_DIRS+=	etc/squid/errors/${d}
 PLIST_FILES+=	${error_files:S,^,etc/squid/errors/${d}/,}
 .endfor
 PLIST_DIRS+=	etc/squid/errors etc/squid squid/logs squid/cache squid
-
-pre-patch:
-# Check whether we need to create the extra patch that makes pf(4)
-# visible to squid's configure script:
-.if defined(pf_includedir)
-	@${SED} -e 's|%%PF_INCLUDEDIR%%|${pf_includedir}|g' \
-	    -e 's|%%PF_AC_INCLUDEPATH%%|${pf_includedir:S,/,_,g}|g' \
-	    ${PATCHDIR}/pf_from_ports.patch.in >${WRKDIR}/pf_from_ports.patch
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
