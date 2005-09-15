@@ -1,0 +1,79 @@
+bin/nb
+etc/nb.conf.sample
+%%DOCSDIR%%/nanoblogger.html
+%%DATADIR%%/default/articles/example.html
+%%DATADIR%%/default/articles/example.txt
+%%DATADIR%%/default/atom.xml
+%%DATADIR%%/default/blog.conf
+%%DATADIR%%/default/data/2005-06-02T20_48_35.txt
+%%DATADIR%%/default/data/cat_1.db
+%%DATADIR%%/default/images/favicon.ico
+%%DATADIR%%/default/index.html
+%%DATADIR%%/default/index.xml
+%%DATADIR%%/default/styles/nb_clean.css
+%%DATADIR%%/default/styles/nb_default.css
+%%DATADIR%%/default/styles/nb_rusted.css
+%%DATADIR%%/default/styles/nb_spring.css
+%%DATADIR%%/default/templates/category_archive.htm
+%%DATADIR%%/default/templates/entry.htm
+%%DATADIR%%/default/templates/main_index.htm
+%%DATADIR%%/default/templates/main_links.htm
+%%DATADIR%%/default/templates/makepage.htm
+%%DATADIR%%/default/templates/month_archive.htm
+%%DATADIR%%/default/templates/permalink.htm
+%%DATADIR%%/default/templates/permalink_entry.htm
+%%DATADIR%%/default/templates/weblog_status.htm
+%%DATADIR%%/moods/moods.conf
+%%DATADIR%%/moods/mymood.txt
+%%DATADIR%%/moods/smilies/angry.gif
+%%DATADIR%%/moods/smilies/cheesy.gif
+%%DATADIR%%/moods/smilies/cool.gif
+%%DATADIR%%/moods/smilies/cry.gif
+%%DATADIR%%/moods/smilies/embarassed.gif
+%%DATADIR%%/moods/smilies/grin.gif
+%%DATADIR%%/moods/smilies/huh.gif
+%%DATADIR%%/moods/smilies/kiss.gif
+%%DATADIR%%/moods/smilies/laugh.gif
+%%DATADIR%%/moods/smilies/lipsrsealed.gif
+%%DATADIR%%/moods/smilies/rolleyes.gif
+%%DATADIR%%/moods/smilies/sad.gif
+%%DATADIR%%/moods/smilies/shocked.gif
+%%DATADIR%%/moods/smilies/smiley.gif
+%%DATADIR%%/moods/smilies/tongue.gif
+%%DATADIR%%/moods/smilies/wink.gif
+%%DATADIR%%/plugins/01_mymood.off
+%%DATADIR%%/plugins/archive/master_index.sh
+%%DATADIR%%/plugins/archive/month/month_calendar.sh
+%%DATADIR%%/plugins/atom.sh
+%%DATADIR%%/plugins/calendar.sh
+%%DATADIR%%/plugins/entry/category_links.sh
+%%DATADIR%%/plugins/entry/mod/auto_break.sh
+%%DATADIR%%/plugins/entry/mod/base_url.sh
+%%DATADIR%%/plugins/entry/mod/moods.sh
+%%DATADIR%%/plugins/fortune.sh
+%%DATADIR%%/plugins/makepage/tidy.sh
+%%DATADIR%%/plugins/page/feed_links.sh
+%%DATADIR%%/plugins/page/page_links.off
+%%DATADIR%%/plugins/recent_entries.sh
+%%DATADIR%%/plugins/rss.sh
+%%DATADIR%%/plugins/rss2.sh
+%%DATADIR%%/plugins/weblog_links.sh
+%%DATADIR%%/plugins/weblog_status.sh
+%%DATADIR%%/plugins/zyx_articles.sh
+@dirrm %%DATADIR%%/plugins/page
+@dirrm %%DATADIR%%/plugins/makepage
+@dirrm %%DATADIR%%/plugins/entry/mod
+@dirrm %%DATADIR%%/plugins/entry
+@dirrm %%DATADIR%%/plugins/archive/month
+@dirrm %%DATADIR%%/plugins/archive
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/moods/smilies
+@dirrm %%DATADIR%%/moods
+@dirrm %%DATADIR%%/default/templates
+@dirrm %%DATADIR%%/default/styles
+@dirrm %%DATADIR%%/default/images
+@dirrm %%DATADIR%%/default/data
+@dirrm %%DATADIR%%/default/articles
+@dirrm %%DATADIR%%/default
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%

@@ -1,0 +1,10 @@
+POST-INSTALLATION NOTES:
+
+Before you can use NanoBlogger, you will have to create a global configuration file
+to set defaults information and paths to template files.
+
+A sample configuration file has been installed in:
+ %%PREFIX%%/etc/nb.conf.sample
+
+Since there are already some sensible default settings, you can begin with:
+ cp %%PREFIX%%/etc/nb.conf.sample %%PREFIX%%/etc/nb.conf
