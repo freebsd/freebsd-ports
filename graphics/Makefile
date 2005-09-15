@@ -99,6 +99,7 @@
     SUBDIR += exifprobe
     SUBDIR += exiftags
     SUBDIR += exiv2
+    SUBDIR += exrtools
     SUBDIR += f-spot
     SUBDIR += fbm
     SUBDIR += feh
