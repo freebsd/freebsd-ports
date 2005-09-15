@@ -14,6 +14,7 @@ share/locale/no/LC_MESSAGES/lyx.mo
 share/locale/pl/LC_MESSAGES/lyx.mo
 share/locale/ro/LC_MESSAGES/lyx.mo
 share/locale/ru/LC_MESSAGES/lyx.mo
+share/locale/tr/LC_MESSAGES/lyx.mo
 share/locale/sk/LC_MESSAGES/lyx.mo
 share/locale/sl/LC_MESSAGES/lyx.mo
 %%DATADIR%%/CREDITS
@@ -853,6 +854,7 @@ share/locale/sl/LC_MESSAGES/lyx.mo
 %%DATADIR%%/lyx2lyx/lyx_1_2.py
 %%DATADIR%%/lyx2lyx/lyx_1_3.py
 %%DATADIR%%/lyx2lyx/lyx_1_4.py
+%%DATADIR%%/lyx2lyx/parser_tools.py
 %%DATADIR%%/lyx2lyx/profiling.py
 %%DATADIR%%/lyxrc.defaults
 %%DATADIR%%/lyxrc.example
