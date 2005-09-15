@@ -11509,6 +11509,7 @@ stamp		ports/graphics/stamp
 stan		ports/misc/stan
 star		ports/archivers/star
 star-devel	ports/archivers/star-devel
+stardates	ports/astro/stardates
 stardict2	ports/textproc/stardict2
 stardict2-dict-ja	ports/japanese/stardict2-dict-ja
 stardict2-dict-zh_CN	ports/chinese/stardict2-dict-zh_CN
