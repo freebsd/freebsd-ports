@@ -1,0 +1,70 @@
+bin/clearxs
+bin/httpd
+bin/httpdc
+bin/readxs
+bin/xsindex
+bin/xspasswd
+%%DATADIR%%/cgi-bin/error
+%%DATADIR%%/cgi-bin/gfxcount
+%%DATADIR%%/cgi-bin/imagemap
+%%DATADIR%%/cgi-bin/xschpass
+%%DATADIR%%/contrib/SSL-Makefile
+%%DATADIR%%/contrib/logrotate.sh
+%%DATADIR%%/contrib/persistent.pl
+%%DATADIR%%/contrib/wwwstats.pl
+%%DATADIR%%/compress.methods.sample
+%%DATADIR%%/gfxcount/digital0.ppm
+%%DATADIR%%/gfxcount/digital1.ppm
+%%DATADIR%%/gfxcount/digital2.ppm
+%%DATADIR%%/gfxcount/digital3.ppm
+%%DATADIR%%/gfxcount/digital4.ppm
+%%DATADIR%%/gfxcount/digital5.ppm
+%%DATADIR%%/gfxcount/digital6.ppm
+%%DATADIR%%/gfxcount/digital7.ppm
+%%DATADIR%%/gfxcount/digital8.ppm
+%%DATADIR%%/gfxcount/digital9.ppm
+%%DATADIR%%/gfxcount/large0.ppm
+%%DATADIR%%/gfxcount/large1.ppm
+%%DATADIR%%/gfxcount/large2.ppm
+%%DATADIR%%/gfxcount/large3.ppm
+%%DATADIR%%/gfxcount/large4.ppm
+%%DATADIR%%/gfxcount/large5.ppm
+%%DATADIR%%/gfxcount/large6.ppm
+%%DATADIR%%/gfxcount/large7.ppm
+%%DATADIR%%/gfxcount/large8.ppm
+%%DATADIR%%/gfxcount/large9.ppm
+%%DATADIR%%/gfxcount/largecol0.ppm
+%%DATADIR%%/gfxcount/largecol1.ppm
+%%DATADIR%%/gfxcount/largecol2.ppm
+%%DATADIR%%/gfxcount/largecol3.ppm
+%%DATADIR%%/gfxcount/largecol4.ppm
+%%DATADIR%%/gfxcount/largecol5.ppm
+%%DATADIR%%/gfxcount/largecol6.ppm
+%%DATADIR%%/gfxcount/largecol7.ppm
+%%DATADIR%%/gfxcount/largecol8.ppm
+%%DATADIR%%/gfxcount/largecol9.ppm
+%%DATADIR%%/httpd.conf.sample
+%%DATADIR%%/icons/xs-audio.gif
+%%DATADIR%%/icons/xs-back.gif
+%%DATADIR%%/icons/xs-base.gif
+%%DATADIR%%/icons/xs-bin.gif
+%%DATADIR%%/icons/xs-dir.gif
+%%DATADIR%%/icons/xs-gif.gif
+%%DATADIR%%/icons/xs-html.gif
+%%DATADIR%%/icons/xs-image.gif
+%%DATADIR%%/icons/xs-jpeg.gif
+%%DATADIR%%/icons/xs-ps.gif
+%%DATADIR%%/icons/xs-tar.gif
+%%DATADIR%%/icons/xs-txt.gif
+%%DATADIR%%/icons/xs-unknown.gif
+%%DATADIR%%/icons/xs-video.gif
+%%DATADIR%%/icons/xs-zip.gif
+%%DATADIR%%/mime.index
+%%DATADIR%%/mime.types
+%%DATADIR%%/script.methods.sample
+@unexec rmdir %%DATADIR%%/cgi-bin 2> /dev/null || true
+@unexec rmdir %%DATADIR%%/htdocs 2> /dev/null || true
+@unexec rmdir %%DATADIR%%/logs 2> /dev/null || true
+@dirrm %%DATADIR%%/contrib
+@dirrm %%DATADIR%%/gfxcount
+@dirrm %%DATADIR%%/icons

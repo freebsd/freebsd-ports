@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: xshttpd
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable XS-HTTPD:
+# xshttpd_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable XS-HTTPD.
+#
+
+. %%RC_SUBR%%
+
+name="xshttpd"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${xshttpd_enable="NO"}
+
+pidfile="/var/run/httpd.pid"
+command="%%PREFIX%%/bin/httpd"
+
+run_rc_command "$1"
