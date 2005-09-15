@@ -6,29 +6,36 @@
 #
 
 PORTNAME=	Class-DBI
-PORTVERSION=	0.96
-PORTREVISION=	2
+PORTVERSION=	3.0.5
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Simple Database Abstraction
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
+		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 		${SITE_PERL}/Class/Data/Inheritable.pm:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		${SITE_PERL}/Ima/DBI.pm:${PORTSDIR}/databases/p5-Ima-DBI \
 		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		${SITE_PERL}/UNIVERSAL/moniker.pm:${PORTSDIR}/devel/p5-UNIVERSAL-moniker \
 		${SITE_PERL}/${PERL_ARCH}/List/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version \
 		${SITE_PERL}/Class/Trigger.pm:${PORTSDIR}/devel/p5-Class-Trigger
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Class::DBI.3 Class::DBI::Column.3 Class::DBI::ColumnGrouper.3 \
-		Class::DBI::Iterator.3 Class::DBI::Query.3 Class::DBI::Relationship.3
+MAN3=		Class::DBI.3 Class::DBI::Attribute.3 \
+		Class::DBI::Cascade::Delete.3 Class::DBI::Cascade::Fail.3 \
+		Class::DBI::Cascade::None.3 Class::DBI::Column.3 \
+		Class::DBI::ColumnGrouper.3 Class::DBI::Iterator.3 \
+		Class::DBI::Query.3 Class::DBI::Relationship.3 \
+		Class::DBI::Search::Basic.3 Class::DBI::SearchGenerator.3 \
+		Class::DBI::Test::SQLite.3
 
 post-configure:
 # dirty hack to deceive irritable pod2man
@@ -36,16 +43,8 @@ post-configure:
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .if ${PERL_LEVEL} < 500600
-EXTRA_PATCHES=	${PATCHDIR}/5.005-lib::Class::DBI.pm ${PATCHDIR}/5.005-Makefile.PL
-
-post-patch:
-	@${FIND} ${WRKSRC} -name "*.pm" | ${XARGS} \
-		${PERL} -pi -e 's/\buse warnings[^;]*;//g'
-	@${FIND} ${WRKSRC} -name "*.orig" | ${XARGS} ${RM}
-.endif
+IGNORE=	Perl 5.6 or newer required. Install lang/perl5.8 or lang/perl5 and try again.
 .endif
 
 .include <bsd.port.post.mk>
