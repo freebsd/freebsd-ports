@@ -700,6 +700,7 @@
     SUBDIR += py-forgethtml
     SUBDIR += py-htmltestcase
     SUBDIR += py-imdbpy
+    SUBDIR += py-jonpy
     SUBDIR += py-mechanize
     SUBDIR += py-mt
     SUBDIR += py-nevow
