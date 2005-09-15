@@ -1482,7 +1482,7 @@ LIB_DEPENDS+=		ldap-2.2.7:${PORTSDIR}/net/openldap22${_OPENLDAP_FLAVOUR}-client
 .elif ${WANT_OPENLDAP_VER} == 21
 LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap21${_OPENLDAP_FLAVOUR}-client
 .elif ${WANT_OPENLDAP_VER} == 23
-LIB_DEPENDS+=		ldap-2.3.0:${PORTSDIR}/net/openldap23${_OPENLDAP_FLAVOUR}-client
+LIB_DEPENDS+=		ldap-2.3.1:${PORTSDIR}/net/openldap23${_OPENLDAP_FLAVOUR}-client
 .else
 BROKEN=				"unknown OpenLDAP version: ${WANT_OPENLDAP_VER}"
 .endif
