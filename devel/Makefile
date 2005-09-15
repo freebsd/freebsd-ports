@@ -149,6 +149,7 @@
     SUBDIR += cogito
     SUBDIR += colorer
     SUBDIR += commoncpp
+    SUBDIR += configgen
     SUBDIR += cons
     SUBDIR += cons-test
     SUBDIR += cook
