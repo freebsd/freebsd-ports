@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	opensc
-PORTVERSION=	0.9.4
-PORTREVSION=	1
+PORTVERSION=	0.9.6
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc.org/files/
 
@@ -84,11 +83,14 @@ CONFIGURE_ARGS+=	--without-docbook
 
 .if defined(WITH_OPENCT)
 CONFIGURE_ARGS+=	--with-openct=${LOCALBASE}
+RUN_DEPENDS+=		openct-tool:${PORTSDIR}/security/openct
+BUILD_DEPENDS+=		${RUN_DEPENDS}
 .endif
 
 .include <bsd.port.pre.mk>
-
-post-patch:
-	${REINPLACE_CMD} -e "s,ulong,u_long," ${WRKSRC}/src/openscd/openscd.c
+#
+#
+#post-patch:
+#	${REINPLACE_CMD} -e "s,ulong,u_long," ${WRKSRC}/src/openscd/openscd.c
 
 .include <bsd.port.post.mk>
