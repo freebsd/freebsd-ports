@@ -2,3 +2,5 @@
 %%JAVAJARDIR%%/cryptix-jce-compat.jar
 %%JAVAJARDIR%%/cryptix-jce-provider.jar
 %%JAVAJARDIR%%/cryptix-jce-tests.jar
+%%PORTDOCS%%%%DOCSDIR%%/README.TXT
+%%PORTDOCS%%%%DOCSDIR%%/LICENCE.TXT
