@@ -7,6 +7,7 @@
 
 PORTNAME=	exilog
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://duncanthrax.net/exilog/
 
@@ -65,7 +66,10 @@ pre-patch:
 
 do-install:
 	@${MKDIR} ${EXILOGDIR}
+	@${MKDIR} ${EXILOGDIR}/icons
 	@${CP} ${WRKSRC}/*.pm ${WRKSRC}/*.css ${WRKSRC}/*.js ${EXILOGDIR}
+	@${CP} ${WRKSRC}/icons/*  ${EXILOGDIR}/icons
+	
 .if !defined(NO_AGENT)
 	@${INSTALL_SCRIPT} ${WRKSRC}/exilog_agent.pl ${PREFIX}/sbin
 .endif
