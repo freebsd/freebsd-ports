@@ -755,6 +755,7 @@
     SUBDIR += simplog
     SUBDIR += sitebar
     SUBDIR += sitecopy
+    SUBDIR += skytemplace
     SUBDIR += slash
     SUBDIR += smarty
     SUBDIR += smb2www
