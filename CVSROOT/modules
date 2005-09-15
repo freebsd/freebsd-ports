@@ -1159,6 +1159,7 @@ cloop-utils	ports/sysutils/cloop-utils
 clpbar		ports/misc/clpbar
 clustalw	ports/biology/clustalw
 clusterit	ports/net/clusterit
+clusterssh	ports/security/clusterssh
 cmail		ports/mail/cmail
 cmake		ports/devel/cmake
 cmatrix		ports/misc/cmatrix
