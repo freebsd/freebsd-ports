@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: %%NAME%%
+# REQUIRE: NETWORKING SERVERS
+# BEFORE:  DAEMON
+# KEYWORD: FreeBSD shutdown
+
+# Add the following line to /etc/rc.conf to enable `%%NAME%%':
+#
+#%%NAME%%_enable="YES"
+#
+# and be sure to configure %%PREFIX%%/etc/%%NAME%%.conf
+
+. "%%RC_SUBR%%"
+
+name="%%NAME%%"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/$name"
+pidfile="/var/run/$name.pid"
+required_files="%%PREFIX%%/etc/$name.cfg"
+
+# read configuration and set defaults
+load_rc_config $name
+: ${%%NAME%%_enable="NO"}
+
+run_rc_command "$1"

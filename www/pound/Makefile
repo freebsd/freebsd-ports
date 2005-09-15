@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pound
-PORTVERSION=	1.8.5
+PORTVERSION=	1.9
 CATEGORIES=	www net
 MASTER_SITES=	http://www.apsis.ch/pound/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -18,6 +18,9 @@ COMMENT=	Reverse proxy, load balancer and HTTP(S) frontend for web servers
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
+USE_RC_SUBR=	${PORTNAME}.sh
+
+SUB_LIST=	NAME=${PORTNAME}
 
 CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
@@ -25,9 +28,29 @@ MAKE_ARGS+=	F_CONF=${PREFIX}/etc/pound.cfg
 
 MAN8=	pound.8
 
+OPTIONS=	DAEMON		"Running as a daemon" on \
+		LOG		"With Syslog support" on \
+		MSDAV		"With the Microsoft WebDAV extensions support" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_DAEMON)
+CONFIGURE_ARGS+=	--disable-daemon
+.endif
+
+.if defined(WITHOUT_LOG)
+CONFIGURE_ARGS+=	--without-log
+.endif
+
+.if defined(WITH_MSDAV)
+CONFIGURE_ARGS+=	--enable-msdav
+.endif
+
 post-install:
-	@${ECHO} "===>  Installing ${PREFIX}/etc/rc.d/pound.sh"
-	@${ECHO} "===>  startup file as ${PREFIX}/etc/rc.d/pound.sh.sample"
-	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/pound.sh \
-			${PREFIX}/etc/rc.d/pound.sh.sample
-.include <bsd.port.mk>
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/FAQ ${DOCSDIR}
+.endif
+
+.include <bsd.port.post.mk>
