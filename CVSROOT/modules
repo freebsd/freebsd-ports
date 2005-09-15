@@ -10030,6 +10030,7 @@ py-irclib	ports/irc/py-irclib
 py-istring	ports/devel/py-istring
 py-jabber	ports/net/py-jabber
 py-jaxml	ports/textproc/py-jaxml
+py-jonpy	ports/www/py-jonpy
 py-kde		ports/x11-toolkits/py-kde
 py-kenosis	ports/net/py-kenosis
 py-kenosis-bittorrent	ports/net/py-kenosis-bittorrent
