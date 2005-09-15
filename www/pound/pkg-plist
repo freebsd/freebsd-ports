@@ -1,2 +1,4 @@
-etc/rc.d/pound.sh.sample
 sbin/pound
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
