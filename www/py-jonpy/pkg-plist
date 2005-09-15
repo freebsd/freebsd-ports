@@ -1,0 +1,46 @@
+%%PYTHON_SITELIBDIR%%/jon/__init__.py
+%%PYTHON_SITELIBDIR%%/jon/cgi.py
+%%PYTHON_SITELIBDIR%%/jon/dbpool.py
+%%PYTHON_SITELIBDIR%%/jon/fakefile.py
+%%PYTHON_SITELIBDIR%%/jon/fcgi.py
+%%PYTHON_SITELIBDIR%%/jon/mime.py
+%%PYTHON_SITELIBDIR%%/jon/modpy.py
+%%PYTHON_SITELIBDIR%%/jon/session.py
+%%PYTHON_SITELIBDIR%%/jon/wt/__init__.py
+%%PYTHON_SITELIBDIR%%/jon/wt/multiform.py
+%%PYTHON_SITELIBDIR%%/jon/wt/rowaccess.py
+%%PYTHON_SITELIBDIR%%/jon/wt/textblock.py
+%%PYTHON_SITELIBDIR%%/jon/wt/__init__.pyc
+%%PYTHON_SITELIBDIR%%/jon/wt/multiform.pyc
+%%PYTHON_SITELIBDIR%%/jon/wt/rowaccess.pyc
+%%PYTHON_SITELIBDIR%%/jon/wt/textblock.pyc
+%%PYTHON_SITELIBDIR%%/jon/wt/__init__.pyo
+%%PYTHON_SITELIBDIR%%/jon/wt/multiform.pyo
+%%PYTHON_SITELIBDIR%%/jon/wt/rowaccess.pyo
+%%PYTHON_SITELIBDIR%%/jon/wt/textblock.pyo
+%%PYTHON_SITELIBDIR%%/jon/__init__.pyc
+%%PYTHON_SITELIBDIR%%/jon/cgi.pyc
+%%PYTHON_SITELIBDIR%%/jon/dbpool.pyc
+%%PYTHON_SITELIBDIR%%/jon/fakefile.pyc
+%%PYTHON_SITELIBDIR%%/jon/fcgi.pyc
+%%PYTHON_SITELIBDIR%%/jon/mime.pyc
+%%PYTHON_SITELIBDIR%%/jon/modpy.pyc
+%%PYTHON_SITELIBDIR%%/jon/session.pyc
+%%PYTHON_SITELIBDIR%%/jon/__init__.pyo
+%%PYTHON_SITELIBDIR%%/jon/cgi.pyo
+%%PYTHON_SITELIBDIR%%/jon/dbpool.pyo
+%%PYTHON_SITELIBDIR%%/jon/fakefile.pyo
+%%PYTHON_SITELIBDIR%%/jon/fcgi.pyo
+%%PYTHON_SITELIBDIR%%/jon/mime.pyo
+%%PYTHON_SITELIBDIR%%/jon/modpy.pyo
+%%PYTHON_SITELIBDIR%%/jon/session.pyo
+%%EXAMPLESDIR%%/wt/.htaccess
+%%EXAMPLESDIR%%/wt/printenv.html.py
+%%EXAMPLESDIR%%/cgi-bin/wt.py
+%%EXAMPLESDIR%%/printenv.html
+%%EXAMPLESDIR%%/.htaccess
+@dirrm %%PYTHON_SITELIBDIR%%/jon/wt
+@dirrm %%PYTHON_SITELIBDIR%%/jon
+@dirrm %%EXAMPLESDIR%%/cgi-bin
+@dirrm %%EXAMPLESDIR%%/wt
+@dirrm %%EXAMPLESDIR%%

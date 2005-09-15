@@ -1,0 +1,4 @@
+The fcgi module builds upon the classes defined in the cgi module
+to provide an implementation of the FastCGI protocol.
+
+WWW: http://jonpy.sourceforge.net/
