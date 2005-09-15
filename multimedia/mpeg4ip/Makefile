@@ -46,16 +46,17 @@ OPTIONS=	ARTS "Enable Arts Support" Off \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" Off \
 		XVID "Enable XVID Support" On
 
-DOCS_FILES=	${PORTDOCS}
+DOC_FILES=	${PORTDOCS}
 PORTDOCS=	MAINREADME.html MP4LIVE_INTERNALS.html MPEG4IP_Guide.pdf \
 		MP4LIVE_README.html PLAYER_INTERNALS.html PLAYER_README.html \
-		ReadingList.txt ReadingList.txt encoding.htm m4rm.html \
+		ReadingList.txt encoding.htm m4rm.html \
 		mp4player.jpg mrm.html pi.html prm.html
 
 MAN1=	gmp4player.1 mp4creator.1 mp4encode.1 mp4live.1
 MAN3=	MP4.3 MP4AddAudioTrack.3 MP4AddHintTrack.3 MP4AddODTrack.3 \
 	MP4AddRtpESConfigurationPacket.3 MP4AddRtpHint.3 MP4AddRtpImmediateData.3 \
 	MP4AddRtpPacket.3 MP4AddRtpSampleData.3 MP4AddRtpVideoHint.3 \
+	MP4AddSceneTrack.3 \
 	MP4AddSystemsTrack.3 MP4AddTrack.3 MP4AddTrackEdit.3 MP4AddVideoTrack.3 \
 	MP4AppendHintTrackSdp.3 MP4AppendSessionSdp.3 MP4BinaryToBase16.3 \
 	MP4BinaryToBase64.3 MP4CloneTrack.3 MP4Close.3 MP4ConvertFromMovieDuration.3 \
