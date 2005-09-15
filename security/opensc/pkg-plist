@@ -1,7 +1,5 @@
 %%DATADIR%%/starcos.profile
-%%DATADIR%%/scldap.conf.example
 %%DATADIR%%/pkcs15.profile
-%%DATADIR%%/opensc.conf.example
 %%DATADIR%%/oberthur.profile
 %%DATADIR%%/miocos.profile
 %%DATADIR%%/jcop.profile
@@ -11,6 +9,10 @@
 %%DATADIR%%/cyberflex.profile
 @dirrm %%DATADIR%%
 libdata/pkgconfig/libopensc.pc
+libdata/pkgconfig/libpkcs15init.pc
+libdata/pkgconfig/libscam.pc
+libdata/pkgconfig/libscconf.pc
+libdata/pkgconfig/libscldap.pc
 lib/security/pam_opensc.so
 @unexec rmdir %D/lib/security 2>/dev/null || true
 lib/pkcs11/pkcs11-spy.so

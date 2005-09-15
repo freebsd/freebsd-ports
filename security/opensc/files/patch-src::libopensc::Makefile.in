@@ -1,11 +1,14 @@
---- src/libopensc/Makefile.in.orig	Fri Jan 14 14:53:56 2005
-+++ src/libopensc/Makefile.in	Fri Jan 14 14:54:23 2005
-@@ -234,7 +234,7 @@
+
+$FreeBSD$
+
+--- src/libopensc/Makefile.in.orig
++++ src/libopensc/Makefile.in
+@@ -240,7 +240,7 @@
  
- noinst_HEADERS = ctbcs.h internal.h esteid.h
+ noinst_HEADERS = ctbcs.h internal.h esteid.h card-oberthur.h pinpad-ccid.h
  
 -pkgconfigdir = @libdir@/pkgconfig
 +pkgconfigdir = @prefix@/libdata/pkgconfig
- pkgconfig_DATA = libopensc.pc
- subdir = src/libopensc
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ pkgconfig_DATA = libopensc.pc libpkcs15init.pc \
+ 	libscam.pc libscconf.pc libscldap.pc
+ 
