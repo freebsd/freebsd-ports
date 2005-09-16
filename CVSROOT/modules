@@ -9095,6 +9095,7 @@ pecl-ssh2	ports/security/pecl-ssh2
 pecl-statgrab	ports/devel/pecl-statgrab
 pecl-yaz	ports/net/pecl-yaz
 pecl-zip	ports/archivers/pecl-zip
+pecomato	ports/graphics/pecomato
 pedisassem	ports/devel/pedisassem
 peeper		ports/x11/peeper
 peercast	ports/net/peercast
