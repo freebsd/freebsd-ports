@@ -66,7 +66,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -110,7 +110,7 @@ PATCHFILES=	squid-2.5.STABLE10-content_length.patch \
 		squid-2.5.STABLE10-allow_coredump.patch \
 		squid-2.5.STABLE10-delay_pools.patch \
 		squid-2.5.STABLE10-pipeline-CONNECT.patch \
-		squid-2.5.STABLE10-NTLM-scheme_assert.patch
+		squid-2.5.STABLE10-NTLM-scheme_assert-2.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de

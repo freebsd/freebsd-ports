@@ -62,5 +62,5 @@ MD5 (squid2.5/squid-2.5.STABLE10-delay_pools.patch) = bd4e5d3d8fbea996d29cfe6d61
 SIZE (squid2.5/squid-2.5.STABLE10-delay_pools.patch) = 7782
 MD5 (squid2.5/squid-2.5.STABLE10-pipeline-CONNECT.patch) = 9e264ac64f93755ccfdce33f14a470c3
 SIZE (squid2.5/squid-2.5.STABLE10-pipeline-CONNECT.patch) = 6316
-MD5 (squid2.5/squid-2.5.STABLE10-NTLM-scheme_assert.patch) = e62ba264eaa7c248ef8d8cbb3777110c
-SIZE (squid2.5/squid-2.5.STABLE10-NTLM-scheme_assert.patch) = 1203
+MD5 (squid2.5/squid-2.5.STABLE10-NTLM-scheme_assert-2.patch) = 3a91ea506aa7de50adaa758aa4b0f090
+SIZE (squid2.5/squid-2.5.STABLE10-NTLM-scheme_assert-2.patch) = 1217
