@@ -803,6 +803,7 @@
     SUBDIR += ump
     SUBDIR += urchin5
     SUBDIR += usermanager
+    SUBDIR += validator
     SUBDIR += visitors
     SUBDIR += vtiger
     SUBDIR += w3
