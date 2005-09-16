@@ -1,6 +1,6 @@
 # New ports collection makefile for:	tumgreyspf
 # Date created:				31 Aug 2005
-# Whom:					Marcus Grando <marcus@corp.grupos.com.br>
+# Whom:					Marcus Alves Grando <mnag@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	1.09
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.tummy.com/pub/tummy/tumgreyspf/
 
-MAINTAINER=	marcus@corp.grupos.com.br
+MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	External policy checker for the postfix mail server
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/spf.py:${PORTSDIR}/mail/py-spf

@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1$//}
 
 PATCH_SITES=	${MASTER_SITES}
 
-MAINTAINER=	marcus@corp.grupos.com.br
+MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Crypto and SSL toolkit for Python
 
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13

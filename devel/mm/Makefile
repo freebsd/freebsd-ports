@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
 
-MAINTAINER=	marcus@corp.grupos.com.br
+MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Shared memory allocation library for pre-forked process models
 
 INSTALLS_SHLIB=	yes

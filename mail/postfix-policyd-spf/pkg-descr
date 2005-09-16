@@ -4,4 +4,4 @@ It implements SPF for postfix, as a policy daemon.
 
 WWW: http://www.libspf2.org/
 
-Marcus Grando <marcus@corp.grupos.com.br>
+Marcus Alves Grando <mnag@FreeBSD.org>

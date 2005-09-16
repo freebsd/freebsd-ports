@@ -1,6 +1,6 @@
 # New ports collection makefile for:	py-spf
 # Date created:				26 Dec 2004
-# Whom:					Marcus Grando <marcus@corp.grupos.com.br>
+# Whom:					Marcus Alves Grando <mnag@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.wayforward.net/spf/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	marcus@corp.grupos.com.br
+MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Python implementation of SPF
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/DNS/__init__.py:${PORTSDIR}/dns/py-dns

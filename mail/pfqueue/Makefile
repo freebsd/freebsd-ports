@@ -1,6 +1,6 @@
 # New ports collection makefile for:	pfqueue
 # Date created:				13 Jan 2004
-# Whom:					Marcus Grando <marcus@corp.grupos.com.br>
+# Whom:					Marcus Alves Grando <mnag@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=		mail
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		marcus@corp.grupos.com.br
+MAINTAINER=		mnag@FreeBSD.org
 COMMENT=		A console-based tool for handling Postfix 1, Postfix 2 and Exim queues
 
 USE_REINPLACE=		yes

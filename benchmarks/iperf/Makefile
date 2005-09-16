@@ -12,7 +12,7 @@ MASTER_SITES=	http://dast.nlanr.net/Projects/Iperf2.0/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	marcus@corp.grupos.com.br
+MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A tool to measure maximum TCP and UDP bandwidth
 
 NO_CDROM=	"can't charge a fee for the software"

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	pysqlite
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 DISTNAME=		pysqlite-${PORTVERSION}
 
-MAINTAINER=		marcus@corp.grupos.com.br
+MAINTAINER=		mnag@FreeBSD.org
 COMMENT=		A DB-API v2 Python library for the SQLite 3 embedded SQL engine
 
 LIB_DEPENDS=		sqlite3.8:${PORTSDIR}/databases/sqlite3

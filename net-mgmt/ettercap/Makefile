@@ -15,7 +15,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED} \
 			${MASTER_SITE_PACKETSTORM:S:%SUBDIR%:sniffers/ettercap:}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	marcus@corp.grupos.com.br
+MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A network sniffer/interceptor/injector/logger for switched LANs
 
 BUILD_DEPENDS=	${LOCALBASE}/include/libnet/libnet-types.h:${PORTSDIR}/net/libnet-devel

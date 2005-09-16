@@ -14,7 +14,7 @@ DISTNAME=	SQLite-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	marcus@corp.grupos.com.br
+MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	PECL classes to access sqlite databases
 
 WRKSRC=		${WRKDIR}/SQLite-${PORTVERSION}

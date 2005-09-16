@@ -11,7 +11,7 @@ CATEGORIES=		mail
 MASTER_SITES=		http://www.libspf2.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	spf
 
-MAINTAINER=		marcus@corp.grupos.com.br
+MAINTAINER=		mnag@FreeBSD.org
 COMMENT=		Sender Rewriting Scheme 2 C Implementation
 
 CONFLICTS=		${PORTNAME}-1.0.*
