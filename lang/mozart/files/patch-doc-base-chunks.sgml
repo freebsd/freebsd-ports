@@ -1,0 +1,25 @@
+--- ./doc/base/chunks.sgml.orig	Mon Mar  1 11:48:15 2004
++++ ./doc/base/chunks.sgml	Sat Sep  3 18:46:09 2005
+@@ -11,8 +11,8 @@
+   -   Denys Duchier, Leif Kornstaedt, and Christian Schulte, 1998
+   -
+   - Last change:
+-  -   $Date: 2004/03/01 16:48:15 $ by $Author: raph $
+-  -   $Revision: 1.23 $
++  -   $Date: 2005/02/15 13:33:16 $ by $Author: raph $
++  -   $Revision: 1.23.2.1 $
+   -
+   - This file is part of Mozart, an implementation of Oz 3:
+   -   http://www.mozart-oz.org
+@@ -567,9 +567,9 @@
+ 	<Entry id=port.new><Span class=index/<<NewPort>>/
+ 	  <Index class=tails/<<Port>><And><<new>>/
+ 	<Synopsis>
+-	  <<{Port.new ?_{Xs} ??{Port}}>>
++	  <<{Port.new ??{Xs} ??{Port}}>>
+ 	<Item>
+-	  returns a new port pointing to the stream&nbsp;?_{Xs}.
++	  returns a new port, together with its associated stream&nbsp;?_{Xs}.
+ 
+ 	<Entry><Span class=index/<<Send>>/
+ 	  <Index/<<Port>><And><<send>>/

@@ -1,0 +1,13 @@
+--- ./doc/apptut/mof.sgml.orig	Thu Jan 21 04:52:36 1999
++++ ./doc/apptut/mof.sgml	Sat Sep  3 18:46:09 2005
+@@ -51,8 +51,8 @@
+       </list>
+ 
+     <p>
+-      Computed functors are syntactically supported by a <<prepare>>
+-      and <<require>> section. For example, the root functor
++      Computed functors are syntactically supported by a <<prepare>><index/prepare/
++      and <<require>><index/require/ section. For example, the root functor
+       definition in the file <file/LMF.oz/ can be rewritten using a
+       <<prepare>> section as
+       follows:
