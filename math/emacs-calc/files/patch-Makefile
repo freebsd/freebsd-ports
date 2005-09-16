@@ -22,7 +22,7 @@
  
 +# FreeBSD installation
 +
-+prefix        = /usr/local
++prefix        = %%PREFIX%%
 +infodir       = ${prefix}/info
 +sharedir      = ${prefix}/share
 +emacssharedir = ${sharedir}/emacs
