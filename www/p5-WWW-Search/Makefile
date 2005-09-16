@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	WWW-Search
-PORTVERSION=	2.46
-PORTREVISION=	1
+PORTVERSION=	2.479
+PORTREVISION=	0
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -39,10 +39,13 @@ MAN3=		WWW::Search.3 \
 		WWW::Search::Null::Count.3 \
 		WWW::Search::Null::Empty.3 \
 		WWW::Search::Null::Error.3 \
+		WWW::Search::Null::NoVersion.3 \
+		WWW::Search::Result.3 \
 		WWW::Search::Simple.3 \
 		WWW::Search::Test.3
 
 post-patch:
-	@${RM} ${WRKSRC}/lib/WWW/Search/Test.pm.orig
+	${FIND} ${WRKSRC} -name "*.pm" | ${XARGS} ${PERL} -pi.orig -e 's/\r//g'
+	${FIND} ${WRKSRC} -name "*.orig" -delete
 
 .include <bsd.port.mk>
