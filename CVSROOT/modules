@@ -10035,6 +10035,7 @@ py-id3		ports/audio/py-id3
 py-imaging	ports/graphics/py-imaging
 py-imaging-handbook	ports/graphics/py-imaging-handbook
 py-imdbpy	ports/www/py-imdbpy
+py-impacket	ports/net/py-impacket
 py-ipy		ports/net-mgmt/py-ipy
 py-irclib	ports/irc/py-irclib
 py-istring	ports/devel/py-istring
