@@ -1,0 +1,93 @@
+bin/warzone
+libexec/warzone
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/2c-ardvark.wdg
+%%DATADIR%%/2c-bitofabarny.wdg
+%%DATADIR%%/2c-marspyscho.wdg
+%%DATADIR%%/8c-mars3gorges_8.wdg
+%%DATADIR%%/8c-marscodao.wdg
+%%DATADIR%%/8c-marsendgame.wdg
+%%DATADIR%%/8c-marsnrglvalis.wdg
+%%DATADIR%%/8c-marsrelic.wdg
+%%DATADIR%%/aug27.wdg
+%%DATADIR%%/cam2tech.wdg
+%%DATADIR%%/dec00.wdg
+%%DATADIR%%/july30.wdg
+%%DATADIR%%/june25.wdg
+%%DATADIR%%/marsbetamaps.txt
+%%DATADIR%%/may21.wdg
+%%DATADIR%%/may28.wdg
+%%DATADIR%%/multiplay/skirmish/player0.slo
+%%DATADIR%%/multiplay/skirmish/player0.vlo
+%%DATADIR%%/multiplay/skirmish/player1.slo
+%%DATADIR%%/multiplay/skirmish/player1.vlo
+%%DATADIR%%/multiplay/skirmish/player2.slo
+%%DATADIR%%/multiplay/skirmish/player2.vlo
+%%DATADIR%%/multiplay/skirmish/player3.slo
+%%DATADIR%%/multiplay/skirmish/player3.vlo
+%%DATADIR%%/multiplay/skirmish/player4.slo
+%%DATADIR%%/multiplay/skirmish/player4.vlo
+%%DATADIR%%/multiplay/skirmish/player5.slo
+%%DATADIR%%/multiplay/skirmish/player5.vlo
+%%DATADIR%%/multiplay/skirmish/player6.slo
+%%DATADIR%%/multiplay/skirmish/player6.vlo
+%%DATADIR%%/multiplay/skirmish/player7.slo
+%%DATADIR%%/multiplay/skirmish/player7.vlo
+%%DATADIR%%/multiplay/skirmish/rules.slo
+%%DATADIR%%/multiplay/skirmish/rules.vlo
+%%DATADIR%%/multiplay/skirmish/scriptlang.rtf
+%%DATADIR%%/multiplay/skirmish/sk2tech.vlo
+%%DATADIR%%/multiplay/skirmish/sk3tech.vlo
+%%DATADIR%%/multiplay/skirmish/sktech.slo
+%%DATADIR%%/music/music.wpl
+%%DATADIR%%/music/neos_aurore.ogg
+%%DATADIR%%/music/neos_chocolat.ogg
+%%DATADIR%%/music/neos_down.ogg
+%%DATADIR%%/music/neos_esperance.ogg
+%%DATADIR%%/music/neos_indy.ogg
+%%DATADIR%%/music/neos_symphonie_du_vide.ogg
+%%DATADIR%%/newmaps.wdg
+%%DATADIR%%/newtech.wdg
+%%DATADIR%%/nov.wdg
+%%DATADIR%%/oct.wdg
+%%DATADIR%%/sep30.wdg
+%%DATADIR%%/skirmish3.wdg
+%%DATADIR%%/stats/names.txt
+%%DATADIR%%/texpages/bdrops/00-bdrop.jpg
+%%DATADIR%%/texpages/bdrops/00-bdrop.pcx
+%%DATADIR%%/texpages/bdrops/01-bdrop.jpg
+%%DATADIR%%/texpages/bdrops/01-bdrop.pcx
+%%DATADIR%%/texpages/bdrops/02-bdrop.jpg
+%%DATADIR%%/texpages/bdrops/02-bdrop.pcx
+%%DATADIR%%/texpages/bdrops/03-bdrop.jpg
+%%DATADIR%%/texpages/bdrops/03-bdrop.pcx
+%%DATADIR%%/texpages/bdrops/04-bdrop.jpg
+%%DATADIR%%/texpages/bdrops/04-bdrop.pcx
+%%DATADIR%%/texpages/bdrops/05-bdrop.jpg
+%%DATADIR%%/texpages/bdrops/05-bdrop.pcx
+%%DATADIR%%/texpages/bdrops/06-bdrop.jpg
+%%DATADIR%%/texpages/bdrops/06-bdrop.pcx
+%%DATADIR%%/texpages/bdrops/credits.jpg
+%%DATADIR%%/texpages/bdrops/credits.pcx
+%%DATADIR%%/texpages/bdrops/missionend.jpg
+%%DATADIR%%/texpages/bdrops/missionend.pcx
+%%DATADIR%%/texpages/readme.txt
+%%DATADIR%%/texpages/tertilesc1.pcx
+%%DATADIR%%/texpages/tertilesc2.pcx
+%%DATADIR%%/texpages/tertilesc3.pcx
+%%DATADIR%%/texpages/tertilesc4hw.pcx
+%%DATADIR%%/texpages/tertilesc5.pcx
+%%DATADIR%%/texpages/tertilesc5hw.pcx
+%%DATADIR%%/texpages/tertilesc6.pcx
+%%DATADIR%%/texpages/tertilesc7.pcx
+%%DATADIR%%/texpages/tertilesc7hw.pcx
+%%DATADIR%%/update.rtf
+%%DATADIR%%/warzone.wdg
+@dirrm %%DATADIR%%/texpages/bdrops
+@dirrm %%DATADIR%%/texpages
+@dirrm %%DATADIR%%/stats
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/multiplay/skirmish
+@dirrm %%DATADIR%%/multiplay
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
