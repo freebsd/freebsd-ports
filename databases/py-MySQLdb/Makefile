@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	mysql-python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	MySQL-python-${PORTVERSION}
 
-MAINTAINER=	marcus@corp.grupos.com.br
+MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Access a MySQL database through Python
 
 USE_PYTHON=		yes

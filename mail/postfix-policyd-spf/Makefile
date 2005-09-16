@@ -1,6 +1,6 @@
 # New ports collection makefile for:	policyd
 # Date created:				19 Dec 2004
-# Whom:					Marcus Grando <marcus@corp.grupos.com.br>
+# Whom:					Marcus Alves Grando <mnag@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=		http://www.libspf2.org/patch/
 PKGNAMEPREFIX=		postfix-
 PKGNAMESUFFIX=		-spf
 
-MAINTAINER=		marcus@corp.grupos.com.br
+MAINTAINER=		mnag@FreeBSD.org
 COMMENT=		Implements SPF for postfix, as a policy daemon
 
 LIB_DEPENDS=		spf2.1:${PORTSDIR}/mail/libspf2-10

@@ -11,7 +11,7 @@ CATEGORIES=		databases python
 MASTER_SITES=		http://initd.org/pub/software/pysqlite/releases/2.0/${PORTVERSION}/
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=		marcus@corp.grupos.com.br
+MAINTAINER=		mnag@FreeBSD.org
 COMMENT=		A DB-API v2 Python library for the SQLite 3 embedded SQL engine
 
 LIB_DEPENDS=		sqlite3.8:${PORTSDIR}/databases/sqlite3

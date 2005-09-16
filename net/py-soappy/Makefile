@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	pywebsvcs
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 DISTNAME=		SOAPpy-${PORTVERSION}
 
-MAINTAINER=		marcus@corp.grupos.com.br
+MAINTAINER=		mnag@FreeBSD.org
 COMMENT=		A SOAP implementation
 
 USE_PYTHON=		yes

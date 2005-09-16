@@ -1,6 +1,6 @@
 # New ports collection makefile for:	py-clamav
 # Date created:				26 Dec 2004
-# Whom:					Marcus Grando <marcus@corp.grupos.com.br>
+# Whom:					Marcus Alves Grando <mnag@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=		http://xael.org/norman/python/pyclamav/
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 DISTNAME=		py${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=		marcus@corp.grupos.com.br
+MAINTAINER=		mnag@FreeBSD.org
 COMMENT=		A python binding to libclamav written in C
 
 LIB_DEPENDS=		clamav.1:${PORTSDIR}/security/clamav

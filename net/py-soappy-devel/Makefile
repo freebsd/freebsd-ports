@@ -14,7 +14,7 @@ PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=		-devel
 DISTNAME=		SOAPpy-${PORTVERSION}
 
-MAINTAINER=		marcus@corp.grupos.com.br
+MAINTAINER=		mnag@FreeBSD.org
 COMMENT=		A SOAP implementation
 
 USE_PYTHON=		yes
