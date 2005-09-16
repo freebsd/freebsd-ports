@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cxx
-PORTVERSION=	5.3.2
+PORTVERSION=	5.3.4
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,9 +21,13 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 .if !defined(NOPORTDOCS)
-post-install:
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Doc/PyCXX.html ${DOCSDIR}
+PORTDOCS=	*
 .endif
+
+post-install:
+.	if !defined(NOPORTDOCS)
+		@${MKDIR} ${DOCSDIR}
+		${INSTALL_DATA} ${WRKSRC}/Doc/PyCXX.html ${DOCSDIR}
+.	endif
 
 .include <bsd.port.mk>
