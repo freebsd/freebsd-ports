@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.krasu.ru/soft/chuchelo/files/ \
 DISTNAME=	d4x-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Program for downloading via ftp or http with GUI
+COMMENT=	Program for downloading via FTP or HTTP with GUI
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
