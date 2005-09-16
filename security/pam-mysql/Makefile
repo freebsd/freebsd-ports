@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pam_mysql
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	security databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
@@ -17,37 +16,26 @@ COMMENT=	A pam module for authenticating with MySQL
 
 USE_REINPLACE=	yes
 USE_MYSQL=	yes
-BROKEN_WITH_MYSQL=	41
-USE_GMAKE=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} --with-pam-mods-dir=${PREFIX}/lib --with-pam=/usr
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+PLIST_FILES=	lib/pam_mysql.la lib/pam_mysql.so
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-	${REINPLACE_CMD} -e "s@^#define DEBUG@#undef DEBUG@" ${WRKSRC}/pam_mysql.c
-
-pre-build:
-	@cd ${WRKSRC} && ${GMAKE} clean
-
-do-build:
-	${CC} -O -pipe -fpic -DPIC -Wall -I${LOCALBASE}/include -c ${WRKSRC}/pam_mysql.c -o ${WRKSRC}/pam_mysql.o
-	${LD} -x --shared -o ${WRKSRC}/pam_mysql.so ${WRKSRC}/pam_mysql.o -lpam -lcrypt -L${LOCALBASE}/lib/mysql -lmysqlclient
-
-do-install:
-	@${INSTALL_DATA} ${WRKSRC}/pam_mysql.so ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/Changelog ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/CREDITS ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/Readme ${DOCSDIR}
+PORTDOCS=	*
 .endif
 
 post-install:
+.if !defined(NOPORTDOCS)
+	@${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 	@${ECHO_MSG} "================================================================================"
 	@${ECHO_MSG} "Copy/move/symlink ${PREFIX}/lib/pam_mysql.so to /usr/lib/pam_mysql.so"
 	@${ECHO_MSG} "to be able to use it. Read files in ${PREFIX}/share/doc/pam_mysql"
 	@${ECHO_MSG} "for info on how to set up."
 	@${ECHO_MSG} "================================================================================"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

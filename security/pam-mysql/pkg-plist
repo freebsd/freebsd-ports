@@ -1,5 +1,0 @@
-lib/pam_mysql.so
-%%PORTDOCS%%%%DOCSDIR%%/Changelog
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/Readme
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
