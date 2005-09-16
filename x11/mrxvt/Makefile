@@ -21,9 +21,18 @@ USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
+.if defined(WITH_JAPANESE)
+CONFIGURE_ARGS+=	--enable-xim --enable-cjk --with-encoding=eucj
+.endif # WITH_JAPANESE
+
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
 		LIBS="${LIBS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 MAN1=		mrxvt.1
+
+pre-everything::
+	@${ECHO_MSG} "=========================================>"
+	@${ECHO_MSG} "For Japanese support use make -DWITH_JAPANESE install"
+	@${ECHO_MSG} "=========================================>"
 
 .include <bsd.port.mk>
