@@ -226,6 +226,7 @@ add-css-links	ports/textproc/add-css-links
 addresses	ports/mail/addresses
 adesklets	ports/deskutils/adesklets
 adgali		ports/games/adgali
+adime		ports/devel/adime
 admesh		ports/cad/admesh
 admuser		ports/www/admuser
 adns		ports/dns/adns
