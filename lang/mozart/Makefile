@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mozart
-PORTVERSION=	1.3.0.20040413
-CATEGORIES=	lang tk83 parallel
-MASTER_SITES=	http://www.mozart-oz.org/download/mozart-ftp/store/1.3.0-2004-04-15/
+PORTVERSION=	1.3.1.20040616
+CATEGORIES=	lang tk84 parallel
+MASTER_SITES=	http://www.mozart-oz.org/download/mozart-ftp/store/1.3.1-2004-06-16/
 DISTFILES=	${DISTNAME}-src.tar.gz
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${MOZART_DOCS}
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs \
 		${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 		gmp.6:${PORTSDIR}/math/libgmp4 \
-		tk83.1:${PORTSDIR}/x11-toolkits/tk83
+		tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 MOZART_DOCS=	mozart-${PORTVERSION}-doc.tar.gz
 
@@ -37,17 +37,15 @@ USE_AUTOCONF_VER=	213
 # mozart's configure will not find the right install
 # when configuring as root.
 CONFIGURE_ENV=	INSTALL=${CHMOD}
-CONFIGURE_ARGS=	--prefix=${PREFIX}/lib/oz --disable-doc \
-	--with-inc-dir=${LOCALBASE}/include/tcl8.3,${LOCALBASE}/include/tk8.3,${LOCALBASE}/include \
-	--with-lib-dir=${LOCALBASE}/lib --with-tcl-lib=${LOCALBASE}/lib \
+CONFIGURE_ARGS=	--prefix=${PREFIX}/lib/oz \
+	--disable-doc \
+	--with-inc-dir=${LOCALBASE}/include/tcl8.4,${LOCALBASE}/include/tk8.4,${LOCALBASE}/include \
+	--with-lib-dir=${LOCALBASE}/lib \
+	--with-tcl-lib=${LOCALBASE}/lib \
 	--with-tk-lib=${LOCALBASE}/lib \
-	--with-tkinclude=${LOCALBASE}/include/tk8.3
+	--with-tkinclude=${LOCALBASE}/include/tk8.4
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-USE_GCC=	2.95
-.endif
 
 .if ${ARCH} != "i386"
 BROKEN=		"Does not compile on !i386"

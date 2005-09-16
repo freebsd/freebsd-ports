@@ -1,5 +1,5 @@
---- platform/emulator/libfd/std.cc    Tue Aug 20 16:19:47 2002
-+++ platform/emulator/libfd/std.cc    Thu Jul 24 19:19:27 2003
+--- ./platform/emulator/libfd/std.cc.orig	Fri Sep  5 05:28:25 2003
++++ ./platform/emulator/libfd/std.cc	Sat Sep  3 18:46:08 2005
 @@ -44,7 +44,9 @@
  
  #else

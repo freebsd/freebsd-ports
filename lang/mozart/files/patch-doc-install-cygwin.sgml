@@ -1,0 +1,22 @@
+--- ./doc/install/cygwin.sgml.orig	Fri Apr  2 09:30:14 2004
++++ ./doc/install/cygwin.sgml	Sat Sep  3 18:46:09 2005
+@@ -6,8 +6,8 @@
+   -   Leif Kornstaedt, 2001-2002
+   -
+   - Last change:
+-  -   $Date: 2004/04/02 14:30:14 $ by $Author: bruni $
+-  -   $Revision: 1.7 $
++  -   $Date: 2004/06/25 12:53:55 $ by $Author: glynn $
++  -   $Revision: 1.7.2.1 $
+   -
+   - This file is part of Mozart, an implementation of Oz 3:
+   -   http://www.mozart-oz.org
+@@ -172,7 +172,7 @@
+       <P>
+ 	Unpack it, configure it, build it, and install it thus:
+ <<<cd ?{build}
+-tar zxvf zlib-1.1.4.tar.gz
++tar zxvf zlib.tar.gz
+ cd zlib-1.1.4
+ CFLAGS="?{CFLAGS}" ./configure --prefix=?{packages}
+ make
