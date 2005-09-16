@@ -1,20 +1,22 @@
 %%MYSQL%%lib/dbd/libmysql.so
 %%PGSQL%%lib/dbd/libpgsql.so
-%%SQLITE%%lib/dbd/libsqlite.so
+%%SQLITE2%%lib/dbd/libsqlite.so
+%%SQLITE3%%lib/dbd/libsqlite3.so
+%%FIREBIRD%%lib/dbd/libfirebird.so
 @unexec rmdir %D/lib/dbd 2>/dev/null || true
 %%MYSQL%%%%DOCSDIR%%/dbd_mysql.pdf
-%%MYSQL%%%%DOCSDIR%%/dbd_mysql/c128.html
-%%MYSQL%%%%DOCSDIR%%/dbd_mysql/c32.html
-%%MYSQL%%%%DOCSDIR%%/dbd_mysql/c36.html
-%%MYSQL%%%%DOCSDIR%%/dbd_mysql/c90.html
-%%MYSQL%%%%DOCSDIR%%/dbd_mysql/f21.html
+%%MYSQL%%%%DOCSDIR%%/dbd_mysql/c136.html
+%%MYSQL%%%%DOCSDIR%%/dbd_mysql/c35.html
+%%MYSQL%%%%DOCSDIR%%/dbd_mysql/c39.html
+%%MYSQL%%%%DOCSDIR%%/dbd_mysql/c93.html
+%%MYSQL%%%%DOCSDIR%%/dbd_mysql/f24.html
 %%MYSQL%%%%DOCSDIR%%/dbd_mysql/index.html
-%%MYSQL%%%%DOCSDIR%%/dbd_mysql/x131.html
-%%MYSQL%%%%DOCSDIR%%/dbd_mysql/x39.html
-%%MYSQL%%%%DOCSDIR%%/dbd_mysql/x53.html
+%%MYSQL%%%%DOCSDIR%%/dbd_mysql/x139.html
+%%MYSQL%%%%DOCSDIR%%/dbd_mysql/x42.html
+%%MYSQL%%%%DOCSDIR%%/dbd_mysql/x56.html
 %%PGSQL%%%%DOCSDIR%%/dbd_pgsql.pdf
 %%PGSQL%%%%DOCSDIR%%/dbd_pgsql/copying-fdl.html
-%%PGSQL%%%%DOCSDIR%%/dbd_pgsql/f27.html
+%%PGSQL%%%%DOCSDIR%%/dbd_pgsql/f30.html
 %%PGSQL%%%%DOCSDIR%%/dbd_pgsql/index.html
 %%PGSQL%%%%DOCSDIR%%/dbd_pgsql/install-build.html
 %%PGSQL%%%%DOCSDIR%%/dbd_pgsql/install-prereq.html
@@ -22,18 +24,30 @@
 %%PGSQL%%%%DOCSDIR%%/dbd_pgsql/intro.html
 %%PGSQL%%%%DOCSDIR%%/dbd_pgsql/options.html
 %%PGSQL%%%%DOCSDIR%%/dbd_pgsql/specific.html
-%%SQLITE%%%%DOCSDIR%%/dbd_sqlite.pdf
-%%SQLITE%%%%DOCSDIR%%/dbd_sqlite/c119.html
-%%SQLITE%%%%DOCSDIR%%/dbd_sqlite/c32.html
-%%SQLITE%%%%DOCSDIR%%/dbd_sqlite/c43.html
-%%SQLITE%%%%DOCSDIR%%/dbd_sqlite/c98.html
-%%SQLITE%%%%DOCSDIR%%/dbd_sqlite/f21.html
-%%SQLITE%%%%DOCSDIR%%/dbd_sqlite/index.html
-%%SQLITE%%%%DOCSDIR%%/dbd_sqlite/x122.html
-%%SQLITE%%%%DOCSDIR%%/dbd_sqlite/x198.html
-%%SQLITE%%%%DOCSDIR%%/dbd_sqlite/x46.html
-%%SQLITE%%%%DOCSDIR%%/dbd_sqlite/x60.html
+%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite.pdf
+%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/c101.html
+%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/c122.html
+%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/c35.html
+%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/c46.html
+%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/f24.html
+%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/x125.html
+%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/x201.html
+%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/x49.html
+%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/x63.html
+%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/index.html
+%%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3.pdf
+%%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3/c115.html
+%%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3/c26.html
+%%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3/c39.html
+%%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3/c94.html
+%%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3/f15.html
+%%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3/index.html
+%%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3/x118.html
+%%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3/x190.html
+%%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3/x42.html
+%%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3/x56.html
 %%MYSQL%%@dirrm %%DOCSDIR%%/dbd_mysql
 %%PGSQL%%@dirrm %%DOCSDIR%%/dbd_pgsql
-%%SQLITE%%@dirrm %%DOCSDIR%%/dbd_sqlite
+%%SQLITE2%%@dirrm %%DOCSDIR%%/dbd_sqlite
+%%SQLITE3%%@dirrm %%DOCSDIR%%/dbd_sqlite3
 @unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
