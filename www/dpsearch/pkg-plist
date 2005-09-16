@@ -110,6 +110,7 @@ etc/dpsearch/langmap/pt-pt.latin1.lm
 etc/dpsearch/langmap/ro.ascii.lm
 etc/dpsearch/langmap/ro.cp1250.lm
 etc/dpsearch/langmap/ro.latin2.lm
+etc/dpsearch/langmap/ro.utf-8.lm
 etc/dpsearch/langmap/ru.cp1251.lm
 etc/dpsearch/langmap/ru.cp866.lm
 etc/dpsearch/langmap/ru.cyrillic.lm
@@ -150,6 +151,8 @@ etc/dpsearch/langmap/vi.viscii.lm
 etc/dpsearch/langmap/zh.big5.lm
 etc/dpsearch/langmap/zh.gb2312.lm
 etc/dpsearch/langmap/zh.utf8.lm
+etc/dpsearch/opensearch.htm-dist
+etc/dpsearch/rss.htm-dist
 etc/dpsearch/search.htm-dist
 etc/dpsearch/searchd.conf-dist
 etc/dpsearch/sections.conf-dist
