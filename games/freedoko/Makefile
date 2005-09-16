@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freedoko
-PORTVERSION=	0.6.9
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	free-doko
@@ -16,7 +15,8 @@ DISTNAME=	FreeDoko_${PORTVERSION}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Play the card game Doppelkopf
 
-LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
+LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
+		gnet-2.0.0:${PORTSDIR}/net/gnet2
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/\.src$//}/src
 
@@ -30,7 +30,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "*Makefile*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|\.\./data|$$(DATADIR)|g ; \
 		 s|gtkmm-2.0|gtkmm-2.4|g ; \
-		 s|@echo $$(CXX)|@true $(CXX)|g ; \
+		 s|@echo $$(CXX)|@true $$(CXX)|g ; \
 		 s|@$$(CXX)|$$(CXX)|g ; \
 		 s|make -C|$$(MAKE) -C|g'
 	@${REINPLACE_CMD} -e \
