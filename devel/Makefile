@@ -21,6 +21,7 @@
     SUBDIR += adabooch-doc-html
     SUBDIR += adacurses
     SUBDIR += adasdl
+    SUBDIR += adime
     SUBDIR += agenda-headers
     SUBDIR += agenda-libs
     SUBDIR += agenda-snow-libs
