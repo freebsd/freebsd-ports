@@ -37,6 +37,29 @@ etc/gnump3d/mime.types
 %%SITE_PERL%%/gnump3d/sorting.pm
 %%SITE_PERL%%/gnump3d/tagcache.pm
 %%SITE_PERL%%/gnump3d/url.pm
+%%DATADIR%%/BlueBox/AUTHOR
+%%DATADIR%%/BlueBox/BlueBox.css
+%%DATADIR%%/BlueBox/COPYING.html
+%%DATADIR%%/BlueBox/bug.html
+%%DATADIR%%/BlueBox/config.ini
+%%DATADIR%%/BlueBox/error.html
+%%DATADIR%%/BlueBox/extras.html
+%%DATADIR%%/BlueBox/footer.tmpl
+%%DATADIR%%/BlueBox/header.tmpl
+%%DATADIR%%/BlueBox/index.html
+%%DATADIR%%/BlueBox/info.html
+%%DATADIR%%/BlueBox/now.html
+%%DATADIR%%/BlueBox/playlist.html
+%%DATADIR%%/BlueBox/prefs.html
+%%DATADIR%%/BlueBox/random.html
+%%DATADIR%%/BlueBox/recent.html
+%%DATADIR%%/BlueBox/results.html
+%%DATADIR%%/BlueBox/search.html
+%%DATADIR%%/BlueBox/size.html
+%%DATADIR%%/BlueBox/statistics.html
+%%DATADIR%%/BlueBox/stats.html
+%%DATADIR%%/BlueBox/tagbrowse.html
+%%DATADIR%%/BlueBox/template.ini
 %%DATADIR%%/Clean/AUTHOR
 %%DATADIR%%/Clean/COPYING.html
 %%DATADIR%%/Clean/bug.html
@@ -74,6 +97,80 @@ etc/gnump3d/mime.types
 %%DATADIR%%/LaFrere/size.html
 %%DATADIR%%/LaFrere/stats.html
 %%DATADIR%%/LaFrere/tagbrowse.html
+%%DATADIR%%/Liquid/AUTHOR
+%%DATADIR%%/Liquid/COPYING.html
+%%DATADIR%%/Liquid/bck.gif
+%%DATADIR%%/Liquid/bug.html
+%%DATADIR%%/Liquid/cel-bar-anthrazite-act.gif
+%%DATADIR%%/Liquid/cel-bar-anthrazite.gif
+%%DATADIR%%/Liquid/cel-bar-aqua-act.gif
+%%DATADIR%%/Liquid/cel-bar-aqua.gif
+%%DATADIR%%/Liquid/cel-bar-lime-act.gif
+%%DATADIR%%/Liquid/cel-bar-lime.gif
+%%DATADIR%%/Liquid/cel-bar-purple-act.gif
+%%DATADIR%%/Liquid/cel-bar-purple.gif
+%%DATADIR%%/Liquid/cel-bar-ruby-act.gif
+%%DATADIR%%/Liquid/cel-bar-ruby.gif
+%%DATADIR%%/Liquid/cel-bar-tangerine-act.gif
+%%DATADIR%%/Liquid/cel-bar-tangerine.gif
+%%DATADIR%%/Liquid/cel-bar-turqois-act.gif
+%%DATADIR%%/Liquid/cel-bar-turqois.gif
+%%DATADIR%%/Liquid/cel-bar-yellow-act.gif
+%%DATADIR%%/Liquid/cel-bar-yellow.gif
+%%DATADIR%%/Liquid/config.ini
+%%DATADIR%%/Liquid/error.html
+%%DATADIR%%/Liquid/footer.tmpl
+%%DATADIR%%/Liquid/gnump3dskin.webprj
+%%DATADIR%%/Liquid/header.tmpl
+%%DATADIR%%/Liquid/index.html
+%%DATADIR%%/Liquid/info.html
+%%DATADIR%%/Liquid/now.html
+%%DATADIR%%/Liquid/playlist.html
+%%DATADIR%%/Liquid/prefs.html
+%%DATADIR%%/Liquid/random.html
+%%DATADIR%%/Liquid/recent.html
+%%DATADIR%%/Liquid/results.html
+%%DATADIR%%/Liquid/search.html
+%%DATADIR%%/Liquid/size.html
+%%DATADIR%%/Liquid/stats.html
+%%DATADIR%%/Liquid/style.css
+%%DATADIR%%/Liquid/tab-aqua-act.gif
+%%DATADIR%%/Liquid/tab-athrazite-act.gif
+%%DATADIR%%/Liquid/tab-lime-act.gif
+%%DATADIR%%/Liquid/tab-purple-act.gif
+%%DATADIR%%/Liquid/tab-ruby-act.gif
+%%DATADIR%%/Liquid/tab-tangerine-act.gif
+%%DATADIR%%/Liquid/tab-turqois-act.gif
+%%DATADIR%%/Liquid/tab-white-act.gif
+%%DATADIR%%/Liquid/tab-white-mo.gif
+%%DATADIR%%/Liquid/tab-yellow-act.gif
+%%DATADIR%%/Liquid/tabel-header-left-ruby.gif
+%%DATADIR%%/Liquid/tabel-header-middle-ruby.gif
+%%DATADIR%%/Liquid/tabel-header-middle-white.gif
+%%DATADIR%%/Liquid/tabel-header-right-ruby.gif
+%%DATADIR%%/Liquid/tagbrowse.html
+%%DATADIR%%/Musicus/AUTHOR
+%%DATADIR%%/Musicus/COPYING.html
+%%DATADIR%%/Musicus/bug.html
+%%DATADIR%%/Musicus/config.ini
+%%DATADIR%%/Musicus/error.html
+%%DATADIR%%/Musicus/extras.html
+%%DATADIR%%/Musicus/footer.tmpl
+%%DATADIR%%/Musicus/index.html
+%%DATADIR%%/Musicus/info.html
+%%DATADIR%%/Musicus/now.html
+%%DATADIR%%/Musicus/playlist.html
+%%DATADIR%%/Musicus/prefs.html
+%%DATADIR%%/Musicus/random.html
+%%DATADIR%%/Musicus/recent.html
+%%DATADIR%%/Musicus/results.html
+%%DATADIR%%/Musicus/search.html
+%%DATADIR%%/Musicus/size.html
+%%DATADIR%%/Musicus/statistics.html
+%%DATADIR%%/Musicus/stats.html
+%%DATADIR%%/Musicus/style.css
+%%DATADIR%%/Musicus/tagbrowse.html
+%%DATADIR%%/Musicus/template.ini
 %%DATADIR%%/Nomad/COPYING.html
 %%DATADIR%%/Nomad/ClubNomadLogo.gif
 %%DATADIR%%/Nomad/GNUMP3dLogo.jpg
@@ -271,8 +368,11 @@ etc/gnump3d/mime.types
 @dirrm %%DATADIR%%/Tabular
 @dirrm %%DATADIR%%/SchwartzNGrau
 @dirrm %%DATADIR%%/Nomad
+@dirrm %%DATADIR%%/Musicus
+@dirrm %%DATADIR%%/Liquid
 @dirrm %%DATADIR%%/LaFrere
 @dirrm %%DATADIR%%/Clean
+@dirrm %%DATADIR%%/BlueBox
 @dirrm %%DATADIR%%
 @dirrm %%SITE_PERL%%/gnump3d/plugins
 @dirrm %%SITE_PERL%%/gnump3d/lang
