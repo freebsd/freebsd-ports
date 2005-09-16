@@ -36,6 +36,7 @@ lib/ion3/lc/ioncore_bindings.lc
 lib/ion3/lc/ioncore_efbb.lc
 lib/ion3/lc/ioncore_ext.lc
 lib/ion3/lc/ioncore_luaext.lc
+lib/ion3/lc/ioncore_menudb.lc
 lib/ion3/lc/ioncore_misc.lc
 lib/ion3/lc/ioncore_wd.lc
 lib/ion3/lc/ioncore_winprops.lc
@@ -64,10 +65,10 @@ lib/ion3/mod/mod_query.so
 lib/ion3/mod/mod_sm.so
 lib/ion3/mod/mod_sp.so
 lib/ion3/mod/mod_statusbar.so
-share/doc/ion3/ChangeLog
-share/doc/ion3/LICENSE
-share/doc/ion3/README
-share/doc/ion3/RELNOTES
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/LICENSE
+%%DOCSDIR%%/README
+%%DOCSDIR%%/RELNOTES
 share/ion3/ion-completeman
 share/ion3/ion-runinxterm
 share/ion3/welcome.cs.txt
@@ -82,5 +83,5 @@ share/locale/fi/LC_MESSAGES/ion3.mo
 @dirrm lib/ion3/mod
 @dirrm lib/ion3
 @dirrm share/ion3
-@dirrm share/doc/ion3
+@dirrm %%DOCSDIR%%
 @unexec rmdir %D/etc/ion3 2>/dev/null || true
