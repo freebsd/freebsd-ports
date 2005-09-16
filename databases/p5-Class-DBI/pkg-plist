@@ -1,5 +1,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/.packlist
 %%SITE_PERL%%/Class/DBI.pm
+%%SITE_PERL%%/Class/DBI/Attribute.pm
+%%SITE_PERL%%/Class/DBI/Cascade/Delete.pm
+%%SITE_PERL%%/Class/DBI/Cascade/Fail.pm
+%%SITE_PERL%%/Class/DBI/Cascade/None.pm
 %%SITE_PERL%%/Class/DBI/ColumnGrouper.pm
 %%SITE_PERL%%/Class/DBI/Column.pm
 %%SITE_PERL%%/Class/DBI/Iterator.pm
@@ -8,7 +12,13 @@
 %%SITE_PERL%%/Class/DBI/Relationship/HasA.pm
 %%SITE_PERL%%/Class/DBI/Relationship/HasMany.pm
 %%SITE_PERL%%/Class/DBI/Relationship/MightHave.pm
+%%SITE_PERL%%/Class/DBI/Search/Basic.pm
+%%SITE_PERL%%/Class/DBI/SearchGenerator.pm
+%%SITE_PERL%%/Class/DBI/Test/SQLite.pm
+@unexec rmdir %D/%%SITE_PERL%%/Class/DBI/SQLite 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Class/DBI/Search 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Class/DBI/Relationship 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Class/DBI/Cascade 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Class/DBI 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Class 2>/dev/null || true
