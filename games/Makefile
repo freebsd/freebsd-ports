@@ -145,6 +145,7 @@
     SUBDIR += filters
     SUBDIR += fkiss
     SUBDIR += flightgear
+    SUBDIR += flightgear-atlas
     SUBDIR += flying
     SUBDIR += fmars
     SUBDIR += foobillard

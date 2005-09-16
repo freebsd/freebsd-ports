@@ -1,0 +1,21 @@
+===============================================================================
+Quick start:
+
+  Generate map images of your FlightGear sceneries (this will take from a
+  minute up to hours, depending on how much scenery you have installed):
+
+	Map --atlas=/path/to/images
+
+  Then, either:
+
+	View the map in standalone mode:
+
+		Atlas --path=/path/to/images
+
+	Run FlightGear and connect Atlas to it:
+
+		fgfs --nmea=socket,out,0.5,localhost,9999,udp &
+		Atlas --path=/path/to/images --udp=9999
+
+See http://atlas.sourceforge.net/ for more details.
+===============================================================================
