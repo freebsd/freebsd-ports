@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Set-Object
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Set
@@ -17,7 +17,7 @@ COMMENT=	Perl module to manage sets of objects
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Set::Changes.3 Set::Object.3
+MAN3=		Set::Object.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes.pod README
@@ -31,9 +31,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-EXTRA_DEPEND=	${SITE_PERL}/${PERL_ARCH}/Devel/Peek.pm:${PORTSDIR}/devel/p5-Devel-Peek
-BUILD_DEPENDS+=	${EXTRA_DEPEND}
-RUN_DEPENDS+=	${EXTRA_DEPEND}
+IGNORE=		requires perl 5.6.x or later. Install lang/perl5.8 then try again
 .endif
 
 .include <bsd.port.post.mk>
