@@ -14,7 +14,7 @@ COMMENT=	GNU Compiler Collection ${COMMENT2} with threads and shared libs
 WANT_SHAREDLIBS=	yes
 WITHOUT_LIBJAVA=	yes
 INSTALLS_SHLIB=		yes
-LDCONFIG_DIRS=		%%PREFIX%%/lib ${TARGLIB}
+LDCONFIG_DIRS=		${TARGLIB}
 LDFLAGS+=		-L${LOCALBASE}/lib
 
 .if !defined(GNUSTEP_WITH_GCC32) && !defined(GNUSTEP_WITH_GCC33) && !defined(GNUSTEP_WITH_GCC34)
