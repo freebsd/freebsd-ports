@@ -1,5 +1,5 @@
---- sysinfo.c.orig	Tue Oct  6 22:21:18 1998
-+++ sysinfo.c	Tue Sep  6 14:07:41 2005
+--- sysinfo.c.orig	Tue Oct  6 16:21:18 1998
++++ sysinfo.c	Fri Sep 16 10:30:05 2005
 @@ -13,7 +13,9 @@
  #include <sys/ioctl_compat.h>	/* XXX NTTYDISC is too well hidden */
  #include <sys/tty.h>
@@ -43,7 +43,7 @@
  #define VM_SWAPLIST	1
  	{ "_swaplist" },/* list of free swap areas */
  #define VM_SWDEVT	2
-@@ -129,6 +141,32 @@
+@@ -129,6 +141,33 @@
  #define X_DKXFER        12
          { "_dk_xfer" },
  #endif
@@ -55,8 +55,9 @@
 +#define V_NUMV		3
 +	{ "_numvnodes" },
 +#define	FNL_NFILE	4
-+/* nfiles changes name to openfiles near this FreeBSD version */
-+#if XXX && __FreeBSD_version > 503101
++/* nfiles changes name to openfiles in FreeBSD 6,
++   and also for a short period of time in RELENG_5 */
++#if (__FreeBSD_version > 600000) || ((__FreeBSD_version >= 503101) && (__FreeBSD_version < 503105))
 +	{"_openfiles"},
 +#else
 +	{"_nfiles"},
@@ -76,7 +77,7 @@
  	{ "" },
  };
  
-@@ -238,6 +276,14 @@
+@@ -238,6 +277,14 @@
  	int pkt_in_out;
  	int total_xfers=0;
  	int mib[3], size;
@@ -91,7 +92,7 @@
  
  	/* NPROCS=0, CPU */
    if (cpuflag) {
-@@ -356,19 +402,39 @@
+@@ -356,19 +403,39 @@
  	for (i=0; i<10; i++)
  	    states[i] = 0;
  	size = sizeof(nfsstats);
@@ -134,7 +135,7 @@
  	else {
  	    old_nfsStats = nfsStats;
  
-@@ -395,6 +461,22 @@
+@@ -395,6 +462,22 @@
  #else
  				 nfsstats.rpccnt[NFSPROC_READDIR];
  #endif
@@ -157,7 +158,7 @@
  	    nfsStats.nfsServer = nfsstats.srvrpccnt[NFSPROC_GETATTR] + 
  	                         nfsstats.srvrpccnt[NFSPROC_SETATTR] +
  	                         nfsstats.srvrpccnt[NFSPROC_LOOKUP] +
-@@ -418,6 +500,7 @@
+@@ -418,6 +501,7 @@
  #else
  				 nfsstats.srvrpccnt[NFSPROC_READDIR];
  #endif
@@ -165,7 +166,7 @@
  	}
  	scale_bar(250, nfsStats.nfsClient-old_nfsStats.nfsClient, 25, states, 0);
  	draw_bar(nfsflag-1, states, 10);
-@@ -428,7 +511,7 @@
+@@ -428,7 +512,7 @@
    }
  nfs_out:
  
@@ -174,7 +175,7 @@
  
  
  /* swapmode is derived from freebsd's pstat source ...
-@@ -438,6 +521,21 @@
+@@ -438,6 +522,21 @@
  void
  swapmode(int *used, int *avail)
  {
@@ -196,7 +197,7 @@
  	char *header;
  	int hlen, nswap, nswdev, dmmax;
  	int i, div, nfree, npfree;
-@@ -546,6 +644,7 @@
+@@ -546,6 +645,7 @@
  	*used = *avail - nfree;
  	free(sw);
  	free(perdev);
@@ -204,7 +205,7 @@
  }
  
  /*
-@@ -623,13 +722,21 @@
+@@ -623,13 +723,21 @@
  	 * Make sure that the userland devstat version matches the kernel
  	 * devstat version.
  	 */
@@ -226,7 +227,7 @@
  		nodisk++;
  		return;
  	}
-@@ -644,7 +751,11 @@
+@@ -644,7 +752,11 @@
  	 * changed here, since it almost certainly has.  We only look for
  	 * errors.
  	 */
@@ -238,7 +239,7 @@
  		nodisk++;
  		return;
  	}
-@@ -656,7 +767,11 @@
+@@ -656,7 +768,11 @@
  
  	/* only interested in disks */
  	matches = NULL;
@@ -250,7 +251,7 @@
  		nodisk++;
  		return;
  	}
-@@ -671,7 +786,11 @@
+@@ -671,7 +787,11 @@
  	 * device list has changed, so we don't look for return values of 0
  	 * or 1.  If we get back -1, though, there is an error.
  	 */
@@ -262,7 +263,7 @@
  		       &num_selections, &select_generation,
  		       generation, cur.dinfo->devices, num_devices,
  		       matches, num_matches,
-@@ -697,7 +816,11 @@
+@@ -697,7 +817,11 @@
  		 * the selection process again, in case a device that we
  		 * were previously displaying has gone away.
  		 */
@@ -274,7 +275,7 @@
  		case -1:
  			return (0);
  		case 1: {
-@@ -705,7 +828,11 @@
+@@ -705,7 +829,11 @@
  
  			num_devices = cur.dinfo->numdevs;
  			generation = cur.dinfo->generation;
@@ -286,7 +287,7 @@
  					    &num_selections, &select_generation,
  					    generation, cur.dinfo->devices,
  					    num_devices, matches, num_matches,
-@@ -729,14 +856,22 @@
+@@ -729,14 +857,22 @@
  		 * Calculate elapsed time up front, since it's the same for all
  		 * devices.
  		 */
@@ -309,7 +310,7 @@
  			return (0);
  		}
  
-@@ -764,7 +899,11 @@
+@@ -764,7 +900,11 @@
  		last.dinfo = cur.dinfo;
  		cur.dinfo = tmp_dinfo;
  
