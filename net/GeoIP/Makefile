@@ -10,7 +10,7 @@ PORTVERSION=	1.3.13
 CATEGORIES=	net
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/c/
 
-MAINTAINER=	seanc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Find the country that any IP address or hostname originates from
 
 GNU_CONFIGURE=	yes
