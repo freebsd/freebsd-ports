@@ -1977,6 +1977,7 @@ emovix		ports/multimedia/emovix
 emp		ports/www/emp
 empire		ports/games/empire
 emu		ports/x11/emu
+emu10kx		ports/audio/emu10kx
 en-ooodict-AU	ports/editors/ooodict-en_AU
 en-ooodict-CA	ports/editors/ooodict-en_CA
 en-ooodict-GB	ports/editors/ooodict-en_GB
