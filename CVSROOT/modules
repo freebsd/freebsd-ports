@@ -466,6 +466,7 @@ asbutton	ports/misc/asbutton
 asc		ports/games/asc
 ascd		ports/audio/ascd
 ascii2pdf	ports/textproc/ascii2pdf
+asciiquarium	ports/games/asciiquarium
 asclock		ports/x11-clocks/asclock
 asclock-gtk	ports/x11-clocks/asclock-gtk
 asclock-xlib	ports/x11-clocks/asclock-xlib
