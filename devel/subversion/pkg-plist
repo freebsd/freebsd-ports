@@ -177,6 +177,12 @@ lib/libsvn_wc-1.so.0
 %%MOD_DAV_SVN%%libexec/apache2/mod_authz_svn.so
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/libexec/apache2 -a -n dav libexec/apache2/mod_dav.so
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/libexec/apache2 -a -n dav_svn libexec/apache2/mod_dav_svn.so
+%%WITH_JAVA%%lib/libsvnjavahl-1.a
+%%WITH_JAVA%%lib/libsvnjavahl-1.so
+%%WITH_JAVA%%lib/libsvnjavahl-1.so.0
+%%WITH_JAVA%%lib/svn-javahl/svn-javahl.jar
+%%WITH_JAVA%%@dirrm lib/svn-javahl/include
+%%WITH_JAVA%%@dirrm lib/svn-javahl
 %%WITH_PERL%%lib/libsvn_swig_perl-1.a
 %%WITH_PERL%%lib/libsvn_swig_perl-1.so
 %%WITH_PERL%%lib/libsvn_swig_perl-1.so.0
@@ -294,3 +300,4 @@ lib/libsvn_wc-1.so.0
 @dirrm %%DATADIR%%/test-scripts
 @dirrm %%DATADIR%%/xslt
 @dirrm share/subversion
+

@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.3
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/tarballs/
 
@@ -116,18 +116,22 @@ PLIST_SUB+=		WITH_RUBY=""
 PLIST_SUB+=		WITH_RUBY="@comment "
 .endif
 
-#.if defined(WITH_JAVA)
-#USE_JAVA=	yes
-#JAVA_VERSION=	1.2+
-#JAVA_OS=	native
-#JAVA_BUILD=	yes
-#JAVA_RUN=	yes
-#.include "${PORTSDIR}/Mk/bsd.java.mk"
-#CONFIGURE_ARGS+=	--enable-javahl --with-jdk=${JAVA_HOME} 
-#PLIST_SUB+=		WITH_JAVA=""
-#.else
-#PLIST_SUB+=		WITH_JAVA="@comment "
-#.endif
+.if defined(WITH_JAVA)
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
+JAVA_OS=	native
+JAVA_BUILD=	yes
+JAVA_RUN=	yes
+.include "${PORTSDIR}/Mk/bsd.java.mk"
+CONFIGURE_ARGS+=	--enable-javahl --with-jdk=${JAVA_HOME} 
+PLIST_SUB+=		WITH_JAVA=""
+.else
+PLIST_SUB+=		WITH_JAVA="@comment "
+.endif
+
+.if defined(WITH_JAVA) && ${OSVERSION} < 503000 
+BROKEN="Java bindings are supported only on FreeBSD 5.3 or newer"
+.endif
 
 .if defined(SWIG_BINDINGS) && ${SWIG_BINDINGS} != ""
 BUILD_DEPENDS+=		swig1.3:${PORTSDIR}/devel/swig13
@@ -233,13 +237,13 @@ pre-extract:
 	@${ECHO_MSG} "You can enable Ruby bindings by defining WITH_RUBY."
 .endif
 	@${ECHO_MSG} ""
-#.if defined(WITH_JAVA)
-#	@${ECHO_MSG} "Build with Java (JavaHL) bindings."
-#.else
-#	@${ECHO_MSG} "You can enable Java bindings by defining WITH_JAVA."
-#	@${ECHO_MSG} "You should have apr builded with threads for Java support!"
-#.endif
-#	@${ECHO_MSG} ""
+.if defined(WITH_JAVA)
+	@${ECHO_MSG} "Build with Java (JavaHL) bindings."
+.else
+	@${ECHO_MSG} "You can enable Java bindings by defining WITH_JAVA."
+	@${ECHO_MSG} "You should have apr builded with threads for Java support!"
+.endif
+	@${ECHO_MSG} ""
 .if defined(WITH_MOD_DAV_SVN)
 	@${ECHO_MSG} "mod_dav_svn module for Apache 2.X enabled."
 .else
@@ -339,11 +343,11 @@ post-build:
 	cd ${WRKSRC} ; \
 	  ${MAKE} swig-rb
 .endif
-#.if defined(WITH_JAVA)
-#	@${MKDIR} ${WRKSRC}/subversion/bindings/java/javahl/classes
-#	cd ${WRKSRC} ; \
-#	  ${MAKE} javahl
-#.endif
+.if defined(WITH_JAVA)
+	@${MKDIR} ${WRKSRC}/subversion/bindings/java/javahl/classes
+	cd ${WRKSRC} ; \
+	  ${MAKE} javahl
+.endif
 
 .if defined(WITH_MOD_DAV_SVN)
 pre-install:
@@ -378,10 +382,10 @@ post-install:	${MKREPOS_TARGET}
 	cd ${WRKSRC} ; \
 	  ${MAKE} install-swig-rb
 .endif
-#.if defined(WITH_JAVA)
-#	cd ${WRKSRC} ; \
-#	  ${MAKE} install-javahl
-#.endif
+.if defined(WITH_JAVA)
+	cd ${WRKSRC} ; \
+	  ${MAKE} install-javahl
+.endif
 .if defined(WITH_SVNSERVE_WRAPPER)
 	@${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${PREFIX}/bin/svnserve
 .endif
