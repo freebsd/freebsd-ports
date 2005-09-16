@@ -6,6 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.2.3
+PORTREVISION?=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/tarballs/
 
@@ -157,10 +158,16 @@ SVNGROUP?=	svn
 APACHE2_PORT?=	www/apache2
 BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE2_PORT}
 RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE2_PORT}
+.if ${APACHE2_PORT} == "www/apache21"
+APR_APU_DIR=	${LOCALBASE}/bin
+APR_CONFIG=	apr-1-config
+APU_CONFIG=	apu-1-config
+.else
 APR_APU_DIR=	${LOCALBASE}/lib/apache2
 APR_CONFIG=	apr-config
 APU_CONFIG=	apu-config
-APR_PORT=	www/apache2
+.endif
+APR_PORT=	${APACHE2_PORT}
 .if !defined(WITHOUT_BDB)
 DEPENDS_ARGS+=	WITH_BERKELEYDB=db4
 OPT_NAME=	WITH_BERKELEYDB=(db4|db41|db42)
