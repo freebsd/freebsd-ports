@@ -214,7 +214,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 		${MASTER_SITE_LOCAL:S|$|:mozilla|}
@@ -417,7 +417,7 @@ CONFIGURE_ARGS+=	--disable-arts
 .endif
 
 .if !defined(WITHOUT_CDROM)
-LIB_DEPENDS+=	vcdinfo.1:${PORTSDIR}/multimedia/vcdimager \
+LIB_DEPENDS+=	vcdinfo.2:${PORTSDIR}/multimedia/vcdimager \
 		cdio.6:${PORTSDIR}/sysutils/libcdio
 CONFIGURE_ARGS+=--enable-vcd \
 		--enable-libcddb \
