@@ -1,6 +1,6 @@
---- mapeditor.cpp.orig	Sun Sep 26 22:45:57 2004
-+++ mapeditor.cpp	Sun Oct 17 23:49:21 2004
-@@ -53,6 +53,8 @@
+--- mapeditor.cpp.orig	Wed Jul 13 13:36:14 2005
++++ mapeditor.cpp	Sat Aug  6 17:19:14 2005
+@@ -58,6 +58,8 @@
  #include "icons/flag-flash.xpm"
  #include "icons/flag-lifebelt.xpm"
  
