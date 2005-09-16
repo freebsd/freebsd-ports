@@ -6,10 +6,10 @@
 #
 
 PORTNAME=		cryptlib
-PORTVERSION=		3.2
+PORTVERSION=		3.2.2
 CATEGORIES=		security
 MASTER_SITES=		ftp://ftp.franken.de/pub/crypt/cryptlib/
-DISTNAME=		cl32
+DISTNAME=		cl${PORTVERSION:S/.//g}
 EXTRACT_SUFX=		.zip
 
 MAINTAINER=		ports@FreeBSD.org
@@ -30,16 +30,16 @@ INSTALLS_SHLIB=		yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/endian ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/libcl.a ${WRKSRC}/libcl.so.3.2.0 \
+	${INSTALL_DATA} ${WRKSRC}/libcl.a ${WRKSRC}/libcl.so.${PORTVERSION} \
 		${PREFIX}/lib
-	${LN} -sf ${PREFIX}/lib/libcl.so.3.2.0 ${PREFIX}/lib/libcl.so
+	${LN} -sf ${PREFIX}/lib/libcl.so.${PORTVERSION} ${PREFIX}/lib/libcl.so
 	${INSTALL_DATA} ${WRKSRC}/cryptlib.h ${PREFIX}/include
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/cryptlib
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/cryptlib
-.endif
 
 post-install:
+.	if !defined(NOPORTDOCS)
+		${MKDIR} ${PREFIX}/share/doc/cryptlib
+		${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/cryptlib
+.	endif
 	${STRIP_CMD} ${PREFIX}/bin/endian
 	${CAT} ${PKGMESSAGE}
 

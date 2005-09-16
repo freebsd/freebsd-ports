@@ -2,6 +2,6 @@ bin/endian
 include/cryptlib.h
 lib/libcl.a
 lib/libcl.so
-lib/libcl.so.3.2.0
+lib/libcl.so.3.2.2
 %%PORTDOCS%%share/doc/cryptlib/README
 %%PORTDOCS%%@dirrm share/doc/cryptlib
