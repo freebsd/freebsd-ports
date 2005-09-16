@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Config-General
-PORTVERSION=	2.29
+PORTVERSION=	2.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Config
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	YES
 
 MAN3=		Config::General::Extended.3 Config::General::Interpolated.3 \
-		Config::General.3
+		Config::General.3 Config::Extended.3
 
 .include <bsd.port.pre.mk>
 
