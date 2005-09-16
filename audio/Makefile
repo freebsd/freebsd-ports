@@ -95,6 +95,7 @@
     SUBDIR += eawpats
     SUBDIR += ecasound
     SUBDIR += ecawave
+    SUBDIR += emu10kx
     SUBDIR += enscribe
     SUBDIR += epos-devel
     SUBDIR += ermixer
