@@ -3,12 +3,22 @@ bin/dbutil
 bin/deliver
 bin/dotlock
 bin/edinplace
+bin/escape
 bin/macutil
 bin/mailexec
 bin/match
+bin/sendmac
 bin/smtpdcheck
 bin/synos
 libexec/avenger
 libexec/avenger.local
 sbin/asmtpd
+%%DATADIR%%/INSTALL
+%%DATADIR%%/INSTALL.html
+%%DATADIR%%/asmtpd.conf
+%%DATADIR%%/avsendmail.m4
+%%DATADIR%%/smtp-filter.iptables
+%%DATADIR%%/smtp-filter.pf
+%%DATADIR%%/unknown
 share/pf.os
+@dirrm %%DATADIR%%
