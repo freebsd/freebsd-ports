@@ -1,0 +1,15 @@
+--- vchkpw.c.orig	Thu Dec 16 15:57:34 2004
++++ vchkpw.c	Fri Sep 16 06:25:31 2005
+@@ -435,8 +435,10 @@
+ #ifdef CLEAR_PASS 
+   /* Check CRAM-MD5 auth */
+   if(ConnType == SMTP_CONN) {
+-	  /* printf("vchkpw: smtp auth\n"); */
+-    cramaccepted = authcram(ThePass,TheChallenge,vpw->pw_clear_passwd);
++	  printf("vchkpw: smtp auth\n");
++    /* cramaccepted = authcram(ThePass,TheChallenge,vpw->pw_clear_passwd); */
++    cramaccepted = authcram(TheChallenge,ThePass,vpw->pw_clear_passwd);
++
+     if(cramaccepted == 0) strcpy(AuthType, "CRAM-MD5");
+   }
+ 
