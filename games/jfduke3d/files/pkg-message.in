@@ -1,0 +1,45 @@
+-----------------------------------------------------------------
+JonoF's Duke Nukem 3D Port has been successfully installed.
+
+You still need the original Duke Nukem 3D data file. Please copy DUKE3D.GRP to
+the %%DATADIR%% directory and run the fix.sh script inside that directory.
+
+The JonoF Duke Nukem 3D Port supports the following Duke Nukem 3D versions:
+
+* Duke3D Shareware
+* Duke3D 1.3d
+* Duke3D 1.4/5 Atomic
+
+NOTE: Be sure to read the release notes in this distribution. There's important
+information about using the new features in this release.
+
+The release notes can be found in %%DOCSDIR%%.
+
+If you have any problems with running this port please contact the maintainer
+of this port and NOT Jonathan Fowler.
+
+The following features are not usable at the moment:
+
+* Sound doesn't work
+* No joystick support
+* GL mode doesn't work
+
+NOTE: You can find patches which enable sound and add joystick support here:
+
+http://jonof.edgenetwork.org/forum/viewtopic.php?p=3245
+
+I was not able to compile the port with these patches. If you manage to do so
+and the binary runs under FreeBSD with sound/jostick support enabled, please
+drop me a note telling me how you did it. I'd really like to add those patches
+to the port, because especially the lack of sound reduces the gameplay-fun a
+lot.
+
+NOTE: Additions to the retail version features of Duke Nukem 3D can be found on
+the 3D Realms forum. These patches/hacks feature high/low resolution textures,
+MD2/MD3 models, Blood and Gore hacks, map hacks, etc. The 3D Realms Forum can
+be accessed through this URL:
+
+http://forums.3drealms.com/
+
+Thx.
+-----------------------------------------------------------------

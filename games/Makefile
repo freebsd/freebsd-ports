@@ -256,6 +256,7 @@
     SUBDIR += inform
     SUBDIR += ishido
     SUBDIR += jetpack
+    SUBDIR += jfduke3d
     SUBDIR += jfk
     SUBDIR += jools
     SUBDIR += jtans
