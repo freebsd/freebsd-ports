@@ -1,0 +1,11 @@
+--- programs/Xserver/Xprint/etc/init.d/Imakefile.orig	Thu Sep 15 00:57:36 2005
++++ programs/Xserver/Xprint/etc/init.d/Imakefile	Thu Sep 15 00:59:01 2005
+@@ -33,7 +33,7 @@
+ MakeScriptFromCpp(xprint, -DDEF_XPCUSTOMGLUE=$(XPCUSTOMGLUE) $(OS_DEFINES))
+ 
+ #if defined(FreeBSDArchitecture)
+-InstallNamedProg(xprint,xprint,$(PROJECTROOT)/etc/rc.d)
++InstallNamedProg(xprint,xprint.sh,$(PROJECTROOT)/etc/rc.d)
+ #else
+ XCOMM Solaris, Linux, etc.
+ InstallNamedProg(xprint,xprint,$(ETCDIR)/init.d)

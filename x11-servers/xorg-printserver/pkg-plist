@@ -1,5 +1,5 @@
 bin/Xprt
-etc/rc.d/xprint
+etc/rc.d/xprint.sh
 lib/X11/xserver/C/print/Xprinters
 lib/X11/xserver/C/print/attributes/document
 lib/X11/xserver/C/print/attributes/job
