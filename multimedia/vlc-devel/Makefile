@@ -218,6 +218,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.8.2.20050813
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/vlc/snapshots/
 #		http://download2.videolan.org/pub/videolan/testing/${PORTNAME}-${DISTVERSION}/ \
@@ -443,7 +444,7 @@ CONFIGURE_ARGS+=	--disable-arts
 .endif
 
 .if !defined(WITHOUT_CDROM)
-LIB_DEPENDS+=	vcdinfo.1:${PORTSDIR}/multimedia/vcdimager \
+LIB_DEPENDS+=	vcdinfo.2:${PORTSDIR}/multimedia/vcdimager \
 		cdio.6:${PORTSDIR}/sysutils/libcdio
 CONFIGURE_ARGS+=--enable-vcd \
 		--enable-libcddb \
