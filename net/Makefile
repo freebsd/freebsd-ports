@@ -659,6 +659,7 @@
     SUBDIR += py-bittorrent-devel
     SUBDIR += py-fngrab
     SUBDIR += py-google
+    SUBDIR += py-impacket
     SUBDIR += py-jabber
     SUBDIR += py-kenosis
     SUBDIR += py-kenosis-bittorrent
