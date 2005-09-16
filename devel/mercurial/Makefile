@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mercurial
-PORTVERSION=	0.6c
+PORTVERSION=	0.7
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.selenic.com/mercurial/release/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	roberto@FreeBSD.org
 COMMENT=	A fast, lightweight source control management system
 
 USE_PYTHON=	2.3+
