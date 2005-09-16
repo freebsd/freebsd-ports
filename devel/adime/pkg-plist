@@ -1,0 +1,5 @@
+include/adime.h
+include/adime/adimecfg.h
+include/adime/adimeint.h
+lib/libadime.so
+@dirrm include/adime
