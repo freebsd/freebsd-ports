@@ -7,7 +7,7 @@
 
 PORTNAME=	screen
 PORTVERSION=	4.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.uni-erlangen.de/pub/utilities/screen/ \
 		${MASTER_SITE_GNU}
@@ -26,6 +26,14 @@ NO_PACKAGE=	Tends to loop using 100% CPU when used from package - perhaps it har
 
 .if ${ARCH} == "alpha"
 CFLAGS+=	-O0
+.endif
+
+# Enables support for 256 colour xterm.  Note that you may need to
+# set up a custom termcap entry or .screenrc which modifies termcap
+# to contain the following: Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm
+#
+.if defined(WITH_XTERM_256)
+CFLAGS+=	-DCOLORS256
 .endif
 
 .if defined(WITHOUT_NETHACK)
