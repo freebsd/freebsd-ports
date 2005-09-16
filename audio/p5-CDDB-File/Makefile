@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	CDDB-File
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	audio perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CDDB
@@ -26,5 +26,8 @@ MAN3=		CDDB::File.3
 BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 .endif
+
+test:		all
+		cd ${WRKSRC} && ${MAKE} test
 
 .include <bsd.port.post.mk>
