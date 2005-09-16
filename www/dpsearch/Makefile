@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dpsearch
-PORTVERSION=	4.32
+PORTVERSION=	4.33
 CATEGORIES=	www
 MASTER_SITES=	http://dataparksearch.newsa.ru/ \
 		http://www.dataparksearch.org/
@@ -38,6 +38,7 @@ OPTIONS=	DPSEARCH_THREADS  "Enable pthreads"                       on  \
 		DPSEARCH_CHASEN   "Enable ChaSen japanese analyzer"       off \
 		DPSEARCH_APACHE   "Enable mod_dpsearch for Apache"        off \
 		DPSEARCH_IDN      "Enable Internationalized Domain Names" off \
+		DPSEARCH_ASPELL   "Enable aspell support"                 off \
 		DPSEARCH_PGSQL    "Use PostgreSQL  (mutually exclusive)"  off \
 		DPSEARCH_MYSQL    "Use MySQL       (mutually exclusive)"  on \
 		DPSEARCH_SQLITE   "Use SQLite      (mutually exclusive)"  off
@@ -52,6 +53,12 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"
 .else
 CONFIGURE_ARGS+=--disable-pthreads
+.endif
+
+.if !defined(WITHOUT_DPSEARCH_ASPELL)
+LIB_DEPEND+=	aspell.16:${PORTSDIR}/textproc/aspell
+.else
+CONFIGURE_ARGS+=--without-aspell
 .endif
 
 .if !defined(NO_OPENSSL) && !defined(WITHOUT_DPSEARCH_SSL)
