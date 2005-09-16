@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	moinmoin
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	moin
 DISTNAME=	moin-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	A Python clone of WikiWiki
 
 USE_PYTHON=	yes
@@ -38,7 +38,7 @@ MOINSCRIPT=	${MOINDIR}/server/moin.fcg
 .elif ${MOINTYPE} == "CGI"
 MOINSCRIPT=	${MOINDIR}/server/moin.cgi
 .else
-IGNORE=		"MOINTYPE must be a STANDALONE, FCGI, MOD_PYTHON or CGI."
+BROKEN=		"MOINTYPE must be a STANDALONE, FCGI, MOD_PYTHON or CGI."
 .endif
 
 pre-everything::
@@ -54,6 +54,9 @@ pre-everything::
 	@${MKDIR} ${WRKDIR}
 
 post-install:
+	@${FIND} ${PREFIX}/share/moin/underlay \! -type d | ${SED} -e 's,${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/share/moin/underlay -type d | ${SED} -e 's,${PREFIX}/,@dirrm ,' | ${SORT} -r >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm share/moin" >> ${TMPPLIST}
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 instance: pre-everything apply-slist
