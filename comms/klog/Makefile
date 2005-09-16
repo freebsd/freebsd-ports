@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://download.berlios.de/klog/
 
-MAINTAINER=	az@az.inec.ru
+MAINTAINER=	az@inec.ru
 COMMENT=	ADIF compatible logging application
 
 GNU_CONFIGURE=	yes
