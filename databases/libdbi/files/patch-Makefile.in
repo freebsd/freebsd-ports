@@ -1,11 +1,11 @@
---- Makefile.in.orig	Thu Oct 30 10:24:07 2003
-+++ Makefile.in	Thu Oct 30 10:24:15 2003
-@@ -88,7 +88,7 @@
- 
+--- Makefile.in.orig	Mon Aug 29 16:47:49 2005
++++ Makefile.in	Thu Sep  1 22:16:12 2005
+@@ -176,7 +176,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
  AUTOMAKE_OPTIONS = foreign dist-zip
- 
 -SUBDIRS = src include doc
 +SUBDIRS = src include
- 
- EXTRA_DIST = AUTHORS COPYING ChangeLog INSTALL README README.win32 README.osx TODO libdbi.spec.in config.h.in Makefile.w32 autogen.sh
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ EXTRA_DIST = AUTHORS COPYING ChangeLog INSTALL README README.win32 README.osx TODO NEWS libdbi.spec.in config.h.in Makefile.w32 autogen.sh drivers/example/AUTHORS drivers/example/Makefile.am drivers/example/README drivers/example/TODO drivers/example/.cvsignore drivers/example/dbd_example.c drivers/example/dbd_example.h drivers/example/dbd_example.sgml
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
