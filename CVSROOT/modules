@@ -12412,6 +12412,7 @@ wanderlust-xemacs21-mule	ports/mail/wanderlust-xemacs21-mule
 wapsh		ports/shells/wapsh
 wargus		ports/games/wargus
 warppipe	ports/net/warppipe
+warzone2100	ports/games/warzone2100
 washerdryer	ports/x11-clocks/washerdryer
 watchdog	ports/sysutils/watchdog
 watchfolder	ports/sysutils/watchfolder
