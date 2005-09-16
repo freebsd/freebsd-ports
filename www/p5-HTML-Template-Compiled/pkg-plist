@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/HTML/Template/Compiled.pm
+%%SITE_PERL%%/HTML/Template/Compiled/Plugin/DHTML.pm
+%%SITE_PERL%%/HTML/Template/Compiled/Utils.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Compiled/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Compiled
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML 2>/dev/null || true
+@dirrm %%SITE_PERL%%/HTML/Template/Compiled/Plugin
+@dirrm %%SITE_PERL%%/HTML/Template/Compiled
+@unexec rmdir %D/%%SITE_PERL%%/HTML/Template 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true
