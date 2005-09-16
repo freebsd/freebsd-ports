@@ -28,6 +28,10 @@ NO_PACKAGE=	Tends to loop using 100% CPU when used from package - perhaps it har
 CFLAGS+=	-O0
 .endif
 
+.if defined(WITHOUT_NETHACK)
+CFLAGS+=	-DNONETHACK
+.endif
+
 post-patch:
 	@${RM} ${WRKSRC}/doc/screen.info*
 
