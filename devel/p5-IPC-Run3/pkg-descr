@@ -3,3 +3,5 @@ and/or stderr to files and perl data structures.  It aims to satisfy
 99% of the need for using system()/qx``/open3() with a simple,
 extremely Perlish API and none of the bloat and rarely used features of
 IPC::Run.
+
+WWW: http://search.cpan.org/dist/IPC-Run3/

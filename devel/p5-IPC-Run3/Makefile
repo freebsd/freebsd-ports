@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	IPC-Run3
-PORTVERSION=	0.01
+PORTVERSION=	0.020
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IPC
@@ -13,6 +13,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Run a subprocess in batch mode
+
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -23,4 +26,10 @@ MAN3=		IPC::Run3.3 \
 		IPC::Run3::ProfPP.3 \
 		IPC::Run3::ProfReporter.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+.endif
+
+.include <bsd.port.post.mk>
