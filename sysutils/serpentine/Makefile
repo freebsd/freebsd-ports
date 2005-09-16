@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	serpentine
-PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTVERSION=	0.6.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.berlios.de/${PORTNAME}/
 
@@ -35,18 +34,9 @@ OPTIONS=	MUINE "Cd-Burner Plugin for muine audio player" Off
 BUILD_DEPENDS+=	muine:${PORTSDIR}/audio/muine
 RUN_DEPENDS+=	muine:${PORTSDIR}/audio/muine
 PLIST_SUB+=	MUINE=""
+CONFIGURE_ARGS+=	--enable-muine
 .else
 PLIST_SUB+=	MUINE="@comment "
-.endif
-
-.if defined(WITH_MUINE) || exists(${X11BASE}/bin/muine)
-post-build:
-	cd ${WRKSRC}/muine-plugin && ${GMAKE}
-
-post-install:
-	${MKDIR} ${PREFIX}/lib/muine/plugins
-	${INSTALL_DATA} ${WRKSRC}/muine-plugin/SerpentinePlugin.dll \
-		${PREFIX}/lib/muine/plugins
 .endif
 
 .include <bsd.port.post.mk>
