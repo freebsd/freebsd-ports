@@ -38,6 +38,7 @@
     SUBDIR += aop
     SUBDIR += apoolGL
     SUBDIR += asc
+    SUBDIR += asciiquarium
     SUBDIR += atitd
     SUBDIR += atlantikdesigner
     SUBDIR += atomix
