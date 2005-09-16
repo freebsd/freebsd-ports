@@ -45,6 +45,9 @@ bin/serpentine
 %%PYTHON_SITELIBDIR%%/serpentine/plugins/plugfilter_dir.py
 %%PYTHON_SITELIBDIR%%/serpentine/plugins/plugfilter_dir.pyc
 %%PYTHON_SITELIBDIR%%/serpentine/plugins/plugfilter_dir.pyo
+%%PYTHON_SITELIBDIR%%/serpentine/plugins/plugfilter_k3b.py
+%%PYTHON_SITELIBDIR%%/serpentine/plugins/plugfilter_k3b.pyc
+%%PYTHON_SITELIBDIR%%/serpentine/plugins/plugfilter_k3b.pyo
 %%PYTHON_SITELIBDIR%%/serpentine/plugins/plugfilter_plparser.py
 %%PYTHON_SITELIBDIR%%/serpentine/plugins/plugfilter_plparser.pyc
 %%PYTHON_SITELIBDIR%%/serpentine/plugins/plugfilter_plparser.pyo
@@ -66,6 +69,9 @@ bin/serpentine
 %%PYTHON_SITELIBDIR%%/serpentine/services.py
 %%PYTHON_SITELIBDIR%%/serpentine/services.pyc
 %%PYTHON_SITELIBDIR%%/serpentine/services.pyo
+%%PYTHON_SITELIBDIR%%/serpentine/urlutil.py
+%%PYTHON_SITELIBDIR%%/serpentine/urlutil.pyc
+%%PYTHON_SITELIBDIR%%/serpentine/urlutil.pyo
 %%PYTHON_SITELIBDIR%%/serpentine/xspf.py
 %%PYTHON_SITELIBDIR%%/serpentine/xspf.pyc
 %%PYTHON_SITELIBDIR%%/serpentine/xspf.pyo
