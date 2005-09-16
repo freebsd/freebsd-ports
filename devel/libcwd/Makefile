@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libcwd
-PORTVERSION=	0.99.39
-PORTREVISION=	1
+PORTVERSION=	0.99.40
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,5 +38,7 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's,\$$\(libdir\)/(pkgconfig),${PREFIX}/libdata/\1,g' \
 		${WRKSRC}/${MAKEFILE}.in
 	@${REINPLACE_CMD} -e 's,Elf32_Off,uint32_t,g' ${WRKSRC}/bfd.cc
+	@${REINPLACE_CMD} -e 's|--tag=CXX||g' ${WRKSRC}/${MAKEFILE}.in \
+		${WRKSRC}/utils/${MAKEFILE}.in
 
 .include <bsd.port.post.mk>
