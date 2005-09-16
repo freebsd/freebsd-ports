@@ -7,7 +7,7 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	5.4.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -63,6 +63,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 # WITH_DOMAIN_QUOTAS	- enable domain quotas
 # WITH_SPAMASSASSIN	- enable SpamAssassin checks before Maildir delivery
 # WITH_SUID_VCHKPW	- set the setuid bit on the vchkpw program
+# WITH_SMTP_AUTH_PATCH	- apply an SMTP authentcation fix
 #
 # Set these to the values you'd prefer
 #
@@ -188,6 +189,10 @@ WITH_SQL_LOG=		yes
 
 .if defined(WITH_SQL_LOG)
 CONFIGURE_ARGS+=	--enable-sql-logging
+.endif
+
+.if defined(WITH_SMTP_AUTH_PATCH)
+EXTRA_PATCHES+=	${FILESDIR}/vchkpw-smtp-auth.patch
 .endif
 
 .include <bsd.port.pre.mk>
