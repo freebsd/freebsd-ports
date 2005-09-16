@@ -562,6 +562,7 @@
     SUBDIR += vor
     SUBDIR += wanderer
     SUBDIR += wargus
+    SUBDIR += warzone2100
     SUBDIR += wesnoth
     SUBDIR += wmeyes
     SUBDIR += wmfortune
