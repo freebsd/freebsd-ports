@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Term/Animation.pm
+%%SITE_PERL%%/Term/Animation/Entity.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Animation/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Animation
+@unexec rmdir %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Term/Animation
+@unexec rmdir %%SITE_PERL%%/Term 2>/dev/null || true

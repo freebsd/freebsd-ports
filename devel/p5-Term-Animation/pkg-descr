@@ -1,0 +1,12 @@
+This module provides a framework to produce sprite animations using
+ASCII art. Each ASCII 'sprite' is given one or more frames, and placed
+into the animation as an 'animation object'. An animation object can
+have a callback routine that controls the position and frame of the
+object.
+
+If the constructor is passed no arguments, it assumes that it is
+running full screen, and behaves accordingly. Alternatively, it can
+accept a curses window (created with the Curses newwin call) as an
+argument, and will draw into that window.
+
+WWW: http://search.cpan.org/dist/Term-Animation/
