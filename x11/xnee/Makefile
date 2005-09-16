@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xnee
-PORTVERSION=	2.00
+PORTVERSION=	2.01
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +19,7 @@ USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack gnometarget
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-doc
 
 INFO=		xnee
 PLIST_FILES=	bin/cnee lib/libxnee.a
