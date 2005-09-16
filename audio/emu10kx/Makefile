@@ -1,0 +1,27 @@
+# Ports collection makefile for: emu10kx
+# Date created:  7 Aug 2005
+# Whom: michaels@sdf.lonestar.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	emu10kx
+PORTVERSION=	20050423
+CATEGORIES=	audio
+MASTER_SITES=	http://chibis.persons.gfk.ru/audigy/emu10kx/
+DISTNAME=	${PORTNAME}-2005-04-23
+
+MAINTAINER=	michaels@sdf.lonestar.org
+COMMENT=	SBLive!, Audigy, and Audigy2 driver for FreeBSD
+
+USE_BZIP2=	yes
+
+NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
+
+post-install:
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+	@${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.endif
+	${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>
