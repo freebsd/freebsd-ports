@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	binkd
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	net
 MASTER_SITES=	ftp://happy.kiev.ua/pub/fidosoft/mailer/binkd/ \
-		ftp://fido.aha.ru/pub/binkd/ \
 		ftp://ftp.rsu.ru/pub/FreeBSD/ports/distfiles/
-DISTNAME=	binkd097
+DISTNAME=	binkd098
 
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	Fidonet TCP/IP mailer
@@ -19,6 +18,7 @@ COMMENT=	Fidonet TCP/IP mailer
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_ZIP=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN8=		binkd.8
 
