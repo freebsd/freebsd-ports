@@ -1,0 +1,53 @@
+diff -ruN scripts.orig/Makefile scripts/Makefile
+--- scripts.orig/Makefile	Thu Aug 11 22:03:33 2005
++++ scripts/Makefile	Thu Aug 11 22:04:10 2005
+@@ -1,13 +1,10 @@
+ include ../config.mak
+ 
+-SCRIPTS=gcin-user-setup gcin-utf8-setup modify-XIM utf8-edit
++SCRIPTS=gcin-user-setup gcin-utf8-setup utf8-edit
+ 
+ all:	$(SCRIPTS)
+ 
+ install:
+-	if [ $(prefix) = /usr/local ]; then \
+-	   sh modify-XIM; \
+-	fi
+ 	install -d $(GCIN_SCRIPT_DIR_i)
+ 	install -m 755 $(SCRIPTS) $(GCIN_SCRIPT_DIR_i)
+ clean:
+diff -ruN scripts.orig/gcin-user-setup scripts/gcin-user-setup
+--- scripts.orig/gcin-user-setup	Thu Aug 11 22:03:33 2005
++++ scripts/gcin-user-setup	Thu Aug 11 22:03:40 2005
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ if [ -z "$1" -o -z "$2" ]; then
+   echo "please specify gcin_table_dir gcin_bin_dir"
+diff -ruN scripts.orig/gcin-utf8-setup scripts/gcin-utf8-setup
+--- scripts.orig/gcin-utf8-setup	Thu Aug 11 22:03:33 2005
++++ scripts/gcin-utf8-setup	Thu Aug 11 22:03:40 2005
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ cd
+ 
+diff -ruN scripts.orig/utf8-edit scripts/utf8-edit
+--- scripts.orig/utf8-edit	Thu Aug 11 22:03:33 2005
++++ scripts/utf8-edit	Thu Aug 11 22:15:12 2005
+@@ -1,10 +1,10 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ PATH=$PATH:/opt/gnome/bin:/usr/local/bin
+ 
+-for i in gedit kedit kate
++for i in gedit leafpad kedit kate gvim vim jedit
+ do
+-  which $i >& /dev/null
++  which $i > /dev/null
+   if [ $? = 0 ]; then
+     UTF8ED=$i
+     break

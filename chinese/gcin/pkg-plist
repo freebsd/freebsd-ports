@@ -11,7 +11,6 @@ lib/gtk-2.0/immodules/im-gcin.so
 lib/libgcin-im-client.so
 %%DATADIR%%/script/gcin-user-setup
 %%DATADIR%%/script/gcin-utf8-setup
-%%DATADIR%%/script/modify-XIM
 %%DATADIR%%/script/utf8-edit
 %%DATADIR%%/table/ar30.gtab
 %%DATADIR%%/table/cj.gtab
@@ -40,15 +39,19 @@ lib/libgcin-im-client.so
 %%DATADIR%%/table/zo-asdf.kbm
 %%PORTDOCS%%%%DOCSDIR%%/Changelog
 %%PORTDOCS%%%%DOCSDIR%%/README
-share/applications/gcin.desktop
-share/applications/gcin-setup.desktop
+share/applications/gcin
+share/applications/gcin-setup
+share/gnome/control-center-2.0/capplets/gcin-setup.desktop
 share/icons/gcin.png
 share/icons/gcin/pin-fixed24.png
 share/icons/gcin/pin-float16.png
 %%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%%  2>/dev/null || true
 @unexec rmdir %D/share/icons/gcin  2>/dev/null || true
-@unexec rmdir %D/share/applications 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
+@unexec rmdir %D/share/gnome/control-center-2.0/capplets 2>/dev/null || true
+@unexec rmdir %D/share/gnome/control-center-2.0 2>/dev/null || true
+@unexec rmdir %D/share/gnome 2>/dev/null || true
+@unexec rmdir %D/share/applications 2>/dev/null || true
 @unexec rmdir %D/%%DATADIR%%/table 2>/dev/null || true
 @unexec rmdir %D/%%DATADIR%%/script 2>/dev/null || true
 @unexec rmdir %D/%%DATADIR%% 2>/dev/null || true

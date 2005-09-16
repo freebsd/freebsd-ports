@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.4
+PORTREVISION=	0
 CATEGORIES=	chinese
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/ \
 		http://edt1023.sayya.org/gcin/source/ \
@@ -26,12 +26,13 @@ USE_BZIP2=	YES
 GNU_CONFIGURE=	YES
 USE_GNOME=	gtk20
 USE_GMAKE=	YES
+USE_REINPLACE=	YES
 
 MAN1=		gcin.1 gcin2tab.1
 
 .include <bsd.port.pre.mk>
 
-pre-everything::
+pre-extract:
 	@${ECHO_MSG} ''
 	@${ECHO_MSG} 'gcin has the following tunable option:'
 	@${ECHO_MSG} '    WITH_BOSHIAMY  - enable Boshiamy support'
@@ -48,15 +49,20 @@ IGNOREFILES=	${BOSHIAMYFILE}
 GCINFILE=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 BOSHIAMYFILE=	noseeing.tar.gz
 post-extract:
-	@cd ${WRKSRC}/data/ \
-		&& ${TAR} -zxf ${DISTDIR}/${BOSHIAMYFILE} \
-		&& ${RM} -f noseeing.gtab
+	@${TAR} -C ${WRKSRC}/data/ -zxf ${DISTDIR}/${BOSHIAMYFILE} \
+		noseeing.cin
+	@${REINPLACE_CMD} -e 's,cj.gtab,cj.gtab noseeing.gtab,' \
+		${WRKSRC}/data/Makefile
 post-patch:
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-data-Makefile
 PLIST_SUB+=	BOSHIAMY=""
 .else
 PLIST_SUB+=	BOSHIAMY="@comment "
 .endif
+
+pre-configure:
+	@${REINPLACE_CMD} -e 's,gcin.png,${PREFIX}/share/icons/gcin.png,' \
+		${WRKSRC}/menu/gcin-setup.desktop
 
 post-install:
 .if !defined(NOPORTDOCS)
