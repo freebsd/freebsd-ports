@@ -47,6 +47,8 @@ post-patch:
 		 s|-lpthread||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's| DOC||g ; \
 		 s| share||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|MUTEX_TYPE_FAST|PTHREAD_MUTEX_NORMAL|g' \
+		${WRKSRC}/main/signal.cc
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/DOC/nt.1 ${MANPREFIX}/man/man1
