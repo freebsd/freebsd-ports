@@ -242,6 +242,7 @@ mingw32/include/setjmp.h
 mingw32/include/setupapi.h
 mingw32/include/share.h
 mingw32/include/shellapi.h
+mingw32/include/shldisp.h
 mingw32/include/shlguid.h
 mingw32/include/shlobj.h
 mingw32/include/shlwapi.h
