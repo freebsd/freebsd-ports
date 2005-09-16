@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	swhplugins
-PORTVERSION=	0.4.13
+PORTVERSION=	0.4.14
 CATEGORIES=	audio
 MASTER_SITES=	http://plugin.org.uk/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -46,10 +46,7 @@ PLIST_SUB+=	NLS=""
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|="$$CFLAGS -Wall .*"|="$$CFLAGS"|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|gcc |$$(CC) |g ; \
-		 s| -lc| $$(LDFLAGS)|g ; \
-		 s|-lrt||g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|<stdint\.h>|<inttypes.h>|g ; \
-		 s|ls_pcast |ls_pcast32 |g' ${WRKSRC}/ladspa-util.h
+	@${REINPLACE_CMD} -e \
+		's|<stdint\.h>|<inttypes.h>|g' ${WRKSRC}/ladspa-util.h
 
 .include <bsd.port.mk>
