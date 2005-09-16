@@ -1,0 +1,25 @@
+--- include/setup.h.in.orig	Sun Jun 26 20:18:20 2005
++++ include/setup.h.in	Sat Jul 23 16:34:51 2005
+@@ -171,6 +171,22 @@
+ /* Prefix where the ircd is installed. */
+ #undef IRCD_PREFIX
+ 
++/* patched in by FreeBSD port */
++#undef MODPATH
++
++#undef AMODPATH
++
++#undef UHPATH
++
++#undef HPATH
++
++#undef MSGPATH
++
++#undef LOGPATH
++
++#undef ETCPATH
++
++/* End of FreeBSD port patch */
+ /* Size of the local client heap. */
+ #undef LCLIENT_HEAP_SIZE
+ 

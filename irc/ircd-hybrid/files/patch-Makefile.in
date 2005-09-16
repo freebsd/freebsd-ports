@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Jul 17 20:41:39 2003
++++ Makefile.in	Sat Jul 23 12:06:49 2005
+@@ -24,7 +24,7 @@
+ # Default make flags - you may want to uncomment this on a multicpu machine
+ #MFLAGS   = -j 4
+ DEPEND_DIRS  = modules src servlink
+-BUILD_DIRS   = ${DEPEND_DIRS} tools
++BUILD_DIRS   = ${DEPEND_DIRS} tools contrib messages
+ INSTALL_DIRS = ${BUILD_DIRS} etc doc include
+ CLEAN_DIRS   = ${BUILD_DIRS} contrib
+ # Anywhere that we can make install, we obviously can rm -f Makefile

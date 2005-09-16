@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	ircd-hybrid
-PORTVERSION=	7.0.2
-PORTREVISION=	2
+PORTVERSION=	7.1.2
 CATEGORIES=	irc ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	ircd-hybrid
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	so14k@so14k.com
-COMMENT=	An irc daemon with a number of new features
+COMMENT=	A fast irc daemon with a number of new features
 
 MAN8=		ircd.8
 
@@ -22,16 +21,15 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
+USE_RC_SUBR=	ircd-hybrid.sh
+SUB_FILES=	pkg-message
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-EXTRA_PATCHES=	${WRKDIR}/patch-include-config.h
 
 #
 # User Configurable Variables
 #
 # PREFIX		- Where to install ircd-hybrid. Default is /usr/local/ircd
-# WITH_KQUEUE		- Use kqueue(2) instead of poll(2).
 # WITH_OPENSSL	- Enable openssl. Allows use of CHALLENGE and encrypted links.
-# WITH_IPV6		- Enable IPv6 Support.
 # WITHOUT_SHARED_MODULES - Disable shared modules. More secure but reduces flexability.
 # WITHOUT_ASSERT	- Disable parts of the debugging code.
 # WITH_SMALL_NET	- Tunes the memory allocation for small networks.
@@ -42,17 +40,9 @@ EXTRA_PATCHES=	${WRKDIR}/patch-include-config.h
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 .endif
 
-.if defined(WITH_KQUEUE)
-CONFIGURE_ARGS+=	--enable-kqueue
-.endif
-
 .if defined(WITH_OPENSSL)
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--enable-openssl=${OPENSSLINC}/openssl
-.endif
-
-.if defined(WITH_IPV6)
-CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 .if defined(WITHOUT_SHARED_MODULES)
@@ -86,23 +76,18 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/ircd-hybrid \
 	--ohelpdir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/help/opers \
 	--messagedir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/messages \
 
-pre-patch:
-	@${SED} -e "s#%%PORTVERSION%%#${PORTVERSION}#" ${FILESDIR}/include-config.h.pre-patch > ${WRKDIR}/patch-include-config.h
-
-post-patch:
-	@${REINPLACE_CMD} -e "s#man8#man/man8#" ${WRKSRC}/doc/Makefile.in
-	@${MV} ${WRKSRC}/doc/ircd.motd ${WRKSRC}/doc/ircd.motd.sample
-	@${MV} ${WRKSRC}/doc/kline.conf ${WRKSRC}/doc/kline.conf.sample
-	@${MV} ${WRKSRC}/doc/dline.conf ${WRKSRC}/doc/dline.conf.sample
-
 pre-install:
 	${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	${MKDIR} ${PREFIX}/etc/ircd-hybrid ${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 	${MKDIR} ${PREFIX}/share/${PORTNAME}-${PORTVERSION}/help/
+	${MKDIR} /var/run/ircd
+	${CHOWN} ircd:ircd /var/run/ircd
 
 post-install:
-	@${SED} -e "s#%PREFIX%#${PREFIX}#" ${FILESDIR}/ircd-hybrid.sh > ${WRKDIR}/ircd-hybrid.sh
-	@${INSTALL_SCRIPT} ${WRKDIR}/ircd-hybrid.sh ${PREFIX}/etc/rc.d
-	@${SED} -e "s#/usr/local/#${PREFIX}/#" ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKSRC}/etc/example.conf.quick ${PREFIX}/etc/ircd-hybrid
+	${INSTALL_SCRIPT} ${WRKSRC}/etc/example.efnet.conf ${PREFIX}/etc/ircd-hybrid
+	${INSTALL_SCRIPT} ${WRKSRC}/etc/simple.conf ${PREFIX}/etc/ircd-hybrid
+	@${CHOWN} ircd:ircd /var/log/ircd
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

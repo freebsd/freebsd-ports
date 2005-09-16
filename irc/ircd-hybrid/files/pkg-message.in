@@ -1,0 +1,16 @@
+ircd-hybrid has now been installed.
+
+*** IMPORTANT: ***
+Please read the INSTALL file for more information.
+
+You should now copy %%PREFIX%%/etc/ircd-hybrid/example.conf to
+%%PREFIX%%/etc/ircd-hybrid/ircd.conf, and then edit to suit your needs.
+ircd-hybrid will not start without %%PREFIX%%/etc/ircd-hybrid/ircd.conf
+
+Don't forget to add
+
+ircd_hybrid_enable="YES"
+
+into your /etc/rc.conf.  You may then start the server by running:
+
+	%%PREFIX%%/etc/rc.d/ircd-hybrid.sh start
