@@ -1,0 +1,127 @@
+#
+# Main Configuration File for the W3C Markup Validation Service.
+#
+# $Id: validator.conf,v 1.24 2005/07/08 08:31:09 ot Exp $
+#
+# See 'perldoc Config::General' for the syntax, and be aware that the
+# 'SplitPolicy' is 'equalsign', ie. keys and values are separated by '\s*=\s*',
+# and that 'InterPolateVars' is in effect.
+#
+
+#
+# Base Path for Markup Validator files.
+#
+# You MUST set these unless you use the default locations for the files.
+# e.g. the config files in "/etc/w3c/" and everything else in
+# "/usr/local/validator/".
+#
+# Make sure all file paths below do NOT end with a slash
+
+<Paths>
+  #
+  # Base path.  Defaults to the value of the W3C_VALIDATOR_HOME environment
+  # variable or /usr/local/validator if the variable does not exist.
+  Base = /usr/local/www/validator
+
+  #
+  # Location of template files
+  Templates = $Base/share/templates
+
+  <SGML>
+    #
+    # The SGML Library Path.
+    Library = $Base/htdocs/sgml-lib
+
+    #
+    # The SGML Parser to use.  Defaults to /usr/bin/onsgmls.
+    Parser = /usr/local/bin/onsgmls
+  </SGML>
+</Paths>
+
+#
+# This controls whether the debugging options are allowed to be enabled.
+Allow Debug = yes
+
+#
+# This lets you permanently enable the debugging options. Can be overridden
+# with CGI options (unlike "Allow Debug" above).
+Enable Debug = no
+
+#
+# Whether private RFC1918 addresses are allowed.
+Allow Private IPs = no
+
+#
+# Whether the (highly experimental!) SOAP support should be enabled.
+Enable SOAP = no
+
+#
+# Whether the validator will check its own output.
+# 0 means it will refuse to check its own output, 1 means it will but it will
+# refuse to check the results of it checking itself. Etc.
+Max Recursion = 0
+
+#
+# Protocols the validator is allowed to use for retrieving documents.
+# The default is to allow http and https.
+<Protocols>
+  Allow = data,http,https
+</Protocols>
+
+#
+# Email address of the maintainer of this service.
+Maintainer = www-validator@w3.org
+
+#
+# The "Home Page" for the service.  Make sure this ends with a slash.
+Home Page = http://validator.w3.org/
+
+#
+# Base URI for the Element Reference.
+Element Ref URI = http://www.htmlhelp.com/reference/html40/
+
+
+
+#
+# Mapping tables etc...
+#
+
+#
+# Maps element names to URLs (cf. "Element Ref URI" above).
+<Elements>
+  Include /usr/local/www/validator/htdocs/config/eref.cfg
+</Elements>
+
+#
+# Main document Type Registry; contains all information on the types
+# of documents we support and how they are processed.
+<Types>
+  Include /usr/local/www/validator/htdocs/config/types.conf
+</Types>
+
+#
+# Mapping of charset names to their IANA names and how iconv(3) knows them.
+<Charsets>
+  Include /usr/local/www/validator/htdocs/config/charset.cfg
+</Charsets>
+
+#
+# Map MIME Media Type to Parse Mode mapping.
+<MIME>
+  text/xml              = XML
+  image/svg             = XML
+  image/svg+xml         = XML
+  application/smil      = XML
+  application/xml       = XML
+  text/html             = TBD
+  text/vnd.wap.wml      = XML
+  application/xhtml+xml = XML
+  application/mathml+xml = XML
+</MIME>
+
+#
+# Source for the "Tip of The Day" blurbs.
+<Tips>
+  Include /usr/local/www/validator/htdocs/config/tips.cfg
+</Tips>
+

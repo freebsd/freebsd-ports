@@ -1,0 +1,46 @@
+-------------------------------------------------------------------------------
+The W3C Markup Validation Service has been installed.  However, it will not
+do anything until you set up your web server to utilize it.  Below is an
+Apache configutation snippet that you can put into your httpd.conf to
+utilize the validator.  If you are using another web server, you will have
+to configure it yourself.  The W3C only recommends the use of the Apache
+web server, so there are no other web server configuration snippets.
+
+A sample validator.conf has been installed at
+%%PREFIX%%/www/validator/htdocs/config/validator.conf.sample
+You need to copy this file to /etc/w3c/validator.conf and then edit it to
+your liking.  If you have used a previous version of the validator, you
+will need to manually check if anything new has been added to the W3C's
+validator.conf and edit your own validator.conf accordingly.
+
+# Example httpd.conf snippet for W3C Markup Validation Service
+# Note that this is not a complete server configuration file, but contains
+# only the validator-specific part.
+#
+# You can use the Include directive for including this in your main httpd.conf.
+#
+# Note: running the validator under mod_perl is not supported at the moment.
+#       You are also required to have mod_include active for the validator
+#       pages to show up as they should.
+#
+# The /w3c-validator loaction can be changed to whatever you want it to be,
+# but make sure you change it for both of these ScriptAlias commands as well
+# as the Alias command under them.
+
+# First, tell httpd that check and sendfeedback.pl are CGI scripts.
+
+ScriptAlias      /w3c-validator/check \
+  %%PREFIX%%/www/validator/httpd/cgi-bin/check
+ScriptAliasMatch /w3c-validator/feedback(\.html)? \
+  %%PREFIX%%/www/validator/httpd/cgi-bin/sendfeedback.pl
+
+# This is the directory where you have the validator's *.html, *.css etc files.
+
+Alias /w3c-validator/   %%PREFIX%%/www/validator/htdocs/
+<Directory %%PREFIX%%/www/validator/htdocs/>
+  Options               IncludesNOEXEC Indexes MultiViews
+  AllowOverride         None
+  AddHandler            server-parsed .html
+  AddCharset            utf-8         .html
+</Directory>
+-------------------------------------------------------------------------------
