@@ -1,0 +1,16 @@
+Atlas aims to produce and display high quality charts of the world for users of
+FlightGear, an open source flight simulator. This is achieved through two main
+parts: The map creator (simply called Map) and the Atlas viewer.
+
+The map creator takes scenery data from FlightGear and transforms it into
+beautiful map pictures that can be viewed with any bitmap image program that
+you might have installed or with the Atlas viewing application.
+
+The Atlas viewing application can be used for browsing your maps but can also
+connect directly to FlightGear and display your aircrafts current location on a
+so called moving map display.
+
+WWW: http://atlas.sourceforge.net/
+
+- Jean-Yves Lefort
+jylefort@FreeBSD.org
