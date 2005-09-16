@@ -15,7 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	DBI driver for InterBase RDBMS server
 
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 LIB_DEPENDS=	gds:${PORTSDIR}/databases/firebird-client
+RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -28,11 +30,7 @@ MAN3=		DBD::InterBase.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
-.else
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+IGNORE=	Perl 5.6 or newer required. Install lang/perl5.8 or lang/perl5 and try again.
 .endif
 
 .include <bsd.port.post.mk>
