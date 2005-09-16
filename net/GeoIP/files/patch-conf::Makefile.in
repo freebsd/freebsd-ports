@@ -1,6 +1,6 @@
---- conf/Makefile.in.orig	Mon Mar 10 17:25:32 2003
-+++ conf/Makefile.in	Sun Apr  6 17:59:17 2003
-@@ -205,12 +205,12 @@
+--- conf/Makefile.in.orig	Sun Aug 28 22:42:55 2005
++++ conf/Makefile.in	Sun Aug 28 22:43:20 2005
+@@ -243,12 +243,12 @@
  
  
  install-data-hook: install-sysconfDATA
@@ -16,6 +16,6 @@
 +#	        echo "$(INSTALL_DATA) GeoIP.conf.default $(DESTDIR)$(DEFAULT_CONFIG_FILE)"; \
 +#	        $(INSTALL_DATA) GeoIP.conf.default $(DESTDIR)$(DEFAULT_CONFIG_FILE); \
 +#	fi
- 
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
