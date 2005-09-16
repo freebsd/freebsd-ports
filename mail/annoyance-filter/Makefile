@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.fourmilab.ch/annoyance-filter/
 MASTER_SITE_SUBDIR=	${PORTNAME:S/-//}
 
-MAINTAINER=	barner@gmx.de
+MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Adaptive Bayesian Junk Mail Filter
 
 #USE_GPG=		yes
