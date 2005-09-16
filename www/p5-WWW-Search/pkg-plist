@@ -5,6 +5,7 @@ bin/WebSearch
 %%SITE_PERL%%/WWW/Search/Null/Count.pm
 %%SITE_PERL%%/WWW/Search/Null/Empty.pm
 %%SITE_PERL%%/WWW/Search/Null/Error.pm
+%%SITE_PERL%%/WWW/Search/Null/NoVersion.pm
 %%SITE_PERL%%/WWW/Search/Result.pm
 %%SITE_PERL%%/WWW/Search/Simple.pm
 %%SITE_PERL%%/WWW/Search/Test.pm
