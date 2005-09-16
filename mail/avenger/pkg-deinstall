@@ -11,11 +11,12 @@ fi
 USER=avenger
 GROUP=avenger
 AVDIR=/var/spool/avenger
-AVETC=${PKG_PREFIX}/etc/avenger
+AVETC=/etc/avenger
 
 PW=/usr/sbin/pw
 
 if ${PW} groupshow "${GROUP}" >/dev/null 2>&1; then
+	echo
 	echo "If you're done with Mail Avenger permanently, delete the $GROUP group manually: pw groupdel ${GROUP}" | fmt
 fi
 
@@ -29,4 +30,5 @@ for dir in "$AVETC" "$AVDIR"; do
 	echo
 	echo "You may wish to investigate the contents of $dir and delete the directory if you're done with Mail Avenger permanently." | fmt
     fi
+    echo
 done
