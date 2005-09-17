@@ -9,7 +9,7 @@
 PORTNAME=	zipios++
 PORTVERSION=	0.1.5.9
 CATEGORIES=	archivers
-MASTER_SITES=	http://http.us.debian.org/debian/pool/main/z/zipios++/
+MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}+cvs.2004.02.07.orig
 
 MAINTAINER=	ports@FreeBSD.org
