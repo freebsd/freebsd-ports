@@ -8,7 +8,8 @@
 PORTNAME=	exrtools
 PORTVERSION=	0.4
 CATEGORIES=	graphics
-MASTER_SITES=	http://scanline.ca/exrtools/
+MASTER_SITES=	http://scanline.ca/exrtools/ \
+		http://critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@critical.ch
 COMMENT=	Utilities for manipulating with HDR images in OpenEXR format
