@@ -143,6 +143,7 @@
     SUBDIR += g-gcl
     SUBDIR += galeon
     SUBDIR += gallery
+    SUBDIR += gallery2
     SUBDIR += gatling
     SUBDIR += gecko-sharp
     SUBDIR += geeklog
