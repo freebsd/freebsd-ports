@@ -8,7 +8,8 @@
 PORTNAME=	fldiff
 PORTVERSION=	1.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.easysw.com/~mike/fldiff/
+MASTER_SITES=	http://critical.ch/distfiles/ \
+		http://www.easysw.com/~mike/fldiff/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	ehaupt@critical.ch
