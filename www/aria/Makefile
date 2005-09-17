@@ -9,8 +9,7 @@ PORTNAME=	aria
 PORTVERSION=	1.0.0
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://rabien.virtualave.net/linux/storage/sources/ \
-		http://aria.rednoah.com/storage/sources/
+MASTER_SITES=	http://aria.rednoah.com/storage/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another download tool
