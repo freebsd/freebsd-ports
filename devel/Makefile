@@ -1494,6 +1494,7 @@
     SUBDIR += semantic
     SUBDIR += semantic-emacs20
     SUBDIR += sfio
+    SUBDIR += sfslite
     SUBDIR += sgb
     SUBDIR += sgl
     SUBDIR += sh-rtems-binutils
