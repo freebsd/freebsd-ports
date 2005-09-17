@@ -7639,6 +7639,7 @@ p5-Digest-MD4	ports/security/p5-Digest-MD4
 p5-Digest-MD5	ports/security/p5-Digest-MD5
 p5-Digest-MD5-M4p	ports/security/p5-Digest-MD5-M4p
 p5-Digest-Nilsimsa	ports/security/p5-Digest-Nilsimsa
+p5-Digest-SHA	ports/security/p5-Digest-SHA
 p5-Digest-SHA1	ports/security/p5-Digest-SHA1
 p5-Digest-SHA2	ports/security/p5-Digest-SHA2
 p5-Digest-SHA256	ports/security/p5-Digest-SHA256
