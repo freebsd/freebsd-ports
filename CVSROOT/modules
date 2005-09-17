@@ -2616,6 +2616,7 @@ galculator	ports/math/galculator
 gale		ports/net/gale
 galeon		ports/www/galeon
 gallery		ports/www/gallery
+gallery2	ports/www/gallery2
 gambas		ports/lang/gambas
 gambit		ports/math/gambit
 games_crimson	ports/games/crimson
