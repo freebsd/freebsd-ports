@@ -11153,6 +11153,7 @@ sfio		ports/devel/sfio
 sformat		ports/sysutils/sformat
 sfront		ports/audio/sfront
 sfs		ports/security/sfs
+sfslite		ports/devel/sfslite
 sftp_port	ports/ftp/sftp
 sgb		ports/devel/sgb
 sge		ports/sysutils/sge
