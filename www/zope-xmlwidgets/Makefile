@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	xmlwidgets
-PORTVERSION=	0.10.3
-PORTREVISION=	1
+PORTVERSION=	0.12
 CATEGORIES=	www zope
-MASTER_SITES=	http://www.zope.org/Members/infrae/XMLWidgets/XMLWidgets-${PORTVERSION}/
+MASTER_SITES=	http://www.infrae.com/download/XMLWidgets/${PORTVERSION}/
 PKGNAMEPREFIX=	zope-
 DISTNAME=	XMLWidgets-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	x@Vex.Net
+MAINTAINER=	x@vex.net
 COMMENT=	XMLWidgets - dynamic translations of ParsedXML to HTML pages
 
 RUN_DEPENDS=	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/ParsedXML/__init__.py:${PORTSDIR}/www/zope-parsedxml
@@ -26,17 +25,14 @@ DIST_SUBDIR=	zope
 ZOPEPRODUCTNAME=XMLWidgets
 
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
-CPIO=		cpio --quiet -pdum -R
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-	@ ${CHMOD} -R og+rX ${WRKSRC}/
-	@ ${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
-	@ cd ${WRKSRC} && ${FIND} . \
-	  | ${CPIO} ${BINOWN}:${BINGRP} \
-	  ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
+	@${CHMOD} -R og+rX ${WRKSRC}/
+	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
+	@${CP} -R ${WRKSRC} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
 
 post-install:
 .if !defined(BATCH)
