@@ -1,8 +1,0 @@
-bin/fkiss
-share/examples/fkiss/frkismi4.lzh
-share/doc/fkiss/README
-share/doc/ja/fkiss/README.euc
-share/doc/ja/fkiss/README.sjis
-@dirrm share/examples/fkiss
-@dirrm share/doc/fkiss
-@dirrm share/doc/ja/fkiss
