@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libapreq2
-PORTVERSION=	2.05
+PORTVERSION=	2.06
 CATEGORIES=	www perl5 devel
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 MASTER_SITE_SUBDIR=libapreq
@@ -30,6 +30,12 @@ CONFIGURE_ARGS+=--enable-perl-glue --with-apache2-apxs=${APXS}
 USE_PERL5=	yes
 USE_APACHE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:C/_[0-9]+//}
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+
+MAN3=	APR::Request::Apache2.3 APR::Request::CGI.3 APR::Request::Cookie.3 \
+	APR::Request::Error.3 APR::Request::Param.3 APR::Request.3 \
+	APR::Request::Hook.3 APR::Request::Parser.3 Apache2::Cookie.3 \
+	Apache2::Upload.3 Apache2::Request.3
 
 post-configure:
 	cd ${CONFIGURE_WRKSRC}/glue/perl && \
