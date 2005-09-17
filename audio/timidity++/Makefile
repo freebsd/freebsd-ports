@@ -7,15 +7,17 @@
 
 PORTNAME=	timidity++
 PORTVERSION=	2.13.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	timidity
+MASTER_SITE_SUBDIR=timidity
 DISTNAME=	TiMidity++-${PORTVERSION}
 
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	Software MIDI player
 
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+RUN_DEPENDS=	${LOCALBASE}/share/timidity/timidity.cfg:${PORTSDIR}/audio/eawpats
 
 CONFLICTS=	timidity-0.*
 
@@ -29,7 +31,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--enable-interface=ncurses,vt100,server
 CONFIGURE_ARGS+=--program-transform-name= --enable-network
 
-.if ${CONFIGURE_ARGS:M*ncurses*} != ""
+.if ${.CURDIR} == ${MASTERDIR}
 MANLANG=	"" ja
 MAN1=		timidity.1
 MAN5=		timidity.cfg.5
@@ -52,7 +54,7 @@ CONFIGURE_ARGS+=--without-x --disable-spectrogram --disable-wrd --disable-dynami
 .else
 CONFIGURE_ARGS+=--with-x    --enable-spectrogram  --enable-wrd  --enable-dynamic
 USE_XLIB=	yes
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png:${PORTSDIR}/graphics/png
 .endif
 
 .if ${OSVERSION} >= 450002
@@ -79,11 +81,9 @@ CONFIGURE_ENV=	LDFLAGS=-export-dynamic
 .endif
 
 pre-install:
-.for dir in ${PREFIX}/share/timidity ${PREFIX}/${TIMID_LIBDIR}
-	@[ -d ${dir} ] || ${MKDIR} ${dir}
-.endfor
+	@${MKDIR} ${PREFIX}/share/timidity ${PREFIX}/${TIMID_LIBDIR}
 
-.if ${CONFIGURE_ARGS:M*ncurses*} != ""
+.if ${.CURDIR} == ${MASTERDIR}
 post-install::
 	${INSTALL_MAN} ${WRKSRC}/doc/ja_JP.eucJP/timidity.1 \
 		${PREFIX}/man/ja/man1
@@ -99,12 +99,11 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 post-install::
-.for lang in ${DOCLANG}
-	${MKDIR} ${DOCSDIR}/`echo ${lang} | ${SED} -e 's/^C$$//' -e 's/_JP.eucJP$$//'`
-.for file in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${lang}/${file} ${DOCSDIR}/`echo ${lang} | ${SED} -e 's/^C$$//' -e 's/_JP.eucJP$$//'`
-.endfor
-.endfor
+.	for lang in ${DOCLANG}
+	${MKDIR} ${PREFIX}/share/doc/${lang:C,^C$,,:C,ja_.*,ja/,}timidity++
+	cd ${WRKSRC}/doc/${lang} && ${INSTALL_DATA} ${DOCFILES}	\
+	    ${PREFIX}/share/doc/${lang:C,^C$,,:C,ja_.*,ja/,}timidity++/
+.	endfor
 .endif
 
 .if defined(LINK)
@@ -114,7 +113,7 @@ post-install::
 
 .if exists(${PKGMESSAGE})
 post-install::
-	@${CAT} ${PKGMESSAGE}
+	@${SED} -e 's,/usr/local,${PREFIX},g' ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.post.mk>
