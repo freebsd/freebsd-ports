@@ -18,12 +18,12 @@ COMMENT=	Markup Validation Service from the World Wide Web Consortium (W3C)
 RUN_DEPENDS=	onsgmls:${PORTSDIR}/textproc/opensp \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/Config/General.pm:${PORTSDIR}/devel/p5-Config-General \
-		${SITE_PERL}/mach/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
+		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
 		${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Net/IP.pm:${PORTSDIR}/net-mgmt/p5-Net-IP \
 		${SITE_PERL}/Set/IntSpan.pm:${PORTSDIR}/math/p5-Set-IntSpan \
-		${SITE_PERL}/mach/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
+		${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
 
 NO_BUILD=	yes
