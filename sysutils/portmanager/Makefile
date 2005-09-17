@@ -7,7 +7,7 @@
 
 PORTNAME=	portmanager
 PORTVERSION=	0.2.9
-PORTREVISION=	6
+PORTREVISION=	7
 #-----------------------------------------
 #for local use, remove before submitting PR
 CATEGORIES=		sysutils
@@ -49,24 +49,28 @@ CONFIGURE_ARGS=		--with-prefix=${PREFIX} 		\
 			--with-sharedir=/share/portmanager	\
 			--with-tempdir=/tmp
 
-.if defined(WITH_DEBUG)
+#
+# In FreeBSD 6.0 dumps core when compiled WITHOUT debug symbols :(
+# so for a temp fix just making the WITH_DEBUG non optional.
+#
+#.if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--with-debug=yes
-.endif
+#.endif
 
 INSTALLS_SHLIB=		yes
 USE_REINPLACE=		yes
 INSTALL_TARGET=		install info
 
-pre-fetch:
-.if !defined(WITH_DEBUG)
-	@${ECHO}	"***********************************************************************"
-	@${ECHO}	"* portmanager                                                         *"
-	@${ECHO}	"***********************************************************************"
-	@${ECHO}	"*                                                                     *"
-	@${ECHO}	"* WITH_DEBUG=yes enables debug support and all compile warnings       *"
-	@${ECHO}	"*                                                                     *"
-	@${ECHO}	"***********************************************************************"
-.endif
+#pre-fetch:
+#.if !defined(WITH_DEBUG)
+#	@${ECHO}	"***********************************************************************"
+#	@${ECHO}	"* portmanager                                                         *"
+#	@${ECHO}	"***********************************************************************"
+#	@${ECHO}	"*                                                                     *"
+#	@${ECHO}	"* WITH_DEBUG=yes enables debug support and all compile warnings       *"
+#	@${ECHO}	"*                                                                     *"
+#	@${ECHO}	"***********************************************************************"
+#.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e	\
