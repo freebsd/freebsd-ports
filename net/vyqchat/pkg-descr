@@ -1,0 +1,12 @@
+VyQChat is a real-time, text-based, serverless chat program dedicated to LANs,
+that runs on Linux using Qt/X11 library. It is almost 100% compatible with
+Vypress Chat(TM) for Windows. It allows you to chat with friends on public or
+private channels, send and recieve messages etc. The GUI is meant to be
+user-friendly and lets you to do most things with mouse. There is also optional
+sound support. VyQChat has been written in C++ and requires Qt library, version
+3.x.
+
+WWW: http://linux.bydg.org/~yogin/
+
+- Victor Semionov
+semionov@mail.bg

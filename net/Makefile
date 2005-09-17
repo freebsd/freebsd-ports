@@ -871,6 +871,7 @@
     SUBDIR += vomit
     SUBDIR += vqcc-gtk
     SUBDIR += vtun
+    SUBDIR += vyqchat
     SUBDIR += wais
     SUBDIR += wakeonlan
     SUBDIR += warppipe

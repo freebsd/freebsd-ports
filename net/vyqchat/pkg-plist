@@ -1,0 +1,42 @@
+bin/vyqchat
+share/vyqchat/default/channel_alert.png
+share/vyqchat/default/channel_normal.png
+share/vyqchat/default/channel.png
+share/vyqchat/default/comm.png
+share/vyqchat/default/enter.png
+share/vyqchat/default/info.png
+share/vyqchat/default/massmessage.png
+share/vyqchat/default/message.png
+share/vyqchat/default/priv_alert.png
+share/vyqchat/default/priv.png
+share/vyqchat/default/settings.png
+share/vyqchat/default/user_away.png
+share/vyqchat/default/user_dnd.png
+share/vyqchat/default/user_offline.png
+share/vyqchat/default/user.png
+share/vyqchat/default/themeinfo
+share/vyqchat/crystal/beep.png
+share/vyqchat/crystal/cancel.png
+share/vyqchat/crystal/channel_alert.png
+share/vyqchat/crystal/channel_normal.png
+share/vyqchat/crystal/channel.png
+share/vyqchat/crystal/comm.png
+share/vyqchat/crystal/enter.png
+share/vyqchat/crystal/info.png
+share/vyqchat/crystal/massmessage.png
+share/vyqchat/crystal/message.png
+share/vyqchat/crystal/priv_alert.png
+share/vyqchat/crystal/priv.png
+share/vyqchat/crystal/settings.png
+share/vyqchat/crystal/user_away.png
+share/vyqchat/crystal/user_dnd.png
+share/vyqchat/crystal/user_offline.png
+share/vyqchat/crystal/user.png
+share/vyqchat/crystal/themeinfo
+share/vyqchat/tr/vyqchat_pl.qm
+share/vyqchat/tr/vyqchat_ru.qm
+share/vyqchat/tr/vyqchat_tr.qm
+@dirrm share/vyqchat/default
+@dirrm share/vyqchat/crystal
+@dirrm share/vyqchat/tr
+@dirrm share/vyqchat
