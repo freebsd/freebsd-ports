@@ -104,4 +104,10 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		Requires Perl 5.6.0 or better to run
+.endif
+
+.include <bsd.port.post.mk>
