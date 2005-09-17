@@ -10,6 +10,9 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/byterange.py
 %%PYTHON_SITELIBDIR%%/mercurial/byterange.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/byterange.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/changelog.py
+%%PYTHON_SITELIBDIR%%/mercurial/changelog.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/changelog.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/commands.py
 %%PYTHON_SITELIBDIR%%/mercurial/commands.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/commands.pyo
