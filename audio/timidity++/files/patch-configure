@@ -1,0 +1,9 @@
+--- configure	Sun Oct  3 08:39:51 2004
++++ configure	Sat Sep 10 14:30:53 2005
+@@ -16677,5 +16677,5 @@
+     done
+     LIBS="$LIBS $tcl_lib"
+-    for l in tk tk8.4 tk8.3 tk8.0jp tk4.2jp tk80jp tk42jp tk8.0 tk4.2 tk80 tk42; do
++    for l in tk tk84 tk83 tk8.0jp tk4.2jp tk80jp tk42jp tk8.0 tk4.2 tk80 tk42; do
+       case "x$tk_lib" in x) as_ac_Lib=`echo "ac_cv_lib_$l''_Tk_Init" | $as_tr_sh`
+ echo "$as_me:$LINENO: checking for Tk_Init in -l$l" >&5

@@ -7,7 +7,7 @@
 
 PORTNAME=	eawpats
 PORTVERSION=	12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
@@ -15,9 +15,6 @@ DISTNAME=	eawpats12_full
 
 MAINTAINER=	lennox@cs.columbia.edu
 COMMENT=	Eric A. Welsh's collection of Gravis Ultrasound MIDI patches
-
-# Not useful without timidity.
-RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity++
 
 RESTRICTED=	Some of the patches are marked no-commercial-use
 

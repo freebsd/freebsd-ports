@@ -4,12 +4,12 @@ bin/timidity
 %%PORTDOCS%%%%DOCSDIR%%/README.m2m
 %%PORTDOCS%%%%DOCSDIR%%/README.mts
 %%PORTDOCS%%%%DOCSDIR%%/README.sf
-%%PORTDOCS%%%%DOCSDIR%%/ja/README.alsaseq
-%%PORTDOCS%%%%DOCSDIR%%/ja/README.dl
-%%PORTDOCS%%%%DOCSDIR%%/ja/README.m2m
-%%PORTDOCS%%%%DOCSDIR%%/ja/README.mts
-%%PORTDOCS%%%%DOCSDIR%%/ja/README.sf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
+%%PORTDOCS%%share/doc/ja/timidity++/README.alsaseq
+%%PORTDOCS%%share/doc/ja/timidity++/README.dl
+%%PORTDOCS%%share/doc/ja/timidity++/README.m2m
+%%PORTDOCS%%share/doc/ja/timidity++/README.mts
+%%PORTDOCS%%share/doc/ja/timidity++/README.sf
+%%PORTDOCS%%@dirrm share/doc/ja/timidity++/
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -p %D/%%TIMID_LIBDIR%%
 @exec mkdir -p %D/share/timidity
