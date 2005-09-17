@@ -1792,6 +1792,7 @@ dte		ports/editors/dte
 dtse		ports/www/dtse
 dtv		ports/multimedia/dtv
 du2ps		ports/sysutils/du2ps
+duel		ports/games/duel
 duhdraw		ports/graphics/duhdraw
 duke3d		ports/games/duke3d
 dumb		ports/devel/dumb
