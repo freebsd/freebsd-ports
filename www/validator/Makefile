@@ -29,14 +29,16 @@ RUN_DEPENDS=	onsgmls:${PORTSDIR}/textproc/opensp \
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message validator.conf.sample
 
 post-extract:
 	@${RM} ${WRKSRC}/README.cvs
 	@${RM} -rf ${WRKSRC}/misc
 	@${RM} -rf ${WRKSRC}/httpd/conf
-	@${CP} ${FILESDIR}/validator.conf.sample ${WRKSRC}/htdocs/config/
 	@${RM} ${WRKSRC}/htdocs/config/validator.conf
+
+pre-install:
+	@${CP} ${WRKDIR}/validator.conf.sample ${WRKSRC}/htdocs/config/
 
 do-install:
 	${MKDIR} ${PREFIX}/www/validator

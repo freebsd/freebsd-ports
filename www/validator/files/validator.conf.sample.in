@@ -21,7 +21,7 @@
   #
   # Base path.  Defaults to the value of the W3C_VALIDATOR_HOME environment
   # variable or /usr/local/validator if the variable does not exist.
-  Base = /usr/local/www/validator
+  Base = %%PREFIX%%/www/validator
 
   #
   # Location of template files
@@ -34,7 +34,7 @@
 
     #
     # The SGML Parser to use.  Defaults to /usr/bin/onsgmls.
-    Parser = /usr/local/bin/onsgmls
+    Parser = %%LOCALBASE%%/bin/onsgmls
   </SGML>
 </Paths>
 
@@ -89,20 +89,20 @@ Element Ref URI = http://www.htmlhelp.com/reference/html40/
 #
 # Maps element names to URLs (cf. "Element Ref URI" above).
 <Elements>
-  Include /usr/local/www/validator/htdocs/config/eref.cfg
+  Include %%PREFIX%%/www/validator/htdocs/config/eref.cfg
 </Elements>
 
 #
 # Main document Type Registry; contains all information on the types
 # of documents we support and how they are processed.
 <Types>
-  Include /usr/local/www/validator/htdocs/config/types.conf
+  Include %%PREFIX%%/www/validator/htdocs/config/types.conf
 </Types>
 
 #
 # Mapping of charset names to their IANA names and how iconv(3) knows them.
 <Charsets>
-  Include /usr/local/www/validator/htdocs/config/charset.cfg
+  Include %%PREFIX%%/www/validator/htdocs/config/charset.cfg
 </Charsets>
 
 #
@@ -122,6 +122,6 @@ Element Ref URI = http://www.htmlhelp.com/reference/html40/
 #
 # Source for the "Tip of The Day" blurbs.
 <Tips>
-  Include /usr/local/www/validator/htdocs/config/tips.cfg
+  Include %%PREFIX%%/www/validator/htdocs/config/tips.cfg
 </Tips>
 
