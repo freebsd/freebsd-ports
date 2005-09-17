@@ -961,7 +961,6 @@ MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.cs.colorado.edu/pub/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://cpan.pop-mg.com.br/pub/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.is.co.za/programming/perl/CPAN/modules/by-module/%SUBDIR%/ \
-	http://cpan.shellhung.org/modules/by-module/%SUBDIR%/ \
 	http://at.cpan.org/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/lang/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.auckland.ac.nz/pub/perl/CPAN/modules/by-module/%SUBDIR%/
