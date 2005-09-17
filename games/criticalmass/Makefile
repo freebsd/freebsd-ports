@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	criticalmass
-PORTVERSION=	0.9.11
+PORTVERSION=	0.9.12
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -40,10 +40,12 @@ BROKEN=		"Does not compile on sparc64"
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG:T}|g ; \
-		 s|^CXXFLAGS|#CXXFLAGS|g ; \
-		 s|-lSDL | |g' ${WRKSRC}/configure
 	@${GREP} -lR "SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|SDL/SDL|SDL|g'
+	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG:T}|g ; \
+		 s|^CXXFLAGS|#CXXFLAGS|g ; \
+		 s|-lSDL | |g ; \
+		 s|-lpng12|-lpng|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|and def|\&\& def|g' ${WRKSRC}/utils/OSName.hpp
 
 .include <bsd.port.post.mk>
