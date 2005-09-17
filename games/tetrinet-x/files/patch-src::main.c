@@ -1,6 +1,6 @@
 --- src/main.c.orig	Thu Dec 24 06:24:50 1998
-+++ src/main.c	Thu Jun 17 10:06:39 2004
-@@ -319,12 +319,10 @@
++++ src/main.c	Sat Sep 17 13:24:27 2005
+@@ -319,40 +319,27 @@
  
  /* lvprintf( priority, same as printf ) - Logs to the log IF priority is smaller */
  /*                                        or equal to game.verbose */
@@ -11,12 +11,22 @@
 -  char *format; va_list va; static char SBUF2[768];int priority;
 -  va_start(va);
 -  priority=va_arg(va,int);format=va_arg(va,char *);
-+  va_list va; static char SBUF2[768];
-+  va_start(va, format);
-   vsprintf(SBUF2,format,va);
-   if (strlen(SBUF2)>512)
-     {
-@@ -338,15 +336,14 @@
+-  vsprintf(SBUF2,format,va);
+-  if (strlen(SBUF2)>512)
+-    {
+-      SBUF2[512]=0;   /* truncate string. Of course, by now we have buffer overrun ;) */
+-    }
+-  
+-  if (priority <= game.verbose)
++  if (priority <= game.verbose) {
++    va_list va; static char SBUF2[768];
++    va_start(va, format);
++    vsnprintf(SBUF2, sizeof(SBUF2),format,va);
+     lprintf(SBUF2);
+-
+-  va_end(va);
++    va_end(va);
++  }
  }
  
  /* lprintf( same as printf ) - Logs to the log. */
@@ -31,11 +41,18 @@
    char *P;
    time_t cur_time;
 -  va_start(va);
+-  format=va_arg(va,char *);
+-  vsprintf(SBUF2,format,va);
+-  if (strlen(SBUF2)>512)
+-    {
+-      SBUF2[512]=0;   /* truncate string. Of course, by now we have buffer overrun ;) */
+-    }
 +  va_start(va, format);
-   format=va_arg(va,char *);
-   vsprintf(SBUF2,format,va);
-   if (strlen(SBUF2)>512)
-@@ -2462,7 +2459,7 @@
++  vsnprintf(SBUF2, sizeof(SBUF2),format,va);
+   
+   file_out = fopen(FILE_LOG,"a");
+   if (file_out != NULL)
+@@ -2462,7 +2449,7 @@
      /* Winlist - Returns Winlist */
      if (!strcasecmp(buf,"getwinlist"))
        {
@@ -44,7 +61,7 @@
          for(i=0;i<MAXWINLIST;i++)
            {
              if(winlist[i].inuse)
-@@ -3071,4 +3068,4 @@
+@@ -3071,4 +3058,4 @@
            
          
        }
