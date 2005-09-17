@@ -6,41 +6,50 @@
 #
 
 PORTNAME=	xshisen
-PORTVERSION=	1.36
-PORTREVISION=	1
+PORTVERSION=	1.51
 CATEGORIES=	games
 MASTER_SITES=	http://www.techfirm.co.jp/~masaoki/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shisen-sho puzzle game for X11
 
-BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
-
-# runs fine on ssh connection
-#IS_INTERACTIVE=	YES	# Has to create an app-defaults file
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--datadir="${X11BASE}/lib/X11" \
-		--enable-japanese=euc	#Japanese char set euc, jis sjis
-
-.include <bsd.port.pre.mk>
+CONFIGURE_ARGS=	--sharedstatedir="${DATADIR}"
+INSTALL_TARGET=	install-prog
 
 MANLANG=	"" ja
 MAN6=		xshisen.6
 
+.if !defined(WITHOUT_MOTIF)
+USE_MOTIF=	yes
+CONFIGURE_ARGS+=	--with-motif
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|XSHISEN_VERSION|${PORTVERSION}|g' ${WRKSRC}/lang/XShisen.ad*
+
 post-install:
 	@${CHOWN} root:games ${PREFIX}/bin/xshisen
 	@${CHMOD} 2555 ${PREFIX}/bin/xshisen
-	@${CHOWN} root:games ${PREFIX}/lib/X11/xshisen/xshisen-scores
-	@${CHMOD} 0660 ${PREFIX}/lib/X11/xshisen/xshisen-scores
-	${INSTALL_MAN} ${WRKSRC}/xshisen.man ${PREFIX}/man/man6/xshisen.6
-	@nkf -e < ${WRKSRC}/xshisen.jman-jis \
-	  > ${WRKSRC}/xshisen.jman
-	${INSTALL_MAN} ${WRKSRC}/xshisen.jman ${PREFIX}/man/ja/man6/xshisen.6
-	-test -d ${PREFIX}/lib/X11/ja_JP.EUC/ -a \
+	@${CHOWN} root:games ${DATADIR}/xshisen.scores
+	@${CHMOD} 0660 ${DATADIR}/xshisen.scores
+	${INSTALL_MAN} ${WRKSRC}/man/xshisen.6 \
+		${MAN6PREFIX}/man/man6/xshisen.6
+	${INSTALL_MAN} ${WRKSRC}/man/xshisen.6.ja_JP.eucJP \
+		${MAN6PREFIX}/man/ja/man6/xshisen.6
+	@${MKDIR} ${PREFIX}/lib/X11/app-defaults
+	${INSTALL_DATA} ${WRKSRC}/lang/XShisen.ad \
+		${PREFIX}/lib/X11/app-defaults/XShisen
+	@${MKDIR} ${PREFIX}/lib/X11/ja_JP.eucJP/app-defaults
+	${INSTALL_DATA} ${WRKSRC}/lang/XShisen.ad.ja_JP.eucJP \
+		${PREFIX}/lib/X11/ja_JP.eucJP/app-defaults/XShisen
+	-${TEST} -d ${PREFIX}/lib/X11/ja_JP.EUC/ -a \
 	      -d ${PREFIX}/lib/X11/ja_JP.EUC/app-defaults && \
 		${LN} -s ${PREFIX}/lib/X11/ja_JP.eucJP/app-defaults/XShisen \
-			${PREFIX}/lib/X11/ja_JP.EUC/app-defaults && \
+			${PREFIX}/lib/X11/ja_JP.EUC/app-defaults || ${TRUE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
