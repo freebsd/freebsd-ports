@@ -5,29 +5,36 @@
 # $FreeBSD$
 
 PORTNAME=	sagasu
-PORTVERSION=	2.0.6
-PORTREVISION=	3
+PORTVERSION=	2.0.7
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/ \
 		http://demian.dyndns.org/src/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Sagasu is a GNOME tool to find strings in a set of files
+COMMENT=	A GNOME tool to find strings in a set of files
 
 USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gnomeprefix libgnomeui
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
-USE_GNOME=	gnomehack gnomeprefix libgnomeui
+USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		sagasu.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|[(]datadir[)]/doc/$$(PACKAGE)-$$(VERSION)|(prefix)/share/doc/$$(PACKAGE)|g' \
-		${WRKSRC}/Makefile.in
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-D.*_DISABLE_DEPRECATED||g'
+	@${REINPLACE_CMD} -e \
+		's|: install-docDATA|:|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|-D.*_DISABLE_DEPRECATED||g' ${WRKSRC}/src/Makefile.in
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in AUTHORS INSTALL NEWS README THANKS TODO
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
