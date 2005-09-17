@@ -5,6 +5,11 @@
 # $FreeBSD$
 #
 
+# Maintainer note: to update distinfo for all architectures
+# copy all distfiles into /usr/ports/distfiles and run
+# make "CKSUMFILES=`cd /usr/ports/distfiles && \
+# echo cscout-2.1-neutral.tar.gz cscout-2.1-freebsd-*`" makesum
+
 PORTNAME=	cscout
 PORTVERSION=	2.1
 CATEGORIES=	devel
