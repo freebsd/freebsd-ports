@@ -12,10 +12,8 @@
 %%PFX%%/bin/config/findftnlibs
 %%PFX%%/bin/config/install-sh
 %%PFX%%/bin/configarch
-%%PFX%%/bin/fixtags.py
-%%PFX%%/bin/fixtags.pyc
-%%PFX%%/bin/fixtags.pyo
 %%PFX%%/bin/hostnames.chiba
+%%PFX%%/bin/matlab/PetscBagRead.m
 %%PFX%%/bin/matlab/PetscBinaryRead.m
 %%PFX%%/bin/matlab/PetscBinaryWrite.m
 %%PFX%%/bin/mpiexec.valgrind
@@ -29,7 +27,6 @@
 %%PFX%%/bin/parseargs.pyc
 %%PFX%%/bin/parseargs.pyo
 %%PFX%%/bin/petsc_libtool
-%%PFX%%/bin/petscarch
 %%PFX%%/bin/petscmpirun
 %%PFX%%/bin/popup
 %%PFX%%/bin/taucc.py
@@ -47,43 +44,26 @@
 %%PFX%%/bmake/adic.init
 %%PFX%%/bmake/adicmf.init
 %%PFX%%/bmake/common/base
-%%PFX%%/bmake/common/bopt_
-%%PFX%%/bmake/common/bopt_0
-%%PFX%%/bmake/common/bopt_0_c++
-%%PFX%%/bmake/common/bopt_O
-%%PFX%%/bmake/common/bopt_O_c++
-%%PFX%%/bmake/common/bopt_O_c++_single
-%%PFX%%/bmake/common/bopt_O_complex
-%%PFX%%/bmake/common/bopt_O_matsingle
-%%PFX%%/bmake/common/bopt_O_single
-%%PFX%%/bmake/common/bopt_g
-%%PFX%%/bmake/common/bopt_g_c++
-%%PFX%%/bmake/common/bopt_g_c++_single
-%%PFX%%/bmake/common/bopt_g_complex
-%%PFX%%/bmake/common/bopt_g_matsingle
-%%PFX%%/bmake/common/bopt_g_single
 %%PFX%%/bmake/common/rules
 %%PFX%%/bmake/common/rules.fortran.cpp
 %%PFX%%/bmake/common/rules.fortran.nocpp
 %%PFX%%/bmake/common/rules.fortran.none
 %%PFX%%/bmake/common/rules.shared.basic
-%%PFX%%/bmake/common/rules.shared.darwin7
-%%PFX%%/bmake/common/sedcmdforfortranstubs
 %%PFX%%/bmake/common/test
 %%PFX%%/bmake/common/variables
+%%PFX%%/bmake/%%TARGET%%/RDict.db
 %%PFX%%/bmake/%%TARGET%%/configure.py
 %%PFX%%/bmake/%%TARGET%%/configure.pyc
 %%PFX%%/bmake/%%TARGET%%/configure.pyo
 %%PFX%%/bmake/%%TARGET%%/ejobs
 %%PFX%%/bmake/%%TARGET%%/jobs
-%%PFX%%/bmake/%%TARGET%%/packages
+%%PFX%%/bmake/%%TARGET%%/petscconf
 %%PFX%%/bmake/%%TARGET%%/petscconf.h
 %%PFX%%/bmake/%%TARGET%%/petscfix.h
 %%PFX%%/bmake/%%TARGET%%/petscmachineinfo.h
+%%PFX%%/bmake/%%TARGET%%/petscrules
 %%PFX%%/bmake/%%TARGET%%/rjobs
-%%PFX%%/bmake/%%TARGET%%/rules
-%%PFX%%/bmake/%%TARGET%%/variables
-%%PFX%%/bmake/variables
+%%PFX%%/bmake/petscconf
 %%PFX%%/include/adic/ad_deriv.h
 %%PFX%%/include/adic/ad_deriv.h.html
 %%PFX%%/include/adic/ad_grad.h
@@ -115,6 +95,7 @@
 %%PFX%%/include/f90impl/f90_alpha.h
 %%PFX%%/include/f90impl/f90_alpha.h.html
 %%PFX%%/include/f90impl/f90_cray_x1.h
+%%PFX%%/include/f90impl/f90_g95.h
 %%PFX%%/include/f90impl/f90_hpux.h
 %%PFX%%/include/f90impl/f90_hpux.h.html
 %%PFX%%/include/f90impl/f90_intel.h
@@ -187,15 +168,27 @@
 %%PFX%%/include/mpiuni/mpif.h.html
 %%PFX%%/include/petsc.h
 %%PFX%%/include/petsc.h.html
+%%PFX%%/include/petsc/petsc.h
+%%PFX%%/include/petsc/vec.h
 %%PFX%%/include/petscadic.h
 %%PFX%%/include/petscao.h
 %%PFX%%/include/petscao.h.html
+%%PFX%%/include/petscbag.h
+%%PFX%%/include/petscbag.h.html
 %%PFX%%/include/petscblaslapack.h
 %%PFX%%/include/petscblaslapack.h.html
+%%PFX%%/include/petscblaslapack_c.h
+%%PFX%%/include/petscblaslapack_caps.h
+%%PFX%%/include/petscblaslapack_cptofcd.h
+%%PFX%%/include/petscblaslapack_stdcall.h
+%%PFX%%/include/petscblaslapack_uscore.h
 %%PFX%%/include/petscbt.h
 %%PFX%%/include/petscbt.h.html
+%%PFX%%/include/petscctable.h
 %%PFX%%/include/petscda.h
 %%PFX%%/include/petscda.h.html
+%%PFX%%/include/petscdmmg.h
+%%PFX%%/include/petscdmmg.h.html
 %%PFX%%/include/petscdraw.h
 %%PFX%%/include/petscdraw.h.html
 %%PFX%%/include/petscerror.h
@@ -238,25 +231,18 @@
 %%PFX%%/include/petscviewer.h.html
 %%PFX%%/include/vecimpl.h
 %%PFX%%/include/vecimpl.h.html
-%%PFX%%/lib/libO/%%TARGET%%/libmpiuni.a
-%%PFX%%/lib/libO/%%TARGET%%/libpetsc.a
-%%PFX%%/lib/libO/%%TARGET%%/libpetsc.so
-%%PFX%%/lib/libO/%%TARGET%%/libpetscdm.a
-%%PFX%%/lib/libO/%%TARGET%%/libpetscdm.so
-%%MPI%%%%PFX%%/lib/libO/%%TARGET%%/libpetscfortran.a
-%%PFX%%/lib/libO/%%TARGET%%/libpetscksp.a
-%%PFX%%/lib/libO/%%TARGET%%/libpetscksp.so
-%%PFX%%/lib/libO/%%TARGET%%/libpetscmat.a
-%%PFX%%/lib/libO/%%TARGET%%/libpetscmat.so
-%%PFX%%/lib/libO/%%TARGET%%/libpetscsnes.a
-%%PFX%%/lib/libO/%%TARGET%%/libpetscsnes.so
-%%PFX%%/lib/libO/%%TARGET%%/libpetscts.a
-%%PFX%%/lib/libO/%%TARGET%%/libpetscts.so
-%%PFX%%/lib/libO/%%TARGET%%/libpetscvec.a
-%%PFX%%/lib/libO/%%TARGET%%/libpetscvec.so
-@dirrm %%PFX%%/lib/libO/%%TARGET%%
-@dirrm %%PFX%%/lib/libO
+%%PFX%%/lib/%%TARGET%%/libmpiuni.a
+%%PFX%%/lib/%%TARGET%%/libpetsc.a
+%%PFX%%/lib/%%TARGET%%/libpetscdm.a
+%%MPI%%%%PFX%%/lib/%%TARGET%%/libpetscfortran.a
+%%PFX%%/lib/%%TARGET%%/libpetscksp.a
+%%PFX%%/lib/%%TARGET%%/libpetscmat.a
+%%PFX%%/lib/%%TARGET%%/libpetscsnes.a
+%%PFX%%/lib/%%TARGET%%/libpetscts.a
+%%PFX%%/lib/%%TARGET%%/libpetscvec.a
+@dirrm %%PFX%%/lib/%%TARGET%%
 @dirrm %%PFX%%/lib
+@dirrm %%PFX%%/include/petsc
 @dirrm %%PFX%%/include/mpiuni
 @dirrm %%PFX%%/include/finclude
 @dirrm %%PFX%%/include/f90impl
