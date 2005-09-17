@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Module/Reload/Selective.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Reload/Selective/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Reload/Selective
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Reload 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Module/Reload 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Module 2>/dev/null || true

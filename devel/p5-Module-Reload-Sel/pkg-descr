@@ -1,0 +1,10 @@
+Utility for module developers to selectively reload needed modules
+and/or conditionally augment @INC with additional, per-developer
+library directories, at development time based on environment
+variables.
+
+Particularly helpful in conjunction with mod_perl applications where
+some or all application logic resides in separate Perl modules that
+would otherwise not get reloaded until the server restarts.
+
+WWW: http://search.cpan.org/dist/Module-Reload-Sel/
