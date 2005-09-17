@@ -5,10 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xmms-openspc
+PORTNAME=	openspc
 PORTVERSION=	0.0.3
 CATEGORIES=	audio
-MASTER_SITES=	http://staff.xmms.org/zinx/misc/tmp/
+MASTER_SITES=	http://critical.ch/distfiles/ \
+		http://staff.xmms.org/zinx/misc/tmp/
+PKGNAMEPREFIX=	xmms-
 DISTNAME=	xmms-OpenSPC-${PORTVERSION}
 
 MAINTAINER=	ehaupt@critical.ch
