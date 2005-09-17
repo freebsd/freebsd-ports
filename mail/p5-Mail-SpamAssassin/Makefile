@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	3.0.4
+PORTVERSION=	3.1.0
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
@@ -27,10 +27,11 @@ CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
 		BUILD_SPAMC=yes RUN_NET_TESTS=yes
 
 OPTIONS=	AS_ROOT "Run spamd as root (recommended)" on \
+		DOMAINKEYS "DomainKeys support" off \
 		SSL "Build with SSL support for spamd/spamc" on \
 		MYSQL "Add MySQL support" off \
 		PGSQL "Add PostreSQL support" off \
-		RAZOR "Add Vipul's Razor support" on \
+		RAZOR "Add Vipul's Razor support" off \
 		SPF_QUERY "Add SPF query support" off \
 		TOOLS "Install SpamAssassin tools" off
 
@@ -53,16 +54,18 @@ CONFIGURE_ARGS+=	ENABLE_SSL=no
 
 .if defined(WITH_MYSQL)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
-USE_SQLDB=	yes
 .endif
 
 .if defined(WITH_PGSQL)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
-USE_SQLDB=	yes
 .endif
 
-.if !defined(WITHOUT_RAZOR)
+.if defined(WITH_RAZOR)
 RUN_DEPENDS+=	razor-client:${PORTSDIR}/mail/razor-agents
+.endif
+
+.if defined(WITH_DOMAINKEYS)
+RUN_DEPENDS+=	${SITE_PERL}/Mail/DomainKeys.pm:${PORTSDIR}/mail/p5-Mail-DomainKeys
 .endif
 
 .if defined(WITH_TOOLS)
@@ -79,11 +82,19 @@ MAN3=		Mail::SpamAssassin.3 \
 		Mail::SpamAssassin::AutoWhitelist.3 \
 		Mail::SpamAssassin::Bayes.3 \
 		Mail::SpamAssassin::BayesStore.3 \
+		Mail::SpamAssassin::BayesStore::MySQL.3 \
+		Mail::SpamAssassin::BayesStore::PgSQL.3 \
 		Mail::SpamAssassin::BayesStore::SQL.3 \
+		Mail::SpamAssassin::Client.3 \
 		Mail::SpamAssassin::Conf.3 \
 		Mail::SpamAssassin::Conf::LDAP.3 \
 		Mail::SpamAssassin::Conf::Parser.3 \
 		Mail::SpamAssassin::Conf::SQL.3 \
+		Mail::SpamAssassin::DnsResolver.3 \
+		Mail::SpamAssassin::Logger.3 \
+		Mail::SpamAssassin::Logger::File.3 \
+		Mail::SpamAssassin::Logger::Stderr.3 \
+		Mail::SpamAssassin::Logger::Syslog.3 \
 		Mail::SpamAssassin::Message.3 \
 		Mail::SpamAssassin::Message::Metadata.3 \
 		Mail::SpamAssassin::Message::Node.3 \
@@ -91,14 +102,33 @@ MAN3=		Mail::SpamAssassin.3 \
 		Mail::SpamAssassin::PerMsgStatus.3 \
 		Mail::SpamAssassin::PersistentAddrList.3 \
 		Mail::SpamAssassin::Plugin.3 \
+		Mail::SpamAssassin::Plugin::AWL.3 \
+		Mail::SpamAssassin::Plugin::AccessDB.3 \
+		Mail::SpamAssassin::Plugin::AntiVirus.3 \
+		Mail::SpamAssassin::Plugin::AutoLearnThreshold.3 \
+		Mail::SpamAssassin::Plugin::DCC.3 \
+		Mail::SpamAssassin::Plugin::DomainKeys.3 \
 		Mail::SpamAssassin::Plugin::Hashcash.3 \
+		Mail::SpamAssassin::Plugin::MIMEHeader.3 \
+		Mail::SpamAssassin::Plugin::Pyzor.3 \
+		Mail::SpamAssassin::Plugin::Razor2.3 \
 		Mail::SpamAssassin::Plugin::RelayCountry.3 \
+		Mail::SpamAssassin::Plugin::ReplaceTags.3 \
 		Mail::SpamAssassin::Plugin::SPF.3 \
+		Mail::SpamAssassin::Plugin::SpamCop.3 \
+		Mail::SpamAssassin::Plugin::Test.3 \
+		Mail::SpamAssassin::Plugin::TextCat.3 \
 		Mail::SpamAssassin::Plugin::URIDNSBL.3 \
+		Mail::SpamAssassin::Plugin::WhiteListSubject.3 \
 		Mail::SpamAssassin::PluginHandler.3 \
-		Mail::SpamAssassin::SQLBasedAddrList.3
+		Mail::SpamAssassin::SQLBasedAddrList.3 \
+		Mail::SpamAssassin::SubProcBackChannel.3 \
+		Mail::SpamAssassin::Util.3 \
+		Mail::SpamAssassin::Util::Progress.3 \
+		spamassassin-run.3
 
-MAN1=		spamd.1 spamassassin.1 spamc.1 sa-learn.1
+MAN1=		spamd.1 spamassassin.1 spamc.1 sa-learn.1 sa-update.1 \
+		spamassassin-run.1
 
 PLIST_SUB+=	TOOLS=${TOOLS}
 
@@ -113,7 +143,7 @@ PORTDOCS=	${DOCS} sql contrib ldap
 USE_RC_SUBR=	yes
 SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%RC_SUBR%%|${RC_SUBR}|g'
-.if defined(USE_SQLDB)
+.if defined(WITH_MYSQL) || defined(WITH_PGSQL)
 SED_SCRIPT+=	-e 's|%%SQL_FLAG%%|-Q|g'
 .else
 SED_SCRIPT+=	-e 's|%%SQL_FLAG%%||g'
@@ -126,11 +156,16 @@ SED_SCRIPT+=	-e 's|%%RUN_AS_USER%%||g'
 
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete
-	@${SED} -e 's#B_CONFDIR)/local.cf#B_CONFDIR)/local.cf.sample#g' \
+	@${REINPLACE_CMD} -e 's#B_CONFDIR)/local.cf#B_CONFDIR)/local.cf.sample#g' \
 		-e 's#B_CONFDIR)/init.pre#B_CONFDIR)/init.pre.sample#g' \
 		-e 's/require DBI/0/' \
-		${WRKSRC}/Makefile.PL > ${WRKSRC}/Makefile.PL.sed
-	@${MV} ${WRKSRC}/Makefile.PL.sed ${WRKSRC}/Makefile.PL
+		${WRKSRC}/Makefile.PL
+.if defined(WITH_RAZOR)
+	${REINPLACE_CMD} -e '/Razor2/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v310.pre
+.endif
+.if defined(WITH_DOMAINKEYS)
+	${REINPLACE_CMD} -e '/DomainKeys/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v310.pre
+.endif
 
 post-build:
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/spamd.sh > ${WRKDIR}/sa-spamd.sh
