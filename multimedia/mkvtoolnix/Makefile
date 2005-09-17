@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.6
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		http://www.bunkus.org/videotools/mkvtoolnix/sources/old/
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libmatroska.a:${PORTSDIR}/multimedia/libmatroska
 		${LOCALBASE}/lib/libebml.a:${PORTSDIR}/textproc/libebml
 LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		expat.5:${PORTSDIR}/textproc/expat2 \
+		lzo.1:${PORTSDIR}/archivers/lzo \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
@@ -30,6 +31,30 @@ CONFIGURE_ARGS=	--with-extra-includes=${LOCALBASE}/include \
 
 MAN1=		base64tool.1 mkvextract.1 mkvinfo.1 mkvmerge.1
 PLIST_FILES=	bin/base64tool bin/mkvextract bin/mkvinfo bin/mkvmerge
+
+# data files
+FILES_DATA=	\
+		mkvmerge-gui.hhc \
+		mkvmerge-gui.hhk \
+		mkvmerge-gui.hhp \
+		mkvmerge-gui.html \
+		addingremovingattachments.gif \
+		addremovefiles.gif \
+		attachmentoptions.gif \
+		audiotrackoptions.gif \
+		chaptereditor.gif \
+		jobmanager.gif \
+		movietitle.gif \
+		muxingwindow.gif \
+		selectmkvmergeexecutable.gif \
+		splitting.gif \
+		textsubtitlestrackoptions.gif \
+		trackselection.gif \
+		videotrackoptions.gif
+PLIST_DIRS+=	%%DATADIR%%
+.for file in ${FILES_DATA}
+PLIST_FILES+=	%%DATADIR%%/${file}
+.endfor
 
 WXGTK_CONFIG=	wxgtk2-2.4-config
 
@@ -68,5 +93,8 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' \
 		${WRKSRC}/src/common/os.cpp
+
+pre-install:
+	@${MKDIR} ${DATADIR}
 
 .include <bsd.port.post.mk>
