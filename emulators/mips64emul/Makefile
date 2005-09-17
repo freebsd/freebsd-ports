@@ -13,6 +13,8 @@ MASTER_SITES=	http://gavare.se/mips64emul/src/
 
 MAINTAINER=	jmallett@FreeBSD.org
 COMMENT=	A 64-bit MIPS emulator which emulates a variety of machines
+DEPRECATED=	"port does not fetch, and is supplanted by emulators/gxemul"
+EXPIRATION_DATE=	2005-10-16
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--nox11
