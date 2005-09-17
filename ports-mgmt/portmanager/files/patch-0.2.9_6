@@ -1,0 +1,10 @@
+--- ../0.2.9_5/libPMGR/src/PMGRrReadConfigure.c	Fri Jul 29 12:55:01 2005
++++ libPMGR/src/PMGRrReadConfigure.c	Sat Sep 17 07:54:36 2005
+@@ -189,6 +189,7 @@
+ 	/*zzzzzzzzzzzzzz*/
+ 
+ 	fread( buffer, configDbFileSize, 1, configDbStream ); 
++	buffer[configDbFileSize]	= 0;	/* so buffer may be treated as a string */
+ 
+ 	/*zzzzzzzzzzzzzz*/
+ 	fopenIdx--;
