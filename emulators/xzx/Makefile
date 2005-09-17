@@ -8,7 +8,7 @@
 PORTNAME=	xzx
 PORTVERSION=	4.5
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.zx-spectrum.net/xzx/files/
+MASTER_SITES=	http://mitglied.lycos.de/suppentops123/spectrum/xzx/
 DISTNAME=	${PORTNAME}-pro-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
