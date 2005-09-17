@@ -31,14 +31,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--enable-interface=ncurses,vt100,server
 CONFIGURE_ARGS+=--program-transform-name= --enable-network
 
-.if ${.CURDIR} == ${MASTERDIR}
-MANLANG=	"" ja
-MAN1=		timidity.1
-MAN5=		timidity.cfg.5
-.else
-RUN_DEPENDS+=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++
-.endif
-
 PLIST_SUB=	EUCJP_LOCALE=${EUCJP_LOCALE} TIMID_LIBDIR=${TIMID_LIBDIR} \
 		ELISPDIR=share/emacs/site-lisp
 
@@ -48,6 +40,14 @@ DOCLANG?=	C ja_JP.eucJP
 TIMID_LIBDIR=	lib/timidity
 
 .include <bsd.port.pre.mk>
+
+.if ${.CURDIR} == ${MASTERDIR}
+MANLANG=	"" ja
+MAN1=		timidity.1
+MAN5=		timidity.cfg.5
+.else
+RUN_DEPENDS+=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++
+.endif
 
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=--without-x --disable-spectrogram --disable-wrd --disable-dynamic
