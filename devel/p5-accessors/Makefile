@@ -1,0 +1,32 @@
+# New ports collection makefile for:	p5-accessors
+# Date created:				17 September 2005
+# Whom:	      				Yen-Ming Lee <leeym@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	accessors
+PORTVERSION=	0.02
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	../by-authors/id/S/SP/SPURKIS
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	leeym@FreeBSD.org
+COMMENT=	Create accessor methods in caller's package #'
+
+PERL_MODBUILD=	yes
+
+MAN3=		accessors.3 accessors::chained.3 accessors::classic.3
+
+PLIST_FILES=	${SITE_PERL_REL}/accessors.pm ${SITE_PERL_REL}/accessors/chained.pm \
+		${SITE_PERL_REL}/accessors/classic.pm
+PLIST_DIRS=	${SITE_PERL_REL}/accessors
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or above
+.endif
+
+.include <bsd.port.post.mk>
