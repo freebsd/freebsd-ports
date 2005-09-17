@@ -1,16 +1,27 @@
 *****************************************************************
+Before using Gallery 2, you will need to configure your database.
+Full instructions are available here:
 
- Please consider adding the following 3 lines to your httpd.conf
-	
-	<Directory %%PREFIX%%/%%GALLERYDIR%%>
-		AllowOverride Options FileInfo
-	</Directory>
+  http://cvs.sourceforge.net/viewcvs.py/*checkout*/gallery/gallery2/README.html
 
- Then restart apache: 'apachectl graceful'
+If you are using MySQL, here's the short version of the instructions:
 
-*****************************************************************
+  1. Create a new database:
+  $ mysqladmin -uroot create gallery2 
 
- Please visit 'http://{host.domain}/gallery/' in a
- web-browser and follow the configuration instructions.
+  2. Grant access to the database:
+  $ mysql -uroot -e"GRANT ALL ON gallery2.* TO USERNAME@localhost IDENTIFIED BY 'PASSWORD'" gallery2
+  (choose your own values for USERNAME and PASSWORD)
 
+You will also need to configure Apache.  Consider adding the following
+to your httpd.conf:
+
+    <Directory %%PREFIX%%/%%GALLERYDIR%%>
+        AllowOverride Options FileInfo
+    </Directory>
+
+Then restart Apache: 'apachectl graceful'
+
+Please visit 'http://{host.domain}/%%GALLERYDIR%%/' in a
+web-browser and follow the configuration instructions.
 *****************************************************************

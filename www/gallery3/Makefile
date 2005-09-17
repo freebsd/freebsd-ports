@@ -1,113 +1,56 @@
-# New ports collection makefile for:   gallery
-# Date created:                09 Sep 2001
-# Whom:                        Jamie Hermans <jamie@hermans.ca>
+# New ports collection makefile for:   gallery2
+# Date created:                29 Aug 2005
+# Whom:                        Alex Varju <freebsd-ports@varju.ca>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gallery
-PORTVERSION=	1.5.0.1
+PORTNAME=	gallery2
+PORTVERSION=	2.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.0.1$/-pl1/}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${LANGPACKS}
-DIST_SUBDIR=	gallery
+MASTER_SITE_SUBDIR=	gallery
+DISTNAME=	gallery-2.0-full
+DIST_SUBDIR=	gallery2
 
 MAINTAINER=	freebsd-ports@varju.ca
-COMMENT=	A slick web based photo album written using PHP
+COMMENT=	Gallery is a web based photo album written using PHP
 
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm \
 		jhead:${PORTSDIR}/graphics/jhead \
-		unzip:${PORTSDIR}/archivers/unzip
+		unzip:${PORTSDIR}/archivers/unzip \
+		convert:${PORTSDIR}/graphics/ImageMagick
 
-USE_PHP=	pcre session
+USE_PHP=	pcre session mysql
 WANT_PHP_WEB=	yes
 
-.if !defined(WITHOUT_NLS)
-USE_PHP+=	gettext
-LANGVERSION=	1.5-RC2
-
-LANGPACKS=	af_ZA-${LANGVERSION}${EXTRACT_SUFX} \
-		bg_BG-${LANGVERSION}${EXTRACT_SUFX} \
-		ca_ES-${LANGVERSION}${EXTRACT_SUFX} \
-		cs_CZ.iso-8859-2-${LANGVERSION}${EXTRACT_SUFX} \
-		da_DK-${LANGVERSION}${EXTRACT_SUFX} \
-		de_DE-${LANGVERSION}${EXTRACT_SUFX} \
-		en_GB-${LANGVERSION}${EXTRACT_SUFX} \
-		es_ES-${LANGVERSION}${EXTRACT_SUFX} \
-		fi_FI-${LANGVERSION}${EXTRACT_SUFX} \
-		fr_FR-${LANGVERSION}${EXTRACT_SUFX} \
-		gl_ES-${LANGVERSION}${EXTRACT_SUFX} \
-		hu_HU-${LANGVERSION}${EXTRACT_SUFX} \
-		is_IS-${LANGVERSION}${EXTRACT_SUFX} \
-		it_IT-${LANGVERSION}${EXTRACT_SUFX} \
-		ja_JP-${LANGVERSION}${EXTRACT_SUFX} \
-		ko_KR-${LANGVERSION}${EXTRACT_SUFX} \
-		lt_LT-${LANGVERSION}${EXTRACT_SUFX} \
-		nl_NL-${LANGVERSION}${EXTRACT_SUFX} \
-		no_NO-${LANGVERSION}${EXTRACT_SUFX} \
-		pl_PL-${LANGVERSION}${EXTRACT_SUFX} \
-		pt_BR-${LANGVERSION}${EXTRACT_SUFX} \
-		pt_PT-${LANGVERSION}${EXTRACT_SUFX} \
-		ru_RU.cp1251-${LANGVERSION}${EXTRACT_SUFX} \
-		ru_RU.koi8r-${LANGVERSION}${EXTRACT_SUFX} \
-		sk_SK-${LANGVERSION}${EXTRACT_SUFX} \
-		sl_SI-${LANGVERSION}${EXTRACT_SUFX} \
-		sv_SE-${LANGVERSION}${EXTRACT_SUFX} \
-		tr_TR-${LANGVERSION}${EXTRACT_SUFX} \
-		vi_VN-${LANGVERSION}${EXTRACT_SUFX} \
-		zh_HK-${LANGVERSION}${EXTRACT_SUFX} \
-		zh_HK.utf8-${LANGVERSION}${EXTRACT_SUFX} \
-		zh_TW-${LANGVERSION}${EXTRACT_SUFX}
-PLIST_SUB=		NLS=""
-.else
-PLIST_SUB=		NLS="@comment "
-.endif
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${DIST_SUBDIR}
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
-PORTDOCS=	AUTHORS ChangeLog README
-EXCEPTFILES=	${PORTDOCS} LICENSE.txt
 CPIOARGS=	--quiet -pdum -R
-PLIST_SUB+=	GALLERYDIR=${GALLERYDIR}
+PLIST_SUB+=	GALLERY2DIR=${GALLERY2DIR}
 
 pre-fetch:
-.if !defined(GALLERYDIR)
+.if !defined(GALLERY2DIR)
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Define GALLERYDIR to override default of 'www/data/gallery'."
+	@${ECHO_MSG} "Define GALLERY2DIR to override default of '${GALLERY2DIR}'."
 	@${ECHO_MSG} ""
 .endif
 
-GALLERYDIR?=	www/data/gallery
+GALLERY2DIR?=	www/data/gallery2
 WWWOWN?=	www
 WWWGRP?=	www
 
 post-configure:
 	@ ${SED} -e 's#%%PREFIX%%#${PREFIX}#g' \
-	  -e 's#%%GALLERYDIR%%#${GALLERYDIR}#g' pkg-message > ${PKGMESSAGE}
-
-do-extract:
-	@ ${MKDIR} ${WRKDIR}
-	@ cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS}
-	@ for i in ${LANGPACKS}; do \
-		if ! (cd ${WRKDIR}/gallery/locale && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$i ${EXTRACT_AFTER_ARGS});\
-		then \
-			exit 1; \
-		fi \
-	done
+	  -e 's#%%GALLERY2DIR%%#${GALLERY2DIR}#g' pkg-message > ${PKGMESSAGE}
 
 do-install:
-	@ ${MKDIR} -m 0755 ${PREFIX}/${GALLERYDIR}
-	@ cd ${WRKSRC} && ${FIND} * -name \*.bat -o -name \*.orig -o -name \*Changelog ${EXCEPTFILES:S/^/-o -name /} \
-	  -o -print | ${CPIO} ${CPIOARGS} ${WWWOWN}:${WWWGRP} ${PREFIX}/${GALLERYDIR}
+	@ ${MKDIR} -m 0755 ${PREFIX}/${GALLERY2DIR}
+	@ cd ${WRKSRC} && ${FIND} * -print | ${CPIO} ${CPIOARGS} ${WWWOWN}:${WWWGRP} ${PREFIX}/${GALLERY2DIR}
+	@ ${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${GALLERY2DIR}
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}
-	@ cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
 .if !defined(BATCH)
 	@ ${CAT} ${PKGMESSAGE}
 .endif
