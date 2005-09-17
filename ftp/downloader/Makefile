@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	downloader
-PORTVERSION=	2.5.4
+PORTVERSION=	2.5.5
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.krasu.ru/soft/chuchelo/files/ \
 		ftp://ftp.chg.ru/pub/X11/applications/Xdownloader/
@@ -47,8 +47,17 @@ post-patch:
 		 s|-lpthread||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's| DOC||g ; \
 		 s| share||g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|MUTEX_TYPE_FAST|PTHREAD_MUTEX_NORMAL|g' \
-		${WRKSRC}/main/signal.cc
+.if ${OSVERSION} < 500000
+.for file in main/addr.cc main/dlist.cc main/ftpd.cc main/face/mywidget.cc
+	@${REINPLACE_CMD} -e 's|pass\.clear()|pass = ""|g ; \
+		 s|user\.clear()|user = ""|g ; \
+		 s|host\.clear()|host = ""|g ; \
+		 s|file\.clear()|file = ""|g ; \
+		 s|params\.clear()|params = ""|g ; \
+		 s|tag\.clear()|tag = ""|g ; \
+		 s|path\.clear()|path = ""|g' ${WRKSRC}/${file}
+.endfor
+.endif
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/DOC/nt.1 ${MANPREFIX}/man/man1
