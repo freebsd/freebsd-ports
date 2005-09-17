@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqwebmail
-PORTVERSION=	5.0.4
+PORTVERSION=	5.0.5
 PORTREVISION=	0
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -19,6 +19,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 
 BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 OPTIONS=	CACHEDIR	"Cache logins"					on \
 		GZIP		"Compress messages with gzip"			on \
@@ -188,6 +189,15 @@ CONFIGURE_ARGS+=        --enable-maxpurge=${WITH_MAXPURGE}
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|LIBPCRE=-lpcre|LIBPCRE="-L${LOCALBASE}/lib -lpcre"|g' \
+		${WRKSRC}/maildir/configure
+
+	@${REINPLACE_CMD} -e 's|-lpcre|-L${LOCALBASE}/lib &|g' \
+		 ${WRKSRC}/sqwebmail/Makefile.in
+
+	@${REINPLACE_CMD} -e 's|\$$(testmaildirfilter_LDADD)|& \$$(LIBPCRE)|g' \
+		${WRKSRC}/maildir/Makefile.in
+
 	@${REINPLACE_CMD} -e 's|^case x$$lockmethod in|${TEST} \&\& &|g' \
 		${WRKSRC}/liblock/configure
 
