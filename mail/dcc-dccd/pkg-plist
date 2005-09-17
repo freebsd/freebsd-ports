@@ -1,4 +1,5 @@
 bin/cdcc
+bin/dccif-test
 bin/dccproc
 dcc/cgi-bin/README
 dcc/cgi-bin/chgpasswd

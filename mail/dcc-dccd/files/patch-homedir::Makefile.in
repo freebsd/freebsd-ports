@@ -1,9 +1,9 @@
 --- homedir/Makefile.in.orig	Tue Aug  2 18:04:26 2005
-+++ homedir/Makefile.in	Tue Aug  2 18:05:28 2005
++++ homedir/Makefile.in	Sat Sep 17 13:42:56 2005
 @@ -45,11 +45,7 @@
  	  $(HINSTALL) -m 755 -d $(INST_HOMEDIR); fi
  	if test ! -d $(INST_HOMEDIR)/log; then \
- 	  $(HINSTALL) -m 711 -d $(INST_HOMEDIR)/log; fi
+ 	  $(HINSTALL) -m 710 -d $(INST_HOMEDIR)/log; fi
 -	if test -s $(INST_HOMEDIR)/dcc_conf; then \
 -	  sh make-dcc_conf -h $(INST_HOMEDIR); \
 -	else \
