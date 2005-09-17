@@ -370,7 +370,7 @@ MASTER_SITE_FEDORA_LINUX+= \
 	ftp://ftp.rhd.ru/pub/fedora/linux/core/%SUBDIR%/ \
 	http://ftp.mrtech.ru/pub/mirror/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.mrtech.ru/pub/mirror/fedora/linux/core/%SUBDIR%/ \
-	http://fedora.officepark.ru%SUBDIR%/ \
+	http://fedora.officepark.ru/%SUBDIR%/ \
 	ftp://fedora.officepark.ru/%SUBDIR%/ \
 	http://mirror.etf.bg.ac.yu/fedora/linux/core/%SUBDIR%/ \
 	ftp://mirror.etf.bg.ac.yu/fedora/linux/core/%SUBDIR%/ \
