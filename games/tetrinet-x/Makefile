@@ -7,6 +7,7 @@
 
 PORTNAME=	tetrinet-x
 PORTVERSION=	1.13.16
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.giovannelli.it/~gmarco/files/ \
 	     	ftp://ftp.dementia.nu/tetrinet/servers/tetrix/
