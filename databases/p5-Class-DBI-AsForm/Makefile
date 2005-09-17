@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Class-DBI-AsForm
-PORTVERSION=	2.41
+PORTVERSION=	2.42
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -27,6 +27,8 @@ MAN3=		Class::DBI::AsForm.3
 
 .if ${PERL_LEVEL} < 500600
 EXTRA_PATCHES=	${PATCHDIR}/500503-AsForm.pm
+post-patch:
+		@${RM} ${WRKSRC}/lib/Class/DBI/AsForm.pm.orig
 .endif
 
 .include <bsd.port.post.mk>
