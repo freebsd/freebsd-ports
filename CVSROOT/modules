@@ -13574,6 +13574,7 @@ zonenotify	ports/dns/zonenotify
 zoo		ports/archivers/zoo
 zoom		ports/games/zoom
 zope		ports/www/zope
+zope28		ports/www/zope28
 zope-FileSystemSite	ports/www/zope-FileSystemSite
 zope-annotations	ports/www/zope-annotations
 zope-archetypes	ports/www/zope-archetypes
