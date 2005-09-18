@@ -8,9 +8,9 @@
 PORTNAME=	wmnetmon
 PORTVERSION=	0.2p5
 CATEGORIES=	net windowmaker
-MASTER_SITES=	http://www.alvie.com/download/wmnetmon/
+MASTER_SITES=	http://www.linuks.mine.nu/dockapps/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xride@x12.dk
 COMMENT=	A host availability monitor intended for the WindowMaker dock
 
 USE_X_PREFIX=	yes
