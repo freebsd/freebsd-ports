@@ -4,6 +4,7 @@ www/cgi-bin/wiliki2.cgi.dist
 www/data/wiliki.css
 www/data/wiliki2.css
 @unexec rmdir %D/www/data 2>/dev/null || true
+share/gauche/site/lib/.packages/WiLiKi.gpd
 share/gauche/site/lib/wiliki.scm
 share/gauche/site/lib/wiliki/db.scm
 share/gauche/site/lib/wiliki/edit.scm
@@ -16,6 +17,7 @@ share/gauche/site/lib/wiliki/msgs.jp
 share/gauche/site/lib/wiliki/pasttime.scm
 share/gauche/site/lib/wiliki/rss.scm
 share/gauche/site/lib/wiliki/rssmix.scm
+share/gauche/site/lib/wiliki/scr-macros.scm
 share/gauche/site/lib/wiliki/util.scm
 share/gauche/site/lib/wiliki/version.scm
 @dirrm share/gauche/site/lib/wiliki
