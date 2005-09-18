@@ -1,0 +1,7 @@
+GasTeX is a set of LaTeX macros which allow to draw very easily
+graphs, automata, nets, diagrams, etc... under the picture environment
+of LaTeX. A picture with gastex basically consists of nodes and
+edges. Here are a few examples of pictures that are easily defined
+with gastex.
+
+WWW:	http://www.lsv.ens-cachan.fr/~gastin/gastex/gastex.html

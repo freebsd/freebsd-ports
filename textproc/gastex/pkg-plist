@@ -1,0 +1,8 @@
+share/texmf/tex/latex/gastex/gastex.sty
+share/texmf/dvips/gastex/gastex.pro
+%%EXAMPLESDIR%%/ex-gastex.tex
+@dirrm share/texmf/tex/latex/gastex
+@dirrm share/texmf/dvips/gastex
+@dirrm %%EXAMPLESDIR%%
+@exec %D/bin/mktexlsr
+@unexec %D/bin/mktexlsr
