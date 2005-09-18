@@ -381,6 +381,7 @@ share/timidity/timidity.cfg
 @dirrm %%DATADIR%%/gsdrum08
 @dirrm %%DATADIR%%/ethnic
 @dirrm %%DATADIR%%
+@unexec rmdir %D/share/timidity 2>/dev/null || true 
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/wime
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/power
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/gsdrum40
