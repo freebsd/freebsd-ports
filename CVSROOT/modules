@@ -4473,6 +4473,7 @@ jade		ports/textproc/jade
 jadetex		ports/print/jadetex
 jaf		ports/java/jaf
 jags		ports/net/jags
+jahshaka	ports/multimedia/jahshaka
 jai		ports/java/jai
 jai-imageio	ports/java/jai-imageio
 jailadmin	ports/sysutils/jailadmin
