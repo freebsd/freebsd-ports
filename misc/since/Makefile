@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	since
-PORTVERSION=	0.3
+PORTVERSION=	0.5
 CATEGORIES=	misc
-MASTER_SITES=	http://keyserver.kjsl.com/~jharris/distfiles/ \
-		ftp://jade.cs.uct.ac.za/pub/
+MASTER_SITES=	ftp://jade.cs.uct.ac.za/pub/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	View the end of a file like tail(1), but save state between sessions
