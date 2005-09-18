@@ -15,6 +15,7 @@
     SUBDIR += amanda-server
     SUBDIR += argparse
     SUBDIR += asbutton
+    SUBDIR += asciiquarium
     SUBDIR += asr-manpages
     SUBDIR += astrolog
     SUBDIR += bb
