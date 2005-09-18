@@ -216,6 +216,7 @@
     SUBDIR += heirloom
     SUBDIR += highlnk
     SUBDIR += hourglass
+    SUBDIR += hoz
     SUBDIR += httplog
     SUBDIR += i855vidctl10
     SUBDIR += idled
