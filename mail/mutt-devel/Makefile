@@ -28,9 +28,9 @@
 #  WITH_MUTT_HTML
 #  This is a default knob and can be disabled by WITHOUT_MUTT_HTML
 #
-# If you do not want that the documentation is rebuilt using sgmlformat
+# If you do not want that the documentation is rebuilt using the xml tools
 # define:
-#  WITHOUT_MUTT_SGMLFORMAT
+#  WITHOUT_MUTT_XML
 #    (this can only be stated if WITHOUT_MUTT_HTML is defined)
 #
 # If you want to access compressed email folders define:
@@ -95,7 +95,7 @@
 #
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.5.10
+PORTVERSION=	1.5.11
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -110,8 +110,9 @@ MASTER_SITES=	ftp://ftp.mutt.org/mutt/devel/ \
 		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
 		ftp://ftp3.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://www.spinnaker.de/mutt/compressed/:rr \
+		http://cedricduval.free.fr/mutt/patches/download/:cd \
 		http://thomer.com/mutt/:thomer
-DISTNAME=	mutt-${PORTVERSION}i
+DISTNAME=	mutt-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -190,7 +191,7 @@ WITH_MUTT_IMAP_HEADER_CACHE=	yes
 .endif
 
 .if defined (MUTT_LITE)
-WITHOUT_MUTT_SGMLFORMAT=		yes
+WITHOUT_MUTT_XML=			yes
 WITHOUT_MUTT_COMPRESSED_FOLDERS=	yes
 WITHOUT_MUTT_QUOTE_PATCH=		yes
 WITHOUT_MUTT_HTML=			yes
@@ -244,10 +245,13 @@ MUTT_USES_NCURSES=	yes
 MUTT_USES_SLANG=	yes
 .endif
 .if defined(WITHOUT_MUTT_SGMLFORMAT)
-SGML_USED=	no
+XML_USED=	no
 .endif
-.if !defined(SGML_USED)
-SGML_USED=	no
+.if defined(WITHOUT_MUTT_XML)
+XML_USED=	no
+.endif
+.if !defined(XML_USED)
+XML_USED=	no
 .endif
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -256,7 +260,7 @@ USE_GETTEXT=	yes
 USE_ICONV=	yes
 .endif
 .if defined(NOPORTDOCS)
-SGML_USED=	no
+XML_USED=	no
 .endif
 .if defined(MUTT_USES_NCURSES) && ${OSVERSION} < 400000
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
@@ -344,7 +348,7 @@ PATCH_DIST_STRIP=	-p1
 .if ! defined (WITHOUT_MUTT_COMPRESSED_FOLDERS)
 DISTFILES+=	patch-${RR_PATCH_VERSION}.rr.compressed.gz:vvv
 CONFIGURE_ARGS+=	--enable-compressed
-SGML_NEEDED=	yes
+XML_NEEDED=	yes
 pre-patch::
 	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/patch-${RR_PATCH_VERSION}.rr.compressed.gz > ${WRKDIR}/patch-compressed
 	@${REINPLACE_CMD} -E '/^diff.*\/doc\/manual.txt$$/,/^diff/d' \
@@ -354,7 +358,7 @@ pre-patch::
 .if defined(WITH_MUTT_NNTP)
 DISTFILES+=	patch-${VVV_PATCH_VERSION}.vvv.nntp.gz:vvv
 CONFIGURE_ARGS+=	--enable-nntp
-SGML_NEEDED=	yes
+XML_NEEDED=	yes
 pre-patch::
 	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/patch-${VVV_PATCH_VERSION}.vvv.nntp.gz > ${WRKDIR}/patch-nntp
 	@${REINPLACE_CMD} -E '/^diff.*\/doc\/manual.txt$$/,/^diff/d' \
@@ -364,15 +368,20 @@ pre-patch::
 .if ! defined(WITHOUT_MUTT_QUOTE_PATCH)
 PATCHFILES+=	patch-${VVV_PATCH_VERSION}.vvv.initials.gz:vvv \
 		patch-${VVV_PATCH_VERSION}.vvv.quote.gz:vvv
-SGML_NEEDED=	yes
+XML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_SIGNATURE_MENU)
 PATCHFILES+=	patch-${CD_PATCH_VERSION}.cd.signatures_menu.2.1:cd
-SGML_NEEDED=	yes
+XML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_IFDEF_PATCH)
-PATCHFILES+=	patch-${CD_IFDEF_PATCH_VERSION}.cd.ifdef.1:cd
-SGML_NEEDED=	yes
+DISTFILES+=	patch-${CD_IFDEF_PATCH_VERSION}.cd.ifdef.1:cd
+#XML_NEEDED=	yes
+pre-patch::
+	${CAT} ${DISTDIR}/${DIST_SUBDIR}/patch-${CD_IFDEF_PATCH_VERSION}.cd.ifdef.1 > ${WRKDIR}/patch-ifdef
+	${REINPLACE_CMD} -E '/^diff.*\/doc\/manual.sgml.head$$/,/^diff/d' \
+		 ${WRKDIR}/patch-ifdef
+	${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-ifdef
 .endif
 .if defined(WITH_MUTT_MBOX_HOOK_PATCH)
 PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
@@ -380,7 +389,7 @@ PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
 SIDEBAR_PATCH=	patch-1.5.10i.sidebar.20050816.txt
 DISTFILES+=	${SIDEBAR_PATCH}:thomer
-SGML_NEEDED=	yes
+XML_NEEDED=	yes
 pre-patch::
 	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/${SIDEBAR_PATCH} > ${WRKDIR}/patch-sidebar
 	@${REINPLACE_CMD} -E '/^diff.*\/Makefile.in$$/,/^diff/d' \
@@ -455,21 +464,21 @@ post-build:
 		-e 's|\$$\{EXAMPLESDIR\}|${EXAMPLESDIR}|g' \
 		${WRKSRC}/doc/muttrc.man
 .if ! defined(WITHOUT_MUTT_HTML)
-SGML_USED=	yes
+XML_USED=	yes
 .endif
-.if defined(SGML_NEEDED) && !defined(WITHOUT_MUTT_SGMLFORMAT)
-SGML_USED=	yes
+.if defined(XML_NEEDED) && !defined(WITHOUT_MUTT_XML)
+XML_USED=	yes
 .endif
 .else 	# ! NOPORTDOCS
 post-patch::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc-contrib
 .endif # ! NOPORTDOCS
 
-.if ${SGML_USED} == yes
-SCRIPTS_ENV+=	MUTT_SGML="yes"
-BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
+.if ${XML_USED} == yes
+#BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
+#		lynx:${PORTSDIR}/www/lynx
 post-patch::
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-sgmlformat
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-doc-xml
 .endif
 
 pre-install:
@@ -483,9 +492,6 @@ post-install:
 	@${MKDIR} ${DOCSDIR} && ${CHMOD} a+rx ${DOCSDIR}
 	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt PGP-Notes.txt \
 		../ABOUT-NLS ../contrib/language*  ${DOCSDIR}
-.if ${SGML_USED} == yes
-	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.latin1 manual.ps ${DOCSDIR}
-.endif
 .if defined(WITH_MUTT_NNTP)
 	@cd ${WRKSRC} ; ${INSTALL_MAN} ChangeLog.nntp ${DOCSDIR}
 .endif

@@ -120,44 +120,16 @@ EOF
   if [ "$MUTT_NNTP" = "yes" ]; then
     echo "%%DOCSDIR%%/ChangeLog.nntp" >> $tmp_first
   fi
-  if [ "$MUTT_SGML" = "yes" ]; then
-    echo "%%DOCSDIR%%/manual.latin1" >> $tmp_first
-    echo "%%DOCSDIR%%/manual.ps" >> $tmp_first
-  fi
 
   if [ "$MUTT_HTML" = "yes" ]; then
-    html=395
-    if [ "$MUTT_COMPRESSED_FOLDERS" = "yes" ]; then
-      html=$(($html + 5))
-    fi
-    if [ "$MUTT_NNTP" = "yes" ]; then
-      html=$(($html + 22))
-    fi
-    if [ "$MUTT_QUOTE_PATCH" = "yes" ]; then
-      html=$(($html + 2))
-    fi
-    if [ "$MUTT_SIDEBAR_PATCH" = "yes" ]; then
-      html=$(($html + 2))
-    fi
-    if [ "$MUTT_SIGNATURE_MENU" = "yes" ]; then
-      html=$(($html + 1))
-    fi
-    if [ "$MUTT_IFDEF_PATCH" = "yes" ]; then
-      html=$(($html + 1))
-    fi
-    if [ "$MUTT_REVERSE_REPLY_PATCH" = "yes" ]; then
-      html=$(($html + 1))
-    fi
-    if [ "$MUTT_SLAVE_HTML_PAGES" != "" ]; then
-      html=$(($html + $MUTT_SLAVE_HTML_PAGES))
-    fi
+    echo "%%DOCSDIR%%/html/advancedusage.html" >> $tmp_first
+    echo "%%DOCSDIR%%/html/configuration.html" >> $tmp_first
+    echo "%%DOCSDIR%%/html/gettingstarted.html" >> $tmp_first
+    echo "%%DOCSDIR%%/html/index.html" >> $tmp_first
     echo "%%DOCSDIR%%/html/manual.html" >> $tmp_first
-    echo "%%DOCSDIR%%/html/manual_toc.html" >> $tmp_first 
-    i=1
-    while [ $i -le $html ]; do
-      echo "%%DOCSDIR%%/html/manual$i.html" >> $tmp_first 
-      i=$(($i + 1))
-    done
+    echo "%%DOCSDIR%%/html/mimesupport.html" >> $tmp_first
+    echo "%%DOCSDIR%%/html/miscellany.html" >> $tmp_first
+    echo "%%DOCSDIR%%/html/reference.html" >> $tmp_first
     echo "@dirrm %%DOCSDIR%%/html" >> $tmp_last
   fi
   cat >> $tmp_last <<EOF
