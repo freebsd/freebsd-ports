@@ -86,3 +86,5 @@
 @dirrm %%PROSPERDIR%%/designer
 @dirrm %%PROSPERDIR%%/img
 @dirrm %%PROSPERDIR%%
+@exec %D/bin/mktexlsr
+@unexec %D/bin/mktexlsr

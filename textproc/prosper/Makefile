@@ -7,15 +7,15 @@
 
 PORTNAME=	prosper
 PORTVERSION=	1.00.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} PPRblends.sty.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	Prosper is a LaTeX class for writing transparencies
+MAINTAINER=	vs@FreeBSD.org
+COMMENT=	LaTeX class for writing transparencies
 
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
