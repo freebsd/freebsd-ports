@@ -8861,6 +8861,7 @@ pam_pwdfile	ports/security/pam_pwdfile
 pam_smb		ports/security/pam_smb
 paman		ports/audio/paman
 paml		ports/biology/paml
+pamsfs		ports/security/pamsfs
 pamtester	ports/security/pamtester
 pan2		ports/news/pan2
 pancho		ports/net-mgmt/pancho
