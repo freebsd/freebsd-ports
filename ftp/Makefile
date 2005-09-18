@@ -75,6 +75,7 @@
     SUBDIR += php4-ftp
     SUBDIR += php5-curl
     SUBDIR += php5-ftp
+    SUBDIR += phpwebftp
     SUBDIR += proftpd
     SUBDIR += proftpd-mysql
     SUBDIR += profxp
