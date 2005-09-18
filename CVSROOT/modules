@@ -2310,6 +2310,7 @@ flexbackup	ports/sysutils/flexbackup
 fli2gif		ports/graphics/fli2gif
 flick		ports/devel/flick
 flightgear	ports/games/flightgear
+flightgear-aircrafts	ports/games/flightgear-aircrafts
 flightgear-atlas	ports/games/flightgear-atlas
 flim		ports/editors/flim
 flim-emacs20	ports/editors/flim-emacs20
