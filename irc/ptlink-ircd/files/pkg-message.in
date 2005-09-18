@@ -1,0 +1,11 @@
+======================================================================
+
+PTlink IRC daemon is now installed.
+
+Edit the configuration files in %%PREFIX%%/etc/ptlink-ircd to suit
+your needs.
+
+Add ircd_enable="YES" to rc.conf and start ircd by running:
+%%PREFIX%%/ptlink-ircd.sh start
+
+======================================================================
