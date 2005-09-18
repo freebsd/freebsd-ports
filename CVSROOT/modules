@@ -11951,6 +11951,7 @@ tmda		ports/mail/tmda
 tmetric		ports/benchmarks/tmetric
 tmpreaper	ports/sysutils/tmpreaper
 tmpwatch	ports/sysutils/tmpwatch
+tmsnc		ports/net/tmsnc
 tn-aspell	ports/textproc/tn-aspell
 tn-ooodict-ZA	ports/editors/ooodict-tn_ZA
 tn5250		ports/net/tn5250
