@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+case $2 in
+POST-INSTALL)
+	USER=ircd
+	GROUP=ircd
+	UID=72
+	GID=72
+
+	if pw groupshow "${GROUP}" > /dev/null 2>&1; then
+	   echo "===> Using existing group ${GROUP}"
+	else
+	   echo "===> Adding group ${GROUP}"
+	   pw groupadd ${GROUP} -g ${GID} || exit 1
+	fi
+
+	if pw usershow "${USER}" > /dev/null 2>&1; then
+	   echo "===> Using existing user ${USER}"
+	else
+	   echo "===> Adding user ${USER}"
+	   pw adduser ${USER} -u ${UID} -g ${GROUP} -h - -d "/nonexistent" \
+	      -s "/nonexistent" -c "IRC daemon" || exit 1
+	fi
+	;;
+esac

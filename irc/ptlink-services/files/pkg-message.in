@@ -1,0 +1,11 @@
+======================================================================
+
+PTlink IRC services is now installed.
+
+Edit the configuration files in %%PREFIX%%/etc/ptlink-services to suit
+your needs.
+
+Add services_enable="YES" to rc.conf and start ircd by running:
+%%PREFIX%%/etc/rc.d/ptlink-services.sh start
+
+======================================================================

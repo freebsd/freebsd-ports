@@ -1,0 +1,11 @@
+--- configure.orig	Sun Sep 11 12:49:13 2005
++++ configure	Sun Sep 11 12:49:48 2005
+@@ -7562,7 +7562,7 @@
+ "
+ #  Web support:                         ${web_support}
+ echo "#define BINPATH \"${prefix}/bin\"" > include/path.h
+-echo "#define ETCPATH \"${prefix}/etc\"" >> include/path.h
++echo "#define ETCPATH \"${prefix}/etc/ptlink-services\"" >> include/path.h
+ echo "#define DATAPATH \"${prefix}/data\"" >> include/path.h
+ echo "#define VARPATH \"${prefix}/var\"" >> include/path.h
+ echo "#define LOGPATH \"${prefix}/var/log\"" >> include/path.h

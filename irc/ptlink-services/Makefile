@@ -6,15 +6,11 @@
 #
 
 PORTNAME=	Services
-PORTVERSION=	2.26.1
-PORTREVISION=	1
+PORTVERSION=	3.4.1
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.sunsite.dk/projects/ptlink/services2/ \
-		http://www.rootxs.org/pub/FreeBSD/distfiles/
+MASTER_SITES=	ftp://ftp.sunsite.dk/projects/ptlink/ircsvs3/
 PKGNAMEPREFIX=	PTlink-
-DISTNAME=	PTlink.${PORTNAME}2.26-eol.1
-
-PATCH_DIST_STRIP=	-p1
+DISTNAME=	PTlinkIRC.${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	dennis@rootxs.org
 COMMENT=	PTlink IRC services
@@ -22,13 +18,18 @@ COMMENT=	PTlink IRC services
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
+USE_MYSQL=	yes
 
-SYSCONFDIR=	${PREFIX}/etc/ptlink
+USE_RC_SUBR=	ptlink-services.sh
+SUB_FILES=	pkg-message
+
+SYSCONFDIR=	${PREFIX}/etc/ptlink-services
+
 CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR}
 
 post-install:
-	@${INSTALL_DATA} ${FILESDIR}/*.sample ${SYSCONFDIR}
-	@${INSTALL_DATA} ${FILESDIR}/create_tables.sql ${SYSCONFDIR}
-	@${SED} 's,%%SYSCONFDIR%%,${SYSCONFDIR},g' < ${PKGMESSAGE}
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${CHOWN} -R ${USER}:${GROUP} ${SYSCONFDIR}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
