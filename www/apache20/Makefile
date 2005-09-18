@@ -23,7 +23,7 @@ COMMENT?=	Version 2 of Apache web server with ${WITH_MPM:L} MPM.
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
-LATEST_LINK=	apache2
+LATEST_LINK=	apache20
 
 CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.* \
 		apache+mod_ssl+mod_snmp+ipv6-1.* apache+mod_ssl+mod_accel-1.* \
