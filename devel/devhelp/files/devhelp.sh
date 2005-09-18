@@ -13,7 +13,7 @@ name=devhelp
 start_cmd=devhelp_start
 stop_cmd=:
 
-[ -z "$devhelp_libdir" ] && devhelp_libdir="%%X11BASE%%/lib/%%MOZILLA%%"
+[ -z "$devhelp_libdir" ] && devhelp_libdir="%%PREFIX%%/lib/%%MOZILLA%%"
 
 devhelp_start() {
     if [ -d "$devhelp_libdir" ]; then

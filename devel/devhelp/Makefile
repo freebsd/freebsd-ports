@@ -7,6 +7,7 @@
 
 PORTNAME=	devhelp
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES?=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C,^([[:digit:]]+\.[[:digit:]]+).*,\1,}
@@ -54,7 +55,6 @@ pre-everything::
 	@${ECHO_MSG} "  firefox       "
 	@${ECHO_MSG} ""
 
-
 post-patch:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%MOZILLA%%|${MOZILLA}|g' \
@@ -62,6 +62,6 @@ post-patch:
 
 post-install:
 	@${INSTALL_SCRIPT} -m 555 ${WRKDIR}/devhelp.sh ${PREFIX}/etc/rc.d/000.devhelp.sh
-	@ldconfig -m ${X11BASE}/lib/${MOZILLA}
+	@${LDCONFIG} -m ${X11BASE}/lib/${MOZILLA}
 
 .include <bsd.port.post.mk>
