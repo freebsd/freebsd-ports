@@ -1,0 +1,9 @@
+Jahshaka is a video and film compositing, editing and special fx system
+that uses OpenGL & OpenML hardware rendering to give operators real time
+interactivity. The system is cross platform, and also includes full CG,
+paint and image processing modules.
+
+WWW:	http://www.jahshaka.org/
+
+- Igor Pokrovsky
+ip@doom.homeunix.org

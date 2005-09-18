@@ -1,0 +1,156 @@
+bin/jahshaka
+lib/jahshaka/plugins/libjitaverage.so
+lib/jahshaka/plugins/libjitgaussnoise.so
+lib/jahshaka/plugins/libjitgeommeanfilter.so
+lib/jahshaka/plugins/libjitmedianfilter.so
+lib/jahshaka/plugins/libjitminmaxfilter.so
+lib/jahshaka/plugins/libjitmmsefilter.so
+lib/jahshaka/plugins/libjitnegexnoise.so
+lib/jahshaka/plugins/libjitpseudocolor.so
+lib/jahshaka/plugins/libjitrangefilter.so
+lib/jahshaka/plugins/libjitrgbvary.so
+lib/jahshaka/plugins/librfxnvblur.so
+lib/jahshaka/plugins/librfxnvcharcoal.so
+lib/jahshaka/plugins/librfxnvcolor.so
+lib/jahshaka/plugins/librfxnvcompoundeye.so
+lib/jahshaka/plugins/librfxnvdiffusion.so
+lib/jahshaka/plugins/librfxnvdistortion.so
+lib/jahshaka/plugins/librfxnvedgedetect.so
+lib/jahshaka/plugins/librfxnvfire.so
+lib/jahshaka/plugins/librfxnvfisheye.so
+lib/jahshaka/plugins/librfxnvflame.so
+lib/jahshaka/plugins/librfxnvfog.so
+lib/jahshaka/plugins/librfxnvlighting.so
+lib/jahshaka/plugins/librfxnvnorthernlights.so
+lib/jahshaka/plugins/librfxnvpan.so
+lib/jahshaka/plugins/librfxnvreflection.so
+lib/jahshaka/plugins/librfxnvsharpen.so
+lib/jahshaka/plugins/librfxnvsphere.so
+lib/jahshaka/plugins/librfxnvswirl.so
+lib/jahshaka/plugins/librfxnvturbulence.so
+lib/jahshaka/plugins/librtripple.so
+lib/jahshaka/plugins/libvfxbathroom.so
+lib/jahshaka/plugins/libvfxfisheye.so
+lib/jahshaka/plugins/libvfxgrey.so
+lib/jahshaka/plugins/libvfxmandelbrot.so
+lib/jahshaka/plugins/libvfxmosaic.so
+lib/jahshaka/plugins/libvfxoil.so
+lib/jahshaka/plugins/libvfxpolarnoise.so
+lib/jahshaka/plugins/libvfxpolarwarp.so
+lib/jahshaka/plugins/libvfxrelief.so
+lib/jahshaka/plugins/libvfxswirl.so
+%%DATADIR%%/Pixmaps/desktop/binview.png
+%%DATADIR%%/Pixmaps/desktop/jahnodes.png
+%%DATADIR%%/Pixmaps/desktop/phototool.png
+%%DATADIR%%/Pixmaps/desktop/rotatetool.png
+%%DATADIR%%/Pixmaps/desktop/scaletool.png
+%%DATADIR%%/Pixmaps/desktop/simplezoomin.png
+%%DATADIR%%/Pixmaps/desktop/simplezoomout.png
+%%DATADIR%%/Pixmaps/desktop/thumbview.png
+%%DATADIR%%/Pixmaps/desktop/transtool.png
+%%DATADIR%%/Pixmaps/desktop/zoomin.png
+%%DATADIR%%/Pixmaps/desktop/zoomout.png
+%%DATADIR%%/Pixmaps/desktopController/delete_off.png
+%%DATADIR%%/Pixmaps/desktopController/delete_on.png
+%%DATADIR%%/Pixmaps/desktopController/load_off.png
+%%DATADIR%%/Pixmaps/desktopController/load_on.png
+%%DATADIR%%/Pixmaps/desktopController/name_off.png
+%%DATADIR%%/Pixmaps/desktopController/name_on.png
+%%DATADIR%%/Pixmaps/desktopController/play_off.png
+%%DATADIR%%/Pixmaps/desktopController/play_on.png
+%%DATADIR%%/Pixmaps/interface/metal.xpm
+%%DATADIR%%/Pixmaps/interface/metaldark.xpm
+%%DATADIR%%/Pixmaps/jahaudio.png
+%%DATADIR%%/Pixmaps/jahback.png
+%%DATADIR%%/Pixmaps/jahlayer.png
+%%DATADIR%%/Pixmaps/jahlogo.png
+%%DATADIR%%/Pixmaps/jahplayer/playerdelete.png
+%%DATADIR%%/Pixmaps/jahplayer/playerdeleteon.png
+%%DATADIR%%/Pixmaps/jahplayer/playerload.png
+%%DATADIR%%/Pixmaps/jahplayer/playerloadon.png
+%%DATADIR%%/Pixmaps/jahplayer/playername.png
+%%DATADIR%%/Pixmaps/jahplayer/playernameon.png
+%%DATADIR%%/Pixmaps/jahplayer/playerplay.png
+%%DATADIR%%/Pixmaps/jahplayer/playerplayon.png
+%%DATADIR%%/Pixmaps/jahstartupimage.png
+%%DATADIR%%/Pixmaps/jahtext.png
+%%DATADIR%%/Pixmaps/light.xpm
+%%DATADIR%%/Pixmaps/missingmedia.png
+%%DATADIR%%/Pixmaps/modules/light.png
+%%DATADIR%%/Pixmaps/modules/reflect.png
+%%DATADIR%%/Pixmaps/no_tr.gif
+%%DATADIR%%/Pixmaps/paint/buttonBezier.png
+%%DATADIR%%/Pixmaps/paint/buttonCircle.png
+%%DATADIR%%/Pixmaps/paint/buttonCircleFilled.png
+%%DATADIR%%/Pixmaps/paint/buttonErase.png
+%%DATADIR%%/Pixmaps/paint/buttonHistoryNext.png
+%%DATADIR%%/Pixmaps/paint/buttonHistoryPrevious.png
+%%DATADIR%%/Pixmaps/paint/buttonLine.png
+%%DATADIR%%/Pixmaps/paint/buttonPen.png
+%%DATADIR%%/Pixmaps/paint/buttonRectangle.png
+%%DATADIR%%/Pixmaps/paint/buttonRectangleFilled.png
+%%DATADIR%%/Pixmaps/paint/buttonTriangle.png
+%%DATADIR%%/Pixmaps/paint/buttonTriangleFilled.png
+%%DATADIR%%/Pixmaps/play.png
+%%DATADIR%%/Pixmaps/player/ffoward_off.png
+%%DATADIR%%/Pixmaps/player/ffoward_on.png
+%%DATADIR%%/Pixmaps/player/foward_off.png
+%%DATADIR%%/Pixmaps/player/foward_on.png
+%%DATADIR%%/Pixmaps/player/frewind_off.png
+%%DATADIR%%/Pixmaps/player/frewind_on.png
+%%DATADIR%%/Pixmaps/player/play_off.png
+%%DATADIR%%/Pixmaps/player/play_on.png
+%%DATADIR%%/Pixmaps/player/rewind_off.png
+%%DATADIR%%/Pixmaps/player/rewind_on.png
+%%DATADIR%%/Pixmaps/player/stop_off.png
+%%DATADIR%%/Pixmaps/player/stop_on.png
+%%DATADIR%%/Pixmaps/trans.gif
+%%DATADIR%%/database/JahDesktopDB
+%%DATADIR%%/database/JahDesktopDB.bak
+%%DATADIR%%/database/JahplayerDesktopDB
+%%DATADIR%%/database/instructions.txt
+%%DATADIR%%/database/wipedbase
+%%DATADIR%%/fonts/arial.ttf
+%%DATADIR%%/fonts/comic.ttf
+%%DATADIR%%/fonts/impact.ttf
+%%DATADIR%%/fonts/times.ttf
+%%DATADIR%%/media/images/beck.bmp
+%%DATADIR%%/media/images/bird.png
+%%DATADIR%%/media/images/code.bmp
+%%DATADIR%%/media/images/coppertex.bmp
+%%DATADIR%%/media/images/earthtex.jpg
+%%DATADIR%%/media/images/espn.png
+%%DATADIR%%/media/images/espninterface.png
+%%DATADIR%%/media/images/fantasy.jpg
+%%DATADIR%%/media/images/font.png
+%%DATADIR%%/media/images/glasstex.bmp
+%%DATADIR%%/media/images/jahlogo.png
+%%DATADIR%%/media/images/jupiter.jpg
+%%DATADIR%%/media/images/sky.bmp
+%%DATADIR%%/media/images/starfield.jpg
+%%DATADIR%%/media/models/al.mtl
+%%DATADIR%%/media/models/f-16.mtl
+%%DATADIR%%/media/models/f-16.obj
+%%DATADIR%%/media/models/face.3DS
+%%DATADIR%%/media/models/face.bmp
+%%DATADIR%%/scenes/animtest.jsf
+%%DATADIR%%/scenes/espn.jsf
+%%DATADIR%%/scenes/grovejet.jsf
+%%DATADIR%%/scenes/pluginz.jsf
+@dirrm %%DATADIR%%/media/models
+@dirrm %%DATADIR%%/media/images
+@dirrm %%DATADIR%%/media
+@dirrm %%DATADIR%%/scenes
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%/database
+@dirrm %%DATADIR%%/Pixmaps/player
+@dirrm %%DATADIR%%/Pixmaps/paint
+@dirrm %%DATADIR%%/Pixmaps/modules
+@dirrm %%DATADIR%%/Pixmaps/jahplayer
+@dirrm %%DATADIR%%/Pixmaps/interface
+@dirrm %%DATADIR%%/Pixmaps/desktopController
+@dirrm %%DATADIR%%/Pixmaps/desktop
+@dirrm %%DATADIR%%/Pixmaps
+@dirrm %%DATADIR%%
+@dirrm lib/jahshaka/plugins
+@dirrm lib/jahshaka

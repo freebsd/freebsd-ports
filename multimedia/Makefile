@@ -63,6 +63,7 @@
     SUBDIR += handbrake
     SUBDIR += hayes
     SUBDIR += istanbul
+    SUBDIR += jahshaka
     SUBDIR += kaffeine
     SUBDIR += kaffeine-mozilla
     SUBDIR += kdemultimedia3
