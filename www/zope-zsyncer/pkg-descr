@@ -1,0 +1,5 @@
+The ZSyncer project allows multiple Zopes to easily be manually synchronized
+by transferring data between them using xml-rpc. This can save a lot of time
+over the old export / transfer / import dance.
+
+WWW: http://zsyncer.sourceforge.net
