@@ -32,7 +32,7 @@ MAN3=	Term::ReadLine::Zoid.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		Requiers perl 5.6+, install lang/perl5.8 and try again
+IGNORE=		Requires perl 5.6+, install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
