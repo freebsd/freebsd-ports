@@ -3631,6 +3631,7 @@ hotwayd		ports/mail/hotwayd
 hourglass	ports/sysutils/hourglass
 howl		ports/net/howl
 howm		ports/deskutils/howm
+hoz		ports/sysutils/hoz
 hp2xx		ports/print/hp2xx
 hpack.non-usa.only	ports/archivers/hpack.non-usa.only
 hpijs		ports/print/hpijs
