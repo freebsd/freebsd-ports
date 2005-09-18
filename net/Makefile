@@ -828,6 +828,7 @@
     SUBDIR += tinyldap
     SUBDIR += tkabber
     SUBDIR += tkabber-devel
+    SUBDIR += tmsnc
     SUBDIR += tn3270
     SUBDIR += tn5250
     SUBDIR += torrentsniff

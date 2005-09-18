@@ -1,0 +1,6 @@
+bin/tmsnc
+%%NLS%%share/locale/en/LC_MESSAGES/tmsnc.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/tmsnc.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/tmsnc.mo
+%%NLS%%share/locale/pt_PT/LC_MESSAGES/tmsnc.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/tmsnc.mo
