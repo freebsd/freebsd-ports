@@ -6,14 +6,11 @@
 #
 
 PORTNAME=	IRCd
-PORTVERSION=	6.19.3
+PORTVERSION=	6.19.4
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.sunsite.dk/projects/ptlink/ircd/ \
-		http://www.rootxs.org/pub/FreeBSD/distfiles/
+MASTER_SITES=	ftp://ftp.sunsite.dk/projects/ptlink/ircd/
 PKGNAMEPREFIX=	PTlink-
 DISTNAME=	PTlink${PORTVERSION}
-
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	dennis@rootxs.org
 COMMENT=	PTlink IRC daemon
@@ -21,11 +18,18 @@ COMMENT=	PTlink IRC daemon
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-SYSCONFDIR=	${PREFIX}/etc/ptlink
-CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR}
+USE_RC_SUBR=	ptlink-ircd.sh
+SUB_FILES=	pkg-message
+
+SYSCONFDIR=	${PREFIX}/etc/ptlink-ircd
+LOGDIR=		${PREFIX}/var/log
+
+CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR} --with-pidfile=${SYSCONFDIR}/ircd.pid
 
 post-install:
-	@${INSTALL_DATA} ${FILESDIR}/*.sample ${SYSCONFDIR}
-	@${SED} 's,%%SYSCONFDIR%%,${SYSCONFDIR},g' < ${PKGMESSAGE}
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${CHOWN} -R ${USER}:${GROUP} ${SYSCONFDIR}
+	@${CHOWN} -R ${USER}:${GROUP} ${LOGDIR}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

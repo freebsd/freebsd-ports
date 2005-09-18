@@ -1,27 +1,27 @@
 bin/ircd
 bin/mkpasswd
 bin/sendbug
-etc/ptlink/codepage/cp1251.cp
-etc/ptlink/codepage/cp1253.cp
-etc/ptlink/codepage/cp850.cp
-etc/ptlink/codepage/cp860.cp
-etc/ptlink/codepage/cp866.cp
-etc/ptlink/codepage/iso8859-1.cp
-etc/ptlink/codepage/iso8859-5.cp
-etc/ptlink/codepage/iso8859-9.cp
-etc/ptlink/codepage/koi8r.cp
-etc/ptlink/codepage/koi8u.cp
-etc/ptlink/codepage/mac.cp
-etc/ptlink/codepage/translit.cp
-etc/ptlink/help.admin
-etc/ptlink/help.oper
-etc/ptlink/help.user
-etc/ptlink/ircd.conf.sample
-etc/ptlink/ircd.motd.sample
-etc/ptlink/kline.conf.sample
-etc/ptlink/main.dconf.sample
-etc/ptlink/network.dconf.sample
-etc/ptlink/opers.motd.sample
-etc/ptlink/version.info
-@dirrm etc/ptlink/codepage
-@unexec rmdir %D/etc/ptlink 2> /dev/null || true
+etc/ptlink-ircd/codepage/cp1251.cp
+etc/ptlink-ircd/codepage/cp1253.cp
+etc/ptlink-ircd/codepage/cp850.cp
+etc/ptlink-ircd/codepage/cp860.cp
+etc/ptlink-ircd/codepage/cp866.cp
+etc/ptlink-ircd/codepage/iso8859-1.cp
+etc/ptlink-ircd/codepage/iso8859-5.cp
+etc/ptlink-ircd/codepage/iso8859-9.cp
+etc/ptlink-ircd/codepage/koi8r.cp
+etc/ptlink-ircd/codepage/koi8u.cp
+etc/ptlink-ircd/codepage/mac.cp
+etc/ptlink-ircd/codepage/translit.cp
+etc/ptlink-ircd/help.admin
+etc/ptlink-ircd/help.oper
+etc/ptlink-ircd/help.user
+etc/ptlink-ircd/ircd.conf
+etc/ptlink-ircd/ircd.motd
+etc/ptlink-ircd/kline.conf
+etc/ptlink-ircd/main.dconf
+etc/ptlink-ircd/network.dconf
+etc/ptlink-ircd/opers.motd
+etc/ptlink-ircd/version.info
+@dirrm etc/ptlink-ircd/codepage
+@unexec rmdir %D/etc/ptlink-ircd 2> /dev/null || true
