@@ -7,7 +7,7 @@
 
 PORTNAME=	faad2
 PORTVERSION=	2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	faac
@@ -18,6 +18,7 @@ COMMENT=	Beep Media Player (BMP) plugin for faad
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		faad.0:${PORTSDIR}/audio/faad \
+		mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2 \
 		beep.2:${PORTSDIR}/multimedia/beep-media-player
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
