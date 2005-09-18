@@ -896,6 +896,7 @@
     SUBDIR += zope-xmlwidgets
     SUBDIR += zope-zmysqlda
     SUBDIR += zope-zpt
+    SUBDIR += zope-zsyncer
     SUBDIR += zope-zwiki
 
 .include <bsd.port.subdir.mk>

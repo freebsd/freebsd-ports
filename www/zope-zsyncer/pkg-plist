@@ -1,0 +1,50 @@
+%%ZOPEPRODUCTDIR%%/ZSyncer/www/backup.gif
+%%ZOPEPRODUCTDIR%%/ZSyncer/www/open_folder.png
+%%ZOPEPRODUCTDIR%%/ZSyncer/www/transmission.gif
+%%ZOPEPRODUCTDIR%%/ZSyncer/www/closed_folder.png
+%%ZOPEPRODUCTDIR%%/ZSyncer/dtml/Add.dtml
+%%ZOPEPRODUCTDIR%%/ZSyncer/dtml/Approval.dtml
+%%ZOPEPRODUCTDIR%%/ZSyncer/dtml/Diff.dtml
+%%ZOPEPRODUCTDIR%%/ZSyncer/dtml/Folder.dtml
+%%ZOPEPRODUCTDIR%%/ZSyncer/dtml/SyncFolder.dtml
+%%ZOPEPRODUCTDIR%%/ZSyncer/dtml/Edit.dtml
+%%ZOPEPRODUCTDIR%%/ZSyncer/dtml/Sync.dtml
+%%ZOPEPRODUCTDIR%%/ZSyncer/help/ZSyncer.stx
+%%ZOPEPRODUCTDIR%%/ZSyncer/skins/zsyncer_skins/README.txt
+%%ZOPEPRODUCTDIR%%/ZSyncer/tests/framework.py
+%%ZOPEPRODUCTDIR%%/ZSyncer/tests/testConnectionMgr.py
+%%ZOPEPRODUCTDIR%%/ZSyncer/tests/framework.pyc
+%%ZOPEPRODUCTDIR%%/ZSyncer/tests/testConnectionMgr.pyc
+%%ZOPEPRODUCTDIR%%/ZSyncer/TODO.txt
+%%ZOPEPRODUCTDIR%%/ZSyncer/credits.txt
+%%ZOPEPRODUCTDIR%%/ZSyncer/version.txt
+%%ZOPEPRODUCTDIR%%/ZSyncer/ConnectionMgr.py
+%%ZOPEPRODUCTDIR%%/ZSyncer/LICENSE.txt
+%%ZOPEPRODUCTDIR%%/ZSyncer/xmlrpclibBasicAuth.py
+%%ZOPEPRODUCTDIR%%/ZSyncer/README.txt
+%%ZOPEPRODUCTDIR%%/ZSyncer/Extensions/Install.py
+%%ZOPEPRODUCTDIR%%/ZSyncer/Extensions/Install.pyc
+%%ZOPEPRODUCTDIR%%/ZSyncer/zsyncer_icon.gif
+%%ZOPEPRODUCTDIR%%/ZSyncer/ZSyncerTool.py
+%%ZOPEPRODUCTDIR%%/ZSyncer/ConfigUtils.py
+%%ZOPEPRODUCTDIR%%/ZSyncer/Config.py
+%%ZOPEPRODUCTDIR%%/ZSyncer/ZSyncer.py
+%%ZOPEPRODUCTDIR%%/ZSyncer/__init__.py
+%%ZOPEPRODUCTDIR%%/ZSyncer/changes.txt
+%%ZOPEPRODUCTDIR%%/ZSyncer/Config.pyc
+%%ZOPEPRODUCTDIR%%/ZSyncer/ConfigUtils.pyc
+%%ZOPEPRODUCTDIR%%/ZSyncer/ConnectionMgr.pyc
+%%ZOPEPRODUCTDIR%%/ZSyncer/ZSyncer.pyc
+%%ZOPEPRODUCTDIR%%/ZSyncer/ZSyncerTool.pyc
+%%ZOPEPRODUCTDIR%%/ZSyncer/__init__.pyc
+%%ZOPEPRODUCTDIR%%/ZSyncer/xmlrpclibBasicAuth.pyc
+@dirrm %%ZOPEPRODUCTDIR%%/ZSyncer/www
+@dirrm %%ZOPEPRODUCTDIR%%/ZSyncer/dtml
+@dirrm %%ZOPEPRODUCTDIR%%/ZSyncer/help
+@dirrm %%ZOPEPRODUCTDIR%%/ZSyncer/skin/zsyncer_skins
+@dirrm %%ZOPEPRODUCTDIR%%/ZSyncer/skin
+@dirrm %%ZOPEPRODUCTDIR%%/ZSyncer/skins/zsyncer_skins
+@dirrm %%ZOPEPRODUCTDIR%%/ZSyncer/skins
+@dirrm %%ZOPEPRODUCTDIR%%/ZSyncer/tests
+@dirrm %%ZOPEPRODUCTDIR%%/ZSyncer/Extensions
+@dirrm %%ZOPEPRODUCTDIR%%/ZSyncer
