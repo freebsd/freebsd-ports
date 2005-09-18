@@ -61,7 +61,7 @@ CONFIGURE_ARGS+=	--with-gnutls
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 .endif
 
-.if defined(WITH_OPENSSL)
+.if !defined(WITHOUT_OPENSSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--with-openssl
 .endif
