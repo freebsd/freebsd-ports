@@ -15,7 +15,6 @@
     SUBDIR += amanda-server
     SUBDIR += argparse
     SUBDIR += asbutton
-    SUBDIR += asciiquarium
     SUBDIR += asr-manpages
     SUBDIR += astrolog
     SUBDIR += bb
@@ -342,7 +341,6 @@
     SUBDIR += p5-Locale-SubCountry
     SUBDIR += p5-Net-vCard
     SUBDIR += p5-Norge
-    SUBDIR += p5-Term-Animation
     SUBDIR += p5-Text-FIGlet
     SUBDIR += p5-Tie-DxHash
     SUBDIR += patanjali
