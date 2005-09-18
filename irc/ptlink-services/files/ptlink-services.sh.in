@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: services
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+
+# Add the following line(s) to /etc/rc.conf:
+# services_enable (bool): Set to "NO" by default, set it to "YES" to enable services
+# services_user (str): Default to "ircd"
+
+services_enable=${services_enable-"NO"}
+services_user=${services_user-"ircd"}
+
+. %%RC_SUBR%%
+
+name="services"
+rcvar=`set_rcvar`
+pidfile="%%PREFIX%%/etc/ptlink-services/services.pid"
+command="%%PREFIX%%/bin/ircsvs"
+
+load_rc_config "$name"
+run_rc_command "$1"
