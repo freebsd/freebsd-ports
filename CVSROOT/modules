@@ -13607,6 +13607,7 @@ zope-xmlmethods	ports/www/zope-xmlmethods
 zope-xmlwidgets	ports/www/zope-xmlwidgets
 zope-zmysqlda	ports/www/zope-zmysqlda
 zope-zpt	ports/www/zope-zpt
+zope-zsyncer	ports/www/zope-zsyncer
 zope-zwiki	ports/www/zope-zwiki
 zorro		ports/deskutils/zorro
 zphoto		ports/graphics/zphoto
