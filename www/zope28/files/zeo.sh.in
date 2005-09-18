@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Start or stop zope
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/www/zope28/files/Attic/zeo.sh.in,v 1.1 2005-09-18 21:33:04 vsevolod Exp $
 
 # PROVIDE: zeo
 # REQUIRE: DAEMON

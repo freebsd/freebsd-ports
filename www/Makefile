@@ -858,6 +858,7 @@
     SUBDIR += zerowait-httpd
     SUBDIR += znavigator
     SUBDIR += zope
+    SUBDIR += zope28
     SUBDIR += zope-FileSystemSite
     SUBDIR += zope-annotations
     SUBDIR += zope-archetypes
