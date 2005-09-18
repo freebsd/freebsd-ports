@@ -1,14 +1,17 @@
 lib/%%PYTHON_VERSION%%/site-packages/log4py.py
 lib/%%PYTHON_VERSION%%/site-packages/log4py.pyc
 lib/%%PYTHON_VERSION%%/site-packages/log4py.pyo
-%%PORTDOCS%%share/doc/log4py/AUTHORS
-%%PORTDOCS%%share/doc/log4py/COPYING
-%%PORTDOCS%%share/doc/log4py/ChangeLog
-%%PORTDOCS%%share/doc/log4py/LICENSE
-%%PORTDOCS%%share/doc/log4py/html/index.html
-%%PORTDOCS%%share/doc/log4py/html/indices.html
-%%PORTDOCS%%share/doc/log4py/html/log4py.css
-%%PORTDOCS%%share/doc/log4py/html/log4py.html
-%%PORTDOCS%%share/doc/log4py/html/log4py.Logger.html
-%%PORTDOCS%%@dirrm share/doc/log4py/html
-%%PORTDOCS%%@dirrm share/doc/log4py
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/indices.html
+%%PORTDOCS%%%%DOCSDIR%%/html/log4py.css
+%%PORTDOCS%%%%DOCSDIR%%/html/log4py.html
+%%PORTDOCS%%%%DOCSDIR%%/html/log4py.Logger.html
+%%PORTDOCS%%%%DOCSDIR%%/html/footer.template
+%%PORTDOCS%%%%DOCSDIR%%/html/header.template
+%%PORTDOCS%%%%DOCSDIR%%/html/log4py.FileAppender.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
