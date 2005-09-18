@@ -1,0 +1,87 @@
+--- lib/python/StructuredText/DocumentClass.py.orig	Thu Aug 11 09:11:26 2005
++++ lib/python/StructuredText/DocumentClass.py	Wed Sep  7 13:27:26 2005
+@@ -786,7 +786,7 @@
+ 
+     def doc_literal(
+         self, s,
+-        expr = re.compile(r"(\W+|^)'([%s%s%s\s]+)'([%s]+|$)" % (letters, digits, literal_punc, phrase_delimiters)).search,):
++        expr = re.compile(r"(\W+|^)'((?:\w|[%s%s\s])+)'([%s]+|$)" % (digits, literal_punc, phrase_delimiters), re.U).search,):
+ 
+         # old expr... failed to cross newlines.
+         #        expr=re.compile(
+@@ -804,7 +804,9 @@
+ 
+     def doc_emphasize(
+         self, s,
+-        expr = re.compile(r'\*([%s%s%s\s]+?)\*' % (letters, digits, strongem_punc)).search
++        # i18nal variant
++        expr = re.compile(r'\*((?:\w|[%s\s])+?)\*' % (strongem_punc), re.U).search
++        #expr = re.compile(r'\*([%s%s%s\s]+?)\*' % (letters, digits, strongem_punc)).search
+         #expr = re.compile(r'\s*\*([ \n\r%s0-9.:/;,\'\"\?\-\_\/\=\-\>\<\(\)]+)\*(?!\*|-)' % letters).search       # old expr, inconsistent punctuation
+         ):
+ 
+@@ -850,7 +852,7 @@
+ 
+     def doc_underline(self,
+                       s,
+-                      expr=re.compile(r'_([%s%s%s\s]+)_([\s%s]|$)' % (letters, digits, under_punc,phrase_delimiters)).search):
++                      expr=re.compile(r'_((?:\w|[%s\s])+)_([\s%s]|$)' % (under_punc,phrase_delimiters), re.U).search):
+ 
+         result = expr(s)
+         if result:
+@@ -864,7 +866,7 @@
+ 
+     def doc_strong(self,
+                    s,
+-                   expr = re.compile(r'\*\*([%s%s%s\s]+?)\*\*' % (letters, digits, strongem_punc)).search
++                   expr = re.compile(r'\*\*((?:\w|[%s%s\s])+?)\*\*' % (digits, strongem_punc), re.U).search
+                    #expr = re.compile(r'\s*\*\*([ \n\r%s0-9.:/;,\'\"\?\-\_\/\=\-\>\<\(\)]+)\*\*(?!\*|-)' % letters).search, # old expr, inconsistent punc, failed to cross newlines.
+         ):
+ 
+@@ -876,7 +878,7 @@
+             return None
+ 
+     ## Some constants to make the doc_href() regex easier to read.
+-    _DQUOTEDTEXT = r'("[ %s0-9\n\r%s]+")' % (letters,dbl_quoted_punc) ## double quoted text
++    _DQUOTEDTEXT = r'("[^"]+")'
+     _ABSOLUTE_URL=r'((http|https|ftp|mailto|file|about)[:/]+?[%s0-9_\@\.\,\?\!\/\:\;\-\#\~\=\&\%%\+]+)' % letters
+     _ABS_AND_RELATIVE_URL=r'([%s0-9_\@\.\,\?\!\/\:\;\-\#\~\=\&\%%\+]+)' % letters
+ 
+@@ -884,12 +886,12 @@
+ 
+ 
+     def doc_href1(self, s,
+-                  expr=re.compile(_DQUOTEDTEXT + "(:)" + _ABS_AND_RELATIVE_URL + _SPACES).search
++                  expr=re.compile(_DQUOTEDTEXT + "(:)" + _ABS_AND_RELATIVE_URL + _SPACES, re.U).search
+                    ):
+         return self.doc_href(s, expr)
+ 
+     def doc_href2(self, s,
+-                  expr=re.compile(_DQUOTEDTEXT + r'(\,\s+)' + _ABSOLUTE_URL + _SPACES).search
++                  expr=re.compile(_DQUOTEDTEXT + r'(\,\s+)' + _ABSOLUTE_URL + _SPACES, re.U).search
+                    ):
+         return self.doc_href(s, expr)
+ 
+--- lib/python/StructuredText/DocumentWithImages.py.orig	Thu Aug 11 09:11:26 2005
++++ lib/python/StructuredText/DocumentWithImages.py	Wed Sep  7 13:30:10 2005
+@@ -27,7 +27,7 @@
+ 
+     def doc_img(
+         self, s,
+-        expr1=re.compile('\"([ _a-zA-Z0-9*.:/;,\[\]\'\-\n\~]+)\":img:([a-zA-Z0-9%\_\-.:/\?=;,\n\~]+)').search,
++        expr1=re.compile('\"((?:\w|[ *.:/;,\-\n\~])+)\":img:([a-zA-Z0-9\_\-.:/;,\n\~]+)', re.U).search,
+         ):
+ 
+ 
+--- lib/python/StructuredText/ST.py.orig	Thu Aug 11 09:11:26 2005
++++ lib/python/StructuredText/ST.py	Wed Sep  7 13:27:26 2005
+@@ -116,6 +116,9 @@
+     Structure => [paragraph,[sub-paragraphs]]
+     """
+ 
++    if type(paragraphs) == type(''):
++        paragraphs = unicode(paragraphs, 'utf-8')
++
+     currentlevel    = 0
+     currentindent  = 0
+     levels            = {0:0}

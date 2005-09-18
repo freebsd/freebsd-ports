@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Start or stop zope
-# $FreeBSD: /tmp/pcvs/ports/www/zope29/files/Attic/zope.sh,v 1.5 2005-02-18 16:52:17 pav Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/zope213/files/Attic/zope.sh.in,v 1.7 2005-09-18 21:33:04 vsevolod Exp $
 
 # PROVIDE: zope
 # REQUIRE: DAEMON
