@@ -16,7 +16,7 @@ COMMENT=	CMS that supports pgsql and mysql
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libpq.so.3)
+.if exists(${LOCALBASE}/lib/libpq.so)
 RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 .endif
 
