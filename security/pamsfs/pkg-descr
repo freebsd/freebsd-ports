@@ -1,0 +1,5 @@
+pamsfs is a PAM module that logs a user into a SFS server on
+system login. The primary reason for doing this is to allow users'
+home-directories to be located on a SFS server.
+
+WWW: http://www.codecobra.com/pamsfs/

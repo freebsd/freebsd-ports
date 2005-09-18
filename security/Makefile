@@ -361,6 +361,7 @@
     SUBDIR += pam_pop3
     SUBDIR += pam_pwdfile
     SUBDIR += pam_smb
+    SUBDIR += pamsfs
     SUBDIR += pamtester
     SUBDIR += pear-Auth
     SUBDIR += pear-Auth_HTTP
