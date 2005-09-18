@@ -13,9 +13,6 @@ MASTER_SITES=	http://loghttp.sourceforge.net/files/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Module for Apache 2.0 which logs incoming and outgoing data
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_APACHE=	YES
 WITH_APACHE2=	YES
