@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	timidity++
-PORTVERSION=	2.11.3
-PORTREVISION=	1
+PORTVERSION=	2.13.2
 CATEGORIES+=	audio
-MASTER_SITES=	http://www.timidity.jp/dist/
-PKGNAMESUFFIX=	-${INTERFACE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=timidity
+PKGNAMESUFFIX= -${INTERFACE}
 DISTNAME=	TiMidity++-${PORTVERSION}
 
 MAINTAINER?=	ports@FreeBSD.org
@@ -18,10 +18,6 @@ COMMENT?=	Emacs interface for TiMidity++
 
 RUN_DEPENDS=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++
 LIB_DEPENDS=	${INTERFACE_DEPS}
-
-BROKEN=		Incomplete distinfo file
-DEPRECATED=	"${BROKEN}"
-EXPIRATION_DATE=2005-09-22
 
 SLAVEDIRS=	audio/timidity++-gtk audio/timidity++-motif \
 		audio/timidity++-slang audio/timidity++-tcltk \
@@ -42,7 +38,6 @@ CONFIGURE_ARGS=	--enable-dynamic=${INTERFACE}
 MASTERDIR=	${.CURDIR}/../../audio/timidity++
 PKGDIR=		${.CURDIR}
 PLIST_SUB=	TIMID_LIBDIR=${TIMID_LIBDIR}
-DIST_SUBDIR=	timidity
 
 TIMID_LIBDIR=	${PREFIX}/lib/timidity
 
@@ -51,7 +46,7 @@ ELISPDIR=	${PREFIX}/share/emacs/site-lisp
 .elif ${INTERFACE} == "gtk"
 LINK=		gtkmidi
 USE_GNOME=	gtk12
-CONFIGURE_ENV=	SHLD="gcc -shared"
+CONFIGURE_ENV=	SHLD="${CC} -shared"
 .elif ${INTERFACE} == "motif"
 LINK=		xmmidi
 USE_MOTIF=	yes
@@ -60,13 +55,13 @@ CONFIGURE_ENV=	MOTIFLIB="${MOTIFLIB}"
 .if defined(JAPANESE)
 INTERFACE_DEPS=	slang.2:${PORTSDIR}/japanese/libslang
 .else
-INTERFACE_DEPS=	slang.1:${PORTSDIR}/devel/libslang
+INTERFACE_DEPS=	slang:${PORTSDIR}/devel/libslang
 .endif
 CONFIGURE_ARGS+=	--enable-ncurses
 .elif ${INTERFACE} == "tcltk"
 LINK=		tkmidi
 DOCFILES=	README.tk
-DOCLANG=	C ja_JP.ujis
+DOCLANG=	C ja_JP.eucJP
 .if defined(JAPANESE)
 INTERFACE_DEPS=	tk80jp.1:${PORTSDIR}/japanese/tk80
 CONFIGURE_ARGS+=	--with-tcl-includes=${PREFIX}/include/tcl8.0jp \
@@ -74,21 +69,21 @@ CONFIGURE_ARGS+=	--with-tcl-includes=${PREFIX}/include/tcl8.0jp \
 		--with-tcl-libs=${PREFIX}/lib --with-tk-libs=${PREFIX}/lib
 CONFIGURE_ENV=	WISH=wish8.0jp
 .else
-INTERFACE_DEPS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
-CONFIGURE_ARGS+=	--with-tcl-includes=${PREFIX}/include/tcl8.0 \
-		--with-tk-includes=${PREFIX}/include/tk8.0 \
+INTERFACE_DEPS=	tk84:${PORTSDIR}/x11-toolkits/tk84
+CONFIGURE_ARGS+=	--with-tcl-includes=${PREFIX}/include/tcl8.4 \
+		--with-tk-includes=${PREFIX}/include/tk8.4 \
 		--with-tcl-libs=${PREFIX}/lib --with-tk-libs=${PREFIX}/lib
-CONFIGURE_ENV=	WISH=wish8.0
+CONFIGURE_ENV=	WISH=wish8.4
 .endif
 .elif ${INTERFACE} == "xaw"
 LINK=		xawmidi
 DOCFILES=	README.xaw
-DOCLANG=	C ja_JP.ujis
-INTERFACE_DEPS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+DOCLANG=	C ja_JP.eucJP
+INTERFACE_DEPS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 .elif ${INTERFACE} == "xskin"
 LINK=		xskinmidi
 DOCFILES=	README.xskin
-DOCLANG=	C ja_JP.ujis
+DOCLANG=	C ja_JP.eucJP
 .else
 NO_BUILD=	yes
 NO_INSTALL=	yes
@@ -100,11 +95,7 @@ NO_INSTALL=	yes
 CONFIGURE_ENV+=	LDFLAGS=-export-dynamic
 .endif
 
-.if ${OSVERSION} >= 450002
 EUCJP_LOCALE=	ja_JP.eucJP
-.else
-EUCJP_LOCALE=	ja_JP.EUC
-.endif
 PLIST_SUB=	EUCJP_LOCALE=${EUCJP_LOCALE}
 
 .if ${INTERFACE} == "motif"
@@ -133,15 +124,12 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/TiMidity-uj.ad \
 	${X11BASE}/lib/X11/${EUCJP_LOCALE}/app-defaults/TiMidity
 .endif
-.if defined(DOCFILES)
-.if !defined(NOPORTDOCS)
+.if defined(DOCFILES) && !defined(NOPORTDOCS)
 .for lang in ${DOCLANG}
-	@${MKDIR} \
-	${PREFIX}/share/doc/`echo ${lang} | ${SED} -e 's/^C$$//' -e 's/_JP.ujis$$//'`/timidity++
+	${MKDIR} ${PREFIX}/share/doc/${lang:C,^C$,,:C,ja_.*,ja/,}timidity++
 	${INSTALL_DATA} ${WRKSRC}/doc/${lang}/${DOCFILES} \
-	${PREFIX}/share/doc/`echo ${lang} | ${SED} -e 's/^C$$//' -e 's/_JP.ujis$$//'`/timidity++
+	    ${PREFIX}/share/doc/${lang:C,^C$,,:C,ja_.*,ja/,}timidity++/
 .endfor
-.endif
 .endif
 .if defined(LINK)
 	${LN} -sf ${PREFIX}/bin/timidity ${PREFIX}/bin/${LINK}
