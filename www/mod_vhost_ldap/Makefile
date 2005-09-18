@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mod_vhost_ldap
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.6
 CATEGORIES=	www
-MASTER_SITES=	http://alioth.debian.org/download.php/1113/
+MASTER_SITES=	http://alioth.debian.org/download.php/1137/
 DISTNAME=	${PORTNAME:S/_/-/g}-${PORTVERSION}
 DIST_SUBDIR=	apache2
 
