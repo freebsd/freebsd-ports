@@ -77,27 +77,27 @@
  
  into your system's global Muttrc, which normally resides in /etc or
  /usr/local/etc.
---- doc/manual.txt.orig	Wed Mar 19 23:30:56 2003
-+++ doc/manual.txt	Wed Mar 26 16:07:20 2003
-@@ -4954,8 +4954,8 @@
+--- doc/manual.txt.orig	Thu Sep 15 16:22:18 2005
++++ doc/manual.txt	Sun Sep 18 15:31:13 2005
+@@ -5004,8 +5004,8 @@
  
-   For examples on how to configure these formats for the various
-   versions of PGP which are floating around, see the pgp*.rc and gpg.rc
--  files in the samples/ subdirectory which has been installed on your
--  system alongside the documentation.  (PGP only)
-+  files in the share/examples/mutt/ subdirectory which has been installed on
-+  your system alongside the documentation.  (PGP only)
+    For  examples  on  how  to  configure  these  formats  for the various
+    versions  of PGP which are floating around, see the pgp*.rc and gpg.rc
+-   files  in  the  samples/ subdirectory which has been installed on your
+-   system alongside the documentation. (PGP only)
++   files  in  the  share/examples/mutt/ subdirectory which has been installed
++   on your system alongside the documentation. (PGP only)
  
-   66..33..114433..  ppggpp__ggeettkkeeyyss__ccoommmmaanndd
+ 6.3.160. pgp_getkeys_command
  
-@@ -5147,8 +5147,8 @@
-         ``$smime_ca_location''" or "-CAfile ``$smime_ca_location''".
+@@ -5203,8 +5203,8 @@
+           $$ssmmiimmee__ccaa__llooccaattiioonn" or "-CAfile $$ssmmiimmee__ccaa__llooccaattiioonn".
  
-   For examples on how to configure these formats, see the smime.rc in
--  the samples/ subdirectory which has been installed on your system
--  alongside the documentation.  (S/MIME only)
-+  the share/examples/mutt/ subdirectory which has been installed on your
-+  system alongside the documentation.  (S/MIME only)
+    For  examples  on  how to configure these formats, see the smime.rc in
+-   the  samples/  subdirectory  which  has  been installed on your system
+-   alongside the documentation. (S/MIME only)
++   the  share/examples/mutt/  subdirectory  which  has  been installed on
++   your system alongside the documentation. (S/MIME only)
  
-   66..33..116622..  ssmmiimmee__vveerriiffyy__ccoommmmaanndd
+ 6.3.179. smime_verify_command
  

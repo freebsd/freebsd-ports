@@ -3,18 +3,6 @@ diff -Nru a/PATCHES b/PATCHES
 +++ PATCHES
 @@ -0,0 +1 @@
 +patch-1.5.6+20040904.tg.mutt-thread.3
-diff -Nru a/doc/manual.sgml.head b/doc/manual.sgml.head
---- doc/manual.sgml.head.orig	Fri Feb  4 08:15:50 2005
-+++ doc/manual.sgml.head	Fri Feb  4 08:19:51 2005
-@@ -1903,6 +1903,8 @@
- ~z [MIN]-[MAX]  messages with a size in the range MIN to MAX *)
- ~=              duplicated messages (see $duplicate_threads)
- ~$              unreferenced messages (requires threaded view)
-+~(PATTERN)      messages in threads containing messages matching a certain
-+                pattern, e.g. all threads containing messages from you: ~(~P)
- </verb></tscreen>
- 
- Where EXPR, USER, ID, and SUBJECT are 
 diff -Nru a/mutt.h b/mutt.h
 --- mutt.h	2004-07-24 12:27:21 +02:00
 +++ mutt.h	2004-09-04 12:36:18 +02:00
@@ -117,17 +105,6 @@ diff -Nru a/pattern.c b/pattern.c
      case M_ALL:
        return (!pat->not);
      case M_EXPIRED:
---- doc/manual.sgml.head.orig2	Mon Sep  6 09:24:16 2004
-+++ doc/manual.sgml.head	Mon Sep  6 09:25:41 2004
-@@ -1773,6 +1773,8 @@
- messages:
- 
- <tscreen><verb>
-+~a              messages in threads that contain at least one tagged message;
-+                this is the same as ~(~T) [see below for ~(..)]
- ~A              all messages
- ~b EXPR         messages which contain EXPR in the message body
- ~B EXPR         messages which contain EXPR in the whole message
 --- mutt.h.orig2	Mon Sep  6 09:24:17 2004
 +++ mutt.h	Mon Sep  6 09:27:04 2004
 @@ -212,6 +212,7 @@
@@ -138,9 +115,9 @@ diff -Nru a/pattern.c b/pattern.c
  
    /* actions for mutt_pattern_comp/mutt_pattern_exec */
    M_AND,
---- pattern.c.orig2	Sun Feb 13 09:05:57 2005
-+++ pattern.c	Sun Feb 13 09:08:06 2005
-@@ -48,6 +48,7 @@
+--- pattern.c.orig2	Sun Sep 18 15:17:46 2005
++++ pattern.c	Sun Sep 18 15:19:48 2005
+@@ -54,6 +54,7 @@
  }
  Flags[] =
  {
@@ -148,10 +125,10 @@ diff -Nru a/pattern.c b/pattern.c
    { 'A', M_ALL,			0,		NULL },
    { 'b', M_BODY,		M_FULL_MSG,	eat_regexp },
    { 'B', M_WHOLE_MSG,		M_FULL_MSG,	eat_regexp },
-@@ -1085,6 +1086,16 @@
- 					pat->alladdr, 2, h->env->to, h->env->cc)));
-     case M_LIST:
-       return (pat->not ^ (h->env && mutt_is_list_recipient (pat->alladdr, h->env->to, h->env->cc)));
+@@ -1139,6 +1140,16 @@
+                                              2, h->env->to, h->env->cc));
+     case M_LIST:	/* known list, subscribed or not */
+       return (pat->not ^ mutt_is_list_cc (pat->alladdr, h->env->to, h->env->cc));
 +    case M_THREADCOMPLETE:
 +      { static pattern_t tmp;
 +        static short pattern_set = 0;
@@ -162,6 +139,6 @@ diff -Nru a/pattern.c b/pattern.c
 +        }
 +        return (pat->not ^ (h->env && match_threadcomplete(&tmp, flags, ctx, h->thread, 1, 1, 1, 1)));
 +      } 
+     case M_SUBSCRIBED_LIST:
+       return (pat->not ^ mutt_is_list_recipient (pat->alladdr, h->env->to, h->env->cc));
      case M_PERSONAL_RECIP:
-       return (pat->not ^ (h->env && match_user (pat->alladdr, h->env->to, h->env->cc)));
-     case M_PERSONAL_FROM:

@@ -1,66 +1,38 @@
---- doc/Makefile.in.orig	Thu Aug 11 21:37:02 2005
-+++ doc/Makefile.in	Sun Aug 14 11:09:10 2005
-@@ -64,13 +64,23 @@
+--- doc/Makefile.in.orig	Sun Sep 18 19:42:14 2005
++++ doc/Makefile.in	Sun Sep 18 19:44:13 2005
+@@ -68,7 +68,7 @@
  	ChangeLog.old					\
  	README NEWS TODO README.SECURITY README.SSL 
  
--all: mutt.1 muttrc.man try-html try-txt
-+all: mutt.1
- 
- try-html: ../makedoc$(EXEEXT)
--	test -f manual.html || $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
-+	rm -f *.html && $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
-+	touch $@
- 
- try-txt: ../makedoc$(EXEEXT)
--	test -f manual.txt || $(MAKE) manual.txt || cp $(srcdir)/manual.txt ./
-+	$(MAKE) manual.txt || cp $(srcdir)/manual.txt ./
-+	touch $@
-+
-+try-latin1: ../makedoc$(EXEEXT)
-+	$(MAKE) manual.latin1 || cp $(srcdir)/manual.latin1 ./
-+	touch $@
-+
-+try-ps: ../makedoc$(EXEEXT)
-+	$(MAKE) manual.ps || cp $(srcdir)/manual.latin1 ./
-+	touch $@
+-all: mutt.1 muttrc.man manual.html stamp-doc-chunked manual.txt
++all: mutt.1 muttrc.man
  
  install: all instdoc
  	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
-@@ -91,10 +101,6 @@
+@@ -89,9 +89,6 @@
  		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
  	done
- 	$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir) || true
--	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/html
--	for file in manual*.html ; do	\
--		$(INSTALL) -m 644 $$file $(DESTDIR)$(docdir)/html/ || true ;\
+ 	-$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir)
+-	-for f in $(HTML_DOCFILES) ; do \
+-		$(INSTALL) -m 644 $$f $(DESTDIR)$(docdir) ; \
 -	done
  
  uninstall:
  	for f in mutt.1 mutt_dotlock.1 flea.1 muttbug.1 ; do \
-@@ -114,17 +120,20 @@
+@@ -108,13 +105,13 @@
  
  check:
- manual.txt: manual.sgml
--	if linuxdoc -B txt -c latin --pass='-P -c' manual ; then \
--		uniq < manual.txt | expand > _manual.txt ; \
--		rm manual.txt ; \
-+	if sgmlfmt -f ascii manual; then \
-+		uniq < manual.ascii | expand > _manual.txt ; \
-+		rm -f manual.txt manual.ascii; \
- 		mv _manual.txt manual.txt ;\
- 	fi
+ manual.txt: manual.html
+-	-lynx -dump -nolist -with_backspaces $^ > $@ || w3m -dump $^ > $@
++#	-lynx -dump -nolist -with_backspaces manual.html > $@
  
- manual.html: manual.sgml
--	sgml2html manual  || true
-+	sgmlfmt -f html manual || true
-+
-+manual.latin1: manual.sgml
-+	sgmlfmt -f latin1 manual || true
+ manual.html: $(srcdir)/html.xsl manual.xml
+-	-xsltproc --nonet -o $@ $^
++#	-xsltproc --nonet -o $@ $(srcdir)/html.xsl manual.xml
  
- manual.ps: manual.sgml
--	sgml2latex --output=ps manual || true
-+	sgmlfmt -f ps manual || true
+ manual-chunked stamp-doc-chunked: $(srcdir)/chunk.xsl manual.xml
+-	-xsltproc --nonet $^
++#	-xsltproc --nonet $(srcdir)/chunk.xsl manual.xml
+ 	touch stamp-doc-chunked
  
- clean: 
- 	rm -f *~ *.html *.orig *.rej  stamp-doc-sgml stamp-doc-man *.ps
+ manual.pdf: stamp-doc-tex
