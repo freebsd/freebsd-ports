@@ -7,6 +7,7 @@
 
 PORTNAME=	azureus
 PORTVERSION=	2.3.0.4
+PORTREVISION=	1
 CATEGORIES=	net java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -52,7 +53,6 @@ PLIST_FILES+=	\
 		%%DATADIR%%/libswt-cairo-gtk-3138.so \
 		%%DATADIR%%/libswt-gnome-gtk-3138.so \
 		%%DATADIR%%/libswt-gtk-3138.so \
-		%%DATADIR%%/libswt-mozilla-gtk-3138.so \
 		%%DATADIR%%/libswt-pi-gtk-3138.so
 
 post-extract:
