@@ -2632,6 +2632,7 @@ garith		ports/games/garith
 garlic		ports/biology/garlic
 garmin-utils	ports/comms/garmin-utils
 garnaxfs	ports/irc/garnaxfs
+gastex		ports/textproc/gastex
 gastman		ports/net/gastman
 gate		ports/editors/gate
 gatekeeper	ports/net/gatekeeper
