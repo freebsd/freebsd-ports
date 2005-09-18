@@ -7,6 +7,7 @@
 
 PORTNAME=	lftp
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/net/ftp/lftp/ \
 		ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/ \
@@ -36,9 +37,24 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	fm@cross-road.org.ua
 COMMENT=	Shell-like command line ftp client
 
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
+
 USE_BZIP2=	yes
 USE_GPG?=	yes
 SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.asc
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+
+OPTIONS=	GNUTLS "With GnutTLS support" off \
+		OPENSSL "With OpenSSL support" on \
+		SOCKS4 "With socks4 support" off \
+		SOCKS5 "With socks5 support" off \
+		SOCKS_DANTE "With socksdante support" off \
+		NLS "With i18n support" on
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_GNUTLS)
 CONFIGURE_ARGS+=	--with-gnutls
@@ -46,13 +62,9 @@ LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 .endif
 
 .if defined(WITH_OPENSSL)
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--with-openssl
-USE_OPENSSL=	yes
 .endif
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
 
 .if defined(WITH_SOCKS4)
 CONFIGURE_ARGS+=	--with-socks
@@ -83,4 +95,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
