@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://keyserver.kjsl.com/~jharris/distfiles/ \
 		ftp://jade.cs.uct.ac.za/pub/
 
-MAINTAINER=	jharris@widomaker.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	View the end of a file like tail(1), but save state between sessions
 
 MAN1=		since.1
