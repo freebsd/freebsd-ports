@@ -1,0 +1,9 @@
+Fracplanet is an application to generate random planets and terrain
+with oceans, mountains, icecaps and rivers. Parameters are specified
+interactively and the results displayed using OpenGL. The generated
+objects can be dumped in Pov-Ray format.
+
+WWW:	http://www.bottlenose.demon.co.uk/share/fracplanet
+
+- Igor Pokrovsky
+ip@doom.homeunix.org
