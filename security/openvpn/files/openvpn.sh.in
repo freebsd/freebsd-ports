@@ -59,7 +59,11 @@ prefix="%%PREFIX%%"
 openvpn_precmd()
 {
 	for i in $openvpn_if ; do
-		if ! sysctl debug.if_${i}_debug >/dev/null 2>&1 ; then
+		# FreeBSD <= 5.4 does not know kldstat's -m option
+		# FreeBSD >= 6.0 does not add debug.* sysctl information
+		# in the default build - we check both to keep things simple
+		if ! sysctl debug.if_${i}_debug >/dev/null 2>&1 \
+			&& ! kldstat -m if_${i} >/dev/null 2>&1 ; then
 			if ! kldload if_${i} ; then
 				warn "Could not load $i module."
 				return 1
