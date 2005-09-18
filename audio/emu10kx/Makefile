@@ -18,6 +18,9 @@ USE_BZIP2=	yes
 
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 
+MAN8=	emuctrl.8
+PLIST_FILES=	sbin/emuctrl
+
 post-install:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 	@${PKGINSTALL} ${PKGNAME} POST-INSTALL
