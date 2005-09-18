@@ -1,0 +1,68 @@
+%%PHPWEBFTPDIR%%/config.inc.php
+%%PHPWEBFTPDIR%%/gpl.txt
+%%PHPWEBFTPDIR%%/img/zip.gif
+%%PHPWEBFTPDIR%%/img/createdir.gif
+%%PHPWEBFTPDIR%%/img/doc.gif
+%%PHPWEBFTPDIR%%/img/exe.gif
+%%PHPWEBFTPDIR%%/img/file.gif
+%%PHPWEBFTPDIR%%/img/flash.gif
+%%PHPWEBFTPDIR%%/img/folder.gif
+%%PHPWEBFTPDIR%%/img/gotodir.gif
+%%PHPWEBFTPDIR%%/img/html.gif
+%%PHPWEBFTPDIR%%/img/index.html
+%%PHPWEBFTPDIR%%/img/js.gif
+%%PHPWEBFTPDIR%%/img/leftback.gif
+%%PHPWEBFTPDIR%%/img/link.gif
+%%PHPWEBFTPDIR%%/img/listheaddiv.gif
+%%PHPWEBFTPDIR%%/img/listheader.gif
+%%PHPWEBFTPDIR%%/img/login.gif
+%%PHPWEBFTPDIR%%/img/logoff.gif
+%%PHPWEBFTPDIR%%/img/menu_delete.gif
+%%PHPWEBFTPDIR%%/img/menu_edit.gif
+%%PHPWEBFTPDIR%%/img/menu_rename.gif
+%%PHPWEBFTPDIR%%/img/menu_settings.gif
+%%PHPWEBFTPDIR%%/img/menuhead.gif
+%%PHPWEBFTPDIR%%/img/mode.gif
+%%PHPWEBFTPDIR%%/img/mov.gif
+%%PHPWEBFTPDIR%%/img/parent.gif
+%%PHPWEBFTPDIR%%/img/pdf.gif
+%%PHPWEBFTPDIR%%/img/php.gif
+%%PHPWEBFTPDIR%%/img/pic.gif
+%%PHPWEBFTPDIR%%/img/Thumbs.db
+%%PHPWEBFTPDIR%%/img/titlebar.gif
+%%PHPWEBFTPDIR%%/img/txt.gif
+%%PHPWEBFTPDIR%%/img/upload.gif
+%%PHPWEBFTPDIR%%/img/1px.gif
+%%PHPWEBFTPDIR%%/include/language/spanish.lang.php
+%%PHPWEBFTPDIR%%/include/language/catalan.lang.php
+%%PHPWEBFTPDIR%%/include/language/chinese simplified.lang.php
+%%PHPWEBFTPDIR%%/include/language/chinese.lang.php
+%%PHPWEBFTPDIR%%/include/language/czech.lang.php
+%%PHPWEBFTPDIR%%/include/language/danish.lang.php
+%%PHPWEBFTPDIR%%/include/language/dutch.lang.php
+%%PHPWEBFTPDIR%%/include/language/english.lang.php
+%%PHPWEBFTPDIR%%/include/language/french.lang.php
+%%PHPWEBFTPDIR%%/include/language/german.lang.php
+%%PHPWEBFTPDIR%%/include/language/index.html
+%%PHPWEBFTPDIR%%/include/language/italian.lang.php
+%%PHPWEBFTPDIR%%/include/language/latvian.lang.php
+%%PHPWEBFTPDIR%%/include/language/latvian-utf8.lang.php
+%%PHPWEBFTPDIR%%/include/language/polish.lang.php
+%%PHPWEBFTPDIR%%/include/language/portuguese.lang.php
+%%PHPWEBFTPDIR%%/include/language/russian.lang.php
+%%PHPWEBFTPDIR%%/include/language/slovak.lang.php
+%%PHPWEBFTPDIR%%/include/language/bulgarian.lang.php
+%%PHPWEBFTPDIR%%/include/functions.inc.php
+%%PHPWEBFTPDIR%%/include/index.html
+%%PHPWEBFTPDIR%%/include/script.js
+%%PHPWEBFTPDIR%%/index.php
+%%PHPWEBFTPDIR%%/setpermission.php
+%%PHPWEBFTPDIR%%/style/cm.css
+%%PHPWEBFTPDIR%%/style/index.html
+%%PHPWEBFTPDIR%%/tmp/index.html
+@dirrm %%PHPWEBFTPDIR%%/img
+@dirrm %%PHPWEBFTPDIR%%/include/language
+@dirrm %%PHPWEBFTPDIR%%/include
+@dirrm %%PHPWEBFTPDIR%%/style
+@dirrm %%PHPWEBFTPDIR%%/tmp
+@dirrm %%PHPWEBFTPDIR%%
