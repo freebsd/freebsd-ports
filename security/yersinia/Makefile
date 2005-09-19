@@ -20,7 +20,7 @@ COMMENT=	Layer 2 vulnerability scanner (switches, spanning tree, 802.1q ...)
 BUILD_DEPENDS=	${LOCALBASE}/share/examples/libnet/ip_raw.c:${PORTSDIR}/net/libnet-devel
 
 .if ${OSVERSION} < 500000
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
 .endif
 
 GNU_CONFIGURE=	yes
