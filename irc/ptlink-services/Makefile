@@ -7,6 +7,7 @@
 
 PORTNAME=	Services
 PORTVERSION=	3.4.1
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.sunsite.dk/projects/ptlink/ircsvs3/
 PKGNAMEPREFIX=	PTlink-
@@ -29,7 +30,7 @@ CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR}
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${CHOWN} -R ${USER}:${GROUP} ${SYSCONFDIR}
+	@${CHOWN} -R ircd:ircd ${SYSCONFDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
