@@ -10,11 +10,11 @@ PORTNAME=	openssl
 PORTVERSION=	0.9.8
 PORTREVISION!=	date -v-1d +%Y%m%d
 .else
-.if defined(WITH_OPENSSL_BETA)
-PORTVERSION=	0.9.8
+.if !defined(WITH_OPENSSL_BETA) && defined(WITH_OPENSSL_097)
+PORTVERSION=	0.9.7g
 PORTREVISION?=	0
 .else
-PORTVERSION=	0.9.7g
+PORTVERSION=	0.9.8
 PORTREVISION?=	0
 .endif
 .endif
@@ -50,14 +50,17 @@ CONFLICTS?=		openssl-0.*
 .endif
 OPENSSL_SHLIBVER?=	4
 NO_LATEST_LINK=		yes
-PATCHDIR=		${MASTERDIR}/files-beta
-PLIST_SUB+=		OPENSSL_BETA=""
-PLIST_SUB+=		OPENSSL_STABLE="@comment "
 .else
 CONFLICTS?=		openssl-beta-0.*
 OPENSSL_SHLIBVER?=	3
+.endif
+.if defined(WITH_OPENSSL_097)
 PLIST_SUB+=		OPENSSL_BETA="@comment "
 PLIST_SUB+=		OPENSSL_STABLE=""
+.else
+PATCHDIR=		${MASTERDIR}/files-beta
+PLIST_SUB+=		OPENSSL_BETA=""
+PLIST_SUB+=		OPENSSL_STABLE="@comment "
 .endif
 
 MAKE_ENV+=		MANPREFIX=${MANPREFIX}
@@ -860,12 +863,12 @@ MLINKS=	dgst.1 md4.1 \
 	ui_compat.3 des_read_pw_string.3 \
 	des_modes.7 Modes_of_DES.7
 
-.if defined(WITH_OPENSSL_BETA) || defined(WITH_OPENSSL_SNAPSHOT)
+.if !defined(WITH_OPENSSL_097)
 MAN1+=	ec.1 ecparam.1
 MAN3+=	ASN1_generate_nconf.3 BN_BLINDING_new.3 ERR_set_mark.3 \
 	ecdsa.3 OPENSSL_Applink.3 OPENSSL_ia32cap.3 x509.3
 MAN5+=	x509v3_config.5
-MLINKS+= \
+MLINKS+=	\
 	ASN1_generate_nconf.3 ASN1_generate_v3.3 \
 	BN_BLINDING_new.3 BN_BLINDING_convert.3 \
 	BN_BLINDING_new.3 BN_BLINDING_free.3 \
@@ -936,19 +939,19 @@ do-configure:
 	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS} \
 	./config --prefix=${PREFIX} --openssldir=${OPENSSLDIR} \
 	-L${PREFIX}/lib ${EXTRACONFIGURE}
-.if defined(WITH_OPENSSL_BETA)
-	@${REINPLACE_CMD} \
-		-e 's|^MANDIR=.*$$|MANDIR=$$(MANPREFIX)/man|' \
-		-e 's|lib/pkgconfig|libdata/pkgconfig|g' \
-		-e 's|LIBVERSION=[^ ]* |LIBVERSION=$(OPENSSL_SHLIBVER) |' \
-		${WRKSRC}/Makefile
-.else
+.if defined(WITH_OPENSSL_097)
 	@${REINPLACE_CMD} \
 		-e 's|^FIPS_DES_ENC=|#FIPS_DES_ENC=|' \
 		-e 's|^FIPS_SHA1_ASM_OBJ=|#FIPS_SHA1_ASM_OBJ=|' \
 		-e 's|^SHLIB_EXT=.*$$|SHLIB_EXT=.so.$(SHLIBVER)|' \
 		-e 's|^SHARED_LIBS_LINK_EXTS=.*$$|SHARED_LIBS_LINK_EXTS=.so|' \
 		-e 's|^SHLIBDIRS= fips|SHLIBDIRS=|' \
+		${WRKSRC}/Makefile
+.else
+	@${REINPLACE_CMD} \
+		-e 's|^MANDIR=.*$$|MANDIR=$$(MANPREFIX)/man|' \
+		-e 's|lib/pkgconfig|libdata/pkgconfig|g' \
+		-e 's|LIBVERSION=[^ ]* |LIBVERSION=$(OPENSSL_SHLIBVER) |' \
 		${WRKSRC}/Makefile
 .endif
 
