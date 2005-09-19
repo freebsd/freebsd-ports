@@ -11,7 +11,7 @@ CATEGORIES=	japanese security
 MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/pgp/2.x/lang/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}i-japanese
 
-MAINTAINER=	hikura@kaisei.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese language module for PGP
 
 DEPRECATED=		obsolete -- current version of base program is 7.0

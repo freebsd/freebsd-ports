@@ -11,10 +11,10 @@ CATEGORIES=	japanese
 MASTER_SITES=	# disappeared
 DISTNAME=	${PORTNAME}-${VERSION}
 
-MAINTAINER=	hikura@kaisei.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Access to Japanese EPWING or Electric-Book based CD-ROM via HTTP
 
-DEPRECATED=		mastersite disappeared
+DEPRECATED=		mastersite disappeared, no longer maintained by author
 EXPIRATION_DATE=	2005-10-11
 
 VERSION=	0.2-b4
