@@ -1,0 +1,53 @@
+# New ports collection makefile for:	rej
+# Date created:				16 Sep 2005
+# Whom:					Emanuel Haupt <ehaupt@critical.ch>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	rej
+PORTVERSION=	0.15
+CATEGORIES=	sysutils perl5
+MASTER_SITES=	http://critical.ch/distfiles/ \
+		http://ftp.suse.com/pub/people/mason/rej/
+
+MAINTAINER=	ehaupt@critical.ch
+COMMENT=	Merges patch-rejects and runs a merge program to verify the changes
+
+USE_PERL5=	yes
+NO_BUILD=	yes
+USE_REINPLACE=	yes
+
+PORTDOCS=	CHANGELOG README vimrc
+PLIST_FILES=	bin/rej bin/qp
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500806
+IGNORE=		needs Perl 5.8.6 or above (lang/perl5.8)
+.endif
+
+post-patch:
+.for f in ${PORTNAME} qp
+	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' \
+		${WRKSRC}/${f}
+.endfor
+	@${REINPLACE_CMD} -e 's|/bin/bash|${SH}|' \
+		${WRKSRC}/runtests.sh
+
+do-install:
+.for f in ${PORTNAME} qp
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin
+.endfor
+
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.endif
+
+run-test: patch
+	@cd ${WRKSRC}; ${SH} runtests.sh
+
+.include <bsd.port.post.mk>

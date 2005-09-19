@@ -430,6 +430,7 @@
     SUBDIR += rdiff-backup-devel
     SUBDIR += readlink
     SUBDIR += reed
+    SUBDIR += rej
     SUBDIR += rename
     SUBDIR += reoback
     SUBDIR += rfstool
