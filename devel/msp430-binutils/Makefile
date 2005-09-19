@@ -15,11 +15,7 @@ PKGNAMEPREFIX=	msp430-
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	GNU binutils for TI's msp430 MCUs cross-development
 
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	"${BROKEN}"
-EXPIRATION_DATE=2005-09-22
-
-BINUTILVERSION=	2.15
+BINUTILVERSION=	2.16.1
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -50,16 +46,21 @@ pre-configure:
 	${CHMOD} 755 ${WRKSRC}/configure
 
 post-install:
-# Register these too
-	install-info ${PREFIX}/${INFO_PATH}/configure.info ${PREFIX}/${INFO_PATH}/dir
-	install-info ${PREFIX}/${INFO_PATH}/standards.info ${PREFIX}/${INFO_PATH}/dir
-# This should go after all *.info stuff
-	${ECHO} "@unexec rm %D/${PKGNAMEPREFIX:S/-$//}/info/dir" >> ${TMPPLIST}
-	${ECHO} "@unexec rmdir %D/${PKGNAMEPREFIX:S/-$//}/info 2> /dev/null || true" >> ${TMPPLIST}
-	${ECHO} "@unexec rmdir %D/${PKGNAMEPREFIX:S/-$//} 2> /dev/null || true" >> ${TMPPLIST}
 .for F in ${BINARIES}
 	@${LN} -f ${PREFIX}/bin/${PKGNAMEPREFIX}$F \
 		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin/$F
 .endfor
+
+#
+# UGLY HACK
+#
+add-plist-post:
+	@${ECHO_CMD} "@unexec rmdir -p %D/${PKGNAMEPREFIX:S/-$//}/info 2> /dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir -p %D/${PKGNAMEPREFIX:S/-$//} 2> /dev/null || true" >> ${TMPPLIST}
+.if (defined(PREFIX) && ${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${X11BASE} && ${PREFIX} != ${LINUXBASE} && ${PREFIX} != "/usr")
+	@${ECHO_CMD} "@unexec rmdir %D 2> /dev/null || true" >> ${TMPPLIST}
+.else
+	@${DO_NADA}
+.endif
 
 .include <bsd.port.mk>
