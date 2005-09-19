@@ -36,6 +36,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl 
 .endif
 
 PERL_CONFIGURE=	yes
+APACHE_COMPAT=	yes
 
 MAN3=		Apache::Gallery.3
 

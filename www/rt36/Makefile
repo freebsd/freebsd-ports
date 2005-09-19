@@ -59,6 +59,7 @@ LATEST_LINK=	rt34
 HAS_CONFIGURE=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	Executes scripts in post-install phase
+APACHE_COMPAT=	yes
 
 CONFIGURE_ARGS=	--prefix=${RT_PATH} \
 		--enable-layout=${LAYOUT} \

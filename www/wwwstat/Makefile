@@ -22,6 +22,7 @@ COMMENT=	Webserver logfile analysis package
 RUN_DEPENDS=	${LOCALBASE}/etc/apache/httpd.conf:${PORTSDIR}/${APACHE_PORT}
 
 USE_PERL5=	yes
+APACHE_COMPAT=	yes
 MAKE_ENV+=	PERL5=${PERL5}
 DIST_SUBDIR=	wwwstat
 MAN1=		wwwstat.1 splitlog.1

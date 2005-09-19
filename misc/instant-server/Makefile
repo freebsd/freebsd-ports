@@ -28,6 +28,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/postfix:${PORTSDIR}/mail/postfix \
 
 BATCH=		YES
 NO_WRKSUBDIR=	YES
+APACHE_COMPAT=	YES
 
 # comms/hylafax irc/ircd-hybrid
 

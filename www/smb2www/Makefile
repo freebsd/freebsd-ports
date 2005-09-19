@@ -24,6 +24,7 @@ IS_INTERACTIVE=	yes
 NO_BUILD=	yes
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}
+APACHE_COMPAT=	yes
 
 do-install:
 	@cd ${WRKSRC}; ${PERL} ${WRKSRC}/Install.pl

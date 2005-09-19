@@ -16,6 +16,7 @@ COMMENT=	Persistent CGI module for Apache and Zope
 
 RUN_DEPENDS=	${ZOPEBASEDIR}/skel/bin/zopectl.in:${PORTSDIR}/www/zope
 
+APACHE_COMPAT=	yes
 BROKEN=		Does not install
 DEPRECATED=	${BROKEN}
 EXPIRATION_DATE=2005-09-22

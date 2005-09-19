@@ -18,6 +18,7 @@ LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83
 
 WRKSRC=		${WRKDIR}/mod_dtcl
 MAKEFILE=	${FILESDIR}/Makefile.bsd
+APACHE_COMPAT=	yes
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libmod_dtcl.so.1* \

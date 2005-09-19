@@ -38,6 +38,7 @@ MAN1=		htdig.1 htdig-pdfparser.1 htdump.1 htfuzzy.1 htload.1 \
 		htmerge.1 htnotify.1 htpurge.1 htsearch.1 htstat.1 rundig.1
 
 MAN8=		htdigconfig.8
+APACHE_COMPAT=	YES
 
 .include <bsd.port.pre.mk>
 

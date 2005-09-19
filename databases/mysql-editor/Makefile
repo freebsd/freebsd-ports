@@ -18,6 +18,7 @@ COMMENT=	CGI scripts in Perl to edit your MySQL tables
 RUN_DEPENDS=	${CGI_BIN}:${PORTSDIR}/${APACHE_PORT}
 
 NO_BUILD=	True
+APACHE_COMPAT=	True
 
 CGI_BIN=	${LOCALBASE}/www/cgi-bin
 
