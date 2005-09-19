@@ -16,6 +16,8 @@ COMMENT=		Sender Rewriting Scheme 2 C Implementation
 
 CONFLICTS=		${PORTNAME}-1.2.*
 
+LATEST_LINK=		libspf2-10
+
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
 USE_LIBTOOL_VER=	15
