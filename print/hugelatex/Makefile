@@ -13,7 +13,7 @@ CATEGORIES=		print
 MASTER_SITES=		# none
 DISTFILES=		# none
 
-MAINTAINER=		murray@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	LaTeX format files with large limits
 
 BUILD_DEPENDS=		tex:${PORTSDIR}/print/teTeX
