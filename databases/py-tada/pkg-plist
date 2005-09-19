@@ -1,0 +1,46 @@
+%%PYTHON_SITELIBDIR%%/tada/__init__.py
+%%PYTHON_SITELIBDIR%%/tada/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tada/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tada/tada.py
+%%PYTHON_SITELIBDIR%%/tada/tada.pyc
+%%PYTHON_SITELIBDIR%%/tada/tada.pyo
+%%PYTHON_SITELIBDIR%%/tada/tao.py
+%%PYTHON_SITELIBDIR%%/tada/tao.pyc
+%%PYTHON_SITELIBDIR%%/tada/tao.pyo
+%%PYTHON_SITELIBDIR%%/tada/taorda.py
+%%PYTHON_SITELIBDIR%%/tada/taorda.pyc
+%%PYTHON_SITELIBDIR%%/tada/taorda.pyo
+%%PYTHON_SITELIBDIR%%/tada/test/MySQLdb/__init__.py
+%%PYTHON_SITELIBDIR%%/tada/test/MySQLdb/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tada/test/MySQLdb/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tada/test/MySQLdb/test_tada.py
+%%PYTHON_SITELIBDIR%%/tada/test/MySQLdb/test_tada.pyc
+%%PYTHON_SITELIBDIR%%/tada/test/MySQLdb/test_tada.pyo
+%%PYTHON_SITELIBDIR%%/tada/test/MySQLdb/test_tadah.py
+%%PYTHON_SITELIBDIR%%/tada/test/MySQLdb/test_tadah.pyc
+%%PYTHON_SITELIBDIR%%/tada/test/MySQLdb/test_tadah.pyo
+%%PYTHON_SITELIBDIR%%/tada/test/MySQLdb/test_tao.py
+%%PYTHON_SITELIBDIR%%/tada/test/MySQLdb/test_tao.pyc
+%%PYTHON_SITELIBDIR%%/tada/test/MySQLdb/test_tao.pyo
+%%PYTHON_SITELIBDIR%%/tada/test/__init__.py
+%%PYTHON_SITELIBDIR%%/tada/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tada/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tada/test/pysqlite2/__init__.py
+%%PYTHON_SITELIBDIR%%/tada/test/pysqlite2/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tada/test/pysqlite2/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tada/test/pysqlite2/test_tada.py
+%%PYTHON_SITELIBDIR%%/tada/test/pysqlite2/test_tada.pyc
+%%PYTHON_SITELIBDIR%%/tada/test/pysqlite2/test_tada.pyo
+%%PYTHON_SITELIBDIR%%/tada/test/pysqlite2/test_tadah.py
+%%PYTHON_SITELIBDIR%%/tada/test/pysqlite2/test_tadah.pyc
+%%PYTHON_SITELIBDIR%%/tada/test/pysqlite2/test_tadah.pyo
+%%PYTHON_SITELIBDIR%%/tada/test/pysqlite2/test_tao.py
+%%PYTHON_SITELIBDIR%%/tada/test/pysqlite2/test_tao.pyc
+%%PYTHON_SITELIBDIR%%/tada/test/pysqlite2/test_tao.pyo
+%%PYTHON_SITELIBDIR%%/tada/util.py
+%%PYTHON_SITELIBDIR%%/tada/util.pyc
+%%PYTHON_SITELIBDIR%%/tada/util.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/tada/test/pysqlite2
+@dirrm %%PYTHON_SITELIBDIR%%/tada/test/MySQLdb
+@dirrm %%PYTHON_SITELIBDIR%%/tada/test
+@dirrm %%PYTHON_SITELIBDIR%%/tada

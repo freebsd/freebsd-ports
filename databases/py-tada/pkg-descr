@@ -1,0 +1,14 @@
+This python module is a wrapper module for any DBAPI 2 compatible database
+module. It wraps all functions and methods of the origional module and forces
+the return of deferreds instead. tada can therefore be considered to be 'almost'
+DBAPI compatible as it inherits the compatiblity level of the wrapped module,
+but returns twisted deferreds.
+
+tadah - is an additional class: "Tada with Helpers". This class adds some helper
+functionality to tada, but breaks strict DBAPI 2 spec.
+
+tao - uses tada and tadah to create an object model for DB access.  It is loosly
+based on the SQLObject project's usage model, but asynchronous.
+
+Author: Clive Crous <clive@darkarts.co.za>
+WWW:	http://www.darkarts.co.za/projects/tada/
