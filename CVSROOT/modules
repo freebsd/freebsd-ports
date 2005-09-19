@@ -10177,6 +10177,7 @@ py-supybot-plugins	ports/irc/py-supybot-plugins
 py-sybase	ports/databases/py-sybase
 py-syck		ports/textproc/py-syck
 py-tables	ports/devel/py-tables
+py-tada		ports/databases/py-tada
 py-tarfile	ports/archivers/py-tarfile
 py-tconfpy	ports/devel/py-tconfpy
 py-tkinter	ports/x11-toolkits/py-tkinter
