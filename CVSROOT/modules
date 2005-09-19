@@ -10505,6 +10505,7 @@ refdb		ports/textproc/refdb
 regexx		ports/devel/regexx
 regexxer	ports/devel/regexxer
 regm		ports/mail/regm
+rej		ports/sysutils/rej
 relate		ports/mbone/relate
 relay		ports/net/relay
 relay-ctrl	ports/mail/relay-ctrl
