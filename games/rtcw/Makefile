@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/wolf/linux/old/
 DISTNAME=	wolf-linux-${PORTVERSION}.x86
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	nik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Return to Castle Wolfenstein for Linux
 
 BROKEN=		Incomplete pkg-plist
