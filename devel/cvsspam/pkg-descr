@@ -1,0 +1,8 @@
+CVSspam emails you diffs when a change is committed to your CVS repository.
+These HTML mails hyperlink to further details and use styling to emphasise
+information structure.
+
+WWW: http://www.badgers-in-foil.co.uk/projects/cvsspam/
+
+- ehaupt
+ehaupt@critical.ch
