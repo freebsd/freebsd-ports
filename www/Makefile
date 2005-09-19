@@ -206,6 +206,7 @@
     SUBDIR += lighttpd
     SUBDIR += linkcheck
     SUBDIR += linkchecker
+    SUBDIR += linklint
     SUBDIR += links
     SUBDIR += links1
     SUBDIR += linux-beonex
