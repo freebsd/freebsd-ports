@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web based Cyrus IMAP user admin client
 
 DISTVERSION=	063a
-
+APACHE_COMPAT=	yes
 .include "options"
 
 .if defined(WITH_CYRUS_IMAPD_VER)

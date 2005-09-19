@@ -21,6 +21,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}-${PORTVERSION}
 RESTRICTED=	"not redistributable, license agreement required"
 USE_PERL5=	yes
 NO_BUILD=	yes
+APACHE_COMPAT=	yes
 
 # to determine whether apache installed
 WWW_DIR=	${LOCALBASE}/www/

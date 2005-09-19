@@ -52,6 +52,7 @@ BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+APACHE_COMPAT=	yes
 HAS_CONFIGURE=	yes
 #NO_BUILD=	yes
 #NO_PACKAGE=	Executes scripts in post-install phase

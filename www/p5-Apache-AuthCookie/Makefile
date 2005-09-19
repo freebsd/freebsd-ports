@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl module to provide custom forms for reauthentication
 
+APACHE_COMPAT=	yes
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 .if defined(WITH_MODPERL2)
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2

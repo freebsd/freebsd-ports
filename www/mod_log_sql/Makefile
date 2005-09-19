@@ -22,6 +22,7 @@ USE_MYSQL=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+APACHE_COMPAT=	yes
 
 ALL_TARGET=	dso
 INSTALL_TARGET=	dsoinstall

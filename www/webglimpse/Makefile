@@ -23,6 +23,7 @@ WRKSRC=		${WRKDIR}/webglimpse-1.6.edu
 NO_CDROM=	depends on glimpse
 USE_PERL5=	yes
 NO_BUILD=	yes
+APACHE_COMPAT=	yes
 
 pre-configure:
 .for i in wginstall wginstall.pl
