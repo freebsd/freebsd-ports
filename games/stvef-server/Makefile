@@ -12,7 +12,7 @@ MASTER_SITES=	ftp.multiplay.co.uk/pub/games/fps/eliteforce/patches/linux/ \
 		ftp://3dgamers.in-span.net/pub/3dgamers/games/stveliteforce/ 
 DISTFILES=	stveflinuxdedicated120.zip
 
-MAINTAINER=	nik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Star Trek Voyager: Elite Forces dedicated server for Linux
 
 BROKEN=		Incomplete pkg-plist
