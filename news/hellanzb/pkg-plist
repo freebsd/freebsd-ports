@@ -23,6 +23,9 @@ etc/hellanzb.conf.sample
 %%PYTHON_SITELIBDIR%%/Hellanzb/Logging.py
 %%PYTHON_SITELIBDIR%%/Hellanzb/Logging.pyc
 %%PYTHON_SITELIBDIR%%/Hellanzb/Logging.pyo
+%%PYTHON_SITELIBDIR%%/Hellanzb/NewzbinDownloader.py
+%%PYTHON_SITELIBDIR%%/Hellanzb/NewzbinDownloader.pyc
+%%PYTHON_SITELIBDIR%%/Hellanzb/NewzbinDownloader.pyo
 %%PYTHON_SITELIBDIR%%/Hellanzb/PostProcessor.py
 %%PYTHON_SITELIBDIR%%/Hellanzb/PostProcessor.pyc
 %%PYTHON_SITELIBDIR%%/Hellanzb/PostProcessor.pyo

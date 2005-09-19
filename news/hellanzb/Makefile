@@ -3,11 +3,11 @@
 # Whom:			Philip Jenveey <pjenvey@groovie.org>
 #
 # $FreeBSD$
-# $Id: Makefile 362 2005-06-30 22:41:56Z pjenvey $
+# $Id: Makefile 451 2005-09-14 07:27:08Z pjenvey $
 #
 
 PORTNAME=	hellanzb
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	news
 MASTER_SITES=	http://www.hellanzb.com/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
