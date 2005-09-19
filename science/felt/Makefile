@@ -7,6 +7,7 @@
 
 PORTNAME=	felt
 PORTVERSION=	3.06
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	felt
@@ -14,9 +15,6 @@ EXTRACT_SUFX=	-devel.src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system for Finite Element Analysis
-
-LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d \
-		Xm.3:${PORTSDIR}/x11-toolkits/open-motif
 
 USE_X_PREFIX=	yes
 USE_GL=		yes
@@ -27,6 +25,9 @@ GNU_CONFIGURE=	yes
 MAN1=		burlap.1 corduroy.1 felt.1 patchwork.1 velvet.1 yardstick.1
 MAN3=		Drawing.3
 MAN4=		corduroy.4 felt.4
+
+DOCSDIR=	${PREFIX}/share/doc/FElt
+EXAMPLESDIR=	${PREFIX}/share/examples/FElt
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>, ; s,"malloc.h",<stdlib.h>,' \
@@ -41,9 +42,11 @@ post-patch:
 	${WRKSRC}/src/Patchwork/util.c
 
 post-install:
-	${MKDIR} ${PREFIX}/share/examples/FElt
-	${CP} ${WRKSRC}/examples/* ${PREFIX}/share/examples/FElt
-	${MKDIR} ${PREFIX}/share/doc/FElt
-	${CP} ${WRKSRC}/*.html ${PREFIX}/share/doc/FElt
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${EXAMPLESDIR}
+	${CP} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	${MKDIR} ${DOCSDIR}
+	${CP} ${WRKSRC}/*.html ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
