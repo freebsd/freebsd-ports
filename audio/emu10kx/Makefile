@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	emu10kx
-PORTVERSION=	20050423
+PORTVERSION=	20050919
 CATEGORIES=	audio
 MASTER_SITES=	http://chibis.persons.gfk.ru/audigy/emu10kx/
-DISTNAME=	${PORTNAME}-2005-04-23
+DISTNAME=	${PORTNAME}-2005-09-19
 
 MAINTAINER=	michaels@sdf.lonestar.org
 COMMENT=	SBLive!, Audigy, and Audigy2 driver for FreeBSD
@@ -20,11 +20,12 @@ NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 
 MAN8=	emuctrl.8
 PLIST_FILES=	sbin/emuctrl
+WRKSRC=	${WRKDIR}/${DISTNAME}a
 
 post-install:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 	@${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
