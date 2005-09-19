@@ -1,0 +1,27 @@
+# New ports collection makefile for:	ksqlshell
+# Date created:				Wed Aug 12 11:38:46 CEST 2005
+# Whom:					Michael L. Hostbaek <mich@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ksqlshell
+PORTVERSION=	0.2
+CATEGORIES=	databases kde
+MASTER_SITES=	http://www.ksqlshell.de/
+
+MAINTAINER=	mich@FreeBSD.org
+COMMENT=	MySQL and PostgreSQL client for KDE
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_KDELIBS_VER=3
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_REINPLACE=	yes
+USE_MYSQL=	yes
+USE_PGSQL=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+
+.include <bsd.port.mk>
