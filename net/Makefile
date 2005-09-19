@@ -126,6 +126,7 @@
     SUBDIR += edonkey-gui-gtk
     SUBDIR += edonkey-gui-gtk-urlslave
     SUBDIR += ejabberd
+    SUBDIR += empty
     SUBDIR += entitymib
     SUBDIR += erlang_xmlrpc
     SUBDIR += etherboot
