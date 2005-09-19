@@ -130,6 +130,9 @@ EOF
     echo "%%DOCSDIR%%/html/mimesupport.html" >> $tmp_first
     echo "%%DOCSDIR%%/html/miscellany.html" >> $tmp_first
     echo "%%DOCSDIR%%/html/reference.html" >> $tmp_first
+    if [ "$MUTT_COMPRESSED_FOLDERS" = "yes" ]; then
+      echo "%%DOCSDIR%%/html/compressed-folders.html" >> $tmp_first
+    fi
     echo "@dirrm %%DOCSDIR%%/html" >> $tmp_last
   fi
   cat >> $tmp_last <<EOF

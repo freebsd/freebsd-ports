@@ -475,8 +475,9 @@ post-patch::
 .endif # ! NOPORTDOCS
 
 .if ${XML_USED} == yes
-#BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
-#		lynx:${PORTSDIR}/www/lynx
+BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
+		${PREFIX}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
+		lynx:${PORTSDIR}/www/lynx
 post-patch::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-doc-xml
 .endif

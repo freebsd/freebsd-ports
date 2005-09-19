@@ -24,15 +24,15 @@
  check:
  manual.txt: manual.html
 -	-lynx -dump -nolist -with_backspaces $^ > $@ || w3m -dump $^ > $@
-+#	-lynx -dump -nolist -with_backspaces manual.html > $@
++	-lynx -dump -nolist -with_backspaces manual.html > $@
  
  manual.html: $(srcdir)/html.xsl manual.xml
 -	-xsltproc --nonet -o $@ $^
-+#	-xsltproc --nonet -o $@ $(srcdir)/html.xsl manual.xml
++	-xsltproc --nonet -o $@ $(srcdir)/html.xsl manual.xml
  
  manual-chunked stamp-doc-chunked: $(srcdir)/chunk.xsl manual.xml
 -	-xsltproc --nonet $^
-+#	-xsltproc --nonet $(srcdir)/chunk.xsl manual.xml
++	-xsltproc --nonet $(srcdir)/chunk.xsl manual.xml
  	touch stamp-doc-chunked
  
  manual.pdf: stamp-doc-tex
