@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	sip
-PORTVERSION=	4.3
+PORTVERSION=	4.3.1
 PORTREVISION=	
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/sip/ \
