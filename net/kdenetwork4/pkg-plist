@@ -1726,7 +1726,6 @@ share/sounds/ktalkd.wav
 @dirrm share/doc/HTML/en/kdenetwork-apidocs
 @dirrm share/doc/HTML/en/kcontrol/lanbrowser
 @dirrm share/doc/HTML/en/kcontrol/kcmtalkd
-@dirrm share/apps/zeroconf
 @dirrm share/apps/remoteview
 @dirrm share/apps/ksirc/pics/emoticons
 @dirrm share/apps/ksirc/pics

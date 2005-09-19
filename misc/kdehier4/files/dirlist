@@ -186,6 +186,9 @@ share/apps/kthememgr/Themes
 share/apps/kwin
 share/apps/kwin/icewm-themes
 share/apps/kwin/pics
+@comment -------------------------------------------------------------------
+@comment -- Zeroconf profiles - mostly installed by kdenetwork
+share/apps/zeroconf
 @comment share/apps/kwrite
 @comment share/apps/naughtyapplet/pics
 @comment share/config/kdm
