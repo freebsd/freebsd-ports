@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gchempaint
-PORTVERSION=	0.4.14
+PORTVERSION=	0.6.0
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -13,15 +13,19 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	2D chemical structures editor for GNOME 2
 
+BUILD_DEPENDS=	gnome-doc-prepare:${PORTSDIR}/textproc/gnomedocutils
 LIB_DEPENDS=	gcu.4:${PORTSDIR}/science/gchemutils
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
+INSTALLS_SHLIB=	yes
+GCONF_SCHEMAS=	gchempaint-arrows.schemas
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeprintui libgnomeui
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-help-dir=${PREFIX}/share/gnome/help
 
 .include <bsd.port.mk>
