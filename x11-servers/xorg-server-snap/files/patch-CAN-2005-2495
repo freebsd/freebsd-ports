@@ -1,6 +1,6 @@
 --- programs/Xserver/afb/afbpixmap.c.orig	Wed Apr 20 14:25:14 2005
-+++ programs/Xserver/afb/afbpixmap.c	Tue Sep  6 17:13:03 2005
-@@ -73,10 +73,14 @@ afbCreatePixmap(pScreen, width, height, 
++++ programs/Xserver/afb/afbpixmap.c	Sun Sep 18 18:13:40 2005
+@@ -73,10 +73,14 @@
  	int				depth;
  {
  	PixmapPtr pPixmap;
@@ -11,15 +11,15 @@
  
  	paddedWidth = BitmapBytePad(width);
 +
-+	if (paddedWidth > 32767 || height > 32767)
++	if (paddedWidth > 32767 || height > 32767 || depth > 4)
 +	    return NullPixmap;
 +	
  	datasize = height * paddedWidth * depth;
  	pPixmap = AllocatePixmap(pScreen, datasize);
  	if (!pPixmap)
 --- programs/Xserver/cfb/cfbpixmap.c.orig	Wed Apr 20 14:25:18 2005
-+++ programs/Xserver/cfb/cfbpixmap.c	Tue Sep  6 17:13:03 2005
-@@ -68,10 +68,13 @@ cfbCreatePixmap (pScreen, width, height,
++++ programs/Xserver/cfb/cfbpixmap.c	Sun Sep 18 18:13:40 2005
+@@ -68,10 +68,13 @@
      int		depth;
  {
      PixmapPtr pPixmap;
@@ -30,14 +30,14 @@
  
      paddedWidth = PixmapBytePad(width, depth);
 +
-+    if (paddedWidth > 32767 || height > 32767)
++    if (paddedWidth / 4 > 32767 || height > 32767)
 +	return NullPixmap;
      datasize = height * paddedWidth;
      pPixmap = AllocatePixmap(pScreen, datasize);
      if (!pPixmap)
 --- programs/Xserver/dix/dispatch.c.orig	Fri Jun 10 06:01:14 2005
-+++ programs/Xserver/dix/dispatch.c	Tue Sep  6 17:13:03 2005
-@@ -1473,6 +1473,23 @@ ProcCreatePixmap(register ClientPtr clie
++++ programs/Xserver/dix/dispatch.c	Sun Sep 18 18:13:40 2005
+@@ -1473,6 +1473,23 @@
  	client->errorValue = 0;
          return BadValue;
      }
@@ -61,9 +61,21 @@
      if (stuff->depth != 1)
      {
          pDepth = pDraw->pScreen->allowedDepths;
+--- programs/Xserver/dix/pixmap.c.orig	Wed Apr 20 14:25:19 2005
++++ programs/Xserver/dix/pixmap.c	Sun Sep 18 18:13:40 2005
+@@ -114,6 +114,9 @@
+     unsigned size;
+     int i;
+ 
++    if (pScreen->totalPixmapSize > ((size_t)-1) - pixDataSize)
++	return NullPixmap;
++    
+     pPixmap = (PixmapPtr)xalloc(pScreen->totalPixmapSize + pixDataSize);
+     if (!pPixmap)
+ 	return NullPixmap;
 --- programs/Xserver/fb/fbpixmap.c.orig	Sat Dec  4 01:42:50 2004
-+++ programs/Xserver/fb/fbpixmap.c	Tue Sep  6 17:13:03 2005
-@@ -32,12 +32,14 @@ PixmapPtr
++++ programs/Xserver/fb/fbpixmap.c	Sun Sep 18 18:13:40 2005
+@@ -32,12 +32,14 @@
  fbCreatePixmapBpp (ScreenPtr pScreen, int width, int height, int depth, int bpp)
  {
      PixmapPtr	pPixmap;
@@ -75,14 +87,14 @@
      int		base;
  
      paddedWidth = ((width * bpp + FB_MASK) >> FB_SHIFT) * sizeof (FbBits);
-+    if (paddedWidth > 32767 || height > 32767)
++    if (paddedWidth / 4 > 32767 || height > 32767)
 +	return NullPixmap;
      datasize = height * paddedWidth;
  #ifdef PIXPRIV
      base = pScreen->totalPixmapSize;
 --- programs/Xserver/hw/xfree86/xaa/xaaInit.c.orig	Wed Apr 20 14:25:39 2005
-+++ programs/Xserver/hw/xfree86/xaa/xaaInit.c	Tue Sep  6 17:13:03 2005
-@@ -498,6 +498,9 @@ XAACreatePixmap(ScreenPtr pScreen, int w
++++ programs/Xserver/hw/xfree86/xaa/xaaInit.c	Sun Sep 18 18:13:40 2005
+@@ -498,6 +498,9 @@
      XAAPixmapPtr pPriv;
      PixmapPtr pPix = NULL;
      int size = w * h;
@@ -93,8 +105,8 @@
      if (!infoRec->offscreenDepthsInitialized)
  	XAAInitializeOffscreenDepths (pScreen);
 --- programs/Xserver/hw/xfree86/xf4bpp/ppcPixmap.c.orig	Fri Apr 23 21:54:17 2004
-+++ programs/Xserver/hw/xfree86/xf4bpp/ppcPixmap.c	Tue Sep  6 17:13:03 2005
-@@ -85,14 +85,18 @@ xf4bppCreatePixmap( pScreen, width, heig
++++ programs/Xserver/hw/xfree86/xf4bpp/ppcPixmap.c	Sun Sep 18 18:13:40 2005
+@@ -85,7 +85,7 @@
      int		depth ;
  {
      register PixmapPtr pPixmap  = (PixmapPtr)NULL;
@@ -103,20 +115,20 @@
      
      TRACE(("xf4bppCreatePixmap(pScreen=0x%x, width=%d, height=%d, depth=%d)\n", pScreen, width, height, depth)) ;
  
-     if ( depth > 8 )
+@@ -93,6 +93,10 @@
  	return (PixmapPtr) NULL ;
  
-+    if (width > 32767 || height > 32767)
-+	return (PixmapPtr) NULL ;
-+    
      size = PixmapBytePad(width, depth);
 +
++    if (size / 4 > 32767 || height > 32767)
++	return (PixmapPtr) NULL ;
++    
      pPixmap = AllocatePixmap (pScreen, (height * size));
      
      if ( !pPixmap )
 --- programs/Xserver/ilbm/ilbmpixmap.c.orig	Wed Apr 20 14:25:42 2005
-+++ programs/Xserver/ilbm/ilbmpixmap.c	Tue Sep  6 17:13:03 2005
-@@ -75,10 +75,12 @@ ilbmCreatePixmap(pScreen, width, height,
++++ programs/Xserver/ilbm/ilbmpixmap.c	Sun Sep 18 18:13:40 2005
+@@ -75,10 +75,12 @@
  	int				depth;
  {
  	PixmapPtr pPixmap;
@@ -126,14 +138,14 @@
 +	size_t paddedWidth;
  
  	paddedWidth = BitmapBytePad(width);
-+	if (paddedWidth > 32767 || height > 32767)
++	if (paddedWidth > 32767 || height > 32767 || depth > 4)
 +		return NullPixmap;
  	datasize = height * paddedWidth * depth;
  	pPixmap = AllocatePixmap(pScreen, datasize);
  	if (!pPixmap)
 --- programs/Xserver/iplan2p4/iplpixmap.c.orig	Wed Apr 20 14:25:43 2005
-+++ programs/Xserver/iplan2p4/iplpixmap.c	Tue Sep  6 17:13:03 2005
-@@ -74,12 +74,14 @@ iplCreatePixmap (pScreen, width, height,
++++ programs/Xserver/iplan2p4/iplpixmap.c	Sun Sep 18 18:13:40 2005
+@@ -74,12 +74,14 @@
      int		depth;
  {
      PixmapPtr pPixmap;
@@ -145,14 +157,14 @@
  
      paddedWidth = PixmapBytePad(width, depth);
      paddedWidth = (paddedWidth + ipad) & ~ipad;
-+    if (paddedWidth > 32767 || height > 32767)
++    if (paddedWidth / 4 > 32767 || height > 32767)
 +	return NullPixmap;
      datasize = height * paddedWidth;
      pPixmap = AllocatePixmap(pScreen, datasize);
      if (!pPixmap)
 --- programs/Xserver/mfb/mfbpixmap.c.orig	Fri Apr 22 22:49:50 2005
-+++ programs/Xserver/mfb/mfbpixmap.c	Tue Sep  6 17:13:03 2005
-@@ -71,10 +71,12 @@ mfbCreatePixmap (pScreen, width, height,
++++ programs/Xserver/mfb/mfbpixmap.c	Sun Sep 18 18:13:40 2005
+@@ -71,12 +71,14 @@
      int		depth;
  {
      PixmapPtr pPixmap;
@@ -162,8 +174,10 @@
 +    size_t paddedWidth;
  
      if (depth != 1)
-+	return NullPixmap;
-+    if (width > 32767 || height > 32767)
  	return NullPixmap;
      paddedWidth = BitmapBytePad(width);
++    if (paddedWidth / 4 > 32767 || height > 32767)
++	return NullPixmap;
      datasize = height * paddedWidth;
+     pPixmap = AllocatePixmap(pScreen, datasize);
+     if (!pPixmap)
