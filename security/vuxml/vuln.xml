@@ -66,7 +66,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <package>
 	<name>squirrelmail</name>
 	<name>ja-squirrelmail</name>
-	<range><ge>1.4.0</ge><le>1.4.5</le></range>
+	<range><ge>1.4.0</ge><lt>1.4.5</lt></range>
       </package>
     </affects>
     <description>
@@ -89,6 +89,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-07-13</discovery>
       <entry>2005-09-17</entry>
+      <modified>2005-09-19</modified>
     </dates>
   </vuln>
 
