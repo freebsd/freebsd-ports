@@ -5598,6 +5598,7 @@ link-grammar	ports/textproc/link-grammar
 link-monitor-applet	ports/net/link-monitor-applet
 linkcheck	ports/www/linkcheck
 linkchecker	ports/www/linkchecker
+linklint	ports/www/linklint
 links		ports/www/links
 links1		ports/www/links1
 linneighborhood	ports/sysutils/linneighborhood
