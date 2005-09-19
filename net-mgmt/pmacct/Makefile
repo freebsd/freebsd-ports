@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pmacct
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.ba.cnr.it/~paolo/pmacct/
 
@@ -26,6 +26,10 @@ OPTIONS=	MYSQL "Enable MySQL support." Off \
 		LAYER2 "Enable Layer-2 support: MAC Adresses and VLANs" On
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+CONFIGURE_ARGS+=	--enable-64bit
+.endif
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
