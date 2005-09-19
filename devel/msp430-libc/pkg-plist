@@ -19,6 +19,7 @@
 %%LIBC_TARG%%/include/msp430/gpio.h
 %%LIBC_TARG%%/include/msp430/iostructures.h
 %%LIBC_TARG%%/include/msp430/lcd.h
+%%LIBC_TARG%%/include/msp430/lcd_a.h
 %%LIBC_TARG%%/include/msp430/mpy.h
 %%LIBC_TARG%%/include/msp430/opamp.h
 %%LIBC_TARG%%/include/msp430/scanif.h
@@ -34,6 +35,7 @@
 %%LIBC_TARG%%/include/msp430x11x.h
 %%LIBC_TARG%%/include/msp430x11x1.h
 %%LIBC_TARG%%/include/msp430x11x2.h
+%%LIBC_TARG%%/include/msp430x21x1.h
 %%LIBC_TARG%%/include/msp430x12x.h
 %%LIBC_TARG%%/include/msp430x12x2.h
 %%LIBC_TARG%%/include/msp430x13x.h
@@ -46,6 +48,8 @@
 %%LIBC_TARG%%/include/msp430x32x.h
 %%LIBC_TARG%%/include/msp430x33x.h
 %%LIBC_TARG%%/include/msp430x41x.h
+%%LIBC_TARG%%/include/msp430x42x.h
+%%LIBC_TARG%%/include/msp430x42x0.h
 %%LIBC_TARG%%/include/msp430x43x.h
 %%LIBC_TARG%%/include/msp430x44x.h
 %%LIBC_TARG%%/include/msp430xE42x.h
@@ -97,6 +101,10 @@
 %%LIBC_TARG%%/lib/crt430x1610.o
 %%LIBC_TARG%%/lib/crt430x1611.o
 %%LIBC_TARG%%/lib/crt430x1612.o
+%%LIBC_TARG%%/lib/crt430x2101.o
+%%LIBC_TARG%%/lib/crt430x2111.o
+%%LIBC_TARG%%/lib/crt430x2121.o
+%%LIBC_TARG%%/lib/crt430x2131.o
 %%LIBC_TARG%%/lib/crt430x311.o
 %%LIBC_TARG%%/lib/crt430x312.o
 %%LIBC_TARG%%/lib/crt430x313.o
@@ -110,6 +118,12 @@
 %%LIBC_TARG%%/lib/crt430x413.o
 %%LIBC_TARG%%/lib/crt430x415.o
 %%LIBC_TARG%%/lib/crt430x417.o
+%%LIBC_TARG%%/lib/crt430x423.o
+%%LIBC_TARG%%/lib/crt430x425.o
+%%LIBC_TARG%%/lib/crt430x4250.o
+%%LIBC_TARG%%/lib/crt430x4260.o
+%%LIBC_TARG%%/lib/crt430x427.o
+%%LIBC_TARG%%/lib/crt430x4270.o
 %%LIBC_TARG%%/lib/crt430x435.o
 %%LIBC_TARG%%/lib/crt430x436.o
 %%LIBC_TARG%%/lib/crt430x437.o
@@ -152,6 +166,7 @@
 %%LIBC_TARG%%/share/mspgcc/examples/cplusplus/leds/hardware.h
 %%LIBC_TARG%%/share/mspgcc/examples/cplusplus/leds/makefile
 %%LIBC_TARG%%/share/mspgcc/examples/cplusplus/leds/obsleds.cpp
+%%LIBC_TARG%%/share/mspgcc/examples/cplusplus/makefile
 %%LIBC_TARG%%/share/mspgcc/examples/fet_spi_irq/hardware.h
 %%LIBC_TARG%%/share/mspgcc/examples/fet_spi_irq/irqspi.S
 %%LIBC_TARG%%/share/mspgcc/examples/fet_spi_irq/irqspi.h
