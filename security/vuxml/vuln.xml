@@ -261,7 +261,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>htdig</name>
-	<range><lt>3.2.0b6_1</lt></range>
+	<range><lt>3.2.0.b6_1</lt></range>
       </package>
     </affects>
     <description>
