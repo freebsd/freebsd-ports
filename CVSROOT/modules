@@ -1978,6 +1978,7 @@ emma		ports/finance/emma
 emovix		ports/multimedia/emovix
 emp		ports/www/emp
 empire		ports/games/empire
+empty		ports/net/empty
 emu		ports/x11/emu
 emu10kx		ports/audio/emu10kx
 en-ooodict-AU	ports/editors/ooodict-en_AU
