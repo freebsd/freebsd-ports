@@ -1,5 +1,4 @@
 bin/gcompris
-bin/gcompris_edit
 include/libgcompris-1.0/libgcompris/about.h
 include/libgcompris-1.0/libgcompris/anim.h
 include/libgcompris-1.0/libgcompris/assetml.h
@@ -9,14 +8,21 @@ include/libgcompris-1.0/libgcompris/gameutil.h
 include/libgcompris-1.0/libgcompris/gcompris-board.h
 include/libgcompris-1.0/libgcompris/gcompris.h
 include/libgcompris-1.0/libgcompris/gcompris_config.h
+include/libgcompris-1.0/libgcompris/gcompris_db.c
+include/libgcompris-1.0/libgcompris/gcompris_db.h
+include/libgcompris-1.0/libgcompris/gcompris_files.c
+include/libgcompris-1.0/libgcompris/gcompris_files.h
 include/libgcompris-1.0/libgcompris/pixbuf_util.h
 include/libgcompris-1.0/libgcompris/plugin.h
+include/libgcompris-1.0/libgcompris/profile.c
+include/libgcompris-1.0/libgcompris/profile.h
 include/libgcompris-1.0/libgcompris/properties.h
 include/libgcompris-1.0/libgcompris/score.h
 include/libgcompris-1.0/libgcompris/skin.h
 include/libgcompris-1.0/libgcompris/soundutil.h
-include/libgcompris-1.0/libgcompris/svgutil.h
 include/libgcompris-1.0/libgcompris/timer.h
+include/libgcompris-1.0/libgcompris/wordlist.c
+include/libgcompris-1.0/libgcompris/wordlist.h
 lib/gcompris/libadvanced_colors.so
 lib/gcompris/libalgebra.so
 lib/gcompris/libalgebra_guesscount.so
@@ -26,12 +32,12 @@ lib/gcompris/libclick_on_letter.so
 lib/gcompris/libclickgame.so
 lib/gcompris/libclockgame.so
 lib/gcompris/libcolors.so
-lib/gcompris/libdraw.so
 lib/gcompris/libenumerate.so
 lib/gcompris/liberase.so
 lib/gcompris/libfifteen.so
 lib/gcompris/libgletters.so
 lib/gcompris/libhanoi.so
+lib/gcompris/libhanoi_real.so
 lib/gcompris/libimageid.so
 lib/gcompris/libleftright.so
 lib/gcompris/libmachpuzzle.so
@@ -58,9 +64,30 @@ lib/libgcompris-1.a
 lib/libgcompris-1.so
 lib/libgcompris-1.so.0
 libdata/pkgconfig/libgcompris-1.0.pc
+share/gcompris/python/admin/__init__.py
+share/gcompris/python/admin/board_list.py
+share/gcompris/python/admin/class_edit.py
+share/gcompris/python/admin/class_list.py
+share/gcompris/python/admin/constants.py
+share/gcompris/python/admin/group_edit.py
+share/gcompris/python/admin/group_list.py
+share/gcompris/python/admin/group_user_list.py
+share/gcompris/python/admin/module.py
+share/gcompris/python/admin/module_boards.py
+share/gcompris/python/admin/module_groups.py
+share/gcompris/python/admin/module_profiles.py
+share/gcompris/python/admin/module_users.py
+share/gcompris/python/admin/profile_edit.py
+share/gcompris/python/admin/profile_group_list.py
+share/gcompris/python/admin/profile_list.py
+share/gcompris/python/admin/user_edit.py
+share/gcompris/python/admin/user_list.py
+share/gcompris/python/admin/wordlist.py
+share/gcompris/python/administration.py
 share/gcompris/python/algorithm.py
 share/gcompris/python/anim.py
 share/gcompris/python/ballcatch.py
+share/gcompris/python/bargame.py
 share/gcompris/python/connect4.py
 share/gcompris/python/connect4p/__init__.py
 share/gcompris/python/connect4p/board.py
@@ -70,6 +97,7 @@ share/gcompris/python/connect4p/player.py
 share/gcompris/python/connect4p/rules.py
 share/gcompris/python/followline.py
 share/gcompris/python/gcompris/__init__.py
+share/gcompris/python/gcompris/admin/__init__.py
 share/gcompris/python/gcompris/anim/__init__.py
 share/gcompris/python/gcompris/bonus/__init__.py
 share/gcompris/python/gcompris/score/__init__.py
@@ -77,11 +105,15 @@ share/gcompris/python/gcompris/skin/__init__.py
 share/gcompris/python/gcompris/sound/__init__.py
 share/gcompris/python/gcompris/timer/__init__.py
 share/gcompris/python/gcompris/utils/__init__.py
+share/gcompris/python/gnumch.py
 share/gcompris/python/hexagon.py
+share/gcompris/python/login.py
 share/gcompris/python/melody.py
 share/gcompris/python/pythontest.py
 share/gcompris/python/redraw.py
 share/gcompris/python/searace.py
+share/gcompris/python/sudoku.py
+share/gcompris/python/tuxpaint.py
 share/gcompris/python/watercycle.py
 share/gnome/applications/gcompris-edit.desktop
 share/gnome/applications/gcompris.desktop
@@ -93,6 +125,7 @@ share/gnome/assetml/gcompris_alphabet_fr.assetml
 share/gnome/assetml/gcompris_alphabet_it.assetml
 share/gnome/assetml/gcompris_alphabet_pt.assetml
 share/gnome/assetml/gcompris_alphabet_ru.assetml
+share/gnome/assetml/gcompris_alphabet_sv.assetml
 share/gnome/assetml/gcompris_colors_da.assetml
 share/gnome/assetml/gcompris_colors_de.assetml
 share/gnome/assetml/gcompris_colors_en.assetml
@@ -101,6 +134,7 @@ share/gnome/assetml/gcompris_colors_fr.assetml
 share/gnome/assetml/gcompris_colors_it.assetml
 share/gnome/assetml/gcompris_colors_pt.assetml
 share/gnome/assetml/gcompris_colors_ru.assetml
+share/gnome/assetml/gcompris_colors_sv.assetml
 share/gnome/assetml/gcompris_flags.assetml
 share/gnome/assetml/gcompris_franceregion_fr.assetml
 share/gnome/assetml/gcompris_geography_da.assetml
@@ -111,6 +145,7 @@ share/gnome/assetml/gcompris_geography_fr.assetml
 share/gnome/assetml/gcompris_geography_it.assetml
 share/gnome/assetml/gcompris_geography_pt.assetml
 share/gnome/assetml/gcompris_geography_ru.assetml
+share/gnome/assetml/gcompris_geography_sv.assetml
 share/gnome/assetml/gcompris_misc_da.assetml
 share/gnome/assetml/gcompris_misc_de.assetml
 share/gnome/assetml/gcompris_misc_en.assetml
@@ -119,9 +154,10 @@ share/gnome/assetml/gcompris_misc_fr.assetml
 share/gnome/assetml/gcompris_misc_it.assetml
 share/gnome/assetml/gcompris_misc_pt.assetml
 share/gnome/assetml/gcompris_misc_ru.assetml
-share/gnome/gcompris/boards/#searace1player.xml#
+share/gnome/assetml/gcompris_misc_sv.assetml
 share/gnome/gcompris/boards/DOCUMENTATIONS
 share/gnome/gcompris/boards/README
+share/gnome/gcompris/boards/administration.xml
 share/gnome/gcompris/boards/advanced_colors.xml
 share/gnome/gcompris/boards/advanced_colors/advanced_colors1.jpg
 share/gnome/gcompris/boards/advanced_colors/advanced_colors2.jpg
@@ -228,6 +264,15 @@ share/gnome/gcompris/boards/babyshapes/dog3/dog4.png
 share/gnome/gcompris/boards/babyshapes/dog3/dog5.png
 share/gnome/gcompris/boards/babyshapes/dog3/dog6.png
 share/gnome/gcompris/boards/ballcatch.xml
+share/gnome/gcompris/boards/bargame.xml
+share/gnome/gcompris/boards/bargame/blue_ball.png
+share/gnome/gcompris/boards/bargame/board.png
+share/gnome/gcompris/boards/bargame/case.png
+share/gnome/gcompris/boards/bargame/case_last.png
+share/gnome/gcompris/boards/bargame/green_ball.png
+share/gnome/gcompris/boards/bargame/mask.png
+share/gnome/gcompris/boards/bargame/mask_last.png
+share/gnome/gcompris/boards/bargame/ombre.png
 share/gnome/gcompris/boards/billard.xml
 share/gnome/gcompris/boards/boardicons/README
 share/gnome/gcompris/boards/boardicons/advanced_colors.png
@@ -242,6 +287,7 @@ share/gnome/gcompris/boards/boardicons/anim.png
 share/gnome/gcompris/boards/boardicons/babymatch.png
 share/gnome/gcompris/boards/boardicons/babyshapes.png
 share/gnome/gcompris/boards/boardicons/ballcatch.png
+share/gnome/gcompris/boards/boardicons/bargame.png
 share/gnome/gcompris/boards/boardicons/billard.png
 share/gnome/gcompris/boards/boardicons/boards.png
 share/gnome/gcompris/boards/boardicons/book.png
@@ -257,17 +303,23 @@ share/gnome/gcompris/boards/boardicons/clockgame.png
 share/gnome/gcompris/boards/boardicons/colornforms.png
 share/gnome/gcompris/boards/boardicons/colors.png
 share/gnome/gcompris/boards/boardicons/computer.png
+share/gnome/gcompris/boards/boardicons/connect4.png
 share/gnome/gcompris/boards/boardicons/doubleentry.png
 share/gnome/gcompris/boards/boardicons/draw.png
 share/gnome/gcompris/boards/boardicons/enumerate.png
 share/gnome/gcompris/boards/boardicons/erase.png
+share/gnome/gcompris/boards/boardicons/erase_clic.png
+share/gnome/gcompris/boards/boardicons/erase_double_clic.png
 share/gnome/gcompris/boards/boardicons/experience.png
 share/gnome/gcompris/boards/boardicons/fifteen.png
 share/gnome/gcompris/boards/boardicons/followline.png
+share/gnome/gcompris/boards/boardicons/foot.png
 share/gnome/gcompris/boards/boardicons/fun.png
 share/gnome/gcompris/boards/boardicons/gletters.png
 share/gnome/gcompris/boards/boardicons/globe.png
+share/gnome/gcompris/boards/boardicons/gnumch.png
 share/gnome/gcompris/boards/boardicons/hanoi.png
+share/gnome/gcompris/boards/boardicons/hanoi_real.png
 share/gnome/gcompris/boards/boardicons/helicogame.png
 share/gnome/gcompris/boards/boardicons/hexagon.png
 share/gnome/gcompris/boards/boardicons/imageid.png
@@ -278,10 +330,13 @@ share/gnome/gcompris/boards/boardicons/maze3D.png
 share/gnome/gcompris/boards/boardicons/mazeInvisible.png
 share/gnome/gcompris/boards/boardicons/melody.png
 share/gnome/gcompris/boards/boardicons/memory.png
+share/gnome/gcompris/boards/boardicons/memory_tux.png
 share/gnome/gcompris/boards/boardicons/minouche.png
 share/gnome/gcompris/boards/boardicons/missing_letter.png
 share/gnome/gcompris/boards/boardicons/money.png
 share/gnome/gcompris/boards/boardicons/money_cents.png
+share/gnome/gcompris/boards/boardicons/mouse.png
+share/gnome/gcompris/boards/boardicons/mouse_move.png
 share/gnome/gcompris/boards/boardicons/planegame.png
 share/gnome/gcompris/boards/boardicons/python.png
 share/gnome/gcompris/boards/boardicons/railroad.png
@@ -299,9 +354,11 @@ share/gnome/gcompris/boards/boardicons/shapegame.png
 share/gnome/gcompris/boards/boardicons/smallnumbers.png
 share/gnome/gcompris/boards/boardicons/smallnumbers2.png
 share/gnome/gcompris/boards/boardicons/submarine.png
+share/gnome/gcompris/boards/boardicons/sudoku.png
 share/gnome/gcompris/boards/boardicons/superbrain.png
 share/gnome/gcompris/boards/boardicons/target.png
 share/gnome/gcompris/boards/boardicons/traffic.png
+share/gnome/gcompris/boards/boardicons/tuxpaint.png
 share/gnome/gcompris/boards/boardicons/tuxpara.png
 share/gnome/gcompris/boards/boardicons/watercycle.png
 share/gnome/gcompris/boards/boardicons/wordsgame.png
@@ -309,19 +366,19 @@ share/gnome/gcompris/boards/boards.xml
 share/gnome/gcompris/boards/canal_lock.xml
 share/gnome/gcompris/boards/canal_lock/canal_lock_bg.png
 share/gnome/gcompris/boards/chess.xml
-share/gnome/gcompris/boards/chess/B.png
+share/gnome/gcompris/boards/chess/Bb.png
+share/gnome/gcompris/boards/chess/Bk.png
+share/gnome/gcompris/boards/chess/Bn.png
+share/gnome/gcompris/boards/chess/Bp.png
+share/gnome/gcompris/boards/chess/Bq.png
+share/gnome/gcompris/boards/chess/Br.png
 share/gnome/gcompris/boards/chess/COPYRIGHT
-share/gnome/gcompris/boards/chess/K.png
-share/gnome/gcompris/boards/chess/N.png
-share/gnome/gcompris/boards/chess/P.png
-share/gnome/gcompris/boards/chess/Q.png
-share/gnome/gcompris/boards/chess/R.png
-share/gnome/gcompris/boards/chess/b.png
-share/gnome/gcompris/boards/chess/k.png
-share/gnome/gcompris/boards/chess/n.png
-share/gnome/gcompris/boards/chess/p.png
-share/gnome/gcompris/boards/chess/q.png
-share/gnome/gcompris/boards/chess/r.png
+share/gnome/gcompris/boards/chess/WB.png
+share/gnome/gcompris/boards/chess/WK.png
+share/gnome/gcompris/boards/chess/WN.png
+share/gnome/gcompris/boards/chess/WP.png
+share/gnome/gcompris/boards/chess/WQ.png
+share/gnome/gcompris/boards/chess/WR.png
 share/gnome/gcompris/boards/chess_computer.xml
 share/gnome/gcompris/boards/chess_movelearn.xml
 share/gnome/gcompris/boards/chess_partyend.xml
@@ -385,14 +442,14 @@ share/gnome/gcompris/boards/colors_group.xml
 share/gnome/gcompris/boards/computer.xml
 share/gnome/gcompris/boards/connect4.xml
 share/gnome/gcompris/boards/connect4/back.png
-share/gnome/gcompris/boards/connect4/grid.png
-share/gnome/gcompris/boards/connect4/prof.png
 share/gnome/gcompris/boards/connect4/sablier.gif
 share/gnome/gcompris/boards/connect4/sablier.txt
-share/gnome/gcompris/boards/connect4/selector.png
 share/gnome/gcompris/boards/connect4/stone_1.png
 share/gnome/gcompris/boards/connect4/stone_2.png
-share/gnome/gcompris/boards/dataset/mrpatate.xml
+share/gnome/gcompris/boards/connect4/tux-teacher.png
+share/gnome/gcompris/boards/dataset/misc.xml
+share/gnome/gcompris/boards/dataset/mrpotato.xml
+share/gnome/gcompris/boards/dataset/tuxpaint_pictures.xml
 share/gnome/gcompris/boards/dataset/user_pictures.xml
 share/gnome/gcompris/boards/doubleentry.xml
 share/gnome/gcompris/boards/doubleentry/board1_0.xml
@@ -473,6 +530,8 @@ share/gnome/gcompris/boards/draw/tool-up_on.png
 share/gnome/gcompris/boards/draw/up.png
 share/gnome/gcompris/boards/enumerate.xml
 share/gnome/gcompris/boards/erase.xml
+share/gnome/gcompris/boards/erase_clic.xml
+share/gnome/gcompris/boards/erase_double_clic.xml
 share/gnome/gcompris/boards/experience.xml
 share/gnome/gcompris/boards/fifteen.xml
 share/gnome/gcompris/boards/fishes/QueenAngel_0.png
@@ -573,12 +632,14 @@ share/gnome/gcompris/boards/flags/il.png
 share/gnome/gcompris/boards/flags/is.png
 share/gnome/gcompris/boards/flags/it.png
 share/gnome/gcompris/boards/flags/jp.png
+share/gnome/gcompris/boards/flags/ka.png
 share/gnome/gcompris/boards/flags/lt.png
 share/gnome/gcompris/boards/flags/mk.png
 share/gnome/gcompris/boards/flags/ml.png
 share/gnome/gcompris/boards/flags/ms.png
 share/gnome/gcompris/boards/flags/mx.png
 share/gnome/gcompris/boards/flags/nb.png
+share/gnome/gcompris/boards/flags/ne.png
 share/gnome/gcompris/boards/flags/nl.png
 share/gnome/gcompris/boards/flags/nn.png
 share/gnome/gcompris/boards/flags/pa.png
@@ -588,6 +649,7 @@ share/gnome/gcompris/boards/flags/pt_BR.png
 share/gnome/gcompris/boards/flags/qc.png
 share/gnome/gcompris/boards/flags/ro.png
 share/gnome/gcompris/boards/flags/ru.png
+share/gnome/gcompris/boards/flags/rw.png
 share/gnome/gcompris/boards/flags/se.png
 share/gnome/gcompris/boards/flags/si.png
 share/gnome/gcompris/boards/flags/sk.png
@@ -598,6 +660,7 @@ share/gnome/gcompris/boards/flags/sv.png
 share/gnome/gcompris/boards/flags/th.png
 share/gnome/gcompris/boards/flags/tr.png
 share/gnome/gcompris/boards/flags/uy.png
+share/gnome/gcompris/boards/flags/vi.png
 share/gnome/gcompris/boards/flags/wa.png
 share/gnome/gcompris/boards/flags/yu.png
 share/gnome/gcompris/boards/flags/zh.png
@@ -759,12 +822,114 @@ share/gnome/gcompris/boards/gcompris/timers/sablier7.png
 share/gnome/gcompris/boards/gcompris/timers/sablier8.png
 share/gnome/gcompris/boards/gcompris/timers/sablier9.png
 share/gnome/gcompris/boards/geography.xml
+share/gnome/gcompris/boards/geography/africa/algeria.png
+share/gnome/gcompris/boards/geography/africa/all_south_africa.png
+share/gnome/gcompris/boards/geography/africa/angola.png
+share/gnome/gcompris/boards/geography/africa/benin.png
+share/gnome/gcompris/boards/geography/africa/botswana.png
+share/gnome/gcompris/boards/geography/africa/burkina_faso.png
+share/gnome/gcompris/boards/geography/africa/burundi.png
+share/gnome/gcompris/boards/geography/africa/cameroon.png
+share/gnome/gcompris/boards/geography/africa/central_african_republic.png
+share/gnome/gcompris/boards/geography/africa/chad.png
+share/gnome/gcompris/boards/geography/africa/democratic_republic_of_congo.png
+share/gnome/gcompris/boards/geography/africa/djibouti.png
+share/gnome/gcompris/boards/geography/africa/egypt.png
+share/gnome/gcompris/boards/geography/africa/equatorial_guinea.png
+share/gnome/gcompris/boards/geography/africa/ethiopia.png
+share/gnome/gcompris/boards/geography/africa/gabon.png
+share/gnome/gcompris/boards/geography/africa/ganbia.png
+share/gnome/gcompris/boards/geography/africa/ghana.png
+share/gnome/gcompris/boards/geography/africa/guinea.png
+share/gnome/gcompris/boards/geography/africa/guinea_bissau.png
+share/gnome/gcompris/boards/geography/africa/ivory_coast.png
+share/gnome/gcompris/boards/geography/africa/kenya.png
+share/gnome/gcompris/boards/geography/africa/lesotho.png
+share/gnome/gcompris/boards/geography/africa/liberia.png
+share/gnome/gcompris/boards/geography/africa/libya.png
+share/gnome/gcompris/boards/geography/africa/madagascar.png
+share/gnome/gcompris/boards/geography/africa/malawi.png
+share/gnome/gcompris/boards/geography/africa/mali.png
+share/gnome/gcompris/boards/geography/africa/mauritania.png
+share/gnome/gcompris/boards/geography/africa/moroco.png
+share/gnome/gcompris/boards/geography/africa/mozambique.png
+share/gnome/gcompris/boards/geography/africa/namibia.png
+share/gnome/gcompris/boards/geography/africa/niger.png
+share/gnome/gcompris/boards/geography/africa/nigeria.png
+share/gnome/gcompris/boards/geography/africa/north_africa.png
+share/gnome/gcompris/boards/geography/africa/north_africa.xcf
+share/gnome/gcompris/boards/geography/africa/republic_of_congo.png
+share/gnome/gcompris/boards/geography/africa/rwanda.png
+share/gnome/gcompris/boards/geography/africa/senegal.png
+share/gnome/gcompris/boards/geography/africa/sierra_leone.png
+share/gnome/gcompris/boards/geography/africa/somalia.png
+share/gnome/gcompris/boards/geography/africa/south_africa.png
+share/gnome/gcompris/boards/geography/africa/sudan.png
+share/gnome/gcompris/boards/geography/africa/swaziland.png
+share/gnome/gcompris/boards/geography/africa/tanzania.png
+share/gnome/gcompris/boards/geography/africa/togo.png
+share/gnome/gcompris/boards/geography/africa/tunisia.png
+share/gnome/gcompris/boards/geography/africa/uganda.png
+share/gnome/gcompris/boards/geography/africa/western_sahara.png
+share/gnome/gcompris/boards/geography/africa/zambia.png
+share/gnome/gcompris/boards/geography/africa/zimbabwe.png
+share/gnome/gcompris/boards/geography/afrique/africa.png
+share/gnome/gcompris/boards/geography/afrique/algeria.png
+share/gnome/gcompris/boards/geography/afrique/angola.png
+share/gnome/gcompris/boards/geography/afrique/benin.png
+share/gnome/gcompris/boards/geography/afrique/botswana.png
+share/gnome/gcompris/boards/geography/afrique/burkina.png
+share/gnome/gcompris/boards/geography/afrique/burundi.png
+share/gnome/gcompris/boards/geography/afrique/cameroon.png
+share/gnome/gcompris/boards/geography/afrique/chad.png
+share/gnome/gcompris/boards/geography/afrique/congo.png
+share/gnome/gcompris/boards/geography/afrique/djibouti.png
+share/gnome/gcompris/boards/geography/afrique/egypt.png
+share/gnome/gcompris/boards/geography/afrique/equatorial_guinea.png
+share/gnome/gcompris/boards/geography/afrique/eritrea.png
+share/gnome/gcompris/boards/geography/afrique/ethiopia.png
+share/gnome/gcompris/boards/geography/afrique/gabon.png
+share/gnome/gcompris/boards/geography/afrique/gambia.png
+share/gnome/gcompris/boards/geography/afrique/ghana.png
+share/gnome/gcompris/boards/geography/afrique/guinea.png
+share/gnome/gcompris/boards/geography/afrique/guinea_bissau.png
+share/gnome/gcompris/boards/geography/afrique/ivory_coast.png
+share/gnome/gcompris/boards/geography/afrique/kenya.png
+share/gnome/gcompris/boards/geography/afrique/lesotho.png
+share/gnome/gcompris/boards/geography/afrique/liberia.png
+share/gnome/gcompris/boards/geography/afrique/libya.png
+share/gnome/gcompris/boards/geography/afrique/madagascar.png
+share/gnome/gcompris/boards/geography/afrique/malawi.png
+share/gnome/gcompris/boards/geography/afrique/mali.png
+share/gnome/gcompris/boards/geography/afrique/mauritania.png
+share/gnome/gcompris/boards/geography/afrique/moroco.png
+share/gnome/gcompris/boards/geography/afrique/mozambique.png
+share/gnome/gcompris/boards/geography/afrique/namibia.png
+share/gnome/gcompris/boards/geography/afrique/niger.png
+share/gnome/gcompris/boards/geography/afrique/nigeria.png
+share/gnome/gcompris/boards/geography/afrique/rep_centrafrique.png
+share/gnome/gcompris/boards/geography/afrique/rep_congo.png
+share/gnome/gcompris/boards/geography/afrique/rwanda.png
+share/gnome/gcompris/boards/geography/afrique/senegal.png
+share/gnome/gcompris/boards/geography/afrique/sierra_leone.png
+share/gnome/gcompris/boards/geography/afrique/somalia.png
+share/gnome/gcompris/boards/geography/afrique/soudan.png
+share/gnome/gcompris/boards/geography/afrique/south_africa.png
+share/gnome/gcompris/boards/geography/afrique/swaziland.png
+share/gnome/gcompris/boards/geography/afrique/tanzania.png
+share/gnome/gcompris/boards/geography/afrique/togo.png
+share/gnome/gcompris/boards/geography/afrique/tunisia.png
+share/gnome/gcompris/boards/geography/afrique/uganda.png
+share/gnome/gcompris/boards/geography/afrique/zambia.png
+share/gnome/gcompris/boards/geography/afrique/zimbabwe.png
 share/gnome/gcompris/boards/geography/board1_0.xml
 share/gnome/gcompris/boards/geography/board2_0.xml
 share/gnome/gcompris/boards/geography/board2_1.xml
 share/gnome/gcompris/boards/geography/board3_0.xml
 share/gnome/gcompris/boards/geography/board3_1.xml
 share/gnome/gcompris/boards/geography/board4_0.xml
+share/gnome/gcompris/boards/geography/board4_1.xml
+share/gnome/gcompris/boards/geography/board5_0.xml
 share/gnome/gcompris/boards/geography/continents/africa.png
 share/gnome/gcompris/boards/geography/continents/america.png
 share/gnome/gcompris/boards/geography/continents/antartica.png
@@ -866,8 +1031,42 @@ share/gnome/gcompris/boards/geography/southamerica/venezuela.png
 share/gnome/gcompris/boards/gletters.xml
 share/gnome/gcompris/boards/gletters/README
 share/gnome/gcompris/boards/gletters/gletters.ja
+share/gnome/gcompris/boards/gletters/gletters.nb
+share/gnome/gcompris/boards/gletters/gletters.nn
 share/gnome/gcompris/boards/gletters/gletters.ru
+share/gnome/gcompris/boards/gletters/gletters.sv
+share/gnome/gcompris/boards/gnumch-equality.xml
+share/gnome/gcompris/boards/gnumch-factors.xml
+share/gnome/gcompris/boards/gnumch-inequality.xml
+share/gnome/gcompris/boards/gnumch-multiples.xml
+share/gnome/gcompris/boards/gnumch-primes.xml
+share/gnome/gcompris/boards/gnumch/diaper.gif
+share/gnome/gcompris/boards/gnumch/diaper.txt
+share/gnome/gcompris/boards/gnumch/diaper_eating.gif
+share/gnome/gcompris/boards/gnumch/diaper_walking.gif
+share/gnome/gcompris/boards/gnumch/eater.gif
+share/gnome/gcompris/boards/gnumch/eater.txt
+share/gnome/gcompris/boards/gnumch/eater_eating.gif
+share/gnome/gcompris/boards/gnumch/eater_walking.gif
+share/gnome/gcompris/boards/gnumch/fraidy.gif
+share/gnome/gcompris/boards/gnumch/fraidy.txt
+share/gnome/gcompris/boards/gnumch/fraidy_eating.gif
+share/gnome/gcompris/boards/gnumch/fraidy_walking.gif
+share/gnome/gcompris/boards/gnumch/muncher.gif
+share/gnome/gcompris/boards/gnumch/muncher.txt
+share/gnome/gcompris/boards/gnumch/muncher_eating.gif
+share/gnome/gcompris/boards/gnumch/muncher_walking.gif
+share/gnome/gcompris/boards/gnumch/reggie.gif
+share/gnome/gcompris/boards/gnumch/reggie.txt
+share/gnome/gcompris/boards/gnumch/reggie_eating.gif
+share/gnome/gcompris/boards/gnumch/reggie_walking.gif
+share/gnome/gcompris/boards/gnumch/smarty.gif
+share/gnome/gcompris/boards/gnumch/smarty.txt
+share/gnome/gcompris/boards/gnumch/smarty_eating.gif
+share/gnome/gcompris/boards/gnumch/smarty_walking.gif
+share/gnome/gcompris/boards/gnumchmenu.xml
 share/gnome/gcompris/boards/hanoi.xml
+share/gnome/gcompris/boards/hanoi_real.xml
 share/gnome/gcompris/boards/hexagon.xml
 share/gnome/gcompris/boards/imageid.xml
 share/gnome/gcompris/boards/imageid/avion.png
@@ -894,23 +1093,36 @@ share/gnome/gcompris/boards/imagename/board6_0.xml
 share/gnome/gcompris/boards/images/arrow.png
 share/gnome/gcompris/boards/images/beach.png
 share/gnome/gcompris/boards/images/billard_background.jpg
+share/gnome/gcompris/boards/images/circle.png
+share/gnome/gcompris/boards/images/disc1.png
+share/gnome/gcompris/boards/images/disc2.png
+share/gnome/gcompris/boards/images/disc3.png
+share/gnome/gcompris/boards/images/disc4.png
+share/gnome/gcompris/boards/images/disc_support.png
 share/gnome/gcompris/boards/images/enumerate_answer.png
 share/gnome/gcompris/boards/images/enumerate_answer_focus.png
 share/gnome/gcompris/boards/images/enumerate_background.png
 share/gnome/gcompris/boards/images/fifteen_frame.png
 share/gnome/gcompris/boards/images/followline.png
+share/gnome/gcompris/boards/images/foot_background.png
 share/gnome/gcompris/boards/images/maze-bg.jpg
+share/gnome/gcompris/boards/images/rectangle.png
+share/gnome/gcompris/boards/images/rhombus.png
 share/gnome/gcompris/boards/images/scenery2_background.png
 share/gnome/gcompris/boards/images/scenery3_background.png
 share/gnome/gcompris/boards/images/scenery4_background.png
 share/gnome/gcompris/boards/images/scenery5_background.png
+share/gnome/gcompris/boards/images/scenery6_background.png
 share/gnome/gcompris/boards/images/scenery_background.png
 share/gnome/gcompris/boards/images/shift_key.png
+share/gnome/gcompris/boards/images/star.png
 share/gnome/gcompris/boards/images/superbrain_background.jpg
 share/gnome/gcompris/boards/images/target_background.jpg
 share/gnome/gcompris/boards/images/top_boat_green.png
 share/gnome/gcompris/boards/images/top_boat_green_tux.png
 share/gnome/gcompris/boards/images/top_boat_red.png
+share/gnome/gcompris/boards/images/triangle.png
+share/gnome/gcompris/boards/images/tux-teacher.png
 share/gnome/gcompris/boards/images/wagon-green.png
 share/gnome/gcompris/boards/images/wagon-yellow.png
 share/gnome/gcompris/boards/images/water_spot.png
@@ -950,6 +1162,7 @@ share/gnome/gcompris/boards/leftright/poing_gauche_paume_0.png
 share/gnome/gcompris/boards/leftright/poing_gauche_paume_180.png
 share/gnome/gcompris/boards/leftright/poing_gauche_paume_270.png
 share/gnome/gcompris/boards/leftright/poing_gauche_paume_90.png
+share/gnome/gcompris/boards/login.xml
 share/gnome/gcompris/boards/maze.xml
 share/gnome/gcompris/boards/maze2DRelative.xml
 share/gnome/gcompris/boards/maze3D.xml
@@ -977,6 +1190,7 @@ share/gnome/gcompris/boards/melody/xylofon/son2.png
 share/gnome/gcompris/boards/melody/xylofon/son3.png
 share/gnome/gcompris/boards/melody/xylofon/son4.png
 share/gnome/gcompris/boards/memory.xml
+share/gnome/gcompris/boards/memory_tux.xml
 share/gnome/gcompris/boards/menu.xml
 share/gnome/gcompris/boards/missing_letter.xml
 share/gnome/gcompris/boards/missing_letter/board1.xml
@@ -997,10 +1211,12 @@ share/gnome/gcompris/boards/money/euro/p5e.jpg
 share/gnome/gcompris/boards/money/euro/p5e.png
 share/gnome/gcompris/boards/money/money-bg.png
 share/gnome/gcompris/boards/money_cents.xml
+share/gnome/gcompris/boards/mouse.xml
 share/gnome/gcompris/boards/mrpatate/README
 share/gnome/gcompris/boards/mrpatate/barbe1.png
 share/gnome/gcompris/boards/mrpatate/barbe12.png
 share/gnome/gcompris/boards/mrpatate/body.png
+share/gnome/gcompris/boards/mrpatate/body2.png
 share/gnome/gcompris/boards/mrpatate/bouc1.png
 share/gnome/gcompris/boards/mrpatate/bouche1.png
 share/gnome/gcompris/boards/mrpatate/bouche2.png
@@ -1013,27 +1229,95 @@ share/gnome/gcompris/boards/mrpatate/cheveux3.png
 share/gnome/gcompris/boards/mrpatate/cheveux4.png
 share/gnome/gcompris/boards/mrpatate/cheveux5.png
 share/gnome/gcompris/boards/mrpatate/cil1.png
+share/gnome/gcompris/boards/mrpatate/ear11.png
+share/gnome/gcompris/boards/mrpatate/ear12.png
+share/gnome/gcompris/boards/mrpatate/ear21.png
+share/gnome/gcompris/boards/mrpatate/ear22.png
+share/gnome/gcompris/boards/mrpatate/ear31.png
+share/gnome/gcompris/boards/mrpatate/ear32.png
+share/gnome/gcompris/boards/mrpatate/ear41.png
+share/gnome/gcompris/boards/mrpatate/ear42.png
 share/gnome/gcompris/boards/mrpatate/ear_jewell.png
+share/gnome/gcompris/boards/mrpatate/eye11.png
+share/gnome/gcompris/boards/mrpatate/eye12.png
+share/gnome/gcompris/boards/mrpatate/eye21.png
+share/gnome/gcompris/boards/mrpatate/eye22.png
+share/gnome/gcompris/boards/mrpatate/eye31.png
+share/gnome/gcompris/boards/mrpatate/eye32.png
+share/gnome/gcompris/boards/mrpatate/eye41.png
+share/gnome/gcompris/boards/mrpatate/eye42.png
+share/gnome/gcompris/boards/mrpatate/eye51.png
+share/gnome/gcompris/boards/mrpatate/eye52.png
+share/gnome/gcompris/boards/mrpatate/eye6.png
+share/gnome/gcompris/boards/mrpatate/eye7.png
+share/gnome/gcompris/boards/mrpatate/eye8.png
+share/gnome/gcompris/boards/mrpatate/eye9.png
 share/gnome/gcompris/boards/mrpatate/eyeball.png
+share/gnome/gcompris/boards/mrpatate/eyehair11.png
+share/gnome/gcompris/boards/mrpatate/eyehair12.png
+share/gnome/gcompris/boards/mrpatate/eyehair21.png
+share/gnome/gcompris/boards/mrpatate/eyehair22.png
+share/gnome/gcompris/boards/mrpatate/eyehair31.png
+share/gnome/gcompris/boards/mrpatate/eyehair32.png
+share/gnome/gcompris/boards/mrpatate/eyehair41.png
+share/gnome/gcompris/boards/mrpatate/eyehair42.png
+share/gnome/gcompris/boards/mrpatate/glasses1.png
+share/gnome/gcompris/boards/mrpatate/glasses2.png
+share/gnome/gcompris/boards/mrpatate/hair1.png
+share/gnome/gcompris/boards/mrpatate/hair2.png
+share/gnome/gcompris/boards/mrpatate/hair3.png
+share/gnome/gcompris/boards/mrpatate/hair4.png
+share/gnome/gcompris/boards/mrpatate/hair5.png
 share/gnome/gcompris/boards/mrpatate/hat.png
+share/gnome/gcompris/boards/mrpatate/hat1.png
+share/gnome/gcompris/boards/mrpatate/hat2.png
+share/gnome/gcompris/boards/mrpatate/hat3.png
+share/gnome/gcompris/boards/mrpatate/hat4.png
+share/gnome/gcompris/boards/mrpatate/jewelry1.png
+share/gnome/gcompris/boards/mrpatate/jewelry2.png
+share/gnome/gcompris/boards/mrpatate/jewelry3.png
+share/gnome/gcompris/boards/mrpatate/jewelry4.png
 share/gnome/gcompris/boards/mrpatate/larme.png
 share/gnome/gcompris/boards/mrpatate/lunette1.png
 share/gnome/gcompris/boards/mrpatate/lunette1_sun.png
 share/gnome/gcompris/boards/mrpatate/lunette_girl.png
 share/gnome/gcompris/boards/mrpatate/lunette_girl_sun.png
 share/gnome/gcompris/boards/mrpatate/mousta1.png
+share/gnome/gcompris/boards/mrpatate/moustache1.png
+share/gnome/gcompris/boards/mrpatate/moustache2.png
+share/gnome/gcompris/boards/mrpatate/moustache41.png
+share/gnome/gcompris/boards/mrpatate/moustache42.png
+share/gnome/gcompris/boards/mrpatate/moustaches31.png
+share/gnome/gcompris/boards/mrpatate/moustaches32.png
+share/gnome/gcompris/boards/mrpatate/mouth1.png
+share/gnome/gcompris/boards/mrpatate/mouth2.png
+share/gnome/gcompris/boards/mrpatate/mouth3.png
+share/gnome/gcompris/boards/mrpatate/mouth4.png
+share/gnome/gcompris/boards/mrpatate/mouth5.png
+share/gnome/gcompris/boards/mrpatate/mouth6.png
+share/gnome/gcompris/boards/mrpatate/mouth7.png
+share/gnome/gcompris/boards/mrpatate/mouth8.png
 share/gnome/gcompris/boards/mrpatate/mrpatate_icon.png
 share/gnome/gcompris/boards/mrpatate/nez1.png
 share/gnome/gcompris/boards/mrpatate/noeye.png
+share/gnome/gcompris/boards/mrpatate/noze1.png
+share/gnome/gcompris/boards/mrpatate/noze2.png
+share/gnome/gcompris/boards/mrpatate/noze3.png
+share/gnome/gcompris/boards/mrpatate/noze4.png
 share/gnome/gcompris/boards/mrpatate/oeuil1.png
 share/gnome/gcompris/boards/mrpatate/oeuil2.png
 share/gnome/gcompris/boards/mrpatate/oeuil3.png
 share/gnome/gcompris/boards/mrpatate/oeuil4.png
 share/gnome/gcompris/boards/mrpatate/sherif.png
+share/gnome/gcompris/boards/mrpatate/tie1.png
+share/gnome/gcompris/boards/mrpatate/tie2.png
 share/gnome/gcompris/boards/mrpatate/watch.png
 share/gnome/gcompris/boards/music/COPYRIGHT
+share/gnome/gcompris/boards/music/background/BachJSBrandenburgConcertNo2inFMajorBWV1047mvmt1.ogg
 share/gnome/gcompris/boards/music/background/BarDasImagens.ogg
+share/gnome/gcompris/boards/music/background/Brahms_Johannes-String_Quartet_C_minor_Op_51_mvmt_4.ogg
 share/gnome/gcompris/boards/music/background/COPYRIGHT
+share/gnome/gcompris/boards/music/background/Mozart__WA_-_String_Quartet_No.2_in_D_Mvmt_3.ogg
 share/gnome/gcompris/boards/music/background/bontemp1.ogg
 share/gnome/gcompris/boards/music/background/glockenschmoutz.ogg
 share/gnome/gcompris/boards/music/background/vaudeville.ogg
@@ -1046,6 +1330,7 @@ share/gnome/gcompris/boards/paintings/board2_1.xml
 share/gnome/gcompris/boards/paintings/board3_0.xml
 share/gnome/gcompris/boards/paintings/board3_1.xml
 share/gnome/gcompris/boards/paintings/board4_0.xml
+share/gnome/gcompris/boards/paintings/board4_1.xml
 share/gnome/gcompris/boards/paintings/board5_0.xml
 share/gnome/gcompris/boards/paintings/board6_0.xml
 share/gnome/gcompris/boards/paintings/kandinky.comp8/puzzle1.png
@@ -1108,6 +1393,7 @@ share/gnome/gcompris/boards/railroad/loco7.png
 share/gnome/gcompris/boards/railroad/loco8.png
 share/gnome/gcompris/boards/railroad/loco9.png
 share/gnome/gcompris/boards/railroad/railroad-bg.jpg
+share/gnome/gcompris/boards/railroad/railroad-bg.png
 share/gnome/gcompris/boards/railroad/wagon1.png
 share/gnome/gcompris/boards/railroad/wagon10.png
 share/gnome/gcompris/boards/railroad/wagon11.png
@@ -1241,6 +1527,10 @@ share/gnome/gcompris/boards/skins/default/button_unchecked.png
 share/gnome/gcompris/boards/skins/default/button_up.png
 share/gnome/gcompris/boards/skins/default/button_up_selected.png
 share/gnome/gcompris/boards/skins/default/config.png
+share/gnome/gcompris/boards/skins/default/config_boards.png
+share/gnome/gcompris/boards/skins/default/config_groups.png
+share/gnome/gcompris/boards/skins/default/config_profiles.png
+share/gnome/gcompris/boards/skins/default/config_users.png
 share/gnome/gcompris/boards/skins/default/dialogbox.png
 share/gnome/gcompris/boards/skins/default/difficulty_star1.png
 share/gnome/gcompris/boards/skins/default/difficulty_star2.png
@@ -1898,8 +2188,12 @@ share/gnome/gcompris/boards/sounds/fr/france_region/poitou-charentes.ogg
 share/gnome/gcompris/boards/sounds/fr/france_region/provence-alpes-cote_d_azur.ogg
 share/gnome/gcompris/boards/sounds/fr/france_region/rhone-alpes.ogg
 share/gnome/gcompris/boards/sounds/fr/geography/COPYRIGHT
+share/gnome/gcompris/boards/sounds/fr/geography/africa.ogg
 share/gnome/gcompris/boards/sounds/fr/geography/alaska.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/america.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/antartica.ogg
 share/gnome/gcompris/boards/sounds/fr/geography/argentina.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/asia.ogg
 share/gnome/gcompris/boards/sounds/fr/geography/bahamas.ogg
 share/gnome/gcompris/boards/sounds/fr/geography/bolivia.ogg
 share/gnome/gcompris/boards/sounds/fr/geography/brazil.ogg
@@ -1910,6 +2204,7 @@ share/gnome/gcompris/boards/sounds/fr/geography/costa_rica.ogg
 share/gnome/gcompris/boards/sounds/fr/geography/cuba.ogg
 share/gnome/gcompris/boards/sounds/fr/geography/dominican_republic.ogg
 share/gnome/gcompris/boards/sounds/fr/geography/ecuador.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/europa.ogg
 share/gnome/gcompris/boards/sounds/fr/geography/french_guiana.ogg
 share/gnome/gcompris/boards/sounds/fr/geography/greenland.ogg
 share/gnome/gcompris/boards/sounds/fr/geography/guatemala.ogg
@@ -1920,6 +2215,7 @@ share/gnome/gcompris/boards/sounds/fr/geography/iceland.ogg
 share/gnome/gcompris/boards/sounds/fr/geography/jamaica.ogg
 share/gnome/gcompris/boards/sounds/fr/geography/mexico.ogg
 share/gnome/gcompris/boards/sounds/fr/geography/nicaragua.ogg
+share/gnome/gcompris/boards/sounds/fr/geography/oceania.ogg
 share/gnome/gcompris/boards/sounds/fr/geography/panama.ogg
 share/gnome/gcompris/boards/sounds/fr/geography/paraguay.ogg
 share/gnome/gcompris/boards/sounds/fr/geography/peru.ogg
@@ -2427,6 +2723,162 @@ share/gnome/gcompris/boards/sounds/ru/misc/plus.ogg
 share/gnome/gcompris/boards/sounds/ru/misc/quit.ogg
 share/gnome/gcompris/boards/sounds/ru/misc/super.ogg
 share/gnome/gcompris/boards/sounds/ru/misc/welcome.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/0.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/1.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/10.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/11.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/12.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/13.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/14.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/15.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/16.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/17.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/18.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/19.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/2.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/20.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/3.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/4.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/5.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/6.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/7.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/8.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/9.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/a.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/aa.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/ae.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/b.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/c.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/d.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/e.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/f.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/g.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/h.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/i.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/j.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/k.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/l.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/m.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/n.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/o.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/oe.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/p.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/q.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/r.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/s.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/t.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/u.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/v.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/x.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/y.ogg
+share/gnome/gcompris/boards/sounds/sv/alphabet/z.ogg
+share/gnome/gcompris/boards/sounds/sv/colors/black.ogg
+share/gnome/gcompris/boards/sounds/sv/colors/blue.ogg
+share/gnome/gcompris/boards/sounds/sv/colors/brown.ogg
+share/gnome/gcompris/boards/sounds/sv/colors/green.ogg
+share/gnome/gcompris/boards/sounds/sv/colors/grey.ogg
+share/gnome/gcompris/boards/sounds/sv/colors/orange.ogg
+share/gnome/gcompris/boards/sounds/sv/colors/pink.ogg
+share/gnome/gcompris/boards/sounds/sv/colors/purple.ogg
+share/gnome/gcompris/boards/sounds/sv/colors/red.ogg
+share/gnome/gcompris/boards/sounds/sv/colors/white.ogg
+share/gnome/gcompris/boards/sounds/sv/colors/yellow.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/africa.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/alaska.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/albania.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/america.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/antarctica.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/argentina.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/asia.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/austria.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/bahamas.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/belarus.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/belgium.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/bolivia.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/bosnia_herzegovina.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/brazil.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/bulgaria.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/canada.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/chile.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/colombia.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/costa_rica.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/croatia.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/cuba.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/cyprus.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/czech.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/denmark.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/dominican_republic.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/ecuador.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/estonia.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/europe.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/fantastic.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/finland.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/france.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/french_guiana.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/germany.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/greece.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/greenland.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/guatemala.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/guyana.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/haiti.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/honduras.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/hungary.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/iceland.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/ireland.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/italy.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/jamaica.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/latvia.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/lithuania.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/luxembourg.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/macedonia.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/mexico.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/moldova.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/netherland.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/nicaragua.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/norway.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/oceania.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/panama.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/paraguay.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/peru.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/poland.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/portugal.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/romania.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/russia.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/salvador.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/serbia_montenegro.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/slovakia.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/slovenia.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/spain.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/suriname.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/sweden.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/switz.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/turkey.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/ukraine.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/united_kingdom.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/uruguay.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/usa.ogg
+share/gnome/gcompris/boards/sounds/sv/geography/venezuela.ogg
+share/gnome/gcompris/boards/sounds/sv/misc/about.ogg
+share/gnome/gcompris/boards/sounds/sv/misc/awesome.ogg
+share/gnome/gcompris/boards/sounds/sv/misc/back.ogg
+share/gnome/gcompris/boards/sounds/sv/misc/by.ogg
+share/gnome/gcompris/boards/sounds/sv/misc/click_on_letter.ogg
+share/gnome/gcompris/boards/sounds/sv/misc/configuration.ogg
+share/gnome/gcompris/boards/sounds/sv/misc/congratulation.ogg
+share/gnome/gcompris/boards/sounds/sv/misc/equal.ogg
+share/gnome/gcompris/boards/sounds/sv/misc/good.ogg
+share/gnome/gcompris/boards/sounds/sv/misc/great.ogg
+share/gnome/gcompris/boards/sounds/sv/misc/help.ogg
+share/gnome/gcompris/boards/sounds/sv/misc/level.ogg
+share/gnome/gcompris/boards/sounds/sv/misc/minus.ogg
+share/gnome/gcompris/boards/sounds/sv/misc/ok.ogg
+share/gnome/gcompris/boards/sounds/sv/misc/outof.ogg
+share/gnome/gcompris/boards/sounds/sv/misc/perfect.ogg
+share/gnome/gcompris/boards/sounds/sv/misc/plus.ogg
+share/gnome/gcompris/boards/sounds/sv/misc/quit.ogg
+share/gnome/gcompris/boards/sounds/sv/misc/super.ogg
+share/gnome/gcompris/boards/sounds/sv/misc/waytogo.ogg
+share/gnome/gcompris/boards/sounds/sv/misc/welcome.ogg
 share/gnome/gcompris/boards/sounds/train.ogg
 share/gnome/gcompris/boards/submarine.xml
 share/gnome/gcompris/boards/submarine/alert_submarine.png
@@ -2443,11 +2895,13 @@ share/gnome/gcompris/boards/submarine/up.png
 share/gnome/gcompris/boards/submarine/vanne.png
 share/gnome/gcompris/boards/submarine/whale.png
 share/gnome/gcompris/boards/submarine/whale_hit.png
+share/gnome/gcompris/boards/sudoku.xml
 share/gnome/gcompris/boards/superbrain.xml
 share/gnome/gcompris/boards/target.xml
 share/gnome/gcompris/boards/target/boardicon.png
 share/gnome/gcompris/boards/traffic.xml
 share/gnome/gcompris/boards/traffic/traffic-bg.jpg
+share/gnome/gcompris/boards/tuxpaint.xml
 share/gnome/gcompris/boards/watercycle.xml
 share/gnome/gcompris/boards/watercycle/README
 share/gnome/gcompris/boards/watercycle/background.png
@@ -2475,11 +2929,32 @@ share/gnome/gcompris/boards/watercycle/watercleaning.png
 share/gnome/gcompris/boards/watercycle/waterpump.png
 share/gnome/gcompris/boards/wordsgame.xml
 share/gnome/gcompris/boards/wordsgame/README
+share/gnome/gcompris/boards/wordsgame/default-da.xml
+share/gnome/gcompris/boards/wordsgame/default-de.xml
+share/gnome/gcompris/boards/wordsgame/default-el.xml
+share/gnome/gcompris/boards/wordsgame/default-en.xml
+share/gnome/gcompris/boards/wordsgame/default-es.xml
+share/gnome/gcompris/boards/wordsgame/default-eu.xml
+share/gnome/gcompris/boards/wordsgame/default-fi.xml
+share/gnome/gcompris/boards/wordsgame/default-fr.xml
+share/gnome/gcompris/boards/wordsgame/default-hu.xml
+share/gnome/gcompris/boards/wordsgame/default-it.xml
+share/gnome/gcompris/boards/wordsgame/default-lt.xml
+share/gnome/gcompris/boards/wordsgame/default-nb.xml
+share/gnome/gcompris/boards/wordsgame/default-nn.xml
+share/gnome/gcompris/boards/wordsgame/default-pt.xml
+share/gnome/gcompris/boards/wordsgame/default-pt_BR.xml
+share/gnome/gcompris/boards/wordsgame/default-ro.xml
+share/gnome/gcompris/boards/wordsgame/default-ru.xml
+share/gnome/gcompris/boards/wordsgame/default-sk.xml
+share/gnome/gcompris/boards/wordsgame/default-sl.xml
+share/gnome/gcompris/boards/wordsgame/default-sv.xml
 share/gnome/gcompris/boards/wordsgame/wordslevel1.da
 share/gnome/gcompris/boards/wordsgame/wordslevel1.de
 share/gnome/gcompris/boards/wordsgame/wordslevel1.el
 share/gnome/gcompris/boards/wordsgame/wordslevel1.en
 share/gnome/gcompris/boards/wordsgame/wordslevel1.es
+share/gnome/gcompris/boards/wordsgame/wordslevel1.eu
 share/gnome/gcompris/boards/wordsgame/wordslevel1.fi
 share/gnome/gcompris/boards/wordsgame/wordslevel1.fr
 share/gnome/gcompris/boards/wordsgame/wordslevel1.hu
@@ -2493,11 +2968,13 @@ share/gnome/gcompris/boards/wordsgame/wordslevel1.ro
 share/gnome/gcompris/boards/wordsgame/wordslevel1.ru
 share/gnome/gcompris/boards/wordsgame/wordslevel1.sk
 share/gnome/gcompris/boards/wordsgame/wordslevel1.sl
+share/gnome/gcompris/boards/wordsgame/wordslevel1.sv
 share/gnome/gcompris/boards/wordsgame/wordslevel2.da
 share/gnome/gcompris/boards/wordsgame/wordslevel2.de
 share/gnome/gcompris/boards/wordsgame/wordslevel2.el
 share/gnome/gcompris/boards/wordsgame/wordslevel2.en
 share/gnome/gcompris/boards/wordsgame/wordslevel2.es
+share/gnome/gcompris/boards/wordsgame/wordslevel2.eu
 share/gnome/gcompris/boards/wordsgame/wordslevel2.fi
 share/gnome/gcompris/boards/wordsgame/wordslevel2.fr
 share/gnome/gcompris/boards/wordsgame/wordslevel2.it
@@ -2510,6 +2987,7 @@ share/gnome/gcompris/boards/wordsgame/wordslevel2.ro
 share/gnome/gcompris/boards/wordsgame/wordslevel2.ru
 share/gnome/gcompris/boards/wordsgame/wordslevel2.sk
 share/gnome/gcompris/boards/wordsgame/wordslevel2.sl
+share/gnome/gcompris/boards/wordsgame/wordslevel2.sv
 share/gnome/gcompris/boards/wordsgame/wordslevel3.fr
 share/gnome/gcompris/boards/wordsgame/wordslevel3.lt
 share/gnome/gcompris/boards/wordsgame/wordslevelmax.da
@@ -2517,6 +2995,7 @@ share/gnome/gcompris/boards/wordsgame/wordslevelmax.de
 share/gnome/gcompris/boards/wordsgame/wordslevelmax.el
 share/gnome/gcompris/boards/wordsgame/wordslevelmax.en
 share/gnome/gcompris/boards/wordsgame/wordslevelmax.es
+share/gnome/gcompris/boards/wordsgame/wordslevelmax.eu
 share/gnome/gcompris/boards/wordsgame/wordslevelmax.fi
 share/gnome/gcompris/boards/wordsgame/wordslevelmax.fr
 share/gnome/gcompris/boards/wordsgame/wordslevelmax.hu
@@ -2531,9 +3010,13 @@ share/gnome/gcompris/boards/wordsgame/wordslevelmax.ro
 share/gnome/gcompris/boards/wordsgame/wordslevelmax.ru
 share/gnome/gcompris/boards/wordsgame/wordslevelmax.sk
 share/gnome/gcompris/boards/wordsgame/wordslevelmax.sl
+share/gnome/gcompris/boards/wordsgame/wordslevelmax.sv
 share/gnome/help/gcompris/C/gcompris.html
 share/gnome/help/gcompris/C/overview.jpg
 share/gnome/help/gcompris/C/topic.dat
+share/gnome/help/gcompris/eu/gcompris.html
+share/gnome/help/gcompris/eu/overview.jpg
+share/gnome/help/gcompris/eu/topic.dat
 share/gnome/help/gcompris/fr/gcompris.html
 share/gnome/help/gcompris/fr/overview.jpg
 share/gnome/help/gcompris/fr/topic.dat
@@ -2552,6 +3035,7 @@ share/locale/en_CA/LC_MESSAGES/gcompris.mo
 share/locale/en_GB/LC_MESSAGES/gcompris.mo
 share/locale/es/LC_MESSAGES/gcompris.mo
 share/locale/et/LC_MESSAGES/gcompris.mo
+share/locale/eu/LC_MESSAGES/gcompris.mo
 share/locale/fi/LC_MESSAGES/gcompris.mo
 share/locale/fr/LC_MESSAGES/gcompris.mo
 share/locale/ga/LC_MESSAGES/gcompris.mo
@@ -2561,11 +3045,13 @@ share/locale/hi/LC_MESSAGES/gcompris.mo
 share/locale/hr/LC_MESSAGES/gcompris.mo
 share/locale/hu/LC_MESSAGES/gcompris.mo
 share/locale/it/LC_MESSAGES/gcompris.mo
+share/locale/ka/LC_MESSAGES/gcompris.mo
 share/locale/lt/LC_MESSAGES/gcompris.mo
 share/locale/mk/LC_MESSAGES/gcompris.mo
 share/locale/ml/LC_MESSAGES/gcompris.mo
 share/locale/ms/LC_MESSAGES/gcompris.mo
 share/locale/nb/LC_MESSAGES/gcompris.mo
+share/locale/ne/LC_MESSAGES/gcompris.mo
 share/locale/nl/LC_MESSAGES/gcompris.mo
 share/locale/nn/LC_MESSAGES/gcompris.mo
 share/locale/pa/LC_MESSAGES/gcompris.mo
@@ -2582,9 +3068,13 @@ share/locale/sr/LC_MESSAGES/gcompris.mo
 share/locale/sr@Latn/LC_MESSAGES/gcompris.mo
 share/locale/sv/LC_MESSAGES/gcompris.mo
 share/locale/tr/LC_MESSAGES/gcompris.mo
+share/locale/vi/LC_MESSAGES/gcompris.mo
 share/locale/wa/LC_MESSAGES/gcompris.mo
 share/locale/zh_CN/LC_MESSAGES/gcompris.mo
+@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw 2> /dev/null || true
 @dirrm share/gnome/help/gcompris/fr
+@dirrm share/gnome/help/gcompris/eu
 @dirrm share/gnome/help/gcompris/C
 @dirrm share/gnome/help/gcompris
 @dirrm share/gnome/gcompris/boards/wordsgame
@@ -2592,6 +3082,11 @@ share/locale/zh_CN/LC_MESSAGES/gcompris.mo
 @dirrm share/gnome/gcompris/boards/traffic
 @dirrm share/gnome/gcompris/boards/target
 @dirrm share/gnome/gcompris/boards/submarine
+@dirrm share/gnome/gcompris/boards/sounds/sv/misc
+@dirrm share/gnome/gcompris/boards/sounds/sv/geography
+@dirrm share/gnome/gcompris/boards/sounds/sv/colors
+@dirrm share/gnome/gcompris/boards/sounds/sv/alphabet
+@dirrm share/gnome/gcompris/boards/sounds/sv
 @dirrm share/gnome/gcompris/boards/sounds/ru/misc
 @dirrm share/gnome/gcompris/boards/sounds/ru/geography
 @dirrm share/gnome/gcompris/boards/sounds/ru/colors
@@ -2672,12 +3167,15 @@ share/locale/zh_CN/LC_MESSAGES/gcompris.mo
 @dirrm share/gnome/gcompris/boards/images
 @dirrm share/gnome/gcompris/boards/imagename
 @dirrm share/gnome/gcompris/boards/imageid
+@dirrm share/gnome/gcompris/boards/gnumch
 @dirrm share/gnome/gcompris/boards/gletters
 @dirrm share/gnome/gcompris/boards/geography/southamerica
 @dirrm share/gnome/gcompris/boards/geography/northamerica
 @dirrm share/gnome/gcompris/boards/geography/france_region
 @dirrm share/gnome/gcompris/boards/geography/europe
 @dirrm share/gnome/gcompris/boards/geography/continents
+@dirrm share/gnome/gcompris/boards/geography/afrique
+@dirrm share/gnome/gcompris/boards/geography/africa
 @dirrm share/gnome/gcompris/boards/geography
 @dirrm share/gnome/gcompris/boards/gcompris/timers
 @dirrm share/gnome/gcompris/boards/gcompris/misc
@@ -2702,6 +3200,7 @@ share/locale/zh_CN/LC_MESSAGES/gcompris.mo
 @dirrm share/gnome/gcompris/boards/chess
 @dirrm share/gnome/gcompris/boards/canal_lock
 @dirrm share/gnome/gcompris/boards/boardicons
+@dirrm share/gnome/gcompris/boards/bargame
 @dirrm share/gnome/gcompris/boards/babyshapes/dog3
 @dirrm share/gnome/gcompris/boards/babyshapes/dog2
 @dirrm share/gnome/gcompris/boards/babyshapes/dog1
@@ -2712,6 +3211,7 @@ share/locale/zh_CN/LC_MESSAGES/gcompris.mo
 @dirrm share/gnome/gcompris/boards/advanced_colors
 @dirrm share/gnome/gcompris/boards
 @dirrm share/gnome/gcompris
+@dirrm share/gnome/assetml
 @dirrm share/gcompris/python/gcompris/utils
 @dirrm share/gcompris/python/gcompris/timer
 @dirrm share/gcompris/python/gcompris/sound
@@ -2719,8 +3219,10 @@ share/locale/zh_CN/LC_MESSAGES/gcompris.mo
 @dirrm share/gcompris/python/gcompris/score
 @dirrm share/gcompris/python/gcompris/bonus
 @dirrm share/gcompris/python/gcompris/anim
+@dirrm share/gcompris/python/gcompris/admin
 @dirrm share/gcompris/python/gcompris
 @dirrm share/gcompris/python/connect4p
+@dirrm share/gcompris/python/admin
 @dirrm share/gcompris/python
 @dirrm share/gcompris
 @dirrm lib/gcompris
