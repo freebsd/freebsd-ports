@@ -1,0 +1,16 @@
+Linklint is a perl script that checks links on web sites.
+
+Features:
+
+  * both local-file and HTTP site checking
+  * cross referenced and fully hyperlinked output reports
+  * the ability to check password protected areas
+  * support for all standard server-side image maps
+  * reports of orphan files, and files with mismatching case
+  * a report of which URLs have changed since last checked
+  * support of proxy servers for remote URL checking
+
+WWW: http://www.linklint.org/
+
+- ehaupt
+ehaupt@critical.ch
