@@ -189,6 +189,7 @@
     SUBDIR += cvsplot
     SUBDIR += cvsps
     SUBDIR += cvsps-devel
+    SUBDIR += cvsspam
     SUBDIR += cvsstat
     SUBDIR += cvstrac
     SUBDIR += cvsutils

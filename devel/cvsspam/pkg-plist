@@ -1,0 +1,7 @@
+@unexec if cmp -s %D/etc/cvsspam.conf %D/etc/cvsspam.conf.default; then rm -f %D/etc/cvsspam.conf; fi
+etc/cvsspam.conf.default
+@exec [ -f %B/cvsspam.conf ] || cp %B/%f %B/cvsspam.conf
+libexec/cvsspam/collect_diffs.rb
+libexec/cvsspam/cvsspam.rb
+libexec/cvsspam/record_lastdir.rb
+@dirrm libexec/cvsspam
