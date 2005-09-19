@@ -16,6 +16,9 @@
 #		common*: common13, common20 and common21
 #		apr: deal with apr stuff ;-)
 #
+.if defined(APACHE_COMPAT)
+USE_APACHE=yes
+.endif
 
 # Print warnings
 _ERROR_MSG=	: Error from bsd.apache.mk.
@@ -29,15 +32,16 @@ AP_PORT_IS_MODULE=	YES
 
 #### for backward compatibility
 .elif ${USE_APACHE:L} == yes
-APXS=	${LOCALBASE}/sbin/apxs
 .   if defined(WITH_APACHE2)
-APACHE_PORT?=	www/apache20
+APACHE_PORT?=	www/apache2
 .   else
 APACHE_PORT?=	www/apache13
 .   endif
 APXS?=			${LOCALBASE}/sbin/apxs
+.if !defined(APACHE_COMPAT)
 BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
+.endif
 #### End of backward compatibility
 
 .else
@@ -257,7 +261,7 @@ IGNORE=		${_ERROR_MSG} apache${AP_CUR_VERSION} is installed (or APACHE_PORT is d
 APACHE_VERSION=	${AP_CUR_VERSION}
 .else
 AP_CUR_VERSION=	none
-.   if !defined(${APACHE_PORT})
+.   if !defined(APACHE_PORT)
 #Fallback to smallest version...
 APACHE_VERSION=	${AP_VERSION:C/\+//}
 .   endif
@@ -277,7 +281,9 @@ IGNORE?=	PREFIX must be egal to APXS_PREFIX.
 AP_BUILDEXT=	la
 PLIST_SUB+=	APACHEMODDIR="libexec/apache2" \
 			APACHEINCLUDEDIR="include/apache2"
-APACHE_PORT=	www/apache${APACHE_VERSION}
+# XXX We postpone www/apache2 => www/apache20 migration
+#APACHE_PORT=	www/apache${APACHE_VERSION}
+APACHE_PORT=	www/apache2
 .elif ${APACHE_VERSION} == "21"
 AP_BUILDEXT=	la
 PLIST_SUB+=	APACHEMODDIR="libexec/apache${APACHE_VERSION}" \
