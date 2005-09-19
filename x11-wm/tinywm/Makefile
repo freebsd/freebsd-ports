@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tinywm
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://incise.org/files/dev/
 EXTRACT_SUFX=	.tgz
