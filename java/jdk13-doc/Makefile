@@ -23,8 +23,7 @@ WRKSRC=		${WRKDIR}/docs
 JDK_VERSION=	1.3.1
 JDK_MAJOR_VER=	${JDK_VERSION:R}
 JDK_CONCAT_VER=	${JDK_MAJOR_VER:S/.//g}
-SUN_BUNDLE_ID=	8717
-DOWNLOAD_URL=	http://java.sun.com/webapps/download/Display?BundleId=${SUN_BUNDLE_ID}
+DOWNLOAD_URL=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=7546-j2sdk-1.3.1-doc-oth-JPR&SiteId=JSC&TransactionId=noreg
 
 NO_BUILD=	yes
 USE_ZIP=	yes
