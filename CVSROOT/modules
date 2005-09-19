@@ -1394,6 +1394,7 @@ cvspadm		ports/devel/cvspadm
 cvsplot		ports/devel/cvsplot
 cvsps		ports/devel/cvsps
 cvsps-devel	ports/devel/cvsps-devel
+cvsspam		ports/devel/cvsspam
 cvsstat		ports/devel/cvsstat
 cvstrac		ports/devel/cvstrac
 cvsup		ports/net/cvsup
