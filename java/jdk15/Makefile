@@ -7,40 +7,58 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	3
 CATEGORIES=	java devel
-MASTER_SITES=	http://www.kde.org.ua/data/java/:koi8u
-#		http://www.sun.com/software/java2/download.html
+MASTER_SITES=	# http://www.sun.com/software/communitysource/j2se/java2/download.xml
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk15.html
 SCSL_SRCFILE=	jdk-${JDK_VERSION:S/./_/g}-src-scsl.zip
 SCSL_BINFILE=	jdk-${JDK_VERSION:S/./_/g}-bin-scsl.zip
 PATCHSETFILE=	bsd-jdk15-patches-${JDK_PATCHSET_VERSION}.tar.bz2
-ENCODINGS=	java_koi8u.tgz:koi8u
-DISTFILES=	${SCSL_SRCFILE} ${SCSL_BINFILE} ${PATCHSETFILE} ${ENCODINGS}
+DISTFILES=	${SCSL_SRCFILE} ${SCSL_BINFILE} ${PATCHSETFILE}
 
 MAINTAINER=	phantom@FreeBSD.org
 COMMENT=	Java Development Kit 1.5.0
 
-# XXX: iconv dependency?
 EXTRACT_DEPENDS=zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
 		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
+.if ${MACHINE_ARCH} == "amd64"
+WITHOUT_WEB=	yes
+.endif
+
+.if defined(WITHOUT_WEB)
+MAKE_ENV+=	DONT_BUILD_DEPLOY="YES"
+.else
+.if defined(WITH_MOZILLA) && ${WITH_MOZILLA} == "firefox"
+BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
+RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
+LIB_DEPENDS+=	nspr4.1:${PORTSDIR}/devel/nspr
+MAKE_ENV+=	BROWSER=firefox \
+		ALT_NSPR_HEADERS_PATH="${LOCALBASE}/include/nspr"
+.else
+BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/mozilla
+RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/mozilla
+MAKE_ENV+=	BROWSER=mozilla
+.endif
+USE_ICONV=	yes
+MAKE_ENV+=	ALT_MOZILLA_HEADERS_PATH="${X11BASE}/include"
+.endif
+
 PKGINSTALL=	${WRKDIR}/pkg-install
 
 WRKSRC=		${WRKDIR}/control/make
 
 JDK_VERSION=	1.5.0
-JDK_PATCHSET_VERSION=	1
+JDK_PATCHSET_VERSION=	2
 LATEST_LINK=	jdk15
 
 SUN_LINUX_JDK_VERSION=  1.4.2
 
 .if !defined(WITH_LINUX_BOOTSTRAP)
-NATIVE_BOOTSTRAP_JDKS=	${LOCALBASE}/jdk1.4.2 \
-			${LOCALBASE}/jdk1.5.0
+NATIVE_BOOTSTRAP_JDKS=	${LOCALBASE}/jdk1.5.0 \
+			${LOCALBASE}/jdk1.4.2
 .endif
 
 LINUX_BOOTSTRAP_JDKS=	${LOCALBASE}/linux-sun-jdk1.4.2
@@ -83,7 +101,7 @@ USE_REINPLACE=	YES
 RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
 NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
 
-MAKE_ENV=	ALT_BOOTDIR="${JDK14DIR}" \
+MAKE_ENV+=	ALT_BOOTDIR="${JDK14DIR}" \
 		ALT_MOTIF_DIR="${X11BASE}" \
 		SYS_CFLAGS="${CFLAGS}" \
 		LANG="C" \
@@ -91,10 +109,7 @@ MAKE_ENV=	ALT_BOOTDIR="${JDK14DIR}" \
 		CLASSPATH="" \
 		LD_LIBRARY_PATH="" \
 		MAKEFLAGS="" \
-		SKIP_COMPARE_IMAGES="YES" \
-		DONT_BUILD_DOCS="YES" \
-		DONT_BUILD_DEPLOY="YES" \
-		DONT_BUILD_INSTALL="YES"
+		SKIP_COMPARE_IMAGES="YES"
 .if !defined(WITH_IPV6)
 MAKE_ENV+=	DONT_ENABLE_IPV6="YES"
 .endif
@@ -102,8 +117,7 @@ MAKE_ENV+=	DONT_ENABLE_IPV6="YES"
 ALL_TARGET=	all
 
 PLIST_FILES=	jdk${JDK_VERSION}/jre/.systemPrefs/.system.lock \
-		jdk${JDK_VERSION}/jre/.systemPrefs/.systemRootModFile \
-		jdk${JDK_VERSION}/jre/lib/${ARCH}/client/classes.jsa
+		jdk${JDK_VERSION}/jre/.systemPrefs/.systemRootModFile
 PLIST_DIRS=	jdk${JDK_VERSION}/jre/.systemPrefs
 
 .if (${ARCH} == amd64)
@@ -169,7 +183,7 @@ Please place the patchset in ${DISTDIR}.\n
 pre-fetch:
 	@${ECHO_MSG}
 	@${ECHO_MSG} "IMPORTANT: To build JDK 1.5.0 port, you should have at least"
-	@${ECHO_MSG} "1.7Gb of free disk space in build area!"
+	@${ECHO_MSG} "2.5Gb of free disk space in build area!"
 	@${ECHO_MSG}
 .if defined(WITH_LINUX_BOOTSTRAP)
 	@${ECHO_MSG} "IMPORTANT: To build JDK 1.5.0 port, you should have linux emulation"
@@ -184,17 +198,17 @@ pre-fetch:
 	@${ECHO_MSG}
 	@${ECHO_MSG} "    WITH_IPV6   - enable JDK IPv6 support"
 	@${ECHO_MSG}
+	@${ECHO_MSG} "    WITHOUT_WEB - don't build the browser plugin"
+	@${ECHO_MSG} "                  or Java Web Start"
+	@${ECHO_MSG}
 
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "WARNING: "
-	@${ECHO_MSG} "WARNING: This is ALPHA quality software, and suitable for testing ONLY!"
+	@${ECHO_MSG} "WARNING: This is BETA quality software!"
+	@${ECHO_MSG} "WARNING: Use in a production environment is at your own risk."
 	@${ECHO_MSG} "WARNING: "
 	@${ECHO_MSG}
-
-post-extract:
-	${TAR} -C ${WRKSRC:H:H}/j2se/src/share/classes/sun/io/ -xzvpf ${DISTDIR}/java_koi8u.tgz '*.java'
-	${LN} -s ${FILESDIR}/KOI8_U.java ${WRKSRC:H:H}/j2se/src/share/classes/sun/nio/cs/
 
 pre-patch:
 	@cd ${WRKDIR} &&  \
@@ -277,7 +291,7 @@ do-install:
 	cd ${JDKIMAGEDIR_G} && ${FIND} . \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
 	@${FIND} -s ${JDKIMAGEDIR_G} -not -type d | \
-	  ${SED} -ne 's#^${JDKIMAGEDIR}#jdk${JDK_VERSION}#p' >> ${TMPPLIST}
+	  ${SED} -ne 's#^${JDKIMAGEDIR_G}#jdk${JDK_VERSION}#p' >> ${TMPPLIST}
 .endif
 	@${FIND} -s -d ${PREFIX}/jdk${JDK_VERSION} -type d | \
 	  ${SED} -ne 's#^${PREFIX}/#@dirrm #p' >> ${TMPPLIST}

@@ -2,7 +2,7 @@ $FreeBSD$
 
 --- ../../j2se/make/common/Defs-bsd.gmk.orig	Thu Jan 13 02:03:20 2005
 +++ ../../j2se/make/common/Defs-bsd.gmk	Thu Jan 13 02:03:38 2005
-@@ -172,7 +172,7 @@
+@@ -180,7 +180,7 @@
  ifeq ($(TRUE_PLATFORM), NetBSD)
  DEVTOOLS_PATH = /usr/pkg/bin/
  else
