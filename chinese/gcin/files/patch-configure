@@ -1,5 +1,5 @@
---- configure.orig	Tue May 24 19:14:40 2005
-+++ configure	Mon Jun 13 23:57:03 2005
+--- configure.orig	Fri Sep 16 13:38:02 2005
++++ configure	Tue Sep 20 22:14:33 2005
 @@ -1,12 +1,12 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -16,7 +16,16 @@
  if [ $? = 0 ]; then
    FREEBSD=1
  else
-@@ -50,7 +50,7 @@
+@@ -59,7 +59,7 @@
+ QT_IM='N'
+ for i in qt3 qt4
+ do
+-  QT_IM_DIR=/usr/lib/$i/plugins/lib/inputmethods
++  QT_IM_DIR=$prefix/lib/$i/plugins/lib/inputmethods
+   echo "testing if you have QT_IM_MODULE dir:$QT_IM_DIR support"
+   if [ -d  $QT_IM_DIR ]; then
+     QT_IM='Y'
+@@ -77,7 +77,7 @@
  
  bindir=$prefix/bin
  datadir=$prefix/share
@@ -24,8 +33,21 @@
 +mandir=$prefix/man
  libdir=$prefix/lib
  includedir=$prefix/include
- GCIN_VERSION=`cat VERSION.gcin`
-@@ -61,7 +61,7 @@
+ optdir=/opt
+@@ -100,20 +100,13 @@
+   grep -v qt3/plugins/inputmethods gcin.spec.tmp > gcin.spec
+ fi
+ 
+-grep Cooker /etc/mandriva-release 2>1 | grep 2006 >& /dev/null
+-if [ $? = 0 ]; then
+-  NEW_GTK_IM='Y'
+-  echo "!!!! new gtk-im(im-gcin.so) will be enabled because you are using Cooker 2006."
+-  echo "!!!! You have to install the latest libwidget_gtk2.so"
+-fi
+-
+ 
+ OPTFLAGS="-g"
+ if [ $prefix = /usr ]; then
    OPTFLAGS="-O"
  fi
  
@@ -34,7 +56,7 @@
  echo "MAKE=$MAKE" >> config.mak
  echo "GTKINC=$GTKINC" >> config.mak
  echo "prefix=$prefix" >> config.mak
-@@ -81,8 +81,8 @@
+@@ -133,8 +126,8 @@
  echo "GCIN_SCRIPT_DIR=\$(datadir_r)/gcin/script" >> config.mak
  echo "GCIN_SCRIPT_DIR_i=\$(datadir)/gcin/script" >> config.mak
  echo "OPTFLAGS=$OPTFLAGS" >> config.mak
