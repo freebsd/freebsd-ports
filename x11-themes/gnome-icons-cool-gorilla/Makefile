@@ -16,7 +16,7 @@ CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://tmclaugh.freeshell.org/files/ports/distfiles/
 DISTNAME=	ICON-CoolGorilla
 
-MAINTAINER=	tmclaugh@sdf.lonestar.org
+MAINTAINER=	tmclaugh@FreeBSD.org
 COMMENT=	CoolGorilla Icons for Gnome
 
 NO_PACKAGE=	${REASON}
