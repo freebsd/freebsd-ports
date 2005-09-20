@@ -1,28 +1,11 @@
 bin/gammu
-%%DOCSDIR%%/changelog
-%%DOCSDIR%%/copying
-%%DOCSDIR%%/readme.txt
-%%DOCSDIR%%/docs/english/gammu.txt
-%%DOCSDIR%%/docs/english/replace.txt
-%%DOCSDIR%%/docs/italian/gammu.txt
-%%DOCSDIR%%/docs/italian/readme.txt
-%%DOCSDIR%%/docs/gammu.png
-%%DOCSDIR%%/examples/config/gammurc
-%%DOCSDIR%%/examples/config/smsdrc
-%%DOCSDIR%%/examples/config/mysql.sql
-%%DOCSDIR%%/examples/fax/faxreceive
-%%DOCSDIR%%/examples/fax/faxsend
-%%DOCSDIR%%/examples/ppp/data
-%%DOCSDIR%%/examples/ppp/gprs
-%%DOCSDIR%%/examples/ppp/startppp
-%%DOCSDIR%%/examples/ppp/statsppp
-%%DOCSDIR%%/examples/media/aliens.nlm
-%%DOCSDIR%%/examples/media/axelf.txt
-share/gammu/gammu_cs.txt
-share/gammu/gammu_de.txt
-share/gammu/gammu_it.txt
-share/gammu/gammu_pl.txt
-share/gammu/gammu_us.txt
+%%DATADIR%%/gammu_cs.txt
+%%DATADIR%%/gammu_de.txt
+%%DATADIR%%/gammu_es.txt
+%%DATADIR%%/gammu_it.txt
+%%DATADIR%%/gammu_pl.txt
+%%DATADIR%%/gammu_ru.txt
+%%DATADIR%%/gammu_us.txt
 libdata/pkgconfig/gammu.pc
 lib/libGammu.a
 lib/libGammu.so
@@ -122,13 +105,4 @@ include/gammu/service/sms/gsmsms.h
 @dirrm include/gammu/device/bluetoth
 @dirrm include/gammu/device
 @dirrm include/gammu
-@dirrm share/gammu
-@dirrm %%DOCSDIR%%/docs/english
-@dirrm %%DOCSDIR%%/docs/italian
-@dirrm %%DOCSDIR%%/docs
-@dirrm %%DOCSDIR%%/examples/config
-@dirrm %%DOCSDIR%%/examples/media
-@dirrm %%DOCSDIR%%/examples/ppp
-@dirrm %%DOCSDIR%%/examples/fax
-@dirrm %%DOCSDIR%%/examples
-@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%

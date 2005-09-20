@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gammu
-PORTVERSION=	1.01.0
+PORTVERSION=	1.02.0
 CATEGORIES=	comms
 MASTER_SITES=	http://www.mwiacek.com/zips/gsm/gammu/stable/1_0x/
 
@@ -16,11 +16,20 @@ COMMENT=	GNU All Mobile Management Utilities
 MAN1=		gammu.1
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 WANT_AUTOCONF_VER=259
 INSTALLS_SHLIB=	yes
 
+PORTDOCS=	*
+
 CONFIGURE_ARGS=	--disable-bluerfsearch
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fPIC"
+
+post-patch:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's@ installdocs@@g' \
+		${WRKSRC}/cfg/Makefile.glo
+.endif
 
 .include <bsd.port.mk>
