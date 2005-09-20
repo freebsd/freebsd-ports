@@ -5041,6 +5041,7 @@ ksig		ports/misc/ksig
 kslide		ports/games/kslide
 ksmoothdock	ports/deskutils/ksmoothdock
 ksmp3play	ports/audio/ksmp3play
+ksqlanalyzer	ports/databases/ksqlanalyzer
 ksqlshell	ports/databases/ksqlshell
 kssh		ports/security/kssh
 kst		ports/science/kst
