@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsh
-PORTVERSION=	1.2.b7
+PORTVERSION=	2.0.b4
 CATEGORIES=	java
 MASTER_SITES=	http://www.beanshell.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
@@ -18,6 +18,7 @@ COMMENT=	A Java scripting environment
 
 PLIST_FILES=	%%JAVAJARDIR%%/bsh.jar bin/bsh
 USE_JAVA=	yes
+JAVA_VERSION=	1.2+
 NO_BUILD=	yes
 SUB_FILES=	bsh.sh
 
