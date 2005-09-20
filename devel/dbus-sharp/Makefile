@@ -10,7 +10,7 @@ PORTREVISION=	8
 CATEGORIES=	devel gnome
 PKGNAMESUFFIX=	-sharp
 
-MAINTAINER=	tmclaugh@sdf.lonestar.org
+MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Mono interface to the D-BUS messaging system
 
 LIB_DEPENDS=	dbus-1.1:${PORTSDIR}/devel/dbus
