@@ -33,6 +33,7 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.*
 
 # patch files
+EXTRA_PATCHES+=		${FILESDIR}/build-fix-openssl_beta
 .if defined (WITH_WINDOWSUPDATEFIX)
 EXTRA_PATCHES+=		${FILESDIR}/exp-windowsupdate.patch
 .endif
@@ -43,10 +44,6 @@ IGNORE=		: Please define WITH_KQUEUE_SUPPORT instead
 
 .if defined(WITH_KQUEUE_SUPPORT)
 EXTRA_PATCHES+=		${FILESDIR}/exp-apr-kqueue.patch
-.endif
-
-.if defined(WITH_OPENSSL_BETA)
-EXTRA_PATCHES+=		${FILESDIR}/build-fix-openssl_beta
 .endif
 
 SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
