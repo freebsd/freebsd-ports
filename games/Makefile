@@ -76,6 +76,7 @@
     SUBDIR += bzflag
     SUBDIR += cake
     SUBDIR += cardpics
+    SUBDIR += cavezofphear
     SUBDIR += cgoban
     SUBDIR += cgoban2
     SUBDIR += childsplay
