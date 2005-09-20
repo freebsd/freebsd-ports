@@ -1,5 +1,5 @@
---- ../gammu-1.01.0.orig/cfg/Makefile.glo	Tue Apr 12 15:26:08 2005
-+++ cfg/Makefile.glo	Sat Jul  9 22:24:39 2005
+--- cfg/Makefile.glo.orig	Tue Apr 12 10:26:08 2005
++++ cfg/Makefile.glo	Tue Sep  6 08:38:21 2005
 @@ -122,7 +122,7 @@
  	@echo Making $<
  	@$(CC) -c $(CFLAGS) -I$(TOPDIR)/common/ $(CPPFLAGS) $*.c -o $*.o
@@ -18,16 +18,32 @@
  	@$(LN) -s libGammu.so.$(SONAME_MAJOR).$(SONAME_MINOR) $(TOPDIR)/common/libGammu.so.$(SONAME_MAJOR)
  	@$(LN) -s libGammu.so.$(SONAME_MAJOR) $(TOPDIR)/common/libGammu.so
  
-@@ -230,7 +230,7 @@
+@@ -225,12 +225,14 @@
+ 	@$(INSTALL) -m 0644 $(TOPDIR)/changelog $(DESTDIR)$(INSTALL_DOC_DIR)
+ 	@$(INSTALL) -m 0644 $(TOPDIR)/readme.txt $(DESTDIR)$(INSTALL_DOC_DIR)
+ 	@$(INSTALL) -m 0644 $(TOPDIR)/copying $(DESTDIR)$(INSTALL_DOC_DIR)
++
++installman:
+ 	@echo Installing man to $(DESTDIR)$(INSTALL_MAN_DIR)
+ 	@$(INSTALL) -m 0755 -d $(DESTDIR)$(INSTALL_MAN_DIR)
  	@$(INSTALL) -m 0644 $(TOPDIR)/docs/docs/english/gammu.1 $(DESTDIR)$(INSTALL_MAN_DIR)
  	@$(RM) $(DESTDIR)$(INSTALL_DOC_DIR)/docs/english/gammu.1
   
 -install: uninstall all installdocs installlocales installonly
-+install: uninstall all installdocs installlocales installlibonly
++install: uninstall all installdocs installman installlocales installlibonly
  
  installonly: all
  	@echo Installing binaries to $(DESTDIR)$(INSTALL_BIN_DIR)
-@@ -247,8 +247,7 @@
+@@ -238,7 +240,7 @@
+ 	@$(INSTALL) -m 0755 $(TOPDIR)/gammu/gammu $(DESTDIR)$(INSTALL_BIN_DIR)
+ 
+ installshared: installlib
+-installlib: uninstall makelib installdocs installlocales installlibonly
++installlib: uninstall makelib installman installdocs installlocales installlibonly
+ 
+ installlibonly: shared
+ 	@echo Installing binaries to $(DESTDIR)$(INSTALL_BIN_DIR)
+@@ -247,8 +249,7 @@
  
  	@echo Installing shared library to $(DESTDIR)$(INSTALL_LIB_DIR)
  	@$(INSTALL) -m 0755 -d $(DESTDIR)$(INSTALL_LIB_DIR)
@@ -37,7 +53,7 @@
  	@$(LN) -s libGammu.so.$(SONAME_MAJOR) $(DESTDIR)$(INSTALL_LIB_DIR)/libGammu.so
   
  	@echo Installing static library to $(DESTDIR)$(INSTALL_LIB_DIR)
-@@ -267,8 +266,8 @@
+@@ -267,8 +268,8 @@
  	@$(INSTALL) -m 0644 cfg/config.h $(DESTDIR)$(INSTALL_H_DIR)/config.h
  
  	@echo Installing pkgconfig file
