@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Array
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	svenasse@polaris.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set up array elements as aliases
 
 PERL_CONFIGURE=	yes

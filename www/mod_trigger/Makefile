@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	www
 MASTER_SITES=	http://download.tangent.org/
 
-MAINTAINER=	svenasse@polaris.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module to launch triggers if certain actions occur
 
 USE_APACHE=	yes

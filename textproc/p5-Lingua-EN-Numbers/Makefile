@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	svenasse@polaris.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts numeric values into their English string equivalents
 
 PERL_CONFIGURE=	yes

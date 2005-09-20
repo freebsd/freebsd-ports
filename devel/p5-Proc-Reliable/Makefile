@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Proc
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	svenasse@polaris.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Run external processes reliably with many options
 
 PERL_CONFIGURE=	yes

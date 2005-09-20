@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Business
 PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	svenasse@polaris.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Validate International Securities Identification Numbers
 
 BUILD_DEPENDS=	${SITE_PERL}/Locale/Country.pm:${PORTSDIR}/misc/p5-Locale-Codes

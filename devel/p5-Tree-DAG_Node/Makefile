@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tree
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	svenasse@polaris.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Super class for representing nodes in a tree
 
 PERL_CONFIGURE=	yes

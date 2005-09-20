@@ -11,7 +11,7 @@ PORTVERSION=	1.2.1
 CATEGORIES=	ftp
 MASTER_SITES= 	http://keyserver.kjsl.com/~jharris/distfiles/
 
-MAINTAINER=	svenasse@polaris.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically check for and download most recent versions of software
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww

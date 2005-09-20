@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/M/MA/MARKSTOS
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		svenasse@polaris.ca
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Validates user input (usually from an HTML form) based
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \

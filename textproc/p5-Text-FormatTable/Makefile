@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		svenasse@polaris.ca
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Renders simple tables as text
 
 PERL_CONFIGURE=		yes

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	svenasse@polaris.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Determine the infinitive form of a conjugated word
 
 PERL_CONFIGURE=	yes

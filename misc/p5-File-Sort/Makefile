@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		svenasse@polaris.ca
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Sort a file or merge sort multiple files
 
 PERL_CONFIGURE=		yes

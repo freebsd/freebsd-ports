@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	svenasse@polaris.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Maintain information about the state of links
 
 BUILD_DEPENDS=	${SITE_PERL}/HTTP/Response.pm:${PORTSDIR}/www/p5-libwww \

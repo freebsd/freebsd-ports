@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	svenasse@polaris.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dump arbitrary data structures as XML
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Array/RefElem.pm:${PORTSDIR}/misc/p5-Array-RefElem \

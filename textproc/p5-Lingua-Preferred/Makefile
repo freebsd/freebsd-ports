@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/E/ED/EDAVIS
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		svenasse@polaris.ca
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Perl extension to choose a language
 
 RUN_DEPENDS=	${SITE_PERL}/Log/TraceMessages.pm:${PORTSDIR}/devel/p5-Log-TraceMessages

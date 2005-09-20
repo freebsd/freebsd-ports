@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/F/FL/FLUFFY
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		svenasse@polaris.ca
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Perl extension to display a progress bar
 
 BUILD_DEPENDS=		${SITE_PERL}/Class/MethodMaker.pm:${PORTSDIR}/devel/p5-Class-MethodMaker \

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	svenasse@polaris.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module to manipulate geographical addresses
 
 BUILD_DEPENDS=	${SITE_PERL}/Lingua/EN/NameParse.pm:${PORTSDIR}/textproc/p5-Lingua-EN-NameParse \

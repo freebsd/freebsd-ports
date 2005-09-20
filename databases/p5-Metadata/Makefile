@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Metadata
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	svenasse@polaris.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl implementation of Dublin Core compatible metadata
 
 BUILD_DEPENDS=	${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate
