@@ -16,8 +16,10 @@ MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	INADYN - Simple DYNAMIC DNS client
 
 WRKSRC=		${WRKDIR}/inadyn
+USE_GCC=	3.4
 USE_ZIP=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 MAKEFILE=	makefile
 
 MAN8=		inadyn.8
@@ -29,6 +31,9 @@ PLIST_FILES=	bin/inadyn
 
 NO_INSTALL_MANPAGES=yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|gcc|$$\(CC\)|g' ${WRKSRC}/makefile
+
 do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -38,10 +43,4 @@ do-install:
 	 ${INSTALL_SCRIPT} ${WRKSRC}/man/inadyn.8 ${MANPREFIX}/man/man8
 	 ${INSTALL_SCRIPT} ${WRKSRC}/man/inadyn.conf.5 ${MANPREFIX}/man/man5
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	"Doesn't build on 4.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
