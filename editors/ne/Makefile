@@ -8,7 +8,9 @@
 PORTNAME=	ne
 PORTVERSION=	1.41
 CATEGORIES=	editors
-MASTER_SITES=	http://ne.dsi.unimi.it/
+MASTER_SITES=	http://ne.dsi.unimi.it/ \
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	az@inec.ru
 COMMENT=	Nice and powerfull editor
