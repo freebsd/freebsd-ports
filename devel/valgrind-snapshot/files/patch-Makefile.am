@@ -1,0 +1,52 @@
+--- Makefile.am.orig	Sun May  9 13:00:57 2004
++++ Makefile.am	Tue Sep 20 00:04:44 2005
+@@ -55,26 +55,44 @@
+ if !IS_LINUX
+ if IS_FREEBSD4
+ 	rm -f $(DESTDIR)$(valdir)/libc_r.so.4
+-else
++endif
++if IS_FREEBSD5
+ 	rm -f $(DESTDIR)$(valdir)/libc_r.so.5
+ 	rm -f $(DESTDIR)$(valdir)/libkse.so.1
+ 	rm -f $(DESTDIR)$(valdir)/libthr.so.1
+-if !IS_FREEBSD_LIBC_R
+ 	rm -f $(DESTDIR)$(valdir)/libpthread.so.1
+ endif
++if IS_FREEBSD6
++	rm -f $(DESTDIR)$(valdir)/libc_r.so.6
++	rm -f $(DESTDIR)$(valdir)/libthr.so.2
++	rm -f $(DESTDIR)$(valdir)/libpthread.so.2
++endif
++if IS_FREEBSD7
++	rm -f $(DESTDIR)$(valdir)/libc_r.so.6
++	rm -f $(DESTDIR)$(valdir)/libthr.so.2
++	rm -f $(DESTDIR)$(valdir)/libpthread.so.2
+ endif
+ endif
+-	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libpthread.so.0
+ if !IS_LINUX
+ if IS_FREEBSD4
+ 	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libc_r.so.4
+-else
++	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libpthread.so.0
++endif
++if IS_FREEBSD5
+ 	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libc_r.so.5
+ 	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libkse.so.1
+ 	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libthr.so.1
+-if !IS_FREEBSD_LIBC_R
+ 	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libpthread.so.1
+ endif
++if IS_FREEBSD6
++	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libc_r.so.6
++	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libthr.so.2
++	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libpthread.so.2
++endif
++if IS_FREEBSD7
++	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libc_r.so.6
++	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libthr.so.2
++	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libpthread.so.2
+ endif
+ endif
+ 
