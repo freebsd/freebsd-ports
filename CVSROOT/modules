@@ -957,6 +957,7 @@ catdvi		ports/print/catdvi
 caudium10	ports/www/caudium10
 caudium12	ports/www/caudium12
 cave		ports/misc/cave
+cavezofphear	ports/games/cavezofphear
 cbb		ports/finance/cbb
 cbedic		ports/textproc/cbedic
 cbrowser	ports/devel/cbrowser
