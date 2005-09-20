@@ -1,15 +1,15 @@
---- Makefile.orig	Tue Sep 23 14:37:56 2003
-+++ Makefile	Mon Dec 15 19:56:14 2003
+--- Makefile.orig	Tue Sep  6 07:59:53 2005
++++ Makefile	Thu Sep 15 07:34:55 2005
 @@ -5,7 +5,7 @@
  
- ZBD_VERSION = 2.5.2
+ ZBD_VERSION = 2.5.3
  
 -OS = 
 +OS = freebsd
  
  ###
  ### Locations of tools, libraries and installation directories.
-@@ -14,12 +14,10 @@
+@@ -14,13 +14,11 @@
  
  # Choose your C compiler
  
@@ -17,13 +17,14 @@
 -
  CC_win32 = gcc -mno-cygwin
  CC_linux = gcc -pthread
+ CC_linux64 = $(CC_linux) -m64
  CC_solaris = gcc
 -CC_freebsd = gcc -pthread
 +CC_freebsd ?= gcc
  CC_tru64 = cc
  CC_irix = cc -n32 -woff 1110
  CC_hpux = cc -Ae +DAportable
-@@ -30,7 +28,7 @@
+@@ -31,7 +29,7 @@
  # Optimise/debug compilation
  
  #OPTIM = -Wall -g
@@ -32,7 +33,7 @@
  
  # Location of gmp include and library
  #
-@@ -45,25 +43,26 @@
+@@ -46,25 +44,26 @@
  # BFINC = /usr/include/openssl
  # BFLIB = -lcrypto
  
@@ -43,16 +44,16 @@
  
  # Location of zlib include and library
  
--ZINC = -I../zlib-1.1.4
--ZLIB = ../zlib-1.1.4/libz.a
-+ZINC =
+-ZINC = -I../zlib-1.2.3
+-ZLIB = ../zlib-1.2.3/libz.a
++ZINC = 
 +ZLIB = -lz
  
  # Location of bzlib include and library
  # Set these empty if you don't want bzib2 support
  
--BZINC = -I../bzip2-1.0.1
--BZLIB = ../bzip2-1.0.1/libbz2.a
+-BZINC = -I../bzip2-1.0.3
+-BZLIB = ../bzip2-1.0.3/libbz2.a
 +BZINC = -I$(LOCALBASE)/include
 +BZLIB = -L$(LOCALBASE)/lib -lbz2
  
@@ -65,7 +66,7 @@
  PERL = $(PERL_$(OS))
  
  BAT_win32 = .bat
-@@ -182,7 +181,8 @@
+@@ -186,7 +185,8 @@
  #### You REALLY shouldn't have to modify anything beyond here ...
  ####
  
@@ -75,8 +76,8 @@
  
  LIBS = $(GMPLIB) $(BFLIB) $(ZLIB) $(BZLIB) $(OSLIBS)
  
-@@ -202,7 +202,7 @@
- 	@ if test -z "$(OS)"; then echo "Use '$(MAKE) OS=xxx' where xxx is win32, linux, solaris, freebsd, tru64, irix, hpux, macosx or bsdi"; exit 1; fi
+@@ -206,7 +206,7 @@
+ 	@ if test -z "$(OS)"; then echo "Use '$(MAKE) OS=xxx' where xxx is win32, linux, linux64, solaris, freebsd, tru64, irix, hpux, macosx or bsdi"; exit 1; fi
  
  zebedee$(EXE) : $(OBJS)
 -	$(CC) $(CFLAGS) -o zebedee$(EXE) $(OBJS) $(LIBS)
