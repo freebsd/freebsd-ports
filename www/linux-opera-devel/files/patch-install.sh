@@ -1,5 +1,5 @@
 --- install.sh.orig	Fri Sep 16 05:16:47 2005
-+++ install.sh	Tue Sep 20 14:52:09 2005
++++ install.sh	Tue Sep 20 17:24:20 2005
 @@ -761,10 +761,9 @@
      case "${machine}:${os}" in
  	i[3456]86:Linux|x86_64:Linux|i[3456]86:FreeBSD|i[3456]86:NetBSD|i[3456]86:OpenBSD)
@@ -200,10 +200,14 @@
  	if test -f plugins/libnpp.so
  	    then
  		cp $cpv $cpf plugins/libnpp.so $plugin_dir/
-@@ -1293,47 +1225,9 @@
+@@ -1289,51 +1221,14 @@
+ 		chmod $chmodv 755 $exec_dir/vxmlplugin.so.0.1
+ 	fi
  
- 	if test -z "${OPERADESTDIR}"; then
- 
+-
+-
+-	if test -z "${OPERADESTDIR}"; then
+-
 -	# System wide configuration files
 -	config_dir="/etc"
 -	if can_write_to "$config_dir"; then
@@ -227,9 +231,9 @@
 -	    echo " were not installed."
 -	fi
 -
--     # Shorcuts and Icons
--	bool_icons=1 # install icons by default
--
+      # Shorcuts and Icons
+ 	bool_icons=1 # install icons by default
+ 
 -	if test "$flag_mode" = "--force" -o "$flag_mode" = "--prefix="; then
 -	    echo
 -	    echo "Shortcut icons cannot be installed with the prefix \"$prefix\"."
@@ -237,7 +241,8 @@
 -		bool_icons=0
 -	    fi
 -	fi
--
++	if test -z "${OPERADESTDIR}"; then
+ 
  	if test "${bool_icons}" -ne 0; then
 -	    icons
  	    gnome
@@ -248,7 +253,7 @@
  	fi
  
  	fi # OPERADESTDIR
-@@ -1379,15 +1273,16 @@
+@@ -1379,15 +1274,16 @@
  {
      # arg1 = location
  
@@ -270,7 +275,7 @@
  
      echo "${desktop_contain}" > ${desktop_file}
      chmod $chmodv 644 ${desktop_file}
-@@ -1463,74 +1358,26 @@
+@@ -1463,74 +1359,26 @@
  
      debug_msg 1 "in gnome()"
  
@@ -362,7 +367,7 @@
  }
  
  kde()
-@@ -1539,38 +1386,30 @@
+@@ -1539,38 +1387,30 @@
  
      debug_msg 1 "in kde()"
  
