@@ -1,5 +1,5 @@
---- install.sh.orig	Fri Apr 15 21:21:52 2005
-+++ install.sh	Sat Jun 18 01:45:48 2005
+--- install.sh.orig	Fri Sep 16 19:19:04 2005
++++ install.sh	Tue Sep 20 22:49:54 2005
 @@ -373,7 +373,7 @@
  	    mvv=''    # SunOS mv (no -v verbose option)
  	;;
@@ -146,7 +146,7 @@
  
      # Documentation
  	debug_msg 1 "Documentation"
-@@ -1293,36 +1259,13 @@
+@@ -1293,47 +1259,16 @@
  
  	if test -z "${OPERADESTDIR}"; then
  
@@ -157,7 +157,7 @@
 -	    echo "System wide configuration files:"
 -	    echo "  $config_dir/opera6rc"
 -	    echo "  $config_dir/opera6rc.fixed"
--	    echo " cannot be prefixed"
+-	    echo " cannot be installed with the prefix \"$prefix\"."
 -	    if con_firm "Do you want to install them"; then
 -		backup $config_dir/opera6rc opera6rc config
 -		backup $config_dir/opera6rc.fixed opera6rc.fixed config
@@ -170,33 +170,44 @@
 -	    echo " System wide configuration files:"
 -	    echo "  $config_dir/opera6rc"
 -	    echo "  $config_dir/opera6rc.fixed"
--	    echo " were not installed"
+-	    echo " were not installed."
 -	fi
 -
       # Shorcuts and Icons
--	icons
-+	#icons
- 	gnome
- 	kde 3
--	kde 2
--	kde1
--	mandrake
-+	#kde 2
-+	#kde1
-+	#mandrake
+ 	bool_icons=1 # install icons by default
+ 
+-	if test "$flag_mode" = "--force" -o "$flag_mode" = "--prefix="; then
+-	    echo
+-	    echo "Shortcut icons cannot be installed with the prefix \"$prefix\"."
+-	    if not con_firm "Do you still want to install them"; then
+-		bool_icons=0
+-	    fi
+-	fi
+-
+ 	if test "${bool_icons}" -ne 0; then
+-	    icons
++	    #icons
+ 	    gnome
+ 	    kde 3
+-	    kde 2
+-	    kde1
+-	    mandrake
++	    #kde 2
++	    #kde1
++	    #mandrake
+ 	fi
  
  	fi # OPERADESTDIR
- 
-@@ -1451,72 +1394,36 @@
+@@ -1463,72 +1398,36 @@
  
      debug_msg 1 "in gnome()"
  
 -    if test -d /opt/gnome/; then
-+    if test -d %%X11BASE%%/share/gnome/; then
- 
+-
 -      # /opt/gnome share
 -      if test -d /opt/gnome/share; then
--
++    if test -d %%X11BASE%%/share/gnome/; then
+ 
 -        # /opt/gnome icon
 -        if test ! -d /opt/gnome/share/pixmaps/; then
 -	  if test -w /opt/gnome/share; then
@@ -282,7 +293,7 @@
     fi
     # Add ximian here
  }
-@@ -1527,39 +1434,31 @@
+@@ -1539,39 +1438,31 @@
  
      debug_msg 1 "in kde()"
  
