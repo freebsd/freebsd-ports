@@ -7,6 +7,7 @@ artemis-%%PORTVERSION%%/art
 artemis-%%PORTVERSION%%/etc/CVS/Root
 artemis-%%PORTVERSION%%/etc/CVS/Repository
 artemis-%%PORTVERSION%%/etc/CVS/Entries
+artemis-%%PORTVERSION%%/etc/test.genbank
 artemis-%%PORTVERSION%%/etc/af063097.embl
 artemis-%%PORTVERSION%%/etc/af063097.fasta
 artemis-%%PORTVERSION%%/etc/af063097_v_b132222.crunch
@@ -17,12 +18,12 @@ artemis-%%PORTVERSION%%/etc/c1215.blastn.tab
 artemis-%%PORTVERSION%%/etc/c1215.embl
 artemis-%%PORTVERSION%%/etc/c1215.genbank
 artemis-%%PORTVERSION%%/etc/c1215.seq
-artemis-%%PORTVERSION%%/etc/feature_keys
+artemis-%%PORTVERSION%%/etc/run_blastn
+artemis-%%PORTVERSION%%/etc/go_associations.pl
 artemis-%%PORTVERSION%%/etc/options
 artemis-%%PORTVERSION%%/etc/pombe.usage
-artemis-%%PORTVERSION%%/etc/qualifier_types
-artemis-%%PORTVERSION%%/etc/results_to_netscape
-artemis-%%PORTVERSION%%/etc/run_blastn
+artemis-%%PORTVERSION%%/etc/feature_keys
+artemis-%%PORTVERSION%%/etc/run_fasta.orig
 artemis-%%PORTVERSION%%/etc/run_blastp
 artemis-%%PORTVERSION%%/etc/run_blastx
 artemis-%%PORTVERSION%%/etc/run_clustalx
@@ -35,6 +36,20 @@ artemis-%%PORTVERSION%%/etc/run_sigcleave
 artemis-%%PORTVERSION%%/etc/run_smart
 artemis-%%PORTVERSION%%/etc/run_tblastn
 artemis-%%PORTVERSION%%/etc/run_tblastx
+artemis-%%PORTVERSION%%/etc/test2.genbank
+artemis-%%PORTVERSION%%/etc/run_jalview_n
+artemis-%%PORTVERSION%%/etc/results_to_netscape_new
+artemis-%%PORTVERSION%%/etc/results_to_netscape
+artemis-%%PORTVERSION%%/etc/options_n
+artemis-%%PORTVERSION%%/etc/feature_keys_o
+artemis-%%PORTVERSION%%/etc/qualifier_types_o
+artemis-%%PORTVERSION%%/etc/qualifier_types
+artemis-%%PORTVERSION%%/etc/run_blastn.sanger
+artemis-%%PORTVERSION%%/etc/run_blastp.sanger
+artemis-%%PORTVERSION%%/etc/run_blastx.sanger
+artemis-%%PORTVERSION%%/etc/run_clustalx.sanger
+artemis-%%PORTVERSION%%/etc/run_fasta.sanger
+artemis-%%PORTVERSION%%/etc/run_fastx.sanger
 artemis-%%PORTVERSION%%/uk/CVS/Root
 artemis-%%PORTVERSION%%/uk/CVS/Repository
 artemis-%%PORTVERSION%%/uk/CVS/Entries
@@ -120,6 +135,8 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/MultiComparator.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Navigator.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Plot.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/PlotMouseListener.java
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/PrintACT.java
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/PrintArtemis.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ProcessWatcher.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ProcessWatcherEvent.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ProcessWatcherListener.java
@@ -133,13 +150,14 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ScoreChangeListener.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ScoreChanger.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ScoreScrollbar.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SearchResultViewer.java
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SegmentBorder.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SelectMenu.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SelectionInfoDisplay.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SelectionMenu.java
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Splash.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SelectionViewer.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Selector.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SequenceViewer.java
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Splash.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/StickyFileChooser.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SwingWorker.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/TaskViewerFrame.java
@@ -156,11 +174,10 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/YesNoDialog.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ArtemisMain$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ArtemisMain$2.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ArtemisMain$3.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Splash$2.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ArtemisMain$4.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ArtemisMain$5.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ArtemisMain.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Plot.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Splash$2.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Splash$4.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Splash$5.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Splash$6.class
@@ -171,9 +188,9 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Splash$10.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Splash$3.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Splash.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryEditVector.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Plot.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FileManager$2.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FileManager$1.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryEdit.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FileManager$3.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FileManager$4.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FileManager$5.class
@@ -188,7 +205,6 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FileManager$13.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FileManager$14.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FileManager$15.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FileManager.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ProgressThread.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryEdit$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryEdit$2.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryEdit$3.class
@@ -203,6 +219,9 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryEdit$11.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryEdit$12.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryEdit$13.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryEdit$14.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryEdit$15.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryEdit$16.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryEdit.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/LogViewer$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/LogViewer.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FileTree$1.class
@@ -224,7 +243,6 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureDisplay$6.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureDisplay$7.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureDisplay.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryGroupPanel$1.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/CanvasPanel$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryGroupPanel.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/CanvasPanel.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/DisplayComponent.class
@@ -232,29 +250,31 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/DisplayAdjustmentListene
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/BasePlotGroup.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureList$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureList$2.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureList$3.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureList$4.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureList.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SelectionInfoDisplay$1.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SelectionInfoDisplay.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FileViewer$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FileViewer$2.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FileViewer$3.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FileViewer.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FileNode.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/DisplayAdjustmentEvent.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SegmentBorder.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/BasePlot$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/BasePlot.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Plot$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Plot$2.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Plot$3.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Plot$5.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Plot$6.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Plot$4.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Plot$6.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Plot$7.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Plot$8.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Plot$3.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Plot$9.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/PlotMouseListener.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ReadFeaturesActionListener.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryActionListener.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SaveEntryActionListener.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/MessageDialog.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SaveEntryAsActionListener.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SaveEntryAsEMBLActionListener.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SaveEntryAsGenbankActionListener.class
@@ -263,6 +283,7 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SaveEntryAsSubmissionAct
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/MessageDialog$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/MessageDialog$2.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/MessageDialog$3.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/MessageDialog.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Utilities.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryFileDialog$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryFileDialog$2.class
@@ -273,8 +294,6 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SwingWorker$ThreadVar.cl
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SwingWorker$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SwingWorker$2.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SwingWorker.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SelectionInfoDisplay$1.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SelectionInfoDisplay.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/YesNoDialog$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/YesNoDialog$2.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/YesNoDialog.class
@@ -317,6 +336,7 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryGroupMenu$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryGroupMenu$2.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryGroupMenu$3.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryGroupMenu$4.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/GotoMenu.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryGroupMenu$5.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryGroupMenu$6.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryGroupMenu$7.class
@@ -337,8 +357,8 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SelectMenu$13.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SelectMenu$14.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SelectMenu$15.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SelectMenu$16.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SelectMenu$1SelectListener.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SelectMenu$17.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SelectMenu$1SelectListener.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SelectMenu$18.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SelectMenu$19.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SelectMenu$20.class
@@ -353,7 +373,6 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/GotoMenu$7.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/GotoMenu$8.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/GotoMenu$9.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/GotoMenu$10.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/GotoMenu.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EditMenu$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EditMenu$2.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EditMenu$3.class
@@ -435,6 +454,16 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/GraphMenu$2.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/GraphMenu$3.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/GraphMenu$4.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/GraphMenu.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/PrintArtemis$1.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/PrintArtemis$2.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/PrintArtemis$3.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/PrintArtemis$4.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/PrintArtemis$5.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/PrintArtemis$6.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/PrintArtemis$7.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/PrintArtemis$8.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/PrintArtemis$9.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/PrintArtemis.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryGroupInfoDisplay$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryGroupInfoDisplay$2.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryGroupInfoDisplay$3.class
@@ -455,8 +484,8 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeaturePopup$13.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeaturePopup$15.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeaturePopup$16.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeaturePopup$14.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/KeyChoice.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeaturePopup$17.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/KeyChoice.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeaturePopup$18.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeaturePopup$19.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeaturePopup$20.class
@@ -466,6 +495,7 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeaturePopup$23.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeaturePopup$24.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeaturePopup$25.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeaturePopup$26.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeaturePopup$27.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeaturePopup.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureEdit$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureEdit$2.class
@@ -479,13 +509,17 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureEdit$9.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureEdit$10.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureEdit$11.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureEdit$12.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureEdit$13.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureEdit$14.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureEdit$15.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureEdit$14.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureEdit$13.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureEdit$16.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureEdit$17.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureEdit$18.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureEdit$19.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureEdit.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/QualifierChoice.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/QualifierTextArea.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ProgressThread.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FileDialogEntrySource.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/DbfetchEntrySource.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EMBLCorbaEntrySource.class
@@ -500,10 +534,10 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/InputStreamProgressDialo
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/InputStreamProgressDialog.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SelectionViewer$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/SelectionViewer.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureListFrame.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureListFrame$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureListFrame$2.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureListFrame$3.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeatureListFrame.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/KeyChooser$2.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/KeyChooser$3.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/KeyChooser.class
@@ -539,6 +573,7 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Selector$6.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Selector$7.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Selector$8.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Selector$9.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Selector.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Selector$10.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Selector$11.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Selector$12.class
@@ -546,7 +581,6 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Selector$13.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Selector$14.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Selector$15.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Selector$16.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/Selector.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ChoiceFrame$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ChoiceFrame$2.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ChoiceFrame$3.class
@@ -569,7 +603,6 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryHeaderEdit$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/EntryHeaderEdit.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/QualifierEditor$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/QualifierEditor$2.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ActMain$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/QualifierEditor$3.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/QualifierEditor$4.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/QualifierEditor$5.class
@@ -590,11 +623,9 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ScoreChanger$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ScoreChanger$2.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ScoreChanger$3.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ScoreChanger$4.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ScoreChanger$5.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ScoreChanger.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ActMain$2.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ScoreChanger$5.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ScoreScrollbar.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ArtemisCheckboxMenuItem.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ProcessWatcher.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ProcessWatcherListener.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ProcessWatcherEvent.class
@@ -602,6 +633,8 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ListDialog$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ListDialog$2.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ListDialog.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/FeaturePlot.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ActMain$1.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ActMain$2.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ActMain$3.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ActMain.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/MultiComparator$1.class
@@ -615,10 +648,13 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/MultiComparator$8.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/MultiComparator$9.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/MultiComparator$10.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/MultiComparator$11.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/PrintACT.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/MultiComparator$12.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/MultiComparator$13.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/MultiComparator$14.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/MultiComparator$15.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/MultiComparator$16.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/MultiComparator$17.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/MultiComparator.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer$2.class
@@ -628,17 +664,19 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer$5.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer$6.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer$7.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer$8.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer$9.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer$10.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer$12.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer$13.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer$11.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer$9.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer$13.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer$14.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer$12.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer$15.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer$16.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer$14.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer$17.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer$18.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/TextFieldSink.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer$19.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer$20.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer$ColorChooserShades.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentViewer.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentListener.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignmentEvent.class
@@ -654,6 +692,9 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ComparatorDialog$3.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ComparatorDialog$4.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ComparatorDialog$5.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/ComparatorDialog.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/PrintACT$1.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/PrintACT$2.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/PrintACT$3.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignMatchViewer$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignMatchViewer$2.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignMatchViewer$3.class
@@ -669,6 +710,7 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignMatchViewer$12.clas
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignMatchViewer$13.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/AlignMatchViewer.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/TextFieldSink$1.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/TextFieldSink.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/components/BioJavaEntrySource.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/Action.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/ActionController.java
@@ -787,11 +829,11 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io/Qualifier.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io/Range.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io/InvalidRelationException.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io/Entry.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io/LocationParseException.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io/ReadFormatException.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io/RangeVector.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io/LocationParseNode.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io/EMBLObject.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io/RangeVector.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io/LocationParseException.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io/ReadFormatException.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io/LocationLexer$TokenEnumeration.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io/LocationLexer.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io/FeatureEnumeration.class
@@ -845,6 +887,7 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io/GFFMisc.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io/StreamQualifier.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io/ReadOnlyEmblStreamFeature.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io/StreamFeatureTable.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io/DocumentEntryAutosaveThread.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io/GenbankDocumentEntry.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io/GenbankStreamSequence.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/io/FeatureComparator.class
@@ -917,6 +960,7 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/SSAHAComparisonData.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/CVS/Root
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/CVS/Repository
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/CVS/Entries
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/BigPane$1.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/Annotation.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/BigPane.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/BrowserControl.java
@@ -924,13 +968,64 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/CommonMenu.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/DBViewer.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/DataCollectionPane.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/DataViewInternalFrame.java
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/EvidenceViewer.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/ExternalApplication.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/FastaListener.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/FastaTextPane.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/HitInfo.java
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/MouseOverButton.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/MultiLineToolTipUI.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/PlafMacros.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/ScrollPanel.java
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/ScrollPanel.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/BigPane$2.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/BigPane$3.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/BigPane$4.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/BigPane$5.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/BigPane$6.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/BigPane$7.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/BigPane$8.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/BigPane$winExit.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/BigPane.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/DataViewInternalFrame$1.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/DataViewInternalFrame$TabChangeListener.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/DataViewInternalFrame$ActiveJSplitPane.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/DataViewInternalFrame.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/Annotation$1.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/Annotation$PopupListener.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/Annotation.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/MultiLineToolTipUI$MyToolTip.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/MultiLineToolTipUI$1.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/MultiLineToolTipUI.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/HitInfo.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/EvidenceViewer$MouseClickListener.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/EvidenceViewer.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/CommonMenu$1.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/CommonMenu.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/FastaTextPane$GetzThread.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/FastaTextPane.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/FastaListener.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/DBViewer$1.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/DBViewer$2.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/DBViewer$3.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/DBViewer$4.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/DBViewer$5.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/DBViewer$6.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/DBViewer$PopupListener.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/DBViewer.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/MouseOverButton.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/DataCollectionPane$1.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/DataCollectionPane$2.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/DataCollectionPane$3.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/DataCollectionPane$4.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/DataCollectionPane$5.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/DataCollectionPane$6.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/DataCollectionPane.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/BrowserControl.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/PlafMacros.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/ExternalApplication$StdoutHandler.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/ExternalApplication$StderrHandler.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/editor/ExternalApplication.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/Selectable.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/Selection.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/SelectionChangeEvent.java
@@ -948,12 +1043,16 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/AGWindowAlgorithm.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/ATDeviationAlgorithm.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/Algorithm.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/BaseAlgorithm.java
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/CSCSAlgorithm.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/Codon12CorrelationAlgorithm.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/CodonUsageAlgorithm.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/CodonUsageFormatException.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/CodonUsageWeight.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/CodonWeight.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/CoilFeatureAlgorithm.java
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/CumulativeATSkewAlgorithm.java
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/CumulativeGCSkewAlgorithm.java
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/EntropyAlgorithm.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/FeatureAlgorithm.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/GCDeviationAlgorithm.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/GCFrameAlgorithm.java
@@ -961,8 +1060,13 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/GCSDWindowAlgorithm.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/GCWindowAlgorithm.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/HydroAlgorithm.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/HydrophilicityAlgorithm.java
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/ICDIAlgorithm.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/HydrophobicityAlgorithm.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/KarlinSigAlgorithm.java
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/MRIAlgorithm.java
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/NcAlgorithm.java
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/PositionalAsymmetryAlgorithm.java
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/ScaledChiAlgorithm.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/UserDataAlgorithm.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/Codon12CorrelationAlgorithm.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/BaseAlgorithm.class
@@ -976,6 +1080,15 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/GCFrameAlgorithm.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/GCDeviationAlgorithm.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/ATDeviationAlgorithm.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/KarlinSigAlgorithm.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/CumulativeATSkewAlgorithm.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/EntropyAlgorithm.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/CumulativeGCSkewAlgorithm.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/PositionalAsymmetryAlgorithm.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/ScaledChiAlgorithm.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/CSCSAlgorithm.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/MRIAlgorithm.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/NcAlgorithm.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/ICDIAlgorithm.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/CodonUsageFormatException.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/UserDataAlgorithm.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/plot/FeatureAlgorithm.class
@@ -1002,9 +1115,9 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/sequence/SequenceChangeEvent.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/sequence/SequenceChangeListener.java
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/sequence/SequenceChangeListener.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/sequence/MarkerChangeListener.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/sequence/AminoAcidSequence.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/sequence/MarkerChangeEvent.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/sequence/SequenceChangeEvent.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/sequence/AminoAcidSequence.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/sequence/Strand.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/sequence/Bases.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/sequence/NoSequenceException.class
@@ -1058,11 +1171,11 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/FeatureVector.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/Feature.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/EntryChangeListener.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/Selectable.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/EntryChangeEvent.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/Entry$FeatureEnumerator.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/Entry.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/FeatureChangeListener.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/FeatureSegmentVector.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/EntryChangeEvent.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/FeatureSegment.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/LastSegmentException.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/FeatureEnumeration.class
@@ -1108,8 +1221,8 @@ artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/FeaturePredicateConjunction.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/FeaturePatternPredicate.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/AlignMatch.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/ComparisonDataFactory.class
-artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/AlignmentSelectionChangeListener.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/AlignMatchVector.class
+artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/AlignmentSelectionChangeListener.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/AlignmentSelectionChangeEvent.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/MSPcrunchComparisonData.class
 artemis-%%PORTVERSION%%/uk/ac/sanger/artemis/SimpleComparisonData.class
@@ -1476,6 +1589,10 @@ bin/art
 @dirrm artemis-%%PORTVERSION%%/images
 @dirrm artemis-%%PORTVERSION%%/etc/CVS
 @dirrm artemis-%%PORTVERSION%%/etc
+@dirrm artemis-%%PORTVERSION%%/nsdb/EmblPackage
+@dirrm artemis-%%PORTVERSION%%/nsdb/NucFeaturePackage
+@dirrm artemis-%%PORTVERSION%%/nsdb/LocationPackage
+@dirrm artemis-%%PORTVERSION%%/nsdb
 @dirrm artemis-%%PORTVERSION%%/uk/CVS
 @dirrm artemis-%%PORTVERSION%%/uk/ac/CVS
 @dirrm artemis-%%PORTVERSION%%/uk/ac/sanger/CVS
@@ -1496,12 +1613,8 @@ bin/art
 @dirrm artemis-%%PORTVERSION%%/uk/ac/sanger
 @dirrm artemis-%%PORTVERSION%%/uk/ac
 @dirrm artemis-%%PORTVERSION%%/uk
-@dirrm artemis-%%PORTVERSION%%/nsdb/LocationPackage
-@dirrm artemis-%%PORTVERSION%%/nsdb/NucFeaturePackage
-@dirrm artemis-%%PORTVERSION%%/nsdb/EmblPackage
-@dirrm artemis-%%PORTVERSION%%/nsdb
-@dirrm artemis-%%PORTVERSION%%/type
 @dirrm artemis-%%PORTVERSION%%/seqdb
+@dirrm artemis-%%PORTVERSION%%/type
 @dirrm artemis-%%PORTVERSION%%/lib/CVS
 @dirrm artemis-%%PORTVERSION%%/lib
 @dirrm artemis-%%PORTVERSION%%
