@@ -8,7 +8,8 @@
 PORTNAME=	ipsumdump
 PORTVERSION=	1.56
 CATEGORIES=	net
-MASTER_SITES=	http://www.cs.ucla.edu/~kohler/ipsumdump/
+MASTER_SITES=	http://www.cs.ucla.edu/~kohler/ipsumdump/ \
+		http://core.inec.ru/~az/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce ASCII summary of network traffic or tcpdump(1) file
