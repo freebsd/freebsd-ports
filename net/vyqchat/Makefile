@@ -7,6 +7,7 @@
 
 PORTNAME=	vyqchat
 PORTVERSION=	0.2.8
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://linux.bydg.org/~yogin/
 
@@ -32,10 +33,8 @@ LIB_DEPENDS+=	ao:${PORTSDIR}/audio/libao
 CONFIGURE_ARGS+=--without-libao
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile"
+.if !defined(WITHOUT_ARTS) || defined(WITH_LIBAO)
+LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,15 +1,16 @@
---- src/uuid.cpp.orig	Mon Jul 18 20:54:08 2005
-+++ src/uuid.cpp	Sat Sep 17 23:03:48 2005
-@@ -12,7 +12,7 @@
+--- src/uuid.cpp	Mon Jul 18 21:54:08 2005
++++ src/uuid.cpp	Sun Sep 18 21:21:21 2005
+@@ -12,7 +12,8 @@
  
  #include "uuid.h"
  #include <qstring.h>
 -#include <openssl/rand.h>
++#include <unistd.h>
 +#include <fcntl.h>
  
  UUID::UUID(): QByteArray(UUID_LEN)/*{{{*/
  {
-@@ -35,7 +35,9 @@
+@@ -35,7 +36,9 @@
  
  void UUID::generate()/*{{{*/
  {
