@@ -15,7 +15,7 @@ CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://files.customize.org/gicons/
 DISTNAME=	CrystalSVGforGnomeIcons1-2-0_1082838150
 
-MAINTAINER=	tmclaugh@sdf.lonestar.org
+MAINTAINER=	tmclaugh@FreeBSD.org
 COMMENT=	Crystal SVG Icons for Gnome
 
 NO_PACKAGE=	${REASON}

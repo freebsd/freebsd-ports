@@ -16,7 +16,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	teams/art.gnome.org/themes/icon
 DISTNAME=	ICON-Iris
 
-MAINTAINER=	tmclaugh@sdf.lonestar.org
+MAINTAINER=	tmclaugh@FreeBSD.org
 COMMENT=	Iris SVG Icons for Gnome
 
 NO_PACKAGE=	${REASON}

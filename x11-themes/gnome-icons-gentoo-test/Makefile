@@ -17,7 +17,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	teams/art.gnome.org/archive/themes/icon
 DISTNAME=	ICON-Gentoo-Test
 
-MAINTAINER=	tmclaugh@sdf.lonestar.org
+MAINTAINER=	tmclaugh@FreeBSD.org
 COMMENT=	Gentoo-Test Icons for Gnome
 
 NO_PACKAGE=	${REASON}

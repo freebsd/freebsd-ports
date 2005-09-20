@@ -17,7 +17,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	teams/art.gnome.org/archive/themes/icon
 DISTNAME=	ICON-Ximian-South-${PORTVERSION}
 
-MAINTAINER=	tmclaugh@sdf.lonestar.org
+MAINTAINER=	tmclaugh@FreeBSD.org
 COMMENT=	Ximian-South Icons for Gnome
 
 NO_PACKAGE=	${REASON}
