@@ -1,0 +1,13 @@
+bin/ksqlanalyzer
+share/applnk/Applications/ksqlanalyzer.desktop
+share/icons/locolor/16x16/apps/ksqlanalyzer.png
+share/icons/locolor/32x32/apps/ksqlanalyzer.png
+share/locale/de/LC_MESSAGES/ksqlanalyzer.mo
+@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true

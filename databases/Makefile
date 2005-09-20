@@ -75,6 +75,7 @@
     SUBDIR += kbibtex
     SUBDIR += kinterbasdb
     SUBDIR += knoda
+    SUBDIR += ksqlanalyzer
     SUBDIR += ksqlshell
     SUBDIR += libdbi
     SUBDIR += libdbi-drivers
