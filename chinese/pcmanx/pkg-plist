@@ -8,8 +8,10 @@ lib/libpcmanx_core.so.0
 %%DATADIR%%/sitelist
 %%DATADIR%%/nancy_bot/default.conf
 %%DATADIR%%/nancy_bot/default_msg.data
+%%DATADIR%%/nancy_bot/default_usages.data
 %%DATADIR%%/nancy_bot/example.conf
 %%DATADIR%%/nancy_bot/example_msg.data
+%%DATADIR%%/nancy_bot/example_usages.data
 share/applications/pcmanx.desktop
 share/pixmaps/pcmanx.png
 @unexec rmdir %D/share/applications 2>/dev/null || true
