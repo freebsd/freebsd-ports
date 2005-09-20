@@ -5,7 +5,7 @@
  
  #if defined(FreeBSDArchitecture)
 -InstallNamedProg(xprint,xprint,$(PROJECTROOT)/etc/rc.d)
-+InstallNamedProg(xprint,xprint.sh,$(PROJECTROOT)/etc/rc.d)
++InstallNamedProg(xprint,xprint.sh.sample,$(PROJECTROOT)/etc/rc.d)
  #else
  XCOMM Solaris, Linux, etc.
  InstallNamedProg(xprint,xprint,$(ETCDIR)/init.d)
