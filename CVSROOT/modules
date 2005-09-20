@@ -2094,6 +2094,7 @@ evas		ports/graphics/evas
 eventum		ports/www/eventum
 eventwatcher	ports/sysutils/eventwatcher
 evg		ports/www/evg
+evidence	ports/x11-fm/evidence
 evilfinder	ports/games/evilfinder
 evilwm		ports/x11-wm/evilwm
 evince		ports/graphics/evince
