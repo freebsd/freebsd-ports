@@ -10,6 +10,7 @@ lib/ecl/h/number.h
 lib/ecl/h/page.h
 lib/ecl/h/unify.h
 lib/ecl/h/lwp.h
+lib/ecl/h/configpre.h
 lib/ecl/h/gc.h
 lib/ecl/h/gc_config_macros.h
 lib/ecl/h/gc_local_alloc.h
@@ -17,9 +18,11 @@ lib/ecl/h/gc_pthread_redirects.h
 lib/ecl/h/gc_typed.h
 lib/ecl/h/leak_detector.h
 lib/ecl/BUILD-STAMP
+lib/ecl/ecl_min
 lib/ecl/libecl.so
+lib/ecl/sockets.fas
+lib/ecl/asdf.fas
 lib/ecl/cmp.fas
-lib/ecl/sysfun.lsp
 lib/ecl/dpp
 lib/ecl/help.doc
 bin/ecl
