@@ -8,7 +8,7 @@
 PORTNAME=	cdrom2
 PORTVERSION=	1996.06.16
 CATEGORIES=	japanese misc
-MASTER_SITES=	ftp://ftp.nerimadors.or.jp/pub/src/cdrom2/
+MASTER_SITES=	http://www.nerimadors.or.jp/~jiro/cdrom2/
 DISTNAME=	euc
 
 MAINTAINER=	max@FreeBSD.org
