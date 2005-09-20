@@ -457,6 +457,7 @@
     SUBDIR += p5-Bundle-Catalyst
     SUBDIR += p5-Bundle-Slash
     SUBDIR += p5-Bundle-Sledge
+    SUBDIR += p5-CGI-Ajax
     SUBDIR += p5-CGI-Application
     SUBDIR += p5-CGI-Application-ValidateRM
     SUBDIR += p5-CGI-ArgChecker
