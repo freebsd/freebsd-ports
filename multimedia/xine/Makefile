@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	0.99.3
-PORTREVISION=	1
+PORTVERSION=	0.99.4
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +15,7 @@ DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	An X11 multimedia player
 
-LIB_DEPENDS=	xine.13:${PORTSDIR}/multimedia/libxine \
+LIB_DEPENDS=	xine.14:${PORTSDIR}/multimedia/libxine \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		png.5:${PORTSDIR}/graphics/png
 
@@ -72,7 +71,7 @@ LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 CONFIGURE_ARGS+=	--disable-xft
 .endif
 
-.if exists(${LOCALBASE}/lib/libcaca.a) || defined(WITH_LIBCACA)
+.if !defined(WITHOUT_LIBCACA) && (exists(${LOCALBASE}/lib/libcaca.a) || defined(WITH_LIBCACA))
 PLIST_SUB+=	WITH_LIBCACA=""
 .else
 PLIST_SUB+=	WITH_LIBCACA="@comment "
