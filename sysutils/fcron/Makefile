@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	system/daemons/cron
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	svenasse@polaris.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fcron is a periodical command scheduler
 
 NO_PACKAGE=	"Runaway package build"

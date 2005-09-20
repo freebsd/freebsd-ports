@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Finance
 PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	svenasse@polaris.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert currencies and fetch their exchange rates
 
 PERL_CONFIGURE=	yes

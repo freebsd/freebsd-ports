@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		svenasse@polaris.ca
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Mark up text as HTML
 
 BUILD_DEPENDS=	${SITE_PERL}/Email/Find.pm:${PORTSDIR}/mail/p5-Email-Find \

@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	amavis
 
-MAINTAINER=	svenasse@polaris.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail Virus Scanner (uses external antivirus)
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/lha:${PORTSDIR}/archivers/lha \

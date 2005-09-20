@@ -10,7 +10,7 @@ PORTVERSION=		1.4.1
 CATEGORIES=		www
 MASTER_SITES=		http://download.tangent.org/
 
-MAINTAINER=		svenasse@polaris.ca
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Filter output from other modules inside of Apache
 
 USE_APACHE=		yes

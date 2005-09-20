@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	svenasse@polaris.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple tool for summarizing bodies of English text
 
 BUILD_DEPENDS=	${SITE_PERL}/HTML/Summary.pm:${PORTSDIR}/www/p5-HTML-Summary
