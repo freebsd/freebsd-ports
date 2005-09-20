@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,23 +18,25 @@ COMMENT=	Libraries for xine multimedia player
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
 LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
-		a52.0:${PORTSDIR}/audio/liba52 \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
-		mad.2:${PORTSDIR}/audio/libmad \
 		speex.3:${PORTSDIR}/audio/speex \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		png.5:${PORTSDIR}/graphics/png \
 		dvdread.3:${PORTSDIR}/multimedia/libdvdread \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		fame-0.9.1:${PORTSDIR}/multimedia/libfame
+		fame-0.9.1:${PORTSDIR}/multimedia/libfame \
+		cdio.6:${PORTSDIR}/sysutils/libcdio \
+		modplug.0:${PORTSDIR}/audio/libmodplug \
+		vcdinfo.2:${PORTSDIR}/multimedia/vcdimager \
+		Wand.8:${PORTSDIR}/graphics/ImageMagick
 
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=15
+USE_INC_LIBTOOL_VER=	15
 WANT_GNOME=	yes
-USE_GNOME=	lthack gnomehack gnometarget
+USE_GNOME=	gnomehack gnometarget
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_SDL=	sdl
@@ -48,7 +50,8 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fno-force-addr -I${LOCALBASE}/include -I${LOCA
 CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 --enable-ipv6
 INSTALLS_SHLIB=	yes
 
-MAN1=		xine-config.1
+MAN1=	xine-config.1
+MAN5=	xine.5
 
 .include <bsd.port.pre.mk>
 
@@ -63,32 +66,39 @@ PLIST_SUB+=	WITH_LIBXV=""
 PLIST_SUB+=	WITH_LIBXV="@comment "
 .endif
 
-.if exists(${LOCALBASE}/bin/artsc-config) || defined(WITH_ARTS)
+.if !defined(WITHOUT_ARTS) && (exists(${LOCALBASE}/bin/artsc-config) || defined(WITH_ARTS))
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 PLIST_SUB+=	WITH_ARTS=""
 .else
 PLIST_SUB+=	WITH_ARTS="@comment "
 .endif
 
-.if exists(${LOCALBASE}/lib/libcaca.a) || defined(WITH_LIBCACA)
+.if !defined(WITHOUT_LIBCACA) && (exists(${LOCALBASE}/lib/libcaca.a) || defined(WITH_LIBCACA))
 BUILD_DEPENDS+=	caca-config:${PORTSDIR}/graphics/libcaca
 PLIST_SUB+=	WITH_LIBCACA=""
 .else
 PLIST_SUB+=	WITH_LIBCACA="@comment "
 .endif
 
-.if ${HAVE_GNOME:Mesound} != "" || defined(WITH_ESOUND)
+.if !defined(WITHOUT_ESOUND) && (${HAVE_GNOME:Mesound} != "" || defined(WITH_ESOUND))
 USE_GNOME+=	esound
 PLIST_SUB+=	WITH_ESOUND=""
 .else
 PLIST_SUB+=	WITH_ESOUND="@comment "
 .endif
 
-.if ${HAVE_GNOME:Mgnomevfs2} != ""
+.if !defined(WITHOUT_GNOMEVFS2) && (${HAVE_GNOME:Mgnomevfs2} != "" || defined(WITH_GNOMEVFS2))
 USE_GNOME+=	gnomevfs2
 PLIST_SUB+=	WITH_GNOMEVFS2=""
 .else
 PLIST_SUB+=	WITH_GNOMEVFS2="@comment "
+.endif
+
+.if !defined(WITHOUT_POLYPAUDIO) && (exists(${LOCALBASE}/lib/libpolyp-0.7.so.0) || defined(WITH_POLYPAUDIO))
+LIB_DEPENDS+=	polyp-0.7.0:${PORTSDIR}/audio/polypaudio
+PLIST_SUB+=	WITH_POLYPAUDIO=""
+.else
+PLIST_SUB+=	WITH_POLYPAUDIO="@comment "
 .endif
 
 .if ${ARCH} == "i386"
@@ -97,7 +107,7 @@ PLIST_SUB+=	WITH_VIDIX=""
 PLIST_SUB+=	WITH_VIDIX="@comment "
 .endif
 
-.if exists(${X11BASE}/lib/libXvMCNVIDIA.so.1) || defined(WITH_XVMC)
+.if !defined(WITHOUT_XVMC) && (exists(${X11BASE}/lib/libXvMCNVIDIA.so.1) || defined(WITH_XVMC))
 CONFIGURE_ARGS+=--with-xvmc-lib=XvMCNVIDIA
 LIB_DEPENDS+=	XvMCNVIDIA.1:${PORTSDIR}/x11/nvidia-driver
 PLIST_SUB+=	WITH_XVMC=""
@@ -105,14 +115,14 @@ PLIST_SUB+=	WITH_XVMC=""
 PLIST_SUB+=	WITH_XVMC="@comment "
 .endif
 
-.if exists(${LOCALBASE}/lib/libtheora.so.1) || defined (WITH_LIBTHEORA)
+.if !defined(WITHOUT_LIBTHEORA) && (exists(${LOCALBASE}/lib/libtheora.so.1) || defined (WITH_LIBTHEORA))
 LIB_DEPENDS+=	theora.1:${PORTSDIR}/multimedia/libtheora
 PLIST_SUB+=	WITH_LIBTHEORA=""
 .else
 PLIST_SUB+=	WITH_LIBTHEORA="@comment "
 .endif
 
-.if exists(${LOCALBASE}/lib/libsmbclient.so.0) || defined (WITH_SMB)
+.if !defined(WITHOUT_SMB) && (exists(${LOCALBASE}/lib/libsmbclient.so.0) || defined (WITH_SMB))
 LIB_DEPENDS+=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
 PLIST_SUB+=	WITH_SMB=""
 .else
@@ -133,15 +143,35 @@ pre-everything::
 .else
 	@${ECHO_MSG} "===> WITH_LIBCACA (libcaca support, enabled)"
 .endif
+.if !(${HAVE_GNOME:Mgnomevfs2} != "") && !defined(WITH_GNOMEVFS2)
+	@${ECHO_MSG} "===> WITH_GNOMEVFS2 (gnomevfs2 support)"
+.else
+	@${ECHO_MSG} "===> WITH_GNOMEVFS2 (gnomevfs2 support, enabled)"
+.endif
 .if !(${HAVE_GNOME:Mesound} != "") && !defined(WITH_ESOUND)
 	@${ECHO_MSG} "===> WITH_ESOUND (esound support)"
 .else
 	@${ECHO_MSG} "===> WITH_ESOUND (esound support, enabled)"
 .endif
+.if !exists(${LOCALBASE}/lib/libpolyp-0.7.so.0) && !defined(WITH_POLYPAUDIO)
+	@${ECHO_MSG} "===> WITH_POLYPAUDIO (polypaudio support)"
+.else
+	@${ECHO_MSG} "===> WITH_POLYPAUDIO (polypaudio support, enabled)"
+.endif
+.if !exists(${LOCALBASE}/lib/libsmbclient.so.0) && !defined (WITH_SMB)
+	@${ECHO_MSG} "===> WITH_SMB (SMB support)"
+.else
+	@${ECHO_MSG} "===> WITH_SMB (SMB support, enabled)"
+.endif
 .if !exists(${LOCALBASE}/lib/libtheora.so.1) && !defined(WITH_LIBTHEORA)
 	@${ECHO_MSG} "===> WITH_LIBTHEORA (libtheora support)"
 .else
 	@${ECHO_MSG} "===> WITH_LIBTHEORA (libtheora support, enabled)"
+.endif
+.if !exists(${X11BASE}/lib/libXvMCNVIDIA.so.1) && !defined(WITH_XVMC)
+	@${ECHO_MSG} "===> WITH_XVMC (XvMC support)"
+.else
+	@${ECHO_MSG} "===> WITH_XVMC (XvMC support, enabled)"
 .endif
 	@${ECHO_MSG} "===>"
 
@@ -159,5 +189,6 @@ post-patch:
 		  s|-malign-jumps|-falign-jumps|g ; \
 		  s|-malign-functions|-falign-functions|g' ${WRKSRC}/configure
 .endif
+	${CP} ${LTMAIN} ${WRKSRC}/ltmain.sh
 
 .include <bsd.port.post.mk>
