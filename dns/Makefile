@@ -45,6 +45,7 @@
     SUBDIR += hesiod
     SUBDIR += host
     SUBDIR += idnkit
+    SUBDIR += inadyn
     SUBDIR += ipcheck
     SUBDIR += ldapdns
     SUBDIR += libdjbdns
