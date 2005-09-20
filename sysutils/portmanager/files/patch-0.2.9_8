@@ -1,0 +1,306 @@
+diff -ruN ../0.2.9_7/libPMGR/src/PMGRrDoUpgrade.c ./libPMGR/src/PMGRrDoUpgrade.c
+--- ../0.2.9_7/libPMGR/src/PMGRrDoUpgrade.c	Sun Sep 18 17:07:55 2005
++++ ./libPMGR/src/PMGRrDoUpgrade.c	Sun Sep 18 17:11:12 2005
+@@ -249,6 +249,7 @@
+ 									idx, property->fieldInstalledPortName ) );		
+ 
+ 						fprintf( stdout, "executing: %s\n", command );
++						while( fflush( stdout ) );
+ 						errorCode	= system( command );
+ 						while( fflush( stdout ) );
+ 					}
+diff -ruN ../0.2.9_7/libPMGR/src/PMGRrReadConfigure.c ./libPMGR/src/PMGRrReadConfigure.c
+--- ../0.2.9_7/libPMGR/src/PMGRrReadConfigure.c	Sun Sep 18 17:07:55 2005
++++ ./libPMGR/src/PMGRrReadConfigure.c	Sun Sep 18 17:14:46 2005
+@@ -96,6 +96,7 @@
+ 		fprintf( stdout, "moving %s to %s%s\n", configFileNameOld, configFileNameOld, "_OLD" );
+ 		fprintf( stdout, "portmanager configuration file is now called %s. Please review %s%s and %s and make any nessesary changes.\n",
+ 			property->configConfFileName, property->configConfFileName, ".SAMPLE", configFileNameOld);
++		while( fflush( stdout ) );
+ 		system( command );		
+ 
+ 		/*zzzzzzzzzzzzzz*/
+@@ -131,6 +132,7 @@
+ 		strcat( command, property->configConfFileName );
+ 		strcat( command, ".SAMPLE " );
+ 		strcat( command, property->configConfFileName );
++		while( fflush( stdout ) );
+ 		system( command );
+ 
+ 		/*zzzzzzzzzzzzzz*/
+@@ -172,8 +174,9 @@
+ 
+ 	if(DEBUG_PMGRrReadConfigure)
+ 	{
+-		fprintf( stdout, "%s %s DEBUG (54): command = %s\n", id, VERSION, command );		
++		fprintf( stdout, "%s %s DEBUG (54): command = %s\n", id, VERSION, command );
+ 	}
++	while( fflush( stdout ) );
+ 	system( command );
+ 
+ 	configDbFileSize	= MGrFileSize(  property->configDbFileName );
+diff -ruN ../0.2.9_7/libPMGR/src/PMGRrShowLeaves.c ./libPMGR/src/PMGRrShowLeaves.c
+--- ../0.2.9_7/libPMGR/src/PMGRrShowLeaves.c	Sun Sep 18 17:07:55 2005
++++ ./libPMGR/src/PMGRrShowLeaves.c	Sun Sep 18 17:17:25 2005
+@@ -74,6 +74,7 @@
+ 			strcpy( command, "grep COMMENT " );
+ 			strcat( command, leafPortDir );
+ 			strcat( command, "/Makefile" );
++			while( fflush( stdout ) );
+ 			system( command );
+ 			free(command);
+ 			fprintf( stdout, "\n" );
+diff -ruN ../0.2.9_7/libPMGR/src/PMGRrShowLeavesDelete.c ./libPMGR/src/PMGRrShowLeavesDelete.c
+--- ../0.2.9_7/libPMGR/src/PMGRrShowLeavesDelete.c	Sun Sep 18 17:07:55 2005
++++ ./libPMGR/src/PMGRrShowLeavesDelete.c	Sun Sep 18 17:19:05 2005
+@@ -81,6 +81,7 @@
+ 		{
+ 			if( key != 10 )
+ 			{
++				while( fflush( stdout ) );
+ 				system( "clear" );
+ 				fprintf( stdout,"%s\n", SINGLE_LINES );
+ 				fprintf( stdout, "Ports with no ports depending on them AKA \"leaf ports.\"\n" );
+@@ -104,6 +105,7 @@
+ 					command[0]	= 0;
+ 					strcat( command, "cat " );
+ 					strcat( command, pkgDescFile );
++					while( fflush( stdout ) );
+ 					system( command );
+ 					free( pkgDescFile );
+ 					free( command );
+@@ -119,6 +121,7 @@
+ 					strcat( command, "grep COMMENT " );
+ 					strcat( command, leafPortDir );
+ 					strcat( command, "/Makefile" );
++					while( fflush( stdout ) );
+ 					system( command );
+ 					free(command);
+ 				}
+@@ -207,6 +210,7 @@
+ 	strcat( command, "pkg_delete -f " );
+ 	strcat( command, leafPortName );
+ 	fprintf( stdout, "\nexecuting: %s\n", command );
++	while( fflush( stdout ) );
+ 	system( command );
+ 	free(command);
+ 
+@@ -228,6 +232,7 @@
+ 	strcat( command, leafPortDir );
+ 	strcat( command, ";make distclean" );
+ 	fprintf( stdout, "\nexecuting: %s\n", command );
++	while( fflush( stdout ) );
+ 	system( command );
+ 	free(command);
+ 
+diff -ruN ../0.2.9_7/libPMGR/src/PMGRrStatus.c ./libPMGR/src/PMGRrStatus.c
+--- ../0.2.9_7/libPMGR/src/PMGRrStatus.c	Sun Sep 18 17:07:55 2005
++++ ./libPMGR/src/PMGRrStatus.c	Sun Sep 18 17:20:06 2005
+@@ -130,6 +130,7 @@
+ 			strcat( command, installedPortName );
+ 			fprintf( stdout,"%s\n", command );
+ 			fprintf( stdout,"%s\n", SINGLE_LINES );
++			while( fflush( stdout ) );
+ 			system( command );
+ 			free( command );
+ 			/* since installedPortName is no longer in ports collection need to delete record and restart */
+diff -ruN ../0.2.9_7/libPMGR/src/PMGRrUpgrade.c ./libPMGR/src/PMGRrUpgrade.c
+--- ../0.2.9_7/libPMGR/src/PMGRrUpgrade.c	Sun Sep 18 17:07:55 2005
++++ ./libPMGR/src/PMGRrUpgrade.c	Sun Sep 18 17:23:05 2005
+@@ -86,8 +86,12 @@
+ 		fprintf( stdout, "percentDone-=>%d = 100 - ( 100 * ( QTY_outOfDatePortsDb-=>%d / TOTAL_outOfDatePortsDb-=>%d ) ) \n",
+ 	(int)percentDone, QTY_outOfDatePortsDb-1, TOTAL_outOfDatePortsDb );
+ 		while( fflush( stdout ) );
+-
+-		if( !strncmp( getenv("TERM"), "xterm", 5 ) )
++/*
++pr 81481
++To fix the modification of xterm title, even when redirecting, one can
++test isatty(fileno(stdout)) before printing the escape sequence.
++*/
++		if( !strncmp( getenv("TERM"), "xterm", 5 ) && isatty(fileno(stdout)) )
+ 		{
+ 			stringSize	= strlen( id )
+ 					+ strlen( " done:%" )
+@@ -109,7 +113,13 @@
+ 			/*
+ 			 *  Set xterm title bar indicator
+ 			 */
+-			if( !strncmp( getenv("TERM"), "xterm", 5 ) )
++
++/*
++pr 81481
++To fix the modification of xterm title, even when redirecting, one can
++test isatty(fileno(stdout)) before printing the escape sequence.
++*/
++			if( !strncmp( getenv("TERM"), "xterm", 5 ) && isatty(fileno(stdout)) )
+ 			{
+ 				stringSize	= strlen( id )
+ 						+ strlen( " finished" )
++diff -ruN ../0.2.9_7/libPMGR/src/PMGRrDoUpgrade.c ./libPMGR/src/PMGRrDoUpgrade.c
++--- ../0.2.9_7/libPMGR/src/PMGRrDoUpgrade.c	Sun Sep 18 17:07:55 2005
+++++ ./libPMGR/src/PMGRrDoUpgrade.c	Sun Sep 18 17:11:12 2005
++@@ -249,6 +249,7 @@
++ 									idx, property->fieldInstalledPortName ) );		
++ 
++ 						fprintf( stdout, "executing: %s\n", command );
+++						while( fflush( stdout ) );
++ 						errorCode	= system( command );
++ 						while( fflush( stdout ) );
++ 					}
++diff -ruN ../0.2.9_7/libPMGR/src/PMGRrReadConfigure.c ./libPMGR/src/PMGRrReadConfigure.c
++--- ../0.2.9_7/libPMGR/src/PMGRrReadConfigure.c	Sun Sep 18 17:07:55 2005
+++++ ./libPMGR/src/PMGRrReadConfigure.c	Sun Sep 18 17:14:46 2005
++@@ -96,6 +96,7 @@
++ 		fprintf( stdout, "moving %s to %s%s\n", configFileNameOld, configFileNameOld, "_OLD" );
++ 		fprintf( stdout, "portmanager configuration file is now called %s. Please review %s%s and %s and make any nessesary changes.\n",
++ 			property->configConfFileName, property->configConfFileName, ".SAMPLE", configFileNameOld);
+++		while( fflush( stdout ) );
++ 		system( command );		
++ 
++ 		/*zzzzzzzzzzzzzz*/
++@@ -131,6 +132,7 @@
++ 		strcat( command, property->configConfFileName );
++ 		strcat( command, ".SAMPLE " );
++ 		strcat( command, property->configConfFileName );
+++		while( fflush( stdout ) );
++ 		system( command );
++ 
++ 		/*zzzzzzzzzzzzzz*/
++@@ -172,8 +174,9 @@
++ 
++ 	if(DEBUG_PMGRrReadConfigure)
++ 	{
++-		fprintf( stdout, "%s %s DEBUG (54): command = %s\n", id, VERSION, command );		
+++		fprintf( stdout, "%s %s DEBUG (54): command = %s\n", id, VERSION, command );
++ 	}
+++	while( fflush( stdout ) );
++ 	system( command );
++ 
++ 	configDbFileSize	= MGrFileSize(  property->configDbFileName );
++diff -ruN ../0.2.9_7/libPMGR/src/PMGRrShowLeaves.c ./libPMGR/src/PMGRrShowLeaves.c
++--- ../0.2.9_7/libPMGR/src/PMGRrShowLeaves.c	Sun Sep 18 17:07:55 2005
+++++ ./libPMGR/src/PMGRrShowLeaves.c	Sun Sep 18 17:17:25 2005
++@@ -74,6 +74,7 @@
++ 			strcpy( command, "grep COMMENT " );
++ 			strcat( command, leafPortDir );
++ 			strcat( command, "/Makefile" );
+++			while( fflush( stdout ) );
++ 			system( command );
++ 			free(command);
++ 			fprintf( stdout, "\n" );
++diff -ruN ../0.2.9_7/libPMGR/src/PMGRrShowLeavesDelete.c ./libPMGR/src/PMGRrShowLeavesDelete.c
++--- ../0.2.9_7/libPMGR/src/PMGRrShowLeavesDelete.c	Sun Sep 18 17:07:55 2005
+++++ ./libPMGR/src/PMGRrShowLeavesDelete.c	Sun Sep 18 17:19:05 2005
++@@ -81,6 +81,7 @@
++ 		{
++ 			if( key != 10 )
++ 			{
+++				while( fflush( stdout ) );
++ 				system( "clear" );
++ 				fprintf( stdout,"%s\n", SINGLE_LINES );
++ 				fprintf( stdout, "Ports with no ports depending on them AKA \"leaf ports.\"\n" );
++@@ -104,6 +105,7 @@
++ 					command[0]	= 0;
++ 					strcat( command, "cat " );
++ 					strcat( command, pkgDescFile );
+++					while( fflush( stdout ) );
++ 					system( command );
++ 					free( pkgDescFile );
++ 					free( command );
++@@ -119,6 +121,7 @@
++ 					strcat( command, "grep COMMENT " );
++ 					strcat( command, leafPortDir );
++ 					strcat( command, "/Makefile" );
+++					while( fflush( stdout ) );
++ 					system( command );
++ 					free(command);
++ 				}
++@@ -207,6 +210,7 @@
++ 	strcat( command, "pkg_delete -f " );
++ 	strcat( command, leafPortName );
++ 	fprintf( stdout, "\nexecuting: %s\n", command );
+++	while( fflush( stdout ) );
++ 	system( command );
++ 	free(command);
++ 
++@@ -228,6 +232,7 @@
++ 	strcat( command, leafPortDir );
++ 	strcat( command, ";make distclean" );
++ 	fprintf( stdout, "\nexecuting: %s\n", command );
+++	while( fflush( stdout ) );
++ 	system( command );
++ 	free(command);
++ 
++diff -ruN ../0.2.9_7/libPMGR/src/PMGRrStatus.c ./libPMGR/src/PMGRrStatus.c
++--- ../0.2.9_7/libPMGR/src/PMGRrStatus.c	Sun Sep 18 17:07:55 2005
+++++ ./libPMGR/src/PMGRrStatus.c	Sun Sep 18 17:20:06 2005
++@@ -130,6 +130,7 @@
++ 			strcat( command, installedPortName );
++ 			fprintf( stdout,"%s\n", command );
++ 			fprintf( stdout,"%s\n", SINGLE_LINES );
+++			while( fflush( stdout ) );
++ 			system( command );
++ 			free( command );
++ 			/* since installedPortName is no longer in ports collection need to delete record and restart */
++diff -ruN ../0.2.9_7/libPMGR/src/PMGRrUpgrade.c ./libPMGR/src/PMGRrUpgrade.c
++--- ../0.2.9_7/libPMGR/src/PMGRrUpgrade.c	Sun Sep 18 17:07:55 2005
+++++ ./libPMGR/src/PMGRrUpgrade.c	Sun Sep 18 17:23:05 2005
++@@ -86,8 +86,12 @@
++ 		fprintf( stdout, "percentDone-=>%d = 100 - ( 100 * ( QTY_outOfDatePortsDb-=>%d / TOTAL_outOfDatePortsDb-=>%d ) ) \n",
++ 	(int)percentDone, QTY_outOfDatePortsDb-1, TOTAL_outOfDatePortsDb );
++ 		while( fflush( stdout ) );
++-
++-		if( !strncmp( getenv("TERM"), "xterm", 5 ) )
+++/*
+++pr 81481
+++To fix the modification of xterm title, even when redirecting, one can
+++test isatty(fileno(stdout)) before printing the escape sequence.
+++*/
+++		if( !strncmp( getenv("TERM"), "xterm", 5 ) && isatty(fileno(stdout)) )
++ 		{
++ 			stringSize	= strlen( id )
++ 					+ strlen( " done:%" )
++@@ -109,7 +113,13 @@
++ 			/*
++ 			 *  Set xterm title bar indicator
++ 			 */
++-			if( !strncmp( getenv("TERM"), "xterm", 5 ) )
+++
+++/*
+++pr 81481
+++To fix the modification of xterm title, even when redirecting, one can
+++test isatty(fileno(stdout)) before printing the escape sequence.
+++*/
+++			if( !strncmp( getenv("TERM"), "xterm", 5 ) && isatty(fileno(stdout)) )
++ 			{
++ 				stringSize	= strlen( id )
++ 						+ strlen( " finished" )
+diff -ruN ../0.2.9_7/portmanager/portmanager.c ./portmanager/portmanager.c
+--- ../0.2.9_7/portmanager/portmanager.c	Sun Sep 18 17:07:55 2005
++++ ./portmanager/portmanager.c	Sun Sep 18 17:25:45 2005
+@@ -134,7 +134,7 @@
+ 	/*
+ 	 * set xterm title
+ 	 */
+-	if( getenv("TERM") && !strncmp( getenv("TERM"), "xterm", 5 ) )
++	if( !strncmp( getenv("TERM"), "xterm", 5 ) && isatty(fileno(stdout)) )
+ 	{
+ 		stringSize	= strlen( id )
+ 				+ 1
+@@ -247,6 +247,7 @@
+ 			strcat( command, "rm -f " );
+ 			strcat( command, property.cacheDbFileName );
+ 			fprintf( stdout, "%s %s info: executing %s\n", id, VERSION, command );
++			while( fflush( stdout ) );
+ 			system( command );
+ 			free( command ); 
+ 
+@@ -266,6 +267,7 @@
+ 			strcat( command, "rm -f " );
+ 			strcat( command, property.cacheDbFileName );
+ 			fprintf( stdout, "%s %s info: executing %s\n", id, VERSION, command );
++			while( fflush( stdout ) );
+ 			system( command );
+ 			free( command ); 
+ 
