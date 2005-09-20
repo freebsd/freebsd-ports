@@ -64,6 +64,7 @@ WITH_APACHE=	yes
 
 .if defined(WITH_APACHE)
 PKGMESSAGE=	${PKGDIR}/pkg-message.mod
+APACHE_COMPAT=	yes
 .endif
 
 .if ${PHP_SAPI} == "cgi"
