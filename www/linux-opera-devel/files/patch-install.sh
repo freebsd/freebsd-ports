@@ -1,5 +1,5 @@
---- install.sh.orig	Wed Jun 15 04:17:40 2005
-+++ install.sh	Sun Jun 19 01:39:11 2005
+--- install.sh.orig	Fri Sep 16 05:16:47 2005
++++ install.sh	Tue Sep 20 14:52:09 2005
 @@ -761,10 +761,9 @@
      case "${machine}:${os}" in
  	i[3456]86:Linux|x86_64:Linux|i[3456]86:FreeBSD|i[3456]86:NetBSD|i[3456]86:OpenBSD)
@@ -200,7 +200,7 @@
  	if test -f plugins/libnpp.so
  	    then
  		cp $cpv $cpf plugins/libnpp.so $plugin_dir/
-@@ -1293,36 +1225,13 @@
+@@ -1293,47 +1225,9 @@
  
  	if test -z "${OPERADESTDIR}"; then
  
@@ -211,7 +211,7 @@
 -	    echo "System wide configuration files:"
 -	    echo "  $config_dir/opera6rc"
 -	    echo "  $config_dir/opera6rc.fixed"
--	    echo " cannot be prefixed"
+-	    echo " cannot be installed with the prefix \"$prefix\"."
 -	    if con_firm "Do you want to install them"; then
 -		backup $config_dir/opera6rc opera6rc config
 -		backup $config_dir/opera6rc.fixed opera6rc.fixed config
@@ -224,24 +224,31 @@
 -	    echo " System wide configuration files:"
 -	    echo "  $config_dir/opera6rc"
 -	    echo "  $config_dir/opera6rc.fixed"
--	    echo " were not installed"
+-	    echo " were not installed."
 -	fi
 -
-      # Shorcuts and Icons
--	icons
-+#	icons
- 	gnome
- 	kde 3
--	kde 2
--	kde1
--	mandrake
-+#	kde 2
-+#	kde1
-+#	mandrake
+-     # Shorcuts and Icons
+-	bool_icons=1 # install icons by default
+-
+-	if test "$flag_mode" = "--force" -o "$flag_mode" = "--prefix="; then
+-	    echo
+-	    echo "Shortcut icons cannot be installed with the prefix \"$prefix\"."
+-	    if not con_firm "Do you still want to install them"; then
+-		bool_icons=0
+-	    fi
+-	fi
+-
+ 	if test "${bool_icons}" -ne 0; then
+-	    icons
+ 	    gnome
+ 	    kde 3
+-	    kde 2
+-	    kde1
+-	    mandrake
+ 	fi
  
  	fi # OPERADESTDIR
- 
-@@ -1367,15 +1276,16 @@
+@@ -1379,15 +1273,16 @@
  {
      # arg1 = location
  
@@ -263,7 +270,7 @@
  
      echo "${desktop_contain}" > ${desktop_file}
      chmod $chmodv 644 ${desktop_file}
-@@ -1451,74 +1361,26 @@
+@@ -1463,74 +1358,26 @@
  
      debug_msg 1 "in gnome()"
  
@@ -312,10 +319,10 @@
 +        cp $cpv $share_dir/images/opera.xpm %%X11BASE%%/share/gnome/pixmaps/linux-opera.xpm
        fi
 -      # end /opt/gnome share
--
--    elif test -d /usr/share/gnome/; then
 +      # end %%X11BASE%%/share/gnome icon
  
+-    elif test -d /usr/share/gnome/; then
+-
 -        # /usr/share/gnome icon
 -        if test ! -d /usr/share/gnome/pixmaps/; then
 -	  if test -w /usr/share/gnome; then
@@ -355,7 +362,7 @@
  }
  
  kde()
-@@ -1527,39 +1389,31 @@
+@@ -1539,38 +1386,30 @@
  
      debug_msg 1 "in kde()"
  
@@ -405,8 +412,6 @@
 -	    chmod $chmodv 755 /usr/share/applnk/Networking/WWW
 -      fi
 -      if test -w /usr/share/applnk/Networking/WWW; then generate_desktop /usr/share/applnk/Networking/WWW ${1}; fi
--    fi
-+    fi    
+     fi
  }
  
- kde1()
