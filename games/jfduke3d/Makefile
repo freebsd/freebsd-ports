@@ -34,9 +34,11 @@ PORTDOCS=	ChangeLog readme.txt releasenotes.html duke3d.def.sample GNU.TXT
 
 SUB_FILES=	pkg-message
 
-ONLY_FOR_ARCHS=	i386 ia64
-
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not build on amd64"
+.endif
 
 .if ${OSVERSION} < 500000
 BROKEN=		"Can't build on 4.x"
