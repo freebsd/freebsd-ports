@@ -17,9 +17,4 @@ if [ "$2" = "POST-INSTALL" ]; then
 		touch "${JRE_HOME}/.systemPrefs/.systemRootModFile"
 		chmod 644 "${JRE_HOME}/.systemPrefs/.systemRootModFile"
 	fi
-
-	# Set up class data sharing
-	if [ -x "${JRE_HOME}/bin/java" ]; then
-		"${JRE_HOME}/bin/java" -client -Xshare:dump
-	fi
 fi
