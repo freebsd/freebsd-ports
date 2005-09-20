@@ -1,0 +1,25 @@
+Mpd is a netgraph(4) based implementation of the multi-link PPP
+protocol for FreeBSD.  It is designed to be both fast and flexible.
+It handles configuration and negotiation in user land, while routing
+all data packets strictly in the kernel.  It supports several of
+the numerous PPP sub-protocols and extensions, such as:
+
+      Multi-link PPP capability 
+      PAP, CHAP, and MS-CHAP authentication 
+      EAP authentication
+      PPP compression and encryption
+      Point-to-Point Tunnelling Protocol (PPTP)
+      PPP over Ethernet (PPPoE)
+      RADIUS (authentication and accounting)
+
+Mpd also includes many additional features: 
+
+      Dial-on-demand with idle timeout 
+      Multiple active connections running simultaneously 
+      Dynamic demand based link management (also known as ``rubber bandwidth'') 
+      Powerful chat scripting language for asynchronous serial ports 
+      Pre-tested chat scripts for several common modems and ISDN TAs
+      Clean device-type independent design 
+      Comprehensive logging 
+
+WWW: http://www.sourceforge.net/projects/mpd
