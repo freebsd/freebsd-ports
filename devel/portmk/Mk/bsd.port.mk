@@ -1420,9 +1420,6 @@ CFLAGS:=	${CFLAGS:C/${_CPUCFLAGS}//}
 .endif
 .endif
 .endif
-.if ${CFLAGS:M-O[23s]} != ""
-CFLAGS+= -fno-strict-aliasing
-.endif
 
 .if defined(NOPORTDOCS)
 PLIST_SUB+=	        PORTDOCS="@comment "
