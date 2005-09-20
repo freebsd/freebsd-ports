@@ -34,6 +34,8 @@ PORTDOCS=	ChangeLog readme.txt releasenotes.html duke3d.def.sample GNU.TXT
 
 SUB_FILES=	pkg-message
 
+ONLY_FOR_ARCHS=	i386 ia64
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
