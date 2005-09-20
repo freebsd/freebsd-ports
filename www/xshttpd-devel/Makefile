@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	xshttpd
-DISTVERSION=	3.3b26
+DISTVERSION=	3.3b27
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/
+MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
+	ftp://mud.stack.nl/pub/xs-httpd/release/
 DISTNAME=	${PORTNAME}-${DISTVERSION:S/.//}
 
 MAINTAINER=	johans@stack.nl
@@ -23,11 +24,21 @@ MAN1=		clearxs.1 gfxcount.1 httpd.1 httpdc.1 imagemap.1 \
 MAN5=		httpd.conf.5 xsauth.5 xsscripts.5
 USE_RC_SUBR=	xshttpd.sh
 
+USE_REINPLACE=	yes
+
+OPTIONS=	SSL "Enable https support" On \
+		LDAP "Enable ldap support" Off \
+		PCRE "Enable pcre rewriting support" Off \
+		PERSISTENT_PERL "Enable persistent perl interpreter" Off
+
 # By default XS-HTTPD stores its data in ${PREFIX}/lib/httpd
 DATADIR=	${PREFIX}/www
 CONFIGURE_ARGS+=--with-rootdir=${DATADIR}
 
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_SSL)
+.include <${PORTSDIR}/Mk/bsd.openssl.mk>
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-ssl
 .else
@@ -56,13 +67,14 @@ CONFIGURE_ARGS+=--with-pcre=no
 .endif
 
 post-patch:
-.for i in "man/httpd.1" "man/httpd.conf.5" "config/httpd.conf.sample" \
-	"contrib/SSL-Makefile" "contrib/logrotate.sh"
-	@${SED} \
+.for i in man/httpd.1 man/httpd.conf.5 config/httpd.conf.sample \
+	contrib/SSL-Makefile contrib/logrotate.sh
+	@${REINPLACE_CMD} \
 		-e 's|/wwwsys|${DATADIR}|g' \
 		-e 's|/usr/local/lib/httpd|${DATADIR}|g' \
-		${WRKSRC}/$i > ${WRKSRC}/$i.tmp
-	@${MV} ${WRKSRC}/$i.tmp ${WRKSRC}/$i
+		-e 's|nobody|${WWWOWN}|g' \
+		-e 's|nogroup|${WWWGRP}|g' \
+		${WRKSRC}/$i
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
