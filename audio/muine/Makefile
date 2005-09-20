@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://muine.gooeylinux.org/
 
-MAINTAINER=	tmclaugh@sdf.lonestar.org
+MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Mono based Gnome audio player
 
 LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \

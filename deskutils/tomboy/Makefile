@@ -12,7 +12,7 @@ PORTREVISION=	4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.beatniksoftware.com/tomboy/releases/
 
-MAINTAINER=	tmclaugh@sdf.lonestar.org
+MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Personal note taking system for the GNOME desktop
 
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2

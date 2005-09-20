@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://go-mono.com/archive/1.0.3/
 
-MAINTAINER=	tmclaugh@sdf.lonestar.org
+MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Mono bindings for embeding mozilla
 
 BUILD_DEPENDS=	gapi-parser:${PORTSDIR}/x11-toolkits/gtk-sharp
