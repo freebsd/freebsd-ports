@@ -3872,6 +3872,7 @@ imp		ports/mail/imp
 impact		ports/cad/impact
 impress		ports/editors/impress
 imwheel		ports/x11/imwheel
+inadyn		ports/dns/inadyn
 indexme		ports/www/indexme
 indubstrial	ports/x11-themes/indubstrial
 ines		ports/emulators/ines
