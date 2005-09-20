@@ -33,7 +33,7 @@ PLIST_SUB=	FIREFOX=${FIREFOX}
 .include <bsd.port.pre.mk>
 
 do-install:
-	echo "===> Backup setting files..."
+	@${ECHO_MSG} "===> Backup setting files..."
 	(cd ${FIREFOX_HOME}; \
 	${MV} -f browserconfig.properties browserconfig.properties.orig)
 	(cd ${FIREFOX_HOME}/defaults/pref; \
@@ -45,18 +45,18 @@ do-install:
 	${MV} -f chrome.rdf chrome.rdf.orig; \
 	${MV} -f installed-chrome.txt installed-chrome.txt.orig)
 
-	echo "===> Copying locale files..."
+	@${ECHO_MSG} "===> Copying locale files..."
 	(cd ${WRKSRC}; ${TAR} -cf - *) | \
 	${TAR} -xf - -C ${FIREFOX_HOME}
 
-	echo "===> Cleaning Chrome's registry..."
+	@${ECHO_MSG} "===> Cleaning Chrome's registry..."
 	${RM} -rf ${FIREFOX_HOME}/chrome/overlayinfo
 	${RM} -f ${FIREFOX_HOME}/chrome/*.rdf
 	${MKDIR} ${FIREFOX_HOME}/chrome/overlayinfo
 	${RM} -f ${FIREFOX_HOME}/component.reg
 	${RM} -rf ${FIREFOX_HOME}/extensions
 
-	echo "===> Building Chrome's registry..."
+	@${ECHO_MSG} "===> Building Chrome's registry..."
 	(cd ${FIREFOX_HOME} || exit 1 ; \
 	./run-mozilla.sh ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. \
 		${REGXPCOM} || true ; \
