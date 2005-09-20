@@ -16,6 +16,7 @@ share/doc/xine-ui/README.en.15.MRLs
 share/doc/xine-ui/README.en.20.DVD
 share/doc/xine-ui/README.en.25.VideoCD
 share/doc/xine-ui/README.en.30.Advanced
+share/doc/xine-ui/README.en.32.Window_managers
 share/doc/xine-ui/README.en.35.Legal_issues
 share/doc/xine-ui/README.en.5.xine-ui
 share/doc/xine-ui/README_cs
@@ -34,6 +35,8 @@ share/locale/de/LC_MESSAGES/xine-ui.mo
 share/locale/de/LC_MESSAGES/xitk.mo
 share/locale/es/LC_MESSAGES/xine-ui.mo
 share/locale/es/LC_MESSAGES/xitk.mo
+share/locale/eu/LC_MESSAGES/xine-ui.mo
+share/locale/eu/LC_MESSAGES/xitk.mo
 share/locale/fr/LC_MESSAGES/xine-ui.mo
 share/locale/fr/LC_MESSAGES/xitk.mo
 share/locale/it/LC_MESSAGES/xine-ui.mo
@@ -44,6 +47,8 @@ share/locale/pl/LC_MESSAGES/xine-ui.mo
 share/locale/pl/LC_MESSAGES/xitk.mo
 share/locale/pt_BR/LC_MESSAGES/xine-ui.mo
 share/locale/pt_BR/LC_MESSAGES/xitk.mo
+share/locale/ru/LC_MESSAGES/xine-ui.mo
+share/locale/ru/LC_MESSAGES/xitk.mo
 share/locale/sk/LC_MESSAGES/xine-ui.mo
 share/locale/sk/LC_MESSAGES/xitk.mo
 share/locale/uk/LC_MESSAGES/xine-ui.mo
@@ -54,6 +59,8 @@ share/pixmaps/xine_22x22.png
 share/pixmaps/xine_32x32.png
 share/pixmaps/xine_48x48.png
 share/xine/desktop/xine.desktop
+share/xine/oxine/mainmenu
+share/xine/oxine/mediamarks
 share/xine/skins/xine_splash.png
 share/xine/skins/xine-ui_logo.mpv
 share/xine/skins/xinetic/BigArrowDown.png
@@ -146,6 +153,7 @@ share/xine/visuals/default.avi
 @unexec rmdir %D/share/locale 2>/dev/null || true
 @dirrm share/xine/visuals
 @dirrm share/xine/skins/xinetic
+@dirrm share/xine/oxine
 @dirrm share/xine/desktop
 @dirrm share/xine/skins
 @unexec rmdir %D/share/xine 2>/dev/null || true
