@@ -5217,6 +5217,7 @@ libast		ports/devel/libast
 libaudiofile	ports/audio/libaudiofile
 libaux		ports/graphics/libaux
 libavl		ports/devel/libavl
+libbegemot	ports/devel/libbegemot
 libbf		ports/security/libbf
 libbfd		ports/devel/libbfd
 libbinio	ports/devel/libbinio
