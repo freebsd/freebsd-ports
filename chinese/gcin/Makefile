@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.0.4
-PORTREVISION=	0
+PORTVERSION=	1.0.7
 CATEGORIES=	chinese
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/ \
 		http://edt1023.sayya.org/gcin/source/ \
@@ -53,8 +52,11 @@ post-extract:
 		noseeing.cin
 	@${REINPLACE_CMD} -e 's,cj.gtab,cj.gtab noseeing.gtab,' \
 		${WRKSRC}/data/Makefile
+
+.endif
+
+.if defined(WITH_BOSHIAMY)
 post-patch:
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-data-Makefile
 PLIST_SUB+=	BOSHIAMY=""
 .else
 PLIST_SUB+=	BOSHIAMY="@comment "
