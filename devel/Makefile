@@ -428,6 +428,7 @@
     SUBDIR += libassetml
     SUBDIR += libast
     SUBDIR += libavl
+    SUBDIR += libbegemot
     SUBDIR += libbfd
     SUBDIR += libbinio
     SUBDIR += libbnr

@@ -1,0 +1,5 @@
+lib/libbegemot.a
+lib/libbegemot.so
+lib/libbegemot.so.1
+include/begemot.h
+include/rpoll.h
