@@ -8,7 +8,8 @@
 PORTNAME=	gacxtool
 PORTVERSION=	0.1.0
 CATEGORIES=	net
-MASTER_SITES=	http://www.leoz.myoptimus.com/gacxtool/files/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	leoz.2005@gmail.com
 COMMENT=	Displays the status of the ACX driver
