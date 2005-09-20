@@ -12,6 +12,7 @@ bin/xspasswd
 %%DATADIR%%/contrib/logrotate.sh
 %%DATADIR%%/contrib/persistent.pl
 %%DATADIR%%/contrib/wwwstats.pl
+%%DATADIR%%/contrib/agentstats.pl
 %%DATADIR%%/compress.methods.sample
 %%DATADIR%%/gfxcount/digital0.ppm
 %%DATADIR%%/gfxcount/digital1.ppm
@@ -62,9 +63,9 @@ bin/xspasswd
 %%DATADIR%%/mime.index
 %%DATADIR%%/mime.types
 %%DATADIR%%/script.methods.sample
-@unexec rmdir %%DATADIR%%/cgi-bin 2> /dev/null || true
-@unexec rmdir %%DATADIR%%/htdocs 2> /dev/null || true
-@unexec rmdir %%DATADIR%%/logs 2> /dev/null || true
+@dirrm %%DATADIR%%/cgi-bin
+@dirrm %%DATADIR%%/htdocs
+@dirrm %%DATADIR%%/logs
 @dirrm %%DATADIR%%/contrib
 @dirrm %%DATADIR%%/gfxcount
 @dirrm %%DATADIR%%/icons

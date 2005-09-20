@@ -20,4 +20,4 @@ XS-HTTPD is a WWW server that has the following features:
 - Serves SSL (https) and http connections through the same daemon
 - Full support for IPv6
 
-WWW: http://www.stack.nl/~johans/xs-httpd/
+WWW: http://www.stack.nl/xs-httpd/
