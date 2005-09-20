@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	dokuwiki
-PORTVERSION=	20050713
+PORTVERSION=	20050919
 CATEGORIES=	www
 MASTER_SITES=	http://www.splitbrain.org/Programming/PHP/DokuWiki/
-DISTNAME=	${PORTNAME}-2005-07-13
+DISTNAME=	${PORTNAME}-2005-09-19
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple and easy to use wiki, no database required
 
-USE_PHP=	gd pcre session xml zlib
+USE_PHP=	gd imagick pcre session xml zlib
 PHP4_PORT?=	www/mod_php4
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
@@ -50,6 +50,7 @@ pre-everything::
 	@${ECHO_MSG} '*  - Brazilian Portuguese       WIKI_LANG=pt-br	      *'
 	@${ECHO_MSG} '*  - Simplified Chinese		WIKI_LANG=zh	      *'
 	@${ECHO_MSG} '*  - Traditional Chinese        WIKI_LANG=zh-tw	      *'
+	@${ECHO_MSG} '*  - Catalan			WIKI_LANG=ca	      *'
 	@${ECHO_MSG} '*  - Czech			WIKI_LANG=cs	      *'
 	@${ECHO_MSG} '*  - Danish			WIKI_LANG=da          *'
 	@${ECHO_MSG} '*  - Dutch			WIKI_LANG=nl	      *'
@@ -84,15 +85,11 @@ pre-patch:
 .if defined(WIKI_LANG)
 	@${REINPLACE_CMD} -e 's|lang\(.*\)'en'|lang\1'${WIKI_LANG}'|g' \
 		${WRKSRC}/conf/dokuwiki.php
-	${FIND} ${WRKSRC}/conf -name "*.php.bak" -delete
+	@${FIND} ${WRKSRC}/conf -name "*.php.bak" -delete
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|sfs|bbs|g' ${WRKSRC}/inc/lang/zh-tw/edit.txt
-	${FIND} ${WRKSRC}/inc/lang/zh-tw -name "*.txt.bak" -delete
-
 pre-install:
-	${TOUCH} ${WRKSRC}/data/changes.log
+	@${TOUCH} ${WRKSRC}/data/changes.log
 	@cd ${WRKSRC} && ${FIND} -s . -type f | \
 		${SED} -e 's|^./||;s|^|${DOKUWIKI_DIR}/|' > ${PLIST} \
 		&& ${FIND} -d * -type d | \
