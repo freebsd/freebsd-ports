@@ -7,7 +7,7 @@
 
 PORTNAME=	valgrind
 PORTVERSION=	352
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rabson.org/
 PKGNAMESUFFIX=	-snapshot
@@ -26,22 +26,41 @@ USE_GNOME=	pkgconfig
 USE_PERL5_BUILD=yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS+=	autoconf:259 aclocal:19 automake:19
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000 
+.if ${OSVERSION} >= 700000
+PLIST_SUB+=	RELENG_4="@comment "
+PLIST_SUB+=	RELENG_5="@comment "
+PLIST_SUB+=	RELENG_6="@comment "
+PLIST_SUB+=	RELENG_7=""
+.else
+.if ${OSVERSION} >= 600000
+PLIST_SUB+=	RELENG_4="@comment "
+PLIST_SUB+=	RELENG_5="@comment "
+PLIST_SUB+=	RELENG_6=""
+PLIST_SUB+=	RELENG_7="@comment "
+.else
+.if ${OSVERSION} >= 500000
 PLIST_SUB+=	RELENG_4="@comment "
 PLIST_SUB+=	RELENG_5=""
+PLIST_SUB+=	RELENG_6="@comment "
+PLIST_SUB+=	RELENG_7="@comment "
 .else
 PLIST_SUB+=	RELENG_4=""
 PLIST_SUB+=	RELENG_5="@comment "
+PLIST_SUB+=	RELENG_6="@comment "
+PLIST_SUB+=	RELENG_7="@comment "
+.endif
+.endif
 .endif
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=		"can\'t be built. Your Perl version is too old. Please use lang/perl5.8 port to upgrade your Perl"
+IGNORE=		can\'t be built. Your Perl version is too old. Please use lang/perl5.8 port to upgrade your Perl
 .endif
 
 PROCFS!=	/sbin/mount | ${GREP} '^procfs' | ${AWK} '{print $1}'
@@ -59,7 +78,7 @@ pre-everything::
 #
 .ifndef (PACKAGE_BUILDING)
 ECHO_MSG=/usr/bin/printf
-IGNORE= needs a running procfs, which is not\n\
+IGNORE=	needs a running procfs, which is not\n\
 \ \ \ \ \ activated on your system. Please read the procfs\(5\)\n\
 \ \ \ \ \ man page and add the following line to /etc/fstab:\n\
 \n\

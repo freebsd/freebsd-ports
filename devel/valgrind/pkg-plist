@@ -15,10 +15,15 @@ lib/valgrind/glibc-2.3.supp
 %%RELENG_4%%lib/valgrind/libc_r.so.4
 %%RELENG_5%%lib/valgrind/libc_r.so.5
 %%RELENG_5%%lib/valgrind/libkse.so.1
-lib/valgrind/libpthread.so
-lib/valgrind/libpthread.so.0
 %%RELENG_5%%lib/valgrind/libpthread.so.1
 %%RELENG_5%%lib/valgrind/libthr.so.1
+%%RELENG_6%%lib/valgrind/libc_r.so.6
+%%RELENG_6%%lib/valgrind/libpthread.so.2
+%%RELENG_6%%lib/valgrind/libthr.so.2
+%%RELENG_7%%lib/valgrind/libc_r.so.6
+%%RELENG_7%%lib/valgrind/libpthread.so.2
+%%RELENG_7%%lib/valgrind/libthr.so.2
+lib/valgrind/libpthread.so
 lib/valgrind/stage2
 lib/valgrind/valgrind
 lib/valgrind/vg_inject.so
