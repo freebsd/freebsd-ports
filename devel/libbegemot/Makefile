@@ -1,0 +1,41 @@
+# New ports collection makefile for:	libbegemot
+# Date created:			Sep 15 2005
+# Whom:				Andrey V. Elsukov <bu7cher@yandex.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	libbegemot
+PORTVERSION=	1.11
+CATEGORIES=	devel
+MASTER_SITES=	http://people.freebsd.org/~harti/libbegemot/
+DISTNAME=	libbegemot-${PORTVERSION}
+
+MAINTAINER=	bu7cher@yandex.ru
+COMMENT=	A function library for begemot tools
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_LIBLTDL=	yes
+INSTALLS_SHLIB=	yes
+
+WANT_AUTOCONF_VER=	259
+WANT_AUTOMAKE_VER=	19
+WANT_LIBTOOL_VER=	15
+
+MAN1=	cstrc.1 frame.1 getfields.1 intro.1 panic.1 prstat.1 readline.1 \
+		rpoll.1 strnchr.1 strnlen.1 strsave.1 strtrimsp.1 verb.1 xalloc.1
+MLINKS=	xalloc.1 xrealloc.1
+
+run-autotools:
+	@(cd ${CONFIGURE_WRKSRC} && ${PREFIX}/bin/aclocal19 \
+		-I ${PREFIX}/share/libtool15/libltdl/ )
+	@(cd ${CONFIGURE_WRKSRC} && ${PREFIX}/bin/autoconf259 )
+
+post-install:
+.for i in ${MAN1}
+	@${CP} ${WRKSRC}/${i:S/.1/.man/} ${WRKSRC}/${i}
+	${INSTALL_MAN} ${WRKSRC}/${i} ${MANPREFIX}/man/man1
+.endfor
+
+.include <bsd.port.mk>
