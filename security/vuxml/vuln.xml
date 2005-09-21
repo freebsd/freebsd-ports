@@ -389,7 +389,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>bind -- buffer overrun vulnerability</topic>
     <affects>
       <package>
-	<name>bind</name>
+	<name>bind84</name>
 	<range><ge>8.4.4</ge><lt>8.4.6</lt></range>
       </package>
     </affects>
@@ -410,6 +410,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-01-25</discovery>
       <entry>2005-09-03</entry>
+      <modified>2005-09-21</modified>
     </dates>
   </vuln>
 
