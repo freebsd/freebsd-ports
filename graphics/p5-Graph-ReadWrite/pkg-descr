@@ -3,4 +3,4 @@ directed graphs in a variety of file formats. The graphs are
 represented in Perl using Jarkko Hietaniemi's Graph classes.
 
 Author:	Neil Bowers <neil@bowers.com>
-WWW:	http://search.cpan.org/~neilb/Graph-ReadWrite/
+WWW:	http://search.cpan.org/dist/Graph-ReadWrite/

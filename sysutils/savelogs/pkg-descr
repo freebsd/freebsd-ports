@@ -12,4 +12,4 @@ file but leave the tar file uncompressed, etc. You pick ;o)
 savelogs has many options yet retains a high degree of dwimitude.
 
 Author: Scott Wiersdorf <scott@perlcode.org>	
-WWW:	http://search.cpan.org/~scottw/
+WWW:	http://search.cpan.org/dist/savelogs/

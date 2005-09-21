@@ -4,4 +4,4 @@ Kwiki::GDGraphGenerator turns graph WAFL blocks into pretty graph
 (bars/lines/pie graph) using GD::Graph
 
 Author:	Ian Langworth <langworth.com>
-WWW:	http://search.cpan.org/~ian/Kwiki-GDGraphGenerator/
+WWW:	http://search.cpan.org/dist/Kwiki-GDGraphGenerator/

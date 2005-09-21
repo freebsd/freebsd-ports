@@ -5,6 +5,6 @@ parameter with forced lexical checking of named parameters
 for validity and initialization validation. Lightweight and simple
 to use. Designed as a base class for inheritance by other modules.
 
-WWW:	http://search.cpan.org/~snowhare/Class-NamedParms-1.04/
+WWW:	http://search.cpan.org/dist/Class-NamedParms/
 
 Author: Benjamin Franz
