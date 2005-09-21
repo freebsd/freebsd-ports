@@ -5,15 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	kaffeine
-PORTVERSION=	0.7
+PORTVERSION=	0.7.1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kaffeine
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A xine-base multimedia player
 
-LIB_DEPENDS=	xine.13:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	xine.14:${PORTSDIR}/multimedia/libxine
 
 USE_BZIP2=		yes
 USE_KDELIBS_VER=	3
