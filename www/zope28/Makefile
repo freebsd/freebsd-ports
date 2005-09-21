@@ -7,6 +7,7 @@
 
 PORTNAME=	zope
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-final
@@ -17,7 +18,7 @@ MAINTAINER=	dsh@vlink.ru
 COMMENT=	An object-based web application platform
 
 USE_PYTHON=	yes
-USE_RC_SUBR=	${PORTNAME}.sh zeo.sh
+USE_RC_SUBR=	${PORTNAME}28.sh zeo28.sh
 USE_REINPLACE=	yes
 
 # Note: the notes that follow reflect the decisions of prior maintainers
@@ -27,7 +28,7 @@ USE_REINPLACE=	yes
 # Change these, if you like, via the environment.
 ZOPE_USER?=		www
 WEBBASEDIR?=		www
-SZOPEBASEDIR?=		${WEBBASEDIR}/Zope
+SZOPEBASEDIR?=		${WEBBASEDIR}/Zope28
 
 # Do not change anything below this line.
 
@@ -67,8 +68,8 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/etc/rc.d/
-	${INSTALL_SCRIPT} ${WRKDIR}/zeo.sh         ${PREFIX}/etc/rc.d/
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}28.sh ${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${WRKDIR}/zeo28.sh         ${PREFIX}/etc/rc.d
 
 	${MV} ${ZOPEBASEDIR}/skel/etc/zope.conf.in \
 		${ZOPEBASEDIR}/skel/etc/zope.conf.sample.in
@@ -77,10 +78,7 @@ post-install:
 	${CP} ${FILESDIR}/Products_00readme-freebsd.txt \
 		${ZOPEBASEDIR}/Products/00readme-freebsd.txt
 
-	${FIND} ${ZOPEBASEDIR} ! -type d | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-	${FIND} -d ${ZOPEBASEDIR} -type d | \
-		${SED} "s,^${PREFIX}/,@dirrm ," >> ${TMPPLIST}
+	${FIND} ${ZOPEBASEDIR} -type f -print0 | ${XARGS} -0 -- ${CHMOD} a-w
 
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
