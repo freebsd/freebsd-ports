@@ -518,15 +518,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
-      <!--
-            XXX, this is bogus, but there currently really is no other
-            public reference than this entry.
-      -->
-      <url>http://vuxml.FreeBSD.org/08df5d46-1baf-11da-8038-0040f42d58c6.html</url>
+      <cvename>CAN-2005-2864</cvename>
+      <mlist msgid="55104.213.107.125.108.1125844783.squirrel@webmail.rsc.cx">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112604855119036</mlist>
     </references>
     <dates>
       <discovery>2005-09-02</discovery>
       <entry>2005-09-02</entry>
+      <modified>2005-09-22</modified>
     </dates>
   </vuln>
 
