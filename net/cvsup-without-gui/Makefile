@@ -7,5 +7,6 @@
 
 MASTERDIR=	${.CURDIR}/../cvsup
 WITHOUT_X11=	yes
+CONFLICTS=	cvsup-[0-9]*
 
 .include "${MASTERDIR}/Makefile"
