@@ -1,22 +1,31 @@
---- configure.orig	Mon Mar 28 21:16:17 2005
-+++ configure	Mon Apr 11 02:44:50 2005
-@@ -35871,15 +35871,15 @@
+--- configure.orig	Wed Aug 17 17:29:59 2005
++++ configure	Wed Aug 17 17:31:59 2005
+@@ -35889,7 +35889,7 @@
+ if test "$with_libvisual" = "yes"; then
+     ## libvisual plugin depends on sdl
+     # Extract the first word of "sdl-config", so it can be a program name with args.
+-set dummy sdl-config; ac_word=$2
++set dummy $SDL_CONFIG; ac_word=$2
+ echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+ if test "${ac_cv_prog_SDL_CONFIG+set}" = set; then
+@@ -35924,15 +35924,15 @@
  fi
  
  
--if test x$SDL_CONFIG = xyes; then
--    sdl_cflags=`sdl-config --cflags`
--    sdl_libs=`sdl-config --libs`
-+if test -n $SDL_CONFIG ; then
-+    sdl_cflags=`$SDL_CONFIG --cflags`
-+    sdl_libs=`$SDL_CONFIG --libs`
- fi
+-    if test x$SDL_CONFIG = xyes; then
+-        sdl_cflags=`sdl-config --cflags`
+-        sdl_libs=`sdl-config --libs`
++    if test -n $SDL_CONFIG ; then
++        sdl_cflags=`$SDL_CONFIG --cflags`
++        sdl_libs=`$SDL_CONFIG --libs`
+     fi
  
  
  
  
--if test x$PKGCONFIGFOUND = xyes -a x$SDL_CONFIG = xyes; then
-+if test x$PKGCONFIGFOUND = xyes -a -n $SDL_CONFIG ; then
+-    if test x$PKGCONFIGFOUND = xyes -a x$SDL_CONFIG = xyes; then
++    if test x$PKGCONFIGFOUND = xyes -a -n $SDL_CONFIG ; then
  
  
    succeeded=no
