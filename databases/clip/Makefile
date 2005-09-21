@@ -9,12 +9,12 @@ PORTNAME=	clip
 PORTVERSION=	1.1.14.1
 PORTREVISION=	2
 CATEGORIES=	databases lang
-MASTER_SITES=	ftp://ftp.linux.ru.net/mirrors/clip/	\
-		ftp://ftp.itk.ru/pub/clip/		\
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=lawrance
-DISTFILES=	${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}.tgz \
-		patch.tgz
+MASTER_SITES=	ftp://ftp.linux.ru.net/mirrors/clip/:files	\
+		ftp://ftp.itk.ru/pub/clip/:files		\
+		${MASTER_SITE_LOCAL}:files,patch
+MASTER_SITE_SUBDIR=lawrance:files,patch
+DISTFILES=	${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}.tgz:files,patch \
+		patch.tgz:patch
 DIST_SUBDIR=	clip
 EXTRACT_ONLY=	${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}.tgz
 
@@ -47,10 +47,6 @@ OPTIONS=	IODBC		"iODBC support"				on \
 
 .if ${ARCH} != "i386"
 BROKEN=		"Does not compile on !i386"
-.endif
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile"
 .endif
 
 # OPT_CLIPLIBS contains the optional subdirectories built by
