@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gthumb
-PORTVERSION=	2.6.7
+PORTVERSION=	2.6.8
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.6
@@ -35,10 +35,6 @@ MAN1=		gthumb.1
 
 .if !defined(WITHOUT_GPHOTO2) || exists(${LOCALBASE}/lib/libgphoto2.so.2)
 LIB_DEPENDS+=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
-.endif
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-round.diff
 .endif
 
 .include <bsd.port.post.mk>
