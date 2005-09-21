@@ -7,7 +7,7 @@
 
 PORTNAME=	rhythmbox
 PORTVERSION=	0.8.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
@@ -39,7 +39,7 @@ OPTIONS=	XINE "Use xine backend instead of GStreamer" off \
 .include <bsd.port.pre.mk>
 
 .ifdef (WITH_XINE)
-LIB_DEPENDS+=		xine.13:${PORTSDIR}/multimedia/libxine \
+LIB_DEPENDS+=		xine.14:${PORTSDIR}/multimedia/libxine \
 			FLAC.7:${PORTSDIR}/audio/flac \
 			mad.2:${PORTSDIR}/audio/libmad
 CONFIGURE_ARGS+=	--with-player=xine
