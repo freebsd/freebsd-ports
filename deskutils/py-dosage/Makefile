@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dosage
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.5
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://slipgate.za.net/dosage/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
