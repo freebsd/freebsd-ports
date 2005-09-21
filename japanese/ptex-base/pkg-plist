@@ -9312,6 +9312,7 @@ share/texmf/jbibtex/bst/jplain.bst
 share/texmf/jbibtex/bst/junsrt.bst
 share/texmf/jbibtex/bst/tieice.bst
 share/texmf/jbibtex/bst/tipsj.bst
+share/texmf/ls-R
 share/texmf/makeindex/gglo.ist
 share/texmf/makeindex/gind.ist
 share/texmf/makeindex/nomencl.ist
