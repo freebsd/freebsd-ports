@@ -3,26 +3,44 @@
 # $FreeBSD$
 #
 
-# $1 = package name
-if [ "$2" != "PRE-INSTALL" ]; then
-    exit 0
-fi
-
 USER=interch
 GROUP=${USER}
 UID=95
 GID=${UID}
 
-pw groupshow ${GROUP} >/dev/null 2>&1 \
-	|| (pw groupadd ${GROUP} -g ${GID} \
-		|| (echo "Adding group '${GROUP}' failed!"; exit 1) \
-		&& echo "Added group '${GROUP}'.")
+case $2 in
+PRE-INSTALL)
+	USER=interch
+	GROUP=${USER}
+	UID=95
+	GID=${UID}
 
-pw usershow ${USER} >/dev/null 2>&1 \
-	|| (pw useradd ${USER} -h - -u ${UID} -g ${GROUP} \
-		-c "Interchange user" -d "${PKG_PREFIX}/interchange" \
-		-s "/sbin/nologin" \
-		|| (echo "Adding user '${USER}' failed!"; exit 1) \
-		&& echo "Added user '${USER}'.")
+	if pw group show "${GROUP}" 2>/dev/null; then
+                echo "You already have a group \"${GROUP}\", so I will use it."
+        else
+                if pw groupadd ${GROUP} -g ${GID}; then
+                        echo "Added group \"${GROUP}\"."
+                else
+                        echo "Adding group \"${GROUP}\" failed..."
+                        exit 1
+                fi
+        fi
 
-exit 0
+	if pw user show "${USER}" 2>/dev/null; then
+                echo "You already have a user \"${USER}\", so I will use it."
+        else
+                if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+                        -d "${PKG_PREFIX}/interchange" \
+			-s /bin/sh -c "Interchange user"
+                then
+                        echo "Added user \"${USER}\"."
+                else
+                        echo "Adding user \"${USER}\" failed..."
+                        exit 1
+                fi
+        fi
+        ;;
+POST-INSTALL)
+	chown -R ${USER}:${GROUP} ${PKG_PREFIX}/interchange
+	;;
+esac
