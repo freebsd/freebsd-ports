@@ -1,0 +1,14 @@
+share/foomatic/db/source/driver/hpijs.xml
+share/foomatic/db/source/driver/hpijs-rss.xml
+share/foomatic/db/source/opt/hpijs-Duplex.xml
+share/foomatic/db/source/opt/hpijs-InputSlot.xml
+share/foomatic/db/source/opt/hpijs-Model.xml
+share/foomatic/db/source/opt/hpijs-PageSize.xml
+share/foomatic/db/source/opt/hpijs-PrintoutMode.xml
+share/foomatic/db/source/opt/hpijs-Quality.xml
+share/foomatic/db/source/opt/hpijs-rss-Duplex.xml
+share/foomatic/db/source/opt/hpijs-rss-InputSlot.xml
+share/foomatic/db/source/opt/hpijs-rss-Model.xml
+share/foomatic/db/source/opt/hpijs-rss-PageSize.xml
+share/foomatic/db/source/opt/hpijs-rss-Resolution.xml
+

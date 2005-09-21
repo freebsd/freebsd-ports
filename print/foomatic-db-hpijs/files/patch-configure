@@ -1,0 +1,11 @@
+--- configure.orig	Sat Sep 17 02:25:59 2005
++++ configure	Sat Sep 17 02:26:04 2005
+@@ -522,7 +522,7 @@
+ 
+ 
+ 
+-if [ x$sysconfdir == 'x${prefix}/etc' ]; then
++if [ x$sysconfdir = 'x${prefix}/etc' ]; then
+   sysconfdir=/etc
+ fi
+ 

@@ -69,6 +69,7 @@
     SUBDIR += fontforge
     SUBDIR += foomatic-db
     SUBDIR += foomatic-db-engine
+    SUBDIR += foomatic-db-hpijs
     SUBDIR += foomatic-filters
     SUBDIR += fpdf
     SUBDIR += freetype
