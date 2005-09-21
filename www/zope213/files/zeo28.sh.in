@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# Start or stop zope
+# $FreeBSD$
+
+# PROVIDE: zeo28
+# REQUIRE: DAEMON
+# BEFORE: zope28
+# KEYWORD: FreeBSD shutdown
+#
+prefix=%%PREFIX%%
+
+# Define these zope28_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/zeo28
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+zeo28_enable=${zeo28_enable:-"NO"} # Enable zeo server
+zeo28_instances=${zeo28_instances:-""} # List of instancehome dirs
+
+. %%RC_SUBR%%
+
+name="zeo28"
+rcvar=`set_rcvar`
+load_rc_config $name
+
+if checkyesno zeo28_enable; then
+
+	case "$1" in
+		start)
+			echo "Starting Zeo 2.8"
+		;;
+		stop)
+			echo "Stopping Zeo 2.8"
+		;;
+		restart)
+			echo "Restarting Zeo 2.8"
+		;;
+		*)
+			echo "Unknown action \"$1\""
+		;;
+	esac
+
+	for instance in $zeo28_instances
+	do
+		if [ -r ${instance}/etc/zeo.conf -a -x ${instance}/bin/zeoctl ]; then
+			echo -n "       Instance ${instance} -> "
+			${instance}/bin/zeoctl $1
+		fi
+	done
+fi
