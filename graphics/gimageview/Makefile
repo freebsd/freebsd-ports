@@ -7,7 +7,7 @@
 
 PORTNAME=	gimageview
 PORTVERSION=	0.2.25
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkmmviewer
@@ -84,7 +84,7 @@ PLIST_SUB+=	WITH_LIBMPLAYER="@comment "
 .endif
 
 .if defined(WITH_LIBXINE)
-LIB_DEPENDS+=	xine.13:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.14:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=	--with-xine
 PLIST_SUB+=	WITH_LIBXINE=""
 .else
