@@ -1,35 +1,49 @@
 #!/bin/sh
+#
+# $FreeBSD$
+#
 
-RUNDIR=/var/run/interchange
-LOGDIR=/var/log/interchange
-ICUSER=$(cat %%PREFIX%%/interchange/_uid)
-PIDFILE=${RUNDIR}/interchange.pid
-SOCKFILE=${RUNDIR}/interchange.sock
+# PROVIDE: interchange
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: FreeBSD shutdown
 
-OPTS="SocketFile=${SOCKFILE} IPCsocket=${SOCKFILE}.ipc PIDfile=${PIDFILE}"
-OPTS="${OPTS} --pidfile=${PIDFILE} --log=${LOGDIR}/error.log --rundir=${RUNDIR}"
+#
+# Add the following lines to /etc/rc.conf to enable Interchange:
+# interchange_enable (bool):      Set to "NO" by default.
+#                                 Set it to "YES" to enable Interchange
+# interchange_config (str):       Default config file: 
+#                                 /usr/local/interchange/interchange.cfg
+# interchange_args (str):         Custom additional arguments to be passed
+#                                 to interchange (default empty).
+#
 
-case "$1" in
-start)
-	[ -d ${RUNDIR} ] || \
-		(mkdir ${RUNDIR} && chown ${ICUSER}:${ICUSER} ${RUNDIR})
-	[ -d ${LOGDIR} ] || \
-		(mkdir ${LOGDIR} && chown ${ICUSER}:${ICUSER} ${LOGDIR})
 
-	if [ -x %%PREFIX%%/bin/interchange ]; then
-		su -m ${ICUSER} \
-			-c "%%PREFIX%%/bin/interchange ${OPTS} >/dev/null" && \
-		echo -n ' interchange'
-	fi
-	;;
-stop)
-	if [ -r ${PIDFILE} ]; then
-		kill $(cat ${PIDFILE}) && \
-			echo -n ' interchange'
-	fi
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop}" >&2
-	;;
-esac
+. /etc/rc.subr
+
+name="interchange"
+rcvar=`set_rcvar`
+
+interchange_enable=${interchange_enable:-"NO"}
+interchange_config=${interchange_config:-"/usr/local/interchange/interchange.cfg"}
+interchange_args=${interchange_args:-""}
+
+load_rc_config $name
+
+interchange_user="interch"
+pidfile="/var/run/interchange/interchange.pid"
+command="/usr/local/bin/interchange"
+command_interpreter="/usr/local/bin/perl"
+command_args="--config=${interchange_config} ${interchange_args}"
+
+stop_cmd="interchange_cmd --stop"
+restart_cmd="interchange_cmd --restart"
+reload_cmd="interchange_cmd --restart"
+
+interchange_cmd()
+{
+    su -l ${interchange_user} -c "exec env PIDfile=${pidfile} ${command} ${command_args} $1"
+}
+
+run_rc_command "$1"
 
