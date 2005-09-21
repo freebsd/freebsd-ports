@@ -94,6 +94,12 @@ bin/dvdrip-master
 %%SITE_PERL%%/Video/DVDRip/TranscodeRC.pm
 %%SITE_PERL%%/Video/DVDRip/icon.xpm
 %%SITE_PERL%%/Video/DVDRip/splash.png
+%%SITE_PERL%%/LocaleData/cs/LC_MESSAGES/video.dvdrip.mo
+%%SITE_PERL%%/LocaleData/de/LC_MESSAGES/video.dvdrip.mo
+%%SITE_PERL%%/LocaleData/es/LC_MESSAGES/video.dvdrip.mo
+%%SITE_PERL%%/LocaleData/fr/LC_MESSAGES/video.dvdrip.mo
+%%SITE_PERL%%/LocaleData/it/LC_MESSAGES/video.dvdrip.mo
+%%SITE_PERL%%/LocaleData/sr/LC_MESSAGES/video.dvdrip.mo
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Video/DVDRip/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Video/DVDRip
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Video 2>/dev/null || true
@@ -108,3 +114,16 @@ bin/dvdrip-master
 @dirrm %%SITE_PERL%%/Video/DVDRip/CPAN
 @dirrm %%SITE_PERL%%/Video/DVDRip
 @unexec rmdir %D/%%SITE_PERL%%/Video 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/LocaleData/cs/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/LocaleData/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/LocaleData/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/LocaleData/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/LocaleData/it/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/LocaleData/sr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/LocaleData/cs 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/LocaleData/de 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/LocaleData/es 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/LocaleData/fr 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/LocaleData/it 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/LocaleData/sr 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/LocaleData 2>/dev/null || true

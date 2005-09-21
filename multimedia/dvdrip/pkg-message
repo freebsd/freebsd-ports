@@ -3,7 +3,7 @@
 In order to have automated ripping work right, enable usermount (sysctl 
 vfs.usermount=1), add a mountpoint for your dvd-drive to your home directory
 (mkdir /home/foo/cdrom) and add a corresponding entry to /etc/fstab
-(/dev/cd0c       /usr/home/foo/cdrom    cd9660  ro,noauto       0       0) and
+(/dev/cd0       /usr/home/foo/cdrom    cd9660  ro,noauto       0       0) and
 specify this mountpoint in dvd::rip's preferences.
 
 ################################################################################
