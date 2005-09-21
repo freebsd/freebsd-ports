@@ -19,11 +19,11 @@
 #
 
 PORTNAME=	samhain
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.10
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://cold.darkambient.net/
-DISTFILES=	samhain_signed-${PORTVERSION}.tar.gz
+DISTNAME=	samhain_signed-${PORTVERSION}.tar.gz
 
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	The Samhain Intrusion Detection System
@@ -36,6 +36,8 @@ OPTIONS=	KCHECK "Enable rogue KLD detection" off \
 		LIBWRAP "Enable TCP wrapper support" on \
 		CLIENT "Build as Samhain network client" off \
 		SERVER "Build as Yule network server" off
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
