@@ -2380,6 +2380,7 @@ fontforge	ports/print/fontforge
 foobillard	ports/games/foobillard
 foomatic-db	ports/print/foomatic-db
 foomatic-db-engine	ports/print/foomatic-db-engine
+foomatic-db-hpijs	ports/print/foomatic-db-hpijs
 foomatic-filters	ports/print/foomatic-filters
 fooseti		ports/astro/fooseti
 fop		ports/textproc/fop
