@@ -5,28 +5,11 @@ bin/wesnoth
 %%EDITOR:%%bin/wesnoth_editor
 %%SERVER:%%bin/wesnothd
 bin/wmlxgettext
-share/locale/af/LC_MESSAGES/wesnoth-editor.mo
-share/locale/af/LC_MESSAGES/wesnoth-ei.mo
-share/locale/af/LC_MESSAGES/wesnoth-httt.mo
-share/locale/af/LC_MESSAGES/wesnoth-lib.mo
-share/locale/af/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/af/LC_MESSAGES/wesnoth-tdh.mo
-share/locale/af/LC_MESSAGES/wesnoth-trow.mo
-share/locale/af/LC_MESSAGES/wesnoth.mo
-share/locale/bg/LC_MESSAGES/wesnoth-editor.mo
-share/locale/bg/LC_MESSAGES/wesnoth-ei.mo
-share/locale/bg/LC_MESSAGES/wesnoth-httt.mo
-share/locale/bg/LC_MESSAGES/wesnoth-lib.mo
-share/locale/bg/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/bg/LC_MESSAGES/wesnoth-tdh.mo
-share/locale/bg/LC_MESSAGES/wesnoth-trow.mo
-share/locale/bg/LC_MESSAGES/wesnoth.mo
 share/locale/ca/LC_MESSAGES/wesnoth-editor.mo
 share/locale/ca/LC_MESSAGES/wesnoth-ei.mo
 share/locale/ca/LC_MESSAGES/wesnoth-httt.mo
 share/locale/ca/LC_MESSAGES/wesnoth-lib.mo
 share/locale/ca/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/ca/LC_MESSAGES/wesnoth-tdh.mo
 share/locale/ca/LC_MESSAGES/wesnoth-trow.mo
 share/locale/ca/LC_MESSAGES/wesnoth.mo
 share/locale/cs/LC_MESSAGES/wesnoth-editor.mo
@@ -34,95 +17,44 @@ share/locale/cs/LC_MESSAGES/wesnoth-ei.mo
 share/locale/cs/LC_MESSAGES/wesnoth-httt.mo
 share/locale/cs/LC_MESSAGES/wesnoth-lib.mo
 share/locale/cs/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/cs/LC_MESSAGES/wesnoth-tdh.mo
 share/locale/cs/LC_MESSAGES/wesnoth-trow.mo
 share/locale/cs/LC_MESSAGES/wesnoth.mo
-share/locale/da/LC_MESSAGES/wesnoth-editor.mo
-share/locale/da/LC_MESSAGES/wesnoth-ei.mo
-share/locale/da/LC_MESSAGES/wesnoth-httt.mo
-share/locale/da/LC_MESSAGES/wesnoth-lib.mo
-share/locale/da/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/da/LC_MESSAGES/wesnoth-tdh.mo
-share/locale/da/LC_MESSAGES/wesnoth-trow.mo
-share/locale/da/LC_MESSAGES/wesnoth.mo
 share/locale/de/LC_MESSAGES/wesnoth-editor.mo
 share/locale/de/LC_MESSAGES/wesnoth-ei.mo
 share/locale/de/LC_MESSAGES/wesnoth-httt.mo
 share/locale/de/LC_MESSAGES/wesnoth-lib.mo
 share/locale/de/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/de/LC_MESSAGES/wesnoth-tdh.mo
 share/locale/de/LC_MESSAGES/wesnoth-trow.mo
 share/locale/de/LC_MESSAGES/wesnoth.mo
-share/locale/el_GR/LC_MESSAGES/wesnoth-editor.mo
-share/locale/el_GR/LC_MESSAGES/wesnoth-ei.mo
-share/locale/el_GR/LC_MESSAGES/wesnoth-httt.mo
-share/locale/el_GR/LC_MESSAGES/wesnoth-lib.mo
-share/locale/el_GR/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/el_GR/LC_MESSAGES/wesnoth-tdh.mo
-share/locale/el_GR/LC_MESSAGES/wesnoth-trow.mo
-share/locale/el_GR/LC_MESSAGES/wesnoth.mo
 share/locale/en_GB/LC_MESSAGES/wesnoth-editor.mo
 share/locale/en_GB/LC_MESSAGES/wesnoth-ei.mo
 share/locale/en_GB/LC_MESSAGES/wesnoth-httt.mo
 share/locale/en_GB/LC_MESSAGES/wesnoth-lib.mo
 share/locale/en_GB/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/en_GB/LC_MESSAGES/wesnoth-tdh.mo
 share/locale/en_GB/LC_MESSAGES/wesnoth-trow.mo
 share/locale/en_GB/LC_MESSAGES/wesnoth.mo
 share/locale/es/LC_MESSAGES/wesnoth-editor.mo
-share/locale/es/LC_MESSAGES/wesnoth-ei.mo
 share/locale/es/LC_MESSAGES/wesnoth-httt.mo
 share/locale/es/LC_MESSAGES/wesnoth-lib.mo
 share/locale/es/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/es/LC_MESSAGES/wesnoth-tdh.mo
-share/locale/es/LC_MESSAGES/wesnoth-trow.mo
 share/locale/es/LC_MESSAGES/wesnoth.mo
-share/locale/et/LC_MESSAGES/wesnoth-editor.mo
-share/locale/et/LC_MESSAGES/wesnoth-ei.mo
-share/locale/et/LC_MESSAGES/wesnoth-httt.mo
-share/locale/et/LC_MESSAGES/wesnoth-lib.mo
-share/locale/et/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/et/LC_MESSAGES/wesnoth-tdh.mo
-share/locale/et/LC_MESSAGES/wesnoth-trow.mo
-share/locale/et/LC_MESSAGES/wesnoth.mo
-share/locale/eu/LC_MESSAGES/wesnoth-editor.mo
-share/locale/eu/LC_MESSAGES/wesnoth-ei.mo
-share/locale/eu/LC_MESSAGES/wesnoth-httt.mo
-share/locale/eu/LC_MESSAGES/wesnoth-lib.mo
-share/locale/eu/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/eu/LC_MESSAGES/wesnoth-tdh.mo
-share/locale/eu/LC_MESSAGES/wesnoth-trow.mo
-share/locale/eu/LC_MESSAGES/wesnoth.mo
 share/locale/fi/LC_MESSAGES/wesnoth-editor.mo
 share/locale/fi/LC_MESSAGES/wesnoth-ei.mo
 share/locale/fi/LC_MESSAGES/wesnoth-httt.mo
 share/locale/fi/LC_MESSAGES/wesnoth-lib.mo
-share/locale/fi/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/fi/LC_MESSAGES/wesnoth-tdh.mo
-share/locale/fi/LC_MESSAGES/wesnoth-trow.mo
 share/locale/fi/LC_MESSAGES/wesnoth.mo
 share/locale/fr/LC_MESSAGES/wesnoth-editor.mo
 share/locale/fr/LC_MESSAGES/wesnoth-ei.mo
 share/locale/fr/LC_MESSAGES/wesnoth-httt.mo
 share/locale/fr/LC_MESSAGES/wesnoth-lib.mo
 share/locale/fr/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/fr/LC_MESSAGES/wesnoth-tdh.mo
 share/locale/fr/LC_MESSAGES/wesnoth-trow.mo
 share/locale/fr/LC_MESSAGES/wesnoth.mo
-share/locale/he/LC_MESSAGES/wesnoth-editor.mo
-share/locale/he/LC_MESSAGES/wesnoth-ei.mo
-share/locale/he/LC_MESSAGES/wesnoth-httt.mo
-share/locale/he/LC_MESSAGES/wesnoth-lib.mo
-share/locale/he/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/he/LC_MESSAGES/wesnoth-tdh.mo
-share/locale/he/LC_MESSAGES/wesnoth-trow.mo
-share/locale/he/LC_MESSAGES/wesnoth.mo
 share/locale/hu/LC_MESSAGES/wesnoth-editor.mo
 share/locale/hu/LC_MESSAGES/wesnoth-ei.mo
 share/locale/hu/LC_MESSAGES/wesnoth-httt.mo
 share/locale/hu/LC_MESSAGES/wesnoth-lib.mo
 share/locale/hu/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/hu/LC_MESSAGES/wesnoth-tdh.mo
 share/locale/hu/LC_MESSAGES/wesnoth-trow.mo
 share/locale/hu/LC_MESSAGES/wesnoth.mo
 share/locale/it/LC_MESSAGES/wesnoth-editor.mo
@@ -130,95 +62,42 @@ share/locale/it/LC_MESSAGES/wesnoth-ei.mo
 share/locale/it/LC_MESSAGES/wesnoth-httt.mo
 share/locale/it/LC_MESSAGES/wesnoth-lib.mo
 share/locale/it/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/it/LC_MESSAGES/wesnoth-tdh.mo
 share/locale/it/LC_MESSAGES/wesnoth-trow.mo
 share/locale/it/LC_MESSAGES/wesnoth.mo
 share/locale/ja/LC_MESSAGES/wesnoth-editor.mo
-share/locale/ja/LC_MESSAGES/wesnoth-ei.mo
 share/locale/ja/LC_MESSAGES/wesnoth-httt.mo
 share/locale/ja/LC_MESSAGES/wesnoth-lib.mo
 share/locale/ja/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/ja/LC_MESSAGES/wesnoth-tdh.mo
-share/locale/ja/LC_MESSAGES/wesnoth-trow.mo
 share/locale/ja/LC_MESSAGES/wesnoth.mo
 share/locale/la/LC_MESSAGES/wesnoth-editor.mo
-share/locale/la/LC_MESSAGES/wesnoth-ei.mo
 share/locale/la/LC_MESSAGES/wesnoth-httt.mo
 share/locale/la/LC_MESSAGES/wesnoth-lib.mo
 share/locale/la/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/la/LC_MESSAGES/wesnoth-tdh.mo
-share/locale/la/LC_MESSAGES/wesnoth-trow.mo
 share/locale/la/LC_MESSAGES/wesnoth.mo
 share/locale/nl/LC_MESSAGES/wesnoth-editor.mo
 share/locale/nl/LC_MESSAGES/wesnoth-ei.mo
 share/locale/nl/LC_MESSAGES/wesnoth-httt.mo
 share/locale/nl/LC_MESSAGES/wesnoth-lib.mo
 share/locale/nl/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/nl/LC_MESSAGES/wesnoth-tdh.mo
 share/locale/nl/LC_MESSAGES/wesnoth-trow.mo
 share/locale/nl/LC_MESSAGES/wesnoth.mo
-share/locale/no/LC_MESSAGES/wesnoth-editor.mo
-share/locale/no/LC_MESSAGES/wesnoth-ei.mo
-share/locale/no/LC_MESSAGES/wesnoth-httt.mo
-share/locale/no/LC_MESSAGES/wesnoth-lib.mo
-share/locale/no/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/no/LC_MESSAGES/wesnoth-tdh.mo
-share/locale/no/LC_MESSAGES/wesnoth-trow.mo
-share/locale/no/LC_MESSAGES/wesnoth.mo
-share/locale/pl/LC_MESSAGES/wesnoth-editor.mo
-share/locale/pl/LC_MESSAGES/wesnoth-ei.mo
-share/locale/pl/LC_MESSAGES/wesnoth-httt.mo
-share/locale/pl/LC_MESSAGES/wesnoth-lib.mo
-share/locale/pl/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/pl/LC_MESSAGES/wesnoth-tdh.mo
-share/locale/pl/LC_MESSAGES/wesnoth-trow.mo
-share/locale/pl/LC_MESSAGES/wesnoth.mo
-share/locale/pt_BR/LC_MESSAGES/wesnoth-editor.mo
-share/locale/pt_BR/LC_MESSAGES/wesnoth-ei.mo
-share/locale/pt_BR/LC_MESSAGES/wesnoth-httt.mo
-share/locale/pt_BR/LC_MESSAGES/wesnoth-lib.mo
-share/locale/pt_BR/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/pt_BR/LC_MESSAGES/wesnoth-tdh.mo
-share/locale/pt_BR/LC_MESSAGES/wesnoth-trow.mo
-share/locale/pt_BR/LC_MESSAGES/wesnoth.mo
 share/locale/ru/LC_MESSAGES/wesnoth-editor.mo
 share/locale/ru/LC_MESSAGES/wesnoth-ei.mo
 share/locale/ru/LC_MESSAGES/wesnoth-httt.mo
 share/locale/ru/LC_MESSAGES/wesnoth-lib.mo
 share/locale/ru/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/ru/LC_MESSAGES/wesnoth-tdh.mo
 share/locale/ru/LC_MESSAGES/wesnoth-trow.mo
 share/locale/ru/LC_MESSAGES/wesnoth.mo
 share/locale/sk/LC_MESSAGES/wesnoth-editor.mo
-share/locale/sk/LC_MESSAGES/wesnoth-ei.mo
 share/locale/sk/LC_MESSAGES/wesnoth-httt.mo
 share/locale/sk/LC_MESSAGES/wesnoth-lib.mo
 share/locale/sk/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/sk/LC_MESSAGES/wesnoth-tdh.mo
-share/locale/sk/LC_MESSAGES/wesnoth-trow.mo
 share/locale/sk/LC_MESSAGES/wesnoth.mo
-share/locale/sl/LC_MESSAGES/wesnoth-editor.mo
-share/locale/sl/LC_MESSAGES/wesnoth-ei.mo
-share/locale/sl/LC_MESSAGES/wesnoth-httt.mo
-share/locale/sl/LC_MESSAGES/wesnoth-lib.mo
-share/locale/sl/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/sl/LC_MESSAGES/wesnoth-tdh.mo
-share/locale/sl/LC_MESSAGES/wesnoth-trow.mo
-share/locale/sl/LC_MESSAGES/wesnoth.mo
-share/locale/sr/LC_MESSAGES/wesnoth-editor.mo
-share/locale/sr/LC_MESSAGES/wesnoth-ei.mo
-share/locale/sr/LC_MESSAGES/wesnoth-httt.mo
-share/locale/sr/LC_MESSAGES/wesnoth-lib.mo
-share/locale/sr/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/sr/LC_MESSAGES/wesnoth-tdh.mo
-share/locale/sr/LC_MESSAGES/wesnoth-trow.mo
-share/locale/sr/LC_MESSAGES/wesnoth.mo
 share/locale/sv/LC_MESSAGES/wesnoth-editor.mo
 share/locale/sv/LC_MESSAGES/wesnoth-ei.mo
 share/locale/sv/LC_MESSAGES/wesnoth-httt.mo
 share/locale/sv/LC_MESSAGES/wesnoth-lib.mo
 share/locale/sv/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/sv/LC_MESSAGES/wesnoth-tdh.mo
 share/locale/sv/LC_MESSAGES/wesnoth-trow.mo
 share/locale/sv/LC_MESSAGES/wesnoth.mo
 share/locale/tr/LC_MESSAGES/wesnoth-editor.mo
@@ -226,23 +105,13 @@ share/locale/tr/LC_MESSAGES/wesnoth-ei.mo
 share/locale/tr/LC_MESSAGES/wesnoth-httt.mo
 share/locale/tr/LC_MESSAGES/wesnoth-lib.mo
 share/locale/tr/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/tr/LC_MESSAGES/wesnoth-tdh.mo
 share/locale/tr/LC_MESSAGES/wesnoth-trow.mo
 share/locale/tr/LC_MESSAGES/wesnoth.mo
-share/locale/zh_CN/LC_MESSAGES/wesnoth-editor.mo
-share/locale/zh_CN/LC_MESSAGES/wesnoth-ei.mo
-share/locale/zh_CN/LC_MESSAGES/wesnoth-httt.mo
-share/locale/zh_CN/LC_MESSAGES/wesnoth-lib.mo
-share/locale/zh_CN/LC_MESSAGES/wesnoth-sotbe.mo
-share/locale/zh_CN/LC_MESSAGES/wesnoth-tdh.mo
-share/locale/zh_CN/LC_MESSAGES/wesnoth-trow.mo
-share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/COPYING.txt
 %%DATADIR%%/data/amla.cfg
 %%DATADIR%%/data/campaigns/Eastern_Invasion.cfg
 %%DATADIR%%/data/campaigns/Heir_To_The_Throne.cfg
 %%DATADIR%%/data/campaigns/Son_Of_The_Black_Eye.cfg
-%%DATADIR%%/data/campaigns/The_Dark_Hordes.cfg
 %%DATADIR%%/data/campaigns/The_Rise_of_Wesnoth.cfg
 %%DATADIR%%/data/convert.pl
 %%DATADIR%%/data/fonts.cfg
@@ -309,14 +178,6 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/maps/Son_Of_The_Black_Eye/The_Siege_Of_Barag_Gor
 %%DATADIR%%/data/maps/Son_Of_The_Black_Eye/To_The_Harbour_Of_Tirigaz
 %%DATADIR%%/data/maps/Son_Of_The_Black_Eye/Towards_Mountains_of_Haag
-%%DATADIR%%/data/maps/The_Dark_Hordes/A_New_Chance
-%%DATADIR%%/data/maps/The_Dark_Hordes/Brother_Against_Brother
-%%DATADIR%%/data/maps/The_Dark_Hordes/Confrontation
-%%DATADIR%%/data/maps/The_Dark_Hordes/Crelanus_Book
-%%DATADIR%%/data/maps/The_Dark_Hordes/Inside_The_Tower
-%%DATADIR%%/data/maps/The_Dark_Hordes/Mages_And_Elves
-%%DATADIR%%/data/maps/The_Dark_Hordes/The_Skull_of_Agarash
-%%DATADIR%%/data/maps/The_Dark_Hordes/Underground_Pool
 %%DATADIR%%/data/maps/The_Rise_of_Wesnoth/A_Beach
 %%DATADIR%%/data/maps/The_Rise_of_Wesnoth/A_Final_Spring
 %%DATADIR%%/data/maps/The_Rise_of_Wesnoth/A_Harrowing_Escape
@@ -440,15 +301,6 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/scenarios/Son_Of_The_Black_Eye/utils/deaths.cfg
 %%DATADIR%%/data/scenarios/Son_Of_The_Black_Eye/utils/story.cfg
 %%DATADIR%%/data/scenarios/Son_Of_The_Black_Eye/utils/utils.cfg
-%%DATADIR%%/data/scenarios/The_Dark_Hordes/A_New_Chance.cfg
-%%DATADIR%%/data/scenarios/The_Dark_Hordes/Brother_Against_Brother.cfg
-%%DATADIR%%/data/scenarios/The_Dark_Hordes/Confrontation.cfg
-%%DATADIR%%/data/scenarios/The_Dark_Hordes/Crelanus_Book.cfg
-%%DATADIR%%/data/scenarios/The_Dark_Hordes/Inside_The_Tower.cfg
-%%DATADIR%%/data/scenarios/The_Dark_Hordes/Mages_And_Elves.cfg
-%%DATADIR%%/data/scenarios/The_Dark_Hordes/The_Skull_of_Agarash.cfg
-%%DATADIR%%/data/scenarios/The_Dark_Hordes/Underground_Pool.cfg
-%%DATADIR%%/data/scenarios/The_Dark_Hordes/utils/intro.cfg
 %%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth/A_Beach.cfg
 %%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth/A_Final_Spring.cfg
 %%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth/A_Harrowing_Escape.cfg
@@ -782,7 +634,6 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/units/Youth.cfg
 %%DATADIR%%/data/utils.cfg
 %%DATADIR%%/fonts/DejaVuSans.ttf
-%%DATADIR%%/fonts/FreeSans.ttf
 %%DATADIR%%/images/arch-mage+female-defend.png
 %%DATADIR%%/images/arch-mage+female-die-1.png
 %%DATADIR%%/images/arch-mage+female-die-2.png
@@ -1777,6 +1628,7 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/icons/icon-server.png
 %%DATADIR%%/images/icons/icon-serverother.png
 %%DATADIR%%/images/items/altar.png
+%%DATADIR%%/images/items/ankh-necklace.png
 %%DATADIR%%/images/items/ball-blue.png
 %%DATADIR%%/images/items/ball-green.png
 %%DATADIR%%/images/items/barrel.png
@@ -2305,11 +2157,6 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/portraits/Heir_To_The_Throne/kalenz.png
 %%DATADIR%%/images/portraits/Heir_To_The_Throne/konrad.png
 %%DATADIR%%/images/portraits/Heir_To_The_Throne/lisar.png
-%%DATADIR%%/images/portraits/The_Dark_Hordes/gwiti-demilich.png
-%%DATADIR%%/images/portraits/The_Dark_Hordes/gwiti.png
-%%DATADIR%%/images/portraits/The_Dark_Hordes/gwiti_lich.png
-%%DATADIR%%/images/portraits/The_Dark_Hordes/nati.png
-%%DATADIR%%/images/portraits/The_Dark_Hordes/tanar.png
 %%DATADIR%%/images/portraits/The_Rise_of_Wesnoth/addroran.png
 %%DATADIR%%/images/portraits/The_Rise_of_Wesnoth/aethyr.png
 %%DATADIR%%/images/portraits/The_Rise_of_Wesnoth/archmage.png
@@ -4004,7 +3851,6 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 @dirrm %%DATADIR%%/images/portraits/core/Alex_Jarocha-Ernst
 @dirrm %%DATADIR%%/images/portraits/core
 @dirrm %%DATADIR%%/images/portraits/The_Rise_of_Wesnoth
-@dirrm %%DATADIR%%/images/portraits/The_Dark_Hordes
 @dirrm %%DATADIR%%/images/portraits/Heir_To_The_Throne
 @dirrm %%DATADIR%%/images/portraits/Eastern_Invasion
 @dirrm %%DATADIR%%/images/portraits
@@ -4042,8 +3888,6 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 @dirrm %%DATADIR%%/data/scenarios/multiplayer
 @dirrm %%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth/utils
 @dirrm %%DATADIR%%/data/scenarios/The_Rise_of_Wesnoth
-@dirrm %%DATADIR%%/data/scenarios/The_Dark_Hordes/utils
-@dirrm %%DATADIR%%/data/scenarios/The_Dark_Hordes
 @dirrm %%DATADIR%%/data/scenarios/Son_Of_The_Black_Eye/utils
 @dirrm %%DATADIR%%/data/scenarios/Son_Of_The_Black_Eye
 @dirrm %%DATADIR%%/data/scenarios/Heir_To_The_Throne/utils
@@ -4054,7 +3898,6 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 @dirrm %%DATADIR%%/data/maps/multiplayer
 @dirrm %%DATADIR%%/data/maps/Tutorial
 @dirrm %%DATADIR%%/data/maps/The_Rise_of_Wesnoth
-@dirrm %%DATADIR%%/data/maps/The_Dark_Hordes
 @dirrm %%DATADIR%%/data/maps/Son_Of_The_Black_Eye
 @dirrm %%DATADIR%%/data/maps/Heir_To_The_Throne
 @dirrm %%DATADIR%%/data/maps/Eastern_Invasion
@@ -4064,8 +3907,6 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 @dirrm %%DATADIR%%
 @unexec rmdir %D/share/locale/la/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/la 2> /dev/null || true
-@unexec rmdir %D/share/locale/el_GR/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/el_GR 2> /dev/null || true
 @unexec rmdir %D/man/sv/man6 2> /dev/null || true
 @unexec rmdir %D/man/sv 2> /dev/null || true
 @unexec rmdir %D/man/hu/man6 2> /dev/null || true
