@@ -3,6 +3,6 @@ both Unix and Win32 platforms.  This module lets you start, kill, wait
 on, retrieve exit values, and see if background processes still exist.
 
 Author: Blair Zajac <blair@akamai.com>
-WWW: http://search.cpan.org/search?dist=Proc-Background
+WWW: http://search.cpan.org/dist/Proc-Background/
 
 --will

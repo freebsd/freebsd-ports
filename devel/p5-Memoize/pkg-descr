@@ -5,7 +5,7 @@ and gives you the value out of the table, instead of letting the
 function compute the value all over again.
 
 Author: Mark-Jason Dominus <mjd-perl-memoize+@plover.com>
-WWW: http://search.cpan.org/search?dist=Memoize
+WWW: http://search.cpan.org/dist/Memoize/
 
 -Anton
 <tobez@FreeBSD.org>

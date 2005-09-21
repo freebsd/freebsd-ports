@@ -16,6 +16,6 @@ From README:
     entries that are frequently read from, code like $cache{entry}, which
     moves the entry to the end of the linked list internally.
 
-WWW: http://search.cpan.org/dist/Tie-Cache
+WWW: http://search.cpan.org/dist/Tie-Cache/
 
 -- Alex Kapranoff <kapr@crosswinds.net>

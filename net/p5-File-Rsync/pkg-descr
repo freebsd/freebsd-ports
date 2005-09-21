@@ -4,7 +4,7 @@ as well as detecting errors.
 
 For more details, type 'perldoc File::Rsync' or see the CPAN homepage:
 
-WWW: http://search.cpan.org/search?dist=File-Rsync
+WWW: http://search.cpan.org/dist/File-Rsync/
 
 - Pete 
 petef@databits.net

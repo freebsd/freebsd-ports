@@ -5,4 +5,4 @@ almost any kind of file, supporting SQL manipulation
 of the file without converting the file out of its native
 format.
 
-WWW: http://search.cpan.org/dist/DBD-RAM
+WWW: http://search.cpan.org/dist/DBD-RAM/

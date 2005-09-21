@@ -7,7 +7,7 @@ via switches such as -M, Devel::Modlist is intended to assist script
 authors in preparing dependancy information for potential users of
 their scripts.
 
-WWW: http://search.cpan.org/search?dist=Devel-Modlist
+WWW: http://search.cpan.org/dist/Devel-Modlist/
 
 -Anton
 <tobez@FreeBSD.org>

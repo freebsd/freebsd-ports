@@ -18,7 +18,7 @@ same field. And  even a bit more (like lists  and ranges with symbolic
 names).
 
 Author: Roland Huss <roland@console.de>
-WWW: http://search.cpan.org/search?dist=Schedule-Cron
+WWW: http://search.cpan.org/dist/Schedule-Cron/
 
 -Anton
 <tobez@FreeBSD.org>

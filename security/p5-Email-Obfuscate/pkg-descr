@@ -6,7 +6,7 @@ transformations that this module employs. One of these transformations is
 randomly selected and used as a basis for obfuscation when 
 obfuscate_email_address() is called.
 
-WWW: http://search.cpan.org/dist/Email-Obfuscate
+WWW: http://search.cpan.org/dist/Email-Obfuscate/
 Author: Adam J. Foxson <afoxson@pobox.com>
 
 - Aaron Dalton

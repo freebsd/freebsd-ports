@@ -8,7 +8,7 @@
     already familiar with "CGI::Session" go to the methods section for the
     list of all the methods available.
 
-WWW: http://search.cpan.org/search?dist=CGI-Session
+WWW: http://search.cpan.org/dist/CGI-Session/
 
 - Erwin Lansing
 erwin@FreeBSD.org

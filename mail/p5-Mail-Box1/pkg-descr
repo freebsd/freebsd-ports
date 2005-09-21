@@ -3,6 +3,6 @@ moment of this writing).  It is written to replace Mail::Folder,
 although it interface is different.
 
 Author: Mark Overmeer <mark@overmeer.net>
-WWW: http://search.cpan.org/search?dist=Mail-Box
+WWW: http://search.cpan.org/dist/Mail-Box/
 
 --will

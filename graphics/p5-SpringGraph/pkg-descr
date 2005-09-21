@@ -10,7 +10,7 @@ original springgraph.pl code. It is likely to be rewritten from basic
 principles in the near future to remove some of the quirks inherent in
 the Autodia and springgraph.pl code used.
 
-WWW: http://search.cpan.org/search?dist=SpringGraph
+WWW: http://search.cpan.org/dist/SpringGraph/
 
 Fernan
 <fernan@iib.unsam.edu.ar>

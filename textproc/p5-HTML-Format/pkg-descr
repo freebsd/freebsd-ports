@@ -14,7 +14,7 @@ The modules present in this package are:
   HTML::FormatPS - Formatter that outputs PostScript code.
 
 
-WWW: http://search.cpan.org/search?dist=HTML-Format
+WWW: http://search.cpan.org/dist/HTML-Format/
 
 - Pete
 petef@databits.net

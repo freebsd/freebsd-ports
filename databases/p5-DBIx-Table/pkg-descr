@@ -6,6 +6,6 @@ is flexible enough, though, that it can be used to abstract most
 any schema in a way that is comfortable to the perl coder who is
 not familiar with the underlying schema, or even SQL.
 
-WWW: http://search.cpan.org/search?dist=DBIx-Table
+WWW: http://search.cpan.org/dist/DBIx-Table/
 
 Seamus Venasse <svenasse@polaris.ca>

@@ -2,6 +2,6 @@ This module takes as input an address or post box in free format
 text and attempts to parse it. If successful, the address is broken
 down into components and useful functions can be performed.
 
-WWW: http://search.cpan.org/search?dist=Lingua-EN-AddressParse
+WWW: http://search.cpan.org/dist/Lingua-EN-AddressParse/
 
 Seamus Venasse <svenasse@polaris.ca>

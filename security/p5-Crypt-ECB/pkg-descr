@@ -11,6 +11,6 @@ Crypt::CBC meaning you can access Crypt::ECB exactly like Crypt::CBC,
 though Crypt::ECB is more flexible.  For example you can change the key
 or the cipher without having to create a new crypt object.
 
-WWW:  http://search.cpan.org/search?dist=Crypt-ECB
+WWW:  http://search.cpan.org/dist/Crypt-ECB/
 
 --will

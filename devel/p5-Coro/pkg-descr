@@ -7,4 +7,4 @@ callchain, it's own set of lexicals and it's own set of perl's most
 important global variables.
 
 Author: Marc Lehmann <pcg@goof.com>
-WWW: http://search.cpan.org/search?dist=Coro
+WWW: http://search.cpan.org/dist/Coro/

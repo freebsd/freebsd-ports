@@ -4,7 +4,7 @@ form of functions.  Modules such as XSLT and XPointer may need to do
 this as they support functionality beyond XPath.
 
 WWW: http://www.w3.org/TR/xpath/
-WWW: http://search.cpan.org/search?dist=XML-XPath
+WWW: http://search.cpan.org/dist/XML-XPath/
 
 -- Sergey Skvortsov
 skv@FreeBSD.org

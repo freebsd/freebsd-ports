@@ -9,6 +9,6 @@ of arbitrary length and which can read files directly.
 
 Further documentation is embedded in the individual modules.
 
-WWW: http://search.cpan.org/search?dist=Digest-MD5
+WWW: http://search.cpan.org/dist/Digest-MD5/
 - Pete
 petef@databits.net

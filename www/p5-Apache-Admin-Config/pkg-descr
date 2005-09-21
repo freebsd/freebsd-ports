@@ -3,7 +3,7 @@ like configuration files without modifying comments, identation, or
 truncated lines.
 
 Author: Olivier Poitrey <rs@rhapsodyk.net>
-WWW: http://search.cpan.org/search?dist=Apache-Admin-Config
+WWW: http://search.cpan.org/dist/Apache-Admin-Config/
 
 -Anton
 <tobez@FreeBSD.org>

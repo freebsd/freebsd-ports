@@ -5,6 +5,6 @@ to handle any complex formats. Support for multiple variants of
 English are supported. Currently only "American" formatting is
 supported.
 
-WWW: http://search.cpan.org/search?dist=Lingua-EN-Numbers
+WWW: http://search.cpan.org/dist/Lingua-EN-Numbers/
 
 Seamus Venasse <svenasse@polaris.ca>

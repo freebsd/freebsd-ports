@@ -3,7 +3,7 @@ Allows Perl scripts to encrypt, decrypt and sign messages using PGP
 for the encyption.  Tested with PGP 2.6.2 and PGP 6.5.8 on UNIX and
 Windows.
 
-WWW: http://search.cpan.org/search?dist=Crypt-PGPSimple
+WWW: http://search.cpan.org/dist/Crypt-PGPSimple/
 
 - Matjaz Prelog
   <rachek@si.freebsd.org>

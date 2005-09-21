@@ -5,6 +5,6 @@
     This module is Filter aware, meaning that it can work within
     Apache::Filter framework without modification.
 
-WWW: http://search.cpan.org/search?dist=Apache-AntiSpam
+WWW: http://search.cpan.org/dist/Apache-AntiSpam/
 
 - Erwin Lansing <erwin@FreeBSD.org>

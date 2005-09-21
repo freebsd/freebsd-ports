@@ -3,4 +3,4 @@ with implementations that return objects. It does so in a backwards
 compatible manner, so that using localtime/gmtime in the way documented
 in perlfunc will still return what you expect.
 
-WWW: http://search.cpan.org/search?dist=Time-Object
+WWW: http://search.cpan.org/dist/Time-Object/

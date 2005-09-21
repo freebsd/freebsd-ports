@@ -3,7 +3,7 @@ Net::DNS::RR objects containing each of the RRs given in the zone in the
 case that the whole zone file was succesfully parsed.
 
 Author: Luis Mun~oz <lem@cantv.net>
-WWW: http://search.cpan.org/search?dist=Net-DNS-ZoneFile
+WWW: http://search.cpan.org/dist/Net-DNS-ZoneFile/
 
 -Anton
 <tobez@FreeBSD.org>

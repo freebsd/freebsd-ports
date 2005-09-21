@@ -2,7 +2,7 @@ The Mersenne Twister is a pseudorandom number generator developed by
 Makoto Matsumoto and Takuji Nishimura.
 
 WWW: http://www.math.keio.ac.jp/~matumoto/emt.html
-WWW: http://search.cpan.org/search?dist=Math-Random-MT
+WWW: http://search.cpan.org/dist/Math-Random-MT/
 
 -- Sergey Skvortsov
 skv@FreeBSD.org

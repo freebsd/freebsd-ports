@@ -6,7 +6,7 @@ If $debug is set, on-the fly diagnostics will be reported about how much
 data is being read.
 
 Author: Brian Reichert <reichert@numachi.com>
-WWW: http://search.cpan.org/search?dist=System2
+WWW: http://search.cpan.org/dist/System2/
 
 -Anton
 <tobez@FreeBSD.org>

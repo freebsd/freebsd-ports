@@ -2,6 +2,6 @@ Business::ISSN provides subroutines to work with International Standard
 Serial Numbers. ISSNs are used with magazines and other publications like 
 ISBNs are used with books.
 
-WWW: http://search.cpan.org/search?dist=Business-ISSN
+WWW: http://search.cpan.org/dist/Business-ISSN/
 
 Seamus Venasse <svenasse@polaris.ca>
