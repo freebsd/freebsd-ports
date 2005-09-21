@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pixie
-PORTVERSION=	1.4.5
+PORTVERSION=	1.4.6
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -47,8 +47,8 @@ NOT_FOR_ARCHS=	alpha
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -i "" -e 's|malloc\.h|stdlib\.h|g' \
-		`${FIND} -E ${WRKSRC} -iregex '.*\.(cpp|h)'`
+	@${FIND} -X ${WRKSRC} -name '*.cpp' -or -name '*.h' | \
+		${XARGS} ${REINPLACE_CMD} -i '' -e 's|malloc\.h|stdlib\.h|g'
 
 pre-configure:
 	@(cd ${WRKSRC} && ${ACLOCAL} && \
@@ -78,12 +78,8 @@ do-install:
 .endfor
 
 .for i in ${PIXIE_SHLIBS}
-	${INSTALL_DATA} ${WRKSRC}/src/${i}/.libs/${i}.a \
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${i}/.libs/${i}.so \
 		${PREFIX}/lib/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${i}/.libs/${i}.so.0 \
-		${PREFIX}/lib/${PORTNAME}
-	${LN} -sf ${PREFIX}/lib/${PORTNAME}/${i}.so.0 \
-		${PREFIX}/lib/${PORTNAME}/${i}.so
 .endfor
 
 # includes
