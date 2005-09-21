@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	firefox
-PORTVERSION=	1.0.6
-PORTREVISION=	5
+PORTVERSION=	1.0.7
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -79,19 +78,19 @@ OPTIONS=	DEBUG "Build a debugging image" off \
 		OPTIMIZED_CFLAGS "Enable some additional optimizations" off \
 		XFT "Enable support for anti-aliased fonts" on \
 		SMB "Enable smb:// URI support using gnomevfs" off \
-		NEWTAB "Open external links in a new tab" on \
-		CJK "Enable CJK font family support" off
+		NEWTAB "Open external links in a new tab" on
+#		CJK "Enable CJK font family support" off
 
 .include <bsd.port.pre.mk>
 
 # Enable CJK Font Familyname support
-.if defined(WITH_CJK)
-PATCH_SITES+=	http://bbs.ilc.edu.tw/~chinsan/ \
-		http://bsdchat.com/dist/firefly-cjk-patchset/ \
-		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
-PATCHFILES+=	mozilla-1.7.10-cjkfamilyname-20050731.patch.gz
-PATCH_DIST_STRIP+=	-p1
-.endif
+#.if defined(WITH_CJK)
+#PATCH_SITES+=	http://bbs.ilc.edu.tw/~chinsan/ \
+#		http://bsdchat.com/dist/firefly-cjk-patchset/ \
+#		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
+#PATCHFILES+=	mozilla-1.7.10-cjkfamilyname-20050731.patch.gz
+#PATCH_DIST_STRIP+=	-p1
+#.endif
 
 .if defined(WITH_DEBUG)
 WITH_LOGGING=		yes

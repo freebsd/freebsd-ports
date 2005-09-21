@@ -123,7 +123,7 @@
  
  # Use run-mozilla.sh in the current dir if it exists
  # If not, then start resolving symlinks until we find run-mozilla.sh
-@@ -82,149 +114,221 @@
+@@ -82,151 +114,221 @@
  curdir=`dirname "$progname"`
  progbase=`basename "$progname"`
  run_moz="$curdir/run-mozilla.sh"
@@ -183,7 +183,6 @@
 -fi
 -
 -script_args=""
--moreargs=""
 -debugging=0
 -MOZILLA_BIN="${progbase}-bin"
 -
@@ -385,7 +384,8 @@
 -# Default action - no running instance or _USE_EXIST (${_USE_EXIST}) ! -eq 1
 -########################################################################### Main
  
--while [ $# -gt 0 ]
+-pass_arg_count=0
+-while [ $# -gt $pass_arg_count ]
 -do
 -  case "$1" in
 -    -p | --pure | -pure)
@@ -402,8 +402,11 @@
 -      shift 2
 -      ;;
 -    *)
--      moreargs="$moreargs \"$1\""
--      shift 1
+-      # Move the unrecognized argument to the end of the list.
+-      arg="$1"
+-      shift
+-      set -- "$@" "$arg"
+-      pass_arg_count=`expr $pass_arg_count + 1`
 -      ;;
 -  esac
 -done
@@ -449,7 +452,6 @@
 +fi
  
 -export MRE_HOME
--eval "set -- $moreargs"
 +# real invocation
 +eval "set -- ${moreargs}"
  
