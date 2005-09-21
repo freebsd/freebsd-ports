@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scgi
-PORTVERSION=	1.4
+PORTVERSION=	1.7
 CATEGORIES=	www
 MASTER_SITES=	http://www.mems-exchange.org/software/files/scgi/ \
 		http://bsdchat.com/dist/dryice/
