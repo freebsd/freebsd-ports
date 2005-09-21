@@ -18,7 +18,7 @@ PATCH_SITE_SUBDIR=	dinoex
 PATCHFILES=	pidentd-${PORTVERSION}-ipv6-20040227.diff.gz
 PATCH_DIST_STRIP=	-p0
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An RFC1413 identification server
 
 USE_REINPLACE=	yes
@@ -44,4 +44,10 @@ post-patch:
 post-install:
 	${INSTALL_MAN} -m 644 ${WRKSRC}/doc/idecrypt.8 ${MANPREFIX}/man/man8/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+BROKEN=		"patchfiles not updated"
+.endif
+
+.include <bsd.port.post.mk>
