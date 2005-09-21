@@ -13,10 +13,11 @@ MASTER_SITES=		http://jedi.ks.uiuc.edu/~johns/raytracer/files/0.97/ \
 			ftp://ftp.ebi.ac.uk/pub/software/unix/stride/src/
 DISTFILES=		${VMD_DIST} ${TACHYON_DIST} ${STRIDE_DIST}
 
-MAINTAINER=		ssw@neo.redjade.org
+MAINTAINER=		sangwoos@gmail.com
 COMMENT=		A molecular visualization program
 
-BUILD_DEPENDS=		${PYNUMERIC}
+BUILD_DEPENDS=		makedepend:${X_IMAKE_PORT} \
+			${PYNUMERIC}
 LIB_DEPENDS=		tcl84:${PORTSDIR}/lang/tcl84 \
 			tk84:${PORTSDIR}/x11-toolkits/tk84 \
 			fltk:${PORTSDIR}/x11-toolkits/fltk
