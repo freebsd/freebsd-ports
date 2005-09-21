@@ -10074,7 +10074,6 @@ py-kqueue	ports/devel/py-kqueue
 py-ldap2	ports/net/py-ldap2
 py-libmpdclient	ports/audio/py-libmpdclient
 py-libnet	ports/net/py-libnet
-py-libtunepimp	ports/audio/py-libtunepimp
 py-libxml2	ports/textproc/py-libxml2
 py-libxslt	ports/textproc/py-libxslt
 py-lirc		ports/comms/py-lirc
