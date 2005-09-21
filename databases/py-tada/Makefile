@@ -15,7 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	clive@darkarts.co.za
 COMMENT=	Twisted Asynchronous Database API
 
-USE_TWISTED=	yes
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
