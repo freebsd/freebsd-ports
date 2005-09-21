@@ -750,11 +750,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <cvename>CAN-2005-2643</cvename>
       <url>http://archives.seul.org/or/announce/Aug-2005/msg00002.html</url>
     </references>
     <dates>
       <discovery>2005-08-11</discovery>
       <entry>2005-08-17</entry>
+      <modified>2005-09-21</modified>
     </dates>
   </vuln>
 
