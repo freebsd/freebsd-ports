@@ -1,0 +1,14 @@
+bin/connectfive
+%%DATADIR%%/marble1.bmp
+%%DATADIR%%/marble2.bmp
+%%DATADIR%%/marble3.bmp
+%%DATADIR%%/times14.glf
+%%DATADIR%%/times48.glf
+%%DATADIR%%/times72.glf
+%%DATADIR%%/timesLarge.glf
+%%DATADIR%%/wood2.bmp
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

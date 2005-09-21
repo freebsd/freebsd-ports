@@ -87,6 +87,7 @@
     SUBDIR += clanbomber
     SUBDIR += columns
     SUBDIR += connect4
+    SUBDIR += connectfive
     SUBDIR += conquest
     SUBDIR += corewars
     SUBDIR += cosmo

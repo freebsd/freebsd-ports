@@ -1,0 +1,9 @@
+Place five pieces in a row on a 3d board
+
+A 3d version of gomoku. Similar to connect four, but it is played
+in 3D on a 19x19 board and a play is allowed on any location of the
+board.
+
+WWW: http://sourceforge.net/projects/connectfive
+
+- Dmitry Marakasov <amdmi3@mail.ru>
