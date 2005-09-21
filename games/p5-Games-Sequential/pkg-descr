@@ -10,7 +10,7 @@ which case the copy() method will be provided for you. The apply() method
 must take a move and apply it to the current position, producing the next 
 position in the game.
 
-WWW: http://search.cpan.org/dist/Games-Sequential
+WWW: http://search.cpan.org/dist/Games-Sequential/
 Author: Stig Brautaset <stig@brautaset.org>
 
 - Aaron Dalton

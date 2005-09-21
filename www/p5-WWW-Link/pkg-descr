@@ -6,6 +6,6 @@ The link class will be acted on by such programs as link checkers
 to give it information and by other programs to convert that
 information into something which can be used by humans.
 
-WWW: http://search.cpan.org/search?dist=WWW-Link
+WWW: http://search.cpan.org/dist/WWW-Link/
 
 Seamus Venasse <svenasse@polaris.ca>

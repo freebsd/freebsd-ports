@@ -5,4 +5,4 @@ few dozen percentages faster than a simple-minded '|'-concatenation of
 the words.
 
 Author: Jarkko Hietaniemi <jhi@iki.fi>
-WWW: http://search.cpan.org/search?dist=Regex-PreSuf
+WWW: http://search.cpan.org/dist/Regex-PreSuf/

@@ -8,6 +8,6 @@ are assumed to be plain text and have a line ending appropriate to the
 OS. But you can set the input record separator string on a per file
 basis.
 
-WWW: http://search.cpan.org/search?dist=File-ReadBackwards
+WWW: http://search.cpan.org/dist/File-ReadBackwards/
 
 -Anton

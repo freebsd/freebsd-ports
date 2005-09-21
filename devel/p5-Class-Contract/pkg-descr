@@ -5,7 +5,7 @@ attribute, method, constructor, and destructor definitions at both the
 object and class level.  Pre-conditions, post-conditions, and class
 invariants are also fully supported.
 
-WWW: http://search.cpan.org/search?dist=Class-Contract
+WWW: http://search.cpan.org/dist/Class-Contract/
 
 -- Sergey Skvortsov
 skv@FreeBSD.org

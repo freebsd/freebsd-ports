@@ -8,7 +8,7 @@ one registered is invoked first).  Registering the same subroutine more
 than once will cause that subroutine to be invoked once for each
 registration.
 
-WWW: http://search.cpan.org/search?dist=AtExit
+WWW: http://search.cpan.org/dist/AtExit/
 
 -- Sergey Skvortsov
 skv@FreeBSD.org

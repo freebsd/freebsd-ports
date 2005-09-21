@@ -13,7 +13,7 @@ Day-of-week calculation:
 
 It does NOT deal with hours, minutes, seconds, and time zones.
 
-WWW: http://search.cpan.org/search?dist=Date-Simple
+WWW: http://search.cpan.org/dist/Date-Simple/
 
 --
 Alexey V. Antipovsky

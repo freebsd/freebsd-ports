@@ -3,7 +3,7 @@ directed graphs in a variety of formats (PostScript, PNG, etc.) using
 the "dot" and "neato" programs from the GraphViz project
 (http://www.graphviz.org/).
 
-WWW: http://search.cpan.org/search?dist=GraphViz
+WWW: http://search.cpan.org/dist/GraphViz/
 
 -Anton
 <tobez@FreeBSD.org>

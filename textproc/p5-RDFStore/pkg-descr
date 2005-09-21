@@ -7,7 +7,7 @@ RDFStore::Parser::SiRPAC(3) RDFStore::Parser::OpenHealth(3) and
 Data::MagicTie(3) the suite allow a user to fetch, parse, process, store
 and query RDF models.
 
-WWW: http://search.cpan.org/search?dist=RDFStore
+WWW: http://search.cpan.org/dist/RDFStore/
 
 -- Sergey Skvortsov
 skv@FreeBSD.org

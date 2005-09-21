@@ -7,4 +7,4 @@ PerForm works as an XSP taglib, meaning you simply add some custom
 XML tags to your XSP page, and PerForm does the rest. Well, almost...
 PerForm works mainly by callbacks
 
-WWW: http://search.cpan.org/search?dist=AxKit-XSP-PerForm
+WWW: http://search.cpan.org/dist/AxKit-XSP-PerForm/

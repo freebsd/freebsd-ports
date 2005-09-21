@@ -5,4 +5,4 @@ input and output to/from the file handles.  It can also accept incoming
 connections on one or more listen sockets.
 
 Author:	Bruce J Keeler <bruce@gridpoint.com>
-WWW: http://search.cpan.org/search?dist=IO-Multiplex
+WWW: http://search.cpan.org/dist/IO-Multiplex/

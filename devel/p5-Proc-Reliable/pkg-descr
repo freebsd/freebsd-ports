@@ -6,6 +6,6 @@ incorporates a number of options, including sending data to the
 subprocess on STDIN, collecting STDOUT and STDERR separately or
 together, killing hung processes, timouts and automatic retries.
 
-WWW: http://search.cpan.org/search?dist=Proc-Reliable
+WWW: http://search.cpan.org/dist/Proc-Reliable/
 
 Seamus Venasse <svenasse@polaris.ca>

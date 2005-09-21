@@ -15,4 +15,4 @@ which provides the same functionality as the one in core Perl, only with
 better time resolution.
 
 Author: Jarkko Hietaniemi <jhi@iki.fi>
-WWW: http://search.cpan.org/search?dist=BSD-Resource
+WWW: http://search.cpan.org/dist/BSD-Resource/

@@ -4,6 +4,6 @@ Class::MakeMethods, it can select from the supported method types, and
 specify a name for each method desired. The methods are dynamically
 generated and installed in the calling package.
 
-WWW: http://search.cpan.org/search?dist=Class-MakeMethods
+WWW: http://search.cpan.org/dist/Class-MakeMethods/
 
 Seamus Venasse <svenasse@polaris.ca>

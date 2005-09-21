@@ -8,7 +8,7 @@ set -- the hash conveys that its keys are there, and the actual values
 associated with the keys are not significant.  (But what values are
 there, are always true.)
 
-WWW: http://search.cpan.org/search?dist=HTML-Tagset
+WWW: http://search.cpan.org/dist/HTML-Tagset/
 
 - Vanilla
 vanilla@FreeBSD.ORG

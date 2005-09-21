@@ -3,7 +3,7 @@ an object-oriented interface to the RCS commands rcs(1), rcsdiff(1),
 ci(1) and co(1), in addition to providing easy access to revision
 information contained in the RCS archive file.
 
-WWW: http://search.cpan.org/search?dist=Rcs-Agent
+WWW: http://search.cpan.org/dist/Rcs-Agent/
 
 -Anton
 <tobez@FreeBSD.org>

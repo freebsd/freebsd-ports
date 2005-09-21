@@ -6,6 +6,6 @@ Test::Tutorial is just documentation. To actually get anything done you
 use pod2test. Read the Test::Inline::Tutoral, really. 
 
 Author: Michael G Schwern <schwern@pobox.com> 
-WWW: http://search.cpan.org/dist/Test-Inline
+WWW: http://search.cpan.org/dist/Test-Inline/
 
 --Erwin Lansing <erwin@FreeBSD.org>

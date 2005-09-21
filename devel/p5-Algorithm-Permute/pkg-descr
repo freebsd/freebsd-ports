@@ -3,6 +3,6 @@ although its algorithm is perhaps not the fastest available.  Currently it only
 supports permutation n of n objects.
 
 Author: Edwin Pratomo <ed.pratomo@computer.org>
-WWW: http://search.cpan.org/search?dist=Algorithm-Permute
+WWW: http://search.cpan.org/dist/Algorithm-Permute/
 
 --will

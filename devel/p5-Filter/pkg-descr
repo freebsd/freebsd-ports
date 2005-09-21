@@ -23,4 +23,4 @@ Filter::cpp
        This source filter pipes the current source file through
        the C pre-processor (cpp) if it is available.
 
-WWW: http://search.cpan.org/search?dist=Filter
+WWW: http://search.cpan.org/dist/Filter/

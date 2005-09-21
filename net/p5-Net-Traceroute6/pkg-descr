@@ -3,7 +3,7 @@ allows you to trace the path IP packets take to a destination.  It
 is currently implemented as a parser around the system traceroute
 command.
 
-WWW: http://search.cpan.org/search?dist=Net-Traceroute6
+WWW: http://search.cpan.org/dist/Net-Traceroute6/
 
 - Pete
 petef@FreeBSD.org

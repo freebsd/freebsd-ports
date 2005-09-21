@@ -3,7 +3,7 @@ module.  W::A works fine except for some memory-eating bugs that the
 author of this module has fixed.
 
 Author: Andy Lester <andy@petdance.com>
-WWW:	http://search.cpan.org/search?dist=WWW-Mechanize
+WWW:	http://search.cpan.org/dist/WWW-Mechanize/
 
 -Anton
 <tobez@FreeBSD.org>

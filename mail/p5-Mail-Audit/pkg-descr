@@ -1,7 +1,7 @@
 Mail::Audit is a Perl module for writing custom mail filters. It's
 aim is to be a tool to help replace procmail.
 
-WWW: http://search.cpan.org/search?dist=Mail-Audit
+WWW: http://search.cpan.org/dist/Mail-Audit/
 
 - Pete
 petef@databits.net

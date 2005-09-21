@@ -19,4 +19,4 @@ are hash references themselves, which describe how to acquire the field
 which is the corresponding key of the initial hash.
 
 Author: Ilya Zakharevich <ilya@math.ohio-state.edu>
-WWW: http://search.cpan.org/search?dist=Data-Flow
+WWW: http://search.cpan.org/dist/Data-Flow/

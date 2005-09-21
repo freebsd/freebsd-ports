@@ -7,6 +7,6 @@ structures cannot be created anonymously and needed to be assigned to
 variables. This enables dumping big structures.
 
 Author: Ariel Brosh <schop@cpan.org>
-WWW: http://search.cpan.org/search?dist=Data-JavaScript
+WWW: http://search.cpan.org/dist/Data-JavaScript/
 
 -- Anton
