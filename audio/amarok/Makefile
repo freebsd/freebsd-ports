@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	amarok
-PORTVERSION=	1.2.4
-PORTREVISION=	2
+PORTVERSION=	1.3.1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,15 +23,15 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_SDL=	sdl
 
-OPTIONS=	ARTS "aRts playback engine" off \
-		GSTREAMER "GStreamer playback engine (includes aRts-output)" on \
+OPTIONS=	ARTS "aRts playback engine" on \
+		GSTREAMER "GStreamer playback engine (includes aRts-output)" off \
 		XINE "Xine playback engine" off \
 		XMMS "XMMS visualizations" off \
 		LIBVISUAL "libvisual support" off \
 		OPENGL "OpenGL support" on \
 		AMAZON "Amazon cover fetching support" on \
 		MYSQL "Use MySQL as collection backend" off \
-		AKODE "Akode playback engine" off
+		POSTGRESQL "Use PostgreSQL as collection backend" off \
 
 .include <bsd.port.pre.mk>
 
@@ -88,23 +87,24 @@ USE_MYSQL=	yes
 CONFIGURE_ARGS+=--enable-mysql
 .endif
 
-.if defined(WITHOUT_AKODE)
-CONFIGURE_ARGS+=--without-akode
-PLIST_SUB+=	AKODE="@comment "
-.else
-CONFIGURE_ARGS+=--with-akode
-LIB_DEPENDS+=	akode:${PORTSDIR}/audio/akode
-PLIST_SUB+=	AKODE=""
+.if !defined(WITHOUT_POSTGRESQL)
+USE_PGSQL=	yes
+CONFIGURE_ARGS+=--enable-postgresql
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|xx||g' ${WRKSRC}/po/Makefile.in
-	@${REINPLACE_CMD} -e 's|SDL/SDL.h|SDL11/SDL.h|g' \
-		${WRKSRC}/amarok/src/vis/libvisual/libvisual.h
-	@${REINPLACE_CMD} -e 's|-lSDL|-lSDL-1.1 ${PTHREAD_LIBS}|g' \
-		${WRKSRC}/amarok/src/vis/libvisual/Makefile.in
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${TOUCH}
+
+pre-configure:
+	@${REINPLACE_CMD} -e 's|DbSetup|dbsetup|g' \
+		${WRKSRC}/amarok/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|DbSetup.h|dbsetup.h|g' \
+		${WRKSRC}/amarok/src/configdialog.cpp \
+		${WRKSRC}/amarok/src/configdialog.h \
+		${WRKSRC}/amarok/src/Options7.ui \
+		${WRKSRC}/amarok/src/firstrunwizard.ui
 
 post-configure:
 .if defined(WITHOUT_XMMS)
@@ -114,6 +114,13 @@ post-configure:
 .if defined(WITHOUT_LIBVISUAL)
 	@${REINPLACE_CMD} -e '/LIBVISUAL /d' ${WRKSRC}/config.h
 	@${REINPLACE_CMD} -e 's/libvisual//g' ${WRKSRC}/amarok/src/vis/Makefile
+.endif
+	@${MV} ${WRKSRC}/amarok/src/DbSetup.ui ${WRKSRC}/amarok/src/dbsetup.ui
+	@${MV} ${WRKSRC}/amarok/src/DbSetup.ui.h ${WRKSRC}/amarok/src/dbsetup.ui.h
+
+post-install:
+.if !defined(WITHOUT_LIBVISUAL)
+	@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.post.mk>
