@@ -6,4 +6,4 @@ SUPER.pm into one magic foundation class. It attempts to fix all the nits and
 warts of traditional Perl OO, in a clean, straightforward and
 (perhaps someday) standard way.
 
-WWW: http://search.cpan.org/~ingy/Spiffy-0.18/
+WWW: http://search.cpan.org/dist/Spiffy/
