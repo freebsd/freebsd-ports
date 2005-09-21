@@ -1231,6 +1231,7 @@ confregdecode	ports/net-mgmt/confregdecode
 conglomerate	ports/editors/conglomerate
 conky		ports/sysutils/conky
 connect4	ports/games/connect4
+connectfive	ports/games/connectfive
 conquest	ports/games/conquest
 cons		ports/devel/cons
 cons-test	ports/devel/cons-test
