@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	dvdrip
-PORTREVISION=	2
-PORTVERSION=	0.50.18
+PORTVERSION=	0.52.6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.exit1.org/dvdrip/dist/
 DISTNAME=	Video-DVDRip-${PORTVERSION}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This is dvd::rip, a Perl Gtk+ based dvd-ripper
 
 .if !defined(WITHOUT_CLUSTER)
@@ -31,17 +30,20 @@ RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		vcdimager:${PORTSDIR}/multimedia/vcdimager \
 		${BUILD_DEPENDS}
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk \
-		${SITE_PERL}/${PERL_ARCH}/Gtk/Gdk/Pixbuf.pm:${PORTSDIR}/x11-toolkits/p5-GdkPixbuf
+		${SITE_PERL}/${PERL_ARCH}/Gtk/Gdk/Pixbuf.pm:${PORTSDIR}/x11-toolkits/p5-GdkPixbuf \
+		${SITE_PERL}/Locale/Messages.pm:${PORTSDIR}/devel/p5-Locale-libintl
 
 PERL_CONFIGURE=	yes
 USE_PERL5=	yes
 
 MAN1=		dvdrip.1 dr_splitpipe.1 dr_progress.1
-
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Video::DVDRip.3 Video::DVDRip::CPAN::Scanf.3
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	"Broken dependencies"
+.endif
 
 pre-everything::
 .if !defined(WITHOUT_CLUSTER)
