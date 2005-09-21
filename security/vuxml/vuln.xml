@@ -9493,11 +9493,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <bid>12200</bid>
+      <cvename>CAN-2005-2874</cvename>
       <url>http://www.cups.org/str.php?L1042</url>
     </references>
     <dates>
       <discovery>2004-12-30</discovery>
       <entry>2005-01-18</entry>
+      <modified>2005-09-21</modified>
     </dates>
   </vuln>
 
