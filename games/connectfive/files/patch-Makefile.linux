@@ -1,0 +1,22 @@
+--- Makefile.linux.orig Tue Sep 20 01:08:02 2005
++++ Makefile.linux      Tue Sep 20 01:36:38 2005
+@@ -1,9 +1,9 @@
+ # Configuration section -------------------------------------------------------
+ outputName := connectfive # Filename to give to final executable
+ cppExtension := .cpp         # File extension of source files
+-CPPFLAGS += -I /usr/local/include   # List flags to pass to C/C++ preprocessor
+-CXXFLAGS += -Wall -O0 -g     # List flags to pass to C++ compiler
+-LDFLAGS += -L /usr/local/lib -L /usr/X11R6/lib
++#CPPFLAGS += -I/usr/local/include -I/usr/X11R6/include
++#CXXFLAGS += -Wall -O0 -g     # List flags to pass to C++ compiler
++#LDFLAGS += -L /usr/local/lib -L /usr/X11R6/lib
+                              # List flags to pass to linker
+ LDLIBS +=  -lGLU -lGL -lXext -lX11 -lm -lXmu \
+        `sdl-config --libs`
+@@ -37,5 +37,5 @@
+        rm -f *.o *~ *.d
+ 
+ ${outputName} : ${allCppObjects}
+-       g++ -o $@ $^ ${LDFLAGS} ${LOADLIBES} ${LDLIBS}
++	${CXX} -o $@ $^ ${LDFLAGS} ${LOADLIBES} ${LDLIBS}
+
