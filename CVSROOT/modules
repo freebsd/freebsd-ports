@@ -993,6 +993,7 @@ cdf		ports/sysutils/cdf
 cdialog		ports/devel/cdialog
 cdif		ports/textproc/cdif
 cdiff		ports/textproc/cdiff
+cdircmp		ports/sysutils/cdircmp
 cdk		ports/devel/cdk
 cdlabelgen	ports/print/cdlabelgen
 cdoc		ports/devel/cdoc
