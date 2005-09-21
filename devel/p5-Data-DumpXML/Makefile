@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Data-DumpXML
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dump arbitrary data structures as XML
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Array/RefElem.pm:${PORTSDIR}/misc/p5-Array-RefElem \
