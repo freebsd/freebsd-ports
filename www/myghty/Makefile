@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	myghty
-PORTVERSION=	0.98
+PORTVERSION=	0.98c
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://bsdchat.com/dist/dryice/
