@@ -55,6 +55,7 @@
     SUBDIR += cdbakeoven
     SUBDIR += cdbkup
     SUBDIR += cdf
+    SUBDIR += cdircmp
     SUBDIR += cdrdao
     SUBDIR += cdroot
     SUBDIR += cdrtools
