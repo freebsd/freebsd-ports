@@ -20,7 +20,7 @@ LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 		ecore.1:${PORTSDIR}/x11/ecore \
 		embryo.9:${PORTSDIR}/lang/embryo \
 		eet.9:${PORTSDIR}/devel/eet \
-		xine.13:${PORTSDIR}/multimedia/libxine
+		xine.14:${PORTSDIR}/multimedia/libxine
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
