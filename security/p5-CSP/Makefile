@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CSP
-PORTVERSION=	0.26
+PORTVERSION=	0.31
 CATEGORIES=	security perl5
 MASTER_SITES=	ftp://ftp.it.su.se/pub/users/leifj/
 PKGNAMEPREFIX=	p5-
