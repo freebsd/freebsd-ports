@@ -7753,6 +7753,7 @@ p5-File-chdir	ports/devel/p5-File-chdir
 p5-FileHandle-Unget	ports/devel/p5-FileHandle-Unget
 p5-Filesys-DiskFree	ports/sysutils/p5-Filesys-DiskFree
 p5-Filesys-DiskSpace	ports/sysutils/p5-Filesys-DiskSpace
+p5-Filesys-DiskUsage	ports/sysutils/p5-Filesys-DiskUsage
 p5-Filesys-SmbClient	ports/net/p5-Filesys-SmbClient
 p5-Filesys-Statvfs_Df	ports/devel/p5-Filesys-Statvfs_Df
 p5-Filesys-Virtual	ports/devel/p5-Filesys-Virtual
