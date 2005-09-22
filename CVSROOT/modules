@@ -7254,6 +7254,7 @@ p5-Bundle-Slash	ports/www/p5-Bundle-Slash
 p5-Bundle-Sledge	ports/www/p5-Bundle-Sledge
 p5-Business-CreditCard	ports/finance/p5-Business-CreditCard
 p5-Business-ISBN	ports/misc/p5-Business-ISBN
+p5-Business-ISBN-Data	ports/misc/p5-Business-ISBN-Data
 p5-Business-ISIN	ports/misc/p5-Business-ISIN
 p5-Business-ISSN	ports/misc/p5-Business-ISSN
 p5-Business-OCV	ports/finance/p5-Business-OCV
