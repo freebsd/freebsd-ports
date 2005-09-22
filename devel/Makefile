@@ -770,6 +770,7 @@
     SUBDIR += p5-Curses-Widgets
     SUBDIR += p5-DB_File-Lock
     SUBDIR += p5-Danga-Socket
+    SUBDIR += p5-Data-ACL
     SUBDIR += p5-Data-Compare
     SUBDIR += p5-Data-Dump
     SUBDIR += p5-Data-Dump-Streamer
