@@ -7,6 +7,7 @@
 
 PORTNAME=	libarc
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.onicos.com/staff/iz/release/
 
