@@ -200,6 +200,7 @@
     SUBDIR += gnomekiss
     SUBDIR += gnomememoryblocks
     SUBDIR += gnomermind
+    SUBDIR += gnomesudoku
     SUBDIR += gnubg
     SUBDIR += gnuchess
     SUBDIR += gnugo
