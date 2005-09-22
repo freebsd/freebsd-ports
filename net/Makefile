@@ -396,6 +396,7 @@
     SUBDIR += mopd
     SUBDIR += morebalance
     SUBDIR += mpd
+    SUBDIR += mpd4
     SUBDIR += mpich
     SUBDIR += mrt
     SUBDIR += mrtg-ping-probe
