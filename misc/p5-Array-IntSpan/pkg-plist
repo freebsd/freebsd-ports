@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Array/IntSpan.pm
 %%SITE_PERL%%/Array/IntSpan/IP.pm
+%%SITE_PERL%%/Array/IntSpan/Fields.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/IntSpan/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/IntSpan
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Array 2>/dev/null || true
