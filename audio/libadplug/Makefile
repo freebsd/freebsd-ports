@@ -1,13 +1,13 @@
-# New ports collection makefile for:   adplug
-# Date created:		10 August 2004
-# Whom:			Emanuel Haupt <ehaupt@critical.ch>
+# New ports collection makefile for:	libadplug
+# Date created:				10 August 2004
+# Whom:					Emanuel Haupt <ehaupt@critical.ch>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	libadplug
 PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	adplug
@@ -34,6 +34,18 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${CPPFLAGS}" \
 MAN1=		adplugdb.1
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|\(binio\.h\)|libbinio/\1|' \
+		${WRKSRC}/src/database.cpp \
+		${WRKSRC}/src/database.h \
+		${WRKSRC}/src/fprovide.cpp \
+		${WRKSRC}/src/fprovide.h
+	@${REINPLACE_CMD} -e 's|\(binfile\.h\)|libbinio/\1|' \
+		${WRKSRC}/adplugdb/adplugdb.cpp \
+		${WRKSRC}/src/adplug.cpp \
+		${WRKSRC}/src/database.cpp \
+		${WRKSRC}/src/fprovide.cpp
+	@${REINPLACE_CMD} -e 's|\(binstr\.h\)|libbinio/\1|' \
+		${WRKSRC}/src/dmo.cpp
 	@${REINPLACE_CMD} -e 's|^\(SUBDIRS\ =\).*|\1 src adplugdb test|' \
 		${WRKSRC}/Makefile.in
 

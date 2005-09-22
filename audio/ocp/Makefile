@@ -1,13 +1,13 @@
-# New ports collection makefile for:   ocp
-# Date created:		22 April 2005
-# Whom:			Emanuel Haupt <ehaupt@critical.ch>
+# New ports collection makefile for:	ocp
+# Date created:				22 April 2005
+# Whom:					Emanuel Haupt <ehaupt@critical.ch>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	ocp
 PORTVERSION=	0.1.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://labs.nixia.no/ \
 		http://critical.ch/distfiles/
@@ -66,7 +66,7 @@ CONFIGURE_ARGS+=	--with-debug
 .endif
 .if defined(WITH_ADPLUG)
 LIB_DEPENDS+=		adplug-1.5.1:${PORTSDIR}/audio/libadplug
-CONFIGURE_ARGS+=	--without-x11
+CONFIGURE_ARGS+=	--without-x11 --with-adplug
 PLIST_SUB+=		ADPLUG=""
 .else
 PLIST_SUB+=		ADPLUG="@comment "
