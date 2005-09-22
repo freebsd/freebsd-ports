@@ -6,13 +6,13 @@
 #
 
 PORTNAME=		Lingua-EN-Nickname
-PORTVERSION=		1.12
+PORTVERSION=		1.14
 CATEGORIES=		textproc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		perl@FreeBSD.org
 COMMENT=	Genealogical nickname matching (Liz=Beth)
 
 PERL_CONFIGURE=		yes
