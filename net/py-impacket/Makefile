@@ -7,7 +7,8 @@
 PORTNAME=	Impacket
 PORTVERSION=	0.9.5.1
 CATEGORIES=	net python
-MASTER_SITES=	http://oss.coresecurity.com/repo/
+MASTER_SITES=	http://oss.coresecurity.com/repo/ \
+		http://www.yazzy.org/ports/impacket/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yazzy@yazzy.org
