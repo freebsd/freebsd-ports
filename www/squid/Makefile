@@ -62,11 +62,14 @@
 #     Tune the number of worker threads for the aufs object
 #    --with-coss-membuf-size
 #     COSS membuf size (default: 1048576 bytes)
+#    --with-maxfd=N
+#     Override the maximum number of filedescriptors. Useful if you
+#     build as another user who is not privileged to use the amount
+#     of filedescriptors the resulting binary is expected to support.
 #
 
 PORTNAME=	squid
-PORTVERSION=	2.5.10
-PORTREVISION=	7
+PORTVERSION=	2.5.11
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -75,42 +78,11 @@ MASTER_SITES=	\
 		ftp://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.5.STABLE10
+DISTNAME=	squid-2.5.STABLE11
 DIST_SUBDIR=	squid2.5
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
-PATCHFILES=	squid-2.5.STABLE10-content_length.patch \
-		squid-2.5.STABLE10-spanish.patch \
-		squid-2.5.STABLE10-internal_date.patch \
-		squid-2.5.STABLE10-chroot-2.patch \
-		squid-2.5.STABLE10-transparent-2.patch \
-		squid-2.5.STABLE10-redirect_flags.patch \
-		squid-2.5.STABLE10-cache_dir_change.patch \
-		squid-2.5.STABLE10-snmp_getnext.patch \
-		squid-2.5.STABLE10-ftp_title-2.patch \
-		squid-2.5.STABLE10-ftp_basehref.patch \
-		squid-2.5.STABLE10-wbinfo_groups.patch \
-		squid-2.5.STABLE10-64bit_cleanup.patch \
-		squid-2.5.STABLE10-wb_ntlm_auth_silent.patch \
-		squid-2.5.STABLE10-mail_program.patch \
-		squid-2.5.STABLE10-sslConnectTimeout.patch \
-		squid-2.5.STABLE10-statHistAssert.patch \
-		squid-2.5.STABLE10-chroot_dir.patch \
-		squid-2.5.STABLE10-errmsg.patch \
-		squid-2.5.STABLE10-FORTIFY_SOURCE.patch \
-		squid-2.5.STABLE10-ftp_250.patch \
-		squid-2.5.STABLE10-Greek.patch \
-		squid-2.5.STABLE10-STORE_PENDING.patch \
-		squid-2.5.STABLE10-ldap_auth-U.patch \
-		squid-2.5.STABLE10-cacheClientTable.patch \
-		squid-2.5.STABLE10-mail_from.patch \
-		squid-2.5.STABLE10-LDAP_TLS.patch \
-		squid-2.5.STABLE10-storedir_objsize_debug.patch \
-		squid-2.5.STABLE10-header_id_enum.patch \
-		squid-2.5.STABLE10-allow_coredump.patch \
-		squid-2.5.STABLE10-delay_pools.patch \
-		squid-2.5.STABLE10-pipeline-CONNECT.patch \
-		squid-2.5.STABLE10-NTLM-scheme_assert-2.patch
+PATCHFILES=
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
