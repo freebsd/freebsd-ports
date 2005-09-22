@@ -3,6 +3,3 @@ uni2ascii and ascii2uni convert between UTF-8 Unicode and any of a variety of
 character references, \u-escapes, standard hexadecimal, and raw hexadecimal.
 
 WWW: http://freshmeat.net/projects/uni2ascii/
-
-- ehaupt
-ehaupt@critical.ch
