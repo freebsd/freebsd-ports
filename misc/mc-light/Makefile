@@ -7,12 +7,12 @@
 
 PORTNAME=	mc-light
 PORTVERSION=	4.1.40.p9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	misc shells
 MASTER_SITES=	http://mc.linuxinside.com/Releases/
 DISTNAME=	mc-${PORTVERSION:S/.p9/-pre9/}
 
-MAINTAINER=	sam@brj.pp.ru
+MAINTAINER=	az@inec.ru
 COMMENT=	A lightweight Midnight Commander clone
 
 RUN_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
