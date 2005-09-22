@@ -1,0 +1,9 @@
+Business::ISBN uses this "data pack" to do its work. You can update
+Business::ISBN::Data independently of the main module as the various
+ISBN organizations assign new publisher codes. The ISBN agency lists
+these data at http://www.isbn-international.org/identifiers.html.
+
+The distribution should include the kludegy script used to extract the
+data and format the data structure.
+
+WWW: http://search.cpan.org/dist/Business-ISBN/
