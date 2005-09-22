@@ -23,7 +23,7 @@ PORTVERSION=	2.0.10
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://cold.darkambient.net/
-DISTNAME=	samhain_signed-${PORTVERSION}.tar.gz
+DISTNAME=	samhain_signed-${PORTVERSION}
 
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	The Samhain Intrusion Detection System
