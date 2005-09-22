@@ -3,7 +3,7 @@ to  your  hard  drive.  The resulting files will be in ASF format and can be
 played with Windows Media Player and derived tools.
 
 You  may  call  this  the  "DeCSS"  for Windows Media - although neither any
-serious  reverse-engineering nor any particular knowledge about protcols was
+serious  reverse-engineering nor any particular knowledge about protocols was
 necessary to program this simple application.
 
 Development time overall:  several hours for a first, working streaming code
