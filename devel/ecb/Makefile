@@ -7,6 +7,7 @@
 
 PORTNAME=	ecb
 PORTVERSION=	2.32
+PORTREVISION=	1
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://bsdchat.com/dist/dryice/
