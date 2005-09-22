@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Chemistry-Elements
-PORTVERSION=	0.91
+PORTVERSION=	1.01
 CATEGORIES=	science perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/BDFOY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for working with Chemical Elements
 
 PERL_CONFIGURE=	yes
