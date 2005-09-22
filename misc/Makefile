@@ -323,6 +323,7 @@
     SUBDIR += p5-Array-RefElem
     SUBDIR += p5-Asterisk
     SUBDIR += p5-Business-ISBN
+    SUBDIR += p5-Business-ISBN-Data
     SUBDIR += p5-Business-ISIN
     SUBDIR += p5-Business-ISSN
     SUBDIR += p5-Business-UPS
