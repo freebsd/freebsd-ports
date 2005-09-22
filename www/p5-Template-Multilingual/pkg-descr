@@ -13,4 +13,4 @@ Language codes can be any string that matches \w+, but we suggest sticking
 to ISO-639 which provides 2-letter codes for common languages and 3-letter
 codes for many others.
 
-WWW: http://search.cpan.org/~cholet/Template-Multilingual/
+WWW: http://search.cpan.org/dist/Template-Multilingual/
