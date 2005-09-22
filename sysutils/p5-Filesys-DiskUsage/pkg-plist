@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/DiskUsage/.packlist
+%%SITE_PERL%%/Filesys/DiskUsage.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/DiskUsage
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys
+@dirrm %%SITE_PERL%%/Filesys
