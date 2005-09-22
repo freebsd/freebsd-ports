@@ -18,12 +18,12 @@
   * If your system has statvfs(), and if it actually works!
   */
  #undef HAVE_STATVFS
---- configure.orig	Tue Mar  2 10:18:14 2004
-+++ configure	Tue Mar  2 10:18:56 2004
-@@ -222,6 +222,12 @@
-                           variance within an accelerator setup.
-                           Typically used together with other code
-                           that adds custom HTTP headers to the requests."
+--- configure.orig	Thu Sep 22 10:16:26 2005
++++ configure	Thu Sep 22 17:29:01 2005
+@@ -249,6 +249,12 @@
+                           if you build as another user who is not privileged
+                           to use the number of filedescriptors you want the
+                           resulting binary to support"
 +ac_help="$ac_help
 +  --enable-follow-x-forwarded-for
 +                          Enable support for following the X-Forwarded-For
@@ -33,10 +33,11 @@
  
  # Initialize some variables set by options.
  # The variables have the same names as the options, with
-@@ -2966,6 +2972,29 @@
+@@ -3255,6 +3261,29 @@
+ 
  fi
  
- 
++
 +follow_xff=1
 +# Check whether --enable-follow-x-forwarded-for or --disable-follow-x-forwarded-for was given.
 +if test "${enable_follow_x_forwarded_for+set}" = set; then
@@ -59,7 +60,6 @@
 +EOF
 +
 +fi
-+
+ 
  # Force some compilers to use ANSI features
  #
- case "$host" in
