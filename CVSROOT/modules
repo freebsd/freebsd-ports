@@ -3594,6 +3594,7 @@ highlight	ports/textproc/highlight
 highlnk		ports/sysutils/highlnk
 highmoon	ports/games/highmoon
 hil-aspell	ports/textproc/hil-aspell
+hilite		ports/sysutils/hilite
 himenobench	ports/benchmarks/himenobench
 hinfo		ports/net/hinfo
 histring	ports/misc/histring
