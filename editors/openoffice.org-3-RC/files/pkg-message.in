@@ -24,14 +24,13 @@ Add "%%PREFIX%%/bin/" to your PATH and you will be able
 to use them.
 
 %%PREFIX%%/bin/%%EXECBASE%%
-%%PREFIX%%/bin/%%EXECBASE%%-sagenda
+%%PREFIX%%/bin/%%EXECBASE%%-sbase
 %%PREFIX%%/bin/%%EXECBASE%%-scalc
 %%PREFIX%%/bin/%%EXECBASE%%-sdraw
-%%PREFIX%%/bin/%%EXECBASE%%-setup
-%%PREFIX%%/bin/%%EXECBASE%%-sfax
+%%PREFIX%%/bin/%%EXECBASE%%-setofficelang
+%%PREFIX%%/bin/%%EXECBASE%%-smath
 %%PREFIX%%/bin/%%EXECBASE%%-simpress
 %%PREFIX%%/bin/%%EXECBASE%%-spadmin
-%%PREFIX%%/bin/%%EXECBASE%%-sweb
 %%PREFIX%%/bin/%%EXECBASE%%-swriter
 
 OO.org does need $LANG to be set to a suitable value.
