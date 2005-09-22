@@ -1,6 +1,6 @@
---- Makefile.orig	Tue Jun 13 07:21:19 2000
+--- Makefile	Tue Jun 13 07:21:19 2000
 +++ Makefile	Tue Jun 20 17:44:24 2000
-@@ -14,29 +15,42 @@
+@@ -14,29 +15,43 @@
         url_hqxdecode.o url_qsdecode.o url_news.o url_newsgroup.o url_cgiesc.o \
         arc_mime.o
  
@@ -51,6 +51,7 @@
 +	$(BSD_INSTALL_DATA) libarc/arc.h $(PREFIX)/include/libarc
 +	$(BSD_INSTALL_DATA) libarc/mblock.h $(PREFIX)/include/libarc
 +	$(BSD_INSTALL_DATA) libarc/memb.h $(PREFIX)/include/libarc
++	$(BSD_INSTALL_DATA) unlzh.h zip.h $(PREFIX)/include/libarc
 +
 +.SUFFIXES: .so .c
 +
