@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Lingua-Conjunction
-PORTVERSION=	1.99
+PORTVERSION=	2.00
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert Perl lists into linguistic conjunctions
 
 PERL_CONFIGURE=	yes
