@@ -8,7 +8,7 @@
 PORTNAME=	pecomato
 PORTVERSION=	0.0.12
 CATEGORIES=	graphics
-MASTER_SITES=	http://82.225.188.10/projects/pecomato/download/sources/
+MASTER_SITES=	http://critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@critical.ch
 COMMENT=	A command-line picture metadata processor
