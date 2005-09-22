@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	cedet
-PORTVERSION=	1.0.b3.b
+PORTVERSION=	1.0.pre3
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://bsdchat.com/dist/dryice/
 MASTER_SITE_SUBDIR=	cedet
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=	${PORTNAME}-1.0beta3b
+DISTNAME=	${PORTNAME}-1.0pre3
 
 MAINTAINER=	dryice@liu.com.cn
 COMMENT=	Collection of Emacs Development Environment Tools

@@ -29,6 +29,8 @@ bin/semanticdb.sh
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/cedet.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/ezimage.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/ezimage.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/fame.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/fame.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/icons/bits.xpm
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/icons/bitsbang.xpm
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/icons/box-minus.xpm
@@ -134,6 +136,7 @@ bin/semanticdb.sh
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio/eieio-speedbar.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio/eieio-speedbar.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio/eieio-tests.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio/eieio-test-methodinvoke.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio/eieio.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio/eieio.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio/linemark.el
@@ -256,6 +259,7 @@ bin/semanticdb.sh
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semanticdb-mk.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semanticdb-search.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semanticdb-search.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semanticdb-skel.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semanticdb-system.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semanticdb-system.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semanticdb.el
