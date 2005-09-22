@@ -1,4 +1,4 @@
 This perl module  validates email addresses against the grammar described in
 RFC 822 using regular expressions.
 
-WWW: http://search.cpan.org/~pdwarren/Mail-RFC822-Address-0.3/Address.pm
+WWW: http://search.cpan.org/dist/Mail-RFC822-Address/
