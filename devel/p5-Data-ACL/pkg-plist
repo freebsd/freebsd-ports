@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Data/ACL.pm
+%%SITE_PERL%%/Data/ACL/Realm.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ACL/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ACL 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Data/ACL 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Data 2>/dev/null || true
