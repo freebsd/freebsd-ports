@@ -6644,6 +6644,7 @@ nemesis		ports/net/nemesis
 nenscript	ports/print/nenscript
 neon		ports/www/neon
 neowebscript	ports/www/neowebscript
+nepim		ports/net/nepim
 nessus		ports/security/nessus
 nessus-devel	ports/security/nessus-devel
 nessus-libnasl	ports/security/nessus-libnasl
