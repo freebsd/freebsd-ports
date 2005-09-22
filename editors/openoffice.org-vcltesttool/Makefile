@@ -8,7 +8,8 @@
 PORTNAME=	openoffice.org
 PORTVERSION=	2.0.${SNAPDATE}
 CATEGORIES+=	editors
-MASTER_SITES+=	ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
+MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
+		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_MOZILLA:S,%SUBDIR%,mozilla/releases/mozilla${MOZILLA_VERSION}/&,}source/:mozsrc
 DISTFILES+=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2 gpc231.tar.Z:gpc
