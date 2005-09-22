@@ -8,10 +8,12 @@
 PORTNAME=	openoffice.org
 PORTVERSION=	1.1.5.${SNAPDATE}
 CATEGORIES+=	editors
-MASTER_SITES+=	ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
+MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
+		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%,maho/openoffice.org/&,}:moz \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_MOZILLA:S,%SUBDIR%,mozilla/releases/mozilla${MOZILLA_VERSION}/&,}src/:mozsrc \
+		http://openoffice.lunarshells.com/sources/helpcontent/:help \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent/&,}:help \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent-1.0/&,}:help3 \
 		ftp://ftp.kddlabs.co.jp/office/openoffice/contrib/helpcontent/:help \
