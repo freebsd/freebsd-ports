@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	Read Macintosh HFS floppy disks, hard drives and CDROMs
 
+CONFLICTS=	hfsutils
+
 USE_GMAKE=	yes
 MAN1=		hfs.1
 PLIST_FILES=	bin/hfs
