@@ -25,6 +25,9 @@ PLIST_SUB+=	X11="@comment "
 USE_BISON=	YES
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+
+PLIST_FILES=	bin/as31 %%X11%%bin/as31_gtk
 
 do-install:
 	@${INSTALL} ${WRKSRC}/as31 ${PREFIX}/bin
