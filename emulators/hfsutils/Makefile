@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.mars.org/pub/hfs/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another HFS Utility
 
+CONFLICTS=	hfs
+
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 GNU_CONFIGURE=	yes
