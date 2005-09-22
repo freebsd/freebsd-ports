@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	Proc-Reliable
-PORTVERSION=	1.13
+PORTVERSION=	1.16
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Proc
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Run external processes reliably with many options
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Proc::Reliable.3
+MAN3=		Proc::Reliable.3 Proc::test_intercept.3
 
 .include <bsd.port.mk>
