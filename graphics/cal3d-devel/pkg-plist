@@ -1,6 +1,7 @@
 include/cal3d/animation.h
 include/cal3d/animation_action.h
 include/cal3d/animation_cycle.h
+include/cal3d/animcallback.h
 include/cal3d/bone.h
 include/cal3d/buffersource.h
 include/cal3d/cal3d.h
@@ -19,6 +20,7 @@ include/cal3d/coretrack.h
 include/cal3d/datasource.h
 include/cal3d/error.h
 include/cal3d/global.h
+include/cal3d/hardwaremodel.h
 include/cal3d/loader.h
 include/cal3d/matrix.h
 include/cal3d/mesh.h
@@ -39,7 +41,6 @@ include/cal3d/tinystr.h
 include/cal3d/tinyxml.h
 include/cal3d/vector.h
 @dirrm include/cal3d
-lib/libcal3d-0.9.1.so
-lib/libcal3d.la
 lib/libcal3d.so
+lib/libcal3d.so.11
 libdata/pkgconfig/cal3d.pc
