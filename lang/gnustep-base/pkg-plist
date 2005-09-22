@@ -13,6 +13,7 @@ System/Library/Documentation/man/man1/autogsdoc.1.gz
 System/Library/Documentation/man/man1/cvtenc.1.gz
 System/Library/Documentation/man/man1/defaults.1.gz
 System/Library/Documentation/man/man1/gdnc.1.gz
+System/Library/Documentation/man/man1/gspath.1.gz
 System/Library/Documentation/man/man1/pldes.1.gz
 System/Library/Documentation/man/man1/sfparse.1.gz
 System/Library/Documentation/man/man1/xmlparse.1.gz
@@ -78,6 +79,7 @@ System/Library/Headers/Foundation/NSRunLoop.h
 System/Library/Headers/Foundation/NSScanner.h
 System/Library/Headers/Foundation/NSSerialization.h
 System/Library/Headers/Foundation/NSSet.h
+System/Library/Headers/Foundation/NSSortDescriptor.h
 System/Library/Headers/Foundation/NSString.h
 System/Library/Headers/Foundation/NSTask.h
 System/Library/Headers/Foundation/NSThread.h
@@ -759,6 +761,7 @@ System/Tools/cvtenc
 System/Tools/defaults
 System/Tools/gdnc
 System/Tools/gdomap
+System/Tools/gspath
 System/Tools/make_strings
 System/Tools/pl
 System/Tools/pl2link
