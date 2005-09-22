@@ -8,7 +8,6 @@ bin/ploticus
 %%PORTDOCS%%%%EXAMPLESDIR%%/api_examp.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/bars3.htm
 %%PORTDOCS%%%%EXAMPLESDIR%%/clickmap_mouse.htm
-%%PORTDOCS%%%%EXAMPLESDIR%%/clickmap_mouse.map
 %%PORTDOCS%%%%EXAMPLESDIR%%/colorgrid.htm
 %%PORTDOCS%%%%EXAMPLESDIR%%/cumufrac.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/curve1.dat
@@ -54,10 +53,12 @@ bin/ploticus
 %%PORTDOCS%%%%EXAMPLESDIR%%/hitcount.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/hitcount3.htm
 %%PORTDOCS%%%%EXAMPLESDIR%%/kmslide.htm
+%%PORTDOCS%%%%EXAMPLESDIR%%/legends232.htm
 %%PORTDOCS%%%%EXAMPLESDIR%%/lineplot20.htm
 %%PORTDOCS%%%%EXAMPLESDIR%%/lineplot4.htm
 %%PORTDOCS%%%%EXAMPLESDIR%%/lineplot5.htm
 %%PORTDOCS%%%%EXAMPLESDIR%%/mouse.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/mouse.map
 %%PORTDOCS%%%%EXAMPLESDIR%%/pie1.htm
 %%PORTDOCS%%%%EXAMPLESDIR%%/plconfig.spanish
 %%PORTDOCS%%%%EXAMPLESDIR%%/propbars1.htm
@@ -73,10 +74,11 @@ bin/ploticus
 %%PORTDOCS%%%%EXAMPLESDIR%%/stock.csv
 %%PORTDOCS%%%%EXAMPLESDIR%%/stock2.htm
 %%PORTDOCS%%%%EXAMPLESDIR%%/strainz.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/supstubs.htm
 %%PORTDOCS%%%%EXAMPLESDIR%%/td.htm
 %%PORTDOCS%%%%EXAMPLESDIR%%/testpf_chron
-%%PORTDOCS%%%%EXAMPLESDIR%%/testpf_cumufrac
 %%PORTDOCS%%%%EXAMPLESDIR%%/testpf_compare
+%%PORTDOCS%%%%EXAMPLESDIR%%/testpf_cumufrac
 %%PORTDOCS%%%%EXAMPLESDIR%%/testpf_dist
 %%PORTDOCS%%%%EXAMPLESDIR%%/testpf_draw
 %%PORTDOCS%%%%EXAMPLESDIR%%/testpf_heatmap
@@ -90,7 +92,9 @@ bin/ploticus
 %%PORTDOCS%%%%EXAMPLESDIR%%/timeline2.htm
 %%PORTDOCS%%%%EXAMPLESDIR%%/timely.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/timely.htm
+%%PORTDOCS%%%%EXAMPLESDIR%%/unnamed.map
 %%PORTDOCS%%%%EXAMPLESDIR%%/vector1.htm
+%%PORTDOCS%%%%EXAMPLESDIR%%/venn.htm
 %%PORTDOCS%%%%EXAMPLESDIR%%/vermonth.tab
 %%PORTDOCS%%%%EXAMPLESDIR%%/vf.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/wind.csv

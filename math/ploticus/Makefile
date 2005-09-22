@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ploticus
-PORTVERSION=	2.31
+PORTVERSION=	2.32
 CATEGORIES=	math
 MASTER_SITES=	http://ploticus.sourceforge.net/download/
 DISTNAME=	pl${PORTVERSION:S/.//}src
