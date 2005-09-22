@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Lingua-EN-Infinitive
-PORTVERSION=	1.07
+PORTVERSION=	1.08
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Determine the infinitive form of a conjugated word
 
 PERL_CONFIGURE=	yes
