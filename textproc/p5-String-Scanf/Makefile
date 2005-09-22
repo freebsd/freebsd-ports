@@ -6,13 +6,13 @@
 #
 
 PORTNAME=		String-Scanf
-PORTVERSION=		2.0
+PORTVERSION=		2.1
 CATEGORIES=		textproc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	String
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		perl@FreeBSD.org
 COMMENT=	Emulates the sscanf() of the C stdio library
 
 PERL_CONFIGURE=		yes
