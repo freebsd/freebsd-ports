@@ -17,6 +17,7 @@ MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/1.1.5/
 		ftp://ftp.stardiv.de/pub/OpenOffice.org/stable/1.1.5/ \
 		http://ftp.gwdg.de/pub/misc/openoffice/stable/1.1.5/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
+		http://openoffice.lunarshells.com/sources/helpcontent/:help \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent/&,}:help \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent-1.0/&,}:help3 \
 		ftp://ftp.kddlabs.co.jp/office/openoffice/contrib/helpcontent/:help \
