@@ -216,6 +216,7 @@
     SUBDIR += heartbeat
     SUBDIR += heirloom
     SUBDIR += highlnk
+    SUBDIR += hilite
     SUBDIR += hourglass
     SUBDIR += hoz
     SUBDIR += httplog
