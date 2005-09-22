@@ -1,13 +1,13 @@
-# New ports collection makefile for:   adplay
-# Date created:		10 August 2004
-# Whom:			Emanuel Haupt <ehaupt@critical.ch>
+# New ports collection makefile for:	adplay
+# Date created:				10 August 2004
+# Whom:					Emanuel Haupt <ehaupt@critical.ch>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	adplay
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	adplug
@@ -22,7 +22,7 @@ PLIST_FILES=	bin/adplay
 GNU_CONFIGURE=	yes
 USE_GCC=	3.4+
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libbinio
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${CPPFLAGS}" \

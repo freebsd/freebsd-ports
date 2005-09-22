@@ -1,13 +1,12 @@
-# New ports collection makefile for:   libbinio
-# Date created:		10 August 2004
-# Whom:			Emanuel Haupt <ehaupt@critical.ch>
+# New ports collection makefile for:	libbinio
+# Date created:				10 August 2004
+# Whom:					Emanuel Haupt <ehaupt@critical.ch>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	libbinio
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,7 +28,8 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^\(SUBDIRS\ =\).*|\1 src|' \
+	@${REINPLACE_CMD} -e 's|^\(SUBDIRS\ =\).*|\1 src|; \
+		s|^\(pkgconfigdir\).*|\1 = ${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
