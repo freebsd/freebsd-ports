@@ -1,0 +1,7 @@
+hilite is a tiny command-line utility which executes the command you specify,
+highlighting anything printed to stderr.
+
+It is designed mainly for use with builds, to make warnings and errors stick
+out like a sore cliche.
+
+WWW: http://sourceforge.net/projects/hilite
