@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	uni2ascii
-PORTVERSION=	2.1
+PORTVERSION=	2.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@critical.ch
 COMMENT=	Convert between UTF-8 Unicode and 7-bit ASCII equivalents
 
+USE_LIBTOOL_VER=15
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/uni2ascii bin/ascii2uni
