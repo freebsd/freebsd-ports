@@ -419,6 +419,7 @@
     SUBDIR += ncp
     SUBDIR += ncplib
     SUBDIR += nemesis
+    SUBDIR += nepim
     SUBDIR += net-http
     SUBDIR += netatalk
     SUBDIR += netboot
