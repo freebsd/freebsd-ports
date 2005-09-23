@@ -25,8 +25,8 @@ SUBDIRS=	${DOCSDIR} ${DOCSDIR}/misc ${EXAMPLESDIR} \
 .include <bsd.port.pre.mk>
 
 pre-fetch:
-.if ${OSVERSION} < 500000
-	${CAT} ${PKGMESSAGE}
+.if !defined(WITH_FIXPERL) && ${PERL_LEVEL} <= 500503
+IGNORE=	Follow instructions in pkg-message and restart with -DWITH_FIXPERL
 .endif
 
 .if !defined(NOPORTDOCS)
