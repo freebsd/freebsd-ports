@@ -1,0 +1,24 @@
+To periodic and Flexible Backup Snapshot Creation
+
+Edit your crontab and include this:
+
+# Perform hourly/daily/weekly maintenance (FreeBSD UFS2 snapshots only).
+0	*	*	*	*	root	%%PREFIX%%/sbin/periodic-snapshot hourly
+0	0	*	*	*	root	%%PREFIX%%/sbin/periodic-snapshot daily
+0	0	*	*	0	root	%%PREFIX%%/sbin/periodic-snapshot weekly
+
+and edit your periodic.conf and include this:
+
+# UFS2 Snapshot Creation
+snapshot_enable="YES"
+snapshot_schedule="/,/usr:2:1:0 /var:0:2:4 /home:2:6:8@8,12,16,20"
+
+----
+
+To easy Access to Backup Snapshot Data
+
+Edit your rc.conf and include this:
+
+# UFS2 Snapshot Access
+amd_enable="YES"
+amd_flags="-a /.am -c 1800 -w 60 -l syslog /snap %%PREFIX%%/etc/amd.map.snap"
