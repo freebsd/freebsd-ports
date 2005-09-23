@@ -598,6 +598,7 @@
     SUBDIR += monotone
     SUBDIR += motor
     SUBDIR += mpatrol
+    SUBDIR += mph
     SUBDIR += mprof
     SUBDIR += msp430-binutils
     SUBDIR += msp430-gcc
