@@ -16,7 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gettext catalogs (.po files) editor
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
+LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2	\
+		db${LIB_SUFFIX}:${PORTSDIR}/databases/db${WITH_BDB_VER}
 
 USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
@@ -26,27 +27,29 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-CPPFLAGS=	-I${LOCALBASE}/include/db${USE_BDB_VER} \
+CPPFLAGS=	-I${LOCALBASE}/include/db${WITH_BDB_VER} \
 		-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 MAN1=		poedit.1
 
-.if defined(WITH_BDB_VER)
-USE_BDB_VER=	${WITH_BDB_VER}
-.else
-USE_BDB_VER=	3
+.if defined(WITH_BDB2) || defined(WITH_DB2)
+WITH_BDB_VER=	2
+.elif defined(WITH_BDB3) || defined(WITH_DB3)
+WITH_BDB_VER=	3
+.elif defined(WITH_BDB4) || defined(WITH_DB4)
+WITH_BDB_VER=	4
+.elif defined(WITH_BDB41) || defined(WITH_DB41)
+WITH_BDB_VER=	41
+.elif defined(WITH_BDB42) || defined(WITH_DB42)
+WITH_BDB_VER=	42
+LIB_SUFFIX=	-4.2
+.elif defined(WITH_BDB43) || defined(WITH_DB43)
+WITH_BDB_VER=	43
+LIB_SUFFIX=	-4.3
 .endif
-
-.if ${USE_BDB_VER} == 41
-LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
-.elif ${USE_BDB_VER} == 4
-LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
-.elif ${USE_BDB_VER} == 3
-LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
-.else
-BROKEN=		"WITH_BDB_VER must be 3, 4 or 41"
-.endif
+WITH_BDB_VER?=	4
+LIB_SUFFIX?=	${WITH_BDB_VER}
 
 .if defined(WITH_WXGTK24)
 LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
@@ -58,8 +61,8 @@ CONFIGURE_ARGS+=	--with-wx-config=${X11BASE}/bin/wxgtk2-2.6-config
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's/for version in .*;/for version in ${USE_BDB_VER};/ ; \
-		 s/-ldb-$$version/-ldb${USE_BDB_VER}/' ${WRKSRC}/configure
+		's/for version in .*;/for version in ${WITH_BDB_VER};/ ; \
+		 s/-ldb-$$version/-ldb${LIB_SUFFIX}/' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		'/^SUBDIRS/s/ install / /' ${WRKSRC}/Makefile.in
 
