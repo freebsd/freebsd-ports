@@ -7,7 +7,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.7.11
-PORTREVISION?=	1
+PORTREVISION?=	2
 PORTEPOCH=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -80,17 +80,14 @@ MOZ_EXTENSIONS=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-ESD_LIB=	libesd.so.2
 FREETYPE_LIB=	libfreetype.so.9
 PKGCONFIG_FILES=mozilla-gtkmozembed mozilla-js mozilla-xpcom \
 		mozilla-nspr mozilla-nss mozilla-plugin
 
 # JPI stuff.  List paths to Java Plug-ins here in the order to try.
 JPI_LIST?=\
-	${LOCALBASE}/jdk1.4.2/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so \
-	${LOCALBASE}/jdk1.4.1/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so \
-	${LOCALBASE}/diablo-jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
-	${LOCALBASE}/jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so
+	${LOCALBASE}/jdk1.5.0/jre/plugin/${ARCH}/ns7/libjavaplugin_oji.so \
+	${LOCALBASE}/jdk1.4.2/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so
 
 OPTIONS=XFT "Enable Xft font anti-aliasing" on \
 	CALENDAR "Enable the Calendar module" off \
@@ -233,7 +230,7 @@ post-patch:
 		${WRKSRC}/security/coreconf/FreeBSD.mk \
 		${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
 		${WRKSRC}/js/src/Makefile.in
-	@${REINPLACE_CMD} -E -e 's|libesd\.so\.[0-9]+|${ESD_LIB}|g' \
+	@${REINPLACE_CMD} -E -e 's|libesd\.so\.[0-9]+|libesd.so|g' \
 		${WRKSRC}/widget/src/gtk2/nsSound.cpp
 	@${REINPLACE_CMD} -E -e 's|libcups\.so\.[0-9]+|libcups.so|g' \
 		${WRKSRC}/gfx/src/gtk/nsDeviceContextSpecG.cpp

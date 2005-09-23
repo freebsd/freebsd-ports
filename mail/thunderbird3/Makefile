@@ -8,7 +8,7 @@
 
 PORTNAME=	thunderbird
 PORTVERSION=	1.0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}/source
@@ -28,7 +28,6 @@ CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 FAKEDIR=	${WRKDIR}/fake
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
-ESD_LIB=	libesd.so.2
 PLIST=		${WRKDIR}/plist
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -151,7 +150,7 @@ post-patch:
 		${WRKSRC}/security/coreconf/FreeBSD.mk \
 		${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
 		${WRKSRC}/js/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|libesd\.so\.\d+|${ESD_LIB}|g' \
+	@${REINPLACE_CMD} -E -e 's|libesd\.so\.[0-9]+|libesd.so|g' \
 		${WRKSRC}/widget/src/gtk2/nsSound.cpp
 	@${REINPLACE_CMD} -E -e 's|libcups\.so\.[0-9]+|libcups.so|g' \
 		${WRKSRC}/gfx/src/gtk/nsDeviceContextSpecG.cpp
