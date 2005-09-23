@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imlib2
-PORTVERSION=	1.2.1.004
+PORTVERSION=	1.2.1.005
 PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
