@@ -6420,6 +6420,7 @@ mpg123		ports/audio/mpg123
 mpg123.el	ports/audio/mpg123.el
 mpg321		ports/audio/mpg321
 mpgtx		ports/multimedia/mpgtx
+mph		ports/devel/mph
 mpich		ports/net/mpich
 mpiosh		ports/audio/mpiosh
 mplayer		ports/multimedia/mplayer
