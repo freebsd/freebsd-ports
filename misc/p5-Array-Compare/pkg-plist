@@ -1,8 +1,2 @@
 %%SITE_PERL%%/Array/Compare.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/Compare/.packlist
-%%SITE_PERL%%/auto/Array/Compare/autosplit.ix
-@dirrm %%SITE_PERL%%/auto/Array/Compare
-@unexec rmdir %D/%%SITE_PERL%%/auto/Array 2>/dev/null || true
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/Compare
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Array 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Array 2>/dev/null || true

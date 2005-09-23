@@ -6,16 +6,16 @@
 #
 
 PORTNAME=		Array-Compare
-PORTVERSION=		1.03
+PORTVERSION=		1.12
 CATEGORIES=		misc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Array
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		perl@FreeBSD.org
 COMMENT=	Perl extension for comparing arrays
 
-PERL_CONFIGURE=		yes
+PERL_MODBUILD=		yes
 
 MAN3=			Array::Compare.3
 
