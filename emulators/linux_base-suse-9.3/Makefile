@@ -9,6 +9,7 @@
 
 PORTNAME=		linux_base-suse
 PORTVERSION=		9.3
+PORTREVISION=		1
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_SUSE} ${MASTER_SITE_SUSE:S/$/:update/}
 MASTER_SITE_SUBDIR=	i386/9.3/suse/i586 i386/update/9.3/rpm/i586/:update
