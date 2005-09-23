@@ -13,7 +13,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_NETBSD} # ftp://freebsd.csie.nctu.edu.tw/Upload/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 front-end for mpg123
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
