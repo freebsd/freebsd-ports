@@ -32,6 +32,149 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8f5dd74b-2c61-11da-a263-0001020eed82">
+    <topic>mozilla &amp; firefox -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>1.0.7,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><gt>1.0.7</gt></range>
+      </package>
+      <package>
+	<name>mozilla</name>
+	<range><lt>1.7.12,2</lt></range>
+	<range><ge>1.8.*,2</ge></range>
+      </package>
+      <package>
+	<name>linux-mozilla</name>
+	<name>linux-mozilla-devel</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>netscape7</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<!-- These ports are obsolete. -->
+	<name>de-linux-mozillafirebird</name>
+	<name>el-linux-mozillafirebird</name>
+	<name>ja-linux-mozillafirebird-gtk1</name>
+	<name>ja-mozillafirebird-gtk2</name>
+	<name>linux-mozillafirebird</name>
+	<name>ru-linux-mozillafirebird</name>
+	<name>zhCN-linux-mozillafirebird</name>
+	<name>zhTW-linux-mozillafirebird</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<!-- These package names are obsolete. -->
+	<name>de-linux-netscape</name>
+	<name>de-netscape7</name>
+	<name>fr-linux-netscape</name>
+	<name>fr-netscape7</name>
+	<name>ja-linux-netscape</name>
+	<name>ja-netscape7</name>
+	<name>linux-netscape</name>
+	<name>linux-phoenix</name>
+	<name>mozilla+ipv6</name>
+	<name>mozilla-embedded</name>
+	<name>mozilla-firebird</name>
+	<name>mozilla-gtk1</name>
+	<name>mozilla-gtk2</name>
+	<name>mozilla-gtk</name>
+	<name>mozilla-thunderbird</name>
+	<name>phoenix</name>
+	<name>pt_BR-netscape7</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Mozilla Foundation Security Advisory reports of multiple
+	  issues:</p>
+	<blockquote cite="http://www.mozilla.org/security/announce/mfsa2005-58.html">
+	  <h1>Heap overrun in XBM image processing</h1>
+	  <p>jackerror reports that an improperly terminated XBM image
+	    ending with space characters instead of the expected end
+	    tag can lead to a heap buffer overrun. This appears to be
+	    exploitable to install or run malicious code on the user's
+	    machine.</p>
+	  <p>Thunderbird does not support the XBM format and is not
+	    affected by this flaw.</p>
+	  <h1>Crash on "zero-width non-joiner" sequence</h1>
+	  <p>Mats Palmgren discovered that a reported crash on Unicode
+	    sequences with "zero-width non-joiner" characters was due
+	    to stack corruption that may be exploitable.</p>
+	  <h1>XMLHttpRequest header spoofing</h1>
+	  <p>It was possible to add illegal and malformed headers to
+	    an XMLHttpRequest. This could have been used to exploit
+	    server or proxy flaws from the user's machine, or to fool
+	    a server or proxy into thinking a single request was a
+	    stream of separate requests. The severity of this
+	    vulnerability depends on the value of servers which might
+	    be vulnerable to HTTP request smuggling and similar
+	    attacks, or which share an IP address (virtual hosting)
+	    with the attacker's page.</p>
+	  <p>For users connecting to the web through a proxy this flaw
+	    could be used to bypass the same-origin restriction on
+	    XMLHttpRequests by fooling the proxy into handling a
+	    single request as multiple pipe-lined requests directed at
+	    arbitrary hosts. This could be used, for example, to read
+	    files on intranet servers behind a firewall.</p>
+	  <h1>Object spoofing using XBL &lt;implements&gt;</h1>
+	  <p>moz_bug_r_a4 demonstrated a DOM object spoofing bug
+	    similar to <a
+	    href="http://www.mozilla.org/security/announce/mfsa2005-55.html">MFSA
+	    2005-55</a> using an XBL control that &lt;implements&gt;
+	    an internal interface. The severity depends on the version
+	    of Firefox: investigation so far indicates Firefox 1.0.x
+	    releases don't expose any vulnerable functionality to
+	    interfaces spoofed in this way, but that early Deer Park
+	    Alpha 1 versions did.</p>
+	  <p>XBL was changed to no longer allow unprivileged controls
+	    from web content to implement XPCOM interfaces.</p>
+	  <h1>JavaScript integer overflow</h1>
+	  <p>Georgi Guninski reported an integer overflow in the
+	    JavaScript engine. We presume this could be exploited to
+	    run arbitrary code under favorable conditions.</p>
+	  <h1>Privilege escalation using about: scheme</h1>
+	  <p>heatsync and shutdown report two different ways to bypass
+	    the restriction on loading high privileged "chrome" pages
+	    from an unprivileged "about:" page. By itself this is
+	    harmless--once the "about" page's privilege is raised the
+	    original page no longer has access--but should this be
+	    combined with a same-origin violation this could lead to
+	    arbitrary code execution.</p>
+	  <h1>Chrome window spoofing</h1>
+	  <p>moz_bug_r_a4 demonstrates a way to get a blank "chrome"
+	    canvas by opening a window from a reference to a closed
+	    window. The resulting window is not privileged, but the
+	    normal browser UI is missing and can be used to construct
+	    a spoof page without any of the safety features of the
+	    browser chrome designed to alert users to phishing sites,
+	    such as the address bar and the status bar.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2701</cvename>
+      <cvename>CAN-2005-2702</cvename>
+      <cvename>CAN-2005-2703</cvename>
+      <cvename>CAN-2005-2704</cvename>
+      <cvename>CAN-2005-2705</cvename>
+      <cvename>CAN-2005-2706</cvename>
+      <cvename>CAN-2005-2707</cvename>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-58.html</url>
+    </references>
+    <dates>
+      <discovery>2005-09-22</discovery>
+      <entry>2005-09-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2e28cefb-2aee-11da-a263-0001020eed82">
     <topic>mozilla &amp; firefox -- command line URL shell command injection</topic>
     <affects>
@@ -112,10 +255,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <cvename>CAN-2005-2968</cvename>
       <url>https://bugzilla.mozilla.org/show_bug.cgi?id=307185</url>
       <url>http://secunia.com/advisories/16869/</url>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-59.html</url>
     </references>
     <dates>
       <discovery>2005-09-06</discovery>
       <entry>2005-09-22</entry>
+      <modified>2005-09-23</modified>
     </dates>
   </vuln>
 
@@ -336,10 +481,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <url>http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=112624614008387</url>
       <url>http://www.mozilla.org/security/idn.html</url>
       <url>https://bugzilla.mozilla.org/show_bug.cgi?id=307259</url>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-57.html</url>
     </references>
     <dates>
       <discovery>2005-09-08</discovery>
       <entry>2005-09-10</entry>
+      <modified>2005-09-23</modified>
     </dates>
   </vuln>
 
