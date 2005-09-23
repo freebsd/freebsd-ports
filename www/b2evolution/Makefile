@@ -6,14 +6,11 @@
 #
 
 PORTNAME=	b2evolution
-PORTVERSION=	0.9.0.12
-PORTREVISION=	2
+PORTVERSION=	0.9.1b
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	evocms
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${B2EVO_DATE}${EXTRACT_SUFX} \
-		${PATCH_VER}
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-${B2EVO_DATE}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${B2EVO_DATE}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multilingual, multiuser, multi-blog engine
@@ -22,8 +19,7 @@ PATCH_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 USE_ZIP=	YES
 
-PATCH_VER=	xmlrpc_fix_112
-B2EVO_DATE?=	2005-05-06
+B2EVO_DATE?=	2005-09-16
 USE_PHP=	mysql pcre session xml xmlrpc
 PHP4_PORT?=	www/mod_php4
 NO_BUILD=	YES
@@ -58,12 +54,6 @@ PLIST=		${WRKDIR}/pkg-plist
 
 post-extract:
 	@${TR} -d \\r < ${HTACCESS} > ${HTACCESS}.unix
-
-post-patch:
-	@cd ${WRKSRC} \
-		&& ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${PATCH_VER}${EXTRACT_SUFX}
-	@${MV} -f ${WRKSRC}/${PATCH_VER}/b2evocore/* ${WRKSRC}/blogs/b2evocore
-	@${RM} -rf ${WRKSRC}/${PATCH_VER}
 
 pre-install:
 	@cd ${WRKSRC} && ${FIND} -s . -type f | \
