@@ -6,13 +6,13 @@
 #
 
 PORTNAME=		Data-FormValidator
-PORTVERSION=		3.13
+PORTVERSION=		4.02
 CATEGORIES=		textproc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/M/MA/MARKSTOS
+MASTER_SITE_SUBDIR=	Data
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		perl@FreeBSD.org
 COMMENT=		Validates user input (usually from an HTML form) based
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
