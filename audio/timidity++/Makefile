@@ -7,7 +7,7 @@
 
 PORTNAME=	timidity++
 PORTVERSION=	2.13.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=timidity
@@ -16,20 +16,25 @@ DISTNAME=	TiMidity++-${PORTVERSION}
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	Software MIDI player
 
-LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis	\
+		arc:${PORTSDIR}/archivers/libarc
 RUN_DEPENDS=	${LOCALBASE}/share/timidity/timidity.cfg:${PORTSDIR}/audio/eawpats
 
 CONFLICTS=	timidity-0.*
 
 # If you don't have X11, type "make -DWITHOUT_X11" or uncomment this.
 #WITHOUT_X11=	yes
-USE_GMAKE=	yes
+#USE_GMAKE=	yes
 USE_BZIP2=	yes
+USE_GETOPT_LONG=yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
+EXTRACT_AFTER_ARGS=| ${TAR} -xpf - --exclude '*/libarc/*'	\
+		--exclude '*/utils/mblock.h' --exclude '*/utils/memb.h'
 
 CONFIGURE_ARGS?=--enable-interface=ncurses,vt100,server
 CONFIGURE_ARGS+=--program-transform-name= --enable-network
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include/libarc"
 
 PLIST_SUB=	EUCJP_LOCALE=${EUCJP_LOCALE} TIMID_LIBDIR=${TIMID_LIBDIR} \
 		ELISPDIR=share/emacs/site-lisp
@@ -77,7 +82,7 @@ CONFIGURE_ARGS+=--enable-audio=oss,vorbis
 .endif
 
 .if ${PORTOBJFORMAT} == "elf"
-CONFIGURE_ENV=	LDFLAGS=-export-dynamic
+CONFIGURE_ENV+=	LDFLAGS=-export-dynamic
 .endif
 
 pre-install:
