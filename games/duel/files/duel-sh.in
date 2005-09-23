@@ -18,4 +18,4 @@ find * -type f -exec ln -s %%DATADIR%%/{} ~/.duel/{} \; 2>/dev/null || exit 1
 
 cd ~/.duel || exit 1
 
-exec %%PREFIX%%/libexec/duel
+exec %%PREFIX%%/libexec/duel "$@"

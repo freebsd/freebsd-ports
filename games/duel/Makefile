@@ -7,6 +7,7 @@
 
 PORTNAME=	duel
 PORTVERSION=	0.98
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.personal.rdg.ac.uk/~sir03me/
 DISTNAME=	lin${PORTNAME}
