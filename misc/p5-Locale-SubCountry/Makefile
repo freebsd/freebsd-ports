@@ -6,17 +6,23 @@
 #
 
 PORTNAME=	Locale-SubCountry
-PORTVERSION=	1.22
+PORTVERSION=	1.36
 CATEGORIES=	misc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Locale
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert state, province, county etc. names to/from code
 
 PERL_CONFIGURE=	yes
 
 MAN3=	Locale::SubCountry.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500804
+IGNORE=		Port requires perl 5.8.4 or later. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
