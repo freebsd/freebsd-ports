@@ -1,0 +1,230 @@
+http://timidity-docs.sourceforge.jp/cgi-bin/kagemai-en/guest.cgi?project=timidity-bugs-en&action=view_report&id=54
+
+--- interface/Makefile.in	Sun Oct  3 08:39:54 2004
++++ interface/Makefile.in	Thu Sep 22 00:01:34 2005
+@@ -1240,5 +1240,5 @@
+ @NEEDDLOPEN_TRUE@install.dynamics: $(dynamic_targets)
+ @NEEDDLOPEN_TRUE@	test -d $(DESTDIR)$(SHLIB_DIR) || mkdir -p $(DESTDIR)$(SHLIB_DIR)
+-@NEEDDLOPEN_TRUE@	for f in $(dynamic_targets) ''; do case ".$$f" in .);; *) $(INSTALL_PROGRAM) $$f $(DESTDIR)$(SHLIB_DIR) ; $(INSTALL_DATA) $${f%%$(so)}txt $(DESTDIR)$(SHLIB_DIR);; esac; done
++@NEEDDLOPEN_TRUE@	for f in $(dynamic_targets) ''; do case ".$$f" in .);; *) $(INSTALL_PROGRAM) $$f $(DESTDIR)$(SHLIB_DIR);; esac; done
+ 
+ @NEEDDLOPEN_TRUE@.c.$(so):
+--- timidity/timidity.c	Sat Oct  2 06:46:17 2004
++++ timidity/timidity.c	Thu Sep 22 02:32:24 2005
+@@ -386,5 +386,5 @@
+ static inline int parse_opt_c(char *);
+ static inline int parse_opt_D(const char *);
+-static inline int parse_opt_d(const char *);
++static inline int parse_opt_d(char *);
+ static inline int parse_opt_E(char *);
+ static inline int parse_opt_mod_wheel(const char *);
+@@ -418,5 +418,5 @@
+ #ifdef IA_DYNAMIC
+ static inline void list_dyna_interface(FILE *, char *, char *);
+-static inline char *dynamic_interface_info(int);
++static inline const char *dynamic_interface_info(int);
+ char *dynamic_interface_module(int);
+ #endif
+@@ -501,4 +501,5 @@
+ #ifdef IA_DYNAMIC
+ MAIN_INTERFACE char dynamic_interface_id;
++ControlMode *ctl_load(int id);
+ #endif /* IA_DYNAMIC */
+ 
+@@ -2929,11 +2930,9 @@
+ }
+ 
+-static inline int parse_opt_d(const char *arg)
++static inline int parse_opt_d(char *arg)
+ {
+ 	/* dynamic lib root */
+ #ifdef IA_DYNAMIC
+-	if (dynamic_lib_root)
+-		free(dynamic_lib_root);
+-	dynamic_lib_root = safe_strdup(arg);
++	dynamic_lib_root = arg;
+ 	return 0;
+ #else
+@@ -3935,5 +3934,6 @@
+ {
+ 	URL url;
+-	char fname[BUFSIZ], *info;
++	char fname[63];
++	const char *info;
+ 	int id;
+ 	
+@@ -3946,6 +3946,5 @@
+ 				continue;
+ 			mark[id] = 1;
+-			if ((info = dynamic_interface_info(id)) == NULL)
+-				info = dynamic_interface_module(id);
++			info = dynamic_interface_info(id);
+ 			if (info != NULL)
+ 				fprintf(fp, "  -i%c          %s" NLS, id, info);
+@@ -3954,39 +3953,27 @@
+ }
+ 
+-static inline char *dynamic_interface_info(int id)
++static inline const char *
++dynamic_interface_info(int id)
+ {
+-	static char libinfo[MAXPATHLEN];
+-	int fd, n;
+-	char *nl;
+-	
+-	sprintf(libinfo, "%s" PATH_STRING "interface_%c.txt",
+-			dynamic_lib_root, id);
+-	if ((fd = open(libinfo, 0)) < 0)
+-		return NULL;
+-	n = read(fd, libinfo, sizeof(libinfo) - 1);
+-	close(fd);
+-	if (n <= 0)
+-		return NULL;
+-	libinfo[n] = '\0';
+-	if ((nl = strchr(libinfo, '\n')) == libinfo)
++	ControlMode *actl;
++
++	actl = ctl_load(id);
++	if (actl == NULL)
+ 		return NULL;
+-	if (nl != NULL) {
+-		*nl = '\0';
+-		if (*(nl - 1) == '\r')
+-			*(nl - 1) = '\0';
+-	}
+-	return libinfo;
++
++	return actl->id_name;
+ }
+ 
+-char *dynamic_interface_module(int id)
++char *
++dynamic_interface_module(int id)
+ {
+-	static char shared_library[MAXPATHLEN];
+-	int fd;
++	char *shared_library;
+ 	
++	shared_library = malloc(strlen(dynamic_lib_root) +
++	    sizeof(PATH_STRING) - 1 + sizeof("interface_X") - 1 +
++	    sizeof(SHARED_LIB_EXT) - 1 + 1);
+-	sprintf(shared_library, "%s" PATH_STRING "interface_%c%s",
+-			dynamic_lib_root, id, SHARED_LIB_EXT);
++	sprintf(shared_library, "%s" PATH_STRING "interface_%c" SHARED_LIB_EXT,
++	    dynamic_lib_root, id);
+-	if ((fd = open(shared_library, 0)) < 0)
+-		return NULL;
+-	close(fd);
++
+ 	return shared_library;
+ }
+@@ -4012,5 +3996,5 @@
+ #ifdef IA_DYNAMIC
+ 		if (cmp->id_character == dynamic_interface_id
+-				&& dynamic_interface_module(*arg)) {
++				&& ctl_load(*arg)) {
+ 			/* Dynamic interface loader */
+ 			found = 1;
+--- interface/dynamic_c.c	Tue Jan 15 05:53:20 2002
++++ interface/dynamic_c.c	Thu Sep 22 01:17:11 2005
+@@ -80,40 +80,66 @@
+ }
+ 
+-static int ctl_open(int using_stdin, int using_stdout)
++ControlMode *
++ctl_load(int id)
+ {
+-    ControlMode *(* inferface_loader)(void);
+-    char *path;
+-    char buff[256];
+-    int id;
+-
+-    if(dynamic_control_mode.opened)
+-	return 0;
+-    dynamic_control_mode.opened = 1;
+-
+-    id = dynamic_control_mode.id_character;
+-    path = dynamic_interface_module(id);
+-    if(path == NULL)
+-    {
+-	fprintf(stderr, "FATAL ERROR: dynamic_c.c: ctl_open()\n");
+-	exit(1);
+-    }
+-
+-    if((libhandle = dl_load_file(path)) == NULL)
+-	return -1;
+-
+-    sprintf(buff, "interface_%c_loader", id);
+-    if((inferface_loader = (ControlMode *(*)(void))
+-	dl_find_symbol(libhandle, buff)) == NULL)
+-	return -1;
+-
+-    ctl = inferface_loader();
+-
+-    ctl->verbosity = dynamic_control_mode.verbosity;
+-    ctl->trace_playing = dynamic_control_mode.trace_playing;
+-    ctl->flags = dynamic_control_mode.flags;
+-    ctl_close_hook = ctl->close;
+-    ctl->close = dynamic_control_mode.close; /* ctl_close() */
++	static int	last_id;
++	static ControlMode *last_ctl;
++	ControlMode *(* inferface_loader)(void);
++	char *path;
++	char buff[sizeof("interface_%_loader")];
++
++	if (last_id == id)
++		return last_ctl; /* success */
++	if (last_id) {
++		dl_free(libhandle);
++		last_ctl = NULL;
++	}
++
++	last_id = id;
++	path = dynamic_interface_module(id);
++	if(path == NULL) {
++		fprintf(stderr, "FATAL ERROR: dynamic_c.c: ctl_load()\n");
++		exit(1);
++	}
++
++	libhandle = dl_load_file(path);
++	free(path);
++	if (libhandle == NULL)
++		return NULL;
++
++	sprintf(buff, "interface_%c_loader", id);
++	if((inferface_loader = (ControlMode *(*)(void))
++	    dl_find_symbol(libhandle, buff)) == NULL) {
++		dl_free(libhandle);
++		return NULL;
++	}
+ 
+-    return ctl->open(using_stdin, using_stdout);
++	last_ctl = inferface_loader();
++
++	return last_ctl;
++}
++
++static int
++ctl_open(int using_stdin, int using_stdout)
++{
++	int id;
++	ControlMode *newctl;
++
++	if(dynamic_control_mode.opened)
++		return 0;
++	dynamic_control_mode.opened = 1;
++
++	id = dynamic_control_mode.id_character;
++	newctl = ctl_load(id);
++	if (newctl == NULL)
++		return 0;
++
++	ctl = newctl;
++	ctl->verbosity = dynamic_control_mode.verbosity;
++	ctl->trace_playing = dynamic_control_mode.trace_playing;
++	ctl->flags = dynamic_control_mode.flags;
++	ctl_close_hook = ctl->close;
++	ctl->close = dynamic_control_mode.close; /* ctl_close() */
++	return ctl->open(using_stdin, using_stdout);
+ }
+ 
