@@ -1506,7 +1506,7 @@
 %%T%%/jre/lib/cmm/PYCC.pf
 %%T%%/jre/lib/cmm/sRGB.pf
 %%T%%/jre/lib/content-types.properties
-%%T%%/jre/lib/deploy.pack
+%%T%%/jre/lib/deploy.jar
 %%T%%/jre/lib/ext/dnsns.jar
 %%T%%/jre/lib/ext/localedata.jar
 %%T%%/jre/lib/ext/sunjce_provider.jar
@@ -1518,6 +1518,8 @@
 %%T%%/jre/lib/fontconfig.RedHat.3.properties.src
 %%T%%/jre/lib/fontconfig.RedHat.8.0.bfc
 %%T%%/jre/lib/fontconfig.RedHat.8.0.properties.src
+%%T%%/jre/lib/fontconfig.RedHat.9.0.bfc
+%%T%%/jre/lib/fontconfig.RedHat.9.0.properties.src
 %%T%%/jre/lib/fontconfig.RedHat.bfc
 %%T%%/jre/lib/fontconfig.RedHat.properties.src
 %%T%%/jre/lib/fontconfig.SuSE.bfc
@@ -1710,6 +1712,17 @@
 %%T%%/jre/lib/zi/America/Anguilla
 %%T%%/jre/lib/zi/America/Antigua
 %%T%%/jre/lib/zi/America/Araguaina
+%%T%%/jre/lib/zi/America/Argentina/Buenos_Aires
+%%T%%/jre/lib/zi/America/Argentina/Catamarca
+%%T%%/jre/lib/zi/America/Argentina/ComodRivadavia
+%%T%%/jre/lib/zi/America/Argentina/Cordoba
+%%T%%/jre/lib/zi/America/Argentina/Jujuy
+%%T%%/jre/lib/zi/America/Argentina/La_Rioja
+%%T%%/jre/lib/zi/America/Argentina/Mendoza
+%%T%%/jre/lib/zi/America/Argentina/Rio_Gallegos
+%%T%%/jre/lib/zi/America/Argentina/San_Juan
+%%T%%/jre/lib/zi/America/Argentina/Tucuman
+%%T%%/jre/lib/zi/America/Argentina/Ushuaia
 %%T%%/jre/lib/zi/America/Aruba
 %%T%%/jre/lib/zi/America/Asuncion
 %%T%%/jre/lib/zi/America/Bahia
@@ -1719,17 +1732,14 @@
 %%T%%/jre/lib/zi/America/Boa_Vista
 %%T%%/jre/lib/zi/America/Bogota
 %%T%%/jre/lib/zi/America/Boise
-%%T%%/jre/lib/zi/America/Buenos_Aires
 %%T%%/jre/lib/zi/America/Cambridge_Bay
 %%T%%/jre/lib/zi/America/Campo_Grande
 %%T%%/jre/lib/zi/America/Cancun
 %%T%%/jre/lib/zi/America/Caracas
-%%T%%/jre/lib/zi/America/Catamarca
 %%T%%/jre/lib/zi/America/Cayenne
 %%T%%/jre/lib/zi/America/Cayman
 %%T%%/jre/lib/zi/America/Chicago
 %%T%%/jre/lib/zi/America/Chihuahua
-%%T%%/jre/lib/zi/America/Cordoba
 %%T%%/jre/lib/zi/America/Costa_Rica
 %%T%%/jre/lib/zi/America/Cuiaba
 %%T%%/jre/lib/zi/America/Curacao
@@ -1762,7 +1772,6 @@
 %%T%%/jre/lib/zi/America/Inuvik
 %%T%%/jre/lib/zi/America/Iqaluit
 %%T%%/jre/lib/zi/America/Jamaica
-%%T%%/jre/lib/zi/America/Jujuy
 %%T%%/jre/lib/zi/America/Juneau
 %%T%%/jre/lib/zi/America/Kentucky/Monticello
 %%T%%/jre/lib/zi/America/La_Paz
@@ -1774,7 +1783,6 @@
 %%T%%/jre/lib/zi/America/Manaus
 %%T%%/jre/lib/zi/America/Martinique
 %%T%%/jre/lib/zi/America/Mazatlan
-%%T%%/jre/lib/zi/America/Mendoza
 %%T%%/jre/lib/zi/America/Menominee
 %%T%%/jre/lib/zi/America/Merida
 %%T%%/jre/lib/zi/America/Mexico_City
@@ -2363,6 +2371,7 @@
 @dirrm %%T%%/jre/lib/zi/America/North_Dakota
 @dirrm %%T%%/jre/lib/zi/America/Kentucky
 @dirrm %%T%%/jre/lib/zi/America/Indiana
+@dirrm %%T%%/jre/lib/zi/America/Argentina
 @dirrm %%T%%/jre/lib/zi/America
 @dirrm %%T%%/jre/lib/zi/Africa
 @dirrm %%T%%/jre/lib/zi
