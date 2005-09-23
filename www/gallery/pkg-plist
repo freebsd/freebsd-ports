@@ -15,8 +15,13 @@
 %%GALLERYDIR%%/classes/Comment.php
 %%GALLERYDIR%%/classes/Database.php
 %%GALLERYDIR%%/classes/EverybodyUser.php
+%%GALLERYDIR%%/classes/HTML/table.php
 %%GALLERYDIR%%/classes/Image.php
 %%GALLERYDIR%%/classes/LoggedInUser.php
+%%GALLERYDIR%%/classes/Mail/RFC822.php
+%%GALLERYDIR%%/classes/Mail/htmlMimeMail.php
+%%GALLERYDIR%%/classes/Mail/mimePart.php
+%%GALLERYDIR%%/classes/Mail/smtp.php
 %%GALLERYDIR%%/classes/NobodyUser.php
 %%GALLERYDIR%%/classes/User.php
 %%GALLERYDIR%%/classes/UserDB.php
@@ -111,15 +116,9 @@
 %%GALLERYDIR%%/docs/g1package/gallery1-user.watermark.html
 %%GALLERYDIR%%/docs/g1package/html.css
 %%GALLERYDIR%%/docs/g1package/images/basic-auth.gif
-%%GALLERYDIR%%/docs/g1package/images/gallery1-admin/component_menu.png
-%%GALLERYDIR%%/docs/g1package/images/gallery1-admin/gallery_setup.png
-%%GALLERYDIR%%/docs/g1package/images/gallery1-admin/install_from_directory.png
-%%GALLERYDIR%%/docs/g1package/images/gallery1-admin/install_success.png
-%%GALLERYDIR%%/docs/g1package/images/gallery1-admin/main_menu.png
 %%GALLERYDIR%%/docs/g1package/images/up-up.gif
 %%GALLERYDIR%%/docs/g1package/images/up.gif
 %%GALLERYDIR%%/docs/g1package/index.html
-%%GALLERYDIR%%/docs/g1package/preface.html
 %%GALLERYDIR%%/docs/g1package/pretty-html.css
 %%GALLERYDIR%%/docs/gallery1-admin.backup.html
 %%GALLERYDIR%%/docs/gallery1-admin.basics.html
@@ -164,14 +163,13 @@
 %%GALLERYDIR%%/docs/index.html
 %%GALLERYDIR%%/docs/preface.html
 %%GALLERYDIR%%/docs/pretty-html.css
+%%GALLERYDIR%%/ecard_form.php
+%%GALLERYDIR%%/ecard_preview.php
 %%GALLERYDIR%%/edit_appearance.php
 %%GALLERYDIR%%/edit_caption.php
 %%GALLERYDIR%%/edit_field.php
 %%GALLERYDIR%%/edit_thumb.php
 %%GALLERYDIR%%/edit_watermark.php
-%%GALLERYDIR%%/errors/configure_help.php
-%%GALLERYDIR%%/errors/reconfigure.php
-%%GALLERYDIR%%/errors/unconfigured.php
 %%GALLERYDIR%%/extra_fields.php
 %%GALLERYDIR%%/gallery_remote.php
 %%GALLERYDIR%%/gallery_remote2.php
@@ -218,6 +216,17 @@
 %%GALLERYDIR%%/html_wrap/frames/polaroids/TT.gif
 %%GALLERYDIR%%/html_wrap/frames/polaroids/frame.def
 %%GALLERYDIR%%/html_wrap/frames/polaroids/pixel_trans.gif
+%%GALLERYDIR%%/html_wrap/frames/postage_stamp/BB5.gif
+%%GALLERYDIR%%/html_wrap/frames/postage_stamp/BL5.gif
+%%GALLERYDIR%%/html_wrap/frames/postage_stamp/BR5.gif
+%%GALLERYDIR%%/html_wrap/frames/postage_stamp/LL5.gif
+%%GALLERYDIR%%/html_wrap/frames/postage_stamp/RR5.gif
+%%GALLERYDIR%%/html_wrap/frames/postage_stamp/ReadMe.txt
+%%GALLERYDIR%%/html_wrap/frames/postage_stamp/TL5.gif
+%%GALLERYDIR%%/html_wrap/frames/postage_stamp/TR5.gif
+%%GALLERYDIR%%/html_wrap/frames/postage_stamp/TT5.gif
+%%GALLERYDIR%%/html_wrap/frames/postage_stamp/frame.def
+%%GALLERYDIR%%/html_wrap/frames/postage_stamp/pixel_trans.gif
 %%GALLERYDIR%%/html_wrap/frames/shadows/BB.png
 %%GALLERYDIR%%/html_wrap/frames/shadows/BBL.png
 %%GALLERYDIR%%/html_wrap/frames/shadows/BR.png
@@ -257,8 +266,6 @@
 %%GALLERYDIR%%/html_wrap/inline_photothumb.frame.default
 %%GALLERYDIR%%/html_wrap/photo.footer.default
 %%GALLERYDIR%%/html_wrap/photo.header.default
-%%GALLERYDIR%%/html_wrap/search.footer.default
-%%GALLERYDIR%%/html_wrap/search.header.default
 %%GALLERYDIR%%/html_wrap/slideshow.footer.default
 %%GALLERYDIR%%/html_wrap/slideshow.header.default
 %%GALLERYDIR%%/html_wrap/stats.footer.default
@@ -285,27 +292,74 @@
 %%GALLERYDIR%%/images/albumthumb_RR.gif
 %%GALLERYDIR%%/images/albumthumb_TR.gif
 %%GALLERYDIR%%/images/bar.gif
+%%GALLERYDIR%%/images/colorpicker.png
+%%GALLERYDIR%%/images/colorscale.png
 %%GALLERYDIR%%/images/computer.gif
 %%GALLERYDIR%%/images/donate.jpg
+%%GALLERYDIR%%/images/ecard_images/00.gif
+%%GALLERYDIR%%/images/ecard_images/01.gif
+%%GALLERYDIR%%/images/ecard_images/02.gif
+%%GALLERYDIR%%/images/ecard_images/03.gif
+%%GALLERYDIR%%/images/ecard_images/04.gif
+%%GALLERYDIR%%/images/ecard_images/05.gif
+%%GALLERYDIR%%/images/ecard_images/06.gif
+%%GALLERYDIR%%/images/ecard_images/07.gif
+%%GALLERYDIR%%/images/ecard_images/08.gif
+%%GALLERYDIR%%/images/ecard_images/09.gif
+%%GALLERYDIR%%/images/ecard_images/10.gif
+%%GALLERYDIR%%/images/ecard_images/11.gif
+%%GALLERYDIR%%/images/ecard_images/12.gif
+%%GALLERYDIR%%/images/ecard_images/13.gif
+%%GALLERYDIR%%/images/ecard_images/14.gif
+%%GALLERYDIR%%/images/ecard_images/15.gif
+%%GALLERYDIR%%/images/ecard_images/16.gif
+%%GALLERYDIR%%/images/ecard_images/17.gif
+%%GALLERYDIR%%/images/ecard_images/18.gif
+%%GALLERYDIR%%/images/ecard_images/19.gif
+%%GALLERYDIR%%/images/ecard_images/20.gif
+%%GALLERYDIR%%/images/ecard_images/21.gif
+%%GALLERYDIR%%/images/ecard_images/22.gif
+%%GALLERYDIR%%/images/ecard_images/23.gif
+%%GALLERYDIR%%/images/ecard_images/24.gif
+%%GALLERYDIR%%/images/ecard_images/25.gif
+%%GALLERYDIR%%/images/ecard_images/26.gif
+%%GALLERYDIR%%/images/ecard_images/27.gif
+%%GALLERYDIR%%/images/ecard_images/eCards.gif
+%%GALLERYDIR%%/images/ecard_images/ecards_eng.png
+%%GALLERYDIR%%/images/ecard_images/icon_help.gif
+%%GALLERYDIR%%/images/ecard_images/icon_square.gif
+%%GALLERYDIR%%/images/ecard_images/leer.gif
+%%GALLERYDIR%%/images/ecard_images/postcard.gif
 %%GALLERYDIR%%/images/favicon.ico
 %%GALLERYDIR%%/images/g1-phpBB2-icon.png
 %%GALLERYDIR%%/images/gallery-tag.png
 %%GALLERYDIR%%/images/icons/1leftarrow.gif
 %%GALLERYDIR%%/images/icons/1rightarrow.gif
 %%GALLERYDIR%%/images/icons/2downarrow.gif
+%%GALLERYDIR%%/images/icons/camera.gif
+%%GALLERYDIR%%/images/icons/decrypted.gif
 %%GALLERYDIR%%/images/icons/delete.gif
 %%GALLERYDIR%%/images/icons/display.gif
+%%GALLERYDIR%%/images/icons/ecard.gif
+%%GALLERYDIR%%/images/icons/editcopy.gif
 %%GALLERYDIR%%/images/icons/exit.gif
 %%GALLERYDIR%%/images/icons/folder_new.gif
 %%GALLERYDIR%%/images/icons/frame_query.gif
 %%GALLERYDIR%%/images/icons/history.gif
+%%GALLERYDIR%%/images/icons/idea.gif
 %%GALLERYDIR%%/images/icons/identity.gif
 %%GALLERYDIR%%/images/icons/info.gif
+%%GALLERYDIR%%/images/icons/kcmfontinst.gif
 %%GALLERYDIR%%/images/icons/kdf.gif
+%%GALLERYDIR%%/images/icons/no_idea.gif
 %%GALLERYDIR%%/images/icons/reload.gif
 %%GALLERYDIR%%/images/icons/showcomment.gif
+%%GALLERYDIR%%/images/icons/tab_duplicate.gif
+%%GALLERYDIR%%/images/icons/thumbnail.gif
+%%GALLERYDIR%%/images/icons/viewmag1.gif
 %%GALLERYDIR%%/images/icons/window_fullscreen.gif
 %%GALLERYDIR%%/images/icons/window_nofullscreen.gif
+%%GALLERYDIR%%/images/icons/yast_kuser.gif
 %%GALLERYDIR%%/images/icons/yast_sysadmin.gif
 %%GALLERYDIR%%/images/icons/yast_sysadmin2.gif
 %%GALLERYDIR%%/images/movie.thumb.jpg
@@ -331,6 +385,14 @@
 %%GALLERYDIR%%/includes/add_photos/add_other.inc
 %%GALLERYDIR%%/includes/add_photos/add_url.inc
 %%GALLERYDIR%%/includes/add_photos/captionOptions.inc.php
+%%GALLERYDIR%%/includes/definitions/albumProperties.php
+%%GALLERYDIR%%/includes/definitions/services.php
+%%GALLERYDIR%%/includes/ecard/templates/ecard_1.tpl
+%%GALLERYDIR%%/includes/ecard/templates/error.htm
+%%GALLERYDIR%%/includes/ecard/templates/leer.htm
+%%GALLERYDIR%%/includes/errors/configure_help.php
+%%GALLERYDIR%%/includes/errors/reconfigure.php
+%%GALLERYDIR%%/includes/errors/unconfigured.php
 %%GALLERYDIR%%/includes/slideshow/applet.cfg
 %%GALLERYDIR%%/includes/slideshow/applet.inc
 %%GALLERYDIR%%/includes/slideshow/high.inc
@@ -354,8 +416,8 @@
 %%GALLERYDIR%%/layout/commentboxbottom.inc
 %%GALLERYDIR%%/layout/commentboxtop.inc
 %%GALLERYDIR%%/layout/commentdraw.inc
-%%GALLERYDIR%%/layout/ml_pulldown.inc
 %%GALLERYDIR%%/layout/navigator.inc
+%%GALLERYDIR%%/layout/navmicro.inc
 %%GALLERYDIR%%/layout/navphoto.inc
 %%GALLERYDIR%%/layout/navtablebegin.inc
 %%GALLERYDIR%%/layout/navtableend.inc
@@ -363,9 +425,15 @@
 %%GALLERYDIR%%/layout/searchdraw.inc
 %%GALLERYDIR%%/layout/watermarkform.inc
 %%GALLERYDIR%%/lib/Form.php
+%%GALLERYDIR%%/lib/albumItem.php
+%%GALLERYDIR%%/lib/colorpicker.php
 %%GALLERYDIR%%/lib/lang.php
+%%GALLERYDIR%%/lib/mail.php
+%%GALLERYDIR%%/lib/messages.php
 %%GALLERYDIR%%/lib/popup.php
+%%GALLERYDIR%%/lib/setup.php
 %%GALLERYDIR%%/lib/url.php
+%%GALLERYDIR%%/lib/valchecks.php
 %%GALLERYDIR%%/lib/voting.php
 %%NLS%%%%GALLERYDIR%%/locale/af_ZA/LC_MESSAGES/af_ZA-gallery_config.mo
 %%NLS%%%%GALLERYDIR%%/locale/af_ZA/LC_MESSAGES/af_ZA-gallery_core.mo
@@ -409,7 +477,7 @@
 %%NLS%%%%GALLERYDIR%%/locale/en_GB/en_GB-gallery_core.po
 %%NLS%%%%GALLERYDIR%%/locale/en_GB/en_GB-nls.php
 %%NLS%%%%GALLERYDIR%%/locale/en_GB/flagimage/en_GB.gif
-%%GALLERYDIR%%/locale/en_US/flagimage/en_US.gif
+%%NLS%%%%GALLERYDIR%%/locale/en_US/flagimage/en_US.gif
 %%NLS%%%%GALLERYDIR%%/locale/es_ES/LC_MESSAGES/es_ES-gallery_config.mo
 %%NLS%%%%GALLERYDIR%%/locale/es_ES/LC_MESSAGES/es_ES-gallery_core.mo
 %%NLS%%%%GALLERYDIR%%/locale/es_ES/es_ES-gallery_config.po
@@ -517,6 +585,7 @@
 %%NLS%%%%GALLERYDIR%%/locale/sk_SK/flagimage/sk_SK.gif
 %%NLS%%%%GALLERYDIR%%/locale/sk_SK/sk_SK-gallery_config.po
 %%NLS%%%%GALLERYDIR%%/locale/sk_SK/sk_SK-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/sk_SK/sk_SK-nls.php
 %%NLS%%%%GALLERYDIR%%/locale/sl_SI/LC_MESSAGES/sl_SI-gallery_config.mo
 %%NLS%%%%GALLERYDIR%%/locale/sl_SI/LC_MESSAGES/sl_SI-gallery_core.mo
 %%NLS%%%%GALLERYDIR%%/locale/sl_SI/flagimage/sl_SI.gif
@@ -541,16 +610,18 @@
 %%NLS%%%%GALLERYDIR%%/locale/vi_VN/vi_VN-gallery_config.po
 %%NLS%%%%GALLERYDIR%%/locale/vi_VN/vi_VN-gallery_core.po
 %%NLS%%%%GALLERYDIR%%/locale/vi_VN/vi_VN-nls.php
-%%NLS%%%%GALLERYDIR%%/locale/zh_HK/LC_MESSAGES/zh_HK-gallery_config.mo
-%%NLS%%%%GALLERYDIR%%/locale/zh_HK/LC_MESSAGES/zh_HK-gallery_core.mo
-%%NLS%%%%GALLERYDIR%%/locale/zh_HK/flagimage/zh_TW.gif
-%%NLS%%%%GALLERYDIR%%/locale/zh_HK/zh_HK-gallery_config.po
-%%NLS%%%%GALLERYDIR%%/locale/zh_HK/zh_HK-gallery_core.po
 %%NLS%%%%GALLERYDIR%%/locale/zh_HK.utf8/LC_MESSAGES/zh_HK.utf8-gallery_config.mo
 %%NLS%%%%GALLERYDIR%%/locale/zh_HK.utf8/LC_MESSAGES/zh_HK.utf8-gallery_core.mo
 %%NLS%%%%GALLERYDIR%%/locale/zh_HK.utf8/flagimage/zh_HK.gif
 %%NLS%%%%GALLERYDIR%%/locale/zh_HK.utf8/zh_HK.utf8-gallery_config.po
 %%NLS%%%%GALLERYDIR%%/locale/zh_HK.utf8/zh_HK.utf8-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/zh_HK.utf8/zh_HK.utf8-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/zh_HK/LC_MESSAGES/zh_HK-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/zh_HK/LC_MESSAGES/zh_HK-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/zh_HK/flagimage/zh_TW.gif
+%%NLS%%%%GALLERYDIR%%/locale/zh_HK/zh_HK-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/zh_HK/zh_HK-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/zh_HK/zh_HK-nls.php
 %%NLS%%%%GALLERYDIR%%/locale/zh_TW/LC_MESSAGES/zh_TW-gallery_config.mo
 %%NLS%%%%GALLERYDIR%%/locale/zh_TW/LC_MESSAGES/zh_TW-gallery_core.mo
 %%NLS%%%%GALLERYDIR%%/locale/zh_TW/flagimage/zh_TW.gif
@@ -571,7 +642,7 @@
 %%GALLERYDIR%%/platform/fs_win32.php
 %%GALLERYDIR%%/po/CREDITS
 %%GALLERYDIR%%/po/change_version.sh
-%%GALLERYDIR%%/po/copyright.txt
+%%GALLERYDIR%%/po/copyright-header.txt
 %%GALLERYDIR%%/po/create_po_template.sh
 %%GALLERYDIR%%/po/edit_changelog.sh
 %%GALLERYDIR%%/po/filelist-config
@@ -579,7 +650,6 @@
 %%GALLERYDIR%%/po/gallery-config.pot
 %%GALLERYDIR%%/po/gallery-core.pot
 %%GALLERYDIR%%/po/make_mo_files.sh
-%%GALLERYDIR%%/po/percents.pl
 %%GALLERYDIR%%/po/remove_obsolete.pl
 %%GALLERYDIR%%/po/transform_fuzzy.pl
 %%GALLERYDIR%%/po/update_po_files.sh
@@ -588,6 +658,7 @@
 %%GALLERYDIR%%/progress_uploading.php
 %%GALLERYDIR%%/publish_xp.php
 %%GALLERYDIR%%/publish_xp_docs.php
+%%GALLERYDIR%%/rearrange.php
 %%GALLERYDIR%%/register.php
 %%GALLERYDIR%%/rename_album.php
 %%GALLERYDIR%%/reset_votes.php
@@ -611,7 +682,6 @@
 %%GALLERYDIR%%/setup/defaults.inc
 %%GALLERYDIR%%/setup/diagnostics.php
 %%GALLERYDIR%%/setup/frame_test.php
-%%GALLERYDIR%%/setup/functions.inc
 %%GALLERYDIR%%/setup/ghcc.php
 %%GALLERYDIR%%/setup/gpl.txt
 %%GALLERYDIR%%/setup/index.php
@@ -816,6 +886,7 @@
 %%GALLERYDIR%%/skins/yellow/style.def
 %%GALLERYDIR%%/slideshow.php
 %%GALLERYDIR%%/sort_album.php
+%%GALLERYDIR%%/stamp_preview.php
 %%GALLERYDIR%%/stats-wizard.php
 %%GALLERYDIR%%/stats.php
 %%GALLERYDIR%%/tools/build_manifest.php
@@ -837,222 +908,229 @@
 %%GALLERYDIR%%/view_photo.php
 %%GALLERYDIR%%/view_photo_properties.php
 %%GALLERYDIR%%/watermark_album.php
-@dirrm %%GALLERYDIR%%/classes/database/mysql
-@dirrm %%GALLERYDIR%%/classes/database
-@dirrm %%GALLERYDIR%%/classes/gallery
-@dirrm %%GALLERYDIR%%/classes/geeklog
-@dirrm %%GALLERYDIR%%/classes/mambo
-@dirrm %%GALLERYDIR%%/classes/nsnnuke
-@dirrm %%GALLERYDIR%%/classes/nuke5
-@dirrm %%GALLERYDIR%%/classes/phpbb
-@dirrm %%GALLERYDIR%%/classes/postnuke
-@dirrm %%GALLERYDIR%%/classes/postnuke0.7.1
-@dirrm %%GALLERYDIR%%/classes/remote
-@dirrm %%GALLERYDIR%%/classes
-@dirrm %%GALLERYDIR%%/contrib/GeekLog
-@dirrm %%GALLERYDIR%%/contrib/mambo/classes
-@dirrm %%GALLERYDIR%%/contrib/mambo/images
-@dirrm %%GALLERYDIR%%/contrib/mambo/includes
-@dirrm %%GALLERYDIR%%/contrib/mambo
-@dirrm %%GALLERYDIR%%/contrib/phpBB2
-@dirrm %%GALLERYDIR%%/contrib/phpnuke
-@dirrm %%GALLERYDIR%%/contrib/postnuke
-@dirrm %%GALLERYDIR%%/contrib
-@dirrm %%GALLERYDIR%%/css
-@dirrm %%GALLERYDIR%%/docs/context-help
-@dirrm %%GALLERYDIR%%/docs/g1package/images/gallery1-admin
-@dirrm %%GALLERYDIR%%/docs/g1package/images
-@dirrm %%GALLERYDIR%%/docs/g1package
-@dirrm %%GALLERYDIR%%/docs/images
-@dirrm %%GALLERYDIR%%/docs
-@dirrm %%GALLERYDIR%%/errors
-@dirrm %%GALLERYDIR%%/html
-@dirrm %%GALLERYDIR%%/html_wrap/frames/golden
-@dirrm %%GALLERYDIR%%/html_wrap/frames/notebook
-@dirrm %%GALLERYDIR%%/html_wrap/frames/polaroid
-@dirrm %%GALLERYDIR%%/html_wrap/frames/polaroids
-@dirrm %%GALLERYDIR%%/html_wrap/frames/shadows
-@dirrm %%GALLERYDIR%%/html_wrap/frames/simple_book
-@dirrm %%GALLERYDIR%%/html_wrap/frames/wooden
-@dirrm %%GALLERYDIR%%/html_wrap/frames
-@dirrm %%GALLERYDIR%%/html_wrap
-@dirrm %%GALLERYDIR%%/images/icons
-@dirrm %%GALLERYDIR%%/images
-@dirrm %%GALLERYDIR%%/includes/add_photos
-@dirrm %%GALLERYDIR%%/includes/slideshow
-@dirrm %%GALLERYDIR%%/includes/stats
-@dirrm %%GALLERYDIR%%/includes
-@dirrm %%GALLERYDIR%%/java
-@dirrm %%GALLERYDIR%%/js
-@dirrm %%GALLERYDIR%%/layout
-@dirrm %%GALLERYDIR%%/lib
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/af_ZA/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/af_ZA/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/af_ZA
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/bg_BG/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/bg_BG/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/bg_BG
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/ca_ES/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/ca_ES/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/ca_ES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/cs_CZ.iso-8859-2/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/cs_CZ.iso-8859-2/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/cs_CZ.iso-8859-2
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/da_DK/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/da_DK/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/da_DK
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/de_DE/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/de_DE/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/de_DE
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/en_GB/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/en_GB/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/en_GB
-@dirrm %%GALLERYDIR%%/locale/en_US/flagimage
-@dirrm %%GALLERYDIR%%/locale/en_US
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/es_ES/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/es_ES/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/es_ES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/fi_FI/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/fi_FI/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/fi_FI
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/fr_FR/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/fr_FR/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/fr_FR
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/gl_ES/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/gl_ES/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/gl_ES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/hu_HU/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/hu_HU/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/hu_HU
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/is_IS/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/is_IS/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/is_IS
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/it_IT/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/it_IT/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/it_IT
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/ja_JP/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/ja_JP/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/ja_JP
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/ko_KR/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/ko_KR/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/ko_KR
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/lt_LT/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/lt_LT/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/lt_LT
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/nl_NL/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/nl_NL/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/nl_NL
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/no_NO/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/no_NO/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/no_NO
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/pl_PL/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/pl_PL/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/pl_PL
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/pt_BR/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/pt_BR/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/pt_BR
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/pt_PT/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/pt_PT/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/pt_PT
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/ru_RU.cp1251/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/ru_RU.cp1251/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/ru_RU.cp1251
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/ru_RU.koi8r/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/ru_RU.koi8r/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/ru_RU.koi8r
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/sk_SK/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/sk_SK/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/sk_SK
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/sl_SI/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/sl_SI/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/sl_SI
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/sv_SE/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/sv_SE/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/sv_SE
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/tr_TR/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/tr_TR/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/tr_TR
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/vi_VN/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/vi_VN/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/vi_VN
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/zh_HK/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/zh_HK/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/zh_HK
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/zh_HK.utf8/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/zh_HK.utf8/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/zh_HK.utf8
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/zh_TW/LC_MESSAGES
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/zh_TW/flagimage
-@dirrm %%NLS%%%%GALLERYDIR%%/locale/zh_TW
-@dirrm %%NLS%%%%GALLERYDIR%%/locale
-@dirrm %%GALLERYDIR%%/platform
-@dirrm %%GALLERYDIR%%/po
-@dirrm %%GALLERYDIR%%/setup
-@dirrm %%GALLERYDIR%%/skins/bars002/css
-@dirrm %%GALLERYDIR%%/skins/bars002/images
-@dirrm %%GALLERYDIR%%/skins/bars002
-@dirrm %%GALLERYDIR%%/skins/bblue/css
-@dirrm %%GALLERYDIR%%/skins/bblue/images
-@dirrm %%GALLERYDIR%%/skins/bblue
-@dirrm %%GALLERYDIR%%/skins/bgreen/css
-@dirrm %%GALLERYDIR%%/skins/bgreen/images
-@dirrm %%GALLERYDIR%%/skins/bgreen
-@dirrm %%GALLERYDIR%%/skins/bgreen2/css
-@dirrm %%GALLERYDIR%%/skins/bgreen2/images
-@dirrm %%GALLERYDIR%%/skins/bgreen2
-@dirrm %%GALLERYDIR%%/skins/black/css
-@dirrm %%GALLERYDIR%%/skins/black/images
-@dirrm %%GALLERYDIR%%/skins/black
-@dirrm %%GALLERYDIR%%/skins/bluemod/css
-@dirrm %%GALLERYDIR%%/skins/bluemod/images
-@dirrm %%GALLERYDIR%%/skins/bluemod
-@dirrm %%GALLERYDIR%%/skins/bpurple/css
-@dirrm %%GALLERYDIR%%/skins/bpurple/images
-@dirrm %%GALLERYDIR%%/skins/bpurple
-@dirrm %%GALLERYDIR%%/skins/bred/css
-@dirrm %%GALLERYDIR%%/skins/bred/images
-@dirrm %%GALLERYDIR%%/skins/bred
-@dirrm %%GALLERYDIR%%/skins/bubbles/css
-@dirrm %%GALLERYDIR%%/skins/bubbles/images
-@dirrm %%GALLERYDIR%%/skins/bubbles
-@dirrm %%GALLERYDIR%%/skins/butterfly_green/css
-@dirrm %%GALLERYDIR%%/skins/butterfly_green/images
-@dirrm %%GALLERYDIR%%/skins/butterfly_green
-@dirrm %%GALLERYDIR%%/skins/greenpurple/css
-@dirrm %%GALLERYDIR%%/skins/greenpurple/images
-@dirrm %%GALLERYDIR%%/skins/greenpurple
-@dirrm %%GALLERYDIR%%/skins/hotred/css
-@dirrm %%GALLERYDIR%%/skins/hotred/images
-@dirrm %%GALLERYDIR%%/skins/hotred
-@dirrm %%GALLERYDIR%%/skins/jenskin/css
-@dirrm %%GALLERYDIR%%/skins/jenskin/images
-@dirrm %%GALLERYDIR%%/skins/jenskin
-@dirrm %%GALLERYDIR%%/skins/lilac/css
-@dirrm %%GALLERYDIR%%/skins/lilac/images
-@dirrm %%GALLERYDIR%%/skins/lilac
-@dirrm %%GALLERYDIR%%/skins/madmod1/css
-@dirrm %%GALLERYDIR%%/skins/madmod1/images
-@dirrm %%GALLERYDIR%%/skins/madmod1/tpl
-@dirrm %%GALLERYDIR%%/skins/madmod1
-@dirrm %%GALLERYDIR%%/skins/paint/css
-@dirrm %%GALLERYDIR%%/skins/paint/images
-@dirrm %%GALLERYDIR%%/skins/paint
-@dirrm %%GALLERYDIR%%/skins/redmarble/css
-@dirrm %%GALLERYDIR%%/skins/redmarble/images
-@dirrm %%GALLERYDIR%%/skins/redmarble
-@dirrm %%GALLERYDIR%%/skins/slick/css
-@dirrm %%GALLERYDIR%%/skins/slick/images
-@dirrm %%GALLERYDIR%%/skins/slick
-@dirrm %%GALLERYDIR%%/skins/suit/css
-@dirrm %%GALLERYDIR%%/skins/suit/images
-@dirrm %%GALLERYDIR%%/skins/suit
-@dirrm %%GALLERYDIR%%/skins/white1/css
-@dirrm %%GALLERYDIR%%/skins/white1/images
-@dirrm %%GALLERYDIR%%/skins/white1
-@dirrm %%GALLERYDIR%%/skins/yellow/css
-@dirrm %%GALLERYDIR%%/skins/yellow/images
-@dirrm %%GALLERYDIR%%/skins/yellow
-@dirrm %%GALLERYDIR%%/skins
 @dirrm %%GALLERYDIR%%/tools/include
 @dirrm %%GALLERYDIR%%/tools
+@dirrm %%GALLERYDIR%%/skins/yellow/images
+@dirrm %%GALLERYDIR%%/skins/yellow/css
+@dirrm %%GALLERYDIR%%/skins/yellow
+@dirrm %%GALLERYDIR%%/skins/white1/images
+@dirrm %%GALLERYDIR%%/skins/white1/css
+@dirrm %%GALLERYDIR%%/skins/white1
+@dirrm %%GALLERYDIR%%/skins/suit/images
+@dirrm %%GALLERYDIR%%/skins/suit/css
+@dirrm %%GALLERYDIR%%/skins/suit
+@dirrm %%GALLERYDIR%%/skins/slick/images
+@dirrm %%GALLERYDIR%%/skins/slick/css
+@dirrm %%GALLERYDIR%%/skins/slick
+@dirrm %%GALLERYDIR%%/skins/redmarble/images
+@dirrm %%GALLERYDIR%%/skins/redmarble/css
+@dirrm %%GALLERYDIR%%/skins/redmarble
+@dirrm %%GALLERYDIR%%/skins/paint/images
+@dirrm %%GALLERYDIR%%/skins/paint/css
+@dirrm %%GALLERYDIR%%/skins/paint
+@dirrm %%GALLERYDIR%%/skins/madmod1/tpl
+@dirrm %%GALLERYDIR%%/skins/madmod1/images
+@dirrm %%GALLERYDIR%%/skins/madmod1/css
+@dirrm %%GALLERYDIR%%/skins/madmod1
+@dirrm %%GALLERYDIR%%/skins/lilac/images
+@dirrm %%GALLERYDIR%%/skins/lilac/css
+@dirrm %%GALLERYDIR%%/skins/lilac
+@dirrm %%GALLERYDIR%%/skins/jenskin/images
+@dirrm %%GALLERYDIR%%/skins/jenskin/css
+@dirrm %%GALLERYDIR%%/skins/jenskin
+@dirrm %%GALLERYDIR%%/skins/hotred/images
+@dirrm %%GALLERYDIR%%/skins/hotred/css
+@dirrm %%GALLERYDIR%%/skins/hotred
+@dirrm %%GALLERYDIR%%/skins/greenpurple/images
+@dirrm %%GALLERYDIR%%/skins/greenpurple/css
+@dirrm %%GALLERYDIR%%/skins/greenpurple
+@dirrm %%GALLERYDIR%%/skins/butterfly_green/images
+@dirrm %%GALLERYDIR%%/skins/butterfly_green/css
+@dirrm %%GALLERYDIR%%/skins/butterfly_green
+@dirrm %%GALLERYDIR%%/skins/bubbles/images
+@dirrm %%GALLERYDIR%%/skins/bubbles/css
+@dirrm %%GALLERYDIR%%/skins/bubbles
+@dirrm %%GALLERYDIR%%/skins/bred/images
+@dirrm %%GALLERYDIR%%/skins/bred/css
+@dirrm %%GALLERYDIR%%/skins/bred
+@dirrm %%GALLERYDIR%%/skins/bpurple/images
+@dirrm %%GALLERYDIR%%/skins/bpurple/css
+@dirrm %%GALLERYDIR%%/skins/bpurple
+@dirrm %%GALLERYDIR%%/skins/bluemod/images
+@dirrm %%GALLERYDIR%%/skins/bluemod/css
+@dirrm %%GALLERYDIR%%/skins/bluemod
+@dirrm %%GALLERYDIR%%/skins/black/images
+@dirrm %%GALLERYDIR%%/skins/black/css
+@dirrm %%GALLERYDIR%%/skins/black
+@dirrm %%GALLERYDIR%%/skins/bgreen2/images
+@dirrm %%GALLERYDIR%%/skins/bgreen2/css
+@dirrm %%GALLERYDIR%%/skins/bgreen2
+@dirrm %%GALLERYDIR%%/skins/bgreen/images
+@dirrm %%GALLERYDIR%%/skins/bgreen/css
+@dirrm %%GALLERYDIR%%/skins/bgreen
+@dirrm %%GALLERYDIR%%/skins/bblue/images
+@dirrm %%GALLERYDIR%%/skins/bblue/css
+@dirrm %%GALLERYDIR%%/skins/bblue
+@dirrm %%GALLERYDIR%%/skins/bars002/images
+@dirrm %%GALLERYDIR%%/skins/bars002/css
+@dirrm %%GALLERYDIR%%/skins/bars002
+@dirrm %%GALLERYDIR%%/skins
+@dirrm %%GALLERYDIR%%/setup
+@dirrm %%GALLERYDIR%%/po
+@dirrm %%GALLERYDIR%%/platform
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/zh_TW/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/zh_TW
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/zh_HK/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/zh_HK/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/zh_HK.utf8/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/zh_HK.utf8/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/zh_HK.utf8
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/zh_HK
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/vi_VN/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/vi_VN/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/vi_VN
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/tr_TR/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/tr_TR/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/tr_TR
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/sv_SE/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/sv_SE/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/sv_SE
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/sl_SI/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/sl_SI/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/sl_SI
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/sk_SK/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/sk_SK/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/sk_SK
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/ru_RU.koi8r/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/ru_RU.koi8r/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/ru_RU.koi8r
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/ru_RU.cp1251/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/ru_RU.cp1251/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/ru_RU.cp1251
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/pt_PT/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/pt_PT/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/pt_PT
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/pt_BR/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/pt_BR
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/pl_PL/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/pl_PL
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/no_NO/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/no_NO/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/no_NO
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/nl_NL/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/nl_NL
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/lt_LT/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/lt_LT/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/lt_LT
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/ko_KR/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/ko_KR/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/ko_KR
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/ja_JP/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/ja_JP/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/ja_JP
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/it_IT/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/it_IT
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/is_IS/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/is_IS/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/is_IS
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/hu_HU/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/hu_HU
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/gl_ES/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/gl_ES/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/gl_ES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/fr_FR/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/fr_FR
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/fi_FI/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/fi_FI/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/fi_FI
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/es_ES/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/es_ES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/en_US/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/en_US
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/en_GB/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/en_GB/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/en_GB
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/de_DE/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/de_DE
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/da_DK/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/da_DK/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/da_DK
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/cs_CZ.iso-8859-2/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/cs_CZ.iso-8859-2/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/cs_CZ.iso-8859-2
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/ca_ES/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/ca_ES/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/ca_ES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/bg_BG/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/bg_BG/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/bg_BG
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/af_ZA/flagimage
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/af_ZA/LC_MESSAGES
+@dirrm %%NLS%%%%GALLERYDIR%%/locale/af_ZA
+@dirrm %%NLS%%%%GALLERYDIR%%/locale
+@dirrm %%GALLERYDIR%%/lib
+@dirrm %%GALLERYDIR%%/layout
+@dirrm %%GALLERYDIR%%/js
+@dirrm %%GALLERYDIR%%/java
+@dirrm %%GALLERYDIR%%/includes/stats
+@dirrm %%GALLERYDIR%%/includes/slideshow
+@dirrm %%GALLERYDIR%%/includes/errors
+@dirrm %%GALLERYDIR%%/includes/ecard/templates
+@dirrm %%GALLERYDIR%%/includes/ecard
+@dirrm %%GALLERYDIR%%/includes/definitions
+@dirrm %%GALLERYDIR%%/includes/add_photos
+@dirrm %%GALLERYDIR%%/includes
+@dirrm %%GALLERYDIR%%/images/icons
+@dirrm %%GALLERYDIR%%/images/ecard_images
+@dirrm %%GALLERYDIR%%/images
+@dirrm %%GALLERYDIR%%/html_wrap/frames/wooden
+@dirrm %%GALLERYDIR%%/html_wrap/frames/simple_book
+@dirrm %%GALLERYDIR%%/html_wrap/frames/shadows
+@dirrm %%GALLERYDIR%%/html_wrap/frames/postage_stamp
+@dirrm %%GALLERYDIR%%/html_wrap/frames/polaroids
+@dirrm %%GALLERYDIR%%/html_wrap/frames/polaroid
+@dirrm %%GALLERYDIR%%/html_wrap/frames/notebook
+@dirrm %%GALLERYDIR%%/html_wrap/frames/golden
+@dirrm %%GALLERYDIR%%/html_wrap/frames
+@dirrm %%GALLERYDIR%%/html_wrap
+@dirrm %%GALLERYDIR%%/html
+@dirrm %%GALLERYDIR%%/docs/images
+@dirrm %%GALLERYDIR%%/docs/g1package/images
+@dirrm %%GALLERYDIR%%/docs/g1package
+@dirrm %%GALLERYDIR%%/docs/context-help
+@dirrm %%GALLERYDIR%%/docs
+@dirrm %%GALLERYDIR%%/css
+@dirrm %%GALLERYDIR%%/contrib/postnuke
+@dirrm %%GALLERYDIR%%/contrib/phpnuke
+@dirrm %%GALLERYDIR%%/contrib/phpBB2
+@dirrm %%GALLERYDIR%%/contrib/mambo/includes
+@dirrm %%GALLERYDIR%%/contrib/mambo/images
+@dirrm %%GALLERYDIR%%/contrib/mambo/classes
+@dirrm %%GALLERYDIR%%/contrib/mambo
+@dirrm %%GALLERYDIR%%/contrib/GeekLog
+@dirrm %%GALLERYDIR%%/contrib
+@dirrm %%GALLERYDIR%%/classes/remote
+@dirrm %%GALLERYDIR%%/classes/postnuke0.7.1
+@dirrm %%GALLERYDIR%%/classes/postnuke
+@dirrm %%GALLERYDIR%%/classes/phpbb
+@dirrm %%GALLERYDIR%%/classes/nuke5
+@dirrm %%GALLERYDIR%%/classes/nsnnuke
+@dirrm %%GALLERYDIR%%/classes/mambo
+@dirrm %%GALLERYDIR%%/classes/geeklog
+@dirrm %%GALLERYDIR%%/classes/gallery
+@dirrm %%GALLERYDIR%%/classes/database/mysql
+@dirrm %%GALLERYDIR%%/classes/database
+@dirrm %%GALLERYDIR%%/classes/Mail
+@dirrm %%GALLERYDIR%%/classes/HTML
+@dirrm %%GALLERYDIR%%/classes
+@dirrm %%GALLERYDIR%%/RCS
 @unexec rmdir %D/%%GALLERYDIR%% 2>/dev/null || true
