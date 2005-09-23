@@ -14,7 +14,7 @@
  35.7,		139.6,		"     knu"			# Tokyo, Japan
  35.54,		139.53,		"        ,nyan,ume"		# Yokohama, Kanagawa, Japan
  35.36,		139.31,		"                     ,daichi"	# Kawasaki, Kanagawa, Japan
--34.14,		138.77,		"grog"				# (CORE) Echunga, SA Australia
+-34.14,		138.77,		"grog"				# Echunga, SA Australia
 -34.53,		138.35,		"newton, markp"	align=left	# Adelaide, SA Australia
  35.02,		137.07,		"sada   " align=left		# Toyota, Aichi, Japan
  35.0,		135.47,		"maho"				# Kyoto, Kyoto, Japan 
@@ -46,7 +46,7 @@
  48.20,		11.62,		"barner"			# Munich, Germany
  48.00,		11.35,		"obraun"			# Starnberg, Germany
  55.406124,	11.3397291,	"phk"				# Slagelse, Denmark
-48.095,		11.296,		"harti"				# Gilching, Germany
+ 48.095,	11.296,		"harti"				# Gilching, Germany
  59.92,		10.75,		"eivind,des,tegge,anders"	# Oslo, Norway
  43.71,		10.40,		"luigi"				# Pisa, Italy
  56.150,	10.217,		"erwin"				# Aarhus, Denmark
@@ -138,10 +138,11 @@
  46.59,		-112.04,	"nate"				# Helena, MT, USA
  51.09,		-114.12,	"cpiazza"			# Calgary, AB, Canada
  33.05,		-117.09,	"wes"				# (CORE) San Diego, CA, USA
- 33.66,		-117.80,	"dd"				# Irvine, CA, USA
- 34.13637,	-118.12704,	"mph"				# Pasadena, CA, USA
- 33.83,		-118.22,	"             ,trevor"		# Dominguez, CA, USA
- 34.11,		-118.29,	"       ,kris"			# Los Angeles, CA, USA
+ 34.13637,	-118.12704,	" mph,"				# Pasadena, CA, USA
+ 34.11,		-118.29,	"         kris,"		# Los Angeles, CA, USA
+ 33.83,		-118.22,	"                trevor,"	# Dominguez, CA, USA
+ 33.979,	-118.439,	"                           dougb,"# Marina del Rey, CA USA
+ 33.66,		-117.80,	"                                    dd"# Irvine, CA, USA
  39.25,		-121.02,	"truckman"			# Nevada City, CA, USA
  38.54,		-121.76,	"obrien,mharo"			# Davis, CA, USA
  37.40,		-121.94,	"alfred"			# Santa Clara, CA, USA
