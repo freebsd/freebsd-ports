@@ -32,13 +32,13 @@ NO_BUILD=	yes
 USE_LINUX=	yes
 USE_XLIB=	yes
 JDK_VERSION=	1.5.0
-JDK_REVISION=	04
+JDK_REVISION=	05
 DL_JDK_VERSION=	${JDK_VERSION}_${JDK_REVISION}
 ONLY_FOR_ARCHS=	i386 amd64
 DOWNLOAD_URL?=	http://java.sun.com/j2se/1.5.0/download.jsp
 PORTTITLE=	Java 2 Development Kit ${DL_JDK_VERSION} for Linux
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${JDK_VERSION}
-PACKED_JARS=	lib/tools.jar jre/lib/rt.jar jre/lib/jsse.jar jre/lib/charsets.jar jre/lib/ext/localedata.jar jre/lib/plugin.jar jre/javaws/javaws.jar
+PACKED_JARS=	lib/tools.jar jre/lib/rt.jar jre/lib/jsse.jar jre/lib/charsets.jar jre/lib/deploy.jar jre/lib/ext/localedata.jar jre/lib/plugin.jar jre/javaws/javaws.jar
 UNPACK_CMD=	${APP_HOME}/bin/unpack200
 
 .include <bsd.port.pre.mk>
