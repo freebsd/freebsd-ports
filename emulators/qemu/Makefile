@@ -43,7 +43,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 NO_PACKAGE=	Depends on kernel, and module not redistributable
 CONFIGURE_ARGS+=	--enable-kqemu
 PLIST_SUB=	WITH_KQEMU=""
-PLIST_SUB+=	KMODDIR=${KMODDIR}
+PLIST_SUB+=	KMODDIR=${KMODDIR:C/^\///}
 .else
 CONFIGURE_ARGS+=	--disable-kqemu
 PLIST_SUB=	WITH_KQEMU="@comment "
