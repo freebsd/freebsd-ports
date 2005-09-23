@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Lingua-EN-Numbers
-PORTVERSION=	0.01
+PORTVERSION=	1.01
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Converts numeric values into their English string equivalents
 
 PERL_CONFIGURE=	yes
