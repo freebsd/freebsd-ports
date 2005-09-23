@@ -6,13 +6,13 @@
 #
 
 PORTNAME=		Lingua-EN-Numbers-Ordinate
-PORTVERSION=		0.01
+PORTVERSION=		1.02
 CATEGORIES=		textproc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		perl@FreeBSD.org
 COMMENT=	Go from cardinal number (3) to ordinal ("3rd")
 
 PERL_CONFIGURE=		yes
