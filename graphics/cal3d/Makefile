@@ -23,6 +23,7 @@ USE_AUTOHEADER_VER=	259
 USE_INC_LIBTOOL_VER=	15
 INSTALLS_SHLIB=		yes
 CONFIGURE_ARGS+=	--disable-static
+PATCH_DEPENDS+=		${AUTOMAKE_DEPENDS}
 
 .include <bsd.port.pre.mk>
 
