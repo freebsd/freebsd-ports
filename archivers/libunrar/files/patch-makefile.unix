@@ -1,13 +1,12 @@
-diff -ruN unrar.orig/makefile.unix unrar/makefile.unix
---- makefile.unix	2005-04-30 11:00:12.000000000 +0400
-+++ makefile.unix	2005-05-19 16:13:53.000000000 +0400
+--- makefile.unix.orig	Sat Apr 30 04:00:12 2005
++++ makefile.unix	Fri Sep 23 16:22:04 2005
 @@ -7,9 +7,10 @@
  
  # Linux using GCC
  CXX=g++
 -CXXFLAGS=-O2
 -DEFINES=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
-+CXXFLAGS=-O2 -fPIC -DPIC
++CXXFLAGS=$(CFLAGS) -fPIC -DPIC
 +DEFINES=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -DGUI -DSILENT
  STRIP=strip
 +RANLIB=ranlib
@@ -39,22 +38,3 @@ diff -ruN unrar.orig/makefile.unix unrar/makefile.unix
 +	@rm -f libunrar.a
 +	$(AR) rc libunrar.a $(OBJECTS) $(LIB_OBJ) $(UNRAR_OBJ)
 +	$(RANLIB) libunrar.a
-diff -ruN unrar.orig/dll.hpp unrar/dll.hpp
---- dll.hpp	2004-09-08 17:57:20.000000000 +0400
-+++ dll.hpp	2004-10-22 10:43:08.000000000 +0400
-@@ -26,13 +26,13 @@
- 
- #define RAR_DLL_VERSION       4
- 
--#ifdef _UNIX
-+//#ifdef _UNIX
- #define CALLBACK
- #define PASCAL
- #define LONG long
- #define HANDLE void *
- #define UINT unsigned int
--#endif
-+//#endif
- 
- struct RARHeaderData
- {

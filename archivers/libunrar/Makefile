@@ -1,13 +1,13 @@
 # New ports collection makefile for:    unrar
-# Date created:         23 Sep 2005
-# Whom:                 samm
+# Date created:				23 Sep 2005
+# Whom:					samm@os2.kiev.ua
 #
 # $FreeBSD$
 #
 
 PORTNAME=	libunrar
 PORTVERSION=	3.53
-CATEGORIES+=	devel
+CATEGORIES=	archivers
 MASTER_SITES=	http://files1.rarlab.com/rar/ \
 		http://files2.rarlab.com/rar/ \
 		http://files3.rarlab.com/rar/ \

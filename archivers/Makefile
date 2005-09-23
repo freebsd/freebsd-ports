@@ -39,6 +39,7 @@
     SUBDIR += libcomprex
     SUBDIR += liblzxcomp
     SUBDIR += libmspack
+    SUBDIR += libunrar
     SUBDIR += lzma
     SUBDIR += lzo
     SUBDIR += lzo2
