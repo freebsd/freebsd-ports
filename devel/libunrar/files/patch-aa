@@ -1,0 +1,60 @@
+diff -ruN unrar.orig/makefile.unix unrar/makefile.unix
+--- makefile.unix	2005-04-30 11:00:12.000000000 +0400
++++ makefile.unix	2005-05-19 16:13:53.000000000 +0400
+@@ -7,9 +7,10 @@
+ 
+ # Linux using GCC
+ CXX=g++
+-CXXFLAGS=-O2
+-DEFINES=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
++CXXFLAGS=-O2 -fPIC -DPIC
++DEFINES=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -DGUI -DSILENT
+ STRIP=strip
++RANLIB=ranlib
+ 
+ # Linux using LCC
+ #CXX=lcc
+@@ -86,7 +87,7 @@
+ LINK=$(CXX)
+ 
+ UNRAR_OBJ=filestr.o recvol.o rs.o scantree.o
+-LIB_OBJ=filestr.o scantree.o dll.o
++LIB_OBJ=dll.o
+ 
+ OBJECTS=rar.o strlist.o strfn.o pathfn.o int64.o savepos.o global.o file.o filefn.o filcreat.o \
+ 	archive.o arcread.o unicode.o system.o isnt.o crypt.o crc.o rawread.o encname.o \
+@@ -114,6 +115,12 @@
+ 	$(STRIP) default.sfx
+ 
+ lib:	WHAT=RARDLL
+-lib:	$(OBJECTS) $(LIB_OBJ)
+-	@rm -f libunrar.so
+-	$(LINK) -shared -o libunrar.so $(LDFLAGS) $(OBJECTS) $(LIB_OBJ)
++lib:	$(OBJECTS) $(LIB_OBJ) $(UNRAR_OBJ)
++	@rm -f libunrar.so.3
++	$(LINK) -shared -o libunrar.so.3 $(LDFLAGS) $(OBJECTS) $(LIB_OBJ) $(UNRAR_OBJ)
++
++liba:	WHAT=RARDLL
++liba:	$(OBJECTS) $(LIB_OBJ) $(UNRAR_OBJ)
++	@rm -f libunrar.a
++	$(AR) rc libunrar.a $(OBJECTS) $(LIB_OBJ) $(UNRAR_OBJ)
++	$(RANLIB) libunrar.a
+diff -ruN unrar.orig/dll.hpp unrar/dll.hpp
+--- dll.hpp	2004-09-08 17:57:20.000000000 +0400
++++ dll.hpp	2004-10-22 10:43:08.000000000 +0400
+@@ -26,13 +26,13 @@
+ 
+ #define RAR_DLL_VERSION       4
+ 
+-#ifdef _UNIX
++//#ifdef _UNIX
+ #define CALLBACK
+ #define PASCAL
+ #define LONG long
+ #define HANDLE void *
+ #define UINT unsigned int
+-#endif
++//#endif
+ 
+ struct RARHeaderData
+ {
