@@ -63,6 +63,8 @@ share/gnome/help/balsa/C/figures/example-alias.png
 share/gnome/help/balsa/C/figures/figuresdobaaddress-book-modify.png
 share/gnome/help/balsa/C/figures/main-window-toolbar.png
 share/gnome/help/balsa/C/figures/main-window.png
+share/gnome/help/balsa/C/figures/message-window.png
+share/gnome/help/balsa/C/figures/msg-part-select.png
 share/gnome/help/balsa/C/figures/newmsg-window-attachments.png
 share/gnome/help/balsa/C/figures/newmsg-window-toolbar.png
 share/gnome/help/balsa/C/figures/newmsg-window.png
@@ -111,6 +113,7 @@ share/locale/lv/LC_MESSAGES/balsa.mo
 share/locale/ml/LC_MESSAGES/balsa.mo
 share/locale/ms/LC_MESSAGES/balsa.mo
 share/locale/nb/LC_MESSAGES/balsa.mo
+share/locale/ne/LC_MESSAGES/balsa.mo
 share/locale/nl/LC_MESSAGES/balsa.mo
 share/locale/nn/LC_MESSAGES/balsa.mo
 share/locale/no/LC_MESSAGES/balsa.mo
