@@ -1,5 +1,5 @@
---- src/process.c.orig	Tue Jul  1 16:24:08 2003
-+++ src/process.c	Tue Jul  1 16:24:42 2003
+--- src/process.c.original	Fri Sep 23 11:49:02 2005
++++ src/process.c	Fri Sep 23 11:51:45 2005
 @@ -400,6 +400,14 @@
  
  #ifdef HAVE_PTYS
@@ -31,6 +31,15 @@
  #endif /* no PTY_NAME_SPRINTF */
  
  #ifdef PTY_OPEN
+@@ -446,7 +454,7 @@
+ 	if (stat (pty_name, &stb) < 0)
+ 	  {
+ 	    failed_count++;
+-	    if (failed_count >= 3)
++	    if (failed_count >= 30)
+ 	      return -1;
+ 	  }
+ 	else
 @@ -466,7 +474,7 @@
  #ifdef PTY_TTY_NAME_SPRINTF
  	    PTY_TTY_NAME_SPRINTF
