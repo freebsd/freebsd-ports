@@ -69,6 +69,7 @@
     SUBDIR += gcalctool
     SUBDIR += gdcalc
     SUBDIR += geg
+    SUBDIR += geogebra-i18n
     SUBDIR += geonext
     SUBDIR += gexpr
     SUBDIR += glgraph
