@@ -5543,6 +5543,7 @@ libunicode	ports/devel/libunicode
 libuninameslist	ports/textproc/libuninameslist
 libunp		ports/net/libunp
 libunpipc	ports/net/libunpipc
+libunrar	ports/devel/libunrar
 libutempter	ports/sysutils/libutempter
 libutf		ports/misc/libutf
 libutf-8	ports/converters/libutf-8
