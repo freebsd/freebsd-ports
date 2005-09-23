@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050923:
+  AFFECTS: users of www/b2evo
+  AUTHOR: chinsan.tw@gmail.com
+
+  Database schema changed. Rerun the installation script, which can usually
+  be found at http://your.site.com/b2evo/blogs/install
+
 20050911:
   AFFECTS: users of mail/libspf2, mail/postfix, mail/postfix21, mail/postfix-policyd-spf, mail/exim
   AUTHOR: marcus@corp.grupos.com.br
