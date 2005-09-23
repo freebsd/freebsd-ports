@@ -1,0 +1,9 @@
+The program mph tries to generate an order preserving minimal perfect
+hashing (MPH) function for the set of keys, one per line, on stdin.
+Each key can be at most 4095 characters long (see keys.h to increase
+this limit), and the keys must be unique. If mph terminates, it emits
+a language independent binary or text representation of the MPH
+function on stdout. To generate a usable hash function, this output
+should be fed to a language dependent filter, like emitc.
+
+WWW: http://www.ibiblio.org/pub/Linux/devel/lang/c
