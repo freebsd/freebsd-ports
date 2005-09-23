@@ -1625,3 +1625,4 @@ security/pf||2005-09-15|included in base system since 5.3
 security/authpf||2005-09-15|included in base system since 5.3
 net/openldap23-sasl-server||2005-09-15|Is no longer needed as separated port
 audio/py-libtunepimp||2005-09-21|audio/libtunepimp rolled back to version 0.3.0 and the bindings do not work at that version
+devel/libunrar|archivers/libunrar|2005-09-23|corrected category
