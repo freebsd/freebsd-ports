@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	Class-MakeMethods
-PORTVERSION=	1.006
+PORTVERSION=	1.010
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/.$//}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate common types of methods
@@ -42,6 +43,10 @@ MAN3=		Class::MakeMethods.3 \
 		Class::MakeMethods::Emulator::MethodMaker.3 \
 		Class::MakeMethods::Emulator::Singleton.3 \
 		Class::MakeMethods::Emulator::Struct.3 \
+		Class::MakeMethods::Emulator::accessors.3 \
+		Class::MakeMethods::Emulator::mcoder.3 \
+		Class::MakeMethods::Evaled.3 \
+		Class::MakeMethods::Evaled::Hash.3 \
 		Class::MakeMethods::Standard.3 \
 		Class::MakeMethods::Standard::Array.3 \
 		Class::MakeMethods::Standard::Global.3 \
@@ -49,21 +54,32 @@ MAN3=		Class::MakeMethods.3 \
 		Class::MakeMethods::Standard::Inheritable.3 \
 		Class::MakeMethods::Standard::Universal.3 \
 		Class::MakeMethods::Template.3 \
+		Class::MakeMethods::Template::Array.3 \
 		Class::MakeMethods::Template::Class.3 \
 		Class::MakeMethods::Template::ClassInherit.3 \
+		Class::MakeMethods::Template::ClassName.3 \
 		Class::MakeMethods::Template::ClassVar.3 \
 		Class::MakeMethods::Template::Flyweight.3 \
 		Class::MakeMethods::Template::Generic.3 \
+		Class::MakeMethods::Template::Global.3 \
 		Class::MakeMethods::Template::Hash.3 \
+		Class::MakeMethods::Template::InsideOut.3 \
+		Class::MakeMethods::Template::Inheritable.3 \
 		Class::MakeMethods::Template::PackageVar.3 \
 		Class::MakeMethods::Template::Ref.3 \
+		Class::MakeMethods::Template::Scalar.3 \
 		Class::MakeMethods::Template::Static.3 \
 		Class::MakeMethods::Template::Struct.3 \
 		Class::MakeMethods::Template::StructBuiltin.3 \
-		Class::MakeMethods::Template::TextBuilder.3 \
 		Class::MakeMethods::Template::Universal.3 \
 		Class::MakeMethods::Utility::ArraySplicer.3 \
+		Class::MakeMethods::Utility::DiskCache.3 \
 		Class::MakeMethods::Utility::Inheritable.3 \
-		Class::MakeMethods::Utility::Ref.3
+		Class::MakeMethods::Utility::Ref.3 \
+		Class::MakeMethods::Utility::TextBuilder.3
+
+post-extract:
+		@${RM} ${WRKSRC}/benchmark.pl
+		@${PERL} -pi -e '$$_="" if m|benchmark.pl|' ${WRKSRC}/MANIFEST
 
 .include <bsd.port.mk>
