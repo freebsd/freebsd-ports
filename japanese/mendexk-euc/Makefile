@@ -10,6 +10,7 @@ PORTVERSION=	2.6c
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/mendex/:1 \
 		${MASTER_SITE_TEX_CTAN}
+MASTER_SITE_SUBDIR=	systems/unix/teTeX/3.0/distrib
 DISTFILES=	${PORTNAME}${PORTVERSION}${EXTRACT_SUFX}:1 \
 		${TETEX_SRC}${EXTRACT_SUFX}
 DIST_SUBDIR=	teTeX
