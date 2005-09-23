@@ -162,6 +162,7 @@
  47.70,		-122.34,	"brooks"			# Seattle, WA, USA
  37.781,	-122.398,	"billf"				# SOMA, San Francisco, CA, USA
  47.5,		-122.4,		"jdp"				# Seattle, WA, USA
+ 37.8067,	-122.4113	"jmallett"			# North Beach, San Francisco, CA, USA
 #37.80,		-122.43,	"julian"			# Downtown San Francisco, CA, USA
  37.80,		-122.43,	"njl"				# Downtown San Francisco, CA, USA
  37.77,		-122.44,	"archie"			# Haight, San Francisco, CA, USA
@@ -170,4 +171,3 @@
  44.04, 	-123.06,	"anholt"			# Eugene, OR, USA
  48.3898,	-123.4875,	"cy"				# Victoria, BC, Canada
  40.0,		-123.5,		"jkh"				# Miranda, CA, USA
- 21.32,		-157.83,	"jmallett"			# Honolulu, HI, USA
