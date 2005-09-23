@@ -89,6 +89,7 @@
  51.67,		-0.61,		"markm"		align=left	# (CORE) Amersham, Bucks, UK
  51.67,		-0.61,		"brian"		align=left	# Amersham, Bucks, UK
  52.01,		-0.75,		"tom"		align=left	# Milton Keynes, UK
+ 52.12,		0.06,		"rwatson"			# Cambridge, UK
  53.22,		-1.29,		"ben"				# Sheffield, Yorkshire, UK
  51.44,		-2.06,		"marko"		align=left	# Chippenham, Wiltshire, UK
  51.49,		-3.16,		"ceri"				# Cardiff, UK
@@ -109,7 +110,6 @@
  42.26785,	-76.28954,	"pat"				# Ithaca, NY, USA
  39.00,		-76.88,		"         ,chuckr"		# Greenbelt, MD, USA
  39.2,		-77.0,		"jmb,gpalmer"			# Silver Spring, MD, USA
- 38.981024,	-77.119791,	"rwatson"			# (CORE) Bethesda, MD, USA
  39.128555,	-77.203029,	"   ,green"			# Gaithersburg, MD, USA
  43.09,		-77.68,		"jseger"			# Rochester, NY, USA
  35.791,	-78.781,	"marcus"			# Cary, NC, USA
