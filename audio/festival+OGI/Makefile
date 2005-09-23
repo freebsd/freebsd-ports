@@ -25,10 +25,6 @@ COMMENT=	Text-to-speech system with OGI residual LPC synthesizer
 LIB_DEPENDS=	audio.2:${PORTSDIR}/audio/nas \
 		esd.2:${PORTSDIR}/audio/esound
 
-BROKEN=		Incorrect pkg-plist
-DEPRECATED=	"${BROKEN}"
-EXPIRATION_DATE=2005-09-22
-
 CONFLICTS=	festival-*
 DIST_SUBDIR=	festival
 
@@ -85,9 +81,9 @@ post-patch:
 	@${LN} -fs ${SPEECHTOOLS}/config/systems/ix86_FreeBSD3.3.mak \
 		${SPEECHTOOLS}/config/systems/${FESTIVAL_ARCH}_FreeBSD3.${i}.mak
 .endfor
-.for ii in 4 5
-.for jj in 1 2 3 4 5 6 7 8 9 10 11
-	@${LN} -fs ${SPEECHTOOLS}/config/systems/ix86_FreeBSD4.0.mak \
+.for ii in 4 5 6 7
+.for jj in 0 1 2 3 4 5 6 7 8 9 10 11
+	@${LN} -fs ${SPEECHTOOLS}/config/systems/ix86_FreeBSD3.3.mak \
 	${SPEECHTOOLS}/config/systems/${FESTIVAL_ARCH}_FreeBSD${ii}.${jj}.mak
 .endfor
 .endfor
