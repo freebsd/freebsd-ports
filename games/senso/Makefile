@@ -8,7 +8,7 @@
 PORTNAME=	senso
 PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	http://stud.fbi.fh-darmstadt.de/~koenig/pub/
+MASTER_SITES=	http://www.v-i-t.de/mirkos_hp/pub/
 EXTRACT_SUFX=	.py
 
 MAINTAINER=	trevor@FreeBSD.org
@@ -17,17 +17,18 @@ COMMENT=	Game to challenge short-term memory
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 USE_PYTHON=	yes
-NO_BUILD=	yes
 PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}
 
 do-extract:
 	${MKDIR} ${WRKDIR}
 
-pre-install:
+do-build:
+	${SED} -e "s:/usr/bin:${PREFIX}/bin:" < ${_DISTDIR}/${DISTFILES} \
+		> ${WRKDIR}/senso
 	${ECHO_CMD} "bin/senso" > ${PLIST}
 
 do-install:
-	${INSTALL_SCRIPT} ${_DISTDIR}/${DISTFILES} ${PREFIX}/bin/senso
+	${INSTALL_SCRIPT} ${WRKDIR}/senso ${PREFIX}/bin/
 
 .include <bsd.port.mk>
