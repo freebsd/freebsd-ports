@@ -15,6 +15,9 @@ DISTNAME=	swig-1.3.16
 MAINTAINER=	slaven@rezic.de
 COMMENT=	Simplified Wrapper and Interface Generator - Documentation
 
+DEPRECATED=	devel/swig13 now installs documentation by default.
+EXPIRATION_DATE= 2005-11-01
+
 WRKSRC=		${WRKDIR}/${DISTNAME:U}
 
 DOCSDIR=	${PREFIX}/share/doc/swig
