@@ -241,6 +241,9 @@
 # WITH_XMMS
 # default: autodetect
 #
+# WITH_DTS
+# default: autodetect
+#
 # WITH_LANG
 # default: en
 # Enables language support bg, cz, de, dk, en, es, fr, gr, hu, it, ko, nl, no, pl, pt_BR, ro, ru, sk, tr, uk, zh
@@ -440,6 +443,10 @@ WITH_XVID=	yes
 
 .if exists(${X11BASE}/lib/libxmms.so)
 WITH_XMMS=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libdts.a)
+WITH_DTS=	yes
 .endif
 
 .if exists(${LOCALBASE}/lib/liblzo.so)
@@ -735,6 +742,11 @@ CONFIGURE_ARGS+=	--disable-liblzo
 .if defined(WITH_XMMS)
 CONFIGURE_ARGS+=	--enable-xmms
 LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
+.endif
+
+.if defined(WITH_DTS)
+CONFIGURE_ARGS+=	--enable-libdts
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libdts.a:${PORTSDIR}/multimedia/libdts
 .endif
 
 .if defined(WITH_FREETYPE)
