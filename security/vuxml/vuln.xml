@@ -32,6 +32,45 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="271498a9-2cd4-11da-a263-0001020eed82">
+    <topic>clamav -- arbitrary code execution and DoS
+      vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>0.87</lt></range>
+      </package>
+      <package>
+	<name>clamav-devel</name>
+	<range><lt>20050917</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gentoo Linux Security Advisory reports:</p>
+	<blockquote cite="http://www.gentoo.org/security/en/glsa/glsa-200509-13.xml">
+	  <p>Clam AntiVirus is vulnerable to a buffer overflow in
+	    "libclamav/upx.c" when processing malformed UPX-packed
+	    executables. It can also be sent into an infinite loop in
+	    "libclamav/fsg.c" when processing specially-crafted
+	    FSG-packed executables.</p>
+	  <p>By sending a specially-crafted file an attacker could
+	    execute arbitrary code with the permissions of the user
+	    running Clam AntiVirus, or cause a Denial of Service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2919</cvename>
+      <cvename>CAN-2005-2920</cvename>
+      <url>http://www.gentoo.org/security/en/glsa/glsa-200509-13.xml</url>
+    </references>
+    <dates>
+      <discovery>2005-09-16</discovery>
+      <entry>2005-09-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8f5dd74b-2c61-11da-a263-0001020eed82">
     <topic>firefox &amp; mozilla -- multiple vulnerabilities</topic>
     <affects>
