@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	docbook
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	XSL DocBook stylesheets
 
+BROKEN=		Botched upgrade
+
 RUN_DEPENDS=	${XMLDIR}/docbook/4.2/catalog.xml:${PORTSDIR}/textproc/docbook-xml \
 		${XMLDIR}/sdocbook/4.1.2.5/catalog:${PORTSDIR}/textproc/sdocbook-xml
 
