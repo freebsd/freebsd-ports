@@ -7,6 +7,7 @@
 
 PORTNAME=	freebsd-snapshot
 DISTVERSION=	20050402.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.freebsd.org/~rse/dist/
 
@@ -34,7 +35,8 @@ IGNORE=	FreeBSD lower then 5.x doesn't support snapshot
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
-		${WRKSRC}/amd.map.snap ${WRKSRC}/snapshot ${WRKSRC}/snapshot.8
+		${WRKSRC}/amd.map.snap ${WRKSRC}/snapshot \
+		${WRKSRC}/periodic-snapshot ${WRKSRC}/snapshot.8 
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/snapshot ${PREFIX}/sbin/
