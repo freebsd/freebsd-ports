@@ -6,17 +6,23 @@
 #
 
 PORTNAME=		Lingua-EN-Gender
-PORTVERSION=		0.02
+PORTVERSION=		1.0
 CATEGORIES=		textproc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Lingua
+MASTER_SITE_SUBDIR=	../../authors/id/E/EE/EEKIM
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		perl@FreeBSD.org
 COMMENT=	Inflect pronouns for gender
 
 PERL_CONFIGURE=		yes
 
-MAN3=			Lingua::EN::Gender.3
+MAN3=			Lingua::EN::gender.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=		requires perl 5.6.1 or above
+.endif
+
+.include <bsd.port.post.mk>
