@@ -49,14 +49,16 @@ CONFIGURE_ARGS+=	--without-mysql
 
 .if !defined(WITHOUT_DB3)
 LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
-CONFIGURE_ARGS+=	--with-db3=${LOCALBASE}/include/db3 --without-db4
+CONFIGURE_ARGS+=	--with-db3=${LOCALBASE}/include/db3 --with-db-libdir=${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--without-db4
 .else
 CONFIGURE_ARGS+=	--without-db3
 .endif
 
 .if defined(WITH_DB4)
 LIB_DEPENDS+=	db4:${PORTSDIR}/databases/db4
-CONFIGURE_ARGS+=	--with-db4=${LOCALBASE}/include/db4 --without-db3
+CONFIGURE_ARGS+=	--with-db4=${LOCALBASE}/include/db4 --with-db-libdir=${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--without-db3
 .else
 CONFIGURE_ARGS+=	--without-db4
 .endif
