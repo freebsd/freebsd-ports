@@ -1555,6 +1555,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   <vuln vid="837b9fb2-0595-11da-86bc-000e0c2e438a">
     <topic>zlib -- buffer overflow vulnerability</topic>
     <affects>
+      <package>
+	<name>linux_base-suse</name>
+	<range><lt>9.3_1</lt></range>
+      </package>
       <system>
 	<name>FreeBSD</name>
 	<range><ge>5.4</ge><lt>5.4_6</lt></range>
@@ -1583,6 +1587,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-07-27</discovery>
       <entry>2005-08-05</entry>
+      <modified>2005-09-24</modified>
     </dates>
   </vuln>
 
