@@ -11,7 +11,8 @@ PORTREVISION=	1
 CATEGORIES=	textproc www
 MASTER_SITES=	http://htdig.sourceforge.net/files/ \
 		http://www.htdig.org/files/ \
-		http://www.opdenbrouw.nl/htdig/files/ \
+		ftp://netmirror.org/ftp.htdig.org/ \
+		ftp://gnu.kookel.org/pub/htdig/ftp.htdig.org/files/ \
 		ftp://ftp.ntua.gr/pub/www/htdig/
 DISTNAME=	htdig-3.2.0b6
 
