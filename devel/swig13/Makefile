@@ -7,7 +7,7 @@
 
 PORTNAME=	swig
 PORTVERSION=	1.3.25
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -125,5 +125,17 @@ post-configure:
 
 post-install:
 	${LN} -f ${PREFIX}/bin/swig ${PREFIX}/bin/swig${VER}
+	${MKDIR} ${EXAMPLESDIR}/${PORTVERSION}
+	cd ${WRKSRC}/Examples && ${FIND} . -type d \
+		-exec ${INSTALL} -d ${EXAMPLESDIR}/${PORTVERSION}/{} \;
+	cd ${WRKSRC}/Examples && ${FIND} . -type f \
+		-exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/${PORTVERSION}/{} \;
+.if	!defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}
+	cd ${WRKSRC}/Doc && ${FIND} . -type d \
+		-exec ${INSTALL} -d ${DOCSDIR}/${PORTVERSION}/{} \;
+	cd ${WRKSRC}/Doc && ${FIND} . -type f \
+		-exec ${INSTALL_DATA} {} ${DOCSDIR}/${PORTVERSION}/{} \;
+.endif
 
 .include <bsd.port.post.mk>
