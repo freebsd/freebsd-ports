@@ -1,26 +1,3 @@
-%%SITE_PERL%%/auto/Net/EasyTCP/stop.al
-%%SITE_PERL%%/auto/Net/EasyTCP/start.al
-%%SITE_PERL%%/auto/Net/EasyTCP/socket.al
-%%SITE_PERL%%/auto/Net/EasyTCP/setcallback.al
-%%SITE_PERL%%/auto/Net/EasyTCP/serial.al
-%%SITE_PERL%%/auto/Net/EasyTCP/send.al
-%%SITE_PERL%%/auto/Net/EasyTCP/running.al
-%%SITE_PERL%%/auto/Net/EasyTCP/remoteport.al
-%%SITE_PERL%%/auto/Net/EasyTCP/remoteip.al
-%%SITE_PERL%%/auto/Net/EasyTCP/receive.al
-%%SITE_PERL%%/auto/Net/EasyTCP/new.al
-%%SITE_PERL%%/auto/Net/EasyTCP/mode.al
-%%SITE_PERL%%/auto/Net/EasyTCP/encryption.al
-%%SITE_PERL%%/auto/Net/EasyTCP/do_one_loop.al
-%%SITE_PERL%%/auto/Net/EasyTCP/disconnect.al
-%%SITE_PERL%%/auto/Net/EasyTCP/deleteclientip.al
-%%SITE_PERL%%/auto/Net/EasyTCP/data.al
-%%SITE_PERL%%/auto/Net/EasyTCP/compression.al
-%%SITE_PERL%%/auto/Net/EasyTCP/close.al
-%%SITE_PERL%%/auto/Net/EasyTCP/clients.al
-%%SITE_PERL%%/auto/Net/EasyTCP/callback.al
-%%SITE_PERL%%/auto/Net/EasyTCP/autosplit.ix
-%%SITE_PERL%%/auto/Net/EasyTCP/addclientip.al
 %%SITE_PERL%%/Net/EasyTCP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/EasyTCP/.packlist
 @unexec rmdir %D/%%SITE_PERL%%/auto/Net/EasyTCP 2>/dev/null || true
