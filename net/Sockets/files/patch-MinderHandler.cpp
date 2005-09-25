@@ -1,5 +1,5 @@
---- MinderHandler.cpp.orig	Sun Apr  3 18:42:07 2005
-+++ MinderHandler.cpp	Sun Apr  3 18:43:09 2005
+--- MinderHandler.cpp.orig	Sun Sep 25 02:40:57 2005
++++ MinderHandler.cpp	Sun Sep 25 02:41:49 2005
 @@ -20,6 +20,10 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
@@ -16,7 +16,7 @@
  #ifdef _WIN32
  	msg += ":Win32";
 +#elif defined __FreeBSD__
-+	msg += ":FreeBSD";
++        msg += ":FreeBSD";
  #else
  	msg += ":Linux";
  #endif

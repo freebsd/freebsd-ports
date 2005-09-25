@@ -1,7 +1,10 @@
---- Sockets-config.cpp.orig	Sun Jan 16 02:23:14 2005
-+++ Sockets-config.cpp	Sun Jan 16 02:26:07 2005
-@@ -3,6 +3,10 @@
- CFLAGS =	-Wall -g -O2 $(INCLUDE) -MD -D_VERSION='"$(VERSION)"' 
+--- Sockets-config.cpp.orig	Sun Sep 25 02:42:19 2005
++++ Sockets-config.cpp	Sun Sep 25 02:44:08 2005
+@@ -1,8 +1,12 @@
+ #include <stdio.h>
+ /*
+-CFLAGS =	-Wall -g -O2 $(INCLUDE) -MD -D_VERSION='"$(VERSION)"' 
++CFLAGS =	-Wall -g $(INCLUDE) -MD -D_VERSION='"$(VERSION)"' 
  # manual autoconf ....
  
 +#if (defined(__unix__) || defined(unix)) && !defined(USG)
