@@ -108,6 +108,8 @@ post-patch:
 	  ${FILESDIR}/manualpatch-plugins-swt-gtk-make_freebsd.mak
 	@${PATCH} ${PATCH_DIST_ARGS} "${SWTGTK}/build.sh" \
 	  ${FILESDIR}/manualpatch-plugins-swt-gtk-build.sh
+	@${PATCH} ${PATCH_DIST_ARGS} "${SWTGTK}/os_custom.h" \
+	  ${FILESDIR}/manualpatch-plugins-swt-gtk-os_custom.h
 
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} \
