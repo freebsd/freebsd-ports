@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp2.extreme-players.de/hl/mod/wastelandhl/ \
 		http://www.planethalflife.com/thewastes/files/:update
 DISTFILES=      whlbeta2_linux.tar.gz whl_b2_update.tar.gz:update
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half-Life mod Wasteland full server package for Linux
 
 HALFLIFE_PORT_MASTER=	${.CURDIR}/../hlserver-flf

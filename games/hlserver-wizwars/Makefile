@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp2.extreme-players.de/hl/mod/wizardwars/ \
 #DISTNAME=	wizwars_v${PORTVERSION:S/^0.//}_full
 DISTNAME=	wizwars_v${PORTVERSION:S/0.//:S/.//g}_full
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half-Life mod Wizard Wars full server package for Linux
 
 WRKSRC=		${WRKDIR}/wizwars

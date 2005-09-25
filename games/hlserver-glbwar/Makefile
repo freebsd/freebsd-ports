@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp2.extreme-players.de/hl/mod/gw/ \
                 ftp://ftp.clanserver4u.de/exp/hl/mod/gw/
 DISTNAME=	globalwarfare_beta1.2.linux
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half-Life mod Global Warfare full server package for Linux
 
 WRKSRC=		${WRKDIR}/globalwarfare

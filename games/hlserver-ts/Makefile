@@ -11,7 +11,7 @@ PORTREVISION=	1
 MASTER_SITES=	http://dl1.giga.de/mods/half_life/the_specialists/
 DISTNAME=	ts${PORTVERSION}-linux_server
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half-Life mod The Specialists full server package for Linux
 
 USE_BZIP2=	yes

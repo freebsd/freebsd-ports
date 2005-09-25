@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.thaiguy.net/ \
 		ftp://ftp2.extreme-players.de/hl/mod/vampier/v5/
 DISTNAME=	${PORTNAME}_l-${PORTVERSION}_full
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half-Life mod Vampire Slayer full server package for Linux
 
 WRKSRC=		${WRKDIR}/VS
