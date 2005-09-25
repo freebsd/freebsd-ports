@@ -7,6 +7,7 @@
 
 PORTNAME=	minder
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.alhem.net/project/minder/
 
@@ -24,7 +25,10 @@ USE_REINPLACE=	yes
 # ssl support
 CFLAGS+=	${PTHREAD_CFLAGS} -DHAVE_OPENSSL
 
+PLIST_DIRS=	\
+		%%EXAMPLESDIR%%
 PLIST_FILES=	\
+		%%EXAMPLESDIR%%/minder.cfg \
 		bin/${PORTNAME}
 
 post-patch:
@@ -43,6 +47,9 @@ post-patch:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	@${MKDIR} ${EXAMPLESDIR}   
+	@${INSTALL_DATA} ${FILESDIR}/minder.cfg.sample \
+		${EXAMPLESDIR}/minder.cfg
 
 .include <bsd.port.pre.mk>
 
