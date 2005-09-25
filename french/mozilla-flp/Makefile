@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	mozilla-flp
-PORTVERSION=	1.7.11
+PORTVERSION=	1.7.12
 CATEGORIES=	french www
-MASTER_SITES=	http://frenchmozilla.sourceforge.net/FTP/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}	\
+		http://frenchmozilla.sourceforge.net/FTP/${PORTVERSION}/
+MASTER_SITE_SUBDIR=	frenchmozilla
 DISTNAME=	mozilla-${PORTVERSION}.fr-FR.langpack
 
 MAINTAINER=	thierry@FreeBSD.org
