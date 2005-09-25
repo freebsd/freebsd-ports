@@ -1684,6 +1684,7 @@ dnetc		ports/misc/dnetc
 dnews		ports/news/dnews
 dnrd		ports/dns/dnrd
 dns_balance	ports/dns/dns_balance
+dnscheck	ports/dns/dnscheck
 dnsdoctor	ports/dns/dnsdoctor
 dnsflood	ports/dns/dnsflood
 dnshijacker	ports/dns/dnshijacker
