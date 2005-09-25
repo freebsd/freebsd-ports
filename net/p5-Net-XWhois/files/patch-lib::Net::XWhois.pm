@@ -1,14 +1,35 @@
---- lib/Net/XWhois.pm.orig	Sun Oct  6 05:37:55 2002
-+++ lib/Net/XWhois.pm	Tue Apr 29 19:01:59 2003
-@@ -16,6 +16,7 @@
+--- lib/Net/XWhois.pm.orig	Sun Oct  6 09:37:55 2002
++++ lib/Net/XWhois.pm	Mon Sep 26 04:18:34 2005
+@@ -16,6 +16,8 @@
  # 
  # Changes:
  #
++#  09/26/2005  lioux       Update parser for BRNIC
 +#  03/08/2003  jmiller     Added new .org PIR registy and parser
  #  08/05/2002  rwoodard    Merged in changes from XWhois discussion forum on
  #                          sourceforge.net; made additional changes as needed
  #                          to implement reverse lookups of IP addresses
-@@ -157,6 +158,26 @@
+@@ -122,11 +124,18 @@
+    status          => 'status:\s+([^\n]*)\n',
+    contact_admin   => '(?:admin|owner)-c:\s+([^\n]*)\n',
+    contact_tech    => 'tech-c:\s+([^\n]*)\n',
+-   contact_emails  => 'email:\s+(\S+\@\S+)',
++   contact_emails  => 'e-mail:\s+(\S+\@\S+)',
+    contact_handles => 'nic-hdl(?:-\S*):\s+([^\n]*)\n',
+    remarks        => 'remarks:\s+([^\n]*)\n',
+    notify         => 'notify:\s+([^\n]*)\n',
+    forwardwhois   => 'remarks:\s+[^\n]*(whois.\w+.\w+)',
++   address        => 'address:\s+(.+?)\n',
++   phone          => 'phone:\s+(.+?)\n',
++   contact_billing => 'billing-c:\s+([^\n]*)\n',
++   nameservers    => 'nserver:\s+(\S+)',
++   person         => 'person:\s+(.*?)\s*\n',
++   creation_time  => 'created:\s+(.*?)\s*\n',
++   record_update  => 'changed:\s+(.*?)\s*\n',
+  },
+  
+  KRNIC => { #added by rwoodard 08/06/2002
+@@ -157,6 +166,26 @@
     net_handle           => '\((NETBLK\S+)\)',
     country              => '\n\s+(\S+)\n\n',
   },
@@ -35,7 +56,7 @@
   
   INTERNIC => {
    name            => '[\n\r\f]+\s*[Dd]omain [Nn]ame[:\.]*\s+(\S+)', 
-@@ -241,6 +262,22 @@
+@@ -241,6 +270,22 @@
    nameservers     => 'Name servers:[\s\n]+(\S+)[\s\n]+(\S+)',
   },
  
@@ -58,7 +79,7 @@
   NOMINET => { 
    name                => 'omain Name:\s+(\S+)',
    registrant          => 'egistered For:\s*(.*?)\n',
-@@ -276,7 +313,7 @@
+@@ -276,7 +321,7 @@
  
   DENIC => { 
    name            => 'domain:\s+(\S+)\n',
@@ -67,7 +88,7 @@
    contact_admin   => 'admin-c:\s+(.*?)\s*\n',
    contact_tech    => 'tech-c:\s+(.*?)\s*\n',
    contact_zone    => 'zone-c:\s+(.*?)\s*\n',
-@@ -339,7 +376,9 @@
+@@ -339,7 +384,9 @@
  );
  
  my %WHOIS_PARSER = (
@@ -77,7 +98,7 @@
      'whois.nic.mil'             => 'INTERNIC',
      'whois.nic.ad.jp'           => 'JAPAN',
      'whois.domainz.net.nz'      => 'GENERIC',
-@@ -397,12 +436,12 @@
+@@ -397,12 +444,12 @@
      'mt'  => 'whois.ripe.net',      'mx'  => 'whois.nic.mx',
      'net' => 'whois.internic.net',  'nl'  => 'whois.ripe.net',
      'no'  => 'whois.norid.no',      'nz'  => 'whois.domainz.net.nz',
@@ -93,7 +114,7 @@
      'tn'  => 'whois.ripe.net',      'tr'  => 'whois.ripe.net',
      'tw'  => 'whois.twnic.net',
      'ua'  => 'whois.ripe.net',      
-@@ -557,6 +596,7 @@
+@@ -557,6 +604,7 @@
      $self->{ Domain }=~s/^www\.//; #trim leading www. if present; internic doesn't like it
      print "looking up ", $self->{ Domain }, " on ", $self->{ Server }, "\n" if ($self->{ Verbose });
      
