@@ -3211,7 +3211,6 @@ share/locale/zh_CN/LC_MESSAGES/gcompris.mo
 @dirrm share/gnome/gcompris/boards/advanced_colors
 @dirrm share/gnome/gcompris/boards
 @dirrm share/gnome/gcompris
-@dirrm share/gnome/assetml
 @dirrm share/gcompris/python/gcompris/utils
 @dirrm share/gcompris/python/gcompris/timer
 @dirrm share/gcompris/python/gcompris/sound
