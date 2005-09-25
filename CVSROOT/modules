@@ -11725,6 +11725,7 @@ t3x		ports/lang/t3x
 tRNAscan-SE	ports/biology/tRNAscan-SE
 t_coffee	ports/biology/t_coffee
 ta-aspell	ports/textproc/ta-aspell
+tableutil	ports/net/tableutil
 tac_plus-libradius	ports/net/tac_plus-libradius
 tac_plus4	ports/net/tac_plus4
 tacshell	ports/net/tacshell
