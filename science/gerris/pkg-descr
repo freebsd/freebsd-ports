@@ -1,0 +1,8 @@
+Gerris is an Open Source Free Software library for the solution of partial
+differential equations describing fluid flow. Gerris is supported by NIWA
+(National Institute of Water and Atmospheric research) and by the
+Marsden Fund of the Royal Society of New Zealand. The code is written
+entirely in C and uses both the GLib Library and the GTS Library for
+geometrical functions and object-oriented programming.
+
+WWW: http://gfs.sourceforge.net/
