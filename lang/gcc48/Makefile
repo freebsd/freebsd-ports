@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.1.0
-PORTREVISION=	20050917
+PORTREVISION=	20050924
 CATEGORIES=	lang java
 VERSIONSTRING=	4.1-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -147,8 +147,8 @@ check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 post-install:
-	# FIXME: As of July 2005 libjava installs these bogus directories.
-	-${RMDIR} -p ${PREFIX}/share/classpath/api
+	# FIXME: As of September 2005 libjava installs this extra directory.
+	-${RMDIR} -p ${PREFIX}/share/classpath/
 	# man pages can only be generated if Perl >= 5.6 is installed;
 	# fake them otherwise.
 	for mp in ${_MANPAGES}; do \
