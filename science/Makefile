@@ -22,6 +22,7 @@
     SUBDIR += gchempaint
     SUBDIR += gchemutils
     SUBDIR += gdis
+    SUBDIR += gerris
     SUBDIR += getdp
     SUBDIR += ghemical
     SUBDIR += glens
