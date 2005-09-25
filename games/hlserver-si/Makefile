@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp2.extreme-players.de/hl/mod/si/ \
 		ftp://ftp.clanserver4u.de/exp/hl/mod/si/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g:S/0r//}-linux
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half-Life mod Science and Industry full server package for Linux
 
 _DONT_INCLUDE_MK_=yes

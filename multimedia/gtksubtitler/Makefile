@@ -11,7 +11,7 @@ CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://matrix.kamp.pl/~pawelb/gtksubtitler/download/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small GNOME program for editing and converting subtitles
 
 USE_X_PREFIX=	yes

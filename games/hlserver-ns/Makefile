@@ -18,7 +18,7 @@ EXTRACT_ONLY=	ns_v1_linux_dedicated_server.tar.gz
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half-Life mod Natural Selection full server package for Linux
 
 UNZIP?=		${LOCALBASE}/bin/unzip

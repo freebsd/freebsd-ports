@@ -12,7 +12,7 @@ MASTER_SITES=	http://ocuspocus.free.fr/hlheroes/download/ \
 		http://jolletx.free.fr/
 DISTNAME=	hlh11b
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half-Life mod Heroes full server package for Linux
 
 USE_ZIP=	yes

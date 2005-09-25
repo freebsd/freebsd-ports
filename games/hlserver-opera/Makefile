@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp2.extreme-players.de/hl/mod/opera/ \
 		http://distribution.redeemedsoft.com/r12/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}0
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half-Life mod The Opera full server package for Linux
 
 HALFLIFE_PORT_MASTER=	${.CURDIR}/../hlserver-flf

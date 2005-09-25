@@ -12,7 +12,7 @@ MASTER_SITES=	http://tsc.austin2600.org/ \
 		http://www.mystwalker.de/cs/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/^0.//:S/.b$/beta/}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half-Life mod Counter-Strike with TSC modifications
 
 BUILD_DEPENDS+=	${LINUXBASE}${HLDSDIR}cstrike/liblist.gam:${HALFLIFE_COUNTERSTRIKE_MASTER}
