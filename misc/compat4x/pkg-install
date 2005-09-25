@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+case $2 in
+	POST-INSTALL)
+		echo ""
+		echo "*******************************************************************************"
+		echo "*                                                                             *"
+		echo "* Do not forget to add COMPAT_FREEBSD4 into                                   *"
+		echo "* your kernel configuration (enabled by default).                             *"
+		echo "*                                                                             *"
+		echo "* To configure and recompile your kernel see:                                 *"
+		echo "* http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/kernelconfig.html *"
+		echo "*                                                                             *"
+		echo "*******************************************************************************"
+		echo ""
+		;;
+esac
