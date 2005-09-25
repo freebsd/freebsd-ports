@@ -7,31 +7,74 @@
 
 PORTNAME=	milter-greylist
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/
 DISTNAME=	milter-greylist-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	aragorn+ports@teaser.fr
+MAINTAINER=	aragorn+ports@babasse.net
 COMMENT=	Easy-to-use greylist milter for sendmail
+
+CONFLICTS=	milter-greylist-devel-[1-9]*.*
+
+##
+# Use the following quirks to choose which sendmail to use (ports or system):
+#
+#   WITH_SENDMAIL_BASE=yes
+# or
+#   WITH_SENDMAIL_PORT=yes
+#
+# If unspecified, check for an up-to-date system version but give an
+# installed port preference over it.
+##
 
 MAN5=		greylist.conf.5
 MAN8=		milter-greylist.8
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITH_SENDMAIL_BASE) && \
+    !defined(WITH_SENDMAIL_PORT) && \
+    !exists(${LOCALBASE}/lib/libmilter.a)
+WITH_SENDMAIL_BASE=yes
+.endif
+
+.if defined(WITH_SENDMAIL_BASE)
+.if exists(/usr/lib/libmilter.a)
+MILTERBASE=	/usr
+.else
+BROKEN=		"Base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes"
+.endif
+.else
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
+MILTERBASE?=	${LOCALBASE}
+.endif
+
+##
+# If you have a reentrant resolver (starting with RELENG_5_2) you can use SPF
+##
+.if defined(WITH_LIBSPF2)
+.if ${OSVERSION} < 502102
+IGNORE=		Using libspf2 requires a thread safe resolver
+.else
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libspf2.so:${PORTSDIR}/mail/libspf2
+CONFIGURE_ARGS+=	--with-libspf2=${LOCALBASE}
+.endif
+.endif
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 LIBS+=		${PTHREAD_LIBS}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--with-user=smmsp
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LIBS="${LIBS}"
+CONFIGURE_ARGS+=	--with-user=smmsp --with-libmilter=${MILTERBASE}
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LIBS="${LIBS} "
 
 ALL_TARGET=	milter-greylist
 
 USE_RC_SUBR=	yes
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
-
-CONFLICTS=	milter-greylist-devel-[1-9]*.*
 
 post-extract:
 	@${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
@@ -73,4 +116,4 @@ post-install:
 
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
