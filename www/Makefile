@@ -145,7 +145,7 @@
     SUBDIR += gallery
     SUBDIR += gallery2
     SUBDIR += gatling
-    SUBDIR += gecko-sharp
+    SUBDIR += gecko-sharp10
     SUBDIR += geeklog
     SUBDIR += geneweb
     SUBDIR += geolizer
