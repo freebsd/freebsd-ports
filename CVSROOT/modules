@@ -2785,6 +2785,7 @@ geos		ports/graphics/geos
 geotrace	ports/net/geotrace
 geramik		ports/x11-themes/geramik
 gerbv		ports/cad/gerbv
+gerris		ports/science/gerris
 geta		ports/dns/geta
 getbdf		ports/x11-fonts/getbdf
 getdp		ports/science/getdp
