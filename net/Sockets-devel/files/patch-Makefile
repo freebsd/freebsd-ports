@@ -1,6 +1,6 @@
---- Makefile.orig	Sun Apr  3 18:39:23 2005
-+++ Makefile	Sun Apr  3 18:41:20 2005
-@@ -69,12 +69,11 @@
+--- Makefile.orig	Sun Sep 25 02:39:49 2005
++++ Makefile	Sun Sep 25 02:40:28 2005
+@@ -75,13 +75,11 @@
  		ranlib $@
  
  install:	all
@@ -11,9 +11,10 @@
 +		@${BSD_INSTALL_DATA} libSocketsEx.a $(PREFIX)/lib
  		@mkdir -p $(PREFIX)/include/Sockets
 -		cp -a *.h $(PREFIX)/include/Sockets
+-		@mkdir -p $(PREFIX)/bin
 -		install Sockets-config $(PREFIX)/bin
 +		@${BSD_INSTALL_DATA} *.h $(PREFIX)/include/Sockets
 +		@${BSD_INSTALL_PROGRAM} Sockets-config $(PREFIX)/bin
  
  clean:
- 		rm -f *.o *~ slask *.d $(PROGS) *.a
+ 		rm -f *.o *~ slask *.d $(PROGS) *.a */*~
