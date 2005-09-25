@@ -796,6 +796,7 @@
     SUBDIR += sulci
     SUBDIR += sup
     SUBDIR += svnc
+    SUBDIR += tableutil
     SUBDIR += tac_plus-libradius
     SUBDIR += tac_plus4
     SUBDIR += tacshell
