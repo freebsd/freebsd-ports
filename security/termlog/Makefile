@@ -14,8 +14,13 @@ MASTER_SITE_SUBDIR=	termlog
 MAINTAINER=	csjp@FreeBSD.org
 COMMENT=	Monitor or log multiple system terminals synchronously
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 MAN1=		termlog.1
-MANCOMPRESSED=	yes
 PLIST_FILES=	bin/termlog
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/termlog ${PREFIX}/bin/termlog
+	${INSTALL_MAN} ${WRKSRC}/termlog.1 ${MANPREFIX}/man/man1/termlog.1
 
 .include <bsd.port.mk>
