@@ -1,15 +1,15 @@
---- Makefile.orig	Sat Jan 15 23:23:22 2005
-+++ Makefile	Sat Jan 15 23:27:38 2005
-@@ -4,7 +4,7 @@
- CFLAGS =	-Wall -g -O2 $(INCLUDE) -MD
+--- Makefile.orig	Sun Sep 25 02:56:46 2005
++++ Makefile	Sun Sep 25 02:57:16 2005
+@@ -6,7 +6,7 @@
  CPPFLAGS =	$(CFLAGS)
- LIBS =		-L/usr/devel/lib -lSockets \
+ 
+ LIBS =		-L/usr/local/lib -lSockets \
 -		-lssl -lcrypto -luuid -lpthread
-+		-lSockets -lssl -lcrypto
++		-lssl -lcrypto -lSockets
  
  PROGS =		minder 
  all:		$(PROGS)
-@@ -19,7 +19,7 @@
+@@ -21,7 +21,7 @@
  		rm -f *.o *~ *.d slask $(PROGS)
  
  install:	all
