@@ -12,7 +12,7 @@ MASTER_SITES=	http://unixpages.org/distfiles/ \
 		http://ac2i.tzo.com/dctc/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A DirectConnect (www.neo-modus.com) text client for file sharing
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
