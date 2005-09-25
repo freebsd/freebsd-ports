@@ -1,14 +1,15 @@
-# New ports collection makefile for:	C++ Sockets
-# Date created:		Sat Jan 15 16:17:20 UTC 2005
+# New ports collection makefile for:	C++ Sockets devel
+# Date created:		Sun Sep 25 20:27:06 UTC 2005
 # Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	Sockets
-PORTVERSION=	1.8.7
+PORTVERSION=	1.9.7
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.alhem.net/Sockets/
+PKGNAMESUFFIX?=	-devel
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A C++ wrapper for BSD-style sockets
@@ -23,11 +24,16 @@ post-patch:
 # PREFIX safeness
 # CXX safeness
 # CXXFLAGS safeness
+# rename files to -devel
 	@${REINPLACE_CMD} -E \
 		-e 's|-O2||' \
 		-e 's|^PREFIX.+$$|PREFIX=${PREFIX}|' \
 		-e 's|^INCLUDE.+$$|INCLUDE=-I. -I${OPENSSLINC}|' \
 		-e 's|g\+\+|${CXX}|' \
+		-e 's|libSockets.a|libSockets-devel.a|' \
+		-e 's|libSocketsEx.a|libSocketsEx-devel.a|' \
+		-e 's|Sockets-config|Sockets-devel-config|' \
+		-e 's|include/Sockets|include/Sockets-devel|' \
 		${BUILD_WRKSRC}/${MAKEFILE}
 # fix StdLog.h location
 	@${FIND} ${WRKSRC} -type f | \
