@@ -24,7 +24,6 @@ CONFLICTS=	timidity-0.*
 
 # If you don't have X11, type "make -DWITHOUT_X11" or uncomment this.
 #WITHOUT_X11=	yes
-#USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GETOPT_LONG=yes
 WANT_GNOME=	yes
@@ -34,7 +33,8 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xpf - --exclude '*/libarc/*'	\
 
 CONFIGURE_ARGS?=--enable-interface=ncurses,vt100,server
 CONFIGURE_ARGS+=--program-transform-name= --enable-network
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include/libarc"
+CPPFLAGS+=	-I${LOCALBASE}/include/libarc
+CONFIGURE_ENV+=	"CPPFLAGS=${CPPFLAGS}"
 
 PLIST_SUB=	EUCJP_LOCALE=${EUCJP_LOCALE} TIMID_LIBDIR=${TIMID_LIBDIR} \
 		ELISPDIR=share/emacs/site-lisp
@@ -45,6 +45,10 @@ DOCLANG?=	C ja_JP.eucJP
 TIMID_LIBDIR=	lib/timidity
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+USE_GMAKE=	yes
+.endif
 
 .if ${.CURDIR} == ${MASTERDIR}
 MANLANG=	"" ja
