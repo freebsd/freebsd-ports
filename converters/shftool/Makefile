@@ -1,17 +1,17 @@
 # New ports collection makefile for:   shftool
 # Date created:		2003-10-28
-# Whom:			Joachim Strombergson <watchman@ludd.luth.se>
+# Whom:			Joachim Strombergson <watchman@ludd.ltu.se>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	shftool
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 PORTREVISION=	1
 CATEGORIES=	converters
 MASTER_SITES=	http://www.df.lth.se/~triad/krad/shftool/
 
-MAINTAINER=	watchman@ludd.luth.se
+MAINTAINER=	watchman@ludd.ltu.se
 COMMENT=	Converter for the Standard Hex Format (SHF)
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
