@@ -1,0 +1,28 @@
+--- src/lib/Ewl.h.in.orig	Mon Jul 11 08:14:53 2005
++++ src/lib/Ewl.h.in	Sun Sep 25 11:14:35 2005
+@@ -255,23 +255,10 @@
+ #endif
+ 
+ #include <Evas.h>
+-#include <Edje.h>
+ #include <Ecore.h>
+-#include <Edb.h>
+-
+-#include <stdio.h>
+-#include <stdlib.h>
+-#include <string.h>
+-#include <limits.h>
+-#include <ctype.h>
+-#include <sys/types.h>
+-#include <sys/stat.h>
+-#include <unistd.h>
+-
+-#ifndef PATH_MAX
+-#define PATH_MAX 4096
+-#endif
++#include <Ecore_Data.h>
+ 
++#include <ewl_private.h>
+ #include <ewl_enums.h>
+ 
+ #include <ewl_object.h>
