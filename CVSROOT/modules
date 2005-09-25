@@ -2752,6 +2752,7 @@ gdrdao		ports/audio/gdrdao
 gdtclft		ports/graphics/gdtclft
 gdvrecv		ports/multimedia/gdvrecv
 gecko-sharp10	ports/www/gecko-sharp10
+gecko-sharp20	ports/www/gecko-sharp20
 geda		ports/cad/geda
 geda-symbols	ports/cad/geda-symbols
 geda-symcheck	ports/cad/geda-symcheck
