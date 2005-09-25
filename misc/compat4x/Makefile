@@ -120,4 +120,7 @@ do-install:
 .endif
 	${INSTALL_SCRIPT} ${WRKDIR}/000.${PORTNAME}.sh ${PREFIX}/etc/rc.d/
 
+post-install:
+	@${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
+
 .include <bsd.port.post.mk>
