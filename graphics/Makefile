@@ -488,6 +488,7 @@
     SUBDIR += ray++
     SUBDIR += rayshade
     SUBDIR += reallyslick
+    SUBDIR += recoverjpeg
     SUBDIR += renderpark
     SUBDIR += robot
     SUBDIR += ruby-gd
