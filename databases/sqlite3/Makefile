@@ -11,11 +11,11 @@
 # If you want to build the TCL wrapper, you have to define SQLITE_WITH_TCL84.
 
 PORTNAME=	sqlite
-PORTVERSION=	3.2.5
+PORTVERSION=	3.2.7
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 
-MAINTAINER=	green@FreeBSD.org
+MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	An SQL database engine in a C library w/ Tcl wrapper
 
 USE_GMAKE=		YES
@@ -72,8 +72,8 @@ post-patch:
 #	@${ECHO} "config_TARGET_CFLAGS=\"-DTHREADSAFE=1 -pthread\"" >>${WRKSRC}/freebsd.hints
 
 post-build:
-	# Build the docs
 .if !defined(NOPORTDOCS)
+	@${ECHO_MSG} "===> Building docs"
 	@(cd ${WRKSRC} && ${GMAKE} ${MAKE_ARGS} doc)
 .endif
 
