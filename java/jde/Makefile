@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	jde
-PORTVERSION=	2.3.3
-PORTREVISION=	0
+PORTVERSION=	2.3.5
 CATEGORIES=	java elisp
-MASTER_SITES=	http://jdee.sunsite.dk/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	petef
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dougk@dougk-ff7.net
 COMMENT=	Java Development Environment for Emacs
 
 EMACS_PORT_NAME?=	emacs21
@@ -21,7 +21,7 @@ EMACS_PORT_NAME?=	emacs21
 PORTNAMESUFFIX=	${PKGNAMESUFFIX}
 .endif
 
-BUILD_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/semantic/semantic.el:${PORTSDIR}/devel/semantic${PORTNAMESUFFIX} \
+BUILD_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/cedet/common/cedet.el:${PORTSDIR}/devel/cedet${PORTNAMESUFFIX} \
 		${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/elib/avltree.el:${PORTSDIR}/devel/elib${PORTNAMESUFFIX}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -35,9 +35,16 @@ LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/jde
 JAVADIR=	${PREFIX}/share/java/jde
 
 post-patch:
-	${REINPLACE_CMD} -e '/test -d/d' ${BUILD_WRKSRC}/${MAKEFILE}
-	${REINPLACE_CMD} -e 's|^      dir|"${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/jde/"|' \
+	@${REINPLACE_CMD} -e '/test -d/d' ${BUILD_WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|^CEDET = ../../cedet|CEDET = ${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/cedet|' \
+		${BUILD_WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|^ELIB  = ../../elib|ELIB  = ${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/elib|' \
+		${BUILD_WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|^      dir|"${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/jde/"|' \
 		${BUILD_WRKSRC}/jde.el
+# ugh, broken permissions.
+	@${FIND} ${WRKSRC}/java -type f -exec ${CHMOD} 0644 {} \;
+	@${FIND} ${WRKSRC}/java -type d -exec ${CHMOD} 0755 {} \;
 
 do-install:
 	${MKDIR} ${LISPDIR}
