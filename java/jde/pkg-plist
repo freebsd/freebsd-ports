@@ -2,7 +2,6 @@ bin/jtags
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/beanshell.el
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/beanshell.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/efc-xemacs.el
-%%EMACS_VERSION_SITE_LISPDIR%%/jde/efc-xemacs.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/efc.el
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/efc.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/java.bnf
@@ -22,6 +21,8 @@ bin/jtags
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-compile.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-complete.el
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-complete.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-custom.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-custom.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-db.el
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-db.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-dbo.el
@@ -48,6 +49,8 @@ bin/jtags
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-javadoc.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-jdb.el
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-jdb.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-junit.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-junit.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-make.el
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-make.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-open-source.el
@@ -58,12 +61,18 @@ bin/jtags
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-parse-class.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-parse.el
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-parse.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-project-file.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-project-file.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-plugins.el
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-plugins.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-run.el
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-run.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-sregex.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-sregex.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-stat.el
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-stat.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-tree-widget.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-tree-widget.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-util.el
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-util.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-which-method.el
@@ -77,10 +86,10 @@ bin/jtags
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-xref.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde.el
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/regress.el
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/regress.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/setnu.el
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/setnu.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/jde/tree-widget.el
-%%EMACS_VERSION_SITE_LISPDIR%%/jde/tree-widget.elc
 @exec ln -sf %D/share/java/jde %D/%%EMACS_VERSION_SITE_LISPDIR%%/java
 @exec ln -sf %D/share/java/jde %D/%%EMACS_VERSION_SITE_LISPDIR%%/jde/java
 share/java/jde/bsh-commands/bsh/commands/beanInfoMaker.bsh
@@ -92,6 +101,7 @@ share/java/jde/lib/RIGHTS.antlr
 share/java/jde/lib/bsh.jar
 share/java/jde/lib/checkstyle-all.jar
 share/java/jde/lib/jde.jar
+share/java/jde/lib/junit.jar
 share/java/jde/lib/sun_checks.xml
 share/java/jde/src/jde/debugger/CommandStream.java
 share/java/jde/src/jde/debugger/DebuggeeSIO.java
@@ -204,77 +214,81 @@ share/java/jde/src/jde/wizards/NameFactory.java
 share/java/jde/src/jde/wizards/Signature.java
 share/java/jde/src/jde/wizards/SignatureContainer.java
 share/java/jde/src/jde/wizards/SignatureVisitor.java
-%%PORTDOCS%%@exec ln -sf %D/share/doc/jde %D/%%EMACS_VERSION_SITE_LISPDIR%%/jde/doc
-%%PORTDOCS%%share/doc/jde/ChangeLog
-%%PORTDOCS%%share/doc/jde/ReleaseNotes.txt
-%%PORTDOCS%%share/doc/jde/html/bsh-ug/bsh-ug-content.html
-%%PORTDOCS%%share/doc/jde/html/bsh-ug/bsh-ug-toc.html
-%%PORTDOCS%%share/doc/jde/html/bsh-ug/bsh-ug.html
-%%PORTDOCS%%share/doc/jde/html/bsh-ug/images/BeanShellBuffer.gif
-%%PORTDOCS%%share/doc/jde/html/bsh-ug/images/BshMultiLineEx.gif
-%%PORTDOCS%%share/doc/jde/html/bsh-ug/images/bshclassloading.gif
-%%PORTDOCS%%share/doc/jde/html/css/jde_style.css
-%%PORTDOCS%%share/doc/jde/html/jdb-ug/images/breakpoint.gif
-%%PORTDOCS%%share/doc/jde/html/jdb-ug/images/debug1.gif
-%%PORTDOCS%%share/doc/jde/html/jdb-ug/images/debug2.gif
-%%PORTDOCS%%share/doc/jde/html/jdb-ug/images/debug_cursor.gif
-%%PORTDOCS%%share/doc/jde/html/jdb-ug/images/display_locals.gif
-%%PORTDOCS%%share/doc/jde/html/jdb-ug/images/display_obj.gif
-%%PORTDOCS%%share/doc/jde/html/jdb-ug/images/display_var1.gif
-%%PORTDOCS%%share/doc/jde/html/jdb-ug/images/display_var2.gif
-%%PORTDOCS%%share/doc/jde/html/jdb-ug/images/set_var1.gif
-%%PORTDOCS%%share/doc/jde/html/jdb-ug/images/set_var2.gif
-%%PORTDOCS%%share/doc/jde/html/jdb-ug/images/set_var3.gif
-%%PORTDOCS%%share/doc/jde/html/jdb-ug/images/set_var4.gif
-%%PORTDOCS%%share/doc/jde/html/jdb-ug/jdb-ug-frame.html
-%%PORTDOCS%%share/doc/jde/html/jdb-ug/jdb-ug-toc.html
-%%PORTDOCS%%share/doc/jde/html/jdb-ug/jdb-ug.html
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/OverrideMeth1.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/OverrideMeth2.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/OverrideMeth3.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/OverrideMeth4.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/OverrideMeth5.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/RegisterTemplate.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/TemplateList.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/WorkingDirectory.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/classes_menu1.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/compile_buffer.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/completion_sel_method.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/find_minibuf_prompt_dirs.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/find_minibuf_prompt_regex.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/find_minibuf_result.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/find_options_buffer.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/jdemenu.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/keybindings.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/regjdk1.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/regjdk2.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/regjdk3.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/seljdk1.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/speedbar1.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/speedbar2.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/speedbar3.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/speedbar4.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/images/speedbar5.gif
-%%PORTDOCS%%share/doc/jde/html/jde-ug/jde-ug-content.html
-%%PORTDOCS%%share/doc/jde/html/jde-ug/jde-ug-toc.html
-%%PORTDOCS%%share/doc/jde/html/jde-ug/jde-ug.html
-%%PORTDOCS%%share/doc/jde/html/jdebug-ug/images/enable_jdebug.gif
-%%PORTDOCS%%share/doc/jde/html/jdebug-ug/images/jdebug_menu.gif
-%%PORTDOCS%%share/doc/jde/html/jdebug-ug/images/source_path.gif
-%%PORTDOCS%%share/doc/jde/html/jdebug-ug/images/window_config.gif
-%%PORTDOCS%%share/doc/jde/html/jdebug-ug/jdebug-ug-content.html
-%%PORTDOCS%%share/doc/jde/html/jdebug-ug/jdebug-ug-toc.html
-%%PORTDOCS%%share/doc/jde/html/jdebug-ug/jdebug-ug.html
-%%PORTDOCS%%share/doc/jde/tli_rbl/au/link.au
-%%PORTDOCS%%share/doc/jde/tli_rbl/au/tree.au
-%%PORTDOCS%%share/doc/jde/tli_rbl/img/icon.gif
-%%PORTDOCS%%share/doc/jde/tli_rbl/img/icon2.gif
-%%PORTDOCS%%share/doc/jde/tli_rbl/img/icon3.gif
-%%PORTDOCS%%share/doc/jde/tli_rbl/img/photo.gif
-%%PORTDOCS%%share/doc/jde/tli_rbl/tli_rbl.jar
-%%PORTDOCS%%share/doc/jde/tli_rbl/txt/jdb-ug-toc.txt
-%%PORTDOCS%%share/doc/jde/tli_rbl/txt/jde-ug-toc.txt
-%%PORTDOCS%%share/doc/jde/tli_rbl/txt/jdebug-ug-toc.txt
+%%PORTDOCS%%@exec ln -sf %D/%%DOCSDIR%% %D/%%EMACS_VERSION_SITE_LISPDIR%%/jde/doc
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/bsh-ug/bsh-ug-content.html
+%%PORTDOCS%%%%DOCSDIR%%/html/bsh-ug/bsh-ug-toc.html
+%%PORTDOCS%%%%DOCSDIR%%/html/bsh-ug/bsh-ug.html
+%%PORTDOCS%%%%DOCSDIR%%/html/bsh-ug/images/BeanShellBuffer.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/bsh-ug/images/BshMultiLineEx.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/bsh-ug/images/bshclassloading.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/css/jde_style.css
+%%PORTDOCS%%%%DOCSDIR%%/html/jdb-ug/images/breakpoint.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jdb-ug/images/debug1.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jdb-ug/images/debug2.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jdb-ug/images/debug_cursor.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jdb-ug/images/display_locals.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jdb-ug/images/display_obj.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jdb-ug/images/display_var1.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jdb-ug/images/display_var2.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jdb-ug/images/set_var1.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jdb-ug/images/set_var2.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jdb-ug/images/set_var3.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jdb-ug/images/set_var4.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jdb-ug/jdb-ug-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/html/jdb-ug/jdb-ug-toc.html
+%%PORTDOCS%%%%DOCSDIR%%/html/jdb-ug/jdb-ug.html
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/OverrideMeth1.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/OverrideMeth2.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/OverrideMeth3.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/OverrideMeth4.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/OverrideMeth5.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/RegisterTemplate.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/TemplateList.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/WorkingDirectory.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/build_fcn_cust_buff.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/classes_menu1.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/compile_buffer.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/completion_menu1.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/completion_menu2.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/completion_menu3.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/completion_sel_method.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/find_minibuf_prompt_dirs.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/find_minibuf_prompt_regex.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/find_minibuf_result.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/find_options_buffer.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/jdemenu.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/keybindings.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/regjdk1.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/regjdk2.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/regjdk3.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/seljdk1.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/speedbar1.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/speedbar2.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/speedbar3.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/speedbar4.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/images/speedbar5.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/jde-ug-content.html
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/jde-ug-toc.html
+%%PORTDOCS%%%%DOCSDIR%%/html/jde-ug/jde-ug.html
+%%PORTDOCS%%%%DOCSDIR%%/html/jdebug-ug/images/enable_jdebug.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jdebug-ug/images/jdebug_menu.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jdebug-ug/images/source_path.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jdebug-ug/images/window_config.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/jdebug-ug/jdebug-ug-content.html
+%%PORTDOCS%%%%DOCSDIR%%/html/jdebug-ug/jdebug-ug-toc.html
+%%PORTDOCS%%%%DOCSDIR%%/html/jdebug-ug/jdebug-ug.html
+%%PORTDOCS%%%%DOCSDIR%%/tli_rbl/au/link.au
+%%PORTDOCS%%%%DOCSDIR%%/tli_rbl/au/tree.au
+%%PORTDOCS%%%%DOCSDIR%%/tli_rbl/img/icon.gif
+%%PORTDOCS%%%%DOCSDIR%%/tli_rbl/img/icon2.gif
+%%PORTDOCS%%%%DOCSDIR%%/tli_rbl/img/icon3.gif
+%%PORTDOCS%%%%DOCSDIR%%/tli_rbl/img/photo.gif
+%%PORTDOCS%%%%DOCSDIR%%/tli_rbl/tli_rbl.jar
+%%PORTDOCS%%%%DOCSDIR%%/tli_rbl/txt/jdb-ug-toc.txt
+%%PORTDOCS%%%%DOCSDIR%%/tli_rbl/txt/jde-ug-toc.txt
+%%PORTDOCS%%%%DOCSDIR%%/tli_rbl/txt/jdebug-ug-toc.txt
 @dirrm share/java/jde/src/jde/wizards
 @dirrm share/java/jde/src/jde/util
 @dirrm share/java/jde/src/jde/debugger/spec
@@ -290,20 +304,20 @@ share/java/jde/src/jde/wizards/SignatureVisitor.java
 @dirrm share/java/jde
 @unexec test -h %D/%%EMACS_VERSION_SITE_LISPDIR%%/jde/java && rm -f %D/%%EMACS_VERSION_SITE_LISPDIR%%/jde/java
 @unexec test -h %D/%%EMACS_VERSION_SITE_LISPDIR%%/java && rm -f %D/%%EMACS_VERSION_SITE_LISPDIR%%/java
-%%PORTDOCS%%@dirrm share/doc/jde/html/jdebug-ug/images
-%%PORTDOCS%%@dirrm share/doc/jde/html/jdebug-ug
-%%PORTDOCS%%@dirrm share/doc/jde/html/jde-ug/images
-%%PORTDOCS%%@dirrm share/doc/jde/html/jde-ug
-%%PORTDOCS%%@dirrm share/doc/jde/html/jdb-ug/images
-%%PORTDOCS%%@dirrm share/doc/jde/html/jdb-ug
-%%PORTDOCS%%@dirrm share/doc/jde/html/css
-%%PORTDOCS%%@dirrm share/doc/jde/html/bsh-ug/images
-%%PORTDOCS%%@dirrm share/doc/jde/html/bsh-ug
-%%PORTDOCS%%@dirrm share/doc/jde/html
-%%PORTDOCS%%@dirrm share/doc/jde/tli_rbl/txt
-%%PORTDOCS%%@dirrm share/doc/jde/tli_rbl/img
-%%PORTDOCS%%@dirrm share/doc/jde/tli_rbl/au
-%%PORTDOCS%%@dirrm share/doc/jde/tli_rbl
-%%PORTDOCS%%@dirrm share/doc/jde
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/jdebug-ug/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/jdebug-ug
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/jde-ug/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/jde-ug
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/jdb-ug/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/jdb-ug
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/bsh-ug/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/bsh-ug
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tli_rbl/txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tli_rbl/img
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tli_rbl/au
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tli_rbl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@unexec test -h %D/%%EMACS_VERSION_SITE_LISPDIR%%/jde/doc && rm -f %D/%%EMACS_VERSION_SITE_LISPDIR%%/jde/doc
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/jde
