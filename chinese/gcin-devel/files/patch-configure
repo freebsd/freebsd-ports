@@ -1,5 +1,5 @@
---- configure.orig	Fri Sep 16 13:38:02 2005
-+++ configure	Tue Sep 20 22:14:33 2005
+--- configure.orig	Sun Sep 25 21:38:24 2005
++++ configure	Sun Sep 25 21:46:15 2005
 @@ -1,12 +1,12 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -16,7 +16,7 @@
  if [ $? = 0 ]; then
    FREEBSD=1
  else
-@@ -59,7 +59,7 @@
+@@ -65,7 +65,7 @@
  QT_IM='N'
  for i in qt3 qt4
  do
@@ -25,7 +25,7 @@
    echo "testing if you have QT_IM_MODULE dir:$QT_IM_DIR support"
    if [ -d  $QT_IM_DIR ]; then
      QT_IM='Y'
-@@ -77,7 +77,7 @@
+@@ -83,7 +83,7 @@
  
  bindir=$prefix/bin
  datadir=$prefix/share
@@ -34,18 +34,30 @@
  libdir=$prefix/lib
  includedir=$prefix/include
  optdir=/opt
-@@ -100,20 +100,13 @@
+@@ -96,8 +96,8 @@
+   GCIN_SETUP_DESKTOP=/opt/gnome/share/control-center-2.0/capplets
+   GCIN_SETUP_DESKTOP_rpm='$(optdir)/gnome/share/control-center-2.0/capplets'
+ else
+-  GCIN_SETUP_DESKTOP=/usr/share/control-center-2.0/capplets
+-  GCIN_SETUP_DESKTOP_rpm='$(datadir)/control-center-2.0/capplets'
++  GCIN_SETUP_DESKTOP=$prefix/share/gnome/control-center-2.0/capplets
++  GCIN_SETUP_DESKTOP_rpm='$(datadir)/gnome/control-center-2.0/capplets'
+ fi
+ 
+ 
+@@ -106,21 +106,12 @@
    grep -v qt3/plugins/inputmethods gcin.spec.tmp > gcin.spec
  fi
  
--grep Cooker /etc/mandriva-release 2>1 | grep 2006 >& /dev/null
+-grep Cooker /etc/mandriva-release 2>&1 | grep 2006 >& /dev/null
 -if [ $? = 0 ]; then
 -  NEW_GTK_IM='Y'
 -  echo "!!!! new gtk-im(im-gcin.so) will be enabled because you are using Cooker 2006."
 -  echo "!!!! You have to install the latest libwidget_gtk2.so"
+-  echo "http://www.csie.nctu.edu.tw/~cp76/linux/mozilla/mdk-firefox-thunderbird-1.0.6/cooker-new-gtkim-libwidget_gtk2.so.gz"
 -fi
 -
- 
+-
  OPTFLAGS="-g"
  if [ $prefix = /usr ]; then
    OPTFLAGS="-O"
@@ -56,7 +68,7 @@
  echo "MAKE=$MAKE" >> config.mak
  echo "GTKINC=$GTKINC" >> config.mak
  echo "prefix=$prefix" >> config.mak
-@@ -133,8 +126,8 @@
+@@ -140,8 +131,8 @@
  echo "GCIN_SCRIPT_DIR=\$(datadir_r)/gcin/script" >> config.mak
  echo "GCIN_SCRIPT_DIR_i=\$(datadir)/gcin/script" >> config.mak
  echo "OPTFLAGS=$OPTFLAGS" >> config.mak
