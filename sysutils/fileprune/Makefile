@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fileprune
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.spinellis.gr/sw/unix/fileprune/ \
 		http://www.dmst.aueb.gr/dds/sw/unix/fileprune/
