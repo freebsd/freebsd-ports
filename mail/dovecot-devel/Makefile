@@ -7,52 +7,38 @@
 #
 
 PORTNAME=	dovecot
-DISTVERSION=	0.99.14
+DISTVERSION=	1.0.alpha3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/
 
 MAINTAINER=	robin@isometry.net
 COMMENT=	Secure and compact IMAP and POP3 servers
 
-CONFLICTS=	dovecot-1.*
-
 USE_ICONV=	yes
 USE_RC_SUBR=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--without-shadow --with-pam --localstatedir=/var
+CONFIGURE_ARGS=	--without-shadow --with-pam \
+		--localstatedir=/var --with-ssl=openssl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-DOCS=		auth.txt configuration.txt design.txt \
+DOCS=		USE-WIKI-INSTEAD \
+		auth-protocol.txt auth.txt configuration.txt design.txt \
 		index.txt mail-storages.txt mkcert.sh multiaccess.txt \
-		nfs.txt securecoding.txt \
-		dovecot-ldap.conf dovecot-pgsql.conf \
-		dovecot-mysql.conf dovecot-openssl.cnf
+		nfs.txt securecoding.txt variables.txt \
+		dovecot-ldap.conf dovecot-sql.conf dovecot-openssl.cnf
 
-OPTIONS=	GNUTLS		"GNUTLS support"	off \
-		SASL2		"SASL2 support"		off \
+OPTIONS=	SASL2		"SASL2 support"		off \
 		VPOPMAIL	"VPopMail support"	off \
 		LDAP		"OpenLDAP support"	off \
 		PGSQL		"PostgreSQL support"	off \
 		MYSQL		"MySQL support"		off
 
 .include <bsd.port.pre.mk>
-
-## GNUTLS support
-#
-# Use the GNU Transport Layer Security
-# rather than OpenSSL.
-.if defined(WITH_GNUTLS)
-IGNORE=			Currently incompatible with security/gnutls
-LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=	--with-ssl=gnutls
-.else
-CONFIGURE_ARGS+=	--with-ssl=openssl
-.endif
 
 ## SASL2 support
 #
@@ -67,10 +53,6 @@ CONFIGURE_ARGS+=	--with-cyrus-sasl2
 
 ## VPopMail Support
 #
-# vpopmail provides easy authentication and
-# multi-domain features. It was originally
-# created for use with Qmail.
-#
 .if defined(WITH_VPOPMAIL)
 VPOPMAIL=		${LOCALBASE}/vpopmail/bin/vchkpw
 BUILD_DEPENDS+=		${VPOPMAIL}:${PORTSDIR}/mail/vpopmail
@@ -81,19 +63,12 @@ CONFIGURE_ARGS+=	--without-vpopmail
 
 ## OpenLDAP Support
 #
-# LDAP is the light-weight directory access
-# protocol and can be used by Dovecot for its
-# user database.
-#
 .if defined(WITH_LDAP)
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-ldap
 .endif
 
 ## PostgreSQL Support
-#
-# PostgreSQL is a powerful SQL database that
-# can be used to store user tables.
 #
 .if defined(WITH_PGSQL)
 USE_PGSQL=		yes
@@ -102,16 +77,13 @@ CONFIGURE_ARGS+=	--with-pgsql
 
 ## MySQL Support
 #
-# MySQL is another SQL database that can be
-# used to store user tables.
-#
 .if defined(WITH_MYSQL)
 USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--with-mysql
 .endif
 
 post-build:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},' \
+	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
 		${WRKSRC}/dovecot-example.conf >${WRKDIR}/dovecot.conf.sample
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
@@ -123,13 +95,19 @@ pre-install:
 do-install:
 	@${MKDIR} ${PREFIX}/libexec/dovecot
 	${INSTALL_PROGRAM} \
-		${WRKSRC}/src/imap/imap \
-		${WRKSRC}/src/pop3/pop3 \
+		${WRKSRC}/src/auth/checkpassword-reply \
 		${WRKSRC}/src/auth/dovecot-auth \
+		${WRKSRC}/src/deliver/deliver \
+		${WRKSRC}/src/imap/imap \
 		${WRKSRC}/src/imap-login/imap-login \
+		${WRKSRC}/src/pop3/pop3 \
 		${WRKSRC}/src/pop3-login/pop3-login \
+		${WRKSRC}/src/util/rawlog \
 			${PREFIX}/libexec/dovecot/
-	${INSTALL_PROGRAM} ${WRKSRC}/src/master/dovecot ${PREFIX}/sbin/
+	${INSTALL_PROGRAM} \
+		${WRKSRC}/src/master/dovecot \
+		${WRKSRC}/src/util/dovecotpw \
+			${PREFIX}/sbin/
 	${INSTALL_DATA} ${WRKDIR}/dovecot.conf.sample ${PREFIX}/etc/
 	${INSTALL_SCRIPT} ${WRKDIR}/dovecot.sh ${PREFIX}/etc/rc.d/
 .if !defined(NOPORTDOCS)

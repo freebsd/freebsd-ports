@@ -1,13 +1,19 @@
 @comment $FreeBSD$
 etc/dovecot.conf.sample
 etc/rc.d/dovecot.sh
+libexec/dovecot/checkpassword-reply
+libexec/dovecot/deliver
 libexec/dovecot/dovecot-auth
 libexec/dovecot/imap
 libexec/dovecot/imap-login
 libexec/dovecot/pop3
 libexec/dovecot/pop3-login
+libexec/dovecot/rawlog
 @dirrm libexec/dovecot
 sbin/dovecot
+sbin/dovecotpw
+%%PORTDOCS%%%%DOCSDIR%%/USE-WIKI-INSTEAD
+%%PORTDOCS%%%%DOCSDIR%%/auth-protocol.txt
 %%PORTDOCS%%%%DOCSDIR%%/auth.txt
 %%PORTDOCS%%%%DOCSDIR%%/configuration.txt
 %%PORTDOCS%%%%DOCSDIR%%/design.txt
@@ -17,8 +23,8 @@ sbin/dovecot
 %%PORTDOCS%%%%DOCSDIR%%/multiaccess.txt
 %%PORTDOCS%%%%DOCSDIR%%/nfs.txt
 %%PORTDOCS%%%%DOCSDIR%%/securecoding.txt
+%%PORTDOCS%%%%DOCSDIR%%/variables.txt
 %%PORTDOCS%%%%DOCSDIR%%/dovecot-ldap.conf
 %%PORTDOCS%%%%DOCSDIR%%/dovecot-openssl.cnf
-%%PORTDOCS%%%%DOCSDIR%%/dovecot-pgsql.conf
-%%PORTDOCS%%%%DOCSDIR%%/dovecot-mysql.conf
+%%PORTDOCS%%%%DOCSDIR%%/dovecot-sql.conf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
