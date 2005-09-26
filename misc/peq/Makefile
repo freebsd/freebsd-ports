@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.shrubbery.org.za/peq/
 MAINTAINER=	gordon@shrubbery.org.za
 COMMENT=	Fortune like program
 
+DEPRECATED=	depends on unsupported qt version
+EXPIRATION_DATE=2005-10-31
+
 USE_GCC=	2.95
 USE_QT_VER=	1
 
