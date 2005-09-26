@@ -6409,6 +6409,7 @@ mpage		ports/print/mpage
 mpatrol		ports/devel/mpatrol
 mpb		ports/science/mpb
 mpc		ports/audio/mpc
+mpck		ports/audio/mpck
 mpd		ports/net/mpd
 mpd4		ports/net/mpd4
 mpeg		ports/multimedia/mpeg
