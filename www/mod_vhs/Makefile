@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_vhs
-PORTVERSION=	1.0.22
+PORTVERSION=	1.0.24
 CATEGORIES=	www
 MASTER_SITES=	http://www.oav.net/projects/mod_vhs/
 DIST_SUBDIR=	apache2
@@ -29,7 +29,7 @@ AP_LIB+=	${LOCALBASE}/lib -lhome
 AP_EXTRAS+=	-I ${LOCALBASE}/include/php -I ${LOCALBASE}/include/php/Zend -I ${LOCALBASE}/include/php/TSRM -DHAVE_MOD_PHP_SUPPORT
 
 PORTDOCS=	ChangeLog AUTHORS README README.logs README.wildcards WARNING \
-		WARNING.THREADS
+		WARNING.THREADS README.phpopt
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
