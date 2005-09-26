@@ -8,6 +8,7 @@ share/doc/icecast/README
 share/doc/icecast/TODO
 share/doc/icecast/icecast2_admin.html
 share/doc/icecast/icecast2_basicsetup.html
+share/doc/icecast/icecast2_changes.html
 share/doc/icecast/icecast2_config_file.html
 share/doc/icecast/icecast2_faq.html
 share/doc/icecast/icecast2_glossary.html
@@ -18,6 +19,9 @@ share/doc/icecast/icecast2_stats.html
 share/doc/icecast/icecast2_win32.html
 share/doc/icecast/icecast2_yp.html
 share/doc/icecast/index.html
+share/doc/icecast/listener_auth1.jpg
+share/doc/icecast/listener_auth2.jpg
+share/doc/icecast/listener_auth3.jpg
 share/icecast/admin/listclients.xsl
 share/icecast/admin/listmounts.xsl
 share/icecast/admin/manageauth.xsl
@@ -28,6 +32,7 @@ share/icecast/admin/updatemetadata.xsl
 share/icecast/doc/icecast.xml.dist
 share/icecast/doc/icecast_minimal.xml.dist
 share/icecast/doc/icecast_shoutcast_compat.xml.dist
+share/icecast/doc/icecast_urlauth.xml.dist
 share/icecast/web/auth.xsl
 share/icecast/web/corner_bottomleft.jpg
 share/icecast/web/corner_bottomright.jpg
@@ -35,9 +40,12 @@ share/icecast/web/corner_topleft.jpg
 share/icecast/web/corner_topright.jpg
 share/icecast/web/icecast.png
 share/icecast/web/key.gif
+share/icecast/web/key.png
+share/icecast/web/server_version.xsl
 share/icecast/web/status.xsl
 share/icecast/web/status2.xsl
 share/icecast/web/style.css
+share/icecast/web/tunein.png
 @dirrm share/icecast/web
 @dirrm share/icecast/doc
 @dirrm share/icecast/admin
