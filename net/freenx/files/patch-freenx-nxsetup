@@ -24,9 +24,9 @@
 +	elif [ "$(uname)" = "FreeBSD" ]
 +	then
 +		USERADD_OPTIONS="-d $NX_HOME_DIR -s $PATH_BIN/nxserver"
-+		[ -n $SETUP_UID ] && USERADD_OPTIONS="-u $SETUP_UID $USERADD_OPTIONS"
-+		[ -n $SETUP_GID ] && USERADD_OPTIONS="-g $SETUP_GID $USERADD_OPTIONS"
-+		[ -n $SETUP_GID ] && pw groupadd nx -g $SETUP_GID
++		[ -n "$SETUP_UID" ] && USERADD_OPTIONS="-u $SETUP_UID $USERADD_OPTIONS"
++		[ -n "$SETUP_GID" ] && USERADD_OPTIONS="-g $SETUP_GID $USERADD_OPTIONS"
++		[ -n "$SETUP_GID" ] && pw groupadd nx -g $SETUP_GID
 +		pw useradd nx $USERADD_OPTIONS
 +
  	# no, its a "normal" useradd
