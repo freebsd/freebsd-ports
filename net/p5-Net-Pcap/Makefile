@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Pcap
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Interface to pcap(3) LBL packet capture library
+
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
 
 PERL_CONFIGURE=	yes
 
