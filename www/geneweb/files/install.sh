@@ -58,7 +58,8 @@ esac
 mkdir ${PUB_DIR}
 cat > ${PUB_DIR}/gw.cgi << EOF
 #!/bin/sh
-/usr/local/bin/gwd -cgi -bd ${PRIV_DIR} 2>/dev/null
+cd ${PRIV_DIR}/${DB_NAME}.gwb
+/usr/local/bin/gwd -cgi -bd ${PRIV_DIR} -wd ${PRIV_DIR}/${DB_NAME}.gwb 2>/dev/null
 EOF
 chmod -R 755 ${PUB_DIR}
 chown -R ${USER}:${USER_GROUP} ${PUB_DIR}
