@@ -34,10 +34,13 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_RC_SUBR=	yes
 
-CONFIGURE_ENV=	CFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		CXXFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LIBS="${LDFLAGS} -L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include -I${PREFIX}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -L${PREFIX}/lib
+CONFIGURE_ENV=	REHASH=${SCRIPTDIR}/c_rehash \
+		CPPFLAGS='${CPPFLAGS}' \
+		CXXFLAGS='${CPPFLAGS}' \
+		LDFLAGS='${LDFLAGS}'
+MAKE_ENV:=	${CONFIGURE_ENV}
 
 #
 # options available:
@@ -71,7 +74,8 @@ CONFIGURE_ARGS=	--sysconfdir=${CONFDIR} \
 		--enable-workarounds-for-imap-client-bugs \
 		--enable-unicode \
 		--disable-root-check \
-		--with-locking-method=fcntl
+		--with-locking-method=fcntl \
+		COURIERAUTHCONFIG=${LOCALBASE}/bin/courierauthconfig
 
 .include <bsd.port.pre.mk>
 
