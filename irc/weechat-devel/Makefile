@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	weechat
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	irc
 MASTER_SITES=	http://weechat.flashtux.org/download/
 
@@ -26,7 +26,7 @@ INFO=		weechat_doc_en weechat_doc_es weechat_doc_fr weechat_doc_pt
 
 PLIST_FILES=	bin/weechat-curses
 
-.for lang in fr es
+.for lang in cs fr es
 PLIST_FILES+=	%%NLS%%share/locale/${lang}/LC_MESSAGES/weechat.mo
 .endfor
 
