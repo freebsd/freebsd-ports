@@ -20,6 +20,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ X GUI toolkit
 
+DEPRECATED=		unsupported version
+EXPIRATION_DATE=	2005-10-31
+
 LATEST_LINK=	qt1
 USE_GCC=	2.95
 USE_GMAKE=	yes

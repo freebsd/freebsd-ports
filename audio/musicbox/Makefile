@@ -18,6 +18,9 @@ COMMENT=	X11 front-end for mpg123
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
+DEPRECATED=	depends on unsupported qt version
+EXPIRATION_DATE=2005-10-31
+
 USE_GCC=	2.95
 USE_QT_VER=	1
 DOCS=		ChangeLog README

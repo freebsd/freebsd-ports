@@ -14,6 +14,9 @@ DISTFILES=	ppinst-0.01.tar.gz ppsrc-0.01.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prometeus Project - real time strategy game for X Window System
 
+DEPRECATED=	depends on unsupported qt version
+EXPIRATION_DATE=2005-10-31
+
 WRKSRC=		${WRKDIR}/ppsrc
 USE_GCC=	2.95
 USE_QT_VER=	1
