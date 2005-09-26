@@ -10,14 +10,17 @@ PORTVERSION=	1.69.1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	docbook
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	XSL DocBook stylesheets
 
-BROKEN=		Botched upgrade
-
 RUN_DEPENDS=	${XMLDIR}/docbook/4.2/catalog.xml:${PORTSDIR}/textproc/docbook-xml \
 		${XMLDIR}/sdocbook/4.1.2.5/catalog:${PORTSDIR}/textproc/sdocbook-xml
+
+.ifndef NOPORTDOCS
+DISTFILES+=	${PORTNAME}-doc-${PORTVERSION}${EXTRACT_SUFX}
+.endif
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
