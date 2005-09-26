@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	crashmail
-PORTVERSION=	0.70
-PORTREVISION=	1
+PORTVERSION=	0.71
 CATEGORIES=	news mail
-MASTER_SITES=	http://www.df.lth.se/~billing/crashmail/
-DISTNAME=	cm07linux
+MASTER_SITES=	http://www.billingware.org/crashmail/
+DISTNAME=	cm071linux
 
 MAINTAINER=	vk@vk.pp.ru
 COMMENT=	CrashMail II FTN mail tosser
 
-WRKSRC=		${WRKDIR}/CrashMail
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${WRKSRC}/src
 ALL_TARGET=	linux
