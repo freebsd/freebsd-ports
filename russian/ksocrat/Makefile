@@ -9,7 +9,7 @@ PORTVERSION=	3.2.1
 PORTREVISION=	0
 CATEGORIES=	russian kde
 MASTER_SITES=	http://ksocrat.linux.kiev.ua/download/ \
-		http://voodoo.oberon.net/download/
+		http://core.inec.ru/~az/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-enru-dic-1.0.1${EXTRACT_SUFX} \
@@ -25,9 +25,7 @@ USE_GMAKE=	yes
 
 RESTRICTED=	"Redistribution not allowed"
 NO_CDROM=	${RESTRICTED}
-#NO_PACKAGE=	${RESTRICTED}
 
-ONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
