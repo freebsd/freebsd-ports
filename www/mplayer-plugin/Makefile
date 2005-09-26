@@ -7,6 +7,7 @@
 
 PORTNAME=	mplayerplug-in
 PORTVERSION=	3.11
+PORTREVISION=	1
 CATEGORIES=	www multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mplayerplug-in
@@ -33,8 +34,8 @@ PLUGINSFILES=	mplayerplug-in.so mplayerplug-in.xpt mplayerplug-in-wmp.so \
 		mplayerplug-in-qt.so mplayerplug-in-rm.so mplayerplug-in-gmp.so
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -DBSD" \
-		LDFLAGS="-L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -DBSD" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 .if !defined(WITH_MOZILLA)
 HEADERS_SUFX=
@@ -70,7 +71,8 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		s|make|${GMAKE}|g' \
 		${WRKSRC}/Makefile.in
 .if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="firefox"
 	@${REINPLACE_CMD} -e 's|mozilla-|firefox-|g' ${WRKSRC}/configure
