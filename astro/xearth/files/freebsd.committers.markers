@@ -141,7 +141,8 @@
  40.4047,	-111.7508,	"glewis"			# Cedar Hills, UT, USA
  46.59,		-112.04,	"nate"				# Helena, MT, USA
  51.09,		-114.12,	"cpiazza"			# Calgary, AB, Canada
- 33.05,		-117.09,	"wes"				# (CORE) San Diego, CA, USA
+ 33.032476,	-117.087532,	"wes,"				# (CORE) San Diego, CA, USA
+ 33.001565,	-117.068113,	"    gordon"			# San Diego, CA, USA
  34.13637,	-118.12704,	" mph,"				# Pasadena, CA, USA
  34.11,		-118.29,	"         kris,"		# Los Angeles, CA, USA
  33.83,		-118.22,	"                trevor,"	# Dominguez, CA, USA
