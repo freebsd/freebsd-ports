@@ -7,6 +7,7 @@
 
 PORTNAME=	geneweb
 PORTVERSION=	4.10
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/cristal/geneweb/Src/
 
