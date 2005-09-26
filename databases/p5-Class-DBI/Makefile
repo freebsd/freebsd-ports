@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-DBI
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.8
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -34,7 +34,7 @@ MAN3=		Class::DBI.3 Class::DBI::Attribute.3 \
 		Class::DBI::Cascade::None.3 Class::DBI::Column.3 \
 		Class::DBI::ColumnGrouper.3 Class::DBI::Iterator.3 \
 		Class::DBI::Query.3 Class::DBI::Relationship.3 \
-		Class::DBI::Search::Basic.3 Class::DBI::SearchGenerator.3 \
+		Class::DBI::SQL::Transformer.3 Class::DBI::Search::Basic.3 \
 		Class::DBI::Test::SQLite.3
 
 post-configure:
