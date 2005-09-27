@@ -1,0 +1,38 @@
+%%DATADIR%%/AUTHORS
+%%DATADIR%%/ChangeLog
+%%DATADIR%%/INSTALL
+%%DATADIR%%/Makefile
+%%DATADIR%%/README
+%%DATADIR%%/THANKS
+%%DATADIR%%/TODO
+%%DATADIR%%/compat_logging/__init__.py
+%%DATADIR%%/compat_logging/config.py
+%%DATADIR%%/compat_logging/handlers.py
+%%DATADIR%%/examples/config.ini
+%%DATADIR%%/examples/foafroll.xml.tmpl
+%%DATADIR%%/examples/index.html.tmpl
+%%DATADIR%%/examples/opml.xml.tmpl
+%%DATADIR%%/examples/rss10.xml.tmpl
+%%DATADIR%%/examples/rss20.xml.tmpl
+%%DATADIR%%/fancy-examples/config.ini
+%%DATADIR%%/fancy-examples/index.html.tmpl
+%%DATADIR%%/feedparser.py
+%%DATADIR%%/htmltmpl.py
+%%DATADIR%%/htmltmpl.py.orig
+%%DATADIR%%/output/images/edd.png
+%%DATADIR%%/output/images/evolution.png
+%%DATADIR%%/output/images/jdub.png
+%%DATADIR%%/output/images/keybuk.png
+%%DATADIR%%/output/images/logo.png
+%%DATADIR%%/output/images/planet.png
+%%DATADIR%%/output/images/thom.png
+%%DATADIR%%/output/planet.css
+%%DATADIR%%/planet.py
+%%DATADIR%%/planetlib.py
+%%DATADIR%%/timeoutsocket.py
+@dirrm %%DATADIR%%/compat_logging
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/fancy-examples
+@dirrm %%DATADIR%%/output/images
+@dirrm %%DATADIR%%/output
+@dirrm %%DATADIR%%
