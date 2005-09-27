@@ -713,6 +713,7 @@
     SUBDIR += rboot
     SUBDIR += rdesktop
     SUBDIR += rdist6
+    SUBDIR += recvnet
     SUBDIR += redir
     SUBDIR += relay
     SUBDIR += rexx-sock
