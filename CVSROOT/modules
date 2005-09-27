@@ -10525,6 +10525,7 @@ recmpeg		ports/multimedia/recmpeg
 recode		ports/converters/recode
 recombine	ports/biology/recombine
 recoverjpeg	ports/graphics/recoverjpeg
+recvnet		ports/net/recvnet
 redet		ports/textproc/redet
 redir		ports/net/redir
 redland		ports/textproc/redland
