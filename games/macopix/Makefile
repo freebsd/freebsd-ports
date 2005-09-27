@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	macopix
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.2
 PORTREVISION=	0
 CATEGORIES=	games
 MASTER_SITES=	http://rosegray.sakura.ne.jp/macopix/
-.if defined(WITH_GTK2)
-PKGNAMESUFFIX=	-gtk2
+.if defined(WITH_GTK1)
+PKGNAMESUFFIX=	-gtk1
 .endif
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${RESTRICTED_FILES}
 
@@ -32,22 +32,23 @@ RESTRICTED_FILES= \
 		macopix-mascot-pia2-ja-1.00.tar.gz \
 		macopix-mascot-triangle_heart-ja-1.00.tar.gz \
 		macopix-mascot-tsukihime-ja-1.00.tar.gz \
-		macopix-mascot-marimite-euc-ja-2.20.tar.gz
+		macopix-mascot-marimite-euc-ja-2.20.tar.gz \
+		macopix-mascot-HxB-euc-ja-0.10.tar.gz 
 
 USE_GETTEXT=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-.if defined(WITH_GTK2)
-USE_GNOME=	gtk20
-.else
+.if defined(WITH_GTK1)
 USE_GNOME=	gtk12 gdkpixbuf
+.else
+USE_GNOME=	gtk20
 .endif
 USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=""
-.if defined(WITH_GTK2)
-CONFIGURE_ARGS+=	--with-gtk2
+.if defined(WITH_GTK1)
+CONFIGURE_ARGS+=	--with-gtk1
 .endif
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
@@ -104,6 +105,10 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-marimite-euc-ja-2.20/*.mcpx ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-marimite-euc-ja-2.20/marimite.menu ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-marimite-euc-ja-2.20/README.jp ${PREFIX}/share/macopix/README.marimite.jp
+	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-HxB-euc-ja-0.10/*.png ${PREFIX}/share/macopix/pixmap/
+	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-HxB-euc-ja-0.10/*.mcpx ${PREFIX}/share/macopix/
+	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-HxB-euc-ja-0.10/HxB.menu ${PREFIX}/share/macopix/
+	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-HxB-euc-ja-0.10/README.jp ${PREFIX}/share/macopix/README.HxB.jp
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/macopix
 	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/macopix
