@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	amarok
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.3.2
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -98,15 +97,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|xx||g' ${WRKSRC}/po/Makefile.in
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${TOUCH}
 
-pre-configure:
-	@${REINPLACE_CMD} -e 's|DbSetup|dbsetup|g' \
-		${WRKSRC}/amarok/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|DbSetup.h|dbsetup.h|g' \
-		${WRKSRC}/amarok/src/configdialog.cpp \
-		${WRKSRC}/amarok/src/configdialog.h \
-		${WRKSRC}/amarok/src/Options7.ui \
-		${WRKSRC}/amarok/src/firstrunwizard.ui
-
 post-configure:
 .if defined(WITHOUT_XMMS)
 	@${REINPLACE_CMD} -e '/XMMS /d' ${WRKSRC}/config.h
@@ -116,8 +106,6 @@ post-configure:
 	@${REINPLACE_CMD} -e '/LIBVISUAL /d' ${WRKSRC}/config.h
 	@${REINPLACE_CMD} -e 's/libvisual//g' ${WRKSRC}/amarok/src/vis/Makefile
 .endif
-	@${MV} ${WRKSRC}/amarok/src/DbSetup.ui ${WRKSRC}/amarok/src/dbsetup.ui
-	@${MV} ${WRKSRC}/amarok/src/DbSetup.ui.h ${WRKSRC}/amarok/src/dbsetup.ui.h
 
 post-install:
 .if !defined(WITHOUT_LIBVISUAL)
