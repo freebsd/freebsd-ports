@@ -15,6 +15,10 @@ DISTNAME=	bugseeker2ee-1_0_2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BugSeeker for Java 2, a debugger for Java applications
 
+BROKEN=		"unfetchable"
+DEPRECATED=	unfetchable
+EXPIRATION_DATE=2005-10-31
+
 USE_JAVA=	1.3+
 
 NO_CDROM=	"License doesn\'t allow redistribution"
