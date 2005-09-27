@@ -101,8 +101,8 @@ PATCHFILES+=	qmail-1.03-tls-${TLS_PATCH_DATE}.patch:tls
 PATCH_DIST_STRIP+=	-p1
 .endif
 
-PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:dns,sendmail_flagf,rfc2821,ldap,mysql,smtp_auth_tls,tls,quota,blockexec,doublebounce,spf,localtime/}
-PATCH_SITE_SUBDIR+=	garga/qmail/:dns,sendmail_flagf,rfc2821,ldap,mysql,smtp_auth_tls,tls,quota,blockexec,doublebounce,spf,localtime
+PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:dns,sendmail_flagf,rfc2821,ldap,mysql,smtp_auth_tls,tls,quota,blockexec,doublebounce,spf,localtime,qmtpc_outgoingip/}
+PATCH_SITE_SUBDIR+=	garga/qmail/:dns,sendmail_flagf,rfc2821,ldap,mysql,smtp_auth_tls,tls,quota,blockexec,doublebounce,spf,localtime,qmtpc_outgoingip
 
 NO_PACKAGE=	djb's packaging license does not allow non-standard \
 		qmail binary distributions
@@ -346,11 +346,6 @@ PLIST_SUB+=	EXTERNAL_TODO="@comment "
 
 .endif
 
-.if (defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH)) &&\
-    (defined(WITH_QMTPC_PATCH)      && !defined(BARRIER_QMTPC_PATCH))
-BROKEN=	"OUTGOINGIP and QMTPC conflicts! Please, make your choice"
-.endif
-
 .if defined(SLAVE_SMTP_AUTH_TLS)
 PATCH_SITES+=	http://www.galle.com.br/~garga/qmail/:smtp_auth_tls
 
@@ -405,10 +400,12 @@ PATCHFILES+=	big-todo.103.patch
 .if defined(WITH_BIG_CONCURRENCY_PATCH) && !defined(BARRIER_BIG_CONCURRENCY_PATCH)
 PATCHFILES+=	big-concurrency.patch
 .endif
-.if defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH)
+.if defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH) && \
+    defined(WITH_QMTPC_PATCH) && !defined(BARRIER_QMTPC_PATCH)
+PATCHFILES+=	qmail-1.03-qmtpc_outgoingip.patch:qmtpc_outgoingip
+.elif defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH)
 PATCHFILES+=	outgoingip.patch
-.endif
-.if defined(WITH_QMTPC_PATCH) && !defined(BARRIER_QMTPC_PATCH)
+.elif defined(WITH_QMTPC_PATCH) && !defined(BARRIER_QMTPC_PATCH)
 PATCHFILES+=	qmail-1.03-qmtpc.patch
 .endif
 
