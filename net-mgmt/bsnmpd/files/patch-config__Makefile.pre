@@ -1,0 +1,19 @@
+--- config/Makefile.pre.orig	Mon Sep 19 22:07:05 2005
++++ config/Makefile.pre	Mon Sep 19 22:09:02 2005
+@@ -17,6 +17,7 @@
+ prefix=	@prefix@
+ exec_prefix= @exec_prefix@
+ bindir=	@bindir@
++sbindir= @sbindir@
+ libdir= @libdir@
+ includedir= @includedir@
+ mandir= @mandir@
+@@ -34,7 +35,7 @@
+ 
+ LIBEV=	@LIBEV@
+ 
+-SUBMAKE= $(MAKE) -$(MAKEFLAGS) --no-print-directory
++SUBMAKE= $(MAKE) $(MAKEFLAGS) --no-print-directory
+ 
+ WARNS=	-Wsystem-headers -Werror -Wall -Wno-format-y2k -W	\
+ 	-Wstrict-prototypes -Wmissing-prototypes		\

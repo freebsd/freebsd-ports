@@ -1,0 +1,8 @@
+This is a mini-SNMP daemon. The basic daemon implements the system group
+and a number of private extensions to manage the UDP transport mapping,
+communities, trap destinations and loadable modules. In this form it can
+be used to provide remote access to arbitrary data that can be described in
+the form as required by the SMI. The daemon speaks both SNMPv1 and SNMPv2c.
+
+WWW: http://people.freebsd.org/~harti/bsnmp/
+Author: Andrey V. Elsukov <bu7cher@yandex.ru>
