@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vnc2swf
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.unixuser.org/~euske/${PORTNAME}/
 
@@ -17,10 +17,15 @@ LIB_DEPENDS=	ming:${PORTSDIR}/graphics/ming
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 PLIST_FILES=	bin/vnc2swf bin/recordwin
 
 CONFIGURE_ARGS=	--with-ming=${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/ming"
 
+pre-configure:
+	@${REINPLACE_CMD} -e 's|^prefix.*|prefix= @prefix@|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|-g||' ${WRKSRC}/Makefile.in \
+	${WRKSRC}/rdr/Makefile.in ${WRKSRC}/rfb/Makefile.in
 .include <bsd.port.mk>
