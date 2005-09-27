@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://people.freebsd.org/~rse/dist/
 
 MAINTAINER=	gtodd@bellanet.org
-COMMENT=	UFS2 snapshot utilities by Ralf S. Engelschall
+COMMENT=	Convenience frontend tools for the management of UFS2 snapshots
 
 USE_REINPLACE=	yes
 NO_BUILD=	yes
