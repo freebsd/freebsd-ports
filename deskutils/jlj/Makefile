@@ -7,9 +7,13 @@
 
 PORTNAME=	jlj
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	deskutils net
-MASTER_SITES=	http://www.cis.rit.edu/~jerry/Software/perl/
+MASTER_SITES=	http://patsy.cis.rit.edu/Software/perl/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
+
+PATCH_SITES=	http://www.atarininja.org/~wxs/patches/
+PATCHFILES=	jlj-tags-port.diff
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Jerry's command-line LiveJournal.com entry system
