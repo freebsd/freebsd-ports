@@ -45,7 +45,6 @@ share/apps/amarok/icons/crystalsvg/22x22/actions/repeat_playlist.png
 share/apps/amarok/icons/crystalsvg/64x64/actions/dynamic.png
 share/apps/amarok/icons/crystalsvg/64x64/actions/random.png
 share/apps/amarok/icons/crystalsvg/64x64/actions/repeat_playlist.png
-share/apps/amarok/icons/crystalsvg/scalable/actions/collection.svg
 share/apps/amarok/icons/crystalsvg/scalable/actions/dynamic.svg
 share/apps/amarok/icons/crystalsvg/scalable/actions/player_playlist_2.svg
 share/apps/amarok/icons/hicolor/16x16/actions/collection.png
@@ -86,6 +85,9 @@ share/apps/amarok/images/splash_screen.png
 share/apps/amarok/images/time_minus.png
 share/apps/amarok/images/time_plus.png
 share/apps/amarok/images/vol_speaker.png
+share/apps/amarok/images/volumeslider-gradient.png
+share/apps/amarok/images/volumeslider-handle.png
+share/apps/amarok/images/volumeslider-inset.png
 share/apps/amarok/images/wizard_compact.png
 share/apps/amarok/images/wizard_xmms.png
 share/apps/amarok/images/xine_logo.png
@@ -453,7 +455,6 @@ share/locale/sr/LC_MESSAGES/amarok.mo
 share/locale/sr@Latn/LC_MESSAGES/amarok.mo
 share/locale/sv/LC_MESSAGES/amarok.mo
 share/locale/ta/LC_MESSAGES/amarok.mo
-share/locale/tg/LC_MESSAGES/amarok.mo
 share/locale/tr/LC_MESSAGES/amarok.mo
 share/locale/uk/LC_MESSAGES/amarok.mo
 share/locale/uz/LC_MESSAGES/amarok.mo
