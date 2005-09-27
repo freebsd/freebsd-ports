@@ -7,7 +7,7 @@
 
 PORTNAME=	pure-ftpd
 PORTVERSION=	1.0.20
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp2.fr.pureftpd.org/pub/mirrors/ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -46,7 +46,8 @@ OPTIONS=	LDAP	"Support for users in LDAP directories" off \
 		PRIVSEP	"Enable privilege separation" off \
 		PERUSERLIMITS	"Per-user concurrency limits" off \
 		THROTTLING	"Bandwidth throttling" off \
-		BANNER	"Show ${PORTNAME} welcome upon session start" on
+		BANNER	"Show ${PORTNAME} welcome upon session start" on \
+		UPLOADSCRIPT "Support uploadscript daemon" off
 
 .include <bsd.port.pre.mk>
 
@@ -101,6 +102,11 @@ CONFIGURE_ARGS+=	--with-pam
 # for paranoia
 .if defined(WITHOUT_BANNER)
 CONFIGURE_ARGS+=	--without-banner
+.endif
+
+# support uploadscript?
+.if defined (WITH_UPLOADSCRIPT)
+CONFIGURE_ARGS+=	--with-uploadscript
 .endif
 
 .if ${OSVERSION} > 500000
@@ -158,5 +164,6 @@ post-install:
 	@${ECHO_MSG} "Now you need to examine ${PAM_DIR}/${PAM_TARGET}"
 	@${ECHO_MSG} "and add the relevant PAM configuration lines to your /etc/pam.conf file."
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -1,0 +1,5 @@
+
+If you defined call upload script in pure-ftpd config
+define corresponding vars in rc.conf
+Without it pure-ftpd will not listen tcp socket - see
+FAQ: http://pureftpd.org/FAQ
