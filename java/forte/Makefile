@@ -17,6 +17,10 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Sun's powerful and extensible IDE for Java
 
+BROKEN=		"unfetchable"
+DEPRECATED=	unfetchable
+EXPIRATION_DATE=2005-10-31
+
 .if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
 .endif
