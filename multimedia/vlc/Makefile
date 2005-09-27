@@ -635,7 +635,7 @@ CONFIGURE_ARGS+=--disable-galaktos
 .endif
 
 .if (defined(WITH_SMB) || exists(${LOCALBASE}/lib/lib/libsmbclient.a)) && !defined(WITHOUT_SMB)
-LIB_DEPEND+=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
+LIB_DEPENDS+=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
 CONFIGURE_ARGS+=--enable-smb
 .else
 CONFIGURE_ARGS+=--disable-smb
