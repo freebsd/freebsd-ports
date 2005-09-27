@@ -5,17 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=      libpst
-PORTVERSION=   0.4.1
-CATEGORIES=    mail converters
-MASTER_SITES=  ${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ol2mbox
-DISTNAME=      libpst_0.4.1
-EXTRACT_SUFX=  .tgz
+PORTNAME=	libpst
+PORTVERSION=	0.5.1
+CATEGORIES=	mail converters
+MASTER_SITES=	http://alioth.debian.org/download.php/844/
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=    natey@natey.com
+MAINTAINER=	natey@natey.com
 COMMENT=	A tool for converting Outlook .pst files to Unix mbox format
 
-PLIST_FILES=	bin/readpst
+USE_GMAKE=	YES
+
+MAN1=		readpst.1 readpstlog.1
+PLIST_FILES=	bin/readpst bin/readpstlog bin/lspst
 
 .include <bsd.port.mk>

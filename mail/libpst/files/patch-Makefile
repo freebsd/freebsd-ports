@@ -1,0 +1,40 @@
+--- Makefile.orig	Wed Nov 17 14:16:02 2004
++++ Makefile	Mon Sep 26 17:34:36 2005
+@@ -6,10 +6,10 @@
+ 
+ #---------------- Do not modify below this point ------------------
+ 
+-INSTALL_DIR     := $(INSTALL) -p -d -o root -g root -m 0755
+-INSTALL_FILE    := $(INSTALL) -p    -o root -g root -m 0644
+-INSTALL_PROGRAM := $(INSTALL) -p    -o root -g root -m 0755 # -s
+-INSTALL_SCRIPT  := $(INSTALL) -p    -o root -g root -m 0755
++INSTALL_DIR     := $(INSTALL) -p -d -o root -g wheel -m 0755
++INSTALL_FILE    := $(INSTALL) -p    -o root -g wheel -m 0644
++INSTALL_PROGRAM := $(INSTALL) -p    -o root -g wheel -m 0755 # -s
++INSTALL_SCRIPT  := $(INSTALL) -p    -o root -g wheel -m 0755
+ 
+ VERSION = $(shell cat VERSION)
+ 
+@@ -53,11 +53,18 @@
+ distclean: clean
+ 	rm -f libpst-*.tar.gz
+ 
+-install: all
++install: installbin
++
++installbin: all
+ 	$(INSTALL_DIR) $(DESTDIR)$(PREFIX)/bin
+-	$(INSTALL_PROGRAM) readpst{,log} $(DESTDIR)$(PREFIX)/bin
+-	$(INSTALL_DIR) $(DESTDIR)$(PREFIX)/share/man/man1
+-	$(INSTALL_FILE) readpst{,log}.1 $(DESTDIR)$(PREFIX)/share/man/man1/
++	$(INSTALL_PROGRAM) readpst $(DESTDIR)$(PREFIX)/bin
++	$(INSTALL_PROGRAM) readpstlog $(DESTDIR)$(PREFIX)/bin
++	$(INSTALL_PROGRAM) lspst $(DESTDIR)$(PREFIX)/bin
++	$(INSTALL_DIR) $(DESTDIR)$(PREFIX)/man/man1
++	$(INSTALL_FILE) readpst.1 $(DESTDIR)$(PREFIX)/man/man1/
++	$(INSTALL_FILE) readpstlog.1 $(DESTDIR)$(PREFIX)/man/man1/
++
++installdocs:
+ 	$(INSTALL_DIR) $(DESTDIR)$(PREFIX)/share/doc/libpst
+ 	$(INSTALL_FILE) $(DOCS) $(DESTDIR)$(PREFIX)/share/doc/libpst/
+ 
