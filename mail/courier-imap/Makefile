@@ -75,7 +75,7 @@ CONFIGURE_ARGS=	--sysconfdir=${CONFDIR} \
 		--enable-unicode \
 		--disable-root-check \
 		--with-locking-method=fcntl \
-		COURIERAUTHCONFIG=${LOCALBASE}/bin/courierauthconfig
+		COURIERAUTHCONFIG=${PREFIX}/bin/courierauthconfig
 
 .include <bsd.port.pre.mk>
 
