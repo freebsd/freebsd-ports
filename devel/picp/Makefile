@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	picp
-PORTVERSION=	0.5d
+PORTVERSION=	0.6.7
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cosmodog.com/pic/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://home.pacbell.net/theposts/picmicro/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xride@x12.dk
 COMMENT=	Driver for the Microchip Picstart Plus development programmer
 
 PLIST_FILES=	bin/picp
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/picp ${PREFIX}/bin
