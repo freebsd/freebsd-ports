@@ -33,7 +33,7 @@ USE_GMAKE=	yes
 USE_XLIB=	yes
 .endif
 
-CONFIGURE_ARGS=	--enable-dynamic=${INTERFACE}
+CONFIGURE_ARGS+=--enable-dynamic=${INTERFACE}
 
 MASTERDIR=	${.CURDIR}/../../audio/timidity++
 PKGDIR=		${.CURDIR}
