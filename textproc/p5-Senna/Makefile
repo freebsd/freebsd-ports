@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-snap-${SNAPREV}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl module for Embeddable Fulltext Search Engine
 
+BUILD_DEPENDS=	senna-cfg:${PORTSDIR}/textproc/senna
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PERL_MODBUILD=	YES
 CFLAGS+=	-I${LOCALBASE}/include
@@ -27,4 +30,10 @@ tardist:
 	tar cfvz ${PORTNAME}-snap-${SNAPREV}.tar.gz Senna
 	${RM} -rf Senna
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or later
+.endif
+
+.include <bsd.port.post.mk>
