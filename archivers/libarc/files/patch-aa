@@ -1,6 +1,6 @@
 --- Makefile	Tue Jun 13 07:21:19 2000
 +++ Makefile	Tue Jun 20 17:44:24 2000
-@@ -14,29 +15,43 @@
+@@ -14,20 +15,30 @@
         url_hqxdecode.o url_qsdecode.o url_news.o url_newsgroup.o url_cgiesc.o \
         arc_mime.o
  
@@ -9,8 +9,6 @@
  # readdir_win.o (for Windows)
  
  LIB=libarc.a
-+SOLIB=libarc.so
-+SOVERSION?=1
  
 -
 -all:: $(LIB)
@@ -33,25 +31,6 @@
 -	$(RM) $(LIB) *.o arccat *~ libarc/*~
 +	$(RM) $(LIB) $(SOLIB).$(SOVERSION) *.o *.so arccat *~ libarc/*~
  
--install::
--	test -d $(PREFIX)/lib || mkdir -p $(PREFIX)/lib
--	$(INSTALL) -m 444 $(LIB) $(PREFIX)/lib
--	$(RANLIB) $(PREFIX)/lib/$(LIB)
-+install:: all
-+	$(BSD_INSTALL_PROGRAM) arccat $(PREFIX)/bin
-+	$(BSD_INSTALL_PROGRAM) $(SOLIB).$(SOVERSION) $(PREFIX)/lib
-+	$(LN) $(PREFIX)/lib/$(SOLIB).$(SOVERSION) $(PREFIX)/lib/$(SOLIB)
-+	$(BSD_INSTALL_DATA) $(LIB) $(PREFIX)/lib
- 	test -d $(PREFIX)/include/libarc || mkdir -p $(PREFIX)/include/libarc
--	$(INSTALL) -m 444 libarc/url.h $(PREFIX)/include/libarc
--	$(INSTALL) -m 444 libarc/arc.h $(PREFIX)/include/libarc
--	$(INSTALL) -m 444 libarc/mblock.h $(PREFIX)/include/libarc
--	$(INSTALL) -m 444 libarc/memb.h $(PREFIX)/include/libarc
-+	$(BSD_INSTALL_DATA) libarc/url.h $(PREFIX)/include/libarc
-+	$(BSD_INSTALL_DATA) libarc/arc.h $(PREFIX)/include/libarc
-+	$(BSD_INSTALL_DATA) libarc/mblock.h $(PREFIX)/include/libarc
-+	$(BSD_INSTALL_DATA) libarc/memb.h $(PREFIX)/include/libarc
-+	$(BSD_INSTALL_DATA) unlzh.h zip.h $(PREFIX)/include/libarc
 +
 +.SUFFIXES: .so .c
 +
