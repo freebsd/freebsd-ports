@@ -40,3 +40,5 @@ MD5 (qmail/qmail-spf-rc5.patch) = 434bd84b87e2027cfa643673c498bd6f
 SIZE (qmail/qmail-spf-rc5.patch) = 63582
 MD5 (qmail/qmail-1.03-maxrcpt.freebsd_qmail-smtp+tls_port.patch) = 0b4fc2811bf1b358d6229c8ada08a8cf
 SIZE (qmail/qmail-1.03-maxrcpt.freebsd_qmail-smtp+tls_port.patch) = 1771
+MD5 (qmail/qmail-1.03-qmtpc_outgoingip.patch) = 4b2623cbd9e9a4f137f7b16f78a43975
+SIZE (qmail/qmail-1.03-qmtpc_outgoingip.patch) = 10357
