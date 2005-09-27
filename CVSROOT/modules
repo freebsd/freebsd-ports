@@ -870,6 +870,7 @@ bsdtris		ports/games/bsdtris
 bsfilter	ports/mail/bsfilter
 bsflite		ports/net/bsflite
 bsh		ports/java/bsh
+bsnmpd		ports/net-mgmt/bsnmpd
 bsmtp		ports/mail/bsmtp
 bsp		ports/games/bsp
 bsvc		ports/emulators/bsvc
