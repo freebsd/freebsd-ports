@@ -7,6 +7,7 @@
 
 PORTNAME=	symon
 PORTVERSION=	2.71
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.xs4all.nl/~wpd/symon/philes/
 
