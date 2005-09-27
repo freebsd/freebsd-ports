@@ -1,9 +1,0 @@
---- Makefile.orig	Sun May  9 22:32:36 2004
-+++ Makefile	Sun May  9 22:32:49 2004
-@@ -1,5 +1,5 @@
- #MARCH=-march=athlon-tbird
--CXXFLAGS=-ansi -pedantic -Wall -O3
-+CXXFLAGS?=-ansi -pedantic -Wall -O3
- includedir = $(CURDIR)/include
- CXXFLAGS+= -I$(includedir)
- 
