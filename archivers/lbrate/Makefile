@@ -16,22 +16,18 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extract/decompress CP/M LBR archives
 
 USE_GETOPT_LONG=	yes
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CPPFLAGS} ${CFLAGS} ${LDFLAGS}"
 
 MAN1=		lbrate.1
-PORTDOCS=	${DOC_FILES}
+PORTDOCS=	ChangeLog README TODO
 PLIST_FILES=	bin/lbrate
-
-DOC_FILES=	ChangeLog README TODO
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lbrate ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/lbrate.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for FILE in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.endfor
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
