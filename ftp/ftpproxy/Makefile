@@ -7,6 +7,7 @@
 
 PORTNAME=	ftpproxy
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.ftpproxy.org/download/ \
 		http://www.ftpproxy.org/download/older_releases/
@@ -17,14 +18,14 @@ COMMENT=	A ftp proxy
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-CFLAGS +=-DVERSION=\\\"${PORTVERSION}\\\"
 
 MAN1=		ftp.proxy.1
 MANCOMPRESSED=	no
 PLIST_FILES=	sbin/ftp.proxy
 
 pre-build:
-	@${REINPLACE_CMD} -e 's|^CFLAGS|#CFLAGS|' ${WRKSRC}/src/Makefile
+	@${REINPLACE_CMD} -e 's|^CFLAGS.*|CFLAGS=${CFLAGS} \
+	     -DVERSION=\\"${PORTVERSION}\\"|' ${WRKSRC}/src/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/ftp.proxy ${PREFIX}/sbin
