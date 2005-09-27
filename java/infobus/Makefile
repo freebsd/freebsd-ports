@@ -7,26 +7,25 @@
 
 PORTNAME=	infobus
 PORTVERSION=	1.2
-CATEGORIES=	java
+CATEGORIES=	java devel
 DISTNAME=	ib12
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	java@freebsd.org
 COMMENT=	Enables dynamic exchange of data between JavaBeans(TM)
 
-RUN_DEPENDS=	${PREFIX}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk11 \
-		${PREFIX}/share/java/classes/collections.jar:${PORTSDIR}/java/collections
+RUN_DEPENDS=	${JAVAJARDIR}/collections.jar:${PORTSDIR}/java/collections
 
 USE_ZIP=	YES
+USE_JAVA=	YES
+JAVA_VERSION=	1.1
 
 NO_WRKSUBDIR=	yes
-JDK_VERSION=	1.1.8
 NO_BUILD=	yes
 NO_CDROM=	"See the license"
 
 .include <bsd.port.pre.mk>
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	"You must manually fetch the distribution from http://java.sun.com/products/archive/javabeans/infobus/downloads.html and place it in ${DISTDIR} then run make again"
+IGNORE=	You must manually fetch the distribution from http://java.sun.com/products/archive/javabeans/infobus/downloads.html and place it in ${DISTDIR} then run make again
 .endif
 
 do-install:
