@@ -1,0 +1,67 @@
+--- config/Makefile.post.orig	Thu Sep 22 08:33:16 2005
++++ config/Makefile.post	Thu Sep 22 08:37:05 2005
+@@ -31,7 +31,7 @@
+ install-man1:
+ 	@$(srcdir)/../config/mkinstalldirs $(mandir)/man1
+ 	for f in $(MAN1) ; do \
+-		$(INSTALL_DATA) $${f}out $(mandir)/man1/$${f} ; \
++		$(BSD_INSTALL_MAN) $${f}out $(mandir)/man1/$${f} ; \
+ 	done
+ 
+ %.1out: %.1
+@@ -48,7 +48,7 @@
+ install-man3:
+ 	@$(srcdir)/../config/mkinstalldirs $(mandir)/man3
+ 	for f in $(MAN3) ; do \
+-		$(INSTALL_DATA) $${f}out $(mandir)/man3/$${f} ; \
++		$(BSD_INSTALL_MAN) $${f}out $(mandir)/man3/$${f} ; \
+ 	done
+ 
+ %.3out: %.3
+@@ -61,7 +61,7 @@
+ ifneq "$(DEFS)" ""
+ install-defs:
+ 	@$(srcdir)/../config/mkinstalldirs $(DEFSDIR)
+-	$(INSTALL_DATA) $(DEFS:%=$(srcdir)/%) $(DEFSDIR)
++	$(BSD_INSTALL_DATA) $(DEFS:%=$(srcdir)/%) $(DEFSDIR)
+ 
+ DEFSDIR= ${datadir}/snmp/defs
+ 
+@@ -76,7 +76,7 @@
+ install-incs:
+ 	@$(srcdir)/../config/mkinstalldirs $(INCDIR)
+ 	for f in $(INCS) ; do \
+-		$(INSTALL_DATA) $(srcdir)/$$f $(INCDIR) ; \
++		$(BSD_INSTALL_DATA) $(srcdir)/$$f $(INCDIR) ; \
+ 	done
+ 
+ else
+@@ -90,7 +90,7 @@
+ install-mibs:
+ 	@$(srcdir)/../config/mkinstalldirs $(BMIBSDIR)
+ 	for f in $(BMIBS) ; do \
+-		$(INSTALL_DATA) $(srcdir)/$$f $(BMIBSDIR) ; \
++		$(BSD_INSTALL_DATA) $(srcdir)/$$f $(BMIBSDIR) ; \
+ 	done
+ 
+ else
+@@ -101,8 +101,8 @@
+ build-prog: $(PROG)
+ 
+ install-prog:
+-	@$(srcdir)/../config/mkinstalldirs $(bindir)
+-	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $(builddir)/$(PROG) $(bindir)/$(PROG)
++	@$(srcdir)/../config/mkinstalldirs $(sbindir)
++	$(LIBTOOL) --mode=install $(BSD_INSTALL_PROGRAM) $(builddir)/$(PROG) $(sbindir)/$(PROG)
+ 
+ else
+ build-prog:
+@@ -114,7 +114,7 @@
+ 
+ install-lib:
+ 	@$(srcdir)/../config/mkinstalldirs $(libdir)
+-	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $(LIB) $(libdir)
++	$(LIBTOOL) --mode=install $(BSD_INSTALL_DATA) $(LIB) $(libdir)
+ 
+ else
+ build-lib:

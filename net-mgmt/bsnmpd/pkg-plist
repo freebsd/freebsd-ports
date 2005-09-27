@@ -1,0 +1,30 @@
+etc/snmpd.config.example
+lib/libbsnmp.a
+lib/libbsnmp.so
+lib/libbsnmp.so.2
+lib/snmp_mibII.so
+lib/snmp_mibII.so.3
+lib/snmp_ntp.so
+lib/snmp_ntp.so.3
+include/bsnmp/asn1.h
+include/bsnmp/snmp.h
+include/bsnmp/snmpagent.h
+include/bsnmp/snmpclient.h
+include/bsnmp/snmpmod.h
+include/bsnmp/snmp_mibII.h
+sbin/bsnmpd
+sbin/gensnmpdef
+sbin/gensnmptree
+share/snmp/defs/mibII_tree.def
+share/snmp/defs/ntp_tree.def
+share/snmp/defs/tree.def
+share/snmp/mibs/BEGEMOT-MIB.txt
+share/snmp/mibs/BEGEMOT-NTP-MIB.txt
+share/snmp/mibs/BEGEMOT-SNMPD.txt
+share/snmp/mibs/FOKUS-MIB.txt
+share/snmp/mibs/NTP-MIB.txt
+share/snmp/mibs/NTP-PROXY-MIB.txt
+@dirrm include/bsnmp
+@dirrm share/snmp/defs
+@dirrm share/snmp/mibs
+@dirrm share/snmp
