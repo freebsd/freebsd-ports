@@ -343,7 +343,7 @@ LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 
 # mplex
 .if ${GST_PLUGIN}=="mplex"
-LIB_DEPENDS+=	lavjpeg-1.6.3:${PORTSDIR}/multimedia/mjpegtools
+LIB_DEPENDS+=	lavjpeg-1.8.0:${PORTSDIR}/multimedia/mjpegtools
 .endif
 
 # musicbrainz
@@ -387,7 +387,7 @@ LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
 # mpeg2enc
 .if ${GST_PLUGIN}=="mpeg2enc"
 USE_GSTREAMER+=	mplex
-LIB_DEPENDS+=	lavjpeg-1.6.3:${PORTSDIR}/multimedia/mjpegtools
+LIB_DEPENDS+=	lavjpeg-1.8.0:${PORTSDIR}/multimedia/mjpegtools
 
 # XXX - make sure CONFIGURE works with mpeg2enc even with "ccache
 # c++" ... weird but necessary

@@ -7,7 +7,7 @@
 
 PORTNAME=	dvdstyler
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		mpgcat:${PORTSDIR}/multimedia/mpgtx \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm \
-		lavfile-1.6.3:${PORTSDIR}/multimedia/mjpegtools \
+		lavfile-1.8.0:${PORTSDIR}/multimedia/mjpegtools \
 		wx_base-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
 RUN_DEPENDS=	${BUILD_DEPENDS}
 #RUN_DEPENDS+=	xine:${PORTSDIR}/multimedia/xine

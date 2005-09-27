@@ -7,7 +7,7 @@
 
 PORTNAME=	mjpegtools-yuvfilters
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://silicontrip.net/~mark/lavtools/ \
 		${MASTER_SITE_LOCAL}
@@ -17,7 +17,7 @@ DISTFILES=	${CFILES:S/$/.c/}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Mjpeg-tools YUV video stream processing tools
 
-LIB_DEPENDS=	lavjpeg-1.6.3:${PORTSDIR}/multimedia/mjpegtools
+LIB_DEPENDS=	lavjpeg-1.8.0:${PORTSDIR}/multimedia/mjpegtools
 
 CFILES=		yuvafps yuvfade yuvwater
 PLIST_FILES=	${CFILES:S|^|bin/|}
