@@ -25,6 +25,13 @@ MAN1=		tthsum.1
 post-patch:
 	@${REINPLACE_CMD} -E '/^(CC|CFLAGS)/d' \
 		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,g' \
+		${WRKSRC}/base32.c \
+		${WRKSRC}/read.c \
+		${WRKSRC}/utf8.c
+	@${REINPLACE_CMD} '/stdio.h/H; /stdio\.h/{ p; s/#include <stdio.h>/#define O_LARGEFILE 0/;}' \
+		${WRKSRC}/read.c \
+		${WRKSRC}/thex.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/obj-${ARCH}/${PORTNAME} ${PREFIX}/bin
