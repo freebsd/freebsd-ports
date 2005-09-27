@@ -94,6 +94,7 @@
     SUBDIR += bouml
     SUBDIR += bugbuddy
     SUBDIR += bugzilla
+    SUBDIR += buildbot
     SUBDIR += buildtool
     SUBDIR += buildtool-doc
     SUBDIR += byaccj
