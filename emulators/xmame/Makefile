@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.99
+PORTVERSION?=	0.100
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.arcade-history.com/download/:history \
@@ -32,7 +32,7 @@ WANT_GNOME=	yes
 # Broken on ia-64
 NOT_FOR_ARCHS=	ia64
 
-# Are we building MAME, MESS or PinMAME? (also set by slave ports)
+# Are we building MAME or MESS? (also set by slave ports)
 MAMEMESS?=	mame
 
 MAN6=		x${MAMEMESS}.6
@@ -49,18 +49,16 @@ OPTIONS=	SDL		"Use the SDL driver" on \
 
 XMAMEVERSION?=	${PORTVERSION}
 
+DATADIR=	${PREFIX}/share/x${MAMEMESS}
+DOCSDIR=	${PREFIX}/share/doc/x${MAMEMESS}
 PLIST_SUB+=	MAMEMESS="x${MAMEMESS}" SPOOLGAMES="${SPOOLGAMES}"
 .if ${MAMEMESS} == "mame"
-PLIST_SUB+=	MAMEONLY="" MESSONLY="@comment " PINMAMEONLY="@comment "
+PLIST_SUB+=	MAMEONLY="" MESSONLY="@comment "
 .else
 .if ${MAMEMESS} == "mess"
-PLIST_SUB+=	MAMEONLY="@comment " MESSONLY="" PINMAMEONLY="@comment "
+PLIST_SUB+=	MAMEONLY="@comment " MESSONLY=""
 .else
-.if ${MAMEMESS} == "pinmame"
-PLIST_SUB+=	MAMEONLY="@comment " MESSONLY="@comment " PINMAMEONLY=""
-.else
-.error MAMEMESS must be set to one of "mame", "mess" or "pinmame".
-.endif
+.error MAMEMESS must be set to one of "mame" or "mess".
 .endif
 .endif
 
@@ -100,27 +98,21 @@ XMESSDOCS=	mess/credits.htm \
 		mess/messroms.txt \
 		mess/sysinfo.dat \
 
-PINMAMEDOCS=	pinmame/simulation.txt \
-		pinmame/whatsnew.txt \
-		pinmame/pinmame.txt \
-		pinmame/gamelist.txt \
-		pinmame/keys.txt \
-		pinmame/sounds.dat
 GLDOCS=		changes.opengl
 .if ${MAMEMESS} == "mame"
 ALLDOCS=	${GENERALDOCS} ${XMAMEDOCS}
 .else
-.if ${MAMEMESS} == "mess"
 ALLDOCS=	${GENERALDOCS} ${XMESSDOCS}
-.else
-ALLDOCS=	${GENERALDOCS} ${PINMAMEDOCS}
-.endif
 .endif
 
 #
 # Various options are processed here.
 #
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	"Doesn't build on FreeBSD < 5.x"
+.endif
 
 # Option WITH_DATFILES
 .if ${MAMEMESS} == "mame"
@@ -130,10 +122,10 @@ PLIST_SUB+=	DATFILES=""
 
 EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
-HIVER=		099
+HIVER=		0100
 
 DISTFILES+=	uhsdat${HIVER}.zip:highscore \
-		history${PORTVERSION:S/./_/}.zip:history \
+		history1_02.zip:history \
 		cheat.zip:cheat
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -142,7 +134,7 @@ post-extract:
 		${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/uhsdat${HIVER}.zip \
 			hiscore.dat
 	cd ${WRKDIR} && \
-		${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/history${PORTVERSION:S/./_/}.zip \
+		${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/history1_02.zip \
 			history.dat
 	cd ${WRKDIR} && \
 		${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/cheat.zip cheat.dat
@@ -266,7 +258,7 @@ post-build:
 	@${CP} ${WRKSRC}/doc/x${MAMEMESS}rc.dist \
 		${WRKSRC}/doc/x${MAMEMESS}rc.dist.sed
 	${SED} -e "s@^spooldir.*\$$@spooldir		${SPOOLGAMES}/x${MAMEMESS}@" \
-		-e "s@^rompath.*\$$@rompath			${PREFIX}/share/x${MAMEMESS}/roms@" \
+		-e "s@^rompath.*\$$@rompath			${DATADIR}/roms@" \
 		${WRKSRC}/doc/x${MAMEMESS}rc.dist.sed > ${WRKSRC}/doc/x${MAMEMESS}rc.dist
 
 post-install:
@@ -285,29 +277,28 @@ post-install:
 		${PREFIX}/bin/x${MAMEMESS}
 	${CHOWN} root:games ${PREFIX}/bin/x${MAMEMESS}
 	${CHMOD} u-s,g+s ${PREFIX}/bin/x${MAMEMESS}
-	${MKDIR} ${PREFIX}/share/x${MAMEMESS} ${PREFIX}/share/x${MAMEMESS}/roms
+	${MKDIR} ${DATADIR}/roms
 	${MKDIR} ${SPOOLGAMES}/x${MAMEMESS}
 	${CHOWN} -R root:games ${SPOOLGAMES}/x${MAMEMESS}
 	${CHMOD} 775 ${SPOOLGAMES}/x${MAMEMESS}
 	${INSTALL_DATA} ${WRKSRC}/doc/x${MAMEMESS}rc.dist \
 				${PREFIX}/etc/x${MAMEMESS}rc.sample
 	${LN} -sf ${PREFIX}/etc/x${MAMEMESS}rc \
-				${PREFIX}/share/x${MAMEMESS}/x${MAMEMESS}rc
+				${DATADIR}/x${MAMEMESS}rc
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/x${MAMEMESS}
-	${MKDIR} ${PREFIX}/share/doc/x${MAMEMESS}/img
+	${MKDIR} ${DOCSDIR}/img
 .for f in ${ALLDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${PREFIX}/share/doc/x${MAMEMESS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
 .endfor
 .endif
 .if ${MAMEMESS} == "mess"
 	${INSTALL_DATA} ${WRKSRC}/doc/mess/sysinfo.dat \
-				${PREFIX}/share/xmess/history.dat
+				${DATADIR}/history.dat
 .endif
 .if ${MAMEMESS} == "mame" && defined(WITH_DATFILES)
-	${INSTALL_DATA} ${WRKDIR}/hiscore.dat ${PREFIX}/share/xmame
-	${INSTALL_DATA} ${WRKDIR}/history.dat ${PREFIX}/share/xmame
-	${INSTALL_DATA} ${WRKDIR}/cheat.dat ${PREFIX}/share/xmame
+	${INSTALL_DATA} ${WRKDIR}/hiscore.dat ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/history.dat ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/cheat.dat ${DATADIR}
 .endif
 .if defined(WITH_OPENGL)
 	@${ECHO_MSG}
