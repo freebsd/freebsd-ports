@@ -7,7 +7,7 @@
 
 PORTNAME=	gd
 PORTVERSION=	2.0.33
-PORTREVISION?=	1
+PORTREVISION?=	2
 PORTEPOCH=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
@@ -34,6 +34,11 @@ CPPFLAGS+=	-DHAVE_FT2BUILD_H
 USE_XPM=	yes
 CPPFLAGS+=	-I${X11BASE}/include/X11 -I${X11BASE}/include -DHAVE_LIBXPM
 LDFLAGS+=	-L${X11BASE}/lib -lXpm -lX11
+LDFLAGS2=	-L${PREFIX}/lib -L${LOCALBASE}/lib -L${X11BASE}/lib
+FEATURES=	GD_XPM GD_JPEG GD_FONTCONFIG GD_FREETYPE GD_GIF
+.else
+LDFLAGS2=	-L${PREFIX}/lib -L${LOCALBASE}/lib
+FEATURES=	GD_JPEG GD_FONTCONFIG GD_FREETYPE GD_GIF
 .endif
 
 .if defined(GD_FONTS)
@@ -51,9 +56,23 @@ pre-everything::
 post-extract:
 	@${CP} ${FILESDIR}/g* ${WRKSRC}
 
+post-configure:
+	${SED} -e 's|@libdir@|${PREFIX}/lib|' \
+		-e 's|@includedir@|${PREFIX}/include|' \
+		-e 's|@VERSION@|${PORTVERSION}|' \
+		-e 's|@GDLIB_MAJOR@|${PORTVERSION:C/([0-9]*).*/\1/1}|' \
+		-e 's|@GDLIB_MINOR@|${PORTVERSION:C/[0-9]*[.]([0-9]).*/\1/1}|' \
+		-e 's|@GDLIB_REVISION@|${PORTVERSION:C/.*[.]([0-9]*)/\1/1}|' \
+		-e 's|@LDFLAGS@|${LDFLAGS2}|' \
+		-e 's|@LIBS@|-lgd|' \
+		-e 's|@FEATURES@|${FEATURES}|' \
+		${WRKSRC}/config/gdlib-config.in \
+		> ${WRKDIR}/gdlib-config
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/gdfx.h ${WRKSRC}/gdhelpers.h \
 		${PREFIX}/include/
+	${INSTALL_SCRIPT} ${WRKDIR}/gdlib-config ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/index.html ${DOCSDIR}
