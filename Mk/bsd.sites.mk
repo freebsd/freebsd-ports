@@ -929,7 +929,6 @@ MASTER_SITE_PACKETSTORM+= \
 	http://packetstorm.digital-network.net/%SUBDIR%/ \
 	http://packetstorm.icx.fr/%SUBDIR%/ \
 	http://packetstorm.security-guide.de/%SUBDIR%/ \
-	http://packetstorm.trustica.cz/%SUBDIR%/ \
 	http://packetstorm.dyn.org/%SUBDIR%/ \
 	http://packetstorm.digitallinx.com/%SUBDIR%/ \
 	http://packetstormsecurity.org.pk/%SUBDIR%/
