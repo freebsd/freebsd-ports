@@ -1553,6 +1553,7 @@ de-swissgerman-ding	ports/german/swissgerman-ding
 de-unix-connect	ports/german/unix-connect
 de-webalizer2	ports/german/webalizer2
 deal		ports/games/deal
+deb2targz	ports/archivers/deb2targz
 deco		ports/misc/deco
 decompyle	ports/devel/decompyle
 decss		ports/www/decss
