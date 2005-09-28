@@ -13,24 +13,38 @@
 
 aolserver_enable=NO
 aolserver_home=%%PREFIX%%/aolserver
-aolserver_conf=${aolserver_home}/nsd.tcl 
-aolserver_flags="-t ${aolserver_conf} -u nobody -g nobody"
-aolserver_prog=nsd8x
+aolserver_conf=${aolserver_home}/sample-config.tcl 
+aolserver_flags="-u nobody -g nobody"
+aolserver_prog=${aolserver_home}/bin/nsd
 
-. /etc/rc.subr
+. "%%RC_SUBR%%"
 
 name=aolserver
-rcvar=$(set_rcvar)
-required_files=${aolserver_conf}
-command=${aolserver_home}/bin/${aolserver_prog}
-procname=${aolserver_home}/bin/${aolserver_prog}
-
-stop_cmd="stop_cmd"
-
-stop_cmd() {
-        ${command} ${aolserver_flags} -K
-}
-
 load_rc_config ${name}
+pid=`ps -ax | grep ${aolserver_conf} | grep -v grep| awk -F' ' '{print $1}'`
+rcvar=`set_rcvar`
+required_files=${aolserver_conf}
+command=${aolserver_prog}
+procname=${aolserver_prog}
+
+stop_cmd="if [ ! -z \"${pid}\" ] ; then \
+		echo \"Notice: stopping aolserver.... Kill -TERM ${pid}\" ; \
+		kill -TERM ${pid} ; \
+	else \
+		echo \"Notice: No aolserver process found. Nothing to stop.\" ; \
+	fi"
+start_cmd="if [ ! -z \"${pid}\" ] ; then \
+		echo \"Notice: aolserver is already running.\"; \
+	else \
+		echo \"Notice: starting aolserver.......\" ; \
+		echo \"Issuing command: ${command} -t ${aolserver_conf} ${aolserver_flags} \" ; \
+		${command} -t ${aolserver_conf} ${aolserver_flags}; \
+	fi"
+status_cmd="if [ ! -z \"${pid}\" ] ; then \
+		echo \"Notice: aolserver is running with pid ${pid}\" ; \
+	else \
+		echo \"Notice: aolserver is not running\" ; \
+	fi"
+
 run_rc_command "$1"
 
