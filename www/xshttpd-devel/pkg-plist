@@ -61,11 +61,11 @@ bin/xspasswd
 %%DATADIR%%/icons/xs-video.gif
 %%DATADIR%%/icons/xs-zip.gif
 %%DATADIR%%/mime.index
-%%DATADIR%%/mime.types
 %%DATADIR%%/script.methods.sample
-@dirrm %%DATADIR%%/cgi-bin
-@dirrm %%DATADIR%%/htdocs
-@dirrm %%DATADIR%%/logs
 @dirrm %%DATADIR%%/contrib
 @dirrm %%DATADIR%%/gfxcount
 @dirrm %%DATADIR%%/icons
+@cwd %%WWWDIR%%
+@unexec rmdir %D/cgi-bin 2>/dev/null || true
+@unexec rmdir %D/htdocs 2>/dev/null || true
+@unexec rmdir %D/logs 2>/dev/null || true

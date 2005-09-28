@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xshttpd
-DISTVERSION=	3.3b29
+DISTVERSION=	3.3b30
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 	ftp://mud.stack.nl/pub/xs-httpd/release/
@@ -15,15 +15,16 @@ DISTNAME=	${PORTNAME}-${DISTVERSION:S/.//}
 MAINTAINER=	johans@stack.nl
 COMMENT=	A webserver with CGI as own user and SSL suport
 
-CONFLICTS+=	apache-[0-9]*
+RUN_DEPENDS=	run-mailcap:${PORTSDIR}/misc/mime-support
 
-GNU_CONFIGURE=	yes
+CONFLICTS+=	apache-[0-9]*
 
 MAN1=		clearxs.1 gfxcount.1 httpd.1 httpdc.1 imagemap.1 \
 		readxs.1 xsindex.1 xspasswd.1
 MAN5=		httpd.conf.5 xsauth.5 xsscripts.5
 USE_RC_SUBR=	xshttpd.sh
 
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 OPTIONS=	SSL "Enable https support" On \
@@ -33,13 +34,14 @@ OPTIONS=	SSL "Enable https support" On \
 
 # By default XS-HTTPD stores its data in ${PREFIX}/lib/httpd
 DATADIR=	${PREFIX}/www
+PLIST_SUB=	WWWDIR=${DATADIR}
 CONFIGURE_ARGS+=--with-rootdir=${DATADIR}
 
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_SSL)
 .include <${PORTSDIR}/Mk/bsd.openssl.mk>
-USE_OPENSSL=	yes
+#USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-ssl
 .else
 CONFIGURE_ARGS+=--without-ssl
@@ -76,5 +78,12 @@ post-patch:
 		-e 's|nogroup|${WWWGRP}|g' \
 		${WRKSRC}/$i
 .endfor
+
+	@${REINPLACE_CMD} \
+		-e 's|@LOCALBASE@|${LOCALBASE}|g' \
+		${WRKSRC}/src/confuser.h
+
+post-install:
+	@${RM} ${DATADIR}/mime.types
 
 .include <bsd.port.post.mk>
