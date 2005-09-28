@@ -8,8 +8,7 @@
 PORTNAME=	LJ-SpellCheck
 PORTVERSION=	1.0
 CATEGORIES=	textproc perl5
-MASTER_SITES=	http://livejournal.com/files/code/spellcheck/ \
-		ftp://ftp.livejournal.com/code/spellcheck/
+MASTER_SITES=	http://livejournal.com/files/code/spellcheck/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
