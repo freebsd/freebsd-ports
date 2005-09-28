@@ -93,6 +93,7 @@
     SUBDIR += exim-mysql
     SUBDIR += exim-postgresql
     SUBDIR += exim-sa-exim
+    SUBDIR += exim-sqlite
     SUBDIR += exipick
     SUBDIR += exmh2
     SUBDIR += ezmlm
