@@ -1,10 +1,11 @@
---- cherokee/util.h.orig	Mon Aug  1 21:47:22 2005
-+++ cherokee/util.h	Thu Aug  4 21:05:15 2005
-@@ -33,7 +33,19 @@
- #include <cherokee/buffer.h>
- #include <time.h>
- #include <dirent.h>
--#include <netinet/in.h>
+--- cherokee/util.h.orig	Tue Sep 20 01:44:20 2005
++++ cherokee/util.h	Tue Sep 20 11:56:57 2005
+@@ -30,13 +30,21 @@
+ #define CHEROKEE_UTIL_H
+ 
+ #include <cherokee/common.h>
++#include <time.h>
++#include <dirent.h>
 +#include <sys/types.h>
 +
 +#ifdef HAVE_SYS_SOCKET_H
@@ -14,10 +15,13 @@
 +#ifdef HAVE_ARPA_INET_H
 +# include <arpa/inet.h>
 +#endif
-+
-+#ifdef HAVE_NETINET_IN_H
-+# include <netinet/in.h>
-+#endif
  
+ #ifdef HAVE_NETINET_IN_H
+ # include <netinet/in.h>
+ #endif
+-
+-#include <time.h>
+-#include <dirent.h>
  
- CHEROKEE_BEGIN_DECLS
+ #include <cherokee/buffer.h>
+ 
