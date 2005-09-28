@@ -896,7 +896,7 @@ bugsquish	ports/games/bugsquish
 bugsx		ports/games/bugsx
 bugzilla	ports/devel/bugzilla
 buici-clock	ports/x11-clocks/buici-clock
-buildbot	ports/devel/builtbot
+buildbot	ports/devel/buildbot
 buildtool	ports/devel/buildtool
 buildtool-doc	ports/devel/buildtool-doc
 bulk_mailer	ports/mail/bulk_mailer
