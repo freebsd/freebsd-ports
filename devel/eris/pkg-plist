@@ -1,6 +1,6 @@
 lib/liberis-1.2.a
 lib/liberis-1.2.so
-lib/liberis-1.2.so.2
+lib/liberis-1.2.so.4
 include/Eris-1.2/Eris/Exceptions.h
 include/Eris-1.2/Eris/Lobby.h
 include/Eris-1.2/Eris/Factory.h
@@ -42,3 +42,4 @@ include/Eris-1.2/Eris/PollGlibVersion.h
 @dirrm include/Eris-1.2/Eris
 @dirrm include/Eris-1.2
 libdata/pkgconfig/eris-1.2.pc
+libdata/pkgconfig/eris-poll-glib-1.2.pc

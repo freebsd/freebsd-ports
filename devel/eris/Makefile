@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	eris
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.2.2
+PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.worldforge.org/pub/worldforge/libs/eris/ \
-		http://purple.worldforge.org/downloads/libs/eris/ \
-		${MASTER_SITE_SOURCEFORGE}/%SUBDIR%
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	worldforge
 
 MAINTAINER=	jannisan@t-online.de
 COMMENT=	WorldForge client entity library
 
 LIB_DEPENDS=	Atlas-0.5.2:${PORTSDIR}/devel/atlas \
-		skstream-0.3.1:${PORTSDIR}/net/skstream \
+		skstream-0.3.3:${PORTSDIR}/net/skstream \
 		wfmath-0.3.3:${PORTSDIR}/math/wfmath \
 		sigc-1.2:${PORTSDIR}/devel/libsigc++12
 
