@@ -9,8 +9,8 @@ PORTNAME=	libhash
 PORTVERSION=	1.0.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/libhash/ \
-				ftp://ftp.megamirror.com/pub/ugh/unix/libhash/ \
-				http://ftp.megamirror.com/pub/ugh/unix/libhash/
+		ftp://ftp.megamirror.com/pub/ugh/unix/libhash/ \
+		http://ftp.megamirror.com/pub/ugh/unix/libhash/
 
 MAINTAINER=	andrew@ugh.net.au
 COMMENT=	A library for manipulating hash tables
