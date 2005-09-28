@@ -17,6 +17,7 @@
 %%T%%/bin/javah
 %%T%%/bin/javap
 %%T%%/bin/jdb
+%%T%%/bin/jmap
 %%T%%/bin/keytool
 %%T%%/bin/kinit
 %%T%%/bin/klist
