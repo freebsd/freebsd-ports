@@ -13,6 +13,7 @@
     SUBDIR += bzip2
     SUBDIR += cabextract
     SUBDIR += dact
+    SUBDIR += deb2targz
     SUBDIR += deepforest
     SUBDIR += dpkg
     SUBDIR += dynamite
