@@ -118,4 +118,3 @@ share/licq/utilities/xtraceroute.utility
 @dirrm share/licq/translations
 @dirrm share/licq/utilities
 @dirrm share/licq
-@dirrm share/locale/de/LC_MESSAGES
