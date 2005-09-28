@@ -6,10 +6,14 @@
 #
 
 PORTNAME=	am-utils
-PORTVERSION=	6.1.1
+PORTVERSION=	6.1.2.1
 PORTEPOCH=	1
 CATEGORIES=	sysutils net
-MASTER_SITES=	ftp://ftp.am-utils.org/pub/am-utils/
+MASTER_SITES=	ftp://ftp.am-utils.org/pub/am-utils/ \
+		ftp://ftp.cs.umn.edu/pub/am-utils/ \
+		ftp://ftp.cise.ufl.edu/pub/mirrors/am-utils/ \
+		ftp://sunsite.org.uk/package/am-utils/ \
+		ftp://ftp.u-aizu.ac.jp/pub/net/amd/am-utils/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,14 +22,23 @@ COMMENT=	The Berkeley Automounter Suite of Utilities
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=15
 
+PORTDOCS=	AUTHORS COPYING BUGS FAQ NEWS README.attrcache
+
 .if defined(WITH_OPENLDAP) || defined(PACKAGE_BUILDING)
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=	--with-ldap=yes --enable-ldflags=-L${LOCALBASE}/lib --enable-cppflags=-I${LOCALBASE}/include
+PORTDOCS+=	README.ldap ldap-id.txt ldap.schema
 .endif
 
 INFO=		am-utils
 MAN1=		expn.1 pawd.1
 MAN5=		amd.conf.5
 MAN8=		amd.8 amq.8 automount2amd.8 fixmount.8 fsinfo.8 hlfsd.8 mk-amd-map.8 wire-test.8
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
