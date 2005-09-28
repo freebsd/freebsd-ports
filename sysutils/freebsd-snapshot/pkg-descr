@@ -1,4 +1,4 @@
-freebsd-snapshot is set of convenience frontend tools to mount(8)
+freebsd-snapshot is a set of convenience frontend tools to mount(8)
 and mdconfig(8) for the management of UFS2 snapshots.  It is
 also the under-lying tool used in the periodic snapshot
 scheduler periodic-snapshot(8) and the mounting/unmouning
