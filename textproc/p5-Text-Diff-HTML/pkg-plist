@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Text/Diff/HTML.pm
+@unexec rmdir %D/%%SITE_PERL%%/Text/Diff 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Text 2>/dev/null || true
