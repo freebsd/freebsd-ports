@@ -12052,6 +12052,7 @@ tracker		ports/audio/tracker
 trackerbt	ports/net/trackerbt
 tractorgen	ports/games/tractorgen
 trafd		ports/net-mgmt/trafd
+traff		ports/net/traff
 traffic		ports/net/traffic
 trafshow	ports/net/trafshow
 trafshow4	ports/net/trafshow4
