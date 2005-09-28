@@ -1,0 +1,20 @@
+--- Makefile.orig	Tue Sep 27 19:11:33 2005
++++ Makefile	Tue Sep 27 19:12:24 2005
+@@ -5,13 +5,13 @@
+ #LFLAGS= -lcurses
+ 
+ # Directories
+-BINDIR = /usr/local/sbin
+-ETCDIR = /etc
++BINDIR = %%PREFIX%%/sbin
++ETCDIR = %%PREFIX%%/etc
+ 
+ # fuer i386 auskommentieren
+-CFLAGS = -g -D_REENTRANT -DwithMYSQL -DwithPGSQL
++#CFLAGS = -g -D_REENTRANT -DwithMYSQL -DwithPGSQL
+ 
+-LFLAGS =  -lpcap -lpthread -lpq -lmysqlclient
++LFLAGS = -lpcap $(EXTRA_LIBS)
+ 
+ MODULES = traff.o readconfig.o ip_table.o
+ 
