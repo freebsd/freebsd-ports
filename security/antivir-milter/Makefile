@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	antivir-milter
-PORTVERSION=	1.1.0p7
+PORTVERSION=	1.1.1p9
 DISTVERSIONPREFIX=	prof-
 DISTVERSION=	${PORTVERSION:C/p/-/}
 CATEGORIES=	security mail
@@ -48,14 +48,10 @@ BINSRC=		${WRKSRC}/bin/freebsd
 
 post-extract:
 	@${CP} ${FILESDIR}/avq.sh ${WRKSRC}/script/avq
-	@${MV} ${WRKSRC}/templates/en/patho-admnistrator\
-		${WRKSRC}/templates/en/patho-administrator
-	@${MV} ${WRKSRC}/templates/en/virus-admnistrator\
-		${WRKSRC}/templates/en/virus-administrator
 
 post-patch:
-.for i in doc/MANUAL etc/antivir.conf etc/avmilter.conf init/rc.avmilter \
-	pgp/README script/avq script/avupdater
+.for i in doc/MANUAL etc/antivir.conf etc/avmilter.conf script/avq \
+	script/avupdater script/rc.avmilter
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g; \
 		s|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/${i}
 .endfor
@@ -94,14 +90,14 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/etc/antivir.conf ${PREFIX}/etc
 .endif
 	@${LN} -sf ${PREFIX}/etc/antivir.conf /etc
-	@${INSTALL_PROGRAM} ${BINSRC}/avmilter ${PREFIX}/sbin
+	@${INSTALL_PROGRAM} ${BINSRC}/avmilter.bin ${PREFIX}/sbin
 	@${INSTALL_SCRIPT} ${WRKDIR}/antivirupdater.sh \
 		${PREFIX}/sbin/antivirupdater
 	@${INSTALL_SCRIPT} ${WRKDIR}/avqrm.sh ${PREFIX}/bin/avqrm
-	@${INSTALL_SCRIPT} ${WRKSRC}/init/rc.avmilter \
-		${PREFIX}/etc/rc.d/avmilter.sh
 	@${INSTALL_SCRIPT} ${WRKSRC}/script/avupdater \
 		${PREFIX}/etc/rc.d/avupdater.sh-dist_avmilter
+	@${INSTALL_SCRIPT} ${WRKSRC}/script/rc.avmilter \
+		${PREFIX}/etc/rc.d/avmilter.sh
 	@${INSTALL} -d -o smmsp -g smmsp -m 700 /var/spool/avmilter
 .for i in incoming outgoing rejected
 	@${INSTALL} -d -o smmsp -g smmsp -m 700 /var/spool/avmilter/${i}
@@ -120,11 +116,9 @@ do-install:
 .for i in ChangeLog LICENSE LICENSE.DE
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
-.for i in MANUAL avmilter_de.pdf avmilter_en.pdf
+.for i in MANUAL RELEASE_NOTES avmilter_de.pdf avmilter_en.pdf
 	@${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/pgp/README ${DOCSDIR}/README.gpg
-	@${INSTALL_DATA} ${WRKSRC}/pgp/antivir.gpg ${DOCSDIR}
 .endif
 
 post-install:

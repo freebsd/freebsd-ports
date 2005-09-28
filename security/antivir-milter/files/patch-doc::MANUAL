@@ -1,6 +1,6 @@
 --- doc/MANUAL.orig	Wed Jan 28 11:48:04 2004
 +++ doc/MANUAL	Mon Mar  1 01:08:06 2004
-@@ -39,37 +39,38 @@
+@@ -40,37 +40,38 @@
  
  To start, stop, restart AntiVir Milter:
  
@@ -51,7 +51,7 @@
  # MaxNestingLevel		same as ArchiveMaxRecursion
  # MaxAttachments		100
  # BlockSuspiciousMime		NO
-@@ -77,7 +78,7 @@
+@@ -78,7 +79,7 @@
  # ExposeRecipientAlerts		NO
  # ExposeSenderAlerts		NO
  # ExposePostmasterAlerts	YES
@@ -60,7 +60,7 @@
  # RejectAlertMail		NO
  # QuarantineAlert		YES
  # ScanInArchive			YES
-@@ -115,13 +116,13 @@
+@@ -118,13 +119,13 @@
  -------------------------------
  
  Add the following line for a daily update at e.g. 0:25 a.m.:
@@ -77,7 +77,7 @@
  are provided:
  
  # EmailTo            	root@localhost
-@@ -135,7 +136,7 @@
+@@ -138,7 +139,7 @@
  # HTTPProxyPassword  	password
  # SyslogFacility     	user
  # SyslogPriority     	notice
@@ -86,7 +86,7 @@
  # GnuPGOptions
  # DetectDialer
  # DetectJoke
-@@ -155,7 +156,7 @@
+@@ -158,7 +159,7 @@
  you have the possibility to define your own text in alert and
  pathological notification mails.
  
@@ -95,7 +95,7 @@
  following files:
  
  	patho-administrator
-@@ -213,14 +214,15 @@
+@@ -216,14 +217,15 @@
  will be printed to syslog:
  (avmilter[1234]: Mail from foo@bar.tld to john@doe.tld will be scanned!)
  
@@ -113,7 +113,7 @@
  The i is an option for the regexp and it means ignore case.
  
  #The following matches exactly the *recipient* address "foo@bar.tld"
-@@ -325,8 +327,8 @@
+@@ -328,8 +330,8 @@
  no notice mail will be sent to the recipient(s) and the sender!
  This behaviour cannot be changed.
  
@@ -123,4 +123,13 @@
 +who receives a mail in case of an alert.
  The definition there is used instead of the definition in the
  avmilter.conf (Expose*Alerts).
+ 
+@@ -464,7 +466,7 @@
+ mail. If set to a full path with filename, the text in that file will be
+ added to the mail.
+ 
+-AddStatusInBody /usr/lib/AntiVir/templates/my_banner
++AddStatusInBody %%PREFIX%%/AntiVir/templates/my_banner
+ or
+ AddStatusInBody yes
  

@@ -18,9 +18,7 @@ Functions:
 - Immediate activation, if new virus definition file (.VDF) is available
 - Heuristic macro-virus detection
 - Modifiable templates to create own alert messages
-- Scanning in archives (27 formats are supported)
-
-AntiVir Milter is free of charge for private (individual, non-commercial) use.
+- Scanning in archives (28 formats are supported)
 
 http://www.free-av.de/cgi-bin/ubb/ultimatebb.cgi (Support English/German)
 http://www.antivir.de/ (German)
