@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	mercator
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.4
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.worldforge.org/pub/worldforge/libs/mercator/ \
-		http://purple.worldforge.org/downloads/libs/mercator/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	worldforge
 
 MAINTAINER=	jannisan@t-online.de
