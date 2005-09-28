@@ -1,0 +1,10 @@
+%%SITE_PERL%%/JSON.pm
+%%SITE_PERL%%/JSON/Converter.pm
+%%SITE_PERL%%/JSON/Parser.pm
+%%SITE_PERL%%/JSONRPC.pm
+%%SITE_PERL%%/JSONRPC/Transport/HTTP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/JSONRPC/Transport 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/JSONRPC 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/JSON 2>/dev/null || true

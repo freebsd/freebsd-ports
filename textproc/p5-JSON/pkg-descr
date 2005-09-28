@@ -1,0 +1,5 @@
+This module converts from JSON (JavaScript Object Notation) to Perl
+data structures, and the other way around.
+
+WWW: http://search.cpan.org/dist/JSON/
+WWW: http://www.crockford.com/JSON/
