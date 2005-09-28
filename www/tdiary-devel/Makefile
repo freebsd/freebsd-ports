@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tdiary
-PORTVERSION=	2.1.2
-PORTREVISION=	1
+PORTVERSION=	2.1.3
 CATEGORIES?=	www ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.tdiary.org/download/
@@ -26,7 +25,7 @@ RUBY_VER=	1.8
 #TDIARY_LANG	ja:Japanese en:English zh:Traditional-Chinese
 
 RUBY_SHEBANG_FILES=	index.rb update.rb misc/convert2.rb misc/plugin/squeeze.rb \
-			misc/plugin/windex.rb misc/plugin/rast-register.rb \
+			misc/plugin/amazon/amazonimg.rb misc/plugin/rast-register.rb \
 			misc/plugin/trackback/tb.rb misc/style/etdiary/etdiary_test.rb \
 			misc/plugin/pingback/pb.rb misc/plugin/xmlrpc/xmlrpc.rb
 
