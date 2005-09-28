@@ -11,9 +11,7 @@ PORTVERSION=	0.9
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang
-MASTER_SITES=	http://savannah.gnu.org/download/nsl/ \
-		http://iling.nw.ru/~artem/downloads/ \
-		http://unixpages.org/distfiles/
+MASTER_SITES=	http://unixpages.org/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programming language designed for especially complex processing texts
