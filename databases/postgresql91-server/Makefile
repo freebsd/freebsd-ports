@@ -21,6 +21,8 @@ COMMENT?=	The most advanced open-source database available anywhere
 CONFLICTS?=	${PORTNAME}-client-7.[0-9]* \
 		${PORTNAME}${PKGNAMESUFFIX}-7.[0-9]*
 
+BROKEN=		Work in progress, nothing to see, please move along...
+
 WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
 DIST_SUBDIR=	postgresql
 
