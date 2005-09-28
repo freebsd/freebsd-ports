@@ -112,6 +112,8 @@ ALLDOCS=	${GENERALDOCS} ${XMESSDOCS}
 
 .if ${OSVERSION} < 500000
 BROKEN=	"Doesn't build on FreeBSD < 5.x"
+.elif (${OSVERSION} < 600000 && ${MAMEMESS} == "mess")
+BROKEN=	"Doesn't build on FreeBSD < 6.x"
 .endif
 
 # Option WITH_DATFILES
