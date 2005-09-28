@@ -15,9 +15,7 @@ MASTER_SITE_SUBDIR=	xmlstar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command Line XML Toolkit
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libxml2.a:${PORTSDIR}/textproc/libxml2 \
-		${LOCALBASE}/lib/libxslt.a:${PORTSDIR}/textproc/libxslt
-
+USE_GNOME=	libxslt
 USE_ICONV=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -29,8 +27,7 @@ MAN1=		xmlstarlet.1
 PLIST_FILES=	bin/xml
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^CFLAGS|#CFLAGS|g ; \
-		 s|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|-ldl|-liconv|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|%%PTHREAD%%|${PTHREAD_LIBS}|g" \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

@@ -1,0 +1,113 @@
+--- configure.orig	Wed Sep 28 17:30:45 2005
++++ configure	Wed Sep 28 17:37:07 2005
+@@ -1042,7 +1042,7 @@
+ 
+ ac_test_CFLAGS="${CFLAGS+set}"
+ ac_save_CFLAGS="$CFLAGS"
+-CFLAGS=
++#CFLAGS=
+ echo $ac_n "checking whether ${CC-cc} accepts -g""... $ac_c" 1>&6
+ echo "configure:1048: checking whether ${CC-cc} accepts -g" >&5
+ if eval "test \"`echo '$''{'ac_cv_prog_cc_g'+set}'`\" = set"; then
+@@ -1076,7 +1076,7 @@
+ fi
+ 
+ 
+-CFLAGS="-Wall -g -pedantic"
++#CFLAGS="-Wall -g -pedantic"
+ EXTRA_LIBS=
+ 
+ case "${host}" in
+@@ -1095,7 +1095,7 @@
+   withval="$with_libxml_prefix"
+   LIBXML_PREFIX=$withval
+         LIBXML_CFLAGS="-I$withval/include/libxml2 -I$withval/include/libxml"
+-        LIBXML_LIBS="$withval/lib/libxml2.a -lz -lm -lpthread -ldl"
++        LIBXML_LIBS="`pkg-config --libs libxml-2.0` %%PTHREAD%%"
+ 
+ fi
+ 
+@@ -1111,7 +1111,7 @@
+ # Check whether --with-libxml-libs-prefix or --without-libxml-libs-prefix was given.
+ if test "${with_libxml_libs_prefix+set}" = set; then
+   withval="$with_libxml_libs_prefix"
+-  LIBXML_LIBS="$withval/libxml2.a -lz -lm -lpthread -ldl"
++  LIBXML_LIBS="`pkg-config --libs libxml-2.0` %%PTHREAD%%"
+ 
+ fi
+ 
+@@ -1120,7 +1120,7 @@
+ if test "${with_libxml_src+set}" = set; then
+   withval="$with_libxml_src"
+   LIBXML_SRC="$withval"
+-        LIBXML_LIBS="$withval/.libs/libxml2.a -lz -lm -lpthread"
++        LIBXML_LIBS="`pkg-config --libs libxml-2.0` %%PTHREAD%%"
+         LIBXML_CFLAGS="-I$withval/include/libxml2 -I$withval/include/libxml -I$withval/include"
+ 
+ fi
+@@ -1144,8 +1144,7 @@
+   withval="$with_libxslt_prefix"
+   LIBXSLT_PREFIX=$withval
+         LIBXSLT_CFLAGS="-I$withval/include/libxslt -I$withval/include/libexslt"
+-        LIBXSLT_LIBS="$withval/lib/libxslt.a $withval/lib/libexslt.a -lz -lm -lpthread"
+-
++        LIBXSLT_LIBS="`pkg-config --libs libexslt` %%PTHREAD%%"
+ fi
+ 
+         
+@@ -1160,7 +1159,7 @@
+ # Check whether --with-libxslt-libs-prefix or --without-libxslt-libs-prefix was given.
+ if test "${with_libxslt_libs_prefix+set}" = set; then
+   withval="$with_libxslt_libs_prefix"
+-  LIBXSLT_LIBS="$withval/libxslt.a $withval/libexslt.a -lz -lm -lpthread"
++  LIBXSLT_LIBS="`pkg-config --libs libexslt` %%PTHREAD%%"
+ 
+ fi
+ 
+@@ -1169,7 +1168,7 @@
+ if test "${with_libxslt_src+set}" = set; then
+   withval="$with_libxslt_src"
+   LIBXSLT_SRC="$withval"
+-        LIBXSLT_LIBS="$withval/libxslt/.libs/libxslt.a $withval/libexslt/.libs/libexslt.a -lz -lm -lpthread"
++        LIBXSLT_LIBS="`pkg-config --libs libexslt` %%PTHREAD%%"
+         LIBXSLT_CFLAGS="-I$withval/libxslt -I$withval/libexslt -I$withval"
+ 
+ fi
+@@ -1445,7 +1444,7 @@
+ 
+ ac_test_CFLAGS="${CFLAGS+set}"
+ ac_save_CFLAGS="$CFLAGS"
+-CFLAGS=
++#CFLAGS=
+ echo $ac_n "checking whether ${CC-cc} accepts -g""... $ac_c" 1>&6
+ echo "configure:1451: checking whether ${CC-cc} accepts -g" >&5
+ if eval "test \"`echo '$''{'ac_cv_prog_cc_g'+set}'`\" = set"; then
+@@ -2133,8 +2132,8 @@
+ #define vsnprintf _vsnprintf
+ EOF
+ 
+-      LIBXML_LIBS=`echo "$LIBXML_LIBS" | sed -e 's/ -lz//g' -e 's/ -lpthread//g'`
+-      LIBXSLT_LIBS=`echo "$LIBXSLT_LIBS" | sed -e 's/ -lz//g' -e 's/ -lpthread//g'`
++      LIBXML_LIBS=`echo "$LIBXML_LIBS" | sed -e 's/ -lz//g' -e 's/ %%PTHREAD%%//g'`
++      LIBXSLT_LIBS=`echo "$LIBXSLT_LIBS" | sed -e 's/ -lz//g' -e 's/ %%PTHREAD%%//g'`
+       ;;
+   *-hpux* )
+       LIBXML_LIBS=`echo "$LIBXML_LIBS" | sed -e 's/ -lz//g'`
+@@ -2159,7 +2158,7 @@
+ 
+ if test "x$LIBXML_LIBS" = "x"
+ then
+-	LIBXML_LIBS="${LIBXML_PREFIX}/lib/libxml2.a -lz -lm -lpthread -ldl"
++	LIBXML_LIBS="`pkg-config --libs libxml-2.0` %%PTHREAD%%"
+ fi
+ 
+ if test "x$LIBXSLT_CFLAGS" = "x"
+@@ -2169,7 +2168,7 @@
+ 
+ if test "x$LIBXSLT_LIBS" = "x"
+ then
+-	LIBXSLT_LIBS="${LIBXSLT_PREFIX}/lib/libxslt.a ${LIBXSLT_PREFIX}/lib/libexslt.a -lz -lm -lpthread"
++	LIBXSLT_LIBS="`pkg-config --libs libexslt` %%PTHREAD%%"
+ fi
+ 
+ if test "x$LIBICONV_CFLAGS" = "x"
