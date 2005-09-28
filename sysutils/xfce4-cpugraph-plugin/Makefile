@@ -9,8 +9,7 @@ PORTNAME=	xfce4-cpugraph-plugin
 PORTVERSION=	0.2.2
 PORTREVISION=	3
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
-		http://matt.nerim.net/xfce-goodies/
+MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	ports@FreeBSD.org
