@@ -1,5 +1,5 @@
---- configure.orig	Wed Apr 13 07:46:35 2005
-+++ configure	Thu Jun  2 23:54:17 2005
+--- configure.orig	Wed Apr 13 13:46:35 2005
++++ configure	Tue Sep 27 21:31:54 2005
 @@ -29,9 +29,9 @@
    echo >> "$TMPLOG"
    cat "$TMPC" >> "$TMPLOG"
@@ -189,3 +189,19 @@
  fi
  # 64 bit file offsets?
  if test "$_largefiles" = yes || freebsd ; then
+@@ -6640,13 +6582,11 @@
+ echocheck "lirc"
+ if test "$_lirc" = auto ; then
+   _lirc=no
+-  if test -c /dev/lirc -o -c /dev/lirc/0 ; then
+-      cat > $TMPC <<EOF
++  cat > $TMPC <<EOF
+ #include <lirc/lirc_client.h>
+ int main(void) { return 0; }
+ EOF
+-      cc_check -llirc_client && _lirc=yes
+-  fi
++  cc_check -llirc_client && _lirc=yes
+ fi
+ if test "$_lirc" = yes ; then
+   _def_lirc='#define HAVE_LIRC 1'
