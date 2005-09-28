@@ -7,6 +7,7 @@
 
 PORTNAME=	genius
 PORTVERSION=	0.7.4
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://ftp.5z.com/pub/genius/
@@ -15,8 +16,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arbitrary precision calculator for Gnome Desktop Environment
 
-BUILD_DEPENDS=	${LOCALBASE}/include/mpfr.h:${PORTSDIR}/math/mpfr
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	mpfr.1:${PORTSDIR}/math/mpfr
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gtksourceview intlhack \
