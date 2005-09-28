@@ -1,2 +1,4 @@
 MD5 (squid2.5/squid-2.5.STABLE11.tar.bz2) = 5e7f13ad95b64b60ddd6cdc2ab800d67
 SIZE (squid2.5/squid-2.5.STABLE11.tar.bz2) = 1075431
+MD5 (squid2.5/squid-2.5.STABLE11-delaypools_truncated.patch) = 73bd15ae4853d9b0f45ac4277b35ed15
+SIZE (squid2.5/squid-2.5.STABLE11-delaypools_truncated.patch) = 588
