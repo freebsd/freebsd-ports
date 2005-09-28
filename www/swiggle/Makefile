@@ -8,8 +8,7 @@ PORTNAME=	swiggle
 PORTVERSION=	0.3.3
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://homepage.univie.ac.at/l.ertl/swiggle/files/ \
-		http://www.daemon.li/distfiles/
+MASTER_SITES=	http://homepage.univie.ac.at/l.ertl/swiggle/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Swiggle is a commandline web image gallery generator

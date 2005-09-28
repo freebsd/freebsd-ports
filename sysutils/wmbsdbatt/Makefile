@@ -7,8 +7,7 @@
 PORTNAME=	wmbsdbatt
 PORTVERSION=	0.1
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES=	http://homepage.univie.ac.at/l.ertl/wmbsdbatt/files/ \
-		http://www.daemon.li/distfiles/
+MASTER_SITES=	http://homepage.univie.ac.at/l.ertl/wmbsdbatt/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"dockapp for battery & temperature monitoring through ACPI"
