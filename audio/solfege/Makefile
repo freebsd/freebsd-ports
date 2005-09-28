@@ -7,17 +7,17 @@
 #
 
 PORTNAME=	solfege
-PORTVERSION=	2.4.0
+PORTVERSION=	3.0.1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-nosound
-DISTNAME=	${PORTNAME}-easybuild-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free eartraining software
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
+		swig:${PORTSDIR}/devel/swig13
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix pygnomeextras
