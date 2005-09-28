@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mutt-ng
-PORTVERSION=	20050825
+PORTVERSION=	20050927
 CATEGORIES=	mail
 MASTER_SITES=	http://nion.modprobe.de/mutt-ng/snapshots/
 DISTNAME=	muttng-${PORTVERSION}
