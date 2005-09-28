@@ -53,6 +53,9 @@
 # The use of `auto' is recommended to avoid conflicting with
 # other ports linking against MySQL client libraries.
 
+#WITHOUT_SQLITE
+# Link against libsqlite3 to support sqlite lookups.
+
 #WITH_CDB
 #WITH_DNSDB
 #WITH_DSEARCH
@@ -191,6 +194,9 @@ WITHOUT_PGSQL?=yes
 WITH_POSTGRESQL_PORT?=auto
 .ifndef WITHOUT_CDB
 WITH_CDB?=yes
+.endif
+.ifndef WITH_SQLITE
+WITHOUT_SQLITE?=yes
 .endif
 .ifndef WITHOUT_DNSDB
 WITH_DNSDB?=yes

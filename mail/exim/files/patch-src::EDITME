@@ -1,6 +1,9 @@
---- src/EDITME.orig	Mon Dec  1 12:15:41 2003
-+++ src/EDITME	Mon Jan 12 12:36:43 2004
-@@ -98,7 +98,7 @@
+
+$FreeBSD$
+
+--- src/EDITME.orig
++++ src/EDITME
+@@ -100,7 +100,7 @@
  # /usr/local/sbin. The installation script will try to create this directory,
  # and any superior directories, if they do not exist.
  
@@ -9,7 +12,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -114,7 +114,7 @@
+@@ -116,7 +116,7 @@
  # don't exist. It will also install a default runtime configuration if this
  # file does not exist.
  
@@ -18,7 +21,7 @@
  
  # It is possible to specify a colon-separated list of files for CONFIGURE_FILE.
  # In this case, Exim will use the first of them that exists when it is run.
-@@ -132,7 +132,7 @@
+@@ -134,7 +134,7 @@
  # owner of a local mailbox.) Specifying these values as root is very strongly
  # discouraged.
  
@@ -27,7 +30,7 @@
  
  # If you specify EXIM_USER as a name, this is looked up at build time, and the
  # uid number is built into the binary. However, you can specify that this
-@@ -153,7 +153,7 @@
+@@ -155,7 +155,7 @@
  # for EXIM_USER (e.g. EXIM_USER=exim), you don't need to set EXIM_GROUP unless
  # you want to use a group other than the default group for the given user.
  
@@ -36,7 +39,7 @@
  
  # Many sites define a user called "exim", with an appropriate default group,
  # and use
-@@ -286,6 +286,7 @@
+@@ -295,6 +295,7 @@
  # LDAP_LIB_TYPE=OPENLDAP2
  # LDAP_LIB_TYPE=NETSCAPE
  # LDAP_LIB_TYPE=SOLARIS
@@ -44,7 +47,7 @@
  
  # If you don't set any of these, Exim assumes the original University of
  # Michigan (OpenLDAP 1) library.
-@@ -299,8 +300,10 @@
+@@ -308,8 +309,10 @@
  # specified in INCLUDE. The settings below are just examples; -lpq is for
  # PostgreSQL, -lgds is for Interbase.
  
@@ -57,16 +60,16 @@
  
  #------------------------------------------------------------------------------
  # Compiling the Exim monitor: If you want to compile the Exim monitor, a
-@@ -310,7 +313,7 @@
+@@ -319,7 +322,7 @@
  # files are defaulted in the OS/Makefile-Default file, but can be overridden in
  # local OS-specific make files.
  
 -EXIM_MONITOR=eximon.bin
 +# EXIM_MONITOR=eximon.bin
  
- 
- 
-@@ -373,6 +376,7 @@
+ #------------------------------------------------------------------------------
+ # Compiling Exim with content scanning support: If you want to compile Exim
+@@ -438,6 +441,7 @@
  
  # ALT_CONFIG_PREFIX=/some/directory/
  # ALT_CONFIG_PREFIX=/some/directory/exim.conf-
@@ -74,7 +77,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -417,7 +421,7 @@
+@@ -491,7 +495,7 @@
  # one that is set in the headers_charset option. The default setting is
  # defined by this setting:
  
@@ -83,7 +86,7 @@
  
  # If you are going to make use of $header_xxx expansions in your configuration
  # file, or if your users are going to use them in filter files, and the normal
-@@ -489,7 +493,7 @@
+@@ -563,7 +567,7 @@
  # SUPPORT_TLS=yes
  
  # Uncomment this setting if you are using OpenSSL
@@ -92,7 +95,7 @@
  
  # Uncomment these settings if you are using GnuTLS
  # USE_GNUTLS=yes
-@@ -540,7 +544,7 @@
+@@ -614,7 +618,7 @@
  # Once you have done this, "make install" will build the info files and
  # install them in the directory you have defined.
  
@@ -101,7 +104,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -553,7 +557,7 @@
+@@ -627,7 +631,7 @@
  # %s. This will be replaced by one of the strings "main", "panic", or "reject"
  # to form the final file names. Some installations may want something like this:
  
@@ -110,14 +113,15 @@
  
  # which results in files with names /var/log/exim_mainlog, etc. The directory
  # in which the log files are placed must exist; Exim does not try to create
-@@ -690,12 +694,20 @@
+@@ -795,13 +799,21 @@
+ # library for TCP wrappers, so you probably need something like this:
  #
  # USE_TCP_WRAPPERS=yes
 -# CFLAGS=-O -I/usr/local/include
 -# EXTRALIBS_EXIM=-L/usr/local/lib -lwrap
 -#
-+CFLAGS=XX_CFLAGS_XX XX_SPF_FLAGS_XX XX_SRS_FLAGS_XX
-+EXTRALIBS=XX_TCP_WRAPPERS_LIBS_XX XX_PAM_LIBS_XX XX_ICONV_LIBS_XX XX_SPF_LIBS_XX XX_SRS_LIBS_XX XX_RADIUS_LIBS_XX
++CFLAGS=XX_CFLAGS_XX XX_SPF_FLAGS_XX XX_SRS_FLAGS_XX XX_SQLITE_FLAGS_XX
++EXTRALIBS=XX_TCP_WRAPPERS_LIBS_XX XX_PAM_LIBS_XX XX_ICONV_LIBS_XX XX_SPF_LIBS_XX XX_SRS_LIBS_XX XX_RADIUS_LIBS_XX XX_SQLITE_LIBS_XX
 +
  # but of course there may need to be other things in CFLAGS and EXTRALIBS_EXIM
  # as well.
@@ -134,7 +138,7 @@
  #------------------------------------------------------------------------------
  # The default action of the exim_install script (which is run by "make
  # install") is to install the Exim binary with a unique name such as
-@@ -937,7 +939,7 @@
+@@ -1066,7 +1078,7 @@
  # (process id) to a file so that it can easily be identified. The path of the
  # file can be specified here. Some installations may want something like this:
  
