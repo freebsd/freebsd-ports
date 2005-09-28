@@ -8,9 +8,7 @@
 PORTNAME=	ucblogo
 PORTVERSION=	5.4
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		ftp://ftp.cs.berkeley.edu/pub/ucblogo/
-MASTER_SITE_SUBDIR=non-gnu/ucblogo
+MASTER_SITES=	ftp://ftp.cs.berkeley.edu/pub/ucblogo/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Brian Harvey's logo language interpreter
