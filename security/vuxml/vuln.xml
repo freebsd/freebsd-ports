@@ -21506,4 +21506,29 @@ misc.c:
       <entry>2005-09-15</entry>
     </dates>
   </vuln>
+
+  <vuln vid="c6b9aee8-3071-11da-af18-000ae4641456">
+    <topic>phpMyFAQ -- SQL injection, takeover, path disclosure, remote code execution in phpMyFAQ 1.5.x</topic>
+    <affects>
+      <package>
+	<name>phpmyfaq</name>
+	<range><lt>1.5.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>If magic quotes are off there's a SQL injection when sending a forgotten password. 
+	It's possible to overwrite the admin password and to take over the whole system. 
+	In some files in the admin section there are some cross site scripting vulnerabilities. 
+	In the public frontend it's possible to include arbitrary php files.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyfaq.de/advisory_2005-09-23.php</url>
+    </references>
+    <dates>
+      <discovery>2005-09-23</discovery>
+      <entry>2005-09-29</entry>
+    </dates>
+  </vuln>
 </vuxml>
