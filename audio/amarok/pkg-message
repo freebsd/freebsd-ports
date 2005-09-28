@@ -2,5 +2,5 @@
 				ATTENTION:
 
 You have installed amaroK with libvisual support. If you want to be able to 
-access any visualizations, you must install the graphics/libvisual_plugins 
+access any visualizations, you must install the graphics/libvisual-plugins 
 port.
