@@ -26,6 +26,7 @@ include/Atlas-C++-0.6/Atlas/Objects/Decoder.h
 include/Atlas-C++-0.6/Atlas/Objects/Dispatcher.h
 include/Atlas-C++-0.6/Atlas/Objects/Encoder.h
 include/Atlas-C++-0.6/Atlas/Objects/Entity.h
+include/Atlas-C++-0.6/Atlas/Objects/Generic.h
 include/Atlas-C++-0.6/Atlas/Objects/ObjectsFwd.h
 include/Atlas-C++-0.6/Atlas/Objects/Operation.h
 include/Atlas-C++-0.6/Atlas/Objects/Root.h
