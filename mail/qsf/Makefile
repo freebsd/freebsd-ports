@@ -6,13 +6,17 @@
 #
 
 PORTNAME=	qsf
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	qsf
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small fast spam filter intended to be used with procmail
+
+OPTIONS=	GDBM "GDBM support" off \
+		MYSQL "MySQL support" off \
+		SQLITE2 "SQLite2 support" off
 
 USE_BZIP2=	yes
 USE_GETOPT_LONG=	yes
@@ -26,10 +30,6 @@ PLIST_FILES=	bin/qsf
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
-
-OPTIONS=	GDBM "GDBM support" off \
-		MYSQL "MySQL support" off \
-		SQLITE2 "SQLite2 support" off
 
 .include <bsd.port.pre.mk>
 
@@ -51,12 +51,8 @@ LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite2
 CONFIGURE_ARGS+=	--without-sqlite
 .endif
 
-# not supported yet.
-#.if defined(WITH_SQLITE3)
-#.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's/Linux/${OPSYS}/g' ${WRKSRC}/doc/quickref.1.in
+	@${REINPLACE_CMD} -e 's|Linux|@VERSION@|g' ${WRKSRC}/doc/quickref.1.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qsf ${PREFIX}/bin/qsf
