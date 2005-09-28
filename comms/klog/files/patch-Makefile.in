@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Apr 26 01:39:03 2005
++++ Makefile.in	Wed Sep 14 12:22:15 2005
+@@ -274,7 +274,7 @@
+ 
+ MAINTAINERCLEANFILES = subdirs configure.in acinclude.m4 configure.files 
+ applnkApplication_DATA = klog.desktop
+-applnkApplicationdir = $(kde_appsdir)/Application
++applnkApplicationdir = $(kde_appsdir)/Applications
+ subdir = .
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs

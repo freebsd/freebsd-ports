@@ -5,7 +5,10 @@ share/doc/HTML/en/klog/index.cache.bz2
 share/doc/HTML/en/klog/index.docbook
 share/icons/locolor/16x16/apps/klog.png
 share/icons/locolor/32x32/apps/klog.png
-share/locale/es/LC_MESSAGES/klog.mo
-share/locale/pt/LC_MESSAGES/klog.mo
-share/locale/pt_BR/LC_MESSAGES/klog.mo
 @dirrm share/doc/HTML/en/klog
+@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
