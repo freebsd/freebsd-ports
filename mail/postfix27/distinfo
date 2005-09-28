@@ -2,5 +2,5 @@ MD5 (postfix/postfix-2.2.5.tar.gz) = 9c13d58494c64012bfd8ab0d6967305c
 SIZE (postfix/postfix-2.2.5.tar.gz) = 2428594
 MD5 (postfix/postfix-libspf2-2.2.0-5.patch) = 80be36e0f14e1a1f39a3b30b9b2d4115
 SIZE (postfix/postfix-libspf2-2.2.0-5.patch) = 26077
-MD5 (postfix/postfix-2.2.5-vda.patch.gz) = 6fb8fdac842e561ca19cc1ed6cd9f810
-SIZE (postfix/postfix-2.2.5-vda.patch.gz) = 7684
+MD5 (postfix/postfix-2.2.5-vda.patch.gz) = 22c12038d355e104856a02cfcf8a31d9
+SIZE (postfix/postfix-2.2.5-vda.patch.gz) = 7744
