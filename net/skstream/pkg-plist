@@ -1,6 +1,6 @@
 lib/libskstream-0.3.a
 lib/libskstream-0.3.so
-lib/libskstream-0.3.so.1
+lib/libskstream-0.3.so.3
 libdata/pkgconfig/skstream-0.3.pc
 libdata/pkgconfig/skstream-unix-0.3.pc
 lib/skstream-0.3/include/skstream/skstreamconfig.h
