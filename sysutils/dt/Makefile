@@ -8,10 +8,10 @@
 PORTNAME=	dt
 PORTVERSION=	15.6
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.bit-net.com/~rmiller/ftp/dt/
+MASTER_SITES=	http://home.comcast.net/~SCSIguy/SCSI_FAQ/RMiller_Tools/ftp/dt/
 DISTNAME=	dt-source
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data Test Program - disk/tape error diagnostic tool
 
 USE_REINPLACE=	yes
