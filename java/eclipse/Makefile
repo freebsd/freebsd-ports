@@ -7,7 +7,7 @@
 
 PORTNAME=	eclipse
 PORTVERSION=	3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
 MASTER_SITE_SUBDIR=	R-${PORTVERSION}-200506271435
@@ -44,7 +44,7 @@ USE_MOTIF=	yes
 .else
 ECLIPSE_WS=	gtk
 .if !defined(WITHOUT_MOZILLA)
-.if defined(WITH_MOZILLA)
+.if defined(WITH_MOZILLA) && ${WITH_MOZILLA} != "mozilla"
 BROWSER=	${WITH_MOZILLA}
 MAKE_MOZILLA=	make_mozilla
 BUILD_DEPENDS+=	${BROWSER}:${PORTSDIR}/www/${BROWSER}
@@ -66,10 +66,10 @@ MAKE_CAIRO=	make_cairo
 
 .if defined(WITHOUT_GNOMEVFS)
 MAKE_GNOME=
-USE_GNOME=	gtk20 pkgconfig
+USE_GNOME=	gtk20 pkgconfig desktopfileutils
 .else
 MAKE_GNOME=	make_gnome
-USE_GNOME=	gtk20 gnomevfs2 libgnome libgnomeui pkgconfig
+USE_GNOME=	gtk20 gnomevfs2 libgnome libgnomeui pkgconfig desktopfileutils
 .endif
 
 .include <bsd.port.pre.mk>
@@ -93,7 +93,7 @@ MAKE_ENV+=	BROWSER=${BROWSER} \
 		MACHINE_ARCH=${MACHINE_ARCH} \
 		MOTIF_HOME=${X11_HOME}
 
-PLIST_FILES=	bin/eclipse share/gnome/applications/eclipse.desktop
+PLIST_FILES=	bin/eclipse share/applications/eclipse.desktop
 
 SWTGTK=${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library
 SWTMOTIF=${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI/motif/library
@@ -129,10 +129,13 @@ do-install:
 	  -e "s+%%ECLIPSE_HOME%%+${PORTDESTDIR}+g" \
 	  -e "s+%%PREFIX%%+${PREFIX}+g" \
 	${FILESDIR}/eclipse.desktop > ${WRKSRC}/eclipse.desktop.tmp
-	${INSTALL_DATA} ${WRKSRC}/eclipse.desktop.tmp ${X11BASE}/share/gnome/applications/eclipse.desktop
+	${INSTALL_DATA} ${WRKSRC}/eclipse.desktop.tmp ${PREFIX}/share/applications/eclipse.desktop
 	${INSTALL_PROGRAM} ${WRKSRC}/launchertmp/eclipse ${PREFIX}/eclipse/eclipse
+	@-update-desktop-database
 	@(cd ${WRKSRC}; ${FIND} -s eclipse -not -type d) >> ${TMPPLIST}
+	@echo '@exec ${PREFIX}/bin/update-desktop-database > /dev/null || /usr/bin/true' >> ${TMPPLIST}
 	@(cd ${WRKSRC}; ${FIND} -s -d eclipse -type d) \
 	  | ${SED} -ne 's,^,@dirrm ,p' >> ${TMPPLIST}
+	@echo '@unexec ${PREFIX}/bin/update-desktop-database > /dev/null || /usr/bin/true' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
