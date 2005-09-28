@@ -1,8 +1,6 @@
-Quick Spam Filter (qsf) is a lightweight statistical spam filter written in C.
-It is designed to be small, fast, reliable, easy to install, and simple to use
-in a procmail recipe
+Quick Spam Filter (qsf) is a small, fast spam filter that works by learning
+to recognise the words that are more likely to appear in spam than non-spam.
+It is intended to be used in a procmail recipe to mark email as being
+possible spam.
 
 WWW: http://www.ivarch.com/programs/qsf/
-
--Liam Foy
-liamfoy@sepulcrum.org
