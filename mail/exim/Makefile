@@ -28,7 +28,7 @@ MASTER_SITE_SUBDIR+=	sa-exim/:sa_exim
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 .endif
 
-EXIM_VERSION=	4.52
+EXIM_VERSION=	4.53
 SA_EXIM_VERSION=4.2
 
 IGNOREFILES=	FAQ.txt.bz2
@@ -37,7 +37,7 @@ IGNOREFILES=	FAQ.txt.bz2
 .if defined(PKGNAMESUFFIX)
 CONFLICTS+=	${PKGNAMEPREFIX}${PORTNAME}-4.*
 .endif
-.for suffix in -ldap2 -mysql -postgresql -sa-exim
+.for suffix in -ldap2 -mysql -postgresql -sa-exim -sqlite
 .if !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX} != ${suffix}
 CONFLICTS+=	${PKGNAMEPREFIX}${PORTNAME}${suffix}-4.*
 .endif
@@ -127,16 +127,18 @@ PLIST_SUB=	EXIM_VERSION="${EXIM_VERSION}-${PORTREVISION}" \
 # overridden at runtime below, but are advised not to remove "root".
 #WITH_FIXED_NEVER_USERS=	root:daemon:bin
 
-# Define WITH_TCP_WRAPPERS, WITH_MYSQL, and WITH_PGSQL to link against
-# libwrap, libmysqlclient and libpq respectively.  Define
-# WITH_SASLAUTHD to enable use of the Cyrus SASL authentication daemon.
-# Define WITH_MYSQL_VER to specify a particular version of MySQL to
-# use.  Valid values are currently 323, 40 and 41.  Defining WITH_MYSQL_VER
-# implies WITH_MYSQL.
+# Define WITH_TCP_WRAPPERS, WITH_MYSQL, WITH_SQLITE and WITH_PGSQL
+# to link against libwrap, libmysqlclient, sqlite and libpq
+# respectively.  Define WITH_SASLAUTHD to enable use of the Cyrus
+# SASL authentication daemon.  Define WITH_SQLITE to enable use of
+# the SQLite support.  Define WITH_MYSQL_VER to specify a particular
+# version of MySQL to use.  Valid values are currently 323, 40 and
+# 41.  Defining WITH_MYSQL_VER implies WITH_MYSQL.
 #WITH_TCP_WRAPPERS=	yes
 #WITH_MYSQL=		yes
 #WITH_MYSQL_VER=	40
 #WITH_PGSQL=		yes
+#WITH_SQLITE=		yes
 #WITH_SASLAUTHD=	yes
 
 # As an alternative to WITH_SASLAUTHD, you can define WITH_PWCHECK to
@@ -160,7 +162,7 @@ PLIST_SUB=	EXIM_VERSION="${EXIM_VERSION}-${PORTREVISION}" \
 # Exim also supports NETSCAPE and SOLARIS7 lookup types, but no
 # client libraries exist for these in the ports tree.
 #WITH_OPENLDAP=		yes
-#WITH_OPENLDAP_VER=	22
+#WITH_OPENLDAP_VER=	23
 
 # WITH_BDB_VER is the version of the Berkeley DB library to use, and
 # may be 1, which corresponds to version 1.85 in the base system, 4,
@@ -462,6 +464,16 @@ SEDLIST+=	-e 's,^\# (LOOKUP_NIS=),\1,'
 
 .if !defined(WITHOUT_PASSWD)
 SEDLIST+=	-e 's,^\# (LOOKUP_PASSWD=),\1,'
+.endif
+
+.if defined(WITH_SQLITE)
+SEDLIST+=	-e 's,XX_SQLITE_LIBS_XX,-L${LOCALBASE}/lib -lsqlite3,' \
+		-e 's,XX_SQLITE_FLAGS_XX,-I${LOCALBASE}/include,' \
+		-e 's,^\# (LOOKUP_SQLITE=),\1,'
+LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+.else
+SEDLIST+=	-e 's,XX_SQLITE_LIBS_XX,,' \
+		-e 's,XX_SQLITE_FLAGS_XX,,'
 .endif
 
 .if !defined(WITHOUT_LMTP)
