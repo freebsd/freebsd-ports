@@ -18,4 +18,4 @@ This package contains the following programs:
 - scgcheck (checks and validates the ABI of libscg)
 - rscsi (daemon providing access to local SCSI-devices over the network)
 
-WWW: http://www.fokus.gmd.de/research/cc/glone/employees/joerg.schilling/private/cdrecord.html
+WWW: http://cdrecord.berlios.de/old/private/cdrecord.html
