@@ -6,19 +6,15 @@
 #
 
 PORTNAME=	pidentd
-PORTVERSION=	3.0.16
+PORTVERSION=	3.0.18
 CATEGORIES=	security ipv6
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dinoex
+MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/servers/
 
-PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/ \
-		http://home.jp.FreeBSD.org/~ume/ipv6/ \
-		${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	dinoex
-PATCHFILES=	pidentd-${PORTVERSION}-ipv6-20040227.diff.gz
+PATCH_SITES=	ftp://ftp.stack.nl/pub/users/johans/pidentd/
+PATCHFILES=	pidentd-${PORTVERSION}-ipv6-20050927.diff.gz
 PATCH_DIST_STRIP=	-p0
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	An RFC1413 identification server
 
 USE_REINPLACE=	yes
@@ -44,10 +40,4 @@ post-patch:
 post-install:
 	${INSTALL_MAN} -m 644 ${WRKSRC}/doc/idecrypt.8 ${MANPREFIX}/man/man8/
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-BROKEN=		"patchfiles not updated"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
