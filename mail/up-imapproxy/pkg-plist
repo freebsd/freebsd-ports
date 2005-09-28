@@ -1,5 +1,4 @@
+@unexec if cmp -s %D/etc/imapproxyd.conf.default %D/etc/imapproxyd.conf; then rm -f %D/etc/imapproxyd.conf; fi
+etc/imapproxyd.conf.default
 sbin/pimpstat
 sbin/in.imapproxyd
-etc/rc.d/imapproxyd.sh
-etc/imapproxyd.conf.default
-etc/imapproxyd.conf.sample

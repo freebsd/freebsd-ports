@@ -5,40 +5,28 @@
 # $FreeBSD$
 #
 
-PORTNAME=	up-imapproxy
-PORTVERSION=	1.2.3
+PORTNAME=	imapproxy
+PORTVERSION=	1.2.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.imapproxy.org/downloads/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+PKGNAMEPREFIX=	up-
+DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	A caching IMAP proxy server
 
 USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
-USE_RC_SUBR=	YES
-
-SAMPLE_EXT=	sample
-
-.include <bsd.port.pre.mk>
-
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
-		RC_SUBR=${RC_SUBR}
+USE_RC_SUBR=	imapproxyd.sh
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|-lc_r|${PTHREAD_LIBS}|g; s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
 
 post-install:
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		< ${FILESDIR}/imapproxyd.conf > ${WRKSRC}/imapproxyd.conf ;
-	${INSTALL} -m 644 -c ${WRKSRC}/imapproxyd.conf ${PREFIX}/etc/imapproxyd.conf.default ;
-	@if [ ! -f ${PREFIX}/etc/imapproxyd.conf ]; then \
-		${INSTALL} -m 644 -c ${WRKSRC}/imapproxyd.conf ${PREFIX}/etc/imapproxyd.conf ; \
-	fi
-	${INSTALL} -m 644 -c ${WRKSRC}/scripts/imapproxy.conf ${PREFIX}/etc/imapproxyd.conf.${SAMPLE_EXT} ;
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		< ${FILESDIR}/imapproxyd.sh > ${WRKSRC}/imapproxyd.sh
-	${INSTALL_SCRIPT} -m 755 ${WRKSRC}/imapproxyd.sh ${PREFIX}/etc/rc.d/imapproxyd.sh
+	${INSTALL} -m 644 -c ${WRKSRC}/scripts/imapproxy.conf ${PREFIX}/etc/imapproxyd.conf.default
+.	if !exists(${PREFIX}/etc/imapproxyd.conf)
+		${INSTALL} -m 644 -c ${WRKSRC}/scripts/imapproxy.conf ${PREFIX}/etc/imapproxyd.conf
+.	endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
