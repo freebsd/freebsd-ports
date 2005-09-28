@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	wfmath
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.worldforge.org/pub/worldforge/libs/${PORTNAME}/ \
-		http://purple.worldforge.org/downloads/libs/${PORTNAME}/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	worldforge
 
 MAINTAINER=	jannisan@t-online.de
 COMMENT=	Worldforge math library
 
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
+USE_GNOME=	pkgconfig gnomehack
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=15
 
