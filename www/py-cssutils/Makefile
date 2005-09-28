@@ -7,7 +7,8 @@
 #
 
 PORTNAME=	cssutils
-PORTVERSION=	0.53
+PORTVERSION=	0.8a6
+PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://cthedot.de/cssutils/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,17 +19,13 @@ COMMENT=	CSS Cascading Style Sheets library for Python
 RUN_DEPENDS=	${PYXML}
 
 USE_ZIP=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 USE_REINPLACE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s#.*data_files.*##" ${WRKSRC}/setup.py
-
-post-install:
-	@${FIND} ${PYTHON_SITELIBDIR}/${PORTNAME} ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PYTHON_SITELIBDIR}/${PORTNAME} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@${REINPLACE_CMD} -e 's,\((.\)examples\(.\),\1${EXAMPLESDIR:S,${PREFIX}/,,}\2,' \
+	-e '/.*LICENSE.*/d' ${WRKSRC}/setup.py
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${CHMOD} 0644
 
 .include <bsd.port.mk>
