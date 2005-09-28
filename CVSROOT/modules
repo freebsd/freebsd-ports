@@ -8605,6 +8605,7 @@ p5-Text-Bind	ports/textproc/p5-Text-Bind
 p5-Text-CSV	ports/textproc/p5-Text-CSV
 p5-Text-CSV_XS	ports/textproc/p5-Text-CSV_XS
 p5-Text-Diff	ports/textproc/p5-Text-Diff
+p5-Text-Diff-HTML	ports/textproc/p5-Text-Diff-HTML
 p5-Text-DoubleMetaphone	ports/textproc/p5-Text-DoubleMetaphone
 p5-Text-EtText	ports/textproc/p5-Text-EtText
 p5-Text-ExtractWords	ports/textproc/p5-Text-ExtractWords
