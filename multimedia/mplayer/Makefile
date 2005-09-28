@@ -178,6 +178,9 @@
 # WITH_LIBDV
 # default: autodetect
 #
+# WITH_LIRC
+# default: autodetect
+#
 # WITH_MAD
 # default: autodetect
 #
@@ -303,8 +306,7 @@ CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--enable-menu \
 		--disable-libfame \
 		--disable-external-faad \
-		--disable-tv-v4l \
-		--disable-tremor
+		--disable-tv-v4l
 
 .if !defined(MPLAYER_GENERIC_BUILD)
 .if defined(WITHOUT_X11)
@@ -386,6 +388,10 @@ WITH_LIBDV=	yes
 
 .if exists(${LOCALBASE}/lib/libungif.so.5)
 WITH_LIBUNGIF=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/liblirc_client.so.0)
+WITH_LIRC=	yes
 .endif
 
 .if exists(${LOCALBASE}/lib/libmad.so.2)
@@ -654,6 +660,13 @@ LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
 CONFIGURE_ARGS+=	--enable-libdv
 .else
 CONFIGURE_ARGS+=	--disable-libdv
+.endif
+
+.if defined(WITH_LIRC)
+LIB_DEPENDS+=	lirc_client.0:${PORTSDIR}/comms/lirc
+CONFIGURE_ARGS+=	--enable-lirc
+.else
+CONFIGURE_ARGS+=	--disable-lirc
 .endif
 
 .if defined(WITH_MAD)
