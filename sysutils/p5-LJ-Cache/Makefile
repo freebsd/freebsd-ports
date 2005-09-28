@@ -7,8 +7,7 @@
 PORTNAME=	LJ-Cache
 PORTVERSION=	1.0
 CATEGORIES=	sysutils perl5
-MASTER_SITES=	http://livejournal.com/files/code/cache/ \
-		ftp://ftp.livejournal.com/code/cache/
+MASTER_SITES=	http://livejournal.com/files/code/cache/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org

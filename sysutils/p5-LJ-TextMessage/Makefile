@@ -7,8 +7,7 @@
 PORTNAME=	LJ-TextMessage
 PORTVERSION=	1.5.0
 CATEGORIES=	sysutils perl5
-MASTER_SITES=	http://livejournal.com/files/code/textmessage/ \
-		ftp://ftp.livejournal.com/code/textmessage/
+MASTER_SITES=	http://livejournal.com/files/code/textmessage/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-1.4.1
 
