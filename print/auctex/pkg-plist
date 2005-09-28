@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 %%LISPDIR%%/tex-site.el
+%%LISPDIR%%/auctex/.nosearch
 %%LISPDIR%%/auctex/tex.el
 %%LISPDIR%%/auctex/tex-buf.el
 %%LISPDIR%%/auctex/latex.el
@@ -17,10 +18,13 @@
 %%LISPDIR%%/auctex/tex-fptex.el
 %%LISPDIR%%/auctex/tex-jp.el
 %%LISPDIR%%/auctex/tex-bar.el
+%%LISPDIR%%/auctex/tex-style.el
+%%LISPDIR%%/auctex/tex-style.elc
 %%LISPDIR%%/auctex/toolbar-x.el
 %%LISPDIR%%/auctex/auto/.nosearch
 %%LISPDIR%%/auctex/style/.nosearch
 %%LISPDIR%%/auctex/style/prosper.el
+%%LISPDIR%%/auctex/style/babel.el
 %%LISPDIR%%/auctex/style/slides.el
 %%LISPDIR%%/auctex/style/foils.el
 %%LISPDIR%%/auctex/style/amstex.el
@@ -95,6 +99,7 @@
 %%LISPDIR%%/auctex/style/jsarticle.el
 %%LISPDIR%%/auctex/style/jsbook.el
 %%LISPDIR%%/auctex/style/prosper.elc
+%%LISPDIR%%/auctex/style/babel.elc
 %%LISPDIR%%/auctex/style/slides.elc
 %%LISPDIR%%/auctex/style/foils.elc
 %%LISPDIR%%/auctex/style/amstex.elc
@@ -213,6 +218,24 @@
 %%LISPDIR%%/auctex/images/viewdvi.xpm
 %%LISPDIR%%/auctex/images/viewpdf.xpm
 %%LISPDIR%%/auctex/images/viewps.xpm
+%%LISPDIR%%/auctex/images/prverr16.xpm
+%%LISPDIR%%/auctex/images/prverr20.xpm
+%%LISPDIR%%/auctex/images/prverr24.xbm
+%%LISPDIR%%/auctex/images/prverr24.xpm
+%%LISPDIR%%/auctex/images/prvtex-cap-up.xpm
+%%LISPDIR%%/auctex/images/prvtex12.xbm
+%%LISPDIR%%/auctex/images/prvtex12.xpm
+%%LISPDIR%%/auctex/images/prvtex16.xbm
+%%LISPDIR%%/auctex/images/prvtex16.xpm
+%%LISPDIR%%/auctex/images/prvtex20.xpm
+%%LISPDIR%%/auctex/images/prvtex24.xbm
+%%LISPDIR%%/auctex/images/prvtex24.xpm
+%%LISPDIR%%/auctex/images/prvwrk12.xpm
+%%LISPDIR%%/auctex/images/prvwrk14.xpm
+%%LISPDIR%%/auctex/images/prvwrk16.xpm
+%%LISPDIR%%/auctex/images/prvwrk20.xpm
+%%LISPDIR%%/auctex/images/prvwrk24.xbm
+%%LISPDIR%%/auctex/images/prvwrk24.xpm
 @dirrm %%LISPDIR%%/auctex/style
 @dirrm %%LISPDIR%%/auctex/auto
 @dirrm %%LISPDIR%%/auctex/images
