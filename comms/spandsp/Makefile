@@ -8,7 +8,8 @@
 PORTNAME=	spandsp
 DISTVERSION=	0.0.2pre18
 CATEGORIES=	comms
-MASTER_SITES=	ftp://soft-switch.org/pub/spandsp/${PORTNAME}-${DISTVERSION}/ \
+MASTER_SITES=	http://www.soft-switch.org/downloads/spandsp/${PORTNAME}-${DISTVERSION}/ \
+		ftp://soft-switch.org/pub/spandsp/${PORTNAME}-${DISTVERSION}/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav
 
