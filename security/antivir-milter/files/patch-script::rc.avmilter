@@ -1,15 +1,15 @@
---- init/rc.avmilter.orig	Sun Sep 21 19:51:22 2003
-+++ init/rc.avmilter	Sun Sep 21 20:22:38 2003
+--- script/rc.avmilter.orig	Sun Sep 21 19:51:22 2003
++++ script/rc.avmilter	Sun Sep 21 20:22:38 2003
 @@ -13,13 +13,19 @@
  
  case "$1" in
      start)
 -		echo "Starting AntiVir Milter."
 -		/usr/lib/AntiVir/avmilter.bin
-+		if [ -x %%PREFIX%%/sbin/avmilter ]; then
++		if [ -x %%PREFIX%%/sbin/avmilter.bin ]; then
 +			umask 0077
 +			/bin/rm -f /var/spool/avmilter/avmilter.sock
-+			/usr/sbin/daemon -f %%PREFIX%%/sbin/avmilter \
++			/usr/sbin/daemon -f %%PREFIX%%/sbin/avmilter.bin \
 +				-P %%PREFIX%%/etc/avmilter \
 +				-p local:/var/spool/avmilter/avmilter.sock &
 +			umask 0022
@@ -20,7 +20,7 @@
 -		echo -n "Shutting down AntiVir Milter."
 -		killall -TERM /usr/lib/AntiVir/avmilter.bin > /dev/null 2>&1
 -		echo
-+		killall -TERM avmilter > /dev/null 2>&1
++		killall -TERM avmilter.bin > /dev/null 2>&1
 +		echo -n " avmilter"
  		;;
      restart)
@@ -30,7 +30,7 @@
          	;;
      status)
 -		if [ -z "$(ps axw | grep "/usr/lib/AntiVir/avmilter.bin" | grep -v grep)" ]
-+		if [ -z "$(ps axw | grep "avmilter" | grep -v grep)" ]
++		if [ -z "$(ps axw | grep "avmilter.bin" | grep -v grep)" ]
                  then
                          echo "FAILED avmilter is not running!"
                  else        

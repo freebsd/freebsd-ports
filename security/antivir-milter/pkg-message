@@ -25,15 +25,4 @@ cp hbedv.key %%PREFIX%%/AntiVir/
 chown root:smmsp %%PREFIX%%/AntiVir/hbedv.key
 chmod 440 %%PREFIX%%/AntiVir/hbedv.key
 
-A license key for private (individual, non-commercial) use can be applied
-for free of charge at:
-http://free-av.de/unixreg_form_de.htm (German)
-http://free-av.com/unixreg_form_en.htm (English)
-
-Note:	AntiVir Milter 1.1.0-7 ships with a faulty anti-virus engine which
-	may just exit with the following error when trying to start it:
-	cannot access config file "/etc/avguard.conf"
-	Please update to the latest anti-virus engine by e.g. running the
-	antivirupdater script in order to solve this.
-
 ===========================================================================

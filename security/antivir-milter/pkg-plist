@@ -31,7 +31,7 @@ etc/rc.d/avmilter.sh
 etc/rc.d/avupdater.sh-dist_avmilter
 @unexec if [ -f %B/avupdater.sh ]; then echo "If permanently deleting this package, %B/avupdater.sh must be removed manually."; fi
 sbin/antivirupdater
-sbin/avmilter
+sbin/avmilter.bin
 @exec install -d -o smmsp -g smmsp -m 700 /var/spool/avmilter
 @exec install -d -o smmsp -g smmsp -m 700 /var/spool/avmilter/incoming
 @exec install -d -o smmsp -g smmsp -m 700 /var/spool/avmilter/outgoing
@@ -88,8 +88,7 @@ sbin/avmilter
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.DE
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL
-%%PORTDOCS%%%%DOCSDIR%%/README.gpg
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
 %%PORTDOCS%%%%DOCSDIR%%/avmilter_de.pdf
 %%PORTDOCS%%%%DOCSDIR%%/avmilter_en.pdf
-%%PORTDOCS%%%%DOCSDIR%%/antivir.gpg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
