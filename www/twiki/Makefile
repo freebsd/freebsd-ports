@@ -14,6 +14,8 @@ DISTNAME=	TWiki${PORTVERSION}
 MAINTAINER=	justin@hawkins.id.au
 COMMENT=	A flexible, powerful, and easy to use Web-based collaboration platform
 
+FORBIDDEN=	Security: http://twiki.org/cgi-bin/view/Codev/SecurityAlertExecuteCommandsWithInclude
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
