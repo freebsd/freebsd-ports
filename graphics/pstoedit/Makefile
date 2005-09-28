@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pstoedit
-PORTVERSION=	3.41
+PORTVERSION=	3.42
 CATEGORIES=	graphics print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -81,6 +81,9 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CXXFLAGS="-g"|CXXFLAGS="$$CXXFLAGS"|g ; \
+		 s|GCC_OK=no|GCC_OK=yes|g ; \
+		 s|GraphicsMagick|Magick|g ; \
+		 s|=$$OLDCPPFLAGS|=$$CPPFLAGS|g ; \
 		 s|-pedantic||g' ${WRKSRC}/configure
 
 post-install:
