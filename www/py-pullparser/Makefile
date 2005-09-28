@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	pullparser
-PORTVERSION=	0.0.5.b
+PORTVERSION=	0.0.6
 CATEGORIES=	www python
 MASTER_SITES=	http://wwwsearch.sourceforge.net/pullparser/src/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple "pull API" for HTML parsing
