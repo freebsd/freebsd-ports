@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+#
+# PROVIDE: traff
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable traff:
+#
+# traff_enable="YES"
+#
+#
+
+. %%RC_SUBR%%
+
+name=traff
+rcvar=`set_rcvar`
+
+
+command=%%PREFIX%%/sbin/traff
+pidfile=/var/run/traff.pid
+required_files=%%PREFIX%%/etc/traff.conf
+
+stop_postcmd=stop_postcmd
+
+stop_postcmd()
+{
+	rm -f $pidfile
+}
+
+# set defaults
+
+traff_enable=${traff_enable:-"NO"}
+
+load_rc_config $name
+run_rc_command "$1"
+
