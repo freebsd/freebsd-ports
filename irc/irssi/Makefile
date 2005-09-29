@@ -17,6 +17,7 @@ COMMENT?=	A modular IRC client with many features
 CONFLICTS=      irssi-devel-*
 
 USE_BZIP2=	yes
+USE_REPLACE=	yes
 GNU_CONFIGURE=	yes
 
 WANT_GNOME=	yes
@@ -133,6 +134,10 @@ pre-extract:
 	@${ECHO} "	WITH_BOEHM_GC=yes|no	Enable GC support [no]"
 	@${ECHO} "	WITH_BOT=yes|no		Enable BOT support [no]"
 	@${ECHO} ""
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' -e 's|/etc|${PREFIX}&|' \
+		${WRKSRC}/docs/irssi.1
 
 pre-configure:
 	@cd ${WRKSRC} && ${MV} irssi.conf irssi.conf.sample || ${TRUE}
