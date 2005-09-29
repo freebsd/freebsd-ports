@@ -30,6 +30,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
   $FreeBSD$
 
+Note:  Please add new entries to the beginning of this file.
+
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="271498a9-2cd4-11da-a263-0001020eed82">
@@ -21508,7 +21510,8 @@ misc.c:
   </vuln>
 
   <vuln vid="c6b9aee8-3071-11da-af18-000ae4641456">
-    <topic>phpMyFAQ -- SQL injection, takeover, path disclosure, remote code execution in phpMyFAQ 1.5.x</topic>
+    <topic>phpmyfaq -- SQL injection, takeover, path disclosure,
+      remote code execution</topic>
     <affects>
       <package>
 	<name>phpmyfaq</name>
@@ -21517,10 +21520,12 @@ misc.c:
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>If magic quotes are off there's a SQL injection when sending a forgotten password. 
-	It's possible to overwrite the admin password and to take over the whole system. 
-	In some files in the admin section there are some cross site scripting vulnerabilities. 
-	In the public frontend it's possible to include arbitrary php files.</p>
+        <p>If magic quotes are off there's a SQL injection when
+	  sending a forgotten password.  It's possible to overwrite
+	  the admin password and to take over the whole system.  In
+	  some files in the admin section there are some cross site
+	  scripting vulnerabilities.  In the public frontend it's
+	  possible to include arbitrary php files.</p>
       </body>
     </description>
     <references>
@@ -21532,3 +21537,4 @@ misc.c:
     </dates>
   </vuln>
 </vuxml>
+<!-- Note:  Please add new entries to the beginning of this file. -->
