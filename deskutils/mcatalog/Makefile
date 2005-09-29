@@ -15,9 +15,9 @@ MASTER_SITE_SUBDIR=	mcatalog
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	An application for catalogue films and books
 
-BUILD_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp
+BUILD_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp10
 LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite2
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp10
 
 USE_GNOME=	gnomeprefix gnomehack gconf2
 USE_GMAKE=	yes

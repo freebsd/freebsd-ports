@@ -15,8 +15,8 @@ MASTER_SITES=	http://download.gna.org/bless/
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	A high quality, full featured hex editor
 
-BUILD_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp10
+RUN_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp10
 
 USE_GNOME=	gnomehack gnomeprefix gnometarget
 USE_GMAKE=	yes

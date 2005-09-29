@@ -14,8 +14,8 @@ MASTER_SITES=	http://go-mono.com/archive/1.0.3/
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Mono bindings for embeding mozilla
 
-BUILD_DEPENDS=	gapi-parser:${PORTSDIR}/x11-toolkits/gtk-sharp
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+BUILD_DEPENDS=	gapi-parser:${PORTSDIR}/x11-toolkits/gtk-sharp10
+RUN_DEPENDS=	gapi-parser:${PORTSDIR}/x11-toolkits/gtk-sharp10 \
 		${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
 
 .if !defined(WITH_MOZILLA)
