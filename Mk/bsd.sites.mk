@@ -907,7 +907,6 @@ MASTER_SITE_NETSCAPE+= \
 	ftp://ftp.nsysu.edu.tw/Netscape/%SUBDIR%/ \
 	ftp://ftp.uniroma2.it/%7bC/Netscape/%SUBDIR%/ \
 	ftp://ftp.ut.ee/pub/WWW/netscape/%SUBDIR%/ \
-	ftp://ftp.skynet.be/mirror/netscape/%SUBDIR%/ \
 	ftp://ftp.uni-bremen.de/pub/mirrors/ftp.netscape.com/pub/%SUBDIR%/ \
 	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.netscape.com/pub/%SUBDIR%/
 .endif
