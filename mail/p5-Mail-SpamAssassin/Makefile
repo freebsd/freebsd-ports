@@ -7,6 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
@@ -33,6 +34,7 @@ OPTIONS=	AS_ROOT "Run spamd as root (recommended)" on \
 		PGSQL "Add PostreSQL support" off \
 		RAZOR "Add Vipul's Razor support" off \
 		SPF_QUERY "Add SPF query support" off \
+		RELAY_COUNTRY "Relay country support" off \
 		TOOLS "Install SpamAssassin tools" off
 
 .include <bsd.port.pre.mk>
@@ -66,6 +68,10 @@ RUN_DEPENDS+=	razor-client:${PORTSDIR}/mail/razor-agents
 
 .if defined(WITH_DOMAINKEYS)
 RUN_DEPENDS+=	${SITE_PERL}/Mail/DomainKeys.pm:${PORTSDIR}/mail/p5-Mail-DomainKeys
+.endif
+
+.if defined(WITH_RELAY_COUNTRY)
+RUN_DEPENDS=	${SITE_PERL}/IP/Country/Fast.pm:${PORTSDIR}/net/p5-IP-Country
 .endif
 
 .if defined(WITH_TOOLS)
