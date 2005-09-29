@@ -1,0 +1,10 @@
+--- src/gui/dialogs/optionsDialog/IOptionsDialog.ui.orig	Tue Sep 27 16:59:36 2005
++++ src/gui/dialogs/optionsDialog/IOptionsDialog.ui	Tue Sep 27 17:01:36 2005
+@@ -1399,7 +1399,4 @@
+     <slot access="protected">changeTextColor()</slot>
+ </slots>
+ <layoutdefaults spacing="6" margin="11"/>
+-<includehints>
+-    <includehint>ccolorbar.h</includehint>
+-</includehints>
+ </UI>

@@ -1,0 +1,11 @@
+--- src/LogDialog.ui.orig	Tue Sep 27 19:26:13 2005
++++ src/LogDialog.ui	Tue Sep 27 19:26:49 2005
+@@ -1315,8 +1315,4 @@
+ </slots>
+ <pixmapinproject/>
+ <layoutdefaults spacing="6" margin="11"/>
+-<includehints>
+-    <includehint>logtreeview.h</includehint>
+-    <includehint>loglistview.h</includehint>
+-</includehints>
+ </UI>
