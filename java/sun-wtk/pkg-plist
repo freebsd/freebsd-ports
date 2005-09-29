@@ -1,6 +1,7 @@
 bin/ktoolbar
 sun-wtk/BinaryLicense.html
 sun-wtk/BinaryReleaseNotes.html
+sun-wtk/appdb/DefaultColorPhone/filesystem/root1/Readme
 sun-wtk/appdb/_ack_2.png
 sun-wtk/appdb/_ack_8.png
 sun-wtk/appdb/_dt_2.png
@@ -19,6 +20,230 @@ sun-wtk/appdb/_single8.png
 sun-wtk/appdb/_suite_2.png
 sun-wtk/appdb/_suite_8.png
 sun-wtk/appdb/keystore.sks
+sun-wtk/apps/Audiodemo/bin/Audiodemo.jad
+sun-wtk/apps/Audiodemo/bin/Audiodemo.jar
+sun-wtk/apps/Audiodemo/bin/MANIFEST.MF
+sun-wtk/apps/Audiodemo/bin/build.sh
+sun-wtk/apps/Audiodemo/bin/run.sh
+sun-wtk/apps/Audiodemo/classes/example/audiodemo/AudioPlayer.class
+sun-wtk/apps/Audiodemo/classes/example/audiodemo/BBall.class
+sun-wtk/apps/Audiodemo/classes/example/audiodemo/BallCanvas.class
+sun-wtk/apps/Audiodemo/classes/example/audiodemo/MixCanvas.class
+sun-wtk/apps/Audiodemo/classes/example/audiodemo/MixTest.class
+sun-wtk/apps/Audiodemo/classes/example/audiodemo/PlayerCanvas.class
+sun-wtk/apps/Audiodemo/classes/example/audiodemo/SmallBall.class
+sun-wtk/apps/Audiodemo/project.properties
+sun-wtk/apps/Audiodemo/res/audio/bark.wav
+sun-wtk/apps/Audiodemo/res/audio/beethoven.jts
+sun-wtk/apps/Audiodemo/res/audio/pattern.mid
+sun-wtk/apps/Audiodemo/res/audio/test-wav.wav
+sun-wtk/apps/Audiodemo/res/icons/App.png
+sun-wtk/apps/Audiodemo/res/icons/logo.png
+sun-wtk/apps/Audiodemo/src/example/audiodemo/AudioPlayer.java
+sun-wtk/apps/Audiodemo/src/example/audiodemo/BBall.java
+sun-wtk/apps/Audiodemo/src/example/audiodemo/BallCanvas.java
+sun-wtk/apps/Audiodemo/src/example/audiodemo/MixCanvas.java
+sun-wtk/apps/Audiodemo/src/example/audiodemo/MixTest.java
+sun-wtk/apps/Audiodemo/src/example/audiodemo/PlayerCanvas.java
+sun-wtk/apps/Audiodemo/src/example/audiodemo/SmallBall.java
+sun-wtk/apps/Audiodemo/tmpclasses/example/audiodemo/AudioPlayer.class
+sun-wtk/apps/Audiodemo/tmpclasses/example/audiodemo/BBall.class
+sun-wtk/apps/Audiodemo/tmpclasses/example/audiodemo/BallCanvas.class
+sun-wtk/apps/Audiodemo/tmpclasses/example/audiodemo/MixCanvas.class
+sun-wtk/apps/Audiodemo/tmpclasses/example/audiodemo/MixTest.class
+sun-wtk/apps/Audiodemo/tmpclasses/example/audiodemo/PlayerCanvas.class
+sun-wtk/apps/Audiodemo/tmpclasses/example/audiodemo/SmallBall.class
+sun-wtk/apps/BluetoothDemo/bin/BluetoothDemo.jad
+sun-wtk/apps/BluetoothDemo/bin/BluetoothDemo.jar
+sun-wtk/apps/BluetoothDemo/bin/MANIFEST.MF
+sun-wtk/apps/BluetoothDemo/classes/example/bluetooth/demo/BTImageClient.class
+sun-wtk/apps/BluetoothDemo/classes/example/bluetooth/demo/BTImageServer$ClientProcessor.class
+sun-wtk/apps/BluetoothDemo/classes/example/bluetooth/demo/BTImageServer.class
+sun-wtk/apps/BluetoothDemo/classes/example/bluetooth/demo/DemoMIDlet.class
+sun-wtk/apps/BluetoothDemo/classes/example/bluetooth/demo/GUIImageClient.class
+sun-wtk/apps/BluetoothDemo/classes/example/bluetooth/demo/GUIImageServer.class
+sun-wtk/apps/BluetoothDemo/lib/README.txt
+sun-wtk/apps/BluetoothDemo/project.properties
+sun-wtk/apps/BluetoothDemo/res/icons/demo.png
+sun-wtk/apps/BluetoothDemo/res/images/duke.png
+sun-wtk/apps/BluetoothDemo/res/images/leaf.jpg
+sun-wtk/apps/BluetoothDemo/res/images/leaf.png
+sun-wtk/apps/BluetoothDemo/res/images/st-off.png
+sun-wtk/apps/BluetoothDemo/res/images/st-on.png
+sun-wtk/apps/BluetoothDemo/src/example/bluetooth/demo/BTImageClient.java
+sun-wtk/apps/BluetoothDemo/src/example/bluetooth/demo/BTImageServer.java
+sun-wtk/apps/BluetoothDemo/src/example/bluetooth/demo/DemoMIDlet.java
+sun-wtk/apps/BluetoothDemo/src/example/bluetooth/demo/GUIImageClient.java
+sun-wtk/apps/BluetoothDemo/src/example/bluetooth/demo/GUIImageServer.java
+sun-wtk/apps/BluetoothDemo/tmpclasses/example/bluetooth/demo/BTImageClient.class
+sun-wtk/apps/BluetoothDemo/tmpclasses/example/bluetooth/demo/BTImageServer$ClientProcessor.class
+sun-wtk/apps/BluetoothDemo/tmpclasses/example/bluetooth/demo/BTImageServer.class
+sun-wtk/apps/BluetoothDemo/tmpclasses/example/bluetooth/demo/DemoMIDlet.class
+sun-wtk/apps/BluetoothDemo/tmpclasses/example/bluetooth/demo/GUIImageClient.class
+sun-wtk/apps/BluetoothDemo/tmpclasses/example/bluetooth/demo/GUIImageServer.class
+sun-wtk/apps/Demo3D/bin/Demo3D.jad
+sun-wtk/apps/Demo3D/bin/Demo3D.jar
+sun-wtk/apps/Demo3D/bin/MANIFEST.MF
+sun-wtk/apps/Demo3D/classes/com/superscape/m3g/wtksamples/life3d/Life3D$1.class
+sun-wtk/apps/Demo3D/classes/com/superscape/m3g/wtksamples/life3d/Life3D$CallbackCanvas.class
+sun-wtk/apps/Demo3D/classes/com/superscape/m3g/wtksamples/life3d/Life3D$RefreshTask.class
+sun-wtk/apps/Demo3D/classes/com/superscape/m3g/wtksamples/life3d/Life3D.class
+sun-wtk/apps/Demo3D/classes/com/superscape/m3g/wtksamples/pogoroo/PogoRooMIDlet$1.class
+sun-wtk/apps/Demo3D/classes/com/superscape/m3g/wtksamples/pogoroo/PogoRooMIDlet$PogoRooCanvas.class
+sun-wtk/apps/Demo3D/classes/com/superscape/m3g/wtksamples/pogoroo/PogoRooMIDlet$RefreshTask.class
+sun-wtk/apps/Demo3D/classes/com/superscape/m3g/wtksamples/pogoroo/PogoRooMIDlet.class
+sun-wtk/apps/Demo3D/classes/com/superscape/m3g/wtksamples/retainedmode/RetainedModeMidlet$1.class
+sun-wtk/apps/Demo3D/classes/com/superscape/m3g/wtksamples/retainedmode/RetainedModeMidlet$JesterCanvas.class
+sun-wtk/apps/Demo3D/classes/com/superscape/m3g/wtksamples/retainedmode/RetainedModeMidlet$RefreshTask.class
+sun-wtk/apps/Demo3D/classes/com/superscape/m3g/wtksamples/retainedmode/RetainedModeMidlet.class
+sun-wtk/apps/Demo3D/project.properties
+sun-wtk/apps/Demo3D/res/com/superscape/m3g/wtksamples/pogoroo/content/pogoroo.m3g
+sun-wtk/apps/Demo3D/res/com/superscape/m3g/wtksamples/retainedmode/content/skaterboy.m3g
+sun-wtk/apps/Demo3D/res/com/superscape/m3g/wtksamples/retainedmode/content/swerve.m3g
+sun-wtk/apps/Demo3D/src/com/superscape/m3g/wtksamples/life3d/Life3D.java
+sun-wtk/apps/Demo3D/src/com/superscape/m3g/wtksamples/pogoroo/PogoRooMIDlet.java
+sun-wtk/apps/Demo3D/src/com/superscape/m3g/wtksamples/retainedmode/RetainedModeMidlet.java
+sun-wtk/apps/Demo3D/tmpclasses/com/superscape/m3g/wtksamples/life3d/Life3D$1.class
+sun-wtk/apps/Demo3D/tmpclasses/com/superscape/m3g/wtksamples/life3d/Life3D$CallbackCanvas.class
+sun-wtk/apps/Demo3D/tmpclasses/com/superscape/m3g/wtksamples/life3d/Life3D$RefreshTask.class
+sun-wtk/apps/Demo3D/tmpclasses/com/superscape/m3g/wtksamples/life3d/Life3D.class
+sun-wtk/apps/Demo3D/tmpclasses/com/superscape/m3g/wtksamples/pogoroo/PogoRooMIDlet$1.class
+sun-wtk/apps/Demo3D/tmpclasses/com/superscape/m3g/wtksamples/pogoroo/PogoRooMIDlet$PogoRooCanvas.class
+sun-wtk/apps/Demo3D/tmpclasses/com/superscape/m3g/wtksamples/pogoroo/PogoRooMIDlet$RefreshTask.class
+sun-wtk/apps/Demo3D/tmpclasses/com/superscape/m3g/wtksamples/pogoroo/PogoRooMIDlet.class
+sun-wtk/apps/Demo3D/tmpclasses/com/superscape/m3g/wtksamples/retainedmode/RetainedModeMidlet$1.class
+sun-wtk/apps/Demo3D/tmpclasses/com/superscape/m3g/wtksamples/retainedmode/RetainedModeMidlet$JesterCanvas.class
+sun-wtk/apps/Demo3D/tmpclasses/com/superscape/m3g/wtksamples/retainedmode/RetainedModeMidlet$RefreshTask.class
+sun-wtk/apps/Demo3D/tmpclasses/com/superscape/m3g/wtksamples/retainedmode/RetainedModeMidlet.class
+sun-wtk/apps/Demos/bin/Demos.jad
+sun-wtk/apps/Demos/bin/Demos.jar
+sun-wtk/apps/Demos/bin/MANIFEST.MF
+sun-wtk/apps/Demos/bin/build.sh
+sun-wtk/apps/Demos/bin/run.sh
+sun-wtk/apps/Demos/classes/example/About.class
+sun-wtk/apps/Demos/classes/example/PropExample.class
+sun-wtk/apps/Demos/classes/example/auction/NewTicketAuction$1.class
+sun-wtk/apps/Demos/classes/example/auction/NewTicketAuction$2.class
+sun-wtk/apps/Demos/classes/example/auction/NewTicketAuction$3.class
+sun-wtk/apps/Demos/classes/example/auction/NewTicketAuction$Band$BandListTable.class
+sun-wtk/apps/Demos/classes/example/auction/NewTicketAuction$Band$TicketItem.class
+sun-wtk/apps/Demos/classes/example/auction/NewTicketAuction$Band.class
+sun-wtk/apps/Demos/classes/example/auction/NewTicketAuction$Login$MyItemCommandListener.class
+sun-wtk/apps/Demos/classes/example/auction/NewTicketAuction$Login$TimerClient.class
+sun-wtk/apps/Demos/classes/example/auction/NewTicketAuction$Login.class
+sun-wtk/apps/Demos/classes/example/auction/NewTicketAuction$RmBand.class
+sun-wtk/apps/Demos/classes/example/auction/NewTicketAuction$SetMenuForm.class
+sun-wtk/apps/Demos/classes/example/auction/NewTicketAuction$UpdateAlert.class
+sun-wtk/apps/Demos/classes/example/auction/NewTicketAuction.class
+sun-wtk/apps/Demos/classes/example/chooser/Chooser.class
+sun-wtk/apps/Demos/classes/example/chooser/Color.class
+sun-wtk/apps/Demos/classes/example/chooser/ColorChooser.class
+sun-wtk/apps/Demos/classes/example/chooser/FontChooser.class
+sun-wtk/apps/Demos/classes/example/chooser/MiniColor.class
+sun-wtk/apps/Demos/classes/example/chooser/MiniColorChooser.class
+sun-wtk/apps/Demos/classes/example/chooser/TextSample.class
+sun-wtk/apps/Demos/classes/example/fonts/FontCanvas.class
+sun-wtk/apps/Demos/classes/example/fonts/FontTestlet.class
+sun-wtk/apps/Demos/classes/example/http/HttpExample.class
+sun-wtk/apps/Demos/classes/example/http/HttpTest.class
+sun-wtk/apps/Demos/classes/example/http/HttpView.class
+sun-wtk/apps/Demos/classes/example/http/PushExample.class
+sun-wtk/apps/Demos/classes/example/manyballs/ManyBalls.class
+sun-wtk/apps/Demos/classes/example/manyballs/ManyCanvas.class
+sun-wtk/apps/Demos/classes/example/manyballs/SmallBall.class
+sun-wtk/apps/Demos/classes/example/stock/AlertDatabase$1.class
+sun-wtk/apps/Demos/classes/example/stock/AlertDatabase$AlertComparator.class
+sun-wtk/apps/Demos/classes/example/stock/AlertDatabase$AlertFilter.class
+sun-wtk/apps/Demos/classes/example/stock/AlertDatabase.class
+sun-wtk/apps/Demos/classes/example/stock/Database.class
+sun-wtk/apps/Demos/classes/example/stock/Stock.class
+sun-wtk/apps/Demos/classes/example/stock/StockDatabase$1.class
+sun-wtk/apps/Demos/classes/example/stock/StockDatabase$StockComparator.class
+sun-wtk/apps/Demos/classes/example/stock/StockDatabase$StockFilter.class
+sun-wtk/apps/Demos/classes/example/stock/StockDatabase.class
+sun-wtk/apps/Demos/classes/example/stock/StockMIDlet$1.class
+sun-wtk/apps/Demos/classes/example/stock/StockMIDlet$StockCommandListener.class
+sun-wtk/apps/Demos/classes/example/stock/StockMIDlet$StockRefreshTask.class
+sun-wtk/apps/Demos/classes/example/stock/StockMIDlet.class
+sun-wtk/apps/Demos/project.properties
+sun-wtk/apps/Demos/res/example/auction/images/splashScreen.png
+sun-wtk/apps/Demos/res/example/http/images/newshound.png
+sun-wtk/apps/Demos/res/icons/App.png
+sun-wtk/apps/Demos/res/icons/Auction.png
+sun-wtk/apps/Demos/res/icons/ColorChooser.png
+sun-wtk/apps/Demos/res/icons/JavaPowered-2.png
+sun-wtk/apps/Demos/res/icons/JavaPowered-8.png
+sun-wtk/apps/Demos/res/icons/ManyBalls.png
+sun-wtk/apps/Demos/res/icons/Stock.png
+sun-wtk/apps/Demos/src/example/About.java
+sun-wtk/apps/Demos/src/example/PropExample.java
+sun-wtk/apps/Demos/src/example/auction/NewTicketAuction.java
+sun-wtk/apps/Demos/src/example/chooser/Chooser.java
+sun-wtk/apps/Demos/src/example/chooser/Color.java
+sun-wtk/apps/Demos/src/example/chooser/ColorChooser.java
+sun-wtk/apps/Demos/src/example/chooser/FontChooser.java
+sun-wtk/apps/Demos/src/example/chooser/MiniColor.java
+sun-wtk/apps/Demos/src/example/chooser/MiniColorChooser.java
+sun-wtk/apps/Demos/src/example/chooser/TextSample.java
+sun-wtk/apps/Demos/src/example/fonts/FontCanvas.java
+sun-wtk/apps/Demos/src/example/fonts/FontTestlet.java
+sun-wtk/apps/Demos/src/example/http/HttpExample.java
+sun-wtk/apps/Demos/src/example/http/HttpTest.java
+sun-wtk/apps/Demos/src/example/http/HttpView.java
+sun-wtk/apps/Demos/src/example/http/PushExample.java
+sun-wtk/apps/Demos/src/example/manyballs/ManyBalls.java
+sun-wtk/apps/Demos/src/example/manyballs/ManyCanvas.java
+sun-wtk/apps/Demos/src/example/manyballs/SmallBall.java
+sun-wtk/apps/Demos/src/example/stock/AlertDatabase.java
+sun-wtk/apps/Demos/src/example/stock/Database.java
+sun-wtk/apps/Demos/src/example/stock/Stock.java
+sun-wtk/apps/Demos/src/example/stock/StockDatabase.java
+sun-wtk/apps/Demos/src/example/stock/StockMIDlet.java
+sun-wtk/apps/Demos/tmpclasses/example/About.class
+sun-wtk/apps/Demos/tmpclasses/example/PropExample.class
+sun-wtk/apps/Demos/tmpclasses/example/auction/NewTicketAuction$1.class
+sun-wtk/apps/Demos/tmpclasses/example/auction/NewTicketAuction$2.class
+sun-wtk/apps/Demos/tmpclasses/example/auction/NewTicketAuction$3.class
+sun-wtk/apps/Demos/tmpclasses/example/auction/NewTicketAuction$Band$BandListTable.class
+sun-wtk/apps/Demos/tmpclasses/example/auction/NewTicketAuction$Band$TicketItem.class
+sun-wtk/apps/Demos/tmpclasses/example/auction/NewTicketAuction$Band.class
+sun-wtk/apps/Demos/tmpclasses/example/auction/NewTicketAuction$Login$MyItemCommandListener.class
+sun-wtk/apps/Demos/tmpclasses/example/auction/NewTicketAuction$Login$TimerClient.class
+sun-wtk/apps/Demos/tmpclasses/example/auction/NewTicketAuction$Login.class
+sun-wtk/apps/Demos/tmpclasses/example/auction/NewTicketAuction$RmBand.class
+sun-wtk/apps/Demos/tmpclasses/example/auction/NewTicketAuction$SetMenuForm.class
+sun-wtk/apps/Demos/tmpclasses/example/auction/NewTicketAuction$UpdateAlert.class
+sun-wtk/apps/Demos/tmpclasses/example/auction/NewTicketAuction.class
+sun-wtk/apps/Demos/tmpclasses/example/chooser/Chooser.class
+sun-wtk/apps/Demos/tmpclasses/example/chooser/Color.class
+sun-wtk/apps/Demos/tmpclasses/example/chooser/ColorChooser.class
+sun-wtk/apps/Demos/tmpclasses/example/chooser/FontChooser.class
+sun-wtk/apps/Demos/tmpclasses/example/chooser/MiniColor.class
+sun-wtk/apps/Demos/tmpclasses/example/chooser/MiniColorChooser.class
+sun-wtk/apps/Demos/tmpclasses/example/chooser/TextSample.class
+sun-wtk/apps/Demos/tmpclasses/example/fonts/FontCanvas.class
+sun-wtk/apps/Demos/tmpclasses/example/fonts/FontTestlet.class
+sun-wtk/apps/Demos/tmpclasses/example/http/HttpExample.class
+sun-wtk/apps/Demos/tmpclasses/example/http/HttpTest.class
+sun-wtk/apps/Demos/tmpclasses/example/http/HttpView.class
+sun-wtk/apps/Demos/tmpclasses/example/http/PushExample.class
+sun-wtk/apps/Demos/tmpclasses/example/manyballs/ManyBalls.class
+sun-wtk/apps/Demos/tmpclasses/example/manyballs/ManyCanvas.class
+sun-wtk/apps/Demos/tmpclasses/example/manyballs/SmallBall.class
+sun-wtk/apps/Demos/tmpclasses/example/stock/AlertDatabase$1.class
+sun-wtk/apps/Demos/tmpclasses/example/stock/AlertDatabase$AlertComparator.class
+sun-wtk/apps/Demos/tmpclasses/example/stock/AlertDatabase$AlertFilter.class
+sun-wtk/apps/Demos/tmpclasses/example/stock/AlertDatabase.class
+sun-wtk/apps/Demos/tmpclasses/example/stock/Database.class
+sun-wtk/apps/Demos/tmpclasses/example/stock/Stock.class
+sun-wtk/apps/Demos/tmpclasses/example/stock/StockDatabase$1.class
+sun-wtk/apps/Demos/tmpclasses/example/stock/StockDatabase$StockComparator.class
+sun-wtk/apps/Demos/tmpclasses/example/stock/StockDatabase$StockFilter.class
+sun-wtk/apps/Demos/tmpclasses/example/stock/StockDatabase.class
+sun-wtk/apps/Demos/tmpclasses/example/stock/StockMIDlet$1.class
+sun-wtk/apps/Demos/tmpclasses/example/stock/StockMIDlet$StockCommandListener.class
+sun-wtk/apps/Demos/tmpclasses/example/stock/StockMIDlet$StockRefreshTask.class
+sun-wtk/apps/Demos/tmpclasses/example/stock/StockMIDlet.class
 sun-wtk/apps/FPDemo/bin/FPDemo.jad
 sun-wtk/apps/FPDemo/bin/FPDemo.jar
 sun-wtk/apps/FPDemo/bin/MANIFEST.MF
@@ -28,6 +253,89 @@ sun-wtk/apps/FPDemo/classes/calculator/CalculatorMIDlet.class
 sun-wtk/apps/FPDemo/project.properties
 sun-wtk/apps/FPDemo/src/calculator/CalculatorMIDlet.java
 sun-wtk/apps/FPDemo/tmpclasses/calculator/CalculatorMIDlet.class
+sun-wtk/apps/Games/bin/Games.jad
+sun-wtk/apps/Games/bin/Games.jar
+sun-wtk/apps/Games/bin/MANIFEST.MF
+sun-wtk/apps/Games/bin/build.sh
+sun-wtk/apps/Games/bin/run.sh
+sun-wtk/apps/Games/classes/example/About.class
+sun-wtk/apps/Games/classes/example/pushpuzzle/Board.class
+sun-wtk/apps/Games/classes/example/pushpuzzle/PushPuzzle.class
+sun-wtk/apps/Games/classes/example/pushpuzzle/PushPuzzleCanvas.class
+sun-wtk/apps/Games/classes/example/pushpuzzle/Score.class
+sun-wtk/apps/Games/classes/example/tilepuzzle/Board$BoardCommand.class
+sun-wtk/apps/Games/classes/example/tilepuzzle/Board$Piece.class
+sun-wtk/apps/Games/classes/example/tilepuzzle/Board.class
+sun-wtk/apps/Games/classes/example/tilepuzzle/Options.class
+sun-wtk/apps/Games/classes/example/tilepuzzle/TilePuzzle.class
+sun-wtk/apps/Games/classes/example/wormgame/Worm.class
+sun-wtk/apps/Games/classes/example/wormgame/WormException.class
+sun-wtk/apps/Games/classes/example/wormgame/WormFood.class
+sun-wtk/apps/Games/classes/example/wormgame/WormLink.class
+sun-wtk/apps/Games/classes/example/wormgame/WormMain.class
+sun-wtk/apps/Games/classes/example/wormgame/WormPit.class
+sun-wtk/apps/Games/classes/example/wormgame/WormScore.class
+sun-wtk/apps/Games/project.properties
+sun-wtk/apps/Games/res/example/pushpuzzle/data/screen.1
+sun-wtk/apps/Games/res/example/pushpuzzle/data/screen.10
+sun-wtk/apps/Games/res/example/pushpuzzle/data/screen.11
+sun-wtk/apps/Games/res/example/pushpuzzle/data/screen.12
+sun-wtk/apps/Games/res/example/pushpuzzle/data/screen.13
+sun-wtk/apps/Games/res/example/pushpuzzle/data/screen.14
+sun-wtk/apps/Games/res/example/pushpuzzle/data/screen.15
+sun-wtk/apps/Games/res/example/pushpuzzle/data/screen.16
+sun-wtk/apps/Games/res/example/pushpuzzle/data/screen.17
+sun-wtk/apps/Games/res/example/pushpuzzle/data/screen.18
+sun-wtk/apps/Games/res/example/pushpuzzle/data/screen.19
+sun-wtk/apps/Games/res/example/pushpuzzle/data/screen.2
+sun-wtk/apps/Games/res/example/pushpuzzle/data/screen.3
+sun-wtk/apps/Games/res/example/pushpuzzle/data/screen.4
+sun-wtk/apps/Games/res/example/pushpuzzle/data/screen.5
+sun-wtk/apps/Games/res/example/pushpuzzle/data/screen.6
+sun-wtk/apps/Games/res/example/pushpuzzle/data/screen.7
+sun-wtk/apps/Games/res/example/pushpuzzle/data/screen.8
+sun-wtk/apps/Games/res/example/pushpuzzle/data/screen.9
+sun-wtk/apps/Games/res/example/pushpuzzle/images/Theme-1.png
+sun-wtk/apps/Games/res/example/pushpuzzle/images/Theme-2.png
+sun-wtk/apps/Games/res/example/pushpuzzle/images/Theme-3.png
+sun-wtk/apps/Games/res/example/pushpuzzle/images/Theme-bad.png
+sun-wtk/apps/Games/res/icons/App.png
+sun-wtk/apps/Games/res/icons/JavaPowered-2.png
+sun-wtk/apps/Games/res/icons/JavaPowered-8.png
+sun-wtk/apps/Games/res/icons/PushPuzzle.png
+sun-wtk/apps/Games/res/icons/TilePuzzle.png
+sun-wtk/apps/Games/src/example/About.java
+sun-wtk/apps/Games/src/example/pushpuzzle/Board.java
+sun-wtk/apps/Games/src/example/pushpuzzle/PushPuzzle.java
+sun-wtk/apps/Games/src/example/pushpuzzle/PushPuzzleCanvas.java
+sun-wtk/apps/Games/src/example/pushpuzzle/Score.java
+sun-wtk/apps/Games/src/example/tilepuzzle/Board.java
+sun-wtk/apps/Games/src/example/tilepuzzle/Options.java
+sun-wtk/apps/Games/src/example/tilepuzzle/TilePuzzle.java
+sun-wtk/apps/Games/src/example/wormgame/Worm.java
+sun-wtk/apps/Games/src/example/wormgame/WormException.java
+sun-wtk/apps/Games/src/example/wormgame/WormFood.java
+sun-wtk/apps/Games/src/example/wormgame/WormLink.java
+sun-wtk/apps/Games/src/example/wormgame/WormMain.java
+sun-wtk/apps/Games/src/example/wormgame/WormPit.java
+sun-wtk/apps/Games/src/example/wormgame/WormScore.java
+sun-wtk/apps/Games/tmpclasses/example/About.class
+sun-wtk/apps/Games/tmpclasses/example/pushpuzzle/Board.class
+sun-wtk/apps/Games/tmpclasses/example/pushpuzzle/PushPuzzle.class
+sun-wtk/apps/Games/tmpclasses/example/pushpuzzle/PushPuzzleCanvas.class
+sun-wtk/apps/Games/tmpclasses/example/pushpuzzle/Score.class
+sun-wtk/apps/Games/tmpclasses/example/tilepuzzle/Board$BoardCommand.class
+sun-wtk/apps/Games/tmpclasses/example/tilepuzzle/Board$Piece.class
+sun-wtk/apps/Games/tmpclasses/example/tilepuzzle/Board.class
+sun-wtk/apps/Games/tmpclasses/example/tilepuzzle/Options.class
+sun-wtk/apps/Games/tmpclasses/example/tilepuzzle/TilePuzzle.class
+sun-wtk/apps/Games/tmpclasses/example/wormgame/Worm.class
+sun-wtk/apps/Games/tmpclasses/example/wormgame/WormException.class
+sun-wtk/apps/Games/tmpclasses/example/wormgame/WormFood.class
+sun-wtk/apps/Games/tmpclasses/example/wormgame/WormLink.class
+sun-wtk/apps/Games/tmpclasses/example/wormgame/WormMain.class
+sun-wtk/apps/Games/tmpclasses/example/wormgame/WormPit.class
+sun-wtk/apps/Games/tmpclasses/example/wormgame/WormScore.class
 sun-wtk/apps/JSR172Demo/bin/JSR172Demo.jad
 sun-wtk/apps/JSR172Demo/bin/JSR172Demo.jar
 sun-wtk/apps/JSR172Demo/bin/MANIFEST.MF
@@ -98,35 +406,150 @@ sun-wtk/apps/NetworkDemo/tmpclasses/socket/Client.class
 sun-wtk/apps/NetworkDemo/tmpclasses/socket/Sender.class
 sun-wtk/apps/NetworkDemo/tmpclasses/socket/Server.class
 sun-wtk/apps/NetworkDemo/tmpclasses/socket/SocketMIDlet.class
-sun-wtk/apps/SMSDemo/bin/MANIFEST.MF
-sun-wtk/apps/SMSDemo/bin/SMSDemo.jad
-sun-wtk/apps/SMSDemo/bin/SMSDemo.jar
-sun-wtk/apps/SMSDemo/bin/build.sh
-sun-wtk/apps/SMSDemo/bin/run.sh
-sun-wtk/apps/SMSDemo/bridgeAPIExample/WMABridgeAPIExample.java
-sun-wtk/apps/SMSDemo/bridgeAPIExample/buildExample.sh
-sun-wtk/apps/SMSDemo/bridgeAPIExample/readme
-sun-wtk/apps/SMSDemo/bridgeAPIExample/runBridgeAPIExample.sh
-sun-wtk/apps/SMSDemo/classes/example/cbs/CBSReceive.class
-sun-wtk/apps/SMSDemo/classes/example/sms/SMSReceive.class
-sun-wtk/apps/SMSDemo/classes/example/sms/SMSSend.class
-sun-wtk/apps/SMSDemo/classes/example/sms/SMSSender.class
-sun-wtk/apps/SMSDemo/project.properties
-sun-wtk/apps/SMSDemo/src/example/cbs/CBSReceive.java
-sun-wtk/apps/SMSDemo/src/example/sms/SMSReceive.java
-sun-wtk/apps/SMSDemo/src/example/sms/SMSSend.java
-sun-wtk/apps/SMSDemo/src/example/sms/SMSSender.java
-sun-wtk/apps/SMSDemo/tmpclasses/example/cbs/CBSReceive.class
-sun-wtk/apps/SMSDemo/tmpclasses/example/sms/SMSReceive.class
-sun-wtk/apps/SMSDemo/tmpclasses/example/sms/SMSSend.class
-sun-wtk/apps/SMSDemo/tmpclasses/example/sms/SMSSender.class
+sun-wtk/apps/ObexDemo/bin/MANIFEST.MF
+sun-wtk/apps/ObexDemo/bin/ObexDemo.jad
+sun-wtk/apps/ObexDemo/bin/ObexDemo.jar
+sun-wtk/apps/ObexDemo/classes/example/obex/demo/GUIImageReceiver.class
+sun-wtk/apps/ObexDemo/classes/example/obex/demo/GUIImageSender.class
+sun-wtk/apps/ObexDemo/classes/example/obex/demo/ObexDemoMIDlet.class
+sun-wtk/apps/ObexDemo/classes/example/obex/demo/ObexImageReceiver$Handler.class
+sun-wtk/apps/ObexDemo/classes/example/obex/demo/ObexImageReceiver.class
+sun-wtk/apps/ObexDemo/classes/example/obex/demo/ObexImageSender.class
+sun-wtk/apps/ObexDemo/lib/README.txt
+sun-wtk/apps/ObexDemo/project.properties
+sun-wtk/apps/ObexDemo/res/icons/demo.png
+sun-wtk/apps/ObexDemo/res/images/duke.png
+sun-wtk/apps/ObexDemo/res/images/leaf.jpg
+sun-wtk/apps/ObexDemo/res/images/leaf.png
+sun-wtk/apps/ObexDemo/src/example/obex/demo/GUIImageReceiver.java
+sun-wtk/apps/ObexDemo/src/example/obex/demo/GUIImageSender.java
+sun-wtk/apps/ObexDemo/src/example/obex/demo/ObexDemoMIDlet.java
+sun-wtk/apps/ObexDemo/src/example/obex/demo/ObexImageReceiver.java
+sun-wtk/apps/ObexDemo/src/example/obex/demo/ObexImageSender.java
+sun-wtk/apps/ObexDemo/tmpclasses/example/obex/demo/GUIImageReceiver.class
+sun-wtk/apps/ObexDemo/tmpclasses/example/obex/demo/GUIImageSender.class
+sun-wtk/apps/ObexDemo/tmpclasses/example/obex/demo/ObexDemoMIDlet.class
+sun-wtk/apps/ObexDemo/tmpclasses/example/obex/demo/ObexImageReceiver$Handler.class
+sun-wtk/apps/ObexDemo/tmpclasses/example/obex/demo/ObexImageReceiver.class
+sun-wtk/apps/ObexDemo/tmpclasses/example/obex/demo/ObexImageSender.class
+sun-wtk/apps/PDAPDemo/bin/MANIFEST.MF
+sun-wtk/apps/PDAPDemo/bin/PDAPDemo.jad
+sun-wtk/apps/PDAPDemo/bin/PDAPDemo.jar
+sun-wtk/apps/PDAPDemo/classes/example/fc/FileBrowser$1.class
+sun-wtk/apps/PDAPDemo/classes/example/fc/FileBrowser$2.class
+sun-wtk/apps/PDAPDemo/classes/example/fc/FileBrowser.class
+sun-wtk/apps/PDAPDemo/classes/example/pim/ItemDisplayScreen$1.class
+sun-wtk/apps/PDAPDemo/classes/example/pim/ItemDisplayScreen$2.class
+sun-wtk/apps/PDAPDemo/classes/example/pim/ItemDisplayScreen.class
+sun-wtk/apps/PDAPDemo/classes/example/pim/ItemSelectionScreen.class
+sun-wtk/apps/PDAPDemo/classes/example/pim/ListSelectionScreen.class
+sun-wtk/apps/PDAPDemo/classes/example/pim/ListTypeSelectionScreen$1.class
+sun-wtk/apps/PDAPDemo/classes/example/pim/ListTypeSelectionScreen.class
+sun-wtk/apps/PDAPDemo/classes/example/pim/PIMDemo.class
+sun-wtk/apps/PDAPDemo/project.properties
+sun-wtk/apps/PDAPDemo/res/icons/dir.png
+sun-wtk/apps/PDAPDemo/res/icons/file.png
+sun-wtk/apps/PDAPDemo/src/example/fc/FileBrowser.java
+sun-wtk/apps/PDAPDemo/src/example/pim/ItemDisplayScreen.java
+sun-wtk/apps/PDAPDemo/src/example/pim/ItemSelectionScreen.java
+sun-wtk/apps/PDAPDemo/src/example/pim/ListSelectionScreen.java
+sun-wtk/apps/PDAPDemo/src/example/pim/ListTypeSelectionScreen.java
+sun-wtk/apps/PDAPDemo/src/example/pim/PIMDemo.java
+sun-wtk/apps/PDAPDemo/tmpclasses/example/fc/FileBrowser$1.class
+sun-wtk/apps/PDAPDemo/tmpclasses/example/fc/FileBrowser$2.class
+sun-wtk/apps/PDAPDemo/tmpclasses/example/fc/FileBrowser.class
+sun-wtk/apps/PDAPDemo/tmpclasses/example/pim/ItemDisplayScreen$1.class
+sun-wtk/apps/PDAPDemo/tmpclasses/example/pim/ItemDisplayScreen$2.class
+sun-wtk/apps/PDAPDemo/tmpclasses/example/pim/ItemDisplayScreen.class
+sun-wtk/apps/PDAPDemo/tmpclasses/example/pim/ItemSelectionScreen.class
+sun-wtk/apps/PDAPDemo/tmpclasses/example/pim/ListSelectionScreen.class
+sun-wtk/apps/PDAPDemo/tmpclasses/example/pim/ListTypeSelectionScreen$1.class
+sun-wtk/apps/PDAPDemo/tmpclasses/example/pim/ListTypeSelectionScreen.class
+sun-wtk/apps/PDAPDemo/tmpclasses/example/pim/PIMDemo.class
+sun-wtk/apps/Photoalbum/bin/MANIFEST.MF
+sun-wtk/apps/Photoalbum/bin/Photoalbum.jad
+sun-wtk/apps/Photoalbum/bin/Photoalbum.jar
+sun-wtk/apps/Photoalbum/bin/build.sh
+sun-wtk/apps/Photoalbum/bin/run.sh
+sun-wtk/apps/Photoalbum/classes/example/About.class
+sun-wtk/apps/Photoalbum/classes/example/photoalbum/PhotoAlbum.class
+sun-wtk/apps/Photoalbum/classes/example/photoalbum/PhotoFrame.class
+sun-wtk/apps/Photoalbum/classes/example/photoalbum/TestChart.class
+sun-wtk/apps/Photoalbum/project.properties
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/LightHouse-0.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/LightHouse-1.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_0.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_1.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_10.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_11.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_12.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_13.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_14.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_15.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_16.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_17.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_18.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_19.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_2.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_20.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_21.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_22.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_23.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_24.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_25.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_26.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_27.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_28.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_29.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_3.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_30.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_31.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_32.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_33.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_34.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_35.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_36.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_37.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_38.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_39.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_4.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_40.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_41.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_42.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_43.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_44.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_45.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_46.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_47.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_48.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_49.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_5.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_6.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_7.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_8.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/jc_frame_9.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/leaf.jpg
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/leaf.png
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/leafbw.jpg
+sun-wtk/apps/Photoalbum/res/example/photoalbum/images/leafpg.jpg
+sun-wtk/apps/Photoalbum/res/icons/Duke.png
+sun-wtk/apps/Photoalbum/res/icons/JavaPowered-2.png
+sun-wtk/apps/Photoalbum/res/icons/JavaPowered-8.png
+sun-wtk/apps/Photoalbum/src/example/About.java
+sun-wtk/apps/Photoalbum/src/example/photoalbum/PhotoAlbum.java
+sun-wtk/apps/Photoalbum/src/example/photoalbum/PhotoFrame.java
+sun-wtk/apps/Photoalbum/src/example/photoalbum/TestChart.java
+sun-wtk/apps/Photoalbum/tmpclasses/example/About.class
+sun-wtk/apps/Photoalbum/tmpclasses/example/photoalbum/PhotoAlbum.class
+sun-wtk/apps/Photoalbum/tmpclasses/example/photoalbum/PhotoFrame.class
+sun-wtk/apps/Photoalbum/tmpclasses/example/photoalbum/TestChart.class
 sun-wtk/apps/UIDemo/bin/MANIFEST.MF
 sun-wtk/apps/UIDemo/bin/UIDemo.jad
 sun-wtk/apps/UIDemo/bin/UIDemo.jar
 sun-wtk/apps/UIDemo/bin/build.sh
 sun-wtk/apps/UIDemo/bin/run.sh
 sun-wtk/apps/UIDemo/classes/alert/AlertDemo$1.class
-sun-wtk/apps/UIDemo/classes/alert/AlertDemo$AlerListener.class
+sun-wtk/apps/UIDemo/classes/alert/AlertDemo$AlertListener.class
 sun-wtk/apps/UIDemo/classes/alert/AlertDemo.class
 sun-wtk/apps/UIDemo/classes/choicegroup/ChoiceGroupDemo.class
 sun-wtk/apps/UIDemo/classes/customitem/CustomItemDemo.class
@@ -161,7 +584,7 @@ sun-wtk/apps/UIDemo/src/textbox/TextBoxDemo.java
 sun-wtk/apps/UIDemo/src/textfield/TextFieldDemo.java
 sun-wtk/apps/UIDemo/src/ticker/TickerDemo.java
 sun-wtk/apps/UIDemo/tmpclasses/alert/AlertDemo$1.class
-sun-wtk/apps/UIDemo/tmpclasses/alert/AlertDemo$AlerListener.class
+sun-wtk/apps/UIDemo/tmpclasses/alert/AlertDemo$AlertListener.class
 sun-wtk/apps/UIDemo/tmpclasses/alert/AlertDemo.class
 sun-wtk/apps/UIDemo/tmpclasses/choicegroup/ChoiceGroupDemo.class
 sun-wtk/apps/UIDemo/tmpclasses/customitem/CustomItemDemo.class
@@ -176,255 +599,52 @@ sun-wtk/apps/UIDemo/tmpclasses/stringitem/StringItemDemo.class
 sun-wtk/apps/UIDemo/tmpclasses/textbox/TextBoxDemo.class
 sun-wtk/apps/UIDemo/tmpclasses/textfield/TextFieldDemo.class
 sun-wtk/apps/UIDemo/tmpclasses/ticker/TickerDemo.class
-sun-wtk/apps/audiodemo/bin/MANIFEST.MF
-sun-wtk/apps/audiodemo/bin/audiodemo.jad
-sun-wtk/apps/audiodemo/bin/audiodemo.jar
-sun-wtk/apps/audiodemo/bin/build.sh
-sun-wtk/apps/audiodemo/bin/run.sh
-sun-wtk/apps/audiodemo/classes/example/audiodemo/AudioPlayer.class
-sun-wtk/apps/audiodemo/classes/example/audiodemo/BBall.class
-sun-wtk/apps/audiodemo/classes/example/audiodemo/BallCanvas.class
-sun-wtk/apps/audiodemo/classes/example/audiodemo/MixCanvas.class
-sun-wtk/apps/audiodemo/classes/example/audiodemo/MixTest.class
-sun-wtk/apps/audiodemo/classes/example/audiodemo/PlayerCanvas.class
-sun-wtk/apps/audiodemo/classes/example/audiodemo/SmallBall.class
-sun-wtk/apps/audiodemo/project.properties
-sun-wtk/apps/audiodemo/res/audio/bark.wav
-sun-wtk/apps/audiodemo/res/audio/beethoven.dat
-sun-wtk/apps/audiodemo/res/icons/App.png
-sun-wtk/apps/audiodemo/res/icons/logo.png
-sun-wtk/apps/audiodemo/src/example/audiodemo/AudioPlayer.java
-sun-wtk/apps/audiodemo/src/example/audiodemo/BBall.java
-sun-wtk/apps/audiodemo/src/example/audiodemo/BallCanvas.java
-sun-wtk/apps/audiodemo/src/example/audiodemo/MixCanvas.java
-sun-wtk/apps/audiodemo/src/example/audiodemo/MixTest.java
-sun-wtk/apps/audiodemo/src/example/audiodemo/PlayerCanvas.java
-sun-wtk/apps/audiodemo/src/example/audiodemo/SmallBall.java
-sun-wtk/apps/audiodemo/tmpclasses/example/audiodemo/AudioPlayer.class
-sun-wtk/apps/audiodemo/tmpclasses/example/audiodemo/BBall.class
-sun-wtk/apps/audiodemo/tmpclasses/example/audiodemo/BallCanvas.class
-sun-wtk/apps/audiodemo/tmpclasses/example/audiodemo/MixCanvas.class
-sun-wtk/apps/audiodemo/tmpclasses/example/audiodemo/MixTest.class
-sun-wtk/apps/audiodemo/tmpclasses/example/audiodemo/PlayerCanvas.class
-sun-wtk/apps/audiodemo/tmpclasses/example/audiodemo/SmallBall.class
-sun-wtk/apps/demos/bin/MANIFEST.MF
-sun-wtk/apps/demos/bin/build.sh
-sun-wtk/apps/demos/bin/demos.jad
-sun-wtk/apps/demos/bin/demos.jar
-sun-wtk/apps/demos/bin/run.sh
-sun-wtk/apps/demos/classes/example/About.class
-sun-wtk/apps/demos/classes/example/PropExample.class
-sun-wtk/apps/demos/classes/example/auction/NewTicketAuction$1.class
-sun-wtk/apps/demos/classes/example/auction/NewTicketAuction$2.class
-sun-wtk/apps/demos/classes/example/auction/NewTicketAuction$3.class
-sun-wtk/apps/demos/classes/example/auction/NewTicketAuction$Band$BandListTable.class
-sun-wtk/apps/demos/classes/example/auction/NewTicketAuction$Band$TicketItem.class
-sun-wtk/apps/demos/classes/example/auction/NewTicketAuction$Band.class
-sun-wtk/apps/demos/classes/example/auction/NewTicketAuction$Login$MyItemCommandListener.class
-sun-wtk/apps/demos/classes/example/auction/NewTicketAuction$Login$TimerClient.class
-sun-wtk/apps/demos/classes/example/auction/NewTicketAuction$Login.class
-sun-wtk/apps/demos/classes/example/auction/NewTicketAuction$RmBand.class
-sun-wtk/apps/demos/classes/example/auction/NewTicketAuction$SetMenuForm.class
-sun-wtk/apps/demos/classes/example/auction/NewTicketAuction$UpdateAlert.class
-sun-wtk/apps/demos/classes/example/auction/NewTicketAuction.class
-sun-wtk/apps/demos/classes/example/chooser/Chooser.class
-sun-wtk/apps/demos/classes/example/chooser/Color.class
-sun-wtk/apps/demos/classes/example/chooser/ColorChooser.class
-sun-wtk/apps/demos/classes/example/chooser/FontChooser.class
-sun-wtk/apps/demos/classes/example/chooser/MiniColor.class
-sun-wtk/apps/demos/classes/example/chooser/MiniColorChooser.class
-sun-wtk/apps/demos/classes/example/chooser/TextSample.class
-sun-wtk/apps/demos/classes/example/fonts/FontCanvas.class
-sun-wtk/apps/demos/classes/example/fonts/FontTestlet.class
-sun-wtk/apps/demos/classes/example/http/HttpExample.class
-sun-wtk/apps/demos/classes/example/http/HttpTest.class
-sun-wtk/apps/demos/classes/example/http/HttpView.class
-sun-wtk/apps/demos/classes/example/http/PushExample.class
-sun-wtk/apps/demos/classes/example/manyballs/ManyBalls.class
-sun-wtk/apps/demos/classes/example/manyballs/ManyCanvas.class
-sun-wtk/apps/demos/classes/example/manyballs/SmallBall.class
-sun-wtk/apps/demos/classes/example/stock/AlertDatabase$1.class
-sun-wtk/apps/demos/classes/example/stock/AlertDatabase$AlertComparator.class
-sun-wtk/apps/demos/classes/example/stock/AlertDatabase$AlertFilter.class
-sun-wtk/apps/demos/classes/example/stock/AlertDatabase.class
-sun-wtk/apps/demos/classes/example/stock/Database.class
-sun-wtk/apps/demos/classes/example/stock/Stock.class
-sun-wtk/apps/demos/classes/example/stock/StockDatabase$1.class
-sun-wtk/apps/demos/classes/example/stock/StockDatabase$StockComparator.class
-sun-wtk/apps/demos/classes/example/stock/StockDatabase$StockFilter.class
-sun-wtk/apps/demos/classes/example/stock/StockDatabase.class
-sun-wtk/apps/demos/classes/example/stock/StockMIDlet$1.class
-sun-wtk/apps/demos/classes/example/stock/StockMIDlet$StockCommandListener.class
-sun-wtk/apps/demos/classes/example/stock/StockMIDlet$StockRefreshTask.class
-sun-wtk/apps/demos/classes/example/stock/StockMIDlet.class
-sun-wtk/apps/demos/project.properties
-sun-wtk/apps/demos/res/example/auction/images/splashScreen.png
-sun-wtk/apps/demos/res/example/http/images/newshound.png
-sun-wtk/apps/demos/res/icons/App.png
-sun-wtk/apps/demos/res/icons/Auction.png
-sun-wtk/apps/demos/res/icons/ColorChooser.png
-sun-wtk/apps/demos/res/icons/JavaPowered-2.png
-sun-wtk/apps/demos/res/icons/JavaPowered-8.png
-sun-wtk/apps/demos/res/icons/ManyBalls.png
-sun-wtk/apps/demos/res/icons/Stock.png
-sun-wtk/apps/demos/src/example/About.java
-sun-wtk/apps/demos/src/example/PropExample.java
-sun-wtk/apps/demos/src/example/auction/NewTicketAuction.java
-sun-wtk/apps/demos/src/example/chooser/Chooser.java
-sun-wtk/apps/demos/src/example/chooser/Color.java
-sun-wtk/apps/demos/src/example/chooser/ColorChooser.java
-sun-wtk/apps/demos/src/example/chooser/FontChooser.java
-sun-wtk/apps/demos/src/example/chooser/MiniColor.java
-sun-wtk/apps/demos/src/example/chooser/MiniColorChooser.java
-sun-wtk/apps/demos/src/example/chooser/TextSample.java
-sun-wtk/apps/demos/src/example/fonts/FontCanvas.java
-sun-wtk/apps/demos/src/example/fonts/FontTestlet.java
-sun-wtk/apps/demos/src/example/http/HttpExample.java
-sun-wtk/apps/demos/src/example/http/HttpTest.java
-sun-wtk/apps/demos/src/example/http/HttpView.java
-sun-wtk/apps/demos/src/example/http/PushExample.java
-sun-wtk/apps/demos/src/example/manyballs/ManyBalls.java
-sun-wtk/apps/demos/src/example/manyballs/ManyCanvas.java
-sun-wtk/apps/demos/src/example/manyballs/SmallBall.java
-sun-wtk/apps/demos/src/example/stock/AlertDatabase.java
-sun-wtk/apps/demos/src/example/stock/Database.java
-sun-wtk/apps/demos/src/example/stock/Stock.java
-sun-wtk/apps/demos/src/example/stock/StockDatabase.java
-sun-wtk/apps/demos/src/example/stock/StockMIDlet.java
-sun-wtk/apps/demos/tmpclasses/example/About.class
-sun-wtk/apps/demos/tmpclasses/example/PropExample.class
-sun-wtk/apps/demos/tmpclasses/example/auction/NewTicketAuction$1.class
-sun-wtk/apps/demos/tmpclasses/example/auction/NewTicketAuction$2.class
-sun-wtk/apps/demos/tmpclasses/example/auction/NewTicketAuction$3.class
-sun-wtk/apps/demos/tmpclasses/example/auction/NewTicketAuction$Band$BandListTable.class
-sun-wtk/apps/demos/tmpclasses/example/auction/NewTicketAuction$Band$TicketItem.class
-sun-wtk/apps/demos/tmpclasses/example/auction/NewTicketAuction$Band.class
-sun-wtk/apps/demos/tmpclasses/example/auction/NewTicketAuction$Login$MyItemCommandListener.class
-sun-wtk/apps/demos/tmpclasses/example/auction/NewTicketAuction$Login$TimerClient.class
-sun-wtk/apps/demos/tmpclasses/example/auction/NewTicketAuction$Login.class
-sun-wtk/apps/demos/tmpclasses/example/auction/NewTicketAuction$RmBand.class
-sun-wtk/apps/demos/tmpclasses/example/auction/NewTicketAuction$SetMenuForm.class
-sun-wtk/apps/demos/tmpclasses/example/auction/NewTicketAuction$UpdateAlert.class
-sun-wtk/apps/demos/tmpclasses/example/auction/NewTicketAuction.class
-sun-wtk/apps/demos/tmpclasses/example/chooser/Chooser.class
-sun-wtk/apps/demos/tmpclasses/example/chooser/Color.class
-sun-wtk/apps/demos/tmpclasses/example/chooser/ColorChooser.class
-sun-wtk/apps/demos/tmpclasses/example/chooser/FontChooser.class
-sun-wtk/apps/demos/tmpclasses/example/chooser/MiniColor.class
-sun-wtk/apps/demos/tmpclasses/example/chooser/MiniColorChooser.class
-sun-wtk/apps/demos/tmpclasses/example/chooser/TextSample.class
-sun-wtk/apps/demos/tmpclasses/example/fonts/FontCanvas.class
-sun-wtk/apps/demos/tmpclasses/example/fonts/FontTestlet.class
-sun-wtk/apps/demos/tmpclasses/example/http/HttpExample.class
-sun-wtk/apps/demos/tmpclasses/example/http/HttpTest.class
-sun-wtk/apps/demos/tmpclasses/example/http/HttpView.class
-sun-wtk/apps/demos/tmpclasses/example/http/PushExample.class
-sun-wtk/apps/demos/tmpclasses/example/manyballs/ManyBalls.class
-sun-wtk/apps/demos/tmpclasses/example/manyballs/ManyCanvas.class
-sun-wtk/apps/demos/tmpclasses/example/manyballs/SmallBall.class
-sun-wtk/apps/demos/tmpclasses/example/stock/AlertDatabase$1.class
-sun-wtk/apps/demos/tmpclasses/example/stock/AlertDatabase$AlertComparator.class
-sun-wtk/apps/demos/tmpclasses/example/stock/AlertDatabase$AlertFilter.class
-sun-wtk/apps/demos/tmpclasses/example/stock/AlertDatabase.class
-sun-wtk/apps/demos/tmpclasses/example/stock/Database.class
-sun-wtk/apps/demos/tmpclasses/example/stock/Stock.class
-sun-wtk/apps/demos/tmpclasses/example/stock/StockDatabase$1.class
-sun-wtk/apps/demos/tmpclasses/example/stock/StockDatabase$StockComparator.class
-sun-wtk/apps/demos/tmpclasses/example/stock/StockDatabase$StockFilter.class
-sun-wtk/apps/demos/tmpclasses/example/stock/StockDatabase.class
-sun-wtk/apps/demos/tmpclasses/example/stock/StockMIDlet$1.class
-sun-wtk/apps/demos/tmpclasses/example/stock/StockMIDlet$StockCommandListener.class
-sun-wtk/apps/demos/tmpclasses/example/stock/StockMIDlet$StockRefreshTask.class
-sun-wtk/apps/demos/tmpclasses/example/stock/StockMIDlet.class
-sun-wtk/apps/games/bin/MANIFEST.MF
-sun-wtk/apps/games/bin/build.sh
-sun-wtk/apps/games/bin/games.jad
-sun-wtk/apps/games/bin/games.jar
-sun-wtk/apps/games/bin/run.sh
-sun-wtk/apps/games/classes/example/About.class
-sun-wtk/apps/games/classes/example/pushpuzzle/Board.class
-sun-wtk/apps/games/classes/example/pushpuzzle/PushPuzzle.class
-sun-wtk/apps/games/classes/example/pushpuzzle/PushPuzzleCanvas.class
-sun-wtk/apps/games/classes/example/pushpuzzle/Score.class
-sun-wtk/apps/games/classes/example/tilepuzzle/Board$BoardCommand.class
-sun-wtk/apps/games/classes/example/tilepuzzle/Board$Piece.class
-sun-wtk/apps/games/classes/example/tilepuzzle/Board.class
-sun-wtk/apps/games/classes/example/tilepuzzle/Options.class
-sun-wtk/apps/games/classes/example/tilepuzzle/TilePuzzle.class
-sun-wtk/apps/games/classes/example/wormgame/Worm.class
-sun-wtk/apps/games/classes/example/wormgame/WormException.class
-sun-wtk/apps/games/classes/example/wormgame/WormFood.class
-sun-wtk/apps/games/classes/example/wormgame/WormLink.class
-sun-wtk/apps/games/classes/example/wormgame/WormMain.class
-sun-wtk/apps/games/classes/example/wormgame/WormPit.class
-sun-wtk/apps/games/classes/example/wormgame/WormScore.class
-sun-wtk/apps/games/project.properties
-sun-wtk/apps/games/res/example/pushpuzzle/data/screen.1
-sun-wtk/apps/games/res/example/pushpuzzle/data/screen.10
-sun-wtk/apps/games/res/example/pushpuzzle/data/screen.11
-sun-wtk/apps/games/res/example/pushpuzzle/data/screen.12
-sun-wtk/apps/games/res/example/pushpuzzle/data/screen.13
-sun-wtk/apps/games/res/example/pushpuzzle/data/screen.14
-sun-wtk/apps/games/res/example/pushpuzzle/data/screen.15
-sun-wtk/apps/games/res/example/pushpuzzle/data/screen.16
-sun-wtk/apps/games/res/example/pushpuzzle/data/screen.17
-sun-wtk/apps/games/res/example/pushpuzzle/data/screen.18
-sun-wtk/apps/games/res/example/pushpuzzle/data/screen.19
-sun-wtk/apps/games/res/example/pushpuzzle/data/screen.2
-sun-wtk/apps/games/res/example/pushpuzzle/data/screen.3
-sun-wtk/apps/games/res/example/pushpuzzle/data/screen.4
-sun-wtk/apps/games/res/example/pushpuzzle/data/screen.5
-sun-wtk/apps/games/res/example/pushpuzzle/data/screen.6
-sun-wtk/apps/games/res/example/pushpuzzle/data/screen.7
-sun-wtk/apps/games/res/example/pushpuzzle/data/screen.8
-sun-wtk/apps/games/res/example/pushpuzzle/data/screen.9
-sun-wtk/apps/games/res/example/pushpuzzle/images/Theme-1.png
-sun-wtk/apps/games/res/example/pushpuzzle/images/Theme-2.png
-sun-wtk/apps/games/res/example/pushpuzzle/images/Theme-3.png
-sun-wtk/apps/games/res/example/pushpuzzle/images/Theme-bad.png
-sun-wtk/apps/games/res/icons/App.png
-sun-wtk/apps/games/res/icons/JavaPowered-2.png
-sun-wtk/apps/games/res/icons/JavaPowered-8.png
-sun-wtk/apps/games/res/icons/PushPuzzle.png
-sun-wtk/apps/games/res/icons/TilePuzzle.png
-sun-wtk/apps/games/src/example/About.java
-sun-wtk/apps/games/src/example/pushpuzzle/Board.java
-sun-wtk/apps/games/src/example/pushpuzzle/PushPuzzle.java
-sun-wtk/apps/games/src/example/pushpuzzle/PushPuzzleCanvas.java
-sun-wtk/apps/games/src/example/pushpuzzle/Score.java
-sun-wtk/apps/games/src/example/tilepuzzle/Board.java
-sun-wtk/apps/games/src/example/tilepuzzle/Options.java
-sun-wtk/apps/games/src/example/tilepuzzle/TilePuzzle.java
-sun-wtk/apps/games/src/example/wormgame/Worm.java
-sun-wtk/apps/games/src/example/wormgame/WormException.java
-sun-wtk/apps/games/src/example/wormgame/WormFood.java
-sun-wtk/apps/games/src/example/wormgame/WormLink.java
-sun-wtk/apps/games/src/example/wormgame/WormMain.java
-sun-wtk/apps/games/src/example/wormgame/WormPit.java
-sun-wtk/apps/games/src/example/wormgame/WormScore.java
-sun-wtk/apps/games/tmpclasses/example/About.class
-sun-wtk/apps/games/tmpclasses/example/pushpuzzle/Board.class
-sun-wtk/apps/games/tmpclasses/example/pushpuzzle/PushPuzzle.class
-sun-wtk/apps/games/tmpclasses/example/pushpuzzle/PushPuzzleCanvas.class
-sun-wtk/apps/games/tmpclasses/example/pushpuzzle/Score.class
-sun-wtk/apps/games/tmpclasses/example/tilepuzzle/Board$BoardCommand.class
-sun-wtk/apps/games/tmpclasses/example/tilepuzzle/Board$Piece.class
-sun-wtk/apps/games/tmpclasses/example/tilepuzzle/Board.class
-sun-wtk/apps/games/tmpclasses/example/tilepuzzle/Options.class
-sun-wtk/apps/games/tmpclasses/example/tilepuzzle/TilePuzzle.class
-sun-wtk/apps/games/tmpclasses/example/wormgame/Worm.class
-sun-wtk/apps/games/tmpclasses/example/wormgame/WormException.class
-sun-wtk/apps/games/tmpclasses/example/wormgame/WormFood.class
-sun-wtk/apps/games/tmpclasses/example/wormgame/WormLink.class
-sun-wtk/apps/games/tmpclasses/example/wormgame/WormMain.class
-sun-wtk/apps/games/tmpclasses/example/wormgame/WormPit.class
-sun-wtk/apps/games/tmpclasses/example/wormgame/WormScore.class
+sun-wtk/apps/WMADemo/bin/MANIFEST.MF
+sun-wtk/apps/WMADemo/bin/WMADemo.jad
+sun-wtk/apps/WMADemo/bin/WMADemo.jar
+sun-wtk/apps/WMADemo/bin/build.sh
+sun-wtk/apps/WMADemo/bin/run.sh
+sun-wtk/apps/WMADemo/classes/example/cbs/CBSReceive.class
+sun-wtk/apps/WMADemo/classes/example/mms/MMSMessage.class
+sun-wtk/apps/WMADemo/classes/example/mms/MMSReceive.class
+sun-wtk/apps/WMADemo/classes/example/mms/MMSSend.class
+sun-wtk/apps/WMADemo/classes/example/mms/PartsDialog$ImageDialog.class
+sun-wtk/apps/WMADemo/classes/example/mms/PartsDialog$TextDialog.class
+sun-wtk/apps/WMADemo/classes/example/mms/PartsDialog.class
+sun-wtk/apps/WMADemo/classes/example/mms/SenderThread.class
+sun-wtk/apps/WMADemo/classes/example/sms/SMSReceive.class
+sun-wtk/apps/WMADemo/classes/example/sms/SMSSend.class
+sun-wtk/apps/WMADemo/classes/example/sms/SMSSender.class
+sun-wtk/apps/WMADemo/project.properties
+sun-wtk/apps/WMADemo/res/Duke.png
+sun-wtk/apps/WMADemo/res/Java.png
+sun-wtk/apps/WMADemo/src/example/cbs/CBSReceive.java
+sun-wtk/apps/WMADemo/src/example/mms/MMSMessage.java
+sun-wtk/apps/WMADemo/src/example/mms/MMSReceive.java
+sun-wtk/apps/WMADemo/src/example/mms/MMSSend.java
+sun-wtk/apps/WMADemo/src/example/mms/PartsDialog.java
+sun-wtk/apps/WMADemo/src/example/mms/SenderThread.java
+sun-wtk/apps/WMADemo/src/example/sms/SMSReceive.java
+sun-wtk/apps/WMADemo/src/example/sms/SMSSend.java
+sun-wtk/apps/WMADemo/src/example/sms/SMSSender.java
+sun-wtk/apps/WMADemo/tmpclasses/example/cbs/CBSReceive.class
+sun-wtk/apps/WMADemo/tmpclasses/example/mms/MMSMessage.class
+sun-wtk/apps/WMADemo/tmpclasses/example/mms/MMSReceive.class
+sun-wtk/apps/WMADemo/tmpclasses/example/mms/MMSSend.class
+sun-wtk/apps/WMADemo/tmpclasses/example/mms/PartsDialog$ImageDialog.class
+sun-wtk/apps/WMADemo/tmpclasses/example/mms/PartsDialog$TextDialog.class
+sun-wtk/apps/WMADemo/tmpclasses/example/mms/PartsDialog.class
+sun-wtk/apps/WMADemo/tmpclasses/example/mms/SenderThread.class
+sun-wtk/apps/WMADemo/tmpclasses/example/sms/SMSReceive.class
+sun-wtk/apps/WMADemo/tmpclasses/example/sms/SMSSend.class
+sun-wtk/apps/WMADemo/tmpclasses/example/sms/SMSSender.class
 sun-wtk/apps/mmademo/bin/MANIFEST.MF
-sun-wtk/apps/mmademo/bin/build.sh
 sun-wtk/apps/mmademo/bin/mmademo.jad
 sun-wtk/apps/mmademo/bin/mmademo.jar
-sun-wtk/apps/mmademo/bin/run.sh
 sun-wtk/apps/mmademo/classes/example/mmademo/BaseListMidlet.class
+sun-wtk/apps/mmademo/classes/example/mmademo/DrummerCanvas$1.class
+sun-wtk/apps/mmademo/classes/example/mmademo/DrummerCanvas.class
+sun-wtk/apps/mmademo/classes/example/mmademo/PausingAudioTest.class
 sun-wtk/apps/mmademo/classes/example/mmademo/RingToneConverter.class
 sun-wtk/apps/mmademo/classes/example/mmademo/SimpleHttpBrowser.class
 sun-wtk/apps/mmademo/classes/example/mmademo/SimplePlayer.class
@@ -432,13 +652,17 @@ sun-wtk/apps/mmademo/classes/example/mmademo/SimplePlayerCanvas.class
 sun-wtk/apps/mmademo/classes/example/mmademo/SimplePlayerForm.class
 sun-wtk/apps/mmademo/classes/example/mmademo/SimplePlayerGUI$1.class
 sun-wtk/apps/mmademo/classes/example/mmademo/SimplePlayerGUI$Parent.class
+sun-wtk/apps/mmademo/classes/example/mmademo/SimplePlayerGUI$RecordTask.class
 sun-wtk/apps/mmademo/classes/example/mmademo/SimplePlayerGUI$SPTimerTask.class
 sun-wtk/apps/mmademo/classes/example/mmademo/SimplePlayerGUI.class
 sun-wtk/apps/mmademo/classes/example/mmademo/SimpleRmsBrowser.class
 sun-wtk/apps/mmademo/classes/example/mmademo/SimpleTones.class
+sun-wtk/apps/mmademo/classes/example/mmademo/Utils$1.class
 sun-wtk/apps/mmademo/classes/example/mmademo/Utils$BreadCrumbTrail.class
 sun-wtk/apps/mmademo/classes/example/mmademo/Utils$ContentHandler.class
+sun-wtk/apps/mmademo/classes/example/mmademo/Utils$Interruptable.class
 sun-wtk/apps/mmademo/classes/example/mmademo/Utils$QueryListener.class
+sun-wtk/apps/mmademo/classes/example/mmademo/Utils$QueryTask.class
 sun-wtk/apps/mmademo/classes/example/mmademo/Utils.class
 sun-wtk/apps/mmademo/classes/example/mmademo/VideoCanvas$1.class
 sun-wtk/apps/mmademo/classes/example/mmademo/VideoCanvas.class
@@ -447,12 +671,18 @@ sun-wtk/apps/mmademo/classes/example/mmademo/VideoPlayer.class
 sun-wtk/apps/mmademo/classes/example/mmademo/VideoTest$1.class
 sun-wtk/apps/mmademo/classes/example/mmademo/VideoTest.class
 sun-wtk/apps/mmademo/project.properties
-sun-wtk/apps/mmademo/res/audio/beethoven.txt
+sun-wtk/apps/mmademo/res/audio/amr-nb.amr
+sun-wtk/apps/mmademo/res/audio/amr-wb.awb
+sun-wtk/apps/mmademo/res/audio/beethoven.jts
 sun-wtk/apps/mmademo/res/audio/bong.wav
 sun-wtk/apps/mmademo/res/audio/pattern.mid
-sun-wtk/apps/mmademo/res/audio/test-midi.mid
+sun-wtk/apps/mmademo/res/audio/scale.mid
+sun-wtk/apps/mmademo/res/icons/App.png
 sun-wtk/apps/mmademo/res/icons/logo.png
+sun-wtk/apps/mmademo/res/video/animated_89_c.gif
 sun-wtk/apps/mmademo/src/example/mmademo/BaseListMidlet.java
+sun-wtk/apps/mmademo/src/example/mmademo/DrummerCanvas.java
+sun-wtk/apps/mmademo/src/example/mmademo/PausingAudioTest.java
 sun-wtk/apps/mmademo/src/example/mmademo/RingToneConverter.java
 sun-wtk/apps/mmademo/src/example/mmademo/SimpleHttpBrowser.java
 sun-wtk/apps/mmademo/src/example/mmademo/SimplePlayer.java
@@ -466,6 +696,9 @@ sun-wtk/apps/mmademo/src/example/mmademo/VideoCanvas.java
 sun-wtk/apps/mmademo/src/example/mmademo/VideoPlayer.java
 sun-wtk/apps/mmademo/src/example/mmademo/VideoTest.java
 sun-wtk/apps/mmademo/tmpclasses/example/mmademo/BaseListMidlet.class
+sun-wtk/apps/mmademo/tmpclasses/example/mmademo/DrummerCanvas$1.class
+sun-wtk/apps/mmademo/tmpclasses/example/mmademo/DrummerCanvas.class
+sun-wtk/apps/mmademo/tmpclasses/example/mmademo/PausingAudioTest.class
 sun-wtk/apps/mmademo/tmpclasses/example/mmademo/RingToneConverter.class
 sun-wtk/apps/mmademo/tmpclasses/example/mmademo/SimpleHttpBrowser.class
 sun-wtk/apps/mmademo/tmpclasses/example/mmademo/SimplePlayer.class
@@ -473,13 +706,17 @@ sun-wtk/apps/mmademo/tmpclasses/example/mmademo/SimplePlayerCanvas.class
 sun-wtk/apps/mmademo/tmpclasses/example/mmademo/SimplePlayerForm.class
 sun-wtk/apps/mmademo/tmpclasses/example/mmademo/SimplePlayerGUI$1.class
 sun-wtk/apps/mmademo/tmpclasses/example/mmademo/SimplePlayerGUI$Parent.class
+sun-wtk/apps/mmademo/tmpclasses/example/mmademo/SimplePlayerGUI$RecordTask.class
 sun-wtk/apps/mmademo/tmpclasses/example/mmademo/SimplePlayerGUI$SPTimerTask.class
 sun-wtk/apps/mmademo/tmpclasses/example/mmademo/SimplePlayerGUI.class
 sun-wtk/apps/mmademo/tmpclasses/example/mmademo/SimpleRmsBrowser.class
 sun-wtk/apps/mmademo/tmpclasses/example/mmademo/SimpleTones.class
+sun-wtk/apps/mmademo/tmpclasses/example/mmademo/Utils$1.class
 sun-wtk/apps/mmademo/tmpclasses/example/mmademo/Utils$BreadCrumbTrail.class
 sun-wtk/apps/mmademo/tmpclasses/example/mmademo/Utils$ContentHandler.class
+sun-wtk/apps/mmademo/tmpclasses/example/mmademo/Utils$Interruptable.class
 sun-wtk/apps/mmademo/tmpclasses/example/mmademo/Utils$QueryListener.class
+sun-wtk/apps/mmademo/tmpclasses/example/mmademo/Utils$QueryTask.class
 sun-wtk/apps/mmademo/tmpclasses/example/mmademo/Utils.class
 sun-wtk/apps/mmademo/tmpclasses/example/mmademo/VideoCanvas$1.class
 sun-wtk/apps/mmademo/tmpclasses/example/mmademo/VideoCanvas.class
@@ -487,83 +724,6 @@ sun-wtk/apps/mmademo/tmpclasses/example/mmademo/VideoPlayer$1.class
 sun-wtk/apps/mmademo/tmpclasses/example/mmademo/VideoPlayer.class
 sun-wtk/apps/mmademo/tmpclasses/example/mmademo/VideoTest$1.class
 sun-wtk/apps/mmademo/tmpclasses/example/mmademo/VideoTest.class
-sun-wtk/apps/photoalbum/bin/MANIFEST.MF
-sun-wtk/apps/photoalbum/bin/build.sh
-sun-wtk/apps/photoalbum/bin/photoalbum.jad
-sun-wtk/apps/photoalbum/bin/photoalbum.jar
-sun-wtk/apps/photoalbum/bin/run.sh
-sun-wtk/apps/photoalbum/classes/example/About.class
-sun-wtk/apps/photoalbum/classes/example/photoalbum/PhotoAlbum.class
-sun-wtk/apps/photoalbum/classes/example/photoalbum/PhotoFrame.class
-sun-wtk/apps/photoalbum/classes/example/photoalbum/TestChart.class
-sun-wtk/apps/photoalbum/project.properties
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/LightHouse-0.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/LightHouse-1.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_0.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_1.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_10.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_11.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_12.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_13.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_14.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_15.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_16.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_17.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_18.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_19.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_2.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_20.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_21.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_22.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_23.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_24.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_25.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_26.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_27.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_28.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_29.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_3.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_30.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_31.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_32.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_33.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_34.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_35.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_36.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_37.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_38.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_39.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_4.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_40.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_41.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_42.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_43.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_44.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_45.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_46.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_47.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_48.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_49.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_5.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_6.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_7.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_8.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/jc_frame_9.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/leaf.jpg
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/leaf.png
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/leafbw.jpg
-sun-wtk/apps/photoalbum/res/example/photoalbum/images/leafpg.jpg
-sun-wtk/apps/photoalbum/res/icons/Duke.png
-sun-wtk/apps/photoalbum/res/icons/JavaPowered-2.png
-sun-wtk/apps/photoalbum/res/icons/JavaPowered-8.png
-sun-wtk/apps/photoalbum/src/example/About.java
-sun-wtk/apps/photoalbum/src/example/photoalbum/PhotoAlbum.java
-sun-wtk/apps/photoalbum/src/example/photoalbum/PhotoFrame.java
-sun-wtk/apps/photoalbum/src/example/photoalbum/TestChart.java
-sun-wtk/apps/photoalbum/tmpclasses/example/About.class
-sun-wtk/apps/photoalbum/tmpclasses/example/photoalbum/PhotoAlbum.class
-sun-wtk/apps/photoalbum/tmpclasses/example/photoalbum/PhotoFrame.class
-sun-wtk/apps/photoalbum/tmpclasses/example/photoalbum/TestChart.class
 sun-wtk/bin/JadTool.jar
 sun-wtk/bin/MEKeyTool.jar
 sun-wtk/bin/activation.jar
@@ -591,121 +751,133 @@ sun-wtk/bin/wscompile
 sun-wtk/bin/xsdlib.jar
 sun-wtk/bin/zayit
 sun-wtk/copyright.html
-sun-wtk/docs/AppDemos.html
+sun-wtk/docs/BasicCustomizationGuide-html/catalog.css
+sun-wtk/docs/BasicCustomizationGuide-html/copyright.html
+sun-wtk/docs/BasicCustomizationGuide-html/document.css
+sun-wtk/docs/BasicCustomizationGuide-html/images/diamond.gif
+sun-wtk/docs/BasicCustomizationGuide-html/images/diamond_sm.gif
+sun-wtk/docs/BasicCustomizationGuide-html/images/highlight-t6.gif
+sun-wtk/docs/BasicCustomizationGuide-html/images/hilight3.gif
+sun-wtk/docs/BasicCustomizationGuide-html/images/index.gif
+sun-wtk/docs/BasicCustomizationGuide-html/images/indexx.gif
+sun-wtk/docs/BasicCustomizationGuide-html/images/mkdirhier.txt
+sun-wtk/docs/BasicCustomizationGuide-html/images/neutral-t5.gif
+sun-wtk/docs/BasicCustomizationGuide-html/images/neutral2.gif
+sun-wtk/docs/BasicCustomizationGuide-html/images/neutral8.gif
+sun-wtk/docs/BasicCustomizationGuide-html/images/next.gif
+sun-wtk/docs/BasicCustomizationGuide-html/images/nextx.gif
+sun-wtk/docs/BasicCustomizationGuide-html/images/palm_font.gif
+sun-wtk/docs/BasicCustomizationGuide-html/images/pressed-t7.gif
+sun-wtk/docs/BasicCustomizationGuide-html/images/pressed4.gif
+sun-wtk/docs/BasicCustomizationGuide-html/images/prev.gif
+sun-wtk/docs/BasicCustomizationGuide-html/images/prevx.gif
+sun-wtk/docs/BasicCustomizationGuide-html/images/toc.gif
+sun-wtk/docs/BasicCustomizationGuide-html/images/tocx.gif
+sun-wtk/docs/BasicCustomizationGuide-html/images/triangle.gif
+sun-wtk/docs/BasicCustomizationGuide-html/images/wj29.gif
+sun-wtk/docs/BasicCustomizationGuide-html/index.html
+sun-wtk/docs/BasicCustomizationGuide-html/indexa.html
+sun-wtk/docs/BasicCustomizationGuide-html/introduction.html
+sun-wtk/docs/BasicCustomizationGuide-html/obfuscator.html
+sun-wtk/docs/BasicCustomizationGuide-html/preface.html
+sun-wtk/docs/BasicCustomizationGuide-html/skinning.html
 sun-wtk/docs/BasicCustomizationGuide.pdf
-sun-wtk/docs/BasicCustomizationGuide_HTML/Ap_obfuscator.html
-sun-wtk/docs/BasicCustomizationGuide_HTML/Ap_prop.html
-sun-wtk/docs/BasicCustomizationGuide_HTML/Ap_wmabridge.html
-sun-wtk/docs/BasicCustomizationGuide_HTML/catalog.css
-sun-wtk/docs/BasicCustomizationGuide_HTML/ch_creating-property-files.html
-sun-wtk/docs/BasicCustomizationGuide_HTML/ch_intr-bin.html
-sun-wtk/docs/BasicCustomizationGuide_HTML/ch_tutorial-bin.html
-sun-wtk/docs/BasicCustomizationGuide_HTML/copyright.html
-sun-wtk/docs/BasicCustomizationGuide_HTML/document.css
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/12313.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/ABC11.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/Ap_propa.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/abc_lower12.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/batt2.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/ch_creating-property-files2.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/ch_creating-property-files4.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/ch_tutorial-bin3.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/ch_tutorial-bina.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/diamond.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/diamond_sm.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/down14.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/hira10.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/index.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/indexx.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/internet4.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/kana9.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/left7.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/mkdirhier.txt
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/newph1_blank2.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/next.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/nextx.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/palm_font3.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/prev.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/prevx.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/reception5.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/right6.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/secure15.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/soft-buttons.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/sym8.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/toc.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/tocx.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/triangle.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/trusted16.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/unsecure17.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/images/up3.gif
-sun-wtk/docs/BasicCustomizationGuide_HTML/index.html
-sun-wtk/docs/BasicCustomizationGuide_HTML/preface.html
-sun-wtk/docs/BasicCustomizationGuide_HTML/techmanual-binIX.html
-sun-wtk/docs/BasicCustomizationGuide_HTML/techmanual-binLOF.html
-sun-wtk/docs/BasicCustomizationGuide_HTML/techmanual-binLOT.html
-sun-wtk/docs/MMADemo.html
-sun-wtk/docs/SMSDemo.html
+sun-wtk/docs/UserGuide-html/bluetooth.html
+sun-wtk/docs/UserGuide-html/catalog.css
+sun-wtk/docs/UserGuide-html/commandline.html
+sun-wtk/docs/UserGuide-html/copyright.html
+sun-wtk/docs/UserGuide-html/demonstrations.html
+sun-wtk/docs/UserGuide-html/developing.html
+sun-wtk/docs/UserGuide-html/document.css
+sun-wtk/docs/UserGuide-html/emulator.html
+sun-wtk/docs/UserGuide-html/images/BluetoothDemo-client4.gif
+sun-wtk/docs/UserGuide-html/images/BluetoothDemo-server.gif
+sun-wtk/docs/UserGuide-html/images/DefaultColorPhone-callouts.gif
+sun-wtk/docs/UserGuide-html/images/Demo3D-Life3D.gif
+sun-wtk/docs/UserGuide-html/images/Demo3D-PogoRoo4.gif
+sun-wtk/docs/UserGuide-html/images/Demo3D-retainedmode5.gif
+sun-wtk/docs/UserGuide-html/images/ObexDemo-image10.gif
+sun-wtk/docs/UserGuide-html/images/ObexDemo-permission9.gif
+sun-wtk/docs/UserGuide-html/images/ObexDemo-waiting8.gif
+sun-wtk/docs/UserGuide-html/images/PDAPDemo-Readme12.gif
+sun-wtk/docs/UserGuide-html/images/PDAPDemo-commit17.gif
+sun-wtk/docs/UserGuide-html/images/PDAPDemo-empty15.gif
+sun-wtk/docs/UserGuide-html/images/PDAPDemo-listtype14.gif
+sun-wtk/docs/UserGuide-html/images/PDAPDemo-newcontact16.gif
+sun-wtk/docs/UserGuide-html/images/PDAPDemo-root111.gif
+sun-wtk/docs/UserGuide-html/images/TinyMIDlet6.gif
+sun-wtk/docs/UserGuide-html/images/WMADemo-mmsaddress6.gif
+sun-wtk/docs/UserGuide-html/images/WMADemo-mmsparts7.gif
+sun-wtk/docs/UserGuide-html/images/WMADemo-mmsreceive9.gif
+sun-wtk/docs/UserGuide-html/images/WMADemo-push19.gif
+sun-wtk/docs/UserGuide-html/images/WMADemo-send18.gif
+sun-wtk/docs/UserGuide-html/images/WMADemo-smsdone20.gif
+sun-wtk/docs/UserGuide-html/images/ams17.gif
+sun-wtk/docs/UserGuide-html/images/ams28.gif
+sun-wtk/docs/UserGuide-html/images/ams39.gif
+sun-wtk/docs/UserGuide-html/images/ams410.gif
+sun-wtk/docs/UserGuide-html/images/attributes12.gif
+sun-wtk/docs/UserGuide-html/images/buildsuccess4.gif
+sun-wtk/docs/UserGuide-html/images/certificatemanager4.gif
+sun-wtk/docs/UserGuide-html/images/demonstrations13.gif
+sun-wtk/docs/UserGuide-html/images/diamond.gif
+sun-wtk/docs/UserGuide-html/images/diamond_sm.gif
+sun-wtk/docs/UserGuide-html/images/filesystem-roots.gif
+sun-wtk/docs/UserGuide-html/images/index.gif
+sun-wtk/docs/UserGuide-html/images/indexx.gif
+sun-wtk/docs/UserGuide-html/images/ktoolbar.gif
+sun-wtk/docs/UserGuide-html/images/ktoolbar22.gif
+sun-wtk/docs/UserGuide-html/images/ktoolbara.gif
+sun-wtk/docs/UserGuide-html/images/memorymonitor-objects4.gif
+sun-wtk/docs/UserGuide-html/images/memorymonitor3.gif
+sun-wtk/docs/UserGuide-html/images/midlets13.gif
+sun-wtk/docs/UserGuide-html/images/mkdirhier.txt
+sun-wtk/docs/UserGuide-html/images/networkmonitor-sms8.gif
+sun-wtk/docs/UserGuide-html/images/networkmonitor5.gif
+sun-wtk/docs/UserGuide-html/images/newkeypair3.gif
+sun-wtk/docs/UserGuide-html/images/newproject2.gif
+sun-wtk/docs/UserGuide-html/images/newproject23.gif
+sun-wtk/docs/UserGuide-html/images/next.gif
+sun-wtk/docs/UserGuide-html/images/nextx.gif
+sun-wtk/docs/UserGuide-html/images/openproject23.gif
+sun-wtk/docs/UserGuide-html/images/performance3.gif
+sun-wtk/docs/UserGuide-html/images/permissions.gif
+sun-wtk/docs/UserGuide-html/images/preferences-bluetooth.gif
+sun-wtk/docs/UserGuide-html/images/preferences-monitor.gif
+sun-wtk/docs/UserGuide-html/images/preferences-wma.gif
+sun-wtk/docs/UserGuide-html/images/prev.gif
+sun-wtk/docs/UserGuide-html/images/prevx.gif
+sun-wtk/docs/UserGuide-html/images/profiler2.gif
+sun-wtk/docs/UserGuide-html/images/run15.gif
+sun-wtk/docs/UserGuide-html/images/run211.gif
+sun-wtk/docs/UserGuide-html/images/settings-apiselection.gif
+sun-wtk/docs/UserGuide-html/images/settings-pushregistry4.gif
+sun-wtk/docs/UserGuide-html/images/sign2.gif
+sun-wtk/docs/UserGuide-html/images/storage2.gif
+sun-wtk/docs/UserGuide-html/images/stubgenerator.gif
+sun-wtk/docs/UserGuide-html/images/toc.gif
+sun-wtk/docs/UserGuide-html/images/tocx.gif
+sun-wtk/docs/UserGuide-html/images/triangle.gif
+sun-wtk/docs/UserGuide-html/images/wmaconsole-sendbinary4.gif
+sun-wtk/docs/UserGuide-html/images/wmaconsole-sendcbs5.gif
+sun-wtk/docs/UserGuide-html/images/wmaconsole-sendmms27.gif
+sun-wtk/docs/UserGuide-html/images/wmaconsole-sendmms6.gif
+sun-wtk/docs/UserGuide-html/images/wmaconsole-sendtext3.gif
+sun-wtk/docs/UserGuide-html/images/wmaconsole2.gif
+sun-wtk/docs/UserGuide-html/index.html
+sun-wtk/docs/UserGuide-html/indexa.html
+sun-wtk/docs/UserGuide-html/internationalization.html
+sun-wtk/docs/UserGuide-html/introduction.html
+sun-wtk/docs/UserGuide-html/mmapi.html
+sun-wtk/docs/UserGuide-html/mobile3d.html
+sun-wtk/docs/UserGuide-html/monitoring.html
+sun-wtk/docs/UserGuide-html/pdap.html
+sun-wtk/docs/UserGuide-html/preface.html
+sun-wtk/docs/UserGuide-html/projects.html
+sun-wtk/docs/UserGuide-html/security.html
+sun-wtk/docs/UserGuide-html/webservices.html
+sun-wtk/docs/UserGuide-html/wma.html
 sun-wtk/docs/UserGuide.pdf
-sun-wtk/docs/UserGuide_HTML/Ap_Attributes.html
-sun-wtk/docs/UserGuide_HTML/Ap_CMU.html
-sun-wtk/docs/UserGuide_HTML/Ap_DemoMidlets.html
-sun-wtk/docs/UserGuide_HTML/Ap_LanguageSupport.html
-sun-wtk/docs/UserGuide_HTML/catalog.css
-sun-wtk/docs/UserGuide_HTML/ch_emulator.html
-sun-wtk/docs/UserGuide_HTML/ch_intr.html
-sun-wtk/docs/UserGuide_HTML/ch_ktoolbar.html
-sun-wtk/docs/UserGuide_HTML/copyright.html
-sun-wtk/docs/UserGuide_HTML/deploy-midlets.html
-sun-wtk/docs/UserGuide_HTML/document.css
-sun-wtk/docs/UserGuide_HTML/images/MM_PH_Neut4.gif
-sun-wtk/docs/UserGuide_HTML/images/certificate-manager2.gif
-sun-wtk/docs/UserGuide_HTML/images/ch_emulator5.gif
-sun-wtk/docs/UserGuide_HTML/images/deploy-midletsa.gif
-sun-wtk/docs/UserGuide_HTML/images/diamond.gif
-sun-wtk/docs/UserGuide_HTML/images/diamond_sm.gif
-sun-wtk/docs/UserGuide_HTML/images/import-key4.gif
-sun-wtk/docs/UserGuide_HTML/images/index.gif
-sun-wtk/docs/UserGuide_HTML/images/indexx.gif
-sun-wtk/docs/UserGuide_HTML/images/key-pair_generator.gif
-sun-wtk/docs/UserGuide_HTML/images/ktb-emul-preferences-midp3.gif
-sun-wtk/docs/UserGuide_HTML/images/ktb-new-project-console2.gif
-sun-wtk/docs/UserGuide_HTML/images/ktb-package-console-output3.gif
-sun-wtk/docs/UserGuide_HTML/images/ktbscreen-midp.gif
-sun-wtk/docs/UserGuide_HTML/images/ktoolbar-settings7.gif
-sun-wtk/docs/UserGuide_HTML/images/memorymonitor-graph2.gif
-sun-wtk/docs/UserGuide_HTML/images/memorymonitor-objects5.gif
-sun-wtk/docs/UserGuide_HTML/images/memorymonitor3.gif
-sun-wtk/docs/UserGuide_HTML/images/message-body7.gif
-sun-wtk/docs/UserGuide_HTML/images/mkdirhier.txt
-sun-wtk/docs/UserGuide_HTML/images/networkmonitor4.gif
-sun-wtk/docs/UserGuide_HTML/images/new-alias3.gif
-sun-wtk/docs/UserGuide_HTML/images/next.gif
-sun-wtk/docs/UserGuide_HTML/images/nextx.gif
-sun-wtk/docs/UserGuide_HTML/images/permission-selector5.gif
-sun-wtk/docs/UserGuide_HTML/images/prev.gif
-sun-wtk/docs/UserGuide_HTML/images/prevx.gif
-sun-wtk/docs/UserGuide_HTML/images/profile-win.gif
-sun-wtk/docs/UserGuide_HTML/images/push-registry8.gif
-sun-wtk/docs/UserGuide_HTML/images/qwertydevice.gif
-sun-wtk/docs/UserGuide_HTML/images/sendsms2.gif
-sun-wtk/docs/UserGuide_HTML/images/speed-settings6.gif
-sun-wtk/docs/UserGuide_HTML/images/stub_generator4.gif
-sun-wtk/docs/UserGuide_HTML/images/target6.gif
-sun-wtk/docs/UserGuide_HTML/images/toc.gif
-sun-wtk/docs/UserGuide_HTML/images/tocx.gif
-sun-wtk/docs/UserGuide_HTML/images/triangle.gif
-sun-wtk/docs/UserGuide_HTML/images/util-win2.gif
-sun-wtk/docs/UserGuide_HTML/images/wma-console.gif
-sun-wtk/docs/UserGuide_HTML/index.html.html
-sun-wtk/docs/UserGuide_HTML/perftuning.html
-sun-wtk/docs/UserGuide_HTML/preface.html
-sun-wtk/docs/UserGuide_HTML/security.html
-sun-wtk/docs/UserGuide_HTML/testapps.html
-sun-wtk/docs/UserGuide_HTML/userguide-midpIX.html
-sun-wtk/docs/UserGuide_HTML/userguide-midpLOF.html
-sun-wtk/docs/UserGuide_HTML/userguide-midpLOT.html
-sun-wtk/docs/UserGuide_HTML/wma.html
-sun-wtk/docs/WebServicesDemo.html
 sun-wtk/docs/api/j2me-rpc/LICENSE.html
 sun-wtk/docs/api/j2me-rpc/allclasses-frame.html
 sun-wtk/docs/api/j2me-rpc/allclasses-noframe.html
@@ -817,6 +989,8 @@ sun-wtk/docs/api/j2me-xml/packages.html
 sun-wtk/docs/api/j2me-xml/serialized-form.html
 sun-wtk/docs/api/j2me-xml/stylesheet.css
 sun-wtk/docs/api/midp/allclasses-frame.html
+sun-wtk/docs/api/midp/allclasses-noframe.html
+sun-wtk/docs/api/midp/constant-values.html
 sun-wtk/docs/api/midp/deprecated-list.html
 sun-wtk/docs/api/midp/help-doc.html
 sun-wtk/docs/api/midp/index-all.html
@@ -870,8 +1044,10 @@ sun-wtk/docs/api/midp/java/lang/Character.html
 sun-wtk/docs/api/midp/java/lang/Class.html
 sun-wtk/docs/api/midp/java/lang/ClassCastException.html
 sun-wtk/docs/api/midp/java/lang/ClassNotFoundException.html
+sun-wtk/docs/api/midp/java/lang/Double.html
 sun-wtk/docs/api/midp/java/lang/Error.html
 sun-wtk/docs/api/midp/java/lang/Exception.html
+sun-wtk/docs/api/midp/java/lang/Float.html
 sun-wtk/docs/api/midp/java/lang/IllegalAccessException.html
 sun-wtk/docs/api/midp/java/lang/IllegalArgumentException.html
 sun-wtk/docs/api/midp/java/lang/IllegalMonitorStateException.html
@@ -884,6 +1060,7 @@ sun-wtk/docs/api/midp/java/lang/InterruptedException.html
 sun-wtk/docs/api/midp/java/lang/Long.html
 sun-wtk/docs/api/midp/java/lang/Math.html
 sun-wtk/docs/api/midp/java/lang/NegativeArraySizeException.html
+sun-wtk/docs/api/midp/java/lang/NoClassDefFoundError.html
 sun-wtk/docs/api/midp/java/lang/NullPointerException.html
 sun-wtk/docs/api/midp/java/lang/NumberFormatException.html
 sun-wtk/docs/api/midp/java/lang/Object.html
@@ -909,8 +1086,10 @@ sun-wtk/docs/api/midp/java/lang/class-use/Character.html
 sun-wtk/docs/api/midp/java/lang/class-use/Class.html
 sun-wtk/docs/api/midp/java/lang/class-use/ClassCastException.html
 sun-wtk/docs/api/midp/java/lang/class-use/ClassNotFoundException.html
+sun-wtk/docs/api/midp/java/lang/class-use/Double.html
 sun-wtk/docs/api/midp/java/lang/class-use/Error.html
 sun-wtk/docs/api/midp/java/lang/class-use/Exception.html
+sun-wtk/docs/api/midp/java/lang/class-use/Float.html
 sun-wtk/docs/api/midp/java/lang/class-use/IllegalAccessException.html
 sun-wtk/docs/api/midp/java/lang/class-use/IllegalArgumentException.html
 sun-wtk/docs/api/midp/java/lang/class-use/IllegalMonitorStateException.html
@@ -923,6 +1102,7 @@ sun-wtk/docs/api/midp/java/lang/class-use/InterruptedException.html
 sun-wtk/docs/api/midp/java/lang/class-use/Long.html
 sun-wtk/docs/api/midp/java/lang/class-use/Math.html
 sun-wtk/docs/api/midp/java/lang/class-use/NegativeArraySizeException.html
+sun-wtk/docs/api/midp/java/lang/class-use/NoClassDefFoundError.html
 sun-wtk/docs/api/midp/java/lang/class-use/NullPointerException.html
 sun-wtk/docs/api/midp/java/lang/class-use/NumberFormatException.html
 sun-wtk/docs/api/midp/java/lang/class-use/Object.html
@@ -1178,6 +1358,7 @@ sun-wtk/docs/api/midp/overview-summary.html
 sun-wtk/docs/api/midp/overview-tree.html
 sun-wtk/docs/api/midp/package-list
 sun-wtk/docs/api/midp/packages.html
+sun-wtk/docs/api/midp/resources/inherit.gif
 sun-wtk/docs/api/midp/serialized-form.html
 sun-wtk/docs/api/midp/stylesheet.css
 sun-wtk/docs/api/mmapi/1-ds-player.gif
@@ -1230,142 +1411,9 @@ sun-wtk/docs/api/mmapi/package-list
 sun-wtk/docs/api/mmapi/packages.html
 sun-wtk/docs/api/mmapi/serialized-form.html
 sun-wtk/docs/api/mmapi/stylesheet.css
-sun-wtk/docs/api/wma/allclasses-frame.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/cbs/Protocol.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/cbs/class-use/Protocol.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/cbs/package-frame.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/cbs/package-summary.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/cbs/package-tree.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/cbs/package-use.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/BinaryObject.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/CommImpl.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/DatagramImpl.DatagramNotifier.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/DatagramImpl.DatagramReader.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/DatagramImpl.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/DatagramRecord.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/MessageObject.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/Protocol.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/TextEncoder.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/TextObject.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/TransportImpl.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/TransportMessage.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/class-use/BinaryObject.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/class-use/CommImpl.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/class-use/DatagramImpl.DatagramNotifier.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/class-use/DatagramImpl.DatagramReader.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/class-use/DatagramImpl.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/class-use/DatagramRecord.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/class-use/MessageObject.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/class-use/Protocol.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/class-use/TextEncoder.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/class-use/TextObject.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/class-use/TransportImpl.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/class-use/TransportMessage.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/package-frame.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/package-summary.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/package-tree.html
-sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/package-use.html
-sun-wtk/docs/api/wma/deprecated-list.html
-sun-wtk/docs/api/wma/help-doc.html
-sun-wtk/docs/api/wma/index-all.html
-sun-wtk/docs/api/wma/index.html
-sun-wtk/docs/api/wma/javax/microedition/io/CommConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/Connection.html
-sun-wtk/docs/api/wma/javax/microedition/io/ConnectionNotFoundException.html
-sun-wtk/docs/api/wma/javax/microedition/io/Connector.html
-sun-wtk/docs/api/wma/javax/microedition/io/ContentConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/Datagram.html
-sun-wtk/docs/api/wma/javax/microedition/io/DatagramConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/HttpConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/HttpsConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/InputConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/OutputConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/PushRegistry.html
-sun-wtk/docs/api/wma/javax/microedition/io/SecureConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/SecurityInfo.html
-sun-wtk/docs/api/wma/javax/microedition/io/ServerSocketConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/SocketConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/StreamConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/StreamConnectionNotifier.html
-sun-wtk/docs/api/wma/javax/microedition/io/UDPDatagramConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/class-use/CommConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/class-use/Connection.html
-sun-wtk/docs/api/wma/javax/microedition/io/class-use/ConnectionNotFoundException.html
-sun-wtk/docs/api/wma/javax/microedition/io/class-use/Connector.html
-sun-wtk/docs/api/wma/javax/microedition/io/class-use/ContentConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/class-use/Datagram.html
-sun-wtk/docs/api/wma/javax/microedition/io/class-use/DatagramConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/class-use/HttpConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/class-use/HttpsConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/class-use/InputConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/class-use/OutputConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/class-use/PushRegistry.html
-sun-wtk/docs/api/wma/javax/microedition/io/class-use/SecureConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/class-use/SecurityInfo.html
-sun-wtk/docs/api/wma/javax/microedition/io/class-use/ServerSocketConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/class-use/SocketConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/class-use/StreamConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/class-use/StreamConnectionNotifier.html
-sun-wtk/docs/api/wma/javax/microedition/io/class-use/UDPDatagramConnection.html
-sun-wtk/docs/api/wma/javax/microedition/io/doc-files/MIDP_Networking-4.gif
-sun-wtk/docs/api/wma/javax/microedition/io/package-frame.html
-sun-wtk/docs/api/wma/javax/microedition/io/package-summary.html
-sun-wtk/docs/api/wma/javax/microedition/io/package-tree.html
-sun-wtk/docs/api/wma/javax/microedition/io/package-use.html
-sun-wtk/docs/api/wma/javax/wireless/messaging/BinaryMessage.html
-sun-wtk/docs/api/wma/javax/wireless/messaging/Message.html
-sun-wtk/docs/api/wma/javax/wireless/messaging/MessageConnection.html
-sun-wtk/docs/api/wma/javax/wireless/messaging/MessageListener.html
-sun-wtk/docs/api/wma/javax/wireless/messaging/TextMessage.html
-sun-wtk/docs/api/wma/javax/wireless/messaging/class-use/BinaryMessage.html
-sun-wtk/docs/api/wma/javax/wireless/messaging/class-use/Message.html
-sun-wtk/docs/api/wma/javax/wireless/messaging/class-use/MessageConnection.html
-sun-wtk/docs/api/wma/javax/wireless/messaging/class-use/MessageListener.html
-sun-wtk/docs/api/wma/javax/wireless/messaging/class-use/TextMessage.html
-sun-wtk/docs/api/wma/javax/wireless/messaging/package-frame.html
-sun-wtk/docs/api/wma/javax/wireless/messaging/package-summary.html
-sun-wtk/docs/api/wma/javax/wireless/messaging/package-tree.html
-sun-wtk/docs/api/wma/javax/wireless/messaging/package-use.html
-sun-wtk/docs/api/wma/overview-frame.html
-sun-wtk/docs/api/wma/overview-summary.html
-sun-wtk/docs/api/wma/overview-tree.html
-sun-wtk/docs/api/wma/package-list
-sun-wtk/docs/api/wma/packages.html
-sun-wtk/docs/api/wma/serialized-form.html
-sun-wtk/docs/api/wma/stylesheet.css
 sun-wtk/docs/document.css
-sun-wtk/docs/images/demo-url.gif
-sun-wtk/docs/images/error.gif
-sun-wtk/docs/images/launch-serverscript.gif
-sun-wtk/docs/images/sms-hello.gif
-sun-wtk/docs/images/sms-receive.gif
-sun-wtk/docs/images/sms-reply.gif
-sun-wtk/docs/images/sms-send.gif
-sun-wtk/docs/images/stubgen-dialog.gif
-sun-wtk/docs/images/wma-fine.gif
-sun-wtk/docs/wtk/wmaBridge/allclasses-frame.html
-sun-wtk/docs/wtk/wmaBridge/allclasses-noframe.html
-sun-wtk/docs/wtk/wmaBridge/com/sun/kvem/midp/io/j2se/wma/Message.html
-sun-wtk/docs/wtk/wmaBridge/com/sun/kvem/midp/io/j2se/wma/client/PhoneNumberNotAvailableException.html
-sun-wtk/docs/wtk/wmaBridge/com/sun/kvem/midp/io/j2se/wma/client/WMAClient.MessageListener.html
-sun-wtk/docs/wtk/wmaBridge/com/sun/kvem/midp/io/j2se/wma/client/WMAClient.MessageListenerAdapter.html
-sun-wtk/docs/wtk/wmaBridge/com/sun/kvem/midp/io/j2se/wma/client/WMAClient.html
-sun-wtk/docs/wtk/wmaBridge/com/sun/kvem/midp/io/j2se/wma/client/package-frame.html
-sun-wtk/docs/wtk/wmaBridge/com/sun/kvem/midp/io/j2se/wma/client/package-summary.html
-sun-wtk/docs/wtk/wmaBridge/com/sun/kvem/midp/io/j2se/wma/client/package-tree.html
-sun-wtk/docs/wtk/wmaBridge/com/sun/kvem/midp/io/j2se/wma/package-frame.html
-sun-wtk/docs/wtk/wmaBridge/com/sun/kvem/midp/io/j2se/wma/package-summary.html
-sun-wtk/docs/wtk/wmaBridge/com/sun/kvem/midp/io/j2se/wma/package-tree.html
-sun-wtk/docs/wtk/wmaBridge/constant-values.html
-sun-wtk/docs/wtk/wmaBridge/index.html
-sun-wtk/docs/wtk/wmaBridge/overview-frame.html
-sun-wtk/docs/wtk/wmaBridge/overview-summary.html
-sun-wtk/docs/wtk/wmaBridge/overview-tree.html
-sun-wtk/docs/wtk/wmaBridge/package-list
-sun-wtk/docs/wtk/wmaBridge/packages.html
-sun-wtk/docs/wtk/wmaBridge/serialized-form.html
-sun-wtk/docs/wtk/wmaBridge/stylesheet.css
-sun-wtk/document.css
+sun-wtk/docs/images/email.gif
+sun-wtk/faq.html
 sun-wtk/index.html
 sun-wtk/lib/checkbox_off.png
 sun-wtk/lib/checkbox_on.png
@@ -1382,6 +1430,9 @@ sun-wtk/lib/gauge_rightarrow.png
 sun-wtk/lib/incremental_strip.png
 sun-wtk/lib/internal.config
 sun-wtk/lib/j2me-ws.jar
+sun-wtk/lib/jsr082.jar
+sun-wtk/lib/jsr184.jar
+sun-wtk/lib/jsr75.jar
 sun-wtk/lib/link_horizontal.png
 sun-wtk/lib/link_vertical.png
 sun-wtk/lib/midpapi10.jar
@@ -1393,18 +1444,20 @@ sun-wtk/lib/popup_scrollup.png
 sun-wtk/lib/radio_off.png
 sun-wtk/lib/radio_on.png
 sun-wtk/lib/security_query.png
+sun-wtk/lib/soundbank.dls
 sun-wtk/lib/system.config
 sun-wtk/lib/ticker_border.png
 sun-wtk/lib/trustedmidlet_icon.png
-sun-wtk/lib/wma.jar
-sun-wtk/wtk-email.gif
+sun-wtk/lib/wma11.jar
+sun-wtk/lib/wma20.jar
 sun-wtk/wtklib/FreeBSD/ktools.properties
 sun-wtk/wtklib/customjmf.jar
 sun-wtk/wtklib/default.prj
 sun-wtk/wtklib/devices/DefaultColorPhone/DefaultColorPhone.properties
-sun-wtk/wtklib/devices/DefaultColorPhone/PansiesDepressed.png
-sun-wtk/wtklib/devices/DefaultColorPhone/PansiesHiLite.png
-sun-wtk/wtklib/devices/DefaultColorPhone/PansiesNormal.png
+sun-wtk/wtklib/devices/DefaultColorPhone/hilight.png
+sun-wtk/wtklib/devices/DefaultColorPhone/net_indicator.png
+sun-wtk/wtklib/devices/DefaultColorPhone/neutral.png
+sun-wtk/wtklib/devices/DefaultColorPhone/pressed.png
 sun-wtk/wtklib/devices/DefaultGrayPhone/DefaultGrayPhone.properties
 sun-wtk/wtklib/devices/DefaultGrayPhone/ph1_highlight.png
 sun-wtk/wtklib/devices/DefaultGrayPhone/ph1_neut.png
@@ -1442,6 +1495,7 @@ sun-wtk/wtklib/devices/Share/sym.gif
 sun-wtk/wtklib/devices/Share/trusted.png
 sun-wtk/wtklib/devices/Share/unsecure.gif
 sun-wtk/wtklib/devices/Share/up.gif
+sun-wtk/wtklib/devices/Share/vibrate.wav
 sun-wtk/wtklib/devices/Sounds/0.au
 sun-wtk/wtklib/devices/Sounds/1.au
 sun-wtk/wtklib/devices/Sounds/2.au
@@ -1454,11 +1508,23 @@ sun-wtk/wtklib/devices/Sounds/8.au
 sun-wtk/wtklib/devices/Sounds/9.au
 sun-wtk/wtklib/emptyapi.zip
 sun-wtk/wtklib/emulator.properties
+sun-wtk/wtklib/gcf-op.jar
 sun-wtk/wtklib/images/AboutDialogBox_TopGraphic.png
 sun-wtk/wtklib/images/MemoryMonitor.gif
 sun-wtk/wtklib/images/NetworkMonitor.gif
 sun-wtk/wtklib/images/Profiler.gif
 sun-wtk/wtklib/images/about.gif
+sun-wtk/wtklib/images/bluetooth-in.gif
+sun-wtk/wtklib/images/bluetooth-out.gif
+sun-wtk/wtklib/images/btgoep-in.gif
+sun-wtk/wtklib/images/btgoep-msg.gif
+sun-wtk/wtklib/images/btgoep-out.gif
+sun-wtk/wtklib/images/btl2cap-in.gif
+sun-wtk/wtklib/images/btl2cap-msg.gif
+sun-wtk/wtklib/images/btl2cap-out.gif
+sun-wtk/wtklib/images/btspp-in.gif
+sun-wtk/wtklib/images/btspp-msg.gif
+sun-wtk/wtklib/images/btspp-out.gif
 sun-wtk/wtklib/images/build-dis.gif
 sun-wtk/wtklib/images/build.gif
 sun-wtk/wtklib/images/cbs-in.gif
@@ -1481,7 +1547,14 @@ sun-wtk/wtklib/images/https-in.gif
 sun-wtk/wtklib/images/https-out.gif
 sun-wtk/wtklib/images/ktoolbar.gif
 sun-wtk/wtklib/images/manage-cert.gif
+sun-wtk/wtklib/images/mms-in.gif
+sun-wtk/wtklib/images/mms-out.gif
 sun-wtk/wtklib/images/new.gif
+sun-wtk/wtklib/images/notifbtgoep-msg.gif
+sun-wtk/wtklib/images/notifbtl2cap-msg.gif
+sun-wtk/wtklib/images/notifbtspp-msg.gif
+sun-wtk/wtklib/images/obex-in.gif
+sun-wtk/wtklib/images/obex-out.gif
 sun-wtk/wtklib/images/open.gif
 sun-wtk/wtklib/images/package.gif
 sun-wtk/wtklib/images/phone.gif
@@ -1494,9 +1567,11 @@ sun-wtk/wtklib/images/sign-win.gif
 sun-wtk/wtklib/images/sms-in.gif
 sun-wtk/wtklib/images/sms-out.gif
 sun-wtk/wtklib/images/socket-in.gif
+sun-wtk/wtklib/images/socket-msg.gif
 sun-wtk/wtklib/images/socket-out.gif
 sun-wtk/wtklib/images/splash.gif
 sun-wtk/wtklib/images/ssl-in.gif
+sun-wtk/wtklib/images/ssl-msg.gif
 sun-wtk/wtklib/images/ssl-out.gif
 sun-wtk/wtklib/images/up.gif
 sun-wtk/wtklib/images/utils.gif
@@ -1518,42 +1593,14 @@ sun-wtk/wtklib/lime.jar
 @dirrm sun-wtk/wtklib
 @dirrm sun-wtk/sessions
 @dirrm sun-wtk/lib
-@dirrm sun-wtk/docs/wtk/wmaBridge/com/sun/kvem/midp/io/j2se/wma/client
-@dirrm sun-wtk/docs/wtk/wmaBridge/com/sun/kvem/midp/io/j2se/wma
-@dirrm sun-wtk/docs/wtk/wmaBridge/com/sun/kvem/midp/io/j2se
-@dirrm sun-wtk/docs/wtk/wmaBridge/com/sun/kvem/midp/io
-@dirrm sun-wtk/docs/wtk/wmaBridge/com/sun/kvem/midp
-@dirrm sun-wtk/docs/wtk/wmaBridge/com/sun/kvem
-@dirrm sun-wtk/docs/wtk/wmaBridge/com/sun
-@dirrm sun-wtk/docs/wtk/wmaBridge/com
-@dirrm sun-wtk/docs/wtk/wmaBridge
-@dirrm sun-wtk/docs/wtk
-@dirrm sun-wtk/docs/images/SCCS
 @dirrm sun-wtk/docs/images
-@dirrm sun-wtk/docs/api/wma/javax/wireless/messaging/class-use
-@dirrm sun-wtk/docs/api/wma/javax/wireless/messaging
-@dirrm sun-wtk/docs/api/wma/javax/wireless
-@dirrm sun-wtk/docs/api/wma/javax/microedition/io/doc-files
-@dirrm sun-wtk/docs/api/wma/javax/microedition/io/class-use
-@dirrm sun-wtk/docs/api/wma/javax/microedition/io
-@dirrm sun-wtk/docs/api/wma/javax/microedition
-@dirrm sun-wtk/docs/api/wma/javax
-@dirrm sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms/class-use
-@dirrm sun-wtk/docs/api/wma/com/sun/midp/io/j2me/sms
-@dirrm sun-wtk/docs/api/wma/com/sun/midp/io/j2me/cbs/class-use
-@dirrm sun-wtk/docs/api/wma/com/sun/midp/io/j2me/cbs
-@dirrm sun-wtk/docs/api/wma/com/sun/midp/io/j2me
-@dirrm sun-wtk/docs/api/wma/com/sun/midp/io
-@dirrm sun-wtk/docs/api/wma/com/sun/midp
-@dirrm sun-wtk/docs/api/wma/com/sun
-@dirrm sun-wtk/docs/api/wma/com
-@dirrm sun-wtk/docs/api/wma
 @dirrm sun-wtk/docs/api/mmapi/javax/microedition/media/protocol
 @dirrm sun-wtk/docs/api/mmapi/javax/microedition/media/control
 @dirrm sun-wtk/docs/api/mmapi/javax/microedition/media
 @dirrm sun-wtk/docs/api/mmapi/javax/microedition
 @dirrm sun-wtk/docs/api/mmapi/javax
 @dirrm sun-wtk/docs/api/mmapi
+@dirrm sun-wtk/docs/api/midp/resources
 @dirrm sun-wtk/docs/api/midp/javax/microedition/rms/class-use
 @dirrm sun-wtk/docs/api/midp/javax/microedition/rms
 @dirrm sun-wtk/docs/api/midp/javax/microedition/pki/class-use
@@ -1611,33 +1658,13 @@ sun-wtk/wtklib/lime.jar
 @dirrm sun-wtk/docs/api/j2me-rpc/java
 @dirrm sun-wtk/docs/api/j2me-rpc
 @dirrm sun-wtk/docs/api
-@dirrm sun-wtk/docs/UserGuide_HTML/images
-@dirrm sun-wtk/docs/UserGuide_HTML
-@dirrm sun-wtk/docs/BasicCustomizationGuide_HTML/images/SCCS
-@dirrm sun-wtk/docs/BasicCustomizationGuide_HTML/images
-@dirrm sun-wtk/docs/BasicCustomizationGuide_HTML
+@dirrm sun-wtk/docs/UserGuide-html/images
+@dirrm sun-wtk/docs/UserGuide-html
+@dirrm sun-wtk/docs/BasicCustomizationGuide-html/images
+@dirrm sun-wtk/docs/BasicCustomizationGuide-html
 @dirrm sun-wtk/docs
 @dirrm sun-wtk/bin
 @dirrm sun-wtk/apps/tmplib
-@dirrm sun-wtk/apps/photoalbum/tmplib
-@dirrm sun-wtk/apps/photoalbum/tmpclasses/example/photoalbum
-@dirrm sun-wtk/apps/photoalbum/tmpclasses/example
-@dirrm sun-wtk/apps/photoalbum/tmpclasses
-@dirrm sun-wtk/apps/photoalbum/src/photoalbum
-@dirrm sun-wtk/apps/photoalbum/src/example/photoalbum
-@dirrm sun-wtk/apps/photoalbum/src/example
-@dirrm sun-wtk/apps/photoalbum/src
-@dirrm sun-wtk/apps/photoalbum/res/icons
-@dirrm sun-wtk/apps/photoalbum/res/example/photoalbum/images
-@dirrm sun-wtk/apps/photoalbum/res/example/photoalbum
-@dirrm sun-wtk/apps/photoalbum/res/example
-@dirrm sun-wtk/apps/photoalbum/res
-@dirrm sun-wtk/apps/photoalbum/lib
-@dirrm sun-wtk/apps/photoalbum/classes/example/photoalbum
-@dirrm sun-wtk/apps/photoalbum/classes/example
-@dirrm sun-wtk/apps/photoalbum/classes
-@dirrm sun-wtk/apps/photoalbum/bin
-@dirrm sun-wtk/apps/photoalbum
 @dirrm sun-wtk/apps/mmademo/tmplib
 @dirrm sun-wtk/apps/mmademo/tmpclasses/example/mmademo
 @dirrm sun-wtk/apps/mmademo/tmpclasses/example
@@ -1645,6 +1672,7 @@ sun-wtk/wtklib/lime.jar
 @dirrm sun-wtk/apps/mmademo/src/example/mmademo
 @dirrm sun-wtk/apps/mmademo/src/example
 @dirrm sun-wtk/apps/mmademo/src
+@dirrm sun-wtk/apps/mmademo/res/video
 @dirrm sun-wtk/apps/mmademo/res/icons
 @dirrm sun-wtk/apps/mmademo/res/audio
 @dirrm sun-wtk/apps/mmademo/res
@@ -1655,83 +1683,26 @@ sun-wtk/wtklib/lime.jar
 @dirrm sun-wtk/apps/mmademo/bin
 @dirrm sun-wtk/apps/mmademo
 @dirrm sun-wtk/apps/lib
-@dirrm sun-wtk/apps/games/tmplib
-@dirrm sun-wtk/apps/games/tmpclasses/example/wormgame
-@dirrm sun-wtk/apps/games/tmpclasses/example/tilepuzzle
-@dirrm sun-wtk/apps/games/tmpclasses/example/pushpuzzle
-@dirrm sun-wtk/apps/games/tmpclasses/example
-@dirrm sun-wtk/apps/games/tmpclasses
-@dirrm sun-wtk/apps/games/src/example/wormgame
-@dirrm sun-wtk/apps/games/src/example/tilepuzzle
-@dirrm sun-wtk/apps/games/src/example/pushpuzzle/images
-@dirrm sun-wtk/apps/games/src/example/pushpuzzle
-@dirrm sun-wtk/apps/games/src/example
-@dirrm sun-wtk/apps/games/src
-@dirrm sun-wtk/apps/games/res/icons
-@dirrm sun-wtk/apps/games/res/example/pushpuzzle/images
-@dirrm sun-wtk/apps/games/res/example/pushpuzzle/data
-@dirrm sun-wtk/apps/games/res/example/pushpuzzle
-@dirrm sun-wtk/apps/games/res/example
-@dirrm sun-wtk/apps/games/res
-@dirrm sun-wtk/apps/games/lib
-@dirrm sun-wtk/apps/games/classes/example/wormgame
-@dirrm sun-wtk/apps/games/classes/example/tilepuzzle
-@dirrm sun-wtk/apps/games/classes/example/pushpuzzle
-@dirrm sun-wtk/apps/games/classes/example
-@dirrm sun-wtk/apps/games/classes
-@dirrm sun-wtk/apps/games/bin
-@dirrm sun-wtk/apps/games
-@dirrm sun-wtk/apps/demos/tmplib
-@dirrm sun-wtk/apps/demos/tmpclasses/example/stock
-@dirrm sun-wtk/apps/demos/tmpclasses/example/manyballs
-@dirrm sun-wtk/apps/demos/tmpclasses/example/http
-@dirrm sun-wtk/apps/demos/tmpclasses/example/fonts
-@dirrm sun-wtk/apps/demos/tmpclasses/example/chooser
-@dirrm sun-wtk/apps/demos/tmpclasses/example/auction
-@dirrm sun-wtk/apps/demos/tmpclasses/example
-@dirrm sun-wtk/apps/demos/tmpclasses
-@dirrm sun-wtk/apps/demos/src/example/stock
-@dirrm sun-wtk/apps/demos/src/example/manyballs
-@dirrm sun-wtk/apps/demos/src/example/http
-@dirrm sun-wtk/apps/demos/src/example/fonts
-@dirrm sun-wtk/apps/demos/src/example/chooser
-@dirrm sun-wtk/apps/demos/src/example/auction
-@dirrm sun-wtk/apps/demos/src/example
-@dirrm sun-wtk/apps/demos/src
-@dirrm sun-wtk/apps/demos/res/icons
-@dirrm sun-wtk/apps/demos/res/example/http/images
-@dirrm sun-wtk/apps/demos/res/example/http
-@dirrm sun-wtk/apps/demos/res/example/auction/images
-@dirrm sun-wtk/apps/demos/res/example/auction
-@dirrm sun-wtk/apps/demos/res/example
-@dirrm sun-wtk/apps/demos/res
-@dirrm sun-wtk/apps/demos/lib
-@dirrm sun-wtk/apps/demos/classes/example/stock
-@dirrm sun-wtk/apps/demos/classes/example/manyballs
-@dirrm sun-wtk/apps/demos/classes/example/http
-@dirrm sun-wtk/apps/demos/classes/example/fonts
-@dirrm sun-wtk/apps/demos/classes/example/chooser
-@dirrm sun-wtk/apps/demos/classes/example/auction
-@dirrm sun-wtk/apps/demos/classes/example
-@dirrm sun-wtk/apps/demos/classes
-@dirrm sun-wtk/apps/demos/bin
-@dirrm sun-wtk/apps/demos
-@dirrm sun-wtk/apps/audiodemo/tmplib
-@dirrm sun-wtk/apps/audiodemo/tmpclasses/example/audiodemo
-@dirrm sun-wtk/apps/audiodemo/tmpclasses/example
-@dirrm sun-wtk/apps/audiodemo/tmpclasses
-@dirrm sun-wtk/apps/audiodemo/src/example/audiodemo
-@dirrm sun-wtk/apps/audiodemo/src/example
-@dirrm sun-wtk/apps/audiodemo/src
-@dirrm sun-wtk/apps/audiodemo/res/icons
-@dirrm sun-wtk/apps/audiodemo/res/audio
-@dirrm sun-wtk/apps/audiodemo/res
-@dirrm sun-wtk/apps/audiodemo/lib
-@dirrm sun-wtk/apps/audiodemo/classes/example/audiodemo
-@dirrm sun-wtk/apps/audiodemo/classes/example
-@dirrm sun-wtk/apps/audiodemo/classes
-@dirrm sun-wtk/apps/audiodemo/bin
-@dirrm sun-wtk/apps/audiodemo
+@dirrm sun-wtk/apps/WMADemo/tmplib
+@dirrm sun-wtk/apps/WMADemo/tmpclasses/example/sms
+@dirrm sun-wtk/apps/WMADemo/tmpclasses/example/mms
+@dirrm sun-wtk/apps/WMADemo/tmpclasses/example/cbs
+@dirrm sun-wtk/apps/WMADemo/tmpclasses/example
+@dirrm sun-wtk/apps/WMADemo/tmpclasses
+@dirrm sun-wtk/apps/WMADemo/src/example/sms
+@dirrm sun-wtk/apps/WMADemo/src/example/mms
+@dirrm sun-wtk/apps/WMADemo/src/example/cbs
+@dirrm sun-wtk/apps/WMADemo/src/example
+@dirrm sun-wtk/apps/WMADemo/src
+@dirrm sun-wtk/apps/WMADemo/res
+@dirrm sun-wtk/apps/WMADemo/lib
+@dirrm sun-wtk/apps/WMADemo/classes/example/sms
+@dirrm sun-wtk/apps/WMADemo/classes/example/mms
+@dirrm sun-wtk/apps/WMADemo/classes/example/cbs
+@dirrm sun-wtk/apps/WMADemo/classes/example
+@dirrm sun-wtk/apps/WMADemo/classes
+@dirrm sun-wtk/apps/WMADemo/bin
+@dirrm sun-wtk/apps/WMADemo
 @dirrm sun-wtk/apps/UIDemo/tmplib
 @dirrm sun-wtk/apps/UIDemo/tmpclasses/ticker
 @dirrm sun-wtk/apps/UIDemo/tmpclasses/textfield
@@ -1772,23 +1743,61 @@ sun-wtk/wtklib/lime.jar
 @dirrm sun-wtk/apps/UIDemo/classes
 @dirrm sun-wtk/apps/UIDemo/bin
 @dirrm sun-wtk/apps/UIDemo
-@dirrm sun-wtk/apps/SMSDemo/tmplib
-@dirrm sun-wtk/apps/SMSDemo/tmpclasses/example/sms
-@dirrm sun-wtk/apps/SMSDemo/tmpclasses/example/cbs
-@dirrm sun-wtk/apps/SMSDemo/tmpclasses/example
-@dirrm sun-wtk/apps/SMSDemo/tmpclasses
-@dirrm sun-wtk/apps/SMSDemo/src/example/sms
-@dirrm sun-wtk/apps/SMSDemo/src/example/cbs
-@dirrm sun-wtk/apps/SMSDemo/src/example
-@dirrm sun-wtk/apps/SMSDemo/src
-@dirrm sun-wtk/apps/SMSDemo/lib
-@dirrm sun-wtk/apps/SMSDemo/classes/example/sms
-@dirrm sun-wtk/apps/SMSDemo/classes/example/cbs
-@dirrm sun-wtk/apps/SMSDemo/classes/example
-@dirrm sun-wtk/apps/SMSDemo/classes
-@dirrm sun-wtk/apps/SMSDemo/bridgeAPIExample
-@dirrm sun-wtk/apps/SMSDemo/bin
-@dirrm sun-wtk/apps/SMSDemo
+@dirrm sun-wtk/apps/Photoalbum/tmplib
+@dirrm sun-wtk/apps/Photoalbum/tmpclasses/example/photoalbum
+@dirrm sun-wtk/apps/Photoalbum/tmpclasses/example
+@dirrm sun-wtk/apps/Photoalbum/tmpclasses
+@dirrm sun-wtk/apps/Photoalbum/src/example/photoalbum
+@dirrm sun-wtk/apps/Photoalbum/src/example
+@dirrm sun-wtk/apps/Photoalbum/src
+@dirrm sun-wtk/apps/Photoalbum/res/icons
+@dirrm sun-wtk/apps/Photoalbum/res/example/photoalbum/images
+@dirrm sun-wtk/apps/Photoalbum/res/example/photoalbum
+@dirrm sun-wtk/apps/Photoalbum/res/example
+@dirrm sun-wtk/apps/Photoalbum/res
+@dirrm sun-wtk/apps/Photoalbum/lib
+@dirrm sun-wtk/apps/Photoalbum/classes/example/photoalbum
+@dirrm sun-wtk/apps/Photoalbum/classes/example
+@dirrm sun-wtk/apps/Photoalbum/classes
+@dirrm sun-wtk/apps/Photoalbum/bin
+@dirrm sun-wtk/apps/Photoalbum
+@dirrm sun-wtk/apps/PDAPDemo/tmplib
+@dirrm sun-wtk/apps/PDAPDemo/tmpclasses/example/pim
+@dirrm sun-wtk/apps/PDAPDemo/tmpclasses/example/fc
+@dirrm sun-wtk/apps/PDAPDemo/tmpclasses/example
+@dirrm sun-wtk/apps/PDAPDemo/tmpclasses
+@dirrm sun-wtk/apps/PDAPDemo/src/example/pim
+@dirrm sun-wtk/apps/PDAPDemo/src/example/fc
+@dirrm sun-wtk/apps/PDAPDemo/src/example
+@dirrm sun-wtk/apps/PDAPDemo/src
+@dirrm sun-wtk/apps/PDAPDemo/res/icons
+@dirrm sun-wtk/apps/PDAPDemo/res
+@dirrm sun-wtk/apps/PDAPDemo/lib
+@dirrm sun-wtk/apps/PDAPDemo/classes/example/pim
+@dirrm sun-wtk/apps/PDAPDemo/classes/example/fc
+@dirrm sun-wtk/apps/PDAPDemo/classes/example
+@dirrm sun-wtk/apps/PDAPDemo/classes
+@dirrm sun-wtk/apps/PDAPDemo/bin
+@dirrm sun-wtk/apps/PDAPDemo
+@dirrm sun-wtk/apps/ObexDemo/tmplib
+@dirrm sun-wtk/apps/ObexDemo/tmpclasses/example/obex/demo
+@dirrm sun-wtk/apps/ObexDemo/tmpclasses/example/obex
+@dirrm sun-wtk/apps/ObexDemo/tmpclasses/example
+@dirrm sun-wtk/apps/ObexDemo/tmpclasses
+@dirrm sun-wtk/apps/ObexDemo/src/example/obex/demo
+@dirrm sun-wtk/apps/ObexDemo/src/example/obex
+@dirrm sun-wtk/apps/ObexDemo/src/example
+@dirrm sun-wtk/apps/ObexDemo/src
+@dirrm sun-wtk/apps/ObexDemo/res/images
+@dirrm sun-wtk/apps/ObexDemo/res/icons
+@dirrm sun-wtk/apps/ObexDemo/res
+@dirrm sun-wtk/apps/ObexDemo/lib
+@dirrm sun-wtk/apps/ObexDemo/classes/example/obex/demo
+@dirrm sun-wtk/apps/ObexDemo/classes/example/obex
+@dirrm sun-wtk/apps/ObexDemo/classes/example
+@dirrm sun-wtk/apps/ObexDemo/classes
+@dirrm sun-wtk/apps/ObexDemo/bin
+@dirrm sun-wtk/apps/ObexDemo
 @dirrm sun-wtk/apps/NetworkDemo/tmplib
 @dirrm sun-wtk/apps/NetworkDemo/tmpclasses/socket
 @dirrm sun-wtk/apps/NetworkDemo/tmpclasses/datagram
@@ -1814,9 +1823,6 @@ sun-wtk/wtklib/lime.jar
 @dirrm sun-wtk/apps/JSR172Demo/src/example/serverscript/demo
 @dirrm sun-wtk/apps/JSR172Demo/src/example/serverscript/connector
 @dirrm sun-wtk/apps/JSR172Demo/src/example/serverscript
-@dirrm sun-wtk/apps/JSR172Demo/src/example/globalweather/demo
-@dirrm sun-wtk/apps/JSR172Demo/src/example/globalweather/connector
-@dirrm sun-wtk/apps/JSR172Demo/src/example/globalweather
 @dirrm sun-wtk/apps/JSR172Demo/src/example
 @dirrm sun-wtk/apps/JSR172Demo/src
 @dirrm sun-wtk/apps/JSR172Demo/server/src/serverscript
@@ -1832,6 +1838,31 @@ sun-wtk/wtklib/lime.jar
 @dirrm sun-wtk/apps/JSR172Demo/classes
 @dirrm sun-wtk/apps/JSR172Demo/bin
 @dirrm sun-wtk/apps/JSR172Demo
+@dirrm sun-wtk/apps/Games/tmplib
+@dirrm sun-wtk/apps/Games/tmpclasses/example/wormgame
+@dirrm sun-wtk/apps/Games/tmpclasses/example/tilepuzzle
+@dirrm sun-wtk/apps/Games/tmpclasses/example/pushpuzzle
+@dirrm sun-wtk/apps/Games/tmpclasses/example
+@dirrm sun-wtk/apps/Games/tmpclasses
+@dirrm sun-wtk/apps/Games/src/example/wormgame
+@dirrm sun-wtk/apps/Games/src/example/tilepuzzle
+@dirrm sun-wtk/apps/Games/src/example/pushpuzzle
+@dirrm sun-wtk/apps/Games/src/example
+@dirrm sun-wtk/apps/Games/src
+@dirrm sun-wtk/apps/Games/res/icons
+@dirrm sun-wtk/apps/Games/res/example/pushpuzzle/images
+@dirrm sun-wtk/apps/Games/res/example/pushpuzzle/data
+@dirrm sun-wtk/apps/Games/res/example/pushpuzzle
+@dirrm sun-wtk/apps/Games/res/example
+@dirrm sun-wtk/apps/Games/res
+@dirrm sun-wtk/apps/Games/lib
+@dirrm sun-wtk/apps/Games/classes/example/wormgame
+@dirrm sun-wtk/apps/Games/classes/example/tilepuzzle
+@dirrm sun-wtk/apps/Games/classes/example/pushpuzzle
+@dirrm sun-wtk/apps/Games/classes/example
+@dirrm sun-wtk/apps/Games/classes
+@dirrm sun-wtk/apps/Games/bin
+@dirrm sun-wtk/apps/Games
 @dirrm sun-wtk/apps/FPDemo/tmplib
 @dirrm sun-wtk/apps/FPDemo/tmpclasses/calculator
 @dirrm sun-wtk/apps/FPDemo/tmpclasses
@@ -1842,6 +1873,116 @@ sun-wtk/wtklib/lime.jar
 @dirrm sun-wtk/apps/FPDemo/classes
 @dirrm sun-wtk/apps/FPDemo/bin
 @dirrm sun-wtk/apps/FPDemo
+@dirrm sun-wtk/apps/Demos/tmplib
+@dirrm sun-wtk/apps/Demos/tmpclasses/example/stock
+@dirrm sun-wtk/apps/Demos/tmpclasses/example/manyballs
+@dirrm sun-wtk/apps/Demos/tmpclasses/example/http
+@dirrm sun-wtk/apps/Demos/tmpclasses/example/fonts
+@dirrm sun-wtk/apps/Demos/tmpclasses/example/chooser
+@dirrm sun-wtk/apps/Demos/tmpclasses/example/auction
+@dirrm sun-wtk/apps/Demos/tmpclasses/example
+@dirrm sun-wtk/apps/Demos/tmpclasses
+@dirrm sun-wtk/apps/Demos/src/example/stock
+@dirrm sun-wtk/apps/Demos/src/example/manyballs
+@dirrm sun-wtk/apps/Demos/src/example/http
+@dirrm sun-wtk/apps/Demos/src/example/fonts
+@dirrm sun-wtk/apps/Demos/src/example/chooser
+@dirrm sun-wtk/apps/Demos/src/example/auction
+@dirrm sun-wtk/apps/Demos/src/example
+@dirrm sun-wtk/apps/Demos/src
+@dirrm sun-wtk/apps/Demos/res/icons
+@dirrm sun-wtk/apps/Demos/res/example/http/images
+@dirrm sun-wtk/apps/Demos/res/example/http
+@dirrm sun-wtk/apps/Demos/res/example/auction/images
+@dirrm sun-wtk/apps/Demos/res/example/auction
+@dirrm sun-wtk/apps/Demos/res/example
+@dirrm sun-wtk/apps/Demos/res
+@dirrm sun-wtk/apps/Demos/lib
+@dirrm sun-wtk/apps/Demos/classes/example/stock
+@dirrm sun-wtk/apps/Demos/classes/example/manyballs
+@dirrm sun-wtk/apps/Demos/classes/example/http
+@dirrm sun-wtk/apps/Demos/classes/example/fonts
+@dirrm sun-wtk/apps/Demos/classes/example/chooser
+@dirrm sun-wtk/apps/Demos/classes/example/auction
+@dirrm sun-wtk/apps/Demos/classes/example
+@dirrm sun-wtk/apps/Demos/classes
+@dirrm sun-wtk/apps/Demos/bin
+@dirrm sun-wtk/apps/Demos
+@dirrm sun-wtk/apps/Demo3D/tmplib
+@dirrm sun-wtk/apps/Demo3D/tmpclasses/com/superscape/m3g/wtksamples/retainedmode
+@dirrm sun-wtk/apps/Demo3D/tmpclasses/com/superscape/m3g/wtksamples/pogoroo
+@dirrm sun-wtk/apps/Demo3D/tmpclasses/com/superscape/m3g/wtksamples/life3d
+@dirrm sun-wtk/apps/Demo3D/tmpclasses/com/superscape/m3g/wtksamples
+@dirrm sun-wtk/apps/Demo3D/tmpclasses/com/superscape/m3g
+@dirrm sun-wtk/apps/Demo3D/tmpclasses/com/superscape
+@dirrm sun-wtk/apps/Demo3D/tmpclasses/com
+@dirrm sun-wtk/apps/Demo3D/tmpclasses
+@dirrm sun-wtk/apps/Demo3D/src/com/superscape/m3g/wtksamples/retainedmode
+@dirrm sun-wtk/apps/Demo3D/src/com/superscape/m3g/wtksamples/pogoroo
+@dirrm sun-wtk/apps/Demo3D/src/com/superscape/m3g/wtksamples/life3d
+@dirrm sun-wtk/apps/Demo3D/src/com/superscape/m3g/wtksamples
+@dirrm sun-wtk/apps/Demo3D/src/com/superscape/m3g
+@dirrm sun-wtk/apps/Demo3D/src/com/superscape
+@dirrm sun-wtk/apps/Demo3D/src/com
+@dirrm sun-wtk/apps/Demo3D/src
+@dirrm sun-wtk/apps/Demo3D/res/com/superscape/m3g/wtksamples/retainedmode/content
+@dirrm sun-wtk/apps/Demo3D/res/com/superscape/m3g/wtksamples/retainedmode
+@dirrm sun-wtk/apps/Demo3D/res/com/superscape/m3g/wtksamples/pogoroo/content
+@dirrm sun-wtk/apps/Demo3D/res/com/superscape/m3g/wtksamples/pogoroo
+@dirrm sun-wtk/apps/Demo3D/res/com/superscape/m3g/wtksamples
+@dirrm sun-wtk/apps/Demo3D/res/com/superscape/m3g
+@dirrm sun-wtk/apps/Demo3D/res/com/superscape
+@dirrm sun-wtk/apps/Demo3D/res/com
+@dirrm sun-wtk/apps/Demo3D/res
+@dirrm sun-wtk/apps/Demo3D/lib
+@dirrm sun-wtk/apps/Demo3D/classes/com/superscape/m3g/wtksamples/retainedmode
+@dirrm sun-wtk/apps/Demo3D/classes/com/superscape/m3g/wtksamples/pogoroo
+@dirrm sun-wtk/apps/Demo3D/classes/com/superscape/m3g/wtksamples/life3d
+@dirrm sun-wtk/apps/Demo3D/classes/com/superscape/m3g/wtksamples
+@dirrm sun-wtk/apps/Demo3D/classes/com/superscape/m3g
+@dirrm sun-wtk/apps/Demo3D/classes/com/superscape
+@dirrm sun-wtk/apps/Demo3D/classes/com
+@dirrm sun-wtk/apps/Demo3D/classes
+@dirrm sun-wtk/apps/Demo3D/bin
+@dirrm sun-wtk/apps/Demo3D
+@dirrm sun-wtk/apps/BluetoothDemo/tmplib
+@dirrm sun-wtk/apps/BluetoothDemo/tmpclasses/example/bluetooth/demo
+@dirrm sun-wtk/apps/BluetoothDemo/tmpclasses/example/bluetooth
+@dirrm sun-wtk/apps/BluetoothDemo/tmpclasses/example
+@dirrm sun-wtk/apps/BluetoothDemo/tmpclasses
+@dirrm sun-wtk/apps/BluetoothDemo/src/example/bluetooth/demo
+@dirrm sun-wtk/apps/BluetoothDemo/src/example/bluetooth
+@dirrm sun-wtk/apps/BluetoothDemo/src/example
+@dirrm sun-wtk/apps/BluetoothDemo/src
+@dirrm sun-wtk/apps/BluetoothDemo/res/images
+@dirrm sun-wtk/apps/BluetoothDemo/res/icons
+@dirrm sun-wtk/apps/BluetoothDemo/res
+@dirrm sun-wtk/apps/BluetoothDemo/lib
+@dirrm sun-wtk/apps/BluetoothDemo/classes/example/bluetooth/demo
+@dirrm sun-wtk/apps/BluetoothDemo/classes/example/bluetooth
+@dirrm sun-wtk/apps/BluetoothDemo/classes/example
+@dirrm sun-wtk/apps/BluetoothDemo/classes
+@dirrm sun-wtk/apps/BluetoothDemo/bin
+@dirrm sun-wtk/apps/BluetoothDemo
+@dirrm sun-wtk/apps/Audiodemo/tmplib
+@dirrm sun-wtk/apps/Audiodemo/tmpclasses/example/audiodemo
+@dirrm sun-wtk/apps/Audiodemo/tmpclasses/example
+@dirrm sun-wtk/apps/Audiodemo/tmpclasses
+@dirrm sun-wtk/apps/Audiodemo/src/example/audiodemo
+@dirrm sun-wtk/apps/Audiodemo/src/example
+@dirrm sun-wtk/apps/Audiodemo/src
+@dirrm sun-wtk/apps/Audiodemo/res/icons
+@dirrm sun-wtk/apps/Audiodemo/res/audio
+@dirrm sun-wtk/apps/Audiodemo/res
+@dirrm sun-wtk/apps/Audiodemo/lib
+@dirrm sun-wtk/apps/Audiodemo/classes/example/audiodemo
+@dirrm sun-wtk/apps/Audiodemo/classes/example
+@dirrm sun-wtk/apps/Audiodemo/classes
+@dirrm sun-wtk/apps/Audiodemo/bin
+@dirrm sun-wtk/apps/Audiodemo
 @dirrm sun-wtk/apps
+@dirrm sun-wtk/appdb/DefaultColorPhone/filesystem/root1
+@dirrm sun-wtk/appdb/DefaultColorPhone/filesystem
+@dirrm sun-wtk/appdb/DefaultColorPhone
 @dirrm sun-wtk/appdb
 @dirrm sun-wtk
