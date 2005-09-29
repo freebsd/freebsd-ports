@@ -11706,6 +11706,7 @@ symlinks	ports/sysutils/symlinks
 symon		ports/sysutils/symon
 sympa		ports/mail/sympa
 sympa-elixus	ports/mail/sympa-elixus
+sympa5		ports/mail/sympa5
 synaesthesia	ports/graphics/synaesthesia
 syncal		ports/palm/syncal
 synce-dccm	ports/palm/synce-dccm
