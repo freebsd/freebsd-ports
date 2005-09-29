@@ -17,7 +17,7 @@ COMMENT?=	A modular IRC client with many features
 CONFLICTS=      irssi-devel-*
 
 USE_BZIP2=	yes
-USE_REPLACE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 WANT_GNOME=	yes
