@@ -8,7 +8,8 @@
 PORTNAME=	kmenc15
 PORTVERSION=	0.04
 CATEGORIES=	multimedia kde
-MASTER_SITES=	http://dividedsky.net/~ods15/kmenc15/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=kmenc15
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE advanced MEncoder frontend, ala, VirtualDub
