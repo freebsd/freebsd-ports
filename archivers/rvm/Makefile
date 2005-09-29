@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	rvm
-PORTVERSION=	0.90.3.b
+DISTVERSION=	0.90.3-beta
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-beta/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An archive manager that uses rsync to manage backups
