@@ -29,6 +29,8 @@ BUILD_DEPENDS+=	${SITE_PERL}/Mail/Mailer.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+CONFLICTS=	sympa-5*
+
 DB_TYPE=
 
 .include <bsd.port.pre.mk>
