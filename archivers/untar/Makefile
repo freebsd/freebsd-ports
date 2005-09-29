@@ -17,17 +17,18 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lists/Extracts files from a "*.tgz" or "*.gz" archive
 
+MAKEFILE=	/usr/share/mk/bsd.prog.mk
 NO_WRKSUBDIR=	yes
-NO_INSTALL_MANPAGES=		yes
 PLIST_FILES=	bin/untar
 
-PROG=	untar
+MAKE_ENV+=	PROG=untar NOMAN=yes
+MAKE_ARGS+=	CFLAGS="${CFLAGS} -D_POSIX_SOURCE" \
+		LDFLAGS="${LDFLAGS} -static"
 
 pre-patch:
 	@${CP} ${DISTDIR}/untar.c ${WRKSRC}
-	@${CP} ${FILESDIR}/Makefile.untar ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PROG} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
 .include <bsd.port.mk>
