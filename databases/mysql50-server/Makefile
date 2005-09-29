@@ -6,18 +6,18 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.0.12
+PORTVERSION=	5.0.13
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQL-5.0
 PKGNAMESUFFIX?=	-server
-DISTNAME=	${PORTNAME}-${PORTVERSION}-beta
+DISTNAME=	${PORTNAME}-${PORTVERSION}-rc
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-beta
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-rc
 SLAVEDIRS=	databases/mysql50-client
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
@@ -58,6 +58,9 @@ CONFIGURE_ARGS+=--with-mysqld-ldflags=-all-static
 .endif
 .if defined(WITHOUT_INNODB)
 CONFIGURE_ARGS+=--without-innodb
+.endif
+.if defined(WITH_ARCHIVE)
+CONFIGURE_ARGS+=--with-archive-storage-engine
 .endif
 .if defined(WITH_NDB)
 CONFIGURE_ARGS+=--with-ndbcluster
@@ -142,6 +145,7 @@ pre-fetch:
 	@${ECHO} "	BUILD_STATIC=yes	Build a static version of mysqld."
 	@${ECHO} "				(use it if you need even more speed)."
 	@${ECHO} "	WITHOUT_INNODB=yes	Disable support for InnoDB table handler."
+	@${ECHO} "	WITH_ARCHIVE=yes	Enable support for Archive Storage Engine."
 	@${ECHO} "	WITH_NDB=yes		Enable support for NDB Cluster."
 	@${ECHO} ""
 

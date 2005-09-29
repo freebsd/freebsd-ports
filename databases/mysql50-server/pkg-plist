@@ -1,5 +1,6 @@
 @unexec %D/etc/rc.d/mysql-server.sh stop > /dev/null 2>&1 || true
 bin/comp_err
+bin/innochecksum
 bin/my_print_defaults
 bin/myisam_ftdump
 bin/myisamchk
