@@ -1,6 +1,6 @@
 bin/sysconftoolize
 bin/sysconftoolcheck
-share/aclocal/sysconftool.m4
+share/aclocal19/sysconftool.m4
 %%DATADIR%%/sysconftool
 %%DATADIR%%/sysconftoolize.pl
 %%DATADIR%%/sysconftoolcheck
