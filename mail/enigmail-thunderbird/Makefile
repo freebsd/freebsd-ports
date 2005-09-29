@@ -5,7 +5,6 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
 PKGNAMESUFFIX=	-thunderbird
 
 COMMENT=	A GnuPG extension for the Thunderbird mail client
