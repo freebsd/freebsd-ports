@@ -6,27 +6,28 @@
 #
 
 PORTNAME=	twiki
-PORTVERSION=	20040902
+PORTVERSION=	20040904
 CATEGORIES=	www
-MASTER_SITES=	http://twiki.org/swd/ http://www.thoeny.com/peter/twiki/
+MASTER_SITES=	http://twiki.org/swd/ \
+		http://www.thoeny.com/peter/twiki/
 DISTNAME=	TWiki${PORTVERSION}
 
 MAINTAINER=	justin@hawkins.id.au
 COMMENT=	A flexible, powerful, and easy to use Web-based collaboration platform
 
-FORBIDDEN=	Security: http://twiki.org/cgi-bin/view/Codev/SecurityAlertExecuteCommandsWithInclude
+USE_REINPLACE=	yes
 
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
-USE_ZIP=	yes
+WWW_ROOT?=	${WWWOWN}
+TWIKIDIR=	${PREFIX}/${WWW_ROOT}/twiki
 
-LTWIKIDIR=	www/twiki
-
-TWIKIDIR=	${PREFIX}/${LTWIKIDIR}
-
-WWW_ROOT?=	www
-PLIST_SUB+=	WWW_ROOT=${WWW_ROOT}
+PLIST_SUB=	WWW_ROOT=${WWW_ROOT}
+SUB_LIST=	WWWUSER=${WWWOWN} WWWGROUP=${WWWGRP} TWIKIDIR=${TWIKIDIR} \
+		REINPLACE_CMD="${REINPLACE_CMD}"
+SUB_FILES=	pkg-install
+PKGINSTALL=	${WRKDIR}/pkg-install
 
 pre-everything::
 	@${ECHO} "****************************************************************"
@@ -34,16 +35,18 @@ pre-everything::
 	@${ECHO} "*  This software can't be upgraded automatically without       *"
 	@${ECHO} "*  damaging data in your wiki!                                 *"
 	@${ECHO} "****************************************************************"
+	@sleep 10
 
-pre-configure:
-# move config file to sample
+post-extract:
+	@# move config to sample
 	@${MV} ${WRKSRC}/lib/TWiki.cfg ${WRKSRC}/lib/TWiki.cfg.sample
 
 do-install:
-	${MKDIR} ${TWIKIDIR}
-	${CP} -R ${WRKSRC}/* ${TWIKIDIR}/
+	${INSTALL} -d -m 0755 ${TWIKIDIR}
+	(cd ${WRKSRC} && ${FIND} . | \
+		${CPIO} -pdmu -R${SHAREOWN}:${SHAREGRP} ${TWIKIDIR})
 
 post-install:
-	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} POST-INSTALL
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
