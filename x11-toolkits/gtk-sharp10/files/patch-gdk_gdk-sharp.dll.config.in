@@ -1,0 +1,13 @@
+--- gdk/gdk-sharp.dll.config.in.orig	Wed Jul 14 22:14:38 2004
++++ gdk/gdk-sharp.dll.config.in	Wed Jul 14 22:15:47 2004
+@@ -1,6 +1,6 @@
+ <configuration>
+-  <dllmap dll="libglib-2.0-0.dll" target="libglib-2.0@LIB_PREFIX@.0@LIB_SUFFIX@"/>
+-  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0@LIB_PREFIX@.0@LIB_SUFFIX@"/>
+-  <dllmap dll="libgdk-win32-2.0-0.dll" target="libgdk-x11-2.0@LIB_PREFIX@.0@LIB_SUFFIX@"/>
+-  <dllmap dll="libgdk_pixbuf-2.0-0.dll" target="libgdk_pixbuf-2.0@LIB_PREFIX@.0@LIB_SUFFIX@"/>
++  <dllmap dll="libglib-2.0-0.dll" target="libglib-2.0@LIB_PREFIX@@LIB_SUFFIX@"/>
++  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0@LIB_PREFIX@@LIB_SUFFIX@"/>
++  <dllmap dll="libgdk-win32-2.0-0.dll" target="libgdk-x11-2.0@LIB_PREFIX@@LIB_SUFFIX@"/>
++  <dllmap dll="libgdk_pixbuf-2.0-0.dll" target="libgdk_pixbuf-2.0@LIB_PREFIX@@LIB_SUFFIX@"/>
+ </configuration>

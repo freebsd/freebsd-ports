@@ -1,0 +1,9 @@
+--- gnomedb/gnomedb-sharp.dll.config.in.orig	Tue Nov  9 18:35:31 2004
++++ gnomedb/gnomedb-sharp.dll.config.in	Tue Nov  9 18:35:49 2004
+@@ -1,4 +1,4 @@
+ <configuration>
+-  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0@LIB_PREFIX@.0@LIB_SUFFIX@"/>
+-  <dllmap dll="gnomedb-2" target="libgnomedb-2@LIB_PREFIX@.3@LIB_SUFFIX@"/>
++  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0@LIB_PREFIX@@LIB_SUFFIX@"/>
++  <dllmap dll="gnomedb-2" target="libgnomedb-2@LIB_PREFIX@@LIB_SUFFIX@"/>
+ </configuration>

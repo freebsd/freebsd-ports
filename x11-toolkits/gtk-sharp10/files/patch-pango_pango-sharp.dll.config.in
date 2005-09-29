@@ -1,0 +1,9 @@
+--- pango/pango-sharp.dll.config.in.orig	Fri Aug 20 17:04:23 2004
++++ pango/pango-sharp.dll.config.in	Tue Oct 26 21:38:51 2004
+@@ -1,4 +1,4 @@
+ <configuration>
+-  <dllmap dll="libglib-2.0-0.dll" target="libglib-2.0@LIB_PREFIX@.0@LIB_SUFFIX@"/>
+-  <dllmap dll="libpango-1.0-0.dll" target="libpango-1.0@LIB_PREFIX@.0@LIB_SUFFIX@"/>
++  <dllmap dll="libglib-2.0-0.dll" target="libglib-2.0@LIB_PREFIX@@LIB_SUFFIX@"/>
++  <dllmap dll="libpango-1.0-0.dll" target="libpango-1.0@LIB_PREFIX@@LIB_SUFFIX@"/>
+ </configuration>

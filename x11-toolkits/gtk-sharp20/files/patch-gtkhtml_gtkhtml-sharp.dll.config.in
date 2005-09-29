@@ -1,0 +1,8 @@
+--- gtkhtml/gtkhtml-sharp.dll.config.in.orig	Tue Nov  9 18:37:55 2004
++++ gtkhtml/gtkhtml-sharp.dll.config.in	Tue Nov  9 18:46:04 2004
+@@ -1,4 +1,4 @@
+ <configuration>
+-  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0@LIB_PREFIX@.0@LIB_SUFFIX@"/>
++  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0@LIB_PREFIX@@LIB_SUFFIX@"/>
+   <dllmap dll="gtkhtml-3.0" target="libgtkhtml-@GTKHTML_VERSION@@LIB_PREFIX@.@GTKHTML_SOVERSION@@LIB_SUFFIX@"/>
+ </configuration>
