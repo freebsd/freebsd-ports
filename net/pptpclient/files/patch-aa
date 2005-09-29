@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Jun 11 10:42:07 2003
-+++ Makefile	Wed Aug 13 14:48:47 2003
+--- Makefile.orig	Thu Feb 17 23:42:45 2005
++++ Makefile	Wed Sep 28 19:51:25 2005
 @@ -4,7 +4,7 @@
  
  #################################################################
@@ -9,12 +9,12 @@
  #################################################################
  
  BINDIR=$(DESTDIR)/usr/sbin
-@@ -15,7 +15,7 @@
+@@ -16,7 +16,7 @@
  OPTIMIZE= -O0
  DEBUG	= -g
  INCLUDE =
 -CFLAGS  = -Wall $(OPTIMIZE) $(DEBUG) $(INCLUDE)
-+CFLAGS  = -Wall $(OPTIMIZE) $(DEBUG) $(INCLUDE) -DUSER_PPP
++CFLAGS  += -Wall $(DEBUG) $(INCLUDE) -DUSER_PPP
  LIBS	= -lutil
  LDFLAGS	=
  
