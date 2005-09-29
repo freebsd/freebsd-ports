@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	opr@bsdaemon.be
 COMMENT=	The @stake Sleuth Kit for forensic analysis
 
+CONFLICTS=	ja-ls-[0-9]*
+
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 
