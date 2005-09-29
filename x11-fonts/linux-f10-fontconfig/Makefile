@@ -7,15 +7,14 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts linux
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Linux/i386 binary of Fontconfig
 
 EXTRACT_DEPENDS=rpm2cpio:${PORTSDIR}/archivers/rpm
-BUILD_DEPENDS=	${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat
 
 USE_REINPLACE=	yes
 BASEVERSION=	9
