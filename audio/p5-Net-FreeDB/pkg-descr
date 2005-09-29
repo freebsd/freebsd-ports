@@ -1,0 +1,8 @@
+Net::FreeDB is an oo-based module to interface
+with FreeDB servers.  It also includes some basic
+cdrom methods to generate a cddbid and get the
+required disc information required for a FreeDB
+query call.  These cdrom-based methods are provided
+as both static and method calls.
+
+Author:		David Shultz <dshultz@cpan.org>
