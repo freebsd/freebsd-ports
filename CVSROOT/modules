@@ -10987,6 +10987,7 @@ ruby-xmms	ports/audio/ruby-xmms
 ruby-xslt	ports/textproc/ruby-xslt
 ruby-xtemplate	ports/textproc/ruby-xtemplate
 ruby-zip	ports/archivers/ruby-zip
+ruby-zoom	ports/devel/ruby-zoom
 ruby16		ports/lang/ruby16
 ruby16-shim-ruby18	ports/lang/ruby16-shim-ruby18
 ruby16_static	ports/lang/ruby16_static
