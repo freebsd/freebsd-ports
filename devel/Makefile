@@ -1482,6 +1482,7 @@
     SUBDIR += ruby-sysvipc
     SUBDIR += ruby-textbuf
     SUBDIR += ruby-tzfile
+    SUBDIR += ruby-zoom
     SUBDIR += rubygem-activesupport
     SUBDIR += rubygem-rake
     SUBDIR += rubygem-rgl
