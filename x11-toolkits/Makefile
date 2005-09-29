@@ -42,8 +42,6 @@
     SUBDIR += gstreamer-plugins-pango
     SUBDIR += gtk--
     SUBDIR += gtk--2
-    SUBDIR += gtk-sharp
-    SUBDIR += gtk-sharp-devel
     SUBDIR += gtk-sharp10
     SUBDIR += gtk-sharp20
     SUBDIR += gtk12
