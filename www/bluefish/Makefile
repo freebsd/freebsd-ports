@@ -12,8 +12,7 @@ CATEGORIES=	www editors
 MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/${DOWNLOAD}/ \
 		ftp://bluefish.advancecreations.com/pub/bluefish/${DOWNLOAD}/ \
 		http://bluefish.mrball.net/${DOWNLOAD}/ \
-		ftp://ftp.ratisbona.com/pub/bluefish/${DOWNLOAD}/ \
-		http://bluefish.shellhung.org/${DOWNLOAD}/
+		ftp://ftp.ratisbona.com/pub/bluefish/${DOWNLOAD}/
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	HTML editor designed for the experienced web designer
