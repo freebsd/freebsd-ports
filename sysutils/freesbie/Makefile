@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	freesbie
-PORTVERSION=	0.0.20040207
-PORTREVISION=	1
+PORTVERSION=	1.1.20050929
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.stud.uni-karlsruhe.de/~uedc/freesbie/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/0.0.//}
+MASTER_SITES=	http://www.rrr.de/~riggs/freesbie/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/1.1.//}
 
 MAINTAINER=	riggs@rrr.de
 COMMENT=	Yet another cool answer to the system-on-cd question
