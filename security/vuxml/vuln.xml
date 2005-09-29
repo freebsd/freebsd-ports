@@ -21529,6 +21529,15 @@ misc.c:
       </body>
     </description>
     <references>
+      <bid>14927</bid>
+      <bid>14928</bid>
+      <bid>14929</bid>
+      <bid>14930</bid>
+      <cvename>CAN-2005-3046</cvename>
+      <cvename>CAN-2005-3047</cvename>
+      <cvename>CAN-2005-3048</cvename>
+      <cvename>CAN-2005-3049</cvename>
+      <cvename>CAN-2005-3050</cvename>
       <url>http://www.phpmyfaq.de/advisory_2005-09-23.php</url>
     </references>
     <dates>
