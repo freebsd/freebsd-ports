@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ftnchek
-PORTVERSION=	3.2.0
+PORTVERSION=	3.3.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.dsm.fordham.edu/~ftnchek/download/
