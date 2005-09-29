@@ -675,14 +675,13 @@ MASTER_SITE_KDE+=	\
 	http://ftp.tiscali.nl/kde/%SUBDIR%/ \
 	ftp://ftp.du.se/pub/mirrors/kde/%SUBDIR%/ \
 	http://ftp.du.se/pub/mirrors/kde/%SUBDIR%/ \
-	ftp://ftp.solnet.ch/mirror/kde/%SUBDIR%/ \
+	ftp://ftp.solnet.ch/mirror/KDE/%SUBDIR%/ \
 	ftp://ftp.rutgers.edu/pub/kde/%SUBDIR%/ \
 	ftp://sunsite.informatik.rwth-aachen.de/pub/Linux/kde/%SUBDIR%/ \
 	http://ftp.rutgers.edu/pub/kde/%SUBDIR%/ \
-	ftp://ftp.fh-dortmund.de/pub/unix/kde/%SUBDIR%/ \
 	http://ftp-stud.fht-esslingen.de/Mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	http://ftp.gwdg.de/pub/x11/kde/%SUBDIR%/ \
-	http://kde.mirrors.hoobly.com/kde/%SUBDIR%/ \
+	http://kde.mirrors.hoobly.com/%SUBDIR%/ \
 	ftp://ftp.informatik.uni-hamburg.de/pub/soft/X/contrib/kde/%SUBDIR%/ \
 	ftp://ftp.rediris.es/mirror/kde/%SUBDIR%/ \
 	http://ftp.rediris.es/mirror/kde/%SUBDIR%/ \
@@ -690,12 +689,12 @@ MASTER_SITE_KDE+=	\
 	ftp://ftp.man.szczecin.pl/pub/kde/%SUBDIR%/ \
 	ftp://gd.tuwien.ac.at/kde/%SUBDIR%/ \
 	http://gd.tuwien.ac.at/kde/%SUBDIR%/ \
-	ftp://ftp.informatik.hu-berlin.de/pub/Mirrors/ftp.kde.org/kde/%SUBDIR%/ \
+	ftp://ftp.informatik.hu-berlin.de/pub/Mirrors/ftp.kde.org/%SUBDIR%/ \
 	http://mirrors.dotsrc.org/kde/%SUBDIR%/ \
 	ftp://mirrors.dotsrc.org/kde/%SUBDIR%/ \
 	ftp://ibiblio.org/pub/mirrors/kde/%SUBDIR%/ \
 	http://ibiblio.org/pub/mirrors/kde/%SUBDIR%/ \
-	ftp://ftp.roedu.net/pub/mirrors/ftp.kde.org/kde/%SUBDIR%/ \
+	ftp://ftp.roedu.net/pub/mirrors/ftp.kde.org/%SUBDIR%/ \
 	ftp://ftp.fi.muni.cz/pub/kde/%SUBDIR%/ \
 	ftp://ftp.fh-heilbronn.de/pub/mirrors/kde/%SUBDIR%/ \
 	http://ftp.fi.muni.cz/pub/kde/%SUBDIR%/ \
@@ -727,12 +726,12 @@ MASTER_SITE_KDE+=	\
 	ftp://ftp.esat.net/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	http://ftp.esat.net/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	http://ftp.mirror.ac.uk/sites/ftp.kde.org/pub/kde/%SUBDIR%/ \
+	http://download.mirror.ac.uk/sites/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://kde.paralax.org/kde/%SUBDIR%/ \
 	ftp://ftp.cronyx.ru/pub/mirror/kde/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/%SUBDIR%/ \
 	ftp://sunsite.sut.ac.jp/pub/archives/linux/kde/%SUBDIR%/ \
-	http://sunsite.sut.ac.jp/pub/archives/linux/X/kde/%SUBDIR%/ \
+	http://sunsite.tus.ac.jp/pub/archives/linux/X/kde/%SUBDIR%/ \
 	ftp://linux.cis.nctu.edu.tw/X/wm/kde/%SUBDIR%/ \
 	ftp://ftp.na.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.sun.ac.za/mirrorsites/ftp.kde.org/pub/kde/%SUBDIR%/ \
@@ -740,18 +739,18 @@ MASTER_SITE_KDE+=	\
 	ftp://ftp.estpak.ee/pub/kde/%SUBDIR%/ \
 	http://kde.gnusoft.net/kde/%SUBDIR%/ \
 	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.kde.org/%SUBDIR%/ \
+	ftp://ftp.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/X11/kde/%SUBDIR%/ \
 	http://ftp.ntua.gr/pub/X11/kde/%SUBDIR%/ \
 	ftp://ftp.hol.gr/pub/mirror/kde/%SUBDIR%/ \
 	http://ftp.hol.gr/mirror/kde/%SUBDIR%/ \
 	ftp://ftp.pbone.net/mirror/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.heanet.ie/mirrors/ftp.kde.org/kde/%SUBDIR%/ \
-	http://ftp.heanet.ie/mirrors/ftp.kde.org/kde/%SUBDIR%/ \
+	ftp://ftp.heanet.ie/mirrors/ftp.kde.org/%SUBDIR%/ \
+	http://ftp.heanet.ie/mirrors/ftp.kde.org/%SUBDIR%/ \
 	ftp://linux3.cc.ntu.edu.tw/pub/kde/%SUBDIR%/ \
 	http://linux3.cc.ntu.edu.tw/pub/kde/%SUBDIR%/ \
-	ftp://mi.mirror.garr.it/pub/mirrors/kde/%SUBDIR%/ \
-	http://mi.mirror.garr.it/mirrors/kde/%SUBDIR%/ \
+	ftp://mi.mirror.garr.it/pub/mirrors/KDE/%SUBDIR%/ \
+	http://mi.mirror.garr.it/mirrors/KDE/%SUBDIR%/ \
 	ftp://mirror.xmission.com/kde/%SUBDIR%/ \
 	http://mirror.xmission.com/kde/%SUBDIR%/ \
 	ftp://ftp.iway.fr/pub/kde/%SUBDIR%/ \
