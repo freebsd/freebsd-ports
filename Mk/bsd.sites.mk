@@ -297,7 +297,6 @@ MASTER_SITE_FEDORA_LINUX+= \
 	ftp://ftp6.linux.cz/pub/linux/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp1.skynet.cz/pub/linux/fedora%SUBDIR%/ \
 	ftp://ftp.gin.cz/pub/fedora/core/%SUBDIR%/ \
-	ftp://klid.dk/pub/fedora/linux/core/%SUBDIR%/ \
 	http://redhat.linux.ee/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://redhat.linux.ee/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/mirrors/ftp.redhat.com/pub/fedora/linux/core/%SUBDIR%/ \
@@ -1298,8 +1297,6 @@ MASTER_SITE_SUSE+= 	\
 	ftp://ftp.suse.cl/pub/suse/%SUBDIR%/ \
 	ftp://ftp://ftp.sh.cvut.cz/SuSE/%SUBDIR%/ \
 	http://ftp.sh.cvut.cz/SuSE/%SUBDIR%/ \
-	ftp://klid.dk/suse/%SUBDIR%/ \
-	http://klid.dk/suse/%SUBDIR%/ \
 	ftp://ftp.linux.ee/pub/suse/suse/%SUBDIR%/ \
 	ftp://garbo.uwasa.fi/pub/mirrors/suse/%SUBDIR%/ \
 	http://fr2.rpmfind.net/linux/SUSE-LINUX/%SUBDIR%/ \
