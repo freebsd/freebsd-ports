@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	code-browser
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -38,7 +38,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g ; \
 		 s|^CC|#CC|g ; \
 		 s|^CFLAGS|#CFLAGS|g ; \
-		 s| make| $$(MAKE)|g' ${WRKSRC}/${file}
+		 s| make| $$(MAKE)|g ; \
+		 s|@$$(|$$(|g' ${WRKSRC}/${file}
 .endfor
 
 do-install:
