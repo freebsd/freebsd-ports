@@ -18,6 +18,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	kazami@angels.vg
 COMMENT=	Japanized ls
 
+CONFLICTS=	sleuthkit-[0-9]*
+
 MAN1=		jls.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/jls
