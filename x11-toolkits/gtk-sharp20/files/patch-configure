@@ -1,0 +1,20 @@
+--- configure.orig	Tue Nov  9 18:31:09 2004
++++ configure	Tue Nov  9 18:31:14 2004
+@@ -20743,7 +20743,7 @@
+ 
+ 
+ 
+-CFLAGS='-g -Wall -Wunused -Wmissing-prototypes -Wmissing-declarations -Wstrict-prototypes  -Wmissing-prototypes -Wnested-externs  -Wshadow -Wpointer-arith -Wno-cast-qual -Wcast-align -Wwrite-strings'
++CFLAGS='-Wall -Wunused -Wmissing-prototypes -Wmissing-declarations -Wstrict-prototypes  -Wmissing-prototypes -Wnested-externs  -Wshadow -Wpointer-arith -Wno-cast-qual -Wcast-align -Wwrite-strings'
+ 
+ # Extract the first word of "pkg-config", so it can be a program name with args.
+ set dummy pkg-config; ac_word=$2
+@@ -20912,7 +20912,7 @@
+ 
+ 
+ if test "x$has_mono" = "xtrue"; then
+-GACUTIL_FLAGS='/package $(PACKAGE_VERSION) /gacdir $(DESTDIR)$(prefix)/lib'
++GACUTIL_FLAGS='/package $(PACKAGE_VERSION) /root $(DESTDIR)$(libdir) /gacdir $(DESTDIR)$(libdir)'
+ GENERATED_SOURCES=generated/*.cs
+ # Extract the first word of "mono", so it can be a program name with args.
+ set dummy mono; ac_word=$2
