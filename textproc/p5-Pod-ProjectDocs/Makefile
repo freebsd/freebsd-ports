@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Pod-ProjectDocs
-PORTVERSION=	0.18
+PORTVERSION=	0.21
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Pod
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathT
 		${SITE_PERL}/Class/Accessor/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor \
 		${SITE_PERL}/Class/Data/Inheritable.pm:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
+		${SITE_PERL}/JSON.pm:${PORTSDIR}/converters/p5-JSON \
 		${SITE_PERL}/${PERL_ARCH}/Readonly.pm:${PORTSDIR}/devel/p5-Readonly
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
