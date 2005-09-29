@@ -37,8 +37,8 @@ CONTROL_SCRIPT_MANPAGE_TITLE=	${CONTROL_SCRIPT_NAME:U}
 STARTUP_ORDER?=	020
 STARTUP_SCRIPT_NAME=	${PORTNAME}${MAJOR_VER:S/.//}.sh
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/${STARTUP_ORDER}.${STARTUP_SCRIPT_NAME}
-USER=		www
-GROUP=		www
+TOMCAT_USER?=	www
+TOMCAT_GROUP?=	www
 PW?=		/usr/sbin/pw
 HTTP_PORT?=	8180
 SHUTDOWN_PORT?=	8005
@@ -54,7 +54,7 @@ REPLACE_FILES=	${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.c \
 		${WRKSRC}/conf/server.xml
 JAR_FILE=	bin/bootstrap.jar
 WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
-PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} WWWOWN=${USER} WWWGRP=${GROUP}
+PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} WWWOWN=${TOMCAT_USER} WWWGRP=${TOMCAT_GROUP}
 LATEST_LINK=	${APP_SHORTNAME}
 CONF_EXT=	sample
 PLIST_SUB+=	CONF_EXT=${CONF_EXT}
@@ -62,9 +62,14 @@ PLIST_SUB+=	CONF_EXT=${CONF_EXT}
 SUB_FILES=	tomcat.sh
 SUB_LIST=	TOMCAT_VERSION=${MAJOR_VER:S/.//} \
 		TOMCAT_HOME=${APP_HOME} \
-		USER=${USER} \
+		USER=${TOMCAT_USER} \
 		STDOUT_LOG=${STDOUT_LOG} \
 		STDERR_LOG=${STDERR_LOG}
+
+REPLACE_FILES+=	${PKGDIR}/pkg-install \
+		${PKGDIR}/pkg-deinstall
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 .include <bsd.port.pre.mk>
 
@@ -82,7 +87,7 @@ pre-patch:
 	@${ECHO_MSG} "   Startup script location:  ${STARTUP_SCRIPT}"
 	@${ECHO_MSG} "   Location of JDK:          ${JAVA_HOME}"
 	@${ECHO_MSG} "   Location of Java port:    ${JAVA_PORT}"
-	@${ECHO_MSG} "   Running as (user/group):  ${USER}/${GROUP}"
+	@${ECHO_MSG} "   Running as (user/group):  ${TOMCAT_USER}/${TOMCAT_GROUP}"
 	@${ECHO_MSG} "   HTTP port:                ${HTTP_PORT}"
 	@${ECHO_MSG} "   Shutdown listener port:   ${SHUTDOWN_PORT}"
 	@${ECHO_MSG} "   WARP port:                ${WARP_PORT}"
@@ -91,7 +96,6 @@ pre-patch:
 	@${ECHO_MSG} "   Logfile stderr:           ${STDERR_LOG}"
 	@${ECHO_MSG} "   Starting after install:   ${AUTO_START}"
 	@${ECHO_MSG} "   Stop time-out:            ${STOP_TIMEOUT} sec."
-	@PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 post-patch:
 	@${ECHO_MSG} -n ">> Removing unneeded files..."
@@ -108,7 +112,7 @@ post-patch:
 	-e "/%%CONTROL_SCRIPT%%/s//${CONTROL_SCRIPT:S/\//\\\//g}/g" \
 	-e "/%%CONTROL_SCRIPT_MANPAGE_TITLE%%/s//${CONTROL_SCRIPT_MANPAGE_TITLE}/g" \
 	-e "/%%CONTROL_SCRIPT_NAME%%/s//${CONTROL_SCRIPT_NAME}/g" \
-	-e "/%%GROUP%%/s//${GROUP}/g" \
+	-e "/%%GROUP%%/s//${TOMCAT_GROUP}/g" \
 	-e "/%%HTTP_PORT%%/s//${HTTP_PORT}/g" \
 	-e "/%%JAVA_CMD%%/s//bin\/java/g" \
 	-e "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/g" \
@@ -124,11 +128,14 @@ post-patch:
 	-e "/%%STDERR_LOG%%/s//${STDERR_LOG:S/\//\\\//g}/g" \
 	-e "/%%STDOUT_LOG%%/s//${STDOUT_LOG:S/\//\\\//g}/g" \
 	-e "/%%STOP_TIMEOUT%%/s//${STOP_TIMEOUT}/g" \
-	-e "/%%USER%%/s//${USER}/g" \
+	-e "/%%USER%%/s//${TOMCAT_USER}/g" \
 	-e "/%%WARP_PORT%%/s//${WARP_PORT}/g" \
 	$f > ${WRKDIR}/`basename $f`
 	@${ECHO_MSG} " [ DONE ]"
 .endfor
+
+pre-install:
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
 	@${ECHO_MSG} -n ">> Creating destination directory..."
@@ -158,7 +165,7 @@ do-install:
 	${WRKDIR}/daemonctl.c > ${WRKDIR}/daemonctl_.c
 	@cd ${WRKDIR} && ${CC} -ansi -o ${CONTROL_SCRIPT_NAME} daemonctl_.c
 	@${CP} ${WRKDIR}/${CONTROL_SCRIPT_NAME} ${CONTROL_SCRIPT}
-	@${CHOWN} ${USER}:${GROUP} ${CONTROL_SCRIPT}
+	@${CHOWN} ${TOMCAT_USER}:${TOMCAT_GROUP} ${CONTROL_SCRIPT}
 	@${CHMOD} 6754 ${CONTROL_SCRIPT}
 	@${ECHO_MSG} " [ DONE ]"
 
@@ -173,8 +180,8 @@ do-install:
 .endif
 
 	@${ECHO_MSG} -n ">> Creating log files..."
-	@${INSTALL} -m 664 -o ${USER} -g ${GROUP} /dev/null ${STDOUT_LOG}
-	@${INSTALL} -m 664 -o ${USER} -g ${GROUP} /dev/null ${STDERR_LOG}
+	@${INSTALL} -m 664 -o ${TOMCAT_USER} -g ${TOMCAT_GROUP} /dev/null ${STDOUT_LOG}
+	@${INSTALL} -m 664 -o ${TOMCAT_USER} -g ${TOMCAT_GROUP} /dev/null ${STDERR_LOG}
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} -n ">> Creating symlink to tools.jar..."
@@ -182,7 +189,7 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} -n ">> Fixing ownership settings..."
-	@${CHOWN} -R ${USER}:${GROUP} ${APP_HOME}
+	@${CHOWN} -R ${TOMCAT_USER}:${TOMCAT_GROUP} ${APP_HOME}
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} -n ">> Fixing permissions..."
@@ -191,13 +198,13 @@ do-install:
 
 	@${ECHO_MSG} -n ">> Creating PID file..."
 	@${TOUCH} ${PID_FILE}
-	@${CHOWN} ${USER}:${GROUP} ${PID_FILE}
+	@${CHOWN} ${TOMCAT_USER}:${TOMCAT_GROUP} ${PID_FILE}
 	@${CHMOD} 0600 ${PID_FILE}
 	@${ECHO_MSG} " [ DONE ]"
 
 post-install:
 	@${ECHO_MSG} "${APP_TITLE} ${PORTVERSION} has been installed in ${APP_HOME}."
-	@${ECHO_MSG} "If a user should be able to use ${CONTROL_SCRIPT_NAME}, then put this user in the group ${GROUP}."
+	@${ECHO_MSG} "If a user should be able to use ${CONTROL_SCRIPT_NAME}, then put this user in the group ${TOMCAT_GROUP}."
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "Use 'man ${CONTROL_SCRIPT_NAME}' for information about starting and stopping ${APP_TITLE}."
 .endif

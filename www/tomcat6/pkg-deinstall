@@ -5,10 +5,10 @@
 # * Checks if the PID file exists. If it does, it kills the
 #   process and removes the PID file.
 #
-# * Checks if the 'www' user exists. If it does, then it displays
+# * Checks if the '%%USER%%' user exists. If it does, then it displays
 #   a message.
 #
-# $FreeBSD: /tmp/pcvs/ports/www/tomcat6/Attic/pkg-deinstall,v 1.2 2004-01-02 12:31:11 znerd Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/tomcat6/Attic/pkg-deinstall,v 1.3 2005-09-29 15:08:23 hq Exp $
 #
 
 # Make sure we're in the right stage of the process
@@ -37,8 +37,8 @@ fi
 
 if [ "$2" = "POST-DEINSTALL" ]; then
 	# If the user exists, then display a message
-	if pw usershow "www" 2>/dev/null 1>&2; then
-		echo "To delete the www user permanently, use 'pw userdel www'"
+	if pw usershow "%%USER%%" 2>/dev/null 1>&2; then
+		echo "To delete the %%USER%% user permanently, use 'pw userdel %%USER%%'"
 	fi
 fi
 
