@@ -15,7 +15,6 @@ MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 			ftp://ftp.matrix.com.br/pub/openldap/%SUBDIR%/ \
 			ftp://ftp.ucr.ac.cr/pub/Unix/openldap/%SUBDIR%/ \
 			ftp://ftp.ntua.gr/mirror/OpenLDAP/%SUBDIR%/ \
-			ftp://ftp.shellhung.org/pub/OpenLDAP/%SUBDIR%/ \
 			ftp://ftp.dti.ad.jp/pub/net/OpenLDAP/%SUBDIR%/ \
 			ftp://ftp.u-aizu.ac.jp/pub/net/openldap/%SUBDIR%/ \
 			ftp://ftp.holywar.net/pub/OpenLDAP/%SUBDIR%/ \
@@ -23,7 +22,6 @@ MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 			ftp://ftp.linux.pt/pub/mirrors/OpenLDAP/%SUBDIR%/ \
 			ftp://ftp.rediris.es/mirror/OpenLDAP/%SUBDIR%/ \
 			ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/%SUBDIR%/ \
-			http://openldap.cdpa.nsysu.edu.tw/OpenLDAP/%SUBDIR%/ \
 			ftp://ftp.plig.org/pub/OpenLDAP/%SUBDIR%/
 MASTER_SITE_SUBDIR=	openldap-release
 PKGNAMESUFFIX?=		-server
