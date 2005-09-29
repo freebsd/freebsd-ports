@@ -1,5 +1,7 @@
 bin/dcl2inc
 bin/ftnchek
 share/emacs/site-lisp/ftnchek.el
-share/ftnchek/dcl2inc.awk
-@dirrm share/ftnchek
+@unexec rmdir %D/share/emacs/site-lisp 2>/dev/null || true
+@unexec rmdir %D/share/emacs 2>/dev/null || true
+%%DATADIR%%/dcl2inc.awk
+@dirrm %%DATADIR%%
