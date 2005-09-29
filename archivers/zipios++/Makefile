@@ -20,6 +20,8 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 # port don't strictly need it, but Wesnoth use it so must we
 USE_GCC=	3.4
+USE_INC_LIBTOOL_VER=15
+CONFIGURE_ARGS+=--disable-static
 USE_REINPLACE=	yes
 WANT_AUTOMAKE_VER=19
 

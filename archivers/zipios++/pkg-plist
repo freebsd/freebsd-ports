@@ -24,7 +24,6 @@ include/zipios++/zipios-config.h
 include/zipios++/zipoutputstream.h
 include/zipios++/zipoutputstreambuf.h
 @dirrm include/zipios++
-lib/libzipios.a
 lib/libzipios.la
 lib/libzipios.so
 lib/libzipios.so.0
