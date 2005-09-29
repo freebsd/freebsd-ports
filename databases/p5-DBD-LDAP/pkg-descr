@@ -4,5 +4,3 @@ You will need access to an existing LDAP database or set up your own using
 an LDAP server, ie. "OpenLDAP".
 
 WWW: http://search.cpan.org/dist/DBD-LDAP/
-
-Seamus Venasse <svenasse@polaris.ca>
