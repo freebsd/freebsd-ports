@@ -507,6 +507,7 @@
     SUBDIR += sylpheed-claws
     SUBDIR += sympa
     SUBDIR += sympa-elixus
+    SUBDIR += sympa5
     SUBDIR += t-prot
     SUBDIR += teapop
     SUBDIR += teapop-devel

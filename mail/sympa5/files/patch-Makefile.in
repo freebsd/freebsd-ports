@@ -1,0 +1,80 @@
+--- Makefile.in.orig	Tue Aug 16 14:25:23 2005
++++ Makefile.in	Mon Sep 26 13:00:29 2005
+@@ -218,6 +218,8 @@
+ PERL_VERSION = `$(PERL) -e ' print $$]'`
+ SYMPA_VERSION = @VERSION@
+ DIR = ${prefix}
++ARC_DIR = ${prefix}/sympa/arc
++BOUNCE_DIR = ${prefix}/sympa/bounce
+ EXPL_DIR = @EXPLDIR@
+ MAILERPROGDIR = @BINDIR@
+ RPMTOPDIR = `rpm --eval %_topdir`
+@@ -508,7 +510,7 @@
+ 	@CVS2CL@
+ #endif
+ 
+-all:	warning checkperl checkcpan sources man locale
++all:	sources man locale
+ 
+ rpm: build_rh_rpm build_mdk_rpm
+ 
+@@ -593,7 +595,7 @@
+ 	$(MAKE) PERL='${PERL}' clean) || exit 1; \
+ 	done;
+ 
+-install: importantchanges installsrc installwws installwebtt2 installmailtt2 installlocale installman installscript installsample installdir installconfig installdoc installsoap
++install: installsrc installwws installwebtt2 installmailtt2 installlocale installman installscript installsample installdir installconfig installdoc installsoap
+ 
+ importantchanges:
+ 	@( 	PERL=$(PERL); export PERL; \
+@@ -610,7 +612,7 @@
+ 	$(MAKE) SH='${SH}' CC='${CC}' CFLAGS='${CFLAGS}' PERL='${PERL}' \
+ 	DIR='${DIR}' LOCALEDIR='${LOCALEDIR}' ETCBINDIR='${ETCBINDIR}' \
+ 	DESTDIR='${DESTDIR}' CONFIG='${CONFIG}' WWSCONFIG='${WWSCONFIG}' \
+-	LOCALEDIR='${prefix}/locale' SCRIPTDIR='${SCRIPTDIR}' \
++	SCRIPTDIR='${SCRIPTDIR}' \
+ 	USER='${USER}' GROUP='${GROUP}') || exit 1;
+ 
+ installlocale:
+@@ -618,7 +620,6 @@
+ 	$(MAKE) SH='${SH}' CC='${CC}' CFLAGS='${CFLAGS}' PERL='${PERL}' \
+ 	DIR='${DIR}' LOCALEDIR='${LOCALEDIR}' ETCBINDIR='${ETCBINDIR}' \
+ 	DESTDIR='${DESTDIR}' CONFIG='${CONFIG}' WWSCONFIG='${WWSCONFIG}' \
+-	LOCALEDIR='${prefix}/locale' \
+ 	USER='${USER}' GROUP='${GROUP}' install) || exit 1;
+ 
+ updatelocale:
+@@ -626,7 +627,7 @@
+ 	$(MAKE) SH='${SH}' CC='${CC}' CFLAGS='${CFLAGS}' PERL='${PERL}' \
+ 	DIR='${DIR}' LOCALEDIR='${LOCALEDIR}' ETCBINDIR='${ETCBINDIR}' \
+ 	DESTDIR='${DESTDIR}' CONFIG='${CONFIG}' WWSCONFIG='${WWSCONFIG}' \
+-	LOCALEDIR='${prefix}/locale' SCRIPTDIR='${SCRIPTDIR}' \
++	SCRIPTDIR='${SCRIPTDIR}' \
+ 	USER='${USER}' GROUP='${GROUP}' update-po) || exit 1;
+ 
+ installsrc:
+@@ -719,7 +720,7 @@
+ 
+ installdir:
+ 	@echo "Creating required directories"
+-	@for dir in $(DIR) $(EXPL_DIR) $(CONFDIR) $(SAMPLEDIR) ; do \
++	@for dir in $(DIR) $(EXPL_DIR) $(ARC_DIR) $(BOUNCE_DIR) $(CONFDIR) $(SAMPLEDIR) ; do \
+ 		if [ ! -d $(DESTDIR)$$dir ] ; then \
+ 			echo "Creating $(DESTDIR)$$dir"; \
+ 			mkdir -p $(DESTDIR)$$dir; \
+@@ -769,14 +770,7 @@
+ 	INITCONF='1'; \
+ 	fi \
+ 	fi \
+-	done; \
+-	if [ "$$INITCONF" ] ; then \
+-	echo "###############################################"; \
+-	echo "It seems to be your first installation of Sympa"; \
+-	echo "The following wizard will help you create your $(CONFDIR)/sympa.conf and $(CONFDIR)/wwsympa.conf :"; \
+-	DESTDIR=$(DESTDIR); export DESTDIR; \
+-	$(PERL) -I $(DESTDIR)$(LIBDIR) $(DESTDIR)$(SBINDIR)/sympa_wizard.pl; \
+-	fi
++	done;
+ 
+ build_rh_rpm: clean
+ 	@echo "Building RedHat RPM in $(RPMTOPDIR) ..."

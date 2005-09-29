@@ -1,0 +1,85 @@
+--- src/etc/script/sympa     	Wed Jun 29 17:33:54 2005
++++ src/etc/script/sympa	Mon Sep 12 17:11:57 2005
+@@ -43,6 +43,8 @@
+ sympaconf="--CONFIG--"
+ wwsympaconf="--WWSCONFIG--"
+ 
++lockdir="--LOCKDIR--"
++
+ ##'echo -n' not supported with SH on Solaris
+ if [ ${OSTYPE} = "SunOS" ]; then
+   echo_opt=""
+@@ -50,6 +52,10 @@
+   echo_opt="-n"
+ fi
+ 
++if [ ${OSTYPE} = "FreeBSD" ]; then
++  lockdir="/var/spool/lock"
++fi
++
+ # End of parameters
+ 
+ # Current state of the module
+@@ -68,7 +74,7 @@
+        if [ -f --PIDDIR--/$1.pid ] ; then
+              pid=`head -1 --PIDDIR--/$1.pid`
+              if [ "$pid" != "" ] ; then
+-                 running=`ps -A | grep "$pid"`
++                 running=`ps -ax | grep perl | grep $pid`
+                  if [ "$running" != "" ]; then
+                      echo "$1 (pid $pid) is active..."
+                      return 0
+@@ -96,7 +102,7 @@
+ #		startparam=""
+ #	fi
+  
+-	if [ ${OSTYPE} = "IRIX" -o ${OSTYPE} = "SunOS" -o ${OSTYPE} = "Debian" -o ${OSTYPE} = "Suse" ]; then
++	if [ ${OSTYPE} = "IRIX" -o ${OSTYPE} = "SunOS" -o ${OSTYPE} = "FreeBSD" -o ${OSTYPE} = "Debian" -o ${OSTYPE} = "Suse" ]; then
+ 		$sympadir/$1.pl $startparam && echo "success" || echo "failure"
+ 	else
+ 		$sympadir/$1.pl $startparam && success || failure
+@@ -152,9 +158,9 @@
+ 	if [ -f --PIDDIR--/$1.pid ]; then
+ 		echo $echo_opt "Stopping module $1.pl: "
+ 		pid=`head -1 --PIDDIR--/$1.pid`
+-		running=`ps -A | grep "$pid"`
++		running=`ps -ax | grep perl | grep "$pid"`
+ 		if [ "$running" != "" ]; then
+-		if [ ${OSTYPE} = "IRIX" -o ${OSTYPE} = "SunOS" -o ${OSTYPE} = "Debian" -o ${OSTYPE} = "Suse" ]; then
++		if [ ${OSTYPE} = "IRIX" -o ${OSTYPE} = "SunOS" -o ${OSTYPE} = "FreeBSD" -o ${OSTYPE} = "Debian" -o ${OSTYPE} = "Suse" ]; then
+ 			kill -TERM $pid && echo "success" || echo "failure"
+ 		    else
+ 			kill -TERM $pid && success || failure
+@@ -185,13 +191,13 @@
+ # See how we were called.
+ case "$1" in
+   start)
+-	if [ ! -f --LOCKDIR--/sympa ]; then
++	if [ ! -f "$lockdir/sympa" ]; then
+ 		echo "Starting Sympa subsystem: "
+ 		sympa_start sympa
+ 		sympa_start archived
+ 		sympa_start bounced
+ 		sympa_start task_manager
+-		touch --LOCKDIR--/sympa
++		touch "$lockdir/sympa"
+ 		echo
+ 	else
+ 
+@@ -207,13 +213,13 @@
+ 	sympa_stop sympa
+ 	sympa_stop sympa-distribute
+ 	sympa_stop task_manager
+-	if [ -f --LOCKDIR--/sympa ]; then
+-		rm -f --LOCKDIR--/sympa
++	if [ -f "$lockdir/sympa" ]; then
++		rm -f "$lockdir/sympa"
+ 	fi
+ 	;;
+   status)
+ 	echo "Status of Sympa subsystem: "
+-	if [ -f --LOCKDIR--/sympa ]; then
++	if [ -f "$lockdir/sympa" ]; then
+ 		echo "Status file for subsystem found."
+ 	else
+ 		echo "Status file for subsystem NOT found."

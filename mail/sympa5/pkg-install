@@ -1,0 +1,73 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+if [ x"$2" = xPOST-INSTALL ]; then
+        echo "============================================================"
+if [ x"${DB_TYPE}" != "x" ]; then
+        echo "If this is your first installation of sympa, please load"
+        echo "this file with your ${DB_TYPE} database client:"
+	echo "    ${PKG_PREFIX}/bin/create_db.${DB_TYPE}"
+	echo ""
+fi
+	echo "A default configuration is installed,"
+	echo "to configure sympa interactively, please run:"
+	echo "    perl ${PKG_PREFIX}/sbin/sympa_wizard.pl"
+	echo ""
+	echo "You may also manually edit the two configuration files:"
+	echo "    ${PKG_PREFIX}/etc/sympa/sympa.conf"
+	echo "    ${PKG_PREFIX}/etc/sympa/wwsympa.conf"
+        echo "============================================================"
+        echo "To set up the wwsympa server, add something like this to"
+        echo "your Apache configuration file:"
+	echo ""
+        echo "    DocumentRoot \"${PKG_PREFIX}/sympa\""
+        echo "    AddDefaultCharset UTF-8"
+        echo "    DirectoryIndex wws"
+        echo "    Options +Indexes"
+if [ x"${WITH_FASTCGI}" != x ]; then
+        echo "    LoadModule fastcgi_module libexec/apache2/mod_fastcgi.so"
+	echo "    <Location /wws>"
+	echo "        SetHandler fastcgi-script"
+        echo "    </Location>"
+fi
+        echo "    <Directory \"${PKG_PREFIX}/sympa\">"
+        echo "        Allow from all"
+        echo "    </Directory>"
+        echo "    ScriptAlias /wws ${PKG_PREFIX}/sympa/cgi-bin/wwsympa-wrapper"
+        echo "============================================================"
+	exit 0
+fi
+
+if [ x"$2" != xPRE-INSTALL ]; then
+	exit 0
+fi
+
+USER=sympa
+GROUP=${USER}
+UID=200
+GID=${UID}
+
+if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
+	if pw groupadd ${GROUP} -g ${GID}; then
+		echo "Added group \"${GROUP}\"."
+	else
+		echo "Adding group \"${GROUP}\" failed..."
+		exit 1
+	fi
+fi
+
+if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
+	if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+		-s /sbin/nologin -d /nonexistent \
+		-c "Sympa Owner"; \
+	then
+		echo "Added user \"${USER}\"."
+	else
+		echo "Adding user \"${USER}\" failed..."
+		exit 1
+	fi
+fi
+
+Exit 0
