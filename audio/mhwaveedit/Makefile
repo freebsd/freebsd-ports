@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mhwaveedit
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5b
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/mhwaveedit/
 
@@ -35,6 +35,7 @@ OPTIONS=	DOUBLE_SAMPLES "increase quality for 24/32-bit samplerates" off \
 		OSS "OSS sound driver" on \
 		PORTAUDIO "PortAudio sound driver" off \
 		SDL "SDL sound driver" off \
+		ARTS "arts sound driver" off \
 		JACK "JACK sound driver" off \
 		ESD "EsounD sound driver" off
 
@@ -44,16 +45,16 @@ OPTIONS=	DOUBLE_SAMPLES "increase quality for 24/32-bit samplerates" off \
 CONFIGURE_ARGS+=	--with-double-samples
 .endif
 
-.if defined(WITH_SNDFILE)
-LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
-.else
+.if defined(WITHOUT_SNDFILE)
 CONFIGURE_ARGS+=	--without-libsndfile
+.else
+LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
 .endif
 
-.if defined(WITH_SAMPLERATE)
-LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
-.else
+.if defined(WITHOUT_SAMPLERATE)
 CONFIGURE_ARGS+=	--without-libsamplerate
+.else
+LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 .endif
 
 .if defined(WITHOUT_OSS)
@@ -70,6 +71,12 @@ CONFIGURE_ARGS+=	--without-portaudio
 USE_SDL+=	sdl
 .else
 CONFIGURE_ARGS+=	--without-sdl
+.endif
+
+.if defined(WITH_ARTS)
+LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
+.else
+CONFIGURE_ARGS+=	--without-arts
 .endif
 
 .if defined(WITH_JACK)
