@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Component-Client-HTTP
-PORTVERSION=	0.7100
+PORTVERSION=	0.7200
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		POE::Component::Client::HTTP.3 \
-		POE::Component::Client::HTTPHead.3 \
-		POE::Component::Client::RequestFactory.3
+		POE::Component::Client::HTTP::RequestFactory.3 \
+		POE::Filter::HTTPHead.3
 
 .include <bsd.port.mk>
