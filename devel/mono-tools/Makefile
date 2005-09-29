@@ -15,9 +15,9 @@ MASTER_SITES=	http://www.go-mono.com/sources/${PORTNAME}/
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Documentation browser for Mono and Mono libraries
 
-BUILD_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp \
+BUILD_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp10 \
 		monodocer:${PORTSDIR}/devel/monodoc
-RUN_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp \
+RUN_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp10 \
 		monodocer:${PORTSDIR}/devel/monodoc
 
 USE_GNOME=	gnomehack gnometarget

@@ -19,8 +19,8 @@ LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
 		exif.12:${PORTSDIR}/graphics/libexif \
 		sqlite.2:${PORTSDIR}/databases/sqlite2 \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
-BUILD_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp10
+RUN_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp10
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack

@@ -16,9 +16,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	A Mono based pop-up fax manager
 
-BUILD_DEPENDS=	${X11BASE}/lib/mono/gtk-sharp/gtk-sharp.dll:${PORTSDIR}/x11-toolkits/gtk-sharp \
+BUILD_DEPENDS=	${X11BASE}/lib/mono/gtk-sharp/gtk-sharp.dll:${PORTSDIR}/x11-toolkits/gtk-sharp10 \
 		bash:${PORTSDIR}/shells/bash2
-RUN_DEPENDS=	${X11BASE}/lib/mono/gtk-sharp/gtk-sharp.dll:${PORTSDIR}/x11-toolkits/gtk-sharp \
+RUN_DEPENDS=	${X11BASE}/lib/mono/gtk-sharp/gtk-sharp.dll:${PORTSDIR}/x11-toolkits/gtk-sharp10 \
 		${LOCALBASE}/bin/sendfax:${PORTSDIR}/comms/hylafax \
 		bash:${PORTSDIR}/shells/bash2
 
