@@ -1,0 +1,21 @@
+--- src/settingsdialog.ui.orig	Tue Sep 27 19:43:41 2005
++++ src/settingsdialog.ui	Tue Sep 27 19:44:07 2005
+@@ -4445,18 +4445,4 @@
+ </slots>
+ <pixmapinproject/>
+ <layoutdefaults spacing="6" margin="11"/>
+-<includehints>
+-    <includehint>ccolorbutton.h</includehint>
+-    <includehint>ccolorbutton.h</includehint>
+-    <includehint>ccolorbutton.h</includehint>
+-    <includehint>ccolorbutton.h</includehint>
+-    <includehint>ccolorbutton.h</includehint>
+-    <includehint>ccolorbutton.h</includehint>
+-    <includehint>ccolorbutton.h</includehint>
+-    <includehint>ccolorbutton.h</includehint>
+-    <includehint>ccolorbutton.h</includehint>
+-    <includehint>ccolorbutton.h</includehint>
+-    <includehint>ccolorbutton.h</includehint>
+-    <includehint>ccolorbutton.h</includehint>
+-</includehints>
+ </UI>

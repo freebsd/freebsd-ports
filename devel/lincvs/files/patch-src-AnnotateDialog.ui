@@ -1,0 +1,10 @@
+--- src/AnnotateDialog.ui.orig	Tue Sep 27 19:16:35 2005
++++ src/AnnotateDialog.ui	Tue Sep 27 19:16:54 2005
+@@ -153,7 +153,4 @@
+     <slot>enterWhatsThisMode()</slot>
+ </slots>
+ <layoutdefaults spacing="6" margin="11"/>
+-<includehints>
+-    <includehint>cvsfileviewer.h</includehint>
+-</includehints>
+ </UI>

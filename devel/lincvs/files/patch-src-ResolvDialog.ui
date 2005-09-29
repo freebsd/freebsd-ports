@@ -1,0 +1,12 @@
+--- src/ResolvDialog.ui.orig	Tue Sep 27 20:15:32 2005
++++ src/ResolvDialog.ui	Tue Sep 27 20:15:45 2005
+@@ -347,9 +347,4 @@
+     <slot>enterWhatsThisMode()</slot>
+ </slots>
+ <layoutdefaults spacing="0" margin="0"/>
+-<includehints>
+-    <includehint>filetableimpl.h</includehint>
+-    <includehint>filetableimpl.h</includehint>
+-    <includehint>filetableimpl.h</includehint>
+-</includehints>
+ </UI>

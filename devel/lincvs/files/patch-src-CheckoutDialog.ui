@@ -1,0 +1,10 @@
+--- src/CheckoutDialog.ui.orig	Tue Sep 27 20:02:51 2005
++++ src/CheckoutDialog.ui	Tue Sep 27 20:03:16 2005
+@@ -1020,7 +1020,4 @@
+     <slot>enterWhatsThisMode()</slot>
+ </slots>
+ <layoutdefaults spacing="6" margin="11"/>
+-<includehints>
+-    <includehint>revisionwidgetimpl.h</includehint>
+-</includehints>
+ </UI>
