@@ -8,8 +8,7 @@
 PORTNAME=	fisg
 PORTVERSION=	0.3.12
 CATEGORIES=	irc
-MASTER_SITES=	http://www.tnsp.org/files/ \
-		http://www.daemon.li/distfiles/
+MASTER_SITES=	http://www.tnsp.org/files/
 
 MAINTAINER=	psh@iki.fi
 COMMENT=	Fast IRC statistics generator
