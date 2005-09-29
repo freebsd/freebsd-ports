@@ -1,0 +1,5 @@
+%%SITE_PERL%%/mach/Net/FreeDB.pm
+%%SITE_PERL%%/mach/auto/Net/FreeDB/.packlist
+%%SITE_PERL%%/mach/auto/Net/FreeDB/FreeDB.bs
+%%SITE_PERL%%/mach/auto/Net/FreeDB/FreeDB.so
+%%SITE_PERL%%/mach/auto/Net/FreeDB/autosplit.ix
