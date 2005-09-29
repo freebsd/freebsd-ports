@@ -1,0 +1,104 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+TWIKIDIR=%%TWIKIDIR%%
+
+HOSTNAME=`hostname`
+
+REINPLACE_CMD="%%REINPLACE_CMD%%"
+
+WWWUSER=%%WWWUSER%%
+WWWGROUP=%%WWWGROUP%%
+
+case $2 in
+	PRE-INSTALL)
+		;;
+	POST-INSTALL)
+		# create the empty dirs if necessary (the port creates them
+		# but pkg_add does not)
+		if [ ! -d "${TWIKIDIR}/pub/Main" ]; then
+			mkdir ${TWIKIDIR}/pub/Main
+		fi
+		if [ ! -d "${TWIKIDIR}/pub/Sandbox" ]; then
+			mkdir ${TWIKIDIR}/pub/Sandbox
+		fi
+		if [ ! -d "${TWIKIDIR}/pub/Trash" ]; then
+			mkdir ${TWIKIDIR}/pub/Trash
+		fi
+
+		# hmmm, if we modify this here, the file fails md5sum when deinstalling
+		# but if we do this in Makefile, then we have a hardcoded PREFIX. What to
+		# do?
+		$REINPLACE_CMD -e "s|/home/httpd/twiki|${TWIKIDIR}|g" \
+			-e "s|your.domain.com|$HOSTNAME|" -e "s|/bin/egrep|/usr/bin/egrep|" \
+			-e "s|/bin/fgrep|/usr/bin/fgrep|" ${TWIKIDIR}/lib/TWiki.cfg.sample
+		rm ${TWIKIDIR}/lib/TWiki.cfg.sample.bak
+
+		for i in `find ${TWIKIDIR}/data -type f`; do
+			$REINPLACE_CMD -e "s/nobody:/${WWWUSER}:/g" $i;
+		done
+		find ${TWIKIDIR}/data -type f -name \*.bak | xargs rm
+
+		chown ${WWWUSER}:${WWWGROUP} `find ${TWIKIDIR}/data -type f`
+		chown ${WWWUSER}:${WWWGROUP} `find ${TWIKIDIR}/data -type d`
+		chown ${WWWUSER}:${WWWGROUP} `find ${TWIKIDIR}/pub -type f`
+		chown ${WWWUSER}:${WWWGROUP} `find ${TWIKIDIR}/pub -type d`
+
+		chmod 755 ${TWIKIDIR}/bin/*
+		chmod 664 `find ${TWIKIDIR}/data -type f`
+		chmod 775 `find ${TWIKIDIR}/data -type d`
+		chmod 775 `find ${TWIKIDIR}/pub  -type d`
+
+		# let the user know what's going on
+		cat << __EOF__
+
+*****************************************************************
+TWiki has been installed in ${TWIKIDIR}, with a sample
+configuration file in ${TWIKIDIR}/lib/TWiki.cfg.sample
+You need to copy this file to ${TWIKIDIR}/lib/TWiki.cfg
+and possibly edit it before your installation will be complete.
+
+In most cases, you can simply type:
+
+cp ${TWIKIDIR}/lib/TWiki.cfg.sample ${TWIKIDIR}/lib/TWiki.cfg
+
+Then you should be able to visit http://${HOSTNAME}/twiki/
+
+You need to setup your webserver correctly for TWiki to work
+An example for apache is below:
+
+ScriptAlias /twiki/bin/ "${PKG_PREFIX}/www/twiki/bin/"
+Alias /twiki/ "${PKG_PREFIX}/www/twiki/"
+<Directory "${PKG_PREFIX}/www/twiki/bin">
+  Options +ExecCGI
+  SetHandler cgi-script
+  Allow from all
+  SetEnv USER "${WWWUSER}"
+</Directory>
+<Directory "${PKG_PREFIX}/www/twiki/pub">
+  Options FollowSymLinks +Includes
+  AllowOverride None
+  Allow from all
+</Directory>
+
+Note that this default configuration defines a completely
+open TWiki - any visitor may make changes. Please consult the
+documentation for other configuration options if this is not the
+desired mode of operation.
+
+Please visit http://TWiki.org/feedback.html and leave feedback
+on your experiences with TWiki.
+
+Good Luck!
+*****************************************************************
+__EOF__
+
+		;;
+	*)
+		echo "Unexpected Argument $2!!!"
+		exit 1
+		;;
+esac
+exit 0
