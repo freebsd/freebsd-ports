@@ -19,6 +19,8 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 
+CONFLICTS=	rpm-4.*
+
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE_VER=14
