@@ -20,7 +20,7 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-ALL_TARGET=	stand_alone shared
+ALL_TARGET=	shared
 
 post-patch:
 	@${GREP} -lR "<malloc.\h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
@@ -31,7 +31,7 @@ do-install:
 .for file in drvrsmem.h fitsio.h fitsio2.h longnam.h
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include
 .endfor
-.for file in libcfitsio.a libcfitsio.so.0
+.for file in libcfitsio.so.0
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib
 .endfor
 	@${LN} -sf libcfitsio.so.0 ${PREFIX}/lib/libcfitsio.so
