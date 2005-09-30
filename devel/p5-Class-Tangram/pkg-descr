@@ -6,6 +6,3 @@ schema for the object, which is contained within the object class in an
 exported variable $schema.
 
 WWW: http://search.cpan.org/dist/Class-Tangram/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
