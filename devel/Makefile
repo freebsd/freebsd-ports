@@ -884,6 +884,7 @@
     SUBDIR += p5-ExtUtils-Constant
     SUBDIR += p5-ExtUtils-Depends
     SUBDIR += p5-ExtUtils-MakeMaker
+    SUBDIR += p5-ExtUtils-MakeMaker-Coverage
     SUBDIR += p5-ExtUtils-ParseXS
     SUBDIR += p5-ExtUtils-PkgConfig
     SUBDIR += p5-ExtUtils-XSBuilder

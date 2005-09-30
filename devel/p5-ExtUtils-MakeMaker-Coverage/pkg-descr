@@ -1,0 +1,14 @@
+ExtUtils::MakeMaker::Coverage adds a Makefile target to determine
+test coverage using Devel::Cover:
+
+    # In Makefile.PL
+    use ExtUtils::MakeMaker;
+    use ExtUtils::MakeMaker::Coverage;
+    ...
+    # if you already have a MY::postamble...
+    sub MY::postamble {
+        testcover();
+        ...
+    }
+
+WWW: http://search.cpan.org/dist/ExtUtils-MakeMaker-Coverage/
