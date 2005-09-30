@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	rwhois
-PORTVERSION=	1.5.9.3
+PORTVERSION=	1.5.9.5
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.rwhois.net/ftp/ \
-	http://www.rwhois.net/ftp/older_releases/
+		http://www.rwhois.net/ftp/older_releases/
 DISTNAME=	${PORTNAME}d-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	The Internic referral whois server
 
+USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}/lib/rwhois
 MAKE_ENV=	RWHOIS_ROOT_DIR=${PREFIX}/lib/rwhois
@@ -25,15 +26,19 @@ BINGRP=		bin
 
 MAN8=		rwhois_indexer.8 rwhoisd.8
 
-MYPORTDOCS=	INSTALL.html TODO UPGRADE operations_guide.html \
+PORTDOCS=	INSTALL.html TODO UPGRADE operations_guide.html \
 		operations_guide.txt rfc2167.txt security.html security.txt
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,userid: rwhoisd,userid: nobody,' \
+		${WRKSRC}/sample.data/rwhoisd.conf
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/rwhois_indexer.8 ${PREFIX}/man/man8
 	${INSTALL_MAN} ${WRKSRC}/doc/rwhoisd.8 ${PREFIX}/man/man8
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${MYPORTDOCS}
+.for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 .endif
