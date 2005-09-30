@@ -427,6 +427,7 @@
     SUBDIR += qlogtools
     SUBDIR += qtpkg
     SUBDIR += radmind
+    SUBDIR += raincoat
     SUBDIR += rc_subr
     SUBDIR += rclean
     SUBDIR += rdate
