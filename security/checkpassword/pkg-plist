@@ -1,9 +1,0 @@
-bin/checkpassword
-share/doc/checkpassword/CHANGES
-share/doc/checkpassword/FILES
-share/doc/checkpassword/README
-share/doc/checkpassword/SYSDEPS
-share/doc/checkpassword/TARGETS
-share/doc/checkpassword/TODO
-share/doc/checkpassword/VERSION
-@dirrm share/doc/checkpassword
