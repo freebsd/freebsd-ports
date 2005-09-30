@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 USE_RC_SUBR=	stund.sh
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/server ${LOCALBASE}/sbin/stund
-	${INSTALL_PROGRAM} ${WRKSRC}/client ${LOCALBASE}/bin/stun_client
+	${INSTALL_PROGRAM} ${WRKSRC}/server ${PREFIX}/sbin/stund
+	${INSTALL_PROGRAM} ${WRKSRC}/client ${PREFIX}/bin/stun_client
 
 .include <bsd.port.mk>
