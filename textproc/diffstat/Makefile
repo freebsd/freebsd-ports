@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	diffstat
-PORTVERSION=	1.34
+PORTVERSION=	1.41
 CATEGORIES=	textproc devel
 MASTER_SITES=	ftp://dickey.his.com/diffstat/
 EXTRACT_SUFX=	.tgz
@@ -15,11 +15,12 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Makes a histogram summarizing "diff" output
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+GNU_CONFIGURE=	yes
+MAKEFILE=	makefile
+
 MAN1=		diffstat.1
 PLIST_FILES=	bin/diffstat
-
-do-build:
-	cd ${WRKSRC}; ${CC} ${CFLAGS} -DHAVE_STDLIB_H -o diffstat diffstat.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/diffstat ${PREFIX}/bin
