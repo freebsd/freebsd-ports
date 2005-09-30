@@ -1,4 +1,4 @@
-# New ports collection makefile for:	xbms
+# New ports collection makefile for:	extract-xiso
 # Date created:				Sun Apr 20 18:28:16 CEST 2003
 # Whom:					king@v2project.com
 #
@@ -6,23 +6,33 @@
 #
 
 PORTNAME=	extract-xiso
-PORTVERSION=	1.4
+DISTVERSION=	2.4b2
 CATEGORIES=	emulators
-MASTER_SITES=	http://dwl.xbox-scene.net/~xbox/xbox-scene/tools/isotools/
-PKGNAMESUFFIX=	-freebsd_v${PORTVERSION}
-DISTNAME=       ${PORTNAME}${PKGNAMESUFFIX}
-EXTRACT_SUFX=   .zip
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}_src_v${DISTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	This tool will extract files form  xdvdfs (xbox iso) image
+COMMENT=	Tool for extracting and creating optimised Xbox ISO images
+
+WRKSRC=		${WRKDIR}/extract-xiso
 
 PLIST_FILES=	bin/extract-xiso
-WRKSRC=		${WRKDIR}/freebsd
-NO_BUILD=       yes
-USE_ZIP=        yes
+DOC=		LICENSE.TXT
 
-ONLY_FOR_ARCHS=	i386
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
+pre-configure:
+	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 do-install:
-	${CP} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+.	if !defined(NOPORTDOCS)
+		${MKDIR} ${DOCSDIR}
+		${INSTALL_DATA} ${WRKSRC}/LICENSE.TXT ${DOCSDIR}
+.	endif
+
 .include <bsd.port.mk>
