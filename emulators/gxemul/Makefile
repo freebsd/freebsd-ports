@@ -10,7 +10,7 @@ PORTVERSION=	0.3.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://gavare.se/gxemul/src/
 
-MAINTAINER=	jannisan@t-online.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Instruction-level machine emulator
 
 USE_REINPLACE=	yes
