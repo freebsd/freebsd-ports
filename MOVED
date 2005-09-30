@@ -1629,3 +1629,4 @@ devel/libunrar|archivers/libunrar|2005-09-23|corrected category
 www/gecko-sharp|www/gecko-sharp10|2005-09-25|renamed to reflect API version
 x11-toolkits/gtk-sharp|x11-toolkits/gtk-sharp10|2005-09-28|renamed to reflect API version
 x11-toolkits/gtk-sharp-devel|x11-toolkits/gtk-sharp20|2005-09-28|renamed to reflect API version
+print/preview-latex|print/auctex|2005-09-30|integrated into print/auctex

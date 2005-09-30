@@ -9844,7 +9844,6 @@ premail		ports/mail/premail
 premake		ports/devel/premake
 preps-gui	ports/devel/preps-gui
 preview		ports/graphics/preview
-preview-latex	ports/print/preview-latex
 primer3		ports/biology/primer3
 print-n-times	ports/textproc/print-n-times
 print_pmw	ports/print/pmw
