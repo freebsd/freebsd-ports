@@ -11,25 +11,23 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.boutell.com/rinetd/http/
 DISTNAME=	rinetd
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A simple TCP port redirector
 
 WRKSRC=		${WRKDIR}/rinetd/
 
 MAN8=		rinetd.8
 PORTDOCS=	index.html
-PLIST_FILES=	etc/rc.d/rinetd.sh sbin/rinetd
+PLIST_FILES=	sbin/rinetd
 
-
-USE_RC_SUBR=	yes
-RC_SCRIPTS_SUB= PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+USE_RC_SUBR=	rinetd.sh
+USE_REINPLACE=	yes
 
 post-patch:
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/rinetd.sh > ${WRKDIR}/rinetd.sh
+	@${REINPLACE_CMD} -E "s,(/etc/rinetd.conf),${PREFIX}\1," \
+		${WRKSRC}/rinetd.c
 
 post-install:
-	${INSTALL_SCRIPT} -m 751 ${WRKDIR}/rinetd.sh ${PREFIX}/etc/rc.d/rinetd.sh
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} ; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
