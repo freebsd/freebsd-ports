@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	code2html
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.palfrader.org/code2html/all/
@@ -15,28 +15,21 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	Sourcecode to HTML converter
 
-.if !exists(/usr/bin/bzip2)
-RUN_DEPENDS=	bzip2:${PORTSDIR}/archivers/bzip2
-
-BZIP2BASE=	${PREFIX}
-.else
-BZIP2BASE=	/usr
-.endif
-
 NO_BUILD=	yes
 USE_REINPLACE=	yes
+USE_PERL5_RUN=	yes
 
 MAN1=		code2html.1
 PLIST_FILES=	bin/code2html
 
 do-configure:
-	@${MV} ${WRKSRC}/code2html ${WRKSRC}/code2html.orig
-	@${SED} -e 's|/usr/bin/bzip2|${BZIP2BASE}/bin/bzip2|' \
+	@${REINPLACE_CMD} \
+		-e 's|/usr/bin/bzip2|${BZIP2_CMD}|' \
 		-e 's|/bin/gzip|/usr/bin/gzip|' \
-		-e 's|/etc/code|${PREFIX}/etc/code|' \
-		< ${WRKSRC}/code2html.orig > ${WRKSRC}/code2html
-	@${REINPLACE_CMD} -e 's|/etc/code|${PREFIX}/etc/code|' \
-	    ${WRKSRC}/code2html.1
+		-e 's|/etc/|${PREFIX}/etc/|' \
+		${WRKSRC}/code2html
+	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|' \
+		${WRKSRC}/code2html.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/code2html ${PREFIX}/bin
