@@ -17,6 +17,8 @@ COMMENT=	Python interface to GDChart
 
 LIB_DEPENDS=	gdc.1:${PORTSDIR}/graphics/gdchart
 
+CONFLICTS=	${PYTHON_PKGNAMEPREFIX}gdchart-2.*
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 EXAMPLE_FILES=	test.html test.py
