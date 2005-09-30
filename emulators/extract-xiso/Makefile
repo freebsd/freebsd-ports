@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-freebsd_v${PORTVERSION}
 DISTNAME=       ${PORTNAME}${PKGNAMESUFFIX}
 EXTRACT_SUFX=   .zip
 
-MAINTAINER=	king@v2project.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This tool will extract files form  xdvdfs (xbox iso) image
 
 PLIST_FILES=	bin/extract-xiso

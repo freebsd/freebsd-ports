@@ -10,7 +10,7 @@ PORTVERSION=	1.5
 CATEGORIES=	misc
 MASTER_SITES=	http://dexy.mine.nu/gp32/gplink/
 
-MAINTAINER=	king@v2project.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GP32 USB linker tool
 
 LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb

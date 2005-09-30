@@ -14,7 +14,7 @@ DISTNAME=	JBidWatcher-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
-MAINTAINER=	king@v2project.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Java-based application allowing you to monitor eBay auctions
 
 USE_JAVA=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=poc
 
-MAINTAINER=	king@v2project.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for managing passwords on smartcards
 
 LIB_DEPENDS=	towitoko.2:${PORTSDIR}/devel/towitoko
