@@ -1011,6 +1011,7 @@
     SUBDIR += p5-OLE-Storage_Lite
     SUBDIR += p5-OOTools
     SUBDIR += p5-ORBit
+    SUBDIR += p5-Object-Accessor
     SUBDIR += p5-Object-MultiType
     SUBDIR += p5-Object-Realize-Later
     SUBDIR += p5-P4
