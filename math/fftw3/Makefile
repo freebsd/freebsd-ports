@@ -61,6 +61,9 @@ USE_GCC=	3.4
 .endif
 .endif
 .endif
+.if ${FFTW3_FLAVOR}=="long" && !defined(CPUTYPE)
+USE_LDOUBLE=	yes
+.endif
 .if ${MACHINE_CPU:M3dnow}
 CONFIGURE_ARGS+=--enable-k7
 CFLAGS_3DNOW=	${CFLAGS:N-O:N-O*} -O3 -fomit-frame-pointer -fno-schedule-insns \
@@ -86,7 +89,7 @@ FFTW3_PKGNAMESUFFIX=	-float
 CONFIGURE_ARGS+=--enable-float
 .else
 .if ${FFTW3_FLAVOR}=="long"
-.if ${OSVERSION} < 504000
+.if ${OSVERSION} < 504000 || defined(USE_LDOUBLE)
 LIB_DEPENDS+=	ml.0:${PORTSDIR}/math/ldouble
 .endif
 FFTW3_SUFX=	l
@@ -121,7 +124,7 @@ post-patch:
 			${WRKSRC}/tools/Makefile.in
 .if ${FFTW3_FLAVOR}=="long"
 	@${REINPLACE_CMD} -e 's|cosl sinl tanl||' ${WRKSRC}/configure
-.if ${OSVERSION} < 504000
+.if ${OSVERSION} < 504000 || defined(USE_LDOUBLE)
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E -e \
 		's|@LIBS@|-lml @LIBS@|'
 .endif
