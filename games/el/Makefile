@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.berlios.de/pub/elc/ http://el.tfm.ro/
 DISTFILES=	${EL_PROG} ${EL_DATA}
 EXTRACT_ONLY=	${EL_PROG}
 
-MAINTAINER=	jannisan@t-online.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eternal Lands is a free 3D MMORPG
 
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
