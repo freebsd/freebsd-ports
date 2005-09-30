@@ -169,7 +169,6 @@
     SUBDIR += p5-Expect
     SUBDIR += p5-F77
     SUBDIR += p5-JavaScript-SpiderMonkey
-    SUBDIR += p5-List-MoreUtil
     SUBDIR += p5-List-MoreUtils
     SUBDIR += p5-Scalar-List-Utils
     SUBDIR += p5-Switch
