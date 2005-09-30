@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmail-notify
-PORTVERSION=	1.6
+PORTVERSION=	1.6.1
 CATEGORIES=	mail python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,16 +14,18 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	djulien.bsd@gmail.com
 COMMENT=	GMail Notifier
 
-BUILD_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../../x11-toolkits/py-gnome-extras:extract
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-toolkits/py-gnome-extras:extract
 
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
+.include <bsd.port.pre.mk>
 
-EXTRAS_WRKSRC!=	cd ${.CURDIR}/../../x11-toolkits/py-gnome-extras && ${MAKE} -V WRKSRC
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+EXTRAS_WRKSRC!=	cd ${PORTSDIR}/x11-toolkits/py-gnome-extras && ${MAKE} -V WRKSRC
 
 post-patch:
 	${SED} -e 's|@DATADIR@|${DATADIR}|' ${FILESDIR}/gmail-notifier > ${WRKSRC}/gmail-notifier
@@ -37,11 +39,10 @@ do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/gmail-notifier ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/*.py ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.pyc ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.png ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.jpg ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.so ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/langs.xml ${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
