@@ -1,5 +1,5 @@
---- configure.in.orig	Mon Aug  1 23:24:51 2005
-+++ configure.in	Mon Aug 15 21:20:53 2005
+--- configure.in.orig	Mon Sep 19 15:51:19 2005
++++ configure.in	Thu Sep 22 14:57:12 2005
 @@ -10,7 +10,7 @@
  RELEASE=1
  AC_SUBST(RELEASE)
@@ -91,7 +91,7 @@
  
  
  dnl Check for mysql libraries
-@@ -597,247 +609,11 @@
+@@ -597,245 +609,11 @@
  
  AC_PATH_PROG(PATH_TO_PS,ps)
  
@@ -206,7 +206,6 @@
 -	ac_cv_ps_cols=9
 -	AC_MSG_RESULT([$ac_cv_ps_command])
 -
--XXX
 -elif ps -eo 's comm vsz rss user uid pid ppid args' 2>/dev/null | \
 -	egrep -i ["^S[TAUES]* +C[OMDNA]+ +[VSIZE]+ +U[SER]+ +U[ID]+ +P[PID]+ +P[PID]+ +[RGSCOMDNA]+"] >/dev/null
 -then
@@ -331,7 +330,6 @@
 -	ac_cv_ps_format="%*s %s %d %d %d %*s %*s %*s %*s %*s %*s %*s %*s %*s %n%s"
 -	ac_cv_ps_cols=8
 -	AC_MSG_RESULT([$ac_cv_ps_command])
--XXX
 -
 -else
 -	AC_MSG_WARN([unable to find usable ps syntax - check_procs and check_nagios will not be compiled])
@@ -344,7 +342,7 @@
  
  if test -n "$ac_cv_ps_varlist" ; then
  	AC_DEFINE_UNQUOTED(PS_VARLIST,$ac_cv_ps_varlist,
-@@ -1198,6 +974,8 @@
+@@ -1196,6 +974,8 @@
  AC_DEFINE_UNQUOTED(WHO_COMMAND,"$ac_cv_path_to_who",
  	[path and arguments for invoking 'who'])
  
@@ -353,7 +351,7 @@
  AC_PATH_PROG(PATH_TO_SNMPGET,snmpget)
  if test -x "$PATH_TO_SNMPGET"
  then
-@@ -1220,7 +998,10 @@
+@@ -1218,7 +998,10 @@
  else
  	AC_MSG_WARN([Tried $PERL - install Net::SNMP perl module if you want to use the perl snmp plugins])
  fi
@@ -364,7 +362,7 @@
  AC_PATH_PROG(PATH_TO_QUAKESTAT,quakestat)
  AC_PATH_PROG(PATH_TO_QSTAT,qstat)
  
-@@ -1242,7 +1023,10 @@
+@@ -1240,7 +1023,10 @@
  	AC_DEFINE_UNQUOTED(PATH_TO_QSTAT,"$ac_cv_path_to_qstat",
  		[path to qstat/quakestat])
  fi
@@ -375,7 +373,7 @@
  AC_PATH_PROG(PATH_TO_FPING,fping)
  if test -x "$PATH_TO_FPING"
  then
-@@ -1251,6 +1035,7 @@
+@@ -1249,6 +1035,7 @@
  else
  	AC_MSG_WARN([Get fping from http://www.fping.com in order to make check_fping plugin])
  fi
@@ -383,7 +381,7 @@
  
  AC_PATH_PROG(PATH_TO_SSH,ssh)
  
-@@ -1313,32 +1098,12 @@
+@@ -1311,32 +1098,12 @@
  dnl end if for PATH_TO_SWAP
  fi
  
