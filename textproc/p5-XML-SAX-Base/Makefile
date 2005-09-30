@@ -17,6 +17,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Base class SAX Drivers and Filters
 
+DEPRECATED=	XML-SAX-Base is subset of textproc/p5-XML-SAX
+EXPIRATION_DATE=	2005-10-30
+
 PERL_CONFIGURE=	yes
 
 MAN3=		XML::SAX::Exception.3 \
