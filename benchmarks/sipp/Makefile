@@ -19,6 +19,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/sipp
 MAN1=		sipp.1
 
+MAKE_ENV=	CPP="${CXX}" CPPFLAGS="${CXXFLAGS}" CCLINK="${CXX}"
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
