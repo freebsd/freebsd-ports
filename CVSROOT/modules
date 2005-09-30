@@ -10542,6 +10542,7 @@ ree		ports/misc/ree
 reed		ports/sysutils/reed
 reed-solomon	ports/math/reed-solomon
 refdb		ports/textproc/refdb
+referrercop	ports/textproc/referrercop
 regexx		ports/devel/regexx
 regexxer	ports/devel/regexxer
 regm		ports/mail/regm
