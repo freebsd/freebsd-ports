@@ -13,7 +13,7 @@ MASTER_SITES=	http://devel.amessage.info/jabberd14/
 DISTNAME=	${PORTNAME}d-${PORTVERSION}
 DIST_SUBDIR=	jabber
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Online presence and instant messaging server
 
 LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth \
