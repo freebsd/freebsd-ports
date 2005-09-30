@@ -6,26 +6,23 @@
 #
 
 PORTNAME=	tptest
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.7
 CATEGORIES=	net benchmarks
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
-DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Software suite for testing network throughput and Internet services
 
-pre-build:
-	@ cd ${WRKSRC}/apps/unix/client ;\
-	${LN} -s ../../../os-dep/unix/*.[hc] ../../../engine/*.[hc] .
+PLIST_FILES=	bin/tptestclient bin/tptestserver
 
 do-build:
-	@ cd ${WRKSRC}/apps/unix/client; ${MAKE}
-	@ cd ${WRKSRC}/apps/unix/server; ${MAKE}
+	@cd ${WRKSRC}/apps/unix/client; ${MAKE}
+	@cd ${WRKSRC}/apps/unix/server; ${MAKE}
 
 do-install:
-	@ ${INSTALL_PROGRAM} \
-		${WRKSRC}/apps/unix/client/tptest \
+	@${INSTALL_PROGRAM} \
+		${WRKSRC}/apps/unix/client/tptestclient \
 		${WRKSRC}/apps/unix/server/tptestserver \
 		${PREFIX}/bin
 
