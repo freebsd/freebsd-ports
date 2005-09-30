@@ -9,7 +9,7 @@ PORTNAME=	blas
 PORTVERSION=	1.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/blas/ \
-		ftp://www.hensa.ac.uk/mirrors/netlib/blas/ \
+		ftp://ftp.mirrorservice.org/sites/netlib.bell-labs.com/netlib/blas/ \
 		http://www.netlib.org/blas/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz

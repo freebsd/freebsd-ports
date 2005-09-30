@@ -9,7 +9,7 @@ PORTNAME=	linpack
 PORTVERSION=	1.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/linpack/ \
-		ftp://www.hensa.ac.uk/mirrors/netlib/linpack/
+		ftp://ftp.mirrorservice.org/sites/netlib.bell-labs.com/netlib/linpack/
 DISTFILES=	${SRCS:.f=.f.gz}
 
 MAINTAINER=	ports@FreeBSD.org
