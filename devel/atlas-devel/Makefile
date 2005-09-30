@@ -1,6 +1,6 @@
 # New ports collection makefile for:	Atlas
 # Date created:				3 February 2005
-# Whom:					Janni <oliver@FreeBSD.org>
+# Whom:					Janni <jannisan@t-online.de>
 #
 # $FreeBSD$
 #
