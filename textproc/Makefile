@@ -594,6 +594,7 @@
     SUBDIR += redland
     SUBDIR += redland-bindings
     SUBDIR += refdb
+    SUBDIR += referrercop
     SUBDIR += replaceit
     SUBDIR += resume
     SUBDIR += resume-extensions
