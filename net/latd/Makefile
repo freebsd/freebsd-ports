@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	latd
-PORTVERSION=	1.21
+PORTVERSION=	1.23.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	linux-decnet
@@ -14,8 +14,11 @@ MASTER_SITE_SUBDIR=	linux-decnet
 MAINTAINER=	tillman@seekingfire.com
 COMMENT=	The linux-decnet project LAT protocol suite
 
+WRKSRC=		${WRKDIR}/${DISTNAME:R}
+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CFLAGS+=	-Wno-deprecated
 
 MAN1=		llogin.1
 MAN5=		latd.conf.5
