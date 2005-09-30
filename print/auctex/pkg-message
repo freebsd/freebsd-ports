@@ -18,6 +18,7 @@ Enabling AUC TeX
 ================
    You can now tell your users to enable AUC TeX by adding
 
-     (require 'tex-site)
+     (load "auctex.el" nil t t)
+     (load "preview-latex.el" nil t t)
 
 to their `~/.emacs' file.
