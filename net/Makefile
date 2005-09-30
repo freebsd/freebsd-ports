@@ -528,6 +528,7 @@
     SUBDIR += p5-Net-ParseWhois
     SUBDIR += p5-Net-Patricia
     SUBDIR += p5-Net-Pcap
+    SUBDIR += p5-Net-PcapUtils
     SUBDIR += p5-Net-Ping-External
     SUBDIR += p5-Net-Radius
     SUBDIR += p5-Net-RawIP
