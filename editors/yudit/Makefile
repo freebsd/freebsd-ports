@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	yudit
-PORTVERSION=	2.7.6
-PORTREVISION=	1
+PORTVERSION=	2.7.8
 CATEGORIES=	editors converters print
 MASTER_SITES=	http://yudit.org/download/ \
 		${MASTER_SITE_SUNSITE}
