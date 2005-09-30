@@ -232,7 +232,6 @@
     SUBDIR += pmw
     SUBDIR += pnm2ppa
     SUBDIR += poster
-    SUBDIR += preview-latex
     SUBDIR += pscal
     SUBDIR += pslib
     SUBDIR += psmark
