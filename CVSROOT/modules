@@ -10063,6 +10063,7 @@ py-gato		ports/math/py-gato
 py-gd		ports/graphics/py-gd
 py-gdbm		ports/databases/py-gdbm
 py-gdchart	ports/graphics/py-gdchart
+py-gdchart2	ports/graphics/py-gdchart2
 py-getargs	ports/devel/py-getargs
 py-gnome	ports/x11-toolkits/py-gnome
 py-gnome-extras	ports/x11-toolkits/py-gnome-extras
