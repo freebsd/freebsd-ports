@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.worldforge.org/pub/worldforge/libs/sage/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	worldforge
 
-MAINTAINER=	jannisan@t-online.de
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	OpenGL extension library
 
 USE_SDL=	sdl

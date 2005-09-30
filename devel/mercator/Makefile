@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	worldforge
 
-MAINTAINER=	jannisan@t-online.de
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A procedural terrain library
 
 LIB_DEPENDS=	wfmath-0.3.3:${PORTSDIR}/math/wfmath

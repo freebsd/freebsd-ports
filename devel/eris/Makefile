@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	worldforge
 
-MAINTAINER=	jannisan@t-online.de
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	WorldForge client entity library
 
 LIB_DEPENDS=	Atlas-0.5.2:${PORTSDIR}/devel/atlas \
