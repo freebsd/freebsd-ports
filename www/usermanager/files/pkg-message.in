@@ -1,15 +1,15 @@
 *****************************************************************
 
-    Please check %%PREFIX%%/www/data/UserManager/readme.txt
-    You will need script.mysql to create MySQL tables and
-    to edit config.php. To use this manager, you will need to
-    compile your pure-ftpd with -DWITH_MYSQL
+    Please check %%PREFIX%%/%%INSTALLDIR%%/readme.txt
+    To use this manager, you will need to compile your
+    Pure-FTPd with -DWITH_MYSQL
 
 *****************************************************************
 
 'User manager for PureFTPd' is made by M.Mastenbroek 2002 - 2005
 For more info look at http://machiel.generaal.net
-Version 2.0
+
+Version 2.1
 
 Installation:
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	UserManager
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	www ftp
 MASTER_SITES=	http://machiel.generaal.net/files/pureftpd/
 DISTNAME=	ftp_v${PORTVERSION}
@@ -21,17 +21,29 @@ USE_PHP=	mysql pcre posix session
 
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
+PLIST_SUB+=	INSTALLDIR=${INSTALLDIR}
+INSTALLDIR?=	www/data/UserManager
+
+pre-fetch:
+.if !defined(INSTALLDIR)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Define INSTALLDIR to override default of 'www/data/UserManager'."
+	@${ECHO_MSG} ""
+.endif
 
 post-patch:
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
+	 -e 's|%%INSTALLDIR%%|${INSTALLDIR}|g' ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 
 do-install:
-	@${MKDIR} ${PREFIX}/www/data/UserManager
-	@${CP} -Rp ${WRKSRC}/* ${PREFIX}/www/data/UserManager
-	@${CHMOD} 666 ${PREFIX}/www/data/UserManager/config.php
+	@${MKDIR} ${PREFIX}/${INSTALLDIR}
+	@${CP} -Rp ${WRKSRC}/* ${PREFIX}/${INSTALLDIR}
+	@${CHMOD} 666 ${PREFIX}/${INSTALLDIR}/config.php
 	@${ECHO_CMD} ""
 
 post-install:
+.if !defined(BATCH)
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.mk>
