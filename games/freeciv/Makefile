@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	freeciv
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.6
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/ \
 		ftp://ftp.netc.pt/pub/freeciv/stable/ \
 		ftp://ftp.pvv.ntnu.no/pub/freeciv/stable/
 
-MAINTAINER?=	rehsack@liwing.de
+MAINTAINER?=	vsevolod@FreeBSD.org
 COMMENT?=	A civilisation clone for X11; multiplayer
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
