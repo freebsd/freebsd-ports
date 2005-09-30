@@ -18,7 +18,14 @@ COMMENT=	Interface to pcap(3) LBL packet capture library
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include" LIBS="-I${LOCALBASE}/lib -lpcap"
 
 MAN3=		Net::Pcap.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	Perl 5.6 or newer required. Install lang/perl5.8 (or lang/perl5) and try again.
+.endif
+
+.include <bsd.port.post.mk>
