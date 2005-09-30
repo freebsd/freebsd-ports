@@ -18,7 +18,7 @@ COMMENT=	Fdisk, a partition tables manipulator, from util-linux
 WRKSRC=		${WRKDIR}/util-linux-${PORTVERSION}/fdisk
 USE_BZIP2=	yes
 MAN8=		fdisk-linux.8 cfdisk-linux.8 sfdisk-linux.8
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 pre-patch:
 	@rm -f ${WRKSRC}/Makefile
