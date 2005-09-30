@@ -1,10 +1,8 @@
-         ***********************************
-         * !!!!!!!!!!! WARNING !!!!!!!!!!! *
-         ***********************************
-Since 0.62_1, rinetd startup script is now enabled/disabled via
-rc.subr.
-Available variables:
+#
+# You can use the following parameters on /etc/rc.conf:
+#
 # rinetd_enable (bool): Set to "NO" by default.
 #                       Set it to "YES" to enable rinetd
 # rinetd_flags (str):   Set to "" by default.
 #                       Extra flags passed to start command
+#
