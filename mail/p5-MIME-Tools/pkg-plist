@@ -21,7 +21,6 @@
 %%SITE_PERL%%/MIME/WordDecoder.pm
 %%SITE_PERL%%/MIME/Words.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME-tools/.packlist
-%%SITE_PERL%%/set-version.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/mimeabuse
 %%PORTDOCS%%%%EXAMPLESDIR%%/mimedump
