@@ -10,7 +10,7 @@ PORTVERSION=	2.0.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.geocities.com/cprados/files/
 
-MAINTAINER=	king@v2project.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UNIX driver for Towitoko smartcard readers
 
 GNU_CONFIGURE=	yes

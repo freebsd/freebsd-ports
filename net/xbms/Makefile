@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://wipux2.wifo.uni-mannheim.de/~ck/
 DISTNAME=       ${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	king@v2project.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xbms, the unix streaming server for xbox mediaplayer
 
 ONLY_FOR_ARCHS=	i386 alpha
