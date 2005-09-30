@@ -1,10 +1,12 @@
-# New ports collection makefile for:    ezxml
-# Date created:                         27th July 2005
-# Whom:                                 Marcin Jessa <yazzy@yazzy.org>
+# New ports collection makefile for:	ezxml
+# Date created:				27th July 2005
+# Whom:					Marcin Jessa <yazzy@yazzy.org>
+#
 # $FreeBSD$
+#
 
 PORTNAME=	ezxml
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.5
 CATEGORIES=	textproc devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.yazzy.org/ports/ezxml/
