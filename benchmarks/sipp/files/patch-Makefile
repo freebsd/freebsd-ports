@@ -1,0 +1,50 @@
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
+@@ -64,7 +64,7 @@
+ CC_tru64=cc  
+ CC_SunOS=gcc
+ CC_Cygwin=cc  
+-CC=$(CC_$(SYSTEM))
++CC?=$(CC_$(SYSTEM))
+ 
+ # C++ compiler mapping
+ CPP_hpux=aCC  
+@@ -73,7 +73,7 @@
+ CPP_tru64=cxx  
+ CPP_SunOS=g++
+ CPP_Cygwin=g++  
+-CPP=$(CPP_$(SYSTEM))
++CPP?=$(CPP_$(SYSTEM))
+ 
+ #Model specific flags
+ MFLAGS_ia64=+DD64
+@@ -94,7 +94,7 @@
+ CFLAGS_tru64=-D__OSF1 -pthread
+ CFLAGS_SunOS=-g
+ CFLAGS_Cygwin=-D__CYGWIN -Dsocklen_t=int
+-CFLAGS=$(CFLAGS_$(SYSTEM)) -D__3PCC__ $(TLS)
++CFLAGS+=$(CFLAGS_$(SYSTEM)) -D__3PCC__ $(TLS)
+ 
+ #C++ Compiler Flags
+ CPPFLAGS_hpux=-AA -mt -D__HPUX +W829 
+@@ -103,7 +103,7 @@
+ CPPFLAGS_tru64=-D__OSF1 -pthread
+ CPPFLAGS_SunOS=-g
+ CPPFLAGS_Cygwin=-D__CYGWIN -Dsocklen_t=int
+-CPPFLAGS=$(CPPFLAGS_$(SYSTEM)) -D__3PCC__ $(TLS)
++CPPFLAGS+=$(CPPFLAGS_$(SYSTEM)) -D__3PCC__ $(TLS)
+ 
+ #Linker mapping
+ CCLINK_hpux=aCC
+@@ -112,7 +112,7 @@
+ CCLINK_tru64=cxx
+ CCLINK_SunOS=gcc
+ CCLINK_Cygwin=g++
+-CCLINK=$(CCLINK_$(SYSTEM))
++CCLINK?=$(CCLINK_$(SYSTEM))
+ 
+ #Linker Flags
+ LFLAGS_hpux=-AA -mt
