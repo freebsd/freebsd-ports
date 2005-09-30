@@ -10293,7 +10293,6 @@ pyne		ports/news/pyne
 pynids		ports/net/pynids
 pyobfuscate	ports/devel/pyobfuscate
 pypanda		ports/misc/pypanda
-pyperl		ports/lang/pyperl
 pyphany		ports/www/pyphany
 pypvm		ports/net/pypvm
 pyrex		ports/devel/pyrex
