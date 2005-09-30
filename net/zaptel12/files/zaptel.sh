@@ -12,7 +12,8 @@ case "$1" in
 		/sbin/kldload ${LIBDIR}/wct1xxp.ko || exit 1
 		/sbin/kldload ${LIBDIR}/wct4xxp.ko || exit 1
 		/sbin/kldload ${LIBDIR}/wcte11xp.ko || exit 1
-		echo -n ${z}
+		${PREFIX}/bin/ztcfg
+		echo -n " zaptel"
 		;;
 
 	stop)
