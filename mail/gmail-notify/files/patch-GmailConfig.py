@@ -1,5 +1,5 @@
-*** GmailConfig.py.orig	Tue May  3 10:02:32 2005
---- GmailConfig.py	Tue Jun  7 15:27:30 2005
+*** GmailConfig.py.orig	Sun Sep 25 19:12:11 2005
+--- GmailConfig.py	Wed Sep 28 22:27:48 2005
 ***************
 *** 18,24 ****
   	configElements = None 
