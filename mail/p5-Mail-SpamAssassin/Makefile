@@ -7,7 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	3.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
@@ -171,6 +171,9 @@ post-patch:
 .endif
 .if defined(WITH_DOMAINKEYS)
 	${REINPLACE_CMD} -e '/DomainKeys/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v310.pre
+.endif
+.if defined(WITH_RELAY_COUNTRY)
+	${REINPLACE_CMD} -e '/RelayCountry/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/init.pre
 .endif
 
 post-build:
