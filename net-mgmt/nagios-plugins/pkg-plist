@@ -20,7 +20,7 @@ libexec/nagios/check_imap
 libexec/nagios/check_ircd
 libexec/nagios/check_jabber
 %%SUB_LDAP%%libexec/nagios/check_ldap
-libexec/nagios/check_ldaps
+%%SUB_LDAP%%libexec/nagios/check_ldaps
 libexec/nagios/check_load
 libexec/nagios/check_log
 libexec/nagios/check_mailq
