@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	worldforge
 
-MAINTAINER=	jannisan@t-online.de
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Worldforge math library
 
 USE_GMAKE=	yes

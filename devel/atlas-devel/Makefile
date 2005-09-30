@@ -1,6 +1,6 @@
 # New ports collection makefile for:	Atlas
 # Date created:				3 February 2005
-# Whom:					Janni <jannisan@t-online.de>
+# Whom:					Janni <oliver@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=worldforge
 DISTNAME=	${PORTNAME}-C++-${PORTVERSION}
 
-MAINTAINER=	jannisan@t-online.de
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A C++ reference implementation of the Atlas protocol
 
 USE_LIBTOOL_VER=15
