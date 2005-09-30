@@ -463,6 +463,7 @@
     SUBDIR += py-freeimagepy
     SUBDIR += py-gd
     SUBDIR += py-gdchart
+    SUBDIR += py-gdchart2
     SUBDIR += py-graphviz
     SUBDIR += py-imaging
     SUBDIR += py-imaging-handbook

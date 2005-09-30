@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/gdchart.py
+%%PYTHON_SITELIBDIR%%/_gdchartc.so
+%%PYTHON_SITELIBDIR%%/gdchart.pyc
+%%PYTHON_SITELIBDIR%%/gdchart.pyo
