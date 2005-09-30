@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		Class-Gomor-Hash
-PORTVERSION=		0.20
+PORTVERSION=		0.22
 CATEGORIES=		devel perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN} \
 			http://www.gomor.org/netpkt/
@@ -23,7 +23,7 @@ MAN3=	Class::Gomor::Hash.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		"Needs perl 5.6.0 or higher, install lang/perl5.6 and try again"
+IGNORE=		Needs perl 5.6.0 or higher, install lang/perl5.6 and try again
 .endif
 
 .include <bsd.port.post.mk>
