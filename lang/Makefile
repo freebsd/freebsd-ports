@@ -209,7 +209,6 @@
     SUBDIR += py-compiler
     SUBDIR += py-mx-base
     SUBDIR += py-prolog
-    SUBDIR += pyperl
     SUBDIR += python
     SUBDIR += python-devel
     SUBDIR += python-doc-html
