@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-DomainKeys
-PORTVERSION=	0.21
+PORTVERSION=	0.23
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -26,7 +26,7 @@ PERL_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
+.if ${PERL_LEVEL} < 500600
 IGNORE=	Perl 5.8 or newer required. Install lang/perl5.8 and try again.
 .endif
 
