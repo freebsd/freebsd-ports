@@ -9,7 +9,7 @@ PORTNAME=	eispack
 PORTVERSION=	1.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/eispack/ \
-		ftp://www.hensa.ac.uk/mirrors/netlib/eispack/
+		ftp://ftp.mirrorservice.org/sites/netlib.bell-labs.com/netlib/eispack/
 DISTFILES=	${SRCS:.f=.f.gz}
 
 MAINTAINER=	ports@FreeBSD.org
