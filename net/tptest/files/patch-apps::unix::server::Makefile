@@ -1,5 +1,5 @@
---- apps/unix/server/Makefile.orig	Sun Jan 26 22:21:08 2003
-+++ apps/unix/server/Makefile	Sun Jan 26 22:49:45 2003
+--- apps/unix/server/Makefile.orig	Wed Jan 22 13:42:45 2003
++++ apps/unix/server/Makefile	Tue Sep 13 13:02:50 2005
 @@ -3,7 +3,7 @@
  #      Use this for Linux and other systems that have makedepend
  #      instead of mkdep.
@@ -14,8 +14,9 @@
  #      Use this for Free/Net/OpenBSD.
  #
 -#MAKEDEPEND	= mkdep
+-CDEBUG		= -g
 +MAKEDEPEND	= mkdep
- CDEBUG		= -g
++#CDEBUG		= -g
  INCL		= -I ../../../os-dep/unix -I ../../../engine
  
  # Use this flag when compiling under Solaris
