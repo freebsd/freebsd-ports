@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	vtiger
-PORTVERSION=	4.0p1
-PORTREVISION=	1
+PORTVERSION=	4.2p2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vtigercrm
 DISTFILES=	${DIST_MAIN} ${DIST_ADDITIONAL}
 EXTRACT_ONLY=	${DIST_MAIN}
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	vtiger CRM is open source Customer Relationship Management (CRM) software
 
-DIST_MAIN=	${PORTNAME}_CRM_4_0_Source${EXTRACT_SUFX}
-DIST_ADDITIONAL=${PORTNAME}CRM_4_0_Patch_1${EXTRACT_SUFX}
+DIST_MAIN=	${PORTNAME}_CRM_4_2_Source${EXTRACT_SUFX}
+DIST_ADDITIONAL=${PORTNAME}_CRM_4_2_Patch_2${EXTRACT_SUFX}
 WRKSRC=		${WRKDIR}/vtiger_crm_source
 USE_ZIP=	yes
 USE_PHP=	mysql gd session pcre xml
@@ -28,7 +27,7 @@ NO_BUILD=	yes
 WWWDIR?=	${PREFIX}/www/vtiger
 
 post-extract:
-	@${ECHO_CMD} "Extracting patch 1"
+	@${ECHO_CMD} "Extracting patch 2"
 	@${UNZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DIST_ADDITIONAL} -d ${WRKSRC}
 
 do-install:
