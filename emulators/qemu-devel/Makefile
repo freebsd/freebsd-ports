@@ -7,6 +7,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	0.7.2s.20050909
+POTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.qemu.org/ \
 		http://people.fruitsalad.org/nox/qemu/ \

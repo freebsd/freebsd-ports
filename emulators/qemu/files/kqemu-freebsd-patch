@@ -337,12 +337,12 @@ Index: qemu/kqemu/kqemu-freebsd.c
 +        ks->state = NULL;
 +    }
 +
-+    free(ks, M_KQEMU);
 +#if __FreeBSD_version >= 500000
 +    dev->si_drv1 = NULL;
 +    TAILQ_REMOVE(&kqemuhead, ks, kqemu_ent);
 +    destroy_dev(dev);
 +#endif
++    free(ks, M_KQEMU);
 +    --kqemu_ref_count;
 +}
  
