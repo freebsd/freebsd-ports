@@ -10,16 +10,13 @@ PORTVERSION=	0.82
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.blackh0le.net/cd2mp3/dist/${PORTVERSION}/
+MASTER_SITES=	http://www.liquidx.org/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy to use CD Ripping and MP3 Encoding tool
 
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame/ \
 		dagrab:${PORTSDIR}/audio/dagrab
-
-BROKEN=		"Does not fetch, website is gone"
-EXPIRATION_DATE=2005-09-29
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/cd2mp3
