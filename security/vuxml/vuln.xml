@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8688d5cd-328c-11da-a263-0001020eed82">
+    <topic>cfengine -- arbitrary file overwriting vulnerability</topic>
+    <affects>
+      <package>
+	<name>cfengine</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Debian Security Advisory reports:</p>
+	<blockquote cite="http://www.debian.org/security/2005/dsa-835">
+	  <p>Javier Fernández-Sanguino Peña discovered several
+	    insecure temporary file uses in cfengine, a tool for
+	    configuring and maintaining networked machines, that can
+	    be exploited by a symlink attack to overwrite arbitrary
+	    files owned by the user executing cfengine, which is
+	    probably root.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2960</cvename>
+      <url>http://www.debian.org/security/2005/dsa-835</url>
+      <url>http://www.debian.org/security/2005/dsa-836</url>
+    </references>
+    <dates>
+      <discovery>2005-10-01</discovery>
+      <entry>2005-10-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="271498a9-2cd4-11da-a263-0001020eed82">
     <topic>clamav -- arbitrary code execution and DoS
       vulnerabilities</topic>
