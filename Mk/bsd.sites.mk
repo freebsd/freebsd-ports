@@ -12,6 +12,14 @@
 # be punished accordingly.  DO NOT COMMIT SOMETHING YOU HAVEN'T TESTED.
 # You have been warned. :)
 #
+# Note: because it is included for all invocations, please keep the size
+# of this file manageable.  If a distfile is unfetchable from the first
+# few dozen locations, it is unlikely to be fetchable from any past that,
+# and those fetch failures will simply waste time and bandwidth.  Please
+# pick a globally representative subset.
+#
+# Note: all entries should terminate with a slash.
+#
 # $FreeBSD$
 #
 
