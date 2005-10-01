@@ -8146,6 +8146,7 @@ p5-Metadata	ports/databases/p5-Metadata
 p5-Mknod	ports/devel/p5-Mknod
 p5-Module-Build	ports/devel/p5-Module-Build
 p5-Module-CoreList	ports/devel/p5-Module-CoreList
+p5-Module-Find	ports/devel/p5-Module-Find
 p5-Module-Info	ports/devel/p5-Module-Info
 p5-Module-Info-File	ports/devel/p5-Module-Info-File
 p5-Module-Install	ports/devel/p5-Module-Install
