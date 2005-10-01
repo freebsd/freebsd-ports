@@ -89,7 +89,6 @@
     SUBDIR += exim-doc-pdf
     SUBDIR += exim-doc-postscript
     SUBDIR += exim-ldap2
-    SUBDIR += exim-monitor
     SUBDIR += exim-mysql
     SUBDIR += exim-postgresql
     SUBDIR += exim-sa-exim
