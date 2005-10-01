@@ -8038,12 +8038,15 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <certvu>215006</certvu>
       <cvename>CAN-2005-0160</cvename>
       <cvename>CAN-2005-0161</cvename>
+      <mlist msgid="1109113175.421bb95705d42@webmail.uu.se">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=110911451613135</mlist>
     </references>
     <dates>
       <discovery>2005-02-14</discovery>
       <entry>2005-02-22</entry>
+      <modified>2005-10-01</modified>
     </dates>
   </vuln>
 
