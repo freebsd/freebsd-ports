@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dotlrn
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.3
 MASTER_SITES=	http://openacs.org/projects/dotlrn/download/download/
 
 MAINTAINER=	aldert@nooitgedagt.net
