@@ -13,6 +13,6 @@ EMACS_PORT_NAME=	emacs20
 
 DEPRECATED=	"no longer supported"
 BROKEN=		"Does not build"
-EXPIRATION_DATE=2005-11-31
+EXPIRATION_DATE=2005-11-30
 
 .include "${MASTERDIR}/Makefile"
