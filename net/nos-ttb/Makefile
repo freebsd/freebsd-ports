@@ -7,26 +7,21 @@
 #
 
 PORTNAME=	nos-ttb
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.djcbsoftware.nl/code/ttb/
-DISTNAME=	ttb
-EXTRACT_SUFX=
+DISTNAME=	ttb-${PORTVERSION}
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	NOS teletekst browser
 
-NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_PYTHON=	yes
 
-PLIST_FILES=	bin/ttb
-
-do-extract:
-	${MKDIR} ${WRKSRC}
-	${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}
-
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin
+	${MKDIR} ${PREFIX}/share/ttb
+	${INSTALL_SCRIPT} ${WRKSRC}/src/ttb ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/glade/ttb.glade ${PREFIX}/share/ttb
+	${INSTALL_DATA} ${WRKSRC}/images/ttb.png ${PREFIX}/share/ttb
 
 .include <bsd.port.mk>
