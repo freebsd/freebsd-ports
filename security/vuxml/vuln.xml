@@ -12299,6 +12299,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
+      <cvename>CAN-2004-1120</cvename>
       <url>http://www.gentoo.org/security/en/glsa/glsa-200411-31.xml</url>
       <url>http://bugs.gentoo.org/show_bug.cgi?id=70090</url>
       <mlist msgid="41A411E0.2010907@gmx.net">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110136626320497</mlist>
@@ -12306,6 +12307,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-11-23</discovery>
       <entry>2004-11-25</entry>
+      <modified>2005-10-01</modified>
     </dates>
   </vuln>
 
