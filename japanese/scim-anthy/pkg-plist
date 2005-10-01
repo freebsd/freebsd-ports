@@ -4,10 +4,12 @@ share/locale/ja/LC_MESSAGES/scim-anthy.mo
 share/scim/Anthy/style/101kana.sty
 share/scim/Anthy/style/atok.sty
 share/scim/Anthy/style/azik.sty
+share/scim/Anthy/style/canna.sty
 share/scim/Anthy/style/msime.sty
 share/scim/Anthy/style/nicola-a.sty
 share/scim/Anthy/style/nicola-j.sty
 share/scim/Anthy/style/oasys100j.sty
+share/scim/Anthy/style/vje-delta.sty
 @dirrm share/scim/Anthy/style
 @dirrm share/scim/Anthy
 share/scim/icons/scim-anthy.png
