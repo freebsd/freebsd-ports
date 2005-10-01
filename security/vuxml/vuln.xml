@@ -45,7 +45,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The uim developers reports:</p>
-	<blockquote cite="INSERT URL HERE">
+	<blockquote cite="http://lists.freedesktop.org/archives/uim/2005-September/001346.html">
 	  <p>Masanari Yamamoto discovered that incorrect use
             of environment variables in uim. This bug causes
             privilege escalation if setuid/setgid applications
