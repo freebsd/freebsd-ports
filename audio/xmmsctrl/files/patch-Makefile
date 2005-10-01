@@ -1,0 +1,23 @@
+--- Makefile.orig	Fri Apr  2 15:00:12 2004
++++ Makefile	Sun Oct  2 01:30:57 2005
+@@ -6,17 +6,15 @@
+ VERSION  := 1.8
+ DIRNAME  := $(shell basename $(PWD))
+ 
+-CC       := gcc
+ WARN     := -Wall -Wshadow -Wmissing-prototypes -W
+ DEFS     := -DPRETTY_PRINT -D_GNU_SOURCE -DVERSION=\"$(VERSION)\"
+-CFLAGS   := $(WARN) -O2 $(shell xmms-config --cflags) $(DEFS)
+-LDFLAGS  := $(shell xmms-config --libs)
++CFLAGS   += $(WARN) $(shell xmms-config --cflags) $(DEFS) $(PTHREAD_CFLAGS)
++LDFLAGS  := $(shell xmms-config --libs) $(PTHREAD_LIBS)
+ 
+-all : $(TARGET) HELP
++all : $(TARGET)
+ 
+ $(TARGET) : xmmsctrl.c removefile.c
+ 	$(CC) -o $(TARGET) xmmsctrl.c removefile.c $(CFLAGS) $(LDFLAGS)
+-	strip xmmsctrl
+ 
+ HELP : xmmsctrl
+ 	./xmmsctrl > HELP || true
