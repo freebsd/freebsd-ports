@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1e606080-3293-11da-ac91-020039488e34">
+    <topic>uim -- privilege escalation vulnerability</topic>
+    <affects>
+      <package>
+	<name>ja-uim</name>
+	<range><lt>0.4.9.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The uim developers reports:</p>
+	<blockquote cite="INSERT URL HERE">
+	  <p>Masanari Yamamoto discovered that incorrect use
+            of environment variables in uim. This bug causes
+            privilege escalation if setuid/setgid applications
+            was linked to libuim.</p>
+          <p>This bug appears in 'immodule for Qt' enabled Qt.
+            (Normal Qt is also safe.) In some distribution,
+            mlterm is also an setuid/setgid application.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.freedesktop.org/archives/uim/2005-September/001346.html</url>
+    </references>
+    <dates>
+      <discovery>2005-09-28</discovery>
+      <entry>2005-10-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8688d5cd-328c-11da-a263-0001020eed82">
     <topic>cfengine -- arbitrary file overwriting vulnerability</topic>
     <affects>
