@@ -13,7 +13,7 @@ Index: qemu/Makefile
  	$(MAKE) -C kqemu -f Makefile.winnt
  else
 -	$(MAKE) -C kqemu
-+	( cd kqemu && $(BSD_MAKE) )
++	( cd kqemu && $(BSD_MAKE) -f Makefile.freebsd )
  endif
  endif
  
@@ -36,7 +36,7 @@ Index: qemu/Makefile
          done
  ifdef CONFIG_KQEMU
 -	$(MAKE) -C kqemu clean
-+	cd kqemu && $(BSD_MAKE) clean
++	cd kqemu && $(BSD_MAKE) -f Makefile.freebsd clean
  endif
  
  distclean: clean

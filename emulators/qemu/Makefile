@@ -12,6 +12,9 @@ MASTER_SITES=	http://www.qemu.org/ \
 		http://people.fruitsalad.org/nox/qemu/ \
 		http://dad-answers.com/qemu/
 DISTNAME=	${PORTNAME}-snapshot-2005-09-09_23
+.if defined(WITH_KQEMU)
+DISTFILES=	${EXTRACT_ONLY} ${DISTKQEMU}
+.endif
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	nox@jelal.kn-bremen.de
@@ -24,7 +27,6 @@ RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba
 
 .if defined(WITH_KQEMU)
 DISTKQEMU=	kqemu-0.7.2.tar.gz
-DISTFILES=	${EXTRACT_ONLY} ${DISTKQEMU}
 EXTRA_PATCHES=	${FILESDIR}/kqemu-freebsd-patch
 .endif
 
