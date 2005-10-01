@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jwchat
-PORTVERSION=	1.0.b1
+PORTVERSION=	1.0.b2
 CATEGORIES=	www net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,8 +24,12 @@ SUB_FILES=	pkg-message
 SUB_LIST=	WWW_ROOT=www PORTNAME=${PORTNAME}
 
 do-install:
-	${MKDIR} ${PREFIX}/www
-	${CP} -R ${WRKSRC} ${PREFIX}/www/${PORTNAME}
+	${MKDIR} ${PREFIX}/www ${DATADIR}
+	${CP} ${WRKSRC}/config.js ${DATADIR}
+	${MV} ${WRKSRC}/config.js ${WRKSRC}/config.js.sample
+	${CP} -R ${WRKSRC}/ ${PREFIX}/www/${PORTNAME}
+	[ ! -f ${PREFIX}/www/${PORTNAME}/config.js ] && \
+		${CP} ${DATADIR}/config.js ${PREFIX}/www/${PORTNAME}/config.js || true
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/www/${PORTNAME}
 
 post-install:
