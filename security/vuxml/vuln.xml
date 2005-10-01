@@ -3020,6 +3020,10 @@ Note:  Please add new entries to the beginning of this file.
   <vuln vid="8efe93e2-ee62-11d9-8310-0001020eed82">
     <topic>zlib -- buffer overflow vulnerability</topic>
     <affects>
+      <package>
+	<name>zsync</name>
+	<range><lt>0.4.1</lt></range>
+      </package>
       <system>
 	<name>FreeBSD</name>
 	<range><ge>5.4</ge><lt>5.4_4</lt></range>
@@ -3046,6 +3050,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-07-06</discovery>
       <entry>2005-07-06</entry>
+      <modified>2005-10-01</modified>
     </dates>
   </vuln>
 
