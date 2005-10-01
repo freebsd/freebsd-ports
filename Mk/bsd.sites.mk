@@ -1342,8 +1342,7 @@ MASTER_SITE_THEMES+= \
 .if !defined(IGNORE_MASTER_SITE_VIM)
 MASTER_SITE_VIM+= \
 	ftp://ftp.vim.org/pub/vim/unix/  \
-	ftp://ftp.is.co.za/applications/editors/vim/unix/  \
-	ftp://ftp.mirrorservice.org/sites/ftp.vim.org/pub/vim/unix  \
+	ftp://ftp.mirrorservice.org/sites/ftp.vim.org/pub/vim/unix/ \
 	ftp://ftp.jp.vim.org/pub/vim/unix/
 .endif
 
