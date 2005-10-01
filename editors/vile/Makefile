@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	vile
-PORTVERSION=	9.5
+PORTVERSION=	9.5a
 CATEGORIES=	editors
 MASTER_SITES=	ftp://dickey.his.com/vile/ \
 		ftp://invisible-island.net/vile/ \
 		ftp://ftp.phred.org/pub/vile/
+DISTNAME=	vile-9.5
 EXTRACT_SUFX=	.tgz
 
-PATCH_SITES=    ${MASTER_SITES:S,vile/,vile/patches/,g}
+PATCH_SITES=	${MASTER_SITES:S,vile/,vile/patches/,g}
+PATCHFILES=	vile-9.5a.patch.gz
 
 MAINTAINER=	gj@FreeBSD.org
 COMMENT=	VI Like Emacs.  a vi "workalike", with many additional features
@@ -29,12 +31,12 @@ WITH_PERL=1
 .endif
 
 .if defined(WITH_PERL)
-CONFIGURE_ARGS+= --with-perl
+CONFIGURE_ARGS+=	--with-perl
 PLIST=		${PKGDIR}/pkg-plist.perl
 .endif
 
 .if defined(WITH_FILTERS)
-CONFIGURE_ARGS+= --with-loadable-filters
+CONFIGURE_ARGS+=	--with-loadable-filters
 PLIST=		${PKGDIR}/pkg-plist.filt
 .endif
 

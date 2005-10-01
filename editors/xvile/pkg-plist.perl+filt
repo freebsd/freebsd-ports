@@ -21,7 +21,9 @@ lib/xvile/vile-au3-filt
 lib/xvile/vile-awk-filt
 lib/xvile/vile-basic-filt
 lib/xvile/vile-bat-filt
+lib/xvile/vile-bnf-filt
 lib/xvile/vile-cfg-filt
+lib/xvile/vile-css-filt
 lib/xvile/vile-cweb-filt
 lib/xvile/vile-dcl-filt
 lib/xvile/vile-def-filt
@@ -40,9 +42,11 @@ lib/xvile/vile-lex-filt
 lib/xvile/vile-lisp-filt
 lib/xvile/vile-mail-filt
 lib/xvile/vile-make-filt
+lib/xvile/vile-midl-filt
 lib/xvile/vile-mms-filt
 lib/xvile/vile-nr-filt
 lib/xvile/vile-pas-filt
+lib/xvile/vile-php-filt
 lib/xvile/vile-pl-filt
 lib/xvile/vile-pot-filt
 lib/xvile/vile-ps-filt
@@ -65,6 +69,7 @@ lib/xvile/vile-ti-filt
 lib/xvile/vile-txt-filt
 lib/xvile/vile-vile-filt
 lib/xvile/vile-vlog-filt
+lib/xvile/vile-wbt-filt
 lib/xvile/vile-xml-filt
 lib/xvile/vile-xres-filt
 lib/xvile/vile-xs-filt
@@ -126,8 +131,10 @@ share/xvile/vile/as386.keywords
 share/xvile/vile/asm.keywords
 share/xvile/vile/au3.keywords
 share/xvile/vile/basic.keywords
+share/xvile/vile/bnf.keywords
 share/xvile/vile/c.keywords
 share/xvile/vile/cpp.keywords
+share/xvile/vile/css.keywords
 share/xvile/vile/filters.rc
 share/xvile/vile/pas.keywords
 share/xvile/vile/pc.keywords
@@ -160,9 +167,11 @@ share/xvile/vile/lisp.keywords
 share/xvile/vile/m4.keywords
 share/xvile/vile/mail.keywords
 share/xvile/vile/make.keywords
+share/xvile/vile/midl.keywords
 share/xvile/vile/nr.keywords
 share/xvile/vile/nsis.keywords
 share/xvile/vile/perl.keywords
+share/xvile/vile/php.keywords
 share/xvile/vile/py.keywords
 share/xvile/vile/pot.keywords
 share/xvile/vile/rb.keywords
@@ -183,6 +192,7 @@ share/xvile/vile/tcl.keywords
 share/xvile/vile/tex.keywords
 share/xvile/vile/texi.keywords
 share/xvile/vile/ti.keywords
+share/xvile/vile/wbt.keywords
 share/xvile/vile/xml.keywords
 share/xvile/vile/xres.keywords
 share/xvile/vile/xs.keywords
