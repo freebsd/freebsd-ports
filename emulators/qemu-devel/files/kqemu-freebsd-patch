@@ -1,20 +1,14 @@
 Index: qemu/kqemu/Makefile.freebsd
-@@ -1,9 +1,13 @@
-+# $Id: Makefile.freebsd,v 1.1 2005/04/17 17:21:31 bellard Exp $
- KMOD=	kqemu
- SRCS=	kqemu-freebsd.c
- .if ${MACHINE_ARCH} == "i386"
- OBJS=	kqemu-mod-i386.o
+@@ -5,6 +5,7 @@
  .elif ${MACHINE_ARCH} == "amd64"
  OBJS=	kqemu-mod-x86_64.o
-+.endif
-+.if ${OSVERSION} >= 500000
-+CC=	cc
  .endif
++CC=	cc
  WERROR=
  
+ .include <bsd.kmod.mk>
 Index: qemu/kqemu/kqemu-freebsd.c
-@@ -3,20 +3,33 @@
+@@ -3,32 +3,55 @@
  #include <sys/param.h>
  #include <sys/systm.h>
  #include <sys/conf.h>
@@ -23,7 +17,9 @@ Index: qemu/kqemu/kqemu-freebsd.c
  #include <sys/ioccom.h>
  #include <sys/malloc.h>
  #include <sys/module.h>
++#if __FreeBSD_version >= 500000
  #include <sys/mutex.h>
++#endif
  #include <sys/proc.h>
 +#include <sys/resourcevar.h>
 +#if __FreeBSD_version >= 500000
@@ -48,7 +44,12 @@ Index: qemu/kqemu/kqemu-freebsd.c
  #include <machine/vmparam.h>
  #include <machine/stdarg.h>
  
-@@ -25,10 +38,14 @@
+ #include "kqemu-kernel.h"
+ 
++#ifndef KQEMU_MAJOR
++#define KQEMU_MAJOR 250
++#endif
++
  MALLOC_DECLARE(M_KQEMU);
  MALLOC_DEFINE(M_KQEMU, "kqemu", "kqemu buffers");
  
@@ -64,7 +65,7 @@ Index: qemu/kqemu/kqemu-freebsd.c
  struct kqemu_user_page *CDECL kqemu_lock_user_page(unsigned long *ppage_index,
                                                     unsigned long user_addr)
  {
-@@ -37,14 +54,18 @@
+@@ -37,14 +60,18 @@
      vm_paddr_t pa = 0;
      int ret;
      pmap_t pmap;
@@ -81,16 +82,16 @@ Index: qemu/kqemu/kqemu-freebsd.c
      pmap = vm_map_pmap(&vm->vm_map);
      pa = pmap_extract(pmap, va);
 -    // printf("kqemu_lock_user_page(%08lx) va=%08x pa=%08x\n", user_addr, va, pa);
-+    // kqemu_log("kqemu_lock_user_page(%08lx) va=%08x pa=%08x\n", user_addr, va, pa);
++    /* kqemu_log("kqemu_lock_user_page(%08lx) va=%08x pa=%08x\n", user_addr, va, pa); */
      *ppage_index = pa >> PAGE_SHIFT;
      return (struct kqemu_user_page *)va;
  }
-@@ -54,12 +75,16 @@
+@@ -54,12 +81,16 @@
      struct vmspace *vm = curproc->p_vmspace;
      vm_offset_t va;
      int ret;
 -    // printf("kqemu_unlock_user_page(%08lx)\n", page_index);
-+    // kqemu_log("kqemu_unlock_user_page(%08lx)\n", page_index);
++    /* kqemu_log("kqemu_unlock_user_page(%08lx)\n", page_index); */
      va = (vm_offset_t)page;
 +#if __FreeBSD_version >= 500000
      ret = vm_map_unwire(&vm->vm_map, va, va+PAGE_SIZE, VM_MAP_WIRE_USER);
@@ -104,7 +105,7 @@ Index: qemu/kqemu/kqemu-freebsd.c
      }
  #endif
  }
-@@ -76,20 +101,21 @@
+@@ -76,20 +107,21 @@
  
      va = kmem_alloc(kernel_map, PAGE_SIZE);
      if (va == 0) {
@@ -116,7 +117,7 @@ Index: qemu/kqemu/kqemu-freebsd.c
      pmap = vm_map_pmap(kernel_map);
      pa = pmap_extract(pmap, va);
 -    // printf("kqemu_alloc_zeroed_page: %08x\n", pa);
-+    // kqemu_log("kqemu_alloc_zeroed_page: %08x\n", pa);
++    /* kqemu_log("kqemu_alloc_zeroed_page: %08x\n", pa); */
      *ppage_index = pa >> PAGE_SHIFT;
      return (struct kqemu_page *)va;
  }
@@ -131,7 +132,7 @@ Index: qemu/kqemu/kqemu-freebsd.c
  }
  
  /* return kernel address of the physical page page_index */
-@@ -103,42 +129,29 @@
+@@ -103,42 +135,29 @@
     GB of physical memory */
  void * CDECL kqemu_vmalloc(unsigned int size)
  {
@@ -185,7 +186,7 @@ Index: qemu/kqemu/kqemu-freebsd.c
      return pa >> PAGE_SHIFT;
  }
  
-@@ -154,16 +167,48 @@
+@@ -154,16 +173,48 @@
  {
  }
  
@@ -204,11 +205,10 @@ Index: qemu/kqemu/kqemu-freebsd.c
 +    return ((int)p->p_rtprio.prio - (int)curproc->p_rtprio.prio);
 +}
 +
- /* return TRUE if a signal is pending (i.e. the guest must stop
-    execution) */
- int CDECL kqemu_schedule(void)
- {
--    // printf("kqemu_schedule\n");
++/* return TRUE if a signal is pending (i.e. the guest must stop
++   execution) */
++int CDECL kqemu_schedule(void)
++{
 +    struct proc *p = curproc;
 +    if (curpriority_cmp(p) > 0) {
 +	int s = splhigh();
@@ -221,11 +221,12 @@ Index: qemu/kqemu/kqemu-freebsd.c
 +    return issignal(curproc) != 0;
 +}
 +#else
-+/* return TRUE if a signal is pending (i.e. the guest must stop
-+   execution) */
-+int CDECL kqemu_schedule(void)
-+{
-+    // kqemu_log("kqemu_schedule\n");
+ /* return TRUE if a signal is pending (i.e. the guest must stop
+    execution) */
+ int CDECL kqemu_schedule(void)
+ {
+-    // printf("kqemu_schedule\n");
++    /* kqemu_log("kqemu_schedule\n"); */
      mtx_lock_spin(&sched_lock);
      mi_switch(SW_VOL, NULL);
      mtx_unlock_spin(&sched_lock);
@@ -235,18 +236,19 @@ Index: qemu/kqemu/kqemu-freebsd.c
  
  static char log_buf[4096];
  
-@@ -176,47 +221,154 @@
+@@ -176,47 +227,155 @@
      va_end(ap);
  }
  
 +#define KQEMU_MAX_INSTANCES 4
 +
  struct kqemu_instance { 
+-    //    struct semaphore sem;  
 +#if __FreeBSD_version >= 500000
 +    TAILQ_ENTRY(kqemu_instance) kqemu_ent;
 +    struct cdev *kqemu_dev;
 +#endif
-     //    struct semaphore sem;  
++    /*    struct semaphore sem;  */
      struct kqemu_state *state;
  };
  
@@ -318,7 +320,6 @@ Index: qemu/kqemu/kqemu-freebsd.c
 +	*dev = make_dev(&kqemu_cdevsw, unit2minor(unit),
 +	    UID_ROOT, GID_WHEEL, 0660, "kqemu%d", unit);
 +	if (*dev != NULL) {
-+	    dev_ref(*dev);
 +	    (*dev)->si_flags |= SI_CHEAPCLONE;
 +	}
 +    }
@@ -327,7 +328,9 @@ Index: qemu/kqemu/kqemu-freebsd.c
 +
 +static void kqemu_destroy(struct kqemu_instance *ks)
 +{
++#if __FreeBSD_version >= 500000
 +    struct cdev *dev = ks->kqemu_dev;
++#endif
 +
 +    if (ks->state) {
 +        kqemu_delete(ks->state);
@@ -335,8 +338,8 @@ Index: qemu/kqemu/kqemu-freebsd.c
 +    }
 +
 +    free(ks, M_KQEMU);
-+    dev->si_drv1 = NULL;
 +#if __FreeBSD_version >= 500000
++    dev->si_drv1 = NULL;
 +    TAILQ_REMOVE(&kqemuhead, ks, kqemu_ent);
 +    destroy_dev(dev);
 +#endif
@@ -394,7 +397,7 @@ Index: qemu/kqemu/kqemu-freebsd.c
  {
      int error = 0;
      int ret;
-@@ -231,8 +383,9 @@
+@@ -231,8 +390,9 @@
  	    break;
  	}
  	d1 = *(struct kqemu_init *)addr;
@@ -406,7 +409,7 @@ Index: qemu/kqemu/kqemu-freebsd.c
  	if (s == NULL) {
  	    error = ENOMEM;
  	    break;
-@@ -248,9 +401,16 @@
+@@ -248,9 +408,16 @@
  	}
  	ctx = kqemu_get_cpu_state(s);
  	*ctx = *(struct kqemu_cpu_state *)addr;
@@ -423,7 +426,7 @@ Index: qemu/kqemu/kqemu-freebsd.c
  	*(struct kqemu_cpu_state *)addr = *ctx;
  	break;
      }
-@@ -265,10 +425,22 @@
+@@ -265,10 +432,22 @@
  
  /* ARGSUSED */
  static int
@@ -447,7 +450,7 @@ Index: qemu/kqemu/kqemu-freebsd.c
  }
  
  /* ARGSUSED */
-@@ -276,15 +448,55 @@
+@@ -276,15 +455,55 @@
  kqemu_modevent(module_t mod __unused, int type, void *data __unused)
  {
      int error = 0;
