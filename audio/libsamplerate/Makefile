@@ -10,7 +10,7 @@ PORTVERSION=	0.1.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/SRC/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Secret Rabbit Code: a Sample Rate Converter for audio
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
