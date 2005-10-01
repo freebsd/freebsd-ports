@@ -11,9 +11,7 @@ CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.esper.net/ircservices/ \
 	http://www.ircservices.esper.net/download/ \
 	ftp://ftp.freenet.de/pub/ftp.ircservices.za.net/pub/ircservices/ \
-	ftp://ftp.ircd.com.br/ircservices/ \
-	http://www.irc.gr/ircservices/ \
-	http://ircservices.swissirc.ch/
+	http://banana.irc.gr/ircservices/
 
 DISTNAME=	${PORTNAME}-5.0.0
 
