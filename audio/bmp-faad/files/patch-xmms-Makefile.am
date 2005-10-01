@@ -17,5 +17,5 @@
 -libmp4_la_LDFLAGS = -module -avoid-version `$(XMMS_CONFIG) --libs` \
 -       `$(GTK_CONFIG) --libs` -lpthread -lstdc++
 +libmp4_la_LDFLAGS = -module -avoid-version `pkg-config bmp --libs` \
-+       `pkg-config gtk+-2.0 --libs` -lpthread -lstdc++ -lfaad -lmp4v2
++       `pkg-config gtk+-2.0 --libs` -lstdc++ -lfaad -lmp4v2
  libmp4_la_SOURCES = libmp4.c mp4_utils.c aac_utils.c
