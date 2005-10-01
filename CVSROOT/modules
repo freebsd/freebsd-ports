@@ -2127,7 +2127,6 @@ exim-doc-info	ports/mail/exim-doc-info
 exim-doc-pdf	ports/mail/exim-doc-pdf
 exim-doc-postscript	ports/mail/exim-doc-postscript
 exim-ldap2	ports/mail/exim-ldap2
-exim-monitor	ports/mail/exim-monitor
 exim-mysql	ports/mail/exim-mysql
 exim-postgresql	ports/mail/exim-postgresql
 exim-sa-exim	ports/mail/exim-sa-exim
