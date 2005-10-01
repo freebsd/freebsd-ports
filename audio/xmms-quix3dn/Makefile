@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alex
 DISTNAME=	quix3dn-${PORTVERSION}-freebsd
 
-MAINTAINER=	alex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D-sound effect plugin for XMMS
 
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms

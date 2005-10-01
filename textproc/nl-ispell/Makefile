@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MAINTAINER=	alex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 ISPELL_NL=	yes
 PORTNAME=	nl-ispell

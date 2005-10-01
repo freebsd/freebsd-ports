@@ -13,7 +13,7 @@ DISTNAME=	mindtermbin-v121
 DISTFILES=	mindterm-ssh.html ${EXTRACT_ONLY}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	alex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"A full vt220 compatible Java SSH-1 client (not only for websites)"
 
 USE_ZIP=	yes
