@@ -9,7 +9,7 @@ PORTNAME=	ispell
 CATEGORIES=	german
 PKGNAMESUFFIX=	-neu-20001109
 
-MAINTAINER=	alex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 ISPELL_DENEU=	yes
 MASTERDIR=	${.CURDIR}/../../textproc/ispell
