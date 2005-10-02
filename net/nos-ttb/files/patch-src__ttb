@@ -1,11 +1,11 @@
---- src/ttb.orig	Sat Oct  1 14:39:20 2005
-+++ src/ttb	Sat Oct  1 14:39:31 2005
-@@ -781,7 +781,7 @@
-             page = [int(argv[1]),int(argv[2])]
+--- src/ttb.orig	Mon Oct  3 08:04:31 2005
++++ src/ttb	Mon Oct  3 08:04:38 2005
+@@ -801,7 +801,7 @@
+                 page = [int(argv[1]),int(argv[2])]
  
-     glade = get_data_file ('ttb/ttb.glade')
--    icon  = get_data_file ('pixmaps/ttb.png')
-+    icon  = get_data_file ('ttb/ttb.png')
+         glade = get_data_file ('ttb/ttb.glade')
+-        icon  = get_data_file ('pixmaps/ttb.png')
++        icon  = get_data_file ('ttb/ttb.png')
           
-     TTB(glade, icon, page)
-     return 0
+         TTB(glade, icon, page)
+ 
