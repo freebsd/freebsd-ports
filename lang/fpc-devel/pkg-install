@@ -7,7 +7,8 @@ ACTION=$2
 
 FILES_DELETE="bin/ppc386 etc/fpc.cfg etc/fpc.cfg.orig"
 
-LIBDIR=${PKG_PREFIX}/lib/fpc/${PKGNAME##fpc-}
+LIBDIR=${PKG_PREFIX}/lib/fpc/${PKGNAME##fpc-devel-}
+LIBDIR=${LIBDIR%_*}
 
 CHMOD=/bin/chmod
 LN=/bin/ln
