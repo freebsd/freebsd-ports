@@ -1,6 +1,6 @@
 $FreeBSD$
---- Makefile.in	Sat Jul  2 22:23:42 2005
-+++ Makefile.in.port	Fri Jul 22 19:15:11 2005
+--- Makefile.in	Mon Sep 26 07:45:47 2005
++++ Makefile.in.port	Sun Oct  2 15:01:32 2005
 @@ -36,7 +36,7 @@
  mandir = @mandir@
  datadir = @datadir@

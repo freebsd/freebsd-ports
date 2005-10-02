@@ -26,6 +26,7 @@ bin/xasy
 %%EXAMPLESDIR%%/PythagoreanTree.asy
 %%EXAMPLESDIR%%/asy-mode.el
 %%EXAMPLESDIR%%/asy.vim
+%%EXAMPLESDIR%%/axis3.asy
 %%EXAMPLESDIR%%/bezier.asy
 %%EXAMPLESDIR%%/bigsquare.asy
 %%EXAMPLESDIR%%/cardiod.asy
@@ -53,7 +54,9 @@ bin/xasy
 %%EXAMPLESDIR%%/fano.asy
 %%EXAMPLESDIR%%/fermi.asy
 %%EXAMPLESDIR%%/fjortoft.asy
+%%EXAMPLESDIR%%/flow.asy
 %%EXAMPLESDIR%%/generalaxis.asy
+%%EXAMPLESDIR%%/generalaxis3.asy
 %%EXAMPLESDIR%%/grid.asy
 %%EXAMPLESDIR%%/hatch.asy
 %%EXAMPLESDIR%%/helix.asy
@@ -63,12 +66,14 @@ bin/xasy
 %%EXAMPLESDIR%%/image.asy
 %%EXAMPLESDIR%%/integraltest.asy
 %%EXAMPLESDIR%%/join.asy
+%%EXAMPLESDIR%%/join3.asy
 %%EXAMPLESDIR%%/labelbox.asy
 %%EXAMPLESDIR%%/labelsquare.asy
 %%PORTDOCS%%%%EXAMPLESDIR%%/latexusage.asy
 %%EXAMPLESDIR%%/latexusage.tex
 %%EXAMPLESDIR%%/latticeshading.asy
 %%EXAMPLESDIR%%/lever.asy
+%%EXAMPLESDIR%%/limit.asy
 %%EXAMPLESDIR%%/lineargraph.asy
 %%EXAMPLESDIR%%/lineargraph0.asy
 %%EXAMPLESDIR%%/lines.asy
@@ -77,6 +82,7 @@ bin/xasy
 %%EXAMPLESDIR%%/loggraph.asy
 %%EXAMPLESDIR%%/loggrid.asy
 %%EXAMPLESDIR%%/logo.asy
+%%EXAMPLESDIR%%/logticks.asy
 %%EXAMPLESDIR%%/lowint.asy
 %%EXAMPLESDIR%%/lowupint.asy
 %%EXAMPLESDIR%%/mosquito.asy
@@ -92,6 +98,7 @@ bin/xasy
 %%EXAMPLESDIR%%/quartercircle.asy
 %%EXAMPLESDIR%%/ring.asy
 %%EXAMPLESDIR%%/sacone.asy
+%%EXAMPLESDIR%%/saddle.asy
 %%EXAMPLESDIR%%/secondaryaxis.asy
 %%EXAMPLESDIR%%/secondaryaxis.csv
 %%EXAMPLESDIR%%/shade.asy
