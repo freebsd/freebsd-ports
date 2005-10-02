@@ -7,9 +7,11 @@
 
 PORTNAME=	festogi-italian
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	audio accessibility
-MASTER_SITES=	http://www.csrf.pd.cnr.it/Software/It-Festival/
-DISTNAME=	italian_scm
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	it-festival
+DISTNAME=	Italian-FESTIVAL
 DIST_SUBDIR=	festival
 
 MAINTAINER=	saturnero@gufi.org
@@ -17,20 +19,20 @@ COMMENT=	Italian support for Festival
 
 RUN_DEPENDS=	${LOCALBASE}/share/festival/lib/ogi_token.scm:${PORTSDIR}/audio/festival+OGI
 
+NO_BUILD=	yes
 USE_ZIP=yes
 
 WRKSRC=		${WRKDIR}/festival
-
-NO_BUILD=	yes
-
 FHOME=		${PREFIX}/share/festival
 
 post-extract:
-	@${CHMOD} -R a+r ${WRKSRC}
+	@${UNZIP_CMD} -qq -d ${WRKDIR} ${WRKDIR}/italian_scm.zip
+	@${CHMOD} -R 644 ${WRKSRC}
 	@${FIND} ${WRKSRC} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@${FIND} ${WRKSRC} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 
 do-install:
 	${MKDIR} ${FHOME}
-	cd ${WRKSRC} && ${CP} -pPR * ${FHOME}
+	(cd ${WRKSRC} && ${CP} -pPR * ${FHOME})
 
 .include <bsd.port.mk>
