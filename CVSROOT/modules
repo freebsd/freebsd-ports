@@ -1427,6 +1427,7 @@ cybercalendar	ports/www/cybercalendar
 cycle		ports/deskutils/cycle
 cyclone		ports/lang/cyclone
 cymbaline	ports/audio/cymbaline
+cyphesis	ports/net/cyphesis
 cyr-rfx		ports/x11-fonts/cyr-rfx
 cyrus-imapd2	ports/mail/cyrus-imapd2
 cyrus-imapd22	ports/mail/cyrus-imapd22
