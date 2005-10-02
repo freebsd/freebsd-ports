@@ -16,6 +16,7 @@ COMMENT=	TCL module for accessing MySQL databases based on msqltcl
 LIB_DEPENDS=	${TCL_NODOT}:${PORTSDIR}/lang/${TCL_NODOT}
 
 USE_MYSQL=	yes
+BROKEN_WITH_MYSQL=	323 40
 TCL_VERSION?=	tcl8.4
 TCL_NODOT=	${TCL_VERSION:S/.//}
 SQL_DIR=	${PREFIX}/lib/${TCL_VERSION}/mysqltcl
