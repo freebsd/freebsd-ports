@@ -1,0 +1,55 @@
+--- src/EDITME.orig	Mon Aug 27 14:35:47 2001
++++ src/EDITME	Mon Aug 27 14:37:31 2001
+@@ -98,7 +98,7 @@
+ # /usr/local/sbin. The installation script will try to create this directory,
+ # and any superior directories, if they do not exist.
+ 
+-BIN_DIRECTORY=/usr/exim/bin
++BIN_DIRECTORY=XX_PREFIX_XX/sbin
+ 
+ 
+ #------------------------------------------------------------------------------
+@@ -113,7 +113,7 @@
+ # directories if they don't exist. It will also install a default run time
+ # configuration if this file does not exist.
+ 
+-CONFIGURE_FILE=/usr/exim/configure
++CONFIGURE_FILE=XX_PREFIX_XX/etc/exim/configure
+ 
+ 
+ #------------------------------------------------------------------------------
+@@ -126,14 +126,14 @@
+ # owner of a local mailbox.) Specifying these values as root is very strongly
+ # discouraged. These values are compiled into the binary.
+ 
+-EXIM_USER=
++EXIM_USER=mailnull
+ 
+ # If the setting of EXIM_USER is numeric (e.g. EXIM_USER=42), there must
+ # also be a setting of EXIM_GROUP. If, on the other hand, you use a name
+ # for EXIM_USER (e.g. EXIM_USER=exim), you don't need to set EXIM_GROUP unless
+ # you want to use a group other than the default group for the given user.
+ 
+-# EXIM_GROUP=
++EXIM_GROUP=mail
+ 
+ # Many sites define a user called "exim", with an appropriate default group,
+ # and use
+@@ -371,7 +373,7 @@
+ # %s. This will be replaced by one of the strings "main", "panic", or "reject"
+ # to form the final file names. Some installations may want something like this:
+ 
+-# LOG_FILE_PATH=/var/log/exim_%slog
++LOG_FILE_PATH=/var/log/exim/%slog
+ 
+ # which results in files with names /var/log/exim_mainlog, etc. The directory
+ # in which the log files are placed must exist; Exim does not try to create
+@@ -695,7 +705,7 @@
+ # (process id) to a file so that it can easily be identified. The path of the
+ # file can be specified here. Some installations may want something like this:
+ 
+-# PID_FILE_PATH=/var/lock/exim.pid
++PID_FILE_PATH=/var/run/exim.pid
+ 
+ # If PID_FILE_PATH is not defined, Exim writes a file in its spool directory
+ # using the name "exim-daemon.pid".

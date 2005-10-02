@@ -1,0 +1,9 @@
+The Exim monitor (eximon) is a graphical user interface for the Exim
+mail transfer agent for Unix systems.  Eximon is distributed as part
+of the standard Exim distribution, but its dependency on XFree86
+annoys many administrators.
+
+For this reason, it is available as its own package to allow
+administrators to easily install Exim without installing XFree86.
+
+WWW: http://www.exim.org/
