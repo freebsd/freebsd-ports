@@ -74,7 +74,6 @@
     SUBDIR += avrdude
     SUBDIR += bcc
     SUBDIR += bcpp
-    SUBDIR += beagle
     SUBDIR += beautifyphp
     SUBDIR += bglibs
     SUBDIR += bicyclerepair
@@ -634,6 +633,7 @@
     SUBDIR += omniNotify
     SUBDIR += omniORB
     SUBDIR += oniguruma
+    SUBDIR += open-beagle
     SUBDIR += openorb
     SUBDIR += openthreads
     SUBDIR += opentop
