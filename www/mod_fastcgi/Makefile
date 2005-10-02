@@ -19,7 +19,10 @@ BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 CONFLICTS=	apache-contrib-1.*
 APACHE_COMPAT=	YES
 
-.if defined(WITH_APACHE2)
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_APACHE2) || exists(${LOCALBASE}/include/apache2/apr.h)
+WITH_APACHE2=	YES
 MAKEFILE=	Makefile.AP2
 USE_REINPLACE=	YES
 MAKE_ARGS=	INCLUDES=-I${PREFIX}/include/apache2
@@ -70,4 +73,4 @@ post-install:
 	@${ECHO_MSG} "*                                                          *"
 	@${ECHO_MSG} "************************************************************"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
