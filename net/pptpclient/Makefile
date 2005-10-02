@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pptpclient
-# Date created:		19 June 1999
-# Whom:			John Polstra <jdp@freebsd.org>
+# Date created:				19 June 1999
+# Whom:					John Polstra <jdp@freebsd.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=		pptpclient
-PORTVERSION=		1.6.0
+PORTVERSION=		1.7.0
 CATEGORIES=		net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pptpclient
