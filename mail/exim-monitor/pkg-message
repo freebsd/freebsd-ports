@@ -1,0 +1,10 @@
+
+Although the Exim monitor has been correctly installed, please note
+that it is useless without the Exim MTA.  Install one of the Exim
+packages available, which include documentation for the Exim monitor:
+
+	exim
+	exim-ldap2
+	exim-mysql
+	exim-postgresql
+
