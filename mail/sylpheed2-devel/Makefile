@@ -1,23 +1,24 @@
-# New ports collection makefile for:	sylpheed
-# Date created:                 15 June 2000
-# Whom:                         shigeri <shigeri@m10.alpha-net.ne.jp>
+# New ports collection makefile for:	sylpheed2-devel
+# Date created:				2005-09-10
+# Whom:					nork@FreeBSD.org
 #
 # $FreeBSD$
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.3
 PORTREVISION=	0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/v2.0/ \
+MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/v2.1/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws/
 
-MAINTAINER=	oliver@FreeBSD.org
+MAINTAINER=	nork@FreeBSD.org
 COMMENT=	A lightweight, featureful, and fast GTK+ based e-mail client
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
+LATEST_LINK=	${PORTNAME}2-devel
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -48,6 +49,8 @@ OPTIONS=	GPGME		"Enable GnuPG support using GPGME." off \
 # we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=--enable-ssl
+.else
+CONFIGURE_ARGS+=--disable-ssl
 .endif
 
 .if defined(WITH_GPGME)
@@ -57,12 +60,14 @@ CONFIGURE_ARGS+=--enable-gpgme
 .else
 CONFIGURE_ARGS+=--disable-gpgme
 .endif
+
 .if defined(WITH_COMPFACE)
 LIB_DEPENDS+=	compface.1:${PORTSDIR}/mail/faces
 CONFIGURE_ARGS+=--enable-compface
 .else
 CONFIGURE_ARGS+=--disable-compface
 .endif
+
 .if defined(WITH_JPILOT)
 LIB_DEPENDS+=	pisock.8:${PORTSDIR}/palm/pilot-link
 RUN_DEPENDS+=	jpilot:${PORTSDIR}/palm/jpilot
@@ -70,31 +75,33 @@ CONFIGURE_ARGS+=--enable-jpilot
 .else
 CONFIGURE_ARGS+=--disable-jpilot
 .endif
+
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--enable-ldap
 .else
 CONFIGURE_ARGS+=--disable-ldap
 .endif
-.if !defined(WITHOUT_SSL)
-CONFIGURE_ARGS+=--enable-ssl
-.else
-CONFIGURE_ARGS+=--disable-ssl
+
+.if defined(WITH_GNOME)
+PLIST_FILES=	share/gnome/applications/sylpheed.desktop \
+		share/gnome/pixmaps/sylpheed.png
 .endif
 
 MAKEFILES=	Makefile.in ac/Makefile.in faq/Makefile.in faq/de/Makefile.in \
 		faq/en/Makefile.in faq/es/Makefile.in faq/fr/Makefile.in \
 		faq/it/Makefile.in manual/Makefile.in manual/en/Makefile.in \
-		manual/ja/Makefile.in src/Makefile.in
+		manual/ja/Makefile.in src/Makefile.in libsylph/Makefile.in \
+		src/icons/Makefile.in
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
 		s|-lresolv||g; s|-lpisock\"|-liconv &|g; ' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc|${LOCALBASE}&|g' \
-		${WRKSRC}/src/procmime.c
+		${WRKSRC}/libsylph/procmime.c
 
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|^SUBDIRS = ac po intl src manual faq$$|SUBDIRS = ac po intl src|g' \
+	@${REINPLACE_CMD} -e 's|^SUBDIRS = ac libsylph src po manual faq$$|SUBDIRS = ac libsylph src po|g' \
 		${WRKSRC}/Makefile.in
 .else
 .for i in ${MAKEFILES}
@@ -111,6 +118,10 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/${i}.ja ${DOCSDIR}
 .endfor
+.endif
+.if defined(WITH_GNOME)
+	@${INSTALL_DATA} ${WRKSRC}/sylpheed.png ${PREFIX}/share/gnome/pixmaps/
+	@${INSTALL_DATA} ${WRKSRC}/sylpheed.desktop ${PREFIX}/share/gnome/applications/
 .endif
 
 .include <bsd.port.post.mk>
