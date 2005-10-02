@@ -301,6 +301,7 @@
     SUBDIR += mod_frontpage2-rtr
     SUBDIR += mod_frontpage-rtr
     SUBDIR += mod_geoip
+    SUBDIR += mod_geoip2
     SUBDIR += mod_gzip
     SUBDIR += mod_hosts_access
     SUBDIR += mod_index_rss
