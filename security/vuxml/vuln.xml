@@ -714,13 +714,16 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-	<url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE10-sslConnectTimeout</url>
-	<url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1355</url>
-	<url>http://secunia.com/advisories/16674/</url>
+      <bid>14731</bid>
+      <cvename>CAN-2005-2796</cvename>
+      <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE10-sslConnectTimeout</url>
+      <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1355</url>
+      <url>http://secunia.com/advisories/16674/</url>
     </references>
     <dates>
       <discovery>2005-07-21</discovery>
       <entry>2005-09-04</entry>
+      <modified>2005-10-02</modified>
     </dates>
   </vuln>
 
@@ -743,12 +746,16 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-	<url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE10-STORE_PENDING</url>
-	<url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1368</url>
+      <bid>14761</bid>
+      <cvename>CAN-2005-2794</cvename> 
+      <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE10-STORE_PENDING</url>
+      <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1368</url>
+      <url>http://secunia.com/advisories/16708/</url>
     </references>
     <dates>
       <discovery>2005-08-02</discovery>
       <entry>2005-09-04</entry>
+      <modified>2005-10-02</modified>
     </dates>
   </vuln>
 
@@ -21635,13 +21642,16 @@ misc.c:
       </body>
     </description>
     <references>
+      <bid>14977</bid>
       <cvename>CAN-2005-2917</cvename>
       <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1391</url>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE10-NTLM-scheme_assert</url>
+      <url>http://secunia.com/advisories/16992/</url>
     </references>
     <dates>
       <discovery>2005-09-12</discovery>
       <entry>2005-09-15</entry>
+      <modified>2005-10-02</modified>
     </dates>
   </vuln>
 
