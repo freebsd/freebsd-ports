@@ -3,6 +3,7 @@
 %%SQLITE2%%lib/dbd/libsqlite.so
 %%SQLITE3%%lib/dbd/libsqlite3.so
 %%FIREBIRD%%lib/dbd/libfirebird.so
+%%FREETDS%%lib/dbd/libfreetds.so
 @unexec rmdir %D/lib/dbd 2>/dev/null || true
 %%MYSQL%%%%DOCSDIR%%/dbd_mysql.pdf
 %%MYSQL%%%%DOCSDIR%%/dbd_mysql/c136.html
@@ -25,29 +26,30 @@
 %%PGSQL%%%%DOCSDIR%%/dbd_pgsql/options.html
 %%PGSQL%%%%DOCSDIR%%/dbd_pgsql/specific.html
 %%SQLITE2%%%%DOCSDIR%%/dbd_sqlite.pdf
-%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/c101.html
-%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/c122.html
-%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/c35.html
-%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/c46.html
-%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/f24.html
-%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/x125.html
-%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/x201.html
-%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/x49.html
-%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/x63.html
+%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/c118.html
+%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/c26.html
+%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/c37.html
+%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/c92.html
+%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/f15.html
 %%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/index.html
+%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/x121.html
+%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/x197.html
+%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/x40.html
+%%SQLITE2%%%%DOCSDIR%%/dbd_sqlite/x54.html
 %%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3.pdf
-%%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3/c115.html
+%%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3/c120.html
 %%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3/c26.html
 %%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3/c39.html
 %%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3/c94.html
 %%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3/f15.html
 %%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3/index.html
-%%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3/x118.html
-%%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3/x190.html
+%%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3/x123.html
+%%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3/x195.html
 %%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3/x42.html
 %%SQLITE3%%%%DOCSDIR%%/dbd_sqlite3/x56.html
 %%MYSQL%%@dirrm %%DOCSDIR%%/dbd_mysql
 %%PGSQL%%@dirrm %%DOCSDIR%%/dbd_pgsql
 %%SQLITE2%%@dirrm %%DOCSDIR%%/dbd_sqlite
 %%SQLITE3%%@dirrm %%DOCSDIR%%/dbd_sqlite3
+%%FREETDS%%@dirrm %%DOCSDIR%%/dbd_freetds
 @unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
