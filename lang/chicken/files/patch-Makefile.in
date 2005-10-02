@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat May 28 11:37:56 2005
++++ Makefile.in	Sat May 28 11:39:10 2005
+@@ -199,7 +199,7 @@
+ # use -DC_NO_PIC_NO_DLL ... -DC_NO_PIC_NO_DLL is only for libtool
+ # compiles
+ BASE_CPPFLAGS = -DC_STACK_GROWS_DOWNWARD=$(STACK_GROWS_DOWNWARD) -DC_INSTALL_LIB_HOME='"$(pkglibdir)"' \
+-  -DC_INSTALL_HOME='"$(pkgdatadir)"' -DC_USE_C_DEFAULTS
++  -DC_INSTALL_HOME='"$(pkgdatadir)"' -DC_USE_C_DEFAULTS -I$(includedir)
+ 
+ INCLUDES = $(BASE_CPPFLAGS) -DC_NO_PIC_NO_DLL
+ 
