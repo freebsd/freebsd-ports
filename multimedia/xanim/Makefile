@@ -8,10 +8,8 @@
 PORTNAME=	xanim
 PORTVERSION=	2.92.0
 CATEGORIES=	multimedia graphics
-MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/X11/graphics/xanim/:main \
-		ftp://ftp.informatik.uni-hamburg.de/pub/soft/graphics/xanim/:main \
+MASTER_SITES=	ftp://ftp.informatik.uni-hamburg.de/pub/soft/graphics/xanim/:main \
 		${MASTER_SITE_LOCAL} \
-		ftp://ftp.fu-berlin.de/unix/X11/graphics/xanim/dlls/ \
 		ftp://ftp.informatik.uni-hamburg.de/pub/soft/graphics/xanim/dlls/
 MASTER_SITE_SUBDIR=	dinoex
 DISTNAME=	xanim2920
