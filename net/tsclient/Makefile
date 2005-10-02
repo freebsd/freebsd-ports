@@ -16,7 +16,7 @@ COMMENT=	A GNOME 2 frontend for rdesktop and vncviewer
 RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop
 
 .ifdef (WITH_TIGHTVNC)
-RUN_DEPENDS+=	tightvnc:${PORTSDIR}/net/tightvnc
+RUN_DEPENDS+=	vncviewer:${PORTSDIR}/net/tightvnc
 .endif
 
 .ifdef (WITH_XNEST)
