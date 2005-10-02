@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PPI
-PORTVERSION=	1.003
+PORTVERSION=	1.101
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/A/AD/ADAMK
@@ -26,6 +26,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=	PPI.3 \
+	PPI::Cache.3 \
 	PPI::Document.3 \
 	PPI::Document::Fragment.3 \
 	PPI::Document::Normalized.3 \
