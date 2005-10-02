@@ -97,6 +97,7 @@
     SUBDIR += cvsup-mirror
     SUBDIR += cvsup-without-gui
     SUBDIR += cvsync
+    SUBDIR += cyphesis
     SUBDIR += danamics
     SUBDIR += dante
     SUBDIR += datapipe

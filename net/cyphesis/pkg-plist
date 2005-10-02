@@ -1,0 +1,149 @@
+bin/cyaddrules
+bin/cyclient
+bin/cycmd
+bin/cyconfig
+bin/cyconvertrules
+bin/cydumprules
+bin/cyloadrules
+bin/cypasswd
+bin/cyphesis
+etc/cyphesis/acorn.xml
+etc/cyphesis/basic.xml
+etc/cyphesis/cyphesis.vconf
+etc/cyphesis/mason.xml
+etc/cyphesis/werewolf.xml
+%%DATADIR%%/rulesets/basic/__init__.py
+%%DATADIR%%/rulesets/basic/editor.py
+%%DATADIR%%/rulesets/basic/hooks/__init__.py
+%%DATADIR%%/rulesets/basic/hooks/ruleset_import_hooks.py
+%%DATADIR%%/rulesets/basic/mind/BaseMind.py
+%%DATADIR%%/rulesets/basic/mind/ExternalMind.py
+%%DATADIR%%/rulesets/basic/mind/Goal.py
+%%DATADIR%%/rulesets/basic/mind/Knowledge.py
+%%DATADIR%%/rulesets/basic/mind/MemMap.py
+%%DATADIR%%/rulesets/basic/mind/Memory.py
+%%DATADIR%%/rulesets/basic/mind/NPCMind.py
+%%DATADIR%%/rulesets/basic/mind/__init__.py
+%%DATADIR%%/rulesets/basic/mind/compass.py
+%%DATADIR%%/rulesets/basic/mind/goals/__init__.py
+%%DATADIR%%/rulesets/basic/mind/goals/animal/__init__.py
+%%DATADIR%%/rulesets/basic/mind/goals/animal/herd.py
+%%DATADIR%%/rulesets/basic/mind/goals/common/__init__.py
+%%DATADIR%%/rulesets/basic/mind/goals/common/common.py
+%%DATADIR%%/rulesets/basic/mind/goals/common/misc_goal.py
+%%DATADIR%%/rulesets/basic/mind/goals/common/move.py
+%%DATADIR%%/rulesets/basic/mind/goals/dynamic/DynamicGoal.py
+%%DATADIR%%/rulesets/basic/mind/goals/dynamic/__init__.py
+%%DATADIR%%/rulesets/basic/mind/goals/dynamic/add_unique_goal.py
+%%DATADIR%%/rulesets/basic/mind/goals/humanoid/__init__.py
+%%DATADIR%%/rulesets/basic/mind/goals/humanoid/build_home.py
+%%DATADIR%%/rulesets/basic/mind/goals/humanoid/construction.py
+%%DATADIR%%/rulesets/basic/mind/goals/humanoid/fire.py
+%%DATADIR%%/rulesets/basic/mind/goals/humanoid/mason.py
+%%DATADIR%%/rulesets/basic/mind/goals/humanoid/transaction.py
+%%DATADIR%%/rulesets/basic/mind/goals/humanoid/werewolf.py
+%%DATADIR%%/rulesets/basic/mind/panlingua/__init__.py
+%%DATADIR%%/rulesets/basic/mind/panlingua/interlinguish.py
+%%DATADIR%%/rulesets/basic/mind/panlingua/ontology.py
+%%DATADIR%%/rulesets/basic/mind/panlingua/panlingua.py
+%%DATADIR%%/rulesets/basic/mind/panlingua/syntax.py
+%%DATADIR%%/rulesets/basic/world/__init__.py
+%%DATADIR%%/rulesets/basic/world/objects/Pile.py
+%%DATADIR%%/rulesets/basic/world/objects/Thing.py
+%%DATADIR%%/rulesets/basic/world/objects/__init__.py
+%%DATADIR%%/rulesets/basic/world/objects/animals/Animal.py
+%%DATADIR%%/rulesets/basic/world/objects/animals/__init__.py
+%%DATADIR%%/rulesets/basic/world/objects/buildings/House.py
+%%DATADIR%%/rulesets/basic/world/objects/buildings/StoneHouse.py
+%%DATADIR%%/rulesets/basic/world/objects/buildings/__init__.py
+%%DATADIR%%/rulesets/basic/world/objects/elements/Fire.py
+%%DATADIR%%/rulesets/basic/world/objects/elements/__init__.py
+%%DATADIR%%/rulesets/basic/world/objects/plants/Tree.py
+%%DATADIR%%/rulesets/basic/world/objects/plants/__init__.py
+%%DATADIR%%/rulesets/basic/world/objects/tools/Axe.py
+%%DATADIR%%/rulesets/basic/world/objects/tools/Bow.py
+%%DATADIR%%/rulesets/basic/world/objects/tools/Pickaxe.py
+%%DATADIR%%/rulesets/basic/world/objects/tools/Scythe.py
+%%DATADIR%%/rulesets/basic/world/objects/tools/Shovel.py
+%%DATADIR%%/rulesets/basic/world/objects/tools/Sword.py
+%%DATADIR%%/rulesets/basic/world/objects/tools/__init__.py
+%%DATADIR%%/rulesets/basic/world/probability.py
+%%DATADIR%%/rulesets/mason/__init__.py
+%%DATADIR%%/rulesets/mason/define_world.py
+%%DATADIR%%/rulesets/mason/define_world_aglanor.py
+%%DATADIR%%/rulesets/mason/mind/PigMind.py
+%%DATADIR%%/rulesets/mason/mind/SkelMind.py
+%%DATADIR%%/rulesets/mason/mind/WolfMind.py
+%%DATADIR%%/rulesets/mason/mind/__init__.py
+%%DATADIR%%/rulesets/mason/world/__init__.py
+%%DATADIR%%/rulesets/mason/world/objects/Weather.py
+%%DATADIR%%/rulesets/mason/world/objects/__init__.py
+%%DATADIR%%/rulesets/mason/world/objects/animals/Deer.py
+%%DATADIR%%/rulesets/mason/world/objects/animals/Pig.py
+%%DATADIR%%/rulesets/mason/world/objects/animals/__init__.py
+%%DATADIR%%/rulesets/mason/world/objects/buildings/House3.py
+%%DATADIR%%/rulesets/mason/world/objects/buildings/__init__.py
+%%DATADIR%%/rulesets/mason/world/objects/clothing/Garment.py
+%%DATADIR%%/rulesets/mason/world/objects/clothing/__init__.py
+%%DATADIR%%/rulesets/mason/world/objects/outdoor/Campfire.py
+%%DATADIR%%/rulesets/mason/world/objects/outdoor/Gravestone.py
+%%DATADIR%%/rulesets/mason/world/objects/outdoor/__init__.py
+%%DATADIR%%/rulesets/mason/world/objects/plants/Fir.py
+%%DATADIR%%/rulesets/mason/world/objects/plants/__init__.py
+%%DATADIR%%/rulesets/mason/world/objects/plants/seeds/Acorn.py
+%%DATADIR%%/rulesets/mason/world/objects/plants/seeds/Apple.py
+%%DATADIR%%/rulesets/mason/world/objects/plants/seeds/Fircone.py
+%%DATADIR%%/rulesets/mason/world/objects/plants/seeds/Seed.py
+%%DATADIR%%/rulesets/mason/world/objects/plants/seeds/__init__.py
+%%DATADIR%%/rulesets/mason/world/objects/tools/Bucksaw.py
+%%DATADIR%%/rulesets/mason/world/objects/tools/Cleaver.py
+%%DATADIR%%/rulesets/mason/world/objects/tools/Rope.py
+%%DATADIR%%/rulesets/mason/world/objects/tools/Tinderbox.py
+%%DATADIR%%/rulesets/mason/world/objects/tools/Torch.py
+%%DATADIR%%/rulesets/mason/world/objects/tools/Trowel.py
+%%DATADIR%%/rulesets/mason/world/objects/tools/__init__.py
+%%DATADIR%%/rulesets/mason/world/objects/undead/Skeleton.py
+%%DATADIR%%/rulesets/mason/world/objects/undead/__init__.py
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/conf/acorn.xml
+%%PORTDOCS%%%%DOCSDIR%%/conf/basic.xml
+%%PORTDOCS%%%%DOCSDIR%%/conf/cyphesis.vconf
+%%PORTDOCS%%%%DOCSDIR%%/conf/mason.xml
+%%PORTDOCS%%%%DOCSDIR%%/conf/werewolf.xml
+@dirrm etc/cyphesis
+@dirrm %%DATADIR%%/rulesets/basic/hooks
+@dirrm %%DATADIR%%/rulesets/basic/mind/goals/animal
+@dirrm %%DATADIR%%/rulesets/basic/mind/goals/common
+@dirrm %%DATADIR%%/rulesets/basic/mind/goals/dynamic
+@dirrm %%DATADIR%%/rulesets/basic/mind/goals/humanoid
+@dirrm %%DATADIR%%/rulesets/basic/mind/goals
+@dirrm %%DATADIR%%/rulesets/basic/mind/panlingua
+@dirrm %%DATADIR%%/rulesets/basic/mind
+@dirrm %%DATADIR%%/rulesets/basic/world/objects/animals
+@dirrm %%DATADIR%%/rulesets/basic/world/objects/buildings
+@dirrm %%DATADIR%%/rulesets/basic/world/objects/elements
+@dirrm %%DATADIR%%/rulesets/basic/world/objects/plants
+@dirrm %%DATADIR%%/rulesets/basic/world/objects/tools
+@dirrm %%DATADIR%%/rulesets/basic/world/objects
+@dirrm %%DATADIR%%/rulesets/basic/world
+@dirrm %%DATADIR%%/rulesets/basic
+@dirrm %%DATADIR%%/rulesets/mason/mind
+@dirrm %%DATADIR%%/rulesets/mason/world/objects/animals
+@dirrm %%DATADIR%%/rulesets/mason/world/objects/buildings
+@dirrm %%DATADIR%%/rulesets/mason/world/objects/clothing
+@dirrm %%DATADIR%%/rulesets/mason/world/objects/outdoor
+@dirrm %%DATADIR%%/rulesets/mason/world/objects/plants/seeds
+@dirrm %%DATADIR%%/rulesets/mason/world/objects/plants
+@dirrm %%DATADIR%%/rulesets/mason/world/objects/tools
+@dirrm %%DATADIR%%/rulesets/mason/world/objects/undead
+@dirrm %%DATADIR%%/rulesets/mason/world/objects
+@dirrm %%DATADIR%%/rulesets/mason/world
+@dirrm %%DATADIR%%/rulesets/mason
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/conf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
