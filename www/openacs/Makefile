@@ -7,6 +7,7 @@
 
 PORTNAME?=	openacs
 PORTVERSION?=	5.1.5
+PORTREVISION?=	1
 CATEGORIES=	www
 MASTER_SITES?=	http://openacs.org/projects/openacs/download/download/
 
@@ -33,7 +34,12 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 .if defined(WITH_POSTCONFIG)
 POSTCONFIG=	true
-PKGNAMESUFFIX= -withconfig
+PKGNAMESUFFIX=	-withconfig
+.endif
+
+.if defined(WITH_DT)
+DT=		true
+RUN_DEPENDS+=	${LOCALBASE}/bin/supervise:${PORTSDIR}/sysutils/daemontools
 .endif
 
 SUB_FILES=	pkg-install pkg-message pkg-deinstall post-config
@@ -41,7 +47,7 @@ SUB_LIST+=	RCCONF=${RCCONF} POSTCONFIG=${POSTCONFIG} \
 		OPENACSBASE=${OPENACSBASE} OPENACS_GROUP=${OPENACS_GROUP} \
 		OPENACS_USER=${OPENACS_USER} DB=${DB} PGDATA=${PGDATA} \
 		PG_USER=${PG_USER} PGBASE=${PGBASE} \
-		DTSERVICEBASE=${DTSERVICEBASE} \
+		DTSERVICEBASE=${DTSERVICEBASE} DT=${DT} \
 		AOLSERVERBASE=${AOLSERVERBASE} VIRTUALBASE=${VIRTUALBASE}
 
 RUN_DEPENDS+=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
@@ -60,8 +66,8 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libpq.so:${PORTSDIR}/databases/postgresql74-serve
 .endif
 
 RUN_DEPENDS+=	${LOCALBASE}/lib/tdom0.8.0/libtdom0.8.0.so:${PORTSDIR}/www/tdom \
-		${LOCALBASE}/tclwebtest-1.0/tclwebtest:${PORTSDIR}/www/tclwebtest \
-		${LOCALBASE}/bin/supervise:${PORTSDIR}/sysutils/daemontools
+		${LOCALBASE}/tclwebtest-1.0/tclwebtest:${PORTSDIR}/www/tclwebtest
+
 USE_LINUX=	YES
 
 NO_BUILD=	YES
@@ -83,14 +89,12 @@ do-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${MKDIR} ${OPENACSBASE}
 	@${MKDIR} ${VIRTUALBASE}
-	@${MKDIR} ${DTSERVICEBASE}
 
 	@${ECHO_CMD} "Installing files"
 	@${CP} -R ${WRKSRC} ${OPENACSBASE}/${OPENACS_USER}
 
 	@${TEST} -e ${VIRTUALBASE}/aolserver || ${LN} -s ${OPENACSBASE} ${VIRTUALBASE}/aolserver
 	@${TEST} -L ${VIRTUALBASE}/aolserver || ${ECHO_MSG} "${VIRTUALBASE}/aolserver is no symbolic link"
-	@${TEST} -L ${DTSERVICEBASE}/${OPENACS_USER} || ${LN} -s ${OPENACSBASE}/${OPENACS_USER}/etc/daemontools ${DTSERVICEBASE}/${OPENACS_USER}
 
 	@${INSTALL_SCRIPT} ${OPENACSBASE}/${OPENACS_USER}/packages/acs-core-docs/www/files/nsd-postgres.txt ${EXAMPLESDIR}/nsd-postgres
 	@${INSTALL_SCRIPT} ${OPENACSBASE}/${OPENACS_USER}/packages/acs-core-docs/www/files/nsd-oracle.txt ${EXAMPLESDIR}/nsd-oracle
@@ -116,7 +120,7 @@ post-install:
 		" ${OPENACSBASE}/${OPENACS_USER}/etc/daemontools/run
 
 	@${ECHO_CMD} "@unexec rm -f ${DATADIR}/log/${OPENACS_USER}* 2>&1 > /dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rm -f ${DATADIR}/log/error.log 2>&1 > /dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rm -f ${DATADIR}/log/error.log* 2>&1 > /dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rm -Rf ${DATADIR}/apm-workspace 2>&1 > /dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rm -Rf ${DATADIR}/etc/daemontools/supervise 2>&1 > /dev/null || true" >> ${TMPPLIST}
 	@${FIND} -s ${WRKSRC} -not -type d \
@@ -124,9 +128,14 @@ post-install:
 	@${FIND} -s -d ${WRKSRC} -type d \
 		| ${SED} -ne 's,^${WRKSRC},@dirrm ${DATADIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm ${EXAMPLESDIR:S,^${PREFIX}/,,}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@cd ${DTSERVICEBASE}" >> ${TMPPLIST}
-	@${ECHO_CMD} "${OPENACS_USER}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir ${DTSERVICEBASE} 2>&1 > /dev/null || true" >> ${TMPPLIST}
+
+	if [ ${DT} ] ; then \
+	@${MKDIR} ${DTSERVICEBASE} ; \
+	@${TEST} -L ${DTSERVICEBASE}/${OPENACS_USER} || ${LN} -s ${OPENACSBASE}/${OPENACS_USER}/etc/daemontools ${DTSERVICEBASE}/${OPENACS_USER} ; \
+	@${ECHO_CMD} "@cd ${DTSERVICEBASE}" >> ${TMPPLIST} ; \
+	@${ECHO_CMD} "${OPENACS_USER}" >> ${TMPPLIST} ; \
+	@${ECHO_CMD} "@unexec rmdir ${DTSERVICEBASE} 2>&1 > /dev/null || true" >> ${TMPPLIST} ; \
+	fi
 
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}

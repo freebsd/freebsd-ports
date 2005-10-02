@@ -8,6 +8,7 @@ OPENACSBASE=%%OPENACSBASE%%
 OPENACS_GROUP=%%OPENACS_GROUP%%
 OPENACS_USER=%%OPENACS_USER%%
 DB=%%DB%%
+DT=%%DT%%
 PGDATA=%%PGDATA%%
 PG_USER=%%PG_USER%%
 PGBASE=%%PGBASE%%
@@ -82,6 +83,13 @@ else
 	echo "${RCCONF}: adding entries" && \
 	echo "# OPENACS-entries in rc.conf:" >> ${RCCONF} && \
 	echo "ldconfig_paths=\"/usr/lib/compat /usr/X11R6/lib ${LOCALBASE}/lib ${PGBASE}/lib ${AOLSERVERBASE}/lib\" " >> ${RCCONF} && \
+	echo "postgresql_enable=\"YES\"" >> ${RCCONF} && \
+	echo "postgresql_data=\"${PGDATA}\"" >> ${RCCONF} && \
+	echo "postgresql_flags=\" -l ${PGDATA}/server.log\"" >> ${RCCONF} && \
+	echo "aolserver_enable=\"YES\"" >> ${RCCONF} && \
+	echo "aolserver_conf=\"${OPENACSBASE}/${OPENACS_USER}/etc/config.tcl\"" >> ${RCCONF} && \
+	echo "aolserver_flags=\"-u ${OPENACS_USER} -g ${OPENACS_GROUP} -b 0.0.0.0:8000\"" >> ${RCCONF} && \
+	echo "aolserver_prog=\"${EXAMPLESDIR}/nsd-postgres\"" >> ${RCCONF} && \
 	echo "# end of OPENACS-entries." >> ${RCCONF}
 fi
 
@@ -107,9 +115,10 @@ post-install() {
 	echo "Set permissions of files"
 	chmod -R 770 ${OPENACSBASE}/${OPENACS_USER}
 	chmod -R 770 ${EXAMPLESDIR}
-	chmod -R 755 ${DTSERVICEBASE}/${OPENACS_USER}
-     	chmod 1755 ${DTSERVICEBASE}
- 
+if [ ${DT} ]  ; then \
+	chmod -R 755 ${DTSERVICEBASE}/${OPENACS_USER} ; \
+     	chmod 1755 ${DTSERVICEBASE} ; \
+fi
 	chown -R ${OPENACS_USER}:${OPENACS_GROUP} ${OPENACSBASE}/${OPENACS_USER}
 	chown root:${OPENACS_GROUP} ${EXAMPLESDIR}/nsd-postgres ${EXAMPLESDIR}/nsd-oracle
 
