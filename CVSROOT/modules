@@ -659,7 +659,6 @@ be-aspell	ports/textproc/be-aspell
 be_agent	ports/sysutils/be_agent
 beacon		ports/net/beacon
 beacon-server	ports/net/beacon-server
-beagle		ports/devel/beagle
 beast		ports/audio/beast
 beastie		ports/x11-themes/beastie
 beautifyphp	ports/devel/beautifyphp
@@ -6986,6 +6985,7 @@ oops		ports/www/oops
 oorexx		ports/lang/oorexx
 op		ports/security/op
 open		ports/sysutils/open
+open-beagle	ports/devel/open-beagle
 open-cobol	ports/lang/open-cobol
 open-motif	ports/x11-toolkits/open-motif
 openacs		ports/www/openacs
