@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SQL-Abstract-Limit
-PORTVERSION=	0.033
+PORTVERSION=	0.101
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/D/DA/DAVEBAIRD
@@ -26,7 +26,9 @@ PERL_MODBUILD=	yes
 MAN3=		SQL::Abstract::Limit.3
 
 .include <bsd.port.pre.mk>
+
 .if ${PERL_LEVEL} < 500600
 IGNORE=	requires perl 5.6.x or later
 .endif
+
 .include <bsd.port.post.mk>
