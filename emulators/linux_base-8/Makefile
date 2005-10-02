@@ -52,7 +52,7 @@ DISTFILES=		redhat-release-8.0-8.noarch.rpm \
 EXTRACT_ONLY=
 
 MAINTAINER=		freebsd-emulation@FreeBSD.org
-COMMENT=	Base set of packages needed in Linux mode (only for i386)
+COMMENT=	Base set of packages needed in Linux mode (for i386/amd64)
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
@@ -97,7 +97,7 @@ FALLBACK_ELF_MIB=	kern.fallback_elf_brand
 LINUX_ELF=		3
 PREVIOUS_ELF!=		/sbin/sysctl -n ${FALLBACK_ELF_MIB}
 
-pre-install:
+pre-su-install:
 #
 # Handle the loading of the linux loadable kernel module if required.
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
