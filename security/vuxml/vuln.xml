@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d4c70df5-335d-11da-9c70-0040f42d58c6">
+    <topic>weex -- remote format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>weex</name>
+	<range><lt>2.6.1.5_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Emanuel Haupt reports:</p>
+	<blockquote cite="http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/86833">
+	  <p>Someone who controls an FTP server that weex will log in to
+	    can set up malicious data in the account that weex will use,
+	    and that will cause a format string bug that will allow remote
+	    code execution. It will only happen when weex is first run or
+	    when its cache files are rebuilt with the -r option,
+	    though.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/86833</url>
+    </references>
+    <dates>
+      <discovery>2005-10-02</discovery>
+      <entry>2005-10-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8a3ece40-3315-11da-a263-0001020eed82">
     <topic>picasm -- buffer overflow vulnerability</topic>
     <affects>
