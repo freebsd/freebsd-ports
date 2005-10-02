@@ -6,6 +6,7 @@
 %%SITE_PERL%%/MP3/Tag/ID3v2.pm
 %%SITE_PERL%%/MP3/Tag/LastResort.pm
 %%SITE_PERL%%/MP3/Tag/Inf.pm
+%%SITE_PERL%%/MP3/ID3v2-Data.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Tag/.packlist
 @dirrm %%SITE_PERL%%/MP3/Tag
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Tag
