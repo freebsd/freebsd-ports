@@ -1,4 +1,5 @@
 %%SITE_PERL%%/PPI.pm
+%%SITE_PERL%%/PPI/Cache.pm
 %%SITE_PERL%%/PPI/Document.pm
 %%SITE_PERL%%/PPI/Document/Fragment.pm
 %%SITE_PERL%%/PPI/Document/Normalized.pm
