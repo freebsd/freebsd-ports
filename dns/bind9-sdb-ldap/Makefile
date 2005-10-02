@@ -18,7 +18,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	Hugo@Meiland.nl
 COMMENT=	The well known Bind9, patched for use of an LDAP based backend
 
-LIB_DEPENDS=	ldap-2.2:${PORTSDIR}/net/openldap22-client
+USE_OPENLDAP=	yes
 
 CONFLICTS=	bind-8.* bind84-8.* bind9-9.* bind9-dlz-* host-* skalibs-*
 
