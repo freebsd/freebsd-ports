@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eb
-PORTVERSION=	4.2
+PORTVERSION=	4.2.1
 PORTREVISION=	0
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/
