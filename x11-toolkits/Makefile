@@ -164,6 +164,7 @@
     SUBDIR += py-wmgeneral
     SUBDIR += py-wxPython24
     SUBDIR += py-wxPython26
+    SUBDIR += py-wxPython26-common
     SUBDIR += py-xlib
     SUBDIR += qscintilla
     SUBDIR += qt145
