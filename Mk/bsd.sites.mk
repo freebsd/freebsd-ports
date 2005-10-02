@@ -1277,7 +1277,6 @@ MASTER_SITE_XORG+= \
 	ftp://ftp.sunet.se/pub/X11/ftp.x.org/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.x.org/pub/%SUBDIR%/ \
 	ftp://sunsite.uio.no/pub/X11/%SUBDIR%/ \
-	ftp://ftp.cs.tu-berlin.de/pub/X/x/%SUBDIR%/ \
 	http://xorg.freedesktop.org/%SUBDIR%/ \
 	ftp://ftp.x.org/pub/%SUBDIR%/
 .endif
