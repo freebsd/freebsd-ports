@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20051002:
+  AFFECTS: users of x11-toolkits/py-wxPython26
+
+  wxPython 2.6 has been split into py-wxPython26, py-wxPython26-unicode
+  and py-wxPython26-common. Everyone should update to the new structure.
+
+  # remove previous installation
+  1) pkg_delete 'py24-wxPython*2.6*'
+
+  # update to new version
+  2) cd /usr/ports/x11-toolkits/py-wxPython26
+
+  3) make install clean
+
 20050927:
   AFFECTS: users of mail/dovecot
   AUTHOR: robin@isometry.net
