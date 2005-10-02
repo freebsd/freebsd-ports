@@ -34,7 +34,7 @@ nsd-postgres and some other files are in %%EXAMPLESDIR%%, but everything
 should work just fine.
 
 To view your pages at port 80 you will have to change:
-daemontools/run and config.tcl in
+%%RCCONF%%, daemontools/run and config.tcl in
 %%VIRTUALBASE%%/aolserver/%%OPENACS_USER%%/etc.
 
 If you install .LRN as well as openACS the IP address in config.tcl
