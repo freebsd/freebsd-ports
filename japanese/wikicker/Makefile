@@ -6,10 +6,9 @@
 #
 
 PORTNAME=		WiKicker
-PORTVERSION=		0.24
+PORTVERSION=		0.26
 CATEGORIES+=		japanese www perl5
-MASTER_SITES=		\
-			http://www.naney.org/comp/distrib/WiKicker/archive/
+MASTER_SITES=		http://www.naney.org/comp/distrib/WiKicker/archive/
 
 MAINTAINER=		ports@freebsd.org
 COMMENT=		Wiki like system by perl5
@@ -22,9 +21,7 @@ COMMENT=		Wiki like system by perl5
 .if defined(WITH_IMAGEUPLOAD)
 RUN_DEPENDS+=		${SITE_PERL}/GnuPG/Interface.pm:${PORTSDIR}/security/p5-GnuPG-Interface
 .endif
-RUN_DEPENDS+=		\
-			${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
-			${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
+RUN_DEPENDS+=		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 			${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate \
 			${SITE_PERL}/${PERL_ARCH}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String \
 			${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff \
@@ -37,7 +34,8 @@ RUN_DEPENDS+=		\
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=		${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Maketext
+BUILD_DEPENDS+=		${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Maketext \
+			${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 .endif
 
 .if defined(WITH_WIKICKER_RECENTLOG)
