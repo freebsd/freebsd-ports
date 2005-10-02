@@ -145,5 +145,7 @@ etc/cyphesis/werewolf.xml
 @dirrm %%DATADIR%%/rulesets/mason/world/objects
 @dirrm %%DATADIR%%/rulesets/mason/world
 @dirrm %%DATADIR%%/rulesets/mason
+@dirrm %%DATADIR%%/rulesets
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/conf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
