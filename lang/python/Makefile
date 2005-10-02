@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	python
-PORTVERSION=	2.4.1
-PORTREVISION=	3
+PORTVERSION=	2.4.2
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -16,7 +15,6 @@ DISTFILES=	${PYTHON_DISTFILE}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT?=	An interpreted object-oriented programming language
 
-CONFLICTS=	stackless_python-*
 DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
@@ -46,6 +44,9 @@ OPTIONS=	THREADS "Enable thread support" on \
 		FPECTL "Enable floating point exception handling" off
 
 .include <bsd.port.pre.mk>
+
+# workaround for a bug in base curses.h.
+CFLAGS+=		-D__wchar_t=wchar_t
 
 .if !defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--with-threads

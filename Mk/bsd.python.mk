@@ -104,6 +104,15 @@ Python_Include_MAINTAINER=	perky@FreeBSD.org
 # USE_PYDISTUTILS:	Use distutils as do-configure, do-build and do-install
 #					targets.
 #
+# PYDISTUTILS_CONFIGURE_TARGET:	Pass this command to distutils on configure
+#								stage.	default: config
+#
+# PYDISTUTILS_BUILD_TARGET:	Pass this command to distutils on build stage.
+#							default: build
+#
+# PYDISTUTILS_INSTALL_TARGET:	Pass this command to distutils on install
+#								stage.	default: install
+#
 # PYDISTUTILS_CONFIGUREARGS:	Arguments to config with distutils.
 #								default: <empty>
 #
@@ -116,12 +125,16 @@ Python_Include_MAINTAINER=	perky@FreeBSD.org
 # PYSETUP:		Name of the setup script used by the distutils package.
 #				default: setup.py
 #
-# USE_TWISTED:	If this option is just yes then
+# USE_TWISTED:	If this option is just yes then build and run
 #				the dependence to twistedCore is added. Alternatively here
 #				can be listed specific components of twisted framework, 
-#				available components are: web, lore, news, words, pair,
+#				available components are: web, web2, lore, news, words, pair,
 #				mail, names, xish, runner, flow and conch. Note that 
-#				core component is required for any of this optional components. 
+#				core component is required for any of this optional components.
+#
+# USE_TWISTED_BUILD:		Same as previous but add only build dependency.
+#
+# USE_TWISTED_RUN:			Same as USE_TWISTED but add only run dependency.
 #
 # USE_ZOPE:		Use Zope - an object-based web application platform, this
 #				also sets up ZOPEBASEDIR - relative base directory of zope 
@@ -139,7 +152,7 @@ PYTHON_VERSION=		python2.3
 .endif
 
 .if defined(PYTHON_VERSION)
-_PYTHON_VERSION!=	${ECHO_CMD} "${PYTHON_VERSION}" | ${SED} 's/^python//'
+_PYTHON_VERSION:=	${PYTHON_VERSION:S/^python//}
 _PYTHON_CMD=		${LOCALBASE}/bin/${PYTHON_VERSION}
 .else
 # Determine the currently installed version. If Python is not installed, a
@@ -169,12 +182,12 @@ USE_PYTHON_RUN=		yes
 .endif	# !defined(USE_PYTHON)
 
 # Validate Python version whether it meets USE_PYTHON version restriction.
-_PYTHON_VERSION_CHECK!=		${ECHO_CMD} "${USE_PYTHON}" | \
-							${SED} 's/^\([1-9]\.[0-9]\)$$/\1-\1/'
-_PYTHON_VERSION_MINIMUM!=	${ECHO_CMD} "${_PYTHON_VERSION_CHECK}" | \
-							${SED} -n 's/.*\([1-9]\.[0-9]\)[-+].*/\1/p'
-_PYTHON_VERSION_MAXIMUM!=	${ECHO_CMD} "${_PYTHON_VERSION_CHECK}" | \
-							${SED} -n 's/.*-\([1-9]\.[0-9]\).*/\1/p'
+_PYTHON_VERSION_CHECK:=			${USE_PYTHON:C/^([1-9]\.[0-9])$/\1-\1/}
+_PYTHON_VERSION_MINIMUM_TMP:=	${_PYTHON_VERSION_CHECK:C/([1-9]\.[0-9])[-+].*/\1/}
+_PYTHON_VERSION_MINIMUM:=		${_PYTHON_VERSION_MINIMUM_TMP:M[1-9].[0-9]}
+_PYTHON_VERSION_MAXIMUM_TMP:=	${_PYTHON_VERSION_CHECK:C/.*-([1-9]\.[0-9])/\1/}
+_PYTHON_VERSION_MAXIMUM:=		${_PYTHON_VERSION_MAXIMUM_TMP:M[1-9].[0-9]}
+
 .if !empty(_PYTHON_VERSION_MINIMUM) && ( \
 		${_PYTHON_VERSION} < ${_PYTHON_VERSION_MINIMUM})
 _PYTHON_VERSION_NONSUPPORTED=	${_PYTHON_VERSION_MINIMUM} at least
@@ -231,9 +244,9 @@ PYTHON_SUFFIX=		25
 
 # Python-2.4
 .elif ${PYTHON_VERSION} == "python2.4"
-PYTHON_PORTVERSION?=2.4.1
+PYTHON_PORTVERSION?=2.4.2
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python
-PYTHON_REL=			241
+PYTHON_REL=			242
 PYTHON_SUFFIX=		24
 
 # Python-2.3
@@ -359,41 +372,83 @@ PLIST_SUB+=		ZOPEBASEDIR=${SZOPEBASEDIR} \
 .endif
 
 # Twisted specific routines
+.if defined(USE_TWISTED) || defined(USE_TWISTED_BUILD) || defined(USE_TWISTED_RUN)
+
+.if defined(USE_TWISTED_BUILD) && defined(USE_TWISTED_RUN)
+. if ${USE_TWISTED_BUILD} != ${USE_TWISTED_RUN}
+IGNORE=	: USE_TWISTED_BUILD and USE_TWISTED_RUN must have equal values
+. endif
+.endif
+
 .if defined(USE_TWISTED)
+TWISTED_BUILD_DEP=	yes
+TWISTED_RUN_DEP=	yes
+.else
+. if defined(USE_TWISTED_BUILD)
+TWISTED_BUILD_DEP=	yes
+USE_TWISTED=		${USE_TWISTED_BUILD}
+. endif
+. if defined(USE_TWISTED_RUN)
+TWISTED_RUN_DEP=	yes
+USE_TWISTED=		${USE_TWISTED_RUN}
+. endif
+.endif
 
 .if ${USE_TWISTED} == "20" || ${USE_TWISTED} == "yes"
 USE_TWISTED_VER=	${USE_TWISTED}
+. if defined(TWISTED_BUILD_DEP)
+BUILD_DEPENDS+=		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twistedCore
+. endif
+. if defined(TWISTED_RUN_DEP)
 RUN_DEPENDS+=		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twistedCore
+. endif
 .elif ${USE_TWISTED} == "13"
 USE_TWISTED_VER=	${USE_TWISTED}
+. if defined(TWISTED_BUILD_DEP)
+BUILD_DEPENDS+=		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted
+. endif
+. if defined(TWISTED_RUN_DEP)
 RUN_DEPENDS+=		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted
+. endif
 .else
-USE_TWISTED_VER=	"20"
+USE_TWISTED_VER=	20
 # Checking for twisted components 
-_TWISTED_COMPONENTS?=	web lore news words pair mail names xish runner flow conch
+_TWISTED_COMPONENTS?=	web web2 lore news words pair mail names xish runner flow conch
 
 # XXX Should be here other dependencies types?
-web_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/web/__init__.py:${PORTSDIR}/www/py-twistedWeb	
-lore_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/textproc/__init__.py:${PORTSDIR}/textproc/py-twistedLore
-news_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/news/__init__.py:${PORTSDIR}/news/py-twistedNews
-words_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/words/__init__.py:${PORTSDIR}/net/py-twistedWords
-pair_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/pair/__init__.py:${PORTSDIR}/net/py-twistedPair
-mail_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/mail/__init__.py:${PORTSDIR}/mail/py-twistedMail
-names_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/names/__init__.py:${PORTSDIR}/dns/py-twistedNames
-xish_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/xish/__init__.py:${PORTSDIR}/devel/py-twistedXish
+web_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/web/__init__.py:${PORTSDIR}/www/py-twistedWeb
+web2_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/web2/__init__.py:${PORTSDIR}/www/py-twistedWeb2
+lor_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/textproc/__init__.py:${PORTSDIR}/textproc/py-twistedLore
+news_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/news/__init__.py:${PORTSDIR}/news/py-twistedNews
+words_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/words/__init__.py:${PORTSDIR}/net/py-twistedWords
+pair_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/pair/__init__.py:${PORTSDIR}/net/py-twistedPair
+mail_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/mail/__init__.py:${PORTSDIR}/mail/py-twistedMail
+names_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/names/__init__.py:${PORTSDIR}/dns/py-twistedNames
+xish_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/xish/__init__.py:${PORTSDIR}/devel/py-twistedXish
 runner_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/runner/__init__.py:${PORTSDIR}/devel/py-twistedRunner
-flow_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/flow/__init__.py:${PORTSDIR}/devel/py-twistedFlow
-conch_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/conch/__init__.py:${PORTSDIR}/security/py-twistedConch
+flow_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/flow/__init__.py:${PORTSDIR}/devel/py-twistedFlow
+conch_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/conch/__init__.py:${PORTSDIR}/security/py-twistedConch
 
 .for component in ${_TWISTED_COMPONENTS}
 _COMP_TEST=	${USE_TWISTED:M${component}}
 . if ${_COMP_TEST:S/${component}//}!=${_COMP_TEST:S/  / /g}
-RUN_DEPENDS+=	${${component}_RUN_DEPENDS}
+.  if defined(TWISTED_BUILD_DEP)
+BUILD_DEPENDS+=	${${component}_DEPENDS}
+.  endif
+.  if defined(TWISTED_RUN_DEP)
+RUN_DEPENDS+=	${${component}_DEPENDS}
+.  endif
 . endif
 .endfor
 
 # Implicit dependency from core
+.if defined(TWISTED_BUILD_DEP)
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twistedCore
+.endif
+.if defined(TWISTED_RUN_DEP)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twistedCore
+.endif
+
 .endif
 
 .endif # defined(USE_TWISTED)
@@ -407,20 +462,24 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twis
 Python_Post_Include=			bsd.python.mk
 
 # py-distutils support
+PYDISTUTILS_CONFIGURE_TARGET?=	config
+PYDISTUTILS_BUILD_TARGET?=		build
+PYDISTUTILS_INSTALL_TARGET?=	install
+
 .if defined(USE_PYDISTUTILS)
 .if !target(do-configure) && !defined(HAS_CONFIGURE) && !defined(GNU_CONFIGURE)
 do-configure:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} config ${PYDISTUTILS_CONFIGUREARGS})
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} ${PYDISTUTILS_CONFIGURE_TARGET} ${PYDISTUTILS_CONFIGUREARGS})
 .endif
 
 .if !target(do-build)
 do-build:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} build ${PYDISTUTILS_BUILDARGS})
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} ${PYDISTUTILS_BUILD_TARGET} ${PYDISTUTILS_BUILDARGS})
 .endif
 
 .if !target(do-install)
 do-install:
-	@(cd ${INSTALL_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} install ${PYDISTUTILS_INSTALLARGS})
+	@(cd ${INSTALL_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} ${PYDISTUTILS_INSTALL_TARGET} ${PYDISTUTILS_INSTALLARGS})
 .endif
 .endif		# defined(USE_PYDISTUTILS)
 
