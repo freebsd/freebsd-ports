@@ -7,9 +7,11 @@
 
 PORTNAME=	festvox-pc
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	audio accessibility
-MASTER_SITES=	http://www.csrf.pd.cnr.it/Software/It-Festival/
-DISTNAME=	pc_ogi_diphone
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	it-festival
+DISTNAME=	Italian-FESTIVAL
 DIST_SUBDIR=	festival
 
 MAINTAINER=	saturnero@gufi.org
@@ -22,15 +24,17 @@ RUN_DEPENDS=	\
 
 NO_BUILD=	yes
 USE_ZIP=	YES
+
 WRKSRC=		${WRKDIR}/festival
 FHOME=		${PREFIX}/share/festival
 
 post-extract:
-	@ ${CHMOD} -R 644 ${WRKSRC}
-	@ ${FIND} ${WRKSRC} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@${UNZIP_CMD} -qq -d ${WRKDIR} ${WRKDIR}/pc_ogi_diphone.zip
+	@${FIND} ${WRKSRC} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@${FIND} ${WRKSRC} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 
 do-install:
 	${MKDIR} ${FHOME}
-	cd ${WRKSRC} && ${CP} -pPR * ${FHOME}
+	(cd ${WRKSRC} && ${CP} -pPR * ${FHOME})
 
 .include <bsd.port.mk>
