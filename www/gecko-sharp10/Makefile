@@ -29,6 +29,7 @@ MOZILLA=	mozilla
 .endif
 
 USE_GNOME=	gnomehack gnometarget
+LATEST_LINK=	gecko-sharp10
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
