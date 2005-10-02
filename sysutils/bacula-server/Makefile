@@ -153,6 +153,8 @@ pre-everything::
 .endif
 
 post-patch:
+#	Default bconsole.conf is ${PREFIX}/etc
+	@${REINPLACE_CMD} -e 's|./bconsole.conf|${PREFIX}/etc/bconsole.conf|g' ${WRKSRC}/src/console/console.c
 .if defined(WITH_CLIENT_ONLY)
 # 	In client port only install startup script out of script dir (see below post-install)
 # 	Dont mkdir ${PREFIX}/share/bacule cause it's empty
