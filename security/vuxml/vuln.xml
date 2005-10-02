@@ -56,7 +56,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <url>http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/86833</url>
+      <freebsdpr>ports/86833</freebsdpr>
     </references>
     <dates>
       <discovery>2005-10-02</discovery>
