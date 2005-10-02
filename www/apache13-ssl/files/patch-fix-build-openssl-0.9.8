@@ -1,0 +1,14 @@
+--- src/modules/ssl/apache_ssl.c.orig	Sun Oct  2 14:55:10 2005
++++ src/modules/ssl/apache_ssl.c	Sun Oct  2 14:56:47 2005
+@@ -72,6 +72,11 @@
+ #include "http_main.h"
+ 
+ 
++#ifndef EVP_F_EVP_DECRYPTFINAL
++#ifdef EVP_F_EVP_DECRYPTFINAL_EX
++#define EVP_F_EVP_DECRYPTFINAL EVP_F_EVP_DECRYPTFINAL_EX
++#endif
++#endif
+ /* Note that APACHE_SSL_EXPORT_CERTS is defined in buff.h */
+ 
+ /* Temp */
