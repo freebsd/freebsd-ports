@@ -71,11 +71,6 @@ lib/libIritTriv.so
 lib/libIritTrng.so
 lib/libIritUser.so
 lib/libIritXtra.so
-%%PORTDOCS%%%%DOCSDIR%%/coding.std
-%%PORTDOCS%%%%DOCSDIR%%/general.inf
-%%PORTDOCS%%%%DOCSDIR%%/prog_man.html
-%%PORTDOCS%%%%DOCSDIR%%/technion.inf
-%%PORTDOCS%%%%DOCSDIR%%/update.new
 %%EXAMPLESDIR%%/data/3dhead.32
 %%EXAMPLESDIR%%/data/3dhead.inf
 %%EXAMPLESDIR%%/data/ai_b58.itd
@@ -105,6 +100,7 @@ lib/libIritXtra.so
 %%EXAMPLESDIR%%/data/ir_b58.itd
 %%EXAMPLESDIR%%/data/ir_chckr.irt
 %%EXAMPLESDIR%%/data/ir_chckr.itd
+%%EXAMPLESDIR%%/data/ir_cube.itd
 %%EXAMPLESDIR%%/data/ir_eggs.itd
 %%EXAMPLESDIR%%/data/ir_isogls.itd
 %%EXAMPLESDIR%%/data/ir_l3ort.itd
@@ -128,8 +124,10 @@ lib/libIritXtra.so
 %%EXAMPLESDIR%%/data/pl_sold1.itd
 %%EXAMPLESDIR%%/data/pl_sold3.itd
 %%EXAMPLESDIR%%/data/pl_wiggl.itd
+%%EXAMPLESDIR%%/data/plystrip.itd
 %%EXAMPLESDIR%%/data/sphere16.itd
 %%EXAMPLESDIR%%/data/sphere8.itd
+%%EXAMPLESDIR%%/emacs/irit.el
 %%EXAMPLESDIR%%/scripts/adap_iso.irt
 %%EXAMPLESDIR%%/scripts/algsum.irt
 %%EXAMPLESDIR%%/scripts/alphsec2.irt
@@ -140,6 +138,7 @@ lib/libIritXtra.so
 %%EXAMPLESDIR%%/scripts/animdemo.irt
 %%EXAMPLESDIR%%/scripts/ant.irt
 %%EXAMPLESDIR%%/scripts/arc_len.irt
+%%EXAMPLESDIR%%/scripts/art_glry.irt
 %%EXAMPLESDIR%%/scripts/aspct_gr.irt
 %%EXAMPLESDIR%%/scripts/b58.irt
 %%EXAMPLESDIR%%/scripts/bed.irt
@@ -167,6 +166,7 @@ lib/libIritXtra.so
 %%EXAMPLESDIR%%/scripts/closloop.irt
 %%EXAMPLESDIR%%/scripts/cmorph.irt
 %%EXAMPLESDIR%%/scripts/cmorph2.irt
+%%EXAMPLESDIR%%/scripts/cmp_itd.irt
 %%EXAMPLESDIR%%/scripts/colors.irt
 %%EXAMPLESDIR%%/scripts/cone-cyl.irt
 %%EXAMPLESDIR%%/scripts/cone2cyl.irt
@@ -177,12 +177,15 @@ lib/libIritXtra.so
 %%EXAMPLESDIR%%/scripts/coords.irt
 %%EXAMPLESDIR%%/scripts/coplanar.irt
 %%EXAMPLESDIR%%/scripts/corkplug.irt
+%%EXAMPLESDIR%%/scripts/cort_map.irt
 %%EXAMPLESDIR%%/scripts/cos_sphr.irt
 %%EXAMPLESDIR%%/scripts/crosplug.irt
 %%EXAMPLESDIR%%/scripts/crv_dist.irt
 %%EXAMPLESDIR%%/scripts/crv_krnl.irt
 %%EXAMPLESDIR%%/scripts/crv_tan.irt
+%%EXAMPLESDIR%%/scripts/crvarrng.irt
 %%EXAMPLESDIR%%/scripts/crvdecmp.irt
+%%EXAMPLESDIR%%/scripts/crvtrrec.irt
 %%EXAMPLESDIR%%/scripts/cslogo.irt
 %%EXAMPLESDIR%%/scripts/cube.irt
 %%EXAMPLESDIR%%/scripts/cube2.irt
@@ -190,6 +193,7 @@ lib/libIritXtra.so
 %%EXAMPLESDIR%%/scripts/cubes.irt
 %%EXAMPLESDIR%%/scripts/cup.irt
 %%EXAMPLESDIR%%/scripts/curvatur.irt
+%%EXAMPLESDIR%%/scripts/cvisible.irt
 %%EXAMPLESDIR%%/scripts/cylin3.irt
 %%EXAMPLESDIR%%/scripts/decimate.irt
 %%EXAMPLESDIR%%/scripts/demo.irt
@@ -203,9 +207,11 @@ lib/libIritXtra.so
 %%EXAMPLESDIR%%/scripts/domino.irt
 %%EXAMPLESDIR%%/scripts/duality.irt
 %%EXAMPLESDIR%%/scripts/duck.irt
+%%EXAMPLESDIR%%/scripts/ellipses.irt
 %%EXAMPLESDIR%%/scripts/escher.irt
 %%EXAMPLESDIR%%/scripts/f16.irt
 %%EXAMPLESDIR%%/scripts/facemask.irt
+%%EXAMPLESDIR%%/scripts/ffcmpcrv.irt
 %%EXAMPLESDIR%%/scripts/ffcnvhul.irt
 %%EXAMPLESDIR%%/scripts/ffloops.irt
 %%EXAMPLESDIR%%/scripts/ffmatch4.irt
@@ -222,6 +228,7 @@ lib/libIritXtra.so
 %%EXAMPLESDIR%%/scripts/handset.irt
 %%EXAMPLESDIR%%/scripts/hermite.irt
 %%EXAMPLESDIR%%/scripts/interpol.irt
+%%EXAMPLESDIR%%/scripts/isocline.irt
 %%EXAMPLESDIR%%/scripts/knight.irt
 %%EXAMPLESDIR%%/scripts/knotrmvl.irt
 %%EXAMPLESDIR%%/scripts/knots.irt
@@ -255,9 +262,11 @@ lib/libIritXtra.so
 %%EXAMPLESDIR%%/scripts/polypris.irt
 %%EXAMPLESDIR%%/scripts/polyprop.irt
 %%EXAMPLESDIR%%/scripts/polytrnc.irt
+%%EXAMPLESDIR%%/scripts/pp_apprx.irt
 %%EXAMPLESDIR%%/scripts/prim_fit.irt
 %%EXAMPLESDIR%%/scripts/primitiv.irt
 %%EXAMPLESDIR%%/scripts/primsrfs.irt
+%%EXAMPLESDIR%%/scripts/print_it.irt
 %%EXAMPLESDIR%%/scripts/printf.irt
 %%EXAMPLESDIR%%/scripts/prisa.irt
 %%EXAMPLESDIR%%/scripts/prisanim.irt
@@ -308,6 +317,7 @@ lib/libIritXtra.so
 %%EXAMPLESDIR%%/scripts/solid8h.irt
 %%EXAMPLESDIR%%/scripts/solid9.irt
 %%EXAMPLESDIR%%/scripts/sphercon.irt
+%%EXAMPLESDIR%%/scripts/srf_dist.irt
 %%EXAMPLESDIR%%/scripts/srf_krnl.irt
 %%EXAMPLESDIR%%/scripts/srf_ssi.irt
 %%EXAMPLESDIR%%/scripts/srf_tan.irt
@@ -321,7 +331,6 @@ lib/libIritXtra.so
 %%EXAMPLESDIR%%/scripts/teapot2.irt
 %%EXAMPLESDIR%%/scripts/techlogo.irt
 %%EXAMPLESDIR%%/scripts/test_all.irt
-%%EXAMPLESDIR%%/scripts/testmost.csh
 %%EXAMPLESDIR%%/scripts/testmost.irt
 %%EXAMPLESDIR%%/scripts/textgeom.irt
 %%EXAMPLESDIR%%/scripts/textwarp.irt
@@ -332,6 +341,7 @@ lib/libIritXtra.so
 %%EXAMPLESDIR%%/scripts/trimsrfs.irt
 %%EXAMPLESDIR%%/scripts/trisrfs.irt
 %%EXAMPLESDIR%%/scripts/trivars.irt
+%%EXAMPLESDIR%%/scripts/turbine.irt
 %%EXAMPLESDIR%%/scripts/tvcover.irt
 %%EXAMPLESDIR%%/scripts/warp2trv.irt
 %%EXAMPLESDIR%%/scripts/warp_tea.irt
@@ -343,7 +353,6 @@ lib/libIritXtra.so
 %%DATADIR%%/illustrt.cfg
 %%DATADIR%%/irender.cfg
 %%DATADIR%%/irit.cfg
-%%DATADIR%%/irit.doc
 %%DATADIR%%/iritfont.itd
 %%DATADIR%%/iritinit.irt
 %%DATADIR%%/izebra.cfg
@@ -352,7 +361,7 @@ lib/libIritXtra.so
 %%DATADIR%%/x11drvs.cfg
 @dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%/scripts
+@dirrm %%EXAMPLESDIR%%/emacs
 @dirrm %%EXAMPLESDIR%%/data
 @dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/irit
