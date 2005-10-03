@@ -221,6 +221,7 @@
     SUBDIR += id3ed
     SUBDIR += id3el
     SUBDIR += id3lib
+    SUBDIR += id3mtag
     SUBDIR += id3ren
     SUBDIR += id3tool
     SUBDIR += id3v2
