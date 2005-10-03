@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/linalg/	\
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Package for solving large sparse systems of linear equations
 
 USE_REINPLACE=	yes
