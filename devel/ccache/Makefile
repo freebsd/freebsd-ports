@@ -34,7 +34,7 @@ PLIST_DIRS=	${CCLINKDIR}
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_COMPILER_LINKS)
-GNU_COMPILERS=		295 32 33 34 35 40
+GNU_COMPILERS=		295 32 33 34 35 40 41
 CCACHE_COMPILERS=	cc c++ gcc g++ ${GNU_COMPILERS:S|^|gcc|} ${GNU_COMPILERS:S|^|g++|}
 .if ${ARCH}=="i386"
 CCACHE_COMPILERS+=	icc icpc
