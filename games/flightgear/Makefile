@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Source/ \
 		ftp://ftp.de.flightgear.org/pub/fgfs/Source/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	The FlightGear flight simulator
 
 LIB_DEPENDS=	glut:${PORTSDIR}/graphics/libglut
