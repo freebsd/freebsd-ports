@@ -3820,6 +3820,7 @@ id-utils	ports/devel/id-utils
 id3ed		ports/audio/id3ed
 id3el		ports/audio/id3el
 id3lib		ports/audio/id3lib
+id3mtag		ports/audio/id3mtag
 id3ren		ports/audio/id3ren
 id3tool		ports/audio/id3tool
 id3v2		ports/audio/id3v2
