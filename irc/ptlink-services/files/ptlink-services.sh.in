@@ -18,7 +18,7 @@ services_user=${services_user-"ircd"}
 
 name="services"
 rcvar=`set_rcvar`
-pidfile="%%PREFIX%%/etc/ptlink-services/services.pid"
+pidfile="/var/run/ircsvs.pid"
 command="%%PREFIX%%/bin/ircsvs"
 
 load_rc_config "$name"
