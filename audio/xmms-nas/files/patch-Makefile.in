@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Oct  3 18:47:32 2005
++++ Makefile.in	Mon Oct  3 18:47:49 2005
+@@ -81,7 +81,7 @@
+ 
+ lib_LTLIBRARIES = libnas.la
+ 
+-CFLAGS = @GTK_CFLAGS@ @NAS_CFLAGS@ -W -Wall -D_REENTRANT -I$(top_srcdir)
++CFLAGS = @CFLAGS@ @GTK_CFLAGS@ @NAS_CFLAGS@ -W -Wall -I$(top_srcdir)
+ 
+ libnas_la_LDFLAGS = -export-dynamic -avoid-version
+ libnas_la_SOURCES = nas.c nas.h about.c audio.c nasconf.c
