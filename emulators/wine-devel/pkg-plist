@@ -91,7 +91,6 @@ include/wine/windows/axextend.idl
 include/wine/windows/basetsd.h
 include/wine/windows/basetyps.h
 include/wine/windows/cderr.h
-include/wine/windows/cfgmgr32.h
 include/wine/windows/cguid.h
 include/wine/windows/comcat.h
 include/wine/windows/comcat.idl
@@ -176,6 +175,8 @@ include/wine/windows/guiddef.h
 include/wine/windows/hlink.h
 include/wine/windows/hlink.idl
 include/wine/windows/htmlhelp.h
+include/wine/windows/iads.h
+include/wine/windows/iads.idl
 include/wine/windows/icm.h
 include/wine/windows/icmpapi.h
 include/wine/windows/idispids.h
@@ -258,6 +259,8 @@ include/wine/windows/oaidl.idl
 include/wine/windows/objbase.h
 include/wine/windows/objidl.h
 include/wine/windows/objidl.idl
+include/wine/windows/objsafe.h
+include/wine/windows/objsafe.idl
 include/wine/windows/objsel.h
 include/wine/windows/ocidl.h
 include/wine/windows/ocidl.idl
@@ -385,6 +388,8 @@ include/wine/windows/xmldso.h
 include/wine/windows/xmldso.idl
 include/wine/windows/xmldsodid.h
 include/wine/windows/zmouse.h
+include/wine/windows/ddk/cfgmgr32.h
+include/wine/windows/ddk/wdm.h
 include/wine/windows/ddk/winsplp.h
 lib/libwine.so
 lib/libwine.so.1
@@ -574,6 +579,7 @@ lib/wine/libuxtheme.def
 lib/wine/libvdmdbg.def
 lib/wine/libversion.def
 lib/wine/libw32skrnl.def
+lib/wine/libwldap32.def
 lib/wine/libwinecrt0.a
 lib/wine/libwined3d.def
 lib/wine/libwinedos.def
@@ -750,6 +756,7 @@ lib/wine/wintab.dll.so
 lib/wine/wintab32.dll.so
 lib/wine/wintrust.dll.so
 lib/wine/winver.exe.so
+lib/wine/wldap32.dll.so
 lib/wine/wnaspi32.dll.so
 lib/wine/wow32.dll.so
 lib/wine/wprocs.dll.so
