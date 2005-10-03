@@ -7,6 +7,7 @@
 
 PORTNAME=	FlightGear
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Source/ \
 		ftp://ftp.de.flightgear.org/pub/fgfs/Source/
