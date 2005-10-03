@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20050914
+PORTVERSION=	0.0.20051002
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|$|ahze/|} \
 		http://people.freebsd.org/~ahze/distfiles/
@@ -63,7 +63,7 @@ CFLAGS+=	-O2 -funroll-loops -ffast-math
 .endif
 
 .if !defined(WITHOUT_GPAC)
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libm4systems_static.a:${PORTSDIR}/multimedia/gpac-libm4systems
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libgpac_static.a:${PORTSDIR}/multimedia/gpac-libm4systems
 CONFIGURE_ARGS+=	--enable-mp4-output
 .endif
 
