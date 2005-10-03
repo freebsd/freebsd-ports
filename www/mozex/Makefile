@@ -9,7 +9,7 @@ PORTNAME?=	mozex
 PORTVERSION=	1.07
 PORTREVISION?=	2
 CATEGORIES=	www mail news ftp
-MASTER_SITES=	http://downloads.mozdev.org/mozex/	\
+MASTER_SITES=	http://www.devlib.org/mozdev/mozex/ \
 		http://mozdev.sweetooth.org/mozex/
 
 MAINTAINER?=	ports@FreeBSD.org
