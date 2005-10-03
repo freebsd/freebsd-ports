@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xrdesktop
-PORTVERSION=	0.7
+PORTVERSION=	1.0
 CATEGORIES=	net
 MASTER_SITES=	http://luggage.linux0wnsyou.com/xrdesktop/
 
-MAINTAINER=	az@inec.ru
+MAINTAINER=	az@FreeBSD.org
 COMMENT=	A p5-Gtk frontend to rdesktop
 
 RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop \
