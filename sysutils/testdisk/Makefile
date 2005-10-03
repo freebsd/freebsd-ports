@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	testdisk
-PORTVERSION=	5.6
+PORTVERSION=	5.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Tool to check and undelete partitions
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
