@@ -578,6 +578,7 @@
     SUBDIR += worldtools
     SUBDIR += wots
     SUBDIR += wtail
+    SUBDIR += wtmp-tools
     SUBDIR += wuzzah
     SUBDIR += x86info
     SUBDIR += xacpim
