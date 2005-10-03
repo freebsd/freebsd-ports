@@ -51,12 +51,11 @@ MAIN_DIR=	${WRKSRC}/mysql-administrator
 
 .include <bsd.port.pre.mk>
 
-# XXX
 .if ${OSVERSION} < 500000
-BROKEN=		Does not build on 4.x
+BROKEN=		There is no chance to build on 4.x
 .endif
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 post-patch:
 	@${REINPLACE_CMD} -e "s#%%PTHREAD_CFLAGS%%#${PTHREAD_CFLAGS}#" \
