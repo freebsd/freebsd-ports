@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	http://silversoft.net/src/
 
-MAINTAINER=	az@inec.ru
+MAINTAINER=	az@FreeBSD.org
 COMMENT=	A Qt-based game fifteen
 
 USE_BZIP2=	yes

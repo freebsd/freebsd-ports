@@ -10,7 +10,7 @@ PORTVERSION=	2.2.15b
 CATEGORIES=	editors
 MASTER_SITES=	http://mahon.cwx.net/sources/
 
-MAINTAINER=	az@inec.ru
+MAINTAINER=	az@FreeBSD.org
 COMMENT=	An easy editor with both curses and X11 interfaces
 
 OPTIONS=	XAE "Build X11 version 'xae'" off

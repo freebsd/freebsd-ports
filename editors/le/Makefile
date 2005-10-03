@@ -11,7 +11,7 @@ CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/source/le/ \
 		http://core.inec.ru/~az/
 
-MAINTAINER=	az@inec.ru
+MAINTAINER=	az@FreeBSD.org
 COMMENT=	Text editor
 
 GNU_CONFIGURE=	yes

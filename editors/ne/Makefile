@@ -13,7 +13,7 @@ MASTER_SITES=	http://ne.dsi.unimi.it/ \
 		http://core.inec.ru/~az/
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	az@inec.ru
+MAINTAINER=	az@FreeBSD.org
 COMMENT=	Nice and powerfull editor
 
 .include <bsd.port.pre.mk>

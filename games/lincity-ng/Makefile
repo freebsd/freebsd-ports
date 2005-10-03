@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://download.berlios.de/lincity-ng/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	az@inec.ru
+MAINTAINER=	az@FreeBSD.org
 COMMENT=	Improved rich city simulation game for X
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam

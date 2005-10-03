@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.mavetju.org/download/adopted/ \
 		http://core.inec.ru/~az/
 
-MAINTAINER=	az@inec.ru
+MAINTAINER=	az@FreeBSD.org
 COMMENT=	APC Smart UPS Monitoring Daemon
 
 WRKSRC=		${WRKDIR}/upsd-2.0

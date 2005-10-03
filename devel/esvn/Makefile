@@ -13,7 +13,7 @@ MASTER_SITES=	http://esvn.umputun.com/ \
 MASTER_SITE_SUBDIR=	distfiles
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
-MAINTAINER=	az@inec.ru
+MAINTAINER=	az@FreeBSD.org
 COMMENT=	GUI frontend for the Subversion revision system
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

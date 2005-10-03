@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.neosynapse.net/downloads/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
-MAINTAINER=	az@inec.ru
+MAINTAINER=	az@FreeBSD.org
 COMMENT=	Interpolated Strings
 
 USE_PYTHON=	yes

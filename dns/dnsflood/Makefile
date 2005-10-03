@@ -11,7 +11,7 @@ CATEGORIES=	dns
 MASTER_SITES=	http://www.adotout.com/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	az@inec.ru
+MAINTAINER=	az@FreeBSD.org
 COMMENT=	DNS flood detector
 
 USE_GETOPT_LONG=	yes
