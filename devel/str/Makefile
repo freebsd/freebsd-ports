@@ -1,12 +1,12 @@
 # New ports collection makefile for:	str
-# Date Created:			09 Jan 2000
-# Whom:				Ralf S. Engelschall
+# Date Created:				09 Jan 2000
+# Whom:					Ralf S. Engelschall
 #
 # $FreeBSD$
 #
 
 PORTNAME=	str
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.11
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	lib/${PORTNAME}
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Generic String Library
 
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
 
@@ -24,6 +26,7 @@ post-build:
 	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
 
 test:
-	@cd ${WRKSRC} && ${MAKE} test
+	build
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
 
 .include <bsd.port.mk>
