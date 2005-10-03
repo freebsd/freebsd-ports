@@ -463,6 +463,7 @@
     SUBDIR += nylon
     SUBDIR += obnc
     SUBDIR += ocaml-jabbr
+    SUBDIR += ocaml-netclient
     SUBDIR += ohphone
     SUBDIR += olsrd
     SUBDIR += onenetd
