@@ -1,0 +1,22 @@
+--- mvar_lib/makefile.unx.orig
++++ mvar_lib/makefile.unx
+@@ -31,19 +31,12 @@
+ 	mvarrais.o$(IRITOBJPF) \
+ 	mvartopo.o$(IRITOBJPF) \
+ 	mvarzero.o$(IRITOBJPF) \
+-	mvbiscon.o$(IRITOBJPF) \
+ 	mvbisect.o$(IRITOBJPF) \
+ 	mvbspsym.o$(IRITOBJPF) \
+ 	mvbzrpwr.o$(IRITOBJPF) \
+ 	mvbzrsym.o$(IRITOBJPF) \
+ 	mvcones.o$(IRITOBJPF) \
+-	mvlowenv.o$(IRITOBJPF) \
+-	mvsplmon.o$(IRITOBJPF) \
+ 	mvtangnt.o$(IRITOBJPF) \
+-	mvtrmbis.o$(IRITOBJPF) \
+-	mvtrmpcr.o$(IRITOBJPF) \
+-	mvvorcel.o$(IRITOBJPF) \
+-	mvvorcrv.o$(IRITOBJPF) \
+ 	ray-trap.o$(IRITOBJPF) \
+ 	skel2d.o$(IRITOBJPF)
+ 

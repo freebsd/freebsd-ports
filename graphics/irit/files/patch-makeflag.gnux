@@ -1,66 +1,48 @@
---- makeflag.unx.orig	Thu Dec 18 16:52:16 2003
-+++ makeflag.unx	Mon Feb  2 17:11:51 2004
+--- makeflag.gnux.orig
++++ makeflag.gnux
 @@ -9,7 +9,7 @@
  # be simple wrong.
  #
  
--SRC_DIR = /cygdriver/c/irit/irit
+-SRC_DIR = /home/gershon/irit/sun
 +SRC_DIR = ${WRKSRC}
  
  #
  # All libraries created will be installed into the LIB_DIR directory.
-@@ -31,10 +31,10 @@
- # Invoke this make file as 'make CFG=Rel makefile.unx' for release mode:
- #
+@@ -34,7 +34,7 @@
+ 	IRITOBJPF =
+ 	IRITLIBPF =
+ 	IRITEXEPF = 
+-	STRIPEXE = strip
++	STRIPEXE = ${ECHO_CMD}	# ${INSTALL_PROGRAM} takes care of stripping
  
--IRITOBJPF = D
--IRITLIBPF = D
--IRITEXEPF = D
--STRIPEXE = ls
-+#IRITOBJPF = D
-+#IRITLIBPF = D
-+#IRITEXEPF = D
-+#STRIPEXE = ls
+ else
+ 	IRITOBJPF = D
+@@ -54,27 +54,27 @@
+ #
+ #   Make these empty if you would like to give up on irender's compilation.
+ #
+-#URT = /b/d2/gershon/urt/onyx64
+-#URT_INC = -I$(URT)/include
+-#URT_LIB = -L$(URT)/lib -lrle
+-#URT_FLAGS = -DHAVE_URT_RLE -DURT_OLD_COMPAT
++URT = ${LOCALBASE}
++URT_INC = -I$(URT)/include
++URT_LIB = -L$(URT)/lib -lrle
++URT_FLAGS = -DHAVE_URT_RLE -DURT_OLD_COMPAT
  
  #
- # Location of object file to resolve circularities in libraries.
-@@ -56,35 +56,35 @@
  # Support for GIF image read/write using the giflib toolkit library.
- # You can ftp it from http://catb.org/~esr/giflib/doc/gif_lib.html
+ # You can ftp it from 
  #
--# GIF = /net/cel2-3/labs/cggc/gershon/c/gif_lib
--# GIF_INC = -I$(GIF)/lib
--# GIF_LIB = $(GIF)/sun4/lib/libgif.a
--# GIF_FLAGS = -DHAVE_GIF_LIB
+-#GIF = /b/d2/gershon/gif_lib
+-#GIF_INC = -I$(GIF)/lib
+-#GIF_LIB = $(GIF)/onyx64/lib/libgif.a
+-#GIF_FLAGS = -DHAVE_GIF_LIB
 +GIF = ${LOCALBASE}
 +GIF_INC = -I$(GIF)/include
 +GIF_LIB = $(GIF)/lib/libungif.a
 +GIF_FLAGS = -DHAVE_GIF_LIB
- 
- #
- # Support for PNG image read/write using the pnglib toolkit library.
- # You can ftp it from http://www.libpng.org/pub/png/libpng.html
- #
--# PNG = /net/cel2-3/labs/cggc/gershon/c/libpng/lpng125
--# PNG_INC = -I$(PNG) 
--# PNG_LIB = $(PNG)/sun4/libpng.a
--# PNG_FLAGS = -DHAVE_PNG_LIB
-+PNG = ${LOCALBASE}
-+PNG_INC = -I$(PNG)/include 
-+PNG_LIB = $(PNG)/lib/libpng.a
-+PNG_FLAGS = -DHAVE_PNG_LIB
- 
- #
- # Support for GZIP read/write using the gzip toolkit library.
- #
--# GZIP = /net/cel2-3/labs/cggc/gershon/c/zlib/zlib-1.2.1
--# GZIP_INC = -I$(GZIP)
--# GZIP_LIB = $(GZIP)/sun4/libz.a
--# GZIP_FLAGS = -DHAVE_GZIP_LIB
-+GZIP = /usr
-+GZIP_INC = -I$(GZIP)/include
-+GZIP_LIB = $(GZIP)/lib/libz.a
-+GZIP_FLAGS = -DHAVE_GZIP_LIB
  
  #
  # If you would like to use Mesa emulation of Open GL and compile Open GL
@@ -69,25 +51,32 @@
  #
 -# MESA_INC = -I/mach/emc2-32/isl/gershon/c/mesa/MesaLib-2.4/include -D__MESA__ -D__OPENGL__
 -# MESA_LIB = -L/mach/emc2-32/isl/gershon/c/mesa/MesaLib-2.4/lib -lGLU -lGL
-+MESA_INC = -I${X11BASE}/include #-D__MESA__ -D__OPENGL__
++MESA_INC = -I${X11BASE}/include -D__MESA__ -D__OPENGL__
 +MESA_LIB = -L${X11BASE}/lib -lGLU -lGL
  
  #
  # Support of (shared) libraries.  You will need to set the proper suffix
-@@ -337,22 +337,22 @@
+@@ -340,25 +340,25 @@
  # Note you cannot use SUN's native cc compiler since it does not support
  # Ansi C. If you use mesa emulation of Open GL, uncomment xogldrvs 
  #
 -CC = gcc
 -DFLAGS = -DSUN4 -DTIMES -DRAND48 -DNANOSLEEP -D__UNIX__ -D__X11__ -I/usr/openwin/share/include -I/opt/SUNWmotif/share/include $(MESA_INC)
-+#CC = gcc
-+#DFLAGS = -DSUN4 -DTIMES -DRAND48 -DNANOSLEEP -D__UNIX__ -D__X11__ -I/usr/openwin/share/include -I/opt/SUNWmotif/share/include $(MESA_INC)
- # CFLAGS = -O2 $(DFLAGS)
--CFLAGS = -g -DDEBUG $(DFLAGS)
+-ifeq ($(CFG), Rel)
+-    CFLAGS = -O2 $(DFLAGS)
+-else
+-    CFLAGS = -g -DDEBUG $(DFLAGS)
+-endif
 -MORELIBS = -lsocket -lnsl -lposix4
 -GRAPX11LIBS = -L/usr/openwin/lib -lX11
 -GRAPXMTLIBS = -L/opt/SUNWmotif/lib -L/usr/ccs/lib -lXm -L/usr/openwin/lib -lXt -lX11 -lgen
-+#CFLAGS = -g -DDEBUG $(DFLAGS)
++#CC = gcc
++#DFLAGS = -DSUN4 -DTIMES -DRAND48 -DNANOSLEEP -D__UNIX__ -D__X11__ -I/usr/openwin/share/include -I/opt/SUNWmotif/share/include $(MESA_INC)
++#ifeq ($(CFG), Rel)
++#    CFLAGS = -O2 $(DFLAGS)
++#else
++#    CFLAGS = -g -DDEBUG $(DFLAGS)
++#endif
 +#MORELIBS = -lsocket -lnsl -lposix4
 +#GRAPX11LIBS = -L/usr/openwin/lib -lX11
 +#GRAPXMTLIBS = -L/opt/SUNWmotif/lib -L/usr/ccs/lib -lXm -L/usr/openwin/lib -lXt -lX11 -lgen
@@ -107,20 +96,23 @@
  
  #
  # Flags for SUN Solaris 5.3 using cc SC3.0.1 and X11 (uncomment xogldrvs if
-@@ -534,20 +534,29 @@
+@@ -570,23 +570,33 @@
  #
  # Flags for i386 FreeBSD using X11R6
  #
 -# DFLAGS = -D__UNIX__ -DX11R6 -D__X11__ -DTIMES -DRAND48 -DUSLEEP
--# CFLAGS = -O2 -pipe -m486 -fomit-frame-pointer $(DFLAGS)
-+DFLAGS = -D__UNIX__ -DX11R6 -DTIMES -DRAND48 -DUSLEEP
++DFLAGS = -D__UNIX__ -DX11R6 -D__X11__ -DTIMES -DRAND48 -DUSLEEP
 +ifeq ($(WITH_MOTIF_DEF),yes)
-+DFLAGS+=	-D__GL__ ${MESA_INC}
++DFLAGS+=	${MESA_INC}
 +else
 +DFLAGS+=	-D__X11__ -I${X11BASE}/include
 +endif
-+CFLAGS += -fPIC -fomit-frame-pointer $(DFLAGS)
- # CFLAGS = -g -DDEBUG $(DFLAGS) 
++CFLAGS += -fPIC $(DFLAGS)
+ # ifeq ($(CFG), Rel)
+ #     CFLAGS = -O2 -pipe -m486 -fomit-frame-pointer $(DFLAGS)
+ # else
+ #     CFLAGS = -g -DDEBUG $(DFLAGS) 
+ # endif
 -# MORELIBS =  -lc
 -# GRAPX11LIBS = -L/usr/X11R6/lib -lX11
 -# GRAPXMTLIBS = -L/usr/X11R6/lib -lXm -lXt -lX11
@@ -129,9 +121,9 @@
 +GRAPX11LIBS = -L${X11BASE}/lib -lX11
 +GRAPDRVS = nuldrvs$(IRITEXEPF) x11drvs$(IRITEXEPF)
 +ifeq ($(WITH_MOTIF_DEF),yes)
-+GRAPXMTLIBS = -L${X11BASE}/lib ${MOTIFLIB} -lXt -lX11
++GRAPXMTLIBS = -L${X11BASE}/lib -lXm -lXt -lX11
 +GRAPOGLLIBS = ${MESA_LIB} ${GRAPXMTLIBS}
-+GRAPDRVS+=	xmtdrvs$(IRITEXEPF) xogldrvs$(IRITEXEPF)
++GRAPDRVS+= xmtdrvs$(IRITEXEPF) xogldrvs$(IRITEXEPF)
 +endif
  #
  #
@@ -146,3 +138,9 @@
  
  #
  # Default rule for compilation.
+@@ -612,4 +622,4 @@
+ 	-lIritCagd$(IRITLIBPF) \
+ 	-lIritGeom$(IRITLIBPF) \
+ 	-lIritMisc$(IRITLIBPF) \
+-	-lIritXtra$(IRITLIBPF) $(URT_LIB) $(GIF_LIB) # -l gif
++	-lIritXtra$(IRITLIBPF) $(URT_LIB) $(GIF_LIB) $(GRAPOGLLIBS) # -l gif

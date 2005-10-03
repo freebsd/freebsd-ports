@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	irit
-PORTVERSION=	9.0
+PORTVERSION=	9.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cs.technion.ac.il/~irit/
 DISTNAME=	${PORTNAME}-sm
@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-sm
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	Solid modeling system
 
+LIB_DEPENDS=	rle.1:${PORTSDIR}/graphics/urt
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpng.a:${PORTSDIR}/graphics/png \
 		${LOCALBASE}/lib/libungif.a:${PORTSDIR}/graphics/libungif
 
@@ -26,7 +27,8 @@ USE_GL=		yes
 .endif
 INSTALLS_SHLIB=	yes
 NO_WRKSUBDIR=	yes
-MAKEFILE=	makefile.unx
+MAKEFILE=	makefile.gnux
+MAKE_ARGS=	"CFG=Rel"
 MAKE_ENV=	WRKSRC=${WRKSRC} \
 		ECHO_CMD=${ECHO_CMD} \
 		LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${WRKSRC}/lib
@@ -34,23 +36,17 @@ MAKE_ENV=	WRKSRC=${WRKSRC} \
 MAKE_ENV+=	WITH_MOTIF_DEF=yes
 .endif
 
-IRIT_PROGS=	3ds2irit aisoshad dat2bin dat2irit dxf2irit igs2irit ihidden \
-		illustrt irender irit irit2dxf irit2hgl irit2igs irit2iv \
-		irit2nff irit2off irit2plg irit2pov irit2ps irit2ray irit2scn \
-		irit2stl irit2wrl irit2xfg izebra lineshad obj2irit off2irit \
-		poly3d-h skeletn1 stl2irit
-IRIT_DRVS=	nuldrvs x11drvs
-.ifdef (WITH_MOTIF)
-IRIT_DRVS+=	xmtdrvs xogldrvs
-.endif
+SUB_FILES=	pkg-message
+SUB_LIST=	"DATADIR=${DATADIR}"
+
+PORTDOCS=	irit.doc prog_man.html general.inf technion.inf update.new \
+		coding.std coding.hints
 
 .if !defined(WITH_MOTIF)
 PLIST_SUB=	WITH_MOTIF="@comment "
 .else
 PLIST_SUB=	WITH_MOTIF=""
 .endif
-
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .ifndef (WITH_MOTIF)
 pre-everything::
@@ -59,10 +55,17 @@ pre-everything::
 	@${ECHO_CMD} ""
 .endif
 
+pre-build:
+	@${CP} ${WRKSRC}/makefile.gnux ${WRKSRC}/makefile.unx
+	@${CP} ${WRKSRC}/makeflag.gnux ${WRKSRC}/makeflag.unx
+
 do-install:
-.for i in ${IRIT_PROGS} ${IRIT_DRVS}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/$i ${PREFIX}/bin
-.endfor
+	FILES="`${FIND} ${WRKSRC}/bin -type f`";			\
+	for i in $${FILES}; do						\
+		if [ "`${FILE} -b $$i | ${GREP} LSB`" ]; then		\
+			${INSTALL_PROGRAM} $$i ${PREFIX}/bin;		\
+		fi;							\
+	done
 
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/libIrit*.so ${PREFIX}/lib/
 	@${MKDIR} ${PREFIX}/include/${PORTNAME}
@@ -76,21 +79,17 @@ do-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${MKDIR} ${EXAMPLESDIR}/data
 	${INSTALL_DATA} ${WRKSRC}/data/* ${EXAMPLESDIR}/data
+	@${MKDIR} ${EXAMPLESDIR}/emacs
+	${INSTALL_DATA} ${WRKSRC}/emacs/irit.el ${EXAMPLESDIR}/emacs
 	@${MKDIR} ${EXAMPLESDIR}/scripts
-	${INSTALL_DATA} ${WRKSRC}/scripts/* ${EXAMPLESDIR}/scripts
+	${INSTALL_DATA} ${WRKSRC}/scripts/*.irt ${EXAMPLESDIR}/scripts
 
 .ifndef (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/irit.doc ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/prog_man.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/general.inf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/technion.inf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/update.new ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/coding.std ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${DOCSDIR}
 .endif
 
 post-install:
-	@(${SED} -e 's|%%DATADIR%%|${DATADIR}|' \
-		<pkg-message >${PKGMESSAGE} && ${CAT} ${PKGMESSAGE})
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
