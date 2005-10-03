@@ -9,8 +9,8 @@ PORTNAME=	squishdot
 PORTVERSION=	1.5.0
 PORTREVISION=	1
 CATEGORIES=	www zope
-MASTER_SITES=	http://squishdot.org/Download/Squishdot/ \
-		http://www.zope.org/Members/chrisw/Squishdot/
+MASTER_SITES=	http://squishdot.org/Download/ \
+		http://www.zope.org/Members/chrisw/Squishdot/${PORTVERSION}/
 DISTNAME=	Squishdot-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	ports@FreeBSD.org
