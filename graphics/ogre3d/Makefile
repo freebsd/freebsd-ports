@@ -54,6 +54,8 @@ post-patch:
 		${WRKSRC}/Samples/Common/CEGUIRenderer/src/OgreCEGUIRenderer.cpp \
 		${WRKSRC}/Samples/Common/CEGUIRenderer/src/OgreCEGUIResourceProvider.cpp \
 		${WRKSRC}/Samples/Common/CEGUIRenderer/src/OgreCEGUITexture.cpp
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/Samples/Terrain/src/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
