@@ -7,8 +7,7 @@
 PORTNAME=	surfraw
 PORTVERSION=	1.0.7
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/proff/ \
-		ftp://ftp.funet.fi/pub/NetBSD/misc/proff/
+MASTER_SITES=	${MASTER_SITE_NETBSD}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line interface to popular WWW search engines
