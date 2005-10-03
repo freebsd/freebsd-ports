@@ -27,8 +27,7 @@ INSTALLS_SHLIB=	yes
 BROKEN=		"Does not compile on alpha"
 .endif
 
-check:
-	build
+check:	build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
 .include "${FILESDIR}/manpages.mk"

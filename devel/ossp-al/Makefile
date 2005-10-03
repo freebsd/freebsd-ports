@@ -24,8 +24,7 @@ CONFIGURE_ARGS=	--with-ex=${LOCALBASE}
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 
-check:
-	build
+check:	build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
 .include <bsd.port.pre.mk>

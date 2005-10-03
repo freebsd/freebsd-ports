@@ -23,10 +23,9 @@ MAN1=		str-config.1
 MAN3=		str.3
 
 post-build:
-	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
+	@${ECHO_MSG} "===>  Use 'make check' to run a quick test suite."
 
-test:
-	build
+check:	build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
 
 .include <bsd.port.mk>

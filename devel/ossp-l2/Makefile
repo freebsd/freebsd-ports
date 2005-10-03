@@ -23,8 +23,7 @@ INSTALLS_SHLIB=	yes
 MAN1=		l2-config.1 l2tool.1
 MAN3=		l2.3
 
-check:
-	build
+check:	build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
 .include <bsd.port.mk>
