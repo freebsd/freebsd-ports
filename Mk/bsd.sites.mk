@@ -196,7 +196,6 @@ MASTER_SITE_EXIM+=	\
 	ftp://sunsite.cnlab-switch.ch/mirror/exim/exim/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.csx.cam.ac.uk/pub/software/email/exim/%SUBDIR%/ \
 	ftp://ftp.demon.co.uk/pub/mirrors/exim/%SUBDIR%/ \
-	http://www.us.exim.org/ftp/exim/%SUBDIR%/ \
 	ftp://ftp.fsckit.net/pub/exim/exim/%SUBDIR%/
 .endif
 
