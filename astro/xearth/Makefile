@@ -9,7 +9,6 @@ PORTNAME=	xearth
 PORTVERSION=	1.1
 CATEGORIES=	astro
 MASTER_SITES=	ftp://cag.lcs.mit.edu/pub/tuna/ \
-		ftp://ftp.cs.colorado.edu/users/tuna/ \
 		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
