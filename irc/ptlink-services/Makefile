@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Services
-PORTVERSION=	3.4.1
-PORTREVISION=	1
+PORTVERSION=	3.4.2
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.sunsite.dk/projects/ptlink/ircsvs3/
 PKGNAMEPREFIX=	PTlink-
@@ -26,7 +25,7 @@ SUB_FILES=	pkg-message
 
 SYSCONFDIR=	${PREFIX}/etc/ptlink-services
 
-CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR}
+CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR} --with-pidfile=/var/run/ircsvs.pid
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
