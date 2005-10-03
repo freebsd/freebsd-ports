@@ -7,7 +7,7 @@
 PORTNAME=	mod_bunzip2
 PORTVERSION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://www.oldach.net/
+MASTER_SITES=	http://oldach.net/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	apache@FreeBSD.org
