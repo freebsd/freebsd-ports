@@ -10107,6 +10107,7 @@ py-kenosis-bittorrent	ports/net/py-kenosis-bittorrent
 py-kjbuckets	ports/devel/py-kjbuckets
 py-kqueue	ports/devel/py-kqueue
 py-ldap2	ports/net/py-ldap2
+py-libgmail	ports/mail/py-libgmail
 py-libmpdclient	ports/audio/py-libmpdclient
 py-libnet	ports/net/py-libnet
 py-libxml2	ports/textproc/py-libxml2
