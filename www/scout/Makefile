@@ -9,7 +9,7 @@ PORTNAME=	scout
 PORTVERSION=	0.86
 CATEGORIES=	www
 MASTER_SITES=	ftp://sid.joedog.org/pub/scout/ \
-	http://www.cus.org.uk/~dom/distfiles/scout/
+		http://dom.umcus.org/distfiles/scout/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility to harvest URLs from a given start point
