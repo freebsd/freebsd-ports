@@ -133,6 +133,7 @@
     SUBDIR += packit
     SUBDIR += pads
     SUBDIR += pancho
+    SUBDIR += pfpro
     SUBDIR += php4-snmp
     SUBDIR += php5-snmp
     SUBDIR += pixilate
