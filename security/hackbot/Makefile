@@ -9,7 +9,7 @@ PORTNAME=	hackbot
 PORTVERSION=	2.21
 CATEGORIES=	security
 MASTER_SITES=	http://ws.obit.nl/hackbot/
-EXTRACT_SUFX=   .tgz
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A host exploration tool and bannergrabber
@@ -20,7 +20,7 @@ NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 pre-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local/etc/|${DATADIR}/hackbot/|' ${WRKSRC}/hackbot.pl
+	@${REINPLACE_CMD} -e 's|/usr/local/etc|${DATADIR}|' ${WRKSRC}/hackbot.pl
 
 do-install:
 	${MKDIR} ${DATADIR}
