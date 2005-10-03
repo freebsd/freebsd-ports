@@ -367,6 +367,7 @@
     SUBDIR += moinmoin
     SUBDIR += momspider
     SUBDIR += monkey
+    SUBDIR += moodle
     SUBDIR += mozex
     SUBDIR += mozex-firefox
     SUBDIR += mozilla

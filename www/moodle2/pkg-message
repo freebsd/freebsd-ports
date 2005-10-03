@@ -1,0 +1,36 @@
+POST-INSTALL CONFIGURATION FOR MOODLE
+=====================================
+
+1) Create a user and a database for Moodle to store all
+   its tables in (or choose an existing database).
+   NOTE: this package assumes that either the php4-pgsql
+   or php4-mysql packages are installed, as needed.
+
+2) Add the following to your Apache configuration, and
+   restart the server:
+
+   AcceptPathInfo On
+   <Directory ${PREFIX}/www/data/moodledata>
+      AllowOverride None
+      Order Deny,Allow
+      Deny from all 
+   </Directory>
+
+3) Visit your Moodle site with a browser (i.e.,
+   http://your.server.com/moodle), and you should
+   be taken to the install.php script, which will lead
+   you through creating a config.php file and then
+   setting up Moodle, creating an admin account etc.
+
+4) Set up a cron task to call the file admin/cron.php
+   every five minutes or so. You can do so by using wget,
+   links or something similar to open the web page
+   http://your.server.com/moodle/admin/cron.php.
+
+
+For more information, see the INSTALL DOCUMENTATION:
+
+   http://moodle.org/doc
+
+If you have real trouble, please visit the Moodle course
+"Using Moodle" on moodle.org.
