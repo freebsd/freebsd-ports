@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	20050830
+PORTVERSION=	20050930
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
@@ -23,7 +23,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include LDFLAGS=-L${PREFIX}/lib LIBS=-Wl,-rpath,${PREFIX}/lib/wine
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/wine
-MAN1=		widl.1 wine.1 winebuild.1 winegcc.1 winedbg.1 winedump.1 winemaker.1 wmc.1 wrc.1
+MAN1=		widl.1 wine.1 winebuild.1 winedbg.1 winedump.1 winegcc.1 \
+		winemaker.1 wineserver.1 wmc.1 wrc.1
 ONLY_FOR_ARCHS=	i386
 USE_BISON=	yes
 USE_GMAKE=	yes
