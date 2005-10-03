@@ -9,8 +9,10 @@ PORTNAME=	xearth
 PORTVERSION=	1.1
 CATEGORIES=	astro
 MASTER_SITES=	ftp://cag.lcs.mit.edu/pub/tuna/ \
-		${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	applications
+		${MASTER_SITE_XCONTRIB:S/$/:xcontrib/} \
+		${MASTER_SITE_LOCAL:S/$/:local/}
+MASTER_SITE_SUBDIR=	applications/:xcontrib simon/:local
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:xcontrib,local
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set the root window to the image of earth
