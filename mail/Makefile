@@ -398,6 +398,7 @@
     SUBDIR += proxsmtp
     SUBDIR += py-email
     SUBDIR += py-email2
+    SUBDIR += py-libgmail
     SUBDIR += py-milter
     SUBDIR += py-spambayes
     SUBDIR += py-spf
