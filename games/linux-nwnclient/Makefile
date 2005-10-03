@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	nwnclient
-PORTVERSION=	1.65
-PORTREVISION=	2
+PORTVERSION=	1.66
 CATEGORIES=	games linux
-MASTER_SITES=	http://content.bioware.com/neverwinternights/linux/${PORTVERSION:S/.//}/
+MASTER_SITES=	http://content.bioware.com/neverwinternights/linux/${PORTVERSION:S/.//}/ \
+		http://nwdownloads.bioware.com/neverwinternights/linux/129/
 PKGNAMEPREFIX=	linux-
 DISTFILES=	nwclient129.tar.gz \
-		linuxclientupdate1xxto${PORTVERSION:S/.//}eng.tar.gz
+		English_linuxclient${PORTVERSION:S/.//}_orig.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Neverwinter Nights Linux (x86) Client
@@ -52,8 +52,8 @@ do-install:
 	    ${CPIO} -pdmuv -R${SHAREOWN}:${SHAREGRP} ${DATADIR})
 	${LN} -s ${LINUXBASE}/usr/lib/libstdc++-2-libc6.1-1-2.9.0.so \
 		${DATADIR}/lib/libstdc++-libc6.1-2.so.3
-	${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 chmod 0755
-	${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 chmod 0644
+	${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 0755
+	${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 0644
 	(cd ${DATADIR} && ${CHMOD} 0755 dmclient nwmain nwserver)
 	${INSTALL_SCRIPT} ${WRKDIR}/nwn ${PREFIX}/bin/
 
