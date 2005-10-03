@@ -34,12 +34,8 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 post-patch:
 .if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' \
-		${WRKSRC}/include/gpac/m4_config.h
-	@${RM} -f ${WRKSRC}/include/gpac/m4_config.h.bak
-	@${REINPLACE_CMD} -e 's|||' \
-		${WRKSRC}/include/gpac/m4_descriptors.h \
-		${WRKSRC}/M4Systems/authoring/TextImport.c
-	@${RM} -f ${WRKSRC}/include/gpac/m4_descriptors.h.bak
+		${WRKSRC}/include/gpac/setup.h
+	@${RM} -f ${WRKSRC}/include/gpac/setup.h.bak
 .endif
 	${CHMOD} +x ${WRKSRC}/configure
 
