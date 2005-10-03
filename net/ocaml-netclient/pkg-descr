@@ -1,0 +1,9 @@
+Netclient includes:
+
+- A sophisticated HTTP 1.1 client (quite stable)
+- A Telnet client
+- An experimental FTP client
+
+All clients are multiplexing-aware, and can be used concurrently.
+
+WWW: http://www.ocaml-programming.de/programming/netclient.html
