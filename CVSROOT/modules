@@ -13155,6 +13155,7 @@ xmms-mailnotify	ports/audio/xmms-mailnotify
 xmms-midi	ports/audio/xmms-midi
 xmms-mp3cue	ports/audio/xmms-mp3cue
 xmms-musepack	ports/audio/xmms-musepack
+xmms-nas	ports/audio/xmms-nas
 xmms-nebulus	ports/graphics/xmms-nebulus
 xmms-nsf	ports/audio/xmms-nsf
 xmms-openspc	ports/audio/xmms-openspc
