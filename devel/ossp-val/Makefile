@@ -29,8 +29,7 @@ MAN3=	val.3
 
 NOT_FOR_ARCHS=	alpha
 
-check:
-	build
+check:	build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
 .include <bsd.port.mk>
