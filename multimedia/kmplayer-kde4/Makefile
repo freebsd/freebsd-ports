@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	kmplayer
-DISTVERSION=	0.9.1-pre2
+DISTVERSION=	0.9.1-pre3
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio kde
-MASTER_SITES=	http://www.xs4all.nl/%7Ejjvrieze/
+MASTER_SITES=	http://kmplayer.kde.org/pkgs/
 #DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.r/-rc/}
 
 MAINTAINER=	lioux@FreeBSD.org
