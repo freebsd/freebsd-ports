@@ -5,6 +5,12 @@ bin/wesnoth
 %%EDITOR:%%bin/wesnoth_editor
 %%SERVER:%%bin/wesnothd
 bin/wmlxgettext
+share/locale/af/LC_MESSAGES/wesnoth-editor.mo
+share/locale/af/LC_MESSAGES/wesnoth-ei.mo
+share/locale/af/LC_MESSAGES/wesnoth-httt.mo
+share/locale/af/LC_MESSAGES/wesnoth-lib.mo
+share/locale/af/LC_MESSAGES/wesnoth-sotbe.mo
+share/locale/af/LC_MESSAGES/wesnoth.mo
 share/locale/ca/LC_MESSAGES/wesnoth-editor.mo
 share/locale/ca/LC_MESSAGES/wesnoth-ei.mo
 share/locale/ca/LC_MESSAGES/wesnoth-httt.mo
@@ -37,6 +43,7 @@ share/locale/es/LC_MESSAGES/wesnoth-editor.mo
 share/locale/es/LC_MESSAGES/wesnoth-httt.mo
 share/locale/es/LC_MESSAGES/wesnoth-lib.mo
 share/locale/es/LC_MESSAGES/wesnoth-sotbe.mo
+share/locale/es/LC_MESSAGES/wesnoth-trow.mo
 share/locale/es/LC_MESSAGES/wesnoth.mo
 share/locale/fi/LC_MESSAGES/wesnoth-editor.mo
 share/locale/fi/LC_MESSAGES/wesnoth-ei.mo
@@ -89,6 +96,7 @@ share/locale/ru/LC_MESSAGES/wesnoth-sotbe.mo
 share/locale/ru/LC_MESSAGES/wesnoth-trow.mo
 share/locale/ru/LC_MESSAGES/wesnoth.mo
 share/locale/sk/LC_MESSAGES/wesnoth-editor.mo
+share/locale/sk/LC_MESSAGES/wesnoth-ei.mo
 share/locale/sk/LC_MESSAGES/wesnoth-httt.mo
 share/locale/sk/LC_MESSAGES/wesnoth-lib.mo
 share/locale/sk/LC_MESSAGES/wesnoth-sotbe.mo
@@ -633,6 +641,7 @@ share/locale/tr/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/units/Young_Ogre.cfg
 %%DATADIR%%/data/units/Youth.cfg
 %%DATADIR%%/data/utils.cfg
+%%DATADIR%%/fonts/COPYING
 %%DATADIR%%/fonts/DejaVuSans.ttf
 %%DATADIR%%/images/arch-mage+female-defend.png
 %%DATADIR%%/images/arch-mage+female-die-1.png
@@ -884,6 +893,10 @@ share/locale/tr/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/drake-clasher-die-2.png
 %%DATADIR%%/images/drake-clasher-flying.png
 %%DATADIR%%/images/drake-clasher.png
+%%DATADIR%%/images/drake-enforcer-attack-mace.png
+%%DATADIR%%/images/drake-enforcer-attack-spear.png
+%%DATADIR%%/images/drake-enforcer-attack-sword.png
+%%DATADIR%%/images/drake-enforcer-defend.png
 %%DATADIR%%/images/drake-enforcer.png
 %%DATADIR%%/images/drake-fighter-attack-close1.png
 %%DATADIR%%/images/drake-fighter-attack-close2.png
@@ -3540,6 +3553,9 @@ share/locale/tr/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/undead-initiate-attack1.png
 %%DATADIR%%/images/undead-initiate-attack2.png
 %%DATADIR%%/images/undead-initiate-defend.png
+%%DATADIR%%/images/undead-initiate-die1.png
+%%DATADIR%%/images/undead-initiate-die2.png
+%%DATADIR%%/images/undead-initiate-die3.png
 %%DATADIR%%/images/undead-initiate.png
 %%DATADIR%%/images/undead-lich-defend.png
 %%DATADIR%%/images/undead-lich-melee.png

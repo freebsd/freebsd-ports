@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-DISTVERSION=	1.0rc1
+PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.wesnoth.org/files/
@@ -74,9 +74,9 @@ PLIST_SUB+=		TOOLS:="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=does not compile on FreeBSD 4.x, due to lack of towupper() and wide character in libc
-.endif
+#.if ${OSVERSION} < 500000
+#IGNORE=does not compile on FreeBSD 4.x, due to lack of towupper() and wide character in libc
+#.endif
 
 .if ${HAVE_GNOME:Mgnomehier}!=""
 CONFIGURE_ARGS+=	--with-gnome
@@ -117,6 +117,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|[$$][(]datadir[)]/applications|${X11BASE}/share/gnome/applications|g ; \
 		s|[$$][(]datadir[)]/icons|${X11BASE}/share/gnome/pixmaps|g' \
 			${WRKSRC}/icons/Makefile.in
-#	@${FIND} ${WRKSRC} -name stamp-po -delete
 
 .include <bsd.port.post.mk>
