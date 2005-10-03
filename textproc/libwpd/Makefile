@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	libwpd
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.8.3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libwpd
 
-MAINTAINER=	reed@pugetsoundtechnology.com
+MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Tools for importing and exporting WordPerfect(tm) documents
 
 USE_GMAKE=	yes
