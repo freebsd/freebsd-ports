@@ -9,8 +9,7 @@ PORTNAME=	oxford
 PORTVERSION=	0.1
 PORTREVISION=	1
 CATEGORIES=	chinese
-MASTER_SITES=	ftp://igloo.its.unimelb.edu.au/pub/Oxford_Dictionary/ \
-		ftp://freebsd.sinica.edu.tw/pub/statue/oxford/
+MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/oxford/
 DISTFILES=	a.zip b.zip c.zip d.zip e.zip f.zip g.zip h.zip i.zip \
 		j.zip k.zip l.zip m.zip n.zip o.zip p.zip q.zip r.zip \
 		s.zip t.zip u.zip v.zip w.zip x.zip y.zip z.zip \
