@@ -11,8 +11,7 @@ PORTREVISION?=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.enst.fr/pub/mbone/mMosaic/ \
 		ftp://ftp.uni-koeln.de/net/inet/WWW/mosaic/unix/ \
-		ftp://ftp.netsw.org/netsw/InfoSys/WWW/ClientSide/Browser/mosaic/ \
-		ftp://ftp.icm.edu.pl/vol/rzm0/mMosaic/
+		ftp://ftp.netsw.org/infosys/www/clientside/browser/mosaic/
 DISTNAME=	mMosaic-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
