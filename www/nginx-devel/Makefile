@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.1.43
+PORTVERSION=	0.2.3
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -44,8 +44,17 @@ STRIP=		#do not strip if nginx with debug information
 .endif
 
 .if defined(WITH_OPENSSL_MODULE)
-USE_OPENSSL=	yes
+NGINX_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-http_ssl_module
+.endif
+
+.if defined(WITH_IMAP_MODULE)
+NGINX_OPENSSL=	yes
+CONFIGURE_ARGS+=--with-imap --with-imap_ssl_module
+.endif
+
+.if defined(NGINX_OPENSSL)
+USE_OPENSSL=	yes
 .endif
 
 .if defined(WITHOUT_HTTP_REWRITE_MODULE) || defined(WITHOUT_PCRE)
