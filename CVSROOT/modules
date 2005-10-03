@@ -6964,6 +6964,7 @@ ogle-gui	ports/multimedia/ogle-gui
 oglext		ports/graphics/oglext
 ogmrip		ports/multimedia/ogmrip
 ogmtools	ports/multimedia/ogmtools
+ogre3d		ports/graphics/ogre3d
 ohphone		ports/net/ohphone
 ohugs		ports/lang/ohugs
 oidentd		ports/security/oidentd
