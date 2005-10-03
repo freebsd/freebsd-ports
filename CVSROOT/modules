@@ -6927,6 +6927,7 @@ ocaml-lablgtk	ports/x11-toolkits/ocaml-lablgtk
 ocaml-lablgtk2	ports/x11-toolkits/ocaml-lablgtk2
 ocaml-mode.el	ports/lang/ocaml-mode.el
 ocaml-net	ports/www/ocaml-net
+ocaml-netclient	ports/net/ocaml-netclient
 ocaml-nox11	ports/lang/ocaml-nox11
 ocaml-ocamlgraph	ports/math/ocaml-ocamlgraph
 ocaml-ocurl	ports/ftp/ocaml-ocurl
