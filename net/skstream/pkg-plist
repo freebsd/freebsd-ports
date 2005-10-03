@@ -1,4 +1,4 @@
-lib/libskstream-0.3.a
+lib/libskstream-0.3.la
 lib/libskstream-0.3.so
 lib/libskstream-0.3.so.3
 libdata/pkgconfig/skstream-0.3.pc
