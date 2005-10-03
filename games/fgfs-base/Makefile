@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Shared/ \
 		ftp://ftp.de.flightgear.org/pub/fgfs/Shared/
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FlightGear scenery, textures and aircraft models
 
 NO_BUILD=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	cad science
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical circuit design and simulation tool
 
 USE_QT_VER=	3
