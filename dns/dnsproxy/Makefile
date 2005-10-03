@@ -10,7 +10,7 @@ PORTVERSION=	1.15
 CATEGORIES=	dns
 MASTER_SITES=	http://www.wolfermann.org/
 
-MAINTAINER=	az@inec.ru
+MAINTAINER=	az@FreeBSD.org
 COMMENT=	A proxy for DNS queries
 
 GNU_CONFIGURE=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	0.1.5
 CATEGORIES=	irc
 MASTER_SITES=	http://weechat.flashtux.org/download/
 
-MAINTAINER=	az@inec.ru
+MAINTAINER=	az@FreeBSD.org
 COMMENT=	A lightweight and user friendly ncurse based IRC client
 
 USE_BZIP2=	yes

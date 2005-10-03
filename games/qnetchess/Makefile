@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.silversoft.net/src/
 
-MAINTAINER=	az@inec.ru
+MAINTAINER=	az@FreeBSD.org
 COMMENT=	Qt based chess multiplayer game
 
 MAKEFILE=	Makefile.FreeBSD

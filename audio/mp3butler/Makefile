@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://core.inec.ru/~az/ \
 		http://iainlea.dyndns.org/software/${PORTNAME}/
 
-MAINTAINER=	az@inec.ru
+MAINTAINER=	az@FreeBSD.org
 COMMENT=	A program for renaming mp3 files and looking ID3 tags for it
 
 RUN_DEPENDS=	${SITE_PERL}/CDDB.pm:${PORTSDIR}/audio/p5-CDDB \

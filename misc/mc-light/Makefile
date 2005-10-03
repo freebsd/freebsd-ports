@@ -12,7 +12,7 @@ CATEGORIES=	misc shells
 MASTER_SITES=	http://mc.linuxinside.com/Releases/
 DISTNAME=	mc-${PORTVERSION:S/.p9/-pre9/}
 
-MAINTAINER=	az@inec.ru
+MAINTAINER=	az@FreeBSD.org
 COMMENT=	A lightweight Midnight Commander clone
 
 RUN_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk

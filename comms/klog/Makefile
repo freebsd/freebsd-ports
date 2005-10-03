@@ -9,7 +9,7 @@ PORTVERSION=	0.3.2
 CATEGORIES=	comms
 MASTER_SITES=	http://download.berlios.de/klog/
 
-MAINTAINER=	az@inec.ru
+MAINTAINER=	az@FreeBSD.org
 COMMENT=	ADIF compatible logging application
 
 LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib
