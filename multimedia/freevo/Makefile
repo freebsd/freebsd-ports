@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freevo
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freevo
@@ -17,7 +17,7 @@ COMMENT=	Open source digital jukebox
 NO_BUILD=	yes
 
 RUN_DEPENDS=	aumix:${PORTSDIR}/audio/aumix \
-		${PYTHON_SITELIBDIR}/osd/__init__.py:${PORTSDIR}/misc/py-osd \
+		${PYTHON_SITELIBDIR}/pyosd/__init__.py:${PORTSDIR}/misc/py-osd \
 		${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted \
