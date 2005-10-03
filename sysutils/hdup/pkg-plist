@@ -1,4 +1,5 @@
 etc/hdup/hdup.conf-dist
+etc/hdup/postrun-warn-user
 sbin/hdup
 %%DOCSDIR%%/README
 %%DOCSDIR%%/FAQ.html
