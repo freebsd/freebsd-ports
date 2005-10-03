@@ -12,6 +12,9 @@ bin/nwn
 %%DATADIR%%/miles/mssmp3.asi
 %%DATADIR%%/miles/msssoft.m3d
 %%DATADIR%%/movies-OC.txt
+%%DATADIR%%/music/mus_dd_kingmaker.bmu
+%%DATADIR%%/music/mus_dd_shadowgua.bmu
+%%DATADIR%%/music/mus_dd_witchwake.bmu
 %%DATADIR%%/nwm/Chapter1.nwm
 %%DATADIR%%/nwm/Chapter1E.nwm
 %%DATADIR%%/nwm/Chapter2.nwm
@@ -33,6 +36,7 @@ bin/nwn
 %%DATADIR%%/readme.txt
 @dirrm %%DATADIR%%/override
 @dirrm %%DATADIR%%/nwm
+@dirrm %%DATADIR%%/music
 @dirrm %%DATADIR%%/miles
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/data
