@@ -10,7 +10,7 @@ PORTVERSION=	1.8.4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://plib.sourceforge.net/dist/
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable library for joystick/sound/OpenGL GUI/3D math
 
 USE_X_PREFIX=	yes

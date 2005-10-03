@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	linux-
 DISTFILES=	nwclient129.tar.gz \
 		linuxclientupdate1xxto${PORTVERSION:S/.//}eng.tar.gz
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Neverwinter Nights Linux (x86) Client
 
 RUN_DEPENDS=	${LOCALBASE}/share/nwndata/NWNv129.txt:${PORTSDIR}/games/nwndata \

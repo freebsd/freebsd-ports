@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://jeuxlinux.com/bioware/Neverwinter_Nights/
 DISTNAME=	nwresources${PORTVERSION:S/.//}
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Neverwinter Nights Data Files
 
 ONLY_FOR_ARCHS=	i386
