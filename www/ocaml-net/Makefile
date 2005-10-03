@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	net
-PORTVERSION=	0.98
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ocamlnet
@@ -21,6 +20,11 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib \
 		${LOCALBASE}/lib/ocaml/site-lib/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
 RUN_DEPENDS=	${LOCALBASE}/lib/ocaml/site-lib/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
+
+.if !defined(WITHOUT_NETHTTPD)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/ocaml/site-lib/equeue/equeue.a:${PORTSDIR}/devel/ocaml-equeue
+RUN_DEPENDS+=	${LOCALBASE}/lib/ocaml/site-lib/equeue/equeue.a:${PORTSDIR}/devel/ocaml-equeue
+.endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
@@ -48,6 +52,21 @@ post-install:
 		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm lib/ocaml/site-lib/netstring" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ocamlfind remove netstring 2>/dev/null || true" >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/lib/ocaml/site-lib/pop -type f | \
+		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm lib/ocaml/site-lib/pop" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ocamlfind remove pop 2>/dev/null || true" >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/lib/ocaml/site-lib/smtp -type f | \
+		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm lib/ocaml/site-lib/smtp" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ocamlfind remove smtp 2>/dev/null || true" >> ${TMPPLIST}
+.if !defined(WITHOUT_NETHTTPD)
+	@${FIND} ${PREFIX}/lib/ocaml/site-lib/nethttpd -type f | \
+		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm lib/ocaml/site-lib/nethttpd" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ocamlfind remove nethttpd 2>/dev/null || true" >> ${TMPPLIST}
+.endif
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/../doc/ ${DOCSDIR}
