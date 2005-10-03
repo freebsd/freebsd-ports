@@ -2117,6 +2117,7 @@ exact		ports/mail/exact
 excalibur-configuration	ports/devel/excalibur-configuration
 exctags		ports/devel/ctags
 execline	ports/lang/execline
+exhaust		ports/games/exhaust
 exif		ports/graphics/exif
 exifprobe	ports/graphics/exifprobe
 exiftags	ports/graphics/exiftags
