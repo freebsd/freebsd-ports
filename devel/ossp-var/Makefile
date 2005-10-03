@@ -1,13 +1,12 @@
-# ex:ts=8	-*-mode: makefile-*-
 # New ports collection makefile for:	ossp-var
-# Date created:		2003-01-31
-# Whom:			Alan Eldridge <alane@geeksrus.net>
+# Date created:				2003-01-31
+# Whom:					Alan Eldridge <alane@geeksrus.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	var
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
@@ -18,6 +17,7 @@ COMMENT=	A flexible, full-featured and fast variable expansion library
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
 
@@ -27,5 +27,10 @@ INSTALLS_SHLIB=	yes
 BROKEN=		"Does not compile on alpha"
 .endif
 
+check:
+	build
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
+
 .include "${FILESDIR}/manpages.mk"
+
 .include <bsd.port.post.mk>
