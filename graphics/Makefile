@@ -42,6 +42,7 @@
     SUBDIR += camediaplay
     SUBDIR += cbrpager
     SUBDIR += cbview
+    SUBDIR += cegui
     SUBDIR += chbg
     SUBDIR += cimg
     SUBDIR += cinepaint
