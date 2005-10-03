@@ -138,6 +138,7 @@
     SUBDIR += ensemblist
     SUBDIR += euchre
     SUBDIR += evilfinder
+    SUBDIR += exhaust
     SUBDIR += exmars
     SUBDIR += exult
     SUBDIR += falconseye
