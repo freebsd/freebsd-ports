@@ -1,5 +1,5 @@
---- makefile.orig	Wed May 18 12:13:52 2005
-+++ makefile	Wed May 18 12:40:23 2005
+--- makefile.orig	Fri Sep 30 13:30:14 2005
++++ makefile	Mon Oct  3 15:26:07 2005
 @@ -33,11 +33,11 @@
  SUFF=
  else
@@ -16,7 +16,7 @@
  endif
  SUFF=_r
  endif
-@@ -66,21 +66,21 @@
+@@ -67,21 +67,21 @@
  
  WEB_EXAMPLES = cgistub bugdb clidb
  
@@ -43,7 +43,7 @@
  
  AR = ar
  ARFLAGS = -cru
-@@ -326,16 +326,14 @@
+@@ -352,23 +352,21 @@
  
  install: subsql cleanupsem installlib
  	mkdir -p $(BINSPATH)
@@ -59,8 +59,17 @@
 -	cp $(INCS) $(INCSPATH)
 +	${BSD_INSTALL_DATA} $(INCS) $(INCSPATH)
  	mkdir -p $(LIBSPATH)
--	cp $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
+-	cp $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(JNI_LIB) $(LIBSPATH)
 +	${BSD_INSTALL_PROGRAM} $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
- 	cd $(LIBSPATH); ln -f -s $(FASTDB_SHARED) libfastdb$(SUFF).so
- 	cd $(LIBSPATH); ln -f -s $(CLI_SHARED) libcli$(SUFF).so
+ 	ln -f -s $(LIBSPATH)/$(FASTDB_SHARED) $(LIBSPATH)/libfastdb$(SUFF).so
+ 	ln -f -s $(LIBSPATH)/$(CLI_SHARED) $(LIBSPATH)/libcli$(SUFF).so
+-	ln -f -s $(LIBSPATH)/$(JNI_LIB) $(LIBSPATH)/libjnicli$(SUFF).so
++#	ln -f -s $(LIBSPATH)/$(JNI_LIB) $(LIBSPATH)/libjnicli$(SUFF).so
  
+ uninstall:
+ 	rm -fr $(INCSPATH)
+-	cd $(LIBSPATH); rm -f $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(JNI_LIB) libfastdb$(SUFF).so libjnicli$(SUFF).so libcli$(SUFF).so
++	cd $(LIBSPATH); rm -f $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) libfastdb$(SUFF).so libcli$(SUFF).so
+ 	rm $(BINSPATH)/subsql
+ 
+ cleanobj:
