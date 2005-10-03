@@ -1,6 +1,6 @@
---- src/plugins/rom_drives.py	Tue Aug 17 21:51:52 2004
-+++ src/plugins/rom_drives.py	Tue Aug 17 21:50:55 2004
-@@ -409,9 +409,19 @@
+--- src/plugins/rom_drives.py.orig	Sun Jan 23 20:40:19 2005
++++ src/plugins/rom_drives.py	Tue Sep 20 20:26:48 2005
+@@ -415,9 +415,19 @@
                      data = array.array('c', '\000'*4096)
                      (address, length) = data.buffer_info()
                      buf = pack('BBHP', CD_MSF_FORMAT, 0, length, address)
