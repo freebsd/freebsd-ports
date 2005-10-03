@@ -15,11 +15,9 @@ DISTNAME=	w3-4.0pre.47
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WWW browser based on emacs/mule
 
-BROKEN=		Incomplete pkg-plist
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=yes
-INSTALL_TARGET=	install dotemacs
+INSTALL_TARGET=	install
 
 EMACS_PORT_NAME?=	emacs21
 
