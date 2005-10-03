@@ -1,4 +1,4 @@
-lib/libwfmath-0.3.a
+lib/libwfmath-0.3.la
 lib/libwfmath-0.3.so
 lib/libwfmath-0.3.so.3
 include/wfmath-0.3/wfmath/error.h
