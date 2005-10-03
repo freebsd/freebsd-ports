@@ -44,7 +44,6 @@ MAKE_ENV+=		EXAMPLESDIR=${EXAMPLESDIR}
 MASTER_SITES_APACHE_SSL= \
 		ftp://ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/ \
 		ftp://ftp.it.net.au/mirrors/crypto/SSL/Apache-SSL/ \
-		ftp://ftp.sekure.net/pub/apache-ssl/ \
 		ftp://opensores.thebunker.net/pub/mirrors/apache-ssl/
 
 APACHE_HARD_SERVER_LIMIT?=	512
