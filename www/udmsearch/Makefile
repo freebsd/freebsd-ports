@@ -9,9 +9,8 @@ PORTNAME=	udmsearch
 PORTVERSION=	3.0.23
 PORTREVISION=	3
 CATEGORIES=	www databases
-MASTER_SITES=	http://search.mnogo.ru/Download/	\
-		http://udmsearch.real-time.com/Download/	\
-		http://www.ghks.de/computer/software/udmsearch/Download/
+MASTER_SITES=	http://search.mnogo.ru/Download/ \
+		http://udmsearch.real-time.com/Download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full featured SQL-based hypertext search engine
