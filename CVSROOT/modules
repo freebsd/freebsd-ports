@@ -1015,6 +1015,7 @@ cdsware		ports/textproc/cdsware
 cduce		ports/lang/cduce
 cedet		ports/devel/cedet
 cedet-emacs20	ports/devel/cedet-emacs20
+cegui		ports/graphics/cegui
 celestia	ports/astro/celestia
 centericq	ports/net/centericq
 cfengine	ports/sysutils/cfengine
