@@ -425,7 +425,7 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.sunsite.org.uk/package/gnu/%SUBDIR%/ \
 	ftp://ftp.informatik.hu-berlin.de/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
-	http://ftp.rediris.es/sites/ftp.gnu.org/pub/%SUBDIR%/ \
+	ftp://ftp.rediris.es/sites/ftp.gnu.org/ftp/gnu/%SUBDIR%/ \
 	ftp://ftp.lip6.fr/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/gnu/%SUBDIR%/
 .endif
@@ -649,7 +649,7 @@ MASTER_SITE_NETBSD+=	\
 	ftp://ftp.proxad.net/mirrors/ftp.netbsd.org/packages/distfiles/%SUBDIR%/\
 	ftp://ftp.weird.com/pub/NetBSD/distfiles/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/unix/NetBSD/packages/distfiles/%SUBDIR%/ \
-	ftp://sunsite.rediris.es/sites/ftp.netbsd.org/packages/distfiles/%SUBDIR%/\
+	ftp://sunsite.rediris.es/sites/ftp.netbsd.org/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.cz.netbsd.org/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.unina.it/pub/Unix/NetBSD/packages/distfiles/%SUBDIR%/ \
