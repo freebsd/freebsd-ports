@@ -1,5 +1,5 @@
 --- src/Language.pm.orig	Thu Aug 11 14:49:48 2005
-+++ src/Language.pm	Mon Sep 26 10:45:27 2005
++++ src/Language.pm	Mon Oct  3 10:05:04 2005
 @@ -1,5 +1,5 @@
  # Language.pm - This module does just the initial setup for the international messages
 -# RCS Identication ; $Revision: 1.40.2.4 $ ; $Date: 2005/08/11 12:49:48 $ 
@@ -7,6 +7,15 @@
  #
  # Sympa - SYsteme de Multi-Postage Automatique
  # Copyright (c) 1997, 1998, 1999, 2000, 2001 Comite Reseau des Universites
+@@ -126,7 +126,7 @@
+     }
+    
+     &Locale::Messages::textdomain("sympa");
+-    &Locale::Messages::bindtextdomain('sympa','--DIR--/locale');
++    &Locale::Messages::bindtextdomain('sympa','--DIR--/share/locale');
+     &Locale::Messages::bind_textdomain_codeset('sympa',$recode) if $recode;
+     #bind_textdomain_codeset sympa => 'iso-8859-1';
+ 
 @@ -134,16 +134,20 @@
      unless (setlocale(&POSIX::LC_ALL, $locale)) {
  	unless (setlocale(&POSIX::LC_ALL, $lang)) {
