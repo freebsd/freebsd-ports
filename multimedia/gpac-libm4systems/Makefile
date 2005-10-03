@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpac-libm4systems
-DISTVERSION=	0.3.0
+DISTVERSION=	0.4.0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gpac
@@ -22,7 +22,7 @@ HAS_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 
-BUILD_WRKSRC=	${WRKSRC}/M4Systems
+BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${WRKSRC}/bin/gcc
 
 CONFIGURE_ARGS=	--cc="${CC}" \
@@ -47,7 +47,7 @@ do-install:
 	${MKDIR} ${PREFIX}/include/gpac
 	cd ${WRKSRC}/include/gpac && ${FIND} . | \
 		${CPIO} -vpdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/gpac
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/libm4systems.so ${PREFIX}/lib
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/libm4systems_static.a ${PREFIX}/lib
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/libgpac.so ${PREFIX}/lib
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/libgpac_static.a ${PREFIX}/lib
 
 .include <bsd.port.post.mk>
