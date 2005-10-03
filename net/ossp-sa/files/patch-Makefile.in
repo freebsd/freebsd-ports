@@ -1,0 +1,14 @@
+--- Makefile.in.orig	Wed Sep  7 10:00:42 2005
++++ Makefile.in	Mon Oct  3 11:12:56 2005
+@@ -91,10 +91,9 @@
+ 	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(prefix)
+ 	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(bindir)
+ 	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(includedir)
+-	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(libdir)/pkgconfig
+ 	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(mandir)/man3
+ 	$(SHTOOL) install -c -m 755 sa-config $(DESTDIR)$(bindir)/
+-	$(SHTOOL) install -c -m 644 sa.pc $(DESTDIR)$(libdir)/pkgconfig/
++	$(SHTOOL) install -c -m 644 sa.pc $(DESTDIR)$(prefix)/libdata/pkgconfig/
+ 	$(SHTOOL) install -c -m 644 sa.h $(DESTDIR)$(includedir)/
+ 	$(SHTOOL) install -c -m 644 sa.3 $(DESTDIR)$(mandir)/man3/
+ 	@$(LIBTOOL) --mode=install $(SHTOOL) install -c -m 644 libsa.la $(DESTDIR)$(libdir)/
