@@ -361,6 +361,7 @@
     SUBDIR += ocaml-lablgl
     SUBDIR += ocrad
     SUBDIR += oglext
+    SUBDIR += ogre3d
     SUBDIR += openclipart
     SUBDIR += opendis
     SUBDIR += opendx
