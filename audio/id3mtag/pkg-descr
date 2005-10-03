@@ -1,0 +1,6 @@
+Port of id3 mass tagger, a tool for manipulating id3 and id3v2 tags in
+multiple files. It can generate tag fields from the filename and other
+variables, and/or rename files, using an intuitive syntax.
+
+WWW: http://home.wanadoo.nl/squell/id3.html
+Author: squell <squell@alumina.nl>
