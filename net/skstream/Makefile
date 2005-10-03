@@ -16,9 +16,19 @@ COMMENT=	An iostream based C++ socket library
 
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gnomehack
-USE_LIBTOOL_VER=15
+USE_GCC=	3.4
+USE_AUTOTOOLS=	libtool:15:inc
 INSTALLS_SHLIB=	yes
 
-DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
+post-patch:
+	@${REINPLACE_CMD} -e 's| install-docdataDATA | |g'  ${WRKSRC}/Makefile.in
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for docfile in README COPYING AUTHORS NEWS README.FreeSockets
+	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
