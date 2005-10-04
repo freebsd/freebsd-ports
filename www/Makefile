@@ -375,6 +375,7 @@
     SUBDIR += mozilla-devel
     SUBDIR += mozplugger
     SUBDIR += mplayer-plugin
+    SUBDIR += myfaces
     SUBDIR += myghty
     SUBDIR += nanoblogger
     SUBDIR += nd
