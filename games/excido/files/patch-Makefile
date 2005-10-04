@@ -1,0 +1,30 @@
+--- Makefile.orig	Thu Jul 29 14:17:13 2004
++++ Makefile	Fri Aug 19 15:00:16 2005
+@@ -1,12 +1,11 @@
+-CC=g++
+-CFLAGS=`sdl-config --cflags` #-g -Wall #-O2
++CFLAGS=%%CFLAGS%% -I%%X11BASE%%/include `sdl-config --cflags` #-g -Wall #-O2
+ #CFLAGS=`sdl-config --cflags` -I./physfs#-g -Wall #-O2
+ OBJS    := ${patsubst %.cpp, %.o, ${wildcard src/*.cpp}}
+-LIBS = -s -Bstatic `sdl-config --static-libs` -lSDL_image -lSDL_ttf -L. -lphysfs -lopenal -Bdynamic -lGL -lGLU  
++LIBS = -L%%X11BASE%%/lib `sdl-config --libs` -lSDL_image -lSDL_ttf -lphysfs -lopenal -lGL -lGLU
+ #LIBS = -s -Bstatic `sdl-config --static-libs` SDL_image/*.o SDL_ttf/*.o -L. physfs/*.o openal/*.o -ljpeg -lpng -ltiff -lfreetype -Bdynamic -lGL -lGLU  
+ PREFIX=/usr/local
+ BINDIR=$(PREFIX)/bin/
+-DATADIR=$(PREFIX)/share/excido/
++DATADIR=%%DATADIR%%/
+ 
+ INSTALL=/usr/bin/install
+ 
+@@ -28,9 +27,9 @@
+ 
+ install:
+ 	[ -d $(BINDIR) ] || mkdir $(BINDIR)
+-	$(INSTALL) -m 755 $(TARGET) $(BINDIR)
++	$(BSD_INSTALL_PROGRAM) $(TARGET) $(BINDIR)
+ 	[ -d $(DATADIR) ] || mkdir $(DATADIR)
+-	$(INSTALL) -m 644 data/* $(DATADIR)
++	$(BSD_INSTALL_DATA) data/* $(DATADIR)
+ 
+ uninstall:
+ 	rm $(BINDIR)$(TARGET)
