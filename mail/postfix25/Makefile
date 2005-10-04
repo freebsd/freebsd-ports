@@ -1,6 +1,6 @@
 # New ports collection makefile for:	postfix
-# Date created: 	18 Mar 1999
-# Whom:			torstenb
+# Date created:				18 Mar 1999
+# Whom:					torstenb
 #
 # $FreeBSD$
 #
@@ -29,7 +29,7 @@ MASTER_SITE_SUBDIR=	. old related/postfix
 DISTNAME=	postfix-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
-# blanket approval for version updates: marcus@corp.grupos.com.br
+# blanket approval for version updates: mnag@FreeBSD.org
 MAINTAINER=	vivek@khera.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
