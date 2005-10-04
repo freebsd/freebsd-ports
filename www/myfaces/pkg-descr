@@ -1,0 +1,8 @@
+The first free open source JavaServer(tm) Faces implementation.
+
+JavaServer(tm) Faces is a new and upcoming web application framework that
+accomplishes the MVC paradigm. It is comparable to the well-known Struts
+Framework but has features and concepts that are beyond those of Struts;
+especially the component orientation.
+
+WWW: http://myfaces.apache.org/
