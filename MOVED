@@ -1634,3 +1634,4 @@ lang/pyperl||2005-09-30|New port added without a maintainer
 mail/exim-monitor||2005-10-01|obsolete
 devel/beagle|devel/open-beagle|2005-10-02|renamed to reflect project's name
 games/pmars-doc||2005-10-04|Obsolete, merged with games/pmars
+russian/bogofilter||2005-10-04|obsoleted by utf-8 support in mail/bogofilter
