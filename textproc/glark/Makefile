@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	glark
-PORTVERSION=	1.7.2
+PORTVERSION=	1.7.5
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.incava.org/pub/glark/
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Search text files for complex regular expressions
