@@ -52,6 +52,7 @@
     SUBDIR += bastet
     SUBDIR += battalion
     SUBDIR += battleball
+    SUBDIR += biloba
     SUBDIR += biorythm
     SUBDIR += blackjack
     SUBDIR += blobwars
