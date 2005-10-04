@@ -9,12 +9,8 @@ PORTNAME=	vftool
 PORTVERSION=	1.2
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tex/ \
-		ftp://bash.cc.keio.ac.jp/pub/TeX/ascii-ptex/ptex215/ \
-		ftp://ftp.iis.u-tokyo.ac.jp/TeX/NTT-JTeX/:old/ \
-		ftp://ftp.iis.u-tokyo.ac.jp/TeX/fonts/pk/ \
-		ftp://ftp.waseda.ac.jp/pub/tex/ascii-OLD/ \
 		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	. kiri
+MASTER_SITE_SUBDIR=	kiri
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		plib13-euc.tar.gz \
 		jtex-1.52.tar.gz
