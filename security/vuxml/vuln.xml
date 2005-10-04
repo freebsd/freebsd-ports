@@ -4439,8 +4439,11 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>jabber</name>
 	<name>bnc</name>
-	<name>rinetd</name>
 	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>rinetd</name>
+	<range><lt>0.62_1</lt></range>
       </package>
       <package>
 	<name>dante</name>
@@ -4473,7 +4476,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2004-12-12</discovery>
       <entry>2005-06-17</entry>
-      <modified>2005-08-29</modified>
+      <modified>2005-10-04</modified>
     </dates>
   </vuln>
 
