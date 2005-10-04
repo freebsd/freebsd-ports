@@ -7,7 +7,7 @@
 
 PORTNAME=	varconf
 PORTVERSION=	0.6.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=worldforge
@@ -15,18 +15,18 @@ MASTER_SITE_SUBDIR=worldforge
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A Configuration System for the STAGE Server
 
-LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
+LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15:inc
+USE_GCC=	3.4
 USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
 INSTALLS_SHLIB=	YES
 USE_BZIP2=	YES
+USE_GNOME=	gnomehack
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|: install-docDATA|:|g ; \
-		s|\(^pkgconfigdir =\) .*|\1 ${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|: install-docDATA|:|g' ${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
