@@ -1,0 +1,14 @@
+===============================================================================
+To enable fcron, and disable the default system cron, add the following lines
+to your /etc/rc.conf:
+
+	fcron_enable="YES"
+	cron_enable="NO"
+
+and move any jobs in /etc/crontab to the root fcrontab(5) file. See:
+
+%%EXAMPLESDIR%%
+
+for a translation of the default FreeBSD /etc/crontab, and for sample PAM
+configuration files.
+===============================================================================

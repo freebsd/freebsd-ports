@@ -1,17 +1,12 @@
+bin/fcrondyn
 bin/fcronsighup
 bin/fcrontab
-sbin/fcron
-@unexec if cmp -s %D/etc/fcron.allow %D/etc/fcron.allow.dist; then rm -f %D/etc/fcron.allow; fi
 etc/fcron.allow.dist
-@exec [ -f %B/fcron.allow ] || cp %B/%f %B/fcron.allow
-@unexec if cmp -s %D/etc/fcron.deny %D/etc/fcron.deny.dist; then rm -f %D/etc/fcron.deny; fi
-etc/fcron.deny.dist
-@exec [ -f %B/fcron.deny ] || cp %B/%f %B/fcron.deny
-@unexec if cmp -s %D/etc/fcron.conf %D/etc/fcron.conf.dist; then rm -f %D/etc/fcron.conf; fi
 etc/fcron.conf.dist
-@exec [ -f %B/fcron.conf ] || cp %B/%f %B/fcron.conf
-etc/rc.d/fcron.sh
-%%PORTDOCS%%share/doc/fcron/FAQ
-%%PORTDOCS%%share/doc/fcron/fcron.pam
-%%PORTDOCS%%share/doc/fcron/fcrontab.pam
-%%PORTDOCS%%@unexec rmdir %D/share/doc/fcron 2>/dev/null || true
+etc/fcron.deny.dist
+sbin/fcron
+%%EXAMPLESDIR%%/fcron.pam
+%%EXAMPLESDIR%%/fcrontab-operator
+%%EXAMPLESDIR%%/fcrontab-root
+%%EXAMPLESDIR%%/fcrontab.pam
+@dirrm %%EXAMPLESDIR%%
