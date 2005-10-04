@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	botan
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.7
 PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	http://files.randombit.net/botan/
