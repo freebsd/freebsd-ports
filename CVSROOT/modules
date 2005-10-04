@@ -9644,6 +9644,7 @@ portdowngrade	ports/sysutils/portdowngrade
 porteasy	ports/misc/porteasy
 portell		ports/misc/portell
 portfwd		ports/net/portfwd
+portlet-api	ports/devel/portlet-api
 portlint	ports/devel/portlint
 portmanager	ports/sysutils/portmanager
 portmk		ports/devel/portmk
