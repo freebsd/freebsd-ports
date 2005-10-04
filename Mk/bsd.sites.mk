@@ -1022,7 +1022,6 @@ MASTER_SITE_SUSE+= 	\
 	http://mirrors.usc.edu/pub/linux/distributions/suse/%SUBDIR%/ \
 	ftp://ftp-linux.cc.gatech.edu/pub/suse/suse/%SUBDIR%/ \
 	http://mirror.usu.edu/mirrors/suse/%SUBDIR%/ \
-	ftp://ftp.ale.org/pub/suse/%SUBDIR%/ \
 	http://ftp.ale.org/pub/suse/%SUBDIR%/ \
 	ftp://mirror.mcs.anl.gov/pub/suse/%SUBDIR%/ \
 	ftp://chuck.ucs.indiana.edu/linux/suse/suse/%SUBDIR%/ \
@@ -1033,16 +1032,13 @@ MASTER_SITE_SUSE+= 	\
 	http://sunsite.utk.edu/ftp/pub/linux/suse/suse/%SUBDIR%/ \
 	http://ops.tamu.edu/suse/%SUBDIR%/ \
 	ftp://ftp.empiricalnetworks.com/pub/suse/%SUBDIR%/ \
-	ftp://suse.cs.utah.edu/pub/suse.com/suse/%SUBDIR%/ \
 	http://suse.cs.utah.edu/suse/%SUBDIR%/ \
 	ftp://ftp.mirrors.net.ar/pub/suse/%SUBDIR%/ \
 	http://www.mirrors.net.ar/pub/suse/%SUBDIR%/ \
 	ftp://ftp.belnet.be/linux/suse/suse/%SUBDIR%/ \
-	ftp://ftp.unicamp.br/pub/suse/%SUBDIR%/ \
 	http://ftp.unicamp.br/pub/suse/%SUBDIR%/ \
 	ftp://mirrors.netbg.com/suse/%SUBDIR%/ \
 	ftp://ftp.suse.cl/pub/suse/%SUBDIR%/ \
-	ftp://ftp.sh.cvut.cz/MIRRORS/SuSE/pub/%SUBDIR%/ \
 	http://ftp.sh.cvut.cz/MIRRORS/SuSE/pub/%SUBDIR%/ \
 	ftp://ftp.linux.ee/pub/suse/suse/%SUBDIR%/ \
 	ftp://garbo.uwasa.fi/pub/mirrors/suse/%SUBDIR%/ \
@@ -1055,13 +1051,10 @@ MASTER_SITE_SUSE+= 	\
 	ftp://ftp.tu-chemnitz.de/pub/linux/suse/ftp.suse.com/suse/%SUBDIR%/ \
 	ftp://ftp.tu-cottbus.de/pub/unix/linux/suse.com/suse/%SUBDIR%/ \
 	ftp://linux.mathematik.tu-darmstadt.de/pub/linux/distributions/suse/ftp.suse.com/suse/%SUBDIR%/ \
-	ftp://ftp.uni-erlangen.de/pub/Linux/MIRROR.suse/pub/suse/%SUBDIR%/ \
 	http://ftp.uni-erlangen.de/pub/Linux/MIRROR.suse/pub/suse/%SUBDIR%/ \
-	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.suse.com/pub/suse/%SUBDIR%/ \
 	http://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.suse.com/pub/suse/%SUBDIR%/ \
 	ftp://ftp.hs.uni-hamburg.de/pub/unix/linux/suse/%SUBDIR%/ \
 	ftp://ftp.rrzn.uni-hannover.de/pub/mirror/linux/suse/%SUBDIR%/ \
-	ftp://ftp.tu-ilmenau.de/Mirrors/ftp.suse.com/%SUBDIR%/ \
 	http://ftp.tu-ilmenau.de/Mirrors/ftp.suse.com/%SUBDIR%/ \
 	ftp://ftp.uni-kassel.de/pub/linux/suse/%SUBDIR%/ \
 	ftp://ftp.join.uni-muenster.de/pub/linux/distributions/suse/%SUBDIR%/ \
@@ -1078,7 +1071,6 @@ MASTER_SITE_SUSE+= 	\
 	ftp://ftp.isst.fhg.de/pub/mirrors/ftp.suse.com/pub/suse/%SUBDIR%/ \
 	ftp://ftp.rz.uni-karlsruhe.de/pub/mirror/ftp.gwdg.de/pub/linux/suse/ftp.suse.com/suse/%SUBDIR%/ \
 	ftp://ftp.rz.uni-kiel.de/pub2/linux/suse/%SUBDIR%/ \
-	ftp://mirrors.sth.sze.hu/linux/suse/%SUBDIR%/ \
 	http://mirrors.sth.sze.hu/linux/suse/%SUBDIR%/ \
 	ftp://ftp.heanet.ie/mirrors/ftp.suse.com/pub/suse/ftp.suse.com/suse/%SUBDIR%/ \
 	ftp://ftp.esat.net/mirrors/ftp.suse.com/pub/suse/%SUBDIR%/ \
@@ -1089,20 +1081,14 @@ MASTER_SITE_SUSE+= 	\
 	ftp://ftp.novell.co.jp/pub/suse/suse/%SUBDIR%/ \
 	ftp://ftp.kreonet.re.kr/pub/Linux/suse/%SUBDIR%/ \
 	http://ftp.tpnet.pl/vol/d7/ftp.suse.com/%SUBDIR%/ \
-	ftp://ftp.tpnet.pl/d7/ftp.suse.com/%SUBDIR%/ \
 	ftp://ftp.icm.edu.pl/packages/linux-suse/%SUBDIR%/ \
-	ftp://ftp.iasi.roedu.net/pub/mirrors/ftp.suse.com/pub/suse/%SUBDIR%/ \
 	http://ftp.iasi.roedu.net/pub/mirrors/ftp.suse.com/pub/suse/%SUBDIR%/ \
-	ftp://ftp.idilis.ro/mirrors/ftp.suse.com/pub/suse/%SUBDIR%/ \
 	http://ftp.idilis.ro/mirrors/ftp.suse.com/pub/suse/%SUBDIR%/ \
-	ftp://ftp.isu.net.sa/pub/mirrors/ftp.suse.com/%SUBDIR%/ \
 	http://ftp.isu.net.sa/pub/mirrors/ftp.suse.com/%SUBDIR%/ \
-	ftp://mirror.etf.bg.ac.yu/distributions/suse/suse/%SUBDIR%/ \
 	http://mirror.etf.bg.ac.yu/distributions/suse/suse/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/Linux/distributions/suse/suse/%SUBDIR%/ \
 	ftp://ftp.solnet.ch/mirror/SuSE/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/SuSE/suse/%SUBDIR%/ \
-	ftp://ftp.isu.edu.tw/pub/Linux/SuSE/%SUBDIR%/ \
 	http://ftp.isu.edu.tw/pub/Linux/SuSE/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.suse.com/pub/suse/%SUBDIR%/ \
 	http://www.mirrorservice.org/sites/ftp.suse.com/pub/suse/%SUBDIR%/ \
@@ -1117,14 +1103,12 @@ MASTER_SITE_SUSE+= 	\
 	http://ftp.softnet.tuc.gr/pub/linux/suse/suse/%SUBDIR%/ \
 	ftp://ftp.duth.gr/pub/suse/suse/%SUBDIR%/ \
 	ftp://ftp.is.co.za/linux/distributions/suse/%SUBDIR%/ \
-	ftp://ftp.sun.ac.za/ftp/mirrorsites/suse/%SUBDIR%/ \
 	http://ftp.sun.ac.za/ftp/mirrorsites/suse/%SUBDIR%/ \
 	ftp://ftp.rediris.es/pub/linux/distributions/suse/pub/suse/%SUBDIR%/ \
 	ftp://suse.grn.es/mirrors/suse/%SUBDIR%/ \
 	ftp://ftp.cb.spb.ru/.1/Linux-Distrib/Suse/%SUBDIR%/ \
 	ftp://ftp.neva.ru/.1/Linux-Distrib/Suse/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/Linux/SuSE/suse/%SUBDIR%/ \
-	ftp://mirror.pacific.net.au/linux/suse/%SUBDIR%/ \
 	http://mirror.pacific.net.au/linux/suse/%SUBDIR%/ \
 	ftp://ftp.planetmirror.com/pub/linux/suse/suse/%SUBDIR%/ \
 	http://public.planetmirror.com/pub/linux/suse/suse/%SUBDIR%/ \
