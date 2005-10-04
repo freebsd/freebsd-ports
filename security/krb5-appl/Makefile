@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		krb5
-PORTVERSION=		1.4.1
-PORTREVISION=		1
+PORTVERSION=		1.4.2
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/krb5/${PORTVERSION:C/\.[0-9]*$/&/:C/\.[0-9]*$//}/
 EXTRACT_SUFX=		.tar
