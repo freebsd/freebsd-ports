@@ -56,9 +56,11 @@ sub lastcomment();
 
 my %opts;
 
-getopts('ac:d:fgh:il:M:mns:tu:', \%opts);
+getopts('ac:d:fgh:il:L:M:mns:tu:', \%opts);
 
-my $autofill = $opts{'l'};
+my $autofill_l = $opts{'l'};
+my $autofill_L = $opts{'L'};
+my $autofill = ($autofill_l ? $autofill_l : $autofill_L);
 my $c = $opts{'c'} if ($opts{'c'} ne "");
 my $nomodules = $opts{'g'};
 my $distdir = $opts{'s'} if ($opts{'s'} ne "");
@@ -246,10 +248,17 @@ foreach my $thisdir (@dirs) {
 	} else {
 		## Set up the autofill file.
 		# Read COMMENT for part of the commit message.
-		chomp($pkgcomment = `$make $passenv -V COMMENT`);
-		# Change the first character to lowercase to make it fit with the
-		# rest of the commit message, only if the second is not upper case.
-		$pkgcomment =~ s/(^.)(?![A-Z])/\l$1/;
+		if ($autofill_l) {
+			chomp($pkgcomment = `$make $passenv -V COMMENT`);
+			# Change the first character to lowercase to make it fit with the
+			# rest of the commit message, only if the second is not upper case.
+			$pkgcomment =~ s/(^.)(?![A-Z])/\l$1/;
+			$pkgcomment .= ".";
+			$pkgcomment .= "\n\n" if ($autofill != -1);
+		} else {
+			$pkgcomment = `cat pkg-descr`;
+			$pkgcomment .= "\n" if ($autofill != -1);
+		}
 		# Read Makefile to find necessary variables.
 		open(MAKEFILE, "Makefile") or die("Can't open Makefile for reading: $!");
 		while(<MAKEFILE>) {
@@ -258,19 +267,21 @@ foreach my $thisdir (@dirs) {
 			($portversion) = (m/^PORTVERSION=\s+(\w.*)$/) if (/^PORTVERSION=/);
 		}
 		close(MAKEFILE);
-		$pkgcomment .= ".";
-		$pkgcomment .= "\n\n" if ($autofill != -1);
 		# Write out the data to the comment file.
 		open(AUTOFILL, "> $tmpdir/commitfile") or die("Can't open $tmpdir/commitfile for writing: $!");
-		# pretty print; wrap @ 72 characters
-		$tmp = "Add $portname $portversion, $pkgcomment";
-		$wrapat = 72;
-		while($wrapat > 1) {
-			$tmp2 = $tmp;
-			$tmp =~ s/(.{$wrapat}([^ ]+)?) /$1\n/g;
-			last unless $tmp =~ /^[^\n]{73}/;
-			$wrapat--;
-			$tmp = $tmp2;
+		if ($autofill_l) {
+			# pretty print; wrap @ 72 characters
+			$tmp = "Add $portname $portversion, $pkgcomment";
+			$wrapat = 72;
+			while($wrapat > 1) {
+				$tmp2 = $tmp;
+				$tmp =~ s/(.{$wrapat}([^ ]+)?) /$1\n/g;
+				last unless $tmp =~ /^[^\n]{73}/;
+				$wrapat--;
+				$tmp = $tmp2;
+			}
+		} else {
+			$tmp = $pkgcomment;
 		}
 		print AUTOFILL $tmp;
 		print AUTOFILL "PR:		ports/$autofill\n" if ($autofill != -1);
@@ -426,6 +437,8 @@ OPTIONS
 			The PR number must be passed to -l.  If there is
 			no PR (i.e., self-created or submitted in
 			private email), use PR# -1.
+	-L PR#		Like -l but it'll generate commit message based
+			on pkg-descr
 	-m		Do not checkout ports/Mk (needed for support
 			of portlinting etc).
 	-n		Do not actually commit anything.
