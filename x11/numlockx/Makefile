@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	numlockx
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	x11
-MASTER_SITES=	http://caraldi.com/jbq/numlockx/ \
-		http://ktown.kde.org/~seli/numlockx/
+MASTER_SITES=	http://ktown.kde.org/~seli/numlockx/ \
+		http://caraldi.com/jbq/numlockx/
 
 MAINTAINER=	jb.quenot@caraldi.com
 COMMENT=	This little thingy allows you to start X with NumLock turned on
