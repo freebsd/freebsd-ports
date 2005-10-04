@@ -265,6 +265,7 @@
     SUBDIR += ifm
     SUBDIR += imaze
     SUBDIR += inform
+    SUBDIR += interlogic
     SUBDIR += ishido
     SUBDIR += jetpack
     SUBDIR += jfduke3d
