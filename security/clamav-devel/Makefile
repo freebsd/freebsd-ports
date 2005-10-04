@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20050704
+PORTVERSION=	20051003
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		http://www.galle.com.br/~garga/clamav-devel/
@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	rob@debank.tv
 COMMENT=	Command line virus scanner written entirely in C
-
-FORBIDDEN=	http://vuxml.FreeBSD.org/271498a9-2cd4-11da-a263-0001020eed82.html
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
@@ -148,10 +146,10 @@ post-build:
 		>${WRKDIR}/clamav-clamd.sh
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/clamav-freshclam.sh \
 		>${WRKDIR}/clamav-freshclam.sh
-.if defined(WITH_MILTER)
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/clamav-milter.sh \
-		>${WRKDIR}/clamav-milter.sh
-.endif
+.	if defined(WITH_MILTER)
+		@${SED} ${SED_SCRIPT} ${FILESDIR}/clamav-milter.sh \
+			>${WRKDIR}/clamav-milter.sh
+.	endif
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} PKG_DESTDIR=${DESTDIR} \
@@ -163,22 +161,23 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/clamav-freshclam.sh \
 		${DESTDIR}${RC_DIR}/clamav-freshclam${RC_SUFX}
 	@${CHOWN} -R ${CLAMAVUSER}:${CLAMAVGROUP} ${DESTDIR}${DBDIR}
-.for c in clamd freshclam
-	@[ -f ${DESTDIR}${PREFIX}/etc/${c}.conf ] || \
-		${CP} ${DESTDIR}${PREFIX}/etc/${c}.conf.default ${DESTDIR}${PREFIX}/etc/${c}.conf
-.endfor
-.if defined(WITH_MILTER)
-	@${INSTALL_SCRIPT} ${WRKDIR}/clamav-milter.sh \
-		${DESTDIR}${RC_DIR}/clamav-milter${RC_SUFX}
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DESTDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${INSTALL_WRKSRC}/NEWS ${INSTALL_WRKSRC}/ChangeLog \
-		${DESTDIR}${DOCSDIR}
-	@${MKDIR} ${DESTDIR}${DOCSDIR}/html
-	@${INSTALL_DATA} ${INSTALL_WRKSRC}/docs/html/*.* \
-		${DESTDIR}${DOCSDIR}/html
-.endif
+.	for c in clamd freshclam
+		@[ -f ${DESTDIR}${PREFIX}/etc/${c}.conf ] || \
+			${CP} ${DESTDIR}${PREFIX}/etc/${c}.conf.default \
+				${DESTDIR}${PREFIX}/etc/${c}.conf
+.	endfor
+.	if defined(WITH_MILTER)
+		@${INSTALL_SCRIPT} ${WRKDIR}/clamav-milter.sh \
+			${DESTDIR}${RC_DIR}/clamav-milter${RC_SUFX}
+.	endif
+.	if !defined(NOPORTDOCS)
+		@${MKDIR} ${DESTDIR}${DOCSDIR}
+		@${INSTALL_DATA} ${INSTALL_WRKSRC}/NEWS ${INSTALL_WRKSRC}/ChangeLog \
+			${DESTDIR}${DOCSDIR}
+		@${MKDIR} ${DESTDIR}${DOCSDIR}/html
+		@${INSTALL_DATA} ${INSTALL_WRKSRC}/docs/html/*.* \
+			${DESTDIR}${DOCSDIR}/html
+.	endif
 	@${SETENV} PKG_PREFIX=${PREFIX} PKG_DESTDIR=${DESTDIR} \
 		${SH} ${PKGINSTALL} ${PREFIX} POST-INSTALL
 
