@@ -1,0 +1,10 @@
+--- ksirc/KSOpenkSirc/open_ksircData.ui		2005-09-10 10:20:46.000000000 +0200
++++ ksirc//KSOpenkSirc/open_ksircData.ui	2005-09-13 12:07:39.000000000 +0200
+@@ -335,6 +335,6 @@
+ </slots>
+ <layoutdefaults spacing="6" margin="11"/>
+ <includehints>
+-    <includehint>entercombo.h</includehint>
++    <includehint>enter_combo.h</includehint>
+ </includehints>
+ </UI>

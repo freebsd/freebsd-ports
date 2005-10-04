@@ -1,0 +1,9 @@
+--- parts/tools/addtooldlg.ui	2005/07/26 18:54:59	438982
++++ parts/tools/addtooldlg.ui	2005/09/15 07:27:50	460783
+@@ -241,6 +241,5 @@
+     <includehint>kurlrequester.h</includehint>
+     <includehint>klineedit.h</includehint>
+     <includehint>kpushbutton.h</includehint>
+-    <includehint>kdevapplicationtree.h</includehint>
+ </includehints>
+ </UI>
