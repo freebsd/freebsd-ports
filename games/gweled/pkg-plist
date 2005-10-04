@@ -18,5 +18,9 @@ share/gnome/pixmaps/gweled/gem06.svg
 share/gnome/pixmaps/gweled/gem07.svg
 share/gnome/pixmaps/gweled/tile_even.svg
 share/gnome/pixmaps/gweled/tile_odd.svg
+share/gnome/sounds/gweled/autonom.s3m
+share/gnome/sounds/gweled/click.wav
+share/gnome/sounds/gweled/swap.wav
+@dirrm share/gnome/sounds/gweled
 @dirrm share/gnome/pixmaps/gweled
 @dirrm share/gnome/gweled
