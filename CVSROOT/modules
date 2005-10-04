@@ -1640,6 +1640,7 @@ digger-vgl	ports/games/digger-vgl
 digikam		ports/graphics/digikam
 digikam-doc	ports/graphics/digikam-doc
 digikamimageplugins	ports/graphics/digikamimageplugins
+digikamimageplugins-doc	ports/graphics/digikamimageplugins-doc
 dillo		ports/www/dillo
 dim		ports/sysutils/dim
 dinotrace	ports/cad/dinotrace
