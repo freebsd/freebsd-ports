@@ -9,7 +9,7 @@ PORTNAME=	tcl
 PORTVERSION=	8.0.5
 PORTREVISION=	1
 CATEGORIES=	japanese lang tcl80
-MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl${VERSION:S/./_/}/
+MASTER_SITES=	ftp://ftp.tcl.tk/pub/tcl/tcl${VERSION:S/./_/}/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
