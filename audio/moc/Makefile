@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	moc
-PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTVERSION=	2.3.2
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.daper.net/pub/soft/moc/stable/
 
@@ -20,7 +19,7 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-MAN8=		mocp.8
+MAN1=		mocp.1
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
