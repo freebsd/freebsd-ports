@@ -1,0 +1,129 @@
+bin/galaxyhack
+libexec/galaxyhack
+%%DATADIR%%/settings.dat
+%%DATADIR%%/fleets/Morennians/Moravator.dat
+%%DATADIR%%/fleets/Morennians/Morennian Corvette.dat
+%%DATADIR%%/fleets/Morennians/Morennians.dat
+%%DATADIR%%/fleets/Morennians/X-Fighter.dat
+%%DATADIR%%/fleets/Morennians/attackcapship.ai
+%%DATADIR%%/fleets/Morennians/moveandfire.ai
+%%DATADIR%%/fleets/Morennians/movetocapship.ai
+%%DATADIR%%/fleets/Morennians/movetoslow.ai
+%%DATADIR%%/fleets/Zenennians/Damascus.dat
+%%DATADIR%%/fleets/Zenennians/Emperor.dat
+%%DATADIR%%/fleets/Zenennians/Solar Cruiser.dat
+%%DATADIR%%/fleets/Zenennians/Zenennians.dat
+%%DATADIR%%/fleets/Zenennians/patrolandattack.ai
+%%DATADIR%%/gamedata/equip.dat
+%%DATADIR%%/graphics/boldfont.png
+%%DATADIR%%/graphics/csexplode10.png
+%%DATADIR%%/graphics/csexplode2.png
+%%DATADIR%%/graphics/csexplode3.png
+%%DATADIR%%/graphics/csexplode4.png
+%%DATADIR%%/graphics/csexplode5.png
+%%DATADIR%%/graphics/csexplode6.png
+%%DATADIR%%/graphics/csexplode7.png
+%%DATADIR%%/graphics/csexplode8.png
+%%DATADIR%%/graphics/csexplode9.png
+%%DATADIR%%/graphics/cursor1.png
+%%DATADIR%%/graphics/frexplode2.png
+%%DATADIR%%/graphics/frexplode3.png
+%%DATADIR%%/graphics/frexplode4.png
+%%DATADIR%%/graphics/frexplode5.png
+%%DATADIR%%/graphics/frexplode6.png
+%%DATADIR%%/graphics/frexplode7.png
+%%DATADIR%%/graphics/frexplode8.png
+%%DATADIR%%/graphics/normalfont.png
+%%DATADIR%%/graphics/spacetile.png
+%%DATADIR%%/graphics/spacetile2.png
+%%DATADIR%%/graphics/ssexplode3.png
+%%DATADIR%%/graphics/ssexplode4.png
+%%DATADIR%%/graphics/ssexplode5.png
+%%DATADIR%%/graphics/ssexplode6.png
+%%DATADIR%%/graphics/ssexplode7.png
+%%DATADIR%%/graphics/ssexplode8.png
+%%DATADIR%%/graphics/title.png
+%%DATADIR%%/graphics/windowclose.png
+%%DATADIR%%/music/11radsat.it
+%%DATADIR%%/music/corruptor.ogg
+%%DATADIR%%/music/fission.ogg
+%%DATADIR%%/standardpictures/blue/capship/kasper-capital-1.png
+%%DATADIR%%/standardpictures/blue/capship/kasper-capital-2.png
+%%DATADIR%%/standardpictures/blue/capship/kasper-capital-3.png
+%%DATADIR%%/standardpictures/blue/capship/kpovieta_cp1.png
+%%DATADIR%%/standardpictures/blue/frigate/kasper-frigate-1.png
+%%DATADIR%%/standardpictures/blue/frigate/kasper-frigate-2.png
+%%DATADIR%%/standardpictures/blue/frigate/kasper-frigate-3.png
+%%DATADIR%%/standardpictures/blue/frigate/kpovieta_fr1.png
+%%DATADIR%%/standardpictures/blue/smallship/kasper-ss-1.png
+%%DATADIR%%/standardpictures/blue/smallship/kasper-ss-2.png
+%%DATADIR%%/standardpictures/blue/smallship/kasper-ss-3.png
+%%DATADIR%%/standardpictures/blue/smallship/kpovieta_ft1.png
+%%DATADIR%%/standardpictures/blue/smallship/ss1-hshape-j.png
+%%DATADIR%%/standardpictures/blue/smallship/ss2-xshape-j.png
+%%DATADIR%%/standardpictures/green/capship/kasper-capital-1.png
+%%DATADIR%%/standardpictures/green/capship/kasper-capital-2.png
+%%DATADIR%%/standardpictures/green/capship/kasper-capital-3.png
+%%DATADIR%%/standardpictures/green/capship/kpovieta_cp1.png
+%%DATADIR%%/standardpictures/green/frigate/kasper-frigate-1.png
+%%DATADIR%%/standardpictures/green/frigate/kasper-frigate-2.png
+%%DATADIR%%/standardpictures/green/frigate/kasper-frigate-3.png
+%%DATADIR%%/standardpictures/green/frigate/kpovieta_fr1.png
+%%DATADIR%%/standardpictures/green/smallship/kasper-ss-1.png
+%%DATADIR%%/standardpictures/green/smallship/kasper-ss-2.png
+%%DATADIR%%/standardpictures/green/smallship/kasper-ss-3.png
+%%DATADIR%%/standardpictures/green/smallship/kpovieta_ft1.png
+%%DATADIR%%/standardpictures/green/smallship/ss1-hshape-j.png
+%%DATADIR%%/standardpictures/green/smallship/ss2-xshape-j.png
+%%DATADIR%%/standardpictures/red/capship/kasper-capital-1.png
+%%DATADIR%%/standardpictures/red/capship/kasper-capital-2.png
+%%DATADIR%%/standardpictures/red/capship/kasper-capital-3.png
+%%DATADIR%%/standardpictures/red/capship/kpovieta_cp1.png
+%%DATADIR%%/standardpictures/red/frigate/kasper-frigate-1.png
+%%DATADIR%%/standardpictures/red/frigate/kasper-frigate-2.png
+%%DATADIR%%/standardpictures/red/frigate/kasper-frigate-3.png
+%%DATADIR%%/standardpictures/red/frigate/kpovieta_fr1.png
+%%DATADIR%%/standardpictures/red/smallship/kasper-ss-1.png
+%%DATADIR%%/standardpictures/red/smallship/kasper-ss-2.png
+%%DATADIR%%/standardpictures/red/smallship/kasper-ss-3.png
+%%DATADIR%%/standardpictures/red/smallship/kpovieta_ft1.png
+%%DATADIR%%/standardpictures/red/smallship/ss1-hshape-j.png
+%%DATADIR%%/standardpictures/red/smallship/ss2-xshape-j.png
+%%DATADIR%%/standardpictures/yellow/capship/kasper-capital-1.png
+%%DATADIR%%/standardpictures/yellow/capship/kasper-capital-2.png
+%%DATADIR%%/standardpictures/yellow/capship/kasper-capital-3.png
+%%DATADIR%%/standardpictures/yellow/capship/kpovieta_cp1.png
+%%DATADIR%%/standardpictures/yellow/frigate/kasper-frigate-1.png
+%%DATADIR%%/standardpictures/yellow/frigate/kasper-frigate-2.png
+%%DATADIR%%/standardpictures/yellow/frigate/kasper-frigate-3.png
+%%DATADIR%%/standardpictures/yellow/frigate/kpovieta_fr1.png
+%%DATADIR%%/standardpictures/yellow/smallship/kasper-ss-1.png
+%%DATADIR%%/standardpictures/yellow/smallship/kasper-ss-2.png
+%%DATADIR%%/standardpictures/yellow/smallship/kasper-ss-3.png
+%%DATADIR%%/standardpictures/yellow/smallship/kpovieta_ft1.png
+%%DATADIR%%/standardpictures/yellow/smallship/ss1-hshape-j.png
+%%DATADIR%%/standardpictures/yellow/smallship/ss2-xshape-j.png
+@dirrm %%DATADIR%%/standardpictures/yellow/smallship
+@dirrm %%DATADIR%%/standardpictures/yellow/frigate
+@dirrm %%DATADIR%%/standardpictures/yellow/capship
+@dirrm %%DATADIR%%/standardpictures/yellow
+@dirrm %%DATADIR%%/standardpictures/red/smallship
+@dirrm %%DATADIR%%/standardpictures/red/frigate
+@dirrm %%DATADIR%%/standardpictures/red/capship
+@dirrm %%DATADIR%%/standardpictures/red
+@dirrm %%DATADIR%%/standardpictures/green/smallship
+@dirrm %%DATADIR%%/standardpictures/green/frigate
+@dirrm %%DATADIR%%/standardpictures/green/capship
+@dirrm %%DATADIR%%/standardpictures/green
+@dirrm %%DATADIR%%/standardpictures/blue/smallship
+@dirrm %%DATADIR%%/standardpictures/blue/frigate
+@dirrm %%DATADIR%%/standardpictures/blue/capship
+@dirrm %%DATADIR%%/standardpictures/blue
+@dirrm %%DATADIR%%/standardpictures
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/graphics
+@dirrm %%DATADIR%%/gamedata
+@dirrm %%DATADIR%%/fleets/Zenennians
+@dirrm %%DATADIR%%/fleets/Morennians
+@dirrm %%DATADIR%%/fleets
+@dirrm %%DATADIR%%
