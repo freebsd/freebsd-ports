@@ -6,28 +6,26 @@ cd @PREFIX@/libexec/uvscan/
 
 # Force a low default and then get the current version's value
 cur_AVVER="1"
-if [ -f file_id.diz ]; then
-	cur_AVVER=`tail -1 file_id.diz | sed -e 's/^(\(4[0-9]*\)).*$/\1/'`
+if [ -f "file_id.diz" ]; then
+	cur_AVVER="`tail -1 file_id.diz | sed -e 's/^(\(4[0-9]*\)).*$/\1/'`"
 fi
 
 # Find what the website has for the current version
-ftp http://download.nai.com/products/datfiles/4.x/nai/update.ini >/dev/null
-AVVER=`grep DATVersion update.ini | head -1 | cut -f2 -d= | sed -e 's/^\(4[0-9]*\).$/\1/'`
+fetch -q http://download.nai.com/products/datfiles/4.x/nai/update.ini || exit 1
+AVVER="`grep DATVersion update.ini | head -1 | cut -f2 -d= | sed -e 's/^\(4[0-9]*\).$/\1/'`"
+rm -f update.ini
 
 # Check to make sure the requested version is "newer" then the current
 if [ "$cur_AVVER" -lt "$AVVER" ]; then
 	for i in *.tar ; do
-		mv $i $i.old
+		[ -f "$i" ] && mv $i $i.old
 	done
-	if ftp http://download.nai.com/products/datfiles/4.x/nai/dat-$AVVER.tar >/dev/null ; then
-		for i in *.dat ; do
-			cp -p $i $i.bak
-		done
-		if tar xf dat-$AVVER.tar ; then
-			rm -f *.old
-			echo `date` Successfully updated AntiVirus DAT files to $AVVER
-		fi
-	else
-		rm -f dat-$AVVER.tar
-	fi
+	fetch -q http://download.nai.com/products/datfiles/4.x/nai/dat-$AVVER.tar || exit 1
+	for i in *.dat ; do
+		[ -f "$i" ] && cp -p $i $i.bak
+	done
+	tar xf dat-$AVVER.tar || exit 1
+	rm -f *.old
+	echo "`date` Successfully updated AntiVirus DAT files to $AVVER"
 fi
+exit 0
