@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Packet
-PORTVERSION=	2.03
+PORTVERSION=	2.04
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.gomor.org/netpkt/
