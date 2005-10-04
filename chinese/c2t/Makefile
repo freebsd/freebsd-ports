@@ -9,13 +9,13 @@
 PORTNAME=	c2t
 PORTVERSION=	1.0
 CATEGORIES=	chinese
-MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/convert/  \
-		ftp://ftp.ifcss.org/pub/software/x-win/cxterm/dict/gb/  \
-		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/convert/  \
-		ftp://ftp.edu.tw/Chinese/ifcss/software/x-win/cxterm/dict/gb/ \
-		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/  \
-		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/x-win/cxterm/dict/gb/
-DISTFILES=	c2t.tar.gz TONEPY.tit
+MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/convert/:file  \
+		ftp://ftp.ifcss.org/pub/software/x-win/cxterm/dict/gb/:dict  \
+		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/convert/:file  \
+		ftp://ftp.edu.tw/Chinese/ifcss/software/x-win/cxterm/dict/gb/:dict \
+		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/:file  \
+		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/x-win/cxterm/dict/gb/:dict
+DISTFILES=	c2t.tar.gz:file TONEPY.tit:dict
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translates GB/Big5 encoding to tone pinyin

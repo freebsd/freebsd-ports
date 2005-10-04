@@ -8,10 +8,10 @@
 PORTNAME=	arnettf
 PORTVERSION=	0.0.20041031
 CATEGORIES=	chinese x11-fonts
-MASTER_SITES=	http://debian.linux.org.tw/pub/3Anoppix/people/arne/uming/ \
-		http://debian.linux.org.tw/pub/3Anoppix/people/arne/ukai/
-DISTFILES=	ttf-arphic-uming_0.0.20041031-1.tar.gz \
-		ttf-arphic-ukai_0.0.20041031-1.tar.gz
+MASTER_SITES=	http://debian.linux.org.tw/pub/3Anoppix/people/arne/uming/:uming \
+		http://debian.linux.org.tw/pub/3Anoppix/people/arne/ukai/:ukai
+DISTFILES=	ttf-arphic-uming_0.0.20041031-1.tar.gz:uming \
+		ttf-arphic-ukai_0.0.20041031-1.tar.gz:ukai
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arne TrueType Font is combine of arphic ming and kai fonts

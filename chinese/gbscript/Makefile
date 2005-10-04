@@ -9,13 +9,13 @@
 PORTNAME=	gbscript
 PORTVERSION=	1.11
 CATEGORIES=	chinese
-MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/print/  \
-		ftp://ftp.ifcss.org/pub/software/fonts/gb/misc/  \
-		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/print/  \
-		ftp://ftp.edu.tw/Chinese/ifcss/software/fonts/gb/misc/  \
-		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/print/  \
-		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/fonts/gb/misc/
-DISTFILES=	gbscript-1.11.tar.gz cclib.24
+MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/print/:file  \
+		ftp://ftp.ifcss.org/pub/software/fonts/gb/misc/:font  \
+		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/print/:file  \
+		ftp://ftp.edu.tw/Chinese/ifcss/software/fonts/gb/misc/:font  \
+		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/print/:file  \
+		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/fonts/gb/misc/:font
+DISTFILES=	gbscript-1.11.tar.gz:file cclib.24:font
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts GB simplified Chinese text to PostScript
