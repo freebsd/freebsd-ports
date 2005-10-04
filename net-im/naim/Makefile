@@ -6,35 +6,36 @@
 #
 
 PORTNAME=	naim
-PORTVERSION=	0.11.7.3.1
-PORTREVISION=	1
+PORTVERSION=	0.11.8
 CATEGORIES=	net irc
-MASTER_SITES=	http://shell.n.ml.org/n/naim/
+MASTER_SITES=	http://www.liquidx.org/distfiles/ \
+		http://shell.n.ml.org/n/naim/
 
 MAINTAINER=	tlp@LiquidX.org
 COMMENT=	Console ncurses-based AIM, ICQ, IRC, and Lily client
 
-USE_BZIP2=		yes
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--with-pkgdocdir=${DOCSDIR} \
-			--mandir=${MANPREFIX}/man
+GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
+
+CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		naim.1
 MLINKS=		naim.1 nirc.1 naim.1 nicq.1 naim.1 nlily.1
+PORTDOCS=	FAQ README commands.txt keyboard.txt
 
+OPTIONS=	DETACH "Enable 'detach' feature (requires misc/screen)" off
+
+.include <bsd.port.pre.mk>
+
+.if !defined(NOPORTDOCS)
+CONFIGURE_ARGS+=	--with-pkgdocdir=${DOCSDIR}
+.else
+CONFIGURE_ARGS+=	--without-pkgdocdir
+.endif
 .if defined(WITH_DETACH)
-BUILD_DEPENDS=	screen:${PORTSDIR}/misc/screen
 RUN_DEPENDS=	screen:${PORTSDIR}/misc/screen
-
 CONFIGURE_ARGS+=	--enable-detach
 .endif
 
-pre-fetch:
-	@ ${ECHO} ""
-	@ ${ECHO} "You can use the following build option(s):"
-	@ ${ECHO} ""
-	@ ${ECHO} "     WITH_DETACH=yes         Enables /detach (requires screen)"
-	@ ${ECHO} ""
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
