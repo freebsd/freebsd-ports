@@ -1,0 +1,150 @@
+bin/ember
+bin/ember.bin
+etc/ember/configfile
+etc/ember/ember.conf
+etc/ember/ogre.cfg
+etc/ember/plugins.cfg
+etc/ember/resources.cfg
+etc/ember/terrain.cfg
+share/applications/ember.desktop
+share/games/ember/carpenter/blockspec/adapters.blockspec.xml
+share/games/ember/carpenter/blockspec/fences.blockspec.xml
+share/games/ember/carpenter/blockspec/floors.blockspec.xml
+share/games/ember/carpenter/blockspec/roofs.blockspec.xml
+share/games/ember/carpenter/blockspec/slopewalls.blockspec.xml
+share/games/ember/carpenter/blockspec/walls.blockspec.xml
+share/games/ember/carpenter/blueprints/empty.blueprint.xml
+share/games/ember/carpenter/blueprints/house.blueprint.xml
+share/games/ember/carpenter/blueprints/sty.blueprint.xml
+share/games/ember/carpenter/modelblockspecs/general.modelblocks.xml
+share/games/ember/jesus/modelmappings/general.modelmapping.xml
+share/games/ember/media/gui/Font.xsd
+share/games/ember/media/gui/GUILayout.xsd
+share/games/ember/media/gui/GUIScheme.xsd
+share/games/ember/media/gui/Imageset.xsd
+share/games/ember/media/gui/cegui/datafiles/fonts/Font.xsd
+share/games/ember/media/gui/cegui/datafiles/fonts/tahoma-10.xml
+share/games/ember/media/gui/cegui/datafiles/fonts/tahoma-14.xml
+share/games/ember/media/gui/cegui/datafiles/fonts/tahoma-8.xml
+share/games/ember/media/gui/cegui/datafiles/fonts/tahoma.ttf
+share/games/ember/media/gui/cegui/datafiles/imagesets/Imageset.xsd
+share/games/ember/media/gui/cegui/datafiles/imagesets/TaharezLook.imageset
+share/games/ember/media/gui/cegui/datafiles/imagesets/TaharezLookMouse.imageset
+share/games/ember/media/gui/cegui/datafiles/imagesets/WindowsLook.imageset
+share/games/ember/media/gui/cegui/datafiles/imagesets/iconset_mason.imageset
+share/games/ember/media/gui/cegui/datafiles/imagesets/iconset_standard.imageset
+share/games/ember/media/gui/cegui/datafiles/layouts/GUILayout.xsd
+share/games/ember/media/gui/cegui/datafiles/schemes/GUIScheme.xsd
+share/games/ember/media/gui/cegui/datafiles/schemes/TaharezLook.scheme
+share/games/ember/media/gui/cegui/datafiles/schemes/TaharezLookWidgetAliases.scheme
+share/games/ember/media/gui/cegui/datafiles/schemes/TaharezLookWidgets.scheme
+share/games/ember/media/gui/cegui/datafiles/schemes/WindowsLook.scheme
+share/games/ember/media/gui/cegui/datafiles/schemes/WindowsLookWidgets.scheme
+share/games/ember/media/gui/cegui/widgets/ChatWidget.xml
+share/games/ember/media/gui/cegui/widgets/ConsoleWidget.xml
+share/games/ember/media/gui/cegui/widgets/DebugWidget.xml
+share/games/ember/media/gui/cegui/widgets/EntityEditWidget.xml
+share/games/ember/media/gui/cegui/widgets/GiveWidget.xml
+share/games/ember/media/gui/cegui/widgets/HelpWidget.xml
+share/games/ember/media/gui/cegui/widgets/IngameChatWidget.xml
+share/games/ember/media/gui/cegui/widgets/InspectWidget.xml
+share/games/ember/media/gui/cegui/widgets/InventoryWidget.xml
+share/games/ember/media/gui/cegui/widgets/JesusEdit.widget
+share/games/ember/media/gui/cegui/widgets/JesusEditFile.widget
+share/games/ember/media/gui/cegui/widgets/JesusEditPreview.widget
+share/games/ember/media/gui/cegui/widgets/MakeEntityWidget.xml
+share/games/ember/media/gui/cegui/widgets/MeshPreview.widget
+share/games/ember/media/gui/cegui/widgets/Performance.widget
+share/games/ember/media/gui/cegui/widgets/Quit.widget
+share/games/ember/media/gui/cegui/widgets/ServerBrowserWidget.xml
+share/games/ember/media/gui/cegui/widgets/ServerWidget.xml
+share/games/ember/media/modeldefinitions/buildingelements.modeldef.xml
+share/games/ember/media/modeldefinitions/characters.modeldef.xml
+share/games/ember/media/modeldefinitions/creatures.modeldef.xml
+share/games/ember/media/modeldefinitions/environment.modeldef.xml
+share/games/ember/media/modeldefinitions/items.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/acorn.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/axe.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/barrel.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/butcher.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/butchershouse.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/campfire.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/chicken.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/cleaver.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/column_3.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/column_fractured_3.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/column_segmented_3.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/crab.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/deer.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/dog.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/fencegate.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/fencepole.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/fencesection.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/fire.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/floor.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/floor_12_stone.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/floor_24_stone.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/floor_3_stone.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/floor_6_stone.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/house3.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/lumber.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/marshall.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/mercenary.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/merchant.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/mushroom_amanita.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/pig.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/roof.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/scythe.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/settler.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/slopewall.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/spade.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/spider.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/squirrel.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/sty.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/table.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/wall.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/wall_1.5.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/wall_3.modeldef.xml
+share/games/ember/media/modeldefinitions/old/done/wall_with_door.modeldef.xml
+share/games/ember/media/modeldefinitions/old/goblin.modeldef.xml
+share/games/ember/media/modeldefinitions/old/obsolete/field.modeldef.xml
+share/games/ember/media/modeldefinitions/old/obsolete/malebuilder.modeldef.xml
+share/games/ember/media/modeldefinitions/old/obsolete/settler_1.modeldef.xml
+share/games/ember/media/modeldefinitions/placeholder.modeldef.xml
+share/games/ember/media/modeldefinitions/trees/dynamic/trees.modeldef.xml
+share/games/ember/media/modeldefinitions/trees/pregenerated/trees.modeldef.xml
+share/icons/worldforge/ember.png
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrm etc/ember
+@dirrm share/games/ember/carpenter/blockspec
+@dirrm share/games/ember/carpenter/blueprints
+@dirrm share/games/ember/carpenter/modelblockspecs
+@dirrm share/games/ember/carpenter
+@dirrm share/games/ember/jesus/modelmappings
+@dirrm share/games/ember/jesus
+@dirrm share/games/ember/media/gui/cegui/datafiles/fonts
+@dirrm share/games/ember/media/gui/cegui/datafiles/imagesets
+@dirrm share/games/ember/media/gui/cegui/datafiles/layouts
+@dirrm share/games/ember/media/gui/cegui/datafiles/schemes
+@dirrm share/games/ember/media/gui/cegui/datafiles
+@dirrm share/games/ember/media/gui/cegui/widgets
+@dirrm share/games/ember/media/gui/cegui
+@dirrm share/games/ember/media/gui
+@dirrm share/games/ember/media/modeldefinitions/old/done
+@dirrm share/games/ember/media/modeldefinitions/old/obsolete
+@dirrm share/games/ember/media/modeldefinitions/old
+@dirrm share/games/ember/media/modeldefinitions/trees/dynamic
+@dirrm share/games/ember/media/modeldefinitions/trees/pregenerated
+@dirrm share/games/ember/media/modeldefinitions/trees
+@dirrm share/games/ember/media/modeldefinitions
+@dirrm share/games/ember/media
+@dirrm share/games/ember
+@dirrm share/games
+@unexec rmdir %D/share/icons/worldforge 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
