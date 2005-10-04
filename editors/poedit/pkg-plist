@@ -31,6 +31,7 @@ share/locale/it/LC_MESSAGES/poedit.mo
 share/locale/ja/LC_MESSAGES/poedit.mo
 share/locale/ka/LC_MESSAGES/poedit.mo
 share/locale/ko/LC_MESSAGES/poedit.mo
+share/locale/ku/LC_MESSAGES/poedit.mo
 share/locale/ky/LC_MESSAGES/poedit.mo
 share/locale/lt/LC_MESSAGES/poedit.mo
 share/locale/lv/LC_MESSAGES/poedit.mo
@@ -51,6 +52,7 @@ share/locale/sr/LC_MESSAGES/poedit.mo
 share/locale/sv_SE/LC_MESSAGES/poedit.mo
 share/locale/ta/LC_MESSAGES/poedit.mo
 share/locale/tr/LC_MESSAGES/poedit.mo
+share/locale/tt/LC_MESSAGES/poedit.mo
 share/locale/uk/LC_MESSAGES/poedit.mo
 share/locale/wa/LC_MESSAGES/poedit.mo
 share/locale/zh_CN/LC_MESSAGES/poedit.mo
@@ -60,12 +62,16 @@ share/locale/zh_TW/LC_MESSAGES/poedit.mo
 %%DATADIR%%/help.zip
 %%DATADIR%%/resources.zip
 @dirrm %%DATADIR%%
+@unexec rmdir %D/share/locale/tt/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/tt 2> /dev/null || true
 @unexec rmdir %D/share/locale/sv_SE/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/sv_SE 2> /dev/null || true
 @unexec rmdir %D/share/locale/sq_AL/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/sq_AL 2> /dev/null || true
 @unexec rmdir %D/share/locale/ky/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/ky 2> /dev/null || true
+@unexec rmdir %D/share/locale/ku/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ku 2> /dev/null || true
 @unexec rmdir %D/share/locale/fur/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/fur 2> /dev/null || true
 @unexec rmdir %D/share/locale/es_PR/LC_MESSAGES 2> /dev/null || true
