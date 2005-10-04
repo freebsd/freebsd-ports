@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tumgreyspf
-PORTVERSION=	1.09
+PORTVERSION=	1.11
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.tummy.com/pub/tummy/tumgreyspf/
 
@@ -58,9 +58,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gentest ${PREFIX}/bin/tumgreyspf-gentest
 	${INSTALL_SCRIPT} ${WRKSRC}/tumgreyspf-stat ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/tumgreyspf.conf ${PREFIX}/etc/tumgreyspf.conf.default
-.	if !exists(${PREFIX}/etc/tumgreyspf.conf)
-		${INSTALL_SCRIPT} ${WRKSRC}/tumgreyspf.conf ${PREFIX}/etc
-.	endif
+.if !exists(${PREFIX}/etc/tumgreyspf.conf)
+	${INSTALL_SCRIPT} ${WRKSRC}/tumgreyspf.conf ${PREFIX}/etc
+.endif
 
 post-install:
 	@${MKDIR} ${DATADIR}
