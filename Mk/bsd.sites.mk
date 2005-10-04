@@ -624,17 +624,13 @@ MASTER_SITE_MYSQL+=	\
 	ftp://mirror.switch.ch/mirror/mysql/Downloads/%SUBDIR%/ \
 	http://mysql.dp.ua/Downloads/%SUBDIR%/ \
 	http://mysql.mirrored.ca/Downloads/%SUBDIR%/ \
-	ftp://mysql.azc.uam.mx/mirrors/mysql/Downloads/%SUBDIR%/ \
 	ftp://mirror.services.wisc.edu/mirrors/mysql/Downloads/%SUBDIR%/ \
 	ftp://ftp.orst.edu/pub/mysql/Downloads/%SUBDIR%/ \
 	http://mysql.mirrors.pair.com/Downloads/%SUBDIR%/ \
-	ftp://mysql.mirror.redwire.net/pub/mysql/Downloads/%SUBDIR%/ \
 	ftp://mysql.bannerlandia.com.ar/mirrors/mysql/Downloads/%SUBDIR%/ \
-	http://mysql.mesi.com.ar/Downloads/%SUBDIR%/ \
 	ftp://ftp.linorg.usp.br/mysql/Downloads/%SUBDIR%/ \
-	ftp://mirror.cbn.net.id/mysql/Downloads/%SUBDIR%/ \
-	http://www.softagency.co.jp/MySQL/Downloads/%SUBDIR%/ \
-	http://mysql.nctu.edu.tw/Downloads/%SUBDIR%/
+	ftp://ftp.cbn.net.id/mirror/mysql/Downloads/%SUBDIR%/ \
+	http://download.softagency.net/MySQL/Downloads/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_NETBSD)
