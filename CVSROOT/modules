@@ -706,6 +706,7 @@ bigloo		ports/lang/bigloo
 bigsister	ports/net-mgmt/bigsister
 bigyear		ports/deskutils/bigyear
 bihar		ports/math/bihar
+biloba		ports/games/biloba
 bin86		ports/devel/bin86
 bincimap	ports/mail/bincimap
 bind8		ports/dns/bind8
