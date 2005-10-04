@@ -1,4 +1,4 @@
-lib/libmercator-0.2.a
+lib/libmercator-0.2.la
 lib/libmercator-0.2.so
 lib/libmercator-0.2.so.4
 include/Mercator-0.2/Mercator/Mercator.h

@@ -17,7 +17,8 @@ COMMENT=	A procedural terrain library
 LIB_DEPENDS=	wfmath-0.3.3:${PORTSDIR}/math/wfmath
 
 USE_GNOME=	pkgconfig
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15:inc
+USE_GCC=	3.4
 INSTALLS_SHLIB=	yes
 
 CXXFLAGS+=	-include wchar.h
