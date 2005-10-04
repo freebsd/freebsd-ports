@@ -125,7 +125,7 @@ POSTFIX_AUXLIBS+=	-lkrb5 -lcrypto -lcrypt -lcom_err -lasn1 -lroken
 .if defined(WITH_TLS)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 POSTFIX_CCARGS+=	-DUSE_TLS -I${OPENSSLINC}
-POSTFIX_AUXLIBS+=	-L${OPENSSLLIB} -lssl -lcrypto
+POSTFIX_AUXLIBS+=	-L${OPENSSLLIB} ${LDFLAGS} -lssl -lcrypto
 .endif
 
 .if defined(WITH_DB3)
