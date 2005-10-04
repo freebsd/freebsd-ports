@@ -1,0 +1,26 @@
+%%CURSES%%bin/pmars-curses
+%%SERVER%%bin/pmars-server
+%%X11%%bin/pmars-x11
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/config/94x.opt
+%%PORTDOCS%%%%DOCSDIR%%/config/icws.opt
+%%PORTDOCS%%%%DOCSDIR%%/config/mw.mac
+%%PORTDOCS%%%%DOCSDIR%%/config/pmars.mac
+%%PORTDOCS%%%%DOCSDIR%%/config/x.opt
+%%PORTDOCS%%%%DOCSDIR%%/doc/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/doc/corewar-faq.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/makedoc.ex
+%%PORTDOCS%%%%DOCSDIR%%/doc/pmars.6
+%%PORTDOCS%%%%DOCSDIR%%/doc/primer.94
+%%PORTDOCS%%%%DOCSDIR%%/doc/primer.cdb
+%%PORTDOCS%%%%DOCSDIR%%/doc/redcode.ref
+%%PORTDOCS%%%%DOCSDIR%%/doc/whatsnew.080
+%%PORTDOCS%%%%DOCSDIR%%/warriors/aeka.red
+%%PORTDOCS%%%%DOCSDIR%%/warriors/flashpaper.red
+%%PORTDOCS%%%%DOCSDIR%%/warriors/pspace.red
+%%PORTDOCS%%%%DOCSDIR%%/warriors/rave.red
+%%PORTDOCS%%%%DOCSDIR%%/warriors/validate.red
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/warriors
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/config
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
