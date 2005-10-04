@@ -9,4 +9,5 @@
 # Style (sorted from east to west): sort -n -r -k 2
 # Lat,		Long,		"name"	opt			# location
 
+ 60.2830,       24.4000,        "jau"                           # Veikkola, Kirkkonummi, Finland
  39.536,        -76.349         "erik@smluc.org"                # Bel Air, MD, USA
