@@ -16,63 +16,23 @@ COMMENT=	A portable corewar system with ICWS'94 extensions
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-OPTIONS=	SERVER "Use the command-line interface" on \
-		CURSES "Use the console (graphical) interface" off \
-		X11 "Use the X11 (graphical) interface" off \
+OPTIONS=	CURSES "Build the console (graphical) interface" on \
 		ICWS94 "Enable ICWS'94 support" on \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
 		PERMUTATE "Enable the -P switch" on \
-		SMALLMEM "Use 16-bit addresses (smaller)" off
+		SERVER "Build the command-line interface" on \
+		SMALLMEM "Use 16-bit addresses (smaller)" off \
+		X11 "Build the X11 (graphical) interface" on
 
 MAKE_ARGS+=	CFLAGS+="${CFLAGS}" \
 		CFLAGS+="-fno-builtin"
 
-PLIST_FILES=	bin/${PORTNAME}${PKGNAMESUFFIX}
-
-EXTRACT_COOKIE=	${WRKDIR}/.extract_done.${PORTNAME}.${PREFIX:S/\//_/g}
-CONFIGURE_COOKIE=${WRKDIR}/.configure_done.${PORTNAME}.${PREFIX:S/\//_/g}
-INSTALL_COOKIE=	${WRKDIR}/.install_done.${PORTNAME}.${PREFIX:S/\//_/g}
-BUILD_COOKIE=	${WRKDIR}/.build_done.${PORTNAME}.${PREFIX:S/\//_/g}
-PATCH_COOKIE=	${WRKDIR}/.patch_done.${PORTNAME}.${PREFIX:S/\//_/g}
-PACKAGE_COOKIE=	${WRKDIR}/.package_done.${PORTNAME}.${PREFIX:S/\//_/g}
-
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
-		${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
+MAN6=		pmars.6
 
 .include <bsd.port.pre.mk>
 
-# Interfaces (possibly conflictive options)
-INTERFACES=	SERVER CURSES X11
-
-# Check for conflictive options
-.for f in ${INTERFACES}
-.	if defined(WITH_${f})
-. 		if defined(INTERFACE_SET)
-INTERFACE_DUP=	yes
-.		else
-INTERFACE_SET=	yes
-.		endif
-.	endif
-.endfor
-
-# Add options that conflict to a variable
-.if defined(INTERFACE_DUP)
-.	for f in ${INTERFACES}
-.		if defined(WITH_${f})
-CONFOPTS+=	${f}
-.		endif
-.	endfor
-.endif
-
-# Ask the user to remove conflicting options
-.if defined(CONFOPTS)
-IGNORE=		Conflicting options: ${CONFOPTS}
-.endif
-
-# Use default interface if not set
-.if !defined(INTERFACE_SET)
-WITH_SERVER=	yes
+.if !defined(WITH_CURSES) && !defined(WITH_SERVER) && !defined(WITH_X11)
+IGNORE=		Please select at least one interface
 .endif
 
 .if defined(WITH_ICWS94)
@@ -91,21 +51,51 @@ MAKE_ARGS+=	CFLAGS+="-DPERMUTATE"
 MAKE_ARGS+=	CFLAGS+="-DSMALLMEM"
 .endif
 
-.if defined(WITH_SERVER)
-PKGNAMESUFFIX=	-server
-MAKE_ARGS+=	CFLAGS+="-DSERVER"
-
-.elif defined(WITH_CURSES)
-PKGNAMESUFFIX=	-curses
-MAKE_ARGS+=	CFLAGS+="-DGRAPHX" \
+.if defined(WITH_CURSES)
+TARGETS+=	curses
+CURSES_ARGS+=	CFLAGS+="-DGRAPHX" \
 		LIB+="-lcurses"
+PLIST_SUB+=	CURSES=""
+.else
+PLIST_SUB+=	CURSES="@comment "
+.endif
 
-.elif defined(WITH_X11)
-PKGNAMESUFFIX=	-x11
+.if defined(WITH_SERVER)
+TARGETS+=	server
+SERVER_ARGS+=	CFLAGS+="-DSERVER"
+PLIST_SUB+=	SERVER=""
+.else
+PLIST_SUB+=	SERVER="@comment "
+.endif
+
+.if defined(WITH_X11)
 USE_XLIB=	yes
-MAKE_ARGS+=	CFLAGS+="-DXWINGRAPHX" \
+TARGETS+=	x11
+X11_ARGS+=	CFLAGS+="-DXWINGRAPHX" \
 		CFLAGS+="-I${X11BASE}/include" \
 		LIB+="-L${X11BASE}/lib -lX11"
+PLIST_SUB+=	X11=""
+.else
+PLIST_SUB+=	X11="@comment "
+.endif
+
+do-build:
+.for f in ${TARGETS}
+	@(cd ${BUILD_WRKSRC}; ${MAKE} ${MAKE_ARGS} ${${f:U}_ARGS} \
+		${ALL_TARGET} clean)
+	@(cd ${BUILD_WRKSRC}; ${MV} ${PORTNAME} ${PORTNAME}-${f})
+.endfor
+
+do-install:
+.for f in ${TARGETS}
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-${f} ${PREFIX}/bin
+.endfor
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.   for f in README config doc warriors
+	@${CP} -R ${WRKSRC}/../${f} ${DOCSDIR}
+.   endfor
+	@${INSTALL_MAN} ${WRKSRC}/../doc/pmars.6 ${PREFIX}/man/man6
 .endif
 
 .include <bsd.port.post.mk>
