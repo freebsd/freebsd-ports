@@ -110,6 +110,7 @@
     SUBDIR += cursive
     SUBDIR += d2x
     SUBDIR += daimonin-client
+    SUBDIR += darkplaces
     SUBDIR += deal
     SUBDIR += defendguin
     SUBDIR += deng

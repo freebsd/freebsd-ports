@@ -1,0 +1,18 @@
+Dark Places is a Quake modification I have built over the course of 6 years on
+and off experimenting, it got somewhat of an overhaul when the Quake engine
+source code was released, and I began developing a custom OpenGL-only engine
+for it and other mods, which supports Windows WGL and Linux GLX, and has
+greatly improved graphics and image quality.
+
+It can not easily be described, as it is simply an improved Quake, not a total
+conversion (yet, anyway).
+
+The realism of shell casings falling to the floor, much improved bullet
+impacts, 32bit color alpha blended explosions, blood flying everywhere and
+sticking to the walls...
+
+Behind the scenes the code has changed a great deal, I was not content with
+the original QuakeC code, and I have greatly changed the engine while
+maintaining compatibility with normal quake modifications.
+
+WWW: http://icculus.org/twilight/darkplaces/
