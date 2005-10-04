@@ -1,5 +1,5 @@
---- rinetd.c.bkp	Mon Apr 14 22:19:23 2003
-+++ rinetd.c	Fri Sep 30 16:03:34 2005
+--- rinetd.c.orig	Mon Apr 14 22:19:23 2003
++++ rinetd.c	Tue Oct  4 07:25:42 2005
 @@ -12,6 +12,7 @@
  #include <netinet/in.h>
  #include <getopt.h>
@@ -8,7 +8,15 @@
  #define INVALID_SOCKET (-1)
  #include <sys/time.h>
  #endif /* WIN32 */
-@@ -750,15 +751,62 @@
+@@ -94,6 +95,7 @@
+ #include "match.h"
+ 
+ SOCKET *seFds = 0;
++static int first_set = 0;
+ /* In network order, for network purposes */
+ struct in_addr *seLocalAddrs = 0;
+ unsigned short *seLocalPorts = 0;
+@@ -750,15 +752,82 @@
  void openLocalFd(int se, int i);
  int getAddress(char *host, struct in_addr *iaddr);
  
@@ -16,19 +24,36 @@
 +	int i;
 +
 +	memset(pfds, 0, sizeof(struct pollfd) * size);
++	first_set = 1;
 +	for(i = 0; i < size; i++) 
 +		pfds[i].fd = -1;
 +}
 +
-+void poll_set_fd(struct pollfd *pfds, int size, int *count, 
++inline int poll_set_fd(struct pollfd *pfds, int size, int count, 
 +		 int fd, short int ev) {
-+	int i;
++#ifdef _NEW_POLL_SET_FD
++	if(first_set) {
++		pfds[count].fd = fd;
++		pfds[count].events |= ev;
++		first_set = 0;
++		return 0;
++	}
++	if(pfds[count].fd != fd && !first_set) {
++		count++;
++	}
 +
++	pfds[count].fd = fd;
++	pfds[count].events |= ev;
++	
++	return count;
++#else
++	int i;
++	
 +	for(i = 0; i < size; i++) {
 +		if(pfds[i].fd == -1) {
 +			pfds[i].fd = fd;
 +			pfds[i].events |= ev;
-+			*count++;
++			count++;
 +			break;
 +		}
 +		if(pfds[i].fd == fd) {
@@ -36,6 +61,9 @@
 +			break;
 +		}
 +	}
++
++	return count;
++#endif
 +}
 +
 +int poll_fd_isset(struct pollfd *pfds, int nfds, int fd, short event) {
@@ -71,56 +99,60 @@
  		if (seFds[i] != INVALID_SOCKET) {
 -			FD_SET(seFds[i], &readfds);
 +			//FD_SET(seFds[i], &readfds)
-+			poll_set_fd(pfds, total, &nfds, seFds[i], POLLIN);
++			nfds = poll_set_fd(pfds, total, nfds, seFds[i], POLLIN);
  		}
  	}
  	/* Connection sockets */
-@@ -768,35 +816,45 @@
+@@ -768,35 +837,47 @@
  		}
  		if (coClosing[i]) {
  			if (!reClosed[i]) {
 -				FD_SET(reFds[i], &writefds);
-+				//FD_SET(reFds[i], &writefds);
-+				poll_set_fd(pfds, total, &nfds, 
-+					    reFds[i], POLLOUT);
- 			}	
- 			if (!loClosed[i]) {
+-			}	
+-			if (!loClosed[i]) {
 -				FD_SET(loFds[i], &writefds);
-+				//FD_SET(loFds[i], &writefds);
-+				poll_set_fd(pfds, total, &nfds,
-+					    loFds[i], POLLOUT);
++				//FD_SET(reFds[i], &writefds);
++				nfds = poll_set_fd(pfds, total, nfds, 
++					    reFds[i], POLLOUT);
  			}	
  		}
  		/* Get more input if we have room for it */
  		if ((!reClosed[i]) && (coInputRPos[i] < bufferSpace)) {
 -			FD_SET(reFds[i], &readfds);
 +			//FD_SET(reFds[i], &readfds);
-+			poll_set_fd(pfds, total, &nfds, reFds[i], POLLIN);
++			nfds = poll_set_fd(pfds, total, nfds, reFds[i], POLLIN);
  		}
  		/* Send more output if we have any */	
  		if ((!reClosed[i]) && (coOutputWPos[i] < coOutputRPos[i])) {
 -			FD_SET(reFds[i], &writefds);
 +			//FD_SET(reFds[i], &writefds);
-+			poll_set_fd(pfds, total, &nfds, reFds[i], POLLOUT);
++			nfds = poll_set_fd(pfds, total, nfds, reFds[i], POLLOUT);
  		}	
++		if (coClosing[i]) {
++			if (!loClosed[i]) {
++				//FD_SET(loFds[i], &writefds);
++				nfds = poll_set_fd(pfds, total, nfds,
++					    loFds[i], POLLOUT);
++			}
++		}
  		/* Accept more output from the local 
  			server if there's room */
  		if ((!loClosed[i]) && (coOutputRPos[i] < bufferSpace)) {
 -			FD_SET(loFds[i], &readfds);
 +			//FD_SET(loFds[i], &readfds);
-+			 poll_set_fd(pfds, total, &nfds, loFds[i], POLLIN);
++			 nfds = poll_set_fd(pfds, total, nfds, loFds[i], POLLIN);
  		}
  		/* Send more input to the local server 
  			if we have any */
  		if ((!loClosed[i]) && (coInputWPos[i] < coInputRPos[i])) {
 -			FD_SET(loFds[i], &writefds);
 +			//FD_SET(loFds[i], &writefds);
-+			poll_set_fd(pfds, total, &nfds, loFds[i], POLLOUT);
++			nfds = poll_set_fd(pfds, total, nfds, loFds[i], POLLOUT);
  		}	
  	}
 -	select(maxfd + 1, &readfds, &writefds, 0, 0);
 +	//select(maxfd + 1, &readfds, &writefds, 0, 0);
-+	poll(pfds, nfds, 0);
++	poll(pfds, nfds + 1, -1);
  	for (i = 0; (i < seTotal); i++) {
  		if (seFds[i] != -1) {
 -			if (FD_ISSET(seFds[i], &readfds)) {
@@ -129,7 +161,7 @@
  				handleAccept(i);
  			}
  		}
-@@ -806,22 +864,26 @@
+@@ -806,22 +887,26 @@
  			continue;
  		}
  		if (!reClosed[i]) {
