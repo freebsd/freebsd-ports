@@ -1,0 +1,7 @@
+The Portlet API (JSR-168)
+
+To enable interoperability between Portlets and Portals, this specification
+defines a set of APIs for Portal computing addressing the areas of aggregation,
+personalization, presentation and security.
+
+WWW: http://www.jcp.org/en/jsr/detail?id=168/
