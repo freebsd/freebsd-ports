@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix27/scripts/Attic/configure.postfix,v 1.65 2005-09-11 21:42:42 vsevolod Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix27/scripts/Attic/configure.postfix,v 1.66 2005-10-04 15:13:47 mnag Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -116,7 +116,7 @@ while [ "$1" ]; do
 		TLS)
 			echo "USE_OPENSSL=	yes"
 			echo "POSTFIX_CCARGS+=	-DUSE_TLS -I\${OPENSSLINC}"
-			echo "POSTFIX_AUXLIBS+=	-L\${OPENSSLLIB} -lssl -lcrypto"
+			echo "POSTFIX_AUXLIBS+=	-L\${OPENSSLLIB} \${LDFLAGS} -lssl -lcrypto"
 			echo "TLS_SUFFIX=	+tls"
 			;;
 		DB3)
