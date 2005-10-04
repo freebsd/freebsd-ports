@@ -688,7 +688,6 @@ MASTER_SITE_NETSCAPE+= \
 .if !defined(IGNORE_MASTER_SITE_OSSP)
 MASTER_SITE_OSSP+= \
 	ftp://ftp.ossp.org/pkg/%SUBDIR%/ \
-	http://public.planetmirror.com/pub/ossp/pkg/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/utils/ossp/%SUBDIR%/
 .endif
 
