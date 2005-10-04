@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcdio
-PORTVERSION=	0.75
-PORTREVISION=	1
+PORTVERSION=	0.76
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libcdio
@@ -23,8 +22,8 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS+=	--with-libpopt-prefix=${LOCALBASE} \
-		--with-libiconv-prefix=${LOCALBASE} \
-		--without-cd-paranoia
+			--with-libiconv-prefix=${LOCALBASE} \
+			--without-cd-paranoia
 USE_REINPLACE=	yes
 USE_PERL5_BUILD=yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -liconv"
