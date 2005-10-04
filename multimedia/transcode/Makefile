@@ -7,6 +7,7 @@
 
 PORTNAME=	transcode
 DISTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dl.fkb.wormulon.net/transcode/ \
 		http://dl.kel.wormulon.net/transcode/ \
@@ -183,7 +184,7 @@ PLIST_SUB+=	WITH_JPEGMMX="@comment "
 .endif
 
 .if defined(WITH_MJPEG)
-LIB_DEPENDS+=	lavjpeg-1.6.3:${PORTSDIR}/multimedia/mjpegtools
+LIB_DEPENDS+=	lavjpeg-1.8.0:${PORTSDIR}/multimedia/mjpegtools
 CONFIGURE_ARGS+=	--enable-mjpegtools
 PLIST_SUB+=	WITH_MJPEG=""
 .else
