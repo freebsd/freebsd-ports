@@ -767,10 +767,8 @@ MASTER_SITE_PGSQL+= \
 	ftp://ftp.eu.postgresql.org/pub/unix/db/postgresql/%SUBDIR%/ \
 	ftp://ftp2.nl.postgresql.org/mirror/postgresql/%SUBDIR%/ \
 	ftp://ftp4.nl.postgresql.org/postgresql.zeelandnet.nl/%SUBDIR%/ \
-	ftp://ftp.no.postgresql.org/pub/databases/postgresql/%SUBDIR%/ \
 	ftp://ftp6.pl.postgresql.org/pub/postgresql/%SUBDIR%/ \
 	ftp://ftp7.pl.postgresql.org/pub/mirror/ftp.postgresql.org/%SUBDIR%/ \
-	ftp://ftp.pt.postgresql.org/postgresql/%SUBDIR%/ \
 	ftp://ftp6.ro.postgresql.org/pub/mirrors/ftp.postgresql.org/%SUBDIR%/ \
 	ftp://ftp.ru.postgresql.org/pub/unix/database/pgsql/%SUBDIR%/ \
 	ftp://ftp2.ru.postgresql.org/pub/databases/postgresql/%SUBDIR%/ \
@@ -1109,12 +1107,12 @@ MASTER_SITE_SUSE+= 	\
 
 .if !defined(IGNORE_MASTER_SITE_TCLTK)
 MASTER_SITE_TCLTK+= \
-	ftp://ftp.scriptics.com/pub/tcl/%SUBDIR%/ \
+	ftp://ftp.tcl.tk/pub/tcl/%SUBDIR%/ \
 	ftp://sunsite.utk.edu/pub/tcl/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/languages/tcl/tcl/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/lang/tcl/ftp.scriptics.com/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.tcl.tk/pub/tcl/%SUBDIR%/ \
-	ftp://sunsite.org.uk/Mirrors/ftp.scriptics.com/pub/tcl/%SUBDIR%/
+	ftp://sunsite.org.uk/sites/ftp.scriptics.com/pub/tcl/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_TEX_CTAN)
