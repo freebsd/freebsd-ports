@@ -1309,6 +1309,7 @@
     SUBDIR += pmk
     SUBDIR += popt
     SUBDIR += portcheckout
+    SUBDIR += portlet-api
     SUBDIR += portlint
     SUBDIR += portmk
     SUBDIR += porttools
