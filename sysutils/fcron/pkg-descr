@@ -8,4 +8,6 @@ one command at a given date and hour and to make it run a command
 according to its time of execution, which is normally the same as
 system up time. 
 
+This is the stable release.
+
 WWW: http://fcron.free.fr/

@@ -1,0 +1,21 @@
+#!/bin/sh
+if [ "$2" = DEINSTALL ]; then
+	echo "==============================================================================="
+	echo "If you are permanently removing this port:"
+	echo ""
+	echo "- You should manually remove the fcron user and group."
+
+	/bin/rmdir /var/spool/fcron 2>/dev/null
+	if [ -d /var/spool/fcron ]; then
+		echo "- You should manually remove the /var/spool/fcron directory."
+	fi
+
+	for f in fcron.allow fcron.conf fcron.deny; do
+		if /usr/bin/cmp -s $PKG_PREFIX/etc/$f $PKG_PREFIX/etc/$f.dist; then
+			/bin/rm -f $PKG_PREFIX/etc/$f
+		else
+			echo "- You should manually remove the $PKG_PREFIX/etc/$f file."
+		fi
+	done
+	echo "==============================================================================="
+fi

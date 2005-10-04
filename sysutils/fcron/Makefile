@@ -7,48 +7,60 @@
 #
 
 PORTNAME=	fcron
-PORTVERSION=	2.1.0
+PORTVERSION=	3.0.0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://fcron.free.fr/
 MASTER_SITE_SUBDIR=	system/daemons/cron
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Fcron is a periodical command scheduler
+MAINTAINER=	huntting@glarp.com
+COMMENT=	A periodic command scheduler
 
-NO_PACKAGE=	"Runaway package build"
-
-USE_AUTOCONF_VER=	213
-USE_PERL5=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_PERL5_BUILD=	yes
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}" \
 		--with-rootname=root --with-rootgroup=wheel \
-		--with-answer-all=yes
+		--with-docdir=${DOCSDIR}
 
+WRKSRC=		${WRKDIR}/fcron-${PORTVERSION}
+
+USE_RC_SUBR=	fcron
+SUB_FILES=	pkg-message
+
+MAN1=		fcrondyn.1 fcrontab.1
+MAN3=		bitstring.3
+MAN5=		fcron.conf.5 fcrontab.5
+MAN8=		fcron.8
+
+PORTDOCS=	*
+
+pre-su-install:
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/fcron ${PREFIX}/sbin
+	${INSTALL_PROGRAM} -g fcron -o fcron -m 6111 ${WRKSRC}/fcrontab ${PREFIX}/bin
+	${INSTALL_PROGRAM} -g fcron -m 4110 ${WRKSRC}/fcronsighup ${PREFIX}/bin
+	${INSTALL_PROGRAM} -g fcron -o fcron -m 6111 ${WRKSRC}/fcrondyn ${PREFIX}/bin
+.for f in fcron.allow fcron.conf fcron.deny
+	${INSTALL_DATA} -g fcron -m 640 ${WRKSRC}/files/${f} ${PREFIX}/etc/${f}.dist
+.endfor
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/fcrontab-* ${WRKSRC}/files/*.pam ${EXAMPLESDIR}
+.for n in 1 3 5 8
+	${INSTALL_MAN} ${MAN${n}:S|^|${WRKSRC}/doc/man/|} ${PREFIX}/man/man${n}
+.endfor
 .if !defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR}
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+.  for d in txt HTML
+	${MKDIR} ${DOCSDIR}/${d}
+	${INSTALL_DATA} ${WRKSRC}/doc/${d}/* ${DOCSDIR}/${d}
+.  endfor
 .endif
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-MAN1=	fcrontab.1
-MAN3=	bitstring.3
-MAN5=	fcrontab.5 fcron.conf.5
-MAN8=	fcron.8
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/FAQ ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/files/fcron.pam ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/files/fcrontab.pam ${DOCSDIR}
-.endif
-.for i in allow deny conf
-.if !exists(${PREFIX}/etc/fcron.$i)
-	@${CP} -p ${PREFIX}/etc/fcron.$i.dist ${PREFIX}/etc/fcron.$i
-.endif
-.endfor
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

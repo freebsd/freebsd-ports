@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: fcron
+# REQUIRE: LOGIN
+# BEFORE: securelevel
+# KEYWORD: shutdown
+
+. %%RC_SUBR%%
+
+name="fcron"
+rcvar="`set_rcvar`"
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+
+load_rc_config $name
+run_rc_command "$1"
