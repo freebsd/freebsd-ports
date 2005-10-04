@@ -19,6 +19,10 @@ RESTRICTED=	"Must fill out redistribution form at http://www.adobe.com/products/
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	View, distribute and print PDF documents
 
+FORBIDDEN=	"outdated and has multiple security bugs; use version 7 instead"
+DEPRECATED=	${FORBIDDEN}
+EXPIRATION_DATE= 2006-01-03
+
 CONFLICTS=	acroread7
 
 ONLY_FOR_ARCHS=	amd64 i386
