@@ -1,0 +1,28 @@
+--- Makefile.orig	Sat May  7 05:50:48 2005
++++ Makefile	Sun Aug  7 16:56:09 2005
+@@ -7,12 +7,11 @@
+ #
+ 
+ INSTALL_DIR=/usr/local/share
+-INSTALL_BIN_DIR=/usr/local/bin
++INSTALL_BIN_DIR=%%PREFIX%%/bin
+ 
+-CXX = g++
+-CXXFLAGS = $(shell sdl-config --cflags) -O3
++CXXFLAGS = %%CFLAGS%% $(shell sdl-config --cflags) $(shell freetype-config --cflags) -O3
+ DEFINES = -D__linux__
+-LDFLAGS = $(shell sdl-config --libs) -lSDL_image -lSDL_mixer -lSDL_gfx -lboost_filesystem
++LDFLAGS = $(shell sdl-config --libs) $(shell freetype-config --libs) -lSDL_image -lSDL_mixer -lSDL_gfx -lboost_filesystem
+ 
+ OBJS = AIInterpreter.o AutoFireUnit.o BCCompiler.o DerivedGroups.o DragWindow.o \
+ 	ForceSelect.o ForceSelectWin.o GenWindow.o GenWindow_Base.o Globals.o \
+@@ -37,8 +36,7 @@
+ 
+ .PHONY: install
+ install: $(TARGET)
+-	install -d $(INSTALL_BIN_DIR)
+-	install $(TARGET) $(INSTALL_BIN_DIR)
++	$(BSD_INSTALL_PROGRAM) $(TARGET) $(INSTALL_BIN_DIR)
+ 
+ $(TARGET): $(OBJS)
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $^

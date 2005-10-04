@@ -174,6 +174,7 @@
     SUBDIR += frozenbubble
     SUBDIR += fuhquake
     SUBDIR += galaxis
+    SUBDIR += galaxyhack
     SUBDIR += garith
     SUBDIR += gbottler
     SUBDIR += gcompris2
