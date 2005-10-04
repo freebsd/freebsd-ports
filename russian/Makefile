@@ -8,7 +8,6 @@
     SUBDIR += apache13-modssl
     SUBDIR += artwiz-ru
     SUBDIR += aspell
-    SUBDIR += bogofilter
     SUBDIR += cyrproxy
     SUBDIR += d1489
     SUBDIR += elm.language
