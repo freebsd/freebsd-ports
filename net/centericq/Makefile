@@ -34,6 +34,7 @@ OPTIONS=	NLS		"Native Language Support" on \
 		AIM		"Support for AOL's Instant Messenger Protocol" off \
 		IRC		"Support for IRC Protocol" off \
 		JABBER		"Support for Jabber Protocol" off \
+		GPGME		"Support for PGP encrypted Jabber messages" on \
 		RSS		"Support for RSS" off \
 		LJ		"Support for LiveJournal" off \
 		GG		"Support for Gadu-Gadu Protocol" off
@@ -81,6 +82,13 @@ CONFIGURE_ARGS+=	--disable-irc
 
 .if !defined(WITH_JABBER)
 CONFIGURE_ARGS+=	--disable-jabber
+.else
+.if !defined(WITH_GPGME)
+CONFIGURE_ARGS+=	--without-gpgme
+.else
+LIB_DEPENDS+=		gpgme.14:${PORTSDIR}/security/gpgme
+CONFIGURE_ARGS+=	--with-gpgme=${LOCALBASE}
+.endif
 .endif
 
 .if !defined(WITH_RSS)
