@@ -2,6 +2,7 @@
 %%SITE_PERL%%/HTML/Template/Compiled.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Plugin/DHTML.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Utils.pm
+%%SITE_PERL%%/HTML/Template/Compiled/Filter.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Compiled/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Compiled
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template 2>/dev/null || true

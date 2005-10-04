@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Template-Compiled
-PORTVERSION=	0.43
+PORTVERSION=	0.52
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -24,7 +24,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		HTML::Template::Compiled.3
+MAN3=		HTML::Template::Compiled.3 \
+		HTML::Template::Compiled::Filter.3 \
+		HTML::Template::Compiled::Utils.3
 
 .include <bsd.port.pre.mk>
 
@@ -34,6 +36,7 @@ post-patch:
 		-e '$$_ = "" if /(no|use) warnings/;' \
 		${WRKSRC}/lib/HTML/Template/Compiled.pm \
 		${WRKSRC}/lib/HTML/Template/Compiled/Utils.pm \
+		${WRKSRC}/lib/HTML/Template/Compiled/Filter.pm \
 		${WRKSRC}/lib/HTML/Template/Compiled/Plugin/DHTML.pm
 .endif
 
