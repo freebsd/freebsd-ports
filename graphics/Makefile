@@ -69,6 +69,7 @@
     SUBDIR += digikam
     SUBDIR += digikam-doc
     SUBDIR += digikamimageplugins
+    SUBDIR += digikamimageplugins-doc
     SUBDIR += divxcalc
     SUBDIR += djvulibre
     SUBDIR += djvulibre-nox11
