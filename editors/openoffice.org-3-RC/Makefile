@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	openoffice.org
-PORTVERSION=	2.0.beta2
+PORTVERSION=	2.0.RC1
 CATEGORIES+=	editors
-MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/rc/2.0beta2rc/&,}  \
+MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
+		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_MOZILLA:S,%SUBDIR%,mozilla/releases/mozilla${MOZILLA_VERSION}/&,}source/:mozsrc
-DISTFILES+=	OOo_2.0beta2_src.tar.gz gpc231.tar.Z:gpc
-EXTRACT_ONLY=	OOo_2.0beta2_src.tar.gz
+DISTFILES+=	OOo_2.0RC1_source.tar.bz2 gpc231.tar.Z:gpc
+EXTRACT_ONLY=	OOo_2.0RC1_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(developer version)
@@ -30,6 +31,7 @@ USE_GNOME+=	libidl
 USE_KDELIBS_VER=        3
 .endif
 USE_XLIB=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
@@ -114,7 +116,7 @@ LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 .endif
 
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/OOo_2.0beta2
+WRKSRC=		${WRKDIR}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 ANT?=		${LOCALBASE}/bin/ant
 ZIP?=		${PREFIX}/bin/zip

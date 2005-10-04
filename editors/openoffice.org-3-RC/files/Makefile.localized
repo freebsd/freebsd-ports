@@ -56,6 +56,10 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
+.if ${LOCALIZED_LANG} == "en-US"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
 .if ${LOCALIZED_LANG} == "eo"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
@@ -78,6 +82,10 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 ################################################################
 .if ${LOCALIZED_LANG} == "fr"
 CATEGORIES+=	french
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ga"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
@@ -138,6 +146,10 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
+.if ${LOCALIZED_LANG} == "ne"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
 .if ${LOCALIZED_LANG} == "nb"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
@@ -147,6 +159,10 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "nn"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "nr"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
@@ -173,7 +189,7 @@ LANG_CONFIGURE_ARG=	PORT
 ################################################################
 .if ${LOCALIZED_LANG} == "pt-BR"
 COMMENT=        Editor texto/grBaGico, banco de dados/planilha/navegador integrado
-CATEGORIES+=     portuguese
+CATEGORIES+=	portuguese
 LANG_PKGNAME=	pt
 LANG_SUFFIX=	BR
 .endif
@@ -184,7 +200,6 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "rw"
-CATEGORIES+=	russian
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
@@ -196,7 +211,27 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
+.if ${LOCALIZED_LANG} == "sh-YU"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "sr-CS"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ss"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "st"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
 .if ${LOCALIZED_LANG} == "sv"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "sw-TZ"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
@@ -208,11 +243,19 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
-#.if ${LOCALIZED_LANG} == "tn"
-#LANG_PKGNAME=	${LOCALIZED_LANG}
-#.endif
+.if ${LOCALIZED_LANG} == "tn"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
 ################################################################
 .if ${LOCALIZED_LANG} == "tr"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ts"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ve"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
