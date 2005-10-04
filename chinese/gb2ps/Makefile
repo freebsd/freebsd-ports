@@ -9,16 +9,16 @@
 PORTNAME=	gb2ps
 PORTVERSION=	2.02
 CATEGORIES=	chinese print
-MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/print/  \
-		ftp://ftp.ifcss.org/pub/software/fonts/gb/misc/  \
-		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/print/  \
-		ftp://ftp.edu.tw/Chinese/ifcss/software/fonts/gb/misc/  \
-		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/print/  \
-		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/fonts/gb/misc/
+MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/print/:sw  \
+		ftp://ftp.ifcss.org/pub/software/fonts/gb/misc/:font  \
+		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/print/:sw  \
+		ftp://ftp.edu.tw/Chinese/ifcss/software/fonts/gb/misc/:font  \
+		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/print/:sw  \
+		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/fonts/gb/misc/:font
 DISTNAME=	gb2ps.2.02
-DISTFILES=	${DISTNAME}.tar.gz  \
-		csong24.ccf.gz ckai24.ccf.gz cfang24.ccf.gz chei24.ccf.gz \
-		cfan24.ccf.gz
+DISTFILES=	${DISTNAME}.tar.gz:sw  \
+		csong24.ccf.gz:font ckai24.ccf.gz:font cfang24.ccf.gz:font \
+		chei24.ccf.gz:font cfan24.ccf.gz:font
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts Chinese GB (simple) encoded text to PostScript
