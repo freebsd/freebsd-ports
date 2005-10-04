@@ -43,7 +43,7 @@ diff -u -r1.5 makefile.mk
 #########################################################################
 Issutracker : #i52984#, #i54178#
 CWS         : N/A
-Reported by : <yury_tarasievich@yahoo.com>
+Author:     : <yury_tarasievich@yahoo.com> <yury_t@openoffice.org> (JCA)
 Description :
 Workaround for FreeBSD4. For rsc/rscpp,  -pthread is ignored although it is
 specifled, so specified twice. it does solve the probem. this is redundant
@@ -57,15 +57,6 @@ retrieving revision 1.17
 diff -u -r1.17 unxfbsdi.mk
 --- solenv/inc/unxfbsdi.mk	18 Aug 2005 12:04:47 -0000	1.17
 +++ solenv/inc/unxfbsdi.mk	3 Sep 2005 11:10:07 -0000
-@@ -72,7 +72,7 @@
- #LINKOUTPUT_FILTER=" |& $(SOLARENV)$/bin$/msg_filter"
- 
- # _PTHREADS is needed for the stl
--CDEFS+=$(PTHREAD_CFLAGS) -DX86 -D_PTHREADS -D_REENTRANT -DNEW_SOLAR -D_USE_NAMESPACE=1 -DSTLPORT_VERSION=400
-+CDEFS+=$(PTHREAD_CFLAGS) -DX86 -D_PTHREADS -D_REENTRANT -DNEW_SOLAR -D_USE_NAMESPACE=1 -DSTLPORT_VERSION=450
- 
- # enable visibility define in "sal/types.h"
- .IF "$(HAVE_GCC_VISIBILITY_FEATURE)" == "TRUE"
 @@ -217,8 +217,10 @@
  
  LIBSALCPPRT*=-Wl,--whole-archive -lsalcpprt -Wl,--no-whole-archive
