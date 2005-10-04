@@ -20,7 +20,8 @@ LIB_DEPENDS=	Atlas-0.6.0:${PORTSDIR}/devel/atlas-devel \
 		wfmath-0.3.3:${PORTSDIR}/math/wfmath \
 		sigc-2.0:${PORTSDIR}/devel/libsigc++20
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15:inc
+USE_GCC=	3.4
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack
 
