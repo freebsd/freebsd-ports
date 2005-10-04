@@ -7,6 +7,7 @@
 
 PORTNAME=	kdesdk
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -15,6 +16,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Software Development Kit
 
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
 		svn_client-1.0:${PORTSDIR}/devel/subversion
 
