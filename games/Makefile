@@ -34,6 +34,7 @@
     SUBDIR += an
     SUBDIR += anagramarama
     SUBDIR += angband
+    SUBDIR += annelid
     SUBDIR += antipolix
     SUBDIR += aop
     SUBDIR += apoolGL
