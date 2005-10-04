@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.openscenegraph.org/downloads/snapshots/
 DISTNAME=	OSG_OP_OT-${PORTVERSION}-2
 
-MAINTAINER=	boris@brooknet.com.au
+MAINTAINER=	rrghphar@bigpond.net.au
 COMMENT=	C++ OpenGL scene graph library for real-time rendering
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libOpenThreads.so:${PORTSDIR}/devel/openthreads \
