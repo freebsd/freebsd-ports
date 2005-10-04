@@ -6563,6 +6563,7 @@ mxico		ports/x11/mxico
 mxp		ports/graphics/mxp
 mybudget	ports/finance/mybudget
 mydns		ports/dns/mydns
+myfaces		ports/www/myfaces
 myghty		ports/www/myghty
 mymoon		ports/astro/mymoon
 myodbc		ports/databases/myodbc
