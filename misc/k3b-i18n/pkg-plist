@@ -60,6 +60,24 @@ share/doc/HTML/nl/k3b/dcop.docbook
 share/doc/HTML/nl/k3b/index.cache.bz2
 share/doc/HTML/nl/k3b/index.docbook
 share/doc/HTML/nl/k3b/video-encoding.docbook
+share/doc/HTML/pl/k3b/audiocd-howto.docbook
+share/doc/HTML/pl/k3b/burndialog_audio.png
+share/doc/HTML/pl/k3b/burndialog_progress.png
+share/doc/HTML/pl/k3b/cdcloning_dialog.png
+share/doc/HTML/pl/k3b/cdcloning_reading.png
+share/doc/HTML/pl/k3b/cdcopy-howto.docbook
+share/doc/HTML/pl/k3b/cdcopy_done.png
+share/doc/HTML/pl/k3b/cdcopy_reading.png
+share/doc/HTML/pl/k3b/cdcopy_settings.png
+share/doc/HTML/pl/k3b/cdcopy_writing.png
+share/doc/HTML/pl/k3b/commands.docbook
+share/doc/HTML/pl/k3b/common
+share/doc/HTML/pl/k3b/dcop.docbook
+share/doc/HTML/pl/k3b/index.cache.bz2
+share/doc/HTML/pl/k3b/index.docbook
+share/doc/HTML/pl/k3b/select_audiofiles.png
+share/doc/HTML/pl/k3b/select_project.png
+share/doc/HTML/pl/k3b/video-encoding.docbook
 share/doc/HTML/pt/k3b/audiocd-howto.docbook
 share/doc/HTML/pt/k3b/cdcopy-howto.docbook
 share/doc/HTML/pt/k3b/commands.docbook
@@ -208,6 +226,10 @@ share/locale/pt_BR/LC_MESSAGES/k3b.mo
 share/locale/pt_BR/LC_MESSAGES/k3bsetup.mo
 share/locale/pt_BR/LC_MESSAGES/libk3b.mo
 share/locale/pt_BR/LC_MESSAGES/libk3bdevice.mo
+share/locale/ro/LC_MESSAGES/k3b.mo
+share/locale/ro/LC_MESSAGES/k3bsetup.mo
+share/locale/ro/LC_MESSAGES/libk3b.mo
+share/locale/ro/LC_MESSAGES/libk3bdevice.mo
 share/locale/ru/LC_MESSAGES/k3b.mo
 share/locale/ru/LC_MESSAGES/k3bsetup.mo
 share/locale/ru/LC_MESSAGES/libk3b.mo
@@ -252,6 +274,8 @@ share/locale/zh_CN/LC_MESSAGES/libk3bdevice.mo
 @unexec rmdir %D/share/locale/sr 2>/dev/null || true
 @unexec rmdir %D/share/locale/sl/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/sl 2>/dev/null || true
+@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ro 2>/dev/null || true
 @unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/pt 2>/dev/null || true
 @unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
@@ -265,25 +289,14 @@ share/locale/zh_CN/LC_MESSAGES/libk3bdevice.mo
 @unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/ca 2>/dev/null || true
 @dirrm share/doc/HTML/sv/k3b
-@unexec rmdir %D/share/doc/HTML/sv 2>/dev/null || true
 @dirrm share/doc/HTML/ru/k3b
-@unexec rmdir %D/share/doc/HTML/ru 2>/dev/null || true
 @dirrm share/doc/HTML/pt_BR/k3b
-@unexec rmdir %D/share/doc/HTML/pt_BR 2>/dev/null || true
 @dirrm share/doc/HTML/pt/k3b
-@unexec rmdir %D/share/doc/HTML/pt 2>/dev/null || true
+@dirrm share/doc/HTML/pl/k3b
 @dirrm share/doc/HTML/nl/k3b
-@unexec rmdir %D/share/doc/HTML/nl 2>/dev/null || true
 @dirrm share/doc/HTML/it/k3b
-@unexec rmdir %D/share/doc/HTML/it 2>/dev/null || true
 @dirrm share/doc/HTML/fr/k3b
-@unexec rmdir %D/share/doc/HTML/fr 2>/dev/null || true
 @dirrm share/doc/HTML/et/k3b
-@unexec rmdir %D/share/doc/HTML/et 2>/dev/null || true
 @dirrm share/doc/HTML/es/k3b
-@unexec rmdir %D/share/doc/HTML/es 2>/dev/null || true
 @dirrm share/doc/HTML/de/k3b
-@unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
 @dirrm share/doc/HTML/da/k3b
-@unexec rmdir %D/share/doc/HTML/da 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
