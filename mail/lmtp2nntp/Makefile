@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	lmtp2nntp
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	mail news
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	tool/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vd@datamax.bg
 COMMENT=	OSSP mail to news gateway
 
 LIB_DEPENDS=	str.9:${PORTSDIR}/devel/str \
@@ -19,11 +19,28 @@ LIB_DEPENDS=	str.9:${PORTSDIR}/devel/str \
 		sa.12:${PORTSDIR}/net/ossp-sa \
 		var.11:${PORTSDIR}/devel/ossp-var
 
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--with-ex=${LOCALBASE} --with-str=${LOCALBASE} \
+		--with-sa=${LOCALBASE} --with-var=${LOCALBASE}
+
 MAN8=		lmtp2nntp.8
 PLIST_FILES=	sbin/lmtp2nntp
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ex="${LOCALBASE}" --with-str="${LOCALBASE}" \
-		--with-sa="${LOCALBASE}" --with-var="${LOCALBASE}"
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	INSTALL README
+.endif
+
+check: build
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}/
+.endfor
+.endif
 
 .include <bsd.port.pre.mk>
 
