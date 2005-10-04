@@ -135,6 +135,7 @@
     SUBDIR += einstein
     SUBDIR += el
     SUBDIR += emacs-chess
+    SUBDIR += ember
     SUBDIR += empire
     SUBDIR += enigma
     SUBDIR += ensemblist

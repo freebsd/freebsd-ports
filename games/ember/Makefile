@@ -1,0 +1,74 @@
+# New ports collection makefile for:	ember
+# Date created:				03 Oct 2005
+# Whom:					Oliver Lehmann <oliver@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ember
+PORTVERSION=	0.3.2
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=worldforge
+
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=oliver
+PATCHFILES=	patch-ember-opcode.bz2
+
+MAINTAINER=	oliver@FreeBSD.org
+COMMENT=	Ember is a WorldForge 3d client using the OGRE 3d library
+
+LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
+		OgreMain.9:${PORTSDIR}/graphics/ogre3d \
+		eris-1.3:${PORTSDIR}/devel/eris \
+		varconf-1.0.5:${PORTSDIR}/devel/varconf \
+		mercator-0.2.4:${PORTSDIR}/devel/mercator \
+		openal.0:${PORTSDIR}/audio/openal
+
+CONFIGURE_ARGS=	--with-png-prefix=${LOCALBASE} --enable-binreloc --program-transform-name=
+USE_SDL=	sdl image
+USE_REINPLACE=	YES
+USE_LIBTOOL_VER=13
+GNU_CONFIGURE=	YES
+INSTALLS_SHLIB=	YES
+USE_GCC=	3.4
+USE_ZIP=	YES
+USE_X_PREFIX=	YES
+USE_GNOME=	gnomehack
+CPPFLAGS=	-DBR_NO_MACROS
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e '\
+		s|sdl-config|${SDL_CONFIG}|g; \
+		s|"-lopenal|"-L${LOCALBASE}/lib -lopenal ${PTHREAD_LIBS}|g; \
+		s|src/components/ogre/SceneManagers/EmberSceneManager[a-z/]*/Makefile||g; \
+		s|CEGUI-OGRE_\([A-Z]*=\)|CEGUI_OGRE_\1|g; \
+		s|\$$CEGUI-OGRE_\([A-Z]*\)|\$$CEGUI_OGRE_\1|g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|<SDL/|<|g' \
+		${WRKSRC}/configure \
+		${WRKSRC}/src/components/ogre/EmberOgre.cpp
+	@${REINPLACE_CMD} -e 's|#include "framework/float_cast.h"||g' \
+		${WRKSRC}/src/components/ogre/environment/meshtree/TStem.cpp
+	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' \
+		${WRKSRC}/src/components/ogre/SceneManagers/EmberPagingSceneManager/src/filetutils.cpp
+	@${REINPLACE_CMD} -e 's|#include "OgrePagingLandScapeIntersectionSceneQuery.h"||' \
+		${WRKSRC}/src/components/ogre/SceneManagers/EmberPagingSceneManager/src/OgrePagingLandScapeSceneManager.cpp
+	@${REINPLACE_CMD} -e 's|	install-dist_docDATA |	|g'  ${WRKSRC}/Makefile.in
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e 's|lrintf|(long int)rintf|g' \
+		${WRKSRC}/src/components/ogre/environment/meshtree/TStem.cpp \
+		${WRKSRC}/src/components/ogre/EmberEntityFactory.cpp
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for docfile in README COPYING AUTHORS ChangeLog TODO
+	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.post.mk>
