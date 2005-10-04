@@ -21,4 +21,4 @@ it  is  possible to  manage  the  web  server, upload  Safe-Tcl  control
 scripts, download logging information, and  otherwise debug the Tcl part
 of the application without restarting the hosting application.
 
-WWW: http://dev.scriptics.com/software/tclhttpd/
+WWW: http://www.tcl.tk/software/tclhttpd/

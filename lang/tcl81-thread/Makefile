@@ -8,7 +8,8 @@
 PORTNAME=	tcl-thread
 PORTVERSION=	8.1.b1
 CATEGORIES=	lang tcl81
-MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_1/
+MASTER_SITES=	${MASTER_SITE_TCLTK}
+MASTER_SITE_SUBDIR=	tcl8_1
 DISTNAME=	tcl8.1b1
 
 MAINTAINER=	ports@FreeBSD.org

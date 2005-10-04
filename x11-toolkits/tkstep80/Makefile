@@ -8,7 +8,8 @@
 PORTNAME=	tkstep
 PORTVERSION=	8.0.4
 CATEGORIES=	x11-toolkits tk80
-MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
+MASTER_SITES=	${MASTER_SITE_TCLTK}
+MASTER_SITE_SUBDIR=	tcl8_0
 DISTNAME=	tk${PORTVERSION}
 
 PATCH_SITES=	ftp://touchwood.ee.uts.edu.au/pub/TkSTEP/
