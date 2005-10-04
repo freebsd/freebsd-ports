@@ -7,7 +7,7 @@
 
 PORTNAME=	apache+mod_ssl
 PORTVERSION=	${VERSION_APACHE}+${VERSION_MODSSL}
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	www security
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITES_MODSSL:S/$/:mod_ssl/} \
@@ -142,12 +142,11 @@ CONFIGURE_ARGS+=	--runtimedir=${APACHE_RELATIVE_RUNTIMEDIR}
 .if defined(WITHOUT_APACHE_EXPAT) || defined(APACHE_WITHOUT_EXPAT)
 CONFIGURE_ARGS+=	--disable-rule=EXPAT
 .else
-.if !defined(WITH_APACHE_INTERNAL_EXPAT) || ${WITH_APACHE_INTERNAL_EXPAT} != yes
-EXPAT_CONF+=	--disable-rule=EXPAT
+.if !defined(WITH_APACHE_INTERNAL_EXPAT)
 LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
-.else
-EXPAT_CONF+=	--enable-rule=EXPAT
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
+CONFIGURE_ARGS+=	--enable-rule=EXPAT
 .endif
 
 .if defined(APACHE_HARD_SERVER_LIMIT)
@@ -280,6 +279,7 @@ EXTRA_PATCHES+=	${FILESDIR}/rotatelogs.c.patch
 .endif
 
 CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
+		LDFLAGS='${LDFLAGS}' \
 		OPTIM='${OPTIM}' \
 		SSL_BASE='${OPENSSLBASE}' \
 		EAPI_MM='SYSTEM' \
