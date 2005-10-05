@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	colorscheme
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://download.gna.org/${PORTNAME}/0.2/
 PKGNAMEPREFIX=	gnome-
@@ -25,10 +25,4 @@ GNU_CONFIGURE=	yes
 USE_GCC=	3.4+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 503001
-EXTRA_PATCHES+=	${FILESDIR}/roundpatch
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
