@@ -52,7 +52,7 @@
 +elif test "$UNAME" = "FreeBSD" ; then
 +	cat >>confdefs.h <<\EOF
 +#define DLOPEN_FLAGS RTLD_LAZY
-+#define SYMBOL_PREFIX "_"
++#define SYMBOL_PREFIX ""
 +EOF
 +
 +	SHARED_PARAMS="-Bshareable"
