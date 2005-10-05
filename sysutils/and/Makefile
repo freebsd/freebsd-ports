@@ -23,4 +23,10 @@ NOPRECIOUSMAKEVARS=	yes
 MAN5=		and.conf.5 and.priorities.5
 MAN8=		and.8
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500014
+BROKEN=		"Not functional due kernel changes >= 5.x"
+.endif
+
+.include <bsd.port.post.mk>
