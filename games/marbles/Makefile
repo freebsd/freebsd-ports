@@ -27,11 +27,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/SDL\///' ${WRKSRC}/src/*.[ch]
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/src/empty.prfs ${PREFIX}/share/lmarbles
 	@${CHOWN} root:games ${PREFIX}/bin/lmarbles
 	@${CHMOD} g+s ${PREFIX}/bin/lmarbles
-	@${SETENV} "PKG_PREFIX=${PREFIX}" \
-		${SH} pkg-install ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/lmarbles
 	${INSTALL_DATA} ${WRKSRC}/src/manual/* ${PREFIX}/share/doc/lmarbles

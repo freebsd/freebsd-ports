@@ -1,5 +1,4 @@
 bin/lmarbles
-share/lmarbles/empty.prfs
 share/lmarbles/gfx/board.bmp
 share/lmarbles/gfx/f_red.bmp
 share/lmarbles/gfx/f_small.bmp
