@@ -1,0 +1,16 @@
+Mcabber is a small Jabber console client.
+
+Here are some of the features of mcabber:
+ o   SSL support.
+
+ o   History  logging: If enabled (see the CONFIGURATION FILE section),
+     mcabber can save discussions to history log files.
+
+ o   Commands completion: If possible, mcabber will try to complete your
+     command line if you hit the Tab key.
+
+ o   External actions: Some events (like receiving a message) can trig-
+     ger an external action, for example a  shell  script  (you  need  to
+     enable  it  in  your  configuration  file).
+
+WWW:	http://www.lilotux.net/~mikael/mcabber/
