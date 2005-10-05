@@ -73,6 +73,7 @@
     SUBDIR += diffsplit
     SUBDIR += diffstat
     SUBDIR += diffutils
+    SUBDIR += dixit
     SUBDIR += docbook
     SUBDIR += docbook-241
     SUBDIR += docbook-300
