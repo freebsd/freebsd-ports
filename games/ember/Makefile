@@ -7,6 +7,7 @@
 
 PORTNAME=	ember
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=worldforge
@@ -24,6 +25,8 @@ LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 		varconf-1.0.5:${PORTSDIR}/devel/varconf \
 		mercator-0.2.4:${PORTSDIR}/devel/mercator \
 		openal.0:${PORTSDIR}/audio/openal
+
+RUN_DEPENDS=	${X11BASE}/bin/WFUT.jar:${PORTSDIR}/devel/wfut
 
 CONFIGURE_ARGS=	--with-png-prefix=${LOCALBASE} --enable-binreloc --program-transform-name=
 USE_SDL=	sdl image
@@ -57,6 +60,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|#include "OgrePagingLandScapeIntersectionSceneQuery.h"||' \
 		${WRKSRC}/src/components/ogre/SceneManagers/EmberPagingSceneManager/src/OgrePagingLandScapeSceneManager.cpp
 	@${REINPLACE_CMD} -e 's|	install-dist_docDATA |	|g'  ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '\
+		 /Plugin=Plugin_CgProgramManager.so/d; \
+		s|/usr/lib/OGRE|${X11BASE}/lib/OGRE|' \
+		${WRKSRC}/src/components/ogre/plugins.cfg
 .if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} -e 's|lrintf|(long int)rintf|g' \
 		${WRKSRC}/src/components/ogre/environment/meshtree/TStem.cpp \

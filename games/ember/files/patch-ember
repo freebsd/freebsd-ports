@@ -1,6 +1,6 @@
 --- /dev/null	Mon Oct  3 20:13:37 2005
 +++ ember	Mon Oct  3 20:17:51 2005
-@@ -0,0 +1,128 @@
+@@ -0,0 +1,129 @@
 +#!/bin/sh
 +
 +
@@ -80,12 +80,12 @@
 +  # See if Updater exists in home dir
 +  if [ ! -e $homedata/$WFUT_JAR ] ; then
 +    # Check to see if its in the install dir
-+    if [ -e $datadir/$WFUT_JAR ] ; then
++    if [ -e $bindir/$WFUT_JAR ] ; then
 +      # Install into home dir 
 +      echo "Installing Updater"
 +
 +      # Copy WFUT to home dir
-+      cp $datadir/$WFUT_JAR $homedata
++      cp $bindir/$WFUT_JAR $homedata
 +
 +    fi
 +  fi
@@ -127,5 +127,6 @@
 +# Execute real ember binary
 +echo "Starting Ember...."
 +#we have to do the LD_PRELOAD thing, because else at least I get an error: libnvidia-tls.so.1: cannot handle TLS data /ehj
-+LD_PRELOAD=libGL.so.1 $bindir/ember.bin --binrelocloading
++[ ! -f $homedata/plugins.cfg ] && cp $etcdir/plugins.cfg $homedata/
++LD_PRELOAD=libGL.so.1 $bindir/ember.bin
 +
