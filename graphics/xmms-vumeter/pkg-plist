@@ -1,18 +1,22 @@
 lib/xmms/Visualization/libvumeter.so
-%%SKINSDIR%%/default/background.png
-%%SKINSDIR%%/default/skin.cfg
-%%SKINSDIR%%/default/titlebar_notselected.png
-%%SKINSDIR%%/default/titlebar_selected.png
-%%SKINSDIR%%/default.mirror/background.png
-%%SKINSDIR%%/default.mirror/overlay.png
-%%SKINSDIR%%/default.mirror/skin.cfg
-%%SKINSDIR%%/default.mirror/titlebar_notselected.png
-%%SKINSDIR%%/default.mirror/titlebar_selected.png
-%%SKINSDIR%%/default.oldxmms/background.png
-%%SKINSDIR%%/default.oldxmms/skin.cfg
-%%SKINSDIR%%/default.oldxmms/titlebar_notselected.png
-%%SKINSDIR%%/default.oldxmms/titlebar_selected.png
-@dirrm %%SKINSDIR%%/default
-@dirrm %%SKINSDIR%%/default.mirror
-@dirrm %%SKINSDIR%%/default.oldxmms
-@dirrm %%SKINSDIR%%
+%%DATADIR%%/default.mirror/background.png
+%%DATADIR%%/default.mirror/overlay.png
+%%DATADIR%%/default.mirror/skin.cfg
+%%DATADIR%%/default.mirror/titlebar_notselected.png
+%%DATADIR%%/default.mirror/titlebar_selected.png
+%%DATADIR%%/default.oldxmms/background.png
+%%DATADIR%%/default.oldxmms/led_off_img.png
+%%DATADIR%%/default.oldxmms/led_on_img.png
+%%DATADIR%%/default.oldxmms/skin.cfg
+%%DATADIR%%/default.oldxmms/titlebar_notselected.png
+%%DATADIR%%/default.oldxmms/titlebar_selected.png
+%%DATADIR%%/default/background.png
+%%DATADIR%%/default/led_off_img.png
+%%DATADIR%%/default/led_on_img.png
+%%DATADIR%%/default/skin.cfg
+%%DATADIR%%/default/titlebar_notselected.png
+%%DATADIR%%/default/titlebar_selected.png
+@dirrm %%DATADIR%%/default.oldxmms
+@dirrm %%DATADIR%%/default.mirror
+@dirrm %%DATADIR%%/default
+@dirrm %%DATADIR%%
