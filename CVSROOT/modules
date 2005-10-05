@@ -2992,6 +2992,7 @@ gmetadom	ports/textproc/gmetadom
 gmfsk		ports/comms/gmfsk
 gmime		ports/mail/gmime
 gmime2		ports/mail/gmime2
+gmime2-sharp	ports/mail/gmime2-sharp
 gmixer		ports/audio/gmixer
 gmpc		ports/audio/gmpc
 gmrun		ports/x11/gmrun
