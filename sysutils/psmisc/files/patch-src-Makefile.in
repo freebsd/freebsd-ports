@@ -1,8 +1,8 @@
---- src/Makefile.in.orig	Tue May 25 02:55:10 2004
-+++ src/Makefile.in	Sat Sep 10 02:45:34 2005
-@@ -15,7 +15,7 @@
- @SET_MAKE@
+--- src/Makefile.in.orig	Wed Oct  5 08:53:13 2005
++++ src/Makefile.in	Wed Oct  5 08:59:34 2005
+@@ -14,7 +14,7 @@
  
+ @SET_MAKE@
  
 -SOURCES = $(fuser_SOURCES) $(killall_SOURCES) $(pstree_SOURCES)
 +SOURCES = $(killall_SOURCES) $(pstree_SOURCES)
@@ -10,18 +10,18 @@
  srcdir = @srcdir@
  top_srcdir = @top_srcdir@
 @@ -38,7 +38,7 @@
- PRE_UNINSTALL = :
  POST_UNINSTALL = :
+ build_triplet = @build@
  host_triplet = @host@
 -bin_PROGRAMS = fuser$(EXEEXT) killall$(EXEEXT) pstree$(EXEEXT)
 +bin_PROGRAMS = killall$(EXEEXT) pstree$(EXEEXT)
  subdir = src
  DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-@@ -75,8 +75,8 @@
+@@ -71,8 +71,8 @@
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
- LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
- 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+ LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
 -SOURCES = $(fuser_SOURCES) $(killall_SOURCES) $(pstree_SOURCES)
 -DIST_SOURCES = $(fuser_SOURCES) $(killall_SOURCES) $(pstree_SOURCES)
 +SOURCES = $(killall_SOURCES) $(pstree_SOURCES)
@@ -29,19 +29,19 @@
  ETAGS = etags
  CTAGS = ctags
  DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-@@ -193,9 +193,9 @@
- bin_SCRIPTS = pstree.x11
- fuser_SOURCES = fuser.c comm.h signals.c signals.h loop.h
- killall_SOURCES = killall.c comm.h signals.c signals.h 
+@@ -174,9 +174,9 @@
+ AM_CFLAGS = -Wall -DLOCALEDIR=\"/usr/share/locale\"
+ fuser_SOURCES = fuser.c comm.h signals.c signals.h loop.h i18n.h
+ killall_SOURCES = killall.c comm.h signals.c signals.h i18n.h
 -killall_LDADD = @FLASK_LIB@
 +killall_LDADD = @FLASK_LIB@ $(LIBINTL)
- pstree_SOURCES = pstree.c comm.h
+ pstree_SOURCES = pstree.c comm.h i18n.h
 -pstree_LDADD = @TERMCAP_LIB@ @FLASK_LIB@
 +pstree_LDADD = @TERMCAP_LIB@ @FLASK_LIB@ $(LIBINTL)
  BUILT_SOURCES = signames.h
  EXTRA_DIST = signames.c 
- CLEANFILES = signames.h pstree.x11
-@@ -504,12 +504,11 @@
+ CLEANFILES = signames.h
+@@ -449,12 +449,11 @@
  
  signames.h: signames.c Makefile
  		@CPP@ -dM $< |\
@@ -57,4 +57,4 @@
 +		grep '^{1,"HUP" },$$' signames.h >/dev/null || \
  		  { rm -f signames.h; exit 1; }
  
- Makefile:	signames.h
+ install-exec-hook:
