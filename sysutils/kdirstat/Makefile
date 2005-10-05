@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kdirstat
-PORTVERSION=	2.4.3
-PORTREVISION=	1
+PORTVERSION=	2.4.4
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://kdirstat.sourceforge.net/download/
 
