@@ -7,6 +7,7 @@
 
 PORTNAME=	ogre3d
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=ogre
@@ -44,6 +45,13 @@ post-patch:
 		s|\$$(INSTALL_PROGRAM) .libs/|\$$(INSTALL_PROGRAM) |' \
 		${WRKSRC}/Samples/*/src/Makefile.in \
 		${WRKSRC}/Tools/*/src/Makefile.in
+	@${REINPLACE_CMD} -e '\
+		s|\(-L$$(top_builddir)/OgreMain/src\)\([$$ ]*\)|\1/.libs\2|' \
+		${WRKSRC}/PlugIns/BSPSceneManager/src/Makefile.in \
+		${WRKSRC}/PlugIns/CgProgramManager/src/Makefile.in \
+		${WRKSRC}/PlugIns/EXRCodec/src/Makefile.in \
+		${WRKSRC}/PlugIns/OctreeSceneManager/src/Makefile.in \
+		${WRKSRC}/PlugIns/ParticleFX/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|-L$$(top_builddir)/Samples/Common/CEGUIRenderer/src|&/.libs|' \
 		${WRKSRC}/Samples/Gui/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|<CEGUI/|<|g' \
