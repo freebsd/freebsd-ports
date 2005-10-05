@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kxl
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.7
 CATEGORIES=	games
 MASTER_SITES=	http://kxl.hn.org/download/
 DISTNAME=	KXL-${PORTVERSION}
