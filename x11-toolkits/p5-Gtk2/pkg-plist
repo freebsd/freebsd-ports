@@ -76,6 +76,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Event/DND.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Event/Expose.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Event/Focus.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Event/GrabBroken.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Event/Key.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Event/Motion.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Event/NoExpose.pod
@@ -92,9 +93,11 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Input.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Keymap.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Keysyms.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/PangoRenderer.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Pixbuf.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/PixbufAnimation.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/PixbufAnimationIter.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/PixbufFormat.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/PixbufLoader.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Pixmap.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Rectangle.pod
@@ -167,6 +170,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/Layout.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/LayoutIter.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/Matrix.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/Renderer.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/Script.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/ScriptIter.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango/TabArray.pod
@@ -228,6 +232,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TreeRowReference.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TreeSelection.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TreeSortable.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TreeSortable/IterCompareFunc.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TreeStore.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TreeView.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TreeViewColumn.pod
@@ -255,6 +260,7 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Event
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TreeSortable
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Install 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2 2>/dev/null || true
