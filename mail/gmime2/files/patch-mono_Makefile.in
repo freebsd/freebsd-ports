@@ -1,0 +1,18 @@
+--- mono/Makefile.in.orig	Sun Sep 11 23:59:29 2005
++++ mono/Makefile.in	Mon Sep 12 00:06:09 2005
+@@ -466,11 +466,11 @@
+ install-data-local:
+ 	@if test -n '$(TARGET)'; then									\
+ 	  if test -n '$(DESTDIR)'; then								\
+-	    echo "$(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE_SHARP) /root $(DESTDIR)$(prefix)/lib";		\
+-	    $(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE_SHARP) /root $(DESTDIR)$(prefix)/lib || exit 1;	\
++	    echo "$(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE_SHARP) /gacdir $(DESTDIR)$(libdir) /root $(DESTDIR)$(libdir)";		\
++	    $(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE_SHARP) /gacdir $(DESTDIR)$(libdir) /root $(DESTDIR)$(libdir) || exit 1;	\
+ 	  else												\
+-	    echo "$(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE_SHARP) /gacdir $(prefix)/lib";			\
+-	    $(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE_SHARP) /gacdir $(prefix)/lib || exit 1;		\
++	    echo "$(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE_SHARP) /gacdir $(DESTDIR)$(libdir) /root $(DESTDIR)$(libdir)";			\
++	    $(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE_SHARP) /gacdir $(DESTDIR)$(libdir) /root $(DESTDIR)$(libdir) || exit 1;		\
+ 	  fi;												\
+ 	fi
+ 
