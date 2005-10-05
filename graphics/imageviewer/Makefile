@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	imageviewer
-PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTVERSION=	0.6.3
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.nice.ch/~phip/ \
-		${MASTER_SITE_GNUSTEP}
-MASTER_SITE_SUBDIR=	usr-apps
+MASTER_SITES=	http://www.nice.ch/~phip/
 DISTNAME=	ImageViewer-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -19,7 +16,6 @@ COMMENT=	GNUstep Image Viewer
 
 PREFIX=		${LOCALBASE}/GNUstep
 NO_MTREE=	yes
-WRKSRC=		${WRKDIR}/ImageViewer
 GUN_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNUSTEP=	yes
