@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Boxed.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/CodeGen.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Error.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Flags.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/GenPod.pm
@@ -8,9 +9,11 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Install/gperl.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Install/gperl_marshal.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Install/typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/KeyFile.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Log.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/MainLoop.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/MakeHelper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Markup.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object/Subclass.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/Boolean.pod
