@@ -1,6 +1,62 @@
---- src/killall.c.orig	Fri Apr 23 15:51:26 2004
-+++ src/killall.c	Sat Sep 10 03:55:48 2005
-@@ -80,7 +80,7 @@
+--- src/killall.c.orig	Fri Dec 10 13:31:29 2004
++++ src/killall.c	Wed Oct  5 09:16:10 2005
+@@ -39,35 +39,31 @@
+            quiet = 0, wait_until_dead = 0, process_group = 0,
+            ignore_case = 0, pidof;
+ 
++/*
++ * This is the implementation from 21.5, as the one in 21.6 uses
++ * Linux specific functions getline() and rpmatch()
++ */
+ static int
+ ask (char *name, pid_t pid)
+ {
+-  int res;
+-  size_t len;
+-  char *line;
++  int ch, c;
+ 
+-  line = NULL;
+-  len = 0;
+-
+-  do {
+-    printf (_("Kill %s(%s%d) ? (y/N) "), name, process_group ? "pgid " : "",
+-	    pid);
+-    fflush (stdout);
+-
+-    if (getline (&line, &len, stdin) < 0)
+-      return 0;
+-    /* Check for default */
+-    if (line[0] == '\n') {
+-      free(line);
+-      return 0;
+-    }
+-    res = rpmatch(line);
+-    if (res >= 0) {
+-      free(line);
+-      return res;
++  do
++    {
++      printf (_("Kill %s(%s%d) ? (y/n) "), name, process_group ? "pgid " : "",
++	      pid);
++      fflush (stdout);
++      do
++	if ((ch = getchar ()) == EOF)
++	  exit (0);
++      while (ch == '\n' || ch == '\t' || ch == ' ');
++      do
++	if ((c = getchar ()) == EOF)
++	  exit (0);
++      while (c != '\n');
+     }
+-  } while(1);
+-  /* Never should get here */
++  while (ch != 'y' && ch != 'n' && ch != 'Y' && ch != 'N');
++  return ch == 'y' || ch == 'Y';
+ }
+ 
+ #ifdef FLASK_LINUX
+@@ -82,7 +78,7 @@
    struct dirent *de;
    FILE *file;
    struct stat st, sts[MAX_NAMES];
@@ -9,7 +65,7 @@
    char *path, comm[COMM_LEN];
    char *command_buf;
    char *command;
-@@ -171,7 +171,7 @@
+@@ -173,7 +169,7 @@
      }
    for (i = 0; i < pids; i++)
      {
@@ -18,7 +74,7 @@
  	continue;
        if (!(file = fopen (path, "r"))) 
  	{
-@@ -180,72 +180,13 @@
+@@ -182,72 +178,13 @@
  	}
        free (path);
        empty = 0;
@@ -92,7 +148,7 @@
        for (j = 0; j < names; j++)
  	{
  	  pid_t id;
-@@ -279,7 +220,7 @@
+@@ -281,7 +218,7 @@
  	    }
  	  else
  	    {
@@ -101,7 +157,7 @@
  		continue;
  #ifdef FLASK_LINUX
            if (stat_secure(path,&st,&lsid) < 0) {
-@@ -355,6 +296,7 @@
+@@ -357,6 +294,7 @@
  	fprintf (stderr, _("%s: no process killed\n"), namelist[i]);
    if (pidof)
      putchar ('\n');
