@@ -6,30 +6,26 @@
 #
 
 PORTNAME=	VFS
-PORTVERSION=	0.0.4
+PORTVERSION=	0.0.5
 CATEGORIES=	devel pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Virtual File System API
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR \
+		${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-FILES=		VFS.php
-VFS_FILES=	Browser.php GC.php ListItem.php Object.php	\
-		file.php ftp.php musql.php sql.php sql_file.php
+USE_PHP=	gettext
 
-pre-everything::
-.for cat_file in ${VFS_FILES}
-FILES+=		VFS/${cat_file}
-.endfor
+FILES=		VFS.php VFS/Browser.php VFS/GC.php VFS/ListItem.php \
+		VFS/Object.php VFS/file.php VFS/ftp.php VFS/musql.php \
+		VFS/sql.php VFS/sql_file.php
+DATA=		muvfs.sql vfs.oci8.sql vfs.pgsql.sql vfs.sql
+SCRIPTFILES=	vfs.php
 
-post-extract:
-	@${MKDIR} ${WRKSRC}/VFS
-.for cat_file in ${VFS_FILES}
-	@${MV} ${WRKSRC}/${cat_file} ${WRKSRC}/VFS
-.endfor
-	@${MV} ${WRKDIR}/VFS.php ${WRKSRC}
+post-patch:
+	@${MV} ${WRKSRC}/scripts/vfs.php ${WRKSRC}/pear-vfs.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
