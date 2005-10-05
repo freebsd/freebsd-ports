@@ -2,6 +2,7 @@ Local/Applications/ImageViewer.app/ImageViewer
 Local/Applications/ImageViewer.app/Resources/English.lproj/Localizable.strings
 Local/Applications/ImageViewer.app/Resources/French.lproj/Localizable.strings
 Local/Applications/ImageViewer.app/Resources/German.lproj/Localizable.strings
+Local/Applications/ImageViewer.app/Resources/Hungarian.lproj/Localizable.strings
 Local/Applications/ImageViewer.app/Resources/AUTHORS
 Local/Applications/ImageViewer.app/Resources/COPYING
 Local/Applications/ImageViewer.app/Resources/FileIcon_.gif.tiff
@@ -16,6 +17,7 @@ Local/Applications/ImageViewer.app/Resources/README
 Local/Applications/ImageViewer.app/Resources/genericImage.tiff
 Local/Applications/ImageViewer.app/library_paths.openapp
 Local/Applications/ImageViewer.app/stamp.make
+@dirrm Local/Applications/ImageViewer.app/Resources/Hungarian.lproj
 @dirrm Local/Applications/ImageViewer.app/Resources/German.lproj
 @dirrm Local/Applications/ImageViewer.app/Resources/French.lproj
 @dirrm Local/Applications/ImageViewer.app/Resources/English.lproj
