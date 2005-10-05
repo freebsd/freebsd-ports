@@ -19,6 +19,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	3d@FreeBSD.org
 COMMENT=	A hardware OpenGL support for XFree86 X-Servers
 
+DEPRECATED=	depends on XFree86-3 and no development since 2003 and 
+EXPIRATION_DATE=	2005-12-05
+
 BUILD_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83
 
 WANT_AUTOCONF_VER=253
