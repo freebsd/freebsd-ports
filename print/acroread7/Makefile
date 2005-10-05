@@ -8,61 +8,50 @@
 PORTNAME=	acroread7
 PORTVERSION=	7.0.1
 CATEGORIES=	print linux
-MASTER_SITES=	http://download.adobe.com/pub/adobe/reader/unix/7x/7.0/enu/ \
-		ftp://ftp.adobe.com/pub/adobe/reader/unix/7x/7.0/enu/
-DISTNAME=	AdobeReader_enu-7.0.1-1.i386.rpm
+MASTER_SITES=	\
+	http://download.adobe.com/pub/adobe/reader/unix/7x/7.0/${ADOBE_LANG}/ \
+	ftp://ftp.adobe.com/pub/adobe/reader/unix/7x/7.0/${ADOBE_LANG}/
+DISTNAME=	AdobeReader_${ADOBE_LANG}-7.0.1-1.i386.rpm
 EXTRACT_SUFX=
 DIST_SUBDIR=	acroread
 EXTRACT_ONLY=
-RESTRICTED=	"Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html"
 
-MAINTAINER=	trevor@FreeBSD.org
-COMMENT=	View, distribute and print PDF documents
+MAINTAINER?=	trevor@FreeBSD.org
+COMMENT?=	View, search and print PDF documents
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
 		${LINUXBASE}/usr/lib/libpango-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango
 
-CONFLICTS=	acroread
-
+RESTRICTED=	"Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html"
+CONFLICTS?=	ja-acroread-[0-9]*
+ADOBE_LANG?=	enu
+NO_FILTER_SHLIBS=	yes
 ONLY_FOR_ARCHS=	amd64 i386
-USE_REINPLACE=	yes
-USE_LINUX=	yes
-USE_XLIB=	yes	# This should be USE_X_PREFIX, doesn't work yet.
-NO_BUILD=	yes
-REINPLACE_ARGS=	-i '' -E
 PLIST=		${WRKDIR}/plist
-PREFIX?=	${LINUXBASE}	# have a look at the USE_XLIB comment
+SUB_FILES=	acroread7
 
-pre-install:
+do-build:
 	@kldstat -v | ${GREP} -E 'linux(aout|elf)' >/dev/null ||\
 		{ ${ECHO_MSG} "Linux ABI compatibility must be enabled to install ${PORTNAME}-${PORTVERSION}"; \
 		  exit 1; }
-	@${RM} -rf ${WRKSRC}/tmp
-	@${MKDIR} ${WRKSRC}/tmp
-	cd ${WRKSRC}/tmp; \
-		rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} | ${CPIO} -id; \
-		${RM} -rf usr/bin/acroread; \
-		${FIND} * -type f -o -type l > ${PLIST} \
-		&& ${FIND} -d * -type d | ${SED} -e 's:^:@dirrm :' | \
-		${GREP} -vE "(usr/bin$$|local$$|share$$|usr$$)" >> ${PLIST}
-	@${ECHO} @cwd %%LOCALBASE%% >> ${PLIST}
-	@${ECHO} bin/acroread7 >> ${PLIST}
-	@${ECHO} bin/acroread >> ${PLIST}
+	@${RM} -rf ${WRKSRC}
+	${MKDIR} ${WRKSRC}/lib/acroread
+	@${ECHO} bin/acroread7 > ${PLIST}
+	cd ${WRKSRC}/lib/acroread; \
+		rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} | ${CPIO} -id
+	cd ${WRKSRC}; \
+		${FIND} lib/acroread -type l -o -type f >> ${PLIST}; \
+		${FIND} -d lib/acroread -type d \
+		| ${SED} -e 's:^:@dirrm :' >> ${PLIST}
 
 do-install:
-	@rpm -U --ignorearch --ignoreos --root ${PREFIX} --dbpath /var/lib/rpm \
-		 --nodeps --replacepkgs ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} || ${TRUE}
-	# disable the PPKLite plugin as it requires an LDAP share lib
-	${CHMOD} 0 ${PREFIX}/usr/local/Adobe/Acrobat7.0/Reader/intellinux/plug_ins/PPKLite.api
-# XXX: This is missing a "${BRANDELF} -t Linux <executables>".
-
-post-install:
-	@${REINPLACE_CMD} 's:Linux:FreeBSD|Linux:g' \
-		${PREFIX}/usr/local/Adobe/Acrobat7.0/bin/acroread
-	cd ${LOCALBASE}/bin ; ${LN} -sf ${PREFIX}/usr/local/Adobe/Acrobat7.0/bin/acroread acroread7
-	cd ${LOCALBASE}/bin ; ${LN} -sf ${PREFIX}/usr/local/Adobe/Acrobat7.0/bin/acroread acroread
+	@cd ${WRKSRC} && ${FIND} lib/acroread | ${CPIO} -dlmp ${LOCALBASE}
+	@${FIND} ${LOCALBASE}/lib/acroread -type d -exec ${CHMOD} 755 \{\} \;
+	@${INSTALL_SCRIPT} ${WRKDIR}/acroread7 ${PREFIX}/bin/
 	@${ECHO_MSG} "Be sure to read the license agreement in"
-	@${ECHO_MSG} "${PREFIX}/usr/local/Adobe/Acrobat7.0/Reader/Legal/ENU/license_ENU_uc.txt"
+	@${ECHO_MSG} "${PREFIX}/acroread/usr/local/Adobe/Acrobat7.0/Reader/Legal/${ADOBE_LANG:U}/license_${ADOBE_LANG:U}_uc.txt"
+	# disable the PPKLite plugin as it requires an LDAP share lib
+	${CHMOD} 0 ${PREFIX}/lib/acroread/usr/local/Adobe/Acrobat7.0/Reader/intellinux/plug_ins/PPKLite.api
 
 .include <bsd.port.mk>
