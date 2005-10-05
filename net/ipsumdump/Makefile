@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipsumdump
-PORTVERSION=	1.56
+PORTVERSION=	1.57
 CATEGORIES=	net
 MASTER_SITES=	http://www.cs.ucla.edu/~kohler/ipsumdump/ \
 		http://core.inec.ru/~az/
