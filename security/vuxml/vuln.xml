@@ -51,7 +51,7 @@ Note:  Please add new entries to the beginning of this file.
 	    and that will cause a format string bug that will allow remote
 	    code execution. It will only happen when weex is first run or
 	    when its cache files are rebuilt with the -r option,
-	    though.</p>
+	    though. The vulnerability was found by Ulf Harnhammar.</p>
 	</blockquote>
       </body>
     </description>
