@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freeradius
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		ftp://ftp.Awfulhak.org/pub/radius/
@@ -139,6 +139,7 @@ DICTS=		dictionary.3com dictionary.3gpp dictionary.3gpp2 \
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%RC_SUBR%%|${RC_SUBR}|g" \
 		< ${FILESDIR}/radiusd.sh > ${WRKDIR}/radiusd.sh
+	@${RM} ${WRKSRC}/doc/Makefile.orig
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/raddb ${DATADIR} ${EXAMPLESDIR}
