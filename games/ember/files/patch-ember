@@ -1,6 +1,6 @@
 --- /dev/null	Mon Oct  3 20:13:37 2005
 +++ ember	Mon Oct  3 20:17:51 2005
-@@ -0,0 +1,129 @@
+@@ -0,0 +1,130 @@
 +#!/bin/sh
 +
 +
@@ -128,5 +128,6 @@
 +echo "Starting Ember...."
 +#we have to do the LD_PRELOAD thing, because else at least I get an error: libnvidia-tls.so.1: cannot handle TLS data /ehj
 +[ ! -f $homedata/plugins.cfg ] && cp $etcdir/plugins.cfg $homedata/
++[ ! -f $homedata/resources.cfg ] && cp $etcdir/resources.cfg $homedata/
 +LD_PRELOAD=libGL.so.1 $bindir/ember.bin
 +
