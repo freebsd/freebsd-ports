@@ -9,7 +9,7 @@ PORTNAME=	mksunbootcd
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/mksunbootcd/
+MASTER_SITES=	${MASTER_SITE_NETBSD}
 
 MAINTAINER=	ports@oven.org
 COMMENT=	Makes ISO images suitable to boot on sparc systems
