@@ -7,6 +7,7 @@
 
 PORTNAME=	msyslog
 PORTVERSION=	1.08g
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www1.corest.com/download/msyslog/
