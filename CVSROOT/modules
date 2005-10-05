@@ -3677,7 +3677,6 @@ hppsmtools	ports/graphics/hppsmtools
 hptools		ports/devel/hptools
 hr-aspell	ports/textproc/hr-aspell
 hr-ooodict-HR	ports/editors/ooodict-hr_HR
-hs-HOpenGL	ports/graphics/hs-HOpenGL
 hs-alex		ports/devel/hs-alex
 hs-buddha	ports/devel/hs-buddha
 hs-c2hs		ports/devel/hs-c2hs
