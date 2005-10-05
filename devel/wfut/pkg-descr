@@ -1,0 +1,13 @@
+Software updater tool for WorldForge applications.
+WFUT allows the automatic updating of "channels" which are available on a
+server. The channels are specified by an XML file (which also has an XSL file
+associated with it for viewing in a web browser). Each channel has an
+associated XML document listing the files available in the channel and the
+current version number.WFUT compares this file list with a similar file on the
+local machine to determine what files need updating.
+WFUT performs a CRC32 check on each file downloaded before overwriting any
+existing ones. WFUT keeps a list of files downloaded in a temporary file (which
+will not be completely valid XML due to missing end tag) in something happens
+during an update which does not allow the local list to be saved.
+
+WWW: http://www.worldforge.org/dev/eng/tools/wfut
