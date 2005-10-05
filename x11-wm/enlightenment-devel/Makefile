@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enlightenment
-PORTVERSION=	0.16.999.014
+PORTVERSION=	0.16.999.016
 PORTREVISION=	0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
