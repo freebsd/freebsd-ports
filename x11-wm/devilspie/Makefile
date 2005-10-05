@@ -6,39 +6,31 @@
 #
 
 PORTNAME=	devilspie
-PORTVERSION=	0.10
+PORTVERSION=	0.13
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.burtonini.com/computing/
 
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A window manipulation tool
 
-LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
-
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	libwnck libxml2
+USE_GNOME=	libwnck
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		devilspie.1
+PORTDOCS=	AUTHORS NEWS README TODO
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||' \
+		${WRKSRC}/src/Makefile.in
 
 post-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/devilspie.dtd ${DATADIR}
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample-config.xml ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} \
-		${WRKSRC}/AUTHORS \
-		${WRKSRC}/NEWS \
-		${WRKSRC}/README \
-		${WRKSRC}/TODO \
-		${WRKSRC}/devilspie-reference.html \
-		${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

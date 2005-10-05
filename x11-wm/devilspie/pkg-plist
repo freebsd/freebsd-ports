@@ -1,12 +1,2 @@
 bin/devilspie
 share/locale/de/LC_MESSAGES/devilspie.mo
-%%DATADIR%%/devilspie.dtd
-%%EXAMPLESDIR%%/sample-config.xml
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/devilspie-reference.html
-@dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
