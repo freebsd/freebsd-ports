@@ -9,4 +9,5 @@ bin/t1reencode
 bin/t1testpage
 %%DATADIR%%/7t.enc
 %%DATADIR%%/glyphlist.txt
+%%DATADIR%%/texglyphlist.txt
 @dirrm %%DATADIR%%
