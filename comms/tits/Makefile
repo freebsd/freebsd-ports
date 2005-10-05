@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tits
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	comms
 MASTER_SITES=	http://www.mctavish.co.uk/tits/
 
