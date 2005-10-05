@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	heretic
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	1.2
+PORTREVISION=	0
 CATEGORIES=	games
 MASTER_SITES=	http://heretic.linuxgames.com/heretic/src/:source \
 		http://heretic.linuxgames.com/wad/:wad
@@ -59,6 +59,7 @@ post-extract:
 	@${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/heretic_share.wad.gz \
 		> ${WRKSRC}/heretic_share.wad
 .endif
+	@${FIND} ${WRKSRC} -name .depend -type f -delete
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${BINARY} ${PREFIX}/bin/heretic
