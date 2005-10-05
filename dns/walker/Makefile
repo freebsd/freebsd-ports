@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	walker
-PORTVERSION=	3.7
+PORTVERSION=	3.8
 CATEGORIES=	dns
 MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
@@ -25,6 +25,8 @@ USE_GPG?=	yes
 SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.sig
 
 MAN1=		walker.1
+PLIST_FILES=	bin/walker
+PORTDOCS=	index.html
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/walker ${PREFIX}/bin
