@@ -1,0 +1,3 @@
+#!/bin/sh
+UNAME_s=Linux; export UNAME_s
+exec %%PREFIX%%/lib/acroread/usr/local/Adobe/Acrobat7.0/bin/acroread "$@"
