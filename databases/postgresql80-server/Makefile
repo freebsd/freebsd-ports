@@ -7,7 +7,7 @@
 
 PORTNAME?=	postgresql
 PKGNAMESUFFIX?=	-server
-PORTVERSION?=	8.0.3
+PORTVERSION?=	8.0.4
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
@@ -169,9 +169,11 @@ KRB5CONF=	${LOCALBASE}/bin/krb5-config
 .  endif
 
 .  if defined(WITH_KRB5)
-CONFIGURE_ARGS+=	--with-krb5
-LDFLAGS+=	`${KRB5CONF} --libs krb5`
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS+=--with-krb5
+LIBS+=		`${KRB5CONF} --libs krb5`
+CONFIGURE_ENV+=	LIBS="${LIBS}" LDFLAGS="${LIBS}"
+.  else
+CONFIGURE_ARGS+=--without-krb5
 .  endif
 
 .  if defined(SERVER_ONLY) && defined(WITH_TESTS)
