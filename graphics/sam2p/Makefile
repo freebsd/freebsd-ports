@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-latest
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts raster (bitmap) image formats into PS or PDF files
 
+BROKEN=		Size mismatch
+
 BUILD_DEPENDS=	tif22pnm:${PORTSDIR}/graphics/tif22pnm \
 		tifftopnm:${PORTSDIR}/graphics/netpbm \
 		zip:${PORTSDIR}/archivers/zip \
