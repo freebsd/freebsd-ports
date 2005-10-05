@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	db43
-PORTVERSION=	4.3.28
+PORTVERSION=	4.3.29
 CATEGORIES=	databases
 MASTER_SITES=	http://downloads.sleepycat.com/
 PKGNAMESUFFIX?=
