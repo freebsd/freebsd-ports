@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cmospwd
-PORTVERSION=	4.6
+PORTVERSION=	4.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 
