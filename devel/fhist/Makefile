@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	fhist
-PORTVERSION=	1.10
+PORTVERSION=	1.14
 CATEGORIES=	devel
-MASTER_SITES=	http://www.canb.auug.org.au/~millerp/		\
-		ftp://ftp.agso.gov.au/pub/Aegis/ 		\
-		ftp://ftp.u-aizu.ac.jp/pub/misc/tools/Aegis/	\
-		http://gd.tuwien.ac.at/softeng/Aegis/
+MASTER_SITES=	http://fhist.sourceforge.net/
 
 MAINTAINER=	jkoshy@freebsd.org
 COMMENT=	Utilities to maintain file history, do file comparisions and merges
