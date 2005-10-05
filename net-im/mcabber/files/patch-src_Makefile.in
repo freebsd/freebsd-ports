@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Wed Oct  5 19:02:57 2005
++++ src/Makefile.in	Wed Oct  5 19:03:19 2005
+@@ -162,7 +162,7 @@
+ 		  settings.c settings.h hooks.c hooks.h \
+ 		  histolog.c histolog.h utils.c utils.h list.h
+ 
+-LDADD = -lglib-2.0 -lncurses -lpanel \
++LDADD = $(GLIB_LIBS) -lncurses -lpanel \
+ 	../libjabber/liblibjabber.a ../connwrap/libconnwrap.a
+ 
+ INCLUDES = $(GLIB_CFLAGS)

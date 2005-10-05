@@ -1,0 +1,32 @@
+# New ports collection makefile for:	mcabber
+# Date created:		2005-10-05
+# Whom:			vsevolod
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mcabber
+PORTVERSION=	0.6.8
+CATEGORIES=	net
+MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/
+
+MAINTAINER=	vsevolod@FreeBSD.org
+COMMENT=	Small Jabber console client
+
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_OPENSSL=	yes
+USE_ICONV=	yes
+USE_GETTEXT=	yes
+USE_GNOME=	glib20
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+MAN1=		mcabber.1
+PLIST_FILES=	bin/mcabber %%EXAMPLESDIR%%/mcabberrc
+PLIST_DIRS=	%%EXAMPLESDIR%%
+
+post-install:
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/mcabberrc.example ${EXAMPLESDIR}/mcabberrc
+
+.include <bsd.port.mk>

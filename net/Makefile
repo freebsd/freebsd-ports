@@ -375,6 +375,7 @@
     SUBDIR += mad_fcl
     SUBDIR += magictun
     SUBDIR += mars_nwe
+    SUBDIR += mcabber
     SUBDIR += meanwhile
     SUBDIR += meanwhile-gaim
     SUBDIR += mercury
