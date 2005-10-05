@@ -10166,6 +10166,7 @@ py-numeric17	ports/math/py-numeric17
 py-ogg		ports/audio/py-ogg
 py-omniorb	ports/devel/py-omniorb
 py-oops		ports/databases/py-oops
+py-openal	ports/audio/py-openal
 py-opengl	ports/graphics/py-opengl
 py-openssl	ports/security/py-openssl
 py-optik	ports/devel/py-optik
