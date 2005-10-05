@@ -7,6 +7,7 @@
 
 PORTNAME=	cegui
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=crayzedsgui
@@ -18,6 +19,7 @@ COMMENT=	A library providing windowing and widgets for graphics APIs
 LIB_DEPENDS=	IL.1:${PORTSDIR}/graphics/devil
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_mk2
+CONFIGURE_ARGS=	--without-xerces-c
 USE_REINPLACE=	YES
 USE_LIBTOOL_VER=13
 GNU_CONFIGURE=	YES
@@ -29,7 +31,6 @@ USE_GNOME=	gnomehack
 
 post-patch:
 	@${REINPLACE_CMD} -e ' \
-		s|"-lxerces-c.*"|"-L${LOCALBASE}/lib -lxerces-c ${PTHREAD_LIBS} $$LIBS"|g; \
 		s|"-lILU.*"|"-lm -L${LOCALBASE}/lib -lILU -lIL $$LIBS"|g; \
 		s|-lpthread|${PTHREAD_LIBS}|g; \
 		s|DevIL_CFLAGS=.*|DevIL_CFLAGS="-DUSE_DEVIL_LIBRARY -I${LOCALBASE}/include"|g' \
