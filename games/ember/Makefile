@@ -50,7 +50,9 @@ post-patch:
 		s|CEGUI-OGRE_\([A-Z]*=\)|CEGUI_OGRE_\1|g; \
 		s|\$$CEGUI-OGRE_\([A-Z]*\)|\$$CEGUI_OGRE_\1|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|<SDL/|<|g' \
+	@${REINPLACE_CMD} -e '\
+		s|<SDL/|<|g; \
+		s|libSDL_image-1\.2\.so\.0|libSDL_image\.so|g' \
 		${WRKSRC}/configure \
 		${WRKSRC}/src/components/ogre/EmberOgre.cpp
 	@${REINPLACE_CMD} -e 's|#include "framework/float_cast.h"||g' \
@@ -64,6 +66,8 @@ post-patch:
 		 /Plugin=Plugin_CgProgramManager.so/d; \
 		s|/usr/lib/OGRE|${X11BASE}/lib/OGRE|' \
 		${WRKSRC}/src/components/ogre/plugins.cfg
+	@${REINPLACE_CMD} -e 's|(br_thread_local_store (br_prepend_prefix ((void \*) "", "\([^"]*\)")))|"${PREFIX}\1"|g' \
+		${WRKSRC}/src/framework/prefix.h
 .if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} -e 's|lrintf|(long int)rintf|g' \
 		${WRKSRC}/src/components/ogre/environment/meshtree/TStem.cpp \
