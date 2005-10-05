@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	minisapserver
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	net multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/miniSAPserver/${PORTVERSION}/
 
@@ -27,12 +27,16 @@ OPTIONS=	SLP "Enable SLP support via openslp" off
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_SLP)
 LIB_DEPENDS+=	slp.1:${PORTSDIR}/net/openslp
 
-CONFIGURE_ARGS=	--enable-slp
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ARGS+=--enable-slp
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+.else
+CONFIGURE_ARGS+=--disable-slp
 .endif
 
 post-patch:
@@ -54,4 +58,4 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/sapserver.sh ${PREFIX}/etc/rc.d/
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
