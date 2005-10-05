@@ -389,6 +389,7 @@
     SUBDIR += py-musicbrainz
     SUBDIR += py-ogg
     SUBDIR += py-openal
+    SUBDIR += py-sdl_mixer
     SUBDIR += py-vorbis
     SUBDIR += py-xmms
     SUBDIR += pysol-sound-server
