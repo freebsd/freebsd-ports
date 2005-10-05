@@ -26,6 +26,7 @@ BUILD_DEPENDS+=	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip
 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+LATEST_LINK=	sympa5
 CONFLICTS=	sympa-4*
 
 DB_TYPE?=mysql
