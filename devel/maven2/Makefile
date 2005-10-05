@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maven2
-DISTVERSION=	2.0-alpha-3
+DISTVERSION=	2.0-beta-3
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	maven/binaries
@@ -20,6 +20,7 @@ JAVA_VERSION=	1.4+
 NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 SUB_FILES=	m2.sh
+SUB_LIST=	CLASSWORLDS_JAR=classworlds-1.1-alpha-2.jar
 WRKSRC=		${WRKDIR}/maven-${DISTVERSION}
 
 post-extract:
