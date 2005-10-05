@@ -9,13 +9,15 @@ PORTNAME=	gksu
 PORTVERSION=	1.2.2
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://people.debian.org/~kov/gksu/gksu1.2/
+MASTER_SITES=	#http://people.debian.org/~kov/gksu/gksu/
 
-MAINTAINER=	troplosti@orcaweb.cjb.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical frontend to su
 
 LIB_DEPENDS=	gksu1.2.0:${PORTSDIR}/sysutils/libgksu \
 		gksuui1.0.0:${PORTSDIR}/sysutils/libgksuui
+
+BROKEN=		Port is unfetchable, needs an update to the latest version
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20 pkgconfig gnomeprefix gnomehack
