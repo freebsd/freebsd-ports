@@ -1,0 +1,5 @@
+pysdl_mixer is a python interface to SDL's sdl_mixer. 
+This is usefull for multichannel sample and music playback from python. 
+This project is currently being used by soya (https://gna.org/projects/soya/).
+
+WWW:	https://gna.org/projects/pysdlmixer/
