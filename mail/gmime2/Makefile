@@ -7,11 +7,11 @@
 
 PORTNAME=	gmime
 PORTVERSION=	2.1.16
-CATEGORIES=	mail
+CATEGORIES?=	mail
 MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/v2.1/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Library (written in C) for parsing and creating messages using MIME
+MAINTAINER?=	ports@FreeBSD.org
+COMMENT?=	Library (written in C) for parsing and creating messages using MIME
 
 CONFLICTS=	gmime-1.0.*
 
@@ -19,8 +19,9 @@ USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget glib20
 USE_LIBTOOL_VER=15
-CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE} \
-			--with-html-dir=${PREFIX}/share/doc
+CONFIGURE_ARGS?=	--with-libiconv=${LOCALBASE} \
+			--with-html-dir=${PREFIX}/share/doc \
+			--enable-mono=no
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 			LIBS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=		yes
