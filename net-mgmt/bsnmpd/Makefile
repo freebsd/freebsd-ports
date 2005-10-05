@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsnmpd
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://people.freebsd.org/~harti/bsnmp/
 DISTNAME=	bsnmp-${PORTVERSION}
@@ -28,7 +28,7 @@ INSTALLS_SHLIB=		yes
 USE_GCC=	3.2+
 USE_RC_SUBR=	bsnmpd.sh
 
-MAN1=	bsnmpd.1 gensnmpdef.1 gensnmptree.1
+MAN1=	bsnmpd.1 gensnmptree.1 gensnmpdef.1
 MAN3=	asn1.3 bsnmplib.3 bsnmpclient.3 bsnmpagent.3 snmpmod.3 \
 	snmp_mibII.3
 
