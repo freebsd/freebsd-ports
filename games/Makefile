@@ -418,7 +418,6 @@
     SUBDIR += pioneers
     SUBDIR += pipenightdreams
     SUBDIR += pmars
-    SUBDIR += pmars-doc
     SUBDIR += pmars-sdl
     SUBDIR += polypuzzle
     SUBDIR += powermanga
