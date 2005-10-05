@@ -1,12 +1,12 @@
 # New ports collection makefile for:	cnupm
-# Date created:		29 October 2003
-# Whom:			Dennis S.Davidoff <null@1system.ru>
+# Date created:				29 October 2003
+# Whom:					Dennis S.Davidoff <null@1system.ru>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	cnupm
-PORTVERSION=	3.8
+PORTVERSION=	3.9
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://pdp-11.org.ru/~form/cnupm/files/
 
