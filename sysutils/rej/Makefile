@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rej
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	http://critical.ch/distfiles/ \
 		http://ftp.suse.com/pub/people/mason/rej/
@@ -19,7 +19,7 @@ NO_BUILD=	yes
 USE_REINPLACE=	yes
 
 PORTDOCS=	CHANGELOG README vimrc
-PLIST_FILES=	bin/rej bin/qp
+PLIST_FILES=	bin/rej bin/rej-qp bin/rej-mp
 
 .include <bsd.port.pre.mk>
 
@@ -28,7 +28,7 @@ IGNORE=		needs Perl 5.8.6 or above (lang/perl5.8)
 .endif
 
 post-patch:
-.for f in ${PORTNAME} qp
+.for f in ${PORTNAME} qp mp
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' \
 		${WRKSRC}/${f}
 .endfor
@@ -36,8 +36,9 @@ post-patch:
 		${WRKSRC}/runtests.sh
 
 do-install:
-.for f in ${PORTNAME} qp
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+.for f in qp mp
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin/${PORTNAME}-${f}
 .endfor
 
 .if !defined(NOPORTDOCS)
