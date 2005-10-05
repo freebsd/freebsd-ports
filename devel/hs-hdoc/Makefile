@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	hdoc
-PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTVERSION=	0.8.3
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.fmi.uni-passau.de/~groessli/hdoc/
 PKGNAMEPREFIX=	hs-
