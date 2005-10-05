@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vumeter
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}plugin
@@ -23,16 +23,12 @@ USE_GNOME=	gdkpixbuf
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 
-SKINSDIR=	${PREFIX}/share/xmms/VU_Meter_skins
-PLIST_SUB=	SKINSDIR="${SKINSDIR:S,^${PREFIX}/,,}"
+DATADIR=	${PREFIX}/share/xmms/VU_Meter_skins
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' ${WRKSRC}/src/vumeter.h
 
 post-install:
-.for s in default default.mirror default.oldxmms
-	${MKDIR} ${SKINSDIR}/${s}
-	${INSTALL_DATA} ${WRKSRC}/skins/${s}/* ${SKINSDIR}/${s}
-.endfor
+	@${CP} -R ${WRKSRC}/skins ${DATADIR}
 
 .include <bsd.port.mk>
