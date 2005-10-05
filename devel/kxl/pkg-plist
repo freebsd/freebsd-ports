@@ -1,5 +1,5 @@
 include/KXL.h
-lib/libKXL-1.1.5.so
+lib/libKXL-1.1.7.so
 lib/libKXL.so
 lib/libKXL.a
 lib/libKXL.la
