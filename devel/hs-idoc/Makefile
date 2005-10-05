@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	idoc
-PORTVERSION=	0.2.5
-PORTREVISION=	1
+PORTVERSION=	0.2.6
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.cse.unsw.edu.au/~chak/haskell/idoc/
 PKGNAMEPREFIX=	hs-
@@ -19,11 +18,11 @@ BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 PLIST_FILES=	bin/idoc
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+MAKE_ARGS=	PREFIX="${PREFIX}"
 
 ALL_TARGET=	# empty
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^\(PREFIX\)|#\1|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|IOExts|Debug.Trace|' ${WRKSRC}/IDoc.hs
 
 .include <bsd.port.mk>
