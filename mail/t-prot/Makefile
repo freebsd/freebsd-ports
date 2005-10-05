@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	t-prot
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.escape.de/users/tolot/mutt/t-prot/downloads/ \
 		${MASTER_SITE_LOCAL}

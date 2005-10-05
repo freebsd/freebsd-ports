@@ -9,6 +9,6 @@ bin/t-prot
 %%EXAMPLESDIR%%/filter_innd.pl
 %%EXAMPLESDIR%%/muttrc.t-prot
 %%EXAMPLESDIR%%/t-prot-r1.238-gpg126.diff
-%%EXAMPLESDIR%%/t-prot-r1.240-mutt157.diff
+%%EXAMPLESDIR%%/t-prot-r1.243-mutt157.diff
 %%EXAMPLESDIR%%/t-prot.sl
 @dirrm %%EXAMPLESDIR%%
