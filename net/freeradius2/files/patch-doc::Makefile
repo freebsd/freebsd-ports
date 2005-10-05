@@ -1,16 +1,18 @@
---- doc/Makefile.orig	Tue Dec 24 16:49:34 2002
-+++ doc/Makefile	Wed Dec  3 13:56:45 2003
-@@ -20,12 +20,14 @@
- 	@rm -f include/*~ *~
+--- doc/Makefile.orig	Sat Aug 13 00:41:24 2005
++++ doc/Makefile	Wed Oct  5 10:57:06 2005
+@@ -17,14 +17,16 @@
+ 	@rm -f *~
  
  install:
 +ifndef NOPORTDOCS
- 	$(INSTALL) -d -m 755	$(R)$(datadir)/doc
--	$(INSTALL) -d -m 755	$(R)$(datadir)/doc/freeradius-$(RADIUSD_VERSION)
-+	$(INSTALL) -d -m 755	$(R)$(datadir)/doc/freeradius
- 	for i in $(DOCS) rlm_*; do \
--		$(INSTALL) -m 644 $$i $(R)$(datadir)/doc/freeradius-$(RADIUSD_VERSION); \
-+		$(INSTALL) -m 644 $$i $(R)$(datadir)/doc/freeradius; \
+ 	$(INSTALL) -d -m 755 $(R)$(datadir)/doc
+-	$(INSTALL) -d -m 755 $(R)$(datadir)/doc/freeradius-$(RADIUSD_VERSION)
++	$(INSTALL) -d -m 755 $(R)$(datadir)/doc/freeradius
+ 	for file in *[!~]; do \
+ 		if [ -f $$file -a $$file != Makefile ]; then \
+-			$(INSTALL) -m 644 $$file $(R)$(datadir)/doc/freeradius-$(RADIUSD_VERSION); \
++			$(INSTALL) -m 644 $$file $(R)$(datadir)/doc/freeradius; \
+ 		fi; \
  	done
  	@$(MAKE) $(MFLAGS) WHAT_TO_MAKE=$@ common
 +endif
