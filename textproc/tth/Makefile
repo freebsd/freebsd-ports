@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A TeX to HTML translator
 
+BROKEN=		Size mismatch
+
 USE_GHOSTSCRIPT_RUN=	yes
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \

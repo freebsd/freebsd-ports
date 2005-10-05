@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The State Machine Compiler
 
+BROKEN=		Size mismatch
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 NO_BUILD=	yes
