@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20051002
+PORTVERSION=	0.0.20051004
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_LOCAL:S|$|ahze/|} \
-		http://people.freebsd.org/~ahze/distfiles/
-#		http://download.videolan.org/pub/videolan/contrib/ \
-#		http://ftp.snt.utwente.nl/pub/software/videolan/contrib/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/0.0.//}
+MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/
+DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Multimedia library and tool for encoding H.264/AVC video streams
