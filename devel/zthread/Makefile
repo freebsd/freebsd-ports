@@ -15,9 +15,12 @@ DISTNAME=	ZThread-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A platform-independent object-oriented C++ threading library
 
+USE_INC_LIBTOOL_VER=15
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-ftime
+CONFIGURE_ARGS=	--without-ftime --disable-static
 USE_GMAKE=	yes
+MAKE_ARGS+=	INSTALL_PROGRAM="${INSTALL_SCRIPT}"
+MAKE_ENV+=	SED=sed # req'd for LIBTOOL?!
 INSTALLS_SHLIB=	yes
 
 .if !defined(NOPORTDOCS)
@@ -27,11 +30,14 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-USE_GCC=	3.3
+USE_GCC=	3.3+
 .endif
 
 post-extract:
 	@${FIND} ${WRKSRC} -name CVS -type d -delete
+
+post-patch:
+	@${CP} ${LTMAIN} ${WRKSRC}
 
 post-install:
 	@${FIND} ${PREFIX}/include/zthread -type f | \
