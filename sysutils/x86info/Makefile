@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	x86info
-PORTVERSION=	1.14
+PORTVERSION=	1.16
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.codemonkey.org.uk/projects/x86info/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -20,11 +20,6 @@ ONLY_FOR_ARCHS=	i386
 PLIST_FILES=	bin/x86info
 USE_REINPLACE=	yes
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
-
-post-patch:
-.for file in x86info.h mptable.c
-	@${REINPLACE_CMD} -e "s|machine/types.h|sys/types.h|g" ${WRKSRC}/${file}
-.endfor
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/x86info ${PREFIX}/bin
