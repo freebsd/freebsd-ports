@@ -6,40 +6,35 @@
 #
 
 PORTNAME=	marbles
-PORTVERSION=	1.0.2
-PORTREVISION=	3
+PORTVERSION=	1.0.7
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lgames
+DISTNAME=	lmarbles-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A challenging puzzle game similar to Atomix
 
-USE_SDL=	sdl
+USE_SDL=	sdl mixer
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-profile-path=/var/games
+CONFIGURE_ARGS=	--localstatedir=/var/games
 USE_REINPLACE=	yes
 
-MAN6=	marbles.6
+MAN6=		lmarbles.6
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/SDL\///' ${WRKSRC}/src/*.[ch]
-	@${REINPLACE_CMD} -e 's/^#include "sys\/timeb.h"//' \
-		${WRKSRC}/src/timer.c
-	@${REINPLACE_CMD} -e 's/games\/marbles/marbles/g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's/if .*marbles.prfs/if false/' \
-		${WRKSRC}/src/Makefile.in
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/src/empty.prfs ${DATADIR}
-	@${CHOWN} root:games ${PREFIX}/bin/marbles
-	@${CHMOD} g+s ${PREFIX}/bin/marbles
+	${INSTALL_DATA} ${WRKSRC}/src/empty.prfs ${PREFIX}/share/lmarbles
+	@${CHOWN} root:games ${PREFIX}/bin/lmarbles
+	@${CHMOD} g+s ${PREFIX}/bin/lmarbles
 	@${SETENV} "PKG_PREFIX=${PREFIX}" \
 		${SH} pkg-install ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/manual/* ${DOCSDIR}
+	${MKDIR} ${PREFIX}/share/doc/lmarbles
+	${INSTALL_DATA} ${WRKSRC}/src/manual/* ${PREFIX}/share/doc/lmarbles
 .endif
 
 .include <bsd.port.mk>
