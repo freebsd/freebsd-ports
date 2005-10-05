@@ -8,7 +8,8 @@
 PORTNAME=	hydrogen
 PORTVERSION=	0.9.2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.hydrogen-music.org/download/sources/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	An advanced drum machine
