@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	javaview-lite
-PORTVERSION=	3.90
+PORTVERSION=	3.95
 CATEGORIES=	math java graphics
 MASTER_SITES=	http://www.javaview.de/download/data/
 DISTFILES=	javaview.zip jv_models.zip jv_tutor.zip
-DIST_SUBDIR=	${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	nivit@email.it
 COMMENT=	A 3D viewer and a mathematical visualization software
@@ -26,10 +26,12 @@ USE_REINPLACE=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
+SUB_FILES=	pkg-message
+
 SCRIPT=		bin/javaview
 FIND_DIRS=	\( -type d -not -empty \)
 FIND_DATA=	-not -type d
-FIND_EXCLUDE=	-not \( -name "*.bat" -or -name "*.bak" -or -name "*.orig" -or -name ".*" -or -name $$(${BASENAME} ${SCRIPT}) \)
+FIND_EXCLUDE=	-not \( -name "*.bat" -or -name "*.bak" -or -name "*.orig" -or -name ".*" -or -name $$(${BASENAME} ${SCRIPT}) -or -name ${SUB_FILES} \)
 
 LINK_OPTS?=	-sf
 
