@@ -1673,6 +1673,7 @@ distribute	ports/mail/distribute
 dits		ports/devel/dits
 diveintopython	ports/lang/diveintopython
 divxcalc	ports/graphics/divxcalc
+dixit		ports/textproc/dixit
 djbdns		ports/dns/djbdns
 djbdns-tools	ports/dns/djbdns-tools
 djbfft		ports/math/djbfft
