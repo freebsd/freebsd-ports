@@ -8,6 +8,7 @@ include/enlightenment/e_about.h
 include/enlightenment/e_actions.h
 include/enlightenment/e_alert.h
 include/enlightenment/e_apps.h
+include/enlightenment/e_apps_cache.h
 include/enlightenment/e_atoms.h
 include/enlightenment/e_bg.h
 include/enlightenment/e_bindings.h
@@ -21,6 +22,7 @@ include/enlightenment/e_datastore.h
 include/enlightenment/e_desk.h
 include/enlightenment/e_dialog.h
 include/enlightenment/e_dnd.h
+include/enlightenment/e_entry.h
 include/enlightenment/e_error.h
 include/enlightenment/e_focus.h
 include/enlightenment/e_font.h
@@ -58,6 +60,7 @@ include/enlightenment/e_startup.h
 include/enlightenment/e_table.h
 include/enlightenment/e_test.h
 include/enlightenment/e_theme.h
+include/enlightenment/e_theme_about.h
 include/enlightenment/e_user.h
 include/enlightenment/e_utils.h
 include/enlightenment/e_win.h
@@ -148,6 +151,7 @@ share/locale/pt/LC_MESSAGES/enlightenment.mo
 share/locale/ru/LC_MESSAGES/enlightenment.mo
 share/locale/sk/LC_MESSAGES/enlightenment.mo
 share/locale/sl/LC_MESSAGES/enlightenment.mo
+share/locale/sv/LC_MESSAGES/enlightenment.mo
 share/locale/zh_CN/LC_MESSAGES/enlightenment.mo
 share/xsessions/enlightenment.desktop
 @dirrm %%DATADIR%%/doc
