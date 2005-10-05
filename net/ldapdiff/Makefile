@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ldapdiff
-PORTVERSION=	1.0.0
+PORTVERSION=	1.2.0
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.ale.org/pub/mirrors/openpkg/sources/DST/ldapdiff/ \
 		http://webtomware.rhoen.de/
@@ -29,8 +29,6 @@ do-install:
 .for i in addentry webtomware.init.ldif webtomware.user.ldif
 	${INSTALL_DATA} ${WRKSRC}/samples/${i} ${DATADIR}/samples
 .endfor
-	@${MKDIR} ${DATADIR}/plugins
-	${INSTALL_DATA} ${WRKSRC}/plugins/ldapskeleton.c ${DATADIR}/plugins
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in CHANGES README TODO ChangeLog
