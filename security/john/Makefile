@@ -7,15 +7,14 @@
 #
 
 PORTNAME=	john
-PORTVERSION=	1.6.37
-PORTREVISION=	1
+PORTVERSION=	1.6.39
 CATEGORIES=	security
 MASTER_SITES=	http://www.openwall.com/john/a/ \
 		ftp://ftp.ru.openwall.com/pub/projects/john/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		${PORTNAME}-1.6.tar.gz
 
-MAINTAINER=	dom@helenmarks.co.uk
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Featureful Unix password cracker
 
 USE_REINPLACE=	yes

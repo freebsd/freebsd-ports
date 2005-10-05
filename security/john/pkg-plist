@@ -1,10 +1,10 @@
 bin/john
 bin/unshadow
 bin/xtract
-share/john/all.chr
-share/john/alpha.chr
-share/john/digits.chr
-share/john/lanman.chr
-share/john/john.conf
-share/john/password.lst
+%%DATADIR%%/all.chr
+%%DATADIR%%/alpha.chr
+%%DATADIR%%/digits.chr
+%%DATADIR%%/lanman.chr
+%%DATADIR%%/john.conf
+%%DATADIR%%/password.lst
 @dirrm share/john
