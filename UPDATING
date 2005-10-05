@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20051005:
+  AFFECTS: users of x11-wm/devilspie
+  AUTHOR: jylefort@FreeBSD.org
+
+  The configuration file format has changed. See
+  /usr/X11R6/share/doc/devilspie/README for more details.
+
 20051002:
   AFFECTS: users of x11-toolkits/py-wxPython26
 
