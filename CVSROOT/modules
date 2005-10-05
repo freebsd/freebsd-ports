@@ -10217,6 +10217,7 @@ py-samba	ports/net/py-samba
 py-scgi		ports/www/py-scgi
 py-scientific	ports/math/py-scientific
 py-scipy	ports/science/py-scipy
+py-sdl_mixer	ports/audio/py-sdl_mixer
 py-sendfile	ports/devel/py-sendfile
 py-serial	ports/comms/py-serial
 py-sgflib	ports/games/py-sgflib
