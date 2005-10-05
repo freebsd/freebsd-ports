@@ -1,7 +1,0 @@
-#!/bin/sh
-
-FILE=/var/games/lmarbles.prfs
-[ "$2" != "POST-INSTALL" -o -f "$FILE" ] && exit 0
-
-echo "===>   Creating initial profile $FILE"
-install -o root -g games -m 664 ${PKG_PREFIX}/share/lmarbles/empty.prfs $FILE
