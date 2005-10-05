@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	xmms-ladspa
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.ecs.soton.ac.uk/~njl98r/code/ladspa/
 DISTNAME=	xmms_ladspa-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	arved@FreeBSD.org
 COMMENT=	"XMMS Plugin that provides LADSPA Plugins to XMMS"
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
