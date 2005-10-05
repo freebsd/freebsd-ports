@@ -5,4 +5,17 @@ lib/X11/app-defaults/Abacus
 %%DATADIR%%/Abacus2.les
 %%DATADIR%%/Abacus3.les
 %%DATADIR%%/Abacus4.les
+%%DATADIR%%/Abacusjp1.les
+%%DATADIR%%/Abacusjp2.les
+%%DATADIR%%/Abacusjp3.les
+%%DATADIR%%/Abacusjp4.les
+%%DATADIR%%/Abacusko1.les
+%%DATADIR%%/Abacusko2.les
+%%DATADIR%%/Abacusko3.les
+%%DATADIR%%/Abacusko4.les
+%%DATADIR%%/Abacusru1.les
+%%DATADIR%%/Abacusru2.les
+%%DATADIR%%/Abacusru3.les
+%%DATADIR%%/bump.au
+%%DATADIR%%/move.au
 @dirrm %%DATADIR%%
