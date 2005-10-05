@@ -79,8 +79,12 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
+.if exists(${PORTSDIR}/java/eclipse)
 ECLIPSE_PORT=		${PORTSDIR}/java/eclipse
 ECLIPSE_VERSION!=	cd ${ECLIPSE_PORT} && ${MAKE} -V PORTVERSION
+.else
+ECLIPSE_VERSION=	3.1
+.endif
 
 CLASSPATH=.
 .for jar in ${CLASSPATH_JARS}
