@@ -9,7 +9,7 @@ PORTNAME=	morpheus
 PORTVERSION=	0.3
 PORTREVISION=	1
 CATEGORIES=	graphics gnome
-MASTER_SITES=	http://wine.sexcity.pl/morpheus/meat/
+MASTER_SITES=	http://www.winnicki.net/morpheus/meat/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mesh (3D model) viewer for GNOME desktop
