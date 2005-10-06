@@ -51,15 +51,16 @@ lib/evidence/gui/efl/engines/tt_wholewindow.so
 lib/evidence/ipc/ipc_ecore.so
 lib/evidence/metadata/ape.so
 lib/evidence/metadata/exif.so
+%%EXTRACTOR:%%lib/evidence/metadata/extractor.so
 lib/evidence/metadata/image.so
+%%ID3:%%lib/evidence/metadata/mp3.so
 lib/evidence/metadata/ttf.so
+%%VORBIS:%%lib/evidence/metadata/vorbis.so
 lib/evidence/thumbnailer/epeg.so
+%%ID3:%%lib/evidence/thumbnailer/id3.so
 lib/evidence/thumbnailer/imlib.so
 lib/evidence/thumbnailer/ttf.so
-lib/evidence/thumbnailer/xine.so
-%%DATADIR%%/CVS/Entries
-%%DATADIR%%/CVS/Repository
-%%DATADIR%%/CVS/Root
+%%XINE:%%lib/evidence/thumbnailer/xine.so
 %%DATADIR%%/README
 %%DATADIR%%/azundris.png
 %%DATADIR%%/evidence.handlers
@@ -94,24 +95,6 @@ lib/evidence/thumbnailer/xine.so
 %%DATADIR%%/icons/LCARS/video_any.png
 %%DATADIR%%/icons/Makefile
 %%DATADIR%%/icons/README
-%%DATADIR%%/icons/default/README
-%%DATADIR%%/icons/default/app-executable.png
-%%DATADIR%%/icons/default/audio-default.png
-%%DATADIR%%/icons/default/base.png
-%%DATADIR%%/icons/default/cdrom-open.png
-%%DATADIR%%/icons/default/config.png
-%%DATADIR%%/icons/default/cvs.png
-%%DATADIR%%/icons/default/doc-unknown.png
-%%DATADIR%%/icons/default/floppy.png
-%%DATADIR%%/icons/default/folder.png
-%%DATADIR%%/icons/default/folder.xcf
-%%DATADIR%%/icons/default/font-default.png
-%%DATADIR%%/icons/default/img-default.png
-%%DATADIR%%/icons/default/mime.icons
-%%DATADIR%%/icons/default/package.png
-%%DATADIR%%/icons/default/parent.png
-%%DATADIR%%/icons/default/text-default.png
-%%DATADIR%%/icons/default/video-default.png
 %%DATADIR%%/icons/default
 %%DATADIR%%/icons/efm/.cvsignore
 %%DATADIR%%/icons/efm/.icons/.0.db
@@ -220,48 +203,51 @@ lib/evidence/thumbnailer/xine.so
 %%DATADIR%%/icons/tosh_128/sys_ql.png
 %%DATADIR%%/icons/tosh_128/video_any.png
 %%DATADIR%%/icons/tosh_64/README.64
+%%DATADIR%%/icons/tosh_64/Readme.png
 %%DATADIR%%/icons/tosh_64/_doc_html.png
 %%DATADIR%%/icons/tosh_64/_doc_unknown.png
 %%DATADIR%%/icons/tosh_64/_folder.png
 %%DATADIR%%/icons/tosh_64/_parent-folder.png
 %%DATADIR%%/icons/tosh_64/_selection.png
+%%DATADIR%%/icons/tosh_64/app_c_header.png
+%%DATADIR%%/icons/tosh_64/app_c_source.png
+%%DATADIR%%/icons/tosh_64/app_cc_source.png
+%%DATADIR%%/icons/tosh_64/app_executable.png
+%%DATADIR%%/icons/tosh_64/app_package.png
 %%DATADIR%%/icons/tosh_64/create
+%%DATADIR%%/icons/tosh_64/dev.png
+%%DATADIR%%/icons/tosh_64/doc_any.png
+%%DATADIR%%/icons/tosh_64/doc_audio.png
+%%DATADIR%%/icons/tosh_64/doc_core.png
 %%DATADIR%%/icons/tosh_64/doc_html.png
+%%DATADIR%%/icons/tosh_64/doc_image.png
+%%DATADIR%%/icons/tosh_64/doc_playlist.png
+%%DATADIR%%/icons/tosh_64/doc_text.png
 %%DATADIR%%/icons/tosh_64/doc_unknown.png
 %%DATADIR%%/icons/tosh_64/folder.png
+%%DATADIR%%/icons/tosh_64/font_any.png
+%%DATADIR%%/icons/tosh_64/home_azundris.png
+%%DATADIR%%/icons/tosh_64/mail.png
 %%DATADIR%%/icons/tosh_64/mime.icons
 %%DATADIR%%/icons/tosh_64/parent-folder.png
 %%DATADIR%%/icons/tosh_64/selection.png
+%%DATADIR%%/icons/tosh_64/sys_enterprise.png
+%%DATADIR%%/icons/tosh_64/sys_pc.png
+%%DATADIR%%/icons/tosh_64/sys_ql.png
+%%DATADIR%%/icons/tosh_64/video_any.png
 %%DATADIR%%/mime.alii
 %%DATADIR%%/mime.handlers
 %%DATADIR%%/mime.icons
 %%DATADIR%%/mime.types
 %%DATADIR%%/parent-folder.png
-%%DATADIR%%/themes/LCARS/CVS/Entries
-%%DATADIR%%/themes/LCARS/CVS/Repository
-%%DATADIR%%/themes/LCARS/CVS/Root
 %%DATADIR%%/themes/LCARS/background.jpg
 %%DATADIR%%/themes/LCARS/background_.jpg
 %%DATADIR%%/themes/LCARS/evidence.theme
-%%DATADIR%%/themes/default/CVS/Entries
-%%DATADIR%%/themes/default/CVS/Repository
-%%DATADIR%%/themes/default/CVS/Root
-%%DATADIR%%/themes/default/Phusion9_purple.jpg
-%%DATADIR%%/themes/default/Phusion9_purple_orig.jpg
-%%DATADIR%%/themes/default/README
-%%DATADIR%%/themes/default/about.jpg
-%%DATADIR%%/themes/default/evidence.theme
 %%DATADIR%%/themes/default
-%%DATADIR%%/themes/efm/CVS/Entries
-%%DATADIR%%/themes/efm/CVS/Repository
-%%DATADIR%%/themes/efm/CVS/Root
 %%DATADIR%%/themes/efm/about.png
 %%DATADIR%%/themes/efm/desk.png
 %%DATADIR%%/themes/efm/efm.png
 %%DATADIR%%/themes/efm/evidence.theme
-%%DATADIR%%/themes/fishtank/CVS/Entries
-%%DATADIR%%/themes/fishtank/CVS/Repository
-%%DATADIR%%/themes/fishtank/CVS/Root
 %%DATADIR%%/themes/fishtank/README
 %%DATADIR%%/themes/fishtank/about.png
 %%DATADIR%%/themes/fishtank/bubble1.png
@@ -276,9 +262,6 @@ lib/evidence/thumbnailer/xine.so
 %%DATADIR%%/themes/fishtank/work/bubble3.png
 %%DATADIR%%/themes/fishtank/work/bubble4.png
 %%DATADIR%%/themes/fonts/COPYRIGHT.Vera
-%%DATADIR%%/themes/fonts/CVS/Entries
-%%DATADIR%%/themes/fonts/CVS/Repository
-%%DATADIR%%/themes/fonts/CVS/Root
 %%DATADIR%%/themes/fonts/Federation_Crille.ttf
 %%DATADIR%%/themes/fonts/Federation_classic_movie.ttf
 %%DATADIR%%/themes/fonts/LICENSE.Vera
@@ -291,54 +274,33 @@ lib/evidence/thumbnailer/xine.so
 %%DATADIR%%/themes/fonts/veramono.ttf
 %%DATADIR%%/themes/fonts/verase.ttf
 %%DATADIR%%/themes/fonts/xfiles.ttf
-%%DATADIR%%/themes/metallo/CVS/Entries
-%%DATADIR%%/themes/metallo/CVS/Repository
-%%DATADIR%%/themes/metallo/CVS/Root
 %%DATADIR%%/themes/metallo/README
 %%DATADIR%%/themes/metallo/about.jpg
 %%DATADIR%%/themes/metallo/evidence.theme
 %%DATADIR%%/themes/metallo/metallo.bg.db
 %%DATADIR%%/themes/metallo/metallo.png
-%%DATADIR%%/themes/nautilus/CVS/Entries
-%%DATADIR%%/themes/nautilus/CVS/Repository
-%%DATADIR%%/themes/nautilus/CVS/Root
 %%DATADIR%%/themes/nautilus/about.png
 %%DATADIR%%/themes/nautilus/beige.png
 %%DATADIR%%/themes/nautilus/evidence.theme
-%%DATADIR%%/themes/rephormed/CVS/Entries
-%%DATADIR%%/themes/rephormed/CVS/Repository
-%%DATADIR%%/themes/rephormed/CVS/Root
 %%DATADIR%%/themes/rephormed/about.jpg
 %%DATADIR%%/themes/rephormed/evidence.theme
 %%DATADIR%%/themes/rephormed/grey.png
 %%DATADIR%%/themes/rephormed/plain.png
 %%DATADIR%%/themes/rephormed/red.png
 %%DATADIR%%/themes/rephormed/white.png
-%%DATADIR%%/themes/tosh/CVS/Entries
-%%DATADIR%%/themes/tosh/CVS/Repository
-%%DATADIR%%/themes/tosh/CVS/Root
 %%DATADIR%%/themes/tosh/Phusion9_purple.jpg
 %%DATADIR%%/themes/tosh/Phusion9_purple_orig.jpg
 %%DATADIR%%/themes/tosh/README
 %%DATADIR%%/themes/tosh/about.jpg
 %%DATADIR%%/themes/tosh/evidence.theme
-@dirrm %%DATADIR%%/themes/tosh/CVS
 @dirrm %%DATADIR%%/themes/tosh
-@dirrm %%DATADIR%%/themes/rephormed/CVS
 @dirrm %%DATADIR%%/themes/rephormed
-@dirrm %%DATADIR%%/themes/nautilus/CVS
 @dirrm %%DATADIR%%/themes/nautilus
-@dirrm %%DATADIR%%/themes/metallo/CVS
 @dirrm %%DATADIR%%/themes/metallo
-@dirrm %%DATADIR%%/themes/fonts/CVS
 @dirrm %%DATADIR%%/themes/fonts
 @dirrm %%DATADIR%%/themes/fishtank/work
-@dirrm %%DATADIR%%/themes/fishtank/CVS
 @dirrm %%DATADIR%%/themes/fishtank
-@dirrm %%DATADIR%%/themes/efm/CVS
 @dirrm %%DATADIR%%/themes/efm
-@dirrm %%DATADIR%%/themes/default/CVS
-@dirrm %%DATADIR%%/themes/LCARS/CVS
 @dirrm %%DATADIR%%/themes/LCARS
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/icons/tosh_64
@@ -351,7 +313,6 @@ lib/evidence/thumbnailer/xine.so
 @dirrm %%DATADIR%%/icons/efm
 @dirrm %%DATADIR%%/icons/LCARS
 @dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/CVS
 @dirrm %%DATADIR%%
 @dirrm lib/evidence/thumbnailer
 @dirrm lib/evidence/metadata
