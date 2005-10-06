@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnubiff
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.5
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,7 +39,7 @@ WANT_GNOME=	yes
 
 .if ${HAVE_GNOME:Mgnomepanel}!=""
 USE_GNOME+=		gnomepanel gconf2 gnomeprefix gnomehack
-PKGNAMESUFFIX=		-gnome
+PKGNAMESUFFIX+=		-gnome
 PLIST_SUB+=		SHAREDIR="share/gnome"
 PLIST_SUB+=		BONOBODIR="libdata/bonobo"
 PLIST_SUB+=		WITH_GNOME=""
