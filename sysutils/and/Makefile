@@ -8,7 +8,7 @@
 
 PORTNAME=	and
 PORTVERSION=	1.0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,10 +23,4 @@ NOPRECIOUSMAKEVARS=	yes
 MAN5=		and.conf.5 and.priorities.5
 MAN8=		and.8
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500014
-BROKEN=		"Not functional due kernel changes >= 5.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
