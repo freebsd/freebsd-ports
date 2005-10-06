@@ -21,6 +21,8 @@ WRKSRC=		${WRKDIR}/extract-xiso
 PLIST_FILES=	bin/extract-xiso
 DOC=		LICENSE.TXT
 
+MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
