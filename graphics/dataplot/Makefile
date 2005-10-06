@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	dataplot
-PORTVERSION=	20050310
+PORTVERSION=	20050830
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.nist.gov/pub/dataplot/unix/:source \
 		http://www.itl.nist.gov/div898/software/dataplot.html/:doc
-DISTFILES=	dpsrc_1_2005${EXTRACT_SUFX}:source \
+DISTFILES=	dpsrc.08_30_2005.gz:source \
 		dpsnapsh.pdf:doc
 DIST_SUBDIR=	dataplot
-EXTRACT_ONLY=	dpsrc_1_2005${EXTRACT_SUFX}
+EXTRACT_ONLY=	dpsrc.08_30_2005.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free software system for statistical visualization
