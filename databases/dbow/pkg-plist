@@ -1,8 +1,8 @@
 bin/dbow
 include/dbow.h
 lib/libdbow.a
-share/dbow/c.m4
-share/dbow/mysql.m4
-share/dbow/perl.m4
-share/dbow/php.m4
-@dirrm share/dbow
+%%DATADIR%%/c.m4
+%%DATADIR%%/mysql.m4
+%%DATADIR%%/perl.m4
+%%DATADIR%%/php.m4
+@dirrm %%DATADIR%%
