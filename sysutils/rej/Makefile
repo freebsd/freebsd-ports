@@ -11,7 +11,7 @@ CATEGORIES=	sysutils perl5
 MASTER_SITES=	http://critical.ch/distfiles/ \
 		http://ftp.suse.com/pub/people/mason/rej/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Merges patch-rejects and runs a merge program to verify the changes
 
 USE_PERL5=	yes

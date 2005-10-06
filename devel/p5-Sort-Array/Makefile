@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Sort
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A powerful array sorting Perl interface
 
 PERL_CONFIGURE=	yes

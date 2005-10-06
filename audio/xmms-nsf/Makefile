@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://optronic.sourceforge.net/files/ \
 		http://critical.ch/distfiles/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	XMMS input-plugin for playing Nintendo(TM) NSF audio files
 
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms

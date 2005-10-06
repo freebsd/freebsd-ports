@@ -10,7 +10,7 @@ PORTVERSION=	1.40
 CATEGORIES=	sysutils
 MASTER_SITES=	http://netdial.caribe.net/~adrian2/programs/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Fdupes is a program for identifying or deleting duplicate files
 
 USE_GETOPT_LONG=	yes

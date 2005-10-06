@@ -10,7 +10,7 @@ PORTVERSION=	4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://vii.sourceforge.net/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Execute a command repeatedly and scroll the output
 
 GNU_CONFIGURE=	yes

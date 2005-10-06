@@ -12,7 +12,7 @@ MASTER_SITES=	http://critical.ch/distfiles/ \
 		ftp://ftp.atari.art.pl/stuff/audio/8bit-music-archive/sap/plugins/xmms/
 DISTNAME=	sapplug-xmms-${DISTVERSION}
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	XMMS input plugin for playing 8bit Atari(TM) .sap audio files
 
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms

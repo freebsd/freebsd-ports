@@ -10,7 +10,7 @@ PORTVERSION=	0.89
 CATEGORIES=	audio
 MASTER_SITES=	http://critical.ch/distfiles/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A translator that converts MP4-SA files into efficient C programs
 
 PORTDOCS=	book sfman

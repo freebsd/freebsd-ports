@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Recover deleted files from FAT filesystems
 
 GNU_CONFIGURE=	yes

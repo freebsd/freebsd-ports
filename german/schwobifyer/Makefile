@@ -11,7 +11,7 @@ CATEGORIES=	german
 MASTER_SITES=	http://critical.ch/distfiles/
 PKGNAMEPREFIX=	de-
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A utility for translating german into the schwaebisch dialect
 
 PLIST_FILES=	bin/schwobifyer

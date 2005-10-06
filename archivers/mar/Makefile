@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.emantic.co.uk/mark/files/ \
 		http://critical.ch/mar/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A simple binary file format for storing arbitrary meta and user data
 
 USE_REINPLACE=	yes

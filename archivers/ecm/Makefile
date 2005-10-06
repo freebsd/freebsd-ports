@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	archivers
 MASTER_SITES=	http://critical.ch/distfiles/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Compresses CD images by stripping unnecessary EDC/ECC data
 
 PLIST_FILES=	bin/ecm bin/unecm

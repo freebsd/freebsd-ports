@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	modplug-xmms
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	ModPlug mod-like music shared libraries
 
 INSTALLS_SHLIB=	yes

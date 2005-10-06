@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.madness.at/~mad/projects/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A Cyrus-Imap to Maildir++ conversion utility
 
 USE_GETOPT_LONG=yes

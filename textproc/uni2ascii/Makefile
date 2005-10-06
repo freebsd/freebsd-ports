@@ -10,7 +10,7 @@ PORTVERSION=	2.5
 CATEGORIES=	textproc
 MASTER_SITES=	http://critical.ch/distfiles/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Convert between UTF-8 Unicode and 7-bit ASCII equivalents
 
 USE_LIBTOOL_VER=15

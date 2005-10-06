@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.45.free.net/~vitus/ice/misc/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A simple rtf2html converter
 
 CFLAGS+=	-Wall -Werror

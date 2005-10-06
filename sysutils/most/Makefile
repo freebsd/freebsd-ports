@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://space.mit.edu/pub/davis/most/ \
 		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/most/ \
 		http://gd.tuwien.ac.at/editors/davis/most/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A pager (like less) which has support for windows and binary files
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang

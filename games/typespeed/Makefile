@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://ls.purkki.org/typespeed/
 DISTNAME=	typespeed-${PORTVERSION}
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Test your typing speed, and get your fingers\' CPS
 
 MAN1=		typespeed.1

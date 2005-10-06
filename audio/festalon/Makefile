@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://projects.raphnet.net/festalon/
 PKGNAMEPREFIX?=
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT?=	A command line player for .nsf and .hes audio files
 
 LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate

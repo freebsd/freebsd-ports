@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://gopod.free-go.net/
 DISTNAME=	goPod-${PORTVERSION}_linux_bsd
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utility to cap/uncap an iPod
 
 GNU_CONFIGURE=	yes

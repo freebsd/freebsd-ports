@@ -10,7 +10,7 @@ PORTVERSION=	0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://home.hccnet.nl/paul.schuurmans/download/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Compare directories and select files to copy
 
 LDFLAGS+=	-lncurses -lform

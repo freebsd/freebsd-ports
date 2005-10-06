@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.giffin.org/download/ \
 		http://critical.ch/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Convert .xls spread sheets to tab delimited CSV or SQL inserts
 
 USE_REINPLACE=	yes

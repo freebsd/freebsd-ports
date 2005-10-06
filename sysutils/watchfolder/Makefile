@@ -10,7 +10,7 @@ PORTVERSION=	0.3.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dstunrea.sdf-eu.org/files/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Watch folders for new files and process them
 
 WRKSRC=		${WRKDIR}/watchd-${PORTVERSION}

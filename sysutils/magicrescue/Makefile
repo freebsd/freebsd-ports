@@ -10,7 +10,7 @@ PORTVERSION=	1.1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://jbj.rapanden.dk/magicrescue/release/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A file recovery tool which recovers deleted files from a block device
 
 GNU_CONFIGURE=	yes

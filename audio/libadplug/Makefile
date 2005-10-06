@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	adplug
 DISTNAME=	adplug-${PORTVERSION}
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	AdLib emulator library supporting many formats
 
 LIB_DEPENDS=	binio.1:${PORTSDIR}/devel/libbinio

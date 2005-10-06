@@ -10,7 +10,7 @@ DISTVERSION=	4.4
 CATEGORIES=	archivers
 MASTER_SITES=	http://critical.ch/unzoo/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A zoo archive extractor
 
 EXTRA_DEFINES=	-DSYS_IS_UNIX -DSYS_HAS_MKDIR

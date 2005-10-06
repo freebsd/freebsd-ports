@@ -11,7 +11,7 @@ CATEGORIES=	dns
 MASTER_SITES=	http://morettoni.net/bsd/ \
 		http://cvs.delink.net/mirrors/morettoni.net/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A dns notify sender written in C
 
 PLIST_FILES=	bin/zonenotify

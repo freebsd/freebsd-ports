@@ -12,7 +12,7 @@ MASTER_SITES=	http://critical.ch/distfiles/ \
 		http://www.easysw.com/~mike/fldiff/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A graphical diff program using FLTK
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk

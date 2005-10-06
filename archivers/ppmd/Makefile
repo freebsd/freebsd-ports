@@ -10,7 +10,7 @@ PORTVERSION=	20050811
 CATEGORIES=	archivers
 MASTER_SITES=	http://critical.ch/distfiles/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A fast archiver with a good compression ratio
 
 MAN1=		ppmd.1

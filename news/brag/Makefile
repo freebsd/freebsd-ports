@@ -10,7 +10,7 @@ PORTVERSION=	1.4.1
 CATEGORIES=	news tcl84
 MASTER_SITES=	http://brag.sourceforge.net/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Download and assemble multipart binaries from newsgroups
 
 RUN_DEPENDS=	uudeview:${PORTSDIR}/converters/uudeview \

@@ -10,7 +10,7 @@ PORTVERSION=	0.10
 CATEGORIES=	audio
 MASTER_SITES=	http://mpck.linuxonly.nl/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command-line utility for checking mp3 files for errors
 
 GNU_CONFIGURE=	yes

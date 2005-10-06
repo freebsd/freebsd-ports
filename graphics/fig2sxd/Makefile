@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Convert .xfig files to the OpenOffice draw format
 
 USE_GMAKE=	yes

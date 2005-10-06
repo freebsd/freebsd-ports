@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://pantransit.reptiles.org/prog/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A Xerox Lisp machine clock clone
 
 USE_IMAKE=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Cleans up files in directories based on their age
 
 GNU_CONFIGURE=	yes

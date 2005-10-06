@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	security
 MASTER_SITES=	http://bcrypt.sourceforge.net/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A cross-plattform blowfish encryption utility
 
 USE_REINPLACE=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.acme.com/software/micro_proxy/ \
 		http://critical.ch/distfiles/
 DISTNAME=	${PORTNAME}_30oct2002
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A really small HTTP/HTTPS proxy
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

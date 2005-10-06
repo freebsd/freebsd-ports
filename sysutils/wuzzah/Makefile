@@ -10,7 +10,7 @@ PORTVERSION=	0.53
 CATEGORIES=	sysutils
 MASTER_SITES=	http://critical.ch/distfiles/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line utility for stalking users
 
 GNU_CONFIGURE=	yes

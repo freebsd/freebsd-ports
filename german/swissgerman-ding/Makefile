@@ -12,7 +12,7 @@ MASTER_SITES=	# none
 PKGNAMEPREFIX=	de-
 DISTFILES=	# none
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A swiss high german german doppel-s free language pack for de-ding
 
 RUN_DEPENDS=	${DICTFILE}:${PORTSDIR}/german/ding

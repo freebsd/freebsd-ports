@@ -11,7 +11,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://critical.ch/netwalker-ircc/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A lightweight curses-based IRC client
 
 MAN1=		netwalker.1

@@ -10,7 +10,7 @@ PORTVERSION=	0.21
 CATEGORIES=	audio
 MASTER_SITES=	http://shibatch.sourceforge.net/download/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utility for guessing which encoder was used to encode an mp3 file
 
 USE_ZIP=	yes

@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://de.aminet.net/pub/aminet/misc/unix/ \
 DISTNAME=	${PORTNAME}.c
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Extracts .lzx archives from Amiga systems
 
 PLIST_FILES=	bin/unlzx

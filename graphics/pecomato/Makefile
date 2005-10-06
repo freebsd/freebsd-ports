@@ -10,7 +10,7 @@ PORTVERSION=	0.0.12
 CATEGORIES=	graphics
 MASTER_SITES=	http://critical.ch/distfiles/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command-line picture metadata processor
 
 USE_GMAKE=	yes

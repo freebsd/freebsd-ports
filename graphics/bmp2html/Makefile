@@ -12,7 +12,7 @@ MASTER_SITES=	http://critical.ch/distfiles/
 MASTER_SITES+=	http://www.dasfisk.dk/bmp2html/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A bmp to html converter
 
 USE_SDL=	yes

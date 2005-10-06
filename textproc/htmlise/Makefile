@@ -10,7 +10,7 @@ PORTVERSION=	0.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.ex-parrot.com/~chris/stuff/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Formats plain text as HTML
 
 USE_REINPLACE=	yes

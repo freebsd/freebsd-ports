@@ -10,7 +10,7 @@ PORTVERSION=	1.31
 CATEGORIES=	www
 MASTER_SITES=	http://phroggy.com/files/unix/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A squid redirect script for filtering web banners
 
 RUN_DEPENDS=	squid:${PORTSDIR}/www/squid

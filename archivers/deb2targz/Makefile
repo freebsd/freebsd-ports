@@ -10,7 +10,7 @@ PORTVERSION=	20021217
 CATEGORIES=	archivers perl5
 MASTER_SITES=	http://critical.ch/distfiles/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command-line utility for converting a Debian .deb file to a .tar.gz
 
 USE_PERL5=	yes

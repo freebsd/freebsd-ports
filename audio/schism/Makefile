@@ -10,7 +10,7 @@ DISTVERSION=	0.2a
 CATEGORIES=	audio
 MASTER_SITES=	http://rigelseven.com/schism/dl/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A module tracker editor/player resembling impulse tracker
 
 ONLY_FOR_ARCHS=	i386

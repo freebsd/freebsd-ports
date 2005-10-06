@@ -13,7 +13,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.gentoo-es.org/~ferdy/ \
 		http://www.it.uc3m.es/~ferdy/nbsmtp/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Simple program for outgoing SMTP delivery
 
 GNU_CONFIGURE=	yes

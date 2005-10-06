@@ -10,7 +10,7 @@ DISTVERSION=	1.1.3
 CATEGORIES=	mail
 MASTER_SITES=	http://danborn.net/delatt/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Strip attachments from email
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
