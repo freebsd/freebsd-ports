@@ -18,9 +18,7 @@ COMMENT?=	Universal encoding system for GNU Emacs 21
 
 MASTER_SITE_M17N+=	\
 		ftp://ftp.m17n.org/pub/%SUBDIR%/ \
-		ftp://ftp.etl.go.jp/pub/%SUBDIR%/ \
 		ftp://ftp.kddlabs.co.jp/Japan/m17n.org/%SUBDIR%/ \
-		ftp://ftp.media.kyoto-u.ac.jp/%SUBDIR%/ \
 		ftp://ftp.nihon-u.ac.jp/pub/text/m17n/%SUBDIR%/
 
 # This is a master port.
