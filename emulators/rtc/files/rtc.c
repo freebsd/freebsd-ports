@@ -268,9 +268,9 @@ rtc_ioctl(dev_t dev, u_long cmd, caddr_t arg, int mode, struct proc *p)
 			break;
 		}
 		sc->var.freq = freq;
-		if (sc->var.freq * 9 > hz * 8) {
+		if ((sc->var.freq > hz) && (hz < 1000)) {
 			sc->var.freq = hz;
-			printf("rtc: %d > kern.hz: Timing will be inaccurate, please increase hz.\n", sc->var.freq);
+			printf("rtc: %d > kern.hz: Timing will be inaccurate, please increase kern.hz.\n", sc->var.freq);
 		}
 		sleep = hz / sc->var.freq;
 		DLog(Linfo, "Set RTC freq %d", sc->var.freq);
