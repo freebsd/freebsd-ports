@@ -1526,7 +1526,6 @@ ddc		ports/net/ddc
 ddclient	ports/dns/ddclient
 ddd		ports/devel/ddd
 ddos_scan	ports/security/ddos_scan
-ddup		ports/dns/ddup
 de-BBBike	ports/german/BBBike
 de-aspell	ports/german/aspell
 de-citrix_ica	ports/german/citrix_ica
