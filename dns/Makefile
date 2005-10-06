@@ -13,7 +13,6 @@
     SUBDIR += checkdns
     SUBDIR += crossip
     SUBDIR += ddclient
-    SUBDIR += ddup
     SUBDIR += dhid
     SUBDIR += dhisd
     SUBDIR += djbdns
