@@ -22,19 +22,13 @@ MASTER_SITES=	ftp://ftp.ssh.com/pub/ssh/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/ssh/ \
 		ftp://ftp.ntua.gr/pub/security/ssh/ \
 		ftp://ftp.unina.it/pub/Unix/ssh/ \
-		ftp://ftp.win.ne.jp/pub/ssh/ \
 		ftp://core.ring.gr.jp/pub/net/ssh/ \
 		http://core.ring.gr.jp/archives/net/ssh/ \
 		ftp://ftp.ring.gr.jp/pub/net/ssh/ \
 		http://www.ring.gr.jp/archives/net/ssh/ \
-		ftp://ftp.ayamura.org/pub/ssh/ \
-		ftp://linux.sarang.net/mirror/network/daemon/security/ssh/ \
-		ftp://giswitch.sggw.waw.pl/pub/ssh/ \
 		ftp://ftp.wsisiz.edu.pl/pub/Unix/ssh/ \
-		ftp://ftp.kreonet.re.kr/pub/security/ssh/ \
 		ftp://ftp.ulak.net.tr/ssh/ \
 		ftp://metalab.unc.edu/pub/packages/security/ssh/ \
-		ftp://ftp.in-span.net/pub/mirrors/ftp.ssh.com/ \
 		ftp://ftp.keystealth.org/pub/ssh/ \
 		ftp://ftp.epix.net/pub/ssh/ \
 		ftp://mirror.pa.msu.edu/ssh/
