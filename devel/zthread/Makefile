@@ -36,7 +36,7 @@ USE_GCC=	3.3+
 post-extract:
 	@${FIND} ${WRKSRC} -name CVS -type d -delete
 
-post-patch:
+pre-configure:
 	@${CP} ${LTMAIN} ${WRKSRC}
 
 post-install:
