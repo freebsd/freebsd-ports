@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+SCOREDIR="/var/games/pachi"
+SCOREFILE="/var/games/pachi/scores.dat"
+
+[ "$2" != "POST-INSTALL" -o -f "$SCOREFILE" ] && exit 0 
+
+echo "Creating hiscore file..."
+mkdir -p "$SCOREDIR"
+
+# Empty scorefile seem to contain 170 zero bytes
+truncate -s 170 "$SCOREFILE"
+chgrp -R games "$SCOREDIR"
+chmod g+w "$SCOREFILE"
