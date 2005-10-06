@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Log-Agent
-PORTVERSION=	0.306
+PORTVERSION=	0.307
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Log
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A set of perl modules that allows you to enhance logging capabilities
 
 PERL_CONFIGURE=	yes
@@ -41,4 +41,10 @@ MAN3=		Log::Agent.3 \
 		Log::Agent::Tag::String.3 \
 		Log::Agent::Tag_List.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		Port requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
