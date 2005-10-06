@@ -19,4 +19,5 @@ bin/munger
 %%DATADIR%%/transform.munger
 %%DATADIR%%/view.munger
 %%DATADIR%%/tk.munger
+%%DATADIR%%/expander.fcgi
 @dirrm %%DATADIR%%
