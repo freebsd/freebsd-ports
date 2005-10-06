@@ -8,7 +8,7 @@
 PORTNAME=	gastman
 PORTVERSION=	1.0.r1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.asterisk.org/pub/gastman/
+MASTER_SITES=	http://ftp.digium.com/pub/gastman/
 DISTNAME=	${PORTNAME}-1.0-RC1
 
 MAINTAINER=	filippo.natali@gmail.com
