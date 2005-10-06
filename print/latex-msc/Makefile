@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	macros/latex/contrib/msc
 DISTFILES=	${CLASS_FILES} ${PORTDOCS}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sg-sendpr@waset.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX macro package for drawing Message Sequence Charts
 
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX \
