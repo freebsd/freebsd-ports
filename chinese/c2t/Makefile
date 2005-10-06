@@ -9,11 +9,7 @@
 PORTNAME=	c2t
 PORTVERSION=	1.0
 CATEGORIES=	chinese
-MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/convert/:file  \
-		ftp://ftp.ifcss.org/pub/software/x-win/cxterm/dict/gb/:dict  \
-		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/convert/:file  \
-		ftp://ftp.edu.tw/Chinese/ifcss/software/x-win/cxterm/dict/gb/:dict \
-		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/:file  \
+MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/:file  \
 		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/x-win/cxterm/dict/gb/:dict
 DISTFILES=	c2t.tar.gz:file TONEPY.tit:dict
 
