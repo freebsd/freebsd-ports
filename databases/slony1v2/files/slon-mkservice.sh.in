@@ -23,7 +23,7 @@ cat > ${DIR}/run  <<EOF
 #!/bin/sh
 exec 2>&1
 
-exec envdir ./env sh -c 'exec envuidgid ${sysuser} slon -f \${CONFIGFILE}'
+exec envdir ./env sh -c 'exec setuidgid ${sysuser} slon -f \${CONFIGFILE}'
 EOF
 chmod +x ${DIR}/run
 

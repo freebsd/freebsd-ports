@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	slony1
-PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTVERSION=	1.1.1
 CATEGORIES=	databases
 MASTER_SITES=	http://developer.postgresql.org/~wieck/slony1/download/
 
@@ -56,12 +55,12 @@ PGSQL_VER=	${DEFAULT_PGSQL_VER}
 post-install:
 .if ! defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${MKDIR} ${DOCSDIR}/adminguide
+#	${MKDIR} ${DOCSDIR}/adminguide
 	${MKDIR} ${DOCSDIR}/howto
 	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${WRKSRC}/INSTALL ${WRKSRC}/SAMPLE ${WRKSRC}/README ${WRKSRC}/HISTORY-1.1 ${WRKSRC}/UPGRADING ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*/*.pdf ${DOCSDIR}
+#	${INSTALL_DATA} ${WRKSRC}/doc/*/*.pdf ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/howto/*.txt ${WRKSRC}/doc/howto/*.html ${DOCSDIR}/howto/
-	${INSTALL_DATA} ${WRKSRC}/doc/adminguide/prebuilt/*.html ${DOCSDIR}/adminguide/
+#	${INSTALL_DATA} ${WRKSRC}/doc/adminguide/prebuilt/*.html ${DOCSDIR}/adminguide/
 .endif
 	@${INSTALL_SCRIPT} ${WRKDIR}/slon-mkservice.sh ${PREFIX}/sbin/slon-mkservice
 	@${INSTALL_DATA} ${FILESDIR}/slon.conf-sample ${PREFIX}/etc/
