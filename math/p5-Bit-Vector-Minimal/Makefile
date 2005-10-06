@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bit-Vector-Minimal
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Bit
@@ -22,7 +22,7 @@ MAN3=		Bit::Vector::Minimal.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=	"This port requires perl 5.6 or above."
+IGNORE=	This port requires perl 5.6 or above.
 .endif
 
 .include <bsd.port.post.mk>
