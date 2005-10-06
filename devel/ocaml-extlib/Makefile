@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	extlib
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ocaml-lib
@@ -21,12 +21,12 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 
 USE_GMAKE=	yes
 ALL_TARGET=	all opt
+
 .if !defined(NOPORTDOCS)
 ALL_TARGET+=	doc
-PLIST_SUB+=	PORTDOCS=""
-.else
-PLIST_SUB+=	PORTDOCS="@comment "
 .endif
+
+PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 post-install:
