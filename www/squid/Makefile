@@ -70,7 +70,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -348,6 +348,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%SQUID_UID%%|${SQUID_UID}|g' \
 	    -e 's|%%SQUID_GID%%|${SQUID_GID}|g' ${WRKSRC}/src/cf.data.pre
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+	    ${WRKSRC}/helpers/basic_auth/SMB/Makefile.in \
+	    ${WRKSRC}/helpers/basic_auth/SMB/smb_auth.sh
 
 pre-install:
 # Prevent installation of .orig files by deleting them.
