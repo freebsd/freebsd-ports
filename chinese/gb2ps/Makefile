@@ -9,11 +9,7 @@
 PORTNAME=	gb2ps
 PORTVERSION=	2.02
 CATEGORIES=	chinese print
-MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/print/:sw  \
-		ftp://ftp.ifcss.org/pub/software/fonts/gb/misc/:font  \
-		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/print/:sw  \
-		ftp://ftp.edu.tw/Chinese/ifcss/software/fonts/gb/misc/:font  \
-		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/print/:sw  \
+MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/print/:sw  \
 		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/fonts/gb/misc/:font
 DISTNAME=	gb2ps.2.02
 DISTFILES=	${DISTNAME}.tar.gz:sw  \

@@ -9,10 +9,8 @@
 PORTNAME=	hc
 PORTVERSION=	3.0
 CATEGORIES=	chinese
-MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/convert/  \
-		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/convert/  \
-		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/
-DISTFILES=	hc-30.tar.gz  hc-supp.tab
+MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/
+DISTFILES=	hc-30.tar.gz hc-supp.tab
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hanzi Converter -- converts between GB and BIG-5 codes
