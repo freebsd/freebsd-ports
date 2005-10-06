@@ -1,6 +1,6 @@
---- and-OpenBSD.c.orig	Sun Jan 27 18:52:18 2002
-+++ and-OpenBSD.c	Thu Oct  6 14:51:53 2005
-@@ -91,6 +91,21 @@
+--- and-OpenBSD.c.orig	Sat Mar  6 16:34:02 2004
++++ and-OpenBSD.c	Thu Oct  6 16:11:57 2005
+@@ -91,10 +91,24 @@
      abort();
    }
    if (openbsd_next >= openbsd_nproc) return NULL;
@@ -22,7 +22,11 @@
    strncpy(openbsd_proc.command,openbsd_pt[openbsd_next].kp_proc.p_comm,1023);
    openbsd_proc.command[1023] = 0;
    openbsd_proc.pid = openbsd_pt[openbsd_next].kp_proc.p_pid;
-@@ -102,6 +117,7 @@
+-  openbsd_proc.ppid = openbsd_pt[openbsd_next].kp_proc.p_ppid; /* FIXME that correct? */
+   openbsd_proc.nice = openbsd_pt[openbsd_next].kp_proc.p_nice-20;
+   openbsd_proc.uid = openbsd_pt[openbsd_next].kp_eproc.e_pcred.p_ruid;
+   openbsd_proc.gid = openbsd_pt[openbsd_next].kp_eproc.e_pcred.p_rgid;
+@@ -103,6 +117,7 @@
  			openbsd_pt[openbsd_next].kp_proc.p_sticks +
  			openbsd_pt[openbsd_next].kp_proc.p_iticks)
      / openbsd_hz;
