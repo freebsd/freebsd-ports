@@ -1,0 +1,14 @@
+--- src/thumbnailer/Makefile.in.orig	Thu Oct  6 00:05:24 2005
++++ src/thumbnailer/Makefile.in	Thu Oct  6 00:06:55 2005
+@@ -295,8 +295,10 @@
+ @BUILD_THUMBNAILER_MPEG3_TRUE@MPEG3_DIR = mpeg3
+ @BUILD_THUMBNAILER_AVIFILE_TRUE@AVIFILE_DIR = avifile
+ @BUILD_THUMBNAILER_ID3_TRUE@ID3_DIR = id3
++@BUILD_THUMBNAILER_XINE_TRUE@XINE_DIR = xine
+ 
+-SUBDIRS = epeg imlib_loaders ttf $(AVIFILE_DIR) $(ID3_DIR) $(MPEG3_DIR) xine
++SUBDIRS = epeg imlib_loaders ttf $(AVIFILE_DIR) $(ID3_DIR) $(MPEG3_DIR) \
++	  $(XINE_DIR)
+ 
+ AUTOMAKE_OPTIONS = 1.4 foreign
+ 
