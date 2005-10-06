@@ -15,7 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Optimize Cisco routers ip access lists
 
 NO_WRKSUBDIR=	YES
-MAKEFILE=	${FILESDIR}/Makefile
+MAKEFILE=	/usr/share/mk/bsd.prog.mk
+MAKE_ARGS=	PROG=aclgen
 
 MAN1=		aclgen.1
 PLIST_FILES=	bin/aclgen
