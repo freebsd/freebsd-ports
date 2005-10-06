@@ -8,10 +8,7 @@
 PORTNAME=	hztty
 PORTVERSION=	2.0
 CATEGORIES=	chinese
-MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/convert/  \
-		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/ \
-		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/convert/  \
-		ftp://ftp.mpi-sb.mpg.de/pub/chinese/mirror/ftp.ifcss.org/software/unix/convert/
+MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/
 
 MAINTAINER=	ada@bsd.org
 COMMENT=	A translator between GuoBiao / Big5 and HZ

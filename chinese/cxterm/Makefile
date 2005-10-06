@@ -9,10 +9,7 @@
 PORTNAME=	cxterm
 PORTVERSION=	5.0.3
 CATEGORIES=	chinese x11
-# unresponceive mastersite: ftp://ftp.ifcss.org/pub/software/x-win/cxterm/
-MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/x-win/cxterm/ \
-		ftp://ftp.edu.tw/Chinese/ifcss/software/x-win/cxterm/  \
-		ftp://ftp.mpi-sb.mpg.de/pub/chinese/mirror/ftp.ifcss.org/software/x-win/cxterm/
+MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/x-win/cxterm/
 DISTNAME=	cxterm5.0.p3
 
 PATCH_SITES=	${MASTER_SITES}
