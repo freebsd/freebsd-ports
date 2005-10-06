@@ -1,0 +1,7 @@
+xboxproxy is an xbox system link proxy that bridges xbox network traffic
+across multiple separate networks. This allows an XBox to communicate via
+system link across multiple networks (eg. two people in different states).
+It also supports bridging of the Apple Rendezvous protocol for sharing of
+iTunes music shares across different Layer 3 networks..
+
+WWW: http://www.csh.rit.edu/~psionic/projects/xboxproxy/
