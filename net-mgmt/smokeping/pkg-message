@@ -7,12 +7,14 @@ NOTE: A set of sample configuration files have been installed:
   %%PREFIX%%/etc/smokeping/config
   %%PREFIX%%/etc/smokeping/smokemail
   %%PREFIX%%/etc/smokeping/basepage.html
-  %%PREFIX%%/etc/smokeping/config-echoping
+  %%PREFIX%%/etc/smokeping/tmail
 
-You *MUST* edit these to suit your requirements. Please refer to
-%%PREFIX%%/share/doc/smokeping/smokeping_install.txt and 
-%%PREFIX%%/share/doc/smokeping/smokeping_config.txt for further
+You *MUST* edit these to suit your requirements. Please read the
+manpages 'smokeping_install' and 'smokeping_config' for further
 details on installation and configuration.
+
+If you are upgrading from a previous version of Smokeping, the
+manpage 'smokeping_upgrade' may be of help.
 
 
 Once configured, you can start SmokePing data collection by running:

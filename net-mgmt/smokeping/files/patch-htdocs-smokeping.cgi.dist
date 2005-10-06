@@ -1,6 +1,6 @@
---- htdocs/smokeping.cgi.dist.orig	Sun Jan 30 17:56:30 2005
-+++ htdocs/smokeping.cgi.dist	Mon Feb  7 21:49:11 2005
-@@ -1,12 +1,11 @@
+--- htdocs/smokeping.cgi.dist.orig	Mon Sep 26 22:15:57 2005
++++ htdocs/smokeping.cgi.dist	Thu Oct  6 10:40:18 2005
+@@ -1,13 +1,12 @@
 -#!/usr/sepp/bin/speedy -w
 +#!%%PREFIX%%/bin/speedy -w
  # -*-perl-*-
@@ -8,11 +8,12 @@
 -use lib qw(/usr/pack/rrdtool-1.0.33-to/lib/perl);
 -use lib qw(/home/oetiker/data/projects/AADJ-smokeping/dist/lib);
 +use lib qw(%%PREFIX%%/smokeping/lib);
+ use CGI::Carp qw(fatalsToBrowser);
  
- use Smokeping 1.42;
+ use Smokeping 2.000003;
  
 -Smokeping::cgi("/home/oetiker/data/projects/AADJ-smokeping/dist/etc/config");
 +Smokeping::cgi("%%PREFIX%%/etc/smokeping/config");
  
+ =head1 NAME
  
- BEGIN {
