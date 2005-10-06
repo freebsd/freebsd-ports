@@ -25,22 +25,23 @@ USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 
 CFLAGS+=	-D_PATH_CONF='\"${PREFIX}/etc/diskcheckd.conf\"'
+MAKEFILE=	/usr/share/mk/bsd.prog.mk
+MAKE_ARGS=	PROG=diskcheckd MAN8=${MAN8}
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-IGNORE=		"Not tested on anything less than 5.0, use at discretion"
+IGNORE=		Not tested on anything less than 5.0, use at discretion
 .endif
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
 
-.for file in Makefile diskcheckd.c diskcheckd.8
+.for file in diskcheckd.c diskcheckd.8
 	@(cd ${WRKSRC} ; ${CP} ${FILESDIR}/${file} .)
 .endfor
 
 do-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local/sbin|${PREFIX}/sbin|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/usr/local/etc/diskcheckd.conf|${PREFIX}/etc/diskcheckd.conf|g' ${WRKSRC}/diskcheckd.8
 
 do-install:
@@ -48,6 +49,5 @@ do-install:
 	${INSTALL_DATA}	${FILESDIR}/diskcheckd.conf ${PREFIX}/etc/diskcheckd.conf.sample
 	${INSTALL_SCRIPT} ${FILESDIR}/diskcheckd.sh ${PREFIX}/etc/rc.d
 	${INSTALL_MAN} ${WRKSRC}/diskcheckd.8 ${PREFIX}/man/man8
-	${LN} -sf ${PREFIX}/man/man8/diskcheckd.8 ${PREFIX}/man/man5/diskcheckd.conf.5
 
 .include <bsd.port.post.mk>
