@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Oct  4 21:26:35 2005
++++ Makefile.in	Tue Oct  4 21:26:52 2005
+@@ -229,7 +229,7 @@
+ subdirs = @subdirs@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = m4 po libltdl src doc . 
++SUBDIRS = m4 po src doc . 
+ EXTRA_DIST = config.rpath \
+   ABOUT-NLS \
+   PLATFORMS \
