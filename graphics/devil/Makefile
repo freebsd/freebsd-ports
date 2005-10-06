@@ -7,6 +7,7 @@
 
 PORTNAME=	devil
 PORTVERSION=	1.6.7
+PATCHREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openil
@@ -21,7 +22,24 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		lcms.1:${PORTSDIR}/graphics/lcms
 
+OPTIONS=	SDL "Enable SDL support" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_SDL)
+USE_SDL=	yes
+USE_REINPLACE=	yes
+CFLAGS+=	"-I${LOCALBASE}/include/SDL11"
+.endif
+
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=15
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib \
+		-L${X11BASE}/lib"
 
-.include <bsd.port.mk>
+.if defined(WITH_SDL)
+post-patch:
+	@${REINPLACE_CMD} 's|sdl-config|${SDL_CONFIG}|g' ${WRKSRC}/configure
+.endif
+
+.include <bsd.port.post.mk>
