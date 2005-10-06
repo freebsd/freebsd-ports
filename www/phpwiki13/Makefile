@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpwiki
-PORTVERSION=	1.2.9
+PORTVERSION=	1.2.10
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpwiki
@@ -32,7 +32,7 @@ DOCFILES=	CREDITS ChangeLog DBLIB.txt HISTORY INSTALL \
 
 do-configure:
 .for i in ${USERFILES}
-	${MV} ${WRKSRC}/${i} ${WRKSRC}/${i}-dist
+	@${MV} ${WRKSRC}/${i} ${WRKSRC}/${i}-dist
 .endfor
 
 do-install:

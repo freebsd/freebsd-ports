@@ -23,6 +23,7 @@
 @unexec if cmp -s %B/config.php %B/config.php-dist; then rm -f %B/config.php; fi
 %%PHPWIKI%%/lib/config.php-dist
 @exec [ -f %B/config.php ] || cp %B/%f %B/config.php
+%%PHPWIKI%%/lib/.htaccess
 %%PHPWIKI%%/lib/db_filesystem.php
 %%PHPWIKI%%/lib/dbalib.php
 %%PHPWIKI%%/lib/dbmlib.php
@@ -42,6 +43,7 @@
 %%PHPWIKI%%/lib/stdlib.php
 %%PHPWIKI%%/lib/transform.php
 %%PHPWIKI%%/lib/ziplib.php
+%%PHPWIKI%%/locale/.htaccess
 %%PHPWIKI%%/locale/README
 %%PHPWIKI%%/locale/de/LC_MESSAGES/phpwiki.mo
 %%PHPWIKI%%/locale/de/LC_MESSAGES/phpwiki.php
@@ -189,10 +191,12 @@
 %%PHPWIKI%%/pgsrc/TextFormattingRules
 %%PHPWIKI%%/pgsrc/WabiSabi
 %%PHPWIKI%%/pgsrc/WikiWikiWeb
+%%PHPWIKI%%/schemas/.htaccess
 %%PHPWIKI%%/schemas/schema.minisql
 %%PHPWIKI%%/schemas/schema.mysql
 %%PHPWIKI%%/schemas/schema.psql
 %%PHPWIKI%%/schemas/update.mysql.1.2.0-1.2.1
+%%PHPWIKI%%/templates/.htaccess
 %%PHPWIKI%%/templates/README
 %%PHPWIKI%%/templates/browse.html
 %%PHPWIKI%%/templates/editlinks.html
