@@ -1,879 +1,881 @@
 bin/cube_client
 bin/cube_server
-share/cube/autoexec.cfg
-share/cube/data/crosshair.png
-share/cube/data/default_map_settings.cfg
-share/cube/data/explosion.jpg
-share/cube/data/items.png
-share/cube/data/keymap.cfg
-share/cube/data/martin/ball1.png
-share/cube/data/martin/ball2.png
-share/cube/data/martin/ball3.png
-share/cube/data/martin/base.png
-share/cube/data/martin/smoke.png
-share/cube/data/menus.cfg
-share/cube/data/newchars.png
-share/cube/data/prefabs.cfg
-share/cube/data/sounds.cfg
-share/cube/packages/aard/aardfdry256_1.jpg
-share/cube/packages/aard/aardmbr16_2.jpg
-share/cube/packages/aard/aardmmet32_1.jpg
-share/cube/packages/aard/aardograss_1.jpg
-share/cube/packages/aard/readme.txt
-share/cube/packages/af/bullets_side.jpg
-share/cube/packages/af/bullets_top.jpg
-share/cube/packages/af/health_ga.jpg
-share/cube/packages/af/health_health.jpg
-share/cube/packages/af/health_top1.jpg
-share/cube/packages/af/health_top2.jpg
-share/cube/packages/af/health_top3.jpg
-share/cube/packages/af/health_ya.jpg
-share/cube/packages/af/light02.jpg
-share/cube/packages/af/light02_broken.jpg
-share/cube/packages/af/quad_side.jpg
-share/cube/packages/af/quad_top.jpg
-share/cube/packages/af/rifle_side.jpg
-share/cube/packages/af/rifle_top.jpg
-share/cube/packages/af/rockets_side.jpg
-share/cube/packages/af/rockets_top.jpg
-share/cube/packages/af/shells_side.jpg
-share/cube/packages/af/shells_top.jpg
-share/cube/packages/af/signs_danger.jpg
-share/cube/packages/af/signs_dne_reverse.jpg
-share/cube/packages/af/signs_radioactive.jpg
-share/cube/packages/af/sludge.jpg
-share/cube/packages/af/sludge_l.jpg
-share/cube/packages/base/32.cgz
-share/cube/packages/base/Cube101.txt
-share/cube/packages/base/aard1.cgz
-share/cube/packages/base/aard1_remix.cgz
-share/cube/packages/base/aard2.cgz
-share/cube/packages/base/aard3.cfg
-share/cube/packages/base/aard3.cgz
-share/cube/packages/base/af.cfg
-share/cube/packages/base/af.cgz
-share/cube/packages/base/artanis.cgz
-share/cube/packages/base/attacko.cgz
-share/cube/packages/base/b2k.cgz
-share/cube/packages/base/bhouse.cgz
-share/cube/packages/base/biologie.cgz
-share/cube/packages/base/caged.cgz
-share/cube/packages/base/caged.txt
-share/cube/packages/base/castle.cgz
-share/cube/packages/base/cellar.cgz
-share/cube/packages/base/cruel01.cgz
-share/cube/packages/base/cruel02.cgz
-share/cube/packages/base/cube101.cfg
-share/cube/packages/base/cube101.cgz
-share/cube/packages/base/darth.cgz
-share/cube/packages/base/douze.cfg
-share/cube/packages/base/douze.cgz
-share/cube/packages/base/douze_beta.txt
-share/cube/packages/base/dragon.cgz
-share/cube/packages/base/drianmp2.cfg
-share/cube/packages/base/drianmp2.cgz
-share/cube/packages/base/egysp1.cfg
-share/cube/packages/base/egysp1.cgz
-share/cube/packages/base/fox.cfg
-share/cube/packages/base/fox.cgz
-share/cube/packages/base/fsession.cfg
-share/cube/packages/base/fsession.cgz
-share/cube/packages/base/gdb1.cgz
-share/cube/packages/base/ger1.cgz
-share/cube/packages/base/gib.cgz
-share/cube/packages/base/gzdm1.cgz
-share/cube/packages/base/hylken5.cgz
-share/cube/packages/base/infertile.cfg
-share/cube/packages/base/infertile.cgz
-share/cube/packages/base/infertile.txt
-share/cube/packages/base/inkedskin.cgz
-share/cube/packages/base/kartoffel.cgz
-share/cube/packages/base/kksp1 (v1.5) readme.txt
-share/cube/packages/base/kksp1.cfg
-share/cube/packages/base/kksp1.cgz
-share/cube/packages/base/kmap1.cgz
-share/cube/packages/base/kmap2.cgz
-share/cube/packages/base/kmap3.cfg
-share/cube/packages/base/kmap3.cgz
-share/cube/packages/base/kmap4.cfg
-share/cube/packages/base/kmap4.cgz
-share/cube/packages/base/kmap5.cfg
-share/cube/packages/base/kmap5.cgz
-share/cube/packages/base/ksp1.cfg
-share/cube/packages/base/ksp1.cgz
-share/cube/packages/base/ksp2.cfg
-share/cube/packages/base/ksp2.cgz
-share/cube/packages/base/lbase.cgz
-share/cube/packages/base/ludm1.cgz
-share/cube/packages/base/mak1.cfg
-share/cube/packages/base/mak1.cgz
-share/cube/packages/base/mak1.txt
-share/cube/packages/base/mak2.cfg
-share/cube/packages/base/mak2.cgz
-share/cube/packages/base/mak2.txt
-share/cube/packages/base/matador.cfg
-share/cube/packages/base/matador.cgz
-share/cube/packages/base/metalv2.cgz
-share/cube/packages/base/metl1.cgz
-share/cube/packages/base/metl2.cgz
-share/cube/packages/base/metl3.cfg
-share/cube/packages/base/metl3.cgz
-share/cube/packages/base/minion1.cgz
-share/cube/packages/base/mm5remix.cfg
-share/cube/packages/base/mm5remix.cgz
-share/cube/packages/base/mpsp1 readme.txt
-share/cube/packages/base/mpsp1.cfg
-share/cube/packages/base/mpsp1.cgz
-share/cube/packages/base/mpsp2 readme.txt
-share/cube/packages/base/mpsp2.cfg
-share/cube/packages/base/mpsp2.cgz
-share/cube/packages/base/mpsp3  readme.txt
-share/cube/packages/base/mpsp3.cfg
-share/cube/packages/base/mpsp3.cgz
-share/cube/packages/base/nsp2.cfg
-share/cube/packages/base/nsp2.cgz
-share/cube/packages/base/nudist.cgz
-share/cube/packages/base/ogrosupply.cfg
-share/cube/packages/base/ogrosupply.cgz
-share/cube/packages/base/ogrosupply.txt
-share/cube/packages/base/paintb1.cgz
-share/cube/packages/base/plagiat.cgz
-share/cube/packages/base/powerplant.cfg
-share/cube/packages/base/powerplant.cgz
-share/cube/packages/base/powerplant.txt
-share/cube/packages/base/q3dm2.cfg
-share/cube/packages/base/q3dm2.cgz
-share/cube/packages/base/q3dm2.txt
-share/cube/packages/base/rampage-fanatic-spentron.txt
-share/cube/packages/base/rampage.cgz
-share/cube/packages/base/readme_fsession.txt
-share/cube/packages/base/rpgcb01.cgz
-share/cube/packages/base/sp1-test.cgz
-share/cube/packages/base/sp_af.cfg
-share/cube/packages/base/sp_af.cgz
-share/cube/packages/base/sp_infidel.cgz
-share/cube/packages/base/sp_infidel.txt
-share/cube/packages/base/sp_stalingrad.cgz
-share/cube/packages/base/spillway.cfg
-share/cube/packages/base/spillway.cgz
-share/cube/packages/base/style.cgz
-share/cube/packages/base/style.txt
-share/cube/packages/base/tartech.cfg
-share/cube/packages/base/tartech.cgz
-share/cube/packages/base/taurus.cgz
-share/cube/packages/base/templeofdespair.cgz
-share/cube/packages/base/templeofdespair.txt
-share/cube/packages/base/thearit.cgz
-share/cube/packages/base/tongues.cgz
-share/cube/packages/base/tta.cgz
-share/cube/packages/base/tta.txt
-share/cube/packages/base/uf.cgz
-share/cube/packages/base/vaterland.cgz
-share/cube/packages/base/wandering.cfg
-share/cube/packages/base/wandering.cgz
-share/cube/packages/base/wandering.txt
-share/cube/packages/base/wsg.txt
-share/cube/packages/base/wsg1.cfg
-share/cube/packages/base/wsg1.cgz
-share/cube/packages/base/wsg2.cfg
-share/cube/packages/base/wsg2.cgz
-share/cube/packages/base/wsg3.cfg
-share/cube/packages/base/wsg3.cgz
-share/cube/packages/base/x.cgz
-share/cube/packages/base/zippie.cfg
-share/cube/packages/base/zippie.cgz
-share/cube/packages/dg/floor_grass1.jpg
-share/cube/packages/dg/floor_grass3&soil.jpg
-share/cube/packages/dg/floor_pavement_stone4_2.jpg
-share/cube/packages/dg/floor_pavement_stone4_3.jpg
-share/cube/packages/dg/floor_pavement_stone4_4moss.jpg
-share/cube/packages/dg/floor_pavement_stone5_2.jpg
-share/cube/packages/dg/floor_pavement_stone_four2.jpg
-share/cube/packages/dg/floor_pavingStone.jpg
-share/cube/packages/dg/floor_pavingStone_ceramic.jpg
-share/cube/packages/dg/floor_paving_littleStones3.jpg
-share/cube/packages/dg/floor_paving_littleStones3_2.jpg
-share/cube/packages/dg/floor_paving_littleStones_2.jpg
-share/cube/packages/dg/floor_soil&grave3.jpg
-share/cube/packages/dg/floor_tile_ceramicBlue.jpg
-share/cube/packages/dg/floor_tile_stoneIrregular.jpg
-share/cube/packages/dg/mad013.jpg
-share/cube/packages/dg/mad015.jpg
-share/cube/packages/dg/mad063.jpg
-share/cube/packages/dg/mur059.jpg
-share/cube/packages/dg/mur073.jpg
-share/cube/packages/dg/mur078.jpg
-share/cube/packages/dg/mur079.jpg
-share/cube/packages/dg/mur142.jpg
-share/cube/packages/dg/muv158.jpg
-share/cube/packages/dg/muv185.jpg
-share/cube/packages/dg/muv204.jpg
-share/cube/packages/dg/sue011.jpg
-share/cube/packages/dg/sup075.jpg
-share/cube/packages/dg/sup079.jpg
-share/cube/packages/egyptsoc/032-01a.jpg
-share/cube/packages/egyptsoc/032-03a.jpg
-share/cube/packages/egyptsoc/032-03c.jpg
-share/cube/packages/egyptsoc/032-04a.jpg
-share/cube/packages/egyptsoc/032-05d.jpg
-share/cube/packages/egyptsoc/048-01a.jpg
-share/cube/packages/egyptsoc/048-02h.jpg
-share/cube/packages/egyptsoc/064-02b.jpg
-share/cube/packages/egyptsoc/064-03a.jpg
-share/cube/packages/egyptsoc/064-07d.jpg
-share/cube/packages/egyptsoc/064-08c.jpg
-share/cube/packages/egyptsoc/064-08f.jpg
-share/cube/packages/egyptsoc/128-01pc.jpg
-share/cube/packages/egyptsoc/128-02a.jpg
-share/cube/packages/egyptsoc/128-03c.jpg
-share/cube/packages/egyptsoc/128-04a.jpg
-share/cube/packages/egyptsoc/128-04d.jpg
-share/cube/packages/egyptsoc/256-01a.jpg
-share/cube/packages/egyptsoc/256-03b.jpg
-share/cube/packages/egyptsoc/block01a.jpg
-share/cube/packages/egyptsoc/block01b.jpg
-share/cube/packages/egyptsoc/block01d.jpg
-share/cube/packages/egyptsoc/block02b.jpg
-share/cube/packages/egyptsoc/block03b.jpg
-share/cube/packages/egyptsoc/block07b.jpg
-share/cube/packages/egyptsoc/block10c.jpg
-share/cube/packages/egyptsoc/egyptsoc_readme.txt
-share/cube/packages/egyptsoc/lig_032-01b1.jpg
-share/cube/packages/egyptsoc/lig_032-01r1.jpg
-share/cube/packages/egyptsoc/lig_032-03b1.jpg
-share/cube/packages/egyptsoc/lig_032-03r1.jpg
-share/cube/packages/egyptsoc/lig_032-04b1.jpg
-share/cube/packages/egyptsoc/lig_032-04r1.jpg
-share/cube/packages/egyptsoc/lig_064-01b1.jpg
-share/cube/packages/egyptsoc/lig_064-02r1.jpg
-share/cube/packages/egyptsoc/lig_064-04b1.jpg
-share/cube/packages/egyptsoc/lig_064-04r1.jpg
-share/cube/packages/egyptsoc/lig_064-04y1.jpg
-share/cube/packages/egyptsoc/lig_128-05b1.jpg
-share/cube/packages/egyptsoc/lig_b064-02a.jpg
-share/cube/packages/egyptsoc/lig_b064-02d.jpg
-share/cube/packages/egyptsoc/s064-01b.jpg
-share/cube/packages/egyptsoc/s064-01e.jpg
-share/cube/packages/egyptsoc/s064-03a.jpg
-share/cube/packages/egyptsoc/s064-05c.jpg
-share/cube/packages/egyptsoc/s064-05f.jpg
-share/cube/packages/egyptsoc/solidgrate1b.jpg
-share/cube/packages/egyptsoc/stone01a.jpg
-share/cube/packages/egyptsoc/stone01b.jpg
-share/cube/packages/egyptsoc/stone01d.jpg
-share/cube/packages/egyptsoc/stone02b.jpg
-share/cube/packages/egyptsoc/stone03b.jpg
-share/cube/packages/egyptsoc/stone03d.jpg
-share/cube/packages/egyptsoc/stone04b.jpg
-share/cube/packages/egyptsoc/stone04d.jpg
-share/cube/packages/egyptsoc/stone08d.jpg
-share/cube/packages/egyptsoc/stone10b.jpg
-share/cube/packages/egyptsoc/stone10d.jpg
-share/cube/packages/egyptsoc/v064-01b.jpg
-share/cube/packages/egyptsoc/v064-02a.jpg
-share/cube/packages/egyptsoc/v064-03b.jpg
-share/cube/packages/egyptsoc/v064-03c.jpg
-share/cube/packages/egyptsoc/v096-01b.jpg
-share/cube/packages/egyptsoc/v128-02a.jpg
-share/cube/packages/egyptsoc/v128-03a.jpg
-share/cube/packages/egyptsoc/wood17.jpg
-share/cube/packages/egyptsoc/woodmgrid1a.jpg
-share/cube/packages/fanatic/01_fanatic-assault.ogg
-share/cube/packages/fanatic/02_fanatic-conquerer.ogg
-share/cube/packages/fanatic/03_fanatic-tranquility.ogg
-share/cube/packages/fanatic/04_fanatic-unreleased-rage.ogg
-share/cube/packages/fanatic/05_fanatic-lost-in-the-mist.ogg
-share/cube/packages/fanatic/06_fanatic-hit-them-hard.ogg
-share/cube/packages/fanatic/07_fanatic-cubed-to-death.ogg
-share/cube/packages/fanatic/08_fanatic-waiting-to-strike.ogg
-share/cube/packages/fanatic/09_fanatic-disrupting-force.ogg
-share/cube/packages/fanatic/10_fanatic-my-destiny.ogg
-share/cube/packages/fanatic/11_fanatic-set-free.ogg
-share/cube/packages/fanatic/readme1.txt
-share/cube/packages/golgotha/Thumbs.db
-share/cube/packages/golgotha/water2.jpg
-share/cube/packages/ik2k/Thumbs.db
-share/cube/packages/ik2k/env/Thumbs.db
-share/cube/packages/ik2k/env/desert_dn.jpg
-share/cube/packages/ik2k/env/iklake_bk.jpg
-share/cube/packages/ik2k/env/iklake_dn.jpg
-share/cube/packages/ik2k/env/iklake_ft.jpg
-share/cube/packages/ik2k/env/iklake_lf.jpg
-share/cube/packages/ik2k/env/iklake_rt.jpg
-share/cube/packages/ik2k/env/iklake_up.jpg
-share/cube/packages/ik2k/ik2k_22feb01.txt
-share/cube/packages/ik2k/ik_brick_12832a.jpg
-share/cube/packages/ik2k/ik_brick_12864a.jpg
-share/cube/packages/ik2k/ik_brick_3216d.jpg
-share/cube/packages/ik2k/ik_brick_6432a.jpg
-share/cube/packages/ik2k/ik_brick_6464a.jpg
-share/cube/packages/ik2k/ik_brick_6464c.jpg
-share/cube/packages/ik2k/ik_brick_trimh32a.jpg
-share/cube/packages/ik2k/ik_brickwall_gry.jpg
-share/cube/packages/ik2k/ik_cliff256.jpg
-share/cube/packages/ik2k/ik_floor_brick128a.jpg
-share/cube/packages/ik2k/ik_floor_brick128b.jpg
-share/cube/packages/ik2k/ik_floor_tile128b.jpg
-share/cube/packages/ik2k/ik_floor_wood128b.jpg
-share/cube/packages/ik2k/ik_floor_wood128d.jpg
-share/cube/packages/ik2k/ik_ground_cobbles128.jpg
-share/cube/packages/ik2k/ik_ground_deadgrass128.jpg
-share/cube/packages/ik2k/ik_ground_grass128.jpg
-share/cube/packages/ik2k/ik_ground_lawn128.jpg
-share/cube/packages/ik2k/ik_ground_pavement128.jpg
-share/cube/packages/ik2k/ik_ground_pebbles128.jpg
-share/cube/packages/ik2k/ik_sky_day_back.jpg
-share/cube/packages/ik2k/ik_stonestep25632.jpg
-share/cube/packages/ik2k/ik_tree128moss.jpg
-share/cube/packages/ik2k/ik_wood_planks128b.jpg
-share/cube/packages/ik2k/ik_wood_planks128d.jpg
-share/cube/packages/ik2k/ik_wood_trimh64d.jpg
-share/cube/packages/ik2k/ik_wood_trimh64e.jpg
-share/cube/packages/ik2k/ik_woodv256a.jpg
-share/cube/packages/ik2k/ik_woodwall128128b.jpg
-share/cube/packages/ik2k/ik_wpaperplain128a.jpg
-share/cube/packages/ik2k/ik_wpaperplain128b.jpg
-share/cube/packages/ik2k/ik_wpaperplain128c.jpg
-share/cube/packages/ik2k/ik_wpaperplain128d.jpg
-share/cube/packages/ik2k/ik_wpaperplain128e.jpg
-share/cube/packages/ikbase/ik_conc_gmoss.jpg
-share/cube/packages/ikbase/ik_cwall03a2.jpg
-share/cube/packages/ikbase/ik_cwall04a.jpg
-share/cube/packages/ikbase/ik_cwall06a.jpg
-share/cube/packages/ikbase/ik_floor_conc128a.jpg
-share/cube/packages/ikbase/ik_floor_conc128b.jpg
-share/cube/packages/ikbase/ik_floor_met128e.jpg
-share/cube/packages/ikbase/ik_floor_met128f.jpg
-share/cube/packages/ikbase/ik_floor_met1f.jpg
-share/cube/packages/ikbase/ik_floor_met64d.jpg
-share/cube/packages/ikbase/ik_floor_met64e.jpg
-share/cube/packages/ikbase/ik_floor_met64f.jpg
-share/cube/packages/ikbase/ik_gtrimh_64b.jpg
-share/cube/packages/ikbase/ik_gtrimh_lit1a.jpg
-share/cube/packages/ikbase/ik_gtrimv_64b.jpg
-share/cube/packages/ikbase/ik_gtrimv_lit1a.jpg
-share/cube/packages/ikbase/ik_gtrimv_lit2b.jpg
-share/cube/packages/ikbase/ik_gtrimv_lit3b.jpg
-share/cube/packages/ikbase/ik_gtrimv_lit4b.jpg
-share/cube/packages/ikbase/ik_htrimh_64b.jpg
-share/cube/packages/ikbase/ik_htrimh_64c.jpg
-share/cube/packages/ikbase/ik_htrimh_64d.jpg
-share/cube/packages/ikbase/ik_htrimv_64b.jpg
-share/cube/packages/ikbase/ik_htrimv_64c.jpg
-share/cube/packages/ikbase/ik_itrimv_128b.jpg
-share/cube/packages/ikbase/ik_metplatef_6464b.jpg
-share/cube/packages/ikbase/ik_wtrimh_32a.jpg
-share/cube/packages/ikbase/ik_wtrimh_32b.jpg
-share/cube/packages/ikbase/ik_wtrimh_32c.jpg
-share/cube/packages/ikbase/ik_wtrimh_32d.jpg
-share/cube/packages/ikbase/ik_wtrimh_64a.jpg
-share/cube/packages/ikbase/ik_wtrimh_64c.jpg
-share/cube/packages/ikbase/ik_wtrimh_64d.jpg
-share/cube/packages/ikbase/ik_wtrimv_32a.jpg
-share/cube/packages/ikbase/ik_wtrimv_32b.jpg
-share/cube/packages/ikbase/ik_wtrimv_32c.jpg
-share/cube/packages/ikbase/ik_wtrimv_32d.jpg
-share/cube/packages/ikbase/ik_wtrimv_64a.jpg
-share/cube/packages/ikbase/ik_wtrimv_64c.jpg
-share/cube/packages/ikbase/ik_wtrimv_64d.jpg
-share/cube/packages/ikbase/ikbase070900.txt
-share/cube/packages/jf1/jf128.jpg
-share/cube/packages/jf1/jf1wad.txt
-share/cube/packages/jf1/jf32.jpg
-share/cube/packages/jf1/jf64.jpg
-share/cube/packages/jf1/jfbutn.jpg
-share/cube/packages/jf1/jfflr.jpg
-share/cube/packages/jf1/jfgrid.jpg
-share/cube/packages/jf1/jfhatch.jpg
-share/cube/packages/jf1/jflite.jpg
-share/cube/packages/jf1/jflitestr.jpg
-share/cube/packages/jf1/jfrock.jpg
-share/cube/packages/jf1/jfrust.jpg
-share/cube/packages/jf1/jfstripe.jpg
-share/cube/packages/jf1/jfwall.jpg
-share/cube/packages/kurt/klite1.jpg
-share/cube/packages/kurt/klite2.jpg
-share/cube/packages/kurt/ktrim2_a.jpg
-share/cube/packages/kurt/ktrim2_b.jpg
-share/cube/packages/kurt/ktrim2_corner1.jpg
-share/cube/packages/kurt/ktrim2_corner2.jpg
-share/cube/packages/kurt/ktrim2_corner3.jpg
-share/cube/packages/kurt/ktrim2_corner4.jpg
-share/cube/packages/kurt/ktrim2_end1.jpg
-share/cube/packages/kurt/ktrim2_end2.jpg
-share/cube/packages/kurt/ktrim2_end3.jpg
-share/cube/packages/kurt/ktrim2_end4.jpg
-share/cube/packages/kurt/ktrim_a.jpg
-share/cube/packages/kurt/ktrim_b.jpg
-share/cube/packages/kurt/ktrim_corner1.jpg
-share/cube/packages/kurt/ktrim_corner2.jpg
-share/cube/packages/kurt/ktrim_corner3.jpg
-share/cube/packages/kurt/ktrim_corner4.jpg
-share/cube/packages/kurt/ktrim_end1.jpg
-share/cube/packages/kurt/ktrim_end2.jpg
-share/cube/packages/kurt/ktrim_end3.jpg
-share/cube/packages/kurt/ktrim_end4.jpg
-share/cube/packages/kurt/kwater.jpg
-share/cube/packages/kurt/readme.txt
-share/cube/packages/kurt/sky/kdusk.txt
-share/cube/packages/kurt/sky/kdusk_bk.jpg
-share/cube/packages/kurt/sky/kdusk_dn.jpg
-share/cube/packages/kurt/sky/kdusk_ft.jpg
-share/cube/packages/kurt/sky/kdusk_lf.jpg
-share/cube/packages/kurt/sky/kdusk_rt.jpg
-share/cube/packages/kurt/sky/kdusk_up.jpg
-share/cube/packages/models/boost/skin.jpg
-share/cube/packages/models/boost/tris.md2
-share/cube/packages/models/bridge/bridge2.ms3d
-share/cube/packages/models/bridge/skin.jpg
-share/cube/packages/models/bridge/tris.md2
-share/cube/packages/models/bullets/skin.jpg
-share/cube/packages/models/bullets/tris.md2
-share/cube/packages/models/carrot/skin.jpg
-share/cube/packages/models/carrot/tris.md2
-share/cube/packages/models/dcp/Readme.txt
-share/cube/packages/models/dcp/barrel/readme.txt
-share/cube/packages/models/dcp/barrel/skin.jpg
-share/cube/packages/models/dcp/barrel/tris.md2
-share/cube/packages/models/dcp/bench/readme.txt
-share/cube/packages/models/dcp/bench/skin.jpg
-share/cube/packages/models/dcp/bench/tris.md2
-share/cube/packages/models/dcp/biotank/skin.jpg
-share/cube/packages/models/dcp/biotank/tris.md2
-share/cube/packages/models/dcp/console/skin.jpg
-share/cube/packages/models/dcp/console/tris.md2
-share/cube/packages/models/dcp/grass/readme.txt
-share/cube/packages/models/dcp/grass/skin.jpg
-share/cube/packages/models/dcp/grass/tris.md2
-share/cube/packages/models/dcp/groundlamp/skin.jpg
-share/cube/packages/models/dcp/groundlamp/tris.md2
-share/cube/packages/models/dcp/ivy/skin.jpg
-share/cube/packages/models/dcp/ivy/tris.md2
-share/cube/packages/models/dcp/jumppad2/skin.jpg
-share/cube/packages/models/dcp/jumppad2/tris.md2
-share/cube/packages/models/dcp/leafs/skin.jpg
-share/cube/packages/models/dcp/leafs/tris.md2
-share/cube/packages/models/dcp/mushroom/skin.jpg
-share/cube/packages/models/dcp/mushroom/tris.md2
-share/cube/packages/models/dcp/palette/skin.jpg
-share/cube/packages/models/dcp/palette/tris.md2
-share/cube/packages/models/dcp/palmtree/skin.jpg
-share/cube/packages/models/dcp/palmtree/tris.md2
-share/cube/packages/models/dcp/pillar/readme.txt
-share/cube/packages/models/dcp/pillar/skin.jpg
-share/cube/packages/models/dcp/pillar/tris.md2
-share/cube/packages/models/dcp/plant1/skin.jpg
-share/cube/packages/models/dcp/plant1/tris.md2
-share/cube/packages/models/dcp/streetlamp/readme.txt
-share/cube/packages/models/dcp/streetlamp/skin.jpg
-share/cube/packages/models/dcp/streetlamp/tris.md2
-share/cube/packages/models/dcp/thorns/skin.jpg
-share/cube/packages/models/dcp/thorns/tris.md2
-share/cube/packages/models/dcp/tree2/readme.txt
-share/cube/packages/models/dcp/tree2/skin.jpg
-share/cube/packages/models/dcp/tree2/tris.md2
-share/cube/packages/models/dcp/tree3/readme.txt
-share/cube/packages/models/dcp/tree3/skin.jpg
-share/cube/packages/models/dcp/tree3/tris.md2
-share/cube/packages/models/dcp/turret/skin.jpg
-share/cube/packages/models/dcp/turret/tris.md2
-share/cube/packages/models/dcp/valve/skin.jpg
-share/cube/packages/models/dcp/valve/tris.md2
-share/cube/packages/models/dcp/vent/skin.jpg
-share/cube/packages/models/dcp/vent/tris.md2
-share/cube/packages/models/dcp/waterbowl/readme.txt
-share/cube/packages/models/dcp/waterbowl/skin.jpg
-share/cube/packages/models/dcp/waterbowl/tris.md2
-share/cube/packages/models/g_armour/armor.txt
-share/cube/packages/models/g_armour/skin.jpg
-share/cube/packages/models/g_armour/tris.md2
-share/cube/packages/models/gibc/gpl_gibs.txt
-share/cube/packages/models/gibc/skin.jpg
-share/cube/packages/models/gibc/tris.md2
-share/cube/packages/models/gibh/gpl_gibs.txt
-share/cube/packages/models/gibh/skin.jpg
-share/cube/packages/models/gibh/tris.md2
-share/cube/packages/models/health/skin.jpg
-share/cube/packages/models/health/tris.md2
-share/cube/packages/models/hudguns/Frames.txt
-share/cube/packages/models/hudguns/Readme.txt
-share/cube/packages/models/hudguns/chaing/md2.qc
-share/cube/packages/models/hudguns/chaing/skin.jpg
-share/cube/packages/models/hudguns/chaing/tris.md2
-share/cube/packages/models/hudguns/fist/skin.jpg
-share/cube/packages/models/hudguns/fist/tris.md2
-share/cube/packages/models/hudguns/rifle/md2.qc
-share/cube/packages/models/hudguns/rifle/skin.jpg
-share/cube/packages/models/hudguns/rifle/tris.md2
-share/cube/packages/models/hudguns/rocket/md2.qc
-share/cube/packages/models/hudguns/rocket/skin.jpg
-share/cube/packages/models/hudguns/rocket/tris.md2
-share/cube/packages/models/hudguns/shotg/MD2.QC
-share/cube/packages/models/hudguns/shotg/skin.jpg
-share/cube/packages/models/hudguns/shotg/tris.md2
-share/cube/packages/models/monster/bauul/Thumbs.db
-share/cube/packages/models/monster/bauul/bauul.txt
-share/cube/packages/models/monster/bauul/skin.jpg
-share/cube/packages/models/monster/bauul/tris.md2
-share/cube/packages/models/monster/goblin/readme.txt
-share/cube/packages/models/monster/goblin/skin.jpg
-share/cube/packages/models/monster/goblin/tris.md2
-share/cube/packages/models/monster/hellpig/readme.txt
-share/cube/packages/models/monster/hellpig/skin.jpg
-share/cube/packages/models/monster/hellpig/tris.md2
-share/cube/packages/models/monster/knight/readme.txt
-share/cube/packages/models/monster/knight/skin.jpg
-share/cube/packages/models/monster/knight/tris.md2
-share/cube/packages/models/monster/ogro/Ogro.txt
-share/cube/packages/models/monster/ogro/skin.jpg
-share/cube/packages/models/monster/ogro/tris.md2
-share/cube/packages/models/monster/rat/Ratamahatta.txt
-share/cube/packages/models/monster/rat/skin.jpg
-share/cube/packages/models/monster/rat/tris.md2
-share/cube/packages/models/monster/rhino/rhino.txt
-share/cube/packages/models/monster/rhino/skin.jpg
-share/cube/packages/models/monster/rhino/tris.md2
-share/cube/packages/models/monster/slith/skin.jpg
-share/cube/packages/models/monster/slith/slithMe.txt
-share/cube/packages/models/monster/slith/tris.md2
-share/cube/packages/models/quad/invulner.txt
-share/cube/packages/models/quad/skin.jpg
-share/cube/packages/models/quad/tris.md2
-share/cube/packages/models/rockets/skin.jpg
-share/cube/packages/models/rockets/tris.md2
-share/cube/packages/models/rrounds/skin.jpg
-share/cube/packages/models/rrounds/tris.md2
-share/cube/packages/models/shells/skin.jpg
-share/cube/packages/models/shells/tris.md2
-share/cube/packages/models/switch1/skin.jpg
-share/cube/packages/models/switch1/tris.md2
-share/cube/packages/models/switch2/skin.jpg
-share/cube/packages/models/switch2/tris.md2
-share/cube/packages/models/teleporter/skin.jpg
-share/cube/packages/models/teleporter/tris.md2
-share/cube/packages/models/tree1/skin.jpg
-share/cube/packages/models/tree1/tris.md2
-share/cube/packages/models/y_armour/armor.txt
-share/cube/packages/models/y_armour/skin.jpg
-share/cube/packages/models/y_armour/tris.md2
-share/cube/packages/payne/Box12b.jpg
-share/cube/packages/payne/Brick52a.jpg
-share/cube/packages/payne/Brick58_512x512.jpg
-share/cube/packages/payne/Grate09b.jpg
-share/cube/packages/payne/SlimyTile02_128x128.jpg
-share/cube/packages/payne/Thumbs.db
-share/cube/packages/payne/Tile28b.jpg
-share/cube/packages/payne/Tile41a.jpg
-share/cube/packages/payne/readme.txt
-share/cube/packages/pigcam/Piglet Campaign - readme.txt
-share/cube/packages/pigcam/pig01.cfg
-share/cube/packages/pigcam/pig01.cgz
-share/cube/packages/pigcam/pig02.cfg
-share/cube/packages/pigcam/pig02.cgz
-share/cube/packages/pigcam/pig03.cfg
-share/cube/packages/pigcam/pig03.cgz
-share/cube/packages/pigcam/pig04.cfg
-share/cube/packages/pigcam/pig04.cgz
-share/cube/packages/pigcam/pig05.cfg
-share/cube/packages/pigcam/pig05.cgz
-share/cube/packages/pigcam/pig06.cfg
-share/cube/packages/pigcam/pig06.cgz
-share/cube/packages/pigcam/pig07.cfg
-share/cube/packages/pigcam/pig07.cgz
-share/cube/packages/pigcam/pig08.cfg
-share/cube/packages/pigcam/pig08.cgz
-share/cube/packages/pigcam/pig09.cfg
-share/cube/packages/pigcam/pig09.cgz
-share/cube/packages/pigcam/pigfin.cfg
-share/cube/packages/pigcam/pigfin.cgz
-share/cube/packages/readme.txt
-share/cube/packages/schwenz/dt_tile_check.01.jpg
-share/cube/packages/schwenz/readme.txt
-share/cube/packages/socksky/desert_bk.jpg
-share/cube/packages/socksky/desert_dn.jpg
-share/cube/packages/socksky/desert_ft.jpg
-share/cube/packages/socksky/desert_lf.jpg
-share/cube/packages/socksky/desert_rt.jpg
-share/cube/packages/socksky/desert_up.jpg
-share/cube/packages/socksky/emerald_bk.jpg
-share/cube/packages/socksky/emerald_dn.jpg
-share/cube/packages/socksky/emerald_ft.jpg
-share/cube/packages/socksky/emerald_lf.jpg
-share/cube/packages/socksky/emerald_rt.jpg
-share/cube/packages/socksky/emerald_up.jpg
-share/cube/packages/socksky/frozen_bk.jpg
-share/cube/packages/socksky/frozen_dn.jpg
-share/cube/packages/socksky/frozen_ft.jpg
-share/cube/packages/socksky/frozen_lf.jpg
-share/cube/packages/socksky/frozen_rt.jpg
-share/cube/packages/socksky/frozen_up.jpg
-share/cube/packages/socksky/mars_bk.jpg
-share/cube/packages/socksky/mars_dn.jpg
-share/cube/packages/socksky/mars_ft.jpg
-share/cube/packages/socksky/mars_lf.jpg
-share/cube/packages/socksky/mars_rt.jpg
-share/cube/packages/socksky/mars_up.jpg
-share/cube/packages/socksky/readme.txt
-share/cube/packages/songs/ambient.mid
-share/cube/packages/songs/cube1.mid
-share/cube/packages/songs/cubez0r.xm
-share/cube/packages/songs/deathB.mid
-share/cube/packages/songs/readme.txt
-share/cube/packages/sounds/aard/bang.wav
-share/cube/packages/sounds/aard/die1.wav
-share/cube/packages/sounds/aard/die2.wav
-share/cube/packages/sounds/aard/grunt1.wav
-share/cube/packages/sounds/aard/grunt2.wav
-share/cube/packages/sounds/aard/itempick.wav
-share/cube/packages/sounds/aard/jump.wav
-share/cube/packages/sounds/aard/land.wav
-share/cube/packages/sounds/aard/outofammo.wav
-share/cube/packages/sounds/aard/pain1.wav
-share/cube/packages/sounds/aard/pain2.wav
-share/cube/packages/sounds/aard/pain3.wav
-share/cube/packages/sounds/aard/pain4.wav
-share/cube/packages/sounds/aard/pain5.wav
-share/cube/packages/sounds/aard/pain6.wav
-share/cube/packages/sounds/aard/tak.wav
-share/cube/packages/sounds/aard/weapload.wav
-share/cube/packages/sounds/awesund/Sound.txt
-share/cube/packages/sounds/awesund/cg1.wav
-share/cube/packages/sounds/awesund/cg2.wav
-share/cube/packages/sounds/awesund/cg2_full.wav
-share/cube/packages/sounds/awesund/explode.wav
-share/cube/packages/sounds/awesund/explodemini.wav
-share/cube/packages/sounds/awesund/flaunch.wav
-share/cube/packages/sounds/awesund/readmeFX1.txt
-share/cube/packages/sounds/awesund/rifle.wav
-share/cube/packages/sounds/awesund/rlaunch.wav
-share/cube/packages/sounds/awesund/shotgun.wav
-share/cube/packages/sounds/free/Sound.txt
-share/cube/packages/sounds/free/acid5.wav
-share/cube/packages/sounds/free/acid6.wav
-share/cube/packages/sounds/free/boing_x.wav
-share/cube/packages/sounds/free/chaingun.wav
-share/cube/packages/sounds/free/chaingun_once.wav
-share/cube/packages/sounds/free/explode.wav
-share/cube/packages/sounds/free/itemback.wav
-share/cube/packages/sounds/free/itempick.wav
-share/cube/packages/sounds/free/launch1.wav
-share/cube/packages/sounds/free/piggrunt1.wav
-share/cube/packages/sounds/free/piggrunt2.wav
-share/cube/packages/sounds/free/punch1.wav
-share/cube/packages/sounds/free/punch2.wav
-share/cube/packages/sounds/free/rifle1.wav
-share/cube/packages/sounds/free/rocketl.wav
-share/cube/packages/sounds/free/rocketlaunch.wav
-share/cube/packages/sounds/free/rumble.wav
-share/cube/packages/sounds/free/shotgun.wav
-share/cube/packages/sounds/free/splash1.wav
-share/cube/packages/sounds/free/splash2.wav
-share/cube/packages/sounds/free/teleport.wav
-share/cube/packages/sounds/free/tick.wav
-share/cube/packages/sounds/ppm/deathb.wav
-share/cube/packages/sounds/ppm/deathd.wav
-share/cube/packages/sounds/ppm/deathe.wav
-share/cube/packages/sounds/ppm/deathh.wav
-share/cube/packages/sounds/ppm/deathr.wav
-share/cube/packages/sounds/ppm/deaths.wav
-share/cube/packages/sounds/ppm/iceball.wav
-share/cube/packages/sounds/ppm/painb.wav
-share/cube/packages/sounds/ppm/paind.wav
-share/cube/packages/sounds/ppm/paine.wav
-share/cube/packages/sounds/ppm/painh.wav
-share/cube/packages/sounds/ppm/paino.wav
-share/cube/packages/sounds/ppm/painp.wav
-share/cube/packages/sounds/ppm/painr.wav
-share/cube/packages/sounds/ppm/pains.wav
-share/cube/packages/sounds/ppm/slimeball.wav
-share/cube/packages/sounds/readme.txt
-share/cube/packages/sounds/readme.txt.bak
-share/cube/packages/stecki/snow.txt
-share/cube/packages/stecki/snow_bk.jpg
-share/cube/packages/stecki/snow_dn.jpg
-share/cube/packages/stecki/snow_ft.jpg
-share/cube/packages/stecki/snow_lf.jpg
-share/cube/packages/stecki/snow_rt.jpg
-share/cube/packages/stecki/snow_up.jpg
-share/cube/packages/tech1soc/032-01c.jpg
-share/cube/packages/tech1soc/032-02b.jpg
-share/cube/packages/tech1soc/032-03d.jpg
-share/cube/packages/tech1soc/032-10a.jpg
-share/cube/packages/tech1soc/032-10b.jpg
-share/cube/packages/tech1soc/032-12d.jpg
-share/cube/packages/tech1soc/032-14b.jpg
-share/cube/packages/tech1soc/032-15a.jpg
-share/cube/packages/tech1soc/032-15b.jpg
-share/cube/packages/tech1soc/032lig10bb.jpg
-share/cube/packages/tech1soc/032lig11bb.jpg
-share/cube/packages/tech1soc/032lig11rb.jpg
-share/cube/packages/tech1soc/032lig12bb.jpg
-share/cube/packages/tech1soc/032lig12rb.jpg
-share/cube/packages/tech1soc/032lig12ya.jpg
-share/cube/packages/tech1soc/032lig20yb.jpg
-share/cube/packages/tech1soc/064-11b.jpg
-share/cube/packages/tech1soc/064-12a.jpg
-share/cube/packages/tech1soc/064-13b.jpg
-share/cube/packages/tech1soc/064-15b.jpg
-share/cube/packages/tech1soc/064-20a.jpg
-share/cube/packages/tech1soc/064-20b.jpg
-share/cube/packages/tech1soc/064-22b.jpg
-share/cube/packages/tech1soc/064lig20bb.jpg
-share/cube/packages/tech1soc/064lig22bb.jpg
-share/cube/packages/tech1soc/064lig22rb.jpg
-share/cube/packages/tech1soc/064lig22wb.jpg
-share/cube/packages/tech1soc/128-05b.jpg
-share/cube/packages/tech1soc/128-05c.jpg
-share/cube/packages/tech1soc/blank01a.jpg
-share/cube/packages/tech1soc/blank01c.jpg
-share/cube/packages/tech1soc/blank02a.jpg
-share/cube/packages/tech1soc/blank02b.jpg
-share/cube/packages/tech1soc/blank03a.jpg
-share/cube/packages/tech1soc/blank03d.jpg
-share/cube/packages/tech1soc/block01b.jpg
-share/cube/packages/tech1soc/block01c.jpg
-share/cube/packages/tech1soc/block10b.jpg
-share/cube/packages/tech1soc/block19b.jpg
-share/cube/packages/tech1soc/chain_mesh2.jpg
-share/cube/packages/tech1soc/grate1b.jpg
-share/cube/packages/tech1soc/grate_brown1.jpg
-share/cube/packages/tech1soc/grate_brown3.jpg
-share/cube/packages/tech1soc/grill_wall01b.jpg
-share/cube/packages/tech1soc/half_grill_wall01b.jpg
-share/cube/packages/tech1soc/half_grill_wall03b.jpg
-share/cube/packages/tech1soc/mat4b.jpg
-share/cube/packages/tech1soc/matbrown_lgt2.jpg
-share/cube/packages/tech1soc/met_wall01a.jpg
-share/cube/packages/tech1soc/met_wall01c.jpg
-share/cube/packages/tech1soc/mix_wall03a.jpg
-share/cube/packages/tech1soc/mix_wall03ab.jpg
-share/cube/packages/tech1soc/o128-02a.jpg
-share/cube/packages/tech1soc/octlig01bc.jpg
-share/cube/packages/tech1soc/panel20c.jpg
-share/cube/packages/tech1soc/panel40c.jpg
-share/cube/packages/tech1soc/s064-02a.jpg
-share/cube/packages/tech1soc/s064-02b.jpg
-share/cube/packages/tech1soc/s064-02c.jpg
-share/cube/packages/tech1soc/s064-03a.jpg
-share/cube/packages/tech1soc/s064-03b.jpg
-share/cube/packages/tech1soc/s064-03c.jpg
-share/cube/packages/tech1soc/s128-01c.jpg
-share/cube/packages/tech1soc/s128-02a.jpg
-share/cube/packages/tech1soc/s128-02b.jpg
-share/cube/packages/tech1soc/s128-03b.jpg
-share/cube/packages/tech1soc/s128-06b.jpg
-share/cube/packages/tech1soc/s128-07e.jpg
-share/cube/packages/tech1soc/s256-01c.jpg
-share/cube/packages/tech1soc/s256-01d.jpg
-share/cube/packages/tech1soc/s256-02a.jpg
-share/cube/packages/tech1soc/s256-02b.jpg
-share/cube/packages/tech1soc/spring1.jpg
-share/cube/packages/tech1soc/spring2.jpg
-share/cube/packages/tech1soc/spring3.jpg
-share/cube/packages/tech1soc/sqrlig02wb.jpg
-share/cube/packages/tech1soc/sqrlig03bc.jpg
-share/cube/packages/tech1soc/tech1soc_readme.txt
-share/cube/packages/tech1soc/zdet_trim2a.jpg
-share/cube/packages/tech1soc/zdet_trim5b.jpg
-share/cube/packages/tech1soc/zdetlig01bb.jpg
-share/cube/packages/tech1soc/zdetlig02bb.jpg
-share/cube/packages/tech1soc/zdetlig04bb.jpg
-share/cube/packages/than_ind/cretewall03.jpg
-share/cube/packages/than_ind/floor02.jpg
-share/cube/packages/than_ind/floor05.jpg
-share/cube/packages/than_ind/floor06.jpg
-share/cube/packages/than_ind/light03.jpg
-share/cube/packages/than_ind/than_industrial.txt
-share/cube/packages/than_ind/trim04.jpg
-share/cube/packages/than_ind/trim21.jpg
-share/cube/packages/than_ind/trlight01.jpg
-share/cube/packages/than_ind/trlight06.jpg
+libexec/cube_client
+libexec/cube_server
+%%DATADIR%%/autoexec.cfg
+%%DATADIR%%/data/crosshair.png
+%%DATADIR%%/data/default_map_settings.cfg
+%%DATADIR%%/data/explosion.jpg
+%%DATADIR%%/data/items.png
+%%DATADIR%%/data/keymap.cfg
+%%DATADIR%%/data/martin/ball1.png
+%%DATADIR%%/data/martin/ball2.png
+%%DATADIR%%/data/martin/ball3.png
+%%DATADIR%%/data/martin/base.png
+%%DATADIR%%/data/martin/smoke.png
+%%DATADIR%%/data/menus.cfg
+%%DATADIR%%/data/newchars.png
+%%DATADIR%%/data/prefabs.cfg
+%%DATADIR%%/data/sounds.cfg
+%%DATADIR%%/packages/aard/aardfdry256_1.jpg
+%%DATADIR%%/packages/aard/aardmbr16_2.jpg
+%%DATADIR%%/packages/aard/aardmmet32_1.jpg
+%%DATADIR%%/packages/aard/aardograss_1.jpg
+%%DATADIR%%/packages/aard/readme.txt
+%%DATADIR%%/packages/af/bullets_side.jpg
+%%DATADIR%%/packages/af/bullets_top.jpg
+%%DATADIR%%/packages/af/health_ga.jpg
+%%DATADIR%%/packages/af/health_health.jpg
+%%DATADIR%%/packages/af/health_top1.jpg
+%%DATADIR%%/packages/af/health_top2.jpg
+%%DATADIR%%/packages/af/health_top3.jpg
+%%DATADIR%%/packages/af/health_ya.jpg
+%%DATADIR%%/packages/af/light02.jpg
+%%DATADIR%%/packages/af/light02_broken.jpg
+%%DATADIR%%/packages/af/quad_side.jpg
+%%DATADIR%%/packages/af/quad_top.jpg
+%%DATADIR%%/packages/af/rifle_side.jpg
+%%DATADIR%%/packages/af/rifle_top.jpg
+%%DATADIR%%/packages/af/rockets_side.jpg
+%%DATADIR%%/packages/af/rockets_top.jpg
+%%DATADIR%%/packages/af/shells_side.jpg
+%%DATADIR%%/packages/af/shells_top.jpg
+%%DATADIR%%/packages/af/signs_danger.jpg
+%%DATADIR%%/packages/af/signs_dne_reverse.jpg
+%%DATADIR%%/packages/af/signs_radioactive.jpg
+%%DATADIR%%/packages/af/sludge.jpg
+%%DATADIR%%/packages/af/sludge_l.jpg
+%%DATADIR%%/packages/base/32.cgz
+%%DATADIR%%/packages/base/Cube101.txt
+%%DATADIR%%/packages/base/aard1.cgz
+%%DATADIR%%/packages/base/aard1_remix.cgz
+%%DATADIR%%/packages/base/aard2.cgz
+%%DATADIR%%/packages/base/aard3.cfg
+%%DATADIR%%/packages/base/aard3.cgz
+%%DATADIR%%/packages/base/af.cfg
+%%DATADIR%%/packages/base/af.cgz
+%%DATADIR%%/packages/base/artanis.cgz
+%%DATADIR%%/packages/base/attacko.cgz
+%%DATADIR%%/packages/base/b2k.cgz
+%%DATADIR%%/packages/base/bhouse.cgz
+%%DATADIR%%/packages/base/biologie.cgz
+%%DATADIR%%/packages/base/caged.cgz
+%%DATADIR%%/packages/base/caged.txt
+%%DATADIR%%/packages/base/castle.cgz
+%%DATADIR%%/packages/base/cellar.cgz
+%%DATADIR%%/packages/base/cruel01.cgz
+%%DATADIR%%/packages/base/cruel02.cgz
+%%DATADIR%%/packages/base/cube101.cfg
+%%DATADIR%%/packages/base/cube101.cgz
+%%DATADIR%%/packages/base/darth.cgz
+%%DATADIR%%/packages/base/douze.cfg
+%%DATADIR%%/packages/base/douze.cgz
+%%DATADIR%%/packages/base/douze_beta.txt
+%%DATADIR%%/packages/base/dragon.cgz
+%%DATADIR%%/packages/base/drianmp2.cfg
+%%DATADIR%%/packages/base/drianmp2.cgz
+%%DATADIR%%/packages/base/egysp1.cfg
+%%DATADIR%%/packages/base/egysp1.cgz
+%%DATADIR%%/packages/base/fox.cfg
+%%DATADIR%%/packages/base/fox.cgz
+%%DATADIR%%/packages/base/fsession.cfg
+%%DATADIR%%/packages/base/fsession.cgz
+%%DATADIR%%/packages/base/gdb1.cgz
+%%DATADIR%%/packages/base/ger1.cgz
+%%DATADIR%%/packages/base/gib.cgz
+%%DATADIR%%/packages/base/gzdm1.cgz
+%%DATADIR%%/packages/base/hylken5.cgz
+%%DATADIR%%/packages/base/infertile.cfg
+%%DATADIR%%/packages/base/infertile.cgz
+%%DATADIR%%/packages/base/infertile.txt
+%%DATADIR%%/packages/base/inkedskin.cgz
+%%DATADIR%%/packages/base/kartoffel.cgz
+%%DATADIR%%/packages/base/kksp1 (v1.5) readme.txt
+%%DATADIR%%/packages/base/kksp1.cfg
+%%DATADIR%%/packages/base/kksp1.cgz
+%%DATADIR%%/packages/base/kmap1.cgz
+%%DATADIR%%/packages/base/kmap2.cgz
+%%DATADIR%%/packages/base/kmap3.cfg
+%%DATADIR%%/packages/base/kmap3.cgz
+%%DATADIR%%/packages/base/kmap4.cfg
+%%DATADIR%%/packages/base/kmap4.cgz
+%%DATADIR%%/packages/base/kmap5.cfg
+%%DATADIR%%/packages/base/kmap5.cgz
+%%DATADIR%%/packages/base/ksp1.cfg
+%%DATADIR%%/packages/base/ksp1.cgz
+%%DATADIR%%/packages/base/ksp2.cfg
+%%DATADIR%%/packages/base/ksp2.cgz
+%%DATADIR%%/packages/base/lbase.cgz
+%%DATADIR%%/packages/base/ludm1.cgz
+%%DATADIR%%/packages/base/mak1.cfg
+%%DATADIR%%/packages/base/mak1.cgz
+%%DATADIR%%/packages/base/mak1.txt
+%%DATADIR%%/packages/base/mak2.cfg
+%%DATADIR%%/packages/base/mak2.cgz
+%%DATADIR%%/packages/base/mak2.txt
+%%DATADIR%%/packages/base/matador.cfg
+%%DATADIR%%/packages/base/matador.cgz
+%%DATADIR%%/packages/base/metalv2.cgz
+%%DATADIR%%/packages/base/metl1.cgz
+%%DATADIR%%/packages/base/metl2.cgz
+%%DATADIR%%/packages/base/metl3.cfg
+%%DATADIR%%/packages/base/metl3.cgz
+%%DATADIR%%/packages/base/minion1.cgz
+%%DATADIR%%/packages/base/mm5remix.cfg
+%%DATADIR%%/packages/base/mm5remix.cgz
+%%DATADIR%%/packages/base/mpsp1 readme.txt
+%%DATADIR%%/packages/base/mpsp1.cfg
+%%DATADIR%%/packages/base/mpsp1.cgz
+%%DATADIR%%/packages/base/mpsp2 readme.txt
+%%DATADIR%%/packages/base/mpsp2.cfg
+%%DATADIR%%/packages/base/mpsp2.cgz
+%%DATADIR%%/packages/base/mpsp3  readme.txt
+%%DATADIR%%/packages/base/mpsp3.cfg
+%%DATADIR%%/packages/base/mpsp3.cgz
+%%DATADIR%%/packages/base/nsp2.cfg
+%%DATADIR%%/packages/base/nsp2.cgz
+%%DATADIR%%/packages/base/nudist.cgz
+%%DATADIR%%/packages/base/ogrosupply.cfg
+%%DATADIR%%/packages/base/ogrosupply.cgz
+%%DATADIR%%/packages/base/ogrosupply.txt
+%%DATADIR%%/packages/base/paintb1.cgz
+%%DATADIR%%/packages/base/plagiat.cgz
+%%DATADIR%%/packages/base/powerplant.cfg
+%%DATADIR%%/packages/base/powerplant.cgz
+%%DATADIR%%/packages/base/powerplant.txt
+%%DATADIR%%/packages/base/q3dm2.cfg
+%%DATADIR%%/packages/base/q3dm2.cgz
+%%DATADIR%%/packages/base/q3dm2.txt
+%%DATADIR%%/packages/base/rampage-fanatic-spentron.txt
+%%DATADIR%%/packages/base/rampage.cgz
+%%DATADIR%%/packages/base/readme_fsession.txt
+%%DATADIR%%/packages/base/rpgcb01.cgz
+%%DATADIR%%/packages/base/sp1-test.cgz
+%%DATADIR%%/packages/base/sp_af.cfg
+%%DATADIR%%/packages/base/sp_af.cgz
+%%DATADIR%%/packages/base/sp_infidel.cgz
+%%DATADIR%%/packages/base/sp_infidel.txt
+%%DATADIR%%/packages/base/sp_stalingrad.cgz
+%%DATADIR%%/packages/base/spillway.cfg
+%%DATADIR%%/packages/base/spillway.cgz
+%%DATADIR%%/packages/base/style.cgz
+%%DATADIR%%/packages/base/style.txt
+%%DATADIR%%/packages/base/tartech.cfg
+%%DATADIR%%/packages/base/tartech.cgz
+%%DATADIR%%/packages/base/taurus.cgz
+%%DATADIR%%/packages/base/templeofdespair.cgz
+%%DATADIR%%/packages/base/templeofdespair.txt
+%%DATADIR%%/packages/base/thearit.cgz
+%%DATADIR%%/packages/base/tongues.cgz
+%%DATADIR%%/packages/base/tta.cgz
+%%DATADIR%%/packages/base/tta.txt
+%%DATADIR%%/packages/base/uf.cgz
+%%DATADIR%%/packages/base/vaterland.cgz
+%%DATADIR%%/packages/base/wandering.cfg
+%%DATADIR%%/packages/base/wandering.cgz
+%%DATADIR%%/packages/base/wandering.txt
+%%DATADIR%%/packages/base/wsg.txt
+%%DATADIR%%/packages/base/wsg1.cfg
+%%DATADIR%%/packages/base/wsg1.cgz
+%%DATADIR%%/packages/base/wsg2.cfg
+%%DATADIR%%/packages/base/wsg2.cgz
+%%DATADIR%%/packages/base/wsg3.cfg
+%%DATADIR%%/packages/base/wsg3.cgz
+%%DATADIR%%/packages/base/x.cgz
+%%DATADIR%%/packages/base/zippie.cfg
+%%DATADIR%%/packages/base/zippie.cgz
+%%DATADIR%%/packages/dg/floor_grass1.jpg
+%%DATADIR%%/packages/dg/floor_grass3&soil.jpg
+%%DATADIR%%/packages/dg/floor_pavement_stone4_2.jpg
+%%DATADIR%%/packages/dg/floor_pavement_stone4_3.jpg
+%%DATADIR%%/packages/dg/floor_pavement_stone4_4moss.jpg
+%%DATADIR%%/packages/dg/floor_pavement_stone5_2.jpg
+%%DATADIR%%/packages/dg/floor_pavement_stone_four2.jpg
+%%DATADIR%%/packages/dg/floor_pavingStone.jpg
+%%DATADIR%%/packages/dg/floor_pavingStone_ceramic.jpg
+%%DATADIR%%/packages/dg/floor_paving_littleStones3.jpg
+%%DATADIR%%/packages/dg/floor_paving_littleStones3_2.jpg
+%%DATADIR%%/packages/dg/floor_paving_littleStones_2.jpg
+%%DATADIR%%/packages/dg/floor_soil&grave3.jpg
+%%DATADIR%%/packages/dg/floor_tile_ceramicBlue.jpg
+%%DATADIR%%/packages/dg/floor_tile_stoneIrregular.jpg
+%%DATADIR%%/packages/dg/mad013.jpg
+%%DATADIR%%/packages/dg/mad015.jpg
+%%DATADIR%%/packages/dg/mad063.jpg
+%%DATADIR%%/packages/dg/mur059.jpg
+%%DATADIR%%/packages/dg/mur073.jpg
+%%DATADIR%%/packages/dg/mur078.jpg
+%%DATADIR%%/packages/dg/mur079.jpg
+%%DATADIR%%/packages/dg/mur142.jpg
+%%DATADIR%%/packages/dg/muv158.jpg
+%%DATADIR%%/packages/dg/muv185.jpg
+%%DATADIR%%/packages/dg/muv204.jpg
+%%DATADIR%%/packages/dg/sue011.jpg
+%%DATADIR%%/packages/dg/sup075.jpg
+%%DATADIR%%/packages/dg/sup079.jpg
+%%DATADIR%%/packages/egyptsoc/032-01a.jpg
+%%DATADIR%%/packages/egyptsoc/032-03a.jpg
+%%DATADIR%%/packages/egyptsoc/032-03c.jpg
+%%DATADIR%%/packages/egyptsoc/032-04a.jpg
+%%DATADIR%%/packages/egyptsoc/032-05d.jpg
+%%DATADIR%%/packages/egyptsoc/048-01a.jpg
+%%DATADIR%%/packages/egyptsoc/048-02h.jpg
+%%DATADIR%%/packages/egyptsoc/064-02b.jpg
+%%DATADIR%%/packages/egyptsoc/064-03a.jpg
+%%DATADIR%%/packages/egyptsoc/064-07d.jpg
+%%DATADIR%%/packages/egyptsoc/064-08c.jpg
+%%DATADIR%%/packages/egyptsoc/064-08f.jpg
+%%DATADIR%%/packages/egyptsoc/128-01pc.jpg
+%%DATADIR%%/packages/egyptsoc/128-02a.jpg
+%%DATADIR%%/packages/egyptsoc/128-03c.jpg
+%%DATADIR%%/packages/egyptsoc/128-04a.jpg
+%%DATADIR%%/packages/egyptsoc/128-04d.jpg
+%%DATADIR%%/packages/egyptsoc/256-01a.jpg
+%%DATADIR%%/packages/egyptsoc/256-03b.jpg
+%%DATADIR%%/packages/egyptsoc/block01a.jpg
+%%DATADIR%%/packages/egyptsoc/block01b.jpg
+%%DATADIR%%/packages/egyptsoc/block01d.jpg
+%%DATADIR%%/packages/egyptsoc/block02b.jpg
+%%DATADIR%%/packages/egyptsoc/block03b.jpg
+%%DATADIR%%/packages/egyptsoc/block07b.jpg
+%%DATADIR%%/packages/egyptsoc/block10c.jpg
+%%DATADIR%%/packages/egyptsoc/egyptsoc_readme.txt
+%%DATADIR%%/packages/egyptsoc/lig_032-01b1.jpg
+%%DATADIR%%/packages/egyptsoc/lig_032-01r1.jpg
+%%DATADIR%%/packages/egyptsoc/lig_032-03b1.jpg
+%%DATADIR%%/packages/egyptsoc/lig_032-03r1.jpg
+%%DATADIR%%/packages/egyptsoc/lig_032-04b1.jpg
+%%DATADIR%%/packages/egyptsoc/lig_032-04r1.jpg
+%%DATADIR%%/packages/egyptsoc/lig_064-01b1.jpg
+%%DATADIR%%/packages/egyptsoc/lig_064-02r1.jpg
+%%DATADIR%%/packages/egyptsoc/lig_064-04b1.jpg
+%%DATADIR%%/packages/egyptsoc/lig_064-04r1.jpg
+%%DATADIR%%/packages/egyptsoc/lig_064-04y1.jpg
+%%DATADIR%%/packages/egyptsoc/lig_128-05b1.jpg
+%%DATADIR%%/packages/egyptsoc/lig_b064-02a.jpg
+%%DATADIR%%/packages/egyptsoc/lig_b064-02d.jpg
+%%DATADIR%%/packages/egyptsoc/s064-01b.jpg
+%%DATADIR%%/packages/egyptsoc/s064-01e.jpg
+%%DATADIR%%/packages/egyptsoc/s064-03a.jpg
+%%DATADIR%%/packages/egyptsoc/s064-05c.jpg
+%%DATADIR%%/packages/egyptsoc/s064-05f.jpg
+%%DATADIR%%/packages/egyptsoc/solidgrate1b.jpg
+%%DATADIR%%/packages/egyptsoc/stone01a.jpg
+%%DATADIR%%/packages/egyptsoc/stone01b.jpg
+%%DATADIR%%/packages/egyptsoc/stone01d.jpg
+%%DATADIR%%/packages/egyptsoc/stone02b.jpg
+%%DATADIR%%/packages/egyptsoc/stone03b.jpg
+%%DATADIR%%/packages/egyptsoc/stone03d.jpg
+%%DATADIR%%/packages/egyptsoc/stone04b.jpg
+%%DATADIR%%/packages/egyptsoc/stone04d.jpg
+%%DATADIR%%/packages/egyptsoc/stone08d.jpg
+%%DATADIR%%/packages/egyptsoc/stone10b.jpg
+%%DATADIR%%/packages/egyptsoc/stone10d.jpg
+%%DATADIR%%/packages/egyptsoc/v064-01b.jpg
+%%DATADIR%%/packages/egyptsoc/v064-02a.jpg
+%%DATADIR%%/packages/egyptsoc/v064-03b.jpg
+%%DATADIR%%/packages/egyptsoc/v064-03c.jpg
+%%DATADIR%%/packages/egyptsoc/v096-01b.jpg
+%%DATADIR%%/packages/egyptsoc/v128-02a.jpg
+%%DATADIR%%/packages/egyptsoc/v128-03a.jpg
+%%DATADIR%%/packages/egyptsoc/wood17.jpg
+%%DATADIR%%/packages/egyptsoc/woodmgrid1a.jpg
+%%DATADIR%%/packages/fanatic/01_fanatic-assault.ogg
+%%DATADIR%%/packages/fanatic/02_fanatic-conquerer.ogg
+%%DATADIR%%/packages/fanatic/03_fanatic-tranquility.ogg
+%%DATADIR%%/packages/fanatic/04_fanatic-unreleased-rage.ogg
+%%DATADIR%%/packages/fanatic/05_fanatic-lost-in-the-mist.ogg
+%%DATADIR%%/packages/fanatic/06_fanatic-hit-them-hard.ogg
+%%DATADIR%%/packages/fanatic/07_fanatic-cubed-to-death.ogg
+%%DATADIR%%/packages/fanatic/08_fanatic-waiting-to-strike.ogg
+%%DATADIR%%/packages/fanatic/09_fanatic-disrupting-force.ogg
+%%DATADIR%%/packages/fanatic/10_fanatic-my-destiny.ogg
+%%DATADIR%%/packages/fanatic/11_fanatic-set-free.ogg
+%%DATADIR%%/packages/fanatic/readme1.txt
+%%DATADIR%%/packages/golgotha/Thumbs.db
+%%DATADIR%%/packages/golgotha/water2.jpg
+%%DATADIR%%/packages/ik2k/Thumbs.db
+%%DATADIR%%/packages/ik2k/env/Thumbs.db
+%%DATADIR%%/packages/ik2k/env/desert_dn.jpg
+%%DATADIR%%/packages/ik2k/env/iklake_bk.jpg
+%%DATADIR%%/packages/ik2k/env/iklake_dn.jpg
+%%DATADIR%%/packages/ik2k/env/iklake_ft.jpg
+%%DATADIR%%/packages/ik2k/env/iklake_lf.jpg
+%%DATADIR%%/packages/ik2k/env/iklake_rt.jpg
+%%DATADIR%%/packages/ik2k/env/iklake_up.jpg
+%%DATADIR%%/packages/ik2k/ik2k_22feb01.txt
+%%DATADIR%%/packages/ik2k/ik_brick_12832a.jpg
+%%DATADIR%%/packages/ik2k/ik_brick_12864a.jpg
+%%DATADIR%%/packages/ik2k/ik_brick_3216d.jpg
+%%DATADIR%%/packages/ik2k/ik_brick_6432a.jpg
+%%DATADIR%%/packages/ik2k/ik_brick_6464a.jpg
+%%DATADIR%%/packages/ik2k/ik_brick_6464c.jpg
+%%DATADIR%%/packages/ik2k/ik_brick_trimh32a.jpg
+%%DATADIR%%/packages/ik2k/ik_brickwall_gry.jpg
+%%DATADIR%%/packages/ik2k/ik_cliff256.jpg
+%%DATADIR%%/packages/ik2k/ik_floor_brick128a.jpg
+%%DATADIR%%/packages/ik2k/ik_floor_brick128b.jpg
+%%DATADIR%%/packages/ik2k/ik_floor_tile128b.jpg
+%%DATADIR%%/packages/ik2k/ik_floor_wood128b.jpg
+%%DATADIR%%/packages/ik2k/ik_floor_wood128d.jpg
+%%DATADIR%%/packages/ik2k/ik_ground_cobbles128.jpg
+%%DATADIR%%/packages/ik2k/ik_ground_deadgrass128.jpg
+%%DATADIR%%/packages/ik2k/ik_ground_grass128.jpg
+%%DATADIR%%/packages/ik2k/ik_ground_lawn128.jpg
+%%DATADIR%%/packages/ik2k/ik_ground_pavement128.jpg
+%%DATADIR%%/packages/ik2k/ik_ground_pebbles128.jpg
+%%DATADIR%%/packages/ik2k/ik_sky_day_back.jpg
+%%DATADIR%%/packages/ik2k/ik_stonestep25632.jpg
+%%DATADIR%%/packages/ik2k/ik_tree128moss.jpg
+%%DATADIR%%/packages/ik2k/ik_wood_planks128b.jpg
+%%DATADIR%%/packages/ik2k/ik_wood_planks128d.jpg
+%%DATADIR%%/packages/ik2k/ik_wood_trimh64d.jpg
+%%DATADIR%%/packages/ik2k/ik_wood_trimh64e.jpg
+%%DATADIR%%/packages/ik2k/ik_woodv256a.jpg
+%%DATADIR%%/packages/ik2k/ik_woodwall128128b.jpg
+%%DATADIR%%/packages/ik2k/ik_wpaperplain128a.jpg
+%%DATADIR%%/packages/ik2k/ik_wpaperplain128b.jpg
+%%DATADIR%%/packages/ik2k/ik_wpaperplain128c.jpg
+%%DATADIR%%/packages/ik2k/ik_wpaperplain128d.jpg
+%%DATADIR%%/packages/ik2k/ik_wpaperplain128e.jpg
+%%DATADIR%%/packages/ikbase/ik_conc_gmoss.jpg
+%%DATADIR%%/packages/ikbase/ik_cwall03a2.jpg
+%%DATADIR%%/packages/ikbase/ik_cwall04a.jpg
+%%DATADIR%%/packages/ikbase/ik_cwall06a.jpg
+%%DATADIR%%/packages/ikbase/ik_floor_conc128a.jpg
+%%DATADIR%%/packages/ikbase/ik_floor_conc128b.jpg
+%%DATADIR%%/packages/ikbase/ik_floor_met128e.jpg
+%%DATADIR%%/packages/ikbase/ik_floor_met128f.jpg
+%%DATADIR%%/packages/ikbase/ik_floor_met1f.jpg
+%%DATADIR%%/packages/ikbase/ik_floor_met64d.jpg
+%%DATADIR%%/packages/ikbase/ik_floor_met64e.jpg
+%%DATADIR%%/packages/ikbase/ik_floor_met64f.jpg
+%%DATADIR%%/packages/ikbase/ik_gtrimh_64b.jpg
+%%DATADIR%%/packages/ikbase/ik_gtrimh_lit1a.jpg
+%%DATADIR%%/packages/ikbase/ik_gtrimv_64b.jpg
+%%DATADIR%%/packages/ikbase/ik_gtrimv_lit1a.jpg
+%%DATADIR%%/packages/ikbase/ik_gtrimv_lit2b.jpg
+%%DATADIR%%/packages/ikbase/ik_gtrimv_lit3b.jpg
+%%DATADIR%%/packages/ikbase/ik_gtrimv_lit4b.jpg
+%%DATADIR%%/packages/ikbase/ik_htrimh_64b.jpg
+%%DATADIR%%/packages/ikbase/ik_htrimh_64c.jpg
+%%DATADIR%%/packages/ikbase/ik_htrimh_64d.jpg
+%%DATADIR%%/packages/ikbase/ik_htrimv_64b.jpg
+%%DATADIR%%/packages/ikbase/ik_htrimv_64c.jpg
+%%DATADIR%%/packages/ikbase/ik_itrimv_128b.jpg
+%%DATADIR%%/packages/ikbase/ik_metplatef_6464b.jpg
+%%DATADIR%%/packages/ikbase/ik_wtrimh_32a.jpg
+%%DATADIR%%/packages/ikbase/ik_wtrimh_32b.jpg
+%%DATADIR%%/packages/ikbase/ik_wtrimh_32c.jpg
+%%DATADIR%%/packages/ikbase/ik_wtrimh_32d.jpg
+%%DATADIR%%/packages/ikbase/ik_wtrimh_64a.jpg
+%%DATADIR%%/packages/ikbase/ik_wtrimh_64c.jpg
+%%DATADIR%%/packages/ikbase/ik_wtrimh_64d.jpg
+%%DATADIR%%/packages/ikbase/ik_wtrimv_32a.jpg
+%%DATADIR%%/packages/ikbase/ik_wtrimv_32b.jpg
+%%DATADIR%%/packages/ikbase/ik_wtrimv_32c.jpg
+%%DATADIR%%/packages/ikbase/ik_wtrimv_32d.jpg
+%%DATADIR%%/packages/ikbase/ik_wtrimv_64a.jpg
+%%DATADIR%%/packages/ikbase/ik_wtrimv_64c.jpg
+%%DATADIR%%/packages/ikbase/ik_wtrimv_64d.jpg
+%%DATADIR%%/packages/ikbase/ikbase070900.txt
+%%DATADIR%%/packages/jf1/jf128.jpg
+%%DATADIR%%/packages/jf1/jf1wad.txt
+%%DATADIR%%/packages/jf1/jf32.jpg
+%%DATADIR%%/packages/jf1/jf64.jpg
+%%DATADIR%%/packages/jf1/jfbutn.jpg
+%%DATADIR%%/packages/jf1/jfflr.jpg
+%%DATADIR%%/packages/jf1/jfgrid.jpg
+%%DATADIR%%/packages/jf1/jfhatch.jpg
+%%DATADIR%%/packages/jf1/jflite.jpg
+%%DATADIR%%/packages/jf1/jflitestr.jpg
+%%DATADIR%%/packages/jf1/jfrock.jpg
+%%DATADIR%%/packages/jf1/jfrust.jpg
+%%DATADIR%%/packages/jf1/jfstripe.jpg
+%%DATADIR%%/packages/jf1/jfwall.jpg
+%%DATADIR%%/packages/kurt/klite1.jpg
+%%DATADIR%%/packages/kurt/klite2.jpg
+%%DATADIR%%/packages/kurt/ktrim2_a.jpg
+%%DATADIR%%/packages/kurt/ktrim2_b.jpg
+%%DATADIR%%/packages/kurt/ktrim2_corner1.jpg
+%%DATADIR%%/packages/kurt/ktrim2_corner2.jpg
+%%DATADIR%%/packages/kurt/ktrim2_corner3.jpg
+%%DATADIR%%/packages/kurt/ktrim2_corner4.jpg
+%%DATADIR%%/packages/kurt/ktrim2_end1.jpg
+%%DATADIR%%/packages/kurt/ktrim2_end2.jpg
+%%DATADIR%%/packages/kurt/ktrim2_end3.jpg
+%%DATADIR%%/packages/kurt/ktrim2_end4.jpg
+%%DATADIR%%/packages/kurt/ktrim_a.jpg
+%%DATADIR%%/packages/kurt/ktrim_b.jpg
+%%DATADIR%%/packages/kurt/ktrim_corner1.jpg
+%%DATADIR%%/packages/kurt/ktrim_corner2.jpg
+%%DATADIR%%/packages/kurt/ktrim_corner3.jpg
+%%DATADIR%%/packages/kurt/ktrim_corner4.jpg
+%%DATADIR%%/packages/kurt/ktrim_end1.jpg
+%%DATADIR%%/packages/kurt/ktrim_end2.jpg
+%%DATADIR%%/packages/kurt/ktrim_end3.jpg
+%%DATADIR%%/packages/kurt/ktrim_end4.jpg
+%%DATADIR%%/packages/kurt/kwater.jpg
+%%DATADIR%%/packages/kurt/readme.txt
+%%DATADIR%%/packages/kurt/sky/kdusk.txt
+%%DATADIR%%/packages/kurt/sky/kdusk_bk.jpg
+%%DATADIR%%/packages/kurt/sky/kdusk_dn.jpg
+%%DATADIR%%/packages/kurt/sky/kdusk_ft.jpg
+%%DATADIR%%/packages/kurt/sky/kdusk_lf.jpg
+%%DATADIR%%/packages/kurt/sky/kdusk_rt.jpg
+%%DATADIR%%/packages/kurt/sky/kdusk_up.jpg
+%%DATADIR%%/packages/models/boost/skin.jpg
+%%DATADIR%%/packages/models/boost/tris.md2
+%%DATADIR%%/packages/models/bridge/bridge2.ms3d
+%%DATADIR%%/packages/models/bridge/skin.jpg
+%%DATADIR%%/packages/models/bridge/tris.md2
+%%DATADIR%%/packages/models/bullets/skin.jpg
+%%DATADIR%%/packages/models/bullets/tris.md2
+%%DATADIR%%/packages/models/carrot/skin.jpg
+%%DATADIR%%/packages/models/carrot/tris.md2
+%%DATADIR%%/packages/models/dcp/Readme.txt
+%%DATADIR%%/packages/models/dcp/barrel/readme.txt
+%%DATADIR%%/packages/models/dcp/barrel/skin.jpg
+%%DATADIR%%/packages/models/dcp/barrel/tris.md2
+%%DATADIR%%/packages/models/dcp/bench/readme.txt
+%%DATADIR%%/packages/models/dcp/bench/skin.jpg
+%%DATADIR%%/packages/models/dcp/bench/tris.md2
+%%DATADIR%%/packages/models/dcp/biotank/skin.jpg
+%%DATADIR%%/packages/models/dcp/biotank/tris.md2
+%%DATADIR%%/packages/models/dcp/console/skin.jpg
+%%DATADIR%%/packages/models/dcp/console/tris.md2
+%%DATADIR%%/packages/models/dcp/grass/readme.txt
+%%DATADIR%%/packages/models/dcp/grass/skin.jpg
+%%DATADIR%%/packages/models/dcp/grass/tris.md2
+%%DATADIR%%/packages/models/dcp/groundlamp/skin.jpg
+%%DATADIR%%/packages/models/dcp/groundlamp/tris.md2
+%%DATADIR%%/packages/models/dcp/ivy/skin.jpg
+%%DATADIR%%/packages/models/dcp/ivy/tris.md2
+%%DATADIR%%/packages/models/dcp/jumppad2/skin.jpg
+%%DATADIR%%/packages/models/dcp/jumppad2/tris.md2
+%%DATADIR%%/packages/models/dcp/leafs/skin.jpg
+%%DATADIR%%/packages/models/dcp/leafs/tris.md2
+%%DATADIR%%/packages/models/dcp/mushroom/skin.jpg
+%%DATADIR%%/packages/models/dcp/mushroom/tris.md2
+%%DATADIR%%/packages/models/dcp/palette/skin.jpg
+%%DATADIR%%/packages/models/dcp/palette/tris.md2
+%%DATADIR%%/packages/models/dcp/palmtree/skin.jpg
+%%DATADIR%%/packages/models/dcp/palmtree/tris.md2
+%%DATADIR%%/packages/models/dcp/pillar/readme.txt
+%%DATADIR%%/packages/models/dcp/pillar/skin.jpg
+%%DATADIR%%/packages/models/dcp/pillar/tris.md2
+%%DATADIR%%/packages/models/dcp/plant1/skin.jpg
+%%DATADIR%%/packages/models/dcp/plant1/tris.md2
+%%DATADIR%%/packages/models/dcp/streetlamp/readme.txt
+%%DATADIR%%/packages/models/dcp/streetlamp/skin.jpg
+%%DATADIR%%/packages/models/dcp/streetlamp/tris.md2
+%%DATADIR%%/packages/models/dcp/thorns/skin.jpg
+%%DATADIR%%/packages/models/dcp/thorns/tris.md2
+%%DATADIR%%/packages/models/dcp/tree2/readme.txt
+%%DATADIR%%/packages/models/dcp/tree2/skin.jpg
+%%DATADIR%%/packages/models/dcp/tree2/tris.md2
+%%DATADIR%%/packages/models/dcp/tree3/readme.txt
+%%DATADIR%%/packages/models/dcp/tree3/skin.jpg
+%%DATADIR%%/packages/models/dcp/tree3/tris.md2
+%%DATADIR%%/packages/models/dcp/turret/skin.jpg
+%%DATADIR%%/packages/models/dcp/turret/tris.md2
+%%DATADIR%%/packages/models/dcp/valve/skin.jpg
+%%DATADIR%%/packages/models/dcp/valve/tris.md2
+%%DATADIR%%/packages/models/dcp/vent/skin.jpg
+%%DATADIR%%/packages/models/dcp/vent/tris.md2
+%%DATADIR%%/packages/models/dcp/waterbowl/readme.txt
+%%DATADIR%%/packages/models/dcp/waterbowl/skin.jpg
+%%DATADIR%%/packages/models/dcp/waterbowl/tris.md2
+%%DATADIR%%/packages/models/g_armour/armor.txt
+%%DATADIR%%/packages/models/g_armour/skin.jpg
+%%DATADIR%%/packages/models/g_armour/tris.md2
+%%DATADIR%%/packages/models/gibc/gpl_gibs.txt
+%%DATADIR%%/packages/models/gibc/skin.jpg
+%%DATADIR%%/packages/models/gibc/tris.md2
+%%DATADIR%%/packages/models/gibh/gpl_gibs.txt
+%%DATADIR%%/packages/models/gibh/skin.jpg
+%%DATADIR%%/packages/models/gibh/tris.md2
+%%DATADIR%%/packages/models/health/skin.jpg
+%%DATADIR%%/packages/models/health/tris.md2
+%%DATADIR%%/packages/models/hudguns/Frames.txt
+%%DATADIR%%/packages/models/hudguns/Readme.txt
+%%DATADIR%%/packages/models/hudguns/chaing/md2.qc
+%%DATADIR%%/packages/models/hudguns/chaing/skin.jpg
+%%DATADIR%%/packages/models/hudguns/chaing/tris.md2
+%%DATADIR%%/packages/models/hudguns/fist/skin.jpg
+%%DATADIR%%/packages/models/hudguns/fist/tris.md2
+%%DATADIR%%/packages/models/hudguns/rifle/md2.qc
+%%DATADIR%%/packages/models/hudguns/rifle/skin.jpg
+%%DATADIR%%/packages/models/hudguns/rifle/tris.md2
+%%DATADIR%%/packages/models/hudguns/rocket/md2.qc
+%%DATADIR%%/packages/models/hudguns/rocket/skin.jpg
+%%DATADIR%%/packages/models/hudguns/rocket/tris.md2
+%%DATADIR%%/packages/models/hudguns/shotg/MD2.QC
+%%DATADIR%%/packages/models/hudguns/shotg/skin.jpg
+%%DATADIR%%/packages/models/hudguns/shotg/tris.md2
+%%DATADIR%%/packages/models/monster/bauul/Thumbs.db
+%%DATADIR%%/packages/models/monster/bauul/bauul.txt
+%%DATADIR%%/packages/models/monster/bauul/skin.jpg
+%%DATADIR%%/packages/models/monster/bauul/tris.md2
+%%DATADIR%%/packages/models/monster/goblin/readme.txt
+%%DATADIR%%/packages/models/monster/goblin/skin.jpg
+%%DATADIR%%/packages/models/monster/goblin/tris.md2
+%%DATADIR%%/packages/models/monster/hellpig/readme.txt
+%%DATADIR%%/packages/models/monster/hellpig/skin.jpg
+%%DATADIR%%/packages/models/monster/hellpig/tris.md2
+%%DATADIR%%/packages/models/monster/knight/readme.txt
+%%DATADIR%%/packages/models/monster/knight/skin.jpg
+%%DATADIR%%/packages/models/monster/knight/tris.md2
+%%DATADIR%%/packages/models/monster/ogro/Ogro.txt
+%%DATADIR%%/packages/models/monster/ogro/skin.jpg
+%%DATADIR%%/packages/models/monster/ogro/tris.md2
+%%DATADIR%%/packages/models/monster/rat/Ratamahatta.txt
+%%DATADIR%%/packages/models/monster/rat/skin.jpg
+%%DATADIR%%/packages/models/monster/rat/tris.md2
+%%DATADIR%%/packages/models/monster/rhino/rhino.txt
+%%DATADIR%%/packages/models/monster/rhino/skin.jpg
+%%DATADIR%%/packages/models/monster/rhino/tris.md2
+%%DATADIR%%/packages/models/monster/slith/skin.jpg
+%%DATADIR%%/packages/models/monster/slith/slithMe.txt
+%%DATADIR%%/packages/models/monster/slith/tris.md2
+%%DATADIR%%/packages/models/quad/invulner.txt
+%%DATADIR%%/packages/models/quad/skin.jpg
+%%DATADIR%%/packages/models/quad/tris.md2
+%%DATADIR%%/packages/models/rockets/skin.jpg
+%%DATADIR%%/packages/models/rockets/tris.md2
+%%DATADIR%%/packages/models/rrounds/skin.jpg
+%%DATADIR%%/packages/models/rrounds/tris.md2
+%%DATADIR%%/packages/models/shells/skin.jpg
+%%DATADIR%%/packages/models/shells/tris.md2
+%%DATADIR%%/packages/models/switch1/skin.jpg
+%%DATADIR%%/packages/models/switch1/tris.md2
+%%DATADIR%%/packages/models/switch2/skin.jpg
+%%DATADIR%%/packages/models/switch2/tris.md2
+%%DATADIR%%/packages/models/teleporter/skin.jpg
+%%DATADIR%%/packages/models/teleporter/tris.md2
+%%DATADIR%%/packages/models/tree1/skin.jpg
+%%DATADIR%%/packages/models/tree1/tris.md2
+%%DATADIR%%/packages/models/y_armour/armor.txt
+%%DATADIR%%/packages/models/y_armour/skin.jpg
+%%DATADIR%%/packages/models/y_armour/tris.md2
+%%DATADIR%%/packages/payne/Box12b.jpg
+%%DATADIR%%/packages/payne/Brick52a.jpg
+%%DATADIR%%/packages/payne/Brick58_512x512.jpg
+%%DATADIR%%/packages/payne/Grate09b.jpg
+%%DATADIR%%/packages/payne/SlimyTile02_128x128.jpg
+%%DATADIR%%/packages/payne/Thumbs.db
+%%DATADIR%%/packages/payne/Tile28b.jpg
+%%DATADIR%%/packages/payne/Tile41a.jpg
+%%DATADIR%%/packages/payne/readme.txt
+%%DATADIR%%/packages/pigcam/Piglet Campaign - readme.txt
+%%DATADIR%%/packages/pigcam/pig01.cfg
+%%DATADIR%%/packages/pigcam/pig01.cgz
+%%DATADIR%%/packages/pigcam/pig02.cfg
+%%DATADIR%%/packages/pigcam/pig02.cgz
+%%DATADIR%%/packages/pigcam/pig03.cfg
+%%DATADIR%%/packages/pigcam/pig03.cgz
+%%DATADIR%%/packages/pigcam/pig04.cfg
+%%DATADIR%%/packages/pigcam/pig04.cgz
+%%DATADIR%%/packages/pigcam/pig05.cfg
+%%DATADIR%%/packages/pigcam/pig05.cgz
+%%DATADIR%%/packages/pigcam/pig06.cfg
+%%DATADIR%%/packages/pigcam/pig06.cgz
+%%DATADIR%%/packages/pigcam/pig07.cfg
+%%DATADIR%%/packages/pigcam/pig07.cgz
+%%DATADIR%%/packages/pigcam/pig08.cfg
+%%DATADIR%%/packages/pigcam/pig08.cgz
+%%DATADIR%%/packages/pigcam/pig09.cfg
+%%DATADIR%%/packages/pigcam/pig09.cgz
+%%DATADIR%%/packages/pigcam/pigfin.cfg
+%%DATADIR%%/packages/pigcam/pigfin.cgz
+%%DATADIR%%/packages/readme.txt
+%%DATADIR%%/packages/schwenz/dt_tile_check.01.jpg
+%%DATADIR%%/packages/schwenz/readme.txt
+%%DATADIR%%/packages/socksky/desert_bk.jpg
+%%DATADIR%%/packages/socksky/desert_dn.jpg
+%%DATADIR%%/packages/socksky/desert_ft.jpg
+%%DATADIR%%/packages/socksky/desert_lf.jpg
+%%DATADIR%%/packages/socksky/desert_rt.jpg
+%%DATADIR%%/packages/socksky/desert_up.jpg
+%%DATADIR%%/packages/socksky/emerald_bk.jpg
+%%DATADIR%%/packages/socksky/emerald_dn.jpg
+%%DATADIR%%/packages/socksky/emerald_ft.jpg
+%%DATADIR%%/packages/socksky/emerald_lf.jpg
+%%DATADIR%%/packages/socksky/emerald_rt.jpg
+%%DATADIR%%/packages/socksky/emerald_up.jpg
+%%DATADIR%%/packages/socksky/frozen_bk.jpg
+%%DATADIR%%/packages/socksky/frozen_dn.jpg
+%%DATADIR%%/packages/socksky/frozen_ft.jpg
+%%DATADIR%%/packages/socksky/frozen_lf.jpg
+%%DATADIR%%/packages/socksky/frozen_rt.jpg
+%%DATADIR%%/packages/socksky/frozen_up.jpg
+%%DATADIR%%/packages/socksky/mars_bk.jpg
+%%DATADIR%%/packages/socksky/mars_dn.jpg
+%%DATADIR%%/packages/socksky/mars_ft.jpg
+%%DATADIR%%/packages/socksky/mars_lf.jpg
+%%DATADIR%%/packages/socksky/mars_rt.jpg
+%%DATADIR%%/packages/socksky/mars_up.jpg
+%%DATADIR%%/packages/socksky/readme.txt
+%%DATADIR%%/packages/songs/ambient.mid
+%%DATADIR%%/packages/songs/cube1.mid
+%%DATADIR%%/packages/songs/cubez0r.xm
+%%DATADIR%%/packages/songs/deathB.mid
+%%DATADIR%%/packages/songs/readme.txt
+%%DATADIR%%/packages/sounds/aard/bang.wav
+%%DATADIR%%/packages/sounds/aard/die1.wav
+%%DATADIR%%/packages/sounds/aard/die2.wav
+%%DATADIR%%/packages/sounds/aard/grunt1.wav
+%%DATADIR%%/packages/sounds/aard/grunt2.wav
+%%DATADIR%%/packages/sounds/aard/itempick.wav
+%%DATADIR%%/packages/sounds/aard/jump.wav
+%%DATADIR%%/packages/sounds/aard/land.wav
+%%DATADIR%%/packages/sounds/aard/outofammo.wav
+%%DATADIR%%/packages/sounds/aard/pain1.wav
+%%DATADIR%%/packages/sounds/aard/pain2.wav
+%%DATADIR%%/packages/sounds/aard/pain3.wav
+%%DATADIR%%/packages/sounds/aard/pain4.wav
+%%DATADIR%%/packages/sounds/aard/pain5.wav
+%%DATADIR%%/packages/sounds/aard/pain6.wav
+%%DATADIR%%/packages/sounds/aard/tak.wav
+%%DATADIR%%/packages/sounds/aard/weapload.wav
+%%DATADIR%%/packages/sounds/awesund/Sound.txt
+%%DATADIR%%/packages/sounds/awesund/cg1.wav
+%%DATADIR%%/packages/sounds/awesund/cg2.wav
+%%DATADIR%%/packages/sounds/awesund/cg2_full.wav
+%%DATADIR%%/packages/sounds/awesund/explode.wav
+%%DATADIR%%/packages/sounds/awesund/explodemini.wav
+%%DATADIR%%/packages/sounds/awesund/flaunch.wav
+%%DATADIR%%/packages/sounds/awesund/readmeFX1.txt
+%%DATADIR%%/packages/sounds/awesund/rifle.wav
+%%DATADIR%%/packages/sounds/awesund/rlaunch.wav
+%%DATADIR%%/packages/sounds/awesund/shotgun.wav
+%%DATADIR%%/packages/sounds/free/Sound.txt
+%%DATADIR%%/packages/sounds/free/acid5.wav
+%%DATADIR%%/packages/sounds/free/acid6.wav
+%%DATADIR%%/packages/sounds/free/boing_x.wav
+%%DATADIR%%/packages/sounds/free/chaingun.wav
+%%DATADIR%%/packages/sounds/free/chaingun_once.wav
+%%DATADIR%%/packages/sounds/free/explode.wav
+%%DATADIR%%/packages/sounds/free/itemback.wav
+%%DATADIR%%/packages/sounds/free/itempick.wav
+%%DATADIR%%/packages/sounds/free/launch1.wav
+%%DATADIR%%/packages/sounds/free/piggrunt1.wav
+%%DATADIR%%/packages/sounds/free/piggrunt2.wav
+%%DATADIR%%/packages/sounds/free/punch1.wav
+%%DATADIR%%/packages/sounds/free/punch2.wav
+%%DATADIR%%/packages/sounds/free/rifle1.wav
+%%DATADIR%%/packages/sounds/free/rocketl.wav
+%%DATADIR%%/packages/sounds/free/rocketlaunch.wav
+%%DATADIR%%/packages/sounds/free/rumble.wav
+%%DATADIR%%/packages/sounds/free/shotgun.wav
+%%DATADIR%%/packages/sounds/free/splash1.wav
+%%DATADIR%%/packages/sounds/free/splash2.wav
+%%DATADIR%%/packages/sounds/free/teleport.wav
+%%DATADIR%%/packages/sounds/free/tick.wav
+%%DATADIR%%/packages/sounds/ppm/deathb.wav
+%%DATADIR%%/packages/sounds/ppm/deathd.wav
+%%DATADIR%%/packages/sounds/ppm/deathe.wav
+%%DATADIR%%/packages/sounds/ppm/deathh.wav
+%%DATADIR%%/packages/sounds/ppm/deathr.wav
+%%DATADIR%%/packages/sounds/ppm/deaths.wav
+%%DATADIR%%/packages/sounds/ppm/iceball.wav
+%%DATADIR%%/packages/sounds/ppm/painb.wav
+%%DATADIR%%/packages/sounds/ppm/paind.wav
+%%DATADIR%%/packages/sounds/ppm/paine.wav
+%%DATADIR%%/packages/sounds/ppm/painh.wav
+%%DATADIR%%/packages/sounds/ppm/paino.wav
+%%DATADIR%%/packages/sounds/ppm/painp.wav
+%%DATADIR%%/packages/sounds/ppm/painr.wav
+%%DATADIR%%/packages/sounds/ppm/pains.wav
+%%DATADIR%%/packages/sounds/ppm/slimeball.wav
+%%DATADIR%%/packages/sounds/readme.txt
+%%DATADIR%%/packages/sounds/readme.txt.bak
+%%DATADIR%%/packages/stecki/snow.txt
+%%DATADIR%%/packages/stecki/snow_bk.jpg
+%%DATADIR%%/packages/stecki/snow_dn.jpg
+%%DATADIR%%/packages/stecki/snow_ft.jpg
+%%DATADIR%%/packages/stecki/snow_lf.jpg
+%%DATADIR%%/packages/stecki/snow_rt.jpg
+%%DATADIR%%/packages/stecki/snow_up.jpg
+%%DATADIR%%/packages/tech1soc/032-01c.jpg
+%%DATADIR%%/packages/tech1soc/032-02b.jpg
+%%DATADIR%%/packages/tech1soc/032-03d.jpg
+%%DATADIR%%/packages/tech1soc/032-10a.jpg
+%%DATADIR%%/packages/tech1soc/032-10b.jpg
+%%DATADIR%%/packages/tech1soc/032-12d.jpg
+%%DATADIR%%/packages/tech1soc/032-14b.jpg
+%%DATADIR%%/packages/tech1soc/032-15a.jpg
+%%DATADIR%%/packages/tech1soc/032-15b.jpg
+%%DATADIR%%/packages/tech1soc/032lig10bb.jpg
+%%DATADIR%%/packages/tech1soc/032lig11bb.jpg
+%%DATADIR%%/packages/tech1soc/032lig11rb.jpg
+%%DATADIR%%/packages/tech1soc/032lig12bb.jpg
+%%DATADIR%%/packages/tech1soc/032lig12rb.jpg
+%%DATADIR%%/packages/tech1soc/032lig12ya.jpg
+%%DATADIR%%/packages/tech1soc/032lig20yb.jpg
+%%DATADIR%%/packages/tech1soc/064-11b.jpg
+%%DATADIR%%/packages/tech1soc/064-12a.jpg
+%%DATADIR%%/packages/tech1soc/064-13b.jpg
+%%DATADIR%%/packages/tech1soc/064-15b.jpg
+%%DATADIR%%/packages/tech1soc/064-20a.jpg
+%%DATADIR%%/packages/tech1soc/064-20b.jpg
+%%DATADIR%%/packages/tech1soc/064-22b.jpg
+%%DATADIR%%/packages/tech1soc/064lig20bb.jpg
+%%DATADIR%%/packages/tech1soc/064lig22bb.jpg
+%%DATADIR%%/packages/tech1soc/064lig22rb.jpg
+%%DATADIR%%/packages/tech1soc/064lig22wb.jpg
+%%DATADIR%%/packages/tech1soc/128-05b.jpg
+%%DATADIR%%/packages/tech1soc/128-05c.jpg
+%%DATADIR%%/packages/tech1soc/blank01a.jpg
+%%DATADIR%%/packages/tech1soc/blank01c.jpg
+%%DATADIR%%/packages/tech1soc/blank02a.jpg
+%%DATADIR%%/packages/tech1soc/blank02b.jpg
+%%DATADIR%%/packages/tech1soc/blank03a.jpg
+%%DATADIR%%/packages/tech1soc/blank03d.jpg
+%%DATADIR%%/packages/tech1soc/block01b.jpg
+%%DATADIR%%/packages/tech1soc/block01c.jpg
+%%DATADIR%%/packages/tech1soc/block10b.jpg
+%%DATADIR%%/packages/tech1soc/block19b.jpg
+%%DATADIR%%/packages/tech1soc/chain_mesh2.jpg
+%%DATADIR%%/packages/tech1soc/grate1b.jpg
+%%DATADIR%%/packages/tech1soc/grate_brown1.jpg
+%%DATADIR%%/packages/tech1soc/grate_brown3.jpg
+%%DATADIR%%/packages/tech1soc/grill_wall01b.jpg
+%%DATADIR%%/packages/tech1soc/half_grill_wall01b.jpg
+%%DATADIR%%/packages/tech1soc/half_grill_wall03b.jpg
+%%DATADIR%%/packages/tech1soc/mat4b.jpg
+%%DATADIR%%/packages/tech1soc/matbrown_lgt2.jpg
+%%DATADIR%%/packages/tech1soc/met_wall01a.jpg
+%%DATADIR%%/packages/tech1soc/met_wall01c.jpg
+%%DATADIR%%/packages/tech1soc/mix_wall03a.jpg
+%%DATADIR%%/packages/tech1soc/mix_wall03ab.jpg
+%%DATADIR%%/packages/tech1soc/o128-02a.jpg
+%%DATADIR%%/packages/tech1soc/octlig01bc.jpg
+%%DATADIR%%/packages/tech1soc/panel20c.jpg
+%%DATADIR%%/packages/tech1soc/panel40c.jpg
+%%DATADIR%%/packages/tech1soc/s064-02a.jpg
+%%DATADIR%%/packages/tech1soc/s064-02b.jpg
+%%DATADIR%%/packages/tech1soc/s064-02c.jpg
+%%DATADIR%%/packages/tech1soc/s064-03a.jpg
+%%DATADIR%%/packages/tech1soc/s064-03b.jpg
+%%DATADIR%%/packages/tech1soc/s064-03c.jpg
+%%DATADIR%%/packages/tech1soc/s128-01c.jpg
+%%DATADIR%%/packages/tech1soc/s128-02a.jpg
+%%DATADIR%%/packages/tech1soc/s128-02b.jpg
+%%DATADIR%%/packages/tech1soc/s128-03b.jpg
+%%DATADIR%%/packages/tech1soc/s128-06b.jpg
+%%DATADIR%%/packages/tech1soc/s128-07e.jpg
+%%DATADIR%%/packages/tech1soc/s256-01c.jpg
+%%DATADIR%%/packages/tech1soc/s256-01d.jpg
+%%DATADIR%%/packages/tech1soc/s256-02a.jpg
+%%DATADIR%%/packages/tech1soc/s256-02b.jpg
+%%DATADIR%%/packages/tech1soc/spring1.jpg
+%%DATADIR%%/packages/tech1soc/spring2.jpg
+%%DATADIR%%/packages/tech1soc/spring3.jpg
+%%DATADIR%%/packages/tech1soc/sqrlig02wb.jpg
+%%DATADIR%%/packages/tech1soc/sqrlig03bc.jpg
+%%DATADIR%%/packages/tech1soc/tech1soc_readme.txt
+%%DATADIR%%/packages/tech1soc/zdet_trim2a.jpg
+%%DATADIR%%/packages/tech1soc/zdet_trim5b.jpg
+%%DATADIR%%/packages/tech1soc/zdetlig01bb.jpg
+%%DATADIR%%/packages/tech1soc/zdetlig02bb.jpg
+%%DATADIR%%/packages/tech1soc/zdetlig04bb.jpg
+%%DATADIR%%/packages/than_ind/cretewall03.jpg
+%%DATADIR%%/packages/than_ind/floor02.jpg
+%%DATADIR%%/packages/than_ind/floor05.jpg
+%%DATADIR%%/packages/than_ind/floor06.jpg
+%%DATADIR%%/packages/than_ind/light03.jpg
+%%DATADIR%%/packages/than_ind/than_industrial.txt
+%%DATADIR%%/packages/than_ind/trim04.jpg
+%%DATADIR%%/packages/than_ind/trim21.jpg
+%%DATADIR%%/packages/than_ind/trlight01.jpg
+%%DATADIR%%/packages/than_ind/trlight06.jpg
 @dirrm share/nls/en_US.US-ASCII
 @dirrm share/nls/POSIX
-@dirrm share/cube/savegames
-@dirrm share/cube/packages/than_ind
-@dirrm share/cube/packages/tech1soc
-@dirrm share/cube/packages/stecki
-@dirrm share/cube/packages/sounds/ppm
-@dirrm share/cube/packages/sounds/free
-@dirrm share/cube/packages/sounds/awesund
-@dirrm share/cube/packages/sounds/aard
-@dirrm share/cube/packages/sounds
-@dirrm share/cube/packages/songs
-@dirrm share/cube/packages/socksky
-@dirrm share/cube/packages/schwenz
-@dirrm share/cube/packages/pigcam
-@dirrm share/cube/packages/payne
-@dirrm share/cube/packages/models/y_armour
-@dirrm share/cube/packages/models/tree1
-@dirrm share/cube/packages/models/teleporter
-@dirrm share/cube/packages/models/switch2
-@dirrm share/cube/packages/models/switch1
-@dirrm share/cube/packages/models/shells
-@dirrm share/cube/packages/models/rrounds
-@dirrm share/cube/packages/models/rockets
-@dirrm share/cube/packages/models/quad
-@dirrm share/cube/packages/models/monster/slith
-@dirrm share/cube/packages/models/monster/rhino
-@dirrm share/cube/packages/models/monster/rat
-@dirrm share/cube/packages/models/monster/ogro
-@dirrm share/cube/packages/models/monster/knight
-@dirrm share/cube/packages/models/monster/hellpig
-@dirrm share/cube/packages/models/monster/goblin
-@dirrm share/cube/packages/models/monster/bauul
-@dirrm share/cube/packages/models/monster
-@dirrm share/cube/packages/models/hudguns/shotg
-@dirrm share/cube/packages/models/hudguns/rocket
-@dirrm share/cube/packages/models/hudguns/rifle
-@dirrm share/cube/packages/models/hudguns/fist
-@dirrm share/cube/packages/models/hudguns/chaing
-@dirrm share/cube/packages/models/hudguns
-@dirrm share/cube/packages/models/health
-@dirrm share/cube/packages/models/gibh
-@dirrm share/cube/packages/models/gibc
-@dirrm share/cube/packages/models/g_armour
-@dirrm share/cube/packages/models/dcp/waterbowl
-@dirrm share/cube/packages/models/dcp/vent
-@dirrm share/cube/packages/models/dcp/valve
-@dirrm share/cube/packages/models/dcp/turret
-@dirrm share/cube/packages/models/dcp/tree3
-@dirrm share/cube/packages/models/dcp/tree2
-@dirrm share/cube/packages/models/dcp/thorns
-@dirrm share/cube/packages/models/dcp/streetlamp
-@dirrm share/cube/packages/models/dcp/plant1
-@dirrm share/cube/packages/models/dcp/pillar
-@dirrm share/cube/packages/models/dcp/palmtree
-@dirrm share/cube/packages/models/dcp/palette
-@dirrm share/cube/packages/models/dcp/mushroom
-@dirrm share/cube/packages/models/dcp/leafs
-@dirrm share/cube/packages/models/dcp/jumppad2
-@dirrm share/cube/packages/models/dcp/ivy
-@dirrm share/cube/packages/models/dcp/groundlamp
-@dirrm share/cube/packages/models/dcp/grass
-@dirrm share/cube/packages/models/dcp/console
-@dirrm share/cube/packages/models/dcp/biotank
-@dirrm share/cube/packages/models/dcp/bench
-@dirrm share/cube/packages/models/dcp/barrel
-@dirrm share/cube/packages/models/dcp
-@dirrm share/cube/packages/models/carrot
-@dirrm share/cube/packages/models/bullets
-@dirrm share/cube/packages/models/bridge
-@dirrm share/cube/packages/models/boost
-@dirrm share/cube/packages/models
-@dirrm share/cube/packages/kurt/sky
-@dirrm share/cube/packages/kurt
-@dirrm share/cube/packages/jf1
-@dirrm share/cube/packages/ikbase
-@dirrm share/cube/packages/ik2k/env
-@dirrm share/cube/packages/ik2k
-@dirrm share/cube/packages/golgotha
-@dirrm share/cube/packages/fanatic
-@dirrm share/cube/packages/egyptsoc
-@dirrm share/cube/packages/dg
-@dirrm share/cube/packages/base
-@dirrm share/cube/packages/af
-@dirrm share/cube/packages/aard
-@dirrm share/cube/packages
-@dirrm share/cube/data/martin
-@dirrm share/cube/data
-@dirrm share/cube
+@dirrm %%DATADIR%%/savegames
+@dirrm %%DATADIR%%/packages/than_ind
+@dirrm %%DATADIR%%/packages/tech1soc
+@dirrm %%DATADIR%%/packages/stecki
+@dirrm %%DATADIR%%/packages/sounds/ppm
+@dirrm %%DATADIR%%/packages/sounds/free
+@dirrm %%DATADIR%%/packages/sounds/awesund
+@dirrm %%DATADIR%%/packages/sounds/aard
+@dirrm %%DATADIR%%/packages/sounds
+@dirrm %%DATADIR%%/packages/songs
+@dirrm %%DATADIR%%/packages/socksky
+@dirrm %%DATADIR%%/packages/schwenz
+@dirrm %%DATADIR%%/packages/pigcam
+@dirrm %%DATADIR%%/packages/payne
+@dirrm %%DATADIR%%/packages/models/y_armour
+@dirrm %%DATADIR%%/packages/models/tree1
+@dirrm %%DATADIR%%/packages/models/teleporter
+@dirrm %%DATADIR%%/packages/models/switch2
+@dirrm %%DATADIR%%/packages/models/switch1
+@dirrm %%DATADIR%%/packages/models/shells
+@dirrm %%DATADIR%%/packages/models/rrounds
+@dirrm %%DATADIR%%/packages/models/rockets
+@dirrm %%DATADIR%%/packages/models/quad
+@dirrm %%DATADIR%%/packages/models/monster/slith
+@dirrm %%DATADIR%%/packages/models/monster/rhino
+@dirrm %%DATADIR%%/packages/models/monster/rat
+@dirrm %%DATADIR%%/packages/models/monster/ogro
+@dirrm %%DATADIR%%/packages/models/monster/knight
+@dirrm %%DATADIR%%/packages/models/monster/hellpig
+@dirrm %%DATADIR%%/packages/models/monster/goblin
+@dirrm %%DATADIR%%/packages/models/monster/bauul
+@dirrm %%DATADIR%%/packages/models/monster
+@dirrm %%DATADIR%%/packages/models/hudguns/shotg
+@dirrm %%DATADIR%%/packages/models/hudguns/rocket
+@dirrm %%DATADIR%%/packages/models/hudguns/rifle
+@dirrm %%DATADIR%%/packages/models/hudguns/fist
+@dirrm %%DATADIR%%/packages/models/hudguns/chaing
+@dirrm %%DATADIR%%/packages/models/hudguns
+@dirrm %%DATADIR%%/packages/models/health
+@dirrm %%DATADIR%%/packages/models/gibh
+@dirrm %%DATADIR%%/packages/models/gibc
+@dirrm %%DATADIR%%/packages/models/g_armour
+@dirrm %%DATADIR%%/packages/models/dcp/waterbowl
+@dirrm %%DATADIR%%/packages/models/dcp/vent
+@dirrm %%DATADIR%%/packages/models/dcp/valve
+@dirrm %%DATADIR%%/packages/models/dcp/turret
+@dirrm %%DATADIR%%/packages/models/dcp/tree3
+@dirrm %%DATADIR%%/packages/models/dcp/tree2
+@dirrm %%DATADIR%%/packages/models/dcp/thorns
+@dirrm %%DATADIR%%/packages/models/dcp/streetlamp
+@dirrm %%DATADIR%%/packages/models/dcp/plant1
+@dirrm %%DATADIR%%/packages/models/dcp/pillar
+@dirrm %%DATADIR%%/packages/models/dcp/palmtree
+@dirrm %%DATADIR%%/packages/models/dcp/palette
+@dirrm %%DATADIR%%/packages/models/dcp/mushroom
+@dirrm %%DATADIR%%/packages/models/dcp/leafs
+@dirrm %%DATADIR%%/packages/models/dcp/jumppad2
+@dirrm %%DATADIR%%/packages/models/dcp/ivy
+@dirrm %%DATADIR%%/packages/models/dcp/groundlamp
+@dirrm %%DATADIR%%/packages/models/dcp/grass
+@dirrm %%DATADIR%%/packages/models/dcp/console
+@dirrm %%DATADIR%%/packages/models/dcp/biotank
+@dirrm %%DATADIR%%/packages/models/dcp/bench
+@dirrm %%DATADIR%%/packages/models/dcp/barrel
+@dirrm %%DATADIR%%/packages/models/dcp
+@dirrm %%DATADIR%%/packages/models/carrot
+@dirrm %%DATADIR%%/packages/models/bullets
+@dirrm %%DATADIR%%/packages/models/bridge
+@dirrm %%DATADIR%%/packages/models/boost
+@dirrm %%DATADIR%%/packages/models
+@dirrm %%DATADIR%%/packages/kurt/sky
+@dirrm %%DATADIR%%/packages/kurt
+@dirrm %%DATADIR%%/packages/jf1
+@dirrm %%DATADIR%%/packages/ikbase
+@dirrm %%DATADIR%%/packages/ik2k/env
+@dirrm %%DATADIR%%/packages/ik2k
+@dirrm %%DATADIR%%/packages/golgotha
+@dirrm %%DATADIR%%/packages/fanatic
+@dirrm %%DATADIR%%/packages/egyptsoc
+@dirrm %%DATADIR%%/packages/dg
+@dirrm %%DATADIR%%/packages/base
+@dirrm %%DATADIR%%/packages/af
+@dirrm %%DATADIR%%/packages/aard
+@dirrm %%DATADIR%%/packages
+@dirrm %%DATADIR%%/data/martin
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
