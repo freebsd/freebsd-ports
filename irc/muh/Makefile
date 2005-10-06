@@ -25,6 +25,13 @@ CONFIGURE_ARGS=	"--enable-ipv6"
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|=muh|=${PREFIX}/bin/muh|g" ${WRKSRC}/misc/muh-check
+	@${REINPLACE_CMD} -e "s|||g" ${WRKSRC}/src/ascii.c \
+		${WRKSRC}/src/channels.c ${WRKSRC}/src/commands.c \
+		${WRKSRC}/src/common.c ${WRKSRC}/src/dcc.c ${WRKSRC}/src/dlink.c \
+		${WRKSRC}/src/ignore.c ${WRKSRC}/src/irc.c ${WRKSRC}/src/lexer.c \
+		${WRKSRC}/src/log.c ${WRKSRC}/src/match.c ${WRKSRC}/src/muh.c \
+		${WRKSRC}/src/parser.c ${WRKSRC}/src/perm.c \
+		${WRKSRC}/src/table.c ${WRKSRC}/src/tools.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/muh ${PREFIX}/bin
