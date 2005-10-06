@@ -1,0 +1,6 @@
+The HTML::TagCloud module enables you to generate "tag clouds" in HTML.
+Tag clouds serve as a textual way to visualize terms and topics that are
+used most frequently. The tags are sorted alphabetically and a larger
+font is used to indicate more frequent term usage.
+
+WWW: http://search.cpan.org/dist/HTML-TagCloud/
