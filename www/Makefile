@@ -534,6 +534,7 @@
     SUBDIR += p5-HTML-TableExtract
     SUBDIR += p5-HTML-TableLayout
     SUBDIR += p5-HTML-TableTiler
+    SUBDIR += p5-HTML-TagCloud
     SUBDIR += p5-HTML-Tagset
     SUBDIR += p5-HTML-Template
     SUBDIR += p5-HTML-Template-Associate
