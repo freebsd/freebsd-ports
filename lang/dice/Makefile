@@ -26,10 +26,12 @@ post-patch:
 			${REINPLACE_CMD} -e 's@/home/dice@${PREFIX}/share/dice@g' $$i; \
 		done
 
-		@${CP} ${FILESDIR}/Makefile ${WRKSRC}
-
 		@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} \
 			${REINPLACE_CMD} -e 's@__aligned@dice_aligned@g'
+
+do-build:
+		cd ${WRKSRC}/suplib && ${MAKE} && ${MAKE} install
+		cd ${WRKSRC}/src && ${MAKE} && ${MAKE} install
 
 do-install:
 		@${RM} ${WRKSRC}/doc/loadabs.c.bak
