@@ -12837,6 +12837,7 @@ xbomb		ports/games/xbomb
 xbomber		ports/games/xbomber
 xbone		ports/net/xbone
 xbone-gui	ports/net/xbone-gui
+xboxproxy	ports/net/xboxproxy
 xbraitenberg	ports/emulators/xbraitenberg
 xbsql		ports/databases/xbsql
 xbubble		ports/games/xbubble
