@@ -48,6 +48,7 @@ www/nocc/html/prefs_error.php
 www/nocc/html/send.php
 www/nocc/html/send_confirmed.php
 www/nocc/html/send_error.php
+www/nocc/lang/add_message.sh
 www/nocc/lang/ar-win.php
 www/nocc/lang/ar.php
 www/nocc/lang/bg.php
@@ -73,6 +74,7 @@ www/nocc/lang/no.php
 www/nocc/lang/pl.php
 www/nocc/lang/pt-br.php
 www/nocc/lang/pt.php
+www/nocc/lang/remove_message.sh
 www/nocc/lang/ro.php
 www/nocc/lang/ru-iso.php
 www/nocc/lang/ru-koi.php
@@ -86,6 +88,7 @@ www/nocc/lang/tr.php
 www/nocc/lang/xx-hacker.php
 www/nocc/lang/zh-gb.php
 www/nocc/lang/zh-tw.php
+www/nocc/rss.php
 www/nocc/themes/blue/colors.php
 www/nocc/themes/blue/style.css
 www/nocc/themes/blue/img/attach.gif
