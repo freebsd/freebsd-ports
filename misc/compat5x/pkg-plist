@@ -40,7 +40,6 @@ lib/compat/libkrb5.so.7
 %%ALPHA%%lib/compat/libkse.so.1
 %%SPARC64%%lib/compat/libkse.so.1
 lib/compat/libkvm.so.2
-lib/compat/liblwres.so.3
 lib/compat/libm.so.3
 lib/compat/libmagic.so.1
 lib/compat/libmd.so.2
