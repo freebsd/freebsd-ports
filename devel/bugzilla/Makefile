@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	bugzilla
-PORTVERSION?=	2.18.3
+PORTVERSION?=	2.20
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -49,6 +49,8 @@ BUGZILLADIR=	${PREFIX}/www/data/bugzilla
 PLIST_SUB+=	BUGZILLADIR=${BUGZILLADIR:S!^${PREFIX}/!!}
 
 CONTRIB_DOCS=	README README.Mailif bugmail_help.html bugzilla.procmailrc
+DATA_DIRS_LIST=	images js skins/standard skins/standard/global \
+		skins/standard/index
 
 .include <bsd.port.pre.mk>
 
@@ -82,6 +84,8 @@ RUN_DEPENDS+=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
 .endif
 
 post-patch:
+	@${PERL} -pi -e "s!(?<=webservergroup_default = ')apache!www!" \
+		${WRKSRC}/checksetup.pl
 	@${FIND} ${WRKSRC} \( -name "CVS" -or -name ".cvsignore" -or -name "*.orig" \
 		-or -name "README.docs" \) | ${XARGS} ${RM} -rf
 	@${FIND} ${WRKSRC} -name "*.p[ml]" | \
@@ -95,8 +99,8 @@ do-install:
 	${MKDIR} ${BUGZILLADIR}
 	${FIND} ${WRKSRC} \! -type d -maxdepth 1 \! -name "UPGRADING*" -exec \
 		${INSTALL_SCRIPT} {} ${BUGZILLADIR} \;
-.for D in css js skins/standard
-	@${MKDIR} ${BUGZILLADIR}/${D}
+	@${MKDIR} ${DATA_DIRS_LIST:S!^!${BUGZILLADIR}/!}
+.for D in ${DATA_DIRS_LIST}
 	${INSTALL_DATA} ${WRKSRC}/${D}/*.* ${BUGZILLADIR}/${D}
 .endfor
 	${TAR} -C ${WRKSRC} -cf - Bugzilla template | ${TAR} --unlink -C ${BUGZILLADIR} -xf -
