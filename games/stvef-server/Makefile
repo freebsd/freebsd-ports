@@ -8,8 +8,7 @@ PORTNAME=	stvef-server
 PORTVERSION=	1.20
 PORTREVISION=	2
 CATEGORIES=	games linux
-MASTER_SITES=	ftp.multiplay.co.uk/pub/games/fps/eliteforce/patches/linux/ \
-		ftp://3dgamers.in-span.net/pub/3dgamers/games/stveliteforce/ 
+MASTER_SITES=	ftp.multiplay.co.uk/pub/games/fps/eliteforce/patches/linux/
 DISTFILES=	stveflinuxdedicated120.zip
 
 MAINTAINER=	ports@FreeBSD.org
