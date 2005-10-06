@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /usr/local/f-prot/f-prot ${@+"$@"}

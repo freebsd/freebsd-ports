@@ -4,6 +4,7 @@ f-prot/ENGLISH.TX0
 f-prot/LICENSE
 f-prot/README
 f-prot/f-prot
+f-prot/etc/f-prot.conf.default
 f-prot/tools/check-updates.pl
 %%PORTDOCS%%%%DOCSDIR%%/add_info.html
 %%PORTDOCS%%%%DOCSDIR%%/auto_updt.html
@@ -16,7 +17,6 @@ f-prot/tools/check-updates.pl
 %%PORTDOCS%%%%DOCSDIR%%/macro_scanning_options.html
 %%PORTDOCS%%%%DOCSDIR%%/main_feat.html
 %%PORTDOCS%%%%DOCSDIR%%/man_updt.html
-%%PORTDOCS%%%%DOCSDIR%%/norm_scan.gif
 %%PORTDOCS%%%%DOCSDIR%%/per_scan.html
 %%PORTDOCS%%%%DOCSDIR%%/reporting_options.html
 %%PORTDOCS%%%%DOCSDIR%%/scanning_options.html
@@ -31,4 +31,5 @@ f-prot/tools/check-updates.pl
 %%PORTDOCS%%%%DOCSDIR%%/updt_signature.gif
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm f-prot/tools
+@dirrm f-prot/etc
 @unexec rmdir %D/f-prot 2>/dev/null || true
