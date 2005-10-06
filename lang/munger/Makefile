@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	munger
-PORTVERSION=	4.73
+PORTVERSION=	4.74
 CATEGORIES=	lang
 MASTER_SITES=	http://www.jamesbailie.com/
 
@@ -26,22 +26,22 @@ OPTIONS=	FCGI "include FastCGI interface" on \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SQL)
-LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+.if !defined(WITHOUT_SQL)
+LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
 MAKE_ARGS+=	-DWITH_SQL
 .endif
 
-.if defined(WITH_FCGI)
+.if !defined(WITHOUT_FCGI)
 LIB_DEPENDS+=	fcgi.0:${PORTSDIR}/www/fcgi
 MAKE_ARGS+=	-DWITH_FCGI
 .endif
 
-.if defined(WITH_TERM)
+.if !defined(WITHOUT_TERM)
 MAKE_ARGS+=	-DWITH_TERM
 .endif
 
 post-build:
-.if defined(WITH_FCGI)
+.if !defined(WITHOUT_FCGI)
 	@${CAT} ${PKGMESSAGE}
 .endif
 
