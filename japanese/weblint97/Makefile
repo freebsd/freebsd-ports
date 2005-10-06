@@ -8,8 +8,7 @@
 PORTNAME=	weblint97
 PORTVERSION=	0.12
 CATEGORIES=	japanese www
-MASTER_SITES=	http://www.sfc.keio.ac.jp/~mimasa/jweblint/ \
-		ftp://ftp.win.ne.jp/pub/network/www/weblint/ \
+MASTER_SITES=	http://web.sfc.keio.ac.jp/~mimasa/jweblint/ \
 		ftp://ftp.hipecs.hokudai.ac.jp/pub/network/WWW/contrib/
 DISTNAME=	weblint-97-${PORTVERSION}
 
