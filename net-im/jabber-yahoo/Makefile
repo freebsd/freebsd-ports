@@ -7,7 +7,7 @@
 PORTNAME=	yahoo
 PORTVERSION=	2.3.2
 CATEGORIES=	net
-MASTER_SITES=	http://www.jabberstudio.org/files/yahoo-transport-2/
+MASTER_SITES=	http://files.jabberstudio.org/yahoo-transport-2/
 PKGNAMEPREFIX=	jabber-
 DISTNAME=	yahoo-transport-${PORTVERSION}
 DIST_SUBDIR=	jabber
