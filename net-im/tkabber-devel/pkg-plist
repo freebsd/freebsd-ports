@@ -40,10 +40,16 @@ bin/tkabber
 %%DATADIR%%/ifacetk/unix.xrdb
 %%DATADIR%%/iq.tcl
 %%DATADIR%%/itemedit.tcl
+%%DATADIR%%/jabberlib-tclxml/idna.tcl
 %%DATADIR%%/jabberlib-tclxml/jabberlib.tcl
+%%DATADIR%%/jabberlib-tclxml/jlibauth.tcl
+%%DATADIR%%/jabberlib-tclxml/jlibcomponent.tcl
 %%DATADIR%%/jabberlib-tclxml/jlibsasl.tcl
+%%DATADIR%%/jabberlib-tclxml/jlibtls.tcl
+%%DATADIR%%/jabberlib-tclxml/namespaces.tcl
 %%DATADIR%%/jabberlib-tclxml/ntlm.tcl
 %%DATADIR%%/jabberlib-tclxml/pkgIndex.tcl
+%%DATADIR%%/jabberlib-tclxml/stanzaerror.tcl
 %%DATADIR%%/jabberlib-tclxml/streamerror.tcl
 %%DATADIR%%/jabberlib-tclxml/tclxml/pkgIndex.tcl
 %%DATADIR%%/jabberlib-tclxml/tclxml/sgml-8.1.tcl
