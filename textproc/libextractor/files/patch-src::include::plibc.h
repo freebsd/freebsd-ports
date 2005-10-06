@@ -1,5 +1,5 @@
---- src/include/plibc.h.orig	Fri May 20 03:27:06 2005
-+++ src/include/plibc.h	Wed Jul 20 11:51:53 2005
+--- src/include/plibc.h.orig	Tue Oct  4 23:37:40 2005
++++ src/include/plibc.h	Tue Oct  4 23:41:22 2005
 @@ -451,20 +451,20 @@
   #define STRERROR(i) strerror(i)
   #define READLINK(p, b, s) readlink(p, b, s)
