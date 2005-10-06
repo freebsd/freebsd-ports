@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-threading
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
+USE_INC_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
@@ -40,5 +41,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,Elf32_Off,uint32_t,g' ${WRKSRC}/bfd.cc
 	@${REINPLACE_CMD} -e 's|--tag=CXX||g' ${WRKSRC}/${MAKEFILE}.in \
 		${WRKSRC}/utils/${MAKEFILE}.in
+
+pre-configure:
+	@${CP} ${LTMAIN} ${WRKSRC}
 
 .include <bsd.port.post.mk>
