@@ -1,6 +1,6 @@
---- etc/config.dist.orig	Sun Jan 18 15:55:11 2004
-+++ etc/config.dist	Sun Jan 18 15:57:10 2004
-@@ -7,13 +7,13 @@
+--- etc/config.dist.orig	Thu Jun  2 15:47:39 2005
++++ etc/config.dist	Sun Sep 18 18:14:12 2005
+@@ -7,14 +7,14 @@
  owner    = Joe Random
  contact  = joe@some.place.xyz
  mailhost = smtp.mailhost.abc
@@ -16,11 +16,13 @@
 +piddir  = %%PREFIX%%/var/smokeping
  cgiurl   = http://people.ee.ethz.ch/~oetiker/smokeping/smokeping.cgi
 -smokemail = /home/oetiker/data/projects/AADJ-smokeping/dist/etc/smokemail.dist
+-tmail = /home/oetiker/data/projects/AADJ-smokeping/dist/etc/tmail.dist
 +smokemail = %%PREFIX%%/etc/smokeping/smokemail
++tmail = %%PREFIX%%/etc/smokeping/tmail
  # specify this to get syslog logging
- # syslogfacility = local0
- 
-@@ -63,7 +63,7 @@
+ syslogfacility = local0
+ # each probe is now run in its own process
+@@ -66,7 +66,7 @@
  
  *** Presentation ***
  
@@ -29,7 +31,7 @@
  
  + overview 
  
-@@ -86,7 +86,7 @@
+@@ -89,7 +89,7 @@
  
  + FPing
  
