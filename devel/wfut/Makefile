@@ -15,7 +15,8 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Software updater tool for WorldForge applications
 
 USE_BZIP2=	yes
-USE_JAVA=	1.5+
+USE_JAVA=	yes
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
 

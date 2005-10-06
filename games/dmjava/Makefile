@@ -19,7 +19,8 @@ COMMENT=	Dungeon Master Java is a remake of the classic Dungeon Master by FTL
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 USE_ZIP=	yes
-USE_JAVA=	1.4+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
 NO_BUILD=	yes
 
 do-install:
