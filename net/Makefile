@@ -909,6 +909,7 @@
     SUBDIR += xbms
     SUBDIR += xbone
     SUBDIR += xbone-gui
+    SUBDIR += xboxproxy
     SUBDIR += xferstats
     SUBDIR += xicq
     SUBDIR += xipdump
