@@ -8909,6 +8909,7 @@ p5-xmltv	ports/textproc/p5-xmltv
 p65		ports/devel/p65
 p7zip		ports/archivers/p7zip
 pa-aspell	ports/textproc/pa-aspell
+pachi		ports/games/pachi
 packit		ports/net-mgmt/packit
 pad		ports/security/pad
 padkey		ports/x11/padkey
