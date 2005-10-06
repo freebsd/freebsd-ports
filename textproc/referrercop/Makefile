@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	referrercop
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	textproc www ruby
 MASTER_SITES=	http://wonko.com/files/ \
 		http://raa.ruby-lang.org/cache/referrercop/
@@ -16,7 +16,7 @@ COMMENT=	Filters referrer spam from Apache logs and AWStats data files
 
 NO_BUILD=		yes
 USE_RUBY=		yes
-USE_RUBY_FEATURES=	optparse ruby18
+USE_RUBY_FEATURES=	fileutils optparse ruby18
 
 .include <bsd.port.pre.mk>
 
