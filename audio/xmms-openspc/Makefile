@@ -13,7 +13,7 @@ MASTER_SITES=	http://critical.ch/distfiles/ \
 PKGNAMEPREFIX=	xmms-
 DISTNAME=	xmms-OpenSPC-${PORTVERSION}
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	An SPC player for XMMS using OpenSPC
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm \

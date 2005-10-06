@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.vanheusden.com/Linux/ \
 		http://critical.ch/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Recvnet (inverse telnet) is a utility for debugging tcp connections
 
 CFLAGS+=	-DVERSION=\"${PORTVERSION}\"

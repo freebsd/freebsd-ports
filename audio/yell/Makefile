@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.critical.ch/yell/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line speaker bell using machine/speaker.h
 
 PLIST_FILES=	bin/yell

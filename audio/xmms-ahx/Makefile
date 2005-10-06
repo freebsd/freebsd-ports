@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	XMMS plugin for playing AHX tunes
 
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms

@@ -10,7 +10,7 @@ PORTVERSION=	0.6
 CATEGORIES=	audio
 MASTER_SITES=	http://projects.raphnet.net/playgsf/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line player for gsf audio files
 
 USE_GMAKE=	yes

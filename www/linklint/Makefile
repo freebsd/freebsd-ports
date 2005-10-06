@@ -10,7 +10,7 @@ PORTVERSION=	2.3.5
 CATEGORIES=	www
 MASTER_SITES=	http://www.linklint.org/download/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Perl script that checks links on web sites
 
 USE_PERL5_RUN=	yes

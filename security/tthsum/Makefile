@@ -10,7 +10,7 @@ PORTVERSION=	1.1.0
 CATEGORIES=	security
 MASTER_SITES=	http://wza.digitalbrains.com/source/tthsum/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command-line utility for generating and checking TTH message digests
 
 USE_GMAKE=	yes

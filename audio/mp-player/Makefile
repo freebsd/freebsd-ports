@@ -13,7 +13,7 @@ MASTER_SITES=	http://mp.waw.cx/ \
 DISTNAME=	mp-current
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A curses based module tracker using libmikmod
 
 LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod

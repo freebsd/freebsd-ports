@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.vanheusden.com/httping/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A ping-like tool for HTTP requests
 
 CFLAGS+=	-DVERSION=\"${PORTVERSION}\"

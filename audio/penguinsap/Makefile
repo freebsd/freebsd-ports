@@ -10,7 +10,7 @@ PORTVERSION=	0.1
 CATEGORIES=	audio
 MASTER_SITES=	http://critical.ch/distfiles/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line Atari(TM) .sap player
 
 USE_REINPLACE=	yes

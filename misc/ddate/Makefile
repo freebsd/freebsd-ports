@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.kernel.org/pub/linux/utils/util-linux/
 DISTNAME=	util-linux-${PORTVERSION}
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command to print the date in Discordian date format
 
 PLIST_FILES=	bin/ddate

@@ -10,7 +10,7 @@ PORTVERSION=	1.3.6
 CATEGORIES=	security
 MASTER_SITES=	http://zakalwe.virtuaalipalvelin.net/~shd/foss/cksfv/files/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Create or manipulate Simple File Verification (SFV) checksum files
 
 PLIST_FILES=	bin/cksfv

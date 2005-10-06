@@ -10,7 +10,7 @@ PORTVERSION=	2.2
 CATEGORIES=	mail
 MASTER_SITES=	http://morettoni.net/qmail/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A qmail RBL filter
 
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail

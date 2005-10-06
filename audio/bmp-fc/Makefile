@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	xmms-fc
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A Future Composer input plug-in for beep-media-player
 
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player

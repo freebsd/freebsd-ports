@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://scanline.ca/exrtools/ \
 		http://critical.ch/distfiles/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utilities for manipulating with HDR images in OpenEXR format
 
 LIB_DEPENDS=	Half:${PORTSDIR}/graphics/OpenEXR \

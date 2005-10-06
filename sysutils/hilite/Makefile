@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.c
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command-line utility to highlight anything printed to stderr
 
 PLIST_FILES=	bin/hilite

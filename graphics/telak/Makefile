@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://critical.ch/distfiles/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A tool to draw pictures on your root window
 
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl \

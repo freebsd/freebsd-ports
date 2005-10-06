@@ -12,7 +12,7 @@ MASTER_SITES=	http://procps.sourceforge.net/
 PKGNAMEPREFIX=	gnu-
 DISTNAME=	procps-${DISTVERSION}
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	GNU watch command
 
 USE_GETOPT_LONG=yes

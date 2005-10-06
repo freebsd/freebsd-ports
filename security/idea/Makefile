@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.funet.fi/pub/org/CERT/ftp.cert.dfn.de/pub/tools/crypt/i
 DISTNAME=	${PORTNAME}.V${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line idea encryption and decryption utility
 
 RESTRICTED=	"Crypto; IDEA is a patented algorithm that requires proper licensing"

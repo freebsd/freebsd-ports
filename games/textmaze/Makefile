@@ -12,7 +12,7 @@ CATEGORIES=	games perl5
 MASTER_SITES=	http://www.robobunny.com/projects/textmaze/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Generates mazes on a text terminal and lets you traverse them
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses

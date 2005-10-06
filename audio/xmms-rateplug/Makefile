@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	xmmsassesment
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Add song rating control to the XMMS playlist
 
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms

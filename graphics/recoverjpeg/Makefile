@@ -10,7 +10,7 @@ PORTVERSION=	1.1.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.rfc1149.net/download/recoverjpeg/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Recoverjpeg tries to recover JFIF (JPEG) pictures from a peripheral
 
 GNU_CONFIGURE=	yes

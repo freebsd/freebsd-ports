@@ -10,7 +10,7 @@ PORTVERSION=	1.2.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A utility for breaking pkzip encryption
 
 USE_GMAKE=	yes

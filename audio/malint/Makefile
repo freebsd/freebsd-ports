@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.nih.at/malint/ \
 		ftp://sunsite.univie.ac.at/pub/nih/malint/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	MPEG Audio stream validator
 
 GNU_CONFIGURE=	yes

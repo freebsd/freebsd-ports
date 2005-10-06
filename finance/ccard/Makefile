@@ -11,7 +11,7 @@ CATEGORIES=	finance
 MASTER_SITES=	http://www.canb.auug.org.au/~millerp/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line offline credit card validator/analyzer
 
 GNU_CONFIGURE=	yes

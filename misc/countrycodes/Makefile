@@ -10,7 +10,7 @@ PORTVERSION=	1.0.5
 CATEGORIES=	misc
 MASTER_SITES=	http://www.grigna.com/diego/linux/countrycodes/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	An ISO 3166 country code finder
 
 BUILD_WRKSRC=	${WRKSRC}/src

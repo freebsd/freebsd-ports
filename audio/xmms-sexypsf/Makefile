@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://projects.raphnet.net/sexypsf/
 DISTNAME=	sexypsf-${PORTVERSION}
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	XMMS plugin for playing .psf files
 
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms

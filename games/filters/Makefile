@@ -11,7 +11,7 @@ CATEGORIES=	games perl5
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/f/filters/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A collection of filters, including B1FF and the Swedish Chef
 
 CONFLICTS=	talkfilters-* jive-* chef-*

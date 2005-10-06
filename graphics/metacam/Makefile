@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cheeseplant.org/pub/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A digital camera EXIF meta-information reader
 
 USE_GMAKE=	yes

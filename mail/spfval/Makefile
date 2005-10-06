@@ -10,7 +10,7 @@ PORTVERSION=	0.0.1
 CATEGORIES=	mail
 MASTER_SITES=	http://spfval.codeshare.ca/files/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A SPF validator
 
 USE_BZIP2=	yes

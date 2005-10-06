@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://wwwthep.physik.uni-mainz.de/~cbauer/
 DISTNAME=	SIDPlayer-${PORTVERSION}
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A C64 SID tune player
 
 USE_SDL=	yes

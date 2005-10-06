@@ -11,7 +11,7 @@ CATEGORIES=	audio converters
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/convert
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Converts WAV files into CDR audio file format
 
 USE_GETOPT_LONG=yes

@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://download.berlios.de/gbsplay/
 PKGNAMEPREFIX?=
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT?=	Emulates the sound hardware of the Nintendo Game Boy(TM)
 
 USE_REINPLACE=	yes

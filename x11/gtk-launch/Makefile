@@ -10,7 +10,7 @@ DISTVERSION=	1.1b
 CATEGORIES=	x11
 MASTER_SITES=	http://pierric.descamps.free.fr/pierric/downloads/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A fast GTK+ program launcher
 
 USE_X_PREFIX=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.linuks.mine.nu/ree/ \
 		http://critical.ch/distfiles/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A tool to dump your ROM extensions
 
 PLIST_FILES=	bin/rom-ree bin/fontdump

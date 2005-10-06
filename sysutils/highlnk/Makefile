@@ -10,7 +10,7 @@ DISTVERSION=	0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.perli.net/projekte/highlnk/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A tool to save disk space on hard disks by using hardlinks
 
 USE_REINPLACE=	yes

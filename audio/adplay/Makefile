@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	adplug
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	AdLib player using adplug library
 
 LIB_DEPENDS=	adplug-1.5.1:${PORTSDIR}/audio/libadplug

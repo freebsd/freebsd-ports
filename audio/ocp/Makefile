@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://labs.nixia.no/ \
 		http://critical.ch/distfiles/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	The legendary Open Cubic Player
 
 LIB_DEPENDS=	id3tag.2:${PORTSDIR}/audio/libid3tag \

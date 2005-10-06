@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.ibiblio.org/pub/Linux/apps/sound/players/
 PKGNAMEPREFIX?=
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line player for the .ay audio file format
 
 USE_REINPLACE=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	4.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A BIOS password recovery tool
 
 USE_REINPLACE=	yes
