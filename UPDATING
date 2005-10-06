@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20051006:
+  AFFECTS: users of net/smokeping
+  AUTHOR: lth@FreeBSD.org
+
+  Smokeping has undergone a major upgrade to version 2.0.3. If you
+  are upgrading from versions 1.x, the manpage 'smokeping_upgrade'
+  may be of help. To verify the configuration file syntax, run
+  'smokeping --check'.
+
 20051005:
   AFFECTS: users of x11-wm/devilspie
   AUTHOR: jylefort@FreeBSD.org
