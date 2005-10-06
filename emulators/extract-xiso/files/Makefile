@@ -7,7 +7,7 @@ CFLAGS+=-D__FREEBSD__
 
 extract-xiso: extract-xiso.c
 	@${MAKE} libftp
-	${CC} ${CFLAGS} -lc_r -o extract-xiso extract-xiso.c ${LIBFTP_DIR}/libftp.a
+	${CC} ${CFLAGS} ${PTHREAD_LIBS} -o extract-xiso extract-xiso.c ${LIBFTP_DIR}/libftp.a
 
 libftp:
 	@${MAKE} -C ${LIBFTP_DIR}
