@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AutoIndex
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	autoindex
@@ -19,26 +19,24 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 BROKEN_WITH_PHP=	5
 USE_PHP=	yes
 CONFLICTS=	AutoIndex-2*
-
 NO_BUILD=	yes
 
+PLIST_SUB+=	INSTALLDIR=${INSTALLDIR}
+
+pre-fetch:
+.if !defined(INSTALLDIR)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Define INSTALLDIR to override default of 'www/data/${PORTNAME}'."
+	@${ECHO_MSG} ""
+.endif
+
+INSTALLDIR?=	www/data/${PORTNAME}
+
 do-install:
-	@${MKDIR} ${PREFIX}/www/data/${PORTNAME}
-	@${MKDIR} ${PREFIX}/www/data/${PORTNAME}/index_icons
-	@${MKDIR} ${PREFIX}/www/data/${PORTNAME}/index_icons/apache
-	@${MKDIR} ${PREFIX}/www/data/${PORTNAME}/index_icons/kde
-	@${MKDIR} ${PREFIX}/www/data/${PORTNAME}/index_icons/osx
-	@${MKDIR} ${PREFIX}/www/data/${PORTNAME}/index_icons/winxp
-	@${MKDIR} ${PREFIX}/www/data/${PORTNAME}/languages
-	${INSTALL_DATA} ${WRKSRC}/.htpasswd.autoindex ${PREFIX}/www/data/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/*.php ${PREFIX}/www/data/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/*.html ${PREFIX}/www/data/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/stylesheet.css ${PREFIX}/www/data/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/index_icons/apache/* ${PREFIX}/www/data/${PORTNAME}/index_icons/apache
-	${INSTALL_DATA} ${WRKSRC}/index_icons/kde/* ${PREFIX}/www/data/${PORTNAME}/index_icons/kde
-	${INSTALL_DATA} ${WRKSRC}/index_icons/osx/* ${PREFIX}/www/data/${PORTNAME}/index_icons/osx
-	${INSTALL_DATA} ${WRKSRC}/index_icons/winxp/* ${PREFIX}/www/data/${PORTNAME}/index_icons/winxp
-	${INSTALL_DATA} ${WRKSRC}/languages/*  ${PREFIX}/www/data/${PORTNAME}/languages
+	@${MKDIR} ${PREFIX}/${INSTALLDIR}
+	@${CP} -Rp ${WRKSRC}/* ${PREFIX}/${INSTALLDIR}
+	@${CP} -p ${WRKSRC}/.htpasswd.autoindex ${PREFIX}/${INSTALLDIR}/.htpasswd.autoindex-dist
+	@${CHMOD} 666 ${PREFIX}/${INSTALLDIR}/config.php
 	@${ECHO_CMD} ""
 
 post-install:

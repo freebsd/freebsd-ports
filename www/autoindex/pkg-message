@@ -1,6 +1,11 @@
 *****************************************************************
 
-    Please visit 'http://{host.domain}/AutoIndex/' in a web
-    browser and follow the configuration instructions.
+   To configure and run this script, please point your web
+   browser to the index.php file. To use all the default
+   values, just click the button at the bottom, or customize
+   it however you want.
+
+   Information about the use of each variable is in
+   readme.html file.
 
 *****************************************************************
