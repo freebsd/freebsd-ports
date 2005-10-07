@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Structures_DataGrid
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	nick@foobar.org
