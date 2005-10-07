@@ -1,5 +1,14 @@
---- makefile.orig	Wed May 18 15:06:46 2005
-+++ makefile	Wed May 18 15:07:19 2005
+--- makefile.orig	Sat Sep 10 23:21:26 2005
++++ makefile	Fri Oct  7 15:03:27 2005
+@@ -10,7 +10,7 @@
+ 
+ prefix		= /usr
+ bindir		= /usr/local/bin
+-mandir		= $(prefix)/share/man
++mandir		= $(prefix)/man
+ docdir		= $(prefix)/share/doc
+ 
+ AOUT	=mathomatic
 @@ -42,7 +42,7 @@
  	install -d $(docdir)/mathomatic
  	install -m 0755 $(AOUT) $(bindir)
