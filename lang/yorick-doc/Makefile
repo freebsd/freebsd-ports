@@ -9,7 +9,7 @@ PORTNAME=	yorick-doc
 PORTVERSION=	1.6.02
 CATEGORIES=	lang math
 MASTER_SITES=	ftp://ftp-icf.llnl.gov/pub/Yorick/ \
-		ftp://wuarchive.wustl.edu/languages/yorick/
+		ftp://ftp.stack.nl/pub/users/johans/yorick/
 DISTNAME=	yorick-${PORTVERSION:R}-${PORTVERSION:E}-doc
 EXTRACT_SUFX=	.tgz
 
