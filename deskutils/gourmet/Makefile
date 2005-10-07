@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gourmet
-PORTVERSION=	0.8.5.12
-PORTREVISION=	2
+PORTVERSION=	0.8.6.5.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	grecipe-manager
@@ -24,13 +23,4 @@ USE_PYDISTUTILS=yes
 
 USE_GNOME=	pygnome2
 
-.include <bsd.port.pre.mk>
-
-pre-install:
-.if !exists(${LOCALBASE}/lib/libmk4py.so)
-.if exists(${LOCALBASE}/lib/libmk4.so)
-BROKEN=	"You must reinstall metakit to include python support"
-.endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
