@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	tinylaf
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.02
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.muntjak.de/hans/java/tinylaf/
-DISTNAME=	${PORTNAME}-beta-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pluggable Look and Feel for Java
 
 USE_ZIP=	yes
@@ -22,8 +22,9 @@ NO_BUILD=	yes
 JARFILE=	${PORTNAME}.jar
 
 PORTDOCS=	readme.txt
-THEMES=		98\ Earth.theme 98\ Lego.theme 98\ Light.theme 98\ Pool.theme	\
-		XP\ Forest.theme XP\ Golden.theme XP\ Plastic.theme Xp\ Silver.theme
+THEMES=		99\ Earth.theme 99\ Lego.theme 99\ Light.theme 99\ Pool.theme	\
+		YQ\ Forest.theme YQ\ Golden.theme YQ\ Nightly.theme YQ\ Plastic.theme	\
+		YQ\ Silver.theme
 
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
 PLIST_FILES+=	${THEMES:S|^|%%DATADIR%%/|}
