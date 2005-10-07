@@ -10,8 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	russian
 MASTER_SITES=	ftp://ftp.slavof.net/pub/FreeBSD/X11/cyrillic/ \
 		ftp://mail.partners-bg.org/pub/FreeBSD/X11/cyrillic/ \
-		ftp://80.72.71.229/pub/FreeBSD/X11/cyrillic/ \
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+		ftp://80.72.71.229/pub/FreeBSD/X11/cyrillic/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The bulgarian cyrillic keyboard layout manager for X11
