@@ -181,6 +181,7 @@
     SUBDIR += semi113-emacs20
     SUBDIR += semi113-mule
     SUBDIR += semi113-xemacs21-mule
+    SUBDIR += setedit
     SUBDIR += slime
     SUBDIR += speedbar
     SUBDIR += speedbar-emacs20
