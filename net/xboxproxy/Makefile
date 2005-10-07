@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xboxproxy
-PORTVERSION=	1.9
+PORTVERSION=	2.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.csh.rit.edu/~psionic/projects/xboxproxy/
 DISTNAME=	proxy-${PORTVERSION}
@@ -17,14 +17,14 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=xbox
-USE_GMAKE=	yes
 
 PLIST_FILES=	bin/xboxproxy
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=	"Doesn't build on FreeBSD < 5.x"
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
+CONFIGURE_ARGS+=	--with-pcap=${LOCALBASE}
 .endif
 
 .include <bsd.port.post.mk>
