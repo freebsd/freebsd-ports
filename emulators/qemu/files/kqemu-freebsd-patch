@@ -236,7 +236,7 @@ Index: qemu/kqemu/kqemu-freebsd.c
  
  static char log_buf[4096];
  
-@@ -176,47 +227,155 @@
+@@ -176,47 +227,159 @@
      va_end(ap);
  }
  
@@ -359,7 +359,11 @@ Index: qemu/kqemu/kqemu-freebsd.c
 +#endif
      struct kqemu_instance *ks;
 +
++#if __FreeBSD_version >= 500000
++    if (kqemu_ref_count >= KQEMU_MAX_INSTANCES)
++#else
 +    if (dev->si_drv1 || kqemu_ref_count >= KQEMU_MAX_INSTANCES)
++#endif
 +	return(EBUSY);
 +
 +    if ((flags & (FREAD|FWRITE)) == FREAD)
@@ -397,7 +401,7 @@ Index: qemu/kqemu/kqemu-freebsd.c
  {
      int error = 0;
      int ret;
-@@ -231,8 +390,9 @@
+@@ -231,8 +394,9 @@
  	    break;
  	}
  	d1 = *(struct kqemu_init *)addr;
@@ -409,7 +413,7 @@ Index: qemu/kqemu/kqemu-freebsd.c
  	if (s == NULL) {
  	    error = ENOMEM;
  	    break;
-@@ -248,9 +408,16 @@
+@@ -248,9 +412,16 @@
  	}
  	ctx = kqemu_get_cpu_state(s);
  	*ctx = *(struct kqemu_cpu_state *)addr;
@@ -426,7 +430,7 @@ Index: qemu/kqemu/kqemu-freebsd.c
  	*(struct kqemu_cpu_state *)addr = *ctx;
  	break;
      }
-@@ -265,10 +432,22 @@
+@@ -265,10 +436,22 @@
  
  /* ARGSUSED */
  static int
@@ -450,7 +454,7 @@ Index: qemu/kqemu/kqemu-freebsd.c
  }
  
  /* ARGSUSED */
-@@ -276,15 +455,55 @@
+@@ -276,15 +459,55 @@
  kqemu_modevent(module_t mod __unused, int type, void *data __unused)
  {
      int error = 0;
