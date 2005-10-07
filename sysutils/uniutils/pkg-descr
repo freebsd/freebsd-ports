@@ -20,4 +20,4 @@ displayable, the glyph itself as UTF-8 Unicode.
 ExplicateUTF8 is intended for debugging or for learning about Unicode. It
 determines and explains the validity of a sequence of bytes as a UTF8 encoding.
 
-WWW: http://www.cis.upenn.edu/~wjposer/unidesc.html
+WWW: http://billposer.org/Software/unidesc.html

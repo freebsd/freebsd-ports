@@ -8,7 +8,7 @@
 PORTNAME=	unidesc
 PORTVERSION=	2.13
 CATEGORIES=	sysutils textproc
-MASTER_SITES=	http://www.cis.upenn.edu/~wjposer/.downloads/
+MASTER_SITES=	http://billposer.org/Software/Downloads/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	thierry@FreeBSD.org
