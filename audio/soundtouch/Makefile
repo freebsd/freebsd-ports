@@ -8,7 +8,7 @@
 PORTNAME=	soundtouch
 DISTVERSION=	1.3.0
 CATEGORIES=	audio
-MASTER_SITES=	http://sky.prohosting.com/oparviai/soundtouch/
+MASTER_SITES=	http://users.tkk.fi/~oparviai/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
