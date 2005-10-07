@@ -24,7 +24,6 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/l
 		${LINUXBASE}/usr/lib/libpango-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango
 
 RESTRICTED=	"Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html"
-CONFLICTS?=	ja-acroread-[0-9]*
 ADOBE_LANG?=	enu
 NO_FILTER_SHLIBS=	yes
 ONLY_FOR_ARCHS=	amd64 i386
