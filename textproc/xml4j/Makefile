@@ -23,9 +23,11 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 CONFLICTS=	xerces-j-2.*
 
 SAMPLES=	dom sax simpletype socket ui xni xs
-PORTDOCS=	*.html graphics images javadocs resources
 JARFILES=	resolver.jar xercesImpl.jar xercesSamples.jar xml-apis.jar xmlParserAPIs.jar
 DATAFILES=	personal-schema.xml personal.dtd personal.xml personal.xsd
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*.html graphics images javadocs resources
+.endif
 
 PLIST_FILES=	${JARFILES:S,^,%%JAVAJARDIR%%/,} \
 		${DATAFILES:S,^,%%DATADIR%%/,}
