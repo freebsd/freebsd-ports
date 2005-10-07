@@ -7,7 +7,7 @@
 
 PORTNAME=	petsc
 PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://info.mcs.anl.gov/pub/petsc/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. software_old
