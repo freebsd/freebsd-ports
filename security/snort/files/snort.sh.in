@@ -1,10 +1,10 @@
 #!/bin/sh
-# $Id$
+# $FreeBSD$
 
 # PROVIDE: snort
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 # Add the following lines to /etc/rc.conf to enable snort:
 # snort_enable (bool):		Set to YES to enable snort
@@ -14,7 +14,7 @@
 # snort_interface (str):	Network interface to sniff
 #				Default: "" 
 # snort_conf (str):		Snort configuration file
-#				Default: ${PREFIX}/etc/snort.conf
+#				Default: ${PREFIX}/etc/snort/snort.conf
 #
 
 . %%RC_SUBR%%
@@ -27,7 +27,7 @@ command="%%PREFIX%%/bin/snort"
 load_rc_config $name
 
 [ -z "$snort_enable" ]    && snort_enable="NO"
-[ -z "$snort_conf" ]      && snort_conf="%%PREFIX%%/etc/snort.conf"
+[ -z "$snort_conf" ]      && snort_conf="%%PREFIX%%/etc/snort/snort.conf"
 [ -z "$snort_flags" ]     && snort_flags="-Dq"
 
 [ -n "$snort_interface" ] && snort_flags="$snort_flags -i $snort_interface"
