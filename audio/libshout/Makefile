@@ -8,7 +8,7 @@
 PORTNAME=	libshout
 PORTVERSION=	1.0.7
 CATEGORIES=	audio net
-MASTER_SITES=	http://downloads.xiph.org/releases/libshout/
+#MASTER_SITES=	http://downloads.xiph.org/releases/libshout/
 
 MAINTAINER=	lofi@freebsd.org
 COMMENT=	Routines for connecting and transmitting data to the icecast server
