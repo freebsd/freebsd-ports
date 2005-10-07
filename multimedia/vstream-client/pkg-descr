@@ -1,0 +1,11 @@
+This is a fork off of the vstream library from the tivo-mplayer project.
+It has been stripped down to just the client code, and includes an example
+client application.  If you have vserver installed on your Tivo (which most
+tivo hackers do), then you can use this simple client to stream .ty files
+from it.  MPlayer will also include support for this library soon.  This
+library can also be used by MPlayer/MEncoder to watch/re-encode tivo
+streams live over a network.
+
+(As of October 2005, mplayer does in fact have support for this library.)
+
+WWW:  http://armory.nicewarrior.org/projects/vstream-client/
