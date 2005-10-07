@@ -9,7 +9,5 @@ with XML, like SAX and DOM.
 In addition, It includes a module to manipulate Unicode streams, since
 this is required by the XML standard.
 
-WWW: http://libre.act-europe.fr/xmlada/
-
-- Aidan
-aidan@velvet.net
+WWW: https://libre2.adacore.com/xmlada/
+Author: Aidan <aidan@velvet.net>
