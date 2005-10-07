@@ -1,0 +1,16 @@
+With Numbers_Words class you can convert numbers written in arabic digits to
+words in several languages.  You can convert an integer between -infinity and
+infinity.  If your system does not support such long numbers you can
+call Numbers_Words::toWords() with just a string.
+
+With the Numbers_Words::toCurrency($num, $locale, 'USD') method you can convert
+a number (decimal and fraction part) to words with currency name.
+
+The following languages are supported: bg (Bulgarian), cs (Czech), de (German),
+dk (Danish), ee (Estonian), en_100 (Donald Knuth system, English),
+en_GB (British English), en_US (American English), es (Spanish Castellano),
+es_AR (Argentinian Spanish), fr (French), fr_BE (French Belgium), he (Hebrew),
+hu_HU (Hungarian), id (Indonesian), it_IT (Italian), lt (Lithuanian),
+pl (Polish), pt_BR (Brazilian Portuguese), ru (Russian), sv (Swedish).
+
+WWW: http://pear.php.net/package/Numbers_Words

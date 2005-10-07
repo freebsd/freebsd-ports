@@ -1,0 +1,30 @@
+# Ports collection makefile for:  pear-Numbers_Words
+# Date created:			  05 October 2005
+# Whom:				  Piotr Rybicki (<meritus@innervision.pl>)
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Numbers_Words
+PORTVERSION=	0.14.0
+CATEGORIES=	textproc pear
+
+MAINTAINER=	meritus@innervision.pl
+COMMENT=	PEAR package provides methods for spelling numerals in words
+
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+FILES=		Words.php Words/lang.bg.php Words/lang.cs.php \
+		Words/lang.de.php Words/lang.dk.php Words/lang.ee.php \
+		Words/lang.en_100.php Words/lang.en_GB.php \
+		Words/lang.en_US.php Words/lang.es.php Words/lang.es_AR.php \
+		Words/lang.fr.php Words/lang.fr_BE.php Words/lang.he.php \
+		Words/lang.hu_HU.php Words/lang.id.php Words/lang.it_IT.php \
+		Words/lang.lt.php Words/lang.pl.php Words/lang.pt_BR.php \
+		Words/lang.ru.php Words/lang.sv.php
+TESTS=		test-numbers-words.php clitest.php
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include <bsd.port.post.mk>
