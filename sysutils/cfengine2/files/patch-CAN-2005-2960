@@ -1,0 +1,30 @@
+diff -u -p -Nr --exclude CVS contrib/vicf.in.orig contrib/vicf.in
+--- contrib/vicf.in.orig	2005-02-08 12:48:56.000000000 +0100
++++ contrib/vicf.in	2005-09-23 12:11:34.000000000 +0200
+@@ -56,12 +56,13 @@ EdFile () {
+     while [ "$editfile" = "n" ]
+     do
+ 	${EDITOR} ${CFINPUTS}/.${file}.lock
+-	cp /dev/null /tmp/cfparse.$$
+-	$sbindir/cfengine --no-warn --parse-only --file ${CFINPUTS}/.${file}.lock > /tmp/cfparse.$$ 2>&1
+-	if [ -s /tmp/cfparse.$$ ]
++        tmpfile=`mktemp -t tempfile.XXXXXX` || { echo "$0: Cannot create temporary file" >&2; exit 1;  }
++        trap " [ -f \"$tmpfile\" ] && /bin/rm -f -- \"$tmpfile\"" 0 1 2 3 13 15
++        $sbindir/cfengine --no-warn --parse-only --file ${CFINPUTS}/.${file}.lock > $tmpfile 2>&1
++        if [ -s $tmpfile ]
+ 	then
+ 		echo PARSE ERROR IN NEW INPUT-FILE:
+-		cat /tmp/cfparse.$$
++		cat $tmpfile
+ 		/usr/ucb/echo -n "Re-edit file? (Y/n) "
+ 		read answer
+ 		if [ "$answer" = "n" ]
+@@ -75,7 +76,7 @@ EdFile () {
+ 	fi
+     done
+ 
+-    rm -f /tmp/cfparse.$$ ${CFINPUTS}/.${file}.lock
++    rm -f ${CFINPUTS}/.${file}.lock
+ }
+ 
+ force=n
