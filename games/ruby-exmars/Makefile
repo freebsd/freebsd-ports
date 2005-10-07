@@ -8,7 +8,8 @@
 PORTNAME=	exmars
 PORTVERSION=	0.01
 CATEGORIES=	games ruby
-MASTER_SITES=	http://martinus.geekisp.com/files/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pav
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 
 MAINTAINER=	alejandro@varnet.biz
