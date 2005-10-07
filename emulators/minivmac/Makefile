@@ -8,12 +8,11 @@
 PORTNAME=	minivmac
 PORTVERSION=	0.1.7
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.gryphel.com/c/download/ \
-		${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/minivmac/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/minivmac/}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	blackend@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A miniature Macintosh emulator
 
 USE_REINPLACE=	yes
