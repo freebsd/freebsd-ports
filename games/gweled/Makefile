@@ -7,11 +7,14 @@
 
 PORTNAME=	gweled
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	http://sebdelestaing.free.fr/gweled/Release/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME version of the game called "Bejeweled" or "Diamond Mine"
+
+LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
