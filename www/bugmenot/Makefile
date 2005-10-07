@@ -8,7 +8,9 @@
 PORTNAME?=	bugmenot
 PORTVERSION=	0.6.2
 CATEGORIES=	www
-MASTER_SITES=	http://extensions.roachfiend.com/
+#MASTER_SITES=	http://extensions.roachfiend.com/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	thierry/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
