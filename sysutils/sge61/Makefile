@@ -11,6 +11,7 @@ PORTREVISION=	0
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/32/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	brooks
 DISTNAME=	sge-V60u6_TAG-src
 
 MAINTAINER=	brooks@FreeBSD.org
