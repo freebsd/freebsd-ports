@@ -8,7 +8,8 @@
 PORTNAME=	exmars
 PORTVERSION=	0.01
 CATEGORIES=	games
-MASTER_SITES=	http://martinus.geekisp.com/files/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pav
 
 MAINTAINER=	alejandro@varnet.biz
 COMMENT=	Memory Array Redcode Simulator, just like exhaust and pMARS
