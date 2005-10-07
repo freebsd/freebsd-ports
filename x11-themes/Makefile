@@ -22,7 +22,6 @@
     SUBDIR += enlightenment-theme-Ganymede
     SUBDIR += enlightenment-theme-ShinyMetal
     SUBDIR += flux-art
-    SUBDIR += fluxbox-fluxmod
     SUBDIR += fluxbox-sid-pack
     SUBDIR += fvwm-themes
     SUBDIR += geramik
