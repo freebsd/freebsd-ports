@@ -83,7 +83,7 @@ NO_BUILD=	yes
 do-install:
 	@${MKDIR} ${LOCALBASE}/share/doc/erlang
 .for FILE in ${DISTFILES}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${FILE} ${LOCALBASE}/share/doc/erlang
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$$(expr ${FILE} : '\([^:]*\)') ${LOCALBASE}/share/doc/erlang
 .endfor
 
 post-install:
