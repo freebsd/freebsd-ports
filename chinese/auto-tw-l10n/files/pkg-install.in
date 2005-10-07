@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# Date created:			20005/08/08
+# Whom:				chinsan (<chinsan.tw@gmailc.com>)
+#
+# Find the fastest cvsup server
+#
+# $FreeBSD$
+#
+
+umask 022
+PATH=/bin:/usr/bin:/usr/local/bin
+
+PREFIX=%%PREFIX%%
+SOURCE_DIR=%%SOURCE_DIR%%
+FASTEST_CVSUP=%%FASTEST_CVSUP%%
+ZONE=%%ZONE%%
+TMPFILE=%%WRKDIR%%/fastest_cvsup.result
+
+echo "===>  Detecting the fastest cvsup server..."
+${FASTEST_CVSUP} -c ${ZONE} > ${TMPFILE}
+
+SERVER1=`grep "1st" ${TMPFILE} | awk '{print $3}'`
+SERVER2=`grep "2nd" ${TMPFILE} | awk '{print $3}'`
+SERVER3=`grep "3rd" ${TMPFILE} | awk '{print $3}'`
+
+sed -e "s/%%SERVER1%%/$SERVER1/; s/%%SERVER2%%/$SERVER2/; s/%%SERVER3%%/$SERVER3/" \
+	< ${SOURCE_DIR}/make.conf.in > ${SOURCE_DIR}/make.conf
+
+exit 0
