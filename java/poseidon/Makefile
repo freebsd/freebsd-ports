@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	poseidon
-PORTVERSION=	3.1.0
+PORTVERSION=	3.2.0
 CATEGORIES=	java devel
 MASTER_SITES=	ftp://ftp.gentleware.org/ \
 		http://download.gentleware.org/ \
@@ -37,6 +37,14 @@ DATAFILES=	LICENSE.txt lib
 DATAFILES+=	LICENSE-concurrent.txt
 .endif
 PLIST_FILES=	bin/poseidon %%DATADIR%%/bin/poseidon.sh
+
+.if make(makesum)
+DISTFILES+=	${PORTNAME}CE-${PORTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}PE-${PORTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}SE-${PORTVERSION}${EXTRACT_SUFX}
+.else
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
+.endif
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
