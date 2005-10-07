@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cyphesis
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.5.1
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=worldforge
@@ -16,7 +16,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A server for WorldForge games
 
 LIB_DEPENDS=	Atlas-0.6.0:${PORTSDIR}/devel/atlas-devel \
-		varconf-1.0.4:${PORTSDIR}/devel/varconf \
+		varconf-1.0.5:${PORTSDIR}/devel/varconf \
 		wfmath-0.3.3:${PORTSDIR}/math/wfmath \
 		mercator-0.2.4:${PORTSDIR}/devel/mercator \
 		skstream-0.3.3:${PORTSDIR}/net/skstream \
@@ -36,12 +36,22 @@ USE_GNOME=	gnomehack
 
 MAN1=		cyclient.1 cycmd.1 cyphesis.1 cyphesis-tools.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=		Does not compile
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's| install-dist_docDATA | |g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's| install-confbackupDATA | |g' ${WRKSRC}/data/Makefile.in
 	@${REINPLACE_CMD} -e 's|-lpython|${PTHREAD_LIBS} &|' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
 		${REINPLACE_CMD} -e 's|$$(datadir)/cyphesis|${DATADIR}|g'
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|' \
+		${WRKSRC}/server/CommMDNSPublisher.h
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -55,4 +65,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
