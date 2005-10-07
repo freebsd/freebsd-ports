@@ -7,9 +7,10 @@
 
 PORTNAME=	bsnmpd
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://people.freebsd.org/~harti/bsnmp/
-DISTNAME=	bsnmp-${PORTVERSION}
+DISTNAME=	bsnmp-${PORTVERSION}a
 
 MAINTAINER=	bu7cher@yandex.ru
 COMMENT=	A mini-SNMP daemon

@@ -1,14 +1,11 @@
---- snmp_mibII/mibII_route.c.orig	Wed Oct  5 14:18:53 2005
-+++ snmp_mibII/mibII_route.c	Wed Oct  5 14:18:16 2005
-@@ -30,7 +30,11 @@
+--- snmp_mibII/mibII_route.c.orig	Fri Oct  7 14:23:49 2005
++++ snmp_mibII/mibII_route.c	Fri Oct  7 14:24:05 2005
+@@ -30,7 +30,7 @@
   *
   * Routing table
   */
-+#ifdef HAVE_SYSTREE_H
- #include <sys/tree.h>
-+#else
+-#include <sys/tree.h>
 +#include "tree.h"
-+#endif
  #include "mibII.h"
  #include "mibII_oid.h"
  
