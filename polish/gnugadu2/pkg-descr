@@ -1,9 +1,8 @@
-Gadu-Gadu protocol client for X11/GTK+, instant messenger 
-targeting mainly users of Poland's based propietary IM network.
+Gnugadu2 is a modular instant messenger written with GTK+ targeted
+mainly at Polish users of propietary Gadu-Gadu network.
 
-GnuGadu2 is a complete rewrite featuring a plugin extensible 
-architecture, that has opened it to the multiprotocol world. 
-Transport plugins exist for Jabber, Tlen.pl, also for various 
-sound servers and others.
+GnuGadu2 sports a plugin extensible architecture. Beside Gadu-Gadu
+it also supports Jabber, Tlen.pl, sending smses to Polish mobile 
+phones, spell checking, works with several sound servers.
 
 WWW: http://www.gnugadu.org
