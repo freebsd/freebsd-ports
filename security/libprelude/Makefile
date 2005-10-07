@@ -4,14 +4,17 @@
 # $FreeBSD$
 
 PORTNAME=	libprelude
-PORTVERSION=	0.8.10
-PORTREVISION=	1
+DISTVERSION=	0.9.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Prelude Network Intrusion Detection System librairies
 
+LIB_DEPENDS=	gnutls.12:${PORTSDIR}/security/gnutls
+
+USE_GPG=		yes
+SIG_SUFFIX=		.sig
 USE_REINPLACE=		yes
 USE_GMAKE=		yes
 USE_LIBTOOL_VER=	13
@@ -19,23 +22,26 @@ INSTALLS_SHLIB=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-html-dir=${PREFIX}/share/doc --localstatedir=/var
 
-.if defined(WITHOUT_SSL)
-CONFIGURE_ARGS+=	--disable-openssl
+.if defined(WITH_PERL)
+USE_PERL5=		yes
+CONFIGURE_ARGS+=	--enable-perl
+PLIST_SUB+=		WITH_PERL=""
 .else
-USE_OPENSSL=		YES
+CONFIGURE_ARGS+=	--disable-perl
+PLIST_SUB+=		WITH_PERL="@comment "
 .endif
 
-.if defined(NOPORTDOCS)
-MAKE_ENV+=	NOPORTDOCS=yes
+.if defined(WITH_PYTHON)
+USE_PYTHON=		yes
+CONFIGURE_ARGS+=	--enable-python
+PLIST_SUB+=		WITH_PYTHON=""
+.else
+CONFIGURE_ARGS+=	--disable-python
+PLIST_SUB+=		WITH_PYTHON="@comment "
 .endif
 
-post-extract:
-	@${ECHO} ""
-	@${ECHO} "*------------------------------------------------------------------*"
-	@${ECHO} "Options:"
-	@${ECHO} ""
-	@${ECHO} "      WITHOUT_SSL=yes         Disable SSL support in libprelude"
-	@${ECHO} "*------------------------------------------------------------------*"
-	@${ECHO} ""
+#.if defined(NOPORTDOCS)
+#MAKE_ENV+=	NOPORTDOCS=yes
+#.endif
 
 .include <bsd.port.mk>
