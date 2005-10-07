@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	looks
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.3.2
 CATEGORIES=	devel java
-MASTER_SITES=	https://looks.dev.java.net/files/documents/31/10378/
+MASTER_SITES=	https://looks.dev.java.net/files/documents/31/${DISTREP}/	\
+		https://www.dev.java.net/files/documents/31/${DISTREP}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|_|g}-${DISTDATE}
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The JGoodies Looks improve the appearance of your Java applications
 
 FETCH_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
-DISTDATE=	20050325
+DISTDATE=	20050919
+DISTREP=	20506
 
 FETCH_CMD=	${LOCALBASE}/bin/wget
 FETCH_BEFORE_ARGS=	--no-check-certificate
