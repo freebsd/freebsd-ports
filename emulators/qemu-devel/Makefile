@@ -7,7 +7,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	0.7.2s.20050909
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.qemu.org/ \
 		http://people.fruitsalad.org/nox/qemu/ \
@@ -52,22 +52,12 @@ CONFIGURE_ARGS+=	--disable-kqemu
 PLIST_SUB=	WITH_KQEMU="@comment "
 .endif
 
-# gcc34 (system cc on 5.x now) has problems with qemu on amd64
-# (doesnt build target-i386/op.c), try the one in ports which is newer
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
 ARCH=		x86_64
-.if ${OSVERSION} >= 502126 && ${OSVERSION} <= 600029
-BUILD_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
-GCCVERSION=	030402
-CC=		gcc34
-.else
-USE_GCC=	3.4
 .endif
-.else
 USE_GCC=	3.4
-.endif
 
 .if defined(WITH_KQEMU) && !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		kqemu requires kernel source to be installed
