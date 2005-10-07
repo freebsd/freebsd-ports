@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File_Archive
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.3
 CATEGORIES=	archivers www pear
 
 MAINTAINER=	antonio@php.net
@@ -32,20 +32,21 @@ FILES=		Archive.php Archive/Predicate.php Archive/Reader.php \
 		Archive/Predicate/Not.php Archive/Predicate/Or.php \
 		Archive/Predicate/True.php Archive/Reader/Ar.php \
 		Archive/Reader/Archive.php Archive/Reader/Bzip2.php \
-		Archive/Reader/ChangeName.php Archive/Reader/Concat.php \
-		Archive/Reader/Directory.php Archive/Reader/File.php \
-		Archive/Reader/Filter.php Archive/Reader/Gzip.php \
-		Archive/Reader/Memory.php Archive/Reader/MimeList.php \
-		Archive/Reader/Multi.php Archive/Reader/Relay.php \
-		Archive/Reader/Select.php Archive/Reader/Tar.php \
-		Archive/Reader/Uncompress.php Archive/Reader/Zip.php \
-		Archive/Writer/AddBaseName.php Archive/Writer/Ar.php \
-		Archive/Writer/Archive.php Archive/Writer/Bzip2.php \
-		Archive/Writer/Files.php Archive/Writer/Gzip.php \
-		Archive/Writer/Mail.php Archive/Writer/Memory.php \
-		Archive/Writer/MemoryArchive.php Archive/Writer/Multi.php \
-		Archive/Writer/Output.php Archive/Writer/Tar.php \
-		Archive/Writer/UniqueAppender.php Archive/Writer/Zip.php
+		Archive/Reader/Cache.php Archive/Reader/ChangeName.php \
+		Archive/Reader/Concat.php Archive/Reader/Directory.php \
+		Archive/Reader/File.php Archive/Reader/Filter.php \
+		Archive/Reader/Gzip.php Archive/Reader/Memory.php \
+		Archive/Reader/MimeList.php Archive/Reader/Multi.php \
+		Archive/Reader/Relay.php Archive/Reader/Select.php \
+		Archive/Reader/Tar.php Archive/Reader/Uncompress.php \
+		Archive/Reader/Zip.php Archive/Writer/AddBaseName.php \
+		Archive/Writer/Ar.php Archive/Writer/Archive.php \
+		Archive/Writer/Bzip2.php Archive/Writer/Files.php \
+		Archive/Writer/Gzip.php Archive/Writer/Mail.php \
+		Archive/Writer/Memory.php Archive/Writer/MemoryArchive.php \
+		Archive/Writer/Multi.php Archive/Writer/Output.php \
+		Archive/Writer/Tar.php Archive/Writer/UniqueAppender.php \
+		Archive/Writer/Zip.php
 DOCS=		readme.txt
 TESTS=		test.php
 _DOCSDIR=	doc
