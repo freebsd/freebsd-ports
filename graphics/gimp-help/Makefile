@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gimp-help
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		http://gimp.mirrors.hoobly.com/%SUBDIR%/ \
