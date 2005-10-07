@@ -64,6 +64,7 @@
     SUBDIR += envelope
     SUBDIR += epsmerge
     SUBDIR += epsonepl
+    SUBDIR += es-acroread
     SUBDIR += flpsed
     SUBDIR += font2svg
     SUBDIR += fontforge
