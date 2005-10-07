@@ -1,270 +1,273 @@
-web2ldap/AUTHORS
-web2ldap/INSTALL
-web2ldap/README
-web2ldap/cgi-bin/web2ldap.cgi
-web2ldap/htdocs/ssi/footer.html
-web2ldap/htdocs/ssi/head.html
-web2ldap/htdocs/ssi/navigation.html
-web2ldap/htdocs/ssi/changes_navigation.html
-web2ldap/htdocs/sidebars/mozilla-add-sidebar.html
-web2ldap/htdocs/sidebars/mozilla-sidebar.html
-web2ldap/htdocs/css/web2ldap/default.css
-web2ldap/htdocs/css/web2ldap/fixed.css
-web2ldap/htdocs/css/web2ldap/commandlink.css
-web2ldap/htdocs/css/web2ldap/print.css
-web2ldap/htdocs/changes.html
-web2ldap/htdocs/changes-0.10.html
-web2ldap/htdocs/changes-0.11.html
-web2ldap/htdocs/changes-0.12.html
-web2ldap/htdocs/changes-0.13.html
-web2ldap/htdocs/changes-0.14.html
-web2ldap/htdocs/changes-0.15.html
-web2ldap/htdocs/changes-0.7.html
-web2ldap/htdocs/changes-0.8.html
-web2ldap/htdocs/changes-0.9.html
-web2ldap/htdocs/changes-ancient.html
-web2ldap/htdocs/demo.html
-web2ldap/htdocs/docs.html
-web2ldap/htdocs/download.html
-web2ldap/htdocs/faq.html
-web2ldap/htdocs/features.html
-web2ldap/htdocs/feedback.html
-web2ldap/htdocs/files.html
-web2ldap/htdocs/install.html
-web2ldap/htdocs/news.html
-web2ldap/htdocs/roadmap.html
-web2ldap/htdocs/security.html
-web2ldap/htdocs/support.html
-web2ldap/htdocs/web2ldap.html
-web2ldap/htdocs/web2ldapcnf.html
-web2ldap/htdocs/web2ldapcnf_fastcgi.html
-web2ldap/htdocs/web2ldapcnf_hosts.html
-web2ldap/htdocs/web2ldapcnf_misc.html
-web2ldap/htdocs/web2ldapcnf_scgi.html
-web2ldap/htdocs/web2ldapcnf_standalone.html
-web2ldap/htdocs/related.html
-web2ldap/htdocs/compability.html
-web2ldap/etc/httpd/sample-mod_fastcgi.conf
-web2ldap/etc/httpd/sample-mod_scgi.conf
-web2ldap/etc/init.d/web2ldap
-web2ldap/etc/web2ldap/web2ldapcnf/plugins/samba.py
-web2ldap/etc/web2ldap/web2ldapcnf/plugins/msperson.py
-web2ldap/etc/web2ldap/web2ldapcnf/plugins/edirectory.py
-web2ldap/etc/web2ldap/web2ldapcnf/plugins/exchange.py
-web2ldap/etc/web2ldap/web2ldapcnf/plugins/posixaccount.py
-web2ldap/etc/web2ldap/web2ldapcnf/plugins/activedirectory.py
-web2ldap/etc/web2ldap/web2ldapcnf/plugins/__init__.py
-web2ldap/etc/web2ldap/web2ldapcnf/plugins/entrust.py
-web2ldap/etc/web2ldap/web2ldapcnf/plugins/samba.pyc
-web2ldap/etc/web2ldap/web2ldapcnf/plugins/msperson.pyc
-web2ldap/etc/web2ldap/web2ldapcnf/plugins/edirectory.pyc
-web2ldap/etc/web2ldap/web2ldapcnf/plugins/exchange.pyc
-web2ldap/etc/web2ldap/web2ldapcnf/plugins/posixaccount.pyc
-web2ldap/etc/web2ldap/web2ldapcnf/plugins/activedirectory.pyc
-web2ldap/etc/web2ldap/web2ldapcnf/plugins/__init__.pyc
-web2ldap/etc/web2ldap/web2ldapcnf/plugins/entrust.pyc
-web2ldap/etc/web2ldap/web2ldapcnf/plugins/ppolicy.py
-web2ldap/etc/web2ldap/web2ldapcnf/plugins/ppolicy.pyc
-web2ldap/etc/web2ldap/web2ldapcnf/standalone.py
-web2ldap/etc/web2ldap/web2ldapcnf/fastcgi.py
-web2ldap/etc/web2ldap/web2ldapcnf/hosts.py
-web2ldap/etc/web2ldap/web2ldapcnf/misc.py
-web2ldap/etc/web2ldap/web2ldapcnf/scgi.py
-web2ldap/etc/web2ldap/web2ldapcnf/standalone.pyc
-web2ldap/etc/web2ldap/web2ldapcnf/__init__.pyc
-web2ldap/etc/web2ldap/web2ldapcnf/fastcgi.pyc
-web2ldap/etc/web2ldap/web2ldapcnf/hosts.pyc
-web2ldap/etc/web2ldap/web2ldapcnf/misc.pyc
-web2ldap/etc/web2ldap/web2ldapcnf/scgi.pyc
-web2ldap/etc/web2ldap/web2ldapcnf/__init__.py
-web2ldap/etc/web2ldap/web2ldapcnf/countries.py
-web2ldap/etc/web2ldap/web2ldapcnf/countries.pyc
-web2ldap/etc/web2ldap/web2ldapcnf/plugins/openldap.py
-web2ldap/etc/web2ldap/web2ldapcnf/plugins/openldap.pyc
-web2ldap/etc/web2ldap/templates/print_organization.html
-web2ldap/etc/web2ldap/templates/read_organization.html
-web2ldap/etc/web2ldap/templates/vcard_organization.txt
-web2ldap/etc/web2ldap/templates/add_company.ldif
-web2ldap/etc/web2ldap/templates/read_inetOrgPerson.html.de
-web2ldap/etc/web2ldap/templates/read_posixAccount.html
-web2ldap/etc/web2ldap/templates/searchform_Base.html.de
-web2ldap/etc/web2ldap/templates/read_musician.html.de
-web2ldap/etc/web2ldap/templates/add_user.ldif
-web2ldap/etc/web2ldap/templates/vcard_person.txt
-web2ldap/etc/web2ldap/templates/inputform_inetOrgPerson.html
-web2ldap/etc/web2ldap/templates/searchform_rfc2307.html
-web2ldap/etc/web2ldap/templates/add_group.ldif
-web2ldap/etc/web2ldap/templates/print_organizationalUnit.html
-web2ldap/etc/web2ldap/templates/read_inetOrgPerson.html
-web2ldap/etc/web2ldap/templates/login.html
-web2ldap/etc/web2ldap/templates/read_musician.html
-web2ldap/etc/web2ldap/templates/read_operationalattrs.html.de
-web2ldap/etc/web2ldap/templates/print_person.html
-web2ldap/etc/web2ldap/templates/searchform_Base.html
-web2ldap/etc/web2ldap/templates/inputform_msPerson.html
-web2ldap/etc/web2ldap/templates/read_operationalattrs.html
-web2ldap/etc/web2ldap/templates/add_orgunit.ldif
-web2ldap/etc/web2ldap/templates/add_msperson.ldif
-web2ldap/etc/web2ldap/templates/read_bankArrangement.html
-web2ldap/etc/web2ldap/templates/inputform_posixAccount.html
-web2ldap/etc/web2ldap/templates/add_person.ldif
-web2ldap/etc/web2ldap/ldapoidreg.py
-web2ldap/etc/web2ldap/ldapoidreg.pyc
-web2ldap/etc/web2ldap/localschema.ldif
-web2ldap/etc/web2ldap/templates/add_olcBdbConfig_AddressBook.ldif
-web2ldap/etc/web2ldap/templates/add_olcHdbConfig_UnixUsers.ldif
-web2ldap/etc/web2ldap/templates/add_olcSchemaConfig.ldif
-web2ldap/etc/web2ldap/templates/inputform_olcBdbConfig.html
-web2ldap/fcgi/web2ldap.py
-web2ldap/fcgi/web2ldap.pyc
-web2ldap/pylib/mspki/x509v3.pyc
-web2ldap/pylib/mspki/asn1helper.py
-web2ldap/pylib/mspki/asn1types.py
-web2ldap/pylib/mspki/nsext.py
-web2ldap/pylib/mspki/pkix.py
-web2ldap/pylib/mspki/utctime.py
-web2ldap/pylib/mspki/util.py
-web2ldap/pylib/mspki/vendorext.py
-web2ldap/pylib/mspki/x500.py
-web2ldap/pylib/mspki/x509.py
-web2ldap/pylib/mspki/x509v3.py
-web2ldap/pylib/mspki/__init__.pyc
-web2ldap/pylib/mspki/asn1helper.pyc
-web2ldap/pylib/mspki/asn1types.pyc
-web2ldap/pylib/mspki/nsext.pyc
-web2ldap/pylib/mspki/pkix.pyc
-web2ldap/pylib/mspki/utctime.pyc
-web2ldap/pylib/mspki/util.pyc
-web2ldap/pylib/mspki/vendorext.pyc
-web2ldap/pylib/mspki/x500.pyc
-web2ldap/pylib/mspki/x509.pyc
-web2ldap/pylib/mspki/__init__.py
-web2ldap/pylib/pisces/LICENSE
-web2ldap/pylib/pisces/PATCHES
-web2ldap/pylib/pisces/__init__.py
-web2ldap/pylib/pisces/asn1.py
-web2ldap/pylib/pisces/__init__.pyc
-web2ldap/pylib/pisces/asn1.pyc
-web2ldap/pylib/w2lapp/schema/syntaxes.py
-web2ldap/pylib/w2lapp/schema/viewer.py
-web2ldap/pylib/w2lapp/schema/__init__.py
-web2ldap/pylib/w2lapp/schema/syntaxes.pyc
-web2ldap/pylib/w2lapp/schema/viewer.pyc
-web2ldap/pylib/w2lapp/schema/__init__.pyc
-web2ldap/pylib/w2lapp/viewer.pyc
-web2ldap/pylib/w2lapp/add.py
-web2ldap/pylib/w2lapp/addmodifyform.py
-web2ldap/pylib/w2lapp/cnf.py
-web2ldap/pylib/w2lapp/connect.py
-web2ldap/pylib/w2lapp/conninfo.py
-web2ldap/pylib/w2lapp/core.py
-web2ldap/pylib/w2lapp/delete.py
-web2ldap/pylib/w2lapp/groupadm.py
-web2ldap/pylib/w2lapp/gui.py
-web2ldap/pylib/w2lapp/handler.py
-web2ldap/pylib/w2lapp/locate.py
-web2ldap/pylib/w2lapp/login.py
-web2ldap/pylib/w2lapp/modify.py
-web2ldap/pylib/w2lapp/monitor.py
-web2ldap/pylib/w2lapp/passwd.py
-web2ldap/pylib/w2lapp/read.py
-web2ldap/pylib/w2lapp/referral.py
-web2ldap/pylib/w2lapp/rename.py
-web2ldap/pylib/w2lapp/search.py
-web2ldap/pylib/w2lapp/searchform.py
-web2ldap/pylib/w2lapp/viewer.py
-web2ldap/pylib/w2lapp/form.py
-web2ldap/pylib/w2lapp/srvrr.py
-web2ldap/pylib/w2lapp/session.py
-web2ldap/pylib/w2lapp/__init__.pyc
-web2ldap/pylib/w2lapp/add.pyc
-web2ldap/pylib/w2lapp/cnf.pyc
-web2ldap/pylib/w2lapp/addmodifyform.pyc
-web2ldap/pylib/w2lapp/connect.pyc
-web2ldap/pylib/w2lapp/conninfo.pyc
-web2ldap/pylib/w2lapp/core.pyc
-web2ldap/pylib/w2lapp/delete.pyc
-web2ldap/pylib/w2lapp/groupadm.pyc
-web2ldap/pylib/w2lapp/gui.pyc
-web2ldap/pylib/w2lapp/handler.pyc
-web2ldap/pylib/w2lapp/locate.pyc
-web2ldap/pylib/w2lapp/login.pyc
-web2ldap/pylib/w2lapp/modify.pyc
-web2ldap/pylib/w2lapp/monitor.pyc
-web2ldap/pylib/w2lapp/passwd.pyc
-web2ldap/pylib/w2lapp/read.pyc
-web2ldap/pylib/w2lapp/referral.pyc
-web2ldap/pylib/w2lapp/rename.pyc
-web2ldap/pylib/w2lapp/search.pyc
-web2ldap/pylib/w2lapp/searchform.pyc
-web2ldap/pylib/w2lapp/form.pyc
-web2ldap/pylib/w2lapp/srvrr.pyc
-web2ldap/pylib/w2lapp/session.pyc
-web2ldap/pylib/w2lapp/__init__.py
-web2ldap/pylib/ldaputil/__init__.py
-web2ldap/pylib/ldaputil/base.py
-web2ldap/pylib/ldaputil/passwd.py
-web2ldap/pylib/ldaputil/modlist2.py
-web2ldap/pylib/ldaputil/__init__.pyc
-web2ldap/pylib/ldaputil/base.pyc
-web2ldap/pylib/ldaputil/passwd.pyc
-web2ldap/pylib/ldaputil/modlist2.pyc
-web2ldap/pylib/msHTTPHandler.py
-web2ldap/pylib/msHTTPServer.py
-web2ldap/pylib/msbase.py
-web2ldap/pylib/msgzip.py
-web2ldap/pylib/utctime.py
-web2ldap/pylib/ipadr.pyc
-web2ldap/pylib/ldapdns.pyc
-web2ldap/pylib/ldapsession.pyc
-web2ldap/pylib/msHTTPHandler.pyc
-web2ldap/pylib/msHTTPServer.pyc
-web2ldap/pylib/msbase.pyc
-web2ldap/pylib/msgzip.pyc
-web2ldap/pylib/utctime.pyc
-web2ldap/pylib/ipadr.py
-web2ldap/pylib/ldapdns.py
-web2ldap/pylib/ldapsession.py
-web2ldap/pylib/t61_7.py
-web2ldap/pylib/t61_8.py
-web2ldap/pylib/mssignals.py
-web2ldap/pylib/t61_7.pyc
-web2ldap/pylib/t61_8.pyc
-web2ldap/pylib/mssignals.pyc
-web2ldap/sbin/web2ldap.pyc
-web2ldap/sbin/web2ldap.py
-web2ldap/sbin/compile.pyc
-web2ldap/sbin/compile.py
-web2ldap/sbin/checkinst.py
-web2ldap/sbin/checkinst.pyc
-web2ldap/scgi/web2ldap.py
-web2ldap/scgi/web2ldap.pyc
-web2ldap/web2ldap.spec
-@exec mkdir -p /var/log/web2ldap %B/var/log %B/var/run
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/ssi/footer.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/ssi/head.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/ssi/navigation.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/ssi/changes_navigation.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/sidebars/mozilla-add-sidebar.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/sidebars/mozilla-sidebar.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/default.css
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/fixed.css
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/commandlink.css
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/print.css
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.10.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.11.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.12.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.13.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.14.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.15.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.7.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.8.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.9.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-ancient.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/demo.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/docs.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/download.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/features.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/feedback.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/files.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/install.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/news.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/roadmap.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/security.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/support.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldap.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_fastcgi.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_hosts.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_misc.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_scgi.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_standalone.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/related.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/compability.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/ssi
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/sidebars
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/css/web2ldap
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DATADIR%%/etc/httpd/sample-mod_fastcgi.conf
+%%DATADIR%%/etc/httpd/sample-mod_scgi.conf
+%%DATADIR%%/etc/init.d/web2ldap
+%%DATADIR%%/AUTHORS
+%%DATADIR%%/INSTALL
+%%DATADIR%%/README
+%%DATADIR%%/CHANGES
+%%DATADIR%%/cgi-bin/web2ldap.cgi
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/samba.py
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/msperson.py
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/edirectory.py
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/exchange.py
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/posixaccount.py
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/activedirectory.py
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/__init__.py
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/entrust.py
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/samba.pyc
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/msperson.pyc
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/edirectory.pyc
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/exchange.pyc
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/posixaccount.pyc
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/activedirectory.pyc
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/__init__.pyc
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/entrust.pyc
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/ppolicy.py
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/ppolicy.pyc
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/standalone.py
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/fastcgi.py
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/hosts.py
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/misc.py
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/scgi.py
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/standalone.pyc
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/__init__.pyc
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/fastcgi.pyc
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/hosts.pyc
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/misc.pyc
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/scgi.pyc
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/__init__.py
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/countries.py
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/countries.pyc
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/openldap.py
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/openldap.pyc
+%%DATADIR%%/etc/web2ldap/templates/print_organization.html
+%%DATADIR%%/etc/web2ldap/templates/read_organization.html
+%%DATADIR%%/etc/web2ldap/templates/vcard_organization.txt
+%%DATADIR%%/etc/web2ldap/templates/add_company.ldif
+%%DATADIR%%/etc/web2ldap/templates/read_inetOrgPerson.html.de
+%%DATADIR%%/etc/web2ldap/templates/read_posixAccount.html
+%%DATADIR%%/etc/web2ldap/templates/searchform_Base.html.de
+%%DATADIR%%/etc/web2ldap/templates/read_musician.html.de
+%%DATADIR%%/etc/web2ldap/templates/add_user.ldif
+%%DATADIR%%/etc/web2ldap/templates/vcard_person.txt
+%%DATADIR%%/etc/web2ldap/templates/inputform_inetOrgPerson.html
+%%DATADIR%%/etc/web2ldap/templates/searchform_rfc2307.html
+%%DATADIR%%/etc/web2ldap/templates/add_group.ldif
+%%DATADIR%%/etc/web2ldap/templates/print_organizationalUnit.html
+%%DATADIR%%/etc/web2ldap/templates/read_inetOrgPerson.html
+%%DATADIR%%/etc/web2ldap/templates/login.html
+%%DATADIR%%/etc/web2ldap/templates/read_musician.html
+%%DATADIR%%/etc/web2ldap/templates/read_operationalattrs.html.de
+%%DATADIR%%/etc/web2ldap/templates/print_person.html
+%%DATADIR%%/etc/web2ldap/templates/searchform_Base.html
+%%DATADIR%%/etc/web2ldap/templates/inputform_msPerson.html
+%%DATADIR%%/etc/web2ldap/templates/read_operationalattrs.html
+%%DATADIR%%/etc/web2ldap/templates/add_orgunit.ldif
+%%DATADIR%%/etc/web2ldap/templates/add_msperson.ldif
+%%DATADIR%%/etc/web2ldap/templates/read_bankArrangement.html
+%%DATADIR%%/etc/web2ldap/templates/inputform_posixAccount.html
+%%DATADIR%%/etc/web2ldap/templates/add_person.ldif
+%%DATADIR%%/etc/web2ldap/ldapoidreg.py
+%%DATADIR%%/etc/web2ldap/ldapoidreg.pyc
+%%DATADIR%%/etc/web2ldap/localschema.ldif
+%%DATADIR%%/etc/web2ldap/templates/add_olcBdbConfig_AddressBook.ldif
+%%DATADIR%%/etc/web2ldap/templates/add_olcHdbConfig_UnixUsers.ldif
+%%DATADIR%%/etc/web2ldap/templates/add_olcSchemaConfig.ldif
+%%DATADIR%%/etc/web2ldap/templates/inputform_olcBdbConfig.html
+%%DATADIR%%/etc/dumpasn1.cfg
+%%DATADIR%%/fcgi/web2ldap.py
+%%DATADIR%%/fcgi/web2ldap.pyc
+%%DATADIR%%/pylib/mspki/x509v3.pyc
+%%DATADIR%%/pylib/mspki/asn1helper.py
+%%DATADIR%%/pylib/mspki/asn1types.py
+%%DATADIR%%/pylib/mspki/nsext.py
+%%DATADIR%%/pylib/mspki/pkix.py
+%%DATADIR%%/pylib/mspki/utctime.py
+%%DATADIR%%/pylib/mspki/util.py
+%%DATADIR%%/pylib/mspki/vendorext.py
+%%DATADIR%%/pylib/mspki/x500.py
+%%DATADIR%%/pylib/mspki/x509.py
+%%DATADIR%%/pylib/mspki/x509v3.py
+%%DATADIR%%/pylib/mspki/__init__.pyc
+%%DATADIR%%/pylib/mspki/asn1helper.pyc
+%%DATADIR%%/pylib/mspki/asn1types.pyc
+%%DATADIR%%/pylib/mspki/nsext.pyc
+%%DATADIR%%/pylib/mspki/pkix.pyc
+%%DATADIR%%/pylib/mspki/utctime.pyc
+%%DATADIR%%/pylib/mspki/util.pyc
+%%DATADIR%%/pylib/mspki/vendorext.pyc
+%%DATADIR%%/pylib/mspki/x500.pyc
+%%DATADIR%%/pylib/mspki/x509.pyc
+%%DATADIR%%/pylib/mspki/__init__.py
+%%DATADIR%%/pylib/pisces/LICENSE
+%%DATADIR%%/pylib/pisces/PATCHES
+%%DATADIR%%/pylib/pisces/__init__.py
+%%DATADIR%%/pylib/pisces/asn1.py
+%%DATADIR%%/pylib/pisces/__init__.pyc
+%%DATADIR%%/pylib/pisces/asn1.pyc
+%%DATADIR%%/pylib/w2lapp/schema/syntaxes.py
+%%DATADIR%%/pylib/w2lapp/schema/viewer.py
+%%DATADIR%%/pylib/w2lapp/schema/__init__.py
+%%DATADIR%%/pylib/w2lapp/schema/syntaxes.pyc
+%%DATADIR%%/pylib/w2lapp/schema/viewer.pyc
+%%DATADIR%%/pylib/w2lapp/schema/__init__.pyc
+%%DATADIR%%/pylib/w2lapp/viewer.pyc
+%%DATADIR%%/pylib/w2lapp/add.py
+%%DATADIR%%/pylib/w2lapp/addmodifyform.py
+%%DATADIR%%/pylib/w2lapp/cnf.py
+%%DATADIR%%/pylib/w2lapp/connect.py
+%%DATADIR%%/pylib/w2lapp/conninfo.py
+%%DATADIR%%/pylib/w2lapp/core.py
+%%DATADIR%%/pylib/w2lapp/delete.py
+%%DATADIR%%/pylib/w2lapp/groupadm.py
+%%DATADIR%%/pylib/w2lapp/gui.py
+%%DATADIR%%/pylib/w2lapp/handler.py
+%%DATADIR%%/pylib/w2lapp/locate.py
+%%DATADIR%%/pylib/w2lapp/login.py
+%%DATADIR%%/pylib/w2lapp/modify.py
+%%DATADIR%%/pylib/w2lapp/monitor.py
+%%DATADIR%%/pylib/w2lapp/passwd.py
+%%DATADIR%%/pylib/w2lapp/read.py
+%%DATADIR%%/pylib/w2lapp/referral.py
+%%DATADIR%%/pylib/w2lapp/rename.py
+%%DATADIR%%/pylib/w2lapp/search.py
+%%DATADIR%%/pylib/w2lapp/searchform.py
+%%DATADIR%%/pylib/w2lapp/viewer.py
+%%DATADIR%%/pylib/w2lapp/form.py
+%%DATADIR%%/pylib/w2lapp/srvrr.py
+%%DATADIR%%/pylib/w2lapp/session.py
+%%DATADIR%%/pylib/w2lapp/__init__.pyc
+%%DATADIR%%/pylib/w2lapp/add.pyc
+%%DATADIR%%/pylib/w2lapp/cnf.pyc
+%%DATADIR%%/pylib/w2lapp/addmodifyform.pyc
+%%DATADIR%%/pylib/w2lapp/connect.pyc
+%%DATADIR%%/pylib/w2lapp/conninfo.pyc
+%%DATADIR%%/pylib/w2lapp/core.pyc
+%%DATADIR%%/pylib/w2lapp/delete.pyc
+%%DATADIR%%/pylib/w2lapp/groupadm.pyc
+%%DATADIR%%/pylib/w2lapp/gui.pyc
+%%DATADIR%%/pylib/w2lapp/handler.pyc
+%%DATADIR%%/pylib/w2lapp/locate.pyc
+%%DATADIR%%/pylib/w2lapp/login.pyc
+%%DATADIR%%/pylib/w2lapp/modify.pyc
+%%DATADIR%%/pylib/w2lapp/monitor.pyc
+%%DATADIR%%/pylib/w2lapp/passwd.pyc
+%%DATADIR%%/pylib/w2lapp/read.pyc
+%%DATADIR%%/pylib/w2lapp/referral.pyc
+%%DATADIR%%/pylib/w2lapp/rename.pyc
+%%DATADIR%%/pylib/w2lapp/search.pyc
+%%DATADIR%%/pylib/w2lapp/searchform.pyc
+%%DATADIR%%/pylib/w2lapp/form.pyc
+%%DATADIR%%/pylib/w2lapp/srvrr.pyc
+%%DATADIR%%/pylib/w2lapp/session.pyc
+%%DATADIR%%/pylib/w2lapp/__init__.py
+%%DATADIR%%/pylib/ldaputil/__init__.py
+%%DATADIR%%/pylib/ldaputil/base.py
+%%DATADIR%%/pylib/ldaputil/passwd.py
+%%DATADIR%%/pylib/ldaputil/modlist2.py
+%%DATADIR%%/pylib/ldaputil/__init__.pyc
+%%DATADIR%%/pylib/ldaputil/base.pyc
+%%DATADIR%%/pylib/ldaputil/passwd.pyc
+%%DATADIR%%/pylib/ldaputil/modlist2.pyc
+%%DATADIR%%/pylib/msHTTPHandler.py
+%%DATADIR%%/pylib/msHTTPServer.py
+%%DATADIR%%/pylib/msbase.py
+%%DATADIR%%/pylib/msgzip.py
+%%DATADIR%%/pylib/utctime.py
+%%DATADIR%%/pylib/ipadr.pyc
+%%DATADIR%%/pylib/ldapdns.pyc
+%%DATADIR%%/pylib/ldapsession.pyc
+%%DATADIR%%/pylib/msHTTPHandler.pyc
+%%DATADIR%%/pylib/msHTTPServer.pyc
+%%DATADIR%%/pylib/msbase.pyc
+%%DATADIR%%/pylib/msgzip.pyc
+%%DATADIR%%/pylib/utctime.pyc
+%%DATADIR%%/pylib/ipadr.py
+%%DATADIR%%/pylib/ldapdns.py
+%%DATADIR%%/pylib/ldapsession.py
+%%DATADIR%%/pylib/t61_7.py
+%%DATADIR%%/pylib/t61_8.py
+%%DATADIR%%/pylib/mssignals.py
+%%DATADIR%%/pylib/t61_7.pyc
+%%DATADIR%%/pylib/t61_8.pyc
+%%DATADIR%%/pylib/mssignals.pyc
+%%DATADIR%%/sbin/web2ldap.pyc
+%%DATADIR%%/sbin/web2ldap.py
+%%DATADIR%%/sbin/compile.pyc
+%%DATADIR%%/sbin/compile.py
+%%DATADIR%%/sbin/checkinst.py
+%%DATADIR%%/sbin/checkinst.pyc
+%%DATADIR%%/scgi/web2ldap.py
+%%DATADIR%%/scgi/web2ldap.pyc
+%%DATADIR%%/web2ldap.spec
+@exec mkdir -p /var/log/web2ldap
 @unexec rmdir /var/log/web2ldap 2>/dev/null || true
-@dirrm web2ldap/var/run
-@dirrm web2ldap/var/log
-@dirrm web2ldap/var
-@dirrm web2ldap/scgi
-@dirrm web2ldap/sbin
-@dirrm web2ldap/pylib/w2lapp/schema
-@dirrm web2ldap/pylib/w2lapp
-@dirrm web2ldap/pylib/pisces
-@dirrm web2ldap/pylib/mspki
-@dirrm web2ldap/pylib/ldaputil
-@dirrm web2ldap/pylib
-@dirrm web2ldap/htdocs/ssi
-@dirrm web2ldap/htdocs/sidebars
-@dirrm web2ldap/htdocs/css/web2ldap
-@dirrm web2ldap/htdocs/css
-@dirrm web2ldap/htdocs
-@dirrm web2ldap/fcgi
-@dirrm web2ldap/etc/web2ldap/web2ldapcnf/plugins
-@dirrm web2ldap/etc/web2ldap/web2ldapcnf
-@dirrm web2ldap/etc/web2ldap/templates
-@dirrm web2ldap/etc/web2ldap
-@dirrm web2ldap/etc/init.d
-@dirrm web2ldap/etc/httpd
-@dirrm web2ldap/etc
-@dirrm web2ldap/cgi-bin
-@dirrm web2ldap
+@dirrm %%DATADIR%%/var/run
+@dirrm %%DATADIR%%/var/log
+@dirrm %%DATADIR%%/var
+@dirrm %%DATADIR%%/scgi
+@dirrm %%DATADIR%%/sbin
+@dirrm %%DATADIR%%/pylib/w2lapp/schema
+@dirrm %%DATADIR%%/pylib/w2lapp
+@dirrm %%DATADIR%%/pylib/pisces
+@dirrm %%DATADIR%%/pylib/mspki
+@dirrm %%DATADIR%%/pylib/ldaputil
+@dirrm %%DATADIR%%/pylib
+@dirrm %%DATADIR%%/fcgi
+@dirrm %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins
+@dirrm %%DATADIR%%/etc/web2ldap/web2ldapcnf
+@dirrm %%DATADIR%%/etc/web2ldap/templates
+@dirrm %%DATADIR%%/etc/web2ldap
+@dirrm %%DATADIR%%/etc/init.d
+@dirrm %%DATADIR%%/etc/httpd
+@dirrm %%DATADIR%%/etc
+@dirrm %%DATADIR%%/cgi-bin
+@dirrm %%DATADIR%%

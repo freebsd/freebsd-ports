@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	web2ldap
-PORTVERSION=	0.15.12
+PORTVERSION=	0.15.19
 CATEGORIES=	www
-MASTER_SITES=	http://www.web2ldap.de/download/ \
-		http://www.tricknology.org/ports/
+MASTER_SITES=	http://www.web2ldap.de/download/
 
 MAINTAINER=	bsam@ipt.ru
 COMMENT=	Python-based WWW gateway to LDAP servers
@@ -31,15 +30,22 @@ do-build:
 	@(cd ${WRKSRC} && ${PYTHON_CMD} ./sbin/compile.py)
 
 do-install:
-	@${MKDIR} ${PREFIX}/${PORTNAME}
 	@${RM} -f ${WRKSRC}/fcgi/web2ldap.py.orig
 	@${RM} -f ${WRKSRC}/scgi/web2ldap.py.orig
 	@${RM} -f ${WRKSRC}/etc/web2ldap/web2ldapcnf/standalone.py.orig
 	@${RM} -f ${WRKSRC}/etc/web2ldap/web2ldapcnf/standalone.py.bak
 	@${RM} -f ${WRKSRC}/sbin/compile.py.orig
 	@${RM} -f ${WRKSRC}/sbin/web2ldap.py.orig
-	@${CP} -r ${WRKSRC}/ ${PREFIX}/${PORTNAME}
+	@${ECHO} "Installing program files..."
+	@cd ${WRKSRC}; \
+	${FIND} * -type f | ${GREP} -vE "^htdocs" | ${CPIO} -pd ${DATADIR}
+	@${MKDIR} ${DATADIR}/var ${DATADIR}/var/run ${DATADIR}/var/log
 	@if [ -w /var/log ]; then ${MKDIR} /var/log/web2ldap; fi
+.if !defined(NOPORTDOCS)
+	@${ECHO} "Installing document files..."
+	@cd ${WRKSRC}; \
+	${FIND} * -type f | ${GREP} "^htdocs" | ${CPIO} -pd ${DOCSDIR}
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
