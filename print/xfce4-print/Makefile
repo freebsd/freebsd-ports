@@ -11,7 +11,7 @@ PORTREVISION=	0
 CATEGORIES=	print xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		http://public.fh-wolfenbuettel.de/~luedickj/xfce4/xfce-${PORTVERSION}/ \
+		http://public.fh-wolfenbuettel.de/~luedickj/xfce4/xfce-${PORTVERSION}/src/ \
 		http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-${PORTVERSION}/src/
 DISTNAME=	xfprint-${PORTVERSION}
 DIST_SUBDIR=	xfce4
