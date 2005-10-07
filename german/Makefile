@@ -4,6 +4,7 @@
     COMMENT = German support
 
     SUBDIR += BBBike
+    SUBDIR += acroread
     SUBDIR += aspell
     SUBDIR += citrix_ica
     SUBDIR += dict

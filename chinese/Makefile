@@ -8,6 +8,8 @@
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
     SUBDIR += MT
+    SUBDIR += acroread-zh_CN
+    SUBDIR += acroread-zh_TW
     SUBDIR += acroread5-chsfont
     SUBDIR += acroread5-chtfont
     SUBDIR += arnettf
