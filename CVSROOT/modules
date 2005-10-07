@@ -12470,6 +12470,7 @@ vsftpd		ports/ftp/vsftpd
 vshnu		ports/shells/vshnu
 vsound		ports/audio/vsound
 vstr		ports/devel/vstr
+vstream-client	ports/multimedia/vstream-client
 vtcl		ports/devel/vtcl
 vte		ports/x11-toolkits/vte
 vtiger		ports/www/vtiger
