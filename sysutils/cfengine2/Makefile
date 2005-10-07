@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cfengine
-PORTVERSION=	2.1.15
+PORTVERSION=	2.1.16
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.iu.hio.no/pub/cfengine/ \
 		${MASTER_SITE_GNU}
@@ -16,13 +16,18 @@ MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	A systems administration tool for networks
 
 USE_OPENSSL=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-berkeleydb=${LOCALBASE} --with-docs
-USE_REINPLACE=	yes
 
+.if !defined(NOPORTDOCS)
 INFO=		cfengine-Anomalies cfengine-Reference cfengine-Tutorial
-MAN8=		cfengine.8 cfagent.8 cfenvd.8 cfenvgraph.8 cfexecd.8 cfkey.8 \
+.endif
+
+MAN8=		cfagent.8 cfengine.8 cfenvd.8 cfenvgraph.8 cfetoolcheck.8 \
+		cfetoolcreate.8 cfetooldump.8 cfetoolgraph.8 cfetoolimport.8 \
+		cfetoolinfo.8 cfetoolupdate.8 cfexecd.8 cfkey.8 \
 		cfrun.8 cfservd.8 cfshow.8
 
 WITH_BDB_VER?=	42
