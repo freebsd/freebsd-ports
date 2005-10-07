@@ -8,7 +8,8 @@
 PORTNAME=	jikes
 PORTVERSION=	1.22
 CATEGORIES=	java
-MASTER_SITES=	ftp://www-126.ibm.com/pub/jikes/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=jikes/
 
 MAINTAINER=	archie@freebsd.org
 COMMENT=	A very fast Java source to byte-code compiler made available by IBM
