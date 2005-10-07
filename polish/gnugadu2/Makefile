@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnugadu2
-PORTVERSION=	2.2.5
+PORTVERSION=	2.2.8
 CATEGORIES=	polish net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggadu
@@ -30,13 +30,33 @@ WANT_GNOME=	yes
 CONFLICTS=	qhacc-[0-9]*
 
 CONFIGURE_ARGS=	\
+		--disable-esdtest \
 		--with-external-libgadu \
 		--with-static=no \
+		--with-aaway \
+		--with-external \
+		--with-gghist \
+		--with-gui \
+		--with-ignore \
+		--with-oss \
+		--with-sms \
+		--with-update \
 		--without-dbus \
+		--without-gnutls \
+		--without-perl \
 		--without-remote
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+OPTIONS=	TLEN	"Enable Tlen.pl network plugin"	off \
+		JABBER	"Enable Jabber loudmouth plugin"	off \
+		DOCKLET	"Enable fd.o docklet plugin"	on \
+		DOCKAPP	"Enable WindowMaker dockapp plugin"	off \
+		GTKSPELL	"Enable GTKSpell checker"	off \
+		XOSD	"Enable On-Screen-Display messages"	off \
+		ARTS	"Build with aRts sound server"	off \
+		ESOUND	"Build with esound sound server"	off
 
 .include <bsd.port.pre.mk>
 
@@ -44,65 +64,92 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 WITH_ESOUND=	yes
 .endif
 
-.if !defined(WITH_GTKSPELL)
-CONFIGURE_ARGS+=	--without-gtkspell
-.else
-LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
+# does not work with newer dbus versions
+#.if exists(${LOCALBASE}/lib/libdbus-1.so)
+#WITH_DBUS=	yes
+#.endif
+
+.if exists(${X11BASE}/lib/libgtkspell.so)
+WITH_GTKSPELL=	yes
 .endif
 
-.if !defined(WITH_DOCKLET)
+.if defined(WITH_TLEN)
+LIB_DEPENDS+=	tlen.1:${PORTSDIR}/polish/libtlen
+CONFIGURE_ARGS+=	--with-tlen
+PLIST_SUB+=	TLEN:=""
+.else
+CONFIGURE_ARGS+=	--without-tlen
+PLIST_SUB+=	TLEN:="@comment "
+.endif
+
+.if defined(WITH_JABBER)
+LIB_DEPENDS+=	loudmouth-1.0:${PORTSDIR}/net/loudmouth
+CONFIGURE_ARGS+=	--with-jabber
+PLIST_SUB+=	JABBER:=""
+.else
+CONFIGURE_ARGS+=	--without-jabber
+PLIST_SUB+=	JABBER:="@comment "
+.endif
+
+.if defined(WITHOUT_DOCKLET)
 CONFIGURE_ARGS+=	--without-docklet-system-tray
 PLIST_SUB+=	DOCKLET:="@comment "
 .else
+CONFIGURE_ARGS+=	--with-docklet-system-tray
 PLIST_SUB+=	DOCKLET:=""
 .endif
 
-.if !defined(WITH_DOCKAPP)
+.if defined(WITH_DOCKAPP)
+CONFIGURE_ARGS+=	--with-docklet_dockapp
+PLIST_SUB+=	DOCKAPP:=""
+.else
 CONFIGURE_ARGS+=	--without-docklet_dockapp
 PLIST_SUB+=	DOCKAPP:="@comment "
-.else
-PLIST_SUB+=	DOCKAPP:=""
 .endif
 
-.if !defined(WITH_TLEN)
-CONFIGURE_ARGS+=	--without-tlen
-PLIST_SUB+=	TLEN:="@comment "
+.if defined(WITH_GTKSPELL)
+LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
+CONFIGURE_ARGS+=	--with-gtkspell
 .else
-LIB_DEPENDS+=	tlen.1:${PORTSDIR}/polish/libtlen
-PLIST_SUB+=	TLEN:=""
+CONFIGURE_ARGS+=	--without-gtkspell
 .endif
 
-.if !defined(WITH_JABBER)
-CONFIGURE_ARGS+=	--without-jabber
-PLIST_SUB+=	JABBER:="@comment "
-.else
-LIB_DEPENDS+=	loudmouth-1.0:${PORTSDIR}/net/loudmouth
-PLIST_SUB+=	JABBER:=""
-.endif
+#.if defined(WITH_DBUS)
+#LIB_DEPENDS+=	dbus-1.1:${PORTSDIR}/devel/dbus
+#CONFIGURE_ARGS+=	--with-dbus \
+#			--with-dbus-dir=${LOCALBASE}/share/dbus-1/services
+#PLIST_SUB+=	DBUS:=""
+#.else
+#CONFIGURE_ARGS+=	--without-dbus
+#PLIST_SUB+=	DBUS:="@comment "
+#.endif
 
-.if !defined(WITH_ESOUND)
-CONFIGURE_ARGS+=	--without-esd
-PLIST_SUB+=	ESOUND:="@comment "
-.else
+.if defined(WITH_ESOUND)
 PKGNAMESUFFIX=	-esound
 USE_GNOME+=	esound
+CONFIGURE_ARGS+=	--with-esd
 PLIST_SUB+=	ESOUND:=""
+.else
+CONFIGURE_ARGS+=	--without-esd
+PLIST_SUB+=	ESOUND:="@comment "
 .endif
 
-.if !defined(WITH_ARTS)
+.if defined(WITH_ARTS)
+LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
+CONFIGURE_ARGS+=	--with-arts
+PLIST_SUB+=	ARTS:=""
+.else
 CONFIGURE_ARGS+=	--without-arts
 PLIST_SUB+=	ARTS:="@comment "
-.else
-LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
-PLIST_SUB+=	ARTS:=""
 .endif
 
-.if !defined(WITH_XOSD)
+.if defined(WITH_XOSD)
+LIB_DEPENDS+=	xosd.4:${PORTSDIR}/misc/xosd
+CONFIGURE_ARGS+=	--with-xosd
+PLIST_SUB+=	XOSD:=""
+.else
 CONFIGURE_ARGS+=	--without-xosd
 PLIST_SUB+=	XOSD:="@comment "
-.else
-LIB_DEPENDS+=	xosd.4:${PORTSDIR}/misc/xosd
-PLIST_SUB+=	XOSD:=""
 .endif
 
 .if (${HAVE_GNOME:Mgnomehier}!="")
@@ -115,40 +162,6 @@ PLIST_SUB+=	KDE:=""
 .else
 PLIST_SUB+=	KDE:="@comment "
 .endif
-
-pre-everything::
-.if defined(WITH_TLEN) || defined(WITH_JABBER) || defined(WITH_XOSD) || \
-	defined(WITH_DOCKLET) || defined(WITH_DOCKAPP) || defined(WITH_GTKSPELL) || \
-	defined(WITH_ARTS) || defined(WITH_ESOUND)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "  You can define following build options:"
-	@${ECHO_MSG}
-.endif
-.if !defined(WITH_TLEN)
-	@${ECHO_MSG} "	WITH_TLEN      to enable Tlen.pl network plugin"
-.endif
-.if !defined(WITH_JABBER)
-	@${ECHO_MSG} "	WITH_JABBER    to enable Jabber loudmouth plugin"
-.endif
-.if !defined(WITH_XOSD)
-	@${ECHO_MSG} "	WITH_XOSD      to enable On-Screen-Display messages"
-.endif
-.if !defined(WITH_DOCKLET)
-	@${ECHO_MSG} "	WITH_DOCKLET   to enable freedesktop.org docklet plugin"
-.endif
-.if !defined(WITH_DOCKAPP)
-	@${ECHO_MSG} "	WITH_DOCKAPP   to enable WindowMaker dockapp plugin"
-.endif
-.if !defined(WITH_ARTS)
-	@${ECHO_MSG} "	WITH_ARTS      to build with aRts sound server"
-.endif
-.if !defined(WITH_ESOUND)
-	@${ECHO_MSG} "	WITH_ESOUND    to build with esound sound server"
-.endif
-.if !defined(WITH_GTKSPELL)
-	@${ECHO_MSG} "	WITH_GTKSPELL  to enable GTKSpell checker"
-.endif
-	@${ECHO_MSG}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/gg2.desktop

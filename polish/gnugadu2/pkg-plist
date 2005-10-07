@@ -197,6 +197,7 @@ share/gg2/pixmaps/icons/bubble/gadu-gadu-offline-descr.png
 share/gg2/pixmaps/icons/bubble/gadu-gadu-offline.png
 share/gg2/pixmaps/icons/bubble/gadu-gadu-online-descr.png
 share/gg2/pixmaps/icons/bubble/gadu-gadu-online.png
+share/gg2/pixmaps/icons/bubble/gadu-gadu.png
 share/gg2/pixmaps/icons/bubble/icon.png
 share/gg2/pixmaps/icons/classic/README
 share/gg2/pixmaps/icons/classic/gadu-gadu-away-descr.png
@@ -207,7 +208,24 @@ share/gg2/pixmaps/icons/classic/gadu-gadu-offline-descr.png
 share/gg2/pixmaps/icons/classic/gadu-gadu-offline.png
 share/gg2/pixmaps/icons/classic/gadu-gadu-online-descr.png
 share/gg2/pixmaps/icons/classic/gadu-gadu-online.png
+share/gg2/pixmaps/icons/classic/gadu-gadu.png
 share/gg2/pixmaps/icons/classic/icon.png
+share/gg2/pixmaps/icons/classic/jabber-auth-from.png
+share/gg2/pixmaps/icons/classic/jabber-away.png
+share/gg2/pixmaps/icons/classic/jabber-dnd.png
+share/gg2/pixmaps/icons/classic/jabber-error.png
+share/gg2/pixmaps/icons/classic/jabber-noauth.png
+share/gg2/pixmaps/icons/classic/jabber-offline.png
+share/gg2/pixmaps/icons/classic/jabber-online.png
+share/gg2/pixmaps/icons/classic/jabber-xa.png
+share/gg2/pixmaps/icons/classic/jabber.png
+share/gg2/pixmaps/icons/classic/tlen-away.png
+share/gg2/pixmaps/icons/classic/tlen-beback.png
+share/gg2/pixmaps/icons/classic/tlen-chat.png
+share/gg2/pixmaps/icons/classic/tlen-invisible.png
+share/gg2/pixmaps/icons/classic/tlen-occupied.png
+share/gg2/pixmaps/icons/classic/tlen-offline.png
+share/gg2/pixmaps/icons/classic/tlen-online.png
 share/gg2/pixmaps/icons/ghosts/README
 share/gg2/pixmaps/icons/ghosts/gadu-gadu-away-descr.png
 share/gg2/pixmaps/icons/ghosts/gadu-gadu-away.png
@@ -217,6 +235,7 @@ share/gg2/pixmaps/icons/ghosts/gadu-gadu-offline-descr.png
 share/gg2/pixmaps/icons/ghosts/gadu-gadu-offline.png
 share/gg2/pixmaps/icons/ghosts/gadu-gadu-online-descr.png
 share/gg2/pixmaps/icons/ghosts/gadu-gadu-online.png
+share/gg2/pixmaps/icons/ghosts/gadu-gadu.png
 share/gg2/pixmaps/icons/ghosts/icon.png
 share/gg2/pixmaps/icons/modern/README
 share/gg2/pixmaps/icons/modern/gadu-gadu-away-descr.png
@@ -227,6 +246,7 @@ share/gg2/pixmaps/icons/modern/gadu-gadu-offline-descr.png
 share/gg2/pixmaps/icons/modern/gadu-gadu-offline.png
 share/gg2/pixmaps/icons/modern/gadu-gadu-online-descr.png
 share/gg2/pixmaps/icons/modern/gadu-gadu-online.png
+share/gg2/pixmaps/icons/modern/gadu-gadu.png
 share/gg2/pixmaps/icons/modern/icon.png
 share/gg2/pixmaps/icons/modern/tlen-away.png
 share/gg2/pixmaps/icons/modern/tlen-beback.png
@@ -244,17 +264,7 @@ share/gg2/pixmaps/icons/rozgwiazda/gadu-gadu-offline.png
 share/gg2/pixmaps/icons/rozgwiazda/gadu-gadu-online-descr.png
 share/gg2/pixmaps/icons/rozgwiazda/gadu-gadu-online.png
 share/gg2/pixmaps/icons/rozgwiazda/icon.png
-share/gg2/pixmaps/icons/rozgwiazda/jabber.png
 share/gg2/pixmaps/icons/rozgwiazda/license.txt
-share/gg2/pixmaps/icons/rozgwiazda/sms.png
-share/gg2/pixmaps/icons/rozgwiazda/tlen.png
-share/gg2/pixmaps/icons/tlen-classic/tlen-away.png
-share/gg2/pixmaps/icons/tlen-classic/tlen-beback.png
-share/gg2/pixmaps/icons/tlen-classic/tlen-chat.png
-share/gg2/pixmaps/icons/tlen-classic/tlen-invisible.png
-share/gg2/pixmaps/icons/tlen-classic/tlen-occupied.png
-share/gg2/pixmaps/icons/tlen-classic/tlen-offline.png
-share/gg2/pixmaps/icons/tlen-classic/tlen-online.png
 share/gg2/pixmaps/icq-away.png
 share/gg2/pixmaps/icq-dnd.png
 share/gg2/pixmaps/icq-freechat.png
@@ -315,7 +325,6 @@ share/locale/pl/LC_MESSAGES/gg2.mo
 share/pixmaps/gg2.png
 @dirrm share/gg2/themes
 @dirrm share/gg2/sounds
-@dirrm share/gg2/pixmaps/icons/tlen-classic
 @dirrm share/gg2/pixmaps/icons/rozgwiazda
 @dirrm share/gg2/pixmaps/icons/modern
 @dirrm share/gg2/pixmaps/icons/ghosts
