@@ -38,6 +38,8 @@ CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
 OPTIONS=	LPR	"Use lpr as printing system"	on\
 		CUPS	"Use cups as printing system"	off
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_CUPS)
 CONFIGURE_ARGS+=--enable-cups
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
@@ -73,4 +75,4 @@ post-patch:
 	${REINPLACE_CMD} -e 's/@LDFLAGS@/& -Wl,-E/' ${WRKSRC}/xfprint/Makefile.in \
 		 ${WRKSRC}/xfprint-manager/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
