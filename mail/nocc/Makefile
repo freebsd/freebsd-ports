@@ -7,6 +7,7 @@
 
 PORTNAME=	nocc
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/RC/}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A web-based e-mail system which access POP3 and IMAP mail servers
 
-USE_PHP=	imap
+USE_PHP=	imap pcre session
 WANT_PHP_WEB=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
