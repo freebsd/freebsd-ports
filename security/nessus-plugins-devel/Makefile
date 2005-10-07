@@ -12,7 +12,6 @@ MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/experimental/nessus-${PORTVERSION}
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/experimental/nessus-${PORTVERSION}/src/ \
 		http://ftp.gwdg.de/pub/linux/misc/nessus/experimental/nessus-${PORTVERSION}/src/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/nessus/experimental/nessus-${PORTVERSION}/src/ \
-		ftp://ftp.au.nessus.org/pub/nessus/experimental/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.ayamura.org/pub/nessus/experimental/nessus-${PORTVERSION}/src/
 DISTNAME=	nessus-plugins-GPL-${PORTVERSION}
 
