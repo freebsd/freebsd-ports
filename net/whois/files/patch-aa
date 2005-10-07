@@ -1,7 +1,7 @@
---- Makefile.orig	Tue Feb 10 17:24:29 2004
-+++ Makefile	Fri May 21 08:09:06 2004
-@@ -9,16 +9,16 @@
- #LDFLAGS=-lintl
+--- Makefile.orig	Sun Sep 11 15:33:28 2005
++++ Makefile	Tue Sep 27 08:51:22 2005
+@@ -6,23 +6,23 @@
+ #whois_LDADD += -lnsl -lsocket
  
  # FreeBSD
 -#LDFLAGS=-L/usr/local/lib -lgnugetopt -lintl
@@ -14,14 +14,24 @@
  
 -ifdef HAVE_LIBIDN
 +.ifdef HAVE_LIBIDN
- LIBIDN += -lidn
- CFLAGS += -DHAVE_LIBIDN
+ whois_LDADD += -lidn
+ whois_CFLAGS += -DHAVE_LIBIDN
 -endif
 +.endif
  
- PERL=perl
+-ifdef HAVE_XCRYPT
++.ifdef HAVE_XCRYPT
+ mkpasswd_LDADD += -lxcrypt
+ mkpasswd_CFLAGS += -DHAVE_XCRYPT
+-else
++.else
+ mkpasswd_LDADD += -lcrypt
+-endif
++.endif
  
-@@ -40,10 +40,9 @@
+ PERL := perl
+ 
+@@ -49,10 +49,9 @@
  	$(PERL) -w make_tld_serv.pl < tld_serv_list > tld_serv.h
  
  install: whois
