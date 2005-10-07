@@ -1,4 +1,35 @@
 bin/oleo
-share/doc/oleo/ja_JP.EUC/USING.eucJP
-@dirrm share/doc/oleo/ja_JP.EUC
-@dirrm share/doc/oleo
+info/oleo.info
+info/oleo.info-1
+info/oleo.info-2
+info/oleo.info-3
+info/oleo.info-4
+share/afm/Courier-Bold.afm
+share/afm/Courier-BoldOblique.afm
+share/afm/Courier-Oblique.afm
+share/afm/Courier.afm
+share/afm/Helvetica-Bold.afm
+share/afm/Helvetica-BoldOblique.afm
+share/afm/Helvetica-Oblique.afm
+share/afm/Helvetica.afm
+share/afm/Symbol.afm
+share/afm/Times-Bold.afm
+share/afm/Times-BoldItalic.afm
+share/afm/Times-Italic.afm
+share/afm/Times-Roman.afm
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/ja_JP.EUC/USING.eucJP
+share/locale/en/LC_MESSAGES/oleo.mo
+share/locale/fr/LC_MESSAGES/oleo.mo
+share/locale/nl/LC_MESSAGES/oleo.mo
+%%DATADIR%%/Oleo
+%%DATADIR%%/fr/Oleo
+%%DATADIR%%/nl/Oleo
+%%DATADIR%%/oleo.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja_JP.EUC
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/afm
+@dirrm %%DATADIR%%/fr
+@dirrm %%DATADIR%%/nl
+@dirrm %%DATADIR%%
