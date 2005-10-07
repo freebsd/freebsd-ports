@@ -6,27 +6,37 @@
 #
 
 PORTNAME=	tintin
-PORTVERSION=	1.8.6b
-CATEGORIES?=	net games
-MASTER_SITES=	http://mail.newclear.net/tintin/download/ \
-		http://freebsd.hanirc.org/~jhp/tintin++/ \
-		http://www.stud.ntnu.no/~sverreno/tintin/
-DISTNAME=	tintin++v1.86b
+PORTVERSION=	1.95.1
+CATEGORIES+=	net games
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER?=	jhp@cocoja.holywar.net
-COMMENT=	"a client program specialized to help playing muds(devel version)"
+COMMENT=	A client program to help playing muds (devel version)
 
-NO_LATEST_LINK=	yes
-WRKSRC=		${WRKDIR}/tintin++/src
+WRKSRC=		${WRKDIR}/tt/src
+
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+
+PLIST_FILES=	bin/tt++
+PORTDOCS=	BUGS CREDITS FAQ README TODO tintin19.txt
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+CFLAGS+=	-I ${LOCALBASE}/include
+MAKE_ENV+=	LIBS="-L${LOCALBASE}/lib"
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tt++ ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/lib/tintin
-	${INSTALL_DATA} ${WRKSRC}/support/.tt_help.txt.Z ${PREFIX}/lib/tintin
-	${MKDIR} ${PREFIX}/share/doc/tintin
-	${INSTALL_DATA} ${WRKSRC}/support/.tintinrc ${PREFIX}/share/doc/tintin/tintinrc
-	${INSTALL_DATA} ${WRKSRC}/support/tt.conf ${PREFIX}/share/doc/tintin/chat.conf.example
-	cd ${WRKSRC}/.. ; ${INSTALL_DATA} CHANGES FAQ CREDITS README docs/* ${PREFIX}/share/doc/tintin
+.ifndef NOPORTDOCS
+	${MKDIR} ${DOCSDIR}
+.for i in FAQ README TODO CREDITS BUGS docs/tintin19.txt
+	${INSTALL_DATA} ${WRKSRC}/../${i} ${DOCSDIR}
+.endfor
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
