@@ -9,7 +9,7 @@ change this by specifying your own distccd_flags in
 /etc/rc.conf, see the script in etc/rc.d/distccd.sh for a
 template.
 
-Additionally it is reccomended that you add entries to
+Additionally it is recommended that you add entries to
 /etc/syslog.conf to record all distccd log messages to a file
 such as /var/log/distccd.log.
 
