@@ -1,0 +1,13 @@
+%%SITE_PERL%%/HTML/TagCloud/Extended.pm
+%%SITE_PERL%%/HTML/TagCloud/Extended/Exception.pm
+%%SITE_PERL%%/HTML/TagCloud/Extended/Factor.pm
+%%SITE_PERL%%/HTML/TagCloud/Extended/Tag.pm
+%%SITE_PERL%%/HTML/TagCloud/Extended/TagColors.pm
+%%SITE_PERL%%/HTML/TagCloud/Extended/TagList.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TagCloud/Extended/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TagCloud/Extended 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TagCloud 2>/dev/null || true
+@dirrm %%SITE_PERL%%/HTML/TagCloud/Extended
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/HTML/TagCloud 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true
