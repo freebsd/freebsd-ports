@@ -10,8 +10,7 @@ PORTNAME=	icb
 PORTVERSION=	5.1.0
 PORTREVISION=	3
 CATEGORIES=	net tcl84
-MASTER_SITES=	http://www.obfuscation.org/ftp/pub/icb/ \
-		ftp://ftp.obfuscation.org/pub/icb/
+MASTER_SITES=	http://www.obfuscation.org/icb/
 DISTNAME=	c${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -27,8 +26,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/icb/icb ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/share/icb
 	${INSTALL_DATA} ${WRKSRC}/icbserverdb ${PREFIX}/share/icb
-.for file in bartender confuse echofunctions sample.icbrc
-	${INSTALL_DATA} ${WRKSRC}/contrib/${file} ${PREFIX}/share/icb
+.for f in bartender confuse echofunctions sample.icbrc
+	${INSTALL_DATA} ${WRKSRC}/contrib/${f} ${PREFIX}/share/icb
 .endfor
 
 .include <bsd.port.mk>
