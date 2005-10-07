@@ -9159,6 +9159,7 @@ pearpc		ports/emulators/pearpc
 pebrot		ports/net/pebrot
 pecl-APC	ports/www/pecl-APC
 pecl-PDO	ports/databases/pecl-PDO
+pecl-PDO_DBLIB	ports/databases/pecl-PDO_DBLIB
 pecl-PDO_ODBC	ports/databases/pecl-PDO_ODBC
 pecl-PDO_MYSQL	ports/databases/pecl-PDO_MYSQL
 pecl-PDO_PGSQL	ports/databases/pecl-PDO_PGSQL
