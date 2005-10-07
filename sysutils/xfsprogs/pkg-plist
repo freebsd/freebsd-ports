@@ -9,6 +9,7 @@ bin/xfs_io
 bin/xfs_bmap
 bin/xfs_logprint
 bin/xfs_mkfile
+bin/xfs_quota
 bin/xfs_rtcp
 sbin/fsck.xfs
 sbin/mkfs.xfs
@@ -16,8 +17,6 @@ sbin/xfs_repair
 %%PORTDOCS%%%%DOCSDIR%%/PORTING
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.gz
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/README.LVM
-%%PORTDOCS%%%%DOCSDIR%%/README.quota
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
