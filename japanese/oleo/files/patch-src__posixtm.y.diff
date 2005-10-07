@@ -1,0 +1,10 @@
+--- src/posixtm.y.orig	Wed Aug 17 17:44:35 2005
++++ src/posixtm.y	Wed Aug 17 17:44:59 2005
+@@ -85,6 +85,7 @@
+ 		   YYABORT;
+ 		 }
+ 	       }
++;
+ 
+ year : digitpair {
+                    t.tm_year = $1;

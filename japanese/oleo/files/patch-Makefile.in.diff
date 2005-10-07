@@ -1,0 +1,19 @@
+--- Makefile.in.orig	Sat Mar 10 16:32:45 2001
++++ Makefile.in	Thu Aug 18 09:10:51 2005
+@@ -207,16 +207,6 @@
+ 
+ install-docDATA: $(doc_DATA)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(docdir)
+-	@list='$(doc_DATA)'; for p in $$list; do \
+-	  if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(docdir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(docdir)/$$p; \
+-	  else if test -f $$p; then \
+-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(docdir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(DESTDIR)$(docdir)/$$p; \
+-	  fi; fi; \
+-	done
+ 
+ uninstall-docDATA:
+ 	@$(NORMAL_UNINSTALL)

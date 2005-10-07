@@ -1,0 +1,38 @@
+--- src/eval.c.orig	Wed Aug 17 17:26:29 2005
++++ src/eval.c	Wed Aug 17 17:27:12 2005
+@@ -78,7 +78,7 @@
+ RETSIGTYPE math_sig ();
+ #endif
+ 
+-int fls (long);
++int flS_ (long);
+ #ifdef SMALLEVAL
+ int __to_flt (struct value *);
+ int __to_int (struct value *);
+@@ -141,7 +141,7 @@
+ 
+ #define I_MOD(i1,i2) {itmp=(i1)%(i2);/* ... */;p->Int=itmp;}
+ 
+-#define I_MUL(i1,i2) {	if(fls(i1)+fls(i2)>32) {			\
++#define I_MUL(i1,i2) {	if(flS_(i1)+flS_(i2)>32) {			\
+ 				p->Float=(double)(i1)*(double)(i2);	\
+ 				p->type=TYP_FLT;			\
+ 			} else						\
+@@ -565,7 +565,7 @@
+ 	case CONST_NINF:
+ 	case CONST_NAN:
+ 	  p->type = TYP_FLT;
+-	  p->Float = (byte == CONST_INF) ? __plinf : ((byte == CONST_NINF) ? __neinf : __nan);
++	  p->Float = (byte == CONST_INF) ? __plinf : ((byte == CONST_NINF) ? __neinf : __naN_);
+ 	  break;
+ 
+ 	case VAR:
+@@ -1540,7 +1540,7 @@
+ }
+ 
+ int
+-fls (num)
++flS_ (num)
+      long num;
+ {
+   int ret = 1;

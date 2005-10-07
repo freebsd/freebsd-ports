@@ -1,0 +1,20 @@
+--- src/io-utils.c.orig	Wed Aug 17 17:29:39 2005
++++ src/io-utils.c	Wed Aug 17 17:29:55 2005
+@@ -71,7 +71,7 @@
+ 
+ double __plinf;
+ double __neinf;
+-double __nan;
++double __naN_;
+ 
+ char nname[] = "#NOT_A_NUMBER";
+ char iname[] = "#INFINITY";
+@@ -125,7 +125,7 @@
+   __neinf = divide (-1., 0.);
+   (void) signal (SIGFPE, ignore_sig);
+ #endif
+-  __nan = __plinf + __neinf;
++  __naN_ = __plinf + __neinf;
+ }
+ 
+ 

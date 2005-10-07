@@ -1,0 +1,11 @@
+--- src/cmd.c.orig	Wed Aug 17 17:43:43 2005
++++ src/cmd.c	Wed Aug 17 17:44:07 2005
+@@ -31,7 +31,7 @@
+ #include <stdarg.h>
+ #include "sysdef.h"
+ #include <termios.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ 
+ #ifdef	HAVE_MOTIF
+ #include "io-motif.h"

@@ -1,0 +1,11 @@
+--- src/global.h.orig	Wed Aug 17 17:25:42 2005
++++ src/global.h	Wed Aug 17 17:25:57 2005
+@@ -208,7 +208,7 @@
+ extern char nname[];
+ 
+ extern VOIDSTAR parse_hash;
+-extern double __plinf, __neinf, __nan;
++extern double __plinf, __neinf, __naN_;
+ 
+ /* These have two uses.  During parsing, these contain the 
+  * base address of all relative references.  During evaluation,
