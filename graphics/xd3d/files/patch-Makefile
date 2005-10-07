@@ -1,0 +1,13 @@
+--- Makefile.orig	Mon Mar 14 17:07:43 2005
++++ Makefile	Fri Oct  7 15:01:40 2005
+@@ -15,7 +15,9 @@
+ 
+ all :; make libs ; make utils ; make xgraphic ; make xd3d
+ 
+-install :; /bin/cp -pidvu $(EXE) ./infps $(INSTALL_DIR)
++install :; \
++$(BSD_INSTALL_PROGRAM) $(EXE) $(INSTALL_DIR) ;\
++$(BSD_INSTALL_SCRIPT) ./infps $(INSTALL_DIR)
+ 
+ libs :; \
+ cd $(SRCDIR)/qlib   ; echo "---- Building utility lib ----" ; make ;\

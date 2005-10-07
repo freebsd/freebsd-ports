@@ -57,6 +57,7 @@ bin/xgraphic
 %%PORTDOCS%%%%EXAMPLESDIR%%/sphere.avoir3D
 %%PORTDOCS%%%%EXAMPLESDIR%%/sphere.depl
 %%PORTDOCS%%%%EXAMPLESDIR%%/spiral.xyz
+%%PORTDOCS%%%%EXAMPLESDIR%%/tetra_gmsh.msh
 %%PORTDOCS%%%%EXAMPLESDIR%%/tower.avoir3D
 %%PORTDOCS%%%%EXAMPLESDIR%%/tower_001.mode
 %%PORTDOCS%%%%EXAMPLESDIR%%/tower_002.mode
