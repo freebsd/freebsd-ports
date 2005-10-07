@@ -11230,6 +11230,7 @@ serveez		ports/net/serveez
 service-config	ports/sysutils/service-config
 ses		ports/math/ses
 setcdboot	ports/sysutils/setcdboot
+setedit		ports/editors/setedit
 seti_applet	ports/astro/seti_applet
 setiathome	ports/astro/setiathome
 setquota	ports/sysutils/setquota
