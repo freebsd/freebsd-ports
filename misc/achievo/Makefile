@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	achievo
-PORTVERSION=	1.0.4
+PORTVERSION=	1.1.0
 CATEGORIES=	misc www
 MASTER_SITES=	http://www.achievo.org/files/ \
 		http://www.caomhin.org/geek/ports/
@@ -21,12 +21,16 @@ WANT_PHP_MOD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	YES
 
+ACHVODIR?=	www/data.default/achievo
+PLIST_SUB=	ACHVODIR=${ACHVODIR}
+
 post-patch:
 	@${MV} ${WRKSRC}/config.inc.php ${WRKSRC}/config.inc.php-default
 
 do-install:
 	@${MKDIR} ${PREFIX}/www/data.default/achievo
 	@${CP} -R ${WRKSRC}/* ${PREFIX}/www/data.default/achievo/
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${ACHVODIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
