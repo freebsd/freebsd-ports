@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Tie-DB_File-SplitHash
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tie
@@ -18,7 +18,7 @@ COMMENT=	A wrapper around the DB_File Berkeley database system
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Tie::DB_File::SplitHash.3
 
