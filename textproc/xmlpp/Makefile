@@ -10,13 +10,13 @@ PORTNAME=	xmlpp
 PORTVERSION=	0.7a
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.root.at/download/gpl/
+MASTER_SITES=	http://0xff.at/download/gpl/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML Parser and Validator
 
 USE_REINPLACE=	yes
-#FETCH_CMD=	/usr/bin/fetch
+FETCH_CMD=	/usr/bin/fetch
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 
