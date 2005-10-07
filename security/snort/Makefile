@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.3.3
+PORTVERSION=	2.4.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/current/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Lightweight network intrusion detection system
@@ -20,20 +19,24 @@ OPTIONS=	FLEXRESP "Flexible response to events" off \
 		MYSQL "Enable MySQL support" off \
 		ODBC "Enable ODBC support" off \
 		POSTGRESQL "Enable PostgreSQL support" off \
-		PRELUDE "Enable patch for Prelude integration" off
+		PRELUDE "Enable Prelude NIDS integration" off
 
 USE_GPG=	yes
-SIG_SUFFIX=	.asc
+SIG_SUFFIX=	.sig
 USE_REINPLACE=	yes
-USE_RC_SUBR=	yes
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+USE_RC_SUBR=	snort.sh
+SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
+CONFIG_DIR?=	${PREFIX}/etc/snort
+CONFIG_FILES=	classification.config gen-msg.map generators reference.config \
+		sid sid-msg.map snort.conf threshold.conf unicode.map
+
 MAN8=		snort.8
-DOCS=		ChangeLog doc/AUTHORS doc/BUGS doc/CREDITS doc/NEWS \
-		doc/README* doc/TODO doc/USAGE doc/*.pdf
+DOCS=		RELEASE.NOTES doc/AUTHORS doc/BUGS doc/CREDITS \
+		doc/README* doc/USAGE doc/*.pdf
 
 .include <bsd.port.pre.mk>
 
@@ -70,57 +73,25 @@ CONFIGURE_ARGS+=	--with-postgresql=no
 .endif
 
 .if defined(WITH_PRELUDE)
-#BROKEN=			Prelude reporting patch have not been updated for Snort 2.2.0
-PRELUDE_PATCH=		0.3.6
-MASTER_SITES+=		http://prelude-ids.org/download/releases/old/:prelude
-SIGNED_FILES=		${DISTNAME}${EXTRACT_SUFX}
-DISTFILES+=		snort-prelude-reporting-patch-${PRELUDE_PATCH}.tar.gz:prelude
-EXTRA_PATCHES+=		${WRKDIR}/snort-2.2.0-prelude-${PRELUDE_PATCH}.diff
-USE_AUTOMAKE_VER=	19
-USE_AUTOCONF_VER=	259
 LIB_DEPENDS+=		prelude.1:${PORTSDIR}/security/libprelude
-CONFIGURE_ARGS+=	--with-prelude=yes
+CONFIGURE_ARGS+=	--enable-prelude
 PLIST_SUB+=		PRELUDE=""
-
-pre-configure:
-	cd ${WRKSRC} && ${ACLOCAL} && ${AUTOMAKE} && ${AUTOCONF}
-	${RM} ${WRKSRC}/doc/README.Prelude.orig
 .else
-CONFIGURE_ARGS+=	--with-prelude=no
+CONFIGURE_ARGS+=	--disable-prelude
 PLIST_SUB+=		PRELUDE="@comment "
 .endif
 
 post-patch:
-	${REINPLACE_CMD} "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/src/snort.c
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/snort.sh > ${WRKDIR}/snort.sh
+	${REINPLACE_CMD} "s,/etc/snort.conf,${CONFIG_DIR}/snort.conf," \
+		${WRKSRC}/src/snort.c ${WRKSRC}/snort.8
 
 post-install:
-	${INSTALL_SCRIPT} -m 751 ${WRKDIR}/snort.sh ${PREFIX}/etc/rc.d/snort.sh
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/rules/[^l]*.rules ${DATADIR}
-.for f in local.rules
-	${INSTALL_DATA} ${WRKSRC}/rules/${f} ${DATADIR}/${f}-sample
-	[ -f ${DATADIR}/${f} ] || \
-	    ${INSTALL_DATA} ${WRKSRC}/rules/${f} ${DATADIR}/${f}
+	[ -d ${CONFIG_DIR} ] || ${MKDIR} ${CONFIG_DIR}
+.for f in ${CONFIG_FILES}
+	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${CONFIG_DIR}/${f}-sample
 .endfor
-.for f in classification.config reference.config
-	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${DATADIR}/${f}-sample
-	[ -f ${DATADIR}/${f} ] || \
-	    ${INSTALL_DATA} ${WRKSRC}/etc/${f} ${DATADIR}/${f}
-.endfor
-.for f in snort.conf unicode.map threshold.conf
-	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${PREFIX}/etc/${f}-sample
-	[ -f ${PREFIX}/etc/${f} ] || \
-	    ${INSTALL_DATA} ${WRKSRC}/etc/${f} ${PREFIX}/etc/${f}
-.endfor
-.if defined(WITH_PRELUDE)
-.for f in prelude-classification.config
-	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${PREFIX}/etc/${f}-sample
-	[ -f ${PREFIX}/etc/${f} ] || \
-	    ${INSTALL_DATA} ${WRKSRC}/etc/${f} ${PREFIX}/etc/${f}
-.endfor
-.endif
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/schemas/create* ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}

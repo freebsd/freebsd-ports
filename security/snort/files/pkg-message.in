@@ -1,0 +1,12 @@
+=========================================================================
+Snort uses rcNG startup script and must be enabled via /etc/rc.conf
+Please see %%PREFIX%%/etc/rc.d/snort.sh 
+for list of available variables and their description.
+Configuration files are located in %%PREFIX%%/etc/snort directory.
+
+NOTE: Starting with Snort 2.4.0 (released on 2005-04-22) 
+      the rules are no longer included with the distribution.
+      Please download them from http://www.snort.org/rules/.
+      You might consider installing security/oinkmaster port to simplify
+      rules downloads and updates.
+=========================================================================
