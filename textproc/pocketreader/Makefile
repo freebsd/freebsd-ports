@@ -9,9 +9,9 @@ PORTNAME=	pocketreader
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	textproc linux
-MASTER_SITES=	http://www.pocketreader.com/download/software/
+MASTER_SITES=	http://www.8ung.at/pocketreader/
 DISTNAME=	linux-bin
-EXTRACT_SUFX=	_tar.gz
+DIST_SUBDIR=	pocketreader
 
 MAINTAINER=	simond@irrelevant.org
 COMMENT=	Siemens PocketReader
