@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	sane-frontends
-PORTVERSION=	1.0.13
-PORTREVISION=	2
+PORTVERSION=	1.0.14
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/%SUBDIR%/ \
+MASTER_SITES=	http://alioth.debian.org/download.php/1140/ \
+		ftp://ftp.sane-project.org/pub/sane/%SUBDIR%/ \
 		ftp://ftp2.sane-project.org/pub/sane/%SUBDIR%/ \
 		ftp://ftp3.sane-project.org/pub/sane/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/hci/sane/%SUBDIR%/ \
