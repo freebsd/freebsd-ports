@@ -236,12 +236,18 @@ bin/gourmet
 %%PYTHON_SITELIBDIR%%/gourmet/optionTable.py
 %%PYTHON_SITELIBDIR%%/gourmet/optionTable.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/optionTable.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/pageable_store.py
+%%PYTHON_SITELIBDIR%%/gourmet/pageable_store.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/pageable_store.pyo
 %%PYTHON_SITELIBDIR%%/gourmet/prefs.py
 %%PYTHON_SITELIBDIR%%/gourmet/prefs.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/prefs.pyo
 %%PYTHON_SITELIBDIR%%/gourmet/prefsGui.py
 %%PYTHON_SITELIBDIR%%/gourmet/prefsGui.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/prefsGui.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/ratingWidget.py
+%%PYTHON_SITELIBDIR%%/gourmet/ratingWidget.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/ratingWidget.pyo
 %%PYTHON_SITELIBDIR%%/gourmet/reccard.py
 %%PYTHON_SITELIBDIR%%/gourmet/reccard.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/reccard.pyo
@@ -273,21 +279,24 @@ bin/gourmet
 %%PYTHON_SITELIBDIR%%/gourmet/version.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/version.pyo
 share/applications/gourmet.desktop
-share/gourmet/FAQ
-share/gourmet/app.glade
-share/gourmet/converter.glade
-share/gourmet/databaseChooser.glade
-share/gourmet/default.css
-share/gourmet/gourmet_logo.png
-share/gourmet/preferenceDialog.glade
-share/gourmet/keyeditor.glade
-share/gourmet/recCard.glade
-share/gourmet/recSelector.glade
-share/gourmet/rec_ref_window.glade
-share/gourmet/recbox.png
-share/gourmet/recipe.dtd
-share/gourmet/shopList.glade
-share/gourmet/splash.png
+%%DATADIR%%/FAQ
+%%DATADIR%%/app.glade
+%%DATADIR%%/converter.glade
+%%DATADIR%%/databaseChooser.glade
+%%DATADIR%%/default.css
+%%DATADIR%%/gold_star.png
+%%DATADIR%%/gourmet_logo.png
+%%DATADIR%%/half_gold_star.png
+%%DATADIR%%/no_star.png
+%%DATADIR%%/keyeditor.glade
+%%DATADIR%%/preferenceDialog.glade
+%%DATADIR%%/rec_ref_window.glade
+%%DATADIR%%/recCard.glade
+%%DATADIR%%/recSelector.glade
+%%DATADIR%%/recbox.png
+%%DATADIR%%/recipe.dtd
+%%DATADIR%%/shopList.glade
+%%DATADIR%%/splash.png
 share/pixmaps/recbox.png
 share/locale/bg/LC_MESSAGES/gourmet.mo
 share/locale/ca/LC_MESSAGES/gourmet.mo
@@ -323,7 +332,7 @@ share/locale/tr/LC_MESSAGES/gourmet.mo
 @dirrm share/locale/nl_BE
 @dirrm share/locale/sv_SE/LC_MESSAGES
 @dirrm share/locale/sv_SE
-@dirrm share/gourmet
+@dirrm %%DATADIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/importers
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/exporters
