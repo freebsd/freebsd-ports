@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	vorbisgain
-PORTVERSION=	0.34
-PORTREVISION=	1
+PORTVERSION=	0.37
 CATEGORIES=	audio
 MASTER_SITES=	http://sjeng.org/ftp/vorbis/
 
@@ -17,7 +16,6 @@ COMMENT=	Calculates the perceived sound level of an Ogg Vorbis file
 
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
 
-USE_ZIP=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
