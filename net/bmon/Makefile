@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	bmon
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.0
 CATEGORIES=	net
 MASTER_SITES=	http://people.suug.ch/~tgr/bmon/files/
 
 MAINTAINER=	nistor@snickers.org
-COMMENT=	"BMON - Portable bandwidth monitor and rate estimator"
+COMMENT=	Portable bandwidth monitor and rate estimator
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
