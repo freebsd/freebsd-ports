@@ -52,11 +52,15 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Condition-sb_002dext_003apackage_002dlock_002dviolation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Condition-sb_002dext_003apackage_002dlocked_002derror.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Condition-sb_002dext_003asymbol_002dpackage_002dlocked_002derror.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Condition-sb_002dthread_003ainterrupt_002dthread_002derror.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Contributed-Modules.html
-%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Controlling-Printing-in-the-Debugger.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Controlling-Verbosity.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Customization-Hooks-for-Users.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Debug-Tail-Recursion.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Debugger-Banner.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Debugger-Command-Loop.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Debugger-Entry.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Debugger-Invokation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Debugger-Policy-Control.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Debugger.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Declarations-as-Assertions.html
@@ -71,6 +75,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Efficiency-Hacks.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Efficiency.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/End-of-File.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Entry-Point-Details.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Errors-During-Macroexpansion.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Exit-on-Errors.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Exiting-Commands.html
@@ -107,7 +112,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dbsd_002dsockets_003asockopt_002dreuse_002daddress.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dbsd_002dsockets_003asockopt_002dtcp_002dnodelay.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aadd_002dimplementation_002dpackage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003acancel_002dfinalization.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003afinalize.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003alist_002dall_002dtimers.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003alock_002dpackage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003amake_002dtimer.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003amake_002dweak_002dpointer.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003apackage_002dimplemented_002dby_002dlist.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003apackage_002dimplements_002dlist.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003apackage_002dlocked_002dp.html
@@ -116,10 +126,16 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aquit.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aremove_002dimplementation_002dpackage.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003asave_002dlisp_002dand_002ddie.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aschedule_002dtimer.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003atimer_002dname.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003atimer_002dscheduled_002dp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aunlock_002dpackage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aunschedule_002dtimer.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aweak_002dpointer_002dvalue.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dmd5_003amd5sum_002dfile.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dmd5_003amd5sum_002dsequence.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dmd5_003amd5sum_002dstream.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dmd5_003amd5sum_002dstring.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dprofile_003areport.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dprofile_003areset.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002drotate_002dbyte_003arotate_002dbyte.html
@@ -127,7 +143,24 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dsprof_003areset.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dsprof_003astart_002dprofiling.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dsprof_003astop_002dprofiling.html
-%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Funny-Frames.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003acondition_002dbroadcast.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003acondition_002dnotify.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003acondition_002dwait.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003aget_002dmutex.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003ainterrupt_002dthread.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003ainterrupt_002dthread_002derror_002derrno.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003ainterrupt_002dthread_002derror_002dthread.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003alist_002dall_002dthreads.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003amake_002dmutex.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003amake_002dthread.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003amake_002dwaitqueue.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003amutex_002dname.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003amutex_002dvalue.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003arelease_002dmutex.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003aterminate_002dthread.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003athread_002dalive_002dp.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003awaitqueue_002dname.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Garbage-Collection.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/General-Sockets.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Generic_002dFunction-sb_002dbsd_002dsockets_003ahost_002dent_002daddress.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Generic_002dFunction-sb_002dbsd_002dsockets_003anon_002dblocking_002dmode.html
@@ -138,6 +171,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Generic_002dFunction-sb_002dbsd_002dsockets_003asocket_002dlisten.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Generic_002dFunction-sb_002dbsd_002dsockets_003asocket_002dmake_002dstream.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Generic_002dFunction-sb_002dbsd_002dsockets_003asocket_002dname.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Generic_002dFunction-sb_002dbsd_002dsockets_003asocket_002dopen_002dp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Generic_002dFunction-sb_002dbsd_002dsockets_003asocket_002dpeername.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Generic_002dFunction-sb_002dbsd_002dsockets_003asocket_002dreceive.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Generic_002dFunction-sb_002dgray_003astream_002dadvance_002dto_002dcolumn.html
@@ -193,6 +227,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Macro-sb_002dprofile_003aprofile.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Macro-sb_002dprofile_003aunprofile.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Macro-sb_002dsprof_003awith_002dprofiling.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Macro-sb_002dthread_003awith_002dmutex.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Macro-sb_002dthread_003awith_002drecursive_002dlock.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Metaobject-Protocol.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Modular-arithmetic.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/More-Common-Lisp-Information.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/More-SBCL-Information.html
@@ -235,22 +272,25 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Stale-Extensions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Starting-SBCL.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Starting-and-Stopping.html
-%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Starting-the-Debugger.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Statistical-Profiler.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Step_002dBy_002dStep-Example-of-the-Foreign-Function-Interface.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Stopping-SBCL.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Structure-sb_002dext_003atimer.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Structure-sb_002dthread_003amutex.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Structure-sb_002dthread_003athread.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Structure-sb_002dthread_003awaitqueue.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Style-Warnings.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Support-For-Unix.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/System-Initialization-File.html
-%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/The-Debugger-Command-Loop.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/The-Original-and-Actual-Source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/The-Parts-of-a-Compiler-Diagnostic.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/The-Processing-Path.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/The-alien_002dfuncall-Primitive.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/The-define_002dalien_002droutine-Macro.html
-%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Things-Which-Might-Be-In-The-Next-ANSI-Standard.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Third_002dparty-Libraries.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Threading-basics.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Threading.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Timers.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Tools-To-Help-Developers.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Toplevel-Options.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Type-Errors-at-Compile-Time.html
@@ -266,6 +306,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002ddebug_003a_002atrace_002dencapsulate_002ddefault_002a.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002ddebug_003a_002atrace_002dindentation_002dstep_002a.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002ddebug_003a_002atrace_002dvalues_002a.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002dext_003a_002aafter_002dgc_002dhooks_002a.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002dext_003a_002acompiler_002dprint_002dvariable_002dalist_002a.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002dext_003a_002adebug_002dprint_002dvariable_002dalist_002a.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002dext_003a_002aed_002dfunctions_002a.html
@@ -273,6 +314,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002dext_003a_002amodule_002dprovider_002dfunctions_002a.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002dsprof_003a_002amax_002dsamples_002a.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002dsprof_003a_002asample_002dinterval_002a.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Variable-sb_002dthread_003a_002acurrent_002dthread_002a.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Waitqueue_002fcondition-variables.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/define_002dalien_002droutine-Example.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/index.html
@@ -379,6 +421,17 @@ lib/sbcl/sb-grovel/sb-grovel.fasl
 lib/sbcl/sb-grovel/sb-grovel.texinfo
 lib/sbcl/sb-grovel/test-passed
 lib/sbcl/sb-introspect/sb-introspect.fasl
+lib/sbcl/sb-md5/.cvsignore
+lib/sbcl/sb-md5/Makefile
+lib/sbcl/sb-md5/README
+lib/sbcl/sb-md5/md5-tests.fasl
+lib/sbcl/sb-md5/md5-tests.lisp
+lib/sbcl/sb-md5/md5.fasl
+lib/sbcl/sb-md5/md5.lisp
+lib/sbcl/sb-md5/sb-md5.asd
+lib/sbcl/sb-md5/sb-md5.fasl
+lib/sbcl/sb-md5/sb-md5.texinfo
+lib/sbcl/sb-md5/test-passed
 lib/sbcl/sb-posix/.cvsignore
 lib/sbcl/sb-posix/Makefile
 lib/sbcl/sb-posix/README
@@ -466,7 +519,6 @@ lib/sbcl/sb-simple-streams/string.fasl
 lib/sbcl/sb-simple-streams/string.lisp
 lib/sbcl/sb-simple-streams/terminal.fasl
 lib/sbcl/sb-simple-streams/terminal.lisp
-lib/sbcl/sb-simple-streams/test-data.tmp
 lib/sbcl/sb-simple-streams/test-passed
 lib/sbcl/sb-sprof/sb-sprof.fasl
 lib/sbcl/sbcl.core
@@ -475,14 +527,16 @@ lib/sbcl/systems/sb-aclrepl.asd
 lib/sbcl/systems/sb-bsd-sockets.asd
 lib/sbcl/systems/sb-cltl2.asd
 lib/sbcl/systems/sb-grovel.asd
+lib/sbcl/systems/sb-md5.asd
 lib/sbcl/systems/sb-posix.asd
 lib/sbcl/systems/sb-rotate-byte.asd
 lib/sbcl/systems/sb-rt.asd
 lib/sbcl/systems/sb-simple-streams.asd
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/info
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/sbcl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/asdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+@exec mkdir -p %D/lib/sbcl/site-systems
+@exec mkdir -p %D/lib/sbcl/sb-posix/test-lab
 @dirrm %%DOCSDIR%%
 @dirrm lib/sbcl/systems
 @dirrm lib/sbcl/site-systems
@@ -493,6 +547,7 @@ lib/sbcl/systems/sb-simple-streams.asd
 @dirrm lib/sbcl/sb-posix/test-lab
 @dirrm lib/sbcl/sb-posix/alien
 @dirrm lib/sbcl/sb-posix
+@dirrm lib/sbcl/sb-md5
 @dirrm lib/sbcl/sb-introspect
 @dirrm lib/sbcl/sb-grovel
 @dirrm lib/sbcl/sb-executable

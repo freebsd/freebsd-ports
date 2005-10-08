@@ -1,0 +1,207 @@
+Index: src/code/float-trap.lisp
+===================================================================
+RCS file: /cvsroot/sbcl/sbcl/src/code/float-trap.lisp,v
+retrieving revision 1.18
+diff -u -r1.18 float-trap.lisp
+--- src/code/float-trap.lisp	14 Jul 2005 16:30:34 -0000	1.18
++++ src/code/float-trap.lisp	27 Sep 2005 22:36:42 -0000
+@@ -153,10 +153,28 @@
+   `(not (zerop (logand ,(dpb (float-trap-mask traps) float-traps-byte 0)
+                        (floating-point-modes)))))
+ 
++;;; SIGFPE code to floating-point error
++#+freebsd
++(defparameter *sigfpe-code-error-alist*
++  (list (cons sb!unix::fpe-intovf 'floating-point-overflow)
++        (cons sb!unix::fpe-intdiv 'division-by-zero)
++        (cons sb!unix::fpe-fltdiv 'division-by-zero)
++        (cons sb!unix::fpe-fltovf 'floating-point-overflow)
++        (cons sb!unix::fpe-fltund 'floating-point-underflow)
++        (cons sb!unix::fpe-fltres 'floating-point-inexact)
++        (cons sb!unix::fpe-fltinv 'floating-point-invalid-operation)
++        (cons sb!unix::fpe-fltsub 'floating-point-exception)))
++
+ ;;; Signal the appropriate condition when we get a floating-point error.
+ (defun sigfpe-handler (signal info context)
+-  (declare (ignore signal info))
++  (declare (ignore signal #!-freebsd info))
++  #!+freebsd
++  (declare (type system-area-pointer info))
+   (declare (type system-area-pointer context))
++  #!+freebsd
++  (let ((code (sb!unix::siginfo-code info)))
++    (error (or (cdr (assoc code *sigfpe-code-error-alist*))
++               'floating-point-exception)))
+   (let* ((modes (context-floating-point-modes
+                  (sb!alien:sap-alien context (* os-context-t))))
+          (traps (logand (ldb float-exceptions-byte modes)
+Index: src/code/target-signal.lisp
+===================================================================
+RCS file: /cvsroot/sbcl/sbcl/src/code/target-signal.lisp,v
+retrieving revision 1.28
+diff -u -r1.28 target-signal.lisp
+--- src/code/target-signal.lisp	4 Sep 2005 20:14:49 -0000	1.28
++++ src/code/target-signal.lisp	27 Sep 2005 22:36:42 -0000
+@@ -149,6 +149,10 @@
+ 
+ ;;;; etc.
+ 
++;;; extract si_code from siginfo_t
++(sb!alien:define-alien-routine ("siginfo_code" siginfo-code) sb!alien:int
++  (info system-area-pointer))
++
+ ;;; CMU CL comment:
+ ;;;   Magically converted by the compiler into a break instruction.
+ (defun receive-pending-interrupt ()
+Index: src/runtime/interrupt.c
+===================================================================
+RCS file: /cvsroot/sbcl/sbcl/src/runtime/interrupt.c,v
+retrieving revision 1.94
+diff -u -r1.94 interrupt.c
+--- src/runtime/interrupt.c	13 Sep 2005 12:28:41 -0000	1.94
++++ src/runtime/interrupt.c	27 Sep 2005 22:36:42 -0000
+@@ -426,7 +426,7 @@
+     if (sigismember(&deferrable_sigset,signal))
+         check_interrupts_enabled_or_lose(context);
+ 
+-#ifdef LISP_FEATURE_LINUX
++#if defined(LISP_FEATURE_LINUX) || defined(__FreeBSD__)
+     /* Under Linux on some architectures, we appear to have to restore
+        the FPU control word from the context, as after the signal is
+        delivered we appear to have a null FPU control word. */
+@@ -606,7 +606,7 @@
+     os_context_t *context = arch_os_get_context(&void_context);
+     struct thread *thread=arch_os_get_current_thread();
+     struct interrupt_data *data=thread->interrupt_data;
+-#ifdef LISP_FEATURE_LINUX
++#if defined(LISP_FEATURE_LINUX) || defined(__FreeBSD__)
+     os_restore_fp_control(context);
+ #endif
+     if(maybe_defer_handler(interrupt_handle_now,data,signal,info,context))
+@@ -623,7 +623,7 @@
+ {
+     os_context_t *context = (os_context_t*)void_context;
+ 
+-#ifdef LISP_FEATURE_LINUX
++#if defined(LISP_FEATURE_LINUX) || defined(__FreeBSD__)
+     os_restore_fp_control(context);
+ #endif
+     check_blockables_blocked_or_lose();
+@@ -641,7 +641,7 @@
+     os_context_t *context = arch_os_get_context(&void_context);
+     struct thread *thread=arch_os_get_current_thread();
+     struct interrupt_data *data=thread->interrupt_data;
+-#ifdef LISP_FEATURE_LINUX
++#if defined(LISP_FEATURE_LINUX) || defined(__FreeBSD__)
+     os_restore_fp_control(context);
+ #endif
+     if(maybe_defer_handler(low_level_interrupt_handle_now,data,
+@@ -1139,3 +1139,9 @@
+ 
+     SHOW("returning from interrupt_init()");
+ }
++
++int
++siginfo_code(siginfo_t *info)
++{
++    return info->si_code;
++}
+Index: src/runtime/x86-arch.c
+===================================================================
+RCS file: /cvsroot/sbcl/sbcl/src/runtime/x86-arch.c,v
+retrieving revision 1.32
+diff -u -r1.32 x86-arch.c
+--- src/runtime/x86-arch.c	27 Sep 2005 15:52:50 -0000	1.32
++++ src/runtime/x86-arch.c	27 Sep 2005 22:36:42 -0000
+@@ -229,7 +229,7 @@
+        single-stepping (as far as I can tell) this is somewhat moot,
+        but it might be worth either moving this code up or deleting
+        the single-stepping code entirely.  -- CSR, 2002-07-15 */
+-#ifdef LISP_FEATURE_LINUX
++#if defined(LISP_FEATURE_LINUX) || defined(__FreeBSD__)
+     os_restore_fp_control(context);
+ #endif
+ 
+Index: src/runtime/x86-bsd-os.c
+===================================================================
+RCS file: /cvsroot/sbcl/sbcl/src/runtime/x86-bsd-os.c,v
+retrieving revision 1.7
+diff -u -r1.7 x86-bsd-os.c
+--- src/runtime/x86-bsd-os.c	14 Jul 2005 15:41:21 -0000	1.7
++++ src/runtime/x86-bsd-os.c	27 Sep 2005 22:36:42 -0000
+@@ -85,6 +85,52 @@
+ #endif  /* __NetBSD__ */
+ 
+ 
++#ifdef __FreeBSD__
++#if __FreeBSD_version >= 500000
++/*
++ * FreeBSD 5.0 or later initializes FPU control word for signal
++ * handler.
++ */
++#include <machine/npx.h>
++
++static __inline__ void
++fldcw(unsigned short cw)
++{
++    __asm__ __volatile__ ("fldcw %0" : : "m" (cw));
++}
++
++void
++os_restore_fp_control(os_context_t *context)
++{
++    union savefpu *addr;
++
++    addr = (union savefpu *)context->uc_mcontext.mc_fpstate;
++    switch (context->uc_mcontext.mc_fpformat) {
++    case _MC_FPFMT_387:
++        /* FPU state is saved by fnsave */
++        fldcw((unsigned short)addr->sv_87.sv_env.en_cw);
++        break;
++    case _MC_FPFMT_XMM:
++        /* FPU/SSE state is saved by fxsave */
++        fldcw(addr->sv_xmm.sv_env.en_cw);
++        break;
++    default:
++        /* No FPU state is saved. */
++        break;
++    }
++}
++#else /* __FreeBSD_version < 500000 */
++/*
++ * FreeBSD befoer 5.0 does not touch FPU control word for signal
++ * handler.
++ */
++void
++os_restore_fp_control(os_context_t *context)
++{
++    /* DO NOTHING */
++}
++#endif /* __FreeBSD_version */
++#endif /* __FreeBSD__ */
+ 
+ /* FIXME: If this can be a no-op on BSD/x86, then it
+  * deserves a more precise name.
+Index: tools-for-build/grovel-headers.c
+===================================================================
+RCS file: /cvsroot/sbcl/sbcl/tools-for-build/grovel-headers.c,v
+retrieving revision 1.10
+diff -u -r1.10 grovel-headers.c
+--- tools-for-build/grovel-headers.c	14 Jul 2005 20:24:19 -0000	1.10
++++ tools-for-build/grovel-headers.c	27 Sep 2005 22:36:42 -0000
+@@ -223,5 +223,15 @@
+     defsignal("sigxcpu", SIGXCPU);
+     defsignal("sigxfsz", SIGXFSZ);
+ #endif
++#ifdef __FreeBSD__
++    defconstant("fpe-intovf", FPE_INTOVF);
++    defconstant("fpe-intdiv", FPE_INTDIV);
++    defconstant("fpe-fltdiv", FPE_FLTDIV);
++    defconstant("fpe-fltovf", FPE_FLTOVF);
++    defconstant("fpe-fltund", FPE_FLTUND);
++    defconstant("fpe-fltres", FPE_FLTRES);
++    defconstant("fpe-fltinv", FPE_FLTINV);
++    defconstant("fpe-fltsub", FPE_FLTSUB);
++#endif
+     return 0;
+ }
