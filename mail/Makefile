@@ -438,6 +438,7 @@
     SUBDIR += queue-fix
     SUBDIR += queue-repair
     SUBDIR += quickml
+    SUBDIR += rabl_client
     SUBDIR += raysfilter
     SUBDIR += razor-agents
     SUBDIR += rbl-milter
