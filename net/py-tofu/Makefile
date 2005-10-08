@@ -11,7 +11,6 @@ CATEGORIES=	net python
 MASTER_SITES=	http://download.gna.org/soya/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Tofu-${PORTVERSION}
-EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Tofu is a practical high-level network game engine
@@ -24,12 +23,10 @@ USE_PYDISTUTILS=	yes
 WRKSRC=		${WRKDIR}/Tofu-${PORTVERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-tofu
 
-.include <bsd.port.pre.mk>
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/demo/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
