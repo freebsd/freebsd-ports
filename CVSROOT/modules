@@ -10009,6 +10009,7 @@ py-HyperText	ports/textproc/py-HyperText
 py-MySQL	ports/databases/py-MySQL
 py-MySQLdb	ports/databases/py-MySQLdb
 py-MySQLdb-devel	ports/databases/py-MySQLdb-devel
+py-py2play	ports/net/py-py2play
 py-PyGreSQL	ports/databases/py-PyGreSQL
 py-PySQLite10	ports/databases/py-PySQLite10
 py-PySQLite11	ports/databases/py-PySQLite11
