@@ -7,7 +7,7 @@
 
 PORTNAME=	staroffice
 PORTVERSION=	7.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	german editors linux
 MASTER_SITES=	ftp://patches.sun.com/patchroot/all_unsigned/:patch \
 		ftp://ftp.sun.co.uk/pub/patches/:patch \
@@ -17,15 +17,15 @@ MASTER_SITES=	ftp://patches.sun.com/patchroot/all_unsigned/:patch \
 		ftp://ftp.cs.tu-berlin.de/pub/sun/sun-fixes/.../:patch
 DISTNAME=	so-7-ga-bin-linux-de.bin
 .if !defined(USE_CDROM)
-DISTFILES=      so-7-ga-bin-linux-de.bin 116518-06.tar:patch
+DISTFILES=      so-7-ga-bin-linux-de.bin 116518-08.tar:patch
 .else
-DISTFILES=	116518-06.tar:patch
+DISTFILES=	116518-08.tar:patch
 .endif
 .if defined(WITH_ADABAS)
 DISTFILES+=     soa-7-ga-bin-linux-de.bin
 .endif
 
-EXTRACT_ONLY=	116518-06.tar
+EXTRACT_ONLY=	116518-08.tar
 
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	Wordprocessor/dbase/spreadheet/drawing/chart
@@ -42,9 +42,9 @@ WRKSRC=		${WRKDIR}/${SOVERSION}
 TMPDIR=		${WRKDIR}/tmp
 LD_PATH=	${TMPDIR}:${WRKSRC}:${LINUXBASE}/lib:${LINUXBASE}/usr/lib
 INSTDB.INS=	${PREFIX}/${SOVERSION}/program/instdb.ins
-SUNSOLVE=	${WRKDIR}/116518-06
+SUNSOLVE=	${WRKDIR}/116518-08
 ADABAS_DIST=	soa-7-ga-bin-linux-de.bin
-PATCH_DIST=	so-7-pp4-bin-linux.bin
+PATCH_DIST=	so-7-pp5-bin-linux.bin
 
 .include <bsd.port.pre.mk>
 
@@ -121,13 +121,13 @@ pre-fetch:
 	@${FALSE}
 .endif
 .if defined(USE_CDROM)
-DLTEST=116518-06.tar
+DLTEST=116518-08.tar
 .else
 .if exists(/cdrom/linux/office7/setup)
 	@${ECHO}
 	@${ECHO} It seems that you have a Sun StarOffice 7.0 CDROM
 	@${ECHO} mounted on ${CD_MOUNTPT}.  If you wish to install from
-	@${ECHO} this CD-ROM, please run 
+	@${ECHO} this CD-ROM, please run
 	@${ECHO}
 	@${ECHO}        make USE_CDROM=YES
 	@${ECHO}
@@ -245,7 +245,7 @@ post-install:
 	@${LN} -fs ${PREFIX}/bin/staroffice7 ${PREFIX}/bin/staroffice-swriter
 	@${ECHO} StarOffice7.0 has been installed successfully.  In order to use
 	@${ECHO} it, execute ${PREFIX}/bin/staroffice7.
-	@${ECHO} 
+	@${ECHO}
 # XXX: This is missing a "${BRANDELF} -t Linux <executables>".
 
 install-patch:
@@ -255,7 +255,7 @@ install-patch:
                         ${WRKSRC}/patchsetup.resp
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
 		TEMP=${TMPDIR} ${LINUXBASE}/bin/sh -c 'umask 022 && \
-		${WRKSRC}/../116518-06/${PATCH_DIST} -patch:${PREFIX}/${SOVERSION}\
+		${WRKSRC}/../116518-08/${PATCH_DIST} -patch:${PREFIX}/${SOVERSION}\
 		-r:${WRKSRC}/patchsetup.resp'
 
 install-update:
