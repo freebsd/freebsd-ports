@@ -8,7 +8,7 @@ PORTNAME=	latex-subfig
 PORTVERSION=	1.1.20040112
 PORTREVISION=	1
 CATEGORIES=	print
-MASTER_SITES=	http://www-2.cs.cmu.edu/afs/cs/usr/sdc/www/latex/
+MASTER_SITES=	http://www.cs.cmu.edu/afs/cs/usr/sdc/www/latex/
 DISTNAME=	subfig.11
 
 MAINTAINER=	hrs@FreeBSD.org
