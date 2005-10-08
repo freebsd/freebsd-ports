@@ -8,8 +8,8 @@ PORTNAME=	stvef-server
 PORTVERSION=	1.20
 PORTREVISION=	2
 CATEGORIES=	games linux
-MASTER_SITES=	ftp.multiplay.co.uk/pub/games/fps/eliteforce/patches/linux/
-DISTFILES=	stveflinuxdedicated120.zip
+MASTER_SITES=	ftp://ftp.multiplay.co.uk/pub/games/fps/eliteforce/patches/linux/
+DISTFILES=	stvefLinuxDedicated120.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Star Trek Voyager: Elite Forces dedicated server for Linux
