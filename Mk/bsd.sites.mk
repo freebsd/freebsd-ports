@@ -886,7 +886,7 @@ MASTER_SITE_REDHAT_LINUX+= \
 	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.icm.edu.pl/pub/linux/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.redhat.com/pub/redhat/linux/%SUBDIR%/ \
-	ftp://ftp.riken.go.jp/pub/Linux/redhat/releases/%SUBDIR%/ \
+	ftp://ftp.riken.go.jp/pub/Linux/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/pub/Linux/packages/RedHat/redhat/linux/%SUBDIR%/
 .endif
 
