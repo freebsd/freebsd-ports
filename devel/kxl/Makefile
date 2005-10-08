@@ -7,6 +7,7 @@
 
 PORTNAME=	kxl
 PORTVERSION=	1.1.7
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://kxl.hn.org/download/
 DISTNAME=	KXL-${PORTVERSION}
@@ -16,7 +17,7 @@ COMMENT=	A visual, sound library for games
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-INSTALL_SHLIB=	yes
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LIBS=="-L${X11BASE}/lib"
