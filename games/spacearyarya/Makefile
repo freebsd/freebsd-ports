@@ -7,6 +7,7 @@
 
 PORTNAME=	spacearyarya
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://kxl.hn.org/download/
 DISTNAME=	SpaceAryarya-KXL-${PORTVERSION}
@@ -15,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Space Harrier, the ancient video game like game
 
 BUILD_DEPENDS=	${X11BASE}/include/KXL.h:${PORTSDIR}/games/kxl
+RUN_DEPENDS=	${X11BASE}/lib/libKXL-1.1.7.so:${PORTSDIR}/games/kxl
 
 NO_CDROM=	Possible copyright infringement
 
