@@ -43,7 +43,7 @@ OPTIONS=	NAS	"Include support for the Network Audio System" Off \
 
 .include <bsd.port.pre.mk>
 
-.if exists(/usr/lib/libvgl.so.3)
+.if exists(/usr/lib/libvgl.so)
 CONFIGURE_ARGS+=--enable-video-vgl
 DISPLAY_MSG=	${CAT} ${PKGMESSAGE}
 .else
