@@ -1,0 +1,9 @@
+============================================================
+
+To complete the installation of this port you need to copy
+the files "mp_pak0.pk3", "mp_pak1.pk3", "mp_pak2.pk3",
+"pak.pk3", "sp_pak1.pk3" and "sp_pak2.pk3" (in the "main"
+subdirectory) from your RTCW distribution to
+"%%DATADIR%%/main".
+
+============================================================

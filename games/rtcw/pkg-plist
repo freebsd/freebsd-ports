@@ -1,21 +1,249 @@
-%%RTCWDIR%%/CHANGES
-%%RTCWDIR%%/INSTALL
-%%RTCWDIR%%/QUICKSTART
-%%RTCWDIR%%/WolfMP.xpm
-%%RTCWDIR%%/WolfSP.xpm
-%%RTCWDIR%%/main/cgame.mp.i386.so
-%%RTCWDIR%%/main/cgamei386.so
-%%RTCWDIR%%/main/mp_pakmaps0.pk3
-%%RTCWDIR%%/main/qagame.mp.i386.so
-%%RTCWDIR%%/main/qagamei386.so
-%%RTCWDIR%%/main/rotate.cfg
-%%RTCWDIR%%/main/scripts/translation.cfg
-%%RTCWDIR%%/main/ui.mp.i386.so
-%%RTCWDIR%%/main/uii386.so
-%%RTCWDIR%%/openurl.sh
-%%RTCWDIR%%/wolf.x86
-%%RTCWDIR%%/wolfded.x86
-%%RTCWDIR%%/wolfsp.x86
-@unexec rmdir %D/%%RTCWDIR%%/main/scripts 2>/dev/null || true
-@unexec rmdir %D/%%RTCWDIR%%/main 2>/dev/null || true
-@unexec rmdir %D/%%RTCWDIR%%/ 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -Rf ${PKG_PREFIX}/%%RTCWDIR%%/`` to remove any configuration files, *.pk3 files, and mods left." | fmt
+bin/wolf
+bin/wolfded
+bin/wolfsp
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/Docs/ATVIsmall.jpg
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Dedicated Server Notes.html
+%%PORTDOCS%%%%DOCSDIR%%/Docs/GM_Color_small.jpg
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Compatibility/msr.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Credits/Activision.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Credits/Additional.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Credits/Default.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Credits/gray_matter_credits.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Credits/id_software_credits.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Credits/nerve_software_credits.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Default.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/Default.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/Images/Title.1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/Images/mp_HUD.JPG
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/Images/sp_hud.jpg
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_EN/Title.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_EN/default.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_EN/text.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_EN/toc.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_FR/Title.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_FR/default.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_FR/text.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_FR/toc.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_GM/Title.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_GM/default.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_GM/text.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_GM/toc.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_IT/Title.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_IT/default.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_IT/text.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_IT/toc.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_SP/Title.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_SP/default.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_SP/text.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_SP/toc.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Readme/readme.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/Customer Support/Customer_Support.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/Default.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/Information/Audio_Problems.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/Information/DirectX.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/Information/Electronic_Registration.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/Information/Installing_the_game_to_a_compressed_hard_drive.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/Information/RTCW_dedicated_serv.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/Information/Sound_Card_Conflicts.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/Information/Updates_and_or_Patches.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/Information/autoplay.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/3Dfx.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/ATI_Technologies_Inc_.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Acer_America.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Advanced_Gravis.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Asus.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Aztech_Labs.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Boca_Research_Inc_.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/CD_ROM_Drive_Manufacturers_List.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/CSS_Laboratories__Inc_.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Canopus_Corporation.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Cardinal_Technologies.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Cirrus_Logic.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Colorgraphic_Communication.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Compaq_Computer_Corporation.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Creative_Labs.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Dell_Computers.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Diamond_Multimedia_Systems.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Epson_America.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Gateway_2000.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Hercules_Computer_Technology_Inc_.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Hitachi.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/IBM__International_Business_Machines_.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Intel_Corp_.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Logitech.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Matrox_Graphics_Inc_.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Media_Vision.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Microsoft.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Mitsubishi.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Mitsumi.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/NEC.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Number_Nine_Visual_Technology.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Oak_Technology.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Packard_Bell.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Panasonic_Interactive_Media.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Paradise__Phillips_Electronics.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Real_Magic.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Rendition.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/STB_Systems__Inc_.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Sigma_Designs.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Sonic_Blue.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Sony.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Sound_Card_Manufacturers_List.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Swan_Technologies__Inc_.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/System_Manufacturers_List.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Tandy_Computer.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Teac.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Toshiba.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Trident_Microsystems_Inc_.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Tseng_Labs.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Turtle_Beach.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Video_Card_Manufacturers_List.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Willow_Peripherals.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/Zenith_Data_Systems.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/nVidia.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/Tech Help/vendor/vendor.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/_borders/left.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/_borders/side_ie.css
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/_borders/style_ie.css
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/_borders/top.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/images/3by3.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/images/ATVIsmall.jpg
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/images/GM_Color_small.jpg
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/images/id_logo_small.jpg
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/images/nerve_logo_small.jpg
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/images/redstripe.jpg
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/images/rtcw_logo_480banner_elite.jpg
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/images/rtcw_logo_small.jpg
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/images/wolf_bg.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Help/index.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/License.txt
+%%PORTDOCS%%%%DOCSDIR%%/Docs/MP1_readme.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/MSR.txt
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/admins/index.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/admins/tabout1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/admins/tadvanced1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/admins/tbasics1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/admins/tcommands1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/admins/tcommands2.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/admins/tenabling1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/admins/tfaq1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/admins/tgame1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/admins/tintro1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/admins/tlogo.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/admins/tmonitoring1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/admins/tpbint1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/admins/tpbsub1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/admins/tplayer1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/admins/tquick1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/admins/tremote1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/admins/tscreen1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/admins/tsettings1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/admins/ttitle1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/admins/ttoc1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/admins/tupdating1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/index.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/sbrowser1.jpg
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/skeyboard1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/stilde1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/tabout1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/tbasics1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/tbutton1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/tbutton2.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/tcommands1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/tcommands2.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/tenabling1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/tfaq1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/tfinding1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/tgame1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/tintro1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/tlogo.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/tmonitoring1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/tname1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/tpbint1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/tpbsub1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/tquick1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/tremote1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/tscreen1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/tsettings1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/ttaking1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/ttitle1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/ttoc1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/tupdating1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/PunkBuster/players/tusing1.gif
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Return To Castle Wolfenstein Website.url
+%%PORTDOCS%%%%DOCSDIR%%/Docs/Update_readme.htm
+%%PORTDOCS%%%%DOCSDIR%%/Docs/id_logo_small.jpg
+%%PORTDOCS%%%%DOCSDIR%%/Docs/nerve_logo_small.jpg
+%%PORTDOCS%%%%DOCSDIR%%/Docs/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/Docs/rtcw_logo_small.jpg
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/QUICKSTART
+%%PORTDOCS%%%%DOCSDIR%%/RTCW-README-1.4.txt
+%%DATADIR%%/main/cgame.mp.i386.so
+%%DATADIR%%/main/cgamei386.so
+%%DATADIR%%/main/mp_bin.pk3
+%%DATADIR%%/main/mp_pak3.pk3
+%%DATADIR%%/main/mp_pak4.pk3
+%%DATADIR%%/main/qagame.mp.i386.so
+%%DATADIR%%/main/qagamei386.so
+%%DATADIR%%/main/rotate.cfg
+%%DATADIR%%/main/scripts/translation.cfg
+%%DATADIR%%/main/sp_pak3.pk3
+%%DATADIR%%/main/ui.mp.i386.so
+%%DATADIR%%/main/uii386.so
+%%DATADIR%%/pb/PB_EULA.txt
+%%DATADIR%%/pb/htm/la001289.htm
+%%DATADIR%%/pb/htm/la001293.htm
+%%DATADIR%%/pb/htm/lc000989.htm
+%%DATADIR%%/pb/htm/lc000993.htm
+%%DATADIR%%/pb/htm/ls000989.htm
+%%DATADIR%%/pb/htm/ls000993.htm
+%%DATADIR%%/pb/htm/ma001289.htm
+%%DATADIR%%/pb/htm/ma001293.htm
+%%DATADIR%%/pb/htm/mc000989.htm
+%%DATADIR%%/pb/htm/mc000993.htm
+%%DATADIR%%/pb/htm/ms000989.htm
+%%DATADIR%%/pb/htm/ms000993.htm
+%%DATADIR%%/pb/htm/wa001289.htm
+%%DATADIR%%/pb/htm/wa001293.htm
+%%DATADIR%%/pb/htm/wc000989.htm
+%%DATADIR%%/pb/htm/wc000993.htm
+%%DATADIR%%/pb/htm/ws000989.htm
+%%DATADIR%%/pb/htm/ws000993.htm
+%%DATADIR%%/pb/pbag.so
+%%DATADIR%%/pb/pbcl.so
+%%DATADIR%%/pb/pbsv.so
+%%DATADIR%%/wolf
+%%DATADIR%%/wolfded
+%%DATADIR%%/wolfsp
+share/pixmaps/WolfMP.xpm
+share/pixmaps/WolfSP.xpm
+@dirrm %%DATADIR%%/pb/htm
+@dirrm %%DATADIR%%/pb
+@dirrm %%DATADIR%%/main/scripts
+@unexec rmdir %D/%%DATADIR%%/main 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%% >/dev/null 2>&1 || echo "If you are permanently removing this port, you should remove any configuration files, data files, and mods left in %D/%%DATADIR%%." | fmt
+@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs/PunkBuster/players
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs/PunkBuster/admins
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs/PunkBuster
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs/Help/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs/Help/_borders
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs/Help/Tech Help/vendor
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs/Help/Tech Help/Information
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs/Help/Tech Help/Customer Support
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs/Help/Tech Help
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs/Help/Readme
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_SP
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_IT
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_GM
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_FR
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs/Help/Manual/RTCW_Manual_EN
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs/Help/Manual/Images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs/Help/Manual
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs/Help/Credits
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs/Help/Compatibility
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs/Help
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

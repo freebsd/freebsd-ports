@@ -6,63 +6,69 @@
 #
 
 PORTNAME=	rtcw
-PORTVERSION=	1.1b
-PORTREVISION=	2
+DISTVERSION=	1.41-3
 CATEGORIES=	games linux
-MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/wolf/linux/old/
-DISTNAME=	wolf-linux-${PORTVERSION}.x86
+MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/wolf/linux/
+DISTNAME=	wolf-linux-${DISTVERSION}.x86
 EXTRACT_SUFX=	.run
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Return to Castle Wolfenstein for Linux
 
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
 ONLY_FOR_ARCHS=	i386
+
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
-NO_CDROM=	"Size; the data set is much too big"
-NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_PERL5_BUILD=yes
-RTCWDIR=	games/rtcw
-PLIST_SUB+=	RTCWDIR="${RTCWDIR}"
-INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
+
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+PROGS=		wolf wolfded wolfsp
 
 do-extract:
-	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR} && tail +175 ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
-		${TAR} zxvf - >/dev/null
+	@cd ${WRKDIR} && tail +356 ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
+		${TAR} zxf -
 
 pre-patch:
-# remove trailing ^M
+	@# remove trailing ^M
 	@${FIND} -E ${WRKSRC} -type f \
 		-iregex ".*\.(bat|cfg|gam|htm|html|inf|ini|lst|sc|scr|txt|url)" \
-		-exec ${PERL} -pi -ne 's!\r\n!\n!' {} 1>/dev/null 2>&1 \;
+		-exec ${REINPLACE_CMD} -e "s|`${ECHO_CMD} -e '\r'`$$||" {} \;
+
+do-build:
+.for f in ${PROGS}
+	@(${ECHO_CMD} "#!${SH}"; \
+		${ECHO_CMD} "cd ${DATADIR} || exit 1"; \
+		${ECHO_CMD} "exec ./${f}") > ${WRKDIR}/${f}
+.endfor
 
 do-install:
-	${INSTALL_DIR} ${PREFIX}/${RTCWDIR}
-.for file in CHANGES INSTALL QUICKSTART WolfMP.xpm WolfSP.xpm
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/${RTCWDIR}
+	@${MKDIR} ${DATADIR}
+.for f in ${PROGS}
+	@${INSTALL_PROGRAM} ${WRKSRC}/bin/Linux/x86/${f}.x86 ${DATADIR}/${f}
+	@${INSTALL_SCRIPT} ${WRKDIR}/${f} ${PREFIX}/bin
 .endfor
-.for file in openurl.sh
-	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/${RTCWDIR}
+.for f in main pb
+	@${CP} -R ${WRKSRC}/${f} ${DATADIR}
 .endfor
-.for file in wolf.x86 wolfded.x86 wolfsp.x86
-	${INSTALL} -c -m 500 ${WRKSRC}/bin/x86/${file} ${PREFIX}/${RTCWDIR}
+	@${MKDIR} ${PREFIX}/share/pixmaps
+.for f in WolfMP.xpm WolfSP.xpm
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/pixmaps
 .endfor
-	${INSTALL_DIR} ${PREFIX}/${RTCWDIR}/main
-.for file in cgame.mp.i386.so cgamei386.so mp_pakmaps0.pk3 qagame.mp.i386.so qagamei386.so rotate.cfg ui.mp.i386.so uii386.so
-	${INSTALL_DATA} ${WRKSRC}/main/${file} ${PREFIX}/${RTCWDIR}/main
-.endfor
-	${INSTALL_DIR} ${PREFIX}/${RTCWDIR}/main/scripts
-	${INSTALL_DATA} ${WRKSRC}/main/scripts/translation.cfg ${PREFIX}/${RTCWDIR}/main/scripts
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.   for f in CHANGES INSTALL QUICKSTART RTCW-README-1.4.txt
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.   endfor
+	@${CP} -R ${WRKSRC}/Docs ${DOCSDIR}
+.endif
 
-# XXX Should really install the Docs/ directory as well
 post-install:
+	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 
 .include <bsd.port.mk>

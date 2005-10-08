@@ -1,6 +1,11 @@
-This package contains most of the items you'll need to run 
-Return to Castle Wolfenstein for Linux under FreeBSD.  You
-still need to install some files from the retail CD.  See the
-INSTALL file, and the rtcw-paks port for an easy way to do this.
+Return to Castle Wolfenstein is a remake of sorts of the early, seminal
+first-person shooter, Wolfenstein 3D. However, with the advances in graphics
+technology and gameplay design since the original game, without the name and
+the occasional in-game references, it would be unrecognisable as a remake.
+Unlike the original Wolfenstein 3D, only a handful of the single player
+missions in Return to Castle Wolfenstein takes place in the infamous
+castle/prison.
+
+WWW: http://www.castlewolfenstein.com/
 
 - Nik Clayton <nik@FreeBSD.org>
