@@ -7,7 +7,7 @@
 
 PORTNAME=	grande
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://kxl.hn.org/download/
 DISTNAME=	${PORTNAME}-KXL-${PORTVERSION}
@@ -15,8 +15,8 @@ DISTNAME=	${PORTNAME}-KXL-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Zanac type game
 
-BUILD_DEPENDS=	${X11BASE}/lib/libKXL-1.1.5.so:${PORTSDIR}/games/kxl
-RUN_DEPENDS=	${X11BASE}/lib/libKXL-1.1.5.so:${PORTSDIR}/games/kxl
+BUILD_DEPENDS=	${X11BASE}/lib/libKXL-1.1.7.so:${PORTSDIR}/games/kxl
+RUN_DEPENDS=	${X11BASE}/lib/libKXL-1.1.7.so:${PORTSDIR}/games/kxl
 
 NO_CDROM=	Possible copyright infringement
 
