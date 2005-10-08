@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	httping
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	net
-MASTER_SITES=	http://www.vanheusden.com/httping/
+MASTER_SITES=	http://www.vanheusden.com/httping/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ehaupt
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -24,7 +26,7 @@ do-build:
 .for f in ${SRC}
 	${CC} ${CFLAGS} -c ${WRKSRC}/${f}.c -o ${WRKSRC}/${f}.o
 .endfor
-	${CC} ${CFLAGS} ${LDFLAGS} ${SRC:C/(.*)/${WRKSRC}\/\1.o/} \
+	${CC} ${LDFLAGS} ${SRC:C/(.*)/${WRKSRC}\/\1.o/} \
 		-o ${WRKSRC}/${PORTNAME}
 
 do-install:
