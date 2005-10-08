@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	verlihub
-PORTVERSION=	0.9.8.b
+PORTVERSION=	0.9.8.c
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	verlihub
-DISTNAME=	verlihub-0.9.8b
+DISTNAME=	verlihub-0.9.8c-RC2
 
 MAINTAINER=	hurbold@yahoo.com
 COMMENT=	Verlihub Linux/Unix Direct Connect Hub Software
@@ -19,6 +19,8 @@ COMMENT=	Verlihub Linux/Unix Direct Connect Hub Software
 LIB_DEPENDS=	GeoIP.4:${PORTSDIR}/net/GeoIP \
 		pcre.0:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+
+WRKSRC=		${WRKDIR}/verlihub-0.9.8c
 
 USE_MYSQL=	yes
 USE_PERL5=	yes
@@ -29,6 +31,12 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PORTDOCS=	configuring.txt help.sql using.txt features.html help.html params.php verlihub.html
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+USE_GCC=	3.4+
+.endif
 
 post-patch:
 	@${CAT} ${PKGDIR}/pkg-message | ${SED} 's|%%PREFIX%%|${PREFIX}|' > ${PKGMESSAGE}
@@ -42,15 +50,5 @@ post-install:
 .endif
 
 	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 502010
-USE_GCC=	3.3
-.endif
-
-.if ${OSVERSION} >= 502126
-USE_GCC=	3.3
-.endif
 
 .include <bsd.port.post.mk>
