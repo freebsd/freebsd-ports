@@ -4024,6 +4024,7 @@ isreal		ports/graphics/isreal
 istanbul	ports/multimedia/istanbul
 isync		ports/mail/isync
 it++		ports/math/it++
+it-acroread	ports/print/it-acroread
 it-aspell	ports/textproc/it-aspell
 it-ooodict-IT	ports/editors/ooodict-it_IT
 itcl		ports/lang/itcl
