@@ -4,7 +4,9 @@ bin/vh_getcfg
 bin/vh_getdb
 bin/vh_install
 bin/vh_regnick
+bin/vh_restart
 bin/vh_runhub
+bin/vh_setup
 bin/vh_trigger
 include/verlihub/cantiflood.h
 include/verlihub/casyncconn.h
@@ -24,7 +26,9 @@ include/verlihub/cconndc.h
 include/verlihub/cconnchoose.h
 include/verlihub/cconnpoll.h
 include/verlihub/cconnselect.h
+include/verlihub/cconntypes.h
 include/verlihub/cdbconf.h
+include/verlihub/cdcclients.h
 include/verlihub/cdccommand.h
 include/verlihub/cdcconf.h
 include/verlihub/cdcconsole.h
@@ -42,12 +46,12 @@ include/verlihub/cmutex.h
 include/verlihub/cmysql.h
 include/verlihub/cobj.h
 include/verlihub/coperator.h
-include/verlihub/cparser.h
 include/verlihub/cpcre.h
 include/verlihub/cpenaltylist.h
 include/verlihub/cpluginbase.h
 include/verlihub/cpluginloader.h
 include/verlihub/cpluginmanager.h
+include/verlihub/cprotocol.h
 include/verlihub/cprotocommand.h
 include/verlihub/cquery.h
 include/verlihub/creglist.h
@@ -67,15 +71,19 @@ include/verlihub/cuser.h
 include/verlihub/cvhpluginmgr.h
 include/verlihub/cvhplugin.h
 include/verlihub/cworkerthread.h
+include/verlihub/dirsettings.h
 include/verlihub/dll.h
 include/verlihub/make_time.h
 include/verlihub/script_api.h
+include/verlihub/stringutils.h
 include/verlihub/tcache.h
 include/verlihub/thasharray.h
 include/verlihub/tchashlistmap.h
 include/verlihub/tlistconsole.h
 include/verlihub/tlistplugin.h
+include/verlihub/tmysqlmemoryhash.h
 include/verlihub/tmysqlmemorylist.h
+include/verlihub/tmysqlmemoryordlist.h
 include/verlihub/tpluginbase.h
 lib/libdiakritika_pi.a
 lib/libdiakritika_pi.la
@@ -85,10 +93,6 @@ lib/libplug_pi.a
 lib/libplug_pi.la
 lib/libplug_pi.so
 lib/libplug_pi.so.0
-lib/libtest_pi.a
-lib/libtest_pi.la
-lib/libtest_pi.so
-lib/libtest_pi.so.0
 lib/libverlihub.a
 lib/libverlihub.la
 lib/libverlihub.so
@@ -97,4 +101,21 @@ lib/libvhapi.a
 lib/libvhapi.la
 lib/libvhapi.so
 lib/libvhapi.so.0
+share/verlihub/config/faq
+share/verlihub/config/help_admin
+share/verlihub/config/help_cheef
+share/verlihub/config/help_master
+share/verlihub/config/help_op
+share/verlihub/config/help_reg
+share/verlihub/config/help_usr
+share/verlihub/config/help_vip
+share/verlihub/config/motd
+share/verlihub/config/rules
+share/verlihub/sql/default_pi_plug.sql
+share/verlihub/sql/default_conn_types.sql
+share/verlihub/sql/default_file_trigger.sql
+share/verlihub/sql/default_reglist.sql
 @dirrm include/verlihub
+@dirrm share/verlihub/config
+@dirrm share/verlihub/sql
+@dirrm share/verlihub
