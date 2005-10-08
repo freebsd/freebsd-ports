@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	0.8.17
+PORTVERSION=	0.9.5
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sbcl
@@ -36,6 +36,16 @@ ONLY_FOR_ARCHS=	i386
 
 MAN1=		sbcl.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502124
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-contrib_asdf-install_installer.lisp
+.endif
+
+.if ${OSVERSION} >= 600022
+BUILD_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
+.endif
+
 post-extract:
 	(${FIND} ${WRKSRC} -type d -name CVS -print0 | ${XARGS} -0 ${RM} -rf)
 
@@ -47,9 +57,18 @@ do-install:
 	    MAN_DIR=${PREFIX}/man DOC_DIR=${DOCSDIR} \
 	    INFO_DIR=${DOCSDIR}/info NO_DOCS=${NO_DOCS} \
 	    ${SH} install.sh)
-.if defined(NOPORTDOCS)
 	# sbcl creates these directories even when they're not needed
-	${RMDIR} ${DOCSDIR}/html ${DOCSDIR}/info
+.if defined(NOPORTDOCS)
+	${RMDIR} ${DOCSDIR}/html
 .endif
+	# we do not build the documentation
+	# perhaps this should be configurable
+	${RMDIR} ${DOCSDIR}/info
 
-.include <bsd.port.mk>
+test:
+	(cd ${WRKSRC}/tests && ${SH} run-tests.sh)
+
+post-patch:
+	${FIND} ${WRKSRC} -name '*.orig' -delete
+
+.include <bsd.port.post.mk>

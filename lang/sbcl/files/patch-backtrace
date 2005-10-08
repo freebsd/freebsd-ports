@@ -1,0 +1,17 @@
+Index: src/code/debug-int.lisp
+===================================================================
+RCS file: /cvsroot/sbcl/sbcl/src/code/debug-int.lisp,v
+retrieving revision 1.97
+diff -u -r1.97 debug-int.lisp
+--- src/code/debug-int.lisp	14 Jul 2005 16:30:31 -0000	1.97
++++ src/code/debug-int.lisp	27 Aug 2005 01:36:06 -0000
+@@ -572,6 +572,9 @@
+    ;; FIXME: Where is this documented? Is it really true of every CPU
+    ;; architecture? Is it even necessarily true in current SBCL?
+    (>= (sap-int ra) 4096)
++   ;; On FreeBSD, kernel area is not valid as return address.
++   ;; FIXME: How to obtain the address instead of magic number?
++   #!+freebsd (< (sap-int ra) #xC0000000)
+    ;; not a Lisp stack pointer
+    (not (control-stack-pointer-valid-p ra))))
+ 
