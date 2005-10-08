@@ -462,6 +462,7 @@
     SUBDIR += py-cairo
     SUBDIR += py-cgkit
     SUBDIR += py-chart
+    SUBDIR += py-editobj
     SUBDIR += py-exif
     SUBDIR += py-freeimagepy
     SUBDIR += py-gd
