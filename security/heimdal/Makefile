@@ -17,6 +17,8 @@ DISTNAME=		heimdal-${PORTVERSION}
 MAINTAINER=		nectar@FreeBSD.ORG
 COMMENT=		A re-implementation of Kerberos V
 
+CONFLICTS=		krb4-[0-9]* krb5-[0-9]*
+
 OPTIONS+=		LDAP     "Use OpenLDAP as the KDC backend" off
 OPTIONS+=		CRACKLIB "Use CrackLib for password quality checking" off
 OPTIONS+=		X11      "Build X11 utilies" off
@@ -47,7 +49,7 @@ CONFIGURE_ARGS+=	--without-x
 .if defined(HEIMDAL_HOME)
 PREFIX=				${HEIMDAL_HOME}
 .else
-CONFLICTS=			wu-ftpd-[0-9]* wu-ftpd+ipv6-[0-9]*
+CONFLICTS+=			wu-ftpd-[0-9]* wu-ftpd+ipv6-[0-9]*
 .endif
 
 INFO=				heimdal
@@ -90,6 +92,6 @@ post-install:
 		${PREFIX}/etc/rc.d/kdc.sh.sample
 
 .if ${ARCH} == "amd64"
-CFLAGS+= -fPIC
+CFLAGS+=	-fPIC
 .endif
 .include <bsd.port.post.mk>
