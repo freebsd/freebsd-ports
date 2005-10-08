@@ -105,6 +105,7 @@
     SUBDIR += hugelatex
     SUBDIR += hyperlatex
     SUBDIR += ifhp
+    SUBDIR += it-acroread
     SUBDIR += jadetex
     SUBDIR += kaspaliste
     SUBDIR += kcdlabel
