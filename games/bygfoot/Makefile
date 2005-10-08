@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bygfoot
-PORTVERSION=	1.8.2
+PORTVERSION=	1.9.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,11 +19,9 @@ USE_BZIP2=	yes
 USE_GNOME=	gtk20 gnometarget
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
-
-MAN6=		bygfoot.6
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' ${WRKSRC}/b-u/bygfoot-update
+	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' ${WRKSRC}/bygfoot-update
 
 .include <bsd.port.mk>
