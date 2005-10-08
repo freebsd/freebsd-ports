@@ -3335,6 +3335,7 @@ gstreamer	ports/multimedia/gstreamer
 gstreamer-editor	ports/multimedia/gstreamer-editor
 gstreamer-ffmpeg	ports/multimedia/gstreamer-ffmpeg
 gstreamer-monkeysaudio	ports/audio/gstreamer-monkeysaudio
+gstreamer-pitfdll	ports/multimedia/gstreamer-pitfdll
 gstreamer-plugins	ports/multimedia/gstreamer-plugins
 gstreamer-plugins-a52dec	ports/audio/gstreamer-plugins-a52dec
 gstreamer-plugins-aalib		ports/graphics/gstreamer-plugins-aalib
