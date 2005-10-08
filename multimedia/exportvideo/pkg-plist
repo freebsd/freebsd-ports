@@ -1,3 +1,4 @@
 bin/exportvideo
 bin/nuv4dvd
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

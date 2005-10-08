@@ -8,7 +8,7 @@
 PORTNAME=	exportvideo
 PORTVERSION=	1.0
 CATEGORIES=	multimedia
-MASTER_SITES=	http://131.130.199.155/~aoe/mystuff/mpeg2_movie-avipatch/
+MASTER_SITES=	http://tigerente.htu.tuwien.ac.at/~aoe/mystuff/mpeg2_movie-avipatch/
 DISTNAME=	${PORTNAME}.7e-pre9
 
 MAINTAINER=	frank@dynamical-systems.org
@@ -30,7 +30,7 @@ PORTDOCS=	README README.links
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-IGNORE=		"Supported for i386 architecture only"
+IGNORE=		Supported for i386 architecture only
 .endif
 
 # Compiling with MMX extensions fails on FreeBSD 5.x
