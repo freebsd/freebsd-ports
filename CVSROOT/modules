@@ -6768,6 +6768,7 @@ nfbtrans	ports/textproc/nfbtrans
 nfdump		ports/net-mgmt/nfdump
 nfsen		ports/net-mgmt/nfsen
 nfsshell	ports/net/nfsshell
+ng_car		ports/net/ng_car
 ng_daphne	ports/net/ng_daphne
 ng_ipacct	ports/net-mgmt/ng_ipacct
 ng_netflow	ports/net/ng_netflow
