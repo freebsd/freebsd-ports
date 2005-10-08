@@ -1,6 +1,6 @@
---- agent/seahorse-agent-io.c.orig	Fri Jan 28 15:52:18 2005
-+++ agent/seahorse-agent-io.c	Fri Jan 28 15:54:19 2005
-@@ -377,12 +377,18 @@
+--- agent/seahorse-agent-io.c.orig	Sun Aug 28 15:52:02 2005
++++ agent/seahorse-agent-io.c	Fri Oct  7 21:51:25 2005
+@@ -412,12 +412,18 @@ io_handler (GIOChannel *source, GIOCondi
      gsize length;
      GError *err = NULL;
      gboolean ret = TRUE;
@@ -21,12 +21,12 @@
              g_critical ("couldn't read from socket: %s", err->message);
              g_clear_error (&err);
              free_conn (cn);
-@@ -398,7 +404,7 @@
+@@ -434,7 +440,7 @@ io_handler (GIOChannel *source, GIOCondi
              g_free (string);
      }
  
--    if (condition & G_IO_HUP) {
-+    else if (condition & G_IO_HUP) {
+-    if (cn && condition & G_IO_HUP) {
++    else if (cn && condition & G_IO_HUP) {
          free_conn (cn);
          ret = FALSE;            /* removes watch */
      }
