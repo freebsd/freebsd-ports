@@ -16,6 +16,46 @@ AOLSERVERBASE=%%AOLSERVERBASE%%
 VIRTUALBASE=%%VIRTUALBASE%%
 
 post-install() {
+	echo "Starting post-config changes on your request"
+
+for DIRS in /usr/share/skel/dot
+do
+if egrep 'OPENACS-entries in .profile' ${DIRS}.profile >/dev/null 2>&1; then
+	echo "Notice: there are OPENACS-entries in .profile (skeleton)"
+else
+	echo "Notice: adding OPENACS-entries to ${DIRS}.profile" && \
+	echo "# OPENACS-entries in .profile:" >> ${DIRS}.profile && \
+	echo "export PATH=\$$PATH:${PGBASE}/bin" >> ${DIRS}.profile && \
+	echo "export PGDATA=${PGDATA}" >> ${DIRS}.profile && \
+	echo "export LD_LIBRARY_PATH=\$$LD_LIBRARY_PATH:${PGBASE}/lib" >> ${DIRS}.profile && \
+	echo "export PS1=\"<\u-\W>\"" >> ${DIRS}.profile && \
+	echo "export PS2=\"continu>\"" >> ${DIRS}.profile && \
+	echo "export CVSROOT=/cvsroot" >> ${DIRS}.profile && \
+	echo "export EDITOR=emacs" >> ${DIRS}.profile && \
+	echo "# end of OPENACS-entries." >> ${DIRS}.profile
+fi
+done
+
+if egrep 'OPENACS-entries in rc.conf' ${RCCONF} >/dev/null 2>&1; then
+	echo "Notice: there are OPENACS-entries in ${RCCONF}"
+else
+	echo "Notice: adding OPENACS-entries to ${RCCONF}" && \
+	echo "# OPENACS-entries in rc.conf:" >> ${RCCONF} && \
+	echo "ldconfig_paths=\"/usr/lib/compat /usr/X11R6/lib ${LOCALBASE}/lib ${PGBASE}/lib ${AOLSERVERBASE}/lib\" " >> ${RCCONF} && \
+	echo "postgresql_enable=\"YES\"" >> ${RCCONF} && \
+	echo "postgresql_data=\"${PGDATA}\"" >> ${RCCONF} && \
+	echo "postgresql_flags=\" -l ${PGDATA}/server.log\"" >> ${RCCONF} && \
+	echo "aolserver_enable=\"YES\"" >> ${RCCONF} && \
+	echo "aolserver_conf=\"${OPENACSBASE}/${OPENACS_USER}/etc/config.tcl\"" >> ${RCCONF} && \
+	echo "aolserver_flags=\"-u ${OPENACS_USER} -g ${OPENACS_GROUP} -b 0.0.0.0:8000\"" >> ${RCCONF} && \
+	echo "aolserver_prog=\"${EXAMPLESDIR}/nsd-postgres\"" >> ${RCCONF} && \
+	echo "# end of OPENACS-entries." >> ${RCCONF}
+fi
+
+	echo "adding root and ${PG_USER} to group ${OPENACS_GROUP}"
+	pw usermod ${PG_USER} -G ${OPENACS_GROUP}
+	pw usermod root -G ${OPENACS_GROUP}
+
 	echo "Set permissions of files (post-config)"
 	chown -R :${OPENACS_GROUP} ${AOLSERVERBASE}
 

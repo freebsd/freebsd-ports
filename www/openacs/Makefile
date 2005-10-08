@@ -7,7 +7,7 @@
 
 PORTNAME?=	openacs
 PORTVERSION?=	5.1.5
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	www
 MASTER_SITES?=	http://openacs.org/projects/openacs/download/download/
 
@@ -129,12 +129,12 @@ post-install:
 		| ${SED} -ne 's,^${WRKSRC},@dirrm ${DATADIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm ${EXAMPLESDIR:S,^${PREFIX}/,,}" >> ${TMPPLIST}
 
-	if [ ${DT} ] ; then \
-	@${MKDIR} ${DTSERVICEBASE} ; \
-	@${TEST} -L ${DTSERVICEBASE}/${OPENACS_USER} || ${LN} -s ${OPENACSBASE}/${OPENACS_USER}/etc/daemontools ${DTSERVICEBASE}/${OPENACS_USER} ; \
-	@${ECHO_CMD} "@cd ${DTSERVICEBASE}" >> ${TMPPLIST} ; \
-	@${ECHO_CMD} "${OPENACS_USER}" >> ${TMPPLIST} ; \
-	@${ECHO_CMD} "@unexec rmdir ${DTSERVICEBASE} 2>&1 > /dev/null || true" >> ${TMPPLIST} ; \
+	@if [ ${DT} ] ; then \
+		${MKDIR} ${DTSERVICEBASE} ; \
+		${TEST} -L ${DTSERVICEBASE}/${OPENACS_USER} || ${LN} -s ${OPENACSBASE}/${OPENACS_USER}/etc/daemontools ${DTSERVICEBASE}/${OPENACS_USER} ; \
+		${ECHO_CMD} "@cd ${DTSERVICEBASE}" >> ${TMPPLIST} ; \
+		${ECHO_CMD} "${OPENACS_USER}" >> ${TMPPLIST} ; \
+		${ECHO_CMD} "@unexec rmdir ${DTSERVICEBASE} 2>&1 > /dev/null || true" >> ${TMPPLIST} ; \
 	fi
 
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
