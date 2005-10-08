@@ -91,6 +91,12 @@ etc/horde/httpd.conf.gollem
 %%GOLLEMDIR%%/themes/purple/screen.css
 %%GOLLEMDIR%%/themes/screen.css
 %%GOLLEMDIR%%/view.php
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 @dirrm %%GOLLEMDIR%%/themes/purple
 @dirrm %%GOLLEMDIR%%/themes/graphics/manager
 @dirrm %%GOLLEMDIR%%/themes/graphics
@@ -142,5 +148,6 @@ etc/horde/httpd.conf.gollem
 @dirrm %%GOLLEMDIR%%/lib/Block
 @dirrm %%GOLLEMDIR%%/lib/Auth
 @dirrm %%GOLLEMDIR%%/lib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/%%GOLLEMDIR%%/config 2>/dev/null || true
 @unexec rmdir %D/%%GOLLEMDIR%% 2>/dev/null || true

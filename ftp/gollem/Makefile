@@ -7,6 +7,7 @@
 
 PORTNAME=	gollem
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	ftp www
 MASTER_SITES=	ftp://ftp.horde.org/pub/gollem/				\
 		ftp://ftp.planetmirror.com/pub/horde/gollem/		\
