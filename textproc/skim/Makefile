@@ -7,7 +7,7 @@
 
 PORTNAME=	skim
 PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scim
@@ -42,6 +42,9 @@ CONFIGURE_ENV+=	CXXFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/stlport 
 CONFIGURE_ENV+=	CXXFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__ ${CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 .endif
+
+post-patch:
+	${REINPLACE_CMD} s,bash,sh,g ${WRKSRC}/src/scim-panel-kde.in
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./configure
