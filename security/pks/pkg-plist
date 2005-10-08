@@ -5,7 +5,7 @@ bin/pksclient
 sbin/pksd
 bin/pksdctl
 etc/pksd.conf.sample
-share/pks/mail_intro
+%%DATADIR%%/mail_intro
 %%PORTDOCS%%%%DOCSDIR%%/mail_intro
 %%PORTDOCS%%%%DOCSDIR%%/pks_help.en
 %%PORTDOCS%%%%DOCSDIR%%/pks_help.es
@@ -14,4 +14,6 @@ share/pks/mail_intro
 %%PORTDOCS%%%%DOCSDIR%%/pks_help.cz
 %%PORTDOCS%%%%DOCSDIR%%/pks_help.ja
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/pksd.conf
+@dirrm %%EXAMPLESDIR%%
 @dirrm share/pks
