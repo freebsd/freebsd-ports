@@ -6,59 +6,35 @@
 #
 
 PORTNAME=	cvsgraph
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.5.2
+PORTREVISION=	0
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.akhphd.au.dk/~bertho/cvsgraph/release/
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Graph the life story of a file under CVS or RCS
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		cvsgraph.1
 MAN5=		cvsgraph.conf.5
 
-USE_BISON=	yes
-ALL_TARGET=	cvsgraph
 DOCDIR=		share/doc/${PORTNAME}
 DOCS=		ChangeLog LICENSE README
 EXAMPLES=	cvsgraphwrapper.php3 mkimage.php3
-ONLY_FOR_ARCHS=	i386
+MORE_EXAMPLES=	README.Automatic_documentation checkoutlist commit_action.sh \
+		commitinfo cvswrappers tag_action.sh taginfo
 PLIST=		${WRKDIR}/pkg-plist
-USE_AUTOCONF_VER=	213
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-freetype2-inc=${X11BASE}/include/freetype2/freetype \
-		--with-freetype2-lib=${X11BASE}/lib \
-		--with-gd-inc=${LOCALBASE}/include \
-		--with-gd-lib=${LOCALBASE}/lib \
-		--with-jpeg-inc=${LOCALBASE}/include \
-		--with-jpeg-lib=${LOCALBASE}/lib \
-		--with-png-inc=${LOCALBASE}/include \
-		--with-png-lib=${LOCALBASE}/lib \
-		--with-z-inc=/usr/include \
-		--with-z-lib=/usr/lib \
-		--with-freetype2 \
-		--with-gd \
-		--with-jpeg \
-		--with-png \
-		--with-z
+CONFIGURE_ARGS=	--with-gd-inc=${LOCALBASE}/include \
+		--with-gd-lib=${LOCALBASE}/lib
 
 pre-patch:
-	${RM} ${WRKSRC}/configure # Avoid having to read this file.
 	${MV} ${WRKSRC}/cvsgraph.conf ${WRKSRC}/cvsgraph.conf.orig
 	${SED} -e "s:/home/bertho/tmp/cvstest:/home/ncvs:g" \
 		< ${WRKSRC}/cvsgraph.conf.orig > ${WRKSRC}/cvsgraph.conf
-
-post-configure:
-	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.orig
-	${SED} -e "s|CFLAGS	=|CFLAGS += -I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/gd|g" \
-		< ${WRKSRC}/Makefile.orig > ${WRKSRC}/Makefile
 
 pre-install:
 	${ECHO_CMD} bin/cvsgraph > ${PLIST}
@@ -67,9 +43,13 @@ pre-install:
 .for i in ${DOCS}
 	${ECHO_CMD} ${DOCDIR}/${i} >> ${PLIST}
 .endfor
+.for i in ${MORE_EXAMPLES}
+	${ECHO_CMD} share/examples/${PORTNAME}/automatic_documentation/${i} >> ${PLIST}
+.endfor
 .for i in ${EXAMPLES}
 	${ECHO_CMD} share/examples/${PORTNAME}/${i} >> ${PLIST}
 .endfor
+	${ECHO_CMD} @dirrm share/examples/${PORTNAME}/automatic_documentation >> ${PLIST}
 	${ECHO_CMD} @dirrm share/examples/${PORTNAME} >> ${PLIST}
 	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}
 .endif
@@ -82,11 +62,15 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/${DOCDIR}
 	${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
+	${MKDIR} ${PREFIX}/share/examples/${PORTNAME}/automatic_documentation
 .for i in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/${DOCDIR}
 .endfor
 .for i in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/examples/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/contrib/${i} ${PREFIX}/share/examples/${PORTNAME}
+.endfor
+.for i in ${MORE_EXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/contrib/automatic_documentation/${i} ${PREFIX}/share/examples/${PORTNAME}/automatic_documentation
 .endfor
 .endif
 
