@@ -10065,6 +10065,7 @@ py-dnspython	ports/dns/py-dnspython
 py-docutils	ports/textproc/py-docutils
 py-dosage	ports/deskutils/py-dosage
 py-dsv		ports/textproc/py-dsv
+py-editobj	ports/graphics/py-editobj
 py-elementtree	ports/devel/py-elementtree
 py-email	ports/mail/py-email
 py-email2	ports/mail/py-email2
