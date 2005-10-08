@@ -482,7 +482,7 @@ CONFIGURE_ARGS+=--disable-dvbpsi
 .endif
 
 .if !defined(WITHOUT_DVDNAV)
-LIB_DEPENDS+=	dvdnav.3:${PORTSDIR}/multimedia/libdvdnav
+LIB_DEPENDS+=	dvdnav.4:${PORTSDIR}/multimedia/libdvdnav
 CONFIGURE_ARGS+=--enable-dvdnav
 .else
 CONFIGURE_ARGS+=--disable-dvdnav

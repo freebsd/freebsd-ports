@@ -51,7 +51,7 @@ PLIST_SUB=	GSTREAMER="@comment "
 .endif
 
 .if defined(WITH_DVDNAV) && !defined(WITHOUT_DVDNAV)
-LIB_DEPENDS+=	dvdnav.3:${PORTSDIR}/multimedia/libdvdnav
+LIB_DEPENDS+=	dvdnav.4:${PORTSDIR}/multimedia/libdvdnav
 .endif
 
 .if defined(WITH_CDROM_DEVICE)
