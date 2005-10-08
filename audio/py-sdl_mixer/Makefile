@@ -15,6 +15,7 @@ DISTNAME=	pysdl_mixer-${PORTVERSION}
 MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Pysdl_mixer is a python interface to SDL's sdl_mixer
 
+BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal
 
 DIST_SUBDIR=	python
