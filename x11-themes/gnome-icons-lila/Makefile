@@ -10,7 +10,7 @@
 # x11-themes/gnome-icons/bsd.gnome-icons.mk for it.
 
 PORTNAME=	lila
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://lila-theme.uni.cc/files/tarballs/
 DISTNAME=	${PORTNAME}-gnome-${PORTVERSION}
