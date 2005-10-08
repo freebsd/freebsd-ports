@@ -208,6 +208,7 @@ share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-19.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-2.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-31.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-39.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-4.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-6.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-8.scm
