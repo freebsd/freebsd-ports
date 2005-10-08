@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rdiff-backup
-PORTVERSION=	0.12.8
+PORTVERSION=	1.0.1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://savannah.nongnu.org/download/rdiff-backup/
@@ -23,7 +23,6 @@ USE_PYDISTUTILS=yes
 MAN1=		rdiff-backup.1
 
 DOCFILES=	CHANGELOG README COPYING FAQ.html
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/rdiff-backup.1 ${PREFIX}/man/man1
@@ -32,7 +31,6 @@ post-install:
 .for file in ${DOCFILES}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
-	@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.mk>

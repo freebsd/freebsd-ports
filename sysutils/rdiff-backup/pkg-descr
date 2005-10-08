@@ -9,4 +9,4 @@ in a bandwidth efficient manner over a pipe, like rsync. Thus you can use
 rdiff-backup and ssh to securely back a hard drive up to a remote location,
 and only the differences will be transmitted.
 
-WWW: http://rdiff-backup.stanford.edu/
+WWW: http://www.nongnu.org/rdiff-backup/
