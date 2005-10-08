@@ -7,7 +7,7 @@
 
 PORTNAME=	pwman
 PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,10 +19,14 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 MAN1=	pwman.1
 
 DOCS=	AUTHORS COPYING ChangeLog README TODO
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/bin/gpg|${LOCALBASE}/bin/gpg|g' ${WRKSRC}/src/misc.c
 
 .if !defined(NOPORTDOCS)
 post-install:
