@@ -1,19 +1,19 @@
-lib/%%PYTHON_VERSION%%/site-packages/tofu/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/tofu/client.py
-lib/%%PYTHON_VERSION%%/site-packages/tofu/pickle_sec.py
-lib/%%PYTHON_VERSION%%/site-packages/tofu/server.py
-lib/%%PYTHON_VERSION%%/site-packages/tofu/single.py
-lib/%%PYTHON_VERSION%%/site-packages/tofu/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/tofu/client.pyc
-lib/%%PYTHON_VERSION%%/site-packages/tofu/pickle_sec.pyc
-lib/%%PYTHON_VERSION%%/site-packages/tofu/server.pyc
-lib/%%PYTHON_VERSION%%/site-packages/tofu/single.pyc
-lib/%%PYTHON_VERSION%%/site-packages/tofu/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/tofu/client.pyo
-lib/%%PYTHON_VERSION%%/site-packages/tofu/pickle_sec.pyo
-lib/%%PYTHON_VERSION%%/site-packages/tofu/server.pyo
-lib/%%PYTHON_VERSION%%/site-packages/tofu/single.pyo
+%%PYTHON_SITELIBDIR%%/tofu/__init__.py
+%%PYTHON_SITELIBDIR%%/tofu/client.py
+%%PYTHON_SITELIBDIR%%/tofu/pickle_sec.py
+%%PYTHON_SITELIBDIR%%/tofu/server.py
+%%PYTHON_SITELIBDIR%%/tofu/single.py
+%%PYTHON_SITELIBDIR%%/tofu/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tofu/client.pyc
+%%PYTHON_SITELIBDIR%%/tofu/pickle_sec.pyc
+%%PYTHON_SITELIBDIR%%/tofu/server.pyc
+%%PYTHON_SITELIBDIR%%/tofu/single.pyc
+%%PYTHON_SITELIBDIR%%/tofu/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tofu/client.pyo
+%%PYTHON_SITELIBDIR%%/tofu/pickle_sec.pyo
+%%PYTHON_SITELIBDIR%%/tofu/server.pyo
+%%PYTHON_SITELIBDIR%%/tofu/single.pyo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/run_demo.py
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/tofu
+@dirrm %%PYTHON_SITELIBDIR%%/tofu
