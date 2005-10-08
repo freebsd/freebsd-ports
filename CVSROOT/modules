@@ -10259,6 +10259,7 @@ py-tada		ports/databases/py-tada
 py-tarfile	ports/archivers/py-tarfile
 py-tconfpy	ports/devel/py-tconfpy
 py-tkinter	ports/x11-toolkits/py-tkinter
+py-tofu		ports/net/py-tofu
 py-tvgrab	ports/textproc/py-tvgrab
 py-twisted	ports/devel/py-twisted
 py-twistedConch	ports/security/py-twistedConch
