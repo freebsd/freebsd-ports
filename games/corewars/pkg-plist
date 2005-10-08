@@ -1,4 +1,5 @@
 bin/corewars
+bin/corewars-cmd
 %%DATADIR%%/abez.cw
 %%DATADIR%%/agent.cw
 %%DATADIR%%/backspawner.cw
