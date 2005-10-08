@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.pdc.kth.se/pub/krb/src/
 MAINTAINER=	nectar@FreeBSD.ORG
 COMMENT=	KTH Kerberos 4
 
+CONFLICTS=	krb5-[0-9]* heimdal-[0-9]*
+INSTALLS_SHLIB=	yes
 # Don't remove this.  This port installs several applications
 # which have the same name as some in the base system (e.g.
 # ftp, telnet, su).
@@ -22,7 +24,7 @@ NO_MTREE=	yes	# Otherwise we end up with dozens of extra directories in ${PREFIX
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+= \
+CONFIGURE_ARGS+=\
 	--enable-shared		\
 	--disable-otp		\
 	--disable-afs-support	\
@@ -51,6 +53,6 @@ setuids:
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "amd64"
-CFLAGS+= -fPIC
+CFLAGS+=	-fPIC
 .endif
 .include <bsd.port.post.mk>
