@@ -680,6 +680,7 @@
     SUBDIR += py-msnp
     SUBDIR += py-pcap
     SUBDIR += py-pcapy
+    SUBDIR += py-py2play
     SUBDIR += py-pyxmpp
     SUBDIR += py-radix
     SUBDIR += py-rrdpipe
