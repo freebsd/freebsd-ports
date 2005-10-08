@@ -1367,6 +1367,7 @@ cupid		ports/multimedia/cupid
 cups		ports/print/cups
 cups-base	ports/print/cups-base
 cups-lpr	ports/print/cups-lpr
+cups-magicolor	ports/print/cups-magicolor
 cups-pdf	ports/print/cups-pdf
 cups-pstoraster	ports/print/cups-pstoraster
 cups-samba	ports/print/cups-samba
