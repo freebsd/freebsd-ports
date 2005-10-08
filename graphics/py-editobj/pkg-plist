@@ -1,0 +1,39 @@
+lib/%%PYTHON_VERSION%%/site-packages/editobj/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/editobj/cancel.py
+lib/%%PYTHON_VERSION%%/site-packages/editobj/console.py
+lib/%%PYTHON_VERSION%%/site-packages/editobj/custom.py
+lib/%%PYTHON_VERSION%%/site-packages/editobj/editor.py
+lib/%%PYTHON_VERSION%%/site-packages/editobj/eventobj.py
+lib/%%PYTHON_VERSION%%/site-packages/editobj/main.py
+lib/%%PYTHON_VERSION%%/site-packages/editobj/observe.py
+lib/%%PYTHON_VERSION%%/site-packages/editobj/treewidget.py
+lib/%%PYTHON_VERSION%%/site-packages/editobj/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/editobj/cancel.pyc
+lib/%%PYTHON_VERSION%%/site-packages/editobj/console.pyc
+lib/%%PYTHON_VERSION%%/site-packages/editobj/custom.pyc
+lib/%%PYTHON_VERSION%%/site-packages/editobj/editor.pyc
+lib/%%PYTHON_VERSION%%/site-packages/editobj/eventobj.pyc
+lib/%%PYTHON_VERSION%%/site-packages/editobj/main.pyc
+lib/%%PYTHON_VERSION%%/site-packages/editobj/observe.pyc
+lib/%%PYTHON_VERSION%%/site-packages/editobj/treewidget.pyc
+lib/%%PYTHON_VERSION%%/site-packages/editobj/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/editobj/cancel.pyo
+lib/%%PYTHON_VERSION%%/site-packages/editobj/console.pyo
+lib/%%PYTHON_VERSION%%/site-packages/editobj/custom.pyo
+lib/%%PYTHON_VERSION%%/site-packages/editobj/editor.pyo
+lib/%%PYTHON_VERSION%%/site-packages/editobj/eventobj.pyo
+lib/%%PYTHON_VERSION%%/site-packages/editobj/main.pyo
+lib/%%PYTHON_VERSION%%/site-packages/editobj/observe.pyo
+lib/%%PYTHON_VERSION%%/site-packages/editobj/treewidget.pyo
+lib/%%PYTHON_VERSION%%/site-packages/editobj/icons/folder.pgm
+lib/%%PYTHON_VERSION%%/site-packages/editobj/icons/minus.pgm
+lib/%%PYTHON_VERSION%%/site-packages/editobj/icons/openfolder.pgm
+lib/%%PYTHON_VERSION%%/site-packages/editobj/icons/plus.pgm
+lib/%%PYTHON_VERSION%%/site-packages/editobj/icons/python.pgm
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/test_observe.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/tree_demo.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/tree_demo2.py
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/editobj/icons
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/editobj
