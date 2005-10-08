@@ -52,6 +52,7 @@
     SUBDIR += gstreamer-plugins-mpeg2dec
     SUBDIR += gstreamer-plugins-mpeg2enc
     SUBDIR += gstreamer-plugins-mplex
+    SUBDIR += gstreamer-pitfdll
     SUBDIR += gstreamer-plugins-theora
     SUBDIR += gstreamer-plugins-x264
     SUBDIR += gstreamer-plugins-xvid

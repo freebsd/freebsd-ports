@@ -1,0 +1,8 @@
+Binary loader plugins for Gstreamer.
+Can load dll and qtx as a playback plugin.
+
+Works reasonbly with wmv 9, intel and qdm2.
+
+consider this software beta qualitiy.
+
+WWW: http://sourceforge.net/projects/pitfdll/
