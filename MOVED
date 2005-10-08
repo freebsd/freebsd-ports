@@ -1638,3 +1638,4 @@ russian/bogofilter||2005-10-04|obsoleted by utf-8 support in mail/bogofilter
 graphics/hs-HOpenGL||2005-10-05|Obsolete, now part of lang/ghc
 dns/ddup||2005-10-06|Project no longer exists
 x11-themes/fluxbox-fluxmod||2005-10-07|Project has gone
+sysutils/rdiff-backup-devel|sysutils/rdiff-backup|2005-10-08|obsolete
