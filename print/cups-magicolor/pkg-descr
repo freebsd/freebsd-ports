@@ -1,0 +1,13 @@
+The Konica-Minolta MagiColor 2430DL is one of the few color laser printers
+that fully supports open source.  They have provided a CUPS filter,
+rastertokmlf, that translates the CUPS raster format to the PCL-like
+"LavaFlow" format expected by the printer.  The filter uses littleCMS
+for color matching and their package also provides a complete PPD file
+for the 2430DL.
+
+The FreeBSD port patches the original package to take advantage of the
+actual configuration of CUPS (the original package depended on a static
+configuration based on CUPS 1.1.15) and to put the various files in their
+proper places according to FreeBSD standards.
+
+WWW: http://konicaminolta.net/
