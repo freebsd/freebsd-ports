@@ -1,11 +1,16 @@
---- exrdisplay/Makefile.in.orig	Sat Jun  5 09:11:35 2004
-+++ exrdisplay/Makefile.in	Mon Jun 14 22:25:27 2004
-@@ -105,7 +105,7 @@
+--- exrdisplay/Makefile.in.orig	Thu Mar 10 10:29:30 2005
++++ exrdisplay/Makefile.in	Sun Oct  9 05:47:41 2005
+@@ -158,10 +158,10 @@
+ @HAVE_FLTK_TRUE@           -I$(top_srcdir)/IlmImf
  
- @HAVE_FLTK_TRUE@INCLUDES = @NVSDK_CXXFLAGS@ @FLTK_CXXFLAGS@ -I$(top_builddir) 	   -I$(top_srcdir)/Iex -I$(top_srcdir)/Half -I$(top_srcdir)/Imath            -I$(top_srcdir)/IlmImf
  
--@HAVE_FLTK_TRUE@LDADD = @FLTK_LDFLAGS@ 	-L$(top_builddir)/Iex -L$(top_builddir)/Half 	-L$(top_builddir)/Imath -L$(top_builddir)/IlmImf 	-lIlmImf -lImath -lHalf -lIex -lz
-+@HAVE_FLTK_TRUE@LDADD = -L$(top_builddir)/Iex -L$(top_builddir)/Half 	-L$(top_builddir)/Imath -L$(top_builddir)/IlmImf 	-lIlmImf -lImath -lHalf -lIex 	@FLTK_LDFLAGS@ -lz
+-@HAVE_FLTK_TRUE@LDADD = @FLTK_LDFLAGS@ \
+-@HAVE_FLTK_TRUE@	-L$(top_builddir)/Iex -L$(top_builddir)/Half \
++@HAVE_FLTK_TRUE@LDADD =	-L$(top_builddir)/Iex -L$(top_builddir)/Half \
+ @HAVE_FLTK_TRUE@	-L$(top_builddir)/Imath -L$(top_builddir)/IlmImf \
+-@HAVE_FLTK_TRUE@	-lIlmImf -lImath -lHalf -lIex -lz
++@HAVE_FLTK_TRUE@	-lIlmImf -lImath -lHalf -lIex \
++@HAVE_FLTK_TRUE@	@FLTK_LDFLAGS@ -lz
+ 
+ 
  @HAVE_NVSDK_TRUE@fragshader_sources = ImageViewFragShader.cpp ImageViewFragShader.h
- @HAVE_NVSDK_FALSE@fragshader_sources = 
- 

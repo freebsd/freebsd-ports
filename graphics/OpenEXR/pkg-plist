@@ -52,9 +52,6 @@ include/OpenEXR/ImathRandom.h
 include/OpenEXR/ImathRoots.h
 include/OpenEXR/ImathShear.h
 include/OpenEXR/ImathSphere.h
-include/OpenEXR/ImathTMatrix.h
-include/OpenEXR/ImathTMatrixAlgo.h
-include/OpenEXR/ImathTMatrixBase.h
 include/OpenEXR/ImathVec.h
 include/OpenEXR/ImathVecAlgo.h
 include/OpenEXR/ImfArray.h
@@ -79,6 +76,8 @@ include/OpenEXR/ImfIO.h
 include/OpenEXR/ImfInputFile.h
 include/OpenEXR/ImfInt64.h
 include/OpenEXR/ImfIntAttribute.h
+include/OpenEXR/ImfKeyCode.h
+include/OpenEXR/ImfKeyCodeAttribute.h
 include/OpenEXR/ImfLineOrder.h
 include/OpenEXR/ImfLineOrderAttribute.h
 include/OpenEXR/ImfLut.h
@@ -100,6 +99,8 @@ include/OpenEXR/ImfTileDescriptionAttribute.h
 include/OpenEXR/ImfTiledInputFile.h
 include/OpenEXR/ImfTiledOutputFile.h
 include/OpenEXR/ImfTiledRgbaFile.h
+include/OpenEXR/ImfTimeCode.h
+include/OpenEXR/ImfTimeCodeAttribute.h
 include/OpenEXR/ImfVecAttribute.h
 include/OpenEXR/ImfVersion.h
 include/OpenEXR/ImfWav.h
