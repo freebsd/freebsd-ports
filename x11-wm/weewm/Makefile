@@ -9,7 +9,7 @@ PORTNAME=	weewm
 PORTVERSION=	0.0.2
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.weewm.org/download/
+MASTER_SITES=	http://weewm.flashtux.org/download/
 
 MAINTAINER=	ppl@nbnet.nb.ca
 COMMENT=	Fast and ultra light windowmanager with total keyboard control
