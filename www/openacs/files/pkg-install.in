@@ -59,40 +59,6 @@ if [ -d ${OPENACSBASE}/${OPENACS_USER} ] ; then
 	echo " "
 	exit 1 ; fi
 
-for DIRS in /usr/share/skel/dot
-do
-if egrep 'OPENACS-entries in .profile' ${DIRS}.profile >/dev/null 2>&1; then
-	echo "You already have OPENACS-entries in .profile (skeleton)"
-else
-	echo "${DIRS}.profile: adding entries" && \
-	echo "# OPENACS-entries in .profile:" >> ${DIRS}.profile && \
-	echo "export PATH=\$$PATH:${PGBASE}/bin" >> ${DIRS}.profile && \
-	echo "export PGDATA=${PGDATA}" >> ${DIRS}.profile && \
-	echo "export LD_LIBRARY_PATH=\$$LD_LIBRARY_PATH:${PGBASE}/lib" >> ${DIRS}.profile && \
-	echo "export PS1=\"<\u-\W>\"" >> ${DIRS}.profile && \
-	echo "export PS2=\"continu>\"" >> ${DIRS}.profile && \
-	echo "export CVSROOT=/cvsroot" >> ${DIRS}.profile && \
-	echo "export EDITOR=emacs" >> ${DIRS}.profile && \
-	echo "# end of OPENACS-entries." >> ${DIRS}.profile
-fi 
-done
-
-if egrep 'OPENACS-entries in rc.conf' ${RCCONF} >/dev/null 2>&1; then
-	echo "You already have OPENACS-entries in ${RCCONF}"
-else
-	echo "${RCCONF}: adding entries" && \
-	echo "# OPENACS-entries in rc.conf:" >> ${RCCONF} && \
-	echo "ldconfig_paths=\"/usr/lib/compat /usr/X11R6/lib ${LOCALBASE}/lib ${PGBASE}/lib ${AOLSERVERBASE}/lib\" " >> ${RCCONF} && \
-	echo "postgresql_enable=\"YES\"" >> ${RCCONF} && \
-	echo "postgresql_data=\"${PGDATA}\"" >> ${RCCONF} && \
-	echo "postgresql_flags=\" -l ${PGDATA}/server.log\"" >> ${RCCONF} && \
-	echo "aolserver_enable=\"YES\"" >> ${RCCONF} && \
-	echo "aolserver_conf=\"${OPENACSBASE}/${OPENACS_USER}/etc/config.tcl\"" >> ${RCCONF} && \
-	echo "aolserver_flags=\"-u ${OPENACS_USER} -g ${OPENACS_GROUP} -b 0.0.0.0:8000\"" >> ${RCCONF} && \
-	echo "aolserver_prog=\"${EXAMPLESDIR}/nsd-postgres\"" >> ${RCCONF} && \
-	echo "# end of OPENACS-entries." >> ${RCCONF}
-fi
-
 if pw group show ${OPENACS_GROUP} >/dev/null 2>&1; then
 	echo "You already have a group \"${OPENACS_GROUP}\", so I will use it."
 else
@@ -103,12 +69,9 @@ if pw user show ${OPENACS_USER} >/dev/null 2>&1; then
 	echo "You already have a user \"${OPENACS_USER}\", so I will use it."
 else
 	pw useradd -n ${OPENACS_USER} -G ${OPENACS_GROUP} -c "OpenACS instance pseudo-user" \
-	-m -s ${LOCALBASE}/bin/bash -h - 
+	-h - 
 fi
 
-	pw usermod nobody -G ${OPENACS_GROUP}
-	pw usermod pgsql -G ${OPENACS_GROUP}
-	pw usermod root -G ${OPENACS_GROUP}
 }
 
 post-install() {
