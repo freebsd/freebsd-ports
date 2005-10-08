@@ -44,6 +44,7 @@
     SUBDIR += cups
     SUBDIR += cups-base
     SUBDIR += cups-lpr
+    SUBDIR += cups-magicolor
     SUBDIR += cups-pdf
     SUBDIR += cups-pstoraster
     SUBDIR += cups-samba
