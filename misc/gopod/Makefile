@@ -8,7 +8,7 @@
 PORTNAME=	gopod
 PORTVERSION=	1.1
 CATEGORIES=	misc
-MASTER_SITES=	http://gopod.free-go.net/
+MASTER_SITES=	http://critical.ch/distfiles/
 DISTNAME=	goPod-${PORTVERSION}_linux_bsd
 
 MAINTAINER=	ehaupt@FreeBSD.org
