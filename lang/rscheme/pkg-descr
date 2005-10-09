@@ -8,4 +8,4 @@ down. In general, we recommend using the (default) bytecode code generation
 system, and only compiling your time-critical code to machine code. This
 allows a nice adjustment of space/time tradeoffs.
 
-WWW: http://www.rscheme.org/
+WWW: http://www.rscheme.org/rs/
