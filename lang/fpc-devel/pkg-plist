@@ -5679,3 +5679,4 @@ share/examples/fpc-%%PORTVERSION%%/zvt/testzvt.pp
 %%PORTDOCS%%@dirrm src/fpc-%%PORTVERSION%%/compiler/alpha
 %%PORTDOCS%%@dirrm src/fpc-%%PORTVERSION%%/compiler
 %%PORTDOCS%%@dirrm src/fpc-%%PORTVERSION%%
+%%PORTDOCS%%@unexec rmdir %D/src 2> /dev/null || true
