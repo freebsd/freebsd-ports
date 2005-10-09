@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	boaconstructor
-PORTVERSION=	0.2.3
-PORTREVISION=	4
+PORTVERSION=	0.4.4
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	boa-constructor
-DISTNAME=	boa-constructor-${PORTVERSION}.src
+DISTNAME=	boa-constructor-${PORTVERSION}
 
 MAINTAINER=	filippo.natali@gmail.com
 COMMENT=	A cross platform RAD GUI Building IDE for wxPython
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/wxc.so:${PORTSDIR}/x11-toolkits/py-wxPython24
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wx-2.6-gtk2-ansi/wx/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython26
 
 WRKSRC=		${WRKDIR}/boa-constructor-${PORTVERSION}
 
