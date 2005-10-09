@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.82 2005/08/19 17:06:55 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.86 2005/10/09 18:51:51 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 7;
-my $micro = 3;
+my $micro = 4;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -1022,6 +1022,17 @@ sub checkmakefile {
 	}
 
 	#
+	# whole file: check for common typos
+	#
+	print "OK: checking for common typos.\n" if ($verbose);
+	if ($whole =~ /^(INSTALL_SHLIBS?).?=/m ||
+		$whole =~ /^(INSTALLS_SHLIBS).?=/m) {
+		my $lineno = &linenumber($`);
+		&perror("FATAL: $file [$lineno]: $1 should be spelled ".
+			"INSTALLS_SHLIB.");
+	}
+
+	#
 	# whole file: use of .elseif
 	#
 	print "OK: checking for use of .elseif.\n" if ($verbose);
@@ -1730,6 +1741,15 @@ DIST_SUBDIR EXTRACT_ONLY
 				&perror("WARN: $file: when you specify multiple categories, ".
 				"language specific category should come first.");
 			}
+		}
+	}
+
+	# check number of MASTER_SITES
+	if ($makevar{MASTER_SITES} ne '') {
+		my @sites = split(/\s+/, $makevar{MASTER_SITES});
+		if (scalar(@sites) == 1) {
+			&perror("WARN: $file: only one MASTER_SITE configured.  ".
+				"Consider adding additional mirrors.");
 		}
 	}
 
