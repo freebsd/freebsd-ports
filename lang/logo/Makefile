@@ -13,6 +13,10 @@ MASTER_SITES=	ftp://ftp.cs.berkeley.edu/pub/ucblogo/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Brian Harvey's logo language interpreter
 
+BROKEN=		"5.4 fails to fetch, latest version is 5.5"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-09
+
 .if defined(EMACS_LOGO_MODE)
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 .endif
