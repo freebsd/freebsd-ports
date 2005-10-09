@@ -1,0 +1,66 @@
+bin/liquidwar
+bin/liquidwar-server
+bin/liquidwar-mapgen
+
+%%DOCSDIR%%/txt/algorithm.txt
+%%DOCSDIR%%/txt/authors.txt
+%%DOCSDIR%%/txt/bugs.txt
+%%DOCSDIR%%/txt/copying.txt
+%%DOCSDIR%%/txt/mailinglists.txt
+%%DOCSDIR%%/txt/network.txt
+%%DOCSDIR%%/txt/options.txt
+%%DOCSDIR%%/txt/parameters.txt
+%%DOCSDIR%%/txt/platforms.txt
+%%DOCSDIR%%/txt/rules.txt
+%%DOCSDIR%%/txt/source.txt
+%%DOCSDIR%%/txt/todo.txt
+%%DOCSDIR%%/txt/userlevels.txt
+%%DOCSDIR%%/html/algorithm.html
+%%DOCSDIR%%/html/authors.html
+%%DOCSDIR%%/html/bugs.html
+%%DOCSDIR%%/html/copying.html
+%%DOCSDIR%%/html/index.html
+%%DOCSDIR%%/html/mailinglists.html
+%%DOCSDIR%%/html/network.html
+%%DOCSDIR%%/html/options.html
+%%DOCSDIR%%/html/parameters.html
+%%DOCSDIR%%/html/platforms.html
+%%DOCSDIR%%/html/rules.html
+%%DOCSDIR%%/html/source.html
+%%DOCSDIR%%/html/todo.html
+%%DOCSDIR%%/html/userlevels.html
+%%DOCSDIR%%/ps/liquidwar.ps
+%%DOCSDIR%%/pdf/liquidwar.pdf
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README.fr
+%%DOCSDIR%%/README.de
+%%DOCSDIR%%/README.dk
+
+share/pixmaps/liquidwar.xpm
+share/applications/liquidwar.desktop
+share/games/liquidwar/liquidwar.dat
+share/games/liquidwar/map/meditate.bmp
+share/games/liquidwar/map/pacman.bmp
+share/games/liquidwar/map/paille.bmp
+share/games/liquidwar/map/t4.bmp
+share/games/liquidwar/music/colossus.mid
+share/games/liquidwar/texture/bluesq.bmp
+share/games/liquidwar/texture/clovers.bmp
+share/games/liquidwar/texture/meditate.bmp
+share/games/liquidwar/texture/rust.bmp
+share/games/liquidwar/texture/warning.bmp
+games/liquidwar-server
+games/liquidwar-mapgen
+games/liquidwar
+
+@dirrm share/games/liquidwar/texture
+@dirrm share/games/liquidwar/music
+@dirrm share/games/liquidwar/map
+@dirrm share/games/liquidwar
+@dirrm games
+@dirrm %%DOCSDIR%%/txt
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%/pdf
+@dirrm %%DOCSDIR%%/ps
+@dirrm %%DOCSDIR%%
