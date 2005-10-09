@@ -9,8 +9,7 @@ PORTNAME=	xfce4-fsguard-plugin
 PORTVERSION=	0.2.0
 PORTREVISION=	5
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
-		http://xfce.org/~kelnos/mirrors/xfce-goodies/
+MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	ports@FreeBSD.org
