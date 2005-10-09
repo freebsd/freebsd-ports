@@ -7,7 +7,7 @@
 
 PORTNAME=	courier-imap
 PORTVERSION=	4.0.6
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -18,14 +18,6 @@ COMMENT=	IMAP (and POP3) server that provides access to Maildir mailboxes
 
 BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
-
-.if defined(WITH_DRAC)
-# move me below .include <bsd.port.pre.mk> when re-enabling
-BROKEN=		"right now, there is no 4.0.4 compatible drac patch available"
-PATCH_SITES=	http://www.smalltown.ne.jp/~usata/pub/patch/
-PATCHFILES=	courier-imap-4.0.2-drac.patch
-PATCH_DIST_STRIP=	-p1
-.endif
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
@@ -79,6 +71,13 @@ CONFIGURE_ARGS=	--sysconfdir=${CONFDIR} \
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_DRAC)
+# move me below .include <bsd.port.pre.mk> when re-enabling
+PATCH_SITES=	http://www.smalltown.ne.jp/~usata/pub/patch/
+PATCHFILES=	courier-imap-4.0.6-drac.patch
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
+.endif
+
 .if exists(${.CURDIR}/../../security/courier-authlib/Makefile.dep)
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.dep"
 .endif
@@ -120,11 +119,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS}"
 LDFLAGS+=	-L${LOCALBASE}/lib
 LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
-.endif
-
-.if defined(WITH_DRAC)
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-drac
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif
 
 MAN1=		couriertcpd.1 maildiracl.1 maildirkw.1 \
