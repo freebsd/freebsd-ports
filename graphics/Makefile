@@ -475,6 +475,7 @@
     SUBDIR += py-opengl
     SUBDIR += py-paint
     SUBDIR += py-pydot
+    SUBDIR += py-soya3d
     SUBDIR += py-visual
     SUBDIR += pyro
     SUBDIR += q-graph
