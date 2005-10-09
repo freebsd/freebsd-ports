@@ -9,14 +9,15 @@ PORTNAME=	njs
 PORTVERSION=	0.2.5
 PORTREVISION=	1
 CATEGORIES=	lang
-MASTER_SITES=	http://www.njs-javascript.org/	\
-		http://people.ssh.fi/mtr/js/	\
-		http://www.bbassett.net/njs/	\
-		http://www.iki.fi/mtr/js/
+MASTER_SITES=	# disappeared
 DISTNAME=	js-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NJS (NGS) is a standalone JavaScript/ECMAScript interpreter
+
+BROKEN=		"mastersite disappeared"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-09
 
 CONFLICTS=	js-1.5.*
 
