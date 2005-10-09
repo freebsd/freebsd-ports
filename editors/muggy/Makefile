@@ -10,7 +10,7 @@ PORTVERSION=	1.3.1
 CATEGORIES+=	editors windowmaker tkstep80
 MASTER_SITES=	http://www.aaa-int.or.jp/~jfactory/JDE/dist/ \
 		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	. kiri
+MASTER_SITE_SUBDIR=	kiri
 DISTNAME=	Muggy-${PORTVERSION}
 EXTRACT_ONLY=	# extracted directly in install target
 
