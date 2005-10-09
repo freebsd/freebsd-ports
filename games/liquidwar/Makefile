@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	liquidwar
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	You control an army of liquid and have to try and eat your opponents
 
+LIB_DEPENDS=	alleg.41:${PORTSDIR}/devel/allegro
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
