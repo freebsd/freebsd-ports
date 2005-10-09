@@ -2544,6 +2544,10 @@ Note:  Please add new entries to the beginning of this file.
 	<name>kdebase</name>
 	<range><ge>3.2.0</ge><lt>3.4.1</lt></range>
       </package>
+      <package>
+	<name>linux_base-suse</name>
+	<range><ge>9.3</ge><lt>9.3_2</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -2567,6 +2571,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-07-18</discovery>
       <entry>2005-07-18</entry>
+      <modified>2005-10-09</modified>
     </dates>
   </vuln>
 
