@@ -8638,6 +8638,7 @@ p5-Text-Autoformat	ports/textproc/p5-Text-Autoformat
 p5-Text-Balanced	ports/textproc/p5-Text-Balanced
 p5-Text-BibTeX	ports/textproc/p5-Text-BibTeX
 p5-Text-Bind	ports/textproc/p5-Text-Bind
+p5-Text-Chomp	ports/textproc/p5-Text-Chomp
 p5-Text-CSV	ports/textproc/p5-Text-CSV
 p5-Text-CSV_XS	ports/textproc/p5-Text-CSV_XS
 p5-Text-Diff	ports/textproc/p5-Text-Diff
