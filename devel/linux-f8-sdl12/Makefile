@@ -27,7 +27,7 @@ USE_LINUX_PREFIX=	yes
 USE_XLIB=	yes
 LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig
 
-ONLY_FOR_ARCHS=	i386 alpha
+ONLY_FOR_ARCHS=	i386 alpha amd64
 DIST_SUBDIR=	rpm
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
@@ -40,6 +40,10 @@ RPMFLAGS=	--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
 RPMDIR=		${DISTDIR}/${DIST_SUBDIR}
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+MACHINE_ARCH=	i386
+.endif
 
 .if ${ARCH} == "alpha"
 BROKEN=		"Unfetchable"
