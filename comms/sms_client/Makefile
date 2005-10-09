@@ -10,7 +10,7 @@ PORTVERSION=		3.0.2
 PORTREVISION=		2
 CATEGORIES=		comms
 MASTER_SITES=		http://www.smsclient.org/download/smsclient-3.0-testing/ \
-			http://www.mirrors.wiretapped.net/security/host-monitoring/sms-client/
+			http://www.mirrors.wiretapped.net/security/host-monitoring/sms-client/smsclient-3.0-testing/
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	A simple UNIX SMS client to send messages to phones or pagers
