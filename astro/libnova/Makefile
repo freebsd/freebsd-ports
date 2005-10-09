@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libnova
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	0.11.0
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +20,13 @@ USE_REINPLACE=	yes
 USE_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+
+#.if ${OSVERSION}<503000
+#IGNORE=		Required FreeBSD 5.3 or higher
+#.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
