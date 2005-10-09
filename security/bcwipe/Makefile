@@ -8,11 +8,10 @@
 PORTNAME=	bcwipe
 PORTVERSION=	1.5.3
 CATEGORIES=	security
-MASTER_SITES=	http://www.jetico.com/linux/ \
-		http://www.bsdberlin.org/~dako/distfiles/security/
+MASTER_SITES=	http://www.jetico.com/linux/
 DISTNAME=	BCWipe-${PORTVERSION:S/./-/g:S/-/./}
 
-MAINTAINER=	dako@bsdberlin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BCWipe securely erases data from magnetic and solid-state memory
 
 NO_CDROM=	yes
