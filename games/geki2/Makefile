@@ -1,5 +1,5 @@
 # New ports collection makefile for:	geki2
-# Date created:				16 June 2001
+# Date created:				9 October 2005
 # Whom:					Edwin Groothuis <edwin@mavetju.org>
 #
 # $FreeBSD$
