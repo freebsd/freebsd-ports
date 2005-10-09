@@ -1,4 +1,12 @@
-dcfldd is an enhanced dd tool with MD5 hashing capability by DoD Computer
-Forensics Lab.
+dcfldd is an enhanced version of GNU dd with features useful for forensics
+and security.
+dcfldd has the following additional features:
+- Hashing on-the-fly
+- Status output
+- Flexible disk wipes
+- Image/wipe Verify
+- Multiple outputs
+- Split output
+- Piped output and logs
 
-WWW: http://biatchux.dmzs.com/
+WWW: http://dcfldd.sourceforge.net/
