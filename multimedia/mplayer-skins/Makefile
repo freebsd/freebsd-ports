@@ -99,7 +99,7 @@ XMMPLAYER_FILE=		xmmplayer-1.5.tar.bz2
 # Options
 #
 OPTIONS=	SKIN_ALL "all skins" off
-OPTIONS+=	SKIN_DEFAULT "the defaul MPlayer skin" on
+OPTIONS+=	SKIN_DEFAULT "the default MPlayer skin" on
 OPTIONS+=	SKIN_DEFAULT_SMALL "compact version of the default skin" off
 OPTIONS+=	SKIN_ABYSS "beautiful MPlayer skin" off
 OPTIONS+=	SKIN_ALIENMIND "AlienMind XMMS" off
