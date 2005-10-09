@@ -9,7 +9,7 @@ PORTNAME=	gtimer
 PORTVERSION=	1.1.6
 PORTREVISION=	1
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.radix.net/~cknudsen/gtimer/
+MASTER_SITES=	http://www.cknudsen.com/gtimer/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A timer for your personal activities
