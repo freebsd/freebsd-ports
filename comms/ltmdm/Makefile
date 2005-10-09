@@ -9,8 +9,7 @@ PORTNAME=	ltmdm
 PORTVERSION=	1.4
 PORTREVISION=	14
 CATEGORIES=	comms
-MASTER_SITES=	http://www.dons.net.au/~darius/ \
-		http://soupnazi.org/FreeBSD/ports/distfiles/
+MASTER_SITES=	http://www.dons.net.au/~darius/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
