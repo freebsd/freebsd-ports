@@ -2777,6 +2777,7 @@ geekcode	ports/misc/geekcode
 geeklog		ports/www/geeklog
 geg		ports/math/geg
 geist		ports/graphics/geist
+geki2		ports/games/geki2
 gemcal		ports/deskutils/gemcal
 gemdropx	ports/games/gemdropx
 geminifonts	ports/x11-fonts/geminifonts
