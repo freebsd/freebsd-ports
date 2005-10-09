@@ -1,0 +1,5 @@
+gwee (Generic Web Exploitation Engine) is a small program written in C designed
+to exploit input validation vulnerabilities in web scripts, such as Perl CGIs,
+PHP, etc. 
+
+WWW: http://tigerteam.se/dl/gwee/
