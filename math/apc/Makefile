@@ -8,10 +8,14 @@
 PORTNAME=	apc
 PORTVERSION=	1.0
 CATEGORIES=	math
-MASTER_SITES= 	http://members.global2000.net/~eagriff/
+MASTER_SITES= 	#
 
-MAINTAINER=	eric@talesfromthereal.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xforms based Auto Payment Calculator
+
+BROKEN=		"mastersite disappeared"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-09
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
