@@ -28,7 +28,8 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
 			--libdir=${PREFIX}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-MAKE_ARGS=	CONF=${EXAMPLESDIR}/dact.conf
+MAKE_ARGS=	CONF=${EXAMPLESDIR}/dact.conf \
+		TOBUILD="dact libdact.so dact.conf"
 
 MAN1=		dact.1
 INSTALLS_SHLIB=	yes
