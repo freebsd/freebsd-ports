@@ -44,7 +44,7 @@ pre-everything::
 	@${ECHO_MSG} '*********************************************************'
 	@${ECHO_MSG} '* You can add further dictionaries:                     *'
 	@${ECHO_MSG} '*                              Use make-flag:           *'
-	@${ECHO_MSG} '*  - Afrikaans                 ISPELL_AF=yes            *'
+#	@${ECHO_MSG} '*  - Afrikaans                 ISPELL_AF=yes            *'
 	@${ECHO_MSG} '*  - British                   ISPELL_BRITISH=yes       *'
 	@${ECHO_MSG} '*    (replaces the American dictionary)                 *'
 	@${ECHO_MSG} '*  - Brazilian Portuguese      ISPELL_BR=yes            *'
@@ -68,24 +68,24 @@ SCRIPTS_ENV+=	ISPELL_BRITISH=${ISPELL_BRITISH}
 .endif
 .if defined(ISPELL_IT)
 ITDISTFILE=	ispell-it2001.tgz
-MASTER_SITES+=	http://members.xoom.virgilio.it/trasforma/ispell/
-EXTRA_DICT+=	${ITDISTFILE}
+MASTER_SITES+=	http://members.xoom.virgilio.it/trasforma/ispell/:it
+EXTRA_DICT+=	${ITDISTFILE}:it
 .endif
 .if defined(ISPELL_FR)
 FRDISTFILE=	francais-IREQ-1.4.tar.gz
-MASTER_SITES+=	ftp://ftp.robot.ireq.ca/pub/ispell/
-EXTRA_DICT+=	${FRDISTFILE}
+MASTER_SITES+=	ftp://ftp.robot.ireq.ca/pub/ispell/:fr
+EXTRA_DICT+=	${FRDISTFILE}:fr
 .endif
 .if defined(ISPELL_SE)
 SEDISTFILE=	iswedish-1.2.1.tar.gz
-MASTER_SITES+=	http://www.sslug.dk/locale/ispell/iswedish/
-EXTRA_DICT+=	${SEDISTFILE}
+MASTER_SITES+=	http://www.sslug.dk/locale/ispell/iswedish/:se
+EXTRA_DICT+=	${SEDISTFILE}:se
 EXTRACT_ONLY+=	${SEDISTFILE}
 .endif
 .if defined(ISPELL_BR)
 BRDISTFILE=	br.ispell-2.4.tar.gz
-MASTER_SITES+=	ftp://ftp.ime.usp.br/pub/ueda/br.ispell/
-EXTRA_DICT+=	${BRDISTFILE}
+MASTER_SITES+=	ftp://ftp.ime.usp.br/pub/ueda/br.ispell/:br
+EXTRA_DICT+=	${BRDISTFILE}:br
 EXTRACT_ONLY+=	${BRDISTFILE}
 .endif
 .if defined(ISPELL_DENEU)
@@ -93,71 +93,68 @@ EXTRACT_ONLY+=	${BRDISTFILE}
 BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 .endif
 DENEUDISTFILE=	igerman98-20001109.tar.bz2
-MASTER_SITES+=	http://j3e.de/ispell/igerman98/dict/
-EXTRA_DICT+=	${DENEUDISTFILE}
+MASTER_SITES+=	http://j3e.de/ispell/igerman98/dict/:denu
+EXTRA_DICT+=	${DENEUDISTFILE}:denu
 .endif
 .if defined(ISPELL_DEALT)
 DEALTDISTFILE=	hk-deutsch.tar.gz
-EXTRA_DICT+=	${DEALTDISTFILE}
-MASTER_SITES+=	ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/
+MASTER_SITES+=	ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/:dealt
+EXTRA_DICT+=	${DEALTDISTFILE}:dealt
 .endif
 .if defined(ISPELL_NO)
 NODISTFILE=	ispell-norsk-2.0.tar.gz
-MASTER_SITES+=	http://www.uio.no/~runekl/
-EXTRA_DICT+=	${NODISTFILE}
+MASTER_SITES+=	http://www.uio.no/~runekl/:no
+EXTRA_DICT+=	${NODISTFILE}:no
 EXTRACT_ONLY+=	${NODISTFILE}
 MASKBITS?=	64
 USE_GMAKE=	yes
 .endif
 .if defined(ISPELL_NL)
 NLDISTFILE=	ispell-nl-1.0.0.tar.gz
-MASTER_SITES+=	${MASTER_SITE_LOCAL} \
-		http://www.ninth-circle.org/~asmodai/
-MASTER_SITE_SUBDIR=	asmodai
-EXTRA_DICT+=	${NLDISTFILE}
+MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:nl/}
+MASTER_SITE_SUBDIR+=	fenner/:nl
+EXTRA_DICT+=	${NLDISTFILE}:nl
 EXTRACT_ONLY+=	${NLDISTFILE}
 .endif
 .if defined(ISPELL_DA)
 DADISTFILE=	ispell-da-1.4.49.tar.gz
-MASTER_SITES+=	http://da.speling.org/filer/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	asmodai
-EXTRA_DICT+=	${DADISTFILE}
+MASTER_SITES+=	http://da.speling.org/filer/:da \
+		${MASTER_SITE_LOCAL:S/$/:da/}
+MASTER_SITE_SUBDIR+=	fenner/:da
+EXTRA_DICT+=	${DADISTFILE}:da
 EXTRACT_ONLY+=	${DADISTFILE}
 .endif
-.if defined(ISPELL_AF)
-AFDISTFILE=	ispell-sa-1.0.0.tar.gz
-MASTER_SITES+=	${MASTER_SITE_LOCAL} \
-		http://www.ninth-circle.org/~asmodai/
-MASTER_SITE_SUBDIR=	asmodai
-EXTRA_DICT+=	${AFDISTFILE}
-EXTRACT_ONLY+=	${AFDISTFILE}
-.endif
+#.if defined(ISPELL_AF)
+#AFDISTFILE=	ispell-sa-1.0.0.tar.gz
+#MASTER_SITES+=	#${MASTER_SITE_LOCAL:S/$/:af/}
+#EXTRA_DICT+=	${AFDISTFILE}:af
+#EXTRACT_ONLY+=	${AFDISTFILE}
+#.endif
 .if defined(ISPELL_FI)
-MASTER_SITES+=	http://ispell-fi.sourceforge.net/
 FIDICTFILE=	finnish.dict.bz2
+MASTER_SITES+=	http://ispell-fi.sourceforge.net/:fi
 .if ${ISPELL_FI:L} != yes
 FIAFFIXFILE=	finnish.${ISPELL_FI:L}.aff.bz2
 .else
 FIAFFIXFILE=	finnish.medium.aff.bz2
 .endif
-EXTRA_DICT+=	${FIDICTFILE} ${FIAFFIXFILE}
+EXTRA_DICT+=	${FIDICTFILE}:fi ${FIAFFIXFILE}:fi
 .endif
 .if defined(ISPELL_PL)
-MASTER_SITE_SUBDIR=	ispell-pl
-MASTER_SITES+=	${MASTER_SITE_SOURCEFORGE}
 PLDISTFILE=	ispell-pl-20021127.tar.gz
+MASTER_SITES+=	${MASTER_SITE_SOURCEFORGE:S/$/:pl/}
+MASTER_SITE_SUBDIR+=	ispell-pl/:pl
 MASKBITS?=	64
-EXTRA_DICT+=	${PLDISTFILE}
+EXTRA_DICT+=	${PLDISTFILE}:pl
 EXTRACT_ONLY+=	${PLDISTFILE}
 BUILDHASH=	${WRKDIR}/${PLDISTFILE:S=.tar.gz==}/zbuduj.slownik.sh
 .endif
 .if defined(ISPELL_BG)
-MASTER_SITES+=	${MASTER_SITE_SOURCEFORGE} ${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	bgoffice
+MASTER_SITES+=	${MASTER_SITE_SOURCEFORGE:S/$/:bg/}
+MASTER_SITE_SUBDIR+=	bgoffice/:bg
 BGDISTFILE=	ispell-bg-2.1.tar.gz
 MASKBITS?=	64
-EXTRA_DICT+=	${BGDISTFILE}
+EXTRA_DICT+=	${BGDISTFILE}:bg
 EXTRACT_ONLY+=	${BGDISTFILE}
 .endif
 .endif
