@@ -391,6 +391,7 @@
     SUBDIR += p5-Text-Bind
     SUBDIR += p5-Text-CSV
     SUBDIR += p5-Text-CSV_XS
+    SUBDIR += p5-Text-Chomp
     SUBDIR += p5-Text-Diff
     SUBDIR += p5-Text-Diff-HTML
     SUBDIR += p5-Text-DoubleMetaphone
