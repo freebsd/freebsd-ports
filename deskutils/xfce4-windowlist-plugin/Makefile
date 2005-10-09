@@ -9,8 +9,7 @@ PORTNAME=	xfce4-windowlist-plugin
 PORTVERSION=	0.1.0
 PORTREVISION=	3
 CATEGORIES=	deskutils xfce
-MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
-		http://xfce.org/~kelnos/mirrors/xfce-goodies/
+MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 DISTNAME=	xfce4-windowlist-plugin-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 

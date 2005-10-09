@@ -9,8 +9,7 @@ PORTNAME=	xfce4-clipman-plugin
 PORTVERSION=	0.4.1
 PORTREVISION=	1
 CATEGORIES=	x11 xfce
-MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
-		http://xfce.org/~kelnos/mirrors/xfce-goodies/
+MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	ports@FreeBSD.org

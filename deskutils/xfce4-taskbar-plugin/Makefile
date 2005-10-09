@@ -9,8 +9,7 @@ PORTNAME=	xfce4-taskbar-plugin
 PORTVERSION=	0.2.2
 PORTREVISION=	1
 CATEGORIES=	deskutils xfce
-MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
-		http://xfce.org/~kelnos/mirrors/xfce-goodies/
+MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 DISTNAME=	xfce4-taskbar-plugin-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
