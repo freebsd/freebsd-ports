@@ -324,6 +324,7 @@
     SUBDIR += linux-ut2003-demo
     SUBDIR += linux-ut2004-demo
     SUBDIR += linux-virtual-jay-peak
+    SUBDIR += liquidwar
     SUBDIR += lm-solve
     SUBDIR += ltris
     SUBDIR += lucidlife
