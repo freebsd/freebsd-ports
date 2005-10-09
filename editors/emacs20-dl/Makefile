@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 PATCH_SITES=		ftp://ftp.m17n.org/pub/mule/dynamic-loading/ \
 			${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	. shige/emacs
+PATCH_SITE_SUBDIR=	shige/emacs
 PATCHFILES=		emacs-20.4-dl3.diff.gz emacs-20.7-linespace-patch.gz
 PATCH_DIST_STRIP=	-p1
 
