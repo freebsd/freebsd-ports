@@ -16,7 +16,6 @@ MAINTAINER=	dev@fenux.net
 COMMENT=	A module implementing a portable chomp
 
 PERL_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 MAN3=		Text::Chomp.3
 
