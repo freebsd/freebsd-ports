@@ -1,2 +1,4 @@
 MD5 (w3m-0.5.1.tar.gz) = 0678b72e07e69c41709d71ef0fe5da13
 SIZE (w3m-0.5.1.tar.gz) = 1892121
+MD5 (w3m-0.5-version-xhtml.patch) = 16211698ec5d7f7258b70f0baf2d9c81
+SIZE (w3m-0.5-version-xhtml.patch) = 8965
