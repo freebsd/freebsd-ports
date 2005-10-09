@@ -8,7 +8,7 @@
 
 PORTNAME=		linux_base-8
 PORTVERSION=		8.0
-PORTREVISION=		6
+PORTREVISION=		7
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX} \
 			${MASTER_SITE_REDHAT_LINUX:S/$/:new/} \
@@ -64,19 +64,16 @@ PREFIX?=		${LINUXBASE}
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
-PLIST=			${WRKDIR}/pkg-plist
 MD5_FILE=		${MASTERDIR}/distinfo.${ARCH}
 
 # Let's avoid hardcoding 'en' as the language.
 LANG=			en
 
-.undef USE_LINUX
-
 .include <bsd.port.pre.mk>
 
 DBPATH=			/var/lib/rpm
 RPM=			LC_ALL=C rpm
-RPMFLAGS=		--root ${WRKSRC} --dbpath ${DBPATH} --nodeps \
+RPMFLAGS=		--root ${PREFIX} --dbpath ${DBPATH} --nodeps \
 			--replacepkgs --ignoreos --ignorearch
 RPMDIR=			${DISTDIR}/${DIST_SUBDIR}
 
@@ -84,7 +81,6 @@ REMOVE_DIRS=		boot dev home initrd root tmp var/tmp usr/local usr/tmp
 REMOVE_FILES=		bin/df bin/su etc/exports etc/group etc/localtime \
 			etc/motd etc/passwd etc/printcap etc/services \
 			etc/protocols
-BRAND_FILES=		bin/rpm sbin/ldconfig sbin/sln
 
 .if (${ARCH} == "amd64")
 LATEST_LINK:=		${LATEST_LINK:C/linux/linux32/}
@@ -97,14 +93,14 @@ FALLBACK_ELF_MIB=	kern.fallback_elf_brand
 LINUX_ELF=		3
 PREVIOUS_ELF!=		/sbin/sysctl -n ${FALLBACK_ELF_MIB}
 
-pre-su-install:
+do-install:
 #
 # Handle the loading of the linux loadable kernel module if required.
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
-	@${MKDIR} ${WRKSRC}/${DBPATH} ${WRKSRC}/var/tmp ${WRKSRC}/lib
-	@cd ${WRKSRC}/lib && ${LN} -sf libtermcap.so.2.0.8 libtermcap.so.2
-	@${RPM} --initdb --root ${WRKSRC} --dbpath ${DBPATH}
+	@${MKDIR} ${PREFIX}/${DBPATH} ${PREFIX}/var/tmp ${PREFIX}/lib
+	@cd ${PREFIX}/lib && ${LN} -sf libtermcap.so.2.0.8 libtermcap.so.2
+	@${RPM} --initdb --root ${PREFIX} --dbpath ${DBPATH}
 #
 # Install all packages. Ignore dependencies just like the Red Hat installer.
 # Also, set the ELF fallback brand to Linux, so that we don't have to do
@@ -114,47 +110,38 @@ pre-su-install:
 		${ECHO} $$R; \
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
-	@for F in ${BRAND_FILES}; do \
-		${BRANDELF} -t Linux ${WRKSRC}/$$F; \
-	done
-	@/sbin/sysctl -w ${FALLBACK_ELF_MIB}=${PREVIOUS_ELF}
+	@${FIND} ${PREFIX}/bin ${PREFIX}/sbin/ ${PREFIX}/usr/bin \
+		${PREFIX}/usr/sbin -type f -print0 | ${XARGS} -0 file \
+		| ${GREP} ELF | ${CUT} -d : -f 1 \
+		| ${XARGS} ${BRANDELF} -t Linux
 #
 # Install yp.conf as a hint to NIS users and make sure there's a
 # mtab in etc, albeit an empty one. This is needed in a couple of
 # cases. Most notably staroffice6.
 #
-	${INSTALL} ${COPY} -m 644 ${FILESDIR}/yp.conf ${WRKSRC}/etc
-	${TOUCH} ${WRKSRC}/etc/mtab
+	@${INSTALL} ${COPY} -m 644 ${FILESDIR}/yp.conf ${PREFIX}/etc
+	@${TOUCH} ${PREFIX}/etc/mtab
 #
 # Create a good ld.so.conf
 #
-	${ECHO_CMD} -e '/lib\n/usr/lib\n/usr/X11R6/lib' > ${WRKSRC}/etc/ld.so.conf
+	@${ECHO_CMD} -e '/lib\n/usr/lib\n/usr/X11R6/lib' > ${PREFIX}/etc/ld.so.conf
 #
 # Finish
 #
 	@for D in ${REMOVE_DIRS}; do \
-		${RM} -rf ${WRKSRC}/$$D; \
+		${RM} -rf ${PREFIX}/$$D; \
 	done
 	@for F in ${REMOVE_FILES}; do \
-		${RM} -f ${WRKSRC}/$$F; \
+		${RM} -f ${PREFIX}/$$F; \
 	done
-	@${LN} -sf /var/tmp ${WRKSRC}/usr/tmp
-#
-# Create PLIST
-#
-	${RM} -f ${PLIST}
-	cd ${WRKSRC} && ${FIND} -s . -type f -o -type l | \
-		${CUT} -c3-999 >> ${PLIST} \
-		&& ${FIND} -d * -type d | ${SED} -e 's:^:@dirrm :' >> ${PLIST}
-
-do-install:
-	cd ${WRKSRC} && ${FIND} * | ${CPIO} -dmp ${PREFIX}
-	${FIND} ${PREFIX} -type d -exec ${CHMOD} 755 \{\} \;
-	${PREFIX}/sbin/ldconfig
+	@${LN} -sf /var/tmp ${PREFIX}/usr/tmp
+	@${CHOWN} root:wheel ${PREFIX}/var/lock ${PREFIX}/var/spool/mail
+	@${CHMOD} 755 ${PREFIX}/var/lock ${PREFIX}/var/spool/mail
+	@${PREFIX}/sbin/ldconfig
 
 post-install:
 	@${ECHO} ''
-	@fmt ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO} ''
 
 .include <bsd.port.post.mk>
