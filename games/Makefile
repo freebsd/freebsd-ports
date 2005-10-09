@@ -433,6 +433,7 @@
     SUBDIR += py-sgflib
     SUBDIR += py-sgfsummary
     SUBDIR += py-ski
+    SUBDIR += py-slune
     SUBDIR += pyching
     SUBDIR += pydance
     SUBDIR += pykawari
