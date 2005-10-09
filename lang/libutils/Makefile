@@ -10,8 +10,7 @@ PORTNAME=	libutils
 PORTVERSION=	1.0.3
 PORTREVISION=	2
 CATEGORIES=	lang
-MASTER_SITES=	http://savannah.gnu.org/download/nsl/ \
-		http://iling.nw.ru/~artem/downloads/ \
+MASTER_SITES=	ftp://sunsite.dk/projects/Tensile/ \
 		http://unixpages.org/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
