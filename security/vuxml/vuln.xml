@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3bc5691e-38dd-11da-92f5-020039488e34">
+    <topic>libxine -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>libxine</name>
+	<range><lt>1.1.0_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gentoo Linux Security Advisory reports:</p>
+	<blockquote cite="http://www.gentoo.org/security/en/glsa/glsa-200510-08.xml">
+	  <p>Ulf Harnhammar discovered a format string bug in the routines
+            handling CDDB server response contents.</p>
+          <p>An attacker could submit malicious information about an audio
+            CD to a public CDDB server (or impersonate a public CDDB server).
+            When the victim plays this CD on a multimedia frontend relying
+            on xine-lib, it could end up executing arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2967</cvename>
+      <url>http://www.gentoo.org/security/en/glsa/glsa-200510-08.xml</url>
+    </references>
+    <dates>
+      <discovery>2005-10-08</discovery>
+      <entry>2005-10-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1f6e2ade-35c2-11da-811d-0050bf27ba24">
     <topic>imap-uw -- mailbox name handling remote buffer vulnerability</topic>
     <affects>
