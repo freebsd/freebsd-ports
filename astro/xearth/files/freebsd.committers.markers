@@ -15,11 +15,11 @@
  35.54,		139.53,		"        ,nyan,ume"		# Yokohama, Kanagawa, Japan
  35.36,		139.31,		"                     ,daichi"	# Kawasaki, Kanagawa, Japan
 -34.13899,	138.77295,	"grog"				# Echunga, SA Australia
+ 37.33,		138.46,		"rushani"			# Niigata, Japan
 -34.53,		138.35,		"newton, markp"	align=left	# Adelaide, SA Australia
  35.02,		137.07,		"sada   " align=left		# Toyota, Aichi, Japan
  35.0,		135.47,		"maho"				# Kyoto, Kyoto, Japan 
  34.47,		135.26,		"matusita"			# Ikeda, Osaka, Japan
- 37.33,		138.46,		"rushani"			# Niigata, Japan
  37.56,		126.98,		"cjh,perky"			# Seoul, South Korea
  25.017,	121.450,	"avatar,clive,foxfair,keith,kevlo,vanilla,leeym,clsung"	# Taipei, Taiwan
  24.80,		120.97,		"ijliao"			# HsinChu, Taiwan
@@ -84,11 +84,12 @@
  48.36,		2.99,		"charnier"	align=left	# Cannes Ecluse, France
  48.87,		2.33,		"roberto"	align=left	# Paris, France
  48.847135,	2.28514,	"mat,dumbbell"			# Paris, France
- 48.912,	2.256,		"mich"		align=left	# La Garenne-Colombes, France
  49.005858,	2.267550,	"flz"				# Saint Prix, France
+ 48.912,	2.256,		"mich"		align=left	# La Garenne-Colombes, France
  51.27615,	1.0071,		"jesper"			# Reading, United Kingdom
  50.84121667,	0.128383333,	"joe"				# Brighton, East Sussex, UK
  52.2035,	0.1200,		"fanf"				# Cambridge, UK
+ 52.12,		0.06,		"rwatson"			# Cambridge, UK
  51.5,		0.0,		" dfr"				# London, UK
  51.0,		0.0,		"greid"		align=left	# Farnborough, Hampshire, UK
  51.53,		-0.18,		"n_hibma"	align=above	# London, UK
@@ -96,7 +97,6 @@
  51.67,		-0.61,		"markm"		align=left	# (CORE) Amersham, Bucks, UK
  51.67,		-0.61,		"brian"		align=left	# Amersham, Bucks, UK
  52.01,		-0.75,		"tom"		align=left	# Milton Keynes, UK
- 52.12,		0.06,		"rwatson"			# Cambridge, UK
  52.635,	-1.135,		"hmp"				# Leicester, East Midlands, UK
  53.22,		-1.29,		"ben"				# Sheffield, Yorkshire, UK
  51.44,		-2.06,		"marko"		align=left	# Chippenham, Wiltshire, UK
@@ -110,9 +110,9 @@
 -20.950,	-47.917,	"garga"				# Limeira, SP, Brazil
 -27.6667,	-48.5500,	"mnag"				# Florianopolis, SC, Brazil
  42.1411,	-70.8453,	"jeh"		align=below	# Hanover, MA, USA
+ 42.375,	-71.106,	"cracauer"			# Cambridge, MA, USA
  42.34,		-71.19,		"wollman"	align=right	# Brighton, MA, USA
  42.28		-71.23		"tmclaugh"	align=left	# Needham, MA, USA
- 42.375,	-71.106,	"cracauer"			# Cambridge, MA, USA
  42.727,	-73.676,	"dec,jon,gad"			# RPI @ Troy, NY, USA
  40.893,	-73.973,	"jkim"				# Englewood, NJ, USA
  45.3991,	-75.6942,	"jake"				# Ottawa, ON, Canada
@@ -145,13 +145,13 @@
  40.4047,	-111.7508,	"glewis"			# Cedar Hills, UT, USA
  46.59,		-112.04,	"nate"				# Helena, MT, USA
  51.09,		-114.12,	"cpiazza"			# Calgary, AB, Canada
- 33.032476,	-117.087532,	"wes,"				# (CORE) San Diego, CA, USA
  33.001565,	-117.068113,	"    gordon"			# San Diego, CA, USA
- 34.13637,	-118.12704,	" mph,"				# Pasadena, CA, USA
- 34.11,		-118.29,	"         kris,"		# Los Angeles, CA, USA
- 33.83,		-118.22,	"                trevor,"	# Dominguez, CA, USA
- 33.979,	-118.439,	"                           dougb,"# Marina del Rey, CA USA
+ 33.032476,	-117.087532,	"wes,"				# (CORE) San Diego, CA, USA
  33.66,		-117.80,	"                                    dd"# Irvine, CA, USA
+ 34.13637,	-118.12704,	" mph,"				# Pasadena, CA, USA
+ 33.83,		-118.22,	"                trevor,"	# Dominguez, CA, USA
+ 34.11,		-118.29,	"         kris,"		# Los Angeles, CA, USA
+ 33.979,	-118.439,	"                           dougb,"# Marina del Rey, CA USA
  39.25,		-121.02,	"truckman"			# Nevada City, CA, USA
  38.54,		-121.76,	"obrien,mharo"			# Davis, CA, USA
  37.40,		-121.94,	"alfred"			# Santa Clara, CA, USA
