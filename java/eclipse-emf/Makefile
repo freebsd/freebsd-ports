@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	emf
-PORTVERSION=	2.0.1
-PORTREVISION=	3
+PORTVERSION=	2.1.1
+PORTREVISION=	0
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.eclipse.org/tools/emf/downloads/drops/2.0.1/R200409171617/
+MASTER_SITES=	http://download.eclipse.org/tools/emf/downloads/drops/${PORTVERSION}/R200509281310/
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	emf-sdo-xsd-SDK-${PORTVERSION}
 DIST_SUBDIR=	eclipse
@@ -25,11 +25,14 @@ USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 JAVA_OS=	native
-PLIST_SUB=	RELEASEVERSION=${PORTVERSION}
 
 do-install:
 		@${MKDIR} ${PREFIX}/eclipse
 		@${CP} -r ${WRKSRC}/eclipse/plugins ${PREFIX}/eclipse
 		@${CP} -r ${WRKSRC}/eclipse/features ${PREFIX}/eclipse
+		@(cd ${WRKSRC}; ${FIND} -s eclipse/features eclipse/plugins -not -type d) >> ${TMPPLIST}
+		@(cd ${WRKSRC}; ${FIND} -s -d eclipse/features eclipse/plugins -type d) \
+			| ${GREP} -vE 'eclipse/plugins$$|eclipse/features$$' \
+			| ${SED} -ne 's,^,@dirrm ,p' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
