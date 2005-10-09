@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bmp-docklet
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	deskutils audio
 MASTER_SITES=	http://mark.xnull.de/bmp-docklet/ \
 		${MASTER_SITE_LOCAL}
@@ -25,5 +25,13 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment"
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 .include <bsd.port.mk>
