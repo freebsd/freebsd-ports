@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	jcifs
-PORTVERSION=	1.1.9
+PORTVERSION=	1.1.11
 CATEGORIES=	net java
 MASTER_SITES=	http://jcifs.samba.org/src/
 EXTRACT_SUFX=	.tgz
@@ -26,14 +26,17 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 PORTDOCS=	*
 .endif
 
+post-extract:
+	${RM} ${WRKSRC}/docs/.index.xml.swp
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.jar ${JAVAJARDIR}/${PORTNAME}.jar
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/docs && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
+	cd ${WRKSRC}/docs && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
-	${CP} -R ${WRKSRC}/docs/ ${DOCSDIR}
-	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \;
+	cd ${WRKSRC}/examples && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
 	@${FIND} ${EXAMPLESDIR} ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${EXAMPLESDIR} -type d | ${SORT} -r | \
