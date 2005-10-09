@@ -15,6 +15,10 @@ MASTER_SITE_SUBDIR=	kawa
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Java-based Scheme implementation
 
+BROKEN=		"old distfile is unavailable"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-09
+
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
 USE_JAVA=	1.2+
