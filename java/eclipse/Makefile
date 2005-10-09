@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	eclipse
-PORTVERSION=	3.1
-PORTREVISION=	3
+PORTVERSION=	3.1.1
+PORTREVISION=	0
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
-MASTER_SITE_SUBDIR=	R-${PORTVERSION}-200506271435
+MASTER_SITE_SUBDIR=	R-${PORTVERSION}-200509290840
 DISTNAME=	${PORTNAME}-sourceBuild-srcIncluded-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
@@ -120,7 +120,7 @@ do-install:
 	@${TAR} -xzf ${WRKSRC}/result/*.tar.gz -C ${PREFIX}
 	@${SED} \
 	  -e "s+%%ECLIPSE_HOME%%+${PORTDESTDIR}+g" \
-	  -e "s+%%JAVA_HOME%%+${JAVA_HOME}+g" \
+	  -e "s+%%PREFIX%%+${PREFIX}+g" \
 	  -e "s+%%X11BASE%%+${X11BASE}+g" \
 	  -e "s+%%BROWSER%%+${BROWSER}+g" \
 	${FILESDIR}/eclipse.in > ${WRKSRC}/eclipse.tmp
