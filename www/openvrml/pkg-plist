@@ -29,13 +29,31 @@ libdata/pkgconfig/openvrml.pc
 libexec/openvrml-player
 share/idl/openvrml-%%VER%%/openvrml.idl
 share/pixmaps/lookat.xpm
-lib/mozilla/plugins/openvrml.la
 lib/mozilla/plugins/openvrml.so
 lib/mozilla/plugins/openvrml.xpt
+%%PORTDOCS%%%%EXAMPLESDIR%%/Anchor.wrl
+%%PORTDOCS%%%%EXAMPLESDIR%%/Click.wrl
+%%PORTDOCS%%%%EXAMPLESDIR%%/EventPROTO.wrl
+%%PORTDOCS%%%%EXAMPLESDIR%%/ExternPROTO.wrl
+%%PORTDOCS%%%%EXAMPLESDIR%%/Inline.wrl
+%%PORTDOCS%%%%EXAMPLESDIR%%/Prox1.wrl
+%%PORTDOCS%%%%EXAMPLESDIR%%/RefractiveMaterial.wrl
+%%PORTDOCS%%%%EXAMPLESDIR%%/SimplePROTO.wrl
+%%PORTDOCS%%%%EXAMPLESDIR%%/TestJSAI.wrl
+%%PORTDOCS%%%%EXAMPLESDIR%%/bounce.wrl
+%%PORTDOCS%%%%EXAMPLESDIR%%/groundPlane.wrl
+%%PORTDOCS%%%%EXAMPLESDIR%%/jsTouch.wrl
+%%PORTDOCS%%%%EXAMPLESDIR%%/orbit3.wrl
+%%PORTDOCS%%%%EXAMPLESDIR%%/pixtex1.wrl
+%%PORTDOCS%%%%EXAMPLESDIR%%/rotation_toy.wrl
+%%PORTDOCS%%%%EXAMPLESDIR%%/scale.wrl
+%%PORTDOCS%%%%EXAMPLESDIR%%/snoman.wrl
+%%PORTDOCS%%%%EXAMPLESDIR%%/warbird.wrl
 @dirrm include/openvrml/openvrml/gl
 @dirrm include/openvrml/openvrml
 @dirrm include/openvrml
 @dirrm share/idl/openvrml-%%VER%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @unexec rmdir %D/share/gtk-doc/html/gtkglext 2>/dev/null || true
 @unexec rmdir %D/share/gtk-doc/html 2>/dev/null || true
 @unexec rmdir %D/share/gtk-doc 2>/dev/null || true

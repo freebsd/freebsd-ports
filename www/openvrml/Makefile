@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openvrml
-PORTVERSION=	0.15.9
+PORTVERSION=	0.15.10
 CATEGORIES=	www graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -68,9 +68,17 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/manual/ ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/models/*.wrl ${EXAMPLESDIR}
 .endif
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
+
+.if defined(MAINTAINER_MODE)
+test:	build
+	(cd ${WRKSRC}/tests ;	\
+	./testsuite )
+.endif
 
 .include <bsd.port.post.mk>
