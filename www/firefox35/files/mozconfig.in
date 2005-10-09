@@ -33,7 +33,7 @@ ac_add_options --with-system-jpeg=@LOCALBASE@
 ac_add_options --with-system-zlib
 ac_add_options --with-system-png=@LOCALBASE@
 ac_add_options --with-system-nspr
-ac_add_options --with-gssapi=/usr
+ac_add_options --with-gssapi=@KRB5_HOME@
 ######################################################################
 # set compile/link features
 ac_add_options --with-pthreads
@@ -50,7 +50,7 @@ ac_add_options --disable-installer
 ac_add_options --enable-single-profile
 ac_add_options --disable-profilesharing
 ac_add_options --enable-image-decoders=all
-ac_add_options --enable-extensions="cookie,xml-rpc,xmlextras,pref,transformiix,universalchardet,webservices,inspector,p3p,gnomevfs"
+ac_add_options --enable-extensions="default"
 ######################################################################
 # conditional from port Makefile
 #if test -n "$WITH_REORDER"; then
