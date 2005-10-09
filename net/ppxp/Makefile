@@ -21,6 +21,10 @@ MASTER_SITES=	http://www.dsl.gr.jp/~manabe/PPxP/packages/	\
 MAINTAINER=	nosuzuki@postcard.st
 COMMENT=	A new and easy to use PPP software
 
+FORBIDDEN=	http://vuxml.FreeBSD.org/641e8609-cab5-11d9-9aed-000e0c2e438a.html
+DEPRECATED=	${FORBIDDEN}
+EXPIRATION_DATE=2005-11-09
+
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 .if defined(WITH_TCLJP)
 BUILD_DEPENDS=	wish8.0jp:${PORTSDIR}/japanese/tk80 \
