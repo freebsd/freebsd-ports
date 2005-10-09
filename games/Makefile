@@ -47,6 +47,7 @@
     SUBDIR += atris
     SUBDIR += atris-sounds
     SUBDIR += awele
+    SUBDIR += balazar
     SUBDIR += barrage
     SUBDIR += bass
     SUBDIR += bastet
@@ -432,7 +433,6 @@
     SUBDIR += prboom
     SUBDIR += ptkei
     SUBDIR += pvpgn
-    SUBDIR += py-balazar
     SUBDIR += py-sgflib
     SUBDIR += py-sgfsummary
     SUBDIR += py-ski

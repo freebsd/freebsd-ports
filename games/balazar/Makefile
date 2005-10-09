@@ -1,4 +1,4 @@
-# New ports collection makefile for:	py-balazar
+# New ports collection makefile for:	balazar
 # Date created:				2005-10-06
 # Whom:					Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 #
@@ -9,7 +9,6 @@ PORTNAME=	balazar
 PORTVERSION=	0.2
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/balazar/
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Balazar-${PORTVERSION}
 
 MAINTAINER=	acardenas@bsd.org.pe
