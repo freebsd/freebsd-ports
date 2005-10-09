@@ -7,7 +7,7 @@
 
 PORTNAME=	ac3d
 PORTVERSION=	5.0.21
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://inivis.swmirror.com/
 PKGNAMEPREFIX=	linux-
@@ -17,16 +17,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	Easy to use and powerful 3D graphics modeller (trial version)
 
-RUN_DEPENDS=	\
-		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \
 		${LINUXBASE}/usr/lib/libpng.so.2:${PORTSDIR}/graphics/linux-png10 \
-		${LINUXBASE}/usr/lib/libtiff.so.3:${PORTSDIR}/graphics/linux-tiff
-.ifdef(INSTALL_DYNLINKED_VERSION)
+		${LINUXBASE}/usr/lib/libtiff.so.3:${PORTSDIR}/graphics/linux-tiff \
+		${LINUXBASE}/usr/X11R6/lib/libGLU.so.1:${PORTSDIR}/graphics/linux_dri
+
 .ifdef(WITH_NVIDIA_GL)
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
-.else
-RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
-.endif
 .endif
 
 RESTRICTED=	"no distribution permitted"
@@ -35,44 +32,14 @@ NO_CDROM=	${RESTRICTED}
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
+NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}lx
 
-SUB_FILES=	pkg-message
-SUB_LIST=	PORTNAME="${PORTNAME}"
-
-.ifndef(INSTALL_DYNLINKED_VERSION)
-PLIST_SUB=	DYNAMIC_VERSION="@comment "	\
-		STATIC_VERSION=""
-PROGRAM=	${PORTNAME}s
-.else
-PLIST_SUB=	DYNAMIC_VERSION=""		\
-		STATIC_VERSION="@comment "
-PROGRAM=	${PORTNAME}
-.endif
-
-.ifndef(INSTALL_DYNLINKED_VERSION)
-pre-everything::
-	@${ECHO_MSG} 'Define INSTALL_DYNLINKED_VERSION=yes to install'
-	@${ECHO_MSG} 'a dynamically linked (against linux MesaGL)'
-	@${ECHO_MSG} 'version of the program.'
-	@${ECHO_MSG} 'It may be useful with hardware accelerated MesaGL.'
-	@${ECHO_MSG} ''
-.endif
-
-do-build:
-	${BRANDELF} -t Linux ${WRKSRC}/${PROGRAM}
-
-pre-install:
-# Generate startup script
-	@${ECHO_CMD} "#!${SH}" > ${WRKDIR}/${PORTNAME}.sh
-	@${ECHO_CMD} "${SETENV} AC3D_HOME=\"${DATADIR}\" \
-		${PREFIX}/bin/real-${PROGRAM}" >> \
-		${WRKDIR}/${PORTNAME}.sh
+SUB_FILES=	ac3d
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PROGRAM} \
-		${PREFIX}/bin/real-${PROGRAM}
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ac3d ${PREFIX}/libexec
+	${INSTALL_SCRIPT} ${WRKDIR}/ac3d ${PREFIX}/bin
 
 # Install small Tcl/Tk distribution
 # Tcl/Tk, installed from ports tree will also make a job,
@@ -80,15 +47,13 @@ do-install:
 # Tcl/Tk scripts library (which is ${LOCALBASE}/lib for version
 # from ports).
 # data
-	@${MKDIR} ${DATADIR}
-	@${MKDIR} ${DATADIR}/lib
-	@${MKDIR} ${DATADIR}/lib/tcl8.4
+	${MKDIR} ${DATADIR}/lib/tcl8.4
 	${INSTALL_DATA} ${WRKSRC}/lib/tcl8.4/tclIndex ${DATADIR}/lib/tcl8.4
 	${INSTALL_DATA} ${WRKSRC}/lib/tcl8.4/*.tcl ${DATADIR}/lib/tcl8.4
-	@${MKDIR} ${DATADIR}/lib/tk8.4
+	${MKDIR} ${DATADIR}/lib/tk8.4
 	${INSTALL_DATA} ${WRKSRC}/lib/tk8.4/tclIndex ${DATADIR}/lib/tk8.4
 	${INSTALL_DATA} ${WRKSRC}/lib/tk8.4/*.tcl ${DATADIR}/lib/tk8.4
-	@${MKDIR} ${DATADIR}/tcl
+	${MKDIR} ${DATADIR}/tcl
 .for i in tcl xbm
 	${INSTALL_DATA} ${WRKSRC}/tcl/*.${i} ${DATADIR}/tcl
 .endfor
@@ -99,31 +64,29 @@ do-install:
 .endfor
 
 # plugins
-	@${MKDIR} ${DATADIR}/plugins
+	${MKDIR} ${DATADIR}/plugins
 	${INSTALL_PROGRAM} ${WRKSRC}/plugins/*.p ${DATADIR}/plugins
 	${INSTALL_DATA} ${WRKSRC}/plugins/*.tcl ${DATADIR}/plugins
 
-.ifndef	(NOPORTDOCS)
 # docs
-	@${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/LICENCE ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/IMPORTANT ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/manual
+	${MKDIR} ${DOCSDIR}/manual
 	${INSTALL_DATA} ${WRKSRC}/manual/*.htm ${DOCSDIR}/manual
-	@${MKDIR} ${DOCSDIR}/manual/main_files
+	${MKDIR} ${DOCSDIR}/manual/main_files
 .for i in gif jpg png
 	${INSTALL_DATA} ${WRKSRC}/manual/main_files/*.${i} \
 		${DOCSDIR}/manual/main_files
 .endfor
-	@${MKDIR} ${DOCSDIR}/manual/top_files
+	${MKDIR} ${DOCSDIR}/manual/top_files
 	${INSTALL_DATA} ${WRKSRC}/manual/top_files/*.png \
 		${DOCSDIR}/manual/top_files
-# examples
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/models/samples/* ${EXAMPLESDIR}
-.endif
+	${LN} -sf ${DOCSDIR}/manual ${DATADIR}/manual
 
-	@${CAT} ${PKGMESSAGE}
+# examples
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/models/samples/* ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
