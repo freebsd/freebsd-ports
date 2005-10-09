@@ -18,7 +18,8 @@ usr/X11R6/lib/modules/dri/mga_dri.so
 usr/X11R6/lib/modules/dri/r128_dri.so
 usr/X11R6/lib/modules/dri/radeon_dri.so
 usr/X11R6/lib/modules/dri/r200_dri.so
+usr/X11R6/lib/modules/dri/sis_dri.so
 usr/X11R6/lib/modules/dri/tdfx_dri.so
-@exec mkdir -p usr/X11R6/lib/modules/dri
+@exec %D/sbin/ldconfig %D/usr/X11R6/lib
 @dirrm usr/X11R6/lib/modules/dri
 @dirrm usr/X11R6/lib/modules
