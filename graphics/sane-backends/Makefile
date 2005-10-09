@@ -7,6 +7,7 @@
 
 PORTNAME=	sane-backends
 PORTVERSION=	1.0.16
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://alioth.debian.org/download.php/1079/ \
 		ftp://ftp.sane-project.org/pub/sane/%SUBDIR%/ \
@@ -31,7 +32,7 @@ USE_GMAKE=	yes
 USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}
+CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} --disable-locking
 MAKE_ENV=	NOPORTDOCS=${NOPORTDOCS}
 INSTALLS_SHLIB=	yes
 
