@@ -36,7 +36,7 @@
     SUBDIR += gnonlin
     SUBDIR += goggles
     SUBDIR += gopchop
-    SUBDIR += gpac-libm4systems
+    SUBDIR += gpac-libgpac
     SUBDIR += grpplaylist
     SUBDIR += gstreamer
     SUBDIR += gstreamer-editor
