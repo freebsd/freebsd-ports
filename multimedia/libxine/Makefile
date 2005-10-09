@@ -30,6 +30,7 @@ LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		modplug.0:${PORTSDIR}/audio/libmodplug \
 		vcdinfo.2:${PORTSDIR}/multimedia/vcdimager \
 		Wand.8:${PORTSDIR}/graphics/ImageMagick
+PATCH_DEPENDS=	libtool15:${PORTSDIR}/devel/libtool15
 
 USE_GETTEXT=	yes
 USE_ICONV=	yes
