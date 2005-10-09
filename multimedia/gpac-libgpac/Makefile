@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gpac-libm4systems
+PORTNAME=	gpac-libgpac
 DISTVERSION=	0.4.0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
