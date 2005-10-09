@@ -8,7 +8,7 @@
 PORTNAME=	rubrica
 PORTVERSION=	1.0.14
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://download.berlios.de/rubrica/
+MASTER_SITES=	http://download.berlios.de/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An addressbook for the gnome2 desktop
