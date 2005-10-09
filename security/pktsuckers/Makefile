@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://minnie.cs.adfa.edu.au/pub/NetSecurity/
 DISTNAME=	${PORTNAME}1_2
 
-MAINTAINER=	wkt@tuhs.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Log contents of unwanted UDP packets and TCP connections
 
 do-install:
