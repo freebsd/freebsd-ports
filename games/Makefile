@@ -181,6 +181,7 @@
     SUBDIR += garith
     SUBDIR += gbottler
     SUBDIR += gcompris2
+    SUBDIR += geki2
     SUBDIR += gemdropx
     SUBDIR += ggz-client-libs
     SUBDIR += ggz-txt-client
