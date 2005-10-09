@@ -16,4 +16,4 @@ higher-order routines and iters, exception handling, assertions,
 preconditions, postconditions, and class invariants.  Sather code can
 be compiled into C code and can efficiently link with C object files.
 
-WWW: http://www.gnu.org/directory/GNU/sather.html
+WWW: http://www.gnu.org/software/sather/
