@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	vep
-PORTVERSION=	1.0
-PORTREVISION=	3
+PORTVERSION=	1.1.0.1
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.eclipse.org/tools/ve/downloads/drops/R-1.0-200409191449/
+MASTER_SITES=	http://download.eclipse.org/tools/ve/downloads/drops/R-${PORTVERSION}-200509071822/
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	VE-SDK-${PORTVERSION}
 DIST_SUBDIR=	eclipse
@@ -18,20 +18,24 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	A framework for creating GUI builders for Eclipse
 
-RUN_DEPENDS+=	${LOCALBASE}/eclipse/features/org.eclipse.emf_2.0.1/feature.xml:${PORTSDIR}/java/eclipse-emf \
-		${LOCALBASE}/eclipse/features/org.eclipse.gef_3.0.1/feature.xml:${PORTSDIR}/java/eclipse-gef
-
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
+RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse \
+		${LOCALBASE}/eclipse/features/org.eclipse.emf_2.1.1/feature.xml:${PORTSDIR}/java/eclipse-emf \
+		${LOCALBASE}/eclipse/features/org.eclipse.gef_3.1.1/feature.xml:${PORTSDIR}/java/eclipse-gef
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
+JAVA_OS=	native
 
 do-install:
 		@${MKDIR} ${PREFIX}/eclipse
 		@${CP} -r ${WRKSRC}/eclipse/plugins ${PREFIX}/eclipse
 		@${CP} -r ${WRKSRC}/eclipse/features ${PREFIX}/eclipse
+		@(cd ${WRKSRC}; ${FIND} -s eclipse/features eclipse/plugins -not -type d) >> ${TMPPLIST}
+		@(cd ${WRKSRC}; ${FIND} -s -d eclipse/features eclipse/plugins -type d) \
+			| ${GREP} -vE 'eclipse/plugins$$|eclipse/features$$' \
+			| ${SED} -ne 's,^,@dirrm ,p' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
