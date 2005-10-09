@@ -8,12 +8,16 @@
 PORTNAME=	vmsbackup
 PORTVERSION=	4.0
 CATEGORIES=	emulators sysutils
-MASTER_SITES=	http://www.bsdberlin.org/~dako/distfiles/emulators/
+MASTER_SITES=	#
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	dako@bsdberlin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reads VMS BACKUP tapes
+
+BROKEN=		"distfile disappeared"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-09
 
 MAN1=		vmsbackup.1
 MANCOMPRESSED=	yes
