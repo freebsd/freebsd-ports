@@ -141,6 +141,7 @@
     SUBDIR += gtk-knocker
     SUBDIR += gtkpasman
     SUBDIR += gtkportscan
+    SUBDIR += gwee
     SUBDIR += hackbot
     SUBDIR += hafiye
     SUBDIR += hashish
