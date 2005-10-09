@@ -1,5 +1,3 @@
 NJS is an independent implementation of the JavaScript language developed
 by Netscape and standardized by ECMA. It is designed to be re-entrant,
 extendible, fast, and programmable.
-
-WWW: http://www.bbassett.net/njs/
