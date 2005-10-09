@@ -13,7 +13,7 @@ MASTER_SITES=	http://tigcc.ticalc.org/sources/\
 DISTNAME=	tigcc_src
 DISTFILES=	tigcc_src.tar.bz2 gcc-3.3.3.tar.bz2 gas-2.14.tar.bz2
 
-MAINTAINER=	gabor.kovesdan@t-hosting.hu
+MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	C compiler for the TI89, 92, and 92+ calculators
 
 BUILD_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog \
