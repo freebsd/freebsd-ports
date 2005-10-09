@@ -12,10 +12,10 @@ CATEGORIES=		science math
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gfs
 
-PATCH_SITES=		${MASTER_SITE_SOURCEFORGE}gfs/ \
-			http://members.aon.at/odunkl/downloads/patches/
-PATCHFILES=		gerris-0.6-patch-1.gz \
-			gerris-0.6-patch-2.gz
+PATCH_SITES=		${MASTER_SITE_SOURCEFORGE}gfs/:patch1 \
+			http://members.aon.at/odunkl/downloads/patches/:patch2
+PATCHFILES=		gerris-0.6-patch-1.gz:patch1 \
+			gerris-0.6-patch-2.gz:patch2
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=		odunkl@gmx.net
@@ -38,25 +38,10 @@ USE_GNOME=		pkgconfig
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=		yes
 
-MPIDIR=			${LOCALBASE}/mpich
-
-.include <bsd.port.pre.mk>
-
-# TODO: add support for MPI
-#.if exists(${MPIDIR}/bin/mpiCC)
-#WITH_MPI=	yes
-#.endif
-#.if defined(WITH_MPI)
-#PKGNAMESUFFIX+=		-mpich
-#BUILD_DEPENDS+=		${MPIDIR}/bin/mpiCC:${PORTSDIR}/net/mpich
-#CONFIGURE_ARGS+=	--with-mpicc=${MPIDIR}/bin/mpiCC
-#MAKE_ARGS=         	LIBTOOL="${LIBTOOL} --tag=CC"
-#.else
 CONFIGURE_ARGS+=	--disable-mpi
-#.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|'	\
 		${WRKSRC}/src/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
