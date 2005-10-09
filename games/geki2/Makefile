@@ -1,0 +1,23 @@
+# New ports collection makefile for:	geki2
+# Date created:				16 June 2001
+# Whom:					Edwin Groothuis <edwin@mavetju.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	geki2
+PORTVERSION=	2.0.3
+CATEGORIES=	games
+MASTER_SITES=	http://kxl.hn.org/download/
+DISTNAME=	${PORTNAME}-KXL-${PORTVERSION}
+
+MAINTAINER=	edwin@mavetju.org
+COMMENT=	2D length scroll shooting game
+
+BUILD_DEPENDS=	${X11BASE}/include/KXL.h:${PORTSDIR}/games/kxl
+RUN_DEPENDS=	${X11BASE}/lib/libKXL-1.1.7.so:${PORTSDIR}/games/kxl
+
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+
+.include <bsd.port.mk>
