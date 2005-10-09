@@ -8,7 +8,7 @@
 
 PORTNAME=	firefox
 PORTVERSION=	1.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -40,6 +40,7 @@ USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/mozilla
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+KRB5_HOME?=	/usr
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
 			--exclude */macbuild/*\
@@ -145,6 +146,7 @@ post-extract::
 		-e 's|@LOCALBASE@|${LOCALBASE}|'	\
 		-e 's|@FAKEDIR@|${FAKEDIR}|'		\
 		-e 's|@PERL@|${PERL5}|'			\
+		-e 's|@KRB5_HOME@|${KRB5_HOME}|'		\
 		<${FILESDIR}/mozconfig.in >${WRKSRC}/.mozconfig
 	@${SED} -e 's|@PORTNAME_ICON@|${PORTNAME_ICON}|' \
 		<${FILESDIR}/${PORTNAME}.desktop.in >${WRKDIR}/${PORTNAME}.desktop
