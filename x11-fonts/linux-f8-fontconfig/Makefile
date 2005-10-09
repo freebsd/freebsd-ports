@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	fontconfig
-PORTVERSION=	2.1
-PORTREVISION=	4
+PORTVERSION=	2.2.3
+PORTREVISION=	0
 CATEGORIES=	x11-fonts linux
+MASTER_SITES=	ftp://rpmfind.net/linux/fedora/core/3/x86_64/os/Fedora/RPMS/
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Linux/i386 binary of Fontconfig
@@ -20,7 +21,7 @@ USE_REINPLACE=	yes
 BASEVERSION=	9
 ONLY_FOR_ARCHS=	i386 amd64
 PLIST=		${WRKDIR}/plist
-RPM_SET=	fontconfig-2.1-9.i386.rpm
+RPM_SET=	fontconfig-2.2.3-5.i386.rpm
 
 #PKGINSTALL=	${WRKDIR}/pkg-install
 
