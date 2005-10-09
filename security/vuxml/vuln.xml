@@ -47,17 +47,18 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Gentoo Linux Security Advisory reports:</p>
 	<blockquote cite="http://www.gentoo.org/security/en/glsa/glsa-200510-08.xml">
 	  <p>Ulf Harnhammar discovered a format string bug in the routines
-            handling CDDB server response contents.</p>
-          <p>An attacker could submit malicious information about an audio
-            CD to a public CDDB server (or impersonate a public CDDB server).
-            When the victim plays this CD on a multimedia frontend relying
-            on xine-lib, it could end up executing arbitrary code.</p>
+	    handling CDDB server response contents.</p>
+	  <p>An attacker could submit malicious information about an audio
+	    CD to a public CDDB server (or impersonate a public CDDB server).
+	    When the victim plays this CD on a multimedia frontend relying
+	    on xine-lib, it could end up executing arbitrary code.</p>
 	</blockquote>
       </body>
     </description>
     <references>
       <cvename>CAN-2005-2967</cvename>
       <url>http://www.gentoo.org/security/en/glsa/glsa-200510-08.xml</url>
+      <url>http://xinehq.de/index.php/security/XSA-2005-1</url>
     </references>
     <dates>
       <discovery>2005-10-08</discovery>
