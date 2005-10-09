@@ -431,6 +431,7 @@
     SUBDIR += prboom
     SUBDIR += ptkei
     SUBDIR += pvpgn
+    SUBDIR += py-balazar
     SUBDIR += py-sgflib
     SUBDIR += py-sgfsummary
     SUBDIR += py-ski
