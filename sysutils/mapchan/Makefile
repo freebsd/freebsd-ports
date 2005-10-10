@@ -10,8 +10,12 @@ PORTVERSION=	1.4
 CATEGORIES=	sysutils converters
 MASTER_SITES=	http://www.iceb.vinnitsa.com/download/
 
-MAINTAINER=	kot@premierbank.dp.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the utility "mapchan" from SCO Unix
+
+BROKEN=		"1.4 is unfetchable but 2.0 is available from the site"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-09
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
