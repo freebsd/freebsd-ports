@@ -12,7 +12,7 @@ CATEGORIES=	games linux
 MASTER_SITES=	http://www.coreblack.com/files/
 PKGNAMEPREFIX=	linux-
 
-MAINTAINER=	hido@coreblack.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half Life dedicated server running on steam
 
 IS_INTERACTIVE=	yes

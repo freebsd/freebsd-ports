@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.intec.co.jp/pub/utils/
 
-MAINTAINER=	kaz@kobe1995.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	log rotate
 
 MAN1=	rotate.1
