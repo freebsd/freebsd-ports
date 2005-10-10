@@ -1,26 +1,27 @@
 %%DIR%%/data/calendars.xml
-%%DIR%%/email_reminders.cgi
 %%DIR%%/data/email_reminders.xml
 %%DIR%%/data/events.xml
-%%DIR%%/gpl.txt
 %%DIR%%/data/new_calendars.xml
 %%DIR%%/data/pending_actions.xml
+%%DIR%%/data/plans_discovery.xml
+%%DIR%%/data/users.xml
+%%DIR%%/email_reminders.cgi
+%%DIR%%/gpl.txt
 %%DIR%%/plans.cgi
 %%DIR%%/plans_config.pl
-%%DIR%%/data/plans_discovery.xml
 %%DIR%%/plans_lib.pl
 %%DIR%%/theme/color_select.css
 %%DIR%%/theme/color_select.js
 %%DIR%%/theme/graphics/color_select_icon.gif
 %%DIR%%/theme/graphics/date_circle.gif
 %%DIR%%/theme/graphics/freebsd.gif
+%%DIR%%/theme/graphics/green_check.gif
 %%DIR%%/theme/graphics/hue_blend.png
 %%DIR%%/theme/graphics/linux.gif
 %%DIR%%/theme/graphics/linuxpowered_tux.jpg
 %%DIR%%/theme/graphics/poweredby.gif
 %%DIR%%/theme/graphics/sv_blend.png
 %%DIR%%/theme/graphics/trashcan.gif
-%%DIR%%/theme/graphics/green_check.gif
 %%DIR%%/theme/graphics/unit_number_patch_0_16x10.gif
 %%DIR%%/theme/graphics/unit_number_patch_0_20x13.gif
 %%DIR%%/theme/graphics/unit_number_patch_0_40x25.gif
@@ -315,15 +316,16 @@
 %%DIR%%/theme/icons/wreath_16x16.gif
 %%DIR%%/theme/icons/wreath_32x32.gif
 %%DIR%%/theme/icons/wreath_50x50.gif
+%%DIR%%/theme/lpd.js
 %%DIR%%/theme/plans.css
 %%DIR%%/theme/plans.js
 %%DIR%%/theme/plans.template
 %%DIR%%/theme/plans_lang.js
 %%DIR%%/theme/upcoming_events.css
+%%DIR%%/theme/upcoming_events.js
 %%DIR%%/upcoming_events.cgi
 %%DIR%%/upcoming_events.config
 %%DIR%%/us_english.pl
-%%DIR%%/data/users.xml
 
 @dirrm %%DIR%%/theme/icons
 @dirrm %%DIR%%/theme/graphics
