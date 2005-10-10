@@ -8,10 +8,14 @@
 PORTNAME=	blackened
 PORTVERSION=	1.8.1
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.blackened.com/pub/irc/blackened/
+MASTER_SITES=	# disappeared
 
-MAINTAINER=	toast@blackened.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Blackened IRC Client
+
+BROKEN=		"mastersite disappeared"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-09
 
 GNU_CONFIGURE=	yes
 PLIST_SUB=	VERSION=${PORTVERSION}
