@@ -32,6 +32,9 @@
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_basics.py
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_basics.pyc
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_basics.pyo
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_compare.py
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_compare.pyc
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_compare.pyo
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_compat.py
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_compat.pyc
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_compat.pyo
