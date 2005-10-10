@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	palm
 MASTER_SITES=	http://www.tomw.org/malsync/ \
 		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dirk
+MASTER_SITE_SUBDIR=	fenner
 DISTNAME=	malsync_2.1.0.src
 
 MAINTAINER=	ports@FreeBSD.org
