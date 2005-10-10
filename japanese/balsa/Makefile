@@ -9,11 +9,15 @@ PORTNAME=	balsa
 PORTVERSION=	0.8.0
 PORTREVISION=	1
 CATEGORIES=	japanese mail gnome
-MASTER_SITES=	ftp://ftp.critical.ne.jp/pub/balsa-ja/
+MASTER_SITES=	# disappeared
 DISTNAME=	balsa-0.8.0-ja
 
-MAINTAINER=	yatt@msc.biglobe.ne.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mail reader for the gnome interface (Japanized)
+
+BROKEN=		"does not fetch"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-09
 
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList
 
