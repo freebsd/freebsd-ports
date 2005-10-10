@@ -8,10 +8,14 @@
 PORTNAME=	xteddy
 PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.leo.org/pub/comp/usenet/comp.sources.x/xteddy/
+MASTER_SITES=	# disappeared
 
-MAINTAINER=	Isegrim@Wunder-Nett.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cuddlesome teddy for the X desktop
+
+BROKEN=		"does not fetch"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-09
 
 NO_CDROM=	"Can only be distributed for free"
 
