@@ -16,6 +16,7 @@ COMMENT=	Network Audio System
 
 USE_REINPLACE=	yes
 USE_IMAKE=	yes
+ALLTARGET=	clean includes depend
 INSTALLS_SHLIB=	yes
 CFLAGS+=	-Werror
 MAKE_ENV+=	COMPRESS_CMD="${COMPRESS_CMD:S/c//}"
@@ -25,7 +26,6 @@ post-patch:
 		| ${XARGS} ${REINPLACE_CMD} -n -e "s|<malloc.h>||" -e t -e p
 
 post-configure:
-	cd ${WRKSRC} && ${MAKE} Makefiles clean includes depend
 	# Work around shortcomings of the Image.rules et. al:
 	${REINPLACE_CMD} -e 's:-fPIC:${FPIC} -DPIC:g' \
 	    -e 's,-c \$$(CCOPTIONS),-c $$(CFLAGS),' \
