@@ -1,0 +1,10 @@
+*****************************************************************************
+
+Copy/symlink %%PREFIX%%/lib/pam_mysql.so to /usr/lib/pam_mysql.so
+to be able to use it. Read files in %%DOCSDIR%%
+for info on how to set up.
+
+Example:
+ln -sf %%PREFIX%%/lib/pam_mysql.so /usr/lib/pam_mysql.so
+
+*****************************************************************************
