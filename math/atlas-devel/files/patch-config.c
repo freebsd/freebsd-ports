@@ -114,7 +114,7 @@
           }
           break;
        case LAIA64: /* don't know */
-@@ -3060,15 +3079,35 @@
+@@ -3060,15 +3079,36 @@
        case LAX86:
           if (!CmndOneLine(targ, "sysctl hw.model", ln))
           {
@@ -145,6 +145,7 @@
 -            else if (strstr(ln, "64 bit Hammer")) mach = AmdHammer64;
 -            else if (strstr(ln, "Pentium/P55C")) mach = IntP5MMX; /* sent by */
 -            else if (strstr(ln, "Pentium")) mach=IntP5;       /* Nakata Maho */
++            else if (strstr(ln, "Sempron(tm)")) mach = AmdAthlon;
 +            else if (strstr(ln, "AMD-K6(tm)")) mach = IntP5MMX;
 +            else if (strstr(ln, "Pentium/P55C")) mach = IntP5MMX;
 +            else if (strstr(ln, "Pentium/P54C")) mach=IntP5;
