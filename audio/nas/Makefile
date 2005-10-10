@@ -16,7 +16,6 @@ COMMENT=	Network Audio System
 
 USE_REINPLACE=	yes
 USE_IMAKE=	yes
-ALLTARGET=	clean includes depend
 INSTALLS_SHLIB=	yes
 CFLAGS+=	-Werror
 MAKE_ENV+=	COMPRESS_CMD="${COMPRESS_CMD:S/c//}"
