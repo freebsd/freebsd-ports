@@ -88,6 +88,7 @@ share/apps/amarok/images/vol_speaker.png
 share/apps/amarok/images/volumeslider-gradient.png
 share/apps/amarok/images/volumeslider-handle.png
 share/apps/amarok/images/volumeslider-inset.png
+share/apps/amarok/images/volumeslider-handle_glow.png
 share/apps/amarok/images/wizard_compact.png
 share/apps/amarok/images/wizard_xmms.png
 share/apps/amarok/images/xine_logo.png
@@ -455,6 +456,7 @@ share/locale/sr/LC_MESSAGES/amarok.mo
 share/locale/sr@Latn/LC_MESSAGES/amarok.mo
 share/locale/sv/LC_MESSAGES/amarok.mo
 share/locale/ta/LC_MESSAGES/amarok.mo
+share/locale/tg/LC_MESSAGES/amarok.mo
 share/locale/tr/LC_MESSAGES/amarok.mo
 share/locale/uk/LC_MESSAGES/amarok.mo
 share/locale/uz/LC_MESSAGES/amarok.mo
