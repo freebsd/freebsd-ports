@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+export UDG_HOME=%%DATADIR%%
+cd %%DATADIR%%
+%%DATADIR%%/bin/uDrawGraph $@
