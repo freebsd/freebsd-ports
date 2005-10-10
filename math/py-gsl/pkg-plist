@@ -26,6 +26,7 @@
 %%PYTHON_SITELIBDIR%%/pygsl/_poly.pyo
 %%PYTHON_SITELIBDIR%%/pygsl/_qrng.so
 %%PYTHON_SITELIBDIR%%/pygsl/_siman.so
+%%PYTHON_SITELIBDIR%%/pygsl/_transform.so
 %%PYTHON_SITELIBDIR%%/pygsl/blas.py
 %%PYTHON_SITELIBDIR%%/pygsl/blas.pyc
 %%PYTHON_SITELIBDIR%%/pygsl/blas.pyo
@@ -48,7 +49,9 @@
 %%PYTHON_SITELIBDIR%%/pygsl/errors.pyc
 %%PYTHON_SITELIBDIR%%/pygsl/errors.pyo
 %%PYTHON_SITELIBDIR%%/pygsl/errortest.so
-%%PYTHON_SITELIBDIR%%/pygsl/fft.so
+%%PYTHON_SITELIBDIR%%/pygsl/fft.py
+%%PYTHON_SITELIBDIR%%/pygsl/fft.pyc
+%%PYTHON_SITELIBDIR%%/pygsl/fft.pyo
 %%PYTHON_SITELIBDIR%%/pygsl/fit.py
 %%PYTHON_SITELIBDIR%%/pygsl/fit.pyc
 %%PYTHON_SITELIBDIR%%/pygsl/fit.pyo
