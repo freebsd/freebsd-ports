@@ -8,7 +8,9 @@
 PORTNAME=	sidplayer
 PORTVERSION=	4.4
 CATEGORIES=	audio
-MASTER_SITES=	http://wwwthep.physik.uni-mainz.de/~cbauer/
+MASTER_SITES=	http://wwwthep.physik.uni-mainz.de/~cbauer/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ehaupt
 DISTNAME=	SIDPlayer-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
