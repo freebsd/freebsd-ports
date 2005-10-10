@@ -9,15 +9,14 @@ PORTNAME=	afterstep-i18n
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	x11-wm afterstep
-MASTER_SITES=	${MASTER_SITE_AFTERSTEP} \
-		${MASTER_SITE_LOCAL} \
-		http://www.itlb.te.noda.tus.ac.jp/~manome/afterstep/archive/ \
+MASTER_SITES=	${MASTER_SITE_AFTERSTEP:S/$/:afterstep/} \
+		${MASTER_SITE_LOCAL:S/$/:local/} \
+		http://www.itlb.te.noda.tus.ac.jp/~manome/afterstep/archive/:i18n \
 		http://www.itlb.te.noda.tus.ac.jp/~manome/afterstep/archive/icons/:icon
-# former for ${MASTER_SITE_AFTERSTEP}, latter for ${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	archives/1.0 kuriyama
+MASTER_SITE_SUBDIR=	archives/1.0/:afterstep kuriyama/:local
 DISTNAME=	AfterStep-1.0
-DISTFILES=	${DISTNAME}.tar.gz \
-		unofficial-I18N.98Feb27.tar.gz \
+DISTFILES=	${DISTNAME}.tar.gz:afterstep,local \
+		unofficial-I18N.98Feb27.tar.gz:local,i18n \
 		kterm.xpm:icon kterm2.xpm:icon KTerm-AS.xpm:icon \
 		netscape4.xpm:icon
 EXTRACT_ONLY=	${DISTNAME}.tar.gz \
