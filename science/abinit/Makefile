@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	abinit
-PORTVERSION=	4.3.3
+PORTVERSION=	4.4.4
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.abinit.org/pub/abinitio/ABINIT_v${PORTVERSION}/
-DISTFILES=	src_tests_${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Abinit calculates electronic structure of systems
@@ -33,12 +32,12 @@ BLAS=		${LOCALBASE}/lib/libatlas.a
 LAPACK=		${LOCALBASE}/lib/libalapack.a ${LOCALBASE}/lib/libf77blas.a ${LOCALBASE}/lib/libcblas.a -lg2c -lm
 .endif
 
-do-extract:
-	@${MKDIR} ${WRKSRC}
-	@${ECHO} ${WRKSRC}
-.for file in ${DISTFILES}
-	@${TAR} xfz ${DISTDIR}/${DISTFILES} -C ${WRKSRC}
-.endfor
+#do-extract:
+#	@${MKDIR} ${WRKSRC}
+#	@${ECHO} ${WRKSRC}
+#.for file in ${DISTFILES}
+#	@${TAR} xfz ${DISTDIR}/${DISTFILES} -C ${WRKSRC}
+#.endfor
 
 #Flags for programs written in Fortran 77
 FFLAGS_LIBS+=	-w ${FFLAGS}
