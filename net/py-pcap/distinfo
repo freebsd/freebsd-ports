@@ -1,2 +1,4 @@
-MD5 (python/pylibpcap-0.4.tar.gz) = 38c9a47db4113594b57aa0944b1ebdcf
-SIZE (python/pylibpcap-0.4.tar.gz) = 19370
+MD5 (pylibpcap-0.5.tar.gz) = 3720289b8de89954de125c3f657ca7ac
+SIZE (pylibpcap-0.5.tar.gz) = 22784
+MD5 (pylibpcap-doc.i.1.4) = eb095e3a75a5d55fb803a9f225f14f4b
+SIZE (pylibpcap-doc.i.1.4) = 6584
