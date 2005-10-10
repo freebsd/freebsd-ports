@@ -5798,6 +5798,7 @@ lla		ports/net/lla
 llnlxdir	ports/ftp/llnlxdir
 llnlxftp	ports/ftp/llnlxftp
 lm-solve	ports/games/lm-solve
+lmarbles	ports/games/lmarbles
 lmbench		ports/benchmarks/lmbench
 lmclock		ports/x11-clocks/lmclock
 lmmon		ports/sysutils/lmmon
@@ -5970,7 +5971,6 @@ mar		ports/archivers/mar
 maradns		ports/dns/maradns
 marathon-evil	ports/games/marathon-evil
 marathon2-data	ports/games/marathon2-data
-marbles		ports/games/marbles
 marlin		ports/audio/marlin
 mars		ports/cad/mars
 mars_nwe	ports/net/mars_nwe

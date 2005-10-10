@@ -5,12 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	marbles
+PORTNAME=	lmarbles
 PORTVERSION=	1.0.7
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lgames
-DISTNAME=	lmarbles-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A challenging puzzle game similar to Atomix
@@ -23,6 +22,8 @@ USE_REINPLACE=	yes
 
 MAN6=		lmarbles.6
 
+PORTDOCS=	*
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/SDL\///' ${WRKSRC}/src/*.[ch]
 
@@ -30,8 +31,8 @@ post-install:
 	@${CHOWN} root:games ${PREFIX}/bin/lmarbles
 	@${CHMOD} g+s ${PREFIX}/bin/lmarbles
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/lmarbles
-	${INSTALL_DATA} ${WRKSRC}/src/manual/* ${PREFIX}/share/doc/lmarbles
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/manual/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

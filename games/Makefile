@@ -327,6 +327,7 @@
     SUBDIR += linux-virtual-jay-peak
     SUBDIR += liquidwar
     SUBDIR += lm-solve
+    SUBDIR += lmarbles
     SUBDIR += ltris
     SUBDIR += lucidlife
     SUBDIR += macopix
@@ -338,7 +339,6 @@
     SUBDIR += mangband
     SUBDIR += marathon-evil
     SUBDIR += marathon2-data
-    SUBDIR += marbles
     SUBDIR += meqcc
     SUBDIR += merlin
     SUBDIR += mindfocus

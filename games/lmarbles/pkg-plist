@@ -1,80 +1,73 @@
 bin/lmarbles
-share/lmarbles/gfx/board.bmp
-share/lmarbles/gfx/f_red.bmp
-share/lmarbles/gfx/f_small.bmp
-share/lmarbles/gfx/f_white.bmp
-share/lmarbles/gfx/f_yellow.bmp
-share/lmarbles/gfx/figure.bmp
-share/lmarbles/gfx/lights.bmp
-share/lmarbles/gfx/logo.bmp
-share/lmarbles/gfx/m_frame.bmp
-share/lmarbles/gfx/m_sframe.bmp
-share/lmarbles/gfx/marbles.bmp
-share/lmarbles/gfx/metal/arrow_d.bmp
-share/lmarbles/gfx/metal/arrow_l.bmp
-share/lmarbles/gfx/metal/arrow_r.bmp
-share/lmarbles/gfx/metal/arrow_u.bmp
-share/lmarbles/gfx/metal/background.bmp
-share/lmarbles/gfx/metal/barrier_lr.bmp
-share/lmarbles/gfx/metal/barrier_ud.bmp
-share/lmarbles/gfx/metal/floor.bmp
-share/lmarbles/gfx/metal/teleport0.bmp
-share/lmarbles/gfx/metal/teleport1.bmp
-share/lmarbles/gfx/metal/teleport2.bmp
-share/lmarbles/gfx/metal/teleport3.bmp
-share/lmarbles/gfx/metal/wall.bmp
-share/lmarbles/gfx/metal/wall_crumble.bmp
-share/lmarbles/gfx/stone/arrow_d.bmp
-share/lmarbles/gfx/stone/arrow_l.bmp
-share/lmarbles/gfx/stone/arrow_r.bmp
-share/lmarbles/gfx/stone/arrow_u.bmp
-share/lmarbles/gfx/stone/background.bmp
-share/lmarbles/gfx/stone/barrier_lr.bmp
-share/lmarbles/gfx/stone/barrier_ud.bmp
-share/lmarbles/gfx/stone/floor.bmp
-share/lmarbles/gfx/stone/teleport0.bmp
-share/lmarbles/gfx/stone/teleport1.bmp
-share/lmarbles/gfx/stone/teleport2.bmp
-share/lmarbles/gfx/stone/teleport3.bmp
-share/lmarbles/gfx/stone/wall.bmp
-share/lmarbles/gfx/stone/wall_crumble.bmp
-share/lmarbles/gfx/tiny.sdlfnt
-share/lmarbles/gfx/title.bmp
-share/lmarbles/gfx/win_icon.bmp
-share/lmarbles/gfx/wood/arrow_d.bmp
-share/lmarbles/gfx/wood/arrow_l.bmp
-share/lmarbles/gfx/wood/arrow_r.bmp
-share/lmarbles/gfx/wood/arrow_u.bmp
-share/lmarbles/gfx/wood/background.bmp
-share/lmarbles/gfx/wood/barrier_lr.bmp
-share/lmarbles/gfx/wood/barrier_ud.bmp
-share/lmarbles/gfx/wood/floor.bmp
-share/lmarbles/gfx/wood/teleport0.bmp
-share/lmarbles/gfx/wood/teleport1.bmp
-share/lmarbles/gfx/wood/teleport2.bmp
-share/lmarbles/gfx/wood/teleport3.bmp
-share/lmarbles/gfx/wood/wall.bmp
-share/lmarbles/gfx/wood/wall_crumble.bmp
-share/lmarbles/levels/Original
-share/lmarbles/sounds/alarm.wav
-share/lmarbles/sounds/arrow.wav
-share/lmarbles/sounds/click.wav
-share/lmarbles/sounds/explode.wav
-share/lmarbles/sounds/score.wav
-share/lmarbles/sounds/select.wav
-share/lmarbles/sounds/stop.wav
-share/lmarbles/sounds/teleport.wav
-%%PORTDOCS%%share/doc/lmarbles/arrow.jpg
-%%PORTDOCS%%share/doc/lmarbles/arrow2.jpg
-%%PORTDOCS%%share/doc/lmarbles/crumble.jpg
-%%PORTDOCS%%share/doc/lmarbles/manual.html
-%%PORTDOCS%%share/doc/lmarbles/marbles.jpg
-%%PORTDOCS%%share/doc/lmarbles/teleport.jpg
-%%PORTDOCS%%@dirrm share/doc/lmarbles
-@dirrm share/lmarbles/gfx/metal
-@dirrm share/lmarbles/gfx/stone
-@dirrm share/lmarbles/gfx/wood
-@dirrm share/lmarbles/gfx
-@dirrm share/lmarbles/levels
-@dirrm share/lmarbles/sounds
-@dirrm share/lmarbles
+%%DATADIR%%/gfx/board.bmp
+%%DATADIR%%/gfx/f_red.bmp
+%%DATADIR%%/gfx/f_small.bmp
+%%DATADIR%%/gfx/f_white.bmp
+%%DATADIR%%/gfx/f_yellow.bmp
+%%DATADIR%%/gfx/figure.bmp
+%%DATADIR%%/gfx/lights.bmp
+%%DATADIR%%/gfx/logo.bmp
+%%DATADIR%%/gfx/m_frame.bmp
+%%DATADIR%%/gfx/m_sframe.bmp
+%%DATADIR%%/gfx/marbles.bmp
+%%DATADIR%%/gfx/metal/arrow_d.bmp
+%%DATADIR%%/gfx/metal/arrow_l.bmp
+%%DATADIR%%/gfx/metal/arrow_r.bmp
+%%DATADIR%%/gfx/metal/arrow_u.bmp
+%%DATADIR%%/gfx/metal/background.bmp
+%%DATADIR%%/gfx/metal/barrier_lr.bmp
+%%DATADIR%%/gfx/metal/barrier_ud.bmp
+%%DATADIR%%/gfx/metal/floor.bmp
+%%DATADIR%%/gfx/metal/teleport0.bmp
+%%DATADIR%%/gfx/metal/teleport1.bmp
+%%DATADIR%%/gfx/metal/teleport2.bmp
+%%DATADIR%%/gfx/metal/teleport3.bmp
+%%DATADIR%%/gfx/metal/wall.bmp
+%%DATADIR%%/gfx/metal/wall_crumble.bmp
+%%DATADIR%%/gfx/stone/arrow_d.bmp
+%%DATADIR%%/gfx/stone/arrow_l.bmp
+%%DATADIR%%/gfx/stone/arrow_r.bmp
+%%DATADIR%%/gfx/stone/arrow_u.bmp
+%%DATADIR%%/gfx/stone/background.bmp
+%%DATADIR%%/gfx/stone/barrier_lr.bmp
+%%DATADIR%%/gfx/stone/barrier_ud.bmp
+%%DATADIR%%/gfx/stone/floor.bmp
+%%DATADIR%%/gfx/stone/teleport0.bmp
+%%DATADIR%%/gfx/stone/teleport1.bmp
+%%DATADIR%%/gfx/stone/teleport2.bmp
+%%DATADIR%%/gfx/stone/teleport3.bmp
+%%DATADIR%%/gfx/stone/wall.bmp
+%%DATADIR%%/gfx/stone/wall_crumble.bmp
+%%DATADIR%%/gfx/tiny.sdlfnt
+%%DATADIR%%/gfx/title.bmp
+%%DATADIR%%/gfx/win_icon.bmp
+%%DATADIR%%/gfx/wood/arrow_d.bmp
+%%DATADIR%%/gfx/wood/arrow_l.bmp
+%%DATADIR%%/gfx/wood/arrow_r.bmp
+%%DATADIR%%/gfx/wood/arrow_u.bmp
+%%DATADIR%%/gfx/wood/background.bmp
+%%DATADIR%%/gfx/wood/barrier_lr.bmp
+%%DATADIR%%/gfx/wood/barrier_ud.bmp
+%%DATADIR%%/gfx/wood/floor.bmp
+%%DATADIR%%/gfx/wood/teleport0.bmp
+%%DATADIR%%/gfx/wood/teleport1.bmp
+%%DATADIR%%/gfx/wood/teleport2.bmp
+%%DATADIR%%/gfx/wood/teleport3.bmp
+%%DATADIR%%/gfx/wood/wall.bmp
+%%DATADIR%%/gfx/wood/wall_crumble.bmp
+%%DATADIR%%/levels/Original
+%%DATADIR%%/sounds/alarm.wav
+%%DATADIR%%/sounds/arrow.wav
+%%DATADIR%%/sounds/click.wav
+%%DATADIR%%/sounds/explode.wav
+%%DATADIR%%/sounds/score.wav
+%%DATADIR%%/sounds/select.wav
+%%DATADIR%%/sounds/stop.wav
+%%DATADIR%%/sounds/teleport.wav
+@dirrm %%DATADIR%%/gfx/metal
+@dirrm %%DATADIR%%/gfx/stone
+@dirrm %%DATADIR%%/gfx/wood
+@dirrm %%DATADIR%%/gfx
+@dirrm %%DATADIR%%/levels
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%
