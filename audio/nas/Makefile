@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nas
-PORTVERSION=	1.7
+PORTVERSION=	1.7b
 CATEGORIES=	audio
 MASTER_SITES=	http://nas.codebrilliance.com/nas/
 EXTRACT_SUFX=	.src.tar.gz
@@ -16,17 +16,32 @@ COMMENT=	Network Audio System
 
 USE_REINPLACE=	yes
 USE_IMAKE=	yes
-ALL_TARGET=	World
-# no need to "xmkmf -a" and create the Makefiles twice -- see above
-XMKMF=		xmkmf
 INSTALLS_SHLIB=	yes
+CFLAGS+=	-Werror
+MAKE_ENV+=	COMPRESS_CMD="${COMPRESS_CMD:S/c//}"
 
 post-patch:
-	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} \
-		${REINPLACE_CMD} -e "s|<malloc.h>|<stdlib.h>|g"
+	@${FIND} ${WRKSRC} -name '*.c' | ${XARGS} ${GREP} -lF malloc.h \
+		| ${XARGS} ${REINPLACE_CMD} -n -e "s|<malloc.h>||" -e t -e p
+
+post-configure:
+	cd ${WRKSRC} && ${MAKE} Makefiles clean includes depend
+	# Work around shortcomings of the Image.rules et. al:
+	${REINPLACE_CMD} -e 's:-fPIC:${FPIC} -DPIC:g' \
+	    -e 's,-c \$$(CCOPTIONS),-c $$(CFLAGS),' \
+	    -e 's,\(\$$(AR) \$$@ \$$\)(OBJS),\1(OBJS:S|^|unshared/|),' \
+		${WRKSRC}/lib/audio/Makefile
 
 post-install:
 	@${SED} -e 's:/usr/X11R6:${PREFIX}:g' ${PKGMESSAGE}
 
 .include "Makefile.man"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+FPIC=	-fPIC
+.else
+FPIC=	-fpic
+.endif
+
+.include <bsd.port.post.mk>
