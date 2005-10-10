@@ -11,7 +11,7 @@ CATEGORIES=	japanese mail
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://komadori.planet.sci.kobe-u.ac.jp/pub/MH/ \
 		ftp://ftp.chem.eng.himeji-tech.ac.jp/pub/net/mh/
-MASTER_SITES_SUBDIR=	motoyuki
+MASTER_SITE_SUBDIR=	motoyuki
 DISTNAME=	${PORTNAME}-${VERSION}-JP-${JP_VERSION}
 
 MAINTAINER=	motoyuki@freebsd.org
