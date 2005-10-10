@@ -1,7 +1,5 @@
 bin/fluidsynth
-lib/libfluidsynth.so.1
-lib/libfluidsynth.so
-lib/libfluidsynth.a
+include/fluidsynth.h
 include/fluidsynth/audio.h
 include/fluidsynth/event.h
 include/fluidsynth/gen.h
@@ -19,6 +17,8 @@ include/fluidsynth/synth.h
 include/fluidsynth/types.h
 include/fluidsynth/version.h
 include/fluidsynth/voice.h
-include/fluidsynth.h
+lib/libfluidsynth.a
+lib/libfluidsynth.so
+lib/libfluidsynth.so.2
 libdata/pkgconfig/fluidsynth.pc
 @dirrm include/fluidsynth
