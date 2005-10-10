@@ -8,10 +8,10 @@
 PORTNAME=	tide
 PORTVERSION=	3.1.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.holm-und-jeschag.de/files/
+MASTER_SITES=	http://www.t3x.org/files/
 DISTNAME=	tide-${PORTVERSION:S/.//g}
 
-MAINTAINER=	nils@holm-und-jeschag.de
+MAINTAINER=	nmh@t3x.org
 COMMENT=	A collection of classes for the T3X language
 
 BUILD_DEPENDS=	tx:${PORTSDIR}/lang/t3x
