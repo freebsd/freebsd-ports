@@ -8,9 +8,8 @@
 PORTNAME=	cbrowser
 PORTVERSION=	0.8
 CATEGORIES=	devel tk83
-MASTER_SITES=	http://download.sourceforge.net/cbrowser/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=jkoshy
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jkoshy@freebsd.org
 COMMENT=	Graphical front end for cscope and cscope clones
