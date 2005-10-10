@@ -8,13 +8,13 @@
 PORTNAME=	pgpdump
 PORTVERSION=	0.24
 CATEGORIES=	security
-MASTER_SITES=	ftp://pgp.iijlab.net/pub/pgp/tools/	\
-		ftp://ftp.mew.org/pub/pgp/tools/
+MASTER_SITES=	ftp://pgp.iijlab.net/pgpdump/
 
 MAINTAINER=	kaoru@kaisei.org
 COMMENT=	PGP packet visualizer
 
 GNU_CONFIGURE=	yes
+MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
 MAN1=		pgpdump.1
 PLIST_FILES=	bin/pgpdump
