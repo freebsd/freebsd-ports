@@ -9,7 +9,7 @@ PORTNAME=	svnc
 PORTVERSION=	0.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:svnc/} \
-		${MASTER_SITE_NETBSD:S/$/:vnc/}:vnc
+		${MASTER_SITE_NETBSD:S/$/:vnc/}
 MASTER_SITE_SUBDIR=	./:vnc trevor/:svnc
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz:svnc \
 		vnc-3.3.3r1_unixsrc.tgz:vnc
