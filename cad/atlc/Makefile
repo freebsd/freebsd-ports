@@ -11,7 +11,7 @@ CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/atlc/}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	blackend@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to calculate the impedance of transmission lines
 
 USE_REINPLACE=	YES
