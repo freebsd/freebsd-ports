@@ -11,9 +11,9 @@ PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://netsaint.sourceforge.net/download/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=dwcjr
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} netsaint-graphics.tar.gz
+		${MASTER_SITE_LOCAL:S/$/:local/}
+MASTER_SITE_SUBDIR=dwcjr/:local
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} netsaint-graphics.tar.gz:local
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extremely powerful network monitoring system
