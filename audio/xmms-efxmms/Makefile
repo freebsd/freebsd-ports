@@ -15,8 +15,7 @@ DISTNAME=	EFXmms-${PORTVERSION}
 MAINTAINER=	alejandro@varnet.biz
 COMMENT=	Send the XMMS audio output through a queue of multiple effect plugins
 
-BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
-RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

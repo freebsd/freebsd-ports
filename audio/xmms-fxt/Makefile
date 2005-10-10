@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	alejandro@varnet.biz
 COMMENT=	Surround/Echo effect plugin for XMMS
 
-BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
-RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=15
