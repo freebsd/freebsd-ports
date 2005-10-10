@@ -16,6 +16,9 @@
 %%PYTHON_SITELIBDIR%%/urwid/util.py
 %%PYTHON_SITELIBDIR%%/urwid/util.pyc
 %%PYTHON_SITELIBDIR%%/urwid/util.pyo
+%%PYTHON_SITELIBDIR%%/urwid/web_display.py
+%%PYTHON_SITELIBDIR%%/urwid/web_display.pyc
+%%PYTHON_SITELIBDIR%%/urwid/web_display.pyo
 %%PYTHON_SITELIBDIR%%/urwid/widget.py
 %%PYTHON_SITELIBDIR%%/urwid/widget.pyc
 %%PYTHON_SITELIBDIR%%/urwid/widget.pyo

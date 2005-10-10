@@ -5,10 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	urwid
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.8
 CATEGORIES=	devel python
 MASTER_SITES=	http://excess.org/urwid/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	patch-0.8.8.1.diff
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Curses-based user interface library for Python

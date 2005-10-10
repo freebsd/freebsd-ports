@@ -1,2 +1,4 @@
-MD5 (urwid-0.8.7.tar.gz) = 77ab93284f4971e2fa39ab9b3ddb8003
-SIZE (urwid-0.8.7.tar.gz) = 76918
+MD5 (urwid-0.8.8.tar.gz) = cda838cb17460cfa224ea7a4f12de0e0
+SIZE (urwid-0.8.8.tar.gz) = 86548
+MD5 (patch-0.8.8.1.diff) = ae8b97cf7a81b36bc7f1194a07472761
+SIZE (patch-0.8.8.1.diff) = 478
