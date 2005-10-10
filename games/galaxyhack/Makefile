@@ -39,6 +39,11 @@ post-extract:
 	@${FIND} ${WRKDIR}/${PORTNAME} -type d -name CVS -print0 | \
 		${XARGS} -0 ${RM} -rf
 
+# Convert DOS text files to UNIX
+	@${FIND} -E ${WRKSRC} -type f \
+		-iregex "(.*Makefile.*|.*\.(cpp|h))" \
+		-exec ${REINPLACE_CMD} -e "s|`${ECHO_CMD} -e '\r'`$$||" {} \;
+
 do-install:
 # Script
 	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-sh ${PREFIX}/bin/${PORTNAME}
@@ -69,9 +74,7 @@ BROKEN=	"Does not compile on < 5.x"
 
 post-patch:
 # Fix Makefile
-	@${REINPLACE_CMD} -e 's|%%CFLAGS%%|${CFLAGS}| ; \
-			s|%%PREFIX%%|${PREFIX}| ; \
-			s|sdl-config|${SDL_CONFIG}|' \
+	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' \
 				${WRKSRC}/${MAKEFILE}
 
 # Enable/disable compilation optimizations
