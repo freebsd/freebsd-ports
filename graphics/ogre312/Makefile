@@ -31,7 +31,6 @@ USE_X_PREFIX=	YES
 USE_GNOME=	gnomehack
 USE_SDL=	sdl
 USE_GMAKE=	YES
-NOT_FOR_ARCHS=	alpha
 
 post-patch:
 	@${REINPLACE_CMD} -e '\
@@ -48,11 +47,13 @@ post-patch:
 		${WRKSRC}/Tools/*/src/Makefile.in
 	@${REINPLACE_CMD} -e '\
 		s|\(-L$$(top_builddir)/OgreMain/src\)\([$$ ]*\)|\1/.libs\2|' \
+		${WRKSRC}/PlatformManagers/SDL/src/Makefile.in \
 		${WRKSRC}/PlugIns/BSPSceneManager/src/Makefile.in \
 		${WRKSRC}/PlugIns/CgProgramManager/src/Makefile.in \
 		${WRKSRC}/PlugIns/EXRCodec/src/Makefile.in \
 		${WRKSRC}/PlugIns/OctreeSceneManager/src/Makefile.in \
-		${WRKSRC}/PlugIns/ParticleFX/src/Makefile.in
+		${WRKSRC}/PlugIns/ParticleFX/src/Makefile.in \
+		${WRKSRC}/RenderSystems/GL/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|-L$$(top_builddir)/Samples/Common/CEGUIRenderer/src|&/.libs|' \
 		${WRKSRC}/Samples/Gui/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|<CEGUI/|<|g' \
@@ -65,6 +66,9 @@ post-patch:
 		${WRKSRC}/Samples/Common/CEGUIRenderer/src/OgreCEGUITexture.cpp
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/Samples/Terrain/src/Makefile.in
+	@${REINPLACE_CMD} -e '\
+		s,defined(__x86_64__),& || defined(__powerpc__) || defined(__ia64__) || defined(__sparc64__) || defined(__alpha__) || defined(__amd64__),' \
+		${WRKSRC}/OgreMain/include/OgrePlatform.h
 
 post-install:
 .if !defined(NOPORTDOCS)
