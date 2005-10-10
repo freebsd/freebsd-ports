@@ -9,10 +9,9 @@ PORTNAME=	newsfish
 PORTVERSION=	1.2.5
 PORTREVISION=	1
 CATEGORIES=	news
-MASTER_SITES=	http://download.sourceforge.net/newsfish/ \
-		ftp://ftp.philosophysw.com/pub/software/
+MASTER_SITES=	ftp://ftp.saddi.com/pub/software/
 
-MAINTAINER=	asaddi@philosophysw.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Batch USENET news reader with filter capabilities
 
 USE_AUTOMAKE_VER=	14
