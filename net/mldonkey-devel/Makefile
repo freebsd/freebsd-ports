@@ -7,6 +7,7 @@
 
 PORTNAME=	mldonkey
 PORTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES+=	net
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,6 +23,7 @@ CONFLICTS=	mldonkey-[0-9]*
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
+USE_RC_SUBR=	yes
 WANT_AUTOCONF_VER=	259
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -113,6 +115,9 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|%%AUTOCONF%%|${AUTOCONF}|' \
 		${BUILD_WRKSRC}/config/Makefile.in
+# rc.d
+	@${SED} -e "s|%%PREFIX%%|${PREFIX}|" \
+		${FILESDIR}/mlnet.sh > ${WRKDIR}/mlnet.sh
 
 pre-configure:
 	cd ${WRKSRC}/config && ${AUTOCONF}
@@ -154,6 +159,9 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/distrib/${file} ${DOCSDIR}
 .endfor
 .endif
+# rc.d
+	@${INSTALL_SCRIPT} ${WRKDIR}/mlnet.sh \
+		${PREFIX}/etc/rc.d
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
