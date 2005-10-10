@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	eyed3
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.8
 CATEGORIES=	audio python
 MASTER_SITES=	http://eyed3.nicfit.net/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +15,8 @@ MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python module for processing ID3 tags
 
 LIB_DEPENDS=	id3:${PORTSDIR}/audio/id3lib
-RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/optparse.py:${PORTSDIR}/devel/py-optik
 
-USE_PYTHON=	2.3-
+USE_PYTHON=	2.4-
 USE_PYTHON_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
