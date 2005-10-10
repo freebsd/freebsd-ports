@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Run perl standard test scripts with statistics
 
 PERL_CONFIGURE=	yes
