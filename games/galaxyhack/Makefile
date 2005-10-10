@@ -40,9 +40,8 @@ post-extract:
 		${XARGS} -0 ${RM} -rf
 
 # Convert DOS text files to UNIX
-	@${FIND} -E ${WRKSRC} -type f \
-		-iregex "(.*Makefile.*|.*\.(cpp|h))" \
-		-exec ${REINPLACE_CMD} -e "s|`${ECHO_CMD} -e '\r'`$$||" {} \;
+	@${FIND} -E ${WRKSRC} -type f -iregex "(.*Makefile.*|.*\.(cpp|h))" -print0 | \
+		${XARGS} -0 ${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//'
 
 do-install:
 # Script
