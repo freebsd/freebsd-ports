@@ -3,7 +3,7 @@ as being a stripped-down C64 emulator that only emulates the processor and the
 sound chip of the C64. It also supports the SID option of the
 Catweasel MK3 PCI card.
 
-WWW: http://www.students.uni-mainz.de/bauec002/SPMain.html
+WWW: http://sidplayer.cebix.net/
 
 - ehaupt
 ehaupt@critical.ch
