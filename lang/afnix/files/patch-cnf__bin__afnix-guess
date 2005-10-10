@@ -1,0 +1,10 @@
+--- cnf/bin/afnix-guess.orig	Mon Oct 10 11:02:54 2005
++++ cnf/bin/afnix-guess	Mon Oct 10 11:03:10 2005
+@@ -116,6 +116,7 @@
+     ia64)     proc_name=ia64;;
+     s390*)    proc_name=s390;;
+     x86_64)   proc_name=x64;;
++    amd64)    proc_name=x64;;
+     esac
+ }
+ 
