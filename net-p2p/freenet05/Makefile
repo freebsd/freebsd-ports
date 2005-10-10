@@ -7,7 +7,7 @@
 
 PORTNAME=	freenet
 PORTVERSION=	0.5.2.1.5105
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net java security
 MASTER_SITES=	http://freenetproject.org/snapshots/ \
 		http://fgudin.nerim.net/files/

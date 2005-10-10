@@ -5,7 +5,7 @@
 # Under a BSDL license. Copyright 2005. Mario S F Ferreira <lioux@FreeBSD.org>
 
 # PROVIDE: i2p
-# REQUIRE: NETWORKING
+# REQUIRE: LOGIN
 # KEYWORD: FreeBSD shutdown
 
 #
