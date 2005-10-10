@@ -19,6 +19,6 @@ than other ``one-way'' constraint solvers such as DeltaBlue.
 This port installs some examples into "${PREFIX}/share/examples/Juno".
 Not all of them work; read the README file there.
 
-WWW: http://www.research.digital.com/SRC/juno-2/
+WWW: http://www.research.compaq.com/SRC/juno-2/
 
 John Polstra <jdp@FreeBSD.org>

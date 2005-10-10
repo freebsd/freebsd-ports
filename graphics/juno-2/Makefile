@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.research.compaq.com/SRC/juno-2/
 DISTNAME=	juno-sources
 
-MAINTAINER=	jdp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful and extensible constraint-based drawing editor
 
 BUILD_DEPENDS=	${L1}libm3netobj${L2}:${PORTSDIR}/lang/pm3-netobj \
