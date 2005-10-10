@@ -5,7 +5,7 @@
 # Under a BSDL license. Copyright 2005. Mario S F Ferreira <lioux@FreeBSD.org>
 
 # PROVIDE: freenet
-# REQUIRE: NETWORKING
+# REQUIRE: LOGIN
 # KEYWORD: FreeBSD shutdown
 
 #
