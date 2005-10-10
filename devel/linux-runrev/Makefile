@@ -9,14 +9,13 @@ PORTNAME=	runrev
 PORTVERSION=	1.1.1
 PORTREVISION=	2
 CATEGORIES=	devel linux
-MASTER_SITES=	ftp://ftp.runrev.com/pub/revolution/ \
-		http://www.runrev.com/revolution/engines11/unix/
+MASTER_SITES=	http://www.runrev.com/revolution/engines11/unix/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	linux
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	blackend@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Revolution is a rapid application development environment
 
 RUN_DEPENDS=	xanim:${PORTSDIR}/multimedia/xanim
