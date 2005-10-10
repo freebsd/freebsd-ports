@@ -6,26 +6,23 @@
 #
 
 PORTNAME=	vp
-PORTVERSION=	1.5
-PORTREVISION=	2
+PORTVERSION=	1.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://math.missouristate.edu/~erik/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image viewer for X
 
-PLIST_FILES=	bin/vp
 USE_SDL=	image
-USE_GETOPT_LONG=yes
-USE_LIBTOOL_VER=15
+USE_GETOPT_LONG=	yes
+USE_LIBTOOL_VER=	15
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+MAN1=		vp.1
+PLIST_FILES=	bin/vp
+
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		ac_cv_func_getopt_long=yes
-USE_REINPLACE=	yes
-MAN1=		vp.1
-
-post-patch:
-	${REINPLACE_CMD} 's@ getopt_long/Makefile@@g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
