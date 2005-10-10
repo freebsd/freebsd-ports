@@ -14,7 +14,7 @@ DISTFILES=	pak0.pk3
 DIST_SUBDIR=	stvef
 IGNOREFILES=	${ALLFILES}
 
-MAINTAINER=	nik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Star Trek Voyager: Elite Forces dedicated server for Linux .pk3 files
 
 # Make this a BUILD_DEPENDS too, so that it can create the
