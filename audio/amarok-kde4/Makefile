@@ -43,7 +43,7 @@ LIB_DEPENDS+=	artsgui:${PORTSDIR}/multimedia/kdemultimedia3
 PLIST_SUB+=	ARTS=""
 .endif
 
-.if defined(WITHOUT_GSTREAMER)
+.if !defined(WITH_GSTREAMER)
 CONFIGURE_ARGS+=--without-gstreamer
 PLIST_SUB+=	GSTREAMER="@comment "
 .else
@@ -51,7 +51,7 @@ USE_GSTREAMER+=	mad vorbis flac musepack artsd
 PLIST_SUB+=	GSTREAMER=""
 .endif
 
-.if defined(WITHOUT_XINE)
+.if !defined(WITH_XINE)
 CONFIGURE_ARGS+=--without-xine
 PLIST_SUB+=	XINE="@comment "
 .else
@@ -59,7 +59,7 @@ LIB_DEPENDS+=	xine.14:${PORTSDIR}/multimedia/libxine
 PLIST_SUB+=	XINE=""
 .endif
 
-.if defined(WITHOUT_XMMS)
+.if !defined(WITH_XMMS)
 PLIST_SUB+=	XMMS="@comment "
 .else
 BUILD_DEPENDS+=	xmms-config:${PORTSDIR}/multimedia/xmms
@@ -67,7 +67,7 @@ LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 PLIST_SUB+=	XMMS=""
 .endif
 
-.if defined(WITHOUT_LIBVISUAL)
+.if !defined(WITH_LIBVISUAL)
 PLIST_SUB+=	LIBVISUAL="@comment "
 .else
 LIB_DEPENDS+=	visual.0:${PORTSDIR}/graphics/libvisual
@@ -82,12 +82,12 @@ CONFIGURE_ARGS+=--without-opengl
 CONFIGURE_ARGS+=--without-amazon
 .endif
 
-.if !defined(WITHOUT_MYSQL)
+.if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--enable-mysql
 .endif
 
-.if !defined(WITHOUT_POSTGRESQL)
+.if defined(WITH_POSTGRESQL)
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--enable-postgresql
 .endif
@@ -98,17 +98,17 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${TOUCH}
 
 post-configure:
-.if defined(WITHOUT_XMMS)
+.if !defined(WITH_XMMS)
 	@${REINPLACE_CMD} -e '/XMMS /d' ${WRKSRC}/config.h
 	@${REINPLACE_CMD} -e 's/xmmswrapper//g' ${WRKSRC}/amarok/src/vis/Makefile
 .endif
-.if defined(WITHOUT_LIBVISUAL)
+.if !defined(WITH_LIBVISUAL)
 	@${REINPLACE_CMD} -e '/LIBVISUAL /d' ${WRKSRC}/config.h
 	@${REINPLACE_CMD} -e 's/libvisual//g' ${WRKSRC}/amarok/src/vis/Makefile
 .endif
 
 post-install:
-.if !defined(WITHOUT_LIBVISUAL)
+.if defined(WITH_LIBVISUAL)
 	@${CAT} ${PKGMESSAGE}
 .endif
 
