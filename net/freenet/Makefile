@@ -7,10 +7,11 @@
 
 PORTNAME=	freenet
 PORTVERSION=	0.5.2.1.5105
+PORTREVISION=	1
 CATEGORIES=	net java security
 MASTER_SITES=	http://freenetproject.org/snapshots/ \
 		http://fgudin.nerim.net/files/
-DISTNAME=	${PORTNAME}-20050911
+DISTNAME=	${PORTNAME}-20050930
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lioux@FreeBSD.org
@@ -35,6 +36,7 @@ PORTDOCS=	${DOC_FILES}
 
 PLIST_FILES=	\
 		bin/${PORTNAME:L} \
+		etc/rc.d/${PORTNAME:L}.sh \
 		%%DATADIR%%/seednodes.ref \
 		%%JAVAJARDIR%%/freenet-ext.jar \
 		%%JAVAJARDIR%%/freenet.jar
@@ -50,6 +52,8 @@ post-patch:
 		s|%%JAR_START%%|${JAR_START}|; \
 		s|%%SEED_FILE%%|${SEED_FILE}|" \
 		${FILESDIR}/wrapper.sh > ${WRKDIR}/wrapper.sh
+	@${SED} -e "s|%%PREFIX%%|${PREFIX}|" \
+		${FILESDIR}/${PORTNAME:L}.sh > ${WRKDIR}/${PORTNAME:L}.sh
 
 do-install:
 # docs
@@ -68,6 +72,8 @@ do-install:
 .for jar in ${JAR_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${jar} ${JAVAJARDIR}
 .endfor
+# rc.d
+	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME:L}.sh ${PREFIX}/etc/rc.d
 # wrapper
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${PORTNAME:L}
 
