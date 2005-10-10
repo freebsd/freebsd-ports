@@ -1,0 +1,7 @@
+Transmission is a free BitTorrent client written from scratch in C. It aims to
+be as efficient as possible. Only the Mac OS X version has a graphical
+interface yet. Transmission is released under the MIT license.
+
+Transmission is still in early development stage.
+
+WWW: http://transmission.m0k.org/
