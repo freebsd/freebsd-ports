@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	sdpara
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	math parallel
 MASTER_SITES=   http://grid.r.dendai.ac.jp/sdpa/files/
 DISTFILES=	${PORTNAME}.${PORTVERSION}.src.tar.gz
 .if !defined(NOPORTDOCS)
-DISTFILES+=	${PORTNAME}.${PORTVERSION}.install.txt
+DISTFILES+=	${PORTNAME}.1.0.0.install.txt
 .endif
 DIST_SUBDIR=	sdpara
 EXTRACT_ONLY=	${PORTNAME}.${PORTVERSION}.src.tar.gz
@@ -64,7 +64,7 @@ do-install:
 	${INSTALL_DATA}    ${WRKSRC}/param.sdpa ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in sdpara.${PORTVERSION}.install.txt
+.for i in sdpara.1.0.0.install.txt
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${i} ${DOCSDIR}
 .endfor
 	@${MKDIR} ${EXAMPLESDIR}

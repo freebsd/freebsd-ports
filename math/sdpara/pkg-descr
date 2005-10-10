@@ -6,4 +6,4 @@ parallel with the help of MPI (Message Passing Interface) and ScaLAPACK
 used combinedly with other C++ programs, are not available.
 We assume that you know how to use the latest version of the SDPA and MPICH.
 
-WWW: http://grid.r.dendai.ac.jp/sdpa/sdpara.index.html
+WWW: http://grid.r.dendai.ac.jp/sdpa/
