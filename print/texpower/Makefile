@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	texpower
-PORTVERSION=	0.1.0b
+PORTVERSION=	0.2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	latex-
-DISTNAME=	${PORTNAME}-0-1b
+DISTNAME=	${PORTNAME}-0-2
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Creating dynamic online presentations with LaTeX
@@ -22,11 +22,11 @@ RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
 
 PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} \
 		MKTEXLSR=${MKTEXLSR}
-ALL_TARGET=	unpack
 
 TEXMFLOCAL=	share/texmf-local
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
-DOCFILES=	00readme.txt 01install.txt manual.pdf
+DOCFILES=	00readme.txt 01install.txt \
+		manual.pdf powersem.pdf texpower.pdf
 
 do-build:
 	@(cd ${BUILD_WRKSRC} && \
