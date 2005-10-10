@@ -9,15 +9,19 @@ PORTNAME=	tkdesk
 PORTVERSION=	${VERSION}${VERSION_PL}
 PORTREVISION=	1
 CATEGORIES=	japanese x11-fm
-MASTER_SITES=	http://people.mainz.netsurf.de/~bolik/tkdesk/
+MASTER_SITES=	# disappeared
 DISTNAME=	${PORTNAME}-${VERSION}
 
-PATCH_SITES=	http://www.linet.gr.jp/~mituiwa/
+PATCH_SITES=	# disappeared
 PATCHFILES=	tkdesk-${VERSION}-jmenu-${VERSION_PL}.diff
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	yatt@msc.biglobe.ne.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical, highly configurable and powerful file manager
+
+BROKEN=		"mastersite disappeared"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-09
 
 LIB_DEPENDS=	tk42jp.1:${PORTSDIR}/japanese/tk42
 RUN_DEPENDS=	imali:${PORTSDIR}/mail/im \
