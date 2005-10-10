@@ -9,8 +9,7 @@ PORTNAME=	imapproxy
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://www.freebsdcluster.org/~lasse/software/  \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://www.freebsdcluster.org/~lasse/software/
 
 MAINTAINER=	lasse@freebsdcluster.org
 COMMENT=	ImapProxy is a caching IMAP proxy daemon to be used with Horde/IMP
