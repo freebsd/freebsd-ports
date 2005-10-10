@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sccmilter
-PORTVERSION=	0.95.1
+PORTVERSION=	0.95.7
 CATEGORIES=	mail sysutils
 MASTER_SITES=	ftp://ftp.granch.ru/pub/kavmilter/
 
@@ -25,6 +25,8 @@ USE_AUTOCONF_VER=	259
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--localstatedir=/var
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN5=		sccmilter.conf.5 scchosts.5 sccusers.5
 MAN8=		sccmilter.8
@@ -47,14 +49,12 @@ pre-configure:
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/libexec/sccmilter
-
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in CHANGES FAQ README TODO
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
-
 	@${CAT} ${PKGMESSAGE}
 
 post-deinstall:
