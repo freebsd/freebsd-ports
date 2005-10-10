@@ -8,12 +8,11 @@
 PORTNAME=	vrfy
 PORTVERSION=	1.0
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.nikhef.nl/pub/network/ \
-		http://www.kobe1995.net/~kaz/FreeBSD/
+MASTER_SITES=	# disappeared
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	kaz@kobe1995.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Verify mail address
 
 WRKSRC=		${WRKDIR}
