@@ -1,3 +1,4 @@
+etc/rc.d/mlnet.sh
 %%CORE%%bin/kill_mldonkey
 %%CORE%%bin/mlnet
 %%CORE%%bin/mlnet-real
