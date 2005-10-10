@@ -1,0 +1,8 @@
+--- lib/audio/Imakefile	Sat Jun  4 16:08:54 2005
++++ lib/audio/Imakefile	Mon Oct 10 15:38:24 2005
+@@ -152,5 +152,3 @@
+ 
+-#if defined(LinuxArchitecture)
+ REQUIREDLIBS = -L$(USRLIBDIR) -lXt $(XAULIB) -lm 
+-#endif
+ 
