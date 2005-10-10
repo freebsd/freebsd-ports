@@ -11408,6 +11408,7 @@ slrnconf	ports/news/slrnconf
 slrnface	ports/news/slrnface
 sls		ports/misc/sls
 slsc		ports/math/slsc
+slune		ports/games/slune
 slurm		ports/net/slurm
 slurp		ports/news/slurp
 slurpie		ports/security/slurpie
