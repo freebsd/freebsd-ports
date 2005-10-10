@@ -436,7 +436,6 @@
     SUBDIR += py-sgflib
     SUBDIR += py-sgfsummary
     SUBDIR += py-ski
-    SUBDIR += py-slune
     SUBDIR += pyching
     SUBDIR += pydance
     SUBDIR += pykawari
@@ -497,6 +496,7 @@
     SUBDIR += six
     SUBDIR += sl
     SUBDIR += slashem-tty
+    SUBDIR += slune
     SUBDIR += smacx
     SUBDIR += smiley
     SUBDIR += sokoban

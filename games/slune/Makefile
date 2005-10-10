@@ -1,4 +1,4 @@
-# New ports collection makefile for:	py-slune
+# New ports collection makefile for:	slune
 # Date created:				2005-10-06
 # Whom:					Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 #
@@ -9,11 +9,10 @@ PORTNAME=	slune
 PORTVERSION=	1.0.10
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/slune/
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Slune-${PORTVERSION}
 
 MAINTAINER=	acardenas@bsd.org.pe
-COMMENT=	Slune is a 3D game. Includes racing, car-crashing, and lots of action
+COMMENT=	3D game. includes racing, car-crashing, and lots of action
 
 RUN_DEPENDS=	soya_editor:${PORTSDIR}/graphics/py-soya3d \
 		${PYTHON_SITELIBDIR}/_openal.so:${PORTSDIR}/audio/py-openal \
