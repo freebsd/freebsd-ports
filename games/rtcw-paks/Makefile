@@ -16,7 +16,7 @@ DISTFILES=	mp_pak0.pk3 mp_pak1.pk3 mp_pak2.pk3 \
 DIST_SUBDIR=	rtcw-paks
 IGNOREFILES=	${ALLFILES}
 
-MAINTAINER=	nik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Return to Castle Wolfenstein for Linux .pk3 files
 
 # Make this a BUILD_DEPENDS too, so that it can create the 
