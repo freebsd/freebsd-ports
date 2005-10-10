@@ -562,6 +562,7 @@
     SUBDIR += togl
     SUBDIR += truevision
     SUBDIR += tulip
+    SUBDIR += uDrawGraph
     SUBDIR += urt
     SUBDIR += utah-glx
     SUBDIR += vcg
