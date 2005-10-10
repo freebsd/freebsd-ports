@@ -1,0 +1,16 @@
+--- cdv	Sat Jul 16 16:35:44 2005
++++ cdv	Mon Oct 10 00:01:53 2005
+@@ -6,6 +6,13 @@
+ # Setup import path in case we can't find codeville in standard places
+ 
+ try:
++ import psyco
++ assert psyco.__version__ >= 0x010300f0
++ psyco.full()
++except:
++ pass
++
++try:
+     import Codeville.db
+ except ImportError:
+     import sys, os.path

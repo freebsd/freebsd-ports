@@ -7,6 +7,7 @@
 
 PORTNAME=	codeville
 PORTVERSION=	0.1.13
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://codeville.org/download/
 DISTNAME=	Codeville-${PORTVERSION}
@@ -37,4 +38,28 @@ post-install:
 . endfor
 .endif
 
-.include <bsd.port.mk>
+pre-everything::
+.ifndef(WITHOUT_PSYCO)
+	@${ECHO_MSG} '===> Define WITHOUT_PSYCO to disable devel/py-psyco optimization'
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+WITHOUT_PSYCO=  yes
+.endif
+
+.ifndef(WITHOUT_PSYCO)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
+
+. for patch in \
+		cdv \
+		cdv-agent \
+		cdvpasswd \
+		cdvserver \
+		cdvupgrade
+EXTRA_PATCHES+= ${FILESDIR}/extra-psyco-patch-${patch}
+. endfor
+.endif
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,16 @@
+--- cdvpasswd	Fri Jul 15 14:42:58 2005
++++ cdvpasswd	Mon Oct 10 00:01:53 2005
+@@ -4,6 +4,13 @@
+ # See LICENSE.txt for license information
+ 
+ try:
++ import psyco
++ assert psyco.__version__ >= 0x010300f0
++ psyco.full()
++except:
++ pass
++
++try:
+     import Codeville.db
+ except ImportError:
+     import sys, os.path
