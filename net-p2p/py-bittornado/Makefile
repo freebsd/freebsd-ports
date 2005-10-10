@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	BitTornado
-PORTVERSION=	0.3.12
+PORTVERSION=	0.3.13
 PORTEPOCH=	1
 CATEGORIES?=	net python ipv6
 MASTER_SITES=	http://www.bittornado.com/download/ \
@@ -41,6 +41,10 @@ MAN1=		bittorrent-downloader.bittornado.1 \
 		btreannounce.bittornado.1 btrename.bittornado.1 \
 		btsethttpseeds.1 btshowmetainfo.bittornado.1 \
 		bttrack.bittornado.1
+
+.ifdef(WITHOUT_X11)
+WITHOUT_GUI=	yes
+.endif
 
 # required for GUI
 .ifndef(WITHOUT_GUI)
