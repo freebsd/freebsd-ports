@@ -4,17 +4,18 @@
 #
 # $FreeBSD$
 #
-# This port is self contained in the src directory.
-#
 
 PORTNAME=	mtc
 PORTVERSION=	1.3
 CATEGORIES=	russian
-MASTER_SITES=	http://www.ipform.ru/files/
+MASTER_SITES=	# disappeared
 
-MAINTAINER=	infoteacher@ipform.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multifile text Encoding Converter 1.3
 
+BROKEN=		"mastersite disappeared"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-09
 NO_BUILD=	yes
 
 MAN7=		mtc.7
