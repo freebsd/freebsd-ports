@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	linux-realplayer
-PORTVERSION=	10.0.5
+PORTVERSION=	10.0.6
 CATEGORIES=	multimedia audio linux
-MASTER_SITES=	https://helixcommunity.org/download.php/1343/
-DISTNAME=	RealPlayer-10.0.5.756-20050513.i586
+MASTER_SITES=	https://helixcommunity.org/download.php/1589/
+DISTNAME=	RealPlayer-10.0.6.776-20050915.i586
 EXTRACT_SUFX=	.rpm
 
 MAINTAINER=	ports@FreeBSD.org
