@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.0rc2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -129,8 +129,10 @@ MODULES:=${MODULES}:mod_tls
 
 .if defined(WITH_CTRLS)
 CONFIGURE_ARGS+=	--enable-ctrls
-MAN8+=		ftpdctl.8
-.else
+PLIST_FILES+=	sbin/ftpdctl
+.if !defined(WITHOUT_CTRLS_ADMIN)
+MODULES:=${MODULES}:mod_ctrls_admin
+.endif
 .endif
 
 .if defined(WITH_QUOTA)
@@ -187,6 +189,11 @@ post-install:
 
 .if !defined(WITHOUT_PAM)
 	@${CAT} ${PKGMESSAGE}
+.endif
+
+.if defined(WITH_CTRLS)
+	@${INSTALL_PROGRAM} ${WRKSRC}/ftpdctl ${PREFIX}/sbin/ftpdctl
+	@${INSTALL_MAN} ${WRKSRC}/src/ftpdctl.8 ${PREFIX}/man/man8/ftpdctl.8
 .endif
 
 .include <bsd.port.post.mk>
