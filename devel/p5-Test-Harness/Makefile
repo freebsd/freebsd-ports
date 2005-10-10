@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Test-Harness
-PORTVERSION=	2.52
+PORTVERSION=	2.56
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Run perl standard test scripts with statistics
 
 PERL_CONFIGURE=	yes
@@ -38,9 +38,12 @@ PLIST_SUB+=	PL_FILES=""
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/INSTALLDIRS/d' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e '/INSTALLDIRS/d' ${WRKSRC}/${CONFIGURE_SCRIPT}
+
+post-configure:
 .if ${PERL_LEVEL} >= 500800
-	@${REINPLACE_CMD} -e '/EXE_FILES/d' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -E -e '/(DESTINSTALLSITEMAN1DIR|DESTINSTALLSCRIPT)/d' \
+		${WRKSRC}/${MAKEFILE}
 .endif
 
 .include <bsd.port.post.mk>
