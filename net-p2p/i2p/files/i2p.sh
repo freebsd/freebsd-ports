@@ -1,0 +1,89 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# Under a BSDL license. Copyright 2005. Mario S F Ferreira <lioux@FreeBSD.org>
+
+# PROVIDE: i2p
+# REQUIRE: NETWORKING
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable i2p:
+#
+#i2p_enable="YES"
+#i2p_user=""
+#
+
+. /etc/rc.subr
+
+name="i2p"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/i2prouter"
+extra_commands="install uninstall update"
+
+i2p_check_vars()
+{
+  if [ -z "${i2p_user}" ]; then
+    i2p_user=$(whoami)
+  fi
+
+  if [ "x${i2p_user}" = "xroot" ]; then
+    err 1 "You have to set i2p_user to a non-root user for security reasons"
+  fi
+}
+
+start_cmd="start_cmd"
+stop_cmd="stop_cmd"
+status_cmd="status_cmd"
+restart_cmd="restart_cmd"
+install_cmd="install_cmd"
+uninstall_cmd="uninstall_cmd"
+update_cmd="update_cmd"
+
+generic_cmd()
+{
+  i2p_check_vars
+  su -l ${i2p_user} -c "${command} ${1}"
+}
+
+start_cmd()
+{
+  generic_cmd start
+}
+
+stop_cmd()
+{
+  generic_cmd stop
+}
+
+status_cmd()
+{
+  generic_cmd status
+}
+
+restart_cmd()
+{
+  generic_cmd restart
+}
+
+install_cmd()
+{
+  generic_cmd install
+}
+
+uninstall_cmd()
+{
+  generic_cmd uninstall
+}
+
+update_cmd()
+{
+  generic_cmd update
+}
+
+load_rc_config "${name}"
+: ${i2p_enable="NO"}
+: ${i2p_user=""}
+
+run_rc_command "$1"
