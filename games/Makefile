@@ -145,6 +145,7 @@
     SUBDIR += evilfinder
     SUBDIR += excido
     SUBDIR += exhaust
+    SUBDIR += exhaust-ma
     SUBDIR += exmars
     SUBDIR += exult
     SUBDIR += falconseye
