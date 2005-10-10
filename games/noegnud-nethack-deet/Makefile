@@ -8,7 +8,7 @@
 PORTNAME=	noegnud
 PORTVERSION=	0.8.3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}:noegnud,nethack
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:noegnud,nethack/}
 MASTER_SITE_SUBDIR=	${PORTNAME}/:noegnud	\
 			nethack/:nethack
 PKGNAMESUFFIX=	-nethack-deet

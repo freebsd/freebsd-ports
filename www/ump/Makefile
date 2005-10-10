@@ -9,10 +9,12 @@ PORTNAME=	ump
 PORTVERSION=	1.10
 PORTREVISION=	7
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/timidity/}:timidity \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:timidity/} \
 		http://www.geocities.com/SiliconValley/Lab/2826/1-10/:ump \
 		http://pubweb.bnl.gov/people/hoff/midi/1.10/:ump \
-		${MASTER_SITE_NETSCAPE:S/%SUBDIR%/sdk\/plugin\/unix/}:plugin
+		${MASTER_SITE_NETSCAPE:S/$/:plugin/}
+MASTER_SITE_SUBDIR=	timidity/:timidity \
+		sdk/plugin/unix/:plugin
 DISTFILES=	${BZ2DIST} ${ZDIST}
 
 PATCH_SITES=	http://www.onicos.com/staff/iz/timidity/dist/
