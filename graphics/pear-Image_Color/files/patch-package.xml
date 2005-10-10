@@ -1,12 +1,12 @@
---- ../package.xml.orig	Tue May 25 07:07:47 2004
-+++ ../package.xml	Thu Aug 26 19:52:55 2004
-@@ -30,9 +30,6 @@
-     <license>PHP License</license>
-     <state>stable</state>
-     <notes>* Removed newline at end of file.</notes>
--    <deps>
--      <dep type="ext" rel="has">gd</dep>
--    </deps>
-     <filelist>
-       <file role="php" baseinstalldir="Image" name="Color.php"/>
-     </filelist>
+--- ../package.xml	Fri Oct  7 13:39:43 2005
++++ ../package.xml	Fri Oct  7 13:40:46 2005
+@@ -50,9 +50,6 @@
+ * Made major improvements to the comments and documentation and corrected
+   several violations of the PEAR coding standards.
+   </notes>
+-  <deps>
+-   <dep type="ext" rel="has">gd</dep>
+-  </deps>
+   <provides type="class" name="Image_Color" />
+   <provides type="function" name="Image_Color::mixColors" />
+   <provides type="function" name="Image_Color::setWebSafe" />

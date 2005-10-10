@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image_Color
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	graphics www pear
 
 MAINTAINER=	tux@pinguru.net
