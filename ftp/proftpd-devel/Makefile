@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.0rc2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -50,15 +50,12 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		README "Include mod_readme" on \
 		RATIO "Include mod_ratio" on \
 		REWRITE "Include mod_rewrite" on \
-		WRAP "Include mod_wrap" on
+		WRAP "Include mod_wrap" on \
+		RADIUS "Include mod_radius" off
 
 MODULES?=	
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_IFSESSION)
-MODULES:=${MODULES}:mod_ifsession
-.endif
 
 .if defined(WITH_RATIO)
 MODULES:=${MODULES}:mod_ratio
@@ -74,6 +71,10 @@ MODULES:=${MODULES}:mod_rewrite
 
 .if defined(WITH_WRAP)
 MODULES:=${MODULES}:mod_wrap
+.endif
+
+.if defined(WITH_RADIUS)
+MODULES:=${MODULES}:mod_radius
 .endif
 
 .if defined(WITH_SETPASSENT)
@@ -93,7 +94,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 #allow user to override
-MODULES?=	mod_ifsession:mod_ratio:mod_readme:mod_rewrite:mod_wrap
+MODULES?=	mod_ratio:mod_readme:mod_rewrite:mod_wrap:mod_ifsession
 
 INCLUDEDIRS=
 LIBDIRS=
@@ -143,6 +144,11 @@ MODULES:=${MODULES}:mod_quotatab_ldap
 .if defined(WITH_POSTGRESQL) || defined(WITH_MYSQL)
 MODULES:=${MODULES}:mod_quotatab_sql
 .endif
+.endif
+
+# mod_ifsession should be the last item in the modules list
+.if defined(WITH_IFSESSION)
+MODULES:=${MODULES}:mod_ifsession
 .endif
 
 # Keep this here below, in case similar constructs need to be made
