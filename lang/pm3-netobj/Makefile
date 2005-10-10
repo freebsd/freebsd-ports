@@ -10,7 +10,7 @@ PORTVERSION=	1.1.15
 CATEGORIES=	lang
 DISTFILES=
 
-MAINTAINER=	jdp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PM3 distributed objects package supporting robust distributed applications
 
 BUILD_DEPENDS=	${L1}libm3tcp${L2}:${PORTSDIR}/lang/pm3-net \

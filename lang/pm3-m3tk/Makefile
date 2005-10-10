@@ -10,7 +10,7 @@ PORTVERSION=	1.1.15
 CATEGORIES=	lang
 DISTFILES=
 
-MAINTAINER=	jdp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modula-3 source code analysis and transformation toolkit (PM3 distribution)
 
 BUILD_DEPENDS=	${L1}libm3${L2}:${PORTSDIR}/lang/pm3-base
