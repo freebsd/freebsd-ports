@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.gna.org/balazar/
 DISTNAME=	Balazar-${PORTVERSION}
 
 MAINTAINER=	acardenas@bsd.org.pe
-COMMENT=	Balazar is a 3D adventure and roleplaying game
+COMMENT=	3D adventure and roleplaying game
 
 LIB_DEPENDS=	cal3d.11:${PORTSDIR}/graphics/cal3d \
 		GLEW.1:${PORTSDIR}/graphics/glew \

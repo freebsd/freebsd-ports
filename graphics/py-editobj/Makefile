@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	EditObj-${PORTVERSION}
 
 MAINTAINER=	acardenas@bsd.org.pe
-COMMENT=	EditObj can create and display a Tkinter dialog box
+COMMENT=	Create and display a Tkinter dialog box for editing any Python object
 
 DIST_SUBDIR=	python
 USE_GZIP=	yes
