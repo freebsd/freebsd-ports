@@ -8,10 +8,14 @@
 PORTNAME=	libhtmlparse
 PORTVERSION=	0.2.0
 CATEGORIES=	textproc devel
-MASTER_SITES=	http://www.translator.cx/dist/libs/
+MASTER_SITES=	# disappeared
 
-MAINTAINER=	mooneer@translator.cx
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and fast HTML parsing library for C programs
+
+BROKEN=		"mastersite disappeared"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-09
 
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
