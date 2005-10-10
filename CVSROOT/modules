@@ -10023,7 +10023,6 @@ py-PySQLite2	ports/databases/py-PySQLite2
 py-PyX		ports/graphics/py-PyX
 py-SQLDict	ports/databases/py-SQLDict
 py-SciParam	ports/x11-toolkits/py-SciParam
-py-slune	ports/games/py-slune
 py-soya3d	ports/graphics/py-soya3d
 py-adns		ports/dns/py-adns
 py-albatross	ports/www/py-albatross
