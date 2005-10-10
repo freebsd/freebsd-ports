@@ -12,7 +12,7 @@ CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sepherosa@softhome.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free Java class library for generating charts
 
 USE_JAVA=	yes

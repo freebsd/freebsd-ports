@@ -12,7 +12,7 @@ CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jfreechart
 
-MAINTAINER=	sepherosa@softhome.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of useful classes used by JFreeChart and JFreeReport
 
 USE_JAVA=	yes

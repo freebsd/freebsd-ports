@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://geos.refractions.net/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	lmartins@nepe.eee.ufg.br
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GEOS implements all the OpenGIS "Simple Features for SQL"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

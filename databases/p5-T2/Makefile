@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tangram/SAMV
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	scott@surreytech.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object Relational mapping system
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Set/Object.pm:${PORTSDIR}/devel/p5-Set-Object \
