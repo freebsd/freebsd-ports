@@ -11,7 +11,7 @@ CATEGORIES=	games www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpua
 
-MAINTAINER=	hido@coreblack.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Half-Life plugin for phpUA
 
 RUN_DEPENDS=	${LOCALBASE}/${PHPUA}/index.php:${PORTSDIR}/games/phpua-engine

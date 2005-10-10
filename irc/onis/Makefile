@@ -8,10 +8,9 @@
 PORTNAME=	onis
 PORTVERSION=	0.6.1
 CATEGORIES=	irc
-MASTER_SITES=	http://verplant.org/onis/ \
-		http://www.bsdberlin.org/~dako/distfiles/irc/
+MASTER_SITES=	http://verplant.org/onis/
 
-MAINTAINER=	dako@bsdberlin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A script that converts IRC logfiles into an HTML statistics page
 
 NO_BUILD=	YES

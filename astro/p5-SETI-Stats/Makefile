@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/M/MH/MHAMILTON
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	eric@talesfromthereal.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for local/remote access to SETI@home stats
 
 PERL_CONFIGURE=	yes
