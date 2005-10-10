@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ktorrent
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	net kde
-MASTER_SITES=	http://ktorrent.pwsp.net/downloads/
+MASTER_SITES=	http://ktorrent.pwsp.net/downloads/${PORTVERSION}/
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	BitTorrent client for KDE
