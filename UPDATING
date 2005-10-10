@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20051010:
+  AFFECTS: users of devel/apache-ant
+  AUTHOR: hq@FreeBSD.org
+
+  The Ant launcher script now uses javavmwrapper to pick a suitable JDK. Hence
+  it is no longer needed to define JAVA_HOME for Ant to run. You may rather use
+  and combination of JAVA_VERSION, JAVA_OS and JAVA_VENDOR. See javavm(1) for
+  further information. However, you may still override this behavior using
+  JAVACMD.
+
+  The ANT_INCLUDE_SHARED_JARS variable used to be effective only when set to
+  "YES" (case sensitive). It is now a defined/undefined switch and thus will be
+  effective if defined, regardless of its value.
+
 20051009:
   AFFECTS: users of games/py-balazar
   AUTHOR: mnag@FreeBSD.org
