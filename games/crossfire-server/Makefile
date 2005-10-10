@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	crossfire
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://ftp.ifi.uio.no/pub/crossfire/ \
 		ftp://ftp.real-time.com/pub/games/crossfire/
 MASTER_SITE_SUBDIR=	crossfire
 PKGNAMESUFFIX=	-server
@@ -21,7 +20,6 @@ COMMENT=	Server for multiplayer graphical arcade and adventure game
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-USE_BZIP2=	yes
 USE_XPM=	yes
 USE_PERL5=	yes
 USE_OPENSSL=	yes
