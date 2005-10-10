@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Py2Play-${PORTVERSION}
 
 MAINTAINER=	acardenas@bsd.org.pe
-COMMENT=	Py2Play is a peer-to-peer network game engine
+COMMENT=	Peer-to-peer network game engine
 
 DIST_SUBDIR=	python
 USE_GZIP=	yes

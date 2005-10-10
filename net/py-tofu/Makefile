@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Tofu-${PORTVERSION}
 
 MAINTAINER=	acardenas@bsd.org.pe
-COMMENT=	Tofu is a practical high-level network game engine
+COMMENT=	Practical high-level network game engine
 
 DIST_SUBDIR=	python
 USE_BZIP2=	yes

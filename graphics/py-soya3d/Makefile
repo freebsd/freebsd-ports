@@ -14,7 +14,7 @@ DISTNAME=	Soya-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	acardenas@bsd.org.pe
-COMMENT=	Soya 3D is a very high level 3D engine for Python
+COMMENT=	Very high level 3D engine for Python
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_SITELIBDIR}/_openal.so:${PORTSDIR}/audio/py-openal \
