@@ -7,12 +7,23 @@
 
 PORTNAME=	bitlbee
 PORTVERSION=	0.92
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
-MASTER_SITES=	http://get.bitlbee.org/src/
+MASTER_SITES=	http://get.bitlbee.org/src/:bitlbee \
+		http://www.bitlbee.be/andy/:msn6 \
+		http://www.il.fontys.nl/~rink/patches/:ldap
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:bitlbee
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	peter@dataloss.nl
 COMMENT=	An IRC to other chat networks gateway
+
+.if defined(WITH_MSN) && defined(WITH_MSN6_FEATURES)
+DISTFILES+=	${DISTNAME}-msn6.akke.patch:msn6
+.endif
+.if defined(WITH_LDAP)
+DISTFILES+=	${DISTNAME}-ldap.diff:ldap
+.endif
 
 MAN5=		bitlbee.conf.5
 MAN8=		bitlbee.8
@@ -23,6 +34,10 @@ USE_GMAKE=	yes
 USE_GNOME=	glib20
 USE_GETOPT_LONG=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+.if defined(WITH_LDAP)
+USE_OPENLDAP=yes
+.endif
 
 .if defined(WITH_MSN)
 LIB_DEPENDS+=	gnutls.12:${PORTSDIR}/security/gnutls
@@ -35,10 +50,32 @@ pre-configure:
 	@${ECHO_CMD} "Type \"make -DWITH_MSN\" if you want to enable MSN and Jabber/SSL support."
 .endif
 
+.if !defined(WITH_MSN6_FEATURES)
+	@${ECHO_CMD} "Type \"make -DWITH_MSN6_FEATURES\" if you want to enable MSN 6 features, like buddy icons"
+.else
+	@${ECHO_CMD} "MSN 6 features will be enabled."
+.endif
+
 .if defined(WITH_FLOOD)
 CONFIGURE_ARGS+=	--flood=1
 .else
 	@${ECHO_CMD} "Type \"make -DWITH_FLOOD\" if you want to enable flood protection."
+.endif
+
+.if ! defined(WITH_LDAP)
+	@${ECHO_CMD} "Type \"make -DWITH_LDAP\" if you want to enable LDAP authentication."
+.else
+CONFIGURE_ARGS+=	--ldap=${LOCALBASE}
+#	@${ECHO_CMD} "LDAP authentication will be enabled."
+.endif
+
+post-patch:
+.if defined(WITH_MSN) && defined(WITH_MSN6_FEATURES)
+	@${PATCH} ${PATCH_ARGS} -p1 < ${DISTDIR}/${DISTNAME}-msn6.akke.patch
+.endif
+
+.if defined(WITH_LDAP)
+	@${PATCH} ${PATCH_ARGS} -p1 < ${DISTDIR}/${DISTNAME}-ldap.diff
 .endif
 
 post-build:
