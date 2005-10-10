@@ -10,10 +10,10 @@ PORTVERSION=	1.0.3
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	flathill
+		${MASTER_SITE_LOCAL:S/$/:local/}
+MASTER_SITE_SUBDIR=	flathill/:local
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME}-jp-kit0.10b4for${PORTVERSION}.tar.gz
+		${PORTNAME}-jp-kit0.10b4for${PORTVERSION}.tar.gz:local
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
