@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Curses
-PORTVERSION=	1.08b
+PORTVERSION=	1.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Curses
@@ -17,12 +17,11 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Perl5 module for terminal screen handling and optimization
 
 PERL_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.08
 
 MAN3=		Curses.3
 
 pre-configure:
-		@${LN} -s ${WRKSRC}/hints/c-freebsd.ncurses.h \
-			${WRKSRC}/c-config.h
+	@${LN} -s ${WRKSRC}/hints/c-freebsd.ncurses.h \
+		${WRKSRC}/c-config.h
 
 .include <bsd.port.mk>
