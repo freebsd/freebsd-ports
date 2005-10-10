@@ -17,6 +17,7 @@
     SUBDIR += adasockets
     SUBDIR += aget
     SUBDIR += aim
+    SUBDIR += amphetadesk
     SUBDIR += amsn
     SUBDIR += amule1
     SUBDIR += amule2
