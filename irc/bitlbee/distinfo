@@ -1,2 +1,6 @@
 MD5 (bitlbee-0.92.tar.gz) = 0ffec374b76f376f75b2cab95636a0de
 SIZE (bitlbee-0.92.tar.gz) = 464110
+MD5 (bitlbee-0.92-msn6.akke.patch) = fd78a28895c73d9afe39ddfed2af7076
+SIZE (bitlbee-0.92-msn6.akke.patch) = 86602
+MD5 (bitlbee-0.92-ldap.diff) = 54c1adfbe2d3222d43240dfb9eeaecd0
+SIZE (bitlbee-0.92-ldap.diff) = 7275
