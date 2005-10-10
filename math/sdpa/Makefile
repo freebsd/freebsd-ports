@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	sdpa
-PORTVERSION=	6.2.0
+PORTVERSION=	6.2.1
 CATEGORIES=	math
 MASTER_SITES=	http://grid.r.dendai.ac.jp/sdpa/files/
 DISTFILES=	${PORTNAME}.${PORTVERSION}.src.tar.gz
 .if !defined(NOPORTDOCS)
-DISTFILES+=	${PORTNAME}.${PORTVERSION}.manual.ps.gz \
-		${PORTNAME}.${PORTVERSION}.manual.pdf \
-		${PORTNAME}.${PORTVERSION}.install.txt
+DISTFILES+=	${PORTNAME}.6.2.0.manual.ps.gz \
+		${PORTNAME}.6.2.0.manual.pdf \
+		${PORTNAME}.6.2.0.install.txt
 .endif
 DIST_SUBDIR=	sdpa
 EXTRACT_ONLY=	${PORTNAME}.${PORTVERSION}.src.tar.gz
