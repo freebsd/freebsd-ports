@@ -1,6 +1,8 @@
 @comment $FreeBSD$
 bin/spawn-fcgi
+@unexec if cmp -s %D/etc/lighttpd.conf %D/etc/lighttpd.conf.sample; then rm -f %D/etc/lighttpd.conf; fi
 etc/lighttpd.conf.sample
+@exec [ -f %B/lighttpd.conf ] || cp %B/%f %B/lighttpd.conf
 lib/lighttpd/mod_access.so
 lib/lighttpd/mod_accesslog.so
 lib/lighttpd/mod_alias.so

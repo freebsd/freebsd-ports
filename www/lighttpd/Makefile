@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lighttpd
-PORTVERSION=	1.4.5
+PORTVERSION=	1.4.6
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/ \
 		http://dl.fkb.wormulon.net/lighttpd/ \
@@ -23,15 +23,15 @@ USE_RC_SUBR=		lighttpd.sh
 USE_LIBTOOL_VER=	15
 USE_GNOME=		lthack
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=		CPPFLAGS=-I${PREFIX}/include LIBS=-L${PREFIX}/lib
 CONFIGURE_ARGS=		--libdir=${PREFIX}/lib/lighttpd
 
 MAN1=		lighttpd.1 spawn-fcgi.1
 
-OPTIONS=	OPENSSL		"Enable SSL support"	on \
+OPTIONS=	OPENSSL		"Enable SSL support"	on  \
 		OPENLDAP	"Enable LDAP support"	off \
 		MYSQL		"Enable MYSQL support"	off \
-		IPV6		"Disable IPV6 support"	off
+		IPV6		"Disable IPV6 support"	off \
+		CML		"Enable Cache Meta Language support" off
 
 .include <bsd.port.pre.mk>
 
@@ -54,8 +54,17 @@ CONFIGURE_ARGS+=	--with-mysql
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
+.if defined(WITH_CML)
+LIB_DEPENDS+=		lua.5:${PORTSDIR}/lang/lua
+CONFIGURE_ARGS+=	--with-lua
+CONFIGURE_ENV+=		CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L/${LOCALBASE}/lib
+.endif
+
 post-install:
-	@${INSTALL_DATA} ${FILESDIR}/lighttpd.conf.sample ${PREFIX}/etc/
+	@${INSTALL_DATA} ${FILESDIR}/lighttpd.conf.sample ${PREFIX}/etc
+.if !exists(${PREFIX}/etc/lighttpd.conf)
+	@${INSTALL_DATA} ${FILESDIR}/lighttpd.conf.sample ${PREFIX}/etc/lighttpd.conf
+.endif
 	@${LIBTOOL} --finish ${PREFIX}/lib
 
 .include <bsd.port.post.mk>
