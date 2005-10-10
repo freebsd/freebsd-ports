@@ -2128,6 +2128,7 @@ excido		ports/games/excido
 exctags		ports/devel/ctags
 execline	ports/lang/execline
 exhaust		ports/games/exhaust
+exhaust-doc	ports/games/exhaust-doc
 exhaust-ma	ports/games/exhaust-ma
 exif		ports/graphics/exif
 exifprobe	ports/graphics/exifprobe
