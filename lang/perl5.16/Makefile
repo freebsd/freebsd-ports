@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
 		http://www.tobez.org/download/port-mirrors/lang/perl58/:local
 MASTER_SITE_SUBDIR=	../../src \
-			tobez/:local ./:local
+			tobez/:local
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		BSDPAN-${PERL_VER}${EXTRACT_SUFX}:local
 
