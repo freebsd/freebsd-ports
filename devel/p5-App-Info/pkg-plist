@@ -9,6 +9,7 @@
 %%SITE_PERL%%/App/Info/Handler/Prompt.pm
 %%SITE_PERL%%/App/Info/Handler/Carp.pm
 %%SITE_PERL%%/App/Info/RDBMS/PostgreSQL.pm
+%%SITE_PERL%%/App/Info/RDBMS/SQLite.pm
 %%SITE_PERL%%/App/Info/Handler.pm
 %%SITE_PERL%%/App/Info/Util.pm
 %%SITE_PERL%%/App/Info.pm
