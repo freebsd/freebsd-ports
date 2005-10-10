@@ -854,6 +854,7 @@
     SUBDIR += trafshow
     SUBDIR += trafshow4
     SUBDIR += tramp
+    SUBDIR += transmission
     SUBDIR += trickle
     SUBDIR += tridiavnc
     SUBDIR += tsclient
