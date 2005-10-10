@@ -6,13 +6,18 @@
 #
 
 PORTNAME=	eclipse
-PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTVERSION=	3.1.1
+PORTREVISION=	0
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
-MASTER_SITE_SUBDIR=	L-${PORTVERSION}_Translations-200409161125
+MASTER_SITE_SUBDIR=	L-${PORTVERSION}_Language_Packs-200510051300
 PKGNAMESUFFIX=	-langpack
-DISTNAME=	NLpack-eclipse-SDK-3.0.x-linux-gtk
+DISTFILES=	NLpack1-eclipse-SDK-3.1.1a-gtk${EXTRACT_SUFX} \
+		NLpack2-eclipse-SDK-3.1.1a-gtk${EXTRACT_SUFX} \
+		NLpackBidi-eclipse-SDK-3.1.1a-gtk${EXTRACT_SUFX} \
+		NLpack1_FeatureOverlay-eclipse-SDK-3.1.1${EXTRACT_SUFX} \
+		NLpack2_FeatureOverlay-eclipse-SDK-3.1.1${EXTRACT_SUFX} \
+		NLpackBidi_FeatureOverlay-eclipse-SDK-3.1.1${EXTRACT_SUFX}
 DIST_SUBDIR=    eclipse
 
 MAINTAINER=	freebsd-eclipse@FreeBSD.org
@@ -22,7 +27,13 @@ RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
-NO_BUILD=	yes
+PLIST=		${WRKDIR}/pkg-plist
+
+do-build:
+	@${RM} -f ${PLIST}
+	@${TOUCH} ${PLIST}
+	@(cd ${WRKSRC}; ${FIND} eclipse -type f) | ${SORT} > ${PLIST}
+	@${CAT} ${.CURDIR}/pkg-plist >> ${PLIST}
 
 do-install:
 	@${SETENV} ${SH} ${FILESDIR}/install.sh ${WRKSRC} \
