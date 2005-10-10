@@ -65,9 +65,11 @@ include/lapackpp/vli.h
 lib/liblapackpp.a
 lib/liblapackpp.la
 lib/liblapackpp.so
-lib/liblapackpp.so.7
+lib/liblapackpp.so.8
+lib/pkgconfig/lapackpp.pc
 share/aclocal/acx_lapackpp.m4
 @dirrm include/lapackpp
+@dirrm lib/pkgconfig
 @dirrm share/aclocal
 %%PORTDOCS%%share/doc/lapack++/lapack++.ps.gz
 %%PORTDOCS%%share/doc/lapack++/lapack++_install.ps.gz
