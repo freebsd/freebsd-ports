@@ -11,9 +11,9 @@ PORTREVISION=	2
 CATEGORIES=	databases lang
 MASTER_SITES=	ftp://ftp.linux.ru.net/mirrors/clip/:files	\
 		ftp://ftp.itk.ru/pub/clip/:files		\
-		${MASTER_SITE_LOCAL}:files,patch
-MASTER_SITE_SUBDIR=lawrance:files,patch
-DISTFILES=	${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}.tgz:files,patch \
+		${MASTER_SITE_LOCAL:S/$/:patch/}
+MASTER_SITE_SUBDIR=lawrance/:patch
+DISTFILES=	${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}.tgz:files \
 		patch.tgz:patch
 DIST_SUBDIR=	clip
 EXTRACT_ONLY=	${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}.tgz
