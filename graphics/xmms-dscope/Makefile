@@ -15,8 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/^/v/}
 MAINTAINER=	alejandro@varnet.biz
 COMMENT=	Dual Scope visualization plugin for XMMS
 
-BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
-RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes

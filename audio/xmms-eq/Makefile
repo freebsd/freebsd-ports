@@ -16,8 +16,7 @@ DISTNAME=	${PORTNAME}-xmms-${PORTVERSION}
 MAINTAINER=	alejandro@varnet.biz
 COMMENT=	A realtime graphical equalizer plugin for XMMS
 
-BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
-RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
