@@ -1,0 +1,34 @@
+%%DOCSDIR%%/README
+%%DOCSDIR%%/test.pl
+%%DOCSDIR%%/src/asm.c
+%%DOCSDIR%%/src/asm.h
+%%DOCSDIR%%/src/exhaust.c
+%%DOCSDIR%%/src/exhaust.h
+%%DOCSDIR%%/src/insn.h
+%%DOCSDIR%%/src/pspace.c
+%%DOCSDIR%%/src/pspace.h
+%%DOCSDIR%%/warriors/pin1a.rc
+%%DOCSDIR%%/warriors/pin1a.red
+%%DOCSDIR%%/warriors/pin1b.rc
+%%DOCSDIR%%/warriors/pin1b.red
+%%DOCSDIR%%/warriors/pin2a.rc
+%%DOCSDIR%%/warriors/pin2a.red
+%%DOCSDIR%%/warriors/pin2b.rc
+%%DOCSDIR%%/warriors/pin2b.red
+%%DOCSDIR%%/warriors/ptest1.rc
+%%DOCSDIR%%/warriors/ptest1.red
+%%DOCSDIR%%/warriors/ptest2.rc
+%%DOCSDIR%%/warriors/ptest2.red
+%%DOCSDIR%%/warriors/ptest3.rc
+%%DOCSDIR%%/warriors/ptest3.red
+%%DOCSDIR%%/warriors/ptest4.rc
+%%DOCSDIR%%/warriors/ptest4.red
+%%DOCSDIR%%/warriors/ptest5.rc
+%%DOCSDIR%%/warriors/ptest5.red
+%%DOCSDIR%%/warriors/ptest6.rc
+%%DOCSDIR%%/warriors/ptest6.red
+%%DOCSDIR%%/warriors/validate.rc
+%%DOCSDIR%%/warriors/validate.red
+@dirrm %%DOCSDIR%%/src
+@dirrm %%DOCSDIR%%/warriors
+@dirrm %%DOCSDIR%%
