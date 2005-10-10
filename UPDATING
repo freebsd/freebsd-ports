@@ -7,6 +7,13 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20051010:
+  AFFECTS: users of games/py-balazar
+  AUTHOR: mnag@FreeBSD.org
+
+  games/py-slune has been removed to add in games/slune to
+  reflect right name.
+
+20051010:
   AFFECTS: users of devel/apache-ant
   AUTHOR: hq@FreeBSD.org
 
