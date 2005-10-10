@@ -14,7 +14,6 @@ MASTER_SITES=	ftp://ftp.cc.monash.edu.au/pub/nihongo/ \
 		http://www.bcit-broadcast.com/monash/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.cc.monash.edu.au/pub/nihongo/ \
 		ftp://ftp.sedl.org/pub/mirrors/nihongo/ \
-		ftp://ftp.net.usf.edu/pub/monash/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/nihongo/ftp.cc.monash.edu.au/ \
 		ftp://ftp.funet.fi/pub/culture/japan/mirrors/monash/pub/nihongo/ \
 		ftp://ftp.uni-duisburg.de/Mirrors/ftp.monash.edu.au/pub/nihongo/
