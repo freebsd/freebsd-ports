@@ -31,6 +31,7 @@ USE_X_PREFIX=	YES
 USE_GNOME=	gnomehack
 USE_SDL=	sdl
 USE_GMAKE=	YES
+NOT_FOR_ARCHS=	alpha
 
 post-patch:
 	@${REINPLACE_CMD} -e '\
