@@ -7,7 +7,7 @@
 
 PORTNAME=	petsc
 PORTVERSION=	2.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://info.mcs.anl.gov/pub/petsc/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. software_old
@@ -31,6 +31,7 @@ MAKEFILE=		makefile
 MAKE_ENV=		PETSC_DIR=${WRKSRC}
 
 SUB_FILES=		pkg-message
+SUB_LIST=		PETSC_ARCH=${TARGET} PETSC_DIR=${PREFIX}/${PFX}
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
 .if !defined(WITHOUT_X11)
