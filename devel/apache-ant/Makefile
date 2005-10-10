@@ -7,6 +7,7 @@
 
 PORTNAME=	apache-ant
 PORTVERSION=	1.6.5
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:bin,} \
 		http://www.esil.univ-mrs.fr/~hquiroz/:man
@@ -42,56 +43,38 @@ MANPAGE_WRKSRC=	${WRKSRC}/${MANPAGE_SUBDIR}
 MAN1=		ant.1
 MAN5=		build.xml.5
 
-do-patch:
-	@${CP} ${FILESDIR}/ant ${WRKSRC}/bin/ant
-
-post-patch:
-	@${ECHO_CMD} -n ">> Customizing ant shell script..."
-	@${SED} \
-	-e "/%%ANT_HOME%%/s//${PORTDESTDIR:S/\//\\\//g}/g" \
-	-e "/%%JAVA%%/s//${JAVA:S/\//\\\//g}/g" \
-	-e "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/g" \
-	-e "/%%PREFIX%%/s//${PREFIX:S/\//\\\//g}/g" \
-	${WRKSRC}/bin/ant > ${WRKDIR}/ant
-	@${MV} ${WRKDIR}/ant ${WRKSRC}/bin/ant
-	@${ECHO_CMD} " [ DONE ]"
-
-	@${ECHO_CMD} -n ">> Removing unneeded files..."
-	@${RM} -f ${WRKSRC}/lib/parser.jar
-	@${ECHO_CMD} " [ DONE ]"
+SUB_FILES=	ant.sh
+SUB_LIST=	ANT_HOME=${PORTDESTDIR}
 
 post-extract:
 	@${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${MANPAGE_DISTFILE}
 
 do-install:
-	@${ECHO_CMD} -n ">> Creating destination directory..."
+	@${ECHO_MSG} -n ">> Creating destination directory..."
 	@${MKDIR} ${PORTDESTDIR}/bin
-	@${MKDIR} ${PORTDESTDIR}/lib
-	@${ECHO_CMD} " [ DONE ]"
+	@${ECHO_MSG} " [ DONE ]"
 
-	@${ECHO_CMD} -n ">> Installing scripts..."
-	@cd ${INSTALL_WRKSRC}; \
-		${INSTALL_SCRIPT} ${WRKSRC}/bin/ant ${PREFIX}/bin; \
-		${INSTALL_SCRIPT} ${WRKSRC}/bin/antRun ${PORTDESTDIR}/bin;
-	@${ECHO_CMD} " [ DONE ]"
+	@${ECHO_MSG} -n ">> Installing scripts..."
+	@${INSTALL_SCRIPT} ${WRKDIR}/ant.sh ${PREFIX}/bin/ant
+	@${INSTALL_SCRIPT} ${WRKSRC}/bin/antRun ${PORTDESTDIR}/bin/
+	@${ECHO_MSG} " [ DONE ]"
 
-	@${ECHO_CMD} -n ">> Installing readme files..."
-	@cd ${INSTALL_WRKSRC}; \
-		${INSTALL_DATA} ${READMES} ${PORTDESTDIR};
-	@${ECHO_CMD} " [ DONE ]"
+	@${ECHO_MSG} -n ">> Installing readme files..."
+	@${INSTALL_DATA} ${READMES:S|^|${WRKSRC}/|} ${PORTDESTDIR}
+	@${ECHO_MSG} " [ DONE ]"
 
-	@${ECHO_CMD} -n ">> Installing manpages..."
-	@${INSTALL_MAN} ${MANPAGE_WRKSRC}/ant.1 ${PREFIX}/man/man1
-	@${INSTALL_MAN} ${MANPAGE_WRKSRC}/build.xml.5 ${PREFIX}/man/man5
-	@${ECHO_CMD} " [ DONE ]"
+	@${ECHO_MSG} -n ">> Installing manpages..."
+	@${INSTALL_MAN} ${MANPAGE_WRKSRC}/ant.1 ${MAN1PREFIX}/man/man1
+	@${INSTALL_MAN} ${MANPAGE_WRKSRC}/build.xml.5 ${MAN5PREFIX}/man/man5
+	@${ECHO_MSG} " [ DONE ]"
 
 .if defined(DATADIRS)
 .for DIR in ${DATADIRS}
-	@${ECHO_CMD} -n ">> Installing data directory '${DIR}'..."
+	@${ECHO_MSG} -n ">> Installing data directory '${DIR}'..."
 	@cd ${INSTALL_WRKSRC}; \
 		${FIND} ${DIR} -type d -exec ${MKDIR} ${PORTDESTDIR}/\{} \; ;\
 		${FIND} ${DIR} -type f -exec ${INSTALL_DATA} \{} ${PORTDESTDIR}/\{} \;
-	@${ECHO_CMD} " [ DONE ]"
+	@${ECHO_MSG} " [ DONE ]"
 .endfor
 .endif
 
