@@ -68,8 +68,10 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/fourFn.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/getNTPservers.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/greeting.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/greetingInKorean.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/httpServerLogParser.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/idlParse.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/makeHTMLTagExample.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/mozilla.ics
 %%PORTDOCS%%%%EXAMPLESDIR%%/mozillaCalendarParser.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/pgn.py
