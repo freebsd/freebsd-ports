@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SOAP
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	scott@surreytech.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A wrapper simplifying SOAP::Data and SOAP::Serialiser
 
 BUILD_DEPENDS=	${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite

@@ -9,7 +9,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mbox.wz.cz/src/
 
-MAINTAINER=	oc@nm.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program intended to help with organizing your music files
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython24 \

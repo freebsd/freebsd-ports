@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	mneumann@ntecs.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A programming language for numerical analysis
 
 GNU_CONFIGURE=	yes

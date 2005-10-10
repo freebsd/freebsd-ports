@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	FCGI
 PKGNAMEPREFIX=	p5-
 DISTNAME=	FCGI-ProcManager-${PORTVERSION}
 
-MAINTAINER=	scott@surreytech.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functions for managing FastCGI applications
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FastCGI

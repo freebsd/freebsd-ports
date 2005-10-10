@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.gtk.org/pub/users/otaylor/kanjipad/
 
-MAINTAINER=	cjuniet@entreview.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese Handwriting recognition
 
 USE_X_PREFIX=	yes
