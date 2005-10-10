@@ -11,7 +11,7 @@ CATEGORIES=	java
 MASTER_SITES=	http://jakarta.apache.org/builds/${PORTNAME}/release/v${PORTVERSION}/ \
 		http://ftp.epix.net/apache/jakarta/oro/binaries/
 
-MAINTAINER=	dglo@ssec.wisc.edu
+MAINTAINER=	dave@glowacki.org
 COMMENT=	Perl/awk/sh regular expressions for Java
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant

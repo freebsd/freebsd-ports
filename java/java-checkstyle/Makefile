@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	java-
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	dglo@icecube.wisc.edu
+MAINTAINER=	dave@glowacki.org
 COMMENT=	Java style checker
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
