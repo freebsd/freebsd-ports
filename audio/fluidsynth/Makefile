@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fluidsynth
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	fluid
@@ -14,18 +14,33 @@ MASTER_SITE_SUBDIR=	fluid
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time software synthesizer based on the SoundFont 2 specifications
 
-INSTALLS_SHLIB=	yes
-USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
+USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GETOPT_LONG=	yes
-USE_INC_LIBTOOL_VER=	13
 USE_REINPLACE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LIBS="${PTHREAD_LIBS}"
+USE_GMAKE=	yes
+USE_LIBTOOL_VER=	15
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+INSTALLS_SHLIB=	yes
 
 MAN1=		fluidsynth.1
 
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+.if defined(WITH_JACK)
+LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+.else
+CONFIGURE_ARGS+=	--disable-jack-support
+.endif
+
+.if defined(WITH_LADSPA)
+BUILD_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+RUN_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+CONFIGURE_ARGS+=	--enable-ladspa
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's| -O2| |g ; \
+		 s|== "yes"|= "yes"|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
