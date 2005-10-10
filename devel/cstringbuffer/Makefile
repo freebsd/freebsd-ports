@@ -8,9 +8,9 @@
 PORTNAME=	cstringbuffer
 PORTVERSION=	0.1.6
 CATEGORIES=	devel
-MASTER_SITES=	http://www.translator.cx/dist/libs/
+MASTER_SITES=	# disappeared
 
-MAINTAINER=	mooneer@translator.cx
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File-like IO for strings
 
 USE_LIBTOOL_VER=15
