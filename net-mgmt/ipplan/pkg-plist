@@ -9,7 +9,6 @@
 %%IPPLANDIR%%/INTERNALS
 %%IPPLANDIR%%/IPplan.jpg
 %%IPPLANDIR%%/LICENSE
-%%IPPLANDIR%%/POLLER
 %%IPPLANDIR%%/README
 %%IPPLANDIR%%/README.html
 %%IPPLANDIR%%/README.sgml
@@ -18,15 +17,11 @@
 %%IPPLANDIR%%/TRANSLATIONS
 %%IPPLANDIR%%/TRIGGERS
 %%IPPLANDIR%%/UPGRADE
-%%IPPLANDIR%%/admin/addboundstogroup.php
-%%IPPLANDIR%%/admin/addusertogroup.php
 %%IPPLANDIR%%/admin/changepassword.php
 %%IPPLANDIR%%/admin/changesettings.php
-%%IPPLANDIR%%/admin/creategroup.php
-%%IPPLANDIR%%/admin/createuser.php
-%%IPPLANDIR%%/admin/deleteaccess.php
+%%IPPLANDIR%%/class.phpmailer.php
+%%IPPLANDIR%%/class.smtp.php
 %%IPPLANDIR%%/admin/deletebounds.php
-%%IPPLANDIR%%/admin/displayaccessform.php
 %%IPPLANDIR%%/admin/displayauditlog.php
 %%IPPLANDIR%%/admin/displayboundsform.php
 %%IPPLANDIR%%/admin/exportbase.php
@@ -38,7 +33,7 @@
 %%IPPLANDIR%%/admin/importip.php
 %%IPPLANDIR%%/admin/importipform.php
 %%IPPLANDIR%%/admin/install.php
-%%IPPLANDIR%%/admin/modifygroup.php
+%%IPPLANDIR%%/admin/maintenance.php
 %%IPPLANDIR%%/admin/schemacreate.php
 %%IPPLANDIR%%/admin/usermanager.php
 %%IPPLANDIR%%/adodb/adodb-csvlib.inc.php
@@ -58,6 +53,8 @@
 %%IPPLANDIR%%/adodb/adodb-time.zip
 %%IPPLANDIR%%/adodb/adodb-xmlschema.inc.php
 %%IPPLANDIR%%/adodb/adodb.inc.php
+%%IPPLANDIR%%/contrib/process-exports.txt
+%%IPPLANDIR%%/contrib/process-exports.pl
 %%IPPLANDIR%%/adodb/contrib/toxmlrpc.inc.php
 %%IPPLANDIR%%/adodb/cute_icons_for_site/adodb.gif
 %%IPPLANDIR%%/adodb/cute_icons_for_site/adodb2.gif
@@ -216,11 +213,16 @@
 %%IPPLANDIR%%/contrib/ipplan-poller.php
 %%IPPLANDIR%%/docu.css
 %%IPPLANDIR%%/gpl.html
+%%IPPLANDIR%%/images/square_green.jpg
+%%IPPLANDIR%%/images/square_orange.jpg
+%%IPPLANDIR%%/images/square_red.jpg
 %%IPPLANDIR%%/index.php
 %%IPPLANDIR%%/ipplanlib.php
 %%IPPLANDIR%%/layout/class.layout
 %%IPPLANDIR%%/layout/layoutman.html
 %%IPPLANDIR%%/license.php
+%%IPPLANDIR%%/locale/bg/LC_MESSAGES/messages.mo
+%%IPPLANDIR%%/locale/bg/LC_MESSAGES/messages.po
 %%IPPLANDIR%%/locale/de/LC_MESSAGES/messages.mo
 %%IPPLANDIR%%/locale/de/LC_MESSAGES/messages.po
 %%IPPLANDIR%%/locale/es/LC_MESSAGES/messages.mo
@@ -233,7 +235,6 @@
 %%IPPLANDIR%%/locale/no/LC_MESSAGES/messages.po
 %%IPPLANDIR%%/locale/pt/LC_MESSAGES/messages.mo
 %%IPPLANDIR%%/locale/pt/LC_MESSAGES/messages.po
-%%IPPLANDIR%%/main.css
 %%IPPLANDIR%%/menudefs.php
 %%IPPLANDIR%%/menus/ACKNOWLEDGEMENTS
 %%IPPLANDIR%%/menus/CHANGELOG
@@ -447,13 +448,19 @@
 %%IPPLANDIR%%/menus/templates/layersmenu-vertical_menu-old.ihtml
 %%IPPLANDIR%%/menus/templates/layersmenu-vertical_menu.ihtml
 %%IPPLANDIR%%/messages.po
+%%IPPLANDIR%%/phpmailer.lang-en.php
 %%IPPLANDIR%%/schema.php
+%%IPPLANDIR%%/templates/ripe_assign-simple-1.0.xsl
+%%IPPLANDIR%%/templates/ripe_person_simple-1.0.xsl
 %%IPPLANDIR%%/templates/swip_reassign-simple-modify3.0.xsl
 %%IPPLANDIR%%/templates/swip_reassign-simple-new3.0.xsl
 %%IPPLANDIR%%/templates/swip_reassign-simple-remove3.0.xsl
 %%IPPLANDIR%%/templates/swip_wdb1.4_delete.xsl
 %%IPPLANDIR%%/templates/swip_wdb1.4_modify.xsl
 %%IPPLANDIR%%/templates/swip_wdb1.4_new.xsl
+%%IPPLANDIR%%/templates/customer/custtemplate-ripe.xsl
+%%IPPLANDIR%%/themes/default.css
+%%IPPLANDIR%%/themes/pastel.css
 %%IPPLANDIR%%/user/Net/DNS.php
 %%IPPLANDIR%%/user/Net/DNS/Header.php
 %%IPPLANDIR%%/user/Net/DNS/Packet.php
@@ -472,10 +479,13 @@
 %%IPPLANDIR%%/user/Net/DNS/RR/TSIG.php
 %%IPPLANDIR%%/user/Net/DNS/RR/TXT.php
 %%IPPLANDIR%%/user/Net/DNS/Resolver.php
+%%IPPLANDIR%%/user/basetemplate.xml
+%%IPPLANDIR%%/user/basetemplate.xml.dhcp
 %%IPPLANDIR%%/user/createarea.php
 %%IPPLANDIR%%/user/createrange.php
 %%IPPLANDIR%%/user/createsubnet.php
 %%IPPLANDIR%%/user/createsubnetform.php
+%%IPPLANDIR%%/user/custtemplate.xml
 %%IPPLANDIR%%/user/deletearea.php
 %%IPPLANDIR%%/user/deletecustomer.php
 %%IPPLANDIR%%/user/deleterange.php
@@ -491,6 +501,7 @@
 %%IPPLANDIR%%/user/displayswipform.php
 %%IPPLANDIR%%/user/dns.php
 %%IPPLANDIR%%/user/emailswip.php
+%%IPPLANDIR%%/user/exportdhcp.php
 %%IPPLANDIR%%/user/findfree.php
 %%IPPLANDIR%%/user/findfreeform.php
 %%IPPLANDIR%%/user/iptemplate.xml
@@ -511,6 +522,7 @@
 %%IPPLANDIR%%/user/modifyzone.php
 %%IPPLANDIR%%/user/modifyzoneform.php
 %%IPPLANDIR%%/user/ping.php
+%%IPPLANDIR%%/user/requestip.php
 %%IPPLANDIR%%/user/searchall.php
 %%IPPLANDIR%%/user/searchallform.php
 %%IPPLANDIR%%/user/swiplib.php
@@ -521,6 +533,10 @@
 @dirrm %%IPPLANDIR%%/user/Net/DNS
 @dirrm %%IPPLANDIR%%/user/Net
 @dirrm %%IPPLANDIR%%/user
+@dirrm %%IPPLANDIR%%/themes
+@dirrm %%IPPLANDIR%%/templates/subnet
+@dirrm %%IPPLANDIR%%/templates/ipaddr
+@dirrm %%IPPLANDIR%%/templates/customer
 @dirrm %%IPPLANDIR%%/templates
 @dirrm %%IPPLANDIR%%/menus/templates
 @dirrm %%IPPLANDIR%%/menus/menuimages
@@ -548,8 +564,11 @@
 @dirrm %%IPPLANDIR%%/locale/es
 @dirrm %%IPPLANDIR%%/locale/de/LC_MESSAGES
 @dirrm %%IPPLANDIR%%/locale/de
+@dirrm %%IPPLANDIR%%/locale/bg/LC_MESSAGES
+@dirrm %%IPPLANDIR%%/locale/bg
 @dirrm %%IPPLANDIR%%/locale
 @dirrm %%IPPLANDIR%%/layout
+@dirrm %%IPPLANDIR%%/images
 @dirrm %%IPPLANDIR%%/contrib
 @dirrm %%IPPLANDIR%%/adodb/xsl
 @dirrm %%IPPLANDIR%%/adodb/tests
