@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Convert-Recode
-PORTVERSION=	1.03
-PORTREVISION=	1
+PORTVERSION=	1.04
 CATEGORIES=	converters perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Convert
@@ -16,6 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Front end to the GNU recode program
 
+BUILD_DEPENDS=	recode:${PORTSDIR}/converters/recode
 RUN_DEPENDS=	recode:${PORTSDIR}/converters/recode
 
 PERL_CONFIGURE=	YES
