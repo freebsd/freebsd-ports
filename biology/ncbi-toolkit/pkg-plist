@@ -39,6 +39,7 @@ bin/netentcf
 bin/udv
 include/ncbi/connect/connect_export.h
 include/ncbi/connect/ncbi_ansi_ext.h
+include/ncbi/connect/ncbi_assert.h
 include/ncbi/connect/ncbi_buffer.h
 include/ncbi/connect/ncbi_comm.h
 include/ncbi/connect/ncbi_config.h
@@ -49,6 +50,7 @@ include/ncbi/connect/ncbi_core.h
 include/ncbi/connect/ncbi_core_c.h
 include/ncbi/connect/ncbi_dispd.h
 include/ncbi/connect/ncbi_file_connector.h
+include/ncbi/connect/ncbi_ftp_connector.h
 include/ncbi/connect/ncbi_heapmgr.h
 include/ncbi/connect/ncbi_host_info.h
 include/ncbi/connect/ncbi_host_infop.h
@@ -61,16 +63,20 @@ include/ncbi/connect/ncbi_server_info.h
 include/ncbi/connect/ncbi_server_infop.h
 include/ncbi/connect/ncbi_service.h
 include/ncbi/connect/ncbi_service_connector.h
+include/ncbi/connect/ncbi_service_misc.h
 include/ncbi/connect/ncbi_servicep.h
 include/ncbi/connect/ncbi_socket.h
 include/ncbi/connect/ncbi_socket_connector.h
+include/ncbi/connect/ncbi_socket_unix.h
 include/ncbi/connect/ncbi_types.h
 include/ncbi/connect/ncbi_util.h
 include/ncbi/FSpCompat.h
 include/ncbi/FullPath.h
+include/ncbi/Mode_condition.h
 include/ncbi/MoreCarbonAccessors.h
 include/ncbi/MoreFilesExtras.h
 include/ncbi/MoreFilesX.h
+include/ncbi/NRdefs.h
 include/ncbi/Optimization.h
 include/ncbi/OptimizationEnd.h
 include/ncbi/PubStructAsn.h
@@ -108,6 +114,7 @@ include/ncbi/asnbibli.h
 include/ncbi/asnblock.h
 include/ncbi/asncode.h
 include/ncbi/asnent2.h
+include/ncbi/asnentgene.h
 include/ncbi/asnfdef.h
 include/ncbi/asnfeat.h
 include/ncbi/asngbseq.h
@@ -192,8 +199,8 @@ include/ncbi/drawingp.h
 include/ncbi/drawseq.h
 include/ncbi/dust.h
 include/ncbi/dvncode.h
-include/ncbi/echo_asn.h
 include/ncbi/edutil.h
+include/ncbi/egkludge.h
 include/ncbi/ent2api.h
 include/ncbi/entrez.h
 include/ncbi/entrez2.h
@@ -272,8 +279,6 @@ include/ncbi/mmdblocl.h
 include/ncbi/motif.h
 include/ncbi/ncbi.h
 include/ncbi/ncbibs.h
-include/ncbi/ncbibuf.h
-include/ncbi/ncbicli.h
 include/ncbi/ncbidraw.h
 include/ncbi/ncbienv.h
 include/ncbi/ncbierr.h
@@ -293,14 +298,12 @@ include/ncbi/ncbiprop.h
 include/ncbi/ncbisam.h
 include/ncbi/ncbisami.h
 include/ncbi/ncbisgml.h
-include/ncbi/ncbisock.h
 include/ncbi/ncbisort.h
 include/ncbi/ncbisrti.h
 include/ncbi/ncbistd.h
 include/ncbi/ncbistr.h
 include/ncbi/ncbithr.h
 include/ncbi/ncbitime.h
-include/ncbi/ncbiurl.h
 include/ncbi/ncbiwin.h
 include/ncbi/ncbiwww.h
 include/ncbi/needleman.h
@@ -320,6 +323,7 @@ include/ncbi/ni_list.h
 include/ncbi/ni_msg.h
 include/ncbi/ni_net.h
 include/ncbi/ni_types.h
+include/ncbi/nlm_numerics.h
 include/ncbi/objacces.h
 include/ncbi/objalign.h
 include/ncbi/objalignloc.h
@@ -330,7 +334,9 @@ include/ncbi/objblst3.h
 include/ncbi/objcdd.h
 include/ncbi/objcn3d.h
 include/ncbi/objcode.h
+include/ncbi/objegkludge.h
 include/ncbi/objent2.h
+include/ncbi/objentgene.h
 include/ncbi/objentr.h
 include/ncbi/objfdef.h
 include/ncbi/objfeat.h
@@ -385,6 +391,7 @@ include/ncbi/prunebsc.h
 include/ncbi/pubdesc.h
 include/ncbi/puberr.h
 include/ncbi/qblastapi.h
+include/ncbi/re_newton.h
 include/ncbi/readdb.h
 include/ncbi/regex.h
 include/ncbi/rpsutil.h
@@ -560,11 +567,14 @@ lib/ncbi/libvibrant.a
 %%PORTDOCS%%%%DOCSDIR%%/blast/filter.html
 %%PORTDOCS%%%%DOCSDIR%%/blast/formatdb.html
 %%PORTDOCS%%%%DOCSDIR%%/blast/formatrpsdb.html
+%%PORTDOCS%%%%DOCSDIR%%/blast/history.html
 %%PORTDOCS%%%%DOCSDIR%%/blast/impala.html
 %%PORTDOCS%%%%DOCSDIR%%/blast/index.html
 %%PORTDOCS%%%%DOCSDIR%%/blast/megablast.html
 %%PORTDOCS%%%%DOCSDIR%%/blast/netblast.html
 %%PORTDOCS%%%%DOCSDIR%%/blast/rpsblast.html
+%%PORTDOCS%%%%DOCSDIR%%/blast/scoring.pdf
+%%PORTDOCS%%%%DOCSDIR%%/blast/web_blast.pl
 %%PORTDOCS%%%%DOCSDIR%%/blastdb.txt
 %%PORTDOCS%%%%DOCSDIR%%/blastftp.txt
 %%PORTDOCS%%%%DOCSDIR%%/dispatcher.html
@@ -573,6 +583,7 @@ lib/ncbi/libvibrant.a
 %%PORTDOCS%%%%DOCSDIR%%/firedialog.gif
 %%PORTDOCS%%%%DOCSDIR%%/firewall.html
 %%PORTDOCS%%%%DOCSDIR%%/fwd_check.sh
+%%PORTDOCS%%%%DOCSDIR%%/gene2xml.txt
 %%PORTDOCS%%%%DOCSDIR%%/images/ncbi_sequin.css
 %%PORTDOCS%%%%DOCSDIR%%/images/seqn01.png
 %%PORTDOCS%%%%DOCSDIR%%/images/seqn02.png
