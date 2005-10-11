@@ -15,6 +15,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produces a view output of an arbitrary region of the Earth
 
+BROKEN=		"mastersite disappeared"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-11
+
 USE_REINPLACE=	yes
 USE_XLIB=	yes
 CFLAGS+=	-I${X11BASE}/include
