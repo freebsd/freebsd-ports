@@ -16,6 +16,10 @@ DISTNAME=	figlet221
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	SysV banner-like program prints strings in large fancy ASCII art
 
+BROKEN=		"unfetchable, however, 2.2.2 is available"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-11
+
 MAN6=		figlet.6
 
 do-install:
