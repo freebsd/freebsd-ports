@@ -6,6 +6,7 @@
 
 PORTNAME=	mac
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mac-port
@@ -15,8 +16,8 @@ DISTNAME=	xmms-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	arundel@h3c.de
 COMMENT=	Monkey's Audio Codec non-win32 port
 
-BUILD_DEPENDS=	mac:${PORTSDIR}/audio/mac
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
+		mac.2:${PORTSDIR}/audio/mac
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
