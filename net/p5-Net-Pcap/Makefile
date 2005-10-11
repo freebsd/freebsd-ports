@@ -17,6 +17,8 @@ COMMENT=	Interface to pcap(3) LBL packet capture library
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
 
+BROKEN=		Incomplete pkg-plist
+
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib -lpcap"
 
