@@ -7,19 +7,13 @@
 #
 
 PORTNAME=	super
-PORTVERSION=	3.23.0
+PORTVERSION=	3.26.0
 CATEGORIES=	security sysutils
 MASTER_SITES=	ftp://ftp.ucolick.org/pub/users/will/
 EXTRACT_SUFX=	-tar.gz
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allow others to run commands as root
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} <= 300000
-BROKEN=	'/usr/include/prot.h parse error'
-.endif
 
 GNU_CONFIGURE=	yes
 MAN1=		super.1 setuid.1
@@ -30,8 +24,8 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${FILESDIR}/sample.tab ${FILESDIR}/sample.cdmount \
-		${EXAMPLESDIR}
+		${WRKSRC}/barebones.tab ${EXAMPLESDIR}
 	@${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
