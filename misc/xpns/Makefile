@@ -8,7 +8,7 @@
 PORTNAME=	xpns
 PORTVERSION=	1.0
 CATEGORIES=	misc cad
-MASTER_SITES=	http://www.ee.uwa.edu.au/~braunl/pns/ftp/
+MASTER_SITES=	http://robotics.ee.uwa.edu.au/pns/ftp/
 DISTFILES=	pns_source.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
