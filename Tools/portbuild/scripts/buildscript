@@ -3,8 +3,33 @@
 # usage: $0 DIRNAME PHASE
 #   PHASE is 1 (checksum) or 2 (package)
 
+mountprocfs() {
+  arch=$1
+
+  if [ ${arch} = "i386" ]; then
+    # JDK ports need linprocfs :(
+    mkdir -p /compat/linux/proc
+    mount_linprocfs linprocfs /compat/linux/proc
+  fi
+}
+
+umountprocfs() {
+  arch=$1
+
+  if [ ${arch} = "i386" ]; then
+    umount -f /compat/linux/proc 2> /dev/null > /dev/null
+  fi
+}
+
 cleanup() {
   status=$1
+
+  cd ${dir}
+  keep_distfiles=$(make -V ALWAYS_KEEP_DISTFILES)
+  distdir=$(make -V DISTDIR)
+  if [ -z "${keep_distfiles}" -a ! -z "${distdir}" ]; then
+    rm -rf ${distdir}/*
+  fi
 
   if [ -e ${dir}/.keep ]; then
     cd ${dir}
@@ -15,7 +40,7 @@ cleanup() {
   cat /tmp/make.log${status}
   echo 1 > /tmp/status
   echo "================================================================"
-  echo -n "build ended at "
+  echo -n "build of ${dir} ended at "
   date
 
   exit 0
@@ -28,6 +53,8 @@ add_pkg() {
   cd /tmp/depends
   export PKG_PATH=/tmp/depends
   if [ ! -z "${pkgs}" ]; then
+    arch=$(uname -m)
+    umountprocfs ${arch}
     echo "adding dependencies"
     for i in $pkgs; do
       echo "pkg_add $i"
@@ -43,6 +70,7 @@ add_pkg() {
         fi
       fi
     done
+    mountprocfs ${arch}
   fi
 }
 
@@ -176,7 +204,7 @@ EOF
       grep ' extra$' /tmp/list3 | awk '{print $1}' | xargs -J % find % -ls > /tmp/list4
       grep ' missing$' /tmp/list3 > /tmp/list5
       grep -vE ' (extra|missing)$' /tmp/list3 > /tmp/list6
-      if [ "x${PLISTCHECK}" != "x" ]; then
+      if [ "x${NOPLISTCHECK}" = "x" ]; then
 	if grep -qE 'usr/(local|X11R6)/(bin/|include/|man/|sbin/|share/|share/|lib/|libdata/|libexec/)' /tmp/list4; then
           echo "1" > /tmp/status
 	fi
@@ -211,7 +239,7 @@ EOF
     if [ -s /tmp/list6 ]; then
       echo "list of filesystem changes from before and after port installation and deinstallation"
       cat /tmp/list6
-      if [ "x${PLISTCHECK}" != "x" ]; then
+      if [ "x${NOPLISTCHECK}" = "x" ]; then
         echo "1" > /tmp/status
       fi
     fi
@@ -223,12 +251,22 @@ EOF
     kill $(jobid %1)
   fi
 
+  cd ${dir}
+  keep_distfiles=$(make -V ALWAYS_KEEP_DISTFILES)
+  distdir=$(make -V DISTDIR)
+  if [ -z "${keep_distfiles}" -a ! -z "${distdir}" ]; then
+    rm -rf ${distdir}/*
+  fi
+
   if [ -e ${dir}/.keep ]; then
     cd ${dir}
     objdir=$(make -V WRKDIR)
     tar cfjC /tmp/work.tbz ${objdir}/.. work
   fi
 
+  echo "================================================================"
+  echo -n "build of ${dir} ended at "
+  date
 fi
 
 exit 0
