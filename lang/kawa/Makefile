@@ -16,20 +16,20 @@ COMMENT=		Java-based Scheme implementation
 
 BUILD_DEPENDS=		gsed:${PORTSDIR}/textproc/gsed
 
-USE_JAVA=		1.2+
-USE_PERL5_BUILD=	yes
 NEED_JAVAC=		yes
-CONFIGURE_ARGS=		--enable-kawa-frontend --program-prefix=''
+USE_JAVA=		1.2+
+USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
+CONFIGURE_ARGS=		--enable-kawa-frontend --program-prefix=''
 
 MAN1=			kawa.1
 INFO=			kawa kawa-tour
 
 pre-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi \
-		 -e 's|sed |gsed |g;' \
-		 -e 's|JAR = jar|JAR = ${JAR}|g;'
-	${PERL} -pi -e 's|{JAVAC-javac}|{JAVAC-${JAVAC}}|g;' \
-		 -e 's|{JAVA-java}|{JAVA-${JAVA}}|g;' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} \
+		-e 's|sed |gsed |g;' \
+		-e 's|JAR = jar|JAR = ${JAR}|g;'
+	@${REINPLACE_CMD} -e 's|{JAVAC-javac}|{JAVAC-${JAVAC}}|g;' \
+		-e 's|{JAVA-java}|{JAVA-${JAVA}}|g;' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
