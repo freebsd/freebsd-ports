@@ -1,26 +1,6 @@
---- configure.ac.orig	Mon Sep  6 16:03:58 2004
-+++ configure.ac	Tue Jan 25 23:16:00 2005
-@@ -14,7 +14,7 @@
- AC_PROG_RANLIB
- 
- LDFLAGS="-L/usr/X11R6/lib -L/usr/X11R6"
--CPPFLAGS="-I/usr/X11R6/include -I/usr/X11R6"
-+CPPFLAGS="-I/usr/include -I/usr -I/usr/X11R6/include -I/usr/X11R6"
- if test `uname` == Darwin; then
- LDFLAGS="$LDFLAGS -lmx"
- CPPFLAGS="$CPPFLAGS -D__DARWIN__"
+--- ./configure.ac.orig	Sat Aug  6 13:57:14 2005
++++ ./configure.ac	Tue Aug  9 23:20:58 2005
 @@ -37,8 +37,8 @@
- have_SDLmixer=yes
- if test "x$enable_sdltest" = "xyes" ; then
- 	AC_TRY_COMPILE([
--		#include <SDL/SDL.h>
--		#include <SDL/SDL_mixer.h>
-+		#include <SDL11/SDL.h>
-+		#include <SDL11/SDL_mixer.h>
- 
- 		int main(int argc, char *argv[])
- 		{ return 0; }
-@@ -64,8 +64,8 @@
  have_SDLnet=yes
  if test "x$enable_sdltest" = "xyes" ; then
  	AC_TRY_COMPILE([

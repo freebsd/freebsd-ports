@@ -1,5 +1,5 @@
---- ./src/GLEXT/GLStateExtension.cpp.orig	Thu Sep  9 20:03:49 2004
-+++ ./src/GLEXT/GLStateExtension.cpp	Tue Jan 25 19:34:17 2005
+--- ./src/GLEXT/GLStateExtension.cpp.orig	Sat Aug  6 13:57:39 2005
++++ ./src/GLEXT/GLStateExtension.cpp	Tue Aug  9 23:21:14 2005
 @@ -21,7 +21,7 @@
  #include <GLEXT/GLStateExtension.h>
  #include <GLEXT/GLConsole.h>

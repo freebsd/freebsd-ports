@@ -1,5 +1,5 @@
---- ./src/common/RandomGenerator.cpp.orig	Mon Jul 26 16:31:15 2004
-+++ ./src/common/RandomGenerator.cpp	Tue Jan 25 19:34:22 2005
+--- ./src/common/RandomGenerator.cpp.orig	Sat Aug  6 13:57:39 2005
++++ ./src/common/RandomGenerator.cpp	Tue Aug  9 23:21:18 2005
 @@ -20,7 +20,7 @@
  
  #include <common/RandomGenerator.h>

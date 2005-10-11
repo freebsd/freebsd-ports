@@ -1,11 +1,11 @@
---- ./src/client/ClientMain.cpp.orig	Mon Nov 29 19:08:50 2004
-+++ ./src/client/ClientMain.cpp	Tue Jan 25 19:34:20 2005
-@@ -71,7 +71,7 @@
+--- ./src/client/ClientMain.cpp.orig	Sat Aug  6 13:57:39 2005
++++ ./src/client/ClientMain.cpp	Tue Aug  9 23:21:17 2005
+@@ -70,7 +70,7 @@
  #include <common/Gamma.h>
- #include <common/Sound.h>
  #include <common/Clock.h>
+ #include <sound/Sound.h>
 -#include <SDL/SDL.h>
 +#include <SDL11/SDL.h>
  
- bool initHardware(ProgressCounter *progressCounter)
- {
+ static int mouseEventCount = 0;
+ static bool paused = false;
