@@ -1,5 +1,5 @@
---- ./src/scorched/MainDialog.cpp.orig	Fri Dec  3 19:36:32 2004
-+++ ./src/scorched/MainDialog.cpp	Tue Jan 25 19:34:29 2005
+--- ./src/scorched/MainDialog.cpp.orig	Sat Aug  6 13:57:39 2005
++++ ./src/scorched/MainDialog.cpp	Tue Aug  9 23:21:23 2005
 @@ -26,8 +26,8 @@
  #include <wx/msgdlg.h>
  #define WIN32_LEAN_AND_MEAN

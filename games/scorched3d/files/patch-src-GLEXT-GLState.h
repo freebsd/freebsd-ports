@@ -1,5 +1,5 @@
---- ./src/GLEXT/GLState.h.orig	Thu Jul 10 18:29:20 2003
-+++ ./src/GLEXT/GLState.h	Tue Jan 25 19:34:17 2005
+--- ./src/GLEXT/GLState.h.orig	Sat Aug  6 13:57:39 2005
++++ ./src/GLEXT/GLState.h	Tue Aug  9 23:21:14 2005
 @@ -27,7 +27,7 @@
  #define AFX_GLSTATE_H__32B0E2D0_566D_4438_94E4_B12FE82430B1__INCLUDED_
  

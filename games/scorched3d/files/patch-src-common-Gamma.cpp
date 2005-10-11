@@ -1,5 +1,5 @@
---- ./src/common/Gamma.cpp.orig	Thu Jul 10 18:28:51 2003
-+++ ./src/common/Gamma.cpp	Tue Jan 25 19:34:22 2005
+--- ./src/common/Gamma.cpp.orig	Sat Aug  6 13:57:39 2005
++++ ./src/common/Gamma.cpp	Tue Aug  9 23:21:18 2005
 @@ -27,7 +27,7 @@
  #include <common/Gamma.h>
  #include <common/Defines.h>

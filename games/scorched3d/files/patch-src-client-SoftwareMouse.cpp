@@ -1,5 +1,5 @@
---- ./src/client/SoftwareMouse.cpp.orig	Fri Sep 10 14:45:45 2004
-+++ ./src/client/SoftwareMouse.cpp	Tue Jan 25 19:34:21 2005
+--- ./src/client/SoftwareMouse.cpp.orig	Sat Aug  6 13:57:39 2005
++++ ./src/client/SoftwareMouse.cpp	Tue Aug  9 23:21:17 2005
 @@ -25,7 +25,7 @@
  #include <GLEXT/GLState.h>
  #include <common/Defines.h>

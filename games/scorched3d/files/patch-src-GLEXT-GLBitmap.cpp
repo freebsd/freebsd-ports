@@ -1,5 +1,5 @@
---- ./src/GLEXT/GLBitmap.cpp.orig	Mon Sep  6 02:36:23 2004
-+++ ./src/GLEXT/GLBitmap.cpp	Tue Jan 25 19:34:16 2005
+--- ./src/GLEXT/GLBitmap.cpp.orig	Sat Aug  6 13:57:38 2005
++++ ./src/GLEXT/GLBitmap.cpp	Tue Aug  9 23:21:13 2005
 @@ -22,7 +22,7 @@
  #include <math.h>
  #include <GLEXT/GLState.h>

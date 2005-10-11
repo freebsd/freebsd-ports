@@ -7,7 +7,6 @@
 
 PORTNAME=		scorched3d
 PORTVERSION=		0.${SCORCH_VERSION}${SCORCH_REVISION}
-PORTREVISION=	1
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scorched3d
@@ -16,10 +15,14 @@ DISTNAME=		Scorched3D-${SCORCH_VERSION}-src
 MAINTAINER=		guy@device.dyndns.org
 COMMENT=		Scorched is a game based loosely on the classic DOS game
 
-LIB_DEPENDS=		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
+BUILD_DEPENDS=		${X11BASE}/include/wx-2.6/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk26-common \
+			wxgtk2-2.6-config:${PORTSDIR}/x11-toolkits/wxgtk26 \
+			openal-config:${PORTSDIR}/audio/openal
+RUN_DEPENDS=		${X11BASE}/include/wx-2.6/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk26-common \
+			wxgtk2-2.6-config:${PORTSDIR}/x11-toolkits/wxgtk26 \
+			openal-config:${PORTSDIR}/audio/openal
 
-SCORCH_VERSION=		38.1
-SCORCH_REVISION=	b
+SCORCH_VERSION=		39.1
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=		yes
@@ -36,7 +39,7 @@ AUTOMAKE_ARGS=		--foreign
 CONFIGURE_ARGS=		--program-prefix='' \
 			--prefix=${PREFIX}/games/scorched3d \
 			--datadir=${PREFIX}/games/scorched3d \
-			--with-wx-config=${X11BASE}/bin/wxgtk2-2.4-config
+			--with-wx-config=${X11BASE}/bin/wxgtk2-2.6-config
 .if defined(WITH_MYSQL)
 CONFIGURE_ARGS+=	--with-mysql
 .endif

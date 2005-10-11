@@ -1,5 +1,5 @@
---- ./src/engine/MainLoop.cpp.orig	Wed Sep  8 23:28:49 2004
-+++ ./src/engine/MainLoop.cpp	Tue Jan 25 19:34:25 2005
+--- ./src/engine/MainLoop.cpp.orig	Sat Aug  6 13:57:39 2005
++++ ./src/engine/MainLoop.cpp	Tue Aug  9 23:21:20 2005
 @@ -23,7 +23,7 @@
  #include <common/Defines.h>
  #include <GLEXT/GLState.h>

@@ -1,5 +1,5 @@
---- ./src/common/KeyStateTranslate.h.orig	Mon Sep  8 01:03:23 2003
-+++ ./src/common/KeyStateTranslate.h	Tue Jan 25 19:34:22 2005
+--- ./src/common/KeyStateTranslate.h.orig	Sat Aug  6 13:57:39 2005
++++ ./src/common/KeyStateTranslate.h	Tue Aug  9 23:21:18 2005
 @@ -19,7 +19,7 @@
  ////////////////////////////////////////////////////////////////////////////////
  

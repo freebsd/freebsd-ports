@@ -1,7 +1,7 @@
---- ./src/client/UniqueIdStore.cpp.orig	Sat Dec  4 13:14:34 2004
-+++ ./src/client/UniqueIdStore.cpp	Tue Jan 25 19:34:21 2005
-@@ -23,7 +23,7 @@
- #include <common/Logger.h>
+--- ./src/client/UniqueIdStore.cpp.orig	Sat Aug  6 13:57:39 2005
++++ ./src/client/UniqueIdStore.cpp	Tue Aug  9 23:21:17 2005
+@@ -24,7 +24,7 @@
+ #include <common/OptionsDisplay.h>
  #include <coms/NetInterface.h>
  #include <XML/XMLFile.h>
 -#include <SDL/SDL_net.h>
