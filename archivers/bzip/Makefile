@@ -8,9 +8,9 @@
 PORTNAME=	bzip
 PORTVERSION=	0.21
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/tools/archivers/bzip/
+MASTER_SITES=	http://custom.lab.unb.br/pub/compression/bzip/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	A block-sorting file compressor
 
 DEPRECATED=	"see full description"
