@@ -1,0 +1,5 @@
+This module provides methods to compact javascript source down to just
+what is needed. It can remove all comments, put everything on one line
+(semi-)safely, and remove extra whitespace.
+
+WWW: http://search.cpan.org/dist/JavaScript-Squish/
