@@ -8,10 +8,10 @@
 PORTNAME=	tkRunIt
 PORTVERSION=	0.94.1
 CATEGORIES=	misc
-MASTER_SITES=   http://www.cs.columbia.edu/~etgold/software/tkRunIt/
+MASTER_SITES=   http://thaumaturgy.net/~etgold/software/tkRunIt/
 DISTNAME=	tkRunIt-0941
 
-MAINTAINER=	steve@farrell.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI app launcher with completion and history
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
