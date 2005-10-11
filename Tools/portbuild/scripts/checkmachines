@@ -27,7 +27,7 @@ while true; do
     set $(cat $mlist)
     while [ $# -gt 0 ]; do
       m=$1
-      lockf ${buildroot}/${i}/queue/.lock ${buildroot}/scripts/pollmachine ${i} ${m}
+      ${buildroot}/scripts/pollmachine ${i} ${m}
       shift 1
     done
   done
