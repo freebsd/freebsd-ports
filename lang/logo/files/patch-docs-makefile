@@ -1,5 +1,5 @@
---- docs/makefile.orig	Thu Feb 24 16:37:18 2005
-+++ docs/makefile	Thu Feb 24 16:37:30 2005
+--- docs/makefile.orig	Tue Nov 30 16:57:46 2004
++++ docs/makefile	Mon Oct 10 18:12:01 2005
 @@ -1,6 +1,4 @@
  BUILDIR	      = `pwd`
 -INFODIR	      = $(prefix)/info

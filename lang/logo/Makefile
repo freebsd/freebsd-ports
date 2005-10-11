@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	ucblogo
-PORTVERSION=	5.4
+PORTVERSION=	5.5
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.cs.berkeley.edu/pub/ucblogo/
+MASTER_SITES=	http://www.cs.berkeley.edu/~bh/downloads/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Brian Harvey's logo language interpreter
-
-BROKEN=		"5.4 fails to fetch, latest version is 5.5"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=	2005-12-09
 
 .if defined(EMACS_LOGO_MODE)
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
@@ -27,6 +24,7 @@ BUILD_DEPENDS+=	tex:${PORTSDIR}/print/teTeX \
 		ps2pdf:${PORTSDIR}/${GHOSTSCRIPT_PORT}
 .endif
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_XLIB=	yes
 MAKEFILE=	makefile
 HAS_CONFIGURE=	yes
