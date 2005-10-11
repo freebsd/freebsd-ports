@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# usage: $0 ARCH BRANCH [-noclean] [-norestr] [-plistcheck] [-nodummy] PKGNAME.tgz DIRNAME [DEPENDENCY.tgz ...]
+# usage: $0 ARCH BRANCH [-noclean] [-norestr] [-noplistcheck] [-distfiles] [-fetch-original] [-trybroken] PKGNAME.tgz DIRNAME [DEPENDENCY.tgz ...]
 
 mount_fs()
 {
@@ -141,20 +141,15 @@ if [ "x$1" = "x-norestr" ]; then
   export NO_RESTRICTED=1
   shift
 fi
-plistcheck=0
-if [ "x$1" = "x-plistcheck" ]; then
-  plistcheck=1
-  export PLISTCHECK=1
-  shift
-fi
-nodummy=0
-if [ "x$1" = "x-nodummy" ]; then
-  nodummy=1
-  export NODUMMY=1
+noplistcheck=0
+if [ "x$1" = "x-noplistcheck" ]; then
+  noplistcheck=1
+  export NOPLISTCHECK=1
   shift
 fi
 nodistfiles=1
 if [ "x$1" = "x-distfiles" ]; then
+  export ALWAYS_KEEP_DISTFILES=1
   nodistfiles=0
   shift
 fi
