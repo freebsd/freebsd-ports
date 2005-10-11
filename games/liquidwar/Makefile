@@ -7,6 +7,7 @@
 
 PORTNAME=	liquidwar
 PORTVERSION=	5.6.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://liquidwar.sunsite.dk/archive/ \
 		${MASTER_SITE_SAVANNAH} \
@@ -20,7 +21,8 @@ LIB_DEPENDS=	alleg.41:${PORTSDIR}/devel/allegro
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--disable-target-opt
+CONFIGURE_ARGS=	--disable-target-opt --disable-doc-ps --disable-doc-pdf
+USE_PYTHON_BUILD= yes
 
 INFO=		liquidwar
 
