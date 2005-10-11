@@ -3,9 +3,8 @@
 %%SITE_PERL%%/HTML/Mason.pm
 %%SITE_PERL%%/HTML/Mason/Admin.pod
 %%SITE_PERL%%/HTML/Mason/ApacheHandler.pm
-%%SITE_PERL%%/HTML/Mason/Buffer.pm
-%%SITE_PERL%%/HTML/Mason/Cache/BaseCache.pm
 %%SITE_PERL%%/HTML/Mason/CGIHandler.pm
+%%SITE_PERL%%/HTML/Mason/Cache/BaseCache.pm
 %%SITE_PERL%%/HTML/Mason/Compiler.pm
 %%SITE_PERL%%/HTML/Mason/Compiler/ToObject.pm
 %%SITE_PERL%%/HTML/Mason/Component.pm
@@ -16,11 +15,14 @@
 %%SITE_PERL%%/HTML/Mason/Escapes.pm
 %%SITE_PERL%%/HTML/Mason/Exceptions.pm
 %%SITE_PERL%%/HTML/Mason/FakeApache.pm
+%%SITE_PERL%%/HTML/Mason/Handler.pm
 %%SITE_PERL%%/HTML/Mason/Interp.pm
 %%SITE_PERL%%/HTML/Mason/Lexer.pm
 %%SITE_PERL%%/HTML/Mason/MethodMaker.pm
 %%SITE_PERL%%/HTML/Mason/Params.pod
 %%SITE_PERL%%/HTML/Mason/Parser.pm
+%%SITE_PERL%%/HTML/Mason/Plugin.pm
+%%SITE_PERL%%/HTML/Mason/Plugin/Context.pm
 %%SITE_PERL%%/HTML/Mason/Request.pm
 %%SITE_PERL%%/HTML/Mason/Resolver.pm
 %%SITE_PERL%%/HTML/Mason/Resolver/File.pm
@@ -33,6 +35,7 @@
 @dirrm %%SITE_PERL%%/HTML/Mason/Cache
 @dirrm %%SITE_PERL%%/HTML/Mason/Compiler
 @dirrm %%SITE_PERL%%/HTML/Mason/Component
+@dirrm %%SITE_PERL%%/HTML/Mason/Plugin
 @dirrm %%SITE_PERL%%/HTML/Mason/Resolver
 @dirrm %%SITE_PERL%%/HTML/Mason
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Mason
