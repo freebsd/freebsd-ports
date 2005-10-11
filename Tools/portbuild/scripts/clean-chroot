@@ -65,7 +65,7 @@ if [ $noclean = 0 ]; then
   rm -rf ${chroot}/tmp/*
   for dir in ${cleandirs}; do
     if ! rm -rf ${chroot}${dir} >/dev/null 2>&1; then
-      chflags -R noschg ${chroot}${dir}
+      chflags -R noschg ${chroot}${dir} >/dev/null 2>&1
       rm -rf ${chroot}${dir} >/dev/null 2>&1
     fi
   done
