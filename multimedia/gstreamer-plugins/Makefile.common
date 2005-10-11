@@ -307,7 +307,7 @@ GST_PLIST_SUFFIX=	dec
 # dvd (dvdnav dvdread)
 .if ${GST_PLUGIN}=="dvd"
 EXTRA_LIBS+=	-ldvdnav
-LIB_DEPENDS+=	dvdnav.3:${PORTSDIR}/multimedia/libdvdnav
+LIB_DEPENDS+=	dvdnav.4:${PORTSDIR}/multimedia/libdvdnav
 GST_PLUGIN_DIR=	ext/dvdnav \
 		ext/dvdread
 PLIST_FILES=	${GST_LIB_DIR}/libgstdvdnavsrc.so \
