@@ -5,8 +5,10 @@ share/locale/bg/LC_MESSAGES/leafpad.mo
 share/locale/ca/LC_MESSAGES/leafpad.mo
 share/locale/cs/LC_MESSAGES/leafpad.mo
 share/locale/de/LC_MESSAGES/leafpad.mo
+share/locale/el/LC_MESSAGES/leafpad.mo
 share/locale/es/LC_MESSAGES/leafpad.mo
 share/locale/fr/LC_MESSAGES/leafpad.mo
+share/locale/he/LC_MESSAGES/leafpad.mo
 share/locale/hu/LC_MESSAGES/leafpad.mo
 share/locale/it/LC_MESSAGES/leafpad.mo
 share/locale/ja/LC_MESSAGES/leafpad.mo
@@ -14,8 +16,10 @@ share/locale/lt/LC_MESSAGES/leafpad.mo
 share/locale/pl/LC_MESSAGES/leafpad.mo
 share/locale/pt/LC_MESSAGES/leafpad.mo
 share/locale/ru/LC_MESSAGES/leafpad.mo
+share/locale/sk/LC_MESSAGES/leafpad.mo
 share/locale/sv/LC_MESSAGES/leafpad.mo
 share/locale/ta/LC_MESSAGES/leafpad.mo
+share/locale/tr/LC_MESSAGES/leafpad.mo
 share/locale/vi/LC_MESSAGES/leafpad.mo
 share/locale/zh_CN/LC_MESSAGES/leafpad.mo
 share/locale/zh_TW/LC_MESSAGES/leafpad.mo
