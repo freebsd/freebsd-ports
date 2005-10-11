@@ -7,6 +7,7 @@
 
 PORTNAME=	daimonin_client
 DISTVERSION=	BETA3-0966
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	daimonin
@@ -17,8 +18,10 @@ COMMENT=	Free open source Massively Multiplayer On-line Role-playing Game (MMORP
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}/share/${PORTNAME}
+CONFIGURE_ENV=	CFLAGS="-pipe"
 USE_SDL=	mixer image
 USE_X_PREFIX=	yes
+SUB_FILES=	daimonin.sh
 
 WRKSRC=		${WRKDIR}/daimonin/client/make/linux
 
@@ -28,7 +31,7 @@ post-patch:
 		${WRKSRC}/make_utils/
 
 post-install:
-	@${ECHO} "cd ${PREFIX}/share/${PORTNAME} && ./daimonin" > ${PREFIX}/bin/daimonin
-	@${CHMOD} a+x ${PREFIX}/bin/daimonin
+	${INSTALL_SCRIPT} ${WRKDIR}/daimonin.sh ${PREFIX}/bin/daimonin
+	${CHMOD} a+x ${PREFIX}/bin/daimonin
 
 .include <bsd.port.mk>
