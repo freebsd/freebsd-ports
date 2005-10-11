@@ -17,6 +17,8 @@ PATCH_DIST_STRIP=	-p0
 MAINTAINER=		kuriyama@FreeBSD.org
 COMMENT=		Japanese Samba
 
+BROKEN=			Out of date distinfo file
+
 CONFLICTS=		ja-samba-2.* samba-2.* samba-3.0.* sharity-light-1.*
 
 SAMBA_PORT=		samba3
