@@ -5,5 +5,3 @@ input if none are given or when a file named '-' is given, to the
 standard output.  It  currently  supports the  file,  http,  and
 raw URL types. It is designed as a compatible, but enhanced,
 replacement of cat(1).
-
-WWW: http://jl.photodex.com/dog/
