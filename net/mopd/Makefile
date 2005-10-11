@@ -21,6 +21,10 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	MOP Loader Daemon for netbooting DEC machines
 
+BROKEN=		"distfile unavaible since July 2004"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-11
+
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 #	MANDIR is concetenated to DESTDIR which all forms the man install dir...
 
