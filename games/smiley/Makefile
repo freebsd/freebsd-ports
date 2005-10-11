@@ -8,7 +8,8 @@
 PORTNAME=	smiley
 PORTVERSION=	4.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.fu-berlin.de/pub/unix/misc/smiley/
+# No external mirror available anymore
+#MASTER_SITES=	ftp://ftp.fu-berlin.de/pub/unix/misc/smiley/
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
 COMMENT=	A "server" to print out a smiley with it's explanation
