@@ -17,13 +17,15 @@ PATCHFILES=		${DISTNAME}-jpatch-p1c.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=		yasu@asuka.net
-COMMENT=	DVI to PDF converter (Japanese version)
+COMMENT=		DVI to PDF converter (Japanese version)
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/japanese/ptex-base \
 			${LOCALBASE}/share/fonts/cmpsfont/README:${PORTSDIR}/print/cmpsfont
 LIB_DEPENDS=		png:${PORTSDIR}/graphics/png
 RUN_DEPENDS=		kpsewhich:${PORTSDIR}/japanese/ptex-base \
 			${LOCALBASE}/share/fonts/cmpsfont/README:${PORTSDIR}/print/cmpsfont
+
+BROKEN=			Incorrect pkg-plist
 
 MAN1=			dvipdfm.1
 
