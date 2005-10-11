@@ -262,6 +262,7 @@
     SUBDIR += p5-Email-Folder
     SUBDIR += p5-Email-Folder-IMAP
     SUBDIR += p5-Email-Folder-IMAPS
+    SUBDIR += p5-Email-Folder-POP3
     SUBDIR += p5-Email-FolderType
     SUBDIR += p5-Email-FolderType-Net
     SUBDIR += p5-Email-LocalDelivery
