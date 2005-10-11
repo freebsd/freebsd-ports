@@ -19,8 +19,6 @@ COMMENT=	Internationalization library for Perl
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		Incomplete pkg-plist
-
 PERL_CONFIGURE=	yes
 USE_GETTEXT=	yes
 
@@ -171,4 +169,12 @@ MAN3=	Locale::RecodeData::IBM862.3 \
 	Locale::RecodeData::IBM290.3 \
 	Locale::RecodeData::IBM903.3 \
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} > 500600
+PLIST_SUB=	NEWPERL=""
+.else
+PLIST_SUB=	NEWPERL="@comment "
+.endif
+
+.include <bsd.port.post.mk>
