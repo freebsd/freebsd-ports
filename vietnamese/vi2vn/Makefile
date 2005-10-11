@@ -9,12 +9,16 @@
 PORTNAME=	vi2vn
 PORTVERSION=	0.64
 CATEGORIES=	vietnamese
-MASTER_SITES=	http://linux.nguyendai.org/
+MASTER_SITES=	# disappeared
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.src
 EXTRACT_SUFX=	.rpm
 
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Perl script to convert VIQR encoding to other Vietnamese encodings.
+
+BROKEN=		"mastersite disappeared"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-11
 
 PORTCOMMENT=	Converts Vietnamese VIQR text into troff format
 
