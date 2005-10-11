@@ -73,6 +73,11 @@ for i in ${old2}; do
 	    umount ${j} || cleanup_mount ${j}
 	  done
 	fi
+	if [ "${use_md_swap}" = "1" ]; then
+		chrootnum=$(basename $i)
+		umount -f /dev/md${i}
+		mdconfig -d -u ${chrootnum}
+	fi
 done
 
 mkdir -p ${scratchdir}/old
