@@ -37,7 +37,6 @@ IGNORE=	"You must manually fetch ${DISTNAME}${EXTRACT_SUFX} from ${DOWNLOAD_URL}
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
-	@${MKDIR} ${JAVAJARDIR}
 	@${INSTALL_DATA} ${WRKSRC}/lib/${JARFILE} ${JAVAJARDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)

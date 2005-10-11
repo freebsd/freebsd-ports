@@ -48,7 +48,6 @@ do-install:
 	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR} > /dev/null 2>&1
 	@${ECHO_MSG} " [ DONE ]"
 	@${ECHO_MSG} -n ">> Install JAR files in ${JAVAJARDIR}..."
-	@${MKDIR} ${JAVAJARDIR}
 	@${INSTALL_DATA} ${WRKSRC}/mail.jar ${JAVAJARDIR}/
 	@cd ${WRKSRC}/lib && ${INSTALL_DATA} imap.jar mailapi.jar pop3.jar smtp.jar ${JAVAJARDIR}/
 	@${ECHO_MSG} " [ DONE ]"

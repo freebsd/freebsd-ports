@@ -20,7 +20,6 @@ JAVA_VERSION=	1.1+
 NO_BUILD=	yes
 
 do-install:
-	@${MKDIR} ${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/jars/*.jar ${JAVAJARDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
