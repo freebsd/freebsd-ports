@@ -20,14 +20,17 @@ BROKEN_WITH_PHP=	5
 USE_PHP=	mysql pcre posix session
 
 NO_BUILD=	yes
+
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_SUB+=	INSTALLDIR=${INSTALLDIR}
-INSTALLDIR?=	www/data/UserManager
+
+_INSTDIR=	www/data/UserManager
+INSTALLDIR?=	${_INSTDIR}
 
 pre-fetch:
-.if !defined(INSTALLDIR)
+.if ${INSTALLDIR} == ${_INSTDIR}
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Define INSTALLDIR to override default of 'www/data/UserManager'."
+	@${ECHO_MSG} "Define INSTALLDIR to override default of '${_INSTDIR}'."
 	@${ECHO_MSG} ""
 .endif
 
