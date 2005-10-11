@@ -9,4 +9,3 @@ output of grep and diff. I think that this programs functionality should be
 folded in to those programs but until then histring does the job nicely.
 
 Author:		Angus Mackay <amackay@gusnet.cx>
-WWW:		http://www.gusnet.cx:8080/proj/histring/
