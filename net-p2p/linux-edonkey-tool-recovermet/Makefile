@@ -9,7 +9,7 @@ PORTNAME=	edonkey
 PORTVERSION=	0.0.2
 PORTREVISION=	1
 CATEGORIES=	misc linux
-MASTER_SITES=	http://users.aber.ac.uk/tpm01/ed2k_tools/
+MASTER_SITES=	# disappeared
 PKGNAMEPREFIX=	linux-
 PKGNAMESUFFIX=	-tool-recovermet
 DISTNAME=	ed2k_recovermet
@@ -18,6 +18,10 @@ EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool that tries to re-create x.part.met files compromised due to crash
+
+BROKEN=		"mastersite disappeared"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-11
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
