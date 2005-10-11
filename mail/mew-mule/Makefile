@@ -12,7 +12,7 @@ COMMENT=	Message interface to Emacs Window for mule
 MASTERDIR=	${.CURDIR}/../mew
 
 BROKEN=		"Incorrect pkg-plist (removes directories not installed by this port)"
-DEPRECATED=	${BROKEN}
+DEPRECATED=	"${BROKEN}"
 EXPIRATION_DATE=2005-09-22
 
 # set emacs port
