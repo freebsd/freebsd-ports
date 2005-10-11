@@ -3519,6 +3519,7 @@ gtypist		ports/games/gtypist
 guavac		ports/java/guavac
 gubby		ports/mail/gubby
 gucharmap	ports/deskutils/gucharmap
+guesswork-classic	ports/japanese/guesswork-classic
 guikachu	ports/devel/guikachu
 guile		ports/lang/guile
 guile-gnome	ports/x11-toolkits/guile-gnome
