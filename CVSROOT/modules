@@ -209,6 +209,12 @@ acron		ports/misc/acron
 acroread	ports/print/acroread
 acroread5-commfont	ports/print/acroread5-commfont
 acroread7	ports/print/acroread7
+acroread-zhcn	ports/chinese/acroread-zh_CN
+acroread-zhtw	ports/chinese/acroread-zh_TW
+acroread-fr	ports/french/acroread
+acroread-de	ports/german/acroread
+acroread-pt	ports/portuguese/acroread
+acroread-es	ports/print/es-acroread
 activitymail	ports/devel/activitymail
 actx		ports/games/actx
 acx100		ports/net/acx100
