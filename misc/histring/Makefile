@@ -8,7 +8,11 @@
 PORTNAME=	histring
 PORTVERSION=	1.1.0
 CATEGORIES=	misc
-MASTER_SITES=	http://www.gusnet.cx:8080/proj/histring/
+MASTER_SITES=	# disappeared
+
+BROKEN=		"mastersite disappeared"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-11
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	A tool to highlight strings using the ANSI terminal escape sequences
