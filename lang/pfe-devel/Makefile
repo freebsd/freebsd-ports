@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	andrew.nau.ua@gmail.com
 COMMENT=	Implementation of ANSI Forth
 
 LATEST_LINK=	pfe-devel
