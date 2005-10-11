@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 
 # Perl c_rehash script, scan all files in a directory
@@ -6,7 +6,7 @@
 
 my $openssl;
 
-my $dir = "/usr/local/ssl";
+my $dir = "/etc/ssl";
 
 if(defined $ENV{OPENSSL}) {
 	$openssl = $ENV{OPENSSL};
