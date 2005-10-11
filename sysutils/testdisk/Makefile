@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	testdisk
-PORTVERSION=	5.9
+PORTVERSION=	6.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 
@@ -34,7 +34,7 @@ LIB_DEPENDS+=	ext2fs.2:${PORTSDIR}/sysutils/e2fsprogs
 .endif
 
 .if defined(WITH_NTFSPROGS)
-LIB_DEPENDS+=	ntfs.6:${PORTSDIR}/sysutils/ntfsprogs
+LIB_DEPENDS+=	ntfs.8:${PORTSDIR}/sysutils/ntfsprogs
 .endif
 
 .if defined(WITH_PROGSREISERFS)
