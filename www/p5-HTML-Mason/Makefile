@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	HTML-Mason
-PORTVERSION=	1.28
-PORTREVISION=	2
+PORTVERSION=	1.31.0.1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-1.3101
 
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	High-performance, dynamic web site authoring system
@@ -24,14 +24,13 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser
 
-PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--no-prompts
+PERL_MODBUILD=	yes
+CONFIGURE_ARGS+=	--noprompts
 
 MAN3=		Bundle::HTML::Mason.3 \
 		HTML::Mason.3 \
 		HTML::Mason::Admin.3 \
 		HTML::Mason::ApacheHandler.3 \
-		HTML::Mason::Buffer.3 \
 		HTML::Mason::Cache::BaseCache.3 \
 		HTML::Mason::CGIHandler.3 \
 		HTML::Mason::Compiler.3 \
@@ -49,6 +48,8 @@ MAN3=		Bundle::HTML::Mason.3 \
 		HTML::Mason::MethodMaker.3 \
 		HTML::Mason::Params.3 \
 		HTML::Mason::Parser.3 \
+		HTML::Mason::Plugin.3 \
+		HTML::Mason::Plugin::Context.3 \
 		HTML::Mason::Request.3 \
 		HTML::Mason::Resolver.3 \
 		HTML::Mason::Resolver::File.3 \
@@ -61,6 +62,10 @@ MAN3=		Bundle::HTML::Mason.3 \
 OPTIONS=	MOD_PERL "with mod_perl dependency" off
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		Port requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+.endif
 
 .if defined(WITH_MOD_PERL)
 .if defined(WITH_APACHE2)
