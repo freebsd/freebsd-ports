@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	dokuwiki
-PORTVERSION=	20050919
+PORTVERSION=	20050922
 CATEGORIES=	www
 MASTER_SITES=	http://www.splitbrain.org/Programming/PHP/DokuWiki/
-DISTNAME=	${PORTNAME}-2005-09-19
+DISTNAME=	${PORTNAME}-2005-09-22
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	A simple and easy to use wiki, no database required
 
 USE_PHP=	gd imagick pcre session xml zlib
