@@ -7998,6 +7998,7 @@ p5-Ioctl	ports/devel/p5-Ioctl
 p5-JSON		ports/converters/p5-JSON
 p5-Jabber-Connection	ports/net/p5-Jabber-Connection
 p5-JavaScript-SpiderMonkey	ports/lang/p5-JavaScript-SpiderMonkey
+p5-JavaScript-Squish	ports/lang/p5-JavaScript-Squish
 p5-Kwiki	ports/www/p5-Kwiki
 p5-Kwiki-Archive-Rcs	ports/www/p5-Kwiki-Archive-Rcs
 p5-Kwiki-Archive-SVK	ports/www/p5-Kwiki-Archive-SVK
