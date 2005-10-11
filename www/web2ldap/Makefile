@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	web2ldap
-PORTVERSION=	0.15.19
+PORTVERSION=	0.15.20
 CATEGORIES=	www
-MASTER_SITES=	http://www.web2ldap.de/download/
+MASTER_SITES=	http://www.web2ldap.de/download/ \
+		ftp://ftp.ipt.ru/pub/download/
 
 MAINTAINER=	bsam@ipt.ru
 COMMENT=	Python-based WWW gateway to LDAP servers
