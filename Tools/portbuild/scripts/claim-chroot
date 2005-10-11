@@ -40,10 +40,24 @@ done
 chrootnum=$$
 # If we didn't find a pre-existing directory, create and claim a new one.
 while [ ${found} != 1 ]; do
-  chrootnum=$(($chrootnum+1))
-  chroot=${chrootdir}/${chrootnum}
-  mkdir -p ${chroot} 2>/dev/null || continue
-  mkdir ${chroot}/used 2>/dev/null || continue
+  if [ "${use_md_swap}" = "1" ]; then
+    unit=$(mdconfig -a -t swap -s ${md_size})
+    newfs /dev/${unit} > /dev/null
+    chrootnum=$(echo ${unit} | sed 's,md,,')
+    chroot=${chrootdir}/${chrootnum}
+    mkdir -p ${chroot}/used 2>/dev/null || continue
+    # Need to make sure that used/ is also present after mounting the fresh md so as to not leave open any races
+    mount /dev/${unit} ${chroot}/used
+    mkdir ${chroot}/used/used
+    touch ${chroot}/used/used/${pkgname}
+    umount ${chroot}/used
+    mount /dev/${unit} ${chroot}/
+  else
+    chrootnum=$(($chrootnum+1))
+    chroot=${chrootdir}/${chrootnum}
+    mkdir -p ${chroot} 2>/dev/null || continue
+    mkdir ${chroot}/used 2>/dev/null || continue
+  fi
   touch ${chroot}/used/${pkgname}
   touch ${chroot}/.notready
   found=1
