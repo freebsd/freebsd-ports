@@ -22,10 +22,16 @@ echo "setting up of $node started at $(date)"
 disconnected=0
 . ${pb}/${arch}/portbuild.${node}
 
-md5=$(/sbin/md5 ${pb}/${arch}/${branch}/tarballs/bindist.tar | awk '{print $4}')
+if [ "${norsync}" = 1 ]; then
+  md5=0
+  nocopy=-nocopy
+else
+  md5=$(/sbin/md5 ${pb}/${arch}/${branch}/tarballs/bindist.tar | awk '{print $4}')
+  nocopy=
+fi
 
 scp -p ${pb}/scripts/setupnode ${client_user}@${node}:/tmp
-ssh -n ${client_user}@${node} ${sudo_cmd} sh /tmp/setupnode $(hostname) ${pb} ${arch} ${branch} ${scratchdir} ${md5} ${disconnected}
+ssh -n ${client_user}@${node} ${sudo_cmd} sh /tmp/setupnode ${nocopy} $(hostname) ${pb} ${arch} ${branch} ${scratchdir} ${md5} ${disconnected}
 if [ ! -z "${sudo_cmd}" -a ${disconnected} = "1" ]; then
   ssh -n ${client_user}@${node} ${sudo_cmd} "chown -R ${client_user} /var/portbuild/"
 fi
@@ -39,5 +45,5 @@ if [ "${disconnected}" = 1 -a "${norsync}" = 0 ]; then
   rsync ${rsync_gzip} -r -L -p --delete ${pb}/${arch}/${branch}/tarballs/ ${client_user}@${node}:${pb}/${arch}/${branch}/tarballs/
 fi
 
-lockf ${pb}/${arch}/queue/.lock ${pb}/scripts/pollmachine ${arch} ${node} -queue
+lockf -k ${pb}/${arch}/queue/.lock ${pb}/scripts/pollmachine ${arch} ${node} -queue
 echo "setting up of $node ended at $(date)"
