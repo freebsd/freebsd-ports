@@ -19,7 +19,7 @@ EXTRACT_ONLY=	pylibpcap-${PORTVERSION}.tar.gz
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python interface to LBL Packet Capture library (libpcap)
 
-BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig11
+BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
