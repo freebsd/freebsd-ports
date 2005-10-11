@@ -11,7 +11,7 @@ CATEGORIES=	devel tcl84 tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	andrew.nau.ua@gmail.com
 COMMENT=	Tk console for Tcl
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
