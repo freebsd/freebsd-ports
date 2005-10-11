@@ -9,12 +9,16 @@ PORTNAME=	aflag
 PORTVERSION=	0.1
 PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	http://www.geocities.com/saintdead/
+MASTER_SITES=	# disappeared
 PKGNAMEPREFIX=	gkrellm
 DISTNAME=	${PORTNAME}_anim-${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org
 COMMENT=	A GKrellM Plugin that displays a waving American flag
+
+BROKEN=		"mastersite disappeared"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-11
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
