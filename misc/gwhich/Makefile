@@ -14,6 +14,10 @@ DISTNAME=	which-${PORTVERSION}
 MAINTAINER=	jeremy@external.org
 COMMENT=	GNU Which - Everything you never wanted in a which
 
+BROKEN=		"distfile no longer available, current is 2.16 from same site"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-11
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --program-prefix=g
 
