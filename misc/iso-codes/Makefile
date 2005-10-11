@@ -17,6 +17,10 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Lists of the country, language and currency iso names
 
+BROKEN=		"distfile disappeared, newer one is available"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-11
+
 BUILD_DEPENDS=	xmlproc_parse:${PORTSDIR}/textproc/py-xml
 
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
