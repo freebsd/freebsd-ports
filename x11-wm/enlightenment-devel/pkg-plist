@@ -55,6 +55,7 @@ include/enlightenment/e_popup.h
 include/enlightenment/e_prefix.h
 include/enlightenment/e_remember.h
 include/enlightenment/e_resist.h
+include/enlightenment/e_scrollbar.h
 include/enlightenment/e_signals.h
 include/enlightenment/e_startup.h
 include/enlightenment/e_table.h
