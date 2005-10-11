@@ -43,7 +43,6 @@ do-install:
 	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR} > /dev/null 2>&1
 	@${ECHO_MSG} " [ DONE ]"
 	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/activation.jar..."
-	@${MKDIR} ${JAVAJARDIR}
 	@${INSTALL_DATA} ${WRKSRC}/activation.jar ${JAVAJARDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)

@@ -20,7 +20,6 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 
 do-install:
-	@${MKDIR} ${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKDIR}/bin/${PORTNAME}-api.jar ${JAVAJARDIR}/
 	${INSTALL_DATA} ${WRKDIR}/bin/${PORTNAME}-compat.jar ${JAVAJARDIR}/
 	${INSTALL_DATA} ${WRKDIR}/bin/${PORTNAME}-provider.jar ${JAVAJARDIR}/
