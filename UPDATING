@@ -8,7 +8,7 @@ upgrades.
 
 20051011:
   AFFECTS: users of www/amphetadesk
-  AUTHOUR: lioux@FreeBSD.org
+  AUTHOR: lioux@FreeBSD.org
 
   www/amphetadesk can only be ran under a user with a valid home
   directory since it stores its configuration information there.
