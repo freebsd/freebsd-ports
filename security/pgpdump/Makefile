@@ -8,7 +8,7 @@
 PORTNAME=	pgpdump
 PORTVERSION=	0.24
 CATEGORIES=	security
-MASTER_SITES=	ftp://pgp.iijlab.net/pgpdump/
+MASTER_SITES=	http://pgp.iijlab.net/pgpdump/
 
 MAINTAINER=	kaoru@kaisei.org
 COMMENT=	PGP packet visualizer
