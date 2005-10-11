@@ -17,6 +17,8 @@ COMMENT=	A more capable version control system than CVS, built around CVS
 
 BUILD_DEPENDS=	clisp:${PORTSDIR}/lang/clisp
 
+BROKEN=		Does not build
+
 USE_GCC=	2.95
 
 pre-build:
