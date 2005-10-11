@@ -55,7 +55,7 @@ fi
 for i in ${tmpdir}/${branch}/chroot/*; do
     ${pb}/scripts/clean-chroot ${arch} ${branch} ${i} 0
     if ! rm -rf $i > /dev/null 2>&1; then
-      chflags -R noschg ${i}
-      rm -rf ${i}
+      chflags -R noschg ${i} > /dev/null 2>&1
+      rm -rf ${i} > /dev/null 2>&1
   fi
 done
