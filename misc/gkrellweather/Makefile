@@ -10,18 +10,18 @@ PORTNAME=	gkrellweather
 PORTVERSION=	0.2.7
 PORTREVISION=	2
 CATEGORIES=	misc
-MASTER_SITES=	http://www.cse.unsw.edu.au/~flam/repository/c/gkrellm/
+MASTER_SITES=	http://critical.ch/distfiles/
 
 MAINTAINER=	pat@FreeBSD.org
 COMMENT=	GKrellWeather is a weather plugin for GKrellM
 
+BROKEN=		"dependency GrabWeather does not exist anymore"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-11
+
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm \
 		${X11BASE}/bin/GrabWeather:${PORTSDIR}/misc/wmweather
-
-BROKEN=		Unfetchable
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
 
 NO_LATEST_LINK=	yes
 
