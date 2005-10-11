@@ -8,9 +8,10 @@
 PORTNAME=	brs
 PORTVERSION=	4.03
 CATEGORIES=	misc
-MASTER_SITES=	ftp://classworld.com/BRS/ \
-		http://www.unknown.nu/ports/
-DISTFILES=	bible.data.tar bible.tar.Z
+MASTER_SITES=	http://mirrors.playboy.com/misc/ \
+		http://www.unknown.nu/ports/ \
+		ftp://mirrors.playboy.com/misc/
+DISTFILES=	bible.data.tar.bz2 bible.tar.bz2
 DIST_SUBDIR=	brs
 
 MAINTAINER=	user@unknown.nu
