@@ -18,6 +18,8 @@ BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 RUN_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 
+BROKEN=		Unfetchable
+
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 USE_LIBTOOL_VER=15
 USE_PYTHON=	yes

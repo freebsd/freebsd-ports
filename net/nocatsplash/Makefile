@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Open 802.11 Splash Screen
 
+BROKEN=		Unfetchable
+
 USE_GNOME=	glib12
 
 .include <bsd.port.pre.mk>
