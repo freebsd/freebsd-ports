@@ -6,9 +6,9 @@ bin/pmkscan
 @unexec rm -f %D/etc/pmk/pmk.conf.dist
 @unexec rmdir %D/etc/pmk 2>/dev/null || true
 bin/pmksetup
-share/pmk/pmkcfgtool.dat
-share/pmk/pmkcomp.dat
-share/pmk/pmkcpu.dat
-share/pmk/pmkfile.sample
-share/pmk/pmkscan.dat
-@dirrm share/pmk
+%%DATADIR%%/pmkcfgtool.dat
+%%DATADIR%%/pmkcomp.dat
+%%DATADIR%%/pmkcpu.dat
+%%DATADIR%%/pmkfile.sample
+%%DATADIR%%/pmkscan.dat
+@dirrm %%DATADIR%%
