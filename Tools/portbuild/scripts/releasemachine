@@ -5,8 +5,6 @@ buildroot=/var/portbuild
 i=$1
 m=$2
 
-#infoseek_host=$m
-#infoseek_port=infoseek
 . ${buildroot}/${i}/portbuild.conf
 if [ -f ${buildroot}/${i}/portbuild.${m} ]; then
   . ${buildroot}/${i}/portbuild.${m}
