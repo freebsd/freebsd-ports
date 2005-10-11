@@ -17,7 +17,7 @@ monit supports:
  * Remote network services monitoring (ping, response time, protocol, etc.)
  * System load average monitoring
  * Flexible and customizable email alert messages and notifications
- * Protocol verification such as HTTP, FTP, SMTP, POP, IMAP, NNTP, etc.
+ * Protocol verification such as HTTP, FTP, SMTP, POP, IMAP, NNTP, NTP, etc.
  * A HTTP interface with XML output option
  and many more features :)
 
