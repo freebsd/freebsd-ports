@@ -1,0 +1,6 @@
+The guesswork classic is a lightweight framework for PHP. It allows
+developers to build web applications without writing any configuration
+files and being forced to use fixed directory structures and file names.
+
+Author: OGURA Junya
+WWW: http://classic.guesswork.jp/

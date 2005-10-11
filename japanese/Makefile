@@ -105,6 +105,7 @@
     SUBDIR += groff
     SUBDIR += gskk
     SUBDIR += gtkicq
+    SUBDIR += guesswork-classic
     SUBDIR += gxditview
     SUBDIR += hex
     SUBDIR += hns
