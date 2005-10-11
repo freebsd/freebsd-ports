@@ -20,6 +20,7 @@ LIB_DEPENDS=	alleg.41:${PORTSDIR}/devel/allegro
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+CONFIGURE_ARGS=	--disable-target-opt
 
 INFO=		liquidwar
 
