@@ -9,7 +9,7 @@ PORTNAME=	nut
 PORTVERSION=	11.0
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lafn.org/~av832/ \
-		http://voodoo.oberon.net/download/
+		http://voodoo.bawue.com/download/
 PKGNAMEPREFIX=	health-
 
 MAINTAINER=	ports@FreeBSD.org

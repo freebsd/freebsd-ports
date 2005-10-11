@@ -8,7 +8,7 @@
 PORTNAME=	portmon
 PORTVERSION=	2.0
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://voodoo.oberon.net/download/ \
+MASTER_SITES=	http://voodoo.bawue.com/download/ \
 		http://www.aboleo.net/software/portmon/downloads/
 
 MAINTAINER=	ports@FreeBSD.org

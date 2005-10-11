@@ -9,7 +9,7 @@ PORTNAME=	xmlpull
 PORTVERSION=	1.1.3.4a
 PORTREVISION=	1
 CATEGORIES=	textproc java
-MASTER_SITES=	http://voodoo.oberon.net/download/ \
+MASTER_SITES=	http://voodoo.bawue.com/download/ \
 		http://www.xmlpull.org/v1/download/
 DISTNAME=	${DISTNAME_PREFX}_src
 EXTRACT_SUFX=	.tgz
