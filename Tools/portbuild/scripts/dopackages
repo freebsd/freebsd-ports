@@ -18,7 +18,7 @@ errorexit () {
 }
 
 usage () {
-  echo "usage: [-continue] [-incremental] [-restart] [-nofinish] [-finish] [-ftp] [-cdrom] [-nodummy] [-nobuild] [-noindex] [-noduds] [-norestr] [-nocvs] [-noportscvs] [-nodoccvs] [-noplistcheck] [-distfiles] [-fetch-original] [-trybroken] branch date"
+  echo "usage: [-continue] [-incremental] [-restart] [-nofinish] [-finish] [-ftp] [-cdrom] [-nobuild] [-noindex] [-noduds] [-norestr] [-nocvs] [-noportscvs] [-nodoccvs] [-noplistcheck] [-distfiles] [-fetch-original] [-trybroken] branch date"
   errorexit 1
 }
 
@@ -169,7 +169,6 @@ noportscvs=0
 nodoccvs=0
 norestr=0
 noplistcheck=0
-nodummy=0
 cdrom=0
 ftp=0
 restart=0
@@ -210,9 +209,6 @@ while [ $# -gt 2 ]; do
       ;;
     x-noplistcheck)
       noplistcheck=1
-      ;;
-    x-nodummy)
-      nodummy=1
       ;;
     x-ftp)
       ftp=1
@@ -270,12 +266,8 @@ if [ "$dodistfiles" = 1 ]; then
   export WANT_DISTFILES=1
 fi
 
-if [ "$noplistcheck" = 0 ]; then
-  export PLISTCHECK=1
-fi
-
-if [ "$nodummy" = 1 ]; then
-  export NODUMMY=1
+if [ "$noplistcheck" = 1 ]; then
+  export NOPLISTCHECK=1
 fi
 
 if [ "$cdrom" = 1 ]; then
@@ -369,17 +361,6 @@ if [ "$skipstart" = 0 ]; then
 
   ${scripts}/makeparallel ${arch} ${branch}
 
-  if [ "$nodummy" = 0 ]; then
-    dummypkgs=""
-    for i in ${dummyports}; do
-      if [ -d $i ]; then
-        dummypkgs="${dummypkgs} $(cd $i; make package-name)${PKGSUFFIX}"
-      else
-        echo "dummy port directory \"$i\" does not exist -- skipping"
-      fi
-    done
-  fi
-
   cd ${pb}/${arch}
   mkdir -p ${pb}/${arch}/${branch}/bak
   cd ${pb}/${arch}/${branch}/bak
@@ -429,6 +410,9 @@ if [ "$skipstart" = 0 ]; then
     cd ${pb}/${arch}/${branch}
     mkdir -p packages/All
 
+    rm -rf distfiles/
+    mkdir -p distfiles/
+
     mkdir -p ${pb}/${arch}/archive/errorlogs
     rm -rf ${pb}/${arch}/archive/errorlogs/e.${branch}.${date} ${pb}/${arch}/archive/errorlogs/e.${branch}.${shortdate}
     mkdir -p ${pb}/${arch}/archive/errorlogs/e.${branch}.${date}
@@ -446,16 +430,6 @@ if [ "$skipstart" = 0 ]; then
     cp -p ${pb}/${arch}/${branch}/ports/${INDEXFILE} ${pb}/${arch}/archive/errorlogs/e.${branch}.${date}/INDEX
     cp -p ${pb}/${arch}/${branch}/ports/${INDEXFILE} ${pb}/${arch}/archive/errorlogs/a.${branch}.${date}/INDEX
 
-    if [ "$nodummy" = 0 ]; then
-      for dir in ${dummyports}; do
-        pkgname=$(cd ${pb}/${arch}/${branch}/ports/$dir; make package-name)${PKGSUFFIX}
-        if [ -f ${pb}/${arch}/${branch}/tarballs/${pkgname} ]; then
-          cp -p ${pb}/${arch}/${branch}/tarballs/${pkgname} packages/All
-        else
-          echo "Dummy package ${pkgname} does not exist!"
-        fi
-      done
-    fi
   fi
 fi
 
@@ -602,8 +576,6 @@ if [ "$nofinish" = 0 ]; then
   echo "================================================"
   echo "started at $(date)"
   cd ${pb}/${arch}
-  #rm -rf ${branch}/bak/distfiles
-  #mv -f ${branch}/distfiles ${branch}/bak
   ${scripts}/dodistfiles ${pb}/${arch}/${branch}/distfiles
   rm -rf ${pb}/${arch}/${branch}/distfiles/.pbtmp
   rm -f ${pb}/${arch}/${branch}/distfiles/.done
