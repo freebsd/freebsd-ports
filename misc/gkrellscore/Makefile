@@ -9,15 +9,12 @@ PORTNAME=	gkrellscore
 PORTVERSION=	0.0.2
 PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	# disappeared
+MASTER_SITES=	ftp://ftp.dvo.ru/pub/Gentoo/distfiles/ \
+		http://voodoo.bawue.com/download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org
 COMMENT=	Plugin to GKrellM that displays current sports scores
-
-BROKEN=		"mastersite disappeared"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=	2005-12-11
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm \
