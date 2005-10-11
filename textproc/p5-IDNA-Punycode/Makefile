@@ -18,8 +18,6 @@ COMMENT=	Perl module to encode Unicode string in Punycode
 BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		Incomplete pkg-plist
-
 PERL_CONFIGURE=	YES
 
 MAN3=		IDNA::Punycode.3
