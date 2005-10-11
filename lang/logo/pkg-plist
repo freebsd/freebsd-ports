@@ -36,6 +36,8 @@ lib/logo/helpfiles/buryname
 lib/logo/helpfiles/butfirst
 lib/logo/helpfiles/butfirsts
 lib/logo/helpfiles/butlast
+lib/logo/helpfiles/button
+lib/logo/helpfiles/buttonp
 lib/logo/helpfiles/bye
 lib/logo/helpfiles/cascade
 lib/logo/helpfiles/case
@@ -158,6 +160,8 @@ lib/logo/helpfiles/loadpict
 lib/logo/helpfiles/local
 lib/logo/helpfiles/localmake
 lib/logo/helpfiles/log10
+lib/logo/helpfiles/logoplatform
+lib/logo/helpfiles/logoversion
 lib/logo/helpfiles/lowercase
 lib/logo/helpfiles/lput
 lib/logo/helpfiles/lshift
@@ -174,6 +178,7 @@ lib/logo/helpfiles/member
 lib/logo/helpfiles/memberp
 lib/logo/helpfiles/minus
 lib/logo/helpfiles/modulo
+lib/logo/helpfiles/mousepos
 lib/logo/helpfiles/name
 lib/logo/helpfiles/namelist
 lib/logo/helpfiles/namep
@@ -233,6 +238,7 @@ lib/logo/helpfiles/primitivep
 lib/logo/helpfiles/primitives
 lib/logo/helpfiles/print
 lib/logo/helpfiles/printdepthlimit
+lib/logo/helpfiles/printout
 lib/logo/helpfiles/printwidthlimit
 lib/logo/helpfiles/procedurep
 lib/logo/helpfiles/procedures
@@ -405,6 +411,7 @@ lib/logo/logolib/ignore
 lib/logo/logolib/invoke
 lib/logo/logolib/iseq
 lib/logo/logolib/localmake
+lib/logo/logolib/logo-logo
 lib/logo/logolib/macroexpand
 lib/logo/logolib/map
 lib/logo/logolib/map.se
@@ -443,14 +450,18 @@ lib/logo/logolib/xcor
 lib/logo/logolib/ycor
 %%EXAMPLESDIR%%/csls/algs
 %%EXAMPLESDIR%%/csls/basic
+%%EXAMPLESDIR%%/csls/buttons
 %%EXAMPLESDIR%%/csls/cards
 %%EXAMPLESDIR%%/csls/crypto
 %%EXAMPLESDIR%%/csls/diff
 %%EXAMPLESDIR%%/csls/doctor
+%%EXAMPLESDIR%%/csls/dotgame
 %%EXAMPLESDIR%%/csls/format
 %%EXAMPLESDIR%%/csls/fsm
+%%EXAMPLESDIR%%/csls/master
 %%EXAMPLESDIR%%/csls/match
 %%EXAMPLESDIR%%/csls/math
+%%EXAMPLESDIR%%/csls/mines
 %%EXAMPLESDIR%%/csls/multi
 %%EXAMPLESDIR%%/csls/pascal
 %%EXAMPLESDIR%%/csls/playfair
@@ -459,6 +470,7 @@ lib/logo/logolib/ycor
 %%EXAMPLESDIR%%/csls/pour
 %%EXAMPLESDIR%%/csls/psort
 %%EXAMPLESDIR%%/csls/solitaire
+%%EXAMPLESDIR%%/csls/streams
 %%EXAMPLESDIR%%/csls/student
 %%EXAMPLESDIR%%/csls/tower
 %%EXAMPLESDIR%%/csls/ttt
