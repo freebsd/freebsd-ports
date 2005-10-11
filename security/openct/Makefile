@@ -6,32 +6,34 @@
 #
 
 PORTNAME=	openct
-PORTVERSION=	0.6.5
+PORTVERSION=	0.6.6
 CATEGORIES=	security
-MASTER_SITES=	http://www.opensc.org/files/
+MASTER_SITES=	http://www.opensc.org/files/ \
+		http://www.opensc.org/files/old/
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	A middleware framework for smart card terminals
 
 USE_LIBTOOL_VER=	15
+USE_LIBLTDL=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 INSTALLS_SHLIB=	yes
 
-CONFIGURE_ARGS=	--prefix=${PREFIX}
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
 MAN1=		openct-tool.1
 
 DOC_FILES=	README export-wiki.sh export-wiki.xsl ${HTML_FILES}
 
-HTML_FILES=	AuthorsAndCredits.html FilesTools.html LicenseText.html \
-	OperatingSystems.html QuickStart.html RecentResults.html \
-	RemoteAccess.html SecureSetup.html SupportedReaders.html \
-	TroubleShooting.html cardman.html ccid.html egate.html \
-	etoken.html eutron.html gempc.html ikey2032.html \
-	ikey3000.html index.html kaan.html smartboard.html \
-	towitoko.html trac.css
+HTML_FILES=	AuthorsAndCredits.html DevelopmentPolicy.html FilesTools.html \
+	 	LicenseText.html MailingLists.html OperatingSystems.html \
+ 		OverView.html QuickStart.html RemoteAccess.html \
+	 	ResourcesLinks.html SecureSetup.html \
+ 	 	TroubleShooting.html cardman.html ccid.html egate.html \
+ 	 	etoken.html eutron.html gempc.html ikey2032.html \
+	 	ikey3000.html index.html kaan.html pertosmart1030.html smartboard.html \
+ 	 	towitoko.html trac.css
 
 .if !defined(WITHOUT_PCSC_LITE)
 LIB_DEPENDS+=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
