@@ -11,7 +11,7 @@
 #
 
 # override these variables in /etc/rc.conf
-dnsmasq_enable=NO
+dnsmasq_enable=${dnsmasq_enable:-"NO"}
 
 . %%RC_SUBR%%
 
