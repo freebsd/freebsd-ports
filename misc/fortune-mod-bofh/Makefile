@@ -15,6 +15,10 @@ DISTNAME=	bofh-fortune-mod${PORTVERSION}
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Compilation of excuses from the "Bastard Operator From Hell"
 
+BROKEN=		"mastersite unreachable"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-11
+
 NO_BUILD=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
