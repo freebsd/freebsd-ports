@@ -10,6 +10,7 @@ PORTVERSION=	1.6.5
 PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:bin,} \
+		${MASTER_SITE_LOCAL:S,%SUBDIR%/,hq/:man,} \
 		http://www.esil.univ-mrs.fr/~hquiroz/:man
 DISTFILES=	${ANT_DISTFILE}:bin \
 		${MANPAGE_DISTFILE}:man
