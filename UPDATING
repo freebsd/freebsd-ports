@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20051011:
+  AFFECTS: users of www/amphetadesk
+  AUTHOUR: lioux@FreeBSD.org
+
+  www/amphetadesk can only be ran under a user with a valid home
+  directory since it stores its configuration information there.
+
 20051010:
   AFFECTS: users of games/py-balazar
   AUTHOR: mnag@FreeBSD.org
