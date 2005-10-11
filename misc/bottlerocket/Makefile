@@ -9,10 +9,14 @@ PORTNAME=	bottlerocket
 PORTVERSION=	0.04c
 PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	http://mlug.missouri.edu/~tymm/
+MASTER_SITES=	# disappeared
 
-MAINTAINER=	msmith@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Home Automation Software for the X10 FireCracker kit
+
+BROKEN=		"mastersite disappeared"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-11
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
