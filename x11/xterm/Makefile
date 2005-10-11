@@ -10,7 +10,7 @@ PORTVERSION=	205
 PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/ \
-		http://voodoo.oberon.net/download/
+		http://voodoo.bawue.com/download/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	krion@FreeBSD.org

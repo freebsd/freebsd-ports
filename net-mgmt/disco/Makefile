@@ -8,7 +8,7 @@
 PORTNAME=	disco
 PORTVERSION=	1.2
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://voodoo.oberon.net/download/
+MASTER_SITES=	http://voodoo.bawue.com/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP discovery and fingerprinting utility

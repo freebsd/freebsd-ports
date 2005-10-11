@@ -9,7 +9,7 @@ PORTNAME=	icpld
 PORTVERSION=	1.1.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.ibiblio.org/icpld/download/ \
-		http://voodoo.oberon.net/download/
+		http://voodoo.bawue.com/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet connection performance logging daemon

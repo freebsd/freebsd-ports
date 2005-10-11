@@ -10,7 +10,7 @@ PORTVERSION=	2.00.251
 PORTREVISION=	2
 CATEGORIES=	multimedia linux net
 MASTER_SITES=	ftp://ftp.mayn.de/pub/really_old_stuff/unix/browser/plugins/ \
-		http://voodoo.oberon.net/download/
+		http://voodoo.bawue.com/download/
 DISTNAME=	netshow_linux
 EXTRACT_SUFX=	.gz
 

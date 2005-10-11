@@ -8,7 +8,7 @@
 PORTNAME=	tvark
 PORTVERSION=	0.4
 CATEGORIES=	net
-MASTER_SITES=	http://voodoo.oberon.net/download/ \
+MASTER_SITES=	http://voodoo.bawue.com/download/ \
 		http://www.tvark.com/
 
 MAINTAINER=	ports@FreeBSD.org
