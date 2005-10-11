@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	autodia
-PORTVERSION=	2.01
+PORTVERSION=	2.02
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://droogs.org/autodia/download/
 DISTNAME=	Autodia-${PORTVERSION}
