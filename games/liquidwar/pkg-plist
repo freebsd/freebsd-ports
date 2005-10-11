@@ -29,8 +29,6 @@ bin/liquidwar-mapgen
 %%DOCSDIR%%/html/source.html
 %%DOCSDIR%%/html/todo.html
 %%DOCSDIR%%/html/userlevels.html
-%%DOCSDIR%%/ps/liquidwar.ps
-%%DOCSDIR%%/pdf/liquidwar.pdf
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/README
 %%DOCSDIR%%/README.fr
