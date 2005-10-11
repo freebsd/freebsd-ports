@@ -6,7 +6,6 @@ teams, their scores, the period of the game (if applicable), the
 time that it will start if it hasn't yet, the date of the game,
 etc.
 
-WWW: http://ssl.usu.edu/paul/gkrellscore/
 Author: Paul Cannon <paul@cannon.cs.usu.edu>
 
 - Patrick Li <pat@FreeBSD.org>
