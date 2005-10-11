@@ -7,15 +7,15 @@
 
 PORTNAME=	rsynth
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio accessibility
 MASTER_SITES=	ftp://svr-ftp.eng.cam.ac.uk/pub/comp.speech/synthesis/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Speech synthesizer
 
-BUILD_DEPENDS=	${X11BASE}/include/audio/audiolib.h:${PORTSDIR}/audio/nas
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm	\
+		audio:${PORTSDIR}/audio/nas
 
 GNU_CONFIGURE=	yes
 
