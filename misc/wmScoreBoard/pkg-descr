@@ -2,7 +2,6 @@ wmScoreBoard is a Window Maker Dock App that shows the current (or
 final) score to a game that a specified team is playing in. The
 app currently gets its scores from Excite.
 
-WWW: http://home.att.net/~takuper/wmscoreboard/
 Author: Todd Kuper <takuper@worldnet.att.net>
 
 - Patrick Li <pat@FreeBSD.org>

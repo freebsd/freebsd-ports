@@ -4,5 +4,4 @@ plugins to retrieve the information. Any script or program that
 sends its output to stdout can be used (have a look at the scripts 
 in the plugins directory of the source tarball for examples).
 
-WWW: http://kling.mine.nu/wminfo.htm
 Author: Robert Kling <robkli-8@student.luth.se>
