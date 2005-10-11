@@ -7,11 +7,15 @@
 PORTNAME=	wmmand
 PORTVERSION=	1.0
 CATEGORIES=	misc windowmaker
-MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
+MASTER_SITES=	# disappeared
 DISTNAME=	wmMand-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A DockApp mandelbrot explorer
+
+BROKEN=		"mastersite disappeared"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-11
 
 PLIST_FILES=	bin/wmMand
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmMand
