@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/desktop
 DISTNAME=	FileRunner-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	andrew.nau.ua@gmail.com
 COMMENT=	Filemanager with FTP capabilities. Uses Tcl/Tk
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
