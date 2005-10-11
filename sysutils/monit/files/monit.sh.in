@@ -20,7 +20,6 @@ rcvar=`set_rcvar`
 
 restart_precmd="monit_checkconfig"
 reload_precmd="monit_checkconfig"
-stop_cmd="monit_stop"
 
 default_config=%%PREFIX%%/etc/monitrc
 required_files=${default_config}
@@ -34,13 +33,8 @@ load_rc_config $name
 
 monit_checkconfig()
 {
-  echo "Performing sanity check on monit configuration:"
-  ${command} ${command_args} -t
-}
-
-monit_stop() {
-        ${command} ${command_args} quit
-        run_rc_command poll
+	echo "Performing sanity check on monit configuration:"
+	${command} ${command_args} -t
 }
 
 extra_commands="reload"
