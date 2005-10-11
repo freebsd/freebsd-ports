@@ -37,6 +37,10 @@ branch=$2
 chroot=$3
 noclean=$4
 
+pb=/var/portbuild
+. ${pb}/${arch}/portbuild.conf
+. ${pb}/${arch}/portbuild.$(hostname)
+
 # directories to clean
 cleandirs="/usr/local /usr/X11R6 /compat /var/db/pkg"
 
@@ -54,7 +58,7 @@ fi
 if [ ${arch} = "i386" ]; then
   cleanup_mount ${chroot} /compat/linux/proc
 fi
-  
+
 for i in /a/ports /usr/opt/doc /usr/src /dev; do
   cleanup_mount ${chroot} ${i}
 done
@@ -62,17 +66,23 @@ done
 #kill_procs ${chroot}
 
 if [ $noclean = 0 ]; then
-  rm -rf ${chroot}/tmp/*
-  for dir in ${cleandirs}; do
-    if ! rm -rf ${chroot}${dir} >/dev/null 2>&1; then
-      chflags -R noschg ${chroot}${dir} >/dev/null 2>&1
-      rm -rf ${chroot}${dir} >/dev/null 2>&1
+  if [ "${use_md_swap}" = "1" ]; then
+    cleanup_mount ${chroot} ""
+    mdconfig -d -u $(basename ${chroot})
+    rm -rf ${chroot}
+  else
+    rm -rf ${chroot}/tmp/*
+    for dir in ${cleandirs}; do
+      if ! rm -rf ${chroot}${dir} >/dev/null 2>&1; then
+        chflags -R noschg ${chroot}${dir} >/dev/null 2>&1
+        rm -rf ${chroot}${dir} >/dev/null 2>&1
+      fi
+    done
+    test -x ${chroot}/sbin/ldconfig && chroot ${chroot} /sbin/ldconfig -R
+    if [ ${arch} = "i386" ]; then
+        test -x ${chroot}/sbin/ldconfig && chroot ${chroot} /sbin/ldconfig -aout -R
     fi
-  done
-  test -x ${chroot}/sbin/ldconfig && chroot ${chroot} /sbin/ldconfig -R
-  if [ ${arch} = "i386" ]; then
-	test -x ${chroot}/sbin/ldconfig && chroot ${chroot} /sbin/ldconfig -aout -R
+    rm -rf ${chroot}/var/db/pkg/*
+    rm -rf ${chroot}/used
   fi
-  rm -rf ${chroot}/var/db/pkg/*
-  rm -rf ${chroot}/used
 fi
