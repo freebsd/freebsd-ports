@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.twobarleycorns.net/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	andrew.nau.ua@gmail.com
 COMMENT=	Tcl/Tk frontends to CVS and diff
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
