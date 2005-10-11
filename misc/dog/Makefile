@@ -8,10 +8,14 @@ PORTNAME=	dog
 PORTVERSION=	1.7
 PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	http://jl.photodex.com/dog/
+MASTER_SITES=	# disappeared
 
 MAINTAINER=	rooneg@electricjellyfish.net
 COMMENT=	Dog writes the contents of each given file, URL, or stdin
+
+BROKEN=		"mastersite disappeared"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-11
 
 USE_GMAKE=	yes
 ALL_TARGET=	dog
