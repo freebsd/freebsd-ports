@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.lafn.org/~av832/ \
 PKGNAMEPREFIX=	health-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Nut is nutrition software to record what you eat
+COMMENT=	Nutrition software to record what you eat
 
 MAN1=		nut.1
 
