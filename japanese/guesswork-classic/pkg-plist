@@ -1,0 +1,42 @@
+%%EXAMPLESDIR%%/examples/mailform/MailFormValidator.class.php
+%%EXAMPLESDIR%%/public_html/mailform/mailform.css
+%%EXAMPLESDIR%%/public_html/mailform/mailform.php
+%%EXAMPLESDIR%%/smarty/templates/mailform/confirm.html
+%%EXAMPLESDIR%%/smarty/templates/mailform/input.html
+%%EXAMPLESDIR%%/smarty/templates/mailform/result.html
+%%EXAMPLESDIR%%/smarty/templates_c/DUMMY
+%%DATADIR%%/lib/Guesswork/AbstractView.php
+%%DATADIR%%/lib/Guesswork/Controller.php
+%%DATADIR%%/lib/Guesswork/DefaultView.php
+%%DATADIR%%/lib/Guesswork/ExpressionUtil.php
+%%DATADIR%%/lib/Guesswork/Logger.php
+%%DATADIR%%/lib/Guesswork/plugins/function.error.php
+%%DATADIR%%/lib/Guesswork/plugins/function.hidden_field.php
+%%DATADIR%%/lib/Guesswork/plugins/function.link_to.php
+%%DATADIR%%/lib/Guesswork/plugins/function.text_field.php
+%%DATADIR%%/lib/Guesswork/plugins/function.url_for.php
+%%DATADIR%%/lib/Guesswork/Request.php
+%%DATADIR%%/lib/Guesswork/SmartyView.php
+%%DATADIR%%/lib/Guesswork/templates/eval.tpl
+%%DATADIR%%/lib/Guesswork/UploadFile.php
+%%DATADIR%%/lib/Guesswork/Utils.php
+%%DATADIR%%/lib/Guesswork/Validator.php
+%%DATADIR%%/lib/Guesswork.php
+%%DATADIR%%/test/AllTests.php
+%%DATADIR%%/test/ControllerTest.php
+%%DATADIR%%/test/ValidatorTest.php
+@dirrm %%EXAMPLESDIR%%/examples/mailform
+@dirrm %%EXAMPLESDIR%%/examples
+@dirrm %%EXAMPLESDIR%%/public_html/mailform
+@dirrm %%EXAMPLESDIR%%/public_html
+@dirrm %%EXAMPLESDIR%%/smarty/templates/mailform
+@dirrm %%EXAMPLESDIR%%/smarty/templates
+@dirrm %%EXAMPLESDIR%%/smarty/templates_c
+@dirrm %%EXAMPLESDIR%%/smarty
+@dirrm %%DATADIR%%/lib/Guesswork/plugins
+@dirrm %%DATADIR%%/lib/Guesswork/templates
+@dirrm %%DATADIR%%/lib/Guesswork
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/test
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%
