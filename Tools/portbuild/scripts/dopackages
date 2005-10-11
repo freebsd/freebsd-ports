@@ -333,7 +333,7 @@ if [ "$skipstart" = 0 ]; then
   echo "pruning stale entries from the failed ports list"
   echo "================================================"
   # Adding BROKEN ports to duds causes this to remove everything from failure list
-  #lockf ${pb}/${arch}/${branch}/failure.lock ${scripts}/prunefailure ${arch} ${branch}
+  #lockf -k ${pb}/${arch}/${branch}/failure.lock ${scripts}/prunefailure ${arch} ${branch}
 
   if [ "$noindex" = 0 ]; then
     makeindex ${pb} ${arch} ${scripts} ${branch}
