@@ -19,10 +19,5 @@ lib/ctrlproxy/libsocket.so
 lib/ctrlproxy/libstats.so
 lib/ctrlproxy/libstrip.so
 %%DATADIR%%/motd
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
 @dirrm lib/ctrlproxy
