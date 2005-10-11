@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pmk
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pmk
 
-MAINTAINER=	seanc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pre Make Kit, a sane replacement for autoconf
 
 PKGINSTALL=	${WRKDIR}/pkg-install
