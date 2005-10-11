@@ -8,7 +8,7 @@
 PORTNAME=	xtimer
 PORTVERSION=	0.8089
 CATEGORIES=	x11-clocks
-MASTER_SITES=	http://hp.vector.co.jp/authors/VA004959/xtimer/
+MASTER_SITES=	http://www.bsddiary.net/xtimer/
 DISTNAME=	${PORTNAME}-8089
 
 MAINTAINER=	candy@kgc.co.jp
