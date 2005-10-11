@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uvscan_dat
-PORTVERSION=	4601
+PORTVERSION=	4602
 CATEGORIES=	security
 MASTER_SITES=	http://download.nai.com/products/datfiles/4.x/nai/ \
 		ftp://ftp.nai.com/pub/datfiles/english/
