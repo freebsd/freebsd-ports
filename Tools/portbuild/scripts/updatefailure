@@ -5,7 +5,7 @@
 #
 # This must be called via:
 #
-#   lockf ${pb}/${arch}/${branch}/failure.lock ${pb}/scripts/updatefailure ${arch} ${branch}
+#   lockf -k ${pb}/${arch}/${branch}/failure.lock ${pb}/scripts/updatefailure ${arch} ${branch}
 #
 # to avoid racing with any package builds in progress that might try to append to
 # these files.
