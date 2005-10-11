@@ -8,8 +8,7 @@
 PORTNAME=	seizedesktop
 PORTVERSION=	0.1a
 CATEGORIES+=	misc windowmaker tkstep80
-MASTER_SITES=	http://www.aaa-int.or.jp/~jfactory/JDE/dist/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kiri
 DISTNAME=	SeizeDesktop-${PORTVERSION}
 EXTRACT_ONLY=	# extracted directly in install target
