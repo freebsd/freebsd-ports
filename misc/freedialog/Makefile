@@ -8,8 +8,7 @@
 PORTNAME=	freedialog
 PORTVERSION=	0.3
 CATEGORIES=	misc
-MASTER_SITES=	http://www.vocito.com/downloads/software/dialog/ \
-		ftp://ftp.vocito.com/pub/vocito.com/software/dialog/
+MASTER_SITES=	http://www.vocito.com/downloads/software/dialog/
 DISTNAME=	dialog-${PORTVERSION}
 
 MAINTAINER=	ports@vocito.com
