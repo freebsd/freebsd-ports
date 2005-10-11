@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ntfsprogs
-PORTVERSION=	1.9.4
-PORTREVISION=	2
+PORTVERSION=	1.12.1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	linux-ntfs
@@ -21,7 +20,8 @@ USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
 WANT_GNOME=	yes
 INSTALLS_SHLIB=	yes
-
+USE_LIBTOOL_VER=15
+CONFIGURE_ARGS=	--program-transform-name=""
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 OPTIONS=	GNOMEVFS2 "Install GnomeVFS 2.0 libntfs interface" off
@@ -31,13 +31,17 @@ MAN8=		libntfs-gnomevfs.8 \
 		ntfscat.8	\
 		ntfsclone.8	\
 		ntfscluster.8	\
+		ntfscp.8	\
 		ntfsfix.8	\
 		ntfsinfo.8	\
 		ntfslabel.8	\
 		ntfsls.8	\
+		ntfsmount.8	\
 		ntfsprogs.8	\
 		ntfsresize.8	\
 		ntfsundelete.8
+
+MLINKS=		mkntfs.8 mkfs.ntfs.8
 
 .include <bsd.port.pre.mk>
 
@@ -50,9 +54,7 @@ PLIST_SUB=	GNOMEVFS2="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^transform.*||'	${WRKSRC}/Makefile.in		\
-						${WRKSRC}/libntfs/Makefile.in	\
-						${WRKSRC}/ntfsprogs/Makefile.in
+	@${REINPLACE_CMD} -e 's|/sbin/|${PREFIX}/sbin/|' ${WRKSRC}/ntfsprogs/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|$$(libdir)/\(gnome-vfs-2.0/modules\)|${X11BASE}/lib/\1|; \
 		 s|$$(sysconfdir)/\(gnome-vfs-2.0/modules\)|${X11BASE}/etc/\1|' \

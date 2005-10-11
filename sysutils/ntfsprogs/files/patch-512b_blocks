@@ -68,16 +68,17 @@
  		return 0;
  	return -1;
  }
---- ntfsprogs/ntfsresize.c	Sat Sep  4 13:16:32 2004
-+++ ntfsprogs/ntfsresize.c	Tue Jul 12 01:15:30 2005
-@@ -1783,6 +1783,10 @@
+--- ntfsprogs/ntfsresize.c      Fri Oct  7 23:57:31 2005
++++ ntfsprogs/ntfsresize.c      Tue Oct 11 13:35:09 2005
+@@ -1971,6 +1971,11 @@
+		err_exit("Resident attribute in $Bitmap isn't supported!\n");
  
- 	nr_clusters = resize->new_volume_size;
- 	bm_bsize = nr_clusters_to_bitmap_byte_size(nr_clusters);
+	bm_bsize = nr_clusters_to_bitmap_byte_size(resize->new_volume_size);
 +	if(bm_bsize % 512 != 0) {
-+		Dprintf("adjusted bm_bsize: %lld->%lld\n", bm_bsize, (bm_bsize + 511) / 512 * 512);
++		s64 old_bm_bsize = bm_bsize;
 +		bm_bsize = (bm_bsize + 511) / 512 * 512;
++		Dprintf("adjusted bm_bsize: %lld->%lld\n", old_bm_bsize, bm_bsize);
 +	}
  	nr_bm_clusters = rounded_up_division(bm_bsize, vol->cluster_size);
  
- 	if (!(tmp = (u8 *)realloc(resize->lcn_bitmap.bm, bm_bsize)))
+	if (resize->shrink) {
