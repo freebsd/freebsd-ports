@@ -1,10 +1,7 @@
-Passwd is the Horde password changing application. While it has been
-released and is in production use at many sites, it is also under
-heavy development in an effort to expand and improve the module.
+Passwd is the Horde password changing application.
 
-Right now, Passwd provides fairly complete support for changing
-passwords via poppassd, ldap, unix expect scripts, the unix smbpasswd
-command for smb/cifs password support, servuftp, vmailmgr, vpopmail,
-and sql passwords.
+Right now, Passwd provides fairly complete support for changing passwords via
+Poppassd, LDAP, Unix expect scripts, the Unix smbpasswd command for SMB/CIFS
+passwords, Kolab, ADSI, Pine, Serv-U FTP, VMailMgr, vpopmail, and SQL passwords.
 
 WWW: http://www.horde.org/passwd/
