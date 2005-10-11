@@ -13,6 +13,10 @@ MASTER_SITES=	http://www.student.lu.se/~nbi98oli/src/
 MAINTAINER=	enderle@mdn.de
 COMMENT=	Optimally choose files to be put on a CD (or other media)
 
+BROKEN=		"mastersite disappeared"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-11
+
 MAN1=		bestfit.1
 MANCOMPRESSED=	no
 PLIST_FILES=	bin/bestfit
