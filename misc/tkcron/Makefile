@@ -8,11 +8,15 @@
 PORTNAME=	tkcron
 PORTVERSION=	2.12
 CATEGORIES=	misc tk82
-MASTER_SITES=	http://www.neosoft.com/tcl/ftparchive/sorted/misc/tkcron-2.12/
+MASTER_SITES=	# disappeared
 EXTRACT_SUFX=	.tcl.gz
 
 MAINTAINER=	sander@haldjas.folklore.ee
 COMMENT=	A frontend to crontab
+
+BROKEN=		"mastersite disappeared"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-11
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
