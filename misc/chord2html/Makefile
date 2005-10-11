@@ -9,10 +9,14 @@
 PORTNAME=	chord2html
 PORTVERSION=	1.3
 CATEGORIES=	misc
-MASTER_SITES=	http://helllabs.org/~claudio/chord/
+MASTER_SITES=	# disappeared
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert CHORD input files to HTML
+
+BROKEN=		"mastersite disappeared"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-11
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
 
