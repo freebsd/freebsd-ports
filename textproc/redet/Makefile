@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	redet
-PORTVERSION=	7.1
+PORTVERSION=	7.3
 CATEGORIES=	textproc tk84
-MASTER_SITES=	http://www.billposer.org/Software/Downloads/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	vsevolod
-DISTNAME=	${PORTNAME}tiny
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Visual regexp constructors with many regexp types support
