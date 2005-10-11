@@ -17,6 +17,10 @@ EXTRACT_ONLY=	${XRMAPFILE}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Map portions of the earth from a given longitude/latitude
 
+BROKEN=		"distfile outdated, 2.32 is latest"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-11
+
 USE_BZIP2=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
