@@ -1,4 +1,4 @@
 bin/cgi-servlet
 bin/kawa
-share/java/kawa-1.6.98.jar
+share/java/kawa-1.7.jar
 share/java/kawa.jar

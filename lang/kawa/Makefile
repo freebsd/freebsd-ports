@@ -6,18 +6,13 @@
 #
 
 PORTNAME=		kawa
-PORTVERSION=		1.6.98
-PORTREVISION=		2
+PORTVERSION=		1.7
 CATEGORIES=		lang scheme
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	kawa
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Java-based Scheme implementation
-
-BROKEN=		"old distfile is unavailable"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=	2005-12-09
 
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
@@ -26,8 +21,9 @@ USE_PERL5_BUILD=YES
 NEED_JAVAC=	YES
 
 MAN1=		kawa.1
+INFO=		kawa kawa-tour
 
-CONFIGURE_ARGS=	--enable-kawa-frontend
+CONFIGURE_ARGS=	--enable-kawa-frontend --program-prefix=''
 GNU_CONFIGURE=	yes
 
 pre-patch:
