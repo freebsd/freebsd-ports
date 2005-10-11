@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- etc/openct.conf.in.orig
++++ etc/openct.conf.in
+@@ -2,7 +2,7 @@
+ debug	= 0;
+ #
+ # Enable hot plugging
+-hotplug	= yes;
++hotplug	= no;
+ #
+ # Path to ifdhandler
+ ifdhandler = SBINDIR/ifdhandler;

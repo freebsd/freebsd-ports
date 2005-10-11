@@ -1,11 +1,9 @@
 bin/openct-tool
-sbin/ifdhandler
-sbin/ifdproxy
-sbin/openct-control
+etc/rc.d/openct.sh
+etc/openct.conf-sample
 include/openct/apdu.h
 include/openct/buffer.h
 include/openct/conf.h
-include/openct/ctapi.h
 include/openct/device.h
 include/openct/driver.h
 include/openct/error.h
@@ -17,21 +15,20 @@ include/openct/server.h
 include/openct/socket.h
 include/openct/tlv.h
 include/openct/types.h
-lib/openct-ifd.so
-lib/openct-ifd.bundle/Contents/Info.plist
-lib/openct-ifd.bundle/Contents/PkgInfo
-lib/openct-ifd.bundle/Contents/FreeBSD/openct-ifd.so
-lib/libopenct.a
-lib/libopenct.so
+include/openct/ctapi.h
 lib/libopenct.so.1
-lib/libopenctapi.a
+lib/libopenct.so
+lib/libopenct.a
 lib/libopenctapi.so
-lib/libifd.a
-lib/libifd.so
-lib/libifd.so.1
+lib/libopenctapi.a
+lib/openct-ifd.so
+lib/openct-ifd.bundle/Contents/FreeBSD/openct-ifd.so
+lib/openct-ifd.bundle/Contents/PkgInfo
+lib/openct-ifd.bundle/Contents/Info.plist
 libdata/pkgconfig/libopenct.pc
-etc/openct.conf-sample
-etc/rc.d/openct.sh
+sbin/ifdhandler
+sbin/ifdproxy
+sbin/openct-control
 @dirrm include/openct/
 @dirrm lib/openct-ifd.bundle/Contents/FreeBSD/
 @dirrm lib/openct-ifd.bundle/Contents/
@@ -40,14 +37,16 @@ etc/rc.d/openct.sh
 %%PORTDOCS%%%%DOCSDIR%%/export-wiki.sh
 %%PORTDOCS%%%%DOCSDIR%%/export-wiki.xsl
 %%PORTDOCS%%%%DOCSDIR%%/AuthorsAndCredits.html
+%%PORTDOCS%%%%DOCSDIR%%/DevelopmentPolicy.html
 %%PORTDOCS%%%%DOCSDIR%%/FilesTools.html
 %%PORTDOCS%%%%DOCSDIR%%/LicenseText.html
+%%PORTDOCS%%%%DOCSDIR%%/MailingLists.html
 %%PORTDOCS%%%%DOCSDIR%%/OperatingSystems.html
+%%PORTDOCS%%%%DOCSDIR%%/OverView.html
 %%PORTDOCS%%%%DOCSDIR%%/QuickStart.html
-%%PORTDOCS%%%%DOCSDIR%%/RecentResults.html
 %%PORTDOCS%%%%DOCSDIR%%/RemoteAccess.html
+%%PORTDOCS%%%%DOCSDIR%%/ResourcesLinks.html
 %%PORTDOCS%%%%DOCSDIR%%/SecureSetup.html
-%%PORTDOCS%%%%DOCSDIR%%/SupportedReaders.html
 %%PORTDOCS%%%%DOCSDIR%%/TroubleShooting.html
 %%PORTDOCS%%%%DOCSDIR%%/cardman.html
 %%PORTDOCS%%%%DOCSDIR%%/ccid.html
@@ -59,6 +58,7 @@ etc/rc.d/openct.sh
 %%PORTDOCS%%%%DOCSDIR%%/ikey3000.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/kaan.html
+%%PORTDOCS%%%%DOCSDIR%%/pertosmart1030.html
 %%PORTDOCS%%%%DOCSDIR%%/smartboard.html
 %%PORTDOCS%%%%DOCSDIR%%/towitoko.html
 %%PORTDOCS%%%%DOCSDIR%%/trac.css
