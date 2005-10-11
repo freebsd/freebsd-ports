@@ -9,10 +9,14 @@ PORTNAME=	bmp-extra-plugins
 PORTVERSION=	0.2.2
 PORTREVISION=	2
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://www.t17.ikarnet.pl/~wiget/bmp-extra-plugins/download/
+MASTER_SITES=	# disappeared
 
 MAINTAINER=	w@wrzask.pl
 COMMENT=	A collection of additional plugins for beep media player
+
+BROKEN=		"mastersite disappeared"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-11
 
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
