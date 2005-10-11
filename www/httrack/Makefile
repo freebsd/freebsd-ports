@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.httrack.com/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	andrew.nau.ua@gmail.com
 COMMENT=	Easy-to-use offline browser utility and website copier
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
