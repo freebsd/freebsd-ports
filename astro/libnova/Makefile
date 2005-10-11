@@ -19,12 +19,13 @@ USE_GNOME=	gnometarget lthack
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
+USE_GCC=	3.3
 
 .include <bsd.port.pre.mk>
 
-#.if ${OSVERSION}<503000
-#IGNORE=		Required FreeBSD 5.3 or higher
-#.endif
+.if ${OSVERSION}<503000
+IGNORE=		Requires FreeBSD 5.3 or higher
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
