@@ -1,30 +1,29 @@
-# New ports collection makefile for:	kawa
-# Date created:		23 January 2002
-# Whom:			zach@neurosoft.org
+# New ports collection makefile for:	Kawa
+# Date created:				23 January 2002
+# Whom:					Zach Garner <zach@neurosoft.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=		kawa
 PORTVERSION=		1.7
-CATEGORIES=		lang scheme
+CATEGORIES=		lang scheme java
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	kawa
 
 MAINTAINER=		ports@FreeBSD.org
-COMMENT=	Java-based Scheme implementation
+COMMENT=		Java-based Scheme implementation
 
-BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
+BUILD_DEPENDS=		gsed:${PORTSDIR}/textproc/gsed
 
-USE_JAVA=	1.2+
-USE_PERL5_BUILD=YES
-NEED_JAVAC=	YES
+USE_JAVA=		1.2+
+USE_PERL5_BUILD=	yes
+NEED_JAVAC=		yes
+CONFIGURE_ARGS=		--enable-kawa-frontend --program-prefix=''
+GNU_CONFIGURE=		yes
 
-MAN1=		kawa.1
-INFO=		kawa kawa-tour
-
-CONFIGURE_ARGS=	--enable-kawa-frontend --program-prefix=''
-GNU_CONFIGURE=	yes
+MAN1=			kawa.1
+INFO=			kawa kawa-tour
 
 pre-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi \
