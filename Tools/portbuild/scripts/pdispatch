@@ -69,7 +69,7 @@ while `true`; do
   chroot=
   while [ -z "${host}" -o -z "${chroot}" ]; do
     chroot=
-    host=$(lockf ${pb}/${arch}/queue/.lock ${pb}/scripts/getmachine ${pb} ${arch} ${branch})
+    host=$(lockf -k ${pb}/${arch}/queue/.lock ${pb}/scripts/getmachine ${pb} ${arch} ${branch})
     # If ulist is empty, then all build machines are busy, so try again in 15 seconds.
     if [ -z "${host}" ]; then
       sleep 15
@@ -79,7 +79,7 @@ while `true`; do
       chroot=$(ssh -a -n ${client_user}@${host} ${sudo_cmd} ${pb}/scripts/claim-chroot ${arch} ${branch} ${pkgname})
       if [ -z "${chroot}" ]; then
         echo "Failed to claim chroot on ${host}"
-        lockf ${pb}/${arch}/queue/.lock ${pb}/scripts/releasemachine ${arch} ${host}
+        lockf -k ${pb}/${arch}/queue/.lock ${pb}/scripts/releasemachine ${arch} ${host}
       fi
     fi
   done
@@ -107,7 +107,7 @@ while `true`; do
     test -f ${pb}/${arch}/${branch}/packages/All/${pkgname}${PKGSUFFIX} && \
       touch ${pb}/${arch}/${branch}/packages/All/${pkgname}${PKGSUFFIX}
     rm -f ${pb}/${arch}/${branch}/errors/${pkgname}.log
-    lockf ${pb}/${arch}/${branch}/failure.lock ${pb}/scripts/buildsuccess ${arch} ${branch} ${pkgname}
+    lockf -k ${pb}/${arch}/${branch}/failure.lock ${pb}/scripts/buildsuccess ${arch} ${branch} ${pkgname}
     log=${pb}/${arch}/${branch}/logs/$pkgname.log
     if grep -q "even though it is marked BROKEN" ${log}; then
       echo | mail -s "${pkgname} BROKEN but built on ${arch} ${branch}" kris@FreeBSD.org krion@FreeBSD.org
@@ -123,12 +123,12 @@ while `true`; do
     if ! grep -q "even though it is marked BROKEN" ${log}; then
       tail -1000 ${log} | mail -s "${pkgname} failed on ${arch} ${branch}" kris@FreeBSD.org krion@FreeBSD.org
     fi
-    lockf ${pb}/${arch}/${branch}/failure.lock ${pb}/scripts/buildfailure ${arch} ${branch} ${pkgname}
+    lockf -k ${pb}/${arch}/${branch}/failure.lock ${pb}/scripts/buildfailure ${arch} ${branch} ${pkgname}
   fi
   
   ssh -a -n ${client_user}@${host} ${sudo_cmd} ${pb}/scripts/clean-chroot ${arch} ${branch} ${chroot} ${noclean}
   
-  lockf ${pb}/${arch}/queue/.lock ${pb}/scripts/releasemachine ${arch} ${host}
+  lockf -k ${pb}/${arch}/queue/.lock ${pb}/scripts/releasemachine ${arch} ${host}
 
   if grep -q "^build of .*ended at" ${pb}/${arch}/${branch}/logs/${pkgname}.log; then
     exit ${error}
