@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier
-PORTVERSION=	0.50.1
+PORTVERSION=	0.52.1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -15,7 +15,8 @@ MAINTAINER=	yds@CoolRat.org
 COMMENT=	Courier SMTP IMAP POP3 HTTP mail server suite
 
 BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
-LIB_DEPENDS=	fam.0:${PORTSDIR}/devel/fam
+LIB_DEPENDS=	fam:${PORTSDIR}/devel/fam \
+		pcre:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base \
 		${LOCALBASE}/share/sysconftool/sysconftool:${PORTSDIR}/devel/sysconftool \
 		${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support \
@@ -264,6 +265,9 @@ pre-everything::
 	@${ECHO_MSG} "===> --------------------------------------------------------"
 	@${ECHO_MSG} "===>	Run 'make config' to (re)configure ${PKGNAME}"
 	@${ECHO_MSG} "===> --------------------------------------------------------"
+
+pre-patch:
+	@${CP} ${TEMPLATES}/config.guess ${TEMPLATES}/config.sub ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@datadir@|@sysconfdir@|g' \
