@@ -19,6 +19,8 @@ COMMENT=	Internationalization library for Perl
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Incomplete pkg-plist
+
 PERL_CONFIGURE=	yes
 USE_GETTEXT=	yes
 

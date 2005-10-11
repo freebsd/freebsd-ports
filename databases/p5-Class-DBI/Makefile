@@ -27,6 +27,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accesso
 		${SITE_PERL}/Class/Trigger.pm:${PORTSDIR}/devel/p5-Class-Trigger
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Incomplete pkg-plist
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Class::DBI.3 Class::DBI::Attribute.3 \
