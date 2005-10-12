@@ -11372,6 +11372,7 @@ sisc		ports/lang/sisc
 sisctrl		ports/x11/sisctrl
 sitebar		ports/www/sitebar
 sitecopy	ports/www/sitecopy
+sitemapgen	ports/www/sitemapgen
 sitescooper	ports/palm/sitescooper
 six		ports/games/six
 sixxs-aiccu	ports/net/sixxs-aiccu
