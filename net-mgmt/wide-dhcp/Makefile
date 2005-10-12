@@ -12,8 +12,7 @@ PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/ \
 		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/wide-dhcp/ \
-		ftp://ftp.st.ryukoku.ac.jp/pub/network/dhcp/wide/ \
-		ftp://ftp.sage-au.org.au/pub/network/boot/wide-dhcp/
+		ftp://ftp.st.ryukoku.ac.jp/pub/network/dhcp/wide/
 DISTNAME=	dhcp-1.4.0p6
 
 MAINTAINER=	ports@FreeBSD.org
