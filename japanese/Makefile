@@ -411,6 +411,7 @@
     SUBDIR += wordnet-fpw
     SUBDIR += wwasw-fpw
     SUBDIR += xchat
+    SUBDIR += xdtp
     SUBDIR += xdvik
     SUBDIR += xemacs-devel-canna+freewnn
     SUBDIR += xemacs-devel-canna+wnn6
