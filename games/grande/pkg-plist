@@ -63,10 +63,10 @@ games/grande/bmp/back3.bmp
 games/grande/bmp/back2.bmp
 games/grande/bmp/back1.bmp
 
-@dirrm games/grande
 @dirrm games/grande/bmp
 @dirrm games/grande/stg
 @dirrm games/grande/wav
+@dirrm games/grande
 
-@dirrm share/grande
 @dirrm share/grande/score
+@dirrm share/grande
