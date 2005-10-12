@@ -9,7 +9,8 @@ PORTNAME=	Cflow
 PORTVERSION=	1.051
 PORTREVISION=	2
 CATEGORIES=	net-mgmt perl5
-MASTER_SITES=	http://net.doit.wisc.edu/~plonka/Cflow/
+MASTER_SITES=	http://net.doit.wisc.edu/~plonka/Cflow/ \
+		http://net.doit.wisc.edu/~plonka/Cflow/old/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
