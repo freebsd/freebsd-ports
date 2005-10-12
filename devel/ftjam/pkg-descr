@@ -1,0 +1,20 @@
+[ excerpt from developer's www site ]
+
+Jam is a small open-source build tool that can be used as a replacement
+for Make. Even though Jam is a lot simpler to use than Make, it is
+far more powerful and easy to master. It already works on a large
+variety of platforms (Unix, Windows, OS/2, VMS, MacOS, BeOS, etc..),
+it is trivial to port, and its design is sufficiently clear to allow
+any average programmer to extend it with advanced features at will.
+
+The main differences between Jam and Make are the following:
+
+- Jam uses "Jamfiles" instead of "Makefiles".
+- Jamfiles do not normally contain toolset-specific rules or actions.
+  They're thus portable among distinct compilers
+- Jamfiles are a lot simpler than Makefiles to write and understand,
+  while providing the same functionality, and much, much more !!
+
+WWW: http://freetype.sourceforge.net/jam/
+
+-- lioux@FreeBSD.org

@@ -1,0 +1,51 @@
+# New ports collection makefile for:	FTJam
+# Date created:		Wed Oct 12 03:26:39 UTC 2005
+# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ftjam
+PORTVERSION=	2.3.5
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	freetype
+
+MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Small build tool that can be used as a replacement for make(1)
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_REINPLACE=	yes
+
+INSTALL_WRKSRC=	${WRKSRC}/bin.freebsd
+
+.ifndef(NOPORTDOCS)
+PORTDOCS=	\
+		Jam.html \
+		Jambase.html \
+		Jamfile.html \
+		Porting \
+		README \
+		RELNOTES \
+		jam.c
+.endif
+
+PLIST_FILES=	bin/${PORTNAME}
+
+do-configure:
+	@${REINPLACE_CMD} -E \
+		-e 's|^(CC[[:space:]]*=).*$$|\1${CC}|' \
+		-e 's|^(CFLAGS[[:space:]]*=).*$$|\1${CFLAGS}|' \
+		${BUILD_WRKSRC}/${MAKEFILE}
+
+do-install:
+.ifndef(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+. for file in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+. endfor
+.endif
+	@${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/jam ${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>
