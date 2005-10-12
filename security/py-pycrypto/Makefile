@@ -7,7 +7,7 @@
 
 PORTNAME=	pycrypto
 PORTVERSION=	2.0.1
-CATEGORIES=	security
+CATEGORIES=	security python
 MASTER_SITES=	http://www.amk.ca/files/python/crypto/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
