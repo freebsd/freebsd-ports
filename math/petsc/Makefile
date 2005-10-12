@@ -9,12 +9,13 @@ PORTNAME=	petsc
 PORTVERSION=	2.3.0
 PORTREVISION=	3
 CATEGORIES=	math parallel
-MASTER_SITES=	ftp://info.mcs.anl.gov/pub/petsc/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. software_old
-DISTNAME=	v${PORTVERSION}.${PORTNAME}
+MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
+DISTNAME=	v${PORTVERSION}-${PATCHLEVEL}.${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable, Extensible Toolkit for Scientific computation
+
+PATCHLEVEL=	36
 
 HAS_CONFIGURE=		yes
 USE_PYTHON=		yes
