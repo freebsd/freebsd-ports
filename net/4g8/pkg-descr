@@ -5,4 +5,4 @@ host. Utilizing ARP cache poisoning, packet capture, and packet
 reconstruction techniques, it works with nearly all TCP, ICMP,
 and UDP IPv4 traffic flows.
 
-WWW: http://forgate.sf.net
+WWW: http://forgate.sourceforge.net/
