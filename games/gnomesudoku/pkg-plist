@@ -68,3 +68,5 @@ share/pixmaps/sudoku.png
 @dirrm share/gnome-sudoku
 @dirrm %%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies
 @dirrm %%PYTHON_SITELIBDIR%%/gnome_sudoku
+@unexec /bin/rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/%%PYTHON_LIBDIR%% 2>/dev/null || /usr/bin/true
