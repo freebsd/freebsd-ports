@@ -15,8 +15,8 @@ DISTNAME=	${PORTNAME}-KXL-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Zanac type game
 
-BUILD_DEPENDS=	${X11BASE}/lib/libKXL-1.1.7.so:${PORTSDIR}/games/kxl
-RUN_DEPENDS=	${X11BASE}/lib/libKXL-1.1.7.so:${PORTSDIR}/games/kxl
+BUILD_DEPENDS=	${X11BASE}/lib/libKXL-1.1.7.so:${PORTSDIR}/devel/kxl
+RUN_DEPENDS=	${X11BASE}/lib/libKXL-1.1.7.so:${PORTSDIR}/devel/kxl
 
 NO_CDROM=	Possible copyright infringement
 
