@@ -12,8 +12,10 @@ etc/lftp.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/FEATURES
+%%DATADIR%%/convert-netscape-cookies
 %%DATADIR%%/import-ncftp
 %%DATADIR%%/import-netscape
+%%DATADIR%%/verify-file
 %%NLS%%share/locale/de/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/es/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/lftp.mo

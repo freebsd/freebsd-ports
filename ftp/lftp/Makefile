@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTVERSION=	3.3.0
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/net/ftp/lftp/ \
 		ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/ \
@@ -49,9 +48,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 
 OPTIONS=	GNUTLS "With GnutTLS support" off \
 		OPENSSL "With OpenSSL support" on \
-		SOCKS4 "With socks4 support" off \
-		SOCKS5 "With socks5 support" off \
-		SOCKS_DANTE "With socksdante support" off \
 		NLS "With i18n support" on
 
 .include <bsd.port.pre.mk>
@@ -64,16 +60,6 @@ LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 .if !defined(WITHOUT_OPENSSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--with-openssl
-.endif
-
-.if defined(WITH_SOCKS4)
-CONFIGURE_ARGS+=	--with-socks
-.endif
-.if defined(WITH_SOCKS5)
-CONFIGURE_ARGS+=	--with-socks5
-.endif
-.if defined(WITH_SOCKS_DANTE)
-CONFIGURE_ARGS+=	--with-socksdante
 .endif
 
 .if !defined(WITHOUT_NLS)
