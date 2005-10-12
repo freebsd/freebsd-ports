@@ -1,22 +1,20 @@
-From <http://www.R-project.org/about.html>:
+From <http://cran.R-project.org/doc/FAQ/R-FAQ.html#What-is-R_003f>:
 
-    R is a language and environment for statistical computing and graphics.
-    It is a GNU project which is similar to the S language and environment
-    which was developed at Bell Laboratories (formerly AT&T, now Lucent
-    Technologies) by John Chambers and colleagues. R can be considered as a
-    different implementation of S. There are some important differences,
-    but much code written for S runs unaltered under R. 
+R is a system for statistical computation and graphics. It consists of
+a language plus a run-time environment with graphics, a debugger,
+access to certain system functions, and the ability to run programs
+stored in script files.
 
-    R provides a wide variety of statistical (linear and nonlinear modelling,
-    classical statistical tests, time-series analysis, classification,
-    clustering, ...) and graphical techniques, and is highly extensible.
-    The S language is often the vehicle of choice for research in statistical
-    methodology, and R provides an Open Source route to participation in that
-    activity. 
-
-    One of R's strengths is the ease with which well-designed
-    publication-quality plots can be produced, including mathematical symbols
-    and formulae where needed. Great care has been taken over the defaults for
-    the minor design choices in graphics, but the user retains full control. 
+The core of R is an interpreted computer language which allows branching
+and looping as well as modular programming using functions.  Most of the
+user-visible functions in R are written in R. It is possible for the user
+to interface to procedures written in the C, C++, or FORTRAN languages
+for efficiency. The R distribution contains functionality for a large
+number of statistical procedures. Among these are: linear and generalized
+linear models, nonlinear regression models, time series analysis, classical
+parametric and nonparametric tests, clustering and smoothing. There is also
+a large set of functions which provide a flexible graphical environment for
+creating various kinds of data presentations. Additional modules ("add-on
+packages") are available for a variety of specific purposes.
 
 WWW: http://www.R-project.org/
