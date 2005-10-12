@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${DOCSDIR}
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lltdl"
 USE_GMAKE=	yes
 USE_GNOME=	glib12 gtk12
-INSTALL_SHLIB=	yes
+INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 
 MAN1=	netdude.1

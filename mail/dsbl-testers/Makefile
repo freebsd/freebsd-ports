@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/firestring.h:${PORTSDIR}/misc/firestring \
 		${LOCALBASE}/include/firedns.h:${PORTSDIR}/dns/firedns
 
 HAS_CONFIGURE=	yes
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
