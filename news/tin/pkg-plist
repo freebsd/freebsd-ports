@@ -19,3 +19,5 @@ share/locale/fr/LC_MESSAGES/tin.mo
 share/locale/ru/LC_MESSAGES/tin.mo
 share/locale/rw/LC_MESSAGES/tin.mo
 share/locale/tr/LC_MESSAGES/tin.mo
+@unexec rmdir %D/share/locale/rw/LC_MESSAGES > /dev/null 2>&1 || true
+@unexec rmdir %D/share/locale/rw > /dev/null 2>&1 || true
