@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-DBI
-PORTVERSION=	3.0.9
+PORTVERSION=	3.0.10
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -26,8 +26,6 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accesso
 		${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version \
 		${SITE_PERL}/Class/Trigger.pm:${PORTSDIR}/devel/p5-Class-Trigger
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		Incomplete pkg-plist
 
 PERL_CONFIGURE=	yes
 
