@@ -14,6 +14,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	4g8 is a tool that allows you to capture traffic
 
+DEPRECATED=	"no longer actively maintained, author suggests ettercap instead"
+EXPIRATION_DATE=	2006-01-12
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel
 
 GNU_CONFIGURE=	yes
