@@ -1,112 +1,34 @@
---- Makefile.orig	Mon Jan 19 17:41:34 2004
-+++ Makefile	Sun Jan 30 21:56:53 2005
-@@ -5,7 +5,6 @@
+--- Makefile.orig	Mon Sep 26 07:20:30 2005
++++ Makefile	Thu Oct 13 08:35:14 2005
+@@ -5,7 +5,7 @@
  ########################################
  
  # installation prefix
 -PREFIX=/usr/local
++#PREFIX=/usr/local
  
  ########################################
  #
-@@ -15,8 +14,8 @@
- 
+@@ -16,8 +16,8 @@
  OPTIMIZE=#-O6 -march=pentium4 -mfpmath=sse -fomit-frame-pointer -funroll-loops
- DEBUG=-ggdb
--CXXFLAGS=-pipe -Wall $(OPTIMIZE) $(DEBUG) `sdl-config --cflags` -DPREFIX=\"$(PREFIX)\"
--LNFLAGS=-pipe -lSDL_ttf -lfreetype `sdl-config --libs` -lz
-+CXXFLAGS=-pipe -Wall $(OPTIMIZE) $(DEBUG) `${SDL_CONFIG} --cflags` -DPREFIX=\"$(PREFIX)\"
-+LNFLAGS=-pipe -lSDL_ttf -lfreetype `${SDL_CONFIG} --libs` -lz
+ PROFILER=#-pg
+ DEBUG=#-ggdb
+-CXXFLAGS=-pipe -Wall $(OPTIMIZE) $(DEBUG) `sdl-config --cflags` -DPREFIX=L\"$(PREFIX)\" $(PROFILER)
+-LNFLAGS=-pipe -lSDL_ttf -lfreetype `sdl-config --libs` -lz -lSDL_mixer $(PROFILER)
++CXXFLAGS=-pipe -Wall $(OPTIMIZE) $(DEBUG) `${SDL_CONFIG} --cflags` -DPREFIX=L\"$(PREFIX)\" $(PROFILER)
++LNFLAGS=-pipe -lSDL_ttf -lfreetype `${SDL_CONFIG} --libs` -lz -lSDL_mixer $(PROFILER)
+ INSTALL=install
  
  TARGET=einstein
- 
-@@ -52,86 +51,7 @@
- run: $(TARGET)
+@@ -61,8 +61,9 @@
  	./$(TARGET)
  
--# DO NOT DELETE
--
--puzgen.o: /usr/include/stdlib.h /usr/include/features.h
--puzgen.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
--puzgen.o: /usr/lib/gcc-lib/i686-pc-linux-gnu/3.3.1/include/stddef.h
--puzgen.o: /usr/include/stdio.h /usr/include/bits/types.h
--puzgen.o: /usr/include/bits/wordsize.h /usr/include/bits/typesizes.h
--puzgen.o: /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h
--puzgen.o: /usr/include/bits/wchar.h /usr/include/gconv.h
--puzgen.o: /usr/lib/gcc-lib/i686-pc-linux-gnu/3.3.1/include/stdarg.h
--puzgen.o: /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h
--puzgen.o: puzgen.h iconset.h exceptions.h utils.h resources.h widgets.h
--puzgen.o: font.h
--main.o: /usr/include/stdlib.h /usr/include/features.h
--main.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
--main.o: /usr/lib/gcc-lib/i686-pc-linux-gnu/3.3.1/include/stddef.h main.h
--main.o: exceptions.h screen.h resources.h random.h utils.h widgets.h font.h
--main.o: storage.h
--screen.o: screen.h exceptions.h
--resources.o: /usr/include/zlib.h /usr/include/zconf.h resources.h
--resources.o: exceptions.h main.h screen.h random.h utils.h widgets.h font.h
--utils.o: /usr/include/stdio.h /usr/include/features.h
--utils.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
--utils.o: /usr/lib/gcc-lib/i686-pc-linux-gnu/3.3.1/include/stddef.h
--utils.o: /usr/include/bits/types.h /usr/include/bits/wordsize.h
--utils.o: /usr/include/bits/typesizes.h /usr/include/libio.h
--utils.o: /usr/include/_G_config.h /usr/include/wchar.h
--utils.o: /usr/include/bits/wchar.h /usr/include/gconv.h
--utils.o: /usr/lib/gcc-lib/i686-pc-linux-gnu/3.3.1/include/stdarg.h
--utils.o: /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h
--utils.o: /usr/include/stdlib.h /usr/include/sys/time.h /usr/include/time.h
--utils.o: /usr/include/bits/time.h /usr/include/sys/select.h
--utils.o: /usr/include/bits/select.h /usr/include/bits/sigset.h
--utils.o: /usr/include/sys/types.h /usr/include/sys/stat.h
--utils.o: /usr/include/bits/stat.h /usr/include/unistd.h
--utils.o: /usr/include/bits/posix_opt.h /usr/include/bits/confname.h utils.h
--utils.o: resources.h exceptions.h widgets.h font.h main.h screen.h random.h
--game.o: main.h exceptions.h screen.h resources.h random.h utils.h widgets.h
--game.o: font.h puzzle.h iconset.h puzgen.h verthints.h horhints.h topscores.h
--game.o: opensave.h game.h options.h
--widgets.o: widgets.h font.h main.h exceptions.h screen.h resources.h random.h
--widgets.o: utils.h
--iconset.o: /usr/include/string.h /usr/include/features.h
--iconset.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
--iconset.o: /usr/lib/gcc-lib/i686-pc-linux-gnu/3.3.1/include/stddef.h
--iconset.o: iconset.h utils.h resources.h exceptions.h widgets.h font.h
--puzzle.o: puzzle.h iconset.h puzgen.h widgets.h font.h main.h exceptions.h
--puzzle.o: screen.h resources.h random.h utils.h
--rules.o: puzgen.h iconset.h utils.h resources.h exceptions.h widgets.h font.h
--rules.o: main.h screen.h random.h
--random.o: random.h utils.h resources.h exceptions.h widgets.h font.h
--horhints.o: horhints.h iconset.h puzgen.h widgets.h font.h main.h
--horhints.o: exceptions.h screen.h resources.h random.h utils.h
--menu.o: main.h exceptions.h screen.h resources.h random.h utils.h widgets.h
--menu.o: font.h topscores.h opensave.h game.h puzgen.h iconset.h verthints.h
--menu.o: horhints.h puzzle.h descr.h options.h
--font.o: font.h main.h exceptions.h screen.h resources.h random.h utils.h
--font.o: widgets.h
--conf.o: /usr/include/ctype.h /usr/include/features.h /usr/include/sys/cdefs.h
--conf.o: /usr/include/gnu/stubs.h /usr/include/bits/types.h
--conf.o: /usr/include/bits/wordsize.h
--conf.o: /usr/lib/gcc-lib/i686-pc-linux-gnu/3.3.1/include/stddef.h
--conf.o: /usr/include/bits/typesizes.h /usr/include/endian.h
--conf.o: /usr/include/bits/endian.h /usr/include/string.h
--conf.o: /usr/include/stdlib.h /usr/include/stdio.h /usr/include/libio.h
--conf.o: /usr/include/_G_config.h /usr/include/wchar.h
--conf.o: /usr/include/bits/wchar.h /usr/include/gconv.h
--conf.o: /usr/lib/gcc-lib/i686-pc-linux-gnu/3.3.1/include/stdarg.h
--conf.o: /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h conf.h
--storage.o: storage.h tablestorage.h conf.h
--tablestorage.o: tablestorage.h storage.h conf.h
--topscores.o: topscores.h widgets.h font.h storage.h utils.h resources.h
--topscores.o: exceptions.h
--opensave.o: /usr/include/time.h /usr/include/bits/types.h
--opensave.o: /usr/include/features.h /usr/include/sys/cdefs.h
--opensave.o: /usr/include/gnu/stubs.h /usr/include/bits/wordsize.h
--opensave.o: /usr/lib/gcc-lib/i686-pc-linux-gnu/3.3.1/include/stddef.h
--opensave.o: /usr/include/bits/typesizes.h exceptions.h utils.h resources.h
--opensave.o: widgets.h font.h storage.h opensave.h game.h puzgen.h iconset.h
--opensave.o: verthints.h horhints.h puzzle.h
--descr.o: widgets.h font.h
--options.o: options.h widgets.h font.h storage.h main.h exceptions.h screen.h
--options.o: resources.h random.h
-+install:
-+	${BSD_INSTALL_PROGRAM} einstein ${PREFIX}/bin
-+	mkdir -p ${PREFIX}/share/einstein
-+	${BSD_INSTALL_DATA} einstein.res ${PREFIX}/share/einstein/einstein.res
+ install: $(TARGET)
+-	$(INSTALL) -s -D $(TARGET) $(PREFIX)/bin/$(TARGET)
+-	$(INSTALL) -D einstein.res $(PREFIX)/share/einstein/res/einstein.res
++	$(INSTALL) $(TARGET) $(PREFIX)/bin/$(TARGET)
++	mkdir -p  $(PREFIX)/share/einstein/res/
++	$(INSTALL) einstein.res $(PREFIX)/share/einstein/res/einstein.res
+ 	
+ # DO NOT DELETE THIS LINE -- make depend depends on it.
+ 
