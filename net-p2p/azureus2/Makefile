@@ -16,6 +16,8 @@ DISTNAME=	Azureus_${PORTVERSION}_source
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A BitTorrent client written in Java
 
+EXTRACT_DEPENDS= \
+		${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse
 BUILD_DEPENDS=	\
 		${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j \
 		${LOCALBASE}/eclipse/plugins/org.eclipse.swt_${ECLIPSE_VERSION}.0.jar:${PORTSDIR}/java/eclipse \

@@ -17,6 +17,8 @@ DISTNAME=	${PORTNAME}-src
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A Java GUI for the MLDonkey core
 
+EXTRACT_DEPENDS= \
+	${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse
 BUILD_DEPENDS=	\
 	${LOCALBASE}/eclipse/plugins/org.eclipse.jface_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse \
 	${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse \
