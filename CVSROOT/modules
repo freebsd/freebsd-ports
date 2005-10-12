@@ -8933,6 +8933,7 @@ p5-type1inst	ports/x11-fonts/p5-type1inst
 p5-version	ports/devel/p5-version
 p5-vpopmail	ports/mail/p5-vpopmail
 p5-xmltv	ports/textproc/p5-xmltv
+p5-webservice-validator-css-w3c		ports/www/p5-webservice-validator-css-w3c
 p5-webservice-validator-html-w3c	ports/www/p5-webservice-validator-html-w3c
 p65		ports/devel/p65
 p7zip		ports/archivers/p7zip
