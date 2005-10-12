@@ -70,7 +70,7 @@ CONFIGURE_ARGS+=	--with-pspell \
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 .endif
 
-.if exists(${LOCALBASE}/lib/libqt-mt.prl)
+.if exists(${X11BASE}/lib/libqt-mt.prl)
 QT_PRESENT=	on
 .else
 QT_PRESENT=	off
