@@ -6,27 +6,33 @@
 #
 
 PORTNAME=	vmsbackup
-PORTVERSION=	4.0
+PORTVERSION=	4.1.1
 CATEGORIES=	emulators sysutils
-MASTER_SITES=	#
-DISTNAME=	${PORTNAME}-${PORTVERSION}
-EXTRACT_SUFX=	.tar
+MASTER_SITES=	ftp://ftp.lp.se/free-vms/
+DISTNAME=	VMSBACKUP4-1-1
+EXTRACT_SUFX=	.ZIP
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reads VMS BACKUP tapes
 
-BROKEN=		"distfile disappeared"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=	2005-12-09
-
-MAN1=		vmsbackup.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/vmsbackup
-MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 -f
+EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 USE_REINPLACE=  yes
+ALL_TARGET=	vmsbackup
+
+PLIST_FILES=	bin/vmsbackup
+MAN1=		vmsbackup.1
+MANCOMPRESSED=	no
+
+do-extract:
+	${MKDIR} ${WRKSRC}
+	unzip ${DISTDIR}/${DISTNAME} -d ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#gets(ans);#fgets(ans, 80, stdin);#' ${WRKSRC}/vmsbackup.c
 	@${REINPLACE_CMD} -e 's#"getopt.h"#<unistd.h>#' ${WRKSRC}/getoptmain.c
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/vmsbackup ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
