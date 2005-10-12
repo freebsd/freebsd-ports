@@ -39,7 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>zope28</name>
-	<range><ge>2.6.0</ge><lt>2.8.1_2</lt></range>
+	<range><ge>2.6.0</ge><le>2.8.1_2</le></range>
       </package>
     </affects>
     <description>
