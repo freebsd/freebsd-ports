@@ -1,0 +1,13 @@
+--- pico/makefile.bsf.orig	Tue Oct 23 15:18:36 2001
++++ pico/makefile.bsf	Tue Oct 11 15:52:20 2005
+@@ -56,8 +56,8 @@
+ #
+ # dependencies for the Unix versions of pico and libpico.a
+ #
+-all:		pico pilot
+-pico pilot:	libpico.a
++all:		pilot
++pilot:	libpico.a
+ 
+ pico:		main.o
+ 		$(CC) $(CFLAGS) main.o libpico.a $(LIBS) -o pico
