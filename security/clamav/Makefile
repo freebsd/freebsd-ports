@@ -25,7 +25,7 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 
 OPTIONS=	MILTER "Compile the milter interface" Off \
 		CURL "Support URL downloading" Off \
-		UNRAR "Support for external Unrar library" Off
+		LIBUNRAR "Support for external Unrar library" Off
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
