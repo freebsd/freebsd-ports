@@ -764,6 +764,7 @@
     SUBDIR += screem
     SUBDIR += script4rss
     SUBDIR += selenium
+    SUBDIR += servlet-api
     SUBDIR += shttpd
     SUBDIR += sidplug
     SUBDIR += simplog
