@@ -1,0 +1,12 @@
+newportsversioncheck/bin/README
+newportsversioncheck/bin/apply_restrictions.pl
+newportsversioncheck/bin/check_data.pl
+newportsversioncheck/bin/delete_dupes.pl
+newportsversioncheck/bin/find_new_versions.pl
+newportsversioncheck/bin/find_new_versions.sh
+newportsversioncheck/bin/init_db.sh
+newportsversioncheck/bin/mail_maintainers.pl
+newportsversioncheck/bin/make_html.pl
+newportsversioncheck/bin/restart_database.pl
+@dirrm newportsversioncheck/bin
+@unexec rmdir %D/newportsversioncheck 2>/dev/null || true
