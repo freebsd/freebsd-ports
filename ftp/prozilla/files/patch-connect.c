@@ -1,5 +1,5 @@
---- src/connect.c.ori	Fri Aug 17 20:38:25 2001
-+++ src/connect.c	Sat Feb  7 02:11:10 2004
+--- src/connect.c.orig	Sat Feb 26 16:47:17 2005
++++ src/connect.c	Sun Oct  9 13:06:34 2005
 @@ -24,9 +24,11 @@
  #include <stdio.h>
  #include <stdlib.h>
@@ -12,7 +12,7 @@
  #include <netinet/in.h>
  #include <netinet/ip.h>
  #include <netdb.h>
-@@ -42,51 +44,58 @@
+@@ -42,53 +44,52 @@
  #include "runtime.h"
  #include "debug.h"
  
@@ -20,7 +20,7 @@
 +
  uerr_t connect_to_server(int *sock, char *name, int port, int timeout)
  {
-     unsigned int portnum;
+-    unsigned int portnum;
 +    char szPort[10];
      int status;
 -    struct sockaddr_in server;
@@ -35,18 +35,17 @@
 +    struct addrinfo hints, *res=NULL;
 +    struct addrinfo *res0=NULL;
 +    int error;
-+    
-+    memset(&hints, 0, sizeof(hints));
-+    memset(szPort, 0, sizeof(szPort));
-+    sprintf(szPort, "%d", port);
-+    hints.ai_family = AF_INET;
-+    hints.ai_socktype = SOCK_STREAM;
  
      assert(name != NULL);
  
 -    portnum = port;
 -    memset((void *) &server, 0, sizeof(server));
--
++    memset(&hints, 0, sizeof(hints));
++    memset(szPort, 0, sizeof(szPort));
++    snprintf(szPort, sizeof(szPort), "%d", port);
++    hints.ai_family = AF_INET;
++    hints.ai_socktype = SOCK_STREAM;
+ 
      message("Resolving %s", name);
  
 -    hp=k_gethostname (name,&hostbuf,&tmphstbuf,&hstbuflen);
@@ -56,14 +55,6 @@
 -	message("Failed to resolve %s", name);
 -	return HOSTERR;
 -    }
-+    pthread_mutex_lock(&__thread_safe_lock);
- 
--	message("Resolved %s !", name);
--
--    
--    memcpy((void *) &server.sin_addr, hp->h_addr, hp->h_length);
--    server.sin_family = hp->h_addrtype;
--    server.sin_port = htons(portnum);
 +    error = getaddrinfo(name, szPort, &hints, &res);
 +    if (error) {
 +            message("Failed to resolve %s", name);
@@ -71,13 +62,22 @@
 +            freeaddrinfo(res);
 +            return HOSTERR;
 +        }
-+
-+    message("Resolved %s !", name);
-+
+ 
+     message("Resolved %s !", name);
+-    
+-    memcpy((void *) &server.sin_addr, hp->h_addr, hp->h_length);
+-    server.sin_family = hp->h_addrtype;
+-    server.sin_port = htons(portnum);
+ 
+-    if (tmphstbuf)
+-    {
+-	free(tmphstbuf);
+-	tmphstbuf = NULL;
+-    }
 +    res0 = (struct addrinfo *) malloc(sizeof(struct addrinfo));
 +    memcpy(res0, res, sizeof(struct addrinfo));
 +    freeaddrinfo(res);
-+    pthread_mutex_unlock(&__thread_safe_lock); 
++    pthread_mutex_unlock(&__thread_safe_lock);
  
      /*
       * create socket 
@@ -86,15 +86,11 @@
 +    if ((*sock = socket(res0->ai_family, res0->ai_socktype, 0)) < 1)
      {
  	message("unable to create socket\n");
--	free(tmphstbuf);
-+        free(res0);
++	free(res0);
  	return CONSOCKERR;
      }
-+
      /*Experimental */
-     flags = fcntl(*sock, F_GETFL, 0);
-     if (flags != -1)
-@@ -96,8 +105,7 @@
+@@ -100,8 +101,7 @@
  
      message("Connecting to server.......");
  
@@ -104,27 +100,26 @@
  
      if (status == -1 && noblock != -1 && errno == EINPROGRESS)
      {
-@@ -135,11 +143,11 @@
+@@ -137,10 +137,13 @@
+     {
+ 	close(*sock);
  
- 	if (errno == ECONNREFUSED)
- 	{
--	    free(tmphstbuf);
-+            free(res0);
+-	if (errno == ECONNREFUSED)
++	if (errno == ECONNREFUSED) {
++	    free(res0);
  	    return CONREFUSED;
- 	} else
- 	{
--	    free(tmphstbuf);
-+            free(res0);
+-	else
++	} else {
++	    free(res0);
  	    return CONERROR;
- 	}
++	}
      } else
-@@ -156,8 +164,9 @@
-     /*    setsockopt(*sock, SOL_SOCKET, SO_KEEPALIVE,
+     {
+ 	flags = fcntl(*sock, F_GETFL, 0);
+@@ -156,6 +159,7 @@
       *         (char *) &opt, (int) sizeof(opt));  
       */
-+
      message("Connect OK!");
--    free(tmphstbuf);
 +    free(res0);
      return NOCONERROR;
  }

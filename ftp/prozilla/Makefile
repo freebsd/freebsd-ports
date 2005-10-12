@@ -6,35 +6,32 @@
 #
 
 PORTNAME=	prozilla
-PORTVERSION=	1.3.7.3
+PORTVERSION=	1.3.7.4
 CATEGORIES=	ftp
 MASTER_SITES=	http://prozilla.genesys.ro/downloads/prozilla/tarballs/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alejandro@varnet.biz
 COMMENT=	ProZilla is a fast download accelerator
 
 USE_GETOPT_LONG=yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-MAN1=	proz.1 prozilla.1
+MAN1=		proz.1 prozilla.1
 
-DOCS=	ANNOUNCE AUTHORS COPYING CREDITS ChangeLog INSTALL FAQ NEWS README TODO
+.if !defined(NOPORTDOCS)
+PORTDOCS=	ANNOUNCE AUTHORS COPYING CREDITS ChangeLog INSTALL FAQ NEWS \
+		README TODO
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|%Ld|%lld|g' ${WRKSRC}/src/*.c ${WRKSRC}/src/*.h
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
