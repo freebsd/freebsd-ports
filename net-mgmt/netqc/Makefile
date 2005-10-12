@@ -9,7 +9,11 @@ PORTNAME=	netqc
 PORTVERSION=	1.2.1
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://web.uni-svishtov.bg/netqc/
+MASTER_SITES=	# disappeared
+
+BROKEN=		"mastersite disappeared"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-12
 
 MAINTAINER=	rvasilev@uni-svishtov.bg
 COMMENT=	Network Monitoring System based on Net-Snmp
