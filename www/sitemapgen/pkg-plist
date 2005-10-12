@@ -1,0 +1,9 @@
+bin/sitemap_gen
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/PKG-INFO
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/example_config.xml
+%%PORTDOCS%%%%DOCSDIR%%/example_urllist.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

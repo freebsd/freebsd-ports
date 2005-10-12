@@ -772,6 +772,7 @@
     SUBDIR += simplog
     SUBDIR += sitebar
     SUBDIR += sitecopy
+    SUBDIR += sitemapgen
     SUBDIR += skytemplate
     SUBDIR += slash
     SUBDIR += smarty
