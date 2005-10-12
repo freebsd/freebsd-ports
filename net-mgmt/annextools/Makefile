@@ -9,13 +9,17 @@ PORTNAME=       annextools
 PORTVERSION=	10.0
 PORTREVISION=	0
 CATEGORIES=     net-mgmt
-MASTER_SITES=   ftp://ftp-support.baynetworks.com/pub/swcode/remacc/microannex_xl/
+MASTER_SITES=   # disappeared
 DISTNAME=	R10.0B-R2.3
 EXTRACT_SUFX=	.tar.Z
 DIST_SUBDIR=	microannex_xl
 
 MAINTAINER=     bms@FreeBSD.org
 COMMENT=	BSD tools for the MicroAnnex-XL Terminal Server
+
+BROKEN=		"mastersite reorganized, directory not on ftp.nortel.com"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-12
 
 WRKSRC=		${WRKDIR}/src
 
