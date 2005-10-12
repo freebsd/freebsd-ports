@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	BitTorrent
-PORTVERSION=	4.1.4
-PORTREVISION=	1
+PORTVERSION=	4.1.6
 PORTEPOCH=	1
 CATEGORIES?=	net python
 MASTER_SITES=	http://www.bittorrent.com/dl/ \
@@ -20,6 +19,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT?=	A peer-to-peer tool for distributing files written in Python
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dns/__init__.py:${PORTSDIR}/dns/py-dnspython \
+		${PYTHON_SITELIBDIR}/twisted/plugins/__init__.py:${PORTSDIR}/devel/py-twistedCore \
 		${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
 
 USE_PYTHON=	yes
@@ -56,8 +56,6 @@ WITHOUT_PSYCO=	yes
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2
 
 PLIST_FILES+=	\
-		bin/maketorrent \
-		bin/bittorrent \
 		share/pixmaps/BitTorrent/bittorrent.ico \
 		share/pixmaps/BitTorrent/broken.png \
 		share/pixmaps/BitTorrent/finished.png \
@@ -69,7 +67,10 @@ PLIST_FILES+=	\
 		share/pixmaps/BitTorrent/play.png \
 		share/pixmaps/BitTorrent/queued.png \
 		share/pixmaps/BitTorrent/remove.png \
-		share/pixmaps/BitTorrent/running.png
+		share/pixmaps/BitTorrent/running.png \
+		share/pixmaps/BitTorrent/status-natted.png \
+		share/pixmaps/BitTorrent/status-running.png \
+		share/pixmaps/BitTorrent/status-stopped.png
 
 PLIST_SUB+=	GUI=""
 .else
@@ -81,7 +82,7 @@ PLIST_SUB+=	GUI="@comment "
 .ifndef(WITHOUT_PSYCO)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
 
-EXTRA_PATCHES+= \
+EXTRA_PATCHES+=	\
 		${FILESDIR}/extra-psyco-patch-bittorrent-console.py \
 		${FILESDIR}/extra-psyco-patch-bittorrent-curses.py \
 		${FILESDIR}/extra-psyco-patch-bittorrent-tracker.py \
@@ -92,11 +93,6 @@ EXTRA_PATCHES+= \
 		${FILESDIR}/extra-psyco-patch-maketorrent-console.py \
 		${FILESDIR}/extra-psyco-patch-maketorrent.py \
 		${FILESDIR}/extra-psyco-patch-torrentinfo-console.py
-
-PLIST_FILES+=	\
-		${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent/PSYCO.py \
-		${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent/PSYCO.pyc \
-		${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent/PSYCO.pyo
 .endif
 
 pre-everything::
@@ -113,11 +109,8 @@ post-patch:
 		${XARGS} -x -n 10 \
 		${REINPLACE_CMD} -E \
 		-e 's|whrandom|random|' \
+		-e 's|reuse=False|reuse=True|' \
 		-e 's|/usr/bin/env python.*|${LOCALBASE}/bin/python|'
-.ifndef(WITHOUT_PSYCO)
-# activate psyco optimization
-	@${ECHO_CMD} 'psyco = 1' > ${WRKSRC}/BitTorrent/PSYCO.py
-.endif
 
 post-install:
 # set proper permissions

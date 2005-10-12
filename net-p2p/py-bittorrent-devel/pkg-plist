@@ -1,9 +1,11 @@
+bin/bittorrent
 bin/bittorrent-console
 bin/bittorrent-curses
 bin/bittorrent-tracker
 bin/changetracker-console
 bin/launchmany-console
 bin/launchmany-curses
+bin/maketorrent
 bin/maketorrent-console
 bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BitTorrent/Choker.py
@@ -63,6 +65,12 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BitTorrent/RawServer.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/RawServer.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/RawServer.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/RawServer_magic.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/RawServer_magic.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/RawServer_magic.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/RawServer_twisted.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/RawServer_twisted.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/RawServer_twisted.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/Rerequester.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/Rerequester.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/Rerequester.pyo
