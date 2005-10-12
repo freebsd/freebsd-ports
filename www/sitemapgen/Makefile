@@ -18,10 +18,7 @@ COMMENT=	A Google sitemap generator
 USE_PYTHON=	yes
 
 NOMAN=		yes
-
-do-build:
-
-do-configure:
+NO_BUILD=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/sitemap_gen.py ${PREFIX}/bin/sitemap_gen
