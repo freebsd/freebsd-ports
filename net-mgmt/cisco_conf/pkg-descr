@@ -10,4 +10,4 @@ number of versions to keep is specified in its configuration file.
 It also provides locking to prevent concurrent editing of the same
 configuration by more than one person.
 
-WWW:	http://rnoc.urc.ac.ru/~anton/projects/ciscoconf/CiscoConf.html
+WWW:	http://www.chelcom.ru/~anton/projects/ciscoconf/CiscoConf.html
