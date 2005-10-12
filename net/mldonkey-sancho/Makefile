@@ -7,7 +7,7 @@
 
 PORTNAME=	sancho
 DISTVERSION=	0.9.4-23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net java
 MASTER_SITES=	http://sancho-gui.sourceforge.net/%SUBDIR%/
 MASTER_SITE_SUBDIR=	dl/tmp94
@@ -18,17 +18,17 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A Java GUI for the MLDonkey core
 
 BUILD_DEPENDS=	\
-	${LOCALBASE}/eclipse/plugins/org.eclipse.jface_${ECLIPSE_VERSION}.0.jar:${PORTSDIR}/java/eclipse \
-	${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.0.jar:${PORTSDIR}/java/eclipse \
+	${LOCALBASE}/eclipse/plugins/org.eclipse.jface_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse \
+	${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse \
 	${JAVALIBDIR}/gnu-regexp.jar:${PORTSDIR}/java/gnu-regexp \
 	${JAVALIBDIR}/trove.jar:${PORTSDIR}/java/trove4j \
 	${JAVALIBDIR}/jsch.jar:${PORTSDIR}/net/jsch
 RUN_DEPENDS=	\
-	${LOCALBASE}/eclipse/plugins/org.eclipse.core.runtime_${ECLIPSE_VERSION}.0.jar:${PORTSDIR}/java/eclipse \
-	${LOCALBASE}/eclipse/plugins/org.eclipse.osgi_${ECLIPSE_VERSION}.0.jar:${PORTSDIR}/java/eclipse \
-	${LOCALBASE}/eclipse/plugins/org.eclipse.jface_${ECLIPSE_VERSION}.0.jar:${PORTSDIR}/java/eclipse \
+	${LOCALBASE}/eclipse/plugins/org.eclipse.core.runtime_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse \
+	${LOCALBASE}/eclipse/plugins/org.eclipse.osgi_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse \
+	${LOCALBASE}/eclipse/plugins/org.eclipse.jface_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse \
 	${LOCALBASE}/eclipse/plugins/org.eclipse.swt_${ECLIPSE_VERSION}.0.jar:${PORTSDIR}/java/eclipse \
-	${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.0.jar:${PORTSDIR}/java/eclipse \
+	${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse \
 	${LOCALBASE}/eclipse/startup.jar:${PORTSDIR}/java/eclipse \
 	${JAVALIBDIR}/gnu-regexp.jar:${PORTSDIR}/java/gnu-regexp \
 	${JAVALIBDIR}/trove.jar:${PORTSDIR}/java/trove4j \
@@ -58,16 +58,15 @@ PLIST_FILES=	\
 # hack for eclipse 3.1
 PLIST_DIRS+=	%%DATADIR%%
 PLIST_FILES+=	\
-		%%DATADIR%%/libswt-atk-gtk-3138.so \
-		%%DATADIR%%/libswt-awt-gtk-3138.so \
-		%%DATADIR%%/libswt-cairo-gtk-3138.so \
-		%%DATADIR%%/libswt-gnome-gtk-3138.so \
-		%%DATADIR%%/libswt-gtk-3138.so \
-		%%DATADIR%%/libswt-pi-gtk-3138.so
-
+		%%DATADIR%%/libswt-atk-gtk-3139.so \
+		%%DATADIR%%/libswt-awt-gtk-3139.so \
+		%%DATADIR%%/libswt-cairo-gtk-3139.so \
+		%%DATADIR%%/libswt-gnome-gtk-3139.so \
+		%%DATADIR%%/libswt-gtk-3139.so \
+		%%DATADIR%%/libswt-pi-gtk-3139.so
 
 post-extract:
-	@${MKDIR} ${WRKDIR}/eclipse && cd ${WRKDIR}/eclipse && ${JAR} -xf ${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.0.jar
+	@${MKDIR} ${WRKDIR}/eclipse && cd ${WRKDIR}/eclipse && ${JAR} -xf ${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.1.jar
 
 do-install:
 # wrapper
@@ -82,8 +81,12 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-ECLIPSE_PORT=		${PORTSDIR}/java/eclipse
-ECLIPSE_VERSION!=	cd ${ECLIPSE_PORT} && ${MAKE} -V PORTVERSION
+#.if exists(${PORTSDIR}/java/eclipse)
+#ECLIPSE_PORT=		${PORTSDIR}/java/eclipse
+#ECLIPSE_VERSION!=	cd ${ECLIPSE_PORT} && ${MAKE} -V PORTVERSION
+#.else
+ECLIPSE_VERSION=        3.1
+#.endif
 
 # build classpath
 BUILD_CLASSPATH=.
