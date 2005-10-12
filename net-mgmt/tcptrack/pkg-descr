@@ -5,7 +5,7 @@ connections in a manner similar to the unix 'top' command. It displays
 source and destination addresses and ports, connection state, idle time, and
 bandwidth usage.
 
-WWW: http://www.rhythm.cx/~steve/devel/tcptrack
+WWW: http://www.rhythm.cx/~steve/devel/tcptrack/
 
 - Squat
 squat@squat.no
