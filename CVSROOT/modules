@@ -11263,6 +11263,7 @@ serialmail	ports/mail/serialmail
 serpentine	ports/sysutils/serpentine
 serveez		ports/net/serveez
 service-config	ports/sysutils/service-config
+servlet-api	ports/www/servlet-api
 ses		ports/math/ses
 setcdboot	ports/sysutils/setcdboot
 setedit		ports/editors/setedit
