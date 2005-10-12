@@ -1,11 +1,40 @@
---- build.orig	Mon Dec  9 09:54:38 2002
-+++ build	Thu Jan 16 00:42:58 2003
-@@ -450,7 +450,7 @@
+--- build.orig	Wed May  4 14:22:22 2005
++++ build	Tue Oct 11 15:49:30 2005
+@@ -451,7 +451,7 @@
+ 	fi
+         echo ''
+ 
+-        echo "Making Pico and Pilot"
++        echo "Making Pilot"
+         cd "$PHOME/pico"
+         eval echo make "$makeargs" -f makefile.$picotarg
+         eval make "$makeargs" -f makefile.$picotarg
+@@ -480,14 +480,13 @@
+         cd "$PHOME"
+         if [ ! -d bin ] ;  then    mkdir bin;        fi
+         cd "$PHOME/bin"
+-        rm -f pine mtest imapd mailutil pico pilot rpload rpdump ipop2d ipop3d
++        rm -f pine mtest imapd mailutil pilot rpload rpdump ipop2d ipop3d
+         if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
+         if [ -s ../mtest/mtest ] ;    then ln ../mtest/mtest mtest    ; fi
+         if [ -s ../mailutil/mailutil ] ; then ln ../mailutil/mailutil mailutil ; fi
+         if [ -s ../imapd/imapd ] ;    then ln ../imapd/imapd imapd    ; fi
+         if [ -s ../ipopd/ipop2d ] ;   then ln ../ipopd/ipop2d ipop2d  ; fi
+         if [ -s ../ipopd/ipop3d ] ;   then ln ../ipopd/ipop3d ipop3d  ; fi
+-        if [ -s ../pico/pico ] ;      then ln ../pico/pico pico       ; fi
+         if [ -s ../pico/pilot ] ;     then ln ../pico/pilot pilot     ; fi
+         if [ -s ../pine/rpload ] ;    then ln ../pine/rpload rpload   ; fi
+         if [ -s ../pine/rpdump ] ;    then ln ../pine/rpdump rpdump   ; fi
+@@ -502,10 +501,10 @@
          cd "$PHOME"
          echo ''
          echo "Links to executables are in bin directory:"
 -        size bin/pine bin/mtest bin/imapd bin/pico bin/pilot bin/rpdump bin/rpload bin/mailutil bin/ipop2d bin/ipop3d
-+        size bin/pine bin/pico bin/pilot bin/rpdump bin/rpload
++        size bin/pine bin/pilot bin/rpdump bin/rpload
  	case $maketarg in
  	    mnt)    echo "Fixing stacksizes ..."
- 		    fixstk 64K bin/pine bin/pico bin/imapd bin/mtest bin/pilot
+-		    fixstk 64K bin/pine bin/pico bin/imapd bin/mtest bin/pilot
++		    fixstk 64K bin/pine bin/pilot
+ 	esac
+ 	if [ "$SSLWARN" = "1" ]
+ 	then

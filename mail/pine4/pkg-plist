@@ -1,7 +1,6 @@
 @unexec %D/bin/pine -conf >%D/etc/pine.conf.tmp
 @unexec if cmp -s %D/etc/pine.conf %D/etc/pine.conf.tmp; then rm -f %D/etc/pine.conf; fi
 @unexec rm -f %D/etc/pine.conf.tmp
-bin/pico
 bin/pilot
 bin/pine
 bin/rpdump

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pine
-PORTVERSION=	4.63
+PORTVERSION=	4.64
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		http://mirror.sit.wisc.edu/pub/net/mail/pine/ \
@@ -20,7 +20,13 @@ DISTNAME=	pine${PORTVERSION}
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	PINE(tm) -- a Program for Internet News & Email
 
-RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+.if !defined(WITHOUT_ISPELL)
+RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
+.endif
+
+.if !defined(WITHOUT_PICO)
+RUN_DEPENDS+=	pico:${PORTSDIR}/editors/pico
+.endif
 
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
@@ -48,14 +54,14 @@ EXTRA_OPTS+=	SSLTYPE=unix.nopwd
 EXTRA_OPTS+=	IP=6
 .endif
 
-MAN1=		pine.1 pico.1 pilot.1 rpdump.1 rpload.1
+MAN1=		pine.1 pilot.1 rpdump.1 rpload.1
 
 pre-fetch:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 	${SH} pkg-install
 .endif
 .if defined(WITH_MAILDIR)
-PATCH_SITES=	http://www.math.washington.edu/~chappa/pine/patches/pine4.62/
+PATCH_SITES=	http://www.math.washington.edu/~chappa/pine/patches/pine${PORTVERSION}/
 PATCHFILES=	maildir.patch.gz
 PATCH_DIST_ARGS+=	-E --quiet -d ${PATCH_WRKSRC} -p1
 .endif
@@ -73,7 +79,6 @@ post-patch:
 .endfor
 	@for i in ${WRKSRC}/README ${WRKSRC}/doc/pine.1 \
 		${WRKSRC}/doc/tech-notes.txt ${WRKSRC}/doc/tech-notes/*.html \
-		${WRKSRC}/pico/osdep/os-bsf.h \
 		${WRKSRC}/pine/init.c ${WRKSRC}/pine/mailcap.c \
 		${WRKSRC}/pine/osdep/os-bsf.h ${WRKSRC}/pine/pine.hlp ; do \
 		${CP} $$i $$i.presed ; \

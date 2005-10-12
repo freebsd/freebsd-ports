@@ -7,7 +7,7 @@
 # All patch files have been taken from mail/pine4
 
 PORTNAME=	pico
-PORTVERSION=	4.63
+PORTVERSION=	4.64
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		http://mirror.sit.wisc.edu/pub/net/mail/pine/ \
@@ -21,7 +21,9 @@ DISTNAME=	pine${PORTVERSION}
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	PIne's message COmposition editor
 
+.if !defined(WITHOUT_ISPELL)
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+.endif
 
 WRKSRC=		${WRKDIR}/pine${PORTVERSION}/pico
 PATCH_WRKSRC=	${WRKSRC}/..
