@@ -6,4 +6,4 @@ SYN packets. The intention is for disco to discover IP's on the
 network, fingerprint the packet if necessary, and load into the
 Gherkin Scan Manager database for targeted host scans.
 
-WWW: http://www.altmode.com/disco
+WWW: http://www.altmode.com/disco/

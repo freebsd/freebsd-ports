@@ -6,7 +6,7 @@ and presents the results as easy-to-understand binary values.
 Enter your netmask(s) in CIDR notation (/25) or dotted decimals
 (255.255.255.0). Inverse netmasks are recognized. 
 
-WWW: http://jodies.de/ipcalc/
+WWW: http://jodies.de/ipcalc
 
 - Pete
 petef@freebsd.org
