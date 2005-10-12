@@ -9,7 +9,7 @@ PORTNAME=	nrg
 PORTVERSION=	0.99.22
 PORTREVISION=	1
 CATEGORIES=	net-mgmt sysutils
-MASTER_SITES=	ftp://nrg.hep.wisc.edu/pub/src/nrg/ \
+MASTER_SITES=	ftp://nrg.hep.wisc.edu/pub/src/nrg/old-versions/ \
 		http://www.ranner.jawa.at/stuff/
 
 MAINTAINER=	mranner@inode.at
