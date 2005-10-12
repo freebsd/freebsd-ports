@@ -653,6 +653,7 @@
     SUBDIR += p5-libapreq2
     SUBDIR += p5-libservlet
     SUBDIR += p5-libwww
+    SUBDIR += p5-webservice-validator-html-w3c
     SUBDIR += peacock
     SUBDIR += pear-HTTP
     SUBDIR += pear-HTTP_Client

@@ -1,0 +1,7 @@
+WebService::Validator::HTML::W3C provides access to the W3Cs online HTML
+validator. It's nothing to do with the W3C so pleas don't report any problems
+with it to them. Also, please use it wisely and don't abuse the W3Cs
+validator service. If you need to do a lot of validation consider
+downloading and installing the Validator on your own machine.
+
+WWW: http://search.cpan.org/dist/WebService-Validator-HTML-W3C/

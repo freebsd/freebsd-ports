@@ -1,0 +1,11 @@
+%%SITE_PERL%%/WebService/Validator/HTML/W3C/Error.pm
+%%SITE_PERL%%/WebService/Validator/HTML/W3C.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Validator/HTML/W3C/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Validator/HTML/W3C
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Validator/HTML
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Validator
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService
+@unexec rmdir %D/%%SITE_PERL%%/WebService/Validator/HTML/W3C 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/WebService/Validator/HTML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/WebService/Validator 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/WebService 2>/dev/null || true
