@@ -35,7 +35,7 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="60e26a40-3b25-11da-9484-00123ffe8333">
-    <topic>openssl -- Potential SSL 2.0 Rollback</topic>
+    <topic>openssl -- potential SSL 2.0 rollback</topic>
     <affects>
       <package>
 	<name>openssl</name>
@@ -87,33 +87,38 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-10-11</discovery>
       <entry>2005-10-12</entry>
+      <modified>2005-10-13</modified>
     </dates>
   </vuln>
 
   <vuln vid="9b7053fd-3ab5-11da-9484-00123ffe8333">
-    <topic>phpmyadmin -- Local file inclusion vulnerability</topic>
+    <topic>phpmyadmin -- local file inclusion vulnerability</topic>
     <affects>
       <package>
-	<name>phpmyadmin</name>
+	<name>phpMyAdmin</name>
 	<range><ge>2.6.4.r1</ge><le>2.6.4.1</le></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>PMASA-2005-4:</p>
+	<p>A phpMyAdmin security announcement reports:</p>
 	<blockquote cite="http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-4">
-	  <p>In libraries/grab_globals.lib.php, the $__redirect parameter was not 
-	    correctly validated, opening the door to a local file inclusion attack.</p>
+	  <p>In libraries/grab_globals.lib.php, the $__redirect
+	    parameter was not correctly validated, opening the door to
+	    a local file inclusion attack.</p>
 	  <p>We consider this vulnerability to be serious.</p>
 	</blockquote>
       </body>
     </description>
     <references>
+      <bid>15053</bid>
+      <mlist msgid="20051010161119.1689.qmail@securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112907764728209</mlist>
       <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-4</url>
     </references>
     <dates>
       <discovery>2005-10-11</discovery>
       <entry>2005-10-11</entry>
+      <modified>2005-10-13</modified>
     </dates>
   </vuln>
 
@@ -121,20 +126,18 @@ Note:  Please add new entries to the beginning of this file.
     <topic>zope28 -- expose RestructuredText functionalies to untrusted users</topic>
     <affects>
       <package>
-	<name>zope28</name>
+	<name>zope</name>
 	<range><ge>2.6.0</ge><le>2.8.1_2</le></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Hotfix 2005-10-09 Alert:</p>
+	<p>A Zope Hotfix Alert reports:</p>
 	<blockquote cite="http://www.zope.org/Products/Zope/Hotfix_2005-10-09/security_alert">
-	  <p>This hotfix addresses an important security issue that affects 
-	    users of Zope versions 2.6 or higher.</p>
 	  <p>This hotfix resolves a security issue with docutils.</p>
-	  <p>Affected are possibly all Zope instances that expose 
-	    RestructuredText functionalies to untrusted users through the web.</p>
-	  <p>The upcoming Zope 2.7.8 and 2.8.2 releases will fix this issue as well.</p>
+	  <p>Affected are possibly all Zope instances that expose
+	    RestructuredText functionalies to untrusted users through
+	    the web.</p>
 	</blockquote>
       </body>
     </description>
@@ -144,6 +147,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-10-09</discovery>
       <entry>2005-10-11</entry>
+      <modified>2005-10-13</modified>
     </dates>
   </vuln>
 
