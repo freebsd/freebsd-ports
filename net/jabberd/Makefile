@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jabberd
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.10
 CATEGORIES=	net
 MASTER_SITES=	http://files.jabberstudio.org/jabberd2/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}s${PORTVERSION:E}
