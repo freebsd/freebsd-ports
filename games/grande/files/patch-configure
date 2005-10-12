@@ -1,0 +1,14 @@
+--- configure.orig	Wed Oct 12 14:50:30 2005
++++ configure	Wed Oct 12 14:50:37 2005
+@@ -2829,9 +2829,9 @@
+ 
+ 
+ if test "x${prefix}" = "xNONE"; then
+-  inst_path="${ac_default_prefix}/games/grande"
++  inst_path="${ac_default_prefix}/share/grande"
+ else
+-  inst_path="${prefix}/games/grande"
++  inst_path="${prefix}/share/grande"
+ fi
+ score_path="${datadir}/grande/score"
+ 
