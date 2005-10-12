@@ -24,6 +24,7 @@ www/base/base_hdr1.php
 www/base/base_hdr2.php
 www/base/base_main.php
 www/base/base_maintenance.php
+www/base/base_payload.php
 www/base/base_qry_alert.php
 www/base/base_qry_common.php
 www/base/base_qry_form.php
