@@ -8,7 +8,7 @@
 PORTNAME=	kxl
 PORTVERSION=	1.1.7
 PORTREVISION=	1
-CATEGORIES=	games
+CATEGORIES=	devel games
 MASTER_SITES=	http://kxl.hn.org/download/
 DISTNAME=	KXL-${PORTVERSION}
 

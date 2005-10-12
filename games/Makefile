@@ -300,7 +300,6 @@
     SUBDIR += kslide
     SUBDIR += ktritoc
     SUBDIR += kwappen
-    SUBDIR += kxl
     SUBDIR += ladder
     SUBDIR += lbreakout
     SUBDIR += lbreakout2

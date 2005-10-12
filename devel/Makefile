@@ -417,6 +417,7 @@
     SUBDIR += korelib
     SUBDIR += kprof
     SUBDIR += kscope
+    SUBDIR += kxl
     SUBDIR += kyra
     SUBDIR += lbpp
     SUBDIR += leaktracer
