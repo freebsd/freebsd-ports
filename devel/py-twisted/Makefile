@@ -7,7 +7,7 @@
 
 PORTNAME=	twisted
 PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel net python
 MASTER_SITES=	http://twisted.sourceforge.net/ \
 		http://twistedmatrix.com/downloads/ \
@@ -17,10 +17,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Twisted_NoDocs-${PORTVERSION}
 WRKSRC=		${WRKDIR}/Twisted-${PORTVERSION}
 
-MAINTAINER=	nbm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An event-based Python framework for internet applications
 
-CONFLICTS=	py-twistedCore-[0-9]*
+CONFLICTS=	py??-twistedCore-[0-9]*
 
 # - Note that Twisted ships with some graphical examples and clients that
 #   require PyGNOME to run.  These are not central to the funcitoning of
