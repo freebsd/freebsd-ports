@@ -17,6 +17,7 @@ COMMENT=	Solitaire empire game "VMS Empire"
 MAN6=		empire.6
 PLIST_FILES=	bin/empire %%DOCSDIR%%/BUGS %%DOCSDIR%%/README
 PLIST_DIRS=	%%DOCSDIR%%
+USE_GMAKE=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vms-empire ${PREFIX}/bin/empire
