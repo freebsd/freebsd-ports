@@ -13,6 +13,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpmyadmin
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/-pl\1/}
 
+FORBIDDEN=	http://www.vuxml.org/freebsd/9b7053fd-3ab5-11da-9484-00123ffe8333.html
+
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	A set of PHP-scripts to manage MySQL over the web
 
