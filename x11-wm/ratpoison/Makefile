@@ -28,7 +28,7 @@ post-configure:
 	  > ${WRKSRC}/ratpoison.desktop
 
 post-install:
-	${MKDIR} ${PREFIX}/etc/gdm/Sessions
+	${MKDIR} ${PREFIX}/etc/dm/Sessions
 	${INSTALL_DATA} ${WRKSRC}/ratpoison.desktop ${PREFIX}/etc/dm/Sessions/
 .else
 PLIST_SUB+=	WITH_GDM="@comment "
