@@ -1,4 +1,7 @@
+@comment $FreeBSD$
+@unexec if cmp -s %D/etc/netams.cfg %D/etc/netams.cfg.sample; then rm -f %D/etc/netams.cfg; fi
 etc/netams.cfg.sample
+@exec [ -f %B/netams.cfg ] || cp %B/%f %B/netams.cfg
 etc/rc.d/netams-startup.sh.sample
 libexec/netams
 sbin/flowprobe
@@ -10,13 +13,11 @@ bin/netamsctl
 %%DATADIR%%/cgi-bin/config.cgi
 %%DATADIR%%/cgi-bin/netams_api.pl
 %%DATADIR%%/cgi-bin/russian.res
-%%DATADIR%%/cgi-bin/weblogin.tem
 %%DATADIR%%/cgi-bin/netams_example.cgi
 %%DATADIR%%/cgi-bin/usertool.cgi
 %%DATADIR%%/cgi-bin/admintool.cgi
 %%DATADIR%%/cgi-bin/login.cgi
 %%DATADIR%%/cgi-bin/netams_graph.cgi
-%%DATADIR%%/cgi-bin/weblogin.cgi
 %%DATADIR%%/cgi-bin/admin/.htaccess
 %%DATADIR%%/cgi-bin/admin/index.cgi
 %%DATADIR%%/cgi-bin/admin/policy.cgi

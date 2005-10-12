@@ -17,6 +17,7 @@ By default, CGI scripts are NOT installed, as well as web server is NOT configur
 You should do it yourself, and then copy entire %%DATADIR%%/cgi/ directory to appropriate place.
 
 And PLEASE READ THE DOCUMENTATION FIRST!
+
 http://www.netams.com
 
 --------------------------------------------------------------------------

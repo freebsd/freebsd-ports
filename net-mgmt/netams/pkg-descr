@@ -1,10 +1,11 @@
 NeTAMS stands for Network Traffic Accounting and Monitoring Software. 
 It is built for UNIX and works for networks with Cisco routers or PC Unix 
 routers (Linux/FreeBSD/Solaris). Several methods of traffic gathering are 
-supported (tee/divert/ip_queue/libpcap/netflow v5), database storage 
-(BerkleyDB/MySQL/PostgresSQL), aggregation, visualization, notification etc. 
-It is possible to block traffic based on quotas, authorization ID, empty 
-balance (billing); manage bandwidth, create a flexible accounting and 
-filtration policies.
+supported (tee/divert/ip_queue/libpcap/ulog/netflow v5 and v9/netgraph), 
+database storage (BerkleyDB/MySQL/PostgresSQL/Oracle/Radius), aggregation, 
+visualization, notification etc. It is possible to block traffic based on 
+quotas, web authorization, account balance (billing); manage bandwidth, 
+MAC assignmant violations, RADIUS services, create a flexible accounting 
+and filtering policies.
 
 WWW: http://www.netams.com/
