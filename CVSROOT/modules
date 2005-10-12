@@ -2565,6 +2565,7 @@ ftdi-eeprom	ports/misc/ftdi-eeprom
 fte		ports/editors/fte
 ftgl		ports/graphics/ftgl
 ftimes		ports/security/ftimes
+ftjam		ports/devel/ftjam
 ftnchek		ports/devel/ftnchek
 ftp-tls		ports/ftp/ftp-tls
 ftp4all		ports/ftp/ftp4all
