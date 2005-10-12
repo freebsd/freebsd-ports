@@ -8,8 +8,7 @@
 PORTNAME=	arpwatch
 PORTVERSION=	2.1.a13
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.Awfulhak.org/arpwatch/ \
-		ftp://ftp.ee.lbl.gov/
+MASTER_SITES=	ftp://ftp.ee.lbl.gov/
 DISTNAME=	arpwatch-2.1a13
 
 MAINTAINER=	ports@FreeBSD.org
