@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d2b80c7c-3aae-11da-9484-00123ffe8333">
+    <topic>zope28 -- expose RestructuredText functionalies to untrusted users</topic>
+    <affects>
+      <package>
+	<name>zope28</name>
+	<range><ge>2.6.0</ge><lt>2.8.1_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Hotfix 2005-10-09 Alert:</p>
+	<blockquote cite="http://www.zope.org/Products/Zope/Hotfix_2005-10-09/security_alert">
+	  <p>This hotfix addresses an important security issue that affects 
+	    users of Zope versions 2.6 or higher.</p>
+	  <p>This hotfix resolves a security issue with docutils.</p>
+	  <p>Affected are possibly all Zope instances that expose 
+	    RestructuredText functionalies to untrusted users through the web.</p>
+	  <p>The upcoming Zope 2.7.8 and 2.8.2 releases will fix this issue as well.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.zope.org/Products/Zope/Hotfix_2005-10-09/security_alert</url>
+    </references>
+    <dates>
+      <discovery>2005-10-09</discovery>
+      <entry>2005-10-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3bc5691e-38dd-11da-92f5-020039488e34">
     <topic>libxine -- format string vulnerability</topic>
     <affects>
