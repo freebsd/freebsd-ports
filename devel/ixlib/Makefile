@@ -18,9 +18,11 @@ COMMENT=	A small C++ tools library based on STL
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
+USE_INC_LIBTOOL_VER=15
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+MAKE_ENV+=	SED="sed"
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
@@ -28,5 +30,8 @@ INSTALLS_SHLIB=	yes
 .if ${ARCH} != "i386" || ${OSVERSION} >= 500000
 BROKEN=		"Does not compile on !i386 or on FreeBSD >= 5.x"
 .endif
+
+pre-configure:
+	${CP} ${LTMAIN} ${WRKSRC}
 
 .include <bsd.port.post.mk>
