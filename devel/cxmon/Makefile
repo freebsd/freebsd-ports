@@ -10,7 +10,7 @@ PORTVERSION=	3.1
 CATEGORIES=	devel
 MASTER_SITES=	http://wwwthep.physik.uni-mainz.de/~cbauer/
 
-MAINTAINER=	watchman@ludd.luth.se
+MAINTAINER=	watchman@ludd.ltu.se
 COMMENT=	Interactive file manipulation tool and disassembler
 
 GNU_CONFIGURE=	yes

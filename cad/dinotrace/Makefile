@@ -11,7 +11,7 @@ CATEGORIES=	cad
 MASTER_SITES=	http://www.veripool.com/ftp/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
-MAINTAINER=	watchman@ludd.luth.se
+MAINTAINER=	watchman@ludd.ltu.se
 COMMENT=	A graphical signal trace waveform viewer
 
 USE_GNOME=	gnometarget

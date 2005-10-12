@@ -12,7 +12,7 @@ CATEGORIES=	cad
 MASTER_SITES=	ftp://icarus.com/pub/eda/verilog/v$(PORTVERSION)/
 DISTNAME=	verilog-$(PORTVERSION)
 
-MAINTAINER=	watchman@ludd.luth.se
+MAINTAINER=	watchman@ludd.ltu.se
 COMMENT=	A Verilog simulation and synthesis tool
 
 USE_BISON=	yes
