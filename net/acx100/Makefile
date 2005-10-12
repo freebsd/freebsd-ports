@@ -9,7 +9,7 @@ PORTNAME=	acx100
 PORTVERSION=	20040701
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://wlan.kewl.org/download/:file_0 \
+MASTER_SITES=	http://dev.kewl.org/download/:file_0 \
 		ftp://ftp.dlink.co.uk/wireless/dwl-650+/:file_1
 DISTFILES=	${DISTFILE_0}:file_0 \
 		${DISTFILE_1}:file_1
