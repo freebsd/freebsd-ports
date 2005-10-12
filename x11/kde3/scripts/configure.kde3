@@ -91,7 +91,7 @@ Please select what additional KDE modules you would like to install.\n\n" \
 	##  Write out all the module names into a newline-delimited list...
 
 	if [ -f $tempallmodules ]; then
-		${ECHO} "$ALL_MODULES" | ${SED} -E -e 's/[[:space:]]+/ /g' | ${TR} '[:space:]' '\n' > $tempallmodules
+		${ECHO} "$ALL_MODULES" | ${SED} -E -e 's/[[:space:]]+/ /g' | ${TR} '[:space:]' '\n' | sort > $tempallmodules
 	fi
 
 	## ...do the same for the selection made in the dialog, comm -23 the
@@ -99,7 +99,7 @@ Please select what additional KDE modules you would like to install.\n\n" \
 
 	if [ -s $tempselection ]; then
 		${CAT} $tempselection | ${SED} -E -e 's/KDEACCESS./KDEACCESSIBILITY/g' -e 's/[[:space:]]+/ /g' \
-		-e 's/"//g' | ${TR} '[:space:]' '\n' > $tempprocessed
+		-e 's/"//g' | ${TR} '[:space:]' '\n' | sort > $tempprocessed
 		set `/usr/bin/comm -23 $tempallmodules $tempprocessed`
 	fi
 
