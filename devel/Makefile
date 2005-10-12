@@ -283,6 +283,7 @@
     SUBDIR += freescope
     SUBDIR += frink
     SUBDIR += fsmgenerator
+    SUBDIR += ftjam
     SUBDIR += ftnchek
     SUBDIR += fujaba
     SUBDIR += funnelweb
