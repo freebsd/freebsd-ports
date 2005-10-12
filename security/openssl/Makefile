@@ -12,10 +12,10 @@ PORTREVISION!=	date -v-1d +%Y%m%d
 .else
 .if !defined(WITH_OPENSSL_BETA) && defined(WITH_OPENSSL_097)
 PORTVERSION=	0.9.7g
-PORTREVISION?=	0
+PORTREVISION?=	1
 .else
 PORTVERSION=	0.9.8
-PORTREVISION?=	1
+PORTREVISION?=	2
 .endif
 .endif
 CATEGORIES=	security devel
