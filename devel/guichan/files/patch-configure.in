@@ -1,0 +1,20 @@
+--- configure.in.orig	Tue Oct 11 21:57:06 2005
++++ configure.in	Tue Oct 11 21:57:33 2005
+@@ -170,7 +170,7 @@
+               , enable_force_sdlimage=no)
+ if test x$enable_sdlimage = xyes; then
+   if test x$enable_force_sdlimage = xno; then
+-    AC_CHECK_HEADERS([SDL/SDL_image.h])
++    AC_CHECK_HEADERS([SDL_image.h])
+     AC_CHECK_LIB([SDL_image], [IMG_Load], HaveSDLImage, NoSDLImage)
+   else
+     ForceSDLImage
+@@ -205,7 +205,7 @@
+               , enable_force_sdl=no)
+ if test x$enable_sdl = xyes; then
+   if test x$enable_force_sdl = xno; then
+-    AC_CHECK_HEADERS(SDL/SDL.h)
++    AC_CHECK_HEADERS(SDL.h)
+     AC_CHECK_PROG(HAVE_SDL, sdl-config, yes)
+     if test "x$HAVE_SDL" != "xyes"; then
+       SDL="no"

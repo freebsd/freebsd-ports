@@ -346,6 +346,7 @@
     SUBDIR += gstreamer-plugins-sdl
     SUBDIR += gtgt
     SUBDIR += gtranslator
+    SUBDIR += guichan
     SUBDIR += guikachu
     SUBDIR += gvd
     SUBDIR += gwenhywfar
