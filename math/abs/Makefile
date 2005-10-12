@@ -8,8 +8,7 @@
 PORTNAME=	abs
 PORTVERSION=	0908
 CATEGORIES=	math
-MASTER_SITES=	http://www.ping.be/bertin/ \
-		http://www.giovannelli.it/~gmarco/files/
+MASTER_SITES=	http://www.giovannelli.it/~gmarco/files/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	gmarco@giovannelli.it
