@@ -9,9 +9,10 @@ PORTNAME=	ssync
 PORTVERSION=	2.3
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://angrypot.com/ssync/
+MASTER_SITES=	http://mnmconsulting.org/ssync/ \
+		ftp://ftp.netsw.org/system/tools/fileutils/install/ssync/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	A minimalistic tool for keeping filesystems in synchronization
 
 ALL_TARGET=	default
