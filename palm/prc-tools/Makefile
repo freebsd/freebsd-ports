@@ -7,7 +7,7 @@
 
 PORTNAME=	prc-tools
 PORTVERSION=	2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	palm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} ${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	prc-tools binutils/releases \
@@ -21,10 +21,6 @@ EXTRACT_ONLY=	binutils-2.14.tar.bz2 gdb-5.3.tar.bz2 gcc-2.95.3.tar.bz2 \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of tools supporting C and C++ programming for Palm OS
-
-BROKEN=		Incorrect pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-12-22
 
 # it is unknown whether it could actually be made to work elsewhere,
 # but right now it does not.
@@ -112,8 +108,12 @@ post-patch:
 			${ECHO_MSG} `${ECHO_CMD} ">> Patch $$i failed to apply cleanly."` ; \
 		fi; \
 	 done)
-	@cd ${WRKDIR}/gcc-2.95.3 && ${PATCH} -p0 --forward --quiet -E < ${FILESDIR}/post-patch-gcc:strerror.c
-	@cd ${WRKDIR}/gcc-3.3.1 && ${PATCH} -p0 --forward --quiet -E < ${FILESDIR}/post-patch-gcc:Makefile.in
+	@cd ${WRKDIR}/gcc-2.95.3 && ${PATCH} -p0 --forward --quiet -E < ${FILESDIR}/post-patch-gcc-strerror.c
+	@cd ${WRKDIR}/gcc-3.3.1 && ${PATCH} -p0 --forward --quiet -E < ${FILESDIR}/post-patch-gcc-Makefile.in
+	@cd ${WRKDIR}/binutils-2.14 && ${PATCH} -p0 --forward --quiet -E < ${FILESDIR}/post-patch-binutils-configure
+	@cd ${WRKDIR}/gcc-3.3.1 && ${PATCH} -p0 --forward --quiet -E < ${FILESDIR}/post-patch-gcc3-configure.in
+	@cd ${WRKDIR}/gcc-2.95.3 && ${PATCH} -p0 --forward --quiet -E < ${FILESDIR}/post-patch-gcc2-configure.in
+	@cd ${WRKDIR}/gdb-5.3 && ${PATCH} -p0 --forward --quiet -E < ${FILESDIR}/post-patch-gdb-configure.in
 
 pre-configure:
 	(cd ${WRKDIR}/prc-tools-${PORTVERSION} && \
@@ -124,11 +124,10 @@ pre-configure:
 
 post-configure:
 	${RM} ${WRKDIR}/gdb-5.3/bfd/doc/bfd.info*
+	${RM} ${WRKDIR}/binutils-2.14/bfd/doc/bfd.info*
 
 post-install:
 	${RM} ${PREFIX}/pilot/bin/m68k-palmos-c++filt
 	${RM} ${PREFIX}/pilot/lib/libiberty.a
-	${RM} -f ${PREFIX}/pilot/m68k-palmos/sys-include/COPIED
-	${RM} -f ${PREFIX}/pilot/arm-palmos/sys-include/COPIED
 
 .include <bsd.port.post.mk>
