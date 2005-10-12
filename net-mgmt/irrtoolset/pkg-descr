@@ -20,4 +20,4 @@ prtraceroute	prints route and policy information packets take to a
 
 rpslcheck	sytax checks the aut-num policy for an AS. 	
 
-WWW: http://www.ripe.net/db/irrtoolset/
+WWW: http://www.isc.org/index.pl?/sw/IRRToolSet/

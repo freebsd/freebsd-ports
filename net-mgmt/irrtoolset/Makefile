@@ -9,7 +9,8 @@ PORTNAME=	irrtoolset
 PORTVERSION=	4.7.3
 PORTREVISION=	1
 CATEGORIES=	net-mgmt tk82
-MASTER_SITES=	ftp://ftp.ripe.net/tools/IRRToolSet/IRRToolSet-${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.isc.org/isc/IRRToolSet/${DISTNAME}/ \
+		ftp://ftp.ripe.net/tools/IRRToolSet/${DISTNAME}/
 DISTNAME=	IRRToolSet-${PORTVERSION}
 
 MAINTAINER=	oberman@es.net
