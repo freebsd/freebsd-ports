@@ -7,6 +7,7 @@
 
 PORTNAME=	newportsversioncheck
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.mavetju.org/download/
 
