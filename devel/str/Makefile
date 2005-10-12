@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
 
-MAINTAINER=	mnag@FreeBSD.org
+MAINTAINER=	vd@datamax.bg
 COMMENT=	Generic String Library
 
 GNU_CONFIGURE=	yes
