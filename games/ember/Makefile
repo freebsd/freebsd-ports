@@ -6,15 +6,11 @@
 #
 
 PORTNAME=	ember
-PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTVERSION=	0.3.3
+PORTREVISION=	0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=worldforge
-
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=oliver
-PATCHFILES=	patch-ember-opcode.bz2
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Ember is a WorldForge 3d client using the OGRE 3d library
@@ -29,9 +25,9 @@ LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 RUN_DEPENDS=	${X11BASE}/bin/WFUT.jar:${PORTSDIR}/devel/wfut
 
 CONFIGURE_ARGS=	--with-png-prefix=${LOCALBASE} --enable-binreloc --program-transform-name=
+USE_LIBTOOL=	15
 USE_SDL=	sdl image
 USE_REINPLACE=	YES
-USE_LIBTOOL_VER=13
 GNU_CONFIGURE=	YES
 INSTALLS_SHLIB=	YES
 USE_GCC=	3.4
@@ -46,7 +42,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '\
 		s|sdl-config|${SDL_CONFIG}|g; \
 		s|"-lopenal|"-L${LOCALBASE}/lib -lopenal ${PTHREAD_LIBS}|g; \
-		s|src/components/ogre/SceneManagers/EmberSceneManager[a-z/]*/Makefile||g; \
+		s|"-lIL|"-L${LOCALBASE}/lib -lIL|g; \
 		s|CEGUI-OGRE_\([A-Z]*=\)|CEGUI_OGRE_\1|g; \
 		s|\$$CEGUI-OGRE_\([A-Z]*\)|\$$CEGUI_OGRE_\1|g' \
 		${WRKSRC}/configure

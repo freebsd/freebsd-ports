@@ -43,7 +43,6 @@ share/games/ember/media/gui/cegui/datafiles/schemes/WindowsLookWidgets.scheme
 share/games/ember/media/gui/cegui/widgets/ChatWidget.xml
 share/games/ember/media/gui/cegui/widgets/ConsoleWidget.xml
 share/games/ember/media/gui/cegui/widgets/DebugWidget.xml
-share/games/ember/media/gui/cegui/widgets/EntityEditWidget.xml
 share/games/ember/media/gui/cegui/widgets/GiveWidget.xml
 share/games/ember/media/gui/cegui/widgets/HelpWidget.xml
 share/games/ember/media/gui/cegui/widgets/IngameChatWidget.xml
@@ -63,53 +62,6 @@ share/games/ember/media/modeldefinitions/characters.modeldef.xml
 share/games/ember/media/modeldefinitions/creatures.modeldef.xml
 share/games/ember/media/modeldefinitions/environment.modeldef.xml
 share/games/ember/media/modeldefinitions/items.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/acorn.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/axe.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/barrel.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/butcher.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/butchershouse.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/campfire.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/chicken.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/cleaver.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/column_3.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/column_fractured_3.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/column_segmented_3.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/crab.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/deer.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/dog.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/fencegate.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/fencepole.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/fencesection.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/fire.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/floor.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/floor_12_stone.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/floor_24_stone.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/floor_3_stone.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/floor_6_stone.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/house3.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/lumber.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/marshall.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/mercenary.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/merchant.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/mushroom_amanita.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/pig.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/roof.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/scythe.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/settler.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/slopewall.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/spade.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/spider.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/squirrel.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/sty.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/table.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/wall.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/wall_1.5.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/wall_3.modeldef.xml
-share/games/ember/media/modeldefinitions/old/done/wall_with_door.modeldef.xml
-share/games/ember/media/modeldefinitions/old/goblin.modeldef.xml
-share/games/ember/media/modeldefinitions/old/obsolete/field.modeldef.xml
-share/games/ember/media/modeldefinitions/old/obsolete/malebuilder.modeldef.xml
-share/games/ember/media/modeldefinitions/old/obsolete/settler_1.modeldef.xml
 share/games/ember/media/modeldefinitions/placeholder.modeldef.xml
 share/games/ember/media/modeldefinitions/trees/dynamic/trees.modeldef.xml
 share/games/ember/media/modeldefinitions/trees/pregenerated/trees.modeldef.xml
@@ -135,9 +87,6 @@ share/icons/worldforge/ember.png
 @dirrm share/games/ember/media/gui/cegui/widgets
 @dirrm share/games/ember/media/gui/cegui
 @dirrm share/games/ember/media/gui
-@dirrm share/games/ember/media/modeldefinitions/old/done
-@dirrm share/games/ember/media/modeldefinitions/old/obsolete
-@dirrm share/games/ember/media/modeldefinitions/old
 @dirrm share/games/ember/media/modeldefinitions/trees/dynamic
 @dirrm share/games/ember/media/modeldefinitions/trees/pregenerated
 @dirrm share/games/ember/media/modeldefinitions/trees
