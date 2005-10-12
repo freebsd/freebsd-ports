@@ -20,7 +20,7 @@ COMMENT=	An asynchronous networking framework for Python - Core module
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/zope/interface:${PORTSDIR}/devel/py-zopeInterface
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-CONFLICTS=	py-twisted-[0-9]*
+CONFLICTS=	py??-twisted-[0-9]*
 
 WRKSRC=		${WRKDIR}/Twisted-${PORTVERSION}
 
