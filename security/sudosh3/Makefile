@@ -17,6 +17,8 @@ COMMENT=	A sudo shell
 
 RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo
 
+BROKEN=			Installs file outside of PREFIX
+
 USE_GZIP=		yes
 GNU_CONFIGURE=		yes
 
