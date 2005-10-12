@@ -34,6 +34,62 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="60e26a40-3b25-11da-9484-00123ffe8333">
+    <topic>openssl -- Potential SSL 2.0 Rollback</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<name>openssl-overwrite-base</name>
+	<range><le>0.9.7g</le></range>
+	<range><ge>0.9.8</ge><le>0.9.8_1</le></range>
+	<range><ge>0.9.*_20050325</ge><le>0.9.*_20051011</le></range>
+      </package>
+      <package>
+	<name>openssl-beta</name>
+	<name>openssl-beta-overwrite-base</name>
+	<range><le>0.9.8_1</le></range>
+	<range><ge>0.9.*_20050325</ge><le>0.9.*_20051011</le></range>
+      </package>
+      <system>
+	<name>FreeBSD</name>
+	<range><lt>4.10_19</lt></range>
+	<range><ge>4.11</ge><lt>4.11_13</lt></range>
+	<range><ge>5.3</ge><lt>5.3_23</lt></range>
+	<range><ge>5.4</ge><lt>5.4_8</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Vulnerability:</p>
+	<blockquote cite="http://www.openssl.org/news/secadv_20051011.txt">
+	  <p>Such applications are affected if they use the option
+	    SSL_OP_MSIE_SSLV2_RSA_PADDING.  This option is implied by use of
+	    SSL_OP_ALL, which is intended to work around various bugs in
+	    third-party software that might prevent interoperability.  The
+	    SSL_OP_MSIE_SSLV2_RSA_PADDING option disables a verification step in
+	    the SSL 2.0 server supposed to prevent active protocol-version
+	    rollback attacks.  With this verification step disabled, an attacker
+	    acting as a "man in the middle" can force a client and a server to
+	    negotiate the SSL 2.0 protocol even if these parties both support SSL
+	    3.0 or TLS 1.0.  The SSL 2.0 protocol is known to have severe
+	    cryptographic weaknesses and is supported as a fallback only.</p>
+	  <p>Applications using neither SSL_OP_MSIE_SSLV2_RSA_PADDING nor
+	    SSL_OP_ALL are not affected.  Also, applications that disable
+	    use of SSL 2.0 are not affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-05:21.openssl</freebsdsa>
+      <cvename>CAN-2005-2969</cvename>
+      <url>http://www.openssl.org/news/secadv_20051011.txt</url>
+    </references>
+    <dates>
+      <discovery>2005-10-11</discovery>
+      <entry>2005-10-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9b7053fd-3ab5-11da-9484-00123ffe8333">
     <topic>phpmyadmin -- Local file inclusion vulnerability</topic>
     <affects>
@@ -48,9 +104,7 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote cite="http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-4">
 	  <p>In libraries/grab_globals.lib.php, the $__redirect parameter was not 
 	    correctly validated, opening the door to a local file inclusion attack.</p>
-	  <p>We consider this vulnerability to be serious. However, it can be exploited 
-	    only on systems not running in PHP safe mode (unless a deliberate hole was 
-	    opened by including in open_basedir some paths containing sensitive data).</p>
+	  <p>We consider this vulnerability to be serious.</p>
 	</blockquote>
       </body>
     </description>
