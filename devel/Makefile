@@ -346,6 +346,7 @@
     SUBDIR += gstreamer-plugins-gnomevfs
     SUBDIR += gstreamer-plugins-sdl
     SUBDIR += gtgt
+    SUBDIR += gtkmozedit
     SUBDIR += gtranslator
     SUBDIR += guichan
     SUBDIR += guikachu
