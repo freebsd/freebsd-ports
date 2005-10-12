@@ -1,0 +1,58 @@
+bin/xdtp
+bin/banbun2html
+bin/banbun2text
+bin/banbun2xhtml
+bin/glsd-doc2html
+bin/glsd-doc2text
+lib/libxdtp.so
+lib/libxdtp.so.1
+lib/libxdtp.a
+libdata/pkgconfig/libxdtp.pc
+share/xdtp/toHTML/BanBun.xsl
+share/xdtp/toHTML/BanBunModule.xsl
+share/xdtp/toHTML/DocumentModule.xsl
+share/xdtp/toHTML/GLSD.xsl
+share/xdtp/toHTML/GLSDocumentModule.xsl
+share/xdtp/toTEXT/BanBun.xsl
+share/xdtp/toTEXT/BanBunModule.xsl
+share/xdtp/toTEXT/DocumentModule.xsl
+share/xdtp/toTEXT/GLSD.xsl
+share/xdtp/toTEXT/GLSDocumentModule.xsl
+share/xdtp/toXHTML/BanBun.xsl
+share/xdtp/toXHTML/BanBunModule.xsl
+share/xdtp/toXHTML/DocumentModule.xsl
+share/xdtp/toXHTML/GLSD.xsl
+share/xdtp/toXHTML/GLSDocumentModule.xsl
+@dirrm share/xdtp/toHTML
+@dirrm share/xdtp/toTEXT
+@dirrm share/xdtp/toXHTML
+@dirrm share/xdtp
+%%XDTP_INC%%include/xdtp/CSVAnalyzer.h
+%%XDTP_INC%%include/xdtp/Exception.h
+%%XDTP_INC%%include/xdtp/URLTool.h
+%%XDTP_INC%%include/xdtp/Utilities.h
+%%XDTP_INC%%include/xdtp/XDTPTransform.h
+%%XDTP_INC%%include/xdtp/XMLTool.h
+%%XDTP_INC%%include/xdtp/xdtptypes.h
+%%XDTP_INC%%include/xdtp/xmlloader.h
+%%XDTP_INC%%include/xdtp/xmlsaver.h
+%%XDTP_INC%%include/xdtp/modules/GLSDBanBunModule.h
+%%XDTP_INC%%include/xdtp/modules/GLSDBanBunModuleChecker.h
+%%XDTP_INC%%include/xdtp/modules/GLSDDocumentModule.h
+%%XDTP_INC%%include/xdtp/modules/GLSDDocumentModuleChecker.h
+%%XDTP_INC%%include/xdtp/modules/GLSDModule.h
+%%XDTP_INC%%include/xdtp/modules/GLSDModuleChecker.h
+%%XDTP_INC%%include/xdtp/modules/XDTPChecker.h
+%%XDTP_INC%%include/xdtp/modules/XDTPModule.h
+%%XDTP_INC%%include/xdtp/modules/XDTPModuleLoader.h
+%%XDTP_INC%%include/xdtp/modules/imports/GLSDImportModule.h
+%%XDTP_INC%%include/xdtp/modules/imports/GLSDImportModuleAdapter.h
+%%XDTP_INC%%include/xdtp/modules/imports/ImportImage.h
+%%XDTP_INC%%include/xdtp/modules/imports/ImportTextCSV.h
+%%XDTP_INC%%include/xdtp/modules/imports/ImportTextCommandPrompt.h
+%%XDTP_INC%%include/xdtp/modules/imports/ImportTextPlain.h
+%%XDTP_INC%%include/xdtp/modules/imports/ImportTextSourcecode.h
+%%XDTP_INC%%include/xdtp/modules/imports/ImportTextXML.h
+%%XDTP_INC%%@dirrm include/xdtp/modules/imports
+%%XDTP_INC%%@dirrm include/xdtp/modules
+%%XDTP_INC%%@dirrm include/xdtp
