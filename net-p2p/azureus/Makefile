@@ -7,7 +7,7 @@
 
 PORTNAME=	azureus
 PORTVERSION=	2.3.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,12 +19,12 @@ COMMENT=	A BitTorrent client written in Java
 BUILD_DEPENDS=	\
 		${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j \
 		${LOCALBASE}/eclipse/plugins/org.eclipse.swt_${ECLIPSE_VERSION}.0.jar:${PORTSDIR}/java/eclipse \
-		${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.0.jar:${PORTSDIR}/java/eclipse \
+		${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse \
 		${JAVALIBDIR}/commons-cli.jar:${PORTSDIR}/java/jakarta-commons-cli \
 		${JAVALIBDIR}/seda.jar:${PORTSDIR}/net/seda
 RUN_DEPENDS=	\
 		${LOCALBASE}/eclipse/plugins/org.eclipse.swt_${ECLIPSE_VERSION}.0.jar:${PORTSDIR}/java/eclipse \
-		${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.0.jar:${PORTSDIR}/java/eclipse
+		${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse
 
 ONLY_FOR_ARCHS=	i386
 
@@ -48,15 +48,15 @@ PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE} bin/${PORTNAME}
 # hack for eclipse 3.1
 PLIST_DIRS=	%%DATADIR%%
 PLIST_FILES+=	\
-		%%DATADIR%%/libswt-atk-gtk-3138.so \
-		%%DATADIR%%/libswt-awt-gtk-3138.so \
-		%%DATADIR%%/libswt-cairo-gtk-3138.so \
-		%%DATADIR%%/libswt-gnome-gtk-3138.so \
-		%%DATADIR%%/libswt-gtk-3138.so \
-		%%DATADIR%%/libswt-pi-gtk-3138.so
+		%%DATADIR%%/libswt-atk-gtk-3139.so \
+		%%DATADIR%%/libswt-awt-gtk-3139.so \
+		%%DATADIR%%/libswt-cairo-gtk-3139.so \
+		%%DATADIR%%/libswt-gnome-gtk-3139.so \
+		%%DATADIR%%/libswt-gtk-3139.so \
+		%%DATADIR%%/libswt-pi-gtk-3139.so
 
 post-extract:
-	@${MKDIR} ${WRKDIR}/eclipse && cd ${WRKDIR}/eclipse && ${JAR} -xf ${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.0.jar
+	@${MKDIR} ${WRKDIR}/eclipse && cd ${WRKDIR}/eclipse && ${JAR} -xf ${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.1.jar
 		
 do-configure:
 	${SED} -e "s+%%PREFIX%%+${PREFIX}+" -e "s+%%LOCALBASE%%+${LOCALBASE}+" \
@@ -79,12 +79,12 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if exists(${PORTSDIR}/java/eclipse)
-ECLIPSE_PORT=		${PORTSDIR}/java/eclipse
-ECLIPSE_VERSION!=	cd ${ECLIPSE_PORT} && ${MAKE} -V PORTVERSION
-.else
+#.if exists(${PORTSDIR}/java/eclipse)
+#ECLIPSE_PORT=		${PORTSDIR}/java/eclipse
+#ECLIPSE_VERSION!=	cd ${ECLIPSE_PORT} && ${MAKE} -V PORTVERSION
+#.else
 ECLIPSE_VERSION=	3.1
-.endif
+#.endif
 
 CLASSPATH=.
 .for jar in ${CLASSPATH_JARS}
