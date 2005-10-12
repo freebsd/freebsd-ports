@@ -3100,6 +3100,8 @@
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/af.py
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/af.pyc
+%%ZOPEBASEDIR%%/lib/python/docutils/languages/ca.py
+%%ZOPEBASEDIR%%/lib/python/docutils/languages/ca.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/cs.py
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/cs.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/de.py
@@ -3116,6 +3118,8 @@
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/fr.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/it.py
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/it.pyc
+%%ZOPEBASEDIR%%/lib/python/docutils/languages/nl.py
+%%ZOPEBASEDIR%%/lib/python/docutils/languages/nl.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/pt_br.py
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/pt_br.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/ru.py
@@ -3132,6 +3136,7 @@
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/__init__.py
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/directives/.misc.py.swo
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/directives/__init__.py
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/directives/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/directives/admonitions.py
@@ -3154,6 +3159,8 @@
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/af.py
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/af.pyc
+%%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/ca.py
+%%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/ca.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/cs.py
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/cs.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/de.py
@@ -3170,6 +3177,8 @@
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/fr.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/it.py
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/it.pyc
+%%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/nl.py
+%%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/nl.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/pt_br.py
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/pt_br.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/ru.py
@@ -3230,6 +3239,10 @@
 %%ZOPEBASEDIR%%/lib/python/docutils/writers/html4css1.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/writers/latex2e.py
 %%ZOPEBASEDIR%%/lib/python/docutils/writers/latex2e.pyc
+%%ZOPEBASEDIR%%/lib/python/docutils/writers/newlatex2e.py
+%%ZOPEBASEDIR%%/lib/python/docutils/writers/newlatex2e.pyc
+%%ZOPEBASEDIR%%/lib/python/docutils/writers/null.py
+%%ZOPEBASEDIR%%/lib/python/docutils/writers/null.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/writers/pep_html.py
 %%ZOPEBASEDIR%%/lib/python/docutils/writers/pep_html.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/writers/pseudoxml.py

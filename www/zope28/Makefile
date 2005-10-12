@@ -7,12 +7,16 @@
 
 PORTNAME=	zope
 PORTVERSION=	2.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www python zope
-MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
+MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/ \
+		http://www.zope.org/Products/Zope/Hotfix_2005-10-09/security_alert/:hotfix_20051009
 DISTNAME=	Zope-${PORTVERSION}-final
 EXTRACT_SUFX=	.tgz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		Hotfix_2005-10-09.tar.gz:hotfix_20051009
 DIST_SUBDIR=	zope
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	An object-based web application platform
@@ -60,6 +64,9 @@ ISBATCH=	-u admin:test123
 .else
 ISBATCH=	""
 .endif
+
+pre-patch:
+	${TAR} xzf ${DISTDIR}/${DIST_SUBDIR}/Hotfix_2005-10-09.tar.gz -C ${WRKSRC}/lib/python
 
 post-patch:
 	${REINPLACE_CMD} \
