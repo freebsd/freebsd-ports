@@ -9,8 +9,12 @@ PORTNAME=	xicq
 PORTVERSION=	19980712
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://projekt.pinknet.cz/ftp/ICQ/linux/Xicq/
+MASTER_SITES=	# disappeared
 DISTNAME=	xicq-071298-snapshot.src
+
+BROKEN=		"mastersite disappeared"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-12
 
 MAINTAINER=	scrappy@FreeBSD.org
 COMMENT=	Xtropy's ICQ Client
