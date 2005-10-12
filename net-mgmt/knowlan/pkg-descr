@@ -5,4 +5,4 @@ active IP and MAC addresses.
 Knowlan uses libpcap and libnet libraries for easy source code review
 and maintenance. 
 
-WWW:	http://www.enderunix.org/knowlan
+WWW:	http://www.enderunix.org/knowlan/
