@@ -1,4 +1,72 @@
 bin/grande
 share/grande/score/grande.scores
-@dirrm share/grande/score
+
+games/grande/wav/shot.wav
+games/grande/wav/pow.wav
+games/grande/wav/mbomb.wav
+games/grande/wav/go.wav
+games/grande/wav/bomb.wav
+games/grande/stg/stage4.dat
+games/grande/stg/stage3.dat
+games/grande/stg/stage2.dat
+games/grande/stg/stage1.dat
+games/grande/stg/back4.dat
+games/grande/stg/back3.dat
+games/grande/stg/back2.dat
+games/grande/stg/back1.dat
+games/grande/bmp/uturn.bmp
+games/grande/bmp/roll.bmp
+games/grande/bmp/openh.bmp
+games/grande/bmp/my.bmp
+games/grande/bmp/msub30.bmp
+games/grande/bmp/msub3.bmp
+games/grande/bmp/msub23.bmp
+games/grande/bmp/msub22.bmp
+games/grande/bmp/msub21.bmp
+games/grande/bmp/msub20.bmp
+games/grande/bmp/msub1.bmp
+games/grande/bmp/msub03.bmp
+games/grande/bmp/msub02.bmp
+games/grande/bmp/msub01.bmp
+games/grande/bmp/msub00.bmp
+games/grande/bmp/mlaser.bmp
+games/grande/bmp/mboss.bmp
+games/grande/bmp/many.bmp
+games/grande/bmp/kxl.bmp
+games/grande/bmp/kuru.bmp
+games/grande/bmp/item.bmp
+games/grande/bmp/houdai.bmp
+games/grande/bmp/hory.bmp
+games/grande/bmp/hit.bmp
+games/grande/bmp/fly2.bmp
+games/grande/bmp/fly1.bmp
+games/grande/bmp/fboard.bmp
+games/grande/bmp/eshot3.bmp
+games/grande/bmp/eshot2.bmp
+games/grande/bmp/eshot1.bmp
+games/grande/bmp/egg.bmp
+games/grande/bmp/cshot.bmp
+games/grande/bmp/crash2.bmp
+games/grande/bmp/crash1.bmp
+games/grande/bmp/chargeback.bmp
+games/grande/bmp/charge.bmp
+games/grande/bmp/bound.bmp
+games/grande/bmp/boss4.bmp
+games/grande/bmp/boss3.bmp
+games/grande/bmp/boss2houdai.bmp
+games/grande/bmp/boss2.bmp
+games/grande/bmp/boss1.bmp
+games/grande/bmp/bomb1.bmp
+games/grande/bmp/bohu.bmp
+games/grande/bmp/back4.bmp
+games/grande/bmp/back3.bmp
+games/grande/bmp/back2.bmp
+games/grande/bmp/back1.bmp
+
+@dirrm games/grande
+@dirrm games/grande/bmp
+@dirrm games/grande/stg
+@dirrm games/grande/wav
+
 @dirrm share/grande
+@dirrm share/grande/score
