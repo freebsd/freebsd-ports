@@ -4,5 +4,3 @@ outputs the network address, broadcast address, and total number of
 addresses for the corresponding subnet.  The IP can be in binary,
 decimal, hex, or dotted quad.  The mask can be in binary, decimal, hex,
 dotted quad, or prefix.
-
-WWW: http://geeksoul.com/robert/cidr.html
