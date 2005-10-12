@@ -6,29 +6,27 @@
 #
 
 PORTNAME=	nexuiz
-PORTVERSION=	1.1
+PORTVERSION=	1.2.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${PORTNAME}${EXTRACT_SUFX} \
-		patch${PORTVERSION:S/.//g}${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A fast-paced, chaotic, and intense multiplayer first person shooter
 
-NO_PACKAGE=	Package will be 156MB, set FORCE_PACKAGE if you really want to build it
+NO_PACKAGE=	Package will be 159MB, set FORCE_PACKAGE if you really want to build it
 
 USE_REINPLACE=	yes
 USE_ZIP=	yes
 
-WRKSRC=		${WRKDIR}/sources/darkplaces
+WRKSRC=		${WRKDIR}/Nexuiz/sources/darkplaces
 MAKEFILE=	makefile.bsd
 MAKE_ARGS=	CC="${CC}" OPTIM_RELEASE="${CFLAGS} -fno-strict-aliasing -ffast-math -funroll-loops"
 ALL_TARGET=	#
 
 PLIST_FILES=	%%CLIENT%%bin/${PORTNAME}-glx %%SDL_CLIENT%%bin/${PORTNAME}-sdl \
-		%%SERVER%%bin/${PORTNAME}-dedicated %%DATADIR%%/data/data20050531.pk3 \
-		%%DATADIR%%/data/data20050629.pk3
+		%%SERVER%%bin/${PORTNAME}-dedicated %%DATADIR%%/data/data20050905-full.pk3
 PLIST_DIRS=	%%DATADIR%%/data %%DATADIR%%
 
 OPTIONS=	CLIENT		"Build GLX client"		on \
@@ -66,9 +64,11 @@ PLIST_SUB+=	SERVER=""
 PLIST_SUB+=	SERVER="@comment "
 .endif
 
-post-extract:
-	@${REINPLACE_CMD} -e 's,sdl-config,sdl11-config,g' \
-		${WRKSRC}/makefile.inc
+pre-patch:
+	@${EXTRACT_CMD} ${WRKDIR}/Nexuiz/${PORTNAME}enginesource20050911.zip \
+		-d ${WRKDIR}/Nexuiz/sources
+	@${REINPLACE_CMD} -E 's,sdl-config,sdl11-config,g; 161,165d; \
+		s,^#(LDFLAGS_UNIXCL),\1,' ${WRKSRC}/makefile.inc
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},; 74,$$d' \
 		${WRKSRC}/${MAKEFILE}
 	@${ECHO_CMD} 'LDFLAGS_SDL=$$(LDFLAGS_BSDSDL)' >> ${WRKSRC}/${MAKEFILE}
@@ -79,9 +79,9 @@ do-build:
 		${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/nexuiz-* ${PREFIX}/bin
+	${SH} -c '${FIND} ${WRKSRC} -name "darkplaces-*[^vp]" | while read f ; \
+		do ${INSTALL_PROGRAM} $${f} ${PREFIX}/bin/${PORTNAME}-$${f##*-} ; done'
 	@${MKDIR} ${DATADIR}/data
-	${INSTALL_DATA} ${WRKDIR}/Nexuiz/data/data20050531.pk3 \
-		${WRKDIR}/data/data20050629.pk3 ${DATADIR}/data
+	${INSTALL_DATA} ${WRKDIR}/Nexuiz/data/data20050905-full.pk3 ${DATADIR}/data
 
 .include <bsd.port.post.mk>
