@@ -15,6 +15,8 @@ COMMENT=	General purpose audio recording utility for the WindowMaker dock
 
 USE_XPM=	YES
 USE_X_PREFIX=	YES
+MAKE_ARGS=	LIBS="-L${X11BASE}/lib -lXpm -lX11 -lXext" \
+		CFLAGS="${CFLAGS} -I${X11BASE}/include" LIBDIR=""
 
 MAN1=		wmrecord.1
 PLIST_FILES=	bin/wmrecord
