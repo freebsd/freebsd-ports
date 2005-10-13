@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-Server-Simple
-PORTVERSION=	0.13
+PORTVERSION=	0.15
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTTP
@@ -18,7 +18,8 @@ COMMENT=	A very simple standalone HTTP daemon
 PERL_CONFIGURE=	yes
 
 MAN3=	HTTP::Server::Simple.3 \
-	HTTP::Server::Simple::CGI.3
+	HTTP::Server::Simple::CGI.3 \
+	HTTP::Server::Simple::CGI::Environment.3
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} < 500600
