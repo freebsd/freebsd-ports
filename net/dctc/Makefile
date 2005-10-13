@@ -8,8 +8,7 @@
 PORTNAME=	dctc
 PORTVERSION=	0.84.1
 CATEGORIES=	net
-MASTER_SITES=	http://unixpages.org/distfiles/ \
-		http://ac2i.tzo.com/dctc/
+MASTER_SITES=	http://unixpages.org/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
