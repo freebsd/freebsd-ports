@@ -5988,6 +5988,7 @@ mar		ports/archivers/mar
 maradns		ports/dns/maradns
 marathon-evil	ports/games/marathon-evil
 marathon2-data	ports/games/marathon2-data
+markdown	ports/textproc/markdown
 marlin		ports/audio/marlin
 mars		ports/cad/mars
 mars_nwe	ports/net/mars_nwe
