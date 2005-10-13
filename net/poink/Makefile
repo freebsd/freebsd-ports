@@ -8,15 +8,12 @@
 PORTNAME=	poink
 PORTVERSION=	1.6
 CATEGORIES=	net
-MASTER_SITES=	# disappeared
+MASTER_SITES=	ftp://ftp.freenet.de/pub/.disk0/ftp.openbsd.org/pub/OpenBSD/distfiles/ \
+		http://voodoo.bawue.com/download/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nosuid, secure ping like utility
-
-BROKEN=		"mastersite disappeared"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=	2005-12-13
 
 USE_ZIP=	yes
 

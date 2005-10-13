@@ -8,14 +8,10 @@
 PORTNAME=	tund
 PORTVERSION=	0.20
 CATEGORIES=	net
-MASTER_SITES=	#
+MASTER_SITES=	ftp://ftp.cemu.ru/pub/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP over UDP tunnel with encryption
-
-BROKEN=		"mastersite disappeared"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=	2005-12-13
 
 USE_OPENSSL=	YES
 
