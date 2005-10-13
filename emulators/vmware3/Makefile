@@ -10,7 +10,7 @@ PORTVERSION=	3.2.1.2242
 PORTREVISION=	11
 PORTEPOCH=	1
 CATEGORIES=	emulators linux
-MASTER_SITES=	http://www4.vmware.com/software/ \
+MASTER_SITES=	http://download3.vmware.com/software/wkst/ \
 		${FREEBSD_MODULE_SITES} \
 		${VMWARE_MIRROR_SITES}
 DISTFILES=	VMware-workstation-${PORTVERSION:R}-${PORTVERSION:E}${EXTRACT_SUFX}:vmware \
