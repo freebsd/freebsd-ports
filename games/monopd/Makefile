@@ -8,7 +8,7 @@
 PORTNAME=	monopd
 PORTVERSION=	0.9.2
 CATEGORIES=	games
-MASTER_SITES=	http://unixcode.org/downloads/monopd/
+MASTER_SITES=	http://www.robertjohnkaper.com/downloads/atlantik/
 
 MAINTAINER=	jhb@FreeBSD.org
 COMMENT=	Server for Atlantik and gtkAtlantic Games
