@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Sablot
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://download-1.gingerall.cz/download/sablot/
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	XML toolkit implementing XSLT 1.0, XPath 1.0 and DOM Level2
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
 OPTIONS=	DISABLE_META "Do not output the META html tag" off \
 		ICONV_TYPECAST "Use iconv typecast" off \
@@ -28,10 +28,10 @@ SHLIB_MAJOR=	70	# API changes counter
 PLIST_SUB+=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LIBTOOL=${LIBTOOL} \
-		LDFLAGS="-L${LOCALBASE}/lib -lstdc++"
+		LDFLAGS="-L${LOCALBASE}/lib -lexpat -liconv"
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_PERL5_BUILD=	yes
 
 MAN1=	sabcmd.1
