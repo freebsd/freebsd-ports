@@ -6,48 +6,84 @@
 #
 
 PORTNAME=	qmrtg
-PORTVERSION=	0.5.7
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	mail net-mgmt
 MASTER_SITES=	http://dev.publicshout.org/qmrtg/download/
 
 MAINTAINER=	mij@bitchx.it
 COMMENT=	A simple tool for monitoring and graphing qmail activity through MRTG
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2     \
-		mrtg:${PORTSDIR}/net-mgmt/mrtg
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+.if !defined(WITHOUT_MRTG)
+RUN_DEPENDS+=	mrtg:${PORTSDIR}/net-mgmt/mrtg
+.endif
 
-MAN1=		qmrtg.1
-USE_GMAKE=	yes
+USE_BZIP2=	yes
 
-# this is the local apache documentroot
-WWWROOTDIR?=	${PREFIX}/www/data
-QMRTG_DBDIR?=	/var/db/${PORTNAME}
+MAN8=		qfilt.8 qmrtg-concurrency.8 qmrtg-dnsbl.8 \
+		qmrtg-queue.8 qmrtg-regex.8 qmrtg-throughput.8 \
+		qmrtg.8 qtaif.8
+MANCOMPRESSED=	no
 
+GNU_CONFIGURE=	yes
+
+# where is qmrtg' database directory
+QMRTG_DBDIR:=	/var/db/${PORTNAME}
+
+# variables to be "exported" to plist
 PLIST_SUB=	QMRTG_DBDIR=${QMRTG_DBDIR}
 
-post-install:
-# in_stall manpages
-	@${MKDIR} ${PREFIX}/man/man1
-.for foo in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/man/${foo} ${PREFIX}/man/man1
-.endfor
-.if !defined(WITHOUT_EXAMPLES)
-# in_stall conig file examples
-	${MKDIR} ${EXAMPLESDIR}
-	${CP} ${WRKSRC}/examples/* ${EXAMPLESDIR}/
-.endif
-.if !defined(WITHOUT_HTMLTEMPLATES)
-# in_stall html templates for mrtg graphs
-	${MKDIR} ${WWWROOTDIR}/${PORTNAME}
-	${CP} ${WRKSRC}/html/* ${WWWROOTDIR}/${PORTNAME}/
-.endif
+.if !defined(PACKAGE_BUILDING) && !defined(BATCH)
+# interactive --> ask user for options
+IS_INTERACTIVE=		yes
 .if !defined(NOPORTDOCS)
-# in_stall the few (FAQ, LICENSE etc) files provided by the package
-	${MKDIR} ${DOCSDIR}
-	${CP} ${WRKSRC}/doc/* ${DOCSDIR}/
-.endif
-	${MKDIR} ${QMRTG_DBDIR}
-	@${CAT} pkg-message
+# install extra doc by default
+OPTIONS=	\
+	DOCS		"Install LICENSE, FAQs etc (shared doc)"	On \
+	HTMLTEMPLATES	"Install QMRTG HTML templates"			On
+.else		# defined(NOPORTDOCS)
+# avoid to offer to install doc
+OPTIONS=	\
+	HTMLTEMPLATES	"Install QMRTG HTML templates"			On
+.endif		# !defined(NOPORTDOCS)
+.else		# defined(PACKAGE_BUILDING) || defined(BATCH)
+# building batch
+# setting defaults
+WITH_HTMLTEMPLATES=	yes
+.if !defined(NOPORTDOCS)
+# also install doc by default
+WITH_DOCS=	yes
+.endif		# !defined(NOPORTDOCS)
+.endif		# !defined(PACKAGE_BUILDING)
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+pre-extract:
+	@${ECHO_MSG} "   --->   Qmrtg can be installed without MRTG by defining WITHOUT_MRTG"
+
+post-install:
+# possibly installing docs
+.if defined(WITH_DOCS) && !defined(NOPORTDOCS)
+	@${ECHO_MSG} "   --->   Installing QMRTG extra docs as requested [ ${DOCSDIR} ]"
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
+.endif
+# possibly installing HTML templates
+.if defined(WITH_HTMLTEMPLATES)
+	@${ECHO_MSG} "   --->   Installing examples as requested [ ${EXAMPLESDIR} ]"
+	${MKDIR} ${DATADIR}/html
+	${INSTALL_DATA} ${WRKSRC}/html/* ${DATADIR}/html
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/mrtg.cfg ${EXAMPLESDIR}
+.endif
+# creating db directory
+	@${ECHO_MSG} "   --->   Creating QMRTG db directory [ ${QMRTG_DBDIR} ]"
+	${MKDIR} ${QMRTG_DBDIR}
+# installing configuration example
+	@${ECHO_MSG} "   --->   Installing configuration example [ ${PREFIX}/etc/qmrtg.conf.dist ]"
+	${MKDIR} ${PREFIX}/etc
+	${CP} ${WRKSRC}/examples/qmrtg.conf.sample ${PREFIX}/etc/qmrtg.conf.dist
+# displaying the port install msg
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>
