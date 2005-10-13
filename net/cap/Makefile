@@ -10,9 +10,7 @@ PORTVERSION=	6.0.198
 PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://munnari.OZ.AU/mac/:source \
-		ftp://munnari.OZ.AU/mac/cap.patches/:patches \
-		ftp://ftp.kuis.kyoto-u.ac.jp/net/cap/:source \
-		ftp://ftp.kuis.kyoto-u.ac.jp/net/cap/cap60.patches/:patches
+		ftp://munnari.OZ.AU/mac/cap.patches/:patches
 DISTFILES=	cap60.pl100.tar.Z:source \
 		patches.101-126.tar.Z:patches patches.127-143.tar.Z:patches \
 		patches.144-154.tar.Z:patches patches.155-162.tar.Z:patches \
