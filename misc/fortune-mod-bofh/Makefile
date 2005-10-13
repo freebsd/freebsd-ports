@@ -7,17 +7,15 @@
 
 PORTNAME=	fortune-mod-bofh
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
-MASTER_SITES=	http://www.void.irq.org/
-DISTNAME=	bofh-fortune-mod${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:freebsd/} \
+		http://www.void.irq.org/:original
+MASTER_SITE_SUBDIR=	flz/${PORTNAME}/:freebsd
+DISTFILES=	bofh-fortune-mod${PORTVERSION}${EXTRACT_SUFX}:original,freebsd
 
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Compilation of excuses from the "Bastard Operator From Hell"
-
-BROKEN=		"mastersite unreachable"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=	2005-12-11
 
 NO_BUILD=	yes
 
