@@ -8,11 +8,15 @@
 PORTNAME=	poink
 PORTVERSION=	1.6
 CATEGORIES=	net
-MASTER_SITES=	http://coredump.cx/~lcamtuf/soft/
+MASTER_SITES=	# disappeared
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nosuid, secure ping like utility
+
+BROKEN=		"mastersite disappeared"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-13
 
 USE_ZIP=	yes
 
