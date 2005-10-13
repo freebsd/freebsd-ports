@@ -1,22 +1,19 @@
-================================================================
+==============================================================================
+
 QMRTG has been installed.
+Generation 2 is no longer compatible with older releases (< 2.0) !!!
 
-1) A "qmrtg/" directory has been added to ${PREFIX}/www/data
-If you don't care publishing qmrtg's reports, just run a polite
-$ rm -rf ${WWWROOTDIR}/qmrtg
-Also remind to remove it if you definitively uninstall qmrtg.
+There's still some steps you may need to do manually:
+1) QMRTG SETUP. If you're coming from older versions, re-adjust the
+configuration file (start from the .dist one)
+2) WWW SETUP. HTML templates are now installed as shared data
+[ share/qmrtg ]. Copying them in some http-reachable dir is your
+job by now. This is cleaner and less intrusive.
+3) MRTG SETUP. Possibly adjust the mrtg.cfg example provided in examples.
+You may need to set the path of qmail' queue if non-standard.
+4) RUN. The file RUNNING.txt in the shared doc dir tells you how
 
-2) to enable qmrtg monitoring:
-a) have a look at the ${PREFIX}/www/data/cfg/mrtg.cfg" file.
-you must at least set the 'WorkDir:' variable and qmail log paths
-(search for '/var/log/supervise/qmail' and adapt to your system)
-b) configure qmrtg.conf. Defaults are fine generally. At least copy
-${PREFIX}/etc/qmrtg.conf.sample to "qmrtg.conf".
-c) make mrtg run automatically. Using cron, put that in "/etc/crontab": 
-
-*/5 * * * *   root /usr/local/bin/mrtg \
-         /usr/local/www/data/qmrtg/cfg/mrtg.cfg 1>/dev/null 2>&1
-
-Note: to skip qmrtg reporting your mx' whole history at the first call,
-run the following before point "c)"
-$ qmrtgsync.sh
+You can sign a usersbook at http://dev.publicshout.org/qmrtg/usersbook/ .
+You can get support and announcements by subscribing to
+	qmrtg-subscribe@lists.dev.publicshout.org
+==============================================================================
