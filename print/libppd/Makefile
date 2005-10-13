@@ -7,6 +7,7 @@
 
 PORTNAME=	libppd
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lpr
@@ -17,10 +18,11 @@ COMMENT=	A library providing routines for ppd files
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	Yes
 USE_GETOPT_LONG=Yes
+USE_GNOME=	glib12
 
-MAN1=	ppdfilt.1
-MAN3=	ppd_check_option_is_marked.3 ppd_emit_to_file.3 ppd_file_free.3 \
-	ppd_file_new.3 ppd_find_choice.3 ppd_get_num_conflicts.3 \
-	ppd_get_page_length.3
+MAN1=		ppdfilt.1
+MAN3=           ppd_check_option_is_marked.3 ppd_emit_to_file.3 \
+		ppd_file_free.3 ppd_file_new.3 ppd_find_choice.3 \
+		ppd_get_num_conflicts.3 ppd_get_page_length.3
 
 .include <bsd.port.mk>
