@@ -6,15 +6,35 @@
 #
 
 PORTNAME=	orville-write
-PORTVERSION=	2.54
+PORTVERSION=	2.55
 CATEGORIES=	misc
 MASTER_SITES=	http://unixpapa.com/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced replacement for write/mesg
 
-MAN1=	amin.1 helpers.1 huh.1 mesg.1 write.1
-
 GNU_CONFIGURE=	yes
+
+MAN1=		amin.1 helpers.1 huh.1 mesg.1 write.1
+
+do-install:
+.for i in amin helpers huh mesg
+	${INSTALL_PROGRAM} -m 4711 ${WRKSRC}/${i} ${PREFIX}/bin
+.endfor
+.for i in write
+	${INSTALL_PROGRAM} -m 6711 ${WRKSRC}/${i} ${PREFIX}/bin
+.endfor
+.for i in jot tel telegram
+	${LN} -sf write ${PREFIX}/bin/${i}
+.endfor
+.for i in orville.conf
+	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/etc
+.endfor
+.for i in wrthist wrttmp
+	${INSTALL_DATA} -m 600 /dev/null ${PREFIX}/etc/${i}
+.endfor
+.for i in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/${i} ${MANPREFIX}/man/man1
+.endfor
 
 .include <bsd.port.mk>
