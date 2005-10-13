@@ -1,6 +1,6 @@
---- src/htsglobal.h.orig	Sat Oct 11 08:54:59 2003
-+++ src/htsglobal.h	Tue Feb 24 15:50:40 2004
-@@ -120,10 +120,8 @@
+--- src/htsglobal.h	Sat Jun  4 15:09:01 2005
++++ src/htsglobal.h.orig	Thu Oct 13 11:02:26 2005
+@@ -173,10 +173,8 @@
  #else
  
  #define HTS_WIN 0
@@ -10,4 +10,4 @@
 -#endif
  #endif
  
- // compatibilité DOS
+ // don't spare memory usage by default
