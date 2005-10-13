@@ -9,11 +9,10 @@
 PORTNAME=	hexedit
 PORTVERSION=	1.2.1
 CATEGORIES=	editors
-MASTER_SITES=	http://www.chez.com/prigaux/ \
-		${MASTER_SITE_LOCAL} \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	utils/file/hex,obrien
-EXTRACT_SUFX=	.src.tgz
+MASTER_SITES=	http://merd.net/pixel/ \
+		${MASTER_SITE_LOCAL:S/$/:local/}
+MASTER_SITE_SUBDIR=	obrien/:local
+DISTFILES=	${DISTNAME}.src.tgz:DEFAULT,local
 
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	View and edit files in hexadecimal or ASCII
