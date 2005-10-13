@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	newportsversioncheck
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.mavetju.org/download/
 
@@ -26,7 +25,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 do-install:
 	${MKDIR} ${PREFIX}/newportsversioncheck/bin
-.for f in apply_restrictions.pl check_data.pl delete_dupes.pl find_new_versions.pl find_new_versions.sh init_db.sh mail_maintainers.pl make_html.pl restart_database.pl README
+.for f in apply_restrictions.pl check_data.pl delete_dupes.pl find_new_versions.pl find_new_versions.sh init_db.sh mail_maintainers.pl make_html.pl restart_database.pl README CHANGES
 	${INSTALL_SCRIPT} ${WRKDIR}/newportsversioncheck/bin/${f} ${PREFIX}/newportsversioncheck/bin
 .endfor
 
