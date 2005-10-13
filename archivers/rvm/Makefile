@@ -21,8 +21,10 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 NO_LATEST_LINK=	yes
 
 USE_GNOME=	gnometarget
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-default-config-file=${PREFIX}/etc/rvm.conf
+MAKE_ARGS=	CXXFLAGS="${CXXFLAGS}"
 
 MAN1=		rvm.1
 PLIST_FILES=	bin/rvm

@@ -13,6 +13,8 @@ MASTER_SITES=	http://ed.zehome.com/cpige/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Icecast/Shoutcast stream ripper
 
+MAKE_ARGS=	CC="${CC}" CLIBS="${LDFLAGS}" CFLAGS="${CFLAGS}"
+
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install:

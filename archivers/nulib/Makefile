@@ -17,6 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NuFX archive utility
 
 WRKSRC=		${WRKDIR}/nulib
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+
 MAN1=		nulib.1
 PLIST_FILES=	bin/nulib
 
