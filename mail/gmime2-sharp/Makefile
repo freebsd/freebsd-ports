@@ -6,7 +6,7 @@
 #   $Id: Makefile,v 1.9 2005/09/25 00:56:46 tmclau02 Exp $
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-sharp
 
