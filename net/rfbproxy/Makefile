@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	rfbproxy
-PORTVERSION=	0.6.5
-PORTREVISION=	1
+PORTVERSION=	0.6.6
 CATEGORIES=	net
 MASTER_SITES=	http://cyberelk.net/tim/data/rfbproxy/stable/
 
