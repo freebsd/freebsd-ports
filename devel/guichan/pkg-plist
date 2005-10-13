@@ -26,6 +26,9 @@ include/guichan/opengl/openglimageloader.hpp
 include/guichan/platform.hpp
 include/guichan/rectangle.hpp
 include/guichan/sdl.hpp
+include/guichan/sdl/sdlgraphics.hpp
+include/guichan/sdl/sdlimageloader.hpp
+include/guichan/sdl/sdlinput.hpp
 include/guichan/widget.hpp
 include/guichan/widgets/button.hpp
 include/guichan/widgets/checkbox.hpp
@@ -47,6 +50,10 @@ lib/libguichan.so.0
 lib/libguichan_opengl.a
 lib/libguichan_opengl.so
 lib/libguichan_opengl.so.0
+lib/libguichan_sdl.a
+lib/libguichan_sdl.so
+lib/libguichan_sdl.so.0
 @dirrm include/guichan/widgets
+@dirrm include/guichan/sdl
 @dirrm include/guichan/opengl
 @dirrm include/guichan
