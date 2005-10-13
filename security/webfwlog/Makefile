@@ -97,7 +97,7 @@ post-install:
 	@${CHMOD} 0555 ${PREFIX}/${HTML_DOC_ROOT}/webfwlog/include
 
 	@${ECHO}
-	@${CAT} pkg-message
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO}
 
 .include <bsd.port.post.mk>
