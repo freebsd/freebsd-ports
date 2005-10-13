@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 PLIST_FILES=	lib/ladspa/aw.so
-MAKE_ENV=	CXX="${CXX}"
+MAKE_ARGS=	CPP="${CXX}" CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -fPIC"
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/aw.so ${LOCALBASE}/lib/ladspa
