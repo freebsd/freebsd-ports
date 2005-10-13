@@ -1,6 +1,5 @@
 bin/fontforge
 bin/sfddiff
-bin/acorn2sfd
 bin/pfaedit
 lib/libgdraw.a
 lib/libgdraw.la
@@ -167,6 +166,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/charview.html
 %%PORTDOCS%%%%DOCSDIR%%/charview2.png
 %%PORTDOCS%%%%DOCSDIR%%/charwithhintmask.png
+%%PORTDOCS%%%%DOCSDIR%%/cidmapformat.html
 %%PORTDOCS%%%%DOCSDIR%%/cidmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/cliargs.html
 %%PORTDOCS%%%%DOCSDIR%%/contextchain.html
@@ -205,8 +205,10 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/cvstaricon.png
 %%PORTDOCS%%%%DOCSDIR%%/cvtangenticon.png
 %%PORTDOCS%%%%DOCSDIR%%/cvt-to-mac.png
+%%PORTDOCS%%%%DOCSDIR%%/definegroups.png
 %%PORTDOCS%%%%DOCSDIR%%/diffs.html
 %%PORTDOCS%%%%DOCSDIR%%/display.html
+%%PORTDOCS%%%%DOCSDIR%%/displaygroups.png
 %%PORTDOCS%%%%DOCSDIR%%/document.nvd
 %%PORTDOCS%%%%DOCSDIR%%/doublestruck-B.png
 %%PORTDOCS%%%%DOCSDIR%%/editcvt.png
@@ -225,6 +227,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/edittransition-insert.png
 %%PORTDOCS%%%%DOCSDIR%%/edittransition-kern.png
 %%PORTDOCS%%%%DOCSDIR%%/elementmenu.html
+%%PORTDOCS%%%%DOCSDIR%%/encodingmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/englishkernpairs.txt
 %%PORTDOCS%%%%DOCSDIR%%/errrecovery.html
 %%PORTDOCS%%%%DOCSDIR%%/exclude-post.png
@@ -264,7 +267,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-cid.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-comment.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-context.png
-%%PORTDOCS%%%%DOCSDIR%%/fontinfo-encoding.png
+%%PORTDOCS%%%%DOCSDIR%%/fontview-grouped.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-macfeat.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-macstyle.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-markclasses.png
@@ -273,7 +276,10 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-ps.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-size.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-statemach.png
+%%PORTDOCS%%%%DOCSDIR%%/fontinfo-subsup.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-tex.png
+%%PORTDOCS%%%%DOCSDIR%%/fontinfo-ttfmetrics.png
+%%PORTDOCS%%%%DOCSDIR%%/fontinfo-ttfname-bigedit.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-ttfname.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-ttfvals.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo.html
@@ -296,6 +302,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/grave_with_anchor.png
 %%PORTDOCS%%%%DOCSDIR%%/greymapedit.png
 %%PORTDOCS%%%%DOCSDIR%%/greymapsavail.png
+%%PORTDOCS%%%%DOCSDIR%%/groups.html
 %%PORTDOCS%%%%DOCSDIR%%/helpmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/hexley.png
 %%PORTDOCS%%%%DOCSDIR%%/hinting.html
