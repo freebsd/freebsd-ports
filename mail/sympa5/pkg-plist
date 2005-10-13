@@ -387,8 +387,6 @@ sympa/icons/unknown.png
 %%NLS%%@unexec rmdir %D/share/locale/fi 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/fr 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/hu/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/hu 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/it 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
