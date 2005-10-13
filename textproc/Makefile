@@ -446,6 +446,7 @@
     SUBDIR += p5-WordNet-QueryData
     SUBDIR += p5-WordNet-Similarity
     SUBDIR += p5-XML-Atom
+    SUBDIR += p5-XML-Atom-Filter
     SUBDIR += p5-XML-Atom-Syndication
     SUBDIR += p5-XML-AutoWriter
     SUBDIR += p5-XML-Catalog
