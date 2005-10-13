@@ -8,8 +8,7 @@
 PORTNAME=	tcpslice
 PORTVERSION=	2005.07.04
 CATEGORIES=	net
-MASTER_SITES=	http://www.tcpdump.org/weekly/ \
-		http://www.jp.tcpdump.org/weekly/
+MASTER_SITES=	http://www.tcpdump.org/weekly/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for extracting portions of pcap files
