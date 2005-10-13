@@ -8,7 +8,7 @@
 PORTNAME=	vchat
 PORTVERSION=	2.42c
 CATEGORIES=	net
-MASTER_SITES=	http://www.enforcer.cc/vchat/filez/
+MASTER_SITES=	# disappeared
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client software for taking part in VChat conferences
