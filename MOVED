@@ -1644,3 +1644,5 @@ multimedia/gpac-libm4systems|multimedia/gpac-libgpac|2005-10-09|Library renamed
 games/marbles|games/lmarbles|2005-10-10|renamed to reflect right name
 games/py-slune|games/slune|2005-10-10|renamed to reflect right name
 games/kxl|devel/kxl|2005-10-12|accurate category
+devel/libpreps-devel||2005-10-13|obsolete
+devel/libpreps|devel/prepstools|2005-10-13|project was renamed
