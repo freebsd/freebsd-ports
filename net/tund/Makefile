@@ -8,10 +8,14 @@
 PORTNAME=	tund
 PORTVERSION=	0.20
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.chg.ru/pub/networking/freebsd/
+MASTER_SITES=	#
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP over UDP tunnel with encryption
+
+BROKEN=		"mastersite disappeared"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-12-13
 
 USE_OPENSSL=	YES
 
