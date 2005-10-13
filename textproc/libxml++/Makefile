@@ -15,8 +15,8 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	XML API for C++
 
-USE_GNOME=	gnomehack lthack gnometarget libxml2 pkgconfig
-USE_INC_LIBTOOL_VER=15
+USE_GNOME=	gnomehack gnometarget libxml2 pkgconfig
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
