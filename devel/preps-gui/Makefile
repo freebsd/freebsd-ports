@@ -5,31 +5,36 @@
 # $FreeBSD$
 #
 
-PORTNAME=	preps-gui
-PORTVERSION=	1.8.1
+PORTNAME=	preps
+PORTVERSION=	2.0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://webpages.charter.net/stuffle/linux/preps/
+PKGNAMESUFFIX=	-gui
 DISTNAME=	preps-${PORTVERSION}
 DIST_SUBDIR=	prep
 
-MAINTAINER=	shadow@psoft.net
+MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	Problem reporting system
 
-LIB_DEPENDS+=	preps-1.6.1:${PORTSDIR}/devel/libpreps
-
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
+RUN_DEPENDS=	prepsdb_tool:${PORTSDIR}/devel/prepstools
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk12 gnomelibs
-MAN1=		preps.1
+USE_GNOME=	gtk20 gconf2 libgnomeui
+USE_PGSQL=	yes
+USE_REINPLACE=	yes
+INSTALLS_OMF=	yes
+GCONF_SCHEMAS=	preps.schema
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-pgsqldir=${LOCALBASE} \
 			--with-plpgsqldir=${LOCALBASE} \
-			--with-libprepsdir=${LOCALBASE}
+			--with-libprepsdir=${LOCALBASE} \
+			--localstatedir=/var
+
+post-patch:
+	@${REINPLACE_CMD} -e 's#^\(omf_dest_dir\).*#\1=${PREFIX}/share/gnome/omf/@PACKAGE@#' \
+		${WRKSRC}/omf.make ${WRKSRC}/help/C/Makefile.in
 
 .include <bsd.port.mk>

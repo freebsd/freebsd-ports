@@ -498,8 +498,6 @@
     SUBDIR += libpci
     SUBDIR += libpdel
     SUBDIR += libpeak
-    SUBDIR += libpreps
-    SUBDIR += libpreps-devel
     SUBDIR += libredblack
     SUBDIR += libshbuf
     SUBDIR += libshhmsg
@@ -1328,6 +1326,7 @@
     SUBDIR += prcs
     SUBDIR += premake
     SUBDIR += preps-gui
+    SUBDIR += prepstools
     SUBDIR += privman
     SUBDIR += projectcenter.app
     SUBDIR += prototype
