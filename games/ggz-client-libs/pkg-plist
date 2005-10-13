@@ -6,10 +6,10 @@ include/ggzcore.h
 include/ggzmod.h
 lib/libggzcore.a
 lib/libggzcore.so
-lib/libggzcore.so.7
+lib/libggzcore.so.8
 lib/libggzmod.a
 lib/libggzmod.so
-lib/libggzmod.so.3
+lib/libggzmod.so.4
 share/desktop-directories/ggz-games.directory
 share/desktop-directories/ggz.directory
 share/locale/de/LC_MESSAGES/ggz-config.mo
