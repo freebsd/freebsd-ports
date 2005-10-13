@@ -2,7 +2,6 @@ SambaSentinel is basically a gtk-frontend to smbstatus but
 it extends it with number of useful features such as killing
 processes and mounting/browsing a visiting computer.
 
-WWW: http://kling.mine.nu/sambasentinel.htm
 Author: Robert Kling <robkli-8@student.luth.se>
 
 - Patrick Li <pat@FreeBSD.org>
