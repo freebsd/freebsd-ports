@@ -28,8 +28,8 @@ MAKE_ENV=	JAVA_HOME=${JDKDIR}
 
 PLIST_SUB+=	JAVA_HOME=${JAVA_HOME:S/${PREFIX}\///}
 PLIST_FILES=	%%JAVA_HOME%%/jre/lib/ext/CommDriver.jar \
-		%%JAVA_HOME%%/jre/lib/i386/libSerial.so \
-		%%JAVA_HOME%%/jre/lib/i386/libParallel.so \
+		%%JAVA_HOME%%/jre/lib/${MACHINE_ARCH}/libSerial.so \
+		%%JAVA_HOME%%/jre/lib/${MACHINE_ARCH}/libParallel.so \
 		%%JAVA_HOME%%/jre/lib/javax.comm.properties
 
 .include <bsd.port.mk>
