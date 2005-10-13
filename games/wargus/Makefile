@@ -7,16 +7,16 @@
 
 PORTNAME=	wargus
 PORTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	tlp@liquidx.org
-COMMENT=	Warcraft2 Mod that allows you to play Warcraft2 with Stratagus
+COMMENT=	Warcraft 2 mod that allows you to play Warcraft 2 with Stratagus
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpng.a:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/bin/stratagus:${PORTSDIR}/games/stratagus
 
 USE_GMAKE=	yes
@@ -36,7 +36,8 @@ post-patch:
 		s|^\(CFLAGS =\)|\1 ${CFLAGS}|; \
 		s|\/usr\/local\(\/cross\)|${PREFIX}\1|; \
 		s|\(-I\)\/usr\/local|\1${LOCALBASE}|; \
-		s|\(-L\)\/usr\/local|\1${LOCALBASE}|' \
+		s|\(-L\)\/usr\/local|\1${LOCALBASE}|; \
+		s|-static||' \
 		${WRKSRC}/Makefile
 
 do-install:

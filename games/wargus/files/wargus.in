@@ -9,7 +9,7 @@
 DATADIR=%%PREFIX%%/share/wargus/data.wc2
 
 if [ ! -d $DATADIR ]; then
-	echo "Warcraft2 data not found in $DATADIR/"
+	echo "Warcraft 2 data not found in $DATADIR/"
 	echo ""
 	echo "Did you run build.sh yet?"
 	echo ""
@@ -18,7 +18,7 @@ if [ ! -d $DATADIR ]; then
 	echo ""
 	echo "The Wargus tool has been installed to %%PREFIX%%/share/wargus/"
 	echo ""
-	echo "You can now use this tool to extract Warcraft2 data for use with the"
+	echo "You can now use this tool to extract Warcraft 2 data for use with the"
 	echo "Stratagus engine from the following CDs:"
 	echo ""
 	echo "* US Expansion (both MAC/DOS)"
@@ -34,7 +34,7 @@ if [ ! -d $DATADIR ]; then
 	echo ""
 	echo "./build.sh -p /cdrom"
  	echo ""
-	echo "After your Warcraft2 data has been successfully extracted, run 'wargus' as the"
+	echo "After your Warcraft 2 data has been successfully extracted, run 'wargus' as the"
 	echo "user you intend to play the game with."
  	echo ""
 	echo "For more information, please visit: http://wargus.sourceforge.net"
@@ -42,9 +42,9 @@ if [ ! -d $DATADIR ]; then
 fi
 
 if [ -d $DATADIR ]; then
-	echo "Warcraft2 data found in $DATADIR/"
+	echo "Warcraft 2 data found in $DATADIR/"
 	echo ""
-	echo "Attempting to run Stratagus with Warcraft2 data"
+	echo "Attempting to run Stratagus with Warcraft 2 data"
 	echo ""
 	stratagus -d $DATADIR $*
 	exit
