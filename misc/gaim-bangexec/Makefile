@@ -9,7 +9,8 @@ PORTNAME=	bangexec
 PORTVERSION=	1.3.0.2
 PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	http://bard.sytes.net/bangexec/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	ignorance
 PKGNAMEPREFIX=	gaim-
 
 MAINTAINER=	kruptos@mlinux.org
