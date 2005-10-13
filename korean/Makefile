@@ -56,6 +56,7 @@
     SUBDIR += pgp.language
     SUBDIR += php_doc
     SUBDIR += pinetreefonts
+    SUBDIR += scim-hangul
     SUBDIR += scim-tables
     SUBDIR += texinfo
     SUBDIR += unfonts-ttf
