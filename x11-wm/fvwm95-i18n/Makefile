@@ -21,7 +21,7 @@ PATCHFILES=	fvwm95-2.0.43a-Autoconf.I18N.diff.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Win95 lookalike fvwm2 window manager with an I18N patch
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/librplay.a:${PORTSDIR}/audio/rplay
+LIB_DEPENDS=	rplay.1:${PORTSDIR}/audio/rplay
 RUN_DEPENDS=	${X11BASE}/icons/chuck.xpm:${PORTSDIR}/x11/fbsd-icons
 
 EXTRACT_ONLY=	${DISTNAME}.tgz ${PKGNAME}-portKit-19981123.tgz

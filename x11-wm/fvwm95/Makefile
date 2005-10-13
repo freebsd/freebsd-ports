@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Win95 lookalike version of the fvwm2 window manager
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/librplay.a:${PORTSDIR}/audio/rplay
+LIB_DEPENDS=	rplay.1:${PORTSDIR}/audio/rplay
 RUN_DEPENDS=	${X11BASE}/icons/chuck.xpm:${PORTSDIR}/x11/fbsd-icons
 
 USE_X_PREFIX=	yes
