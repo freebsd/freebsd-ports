@@ -8,7 +8,7 @@
 PORTNAME=	tcpsocketpipe
 PORTVERSION=	1.8.2
 CATEGORIES=	net ruby
-MASTER_SITES=	http://rrr.jin.gr.jp/download/
+MASTER_SITES=	http://dev.ctor.org/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	socketproxy.rb
 EXTRACT_SUFX=	# none
