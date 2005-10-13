@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xdtp
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	japanese
 MASTER_SITES+=	http://www.ongs.co.jp/projects/xdtp/
 DISTNAME=	xdtp-${PORTVERSION}
@@ -18,6 +18,7 @@ COMMENT=	XDTP (XML Document Transfer Program)
 LIB_DEPENDS=	glibmm-2.4:${PORTSDIR}/devel/glibmm
 
 INSTALLS_SHLIB=	yes
+USE_GCC=	3.4
 USE_GNOME=	libxml2 libxslt pkgconfig
 GNU_CONFIGURE=	yes
 

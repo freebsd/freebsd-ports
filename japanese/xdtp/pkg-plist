@@ -8,21 +8,21 @@ lib/libxdtp.so
 lib/libxdtp.so.1
 lib/libxdtp.a
 libdata/pkgconfig/libxdtp.pc
-share/xdtp/toHTML/BanBun.xsl
-share/xdtp/toHTML/BanBunModule.xsl
-share/xdtp/toHTML/DocumentModule.xsl
-share/xdtp/toHTML/GLSD.xsl
-share/xdtp/toHTML/GLSDocumentModule.xsl
-share/xdtp/toTEXT/BanBun.xsl
-share/xdtp/toTEXT/BanBunModule.xsl
-share/xdtp/toTEXT/DocumentModule.xsl
-share/xdtp/toTEXT/GLSD.xsl
-share/xdtp/toTEXT/GLSDocumentModule.xsl
-share/xdtp/toXHTML/BanBun.xsl
-share/xdtp/toXHTML/BanBunModule.xsl
-share/xdtp/toXHTML/DocumentModule.xsl
-share/xdtp/toXHTML/GLSD.xsl
-share/xdtp/toXHTML/GLSDocumentModule.xsl
+%%DATADIR%%/toHTML/BanBun.xsl
+%%DATADIR%%/toHTML/BanBunModule.xsl
+%%DATADIR%%/toHTML/DocumentModule.xsl
+%%DATADIR%%/toHTML/GLSD.xsl
+%%DATADIR%%/toHTML/GLSDocumentModule.xsl
+%%DATADIR%%/toTEXT/BanBun.xsl
+%%DATADIR%%/toTEXT/BanBunModule.xsl
+%%DATADIR%%/toTEXT/DocumentModule.xsl
+%%DATADIR%%/toTEXT/GLSD.xsl
+%%DATADIR%%/toTEXT/GLSDocumentModule.xsl
+%%DATADIR%%/toXHTML/BanBun.xsl
+%%DATADIR%%/toXHTML/BanBunModule.xsl
+%%DATADIR%%/toXHTML/DocumentModule.xsl
+%%DATADIR%%/toXHTML/GLSD.xsl
+%%DATADIR%%/toXHTML/GLSDocumentModule.xsl
 @dirrm share/xdtp/toHTML
 @dirrm share/xdtp/toTEXT
 @dirrm share/xdtp/toXHTML
