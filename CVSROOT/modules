@@ -1834,6 +1834,7 @@ dvd+rw-tools	ports/sysutils/dvd+rw-tools
 dvd-slideshow	ports/multimedia/dvd-slideshow
 dvdauthor	ports/multimedia/dvdauthor
 dvdbackup	ports/sysutils/dvdbackup
+dvdimagecmp	ports/sysutils/dvdimagecmp
 dvdrip		ports/multimedia/dvdrip
 dvdstyler	ports/multimedia/dvdstyler
 dvdtape		ports/sysutils/dvdtape
