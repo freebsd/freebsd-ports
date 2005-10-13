@@ -547,6 +547,7 @@
     SUBDIR += vulnerability-test-port
     SUBDIR += vuxml
     SUBDIR += vxquery
+    SUBDIR += webfwlog
     SUBDIR += wipe
     SUBDIR += wpa_supplicant
     SUBDIR += xca

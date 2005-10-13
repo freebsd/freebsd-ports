@@ -1,0 +1,73 @@
+bin/wfwl_syslog
+etc/webfwlog.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes
+%%PORTDOCS%%%%DOCSDIR%%/mysql/README
+%%PORTDOCS%%%%DOCSDIR%%/mysql/setup
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/temp_grants
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/ulog_copy
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/ulog_local
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/ulogd_grants
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_grants
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_hostnames_create
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_reports_addcol
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_reports_altercol
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_reports_create
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_services_create
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/README
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/setup
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/ulog_copy
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/ulog_local
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/ulogd_73_grants
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/ulogd_grants
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_73_grants
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_functions
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_grants
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_hostnames_create
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_reports_addcol
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_reports_create
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_services_create
+%%PORTDOCS%%%%EXAMPLESDIR%%/basic
+%%PORTDOCS%%%%EXAMPLESDIR%%/current_count
+%%PORTDOCS%%%%EXAMPLESDIR%%/current_dport
+%%PORTDOCS%%%%EXAMPLESDIR%%/last20hosts
+%%PORTDOCS%%%%EXAMPLESDIR%%/latest_logged_packets
+%%PORTDOCS%%%%EXAMPLESDIR%%/recent_active
+%%PORTDOCS%%%%EXAMPLESDIR%%/tcpports
+%%PORTDOCS%%%%EXAMPLESDIR%%/tcpsyn
+%%PORTDOCS%%%%EXAMPLESDIR%%/udpports
+%%HTML_DOC_ROOT%%/webfwlog/include/config.php
+%%HTML_DOC_ROOT%%/webfwlog/include/criteria.php
+%%HTML_DOC_ROOT%%/webfwlog/include/debug.php
+%%HTML_DOC_ROOT%%/webfwlog/include/delete_report.php
+%%HTML_DOC_ROOT%%/webfwlog/include/edit_doc.php
+%%HTML_DOC_ROOT%%/webfwlog/include/edit_report.php
+%%HTML_DOC_ROOT%%/webfwlog/include/functions.php
+%%HTML_DOC_ROOT%%/webfwlog/include/home.php
+%%HTML_DOC_ROOT%%/webfwlog/include/html_out.php
+%%HTML_DOC_ROOT%%/webfwlog/include/import.php
+%%HTML_DOC_ROOT%%/webfwlog/include/orders.php
+%%HTML_DOC_ROOT%%/webfwlog/include/packet.php
+%%HTML_DOC_ROOT%%/webfwlog/include/save_report.php
+%%HTML_DOC_ROOT%%/webfwlog/include/selection.php
+%%HTML_DOC_ROOT%%/webfwlog/include/sorting.php
+%%HTML_DOC_ROOT%%/webfwlog/include/sql.php
+%%HTML_DOC_ROOT%%/webfwlog/include/state.php
+%%HTML_DOC_ROOT%%/webfwlog/include/static.php
+%%HTML_DOC_ROOT%%/webfwlog/include/syslog.php
+%%HTML_DOC_ROOT%%/webfwlog/include/update_cache.php
+%%HTML_DOC_ROOT%%/webfwlog/style.css
+%%HTML_DOC_ROOT%%/webfwlog/index.php
+@dirrm %%HTML_DOC_ROOT%%/webfwlog/include
+@dirrm %%HTML_DOC_ROOT%%/webfwlog
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pgsql/scripts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pgsql
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/mysql/scripts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/mysql
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
