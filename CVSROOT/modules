@@ -9951,6 +9951,7 @@ prtunnel	ports/net/prtunnel
 prune		ports/sysutils/prune
 pscal		ports/print/pscal
 pscan		ports/security/pscan
+psdim		ports/print/psdim
 pserv		ports/www/pserv
 psgml		ports/editors/psgml
 psgml-emacs19	ports/editors/psgml-emacs19
