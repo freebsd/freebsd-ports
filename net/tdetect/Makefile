@@ -8,9 +8,7 @@
 PORTNAME=	tdetect
 PORTVERSION=	0.2
 CATEGORIES=	net
-MASTER_SITES=	http://sb.123.org/ \
-		http://www.genocide2600.com/~tattooman/unix-loggers/ \
-		http://ftp.ceti.com.pl/pub/scout/progs/Unix/
+MASTER_SITES=	# disappeared
 
 MAINTAINER=	shipley@dis.org
 COMMENT=	Utility for detecting traceroutes and reporting them via syslog
