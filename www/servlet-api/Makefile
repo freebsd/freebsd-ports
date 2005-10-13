@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	hq@FreeBSD.org
-COMMENT=	The Servlet API (JSR-168)
+COMMENT=	The Servlet API
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
