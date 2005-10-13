@@ -16,6 +16,9 @@ COMMENT=	Another mixer intended for the windowmaker dockapp
 
 PLIST_FILES=	bin/Mixer.app
 WRKSRC=		${WRKDIR}/Mixer.app-${PORTVERSION}
+CXXFLAGS+=	-fno-rtti -fno-exceptions -I${X11BASE}/include
+LDFLAGS+=	-L${X11BASE}/lib -lXpm -lXext -lX11
+MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}"
 
 USE_XPM=	yes
 
