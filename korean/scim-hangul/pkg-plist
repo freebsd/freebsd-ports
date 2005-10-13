@@ -1,0 +1,11 @@
+lib/scim-1.0/IMEngine/hangul.so
+lib/scim-1.0/SetupUI/hangul-imengine-setup.so
+share/locale/de/LC_MESSAGES/scim-hangul.mo
+share/locale/fr/LC_MESSAGES/scim-hangul.mo
+share/locale/ja/LC_MESSAGES/scim-hangul.mo
+share/locale/ko/LC_MESSAGES/scim-hangul.mo
+share/locale/zh_CN/LC_MESSAGES/scim-hangul.mo
+share/scim/icons/scim-hangul.png
+@unexec rmdir %D/share/scim/icons 2>/dev/null || true
+@unexec rmdir %D/lib/scim-1.0/IMEngine 2>/dev/null || true
+@unexec rmdir %D/lib/scim-1.0/SetupUI 2>/dev/null || true
