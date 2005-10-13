@@ -12,7 +12,7 @@ CATEGORIES=	multimedia audio gnome
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-recorder/
 DIST_SUBDIR=    gnome2
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GNOME Gstreamer based video/audio capture solution
 
 BROKEN=		Does not compile
