@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	ggz-client-libs
-PORTVERSION=	0.0.11
+PORTVERSION=	0.0.12
 CATEGORIES=	games
-MASTER_SITES=	http://ftp.ggzgamingzone.org/pub/ggz/%SUBDIR%/
+MASTER_SITES=	http://mirrors.dotsrc.org/ggzgamingzone/ggz/%SUBDIR%/ \
+		http://ftp.ggzgamingzone.org/pub/ggz/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
