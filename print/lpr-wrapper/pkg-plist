@@ -1,0 +1,3 @@
+bin/lpr-wrapper
+share/lpr-wrapper/default.ppd
+@dirrm share/lpr-wrapper
