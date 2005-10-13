@@ -5853,6 +5853,7 @@ lp_solve	ports/math/lp_solve
 lpe		ports/editors/lpe
 lphoto		ports/graphics/lphoto
 lplayer		ports/audio/lplayer
+lpr-wrapper	ports/print/lpr-wrapper
 lprps-a4	ports/print/lprps-a4
 lprps-letter	ports/print/lprps-letter
 lr		ports/misc/lr
