@@ -1,0 +1,58 @@
+bin/after_installation_routines.sh
+bin/relaxconf
+bin/relaxinstaller
+bin/relaxlangconf
+bin/relaxloadsetting
+bin/relaxmediabackup
+bin/relaxmountdisk
+bin/relaxmountusb
+bin/relaxnetconf
+bin/relaxrestore
+bin/relaxsavesetting
+bin/relaxsnddetect
+bin/relaxwebinstaller
+bin/relaxxconf
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/relaxconf.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/relaxconf.mo
+%%NLS%%@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/zh_CN 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/zh_TW 2>/dev/null || true
+%%DATADIR%%/COPYRIGHT
+%%DATADIR%%/COPYRIGHT.RelaxBSD
+%%DATADIR%%/README
+%%DATADIR%%/VCL.xcu
+%%DATADIR%%/XF86Config-4.vmware
+%%DATADIR%%/boot.catalog
+%%DATADIR%%/dot.cshrc
+%%DATADIR%%/dot.login
+%%DATADIR%%/dot.mail_aliases
+%%DATADIR%%/dot.mailrc
+%%DATADIR%%/dot.muttrc.big5
+%%DATADIR%%/dot.muttrc.gb2312
+%%DATADIR%%/dot.profile
+%%DATADIR%%/dot.tcshrc
+%%DATADIR%%/dot.tcshrc.bindkey
+%%DATADIR%%/dot.tcshrc.complete
+%%DATADIR%%/dot.vimrc
+%%DATADIR%%/dot.xinitrc.gnome
+%%DATADIR%%/dot.xinitrc.xfce4
+%%DATADIR%%/firefox
+%%DATADIR%%/gettytab
+%%DATADIR%%/hosts
+%%DATADIR%%/loader.conf
+%%DATADIR%%/make.conf
+%%DATADIR%%/make.conf.minimal
+%%DATADIR%%/mozilla
+%%DATADIR%%/rc.conf
+%%DATADIR%%/rc.local
+%%DATADIR%%/relaxmdconf
+%%DATADIR%%/snd_card_ids.txt
+%%DATADIR%%/soffice
+%%DATADIR%%/sources.conf
+%%DATADIR%%/splash.bmp
+%%DATADIR%%/termcap
+%%DATADIR%%/ttys
+%%DATADIR%%/usbd.conf
+%%DATADIR%%/xorg.conf.vmware
+@dirrm %%DATADIR%%
