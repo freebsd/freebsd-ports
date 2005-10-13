@@ -272,6 +272,7 @@
     SUBDIR += lplayer
     SUBDIR += mac
     SUBDIR += mad
+    SUBDIR += madman
     SUBDIR += madplay
     SUBDIR += malint
     SUBDIR += maplay

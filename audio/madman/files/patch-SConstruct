@@ -1,0 +1,20 @@
+--- SConstruct.orig	Thu May 20 16:03:14 2004
++++ SConstruct	Wed Oct 12 01:01:10 2005
+@@ -1,6 +1,8 @@
+ import os
+ import glob
+ 
++SConsignFile()
++
+ opts = Options(	"my_options.py")
+ 
+ opts.Add("qt_directory", "Path to Qt directory", "not specified")
+@@ -112,7 +114,7 @@
+ def CheckForQtAt(context, qtdir):
+   context.Message('Checking for Qt at %s... ' % qtdir)
+   result = AttemptLinkWithVariables(context,
+-      { "LIBS": "qt-mt", "LIBPATH": qtdir + '/lib', "CPPPATH": qtdir + '/include' },
++      { "LINKFLAGS": "-pthread", "LIBS": "qt-mt", "LIBPATH": qtdir + '/lib', "CPPPATH": qtdir + '/include' },
+       """
+ #include <qapplication.h>
+ int main(int argc, char **argv) { 
