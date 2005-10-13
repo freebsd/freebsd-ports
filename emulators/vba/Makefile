@@ -6,7 +6,7 @@
 
 PORTNAME=	vba
 PORTVERSION=	1.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,12 +19,18 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_X_PREFIX=	yes
+WANT_GNOME=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
+CONFIGURE_ARGS=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include" LIBS="-lintl"
 WRKSRC=		${WRKDIR}/VisualBoyAdvance-${PORTVERSION}
 
-TARGET_DIR=	${PREFIX}/bin/
+PLIST_SUB=	INSTALL_GTK2="@comment "
+
+DATA_FILES=	${WRKSRC}/src/VisualBoyAdvance.cfg
+PROG_FILES=	${WRKSRC}/src/sdl/VisualBoyAdvance
+DOC_FILES=	COPYING AUTHORS NEWS README ChangeLog INSTALL
 
 .include <bsd.port.pre.mk>
 
@@ -36,47 +42,43 @@ BROKEN=		"Runaway cc1plus process"
 CFLAGS+=	-O0
 .endif
 
+.ifdef(WITH_GTK2)
+PLIST_SUB=	INSTALL_GTK2=""
+USE_GCC=	3.4+
+CONFIGURE_ARGS+=	--enable-gtk=2.4
+USE_GNOME=	gnomelibs gtk20
+LIB_DEPENDS+=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
+		glademm-2.4:${PORTSDIR}/devel/libglademm24
+PROG_FILES+=	${WRKSRC}/src/gtk/gvba
+GTK2_DATA_FILES=	${WRKSRC}/src/gtk/vba.glade
+.endif
+
 .ifndef(PROFILING)
 CONFIGURE_ARGS+=	--without-profiling
 .endif
-
-PLIST_SUB=	INSTALL_DEBUGGER=""
-
-.ifndef(WITH_DEBUGGER)
-CONFIGURE_ARGS+=	--disable-dev
-PLIST_SUB=	INSTALL_DEBUGGER="@comment "
-.endif
-
-CONFIGURE_ARGS+=	LIBS=-L${LOCALBASE}/lib
-
-DATA_FILES=	${WRKSRC}/src/VisualBoyAdvance.cfg
-PROG_FILES=	${WRKSRC}/src/sdl/VisualBoyAdvance
-DEBUG_FILES=	${WRKSRC}/src/sdl/TestEmu
-DOC_FILES=	COPYING AUTHORS NEWS README ChangeLog INSTALL
 
 pre-everything::
 .ifndef(PROFILING)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You can enable profiling by defining PROFILING."
 .endif
-.ifndef(WITH_DEBUGGER)
+.ifndef(WITH_GTK2)
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You can install the ARM/THUMB debugger by defining WITH_DEBUGGER."
+	@${ECHO_MSG} "You can install the GTK2 based X version by defining WITH_GTK2."
 .endif
-
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Due to a bug in gcc2 optimizations other than -O0 will be ignored on"
 	@${ECHO_MSG} "FreeBSD releases that didn't ship with gcc3 (prior 500035)."
 	@${ECHO_MSG} ""
 
 do-install:
-	${INSTALL} -d ${TARGET_DIR}
-	${INSTALL_PROGRAM} ${PROG_FILES} ${TARGET_DIR}
-.ifdef(WITH_DEBUGGER)
-	${INSTALL_PROGRAM} ${DEBUG_FILES} ${TARGET_DIR}
+	${INSTALL_PROGRAM} ${PROG_FILES} ${PREFIX}/bin
+.ifdef(WITH_GTK2)
+	${INSTALL} -d ${PREFIX}/share/VisualBoyAdvance
+	${INSTALL_DATA} ${GTK2_DATA_FILES} ${PREFIX}/share/VisualBoyAdvance
 .endif
 	${SED} -e 's|filter=0|filter=1|' ${DATA_FILES} > ${DATA_FILES}-default
-	${INSTALL_DATA} ${DATA_FILES}-default ${TARGET_DIR}
+	${INSTALL_DATA} ${DATA_FILES}-default ${PREFIX}/bin
 
 post-install:
 .ifndef(NOPORTDOCS)

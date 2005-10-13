@@ -1,10 +1,11 @@
---- src/remote.cpp.old	Thu May 20 19:24:47 2004
-+++ src/remote.cpp	Thu Aug 19 18:16:57 2004
-@@ -22,6 +22,7 @@
- 
- #ifndef WIN32
- # include <unistd.h>
-+# undef _BSD_SOCKLEN_T_
- # include <sys/socket.h>
- # include <netdb.h>
- # ifdef HAVE_NETINET_IN_H
+--- src/sdl/SDL.cpp.orig	Sun Feb  8 14:45:01 2004
++++ src/sdl/SDL.cpp		Tue Feb 10 14:45:09 2004
+@@ -621,7 +621,7 @@
+   }
+ #else
+ #define SDL_CALL_STRETCHER \
+-        asm volatile("call *%%eax"::"a" (stretcher),"S" (src),"D" (dest))
++        asm volatile("call *%%eax" : "=a" (stretcher),"=S" (src),"=D" (dest))
+ #endif
+ #else
+ #define SDL_CALL_STRETCHER \
