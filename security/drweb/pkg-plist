@@ -1,37 +1,54 @@
-bin/drweb
-drweb/bases/drw43201.vdb
-drweb/bases/drwebase.vdb
-drweb/doc/ChangeLog
-drweb/doc/FAQ
-drweb/doc/FAQ.rus
-drweb/doc/readme.daemon
-drweb/doc/readme.daemon.rus
-drweb/doc/readme.license
-drweb/doc/readme.license.rus
-drweb/doc/readme.scanner
-drweb/doc/readme.scanner.rus
+@unexec if [ -f /var/drweb/run/drwebd.pid ] ; then %D/etc/rc.d/00.drwebd.sh stop ; fi
 drweb/drweb
-@unexec if [ -f %D/drweb/drweb32.ini ] && cmp -s %D/drweb/drweb32.ini %D/drweb/drweb32.ini-distr; then rm -f %D/drweb/drweb32.ini; fi
-drweb/drweb32.ini-distr
-@exec if [ ! -f %D/drweb/drweb32.ini ] ; then cp -p %D/%F %B/drweb32.ini; fi
 drweb/drwebd
 drweb/drwebdc
-@unexec if [ -f %D/drweb/email.ini ] && cmp -s %D/drweb/email.ini %D/drweb/email.ini-distr; then rm -f %D/drweb/email.ini; fi
-drweb/email.ini-distr
-@exec if [ ! -f %D/drweb/email.ini ] ; then cp -p %D/%F %B/email.ini; fi
 drweb/getkey.HOWTO
 drweb/getkey.rus.HOWTO
 drweb/lib/drweb32.dll
-drweb/lib/russian.dwl
-drweb/update/readme.update
-drweb/update/readme.update.rus
+drweb/lib/ru_daemon.dwl
+drweb/lib/ru_scanner.dwl
+drweb/read_signed
 drweb/update/update.pl
+@unexec if [ -f %D/etc/drweb/drweb32.ini ] && cmp -s %D/etc/drweb/drweb32.ini %D/etc/drweb/drweb32.ini-distr; then rm -f %D/etc/drweb/drweb32.ini ; fi
+etc/drweb/drweb32.ini-distr
+@exec if [ ! -f %B/drweb32.ini ] ; then cp -p %B/%F %B/drweb32.ini ; fi
+@unexec if [ -f %D/etc/drweb/email.ini ] && cmp -s %D/etc/drweb/email.ini %D/etc/drweb/email.ini-distr; then rm -f %D/etc/drweb/email.ini ; fi
+etc/drweb/email.ini-distr
+@exec if [ ! -f %B/email.ini ] ; then cp -p %B/%F %B/email.ini ; fi
 etc/rc.d/00.drwebd.sh
-@dirrm drweb/updates
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.rus
+%%PORTDOCS%%%%DOCSDIR%%/daemon/readme.daemon
+%%PORTDOCS%%%%DOCSDIR%%/daemon/readme.daemon.rus
+%%PORTDOCS%%%%DOCSDIR%%/readme.eicar
+%%PORTDOCS%%%%DOCSDIR%%/readme.eicar.rus
+%%PORTDOCS%%%%DOCSDIR%%/readme.license
+%%PORTDOCS%%%%DOCSDIR%%/readme.license.rus
+%%PORTDOCS%%%%DOCSDIR%%/scanner/readme.scanner
+%%PORTDOCS%%%%DOCSDIR%%/scanner/readme.scanner.rus
+%%PORTDOCS%%%%DOCSDIR%%/update/readme.update
+%%PORTDOCS%%%%DOCSDIR%%/update/readme.update.rus
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/update
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/scanner
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/daemon
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm etc/drweb
 @dirrm drweb/update
-@dirrm drweb/run
 @dirrm drweb/lib
-@dirrm drweb/infected
-@dirrm drweb/doc
+@dirrm drweb
+@cwd /var
+drweb/bases/drw43300.vdb
+drweb/bases/drw43301.vdb
+drweb/bases/drw43302.vdb
+drweb/bases/drwebase.vdb
+drweb/bases/drwnasty.vdb
+drweb/bases/drwrisky.vdb
+drweb/bases/update.drl
 @dirrm drweb/bases
+@dirrm drweb/infected
+@dirrm drweb/log
+@dirrm drweb/run
+@dirrm drweb/spool
+@dirrm drweb/updates
 @dirrm drweb

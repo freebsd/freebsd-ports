@@ -6,12 +6,12 @@ if [ "$2" != "POST-INSTALL" ]; then
     exit 0
 fi
 
+DRWEB_PREFIX="$3"
+DRWEB_VARPREFIX="$4"
 USER=drweb
 GROUP=${USER}
 UID=426
 GID=${UID}
-BINOWN=root
-BINGRP=wheel
 ex=0
 
 if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
@@ -27,7 +27,7 @@ fi
 
 if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
 	if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
-		-s "/sbin/nologin" -d "/nonexistent" -c "Dr. Web Scanner"
+		-s "/sbin/nologin" -d "/nonexistent" -c "DrWeb Antivirus Software"
 	then
 		echo ""
 		echo "Added user \"${USER}\"."
@@ -41,15 +41,15 @@ fi
 echo ""
 echo "You may also add this lines to your /etc/syslog.conf:"
 echo "!drwebd"
-echo "*.*             /var/log/drwebd.log"
+echo "*.*             ${DRWEB_VARPREFIX}/drwebd.log"
 
 echo ""
 echo "You may also add this crontab entry to /etc/crontab"
-echo "0 12 * * * ${BINOWN} ${PKG_PREFIX}/drweb/update/update.pl"
+echo "0 12 * * * root ${DRWEB_PREFIX}/update/update.pl"
 echo ""
 
 [ "$ex" = "1" ] && exit 1
-install -dv -m 0755 -o ${USER} -g ${BINGRP} ${PKG_PREFIX}/drweb/run
-install -dv -m 0700 -o ${USER} -g ${BINGRP} ${PKG_PREFIX}/drweb/infected
-install -dv -m 0755 -o ${BINOWN} -g ${BINGRP} ${PKG_PREFIX}/drweb/updates
+chown -R ${USER}:${GROUP} ${DRWEB_PREFIX}
+chown -R ${USER}:${GROUP} ${DRWEB_VARPREFIX}
+chmod 0750 ${DRWEB_VARPREFIX}
 exit 0
