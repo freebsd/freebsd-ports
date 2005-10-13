@@ -17,8 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracts files from the old `.arc' archive format
 
 USE_GETOPT_LONG=yes
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CPPFLAGS} ${CFLAGS} ${LDFLAGS}"
 
 MAN1=	nomarch.1
 PLIST_FILES=	bin/nomarch
