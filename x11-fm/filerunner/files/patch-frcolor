@@ -1,10 +1,10 @@
---- frcolor.orig	Thu Feb 15 03:32:30 2001
-+++ frcolor	Thu Feb 15 03:32:42 2001
+--- frcolor.orig	Wed Oct 12 18:25:44 2005
++++ frcolor	Wed Oct 12 18:22:46 2005
 @@ -1,6 +1,6 @@
  #!/bin/sh
  # the next line restarts using wish \
 -exec wish8.0 "$0" "$@"
-+exec wish8.2 "$0" "$@"
++exec wish8.4 "$0" "$@"
  
  # tcolor --
  # This script implements a simple color editor, where you can
