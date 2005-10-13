@@ -25,6 +25,8 @@ NO_BUILD=	yes
 PORTDOCS=	License.text Markdown-Readme.text
 .endif
 
+PLIST_FILES=	bin/markdown
+
 post-patch:
 	${PERL} -pi -e "s#/usr/bin/perl#${PERL}#" ${WRKSRC}/Markdown.pl
 
