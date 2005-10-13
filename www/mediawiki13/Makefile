@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	wikipedia
 MAINTAINER=	tux@pinguru.net
 COMMENT=	The wiki engine used by Wikipedia
 
+CONFLICTS=	mediawiki-1.[0-24-9].*
+
 NO_LATEST_LINK=	yes
 
 NO_BUILD=	yes
