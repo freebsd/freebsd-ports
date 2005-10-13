@@ -1,0 +1,15 @@
+$FreeBSD$
+
+--- ../../deploy/make/javaws/bsd/resources/javaws	22 Oct 2004 21:59:21 -0000	1.3
++++ ../../deploy/make/javaws/bsd/resources/javaws	28 Sep 2005 17:05:29 -0000
+@@ -13,8 +13,8 @@
+ 
+ while [ -L "$PRG" ]; do
+     ls=`/bin/ls -ld "$PRG"`
+-    link=`/usr/bin/expr "$ls" : '.*-> \(.*\)$'`
+-    if /usr/bin/expr "$link" : '/' > /dev/null; then
++    link=`/bin/expr "$ls" : '.*-> \(.*\)$'`
++    if /bin/expr "$link" : '\/' > /dev/null; then
+        prg="$link"
+     else
+        prg="`/usr/bin/dirname $PRG`/$link"
