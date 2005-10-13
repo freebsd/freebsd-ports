@@ -4,6 +4,7 @@ include/osip2/osip_dialog.h
 include/osip2/osip_fifo.h
 include/osip2/osip_mt.h
 include/osip2/osip_negotiation.h
+include/osip2/osip_time.h
 include/osipparser2/headers/osip_accept.h
 include/osipparser2/headers/osip_accept_encoding.h
 include/osipparser2/headers/osip_accept_language.h
