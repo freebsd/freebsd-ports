@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PPI
-PORTVERSION=	1.101
+PORTVERSION=	1.103
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/A/AD/ADAMK
@@ -15,12 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Analyze and manipulate Perl code without using perl itself
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/Autouse.pm:${PORTSDIR}/devel/p5-Class-Autouse \
-		${SITE_PERL}/Test/ClassAPI.pm:${PORTSDIR}/devel/p5-Test-ClassAPI \
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils \
+		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
+		${SITE_PERL}/Class/Autouse.pm:${PORTSDIR}/devel/p5-Class-Autouse \
 		${SITE_PERL}/Class/Inspector.pm:${PORTSDIR}/devel/p5-Class-Inspector \
-		${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils \
+		${SITE_PERL}/File/Remove.pm:${PORTSDIR}/devel/p5-File-Remove \
 		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
+		${SITE_PERL}/Test/ClassAPI.pm:${PORTSDIR}/devel/p5-Test-ClassAPI \
+		${SITE_PERL}/Test/SubCalls.pm:${PORTSDIR}/devel/p5-Test-SubCalls
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -107,8 +109,8 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires Perl 5.6 or newer. Install lang/perl5 or lang/perl5.8 and try again
+.if ${PERL_LEVEL} < 500601
+IGNORE=	requires Perl 5.6.1 or newer. Install lang/perl5 or lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
