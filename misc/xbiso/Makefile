@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xbiso
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,14 +19,15 @@ LIB_DEPENDS=	ftp.3:${PORTSDIR}/ftp/ftplib
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
-MAKE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 PLIST_FILES=	bin/xbiso
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,^LIBS =,LIBS+=," ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|$$(CPPFLAGS)|@CPPFLAGS@|g ; \
+		 s|= @LIBS@|= @LDFLAGS@ @LIBS@|g' ${WRKSRC}/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xbiso ${PREFIX}/bin
