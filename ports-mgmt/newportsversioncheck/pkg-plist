@@ -1,3 +1,4 @@
+newportsversioncheck/bin/CHANGES
 newportsversioncheck/bin/README
 newportsversioncheck/bin/apply_restrictions.pl
 newportsversioncheck/bin/check_data.pl
