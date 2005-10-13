@@ -4,7 +4,5 @@ for tunneling private networks behinf NATD. Supports encryption with various
 ciphers, RSA authentication, multiple and parallel tunnels (up to 65534
 tunnels) with single UDP port.
 
-WWW: http://www.chg.ru/~ks/tund/
-
 Sergey Kosyakov
 ks@itp.ac.ru
