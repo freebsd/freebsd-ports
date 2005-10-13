@@ -1,5 +1,3 @@
 tdetect detects someone running traceroute against your system.
 It does this by detecting UDP (Unix traceroute) or ICMP ECHO (Windows
 traceroute) packets with TTL fields == 1.                                   
-
-WWW: http://sb.123.org/
