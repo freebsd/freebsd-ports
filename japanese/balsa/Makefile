@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mail reader for the gnome interface (Japanized)
 
 BROKEN=		"does not fetch"
-DEPRECATED=	${BROKEN}
+DEPRECATED=	"${BROKEN}"
 EXPIRATION_DATE=	2005-12-09
 
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList
