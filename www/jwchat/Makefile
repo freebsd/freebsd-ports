@@ -7,6 +7,7 @@
 
 PORTNAME=	jwchat
 PORTVERSION=	1.0.b2
+PORTREVISION=	1
 CATEGORIES=	www net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,12 +26,13 @@ SUB_LIST=	WWW_ROOT=www PORTNAME=${PORTNAME}
 
 do-install:
 	${MKDIR} ${PREFIX}/www ${DATADIR}
-	${CP} ${WRKSRC}/config.js ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/config.js ${DATADIR}
 	${MV} ${WRKSRC}/config.js ${WRKSRC}/config.js.sample
 	${CP} -R ${WRKSRC}/ ${PREFIX}/www/${PORTNAME}
 	[ ! -f ${PREFIX}/www/${PORTNAME}/config.js ] && \
 		${CP} ${DATADIR}/config.js ${PREFIX}/www/${PORTNAME}/config.js || true
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/www/${PORTNAME}
+	${FIND} ${PREFIX}/www/${PORTNAME} ! -name config.js -print0  | ${XARGS} -0 ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	${FIND} ${PREFIX}/www/${PORTNAME} -type f -and ! -name config.js -print0 -type f | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
