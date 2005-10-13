@@ -11321,6 +11321,7 @@ shmux		ports/net/shmux
 shntool		ports/audio/shntool
 shorten		ports/audio/shorten
 shout		ports/audio/shout
+shoutcast	ports/audio/shoutcast
 show		ports/graphics/show
 showgrammar	ports/devel/showgrammar
 showimg		ports/graphics/showimg
