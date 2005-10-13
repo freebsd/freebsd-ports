@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	mp3butler
-PORTVERSION=	2.30
+PORTVERSION=	2.40
 CATEGORIES=	audio
-MASTER_SITES=	http://core.inec.ru/~az/ \
-		http://iainlea.dyndns.org/software/${PORTNAME}/
+MASTER_SITES=	http://iainlea.dyndns.org/software/${PORTNAME}/ \
+		http://core.inec.ru/~az/ \
 
 MAINTAINER=	az@FreeBSD.org
 COMMENT=	A program for renaming mp3 files and looking ID3 tags for it
