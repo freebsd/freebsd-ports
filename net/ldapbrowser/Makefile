@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ldapbrowser
-PORTVERSION=	2.8.1
+PORTVERSION=	2.8.2
 CATEGORIES=	net java
 MASTER_SITES=	http://www-unix.mcs.anl.gov/~gawor/ldapcommon/bin/
-DISTNAME=	Browser281
+DISTNAME=	Browser282b2
 
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Java/Swing-based LDAP Browser/Editor
@@ -25,9 +25,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 do-install:
 	${MKDIR} ${PREFIX}/lib/ldapbrowser
 	cd ${WRKSRC} ; tar cf - . | ( cd ${PREFIX}/lib/ldapbrowser ; tar xf - )
-	${SED} "s#^JH=.*#JH=${JAVA_HOME} ; cd ${PREFIX}/lib/ldapbrowser#" \
-		< ${PREFIX}/lib/ldapbrowser/lbe.sh \
-		> ${WRKDIR}/lbe.sh
-	${INSTALL_SCRIPT} ${WRKDIR}/lbe.sh ${PREFIX}/bin/ldapbrowser
+	${ECHO_CMD} "cd ${PREFIX}/lib/ldapbrowser" > ${PREFIX}/bin/ldapbrowser
+	${ECHO_CMD} "sh ${PREFIX}/lib/ldapbrowser/lbe.sh" >> ${PREFIX}/bin/ldapbrowser
+	${CHMOD} +x ${PREFIX}/bin/ldapbrowser
 
 .include <bsd.port.mk>
