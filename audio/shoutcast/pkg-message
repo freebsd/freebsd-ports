@@ -1,0 +1,7 @@
+==============================================================
+Shoutcast is now installed, You can start it by typing:
+
+%%PREFIX%%/sbin/sc_serv [config_file]
+
+A sample sc_serv.conf file is installed under %%PREFIX%%/etc.
+==============================================================

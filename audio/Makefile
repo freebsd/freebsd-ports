@@ -434,6 +434,7 @@
     SUBDIR += shntool
     SUBDIR += shorten
     SUBDIR += shout
+    SUBDIR += shoutcast
     SUBDIR += sidplay
     SUBDIR += sidplayer
     SUBDIR += simplemod

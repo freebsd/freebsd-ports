@@ -1,0 +1,9 @@
+Shoutcast is Nullsoft's Winamp-based streaming audio server. It isn't
+an open source software, but freely available for i386 versions of
+FreeBSD 4.x and 5.x. This port installs the appropriate binary for
+your system.
+
+WWW: http://www.shoutcast.com
+
+Gabor Kovesdan
+<gkovesdan@t-hosting.hu>
