@@ -8,4 +8,4 @@ This module can be used to automatically select the geographically closest
 mirror, to analyze your web server logs to determine the countries of your
 visitors, for credit card fraud detection, and for software export controls.
 
-WWW: http://maxmind.com/geoip/
+WWW: http://www.maxmind.com/geoip/
