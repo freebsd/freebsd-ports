@@ -8,11 +8,12 @@
 PORTNAME=	ppptraf
 PORTVERSION=	1.0
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.borg-cube.com/users/diskiller/distfiles/ \
-		http://people.FreeBSD.org/~dburr/distfiles/
+MASTER_SITES=	http://people.FreeBSD.org/~dburr/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A ncurses based PPP Traffic (bytes in/out) monitoring program
+
+DEPRECATED=	"author has abandoned this program"
 
 #MAN1=		ppptraf.1
 
