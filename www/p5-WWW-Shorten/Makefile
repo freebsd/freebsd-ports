@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Shorten
-PORTVERSION=	1.95
+PORTVERSION=	1.97
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -38,6 +38,8 @@ MAN3=		WWW::Shorten.3 \
 		WWW::Shorten::Tinylink.3 \
 		WWW::Shorten::URLjr.3 \
 		WWW::Shorten::V3.3 \
+		WWW::Shorten::_dead.3 \
+		WWW::Shorten::generic.3 \
 		WWW::Shorten::qURL.3
 
 DOCS=		AUTHORS Artistic COPYING CREDITS ChangeLog.SPOON Changes \
