@@ -2,4 +2,4 @@ This factory can be used by ResourcePool to create
 SOAP::Lite objects which use the specified proxy
 for SOAP RPC invocations.
 
-WWW: http://www.fatalmind.com/projects/ResourcePool/
+WWW: http://www.fatalmind.com/software/ResourcePool/perl/
