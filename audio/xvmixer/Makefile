@@ -15,11 +15,10 @@ COMMENT=	Open Look-based audio mixer
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${X11BASE}/include -DUSE_XBM_ICON" \
+		LDFLAGS="-L${X11BASE}/lib" LIBRARIES="-lxview -lolgx -lX11"
 PLIST_FILES=	bin/xvmixer
-USE_REINPLACE=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/Makefile
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xvmixer ${LOCALBASE}/bin
 
