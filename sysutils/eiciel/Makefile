@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eiciel
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.4
 CATEGORIES=	sysutils security
 MASTER_SITES=	http://rofi.pinchito.com/eiciel/download/
 

@@ -25,6 +25,11 @@ share/gnome/eiciel/img/grup-acl-default.png
 share/gnome/eiciel/img/grup-acl.png
 share/gnome/eiciel/img/grup-default.png
 share/gnome/eiciel/img/grup.png
+share/gnome/eiciel/img/icona_eiciel_16.png
+share/gnome/eiciel/img/icona_eiciel_24.png
+share/gnome/eiciel/img/icona_eiciel_32.png
+share/gnome/eiciel/img/icona_eiciel_48.png
+share/gnome/eiciel/img/icona_eiciel_64.png
 share/gnome/eiciel/img/mascara-default.png
 share/gnome/eiciel/img/mascara.png
 share/gnome/eiciel/img/usuari-acl-default.png
