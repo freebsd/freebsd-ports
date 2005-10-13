@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rocksndiamonds
-PORTVERSION=	3.0.8
+PORTVERSION=	3.1.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/ \
 		http://homepages.compuserve.de/rocksndiamonds/
@@ -23,7 +23,8 @@ MAKE_ARGS=	CC="${CC}" MAKE="${GMAKE}" X11_PATH="${X11BASE}" \
 MAN1=		rocksndiamonds.1
 
 .if defined(WITH_SDL)
-USE_SDL=	image mixer sdl
+LIB_DEPENDS+=	smpeg:${PORTSDIR}/multimedia/smpeg
+USE_SDL=	image mixer net sdl
 ALL_TARGET=	sdl
 .else
 USE_XLIB=	yes
