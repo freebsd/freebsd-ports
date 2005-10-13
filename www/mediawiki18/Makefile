@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.4.11
+PORTVERSION=	1.5.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wikipedia
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	wikipedia
 MAINTAINER=	tux@pinguru.net
 COMMENT=	The wiki engine used by Wikipedia
 
-CONFLICTS=	mediawiki-1.[0-35-9].*
+CONFLICTS=	mediawiki-1.[0-46-9].*
 
 NO_BUILD=	yes
 USE_PHP=	iconv mbstring pcre session xml zlib imagick readline
