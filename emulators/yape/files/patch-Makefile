@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Thu Oct 13 00:09:50 2005
++++ Makefile	Thu Oct 13 00:10:03 2005
+@@ -12,8 +12,8 @@
+ 
+ headers = $(objects:.o=.h)
+ 
+-CC = g++
+-cflags = -O3 -finline -frerun-loop-opt -Winline `sdl-config --cflags`
++CC = $(CXX)
++cflags = $(CFLAGS) -finline -frerun-loop-opt -Winline `sdl-config --cflags`
+ libs = `sdl-config --libs` 
+ 
+ #SDL_CFLAGS := $(shell sdl-config --cflags)

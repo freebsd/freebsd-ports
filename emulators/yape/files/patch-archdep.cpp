@@ -1,5 +1,17 @@
---- archdep.cpp.orig	Thu Oct 31 23:47:54 2002
-+++ archdep.cpp	Thu Oct 31 23:48:53 2002
+
+$FreeBSD$
+
+--- archdep.cpp.orig
++++ archdep.cpp
+@@ -49,7 +49,7 @@
+ int ad_makedirs(char *path)
+ {
+   strcpy(temp,path);
+-  strcat(temp, "/yape");
++  strcat(temp, "/.yape");
+   CreateDirectory(temp, NULL);
+ 
+   return 1;
 @@ -108,7 +108,7 @@
  
    strcpy( homedir , getenv( "HOME" ));

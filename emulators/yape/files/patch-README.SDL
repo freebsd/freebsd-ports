@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- README.SDL.orig
++++ README.SDL
+@@ -78,7 +78,7 @@
+   LALT + W	: toggle between unlimited speed and 50 Hz frame rate (original speed)
+   
+   Internal disk LOAD/SAVE operations are supported to the current
+-  file system directory, which is usually '/home/<username>/yape'.
++  file system directory, which is usually '/home/<username>/.yape'.
+   Any PRG files you may wish to load, should go there.
+    
+   This means that an exact filename match will load
