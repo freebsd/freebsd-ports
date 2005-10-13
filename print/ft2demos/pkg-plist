@@ -1,9 +1,12 @@
 bin/ftbench
+bin/ftchkwd
 bin/ftdump
+bin/ftgamma
 bin/ftlint
 bin/ftmemchk
 bin/ftmulti
 bin/ftstring
 bin/fttimer
+bin/ftvalid
 bin/ftview
 bin/testname

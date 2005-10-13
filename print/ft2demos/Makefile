@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ft2demos
-PORTVERSION=	2.1.9
+PORTVERSION=	2.1.10
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/%SUBDIR%/ \
@@ -31,7 +31,7 @@ MAKE_ENV=	TOP_DIR="${FREETYPE_WRKSRC}"
 
 FREETYPE_WRKSRC!=	cd ${PORTSDIR}/print/freetype2; ${MAKE} -V WRKSRC
 
-FT_PROGRAMS=	ftbench ftdump ftlint ftmemchk ftmulti ftstring fttimer ftview testname
+FT_PROGRAMS=	ftbench ftchkwd ftdump ftgamma ftlint ftmemchk ftmulti ftstring fttimer ftvalid ftview testname
 
 do-install:
 	@(cd ${WRKSRC}/bin/.libs/; ${INSTALL_PROGRAM} ${FT_PROGRAMS} ${PREFIX}/bin)
