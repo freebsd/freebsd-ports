@@ -8,8 +8,7 @@
 PORTNAME=	rmsg
 PORTVERSION=	1.64
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/tcpip/ \
-		ftp://proton.elka.pw.edu.pl/pub/unix/network/
+MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/tcpip/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A network messaging system
