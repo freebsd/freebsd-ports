@@ -9,15 +9,12 @@ PORTNAME=	sambasentinel
 PORTVERSION=	0.1
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	# disappeared
+MASTER_SITES=	ftp://ftp.fasta.fh-dortmund.de/pub/linux/gentoo/distfiles/ \
+		http://voodoo.bawue.com/download/
 DISTNAME=	SambaSentinel-${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org
 COMMENT=	SambaSentinel is a gtk-frontend to smbstatus with additional features
-
-BROKEN=		"mastersite disappeared"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=	2005-12-13
 
 RUN_DEPENDS=	jags:${PORTSDIR}/net/jags
 
