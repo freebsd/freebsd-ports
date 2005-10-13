@@ -1,0 +1,9 @@
+Markdown is a text-to-HTML conversion tool for web writers. Markdown
+allows you to write using an easy-to-read, easy-to-write plain text
+format, then convert it to structurally valid XHTML (or HTML).
+
+Thus, "Markdown" is two things: a plain text markup syntax, and a
+software tool, written in Perl, that converts the plain text markup to
+HTML.
+
+WWW: http://daringfireball.net/projects/markdown/

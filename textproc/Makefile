@@ -243,6 +243,7 @@
     SUBDIR += maketeidtd
     SUBDIR += man2html
     SUBDIR += manued.el
+    SUBDIR += markdown
     SUBDIR += mathml-xsd
     SUBDIR += meld
     SUBDIR += mgdiff
