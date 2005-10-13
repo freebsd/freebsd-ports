@@ -8,7 +8,7 @@
 PORTNAME=	libmath++
 PORTVERSION=	0.0.3
 CATEGORIES=	math devel
-MASTER_SITES=	http://www.surakware.net/pub/unstable/releases/libmath++/
+MASTER_SITES=	http://www.robertjohnkaper.com/downloads/atlantik/
 
 MAINTAINER=	jhb@FreeBSD.org
 COMMENT=	C++ Library for Symbolic and Numeric Calculus Applications
