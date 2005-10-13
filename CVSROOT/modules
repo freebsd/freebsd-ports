@@ -5508,8 +5508,6 @@ libpeak		ports/devel/libpeak
 libpixman	ports/graphics/libpixman
 libppd		ports/print/libppd
 libprelude	ports/security/libprelude
-libpreps	ports/devel/libpreps
-libpreps-devel	ports/devel/libpreps-devel
 libpri		ports/misc/libpri
 libpst		ports/mail/libpst
 libqalculate	ports/math/libqalculate
@@ -9917,6 +9915,7 @@ prelude-nids	ports/security/prelude-nids
 premail		ports/mail/premail
 premake		ports/devel/premake
 preps-gui	ports/devel/preps-gui
+prepstools	ports/devel/prepstools
 preview		ports/graphics/preview
 primer3		ports/biology/primer3
 print-n-times	ports/textproc/print-n-times
