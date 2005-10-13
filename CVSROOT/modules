@@ -5000,6 +5000,7 @@ ko-nvi-euc-kr	ports/korean/nvi-euc-kr
 ko-nvi-iso-2022-kr	ports/korean/nvi-iso-2022-kr
 ko-pgp.language	ports/korean/pgp.language
 ko-pinetreefonts	ports/korean/pinetreefonts
+ko-scim-hangul	ports/korean/scim-hangul
 ko-scim-tables	ports/korean/scim-tables
 ko-texinfo	ports/korean/texinfo
 ko-unfonts-ttf	ports/korean/unfonts-ttf
