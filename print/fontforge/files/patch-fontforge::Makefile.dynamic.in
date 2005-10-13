@@ -9,12 +9,3 @@
      @DEFS@ '-DSHAREDIR="$(sharedir)"' -DLIBDIR='"$(libdir)"'
  CFLAGS = @CFLAGS@ $(_CFLAGS)
  
-@@ -50,7 +50,7 @@
-     $(X_PRE_LIBS) $(X_11LIB) $(X_EXTRA_LIBS) @LIBS@ $(STATIC_LIBS) -L/usr/lib -lm
- DLIBS = -rpath $(libdir) ../libgunicode.la @LIBS@ -lm
- 
--all: pfaedit-en.ui fontforge sfddiff
-+all: pfaedit-en.ui fontforge sfddiff acorn2sfd
- 
- fontforge: nomen.h $(fontforge_OBJECTS)
- 	$(LIBTOOL) $(CC) -o fontforge $(fontforge_OBJECTS) $(LIBS)

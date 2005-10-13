@@ -1,6 +1,6 @@
 --- Makefile.dynamic.in.orig	Thu Jun  9 02:20:04 2005
 +++ Makefile.dynamic.in	Thu Jun 30 13:51:27 2005
-@@ -48,34 +48,35 @@
+@@ -48,34 +48,34 @@
  	$(LIBTOOL) $(INSTALL) -c libgunicode.la $(libdir)/libgunicode.la
  	#cp .libs/*.so.*.* $(libdir)
  	$(LIBTOOL) --finish $(libdir)
@@ -30,7 +30,6 @@
 -	$(LIBTOOL) $(INSTALL) -c fontforge/sfddiff $(bindir)
 +	${BSD_INSTALL_PROGRAM} -c fontforge/.libs/fontforge $(bindir)
 +	${BSD_INSTALL_PROGRAM} -c fontforge/.libs/sfddiff $(bindir)
-+	${BSD_INSTALL_PROGRAM} -c fontforge/.libs/acorn2sfd $(bindir)
  	-rm -f $(bindir)/pfaedit
  	(cd $(bindir) ; ln -s fontforge pfaedit)
 -	cp fontforge/pfaedit-*.ui $(sharedir)
