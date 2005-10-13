@@ -4,7 +4,6 @@ libexec/vsftpd
 etc/vsftpd.conf.dist
 @exec if [ ! -f %B/vsftpd.conf ]; then cp %B/vsftpd.conf.dist %B/vsftpd.conf; fi
 @exec if [ ! -d /var/ftp ]; then mkdir /var/ftp ; fi
-%%RC_NG%%etc/rc.d/vsftpd.sh
 @unexec rmdir /var/ftp 2>/dev/null || true
 @dirrm share/vsftpd/empty
 @dirrm share/vsftpd
