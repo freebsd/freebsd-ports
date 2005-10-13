@@ -5504,6 +5504,7 @@ libpdel		ports/devel/libpdel
 libpdtp		ports/net/libpdtp
 libpeak		ports/devel/libpeak
 libpixman	ports/graphics/libpixman
+libppd		ports/print/libppd
 libprelude	ports/security/libprelude
 libpreps	ports/devel/libpreps
 libpreps-devel	ports/devel/libpreps-devel
