@@ -123,6 +123,7 @@
     SUBDIR += durep
     SUBDIR += dvd+rw-tools
     SUBDIR += dvdbackup
+    SUBDIR += dvdimagecmp
     SUBDIR += dvdtape
     SUBDIR += dwatch
     SUBDIR += e2fsprogs
