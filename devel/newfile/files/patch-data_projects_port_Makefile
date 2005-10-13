@@ -1,0 +1,11 @@
+diff -ruN data/projects/port@Makefile.orig data/projects/port@Makefile
+--- data/projects/port@Makefile.orig	2003-11-03 21:34:51.000000000 +0900
++++ data/projects/port@Makefile	2005-08-07 01:31:43.486085664 +0900
+@@ -31,6 +31,7 @@
+ %else
+ MAINTAINER=	<:BSDMAIL>
+ %endif # !defined("BSDMAIL")
++COMMENT=
+ 
+ .include <bsd.port.pre.mk>
+ %if defined("KDE_DIRS")
