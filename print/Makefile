@@ -148,6 +148,7 @@
     SUBDIR += libpaper
     SUBDIR += lilypond
     SUBDIR += lout
+    SUBDIR += lpr-wrapper
     SUBDIR += lprps-a4
     SUBDIR += lprps-letter
     SUBDIR += lyx
