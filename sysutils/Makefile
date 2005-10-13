@@ -437,6 +437,7 @@
     SUBDIR += readlink
     SUBDIR += reed
     SUBDIR += rej
+    SUBDIR += relaxconf
     SUBDIR += rename
     SUBDIR += reoback
     SUBDIR += rfstool

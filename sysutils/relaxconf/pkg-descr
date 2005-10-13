@@ -1,0 +1,24 @@
+relaxconf contains a set of text menu based utilities for configuring RelaxBSD
+(a LiveCD system base on FreeBSD),they're also useful for FreeBSD user.
+
+relaxconf:		The main menu, allow the following utilities.
+relaxsnddetect:		Auto detects audio cards (if present) and loads
+			appropriate modules.
+relaxmountdisk:		Auto mount other file systems (such as ufs,msdosfs,
+			ntfs,ext2fs).
+relax[u]mountusb:	Auto mount/umount USB removable storage.
+relaxnetconf:		Allow the user to setting network interface such as
+			ppp(pppoe),ethernet interface.
+relaxxconf:		Allow the user to generating an xorg.conf file for use
+			with Xorg(also XFree86).
+relaxlangconf:		Allow the user to appoint the locale language.
+
+- Only for LiveCD:
+relaxsavesetting:	Allows user to save preferences in a compressed file.
+relaxloadsetting:	Auto seek and load preference save file in a partition.
+relaxmediabackup:	Backup your person data.
+relaxrestore:		Restore your person data.
+relaxinstaller:		Launch BSD/RelaxBSD Installer to install LiveCD.
+
+WWW:	http://www.RelaxBSD.org
+        http://sourceforge.net/projects/relaxbsd
