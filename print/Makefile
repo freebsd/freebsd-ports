@@ -237,6 +237,7 @@
     SUBDIR += pnm2ppa
     SUBDIR += poster
     SUBDIR += pscal
+    SUBDIR += psdim
     SUBDIR += pslib
     SUBDIR += psmark
     SUBDIR += pstotext
