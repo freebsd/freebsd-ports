@@ -8,7 +8,7 @@
 PORTNAME=	click
 PORTVERSION=	1.4.3
 CATEGORIES=	net
-MASTER_SITES=	http://www.pdos.lcs.mit.edu/click/
+MASTER_SITES=	http://pdos.csail.mit.edu/click/
 
 MAINTAINER=	gnn@neville-neil.com
 COMMENT=	The Click Modular Router
