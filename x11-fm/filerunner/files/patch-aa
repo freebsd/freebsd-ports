@@ -1,13 +1,13 @@
---- Makefiles/Makefile.freebsd_gcc.orig	Mon Mar  9 14:17:58 1998
-+++ Makefiles/Makefile.freebsd_gcc	Mon Mar  9 14:19:07 1998
+--- Makefiles/Makefile.freebsd_gcc.orig	Wed Oct 12 17:56:27 2005
++++ Makefiles/Makefile.freebsd_gcc	Thu Dec 30 19:21:49 1999
 @@ -1,10 +1,10 @@
  
  # Change this if you have this stuff somewhere else.
 -TCLINC = /usr/local/lib/tcl8.0
 -TKINC  = /usr/local/lib/tk8.0
 -X11INC = /usr/X11/include
-+TCLINC = ${PREFIX}/include/tcl8.2
-+TKINC  = ${PREFIX}/include/tk8.2
++TCLINC = ${PREFIX}/include/tcl8.4
++TKINC   = ${PREFIX}/include/tk8.4
 +X11INC = ${X11BASE}/include
  
 -CFLAGS = -Wall -fPIC -O3 -I$(TCLINC) -I$(TKINC) -I$(X11INC)

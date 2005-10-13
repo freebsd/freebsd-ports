@@ -1,12 +1,15 @@
+lib/FileRunner/COPYING
 lib/FileRunner/FAQ
 lib/FileRunner/HISTORY
+lib/FileRunner/KnownBugs.txt
 lib/FileRunner/QuickStart.txt
+lib/FileRunner/README
 lib/FileRunner/Tips.txt
 lib/FileRunner/Users_Guide.txt
 lib/FileRunner/chmod.tcl
 lib/FileRunner/cmd.tcl
 lib/FileRunner/config.tcl
-lib/FileRunner/dialog_about.tcl
+lib/FileRunner/dialog.tcl
 lib/FileRunner/ext.so
 lib/FileRunner/font.tcl
 lib/FileRunner/fr

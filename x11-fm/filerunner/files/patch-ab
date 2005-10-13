@@ -1,18 +1,16 @@
---- fr.orig	Mon Feb 16 04:09:54 1998
-+++ fr	Thu Mar 12 09:49:30 1998
+--- fr.orig	Wed Oct 12 18:13:36 2005
++++ fr	Wed Oct 12 18:15:47 2005
 @@ -1,6 +1,6 @@
  #! /bin/sh
  # -*- tcl -*- \
--exec wish8.0 $0 wish8.0 $*
-+exec wish8.2 $0 wish8.2 $*
+-exec wish $0 wish $*
++exec wish8.4 $0 wish8.4 $*
  
- set glob(version) 2.4.2
+ set glob(version) 2.5.1
  
-@@ -3162,11 +3162,12 @@
- 
+@@ -3301,10 +3301,10 @@
  FindLibfr
  
-+# FreeBSD fix the bug already..
  # Load patches for 8.0...
 -if {$tk_patchLevel == "8.0"} {
 -  #puts "Buggy 8.0 menu.tcl file, applying patch"
