@@ -6048,6 +6048,7 @@ meanwhile	ports/net/meanwhile
 meanwhile-gaim	ports/net/meanwhile-gaim
 mediawiki	ports/www/mediawiki
 mediawiki13	ports/www/mediawiki13
+mediawiki14	ports/www/mediawiki14
 megapov		ports/graphics/megapov
 megarc		ports/sysutils/megarc
 meld		ports/textproc/meld
