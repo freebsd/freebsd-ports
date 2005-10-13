@@ -10628,6 +10628,7 @@ regexxer	ports/devel/regexxer
 regm		ports/mail/regm
 rej		ports/sysutils/rej
 relate		ports/mbone/relate
+relaxconf	ports/sysutils/relaxconf
 relay		ports/net/relay
 relay-ctrl	ports/mail/relay-ctrl
 relaydb		ports/mail/relaydb
