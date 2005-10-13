@@ -9,7 +9,7 @@ high level. They're also pretty fast (for software routers running
 on commodity hardware); on a 700 MHz Pentium III, a Click IP router
 can handle up to 435,000 64-byte packets a second.
 
-WWW: http://www.pdos.lcs.mit.edu/click/
+WWW: http://pdos.csail.mit.edu/click/
 
 George V. Neville-Neil
 
