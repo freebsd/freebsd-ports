@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	danpei
-PORTVERSION=	2.9.6
+PORTVERSION=	2.9.7
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	danpei
@@ -21,8 +21,10 @@ RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 USE_X_PREFIX=	yes
+USE_GETTEXT=	yes
 USE_GNOME=	gtk12 gdkpixbuf
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--without-included-gettext
 
 .include <bsd.port.mk>
