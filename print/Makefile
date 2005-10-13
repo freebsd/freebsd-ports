@@ -146,6 +146,7 @@
     SUBDIR += libijs
     SUBDIR += libotf
     SUBDIR += libpaper
+    SUBDIR += libppd
     SUBDIR += lilypond
     SUBDIR += lout
     SUBDIR += lpr-wrapper
