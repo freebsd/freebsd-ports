@@ -50,16 +50,16 @@ include/libprelude/prelude-timer.h
 include/libprelude/prelude.h
 include/libprelude/variable.h
 lib/libprelude.a
-lib/libprelude.la
 lib/libprelude.so
 lib/libprelude.so.2
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Prelude.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/.packlist
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/Prelude.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/Prelude.so
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/_prelude.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/_prelude.py
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/_prelude.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/prelude.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/prelude.pyc
 share/aclocal/libprelude.m4
 %%PORTDOCS%%%%DOCSDIR%%/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/ch02.html
@@ -114,3 +114,5 @@ share/aclocal/libprelude.m4
 %%PORTDOCS%%%%DOCSDIR%%/up.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/libprelude
+@dirrm etc/prelude/default
+@unexec %D/etc/prelude 2> /dev/null || true
