@@ -1,5 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Date/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Date/Simple/NoXS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Date/Simple/ISO.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Date/Simple/D8.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Date/Simple/Fmt.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Simple/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Simple/Simple.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Simple/Simple.so
