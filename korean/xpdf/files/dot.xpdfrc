@@ -1,0 +1,24 @@
+#Korean PDF resources
+cidToUnicode	Adobe-Korea1	%%PREFIX%%/share/xpdf/korean/Adobe-Korea1.cidToUnicode
+unicodeMap	ISO-2022-KR	%%PREFIX%%/share/xpdf/korean/ISO-2022-KR.unicodeMap
+cMapDir		Adobe-Korea1	%%LOCALBASE%%/share/ghostscript/Resource/CMap
+toUnicodeDir			%%LOCALBASE%%/share/ghostscript/Resource/CMap
+displayNamedCIDFontTT	Batang		"%%X11BASE%%/lib/X11/fonts/TrueType/UnBatang.ttf"
+displayNamedCIDFontTT	Batang,Bold	"%%X11BASE%%/lib/X11/fonts/TrueType/UnBatangBold.ttf"
+displayNamedCIDFontTT	Dotum		"%%X11BASE%%/lib/X11/fonts/TrueType/UnDotum.ttf"
+displayNamedCIDFontTT	Dotum,Bold	"%%X11BASE%%/lib/X11/fonts/TrueType/UnDotumBold.ttf"
+displayNamedCIDFontTT	Gulim		"%%X11BASE%%/lib/X11/fonts/TrueType/UnGraphic.ttf"
+displayNamedCIDFontTT	Gulim,Bold	"%%X11BASE%%/lib/X11/fonts/TrueType/UnGraphicBold.ttf"
+displayNamedCIDFontTT	Gungsuh		"%%X11BASE%%/lib/X11/fonts/TrueType/UnGungseo.ttf"
+
+psFont16	Adobe-Korea1	H	Batang-UniKS-UCS2-H		UCS-2
+psFont16	Adobe-Korea1	V	Batang-UniKS-UCS2-V		UCS-2
+psNamedFont16	Batang		H	Batang-UniKS-UCS2-H		UCS-2
+psNamedFont16	Batang		V	Batang-UniKS-UCS2-V		UCS-2
+psNamedFont16	Dotum		H	Dotum-UniKS-UCS2-H		UCS-2
+psNamedFont16	Dotum		V	Dotum-UniKS-UCS2-V		UCS-2
+psNamedFont16	Gulim		H	Gulim-UniKS-UCS2-H		UCS-2
+psNamedFont16	Gulim		V	Gulim-UniKS-UCS2-V		UCS-2
+psNamedFont16	Gungsuh		H	Gungsuh-UniKS-UCS2-H		UCS-2
+psNamedFont16	Gungsuh		V	Gungsuh-UniKS-UCS2-V		UCS-2
+#Korean PDF resources
