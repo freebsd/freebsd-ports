@@ -7,6 +7,7 @@
 
 PORTNAME=	Clipboard
 PORTVERSION=	0.08
+PORTREVISION=	1
 CATEGORIES=	x11 perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/K/KI/KING
@@ -24,6 +25,10 @@ PERL_CONFIGURE=	yes
 
 MAN1=	clipaccumulate.1 clipbrowse.1 clipedit.1 clipjoin.1
 MAN3=	Clipboard.3
+
+post-patch:
+	${PERL} -i -pe 's|/m;$$|/;|' \
+		${WRKSRC}/lib/Clipboard/Xclip.pm
 
 .include <bsd.port.pre.mk>
 
