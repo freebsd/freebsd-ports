@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	phpMyAdmin
-PORTVERSION=	2.6.4.1
-#DISTVERSION=	2.6.4-pl1
+PORTVERSION=	2.6.4.2
+#DISTVERSION=	2.6.4-pl2
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpmyadmin
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/-pl\1/}
-
-FORBIDDEN=	http://www.vuxml.org/freebsd/9b7053fd-3ab5-11da-9484-00123ffe8333.html
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	A set of PHP-scripts to manage MySQL over the web
