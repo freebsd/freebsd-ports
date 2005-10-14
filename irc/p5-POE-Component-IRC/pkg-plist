@@ -10,6 +10,9 @@
 %%SITE_PERL%%/POE/Component/IRC/State.pm
 %%SITE_PERL%%/POE/Component/IRC/Test/Harness.pm
 %%SITE_PERL%%/POE/Component/IRC/Test/Plugin.pm
+%%SITE_PERL%%/POE/Component/IRC/Projects.pm
+%%SITE_PERL%%/POE/Component/IRC/Pipeline.pm
+%%SITE_PERL%%/POE/Component/IRC/State/Lite.pm
 %%SITE_PERL%%/POE/Filter/CTCP.pm
 %%SITE_PERL%%/POE/Filter/IRC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/.packlist
@@ -28,5 +31,6 @@
 @dirrm %%SITE_PERL%%/POE/Component/IRC/Test
 @dirrm %%SITE_PERL%%/POE/Component/IRC/Qnet
 @dirrm %%SITE_PERL%%/POE/Component/IRC/Plugin
+@dirrm %%SITE_PERL%%/POE/Component/IRC/State
 @dirrm %%SITE_PERL%%/POE/Component/IRC
 @unexec rmdir %D/%%SITE_PERL%%/POE/Component 2>/dev/null || true
