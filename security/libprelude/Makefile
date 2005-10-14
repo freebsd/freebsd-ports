@@ -4,12 +4,13 @@
 # $FreeBSD$
 
 PORTNAME=	libprelude
-DISTVERSION=	0.9.0
+PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/
 
 MAINTAINER=	sergei@FreeBSD.org
-COMMENT=	Prelude Network Intrusion Detection System librairies
+COMMENT=	Framework library for Prelude NIDS
 
 LIB_DEPENDS=	gnutls.12:${PORTSDIR}/security/gnutls
 
@@ -17,10 +18,10 @@ USE_GPG=		yes
 SIG_SUFFIX=		.sig
 USE_REINPLACE=		yes
 USE_GMAKE=		yes
-USE_LIBTOOL_VER=	13
+USE_AUTOTOOLS=		libtool:15
 INSTALLS_SHLIB=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=		--with-html-dir=${PREFIX}/share/doc --localstatedir=/var
+CONFIGURE_ARGS=		--localstatedir=/var
 
 .if defined(WITH_PERL)
 USE_PERL5=		yes
@@ -40,8 +41,12 @@ CONFIGURE_ARGS+=	--disable-python
 PLIST_SUB+=		WITH_PYTHON="@comment "
 .endif
 
-#.if defined(NOPORTDOCS)
-#MAKE_ENV+=	NOPORTDOCS=yes
-#.endif
+.if !defined(NOPORTDOCS)
+CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/api/html/* ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
