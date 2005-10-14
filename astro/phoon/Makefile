@@ -17,6 +17,10 @@ COMMENT=	Displays the phase of the moon
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_REINPLACE=	yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
+		BINDIR=${LOCALBASE}/bin \
+		MANDIR=${MANPREFIX}/man/man1
+
 MAN1=		phoon.1
 PLIST_FILES=	bin/phoon
 

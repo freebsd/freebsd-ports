@@ -13,12 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	chuck@pkix.net
 COMMENT=	Accrete is a physical simulation of solar system planet formation
 
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX=${PREFIX} \
+		CDEBUG="" COPT=""
 PLIST_FILES=	bin/accrete
-USE_REINPLACE=	yes
-
-post-patch:
-	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
-	s|%%CC%%|${CC}|g ; \
-	s|%%CFLAGS%%|${CFLAGS}|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
