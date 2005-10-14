@@ -49,6 +49,7 @@
     SUBDIR += cups-pstoraster
     SUBDIR += cups-samba
     SUBDIR += detex
+    SUBDIR += dk-acroread
     SUBDIR += dvi2tty
     SUBDIR += dvi2xx
     SUBDIR += dvipdfmx
@@ -66,6 +67,7 @@
     SUBDIR += epsmerge
     SUBDIR += epsonepl
     SUBDIR += es-acroread
+    SUBDIR += fi-acroread
     SUBDIR += flpsed
     SUBDIR += font2svg
     SUBDIR += fontforge
@@ -165,6 +167,8 @@
     SUBDIR += musixtex
     SUBDIR += muttprint
     SUBDIR += nenscript
+    SUBDIR += nl-acroread
+    SUBDIR += no-acroread
     SUBDIR += offix-printer
     SUBDIR += p5-GnomePrint
     SUBDIR += p5-Net-Printer
@@ -258,6 +262,7 @@
     SUBDIR += ruby-pdflib
     SUBDIR += scribus
     SUBDIR += sgf2tex
+    SUBDIR += sv-acroread
     SUBDIR += t1utils
     SUBDIR += teTeX
     SUBDIR += teTeX-base
