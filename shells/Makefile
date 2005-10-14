@@ -24,6 +24,7 @@
     SUBDIR += rssh
     SUBDIR += sash
     SUBDIR += scponly
+    SUBDIR += tcsh-bofh
     SUBDIR += tcshrc
     SUBDIR += v7sh
     SUBDIR += viewglob
