@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mathopd
-PORTVERSION=	1.5p4
-PORTREVISION=	2
+PORTVERSION=	1.5p5
 CATEGORIES=	www
 MASTER_SITES=	http://www.mathopd.org/dist/
 
