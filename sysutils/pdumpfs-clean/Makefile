@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pdumpfs-clean
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://tach.arege.net/software/pdumpfs-clean/
 DISTFILES=	${PROG}
