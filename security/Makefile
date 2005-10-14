@@ -255,6 +255,7 @@
     SUBDIR += openssh-portable
     SUBDIR += openssl
     SUBDIR += openssl-beta
+    SUBDIR += openssl-stable
     SUBDIR += openvpn
     SUBDIR += opieprint
     SUBDIR += osiris
