@@ -154,6 +154,7 @@
     SUBDIR += fargoal
     SUBDIR += fgfs-base
     SUBDIR += fgkicker
+    SUBDIR += fillets-ng
     SUBDIR += filters
     SUBDIR += fkiss
     SUBDIR += flightgear
