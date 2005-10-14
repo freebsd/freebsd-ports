@@ -6,25 +6,21 @@
 #
 
 PORTNAME=	pmw
-PORTVERSION=	4.06
-PORTREVISION=	1
+PORTVERSION=	4.10
 CATEGORIES=	print audio
-MASTER_SITES=	ftp://ftp.at.freebsd.org/pub/mirrors/www.quercite.com/ \
+MASTER_SITES=	ftp://ftp.univie.ac.at/applications/www.quercite.com/ \
 		http://www.quercite.com/
 
 MAINTAINER=	g.gonter@ieee.org
 COMMENT=	High quality music typesetting program
-
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	build
 
 MAN1=		pmw.1
 
-post-patch:
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g' ${MASTERDIR}/pkg-message > ${PKGMESSAGE}
+PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 post-install:
 .if !defined(NOPORTDOCS)
