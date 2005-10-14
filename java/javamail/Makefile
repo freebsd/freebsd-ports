@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	javamail
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	1.3.3
 CATEGORIES=	java mail
 MASTER_SITES=	#
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}-upd
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}_01
 
 MAINTAINER=	java@freebsd.org
 COMMENT=	A set of abstract Java classes that model a mail system
@@ -20,16 +19,17 @@ RUN_DEPENDS=	${JAVALIBDIR}/activation.jar:${PORTSDIR}/java/jaf
 USE_ZIP=	YES
 USE_JAVA=	YES
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}_01
 NO_BUILD=	yes
 NO_CDROM=	"See the license"
-DOWNLOAD_URL=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=javamail-1_3_2-oth-JPR&SiteId=JSC&TransactionId=noreg
+DOWNLOAD_URL=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=javamail-1.3.3-fr-oth-JPR&SiteId=JSC&TransactionId=noreg
 
 .if !defined(NOPORTDOCS)
 DOCFILES1=	JavaMail-1.1-changes.txt JavaMail-1.2-changes.txt \
 		JavaMail-1.2.pdf JavaMail-1.2.ps JavaMail-1.3-changes.txt \
 		Providers.pdf Providers.ps javadocs
-DOCFILES2=	CHANGES.txt LICENSE.txt NOTES.txt README.txt
+DOCFILES2=	CHANGES.txt LICENSE.txt NOTES.txt README.txt SSLNOTES.txt \
+		distributionREADME.txt
 PORTDOCS=	${DOCFILES1} ${DOCFILES2}
 .endif
 
