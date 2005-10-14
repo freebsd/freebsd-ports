@@ -25,5 +25,12 @@ port/package installed in addition to qemu.
 (see kern/84102, http://www.freebsd.org/cgi/query-pr.cgi?pr=kern/84102),
 using a kernel without PREEMPTION has been reported to fix this problem.
 (or do an ftp install instead of installing from the emulated cdrom, and
-then make a new kernel.)
+then make a new kernel.)  [now fixed in cvs.]
+- 6.0-RC1 was released with an ed driver that doesn't like qemu's emulated
+RTL8029 nic, this has been fixed in the meantime but if for some reason
+you need to use that version as a guest you can temporarily add the patch
+in this message: http://docs.freebsd.org/cgi/mid.cgi?200510131428.21211.jkim
+(not included in the port since the used VIA VT86C926 PCI ID does not
+really match the emulated nic exactly, it just `happens' to work with
+6.0-RC1's driver.)
 ====
