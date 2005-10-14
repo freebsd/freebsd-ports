@@ -18,7 +18,8 @@ COMMENT=	State-event driven class extendible C++ script interpreter
 LIB_DEPENDS=	ccgnu2-1.3.1:${PORTSDIR}/devel/commoncpp
 
 USE_GNOME=	gnometarget
-USE_LIBTOOL_VER=	15
+USE_INC_LIBTOOL_VER=	15
+USE_GCC=	3.4
 INSTALL_TARGET=	install man
 INSTALLS_SHLIB=	yes
 
@@ -31,5 +32,8 @@ MAN3=		ScriptCommand.3cc ScriptImage.3cc ScriptInterp.3cc \
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
 .endif
+
+pre-configure:
+	@${CP} ${LTMAIN} ${WRKSRC}/config
 
 .include <bsd.port.post.mk>

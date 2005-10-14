@@ -19,7 +19,8 @@ LIB_DEPENDS=	ccgnu2-1.3.1:${PORTSDIR}/devel/commoncpp
 
 USE_GNOME=	gnometarget
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=	15
+USE_INC_LIBTOOL_VER=	15
+USE_GCC=	3.4
 INSTALL_TARGET=	install man
 INSTALLS_SHLIB=	yes
 
@@ -30,5 +31,8 @@ MAN3=		Audio.3cc AudioCodec.3cc AudioCopy.3cc AudioFile.3cc \
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|<stdint\.h>|<stdlib.h>|g' ${WRKSRC}/src/dtmf.cpp
+
+pre-configure:
+	@${CP} ${LTMAIN} ${WRKSRC}/config
 
 .include <bsd.port.mk>
