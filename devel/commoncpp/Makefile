@@ -25,7 +25,8 @@ CONFIGURE_ARGS=	--without-libxml2
 
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	15
+USE_INC_LIBTOOL_VER=	15
+USE_GCC=	3.4
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		ac_cv_path_DOXYGEN=no
 INSTALLS_SHLIB=	yes
@@ -34,5 +35,8 @@ INFO=		commoncpp2
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+pre-configure:
+	@${CP} ${LTMAIN} ${WRKSRC}/autoconf
 
 .include <bsd.port.mk>
