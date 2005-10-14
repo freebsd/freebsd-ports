@@ -3,7 +3,6 @@
 %%DIR%%/data/events.xml
 %%DIR%%/data/new_calendars.xml
 %%DIR%%/data/pending_actions.xml
-%%DIR%%/data/plans_discovery.xml
 %%DIR%%/data/users.xml
 %%DIR%%/email_reminders.cgi
 %%DIR%%/gpl.txt
@@ -323,8 +322,6 @@
 %%DIR%%/theme/plans_lang.js
 %%DIR%%/theme/upcoming_events.css
 %%DIR%%/theme/upcoming_events.js
-%%DIR%%/upcoming_events.cgi
-%%DIR%%/upcoming_events.config
 %%DIR%%/us_english.pl
 
 @dirrm %%DIR%%/theme/icons
