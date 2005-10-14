@@ -1,0 +1,26 @@
+------------------------------------------------------------------
+Now that fnord is installed, do the following :
+
+1) If you chose to use daemontools and/or tcpserver, I assume you
+know how to do it, go to 4). If you chose to use inetd go to 2).
+
+2) Create a webroot somewhere :
+
+   # mkdir /usr/local/www
+
+3) Add an entry in inetd.conf like this :
+
+  "http stream tcp nowait root %%PREFIX%%/bin/fnord.inetd \
+	fnord.inetd /usr/local/www"
+
+4) Finally add some virtual hosts to your webserver :
+
+   # cd /usr/local/www
+   # mkdir host.tld:80
+   # ln -s host.tld:80 host.tld
+   # echo "test" > host.tld:80/index.html
+
+5- Test with your favorite web browser.
+
+   # links http://host.tld/index.html
+------------------------------------------------------------------

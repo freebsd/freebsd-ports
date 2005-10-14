@@ -1,0 +1,8 @@
+#! /bin/sh
+
+if [ ! -d "$1" ]; then
+	echo "usage: $0 <www_root_directory>"
+else
+	cd $1
+	exec %%PREFIX%%/bin/fnord 2>/dev/null
+fi

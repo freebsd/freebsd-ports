@@ -6,29 +6,39 @@
 #
 
 PORTNAME=	fnord
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	www
 MASTER_SITES=	http://www.fefe.de/fnord/
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Small and fast webserver with CGI-capability
 
-RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
-		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
-
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/fnord \
-		bin/fnord-conf
+		bin/fnord-conf \
+		bin/fnord.inetd
 
-OPTIONS=	CGI "Enable CGI support" on \
+SUB_FILES=	pkg-message fnord.inetd
+
+OPTIONS=	DAEMONTOOLS "Use DJB's daemontools" off \
+		TCPSERVER "Use DJB's tcpserver" off \
+		CGI "Enable CGI support" on \
 		DIR_LIST "Enable directory listing" on \
 		SYSTEM_SYMLINK_DEREF "Enable system symlink (needs DIR_LIST)" off \
 		OLD_STYLE_REDIRECT "Enable old style redirection" off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_DAEMONTOOLS)
+RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools
+.endif
+
+.if defined(WITH_TCPSERVER)
+RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
+.endif
 
 .if !defined(WITHOUT_CGI)
 SED_SCRIPT+=	-e "s|^// \(\#define CGI\).*|\1|"
@@ -75,5 +85,9 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fnord ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/fnord-conf ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKDIR}/fnord.inetd ${PREFIX}/bin/
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
