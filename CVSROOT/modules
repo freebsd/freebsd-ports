@@ -2301,6 +2301,7 @@ fileprune	ports/sysutils/fileprune
 fileroller	ports/archivers/fileroller
 filerunner	ports/x11-fm/filerunner
 fileschanged	ports/sysutils/fileschanged
+fillets-ng	ports/games/fillets-ng
 filtermail	ports/mail/filtermail
 filters		ports/games/filters
 finchtv		ports/biology/finchtv
