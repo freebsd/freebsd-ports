@@ -1,6 +1,6 @@
---- ./arcrun.c.orig	Tue Aug 10 23:03:25 1999
-+++ ./arcrun.c	Tue Aug 10 23:01:57 1999
-@@ -94,7 +94,7 @@
+--- arcrun.c.orig	Sun Oct  9 03:38:22 2005
++++ arcrun.c	Fri Oct 14 00:53:57 2005
+@@ -98,7 +98,7 @@
  		strcpy(sys, buf);
  
  	else {
@@ -9,7 +9,7 @@
  			printf("File %s is not a .BAS, .BAT, .COM, or .EXE\n",
  			       hdr->name);
  			nerrs++;
-@@ -108,7 +108,7 @@
+@@ -112,7 +112,7 @@
                && strcmp(i, ".TTP")
                && strcmp(i, ".TOS"))
        {
@@ -18,16 +18,16 @@
                        printf("File %s is not a .PRG, .TOS, or .TTP\n",
                                hdr->name);
                        nerrs++;
-@@ -118,7 +118,7 @@
+@@ -122,7 +122,7 @@
        }
  #endif
  
 -	if (warn)
 +	if (arcwarn)
- 		if (tmp = fopen(buf, "r"))
+ 		if ((tmp = fopen(buf, "r")))
  			arcdie("Temporary file %s already exists", buf);
  	if (!(tmp = fopen(buf, OPEN_W)))
-@@ -142,7 +142,7 @@
+@@ -148,7 +148,7 @@
  #endif
  	chdir(dir);
  	free(dir);		/* return to whence we started */
