@@ -7,6 +7,7 @@
 
 PORTNAME=	netperf
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	benchmarks ipv6
 MASTER_SITES=	ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/
 DISTNAME=	netperf-2.3pl1

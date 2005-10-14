@@ -17,7 +17,7 @@
  LOG_FILE=DEBUG_LOG_FILE="\"/tmp/netperf.debug\""
 -CFLAGS = -O -D$(LOG_FILE) -DNEED_MAKEFILE_EDIT
 +CFLAGS = %CFLAGS% -D$(LOG_FILE) -DDO_FIRST_BURST
-+CFLAGS+= -DHISTOGRAM -DDO_UNIX -DDO_1644 -DDO_IPV6
++CFLAGS+= -DDO_UNIX -DDO_1644 -DDO_IPV6
  
  # Some platforms, and some options, require additional libraries.
  # you can add to the "LIBS =" line to accomplish this. if you find
