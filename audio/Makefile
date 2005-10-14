@@ -72,6 +72,7 @@
     SUBDIR += chordpack
     SUBDIR += cmp3
     SUBDIR += cmt
+    SUBDIR += cmus
     SUBDIR += coverhunter
     SUBDIR += cpige
     SUBDIR += cplay

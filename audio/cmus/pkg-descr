@@ -1,0 +1,19 @@
+CMus is a small and fast music player using the ncurses library.
+CMus has vi-style command interface, e.g. searching using '/' or
+'?' and adding files to playlist ':add ~/foo.ogg'.
+
+  * Plays FLAC, OGG, MP3, WAV, modules
+  * MP3 and Ogg streaming (Shoutcast/Icecast)
+  * WinAmp / XMMS keys "zxcvb"
+  * Can be controlled via UNIX socket
+  * Customizable colors
+  * Nice vi-style interface with tabulator expansion
+  * Background playlist loading
+  * Track metadata database makes adding files to playlist very fast.
+  * Album/artist modes. Playing within one album or artist.
+  * Powerful playlist filters
+  * Can run external commands for the currently selected files
+  * Directory browser
+  * Supports 256 colors
+
+WWW: http://onion.dynserv.net/~timo/index.php?page=Projects/cmus

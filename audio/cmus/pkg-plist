@@ -1,0 +1,11 @@
+bin/cmus
+bin/cmus-remote
+lib/cmus/ip/flac.so
+lib/cmus/ip/mad.so
+%%MODPLUG%%lib/cmus/ip/modplug.so
+%%VORBIS%%lib/cmus/ip/vorbis.so
+lib/cmus/ip/wav.so
+%%ARTS%%lib/cmus/op/arts.so
+lib/cmus/op/oss.so
+%%DATADIR%%/doc/cmus.html
+%%DATADIR%%/example/cmus-status-display
