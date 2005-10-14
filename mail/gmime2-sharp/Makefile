@@ -27,6 +27,8 @@ USE_GNOME=	gnomehack gnometarget glib20
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-mono=yes
 
+LATEST_LINK=  gmime2-sharp
+
 # Else we conflict with mail/gmime2
 NOPORTDOCS=	yes
 
