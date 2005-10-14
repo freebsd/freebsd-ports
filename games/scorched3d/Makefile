@@ -33,6 +33,7 @@ USE_GL=			yes
 USE_GMAKE=		yes
 USE_AUTOMAKE_VER=	15
 USE_AUTOCONF_VER=	253
+USE_REINPLACE=		yes
 
 WRKSRC=			${WRKDIR}/scorched
 AUTOMAKE_ARGS=		--foreign
@@ -48,6 +49,39 @@ MAKE_ARGS=		ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" \
 			AUTOMAKE="${TRUE}" AUTOHEADER="${TRUE}"
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -E 's,#include.*<SDL/(SDL.*\.h)>,#include <SDL11/\1>,g' \
+		${WRKSRC}/configure.ac \
+		${WRKSRC}/src/GLEXT/GLBitmap.cpp \
+		${WRKSRC}/src/GLEXT/GLState.h \
+		${WRKSRC}/src/GLEXT/GLStateExtension.cpp \
+		${WRKSRC}/src/client/ClientMain.cpp \
+		${WRKSRC}/src/client/SoftwareMouse.cpp \
+		${WRKSRC}/src/client/UniqueIdStore.cpp \
+		${WRKSRC}/src/common/Clock.cpp \
+		${WRKSRC}/src/common/Display.h \
+		${WRKSRC}/src/common/Gamma.cpp \
+		${WRKSRC}/src/common/Gamma.h \
+		${WRKSRC}/src/common/KeyStateTranslate.h \
+		${WRKSRC}/src/common/KeyTranslate.h \
+		${WRKSRC}/src/common/KeyboardHistory.h \
+		${WRKSRC}/src/common/Logger.cpp \
+		${WRKSRC}/src/common/Mouse.h \
+		${WRKSRC}/src/common/RandomGenerator.cpp \
+		${WRKSRC}/src/coms/NetBuffer.cpp \
+		${WRKSRC}/src/coms/NetBuffer.h \
+		${WRKSRC}/src/coms/NetMessageHandler.h \
+		${WRKSRC}/src/coms/NetMessagePool.h \
+		${WRKSRC}/src/engine/MainLoop.cpp \
+		${WRKSRC}/src/scorched/MainDialog.cpp \
+		${WRKSRC}/src/scorched/main.cpp \
+		${WRKSRC}/src/server/ServerBrowserInfo.h \
+		${WRKSRC}/src/server/ServerMain.cpp
+	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,g' \
+		${WRKSRC}/src/3dsparse/aseFile.tab.cpp \
+		${WRKSRC}/src/ode/config.h
+	
 
 pre-configure:
 	@cd ${WRKSRC}/scripts && ${PERL} createAMMakefile.pl

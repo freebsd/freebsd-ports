@@ -1,13 +1,21 @@
---- ./configure.ac.orig	Sat Aug  6 13:57:14 2005
-+++ ./configure.ac	Tue Aug  9 23:20:58 2005
-@@ -37,8 +37,8 @@
- have_SDLnet=yes
- if test "x$enable_sdltest" = "xyes" ; then
- 	AC_TRY_COMPILE([
--		#include <SDL/SDL.h>
--		#include <SDL/SDL_net.h>
-+		#include <SDL11/SDL.h>
-+		#include <SDL11/SDL_net.h>
+--- configure.ac.orig	Fri Oct 14 10:18:06 2005
++++ configure.ac	Fri Oct 14 10:19:33 2005
+@@ -248,13 +248,13 @@
+         ])
+ fi
+      
+-CPPFLAGS="$CPPFLAGS $WX_CPPFLAGS"
+-CXXFLAGS="$CXXFLAGS $WX_CXXFLAGS_ONLY"
+-CFLAGS="$CFLAGS $WX_CFLAGS_ONLY"
++CPPFLAGS="$WX_CPPFLAGS $CPPFLAGS"
++CXXFLAGS="$WX_CXXFLAGS_ONLY $CXXFLAGS"
++CFLAGS="$WX_CFLAGS_ONLY $CFLAGS"
+ if test x"$use_static_wx" = x"yes"; then
+-	LIBS="$LIBS $WX_LIBS_STATIC"
++	LIBS="$WX_LIBS_STATIC $LIBS"
+ else
+-	LIBS="$LIBS $WX_LIBS"
++	LIBS="$WX_LIBS $LIBS"
+ fi
  
- 		int main(int argc, char *argv[])
- 		{ return 0; }
+ dnl Check for FreeType2
