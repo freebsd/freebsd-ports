@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	getmail
-PORTVERSION=	4.3.11
+PORTVERSION=	4.3.12
 CATEGORIES=	mail python
 MASTER_SITES=	http://pyropus.ca/software/getmail/%SUBDIR%/
 MASTER_SITE_SUBDIR=	old-versions
