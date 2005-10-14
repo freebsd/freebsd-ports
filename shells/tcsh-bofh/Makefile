@@ -16,7 +16,7 @@ DISTFILES=	tcsh-6.12.00.tar.gz \
 		tcsh-6.12.00-bofh.tgz:bofh
 
 MAINTAINER=	pyzmen@kam.pl
-COMMENT=	Patch tcsh to providing true BOFH logfunctions
+COMMENT=	Patch tcsh to providing user activity logging to syslog
 
 WRKSRC=		${WRKDIR}/tcsh-${PORTVERSION}
 
