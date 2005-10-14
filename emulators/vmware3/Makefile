@@ -7,7 +7,7 @@
 
 PORTNAME=	vmware3
 PORTVERSION=	3.2.1.2242
-PORTREVISION=	11
+PORTREVISION=	12
 PORTEPOCH=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://download3.vmware.com/software/wkst/:vmware \
@@ -229,8 +229,8 @@ pre-clean:
 	@${FIND} ${WRKSRC} | ${GREP} \@ | ${XARGS} ${RM}
 .endif
 
+.include <bsd.port.post.mk>
+
 .if exists(${WRKDIR}/Makefile.inc.net)
 .include "${WRKDIR}/Makefile.inc.net"
 .endif
-
-.include <bsd.port.post.mk>
