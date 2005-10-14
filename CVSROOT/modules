@@ -1190,6 +1190,7 @@ cmpsfont	ports/print/cmpsfont
 cmt		ports/audio/cmt
 cmucl		ports/lang/cmucl
 cmucl-extra	ports/lang/cmucl-extra
+cmus		ports/audio/cmus
 cn2jp		ports/converters/cn2jp
 cnd		ports/net/cnd
 cnet		ports/net/cnet
