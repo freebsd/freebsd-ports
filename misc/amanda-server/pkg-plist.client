@@ -1,3 +1,4 @@
+@unexec if cmp -s /etc/amandates /dev/null; then rm -f /etc/amandates; fi
 lib/libamanda-2.4.5.so
 lib/libamanda.so
 lib/libamanda.la
@@ -96,9 +97,9 @@ share/examples/amanda/amanda.conf
 share/examples/amanda/chg-multi.conf
 share/examples/amanda/chg-scsi.conf
 share/examples/amanda/disklist
-@dirrm var/amanda/gnutar-lists
-@dirrm var/amanda
-@dirrm var
+@unexec rmdir %D/var/amanda/gnutar-lists 2>/dev/null || true
+@unexec rmdir %D/var/amanda 2>/dev/null || true
+@unexec rmdir %D/var 2>/dev/null || true
 @dirrm share/examples/amanda
 @dirrm share/amanda
 @dirrm libexec/amanda

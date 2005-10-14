@@ -7,7 +7,7 @@
 
 PORTNAME?=	${MASTERPORTNAME}
 PORTVERSION=	2.4.5
-PORTREVISION?=	1
+PORTREVISION?=	2
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -70,15 +70,18 @@ pre-fetch:
 
 USE_PERL5=	yes
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda-client
-BUILD_DEPENDS=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda-client
+BUILD_DEPENDS+=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda-client \
+		${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar
+RUN_DEPENDS+=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda-client \
+		${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar
 
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-amandahosts --with-fqdn \
 		--with-dump-honor-nodump --with-buffered-dump \
 		--without-client --disable-libtool --prefix=${PREFIX} \
 		--with-user=${AMANDA_USER} --with-group=${AMANDA_GROUP} \
-		--with-gnutar-listdir=${AMANDA_GNUTAR_LISTDIR}
+		--with-gnutar-listdir=${AMANDA_GNUTAR_LISTDIR} \
+		--with-gnutar=${LOCALBASE}/bin/gtar
 
 MAN8=		amadmin.8 amcheck.8 amcheckdb.8 amcleanup.8 amdd.8 \
 		amdump.8 amflush.8 amgetconf.8 amlabel.8 ammt.8 \
@@ -131,7 +134,7 @@ CONFIGURE_ARGS+=	--with-portrange=${AMANDA_PORTRANGE}
 .if ${OSVERSION} < 400000
 PLIST_SUB+=	SCSICHG=''
 .elif ${OSVERSION} >= 480000
-.if ${MACHINE_ARCH} == "amd64"
+.if ${ARCH} == "amd64"
 PLIST_SUB+=	SCSICHG='@comment '
 .elif ${OSVERSION} >= 502000
 PLIST_SUB+=	SCSICHG='@comment '
@@ -170,12 +173,16 @@ pre-fetch:
 	@${ECHO} "        The default is no restriction on UDP ports."
 	@${ECHO} ""
 
+BUILD_DEPENDS+=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar
+RUN_DEPENDS+=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar
+
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-amandahosts --with-fqdn \
 		--with-dump-honor-nodump --with-buffered-dump \
 		--without-server --disable-libtool --prefix=${PREFIX} \
 		--with-user=${AMANDA_USER} --with-group=${AMANDA_GROUP} \
-		--with-gnutar-listdir=${AMANDA_GNUTAR_LISTDIR}
+		--with-gnutar-listdir=${AMANDA_GNUTAR_LISTDIR} \
+		--with-gnutar=${LOCALBASE}/bin/gtar
 
 MAN8=		amanda.8 amrecover.8 amrestore.8
 
