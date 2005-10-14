@@ -950,6 +950,8 @@
 %%ZOPEBASEDIR%%/lib/python/Products/MailHost/help/Mail-Host_Edit.stx
 %%ZOPEBASEDIR%%/lib/python/Products/MailHost/help/MailHost.py
 %%ZOPEBASEDIR%%/lib/python/Products/MailHost/help/MailHost.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/MailHost/interfaces.py
+%%ZOPEBASEDIR%%/lib/python/Products/MailHost/interfaces.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/MailHost/tests/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Products/MailHost/tests/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/MailHost/tests/testMailHost.py
@@ -1230,6 +1232,8 @@
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/testHTMLTests.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/testTALES.py
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/testTALES.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/testZRPythonExpr.py
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/testZRPythonExpr.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/testZopePageTemplate.py
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/testZopePageTemplate.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/test_ptfile.py
@@ -2003,6 +2007,10 @@
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/ZRDB/tests/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/ZRDB/tests/testResult.py
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/ZRDB/tests/testResult.pyc
+%%ZOPEBASEDIR%%/lib/python/Shared/DC/ZRDB/tests/test_sqlgroup.py
+%%ZOPEBASEDIR%%/lib/python/Shared/DC/ZRDB/tests/test_sqlgroup.pyc
+%%ZOPEBASEDIR%%/lib/python/Shared/DC/ZRDB/tests/test_sqlvar.py
+%%ZOPEBASEDIR%%/lib/python/Shared/DC/ZRDB/tests/test_sqlvar.pyc
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/ZRDB/www/DBAdapterFolder_icon.gif
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/ZRDB/www/DBAdapter_icon.gif
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/__init__.py
@@ -3023,6 +3031,8 @@
 %%ZOPEBASEDIR%%/lib/python/ZTUtils/tests/testIterator.pyc
 %%ZOPEBASEDIR%%/lib/python/ZTUtils/tests/testTree.py
 %%ZOPEBASEDIR%%/lib/python/ZTUtils/tests/testTree.pyc
+%%ZOPEBASEDIR%%/lib/python/ZTUtils/tests/testZope.py
+%%ZOPEBASEDIR%%/lib/python/ZTUtils/tests/testZope.pyc
 %%ZOPEBASEDIR%%/lib/python/Zope.py
 %%ZOPEBASEDIR%%/lib/python/Zope.pyc
 %%ZOPEBASEDIR%%/lib/python/Zope2/App/ClassFactory.py
@@ -3136,7 +3146,6 @@
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/__init__.py
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/__init__.pyc
-%%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/directives/.misc.py.swo
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/directives/__init__.py
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/directives/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/directives/admonitions.py
