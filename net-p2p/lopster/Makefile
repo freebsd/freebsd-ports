@@ -27,10 +27,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libogg.so.4)
-WITH_LIBOGG=	yes
+WITH_OGG=	yes
 .endif
 
-.if defined(WITH_LIBOGG)
+.if defined(WITH_OGG)
 LIB_DEPENDS+=	ogg.5:${PORTSDIR}/audio/libogg
 .endif
 
@@ -41,8 +41,8 @@ CONFIGURE_ARGS+=	--with-zlib=no
 .endif
 
 pre-everything::
-.ifndef WITH_LIBOGG
-	@${ECHO_MSG} "You can specify WITH_LIBOGG to include Ogg support"
+.ifndef WITH_OGG
+	@${ECHO_MSG} "You can specify WITH_OGG to include Ogg support"
 .endif
 .ifndef WITHOUT_ZLIB
 	@${ECHO_MSG} "You can specify WITHOUT_ZLIB to disable compression for old servers"
