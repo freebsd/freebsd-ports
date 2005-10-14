@@ -7,6 +7,7 @@
 
 PORTNAME=	c2hs
 PORTVERSION=	0.13.6
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.cse.unsw.edu.au/~chak/haskell/c2hs/
 PKGNAMEPREFIX=	hs-
@@ -23,7 +24,7 @@ GHC=		ghc-5.04.3
 GHCDEP=		ghc5
 GHCMAJOR=	5
 .else
-GHC=		ghc-6.4
+GHC=		ghc-6.4.1
 GHCDEP=		ghc
 GHCMAJOR=	6
 .endif
