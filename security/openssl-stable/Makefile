@@ -10,7 +10,7 @@ CATEGORIES=	security devel
 MAINTAINER=	dinoex@FreeBSD.org
 
 MASTERDIR?=	${.CURDIR}/../openssl
-WITH_OPENSSL_097=	yes
+WITH_OPENSSL_STABLE=	yes
 
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"
