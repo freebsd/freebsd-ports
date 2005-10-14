@@ -7,7 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.87
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	clamav
@@ -18,7 +18,6 @@ COMMENT=	Command line virus scanner written entirely in C
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		unarj:${PORTSDIR}/archivers/unarj \
-		unrar:${PORTSDIR}/archivers/unrar \
 		zoo:${PORTSDIR}/archivers/zoo \
 		arc:${PORTSDIR}/archivers/arc \
 		unzip:${PORTSDIR}/archivers/unzip
@@ -26,6 +25,7 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 OPTIONS=	MILTER "Compile the milter interface" Off \
 		CURL "Support URL downloading" Off \
 		LIBUNRAR "Support for external Unrar library" Off
+
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -127,24 +127,18 @@ CONFIGURE_ARGS+=	--without-libcurl
 .endif
 
 .if defined(WITH_LIBUNRAR)
-WANT_AUTOMAKE_VER=      19
-USE_AUTOCONF_VER=       259
+CFLAGS+=		-DUNRAR3
+LDFLAGS+=		-lunrar
 LIB_DEPENDS+=		unrar.3:${PORTSDIR}/archivers/libunrar
-
-pre-configure:
-	cd ${WRKSRC} && \
-	${ACLOCAL} && \
-	${AUTOHEADER} && \
-	${AUTOCONF} && \
-	${AUTOMAKE}
+EXTRA_PATCHES=		${FILESDIR}/extra-patch-libunrar
+.else
+RUN_DEPENDS+=		unrar:${PORTSDIR}/archivers/unrar
+EXTRA_PATCHES=		${FILESDIR}/extra-patch-libclamav__unrarlib.h
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread -lc_r|${PTHREAD_LIBS}|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.if defined(WITH_LIBUNRAR)
-	${PATCH} -d  ${WRKSRC}/libclamav < ${PORTSDIR}/security/clamav/files/clamav-0.87-libunrar3.patch
-.endif
 
 pre-build:
 	@if ${LDCONFIG} -r | ${GREP} -qw -e -lclamav; then \
@@ -182,7 +176,6 @@ post-install:
 	@${MKDIR} ${DESTDIR}${DOCSDIR}/html
 	@${INSTALL_DATA} ${INSTALL_WRKSRC}/docs/html/*.* \
 		${DESTDIR}${DOCSDIR}/html
-
 .endif
 	@${SETENV} PKG_PREFIX=${PREFIX} PKG_DESTDIR=${DESTDIR} \
 		${SH} ${PKGINSTALL} ${PREFIX} POST-INSTALL
