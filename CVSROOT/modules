@@ -5510,6 +5510,7 @@ libpeak		ports/devel/libpeak
 libpixman	ports/graphics/libpixman
 libppd		ports/print/libppd
 libprelude	ports/security/libprelude
+libpreludedb	ports/security/libpreludedb
 libpri		ports/misc/libpri
 libpst		ports/mail/libpst
 libqalculate	ports/math/libqalculate
