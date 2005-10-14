@@ -7092,6 +7092,7 @@ openspc		ports/audio/openspc
 openssh-askpass	ports/security/openssh-askpass
 openssh-portable	ports/security/openssh-portable
 openssl-beta	ports/security/openssl-beta
+openssl-stable	ports/security/openssl-stable
 openthreads	ports/devel/openthreads
 opentop		ports/devel/opentop
 openttd		ports/games/openttd
