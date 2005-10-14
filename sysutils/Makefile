@@ -176,6 +176,7 @@
     SUBDIR += gcombust
     SUBDIR += gconf-editor
     SUBDIR += gdesklets-multitail
+    SUBDIR += gdmap
     SUBDIR += gfslicer
     SUBDIR += gkfreq
     SUBDIR += gkleds2
