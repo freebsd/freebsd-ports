@@ -6,40 +6,39 @@
 #
 
 PORTNAME=	transcode
-DISTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dl.fkb.wormulon.net/transcode/ \
 		http://dl.kel.wormulon.net/transcode/ \
-		http://rebels.plukwa.net/linux-video/transcode/ \
+		http://kraymer.de/mirroring/ \
 		http://www.jakemsr.com/transcode/
 
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	A text-console utility for video stream processing
 
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread \
-				jpeg.9:${PORTSDIR}/graphics/jpeg \
-				mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 BUILD_DEPENDS=	${LOCALBASE}/bin/ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
-				iconv:${PORTSDIR}/converters/libiconv
+		iconv:${PORTSDIR}/converters/libiconv
 
 USE_GETOPT_LONG=yes
 USE_XLIB=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
+INSTALLS_SHLIB=	yes
+USE_LIBTOOL_VER=13
+WANT_SDL=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 CPPFLAGS=	-I${X11BASE}/include -I${LOCALBASE}/include
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		SDL_CONFIG="${LOCALBASE}/bin/sdl11-config"
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-ffmpeg_libs-prefix=${LOCALBASE} \
-					--with-libdvdread-prefix=${LOCALBASE} \
-					--with-libiconv-prefix=${LOCALBASE}
-USE_REINPLACE=	yes
-INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=13
-WANT_SDL=	yes
+			--with-libdvdread-prefix=${LOCALBASE} \
+			--with-libiconv-prefix=${LOCALBASE}
 
 MAN1=	avifix.1 aviindex.1 avimerge.1 avisplit.1 avisync.1 tccat.1 tcdemux.1 \
 	tcprobe.1 tcscan.1 transcode.1 tcextract.1 tcdecode.1 tcmodinfo.1 \
@@ -233,7 +232,7 @@ PLIST_SUB+=	WITH_LIBDV="@comment "
 LIB_DEPENDS+=	quicktime.0:${PORTSDIR}/multimedia/libquicktime
 CONFIGURE_ARGS+=	--enable-libquicktime \
 					--with-libquicktime-prefix=${LOCALBASE} \
-					--with-libquicktime-includes=${LOCALBASE}
+					--with-libquicktime-includes=${LOCALBASE}/include/lqt
 PLIST_SUB+=	WITH_QUICKTIME=""
 .else
 CONFIGURE_ARGS+=	--enable-libquicktime=no
