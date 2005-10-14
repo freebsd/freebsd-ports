@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Sort/Key/DateTime.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/Key/DateTime/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/Key/DateTime 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort/Key 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sort 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Sort/Key 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Sort 2>/dev/null || true
