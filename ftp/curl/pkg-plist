@@ -193,7 +193,6 @@ lib/libcurl.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_version_info.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_version_info.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_version_info.pdf
-%%PORTDOCS%%%%DOCSDIR%%/libcurl/getinfo-times
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/index.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/libcurl-easy.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/libcurl-easy.html
