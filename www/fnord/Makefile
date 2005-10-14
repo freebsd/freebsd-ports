@@ -7,6 +7,7 @@
 
 PORTNAME=	fnord
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.fefe.de/fnord/
 
@@ -76,8 +77,9 @@ SED_SCRIPT+=	-e "s|^/\* \(\#define OLD_STYLE_REDIRECT\).*|\1|"
 .endif
 
 post-patch:
-	[ -z '${SED_SCRIPT}' ] || \
+	@[ -z '${SED_SCRIPT}' ] || \
 		 ${REINPLACE_CMD} ${SED_SCRIPT} ${WRKSRC}/httpd.c
+	@${REINPLACE_CMD} -e "/strip/d" ${WRKSRC}/Makefile
 
 do-build:
 	cd ${WRKSRC}; ${GMAKE} DIET=""
