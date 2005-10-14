@@ -1,5 +1,5 @@
---- grapher.h.orig	Fri Oct 14 19:54:56 2005
-+++ grapher.h	Fri Oct 14 19:55:14 2005
+--- grapher.h.orig	Wed Jul 16 21:24:46 2003
++++ grapher.h	Fri Oct 14 20:08:52 2005
 @@ -13,15 +13,14 @@
  for (z=0;z<=progress;z++) {arrow[z]=bar;}for (k=z;k<=max/4;k++) {arrow[k]=empty;}
  
@@ -13,10 +13,10 @@
 -        Moon->Earth distance: %.3f Km
 -        Distance meter: %s (%d%%)
 -",
-+        "Moon's situation at: %d/%d/%d %d:%d:%d\n"
++        "Moon's situation at: %02d/%02d/%02d %02d:%02d:%02d\n"
 +        "Age: +- %d days\n"
-+        "Rise: %d/%d/%d %d:%d:%d\n"
-+        "Set: %d/%d/%d %d:%d:%d\n"
++        "Rise: %02d/%02d/%02d %02d:%02d:%02d\n"
++        "Set: %02d/%02d/%02d %02d:%02d:%02d\n"
 +        "Illuminated: %.4f%%  \n"
 +        "Moon->Earth distance: %.3f Km\n"
 +        "Distance meter: %s (%d%%)\n"
