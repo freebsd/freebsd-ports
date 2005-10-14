@@ -1,18 +1,5 @@
-diff -ruN clamav-0.84.orig/libclamav/Makefile.am clamav-0.84/libclamav/Makefile.am
---- clamav-0.84.orig/libclamav/Makefile.am	2005-04-20 03:33:17.000000000 +0400
-+++ clamav-0.84/libclamav/Makefile.am	2005-05-04 02:12:02.540693464 +0400
-@@ -17,6 +17,8 @@
- 
- 
- INCLUDES = -I$(top_srcdir) -I@srcdir@/zziplib -I@srcdir@/mspack
-+CFLAGS = @CFLAGS@ -DUNRAR3
-+LDFLAGS = @LDFLAGS@ -lunrar
- 
- libclamav_la_LIBADD = @LIBCLAMAV_LIBS@
- 
-diff -ruN clamav-0.84.orig/libclamav/scanners.c clamav-0.84/libclamav/scanners.c
---- clamav-0.84.orig/libclamav/scanners.c	2005-04-29 05:31:10.000000000 +0400
-+++ clamav-0.84/libclamav/scanners.c	2005-05-04 02:12:02.543693008 +0400
+--- ./libclamav/scanners.c.orig	Thu Sep 15 18:45:30 2005
++++ ./libclamav/scanners.c	Wed Oct 12 14:40:13 2005
 @@ -42,12 +42,13 @@
  
  #include <mspack.h>
@@ -44,7 +31,7 @@ diff -ruN clamav-0.84.orig/libclamav/scanners.c clamav-0.84/libclamav/scanners.c
  
  #ifdef HAVE_ZLIB_H
  static int cli_scanzip(int desc, const char **virname, long int *scanned, const struct cl_node *root, const struct cl_limits *limits, unsigned int options, unsigned int arec, unsigned int mrec)
-@@ -1213,6 +1216,43 @@
+@@ -1216,6 +1219,43 @@
      return ret;
  }
  
@@ -88,7 +75,7 @@ diff -ruN clamav-0.84.orig/libclamav/scanners.c clamav-0.84/libclamav/scanners.c
  static int cli_scanmschm(int desc, const char **virname, long int *scanned, const struct cl_node *root, const struct cl_limits *limits, unsigned int options, unsigned int arec, unsigned int mrec)
  {
  	char *tempname;
-@@ -1400,8 +1440,13 @@
+@@ -1403,8 +1443,13 @@
  
      switch(type) {
  	case CL_TYPE_RAR:
@@ -102,7 +89,7 @@ diff -ruN clamav-0.84.orig/libclamav/scanners.c clamav-0.84/libclamav/scanners.c
  	    break;
  
  	case CL_TYPE_ZIP:
-@@ -1538,8 +1583,17 @@
+@@ -1541,8 +1586,17 @@
  	 * in raw mode. Now we will try to unpack them
  	 */
  	case CL_TYPE_MSEXE:
@@ -120,9 +107,8 @@ diff -ruN clamav-0.84.orig/libclamav/scanners.c clamav-0.84/libclamav/scanners.c
  	    break;
  
  	default:
-diff -ruN clamav-0.84.orig/libclamav/unrarlib.c clamav-0.84/libclamav/unrarlib.c
---- clamav-0.84.orig/libclamav/unrarlib.c	2005-04-20 03:33:17.000000000 +0400
-+++ clamav-0.84/libclamav/unrarlib.c	2005-05-04 02:12:27.131955024 +0400
+--- ./libclamav/unrarlib.c.orig	Thu Jun 23 17:03:12 2005
++++ ./libclamav/unrarlib.c	Wed Oct 12 14:40:13 2005
 @@ -1,2774 +1,119 @@
 -/* It contains some changes needed for libclamav and isn't compatible with
 - * the original version, --tk
@@ -3008,9 +2994,8 @@ diff -ruN clamav-0.84.orig/libclamav/unrarlib.c clamav-0.84/libclamav/unrarlib.c
 -
 -
 -/* end of file urarlib.c */
-diff -ruN clamav-0.84.orig/libclamav/unrarlib.h clamav-0.84/libclamav/unrarlib.h
---- clamav-0.84.orig/libclamav/unrarlib.h	2005-04-20 03:33:17.000000000 +0400
-+++ clamav-0.84/libclamav/unrarlib.h	2005-05-04 02:12:02.551691792 +0400
+--- ./libclamav/unrarlib.h.orig	Thu Jun 23 17:03:12 2005
++++ ./libclamav/unrarlib.h	Wed Oct 12 14:40:13 2005
 @@ -1,205 +1,22 @@
 -/* ***************************************************************************
 - **
@@ -3228,7 +3213,7 @@ diff -ruN clamav-0.84.orig/libclamav/unrarlib.h clamav-0.84/libclamav/unrarlib.h
 -
 -
 -#ifdef __cplusplus
--}
+-};
 -#endif
 -
 -#endif
