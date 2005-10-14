@@ -1,11 +1,12 @@
-etc/rc.d/rskkserv.sh
 @unexec if cmp -s %D/etc/rskkserv.conf %D/%%EXAMPLESDIR%%/rskkserv.conf; then rm -f %D/etc/rskkserv.conf; fi
 %%RUBY_SITEARCHLIBDIR%%/skkserv/skkdic.so
 @dirrm %%RUBY_SITEARCHLIBDIR%%/skkserv
 %%RUBY_SITELIBDIR%%/skkserv/bdbdic.rb
+%%RUBY_SITELIBDIR%%/skkserv/cdbdic.rb
 %%RUBY_SITELIBDIR%%/skkserv/conf.rb
 %%RUBY_SITELIBDIR%%/skkserv/ebdic.rb
 %%RUBY_SITELIBDIR%%/skkserv/logger.rb
+%%RUBY_SITELIBDIR%%/skkserv/nulldic.rb
 %%RUBY_SITELIBDIR%%/skkserv/skkdic.rb
 @dirrm %%RUBY_SITELIBDIR%%/skkserv
 sbin/rskkserv

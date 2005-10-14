@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	rskkserv
-PORTVERSION=	2.95.3
-PORTREVISION=	1
+PORTVERSION=	2.95.4
+PORTREVISION=	0
 CATEGORIES=	japanese ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	rskkserv/12167
+MASTER_SITE_SUBDIR=	rskkserv/15241
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -19,9 +19,18 @@ COMMENT=	An alternative implementation of skkserv written in Ruby
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/tcpwrap.so:${PORTSDIR}/security/ruby-tcpwrap \
 		${SKKJISYO_BASE}/${SKKJISYO}:${SKK_MASTERDIR}
 
+.if defined(WITH_RUBY_CDB)
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/cdb.so:${PORTSDIR}/databases/ruby-cdb
+.endif
+
+.if defined(WITH_RUBY_EB)
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/eb.so:${PORTSDIR}/japanese/ruby-eb
+.endif
+
 USE_RUBY=	yes
 USE_AUTOCONF_VER=	213
 USE_GMAKE=	yes
+USE_RC_SUBR=	rskkserv.sh
 
 CONFIGURE_ARGS=	--with-ruby="${RUBY}" \
 		--with-dicfile="${SKKJISYO_BASE}/${SKKJISYO}" \
@@ -34,8 +43,6 @@ SKKJISYO_SIZE?=	L
 SKKJISYO_BASE=	${LOCALBASE}/share/skk
 SKKJISYO=	SKK-JISYO.${SKKJISYO_SIZE}
 SKK_MASTERDIR=	${PORTSDIR}/japanese/skk-jisyo
-
-STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/rskkserv.sh
 
 MAN1=		rskkserv.1
 MANLANG=	"" ja
@@ -60,33 +67,6 @@ post-patch:
 		${WRKSRC}/doc/conf-o2n.rb
 
 post-install:
-	@if [ ! -f ${STARTUP_SCRIPT} ]; then \
-		${ECHO} "Installing ${STARTUP_SCRIPT} file."; \
-		( \
-		${ECHO_CMD} "#!/bin/sh"; \
-		${ECHO_CMD} "case \$$1 in"; \
-		${ECHO_CMD} "start)"; \
-		${ECHO_CMD} "	if [ -f ${PREFIX}/sbin/rskkserv ]; then"; \
-		${ECHO_CMD} "		${ECHO_CMD} -n ' rskkserv: '"; \
-		${ECHO_CMD} "		${PREFIX}/sbin/rskkserv"; \
-		${ECHO_CMD} "	fi"; \
-		${ECHO_CMD} "	;;"; \
-		${ECHO_CMD} "stop)"; \
-		${ECHO_CMD} "	pidfile=/var/run/rskkserv.pid"; \
-		${ECHO_CMD} "	if [ -f \$$pidfile ]; then"; \
-		${ECHO_CMD} "	    kill \`cat \$$pidfile\` && echo -n ' rskkserv'"; \
-		${ECHO_CMD} "	    ${RM} -f \$$pidfile"; \
-		${ECHO_CMD} "	else"; \
-		${ECHO_CMD} "	    ${ECHO_CMD} ' rskkserv: not running'"; \
-		${ECHO_CMD} "	fi"; \
-		${ECHO_CMD} "	;;"; \
-		${ECHO_CMD} "*)"; \
-		${ECHO_CMD} "	${ECHO_CMD} \"usage: \$$0 {start|stop}\" 1>&2"; \
-		${ECHO_CMD} "	;;"; \
-		${ECHO_CMD} "esac"; \
-		) > ${STARTUP_SCRIPT}; \
-		${CHMOD} ${BINMODE} ${STARTUP_SCRIPT}; \
-	fi
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
