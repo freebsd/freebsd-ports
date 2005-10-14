@@ -17,8 +17,8 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to GraphViz agraph
 
-BUILD_DEPENDS=	${SWIG_CMD}:${PORTSDIR}/devel/swig13 \
-		${LOCALBASE}/lib/graphviz/libagraph.so:${PORTSDIR}/graphics/graphviz
+BUILD_DEPENDS=	${SWIG_CMD}:${PORTSDIR}/devel/swig13
+LIB_DEPENDS=	agraph.0:${PORTSDIR}/graphics/graphviz
 
 NO_CDROM=	"Can't be included in a commercial product"
 
@@ -26,13 +26,14 @@ USE_PYTHON=	yes
 SWIG_CMD=	${LOCALBASE}/bin/swig1.3
 PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g}
 GV_PORT=	${PORTSDIR}/graphics/graphviz
+MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ENV=	PYTHON_INCLUDEDIR=${PYTHON_INCLUDEDIR} \
 		GRAPHVIZ_INCLUDEDIR=${LOCALBASE}/include/graphviz \
 		SWIG_CMD=${SWIG_CMD}
 
 post-patch:
 	@${MKDIR} ${WRKSRC}
-	@${CP} ${DISTDIR}/graphviz/gv.i ${FILESDIR}/Makefile ${WRKSRC}
+	@${CP} ${DISTDIR}/graphviz/gv.i ${WRKSRC}
 
 do-install:
 	${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}
