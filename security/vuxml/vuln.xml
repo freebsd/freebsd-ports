@@ -34,6 +34,29 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="60f8fe7b-3cfb-11da-baa2-0004614cc33d">
+    <topic>WebCalendar -- multiple reports of websites getting defeced</topic>
+    <affects>
+      <package>
+	<name>webcalendar</name>
+	<range><lt>1.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>There is a vulnerability in includes/functions.php file.
+	  No details available.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://sourceforge.net/forum/forum.php?thread_id=1342085&amp;forum_id=11587</url>
+    </references>
+    <dates>
+      <discovery>2005-08-26</discovery>
+      <entry>2005-10-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="47bdabcf-3cf9-11da-baa2-0004614cc33d">
     <topic>gallery2 -- a vulnerability has been discovered</topic>
     <affects>
