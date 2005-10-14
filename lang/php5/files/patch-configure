@@ -1,6 +1,6 @@
---- configure.orig	Sun Apr  3 11:42:50 2005
-+++ configure	Wed Apr  6 16:41:26 2005
-@@ -2805,7 +2805,7 @@
+--- configure.orig	Mon Sep  5 13:16:17 2005
++++ configure	Fri Oct 14 07:48:01 2005
+@@ -2890,7 +2890,7 @@
    save_LIBS=$LIBS
    
  if test -n "$ac_cv_pthreads_lib"; then
@@ -9,7 +9,7 @@
  fi
  
  if test -n "$ac_cv_pthreads_cflags"; then
-@@ -11201,7 +11201,7 @@
+@@ -11285,7 +11285,7 @@
  if test "$enable_maintainer_zts" = "yes"; then
    
  if test -n "$ac_cv_pthreads_lib"; then
@@ -18,7 +18,7 @@
  fi
  
  if test -n "$ac_cv_pthreads_cflags"; then
-@@ -11218,8 +11218,6 @@
+@@ -11302,8 +11302,6 @@
    case $host_alias in
    *solaris*)
      PTHREAD_FLAGS="-D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT";;
@@ -27,8 +27,8 @@
    *linux*)
      PTHREAD_FLAGS=-D_REENTRANT;;
    *aix*)
-@@ -80628,6 +80626,10 @@
- #line 80629 "configure"
+@@ -88384,6 +88382,10 @@
+ #line 88385 "configure"
  #include "confdefs.h"
  
 +#if HAVE_UNISTD_H
@@ -38,8 +38,8 @@
  #if HAVE_CRYPT_H
  #include <crypt.h>
  #endif
-@@ -80685,6 +80687,10 @@
- #line 80686 "configure"
+@@ -88441,6 +88443,10 @@
+ #line 88442 "configure"
  #include "confdefs.h"
  
 +#if HAVE_UNISTD_H
@@ -49,8 +49,8 @@
  #if HAVE_CRYPT_H
  #include <crypt.h>
  #endif
-@@ -80742,6 +80748,10 @@
- #line 80743 "configure"
+@@ -88498,6 +88504,10 @@
+ #line 88499 "configure"
  #include "confdefs.h"
  
 +#if HAVE_UNISTD_H
@@ -60,8 +60,8 @@
  #if HAVE_CRYPT_H
  #include <crypt.h>
  #endif
-@@ -80837,6 +80847,10 @@
- #line 80838 "configure"
+@@ -88593,6 +88603,10 @@
+ #line 88594 "configure"
  #include "confdefs.h"
  
 +#if HAVE_UNISTD_H
@@ -71,7 +71,7 @@
  #if HAVE_CRYPT_H
  #include <crypt.h>
  #endif
-@@ -92387,7 +92401,7 @@
+@@ -101571,7 +101585,7 @@
    save_LIBS=$LIBS
    
  if test -n "$ac_cv_pthreads_lib"; then
