@@ -1,0 +1,37 @@
+--- configure.orig	Sat May 24 06:09:38 2003
++++ configure	Fri Oct 14 19:51:18 2005
+@@ -849,7 +849,7 @@
+ 
+ PACKAGE=mymoon
+ VERSION=1.0
+-for ac_hdr in ncurses.h curses.h libnova.h math.h
++for ac_hdr in ncurses.h curses.h libnova/libnova.h math.h
+ do
+ ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
+@@ -890,9 +890,9 @@
+ done
+ 
+ LNOVA_LIB_NAME=""
+-echo $ac_n "checking for get_ln_version in -lnova""... $ac_c" 1>&6
+-echo "configure:895: checking for get_ln_version in -lnova" >&5
+-ac_lib_var=`echo nova'_'get_ln_version | sed 'y%./+-%__p_%'`
++echo $ac_n "checking for ln_get_version in -lnova""... $ac_c" 1>&6
++echo "configure:895: checking for ln_get_version in -lnova" >&5
++ac_lib_var=`echo nova'_'ln_get_version | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+@@ -904,10 +904,10 @@
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
+-char get_ln_version();
++char ln_get_version();
+ 
+ int main() {
+-get_ln_version()
++ln_get_version()
+ ; return 0; }
+ EOF
+ if { (eval echo configure:914: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
