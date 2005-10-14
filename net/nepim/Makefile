@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	nepim
-PORTVERSION=	0.13
+PORTVERSION=	0.15
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://www.yazzy.org/ports/
@@ -16,9 +16,16 @@ COMMENT=	Tool for measuring available bandwidth between hosts
 LIB_DEPENDS=	oop.4:${PORTSDIR}/devel/liboop
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 ALL_TARGET=	default
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
+
 PLIST_FILES=	bin/nepim
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nepim ${PREFIX}/bin
