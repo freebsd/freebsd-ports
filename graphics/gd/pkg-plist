@@ -11,6 +11,7 @@ bin/giftogd2
 bin/pngtogd
 bin/pngtogd2
 bin/webpng
+include/entities.h
 include/gd.h
 include/gd_io.h
 include/gdcache.h
