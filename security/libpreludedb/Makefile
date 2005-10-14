@@ -1,0 +1,68 @@
+# New ports collection makefile for:	libpreludedb
+# Date created:			2005-10-14
+# Whom:				Sergei Kolobov <sergei@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	libpreludedb
+PORTVERSION=	0.9.0
+CATEGORIES=	security
+MASTER_SITES=	http://www.prelude-ids.org/download/releases/
+
+MAINTAINER=	sergei@FreeBSD.org
+COMMENT=	Framework library for access to Prelude NIDS database
+
+LIB_DEPENDS=	prelude.2:${PORTSDIR}/security/libprelude
+
+USE_GPG=		yes
+SIG_SUFFIX=		.sig
+USE_REINPLACE=		yes
+USE_GMAKE=		yes
+USE_AUTOTOOLS=		libtool:15
+INSTALLS_SHLIB=		yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+.if defined(WITH_PERL)
+USE_PERL5=		yes
+CONFIGURE_ARGS+=	--enable-perl
+PLIST_SUB+=		WITH_PERL=""
+.else
+CONFIGURE_ARGS+=	--disable-perl
+PLIST_SUB+=		WITH_PERL="@comment "
+.endif
+
+.if defined(WITH_PYTHON)
+USE_PYTHON=		yes
+CONFIGURE_ARGS+=	--enable-python
+PLIST_SUB+=		WITH_PYTHON=""
+.else
+CONFIGURE_ARGS+=	--disable-python
+PLIST_SUB+=		WITH_PYTHON="@comment "
+.endif
+
+.if defined(WITH_MYSQL)
+USE_MYSQL=		yes
+CONFIGURE_ARGS+=	--enable-mysql
+PLIST_SUB+=		WITH_MYSQL=""
+.else
+CONFIGURE_ARGS+=	--disable-mysql
+PLIST_SUB+=		WITH_MYSQL="@comment "
+.endif
+
+.if defined(WITH_PGSQL)
+USE_PGSQL=		yes
+CONFIGURE_ARGS+=	--enable-pgsql
+PLIST_SUB+=		WITH_PGSQL=""
+.else
+CONFIGURE_ARGS+=	--disable-pgsql
+PLIST_SUB+=		WITH_PGSQL="@comment "
+.endif
+
+.if !defined(NOPORTDOCS)
+CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/api/html/* ${DOCSDIR}
+.endif
+
+.include <bsd.port.mk>

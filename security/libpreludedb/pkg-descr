@@ -1,0 +1,6 @@
+Prelude is a new innovative hybrid Intrusion Detection system designed 
+to be very modular, distributed, rock solid and fast. 
+
+This library provides a framework for easy access to the Prelude database.
+
+WWW:	http://www.prelude-ids.org/
