@@ -351,6 +351,7 @@ share/doc/ghc6/libraries/base/GHC.Conc.html
 share/doc/ghc6/libraries/base/GHC.ConsoleHandler.html
 share/doc/ghc6/libraries/base/GHC.Dotnet.html
 share/doc/ghc6/libraries/base/GHC.Exts.html
+share/doc/ghc6/libraries/base/GHC.Unicode.html
 share/doc/ghc6/libraries/base/Numeric.html
 share/doc/ghc6/libraries/base/Prelude.html
 share/doc/ghc6/libraries/base/System.CPUTime.html
@@ -666,6 +667,7 @@ share/doc/ghc6/users_guide/prof-time-options.html
 share/doc/ghc6/users_guide/prof-xml-tool.html
 share/doc/ghc6/users_guide/profiling.html
 share/doc/ghc6/users_guide/release-6-4.html
+share/doc/ghc6/users_guide/release-6-4-1.html
 share/doc/ghc6/users_guide/rewrite-rules.html
 share/doc/ghc6/users_guide/runtime-control.html
 share/doc/ghc6/users_guide/sec-assertions.html
