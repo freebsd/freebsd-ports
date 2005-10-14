@@ -22,7 +22,7 @@ DISTFILES=	VMware-workstation-${PORTVERSION:R}-${PORTVERSION:E}${EXTRACT_SUFX}:v
 MAINTAINER=	orlando@break.net
 COMMENT=	A virtual machine emulator - a full PC in a window
 
-RUN_DEPENDS=	${LINUXBASE}/dev/rtc:${PORTSDIR}/emulators/rtc
+RUN_DEPENDS=	/dev/rtc:${PORTSDIR}/emulators/rtc
 
 RESTRICTED=	"Not sure if we can redistribute it"
 
