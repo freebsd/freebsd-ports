@@ -24,10 +24,6 @@ MAKE_ENV+=	COMPRESS_CMD="${COMPRESS_CMD:S/c//}"
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.c' | ${XARGS} ${GREP} -lF malloc.h \
 		| ${XARGS} ${REINPLACE_CMD} -n -e "s|<malloc.h>||" -e t -e p
-.if ${OSVERSION} < 500027
-	@${FIND} ${WRKSRC} | ${XARGS} ${GREP} -lF stdint.h \
-		| ${XARGS} ${REINPLACE_CMD} -e "s|<stdint.h>|<inttypes.h>|g"
-.endif
 
 post-configure:
 	# Work around shortcomings of the Image.rules et. al:
