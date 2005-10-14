@@ -1102,6 +1102,7 @@
     SUBDIR += p5-Smart-Comments
     SUBDIR += p5-Sort-Array
     SUBDIR += p5-Sort-ArrayOfArrays
+    SUBDIR += p5-Sort-Key
     SUBDIR += p5-Sort-Tree
     SUBDIR += p5-Sort-Versions
     SUBDIR += p5-Spiffy
