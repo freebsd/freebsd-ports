@@ -12,7 +12,7 @@ CATEGORIES=	devel security
 MASTER_SITES=	http://www.splint.org/downloads/
 EXTRACT_SUFX=	.src.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	andrew.nau.ua@gmail.com
 COMMENT=	A tool for statically checking sourcecode for security vulnerabilities
 
 USE_REINPLACE=	yes
