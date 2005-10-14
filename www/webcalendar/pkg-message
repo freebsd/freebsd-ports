@@ -10,4 +10,3 @@ Then copy
 %%PREFIX%%/%%WEBWCDIR%%/includes/settings.php.orig to
 %%PREFIX%%/%%WEBWCDIR%%/includes/settings.php and edit it
 for your installation.
-
