@@ -5,13 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	ghc
-PORTVERSION=	6.4
-PORTREVISION=	2
+PORTVERSION=	6.4.1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot
 PATCH_SITES=	http://www-i2.informatik.rwth-aachen.de/~stolz/FreeBSD/
-PATCHFILES=	patch-ghc-libraries_GLUT.diff patch-ghc-libraries_OpenAL.diff
+PATCHFILES=	patch-ghc-libraries_OpenAL.diff
 
 ONLY_FOR_ARCHS=	i386
 
@@ -36,10 +35,11 @@ LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
 .endif
 .endif
 
-WANT_AUTOCONF_VER=259	# Need this to regenerate patched configure in GLUT
+WANT_AUTOCONF_VER=259	# Need this to regenerate patched configure in OpenAL
 LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4 \
 		glut.3:${PORTSDIR}/graphics/libglut \
-		openal.0:${PORTSDIR}/audio/openal
+		openal.0:${PORTSDIR}/audio/openal \
+		readline.5:${PORTSDIR}/devel/readline
 
 MAINTAINER=	simonmar@microsoft.com
 COMMENT=	A Compiler for the functional language Haskell
@@ -62,7 +62,8 @@ PLIST_SUB+=	PROFILE=""
 BOOT_DIR=	${WRKDIR}/ghc-${PORTVERSION}-boot
 BOOT_GHC=	${BOOT_DIR}/bin/i386-unknown-freebsd/ghc-${PORTVERSION}
 
-CONFIGURE_ARGS=	--with-ghc=${BOOT_GHC}  --with-gcc=${CC}
+CONFIGURE_ARGS=	--with-ghc=${BOOT_GHC}  --with-gcc=${CC} \
+		--enable-openal
 # specifying CONFIGURE_TARGET doesn't work for some reason.
 CONFIGURE_TARGET=
 # libgmp:
@@ -87,7 +88,6 @@ post-patch:
 		${WRKSRC}/ghc/rts/package.conf.in
 
 pre-configure:
-	@(cd ${WRKSRC}/libraries/GLUT && ${AUTOCONF})
 	@(cd ${WRKSRC}/libraries/OpenAL && ${AUTOCONF})
 	@(cd ${BOOT_DIR} && ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
 	@(cd ${BOOT_DIR} && ${MAKE} in-place)
