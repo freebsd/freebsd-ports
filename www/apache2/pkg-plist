@@ -269,7 +269,6 @@ share/apache2/build/special.mk
 %%ERROR%%www/error-dist/HTTP_INTERNAL_SERVER_ERROR.html.var
 %%ERROR%%www/error-dist/HTTP_LENGTH_REQUIRED.html.var
 %%ERROR%%www/error-dist/HTTP_METHOD_NOT_ALLOWED.html.var
-%%ERROR%%www/error-dist/HTTP_NOT_ACCEPTABLE.html.var
 %%ERROR%%www/error-dist/HTTP_NOT_FOUND.html.var
 %%ERROR%%www/error-dist/HTTP_NOT_IMPLEMENTED.html.var
 %%ERROR%%www/error-dist/HTTP_PRECONDITION_FAILED.html.var
