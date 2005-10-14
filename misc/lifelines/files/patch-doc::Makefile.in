@@ -1,11 +1,11 @@
---- docs/Makefile.in.orig	Sat Feb 14 15:19:05 2004
-+++ docs/Makefile.in	Sat Feb 14 15:25:09 2004
-@@ -163,7 +163,7 @@
- 
+--- docs/Makefile.in.orig	Thu Oct 13 15:31:42 2005
++++ docs/Makefile.in	Thu Oct 13 15:31:53 2005
+@@ -198,7 +198,7 @@
+ MANUALS = $(MANUALS_en) $(MANUALS_sv)
+ MANPAGES = btedit.1 dbverify.1 llines.1
  OLDGENFILES = lifelines.html lifelines.pdf lifelines.ps lifelines.txt
- 
 -EXTRA_DIST = $(MANUALSSRC) $(MANUALS) $(MANPAGES)
 +EXTRA_DIST = $(MANUALSSRC) $(MANUALS)
- 
  CONFIG_CLEAN_FILES = $(OLDGENFILES) $(MANUALS)
- 
+ docdir = $(datadir)/doc/lifelines
+ doc_DATA = $(EXTRA_DIST)
