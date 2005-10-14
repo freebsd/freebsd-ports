@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="47bdabcf-3cf9-11da-baa2-0004614cc33d">
+    <topic>gallery2 -- a vulnerability has been discovered</topic>
+    <affects>
+      <package>
+	<name>gallery2</name>
+	<range><lt>2.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Michael Dipper wrote:</p>
+	<blockquote cite="http://dipper.info/security/20051012/">
+	  <p>A vulnerability has been discovered in gallery,
+	    which allows remote users unauthorized access to files
+	    on the webserver.</p>
+	  <p>A remote user accessing gallery over the web may use
+	    specially crafted HTTP parameters to access arbitrary
+	    files located on the webserver. All files readable by
+	    the webserver process are subject to disclosure.
+	    The vulnerability is *not* restricted to the webserver's
+	    document root but extends to the whole server file space.</p>
+	  <p>The vulnerabilty may be used by any anonymous user,
+	    there is no login to the application required.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://dipper.info/security/20051012/</url>
+    </references>
+    <dates>
+      <discovery>2005-10-12</discovery>
+      <entry>2005-10-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="60e26a40-3b25-11da-9484-00123ffe8333">
     <topic>openssl -- potential SSL 2.0 rollback</topic>
     <affects>
