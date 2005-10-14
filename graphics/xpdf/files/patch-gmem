@@ -1,0 +1,79 @@
+--- goo/gmem.c.orig	Fri Sep 30 20:26:50 2005
++++ goo/gmem.c	Fri Sep 30 20:28:56 2005
+@@ -54,9 +54,9 @@
+ 
+ #endif /* DEBUG_MEM */
+ 
+-void *gmalloc(int size) {
++void *gmalloc(size_t size) {
+ #ifdef DEBUG_MEM
+-  int size1;
++  size_t size1;
+   char *mem;
+   GMemHdr *hdr;
+   void *data;
+@@ -96,11 +96,11 @@
+ #endif
+ }
+ 
+-void *grealloc(void *p, int size) {
++void *grealloc(void *p, size_t size) {
+ #ifdef DEBUG_MEM
+   GMemHdr *hdr;
+   void *q;
+-  int oldSize;
++  size_t oldSize;
+ 
+   if (size == 0) {
+     if (p)
+@@ -137,8 +137,8 @@
+ #endif
+ }
+ 
+-void *gmallocn(int nObjs, int objSize) {
+-  int n;
++void *gmallocn(int nObjs, size_t objSize) {
++  size_t n;
+ 
+   n = nObjs * objSize;
+   if (objSize == 0 || n / objSize != nObjs) {
+@@ -148,8 +148,8 @@
+   return gmalloc(n);
+ }
+ 
+-void *greallocn(void *p, int nObjs, int objSize) {
+-  int n;
++void *greallocn(void *p, int nObjs, size_t objSize) {
++  size_t n;
+ 
+   n = nObjs * objSize;
+   if (objSize == 0 || n / objSize != nObjs) {
+--- goo/gmem.h.orig	Wed Aug 17 01:34:30 2005
++++ goo/gmem.h	Fri Sep 30 20:26:38 2005
+@@ -19,13 +19,13 @@
+  * Same as malloc, but prints error message and exits if malloc()
+  * returns NULL.
+  */
+-extern void *gmalloc(int size);
++extern void *gmalloc(size_t size);
+ 
+ /*
+  * Same as realloc, but prints error message and exits if realloc()
+  * returns NULL.  If <p> is NULL, calls malloc instead of realloc().
+  */
+-extern void *grealloc(void *p, int size);
++extern void *grealloc(void *p, size_t size);
+ 
+ /*
+  * These are similar to gmalloc and grealloc, but take an object count
+@@ -33,8 +33,8 @@
+  * bytes, but there is an additional error check that the total size
+  * doesn't overflow an int.
+  */
+-extern void *gmallocn(int nObjs, int objSize);
+-extern void *greallocn(void *p, int nObjs, int objSize);
++extern void *gmallocn(int nObjs, size_t objSize);
++extern void *greallocn(void *p, int nObjs, size_t objSize);
+ 
+ /*
+  * Same as free, but checks for and ignores NULL pointers.
