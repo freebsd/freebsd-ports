@@ -10,7 +10,7 @@ PORTNAME=	openssl
 PORTVERSION=	0.9.8
 PORTREVISION!=	date -v-1d +%Y%m%d
 .else
-.if !defined(WITH_OPENSSL_BETA) && defined(WITH_OPENSSL_097)
+.if !defined(WITH_OPENSSL_BETA) && ( defined(WITH_OPENSSL_097) || defined(WITH_OPENSSL_STABLE) )
 PORTVERSION=	0.9.7h
 PORTREVISION?=	1
 .else
@@ -44,24 +44,22 @@ DISTNAME2=	${PORTNAME}-${PORTVERSION}
 .endif
 
 .if defined(WITH_OPENSSL_BETA) || defined(WITH_OPENSSL_SNAPSHOT)
-.if defined(WITH_OPENSSL_BETA)
 BETA_SUFFIX=		-beta
-CONFLICTS?=		openssl-0.*
-.endif
-OPENSSL_SHLIBVER?=	4
+CONFLICTS?=		openssl-0.* openssl-stable-0.*
 NO_LATEST_LINK=		yes
-.else
-CONFLICTS?=		openssl-beta-0.*
 .endif
-.if defined(WITH_OPENSSL_097)
+.if defined(WITH_OPENSSL_097) || defined(WITH_OPENSSL_STABLE)
+BETA_SUFFIX=		-stable
 PLIST_SUB+=		OPENSSL_BETA="@comment "
 PLIST_SUB+=		OPENSSL_STABLE=""
 OPENSSL_SHLIBVER?=	3
+CONFLICTS?=		openssl-0.* openssl-beta-0.*
 .else
 PATCHDIR=		${MASTERDIR}/files-beta
 PLIST_SUB+=		OPENSSL_BETA=""
 PLIST_SUB+=		OPENSSL_STABLE="@comment "
 OPENSSL_SHLIBVER?=	4
+CONFLICTS?=		openssl-beta-0.* openssl-stable-0.*
 .endif
 
 MAKE_ENV+=		MANPREFIX=${MANPREFIX}
@@ -864,7 +862,7 @@ MLINKS=	dgst.1 md4.1 \
 	ui_compat.3 des_read_pw_string.3 \
 	des_modes.7 Modes_of_DES.7
 
-.if !defined(WITH_OPENSSL_097)
+.if !defined(WITH_OPENSSL_097) && !defined(WITH_OPENSSL_STABLE)
 MAN1+=	ec.1 ecparam.1
 MAN3+=	ASN1_generate_nconf.3 BN_BLINDING_new.3 ERR_set_mark.3 \
 	ecdsa.3 OPENSSL_Applink.3 OPENSSL_ia32cap.3 x509.3
@@ -940,7 +938,7 @@ do-configure:
 	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS} \
 	./config --prefix=${PREFIX} --openssldir=${OPENSSLDIR} \
 	-L${PREFIX}/lib ${EXTRACONFIGURE}
-.if defined(WITH_OPENSSL_097)
+.if defined(WITH_OPENSSL_097) || defined(WITH_OPENSSL_STABLE)
 	@${REINPLACE_CMD} \
 		-e 's|^FIPS_DES_ENC=|#FIPS_DES_ENC=|' \
 		-e 's|^FIPS_SHA1_ASM_OBJ=|#FIPS_SHA1_ASM_OBJ=|' \
