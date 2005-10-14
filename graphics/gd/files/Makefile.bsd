@@ -15,7 +15,7 @@ LIB=gd
 SHLIB_MAJOR=4
 SHLIB_MINOR=0
 INCS=	gd.h gd_io.h gdcache.h gdfontg.h gdfontl.h gdfontmb.h \
-	gdfonts.h gdfontt.h
+	gdfonts.h gdfontt.h entities.h
 SHLIB_NAME!=	${MAKE} -V SHLIB_NAME LIB=${LIB} \
 	SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} -f ${MAKEDIR}/bsd.lib.mk
 
