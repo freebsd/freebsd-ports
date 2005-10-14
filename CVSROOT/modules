@@ -5010,6 +5010,7 @@ ko-texinfo	ports/korean/texinfo
 ko-unfonts-ttf	ports/korean/unfonts-ttf
 ko-uniksc	ports/korean/uniksc
 ko-unzip	ports/korean/unzip
+ko-xpdf		ports/korean/xpdf
 kobodeluxe	ports/games/kobodeluxe
 koctave		ports/math/koctave
 kodos		ports/devel/kodos
