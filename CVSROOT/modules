@@ -11904,6 +11904,7 @@ tcptraceroute	ports/net/tcptraceroute
 tcptrack	ports/net-mgmt/tcptrack
 tcpview		ports/net/tcpview
 tcpwatch	ports/net/tcpwatch
+tcsh-bofh	ports/shells/tcsh-bofh
 tcshrc		ports/shells/tcshrc
 tct		ports/sysutils/tct
 tdb		ports/databases/tdb
