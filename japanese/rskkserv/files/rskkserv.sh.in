@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: rskkserv
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: FreeBSD shutdown
+
+prefix=%%PREFIX%%
+
+rskkserv_enable=${rskkserv_enable:-"NO"}
+rskkserv_flags=${rskkserv_flags:-""}
+
+. %%RC_SUBR%%
+
+name="rskkserv"
+rcvar=`set_rcvar`
+command="${prefix}/sbin/${name}"
+command_interpreter="${prefix}/bin/ruby"
+pidfile="/var/run/${name}.pid"
+required_files="${prefix}/etc/${name}.conf"
+
+load_rc_config $name
+run_rc_command "$1"
