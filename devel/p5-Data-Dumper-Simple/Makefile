@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-Dumper-Simple
-PORTVERSION=	0.07
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Easily dump variables with names
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Data::Dumper::Simple.3
 
