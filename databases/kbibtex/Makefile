@@ -6,6 +6,7 @@
 
 PORTNAME=	kbibtex
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	databases kde
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~fischer/${PORTNAME}/download/
 
@@ -19,6 +20,8 @@ USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+
+MAN1=		kbibtex.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}
