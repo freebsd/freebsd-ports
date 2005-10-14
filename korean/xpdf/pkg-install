@@ -1,0 +1,11 @@
+#!/bin/sh
+if [ "$2" = "PRE-INSTALL" ]; then
+  exit 0
+fi
+umask 222
+XPDFRC=${PKG_PREFIX}/etc/xpdfrc
+ADDRESOURCE=${PKG_PREFIX}/share/xpdf/korean/dot.xpdfrc
+/usr/bin/sed '/^#Korean PDF resources$/,/^#Korean PDF resources$/d' ${XPDFRC} > ${XPDFRC}.nokorea
+/bin/rm -f ${XPDFRC}
+/bin/cat ${XPDFRC}.nokorea ${ADDRESOURCE} > ${XPDFRC}
+/bin/rm -f ${XPDFRC}.nokorea
