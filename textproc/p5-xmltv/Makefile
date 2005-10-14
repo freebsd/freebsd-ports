@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	xmltv
-PORTVERSION=	0.5.36
+PORTVERSION=	0.5.40
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmltv
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Set of programs to process TV (tvguide) listings in XML format
 
 BUILD_DEPENDS=	\
@@ -35,7 +35,8 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/Lingua/Preferred.pm:${PORTSDIR}/textproc/p5-Lingua-Preferred \
 	${SITE_PERL}/${PERL_ARCH}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String \
 	${SITE_PERL}/Lingua/EN/Numbers/Ordinate.pm:${PORTSDIR}/textproc/p5-Lingua-EN-Numbers-Ordinate \
-	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip
+	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
+	${SITE_PERL}/HTTP/Cache/Transparent.pm:${PORTSDIR}/www/p5-HTTP-Cache-Transparent
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
@@ -59,7 +60,7 @@ PORTDOCS=	COPYING \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} <= 500600
-IGNORE=	"perl 5.6 or higher is required to build this port"
+IGNORE=	perl 5.6 or higher is required to build this port
 .endif
 
 .if ${PERL_LEVEL} < 500800
@@ -72,15 +73,15 @@ RUN_DEPENDS+=	\
 .endif
 
 MAN1=	tv_cat.1 tv_check.1 tv_extractinfo_en.1 \
-	tv_grab_de_tvtoday.1 tv_grab_dk.1 tv_grab_es.1 \
+	tv_grab_be.1 tv_grab_de_tvtoday.1 tv_grab_dk.1 tv_grab_es.1 \
 	tv_grab_es_digital.1 tv_grab_fi.1 tv_grab_fr.1 tv_grab_huro.1 \
 	tv_grab_it.1 tv_grab_jp.1 tv_grab_na_dd.1 tv_grab_na_icons.1 \
-	tv_grab_nl.1 tv_grab_nl_wolf.1 tv_grab_no.1 \
-	tv_grab_se.1 tv_grab_uk_bleb.1 tv_grab_uk_rt.1 tv_grep.1 \
-	tv_imdb.1 tv_remove_some_overlapping.1 tv_sort.1 tv_split.1 \
-	tv_to_latex.1 tv_to_text.1
-MAN3=	GUI.3 XMLTV.3 XMLTV::Date.3 XMLTV::Grab_XML.3 XMLTV::Gunzip.3 \
-	XMLTV::Summarize.3
+	tv_grab_nl.1 tv_grab_nl_wolf.1 tv_grab_no.1 tv_grab_pt.1 \
+	tv_grab_se.1  tv_grab_se_swedb.1 tv_grab_uk_bleb.1 tv_grab_uk_rt.1 \
+	tv_grab_za.1 tv_grep.1 tv_imdb.1 tv_remove_some_overlapping.1 \
+	tv_sort.1 tv_split.1 tv_to_latex.1 tv_to_potatoe.1 tv_to_text.1
+MAN3=	XMLTV.3 XMLTV::Date.3 XMLTV::Grab_XML.3 XMLTV::Gunzip.3 \
+	XMLTV::GUI.3 XMLTV::Summarize.3
 
 # idea taken from devel/cvsweb port
 # Specify these directories in relative paths to ${PREFIX}.
