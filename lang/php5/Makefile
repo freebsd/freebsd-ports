@@ -74,7 +74,11 @@ OPTIONS=	REDIRECT "Enable force-cgi-redirect support" off \
 		PATHINFO "Enable path-info-check support" on
 .endif
 .if defined(WITH_APACHE)
+.if defined(WITH_APACHE2)
+OPTIONS=	APACHE2 "Use apache 2.x instead of apache 1.3.x" on
+.else
 OPTIONS=	APACHE2 "Use apache 2.x instead of apache 1.3.x" off
+.endif
 .endif
 OPTIONS+=	DEBUG "Enable debug" off \
 		MULTIBYTE "Enable zend multibyte support" off \
