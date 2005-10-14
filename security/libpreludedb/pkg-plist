@@ -1,0 +1,59 @@
+@comment $FreeBSD$
+bin/preludedb-admin
+bin/libpreludedb-config
+include/libpreludedb/preludedb-path-selection.h
+include/libpreludedb/preludedb-plugin-sql.h
+include/libpreludedb/preludedb-plugin-format.h
+include/libpreludedb/preludedb-sql-settings.h
+include/libpreludedb/preludedb-sql.h
+include/libpreludedb/preludedb-version.h
+include/libpreludedb/preludedb-error.h
+include/libpreludedb/preludedb.h
+lib/libpreludedb.so.0
+lib/libpreludedb.so
+lib/libpreludedb.a
+lib/libpreludedb/plugins/formats/classic.so
+%%WITH_MYSQL%%lib/libpreludedb/plugins/sql/mysql.so
+%%WITH_MYSQL%%@unexec rmdir %D/lib/libpreludedb/plugins/sql 2> /dev/null || true
+%%WITH_PGSQL%%lib/libpreludedb/plugins/sql/pgsql.so
+%%WITH_PGSQL%%@unexec rmdir %D/lib/libpreludedb/plugins/sql 2> /dev/null || true
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/PreludeDB.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB/.packlist
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB/PreludeDB.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB/PreludeDB.so
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/_preludedb.so
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/preludedb.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/preludedb.pyc
+share/aclocal/libpreludedb.m4
+%%DATADIR%%/classic/mysql.sql
+%%DATADIR%%/classic/mysql-update-14-1.sql
+%%DATADIR%%/classic/mysql-update-14-2.sql
+%%DATADIR%%/classic/mysql-update-14-3.sql
+%%DATADIR%%/classic/pgsql.sql
+%%DATADIR%%/classic/pgsql-update-14-1.sql
+%%DATADIR%%/classic/pgsql-update-14-2.sql
+%%DATADIR%%/classic/pgsql-update-14-3.sql
+%%PORTDOCS%%%%DOCSDIR%%/ch01.html
+%%PORTDOCS%%%%DOCSDIR%%/home.png
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/index.sgml
+%%PORTDOCS%%%%DOCSDIR%%/left.png
+%%PORTDOCS%%%%DOCSDIR%%/libpreludedb-preludedb-error.html
+%%PORTDOCS%%%%DOCSDIR%%/libpreludedb-preludedb-path-selection.html
+%%PORTDOCS%%%%DOCSDIR%%/libpreludedb-preludedb-plugin-format.html
+%%PORTDOCS%%%%DOCSDIR%%/libpreludedb-preludedb-plugin-sql.html
+%%PORTDOCS%%%%DOCSDIR%%/libpreludedb-preludedb-sql-settings.html
+%%PORTDOCS%%%%DOCSDIR%%/libpreludedb-preludedb-sql.html
+%%PORTDOCS%%%%DOCSDIR%%/libpreludedb-preludedb-version.html
+%%PORTDOCS%%%%DOCSDIR%%/libpreludedb-preludedb.html
+%%PORTDOCS%%%%DOCSDIR%%/right.png
+%%PORTDOCS%%%%DOCSDIR%%/libpreludedb.devhelp
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/up.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/classic
+@dirrm %%DATADIR%%
+@dirrm lib/libpreludedb/plugins/formats
+@dirrm lib/libpreludedb/plugins
+@dirrm lib/libpreludedb
+@dirrm include/libpreludedb
