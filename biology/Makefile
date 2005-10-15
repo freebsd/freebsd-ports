@@ -43,6 +43,7 @@
     SUBDIR += nclever
     SUBDIR += ortep3
     SUBDIR += p5-AcePerl
+    SUBDIR += p5-Bio-ASN1-EntrezGene
     SUBDIR += p5-Bio-Das
     SUBDIR += p5-bioperl
     SUBDIR += paml
