@@ -154,6 +154,7 @@
     SUBDIR += splitmpg
     SUBDIR += streamdvd
     SUBDIR += subconv
+    SUBDIR += subtitleripper
     SUBDIR += tcmplex-panteltje
     SUBDIR += tkxanim
     SUBDIR += tosvcd
