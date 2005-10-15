@@ -7,7 +7,7 @@
 
 PORTNAME=	tircproxy
 PORTVERSION=	0.4.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc
 MASTER_SITES=	http://bre.klaki.net/programs/tircproxy/
 
