@@ -6,6 +6,14 @@
 #
 
 PORTNAME=	openssl
+.if !defined(WITHOUT_OPENSSL_097)
+.if !defined(OSVERSION6)
+OSVERSION6!=	make OSVERSION6=0 -V OSVERSION
+.endif
+.if ( ${OSVERSION6} >= 600000 ) && ( ${OSVERSION6} < 600100 )
+WITH_OPENSSL_097=	yes
+.endif
+.endif
 .if defined(WITH_OPENSSL_SNAPSHOT)
 PORTVERSION=	0.9.8
 PORTREVISION!=	date -v-1d +%Y%m%d
