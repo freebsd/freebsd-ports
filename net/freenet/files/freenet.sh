@@ -19,7 +19,7 @@
 
 name="freenet"
 rcvar=`set_rcvar`
-command="%%PREFIX%%/bin/${name}"
+command="%%PREFIX%%/sbin/${name}"
 extra_commands="configure"
 
 freenet_check_vars()

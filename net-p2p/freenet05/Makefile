@@ -7,7 +7,7 @@
 
 PORTNAME=	freenet
 PORTVERSION=	0.5.2.1.5105
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net java security
 MASTER_SITES=	http://freenetproject.org/snapshots/ \
 		http://fgudin.nerim.net/files/
@@ -36,7 +36,7 @@ SEED_FILE=	seednodes.ref
 PORTDOCS=	${DOC_FILES}
 
 PLIST_FILES=	\
-		bin/${PORTNAME:L} \
+		sbin/${PORTNAME:L} \
 		etc/rc.d/${PORTNAME:L}.sh \
 		%%DATADIR%%/seednodes.ref \
 		%%JAVAJARDIR%%/freenet-ext.jar \
@@ -76,7 +76,7 @@ do-install:
 # rc.d
 	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME:L}.sh ${PREFIX}/etc/rc.d
 # wrapper
-	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${PORTNAME:L}
+	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/sbin/${PORTNAME:L}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
