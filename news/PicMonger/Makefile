@@ -9,7 +9,8 @@ PORTNAME=	PicMonger
 PORTVERSION=	0.9.6
 PORTREVISION=	1
 CATEGORIES=	news graphics
-MASTER_SITES=	http://download.sourceforge.net/PicMonger/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=picmonger
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automated USENET (NNTP) picture decoding client
