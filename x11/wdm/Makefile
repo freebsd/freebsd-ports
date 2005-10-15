@@ -7,6 +7,7 @@
 
 PORTNAME=	wdm
 PORTVERSION=	1.28
+PORTREVISION=	1
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://voins.program.ru/wdm/ \
 		http://www.de.freebsd.org/de/gif/bsd/ \
@@ -49,6 +50,7 @@ LDFLAGS=	-L${LOCALBASE}/lib -lintl
 
 DEF_SERVER?=	${X11BASE}/bin/X
 
+MAKE_ENV=	XRDB_PATH=${PREFIX}/bin/xrdb
 WDMDIR=		${PREFIX}/lib/X11/wdm
 
 DAEMONPICS=	beastie.xpm daemon1-HQ-1280x960.jpg
