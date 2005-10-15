@@ -612,6 +612,7 @@
     SUBDIR += xmms-jess
     SUBDIR += xmms-nebulus
     SUBDIR += xmms-paranormal
+    SUBDIR += xmms-plazma
     SUBDIR += xmms-vumeter
     SUBDIR += xmms-waterfall
     SUBDIR += xmms-xvs
