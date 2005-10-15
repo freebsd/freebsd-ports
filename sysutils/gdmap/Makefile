@@ -31,7 +31,7 @@ BROKEN=	"Doesn't build on FreeBSD < 5.x"
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,<sys/vfs.h>,<sys/statvfs.h>,'
+	@${REINPLACE_CMD} -e 's,<sys/vfs.h>,<sys/statvfs.h>,' \
 		${WRKSRC}/src/gui_main.c
 
 .include <bsd.port.post.mk>
