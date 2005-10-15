@@ -1,0 +1,18 @@
+[ excerpt from developer's www site ]
+
+If you want to convert DVD subtitles into text format (e.g. subrip
+format) or VobSub format this program could be useful for you.
+However, it is only one tiny tool that you need in the process of
+producing srt files. This software depends heavily on  transcode
+for its input and is therefore part of the transcode package (see
+transcode's contrib directory). So, if you want to convert some
+subtitles, grap a copy of the lates transcode distribution.
+
+For srt file production the output of this program should be processed
+by some OCR software. Currently, I work with  GOCR for this purpose.
+
+For VobSub output no other tools are required.
+
+WWW: http://subtitleripper.sourceforge.net/
+
+-- lioux@FreeBSD.org
