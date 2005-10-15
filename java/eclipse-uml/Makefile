@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	uml
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.1.1
+PORTREVISION=	0
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.eclipse.org/tools/uml2/downloads/drops/1.0.1/R200409171820/
+MASTER_SITES=	http://download.eclipse.org/tools/uml2/downloads/drops/${PORTVERSION}/R200509282050/
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	uml2-SDK-${PORTVERSION}
 DIST_SUBDIR=	eclipse
@@ -17,16 +17,23 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	A framework creating UML diagrams in Eclipse
 
-RUN_DEPENDS+=	${LOCALBASE}/eclipse/features/org.eclipse.emf_2.0.1/feature.xml:${PORTSDIR}/java/eclipse-emf
+RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse \
+		${LOCALBASE}/eclipse/features/org.eclipse.emf_2.1.1/feature.xml:${PORTSDIR}/java/eclipse-emf
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
-PLIST_SUB=	RELEASEVERSION=${PORTVERSION}
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
+JAVA_OS=	native
 
 do-install:
 		@${MKDIR} ${PREFIX}/eclipse
 		@${CP} -r ${WRKSRC}/eclipse/plugins ${PREFIX}/eclipse
 		@${CP} -r ${WRKSRC}/eclipse/features ${PREFIX}/eclipse
+		@(cd ${WRKSRC}; ${FIND} -s eclipse/features eclipse/plugins -not -type d) >> ${TMPPLIST}
+		@(cd ${WRKSRC}; ${FIND} -s -d eclipse/features eclipse/plugins -type d) \
+			| ${GREP} -vE 'eclipse/plugins$$|eclipse/features$$' \
+			| ${SED} -ne 's,^,@dirrm ,p' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
