@@ -7,12 +7,13 @@
 
 PORTNAME=	nagios
 PORTVERSION=	2.0.b4
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=nagios
 DISTNAME=	nagios-2.0b4
 
-MAINTAINER=	blaz@si.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extremely powerful network monitoring system
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
@@ -32,6 +33,9 @@ NAGIOSUSER?=	nagios
 NAGIOSGROUP?=	nagios
 NAGIOSDIR?=	/var/spool/nagios
 
+NAGIOSHTMURL?=	/nagios
+NAGIOSCGIURL?=	${NAGIOSHTMURL}/cgi-bin
+
 .include <bsd.port.pre.mk>
 
 CPPFLAGS=	-I${LOCALBASE}/include -fPIC
@@ -43,6 +47,8 @@ CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \
 		--with-command-group=www \
 		--with-nagios-user=${NAGIOSUSER} \
 		--with-nagios-group=${NAGIOSGROUP} \
+		--with-htmurl=${NAGIOSHTMURL} \
+		--with-cgiurl=${NAGIOSCGIURL} \
 		--sbindir=${PREFIX}/share/nagios/cgi-bin \
 		--libexecdir=${PREFIX}/libexec/nagios \
 		--datadir=${PREFIX}/share/nagios \
