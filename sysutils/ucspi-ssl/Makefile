@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	ucspi-ssl
-PORTVERSION=	0.68
-PORTREVISION=	1
+PORTVERSION=	0.70
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.superscript.com/ucspi-ssl/
 
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	UCSPI tools for building SSL client-server applications
 
-RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
+BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root.crt:${PORTSDIR}/security/ca-roots
+RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp \
+		${BUILD_DEPENDS}
 
 USE_PERL5=	yes
 
@@ -37,7 +38,9 @@ do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
 	${ECHO_CMD} "${PREFIX}" > ${WRKSRC}/src/conf-home
 	${ECHO_CMD} "${PREFIX}/bin" > ${WRKSRC}/src/conf-tcpbin
-	${ECHO_CMD} "${PREFIX}/ssl/certs" > ${WRKSRC}/src/conf-cadir
+	${ECHO_CMD} "/etc/ssl" > ${WRKSRC}/src/conf-cadir
+	${ECHO_CMD} "/etc/ssl/cert.pem" > ${WRKSRC}/src/conf-cafile
+	${ECHO_CMD} "/etc/ssl/dh1024.pem" > ${WRKSRC}/src/conf-dhfile
 
 .include <bsd.port.pre.mk>
 
