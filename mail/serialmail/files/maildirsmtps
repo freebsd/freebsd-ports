@@ -1,0 +1,18 @@
+#!%%SH%%
+# WARNING: This file was auto-generated. Do not edit!
+
+if [ -z "$6" ]; then
+
+exec \
+%%PREFIX%%/bin/maildirserial -b -t 1209600 -- "$1" "$2" \
+%%LOCALBASE%%/bin/sslclient -RHl0 -- "$3" 465 \
+%%PREFIX%%/bin/serialsmtp "$2" "$4"
+
+else
+
+exec \
+%%PREFIX%%/bin/maildirserial -b -t 1209600 -- "$1" "$2" \
+%%LOCALBASE%%/bin/sslclient -RHl0 -- "$3" 465 \
+%%PREFIX%%/bin/serialsmtp "$2" "$4" "$5" "$6"
+
+fi

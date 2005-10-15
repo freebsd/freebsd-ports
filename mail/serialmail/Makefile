@@ -27,7 +27,8 @@ NO_PACKAGE=	Unsure of DJB license
 
 ALL_TARGET=	it
 
-OPTIONS=	AUTH "Add CRAM-MD5, PLAIN and LOGIN authentication" OFF
+OPTIONS=	AUTH "Add CRAM-MD5, PLAIN and LOGIN authentication" OFF \
+		UCSPI_SSL "Add ucspi-ssl SMTP SSL transport layer support" OFF
 
 PROGRAMS=	serialqmtp serialsmtp maildirserial setlock
 SCRIPTS=	maildirqmtp maildirsmtp
@@ -41,6 +42,23 @@ DOCS=		AUTOTURN BLURB CHANGES FROMISP README TODO TOISP THANKS
 PATCH_SITES=	http://www.ingorohloff.de/soft/
 PATCHFILES=	serialmail-auth.patch
 PATCH_DIST_STRIP=	-p1
+.endif
+
+.if defined(WITH_UCSPI_SSL)
+RUN_DEPENDS+=	sslclient:${PORTSDIR}/sysutils/ucspi-ssl
+
+PLIST_FILES+=	bin/maildirsmtps
+MLINKS+=	maildirsmtp.1 maildirsmtps.1
+.endif
+
+post-patch:
+.if defined(WITH_UCSPI_SSL)
+	@${SED} -E \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		-e 's|%%PREFIX%%|${PREFIX}|' \
+		-e 's|%%SH%%|${SH}|' \
+		${FILESDIR}/maildirsmtps \
+		> ${WRKDIR}/maildirsmtps
 .endif
 
 post-configure:
@@ -57,6 +75,9 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.endif
+.if defined(WITH_UCSPI_SSL)
+	@${INSTALL_SCRIPT} ${WRKDIR}/maildirsmtps ${PREFIX}/bin
 .endif
 
 .include <bsd.port.post.mk>
