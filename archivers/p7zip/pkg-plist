@@ -13,8 +13,10 @@ libexec/p7zip/7zCon.sfx
 %%MODULES%%libexec/p7zip/Codecs/Implode.so
 %%MODULES%%libexec/p7zip/Codecs/LZMA.so
 %%MODULES%%libexec/p7zip/Codecs/PPMD.so
+%%MODULES%%libexec/p7zip/Codecs/Rar29.so
 %%MODULES%%libexec/p7zip/Codecs/Swap.so
 %%MODULES%%libexec/p7zip/Formats/7z.so
+%%MODULES%%libexec/p7zip/Formats/chm.so
 %%MODULES%%libexec/p7zip/Formats/Rar.so
 %%MODULES%%libexec/p7zip/Formats/Tar.so
 %%MODULES%%libexec/p7zip/Formats/Zip.so
@@ -26,6 +28,7 @@ libexec/p7zip/7zCon.sfx
 %%MODULES%%libexec/p7zip/Formats/gz.so
 %%MODULES%%libexec/p7zip/Formats/rpm.so
 %%MODULES%%libexec/p7zip/Formats/split.so
+%%MODULES%%libexec/p7zip/Formats/lzh.so
 %%MODULES%%libexec/p7zip/Formats/z.so
 %%MODULES%%@dirrm libexec/p7zip/Formats
 %%MODULES%%@dirrm libexec/p7zip/Codecs
