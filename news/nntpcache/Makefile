@@ -10,9 +10,7 @@ PORTVERSION=	3.0.1
 PORTREVISION=	2
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/net/news/nntpcache/ \
-		ftp://ftp.sbs.de/pub/news/servers/nntpcache/ \
 		ftp://ftp.ntua.gr/pub/net/news/nntpcache/ \
-		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/news/nntpcache/ \
 		http://public.www.planetmirror.com/pub/nntpcache/
 
 MAINTAINER=	ports@FreeBSD.org
