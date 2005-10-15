@@ -43,6 +43,10 @@ CONFIGURE_ARGS+=	--with-pgsql=${PREFIX}
 USE_PGSQL=	yes
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e 's|\(@CC@\ \)-O2|\1${CFLAGS}|' \
+		${WRKSRC}/Makefile.in
+
 pre-build:
 	${REINPLACE_CMD} -e 's,"/etc/gld.conf","${PREFIX}/etc/gld.conf",' ${WRKSRC}/gld.h
 	for f in gld.sh MESSAGE; do \
