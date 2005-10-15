@@ -7,7 +7,7 @@
 
 PORTNAME=	fortune-mod-bofh
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:freebsd/} \
 		http://www.void.irq.org/:original
@@ -18,6 +18,7 @@ MAINTAINER=	onatan@gmail.com
 COMMENT=	Compilation of excuses from the "Bastard Operator From Hell"
 
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/bofh-fortune-mod2.0
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
