@@ -8,7 +8,8 @@
 PORTNAME=	vmsbackup
 PORTVERSION=	4.1.1
 CATEGORIES=	emulators sysutils
-MASTER_SITES=	ftp://ftp.lp.se/free-vms/
+MASTER_SITES=	ftp://ftp.lp.se/free-vms/ \
+		http://dl.droso.net/FreeBSD/distfiles/
 DISTNAME=	VMSBACKUP4-1-1
 EXTRACT_SUFX=	.ZIP
 
