@@ -56,21 +56,10 @@ include/graphviz/dthdr.h
 include/graphviz/edgelist.h
 include/graphviz/edges.h
 include/graphviz/embed_graph.h
-include/graphviz/entities.h
 include/graphviz/exgram.h
 include/graphviz/exlib.h
 include/graphviz/expr.h
 include/graphviz/fdp.h
-include/graphviz/gd.h
-include/graphviz/gd_io.h
-include/graphviz/gdcache.h
-include/graphviz/gdfontg.h
-include/graphviz/gdfontl.h
-include/graphviz/gdfontmb.h
-include/graphviz/gdfonts.h
-include/graphviz/gdfontt.h
-include/graphviz/gdfx.h
-include/graphviz/gdhelpers.h
 include/graphviz/geometry.h
 include/graphviz/globals.h
 include/graphviz/grammar.h
@@ -84,7 +73,6 @@ include/graphviz/hedges.h
 include/graphviz/htmllex.h
 include/graphviz/htmltable.h
 include/graphviz/info.h
-include/graphviz/jisx0208.h
 include/graphviz/kkutils.h
 include/graphviz/libgraph.h
 include/graphviz/macros.h
@@ -120,7 +108,6 @@ include/graphviz/vis.h
 include/graphviz/vispath.h
 include/graphviz/vmstub.h
 include/graphviz/voronoi.h
-include/graphviz/wbmp.h
 include/graphviz/xlayout.h
 lib/graphviz/libagraph.la
 lib/graphviz/libagraph.so
@@ -152,9 +139,6 @@ lib/graphviz/libgdtclft.so.0
 lib/graphviz/libgraph.la
 lib/graphviz/libgraph.so
 lib/graphviz/libgraph.so.0
-lib/graphviz/libgvgd.la
-lib/graphviz/libgvgd.so
-lib/graphviz/libgvgd.so.2
 lib/graphviz/libgvrender.la
 lib/graphviz/libgvrender.so
 lib/graphviz/libgvrender.so.0
@@ -230,7 +214,6 @@ lib/graphviz/pkgconfig/libtwopigen.pc
 %%DATADIR%%/doc/cpl1.0.txt
 %%DATADIR%%/doc/html/FAQ.html
 %%DATADIR%%/doc/html/build.html
-%%DATADIR%%/doc/html/gd.html
 %%DATADIR%%/doc/html/index.html
 %%DATADIR%%/doc/html/info/Mcircle.gif
 %%DATADIR%%/doc/html/info/Mdiamond.gif
