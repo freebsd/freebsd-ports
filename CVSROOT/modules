@@ -11734,6 +11734,7 @@ styx		ports/devel/styx
 su2		ports/sysutils/su2
 subcalc		ports/net-mgmt/subcalc
 subconv		ports/multimedia/subconv
+subtitleripper	ports/multimedia/subtitleripper
 subversion	ports/devel/subversion
 subversion-perl	ports/devel/subversion-perl
 subversion-python	ports/devel/subversion-python
