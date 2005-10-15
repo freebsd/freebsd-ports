@@ -7,15 +7,15 @@
 
 PORTNAME=	scanssh
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	http://www.monkey.org/~provos/
 
 MAINTAINER=	kris@FreeBSD.org
 COMMENT=	Scans networks for open proxies, SSH, Web and SMTP servers
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \
-		${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	dnet:${PORTSDIR}/net/libdnet \
+		event:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	YES
 PLIST_FILES=	bin/scanssh
