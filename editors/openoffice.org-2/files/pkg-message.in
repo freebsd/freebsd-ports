@@ -41,10 +41,3 @@ If you somehow run into problems, please remove the already installed
 ".openoffice.org2" dir in your homedir. Redo the user
 installation and the problems should go away.
 
-4. Known issue
---------------------------------------------------
-If you invoke English version of OOo setting LANG as C or not
-setting LANG environment,
-`I18N: Operating system doesn't support locale "en_US"'
-in this case you should set LANG as en_US.ISO8859-15
-or en_US.ISO8859-1.

@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	openoffice.org
-PORTVERSION=	2.0.RC1
+PORTVERSION=	2.0.RC3
 CATEGORIES+=	editors
 MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
 		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_MOZILLA:S,%SUBDIR%,mozilla/releases/mozilla${MOZILLA_VERSION}/&,}source/:mozsrc
-DISTFILES+=	OOo_2.0RC1_source.tar.bz2 gpc231.tar.Z:gpc
-EXTRACT_ONLY=	OOo_2.0RC1_source.tar.bz2
+DISTFILES+=	OOo_2.0RC3_source.tar.bz2 gpc231.tar.Z:gpc
+EXTRACT_ONLY=	OOo_2.0RC3_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(developer version)
