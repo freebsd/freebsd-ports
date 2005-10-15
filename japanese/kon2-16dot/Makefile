@@ -22,9 +22,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Kanji On Console -- Display kanji characters on your own console
 
-DEPRECATED=		this font package was last updated for XFree86 3.3.3
-EXPIRATION_DATE=	2005-10-11
-
 ONLY_FOR_ARCHS=	i386
 
 MAN1=		kon.1
