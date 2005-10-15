@@ -16,7 +16,7 @@ PKGNAMEPREFIX=		cl-
 DISTNAME=		${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Partinitoning Common Lisp sequences
+COMMENT=		Partitioning Common Lisp sequences
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
 RUN_DEPENDS=		${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
