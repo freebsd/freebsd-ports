@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MasonX-Interp-WithCallbacks
-PORTVERSION=	1.11
+PORTVERSION=	1.13
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	MasonX/DWHEELER
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${SITE_PERL}/HTML/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
 		${SITE_PERL}/Params/CallbackRequest.pm:${PORTSDIR}/devel/p5-Params-CallbackRequest
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		MasonX::Interp::WithCallbacks.3
 
