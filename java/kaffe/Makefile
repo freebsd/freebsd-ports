@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kaffe
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	java devel
 MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/v1.1.x-development/
 
