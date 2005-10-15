@@ -50,13 +50,13 @@ include/scim-1.0/x11/scim_x11_utils.h
 lib/gtk-2.0/immodules/im-scim.so
 lib/libscim-1.0.a
 lib/libscim-1.0.so
-lib/libscim-1.0.so.8
+lib/libscim-1.0.so.9
 lib/libscim-gtkutils-1.0.a
 lib/libscim-gtkutils-1.0.so
-lib/libscim-gtkutils-1.0.so.8
+lib/libscim-gtkutils-1.0.so.9
 lib/libscim-x11utils-1.0.a
 lib/libscim-x11utils-1.0.so
-lib/libscim-x11utils-1.0.so.8
+lib/libscim-x11utils-1.0.so.9
 lib/scim-1.0/1.4.0/Config/simple.so
 lib/scim-1.0/1.4.0/Config/socket.so
 lib/scim-1.0/1.4.0/Filter/sctc.so
@@ -84,6 +84,7 @@ share/locale/fr/LC_MESSAGES/scim.mo
 share/locale/it/LC_MESSAGES/scim.mo
 share/locale/ja/LC_MESSAGES/scim.mo
 share/locale/ko/LC_MESSAGES/scim.mo
+share/locale/pa/LC_MESSAGES/scim.mo
 share/locale/zh_CN/LC_MESSAGES/scim.mo
 share/locale/zh_TW/LC_MESSAGES/scim.mo
 %%DATADIR%%/icons/down.png
