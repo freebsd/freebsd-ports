@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu May  4 08:11:25 2000
-+++ Makefile.in	Thu Mar 29 14:31:46 2001
+--- Makefile.in	Sat Oct 15 06:49:57 2005
++++ Makefile.in	Sat Oct 15 06:50:00 2005
 @@ -12,7 +12,7 @@
  TARGETNAME=@sbindir@/tircproxy
  STRIP=@STRIP@

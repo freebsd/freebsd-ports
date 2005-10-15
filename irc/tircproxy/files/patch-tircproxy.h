@@ -1,5 +1,5 @@
---- tircproxy.h.orig	Fri Dec 22 01:13:40 2000
-+++ tircproxy.h	Fri Dec 22 01:15:39 2000
+--- tircproxy.h	Sat Oct 15 06:49:51 2005
++++ tircproxy.h	Sat Oct 15 06:50:00 2005
 @@ -34,8 +34,8 @@
  /* Set the location of the broadcast & MOTD files.  Undef these to disable
  ** the broadcasting feature.
