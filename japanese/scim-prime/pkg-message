@@ -1,0 +1,11 @@
+--------------------------------------------------------------------
+Remember to set environment variables XMODIFIERS and LANG:
+
+  csh/tcsh: setenv XMODIFIERS @im=SCIM  ; setenv LANG ja_JP.eucJP
+  sh/bash:  export XMODIFIERS='@im=SCIM'; export LANG=ja_JP.eucJP
+
+To start the SCIM input method daemon, use command:
+
+  scim -d
+
+--------------------------------------------------------------------
