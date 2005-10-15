@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	gld
-PORTVERSION=	1.5.2
+PORTVERSION=	1.6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.gasmi.net/down/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	blaz@si.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Greylisting daemon for Postfix
 
 USE_REINPLACE=	yes
@@ -52,6 +52,9 @@ pre-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gld ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/gld.conf ${PREFIX}/etc/gld.conf-dist
+.if !exists(${PREFIX}/etc/gld.conf)
+	${INSTALL_DATA} ${WRKSRC}/gld.conf ${PREFIX}/etc/gld.conf
+.endif
 	${INSTALL_SCRIPT} ${WRKDIR}/gld.sh ${PREFIX}/etc/rc.d
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
