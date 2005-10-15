@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	dcraw
-PORTVERSION=	1.236
+PORTVERSION=	1.289
 CATEGORIES=	graphics
-MASTER_SITES=	http://people.fruitsalad.org/avleeuwen/distfiles/${PORTNAME}/
+MASTER_SITES=	http://www.piwebs.com/distfiles/${PORTNAME}/
 
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	Decoder for RAW files from digital cameras
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+
+USE_BZIP2=	yes
 
 MAN1=		dcraw.1
 PLIST_FILES=	bin/dcraw
