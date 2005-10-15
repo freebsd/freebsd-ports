@@ -7,6 +7,7 @@
 
 PORTNAME=	fillets-ng
 PORTVERSION=	0.7.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fillets
@@ -46,9 +47,14 @@ LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(AM_CPPFLAGS.*(datadir)\)/.*|\1"\\"|' \
 		${WRKSRC}/src/gengine/Makefile.in
+.if defined(WITHOUT_FRIBIDI)
+	@${REINPLACE_CMD} -e \
+		's|FRIBIDI_CFLAGS=$$pkg_cv_FRIBIDI_CFLAGS||; s|FRIBIDI_LIBS=$$pkg_cv_FRIBIDI_LIBS||; s|have_fribidi="yes"|have_fribidi="no"|' \
+		${WRKSRC}/configure
+.endif
 
 post-extract:
-	@${TAR} xfz ${DISTDIR}/${PORTNAME}-data-${DATAVERSION}${EXTRACT_SUFX} -C ${WRKDIR} \
+	@${TAR} xfz ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-data-${DATAVERSION}${EXTRACT_SUFX} -C ${WRKDIR} \
 		${PORTNAME}-data-${DATAVERSION}/font \
 		${PORTNAME}-data-${DATAVERSION}/images \
 		${PORTNAME}-data-${DATAVERSION}/music \
@@ -57,7 +63,7 @@ post-extract:
 
 .if !defined(NOPORTDOCS)
 		@${MKDIR} ${WRKDIR}/doc
-		@${TAR} xfz ${DISTDIR}/${PORTNAME}-data-${DATAVERSION}${EXTRACT_SUFX} -C ${WRKDIR}/doc \
+		@${TAR} xfz ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-data-${DATAVERSION}${EXTRACT_SUFX} -C ${WRKDIR}/doc \
 			${PORTNAME}-data-${DATAVERSION}/doc
 .endif
 
