@@ -45,7 +45,7 @@ PLIST_SUB+=	SUB_QSTAT=""
 PLIST_SUB+=	SUB_QSTAT="@comment "
 .endif
 
-.if defined(WITH_IPV6)
+.if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=--with-ipv6
 .else
 CONFIGURE_ARGS+=--without-ipv6
