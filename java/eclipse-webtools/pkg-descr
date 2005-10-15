@@ -1,0 +1,8 @@
+The Eclipse Web Tools Platform (WTP) project extends the Eclipse platform with
+tools for developing J2EE Web applications. The WTP project includes the
+following tools: source editors for HTML, Javascript, CSS, JSP, SQL, XML, DTD,
+XSD, and WSDL; graphical editors for XSD and WSDL; J2EE project natures,
+builders, and models and a J2EE navigator; a Web service wizard and explorer,
+and WS-I Test Tools; and database access and query tools and models.
+
+WWW: http://www.eclipse.org/webtools/
