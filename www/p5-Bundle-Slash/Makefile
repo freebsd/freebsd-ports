@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	Bundle-Slash
-PORTVERSION=	2.32
-PORTREVISION=	1
+PORTVERSION=	2.51
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Bundle
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A bundle to install all modules used for Slash
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
