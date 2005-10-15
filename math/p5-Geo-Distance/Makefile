@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Geo-Distance
-PORTVERSION=	0.06
-PORTREVISION=	1
+PORTVERSION=	0.11
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Geo
@@ -18,6 +17,13 @@ COMMENT=	Calculate Distances and Closest Locations
 
 PERL_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+# Module from CPAN written for 5.6 or later
+.if ${PERL_LEVEL} < 500600
+IGNORE=		Port requires perl 5.6.x or later. Install lang/perl5.8 then try again
+.endif
+
 MAN3=		Geo::Distance.3
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
