@@ -8,9 +8,8 @@
 PORTNAME=	filerunner
 PORTVERSION=	2.5.1
 CATEGORIES=	x11-fm tk84
-MASTER_SITES=	http://www.cd.chalmers.se/~hch/ \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	X11/desktop
+MASTER_SITES=	${MASTER_SITE_NETBSD} \
+		http://www.cd.chalmers.se/~hch/
 DISTNAME=	FileRunner-${PORTVERSION}
 
 MAINTAINER=	andrew.nau.ua@gmail.com
@@ -26,16 +25,19 @@ pre-build:
 	@ ${CP} ${WRKSRC}/Makefiles/Makefile.freebsd_gcc ${WRKSRC}
 
 do-install:
-	@ ${MKDIR} ${PREFIX}/lib/FileRunner/bitmaps
-	@ ${INSTALL_SCRIPT} ${WRKSRC}/fr ${PREFIX}/lib/FileRunner
-	@ ${INSTALL_SCRIPT} ${WRKSRC}/frcolor ${PREFIX}/lib/FileRunner
-	@ ${INSTALL_SCRIPT} ${WRKSRC}/frftp ${PREFIX}/lib/FileRunner
-	@ ${LN} -sf ${PREFIX}/lib/FileRunner/fr ${PREFIX}/bin
-.for file in COPYING FAQ HISTORY KnownBugs.txt QuickStart.txt README Tips.txt Users_Guide.txt chmod.tcl cmd.tcl config.tcl dialog.tcl ext.so font.tcl ftp.tcl http.tcl tclIndex
-		@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib/FileRunner
+	@${MKDIR} ${PREFIX}/lib/FileRunner/bitmaps
+	@${INSTALL_SCRIPT} ${WRKSRC}/fr ${PREFIX}/lib/FileRunner
+	@${INSTALL_SCRIPT} ${WRKSRC}/frcolor ${PREFIX}/lib/FileRunner
+	@${INSTALL_SCRIPT} ${WRKSRC}/frftp ${PREFIX}/lib/FileRunner
+	@${LN} -sf ${PREFIX}/lib/FileRunner/fr ${PREFIX}/bin
+.for file in COPYING FAQ HISTORY KnownBugs.txt QuickStart.txt README Tips.txt \
+	Users_Guide.txt chmod.tcl cmd.tcl config.tcl dialog.tcl ext.so font.tcl \
+	ftp.tcl http.tcl tclIndex
+		@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib/FileRunner
 .endfor
-.for map in cross.bit frterm.bit larger.bit left.bit max.bit pgdown.bit pgup.bit right.bit smaller.bit toggle.bit tree.bit up.bit update.bit xterm.bit
-		@ ${INSTALL_DATA} ${WRKSRC}/bitmaps/${map} ${PREFIX}/lib/FileRunner/bitmaps
+.for map in cross.bit frterm.bit larger.bit left.bit max.bit pgdown.bit pgup.bit \
+	right.bit smaller.bit toggle.bit tree.bit up.bit update.bit xterm.bit
+		@${INSTALL_DATA} ${WRKSRC}/bitmaps/${map} ${PREFIX}/lib/FileRunner/bitmaps
 .endfor
 
 .include <bsd.port.mk>
