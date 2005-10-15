@@ -1,0 +1,12 @@
+%%SITE_PERL%%/Bio/ASN1/EntrezGene.pm
+%%SITE_PERL%%/Bio/ASN1/EntrezGene/Indexer.pm
+%%SITE_PERL%%/Bio/ASN1/Sequence.pm
+%%SITE_PERL%%/Bio/ASN1/Sequence/Indexer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/ASN1/EntrezGene/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/ASN1/EntrezGene
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/ASN1 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Bio/ASN1/EntrezGene 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Bio/ASN1/Sequence 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Bio/ASN1 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Bio 2>/dev/null || true
