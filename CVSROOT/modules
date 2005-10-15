@@ -1915,6 +1915,7 @@ eclipse-v4all	ports/java/eclipse-v4all
 eclipse-vep	ports/java/eclipse-vep
 eclipse-vep-examples	ports/java/eclipse-vep-examples
 eclipse-viplugin	ports/java/eclipse-viplugin
+eclipse-webtools	ports/java/eclipse-webtools
 eclipseme	ports/java/eclipseme
 ecm		ports/archivers/ecm
 ecore		ports/x11/ecore
