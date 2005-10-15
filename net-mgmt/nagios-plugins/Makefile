@@ -7,12 +7,13 @@
 
 PORTNAME=	nagios-plugins
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	nagiosplug
 
-MAINTAINER=	blaz@si.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugins for nagios
 
 OPTIONS=	QSTAT "Game server query support" off \
@@ -21,7 +22,8 @@ OPTIONS=	QSTAT "Game server query support" off \
 		RADIUS "Radius support" off \
 		MYSQL "MySQL support" off \
 		PGSQL "PostgreSQL support" off \
-		LDAP "OpenLDAP support" off
+ 		LDAP "OpenLDAP support" off \
+ 		IPV6 "IPV6 support" on
 
 .include <bsd.port.pre.mk>
 
@@ -41,6 +43,12 @@ CONFIGURE_ARGS+=--enable-qstat
 PLIST_SUB+=	SUB_QSTAT=""
 .else
 PLIST_SUB+=	SUB_QSTAT="@comment "
+.endif
+
+.if defined(WITH_IPV6)
+CONFIGURE_ARGS+=--with-ipv6
+.else
+CONFIGURE_ARGS+=--without-ipv6
 .endif
 
 .if defined(WITH_FPING)
