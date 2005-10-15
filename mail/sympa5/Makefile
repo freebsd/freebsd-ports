@@ -97,8 +97,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--with-localedir=${PREFIX}/share/locale \
 		--with-docdir=${DOCSDIR} \
 		--with-sampledir=${EXAMPLESDIR} \
-		--with-spooldir=${PREFIX}/sympa/spool \
-		${CONFIGURE_TARGET}
+		--with-spooldir=${PREFIX}/sympa/spool
 CONFIGURE_ENV+=	lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 MAKE_ENV?=	PERL_EXTUTILS_AUTOINSTALL=--skip
 
