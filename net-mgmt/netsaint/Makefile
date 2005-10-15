@@ -21,6 +21,8 @@ COMMENT=	Extremely powerful network monitoring system
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${LOCALBASE}/libexec/netsaint/check_netsaint:${PORTSDIR}/net-mgmt/netsaint-plugins
 
+DEPRECATED=	Now developed as Nagios, see net-mgmt/nagios port
+
 USE_PERL5=	yes
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
