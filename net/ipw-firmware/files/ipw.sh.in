@@ -51,6 +51,7 @@ command="/usr/local/sbin/%%DRIVERNAME%%control"
 		eval _file=\$_%%DRIVERNAME%%_file_${i}
 		echo -n " [${i}:${_mode:=bss}]"
 		${command} -i ${i} -f %%DATADIR%%/${_file}
+		ifconfig ${i} up
 	done
 	echo "."
 }
