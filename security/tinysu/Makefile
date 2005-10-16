@@ -18,4 +18,7 @@ PLIST_FILES=	bin/tinysu
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
 
+post-extract:
+	@${ECHO_CMD} ${PREFIX} >${WRKSRC}/conf-home
+
 .include <bsd.port.mk>
