@@ -38,7 +38,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|doc win32|win32|g ; \
-		s|^mandir =.*$$|mandir = @mandir@|g'
+		s|^mandir =.*$$|mandir = ${PREFIX}/man|g'
 	@${REINPLACE_CMD} -e 's|@SPEEX_VERSION@|${PORTVERSION}|' \
 		${WRKSRC}/speex.pc.in
 	@${REINPLACE_CMD} -e 's| in -lgnugetopt||g ; \
