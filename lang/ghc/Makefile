@@ -35,6 +35,10 @@ LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
 .endif
 .endif
 
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires newer version of perl
+.endif
+
 WANT_AUTOCONF_VER=259	# Need this to regenerate patched configure in OpenAL
 LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4 \
 		glut.3:${PORTSDIR}/graphics/libglut \
