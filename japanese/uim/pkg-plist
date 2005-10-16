@@ -1,6 +1,7 @@
 bin/uim-fep
 bin/uim-fep-tick
 bin/uim-helper-server
+bin/uim-module-manager
 bin/uim-sh
 %%GTK%%bin/uim-candwin-gtk
 %%GTK%%bin/uim-helper-candwin-gtk
@@ -79,6 +80,7 @@ share/uim/manage-modules.scm
 share/uim/pinyin-big5.scm
 share/uim/pixmaps/configure-qt.png
 share/uim/pixmaps/switcher-icon.png
+share/uim/pixmaps/uim-icon.png
 share/uim/plugin.scm
 share/uim/prime-custom.scm
 share/uim/prime-key-custom.scm
@@ -89,6 +91,7 @@ share/uim/rk.scm
 share/uim/romaja.scm
 share/uim/scim.scm
 share/uim/skk-custom.scm
+share/uim/skk-dialog.scm
 share/uim/skk-editor.scm
 share/uim/skk-key-custom.scm
 share/uim/skk.scm
@@ -105,6 +108,7 @@ share/uim/tcode.scm
 share/uim/tutcode-key-custom.scm
 share/uim/tutcode.scm
 share/uim/uim-db.scm
+share/uim/uim-module-manager.scm
 share/uim/uim-sh.scm
 share/uim/ustr.scm
 share/uim/util.scm

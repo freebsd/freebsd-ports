@@ -27,10 +27,10 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.1-static-qt.i386.freebsd-en
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
-OPERA_VER=	8.02
+OPERA_VER=	8.50
 OPERA_MINVER=	
 OPERA_REL=	final
-OPERA_DATE=	20050727
+OPERA_DATE=	20050916
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
@@ -52,6 +52,10 @@ LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 
 .if ${OSVERSION} >= 500000
 LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
+.endif
+
+.if ${OSVERSION} >= 600000
+LIB_DEPENDS+=	z.2:${PORTSDIR}/misc/compat5x
 .endif
 
 .if ${HAVE_GNOME:Mgnomehier}!=""

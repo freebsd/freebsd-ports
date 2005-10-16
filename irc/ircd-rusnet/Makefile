@@ -71,6 +71,10 @@ CONFIGURE_ARGS+=--enable-dsm
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not build on amd64"
+.endif
+
 pre-configure:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-CONFIGURE
 

@@ -164,6 +164,6 @@ Exec=mozilla-devel %U
 StartupNotify=true
 Terminal=false
 Type=Application
-Icon=%%PREFIX%%/lib/mozilla/chrome/icons/default/default.xpm
+Icon=%%PREFIX%%/lib/mozilla-devel/chrome/icons/default/default.xpm
 Categories=Application;Network;
 MimeType=text/html;text/xml;application/xhtml+xml;

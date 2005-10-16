@@ -8,7 +8,7 @@
 CATEGORIES=	japanese net
 
 PATCH_SITES=		http://www.cc.rim.or.jp/~yaz/:jp_patch
-PATCHFILES=		gaim-1.4.0_jp.patch.gz:jp_patch
+PATCHFILES=		gaim-1.5.0_jp.patch.gz:jp_patch
 PATCH_DIST_STRIP=	-p1:jp_patch
 
 MAINTAINER=	freebsd@next-generation.org

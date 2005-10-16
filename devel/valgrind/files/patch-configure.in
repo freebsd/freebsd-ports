@@ -1,0 +1,49 @@
+--- configure.in.orig	Sun Mar 14 13:52:47 2004
++++ configure.in	Mon Sep 19 23:58:01 2005
+@@ -135,11 +135,35 @@
+ 
+         ;;
+ 
++	*freebsd7*)
++	AC_MSG_RESULT([ok (${host_os})])
++	VG_PLATFORM="x86-freebsd"
++	AM_CONDITIONAL(IS_LINUX, false)
++	AM_CONDITIONAL(IS_FREEBSD4, false)
++	AM_CONDITIONAL(IS_FREEBSD5, false)
++	AM_CONDITIONAL(IS_FREEBSD6, false)
++	AM_CONDITIONAL(IS_FREEBSD7, true)
++
++	;;
++	*freebsd6*)
++	AC_MSG_RESULT([ok (${host_os})])
++	VG_PLATFORM="x86-freebsd"
++	AM_CONDITIONAL(IS_LINUX, false)
++	AM_CONDITIONAL(IS_FREEBSD4, false)
++	AM_CONDITIONAL(IS_FREEBSD5, false)
++	AM_CONDITIONAL(IS_FREEBSD6, true)
++	AM_CONDITIONAL(IS_FREEBSD7, false)
++
++	;;
++
+      *freebsd5*)
+         AC_MSG_RESULT([ok (${host_os})])
+         VG_PLATFORM="x86-freebsd"
+ 	AM_CONDITIONAL(IS_LINUX, false)
+ 	AM_CONDITIONAL(IS_FREEBSD4, false)
++	AM_CONDITIONAL(IS_FREEBSD5, true)
++	AM_CONDITIONAL(IS_FREEBSD6, false)
++	AM_CONDITIONAL(IS_FREEBSD7, false)
+ 
+ 	;;
+ 
+@@ -148,7 +172,9 @@
+         VG_PLATFORM="x86-freebsd"
+ 	AM_CONDITIONAL(IS_LINUX, false)
+ 	AM_CONDITIONAL(IS_FREEBSD4, true)
+-
++	AM_CONDITIONAL(IS_FREEBSD5, false)
++	AM_CONDITIONAL(IS_FREEBSD6, false)
++	AM_CONDITIONAL(IS_FREEBSD7, false)
+ 	;;
+ 
+      *) 

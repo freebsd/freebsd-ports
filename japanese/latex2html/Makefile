@@ -7,7 +7,7 @@
 
 PORTNAME=	latex2html
 PORTVERSION=	${VERSION}j${JP_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=     support/${PORTNAME}
@@ -31,7 +31,7 @@ JP_VERSION=	2.0
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--shlibdir=${DATADIR} \
-		--disable-gif \
+		--enable-png \
 		--with-perl=${PERL} \
 		--with-texpath=${LOCALBASE}/${TEXMFDIR}/ptex/platex/html
 PLIST_SUB=	TEXMFDIR=${TEXMFDIR}

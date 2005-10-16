@@ -1,5 +1,5 @@
---- contrib/tor.sh.in.orig	Sat Jun 18 13:27:28 2005
-+++ contrib/tor.sh.in	Sat Jun 18 13:29:00 2005
+--- contrib/tor.sh.in.orig	Sun Jun  5 15:44:43 2005
++++ contrib/tor.sh.in	Fri Sep  2 13:25:51 2005
 @@ -5,12 +5,12 @@
  # chkconfig: 2345 90 10
  # description: Onion Router
@@ -17,3 +17,12 @@
  
  TORCONF=@CONFDIR@/torrc
  # Strictly speaking, we don't need to su if we have --user and --group.
+@@ -48,7 +48,7 @@
+         if  [ "x$TORUSER" = "x" ]; then
+             $TORBIN -f $TORCONF $TORARGS
+         else
+-            $SUPROG -c "$TORBIN -f $TORCONF $TORARGS" $TORUSER
++            $SUPROG $TORUSER -c "$TORBIN -f $TORCONF $TORARGS"
+         fi
+         RETVAL=$?
+         if [ $RETVAL -eq 0 ]; then

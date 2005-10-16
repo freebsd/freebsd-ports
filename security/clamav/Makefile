@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	0.86.2
-PORTREVISION=	1
+PORTVERSION=	0.87
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	clamav
@@ -95,6 +94,10 @@ SUB_LIST+=	RC_DIR=${RC_DIR} RC_SUFX=${RC_SUFX}
 PLIST_SUB+=	RC_DIR=${RC_DIR} RC_SUFX=${RC_SUFX}
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} == 502010
+PTHREAD_LIBS=	-pthread
+.endif
 
 .if defined(WITH_MILTER)
 SUB_FILES+=	clamav-milter.sh

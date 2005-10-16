@@ -412,6 +412,7 @@ share/locale/sv/LC_MESSAGES/gaim.mo
 share/locale/tr/LC_MESSAGES/gaim.mo
 share/locale/uk/LC_MESSAGES/gaim.mo
 share/locale/vi/LC_MESSAGES/gaim.mo
+share/locale/xh/LC_MESSAGES/gaim.mo
 share/locale/zh_CN/LC_MESSAGES/gaim.mo
 share/locale/zh_TW/LC_MESSAGES/gaim.mo
 @unexec /bin/rmdir %D/share/locale/my_MM/LC_MESSAGES 2>/dev/null || /usr/bin/true

@@ -20,8 +20,15 @@ USE_REINPLACE=	YES
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-ne_mesg.c \
+		${FILESDIR}/extra-patch-tcp_response.c
+.else
 post-patch:
 	@${REINPLACE_CMD} -e 's/%zd/%d/g' ${WRKSRC}/*.c
+.endif
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/totd.conf.sample ${PREFIX}/etc
@@ -29,4 +36,4 @@ post-install:
 		${FILESDIR}/totd.sh > ${PREFIX}/etc/rc.d/totd.sh
 	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/totd.sh
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

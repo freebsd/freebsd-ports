@@ -15,6 +15,7 @@ COMMENT=	Clone of the nifty little Macintosh game
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DNDEBUG"
 ALL_TARGET=	${PORTNAME}
+USE_GMAKE=	yes
 
 MAN6=		galaxis.6
 PLIST_FILES=	bin/galaxis

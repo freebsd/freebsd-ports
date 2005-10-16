@@ -1,0 +1,54 @@
+--- Makefile.am.orig	Thu Apr  8 21:05:08 2004
++++ Makefile.am	Tue Sep 20 00:01:29 2005
+@@ -50,26 +50,46 @@
+ 
+ install-exec-hook:
+ 	$(mkinstalldirs) $(DESTDIR)$(valdir)
+-	rm -f $(DESTDIR)$(valdir)/libpthread.so.0
++
+ if !IS_LINUX
+ if IS_FREEBSD4
+ 	rm -f $(DESTDIR)$(valdir)/libc_r.so.4
+-else
++endif
++if IS_FREEBSD5
+ 	rm -f $(DESTDIR)$(valdir)/libc_r.so.5
+ 	rm -f $(DESTDIR)$(valdir)/libkse.so.1
+ 	rm -f $(DESTDIR)$(valdir)/libthr.so.1
+-	rm -f $(DESTDIR)$(valdir)/libpthread.so.1
++endif
++if IS_FREEBSD6
++	rm -f $(DESTDIR)$(valdir)/libc_r.so.6
++	rm -f $(DESTDIR)$(valdir)/libthr.so.2
++	rm -f $(DESTDIR)$(valdir)/libpthread.so.2
++endif
++if IS_FREEBSD7
++	rm -f $(DESTDIR)$(valdir)/libc_r.so.6
++	rm -f $(DESTDIR)$(valdir)/libthr.so.2
++	rm -f $(DESTDIR)$(valdir)/libpthread.so.2
+ endif
+ endif
+-	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libpthread.so.0
+ if !IS_LINUX
+ if IS_FREEBSD4
+ 	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libc_r.so.4
+-else
++endif
++if IS_FREEBSD5
+ 	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libc_r.so.5
+ 	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libkse.so.1
+ 	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libthr.so.1
+ 	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libpthread.so.1
++endif
++if IS_FREEBSD6
++	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libc_r.so.6
++	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libthr.so.2
++	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libpthread.so.2
++endif
++if IS_FREEBSD7
++	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libc_r.so.6
++	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libthr.so.2
++	$(LN_S) libpthread.so $(DESTDIR)$(valdir)/libpthread.so.2
+ endif
+ endif
+ 

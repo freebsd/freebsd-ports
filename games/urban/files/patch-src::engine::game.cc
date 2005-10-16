@@ -1,5 +1,5 @@
---- src/engine/game.cc.orig	Mon Jun  7 17:20:59 1999
-+++ src/engine/game.cc	Sun Jan 25 23:33:14 2004
+--- src/engine/game.cc.orig	Fri Sep  2 13:26:28 2005
++++ src/engine/game.cc	Fri Sep  2 13:27:53 2005
 @@ -93,10 +93,10 @@
  char *demo_filename;
  
@@ -13,3 +13,38 @@
  };
  
  
+@@ -263,7 +263,7 @@
+ #ifdef DJGPP
+ 	sprintf(filename, "savegame.dat");
+ #else
+-	sprintf(filename, "%s/.urban/savegame.dat", getenv("HOME"));
++	snprintf(filename, sizeof(filename)-1, "%s/.urban/savegame.dat", getenv("HOME"));
+ #endif
+ 
+         if ((fs = fopen(filename, "rb")) == NULL) {
+@@ -275,10 +275,10 @@
+                 }
+ #ifndef DJGPP
+ 		/* Create dir */
+-		sprintf(filename, "%s/.urban", getenv("HOME"));
++		snprintf(filename, sizeof(filename)-1, "%s/.urban", getenv("HOME"));
+ 		mkdir(filename, S_IRUSR | S_IWUSR | S_IXUSR);
+ 
+-		sprintf(filename, "%s/.urban/savegame.dat", getenv("HOME"));
++		snprintf(filename, sizeof(filename)-1, "%s/.urban/savegame.dat", getenv("HOME"));
+ #endif
+                 if((fs = fopen(filename, "wb")) == NULL)
+ 	        	fwrite(SavedGames, 1, 5 * sizeof(struct SaveGameData), fs);
+@@ -338,10 +338,10 @@
+ 						sprintf(filename, "savegame.dat");
+ #else
+ 						/* Create dir */
+-						sprintf(filename, "%s/.urban", getenv("HOME"));
++						snprintf(filename, sizeof(filename)-1, "%s/.urban", getenv("HOME"));
+ 						mkdir(filename, S_IRUSR | S_IWUSR | S_IXUSR);
+ 
+-						sprintf(filename, "%s/.urban/savegame.dat", getenv("HOME"));
++						snprintf(filename, sizeof(filename)-1, "%s/.urban/savegame.dat", getenv("HOME"));
+ #endif
+ 					        if ((fs = fopen(filename, "wb")) != NULL) {
+ 					        	fwrite(SavedGames, 1, 5 * sizeof(struct SaveGameData), fs);

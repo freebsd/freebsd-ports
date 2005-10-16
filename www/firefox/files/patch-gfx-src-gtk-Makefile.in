@@ -1,0 +1,15 @@
+When using ``--with-system-nspr'' option, MOZ_COMPONENT_LIBS does not
+contain the ``-L../../../dist/lib'' -- only ``-L../../../dist/bin''.
+
+This causes an error, because libgfxshared_s is only under dist/lib.
+
+	-mi
+
+--- gfx/src/gtk/Makefile.in	Mon Nov 10 07:24:51 2003
++++ gfx/src/gtk/Makefile.in	Thu Jul 21 23:58:26 2005
+@@ -165,4 +165,5 @@
+ ifdef MOZ_ENABLE_GTK2
+ EXTRA_DSO_LDOPTS += $(MOZ_COMPONENT_LIBS) \
++		$(LIBS_DIR) \
+ 		-lgkgfx \
+ 		-lgfxshared_s \

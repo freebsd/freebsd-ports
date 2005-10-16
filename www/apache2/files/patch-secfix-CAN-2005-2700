@@ -1,0 +1,14 @@
+--- modules/ssl/ssl_engine_kernel.c	2005/08/30 15:54:34	264799
++++ modules/ssl/ssl_engine_kernel.c	2005/08/30 
+15:57:38	264800
+@@ -406,8 +406,8 @@
+                 (!(verify_old & SSL_VERIFY_PEER) &&
+                   (verify     & SSL_VERIFY_PEER)) ||
+ 
+-                (!(verify_old & SSL_VERIFY_PEER_STRICT) &&
+-                  (verify     & SSL_VERIFY_PEER_STRICT)))
++                (!(verify_old & SSL_VERIFY_FAIL_IF_NO_PEER_CERT) &&
++                  (verify     & SSL_VERIFY_FAIL_IF_NO_PEER_CERT)))
+             {
+                 renegotiate = TRUE;
+                 /* optimization */

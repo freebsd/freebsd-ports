@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	phpldapadmin
-PORTVERSION=	0.9.6c
+PORTVERSION=	0.9.7.a6
 PORTEPOCH=	1
 CATEGORIES=	net www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpldapadmin
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.a(.)/-alpha\1/}
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	A set of PHP-scripts to administer LDAP servers over the web

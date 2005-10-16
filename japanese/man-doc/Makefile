@@ -6,64 +6,76 @@
 #
 
 PORTNAME=	man-doc
-PORTVERSION=	5.3
+PORTVERSION=	5.4.20050911
 CATEGORIES=	japanese
-DISTFILES=	# none
+.if !defined(WITH_CVS)
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	hrs
+.else
+DISTFILES=	# empty
+.endif
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	Japanese online manual pages corresponding to /usr/share/man/man*
+COMMENT=	Japanese translation of FreeBSD manual pages
 
-PREFIX?=	/usr
+RUN_DEPENDS=	jman:${PORTSDIR}/japanese/man
+
 NO_MTREE=	yes
-WRKSRC=		${WRKDIR}/man
-PLIST=		${WRKDIR}/PLIST
+WRKSRC=		${WRKDIR}/${DISTNAME}
+PLIST=		${WRKDIR}/pkg-plist
+MAKE_ENV=	MANDIR=${MANDIR}
 
-MANSECS=	1 2 5 6 7 8 9
-JAMANDIR?=	/usr/opt/doc/ja_JP.eucJP/man
+MANSECS=	man1 man2 man3 man4 man4/man4.i386 \
+		man5 man6 man7 man8 man8/man8.i386 man9
+CVSROOT?=	/home/ncvs
+CVS_CMD?=	/usr/bin/cvs
+JAMANDIR?=	doc/ja_JP.eucJP/man
+MANDIR?=	${PREFIX}/man/ja/man
 
+.if defined(WITH_CVS)
 do-extract:
-	@if [ ! -d ${JAMANDIR} ]; then \
-	  ${ECHO} "You need the Japanese manual source in"; \
-	  ${ECHO} "\"${JAMANDIR}\""; \
-	  ${ECHO} "in order to build this port."; \
-	  exit 1; \
-	fi
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKSRC}
-	@(cd ${JAMANDIR}; ${CP} Makefile Makefile.inc  ${WRKSRC})
-.for sec in ${MANSECS}
-	@if [ -d ${JAMANDIR}/man${sec} ]; then \
-		${CP} -R ${JAMANDIR}/man${sec} ${WRKSRC}/ ; \
-		${ECHO_CMD} >>${WRKSRC}/man${sec}/Makefile; \
-		${ECHO_CMD} pages-list: >>${WRKSRC}/man${sec}/Makefile; \
-		${ECHO_CMD} "	@echo \$${MAN${sec}} \$${MLINKS}" \
-			>>${WRKSRC}/man${sec}/Makefile; \
-	fi
-.endfor
+	${MKDIR} ${WRKSRC}
+	cd ${WRKDIR} && \
+		${CVS_CMD} -R -d ${CVSROOT} co -P -d ${DISTNAME} ${JAMANDIR}
+.endif
 
 post-build:
-	@${RM} -f ${PLIST}
-	@for sec in ${MANSECS}; do \
-	 if [ -d ${WRKSRC}/man$${sec} ]; then \
-		cd ${WRKSRC}/man$${sec}; \
-		list=`${MAKE} pages-list`; \
-		set `${ECHO_CMD} $$list " "|${SED} 's/\.\([^.]*\) /.\1 \1 /g'`; \
-		while : ; do \
-			case $$# in \
-				0) break;; \
-				[1]) ${ECHO_CMD} "can not happen"; break;; \
-			esac; \
-			${ECHO_CMD} share/man/ja/man$$2/$$1.gz; shift 2; \
+	for SEC in ${MANSECS}; do \
+		SECNUM=$${SEC%%/*}; \
+		cd ${WRKSRC}/$${SEC} && \
+		SUBDIR=`${MAKE} -VMANSUBDIR` && \
+		for F in `${MAKE} -VMAN`; do \
+			${ECHO_CMD} "man/ja/$${SECNUM}$${SUBDIR}/$${F}.gz"; \
 		done; \
-	 fi; \
-	done|${SORT}|uniq >>${PLIST}
+		set -- `${MAKE} -VMLINKS`; while :; do \
+		case $$# in \
+		[01])	break ;; \
+		*)	m=$$2; \
+			num=$${m##*.}; \
+			${ECHO_CMD} "man/ja/man$${num}/$${m}.gz"; \
+			shift 2;\
+		esac; \
+		done; \
+		if [ "x$${SUBDIR}" != "x" ]; then  \
+			${ECHO_CMD} "@dirrm man/ja/$${SECNUM}$${SUBDIR}"; \
+		fi; \
+	done | ${SORT} -r | uniq > ${PLIST}
 
-pre-install:
-.for sec in ${MANSECS}
-	@${MKDIR} ${PREFIX}/share/man/ja/man${sec}
-.endfor
+pre-su-install:
+	for SEC in ${MANSECS}; do \
+		SECNUM=$${SEC%%/*}; \
+		cd ${WRKSRC}/$${SEC} && \
+		SUBDIR=`${MAKE} -VMANSUBDIR` && \
+		${MKDIR} ${PREFIX}/man/ja/$${SECNUM}$${SUBDIR}; \
+	done
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
+
+# XXX: make gendist generates distfile.  Use with WITH_CVS.
+gendist: extract
+	cd ${WRKDIR} && \
+		${FIND} . -type d -a -name CVS | ${XARGS} ${RM} -rf && \
+		${TAR} czf ${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}
 
 .include <bsd.port.mk>

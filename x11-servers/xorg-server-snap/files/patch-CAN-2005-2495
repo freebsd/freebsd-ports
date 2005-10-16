@@ -1,0 +1,183 @@
+--- programs/Xserver/afb/afbpixmap.c.orig	Wed Apr 20 14:25:14 2005
++++ programs/Xserver/afb/afbpixmap.c	Sun Sep 18 18:13:40 2005
+@@ -73,10 +73,14 @@
+ 	int				depth;
+ {
+ 	PixmapPtr pPixmap;
+-	int datasize;
+-	int paddedWidth;
++	size_t datasize;
++	size_t paddedWidth;
+ 
+ 	paddedWidth = BitmapBytePad(width);
++
++	if (paddedWidth > 32767 || height > 32767 || depth > 4)
++	    return NullPixmap;
++	
+ 	datasize = height * paddedWidth * depth;
+ 	pPixmap = AllocatePixmap(pScreen, datasize);
+ 	if (!pPixmap)
+--- programs/Xserver/cfb/cfbpixmap.c.orig	Wed Apr 20 14:25:18 2005
++++ programs/Xserver/cfb/cfbpixmap.c	Sun Sep 18 18:13:40 2005
+@@ -68,10 +68,13 @@
+     int		depth;
+ {
+     PixmapPtr pPixmap;
+-    int datasize;
+-    int paddedWidth;
++    size_t datasize;
++    size_t paddedWidth;
+ 
+     paddedWidth = PixmapBytePad(width, depth);
++
++    if (paddedWidth / 4 > 32767 || height > 32767)
++	return NullPixmap;
+     datasize = height * paddedWidth;
+     pPixmap = AllocatePixmap(pScreen, datasize);
+     if (!pPixmap)
+--- programs/Xserver/dix/dispatch.c.orig	Fri Jun 10 06:01:14 2005
++++ programs/Xserver/dix/dispatch.c	Sun Sep 18 18:13:40 2005
+@@ -1473,6 +1473,23 @@
+ 	client->errorValue = 0;
+         return BadValue;
+     }
++    if (stuff->width > 32767 || stuff->height > 32767)
++    {
++	/* It is allowed to try and allocate a pixmap which is larger than
++	 * 32767 in either dimension. However, all of the framebuffer code
++	 * is buggy and does not reliably draw to such big pixmaps, basically
++	 * because the Region data structure operates with signed shorts
++	 * for the rectangles in it.
++	 *
++	 * Furthermore, several places in the X server computes the
++	 * size in bytes of the pixmap and tries to store it in an
++	 * integer. This integer can overflow and cause the allocated size
++	 * to be much smaller.
++	 *
++	 * So, such big pixmaps are rejected here with a BadAlloc
++	 */
++	return BadAlloc;
++    }
+     if (stuff->depth != 1)
+     {
+         pDepth = pDraw->pScreen->allowedDepths;
+--- programs/Xserver/dix/pixmap.c.orig	Wed Apr 20 14:25:19 2005
++++ programs/Xserver/dix/pixmap.c	Sun Sep 18 18:13:40 2005
+@@ -114,6 +114,9 @@
+     unsigned size;
+     int i;
+ 
++    if (pScreen->totalPixmapSize > ((size_t)-1) - pixDataSize)
++	return NullPixmap;
++    
+     pPixmap = (PixmapPtr)xalloc(pScreen->totalPixmapSize + pixDataSize);
+     if (!pPixmap)
+ 	return NullPixmap;
+--- programs/Xserver/fb/fbpixmap.c.orig	Sat Dec  4 01:42:50 2004
++++ programs/Xserver/fb/fbpixmap.c	Sun Sep 18 18:13:40 2005
+@@ -32,12 +32,14 @@
+ fbCreatePixmapBpp (ScreenPtr pScreen, int width, int height, int depth, int bpp)
+ {
+     PixmapPtr	pPixmap;
+-    int		datasize;
+-    int		paddedWidth;
++    size_t	datasize;
++    size_t	paddedWidth;
+     int		adjust;
+     int		base;
+ 
+     paddedWidth = ((width * bpp + FB_MASK) >> FB_SHIFT) * sizeof (FbBits);
++    if (paddedWidth / 4 > 32767 || height > 32767)
++	return NullPixmap;
+     datasize = height * paddedWidth;
+ #ifdef PIXPRIV
+     base = pScreen->totalPixmapSize;
+--- programs/Xserver/hw/xfree86/xaa/xaaInit.c.orig	Wed Apr 20 14:25:39 2005
++++ programs/Xserver/hw/xfree86/xaa/xaaInit.c	Sun Sep 18 18:13:40 2005
+@@ -498,6 +498,9 @@
+     XAAPixmapPtr pPriv;
+     PixmapPtr pPix = NULL;
+     int size = w * h;
++
++    if (w > 32767 || h > 32767)
++	return NullPixmap;
+     
+     if (!infoRec->offscreenDepthsInitialized)
+ 	XAAInitializeOffscreenDepths (pScreen);
+--- programs/Xserver/hw/xfree86/xf4bpp/ppcPixmap.c.orig	Fri Apr 23 21:54:17 2004
++++ programs/Xserver/hw/xfree86/xf4bpp/ppcPixmap.c	Sun Sep 18 18:13:40 2005
+@@ -85,7 +85,7 @@
+     int		depth ;
+ {
+     register PixmapPtr pPixmap  = (PixmapPtr)NULL;
+-    int size ;
++    size_t size ;
+     
+     TRACE(("xf4bppCreatePixmap(pScreen=0x%x, width=%d, height=%d, depth=%d)\n", pScreen, width, height, depth)) ;
+ 
+@@ -93,6 +93,10 @@
+ 	return (PixmapPtr) NULL ;
+ 
+     size = PixmapBytePad(width, depth);
++
++    if (size / 4 > 32767 || height > 32767)
++	return (PixmapPtr) NULL ;
++    
+     pPixmap = AllocatePixmap (pScreen, (height * size));
+     
+     if ( !pPixmap )
+--- programs/Xserver/ilbm/ilbmpixmap.c.orig	Wed Apr 20 14:25:42 2005
++++ programs/Xserver/ilbm/ilbmpixmap.c	Sun Sep 18 18:13:40 2005
+@@ -75,10 +75,12 @@
+ 	int				depth;
+ {
+ 	PixmapPtr pPixmap;
+-	int datasize;
+-	int paddedWidth;
++	size_t datasize;
++	size_t paddedWidth;
+ 
+ 	paddedWidth = BitmapBytePad(width);
++	if (paddedWidth > 32767 || height > 32767 || depth > 4)
++		return NullPixmap;
+ 	datasize = height * paddedWidth * depth;
+ 	pPixmap = AllocatePixmap(pScreen, datasize);
+ 	if (!pPixmap)
+--- programs/Xserver/iplan2p4/iplpixmap.c.orig	Wed Apr 20 14:25:43 2005
++++ programs/Xserver/iplan2p4/iplpixmap.c	Sun Sep 18 18:13:40 2005
+@@ -74,12 +74,14 @@
+     int		depth;
+ {
+     PixmapPtr pPixmap;
+-    int datasize;
+-    int paddedWidth;
++    size_t datasize;
++    size_t paddedWidth;
+     int ipad=INTER_PLANES*2 - 1;
+ 
+     paddedWidth = PixmapBytePad(width, depth);
+     paddedWidth = (paddedWidth + ipad) & ~ipad;
++    if (paddedWidth / 4 > 32767 || height > 32767)
++	return NullPixmap;
+     datasize = height * paddedWidth;
+     pPixmap = AllocatePixmap(pScreen, datasize);
+     if (!pPixmap)
+--- programs/Xserver/mfb/mfbpixmap.c.orig	Fri Apr 22 22:49:50 2005
++++ programs/Xserver/mfb/mfbpixmap.c	Sun Sep 18 18:13:40 2005
+@@ -71,12 +71,14 @@
+     int		depth;
+ {
+     PixmapPtr pPixmap;
+-    int datasize;
+-    int paddedWidth;
++    size_t datasize;
++    size_t paddedWidth;
+ 
+     if (depth != 1)
+ 	return NullPixmap;
+     paddedWidth = BitmapBytePad(width);
++    if (paddedWidth / 4 > 32767 || height > 32767)
++	return NullPixmap;
+     datasize = height * paddedWidth;
+     pPixmap = AllocatePixmap(pScreen, datasize);
+     if (!pPixmap)

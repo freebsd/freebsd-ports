@@ -15,6 +15,7 @@ COMMENT=	Battleships solitaire game with a color interface
 
 MAKE_ARGS=	CC="${CC}"
 ALL_TARGET=	# empty
+USE_GMAKE=	yes
 
 MAN6=		bs.6
 PLIST_FILES=	bin/bs

@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	picasm
-PORTVERSION=	1.12b
+PORTVERSION=	1.14
 CATEGORIES=	devel
-MASTER_SITES=	http://www.co.jyu.fi/~trossi/pic/ \
-		http://hyvatti.iki.fi/~jaakko/pic/
+MASTER_SITES=	http://www.co.jyu.fi/~trossi/pic/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Portable assembler for 16C84 series PICs
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_BZIP2=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g}
 
 USE_PERL5_BUILD=	yes
 

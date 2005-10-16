@@ -1,0 +1,24 @@
+--- htsearch/htsearch.cc.orig	Fri May 28 06:15:24 2004
++++ htsearch/htsearch.cc	Mon Sep 12 23:16:06 2005
+@@ -211,8 +211,7 @@
+ 	}
+ 	if (access((char*)configFile, R_OK) < 0)
+ 	{
+-	    reportError(form("Unable to read configuration file '%s'",
+-			     configFile.get()));
++           reportError("Unable to read configuration file");
+ 	}
+ 	config->Read(configFile);
+ 
+--- htsearch/qtest.cc.orig	Fri May 28 06:15:25 2004
++++ htsearch/qtest.cc	Mon Sep 12 23:19:49 2005
+@@ -132,8 +132,7 @@
+ 
+     if (access((char*)configFile, R_OK) < 0)
+     {
+-	reportError(form("Unable to find configuration file '%s'",
+-			 configFile.get()));
++	reportError("Unable to find configuration file");
+     }
+ 	
+     config->Read(configFile);

@@ -7,9 +7,9 @@
 
 PORTNAME=	compat5x
 PORTVERSION=	5.4.0.6
+PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://agrajag.ijs.si/tinderbox/stuff/compat5/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=lesi/compat5x
 PKGNAMESUFFIX=	-${ARCH}
 DISTNAME=	${PORTNAME}-${ARCH}-${PORTVERSION}
@@ -68,6 +68,7 @@ do-build:
 
 do-install:
 	${MKDIR} ${TARGET_DIR}
+	(cd ${WRKSRC} && ${RM} liblwres.so.3)
 	(cd ${WRKSRC} && ${INSTALL_DATA} *.so.* ${TARGET_DIR})
 .if ${ARCH} == amd64
 	${MKDIR} ${TARGET32_DIR}

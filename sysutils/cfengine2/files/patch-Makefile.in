@@ -1,0 +1,17 @@
+--- Makefile.in.orig	Sat Oct  1 16:32:09 2005
++++ Makefile.in	Fri Oct  7 10:36:51 2005
+@@ -201,8 +201,12 @@
+ @BUILD_DOC_TRUE@DOC_DIR = doc
+ SUBDIRS = pub src contrib inputs $(DOC_DIR)
+ EXTRA_DIST = acconfig.h doc/cfengine.8 COPYING ChangeLog INSTALL NEWS README
+-docdir = $(pkgdatadir)
+-doc_DATA = README ChangeLog INSTALL NEWS
++docdir = $(prefix)/share/doc/cfengine
++.if defined(NOPORTDOCS)
++doc_DATA = 
++.else
++doc_DATA = AUTHORS ChangeLog README TODO
++.endif
+ 
+ #
+ # Some basic clean ups

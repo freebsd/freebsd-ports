@@ -1,3 +1,4 @@
+lib/%%PYTHON_VERSION%%/site-packages/dbus.pth
 lib/%%PYTHON_VERSION%%/site-packages/dbus/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/dbus/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/dbus/__init__.pyo

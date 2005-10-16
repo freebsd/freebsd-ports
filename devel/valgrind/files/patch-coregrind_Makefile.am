@@ -1,0 +1,54 @@
+--- coregrind/Makefile.am.orig	Sun Mar 14 13:52:47 2004
++++ coregrind/Makefile.am	Tue Sep 20 12:00:42 2005
+@@ -162,11 +162,26 @@
+ 	vg_unsafe.h
+ 
+ if !IS_LINUX
++if IS_FREEBSD4
++MANUAL_DEPS_EXTRA = $(inplacedir)/libc_r.so.4
++endif
++if IS_FREEBSD5
+ MANUAL_DEPS_EXTRA = $(inplacedir)/libc_r.so.5 \
+ 	$(inplacedir)/libkse.so.1 \
+ 	$(inplacedir)/libthr.so.1 \
+ 	$(inplacedir)/libpthread.so.1
+ endif
++if IS_FREEBSD6
++MANUAL_DEPS_EXTRA = $(inplacedir)/libc_r.so.6 \
++	$(inplacedir)/libthr.so.2 \
++	$(inplacedir)/libpthread.so.2
++endif
++if IS_FREEBSD7
++MANUAL_DEPS_EXTRA = $(inplacedir)/libc_r.so.6 \
++	$(inplacedir)/libthr.so.2 \
++	$(inplacedir)/libpthread.so.2
++endif
++endif
+ 
+ MANUAL_DEPS = $(noinst_HEADERS) $(include_HEADERS) $(inplacedir)/libpthread.so.0 ${MANUAL_DEPS_EXTRA}
+ 
+@@ -180,9 +195,23 @@
+ 		ln -sf $(top_srcdir)/$(subdir)/$$i $$to; \
+ 	done
+ if !IS_LINUX
+-	ln -sf libpthread.so.0 $(inplacedir)/libc_r.so.5
++if IS_FREEBSD4
+ 	ln -sf libpthread.so.0 $(inplacedir)/libc_r.so.4
++endif
++if IS_FREEBSD5
++	ln -sf libpthread.so.0 $(inplacedir)/libc_r.so.5
+ 	ln -sf libpthread.so.0 $(inplacedir)/libkse.so.1
+ 	ln -sf libpthread.so.0 $(inplacedir)/libthr.so.1
+ 	ln -sf libpthread.so.0 $(inplacedir)/libpthread.so.1
++endif
++if IS_FREEBSD6
++	ln -sf libpthread.so.0 $(inplacedir)/libc_r.so.6
++	ln -sf libpthread.so.0 $(inplacedir)/libthr.so.2
++	ln -sf libpthread.so.0 $(inplacedir)/libpthread.so.2
++endif
++if IS_FREEBSD7
++	ln -sf libpthread.so.0 $(inplacedir)/libc_r.so.6
++	ln -sf libpthread.so.0 $(inplacedir)/libthr.so.2
++	ln -sf libpthread.so.0 $(inplacedir)/libpthread.so.2
++endif
+ endif

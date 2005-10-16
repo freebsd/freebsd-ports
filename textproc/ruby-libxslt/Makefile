@@ -34,8 +34,14 @@ RUBY_LIBXML_WRKSRC_CMD=	cd ${PORTSDIR}/${RUBY_LIBXML_PORT} && ${MAKE} -V WRKSRC
 
 INSTALL_TARGET=	site-install
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 504100
+BROKEN=		"Configure fails on FreeBSD >= 5.x"
+.endif
+
 post-extract:
 	@${MKDIR} ${WRKDIR}
 	@${LN} -fs `${RUBY_LIBXML_WRKSRC_CMD}` ${WRKDIR}/libxml
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

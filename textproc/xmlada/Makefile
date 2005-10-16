@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xmlada
-PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTVERSION=	1.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://libre.act-europe.fr/xmlada/
+MASTER_SITES=	https://libre2.adacore.com/${PORTNAME}/
 DISTNAME=	XmlAda-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
@@ -18,15 +17,14 @@ COMMENT=	An XML parsing library for Ada 95
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 
-.include <bsd.port.pre.mk>
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.if ${OSVERSION} >= 500039
-WITHOUT_CPU_CFLAGS=	yes
-.endif
-WRKSRC=		${WRKDIR}/xmlada-0.7.1
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+
+ADACFLAGS?=	# none
+CFLAGS=		${ADACFLAGS}
 
 INFO=		xmlada
 PORTDOCS=	xml.html xml_1.html xml_2.html xml_3.html xml_4.html \
@@ -40,4 +38,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/xml.info ${PREFIX}/${INFO_PATH}/xmlada.info
 	install-info ${PREFIX}/${INFO_PATH}/xmlada.info ${PREFIX}/${INFO_PATH}/dir
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

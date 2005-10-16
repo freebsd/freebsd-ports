@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/${PORTVERSION}/glade/
 DISTNAME=	glade-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sam@inf.enst.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Ada distributed systems annex
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
@@ -28,6 +28,9 @@ USE_AUTOCONF_VER=213
 CONFIGURE_ENV=	ADA=adagcc
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
+
+ADACFLAGS?=
+CFLAGS=${ADACFLAGS}
 
 pre-configure:
 	${PERL} -pi -e "s@aclocal\)@${ACLOCAL})@g;\

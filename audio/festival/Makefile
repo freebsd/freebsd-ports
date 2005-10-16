@@ -80,9 +80,11 @@ post-patch:
 	@${LN} -fs ${SPEECHTOOLS}/config/systems/ix86_FreeBSD3.3.mak \
 		${SPEECHTOOLS}/config/systems/${FESTIVAL_ARCH}_FreeBSD3.${i}.mak
 .endfor
-.for ii in 4 5
-.for jj in 1 2 3 4 5 6 7 8 9 10 11
-	@${LN} -fs ${SPEECHTOOLS}/config/systems/ix86_FreeBSD4.0.mak \
+	@${MV} ${SPEECHTOOLS}/config/systems/ix86_FreeBSD4.0.mak \
+		${SPEECHTOOLS}/config/systems/ix86_FreeBSD4.x.mak
+.for ii in 4 5 6 7
+.for jj in 0 1 2 3 4 5 6 7 8 9 10 11
+	@${LN} -fs ${SPEECHTOOLS}/config/systems/ix86_FreeBSD4.x.mak \
 	${SPEECHTOOLS}/config/systems/${FESTIVAL_ARCH}_FreeBSD${ii}.${jj}.mak
 .endfor
 .endfor

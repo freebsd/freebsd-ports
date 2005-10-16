@@ -1,0 +1,312 @@
+Index: programs/Xserver/afb/afbpixmap.c
+===================================================================
+RCS file: /cvs/xc/programs/Xserver/afb/afbpixmap.c,v
+retrieving revision 3.1
+retrieving revision 3.1.20.1
+diff -u -r3.1 -r3.1.20.1
+--- programs/Xserver/afb/afbpixmap.c	3 Jun 1997 14:11:07 -0000	3.1
++++ programs/Xserver/afb/afbpixmap.c	18 Sep 2005 00:20:57 -0000	3.1.20.1
+@@ -76,6 +76,9 @@
+ 	int datasize;
+ 	int paddedWidth;
+ 
++	if ((width > MAXSHORT) || (height > MAXSHORT))
++		return NullPixmap;
++
+ 	paddedWidth = BitmapBytePad(width);
+ 	datasize = height * paddedWidth * depth;
+ 	pPixmap = AllocatePixmap(pScreen, datasize);
+Index: programs/Xserver/cfb/cfbpixmap.c
+===================================================================
+RCS file: /cvs/xc/programs/Xserver/cfb/cfbpixmap.c,v
+retrieving revision 1.5
+retrieving revision 1.5.8.1
+diff -u -r1.5 -r1.5.8.1
+--- programs/Xserver/cfb/cfbpixmap.c	14 Dec 2001 19:59:23 -0000	1.5
++++ programs/Xserver/cfb/cfbpixmap.c	18 Sep 2005 00:20:57 -0000	1.5.8.1
+@@ -73,6 +72,9 @@
+     int datasize;
+     int paddedWidth;
+ 
++    if ((width > MAXSHORT) || (height > MAXSHORT))
++	return NullPixmap;
++
+     paddedWidth = PixmapBytePad(width, depth);
+     datasize = height * paddedWidth;
+     pPixmap = AllocatePixmap(pScreen, datasize);
+Index: programs/Xserver/dix/pixmap.c
+===================================================================
+RCS file: /cvs/xc/programs/Xserver/dix/pixmap.c,v
+retrieving revision 3.5
+retrieving revision 3.5.8.1
+diff -u -r3.5 -r3.5.8.1
+--- programs/Xserver/dix/pixmap.c	14 Dec 2001 19:59:32 -0000	3.5
++++ programs/Xserver/dix/pixmap.c	18 Sep 2005 00:20:58 -0000	3.5.8.1
+@@ -126,7 +125,9 @@
+     unsigned size;
+     int i;
+ 
+-    pPixmap = (PixmapPtr)xalloc(pScreen->totalPixmapSize + pixDataSize);
++    if (((unsigned)(-1) - pScreen->totalPixmapSize) < (unsigned)pixDataSize)
++	return NullPixmap;
++    pPixmap = xalloc(pScreen->totalPixmapSize + (unsigned)pixDataSize);
+     if (!pPixmap)
+ 	return NullPixmap;
+     ppriv = (DevUnion *)(pPixmap + 1);
+@@ -144,7 +145,7 @@
+ 	    ppriv->ptr = (pointer)NULL;
+     }
+ #else
+-    pPixmap = (PixmapPtr)xalloc(sizeof(PixmapRec) + pixDataSize);
++    pPixmap = xalloc(sizeof(PixmapRec) + (unsigned)pixDataSize);
+ #endif
+     return pPixmap;
+ }
+Index: programs/Xserver/fb/fbpixmap.c
+===================================================================
+RCS file: /cvs/xc/programs/Xserver/fb/fbpixmap.c,v
+retrieving revision 1.11
+retrieving revision 1.11.6.1
+diff -u -r1.11 -r1.11.6.1
+--- programs/Xserver/fb/fbpixmap.c	16 Sep 2002 18:05:34 -0000	1.11
++++ programs/Xserver/fb/fbpixmap.c	18 Sep 2005 00:20:58 -0000	1.11.6.1
+@@ -37,6 +37,9 @@
+     int		adjust;
+     int		base;
+ 
++    if ((width > MAXSHORT) || (height > MAXSHORT))
++	return NullPixmap;
++
+     paddedWidth = ((width * bpp + FB_MASK) >> FB_SHIFT) * sizeof (FbBits);
+     datasize = height * paddedWidth;
+ #ifdef PIXPRIV
+Index: programs/Xserver/hw/xfree86/xaa/xaaInit.c
+===================================================================
+RCS file: /cvs/xc/programs/Xserver/hw/xfree86/xaa/xaaInit.c,v
+retrieving revision 1.35
+retrieving revision 1.35.10.1
+diff -u -r1.35 -r1.35.10.1
+--- programs/Xserver/hw/xfree86/xaa/xaaInit.c	19 Jul 2001 18:50:16 -0000	1.35
++++ programs/Xserver/hw/xfree86/xaa/xaaInit.c	18 Sep 2005 00:20:59 -0000	1.35.10.1
+@@ -479,8 +479,12 @@
+     ScrnInfoPtr pScrn = xf86Screens[pScreen->myNum];
+     XAAPixmapPtr pPriv;
+     PixmapPtr pPix = NULL;
+-    int size = w * h;
++    int size;
++
++    if ((w > MAXSHORT) || (h > MAXSHORT))
++	return NullPixmap;
+     
++    size = w * h;
+     if (!infoRec->offscreenDepthsInitialized)
+ 	XAAInitializeOffscreenDepths (pScreen);
+ 
+Index: programs/Xserver/hw/xfree86/xf4bpp/ppcPixmap.c
+===================================================================
+RCS file: /cvs/xc/programs/Xserver/hw/xfree86/xf4bpp/ppcPixmap.c,v
+retrieving revision 1.5
+retrieving revision 1.5.14.1
+diff -u -r1.5 -r1.5.14.1
+--- programs/Xserver/hw/xfree86/xf4bpp/ppcPixmap.c	27 Apr 2000 16:26:49 -0000	1.5
++++ programs/Xserver/hw/xfree86/xf4bpp/ppcPixmap.c	18 Sep 2005 00:21:00 -0000	1.5.14.1
+@@ -89,8 +89,8 @@
+     
+     TRACE(("xf4bppCreatePixmap(pScreen=0x%x, width=%d, height=%d, depth=%d)\n", pScreen, width, height, depth)) ;
+ 
+-    if ( depth > 8 )
+-	return (PixmapPtr) NULL ;
++    if ((depth > 8) || (width > MAXSHORT) || (height > MAXSHORT))
++	return NullPixmap;
+ 
+     size = PixmapBytePad(width, depth);
+     pPixmap = AllocatePixmap (pScreen, (height * size));
+Index: programs/Xserver/ilbm/ilbmpixmap.c
+===================================================================
+RCS file: /cvs/xc/programs/Xserver/ilbm/ilbmpixmap.c,v
+retrieving revision 3.0
+retrieving revision 3.0.26.1
+diff -u -r3.0 -r3.0.26.1
+--- programs/Xserver/ilbm/ilbmpixmap.c	18 Aug 1996 01:54:01 -0000	3.0
++++ programs/Xserver/ilbm/ilbmpixmap.c	18 Sep 2005 00:21:00 -0000	3.0.26.1
+@@ -78,6 +78,9 @@
+ 	int datasize;
+ 	int paddedWidth;
+ 
++	if ((width > MAXSHORT) || (height > MAXSHORT))
++		return NullPixmap;
++
+ 	paddedWidth = BitmapBytePad(width);
+ 	datasize = height * paddedWidth * depth;
+ 	pPixmap = AllocatePixmap(pScreen, datasize);
+Index: programs/Xserver/iplan2p4/iplpixmap.c
+===================================================================
+RCS file: /cvs/xc/programs/Xserver/iplan2p4/iplpixmap.c,v
+retrieving revision 3.1
+retrieving revision 3.1.8.1
+diff -u -r3.1 -r3.1.8.1
+--- programs/Xserver/iplan2p4/iplpixmap.c	17 Dec 2001 20:00:46 -0000	3.1
++++ programs/Xserver/iplan2p4/iplpixmap.c	18 Sep 2005 00:21:00 -0000	3.1.8.1
+@@ -76,8 +76,12 @@
+     PixmapPtr pPixmap;
+     int datasize;
+     int paddedWidth;
+-    int ipad=INTER_PLANES*2 - 1;
++    int ipad;
+ 
++    if ((width > MAXSHORT) || (height > MAXSHORT))
++	return NullPixmap;
++
++    ipad = INTER_PLANES*2 - 1;
+     paddedWidth = PixmapBytePad(width, depth);
+     paddedWidth = (paddedWidth + ipad) & ~ipad;
+     datasize = height * paddedWidth;
+Index: programs/Xserver/mfb/mfbpixmap.c
+===================================================================
+RCS file: /cvs/xc/programs/Xserver/mfb/mfbpixmap.c,v
+retrieving revision 1.2
+retrieving revision 1.2.8.1
+diff -u -r1.2 -r1.2.8.1
+--- programs/Xserver/mfb/mfbpixmap.c	14 Dec 2001 20:00:10 -0000	1.2
++++ programs/Xserver/mfb/mfbpixmap.c	18 Sep 2005 00:21:00 -0000	1.2.8.1
+@@ -44,7 +45,6 @@
+ SOFTWARE.
+ 
+ ******************************************************************/
+-/* $Xorg: mfbpixmap.c,v 1.4 2001/02/09 02:05:19 xorgcvs Exp $ */
+ 
+ /* pixmap management
+    written by drewry, september 1986
+@@ -75,8 +75,9 @@
+     int datasize;
+     int paddedWidth;
+ 
+-    if (depth != 1)
++    if ((depth != 1) || (width > MAXSHORT) || (height > MAXSHORT))
+ 	return NullPixmap;
++
+     paddedWidth = BitmapBytePad(width);
+     datasize = height * paddedWidth;
+     pPixmap = AllocatePixmap(pScreen, datasize);
+Index: programs/Xserver/os/utils.c
+===================================================================
+RCS file: /cvs/xc/programs/Xserver/os/utils.c,v
+retrieving revision 3.102
+retrieving revision 3.102.2.1
+diff -u -r3.102 -r3.102.2.1
+--- programs/Xserver/os/utils.c	3 Feb 2005 02:01:14 -0000	3.102
++++ programs/Xserver/os/utils.c	18 Sep 2005 00:21:00 -0000	3.102.2.1
+@@ -1243,19 +1243,19 @@
+ void * 
+ Xalloc(unsigned long amount)
+ {
+-    register pointer  ptr;
+-	
+-    if ((long)amount <= 0)
+-	return NULL;
++    pointer ptr;
+ 
+     /* aligned extra on long word boundary */
+     amount = (amount + (sizeof(long) - 1)) & ~(sizeof(long) - 1);
++
++    if ((long)amount <= 0)
++	return NULL;
+ #ifdef MEMBUG
+     if (!Must_have_memory && Memory_fail &&
+ 	((random() % MEM_FAIL_SCALE) < Memory_fail))
+ 	return NULL;
+ #endif
+-    if ((ptr = (pointer)malloc(amount))) {
++    if ((ptr = malloc(amount))) {
+ 	return ptr;
+     }
+     if (Must_have_memory)
+@@ -1273,12 +1273,16 @@
+ {
+     register pointer ptr;
+ 
+-    if ((long)amount <= 0)
+-        return NULL;
++    if (amount == 0)
++	return NULL;
+ 
+     /* aligned extra on long word boundary */
+     amount = (amount + (sizeof(long) - 1)) & ~(sizeof(long) - 1);
+-    ptr = (pointer)malloc(amount);
++
++    if ((long)amount <= 0)
++        FatalError("Bad request for memory");
++
++    ptr = malloc(amount);
+     if (!ptr)
+         FatalError("Out of memory");
+ 
+@@ -1292,11 +1296,11 @@
+ void *
+ Xcalloc(unsigned long amount)
+ {
+-    unsigned long   *ret;
++    pointer ret;
+ 
+-    ret = Xalloc (amount);
++    ret = Xalloc(amount);
+     if (ret)
+-	bzero ((void *) ret, (int) amount);
++	bzero (ret, (int) amount);
+     return ret;
+ }
+ 
+@@ -1307,13 +1311,17 @@
+ void *
+ XNFcalloc(unsigned long amount)
+ {
+-    unsigned long   *ret;
++    pointer ret;
+ 
+-    ret = Xalloc (amount);
+-    if (ret)
+-	bzero ((char *) ret, (int) amount);
+-    else if ((long)amount > 0)
++    if (amount == 0)
++	return NULL;
++
++    ret = Xalloc(amount);
++    if (!ret)
+         FatalError("Out of memory");
++
++    bzero (ret, (int) amount);
++
+     return ret;
+ }
+ 
+@@ -1336,10 +1344,12 @@
+ 	return NULL;
+     }
+     amount = (amount + (sizeof(long) - 1)) & ~(sizeof(long) - 1);
++    if ((long)amount <= 0)
++	return NULL;
+     if (ptr)
+-        ptr = (pointer)realloc((char *)ptr, amount);
++        ptr = realloc(ptr, amount);
+     else
+-	ptr = (pointer)malloc(amount);
++	ptr = malloc(amount);
+     if (ptr)
+         return ptr;
+     if (Must_have_memory)
+@@ -1355,12 +1365,12 @@
+ void *
+ XNFrealloc(pointer ptr, unsigned long amount)
+ {
+-    if (( ptr = (pointer)Xrealloc( ptr, amount ) ) == NULL)
++    if ((ptr = Xrealloc(ptr, amount)) == NULL)
+     {
+-	if ((long)amount > 0)
++	if (amount != 0)
+             FatalError( "Out of memory" );
+     }
+-    return ((unsigned long *)ptr);
++    return ptr;
+ }
+ 
+ /*****************

@@ -7,7 +7,7 @@
 
 PORTNAME?=	mozilla
 PORTVERSION=	1.8.b1
-PORTREVISION?=	3
+PORTREVISION?=	6
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -83,20 +83,16 @@ PLIST=		${WRKDIR}/pkg-plist
 MOZ_EXTENSIONS=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 
-ESD_LIB=	libesd.so.2
 FREETYPE_LIB=	libfreetype.so.9
 PKGCONFIG_FILES=mozilla-gtkmozembed mozilla-js mozilla-xpcom \
 		mozilla-nspr mozilla-nss mozilla-plugin
 
 # JPI stuff.  List paths to Java Plug-ins here in the order to try.
 JPI_LIST?=\
-	${LOCALBASE}/jdk1.4.2/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so \
-	${LOCALBASE}/jdk1.4.1/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so \
-	${LOCALBASE}/diablo-jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
-	${LOCALBASE}/jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so
+	${LOCALBASE}/jdk1.5.0/jre/plugin/${ARCH}/ns7/libjavaplugin_oji.so \
+	${LOCALBASE}/jdk1.4.2/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so
 
-OPTIONS=CALENDAR "Enable the Calendar module" off \
-	MAILNEWS "Enable Mail and News modules" on \
+OPTIONS=MAILNEWS "Enable Mail and News modules" on \
 	COMPOSER "Enable the HTML Composer module" on \
 	DEBUG "Enable debugging (i.e. gdb) support" off \
 	LDAP "Enable LDAP support for Mailnews" on \
@@ -122,10 +118,10 @@ BROKEN=		Mozilla${MOZ_SUFX} and Xft2 render the mozilla-fonts \
 		illegibly. Please remove the mozilla-fonts package
 .endif
 
-.if defined(WITH_CALENDAR) && (defined(WITHOUT_MAILNEWS) || \
-	defined(WITHOUT_COMPOSER))
-BROKEN=		Calendar requires Composer and Mailnews support.
-.endif
+#.if defined(WITH_CALENDAR) && (defined(WITHOUT_MAILNEWS) || \
+#	defined(WITHOUT_COMPOSER))
+#BROKEN=		Calendar requires Composer and Mailnews support.
+#.endif
 
 .if ${OSVERSION} < 500000
 USE_GCC=	3.4
@@ -183,9 +179,9 @@ CONFIGURE_ARGS+=	--disable-jsd \
 			--disable-dtd-debug
 .endif
 
-.if defined(WITH_CALENDAR)
-CONFIGURE_ARGS+=	--enable-calendar
-.endif
+#.if defined(WITH_CALENDAR)
+#CONFIGURE_ARGS+=	--enable-calendar
+#.endif
 
 .if defined(WITHOUT_COMPOSER)
 CONFIGURE_ARGS+=	--disable-composer
@@ -213,6 +209,8 @@ USE_GNOME+=	gnomehier
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e  's/%{idldir}/%idldir%/g' \
+		${WRKSRC}/build/unix/mozilla-config.in
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/build/unix/run-mozilla.sh
 	@${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
@@ -229,7 +227,7 @@ post-patch:
 		${WRKSRC}/security/coreconf/FreeBSD.mk \
 		${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
 		${WRKSRC}/js/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|libesd\.so\.0|${ESD_LIB}|g' \
+	@${REINPLACE_CMD} -E -e 's|libesd\.so\.[0-9]+|libesd.so|g' \
 		${WRKSRC}/widget/src/gtk2/nsSound.cpp
 	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \
 		${WRKSRC}/modules/libpref/src/init/all.js

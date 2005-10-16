@@ -370,11 +370,11 @@ Index: src/delay_pools.c
       acl_deny_info_list *denyInfoList;
       struct _authConfig {
 ***************
-*** 1620,1625 ****
---- 1628,1638 ----
-      unsigned int internal:1;
+*** 1623,1628 ****
+--- 1631,1641 ----
       unsigned int body_sent:1;
       unsigned int reset_tcp:1;
+      unsigned int must_keepalive:1;
 + #if FOLLOW_X_FORWARDED_FOR
 +     /* XXX this flag could be eliminated;
 +      * see comments in clientAccessCheck */

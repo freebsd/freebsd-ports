@@ -1,6 +1,6 @@
 --- xpfe/bootstrap/mozilla.in.orig	Fri Feb 20 19:13:46 2004
 +++ xpfe/bootstrap/mozilla.in	Tue Mar 22 22:40:43 2005
-@@ -29,139 +29,323 @@
+@@ -29,141 +29,324 @@
  ## the mozilla-bin binary to work.
  ##
  
@@ -208,7 +208,6 @@
  fi
  
 -script_args=""
--moreargs=""
 -debugging=0
 -MOZILLA_BIN="%MOZILLA-BIN%"
 -
@@ -239,7 +238,8 @@
 +moreargs=	# null
 +target=		# null
 +ALREADY_RUNNING="test"
- while [ $# -gt 0 ]
+ pass_arg_count=0
+ while [ $# -gt $pass_arg_count ]
  do
 -  case "$1" in
 -    -p | -pure)
@@ -256,8 +256,11 @@
 -      shift 2
 -      ;;
 -    *)
--      moreargs="$moreargs \"$1\""
--      shift 1
+-      # Move the unrecognized argument to the end of the list.
+-      arg="$1"
+-      shift
+-      set -- "$@" "$arg"
+-      pass_arg_count=`expr $pass_arg_count + 1`
 -      ;;
 -  esac
 +    if [ -n "${target}" ]; then
@@ -336,7 +339,6 @@
  done
  
 -export MRE_HOME
--eval "set -- $moreargs"
 +# test for a running copy of firefox
 +# seems this is not needed
 +#if [-n "${ALREADY_RUNNING}" ]; then

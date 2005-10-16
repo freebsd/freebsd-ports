@@ -1,7 +1,10 @@
+@comment $FreeBSD$
 sbin/cfagent
 sbin/cfdoc
 sbin/cfenvd
 sbin/cfenvgraph
+sbin/cfetool
+sbin/cfetoolgraph
 sbin/cfexecd
 sbin/cfkey
 sbin/cfrun
@@ -28,19 +31,18 @@ sbin/vicf
 %%EXAMPLESDIR%%/cfrun.hosts.example
 %%EXAMPLESDIR%%/cfservd.conf.example
 %%EXAMPLESDIR%%/update.conf.example
-%%DOCSDIR%%/cfengine-Anomalies.html
-%%DOCSDIR%%/cfengine-Reference.html
-%%DOCSDIR%%/cfengine-Tutorial.html
-%%DOCSDIR%%/cfengine-Anomalies.pdf
-%%DOCSDIR%%/cfengine-Reference.pdf
-%%DOCSDIR%%/cfengine-Tutorial.pdf
-%%DOCSDIR%%/cfengine-Anomalies.ps
-%%DOCSDIR%%/cfengine-Reference.ps
-%%DOCSDIR%%/cfengine-Tutorial.ps
-%%DATADIR%%/README
-%%DATADIR%%/ChangeLog
-%%DATADIR%%/INSTALL
-%%DATADIR%%/NEWS
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/cfengine-Anomalies.html
+%%PORTDOCS%%%%DOCSDIR%%/cfengine-Anomalies.pdf
+%%PORTDOCS%%%%DOCSDIR%%/cfengine-Anomalies.ps
+%%PORTDOCS%%%%DOCSDIR%%/cfengine-Reference.html
+%%PORTDOCS%%%%DOCSDIR%%/cfengine-Reference.pdf
+%%PORTDOCS%%%%DOCSDIR%%/cfengine-Reference.ps
+%%PORTDOCS%%%%DOCSDIR%%/cfengine-Tutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/cfengine-Tutorial.pdf
+%%PORTDOCS%%%%DOCSDIR%%/cfengine-Tutorial.ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%

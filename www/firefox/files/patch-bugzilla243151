@@ -1,0 +1,10 @@
+Bogus assertion, see	https://bugzilla.mozilla.org/show_bug.cgi?id=243151
+
+--- xpcom/threads/nsThread.cpp	Sun Oct  5 21:42:05 2003
++++ xpcom/threads/nsThread.cpp	Mon Aug  8 00:33:45 2005
+@@ -374,5 +374,4 @@
+         status = PR_NewThreadPrivateIndex(&nsThread::kIThreadSelfIndex, nsThread::Exit);
+         if (status != PR_SUCCESS) return NS_ERROR_FAILURE;
+-        NS_ASSERTION(nsThread::kIThreadSelfIndex != 0, "couldn't get thread private index");
+     }
+ 

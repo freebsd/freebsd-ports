@@ -1,12 +1,12 @@
---- dbus/dbus-sysdeps.c.orig	Thu Jun 16 01:51:46 2005
-+++ dbus/dbus-sysdeps.c	Sat Jul 16 02:55:41 2005
+--- dbus/dbus-sysdeps.c.orig	Wed Aug  3 13:42:56 2005
++++ dbus/dbus-sysdeps.c	Wed Aug 24 00:36:20 2005
 @@ -742,16 +742,16 @@ write_credentials_byte (int             
  {
    int bytes_written;
    char buf[1] = { '\0' };
 -#if defined(HAVE_CMSGCRED) && !defined(LOCAL_CREDS)
 -  struct {
-+#if defined(HAVE_CMSGCRED) && (!defined(LOCAL_CREDS) || defined(__FreeBSD__))
++#if defined(HAVE_CMSGCRED)
 +  union {
  	  struct cmsghdr hdr;
 -	  struct cmsgcred cred;
@@ -17,7 +17,7 @@
  #endif
  
 -#if defined(HAVE_CMSGCRED) && !defined(LOCAL_CREDS)
-+#if defined(HAVE_CMSGCRED) && (!defined(LOCAL_CREDS) || defined(__FreeBSD__))
++#if defined(HAVE_CMSGCRED)
    iov.iov_base = buf;
    iov.iov_len = 1;
  
@@ -40,7 +40,7 @@
   again:
  
 -#if defined(HAVE_CMSGCRED) && !defined(LOCAL_CREDS)
-+#if defined(HAVE_CMSGCRED) && (!defined(LOCAL_CREDS) || defined(__FreeBSD__))
++#if defined(HAVE_CMSGCRED)
    bytes_written = sendmsg (server_fd, &msg, 0);
  #else
    bytes_written = write (server_fd, buf, 1);
@@ -62,7 +62,7 @@
    _dbus_credentials_clear (credentials);
  
 -#if defined(LOCAL_CREDS) && defined(HAVE_CMSGCRED)
-+#if defined(LOCAL_CREDS) && defined(HAVE_CMSGCRED) && !defined(__FreeBSD__)
++#if defined(LOCAL_CREDS) && !defined(HAVE_CMSGCRED)
    /* Set the socket to receive credentials on the next message */
    {
      int on = 1;
@@ -81,7 +81,7 @@
      }
  
  #ifdef HAVE_CMSGCRED
--  if (cmsg->hdr.cmsg_len < sizeof (cmsg) || cmsg.hdr.cmsg_type != SCM_CREDS)
+-  if (cmsg.hdr.cmsg_len < sizeof (cmsg) || cmsg.hdr.cmsg_type != SCM_CREDS)
 +  if (cmsg.hdr.cmsg_len < CMSG_LEN (sizeof (struct cmsgcred))
 +		  || cmsg.hdr.cmsg_type != SCM_CREDS)
      {

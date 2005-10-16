@@ -1,6 +1,0 @@
-MD5 (dhcp-3.0.3.tar.gz) = f91416a0b8ed3fd0601688cf0b7df58f
-SIZE (dhcp-3.0.3.tar.gz) = 870240
-MD5 (dhcp-3.0.3-ldap-patch) = c0d51532696222f3258ff19e91a39ce4
-SIZE (dhcp-3.0.3-ldap-patch) = 153377
-MD5 (dhcp-3.0.3-dlq-patch) = 0e071945cc986d7ecdfd9b41fc4a102b
-SIZE (dhcp-3.0.3-dlq-patch) = 7655

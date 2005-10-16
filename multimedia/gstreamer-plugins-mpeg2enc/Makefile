@@ -6,9 +6,11 @@
 #
 
 CATEGORIES=	multimedia
-PORTREVISION=	2
+PORTREVISION=	1
 
 COMMENT=	Gstreamer mpeg encoder plugin
+
+BROKEN=		Does not compile
 
 GST_PLUGIN=	mpeg2enc
 

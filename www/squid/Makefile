@@ -62,11 +62,15 @@
 #     Tune the number of worker threads for the aufs object
 #    --with-coss-membuf-size
 #     COSS membuf size (default: 1048576 bytes)
+#    --with-maxfd=N
+#     Override the maximum number of filedescriptors. Useful if you
+#     build as another user who is not privileged to use the amount
+#     of filedescriptors the resulting binary is expected to support.
 #
 
 PORTNAME=	squid
-PORTVERSION=	2.5.10
-PORTREVISION=	4
+PORTVERSION=	2.5.11
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -75,18 +79,11 @@ MASTER_SITES=	\
 		ftp://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.5.STABLE10
+DISTNAME=	squid-2.5.STABLE11
 DIST_SUBDIR=	squid2.5
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
-PATCHFILES=	squid-2.5.STABLE10-content_length.patch \
-		squid-2.5.STABLE10-spanish.patch \
-		squid-2.5.STABLE10-internal_date.patch \
-		squid-2.5.STABLE10-chroot-2.patch \
-		squid-2.5.STABLE10-transparent-2.patch \
-		squid-2.5.STABLE10-redirect_flags.patch \
-		squid-2.5.STABLE10-cache_dir_change.patch \
-		squid-2.5.STABLE10-snmp_getnext.patch
+PATCHFILES=	squid-2.5.STABLE11-delaypools_truncated.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -279,10 +276,7 @@ CONFIGURE_ARGS+=	--enable-arp-acl
 .if defined(WITH_SQUID_PF)
 CONFIGURE_ARGS+=	--enable-pf-transparent
 .if ${OSVERSION} < 502106
-pf_includedir=	${LOCALBASE}/include/pf
-BUILD_DEPENDS+=	${pf_includedir}/net/pfvar.h:${PORTSDIR}/security/pf
-CFLAGS+=	-I${pf_includedir}
-EXTRA_PATCHES+=	${WRKDIR}/pf_from_ports.patch
+IGNORE=		pf available only in FreeBSD 5.3 and newer
 .endif
 .endif
 # IPFilter-headers are not installed on FreeBSD 4 since 4.7-RELEASE,
@@ -327,7 +321,7 @@ rc_state=	rcold
 
 SQUID_LANGUAGES?=	\
 	Bulgarian Catalan Czech Danish Dutch English Estonian Finnish      \
-	French German Hebrew Hungarian Italian Japanese Korean Lithuanian  \
+	French German Greek Hebrew Hungarian Italian Japanese Korean Lithuanian \
 	Polish Portuguese Romanian Russian-1251 Russian-koi8-r Serbian     \
 	Simplify_Chinese Slovak Spanish Swedish Traditional_Chinese Turkish
 SQUID_DEFAULT_LANG?=	English
@@ -349,15 +343,6 @@ PLIST_DIRS+=	etc/squid/errors/${d}
 PLIST_FILES+=	${error_files:S,^,etc/squid/errors/${d}/,}
 .endfor
 PLIST_DIRS+=	etc/squid/errors etc/squid squid/logs squid/cache squid
-
-pre-patch:
-# Check whether we need to create the extra patch that makes pf(4)
-# visible to squid's configure script:
-.if defined(pf_includedir)
-	@${SED} -e 's|%%PF_INCLUDEDIR%%|${pf_includedir}|g' \
-	    -e 's|%%PF_AC_INCLUDEPATH%%|${pf_includedir:S,/,_,g}|g' \
-	    ${PATCHDIR}/pf_from_ports.patch.in >${WRKDIR}/pf_from_ports.patch
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure

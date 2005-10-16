@@ -17,6 +17,8 @@ COMMENT=	Java Native XML Database
 
 RUN_DEPENDS=	${JAVA_HOME}/bin/java:${PORTSDIR}/java/jdk13
 
+BROKEN=		Unfetchable
+
 JAVA_HOME=	${LOCALBASE}/jdk1.3.1
 WRKSRC=		${WRKDIR}/dbXML-Core-${PORTVERSION}
 DBXML_HOME=	${PREFIX}/share/java/${PORTNAME}

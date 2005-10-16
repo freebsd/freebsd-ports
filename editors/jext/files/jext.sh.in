@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+JEXT_HOME="${JEXT_HOME:-"%%DATADIR%%"}"
+
+if [ "$1" = "--help" ] ; then
+	echo "Usage: jext [files]"
+	exit 0
+fi
+
+# Create user directory
+JEXT_USER_HOME="${HOME}/.jext"
+if [ ! -d "${JEXT_USER_HOME}" ] ; then
+	mkdir -p "${JEXT_USER_HOME}/xinsert"
+fi
+
+# Run 
+JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" \
+	${JAVA_OPTS} \
+	-Dpython.home="${JEXT_HOME}/lib" \
+	-classpath "${JEXT_HOME}/lib/jython.jar":"${JEXT_HOME}/lib/dawn.jar":"${JEXT_HOME}/lib/jext.jar" \
+	org.jext.Jext \
+	"$@"
