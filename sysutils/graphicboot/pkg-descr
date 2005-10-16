@@ -1,0 +1,8 @@
+graphicboot starts the machines local X Window and displays the messages
+echoed during boot up while the rc script is setting up the operating
+system.
+
+WWW: http://matt.sixxgate.com/
+
+- Matthew Holder
+sixxgate@hotmail.com

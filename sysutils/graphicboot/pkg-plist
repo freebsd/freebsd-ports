@@ -1,0 +1,11 @@
+bin/graphicboot
+@cwd /etc/Xboot
+Xserver
+Xresources
+xorg.conf
+Xsplash.jpg
+@cwd /
+@dirrm etc/Xboot
+@cwd /etc/rc.d
+startgraphicboot
+endgraphicboot
