@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	typo
-PORTVERSION=	2.0.6
+PORTVERSION=	2.5.6
 CATEGORIES=	www
-MASTER_SITES=	http://rubyforge.org/frs/download.php/4205/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/6171/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jw@innerewut.de
 COMMENT=	An absolutely minimal weblogging engine powered by rails
