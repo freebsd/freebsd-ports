@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.physics.purdue.edu/pub/pundits/ \
 DISTNAME=	xapply-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	csg@fedex.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An enhanced version of tee(1)
 
 BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0 \

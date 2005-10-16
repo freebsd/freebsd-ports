@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.physics.purdue.edu/pub/pundits/ \
 		http://archive.progeny.com/pundits/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	csg@fedex.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel Execution tool ala xargs/apply
 
 BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0 \
