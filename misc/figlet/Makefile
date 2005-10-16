@@ -5,6 +5,9 @@
 #
 # $FreeBSD$
 #
+#	NOTE that the figlet port is purposefully not upgraded to the 2.2.2
+#	version until we can determine if the 'Academic Free License 2.1'
+#	vs. the Artistic License is better for us.
 
 PORTNAME=	figlet
 PORTVERSION=	2.2.1
