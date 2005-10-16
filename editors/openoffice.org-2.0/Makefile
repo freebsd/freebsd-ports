@@ -199,6 +199,11 @@ post-install:
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-simpress
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-spadmin
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-swriter
+# python post-install script start
+# consult instsetoo_native/inc_openoffice/unix/shellscripts_pyuno.txt
+	@cd ${PREFIX}/${INSTALLATION_BASEDIR}/program ; ${LN} -s python-core-2.3.4 ${PREFIX}/${INSTALLATION_BASEDIR}/program/python-core; ${LN} -s python.sh ${PREFIX}/${INSTALLATION_BASEDIR}/program/python
+	${CHMOD} +x ${PREFIX}/${INSTALLATION_BASEDIR}/program/python-core-2.3.4/bin/python
+# python post-install script end
 	@${PRINTF} "bin/openoffice.org\n" > ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s bin -type f | ${GREP} ${EXECBASE} >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s bin -type l | ${GREP} ${EXECBASE} >> ${TMPPLIST}
