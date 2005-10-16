@@ -899,6 +899,10 @@ MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=-Bforcearchive
 MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=--whole-archive
 .endif
 
+# disable runtime SSE2 detection
+.if defined(WITHOUT_OPENSSL_SSE2)
+EXTRACONFIGURE+=	no-sse2
+.endif
 EXTRACONFIGURE+=	no-fips
 .if defined(NOSHARED)
 PLIST_SUB+=	SHARED="@comment "
