@@ -20,7 +20,8 @@ MAN1=		vrfy.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/vrfy
 
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKDIR}/vrfy ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIR}/${MAN1} ${PREFIX}/man/man1/
 	${GZIP_CMD} ${PREFIX}/man/man1/${MAN1}
 

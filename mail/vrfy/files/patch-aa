@@ -1,6 +1,23 @@
---- Makefile~	Tue Oct  7 20:40:40 1997
-+++ Makefile	Sun Sep 10 05:07:32 2000
-@@ -91,10 +91,10 @@
+--- Makefile.orig	Tue Oct  7 07:40:40 1997
++++ Makefile	Sun Oct 16 01:01:05 2005
+@@ -69,13 +69,11 @@
+ COPTS =
+ COPTS = -O
+ 
+-CFLAGS = $(COPTS) $(DEFS)
++CFLAGS ?= $(COPTS)
++CFLAGS += $(DEFS)
+ 
+ # Select your favorite compiler.
+-CC = /usr/ucb/cc			#if defined(solaris) && BSD
+-CC = /bin/cc -arch m68k -arch i386	#if defined(next)
+-CC = /bin/cc
+-CC = cc
++CC ?= cc
+ 
+ # ----------------------------------------------------------------------
+ # Linking definitions.
+@@ -91,10 +89,10 @@
  # With BIND 4.9.3 the getnet...() calls are in the resolver library.
  # ----------------------------------------------------------------------
  
