@@ -40,11 +40,15 @@ etc/horde/httpd.conf.ingo
 %%INGODIR%%/locale/es_ES/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/es_ES/help.xml
 %%INGODIR%%/locale/fi_FI/LC_MESSAGES/ingo.mo
+%%INGODIR%%/locale/fi_FI/help.xml
 %%INGODIR%%/locale/fr_FR/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/hu_HU/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/it_IT/LC_MESSAGES/ingo.mo
+%%INGODIR%%/locale/ko_KR/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/lt_LT/LC_MESSAGES/ingo.mo
+%%INGODIR%%/locale/lv_LV/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/lv_LV/help.xml
+%%INGODIR%%/locale/nb_NO/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/nl_NL/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/pl_PL/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/pt_BR/LC_MESSAGES/ingo.mo
@@ -60,7 +64,10 @@ etc/horde/httpd.conf.ingo
 %%INGODIR%%/po/hu_HU.po
 %%INGODIR%%/po/ingo.pot
 %%INGODIR%%/po/it_IT.po
+%%INGODIR%%/po/ko_KR.po
 %%INGODIR%%/po/lt_LT.po
+%%INGODIR%%/po/lv_LV.po
+%%INGODIR%%/po/nb_NO.po
 %%INGODIR%%/po/nl_NL.po
 %%INGODIR%%/po/pl_PL.po
 %%INGODIR%%/po/pt_BR.po
@@ -129,9 +136,14 @@ etc/horde/httpd.conf.ingo
 @dirrm %%INGODIR%%/locale/pl_PL
 @dirrm %%INGODIR%%/locale/nl_NL/LC_MESSAGES
 @dirrm %%INGODIR%%/locale/nl_NL
+@dirrm %%INGODIR%%/locale/nb_NO/LC_MESSAGES
+@dirrm %%INGODIR%%/locale/nb_NO
+@dirrm %%INGODIR%%/locale/lv_LV/LC_MESSAGES
 @dirrm %%INGODIR%%/locale/lv_LV
 @dirrm %%INGODIR%%/locale/lt_LT/LC_MESSAGES
 @dirrm %%INGODIR%%/locale/lt_LT
+@dirrm %%INGODIR%%/locale/ko_KR/LC_MESSAGES
+@dirrm %%INGODIR%%/locale/ko_KR
 @dirrm %%INGODIR%%/locale/it_IT/LC_MESSAGES
 @dirrm %%INGODIR%%/locale/it_IT
 @dirrm %%INGODIR%%/locale/hu_HU/LC_MESSAGES
