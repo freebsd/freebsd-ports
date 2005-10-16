@@ -1,0 +1,39 @@
+# Makefile for defining variables used by other Quake related ports.
+
+# Determine if the port is a Quake engine.
+
+Q1ENGINES=	quakeforge darkplaces fuhquake tenebrae
+
+.for f in ${Q1ENGINES}
+.   if ${PORTNAME} == ${f}
+ENGINE=		yes
+.   endif
+.endfor
+
+# Package name prefix.
+
+Q1PKGNAMEPREFIX=quake-
+
+.if !defined(ENGINE)
+PKGNAMEPREFIX?=	${Q1PKGNAMEPREFIX}
+.endif
+
+# Dependency to "games/quake-data".
+
+.if ${PORTNAME} != "data"
+RUN_DEPENDS+=	${Q1DIR}/id1/pak0.pak:${PORTSDIR}/games/quake-data
+.endif
+
+# Installation directories.
+
+Q1DIR=		${LOCALBASE}/share/quake
+
+.if defined(ENGINE) || ${PORTNAME} == "data"
+DATADIR?=	${Q1DIR}
+.else
+DATADIR?=	${Q1DIR}/${PORTNAME}
+.endif
+
+DOCSDIR?=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+
+PLIST_SUB+=	Q1DIR="${Q1DIR}"
