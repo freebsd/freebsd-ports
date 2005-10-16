@@ -8,7 +8,7 @@ of improvements:
     create and lookup named widgets in a type safe way.
   * Unicode support.
 
-WWW: http://gtk2hs.sourceforge.net/
+WWW: http://haskell.org/gtk2hs/
 
 -- Oliver Braun
 obraun@FreeBSD.org
