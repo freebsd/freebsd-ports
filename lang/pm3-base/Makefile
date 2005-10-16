@@ -7,7 +7,7 @@
 
 PORTNAME=	pm3-base
 PORTVERSION=	1.1.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=jdp/pm3
@@ -43,10 +43,6 @@ PROGS=		bin/m3build \
 SOVERSION=	7
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
 
 .if ${PORTOBJFORMAT} == "aout"
 TARGET=		FreeBSD2
