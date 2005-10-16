@@ -1,0 +1,44 @@
+# Makefile for defining variables used by other Quake III Arena related ports.
+
+# Package name prefix.
+
+Q3PKGNAMEPREFIX=quake3-
+
+.if ${PORTNAME} != "quake3"
+PKGNAMEPREFIX?=	${Q3PKGNAMEPREFIX}
+.endif
+
+# Dependency to "games/quake3-data".
+
+.if ${PORTNAME} != "data"
+RUN_DEPENDS+=	${Q3DIR}/baseq3/pak1.pk3:${PORTSDIR}/games/quake3-data
+.endif
+
+# Installation directories.
+
+Q3DIR=		${LOCALBASE}/share/quake3
+
+.if ${PORTNAME} == "data" || ${PORTNAME} == "quake3"
+DATADIR?=	${Q3DIR}
+.else
+DATADIR?=	${Q3DIR}/${PORTNAME}
+.endif
+
+DOCSDIR?=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+
+PLIST_SUB+=	Q3DIR="${Q3DIR:S/${PREFIX}\///}"
+
+# Convert "dos" text files to "unix".
+
+.if defined(USE_ZIP)
+EXTRACT_BEFORE_ARGS=	-aqo
+.else
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
+
+pre-patch:
+# remove trailing ^M
+	@${FIND} -E ${WRKSRC} -type f \
+		-iregex ".*\.(bat|cfg|gam|htm|html|inf|ini|lst|sc|scr|txt|url)" \
+		-exec ${REINPLACE_CMD} -e "s|`${ECHO_CMD} -e '\r'`$$||" {} \;
+.endif
