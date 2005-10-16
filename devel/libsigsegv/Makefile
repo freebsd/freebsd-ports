@@ -7,6 +7,7 @@
 
 PORTNAME=	libsigsegv
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libsigsegv
@@ -15,7 +16,9 @@ MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Handling page faults in user mode
 
 GNU_CONFIGURE=	yes
-ONLY_FOR_ARCHS=	i386
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 check: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check
