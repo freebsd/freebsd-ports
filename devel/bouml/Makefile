@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bouml
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.3
 CATEGORIES=	devel
 MASTER_SITES=	http://bouml.free.fr/
 DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
@@ -45,6 +45,7 @@ pre-configure:
 
 post-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
+	${CHMOD} -R ${SHAREMODE} ${DATADIR}/xmi
 	${FIND} ${DATADIR} -type f -perm 755 | ${XARGS} ${STRIP_CMD}
 .if !defined(NOPORTDOCS)
 	cd ${WRKDIR}/doc && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
