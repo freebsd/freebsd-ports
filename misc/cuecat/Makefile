@@ -42,7 +42,7 @@ do-install:
 	python -O -c "import barcode, cuecat"
 	${LN} -sf ${PYTHON_SITELIBDIR}/cuecat.py ${PREFIX}/bin/cuecat
 	${INSTALL_MAN} ${WRKSRC}/cuecat.1 ${PREFIX}/man/man1
-.if !defined(WITHOUT_X)
+.if !defined(WITHOUT_X11)
 	${INSTALL_SCRIPT} ${WRKSRC}/xcuecat.py ${PREFIX}/bin/xcuecat
 	${INSTALL_MAN} ${WRKSRC}/xcuecat.1 ${PREFIX}/man/man1
 .endif
