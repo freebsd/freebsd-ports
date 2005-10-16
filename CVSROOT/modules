@@ -13295,6 +13295,7 @@ xmolwt		ports/biology/xmolwt
 xmon		ports/x11/xmon
 xmorph		ports/graphics/xmorph
 xmotd		ports/x11/xmotd
+xmoto		ports/games/xmoto
 xmountains	ports/graphics/xmountains
 xmove		ports/x11/xmove
 xmp		ports/audio/xmp
