@@ -1,0 +1,8 @@
+bin/xmoto
+bin/xmoto-edit
+%%DATADIR%%/anims.dat
+%%DATADIR%%/sprites.dat
+%%DATADIR%%/editor.dat
+%%DATADIR%%/fonts.dat
+%%DATADIR%%/xmoto.bin
+@dirrm %%DATADIR%%

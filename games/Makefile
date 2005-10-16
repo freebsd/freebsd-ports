@@ -680,6 +680,7 @@
     SUBDIR += xminesweep
     SUBDIR += xmj
     SUBDIR += xmlink
+    SUBDIR += xmoto
     SUBDIR += xmris
     SUBDIR += xmulti
     SUBDIR += xneko
