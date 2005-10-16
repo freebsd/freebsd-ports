@@ -4188,6 +4188,7 @@ checksum: fetch check-checksum-algorithms
 			pattern="`${ECHO_CMD} $$file | ${SED} -e 's/\./\\\\./g'`"; \
 			\
 			ignored="true"; \
+			alreadymatched="false"; \
 			for alg in ${CHECKSUM_ALGORITHMS:U}; do \
 				ignore="false"; \
 				eval alg_executable=\$$$$alg; \
@@ -4201,13 +4202,14 @@ checksum: fetch check-checksum-algorithms
 				if [ $$ignore = "false" ]; then \
 					if [ -z "$$CKSUM" ]; then \
 						${ECHO_MSG} "=> No $$alg checksum for $$file recorded (expected IGNORE)"; \
-						OK="false"; \
+						OK="$$alreadymatched"; \
 					elif [ $$CKSUM != "IGNORE" ]; then \
 						${ECHO_MSG} "=> $$alg Checksum for $$file is not set to IGNORE in distinfo file even though"; \
 						${ECHO_MSG} "   the file is in the "'$$'"{IGNOREFILES} list."; \
 						OK="false"; \
 					else \
 						ignored="false"; \
+						alreadymatched="true"; \
 					fi; \
 				fi; \
 			done; \
