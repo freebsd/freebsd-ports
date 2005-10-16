@@ -1,0 +1,42 @@
+--- Makefile.orig	Sat Jan 31 08:05:51 2004
++++ Makefile	Fri Oct 14 20:53:22 2005
+@@ -1,14 +1,13 @@
+-CC = gcc
+ #OPT = -m486 -O2
+ #OPT = -mpentium -O6
+-OPT = -mcpu=k6 -march=k6 -O6
+-CFLAGS = $(OPT) -Wall -fPIC `gtk-config --cflags gthread`
+-LFLAGS = -shared -fPIC -L/usr/local/lib -lm -lstdc++ -lGL -lGLU -L/usr/X11R6/lib -lt1 -lSDL
+-LFLAGS2 =  -L/usr/local/lib -lm -lstdc++ -lGL -lGLU -L/usr/X11R6/lib -lpthread -lgtk -lgdk -lglut -lt1
++CFLAGS += -fPIC `gtk-config --cflags gthread` `${SDL_CONFIG} --cflags`
++LFLAGS = -shared -fPIC -L${LOCALBASE}/lib -lm -lstdc++ -lGL -lGLU -L${X11BASE}/lib -lt1 `${SDL_CONFIG} --libs`
++LFLAGS2 =  -L${LOCALBASE}/lib -lm -lstdc++ -lGL -lGLU -L${X11BASE}/lib -lgtk -lgdk -lglut -lt1
+ OBJ = plugin.o gl.o etoile.o readme.o parameters.o epic.o config.o signal.o t1font.o
+ 
+ INSTALL-DIR=`xmms-config --visualization-plugin-dir`
+ XMMS_DATADIR=`xmms-config --data-dir`
++DATADIR=${PREFIX}/share/dancingparticles
+ BIN=libdancingparticles2.so
+ all: $(BIN)
+ 
+@@ -33,14 +32,12 @@
+ 	rm -f *.o core *~
+ 
+ install: $(BIN)
+-	strip $(BIN)
+-	install  $(BIN) $(INSTALL-DIR) 
+-	rm -Rf /usr/local/share/dancingparticles
+-	mkdir /usr/local/share/dancingparticles
+-	install dance.epic /usr/local/share/dancingparticles/
+-	install dancingparticles.conf /usr/local/share/dancingparticles/
+-	install xmms.epic /usr/local/share/dancingparticles/
+-	install font.pfb /usr/local/share/dancingparticles/
++	$(BSD_INSTALL_PROGRAM) $(BIN) $(INSTALL-DIR)
++	mkdir $(DATADIR)
++	$(BSD_INSTALL_DATA) dance.epic $(DATADIR)
++	$(BSD_INSTALL_DATA) dancingparticles.conf $(DATADIR)
++	$(BSD_INSTALL_DATA) xmms.epic $(DATADIR)
++	$(BSD_INSTALL_DATA) font.pfb $(DATADIR)
+ 
+ 
+ plugin.o: plugin.cc etoile.h

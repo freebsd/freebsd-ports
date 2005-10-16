@@ -599,6 +599,7 @@
     SUBDIR += xmedcon
     SUBDIR += xmfract
     SUBDIR += xmms-blursk
+    SUBDIR += xmms-dancingparticles
     SUBDIR += xmms-dflowers
     SUBDIR += xmms-dscope
     SUBDIR += xmms-dspectogram
