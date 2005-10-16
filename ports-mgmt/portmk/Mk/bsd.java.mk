@@ -216,7 +216,11 @@ _JAVA_OS_native=	Native
 _JAVA_OS_linux=		Linux
 
 # Enforce preferred Java ports according to OS
+.		if ${ARCH} == "amd64"
+_JAVA_PREFERRED_PORTS+=	JAVA_PORT_NATIVE_BSDJAVA_JDK_1_5
+.		else
 _JAVA_PREFERRED_PORTS+=	JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4
+.		endif
 
 # List all JDK ports
 __JAVA_PORTS_ALL=	JAVA_PORT_NATIVE_BSDJAVA_JDK_1_5 \
