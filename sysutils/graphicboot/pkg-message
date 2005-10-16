@@ -1,0 +1,21 @@
+=========================================================
+WARNING: This port port will start X during the startup.
+Before adding the graphboot="YES" line to your rc.conf
+file please test the port by running it in multi-user
+mode.  If you need to make any changes to the xorg.conf
+file, please remember to leave the resolution at 640x480.
+
+Please not that if you are using XDM or another display
+manager for graphical logon, please edit its startup
+script by adding the line at the beginning:
+
+	echo _XGB_EGB
+
+This will cause the graphicboot to end before the
+display manager starts.
+
+To use graphicboot, simply add the line to your rc.conf
+file:
+
+	graphicboot="YES"
+=========================================================

@@ -205,6 +205,7 @@
     SUBDIR += gpkgdep
     SUBDIR += gpte
     SUBDIR += graft
+    SUBDIR += graphicboot
     SUBDIR += graveman
     SUBDIR += growspd
     SUBDIR += grub
