@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libdbi
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,9 +28,11 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/driver-guide
-	${INSTALL_DATA} ${WRKSRC}/doc/driver-guide/*.html ${DOCSDIR}/driver-guide
+	${INSTALL_DATA} ${WRKSRC}/doc/driver-guide/*.html \
+		${DOCSDIR}/driver-guide
 	@${MKDIR} ${DOCSDIR}/programmers-guide
-	${INSTALL_DATA} ${WRKSRC}/doc/programmers-guide/*.html ${DOCSDIR}/programmers-guide
+	${INSTALL_DATA} ${WRKSRC}/doc/programmers-guide/*.html \
+		${DOCSDIR}/programmers-guide
 .endif
 
 .include <bsd.port.mk>
