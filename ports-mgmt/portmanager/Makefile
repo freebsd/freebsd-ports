@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	portmanager
-PORTVERSION=	0.2.9
-PORTREVISION=	9
+PORTVERSION=	0.3.0
 #-----------------------------------------
 #for local use, remove before submitting PR
 CATEGORIES=		sysutils
@@ -49,28 +48,41 @@ CONFIGURE_ARGS=		--with-prefix=${PREFIX} 		\
 			--with-sharedir=/share/portmanager	\
 			--with-tempdir=/tmp
 
-#
-# In FreeBSD 6.0 dumps core when compiled WITHOUT debug symbols :(
-# so for a temp fix just making the WITH_DEBUG non optional.
-#
-#.if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--with-debug=yes
-#.endif
-
 INSTALLS_SHLIB=		yes
 USE_REINPLACE=		yes
 INSTALL_TARGET=		install info
 
-#pre-fetch:
-#.if !defined(WITH_DEBUG)
-#	@${ECHO}	"***********************************************************************"
-#	@${ECHO}	"* portmanager                                                         *"
-#	@${ECHO}	"***********************************************************************"
-#	@${ECHO}	"*                                                                     *"
-#	@${ECHO}	"* WITH_DEBUG=yes enables debug support and all compile warnings       *"
-#	@${ECHO}	"*                                                                     *"
-#	@${ECHO}	"***********************************************************************"
-#.endif
+# Get __FreeBSD_version
+.if !defined(OSVERSION)
+.if exists(/sbin/sysctl)
+OSVERSION!=	/sbin/sysctl -n kern.osreldate
+.else
+OSVERSION!=	/usr/sbin/sysctl -n kern.osreldate
+.endif
+.endif
+
+.if ${OSVERSION} >= 600000
+#
+# In FreeBSD 6.0 dumps core when compiled WITHOUT debug symbols
+# so for a temp fix just making the WITH_DEBUG non optional.
+#
+WITH_DEBUG=	YES
+.endif
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--with-debug=yes
+.endif
+
+pre-fetch:
+.if !defined(WITH_DEBUG)
+	@${ECHO}	"***********************************************************************"
+	@${ECHO}	"* portmanager                                                         *"
+	@${ECHO}	"***********************************************************************"
+	@${ECHO}	"*                                                                     *"
+	@${ECHO}	"* WITH_DEBUG=yes enables debug support and all compile warnings       *"
+	@${ECHO}	"*                                                                     *"
+	@${ECHO}	"***********************************************************************"
+.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e	\

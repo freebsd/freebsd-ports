@@ -12,9 +12,9 @@
 bin/portmanager
 etc/portmanager/pm-020.conf.SAMPLE
 include/libMG.h
-lib/libMG
-lib/libMG.1
-lib/libPMGR
-lib/libPMGR.1
+lib/libMG.so
+lib/libMG.so.1
+lib/libPMGR.so
+lib/libPMGR.so.1
 @unexec rmdir %D/etc/portmanager 2>/dev/null || true
 @unexec rmdir %D/share/portmanager 2>/dev/null || true
