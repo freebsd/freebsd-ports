@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.0.20
+PORTVERSION?=		3.0.20b
 PORTREVISION?=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
@@ -21,6 +21,8 @@ CONFLICTS?=		ja-samba-2.* ja-samba-3.* samba-2.* sharity-light-1.*
 
 USE_ICONV=		yes
 GNU_CONFIGURE=		yes
+#USE_AUTOHEADER_VER=	259
+#USE_AUTOCONF_VER=	259
 
 LATEST_LINK?=		${PKGNAMEPREFIX}${PORTNAME}3${PKGNAMESUFFIX}
 EXAMPLESDIR=		${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
@@ -296,7 +298,7 @@ post-patch:
 	@${RM} -rf ${WRKDIR}/${DISTNAME}/swat/lang
 	-@${MV} -f ${WRKDIR}/${DISTNAME}/docs/htmldocs/manpages-3 \
 	    ${WRKDIR}/${DISTNAME}/docs/htmldocs/manpages
-	@${RM} -f ${WRKDIR}/${DISTNAME}/docs/htmldocs/manpages/libsmbclient.8
+	@${RM} -f ${WRKDIR}/${DISTNAME}/docs/htmldocs/manpages/libsmbclient.8.html
 	@${FIND} ${WRKSRC} -name CVS -o -name .cvsignore | ${XARGS} ${RM}
 	@${FIND} ${WRKDIR}/${DISTNAME} -type d | ${XARGS} ${CHMOD} u+w,a+rx
 	@${FIND} ${WRKDIR}/${DISTNAME} -type f | ${XARGS} ${CHMOD} u+w,a+r

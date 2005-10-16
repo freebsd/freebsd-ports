@@ -379,7 +379,6 @@ share/swat/help/Samba3-HOWTO/winbind.html
 share/swat/help/manpages/editreg.1.html
 share/swat/help/manpages/findsmb.1.html
 share/swat/help/manpages/index.html
-share/swat/help/manpages/libsmbclient.8.html
 share/swat/help/manpages/lmhosts.5.html
 share/swat/help/manpages/log2pcap.1.html
 share/swat/help/manpages/mount.cifs.8.html
