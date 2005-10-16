@@ -1,0 +1,5 @@
+Quake II game source.
+
+This port installs the Quake II game source, together with BSD Makefiles, for
+building modifications. It can also install the Capture the Flag mod, Rogue
+and Xatrix game source.

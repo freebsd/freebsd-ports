@@ -467,6 +467,7 @@
     SUBDIR += quake-dpmod
     SUBDIR += quake-reaper
     SUBDIR += quake-source
+    SUBDIR += quake2-source
     SUBDIR += quake2forge
     SUBDIR += quake2lnx
     SUBDIR += quakeforge
