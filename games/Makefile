@@ -581,6 +581,7 @@
     SUBDIR += vectoroids
     SUBDIR += virt
     SUBDIR += viruskiller
+    SUBDIR += volleyball
     SUBDIR += vor
     SUBDIR += wanderer
     SUBDIR += wargus

@@ -1,0 +1,8 @@
+bin/volleyball
+%%DATADIR%%/LICENSE-KIND.FILES
+%%DATADIR%%/fondo.bmp
+%%DATADIR%%/fuente.bmp
+%%DATADIR%%/pelota.bmp
+%%DATADIR%%/personaje_1.bmp
+%%DATADIR%%/personaje_2.bmp
+@dirrm %%DATADIR%%
