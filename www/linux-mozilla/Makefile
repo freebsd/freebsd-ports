@@ -81,7 +81,7 @@ do-configure:
 	lib/linux-mozilla/plugins lib/linux-netscape*/plugins \
 	lib/linux-flashplugin6 \
 	linux-blackdown-jdk1.3.1/jre/plugin/i386/mozilla \
-	linux-blackdown-jdk1.4.1/jre/plugin/i386/mozilla
+	linux-blackdown-jdk1.4.2/jre/plugin/i386/mozilla
 	${ECHO_CMD} -n "${FIND} ${LOCALBASE}/${ii}/*" \
 		>> ${WRKDIR}/linkfarm
 	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null" \
