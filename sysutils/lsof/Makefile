@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	lsof
-PORTVERSION=	4.76.1
+PORTVERSION=	4.76.1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/NEW/ \
