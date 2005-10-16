@@ -1,0 +1,8 @@
+S.C.O.U.R.G.E. is a rogue-like game in the fine tradition of NetHack
+and Moria It sports a graphical front-end, similar to glHack or the
+Falcon's eye. I tried to design the 3D UI as a best of both worlds
+from old to new: It lets you rotate the view, zoom in/out, view
+special effects, etc. On the other hand I've always liked the
+old-school isometric games like Exult or Woodward.
+
+WWW:	http://scourge.sourceforge.net/
