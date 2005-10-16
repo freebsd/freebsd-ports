@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.enderunix.org/voipong/
 
-MAINTAINER=	siseci@enderunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Detect Voice Over IP calls and dump them to separate wave files
 
 USE_REINPLACE=	yes
