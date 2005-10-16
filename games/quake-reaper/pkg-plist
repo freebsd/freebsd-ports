@@ -1,0 +1,8 @@
+%%PORTDOCS%%%%DOCSDIR%%/b08chg.txt
+%%PORTDOCS%%%%DOCSDIR%%/dedserv.txt
+%%PORTDOCS%%%%DOCSDIR%%/reaprb80.txt
+%%PORTDOCS%%%%DOCSDIR%%/skinspec.txt
+%%DATADIR%%/autoexec.cfg
+%%DATADIR%%/progs.dat
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
