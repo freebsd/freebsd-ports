@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=${PORTNAME}
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Perl Compatible Regular Expressions library
 
+CONFLICTS?=	pcre-utf8-[0-9]*
+
 USE_BZIP2=	yes
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
