@@ -20,6 +20,7 @@ USE_X_PREFIX=	yes
 USE_GL=	yes
 USE_SDL=	sdl mixer net
 USE_GMAKE=	yes
+USE_GCC=	3.3+
 GNU_CONFIGURE=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
