@@ -20,6 +20,7 @@ share/gnome/pixmaps/sweep.png
 share/gnome/sweep/sweep_logo.ppm
 share/locale/de/LC_MESSAGES/sweep.mo
 share/locale/el/LC_MESSAGES/sweep.mo
+share/locale/en_AU/LC_MESSAGES/sweep.mo
 share/locale/es_ES/LC_MESSAGES/sweep.mo
 share/locale/fr/LC_MESSAGES/sweep.mo
 share/locale/hu/LC_MESSAGES/sweep.mo

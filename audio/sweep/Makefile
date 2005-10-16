@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sweep
-PORTVERSION=	0.8.3
-PORTREVISION=	2
+PORTVERSION=	0.8.4
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,13 +18,12 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		speex.3:${PORTSDIR}/audio/speex \
-		mad.2:${PORTSDIR}/audio/mad \
-		tdb.1:${PORTSDIR}/databases/tdb
+		mad.2:${PORTSDIR}/audio/mad
 
 USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gnomeprefix gnometarget gtk12
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
-USE_GNOME=	gnomeprefix gnomehier gnomehack gnometarget gtk12
+USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
