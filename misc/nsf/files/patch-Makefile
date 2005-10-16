@@ -1,0 +1,16 @@
+--- Makefile.orig	Sun Oct 16 01:08:35 2005
++++ Makefile	Sun Oct 16 01:08:50 2005
+@@ -1,10 +1,11 @@
+-CFLAGS = -O #-DHPUX
++CFLAGS ?= -O #-DHPUX
++CC ?= cc
+ LIBS = -lncurses	#if HP-UX, -lcurses
+ OBJS = nsf.o iloop.o
+ EXE = nsf
+ LOCAL_BIN = /usr/local/bin
+ $(EXE):	$(OBJS)
+-	cc $(CFLAGS) -o $@ $(OBJS) $(LIBS)
++	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LIBS)
+ $(OBJS):	nsf.h
+ install:	$(EXE)
+ 	strip $(EXE)
