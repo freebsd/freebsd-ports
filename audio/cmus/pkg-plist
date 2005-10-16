@@ -9,3 +9,9 @@ lib/cmus/ip/wav.so
 lib/cmus/op/oss.so
 %%DATADIR%%/doc/cmus.html
 %%DATADIR%%/example/cmus-status-display
+@dirrm %%DATADIR%%/example
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%
+@dirrm lib/cmus/op
+@dirrm lib/cmus/ip
+@dirrm lib/cmus
