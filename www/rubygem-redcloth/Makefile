@@ -6,6 +6,7 @@
 
 PORTNAME=	redcloth
 PORTVERSION=	3.0.3
+DISTNAME=	RedCloth-${PORTVERSION}
 CATEGORIES=	www ruby
 MASTER_SITES=	http://rubyforge.org/frs/download.php/2898/
 
