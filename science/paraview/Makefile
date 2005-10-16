@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	paraview
-PORTVERSION=	2.0.2
+PORTVERSION=	2.2.1
 CATEGORIES=	science graphics
-MASTER_SITES=	http://www.paraview.org/files/v2.0/
+MASTER_SITES=	http://www.paraview.org/files/v2.2/
 
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	ParaView is a powerful scientific data visualization application
@@ -27,6 +27,8 @@ do-configure:
 		-DCMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
 		-DCMAKE_C_COMPILER=${CC} \
 		-DCMAKE_CXX_COMPILER=${CXX} \
+		-DCMAKE_C_FLAGS="${CFLAGS} -I${X11BASE}/include" \
+		-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${X11BASE}/include" \
 		-DPARAVIEW_USE_SYSTEM_HDF5=1
 
 .include <bsd.port.mk>
