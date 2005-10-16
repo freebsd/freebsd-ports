@@ -1647,3 +1647,4 @@ games/kxl|devel/kxl|2005-10-12|accurate category
 devel/libpreps-devel||2005-10-13|obsolete
 devel/libpreps|devel/prepstools|2005-10-13|project was renamed
 games/q3-paks|games/quake3-data|2005-10-16|sync name with other data ports
+games/linux-q3ademo|games/linux-quake3-demo|2005-10-16|sync name with other Quake ports

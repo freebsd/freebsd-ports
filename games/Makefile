@@ -321,7 +321,7 @@
     SUBDIR += linux-enemyterritory-tce
     SUBDIR += linux-nwnclient
     SUBDIR += linux-nwserver
-    SUBDIR += linux-q3ademo
+    SUBDIR += linux-quake3-demo
     SUBDIR += linux-spheresofchaos-demo
     SUBDIR += linux-steam
     SUBDIR += linux-ut2003-demo
