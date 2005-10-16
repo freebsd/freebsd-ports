@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	siege
-PORTVERSION=	2.61
+PORTVERSION=	2.63
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://sid.joedog.org/pub/siege/
 
