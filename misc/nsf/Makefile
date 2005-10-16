@@ -20,7 +20,8 @@ MANCOMPRESSED=	yes
 PLIST_FILES=	bin/nsf
 ALL_TARGET=
 
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKDIR}/nsf ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIR}/${MAN1} ${PREFIX}/man/man1/
 	${GZIP_CMD} ${PREFIX}/man/man1/${MAN1}
 
