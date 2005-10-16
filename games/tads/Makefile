@@ -16,4 +16,13 @@ COMMENT=	TADS compiler/interpreter for interactive fiction
 
 WRKSRC=		${WRKDIR}/tads-3.0.8/tads2
 
+do-install:
+	${MKDIR} ${PREFIX}/share/tads2
+.for i in tadsc tadsr tdb
+	${INSTALL_PROGRAM} ${WRKSRC}/$i ${PREFIX}/bin
+.endfor
+.for i in adv.t std.t gameinfo.t
+	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/tads2
+.endfor
+
 .include <bsd.port.mk>
