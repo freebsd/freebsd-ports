@@ -30,15 +30,20 @@ SCRIPTS=	ldapdns-conf ldapaxfr-conf domainname.sh
 DOCS=		AUTHORS CHANGELOG FAQ INSTALL README README.[a-s]*
 
 do-install:
-	cd ${WRKSRC} && \
-	${INSTALL_PROGRAM} ${PROGRAMS} ${PREFIX}/bin && \
-	${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin
+.for i in ${PROGRAMS}
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin
+.endfor
+.for i in ${SCRIPTS}
+	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${PREFIX}/bin
+.endfor
 	@${MKDIR} ${EXAMPLESDIR}/admin
 	${INSTALL_DATA} ${WRKSRC}/sample/* ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/admin/* ${EXAMPLESDIR}/admin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.for i in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
