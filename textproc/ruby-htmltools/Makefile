@@ -10,7 +10,7 @@ PORTVERSION=	1.09
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://rubyforge.org/frs/download.php/1340/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	ruby-${PORTNAME}
+DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	alecn2002@yandex.ru
@@ -22,6 +22,7 @@ RUBY_SETUP=	install.rb
 CONFIGURE_ARGS=		--prefix=${PREFIX}
 RUBY_INSTALL_ARGS=	--prefix=${PREFIX}
 NOHARM_ARGS=	--no-harm
+WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
 
 install-noharm:
 	@${ECHO_MSG} "===>  Running ${RUBY_SETUP} to NOHARM-install (Just output, do nothing)"
