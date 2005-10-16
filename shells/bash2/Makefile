@@ -18,10 +18,10 @@ DISTFILES=	bash-${PORTVERSION:C/\....$//}.tar.gz
 DISTFILES+=	bash-doc-${PORTVERSION:C/\....$//}.tar.gz
 .endif
 
-PATCH_SITES=	${MASTER_SITE_GNU} \
+PATCH_SITES=	${MASTER_SITE_GNU:S/$/:gnu/} \
 		ftp://ftp.cwru.edu/pub/bash/bash-2.05b-patches/ \
-		${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	bash/bash-2.05b-patches obrien
+		${MASTER_SITE_LOCAL:S/$/:local/}
+PATCH_SITE_SUBDIR=	bash/bash-2.05b-patches/:gnu obrien/:local
 PATCHFILES=	bash205b-001 bash205b-002 bash205b-003 bash205b-004 \
 		bash205b-005 bash205b-006 bash205b-007
 #		msg00029.txt msg00031.txt msg00030.txt
