@@ -16,7 +16,8 @@ DISTNAME=	scim-tables-${PORTVERSION}
 MAINTAINER=	gaoj@cpsc.ucalgary.ca
 COMMENT=	SCIM table based input method engine
 
-LIB_DEPENDS=	scim-1.0.8:${PORTSDIR}/textproc/scim
+BUILD_DEPENDS=  scim:${PORTSDIR}/textproc/scim
+RUN_DEPENDS=    ${BUILD_DEPENDS}
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
