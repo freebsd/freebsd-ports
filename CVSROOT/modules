@@ -2173,6 +2173,7 @@ eyeclock	ports/x11-clocks/eyeclock
 ez-ipupdate	ports/dns/ez-ipupdate
 ezbounce	ports/irc/ezbounce
 ezfm		ports/x11-fm/ezfm
+ezjail		ports/sysutils/ezjail
 ezload		ports/misc/ezload
 ezm3		ports/lang/ezm3
 ezmlm		ports/mail/ezmlm
