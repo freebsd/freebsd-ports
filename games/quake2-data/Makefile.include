@@ -1,0 +1,39 @@
+# Makefile for defining variables used by other Quake II related ports.
+
+# Determine if the port is a Quake II engine.
+
+Q2ENGINES=	quake2forge quake2lnx
+
+.for f in ${Q2ENGINES}
+.   if ${PORTNAME} == ${f}
+ENGINE=		yes
+.   endif
+.endfor
+
+# Package name prefix.
+
+Q2PKGNAMEPREFIX=quake2-
+
+.if !defined(ENGINE)
+PKGNAMEPREFIX?=	${Q2PKGNAMEPREFIX}
+.endif
+
+# Dependency to "games/quake2-data".
+
+.if ${PORTNAME} != "data"
+RUN_DEPENDS+=	${Q2DIR}:${PORTSDIR}/games/quake2-data
+.endif
+
+# Installation directories.
+
+Q2DIR=		${LOCALBASE}/share/quake2
+
+.if defined(ENGINE) || ${PORTNAME} == "data"
+DATADIR?=	${Q2DIR}
+.else
+DATADIR?=	${Q2DIR}/${PORTNAME}
+.endif
+
+DOCSDIR?=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+
+PLIST_SUB+=	Q2DIR="${Q2DIR:S/${PREFIX}\///}"

@@ -1,0 +1,17 @@
+====================================================================
+
+To complete the installation of this port you need to copy the file
+"baseq2/pak0.pak" from the original Quake II distribution to
+"%%DATADIR%%/baseq2".
+
+If you have the "Ground Zero" (Rogue) mission pack copy the file
+"rogue/pak0.pak" and the directory "rogue/video" from the original
+Quake II: Ground Zero distribution to
+"%%DATADIR%%/rogue".
+
+If you have "The Reckoning" (Xatrix) mission pack copy the file
+"xatrix/pak0.pak" and the directory "xatrix/video" from the original
+Quake II: The Reckoning distribution to
+"%%DATADIR%%/xatrix".
+
+====================================================================
