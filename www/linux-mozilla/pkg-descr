@@ -4,7 +4,7 @@ of using this port, another way to run plugins which are only
 available as Linux binaries is to install the linuxpluginwrapper
 port.
 
-If you find a Java plugin which works with this port, please tell
-the maintainer.
+This port works with the Java plugin from the java/linux-blackdown-jdk14
+port (and perhaps with others).
 
 WWW:  http://mozilla.org/products/mozilla1.x
