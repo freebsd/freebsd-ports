@@ -1,0 +1,16 @@
+%%DATADIR%%/baseq3/pak1.pk3
+%%DATADIR%%/baseq3/pak2.pk3
+%%DATADIR%%/baseq3/pak3.pk3
+%%DATADIR%%/baseq3/pak4.pk3
+%%DATADIR%%/baseq3/pak5.pk3
+%%DATADIR%%/baseq3/pak6.pk3
+%%DATADIR%%/baseq3/pak7.pk3
+%%DATADIR%%/baseq3/pak8.pk3
+%%TEAMARENA%%%%DATADIR%%/missionpack/pak1.pk3
+%%TEAMARENA%%%%DATADIR%%/missionpack/pak2.pk3
+%%TEAMARENA%%%%DATADIR%%/missionpack/pak3.pk3
+share/pixmaps/quake3.xpm
+@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+%%TEAMARENA%%@unexec rmdir %D/%%DATADIR%%/missionpack 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%%/baseq3 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%% >/dev/null 2>&1 || echo "If you are permanently removing this port, you should remove any configuration files, data files, and mods left in %D/%%DATADIR%%." | fmt
