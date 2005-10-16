@@ -463,6 +463,7 @@
     SUBDIR += qnetwalk
     SUBDIR += qonk
     SUBDIR += qstat
+    SUBDIR += quake-data
     SUBDIR += quake2forge
     SUBDIR += quake2lnx
     SUBDIR += quakeforge
