@@ -23,7 +23,7 @@ PLIST_FILES=	bin/vda2fbd
 post-build:
 	cd ${WRKSRC}/../doc && ${GZIP_CMD} -c model.ps > model.ps.gz
 
-post-install:
+do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vda2fbd ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
