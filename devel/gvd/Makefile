@@ -9,7 +9,6 @@ PORTNAME=		gvd
 PORTVERSION=		1.2.5
 PORTREVISION=		1
 CATEGORIES=		devel
-MASTER_SITES=		http://libre.act-europe.fr/gvd/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=		.tgz
 
@@ -19,6 +18,10 @@ COMMENT=		GNU Visual Debugger, a graphical front-end to gdb and jdb
 BUILD_DEPENDS=		adagcc:${PORTSDIR}/lang/gnat \
 			tex:${PORTSDIR}/print/teTeX
 LIB_DEPENDS=		gtkada.12:${PORTSDIR}/x11-toolkits/gtkada
+
+DEPRECATED=		GVD is now integrated as part of GPS, the GNAT Programming System. \
+			No further releases of GVD stand alone will be made.
+EXPIRATION_DATE=	2005-12-01
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
