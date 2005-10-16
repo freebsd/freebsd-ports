@@ -34,6 +34,10 @@ include/X11/pixmaps/computer.xpm
 include/X11/pixmaps/keyboard.xpm
 include/X11/pixmaps/monitor.xpm
 include/X11/pixmaps/mouse.xpm
+include/X11/fonts/bdfint.h
+include/X11/fonts/pcf.h
+include/X11/misc.h
+include/X11/os.h
 lib/X11/Cards
 lib/X11/Options
 lib/X11/app-defaults/XOrgCfg
@@ -164,9 +168,8 @@ lib/modules/libcfb.so
 lib/modules/libcfb16.so
 lib/modules/libcfb24.so
 lib/modules/libcfb32.so
-lib/modules/libcw.so
-lib/modules/libdamage.so
 lib/modules/libddc.so
+lib/modules/libexa.so
 lib/modules/libfb.so
 lib/modules/libi2c.so
 lib/modules/libint10.so
