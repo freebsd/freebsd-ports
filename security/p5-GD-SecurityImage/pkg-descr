@@ -1,0 +1,8 @@
+This module gives you a basic interface to create CAPTCHAs (Completely
+Automated Public Turing Test to Tell Computers and Humans Apart) also known
+as "Security Images".
+
+The final output is the actual graphic data, the mime type of the graphic and
+the created random string.
+
+WWW: http://search.cpan.org/dist/GD-SecurityImage/
