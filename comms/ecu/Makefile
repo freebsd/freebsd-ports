@@ -10,7 +10,7 @@ PORTVERSION=    4.30
 CATEGORIES=	comms
 MASTER_SITES=  ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/Communications/
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extended Call Utility
 
 USE_REINPLACE=	yes
