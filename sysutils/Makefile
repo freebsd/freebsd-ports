@@ -138,6 +138,7 @@
     SUBDIR += etcmerge
     SUBDIR += eventwatcher
     SUBDIR += extipl
+    SUBDIR += ezjail
     SUBDIR += fanout
     SUBDIR += fastest_cvsup
     SUBDIR += fatback

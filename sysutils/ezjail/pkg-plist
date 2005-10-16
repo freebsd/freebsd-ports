@@ -1,0 +1,7 @@
+etc/rc.d/ezjail.sh
+bin/ezjail-admin
+@dirrm etc/ezjail
+
+@unexec if cmp -s %D/etc/ezjail.conf.sample %D/etc/ezjail.conf; then rm -f %D/etc/ezjail.conf; fi
+etc/ezjail.conf.sample
+@exec if [ ! -f %D/etc/ezjail.conf ] ; then cp -p %D/%F %B/ezjail.conf; fi
