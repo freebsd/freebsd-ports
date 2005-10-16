@@ -39,12 +39,14 @@ etc/horde/httpd.conf.chora
 %%CHORADIR%%/locale/es_ES/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/es_ES/help.xml
 %%CHORADIR%%/locale/fi_FI/LC_MESSAGES/chora.mo
+%%CHORADIR%%/locale/fi_FI/help.xml
 %%CHORADIR%%/locale/fr_FR/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/nb_NO/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/nl_NL/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/pl_PL/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/pt_BR/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/ro_RO/LC_MESSAGES/chora.mo
+%%CHORADIR%%/locale/ru_RU/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/sk_SK/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/sv_SE/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/zh_CN/LC_MESSAGES/chora.mo
@@ -63,6 +65,7 @@ etc/horde/httpd.conf.chora
 %%CHORADIR%%/po/pl_PL.po
 %%CHORADIR%%/po/pt_BR.po
 %%CHORADIR%%/po/ro_RO.po
+%%CHORADIR%%/po/ru_RU.po
 %%CHORADIR%%/po/sk_SK.po
 %%CHORADIR%%/po/sv_SE.po
 %%CHORADIR%%/po/zh_CN.po
@@ -133,6 +136,8 @@ etc/horde/httpd.conf.chora
 @dirrm %%CHORADIR%%/locale/sv_SE
 @dirrm %%CHORADIR%%/locale/sk_SK/LC_MESSAGES
 @dirrm %%CHORADIR%%/locale/sk_SK
+@dirrm %%CHORADIR%%/locale/ru_RU/LC_MESSAGES
+@dirrm %%CHORADIR%%/locale/ru_RU
 @dirrm %%CHORADIR%%/locale/ro_RO/LC_MESSAGES
 @dirrm %%CHORADIR%%/locale/ro_RO
 @dirrm %%CHORADIR%%/locale/pt_BR/LC_MESSAGES
