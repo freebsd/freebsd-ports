@@ -335,6 +335,7 @@
     SUBDIR += p5-File-Scan
     SUBDIR += p5-Filter-CBC
     SUBDIR += p5-Filter-Crypto
+    SUBDIR += p5-GD-SecurityImage
     SUBDIR += p5-GnuPG-Interface
     SUBDIR += p5-IO-Socket-SSL
     SUBDIR += p5-MD5
