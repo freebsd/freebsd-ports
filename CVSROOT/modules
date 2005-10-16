@@ -12521,6 +12521,7 @@ vncrypt		ports/security/vncrypt
 vobcopy		ports/sysutils/vobcopy
 vodmr		ports/mail/vodmr
 voipong		ports/audio/voipong
+volleyball	ports/games/volleyball
 voltcraft304	ports/misc/voltcraft304
 vomit		ports/net/vomit
 vor		ports/games/vor
