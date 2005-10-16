@@ -1,0 +1,11 @@
+# Makefile for dependency to quake-source.
+
+PREFIX=		${LOCALBASE}
+
+Q1SRCDIR=	${PREFIX}/share/quake-source
+
+.if ${PORTNAME} == "source"
+DATADIR=	${Q1SRCDIR}
+.else
+RUN_DEPENDS+=	${Q1SRCDIR}/v101qc/progs.src:${PORTSDIR}/games/quake-source
+.endif

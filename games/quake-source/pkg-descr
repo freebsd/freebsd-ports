@@ -1,0 +1,6 @@
+Quake and QuakeWorld sources.
+
+This port installs the Quake (and optionally QuakeWorld) game sources (in
+QuakeC) to allow the development of Quake mods.
+
+Note that to compile it you need a QuakeC compiler (there are many in ports).
