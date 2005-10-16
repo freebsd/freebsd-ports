@@ -14,8 +14,14 @@ MASTER_SITES=	http://morettoni.net/bsd/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A dns notify sender written in C
 
+USE_REINPLACE=	yes
+
 PLIST_FILES=	bin/zonenotify
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
+		${WRKSRC}/Makefile
 
 do-build:
 	${CC} -o ${WRKSRC}/${PORTNAME} ${CFLAGS} ${WRKSRC}/zonenotify.c
