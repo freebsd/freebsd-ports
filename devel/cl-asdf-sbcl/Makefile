@@ -6,7 +6,7 @@
 
 PORTNAME=	asdf
 PORTVERSION=	2003.05.16
-CATEGORIES=	devel
+CATEGORIES=	devel lisp
 MASTER_SITES=	http://www.henrik-motakef.de/freebsd-distfiles/asdf/
 PKGNAMEPREFIX=	cl-
 PKGNAMESUFFIX=	-sbcl

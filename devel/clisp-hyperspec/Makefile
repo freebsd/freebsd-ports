@@ -7,7 +7,7 @@
 
 PORTNAME=	clisp-hyperspec
 PORTVERSION=	7.0
-CATEGORIES=	devel
+CATEGORIES=	devel lisp
 MASTER_SITES=	ftp://ftp.lispworks.com/pub/software_tools/reference/
 DISTNAME=	HyperSpec-7-0
 

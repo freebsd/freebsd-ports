@@ -6,7 +6,7 @@
 
 PORTNAME=		port
 PORTVERSION=		2002.10.02.1
-CATEGORIES=		devel
+CATEGORIES=		devel lisp
 MASTER_SITES=		ftp://ftp.linux.org.uk/pub/lisp/experimental/cclan/ \
 			ftp://ftp.ntnu.no/pub/lisp/cclan/ \
 			ftp://www.aarg.net/pub/cclan/ \

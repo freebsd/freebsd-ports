@@ -6,7 +6,7 @@
 
 PORTNAME=	cmucl-extra
 PORTVERSION=	19a
-CATEGORIES=	lang
+CATEGORIES=	lang lisp
 MASTER_SITES=	ftp://ftp.common-lisp.net/pub/project/cmucl/release/19a/ \
 		http://www.pmsf.de/pub/cmucl/release/19a/ \
 		ftp://ftp.averillpark.net/cmucl/release/19a/ \
