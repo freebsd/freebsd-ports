@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=nagios
 DISTNAME=	nagios-2.0b4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jarrod@netleader.com.au
 COMMENT=	Extremely powerful network monitoring system
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd

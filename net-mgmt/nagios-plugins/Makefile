@@ -13,7 +13,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	nagiosplug
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jarrod@netleader.com.au
 COMMENT=	Plugins for nagios
 
 OPTIONS=	QSTAT "Game server query support" off \
