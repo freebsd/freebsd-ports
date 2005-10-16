@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-anthy
 PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=scim-imengine/16945
@@ -17,7 +17,8 @@ COMMENT=	SCIM IMEngine module using Anthy
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 LIB_DEPENDS=	anthy.1:${PORTSDIR}/japanese/anthy
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS} \
+		kasumi:${PORTSDIR}/japanese/kasumi
 
 USE_GNOME=	lthack
 USE_X_PREFIX=	yes
