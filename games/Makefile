@@ -446,7 +446,6 @@
     SUBDIR += pysol-music
     SUBDIR += pythoong
     SUBDIR += q15
-    SUBDIR += q3-paks
     SUBDIR += q3server
     SUBDIR += q3server-excessive
     SUBDIR += q3server-freezetag
@@ -470,6 +469,7 @@
     SUBDIR += quake2-source
     SUBDIR += quake2forge
     SUBDIR += quake2lnx
+    SUBDIR += quake3-data
     SUBDIR += quakeforge
     SUBDIR += quit
     SUBDIR += qwdtools
