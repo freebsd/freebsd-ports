@@ -15,7 +15,9 @@ COMMENT=	A point-to-point bandwith measurement tool
 
 MAN8=		bing.8
 
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/bing ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/bing.8 ${MANPREFIX}/man/man8
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
