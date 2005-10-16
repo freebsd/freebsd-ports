@@ -464,6 +464,7 @@
     SUBDIR += qonk
     SUBDIR += qstat
     SUBDIR += quake-data
+    SUBDIR += quake-reaper
     SUBDIR += quake2forge
     SUBDIR += quake2lnx
     SUBDIR += quakeforge
