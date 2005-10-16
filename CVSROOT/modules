@@ -10418,7 +10418,6 @@ q		ports/lang/q
 q-audio		ports/audio/q-audio
 q-graph		ports/graphics/q-graph
 q15		ports/games/q15
-q3-paks		ports/games/q3-paks
 q3server	ports/games/q3server
 q3server-excessive	ports/games/q3server-excessive
 q3server-freezetag	ports/games/q3server-freezetag
@@ -10529,6 +10528,7 @@ quack		ports/lang/quack
 quagga		ports/net/quagga
 quake2forge	ports/games/quake2forge
 quake2lnx	ports/games/quake2lnx
+quake3-data	ports/games/quake3-data
 quakeforge	ports/games/quakeforge
 quantlib	ports/finance/quantlib
 quark		ports/multimedia/quark
