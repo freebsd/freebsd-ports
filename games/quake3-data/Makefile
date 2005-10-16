@@ -1,49 +1,56 @@
-# New ports collection makefile for:    Quake 3 paks
+# New ports collection makefile for:	Quake 3 paks
 # Date created:				1st March 2003
 # Whom:					nik@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-PORTNAME=	q3-paks
-PORTVERSION=	1.0
-CATEGORIES=	games linux
-MASTER_SITES=	#
-DISTFILES=	pak0.pk3
-DIST_SUBDIR=	q3-paks
-IGNOREFILES=	${ALLFILES}
+PORTNAME=	data
+DISTVERSION=	1.32b-3
+CATEGORIES=	games
+MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/quake3/linux/
+DISTNAME=	linuxq3apoint-${DISTVERSION}.x86
+EXTRACT_SUFX=	.run
 
 MAINTAINER=	alejandro@varnet.biz
-COMMENT=	Quake 3 for Linux .pk3 files
+COMMENT=	Quake III Arena data files
 
-# Make this a BUILD_ rather than a RUN_DEPEND so that it can create the
-# directory hierarchy for us.
-RUN_DEPENDS=	${LINUXBASE}/usr/games/quake3/q3ded:${PORTSDIR}/games/q3server
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	usr/games/quake3/baseq3/pak0.pk3
-ONLY_FOR_ARCHS=	i386
-USE_LINUX_PREFIX=	yes
-EXTRACT_ONLY=	# Don't extract anything
-STRIP=
+OPTIONS=	TEAMARENA "Install Quake III Team Arena data files" on
 
-GAMEDIR=	${PREFIX}/usr/games/quake3/
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+do-extract:
+	@${RM} -rf ${WRKDIR}
+	@${MKDIR} ${WRKDIR}
+	@cd ${WRKDIR} && ${TAIL} +356 ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
+		${TAR} zxf - >/dev/null
+
+.include "Makefile.include"
 
 .include <bsd.port.pre.mk>
 
-.for file in ${DISTFILES}
-.if !exists(${DISTDIR}/q3-paks/${file})
-IGNORE=You must manually copy all the .pk3 files from the baseq3/ directory of an installed version of the game to the ${DISTDIR}/q3-paks directory and then run make again.
+.if defined(WITH_TEAMARENA)
+PLIST_SUB+=	TEAMARENA=""
+.else
+PLIST_SUB+=	TEAMARENA="@comment "
 .endif
-.endfor
-
-# Do nothing for the build.  Don't set NO_BUILD because of the earlier
-# BUILD_DEPENDS
-do-build:
 
 do-install:
-	${MKDIR} ${GAMEDIR}/baseq3
-.for file in ${DISTFILES}
-	${INSTALL_DATA} ${DISTDIR}/q3-paks/${file} ${GAMEDIR}/baseq3
-.endfor
+	@${MKDIR} ${DATADIR}
+	@${CP} -R ${WRKSRC}/baseq3 ${DATADIR}
+	@${MKDIR} ${PREFIX}/share/pixmaps
+	@${INSTALL_DATA} ${WRKSRC}/quake3.xpm ${PREFIX}/share/pixmaps
+.if defined(WITH_TEAMARENA)
+	@${CP} -R ${WRKSRC}/missionpack ${DATADIR}
+.endif
+
+post-install:
+	@${ECHO_CMD}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 
 .include <bsd.port.post.mk>

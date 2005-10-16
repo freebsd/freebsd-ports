@@ -1,0 +1,11 @@
+====================================================================
+
+To complete the installation of this port you need to copy the file
+"baseq3/pak0.pk3" from the original Quake III Arena distribution to
+"%%DATADIR%%/baseq3".
+
+If you have the expansion pack then you have to copy the file
+"missionpack/pak0.pk3" from the original Quake III Team Arena
+distribution to "%%DATADIR%%/missionpack".
+
+====================================================================
