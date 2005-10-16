@@ -11204,6 +11204,7 @@ scmxx		ports/comms/scmxx
 scons		ports/devel/scons
 scorched3d	ports/games/scorched3d
 scotty3		ports/net-mgmt/scotty3
+scourge		ports/games/scourge
 scout		ports/www/scout
 scponly		ports/shells/scponly
 scr2png		ports/graphics/scr2png
