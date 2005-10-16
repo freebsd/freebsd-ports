@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Verify mail address
 
 WRKSRC=		${WRKDIR}
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" RES=""
 MAN1=		vrfy.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/vrfy
