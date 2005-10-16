@@ -7,7 +7,7 @@
 
 PORTNAME=	xlispstat
 PORTVERSION=	3.52.20
-CATEGORIES=	math lang
+CATEGORIES=	math lang lisp
 MASTER_SITES=	ftp://ftp.stat.umn.edu/pub/xlispstat/current/   \
 		http://lib.stat.cmu.edu/xlispstat/Src/current/  \
 		ftp://ftp.stat.unipg.it/pub/stat/xlispstat/current/     \

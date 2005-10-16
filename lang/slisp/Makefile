@@ -7,7 +7,7 @@
 
 PORTNAME=	slisp
 PORTVERSION=	1.2
-CATEGORIES=	lang
+CATEGORIES=	lang lisp
 MASTER_SITES=	http://www.sigala.it/sandro/files/
 
 MAINTAINER=	pat@FreeBSD.org

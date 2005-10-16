@@ -7,7 +7,7 @@
 PORTNAME=	cl-ppcre
 PORTVERSION=	0.5.4
 PORTREVISION=	1
-CATEGORIES=	textproc
+CATEGORIES=	textproc lisp
 MASTER_SITES=	http://weitz.de/files/
 PKGNAMESUFFIX=	-clisp
 DISTFILES=

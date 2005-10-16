@@ -6,7 +6,7 @@
 
 PORTNAME=	uffi
 PORTVERSION=	1.4.37
-CATEGORIES=	devel
+CATEGORIES=	devel lisp
 MASTER_SITES=	http://files.b9.com/uffi/
 PKGNAMEPREFIX=	cl-
 PKGNAMESUFFIX=	-sbcl

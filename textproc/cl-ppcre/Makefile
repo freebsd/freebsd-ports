@@ -6,7 +6,7 @@
 
 PORTNAME=	cl-ppcre
 PORTVERSION=	0.5.4
-CATEGORIES=	textproc
+CATEGORIES=	textproc lisp
 MASTER_SITES=	http://weitz.de/files/
 EXTRACT_SUFX=	.tgz
 
