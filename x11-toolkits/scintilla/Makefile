@@ -37,7 +37,7 @@ MAKE_ARGS+=	GTK1=yes
 .if ${ARCH} == "sparc64"
 MAKE_ARGS+=	PICFLAGS=-DPIC
 .else
-MAKE_ARGS+=	PICFLAGS="-DPIC -fpic"
+MAKE_ARGS+=	PICFLAGS="-DPIC -fPIC -fpic"
 .endif
 
 do-install:
