@@ -9,8 +9,7 @@
 PORTNAME=	electricfence
 PORTVERSION=	2.2.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.perens.com/pub/ElectricFence/Beta/ \
-		${MASTER_SITE_PACKETSTORM}
+MASTER_SITES=	${MASTER_SITE_PACKETSTORM}
 MASTER_SITE_SUBDIR=	UNIX/misc
 DISTNAME=	ElectricFence-${PORTVERSION}
 
@@ -22,6 +21,7 @@ CFLAGS+=	-D__USE_BSD
 MAN3=		efence.3
 
 MAKE_ARGS=	CC="${CC}"
+PLIST_FILES=	bin/ef.sh lib/libefence.a lib/libefence.so.0
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libefence.a ${PREFIX}/lib
