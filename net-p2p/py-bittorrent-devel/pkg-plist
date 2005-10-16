@@ -1,11 +1,9 @@
-bin/bittorrent
 bin/bittorrent-console
 bin/bittorrent-curses
 bin/bittorrent-tracker
 bin/changetracker-console
 bin/launchmany-console
 bin/launchmany-curses
-bin/maketorrent
 bin/maketorrent-console
 bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BitTorrent/Choker.py

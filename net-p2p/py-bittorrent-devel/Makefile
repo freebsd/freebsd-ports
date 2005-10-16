@@ -7,7 +7,7 @@
 
 PORTNAME=	BitTorrent
 PORTVERSION=	4.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES?=	net python
 MASTER_SITES=	http://www.bittorrent.com/dl/ \
@@ -58,6 +58,8 @@ WITHOUT_PSYCO=	yes
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2
 
 PLIST_FILES+=	\
+		bin/bittorrent \
+		bin/maketorrent \
 		share/pixmaps/BitTorrent/bittorrent.ico \
 		share/pixmaps/BitTorrent/broken.png \
 		share/pixmaps/BitTorrent/finished.png \
