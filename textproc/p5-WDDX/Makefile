@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
 PERL_CONFIGURE=	yes
-ALL_TARGET=	all test
 MAN3=		WDDX.3
 
 post-install:
