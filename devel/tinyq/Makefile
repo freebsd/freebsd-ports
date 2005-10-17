@@ -9,7 +9,7 @@
 
 PORTNAME=	tinyq
 PORTVERSION=	3.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	0
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
@@ -21,10 +21,22 @@ COMMENT=	A stripped down version of Qt 3 for use as a utility library
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=-thread -stl
+CONFIGURE_ARGS+=-thread -stl -prefix ${PREFIX}/tinyq
 CONFIGURE_ENV+=	QTDIR="${WRKSRC}"
 MAKE_ENV+=	QTDIR="${WRKSRC}"
-INSTALLDIR=	${PREFIX}/tinyq
 NO_FILTER_SHLIBS=yes
+USE_REINPLACE=	YES
+REINPLACE_CMD=	/usr/bin/sed -i ''
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2|${CXXFLAGS}|' \
+		-e 's|gcc|${CC}|' \
+		-e 's|g++|${CXX}|' \
+		-e 's|/usr/local|${LOCALBASE}|' \
+		-e 's|/usr/X11R6|${X11BASE}|' \
+		-e 's|release|release thread|' \
+		-e 's|-pthread -D_THREAD_SAFE|${PTHREAD_CFLAGS}|' \
+		-e 's|-pthread|${PTHREAD_LIBS}|' \
+		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
 
 .include <bsd.port.mk>
