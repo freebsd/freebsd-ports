@@ -10,6 +10,7 @@ PORTVERSION=	0.04
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtk2-perl
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A set of Perl5 bindings for gstreamer
