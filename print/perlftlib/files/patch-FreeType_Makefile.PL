@@ -1,10 +1,13 @@
---- FreeType/Makefile.PL.orig	Wed Jan 10 14:50:46 2001
-+++ FreeType/Makefile.PL	Wed Jan 10 14:51:19 2001
-@@ -6,5 +6,5 @@
+--- FreeType/Makefile.PL.orig	Mon Dec 14 02:13:26 1998
++++ FreeType/Makefile.PL	Mon Oct 17 11:47:15 2005
+@@ -4,7 +4,8 @@
+ WriteMakefile(
+     'NAME'	=> 'FreeType',
      'VERSION_FROM' => 'FreeType.pm', # finds $VERSION
-     'LIBS'	=> ['-L/usr/local/lib -lttf'],   # e.g., '-lm' 
+-    'LIBS'	=> ['-L/usr/local/X11R6.3/lib -lttf'],   # e.g., '-lm' 
++    'LIBS'	=> ['-L%%LOCALBASE%%/lib -lttf'],   # e.g., '-lm' 
++    'PREFIX'	=> '%%PREFIX%%',
      'DEFINE'	=> '',     # e.g., '-DHAVE_SOMETHING' 
--    'INC'	=> '-I/usr/local/include',     # e.g., '-I/usr/include/other' 
-+    'INC'	=> '-I/usr/local/include/freetype1/freetype',     # e.g., '-I/usr/include/other' 
+-    'INC'	=> '-I/usr/local/X11R6.3/include',     # e.g., '-I/usr/include/other' 
++    'INC'	=> '-I%%LOCALBASE%%/include/freetype1/freetype',     # e.g., '-I/usr/include/other' 
  );
-
