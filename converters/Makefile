@@ -9,7 +9,6 @@
     SUBDIR += btoa
     SUBDIR += chmview
     SUBDIR += cmios9
-    SUBDIR += cn2jp
     SUBDIR += convmv
     SUBDIR += dosunix
     SUBDIR += dumpasn1
