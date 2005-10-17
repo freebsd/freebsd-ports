@@ -10,7 +10,9 @@ PORTNAME=	gtkglareamm
 PORTVERSION=	1.1.1
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.ece.ucdavis.edu/~kenelson/gtk-glarea/dist/
+MASTER_SITES=	${MASTER_SITE_DEBIAN}
+MASTER_SITE_SUBDIR=	pool/main/g/${PORTNAME}
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GtkGLArea-- is a wrapper for the GtkGLArea widget
