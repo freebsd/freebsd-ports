@@ -11,7 +11,7 @@ CATEGORIES=	korean
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
 DISTNAME=	xpdf-korean
 
-MAINTAINER=	jkim@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Korean xpdf font support
 
 RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf \
