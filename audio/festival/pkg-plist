@@ -6,8 +6,8 @@ libexec/festival.naked
 libexec/festival_client.naked
 share/festival/examples/Makefile
 share/festival/examples/addr-mode.scm
+share/festival/examples/apml.dtd
 share/festival/examples/benchmark
-share/festival/examples/benchmark.orig
 share/festival/examples/benchmark.text
 share/festival/examples/dumpfeats
 share/festival/examples/dumpfeats.sh
@@ -15,6 +15,7 @@ share/festival/examples/durmeanstd
 share/festival/examples/durmeanstd.sh
 share/festival/examples/ex1.email
 share/festival/examples/ex1.ogi
+share/festival/examples/example.apml
 share/festival/examples/example.sable
 share/festival/examples/example.th
 share/festival/examples/example2.sable
@@ -26,10 +27,24 @@ share/festival/examples/latest
 share/festival/examples/latest.sh
 share/festival/examples/make_utts
 share/festival/examples/make_utts.sh
+share/festival/examples/powmeanstd
+share/festival/examples/powmeanstd.sh
 share/festival/examples/saytime
 share/festival/examples/saytime.sh
 share/festival/examples/scfg_parse_text
 share/festival/examples/scfg_parse_text.sh
+share/festival/examples/songs/Makefile
+share/festival/examples/songs/america1.xml
+share/festival/examples/songs/america2.xml
+share/festival/examples/songs/america3.xml
+share/festival/examples/songs/america4.xml
+share/festival/examples/songs/daisy.xml
+share/festival/examples/songs/doremi.xml
+share/festival/examples/songs/lochlomond.xml
+share/festival/examples/songs/spice1.xml
+share/festival/examples/songs/spice2.xml
+share/festival/examples/songs/spice3.xml
+share/festival/examples/songs/spice4.xml
 share/festival/examples/speech_pm_1.0.tar
 share/festival/examples/spintro.text
 share/festival/examples/text2pos
@@ -42,8 +57,15 @@ share/festival/examples/toksearch.scm
 share/festival/examples/webdemo.scm
 share/festival/lib/Makefile
 share/festival/lib/Sable.v0_2.dtd
+share/festival/lib/Singing.v0_1.dtd
 share/festival/lib/VCLocalRules
+share/festival/lib/apml.scm
+share/festival/lib/apml_f2bf0lr.scm
+share/festival/lib/apml_kaldurtreeZ.scm
 share/festival/lib/cart_aux.scm
+share/festival/lib/clunits.scm
+share/festival/lib/clunits_build.scm
+share/festival/lib/cmusphinx2_phones.scm
 share/festival/lib/cslush.scm
 share/festival/lib/cstr.scm
 share/festival/lib/darpa_phones.scm
@@ -54,6 +76,8 @@ share/festival/lib/engmorph.scm
 share/festival/lib/engmorphsyn.scm
 share/festival/lib/etc/Makefile
 share/festival/lib/etc/email_filter
+share/festival/lib/etc/ix86_FreeBSD/.made
+share/festival/lib/etc/ix86_FreeBSD/audsp
 share/festival/lib/f2bdurtreeZ.scm
 share/festival/lib/f2bf0lr.scm
 share/festival/lib/festdoc.scm
@@ -63,6 +87,7 @@ share/festival/lib/festtest.scm
 share/festival/lib/fringe.scm
 share/festival/lib/gswdurtreeZ.scm
 share/festival/lib/holmes_phones.scm
+share/festival/lib/hts.scm
 share/festival/lib/init.scm
 share/festival/lib/intonation.scm
 share/festival/lib/java.scm
@@ -77,6 +102,12 @@ share/festival/lib/module_description.scm
 share/festival/lib/mrpa_allophones.scm
 share/festival/lib/mrpa_durs.scm
 share/festival/lib/mrpa_phones.scm
+share/festival/lib/multisyn/Makefile
+share/festival/lib/multisyn/multisyn.scm
+share/festival/lib/multisyn/multisyn_pauses.scm
+share/festival/lib/multisyn/radio_phones_multisyn.scm
+share/festival/lib/multisyn/send_xwaves.scm
+share/festival/lib/multisyn/target_cost.scm
 share/festival/lib/ogimarkup-mode.scm
 share/festival/lib/pauses.scm
 share/festival/lib/phoneset.scm
@@ -90,7 +121,9 @@ share/festival/lib/scfg.scm
 share/festival/lib/scfg_wsj_wp20.gram
 share/festival/lib/sec.B.hept.ngrambin
 share/festival/lib/sec.ts20.quad.ngrambin
+share/festival/lib/singing-mode.scm
 share/festival/lib/siod.scm
+share/festival/lib/siteinit.scm
 share/festival/lib/sitevars.scm
 share/festival/lib/soleml-mode.scm
 share/festival/lib/speech.properties
@@ -106,8 +139,11 @@ share/festival/lib/web.scm
 @dirrm share/festival/lib/voices/spanish
 @dirrm share/festival/lib/voices/english
 @dirrm share/festival/lib/voices
+@dirrm share/festival/lib/multisyn
+@dirrm share/festival/lib/etc/ix86_FreeBSD
 @dirrm share/festival/lib/etc
 @dirrm share/festival/lib/dicts
 @dirrm share/festival/lib
+@dirrm share/festival/examples/songs
 @dirrm share/festival/examples
 @dirrm share/festival

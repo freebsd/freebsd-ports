@@ -8,13 +8,12 @@
 #
 
 PORTNAME=	festival
-PORTVERSION=	1.4.1
-PORTREVISION=	2
+PORTVERSION=	1.95
 CATEGORIES=	audio accessibility
 MASTER_SITES=	${MASTER_SITE_FESTIVAL}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
-DISTFILES=	${DISTNAME}.tar.gz \
-		speech_tools-1.2.1.tar.gz
+DISTFILES=	${DISTNAME}-beta.tar.gz \
+		speech_tools-1.2.95-beta.tar.gz
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Multi-lingual speech synthesis system
@@ -24,70 +23,40 @@ LIB_DEPENDS=	audio.2:${PORTSDIR}/audio/nas \
 
 DIST_SUBDIR=	festival
 
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aa
-
-FESTIVAL_ARCH=	${ARCH:S/i386/ix86/}
-USE_GCC=	2.95
-
-WRKSRC=		${WRKDIR}
-
+CONFIGURE_WRKSRC=	${WRKDIR}/festival
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-
 SPEECHTOOLS=	${WRKSRC}/speech_tools
 FESTIVAL=	${WRKSRC}/festival
-
 FHOME=		${PREFIX}/share/festival
-
-MAKE_ENV+=	PKG_EST_HOME=${SPEECHTOOLS} \
+MAKE_ENV+=	GCC="${CC}" \
+		GXX="${CXX}" \
 		EST_HOME=${SPEECHTOOLS} \
-		PKG_FESTIVAL_BUILD_HOME=${FESTIVAL} \
-		PKG_FESTIVAL_HOME=${FHOME} \
-		PKG_COMPILER="${CC}" \
-		PKG_X11BASE=${X11BASE} \
-		PKG_PREFIX=${PREFIX} \
 		EGCS_CC="${CC}" \
 		EGCS_CXX="${CXX}" \
-		GCC28_CC="${CC}" \
-		GCC28_CXX="${CXX}" \
-		GCC27_CC="${CC}" \
-		GCC27_CXX="${CXX}" \
-		GCC26_CC="${CC}" \
-		GCC26_CXX="${CXX}" \
 		CC="${CC}" \
 		CXX="${CXX}"
-
 MAN1=		festival.1 festival_client.1
+WRKSRC=		${WRKDIR}
 
-pre-patch:
-	${CP} ${SPEECHTOOLS}/config/config-dist ${SPEECHTOOLS}/config/config &&\
-		${CHMOD} u+w ${SPEECHTOOLS}/config/config
-	${CP} ${FESTIVAL}/config/config-dist ${FESTIVAL}/config/config && \
-		${CHMOD} u+w ${FESTIVAL}/config/config
+do-configure:
+.for ii in speech_tools festival
+	@cd ${WRKDIR}/${ii} && \
+		if ! ${SETENV} CC="${CC}" CXX="${CXX}" \
+		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+		${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS}; then \
+		${ECHO_CMD} "===>  configuration script for ${ii} failed."; \
+		${FALSE}; \
+	 fi
+.endfor
+
+do-build:
+.for ii in speech_tools festival
+	@(cd ${WRKDIR}/${ii}; \
+	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile ${MAKE_ARGS})
+.endfor
 
 .include <bsd.port.pre.mk>
-
-post-patch:
-.if ${OSVERSION} >= 500113
-.for ii in compilers/gcc27.mak config config-dist
-	@${MV} ${SPEECHTOOLS}/config/${ii} ${SPEECHTOOLS}/config/${ii}.orig
-	@${SED} -e "s:= gcc:= gcc295:g" < ${SPEECHTOOLS}/config/${ii}.orig \
-		> ${SPEECHTOOLS}/config/${ii}
-.endfor
-.endif
-	@${CP} ${FILESDIR}/top-Makefile ${WRKSRC}/Makefile
-	@${CP} ${FILESDIR}/FreeBSD.mak ${SPEECHTOOLS}/config/systems/FreeBSD.mak
-.for i in 4 5
-	@${LN} -fs ${SPEECHTOOLS}/config/systems/ix86_FreeBSD3.3.mak \
-		${SPEECHTOOLS}/config/systems/${FESTIVAL_ARCH}_FreeBSD3.${i}.mak
-.endfor
-	@${MV} ${SPEECHTOOLS}/config/systems/ix86_FreeBSD4.0.mak \
-		${SPEECHTOOLS}/config/systems/ix86_FreeBSD4.x.mak
-.for ii in 4 5 6 7
-.for jj in 0 1 2 3 4 5 6 7 8 9 10 11
-	@${LN} -fs ${SPEECHTOOLS}/config/systems/ix86_FreeBSD4.x.mak \
-	${SPEECHTOOLS}/config/systems/${FESTIVAL_ARCH}_FreeBSD${ii}.${jj}.mak
-.endfor
-.endfor
 
 do-install:
 	${MKDIR} ${FHOME}/lib/voices/english/
@@ -96,7 +65,6 @@ do-install:
 	${CHMOD} -R u+w,a+r,og-w ${FESTIVAL}/lib
 	${FIND} ${FESTIVAL}/lib -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	cd ${FESTIVAL} && ${CP} -pPR lib examples ${FHOME}
-	${RM} -rf ${FHOME}/lib/etc/*FreeBSD*
 	${INSTALL_PROGRAM} ${FESTIVAL}/lib/etc/*FreeBSD*/audsp ${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${FESTIVAL}/src/main/festival ${PREFIX}/libexec/festival.naked
 	${INSTALL_PROGRAM} ${FESTIVAL}/src/main/festival_client ${PREFIX}/libexec/festival_client.naked
