@@ -1,0 +1,46 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Bin.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Buffer.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Caps.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Clock.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/ClockID.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Data.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Element.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/ElementFactory.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Error.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Event.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Format.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Index.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/IndexEntry.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/IndexFactory.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Install/Files.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Install/doctypes
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Install/gst.typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Install/gst2perl-autogen.h
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Install/gst2perl-version.h
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Install/gst2perl.h
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Install/gst2perl.typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Library.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Object.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Pad.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/PadTemplate.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Parse.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Pipeline.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Plugin.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/PluginFeature.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/QueryType.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Registry.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/RegistryPool.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Scheduler.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/SchedulerFactory.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Structure.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Tag.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/TagSetter.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Thread.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/index.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GStreamer/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GStreamer/GStreamer.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GStreamer/GStreamer.so
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/GStreamer 2> /dev/null
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Install 2> /dev/null
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer 2> /dev/null
