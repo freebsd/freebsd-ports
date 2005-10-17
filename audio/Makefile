@@ -401,7 +401,6 @@
     SUBDIR += raproxy
     SUBDIR += rawrec
     SUBDIR += rbscrobbler
-    SUBDIR += replay
     SUBDIR += resid
     SUBDIR += rexima
     SUBDIR += rezound
