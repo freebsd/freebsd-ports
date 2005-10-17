@@ -1,13 +1,13 @@
---- monotone.cc.orig	Fri Dec 31 03:16:53 2004
-+++ monotone.cc	Wed Jan 26 22:20:17 2005
-@@ -140,8 +140,10 @@
+--- monotone.cc.orig    Fri Sep 30 11:50:05 2005
++++ monotone.cc Fri Oct 14 11:31:14 2005
+@@ -238,8 +238,10 @@
+   // go-go gadget i18n
  
-   setlocale(LC_CTYPE, "");
-   setlocale(LC_MESSAGES, "");
+   setlocale(LC_ALL, "");
 +#ifdef ENABLE_NLS
    bindtextdomain(PACKAGE, LOCALEDIR);
    textdomain(PACKAGE);
 +#endif
  
-   L(F("set locale: LC_CTYPE=%s, LC_MESSAGES=%s\n")
-     % (setlocale(LC_CTYPE, NULL) == NULL ? "n/a" : setlocale(LC_CTYPE, NULL))
+ 
+   // we want to catch any early informative_failures due to charset
