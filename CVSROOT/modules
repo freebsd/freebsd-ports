@@ -5200,6 +5200,7 @@ ldap2dns	ports/net/ldap2dns
 ldapbrowser	ports/net/ldapbrowser
 ldapdiff	ports/net/ldapdiff
 ldapdns		ports/dns/ldapdns
+ldapscripts	ports/net/ldapscripts
 ldapsdk		ports/net/ldapsdk
 ldapsh		ports/net/ldapsh
 ldmud		ports/games/ldmud
