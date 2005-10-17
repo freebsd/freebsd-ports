@@ -27,16 +27,12 @@ include/Inventor/Xt/SoXtGLWidget.h
 include/Inventor/Xt/SoXtRenderArea.h
 @dirrm include/Inventor/Xt/devices
 @dirrm include/Inventor/Xt/editors
-@dirrm include/Inventor/Xt/engines
 @dirrm include/Inventor/Xt/nodes
 @dirrm include/Inventor/Xt/viewers
 @dirrm include/Inventor/Xt/widgets
 @dirrm include/Inventor/Xt
-@dirrm include/Inventor
 lib/libSoXt.a
-lib/libSoXt.so.0
+lib/libSoXt.so.2
 lib/libSoXt.so
 share/aclocal/soxt.m4
 share/Coin/conf/soxt-default.cfg
-@dirrm share/Coin/conf
-@dirrm share/Coin

@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	SoXt
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.coin3d.org/pub/coin/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI binding for using Open Inventor with Xt/Motif
 
-LIB_DEPENDS=	Coin:${PORTSDIR}/graphics/Coin
+LIB_DEPENDS=	Coin.44:${PORTSDIR}/graphics/Coin
 
-USE_MESA=	yes
+USE_GL=		yes
 USE_MOTIF=	yes
 USE_LIBTOOL_VER=15
 CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"
