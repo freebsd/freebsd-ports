@@ -1,0 +1,18 @@
+etc/ldapscripts/ldapscripts.conf
+etc/ldapscripts/runtime
+etc/ldapscripts/README
+etc/ldapscripts/CHANGELOG
+etc/ldapscripts/COPYING
+etc/ldapscripts/VERSION
+@unexec rmdir %D/etc/ldapscripts 2>/dev/null || true
+bin/_ldapdeletemachine
+bin/_ldapinit
+bin/_lsldap
+bin/ldapaddgroup
+bin/ldapaddmachine
+bin/ldapadduser
+bin/ldapaddusertogroup
+bin/ldapdeletegroup
+bin/ldapdeleteuser
+bin/ldapdeleteuserfromgroup
+bin/ldapsetprimarygroup

@@ -1,0 +1,7 @@
+Ldapscripts
+
+The ldapscripts allow to easily manage POSIX accounts (users, groups, machines)
+in an LDAP directory. They can be used independently as shell commands or within
+Samba's configuration. See README for more details.
+
+WWW: http://contribs.martymac.com
