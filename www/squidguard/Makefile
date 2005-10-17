@@ -19,13 +19,13 @@ COMMENT=	A fast redirector for squid
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
-USE_SIZE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-db-inc=${LOCALBASE}/include/db3 \
 		--with-db-lib=${LOCALBASE}/lib \
 		--with-sg-config=${PREFIX}/etc/squid/${PORTNAME}.conf \
 		--with-sg-dbhome=${DATADIR} \
-		--with-sg-logdir=${LOGDIR}
+		--with-sg-logdir=${LOGDIR} \
+		--exec-prefix=${PREFIX}
 
 CFGINPUT=	files/sgcfg.in
 
@@ -52,7 +52,7 @@ pre-install:
 
 .if !exists(${DATADIR})
 	@${ECHO_MSG} "===>   Installing blacklists"
-	@${MKDIR} -p ${DATADIR}
+	@${MKDIR} ${DATADIR}
 	@${TAR} -C ${DATADIR} --exclude *.diff -pxzf ${WRKSRC}/samples/dest/blacklists.tar.gz
 	@${MV} -f ${DATADIR}/blacklists/README ${WRKDIR}/README.blacklists
 	@${MV} -f ${DATADIR}/blacklists/* ${DATADIR}/
@@ -109,14 +109,14 @@ post-install:
 
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing ${PORTNAME} documentation"
-	-@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
+	-@${MKDIR} ${DOCSDIR}
 .for i in ${WRKSRC}/doc/*.txt ${WRKSRC}/doc/*.html ${WRKSRC}/doc/*.gif ${WRKSRC}/doc/README
-	@${INSTALL_DATA} ${WRKSRC}$i ${PREFIX}/share/doc/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}$i ${DOCSDIR}
 .endfor
 	@if [ -f ${WRKDIR}/README.blacklists ] ; then \
-		${INSTALL_DATA} ${WRKDIR}/README.blacklists ${PREFIX}/share/doc/${PORTNAME} ; \
+		${INSTALL_DATA} ${WRKDIR}/README.blacklists ${DOCSDIR} ; \
 	fi
-	@${ECHO_MSG} "       -> Documentation installed in: ${PREFIX}/share/doc/${PORTNAME}"
+	@${ECHO_MSG} "       -> Documentation installed in: ${DOCSDIR}"
 .endif
 
 .if !exists(${LOGDIR})
