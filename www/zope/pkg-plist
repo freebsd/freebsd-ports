@@ -981,6 +981,8 @@ etc/rc.d/zeo.sh
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/testHTMLTests.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/testTALES.py
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/testTALES.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/testZRPythonExpr.py
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/testZRPythonExpr.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/testZopePageTemplate.py
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/testZopePageTemplate.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/test_ptfile.py
@@ -2562,6 +2564,8 @@ etc/rc.d/zeo.sh
 %%ZOPEBASEDIR%%/lib/python/ZTUtils/tests/testIterator.pyc
 %%ZOPEBASEDIR%%/lib/python/ZTUtils/tests/testTree.py
 %%ZOPEBASEDIR%%/lib/python/ZTUtils/tests/testTree.pyc
+%%ZOPEBASEDIR%%/lib/python/ZTUtils/tests/testZope.py
+%%ZOPEBASEDIR%%/lib/python/ZTUtils/tests/testZope.pyc
 %%ZOPEBASEDIR%%/lib/python/Zope/App/ClassFactory.py
 %%ZOPEBASEDIR%%/lib/python/Zope/App/ClassFactory.pyc
 %%ZOPEBASEDIR%%/lib/python/Zope/App/__init__.py
@@ -2632,6 +2636,8 @@ etc/rc.d/zeo.sh
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/af.py
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/af.pyc
+%%ZOPEBASEDIR%%/lib/python/docutils/languages/ca.py
+%%ZOPEBASEDIR%%/lib/python/docutils/languages/ca.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/cs.py
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/cs.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/de.py
@@ -2648,6 +2654,8 @@ etc/rc.d/zeo.sh
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/fr.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/it.py
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/it.pyc
+%%ZOPEBASEDIR%%/lib/python/docutils/languages/nl.py
+%%ZOPEBASEDIR%%/lib/python/docutils/languages/nl.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/pt_br.py
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/pt_br.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/ru.py
@@ -2686,6 +2694,8 @@ etc/rc.d/zeo.sh
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/af.py
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/af.pyc
+%%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/ca.py
+%%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/ca.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/cs.py
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/cs.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/de.py
@@ -2702,6 +2712,8 @@ etc/rc.d/zeo.sh
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/fr.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/it.py
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/it.pyc
+%%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/nl.py
+%%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/nl.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/pt_br.py
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/pt_br.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/ru.py
@@ -2756,6 +2768,10 @@ etc/rc.d/zeo.sh
 %%ZOPEBASEDIR%%/lib/python/docutils/writers/html4css1.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/writers/latex2e.py
 %%ZOPEBASEDIR%%/lib/python/docutils/writers/latex2e.pyc
+%%ZOPEBASEDIR%%/lib/python/docutils/writers/newlatex2e.py
+%%ZOPEBASEDIR%%/lib/python/docutils/writers/newlatex2e.pyc
+%%ZOPEBASEDIR%%/lib/python/docutils/writers/null.py
+%%ZOPEBASEDIR%%/lib/python/docutils/writers/null.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/writers/pep_html.py
 %%ZOPEBASEDIR%%/lib/python/docutils/writers/pep_html.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/writers/pseudoxml.py
