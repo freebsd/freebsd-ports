@@ -72,7 +72,7 @@ RC_DIR=		${PREFIX}/etc/rc.d
 RC_SUFX=	.sh
 .endif
 
-.if !exists(/usr/lib/libmilter.a) && !exists(${PREFIX}/lib/libmilter.a)
+.if !defined(WITH_MILTER) || (!exists(/usr/lib/libmilter.a) && !exists(${PREFIX}/lib/libmilter.a))
 AMAVIS_NOAMAVIS="@comment "
 .endif
 
