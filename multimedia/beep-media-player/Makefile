@@ -7,9 +7,9 @@
 
 PORTNAME=	beep-media-player
 PORTVERSION=	0.9.7
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	1
-CATEGORIES=	multimedia audio
+CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	beepmp
 DISTNAME=	bmp-${PORTVERSION}
@@ -38,20 +38,20 @@ VISUALIZATION_PLUGINS=	blur_scope
 
 OPTIONS=	VORBIS	"Enable Ogg Vorbis support" on \
 		ESOUND	"Enable Esound support"  off \
-		3DNOW	"Enable 3DNow! optimized decoding routines" on
+		3DNOW	"Enable 3DNow! optimized decoding routines" on \
+		IPV6	"Enable IPv6 support" off
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS+=	--enable-ipv6
+# Enable IPv6 support
+.if defined(WITH_IPV6)
+PATCH_SITES+=	http://izb.knu.ac.kr/~bh/diffs/
+PATCHFILES+=	bmp-0.9.7-ipv6-simple.diff
+PATCH_DIST_STRIP+=	-p1
+.endif
 
-#.if !defined(WITHOUT_MIKMOD)
-#LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
-#INPUT_PLUGINS+=	mikmod
-#PLIST_SUB+=	MIKMODPLUGIN:=""
-#.else
 CONFIGURE_ARGS+=	--disable-mikmod
 PLIST_SUB+=	MIKMODPLUGIN:="@comment "
-#.endif
 
 .if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
