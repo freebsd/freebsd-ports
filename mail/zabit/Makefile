@@ -10,7 +10,7 @@ PORTVERSION=	0.7.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.enderunix.org/zabit/
 
-MAINTAINER=	ozkan@enderunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zabit is a content/attachment filter for qmail
 
 RUN_DEPENDS=	${QMAIL_QUEUE}:${PORTSDIR}/mail/qmail

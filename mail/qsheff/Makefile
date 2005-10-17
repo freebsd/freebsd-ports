@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.enderunix.org/qsheff/ \
 		${MASTER_SITE_SOURCEFORGE}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-r/}
 
-MAINTAINER=	ozkan@enderunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A qmail-queue replacement to filter mail traffic
 
 BUILD_DEPENDS=	${QMAIL_DIR}/bin/qmail-queue:${PORTSDIR}/mail/qmail \

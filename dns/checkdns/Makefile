@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	dns
 MASTER_SITES=	http://www.enderunix.org/checkdns/
 
-MAINTAINER=	ozkan@enderunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A domain name server analysis and reporting tool
 
 USE_REINPLACE=	yes
