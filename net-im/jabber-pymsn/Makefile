@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	pymsn
-PORTVERSION=	0.9.5
+PORTVERSION=	0.10
 CATEGORIES=	net
 MASTER_SITES=	http://msn-transport.jabberstudio.org/tarballs/
 PKGNAMEPREFIX=	jabber-
 PKGNAMESUFFIX=	-transport
-DISTNAME=	PyMSNt-${PORTVERSION}
+DISTNAME=	${PORTNAME}t-${PORTVERSION}
 DIST_SUBDIR=	jabber
 
 MAINTAINER=	martijn@pacno.net
