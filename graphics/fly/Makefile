@@ -7,6 +7,7 @@
 
 PORTNAME=	fly
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://members.optushome.com.au/martingleeson/%SUBDIR%/ \
 		http://martin.gleeson.com/%SUBDIR%/
