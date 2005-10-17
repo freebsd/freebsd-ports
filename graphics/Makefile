@@ -540,6 +540,7 @@
     SUBDIR += sodipodi
     SUBDIR += spcaview
     SUBDIR += springgraph
+    SUBDIR += sswf
     SUBDIR += stamp
     SUBDIR += stl2pov
     SUBDIR += svg2png
