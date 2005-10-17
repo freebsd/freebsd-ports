@@ -471,6 +471,7 @@ share/gnome/solfege/themes/svg/sing-chord.svg
 share/gnome/solfege/themes/svg/sing-interval.svg
 share/gnome/solfege/themes/svg/solfege.svg
 share/gnome/solfege/ui.xml
+share/locale/cs/LC_MESSAGES/solfege.mo
 share/locale/da/LC_MESSAGES/solfege.mo
 share/locale/de/LC_MESSAGES/solfege.mo
 share/locale/es/LC_MESSAGES/solfege.mo
