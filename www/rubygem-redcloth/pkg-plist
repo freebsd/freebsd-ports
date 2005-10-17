@@ -1,4 +1,4 @@
-%%CACHE_DIR%%/redcloth-3.0.3.gem
+%%CACHE_DIR%%/RedCloth-3.0.3.gem
 %%GEMS_DIR%%/RedCloth-3.0.3/bin/redcloth
 %%GEMS_DIR%%/RedCloth-3.0.3/lib/redcloth.rb
 %%GEMS_DIR%%/RedCloth-3.0.3/run-tests.rb
