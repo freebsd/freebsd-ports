@@ -10,7 +10,7 @@ PORTVERSION=	4.3.13
 CATEGORIES=	mail python
 MASTER_SITES=	http://pyropus.ca/software/getmail/%SUBDIR%/ \
 		http://mirrors.closedsrc.org/getmail/
-MASTER_SITE_SUBDIR=	. old-versions
+MASTER_SITE_SUBDIR=	old-versions
 
 MAINTAINER=	question+fbsdports@closedsrc.org
 COMMENT=	POP3/IMAP4 mail retriever with Maildir and command delivery
