@@ -14,7 +14,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plan9 compatibility libraries
 
 USE_XLIB=	YES
+USE_INC_LIBTOOL_VER=13
 GNU_CONFIGURE=	YES
+CONFIGURE_ARGS+=--includedir=${PREFIX}/include/9libs
 
 MAN3=	add.3 balloc.3 bitblt.3 cachechars.3 event.3 frame.3 graphics.3 rgbpix.3 rune.3
 MAN4=	font.4 keyboard.4 utf.4
@@ -25,8 +27,5 @@ MAN6=	bitmap.6 regexp.6
 .if ${ARCH} == "alpha" || ${ARCH} == "amd64"
 BROKEN=		"Does not compile on alpha or amd64"
 .endif
-
-post-install:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},' ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
