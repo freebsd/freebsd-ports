@@ -25,7 +25,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--buildwith=gcc
+CONFIGURE_ARGS+=--prefix=${PREFIX} --buildwith=gcc
 
 .if !defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR} +docs
