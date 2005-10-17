@@ -394,6 +394,7 @@
     SUBDIR += ireport
     SUBDIR += itext
     SUBDIR += ixlib
+    SUBDIR += jakarta-commons-chain
     SUBDIR += jakelib2
     SUBDIR += jam
     SUBDIR += java-util-concurrent

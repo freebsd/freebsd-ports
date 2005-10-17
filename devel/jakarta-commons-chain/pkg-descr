@@ -1,0 +1,20 @@
+Jakarta Commons Chain of Responsiblity library.
+
+The Chain API models a computation as a series of "commands" that can be
+combined into a "chain". The API for a command consists of a single method
+(execute()), which is passed a "context" parameter containing the dynamic state
+of the computation, and whose return value is a boolean that determines whether
+or not processing for the current chain has been completed (true), or whether
+processing should be delegated to the next command in the chain (false).
+
+Given that command implementations are designed to conform with these
+recommendations, it should be feasible to utilize the Chain of Responsibility
+APIs in the "front controller" of a web application framework (such as Struts),
+but also be able to use it in the business logic and persistence tiers to model
+complex computational requirements via composition. In addition, separation of a
+computation into discrete commands that operate on a general purpose context
+allows easier creation of commands that are unit testable, because the impact of
+executing a command can be directly measured by observing the corresponding
+state changes in the context that is supplied.
+
+WWW: http://jakarta.apache.org/commons/chain/
