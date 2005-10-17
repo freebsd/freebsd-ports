@@ -36,15 +36,21 @@ CONFIGURE_ARGS+=--enable-alias
 
 .if defined(WITH_OPENSSL)
 USE_OPENSSL=	yes
-CONFIGURE_ARGS+=--with-openssl
+CONFIGURE_ARGS+=--with-openssl \
+		--with-openssl-include=${OPENSSLINC} \
+		--with-openssl-lib=${OPENSSLLIB}
 .endif
 
 .if defined(WITH_PGSQL)
 USE_PGSQL=	yes
-CONFIGURE_ARGS+=--without-mysql
+CONFIGURE_ARGS+=--without-mysql \
+		--with-pgsql-include=${LOCALBASE}/include \
+		--with-pgsql-lib=${LOCALBASE}/lib
 PKGNAMESUFFIX=	-pg
 .else
-CONFIGURE_ARGS+=--without-pgsql
+CONFIGURE_ARGS+=--without-pgsql \
+		--with-mysql-include=${LOCALBASE}/include/mysql \
+		--with-mysql-lib=${LOCALBASE}/lib/mysql
 PKGNAMESUFFIX=	-mysql
 USE_MYSQL=	yes
 .endif
