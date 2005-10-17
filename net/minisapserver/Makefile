@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	minisapserver
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	net multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/miniSAPserver/${PORTVERSION}/
 
