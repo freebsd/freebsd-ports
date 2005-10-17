@@ -1650,3 +1650,4 @@ games/q3-paks|games/quake3-data|2005-10-16|sync name with other data ports
 games/linux-q3ademo|games/linux-quake3-demo|2005-10-16|sync name with other Quake ports
 net/evaq|net/eva|2005-10-16|project was renamed
 audio/replay||2005-10-17|no longer on sunsite, home page gone
+devel/hs-uni||2005-10-17|abandoned, didn't build with latest lang/ghc
