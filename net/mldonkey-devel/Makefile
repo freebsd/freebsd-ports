@@ -87,6 +87,11 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 BROKEN=		"Does not compile on ${ARCH}"
 .endif
 
+# Fix build on 4.x
+.if ${OSVERSION} < 500000
+USE_GCC=	3.4
+.endif
+
 ### Development version
 ## Thus, we will use non standard threading library
 ## We will switch from libpthread to libthr which should produce
