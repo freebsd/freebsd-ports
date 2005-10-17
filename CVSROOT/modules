@@ -2793,6 +2793,7 @@ geda-symbols	ports/cad/geda-symbols
 geda-symcheck	ports/cad/geda-symcheck
 geda-utils	ports/cad/geda-utils
 gedit		ports/editors/gedit
+gedit-autocomplete-plugin	ports/editors/gedit-autocomplete-plugin
 gedit-plugins	ports/editors/gedit-plugins
 geekcode	ports/misc/geekcode
 geeklog		ports/www/geeklog
