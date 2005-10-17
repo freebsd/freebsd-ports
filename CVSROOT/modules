@@ -3731,7 +3731,6 @@ hs-idoc		ports/devel/hs-idoc
 hs-popenhs	ports/devel/hs-popenhs
 hs-port		ports/x11-toolkits/hs-port
 hs-tclhaskell-ghc	ports/devel/hs-tclhaskell-ghc
-hs-uni		ports/devel/hs-uni
 hsb-aspell	ports/textproc/hsb-aspell
 hsetroot	ports/graphics/hsetroot
 hsftp		ports/ftp/hsftp
