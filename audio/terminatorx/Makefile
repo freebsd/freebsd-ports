@@ -8,7 +8,7 @@ PORTNAME=	terminatorx
 PORTVERSION=	3.82
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.terminatorx.cx/dist/
+MASTER_SITES=	http://terminatorx.org/dist/
 DISTNAME=	terminatorX-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -36,6 +36,13 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 
 MAN1=		terminatorX.1
 
+OPTIONS=	MPG123 "mpg123 support" on \
+		SOX "sox (.au) support" on \
+		VORBIS "OGG Vorbis support" on \
+		MAD "MPEG Audio Decoder (libmad) support" on
+
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_MPG123)
 BUILD_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
 .else
@@ -59,23 +66,6 @@ CONFIGURE_ARGS+=	--disable-vorbis
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/mad
 .else
 CONFIGURE_ARGS+=	--disable-mad
-.endif
-
-pre-everything::
-.if !defined(WITHOUT_MPG123)
-	@${ECHO_MSG} "You can disable support for mpg123 by defining WITHOUT_MPG123."
-.endif
-
-.if !defined(WITHOUT_SOX)
-	@${ECHO_MSG} "You can disable support for sox by defining WITHOUT_SOX."
-.endif
-
-.if !defined(WITHOUT_VORBIS)
-	@${ECHO_MSG} "You can disable support for vorbis by defining WITHOUT_VORBIS."
-.endif
-
-.if !defined(WITHOUT_MAD)
-	@${ECHO_MSG} "You can disable support for mad by defining WITHOUT_MAD."
 .endif
 
 post-patch:
@@ -110,4 +100,4 @@ do-install:
 		${PREFIX}/share/gnome/omf/terminatorX/terminatorX-C.omf
 	@scrollkeeper-install -q ${PREFIX}/share/gnome/omf/terminatorX/terminatorX-C.omf 2>/dev/null || ${TRUE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
