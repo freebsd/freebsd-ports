@@ -7,7 +7,7 @@
 
 PORTNAME=	Net-FreeDB
 PORTVERSION=	0.06
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 PATCH_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.FreeBSD.org/~roam/ports/patches/net/
 PATCH_SITE_SUBDIR=	roam/net
-PATCHFILES=	Net-FreeDB-0.06-FreeBSD.patch
+PATCHFILES=	Net-FreeDB-0.06-FreeBSD-2.patch
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Get the CDID of an audio CD and query the FreeDB servers
@@ -29,4 +29,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Net::FreeDB.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+EXTRA_PATCHES+=	${FILESDIR}/perl-5005.patch
+.endif
+
+.include <bsd.port.post.mk>
