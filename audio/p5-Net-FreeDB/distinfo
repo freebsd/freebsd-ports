@@ -1,4 +1,4 @@
 MD5 (Net-FreeDB-0.06.tar.gz) = e36554b1fd80860b61e00162fd0325a8
 SIZE (Net-FreeDB-0.06.tar.gz) = 17516
-MD5 (Net-FreeDB-0.06-FreeBSD.patch) = 0cec3e8a44c693b5274f919f38f83b28
-SIZE (Net-FreeDB-0.06-FreeBSD.patch) = 6925
+MD5 (Net-FreeDB-0.06-FreeBSD-2.patch) = 82cd9fa75154169b9915e302e9699fbd
+SIZE (Net-FreeDB-0.06-FreeBSD-2.patch) = 7625
