@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.tigr.net/afterstep/download/asmail/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Biff-type program, designed to match AfterStep
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
-
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_OPENSSL=	yes
@@ -26,8 +24,8 @@ CONFIGURE_ARGS=	--enable-shaping
 MAN1=	asmail.1x
 MAN5=	asmailrc.5x
 
-CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
-LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -lssl -lcrypto
+CPPFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS} -lssl -lcrypto
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
