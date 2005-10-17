@@ -29,12 +29,12 @@ PHP_MODNAME=	pdo_oci
 CONFIGURE_ARGS+=	--with-pdo-oci=${LOCALBASE}/oracle8-client
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
 
+PTHREAD_STATIC=	/usr/lib/libpthread
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-PTHREAD_STATIC=	/usr/lib/libc_r
-.else
-PTHREAD_STATIC=	/usr/lib/libpthread
+BROKEN=		"does not compile on FreeBSD 4.x"
 .endif
 
 pre-configure:
