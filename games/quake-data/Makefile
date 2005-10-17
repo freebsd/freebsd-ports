@@ -17,6 +17,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	alejandro@varnet.biz
 COMMENT=	Quake data files
 
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
