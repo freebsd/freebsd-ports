@@ -19,9 +19,17 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
-CPPFLAGS=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib"
 USE_GMAKE=	unfortunatly
+.if !defined(WITHOUT_X11)
+USE_GNOME=	gtk12
+.endif
+USE_REINPLACE=	i miss patch-xx
+
+post-patch:
+	@${REINPLACE_CMD} -e 's#/usr/local/share/stamp#${DATADIR}#' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
