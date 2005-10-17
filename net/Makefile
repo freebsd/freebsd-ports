@@ -314,6 +314,7 @@
     SUBDIR += ldap2dns
     SUBDIR += ldapbrowser
     SUBDIR += ldapdiff
+    SUBDIR += ldapscripts
     SUBDIR += ldapsdk
     SUBDIR += ldapsh
     SUBDIR += lft
