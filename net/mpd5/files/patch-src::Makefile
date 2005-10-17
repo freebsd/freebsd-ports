@@ -1,0 +1,26 @@
+Index: src/Makefile
+===================================================================
+RCS file: /cvsroot/mpd/mpd/src/Makefile,v
+retrieving revision 1.33
+retrieving revision 1.34
+diff -u -r1.33 -r1.34
+--- src/Makefile	8 May 2005 16:02:24 -0000	1.33
++++ src/Makefile	17 Oct 2005 02:00:40 -0000	1.34
+@@ -61,7 +61,7 @@
+ LDADD+=		-L/usr/lib -lradius
+ DPADD+=		${LIBRADIUS}
+ 
+-LDADD+=		-L/usr/local/lib -lpdel -lssl -lexpat
++LDADD+=		-L${PREFIX}/lib -lpdel -lssl -lexpat
+ 
+ MPD_VERSION!=	echo -n "${VERSION} (`id -un`@`uname -n` `LC_TIME=C date +'%R %v'`)"
+ 
+@@ -80,7 +80,7 @@
+ 		-Wpointer-arith \
+ 		-Wwrite-strings \
+ 		-pthread \
+-		-I/usr/local/include
++		-I${PREFIX}/include
+ 
+ # Standard sources
+ 
