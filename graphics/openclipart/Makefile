@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	openclipart
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	graphics misc
 MASTER_SITES=	http://www.openclipart.org/downloads/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}${SVGPNG}
