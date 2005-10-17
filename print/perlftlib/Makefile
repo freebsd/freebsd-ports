@@ -27,12 +27,16 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 MAKE_ENV=	PERL_VER=${PERL_VER} PERL5=${PERL5}
 
-pre-patch:
-	@${PERL} -pi -e 's!/usr/local/X11R6.3!${PREFIX}!' ${WRKSRC}/FreeType/Makefile.PL
+post-patch:
+.for VAR in LOCALBASE PREFIX
+	@${PERL} -pi -e 's!%%${VAR}%%!${${VAR}}!g' \
+		${WRKSRC}/FreeType/Makefile.PL
+.endfor
 
 post-build:
 .for DIST in ftinfo mkttfdir
-	@${PERL} -pi -e 's;^#! */usr/local/bin/perl *;#!${PERL5};' ${WRKSRC}/${DIST}
+	@${PERL} -pi -e 's;^#! */usr/local/bin/perl *;#!${PERL5};' \
+		${WRKSRC}/${DIST}
 .endfor
 
 .include <bsd.port.mk>
