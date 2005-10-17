@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	monotone
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	devel
 MASTER_SITES=	http://www.venge.net/monotone/downloads/ \
 		http://norton.kettering.edu/freebsd/
 
-MAINTAINER=	mwicks@kettering.edu
+MAINTAINER=	lapo@lapo.it
 COMMENT=	A distributed version control system with digital signatures
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt		\
