@@ -10,14 +10,21 @@ lib/jabber/pymsn/tlib/jabber/xmpp_stringprep.py
 lib/jabber/pymsn/tlib/domish.py
 lib/jabber/pymsn/tlib/__init__.py
 lib/jabber/pymsn/tlib/msn.py
+lib/jabber/pymsn/tlib/msnp11chl.py
+lib/jabber/pymsn/tlib/msnp2p.py
 lib/jabber/pymsn/tlib/proxy.py
 lib/jabber/pymsn/tlib/xmlstream.py
 lib/jabber/pymsn/baseproto/__init__.py
 lib/jabber/pymsn/baseproto/glue.py
 lib/jabber/pymsn/legacy/__init__.py
+lib/jabber/pymsn/legacy/defaultAvatar.png
+lib/jabber/pymsn/legacy/defaultJabberAvatar.png
 lib/jabber/pymsn/legacy/glue.py
+lib/jabber/pymsn/legacy/legacylist.py
 lib/jabber/pymsn/legacy/msnw.py
-lib/jabber/pymsn/legacy/subscription.py
+lib/jabber/pymsn/avatar.py
+lib/jabber/pymsn/contact.py
+lib/jabber/pymsn/housekeep.py
 lib/jabber/pymsn/xmlconfig.py
 @unexec if cmp -s %D/lib/jabber/pymsn/config.py.sample %D/lib/jabber/pymsn/config.py; then rm -f %D/lib/jabber/pymsn/config.py; fi
 lib/jabber/pymsn/config.py.sample
