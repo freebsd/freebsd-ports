@@ -12,6 +12,24 @@ also the UPGRADING enclosed in the dspam distribution. You can see it by doing
 in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
+
+###########################################################################
+# dspam-devel-3.6.0
+#
+
+- css_drv (CRM Sparse Spectra Storage Driver) is now called hash_drv,
+hence: WITH_CSS -> WITH_HASH; also the max records number in hash_drv can
+be set in dspam.conf; WARNING: the new file format is incompatble with the
+old one but is considerable smaller
+- you can now have the database drivers dynamically loaded at run time so
+you can select multiple drivers in the OPTIONS screen; see dspam.conf.
+- also algorithm selection is done exclusively via dspam.conf
+- documented MySQL quoting bug in some versions of 4.1 (see mysql.txt),
+and added MySQLSupressQuote option to compensate
+- read UPGRADING and CHANGELOG and adjust your dspam.conf accordingly
+- !!! WARNING !!! MaxMessageSize is also applied to ClamAV virus scanning.
+    Thanks to Patrick Hurrelmann <outi@bytephobia.de> for beta-testing and catching a few mistakes.
+
 ###########################################################################
 # dspam-devel-3.5.2.20050725.0800
 #
