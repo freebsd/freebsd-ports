@@ -34,7 +34,7 @@ post-patch:
 		s|$$LINKLIBS ;|${LDFLAGS} $$LINKLIBS ;|g' \
 			${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-O3||g ; \
-		s|-g |${CFLAGS} ${CPPFLAGS} ${PTHREAD_CFLAGS}|g' \
+		s|-g |${CFLAGS} ${CPPFLAGS} ${PTHREAD_CFLAGS} |g' \
 			${WRKSRC}/Jamrules
 
 # jam -dx, it will giving a verbose of build.
