@@ -1,0 +1,14 @@
+--- makefile.orig	Sun Sep 12 16:11:44 2004
++++ makefile	Mon Oct 17 08:06:34 2005
+@@ -2,8 +2,8 @@
+ GEDIT_VERSION=gedit-2.4
+ 
+ all:
+-	gcc -march=i686 -O3 -s -Wall -fPIC -shared  `pkg-config  $(GEDIT_VERSION) --libs --cflags`  *.c -o libautocomplete.so
++	$(CC) $(CFLAGS) -Wall -fPIC -shared  `pkg-config  $(GEDIT_VERSION) --libs --cflags`  *.c -o libautocomplete.so
+ 
+ install:
+-	cp libautocomplete.so /usr/lib/gedit-2/plugins/
+-	cp autocomplete.gedit-plugin /usr/lib/gedit-2/plugins/
++	$(BSD_INSTALL_PROGRAM) libautocomplete.so $(PREFIX)/lib/gedit-2/plugins/
++	$(BSD_INSTALL_DATA) autocomplete.gedit-plugin $(PREFIX)/lib/gedit-2/plugins/
