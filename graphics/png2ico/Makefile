@@ -7,7 +7,7 @@
 
 PORTNAME=	png2ico
 PORTVERSION=	2002.12.08
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.winterdrache.de/freeware/png2ico/data/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION:S/./-/g}
@@ -21,11 +21,6 @@ MAN1=		png2ico.1
 PLIST_FILES=	bin/png2ico
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_GMAKE=	yes
-USE_REINPLACE=	yes
-
-post-patch:
-	${REINPLACE_CMD} -e 's|-O2|${CFLAGS}|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
