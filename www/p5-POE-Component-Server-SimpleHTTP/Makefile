@@ -47,6 +47,7 @@ post-patch:
 	@${PERL} -pi -e 's/^our ([\$$\@]\w+)/use vars qw($$1); $$1/;' \
 		     -e '$$_ = "" if /use warnings/;' \
 		$$(${FIND} ${WRKSRC} -name '*.pm')
+	@${RM} ${WRKSRC}/lib/POE/Component/Server/SimpleHTTP.pm.orig
 .endif
 
 .include <bsd.port.post.mk>
