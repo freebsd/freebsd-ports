@@ -1,10 +1,10 @@
---- chset.c.orig	Tue Jan 25 09:33:52 2000
-+++ chset.c	Wed Apr 28 17:47:59 2004
-@@ -18,6 +18,7 @@
-     "iso-8859-8",	8,
-     "iso-8859-9",	8,
-     "iso-8859-15",	8,
-+    "koi8-r",		8,
-     "unknown",		0,
-     NULL,		0,
+--- chset.c.orig	Wed Mar 30 13:34:27 2005
++++ chset.c	Sat Sep  3 13:53:19 2005
+@@ -22,6 +22,7 @@
+     "iso-8859-8", 8,
+     "iso-8859-9", 8,
+     "iso-8859-15", 8,
++    "koi8-r", 8,
+     "unknown", 0,
+     NULL, 0,
  };
