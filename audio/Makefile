@@ -300,7 +300,6 @@
     SUBDIR += mp3butler
     SUBDIR += mp3c
     SUBDIR += mp3check
-    SUBDIR += mp3chew
     SUBDIR += mp3ck
     SUBDIR += mp3encode
     SUBDIR += mp3gain
