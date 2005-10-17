@@ -11,7 +11,7 @@ include/estraier.h
 lib/libestraier.a
 lib/libestraier.so
 lib/libestraier.so.6
-lib/libestraier.so.6.0.0
+lib/libestraier.so.6.1.0
 libdata/pkgconfig/hyperestraier.pc
 libexec/estseek.cgi
 %%DATADIR%%/COPYING
