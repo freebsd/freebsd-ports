@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Coin
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://ftp.coin3d.org/coin/src/all/ \
 		ftp://ftp.coin3d.org/pub/coin/src/all/

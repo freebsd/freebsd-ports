@@ -11,6 +11,7 @@ include/Inventor/C/errors/debugerror.h
 include/Inventor/C/errors/error.h
 include/Inventor/C/glue/dl.h
 include/Inventor/C/glue/gl.h
+include/Inventor/C/glue/spidermonkey.h
 include/Inventor/C/threads/barrier.h
 include/Inventor/C/threads/common.h
 include/Inventor/C/threads/condvar.h
@@ -254,6 +255,7 @@ include/Inventor/elements/SoGLCacheContextElement.h
 include/Inventor/elements/SoGLClipPlaneElement.h
 include/Inventor/elements/SoGLColorIndexElement.h
 include/Inventor/elements/SoGLCoordinateElement.h
+include/Inventor/elements/SoGLDisplayList.h
 include/Inventor/elements/SoGLDrawStyleElement.h
 include/Inventor/elements/SoGLEnvironmentElement.h
 include/Inventor/elements/SoGLLazyElement.h
@@ -491,12 +493,14 @@ include/Inventor/misc/SoContextHandler.h
 include/Inventor/misc/SoGLBigImage.h
 include/Inventor/misc/SoGLImage.h
 include/Inventor/misc/SoGlyph.h
+include/Inventor/misc/SoJavaScriptEngine.h
 include/Inventor/misc/SoLightPath.h
 include/Inventor/misc/SoNormalGenerator.h
 include/Inventor/misc/SoNotRec.h
 include/Inventor/misc/SoNotification.h
 include/Inventor/misc/SoProto.h
 include/Inventor/misc/SoProtoInstance.h
+include/Inventor/misc/SoScriptEngine.h
 include/Inventor/misc/SoState.h
 include/Inventor/misc/SoTempPath.h
 include/Inventor/misc/SoTranReceiver.h
@@ -673,8 +677,9 @@ include/SoWinEnterScope.h
 include/SoWinLeaveScope.h
 lib/libCoin.a
 lib/libCoin.so
-lib/libCoin.so.43
+lib/libCoin.so.44
 %%DATADIR%%/conf/coin-default.cfg
+%%DATADIR%%/conf/simage-default.cfg
 %%DATADIR%%/draggerDefaults/centerballDragger.iv
 %%DATADIR%%/draggerDefaults/directionalLightDragger.iv
 %%DATADIR%%/draggerDefaults/dragPointDragger.iv
