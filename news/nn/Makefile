@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	nn
-PORTVERSION=	6.6.5
+PORTVERSION=	6.7.2
 CATEGORIES=	news
-MASTER_SITES=	ftp://ftp.nndev.org/pub/nn-6.6/%SUBDIR%/
+MASTER_SITES=	ftp://ftp.nndev.org/pub/nn-6.7/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 EXTRACT_SUFX=	.tar.Z
 

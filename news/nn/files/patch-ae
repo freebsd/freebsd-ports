@@ -1,6 +1,6 @@
---- config.h.unparsed.orig	Fri Dec  7 06:33:23 2001
-+++ config.h.unparsed	Fri Dec  7 06:37:30 2001
-@@ -46,10 +46,10 @@
+--- config.h.unparsed.orig	Sat Sep  3 13:59:25 2005
++++ config.h.unparsed	Sat Sep  3 14:02:25 2005
+@@ -45,10 +45,10 @@
  #define DO_NOV_DIGEST
  
  /* Optional */
@@ -12,8 +12,8 @@
 +#define NOV_FILENAME		".overview"
  
  
- /*********************** NETWORK DEPENDENT DEFINITIONS **********************
-@@ -100,7 +100,9 @@
+ /********************************** NNTP *********************************
+@@ -68,7 +68,9 @@
   *	LIB_DIRECTORY defined below.
   */
  
@@ -23,8 +23,8 @@
 +#define DOMAIN_FILE	NNTP_DOMAIN
  
  /*
-  *	Define NNTP_PATH_HOSTNAME to force a specific hostname into the
-@@ -126,7 +128,7 @@
+  *  Define your local domain name.  If you leave this undefined, nn will
+@@ -84,7 +86,7 @@
   *  DOMAIN as defined above).  If you don't want this, comment it out.
   */
  
@@ -33,16 +33,16 @@
  
  
  /***************** OPERATING SYSTEM DEPENDENT DEFINITIONS *******************
-@@ -137,7 +139,7 @@
+@@ -95,7 +97,7 @@
   *	conf/s-template.h as a starting point for writing you own.
   */
  
 -#include "s-sunos5.h"
 +#include "s-freebsd.h"
  
- 
- /********************** MACHINE DEPENDENT DEFINITIONS **********************
-@@ -148,7 +150,7 @@
+ /*
+  *	Define DEFAULT_PAGER as the initial value of the 'pager' variable.
+@@ -122,7 +124,7 @@
   *	conf/m-template.h as a starting point for writing you own.
   */
  
@@ -50,8 +50,8 @@
 +#include "m-i80386.h"
  
  
- /**************************** LOCALIZATION ****************************
-@@ -181,9 +183,9 @@
+ /***************************** OWNERSHIP ***************************
+@@ -173,9 +175,9 @@
   *			   (= LIB_DIRECTORY/Log if undefined).
   */
  
@@ -62,29 +62,18 @@
 +#define LIB_DIRECTORY	"SUB_PREFIX/lib/nn"
 +#define TMP_DIRECTORY	"/var/tmp"
  
- /*************************** NEWS TRANSPORT **************************
+ /*************************** MAIL INTERFACE *************************
   *
-@@ -201,8 +203,8 @@
-  *				  Default: NEWS_LIB_DIR/{rm,del}group
-  */
- 
--/* #define NEWS_DIRECTORY	"/usr/spool/news"	*/
--/* #define NEWS_LIB_DIRECTORY	"/usr/lib/news"		*/
-+#define NEWS_DIRECTORY		"/var/news"
-+#define NEWS_LIB_DIRECTORY	"SUB_PREFIX/news/lib"
- 
- 
- /**************************** DATABASE LOCATION **************************
-@@ -257,7 +259,7 @@
+@@ -189,7 +191,7 @@
   */
  
  /* #define REC_MAIL	"/usr/lib/news/recmail"	*/	/* non-sendmail */
 -#define REC_MAIL	"/usr/lib/sendmail -t"		/* sendmail */
 +#define REC_MAIL	"/usr/sbin/sendmail -t"		/* sendmail */
  
- 
  /*
-@@ -317,13 +319,13 @@
+  *	nn needs to know the name of your host.
+@@ -237,13 +239,13 @@
   *	DAEMON_MAN	- nnmaster
   */
  
@@ -101,3 +90,13 @@
  #define DAEMON_MAN_SECTION	"8"
  
  
+@@ -425,7 +427,7 @@
+  *				  Default: NEWS_LIB_DIR/{rm,del}group
+  */
+ 
+-/* #define NEWS_DIRECTORY	"/usr/spool/news"	*/
+-/* #define NEWS_LIB_DIRECTORY	"/usr/lib/news"		*/
++#define NEWS_DIRECTORY	"/var/news"
++#define NEWS_LIB_DIRECTORY	"SUB_PREFIX/news/lib"
+ 
+ /************************ CONFIGURATION COMPLETED ************************/

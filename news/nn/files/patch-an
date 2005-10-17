@@ -1,22 +1,14 @@
---- nntp.c.orig	Sat Jan 25 00:10:39 2003
-+++ nntp.c	Wed Apr 28 17:47:59 2004
-@@ -39,6 +39,7 @@
- #include <errno.h>
- #include <pwd.h>
- #include <ctype.h>
-+#include <sys/param.h>
- 
- #ifdef NOV
- #include "hash.h"
-@@ -63,6 +64,7 @@
- static int	connect_server(void);
- static void debug_msg __APROTO((char *prefix, char *str));
- static void find_server __APROTO((void));
-+char *find_domain __APROTO((char *domainFile));
- static int get_server_line __APROTO((char *string, int size));
- static int get_server __APROTO((char *string, int size));
- static int get_socket __APROTO((void));
-@@ -212,6 +214,50 @@
+--- nntp.c.orig	Tue Apr 19 18:06:51 2005
++++ nntp.c	Sat Sep  3 14:34:49 2005
+@@ -76,6 +76,7 @@
+ static int      connect_server(void);
+ static void     debug_msg(char *prefix, char *str);
+ static void     find_server(void);
++static char    *find_domain(const char *domainFile);
+ static int      get_server_line(char *string, int size);
+ static int      get_server(char *string, int size);
+ static int      get_socket(void);
+@@ -233,6 +234,50 @@
      sys_error("Failed to find name of NNTP server!");
  }
  
@@ -34,64 +26,64 @@
 + *	Side effects:	None.
 + */
 +
-+char *
-+find_domain(char *domainFile)
++static char *
++find_domain(const char *domainFile)
 +{
-+	register FILE	*fp;
-+	register char	*cp;
-+	static char	buf[MAXHOSTNAMELEN];
-+	char		*index();
++    register FILE  *fp;
++    register char  *cp;
++    static char     buf[MAXHOSTNAMELEN];
++    char           *index();
 +
-+	if (domainFile == NULL)
-+		return (NULL);
-+
-+	fp = fopen(domainFile, "r");
-+	if (fp == NULL)
-+		return (NULL);
-+
-+	while (fgets(buf, sizeof (buf), fp) != NULL) {
-+		if (*buf == '\n' || *buf == '#')
-+			continue;
-+		cp = index(buf, '\n');
-+		if (cp)
-+			*cp = '\0';
-+		(void) fclose(fp);
-+		return (buf);
-+	}
-+
-+	(void) fclose(fp);
++    if (domainFile == NULL)
 +	return (NULL);
++
++    fp = fopen(domainFile, "r");
++    if (fp == NULL)
++	return (NULL);
++
++    while (fgets(buf, sizeof (buf), fp) != NULL) {
++	if (*buf == '\n' || *buf == '#')
++	    continue;
++	cp = index(buf, '\n');
++	if (cp)
++	    *cp = '\0';
++	(void) fclose(fp);
++	return (buf);
++    }
++
++    (void) fclose(fp);
++    return (NULL);
 +}
 +
 +
  /*
   * get_server_line: get a line from the server.
   *
-@@ -1415,15 +1461,24 @@
- gen_frompath()
+@@ -1492,15 +1537,24 @@
+ gen_frompath(void)
  {
- 	struct	passwd *passwd;
-+	char	*domain;
-+	char	*fromFormat = "From: <%s@%s>\r\n";
+     struct passwd  *passwd;
++    char           *domain;
++    const char     *fromFormat = "From: <%s@%s>\r\n";
  
- 	passwd = getpwuid(getuid());
+     passwd = getpwuid(getuid());
  
- 	fprintf(nntp_out, "From: ");
- 	fprintf(nntp_out, "%s ", full_name());
+     fprintf(nntp_out, "From: ");
+     fprintf(nntp_out, "%s ", full_name());
  
--	fprintf(nntp_out, "<%s@%s>\r\n",
--		passwd->pw_name,
--		domain);
-+	domain = find_domain(DOMAIN_FILE);
-+	if (domain == NULL) {
-+		fprintf(nntp_out, fromFormat,
-+			passwd->pw_name,
-+			host_name);
-+	} else {
-+		fprintf(nntp_out, fromFormat,
-+			passwd->pw_name,
-+			domain);
-+	}
+-    fprintf(nntp_out, "<%s@%s>\r\n",
+-	    passwd->pw_name,
+-	    domain);
++    domain = find_domain(DOMAIN_FILE);
++    if (domain == NULL) {
++	fprintf(nntp_out, fromFormat,
++		passwd->pw_name,
++		host_name);
++    } else {
++	fprintf(nntp_out, fromFormat,
++		passwd->pw_name,
++		domain);
++    }
  
  #ifdef HIDDENNET
- 	/* Only the login name - nntp server will add uucp name */
+     /* Only the login name - nntp server will add uucp name */
