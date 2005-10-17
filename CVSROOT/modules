@@ -11682,6 +11682,7 @@ sslwrap		ports/security/sslwrap
 ssmtp		ports/mail/ssmtp
 ssserver	ports/www/ssserver
 sst		ports/security/sst
+sswf		ports/graphics/sswf
 ssync		ports/sysutils/ssync
 st		ports/devel/st
 stalepid	ports/sysutils/stalepid
