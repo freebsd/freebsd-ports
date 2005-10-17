@@ -66,6 +66,7 @@
     SUBDIR += bomberinstinct
     SUBDIR += bombermaze
     SUBDIR += bomns
+    SUBDIR += bos
     SUBDIR += braincurses
     SUBDIR += briquolo
     SUBDIR += bs
