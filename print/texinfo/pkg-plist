@@ -60,7 +60,5 @@ share/locale/zh_TW/LC_MESSAGES/texinfo.mo
 @unexec rmdir %D/share/locale/pl 2> /dev/null || true
 @unexec rmdir %D/share/locale/no/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/no 2> /dev/null || true
-@unexec rmdir %D/share/locale/de_AT/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/de_AT 2> /dev/null || true
 @unexec rmdir %D/share/locale/cs/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/cs 2> /dev/null || true
