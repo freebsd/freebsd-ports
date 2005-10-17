@@ -12187,6 +12187,7 @@ translate	ports/misc/translate
 translator	ports/misc/translator
 transmission	ports/net/transmission
 transproxy	ports/www/transproxy
+transset-df	ports/x11-wm/transset-df
 tree		ports/sysutils/tree
 tree-widget	ports/editors/tree-widget
 treecc		ports/lang/treecc
