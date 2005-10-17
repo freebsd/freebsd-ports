@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://www.enderunix.org/netustad/
 
-MAINTAINER=	ozkan@enderunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Web based admin tool that manages network services
 
 #MAN8=		netustad.8 netustadpasswd.8
