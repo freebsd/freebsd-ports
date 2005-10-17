@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	file
-PORTVERSION=	4.13
+PORTVERSION=	4.15
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.gw.com/mirrors/pub/unix/file/ \
@@ -15,12 +15,13 @@ MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	File - determine file type
 
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-fsect-man5
-HAS_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+
 MAN1=		file.1
 MAN3=		libmagic.3
 MAN5=		magic.5
-
-INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

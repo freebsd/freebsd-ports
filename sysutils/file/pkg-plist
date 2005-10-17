@@ -4,8 +4,8 @@ lib/libmagic.so
 lib/libmagic.a
 lib/libmagic.la
 include/magic.h
-share/file/magic
-share/file/magic.mime
-share/file/magic.mgc
-share/file/magic.mime.mgc
-@dirrm share/file
+%%DATADIR%%/magic
+%%DATADIR%%/magic.mime
+%%DATADIR%%/magic.mgc
+%%DATADIR%%/magic.mime.mgc
+@dirrm %%DATADIR%%
