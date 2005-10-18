@@ -5,28 +5,32 @@
 # $FreeBSD$
 #
 
-PORTNAME=		PySQLite
-PORTVERSION=		1.0.1
-CATEGORIES=		databases python
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+PORTNAME=	PySQLite
+PORTVERSION=	1.0.1
+CATEGORIES=	databases python
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pysqlite
-PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
-DISTNAME=		pysqlite-${PORTVERSION}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	pysqlite-${PORTVERSION}
 
-MAINTAINER=		mnag@FreeBSD.org
-COMMENT=		A DB-API v2 Python library for the SQLite 2 embedded SQL engine
+MAINTAINER=	mnag@FreeBSD.org
+COMMENT=	A DB-API v2 Python library for the SQLite 2 embedded SQL engine
 
-LIB_DEPENDS=		sqlite.2:${PORTSDIR}/databases/sqlite2
+LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite2
 
-CONFLICTS=		py*-PySQLite-1.1*
+CONFLICTS=	py*-PySQLite-1.1*
 
-WRKSRC=			${WRKDIR}/pysqlite
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
+WRKSRC=		${WRKDIR}/pysqlite
+USE_PYTHON=	yes
+USE_PYDISTUTILS=yes
+USE_REINPLACE=	yes
+MAKE_ENV=	LOCALBASE="${LOCALBASE}"
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=		*
-.endif
+PORTDOCS=	*
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|"freebsd5",|"freebsd5", "freebsd6", "freebsd7",|' \
+		${WRKSRC}/setup.py
 
 post-install:
 .if !defined(NOPORTDOCS)
