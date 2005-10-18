@@ -26,8 +26,7 @@ MAN1=	aldo.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-USE_GCC=	3.4
-MAKE_ENV+=	CXX="${CXX}"
+BROKEN=	"Doesn't build on FreeBSD < 5.x"
 .endif
 
 do-install:
