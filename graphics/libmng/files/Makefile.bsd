@@ -7,7 +7,12 @@ SHLIB_MINOR?=	0
 
 SRCS!=		${MAKE} -f ${.CURDIR}/makefiles/makefile.unix -V SOURCES
 
-CFLAGS+=	-I${INCDIR} -DMNG_FULL_CMS -DMNG_BUILD_SO
+CFLAGS+=	-I${INCDIR}
+.if ${WITH_MNG_OPTIMIZE} == "true"
+.for f in CHUNKINITFREE OBJCLEANUP CHUNKASSIGN CHUNKREADER
+CFLAGS+=	-DMNG_OPTIMIZE_$f
+.endfor
+.endif
 
 INCS=		libmng.h libmng_conf.h libmng_types.h
 INCSDIR=	${LOCALBASE}/include
