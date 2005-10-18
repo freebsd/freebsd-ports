@@ -34,11 +34,58 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
-  <vuln vid="60f8fe7b-3cfb-11da-baa2-0004614cc33d">
-    <topic>WebCalendar -- multiple reports of websites getting defeced</topic>
+  <vuln vid="97d45e95-3ffc-11da-a263-0001020eed82">
+    <topic>snort -- Back Orifice preprocessor buffer overflow
+      vulnerability</topic>
     <affects>
       <package>
-	<name>webcalendar</name>
+	<name>snort</name>
+	<range><ge>2.4.0</ge><lt>2.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jennifer Steffens reports:</p>
+	<blockquote cite="http://www.snort.org/pub-bin/snortnews.cgi#99">
+	  <p>The Back Orifice preprocessor contains a stack-based
+	    buffer overflow. This vulnerability could be leveraged by
+	    an attacker to execute code remotely on a Snort sensor
+	    where the Back Orifice preprocessor is enabled. However,
+	    there are a number of factors that make remote code
+	    execution difficult to achieve across different builds of
+	    Snort on different platforms, even on the same platform
+	    with different compiler versions, and it is more likely
+	    that an attacker could use the vulnerability as a denial
+	    of service attack.</p>
+	  <p>The Back Orifice preprocessor can be disabled by
+	    commenting out the line "preprocessor bo" in
+	    snort.conf. This can be done in any text editor using the
+	    following procedure:</p>
+	  <ol>
+	    <li>Locate the line "preprocessor bo"</li>
+	    <li>Comment out this line by preceding it with a hash
+	      (#). The new line will look like "#preprocessor bo"</li>
+	    <li>Save the file</li>
+	    <li>Restart snort</li>
+	  </ol>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.snort.org/pub-bin/snortnews.cgi#99</url>
+      <certvu>175500</certvu>
+    </references>
+    <dates>
+      <discovery>2005-10-18</discovery>
+      <entry>2005-10-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="60f8fe7b-3cfb-11da-baa2-0004614cc33d">
+    <topic>webcalendar -- multiple reports of websites getting defaced</topic>
+    <affects>
+      <package>
+	<name>WebCalendar</name>
 	<range><lt>1.0.1</lt></range>
       </package>
     </affects>
@@ -54,6 +101,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-08-26</discovery>
       <entry>2005-10-15</entry>
+      <modified>2005-10-18</modified>
     </dates>
   </vuln>
 
