@@ -21,11 +21,21 @@ ALL_TARGET=	mined manual
 PORTDOCS=	*
 .endif
 
-USE_GMAKE=	YES
+USE_GMAKE=	yes
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
 MAKE_ARGS=	GMAKE=${GMAKE} CC=${CC:T} OPT="${CFLAGS}"
 INSTALL_TARGET=	localinstall
 
 MAN1=		mined.1
+
+PRFX2FIX=	src/makefile.bsd src/makefile.gcc usrshare/xinitrc.mined	\
+		usrshare/mined.desktop src/mined1.c
+
+pre-configure:
+.for FILE in ${PRFX2FIX}
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/${FILE}
+.endfor
 
 pre-build:
 	${MV} ${WRKSRC}/src/mkinclud.cc ${WRKSRC}/src/mkinclud.cc.bak
