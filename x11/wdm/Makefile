@@ -9,11 +9,13 @@ PORTNAME=	wdm
 PORTVERSION=	1.28
 PORTREVISION=	1
 CATEGORIES=	x11 windowmaker
-MASTER_SITES=	http://voins.program.ru/wdm/ \
-		http://www.de.freebsd.org/de/gif/bsd/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	tg
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DAEMONPICS}
+MASTER_SITES=	http://voins.program.ru/wdm/:wdm \
+		http://wolfram.schneider.org/bsd/gif/bsd/:pic_large \
+		${MASTER_SITE_LOCAL:S/$/:pic_small/}
+MASTER_SITE_SUBDIR=	tg/:pic_small
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:wdm \
+		beastie.xpm:pic_small \
+		daemon1-HQ-1280x960.jpg:pic_large
 DIST_SUBDIR=	wdm
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -30,7 +32,7 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		DEF_SERVER="${DEF_SERVER}"
+		DEF_SERVER="${DEF_SERVER}" XRDB_PATH="${XRDB_PATH}"
 CONFIGURE_ARGS=	--with-logdir=/var/log \
 		--with-runlockdir=/var/run \
 		--with-wdmdir=${WDMDIR} \
@@ -49,11 +51,9 @@ CPPFLAGS=	-I${LOCALBASE}/include -DCSRG_BASED -DHAS_SETUSERCONTEXT
 LDFLAGS=	-L${LOCALBASE}/lib -lintl
 
 DEF_SERVER?=	${X11BASE}/bin/X
+XRDB_PATH?=	${X11BASE}/bin/xrdb
 
-MAKE_ENV=	XRDB_PATH=${PREFIX}/bin/xrdb
 WDMDIR=		${PREFIX}/lib/X11/wdm
-
-DAEMONPICS=	beastie.xpm daemon1-HQ-1280x960.jpg
 
 .include <bsd.port.pre.mk>
 
@@ -106,7 +106,7 @@ post-install:
 .if exists(${WDMDIR}/Xsetup_0.preserve)
 	${MV} ${WDMDIR}/Xsetup_0.preserve ${WDMDIR}/Xsetup_0
 .endif
-.for file in ${DAEMONPICS}
+.for file in beastie.xpm daemon1-HQ-1280x960.jpg
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${file} ${WDMDIR}/pixmaps
 .endfor
 .if defined(WITH_PAM)
