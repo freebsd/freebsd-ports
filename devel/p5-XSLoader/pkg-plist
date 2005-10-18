@@ -1,0 +1,3 @@
+%%SITE_PERL%%/XSLoader.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XSLoader/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XSLoader
