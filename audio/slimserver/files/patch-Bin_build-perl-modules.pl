@@ -3,7 +3,21 @@ $FreeBSD$
 
 --- Bin/build-perl-modules.pl.orig
 +++ Bin/build-perl-modules.pl
-@@ -74,28 +74,30 @@
+@@ -54,6 +54,13 @@
+ 
+ 		'env' => [qw(DBI-1.46/blib/lib: DBI-1.46/blib/arch)],
+ 	},
++
++	'XML-Parser-2.34' => {
++		'Makefile.PL' => join(' ', qw(
++			EXPATLIBPATH="%%LOCALBASE%%/lib"
++			EXPATINCPATH="%%LOCALBASE%%/include"
++		)),
++	},
+ );
+ 
+ sub main {
+@@ -74,28 +81,30 @@
  
  	print "*** Ignore any warnings about AppConfig. ***\n\n";
  
@@ -51,7 +65,7 @@ $FreeBSD$
  
  	unless (-d $slimServerPath) {
  		die "Couldn't find a valid SlimServer path. Exiting.\n";
-@@ -104,12 +106,13 @@
+@@ -107,12 +116,13 @@
  	# This is where the binaries will end up.
  	my $cpanDest = "$slimServerPath/CPAN/arch/$version/$archname/auto";
  
@@ -71,7 +85,7 @@ $FreeBSD$
  
  	# Remove trailing slash
  	$downloadPath =~ s|^(.+?)/$|$1|;
-@@ -122,32 +125,32 @@
+@@ -125,32 +135,32 @@
  
  	my $pwd = cwd();
  
@@ -130,7 +144,7 @@ $FreeBSD$
  
  	for my $package (@packages) {
  
-@@ -158,18 +161,19 @@
+@@ -161,18 +171,19 @@
  		# Remove any previous version.
  		unlink $package;
  

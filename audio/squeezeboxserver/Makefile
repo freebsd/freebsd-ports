@@ -90,6 +90,7 @@ post-fetch:
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's|%%PERL%%|${PERL}|' \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		-e 's|%%TMP_SLIMDIR%%|${TMP_SLIMDIR}|' \
 		-e 's|%%CPANWRKDIR%%|${CPANWRKDIR}|' \
 		-e 's|%%DISTDIR%%|${_DISTDIR}|' ${WRKSRC}/Bin/build-perl-modules.pl
