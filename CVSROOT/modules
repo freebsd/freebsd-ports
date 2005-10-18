@@ -9263,6 +9263,7 @@ perforce	ports/devel/perforce
 perl2html	ports/textproc/perl2html
 perl5		ports/lang/perl5
 perl5.8		ports/lang/perl5.8
+perlbal		ports/www/perlbal
 perldap		ports/net/perldap
 perlftlib	ports/print/perlftlib
 perlsh		ports/shells/perlsh
