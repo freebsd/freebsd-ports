@@ -1,61 +1,20 @@
-bin/manager-adduser
+@comment $FreeBSD$
 bin/prelude-manager
-bin/prelude-manager-db-create.sh
-@unexec [ -f %D/etc/prelude-manager/prelude-manager.conf-dist ] && rm %D/etc/prelude-manager/prelude-manager.conf-dist || true
-include/prelude-manager/plugin-db.h
-include/prelude-manager/db.h
-include/prelude-manager/plugin-decode.h
-include/prelude-manager/plugin-report.h
-include/prelude-manager/plugin-filter.h
-include/prelude-manager/plugin-util.h
-include/prelude-manager/report.h
-include/prelude-manager/idmef-util.h
-include/prelude-manager/decode.h
-%%MYSQL%%lib/prelude-manager/db/mysql.so
-%%MYSQL%%lib/prelude-manager/db/mysql.la
-%%PGSQL%%lib/prelude-manager/db/pgsql.so
-%%PGSQL%%lib/prelude-manager/db/pgsql.la
-lib/prelude-manager/decodes/prelude-nids.so
-lib/prelude-manager/decodes/prelude-nids.la
+etc/prelude-manager/prelude-manager.conf-dist
+include/prelude-manager/prelude-manager.h
+lib/prelude-manager/filters/idmef-criteria.so
+lib/prelude-manager/reports/db.so
 lib/prelude-manager/reports/debug.so
-lib/prelude-manager/reports/debug.la
+lib/prelude-manager/reports/relaying.so
 lib/prelude-manager/reports/textmod.so
-lib/prelude-manager/reports/textmod.la
 lib/prelude-manager/reports/xmlmod.so
-lib/prelude-manager/reports/xmlmod.la
-share/prelude-manager/mysql/mysql.sql
-share/prelude-manager/pgsql/postgres.sql
-share/prelude-manager/xmlmod/idmef-message.dtd
-%%DOCSDIR%%/c4.html
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/prelude-manager-admin-server.html
-%%DOCSDIR%%/prelude-manager-auth.html
-%%DOCSDIR%%/prelude-manager-idmef-db-output.html
-%%DOCSDIR%%/prelude-manager-idmef-message-read.html
-%%DOCSDIR%%/prelude-manager-idmef-message-scheduler.html
-%%DOCSDIR%%/prelude-manager-idmef-util.html
-%%DOCSDIR%%/prelude-manager-ntp.html
-%%DOCSDIR%%/prelude-manager-pconfig.html
-%%DOCSDIR%%/prelude-manager-plugin-db.html
-%%DOCSDIR%%/prelude-manager-plugin-decode.html
-%%DOCSDIR%%/index.sgml
-%%DOCSDIR%%/prelude-manager-plugin-filter.html
-%%DOCSDIR%%/prelude-manager-plugin-report.html
-%%DOCSDIR%%/prelude-manager-plugin-util.html
-%%DOCSDIR%%/prelude-manager-report-infos.html
-%%DOCSDIR%%/prelude-manager-sensor-server.html
-%%DOCSDIR%%/prelude-manager-server-generic.html
-%%DOCSDIR%%/prelude-manager-server-logic.html
-%%DOCSDIR%%/prelude-manager-ssl.html
-@unexec rmdir %D/etc/prelude-manager 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/prelude-manager`` to remove any configuration files left." | fmt
-@dirrm include/prelude-manager
-@dirrm lib/prelude-manager/db
-@dirrm lib/prelude-manager/decodes
+%%DATADIR%%/xmlmod/idmef-message.dtd
+@dirrm %%DATADIR%%/xmlmod
+@dirrm %%DATADIR%%
 @dirrm lib/prelude-manager/reports
+@dirrm lib/prelude-manager/filters
 @dirrm lib/prelude-manager
-@dirrm share/prelude-manager/mysql
-@dirrm share/prelude-manager/pgsql
-@dirrm share/prelude-manager/xmlmod
-@dirrm share/prelude-manager
-@dirrm %%DOCSDIR%%
+@dirrm include/prelude-manager
+@unexec rmdir %D/etc/prelude-manager 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf %D/etc/prelude-manager`` to remove any configuration files left." | fmt
+@unexec rmdir /var/run/prelude-manager 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf /var/run/prelude-manager`` to remove any files left." | fmt
 @unexec rmdir /var/spool/prelude-manager 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf /var/spool/prelude-manager`` to remove any files left." | fmt
