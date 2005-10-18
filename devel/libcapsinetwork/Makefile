@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	libcapsinetwork
-PORTVERSION=	0.2.5
+PORTVERSION=	0.3.0
 CATEGORIES=	devel net
-MASTER_SITES=	http://unixcode.org/downloads/libcapsinetwork/
+MASTER_SITES=	http://www.robertjohnkaper.com/downloads/atlantik/
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Network library aimed at easy development of C++ server daemons
