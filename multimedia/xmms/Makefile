@@ -45,7 +45,7 @@ PLIST_SUB=	DATADIR="share"
 CONFIGURE_ARGS+=	--enable-ipv6
 
 .if defined(WITH_ENCODING_PATCH) || defined(WITH_ID3V2_PATCH)
-ENC_PATCHLEVEL=	27.4
+ENC_PATCHLEVEL=	28.1
 DISTFILES+=	${PORTNAME}-${PORTVERSION}-recode-csa${ENC_PATCHLEVEL}${EXTRACT_SUFX}:enc
 MASTER_SITES+=	${MASTER_SITE_SOURCEFORGE:S/$/:enc/}
 MASTER_SITE_SUBDIR+=	rusxmms/:enc
@@ -93,7 +93,7 @@ CONFIGURE_ARGS+=	--disable-esd
 PLIST_SUB+=	ESDPLUGIN:="@comment "
 .endif
 
-.if ${MACHINE_ARCH} != "i386"
+.if ${ARCH} != "i386"
 WITHOUT_SIMD=	yes
 .endif
 
