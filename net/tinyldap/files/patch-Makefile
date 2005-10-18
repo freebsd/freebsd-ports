@@ -19,8 +19,8 @@
  ifneq ($(DIET),)
  LIBS+=-llatin1
  endif
-+CFLAGS+=-I. -I/usr/local/include/libowfat
-+LDFLAGS+=-L/usr/local/lib
++CFLAGS+=-I. -I${LOCALBASE}/include/libowfat
++LDFLAGS+=-L${LOCALBASE}/lib
 +LIBS+=-lmd
  
  %.o: %.c
