@@ -40,9 +40,7 @@ EXTRACT_ONLY=
 MAINTAINER=		trevor@FreeBSD.org
 COMMENT=		(L)GPL sources for linux_base-8, to comply with licences
 
-BROKEN=			Incomplete pkg-plist
-DEPRECATED=		${BROKEN}
-EXPIRATION_DATE=	2005-09-22
+RUN_DEPENDS=		${LINUXBASE}/usr/src:${PORTSDIR}/emulators/linux_base-8
 
 .undef USE_LINUX
 
