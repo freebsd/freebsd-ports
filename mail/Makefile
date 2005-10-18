@@ -503,7 +503,6 @@
     SUBDIR += squirrelmail-compatibility-plugin
     SUBDIR += sqwebmail
     SUBDIR += ssmtp
-    SUBDIR += stuphead
     SUBDIR += svnmailer
     SUBDIR += swaks
     SUBDIR += sylpheed

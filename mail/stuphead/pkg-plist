@@ -1,6 +1,0 @@
-bin/stuphead
-%%MOZILLA%%bin/stupheadbin
-share/locale/fr/LC_MESSAGES/stuphead.mo
-share/locale/ru/LC_MESSAGES/stuphead.mo
-share/pixmaps/stuphead.xpm
-%%GNOME%%share/gnome/apps/Internet/stuphead.desktop
