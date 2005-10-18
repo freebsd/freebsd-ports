@@ -72,8 +72,9 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <url>http://www.snort.org/pub-bin/snortnews.cgi#99</url>
       <certvu>175500</certvu>
+      <url>http://www.snort.org/pub-bin/snortnews.cgi#99</url>
+      <url>http://xforce.iss.net/xforce/alerts/id/207</url>
     </references>
     <dates>
       <discovery>2005-10-18</discovery>
