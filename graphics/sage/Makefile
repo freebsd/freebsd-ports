@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	sage
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	graphics devel
-MASTER_SITES=	ftp://ftp.worldforge.org/pub/worldforge/libs/sage/ \
-		http://purple.worldforge.org/downloads/libs/sage/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	worldforge
 
 MAINTAINER=	oliver@FreeBSD.org
@@ -21,11 +19,15 @@ USE_GL=		yes
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
+USE_GNOME=	gnomehack
+CONFIGURE_ARGS=	--program-transform-name=
+MAN3=		sage.3 sage_init.3
 
 CFLAGS=		-I${X11BASE}/include
 CONFIGURE_ENV=	"CFLAGS=${CFLAGS}"
 
 post-patch:
-	${REINPLACE_CMD} s/sdl-config/sdl11-config/g ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|g; \
+		s|-DSAGE_COMPILE||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
