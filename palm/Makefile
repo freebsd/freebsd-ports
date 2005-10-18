@@ -7,7 +7,6 @@
     SUBDIR += coldsync
     SUBDIR += gnomepilot-conduits2
     SUBDIR += gnomepilot2
-    SUBDIR += hdconv
     SUBDIR += iSiloXC
     SUBDIR += imgvtopgm
     SUBDIR += isilo
