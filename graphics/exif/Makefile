@@ -18,6 +18,7 @@ LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
 		popt.0:${PORTSDIR}/devel/popt
 
 USE_LIBTOOL_VER=15
+CONFIGURE_ARGS=	--with-popt-prefix=${LOCALBASE}
 
 MAN1=		exif.1
 
