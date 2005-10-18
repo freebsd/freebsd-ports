@@ -1,9 +1,9 @@
---- Makefile.in.orig	Mon Sep 22 15:45:29 2003
-+++ Makefile.in	Mon Sep 22 15:47:15 2003
-@@ -628,17 +628,8 @@
- install-data-local:
+--- Makefile.in.orig	Tue Oct 18 12:12:28 2005
++++ Makefile.in	Tue Oct 18 12:13:07 2005
+@@ -602,17 +602,8 @@
  	$(INSTALL) -d -m 700 $(DESTDIR)$(configdir);
- 	$(INSTALL) -d -m 700 $(DESTDIR)$(manager_fifo_dir)
+ 	$(INSTALL) -d -m 700 $(DESTDIR)$(manager_run_dir);
+ 	$(INSTALL) -d -m 700 $(DESTDIR)$(manager_fifo_dir);
 -	@if test -f $(DESTDIR)$(configdir)/prelude-manager.conf; then                                                  \
 -		$(INSTALL) -m 600 $(top_srcdir)/prelude-manager.conf $(DESTDIR)$(configdir)/prelude-manager.conf-dist; \
 -		echo "********************************************************************************";     		\
