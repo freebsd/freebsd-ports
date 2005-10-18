@@ -3,6 +3,7 @@
 %%SITE_PERL%%/Data/Serializer/Cookbook.pm
 %%SITE_PERL%%/Data/Serializer/Data/Denter.pm
 %%SITE_PERL%%/Data/Serializer/Data/Dumper.pm
+%%SITE_PERL%%/Data/Serializer/Data/Taxi.pm
 %%SITE_PERL%%/Data/Serializer/FreezeThaw.pm
 %%SITE_PERL%%/Data/Serializer/PHP/Serialization.pm
 %%SITE_PERL%%/Data/Serializer/Storable.pm
@@ -16,6 +17,9 @@
 %%SITE_PERL%%/auto/Data/Serializer/Data/Dumper/autosplit.ix
 %%SITE_PERL%%/auto/Data/Serializer/Data/Dumper/deserialize.al
 %%SITE_PERL%%/auto/Data/Serializer/Data/Dumper/serialize.al
+%%SITE_PERL%%/auto/Data/Serializer/Data/Taxi/autosplit.ix
+%%SITE_PERL%%/auto/Data/Serializer/Data/Taxi/deserialize.al
+%%SITE_PERL%%/auto/Data/Serializer/Data/Taxi/serialize.al
 %%SITE_PERL%%/auto/Data/Serializer/FreezeThaw/autosplit.ix
 %%SITE_PERL%%/auto/Data/Serializer/FreezeThaw/deserialize.al
 %%SITE_PERL%%/auto/Data/Serializer/FreezeThaw/serialize.al
@@ -72,6 +76,7 @@
 @dirrm %%SITE_PERL%%/auto/Data/Serializer/PHP/Serialization
 @dirrm %%SITE_PERL%%/auto/Data/Serializer/PHP
 @dirrm %%SITE_PERL%%/auto/Data/Serializer/FreezeThaw
+@dirrm %%SITE_PERL%%/auto/Data/Serializer/Data/Taxi
 @dirrm %%SITE_PERL%%/auto/Data/Serializer/Data/Dumper
 @dirrm %%SITE_PERL%%/auto/Data/Serializer/Data/Denter
 @dirrm %%SITE_PERL%%/auto/Data/Serializer/Data
