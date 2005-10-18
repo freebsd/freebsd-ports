@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/current/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	question+fbsdports@closedsrc.org
 COMMENT=	Lightweight network intrusion detection system
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
