@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cdargs
-PORTVERSION=	1.31
+PORTVERSION=	1.32
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.skamphausen.de/software/cdargs/
 
