@@ -20,23 +20,37 @@ lib/RealTimeBattle/Arenas/Triangle.arena
 lib/RealTimeBattle/Arenas/my_Star.arena
 lib/RealTimeBattle/Arenas/my_Star2.arena
 lib/RealTimeBattle/RealTimeBattle.xpm
-lib/RealTimeBattle/Robots/Brotfrucht-Robot1-TeamOne.robot
-lib/RealTimeBattle/Robots/Brotfrucht-Robot1-TeamTwo.robot
-lib/RealTimeBattle/Robots/Brotfrucht-Robot2-TeamOne.robot
-lib/RealTimeBattle/Robots/Brotfrucht-Robot2-TeamTwo.robot
-lib/RealTimeBattle/Robots/Brotfrucht-Robot3-TeamOne.robot
-lib/RealTimeBattle/Robots/Brotfrucht-Robot3-TeamTwo.robot
-lib/RealTimeBattle/Robots/Brotfrucht-Robot4-TeamOne.robot
-lib/RealTimeBattle/Robots/Brotfrucht-Robot4-TeamTwo.robot
-lib/RealTimeBattle/Robots/Brotfrucht-Robot5-TeamOne.robot
-lib/RealTimeBattle/Robots/Brotfrucht-Robot5-TeamTwo.robot
+lib/RealTimeBattle/Robots/Brotfrucht-Blaubeere-Fruchtteam.robot
+lib/RealTimeBattle/Robots/Brotfrucht-Erdbeere-Fruchtteam.robot
+lib/RealTimeBattle/Robots/Brotfrucht-Gerstenbrot-Brotteam.robot
+lib/RealTimeBattle/Robots/Brotfrucht-Heidelbeere-Fruchtteam.robot
+lib/RealTimeBattle/Robots/Brotfrucht-Himbeere-Fruchtteam.robot
+lib/RealTimeBattle/Robots/Brotfrucht-Mischbrot-Brotteam.robot
+lib/RealTimeBattle/Robots/Brotfrucht-Roggenbrot-Brotteam.robot
+lib/RealTimeBattle/Robots/Brotfrucht-Stachelbeere-Fruchtteam.robot
+lib/RealTimeBattle/Robots/Brotfrucht-Toastbrot-Brotteam.robot
+lib/RealTimeBattle/Robots/Brotfrucht-Weizenbrot-Brotteam.robot
+lib/RealTimeBattle/Robots/Cobra-Adder-AnacondaLike.robot
+lib/RealTimeBattle/Robots/Cobra-Anaconda-AnacondaLike.robot
+lib/RealTimeBattle/Robots/Cobra-Boa-AnacondaLike.robot
+lib/RealTimeBattle/Robots/Cobra-Cobra-CobraLike.robot
+lib/RealTimeBattle/Robots/Cobra-CoralSnake-CobraLike.robot
+lib/RealTimeBattle/Robots/Cobra-Krait-CobraLike.robot
+lib/RealTimeBattle/Robots/Cobra-Mamba-CobraLike.robot
+lib/RealTimeBattle/Robots/Cobra-Python-AnacondaLike.robot
+lib/RealTimeBattle/Robots/Cobra-TigerSnake-CobraLike.robot
+lib/RealTimeBattle/Robots/Cobra-Viper-AnacondaLike.robot
+lib/RealTimeBattle/Robots/Columbus-Cabral-Portugal.robot
+lib/RealTimeBattle/Robots/Columbus-Cortez-Spain.robot
+lib/RealTimeBattle/Robots/Columbus-Pizarro-Spain.robot
+lib/RealTimeBattle/Robots/Columbus-Vasco_da_Gama-Portugal.robot
+lib/RealTimeBattle/Robots/Columbus-Vespucci-Spain.robot
+lib/RealTimeBattle/Robots/Columbus-Zarco-Portugal.robot
 lib/RealTimeBattle/Robots/empty/Makefile.am
 lib/RealTimeBattle/Robots/empty/empty.c
-lib/RealTimeBattle/Robots/empty-Robot1-TeamThree.robot
-lib/RealTimeBattle/Robots/empty-Robot2-TeamThree.robot
-lib/RealTimeBattle/Robots/empty-Robot3-TeamThree.robot
-lib/RealTimeBattle/Robots/empty-Robot4-TeamThree.robot
-lib/RealTimeBattle/Robots/empty-Robot5-TeamThree.robot
+lib/RealTimeBattle/Robots/empty-fool-TeamLazy.robot
+lib/RealTimeBattle/Robots/empty-idiot-TeamLazy.robot
+lib/RealTimeBattle/Robots/empty-lamer-TeamLazy.robot
 lib/RealTimeBattle/Robots/empty.robot
 lib/RealTimeBattle/Robots/jBot/JBot.java
 lib/RealTimeBattle/Robots/jBot/JBotMain.java
@@ -47,11 +61,11 @@ lib/RealTimeBattle/Robots/jBot/jBot.robot.in
 lib/RealTimeBattle/Robots/joypad_robot/Makefile.am
 lib/RealTimeBattle/Robots/joypad_robot/README
 lib/RealTimeBattle/Robots/joypad_robot/joypad_robot.c
-lib/RealTimeBattle/Robots/perl/Robot.pm
 lib/RealTimeBattle/Robots/perl/perl.robot.in
 lib/RealTimeBattle/Robots/perl-Skeleton/perl-Skeleton.robot.in
 lib/RealTimeBattle/Robots/perl-Skeleton.robot
 lib/RealTimeBattle/Robots/perl.robot
+lib/RealTimeBattle/Robots/raziel/raziel.py.robot.in
 lib/RealTimeBattle/Robots/rotate_and_fire/Makefile.am
 lib/RealTimeBattle/Robots/rotate_and_fire/rotate_and_fire.cc
 lib/RealTimeBattle/Robots/rotate_and_fire/rotate_and_fire.h
@@ -61,21 +75,35 @@ lib/RealTimeBattle/Robots/rotate_and_fire/rotate_and_fire_signal.cc
 lib/RealTimeBattle/Robots/rotate_and_fire_blocking.robot
 lib/RealTimeBattle/Robots/rotate_and_fire_select.robot
 lib/RealTimeBattle/Robots/rotate_and_fire_signal.robot
-lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Robot1-TeamOne.conf
-lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Robot1-TeamTwo.conf
-lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Robot2-TeamOne.conf
-lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Robot2-TeamTwo.conf
-lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Robot3-TeamOne.conf
-lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Robot3-TeamTwo.conf
-lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Robot4-TeamOne.conf
-lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Robot4-TeamTwo.conf
-lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Robot5-TeamOne.conf
-lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Robot5-TeamTwo.conf
-lib/RealTimeBattle/Robots/rtb-team-framework/empty-Robot1-TeamThree.conf
-lib/RealTimeBattle/Robots/rtb-team-framework/empty-Robot2-TeamThree.conf
-lib/RealTimeBattle/Robots/rtb-team-framework/empty-Robot3-TeamThree.conf
-lib/RealTimeBattle/Robots/rtb-team-framework/empty-Robot4-TeamThree.conf
-lib/RealTimeBattle/Robots/rtb-team-framework/empty-Robot5-TeamThree.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Blaubeere-Fruchtteam.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Erdbeere-Fruchtteam.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Gerstenbrot-Brotteam.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Heidelbeere-Fruchtteam.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Himbeere-Fruchtteam.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Mischbrot-Brotteam.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Roggenbrot-Brotteam.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Stachelbeere-Fruchtteam.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Toastbrot-Brotteam.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Brotfrucht-Weizenbrot-Brotteam.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Cobra-Adder-AnacondaLike.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Cobra-Anaconda-AnacondaLike.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Cobra-Boa-AnacondaLike.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Cobra-Cobra-CobraLike.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Cobra-CoralSnake-CobraLike.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Cobra-Krait-CobraLike.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Cobra-Mamba-CobraLike.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Cobra-Python-AnacondaLike.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Cobra-TigerSnake-CobraLike.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Cobra-Viper-AnacondaLike.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Columbus-Cabral-Portugal.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Columbus-Cortez-Spain.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Columbus-Pizarro-Spain.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Columbus-Vasco_da_Gama-Portugal.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Columbus-Vespucci-Spain.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/Columbus-Zarco-Portugal.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/empty-fool-TeamLazy.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/empty-idiot-TeamLazy.conf
+lib/RealTimeBattle/Robots/rtb-team-framework/empty-lamer-TeamLazy.conf
 lib/RealTimeBattle/Robots/rtb-team-framework/rtb-team
 lib/RealTimeBattle/Robots/seek_and_destroy/Makefile.am
 lib/RealTimeBattle/Robots/seek_and_destroy/seek_and_destroy.cc
@@ -116,18 +144,25 @@ lib/RealTimeBattle/tournament.txt
 %%PORTDOCS%%%%DOCSDIR%%/toc.gif
 %%PORTDOCS%%%%DOCSDIR%%/toc.png
 share/locale/de/LC_MESSAGES/RealTimeBattle.mo
+share/locale/en@boldquot/LC_MESSAGES/RealTimeBattle.mo
+share/locale/en@quot/LC_MESSAGES/RealTimeBattle.mo
 share/locale/es/LC_MESSAGES/RealTimeBattle.mo
 share/locale/gl/LC_MESSAGES/RealTimeBattle.mo
 share/locale/ja/LC_MESSAGES/RealTimeBattle.mo
 share/locale/pl/LC_MESSAGES/RealTimeBattle.mo
 share/locale/pt/LC_MESSAGES/RealTimeBattle.mo
 share/locale/sv/LC_MESSAGES/RealTimeBattle.mo
+@unexec rmdir %D/share/locale/en@boldquot/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/en@boldquot 2>/dev/null || true
+@unexec rmdir %D/share/locale/en@quot/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/en@quot 2>/dev/null || true
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/RealTimeBattle/Robots/xt-bot
 @dirrm lib/RealTimeBattle/Robots/thomas2
 @dirrm lib/RealTimeBattle/Robots/seek_and_destroy
 @dirrm lib/RealTimeBattle/Robots/rtb-team-framework
 @dirrm lib/RealTimeBattle/Robots/rotate_and_fire
+@dirrm lib/RealTimeBattle/Robots/raziel
 @dirrm lib/RealTimeBattle/Robots/perl-Skeleton
 @dirrm lib/RealTimeBattle/Robots/perl
 @dirrm lib/RealTimeBattle/Robots/joypad_robot
