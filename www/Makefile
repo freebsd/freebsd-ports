@@ -670,6 +670,7 @@
     SUBDIR += pear-HTTP_Upload
     SUBDIR += pear-Text_Wiki
     SUBDIR += pecl-APC
+    SUBDIR += perlbal
     SUBDIR += pgdriver
     SUBDIR += pglogd
     SUBDIR += photo_gallery

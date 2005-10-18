@@ -1,0 +1,9 @@
+Perlbal is a single-threaded event-based server supporting HTTP load
+balancing, web serving, and a mix of the two.
+
+One of the defining things about Perlbal is that almost everything can
+be configured or reconfigured on the fly without needing to restart the
+software. A basic configuration file containing a management port enables
+you to easily perform operations on a running instance of Perlbal.
+
+WWW: http://www.danga.com/perlbal/
