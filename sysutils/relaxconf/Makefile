@@ -18,7 +18,7 @@ BUILD_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog
 RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog \
 		disktype:${PORTSDIR}/sysutils/disktype
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 
 .if defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS="@comment "
