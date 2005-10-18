@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	nrg
-PORTVERSION=	0.99.22
-PORTREVISION=	1
+PORTVERSION=	0.99.25
 CATEGORIES=	net-mgmt sysutils
-MASTER_SITES=	ftp://nrg.hep.wisc.edu/pub/src/nrg/old-versions/ \
+MASTER_SITES=	ftp://nrg.hep.wisc.edu/pub/src/nrg/ \
 		http://www.ranner.jawa.at/stuff/
 
 MAINTAINER=	mranner@inode.at
@@ -69,11 +68,17 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,@prefix@,${PREFIX},g" \
 		-e "s,NOW \"%a %b %d %H:%M %Z %Y\",NOW '%a %b %d %H:%M %Z %Y',g" \
 		${WRKSRC}/templates/*.in
+	@${CP} ${TEMPLATES}/config.guess ${WRKSRC}/config/
+	@${CP} ${TEMPLATES}/config.sub ${WRKSRC}/config/
 
 pre-install:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' <${.CURDIR}/pkg-message >${PKGMESSAGE}
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/examples/Makefile.ops ${PREFIX}/nrg/Makefile-dist
+	${INSTALL_DATA} ${WRKSRC}/examples/Default.conf ${PREFIX}/nrg/Default.conf-dist
+	${INSTALL_DATA} ${WRKSRC}/examples/NRG.mconf ${PREFIX}/nrg/NRG.mconf-dist
+	${INSTALL_DATA} ${WRKSRC}/examples/Site.mconf ${PREFIX}/nrg/Site.mconf-dist
 	@${INSTALL_SCRIPT} ${FILESDIR}/run-nrg.sh ${PREFIX}/nrg/
 	@${CAT} ${PKGMESSAGE}
 

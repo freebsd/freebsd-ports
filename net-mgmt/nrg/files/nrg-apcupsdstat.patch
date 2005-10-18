@@ -14,7 +14,7 @@
 +
 +$mode = 'battery';
 +$server = 'localhost';
-+$port = '7000';
++$port = '3551';
 +$stamp = '0';
 +$stat = '0';
 +$apcnisclient = "/usr/local/bin/apcnisclient";
@@ -158,25 +158,26 @@
    nrg-bindresponse nrg-bindstat nrg-bindstatd \
    nrg-cgikeeper nrg-discover-apache nrg-discover-bind \
    nrg-discover-errors nrg-discover-ifaces nrg-discover-netdev \
---- configure.orig	Fri Jul 23 21:44:13 2004
-+++ configure	Fri Jul 23 21:38:18 2004
-@@ -2019,6 +2019,7 @@
-   Makefile \
-   collectors/nrg-apmstat \
-   collectors/nrg-apachestat \
-+  collectors/nrg-apcupsdstat \
-   collectors/nrg-bindresponse \
-   collectors/nrg-bindstat \
-   collectors/nrg-bindstatd \
-@@ -2189,6 +2190,7 @@
-   Makefile \
-   collectors/nrg-apmstat \
-   collectors/nrg-apachestat \
-+  collectors/nrg-apcupsdstat \
-   collectors/nrg-bindresponse \
-   collectors/nrg-bindstat \
-   collectors/nrg-bindstatd \
-@@ -2312,6 +2314,7 @@
+--- configure.orig	Fri Aug  5 22:26:55 2005
++++ configure	Tue Oct 18 17:18:23 2005
+@@ -3475,7 +3475,7 @@
+ 
+ 
+ 
+-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ac_config_files="$ac_config_files Makefile collectors/nrg-apmstat collectors/nrg-apachestat collectors/nrg-bindresponse collectors/nrg-bindstat collectors/nrg-bindstatd collectors/nrg-pingdstat collectors/nrg-sendmailstat collectors/nrg-sendmailstatd collectors/nrg-tcpresponse contrib/dsreport contrib/rrdmerge contrib/rrdtrim contrib/rrdtuner discoverers/nrg-discover-apache discoverers/nrg-discover-bind discoverers/nrg-discover-errors discoverers/nrg-discover-ifaces discoverers/nrg-discover-netdev discoverers/nrg-discover-pingd discoverers/nrg-discover-pvcs discoverers/nrg-discover-sendmail discoverers/nrg-discover-skel discoverers/nrg-discover-snmpd discoverers/nrg-discover-tables discoverers/nrg-discover-tcp etc/run-star-head.pl etc/run-star-tail.pl examples/Default.conf examples/Makefile.ops examples/NRG.mconf roverpingd/Makefile roverpingd/pingd.h src/nrg-runmaker src/nrg-cgikeeper src/nrg-rrdkeeper src/nrg-tablemaker src/nrg-indexmaker src/nrg-autoconf src/mrtg2nrg src/nrg-find-confs src/nrg-spiketrimmer templates/database-mrtg.rrd.tm templates/graph-current.cgi.tm templates/graph-longterm.cgi.tm templates/graph-mrtg.cgi.tm templates/table-df.cgi.tm templates/table-errors.cgi.tm templates/table-ifaces.cgi.tm templates/table-load.cgi.tm templates/table-mem.cgi.tm templates/table-ping-latency.cgi.tm templates/table-ping-loss.cgi.tm templates/table-swap.cgi.tm templates/table-tcp.cgi.tm"
++                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ac_config_files="$ac_config_files Makefile collectors/nrg-apmstat collectors/nrg-apachestat collectors/nrg-apcupsdstat collectors/nrg-bindresponse collectors/nrg-bindstat collectors/nrg-bindstatd collectors/nrg-pingdstat collectors/nrg-sendmailstat collectors/nrg-sendmailstatd collectors/nrg-tcpresponse contrib/dsreport contrib/rrdmerge contrib/rrdtrim contrib/rrdtuner discoverers/nrg-discover-apache discoverers/nrg-discover-bind discoverers/nrg-discover-errors discoverers/nrg-discover-ifaces discoverers/nrg-discover-netdev discoverers/nrg-discover-pingd discoverers/nrg-discover-pvcs discoverers/nrg-discover-sendmail discoverers/nrg-discover-skel discoverers/nrg-discover-snmpd discoverers/nrg-discover-tables discoverers/nrg-discover-tcp etc/run-star-head.pl etc/run-star-tail.pl examples/Default.conf examples/Makefile.ops examples/NRG.mconf roverpingd/Makefile roverpingd/pingd.h src/nrg-runmaker src/nrg-cgikeeper src/nrg-rrdkeeper src/nrg-tablemaker src/nrg-indexmaker src/nrg-autoconf src/mrtg2nrg src/nrg-find-confs src/nrg-spiketrimmer templates/database-mrtg.rrd.tm templates/graph-current.cgi.tm templates/graph-longterm.cgi.tm templates/graph-mrtg.cgi.tm templates/table-df.cgi.tm templates/table-errors.cgi.tm templates/table-ifaces.cgi.tm templates/table-load.cgi.tm templates/table-mem.cgi.tm templates/table-ping-latency.cgi.tm templates/table-ping-loss.cgi.tm templates/table-swap.cgi.tm templates/table-tcp.cgi.tm"
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+ # tests run on this system so they can be shared between configure
+@@ -4028,6 +4028,7 @@
+   "Makefile" ) CONFIG_FILES="$CONFIG_FILES Makefile" ;;
+   "collectors/nrg-apmstat" ) CONFIG_FILES="$CONFIG_FILES collectors/nrg-apmstat" ;;
+   "collectors/nrg-apachestat" ) CONFIG_FILES="$CONFIG_FILES collectors/nrg-apachestat" ;;
++  "collectors/nrg-apcupsdstat" ) CONFIG_FILES="$CONFIG_FILES collectors/nrg-apcupsdstat" ;;
+   "collectors/nrg-bindresponse" ) CONFIG_FILES="$CONFIG_FILES collectors/nrg-bindresponse" ;;
+   "collectors/nrg-bindstat" ) CONFIG_FILES="$CONFIG_FILES collectors/nrg-bindstat" ;;
+   "collectors/nrg-bindstatd" ) CONFIG_FILES="$CONFIG_FILES collectors/nrg-bindstatd" ;;
+@@ -4441,6 +4442,7 @@
  
  for f in \
    collectors/nrg-apachestat \

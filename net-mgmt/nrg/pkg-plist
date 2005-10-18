@@ -1,3 +1,4 @@
+%%NRGDIR%%/autoconfs/Default.conf
 %%NRGDIR%%/bin/dsreport
 %%NRGDIR%%/bin/mrtg2nrg
 %%NRGDIR%%/bin/nrg-apachestat
@@ -25,7 +26,6 @@
 %%NRGDIR%%/bin/nrg-runmaker
 %%NRGDIR%%/bin/nrg-sendmailstat
 %%NRGDIR%%/bin/nrg-sendmailstatd
-%%NRGDIR%%/bin/nrg-snmpwalk
 %%NRGDIR%%/bin/nrg-spiketrimmer
 %%NRGDIR%%/bin/nrg-tablemaker
 %%NRGDIR%%/bin/nrg-tcpresponse
@@ -99,16 +99,17 @@
 %%DOCSDIR%%/sendmailstat.html
 %%DOCSDIR%%/upgrade.html
 %%DOCSDIR%%/whats-new
-%%NRGDIR%%/Makefile
-%%NRGDIR%%/Default.conf
-%%NRGDIR%%/NRG.mconf
-%%NRGDIR%%/Site.mconf
+%%NRGDIR%%/Makefile-dist
+%%NRGDIR%%/Default.conf-dist
+%%NRGDIR%%/NRG.mconf-dist
+%%NRGDIR%%/Site.mconf-dist
 %%NRGDIR%%/.VERSION
 %%NRGDIR%%/run-nrg.sh
 @dirrm %%NRGDIR%%/templates
 @dirrm %%NRGDIR%%/etc
 @dirrm %%NRGDIR%%/bin
 @dirrm %%NRGDIR%%/archive
+@dirrm %%NRGDIR%%/autoconfs
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%DOCSDIR%%
 @dirrm %%NRGDIR%%
