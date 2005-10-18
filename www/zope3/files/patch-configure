@@ -1,0 +1,11 @@
+--- configure.orig	Sun Oct  2 22:52:41 2005
++++ configure	Thu Oct  6 16:48:52 2005
+@@ -27,7 +27,7 @@
+ # sys.version) below in "best" to "worst" order, not including the
+ # target version.  Up to six acceptable python versions are allowed.
+ # Do not include the target version number in this list!
+-ACCEPTABLE="2.3.5 2.4.1"
++ACCEPTABLE="2.3.5 2.4.2"
+ 
+ # provide the executable names for all the acceptable versions
+ # (and the target version) below

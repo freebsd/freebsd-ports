@@ -1,0 +1,23 @@
+--- Zope/zopeskel/etc/zope.conf.in.orig	Sun Jul 24 03:33:30 2005
++++ Zope/zopeskel/etc/zope.conf.in	Fri Sep 23 14:38:41 2005
+@@ -60,10 +60,6 @@
+   <logfile>
+     path $LOGDIR/access.log
+   </logfile>
+-
+-  <logfile>
+-    path STDOUT
+-  </logfile>
+ </accesslog>
+ 
+ <eventlog>
+@@ -73,9 +69,5 @@
+ 
+   <logfile>
+     path $LOGDIR/z3.log
+-  </logfile>
+-
+-  <logfile>
+-    path STDOUT
+   </logfile>
+ </eventlog>

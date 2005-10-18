@@ -1,0 +1,46 @@
+**********************************************************************
+
+Zope successfull installed!
+
+To create an instance of Zope please run 
+%%ZOPEBASEDIR%%/bin/mkzopeinstance -d <INSTANCEDIR>
+
+<INSTANCEDIR> is the directory where the instance files should be
+installed. This can be %%ZOPEBASEDIR%%
+
+Command-line options to 'mkzopeinstance' are available, and can be
+investigated by running 'mkzopeinstance --help'.
+
+The instance files created by 'mkzopeinstance' will not be remove when
+the package is deinstalled. You`ll have to delete them yourself!
+
+If Zope should get started automatically when the system starts, 
+please add the following lines to /etc/rc.conf:
+
+  zope31_enable="YES"
+  zope31_instances="<INSTANCEDIR>" 
+
+Additional Zope instances have to be added to zope31_instances
+seperated by a space.
+
+
+To create an instance of Zeo please run
+%%ZOPEBASEDIR%%/bin/mkzeoinstance <INSTANCEDIR>
+
+<INSTANCEDIR> is the directory where the instance files should be
+installed.
+
+Command-line options to 'mkzeoinstance' are available, and can be
+investigated by running 'mkzeoinstance --help'.
+
+The instance files created by 'mkzeoinstance' will not be remove when
+the package is deinstalled. You`ll have to delete them yourself!
+
+If Zeo should get started automatically when the system starts, please
+add the following lines to /etc/rc.conf:
+
+  zeo31_enable="YES"
+  zeo31_instances="<INSTANCEDIR>" 
+
+Additional Zeo instances have to be added to zeo31_instances seperated
+by a space.
