@@ -1,0 +1,41 @@
+--- Makefile.in.orig	Tue Oct 18 18:10:05 2005
++++ Makefile.in	Tue Oct 18 18:10:40 2005
+@@ -112,38 +112,6 @@
+ 	  $(MKINSTALLDIRS) $(ARCHIVE_DIR); \
+ 	fi
+ 	
+-	@if [ ! -f $(prefix)/Makefile ]; then \
+-	  echo "installing Makefile in $(prefix)"; \
+-	  $(INSTALL) -c -m 644 examples/Makefile.ops $(prefix)/Makefile; \
+-        else \
+-	  echo "installing Makefile.NEW in $(prefix)"; \
+-	  $(INSTALL) -c -m 644 examples/Makefile.ops $(prefix)/Makefile.NEW; \
+-        fi
+-
+-	@if [ ! -f $(prefix)/Default.conf ]; then \
+-	  echo "installing Default.conf in $(prefix)"; \
+-	  $(INSTALL) -c -m 644 examples/Default.conf $(prefix)/Default.conf; \
+-        else \
+-	  echo "installing Default.conf.NEW in $(prefix)"; \
+-	  $(INSTALL) -c -m 644 examples/Default.conf $(prefix)/Default.conf.NEW; \
+-        fi
+-
+-	@if [ ! -f $(prefix)/NRG.mconf ]; then \
+-	  echo "installing NRG.mconf in $(prefix)"; \
+-	  $(INSTALL) -c -m 644 examples/NRG.mconf $(prefix)/NRG.mconf; \
+-        else \
+-	  echo "installing NRG.mconf.NEW in $(prefix)"; \
+-	  $(INSTALL) -c -m 644 examples/NRG.mconf $(prefix)/NRG.mconf.NEW; \
+-        fi
+-
+-	@if [ ! -f $(prefix)/Site.mconf ]; then \
+-	  echo "installing Site.mconf in $(prefix)"; \
+-	  $(INSTALL) -c -m 644 examples/Site.mconf $(prefix)/Site.mconf; \
+-        else \
+-	  echo "installing Site.mconf.NEW in $(prefix)"; \
+-	  $(INSTALL) -c -m 644 examples/Site.mconf $(prefix)/Site.mconf.NEW; \
+-	fi
+-
+ 	@if [ ! -d $(prefix)/autoconfs ]; then \
+ 	  $(MKINSTALLDIRS) $(prefix)/autoconfs; \
+ 	fi

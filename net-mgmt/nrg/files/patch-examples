@@ -1,26 +1,27 @@
---- ./examples/Makefile.ops.in.orig	Sun Jul 20 20:51:10 2003
-+++ ./examples/Makefile.ops.in	Fri Mar  5 18:08:03 2004
-@@ -4,8 +4,8 @@
- # $Id: Makefile.ops.in,v 1.41 2003/07/20 15:16:04 rader Exp $
+--- examples/Makefile.ops.in.orig	Tue Oct 18 16:24:17 2005
++++ examples/Makefile.ops.in	Tue Oct 18 16:24:49 2005
+@@ -4,9 +4,9 @@
+ # $Id: Makefile.ops.in,v 1.44 2005/04/30 17:28:22 rader Exp $
  #
  
 -WEB_PREFIX = /usr/local/web/html
--NRG_WEB_TITLE = "Somesite's NRG Home Page"
 +WEB_PREFIX = /usr/local/www/data
+ NRG_WEB_DIR = nrg
+-NRG_WEB_TITLE = "Somesite's NRG Home Page"
 +NRG_WEB_TITLE = "FreeBSD NRG Homepage"
  MCONF_FILES = NRG.mconf Site.mconf
- NRG_WEB_DIR = nrg
  
---- examples/Default.conf.in.orig	Tue Sep 28 23:28:31 2004
-+++ examples/Default.conf.in	Tue Sep 28 23:28:44 2004
+ prefix = @prefix@
+--- examples/Default.conf.in.orig	Tue Oct 18 16:37:19 2005
++++ examples/Default.conf.in	Tue Oct 18 16:37:39 2005
 @@ -224,8 +224,8 @@
  
- Graph[.*-snmpd-mem$][total_mem_m]:    black LINE2
- Graph[.*-snmpd-mem$][used_mem_m]:     green AREA
--Graph[.*-snmpd-mem$][cache_mem_m]:    d0ffff STACK
--Graph[.*-snmpd-mem$][buff_mem_m]:     ffd0ff STACK
+ Graph[.*-snmpd-mem][total_mem_m]:    black LINE2
+ Graph[.*-snmpd-mem][used_mem_m]:     green AREA
+-Graph[.*-snmpd-mem][cache_mem_m]:    d0ffff STACK
+-Graph[.*-snmpd-mem][buff_mem_m]:     ffd0ff STACK
 +Graph[.*-snmpd-mem$][cache_mem_m]:    cyan STACK
 +Graph[.*-snmpd-mem$][buff_mem_m]:     blue STACK
  
- Label[.*-snmpd-swap$][used_swp_m]:    "used swap " 
- Label[.*-snmpd-swap$][total_swp_m]:   "total swap"
+ Label[.*-snmpd-swap][used_swp_m]:    "used swap " 
+ Label[.*-snmpd-swap][total_swp_m]:   "total swap"
