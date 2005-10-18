@@ -10,22 +10,19 @@ PORTVERSION=	1.2a
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= ${PORTNAME}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	xmms-
 
 MAINTAINER=	green@FreeBSD.org
 COMMENT=	Automatic, weight-based playlist ordering plugin for XMMS
 
-BUILD_DEPENDS=	sox:${PORTSDIR}/audio/sox
+BUILD_DEPENDS=	sox:${PORTSDIR}/audio/sox \
+		${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		fftw3f.3:${PORTSDIR}/math/fftw3-float \
-		tag.4:${PORTSDIR}/audio/taglib
-
-BROKEN=		Does not compile
-DEPRECATED=	"${BROKEN}"
-EXPIRATION_DATE=2005-09-22
+		tag.5:${PORTSDIR}/audio/taglib
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -40,13 +37,21 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 CONFIGURE_ARGS+=--enable-debug
 .endif
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile"
+.endif
+
 .if ${OSVERSION} < 500000
-USE_REINPLACE=	yes
+BROKEN=		"Does not compile"
+.endif
 
 post-patch:
+	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' ${WRKSRC}/vars.mk.in
+.if ${OSVERSION} < 500000
 	@cd ${WRKSRC} && \
 	    ${REINPLACE_CMD} 's:#include.<stdint\.h>:#include <sys/types.h>:' \
 		players/xmms/plugin.h analyzer/spectrum.h analyzer/analyzer.cc

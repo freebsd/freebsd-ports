@@ -12,7 +12,7 @@
 -LDFLAGS = `xmms-config --libs` @LIBS@
 +CPPFLAGS = `xmms-config --cflags` @XCPPFLAGS@ @CPPFLAGS@ @CFLAGS@ -Wall -fPIC -D_REENTRANT -I../
 +CXXFLAGS = ${CPPFLAGS}
-+LDFLAGS = @LDFLAGS@ `xmms-config --libs` -lc -lm @LIBS@
++LDFLAGS = @LDFLAGS@ `xmms-config --libs` -lc -lm -lsqlite3 -lpcre @LIBS@ %%PTHREAD_LIBS%%
  ARFLAGS = rs
  
  default: all
