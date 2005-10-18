@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	limewire
-PORTVERSION=	4.8.1
+PORTVERSION=	4.9
 CATEGORIES=	net java
 MASTER_SITES=	http://maverick.limewire.com/download/
 DISTNAME=	LimeWireOther
@@ -15,8 +15,6 @@ MAINTAINER=	ports@edini.net
 COMMENT=	A Java based gnutella client
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
-BROKEN=		"Distfile is not related to version 4.8.1"
 
 USE_ZIP=	yes
 USE_JAVA=	yes
@@ -35,7 +33,7 @@ DATAFILES=	LimeWire.jar MessagesBundles.jar ProgressTabs.jar \
 		jdic.jar jl011.jar jmdns.jar log4j.jar logicrypto.jar \
 		looks.jar mp3sp14.jar themes.jar tritonus.jar \
 		vorbis.jar xerces.jar xml-apis.jar xml.war update.ver \
-		hashes libIdleTime.so libtray.so data.ser runLime.sh \
+		hashes libtray.so data.ser runLime.sh \
 		MessagesBundle.properties spacer.gif donotremove.htm \
 		root COPYING README.txt SOURCE
 
