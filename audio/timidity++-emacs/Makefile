@@ -46,12 +46,14 @@ ELISPDIR=	${PREFIX}/share/emacs/site-lisp
 .elif ${INTERFACE} == "gtk"
 LINK=		gtkmidi
 USE_GNOME=	gtk12
-CONFIGURE_ENV=	SHLD="${CC} -shared"
 .elif ${INTERFACE} == "motif"
 LINK=		xmmidi
 USE_MOTIF=	yes
-CONFIGURE_ENV=	MOTIFLIB="${MOTIFLIB}"
+CONFIGURE_ENV+=	MOTIFLIB="${MOTIFLIB}"
 .elif ${INTERFACE} == "slang"
+CONFIGURE_ARGS+=--with-includes=${LOCALBASE}/include    \
+		--with-libraries=${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 .if defined(JAPANESE)
 INTERFACE_DEPS=	slang.2:${PORTSDIR}/japanese/libslang
 .else
@@ -67,13 +69,13 @@ INTERFACE_DEPS=	tk80jp.1:${PORTSDIR}/japanese/tk80
 CONFIGURE_ARGS+=	--with-tcl-includes=${PREFIX}/include/tcl8.0jp \
 		--with-tk-includes=${PREFIX}/include/tk8.0jp \
 		--with-tcl-libs=${PREFIX}/lib --with-tk-libs=${PREFIX}/lib
-CONFIGURE_ENV=	WISH=wish8.0jp
+CONFIGURE_ENV+=	WISH=wish8.0jp
 .else
 INTERFACE_DEPS=	tk84:${PORTSDIR}/x11-toolkits/tk84
 CONFIGURE_ARGS+=	--with-tcl-includes=${PREFIX}/include/tcl8.4 \
 		--with-tk-includes=${PREFIX}/include/tk8.4 \
 		--with-tcl-libs=${PREFIX}/lib --with-tk-libs=${PREFIX}/lib
-CONFIGURE_ENV=	WISH=wish8.4
+CONFIGURE_ENV+=	WISH=wish8.4
 .endif
 .elif ${INTERFACE} == "xaw"
 LINK=		xawmidi
@@ -89,10 +91,12 @@ NO_BUILD=	yes
 NO_INSTALL=	yes
 .endif
 
+CONFIGURE_ENV+=	SHLD="${CC} -shared ${LDFLAGS}"
+
 .include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "elf"
-CONFIGURE_ENV+=	LDFLAGS=-export-dynamic
+LDFLAGS+=-export-dynamic
 .endif
 
 EUCJP_LOCALE=	ja_JP.eucJP
@@ -107,10 +111,10 @@ post-configure:
 .endif
 
 do-build:
-	@cd ${WRKSRC}/interface; ${MAKE} ${ALL_TARGET}
+	@cd ${WRKSRC}/interface; ${GMAKE} ${ALL_TARGET}
 
 do-install:
-	@cd ${WRKSRC}/interface; ${MAKE} ${INSTALL_TARGET}
+	@cd ${WRKSRC}/interface; ${GMAKE} ${INSTALL_TARGET}
 
 post-install:
 .if ${INTERFACE} == "emacs"
