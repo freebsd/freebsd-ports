@@ -265,6 +265,7 @@
     SUBDIR += ffcall
     SUBDIR += fhist
     SUBDIR += fib
+    SUBDIR += flatzebra
     SUBDIR += flick
     SUBDIR += florist
     SUBDIR += flowdesigner
