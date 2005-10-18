@@ -1,0 +1,20 @@
+$FreeBSD$
+
+--- configure.orig	Thu Oct 13 14:31:41 2005
++++ configure	Thu Oct 13 14:32:39 2005
+@@ -157,9 +157,13 @@
+ 
+ 
+ 
+-tagnames=`echo "$tagnames,CXX" | sed 's/^,//'`
++if ! echo "$tagnames" | grep -q CXX; then
++  tagnames=`echo "$tagnames,CXX" | sed 's/^,//'`
++fi
+ 
+-tagnames=`echo "$tagnames,F77" | sed 's/^,//'`
++if ! echo "$tagnames" | grep -q F77; then
++  tagnames=`echo "$tagnames,F77" | sed 's/^,//'`
++fi
+ 
+ if expr a : '\(a\)' >/dev/null 2>&1; then
+   as_expr=expr
