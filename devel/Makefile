@@ -416,7 +416,6 @@
     SUBDIR += kimwitu++
     SUBDIR += klassmodeler
     SUBDIR += kodos
-    SUBDIR += korelib
     SUBDIR += kprof
     SUBDIR += kscope
     SUBDIR += kxl
