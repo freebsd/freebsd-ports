@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	referrercop
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	textproc www ruby
-MASTER_SITES=	http://wonko.com/files/ \
-		http://raa.ruby-lang.org/cache/referrercop/
+MASTER_SITES=	http://wonko.com/files/
 
 MAINTAINER=	ryan@wonko.com
 COMMENT=	Filters referrer spam from Apache logs and AWStats data files
