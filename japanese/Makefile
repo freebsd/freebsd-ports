@@ -189,7 +189,6 @@
     SUBDIR += leafrogue
     SUBDIR += less
     SUBDIR += libicq
-    SUBDIR += libimg
     SUBDIR += libjcode
     SUBDIR += libjconv
     SUBDIR += libslang
