@@ -1,8 +1,0 @@
-lib/Img1.2/libimg12.so
-lib/Img1.2/libimg12.so.1
-lib/Img1.2/pkgIndex.tcl
-share/doc/img/ANNOUNCE
-share/doc/img/README
-share/doc/img/changes
-@dirrm lib/Img1.2
-@dirrm share/doc/img
