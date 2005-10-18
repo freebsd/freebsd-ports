@@ -918,5 +918,6 @@
     SUBDIR += zope-zpt
     SUBDIR += zope-zsyncer
     SUBDIR += zope-zwiki
+    SUBDIR += zope31
 
 .include <bsd.port.subdir.mk>
