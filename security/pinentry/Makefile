@@ -48,7 +48,7 @@ PLIST_SUB+=	WITH_QT="@comment "
 .if defined(PINENTRY_GTK)
 USE_GNOME+=	gtk12
 PLIST_SUB+=	WITH_GTK=""
-CONFIGURE_ENV+=	CFLAGS=-I/usr/local/include
+CONFIGURE_ENV+=	CFLAGS=-I${LOCALBASE}/include
 .else
 CONFIGURE_ARGS+=--disable-pinentry-gtk
 PLIST_SUB+=	WITH_GTK="@comment "
@@ -57,7 +57,7 @@ PLIST_SUB+=	WITH_GTK="@comment "
 .if defined(PINENTRY_GTK2)
 USE_GNOME+=	gtk20
 PLIST_SUB+=	WITH_GTK2=""
-CONFIGURE_ENV+=	CFLAGS=-I/usr/local/include
+CONFIGURE_ENV+=	CFLAGS=-I${LOCALBASE}/include
 .else
 CONFIGURE_ARGS+=--disable-pinentry-gtk2
 PLIST_SUB+=	WITH_GTK2="@comment "
@@ -65,7 +65,7 @@ PLIST_SUB+=	WITH_GTK2="@comment "
 
 .if defined(PINENTRY_CURSES)
 PLIST_SUB+=	WITH_CURSES=""
-CONFIGURE_ENV+=	CFLAGS=-I/usr/local/include LDFLAGS=-L/usr/local/lib
+CONFIGURE_ENV+=	CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=--disable-pinentry-curses
 PLIST_SUB+=	WITH_CURSES="@comment "
