@@ -1,5 +1,8 @@
---- Makefile.in.orig	Tue Sep 23 03:16:41 2003
-+++ Makefile.in	Sat Dec 20 21:21:36 2003
+
+$FreeBSD$
+
+--- Makefile.in.orig
++++ Makefile.in
 @@ -5,6 +5,9 @@
  SUBDIRS=@SUBDIRS@
  DISTCLEANS=Makefile config.cache config.log config.status scripts/ptal-init
@@ -31,6 +34,17 @@
  				fi ; \
  			done ; \
  		cd .. ; \
+@@ -133,8 +136,8 @@
+ 					echo "Refer to setup-build-details.html for instructions on manually"; \
+ 					echo "setting ptal-init to start at bootup."; \
+ 				else \
+-					echo "Setting /usr/local/etc/rc.d/ptal-init.sh symlink." ; \
+-					$(LN_S) -f $(sbindir)/ptal-init /usr/local/etc/rc.d/ptal-init.sh ; \
++					echo "Setting $(PREFIX)/etc/rc.d/ptal-init.sh symlink." ; \
++					$(LN_S) -f $(sbindir)/ptal-init $(PREFIX)/etc/rc.d/ptal-init.sh ; \
+ 				fi ; \
+ 			elif test -d $$dir ; then \
+ 				echo "Setting $$dir/ptal-init symlink." ; \
 @@ -164,11 +167,6 @@
  			fi ; \
  		fi ; \
