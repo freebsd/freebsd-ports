@@ -8,7 +8,9 @@
 PORTNAME=	annelid
 PORTVERSION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.garthgillespie.com/annelid/
+MASTER_SITES=	http://www.garthgillespie.com/annelid/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pav
 DISTFILES=	${PORTNAME}-src${EXTRACT_SUFX} \
 		${PORTNAME}-media${EXTRACT_SUFX}
 
