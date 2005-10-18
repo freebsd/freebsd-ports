@@ -1,18 +1,9 @@
 bin/lxdvdrip
 bin/lxac3scan
 %%VAMPS%%bin/vamps
-etc/lxdvdrip.conf.DE
-etc/lxdvdrip.conf.EN
-etc/lxdvdrip.conf.FR
-%%PORTDOCS%%%%DOCSDIR%%/Changelog.de
-%%PORTDOCS%%%%DOCSDIR%%/Changelog.en
-%%PORTDOCS%%%%DOCSDIR%%/Changelog.fr
-%%PORTDOCS%%%%DOCSDIR%%/README.de
-%%PORTDOCS%%%%DOCSDIR%%/README.dvdwizard.DE
-%%PORTDOCS%%%%DOCSDIR%%/README.dvdwizard.EN
-%%PORTDOCS%%%%DOCSDIR%%/README.dvdwizard.FR
-%%PORTDOCS%%%%DOCSDIR%%/README.en
-%%PORTDOCS%%%%DOCSDIR%%/README.fr
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/freebsd.doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec if cmp -s %D/etc/lxdvdrip.conf %D/etc/lxdvdrip.conf.sample; then rm -f %D/etc/lxdvdrip.conf; fi
+etc/lxdvdrip.conf.sample
+@exec [ -f %B/lxdvdrip.conf ] || cp %B/%f %B/lxdvdrip.conf
+%%EXAMPLESDIR%%/lxdvdrip.conf.DE
+%%EXAMPLESDIR%%/lxdvdrip.conf.EN
+%%EXAMPLESDIR%%/lxdvdrip.conf.FR
