@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	turba
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/turba/				\
 		ftp://ftp.planetmirror.com/pub/horde/turba/		\
