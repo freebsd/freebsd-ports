@@ -96,6 +96,7 @@
     SUBDIR += docproj-jadetex
     SUBDIR += docproj-nojadetex
     SUBDIR += domc
+    SUBDIR += dom4j
     SUBDIR += dsssl-docbook-cygnus
     SUBDIR += dsssl-docbook-modular
     SUBDIR += dtd-catalogs
