@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	RealTimeBattle
-PORTVERSION=	1.0.7
-PORTREVISION=	1
+PORTVERSION=	1.0.8
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
@@ -18,9 +17,10 @@ COMMENT=	Robot programming game for UNIX
 
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget gtk20
-USE_GCC=	3.4
+USE_GCC=	3.4+
 USE_PERL5=	yes
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
@@ -29,27 +29,21 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-rtb-dir=${PREFIX}/lib/${PORTNAME}
 
-CXXFLAGS+=	-fpermissive
-
 CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
-LDFLAGS=	-L${LOCALBASE}/lib -lintl
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
-.for file in include/Various.h src/ArenaBase.cc src/GeometricalObjects.cc \
-	src/Options.cc src/Robot.cc src/StartTournamentWindow.cc \
-	src/StatisticsWindow.cc src/Various.cc
-	@${REINPLACE_CMD} -E -e 's|min[[:space:]]*\(|Min(|g ; \
-		 s|max[[:space:]]*\(|Max\(|g' ${WRKSRC}/${file}
-.endfor
-.for file in src/ArenaRealTime.cc
-	@${REINPLACE_CMD} -E -e 's|\(int\*\)|int\*|g' ${WRKSRC}/${file}
-.endfor
-.for file in rtb-team-framework/createrobot.sh \
-	rtb-team-framework/createrobotconf.sh
-	@${REINPLACE_CMD} -e 's| sed| gsed|g' ${WRKSRC}/${file}
+.for file in configure
+	@${REINPLACE_CMD} -e '/test/s| == | = |g ; \
+		 s|INCLUDED_LIBINTL=yes|INCLUDED_LIBINTL=no|g ; \
+		 s|\\$${top_builddir}/intl/libintl.a|-lintl|g' ${WRKSRC}/${file}
 .endfor
 .for file in Makefile.in
-	@${REINPLACE_CMD} -e 's|intl Documentation||g' ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|Documentation||g' ${WRKSRC}/${file}
+.endfor
+.for file in team-framework/createrobot.sh \
+	team-framework/createrobotconf.sh
+	@${REINPLACE_CMD} -e 's| sed| gsed|g' ${WRKSRC}/${file}
 .endfor
 
 post-install:
