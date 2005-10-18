@@ -1,6 +1,7 @@
 bin/enlightenment
 bin/enlightenment-config
 bin/enlightenment_eapp
+bin/enlightenment_eapp_cache_gen
 bin/enlightenment_remote
 include/E_Lib.h
 include/enlightenment/e.h
