@@ -98,6 +98,7 @@
 %%IMPDIR%%/locale/ar_OM/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/ar_SY/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/bg_BG/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/bs_BA/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/ca_ES/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/ca_ES/help.xml
 %%IMPDIR%%/locale/cs_CZ/LC_MESSAGES/imp.mo
@@ -114,6 +115,7 @@
 %%IMPDIR%%/locale/et_EE/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/et_EE/help.xml
 %%IMPDIR%%/locale/fa_IR/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/fa_IR/help.xml
 %%IMPDIR%%/locale/fi_FI/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/fi_FI/help.xml
 %%IMPDIR%%/locale/fr_FR/LC_MESSAGES/imp.mo
@@ -167,6 +169,7 @@
 %%IMPDIR%%/po/ar_OM.po
 %%IMPDIR%%/po/ar_SY.po
 %%IMPDIR%%/po/bg_BG.po
+%%IMPDIR%%/po/bs_BA.po
 %%IMPDIR%%/po/ca_ES.po
 %%IMPDIR%%/po/cs_CZ.po
 %%IMPDIR%%/po/da_DK.po
@@ -238,6 +241,7 @@
 %%IMPDIR%%/templates/filters/prefs.inc
 %%IMPDIR%%/templates/folders/actions.inc
 %%IMPDIR%%/templates/folders/folders.html
+%%IMPDIR%%/templates/folders/folders_confirm.html
 %%IMPDIR%%/templates/folders/foot.inc
 %%IMPDIR%%/templates/folders/head.inc
 %%IMPDIR%%/templates/folders/import.inc
@@ -265,7 +269,6 @@
 %%IMPDIR%%/templates/message/navbar_actions.inc
 %%IMPDIR%%/templates/message/navbar_navigate.inc
 %%IMPDIR%%/templates/message/navbar_top.inc
-%%IMPDIR%%/templates/message/print.inc
 %%IMPDIR%%/templates/pgp/import_key.inc
 %%IMPDIR%%/templates/pgp/notactive.inc
 %%IMPDIR%%/templates/pgp/open_pgp_import.js
@@ -300,15 +303,15 @@
 %%IMPDIR%%/themes/brown/screen.css
 %%IMPDIR%%/themes/burntorange/screen.css
 %%IMPDIR%%/themes/cherry/screen.css
+%%IMPDIR%%/themes/cornflower/screen.css
 %%IMPDIR%%/themes/gennevilliers/screen.css
-%%IMPDIR%%/themes/green/screen.css
-%%IMPDIR%%/themes/grey/screen.css
 %%IMPDIR%%/themes/graphics/addressbook-blue.png
 %%IMPDIR%%/themes/graphics/addressbook-red.png
 %%IMPDIR%%/themes/graphics/apple.png
 %%IMPDIR%%/themes/graphics/attachment.png
 %%IMPDIR%%/themes/graphics/compose.png
 %%IMPDIR%%/themes/graphics/empty_trash.png
+%%IMPDIR%%/themes/graphics/encrypted.png
 %%IMPDIR%%/themes/graphics/expand.png
 %%IMPDIR%%/themes/graphics/favicon.ico
 %%IMPDIR%%/themes/graphics/fetchmail.png
@@ -331,6 +334,7 @@
 %%IMPDIR%%/themes/graphics/mail_priority_low.png
 %%IMPDIR%%/themes/graphics/mail_unseen.png
 %%IMPDIR%%/themes/graphics/manage_attachments.png
+%%IMPDIR%%/themes/graphics/mime/binary.png
 %%IMPDIR%%/themes/graphics/mime/compressed.png
 %%IMPDIR%%/themes/graphics/mime/encryption.png
 %%IMPDIR%%/themes/graphics/mime/html.png
@@ -344,9 +348,13 @@
 %%IMPDIR%%/themes/graphics/signed.png
 %%IMPDIR%%/themes/graphics/spacer_red.png
 %%IMPDIR%%/themes/graphics/spellcheck.png
-%%IMPDIR%%/themes/screen.css
+%%IMPDIR%%/themes/green/screen.css
+%%IMPDIR%%/themes/grey/screen.css
 %%IMPDIR%%/themes/lavander/screen.css
+%%IMPDIR%%/themes/luc/screen.css
+%%IMPDIR%%/themes/lucblue/screen.css
 %%IMPDIR%%/themes/postnuke/screen.css
+%%IMPDIR%%/themes/screen.css
 %%IMPDIR%%/themes/simplex/screen.css
 %%IMPDIR%%/themes/sun/screen.css
 %%IMPDIR%%/thread.php
@@ -356,6 +364,8 @@ etc/horde/httpd.conf.imp
 @dirrm %%IMPDIR%%/themes/sun
 @dirrm %%IMPDIR%%/themes/simplex
 @dirrm %%IMPDIR%%/themes/postnuke
+@dirrm %%IMPDIR%%/themes/lucblue
+@dirrm %%IMPDIR%%/themes/luc
 @dirrm %%IMPDIR%%/themes/lavander
 @dirrm %%IMPDIR%%/themes/graphics/mime
 @dirrm %%IMPDIR%%/themes/graphics/folders
@@ -363,6 +373,7 @@ etc/horde/httpd.conf.imp
 @dirrm %%IMPDIR%%/themes/grey
 @dirrm %%IMPDIR%%/themes/green
 @dirrm %%IMPDIR%%/themes/gennevilliers
+@dirrm %%IMPDIR%%/themes/cornflower
 @dirrm %%IMPDIR%%/themes/cherry
 @dirrm %%IMPDIR%%/themes/burntorange
 @dirrm %%IMPDIR%%/themes/brown
@@ -462,6 +473,8 @@ etc/horde/httpd.conf.imp
 @dirrm %%IMPDIR%%/locale/cs_CZ
 @dirrm %%IMPDIR%%/locale/ca_ES/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/ca_ES
+@dirrm %%IMPDIR%%/locale/bs_BA/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/bs_BA
 @dirrm %%IMPDIR%%/locale/bg_BG/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/bg_BG
 @dirrm %%IMPDIR%%/locale/ar_SY/LC_MESSAGES
