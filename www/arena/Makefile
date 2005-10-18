@@ -16,6 +16,7 @@ COMMENT=	Experimental HTML 3 browser, supports math and style sheets
 
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+USE_GCC=	2.95
 
 PLIST_FILES=	bin/arena
 USE_XLIB=	yes
@@ -28,9 +29,9 @@ BROKEN=		"Does not compile on FreeBSD >= 5.x"
 .endif
 
 do-build:
-	cd ${WRKSRC}/Library/freebsd; ${MAKE}
+	cd ${WRKSRC}/Library/freebsd; ${SETENV} ${MAKE_ENV} ${MAKE}
 	cd ${WRKSRC}/Arena/freebsd; \
-	${MAKE} PREFIX=${PREFIX} LFLAGS=-L${PREFIX}/lib \
+	${SETENV} ${MAKE_ENV} ${MAKE} LFLAGS=-L${PREFIX}/lib \
 		XLIBDIR=${X11BASE}/lib \
 		JPEGDIR=${WRKSRC} PNGDIR=${WRKSRC} ZLIBDIR=${WRKSRC} \
 		JPEGLIB=-ljpeg PNGLIB=-lpng ZLIB=-lz
