@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	djvulibre
-PORTVERSION=	3.5.14
-PORTREVISION=	1
+PORTVERSION=	3.5.15
 CATEGORIES=	graphics www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	djvu
@@ -15,13 +14,14 @@ MASTER_SITE_SUBDIR=	djvu
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	DjVu viewers, encoders, browser plugin, and utilities
 
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg	\
+		tiff:${PORTSDIR}/graphics/tiff
+
 .if !defined(WITHOUT_X11)
 USE_X_PREFIX=	yes
 USE_QT_VER=	3
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
 .else
 PKGNAMESUFFIX=	-nox11
-LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
 .endif
 
 USE_ICONV=	yes
@@ -42,14 +42,9 @@ CONFIGURE_ENV+=	CXX=${CXX} \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		QTLIBS="-L${X11BASE}/lib -lqt-mt"
 .else
-CONFIGURE_ARGS+=--disable-djview
+CONFIGURE_ARGS+=--disable-djview --without-x
 .endif
 
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-pre-everything::
-	@${ECHO_MSG} "You can enable additional compilation optimizations"
-	@${ECHO_MSG} "by defining WITH_OPTIMIZED_CFLAGS"
-.endif
 
 .if defined(LOCALBASE) && ${LOCALBASE} != "/usr/local"
 pre-configure:
@@ -63,14 +58,13 @@ patch-autotools:
 post-patch:
 	@${RM} ${WRKSRC}/tools/any2djvu.*
 
-.if !defined(WITH_OPTIMIZED_CFLAGS)
 post-configure:
-	${PERL5} -pi -e 's,-O3,,;' -e 's,-mcpu=i386,,; ' \
-		-e 's,^(OPTS =.*),\1 ${CFLAGS},' \
+	${PERL5} -pi -e 's,-O3,,;' -e 's,-m.+=i386,,;' \
+		-e 's|^(OPTS =.*)|\1 ${CFLAGS}|' \
 		${WRKSRC}/*/Makefile ${WRKSRC}/*/*/Makefile
-.endif
 
-PORTDOCS=	djvu2spec.djvu djvu3changes.txt lizard2002.djvu
+PORTDOCS=	djvu2spec.djvu djvu3changes.txt lizard2002.djvu	\
+		lizard2003-navm.djvu lizard2005-antz.djvu
 MANLANG="" ja
 MAN1=	bzz.1 c44.1 cjb2.1 cpaldjvu.1 csepdjvu.1 ddjvu.1 djvm.1 djvmcvt.1 djvu.1 \
 	djvudump.1 djvuextract.1 djvumake.1 djvups.1 djvused.1 djvuserve.1 djvutxt.1
@@ -78,6 +72,7 @@ MAN1=	bzz.1 c44.1 cjb2.1 cpaldjvu.1 csepdjvu.1 ddjvu.1 djvm.1 djvmcvt.1 djvu.1 \
 MAN1EXTRA=	djvutoxml.1 djvuxml.1 djvuxmlparser.1 djvudigital.1
 MAN1+=		${MAN1EXTRA}
 
+PLIST_SUB+=	MAJOR_VERSION=${PORTVERSION:E}
 .if !defined(WITHOUT_X11)
 MAN1+=	djview.1 nsdejavu.1
 PLIST_SUB+=	X11=''

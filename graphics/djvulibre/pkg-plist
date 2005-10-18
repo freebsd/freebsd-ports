@@ -20,7 +20,7 @@ bin/djvuxmlparser
 include/libdjvu/ddjvuapi.h
 %%X11%%lib/browser_plugins/nsdejavu.so
 lib/libdjvulibre.so
-lib/libdjvulibre.so.14
+lib/libdjvulibre.so.%%MAJOR_VERSION%%
 share/djvu/languages.xml
 %%X11%%share/djvu/osi/de/djview.qm
 share/djvu/osi/de/libdjvu++.xml
