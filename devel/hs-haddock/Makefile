@@ -21,7 +21,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textpr
 		${LOCALBASE}/share/sgml/docbook/catalog:${PORTSDIR}/textproc/docbook \
 		${LOCALBASE}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879 \
 		${LOCALBASE}/share/sgml/docbook/3.1:${PORTSDIR}/textproc/docbook-310 \
-		jade:${PORTSDIR}/textproc/jade
+		jade:${PORTSDIR}/textproc/jade \
+		xsltproc:${PORTSDIR}/textproc/libxslt
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//g}
