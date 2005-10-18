@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Test/LectroTest.pm
+%%SITE_PERL%%/Test/LectroTest/Compat.pm
 %%SITE_PERL%%/Test/LectroTest/Generator.pm
 %%SITE_PERL%%/Test/LectroTest/Property.pm
 %%SITE_PERL%%/Test/LectroTest/TestRunner.pm

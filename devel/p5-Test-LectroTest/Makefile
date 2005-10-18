@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-LectroTest
-PORTVERSION=	0.2007
+PORTVERSION=	0.3300
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -15,19 +15,20 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	alex@kapranoff.ru
 COMMENT=	Easy, automatic, specification-based tests
 
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Filter/Util/Call.pm:${PORTSDIR}/devel/p5-Filter
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 PERL_MODBUILD=	yes
 
 MAN3=		Test::LectroTest.3 Test::LectroTest::Generator.3 \
 		Test::LectroTest::Property.3 Test::LectroTest::TestRunner.3 \
-		Test::LectroTest::Tutorial.3
+		Test::LectroTest::Tutorial.3 Test::LectroTest::Compat.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
+.if ${PERL_LEVEL} < 500602
 BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Filter/Util/Call.pm:${PORTSDIR}/devel/p5-Filter
 .endif
 
 .include <bsd.port.post.mk>
