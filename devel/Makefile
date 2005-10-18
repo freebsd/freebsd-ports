@@ -1424,7 +1424,6 @@
     SUBDIR += qmake
     SUBDIR += qsa
     SUBDIR += qssl
-    SUBDIR += qtk
     SUBDIR += ragel
     SUBDIR += rapidsvn
     SUBDIR += re2c
@@ -1611,7 +1610,6 @@
     SUBDIR += wftk
     SUBDIR += wfut
     SUBDIR += wininfo
-    SUBDIR += wizard
     SUBDIR += wxGlade
     SUBDIR += xfc
     SUBDIR += xmake
@@ -1621,7 +1619,6 @@
     SUBDIR += xwpe
     SUBDIR += xxgdb
     SUBDIR += xxl
-    SUBDIR += yacl
     SUBDIR += yasm
     SUBDIR += z80-asm
     SUBDIR += zendstudio
