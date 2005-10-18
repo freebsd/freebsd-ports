@@ -25,10 +25,14 @@ CONFLICTS=		py*-PySQLite-1.0*
 WRKSRC=			${WRKDIR}/pysqlite
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+USE_REINPLACE=		yes
+MAKE_ENV=		LOCALBASE="${LOCALBASE}"
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=		*
-.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|"freebsd5",|"freebsd5", "freebsd6", "freebsd7",|' \
+		${WRKSRC}/setup.py
 
 post-install:
 .if !defined(NOPORTDOCS)
