@@ -8,15 +8,22 @@
 PORTNAME=	crashecho
 PORTVERSION=	0.2.14
 CATEGORIES=	mail
-MASTER_SITES=	http://hell.binec.ru/crashecho/
-
-DEPRECATED=	"sourceforge site \(crashecho\) up but barren"
-EXPIRATION_DATE=2005-08-31
+MASTER_SITES=	ftp://ftp.nluug.nl/pub/ibiblio/distributions/altlinux/ \
+		ftp://distro.ibiblio.org/pub/linux/distributions/altlinux/ \
+		ftp://ftp.chg.ru/.1/Linux/ALTLinux/
+MASTER_SITE_SUBDIR=	Sisyphus/files/SRPMS/
+EXTRACT_SUFX=	.rpm
+DISTFILES=	${PORTNAME}-${PORTVERSION}-alt1.src${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An FTN JAM and *.MSG tosser
 
+EXTRACT_DEPENDS=rpm2cpio:${PORTSDIR}/archivers/rpm
 LIB_DEPENDS=	jam.2:${PORTSDIR}/mail/jamlib
+
+EXTRACT_CMD=	rpm2cpio
+EXTRACT_BEFORE_ARGS=	# empty
+EXTRACT_AFTER_ARGS=	| ${CPIO} -i
 
 USE_LIBTOOL_VER=15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -27,6 +34,9 @@ MAN1=	crashecho.1 \
 	crashstats.1 \
 	crashwrite.1
 MAN5=	crashecho.conf.5
+
+post-extract:
+	cd ${WRKDIR} && tar zxf ${PORTNAME}-${PORTVERSION}.tar.gz
 
 post-install:
 	${MKDIR} ${PREFIX}/etc/ftn
