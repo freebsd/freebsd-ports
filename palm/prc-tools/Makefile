@@ -76,6 +76,7 @@ post-extract:
 
 pre-patch:
 	${MKDIR} ${WRKSRC}/empty
+	@cd ${WRKDIR}/prc-tools-2.3 && ${PATCH} < ${FILESDIR}/pre-patch-gcc3-gcc-3.3.1.palmos.diff
 
 post-patch:
 	@(cd ${WRKDIR} && \
