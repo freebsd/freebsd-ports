@@ -12685,7 +12685,6 @@ wininfo		ports/devel/wininfo
 wipe		ports/security/wipe
 wise		ports/biology/wise
 wistumbler2	ports/net/wistumbler2
-wizard		ports/devel/wizard
 wm2		ports/x11-wm/wm2
 wmDeskGuide	ports/x11-wm/wmDeskGuide
 wmScoreBoard	ports/misc/wmScoreBoard
@@ -13540,7 +13539,6 @@ ya-yasou-fpw	ports/japanese/yasou-fpw
 yabasic		ports/lang/yabasic
 yabm		ports/net-mgmt/yabm
 yacas		ports/math/yacas
-yacl		ports/devel/yacl
 yadda		ports/mail/yadda
 yadex		ports/games/yadex
 yafc		ports/ftp/yafc
