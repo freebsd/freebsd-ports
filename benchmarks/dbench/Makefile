@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	dbench
-PORTVERSION=	1.3
+PORTVERSION=	3.03
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://samba.org/ftp/tridge/dbench/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	A simulation of the Ziff-Davis netbench benchmark
 
-WRKSRC=		${WRKDIR}/dbench
-USE_REINPLACE=	yes
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
-PLIST_FILES=	bin/dbench bin/tbench bin/tbench_srv
+GNU_CONFIGURE=	yes
 
-do-install:
-	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PLIST_FILES:T} ${PREFIX}/bin
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${OSVERSION} < 500000
+BROKEN=	"Doesn't build on FreeBSD < 5.x"
+.endif
+
+.include <bsd.port.post.mk>

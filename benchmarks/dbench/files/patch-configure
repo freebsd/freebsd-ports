@@ -1,0 +1,11 @@
+--- configure.old	Tue Oct 18 11:18:21 2005
++++ configure	Tue Oct 18 11:19:00 2005
+@@ -339,7 +339,7 @@
+ bindir='${exec_prefix}/bin'
+ sbindir='${exec_prefix}/sbin'
+ libexecdir='${exec_prefix}/libexec'
+-datadir='${prefix}/share'
++datadir='${prefix}/share/dbench'
+ sysconfdir='${prefix}/etc'
+ sharedstatedir='${prefix}/com'
+ localstatedir='${prefix}/var'
