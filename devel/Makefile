@@ -447,6 +447,7 @@
     SUBDIR += libconfuse
     SUBDIR += libcoro
     SUBDIR += libcwd
+    SUBDIR += libdaemon
     SUBDIR += libdict
     SUBDIR += libdlmalloc
     SUBDIR += libds
