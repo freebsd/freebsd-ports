@@ -18,11 +18,16 @@ COMMENT=	PyOpenAL is a binding of OpenAL for Python
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal
 
 DIST_SUBDIR=	python
+USE_REINPLACE=	yes
 USE_GZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 WRKSRC=		${WRKDIR}/PyOpenAL-${PORTVERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-openal
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/setup.py
 
 post-install:
 .if !defined(NOPORTDOCS)
