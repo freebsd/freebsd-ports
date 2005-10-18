@@ -19,5 +19,10 @@ RUN_DEPENDS=	${LOCALBASE}/share/foomatic/db/oldprinterids:${PORTSDIR}/print/foom
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+			 -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
