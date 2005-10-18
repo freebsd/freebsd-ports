@@ -70,7 +70,7 @@ INSTALLS_SHLIB=	YES
 
 .include <bsd.port.pre.mk>
 
-DOCFILES!=	${AWK} 'BEGIN {FS="/"}; /^%%PORTDOCS%%%%DOCSDIR%%/{print $$2}' pkg-plist
+DOCFILES!=	${AWK} 'BEGIN {FS="/"}; /^%%PORTDOCS%%%%DOCSDIR%%/{print $$2}' ${.CURDIR}/pkg-plist
 
 post-patch:
 	@${REINPLACE_CMD} -e "s/tclsh \$$(TOP)/\$$(TCLSH) \$$(TOP)/g" \
