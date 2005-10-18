@@ -11750,7 +11750,6 @@ strobe		ports/security/strobe
 stuffit		ports/archivers/stuffit
 stund		ports/net/stund
 stunnel		ports/security/stunnel
-stuphead	ports/mail/stuphead
 stvef-paks	ports/games/stvef-paks
 stvef-server	ports/games/stvef-server
 styx		ports/devel/styx
