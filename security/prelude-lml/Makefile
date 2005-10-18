@@ -5,19 +5,20 @@
 # $FreeBSD$
 
 PORTNAME=	prelude-lml
-PORTVERSION=	0.8.6
-PORTREVISION=	2
+PORTVERSION=	0.9.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Prelude Network Intrusion Detection System Log Monitoring Lackey
 
-LIB_DEPENDS+=	prelude.1:${PORTSDIR}/security/libprelude \
+LIB_DEPENDS+=	prelude.2:${PORTSDIR}/security/libprelude \
 		pcre.0:${PORTSDIR}/devel/pcre
 
-USE_GMAKE=		yes
-USE_LIBTOOL_VER=	13
+USE_GPG=	yes
+SIG_SUFFIX=	.sig
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc
 
