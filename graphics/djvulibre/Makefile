@@ -45,7 +45,6 @@ CONFIGURE_ENV+=	CXX=${CXX} \
 CONFIGURE_ARGS+=--disable-djview --without-x
 .endif
 
-
 .if defined(LOCALBASE) && ${LOCALBASE} != "/usr/local"
 pre-configure:
 	${PERL5} -pi -e 's,/usr/local,${LOCALBASE},g' `${FIND} ${WRKSRC} \
