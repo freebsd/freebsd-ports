@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	retawq
-PORTVERSION=	0.2.4
-CATEGORIES=	www
+DISTVERSION=	0.2.6b
+CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	An interactive, multi-threaded web browser for text terminals
 
 USE_GETTEXT=	yes
@@ -21,9 +21,14 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--path-archprefix=${PREFIX} --path-prefix=${PREFIX} \
 		--enable-i18n --enable-local-cgi --enable-ipv6
-PORTDOCS=	*
 
 MAN1=		retawq.1
+PLIST_FILES=	bin/retawq \
+		share/locale/de/LC_MESSAGES/retawq.mo \
+		share/locale/es/LC_MESSAGES/retawq.mo \
+		share/locale/fr/LC_MESSAGES/retawq.mo \
+		share/locale/pt_BR/LC_MESSAGES/retawq.mo
+PORTDOCS=	*
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
