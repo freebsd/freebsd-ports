@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	gtkpod
-PORTVERSION=	0.88.2
+PORTVERSION=	0.94.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	david@dyn-ns.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI for Apple iPods using GTK2
 
 LIB_DEPENDS=	id3tag.2:${PORTSDIR}/audio/libid3tag
@@ -22,7 +22,7 @@ USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 
 USE_GMAKE=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 libglade2
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
@@ -51,8 +51,6 @@ pre-configure:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|(libdir)/locale|(datadir)/locale|' \
 		${WRKSRC}/po/Makefile.in.in
-	@${REINPLACE_CMD} -e 's|PACKAGE|"gtkpod"|' \
-		${WRKSRC}/src/support.h
 
 post-install:
 .if !defined(NOPORTDOCS)
