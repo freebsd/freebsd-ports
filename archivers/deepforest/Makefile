@@ -7,7 +7,7 @@
 
 PORTNAME=	deepforest
 PORTVERSION=	1.0a
-CATEGORIES=	${CATEGORY_LIST}
+CATEGORIES=	archivers windowmaker tkstep80
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kiri
 DISTNAME=	DeepForest-${PORTVERSION}
@@ -28,26 +28,16 @@ SCRIPTS_ENV=	LANG=C LN=${LN} REINPLACE_CMD="${REINPLACE_CMD}" \
 		LANGUAGE=${LANGUAGE} VERSION=${TKSTEPVERSION}
 PLIST_SUB=	PIXMAP_PATH=${PIXMAPPATH:S@^${PREFIX}/@@}
 
-# This port is for both archivers/deepforest and japanese/deepforest.
-# But archivers/deepforest and japanese/deepforest are mutually exclusive and
-# SHOULD NOT BE INSTALLED SIMULTANEOUSLY!
 TKSTEPVERSION=	8.0
 PIXMAPPATH?=	${PREFIX}/share/WindowMaker/Pixmaps
-LANGUAGE?=
-.if (${LANGUAGE} == "Japanese")
-CATEGORY_LIST=	japanese windowmaker tkstep80
-RUN_DEP_LIST=	${LOCALBASE}/lib/tkstep8.0jp/tkstep.tcl:${PORTSDIR}/japanese/tkstep80
-IGNORE=		unsupported: ja-libimg no longer avalaible
-.else
-CATEGORY_LIST=	archivers windowmaker tkstep80
 RUN_DEP_LIST=	${LOCALBASE}/lib/tkstep8.0/tkstep.tcl:${PORTSDIR}/x11-toolkits/tkstep80
 LIB_DEP_LIST=	img.1:${PORTSDIR}/graphics/libimg
-.endif
 
 do-install:
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DISTNAME}.tar.gz \
 		${EXTRACT_AFTER_ARGS} -C ${PREFIX}
 	${MKDIR} ${PIXMAPPATH}
 	${INSTALL_DATA} ${PREFIX}/JDE/DeepForest/docs/DeepForest.xpm ${PIXMAPPATH}
+	${LN} -sf ${PREFIX}/JDE/DeepForest/DeepForest.app ${PREFIX}/bin
 
 .include <bsd.port.mk>
