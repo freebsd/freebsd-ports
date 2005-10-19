@@ -7,6 +7,7 @@
 
 PORTNAME=	phppgadmin
 PORTVERSION=	3.5.6
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +23,7 @@ USE_PHP=	pgsql pcre session
 .endif
 WRKSRC=		${WRKDIR}/phpPgAdmin
 NO_BUILD=	YES
-PGADMDIR?=	www/data/phpPgAdmin
+PGADMDIR?=	www/data-dist/phpPgAdmin
 PLIST_SUB+=	PGADMDIR=${PGADMDIR}
 
 do-configure:
