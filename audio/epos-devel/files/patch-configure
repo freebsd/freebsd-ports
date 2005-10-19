@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
+@@ -14021,9 +14021,9 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ #ifdef HAVE_SYS_SOCKET_H
++	#include <sys/types.h>
+ 	#include <sys/socket.h>
+ 	#endif
+-	#include <sys/types.h>
+ 	socklen_t x;
+ int
+ main ()
