@@ -2,17 +2,6 @@
 
 installdir=${PREFIX}/JDE/JGV; export installdir
 
-case ${LANGUAGE} in
-    Japanese)
-	for f in JGV.app; do
-	    ${REINPLACE_CMD} -i "" -E -e \
-		"s/^(exec[[:space:]]+)wishstep[[:space:]]*([[:space:]]+.*)\$/\1wishstep${VERSION}jp\2/" \
-		${installdir}/bin/${f}
-	done
-    ;;
-    *)
-    ;;
-esac
 for f in JGV JGV.app; do
     case ${f} in
 	JGV.app)

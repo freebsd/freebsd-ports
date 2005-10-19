@@ -7,7 +7,7 @@
 
 PORTNAME=	jgv
 PORTVERSION=	0.2a
-CATEGORIES+=	${CATEGORY_LIST}
+CATEGORIES=	graphics windowmaker tkstep80
 MASTER_SITES=	http://www.aaa-int.or.jp/~jfactory/JDE/dist/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kiri
@@ -20,8 +20,6 @@ COMMENT=	A graphic viewer with various image types
 RUN_DEPENDS=	${RUN_DEP_LIST}
 LIB_DEPENDS=	${LIB_DEP_LIST}
 
-CONFLICTS?=	ja-jgv-[0-9]*
-
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
@@ -33,16 +31,8 @@ PLIST_SUB=	PIXMAP_PATH=${PIXMAPPATH:S@^${PREFIX}/@@}
 
 TKSTEPVERSION=	8.0
 PIXMAPPATH?=	${PREFIX}/share/WindowMaker/Pixmaps
-LANGUAGE?=
-.if (${LANGUAGE} == "Japanese")
-CATEGORY_LIST=	graphics windowmaker tkstep80 japanese
-RUN_DEP_LIST=	${LOCALBASE}/lib/tkstep8.0jp/tkstep.tcl:${PORTSDIR}/japanese/tkstep80
-IGNORE=		unsupported: ja-libimg no longer available
-.else
-CATEGORY_LIST=	graphics windowmaker tkstep80
 LIB_DEP_LIST=	img.1:${PORTSDIR}/graphics/libimg
 RUN_DEP_LIST=	${LOCALBASE}/lib/tkstep8.0/tkstep.tcl:${PORTSDIR}/x11-toolkits/tkstep80
-.endif
 
 do-install:
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DISTNAME}.tar.gz \
