@@ -1,6 +1,3 @@
-FLORIST is a FSU implementation of POSIX.5
+FLORIST is a FSU implementation of POSIX.5, the POSIX Ada binding.
 
-WWW: http://www.gnat.com/
-
---
-Vadim Godunko -- <vgodunko@vipmail.ru>
+WWW: http://www.cs.fsu.edu/~baker/florist.html

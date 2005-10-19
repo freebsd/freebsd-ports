@@ -9,10 +9,10 @@ PORTNAME=	hybserv
 PORTVERSION=	1.8.0
 PORTREVISION=	1
 CATEGORIES=	irc
-MASTER_SITES=	http://www.srce.hr/~kreator/projects/tarballs/
+MASTER_SITES=	http://www.hybserv.net/downloads/
 
-MAINTAINER=	rick@help-desk.ca
-COMMENT=	"HybServ2 IRCD Services"
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	HybServ2 IRCD Services
 
 IGNORE=		uses a uid registered to the ircservices user
 

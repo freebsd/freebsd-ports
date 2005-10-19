@@ -9,12 +9,12 @@ PORTNAME=	florist
 PORTVERSION=	3.15p
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/${PORTVERSION}/
+MASTER_SITES=	http://www.cs.fsu.edu/~baker/ftp/
 DISTNAME=	florist-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	vgodunko@vipmail.ru
-COMMENT=	FSU implementation of POSIX.5
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	FSU implementation of POSIX.5, the POSIX Ada binding
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 
