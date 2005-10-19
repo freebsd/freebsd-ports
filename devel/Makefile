@@ -1558,7 +1558,6 @@
     SUBDIR += svk
     SUBDIR += swig11
     SUBDIR += swig13
-    SUBDIR += swig13-doc
     SUBDIR += swigruby
     SUBDIR += sysconftool
     SUBDIR += t1lib
