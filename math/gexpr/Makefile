@@ -16,11 +16,15 @@ MASTER_SITE_SUBDIR=	apps/math/calc
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	A shell calculator
 
+USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
 MAN1=		gexpr.1
 PLIST_FILES=	bin/gexpr
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX}," ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
