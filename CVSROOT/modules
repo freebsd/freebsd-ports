@@ -2605,6 +2605,7 @@ fung-calc	ports/math/fung-calc
 funktrackergold	ports/audio/funktrackergold
 funnelweb	ports/devel/funnelweb
 fuse		ports/emulators/fuse
+fusefs-libs	ports/sysutils/fusefs-libs
 fusenshi	ports/deskutils/fusenshi
 fuzz		ports/security/fuzz
 fv		ports/graphics/fv
