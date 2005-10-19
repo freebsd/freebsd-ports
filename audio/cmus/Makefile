@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cmus
-PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTVERSION=	1.6.1
 CATEGORIES=	audio
 MASTER_SITES=	http://onion.dynserv.net/~timo/files/
 
@@ -29,10 +28,10 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libvorbisfile.so) || defined(BATCH)
+.if exists(${LOCALBASE}/lib/libvorbisfile.so)
 WITH_VORBIS=	yes
 .endif
-.if exists(${LOCALBASE}/lib/libmodplug.so) || defined(BATCH)
+.if exists(${LOCALBASE}/lib/libmodplug.so)
 WITH_MODPLUG=	yes
 .endif
 .if exists(${LOCALBASE}/lib/libartsc.so)
