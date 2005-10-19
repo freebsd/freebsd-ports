@@ -7,7 +7,7 @@
 
 PORTNAME=	hostsentry
 PORTVERSION=	0.02
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.netsys.com/len/ \
 		${MASTER_SITE_PACKETSTORM}
@@ -19,11 +19,15 @@ COMMENT=	A Login Anomaly Detector
 RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm
 
 USE_PYTHON=	yes
+USE_REINPLACE=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-patch:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|' ${.CURDIR}/pkg-message > ${PKGMESSAGE}
+	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX}," \
+		${WRKSRC}/*
+	@${RM} ${WRKSRC}/*.bak
 
 post-install:
 .if !defined(NOPORTDOCS)

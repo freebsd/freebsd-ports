@@ -24,7 +24,7 @@ lib/hostsentry/modules/moduleMultipleLogins.py
 lib/hostsentry/modules/moduleOddDirnames.py
 lib/hostsentry/modules/moduleRhostsCheck.py
 @dirrm lib/hostsentry/modules
-@unexec rm %D/lib/hostsentry/*.pyc || true
+@unexec rm %D/lib/hostsentry/*.pyc 2>/dev/null || true
 @dirrm lib/hostsentry
 @unexec rmdir %D/etc/hostsentry 2>/dev/null || echo "If you are permanently removing this port, you should do a "rm -rf ${PKG_PREFIX}/etc/hostsentry" to remove any binary, configuration and log files left." | fmt
 %%PORTDOCS%%%%DOCSDIR%%/README.BUGS
