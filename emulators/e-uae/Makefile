@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	e-uae
-PORTVERSION=	0.8.27
-PORTREVISION=	1
+DISTVERSION=	0.8.28.r2
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.rcdrummond.net/uae/${PORTNAME}-${PORTVERSION}/ \
+MASTER_SITES=	http://www.rcdrummond.net/uae/${DISTNAME}/ \
 		http://www.energyhq.es.eu.org/files/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-RC/}
 
 MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	Enhanced version of UAE, the Amiga emulator
@@ -24,8 +24,13 @@ USE_GNOME=	gtk20
 USE_SDL=	sdl
 USE_REINPLACE=	yes
 
-pre-configure:
-	@${REINPLACE_CMD} -e 's@sdl-config@sdl11-config@g' ${WRKSRC}/configure
+PLIST_FILES=	bin/uae bin/readdisk
+PORTDOCS=	README bsdsocket.txt compiling.txt configuration.txt \
+		floppies.txt keyboard.txt scsi.txt
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|sdl-config|sdl11-config|' \
+		${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/uae ${PREFIX}/bin
@@ -41,14 +46,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/keyboard.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/scsi.txt ${DOCSDIR}
 .endif
-	@${MKDIR} ${DATADIR}/amiga
-	${INSTALL_DATA} ${WRKSRC}/amiga/mousehack ${DATADIR}/amiga/
-	${INSTALL_DATA} ${WRKSRC}/amiga/timehack ${DATADIR}/amiga/
-	${INSTALL_DATA} ${WRKSRC}/amiga/transdisk ${DATADIR}/amiga/
-	${INSTALL_DATA} ${WRKSRC}/amiga/transrom ${DATADIR}/amiga/
-	${INSTALL_DATA} ${WRKSRC}/amiga/uae-control ${DATADIR}/amiga/
-	${INSTALL_DATA} ${WRKSRC}/amiga/uae-control.info ${DATADIR}/amiga/
-	${INSTALL_DATA} ${WRKSRC}/amiga/uae_rcli ${DATADIR}/amiga/
-	${INSTALL_DATA} ${WRKSRC}/amiga/uaectrl ${DATADIR}/amiga/
 
 .include <bsd.port.mk>
