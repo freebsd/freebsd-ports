@@ -6,12 +6,12 @@
 #
 
 PORTNAME?=	aspell
-PORTVERSION=	0.60.3
+PORTVERSION=	0.60.4
 CATEGORIES+=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	aspell
-DISTFILES=	aspell-0.60.3.tar.gz	# needed for slave ports / options
-EXTRACT_ONLY=	aspell-0.60.3.tar.gz
+DISTFILES=	aspell-0.60.4.tar.gz	# needed for slave ports / options
+EXTRACT_ONLY=	aspell-0.60.4.tar.gz
 
 MAINTAINER?=	thierry@FreeBSD.org
 COMMENT?=	Spelling checker with better suggestion logic than ispell
@@ -55,8 +55,8 @@ PLIST_SUB+=		NLS=""
 .endif
 
 .if !defined(NOPORTDOCS)
-MAN1=			aspell-import.1 aspell.1 pspell-config.1	\
-			run-with-aspell.1 word-list-compress.1
+MAN1=			aspell-import.1 aspell.1 pspell-config.1		\
+			run-with-aspell.1 word-list-compress.1 prezip-bin.1
 INFO=			aspell-dev aspell
 .endif
 
