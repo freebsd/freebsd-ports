@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--prefix=$(PREFIX)
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile"
+BROKEN=		"byacc broken, http://www.freebsd.org/cgi/query-pr.cgi?pr=bin/85115"
 .endif
 
 pre-configure:
