@@ -6,12 +6,12 @@
 #
 
 PORTNAME=		cvslines
-PORTVERSION=		1.6.8
+PORTVERSION=		1.6.9
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		laszlof@vonostingroup.com
 COMMENT=		Wrapper to ease merging of changes between CVS branches
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
