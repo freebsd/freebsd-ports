@@ -8,7 +8,7 @@
 
 PORTNAME=	centericq
 PORTVERSION=	4.21.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://centericq.de/archive/source/releases/ \
 		http://thekonst.net/download/
@@ -21,6 +21,7 @@ USE_ICONV=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		CXXFLAGS="-I${LOCALBASE}/include"
 LDFLAGS+=	-L${LOCALBASE}/lib -lstdc++
@@ -101,6 +102,9 @@ CONFIGURE_ARGS+=	--disable-lj
 
 .if !defined(WITH_GG)
 CONFIGURE_ARGS+=	--disable-gg
+.else
+LIB_DEPENDS+=	gadu.3:${PORTSDIR}/polish/ekg
+LIBGADU=	-lgadu
 .endif
 
 post-patch:
@@ -109,6 +113,14 @@ post-patch:
 	  ${MV} -f ${file} ${file}.orig ; \
 	  ${GREP} -v "_G_config.h" ${file}.orig > ${file})
 .endfor
+	@${FIND} ${WRKSRC} -name "Makefile*" -type f -print0 | \
+		${XARGS} -0 \
+	        ${REINPLACE_CMD} -E \
+		-e "s|-I\$$\(top_srcdir\)/libgadu-0.1|-I${LOCALBASE}/include|" \
+		-e "s|-L\$$\(top_srcdir\)/libgadu-0.1|-L${LOCALBASE}/lib|" \
+		-e 's|libgadu-0.1/*||' \
+		-e 's|libgadu-0.1||' \
+		-e 's|-llibgadu|${LIBGADU}|'
 
 .if !defined(NOPORTDOCS)
 post-install:
