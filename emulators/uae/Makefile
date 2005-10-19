@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.freiburg.linux.de/pub/uae/sources/develop/
 MAINTAINER=	simond@irrelevant.org
 COMMENT=	Amiga emulator
 
+CONFLICTS=	e-uae-*
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOCONF_VER=	259
