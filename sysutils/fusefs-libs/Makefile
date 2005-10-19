@@ -1,0 +1,44 @@
+# New ports collection makefile for:    fusefs-libs
+# Date created:         01 October 2005
+# Whom:                 Anish Mistry
+# $FreeBSD$
+#
+
+PORTNAME=	fusefs
+PORTVERSION=	2.4.0
+CATEGORIES=	sysutils
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	fuse
+PKGNAMESUFFIX=	-libs
+DISTNAME=	fuse-${PORTVERSION}
+
+MAINTAINER=	amistry@am-productions.biz
+COMMENT=	FUSE allows filesystem implementation in userspace
+
+USE_LIBTOOL_VER=15
+CONFIGURE_ENV=	MOUNT_FUSE_PATH=${PREFIX}/sbin \
+		PKG_CONFIG_PATH=${PREFIX}/libdata/pkgconfig \
+		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
+GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS=	--disable-kernel-module --prefix=${PREFIX}
+USE_REINPLACE=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+IGNORE=		Depends on kernel module that requires FreeBSD 6 or later
+.endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},' \
+		-e 's,-D_FILE_OFFSET_BITS=64,-D_FILE_OFFSET_BITS=64 ${PTHREAD_CFLAGS},' \
+		${WRKSRC}/fuse.pc.in
+	${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},' \
+		${WRKSRC}/lib/Makefile.in \
+		${WRKSRC}/example/Makefile.in
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/include/fuse_kernel.h ${PREFIX}/include/fuse
+
+.include <bsd.port.post.mk>

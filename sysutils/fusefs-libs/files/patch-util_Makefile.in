@@ -1,0 +1,68 @@
+--- util/Makefile.in.orig	Mon Oct  3 16:43:22 2005
++++ util/Makefile.in	Sun Oct  9 22:05:09 2005
+@@ -38,7 +38,7 @@
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-bin_PROGRAMS = fusermount$(EXEEXT)
++bin_PROGRAMS = 
+ subdir = util
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -164,7 +164,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ fusermount_SOURCES = fusermount.c
+-EXTRA_DIST = mount.fuse udev.rules
++EXTRA_DIST = 
+ all: all-am
+ 
+ .SUFFIXES:
+@@ -361,10 +361,6 @@
+ 
+ installcheck: installcheck-am
+ install-strip:
+-	$(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
+-	  install_sh_PROGRAM="$(INSTALL_STRIP_PROGRAM)" INSTALL_STRIP_FLAG=-s \
+-	  `test -z '$(STRIP)' || \
+-	    echo "INSTALL_PROGRAM_ENV=STRIPPROG='$(STRIP)'"` install
+ mostlyclean-generic:
+ 
+ clean-generic:
+@@ -434,34 +430,21 @@
+ 	install-binPROGRAMS install-data install-data-am \
+ 	install-data-local install-exec install-exec-am \
+ 	install-exec-hook install-exec-local install-info \
+-	install-info-am install-man install-strip installcheck \
++	install-info-am install-man installcheck \
+ 	installcheck-am installdirs maintainer-clean \
+ 	maintainer-clean-generic mostlyclean mostlyclean-compile \
+ 	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
+ 	tags uninstall uninstall-am uninstall-binPROGRAMS \
+ 	uninstall-info-am uninstall-local
+ 
+-
+ install-exec-hook:
+-	-chown root $(DESTDIR)$(bindir)/fusermount
+-	-chmod u+s $(DESTDIR)$(bindir)/fusermount
+-	@if test ! -e $(DESTDIR)/dev/fuse; then \
+-		$(mkdir_p) $(DESTDIR)/dev; \
+-		echo "mknod $(DESTDIR)/dev/fuse -m 0666 c 10 229"; \
+-		mknod $(DESTDIR)/dev/fuse -m 0666 c 10 229; \
+-	fi
+ 
+ install-exec-local:
+-	$(mkdir_p) $(DESTDIR)$(MOUNT_FUSE_PATH)
+-	$(INSTALL_PROGRAM) $(srcdir)/mount.fuse $(DESTDIR)$(MOUNT_FUSE_PATH)/mount.fuse
+ 
+ install-data-local:
+-	$(mkdir_p) $(DESTDIR)$(UDEV_RULES_PATH)
+-	$(INSTALL_DATA) $(srcdir)/udev.rules $(DESTDIR)$(UDEV_RULES_PATH)/40-fuse.rules
+ 
+ uninstall-local:
+-	rm -f $(DESTDIR)$(MOUNT_FUSE_PATH)/mount.fuse
+-	rm -f $(DESTDIR)$(UDEV_RULES_PATH)/40-fuse.rules
++
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

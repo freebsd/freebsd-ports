@@ -169,6 +169,7 @@
     SUBDIR += freesbie
     SUBDIR += fsbackup
     SUBDIR += ftrace
+    SUBDIR += fusefs-libs
     SUBDIR += fvcool
     SUBDIR += gag
     SUBDIR += ganglia-monitor-core

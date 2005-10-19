@@ -1,0 +1,11 @@
+include/fuse/fuse.h
+include/fuse/fuse_compat.h
+include/fuse/fuse_common.h
+include/fuse/fuse_lowlevel.h
+include/fuse/fuse_kernel.h
+include/fuse.h
+lib/libfuse.so.2
+lib/libfuse.so
+lib/libfuse.a
+libdata/pkgconfig/fuse.pc
+@dirrm include/fuse
