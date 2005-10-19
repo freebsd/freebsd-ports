@@ -7,7 +7,7 @@
 
 PORTNAME=	seizedesktop
 PORTVERSION=	0.1a
-CATEGORIES+=	misc windowmaker tkstep80
+CATEGORIES=	misc windowmaker tkstep80
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kiri
 DISTNAME=	SeizeDesktop-${PORTVERSION}
@@ -27,18 +27,9 @@ REINPLACE_ARGS=
 SCRIPTS_ENV=	LANG=C LN=${LN} REINPLACE_CMD='${REINPLACE_CMD}' \
 		LANGUAGE=${LANGUAGE} VERSION=${TKSTEPVERSION}
 
-# This port is for both misc/seizedesktop and japanese/seizedesktop.
-# But misc/seizedesktop and japanese/seizedesktop are mutually exclusive and
-# SHOULD NOT BE INSTALLED SIMULTANEOUSLY!
 TKSTEPVERSION=	8.0
-LANGUAGE?=
-.if (${LANGUAGE} == "Japanese")
-RUN_DEP_LIST=	${LOCALBASE}/lib/tkstep8.0jp/tkstep.tcl:${PORTSDIR}/japanese/tkstep80
-IGNORE=		unsupported: ja-libimg no longer available
-.else
 RUN_DEP_LIST=	${LOCALBASE}/lib/tkstep8.0/tkstep.tcl:${PORTSDIR}/x11-toolkits/tkstep80
 LIB_DEP_LIST=	img.1:${PORTSDIR}/graphics/libimg
-.endif
 
 do-install:
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DISTNAME}.tar.gz \
