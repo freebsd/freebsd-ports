@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lirc
-PORTVERSION=	0.6.6
-PORTREVISION=	2
+PORTVERSION=	0.7.2
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lirc
@@ -24,11 +23,13 @@ USE_REINPLACE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--disable-manage-devices --with-devdir=/var/lirc
 
+OPTIONS=	IRMAN "Build with libirman support" On
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_IRMAN)
-CONFIGURE_ARGS+=	--with-driver=irman
 BUILD_DEPENDS=		${LOCALBASE}/lib/libirman.a:${PORTSDIR}/comms/libirman
+CONFIGURE_ARGS+=	--with-driver=irman
 .if ${OSVERSION} >= 500041
 # These are already included in the getopt_long case on < 50041
 CPPFLAGS+=		-I${LOCALBASE}/include
@@ -39,18 +40,11 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--with-driver=any
 .endif
 
-MAN1=		irexec.1 ircat.1 irpty.1 irrecord.1 irw.1 irxevent.1 \
-		mode2.1 smode2.1 xmode2.1 rc.1
+MAN1=		ircat.1 irexec.1 irpty.1 irrecord.1 irsend.1 irw.1 \
+		irxevent.1 mode2.1 smode2.1 xmode2.1
 MAN8=		lircd.8 lircmd.8
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-
-pre-everything::
-.ifndef(WITH_IRMAN)
-	@${ECHO_CMD}
-	@${ECHO_CMD} "To build with libirman support, restart make and define WITH_IRMAN"
-	@${ECHO_CMD}
-.endif
 
 .include <bsd.port.post.mk>
