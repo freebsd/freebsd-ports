@@ -1,14 +1,9 @@
 bin/gtkpod
-share/locale/de/LC_MESSAGES/gtkpod.mo
-share/locale/fr/LC_MESSAGES/gtkpod.mo
-share/locale/it/LC_MESSAGES/gtkpod.mo
-share/locale/ja/LC_MESSAGES/gtkpod.mo
-share/locale/sv/LC_MESSAGES/gtkpod.mo
-%%DATADIR%%/scripts/sync-evocalendar.sh
-%%DATADIR%%/scripts/sync-evolution.sh
-%%DATADIR%%/scripts/sync-kaddressbook.sh
-%%DATADIR%%/scripts/sync-korganizer.sh
-%%DATADIR%%/scripts/sync-notes.sh
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODOandBUGS.txt
+%%DATADIR%%/gtkpod.glade
+%%DATADIR%%/gtkpod.gladep
 %%DATADIR%%/pixmaps/gtkpod-add-dirs.png
 %%DATADIR%%/pixmaps/gtkpod-add-files.png
 %%DATADIR%%/pixmaps/gtkpod-add-playlists.png
@@ -22,9 +17,23 @@ share/locale/sv/LC_MESSAGES/gtkpod.mo
 %%DATADIR%%/pixmaps/gtkpod-new-playlist.png
 %%DATADIR%%/pixmaps/gtkpod-read.png
 %%DATADIR%%/pixmaps/gtkpod-sync.png
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/TODOandBUGS.txt
+%%DATADIR%%/pixmaps/gtkpod.glade
+%%DATADIR%%/pixmaps/gtkpod.gladep
+%%DATADIR%%/scripts/mab2vcard
+%%DATADIR%%/scripts/sync-abook.sh
+%%DATADIR%%/scripts/sync-evocalendar.sh
+%%DATADIR%%/scripts/sync-evolution.sh
+%%DATADIR%%/scripts/sync-kaddressbook.sh
+%%DATADIR%%/scripts/sync-korganizer.sh
+%%DATADIR%%/scripts/sync-notes.sh
+%%DATADIR%%/scripts/sync-thunderbird.sh
+%%DATADIR%%/scripts/sync-webcalendar.sh
+share/locale/de/LC_MESSAGES/gtkpod.mo
+share/locale/fr/LC_MESSAGES/gtkpod.mo
+share/locale/he/LC_MESSAGES/gtkpod.mo
+share/locale/it/LC_MESSAGES/gtkpod.mo
+share/locale/ja/LC_MESSAGES/gtkpod.mo
+share/locale/sv/LC_MESSAGES/gtkpod.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%DATADIR%%/pixmaps
 %%PORTDOCS%%@dirrm %%DATADIR%%/scripts
