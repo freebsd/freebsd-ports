@@ -1,0 +1,4 @@
+sbin/raincoat
+@unexec if cmp -s %D/etc/raincoat.conf %D/etc/raincoat.conf.default; then rm -f %D/etc/raincoat.conf; fi
+etc/raincoat.conf.default
+@exec [ -f %B/raincoat.conf ] || cp %B/%f %B/raincoat.conf
