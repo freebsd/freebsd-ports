@@ -1,0 +1,12 @@
+--- iso_3166/iso_3166_2/Makefile.in.orig	Thu Oct 13 09:46:42 2005
++++ iso_3166/iso_3166_2/Makefile.in	Thu Oct 13 09:47:00 2005
+@@ -322,7 +322,8 @@ install-data-hook: $(mofiles)
+ 		cat=`basename $$cat`; \
+ 		lang=`echo $$cat | sed 's/\.mo$$//'`; \
+ 		dir=$(DESTDIR)$(localedir)/$$lang/LC_MESSAGES; \
+-		$(INSTALL_DATA) -D $$cat $$dir/$(DOMAIN).mo; \
++		mkdir -p $$dir; \
++		$(INSTALL_DATA) $$cat $$dir/$(DOMAIN).mo; \
+ 	done
+ 
+ uninstall-hook:
