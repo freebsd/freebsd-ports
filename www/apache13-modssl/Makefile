@@ -7,7 +7,7 @@
 
 PORTNAME=	apache+mod_ssl
 PORTVERSION=	${VERSION_APACHE}+${VERSION_MODSSL}
-PORTREVISION?=	2
+PORTREVISION?=	0
 CATEGORIES?=	www security
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITES_MODSSL:S/$/:mod_ssl/} \
@@ -24,7 +24,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${MODSSL_FILE} \
 .if defined(WITH_APACHE_IPV6) || defined(APACHE_WITH_IPV6) || make(makesum) || defined(FETCH_ALL)
 PATCH_SITES+=	ftp://ftp.42.org/pub/orphan/ ${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	dinoex
-PATCHFILES+=	apache-1.3.32modssl-v6-20041023.diff.gz
+PATCHFILES+=	apache-1.3.34modssl-v6-20051019.diff.gz
 .endif
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -36,8 +36,8 @@ PATCH_DEPENDS=	${BUILD_DEPENDS}
 CONFLICTS?=	apache+ipv6-1.* apache+ssl-1.* apache-1.* apache-2.* \
 		apache_fp-1.* caudium-devel-1.* caudium10-1.* caudium12-* \
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.* w3c-httpd-3.*
-VERSION_APACHE=	1.3.33
-VERSION_MODSSL=	2.8.24
+VERSION_APACHE=	1.3.34
+VERSION_MODSSL=	2.8.25
 VERSION_MODSNMP=	1.3.14.13
 VERSION_MODACCEL=	1.0.31
 VERSION_MODDEFLATE=	1.0.21
