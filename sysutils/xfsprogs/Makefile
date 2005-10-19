@@ -47,4 +47,8 @@ post-configure:
 	${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-lpthread|${PTHREAD_LIBS}|g'
 
+post-patch:
+	${FIND} ${WRKDIR} -name "*.m4" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|/usr/local|'${LOCALBASE}'|g'
+
 .include <bsd.port.post.mk>
