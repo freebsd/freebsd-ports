@@ -39,6 +39,16 @@ PLIST_SUB+=	PERLTOOLS="@comment "
 SUB_LIST+=	PERLTOOLS="@comment "
 .endif
 
+# let configure find postgres stuff in non-standard places
+CONFIGURE_ARGS+=--with-pgconfigdir=${LOCALBASE}/bin \
+  --with-pgbindir=${LOCALBASE}/bin \
+  --with-pgincludedir=${LOCALBASE}/include \
+  --with-pgincludeserverdir=${LOCALBASE}/include/postgresql/server \
+  --with-pglibdir=${LOCALBASE}/lib \
+  --with-pgpkglibdir=${LOCALBASE}/lib/postgresql \
+  --with-pgsharedir=${LOCALBASE}/share/postgresql
+
+
 DEFAULT_PGSQL_VER?=80
 
 # Setting/finding PostgreSQL version we want.
