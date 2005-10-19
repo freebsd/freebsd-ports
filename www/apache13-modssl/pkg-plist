@@ -210,6 +210,7 @@ www/data-dist/index.html.zh-tw.big5
 %%DOCSDIR%%/index.html.en
 %%DOCSDIR%%/index.html.ja.jis
 %%DOCSDIR%%/install-tpf.html
+%%DOCSDIR%%/install-ztpf.html
 %%DOCSDIR%%/install.html.es
 %%DOCSDIR%%/install.html.en
 %%DOCSDIR%%/install.html.ja.jis
