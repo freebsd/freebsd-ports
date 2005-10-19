@@ -1,0 +1,19 @@
+Basic Instructions:
+Load the fuse kernel module (as root):
+# %%PREFIX%%/etc/rc.d/fuse.sh start
+
+Then mount something via sshfs (as an ordinary user if you set
+vfs.usermount=1).
+
+There are two ways to do this:
+
+1)
+% env FUSE_DEV_NAME=/dev/fuse0 sshfs -o uid=<local uid> -o gid=<local gid> \
+       username@example.org:
+% mount_fusefs /dev/fuse0 /path/to/mount/point
+
+or
+
+2)
+% mount_fusefs auto /path/to/mount/point sshfs -o uid=<local uid> \
+       -o gid=<local gid> username@example.org:
