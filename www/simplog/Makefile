@@ -8,9 +8,10 @@
 PORTNAME=	simplog
 PORTVERSION=	0.9.1
 CATEGORIES=	www
-MASTER_SITES=	http://simplog.jose.idv.tw/download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	jose@jose.idv.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A complete and powerful blogging tool
 
 DATADIR=	${PREFIX}/www/simplog
