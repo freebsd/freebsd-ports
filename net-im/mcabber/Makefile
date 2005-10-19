@@ -7,6 +7,7 @@
 
 PORTNAME=	mcabber
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/
 
@@ -19,6 +20,7 @@ USE_OPENSSL=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	glib20
+USE_GETOPT_LONG=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 MAN1=		mcabber.1
