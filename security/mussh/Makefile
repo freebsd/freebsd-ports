@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	mussh
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	A tool for easily running the same commands on multiple hosts
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
@@ -21,9 +21,10 @@ NO_BUILD=	yes
 USE_REINPLACE=	yes
 PORTDOCS=	BUGS CHANGES EXAMPLES README
 PLIST_FILES=	bin/mussh
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,^#!/bin/bash,#!${LOCALBASE}/bin/bash,g" \
+	@${REINPLACE_CMD} -e "s,^#!/bin/bash,#!/usr/bin/env bash,g" \
 		${WRKSRC}/${PORTNAME}
 
 do-install:
