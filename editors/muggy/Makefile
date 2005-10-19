@@ -7,7 +7,7 @@
 
 PORTNAME=	muggy
 PORTVERSION=	1.3.1
-CATEGORIES+=	editors windowmaker tkstep80
+CATEGORIES=	editors windowmaker tkstep80
 MASTER_SITES=	http://www.aaa-int.or.jp/~jfactory/JDE/dist/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kiri
@@ -20,8 +20,6 @@ COMMENT=	A simple text editor for the X on TkStep
 RUN_DEPENDS=	${RUN_DEP_LIST}
 LIB_DEPENDS=	${LIB_DEP_LIST}
 
-CONFLICTS?=	ja-muggy-[0-9]*
-
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
@@ -33,14 +31,8 @@ PLIST_SUB=	PIXMAP_PATH=${PIXMAPPATH:S@^${PREFIX}/@@}
 
 TKSTEPVERSION=	8.0
 PIXMAPPATH?=	${PREFIX}/share/WindowMaker/Pixmaps
-LANGUAGE?=
-.if (${LANGUAGE} == "Japanese")
-RUN_DEP_LIST=	${LOCALBASE}/lib/tkstep8.0jp/tkstep.tcl:${PORTSDIR}/japanese/tkstep80
-IGNORE=		unsupported: ja-libimg no longer available
-.else
 RUN_DEP_LIST=	${LOCALBASE}/lib/tkstep8.0/tkstep.tcl:${PORTSDIR}/x11-toolkits/tkstep80
 LIB_DEP_LIST=	img.1:${PORTSDIR}/graphics/libimg
-.endif
 
 do-install:
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DISTNAME}.tar.gz \
