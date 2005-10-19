@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		raincoat
-PORTVERSION=		0.10
+PORTVERSION=		0.11
 CATEGORIES=		sysutils
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xbox-linux
@@ -21,16 +21,28 @@ ONLY_FOR_ARCHS=		i386
 USE_REINPLACE=		yes
 USE_BZIP2=		yes
 
-PLIST_FILES=		sbin/raincoat \
-			etc/raincoat.conf
+PORTDOCS=		README
 
-pre-configure:
-	@${REINPLACE_CMD} -e 's|\/etc\/raincoat\.conf|${PREFIX}&|g' \
-		${WRKSRC}/src/raincoat.c
+post-patch:
+.for f in docs/README src/${PORTNAME}.c
+	@${REINPLACE_CMD} -e 's|/etc/raincoat\.conf|${PREFIX}&|g' \
+		${WRKSRC}/${f}
+.endfor
+
+do-build:
+	${CC} ${CFLAGS} -o ${WRKSRC}/${PORTNAME} ${WRKSRC}/src/${PORTNAME}.c ${WRKSRC}/src/BootFlash.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/raincoat ${PREFIX}/sbin/raincoat
-	${INSTALL_DATA} ${WRKSRC}/etc/raincoat.conf ${PREFIX}/etc/raincoat.conf
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/etc/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf.default
+.if !exists(${PREFIX}/etc/${PORTNAME}.conf)
+	${INSTALL_DATA} ${WRKSRC}/etc/${PORTNAME}.conf ${PREFIX}/etc
+.endif
+
+.if !defined (NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/${PORTDOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.pre.mk>
 
