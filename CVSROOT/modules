@@ -4104,7 +4104,6 @@ ja-anthy	ports/japanese/anthy
 ja-aterm	ports/japanese/aterm
 ja-balsa	ports/japanese/balsa
 ja-bible_names-fpw	ports/japanese/bible_names-fpw
-ja-binder	ports/japanese/binder
 ja-bookview	ports/japanese/bookview
 ja-bugzilla	ports/japanese/bugzilla
 ja-cal.rb	ports/japanese/cal.rb
@@ -4118,7 +4117,6 @@ ja-csrd		ports/japanese/csrd
 ja-dbskkd-cdb	ports/japanese/dbskkd-cdb
 ja-ddskk	ports/japanese/ddskk
 ja-ddskk-emacs20	ports/japanese/ddskk-emacs20
-ja-deepforest	ports/japanese/deepforest
 ja-devil-fpw	ports/japanese/devil-fpw
 ja-diclookup-emacs20	ports/japanese/diclookup-emacs20
 ja-diclookup-mule	ports/japanese/diclookup-mule
@@ -4201,7 +4199,6 @@ ja-japaneseAFM	ports/japanese/japaneseAFM
 ja-jargon-fpw	ports/japanese/jargon-fpw
 ja-jcode.pl	ports/japanese/jcode.pl
 ja-jed		ports/japanese/jed
-ja-jgv		ports/japanese/jgv
 ja-jhd		ports/japanese/jhd
 ja-jisx0213-fonts	ports/japanese/jisx0213-fonts
 ja-jls		ports/japanese/jls
@@ -4310,7 +4307,6 @@ ja-mozilla-jlp-devel	ports/japanese/mozilla-jlp-devel
 ja-mplusfonts	ports/japanese/mplusfonts
 ja-msdosfs	ports/japanese/msdosfs
 ja-mtools	ports/japanese/mtools
-ja-muggy	ports/japanese/muggy
 ja-mule-canna	ports/japanese/mule-canna
 ja-mule-canna+freewnn	ports/japanese/mule-canna+freewnn
 ja-mule-canna+freewnn+sj3	ports/japanese/mule-canna+freewnn+sj3
@@ -4432,7 +4428,6 @@ ja-scim-skk	ports/japanese/scim-skk
 ja-scim-tables	ports/japanese/scim-tables
 ja-scim-uim	ports/japanese/scim-uim
 ja-sed		ports/japanese/sed
-ja-seizedesktop	ports/japanese/seizedesktop
 ja-shinonome	ports/japanese/shinonome
 ja-sj3		ports/japanese/sj3
 ja-skk		ports/japanese/skk
