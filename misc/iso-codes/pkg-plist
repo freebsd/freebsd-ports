@@ -280,12 +280,14 @@ share/locale/ve/LC_MESSAGES/iso_3166_2.mo
 share/locale/ve/LC_MESSAGES/iso_639.mo
 share/locale/vi/LC_MESSAGES/iso_3166.mo
 share/locale/vi/LC_MESSAGES/iso_3166_2.mo
+share/locale/vi/LC_MESSAGES/iso_4217.mo
 share/locale/vi/LC_MESSAGES/iso_639.mo
 share/locale/wa/LC_MESSAGES/iso_3166.mo
 share/locale/wa/LC_MESSAGES/iso_3166_2.mo
 share/locale/wa/LC_MESSAGES/iso_639.mo
 share/locale/wal/LC_MESSAGES/iso_3166.mo
 share/locale/wal/LC_MESSAGES/iso_639.mo
+share/locale/wo/LC_MESSAGES/iso_3166.mo
 share/locale/xh/LC_MESSAGES/iso_3166.mo
 share/locale/xh/LC_MESSAGES/iso_3166_2.mo
 share/locale/xh/LC_MESSAGES/iso_639.mo
@@ -313,6 +315,8 @@ share/xml/iso-codes/iso_639.xml
 @unexec rmdir %D/share/locale/zh_CN 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/xh/LC_MESSAGES 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/xh 2>/dev/null ||/usr/bin/true
+@unexec rmdir %D/share/locale/wo/LC_MESSAGES 2>/dev/null ||/usr/bin/true
+@unexec rmdir %D/share/locale/wo 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/wal/LC_MESSAGES 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/wal 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/ve/LC_MESSAGES 2>/dev/null ||/usr/bin/true
@@ -359,6 +363,8 @@ share/xml/iso-codes/iso_639.xml
 @unexec rmdir %D/share/locale/pt 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/ps/LC_MESSAGES 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/ps 2>/dev/null ||/usr/bin/true
+@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null ||/usr/bin/true
+@unexec rmdir %D/share/locale/pl 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/om/LC_MESSAGES 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/om 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/oc/LC_MESSAGES 2>/dev/null ||/usr/bin/true
@@ -381,14 +387,14 @@ share/xml/iso-codes/iso_639.xml
 @unexec rmdir %D/share/locale/kok 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/ko/LC_MESSAGES 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/ko 2>/dev/null ||/usr/bin/true
+@unexec rmdir %D/share/locale/kn/LC_MESSAGES 2>/dev/null ||/usr/bin/true
+@unexec rmdir %D/share/locale/kn 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/kl/LC_MESSAGES 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/kl 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/kk/LC_MESSAGES 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/kk 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/iu/LC_MESSAGES 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/iu 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/id/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/id 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/hy/LC_MESSAGES 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/hy 2>/dev/null ||/usr/bin/true
 @unexec rmdir %D/share/locale/haw/LC_MESSAGES 2>/dev/null ||/usr/bin/true
