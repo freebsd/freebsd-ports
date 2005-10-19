@@ -188,7 +188,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <freebsdsa>SA-05:21.openssl</freebsdsa>
-      <cvename>CAN-2005-2969</cvename>
+      <cvename>CVE-2005-2969</cvename>
       <url>http://www.openssl.org/news/secadv_20051011.txt</url>
     </references>
     <dates>
@@ -280,7 +280,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2967</cvename>
+      <cvename>CVE-2005-2967</cvename>
       <url>http://www.gentoo.org/security/en/glsa/glsa-200510-08.xml</url>
       <url>http://xinehq.de/index.php/security/XSA-2005-1</url>
     </references>
@@ -314,7 +314,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2933</cvename>
+      <cvename>CVE-2005-2933</cvename>
       <url>http://www.frsirt.com/english/advisories/2005/1953</url>
       <url>http://www.idefense.com/application/poi/display?id=313&amp;type=vulnerabilities</url>
       <url>http://www.washington.edu/imap/documentation/RELNOTES.html</url>
@@ -379,7 +379,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>13698</bid>
-      <cvename>CAN-2005-1679</cvename>
+      <cvename>CVE-2005-1679</cvename>
       <mlist msgid="c522a35a0505200807744163c4@mail.gmail.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111661253517089</mlist>
     </references>
     <dates>
@@ -445,7 +445,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2960</cvename>
+      <cvename>CVE-2005-2960</cvename>
       <bid>14994</bid>
       <url>http://www.debian.org/security/2005/dsa-835</url>
       <url>http://www.debian.org/security/2005/dsa-836</url>
@@ -486,8 +486,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2919</cvename>
-      <cvename>CAN-2005-2920</cvename>
+      <cvename>CVE-2005-2919</cvename>
+      <cvename>CVE-2005-2920</cvename>
       <url>http://www.gentoo.org/security/en/glsa/glsa-200509-13.xml</url>
     </references>
     <dates>
@@ -627,13 +627,13 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2701</cvename>
-      <cvename>CAN-2005-2702</cvename>
-      <cvename>CAN-2005-2703</cvename>
-      <cvename>CAN-2005-2704</cvename>
-      <cvename>CAN-2005-2705</cvename>
-      <cvename>CAN-2005-2706</cvename>
-      <cvename>CAN-2005-2707</cvename>
+      <cvename>CVE-2005-2701</cvename>
+      <cvename>CVE-2005-2702</cvename>
+      <cvename>CVE-2005-2703</cvename>
+      <cvename>CVE-2005-2704</cvename>
+      <cvename>CVE-2005-2705</cvename>
+      <cvename>CVE-2005-2706</cvename>
+      <cvename>CVE-2005-2707</cvename>
       <url>http://www.mozilla.org/security/announce/mfsa2005-58.html</url>
     </references>
     <dates>
@@ -723,7 +723,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2968</cvename>
+      <cvename>CVE-2005-2968</cvename>
       <url>https://bugzilla.mozilla.org/show_bug.cgi?id=307185</url>
       <url>http://secunia.com/advisories/16869/</url>
       <url>http://www.mozilla.org/security/announce/mfsa2005-59.html</url>
@@ -754,7 +754,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>14366</bid>
-      <cvename>CAN-2005-1268</cvename>
+      <cvename>CVE-2005-1268</cvename>
     </references>
     <dates>
       <discovery>2005-07-12</discovery>
@@ -786,7 +786,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>14254</bid>
-      <cvename>CAN-2005-2095</cvename>
+      <cvename>CVE-2005-2095</cvename>
       <url>http://www.squirrelmail.org/security/issue/2005-07-13</url>
     </references>
     <dates>
@@ -819,7 +819,7 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <bid>14807</bid>
       <certvu>102441</certvu>
-      <cvename>CAN-2005-2495</cvename>
+      <cvename>CVE-2005-2495</cvename>
       <url>https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=166856</url>
       <url>https://bugs.freedesktop.org/show_bug.cgi?id=594</url>
     </references>
@@ -853,7 +853,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>14450</bid>
-      <cvename>CAN-2005-2475</cvename>
+      <cvename>CVE-2005-2475</cvename>
       <mlist msgid="7389fc4b05080116031536adf7@mail.gmail.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112300046224117</mlist>
     </references>
     <dates>
@@ -951,7 +951,7 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <bid>14784</bid>
       <certvu>573857</certvu>
-      <cvename>CAN-2005-2871</cvename>
+      <cvename>CVE-2005-2871</cvename>
       <url>http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=112624614008387</url>
       <url>http://www.mozilla.org/security/idn.html</url>
       <url>https://bugzilla.mozilla.org/show_bug.cgi?id=307259</url>
@@ -984,7 +984,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>12442</bid>
-      <cvename>CAN-2005-0085</cvename>
+      <cvename>CVE-2005-0085</cvename>
       <url>http://www.securitytracker.com/alerts/2005/Feb/1013078.html</url>
     </references>
     <dates>
@@ -1012,7 +1012,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>14731</bid>
-      <cvename>CAN-2005-2796</cvename>
+      <cvename>CVE-2005-2796</cvename>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE10-sslConnectTimeout</url>
       <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1355</url>
       <url>http://secunia.com/advisories/16674/</url>
@@ -1044,7 +1044,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>14761</bid>
-      <cvename>CAN-2005-2794</cvename> 
+      <cvename>CVE-2005-2794</cvename> 
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE10-STORE_PENDING</url>
       <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1368</url>
       <url>http://secunia.com/advisories/16708/</url>
@@ -1090,7 +1090,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <certvu>938617</certvu>
-      <cvename>CAN-2005-0034</cvename>
+      <cvename>CVE-2005-0034</cvename>
       <url>http://www.uniras.gov.uk/niscc/docs/al-20050125-00060.html?lang=en</url>
       <url>http://www.isc.org/sw/bind/bind9.3.php#security</url>
     </references>
@@ -1118,7 +1118,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <certvu>327633</certvu>
-      <cvename>CAN-2005-0033</cvename>
+      <cvename>CVE-2005-0033</cvename>
       <url>http://www.uniras.gov.uk/niscc/docs/al-20050125-00059.html?lang=en</url>
       <url>http://www.isc.org/sw/bind/bind-security.php</url>
     </references>
@@ -1146,7 +1146,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2864</cvename>
+      <cvename>CVE-2005-2864</cvename>
       <mlist msgid="55104.213.107.125.108.1125844783.squirrel@webmail.rsc.cx">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112604855119036</mlist>
     </references>
     <dates>
@@ -1211,8 +1211,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2549</cvename>
-      <cvename>CAN-2005-2550</cvename>
+      <cvename>CVE-2005-2549</cvename>
+      <cvename>CVE-2005-2550</cvename>
       <url>http://www.sitic.se/eng/advisories_and_recommendations/sa05-001.html</url>
     </references>
     <dates>
@@ -1244,7 +1244,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2641</cvename>
+      <cvename>CVE-2005-2641</cvename>
       <certvu>778916</certvu>
       <url>https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=166163</url>
     </references>
@@ -1274,7 +1274,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>14620</bid>
-      <cvename>CAN-2005-2491</cvename>
+      <cvename>CVE-2005-2491</cvename>
       <url>http://www.pcre.org/changelog.txt</url>
     </references>
     <dates>
@@ -1338,7 +1338,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2534</cvename>
+      <cvename>CVE-2005-2534</cvename>
       <url>http://openvpn.net/changelog.html</url>
     </references>
     <dates>
@@ -1369,7 +1369,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2533</cvename>
+      <cvename>CVE-2005-2533</cvename>
       <url>http://openvpn.net/changelog.html</url>
     </references>
     <dates>
@@ -1399,7 +1399,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2532</cvename>
+      <cvename>CVE-2005-2532</cvename>
       <url>http://openvpn.net/changelog.html</url>
     </references>
     <dates>
@@ -1431,7 +1431,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2531</cvename>
+      <cvename>CVE-2005-2531</cvename>
       <url>http://openvpn.net/changelog.html</url>
     </references>
     <dates>
@@ -1463,7 +1463,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2643</cvename>
+      <cvename>CVE-2005-2643</cvename>
       <url>http://archives.seul.org/or/announce/Aug-2005/msg00002.html</url>
     </references>
     <dates>
@@ -1569,7 +1569,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2498</cvename>
+      <cvename>CVE-2005-2498</cvename>
       <url>http://b2evolution.net/news/2005/08/31/fix_for_xml_rpc_vulnerability_again_1</url>
       <url>http://downloads.phpgroupware.org/changelog</url>
       <url>http://drupal.org/files/sa-2005-004/advisory.txt</url>
@@ -1621,7 +1621,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1527</cvename>
+      <cvename>CVE-2005-1527</cvename>
       <mlist msgid="20050811155502.61E3C7A00B4@mail.idefense.com">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=112377934108902</mlist>
       <url>http://www.idefense.com/application/poi/display?id=290&amp;type=vulnerabilities</url>
     </references>
@@ -1666,11 +1666,11 @@ Note:  Please add new entries to the beginning of this file.
 	    contributed scripts were found to behave in an insecure
 	    manner.</p>
 	  <ul>
-	    <li>integer overflow in libgadu (CAN-2005-1852) that could
+	    <li>integer overflow in libgadu (CVE-2005-1852) that could
 	      be triggered by an incomming message and lead to
 	      application crash and/or remote code execution</li>
-	    <li>insecure file creation (CAN-2005-1850) and shell
-	      command injection (CAN-2005-1851) in other user
+	    <li>insecure file creation (CVE-2005-1850) and shell
+	      command injection (CVE-2005-1851) in other user
 	      contributed scripts (discovered by Marcin Owsiany and
 	      Wojtek Kaniewski)</li>
 	    <li>several signedness errors in libgadu that could be
@@ -1688,12 +1688,12 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>14345</bid>
-      <cvename>CAN-2005-1850</cvename>
-      <cvename>CAN-2005-1851</cvename>
-      <cvename>CAN-2005-1852</cvename>
-      <cvename>CAN-2005-2369</cvename>
-      <cvename>CAN-2005-2370</cvename>
-      <cvename>CAN-2005-2448</cvename>
+      <cvename>CVE-2005-1850</cvename>
+      <cvename>CVE-2005-1851</cvename>
+      <cvename>CVE-2005-1852</cvename>
+      <cvename>CVE-2005-2369</cvename>
+      <cvename>CVE-2005-2370</cvename>
+      <cvename>CVE-2005-2448</cvename>
       <mlist msgid="42DFF06F.7060005@toxygen.net">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112198499417250</mlist>
       <url>http://gaim.sourceforge.net/security/?id=20</url>
       <url>http://www.kde.org/info/security/advisory-20050721-1.txt</url>
@@ -1729,7 +1729,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2102</cvename>
+      <cvename>CVE-2005-2102</cvename>
       <url>http://gaim.sourceforge.net/security/?id=21</url>
     </references>
     <dates>
@@ -1760,7 +1760,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2103</cvename>
+      <cvename>CVE-2005-2103</cvename>
       <url>http://gaim.sourceforge.net/security/?id=22</url>
     </references>
     <dates>
@@ -1803,7 +1803,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>14529</bid>
-      <cvename>CAN-2005-2097</cvename>
+      <cvename>CVE-2005-2097</cvename>
       <url>http://rhn.redhat.com/errata/RHSA-2005-670.html</url>
       <url>http://www.kde.org/info/security/advisory-20050809-1.txt</url>
     </references>
@@ -1850,8 +1850,8 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>14405</bid>
-      <cvename>CAN-2005-2430</cvename>
-      <cvename>CAN-2005-2431</cvename>
+      <cvename>CVE-2005-2430</cvename>
+      <cvename>CVE-2005-2431</cvename>
       <mlist msgid="1122496636.26878.2.camel@localhost.localdomain">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112259845904350</mlist>
     </references>
     <dates>
@@ -1889,13 +1889,13 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1621</cvename>
-      <cvename>CAN-2005-1695</cvename>
-      <cvename>CAN-2005-1696</cvename>
-      <cvename>CAN-2005-1698</cvename>
-      <cvename>CAN-2005-1777</cvename>
-      <cvename>CAN-2005-1778</cvename>
-      <cvename>CAN-2005-1921</cvename>
+      <cvename>CVE-2005-1621</cvename>
+      <cvename>CVE-2005-1695</cvename>
+      <cvename>CVE-2005-1696</cvename>
+      <cvename>CVE-2005-1698</cvename>
+      <cvename>CVE-2005-1777</cvename>
+      <cvename>CVE-2005-1778</cvename>
+      <cvename>CVE-2005-1921</cvename>
       <mlist msgid="20050527223753.21735.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111721364707520</mlist>
       <url>http://secunia.com/advisories/15450/</url>
       <url>http://news.postnuke.com/Article2691.html</url>
@@ -1939,7 +1939,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>13966</bid>
-      <cvename>CAN-2005-2002</cvename>
+      <cvename>CVE-2005-2002</cvename>
       <url>http://secunia.com/advisories/15710/</url>
     </references>
     <dates>
@@ -1975,7 +1975,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2359</cvename>
+      <cvename>CVE-2005-2359</cvename>
       <freebsdsa>SA-05:19.ipsec</freebsdsa>
     </references>
     <dates>
@@ -2013,7 +2013,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1849</cvename>
+      <cvename>CVE-2005-1849</cvename>
       <freebsdsa>SA-05:18.zlib</freebsdsa>
     </references>
     <dates>
@@ -2049,7 +2049,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2218</cvename>
+      <cvename>CVE-2005-2218</cvename>
       <freebsdsa>SA-05:17.devfs</freebsdsa>
     </references>
     <dates>
@@ -2085,7 +2085,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2390</cvename>
+      <cvename>CVE-2005-2390</cvename>
       <url>http://www.gentoo.org/security/en/glsa/glsa-200508-02.xml</url>
       <url>http://www.proftpd.org/docs/RELEASE_NOTES-1.3.0rc2</url>
     </references>
@@ -2145,7 +2145,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>12934</bid>
-      <cvename>CAN-2005-0926</cvename>
+      <cvename>CVE-2005-0926</cvename>
       <url>http://sylpheed.good-day.net/changelog.html.en</url>
     </references>
     <dates>
@@ -2174,7 +2174,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>12982</bid>
-      <cvename>CAN-2005-0992</cvename>
+      <cvename>CVE-2005-0992</cvename>
       <mlist msgid="4f9e4516050404101223fbdeed@mail.gmail.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111264361622660</mlist>
       <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-3</url>
     </references>
@@ -2226,7 +2226,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <certvu>303094</certvu>
-      <cvename>CAN-2005-0366</cvename>
+      <cvename>CVE-2005-0366</cvename>
       <url>http://eprint.iacr.org/2005/033</url>
       <url>http://lists.gnupg.org/pipermail/gnupg-announce/2005q1/000191.html</url>
     </references>
@@ -2264,7 +2264,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>14374</bid>
-      <cvename>CAN-2005-2368</cvename>
+      <cvename>CVE-2005-2368</cvename>
       <url>http://www.guninski.com/where_do_you_want_billg_to_go_today_5.html</url>
     </references>
     <dates>
@@ -2318,7 +2318,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1544</cvename>
+      <cvename>CVE-2005-1544</cvename>
       <url>http://bugzilla.remotesensing.org/show_bug.cgi?id=843</url>
       <url>http://www.gentoo.org/security/en/glsa/glsa-200505-07.xml</url>
       <url>http://www.remotesensing.org/libtiff/v3.7.3.html</url>
@@ -2546,7 +2546,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>14106</bid>
-      <cvename>CAN-2005-2088</cvename>
+      <cvename>CVE-2005-2088</cvename>
       <url>http://www.watchfire.com/resources/HTTP-Request-Smuggling.pdf</url>
     </references>
     <dates>
@@ -2627,7 +2627,7 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <bid>11591</bid>
       <certvu>448384</certvu>
-      <cvename>CAN-2004-1006</cvename>
+      <cvename>CVE-2004-1006</cvename>
       <mlist msgid="20041109003345.GG763@isc.org">http://marc.theaimsgroup.com/?l=dhcp-announce&amp;m=109996073218290</mlist>
     </references>
     <dates>
@@ -2659,8 +2659,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1202</cvename>
-      <cvename>CAN-2005-1203</cvename>
+      <cvename>CVE-2005-1202</cvename>
+      <cvename>CVE-2005-1203</cvename>
       <url>http://sourceforge.net/project/shownotes.php?release_id=320768</url>
     </references>
     <dates>
@@ -2722,8 +2722,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2315</cvename>
-      <cvename>CAN-2005-2316</cvename>
+      <cvename>CVE-2005-2315</cvename>
+      <cvename>CVE-2005-2316</cvename>
       <freebsdpr>ports/83851</freebsdpr>
     </references>
     <dates>
@@ -2752,7 +2752,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2302</cvename>
+      <cvename>CVE-2005-2302</cvename>
       <url>http://doc.powerdns.com/security-policy.html</url>
       <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112155941310297&amp;w=2</url>
     </references>
@@ -2781,7 +2781,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2335</cvename>
+      <cvename>CVE-2005-2335</cvename>
       <freebsdpr>ports/83805</freebsdpr>
       <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=212762</url>
       <url>http://fetchmail.berlios.de/fetchmail-SA-2005-01.txt</url>
@@ -2820,7 +2820,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1920</cvename>
+      <cvename>CVE-2005-1920</cvename>
       <url>https://bugs.kde.org/show_bug.cgi?id=103331</url>
       <url>http://www.kde.org/info/security/advisory-20050718-1.txt</url>
     </references>
@@ -2924,18 +2924,18 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1937</cvename>
-      <cvename>CAN-2005-2260</cvename>
-      <cvename>CAN-2005-2261</cvename>
-      <cvename>CAN-2005-2262</cvename>
-      <cvename>CAN-2005-2263</cvename>
-      <cvename>CAN-2005-2264</cvename>
-      <cvename>CAN-2005-2265</cvename>
-      <cvename>CAN-2005-2266</cvename>
-      <cvename>CAN-2005-2267</cvename>
-      <cvename>CAN-2005-2268</cvename>
-      <cvename>CAN-2005-2269</cvename>
-      <cvename>CAN-2005-2270</cvename>
+      <cvename>CVE-2005-1937</cvename>
+      <cvename>CVE-2005-2260</cvename>
+      <cvename>CVE-2005-2261</cvename>
+      <cvename>CVE-2005-2262</cvename>
+      <cvename>CVE-2005-2263</cvename>
+      <cvename>CVE-2005-2264</cvename>
+      <cvename>CVE-2005-2265</cvename>
+      <cvename>CVE-2005-2266</cvename>
+      <cvename>CVE-2005-2267</cvename>
+      <cvename>CVE-2005-2268</cvename>
+      <cvename>CVE-2005-2269</cvename>
+      <cvename>CVE-2005-2270</cvename>
       <url>http://www.mozilla.org/projects/security/known-vulnerabilities.html</url>
       <url>http://www.mozilla.org/security/announce/mfsa2005-45.html</url>
       <url>http://www.mozilla.org/security/announce/mfsa2005-46.html</url>
@@ -2973,8 +2973,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-	<cvename>CAN-2005-1921</cvename>
-	<cvename>CAN-2005-2106</cvename>
+	<cvename>CVE-2005-1921</cvename>
+	<cvename>CVE-2005-2106</cvename>
 	<url>http://drupal.org/files/sa-2005-002/advisory.txt</url>
     </references>
     <dates>
@@ -3004,8 +3004,8 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>12887</bid>
-      <cvename>CAN-2005-0869</cvename>
-      <cvename>CAN-2005-0870</cvename>
+      <cvename>CVE-2005-0869</cvename>
+      <cvename>CVE-2005-0870</cvename>
       <mlist msgid="20050323180207.11987.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111161017209422</mlist>
     </references>
     <dates>
@@ -3036,7 +3036,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>13660</bid>
-      <cvename>CAN-2005-1636</cvename>
+      <cvename>CVE-2005-1636</cvename>
       <url>http://www.zataz.net/adviso/mysql-05172005.txt</url>
     </references>
     <dates>
@@ -3072,7 +3072,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>13715</bid>
-      <cvename>CAN-2005-1740</cvename>
+      <cvename>CVE-2005-1740</cvename>
       <url>http://security.gentoo.org/glsa/glsa-200505-18.xml</url>
     </references>
     <dates>
@@ -3104,8 +3104,8 @@ Note:  Please add new entries to the beginning of this file.
       <bid>12618</bid>
       <bid>12621</bid>
       <bid>12623</bid>
-      <cvename>CAN-2005-0258</cvename>
-      <cvename>CAN-2005-0259</cvename>
+      <cvename>CVE-2005-0258</cvename>
+      <cvename>CVE-2005-0259</cvename>
       <url>http://security.gentoo.org/glsa/glsa-200503-02.xml</url>
       <url>http://www.idefense.com/application/poi/display?id=205&amp;type=vulnerabilities</url>
       <url>http://www.idefense.com/application/poi/display?id=204&amp;type=vulnerabilities</url>
@@ -3169,7 +3169,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>14142</bid>
-      <cvename>CAN-2005-2256</cvename>
+      <cvename>CVE-2005-2256</cvename>
       <url>http://secunia.com/advisories/15941/</url>
       <url>http://sourceforge.net/project/shownotes.php?release_id=342261</url>
     </references>
@@ -3230,7 +3230,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>14146</bid>
-      <cvename>CAN-2005-1916</cvename>
+      <cvename>CVE-2005-1916</cvename>
       <mlist msgid="42CA2DDB.5030606@zataz.net">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112060146011122</mlist>
       <url>http://bugs.gentoo.org/show_bug.cgi?id=94172</url>
     </references>
@@ -3271,8 +3271,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2173</cvename>
-      <cvename>CAN-2005-2174</cvename>
+      <cvename>CVE-2005-2173</cvename>
+      <cvename>CVE-2005-2174</cvename>
       <url>http://www.bugzilla.org/security/2.18.1/</url>
       <url>https://bugzilla.mozilla.org/show_bug.cgi?id=292544</url>
       <url>https://bugzilla.mozilla.org/show_bug.cgi?id=293159</url>
@@ -3314,9 +3314,9 @@ Note:  Please add new entries to the beginning of this file.
       <bid>3564</bid>
       <bid>3840</bid>
       <bid>3842</bid>
-      <cvename>CAN-2001-0910</cvename>
-      <cvename>CAN-2002-0113</cvename>
-      <cvename>CAN-2002-0114</cvename>
+      <cvename>CVE-2001-0910</cvename>
+      <cvename>CVE-2002-0113</cvename>
+      <cvename>CVE-2002-0114</cvename>
       <url>http://portal1.legato.com/resources/bulletins/372.html</url>
     </references>
     <dates>
@@ -3356,7 +3356,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1912</cvename>
+      <cvename>CVE-2005-1912</cvename>
       <url>http://secunia.com/secunia_research/2005-6/advisory/</url>
     </references>
     <dates>
@@ -3403,7 +3403,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1923</cvename>
+      <cvename>CVE-2005-1923</cvename>
       <mlist msgid="FB24803D1DF2A34FA59FC157B77C97050462A3AB@IDSERV04.idef.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112006456809016</mlist>
     </references>
     <dates>
@@ -3443,7 +3443,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1922</cvename>
+      <cvename>CVE-2005-1922</cvename>
       <mlist msgid="FB24803D1DF2A34FA59FC157B77C97050462A3AC@IDSERV04.idef.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112006402411598</mlist>
     </references>
     <dates>
@@ -3479,7 +3479,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2096</cvename>
+      <cvename>CVE-2005-2096</cvename>
       <freebsdsa>SA-05:16.zlib</freebsdsa>
     </references>
     <dates>
@@ -3520,7 +3520,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1625</cvename>
+      <cvename>CVE-2005-1625</cvename>
       <url>http://www.adobe.com/support/techdocs/329083.html</url>
       <mlist msgid="FB24803D1DF2A34FA59FC157B77C97050462A5E2@IDSERV04.idef.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112059685332569</mlist>
     </references>
@@ -3643,10 +3643,10 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2107</cvename>
-      <cvename>CAN-2005-2108</cvename>
-      <cvename>CAN-2005-2109</cvename>
-      <cvename>CAN-2005-2110</cvename>
+      <cvename>CVE-2005-2107</cvename>
+      <cvename>CVE-2005-2108</cvename>
+      <cvename>CVE-2005-2109</cvename>
+      <cvename>CVE-2005-2110</cvename>
       <mlist msgid="42C2BE6E.2050408@gulftech.org">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112006967221438</mlist>
     </references>
     <dates>
@@ -3679,7 +3679,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1810</cvename>
+      <cvename>CVE-2005-1810</cvename>
       <url>http://www.gentoo.org/security/en/glsa/glsa-200506-04.xml</url>
     </references>
     <dates>
@@ -3711,7 +3711,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2086</cvename>
+      <cvename>CVE-2005-2086</cvename>
       <url>http://www.frsirt.com/english/advisories/2005/0904</url>
       <url>http://www.phpbb.com/phpBB/viewtopic.php?t=302011</url>
     </references>
@@ -3741,7 +3741,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1921</cvename>
+      <cvename>CVE-2005-1921</cvename>
       <url>http://www.gulftech.org/?node=research&amp;article_id=00087-07012005</url>
       <url>http://www.hardened-php.net/advisory-022005.php</url>
     </references>
@@ -3787,7 +3787,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2019</cvename>
+      <cvename>CVE-2005-2019</cvename>
       <freebsdsa>SA-05:13.ipfw</freebsdsa>
     </references>
     <dates>
@@ -3838,8 +3838,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0953</cvename>
-      <cvename>CAN-2005-1260</cvename>
+      <cvename>CVE-2005-0953</cvename>
+      <cvename>CVE-2005-1260</cvename>
       <freebsdsa>SA-05:14.bzip2</freebsdsa>
       <url>http://scary.beasts.org/security/CESA-2005-002.txt</url>
     </references>
@@ -3887,8 +3887,8 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <certvu>637934</certvu>
-      <cvename>CAN-2005-0356</cvename>
-      <cvename>CAN-2005-2068</cvename>
+      <cvename>CVE-2005-0356</cvename>
+      <cvename>CVE-2005-2068</cvename>
       <freebsdsa>SA-05:15.tcp</freebsdsa>
     </references>
     <dates>
@@ -4003,22 +4003,22 @@ Note:  Please add new entries to the beginning of this file.
       <bid>13391</bid>
       <bid>13504</bid>
       <bid>13567</bid>
-      <cvename>CAN-2005-1281</cvename>
-      <cvename>CAN-2005-1456</cvename>
-      <cvename>CAN-2005-1457</cvename>
-      <cvename>CAN-2005-1458</cvename>
-      <cvename>CAN-2005-1459</cvename>
-      <cvename>CAN-2005-1460</cvename>
-      <cvename>CAN-2005-1461</cvename>
-      <cvename>CAN-2005-1462</cvename>
-      <cvename>CAN-2005-1463</cvename>
-      <cvename>CAN-2005-1464</cvename>
-      <cvename>CAN-2005-1465</cvename>
-      <cvename>CAN-2005-1466</cvename>
-      <cvename>CAN-2005-1467</cvename>
-      <cvename>CAN-2005-1468</cvename>
-      <cvename>CAN-2005-1469</cvename>
-      <cvename>CAN-2005-1470</cvename>
+      <cvename>CVE-2005-1281</cvename>
+      <cvename>CVE-2005-1456</cvename>
+      <cvename>CVE-2005-1457</cvename>
+      <cvename>CVE-2005-1458</cvename>
+      <cvename>CVE-2005-1459</cvename>
+      <cvename>CVE-2005-1460</cvename>
+      <cvename>CVE-2005-1461</cvename>
+      <cvename>CVE-2005-1462</cvename>
+      <cvename>CVE-2005-1463</cvename>
+      <cvename>CVE-2005-1464</cvename>
+      <cvename>CVE-2005-1465</cvename>
+      <cvename>CVE-2005-1466</cvename>
+      <cvename>CVE-2005-1467</cvename>
+      <cvename>CVE-2005-1468</cvename>
+      <cvename>CVE-2005-1469</cvename>
+      <cvename>CVE-2005-1470</cvename>
       <url>http://www.ethereal.com/appnotes/enpa-sa-00019.html</url>
     </references>
     <dates>
@@ -4077,7 +4077,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1277</cvename>
+      <cvename>CVE-2005-1277</cvename>
       <url>http://www.idefense.com/application/poi/display?id=250&amp;type=vulnerabilities&amp;flashstatus=false</url>
       <url>http://service.real.com/help/faq/security/050623_player/EN/</url>
     </references>
@@ -4110,7 +4110,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1992</cvename>
+      <cvename>CVE-2005-1992</cvename>
       <url>http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/5237</url>
       <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=315064</url>
     </references>
@@ -4172,7 +4172,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1475</cvename>
+      <cvename>CVE-2005-1475</cvename>
       <url>http://secunia.com/advisories/15008/</url>
       <url>http://secunia.com/secunia_research/2005-4/advisory/</url>
       <url>http://www.opera.com/freebsd/changelogs/801/#security</url>
@@ -4208,7 +4208,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1669</cvename>
+      <cvename>CVE-2005-1669</cvename>
       <url>http://secunia.com/advisories/15411/</url>
       <url>http://www.opera.com/freebsd/changelogs/801/#security</url>
     </references>
@@ -4395,7 +4395,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1266</cvename>
+      <cvename>CVE-2005-1266</cvename>
       <mlist msgid="c17072.35054.586017.822288@proton.pathname.com">http://mail-archives.apache.org/mod_mbox/spamassassin-announce/200506.mbox/%3c17072.35054.586017.822288@proton.pathname.com%3e</mlist>
     </references>
     <dates>
@@ -4427,7 +4427,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1769</cvename>
+      <cvename>CVE-2005-1769</cvename>
       <url>http://www.squirrelmail.org/security/issue/2005-06-15</url>
     </references>
     <dates>
@@ -4454,7 +4454,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1306</cvename>
+      <cvename>CVE-2005-1306</cvename>
       <url>http://shh.thathost.com/secadv/adobexxe/</url>
       <url>http://www.adobe.com/support/techdocs/331710.html</url>
       <url>http://support.adobe.co.jp/faq/faq/qadoc.sv?226360+002+3</url>
@@ -4510,8 +4510,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0988</cvename>
-      <cvename>CAN-2005-1228</cvename>
+      <cvename>CVE-2005-0988</cvename>
+      <cvename>CVE-2005-1228</cvename>
       <freebsdsa>SA-05:11.gzip</freebsdsa>
       <mlist msgid="7389fc4b05040412574f819112@mail.gmail.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111271860708210</mlist>
       <mlist msgid="7389fc4b0504201224759f31b@mail.gmail.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111402732406477</mlist>
@@ -4550,10 +4550,10 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1267</cvename>
-      <cvename>CAN-2005-1278</cvename>
-      <cvename>CAN-2005-1279</cvename>
-      <cvename>CAN-2005-1280</cvename>
+      <cvename>CVE-2005-1267</cvename>
+      <cvename>CVE-2005-1278</cvename>
+      <cvename>CVE-2005-1279</cvename>
+      <cvename>CVE-2005-1280</cvename>
       <freebsdsa>SA-05:10.tcpdump</freebsdsa>
       <mlist msgid="20050426100140.1945.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111454406222040</mlist>
       <mlist msgid="20050426100057.1748.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111454461300644</mlist>
@@ -4586,7 +4586,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>13931</bid>
-      <cvename>CAN-2005-1269</cvename>
+      <cvename>CVE-2005-1269</cvename>
       <url>http://gaim.sourceforge.net/security/index.php?id=18</url>
     </references>
     <dates>
@@ -4619,7 +4619,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>13932</bid>
-      <cvename>CAN-2005-1934</cvename>
+      <cvename>CVE-2005-1934</cvename>
       <url>http://gaim.sourceforge.net/security/index.php?id=19</url>
     </references>
     <dates>
@@ -4644,7 +4644,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-2124</cvename>
+      <cvename>CVE-2004-2124</cvename>
       <mlist msgid="0c0a01c3e525$1c0ed2b0$c90c030a@bmedirattatg">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107524414317693</mlist>
     </references>
     <dates>
@@ -4668,11 +4668,11 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1106</cvename>
-      <cvename>CAN-2005-0219</cvename>
-      <cvename>CAN-2005-0220</cvename>
-      <cvename>CAN-2005-0221</cvename>
-      <cvename>CAN-2005-0222</cvename>
+      <cvename>CVE-2004-1106</cvename>
+      <cvename>CVE-2005-0219</cvename>
+      <cvename>CVE-2005-0220</cvename>
+      <cvename>CVE-2005-0221</cvename>
+      <cvename>CVE-2005-0222</cvename>
       <bid>11602</bid>
       <url>http://gallery.menalto.com/modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=147</url>
       <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110608459222364</url>
@@ -4714,7 +4714,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0011</cvename>
+      <cvename>CVE-2005-0011</cvename>
       <url>http://www.kde.org/info/security/advisory-20050215-1.txt</url>
     </references>
     <dates>
@@ -4804,7 +4804,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1911</cvename>
+      <cvename>CVE-2005-1911</cvename>
       <url>http://leafnode.sourceforge.net/leafnode-SA-2005-02.txt</url>
       <freebsdpr>ports/82056</freebsdpr>
       <mlist msgid="20050608215155.GB27234@merlin.emma.line.org">http://marc.theaimsgroup.com/?l=vulnwatch&amp;m=111827180929063</mlist>
@@ -4835,7 +4835,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0299</cvename>
+      <cvename>CVE-2005-0299</cvename>
       <bid>12318</bid>
       <mlist msgid="20050120051735.2832.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110627132209963</mlist>
     </references>
@@ -4863,7 +4863,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0198</cvename>
+      <cvename>CVE-2005-0198</cvename>
       <certvu>702777</certvu>
     </references>
     <dates>
@@ -4889,10 +4889,10 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0446</cvename>
+      <cvename>CVE-2005-0446</cvename>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE8-dns_assert</url>
-      <cvename>CAN-2005-0096</cvename>
-      <cvename>CAN-2005-0097</cvename>
+      <cvename>CVE-2005-0096</cvename>
+      <cvename>CVE-2005-0097</cvename>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-fakeauth_auth</url>
     </references>
     <dates>
@@ -4917,7 +4917,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0398</cvename>
+      <cvename>CVE-2005-0398</cvename>
       <mlist>http://sourceforge.net/mailarchive/forum.php?thread_id=6787713&amp;forum_id=32000</mlist>
       <url>http://xforce.iss.net/xforce/xfdb/19707</url>
       <url>https://bugzilla.redhat.com/bugzilla/attachment.cgi?id=109966&amp;action=view</url>
@@ -4944,7 +4944,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0639</cvename>
+      <cvename>CVE-2005-0639</cvename>
       <url>http://bugs.gentoo.org/show_bug.cgi?id=79762</url>
       <url>http://pantransit.reptiles.org/prog/xli/CHANGES</url>
     </references>
@@ -4980,7 +4980,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0638</cvename>
+      <cvename>CVE-2005-0638</cvename>
       <url>http://bugs.gentoo.org/show_bug.cgi?id=79762</url>
     </references>
     <dates>
@@ -5012,7 +5012,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-	<cvename>CAN-2001-0775</cvename>
+	<cvename>CVE-2001-0775</cvename>
 	<mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=99477230306845</mlist>
 	<url>https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=46186</url>
 	<url>http://bugs.gentoo.org/show_bug.cgi?id=79762</url>
@@ -5052,8 +5052,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1846</cvename>
-      <cvename>CAN-2005-1847</cvename>
+      <cvename>CVE-2005-1846</cvename>
+      <cvename>CVE-2005-1847</cvename>
       <url>http://rpmfind.net/linux/RPM/suse/updates/8.2/i386/rpm/i586/yamt-0.5-1277.i586.html</url>
       <url>ftp://ftp.suse.com/pub/suse/i386/update/8.2/rpm/src/yamt-0.5-1277.src.rpm</url>
     </references>
@@ -5084,7 +5084,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0076</cvename>
+      <cvename>CVE-2005-0076</cvename>
       <url>http://www.debian.org/security/2005/dsa-672</url>
       <url>http://xforce.iss.net/xforce/xfdb/19271</url>
     </references>
@@ -5110,7 +5110,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0079</cvename>
+      <cvename>CVE-2005-0079</cvename>
       <url>http://www.debian.org/security/2005/dsa-649</url>
       <url>http://xforce.iss.net/xforce/xfdb/18991</url>
       <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=278191</url>
@@ -5142,14 +5142,14 @@ Note:  Please add new entries to the beginning of this file.
       <url>http://rhn.redhat.com/errata/RHSA-2004-059.html</url>
       <url>http://rhn.redhat.com/errata/RHSA-2004-478.html</url>
       <url>http://rhn.redhat.com/errata/RHSA-2004-612.html</url>
-      <cvename>CAN-2002-0029</cvename>
-      <cvename>CAN-2004-0083</cvename>
-      <cvename>CAN-2004-0084</cvename>
-      <cvename>CAN-2004-0106</cvename>
-      <cvename>CAN-2004-0687</cvename>
-      <cvename>CAN-2004-0688</cvename>
-      <cvename>CAN-2004-0692</cvename>
-      <cvename>CAN-2004-0914</cvename>
+      <cvename>CVE-2002-0029</cvename>
+      <cvename>CVE-2004-0083</cvename>
+      <cvename>CVE-2004-0084</cvename>
+      <cvename>CVE-2004-0106</cvename>
+      <cvename>CVE-2004-0687</cvename>
+      <cvename>CVE-2004-0688</cvename>
+      <cvename>CVE-2004-0692</cvename>
+      <cvename>CVE-2004-0914</cvename>
     </references>
     <dates>
       <discovery>2004-09-27</discovery>
@@ -5201,10 +5201,10 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1036</cvename>
-      <cvename>CAN-2005-0075</cvename>
-      <cvename>CAN-2005-0103</cvename>
-      <cvename>CAN-2005-0104</cvename>
+      <cvename>CVE-2004-1036</cvename>
+      <cvename>CVE-2005-0075</cvename>
+      <cvename>CVE-2005-0103</cvename>
+      <cvename>CVE-2005-0104</cvename>
       <mlist msgid="47249.24.0.109.81.1106975343.squirrel@sm-14.netdork.net">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110702772714662</mlist>
       <url>http://www.squirrelmail.org/security/issue/2005-01-14</url>
       <url>http://www.squirrelmail.org/security/issue/2005-01-19</url>
@@ -5235,7 +5235,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0073</cvename>
+      <cvename>CVE-2005-0073</cvename>
       <url>http://www.debian.org/security/2005/dsa-677</url>
     </references>
     <dates>
@@ -5272,7 +5272,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1143</cvename>
+      <cvename>CVE-2004-1143</cvename>
       <mlist>http://mail.python.org/pipermail/mailman-developers/2004-December/017553.html</mlist>
       <mlist msgid="87llc0u6l8.fsf@deneb.enyo.de">http://mail.python.org/pipermail/mailman-developers/attachments/20041215/be238297/attachment.mht</mlist>
     </references>
@@ -5305,7 +5305,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0412</cvename>
+      <cvename>CVE-2004-0412</cvename>
       <mlist>http://mail.python.org/pipermail/mailman-announce/2004-May/000072.html</mlist>
     </references>
     <dates>
@@ -5363,7 +5363,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1799</cvename>
+      <cvename>CVE-2005-1799</cvename>
       <url>http://secunia.com/advisories/15538</url>
       <freebsdpr>ports/81520</freebsdpr>
       <url>http://fswiki.poi.jp/wiki.cgi?page=%CD%FA%CE%F2%2F2005%2D5%2D19</url>
@@ -5433,7 +5433,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0392</cvename>
+      <cvename>CVE-2005-0392</cvename>
       <url>http://www.debian.org/security/2005/dsa-725</url>
     </references>
     <dates>
@@ -5460,7 +5460,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>13172</bid>
-      <cvename>CAN-2005-1121</cvename>
+      <cvename>CVE-2005-1121</cvename>
       <url>http://rst.void.ru/papers/advisory24.txt</url>
     </references>
     <dates>
@@ -5521,7 +5521,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1262</cvename>
+      <cvename>CVE-2005-1262</cvename>
       <url>http://gaim.sourceforge.net/security/index.php?id=17</url>
     </references>
     <dates>
@@ -5557,7 +5557,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1261</cvename>
+      <cvename>CVE-2005-1261</cvename>
       <url>http://gaim.sourceforge.net/security/index.php?id=16</url>
     </references>
     <dates>
@@ -5606,7 +5606,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0109</cvename>
+      <cvename>CVE-2005-0109</cvename>
       <freebsdsa>SA-05:09.htt</freebsdsa>
       <url>http://www.daemonology.net/hyperthreading-considered-harmful/</url>
     </references>
@@ -5635,7 +5635,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <url>http://leafnode.sourceforge.net/leafnode-SA-2005-01.txt</url>
-      <cvename>CAN-2005-1453</cvename>
+      <cvename>CVE-2005-1453</cvename>
       <freebsdpr>ports/80663</freebsdpr>
       <bid>13489</bid>
       <bid>13492</bid>
@@ -5926,8 +5926,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1476</cvename>
-      <cvename>CAN-2005-1477</cvename>
+      <cvename>CVE-2005-1476</cvename>
+      <cvename>CVE-2005-1477</cvename>
       <url>http://www.mozilla.org/security/announce/mfsa2005-42.html</url>
     </references>
     <dates>
@@ -5954,7 +5954,7 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <freebsdpr>ports/80671</freebsdpr>
       <bid>12058</bid>
-      <cvename>CAN-2004-1296</cvename>
+      <cvename>CVE-2004-1296</cvename>
       <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=286371</url>
       <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=286372</url>
     </references>
@@ -5982,7 +5982,7 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <freebsdpr>ports/80671</freebsdpr>
       <bid>11287</bid>
-      <cvename>CAN-2004-0969</cvename>
+      <cvename>CVE-2004-0969</cvename>
       <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=278265</url>
     </references>
     <dates>
@@ -6012,7 +6012,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>12981</bid>
-      <cvename>CAN-2005-0990</cvename>
+      <cvename>CVE-2005-0990</cvename>
       <url>http://www.ubuntulinux.org/support/documentation/usn/usn-104-1</url>
     </references>
     <dates>
@@ -6043,7 +6043,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>13095</bid>
-      <cvename>CAN-2005-1064</cvename>
+      <cvename>CVE-2005-1064</cvename>
       <url>http://www.rsnapshot.org/security/2005/001.html</url>
     </references>
     <dates>
@@ -6078,7 +6078,7 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <mlist msgid="20050418122434.10438.qmail@www.securityfocus.com">http://www.securityfocus.com/archive/1/396080</mlist>
       <bid>13218</bid>
-      <cvename>CAN-2005-1172</cvename>
+      <cvename>CVE-2005-1172</cvename>
       <url>http://coppermine.sourceforge.net/board/index.php?topic=17134.0</url>
     </references>
     <dates>
@@ -6167,7 +6167,7 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <bid>13270</bid>
       <bid>13271</bid>
-      <cvename>CAN-2005-1195</cvename>
+      <cvename>CVE-2005-1195</cvename>
       <url>http://www.mplayerhq.hu/homepage/design7/news.html#vuln10</url>
       <url>http://www.mplayerhq.hu/homepage/design7/news.html#vuln11</url>
       <url>http://xinehq.de/index.php/security/XSA-2004-8</url>
@@ -6203,7 +6203,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0472</cvename>
+      <cvename>CVE-2005-0472</cvename>
       <url>http://gaim.sourceforge.net/security/index.php?id=10</url>
     </references>
     <dates>
@@ -6233,8 +6233,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0208</cvename>
-      <cvename>CAN-2005-0473</cvename>
+      <cvename>CVE-2005-0208</cvename>
+      <cvename>CVE-2005-0473</cvename>
       <url>http://gaim.sourceforge.net/security/index.php?id=11</url>
       <url>http://gaim.sourceforge.net/security/index.php?id=12</url>
     </references>
@@ -6268,7 +6268,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0754</cvename>
+      <cvename>CVE-2005-0754</cvename>
       <url>http://www.kde.org/info/security/advisory-20050420-1.txt</url>
     </references>
     <dates>
@@ -6307,8 +6307,8 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <bid>13146</bid>
       <bid>13147</bid>
-      <cvename>CAN-2005-1108</cvename>
-      <cvename>CAN-2005-1109</cvename>
+      <cvename>CVE-2005-1108</cvename>
+      <cvename>CVE-2005-1109</cvename>
       <url>http://www.debian.org/security/2005/dsa-713</url>
       <url>http://www.gentoo.org/security/en/glsa/glsa-200504-11.xml</url>
     </references>
@@ -6343,7 +6343,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1046</cvename>
+      <cvename>CVE-2005-1046</cvename>
       <url>http://bugs.kde.org/102328</url>
       <url>http://www.kde.org/info/security/advisory-20050421-1.txt</url>
     </references>
@@ -6379,8 +6379,8 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <bid>13129</bid>
       <bid>13133</bid>
-      <cvename>CAN-2005-1099</cvename>
-      <cvename>CAN-2005-1100</cvename>
+      <cvename>CVE-2005-1099</cvename>
+      <cvename>CVE-2005-1100</cvename>
       <mlist msgid="20050412004111.562AC7A890E@ws4-4.us4.outblaze.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111339935903880</mlist>
       <mlist msgid="20050413174736.20947.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111342432325670</mlist>
     </references>
@@ -6412,7 +6412,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>13059</bid>
-      <cvename>CAN-2005-0390</cvename>
+      <cvename>CVE-2005-0390</cvename>
       <url>http://www.debian.org/security/2005/dsa-706</url>
     </references>
     <dates>
@@ -6454,7 +6454,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0752</cvename>
+      <cvename>CVE-2005-0752</cvename>
       <url>http://www.mozilla.org/security/announce/mfsa2005-34.html</url>
       <url>https://bugzilla.mozilla.org/show_bug.cgi?id=288556</url>
       <url>https://bugzilla.mozilla.org/show_bug.cgi?id=289171</url>
@@ -6511,7 +6511,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1080</cvename>
+      <cvename>CVE-2005-1080</cvename>
       <mlist msgid="200504120226.10559.pluf@7a69ezine.org">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111331593310508</mlist>
       <url>http://www.securiteam.com/securitynews/5IP0C0AFGW.html</url>
       <url>http://secunia.com/advisories/14902/</url>
@@ -6781,7 +6781,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0989</cvename>
+      <cvename>CVE-2005-0989</cvename>
       <url>http://www.mozilla.org/security/announce/mfsa2005-33.html</url>
       <url>https://bugzilla.mozilla.org/show_bug.cgi?id=288688</url>
     </references>
@@ -6890,7 +6890,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>13092</bid>
-      <cvename>CAN-2005-0941</cvename>
+      <cvename>CVE-2005-0941</cvename>
       <mlist msgid="20050412000438.17342.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111325305109137</mlist>
       <url>http://www.openoffice.org/issues/show_bug.cgi?id=46388</url>
     </references>
@@ -6944,7 +6944,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0610</cvename>
+      <cvename>CVE-2005-0610</cvename>
     </references>
     <dates>
       <discovery>2005-04-12</discovery>
@@ -6974,7 +6974,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>13004</bid>
-      <cvename>CAN-2005-0967</cvename>
+      <cvename>CVE-2005-0967</cvename>
       <url>http://gaim.sourceforge.net/security/?id=15</url>
     </references>
     <dates>
@@ -7012,7 +7012,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>13003</bid>
-      <cvename>CAN-2005-0966</cvename>
+      <cvename>CVE-2005-0966</cvename>
       <url>http://gaim.sourceforge.net/security/?id=14</url>
     </references>
     <dates>
@@ -7046,7 +7046,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>12999</bid>
-      <cvename>CAN-2005-0965</cvename>
+      <cvename>CVE-2005-0965</cvename>
       <url>http://gaim.sourceforge.net/security/?id=13</url>
     </references>
     <dates>
@@ -7087,7 +7087,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>12665</bid>
-      <cvename>CAN-2005-0596</cvename>
+      <cvename>CVE-2005-0596</cvename>
       <url>http://bugs.php.net/bug.php?id=27037</url>
       <url>http://www.novell.com/linux/security/advisories/2005_06_sr.html</url>
     </references>
@@ -7116,7 +7116,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0718</cvename>
+      <cvename>CVE-2005-0718</cvename>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-post</url>
       <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1224</url>
     </references>
@@ -7153,7 +7153,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0961</cvename>
+      <cvename>CVE-2005-0961</cvename>
       <mlist msgid="20050329111028.6A112117243@neo.wg.de">http://lists.horde.org/archives/announce/2005/000176.html</mlist>
       <url>http://cvs.horde.org/diff.php/horde/docs/CHANGES?r1=1.515.2.49&amp;r2=1.515.2.93&amp;ty=h</url>
     </references>
@@ -7194,7 +7194,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0256</cvename>
+      <cvename>CVE-2005-0256</cvename>
       <mlist msgid="FB24803D1DF2A34FA59FC157B77C970503E249AF@idserv04.idef.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110935886414939</mlist>
     </references>
     <dates>
@@ -7224,7 +7224,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0687</cvename>
+      <cvename>CVE-2005-0687</cvename>
       <url>http://www.gentoo.org/security/en/glsa/glsa-200503-12.xml</url>
     </references>
     <dates>
@@ -7255,7 +7255,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>12408</bid>
-      <cvename>CAN-2005-0133</cvename>
+      <cvename>CVE-2005-0133</cvename>
       <url>http://sourceforge.net/project/shownotes.php?release_id=300116</url>
     </references>
     <dates>
@@ -7294,7 +7294,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0787</cvename>
+      <cvename>CVE-2005-0787</cvename>
       <mlist msgid="20050314135701.30231.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111082537009842</mlist>
       <url>http://bugs.winehq.org/show_bug.cgi?id=2715</url>
       <url>http://www.securitytracker.com/alerts/2005/Mar/1013428.html</url>
@@ -7332,7 +7332,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0402</cvename>
+      <cvename>CVE-2005-0402</cvename>
       <url>http://www.mozilla.org/security/announce/mfsa2005-31.html</url>
     </references>
     <dates>
@@ -7414,7 +7414,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0399</cvename>
+      <cvename>CVE-2005-0399</cvename>
       <url>http://www.mozilla.org/security/announce/mfsa2005-30.html</url>
       <url>http://xforce.iss.net/xforce/alerts/id/191</url>
       <url>https://bugzilla.mozilla.org/show_bug.cgi?id=285595</url>
@@ -7447,7 +7447,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0667</cvename>
+      <cvename>CVE-2005-0667</cvename>
       <url>http://sylpheed.good-day.net/index.cgi.en#changes</url>
     </references>
     <dates>
@@ -7478,7 +7478,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0665</cvename>
+      <cvename>CVE-2005-0665</cvename>
       <url>http://www.gentoo.org/security/en/glsa/glsa-200503-09.xml</url>
     </references>
     <dates>
@@ -7515,7 +7515,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0396</cvename>
+      <cvename>CVE-2005-0396</cvename>
       <url>http://www.kde.org/info/security/advisory-20050316-1.txt</url>
     </references>
     <dates>
@@ -7544,7 +7544,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0653</cvename>
+      <cvename>CVE-2005-0653</cvename>
       <url>http://sourceforge.net/forum/forum.php?forum_id=450948</url>
       <url>http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1113788&amp;group_id=23067&amp;atid=377408</url>
     </references>
@@ -7589,10 +7589,10 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>12759</bid>
-      <cvename>CAN-2005-0699</cvename>
-      <cvename>CAN-2005-0704</cvename>
-      <cvename>CAN-2005-0705</cvename>
-      <cvename>CAN-2005-0739</cvename>
+      <cvename>CVE-2005-0699</cvename>
+      <cvename>CVE-2005-0704</cvename>
+      <cvename>CVE-2005-0705</cvename>
+      <cvename>CVE-2005-0739</cvename>
       <url>http://www.ethereal.com/appnotes/enpa-sa-00018.html</url>
     </references>
     <dates>
@@ -7622,7 +7622,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>12770</bid>
-      <cvename>CAN-2005-0706</cvename>
+      <cvename>CVE-2005-0706</cvename>
       <url>http://sourceforge.net/tracker/index.php?func=detail&amp;aid=834724&amp;group_id=3714&amp;atid=103714</url>
     </references>
     <dates>
@@ -7668,9 +7668,9 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>12781</bid>
-      <cvename>CAN-2005-0709</cvename>
-      <cvename>CAN-2005-0710</cvename>
-      <cvename>CAN-2005-0711</cvename>
+      <cvename>CVE-2005-0709</cvename>
+      <cvename>CVE-2005-0710</cvename>
+      <cvename>CVE-2005-0711</cvename>
     </references>
     <dates>
       <discovery>2005-03-11</discovery>
@@ -7732,7 +7732,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0544</cvename>
+      <cvename>CVE-2005-0544</cvename>
       <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-2</url>
     </references>
     <dates>
@@ -7776,8 +7776,8 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <bid>12644</bid>
       <bid>12645</bid>
-      <cvename>CAN-2005-0543</cvename>
-      <cvename>CAN-2005-0567</cvename>
+      <cvename>CVE-2005-0543</cvename>
+      <cvename>CVE-2005-0567</cvename>
       <mlist msgid="20050224190307.20197.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110929725801154</mlist>
       <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-1</url>
     </references>
@@ -7805,7 +7805,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>12744</bid>
-      <cvename>CAN-2005-0664</cvename>
+      <cvename>CVE-2005-0664</cvename>
       <url>https://bugzilla.ubuntulinux.org/show_bug.cgi?id=7152</url>
     </references>
     <dates>
@@ -7867,8 +7867,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0617</cvename>
-      <cvename>CAN-2005-0615</cvename>
+      <cvename>CVE-2005-0617</cvename>
+      <cvename>CVE-2005-0615</cvename>
       <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110962710805864</mlist>
       <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110962819232255</mlist>
       <url>http://news.postnuke.com/Article2669.html</url>
@@ -7900,7 +7900,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0616</cvename>
+      <cvename>CVE-2005-0616</cvename>
       <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110962768300373</mlist>
       <url>http://news.postnuke.com/Article2669.html</url>
     </references>
@@ -7945,7 +7945,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0611</cvename>
+      <cvename>CVE-2005-0611</cvename>
       <mlist>http://marc.theaimsgroup.com/?l=vulnwatch&amp;m=110977858619314</mlist>
       <url>http://service.real.com/help/faq/security/050224_player/EN/</url>
     </references>
@@ -7978,7 +7978,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0397</cvename>
+      <cvename>CVE-2005-0397</cvename>
       <url>http://www.ubuntulinux.org/support/documentation/usn/usn-90-1</url>
     </references>
     <dates>
@@ -8009,7 +8009,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0503</cvename>
+      <cvename>CVE-2005-0503</cvename>
       <mlist>http://lists.freedesktop.org/pipermail/uim/2005-February/000996.html</mlist>
       <bid>12604</bid>
       <url>http://secunia.com/advisories/13981</url>
@@ -8041,7 +8041,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0453</cvename>
+      <cvename>CVE-2005-0453</cvename>
       <mlist>http://article.gmane.org/gmane.comp.web.lighttpd/1171</mlist>
       <url>http://www.lighttpd.net/news/</url>
       <url>http://xforce.iss.net/xforce/xfdb/19350</url>
@@ -8126,7 +8126,7 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <bid>12615</bid>
       <bid>12616</bid>
-      <cvename>CAN-2005-0490</cvename>
+      <cvename>CVE-2005-0490</cvename>
       <mlist msgid="FB24803D1DF2A34FA59FC157B77C970503E2462D@idserv04.idef.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110902850731457</mlist>
       <mlist msgid="FB24803D1DF2A34FA59FC157B77C970503E2462E@idserv04.idef.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110902601221592</mlist>
     </references>
@@ -8170,7 +8170,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>12636</bid>
-      <cvename>CAN-2005-0546</cvename>
+      <cvename>CVE-2005-0546</cvename>
       <url>http://asg.web.cmu.edu/cyrus/download/imapd/changes.html</url>
     </references>
     <dates>
@@ -8204,7 +8204,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>10571</bid>
-      <cvename>CAN-2004-0451</cvename>
+      <cvename>CVE-2004-0451</cvename>
       <url>http://www.securityfocus.com/advisories/6874</url>
     </references>
     <dates>
@@ -8365,7 +8365,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0527</cvename>
+      <cvename>CVE-2005-0527</cvename>
       <url>http://www.mikx.de/fireflashing/</url>
       <url>http://www.mikx.de/firescrolling/</url>
       <url>http://www.mozilla.org/security/announce/mfsa2005-27.html</url>
@@ -8482,8 +8482,8 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <certvu>215006</certvu>
-      <cvename>CAN-2005-0160</cvename>
-      <cvename>CAN-2005-0161</cvename>
+      <cvename>CVE-2005-0160</cvename>
+      <cvename>CVE-2005-0161</cvename>
       <mlist msgid="1109113175.421bb95705d42@webmail.uu.se">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=110911451613135</mlist>
     </references>
     <dates>
@@ -8518,7 +8518,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>12601</bid>
-      <cvename>CAN-2005-0467</cvename>
+      <cvename>CVE-2005-0467</cvename>
       <mlist msgid="E1D2taM-0005R1-00@ixion.tartarus.org">http://lists.tartarus.org/pipermail/putty-announce/2005/000012.html</mlist>
       <mlist msgid="FB24803D1DF2A34FA59FC157B77C970503E2462F@idserv04.idef.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110902510713763</mlist>
       <url>http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-sftp-readdir.html</url>
@@ -8554,7 +8554,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0365</cvename>
+      <cvename>CVE-2005-0365</cvename>
       <url>http://bugs.kde.org/show_bug.cgi?id=97608</url>
       <mlist msgid="200502110916.48921.davide.madrisan@qilinux.it">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110814653804757</mlist>
     </references>
@@ -8588,7 +8588,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>12590</bid>
-      <cvename>CAN-2005-0158</cvename>
+      <cvename>CVE-2005-0158</cvename>
       <url>http://www.debian.org/security/2005/dsa-687</url>
     </references>
     <dates>
@@ -8620,7 +8620,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>12539</bid>
-      <cvename>CAN-2005-0372</cvename>
+      <cvename>CVE-2005-0372</cvename>
       <url>http://www.debian.org/security/2005/dsa-686</url>
       <url>http://www.gftp.org/changelog.html</url>
     </references>
@@ -8657,7 +8657,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0456</cvename>
+      <cvename>CVE-2005-0456</cvename>
       <certvu>882926</certvu>
       <url>http://secunia.com/advisories/13818/</url>
       <url>http://www.opera.com/freebsd/changelogs/754u2/</url>
@@ -8690,7 +8690,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1491</cvename>
+      <cvename>CVE-2004-1491</cvename>
       <url>http://secunia.com/advisories/13447/</url>
       <url>http://www.opera.com/freebsd/changelogs/754u2/</url>
       <url>http://www.zone-h.org/advisories/read/id=6503</url>
@@ -8724,7 +8724,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0247</cvename>
+      <cvename>CVE-2005-0247</cvename>
       <url>http://archives.postgresql.org/pgsql-committers/2005-02/msg00049.php</url>
     </references>
     <dates>
@@ -8757,12 +8757,12 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0362</cvename>
-      <cvename>CAN-2005-0363</cvename>
-      <cvename>CAN-2005-0435</cvename>
-      <cvename>CAN-2005-0436</cvename>
-      <cvename>CAN-2005-0437</cvename>
-      <cvename>CAN-2005-0438</cvename>
+      <cvename>CVE-2005-0362</cvename>
+      <cvename>CVE-2005-0363</cvename>
+      <cvename>CVE-2005-0435</cvename>
+      <cvename>CVE-2005-0436</cvename>
+      <cvename>CVE-2005-0437</cvename>
+      <cvename>CVE-2005-0438</cvename>
       <bid>12543</bid>
       <bid>12545</bid>
       <mlist msgid="20050214081040.3370.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110840530924124</mlist>
@@ -8847,7 +8847,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0100</cvename>
+      <cvename>CVE-2005-0100</cvename>
       <bid>12462</bid>
     </references>
     <dates>
@@ -8877,7 +8877,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0226</cvename>
+      <cvename>CVE-2005-0226</cvename>
       <bid>12434</bid>
       <mlist msgid="20050203020909.21785.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110746413108183</mlist>
     </references>
@@ -8903,7 +8903,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0199</cvename>
+      <cvename>CVE-2005-0199</cvename>
       <bid>12397</bid>
       <mlist>http://arthur.ath.cx/pipermail/ngircd-ml/2005-January/000228.html</mlist>
     </references>
@@ -8937,7 +8937,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0088</cvename>
+      <cvename>CVE-2005-0088</cvename>
     </references>
     <dates>
       <discovery>2005-01-30</discovery>
@@ -8965,7 +8965,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0202</cvename>
+      <cvename>CVE-2005-0202</cvename>
       <mlist msgid="20050209181502.GA26136@grok.org.uk">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=110797575304304</mlist>
     </references>
     <dates>
@@ -8994,9 +8994,9 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1184</cvename>
-      <cvename>CAN-2004-1185</cvename>
-      <cvename>CAN-2004-1186</cvename>
+      <cvename>CVE-2004-1184</cvename>
+      <cvename>CVE-2004-1185</cvename>
+      <cvename>CVE-2004-1186</cvename>
       <url>http://www.gentoo.org/security/en/glsa/glsa-200502-03.xml</url>
     </references>
     <dates>
@@ -9033,7 +9033,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>12411</bid>
-      <cvename>CAN-2005-0227</cvename>
+      <cvename>CVE-2005-0227</cvename>
       <mlist>http://archives.postgresql.org/pgsql-announce/2005-02/msg00000.php</mlist>
       <mlist>http://archives.postgresql.org/pgsql-bugs/2005-01/msg00269.php</mlist>
     </references>
@@ -9081,12 +9081,12 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0006</cvename>
-      <cvename>CAN-2005-0007</cvename>
-      <cvename>CAN-2005-0008</cvename>
-      <cvename>CAN-2005-0009</cvename>
-      <cvename>CAN-2005-0010</cvename>
-      <cvename>CAN-2005-0084</cvename>
+      <cvename>CVE-2005-0006</cvename>
+      <cvename>CVE-2005-0007</cvename>
+      <cvename>CVE-2005-0008</cvename>
+      <cvename>CVE-2005-0009</cvename>
+      <cvename>CVE-2005-0010</cvename>
+      <cvename>CVE-2005-0084</cvename>
       <bid>12326</bid>
       <url>http://www.ethereal.com/appnotes/enpa-sa-00017.html</url>
     </references>
@@ -9118,7 +9118,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0241</cvename>
+      <cvename>CVE-2005-0241</cvename>
       <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1216</url>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/squid-2.5.STABLE7-oversize_reply_headers.patch</url>
       <freebsdpr>ports/76967</freebsdpr>
@@ -9173,7 +9173,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0089</cvename>
+      <cvename>CVE-2005-0089</cvename>
       <url>http://www.python.org/security/PSF-2005-001/</url>
     </references>
     <dates>
@@ -9198,10 +9198,10 @@ Note:  Please add new entries to the beginning of this file.
 	    by the set-user-ID perl command (usually
 	    named <code>sperl</code> or <code>suidperl</code>).  As a
 	    result, a local attacker may be able to gain elevated
-	    privileges. <em>(CAN-2005-0155)</em></li>
+	    privileges. <em>(CVE-2005-0155)</em></li>
 	  <li>A buffer overflow may occur in threaded versions of perl
 	    when the full pathname of the script being executed is
-	    very long. <em>(CAN-2005-0156)</em>.</li>
+	    very long. <em>(CVE-2005-0156)</em>.</li>
 	</ul>
 	<p><strong>Note:</strong> By default, no set-user-ID perl
 	  binary is installed.  An administrator must enable it
@@ -9210,8 +9210,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0155</cvename>
-      <cvename>CAN-2005-0156</cvename>
+      <cvename>CVE-2005-0155</cvename>
+      <cvename>CVE-2005-0156</cvename>
     </references>
     <dates>
       <discovery>2005-02-02</discovery>
@@ -9241,7 +9241,7 @@ Note:  Please add new entries to the beginning of this file.
    <references>
     <url>http://people.freebsd.org/~niels/issues/newsgrab-20050114.txt</url>
     <url>http://sourceforge.net/project/shownotes.php?release_id=300562</url>
-    <cvename>CAN-2005-0154</cvename>
+    <cvename>CVE-2005-0154</cvename>
    </references>
    <dates>
     <discovery>2005-01-18</discovery>
@@ -9271,7 +9271,7 @@ Note:  Please add new entries to the beginning of this file.
    <references>
     <url>http://people.freebsd.org/~niels/issues/newsgrab-20050114.txt</url>
     <url>http://sourceforge.net/project/shownotes.php?release_id=300562</url>
-    <cvename>CAN-2005-0153</cvename>
+    <cvename>CVE-2005-0153</cvename>
    </references>
    <dates>
     <discovery>2005-01-18</discovery>
@@ -9300,7 +9300,7 @@ Note:  Please add new entries to the beginning of this file.
    </description>
    <references>
     <url>http://people.freebsd.org/~niels/issues/newspost-20050114.txt</url>
-    <cvename>CAN-2005-0101</cvename>
+    <cvename>CVE-2005-0101</cvename>
    </references>
    <dates>
     <discovery>2005-01-14</discovery>
@@ -9327,7 +9327,7 @@ Note:  Please add new entries to the beginning of this file.
    </description>
    <references>
     <url>http://people.freebsd.org/~niels/issues/newsfetch-20050119.txt</url>
-    <cvename>CAN-2005-0132</cvename>
+    <cvename>CVE-2005-0132</cvename>
    </references>
    <dates>
     <discovery>2005-01-18</discovery>
@@ -9364,7 +9364,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0211</cvename>
+      <cvename>CVE-2005-0211</cvename>
       <certvu>886006</certvu>
       <url>http://www.squid-cache.org/Advisories/SQUID-2005_3.txt</url>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-wccp_buffer_overflow</url>
@@ -9427,7 +9427,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0064</cvename>
+      <cvename>CVE-2005-0064</cvename>
       <mlist msgid="FB24803D1DF2A34FA59FC157B77C970503C8B298@idserv04.idef.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110608898221554</mlist>
       <url>http://www.koffice.org/security/advisory-20050120-1.txt</url>
     </references>
@@ -9461,7 +9461,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0072</cvename>
+      <cvename>CVE-2005-0072</cvename>
     </references>
     <dates>
       <discovery>2005-01-25</discovery>
@@ -9492,7 +9492,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>12354</bid>
-      <cvename>CAN-2005-0102</cvename>
+      <cvename>CVE-2005-0102</cvename>
       <url>http://cvs.gnome.org/viewcvs/evolution/camel/camel-lock-helper.c?rev=1.7&amp;view=log#rev1.5.74.1</url>
     </references>
     <dates>
@@ -9574,7 +9574,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0174</cvename>
+      <cvename>CVE-2005-0174</cvename>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-header_parsing</url>
       <certvu>768702</certvu>
     </references>
@@ -9610,7 +9610,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1061</cvename>
+      <cvename>CVE-2004-1061</cvename>
       <url>http://www.bugzilla.org/security/2.16.7-nr/</url>
       <url>https://bugzilla.mozilla.org/show_bug.cgi?id=272620</url>
     </references>
@@ -9705,20 +9705,20 @@ Note:  Please add new entries to the beginning of this file.
       <url>http://secunia.com/secunia_research/2004-13/advisory/</url>
       <url>http://secunia.com/multiple_browsers_window_injection_vulnerability_test/</url>
       <!-- mozilla -->
-      <cvename>CAN-2004-1156</cvename>
+      <cvename>CVE-2004-1156</cvename>
       <url>http://secunia.com/advisories/13129/</url>
       <url>https://bugzilla.mozilla.org/show_bug.cgi?id=273699</url>
       <url>https://bugzilla.mozilla.org/show_bug.cgi?id=103638</url>
       <url>http://mozillanews.org/?article_date=2004-12-08+06-48-46</url>
       <!-- opera -->
-      <cvename>CAN-2004-1157</cvename>
+      <cvename>CVE-2004-1157</cvename>
       <url>http://secunia.com/advisories/13253/</url>
       <!-- konqueror -->
-      <cvename>CAN-2004-1158</cvename>
+      <cvename>CVE-2004-1158</cvename>
       <url>http://secunia.com/advisories/13254/</url>
       <url>http://www.kde.org/info/security/advisory-20041213-1.txt</url>
       <!-- netscape -->
-      <cvename>CAN-2004-1160</cvename>
+      <cvename>CVE-2004-1160</cvename>
       <url>http://secunia.com/advisories/13402/</url>
     </references>
     <dates>
@@ -9749,7 +9749,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>11999</bid>
-      <cvename>CAN-2004-1302</cvename>
+      <cvename>CVE-2004-1302</cvename>
       <url>http://tigger.uic.edu/~jlongs2/holes/yamt.txt</url>
     </references>
     <dates>
@@ -9780,7 +9780,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0175</cvename>
+      <cvename>CVE-2005-0175</cvename>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-response_splitting</url>
       <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1200</url>
       <url>https://www.watchfire.com/securearea/whitepapers.aspx?id=8</url>
@@ -9839,25 +9839,25 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Andrew V. Samoilov reported several vulnerabilities that
 	  were corrected in MidnightCommand 4.6.0:</p>
 	<ul>
-	  <li>Format string issues (CAN-2004-1004)</li>
-	  <li>Buffer overflows (CAN-2004-1005)</li>
-	  <li>Denial-of-service, infinite loop (CAN-2004-1009)</li>
+	  <li>Format string issues (CVE-2004-1004)</li>
+	  <li>Buffer overflows (CVE-2004-1005)</li>
+	  <li>Denial-of-service, infinite loop (CVE-2004-1009)</li>
 	  <li>Denial-of-service, corrupted section header
-	    (CAN-2004-1090)</li>
-	  <li>Denial-of-service, null pointer dereference (CAN-2004-1091)</li>
-	  <li>Freeing unallocated memory (CAN-2004-1092)</li>
-	  <li>Using already freed memory (CAN-2004-1093)</li>
+	    (CVE-2004-1090)</li>
+	  <li>Denial-of-service, null pointer dereference (CVE-2004-1091)</li>
+	  <li>Freeing unallocated memory (CVE-2004-1092)</li>
+	  <li>Using already freed memory (CVE-2004-1093)</li>
 	</ul>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1004</cvename>
-      <cvename>CAN-2004-1005</cvename>
-      <cvename>CAN-2004-1009</cvename>
-      <cvename>CAN-2004-1090</cvename>
-      <cvename>CAN-2004-1091</cvename>
-      <cvename>CAN-2004-1092</cvename>
-      <cvename>CAN-2004-1093</cvename>
+      <cvename>CVE-2004-1004</cvename>
+      <cvename>CVE-2004-1005</cvename>
+      <cvename>CVE-2004-1009</cvename>
+      <cvename>CVE-2004-1090</cvename>
+      <cvename>CVE-2004-1091</cvename>
+      <cvename>CVE-2004-1092</cvename>
+      <cvename>CVE-2004-1093</cvename>
     </references>
     <dates>
       <discovery>2004-12-01</discovery>
@@ -9882,7 +9882,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0452</cvename>
+      <cvename>CVE-2004-0452</cvename>
       <url>http://www.debian.org/security/2004/dsa-620</url>
       <url>http://xforce.iss.net/xforce/xfdb/18650</url>
     </references>
@@ -10004,10 +10004,10 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <url>http://www.idefense.com/application/poi/display?id=157&amp;type=vulnerabilities&amp;flashstatus=false</url>
-      <cvename>CAN-2004-1030</cvename>
-      <cvename>CAN-2004-1031</cvename>
-      <cvename>CAN-2004-1032</cvename>
-      <cvename>CAN-2004-1033</cvename>
+      <cvename>CVE-2004-1030</cvename>
+      <cvename>CVE-2004-1031</cvename>
+      <cvename>CVE-2004-1032</cvename>
+      <cvename>CVE-2004-1033</cvename>
     </references>
     <dates>
       <discovery>2004-11-15</discovery>
@@ -10073,8 +10073,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1025</cvename>
-      <cvename>CAN-2004-1026</cvename>
+      <cvename>CVE-2004-1025</cvename>
+      <cvename>CVE-2004-1026</cvename>
       <bid>11830</bid>
       <url>https://bugzilla.fedora.us/show_bug.cgi?id=2051#c11</url>
       <url>https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=138516</url>
@@ -10161,9 +10161,9 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0129</cvename>
-      <cvename>CAN-2005-0130</cvename>
-      <cvename>CAN-2005-0131</cvename>
+      <cvename>CVE-2005-0129</cvename>
+      <cvename>CVE-2005-0130</cvename>
+      <cvename>CVE-2005-0131</cvename>
       <mlist msgid="200501191739.56585.wouter@coekaerts.be">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=110616016509114</mlist>
     </references>
     <dates>
@@ -10201,7 +10201,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0173</cvename>
+      <cvename>CVE-2005-0173</cvename>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-ldap_spaces</url>
       <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1187</url>
       <certvu>924198</certvu>
@@ -10230,7 +10230,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>12200</bid>
-      <cvename>CAN-2005-2874</cvename>
+      <cvename>CVE-2005-2874</cvename>
       <url>http://www.cups.org/str.php?L1042</url>
     </references>
     <dates>
@@ -10278,7 +10278,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0804</cvename>
+      <cvename>CVE-2004-0804</cvename>
       <certvu>555304</certvu>
       <url>http://bugzilla.remotesensing.org/show_bug.cgi?id=111</url>
     </references>
@@ -10323,7 +10323,7 @@ Note:  Please add new entries to the beginning of this file.
       <mlist msgid="20041027233907.A3678@netdirect.ca">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109898111915661</mlist>
       <url>http://rus.members.beeb.net/xzgv.html</url>
       <url>http://www.svgalib.org/rus/zgv/</url>
-      <cvename>CAN-2004-0994</cvename>
+      <cvename>CVE-2004-0994</cvename>
       <url>http://www.idefense.com/application/poi/display?id=160&amp;type=vulnerabilities&amp;flashstatus=false</url>
     </references>
     <dates>
@@ -10439,7 +10439,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>12270</bid>
-      <cvename>CAN-2005-0116</cvename>
+      <cvename>CVE-2005-0116</cvename>
       <certvu>272296</certvu>
       <mlist msgid="FB24803D1DF2A34FA59FC157B77C970503C8B20C@idserv04.idef.com">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=110600949323439</mlist>
       <url>http://awstats.sourceforge.net/docs/awstats_changelog.txt</url>
@@ -10479,7 +10479,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0005</cvename>
+      <cvename>CVE-2005-0005</cvename>
       <url>http://www.idefense.com/application/poi/display?id=184&amp;type=vulnerabilities</url>
     </references>
     <dates>
@@ -10524,16 +10524,16 @@ Note:  Please add new entries to the beginning of this file.
 	    message to passwd if the user closes file descriptor
 	    2. <em>(CAN-2004-1270)</em></p>
 	</blockquote>
-	<p><strong>Note:</strong> The third issue, CAN-2004-1270, does
+	<p><strong>Note:</strong> The third issue, CVE-2004-1270, does
 	  not affect FreeBSD 4.6-RELEASE or later systems, as these
 	  systems ensure that the file descriptors 0, 1, and 2 are
 	  always open for set-user-ID and set-group-ID programs.</p>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1268</cvename>
-      <cvename>CAN-2004-1269</cvename>
-      <cvename>CAN-2004-1270</cvename>
+      <cvename>CVE-2004-1268</cvename>
+      <cvename>CVE-2004-1269</cvename>
+      <cvename>CVE-2004-1270</cvename>
       <bid>12007</bid>
       <bid>12004</bid>
       <url>http://www.cups.org/str.php?L1023</url>
@@ -10565,7 +10565,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>11968</bid>
-      <cvename>CAN-2004-1267</cvename>
+      <cvename>CVE-2004-1267</cvename>
       <url>http://tigger.uic.edu/~jlongs2/holes/cups.txt</url>
       <url>http://www.cups.org/str.php?L1024</url>
     </references>
@@ -10601,7 +10601,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0004</cvename>
+      <cvename>CVE-2005-0004</cvename>
       <url>http://lists.mysql.com/internals/20600</url>
     </references>
     <dates>
@@ -10630,7 +10630,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>12030</bid>
-      <cvename>CAN-2004-1297</cvename>
+      <cvename>CVE-2004-1297</cvename>
       <url>http://tigger.uic.edu/~jlongs2/holes/unrtf.txt</url>
     </references>
     <dates>
@@ -10688,7 +10688,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1316</cvename>
+      <cvename>CVE-2004-1316</cvename>
       <url>http://isec.pl/vulnerabilities/isec-0020-mozilla.txt</url>
       <mlist msgid="Pine.LNX.4.44.0412292228440.19239-200000@isec.pl">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110436284718949</mlist>
     </references>
@@ -10718,7 +10718,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0991</cvename>
+      <cvename>CVE-2004-0991</cvename>
     </references>
     <dates>
       <discovery>2005-01-01</discovery>
@@ -10747,7 +10747,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0095</cvename>
+      <cvename>CVE-2005-0095</cvename>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-wccp_denial_of_service</url>
       <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1190</url>
       <url>http://www.squid-cache.org/Advisories/SQUID-2005_2.txt</url>
@@ -10782,7 +10782,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0094</cvename>
+      <cvename>CVE-2005-0094</cvename>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-gopher_html_parsing</url>
       <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1189</url>
       <url>http://www.squid-cache.org/Advisories/SQUID-2005_1.txt</url>
@@ -10815,7 +10815,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1379</cvename>
+      <cvename>CVE-2004-1379</cvename>
       <url>http://xinehq.de/index.php/security/XSA-2004-5</url>
     </references>
     <dates>
@@ -10896,7 +10896,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0433</cvename>
+      <cvename>CVE-2004-0433</cvename>
       <url>http://xinehq.de/index.php/security/XSA-2004-3</url>
       <url>http://xforce.iss.net/xforce/xfdb/16019</url>
       <bid>10245</bid>
@@ -10922,7 +10922,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1182</cvename>
+      <cvename>CVE-2004-1182</cvename>
       <mlist msgid="20050111155949.GU9853@bilbo.x101.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110546971307585</mlist>
     </references>
     <dates>
@@ -10951,8 +10951,8 @@ http_access deny Gopher</pre>
     <references>
       <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=213957</url>
       <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=289784</url>
-      <cvename>CAN-2003-1053</cvename>
-      <cvename>CAN-2005-0117</cvename>
+      <cvename>CVE-2003-1053</cvename>
+      <cvename>CVE-2005-0117</cvename>
     </references>
     <dates>
       <discovery>2005-01-11</discovery>
@@ -10986,7 +10986,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0120</cvename>
+      <cvename>CVE-2005-0120</cvename>
       <url>http://people.freebsd.org/~niels/ports/korean/helvis/issues.txt</url>
     </references>
     <dates>
@@ -11019,8 +11019,8 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0118</cvename>
-      <cvename>CAN-2005-0119</cvename>
+      <cvename>CVE-2005-0118</cvename>
+      <cvename>CVE-2005-0119</cvename>
       <url>http://people.freebsd.org/~niels/ports/korean/helvis/issues.txt</url>
     </references>
     <dates>
@@ -11046,7 +11046,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0012</cvename>
+      <cvename>CVE-2005-0012</cvename>
       <url>http://bugs.gentoo.org/show_bug.cgi?id=76665</url>
     </references>
     <dates>
@@ -11072,7 +11072,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1294</cvename>
+      <cvename>CVE-2004-1294</cvename>
       <url>http://tigger.uic.edu/~jlongs2/holes/tnftp.txt</url>
       <url>http://cvsweb.netbsd.org/bsdweb.cgi/othersrc/usr.bin/tnftp/src/cmds.c?rev=1.1.1.3&amp;content-type=text/x-cvsweb-markup</url>
       <url>http://it.slashdot.org/article.pl?sid=04/12/15/2113202</url>
@@ -11106,7 +11106,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1183</cvename>
+      <cvename>CVE-2004-1183</cvename>
     </references>
     <dates>
       <discovery>2005-01-06</discovery>
@@ -11164,7 +11164,7 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <bid>12075</bid>
-      <cvename>CAN-2004-1308</cvename>
+      <cvename>CVE-2004-1308</cvename>
       <url>http://www.idefense.com/application/poi/display?id=174&amp;type=vulnerabilities</url>
       <certvu>125598</certvu>
     </references>
@@ -11211,7 +11211,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1138</cvename>
+      <cvename>CVE-2004-1138</cvename>
       <url>ftp://ftp.vim.org/pub/vim/patches/6.3/6.3.045</url>
       <mlist>http://groups.yahoo.com/group/vimdev/message/38084</mlist>
     </references>
@@ -11239,7 +11239,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1289</cvename>
+      <cvename>CVE-2004-1289</cvename>
       <bid>12035</bid>
       <bid>12036</bid>
       <mlist msgid="20041215083219.56092.qmail@cr.yp.to">http://securesoftware.list.cr.yp.to/archive/0/46</mlist>
@@ -11276,8 +11276,8 @@ http_access deny Gopher</pre>
     <references>
       <mlist msgid="Pine.SOC.4.61.0501041452540.1114@draco.cus.cam.ac.uk">http://www.exim.org/mail-archives/exim-announce/2005/msg00000.html</mlist>
       <mlist msgid="1CE07882ECEE894CA2D5A89B8DEBC4011CFDE5@porgy.admin.idefense.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110573573800377</mlist>
-      <cvename>CAN-2005-0021</cvename>
-      <cvename>CAN-2005-0022</cvename>
+      <cvename>CVE-2005-0021</cvename>
+      <cvename>CVE-2005-0022</cvename>
       <bid>12185</bid>
       <bid>12188</bid>
       <bid>12268</bid>
@@ -11311,7 +11311,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1284</cvename>
+      <cvename>CVE-2004-1284</cvename>
       <url>http://tigger.uic.edu/~jlongs2/holes/mpg123.txt</url>
       <url>http://secunia.com/advisories/13511/</url>
       <url>http://xforce.iss.net/xforce/xfdb/18626</url>
@@ -11348,8 +11348,8 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1273</cvename>
-      <cvename>CAN-2004-1274</cvename>
+      <cvename>CVE-2004-1273</cvename>
+      <cvename>CVE-2004-1274</cvename>
       <url>http://tigger.uic.edu/~jlongs2/holes/greed.txt</url>
       <url>http://secunia.com/advisories/13534/</url>
       <mlist msgid="653D74053BA6F54A81ED83DCF969DF08CFA2AA@pivxes1.pivx.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110321888413132</mlist>
@@ -11381,7 +11381,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0121</cvename>
+      <cvename>CVE-2005-0121</cvename>
       <mlist msgid="200412021055.iB2AtweU067125@repoman.freebsd.org">http://docs.FreeBSD.org/cgi/mid.cgi?200412021055.iB2AtweU067125</mlist>
     </references>
     <dates>
@@ -11420,7 +11420,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1035</cvename>
+      <cvename>CVE-2004-1035</cvename>
       <bid>11630</bid>
       <mlist msgid="1099851138.3716.3.camel@hurina">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109995749510773</mlist>
     </references>
@@ -11454,7 +11454,7 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <bid>11827</bid>
-      <cvename>CAN-2004-1165</cvename>
+      <cvename>CVE-2004-1165</cvename>
       <mlist msgid="200412051011.54045.ripe@7a69ezine.org">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110245752232681</mlist>
       <mlist msgid="20041223235620.GA2846@penguinhosting.net">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=110387390226693</mlist>
       <mlist msgid="20041224142506.GB12939@penguinhosting.net">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=110390734925183</mlist>
@@ -11488,7 +11488,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1377</cvename>
+      <cvename>CVE-2004-1377</cvename>
       <bid>12108</bid>
       <bid>12109</bid>
       <url>http://secunia.com/advisories/13641/</url>
@@ -11515,7 +11515,7 @@ http_access deny Gopher</pre>
 	  code via a modified AIFF file.</p></body>
     </description>
     <references>
-      <cvename>CAN-2004-1300</cvename>
+      <cvename>CVE-2004-1300</cvename>
       <url>http://tigger.uic.edu/~jlongs2/holes/xine-lib.txt</url>
       <url>http://xinehq.de/index.php/security/XSA-2004-7</url>
     </references>
@@ -11558,7 +11558,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1378</cvename>
+      <cvename>CVE-2004-1378</cvename>
       <url>http://devel.amessage.info/jabberd14/README.html</url>
       <url>http://mail.jabber.org/pipermail/jabberd/2004-September/002004.html</url>
     </references>
@@ -11594,7 +11594,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-0194</cvename>
+      <cvename>CVE-2005-0194</cvename>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-empty_acls</url>
       <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1166</url>
     </references>
@@ -11642,10 +11642,10 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1139</cvename>
-      <cvename>CAN-2004-1140</cvename>
-      <cvename>CAN-2004-1141</cvename>
-      <cvename>CAN-2004-1142</cvename>
+      <cvename>CVE-2004-1139</cvename>
+      <cvename>CVE-2004-1140</cvename>
+      <cvename>CVE-2004-1141</cvename>
+      <cvename>CVE-2004-1142</cvename>
       <url>http://www.ethereal.com/appnotes/enpa-sa-00016.html</url>
     </references>
     <dates>
@@ -11700,7 +11700,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1125</cvename>
+      <cvename>CVE-2004-1125</cvename>
       <url>http://www.idefense.com/application/poi/display?id=172&amp;type=vulnerabilities</url>
     </references>
     <dates>
@@ -11736,7 +11736,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1152</cvename>
+      <cvename>CVE-2004-1152</cvename>
       <certvu>253024</certvu>
       <url>http://www.adobe.com/support/techdocs/331153.html</url>
       <url>http://www.idefense.com/application/poi/display?id=161&amp;type=vulnerabilities</url>
@@ -11768,7 +11768,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0913</cvename>
+      <cvename>CVE-2004-0913</cvename>
       <url>http://www.debian.org/security/2004/dsa-572</url>
       <url>http://secunia.com/advisories/12918/</url>
     </references>
@@ -11812,8 +11812,8 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1187</cvename>
-      <cvename>CAN-2004-1188</cvename>
+      <cvename>CVE-2004-1187</cvename>
+      <cvename>CVE-2004-1188</cvename>
       <url>http://mplayerhq.hu/homepage/design7/news.html#mplayer10pre5try2</url>
       <mlist msgid="IDSERV04yz5b6KZmcK80000000c@exchange.idefense.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110322526210300</mlist>
       <url>http://www.idefense.com/application/poi/display?id=166</url>
@@ -11858,7 +11858,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1189</cvename>
+      <cvename>CVE-2004-1189</cvename>
       <url>http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2004-004-pwhist.txt</url>
     </references>
     <dates>
@@ -11901,7 +11901,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1154</cvename>
+      <cvename>CVE-2004-1154</cvename>
       <url>http://www.idefense.com/application/poi/display?id=165&amp;type=vulnerabilities</url>
       <url>http://www.samba.org/samba/security/CAN-2004-1154.html</url>
     </references>
@@ -11955,8 +11955,8 @@ http_access deny Gopher</pre>
     </description>
     <references>
        <url>http://secunia.com/advisories/13481/</url>
-       <cvename>CAN-2004-1019</cvename>
-       <cvename>CAN-2004-1065</cvename>
+       <cvename>CVE-2004-1019</cvename>
+       <cvename>CVE-2004-1065</cvename>
       <url>http://www.php.net/release_4_3_10.php</url>
       <url>http://www.hardened-php.net/advisories/012004.txt</url>
     </references>
@@ -11988,7 +11988,7 @@ http_access deny Gopher</pre>
        </body>
      </description>
      <references>
-        <cvename>CAN-2004-0957</cvename>
+        <cvename>CVE-2004-0957</cvename>
         <bid>11435</bid>
         <url>http://bugs.mysql.com/bug.php?id=3933</url>
         <url>http://rhn.redhat.com/errata/RHSA-2004-611.html</url>
@@ -12026,7 +12026,7 @@ http_access deny Gopher</pre>
        </body>
      </description>
      <references>
-        <cvename>CAN-2004-0837</cvename>
+        <cvename>CVE-2004-0837</cvename>
         <bid>11357</bid>
         <url>http://bugs.mysql.com/bug.php?id=2408</url>
         <url>http://rhn.redhat.com/errata/RHSA-2004-611.html</url>
@@ -12058,7 +12058,7 @@ http_access deny Gopher</pre>
      </description>
      <references>
        <url>http://bugs.mysql.com/bug.php?id=3870</url>
-       <cvename>CAN-2004-0956</cvename>
+       <cvename>CVE-2004-0956</cvename>
        <bid>11432</bid>
      </references>
      <dates>
@@ -12099,7 +12099,7 @@ http_access deny Gopher</pre>
        </body>
      </description>
      <references>
-        <cvename>CAN-2004-0836</cvename>
+        <cvename>CVE-2004-0836</cvename>
         <bid>10981</bid>
         <url>http://bugs.mysql.com/bug.php?id=4017</url>
         <url>http://lists.mysql.com/internals/14726</url>
@@ -12135,7 +12135,7 @@ http_access deny Gopher</pre>
        </body>
      </description>
      <references>
-        <cvename>CAN-2004-0835</cvename>
+        <cvename>CVE-2004-0835</cvename>
         <bid>11357</bid>
         <url>http://bugs.mysql.com/bug.php?id=3270</url>
         <url>http://rhn.redhat.com/errata/RHSA-2004-611.html</url>
@@ -12171,7 +12171,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1147</cvename>
+      <cvename>CVE-2004-1147</cvename>
       <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2004-4</url>
       <url>http://www.exaprobe.com/labs/advisories/esa-2004-1213.html</url>
     </references>
@@ -12204,7 +12204,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1148</cvename>
+      <cvename>CVE-2004-1148</cvename>
       <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2004-4</url>
       <url>http://www.exaprobe.com/labs/advisories/esa-2004-1213.html</url>
     </references>
@@ -12252,8 +12252,8 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1487</cvename>
-      <cvename>CAN-2004-1488</cvename>
+      <cvename>CVE-2004-1487</cvename>
+      <cvename>CVE-2004-1488</cvename>
       <bid>11871</bid>
       <mlist msgid="20041209091438.GA15010@kontryhel.haltyr.dyndns.org">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110269474112384</mlist>
       <url>http://bugs.debian.org/261755</url>
@@ -12283,7 +12283,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1171</cvename>
+      <cvename>CVE-2004-1171</cvename>
       <certvu>305294</certvu>
       <url>http://www.kde.org/info/security/advisory-20041209-1.txt</url>
       <mlist msgid="ICEEJPLEDKODPNFKJEGAIEBJGFAA.df@sec-consult.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110178786809694</mlist>
@@ -12316,7 +12316,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2003-1054</cvename>
+      <cvename>CVE-2003-1054</cvename>
       <bid>7375</bid>
       <url>http://secunia.com/advisories/8612/</url>
       <mlist>http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=105053485515811</mlist>
@@ -12372,7 +12372,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0915</cvename>
+      <cvename>CVE-2004-0915</cvename>
       <bid>11819</bid>
     </references>
     <dates>
@@ -12398,7 +12398,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0996</cvename>
+      <cvename>CVE-2004-0996</cvename>
       <bid>11697</bid>
       <mlist msgid="20041124025903.9337.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110133485519690</mlist>
       <mlist msgid="20041118012718.78b07d79.research@rexotec.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110072752707293</mlist>
@@ -12435,7 +12435,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1052</cvename>
+      <cvename>CVE-2004-1052</cvename>
       <mlist msgid="20041110131046.GA21604@cecilija.zesoi.fer.hr">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110011817627839</mlist>
       <url>http://security.lss.hr/en/index.php?page=details&amp;ID=LSS-2004-11-03</url>
       <url>http://www.gotbnc.com/changes.html</url>
@@ -12535,7 +12535,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1010</cvename>
+      <cvename>CVE-2004-1010</cvename>
       <bid>11603</bid>
       <url>http://www.hexview.com/docs/20041103-1.txt</url>
     </references>
@@ -12640,7 +12640,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0947</cvename>
+      <cvename>CVE-2004-0947</cvename>
       <bid>11665</bid>
     </references>
     <dates>
@@ -12666,7 +12666,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1027</cvename>
+      <cvename>CVE-2004-1027</cvename>
       <bid>11436</bid>
       <mlist msgid="200410102243.i9AMhA9F083398@mailserver2.hushmail.com">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=109748984030292</mlist>
     </references>
@@ -12718,7 +12718,7 @@ http_access deny Gopher</pre>
     <references>
       <url>http://sunsolve.sun.com/search/document.do?assetkey=1-26-57591-1&amp;searchclause=%22category:security%22%20%22availability,%20security%22</url>
       <url>http://www.securityfocus.com/archive/1/382072</url>
-      <cvename>CAN-2004-1029</cvename>
+      <cvename>CVE-2004-1029</cvename>
       <mlist msgid="20041123070248.GA25385@jouko.iki.fi">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110125046627909</mlist>
     </references>
     <dates>
@@ -12745,7 +12745,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1120</cvename>
+      <cvename>CVE-2004-1120</cvename>
       <url>http://www.gentoo.org/security/en/glsa/glsa-200411-31.xml</url>
       <url>http://bugs.gentoo.org/show_bug.cgi?id=70090</url>
       <mlist msgid="41A411E0.2010907@gmx.net">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110136626320497</mlist>
@@ -12821,7 +12821,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1013</cvename>
+      <cvename>CVE-2004-1013</cvename>
       <url>http://security.e-matters.de/advisories/152004.html</url>
     </references>
     <dates>
@@ -12857,7 +12857,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1012</cvename>
+      <cvename>CVE-2004-1012</cvename>
       <url>http://security.e-matters.de/advisories/152004.html</url>
     </references>
     <dates>
@@ -12886,7 +12886,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1011</cvename>
+      <cvename>CVE-2004-1011</cvename>
       <url>http://security.e-matters.de/advisories/152004.html</url>
     </references>
     <dates>
@@ -12949,7 +12949,7 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <freebsdsa>SA-04:16.fetch</freebsdsa>
-      <cvename>CAN-2004-1053</cvename>
+      <cvename>CVE-2004-1053</cvename>
       <bid>11702</bid>
     </references>
     <dates>
@@ -12976,7 +12976,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0882</cvename>
+      <cvename>CVE-2004-0882</cvename>
       <bid>11678</bid>
       <mlist msgid="4198AE84.7020509@samba.org">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110055646329581</mlist>
     </references>
@@ -13011,7 +13011,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1037</cvename>
+      <cvename>CVE-2004-1037</cvename>
       <mlist msgid="86zn1mhchx.fsf@n-dimensional.de">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110037207516456</mlist>
       <url>http://twiki.org/cgi-bin/view/Codev/SecurityAlertExecuteCommandsWithSearch</url>
     </references>
@@ -13048,7 +13048,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0992</cvename>
+      <cvename>CVE-2004-0992</cvename>
       <url>http://proxytunnel.sourceforge.net/news.html</url>
       <url>http://www.gentoo.org/security/en/glsa/glsa-200411-07.xml</url>
     </references>
@@ -13109,7 +13109,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0983</cvename>
+      <cvename>CVE-2004-0983</cvename>
       <url>http://www.debian.org/security/2004/dsa-586</url>
     </references>
     <dates>
@@ -13143,7 +13143,7 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <freebsdpr>ports/73701</freebsdpr>
-      <cvename>CAN-2004-0930</cvename>
+      <cvename>CVE-2004-0930</cvename>
       <url>http://us4.samba.org/samba/security/CAN-2004-0930.html</url>
     </references>
     <dates>
@@ -13168,7 +13168,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0623</cvename>
+      <cvename>CVE-2004-0623</cvename>
       <mlist msgid="20040625164231.7437.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108820000823191</mlist>
     </references>
     <dates>
@@ -13267,7 +13267,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0980</cvename>
+      <cvename>CVE-2004-0980</cvename>
       <mlist>http://lists.netsys.com/pipermail/full-disclosure/2004-November/028590.html</mlist>
     </references>
     <dates>
@@ -13293,7 +13293,7 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <bid>11548</bid>
-      <cvename>CAN-2004-0981</cvename>
+      <cvename>CVE-2004-0981</cvename>
       <url>http://secunia.com/advisories/12995/</url>
       <url>http://www.imagemagick.org/www/Changelog.html</url>
     </references>
@@ -13321,7 +13321,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0942</cvename>
+      <cvename>CVE-2004-0942</cvename>
       <mlist msgid="a62f45480411010157571febcc.mail@gmail.com">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=109930632317208</mlist>
     </references>
     <dates>
@@ -13385,7 +13385,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0989</cvename>
+      <cvename>CVE-2004-0989</cvename>
       <bid>11526</bid>
       <mlist msgid="20041025205132.1f1620a8.infamous41md@hotpop.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109880813013482</mlist>
       <url>http://www.debian.org/security/2004/dsa-582</url>
@@ -13469,7 +13469,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0940</cvename>
+      <cvename>CVE-2004-0940</cvename>
       <url>http://www.securitylab.ru/48807.html</url>
     </references>
     <dates>
@@ -13498,7 +13498,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0977</cvename>
+      <cvename>CVE-2004-0977</cvename>
       <bid>11295</bid>
       <url>http://www.postgresql.org/news/234.html</url>
       <url>http://www.trustix.net/errata/2004/0050/</url>
@@ -13535,7 +13535,7 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <bid>11523</bid>
-      <cvename>CAN-2004-0990</cvename>
+      <cvename>CVE-2004-0990</cvename>
       <mlist msgid="20041025204303.4341d907.infamous41md@hotpop.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109882489302099</mlist>
       <url>http://www.boutell.com/gd/manual2.0.29.html#whatsnew2.0.29</url>
     </references>
@@ -13673,7 +13673,7 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <freebsdpr>73144</freebsdpr>
-      <cvename>CAN-2004-1007</cvename>
+      <cvename>CVE-2004-1007</cvename>
       <mlist msgid="20041008143604.GA14934@scowler.net">http://article.gmane.org/gmane.mail.bogofilter.devel/3308</mlist>
       <mlist msgid="m3r7o892vj.fsf@merlin.emma.line.org">http://article.gmane.org/gmane.mail.bogofilter.devel/3317</mlist>
       <url>http://bugs.debian.org/275373</url>
@@ -13719,8 +13719,8 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0888</cvename>
-      <cvename>CAN-2004-0889</cvename>
+      <cvename>CVE-2004-0888</cvename>
+      <cvename>CVE-2004-0889</cvename>
       <url>http://scary.beasts.org/security/CESA-2004-002.txt</url>
       <url>http://scary.beasts.org/security/CESA-2004-007.txt</url>
       <url>http://www.kde.org/info/security/advisory-20041021-1.txt</url>
@@ -13840,7 +13840,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0785</cvename>
+      <cvename>CVE-2004-0785</cvename>
       <url>http://gaim.sourceforge.net/security/?id=3</url>
       <url>http://gaim.sourceforge.net/security/?id=4</url>
       <url>http://gaim.sourceforge.net/security/?id=5</url>
@@ -13875,7 +13875,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0754</cvename>
+      <cvename>CVE-2004-0754</cvename>
       <url>http://gaim.sourceforge.net/security/?id=2</url>
     </references>
     <dates>
@@ -13916,7 +13916,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0784</cvename>
+      <cvename>CVE-2004-0784</cvename>
       <url>http://gaim.sourceforge.net/security/?id=1</url>
     </references>
     <dates>
@@ -13949,7 +13949,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0891</cvename>
+      <cvename>CVE-2004-0891</cvename>
       <url>http://gaim.sourceforge.net/security/?id=9</url>
     </references>
     <dates>
@@ -13987,7 +13987,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0885</cvename>
+      <cvename>CVE-2004-0885</cvename>
       <mlist msgid="20041008152510.GE8385@redhat.com">http://marc.theaimsgroup.com/?l=apache-modssl&amp;m=109724918128044</mlist>
       <url>http://issues.apache.org/bugzilla/show_bug.cgi?id=31505</url>
     </references>
@@ -14025,7 +14025,7 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <bid>11468</bid>
-      <cvename>CAN-2004-0982</cvename>
+      <cvename>CVE-2004-0982</cvename>
       <mlist msgid="200410200119.42801.barros@barrossecurity.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109834486312407</mlist>
     </references>
     <dates>
@@ -14060,8 +14060,8 @@ http_access deny Gopher</pre>
     <references>
       <bid>11094</bid>
       <bid>11154</bid>
-      <cvename>CAN-2004-0748</cvename>
-      <cvename>CAN-2004-0751</cvename>
+      <cvename>CVE-2004-0748</cvename>
+      <cvename>CVE-2004-0751</cvename>
       <mlist msgid="029f01c49b54$dec30f20$1500a8c0@Cougar">http://marc.theaimsgroup.com/?l=apache-httpd-announce&amp;m=109527608022322</mlist>
       <url>http://nagoya.apache.org/bugzilla/show_bug.cgi?id=29964</url>
       <url>http://nagoya.apache.org/bugzilla/show_bug.cgi?id=30134</url>
@@ -14120,7 +14120,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0916</cvename>
+      <cvename>CVE-2004-0916</cvename>
       <url>http://www.kyz.uklinux.net/cabextract.php#changes</url>
     </references>
     <dates>
@@ -14160,7 +14160,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1170</cvename>
+      <cvename>CVE-2004-1170</cvename>
       <freebsdpr>ports/70618</freebsdpr>
       <bid>11025</bid>
       <url>http://www.osvdb.org/9176</url>
@@ -14250,7 +14250,7 @@ http_access deny Gopher</pre>
     </body>
     </description>
       <references>
-	<cvename>CAN-2004-0832</cvename>
+	<cvename>CVE-2004-0832</cvename>
 	<url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1045</url>
       </references>
     <dates>
@@ -14320,7 +14320,7 @@ http_access deny Gopher</pre>
     <references>
       <bid>10736</bid>
       <certvu>303448</certvu>
-      <cvename>CAN-2004-0700</cvename>
+      <cvename>CVE-2004-0700</cvename>
       <url>http://www.openpkg.org/security/OpenPKG-SA-2004.032-apache.html</url>
       <url>http://packetstormsecurity.org/0407-advisories/modsslFormat.txt</url>
       <mlist msgid="20040716204207.GA45678@engelschall.com">http://marc.theaimsgroup.com/?l=apache-modssl&amp;m=109001100906749</mlist>
@@ -14374,7 +14374,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0781</cvename>
+      <cvename>CVE-2004-0781</cvename>
       <url>http://www.securitytracker.com/alerts/2004/Aug/1011047.html</url>
     </references>
     <dates>
@@ -14424,9 +14424,9 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0938</cvename>
-      <cvename>CAN-2004-0960</cvename>
-      <cvename>CAN-2004-0961</cvename>
+      <cvename>CVE-2004-0938</cvename>
+      <cvename>CVE-2004-0960</cvename>
+      <cvename>CVE-2004-0961</cvename>
       <url>http://www.securitytracker.com/alerts/2004/Sep/1011364.html</url>
       <certvu>541574</certvu>
       <bid>11222</bid>
@@ -14533,7 +14533,7 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <certvu>687568</certvu>
-      <cvename>CAN-2004-0886</cvename>
+      <cvename>CVE-2004-0886</cvename>
       <url>http://www.idefense.com/application/poi/display?id=173&amp;type=vulnerabilities</url>
     </references>
     <dates>
@@ -14563,7 +14563,7 @@ http_access deny Gopher</pre>
       <url>http://docs.info.apple.com/article.html?artnum=61798</url>
       <url>http://secunia.com/advisories/12690/</url>
       <url>http://www.cups.org/str.php?L920</url>
-      <cvename>CAN-2004-0923</cvename>
+      <cvename>CVE-2004-0923</cvename>
       <certvu>557062</certvu>
     </references>
     <dates>
@@ -14639,7 +14639,7 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <certvu>948752</certvu>
-      <cvename>CAN-2004-0803</cvename>
+      <cvename>CVE-2004-0803</cvename>
       <url>http://scary.beasts.org/security/CESA-2004-006.txt</url>
     </references>
     <dates>
@@ -14732,7 +14732,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0918</cvename>
+      <cvename>CVE-2004-0918</cvename>
       <url>http://www.idefense.com/application/poi/display?id=152&amp;type=vulnerabilities</url>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE6-SNMP_core_dump</url>
     </references>
@@ -14787,7 +14787,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0884</cvename>
+      <cvename>CVE-2004-0884</cvename>
       <url>https://bugzilla.andrew.cmu.edu/cgi-bin/cvsweb.cgi/src/sasl/lib/common.c#rev1.104</url>
     </references>
     <dates>
@@ -15037,7 +15037,7 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <mlist msgid="200409191532.38997.baikie@ehwat.freeserve.co.uk">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109571883130372</mlist>
-      <cvename>CAN-2004-0881</cvename>
+      <cvename>CVE-2004-0881</cvename>
       <bid>11224</bid>
     </references>
     <dates>
@@ -15074,7 +15074,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0919</cvename>
+      <cvename>CVE-2004-0919</cvename>
       <freebsdsa>SA-04:15.syscons</freebsdsa>
       <url>http://www.freebsd.org/cgi/cvsweb.cgi/src/sys/dev/syscons/syscons.c#rev1.429</url>
     </references>
@@ -15127,7 +15127,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0601</cvename>
+      <cvename>CVE-2004-0601</cvename>
       <url>http://distcc.samba.org/ftp/distcc/distcc-2.16.NEWS</url>
     </references>
     <dates>
@@ -15195,7 +15195,7 @@ http_access deny Gopher</pre>
 	<p>Several scripting vulnerabilities were discovered and
 	  corrected in Mozilla:</p>
 	<dl>
-	  <dt>CAN-2004-0905</dt>
+	  <dt>CVE-2004-0905</dt>
 	  <dd>
 	    <blockquote cite="http://www.mozilla.org/projects/security/known-vulnerabilities.html">
 	      <p>javascript; links dragged onto another frame or
@@ -15207,7 +15207,7 @@ http_access deny Gopher</pre>
 		attacker would be able to run arbitrary programs.</p>
 	    </blockquote>
 	  </dd>
-	  <dt>CAN-2004-0908</dt>
+	  <dt>CVE-2004-0908</dt>
 	  <dd>
 	    <blockquote cite="http://www.mozilla.org/projects/security/known-vulnerabilities.html">
               <p>Untrusted javascript code can read and write to the
@@ -15216,7 +15216,7 @@ http_access deny Gopher</pre>
                 javascript</p>
 	    </blockquote>
 	  </dd>
-	  <dt>CAN-2004-0909</dt>
+	  <dt>CVE-2004-0909</dt>
 	  <dd>
 	    <blockquote cite="http://www.mozilla.org/projects/security/known-vulnerabilities.html">
               <p>Signed scripts requesting enhanced abilities could
@@ -15233,9 +15233,9 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0905</cvename>
-      <cvename>CAN-2004-0908</cvename>
-      <cvename>CAN-2004-0909</cvename>
+      <cvename>CVE-2004-0905</cvename>
+      <cvename>CVE-2004-0908</cvename>
+      <cvename>CVE-2004-0909</cvename>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=250862</url>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=257523</url>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=253942</url>
@@ -15313,7 +15313,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0762</cvename>
+      <cvename>CVE-2004-0762</cvename>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=162020</url>
     </references>
     <dates>
@@ -15387,7 +15387,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0765</cvename>
+      <cvename>CVE-2004-0765</cvename>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=234058</url>
     </references>
     <dates>
@@ -15429,7 +15429,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0815</cvename>
+      <cvename>CVE-2004-0815</cvename>
       <url>http://www.samba.org/samba/news/#security_2.2.12</url>
     </references>
     <dates>
@@ -15505,7 +15505,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0904</cvename>
+      <cvename>CVE-2004-0904</cvename>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=255067</url>
       <uscertta>TA04-261A</uscertta>
       <certvu>847200</certvu>
@@ -15546,7 +15546,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0903</cvename>
+      <cvename>CVE-2004-0903</cvename>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=257314</url>
       <uscertta>TA04-261A</uscertta>
       <certvu>414240</certvu>
@@ -15602,7 +15602,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0902</cvename>
+      <cvename>CVE-2004-0902</cvename>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=258005</url>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=245066</url>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=226669</url>
@@ -15652,7 +15652,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0595</cvename>
+      <cvename>CVE-2004-0595</cvename>
       <mlist msgid="20040713225525.GB26865@e-matters.de">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108981589117423</mlist>
       <url>http://security.e-matters.de/advisories/122004.html</url>
       <bid>10724</bid>
@@ -15716,7 +15716,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0594</cvename>
+      <cvename>CVE-2004-0594</cvename>
       <mlist msgid="20040713225329.GA26865@e-matters.de">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108981780109154</mlist>
       <url>http://security.e-matters.de/advisories/112004.html</url>
       <bid>10725</bid>
@@ -15756,7 +15756,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0749</cvename>
+      <cvename>CVE-2004-0749</cvename>
       <url>http://subversion.tigris.org/security/CAN-2004-0749-advisory.txt</url>
     </references>
     <dates>
@@ -15779,20 +15779,20 @@ http_access deny Gopher</pre>
 	  lha:</p>
 	<ul>
 	  <li>Buffer overflows when handling archives and filenames.
-	    (CAN-2004-0694)</li>
+	    (CVE-2004-0694)</li>
 	  <li>Possible command execution via shell meta-characters when
-	    built with NOMKDIR. (CAN-2004-0745)</li>
+	    built with NOMKDIR. (CVE-2004-0745)</li>
 	  <li>Buffer overflow resulting in arbitrary code execution when
-	    handling long pathnames in LHZ archives. (CAN-2004-0769)</li>
-	  <li>Buffer overflow in the extract_one. (CAN-2004-0771)</li>
+	    handling long pathnames in LHZ archives. (CVE-2004-0769)</li>
+	  <li>Buffer overflow in the extract_one. (CVE-2004-0771)</li>
 	</ul>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0694</cvename>
-      <cvename>CAN-2004-0745</cvename>
-      <cvename>CAN-2004-0769</cvename>
-      <cvename>CAN-2004-0771</cvename>
+      <cvename>CVE-2004-0694</cvename>
+      <cvename>CVE-2004-0745</cvename>
+      <cvename>CVE-2004-0769</cvename>
+      <cvename>CVE-2004-0771</cvename>
       <mlist msgid="20040515110900.24784.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108464470103227</mlist>
       <mlist msgid="20040606162856.29866.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108668791510153</mlist>
       <url>http://bugs.gentoo.org/show_bug.cgi?id=51285</url>
@@ -15862,7 +15862,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0761</cvename>
+      <cvename>CVE-2004-0761</cvename>
       <url>https://bugzilla.mozilla.org/show_bug.cgi?id=240053</url>
     </references>
     <dates>
@@ -15902,7 +15902,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0760</cvename>
+      <cvename>CVE-2004-0760</cvename>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=250906</url>
     </references>
     <dates>
@@ -15935,7 +15935,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0759</cvename>
+      <cvename>CVE-2004-0759</cvename>
       <url>https://bugzilla.mozilla.org/show_bug.cgi?id=241924</url>
     </references>
     <dates>
@@ -15979,7 +15979,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0758</cvename>
+      <cvename>CVE-2004-0758</cvename>
       <url>https://bugzilla.mozilla.org/show_bug.cgi?id=249004</url>
       <certvu>160360</certvu>
       <url>http://banquo.inf.ethz.ch:8080/</url>
@@ -16017,7 +16017,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0609</cvename>
+      <cvename>CVE-2004-0609</cvename>
       <mlist msgid="20040619074141.GG13649@sophic.org">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108787373022844</mlist>
       <bid>10574</bid>
       <url>http://www.osvdb.org/7239</url>
@@ -16055,7 +16055,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0849</cvename>
+      <cvename>CVE-2004-0849</cvename>
       <url>http://www.idefense.com/application/poi/display?id=141&amp;type=vulnerabilities</url>
     </references>
     <dates>
@@ -16121,7 +16121,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0492</cvename>
+      <cvename>CVE-2004-0492</cvename>
       <url>http://www.guninski.com/modproxy1.html</url>
     </references>
     <dates>
@@ -16152,13 +16152,13 @@ http_access deny Gopher</pre>
 	  Stefan Esser, Sebastian Krahmer, and Derek Price.</p>
 	<ul>
           <li>Insufficient input validation while processing "Entry"
-	    lines.  (CAN-2004-0414)</li>
+	    lines.  (CVE-2004-0414)</li>
 	  <li>A double-free resulting from erroneous state handling while
-	    processing "Argumentx" commands. (CAN-2004-0416)</li>
+	    processing "Argumentx" commands. (CVE-2004-0416)</li>
 	  <li>Integer overflow while processing "Max-dotdot" commands.
-	    (CAN-2004-0417)</li>
+	    (CVE-2004-0417)</li>
 	  <li>Erroneous handling of empty entries handled while processing
-	    "Notify" commands. (CAN-2004-0418)</li>
+	    "Notify" commands. (CVE-2004-0418)</li>
 	  <li>A format string bug while processing CVS wrappers.</li>
 	  <li>Single-byte buffer underflows while processing configuration files
 	    from CVSROOT.</li>
@@ -16170,20 +16170,20 @@ http_access deny Gopher</pre>
         <p>CVS servers ("cvs server" or :pserver: modes) are
           affected by these vulnerabilities.  They vary in impact
           but include information disclosure (the iDEFENSE-reported
-          bug), denial-of-service (CAN-2004-0414, CAN-2004-0416,
-          CAN-2004-0417 and other bugs), or possibly arbitrary code
-          execution (CAN-2004-0418).  In very special situations where
+          bug), denial-of-service (CVE-2004-0414, CVE-2004-0416,
+          CVE-2004-0417 and other bugs), or possibly arbitrary code
+          execution (CVE-2004-0418).  In very special situations where
           the attacker may somehow influence the contents of CVS
           configuration files in CVSROOT, additional attacks may be
           possible.</p>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0414</cvename>
-      <cvename>CAN-2004-0416</cvename>
-      <cvename>CAN-2004-0417</cvename>
-      <cvename>CAN-2004-0418</cvename>
-      <cvename>CAN-2004-0778</cvename>
+      <cvename>CVE-2004-0414</cvename>
+      <cvename>CVE-2004-0416</cvename>
+      <cvename>CVE-2004-0417</cvename>
+      <cvename>CVE-2004-0418</cvename>
+      <cvename>CVE-2004-0778</cvename>
       <url>http://secunia.com/advisories/11817</url>
       <url>http://secunia.com/advisories/12309</url>
       <url>http://security.e-matters.de/advisories/092004.html</url>
@@ -16235,9 +16235,9 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0782</cvename>
-      <cvename>CAN-2004-0783</cvename>
-      <cvename>CAN-2004-0788</cvename>
+      <cvename>CVE-2004-0782</cvename>
+      <cvename>CVE-2004-0783</cvename>
+      <cvename>CVE-2004-0788</cvename>
       <url>http://scary.beasts.org/security/CESA-2004-005.txt</url>
     </references>
     <dates>
@@ -16308,8 +16308,8 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0687</cvename>
-      <cvename>CAN-2004-0688</cvename>
+      <cvename>CVE-2004-0687</cvename>
+      <cvename>CVE-2004-0688</cvename>
       <url>http://freedesktop.org/pipermail/xorg/2004-September/003172.html</url>
       <url>http://scary.beasts.org/security/CESA-2004-003.txt</url>
       <certvu>537878</certvu>
@@ -16337,7 +16337,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0558</cvename>
+      <cvename>CVE-2004-0558</cvename>
       <url>http://www.cups.org/str.php?L863</url>
     </references>
     <dates>
@@ -16365,7 +16365,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0786</cvename>
+      <cvename>CVE-2004-0786</cvename>
       <url>http://httpd.apache.org</url>
     </references>
     <dates>
@@ -16394,7 +16394,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0809</cvename>
+      <cvename>CVE-2004-0809</cvename>
       <url>http://nagoya.apache.org/bugzilla/show_bug.cgi?id=31183</url>
     </references>
     <dates>
@@ -16427,7 +16427,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0747</cvename>
+      <cvename>CVE-2004-0747</cvename>
       <mlist>http://lists.netsys.com/pipermail/full-disclosure/2004-September/026463.html</mlist>
     </references>
     <dates>
@@ -16459,7 +16459,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0559</cvename>
+      <cvename>CVE-2004-0559</cvename>
       <url>http://www.webmin.com/changes-1.160.html</url>
     </references>
     <dates>
@@ -16485,8 +16485,8 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0807</cvename>
-      <cvename>CAN-2004-0808</cvename>
+      <cvename>CVE-2004-0807</cvename>
+      <cvename>CVE-2004-0808</cvename>
       <url>http://www.idefense.com/application/poi/display?id=139&amp;type=vulnerabilities</url>
     </references>
     <dates>
@@ -16524,7 +16524,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0757</cvename>
+      <cvename>CVE-2004-0757</cvename>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=229374</url>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=157644</url>
     </references>
@@ -16572,7 +16572,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0722</cvename>
+      <cvename>CVE-2004-0722</cvename>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=236618</url>
     </references>
     <dates>
@@ -16628,7 +16628,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0752</cvename>
+      <cvename>CVE-2004-0752</cvename>
       <url>http://www.openoffice.org/issues/show_bug.cgi?id=33357</url>
       <url>http://securitytracker.com/alerts/2004/Sep/1011205.html</url>
       <mlist msgid="20040910152759.7739.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109483308421566</mlist>
@@ -16658,7 +16658,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0805</cvename>
+      <cvename>CVE-2004-0805</cvename>
       <url>http://www.alighieri.org/advisories/advisory-mpg123.txt</url>
     </references>
     <dates>
@@ -16684,7 +16684,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0827</cvename>
+      <cvename>CVE-2004-0827</cvename>
       <url>http://www.imagemagick.org/www/Changelog.html</url>
     </references>
     <dates>
@@ -16754,9 +16754,9 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0717</cvename>
-      <cvename>CAN-2004-0718</cvename>
-      <cvename>CAN-2004-0721</cvename>
+      <cvename>CVE-2004-0717</cvename>
+      <cvename>CVE-2004-0718</cvename>
+      <cvename>CVE-2004-0721</cvename>
       <url>http://secunia.com/advisories/11978/</url>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=246448</url>
       <url>ftp://ftp.kde.org/pub/kde/security_patches/post-3.2.3-kdelibs-htmlframes.patch</url>
@@ -16793,11 +16793,11 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0218</cvename>
-      <cvename>CAN-2004-0219</cvename>
-      <cvename>CAN-2004-0220</cvename>
-      <cvename>CAN-2004-0221</cvename>
-      <cvename>CAN-2004-0222</cvename>
+      <cvename>CVE-2004-0218</cvename>
+      <cvename>CVE-2004-0219</cvename>
+      <cvename>CVE-2004-0220</cvename>
+      <cvename>CVE-2004-0221</cvename>
+      <cvename>CVE-2004-0222</cvename>
       <url>http://www.rapid7.com/advisories/R7-0018.html</url>
       <url>http://www.openbsd.org/errata34.html</url>
     </references>
@@ -16825,7 +16825,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0817</cvename>
+      <cvename>CVE-2004-0817</cvename>
       <url>http://bugzilla.gnome.org/show_bug.cgi?id=151034</url>
     </references>
     <dates>
@@ -16861,9 +16861,9 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0642</cvename>
-      <cvename>CAN-2004-0643</cvename>
-      <cvename>CAN-2004-0772</cvename>
+      <cvename>CVE-2004-0642</cvename>
+      <cvename>CVE-2004-0643</cvename>
+      <cvename>CVE-2004-0772</cvename>
       <certvu>795632</certvu>
       <certvu>866472</certvu>
       <certvu>350792</certvu>
@@ -16899,7 +16899,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0644</cvename>
+      <cvename>CVE-2004-0644</cvename>
       <certvu>550464</certvu>
       <url>http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2004-003-asn1.txt</url>
     </references>
@@ -16927,7 +16927,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0802</cvename>
+      <cvename>CVE-2004-0802</cvename>
       <url>http://cvs.sourceforge.net/viewcvs.py/enlightenment/e17/libs/imlib2/ChangeLog?rev=1.20&amp;view=markup</url>
     </references>
     <dates>
@@ -16957,7 +16957,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0796</cvename>
+      <cvename>CVE-2004-0796</cvename>
       <bid>10957</bid>
       <mlist>http://marc.theaimsgroup.com/?l=spamassassin-announce&amp;m=109168121628767</mlist>
       <url>http://search.cpan.org/src/JMASON/Mail-SpamAssassin-2.64/Changes</url>
@@ -17008,7 +17008,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0794</cvename>
+      <cvename>CVE-2004-0794</cvename>
       <bid>10967</bid>
       <url>http://cvsweb.netbsd.org/bsdweb.cgi/src/libexec/ftpd/ftpd.c#rev1.158</url>
       <url>ftp://ftp.netbsd.org/pub/NetBSD/security/advisories/NetBSD-SA2004-009.txt.asc</url>
@@ -17039,8 +17039,8 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0627</cvename>
-      <cvename>CAN-2004-0628</cvename>
+      <cvename>CVE-2004-0627</cvename>
+      <cvename>CVE-2004-0628</cvename>
       <certvu>184030</certvu>
       <certvu>645326</certvu>
       <url>http://www.nextgenss.com/advisories/mysql-authbypass.txt</url>
@@ -17081,7 +17081,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0755</cvename>
+      <cvename>CVE-2004-0755</cvename>
       <url>http://xforce.iss.net/xforce/xfdb/16996</url>
       <url>http://www.debian.org/security/2004/dsa-537</url>
       <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109267579822250&amp;w=2</mlist>
@@ -17222,7 +17222,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0792</cvename>
+      <cvename>CVE-2004-0792</cvename>
       <url>http://samba.org/rsync/#security_aug04</url>
       <mlist>http://lists.samba.org/archive/rsync-announce/2004/000017.html</mlist>
       <url>http://secunia.com/advisories/12294</url>
@@ -17260,7 +17260,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0494</cvename>
+      <cvename>CVE-2004-0494</cvename>
       <bid>10864</bid>
       <url>http://www.ciac.org/ciac/bulletins/o-194.shtml</url>
       <url>http://xforce.iss.net/xforce/xfdb/16897</url>
@@ -17291,7 +17291,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0557</cvename>
+      <cvename>CVE-2004-0557</cvename>
       <mlist msgid="1091040793.4107f6193d81a@webmail.uu.se">http://archives.neohapsis.com/archives/vulnwatch/2004-q3/0014.html</mlist>
       <url>http://secunia.com/advisories/12175</url>
       <url>http://www.osvdb.org/8267</url>
@@ -17335,7 +17335,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0746</cvename>
+      <cvename>CVE-2004-0746</cvename>
       <url>http://www.kde.org/info/security/advisory-20040823-1.txt</url>
       <url>http://www.osvdb.org/9117</url>
       <url>http://secunia.com/advisories/12341</url>
@@ -17399,7 +17399,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0448</cvename>
+      <cvename>CVE-2004-0448</cvename>
       <url>http://www.debian.org/security/2004/dsa-510</url>
       <bid>10438</bid>
       <url>http://xforce.iss.net/xforce/xfdb/16271</url>
@@ -17431,9 +17431,9 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0691</cvename>
-      <cvename>CAN-2004-0692</cvename>
-      <cvename>CAN-2004-0693</cvename>
+      <cvename>CVE-2004-0691</cvename>
+      <cvename>CVE-2004-0692</cvename>
+      <cvename>CVE-2004-0693</cvename>
       <url>http://www.trolltech.com/developer/changes/changes-3.3.3.html</url>
       <url>http://scary.beasts.org/security/CESA-2004-004.txt</url>
     </references>
@@ -17459,7 +17459,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0777</cvename>
+      <cvename>CVE-2004-0777</cvename>
       <mlist>http://lists.netsys.com/pipermail/full-disclosure/2004-August/025478.html</mlist>
       <url>http://www.idefense.com/application/poi/display?id=131&amp;type=vulnerabilities&amp;flashstatus=false</url>
       <bid>10976</bid>
@@ -17493,7 +17493,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0457</cvename>
+      <cvename>CVE-2004-0457</cvename>
       <url>http://www.debian.org/security/2004/dsa-540</url>
       <mlist>http://lists.mysql.com/internals/15185</mlist>
     </references>
@@ -17531,8 +17531,8 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0600</cvename>
-      <cvename>CAN-2004-0686</cvename>
+      <cvename>CVE-2004-0600</cvename>
+      <cvename>CVE-2004-0686</cvename>
       <mlist msgid="web-53121174@cgp.agava.net">http://www.securityfocus.com/archive/1/369698</mlist>
       <mlist msgid="200407222031.25086.bugtraq@beyondsecurity.com">http://www.securityfocus.com/archive/1/369706</mlist>
       <url>http://www.samba.org/samba/whatsnew/samba-3.0.5.html</url>
@@ -17586,7 +17586,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0764</cvename>
+      <cvename>CVE-2004-0764</cvename>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=22183</url>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=244965</url>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=252198</url>
@@ -17679,9 +17679,9 @@ http_access deny Gopher</pre>
       <url>http://www.osvdb.org/8314</url>
       <url>http://www.osvdb.org/8315</url>
       <url>http://www.osvdb.org/8316</url>
-      <cvename>CAN-2004-0597</cvename>
-      <cvename>CAN-2004-0598</cvename>
-      <cvename>CAN-2004-0599</cvename>
+      <cvename>CVE-2004-0597</cvename>
+      <cvename>CVE-2004-0598</cvename>
+      <cvename>CVE-2004-0599</cvename>
       <certvu>388984</certvu>
       <certvu>236656</certvu>
       <certvu>160448</certvu>
@@ -17719,8 +17719,8 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0689</cvename>
-      <cvename>CAN-2004-0690</cvename>
+      <cvename>CVE-2004-0689</cvename>
+      <cvename>CVE-2004-0690</cvename>
       <url>http://www.kde.org/info/security/advisory-20040811-1.txt</url>
       <url>http://www.kde.org/info/security/advisory-20040811-2.txt</url>
       <url>ftp://ftp.kde.org/pub/kde/security_patches/post-3.2.3-kdelibs-kstandarddirs.patch</url>
@@ -17762,7 +17762,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0500</cvename>
+      <cvename>CVE-2004-0500</cvename>
       <url>http://gaim.sourceforge.net/security/?id=0</url>
     </references>
     <dates>
@@ -17801,7 +17801,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0630</cvename>
+      <cvename>CVE-2004-0630</cvename>
       <url>http://www.idefense.com/application/poi/display?id=124&amp;type=vulnerabilities</url>
     </references>
     <dates>
@@ -17854,7 +17854,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0460</cvename>
+      <cvename>CVE-2004-0460</cvename>
       <url>http://www.osvdb.org/7237</url>
       <uscertta>TA04-174A</uscertta>
       <certvu>317350</certvu>
@@ -17891,7 +17891,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0421</cvename>
+      <cvename>CVE-2004-0421</cvename>
       <url>http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=120508</url>
       <url>http://rhn.redhat.com/errata/RHSA-2004-181.html</url>
       <url>http://secunia.com/advisories/11505</url>
@@ -17947,7 +17947,7 @@ http_access deny Gopher</pre>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=253121</url>
       <url>http://www.osvdb.org/8238</url>
       <bid>10796</bid>
-      <cvename>CAN-2004-0763</cvename>
+      <cvename>CVE-2004-0763</cvename>
     </references>
     <dates>
       <discovery>2004-07-25</discovery>
@@ -18025,7 +18025,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0224</cvename>
+      <cvename>CVE-2004-0224</cvename>
       <url>http://cvs.sourceforge.net/viewcvs.py/courier/libs/unicode/iso2022jp.c?rev=1.10&amp;view=markup</url>
       <url>http://cvs.sourceforge.net/viewcvs.py/courier/libs/unicode/shiftjis.c?rev=1.6&amp;view=markup</url>
       <bid>9845</bid>
@@ -18076,9 +18076,9 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <url>http://www.ethereal.com/appnotes/enpa-sa-00013.html</url>
-      <cvename>CAN-2004-0176</cvename>
-      <cvename>CAN-2004-0365</cvename>
-      <cvename>CAN-2004-0367</cvename>
+      <cvename>CVE-2004-0176</cvename>
+      <cvename>CVE-2004-0365</cvename>
+      <cvename>CVE-2004-0367</cvename>
       <certvu>119876</certvu>
       <certvu>124454</certvu>
       <certvu>125156</certvu>
@@ -18123,10 +18123,10 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <url>http://www.ethereal.com/appnotes/enpa-sa-00014.html</url>
-      <cvename>CAN-2004-0504</cvename>
-      <cvename>CAN-2004-0505</cvename>
-      <cvename>CAN-2004-0506</cvename>
-      <cvename>CAN-2004-0507</cvename>
+      <cvename>CVE-2004-0504</cvename>
+      <cvename>CVE-2004-0505</cvename>
+      <cvename>CVE-2004-0506</cvename>
+      <cvename>CVE-2004-0507</cvename>
       <url>http://secunia.com/advisories/11608</url>
       <bid>10347</bid>
       <url>http://www.osvdb.org/6131</url>
@@ -18158,9 +18158,9 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <url>http://www.ethereal.com/appnotes/enpa-sa-00015.html</url>
-      <cvename>CAN-2004-0633</cvename>
-      <cvename>CAN-2004-0634</cvename>
-      <cvename>CAN-2004-0635</cvename>
+      <cvename>CVE-2004-0633</cvename>
+      <cvename>CVE-2004-0634</cvename>
+      <cvename>CVE-2004-0635</cvename>
       <url>http://secunia.com/advisories/12024</url>
       <bid>10672</bid>
       <url>http://www.osvdb.org/7536</url>
@@ -18188,7 +18188,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0640</cvename>
+      <cvename>CVE-2004-0640</cvename>
       <url>http://www.idefense.com/application/poi/display?id=114&amp;type=vulnerabilities</url>
     </references>
     <dates>
@@ -18221,7 +18221,7 @@ http_access deny Gopher</pre>
       <url>http://www.freebsd.org/ports/portaudit/89a0de27-bf66-11d8-a252-02e0185c0b53.html</url>
       <url>http://www.freebsd.org/ports/portaudit/911f1b19-bd20-11d8-84f9-000bdb1444a4.html</url>
       <url>http://www.freebsd.org/ports/portaudit/c3e56efa-c42f-11d8-864c-02e0185c0b53.html</url>
-      <cvename>CAN-2004-0519</cvename>
+      <cvename>CVE-2004-0519</cvename>
     </references>
     <dates>
       <discovery>2004-05-29</discovery>
@@ -18247,7 +18247,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0456</cvename>
+      <cvename>CVE-2004-0456</cvename>
       <mlist>http://lists.netsys.com/pipermail/full-disclosure/2004-July/023322.html</mlist>
       <url>http://www.osvdb.org/7319</url>
     </references>
@@ -18275,10 +18275,10 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2003-0279</cvename>
-      <cvename>CAN-2003-0318</cvename>
-      <cvename>CAN-2004-0266</cvename>
-      <cvename>CAN-2004-0269</cvename>
+      <cvename>CVE-2003-0279</cvename>
+      <cvename>CVE-2003-0318</cvename>
+      <cvename>CVE-2004-0266</cvename>
+      <cvename>CVE-2004-0269</cvename>
       <url>http://www.waraxe.us/index.php?modname=sa&amp;id=27</url>
       <url>http://secunia.com/advisories/11920</url>
     </references>
@@ -18371,7 +18371,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0602</cvename>
+      <cvename>CVE-2004-0602</cvename>
       <freebsdsa>SA-04:13.linux</freebsdsa>
     </references>
     <dates>
@@ -18429,7 +18429,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0419</cvename>
+      <cvename>CVE-2004-0419</cvename>
       <url>http://bugs.xfree86.org/show_bug.cgi?id=1376</url>
       <url>https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=124900</url>
     </references>
@@ -18457,7 +18457,7 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <url>http://www.osvdb.org/6704</url>
-      <cvename>CAN-2004-0708</cvename>
+      <cvename>CVE-2004-0708</cvename>
       <bid>10568</bid>
       <url>http://secunia.com/advisories/11807</url>
     </references>
@@ -18491,7 +18491,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2002-1580</cvename>
+      <cvename>CVE-2002-1580</cvename>
       <bid>6298</bid>
       <certvu>740169</certvu>
       <mlist msgid="20021202175606.GA26254@irccrew.org">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=103886607825605</mlist>
@@ -18586,8 +18586,8 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2003-0781</cvename>
-      <cvename>CAN-2003-0782</cvename>
+      <cvename>CVE-2003-0781</cvename>
+      <cvename>CVE-2003-0782</cvename>
       <url>http://www.securiteam.com/unixfocus/5YP0H2AAUY.html</url>
       <freebsdpr>ports/57082</freebsdpr>
     </references>
@@ -18648,7 +18648,7 @@ http_access deny Gopher</pre>
       <url>http://www.osvdb.org/3894</url>
       <bid>9610</bid>
       <url>http://secunia.com/advisories/10826</url>
-      <cvename>CAN-2004-0270</cvename>
+      <cvename>CVE-2004-0270</cvename>
       <url>http://xforce.iss.net/xforce/xfdb/15077</url>
     </references>
     <dates>
@@ -18686,7 +18686,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0398</cvename>
+      <cvename>CVE-2004-0398</cvename>
       <url>http://security.e-matters.de/advisories/062004.html</url>
       <url>http://secunia.com/advisories/11785</url>
     </references>
@@ -18727,7 +18727,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0179</cvename>
+      <cvename>CVE-2004-0179</cvename>
       <url>http://www.webdav.org/neon/</url>
       <url>http://secunia.com/advisories/11785</url>
     </references>
@@ -18757,7 +18757,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0522</cvename>
+      <cvename>CVE-2004-0522</cvename>
       <url>http://gallery.menalto.com/modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=123</url>
       <url>http://secunia.com/advisories/11752</url>
     </references>
@@ -18780,16 +18780,16 @@ http_access deny Gopher</pre>
 	<p>Jakub Jelinek reports several security related bugs in
 	  Midnight Commander, including:</p>
 	<ul>
-	  <li>Multiple buffer overflows (CAN-2004-0226)</li>
-	  <li>Insecure temporary file handling (CAN-2004-0231)</li>
-	  <li>Format string bug (CAN-2004-0232)</li>
+	  <li>Multiple buffer overflows (CVE-2004-0226)</li>
+	  <li>Insecure temporary file handling (CVE-2004-0231)</li>
+	  <li>Format string bug (CVE-2004-0232)</li>
 	</ul>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0226</cvename>
-      <cvename>CAN-2004-0231</cvename>
-      <cvename>CAN-2004-0232</cvename>
+      <cvename>CVE-2004-0226</cvename>
+      <cvename>CVE-2004-0231</cvename>
+      <cvename>CVE-2004-0232</cvename>
     </references>
     <dates>
       <discovery>2004-04-29</discovery>
@@ -18820,7 +18820,7 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <url>http://www.idefense.com/application/poi/display?id=107&amp;type=vulnerabilities&amp;flashstatus=false</url>
-      <cvename>CAN-2004-0541</cvename>
+      <cvename>CVE-2004-0541</cvename>
       <url>http://www.osvdb.org/6791</url>
       <url>http://secunia.com/advisories/11804</url>
       <bid>10500</bid>
@@ -18868,7 +18868,7 @@ http_access deny Gopher</pre>
       <certsa>CA-2004-01</certsa>
       <certvu>749342</certvu>
       <!-- pwlib and pwlib-using applications -->
-      <cvename>CAN-2004-0097</cvename>
+      <cvename>CVE-2004-0097</cvename>
       <url>http://www.southeren.com/blog/archives/000055.html</url>
     </references>
     <dates>
@@ -18901,7 +18901,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0125</cvename>
+      <cvename>CVE-2004-0125</cvename>
       <freebsdsa>SA-04:12.jailroute</freebsdsa>
     </references>
     <dates>
@@ -18933,7 +18933,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0435</cvename>
+      <cvename>CVE-2004-0435</cvename>
       <freebsdsa>SA-04:11.msync</freebsdsa>
     </references>
     <dates>
@@ -18961,7 +18961,7 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <url>http://leafnode.sourceforge.net/leafnode-SA-2002-01.txt</url>
-      <cvename>CAN-2002-1661</cvename>
+      <cvename>CVE-2002-1661</cvename>
       <mlist msgid="20021229205023.GA5216@merlin.emma.line.org">http://sourceforge.net/mailarchive/message.php?msg_id=2796226</mlist>
       <mlist msgid="20021229205023.GA5216@merlin.emma.line.org">http://article.gmane.org/gmane.network.leafnode.announce/8</mlist>
       <bid>6490</bid>
@@ -18989,7 +18989,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2003-0744</cvename>
+      <cvename>CVE-2003-0744</cvename>
       <url>http://leafnode.sourceforge.net/leafnode-SA-2003-01.txt</url>
       <mlist msgid="20030904011904.GB12350@merlin.emma.line.org">http://sourceforge.net/mailarchive/message.php?msg_id=5975563</mlist>
       <mlist msgid="20030904011904.GB12350@merlin.emma.line.org">http://article.gmane.org/gmane.network.leafnode.announce/21</mlist>
@@ -19021,7 +19021,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-2068</cvename>
+      <cvename>CVE-2004-2068</cvename>
       <url>http://leafnode.sourceforge.net/leafnode-SA-2004-01.txt</url>
       <url>http://sourceforge.net/tracker/index.php?func=detail&amp;aid=873149&amp;group_id=57767&amp;atid=485349</url>
       <mlist msgid="20040109015625.GA12319@merlin.emma.line.org">http://article.gmane.org/gmane.network.leafnode.announce/32</mlist>
@@ -19060,7 +19060,7 @@ http_access deny Gopher</pre>
       <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108023246916294&amp;w=2</mlist>
       <url>http://bugs.mysql.com/bug.php?id=3284</url>
       <bid>9976</bid>
-      <cvename>CAN-2004-0381</cvename>
+      <cvename>CVE-2004-0381</cvename>
     </references>
     <dates>
       <discovery>2004-03-25</discovery>
@@ -19092,7 +19092,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0397</cvename>
+      <cvename>CVE-2004-0397</cvename>
       <url>http://security.e-matters.de/advisories/082004.html</url>
     </references>
     <dates>
@@ -19126,7 +19126,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0396</cvename>
+      <cvename>CVE-2004-0396</cvename>
       <freebsdsa>SA-04:10.cvs</freebsdsa>
     </references>
     <dates>
@@ -19155,7 +19155,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0113</cvename>
+      <cvename>CVE-2004-0113</cvename>
       <url>http://www.apacheweek.com/features/security-20</url>
       <url>http://cvs.apache.org/viewcvs.cgi/httpd-2.0/modules/ssl/ssl_engine_io.c?r1=1.100.2.11&amp;r2=1.100.2.12</url>
       <mlist>http://marc.theaimsgroup.com/?l=apache-cvs&amp;m=107869699329638</mlist>
@@ -19198,7 +19198,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0411</cvename>
+      <cvename>CVE-2004-0411</cvename>
       <url>http://www.idefense.com/application/poi/display?id=104&amp;type=vulnerabilities</url>
       <url>http://www.kde.org/info/security/advisory-20040517-1.txt</url>
       <url>http://freebsd.kde.org/index.php#n20040517</url>
@@ -19232,8 +19232,8 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2003-1022</cvename>
-      <cvename>CAN-2004-0011</cvename>
+      <cvename>CVE-2003-1022</cvename>
+      <cvename>CVE-2004-0011</cvename>
       <url>http://www.debian.org/security/2004/dsa-416</url>
     </references>
     <dates>
@@ -19260,7 +19260,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0432</cvename>
+      <cvename>CVE-2004-0432</cvename>
       <url>http://bugs.proftpd.org/show_bug.cgi?id=2267</url>
     </references>
     <dates>
@@ -19318,7 +19318,7 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <url>http://www.guninski.com/exim1.html</url>
-      <cvename>CAN-2004-0400</cvename>
+      <cvename>CVE-2004-0400</cvename>
     </references>
     <dates>
       <discovery>2004-05-06</discovery>
@@ -19384,7 +19384,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0434</cvename>
+      <cvename>CVE-2004-0434</cvename>
       <freebsdsa>SA-04:09.kadmind</freebsdsa>
     </references>
     <dates>
@@ -19427,8 +19427,8 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0180</cvename>
-      <cvename>CAN-2004-0405</cvename>
+      <cvename>CVE-2004-0180</cvename>
+      <cvename>CVE-2004-0405</cvename>
       <url>http://ccvs.cvshome.org/servlets/NewsItemView?newsID=102</url>
       <freebsdsa>SA-04:07.cvs</freebsdsa>
     </references>
@@ -19473,7 +19473,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0099</cvename>
+      <cvename>CVE-2004-0099</cvename>
       <freebsdsa>SA-04:01.mksnap_ffs</freebsdsa>
     </references>
     <dates>
@@ -19510,7 +19510,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0114</cvename>
+      <cvename>CVE-2004-0114</cvename>
       <freebsdsa>SA-04:02.shmat</freebsdsa>
       <url>http://www.pine.nl/press/pine-cert-20040201.txt</url>
     </references>
@@ -19545,7 +19545,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0126</cvename>
+      <cvename>CVE-2004-0126</cvename>
       <freebsdsa>SA-04:03.jail</freebsdsa>
     </references>
     <dates>
@@ -19580,7 +19580,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0171</cvename>
+      <cvename>CVE-2004-0171</cvename>
       <freebsdsa>SA-04:04.tcp</freebsdsa>
       <url>http://www.idefense.com/application/poi/display?id=78&amp;type=vulnerabilities</url>
     </references>
@@ -19615,7 +19615,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0370</cvename>
+      <cvename>CVE-2004-0370</cvename>
       <freebsdsa>SA-04:06.ipv6</freebsdsa>
     </references>
     <dates>
@@ -19648,7 +19648,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0079</cvename>
+      <cvename>CVE-2004-0079</cvename>
       <url>http://www.openssl.org/news/secadv_20040317.txt</url>
       <freebsdsa>SA-04:05.openssl</freebsdsa>
       <certvu>288574</certvu>
@@ -19694,7 +19694,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2003-0914</cvename>
+      <cvename>CVE-2003-0914</cvename>
       <freebsdsa>SA-03:19.bind</freebsdsa>
       <certvu>734644</certvu>
     </references>
@@ -19729,7 +19729,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0371</cvename>
+      <cvename>CVE-2004-0371</cvename>
       <freebsdsa>SA-04:08.heimdal</freebsdsa>
       <url>http://www.pdc.kth.se/heimdal/advisory/2004-04-01/</url>
     </references>
@@ -19760,8 +19760,8 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0234</cvename>
-      <cvename>CAN-2004-0235</cvename>
+      <cvename>CVE-2004-0234</cvename>
+      <cvename>CVE-2004-0235</cvename>
     </references>
     <dates>
       <discovery>2004-04-29</discovery>
@@ -19789,7 +19789,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0409</cvename>
+      <cvename>CVE-2004-0409</cvename>
       <url>http://xchat.org/files/source/2.0/patches/xc208-fixsocks5.diff</url>
       <mlist msgid="20040405171305.04f19c44.zed@xchat.org">http://marc.theaimsgroup.com/?l=xchat-announce&amp;m=108114935507357</mlist>
     </references>
@@ -19816,7 +19816,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0426</cvename>
+      <cvename>CVE-2004-0426</cvename>
       <url>http://rsync.samba.org/#security_apr04</url>
     </references>
     <dates>
@@ -19933,7 +19933,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0230</cvename>
+      <cvename>CVE-2004-0230</cvename>
       <url>http://www.uniras.gov.uk/vuls/2004/236929/index.htm</url>
     </references>
     <dates>
@@ -19960,7 +19960,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0408</cvename>
+      <cvename>CVE-2004-0408</cvename>
       <url>http://cvsweb.freebsd.org/ports/security/ident2/files/patch-common.c</url>
     </references>
     <dates>
@@ -19985,7 +19985,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2003-0988</cvename>
+      <cvename>CVE-2003-0988</cvename>
       <url>http://www.kde.org/info/security/advisory-20040114-1.txt</url>
     </references>
     <dates>
@@ -20014,7 +20014,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0403</cvename>
+      <cvename>CVE-2004-0403</cvename>
       <url>http://www.kame.net/dev/cvsweb2.cgi/kame/kame/kame/racoon/isakmp.c.diff?r1=1.180&amp;r2=1.181</url>
     </references>
     <dates>
@@ -20039,7 +20039,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0392</cvename>
+      <cvename>CVE-2004-0392</cvename>
       <url>http://orange.kame.net/dev/query-pr.cgi?pr=555</url>
     </references>
     <dates>
@@ -20081,8 +20081,8 @@ http_access deny Gopher</pre>
     <references>
       <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108067265931525</mlist>
       <url>http://www.rapid7.com/advisories/R7-0017.html</url>
-      <cvename>CAN-2004-0183</cvename>
-      <cvename>CAN-2004-0184</cvename>
+      <cvename>CVE-2004-0183</cvename>
+      <cvename>CVE-2004-0184</cvename>
     </references>
     <dates>
       <discovery>2004-03-12</discovery>
@@ -20110,7 +20110,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2003-1023</cvename>
+      <cvename>CVE-2003-1023</cvename>
       <mlist msgid="E1A0LbX-000NPk-00.alienhard-mail-ru@f9.mail.ru">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=106399528518704</mlist>
       <bid>8658</bid>
     </references>
@@ -20141,7 +20141,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0155</cvename>
+      <cvename>CVE-2004-0155</cvename>
       <url>http://www.kame.net/dev/cvsweb2.cgi/kame/kame/kame/racoon/crypto_openssl.c?rev=1.84&amp;content-type=text/x-cvsweb-markup</url>
     </references>
     <dates>
@@ -20198,10 +20198,10 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <url>http://security.e-matters.de/advisories/012004.txt</url>
-      <cvename>CAN-2004-0005</cvename>
-      <cvename>CAN-2004-0006</cvename>
-      <cvename>CAN-2004-0007</cvename>
-      <cvename>CAN-2004-0008</cvename>
+      <cvename>CVE-2004-0005</cvename>
+      <cvename>CVE-2004-0006</cvename>
+      <cvename>CVE-2004-0007</cvename>
+      <cvename>CVE-2004-0008</cvename>
     </references>
     <dates>
       <discovery>2004-01-26</discovery>
@@ -20228,7 +20228,7 @@ http_access deny Gopher</pre>
     <references>
       <url>http://www.time-travellers.org/oftpd/oftpd-dos.html</url>
       <bid>9980</bid>
-      <cvename>CAN-2004-0376</cvename>
+      <cvename>CVE-2004-0376</cvename>
     </references>
     <dates>
       <discovery>2004-03-04</discovery>
@@ -20258,7 +20258,7 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <url>http://www.squid-cache.org/Advisories/SQUID-2004_1.txt</url>
-      <cvename>CAN-2004-0189</cvename>
+      <cvename>CVE-2004-0189</cvename>
     </references>
     <dates>
       <discovery>2004-02-29</discovery>
@@ -20287,7 +20287,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2003-0858</cvename>
+      <cvename>CVE-2003-0858</cvename>
       <url>http://rhn.redhat.com/errata/RHSA-2003-305.html</url>
       <url>http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=107140</url>
       <mlist>http://lists.quagga.net/pipermail/quagga-users/2003-November/000906.html</mlist>
@@ -20342,7 +20342,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2003-0510</cvename>
+      <cvename>CVE-2003-0510</cvename>
       <url>http://ezbounce.dc-team.com/</url>
       <bid>8071</bid>
     </references>
@@ -20374,7 +20374,7 @@ http_access deny Gopher</pre>
       <mlist msgid="20040113213940.GA1727@hzeroseven.org">http://www.securityfocus.com/archive/1/349756</mlist>
       <bid>9416</bid>
       <bid>9417</bid>
-      <cvename>CAN-2004-0164</cvename>
+      <cvename>CVE-2004-0164</cvename>
     </references>
     <dates>
       <discovery>2004-01-13</discovery>
@@ -20411,7 +20411,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0148</cvename>
+      <cvename>CVE-2004-0148</cvename>
       <bid>9832</bid>
     </references>
     <dates>
@@ -20446,8 +20446,8 @@ http_access deny Gopher</pre>
     <references>
       <mlist>http://lists.netsys.com/pipermail/full-disclosure/2004-March/018290.html</mlist>
       <bid>9772</bid>
-      <cvename>CAN-2004-0353</cvename>
-      <cvename>CAN-2004-0354</cvename>
+      <cvename>CVE-2004-0353</cvename>
+      <cvename>CVE-2004-0354</cvename>
     </references>
     <dates>
       <discovery>2004-03-04</discovery>
@@ -20478,9 +20478,9 @@ http_access deny Gopher</pre>
     <references>
       <url>http://www.idefense.com/application/poi/display?id=72</url>
       <url>http://www.idefense.com/application/poi/display?id=73</url>
-      <cvename>CAN-2004-0083</cvename>
-      <cvename>CAN-2004-0084</cvename>
-      <cvename>CAN-2004-0106</cvename>
+      <cvename>CVE-2004-0083</cvename>
+      <cvename>CVE-2004-0084</cvename>
+      <cvename>CVE-2004-0106</cvename>
       <bid>9636</bid>
       <bid>9652</bid>
       <bid>9655</bid>
@@ -20527,7 +20527,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0149</cvename>
+      <cvename>CVE-2004-0149</cvename>
       <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=174924</url>
       <bid>9764</bid>
     </references>
@@ -20558,8 +20558,8 @@ misc.c:
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0104</cvename>
-      <cvename>CAN-2004-0105</cvename>
+      <cvename>CVE-2004-0104</cvename>
+      <cvename>CVE-2004-0105</cvename>
       <bid>9692</bid>
     </references>
     <dates>
@@ -20592,8 +20592,8 @@ misc.c:
     <references>
       <mlist>http://lists.netsys.com/pipermail/full-disclosure/2004-March/019325.html</mlist>
       <url>http://www.debian.org/security/2004/dsa-468</url>
-      <cvename>CAN-2004-0152</cvename>
-      <cvename>CAN-2004-0153</cvename>
+      <cvename>CVE-2004-0152</cvename>
+      <cvename>CVE-2004-0153</cvename>
     </references>
     <dates>
       <discovery>2004-03-24</discovery>
@@ -20687,7 +20687,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <cvename>CAN-2003-0993</cvename>
+      <cvename>CVE-2003-0993</cvename>
       <url>http://cvs.apache.org/viewcvs.cgi/apache-1.3/src/modules/standard/mod_access.c?r1=1.46&amp;r2=1.47</url>
       <url>http://www.apacheweek.com/features/security-13</url>
       <url>http://nagoya.apache.org/bugzilla/show_bug.cgi?id=23850</url>
@@ -20717,7 +20717,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <cvename>CAN-2003-0973</cvename>
+      <cvename>CVE-2003-0973</cvename>
       <bid>9129</bid>
       <url>http://www.modpython.org/pipermail/mod_python/2003-November/014532.html</url>
       <url>http://www.modpython.org/pipermail/mod_python/2004-January/014879.html</url>
@@ -20747,8 +20747,8 @@ misc.c:
       </body>
     </description>
     <references>
-      <cvename>CAN-2003-0577</cvename>
-      <cvename>CAN-2003-0865</cvename>
+      <cvename>CVE-2003-0577</cvename>
+      <cvename>CVE-2003-0865</cvename>
       <bid>6629</bid>
       <bid>8680</bid>
     </references>
@@ -20778,7 +20778,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <cvename>CAN-2003-0792</cvename>
+      <cvename>CVE-2003-0792</cvename>
       <bid>8843</bid>
       <url>http://xforce.iss.net/xforce/xfdb/13450</url>
       <url>http://www.openbsd.org/cgi-bin/cvsweb/ports/mail/fetchmail/patches/Attic/patch-rfc822_c?rev=1.1</url>
@@ -20804,7 +20804,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <cvename>CAN-2003-0991</cvename>
+      <cvename>CVE-2003-0991</cvename>
       <url>http://umn.dl.sourceforge.net/sourceforge/mailman/mailman-2.0.13-2.0.14-diff.txt</url>
     </references>
     <dates>
@@ -20831,7 +20831,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <cvename>CAN-2003-0965</cvename>
+      <cvename>CVE-2003-0965</cvename>
       <url>http://mail.python.org/pipermail/mailman-announce/2003-December/000066.html</url>
       <url>http://xforce.iss.net/xforce/xfdb/14121</url>
     </references>
@@ -20857,7 +20857,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <cvename>CAN-2003-0992</cvename>
+      <cvename>CVE-2003-0992</cvename>
       <url>http://mail.python.org/pipermail/mailman-announce/2003-September/000061.html</url>
     </references>
     <dates>
@@ -20882,7 +20882,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <cvename>CAN-2003-0038</cvename>
+      <cvename>CVE-2003-0038</cvename>
       <url>http://mail.python.org/pipermail/mailman-announce/2003-February/000056.html</url>
     </references>
     <dates>
@@ -20941,7 +20941,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0158</cvename>
+      <cvename>CVE-2004-0158</cvename>
       <url>http://www.debian.org/security/2004/dsa-445</url>
       <mlist>http://www.securityfocus.com/archive/1/354760</mlist>
     </references>
@@ -20990,7 +20990,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0169</cvename>
+      <cvename>CVE-2004-0169</cvename>
       <url>http://www.idefense.com/application/poi/display?id=75</url>
     </references>
     <dates>
@@ -21018,7 +21018,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0110</cvename>
+      <cvename>CVE-2004-0110</cvename>
       <url>http://www.xmlsoft.org/news.html</url>
       <url>http://mail.gnome.org/archives/xml/2004-February/msg00070.html</url>
     </references>
@@ -21044,7 +21044,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0129</cvename>
+      <cvename>CVE-2004-0129</cvename>
       <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107582619125932&amp;w=2</mlist>
       <url>http://cvs.sourceforge.net/viewcvs.py/phpmyadmin/phpMyAdmin/export.php#rev2.3.2.1</url>
     </references>
@@ -21171,11 +21171,11 @@ misc.c:
       </body>
     </description>
     <references>
-      <cvename>CAN-2002-0177</cvename>
-      <cvename>CAN-2001-1230</cvename>
-      <cvename>CAN-2001-1229</cvename>
-      <cvename>CAN-2001-1083</cvename>
-      <cvename>CAN-2001-0784</cvename>
+      <cvename>CVE-2002-0177</cvename>
+      <cvename>CVE-2001-1230</cvename>
+      <cvename>CVE-2001-1229</cvename>
+      <cvename>CVE-2001-1083</cvename>
+      <cvename>CVE-2001-0784</cvename>
       <bid>4415</bid>
       <bid>2933</bid>
     </references>
@@ -21329,7 +21329,7 @@ misc.c:
     </description>
     <references>
       <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=103668430620531&amp;w=2</mlist>
-      <cvename>CAN-2002-1320</cvename>
+      <cvename>CVE-2002-1320</cvename>
     </references>
     <dates>
       <discovery>2002-10-23</discovery>
@@ -21357,8 +21357,8 @@ misc.c:
       </body>
     </description>
     <references>
-      <cvename>CAN-2003-0720</cvename>
-      <cvename>CAN-2003-0721</cvename>
+      <cvename>CVE-2003-0720</cvename>
+      <cvename>CVE-2003-0721</cvename>
       <url>http://www.idefense.com/application/poi/display?id=5</url>
     </references>
     <dates>
@@ -21384,7 +21384,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <cvename>CAN-2003-0962</cvename>
+      <cvename>CVE-2003-0962</cvename>
       <mlist>http://lists.samba.org/archive/rsync-announce/2003/000011.html</mlist>
       <url>http://rsync.samba.org/#security</url>
     </references>
@@ -21416,7 +21416,7 @@ misc.c:
     </description>
     <references>
       <url>http://www.samba.org/samba/whatsnew/samba-3.0.2.html</url>
-      <cvename>CAN-2004-0082</cvename>
+      <cvename>CVE-2004-0082</cvename>
     </references>
     <dates>
       <discovery>2004-02-09</discovery>
@@ -21441,7 +21441,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0078</cvename>
+      <cvename>CVE-2004-0078</cvename>
       <url>http://www.mutt.org/news.html</url>
     </references>
     <dates>
@@ -21504,9 +21504,9 @@ misc.c:
       </body>
     </description>
     <references>
-      <cvename>CAN-2003-0989</cvename>
-      <cvename>CAN-2003-1029</cvename>
-      <cvename>CAN-2004-0057</cvename>
+      <cvename>CVE-2003-0989</cvename>
+      <cvename>CVE-2003-1029</cvename>
+      <cvename>CVE-2004-0057</cvename>
       <mlist>http://www.tcpdump.org/lists/workers/2003/12/msg00083.html</mlist>
       <mlist>http://marc.theaimsgroup.com/?l=tcpdump-workers&amp;m=107325073018070&amp;w=2</mlist>
     </references>
@@ -21564,7 +21564,7 @@ misc.c:
     </description>
     <references>
       <url>http://xforce.iss.net/xforce/alerts/id/154</url>
-      <cvename>CAN-2003-0831</cvename>
+      <cvename>CVE-2003-0831</cvename>
     </references>
     <dates>
       <discovery>2003-09-23</discovery>
@@ -21611,7 +21611,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <cvename>CAN-2003-0971</cvename>
+      <cvename>CVE-2003-0971</cvename>
       <mlist>http://lists.gnupg.org/pipermail/gnupg-devel/2003-November/020570.html</mlist>
     </references>
     <dates>
@@ -21659,7 +21659,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <cvename>CAN-2003-0963</cvename>
+      <cvename>CVE-2003-0963</cvename>
       <url>http://lftp.yar.ru/news.html#2.6.10</url>
     </references>
     <dates>
@@ -21734,7 +21734,7 @@ misc.c:
     </description>
     <references>
       <url>http://www.skynet.ie/~airlied/pam_smb/</url>
-      <cvename>CAN-2003-0686</cvename>
+      <cvename>CVE-2003-0686</cvename>
     </references>
     <dates>
       <discovery>2003-10-25</discovery>
@@ -21761,8 +21761,8 @@ misc.c:
     </description>
     <references>
       <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=104162752401212&amp;w=2</mlist>
-      <cvename>CAN-2003-0031</cvename>
-      <cvename>CAN-2003-0032</cvename>
+      <cvename>CVE-2003-0031</cvename>
+      <cvename>CVE-2003-0032</cvename>
     </references>
     <dates>
       <discovery>2003-10-25</discovery>
@@ -21819,7 +21819,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-1315</cvename>
+      <cvename>CVE-2004-1315</cvename>
       <freebsdpr>ports/74106</freebsdpr>
       <uscertta>TA04-356A</uscertta>
       <certvu>497400</certvu>
@@ -21883,7 +21883,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1519</cvename>
+      <cvename>CVE-2005-1519</cvename>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE9-dns_reply</url>
       <url>http://secunia.com/advisories/15294</url>
     </references>
@@ -21948,7 +21948,7 @@ misc.c:
     </description>
     <references>
       <bid>14977</bid>
-      <cvename>CAN-2005-2917</cvename>
+      <cvename>CVE-2005-2917</cvename>
       <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1391</url>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE10-NTLM-scheme_assert</url>
       <url>http://secunia.com/advisories/16992/</url>
@@ -21984,11 +21984,11 @@ misc.c:
       <bid>14928</bid>
       <bid>14929</bid>
       <bid>14930</bid>
-      <cvename>CAN-2005-3046</cvename>
-      <cvename>CAN-2005-3047</cvename>
-      <cvename>CAN-2005-3048</cvename>
-      <cvename>CAN-2005-3049</cvename>
-      <cvename>CAN-2005-3050</cvename>
+      <cvename>CVE-2005-3046</cvename>
+      <cvename>CVE-2005-3047</cvename>
+      <cvename>CVE-2005-3048</cvename>
+      <cvename>CVE-2005-3049</cvename>
+      <cvename>CVE-2005-3050</cvename>
       <url>http://www.phpmyfaq.de/advisory_2005-09-23.php</url>
     </references>
     <dates>
