@@ -1,0 +1,6 @@
+etc/rc.d/fuse.sh
+modules/fuse.ko
+sbin/mount_fusefs
+sbin/mount_fusefs_safe
+@unexec kldxref %D/modules
+@unexec rmdir %D/modules 2>/dev/null || true
