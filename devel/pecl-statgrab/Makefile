@@ -26,6 +26,8 @@ USE_PHPEXT=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -ldevstat ${EXTRA_LIBS}"
 
+CONFIGURE_ARGS=	--with-statgrab=${LOCALBASE}
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
