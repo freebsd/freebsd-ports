@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	siege
-PORTVERSION=	2.63
+PORTVERSION=	2.64
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://sid.joedog.org/pub/siege/
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	A http regression testing and benchmarking utility
 
 GNU_CONFIGURE=	yes
