@@ -36,8 +36,8 @@ PIXMAPPATH?=	${PREFIX}/share/WindowMaker/Pixmaps
 LANGUAGE?=
 .if (${LANGUAGE} == "Japanese")
 CATEGORY_LIST=	graphics windowmaker tkstep80 japanese
-RUN_DEP_LIST=	${LOCALBASE}/lib/Img1.2/libimg12.so.1:${PORTSDIR}/japanese/libimg \
-		${LOCALBASE}/lib/tkstep8.0jp/tkstep.tcl:${PORTSDIR}/japanese/tkstep80
+RUN_DEP_LIST=	${LOCALBASE}/lib/tkstep8.0jp/tkstep.tcl:${PORTSDIR}/japanese/tkstep80
+IGNORE=		unsupported: ja-libimg no longer available
 .else
 CATEGORY_LIST=	graphics windowmaker tkstep80
 LIB_DEP_LIST=	img.1:${PORTSDIR}/graphics/libimg
