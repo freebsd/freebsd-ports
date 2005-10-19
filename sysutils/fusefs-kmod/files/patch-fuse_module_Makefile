@@ -1,0 +1,18 @@
+--- fuse_module/Makefile.orig	Sun Oct 16 09:01:26 2005
++++ fuse_module/Makefile	Tue Oct 18 11:58:20 2005
+@@ -35,12 +35,11 @@
+ 
+ fuse.ko: fuse_kernel.h vnode_if.h vnode_if_typedef.h vnode_if_newproto.h
+ 
+-fuse_kernel.h: fuse_kernel.h.orig
+-	cp fuse_kernel.h.orig fuse_kernel.h
+-	patch fuse_kernel.h < kernel-header.diff
++fuse_kernel.h:
++	cp ${LOCALBASE}/include/fuse/fuse_kernel.h fuse_kernel.h
+ 
+ fuse_opnames.c:
+-	awk -f ../tools/genopnames.awk fuse_kernel.h.orig > fuse_opnames.c
++	awk -f ../tools/genopnames.awk fuse_kernel.h > fuse_opnames.c
+ 
+ vnode_if.h:
+ 	awk -f /sys/tools/vnode_if.awk /sys/kern/vnode_if.src -h
