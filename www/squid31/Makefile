@@ -70,7 +70,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -83,7 +83,17 @@ DISTNAME=	squid-2.5.STABLE11
 DIST_SUBDIR=	squid2.5
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
-PATCHFILES=	squid-2.5.STABLE11-delaypools_truncated.patch
+PATCHFILES=	squid-2.5.STABLE11-delaypools_truncated.patch \
+		squid-2.5.STABLE11-tcp_outgoing_xxx.patch \
+		squid-2.5.STABLE11-ldap_auth.patch \
+		squid-2.5.STABLE11.accel_single_host_pconn.patch \
+		squid-2.5.STABLE11-CACHE_HTTP_PORT.patch \
+		squid-2.5.STABLE11-CNAME.patch \
+		squid-2.5.STABLE11-httpd_accel-internal.patch \
+		squid-2.5.STABLE11-IMS-HEAD.patch \
+		squid-2.5.STABLE11-redirect-CONNECT.patch \
+		squid-2.5.STABLE11-setcookie.patch \
+		squid-2.5.STABLE11-rfc1738_do_escape.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
