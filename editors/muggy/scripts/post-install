@@ -2,17 +2,6 @@
 
 installdir=${PREFIX}/JDE/Muggy; export installdir
 
-case ${LANGUAGE} in
-    Japanese)
-	for f in Muggy.app; do
-	    ${REINPLACE_CMD} -i "" -E -e \
-		"s/^(exec[[:space:]]+)wishstep[[:space:]]*([[:space:]]+.*)\$/\1wishstep${VERSION}jp\2/" \
-		${installdir}/bin/${f}
-	done
-    ;;
-    *)
-    ;;
-esac
 for f in Muggy Muggy.app; do
     case ${f} in
 	Muggy.app|PrefMuggy.app)
