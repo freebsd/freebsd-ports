@@ -15,6 +15,8 @@ DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 MAINTAINER=	alejandro@varnet.biz
 COMMENT=	Quake II data files
 
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
