@@ -7,3 +7,4 @@ etc/lxdvdrip.conf.sample
 %%EXAMPLESDIR%%/lxdvdrip.conf.DE
 %%EXAMPLESDIR%%/lxdvdrip.conf.EN
 %%EXAMPLESDIR%%/lxdvdrip.conf.FR
+@dirrm %%EXAMPLESDIR%%
