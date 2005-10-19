@@ -2607,6 +2607,7 @@ funnelweb	ports/devel/funnelweb
 fuse		ports/emulators/fuse
 fusefs-kmod	ports/sysutils/fusefs-kmod
 fusefs-libs	ports/sysutils/fusefs-libs
+fusefs-sshfs	ports/sysutils/fusefs-sshfs
 fusenshi	ports/deskutils/fusenshi
 fuzz		ports/security/fuzz
 fv		ports/graphics/fv
