@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	cmfphotoalbum
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	www zope
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	collective
 PKGNAMEPREFIX=	zope-
-DISTNAME=	CMFPhotoAlbum-0.4final
+DISTNAME=	CMFPhotoAlbum-${PORTVERSION}.0
 
 MAINTAINER=	kaeru@inigo-tech.com
 COMMENT=	CMFPhotoAlbum product for Zope/CMF
 
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFPhoto/Photo.py:${PORTSDIR}/www/zope-cmfphoto \
 				${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/BTreeFolder2/BTreeFolder2.py:${PORTSDIR}/www/zope-btreefolder2
+
+NO_PACKAGE=	Double python dependency
 
 USE_PYTHON=	yes
 USE_ZOPE=	yes
