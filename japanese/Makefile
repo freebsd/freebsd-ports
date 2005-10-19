@@ -23,7 +23,6 @@
     SUBDIR += aterm
     SUBDIR += balsa
     SUBDIR += bible_names-fpw
-    SUBDIR += binder
     SUBDIR += bookview
     SUBDIR += bugzilla
     SUBDIR += cal.rb
@@ -37,7 +36,6 @@
     SUBDIR += dbskkd-cdb
     SUBDIR += ddskk
     SUBDIR += ddskk-emacs20
-    SUBDIR += deepforest
     SUBDIR += devil-fpw
     SUBDIR += diclookup-emacs20
     SUBDIR += diclookup-mule
@@ -122,7 +120,6 @@
     SUBDIR += jargon-fpw
     SUBDIR += jcode.pl
     SUBDIR += jed
-    SUBDIR += jgv
     SUBDIR += jhd
     SUBDIR += jisx0213-fonts
     SUBDIR += jls
@@ -231,7 +228,6 @@
     SUBDIR += mplusfonts
     SUBDIR += msdosfs
     SUBDIR += mtools
-    SUBDIR += muggy
     SUBDIR += mule-canna
     SUBDIR += mule-canna+freewnn
     SUBDIR += mule-canna+freewnn+sj3
@@ -352,7 +348,6 @@
     SUBDIR += scim-tables
     SUBDIR += scim-uim
     SUBDIR += sed
-    SUBDIR += seizedesktop
     SUBDIR += shinonome
     SUBDIR += sj3
     SUBDIR += skk
