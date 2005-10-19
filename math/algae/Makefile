@@ -6,20 +6,28 @@
 #
 
 PORTNAME=	algae
-PORTVERSION=	4.3.0
+PORTVERSION=	4.3.6
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	A programming language for numerical analysis
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 ALGAE_VERSION=	${PORTVERSION}
 PLIST_SUB=	ALGAE_VERSION=${ALGAE_VERSION}
 
-MAN1=		algae.1
+MAN1=	algae.1
+INFO=	algae
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,g' \
+		${WRKSRC}/src/mem.h \
+		${WRKSRC}/superlu/sp_coletree.c \
+		${WRKSRC}/superlu/util.h
 
 .include <bsd.port.pre.mk>
 
