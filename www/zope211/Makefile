@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	zope
-PORTVERSION=	2.8.2
+PORTVERSION=	2.8.3
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-final
+EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	zope
 
 MAINTAINER=	dsh@vlink.ru
