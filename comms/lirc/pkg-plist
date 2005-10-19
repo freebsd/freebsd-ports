@@ -2,15 +2,17 @@ bin/ircat
 bin/irexec
 bin/irpty
 bin/irrecord
+bin/irsend
 bin/irw
 bin/irxevent
 bin/mode2
-bin/rc
+bin/smode2
 bin/xmode2
-include/lirc/lirc_client.h
-@dirrm include/lirc
-lib/liblirc_client.a
-lib/liblirc_client.so
-lib/liblirc_client.so.0
 sbin/lircd
 sbin/lircmd
+lib/liblirc_client.a
+lib/liblirc_client.la
+lib/liblirc_client.so
+lib/liblirc_client.so.0
+include/lirc/lirc_client.h
+@dirrm include/lirc
