@@ -679,7 +679,6 @@ lib/libCoin.a
 lib/libCoin.so
 lib/libCoin.so.44
 %%DATADIR%%/conf/coin-default.cfg
-%%DATADIR%%/conf/simage-default.cfg
 %%DATADIR%%/draggerDefaults/centerballDragger.iv
 %%DATADIR%%/draggerDefaults/directionalLightDragger.iv
 %%DATADIR%%/draggerDefaults/dragPointDragger.iv
@@ -703,8 +702,6 @@ lib/libCoin.so.44
 %%DATADIR%%/draggerDefaults/translate2Dragger.iv
 share/aclocal/coin.m4
 @dirrm %%DATADIR%%/draggerDefaults
-@unexec rmdir %D/%%DATADIR%%/conf 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
 @dirrm include/Inventor/threads
 @dirrm include/Inventor/system
 @dirrm include/Inventor/sensors
