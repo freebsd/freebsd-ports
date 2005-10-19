@@ -2,17 +2,6 @@
 
 installdir=${PREFIX}/JDE/Binder; export installdir
 
-case ${LANGUAGE} in
-    Japanese)
-	for f in bin/Binder.app bin/Processes.app misc/Mounter/Mounter.app; do
-	    ${REINPLACE_CMD} -i "" -E -e \
-		"s/^(exec[[:space:]]+)wishstep[[:space:]]*([[:space:]]+.*)\$/\1wishstep${VERSION}jp\2/" \
-		${installdir}/${f}
-	done
-    ;;
-    *)
-    ;;
-esac
 for f in Binder Binder.app Processes.app Mounter.app shortcut; do
     case ${f} in
 	Binder.app|Processes.app)
