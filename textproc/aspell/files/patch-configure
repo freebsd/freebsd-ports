@@ -1,6 +1,6 @@
---- configure.orig	Mon Nov  8 02:12:49 2004
-+++ configure	Mon Nov  8 13:47:08 2004
-@@ -2902,7 +2902,7 @@
+--- configure.orig	Wed Oct 19 10:36:26 2005
++++ configure	Wed Oct 19 18:13:12 2005
+@@ -2916,7 +2916,7 @@
  fi
  
  
@@ -9,7 +9,7 @@
  then
    CXXFLAGS="$CXXFLAGS -fno-exceptions"
  fi
-@@ -9830,13 +9830,6 @@
+@@ -9975,13 +9975,6 @@
  	;;
      esac
  
@@ -23,7 +23,7 @@
      # Update the list of available tags.
      if test -n "$tagname"; then
        echo appending configuration tag \"$tagname\" to $ofile
-@@ -19388,6 +19381,10 @@
+@@ -19872,6 +19865,10 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -34,26 +34,7 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -21283,16 +21280,16 @@
- /* end confdefs.h.  */
- #include <libintl.h>
- extern int _nl_msg_cat_cntr;
-+extern int *libintl_nl_domain_bindings;
- extern
- #ifdef __cplusplus
- "C"
- #endif
--const char *_nl_expand_alias ();
- int
- main ()
- {
- bindtextdomain ("", "");
--return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_expand_alias (0)
-+return (int) gettext ("") + _nl_msg_cat_cntr + *libintl_nl_domain_bindings
-   ;
-   return 0;
- }
-@@ -22406,7 +22403,7 @@
+@@ -23160,7 +23157,7 @@
    CURSES_LIB=-lncurses
  
  cat >>confdefs.h <<\_ACEOF
@@ -62,7 +43,7 @@
  _ACEOF
  
  else
-@@ -22589,7 +22586,7 @@
+@@ -23341,7 +23338,7 @@
  
  
  cat >>confdefs.h <<\_ACEOF
