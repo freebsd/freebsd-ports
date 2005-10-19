@@ -171,6 +171,7 @@
     SUBDIR += ftrace
     SUBDIR += fusefs-kmod
     SUBDIR += fusefs-libs
+    SUBDIR += fusefs-sshfs
     SUBDIR += fvcool
     SUBDIR += gag
     SUBDIR += ganglia-monitor-core
