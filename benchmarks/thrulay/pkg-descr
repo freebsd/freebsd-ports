@@ -1,0 +1,16 @@
+The program thrulay is used to measure the capacity, delay, and
+other performance metrics of a network by sending a bulk TCP or UDP
+stream over it.
+
+Special features of thrulay include:
+* For TCP, ability to measure round-trip delay along with throughput
+* For UDP, ability to measure
+  - one-way delay, with quantiles
+  - packet loss
+  - packet duplication
+  - reordering
+* For UDP, the ability to send precisely positioned true Poisson streams
+  (microsecond errors in sending times)
+* Human- and machine-readable output (ready to be fed to gnuplot)
+
+WWW: http://www.internet2.edu/~shalunov/thrulay/

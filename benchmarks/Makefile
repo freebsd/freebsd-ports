@@ -43,6 +43,7 @@
     SUBDIR += siege
     SUBDIR += stream
     SUBDIR += tcpblast
+    SUBDIR += thrulay
     SUBDIR += tmetric
     SUBDIR += ttcp
     SUBDIR += ubench
