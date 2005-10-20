@@ -20,6 +20,10 @@ PLIST_FILES=	bin/omake
 
 PORTDOCS=	ReadMe ChangeLog Features KnownIssues
 
+MASTER_SITE_PATCHOMATIC?=	http://people.freebsd.org/~clement/portmk/
+PATCHOMATIC_FILE?=		patch-o-matic-latest.tar.bz2
+WRKSRC=				${WRKDIR}/patch-o-matic
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
@@ -57,5 +61,22 @@ activate:
 	@${GREP} -qs PORTMK /etc/make.conf || \
 		${CAT} ${FILESDIR}/make.conf >> /etc/make.conf && \
 		${ECHO_MSG} ">> Configured make.conf(5)."
+
+patch-o-matic:
+	@${MKDIR} ${WRKDIR}
+	@${ECHO_CMD} "==> Fetching patch-o-matic file (${MASTER_SITE_PATCHOMATIC}/${PATCHOMATIC_FILE}"
+	@(cd ${WRKDIR} ; ${RM} -f ${PATCHOMATIC_FILE} ; ${FETCH_CMD} \
+		${MASTER_SITE_PATCHOMATIC}/${PATCHOMATIC_FILE})
+	@${TAR} yxf ${WRKDIR}/${PATCHOMATIC_FILE} -C ${WRKDIR}
+	@${ECHO_CMD} "==> Applying patches..."
+	@for patch in $$(${CAT} ${WRKSRC}/AFFECTED_PORTS); do \
+		eval `${ECHO_CMD} $$patch | ${AWK} -F\: \
+			'{print "PORT="$$1"; PATCH="$$2";"}'`; \
+		[ -e ${WRKSRC}/patches/$$PATCH ] && { \
+		${ECHO_CMD} -n " Applying $$PATCH to $$PORT... " ; \
+		${PATCH} -d ${PORTSDIR} -p0 < ${WRKSRC}/patches/$$PATCH > /dev/null 2>&1 || echo -n "N" ;\
+		echo OK ;\
+		}; ${TRUE} ;\
+	done
 
 .include <bsd.port.post.mk>
