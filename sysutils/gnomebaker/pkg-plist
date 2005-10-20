@@ -36,6 +36,8 @@ share/gnome/omf/gnomebaker/gnomebaker-C.omf
 %%DATADIR%%/baker-remove-files.png
 %%DATADIR%%/gnomebaker-48.png
 %%DATADIR%%/gnomebaker.glade
+%%DATADIR%%/media/BurnFailed.wav
+%%DATADIR%%/media/BurnOk.wav
 %%DATADIR%%/splash_2.png
 share/locale/af/LC_MESSAGES/gnomebaker.mo
 share/locale/bg/LC_MESSAGES/gnomebaker.mo
@@ -71,6 +73,7 @@ share/locale/zh_CN/LC_MESSAGES/gnomebaker.mo
 @unexec /bin/rmdir %D/share/locale/en_US 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/share/locale/sv_SE/LC_MESSAGES 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/share/locale/sv_SE 2>/dev/null || /usr/bin/true
+@dirrm %%DATADIR%%/media
 @dirrm %%DATADIR%%
 @dirrm share/gnome/omf/gnomebaker
 @dirrm share/gnome/gnomebaker/doc/gnomebaker/C/figures
