@@ -17,13 +17,16 @@ MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Cleanroom build of Java Cryptography Extensions
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.1+
+JAVA_VERSION=	1.2+
 NO_BUILD=	yes
 DISTVERSION=	${PORTVERSION:S/.//}
-PLIST_SUB+=	DISTVERSION=${DISTVERSION}
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/jars/*.jar ${JAVAJARDIR}
+	cd ${WRKSRC}/jars && \
+	  for jar in *.jar; do \
+	    ${INSTALL_DATA} $${jar} \
+	      ${JAVAJARDIR}/`echo $${jar} | sed -e "s/-${DISTVERSION}//"`; \
+	  done
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
