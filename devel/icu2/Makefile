@@ -8,7 +8,7 @@
 PORTNAME=	icu2
 PORTVERSION=	2.8
 CATEGORIES=	devel
-MASTER_SITES=	ftp://www-126.ibm.com/pub/icu/${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.software.ibm.com/software/globalization/icu/${PORTVERSION}/
 DISTNAME=	icu-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
