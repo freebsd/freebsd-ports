@@ -1,5 +1,5 @@
 bin/taglib-config
-lib/pkgconfig/taglib.pc
+libdata/pkgconfig/taglib.pc
 include/taglib/apefooter.h
 include/taglib/apeitem.h
 include/taglib/apetag.h

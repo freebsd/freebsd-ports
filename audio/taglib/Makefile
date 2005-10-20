@@ -7,6 +7,7 @@
 
 PORTNAME=	taglib
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ktown.kde.org/~wheeler/files/src/
 
@@ -17,8 +18,14 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_INC_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+	"s#\$$(libdir)/pkgconfig#${LOCALBASE}/libdata/pkgconfig#g" \
+	${WRKSRC}/taglib/Makefile.in
 
 .include <bsd.port.mk>
