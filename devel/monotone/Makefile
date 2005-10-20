@@ -7,6 +7,7 @@
 
 PORTNAME=	monotone
 PORTVERSION=	0.23
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.venge.net/monotone/downloads/ \
 		http://norton.kettering.edu/freebsd/
@@ -33,6 +34,9 @@ MAN1=		monotone.1
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
+.else
+PLIST_FILES+=	share/locale/fr/LC_MESSAGES/monotone.mo \
+		share/locale/ja/LC_MESSAGES/monotone.mo
 .endif
 .if defined(WITH_LUA_PORT)
 LIB_DEPENDS+=	lua.5:${PORTSDIR}/lang/lua
