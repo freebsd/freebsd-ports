@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stella
-PORTVERSION=	1.4.2
+PORTVERSION=	2.0
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,23 +18,23 @@ COMMENT=	A multi-platform Atari 2600 VCS emulator
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-BUILD_WRKSRC=	${WRKSRC}/src/build
 
-USE_GNOME=	pkgconfig
+USE_GCC=	3.4+
 USE_SDL=	sdl
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-MAKEFILE=	makefile
-MAKE_ARGS=	CXX="${CXX}" LD="${CXX}" OPTIMIZATIONS="${CXXFLAGS}" \
-		SYS_INCLUDES="${CPPFLAGS}" LDFLAGS="" LDLIBS="${LDFLAGS}"
-ALL_TARGET=	linux-gl
+HAS_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-CPPFLAGS=	`${SDL_CONFIG} --cflags` `pkg-config --cflags libpng12` \
-		-I${X11BASE}/include
-LDFLAGS=	`${SDL_CONFIG} --libs` `pkg-config --libs libpng12` \
-		-L${X11BASE}/lib
+CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|sdlconfigs=.*$$|sdlconfigs=${SDL_CONFIG:T}|g' \
+		${WRKSRC}/configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/build/stella ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/stella ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/src/emucore/stella.pro ${DATADIR}
 .if !defined(NOPORTDOCS)
