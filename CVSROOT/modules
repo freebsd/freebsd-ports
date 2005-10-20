@@ -12018,6 +12018,7 @@ thoteditor	ports/editors/thoteditor
 threeDS		ports/graphics/threeDS
 throttle	ports/sysutils/throttle
 throttled	ports/net/throttled
+thrulay		ports/benchmarks/thrulay
 thttpd		ports/www/thttpd
 thudboard	ports/games/thudboard
 thumbnail_index ports/www/thumbnail_index
