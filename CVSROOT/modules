@@ -5182,6 +5182,7 @@ latex2rtf	ports/print/latex2rtf
 latex2slides	ports/print/latex2slides
 latexmk		ports/print/latexmk
 latte		ports/textproc/latte
+laudio		ports/audio/laudio
 lavaps		ports/sysutils/lavaps
 lbdb		ports/mail/lbdb
 lbpp		ports/devel/lbpp
