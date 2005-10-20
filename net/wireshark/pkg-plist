@@ -33,7 +33,6 @@ lib/ethereal/plugins/%%PORTVERSION%%/rudp.so
 lib/ethereal/plugins/%%PORTVERSION%%/stats_tree.so
 lib/ethereal/plugins/%%PORTVERSION%%/tango.so
 lib/ethereal/plugins/%%PORTVERSION%%/v5ua.so
-lib/ethereal/plugins/%%PORTVERSION%%/xml.so
 lib/libethereal.a
 lib/libethereal.so
 lib/libethereal.so.0
@@ -51,6 +50,10 @@ lib/libwiretap.so.0
 %%DATADIR%%/diameter/mobileipv4.xml
 %%DATADIR%%/diameter/nasreq.xml
 %%DATADIR%%/diameter/sunping.xml
+%%DATADIR%%/dtds/dc.dtd
+%%DATADIR%%/dtds/itunes.dtd
+%%DATADIR%%/dtds/rss.dtd
+%%DATADIR%%/dtds/smil.dtd
 %%DATADIR%%/editcap.html
 %%DATADIR%%/ethereal-filter.html
 %%DATADIR%%/ethereal.html
@@ -87,6 +90,7 @@ lib/libwiretap.so.0
 %%DATADIR%%/radius/dictionary.columbia_university
 %%DATADIR%%/radius/dictionary.compat
 %%DATADIR%%/radius/dictionary.cosine
+%%DATADIR%%/radius/dictionary.ericsson
 %%DATADIR%%/radius/dictionary.erx
 %%DATADIR%%/radius/dictionary.extreme
 %%DATADIR%%/radius/dictionary.foundry
@@ -131,6 +135,7 @@ lib/libwiretap.so.0
 @dirrm lib/ethereal/plugins
 @dirrm lib/ethereal
 @dirrm %%DATADIR%%/radius
-@dirrm %%DATADIR%%/diameter
 @dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%/dtds
+@dirrm %%DATADIR%%/diameter
 @dirrm %%DATADIR%%
