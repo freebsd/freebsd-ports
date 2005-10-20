@@ -8,7 +8,8 @@
 PORTNAME=	uae
 PORTVERSION=	0.8.25
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.freiburg.linux.de/pub/uae/sources/develop/
+MASTER_SITES=	ftp://ftp.freiburg.linux.de/pub/uae/sources/develop/ \
+		http://www.electronghost.co.uk/~bernds/
 
 MAINTAINER=	simond@irrelevant.org
 COMMENT=	Amiga emulator
