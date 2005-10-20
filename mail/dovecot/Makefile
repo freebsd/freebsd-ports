@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dovecot
-DISTVERSION=	1.0.alpha3
+DISTVERSION=	1.0.alpha4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/
 
@@ -15,7 +15,6 @@ MAINTAINER=	robin@isometry.net
 COMMENT=	Secure and compact IMAP and POP3 servers
 
 USE_ICONV=	yes
-USE_RC_SUBR=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -39,6 +38,12 @@ OPTIONS=	SASL2		"SASL2 support"		off \
 		MYSQL		"MySQL support"		off
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500038
+USE_RC_SUBR=	dovecot.sh
+.else
+USE_RCORDER=	dovecot.sh
+.endif
 
 ## SASL2 support
 #
@@ -85,9 +90,6 @@ CONFIGURE_ARGS+=	--with-mysql
 post-build:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
 		${WRKSRC}/dovecot-example.conf >${WRKDIR}/dovecot.conf.sample
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
-		${FILESDIR}/dovecot.sh >${WRKDIR}/dovecot.sh
 
 pre-install:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -109,7 +111,6 @@ do-install:
 		${WRKSRC}/src/util/dovecotpw \
 			${PREFIX}/sbin/
 	${INSTALL_DATA} ${WRKDIR}/dovecot.conf.sample ${PREFIX}/etc/
-	${INSTALL_SCRIPT} ${WRKDIR}/dovecot.sh ${PREFIX}/etc/rc.d/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
