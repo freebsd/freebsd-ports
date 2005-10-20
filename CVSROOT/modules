@@ -7781,6 +7781,7 @@ p5-Errno	ports/devel/p5-Errno
 p5-Error	ports/lang/p5-Error
 p5-Event	ports/devel/p5-Event
 p5-Exception-Class	ports/devel/p5-Exception-Class
+p5-Exception-Class-DBI	ports/databases/p5-Exception-Class-DBI
 p5-Expect	ports/lang/p5-Expect
 p5-Exporter-Lite	ports/devel/p5-Exporter-Lite
 p5-Exporter-Tidy	ports/devel/p5-Exporter-Tidy
