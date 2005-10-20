@@ -1,7 +1,7 @@
-lib/libIrrlicht.a
 lib/libIrrlicht.so
-lib/libIrrlicht.so.1
+lib/libIrrlicht.so.%%SHARED_LIB_VER%%
 include/irrlicht/EDriverTypes.h
+include/irrlicht/EGUIElementTypes.h
 include/irrlicht/IAnimatedMesh.h
 include/irrlicht/IAnimatedMeshMD2.h
 include/irrlicht/IAnimatedMeshMS3D.h
@@ -41,6 +41,7 @@ include/irrlicht/ILogger.h
 include/irrlicht/IMaterialRenderer.h
 include/irrlicht/IMesh.h
 include/irrlicht/IMeshBuffer.h
+include/irrlicht/IMeshCache.h
 include/irrlicht/IMeshLoader.h
 include/irrlicht/IMeshManipulator.h
 include/irrlicht/IMetaTriangleSelector.h
@@ -69,6 +70,7 @@ include/irrlicht/IVideoModeList.h
 include/irrlicht/IWriteFile.h
 include/irrlicht/IXMLReader.h
 include/irrlicht/IXMLWriter.h
+include/irrlicht/IrrCompileConfig.h
 include/irrlicht/IrrlichtDevice.h
 include/irrlicht/Keycodes.h
 include/irrlicht/S3DVertex.h
@@ -79,7 +81,6 @@ include/irrlicht/SIrrCreationParameters.h
 include/irrlicht/SKeyMap.h
 include/irrlicht/SLight.h
 include/irrlicht/SMaterial.h
-include/irrlicht/SMaterialHelper.h
 include/irrlicht/SMesh.h
 include/irrlicht/SMeshBuffer.h
 include/irrlicht/SMeshBufferLightMap.h
