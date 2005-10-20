@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	gxditview
+PORTVERSION=	${GXDVVERSION}${GXDVREVISION}
 CATEGORIES=	textproc
 DISTFILES=	# none
 
@@ -17,12 +18,12 @@ PLIST_FILES=	bin/gxditview lib/X11/app-defaults/GXditview
 
 .if !exists(/usr/src/contrib/groff/src)
 IGNORE=		requires /usr/src/contrib/groff/src to build
-PORTVERSION=	1.16.1
-.endif
-
+GXDVVERSION=	1.16
+GXDVREVISION=	.1
+.else
 GXDVVERSION!=	cat /usr/src/contrib/groff/VERSION
 GXDVREVISION!=	sed -e 's/^0$$//' -e 's/^[1-9].*$$/.&/' /usr/src/contrib/groff/REVISION
-PORTVERSION=	${GXDVVERSION}${GXDVREVISION}
+.endif
 
 .if exists(/usr/src/contrib/groff/src/devices/xditview) && \
     exists(/usr/src/gnu/usr.bin/groff/src/devices/xditview)
