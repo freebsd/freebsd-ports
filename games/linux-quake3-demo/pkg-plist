@@ -242,3 +242,4 @@ bin/q3demo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Manual/htmlpages
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/DocsArt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
