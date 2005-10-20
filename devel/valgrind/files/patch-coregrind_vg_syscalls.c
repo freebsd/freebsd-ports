@@ -1,6 +1,6 @@
---- coregrind/vg_syscalls.c.orig	Fri Jul 16 19:21:08 2004
-+++ coregrind/vg_syscalls.c	Wed Sep 14 22:13:44 2005
-@@ -1369,6 +1369,38 @@
+--- coregrind/vg_syscalls.c.orig	Thu Oct 20 12:27:19 2005
++++ coregrind/vg_syscalls.c	Thu Oct 20 12:28:49 2005
+@@ -1284,6 +1284,38 @@
  					 &tst->m_eflags,
  					 arg1, arg2);
  	break;
@@ -39,7 +39,7 @@
      default:
  	VG_(core_panic)("Unhandled sysarch call");
      }
-@@ -1392,6 +1424,14 @@
+@@ -1307,6 +1339,14 @@
  	break;
      case 6:			/* vm86 */
  	break;
@@ -54,3 +54,35 @@
      default:
  	VG_(core_panic)("Unhandled sysarch call");
      }
+@@ -1489,6 +1529,21 @@
+    VG_TRACK( post_mem_write, arg1, arg2 );
+ }
+ 
++#if __FreeBSD__ >= 5
++PRE(uuidgen)
++{
++   /* int uuidgen(struct uuid *store, int count); */
++   MAYBE_PRINTF("uuidgen ( %p, %d )\n", arg1, arg2);
++   SYSCALL_TRACK( pre_mem_write, tid, "uuidgen(store, count)", arg1, arg2);
++}
++
++POST(uuidgen)
++{
++   VG_TRACK( post_mem_write, arg1, arg2 );
++}
++
++#endif
++
+ #endif
+ 
+ PRE(setresgid)
+@@ -6498,6 +6553,9 @@
+    SYSBA(kldstat,		False),
+    SYSB_(kldfirstmod,		False),
+    SYSBA(__getcwd,		False),
++#if __FreeBSD__ >= 5
++   SYSBA(uuidgen,		False),
++#endif
+ };
+ #define MAX_SYS_INFO		(sizeof(sys_info)/sizeof(sys_info[0]))
+ 
