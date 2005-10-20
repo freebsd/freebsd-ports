@@ -1,24 +1,23 @@
-
-$FreeBSD$
-
---- doc/Makefile.in.orig
-+++ doc/Makefile.in
-@@ -149,12 +149,10 @@
- target_cpu = @target_cpu@
+--- doc/Makefile.in.orig	Wed Oct 19 18:33:52 2005
++++ doc/Makefile.in	Wed Oct 19 18:35:19 2005
+@@ -135,14 +135,11 @@
  target_os = @target_os@
  target_vendor = @target_vendor@
+ 
 -EXTRA_DIST = CVS.txt FAQ.txt Protocol.txt Platforms.txt \
 -	README-AUX.txt README-BeOS.txt RFC.txt sample-ngircd.conf
-+EXTRA_DIST =
+-
++EXTRA_DIST = 
  
  docdir = $(datadir)/doc/$(PACKAGE)
+ 
 -documents = $(EXTRA_DIST) ../AUTHORS ../COPYING ../ChangeLog ../INSTALL \
 -	../NEWS ../README
 +documents = $(EXTRA_DIST)
  
- all: all-am
- 
-@@ -318,8 +316,8 @@
+ subdir = doc
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -294,8 +291,8 @@
  
  install-data-hook:
  	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
