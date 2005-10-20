@@ -7,18 +7,17 @@
 #
 
 PORTNAME=	tif22pnm
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.inf.bme.hu/~pts/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts TIFF- sampled images to PNM image
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libtiff-ldir=${LOCALBASE}/lib \
@@ -26,11 +25,15 @@ CONFIGURE_ARGS=	--with-libtiff-ldir=${LOCALBASE}/lib \
 
 PLIST_FILES=	bin/png22pnm bin/tif22pnm
 
-post-patch:
-	@${REINPLACE_CMD} -e 's| -O2| ${CFLAGS}|g' ${WRKSRC}/do.sh
+TIF22PNM_SRCS=	ptspnm.c minigimp.c miniglib.c ptstiff3.c tif22pnm.c
+PNG2PNM_SRCS=	png22pnm.c
 
 do-build:
-	@(cd ${WRKSRC} ; ${LOCALBASE}/bin/bash do.sh compile)
+	cd ${WRKSRC} \
+		&& ${CC} ${CFLAGS} -DNDEBUG -I${LOCALBASE}/include \
+		${TIF22PNM_SRCS} -o tif22pnm -L${LOCALBASE}/lib -ltiff \
+		&& ${CC} ${CFLAGS} -DNDEBUG `pkg-config libpng12 --cflags` \
+		${PNG2PNM_SRCS} -o png22pnm `pkg-config libpng12 --libs`
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/png22pnm ${PREFIX}/bin
