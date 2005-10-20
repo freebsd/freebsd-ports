@@ -207,8 +207,6 @@ acpicatools	ports/devel/acpicatools
 acrobatviewer	ports/print/acrobatviewer
 acron		ports/misc/acron
 acroread	ports/print/acroread
-acroread5-commfont	ports/print/acroread5-commfont
-acroread7	ports/print/acroread7
 acroread-de	ports/german/acroread
 acroread-dk	ports/print/dk-acroread
 acroread-es	ports/print/es-acroread
@@ -220,6 +218,8 @@ acroread-pt	ports/portuguese/acroread
 acroread-sv	ports/print/sv-acroread
 acroread-zhcn	ports/chinese/acroread-zh_CN
 acroread-zhtw	ports/chinese/acroread-zh_TW
+acroread5-commfont	ports/print/acroread5-commfont
+acroread7	ports/print/acroread7
 activitymail	ports/devel/activitymail
 actx		ports/games/actx
 acx100		ports/net/acx100
@@ -740,8 +740,8 @@ birda		ports/comms/birda
 birthday	ports/misc/birthday
 bison		ports/devel/bison
 bison-devel	ports/devel/bison-devel
-bisongen	ports/devel/bisongen
 bison1875	ports/devel/bison1875
+bisongen	ports/devel/bisongen
 bitchx		ports/irc/bitchx
 bitedit		ports/editors/bitedit
 bitkeeper	ports/devel/bitkeeper
@@ -884,8 +884,8 @@ bsdtris		ports/games/bsdtris
 bsfilter	ports/mail/bsfilter
 bsflite		ports/net/bsflite
 bsh		ports/java/bsh
-bsnmpd		ports/net-mgmt/bsnmpd
 bsmtp		ports/mail/bsmtp
+bsnmpd		ports/net-mgmt/bsnmpd
 bsp		ports/games/bsp
 bsvc		ports/emulators/bsvc
 btc		ports/audio/btc
@@ -2119,9 +2119,9 @@ etunnel		ports/net/etunnel
 euchre		ports/games/euchre
 eukleides	ports/math/eukleides
 euler		ports/science/euler
+eva		ports/net/eva
 eval		ports/math/eval
 evangeline	ports/irc/evangeline
-eva		ports/net/eva
 evas		ports/graphics/evas
 eventum		ports/www/eventum
 eventwatcher	ports/sysutils/eventwatcher
@@ -6310,12 +6310,12 @@ mod_blowchunks	ports/www/mod_blowchunks
 mod_bunzip2	ports/www/mod_bunzip2
 mod_bw		ports/www/mod_bw
 mod_cband	ports/www/mod_cband
-mod_curb	ports/www/mod_curb
 mod_cfg_ldap	ports/www/mod_cfg_ldap
 mod_cgi_debug	ports/www/mod_cgi_debug
 mod_chroot	ports/www/mod_chroot
 mod_clamav	ports/www/mod_clamav
 mod_color	ports/www/mod_color
+mod_curb	ports/www/mod_curb
 mod_cvs		ports/www/mod_cvs
 mod_cvs2	ports/www/mod_cvs2
 mod_dav		ports/www/mod_dav
@@ -8685,9 +8685,9 @@ p5-Text-Autoformat	ports/textproc/p5-Text-Autoformat
 p5-Text-Balanced	ports/textproc/p5-Text-Balanced
 p5-Text-BibTeX	ports/textproc/p5-Text-BibTeX
 p5-Text-Bind	ports/textproc/p5-Text-Bind
-p5-Text-Chomp	ports/textproc/p5-Text-Chomp
 p5-Text-CSV	ports/textproc/p5-Text-CSV
 p5-Text-CSV_XS	ports/textproc/p5-Text-CSV_XS
+p5-Text-Chomp	ports/textproc/p5-Text-Chomp
 p5-Text-Diff	ports/textproc/p5-Text-Diff
 p5-Text-Diff-HTML	ports/textproc/p5-Text-Diff-HTML
 p5-Text-DoubleMetaphone	ports/textproc/p5-Text-DoubleMetaphone
@@ -8966,9 +8966,9 @@ p5-tagged	ports/audio/p5-tagged
 p5-type1inst	ports/x11-fonts/p5-type1inst
 p5-version	ports/devel/p5-version
 p5-vpopmail	ports/mail/p5-vpopmail
-p5-xmltv	ports/textproc/p5-xmltv
 p5-webservice-validator-css-w3c		ports/www/p5-webservice-validator-css-w3c
 p5-webservice-validator-html-w3c	ports/www/p5-webservice-validator-html-w3c
+p5-xmltv	ports/textproc/p5-xmltv
 p65		ports/devel/p65
 p7zip		ports/archivers/p7zip
 pa-aspell	ports/textproc/pa-aspell
@@ -9222,9 +9222,9 @@ pebrot		ports/net/pebrot
 pecl-APC	ports/www/pecl-APC
 pecl-PDO	ports/databases/pecl-PDO
 pecl-PDO_DBLIB	ports/databases/pecl-PDO_DBLIB
+pecl-PDO_MYSQL	ports/databases/pecl-PDO_MYSQL
 pecl-PDO_OCI	ports/databases/pecl-PDO_OCI
 pecl-PDO_ODBC	ports/databases/pecl-PDO_ODBC
-pecl-PDO_MYSQL	ports/databases/pecl-PDO_MYSQL
 pecl-PDO_PGSQL	ports/databases/pecl-PDO_PGSQL
 pecl-PDO_SQLITE	ports/databases/pecl-PDO_SQLITE
 pecl-big_int	ports/math/pecl-big_int
@@ -10070,7 +10070,6 @@ py-HyperText	ports/textproc/py-HyperText
 py-MySQL	ports/databases/py-MySQL
 py-MySQLdb	ports/databases/py-MySQLdb
 py-MySQLdb-devel	ports/databases/py-MySQLdb-devel
-py-py2play	ports/net/py-py2play
 py-PyGreSQL	ports/databases/py-PyGreSQL
 py-PySQLite10	ports/databases/py-PySQLite10
 py-PySQLite11	ports/databases/py-PySQLite11
@@ -10078,7 +10077,6 @@ py-PySQLite2	ports/databases/py-PySQLite2
 py-PyX		ports/graphics/py-PyX
 py-SQLDict	ports/databases/py-SQLDict
 py-SciParam	ports/x11-toolkits/py-SciParam
-py-soya3d	ports/graphics/py-soya3d
 py-adns		ports/dns/py-adns
 py-albatross	ports/www/py-albatross
 py-anonfunc	ports/devel/py-anonfunc
@@ -10265,6 +10263,7 @@ py-psyco	ports/devel/py-psyco
 py-psycopg	ports/databases/py-psycopg
 py-pullparser	ports/www/py-pullparser
 py-px		ports/devel/py-px
+py-py2play	ports/net/py-py2play
 py-pyPgSQL	ports/databases/py-pyPgSQL
 py-pycrypto	ports/security/py-pycrypto
 py-pydot	ports/graphics/py-pydot
@@ -10307,6 +10306,7 @@ py-snmp		ports/net-mgmt/py-snmp
 py-soappy	ports/net/py-soappy
 py-soappy-devel	ports/net/py-soappy-devel
 py-soapy	ports/net/py-soapy
+py-soya3d	ports/graphics/py-soya3d
 py-spambayes	ports/mail/py-spambayes
 py-spark	ports/devel/py-spark
 py-spf		ports/mail/py-spf
@@ -12148,6 +12148,7 @@ toppler		ports/games/toppler
 tor		ports/security/tor
 torcs		ports/games/torcs
 tornado		ports/games/tornado
+torrentflux	ports/net/torrentflux
 torrentsniff	ports/net/torrentsniff
 torrentzip	ports/archivers/torrentzip
 torsmo		ports/sysutils/torsmo
@@ -13756,7 +13757,6 @@ zonenotify	ports/dns/zonenotify
 zoo		ports/archivers/zoo
 zoom		ports/games/zoom
 zope		ports/www/zope
-zope28		ports/www/zope28
 zope-FileSystemSite	ports/www/zope-FileSystemSite
 zope-annotations	ports/www/zope-annotations
 zope-archetypes	ports/www/zope-archetypes
@@ -13797,6 +13797,7 @@ zope-zmysqlda	ports/www/zope-zmysqlda
 zope-zpt	ports/www/zope-zpt
 zope-zsyncer	ports/www/zope-zsyncer
 zope-zwiki	ports/www/zope-zwiki
+zope28		ports/www/zope28
 zope31		ports/www/zope31
 zorro		ports/deskutils/zorro
 zphoto		ports/graphics/zphoto

@@ -1,0 +1,46 @@
+#!/bin/sh -e
+#
+# $FreeBSD$
+#
+
+tf_ps_arg_cache_min=1024
+
+case "$1" in
+start)
+  ps_arg_cache_limit=`sysctl -n kern.ps_arg_cache_limit 2>/dev/null` || true
+  if [ -n "$ps_arg_cache_limit" -a "$ps_arg_cache_limit" -lt "$tf_ps_arg_cache_min" ]; then
+    echo -n '===>  '; 
+    sysctl kern.ps_arg_cache_limit="$tf_ps_arg_cache_min"
+  fi
+  ;;
+stop)
+  # download_base=`sed -nEe 's/^\\$cfg\\["path"\\][ 	]*=[ 	]*"(\\/[^"]+)".*$/\\1/p' \
+  #   %%PREFIX%%/etc/tfconfig.php`
+  pid_list=`ps xww -o pid,command -U www | \
+    awk '$3 ~ /btphptornado/ { \
+      if ($6 ~ "^%%DOWNLOADS%%/\\.torrents/[^/]+\\.stat$") { \
+        system ("echo -n 0 | dd bs=1 count=1 conv=notrunc of=\""$6"\" 2>/dev/null"); \
+        print $1 \
+      } \
+    }'`
+  # wait display_interval for btphptornado to catch up
+  if [ -n "$pid_list" ]; then
+    echo "Waiting for PIDS: "$pid_list"."
+    sleep 5
+  fi
+  # let init(8) kill the remaining processes
+  ;;
+status)
+  pid_list=`ps xww -o pid,command -U www | \
+    awk '$3 ~ /btphptornado/ { print $1 }'`
+  if [ -n "$pid_list" ]; then
+    echo "Torrents are active at pids "$pid_list"."
+  else
+    echo "No active torrents found."
+  fi
+  ;;
+*)
+  echo 1>&2 "Usage: $0 (start|stop|status)"
+  exit 1
+  ;;
+esac

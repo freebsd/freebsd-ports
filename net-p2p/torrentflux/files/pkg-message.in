@@ -1,0 +1,15 @@
+
+************************************************************
+
+The TorrentFlux package has been successfully installed.
+
+Files will be downloaded to %%DOWNLOADS%%,
+to check how much space is left on the partition, try
+  df -H %%DOWNLOADS%%
+
+Visit the TorrentFlux forum at
+  http://www.torrentflux.com/forum/
+for more information.
+  
+************************************************************
+

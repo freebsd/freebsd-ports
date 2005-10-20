@@ -1,0 +1,73 @@
+--
+-- $FreeBSD$
+--
+-- Run this as the torrentflux user.
+--
+-- Example:
+-- su -m www -c 'sqlite /path/to/torrentflux/.database/tf.db < torrentflux.sqlite'
+--
+
+BEGIN TRANSACTION;
+
+CREATE TABLE tf_links (
+  lid INTEGER auto_increment,
+  url varchar(255) NOT NULL default '',
+  PRIMARY KEY  (lid)
+);
+
+INSERT INTO tf_links VALUES(1,'http://www.freebsd.org');
+INSERT INTO tf_links VALUES(2,'http://www.torrentflux.com');
+INSERT INTO tf_links VALUES(3,'http://isohunt.com');
+INSERT INTO tf_links VALUES(4,'http://torrentspy.com/');
+INSERT INTO tf_links VALUES(5,'http://www.mininova.org/');
+INSERT INTO tf_links VALUES(6,'http://thepiratebay.org/');
+INSERT INTO tf_links VALUES(7,'http://www.torrentbox.com/');
+INSERT INTO tf_links VALUES(8,'http://www.torrentreactor.to/index.php');
+INSERT INTO tf_links VALUES(9,'http://torrent.freesbie.org');
+INSERT INTO tf_links VALUES(10,'http://bittorrent.mozilla.org/');
+
+CREATE TABLE tf_log (
+  cid INTEGER auto_increment,
+  user_id varchar(32) NOT NULL default '',
+  file varchar(200) NOT NULL default '',
+  action varchar(200) NOT NULL default '',
+  ip varchar(15) NOT NULL default '',
+  ip_resolved varchar(200) NOT NULL default '',
+  user_agent varchar(200) NOT NULL default '',
+  time varchar(14) NOT NULL default '0',
+  PRIMARY KEY  (cid)
+);
+
+CREATE TABLE tf_messages (
+  mid INTEGER auto_increment,
+  to_user varchar(32) NOT NULL default '',
+  from_user varchar(32) NOT NULL default '',
+  message text,
+  IsNew int(11) default NULL,
+  ip varchar(15) NOT NULL default '',
+  time varchar(14) NOT NULL default '0',
+  force_read tinyint(1) default '0',
+  PRIMARY KEY  (mid)
+);
+
+CREATE TABLE tf_rss (
+  rid INTEGER auto_increment,
+  url varchar(255) NOT NULL default '',
+  PRIMARY KEY  (rid)
+);
+
+CREATE TABLE tf_users (
+  uid INTEGER auto_increment,
+  user_id varchar(32) NOT NULL default '',
+  password varchar(34) NOT NULL default '',
+  hits int(10) NOT NULL default '0',
+  last_visit varchar(14) NOT NULL default '0',
+  time_created varchar(14) NOT NULL default '0',
+  user_level tinyint(1) NOT NULL default '0',
+  hide_offline tinyint(1) NOT NULL default '0',
+  theme varchar(100) NOT NULL default 'mint',
+  language_file varchar(60) default 'lang-english.php',
+  PRIMARY KEY  (uid)
+);
+
+COMMIT;

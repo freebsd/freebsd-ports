@@ -1,0 +1,79 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+CHMOD=/bin/chmod
+CHOWN=/usr/sbin/chown
+ECHO_CMD=echo
+GREP=/usr/bin/grep
+MD5=/sbin/md5
+MKDIR=/bin/mkdir
+PW=/usr/sbin/pw
+SH=/bin/sh
+SU=/usr/bin/su
+SQLITE=%%LOCALBASE%%/bin/sqlite
+
+FTPUSERS=/etc/ftpusers
+
+case $2 in
+POST-INSTALL)
+  if ! ${PW} usershow -n www >/dev/null 2>&1; then
+    ${ECHO_CMD}
+    if ! ${PW} groupshow -n www >/dev/null 2>&1; then
+      if ! ${PW} groupadd -n www -g 80; then
+        ${ECHO_CMD} "*** Failed to add a group 'www' with id 80."
+        ${ECHO_CMD}
+        ${ECHO_CMD} "Please add the 'www' user manually with"
+        ${ECHO_CMD} "  ${PW} useradd -n www -g www -c 'World Wide Web Owner' \\"
+        ${ECHO_CMD} "  -d /nonexistent -s /sbin/nologin -h -"        
+        ${ECHO_CMD} "and retry installing this package."
+        exit 1
+      fi
+      ${ECHO_CMD} "===>  Group 'www' created."
+    fi
+    if ! ${PW} useradd -n www -u 80 -g www -c 'World Wide Web Owner' \
+        -d /nonexistent -s /sbin/nologin -h -; then
+      ${ECHO_CMD} "*** Failed to add an user 'www' with id 80."
+      ${ECHO_CMD}
+      ${ECHO_CMD} "Please add the 'www' user manually with"
+      ${ECHO_CMD} "  ${PW} useradd -n www -g www -c 'World Wide Web Owner' \\"
+      ${ECHO_CMD} "  -d /nonexistent -s /sbin/nologin -h -"        
+      ${ECHO_CMD} "and retry installing this package."
+      exit 1
+    fi
+    ${GREP} -qs '^www$' ${FTPUSERS} || ${ECHO_CMD} www >> ${FTPUSERS}
+    ${ECHO_CMD} "===>  Account 'www' created."
+  fi
+
+  if [ ! -d "%%DOWNLOADS%%" ]; then
+    if ! ${MKDIR} -p -m 755 "%%DOWNLOADS%%"; then
+      ${ECHO_CMD} "*** Failed to create download directory '%%DOWNLOADS%%'."
+      exit 1
+    fi
+    ${CHOWN} www:www "%%DOWNLOADS%%"
+    ${ECHO_CMD} "===>  Download directory created."
+  fi
+
+  if [ ! -d "%%DATABASE%%" ]; then
+    if ! ${MKDIR} -p -m 700 "%%DATABASE%%"; then
+      ${ECHO_CMD} "*** Failed to create database directory '%%DATABASE%%'."
+      exit 1
+    fi
+    ${CHOWN} www:www "%%DATABASE%%"
+  fi
+
+  if [ ! -f "%%DATABASE%%/tf.db" ]; then
+    if ! ${SQLITE} "%%DATABASE%%/tf.db" < "%%DATADIR%%/torrentflux.sqlite"; then
+      ${ECHO_CMD} "*** Failed to create SQLite database '%%DATABASE%%/tf.db'."
+    else
+      ${CHMOD} 600 "%%DATABASE%%/tf.db"
+      ${MD5} -q "%%DATABASE%%/tf.db" > "%%DATABASE%%/tf.md5"
+      ${CHOWN} www:www "%%DATABASE%%/tf.db" "%%DATABASE%%/tf.md5"
+      ${ECHO_CMD} "===>  Torrentflux database created."
+    fi
+  fi
+
+  ${SH} -e ${PKG_PREFIX}/etc/rc.d/torrentflux.sh start
+  ;;
+esac

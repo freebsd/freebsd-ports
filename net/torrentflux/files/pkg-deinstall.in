@@ -1,0 +1,29 @@
+#!/bin/sh -e
+#
+# $FreeBSD$
+#
+
+CAT=/bin/cat
+ECHO_CMD=echo
+MD5=/sbin/md5
+RM=/bin/rm
+RMDIR=/bin/rmdir
+TRUE=/usr/bin/true
+
+case $2 in
+DEINSTALL)
+  if [ -r "%%DATABASE%%/tf.md5" ]; then
+    saved=`${CAT} "%%DATABASE%%/tf.md5"`
+    calc=`${MD5} -q "%%DATABASE%%/tf.db"`
+    if [ "x$saved" = "x$calc" ]; then
+      ${RM} -Rf "%%DATABASE%%"
+      ${ECHO_CMD}
+      ${ECHO_CMD} "===>  Deleted TorrentFlux database."
+      ${ECHO_CMD}
+    else
+      ${RM} -f "%%DATABASE%%/tf.md5"
+    fi
+  fi
+  ${RMDIR} "%%DOWNLOADS%%" 2>/dev/null || ${TRUE}
+  ;;
+esac
