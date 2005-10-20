@@ -1,6 +1,9 @@
---- Makefile.in.orig	Sun Jan 27 23:37:40 2002
-+++ Makefile.in	Sun Jan 27 23:37:45 2002
-@@ -15,7 +15,7 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig
++++ Makefile.in
+@@ -11,7 +11,7 @@
  bindir = @bindir@
  mandir = @mandir@
  man1dir = $(mandir)/man1
@@ -8,4 +11,22 @@
 +docdir = $(prefix)/share/doc/sitecopy
  localedir = $(datadir)/locale
  datadir = @datadir@
- pkgdatadir = $(datadir)/@PACKAGE@
+ pkgdatadir = $(datadir)/sitecopy
+@@ -74,7 +74,6 @@
+ 
+ DATAFILES = doc/examplerc doc/changes.awk
+ DOCS = README NEWS THANKS doc/update.sh
+-MANLANGS = fr
+ 
+ all: $(TARGET)
+ 
+@@ -178,9 +177,6 @@
+ 	@echo "Installing man page..."
+ 	$(mkinstalldirs) $(DESTDIR)$(man1dir)
+ 	$(INSTALL_DATA) $(top_srcdir)/doc/sitecopy.1 $(DESTDIR)$(man1dir)/sitecopy.1
+-	for f in $(MANLANGS); do $(mkinstalldirs) $(DESTDIR)$(mandir)/$$f/man1; \
+-		$(INSTALL_DATA) $(top_srcdir)/doc/sitecopy.$$f.1 \
+-			     $(DESTDIR)$(mandir)/$$f/man1/sitecopy.1; done
+ 	@echo
+ 	@echo "sitecopy installation finished."
+ 	@echo
