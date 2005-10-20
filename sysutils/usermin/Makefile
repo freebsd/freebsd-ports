@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	usermin
-PORTVERSION=	1.160
-PORTREVISION=	1
+PORTVERSION=	1.170
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -26,8 +25,7 @@ USE_PERL5=	yes
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 
-USERMIN_MODULES=changepass-1.160-1.wbm.gz \
-		forward-1.160-1.wbm.gz
+USERMIN_MODULES=
 USERMIN_THEMES=
 
 post-extract:
