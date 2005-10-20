@@ -237,6 +237,7 @@
     SUBDIR += ksmp3play
     SUBDIR += ladspa
     SUBDIR += lame
+    SUBDIR += laudio
     SUBDIR += liba52
     SUBDIR += libadplug
     SUBDIR += libao

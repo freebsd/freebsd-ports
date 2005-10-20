@@ -1,0 +1,6 @@
+Laudio is a port of La, a free lossless audio codec written by
+Michael Bevin. It is not opensource, but versions are available
+for Windows and Linux. Currently (October 2005) it has the best
+compression ratio available.
+
+WWW: http://www.lossless-audio.com/
