@@ -7,13 +7,8 @@ bin/makeconv
 bin/pkgdata
 bin/uconv
 sbin/decmn
-sbin/gencase
 sbin/genccode
 sbin/gencmn
-sbin/gennames
-sbin/gennorm
-sbin/genpname
-sbin/genprops
 sbin/gensprep
 sbin/genuca
 sbin/icuswap
@@ -49,13 +44,13 @@ include/unicode/fmtable.h
 include/unicode/format.h
 include/unicode/gregocal.h
 include/unicode/locid.h
-include/unicode/loengine.h
 include/unicode/measfmt.h
 include/unicode/measunit.h
 include/unicode/measure.h
 include/unicode/msgfmt.h
 include/unicode/normlzr.h
 include/unicode/numfmt.h
+include/unicode/ppalmos.h
 include/unicode/parseerr.h
 include/unicode/parsepos.h
 include/unicode/platform.h
@@ -80,6 +75,7 @@ include/unicode/translit.h
 include/unicode/ubidi.h
 include/unicode/ubrk.h
 include/unicode/ucal.h
+include/unicode/ucasemap.h
 include/unicode/ucat.h
 include/unicode/uchar.h
 include/unicode/uchriter.h
@@ -126,6 +122,7 @@ include/unicode/usprep.h
 include/unicode/ustdio.h
 include/unicode/ustream.h
 include/unicode/ustring.h
+include/unicode/utext.h
 include/unicode/utf.h
 include/unicode/utf16.h
 include/unicode/utf32.h
