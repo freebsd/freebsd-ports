@@ -1,0 +1,14 @@
+#!/bin/sh
+
+thrulayd=/usr/local/sbin/thrulayd
+
+case "$1" in
+start)
+	[ -x $thrulayd ] && $thrulayd && echo -n ' thrulayd'
+	;;
+*)
+	echo "Usage: `basename $0` {start}" >&2
+	;;
+esac
+
+exit 0
