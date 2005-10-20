@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	php_doc
-PORTVERSION=	20050521
-PORTREVISION=	1
+PORTVERSION=	20051020
 CATEGORIES?=	lang
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTNAME=	php_manual_${PHP_LANG}-${PORTVERSION}
