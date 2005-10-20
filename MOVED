@@ -1661,3 +1661,4 @@ devel/korelib||2005-10-18|master site up but distfile not available, last releas
 devel/qtk||2005-10-18|master site disappeared
 devel/wizard||2005-10-18|master site disappeared, author stopped work 2002
 devel/yacl||2005-10-18|master site disappeared, author stopped work 2002
+sysutils/cfengine|sysutils/cfengine2|2005-10-20|removed - use cfengine-2.x
