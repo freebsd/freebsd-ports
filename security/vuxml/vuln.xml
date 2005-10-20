@@ -34,6 +34,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2f0cb4bb-416d-11da-99fe-000854d03344">
+    <topic>xloadimage -- buffer overflows in NIFF image title handling</topic>
+    <affects>
+      <package>
+	<name>xloadimage</name>
+	<range><lt>4.1.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ariel Berkman reports:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112862493918840&amp;w=2">
+	  <p>Unlike most of the supported image formats in xloadimage,
+	    the NIFF image format can store a title name of arbitrary
+	    length as part of the image file.</p>
+	  <p>When xloadimage is processing a loaded image, it is
+	    creating a new Image object and then writing the processed
+	    image to it. At that point, it will also copy the title
+	    from the old image to the newly created image.</p>
+	  <p>The 'zoom', 'reduce', and 'rotate' functions are using
+	    a fixed length buffer to construct the new title name
+	    when an image processing is done.  Since the title name
+	    in a NIFF format is of varying length, and there are
+	    insufficient buffer size validations, the buffer can
+	    be overflowed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>15051</bid>
+      <cvename>CVE-2005-3178</cvename>
+      <mlist msgid="BOEKKJLADFNHIEFBHCECMEONCFAA.aberkm1@uic.edu">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112862493918840&amp;w=2</mlist>
+    </references>
+    <dates>
+      <discovery>2005-10-05</discovery>
+      <entry>2005-10-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="97d45e95-3ffc-11da-a263-0001020eed82">
     <topic>snort -- Back Orifice preprocessor buffer overflow
       vulnerability</topic>
