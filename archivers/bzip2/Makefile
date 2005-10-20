@@ -8,6 +8,7 @@
 
 PORTNAME=	bzip2
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.bzip.org/${PORTVERSION}/
 
@@ -15,6 +16,7 @@ MAINTAINER=	jharris@widomaker.com
 COMMENT=	A block-sorting file compressor
 
 INSTALLS_SHLIB=	yes
+PATCH_STRIP=	-p3
 
 MAN1=		bzip2.1 bzgrep.1 bzmore.1
 MLINKS=		bzip2.1 bunzip2.1   bzip2.1 bzcat.1   bzip2.1 bz2cat.1 \
