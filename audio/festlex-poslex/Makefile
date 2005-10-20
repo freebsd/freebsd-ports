@@ -9,6 +9,7 @@
 
 PORTNAME=	festlex-poslex
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	audio accessibility
 MASTER_SITES=	${MASTER_SITE_FESTIVAL}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -19,10 +20,6 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	English lexicon for Festival
 
 RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival
-
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	"${BROKEN}"
-EXPIRATION_DATE=2005-09-22
 
 WRKSRC=		${WRKDIR}/festival
 
