@@ -38,12 +38,6 @@ case "$2" in
   "PRE-INSTALL")
 	msg
   ;;
-  "POST-INSTALL")
-	PREF=${PREFIX:-$PKG_PREFIX}
-	SHAREDIR=${PREF}/share/postgis
-	LIBDIR=${PREF}/lib
-	sed -e "s|\$libdir|${LIBDIR}|g" ${SHAREDIR}/lwpostgis.sql.default > ${SHAREDIR}/lwpostgis.sql
-  ;;
   "MESSAGE")
 	msg
   ;;

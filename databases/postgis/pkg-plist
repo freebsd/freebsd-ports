@@ -3,7 +3,7 @@ bin/shp2pgsql
 lib/liblwgeom.so
 lib/liblwgeom.so.1
 %%DATADIR%%/README.postgis
-%%DATADIR%%/lwpostgis.sql.default
+%%DATADIR%%/lwpostgis.sql
 %%DATADIR%%/spatial_ref_sys.sql
 %%DATADIR%%/utils/postgis_restore.pl
 %%DATADIR%%/utils/profile_intersects.pl
