@@ -3,6 +3,9 @@ include/iban.h
 include/ktoblzcheck.h
 lib/libktoblzcheck.a
 lib/libktoblzcheck.so
-lib/libktoblzcheck.so.1
+lib/libktoblzcheck.so.4
 %%DATADIR%%/bankdata.txt
+%%DATADIR%%/bundesbank.pl
+%%DATADIR%%/ibandata.txt
+%%DATADIR%%/online_update.pl
 @dirrm %%DATADIR%%
