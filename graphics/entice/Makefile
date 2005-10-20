@@ -7,7 +7,7 @@
 
 PORTNAME=	entice
 PORTVERSION=	0.9.3.004
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
