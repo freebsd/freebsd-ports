@@ -6,21 +6,18 @@
 #
 
 PORTNAME=	ethereal
-PORTVERSION=	0.10.12
+PORTVERSION=	0.10.13
 CATEGORIES=	net ipv6
-MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/all-versions/ \
-		ftp://gd.tuwien.ac.at/infosys/security/ethereal/all-versions/ \
-		ftp://ftp.sunet.se/pub/network/monitoring/ethereal/all-versions/ \
-		ftp://ftp.mirrors.wiretapped.net/pub/security/packet-capture/ethereal/all-versions/ \
-		http://www.mirrors.wiretapped.net/pub/security/packet-capture/ethereal/all-versions/
-
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		ftp://ftp.ethereal.com/pub/ethereal/all-versions/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT?=	A powerful network analyzer/capture tool
 
 USE_PERL5_BUILD=yes
 USE_PYTHON_BUILD=yes
 USE_ICONV=	yes
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
 USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 CONFIGURE_ARGS+=	--program-transform-name=""
@@ -77,6 +74,10 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 CONFIGURE_ARGS+=	--enable-ipv6=yes
 .else
 CONFIGURE_ARGS+=	--enable-ipv6=no
+.endif
+
+.if ${OSVERSION} < 600000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-capture_loop.c
 .endif
 
 .if exists(/usr/include/openssl/crypto.h)
