@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_NETBSD:S/%SUBDIR%/ms-ttf/} \
 	${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/corefonts/} \
-	ftp://ftp.uni-koeln.de/pc/win32/msoft-95/ \
+	ftp://ftp.uni-koeln.de/pc/win32/msoft/ \
 	ftp://ftp.extra.ouh.nl/studie/alg/hulp/win/fonts/ \
 	ftp://ftp.vn.ua/pub/win/freefont/ \
 	ftp://ftp.vsu.ru/pub/tex/font-packs/mscore/ \
