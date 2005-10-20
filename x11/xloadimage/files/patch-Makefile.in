@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Jul 10 23:53:36 2001
-+++ Makefile.in	Wed Jul 11 12:28:36 2001
+--- ./Makefile.in.orig	Tue Jul 10 23:53:36 2001
++++ ./Makefile.in	Wed Jul 11 12:28:36 2001
 @@ -2,9 +2,10 @@
  # Makefile for autoconf tutorial
  #
