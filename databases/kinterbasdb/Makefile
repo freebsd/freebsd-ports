@@ -24,9 +24,13 @@ WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
-
+USE_REINPLACE=		yes
 USE_GCC=		3.4
 
 PLIST_SUB=		INSTALLDIR=lib/${PYTHON_VERSION}/site-packages/${PORTNAME}
+
+post-extract:
+	@${REINPLACE_CMD} -e "s@DEFAULT_FREEBSD_HOME_DIR = '.*'@DEFAULT_FREEBSD_HOME_DIR = '${LOCALBASE}'@" \
+		${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
