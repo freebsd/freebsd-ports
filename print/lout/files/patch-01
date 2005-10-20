@@ -1,18 +1,8 @@
---- makefile.orig	Wed Oct 27 17:59:37 2004
-+++ makefile	Tue Nov  2 23:17:17 2004
-@@ -253,16 +253,16 @@
- USESTAT = 1
- SAFEDFT = 0
- 
--# DEBUGGING = 0
--# TRACING =
-+DEBUGGING = 0
-+TRACING =
- 
--DEBUGGING = 1
--TRACING = -g
-+#DEBUGGING = 1
-+#TRACING = -g
+--- makefile.orig	Wed Aug 24 08:45:25 2005
++++ makefile	Fri Oct 14 02:14:23 2005
+@@ -259,10 +259,10 @@
+ # DEBUGGING = 1
+ # TRACING = -g
  
 -BINDIR	= /home/jeff/bin
 -LIBDIR	= /home/jeff/lout.lib
@@ -45,7 +35,8 @@
 -CC	= gcc
 +#CC	= gcc
  
- RCOPY	= cp -r
+-RCOPY	= cp -r
++RCOPY	= cp -R
  
 -COPTS	= -ansi -pedantic -Wall -O3
 +#COPTS	= -ansi -pedantic -Wall -O3
