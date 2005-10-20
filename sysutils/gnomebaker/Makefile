@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		gnomebaker
-PORTVERSION=		0.4.2
+PORTVERSION=		0.5.0
 CATEGORIES=		sysutils gnome
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnomebaker
@@ -14,12 +14,8 @@ DIST_SUBDIR=		gnome2
 MAINTAINER=		dominique.goncalves@gmail.com
 COMMENT=		A CD/DVD recording GUI for Gnome
 
-RUN_DEPENDS=		cdrecord:${PORTSDIR}/sysutils/cdrtools-cjk \
-			cdrdao:${PORTSDIR}/sysutils/cdrdao
-
-.if defined(WITH_DVD)
-RUN_DEPENDS+=		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
-.endif
+OPTIONS=		DVD "Enable DVD support" off \
+			CJK "Use cdrtools-cjk instead of cdrtools" off
 
 USE_X_PREFIX=		yes
 USE_GNOME=		gnomeprefix gnomehack libgnomeui desktopfileutils
@@ -32,12 +28,21 @@ USE_GSTREAMER=		vorbis mad flac
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Define WITH_DVD=yes to enable dvd support."
-	@${ECHO_MSG} ""
+.include <bsd.port.pre.mk>
+
+RUN_DEPENDS+=		cdrdao:${PORTSDIR}/sysutils/cdrdao
+
+.if defined(WITH_CJK)
+RUN_DEPENDS+=		cdrecord:${PORTSDIR}/sysutils/cdrtools-cjk
+.else
+RUN_DEPENDS+=		cdrecord:${PORTSDIR}/sysutils/cdrtools
+.endif
+
+.if defined(WITH_DVD)
+RUN_DEPENDS+=		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
+.endif
 
 post-install:
 	@-update-desktop-database
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
