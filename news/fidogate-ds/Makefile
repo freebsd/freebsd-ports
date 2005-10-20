@@ -39,6 +39,8 @@ PLIST_SUB+=		SPOOLDIR=${SPOOLDIR} \
 HAS_CONFIGURE=		yes
 .if defined(WITHOUT_INN)
 CONFIGURE_ARGS+=	--without-news
+.else
+CONFIGURE_ARGS+=	--with-newsbindir=${LOCALBASE}/news/bin
 .endif
 .if !defined(WITH_BSO)
 CONFIGURE_ARGS+=	--enable-amiga-out
