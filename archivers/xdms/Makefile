@@ -18,8 +18,13 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 ALL_TARGET=	xdms
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	${REINPLACE_CMD} "s@-O3 -Wall@-Wall@g" ${WRKSRC}/src/Makefile.in
+.if ( ${OSVERSION} < 500000 )
+	${REINPLACE_CMD} 's/stdint.h/inttypes.h/' ${WRKSRC}/src/cdata.h
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/xdms ${PREFIX}/bin
@@ -28,4 +33,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/xdms.txt ${PREFIX}/share/doc/xdms
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
