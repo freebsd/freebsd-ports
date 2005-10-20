@@ -21,7 +21,6 @@ rcvar=`set_rcvar`
 
 command=%%PREFIX%%/bin/${name}
 command_args="--daemon  > /dev/null 2>&1 &"
-pidfile=/var/run/${name}.pid
 required_dirs=%%DSPAM_HOME%%
 required_files=%%PREFIX%%/etc/${name}.conf
 
@@ -38,4 +37,6 @@ dspam_enable=${dspam_enable:-"NO"}
 #dspam_flags=${dspam_flags:-"--daemon &"}
 
 load_rc_config $name
+pidfile=${dspam_pidfile:-/var/run/dspam.pid}
+
 run_rc_command "$1"
