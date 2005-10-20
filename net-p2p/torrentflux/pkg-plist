@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+@unexec if cmp -s %D/etc/tfconfig.php %D/etc/tfconfig.php.default; then rm -f %D/etc/tfconfig.php; fi
+etc/tfconfig.php.default
+@exec [ -f %B/tfconfig.php ] || cp %B/%f %B/tfconfig.php
+etc/rc.d/torrentflux.sh
+libexec/btphptornado.py
+%%DATADIR%%/torrentflux.sqlite
+@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+%%PORTDOCS%%%%DOCSDIR%%/install.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

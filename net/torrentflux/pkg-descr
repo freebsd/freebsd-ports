@@ -1,0 +1,16 @@
+TorrentFlux is a free PHP based BitTorrent client that runs on a web server.
+Manage all of your Torrent downloads through a convenient web interface from
+anywhere.
+
+TorrentFlux is a feature rich Torrent client. Users can manage Torrent downloads
+through a Web interface from anywhere. Torrents can be uploaded via a URL or
+file upload, and can be started, stopped, and deleted with a click. You are also
+able to view the download progress of all Torrents, server drive space, and
+Torrent file meta information before and during download. It has built-in user
+management and security as well as private messaging between users. Each user is
+able to select their own theme and view the upload history. For administrators
+there is a detailed user administration and searchable logs. Various languages
+are supported.
+
+
+WWW: http://www.torrentflux.com/
