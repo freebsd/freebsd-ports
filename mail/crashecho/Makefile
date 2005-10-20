@@ -8,9 +8,9 @@
 PORTNAME=	crashecho
 PORTVERSION=	0.2.14
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.nluug.nl/pub/ibiblio/distributions/altlinux/ \
-		ftp://distro.ibiblio.org/pub/linux/distributions/altlinux/ \
-		ftp://ftp.chg.ru/.1/Linux/ALTLinux/
+MASTER_SITES=	ftp://ftp.nluug.nl/pub/ibiblio/distributions/altlinux/${MASTER_SITE_SUBDIR} \
+		ftp://distro.ibiblio.org/pub/linux/distributions/altlinux/${MASTER_SITE_SUBDIR} \
+		ftp://ftp.chg.ru/.1/Linux/ALTLinux/${MASTER_SITE_SUBDIR}
 MASTER_SITE_SUBDIR=	Sisyphus/files/SRPMS/
 EXTRACT_SUFX=	.rpm
 DISTFILES=	${PORTNAME}-${PORTVERSION}-alt1.src${EXTRACT_SUFX}
