@@ -1,0 +1,15 @@
+bin/xteddy
+%%DATADIR%%/pixmaps/teddy_bw.xbm
+%%DATADIR%%/pixmaps/teddy_color.xpm
+%%DATADIR%%/pixmaps/teddy_icon.xbm
+%%DATADIR%%/pixmaps/teddy_mask.xbm
+%%DATADIR%%/pixmaps/xpenguin_bw.xbm
+%%DATADIR%%/pixmaps/xpenguin_color.xpm
+%%DATADIR%%/pixmaps/xpenguin_icon.xbm
+%%DATADIR%%/pixmaps/xpenguin_mask.xbm
+%%DATADIR%%/pixmaps/xteddy_bw.xbm
+%%DATADIR%%/pixmaps/xteddy_color.xpm
+%%DATADIR%%/pixmaps/xteddy_icon.xbm
+%%DATADIR%%/pixmaps/xteddy_mask.xbm
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
