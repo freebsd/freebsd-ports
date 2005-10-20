@@ -1,8 +1,8 @@
 bin/sitecopy
-%%PORTDOCS%%share/doc/sitecopy/NEWS
-%%PORTDOCS%%share/doc/sitecopy/README
-%%PORTDOCS%%share/doc/sitecopy/THANKS
-%%PORTDOCS%%share/doc/sitecopy/update.sh
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/THANKS
+%%DOCSDIR%%/update.sh
 share/locale/cs/LC_MESSAGES/sitecopy.mo
 share/locale/de/LC_MESSAGES/sitecopy.mo
 share/locale/fr/LC_MESSAGES/sitecopy.mo
@@ -11,7 +11,7 @@ share/locale/ja/LC_MESSAGES/sitecopy.mo
 share/locale/nn/LC_MESSAGES/sitecopy.mo
 share/locale/ru/LC_MESSAGES/sitecopy.mo
 share/locale/tr/LC_MESSAGES/sitecopy.mo
-share/sitecopy/changes.awk
-share/sitecopy/examplerc
-@dirrm share/doc/sitecopy
+%%DATADIR%%/changes.awk
+%%DATADIR%%/examplerc
 @dirrm share/sitecopy
+@dirrm share/doc/sitecopy
