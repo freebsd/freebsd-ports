@@ -7,7 +7,7 @@
 
 PORTNAME=	xdtp
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES+=	http://www.ongs.co.jp/projects/xdtp/
 DISTNAME=	xdtp-${PORTVERSION}
@@ -27,9 +27,11 @@ OPTIONS=	GDK	"Build with Gdk-Pixbuf" on \
 		DEBUG	"Build with debug option" off \
 		INCLUDE	"Install with XDTP include files" on
 
-CFLAGS+=	-fPIC
-
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
+.endif
 
 .if defined(WITH_GDK)
 USE_GNOME+=	gtk20
