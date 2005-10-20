@@ -17,6 +17,7 @@ DIST_SUBDIR=	brs
 MAINTAINER=	user@unknown.nu
 COMMENT=	An interactive King James Bible
 
+USE_BZIP2=	yes
 NO_WRKSUBDIR=	yes
 ALL_TARGET=
 MAN1=		bible.1
