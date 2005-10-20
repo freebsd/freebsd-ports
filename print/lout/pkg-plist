@@ -32,6 +32,7 @@ bin/prg2lout
 %%PORTDOCS%%%%DOCSDIR%%/design/s6_2
 %%PORTDOCS%%%%DOCSDIR%%/design/s6_9
 %%PORTDOCS%%%%DOCSDIR%%/design/s7_0
+%%PORTDOCS%%%%DOCSDIR%%/expert/.pre_brea.swp
 %%PORTDOCS%%%%DOCSDIR%%/expert/README
 %%PORTDOCS%%%%DOCSDIR%%/expert/all
 %%PORTDOCS%%%%DOCSDIR%%/expert/det
@@ -133,6 +134,7 @@ bin/prg2lout
 %%PORTDOCS%%%%DOCSDIR%%/user/bas_hyph
 %%PORTDOCS%%%%DOCSDIR%%/user/bas_lang
 %%PORTDOCS%%%%DOCSDIR%%/user/bas_line
+%%PORTDOCS%%%%DOCSDIR%%/user/bas_marg
 %%PORTDOCS%%%%DOCSDIR%%/user/bas_objs
 %%PORTDOCS%%%%DOCSDIR%%/user/bas_par1
 %%PORTDOCS%%%%DOCSDIR%%/user/bas_par2
@@ -147,6 +149,7 @@ bin/prg2lout
 %%PORTDOCS%%%%DOCSDIR%%/user/bgr_incl
 %%PORTDOCS%%%%DOCSDIR%%/user/bgr_mirr
 %%PORTDOCS%%%%DOCSDIR%%/user/bgr_outl
+%%PORTDOCS%%%%DOCSDIR%%/user/bgr_prec
 %%PORTDOCS%%%%DOCSDIR%%/user/bgr_rota
 %%PORTDOCS%%%%DOCSDIR%%/user/bgr_scal
 %%PORTDOCS%%%%DOCSDIR%%/user/bgr_text
@@ -463,6 +466,8 @@ bin/prg2lout
 %%DATADIR%%/hyph/english.lp
 %%DATADIR%%/hyph/engluk.lh
 %%DATADIR%%/hyph/engluk.lp
+%%DATADIR%%/hyph/esperanto.lh
+%%DATADIR%%/hyph/esperanto.lp
 %%DATADIR%%/hyph/finnish.lh
 %%DATADIR%%/hyph/finnish.lp
 %%DATADIR%%/hyph/french.lh
@@ -575,6 +580,7 @@ bin/prg2lout
 %%DATADIR%%/maps/LtKOI8.LCM
 %%DATADIR%%/maps/LtLatin1.LCM
 %%DATADIR%%/maps/LtLatin2.LCM
+%%DATADIR%%/maps/LtLatin3.LCM
 %%DATADIR%%/maps/Std.LCM
 %%DATADIR%%/maps/Symb.LCM
 %%DATADIR%%/maps/koi8r.LCM

@@ -1,11 +1,12 @@
-This is a port of Lout, a document preparation system.
-
-Lout is similar in concept to LaTeX, but it is much smaller
-(in that it doesn't depend on TeX).  Lout produces regular postscript
-for output.  External postscript images/files can be easily embedded in
-a Lout document.
-
-- Oly
-oly@world.std.com
+Lout is a document formatting system similar in style to LaTeX. It
+offers a very full range of features, including PostScript, PDF, and
+plain text output, optimal paragraph and page breaking, automatic
+hyphenation, PostScript EPS file inclusion and generation, equation
+formatting, tables, diagrams, rotation and scaling, sorted indexes,
+bibliographic databases, running headers and odd-even pages, automatic
+cross referencing, multilingual documents including hyphenation (most
+European languages are supported, including Russian), formatting of
+computer programs, and more. Lout may be extended by writing definitions
+which are much simpler than the equivalent troff of TeX macros.
 
 WWW: http://snark.ptc.spbu.ru/~uwe/lout/
