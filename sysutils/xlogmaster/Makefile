@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xlogmaster
-PORTVERSION=	1.6.0
-PORTREVISION=	2
+PORTVERSION=	1.6.1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,8 +14,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quick & easy monitoring of logfiles and devices
 
-USE_GNOME=	gtk12
+USE_GCC=	3.4+
+USE_GNOME=	gtk12 gnometarget
 USE_GETOPT_LONG=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -27,11 +28,11 @@ INFO=		xlogmaster
 CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
 LDFLAGS=	-L${LOCALBASE}/lib
 
-post-extract:
-	-${RM} ${WRKSRC}/import/getopt*
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|getopt_long_only|getopt_long|g' ${WRKSRC}/src/xlogmaster.cc
 
 post-install:
-	@install-info ${PREFIX}/info/xlogmaster.info ${PREFIX}/info/dir
 	${INSTALL_DATA} ${FILESDIR}/xlogmasterrc ${PREFIX}/etc/xlogmaster
 
 .include <bsd.port.mk>
