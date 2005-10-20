@@ -1,5 +1,5 @@
---- source/runConfigureICU	Fri Jan 16 17:26:40 2004
-+++ source/runConfigureICU	Mon Nov 15 11:05:50 2004
+--- runConfigureICU	Fri Jan 16 17:26:40 2004
++++ runConfigureICU	Mon Nov 15 11:05:50 2004
 @@ -289,7 +289,7 @@
      *BSD)
 -        THE_OS="BSD"

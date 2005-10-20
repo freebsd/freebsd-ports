@@ -6,40 +6,29 @@
 #
 
 PORTNAME=	icu
-PORTVERSION=	3.2
-PORTREVISION=	1
+PORTVERSION=	3.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.software.ibm.com/software/globalization/icu/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	International Components for Unicode (from IBM)
 
+OPTIONS=	THREADS "Build multi-threaded version of the library" on
 CONFLICTS=	icu2-[0-9]*
 
 INSTALLS_SHLIB=		yes
 NO_FILTER_SHLIBS=	yes
 
-WRKSRC=			${WRKDIR}/icu
-ICUWRKSRC=		${WRKSRC}/source
-CONFIGURE_WRKSRC=	${ICUWRKSRC}
-BUILD_WRKSRC=		${ICUWRKSRC}
-INSTALL_WRKSRC=		${ICUWRKSRC}
+WRKSRC=			${WRKDIR}/icu/source
 
 GNU_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	runConfigureICU
 CONFIGURE_ARGS+=	${OPSYS}
 CONFIGURE_ARGS+=	--enable-shared
 CONFIGURE_ARGS+=	--enable-static
-CONFIGURE_ARGS+=	--enable-samples=no --enable-tests=yes
-.if defined(NO_THREADS)
-CONFIGURE_ARGS+=	--enable-threads=no
-.else
-CONFIGURE_ENV+=		THREADSCPPFLAGS="${PTHREAD_CFLAGS}" \
-			THREADSCFLAGS="${PTHREAD_CFLAGS}" \
-			THREADSCXXFLAGS="${PTHREAD_CFLAGS}" \
-			PTHREAD_LIBS="${PTHREAD_LIBS}"
-.endif
+CONFIGURE_ARGS+=	--enable-samples=no
+
 USE_GMAKE=		yes
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" CC="${CC}" CXX="${CXX}"
 
@@ -51,12 +40,8 @@ MAN1+=	makeconv.1
 MAN1+=	pkgdata.1
 MAN1+=	uconv.1
 MAN8+=	decmn.8
-MAN8+=	gencase.8
 MAN8+=	genccode.8
 MAN8+=	gencmn.8
-MAN8+=	gennames.8
-MAN8+=	gennorm.8
-MAN8+=	genprops.8
 MAN8+=	gensprep.8
 MAN8+=	genuca.8
 
@@ -66,47 +51,28 @@ PLIST_SUB+=	ICUVER=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
-BROKEN=		"Floating point exception during build on alpha"
+.if ${ARCH} != "sparc64"
+USE_REINPLACE=	yes
+post-patch:
+	${REINPLACE_CMD} 's,-fPIC,-fpic,' ${WRKSRC}/config/mh-bsd-gcc
 .endif
 
-pre-fetch:
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	#
-	# You may use the following build options by defining
-	# them on the command line with -D
-	#
-	# NO_THREADS	do not build a thread enabled library
-	#
+.if defined(WITH_THREADS)
+CONFIGURE_ARGS+=	--enable-threads=yes
+CONFIGURE_ENV+=		THREADSCPPFLAGS="${PTHREAD_CFLAGS}" \
+			THREADSCFLAGS="${PTHREAD_CFLAGS}" \
+			THREADSCXXFLAGS="${PTHREAD_CFLAGS}" \
+			PTHREAD_LIBS="${PTHREAD_LIBS}"
+.else
+CONFIGURE_ARGS+=	--enable-threads=no
 .endif
-
-pre-patch:
-# VPATH does not work due to IBM's mistake:
-	${LN} -s ${FILESDIR}/*.ucm ${WRKSRC}/source/data/mappings/
-	@for l in ${FILESDIR}/*.ucm ; do \
-		${ECHO} UCM_SOURCE_LOCAL+=`basename $$l` >> \
-		    ${WRKSRC}/source/data/mappings/ucmlocal.mk ; \
-	done
 
 iotest cintltst intltest:
-	-${GMAKE} -C ${ICUWRKSRC}/test
-	cd ${ICUWRKSRC}/test/${.TARGET} && ${SETENV} \
-	    LD_LIBRARY_PATH=${ICUWRKSRC}/lib:${ICUWRKSRC}/tools/ctestfw \
+	-${GMAKE} -C ${WRKSRC}/test
+	cd ${WRKSRC}/test/${.TARGET} && ${SETENV} \
+	    LD_LIBRARY_PATH=${WRKSRC}/lib:${WRKSRC}/tools/ctestfw \
 	    ./${.TARGET}
 
-test: iotest cintltst intltest
-
-post-build: iotest cintltst
-	#
-	# Note, due to occasional hangs in one of the intltest's
-	# multi-threading subtests, the intltest is not part of automatic
-	# test in the current version of this port. This an unresolved
-	# problem so far:
-	#	http://www.jtcsv.com/cgibin/icu-bugs/incoming?id=1141
-	#
-	# If you wish to help resolving it, try
-	#
-	#	`make intltest' manually.
-	#
+post-build test: iotest cintltst intltest
 
 .include <bsd.port.post.mk>

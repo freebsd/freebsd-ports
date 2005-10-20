@@ -1,5 +1,5 @@
---- source/Makefile.in	Fri Jul  9 11:43:36 2004
-+++ source/Makefile.in	Wed Nov 17 11:14:49 2004
+--- Makefile.in	Fri Jul  9 11:43:36 2004
++++ Makefile.in	Wed Nov 17 11:14:49 2004
 @@ -175,11 +175,13 @@
  $(top_builddir)/config/icu-config: $(top_builddir)/Makefile $(top_srcdir)/config/icu-config-top $(top_srcdir)/config/icu-config-bottom $(top_builddir)/config/Makefile.inc @platform_make_fragment@ $(top_srcdir)/config/make2sh.sed
  	-$(RMV) $@
