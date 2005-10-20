@@ -1,10 +1,10 @@
 bin/Mercury_Messenger
 %%INSTDIR%%/Mercury_Messenger
 %%INSTDIR%%/lib/JFlash.jar
-%%VID%%%%INSTDIR%%/lib/VidConf-libs.jar
 %%INSTDIR%%/lib/XML.jar
 %%INSTDIR%%/lib/dMSN.jar
 %%INSTDIR%%/lib/dllStuff.jar
+%%INSTDIR%%/lib/jazzy_spellcheck.jar
 %%INSTDIR%%/lib/jdom1_0.jar
 %%INSTDIR%%/lib/xmlpull.jar
 %%INSTDIR%%/resources/AppData/Backgrounds/Default.png
@@ -13,6 +13,10 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/Plugins/ContactExample/Plugin.class
 %%INSTDIR%%/resources/AppData/Plugins/ContactExample/Plugin.java
 %%INSTDIR%%/resources/AppData/Plugins/ContactExample/compile.bat
+%%INSTDIR%%/resources/AppData/Plugins/ConvoStats/Plugin.class
+%%INSTDIR%%/resources/AppData/Plugins/ConvoStats/Plugin.java
+%%INSTDIR%%/resources/AppData/Plugins/ConvoStats/Stats.class
+%%INSTDIR%%/resources/AppData/Plugins/ConvoStats/compile.bat
 %%INSTDIR%%/resources/AppData/Plugins/IrcCommand/Plugin.class
 %%INSTDIR%%/resources/AppData/Plugins/IrcCommand/Plugin.java
 %%INSTDIR%%/resources/AppData/Plugins/IrcCommand/compile.bat
@@ -151,6 +155,21 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/Winks/eTRzZjMrT0pmQnlwSHZZSlJzR2VBUi9xVmQ0PQ==/ufo.png
 %%INSTDIR%%/resources/AppData/Winks/eTRzZjMrT0pmQnlwSHZZSlJzR2VBUi9xVmQ0PQ==/ufo.swf
 %%INSTDIR%%/resources/Images.zip
+%%INSTDIR%%/resources/UI/contactcard/close_button.png
+%%INSTDIR%%/resources/UI/contactcard/dpimg_border.png
+%%INSTDIR%%/resources/UI/contactcard/index.html
+%%INSTDIR%%/resources/UI/contactcard/left_arrow.png
+%%INSTDIR%%/resources/UI/contactcard/msn_back.png
+%%INSTDIR%%/resources/UI/contactcard/msn_back_bot.png
+%%INSTDIR%%/resources/UI/contactcard/msn_back_left.png
+%%INSTDIR%%/resources/UI/contactcard/msn_back_right.png
+%%INSTDIR%%/resources/UI/contactcard/msn_left.png
+%%INSTDIR%%/resources/UI/contactcard/msn_left_bot.png
+%%INSTDIR%%/resources/UI/contactcard/msn_right.png
+%%INSTDIR%%/resources/UI/contactcard/msn_right_bot.png
+%%INSTDIR%%/resources/UI/contactcard/msn_shadow.png
+%%INSTDIR%%/resources/UI/contactcard/page2.html
+%%INSTDIR%%/resources/UI/contactcard/right_arrow.png
 %%INSTDIR%%/resources/UI/dialogs/Jabber_ContactSubscribed.xml
 %%INSTDIR%%/resources/UI/dialogs/Jabber_JoinMUC.xml
 %%INSTDIR%%/resources/UI/dialogs/RemoveContact.xml
@@ -178,6 +197,7 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/text/xsl templates/Default/MessageLog.xsl
 %%INSTDIR%%/resources/text/xsl templates/MessageLog.xsl
 %%INSTDIR%%/resources/text/xsl templates/Overzichtelijk/MessageLog.xsl
+%%VID%%%%INSTDIR%%/lib/VidConf-libs.jar
 @dirrm %%INSTDIR%%/resources/text/xsl templates/Overzichtelijk
 @dirrm %%INSTDIR%%/resources/text/xsl templates/Default
 @dirrm %%INSTDIR%%/resources/text/xsl templates/Chatachtig
@@ -188,6 +208,7 @@ bin/Mercury_Messenger
 @dirrm %%INSTDIR%%/resources/lang
 @dirrm %%INSTDIR%%/resources/UI/panels
 @dirrm %%INSTDIR%%/resources/UI/dialogs
+@dirrm %%INSTDIR%%/resources/UI/contactcard
 @dirrm %%INSTDIR%%/resources/UI
 @dirrm %%INSTDIR%%/resources/AppData/Winks/eTRzZjMrT0pmQnlwSHZZSlJzR2VBUi9xVmQ0PQ==
 @dirrm %%INSTDIR%%/resources/AppData/Winks/eHV6bWRQcm1xQXpVN0ViZDBUV3FCcWNHb0tBPQ==
@@ -211,6 +232,7 @@ bin/Mercury_Messenger
 @dirrm %%INSTDIR%%/resources/AppData/Views/Default_CLGroup
 @dirrm %%INSTDIR%%/resources/AppData/Views/Default_CLContact
 @dirrm %%INSTDIR%%/resources/AppData/Views
+@dirrm %%INSTDIR%%/resources/AppData/Themes
 @dirrm %%INSTDIR%%/resources/AppData/StatusIcons/J_ICQ
 @dirrm %%INSTDIR%%/resources/AppData/StatusIcons
 @dirrm %%INSTDIR%%/resources/AppData/SplashWindow
@@ -219,9 +241,11 @@ bin/Mercury_Messenger
 @dirrm %%INSTDIR%%/resources/AppData/Plugins/dFileShare
 @dirrm %%INSTDIR%%/resources/AppData/Plugins/LinuxCPU
 @dirrm %%INSTDIR%%/resources/AppData/Plugins/IrcCommand
+@dirrm %%INSTDIR%%/resources/AppData/Plugins/ConvoStats
 @dirrm %%INSTDIR%%/resources/AppData/Plugins/ContactExample
 @dirrm %%INSTDIR%%/resources/AppData/Plugins
 @dirrm %%INSTDIR%%/resources/AppData/LoginImages
+@dirrm %%INSTDIR%%/resources/AppData/Dictionaries
 @dirrm %%INSTDIR%%/resources/AppData/CustomEmoticons
 @dirrm %%INSTDIR%%/resources/AppData/Backgrounds
 @dirrm %%INSTDIR%%/resources/AppData
