@@ -1,6 +1,5 @@
 @comment $FreeBSD$
 etc/dovecot.conf.sample
-etc/rc.d/dovecot.sh
 libexec/dovecot/checkpassword-reply
 libexec/dovecot/deliver
 libexec/dovecot/dovecot-auth
