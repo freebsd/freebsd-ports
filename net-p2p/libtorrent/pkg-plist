@@ -2,13 +2,17 @@ include/torrent/bencode.h
 include/torrent/common.h
 include/torrent/download.h
 include/torrent/entry.h
+include/torrent/event.h
 include/torrent/exceptions.h
 include/torrent/http.h
 include/torrent/peer.h
+include/torrent/poll.h
+include/torrent/poll_epoll.h
+include/torrent/poll_select.h
 include/torrent/rate.h
 include/torrent/torrent.h
 include/torrent/tracker.h
 lib/libtorrent.so
-lib/libtorrent.so.4
+lib/libtorrent.so.5
 libdata/pkgconfig/libtorrent.pc
 @dirrm include/torrent
