@@ -15,6 +15,7 @@ DISTNAME=	sswf-${PORTVERSION}-src
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	A library and script language tool to create Flash movies
 
+BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 WRKSRC=		${WRKDIR}/sswf-${PORTVERSION}
