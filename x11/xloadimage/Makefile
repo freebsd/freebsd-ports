@@ -6,7 +6,7 @@
 #
 
 VERSION=	4.1
-REVISION=	14.2
+REVISION=	15
 PORTREVISION=	0
 
 PORTNAME=	xloadimage
@@ -15,11 +15,14 @@ CATEGORIES=	x11 graphics
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTNAME=	${PORTNAME}.${VERSION}
 PATCH_SITES=	${MASTER_SITE_DEBIAN_POOL}
-PATCHFILES=	xloadimage_4.1-10.diff.gz
+PATCHFILES=	${PORTNAME}_${VERSION}-${REVISION}.diff.gz
 PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	X11 Image Loading Utility
+
+PATCH_STRIP=	-p1
+EXTRA_PATCHES=	${WRKSRC}/debian/patches/*.dpatch
 
 USE_XLIB=	yes
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -35,7 +38,7 @@ MLINKS=		xloadimage.1 xsetbg.1 \
 		xloadimage.1 xview.1
 
 post-patch:
-	@chmod a+rx ${WRKSRC}/configure
+	@${CHMOD} a+rx ${WRKSRC}/configure
 	@cd ${WRKSRC}; ${MV} xloadimage.man xloadimage.man.old; \
 		${SED} -e s:/etc/X11/Xloadimage:${PREFIX}/etc/xloadimagerc: \
 		       -e s:/usr/lib/xloadimagerc:${PREFIX}/etc/xloadimagerc: \
