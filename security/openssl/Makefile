@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openssl
-.if !defined(WITHOUT_OPENSSL_097)
+.if !defined(WITHOUT_OPENSSL_097) && !defined(WITH_OPENSSL_BETA)
 .if !defined(OSVERSION6)
 OSVERSION6!=	make OSVERSION6=0 -V OSVERSION
 .endif
