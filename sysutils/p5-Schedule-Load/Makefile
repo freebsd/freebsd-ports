@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Schedule-Load
-PORTVERSION=	3.021
+PORTVERSION=	3.023
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Schedule
@@ -32,7 +32,7 @@ MAN3=		Schedule::Load.3 Schedule::Load::Chooser.3 \
 		Schedule::Load::ResourceReq.3 Schedule::Load::Schedule.3
 
 post-patch:
-	@${PERL} -pi -e 's!mv !mv -f ! if $$.==20' ${WRKSRC}/Makefile.PL
+	@${PERL} -pi -e "s!/usr/local!${PREFIX}!" ${WRKSRC}/Makefile.PL
 
 post-install:
 .ifndef(NOPORTDOCS)
