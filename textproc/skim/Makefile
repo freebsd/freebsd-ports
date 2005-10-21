@@ -7,7 +7,7 @@
 
 PORTNAME=	skim
 PORTVERSION=	1.4.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	textproc kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scim
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	scim
 MAINTAINER=	gaoj@cpsc.ucalgary.ca
 COMMENT=	An input method platform based on SCIM library and KDE/QT
 
-LIB_DEPENDS=	scim-1.0.8:${PORTSDIR}/textproc/scim
+LIB_DEPENDS=	scim-1.0.9:${PORTSDIR}/textproc/scim
 
 USE_KDELIBS_VER=3
 USE_PYTHON=	yes
