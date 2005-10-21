@@ -1,25 +1,17 @@
---- Makefile.in.orig	Thu Jan  9 04:49:25 2003
-+++ Makefile.in	Tue Jan 14 09:37:06 2003
-@@ -137,7 +137,7 @@
- bin_SCRIPTS = ferite-config
- 
- fbm_DATA = LICENSE AUTHORS TODO ROADMAP DEVELOPERS ABOUT RELEASE.NOTES
--fbmdir = $(prefix)/share/ferite
-+fbmdir = $(prefix)/share/doc/ferite
- 
- EXTRA_DIST = shtool $(fbm_DATA) $(m4data_DATA) ferite.spec
- 
-@@ -236,6 +236,7 @@
+--- Makefile.in.orig	Wed Oct 19 18:47:17 2005
++++ Makefile.in	Wed Oct 19 18:48:23 2005
+@@ -363,6 +363,8 @@
+ 	-rm -f libtool
  uninstall-info-am:
- fbmDATA_INSTALL = $(INSTALL_DATA)
  install-fbmDATA: $(fbm_DATA)
++
 +ifndef NOPORTDOCS
  	@$(NORMAL_INSTALL)
- 	$(mkinstalldirs) $(DESTDIR)$(fbmdir)
+ 	test -z "$(fbmdir)" || $(mkdir_p) "$(DESTDIR)$(fbmdir)"
  	@list='$(fbm_DATA)'; for p in $$list; do \
-@@ -244,6 +245,7 @@
- 	  echo " $(fbmDATA_INSTALL) $$d$$p $(DESTDIR)$(fbmdir)/$$f"; \
- 	  $(fbmDATA_INSTALL) $$d$$p $(DESTDIR)$(fbmdir)/$$f; \
+@@ -371,6 +373,7 @@
+ 	  echo " $(fbmDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(fbmdir)/$$f'"; \
+ 	  $(fbmDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(fbmdir)/$$f"; \
  	done
 +endif
  

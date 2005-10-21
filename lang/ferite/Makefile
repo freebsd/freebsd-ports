@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	ferite
-PORTVERSION=	0.99.6
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	An embeddable scripting language
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
