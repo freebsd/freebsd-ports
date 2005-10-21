@@ -1362,7 +1362,6 @@ cstringbuffer	ports/devel/cstringbuffer
 csv2latex	ports/textproc/csv2latex
 csv2xml		ports/textproc/csv2xml
 ct		ports/net/ct
-ctetris		ports/games/ctetris
 cthumb		ports/graphics/cthumb
 ctorrent	ports/net/ctorrent
 ctpp		ports/textproc/ctpp
