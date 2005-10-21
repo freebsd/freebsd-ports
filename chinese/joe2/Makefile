@@ -13,7 +13,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 
-MASTERDIR=	${.CURDIR}/../../editors/joe
+MASTERDIR=	${.CURDIR}/../../editors/joe2
 MD5_FILE=	${.CURDIR}/distinfo
 
 .include "${MASTERDIR}/Makefile"

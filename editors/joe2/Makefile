@@ -17,6 +17,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER?=	toasty@dragondata.com
 COMMENT?=	Joe's own editor
 
+LATEST_LINK=	joe2
+CONFLICTS=	joe-3*
+
 WRKSRC=		${WRKDIR}/joe
 ALL_TARGET=	joe
 MAN1=		joe.1

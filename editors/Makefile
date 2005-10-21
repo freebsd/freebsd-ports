@@ -86,6 +86,7 @@
     SUBDIR += jedit-devel
     SUBDIR += jext
     SUBDIR += joe
+    SUBDIR += joe2
     SUBDIR += joe-devel
     SUBDIR += jove
     SUBDIR += kate-plugins
