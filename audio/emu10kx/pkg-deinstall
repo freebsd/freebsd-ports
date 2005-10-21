@@ -19,11 +19,16 @@ if [ ${RESULT} -eq 0 ]; then
 fi
 
 # Remove the driver
-rm /boot/kernel/$DRIVERNAME.ko
+rm /boot/modules/$DRIVERNAME.ko
 
 # Remove the driver from loader.conf
 grep ${DRIVERNAME}_load /boot/loader.conf > /dev/null 2>&1; RESULT=$?
 if [ ${RESULT} -eq 0 ]; then
 	sed -e /${DRIVERNAME}_load.*/d -i.orig /boot/loader.conf
+fi
+
+# Tell the user about the state files
+if [ -f /var/db/emu10kx0-state ]; then
+echo "If you will not be using this port anymore, please remove " /var/db/emu10kx[0-9]-state " manually."
 fi
 #============================================================
