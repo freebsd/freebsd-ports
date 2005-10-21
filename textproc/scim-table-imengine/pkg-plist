@@ -8,5 +8,24 @@ share/locale/ja/LC_MESSAGES/scim-tables.mo
 share/locale/ko/LC_MESSAGES/scim-tables.mo
 share/locale/de/LC_MESSAGES/scim-tables.mo
 share/locale/fr/LC_MESSAGES/scim-tables.mo
+share/locale/it/LC_MESSAGES/scim-tables.mo
+%%SKIM%%@cwd %%LOCALBASE%%
+%%SKIM%%lib/kde3/kcm_skimplugin_scim_tables.la
+%%SKIM%%lib/kde3/kcm_skimplugin_scim_tables.so
+%%SKIM%%share/services/skimconfiguredialog/skimplugin_scim_table_config.desktop
+%%SKIM%%share/config.kcfg/generictable.kcfg
+%%SKIM%%share/locale/zh_CN/LC_MESSAGES/skim-scim-tables.mo
+%%SKIM%%share/locale/zh_TW/LC_MESSAGES/skim-scim-tables.mo
+%%SKIM%%share/locale/de/LC_MESSAGES/skim-scim-tables.mo
+%%SKIM%%share/locale/fr/LC_MESSAGES/skim-scim-tables.mo
+%%SKIM%%share/locale/ja/LC_MESSAGES/skim-scim-tables.mo
+%%SKIM%%share/locale/it/LC_MESSAGES/skim-scim-tables.mo
+%%SKIM%%share/locale/ko/LC_MESSAGES/skim-scim-tables.mo
+%%SKIM%%share/apps/skim/pics/scim-tables.png
+%%SKIM%%@unexec rmdir %D/share/apps/skim/pics 2>/dev/null || true
+%%SKIM%%@unexec rmdir %D/share/apps/skim 2>/dev/null || true
+%%SKIM%%@unexec rmdir %D/share/config.kcfg 2>/dev/null || true
+%%SKIM%%@unexec rmdir %D/share/services/skimconfiguredialog 2>/dev/null || true
+%%SKIM%%@cwd %%X11BASE%%
 @unexec rmdir %D/lib/scim-1.0/IMEngine 2>/dev/null || true
 @unexec rmdir %D/lib/scim-1.0/SetupUI 2>/dev/null || true

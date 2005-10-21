@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scim-table-imengine
-PORTVERSION=	0.5.1
-PORTREVISION=	4
+PORTVERSION=	0.5.2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
@@ -16,8 +15,8 @@ DISTNAME=	scim-tables-${PORTVERSION}
 MAINTAINER=	gaoj@cpsc.ucalgary.ca
 COMMENT=	SCIM table based input method engine
 
-BUILD_DEPENDS=  scim:${PORTSDIR}/textproc/scim
-RUN_DEPENDS=    ${BUILD_DEPENDS}
+BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -33,6 +32,27 @@ EXTRA_PATCHES=	${FILESDIR}/extrapatch-4-stable-src-Makefile.in
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+
+PLIST_SUB=	SKIM="@comment "
+
+pre-fetch:
+	@${ECHO_MSG} Define WITH_SKIM to enable skim support
+
+.if exists(${LOCALBASE}/bin/skim)
+WITH_SKIM=	yes
+pre-patch:
+	@${ECHO_MSG} Skim is detected, support enabled.
+.endif
+
+.if defined(WITH_SKIM)
+BUILD_DEPENDS+=	skim:${PORTSDIR}/textproc/skim
+CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
+PLIST_SUB=	SKIM=""
+post-patch:
+	@${REINPLACE_CMD} -e "/^DIST_SUBDIRS/s/$$/ skim/" \
+		-e "/^@SCIM_TABLES_ENABLE_SKIM_SUPPORT_TRUE@SKIM_SUBDIR =/s/$$/ skim/" \
+		${WRKSRC}/Makefile.in
+.endif
 
 post-install:
 .if ${OSVERSION} < 500035
