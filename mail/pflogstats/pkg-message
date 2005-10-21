@@ -1,0 +1,5 @@
+  __________________________________________________________
+ / Pflogstats no longer produces the pflogsumm style report \
+|  and the --problems_first switch has been removed. For     |
+|  pflogsumm style reports, install mail/pflogsumm.          |
+ \__________________________________________________________/
