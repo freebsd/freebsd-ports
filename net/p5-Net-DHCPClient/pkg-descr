@@ -1,0 +1,6 @@
+This module provides methods for implementing a DHCP client. It allows
+perl scripts to interacts with DHCP servers.
+
+It's good for DHCP servers testing.
+
+WWW: http://search.cpan.org/dist/Net-DHCPClient/
