@@ -455,6 +455,7 @@
     SUBDIR += rlytest
     SUBDIR += rmime
     SUBDIR += rmoldmail
+    SUBDIR += roundcube
     SUBDIR += ruby-mime-types
     SUBDIR += ruby-rfilter
     SUBDIR += ruby-rmail

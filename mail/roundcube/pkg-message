@@ -1,0 +1,17 @@
+------------------------------------------------------------------
+CONFIGURATION
+
+. Create a new database and a database user for RoundCube
+. Create database tables using the queries in file
+   'SQL/*.initial.sql'
+. Modify the files in config/* to suit your local environment
+. Don't forget to set db.inc.php mode to 600.
+. Set the following php.ini options:
+   - error_reporting E_ALL & ~E_NOTICE (or lower)
+   - file_uploads on (for attachment upload features)
+
+UPGRADING
+
+If you already had a previous version of RoundCube installed,
+refer to the instructions in UPGRADING guide.
+------------------------------------------------------------------

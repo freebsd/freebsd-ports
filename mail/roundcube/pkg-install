@@ -1,0 +1,18 @@
+#! /bin/sh
+
+case $2 in
+
+POST-INSTALL)
+	chown -R ${SHAREOWN}:${SHAREGRP} ${RCUBEROOT}/
+	chown -R ${WWWOWN}:${WWWGRP} ${RCUBEROOT}/logs
+	chown -R ${WWWOWN}:${WWWGRP} ${RCUBEROOT}/temp
+	for i in ${RCUBEROOT}/config/db.inc.php ${RCUBEROOT}/config/main.inc.php; do
+		[ -f ${i} ] || cp ${i}.sample ${i}
+	done
+	;;
+*)
+	exit 1
+	;;
+esac
+
+exit 0
