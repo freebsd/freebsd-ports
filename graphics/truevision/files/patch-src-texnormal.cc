@@ -1,6 +1,6 @@
---- src/texnormal.cc.orig	Wed Feb 23 22:32:55 2005
-+++ src/texnormal.cc	Wed Mar 16 22:27:11 2005
-@@ -197,9 +197,9 @@
+--- src/texnormal.cc.orig	Tue Oct  4 02:54:01 2005
++++ src/texnormal.cc	Tue Oct 18 18:56:50 2005
+@@ -199,9 +199,9 @@
  
  if ( normal1 == NULL && type->value() == 1  )
  	{
@@ -10,10 +10,10 @@
 +	normal1 = new PovTexNormal( app_ref, NULL, false );
 +	normal2 = new PovTexNormal( app_ref, NULL, false );
 +	normal3 = new PovTexNormal( app_ref, NULL, false );
- 	normal1->add_to_tree( ctree, ctree_node );
- 	normal2->add_to_tree( ctree, ctree_node );
+ 	normal1->add_to_tree( tree_view, tree_store, tree_selection, &node_iter );
+ 	normal2->add_to_tree( tree_view, tree_store, tree_selection, &node_iter );
  	}
-@@ -524,9 +524,9 @@
+@@ -528,9 +528,9 @@
  
  	if ( !strcmp( tag, "NORMAL" ) )
  		{
@@ -26,7 +26,7 @@
  		tvio_skip_section( file );
  		}
  
-@@ -613,7 +613,7 @@
+@@ -614,7 +614,7 @@
  MapItem_normal::MapItem_normal( float val, guint8 c, app_objs *appref ) : MapItem( _("Normal"), val ) 
  {
  color[0]=color[1]=color[2]=c; color[3]=255; 

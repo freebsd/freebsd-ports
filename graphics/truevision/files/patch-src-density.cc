@@ -1,6 +1,6 @@
---- src/density.cc.orig	Thu Feb 17 04:10:34 2005
-+++ src/density.cc	Wed Mar 16 22:21:17 2005
-@@ -194,9 +194,9 @@
+--- src/density.cc.orig	Tue Oct  4 03:02:24 2005
++++ src/density.cc	Tue Oct 18 18:54:34 2005
+@@ -198,9 +198,9 @@
  
  if ( blockdens1 == NULL && type->value() == 1 )
  	{
@@ -10,10 +10,10 @@
 +	blockdens1 = new PovTexDensity( app_ref, NULL, NULL, NULL, false );
 +	blockdens2 = new PovTexDensity( app_ref, NULL, NULL, NULL, false  );
 +	blockdens3 = new PovTexDensity( app_ref, NULL, NULL, NULL, false  );
- 	blockdens1->add_to_tree( ctree, ctree_node );
- 	blockdens2->add_to_tree( ctree, ctree_node );
+ 	blockdens1->add_to_tree( tree_view, tree_store, tree_selection, &node_iter );
+ 	blockdens2->add_to_tree( tree_view, tree_store, tree_selection, &node_iter );
  	}
-@@ -475,9 +475,9 @@
+@@ -479,9 +479,9 @@
  
  	if ( !strcmp( tag, "DENSITY" ) )
  		{
@@ -26,7 +26,7 @@
  		tvio_skip_section( file );
  		}
  
-@@ -553,7 +553,7 @@
+@@ -556,7 +556,7 @@
  MapItem_density::MapItem_density( float val, guint8 c, app_objs *appref ) : MapItem( _("Density"), val ) 
  {
  color[0]=color[1]=color[2]=c; color[3]=255; 

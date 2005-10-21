@@ -26,6 +26,7 @@ share/gnome/help/truevision/C/figures/interface_rendopt6.png
 share/gnome/help/truevision/C/figures/interface_rendopt7.png
 share/gnome/help/truevision/C/figures/interface_rendopt8.png
 share/gnome/help/truevision/C/figures/interface_toolbar.png
+share/gnome/help/truevision/C/figures/perspcam.png
 share/gnome/help/truevision/C/functions.xml
 share/gnome/help/truevision/C/interface_editor.xml
 share/gnome/help/truevision/C/interface_glviews.xml
@@ -85,6 +86,7 @@ share/gnome/pixmaps/truevision/object_text.xpm
 share/gnome/pixmaps/truevision/object_torus.xpm
 share/gnome/pixmaps/truevision/object_union.xpm
 share/gnome/pixmaps/truevision/object_visible.xpm
+share/gnome/pixmaps/truevision/page_detach.png
 share/gnome/pixmaps/truevision/render.xpm
 share/gnome/pixmaps/truevision/rotate_icon.png
 share/gnome/pixmaps/truevision/scale_icon.png
@@ -115,12 +117,14 @@ share/gnome/truevision/materials/Stones/Marble1.tvm
 share/gnome/truevision/materials/Stones/granite3.tvm
 share/gnome/truevision/materials/Woods/Golden_Oak.tvm
 share/gnome/truevision/materials/Woods/Soft_Pine.tvm
+share/gnome/truevision/python/plug-ins/about_python.py
+share/gnome/truevision/python/plug-ins/starfield.py
 share/gnome/truevision/python/tv_classes.py
 share/locale/de/LC_MESSAGES/truevision.mo
 share/locale/fr/LC_MESSAGES/truevision.mo
 share/locale/ru/LC_MESSAGES/truevision.mo
-share/mime/application/x-truevision.xml
 share/mime/packages/truevision.xml
+@dirrm share/gnome/truevision/python/plug-ins
 @dirrm share/gnome/truevision/python
 @dirrm share/gnome/truevision/materials/Woods
 @dirrm share/gnome/truevision/materials/Stones
