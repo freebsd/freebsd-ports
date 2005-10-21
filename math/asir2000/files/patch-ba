@@ -1,24 +1,16 @@
---- Makefile.am.orig	Mon Mar 24 20:30:38 2003
-+++ Makefile.am	Fri May  2 15:33:10 2003
-@@ -9,13 +9,15 @@
+--- Makefile.am.orig	Tue Jul 12 23:47:13 2005
++++ Makefile.am	Thu Aug 11 10:39:00 2005
+@@ -9,7 +9,8 @@
  
  SUBDIRS  = asm builtin engine fft include io lib parse ${PLOTDIR}
  
 -asirdir       = ${libdir}/asir
 +bindir        = ${prefix}/bin
-+asirlibdir    = ${datadir}/asir
 +asirdir       = ${bindir}
  asir_PROGRAMS = asir
  asir_SOURCES  = parse/main.c
  asir_LDADD    = libasir.a libasir-gc.a
- CLEANFILES    = ${asir_LDADD} asir-openxm-${VERSION}.tgz
- 
--DEFS     = @DEFS@ -DASIR_LIBDIR=\"${asirdir}\"
-+DEFS     = @DEFS@ -DASIR_LIBDIR=\"${asirlibdir}\"
- INCLUDES = -I${top_srcdir}/include -I${top_srcdir}/parse -I${top_srcdir}/io \
-            -I${top_srcdir}/gc/include \
-            @PARIINC@ @MPIINC@ @X_CFLAGS@
-@@ -76,33 +78,33 @@
+@@ -102,33 +103,33 @@
  	${INSTALL_DATA} libasir-gc.a ${DESTDIR}${libdir}/libasir-gc.a
  
  install-openxm: asir${EXEEXT} install-libasir install-libasir-gc

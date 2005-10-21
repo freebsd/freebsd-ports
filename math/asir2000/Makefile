@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	asir
-PORTVERSION=	20050603
+PORTVERSION=	20051010
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.jssac.org/pub/distfiles/asir/ \
-		ftp://ftp.asir.org/pub/asir/src/
-DISTFILES=	${ASIR_SRC} ${ASIR_DOC}
+		ftp://ftp.asir.org/pub/asir/src/ \
+		http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/
+DISTFILES=	${ASIR_SRC} ${ASIR_DOC} ${GC_SRC}
 EXTRACT_ONLY=	${ASIR_SRC}
 
 MAINTAINER=	saito@asir.org
@@ -23,15 +24,17 @@ USE_AUTOCONF_VER=	253
 USE_AUTOMAKE_VER=	15
 USE_XLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-plot --enable-fep --enable-interval --with-pari
-ASIR_SRC_VERSION= 20050603
-ASIR_DOC_VERSION=	20050603
-ASIR_SRC=	asir-${ASIR_DOC_VERSION}.tar.gz
-ASIR_DOC=	asirdoc-${ASIR_DOC_VERSION}.tar.gz
-MAN1=		asir.1
-PREFIX?=	${LOCALBASE}
-WRKSRC=		${WRKDIR}/asir2000
+ASIR_SRC_VERSION= 20051010
+ASIR_DOC_VERSION= 20051009
+GC_VERSION= 6.5
+ASIR_SRC= asir-${ASIR_SRC_VERSION}.tar.gz
+ASIR_DOC= asirdoc-${ASIR_DOC_VERSION}.tar.gz
+GC_SRC=   gc${GC_VERSION}.tar.gz
+MAN1=     asir.1
+PREFIX?=  ${LOCALBASE}
+WRKSRC=   ${WRKDIR}/asir2000
 
-LIB_DATA=	alpi bfct bgk const cyclic defs.h dfff dmul dmul102 \
+LIB_DATA= alpi bfct bgk const cyclic defs.h dfff dmul dmul102 \
 	fctrdata fctrtest fff glib gr ifplot katsura launch mat nf \
 	num primdec primdec_lex primdec_mod ratint robot solve sp \
 	sturm sym weight xm
@@ -42,6 +45,8 @@ LIB_DATA=	alpi bfct bgk const cyclic defs.h dfff dmul dmul102 \
 BROKEN=		"Does not compile on sparc64 or ia64"
 .endif
 
+post-extract:
+	@( cd ${WRKSRC};${TAR} xfz ${DISTDIR}/${GC_SRC} )
 pre-install:
 	@${MKDIR} ${DATADIR}
 	@${MKDIR} ${DOCSDIR}

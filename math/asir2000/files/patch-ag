@@ -1,5 +1,5 @@
---- parse/glob.c.orig	Wed Nov 24 15:01:04 2004
-+++ parse/glob.c	Sat Dec 18 03:00:03 2004
+--- parse/glob.c.orig	Tue Oct 11 00:16:38 2005
++++ parse/glob.c	Tue Oct 11 00:24:51 2005
 @@ -51,6 +51,7 @@
  #include "al.h"
  #include "parse.h"
@@ -8,15 +8,12 @@
  #if defined(PARI)
  #include "genpari.h"
  #endif
-@@ -791,10 +792,7 @@
+@@ -767,7 +768,7 @@
  char *get_pariversion() 
  {
  #if PARI
 -#if 0
--	return "PARI 2.2.4, copyright (C) 2002 The PARI Group.\nPARI 2.0.17, copyright 1989-1999, C. Batut, K. Belabas, D. Bernardi,\n   H. Cohen and M. Olivier.\n";
--#endif
--	return "PARI 2.0.17, copyright 1989-1999, C. Batut, K. Belabas, D. Bernardi,\n   H. Cohen and M. Olivier.\n";
-+	return "PARI 2.2.9 (alpha), copyright 1989-1999, C. Batut, K. Belabas, D. Bernardi,\n   H. Cohen and M. Olivier.\n";
- #endif
- 	return "";
- }
++#if 1
+ 	return PARIVERSION", Copyright (C) 2000-2005 The PARI Group.\n";
+ #else
+ 	return "PARI 2.0.17, copyright 1989-1999, C. Batut, K. Belabas, D. Bernardi,\n   H. Cohen and M. Olivier.\n";
