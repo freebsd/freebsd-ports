@@ -4683,7 +4683,6 @@ jmp		ports/java/jmp
 jode		ports/java/jode
 joe		ports/editors/joe
 joe2		ports/editors/joe2
-joe-devel	ports/editors/joe-devel
 john		ports/security/john
 jomp		ports/java/jomp
 jools		ports/games/jools
