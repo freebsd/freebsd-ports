@@ -11,3 +11,5 @@ libdata/pkgconfig/gsoap++.pc
 libdata/pkgconfig/gsoap.pc
 libdata/pkgconfig/gsoapck++.pc
 libdata/pkgconfig/gsoapck.pc
+libdata/pkgconfig/gsoapssl++.pc
+libdata/pkgconfig/gsoapssl.pc
