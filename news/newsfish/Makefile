@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	newsfish
-PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTVERSION=	1.2.6
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.saddi.com/pub/software/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Batch USENET news reader with filter capabilities
 
-USE_AUTOMAKE_VER=	14
-USE_AUTOCONF_VER=	213
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		newsfish.1
 PLIST_FILES=	bin/newsfish
