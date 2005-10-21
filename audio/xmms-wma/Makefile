@@ -20,8 +20,9 @@ USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+CFLAGS+=	-fpic -DPIC
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 PLIST_FILES=	lib/xmms/Input/libwma.so
 
@@ -40,5 +41,6 @@ pre-everything::
 post-extract:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/Makefile.inc
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/ffmpeg-strip-wma/config.mak
+	@${REINPLACE_CMD} -e 's|CFLAGS :=|CFLAGS := ${CFLAGS}|g' ${WRKSRC}/Makefile.inc
 
 .include <bsd.port.mk>
