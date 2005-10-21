@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	chameleon
-PORTVERSION=	03.11
+DISTVERSION=	05-07
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.comp.nus.edu.sg/~sulzmann/chameleon/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/}
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell-style language
@@ -16,15 +15,20 @@ COMMENT=	A Haskell-style language
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		happy:${PORTSDIR}/devel/hs-happy
 
-ALL_TARGET=	just-boo
+USE_REINPLACE=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}/src
+MAKE_ARGS=	GHC=ghc INSTALL_PATH='\"${DATADIR}/\"'
+
+post-patch:
+	${REINPLACE_CMD} 's/gcc -O3/${CC} ${CFLAGS}/' ${WRKSRC}/Solvers/Makefile
+	@${RMDIR} ${WRKSRC}/../lib/Haskell98
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/chameleon ${PREFIX}/bin
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/interface/Prelude.ch  ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
-.endif
+	@${MKDIR} ${DATADIR}
+	${CP} -pr ${WRKSRC}/../lib ${DATADIR}
+	@${MKDIR} ${DATADIR}/src/Backends/Scheme/Prologue
+	${CP} -pr ${WRKSRC}/Backends/Scheme/Prologue/* ${DATADIR}/src/Backends/Scheme/Prologue
 
 .include <bsd.port.mk>
