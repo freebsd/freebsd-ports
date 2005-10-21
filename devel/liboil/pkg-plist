@@ -1,9 +1,11 @@
 include/liboil-%%VERSION%%/liboil/liboil.h
+include/liboil-%%VERSION%%/liboil/liboilclasses.h
 include/liboil-%%VERSION%%/liboil/liboilcpu.h
 include/liboil-%%VERSION%%/liboil/liboildebug.h
 include/liboil-%%VERSION%%/liboil/liboilfuncs.h
 include/liboil-%%VERSION%%/liboil/liboilfunction.h
 include/liboil-%%VERSION%%/liboil/liboilgcc.h
+include/liboil-%%VERSION%%/liboil/liboilinternal.h
 include/liboil-%%VERSION%%/liboil/liboilparameter.h
 include/liboil-%%VERSION%%/liboil/liboilprofile.h
 include/liboil-%%VERSION%%/liboil/liboilprototype.h
@@ -34,6 +36,7 @@ share/gtk-doc/html/liboil/liboil-liboilfuncs-doc.html
 share/gtk-doc/html/liboil/liboil-liboilfuncs-math.html
 share/gtk-doc/html/liboil/liboil-liboilfuncs-math8x8.html
 share/gtk-doc/html/liboil/liboil-liboilfuncs-pixel.html
+share/gtk-doc/html/liboil/liboil-liboilmacros.html
 share/gtk-doc/html/liboil/liboil-liboilparameter.html
 share/gtk-doc/html/liboil/liboil-liboilprofile.html
 share/gtk-doc/html/liboil/liboil-liboilprototype.html
