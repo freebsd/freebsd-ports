@@ -1367,6 +1367,7 @@ cthumb		ports/graphics/cthumb
 ctorrent	ports/net/ctorrent
 ctpp		ports/textproc/ctpp
 ctrace		ports/net/ctrace
+ctris		ports/games/ctris
 ctrlproxy	ports/irc/ctrlproxy
 ctwm		ports/x11-wm/ctwm
 cu-prolog	ports/lang/cu-prolog
