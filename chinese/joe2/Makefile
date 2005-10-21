@@ -13,6 +13,10 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Upstream version updated to 2.9.8"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2005-11-21
+
 MASTERDIR=	${.CURDIR}/../../editors/joe2
 MD5_FILE=	${.CURDIR}/distinfo
 
