@@ -5,27 +5,29 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ctetris
-PORTVERSION=	0.30
+PORTNAME=	ctris
+PORTVERSION=	0.41
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.liquidx.org/distfiles/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	mnag/${PORTNAME}
 
 MAINTAINER=	tlp@liquidx.org
-COMMENT=	Beautiful tetris clone written in C using the ncurses library
+COMMENT=	Colorized, small and flexible Tetris(TM)-clone for the console
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 
-MAN1=		ctetris.1
-PLIST_FILES=	bin/ctetris
+MAN6=		ctris.6
+MANCOMPRESSED=	yes
+PLIST_FILES=	bin/ctris
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|termio.h|termios.h|' ${WRKSRC}/ctetris.h
+	@${REINPLACE_CMD} -e "s|gcc|${CC}|" -e "s|CFLAGS=.*|CFLAGS+=-Wall|" \
+		 ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/ctetris.1 ${PREFIX}/man/man1/ctetris.1
-	${INSTALL_PROGRAM} ${WRKSRC}/ctetris ${PREFIX}/bin/ctetris
+	${INSTALL_MAN} ${WRKSRC}/ctris.6.gz ${PREFIX}/man/man6/ctris.6.gz
+	${INSTALL_PROGRAM} ${WRKSRC}/ctris ${PREFIX}/bin/ctris
 
 .include <bsd.port.mk>
