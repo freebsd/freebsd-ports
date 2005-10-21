@@ -1,5 +1,6 @@
 @unexec /bin/rm -f %D/bin/7za
 bin/7z
+bin/p7zip
 @exec /bin/ln -sf 7z %D/bin/7za
 %%MODULES%%libexec/p7zip/7z
 libexec/p7zip/7za
