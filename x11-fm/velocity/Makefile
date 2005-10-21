@@ -9,10 +9,10 @@ PORTNAME=	velocity
 PORTVERSION=	0.1.0b
 PORTREVISION=	5
 CATEGORIES=	x11-fm
-MASTER_SITES=	http://homepages.ius.edu/kydavis/velocity/
+MASTER_SITES=	http://www.jarrodkoehler.com/velocity/
 DISTNAME=	velocity-0.1.0beta
 
-MAINTAINER=	ryan@transaeris.com
+MAINTAINER=	ryan.moe@fastfreedom.net
 COMMENT=	GNOME file and desktop manager
 
 WRKSRC=		${WRKDIR}/velocity-0.1.0
