@@ -1,0 +1,238 @@
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DOCSDIR%%/UPGRADING
+%%RCUBEDIR%%/SQL/mysql.initial.sql
+%%RCUBEDIR%%/SQL/mysql.update.sql
+%%RCUBEDIR%%/SQL/postgres.initial.sql
+%%RCUBEDIR%%/SQL/sqlite.initial.sql
+%%RCUBEDIR%%/config/.htaccess
+%%RCUBEDIR%%/config/db.inc.php.sample
+%%RCUBEDIR%%/config/main.inc.php.sample
+%%RCUBEDIR%%/index.php
+%%RCUBEDIR%%/logs/.htaccess
+%%RCUBEDIR%%/logs/errors
+%%RCUBEDIR%%/logs/sendmail
+%%RCUBEDIR%%/program/blank.gif
+%%RCUBEDIR%%/program/include/bugs.inc
+%%RCUBEDIR%%/program/include/cache.inc
+%%RCUBEDIR%%/program/include/main.inc
+%%RCUBEDIR%%/program/include/rcube_db.inc
+%%RCUBEDIR%%/program/include/rcube_imap.inc
+%%RCUBEDIR%%/program/include/rcube_shared.inc
+%%RCUBEDIR%%/program/include/rcube_smtp.inc
+%%RCUBEDIR%%/program/include/session.inc
+%%RCUBEDIR%%/program/js/app.js
+%%RCUBEDIR%%/program/js/common.js
+%%RCUBEDIR%%/program/lib/Auth/SASL.php
+%%RCUBEDIR%%/program/lib/Auth/SASL/Anonymous.php
+%%RCUBEDIR%%/program/lib/Auth/SASL/Common.php
+%%RCUBEDIR%%/program/lib/Auth/SASL/CramMD5.php
+%%RCUBEDIR%%/program/lib/Auth/SASL/DigestMD5.php
+%%RCUBEDIR%%/program/lib/Auth/SASL/Login.php
+%%RCUBEDIR%%/program/lib/Auth/SASL/Plain.php
+%%RCUBEDIR%%/program/lib/DB.php
+%%RCUBEDIR%%/program/lib/DB/common.php
+%%RCUBEDIR%%/program/lib/DB/dbase.php
+%%RCUBEDIR%%/program/lib/DB/fbsql.php
+%%RCUBEDIR%%/program/lib/DB/ibase.php
+%%RCUBEDIR%%/program/lib/DB/ifx.php
+%%RCUBEDIR%%/program/lib/DB/msql.php
+%%RCUBEDIR%%/program/lib/DB/mssql.php
+%%RCUBEDIR%%/program/lib/DB/mysql.php
+%%RCUBEDIR%%/program/lib/DB/mysqli.php
+%%RCUBEDIR%%/program/lib/DB/oci8.php
+%%RCUBEDIR%%/program/lib/DB/odbc.php
+%%RCUBEDIR%%/program/lib/DB/pgsql.php
+%%RCUBEDIR%%/program/lib/DB/sqlite.php
+%%RCUBEDIR%%/program/lib/DB/storage.php
+%%RCUBEDIR%%/program/lib/DB/sybase.php
+%%RCUBEDIR%%/program/lib/Mail/mime.php
+%%RCUBEDIR%%/program/lib/Mail/mimeDecode.php
+%%RCUBEDIR%%/program/lib/Mail/mimePart.php
+%%RCUBEDIR%%/program/lib/Net/SMTP.php
+%%RCUBEDIR%%/program/lib/Net/Socket.php
+%%RCUBEDIR%%/program/lib/PEAR.php
+%%RCUBEDIR%%/program/lib/des.inc
+%%RCUBEDIR%%/program/lib/enriched.inc
+%%RCUBEDIR%%/program/lib/html2text.inc
+%%RCUBEDIR%%/program/lib/icl_commons.inc
+%%RCUBEDIR%%/program/lib/imap.inc
+%%RCUBEDIR%%/program/lib/mime.inc
+%%RCUBEDIR%%/program/lib/utf7.inc
+%%RCUBEDIR%%/program/lib/utf8.inc
+%%RCUBEDIR%%/program/localization/da/labels.inc
+%%RCUBEDIR%%/program/localization/da/messages.inc
+%%RCUBEDIR%%/program/localization/de/labels.inc
+%%RCUBEDIR%%/program/localization/de/messages.inc
+%%RCUBEDIR%%/program/localization/en/labels.inc
+%%RCUBEDIR%%/program/localization/en/messages.inc
+%%RCUBEDIR%%/program/localization/es/labels.inc
+%%RCUBEDIR%%/program/localization/es/messages.inc
+%%RCUBEDIR%%/program/localization/fr/labels.inc
+%%RCUBEDIR%%/program/localization/fr/messages.inc
+%%RCUBEDIR%%/program/localization/it/labels.inc
+%%RCUBEDIR%%/program/localization/it/messages.inc
+%%RCUBEDIR%%/program/localization/nl/labels.inc
+%%RCUBEDIR%%/program/localization/nl/messages.inc
+%%RCUBEDIR%%/program/steps/addressbook/delete.inc
+%%RCUBEDIR%%/program/steps/addressbook/edit.inc
+%%RCUBEDIR%%/program/steps/addressbook/func.inc
+%%RCUBEDIR%%/program/steps/addressbook/list.inc
+%%RCUBEDIR%%/program/steps/addressbook/save.inc
+%%RCUBEDIR%%/program/steps/addressbook/show.inc
+%%RCUBEDIR%%/program/steps/error.inc
+%%RCUBEDIR%%/program/steps/mail/addcontact.inc
+%%RCUBEDIR%%/program/steps/mail/compose.inc
+%%RCUBEDIR%%/program/steps/mail/func.inc
+%%RCUBEDIR%%/program/steps/mail/get.inc
+%%RCUBEDIR%%/program/steps/mail/list.inc
+%%RCUBEDIR%%/program/steps/mail/mark.inc
+%%RCUBEDIR%%/program/steps/mail/move_del.inc
+%%RCUBEDIR%%/program/steps/mail/sendmail.inc
+%%RCUBEDIR%%/program/steps/mail/show.inc
+%%RCUBEDIR%%/program/steps/mail/upload.inc
+%%RCUBEDIR%%/program/steps/mail/viewsource.inc
+%%RCUBEDIR%%/program/steps/settings/delete_identity.inc
+%%RCUBEDIR%%/program/steps/settings/edit_identity.inc
+%%RCUBEDIR%%/program/steps/settings/func.inc
+%%RCUBEDIR%%/program/steps/settings/identities.inc
+%%RCUBEDIR%%/program/steps/settings/manage_folders.inc
+%%RCUBEDIR%%/program/steps/settings/save_identity.inc
+%%RCUBEDIR%%/program/steps/settings/save_prefs.inc
+%%RCUBEDIR%%/skins/default/addresses.css
+%%RCUBEDIR%%/skins/default/common.css
+%%RCUBEDIR%%/skins/default/images/blank.gif
+%%RCUBEDIR%%/skins/default/images/buttons/add_act.png
+%%RCUBEDIR%%/skins/default/images/buttons/add_contact_act.png
+%%RCUBEDIR%%/skins/default/images/buttons/add_contact_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/add_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/addressbook.png
+%%RCUBEDIR%%/skins/default/images/buttons/attach_act.png
+%%RCUBEDIR%%/skins/default/images/buttons/attach_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/back_act.png
+%%RCUBEDIR%%/skins/default/images/buttons/back_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/bg.gif
+%%RCUBEDIR%%/skins/default/images/buttons/compose_act.png
+%%RCUBEDIR%%/skins/default/images/buttons/compose_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/contacts_act.png
+%%RCUBEDIR%%/skins/default/images/buttons/contacts_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/delete_act.png
+%%RCUBEDIR%%/skins/default/images/buttons/delete_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/download_act.png
+%%RCUBEDIR%%/skins/default/images/buttons/download_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/edit_contact_act.png
+%%RCUBEDIR%%/skins/default/images/buttons/edit_contact_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/forward_act.png
+%%RCUBEDIR%%/skins/default/images/buttons/forward_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/inbox_act.png
+%%RCUBEDIR%%/skins/default/images/buttons/inbox_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/logout.gif
+%%RCUBEDIR%%/skins/default/images/buttons/logout.png
+%%RCUBEDIR%%/skins/default/images/buttons/mail.png
+%%RCUBEDIR%%/skins/default/images/buttons/next_act.png
+%%RCUBEDIR%%/skins/default/images/buttons/next_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/previous_act.png
+%%RCUBEDIR%%/skins/default/images/buttons/previous_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/print_act.png
+%%RCUBEDIR%%/skins/default/images/buttons/print_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/reply_act.png
+%%RCUBEDIR%%/skins/default/images/buttons/reply_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/send_act.png
+%%RCUBEDIR%%/skins/default/images/buttons/send_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/settings.png
+%%RCUBEDIR%%/skins/default/images/buttons/source_act.png
+%%RCUBEDIR%%/skins/default/images/buttons/source_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/spacer.gif
+%%RCUBEDIR%%/skins/default/images/display/confirm.png
+%%RCUBEDIR%%/skins/default/images/display/info.png
+%%RCUBEDIR%%/skins/default/images/display/loading.gif
+%%RCUBEDIR%%/skins/default/images/display/warning.png
+%%RCUBEDIR%%/skins/default/images/icons/abcard.png
+%%RCUBEDIR%%/skins/default/images/icons/attachment.png
+%%RCUBEDIR%%/skins/default/images/icons/dot.png
+%%RCUBEDIR%%/skins/default/images/icons/flagged.png
+%%RCUBEDIR%%/skins/default/images/icons/folder-closed.png
+%%RCUBEDIR%%/skins/default/images/icons/folder-inbox.png
+%%RCUBEDIR%%/skins/default/images/icons/folder-junk.png
+%%RCUBEDIR%%/skins/default/images/icons/folder-open.png
+%%RCUBEDIR%%/skins/default/images/icons/folder-sent.png
+%%RCUBEDIR%%/skins/default/images/icons/folder-trash.png
+%%RCUBEDIR%%/skins/default/images/icons/forwarded.png
+%%RCUBEDIR%%/skins/default/images/icons/plus.gif
+%%RCUBEDIR%%/skins/default/images/icons/replied.png
+%%RCUBEDIR%%/skins/default/images/icons/silhouette.png
+%%RCUBEDIR%%/skins/default/images/icons/unread.png
+%%RCUBEDIR%%/skins/default/images/listheader_aqua.gif
+%%RCUBEDIR%%/skins/default/images/listheader_dark.gif
+%%RCUBEDIR%%/skins/default/images/listheader_light.gif
+%%RCUBEDIR%%/skins/default/images/mailbox_list.gif
+%%RCUBEDIR%%/skins/default/images/mailbox_selected.gif
+%%RCUBEDIR%%/skins/default/images/rcube_watermark.png
+%%RCUBEDIR%%/skins/default/images/roundcube_logo.gif
+%%RCUBEDIR%%/skins/default/images/roundcube_logo.png
+%%RCUBEDIR%%/skins/default/images/roundcube_logo_print.gif
+%%RCUBEDIR%%/skins/default/images/tab_act.gif
+%%RCUBEDIR%%/skins/default/images/tab_pas.gif
+%%RCUBEDIR%%/skins/default/includes/header.html
+%%RCUBEDIR%%/skins/default/includes/settingscripts.html
+%%RCUBEDIR%%/skins/default/includes/settingstabs.html
+%%RCUBEDIR%%/skins/default/includes/taskbar.html
+%%RCUBEDIR%%/skins/default/mail.css
+%%RCUBEDIR%%/skins/default/pngbehavior.htc
+%%RCUBEDIR%%/skins/default/print.css
+%%RCUBEDIR%%/skins/default/settings.css
+%%RCUBEDIR%%/skins/default/templates/addcontact.html
+%%RCUBEDIR%%/skins/default/templates/addidentity.html
+%%RCUBEDIR%%/skins/default/templates/addressbook.html
+%%RCUBEDIR%%/skins/default/templates/compose.html
+%%RCUBEDIR%%/skins/default/templates/editcontact.html
+%%RCUBEDIR%%/skins/default/templates/editidentity.html
+%%RCUBEDIR%%/skins/default/templates/error.html
+%%RCUBEDIR%%/skins/default/templates/identities.html
+%%RCUBEDIR%%/skins/default/templates/login.html
+%%RCUBEDIR%%/skins/default/templates/mail.html
+%%RCUBEDIR%%/skins/default/templates/managefolders.html
+%%RCUBEDIR%%/skins/default/templates/message.html
+%%RCUBEDIR%%/skins/default/templates/messagepart.html
+%%RCUBEDIR%%/skins/default/templates/printmessage.html
+%%RCUBEDIR%%/skins/default/templates/settings.html
+%%RCUBEDIR%%/skins/default/templates/showcontact.html
+%%RCUBEDIR%%/skins/default/watermark.html
+%%RCUBEDIR%%/temp/.htaccess
+@dirrm %%RCUBEDIR%%/skins/default/templates
+@dirrm %%RCUBEDIR%%/skins/default/includes
+@dirrm %%RCUBEDIR%%/skins/default/images/icons
+@dirrm %%RCUBEDIR%%/skins/default/images/display
+@dirrm %%RCUBEDIR%%/skins/default/images/buttons
+@dirrm %%RCUBEDIR%%/skins/default/images
+@dirrm %%RCUBEDIR%%/skins/default
+@dirrm %%RCUBEDIR%%/skins
+@dirrm %%RCUBEDIR%%/program/steps/settings
+@dirrm %%RCUBEDIR%%/program/steps/mail
+@dirrm %%RCUBEDIR%%/program/steps/addressbook
+@dirrm %%RCUBEDIR%%/program/steps
+@dirrm %%RCUBEDIR%%/program/localization/nl
+@dirrm %%RCUBEDIR%%/program/localization/it
+@dirrm %%RCUBEDIR%%/program/localization/fr
+@dirrm %%RCUBEDIR%%/program/localization/es
+@dirrm %%RCUBEDIR%%/program/localization/en
+@dirrm %%RCUBEDIR%%/program/localization/de
+@dirrm %%RCUBEDIR%%/program/localization/da
+@dirrm %%RCUBEDIR%%/program/localization
+@dirrm %%RCUBEDIR%%/program/lib/Net
+@dirrm %%RCUBEDIR%%/program/lib/Mail
+@dirrm %%RCUBEDIR%%/program/lib/DB
+@dirrm %%RCUBEDIR%%/program/lib/Auth/SASL
+@dirrm %%RCUBEDIR%%/program/lib/Auth
+@dirrm %%RCUBEDIR%%/program/lib
+@dirrm %%RCUBEDIR%%/program/js
+@dirrm %%RCUBEDIR%%/program/include
+@dirrm %%RCUBEDIR%%/program
+@dirrm %%RCUBEDIR%%/SQL
+@unexec rmdir %D/%%RCUBEDIR%%/temp 2>&1 >/dev/null || true
+@unexec rmdir %D/%%RCUBEDIR%%/logs 2>&1 >/dev/null || true
+@unexec rmdir %D/%%RCUBEDIR%%/config 2>&1 >/dev/null || true
+@unexec rmdir %D/%%RCUBEDIR%% 2>&1 >/dev/null || true
+@dirrm %%DOCSDIR%%
