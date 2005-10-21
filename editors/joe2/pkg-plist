@@ -3,8 +3,17 @@ bin/jmacs
 bin/jstar
 bin/rjoe
 bin/jpico
-lib/joerc
-lib/jmacsrc
-lib/jstarrc
-lib/rjoerc
-lib/jpicorc
+bin/termidx
+etc/joe/joerc
+etc/joe/jmacsrc
+etc/joe/jstarrc
+etc/joe/rjoerc
+etc/joe/jpicorc
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/CommandList
+%%PORTDOCS%%%%DOCSDIR%%/INFO
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.cvs
+%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
+@unexec rmdir %D/etc/joe 2>/dev/null || true
