@@ -60,6 +60,9 @@ pre-everything::
 	@${ECHO_MSG} "  WITH_TIDY		for the tidy html cleanup program"
 	@${ECHO_MSG} "  WITHOUT_SPLASH	disable the splash screen"
 	@${ECHO_MSG} ""
+	@${ECHO_MSG} "For Highlighting to work, please enable UTF-8 support in devel/pcre."
+	@${ECHO_MSG} "This will reduce the number of warning in the console when running bluefish."
+	@${ECHO_MSG} ""
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/debian/bluefish.1 ${PREFIX}/man/man1/bluefish.1
