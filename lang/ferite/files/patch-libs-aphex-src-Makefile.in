@@ -1,0 +1,11 @@
+--- libs/aphex/src/Makefile.in.orig	Wed Oct 19 19:30:12 2005
++++ libs/aphex/src/Makefile.in	Wed Oct 19 19:30:31 2005
+@@ -119,7 +119,7 @@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @debugdefs@ @thread_defs@
++DEFS = @debugdefs@ @thread_defs@ -DUSING_FAKE_RECURSIVE_MUTEX
+ DEPDIR = @DEPDIR@
+ ECHO = @ECHO@
+ ECHO_C = @ECHO_C@

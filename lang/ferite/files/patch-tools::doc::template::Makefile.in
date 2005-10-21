@@ -1,25 +1,26 @@
---- tools/doc/template/Makefile.in.orig	Thu Jan  9 04:49:50 2003
-+++ tools/doc/template/Makefile.in	Tue Jan 14 09:39:24 2003
-@@ -124,7 +124,7 @@
+--- tools/doc/template/Makefile.in.orig	Wed Oct 19 19:06:40 2005
++++ tools/doc/template/Makefile.in	Wed Oct 19 19:07:52 2005
+@@ -240,7 +240,7 @@
+ xml_CFLAGS = @xml_CFLAGS@
  xml_LIBS = @xml_LIBS@
  template_DATA = text.fe html.fe
- 
 -templatedir = @prefix@/share/ferite/doc/template
 +templatedir = @prefix@/share/doc/ferite/template
- 
  EXTRA_DIST = $(template_DATA)
- 
-@@ -163,6 +163,7 @@
+ SUBDIRS = html
+ all: all-recursive
+@@ -286,6 +286,8 @@
+ 	-rm -f libtool
  uninstall-info-am:
- templateDATA_INSTALL = $(INSTALL_DATA)
  install-templateDATA: $(template_DATA)
++
 +ifndef NOPORTDOCS
  	@$(NORMAL_INSTALL)
- 	$(mkinstalldirs) $(DESTDIR)$(templatedir)
+ 	test -z "$(templatedir)" || $(mkdir_p) "$(DESTDIR)$(templatedir)"
  	@list='$(template_DATA)'; for p in $$list; do \
-@@ -171,6 +172,7 @@
- 	  echo " $(templateDATA_INSTALL) $$d$$p $(DESTDIR)$(templatedir)/$$f"; \
- 	  $(templateDATA_INSTALL) $$d$$p $(DESTDIR)$(templatedir)/$$f; \
+@@ -294,6 +296,7 @@
+ 	  echo " $(templateDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(templatedir)/$$f'"; \
+ 	  $(templateDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(templatedir)/$$f"; \
  	done
 +endif
  
