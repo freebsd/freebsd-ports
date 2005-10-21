@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pflogstats
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.1
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.aerasec.de/pub/linux/postfix/pflogsumm/${PORTNAME}/
@@ -39,5 +39,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
+
+post-install:
+	@${CAT} ${PKGDIR}/pkg-message
 
 .include <bsd.port.mk>
