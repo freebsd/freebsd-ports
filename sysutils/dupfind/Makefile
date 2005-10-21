@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dupfind
-PORTVERSION=	1.0
+PORTVERSION=	2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.heitec.net/pub/distfiles/
 
