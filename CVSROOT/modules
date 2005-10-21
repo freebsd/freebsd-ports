@@ -1467,6 +1467,7 @@ daemontools53	ports/sysutils/daemontools53
 dagrab		ports/audio/dagrab
 dailystrips	ports/deskutils/dailystrips
 daimonin-client	ports/games/daimonin-client
+dalbum		ports/www/dalbum
 damageext	ports/x11/damageext
 danamics	ports/net/danamics
 dancer		ports/irc/dancer
