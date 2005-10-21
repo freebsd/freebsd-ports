@@ -2,11 +2,11 @@ You have to do something like bellow before starting up the bot.
 
   # mkdir home/of/the/sulci/the/bot
   # cd    home/of/the/sulci/the/bot
-  # cp ${PREFIX}/share/examples/sulci/sulci.conf.example sulci.conf
+  # cp %%PREFIX%%/share/examples/sulci/sulci.conf.example sulci.conf
   # vi sulci.conf
-  # ln -s ${PREFIX}/share/sulci/tlds.db .
+  # ln -s %%PREFIX%%/share/sulci/tlds.db .
 
-  # echo sulci_enable=\"YES"\ >> /etc/rc.conf
+  # echo sulci_enable=\"YES\" >> /etc/rc.conf
   # echo sulci_chdir=\"home/of/the/sulci/the/bot\" >> /etc/rc.conf
 
 

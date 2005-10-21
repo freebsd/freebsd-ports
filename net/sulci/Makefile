@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	sulci
-PORTVERSION=	0.5.a.20050723
+PORTVERSION=	0.5.a.20050918
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	http://neva.vlink.ru/distfiles/
+MASTER_SITES=	http://www.jabber.ru/files/sulci/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./-alpha-/}
 
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	A Jabber bot
@@ -19,20 +20,22 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		${OCAML_SITELIBDIR}/ulex/ulexing.a:${PORTSDIR}/devel/ocaml-ulex \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib \
 		${OCAML_SITELIBDIR}/netstring/netstring.a:${PORTSDIR}/www/ocaml-net \
+		${OCAML_SITELIBDIR}/netclient/netclient.a:${PORTSDIR}/net/ocaml-netclient \
 		${OCAML_SITELIBDIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
 LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite2 \
 		pcre.0:${PORTSDIR}/devel/pcre-utf8
 RUN_DEPENDS=	${OCAML_SITELIBDIR}/netstring/netstring.a:${PORTSDIR}/www/ocaml-net \
-		${OCAML_SITELIBDIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre \
 		mueller:${PORTSDIR}/russian/mueller-dic
-
-OCAML_SITELIBDIR=	${LOCALBASE}/lib/ocaml/site-lib
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_RC_SUBR=	${PORTNAME}.sh
 
 ALL_TARGET=	subdirs
+PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+
+OCAML_SITELIBDIR=	${LOCALBASE}/lib/ocaml/site-lib
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}/${PORTNAME} ${PREFIX}/sbin
@@ -47,12 +50,12 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 
-.  for i in COPYING ChangeLog
+.  for i in COPYING
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .  endfor
 
 .  for i in cmdlist.en.txt cmdlist.ru.txt
-	${INSTALL_DATA} ${WRKSRC}/doc/sulci/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/sulci/${i} ${DOCSDIR}
 .  endfor
 .endif
 
