@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomespell
-PORTVERSION=	1.0.5
-PORTREVISION=	5
+PORTVERSION=	1.0.6
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-spell/1.0
@@ -28,5 +27,9 @@ USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 PLIST_SUB=	VERSION=${PORTVERSION}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|@mkdir_p@|mkdir -p|g' \
+		${WRKSRC}/po/Makefile.in.in
 
 .include <bsd.port.mk>
