@@ -6,22 +6,35 @@
 #
 
 PORTNAME=	joe
-PORTVERSION=	2.8
-PORTREVISION=	5
-CATEGORIES+=	editors
-MASTER_SITES=	ftp://ftp.std.com/src/editors/ \
-		http://www.dragondata.com/software/
-DISTNAME=	${PORTNAME}${PORTVERSION}
-EXTRACT_SUFX=	.tar.Z
+PORTVERSION=	2.9.8
+CATEGORIES=	editors
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}-editor
 
 MAINTAINER?=	toasty@dragondata.com
-COMMENT?=	Joe's own editor
+COMMENT?=	Joe's Own Editor
+
+RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
 LATEST_LINK=	joe2
 CONFLICTS=	joe-3*
 
-WRKSRC=		${WRKDIR}/joe
-ALL_TARGET=	joe
-MAN1=		joe.1
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_ICONV=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -liconv"
+
+ALL_TARGET=	${PORTNAME}
+MAN1=		${PORTNAME}.1
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/README.cvs ${WRKSRC}/ChangeLog\
+		 ${WRKSRC}/INFO ${WRKSRC}/NEWS ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/LIST ${DOCSDIR}/CommandList
+.endif
 
 .include <bsd.port.mk>
