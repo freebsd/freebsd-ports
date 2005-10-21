@@ -10,7 +10,7 @@ PORTVERSION=	1.3.3
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.stroeder.com/pylib/PyWebLib/download/ \
-		http://www.tricknology.org/ports/
+		ftp://ftp.ipt.ru/pub/download/
 
 MAINTAINER=	bsam@ipt.ru
 COMMENT=	Yet another web programming framework for Python
