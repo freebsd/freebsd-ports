@@ -87,6 +87,7 @@
     SUBDIR += css-mode.el
     SUBDIR += cssed
     SUBDIR += cybercalendar
+    SUBDIR += dalbum
     SUBDIR += dansguardian
     SUBDIR += dansguardian-devel
     SUBDIR += decss
