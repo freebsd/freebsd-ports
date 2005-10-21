@@ -75,7 +75,7 @@ else
 		pkm pkmraw pksm pksmraw \
 		pngmono pnggray png16 png256 png16m pngalpha \
 		psmono psgray psrgb \
-		pswrite epswrite sgirgb sunhmono \
+		pswrite ps2write epswrite sgirgb sunhmono \
 		tiffcrle tiffg3 tiffg32d tiffg4 \
 		tiff12nc tiff24nc tifflzw tiffpack \
 		bbox \
@@ -340,6 +340,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "psgray"   "PostScript (Level 1) 8-bit gray image" "$status_psgray" \
   "psrgb"    "PostScript (Level 2) 24-bit color image" "$status_psrgb" \
   "pswrite"  "PostScript output (like PostScript Distillery)" "$status_pswrite" \
+  "ps2write" "PostScript (Level 2) output" "$status_ps2write" \
   "epswrite" "EPS output (like PostScript Distillery)" "$status_epswrite" \
   "sgirgb"   "SGI RGB pixmap format" "$status_sgirgb" \
   "sunhmono" "Harlequin variant of 1-bit Sun raster file" "$status_sunhmono" \

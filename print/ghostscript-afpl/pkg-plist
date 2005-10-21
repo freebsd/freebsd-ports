@@ -214,6 +214,9 @@ bin/wftopfa
 %%DATADIR%%/%%GS_VERSION%%/doc/Commprod.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Copying.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/DLL.htm
+%%DATADIR%%/%%GS_VERSION%%/doc/Deprecated.htm
+%%DATADIR%%/%%GS_VERSION%%/doc/Details.htm
+%%DATADIR%%/%%GS_VERSION%%/doc/Details8.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Develop.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Devices.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Drivers.htm
@@ -226,9 +229,12 @@ bin/wftopfa
 %%DATADIR%%/%%GS_VERSION%%/doc/History4.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/History5.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/History6.htm
+%%DATADIR%%/%%GS_VERSION%%/doc/History7.htm
+%%DATADIR%%/%%GS_VERSION%%/doc/History8.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Htmstyle.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Humor.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Install.htm
+%%DATADIR%%/%%GS_VERSION%%/doc/Issues.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Language.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Lib.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Maintain.htm
@@ -245,12 +251,14 @@ bin/wftopfa
 %%DATADIR%%/%%GS_VERSION%%/doc/Readme.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Release.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Source.htm
+%%DATADIR%%/%%GS_VERSION%%/doc/Testing.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Unix-lpr.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Use.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Xfonts.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/gs.css
 %%DATADIR%%/%%GS_VERSION%%/doc/index.html
 %%DATADIR%%/%%GS_VERSION%%/examples/alphabet.ps
+%%DATADIR%%/%%GS_VERSION%%/examples/annots.pdf
 %%DATADIR%%/%%GS_VERSION%%/examples/chess.ps
 %%DATADIR%%/%%GS_VERSION%%/examples/colorcir.ps
 %%DATADIR%%/%%GS_VERSION%%/examples/doretree.ps
