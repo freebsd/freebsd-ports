@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	postfinger
-PORTVERSION=	1.29
+PORTVERSION=	1.30
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.nobandwidth.net/pub/postfix-mudd/postfinger/ \
-		ftp://ftp.wl0.org/postfinger/
+MASTER_SITES=	ftp://ftp.wl0.org/postfinger/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 DISTFILES=	${PORTNAME}-${PORTVERSION} README
 DIST_SUBDIR=	${PORTNAME}
