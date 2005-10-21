@@ -52,6 +52,7 @@
     SUBDIR += gtkdatabox
     SUBDIR += gtkdatabox2
     SUBDIR += gtkextra
+    SUBDIR += gtkextra2
     SUBDIR += gtkglarea
     SUBDIR += gtkglarea--
     SUBDIR += gtkglarea2
