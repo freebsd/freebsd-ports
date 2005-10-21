@@ -7,7 +7,7 @@
 
 PORTNAME=	mcabber
 PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/
 
@@ -22,7 +22,8 @@ USE_GETTEXT=	yes
 USE_GNOME=	glib20
 USE_GETOPT_LONG=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+LDFLAGS+=	-lcrypto
+
 MAN1=		mcabber.1
 PLIST_FILES=	bin/mcabber %%EXAMPLESDIR%%/mcabberrc
 PLIST_DIRS=	%%EXAMPLESDIR%%
