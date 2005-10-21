@@ -21,4 +21,8 @@ GNU_CONFIGURE=	yes
 BROKEN=	"Doesn't build on FreeBSD < 5.x"
 .endif
 
+.if ${ARCH} == amd64
+BROKEN=	"Doesn't build on arch amd64"
+.endif
+
 .include <bsd.port.post.mk>
