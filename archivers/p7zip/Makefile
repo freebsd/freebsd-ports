@@ -7,6 +7,7 @@
 
 PORTNAME=	p7zip
 PORTVERSION=	4.29
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	p7zip
@@ -65,6 +66,7 @@ do-install:
 .endfor
 	${INSTALL_SCRIPT} ${FILESDIR}/7z ${PREFIX}/bin
 	${LN} -sf 7z ${PREFIX}/bin/7za
+	${INSTALL_SCRIPT} ${FILESDIR}/p7zip ${PREFIX}/bin
 .if !defined(WITHOUT_MODULES)
 .for f in Codecs Formats
 	${MKDIR} ${DLLDIR}/${f}
