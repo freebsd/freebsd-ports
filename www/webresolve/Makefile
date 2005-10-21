@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webresolve
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.0
 CATEGORIES=	www
 MASTER_SITES=	http://siag.nu/pub/webresolve/ \
 		ftp://siag.nu/pub/webresolve/
@@ -14,6 +14,7 @@ MASTER_SITES=	http://siag.nu/pub/webresolve/ \
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	Webresolve resolves IP addresses to host names in web log files
 
+HAS_CONFIGURE=yes
 ALL_TARGET=	webresolve
 
 MAN1=	webresolve.1 splitwr.1
