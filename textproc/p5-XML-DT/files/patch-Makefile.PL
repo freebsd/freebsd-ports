@@ -1,47 +1,21 @@
---- Makefile.PL.orig	Sun Oct 12 22:45:13 2003
-+++ Makefile.PL	Mon Oct 13 20:53:10 2003
-@@ -9,26 +9,26 @@
- 		'LWP::Simple' => '1.35',
+--- Makefile.PL.orig	Mon Nov 29 21:27:09 2004
++++ Makefile.PL	Thu Oct 20 11:21:23 2005
+@@ -18,12 +18,14 @@ $xmllibxml_version = 1.54;
+ 		'XML::DTDParser' => '2.00',
  	       );
  
--print "\n";
--print " NOTE: Next versions will, possibly, deprecate XML::Parser backend.\n";
--print "       At the moment, XML::LibXML is quicker than XML::Parser and\n";
--print "       supports HTML parsing\n\n";
--
--print "I need a XML Back-end (XML::Parser >= $xmlparser_version or XML::LibXML >= $xmllibxml_version\n";
--do {
--  print "Sorry, I didn't understand the answer.\n" if ($answer);
--  print "Should I use 'XML::Parser' or 'XML::LibXML'? [XML::LibXML] ";
--  $XML = undef;
--  $answer = <STDIN>;
--  print "\n";
--  if ($answer =~ m/^XML::Parser$/i) {
--    $XML = 'XML::Parser';
--    %req_modules = (%req_modules, $XML => $xmlparser_version);
--  } elsif ($answer =~ m/^\s*$/ || $answer =~ m/^XML::LibXML$/i) {
-+#print "\n";
-+#print " NOTE: Next versions will, possibly, deprecate XML::Parser backend.\n";
-+#print "       At the moment, XML::LibXML is quicker than XML::Parser and\n";
-+#print "       supports HTML parsing\n\n";
-+#
-+#print "I need a XML Back-end (XML::Parser >= $xmlparser_version or XML::LibXML >= $xmllibxml_version\n";
-+#do {
-+#  print "Sorry, I didn't understand the answer.\n" if ($answer);
-+#  print "Should I use 'XML::Parser' or 'XML::LibXML'? [XML::LibXML] ";
-+#  $XML = undef;
-+#  $answer = <STDIN>;
-+#  print "\n";
-+#  if ($answer =~ m/^XML::Parser$/i) {
-+#    $XML = 'XML::Parser';
-+#    %req_modules = (%req_modules, $XML => $xmlparser_version);
-+#  } elsif ($answer =~ m/^\s*$/ || $answer =~ m/^XML::LibXML$/i) {
-     $XML = 'XML::LibXML';
-     %req_modules = (%req_modules, $XML => $xmllibxml_version);
--  }
--} until defined $XML;
-+#  }
-+#} until defined $XML;
- 
- my $pattern = uc($XML);
- 
++$PARSER = "XML::LibXML";  # no user interaction, sir!
++
+ if ($PARSER) {
+-  $PARSER=~m!PARSER=!;
+-  $XML = uc($');
+-  unless ($XML eq "XML::PARSER" || $XML eq "XML::LIBXML") {
++#  $PARSER=~m!PARSER=!;
++  $XML = $PARSER;
++  unless ($XML eq "XML::PARSER" || $XML eq "XML::LibXML") {
+     print STDERR "Unknown parser. Using default: XML::LibXML\n";
+-    $XML = "XML::LIBXML";
++    $XML = "XML::LibXML";
+   }
+ } else {
+   print "\n";
