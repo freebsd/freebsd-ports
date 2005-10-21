@@ -1425,6 +1425,7 @@
     SUBDIR += qmake
     SUBDIR += qsa
     SUBDIR += qssl
+    SUBDIR += qtk
     SUBDIR += ragel
     SUBDIR += rapidsvn
     SUBDIR += re2c
