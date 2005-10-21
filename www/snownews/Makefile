@@ -8,6 +8,7 @@
 
 PORTNAME=	snownews
 PORTVERSION=	1.5.7
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://kiza.kcore.de/software/snownews/download/
 
@@ -19,6 +20,8 @@ USE_GMAKE=	yes
 USE_GNOME=	libxml2
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
+
+OPTIONS=	OPML		"Outline Processor Markup Support" on
 
 .if defined(CHARSET)
 CONFIGURE_ARGS=	--charset=${CHARSET}
@@ -33,6 +36,16 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if defined(WITHOUT_OPML)
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile
+PLIST_SUB+=	OPML="@comment "
+.else
+RUN_DEPENDS=	${SITE_PERL}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
+PLIST_SUB+=	OPML=""
+# opml2snow only have "" manpage
+_MANPAGES+=	${PREFIX}/man/man1/opml2snow.1
 .endif
 
 MAN1=		snownews.1
@@ -50,6 +63,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS=|CFLAGS+=|g' ${WRKSRC}/platform_settings
 	@${REINPLACE_CMD} -e 's|^PREFIX|#PREFIX|' ${WRKSRC}/platform_settings
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|make|${GMAKE}|' ${WRKSRC}/Makefile
 .if defined(WITHOUT_NLS)
 	${REINPLACE_CMD} -e 's/ install-locales / /g' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's/ locales$$//g' ${WRKSRC}/Makefile

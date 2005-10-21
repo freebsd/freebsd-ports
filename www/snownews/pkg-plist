@@ -1,5 +1,5 @@
-bin/opml2snow
-bin/snow2opml
+%%OPML%%bin/opml2snow
+%%OPML%%bin/snow2opml
 bin/snownews
 bin/snowsync
 %%NLS%%share/locale/de/LC_MESSAGES/snownews.mo
