@@ -7,6 +7,7 @@
 
 PORTNAME=	dspampd
 PORTVERSION=	2.00.r2
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://caspian.dotconf.net/menu/Software/DspamPD/ \
 		http://people.tecnik93.com/~itetcu/FreeBSD/ports/dspampd/sources/
@@ -20,15 +21,14 @@ WRKSRC=		${WRKDIR}/dspampd-v2.00-rc2
 USE_PERL5_RUN=	YES
 USE_RC_SUBR=	YES
 
-OPTIONS=	DSPAM "Use stable dspam as anti-spam module" off
-OPTIONS+=	DSPAM_DEVEL "Use devel dspam as antispam module" on
+OPTIONS=	DSPAM "Use stable dspam as anti-spam module" on
+OPTIONS+=	DSPAM_DEVEL "Use devel dspam as antispam module" off
 OPTIONS+=	DSPAM_VIRT_USERS "Non-system users in dspam" off
-OPTIONS+=	CLAMAV	"Use clamav as antivir module" off
-OPTIONS+=	CLAMAV_DEVEL  "Use clamav as antivir module" on
+OPTIONS+=	CLAMAV	"Use clamav as antivir module" on
+OPTIONS+=	CLAMAV_DEVEL  "Use clamav as antivir module" off
 #OPTIONS+=	TIME_HIRES "" on
 
 NO_BUILD=	YES
-#NO_INSTALL=	YES
 USE_REINPLACE=	YES
 
 CONF_DIR=	${PREFIX}/etc/dspampd
@@ -55,13 +55,6 @@ SED_CONF_SCRIPT+=	-e "s,%%ARCHIVE_DIR%%,${ARCHIVE_DIR},"
 SED_CONF_SCRIPT+=	-e "s,%%CONF_DIR%%,${CONF_DIR},g"
 
 .include <bsd.port.pre.mk>
-
-# defaults for package building
-.ifndef(WITH_DEVEL) && !defined(WITH_DSPAM_DEVEL) && \
-	!defined(WITH_CLAMAV) && !defined(WITH_CLAMAV_DEVEL)
-WITH_DSPAM_DEVEL=	on
-WITH_CLAMAV_DEVEL=	on
-.endif
 
 .ifdef(WITH_DSPAM)
 RUN_DEPENDS+=	dspam:${PORTSDIR}/mail/dspam
@@ -92,6 +85,15 @@ SED_CONF_SCRIPT+=	-e "s,%%CLAMAV%%,clamd,"
 .else
 SED_CONF_SCRIPT+=	-e "/%%CLAMAV%%/D"
 .endif
+
+pre-everything::
+	@${ECHO_CMD} "##########################################################"
+	@${ECHO_CMD} " Please use mail/dsapm-devel, it's better."
+	@${ECHO_CMD} "There are reports of an infinite cycle with newer perl"
+	@${ECHO_CMD} "versions; please send a mail with your working/non-working"
+	@${ECHO_CMD} "perl version so that this port can be marked accordingly;"
+	@${ECHO_CMD} "or send a patch ;)"
+	@${ECHO_CMD} "##########################################################"
 
 pre-extract:
 	@${ECHO_CMD}
