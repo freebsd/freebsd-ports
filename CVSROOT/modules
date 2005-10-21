@@ -3491,6 +3491,7 @@ gtkdatabox2	ports/x11-toolkits/gtkdatabox2
 gtkdiff		ports/textproc/gtkdiff
 gtkdps		ports/graphics/gtkdps
 gtkextra	ports/x11-toolkits/gtkextra
+gtkextra2	ports/x11-toolkits/gtkextra2
 gtkfig		ports/graphics/gtkfig
 gtkfind		ports/misc/gtkfind
 gtkgep		ports/audio/gtkgep
