@@ -1,6 +1,6 @@
---- src/texpigment.cc.orig	Wed Feb 23 22:32:55 2005
-+++ src/texpigment.cc	Wed Mar 16 22:29:09 2005
-@@ -234,9 +234,9 @@
+--- src/texpigment.cc.orig	Tue Oct  4 02:54:41 2005
++++ src/texpigment.cc	Tue Oct 18 18:58:11 2005
+@@ -236,9 +236,9 @@
  
  if ( blockpig1 == NULL && type->value() == 2 )
  	{
@@ -10,10 +10,10 @@
 +	blockpig1 = new PovTexPigment( app_ref, NULL, false );
 +	blockpig2 = new PovTexPigment( app_ref, NULL, false );
 +	blockpig3 = new PovTexPigment( app_ref, NULL, false );
- 	blockpig1->add_to_tree( ctree, ctree_node, NULL );
- 	blockpig2->add_to_tree( ctree, ctree_node, NULL );
+ 	blockpig1->add_to_tree(  tree_view, tree_store, tree_selection, &node_iter  );
+ 	blockpig2->add_to_tree(  tree_view, tree_store, tree_selection, &node_iter  );
  	}
-@@ -552,9 +552,9 @@
+@@ -555,9 +555,9 @@
  
  	if ( !strcmp( tag, "PIGMENT" ) )
  		{
