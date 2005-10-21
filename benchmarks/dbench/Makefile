@@ -18,11 +18,11 @@ GNU_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=	"Doesn't build on FreeBSD < 5.x"
+IGNORE=	Doesn't build on FreeBSD < 5.x
 .endif
 
 .if ${ARCH} == amd64
-BROKEN=	"Doesn't build on arch amd64"
+IGNORE=	Doesn't build on arch amd64
 .endif
 
 .include <bsd.port.post.mk>
