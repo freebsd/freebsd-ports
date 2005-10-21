@@ -7,7 +7,7 @@
 
 PORTNAME=	gedit-plugins
 PORTVERSION=	2.3.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.3
@@ -31,5 +31,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 post-patch:
 	@${REINPLACE_CMD} -e "s|gedit-2.4|gedit-2.10|g" \
 		${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name Makefile.in -exec \
+		${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||' '{}' \;
 
 .include <bsd.port.mk>
