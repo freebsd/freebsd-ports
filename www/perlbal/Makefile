@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Perlbal
-PORTVERSION=	1.36
+PORTVERSION=	1.38
 CATEGORIES=	www
 MASTER_SITES=	http://www.danga.com/dist/Perlbal/
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ COMMENT=	Reverse-proxy load balancer and webserver
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/${PERL_ARCH}/BSD/Resource.pm:${PORTSDIR}/devel/p5-BSD-Resource \
-		p5-Danga-Socket>=1.44:${PORTSDIR}/devel/p5-Danga-Socket \
+		${SITE_PERL}/Danga/Socket.pm:${PORTSDIR}/devel/p5-Danga-Socket \
 		${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

@@ -9,6 +9,7 @@ bin/perlbal
 %%SITE_PERL%%/Perlbal/CommandContext.pm
 %%SITE_PERL%%/Perlbal/HTTPHeaders.pm
 %%SITE_PERL%%/Perlbal/ManageCommand.pm
+%%SITE_PERL%%/Perlbal/Plugin/AccessControl.pm
 %%SITE_PERL%%/Perlbal/Plugin/Highpri.pm
 %%SITE_PERL%%/Perlbal/Plugin/Palimg.pm
 %%SITE_PERL%%/Perlbal/Plugin/Queues.pm
@@ -22,6 +23,7 @@ bin/perlbal
 %%SITE_PERL%%/Perlbal/Test.pm
 %%SITE_PERL%%/Perlbal/Test/WebClient.pm
 %%SITE_PERL%%/Perlbal/Test/WebServer.pm
+%%SITE_PERL%%/Perlbal/UploadListener.pm
 %%SITE_PERL%%/Perlbal/Util.pm
 %%SITE_PERL%%/mach/auto/Perlbal/.packlist
 @dirrm %%SITE_PERL%%/Perlbal/Plugin
