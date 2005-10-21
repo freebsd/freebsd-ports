@@ -1,6 +1,6 @@
---- configure.orig	Fri Feb 28 02:13:12 2003
-+++ configure	Sun May  4 13:44:59 2003
-@@ -5430,17 +5430,17 @@
+--- configure.orig	Fri Oct 21 16:40:26 2005
++++ configure	Fri Oct 21 16:49:31 2005
+@@ -8640,17 +8640,17 @@
  if test x$fc_config_exec_prefix != x ; then
    fc_config_args="$fc_config_args --exec-prefix=$fc_config_exec_prefix"
    if test x${FC_CONFIG+set} != xset ; then
@@ -22,9 +22,9 @@
  echo "$as_me:$LINENO: checking for $ac_word" >&5
  echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
  if test "${ac_cv_path_FC_CONFIG+set}" = set; then
-@@ -5487,13 +5487,13 @@
- if test "$FC_CONFIG" = "no" ; then
-   no_fc=yes
+@@ -8714,13 +8714,13 @@
+     no_fc=yes
+   fi
  else
 -  FC_CFLAGS=`$FC_CONFIG $fc_config_args --cflags`
 -  FC_LIBS=`$FC_CONFIG $fc_config_args --libs`
@@ -41,16 +41,16 @@
           sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\3/'`
    fc_min_major_version=`echo $min_fc_version | \
           sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\1/'`
-@@ -6432,7 +6432,7 @@
+@@ -9781,7 +9781,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpng ${png_LIBS} -lz -lm $LIBS"
 +LIBS="-L%%LOCALBASE%%/lib -lpng ${png_LIBS} -lz -lm $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- #include "confdefs.h"
-@@ -6704,7 +6704,7 @@
+ /* confdefs.h.  */
+ _ACEOF
+@@ -10104,7 +10104,7 @@
  #define HAVE_PNG 1
  _ACEOF
  
@@ -59,7 +59,7 @@
    problem_png=""
  else
    with_png=no
-@@ -10812,149 +10812,6 @@
+@@ -13074,150 +13074,6 @@
  
    found_gettext=yes
  
@@ -99,7 +99,8 @@
 -  cat conftest.err >&5
 -  echo "$as_me:$LINENO: \$? = $ac_status" >&5
 -  (exit $ac_status); } &&
--	 { ac_try='test -z "$ac_c_werror_flag"			 || test ! -s conftest.err'
+-	 { ac_try='test -z "$ac_c_werror_flag"
+-			 || test ! -s conftest.err'
 -  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
 -  (eval $ac_try) 2>&5
 -  ac_status=$?
@@ -209,7 +210,7 @@
  
  
  
-@@ -11588,7 +11445,7 @@
+@@ -13857,7 +13713,7 @@
  fi
  
          if test "$no_dgettext" != "yes"; then
@@ -218,7 +219,7 @@
            LIBS="$LIBS $intl_LIBS $iconv_LIBS"
            echo "$as_me:$LINENO: checking if a simple gettext program link" >&5
  echo $ECHO_N "checking if a simple gettext program link... $ECHO_C" >&6
-@@ -11665,10 +11522,8 @@
+@@ -13935,10 +13791,8 @@
    else
      with_gettext="no"
      problem_gettext=": Failed to detected GNU gettext"
