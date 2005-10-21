@@ -8256,6 +8256,7 @@ p5-Net-CIDR	ports/net-mgmt/p5-Net-CIDR
 p5-Net-CIDR-Lite	ports/net/p5-Net-CIDR-Lite
 p5-Net-DAAP-Client	ports/audio/p5-Net-DAAP-Client
 p5-Net-DAAP-DMAP	ports/audio/p5-Net-DAAP-DMAP
+p5-Net-DHCPClient	ports/net/p5-Net-DHCPClient
 p5-Net-DLookup	ports/net/p5-Net-DLookup
 p5-Net-DNS	ports/dns/p5-Net-DNS
 p5-Net-DNS-SEC	ports/dns/p5-Net-DNS-SEC
