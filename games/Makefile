@@ -108,6 +108,7 @@
     SUBDIR += cryptoslam
     SUBDIR += csmash
     SUBDIR += ctetris
+    SUBDIR += ctris
     SUBDIR += cube
     SUBDIR += cursive
     SUBDIR += d2x
