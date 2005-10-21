@@ -10760,6 +10760,7 @@ rote		ports/devel/rote
 rotix		ports/textproc/rotix
 rotorouter	ports/net-mgmt/rotorouter
 rottdc		ports/games/rottdc
+roundcube	ports/mail/roundcube
 roundup		ports/www/roundup
 rox-archive	ports/archivers/rox-archive
 rox-edit	ports/editors/rox-edit
