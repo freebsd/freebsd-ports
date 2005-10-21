@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	quantum
-PORTVERSION=	2.4.1
-PORTREVISION=	2
+PORTVERSION=	3.0.0
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	quantum
 PKGNAMEPREFIX=	eclipse-
-DISTNAME=	quantum${PORTVERSION}_e3.0
+DISTNAME=	com.quantum.feature_${PORTVERSION}.bin.dist
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	freebsd-eclipse@FreeBSD.org
@@ -26,9 +25,16 @@ NO_EXTRACT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 USE_ZIP=	yes
+PLIST_SUB+=	VERSION=${PORTVERSION}
+
+post-extract:
+		@${RM} ${WRKSRC}/plugins/com.quantum.Quantum_${PORTVERSION}/icons/Thumbs.db
+		@${RM} ${WRKSRC}/plugins/com.quantum.Quantum_${PORTVERSION}/icons/unused/Thumbs.db
+		@${RM} -rf ${WRKSRC}/plugins/com.quantum.Quantum_${PORTVERSION}/icons/.xvpics
 
 do-install:
 		@${MKDIR} ${PREFIX}/eclipse
 		@${CP} -r ${WRKSRC}/plugins ${PREFIX}/eclipse
+		@${CP} -r ${WRKSRC}/features ${PREFIX}/eclipse
 
 .include <bsd.port.mk>
