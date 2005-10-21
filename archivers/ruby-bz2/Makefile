@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bz2
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	archivers ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
