@@ -1,5 +1,5 @@
---- sulci/sulci.conf.example.orig	Mon Jul 25 12:52:33 2005
-+++ sulci/sulci.conf.example	Mon Jul 25 14:34:06 2005
+--- sulci/sulci.conf.example.orig	Sun Sep 18 18:32:13 2005
++++ sulci/sulci.conf.example	Tue Sep 20 16:02:07 2005
 @@ -1,6 +1,6 @@
  <sulci>
   <jabber>
@@ -8,9 +8,9 @@
    <port>5222</port>
    <user>sxxxx</user>
    <resource>Ocaml</resource>
-@@ -14,20 +14,22 @@
-  -->
-  <reconnect interval='10' count='3' />
+@@ -15,13 +15,13 @@
+ 
+  <lifelog>./sulci_life.log</lifelog>
  
 - <lang dir="./lang" default="ru"/>
 + <lang dir="/usr/local/share/sulci/lang" default="ru"/>
@@ -25,30 +25,15 @@
  
    <chatlogs>./chatlogs</chatlogs>
   </muc>
- 
-+ <!--
-  <debug>
-   <logfile>log.log</logfile>
-  </debug>
-+ -->
- 
-  <plugins>
- 
-@@ -37,7 +39,7 @@
+@@ -40,9 +40,9 @@
  
    <vocabulary name="vocabulary"/>
  
 -  <mueller file="/path/to/Mueller24.koi" hashext=".hash" />
 +  <mueller file="/usr/local/share/mueller-dic/Mueller7accentGPL.koi" hashext=".h" />
  
-   <markov dir="./markov_db" msg_limit="20" />
+-  <markov dir="./markov_db" msg_limit="20" />
++  <markov dir="./markov_db/" msg_limit="20" />
  
-@@ -59,7 +61,7 @@
-   -->
- 
-   <cerberus kick="true">
--   <notify jid="jid@jabber.server"/>
-+   <notify jid="admin@localhost"/>
-   </cerberus>
- 
-  </plugins>
+   <!-- it used on http://ejabberd.jabber.ru/ to display total registered users 
+        and users online using ejabberd -->
