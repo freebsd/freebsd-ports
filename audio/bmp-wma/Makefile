@@ -29,7 +29,7 @@ CONFIGURE_ARGS+=	--enable-x86
 .endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-BROKEN=		"Does not build on amd64 or ia64 (tries to link static library against shared)"
+CFLAGS+=	-fpic -DPIC
 .endif
 
 .include <bsd.port.post.mk>
