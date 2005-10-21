@@ -3181,8 +3181,10 @@ share/locale/zh_CN/LC_MESSAGES/gcompris.mo
 @dirrm share/gnome/gcompris/boards/gcompris/misc
 @dirrm share/gnome/gcompris/boards/gcompris/mimetypes/icons
 @dirrm share/gnome/gcompris/boards/gcompris/mimetypes
+@dirrm share/gnome/gcompris/boards/gcompris/letters
 @dirrm share/gnome/gcompris/boards/gcompris/food
 @dirrm share/gnome/gcompris/boards/gcompris/dice
+@dirrm share/gnome/gcompris/boards/gcompris/buttons
 @dirrm share/gnome/gcompris/boards/gcompris/bonus
 @dirrm share/gnome/gcompris/boards/gcompris/animals
 @dirrm share/gnome/gcompris/boards/gcompris
