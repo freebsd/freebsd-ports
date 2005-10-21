@@ -53,7 +53,6 @@ info/mew.jis.info-2
 %%MEW_DOCDIR%%/patches/canna.el-%%EMACS_VER%%.patch
 %%MEW_DOCDIR%%/patches/egg.el-%%EMACS_VER%%.patch
 %%MEW_DOCDIR%%/patches/egg.el-%%EMACS_VER%%.patch2
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/lisp/startup.el
 %%EMACS_LIBDIR%%/etc/mew/Mew.img
 %%EMACS_LIBDIR%%/etc/mew/Mew.png
 %%EMACS_LIBDIR%%/etc/mew/Mew.xbm
@@ -162,12 +161,9 @@ info/mew.jis.info-2
 %%EMACS_LIBDIR%%/site-lisp/mew/mew.el
 %%EMACS_LIBDIR%%/site-lisp/mew/mew.elc
 @dirrm %%EMACS_LIBDIR%%/site-lisp/mew
-@unexec rmdir %D/%%EMACS_LIBDIR%%/site-lisp 2>/dev/null || true
 @dirrm %%EMACS_LIBDIR%%/etc/mew/etc
 @dirrm %%EMACS_LIBDIR%%/etc/mew
 @unexec rmdir %D/%%EMACS_LIBDIR%%/etc 2>/dev/null || true
-@dirrm %%EMACS_LIBDIR%%/%%EMACS_VER%%/lisp
-@unexec rmdir %D/%%EMACS_LIBDIR%%/%%EMACS_VER%% 2>/dev/null || true
 @dirrm %%MEW_DOCDIR%%/patches
 @dirrm %%MEW_DOCDIR%%/contrib
 @dirrm %%MEW_DOCDIR%%
