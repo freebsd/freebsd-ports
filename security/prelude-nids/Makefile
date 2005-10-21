@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.prelude-ids.org/download/releases/
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Prelude Network Intrusion Detection System sensor
 
+DEPRECATED=	Prelude 0.9.0 and later is using Snort as its default NIDS sensor
+EXPIRATION_DATE=	2005-11-21
+
 LIB_DEPENDS=	prelude.1:${PORTSDIR}/security/libprelude
 
 USE_GMAKE=		yes
