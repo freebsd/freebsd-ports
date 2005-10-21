@@ -6,19 +6,38 @@
 #
 
 PORTNAME=	joe
-PORTVERSION=	2.8
-PORTREVISION=	5
-CATEGORIES+=	editors
-MASTER_SITES=	ftp://ftp.std.com/src/editors/ \
-		http://www.dragondata.com/software/
-DISTNAME=	${PORTNAME}${PORTVERSION}
-EXTRACT_SUFX=	.tar.Z
+PORTVERSION=	3.3
+PORTEPOCH=	1
+CATEGORIES=	editors
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}-editor
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER?=	toasty@dragondata.com
-COMMENT?=	Joe's own editor
+MAINTAINER=	toasty@dragondata.com
+COMMENT=	Joe's Own Editor
 
-WRKSRC=		${WRKDIR}/joe
-ALL_TARGET=	joe
-MAN1=		joe.1
+BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
+RUN_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 
-.include <bsd.port.mk>
+CONFLICTS=	joe-2.*
+
+USE_GMAKE=	yes
+USE_ICONV=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -liconv"
+
+ALL_TARGET=	${PORTNAME}
+MAN1=		${PORTNAME}.1
+
+.include <bsd.port.pre.mk>
+
+post-install:
+.for file in jmacsrc jpicorc jstarrc rjoerc joerc
+.if !exists(${PREFIX}/etc/${PORTNAME}/${file})
+	@${CP} ${PREFIX}/etc/${PORTNAME}/${file} ${PREFIX}/etc/${PORTNAME}/${file}.dist
+.endif
+.endfor
+
+.include <bsd.port.post.mk>
