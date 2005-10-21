@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gtkmozedit
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.0
 CATEGORIES=	devel editors www
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.2
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Text editor widget based on Mozilla's editing functionality
