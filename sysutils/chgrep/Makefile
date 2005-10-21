@@ -8,10 +8,10 @@
 PORTNAME=	chgrep
 PORTVERSION=	1.2.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.bmk.bicom.pl/chgrep/
+MASTER_SITES=	http://www.bmk-it.com/__data/page/63/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	Fast string substitution across multiple files
 
 GNU_CONFIGURE=	yes
