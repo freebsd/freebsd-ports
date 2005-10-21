@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	pcal
-PORTVERSION=	4.8.0
+PORTVERSION=	4.9.1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	PostScript calendar program
 
 USE_REINPLACE=	yes
@@ -31,6 +31,8 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|@@PREFIX@@|${PREFIX}|g' ${WRKSRC}/html/pcal.cgi
 	@${REINPLACE_CMD} -e \
+		's|@@PREFIX@@|${PREFIX}|g' ${WRKSRC}/html/pcal.pl
+	@${REINPLACE_CMD} -e \
 		's|@@WWWSERVER@@|${WWWSERVER}|g' ${WRKSRC}/html/pcal.html
 	@${REINPLACE_CMD} -e \
 		's|@@WWWSERVER@@|${WWWSERVER}|g' ${WRKSRC}/html/pcalw.html
@@ -38,6 +40,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/exec/pcal ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/html/pcal.cgi ${PREFIX}/libexec
+	${INSTALL_SCRIPT} ${WRKSRC}/html/pcal.pl ${PREFIX}/libexec
 	${INSTALL_MAN} ${WRKSRC}/doc/pcal.man ${MANPREFIX}/man/man1/pcal.1
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
