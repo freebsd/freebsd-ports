@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Danga-Socket
-PORTVERSION=	1.43
+PORTVERSION=	1.48
 CATEGORIES=	devel net
 MASTER_SITES=	http://www.danga.com/dist/Danga-Socket/
 PKGNAMEPREFIX=	p5-

@@ -1,6 +1,8 @@
-The API takes advantage of the server's opaque flag support and sets its 
-"complex" flag whenever the object being stored or retrieved isn't a plain
-scalar. In that case, the Storable module is used to freeze and thaw the
-value automatically going in and out of the memcached.
+This is an abstract base class for objects backed by a socket which
+provides the basic framework for event-driven asynchronous IO,
+designed to be fast.  Danga::Socket is both a base class for objects,
+and an event loop.
 
-WWW: http://www.danga.com/memcached/apis.bml
+Callers subclass Danga::Socket.  Danga::Socket's constructor registers
+itself with the Danga::Socket event loop, and invokes callbacks on the
+object for readability, writability, errors, and other conditions.
