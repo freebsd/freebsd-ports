@@ -47,7 +47,7 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|cc|${CC}|g ; \
-		s|-g |${CFLAGS} ${CPPFLAGS} ${PTHREAD_CFLAGS}|g ; \
+		s|-g |${CFLAGS} ${CPPFLAGS} ${PTHREAD_CFLAGS} |g ; \
 		s|-pthread|${PTHREAD_LIBS}|g ; \
 		s|$$LINKLIBS ;|${LDFLAGS} $$LINKLIBS ;|g' \
 			${WRKSRC}/configure
