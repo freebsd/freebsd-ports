@@ -466,6 +466,7 @@
     SUBDIR += sendmail
     SUBDIR += sendmail-ldap
     SUBDIR += sendmail-sasl
+    SUBDIR += sendok
     SUBDIR += sentinel
     SUBDIR += serialmail
     SUBDIR += sid-milter
