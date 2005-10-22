@@ -7,7 +7,7 @@
 
 PORTNAME=	symon
 PORTVERSION=	2.71
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.xs4all.nl/~wpd/symon/philes/
 
@@ -50,7 +50,7 @@ PLIST_SUB+=	SYMUX="@comment "
 .endif
 SUBDIR+=	client
 
-MAKE_ARGS+=	SUBDIR="${SUBDIR}"
+MAKE_ARGS+=	SUBDIR="${SUBDIR}" RRDDIR="${LOCALBASE}"
 
 .include <bsd.port.pre.mk>
 
@@ -66,10 +66,10 @@ pre-install:
 
 post-install:
 .if !defined(WITHOUT_SYMON)
-	@${INSTALL_SCRIPT} -m 555 ${WRKDIR}/symon.sh ${PREFIX}/etc/rc.d/symon.sh
+	${INSTALL_SCRIPT} -m 555 ${WRKDIR}/symon.sh ${PREFIX}/etc/rc.d/symon.sh
 .endif
 .if !defined(WITHOUT_SYMUX)
-	@${INSTALL_SCRIPT} -m 555 ${WRKDIR}/symux.sh ${PREFIX}/etc/rc.d/symux.sh
+	${INSTALL_SCRIPT} -m 555 ${WRKDIR}/symux.sh ${PREFIX}/etc/rc.d/symux.sh
 .endif
 	@${CAT} ${PKGMESSAGE}
 
