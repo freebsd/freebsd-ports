@@ -6,8 +6,8 @@
  
 -JPEG_INCLUDES = 
 -JPEG_LDFLAGS = 
-+JPEG_INCLUDES = -I/usr/local/include
-+JPEG_LDFLAGS = -L/usr/local/lib
++JPEG_INCLUDES = -I${LOCALBASE}/include
++JPEG_LDFLAGS = -L${LOCALBASE}/lib
  
  PNG_INCLUDES = 
  PNG_LDFLAGS = 

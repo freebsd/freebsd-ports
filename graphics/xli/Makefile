@@ -24,14 +24,10 @@ WRKSRC=		${WRKDIR}/xli-${XLI_SNAPVER}
 
 USE_XLIB=	yes
 USE_IMAKE=	yes
-USE_PERL5_BUILD=yes
 MAN1=		xli.1 xlito.1
 MLINKS=		xli.1 xview.1 \
 		xli.1 xsetbg.1
 
 XLI_SNAPVER=	2005-09-04
-
-post-patch:
-	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/Imakefile
 
 .include <bsd.port.mk>
