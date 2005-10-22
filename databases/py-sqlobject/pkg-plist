@@ -1,6 +1,10 @@
+bin/sqlobject-admin
 %%PYTHON_SITELIBDIR%%/sqlobject/__init__.py
 %%PYTHON_SITELIBDIR%%/sqlobject/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sqlobject/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlobject/boundattributes.py
+%%PYTHON_SITELIBDIR%%/sqlobject/boundattributes.pyc
+%%PYTHON_SITELIBDIR%%/sqlobject/boundattributes.pyo
 %%PYTHON_SITELIBDIR%%/sqlobject/cache.py
 %%PYTHON_SITELIBDIR%%/sqlobject/cache.pyc
 %%PYTHON_SITELIBDIR%%/sqlobject/cache.pyo
@@ -10,6 +14,9 @@
 %%PYTHON_SITELIBDIR%%/sqlobject/col.py
 %%PYTHON_SITELIBDIR%%/sqlobject/col.pyc
 %%PYTHON_SITELIBDIR%%/sqlobject/col.pyo
+%%PYTHON_SITELIBDIR%%/sqlobject/conftest.py
+%%PYTHON_SITELIBDIR%%/sqlobject/conftest.pyc
+%%PYTHON_SITELIBDIR%%/sqlobject/conftest.pyo
 %%PYTHON_SITELIBDIR%%/sqlobject/constraints.py
 %%PYTHON_SITELIBDIR%%/sqlobject/constraints.pyc
 %%PYTHON_SITELIBDIR%%/sqlobject/constraints.pyo
@@ -19,27 +26,36 @@
 %%PYTHON_SITELIBDIR%%/sqlobject/dbconnection.py
 %%PYTHON_SITELIBDIR%%/sqlobject/dbconnection.pyc
 %%PYTHON_SITELIBDIR%%/sqlobject/dbconnection.pyo
+%%PYTHON_SITELIBDIR%%/sqlobject/declarative.py
+%%PYTHON_SITELIBDIR%%/sqlobject/declarative.pyc
+%%PYTHON_SITELIBDIR%%/sqlobject/declarative.pyo
 %%PYTHON_SITELIBDIR%%/sqlobject/firebird/__init__.py
 %%PYTHON_SITELIBDIR%%/sqlobject/firebird/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sqlobject/firebird/__init__.pyo
 %%PYTHON_SITELIBDIR%%/sqlobject/firebird/firebirdconnection.py
 %%PYTHON_SITELIBDIR%%/sqlobject/firebird/firebirdconnection.pyc
 %%PYTHON_SITELIBDIR%%/sqlobject/firebird/firebirdconnection.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/include/__init__.py
-%%PYTHON_SITELIBDIR%%/sqlobject/include/__init__.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/include/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sqlobject/include/validators.py
-%%PYTHON_SITELIBDIR%%/sqlobject/include/validators.pyc
-%%PYTHON_SITELIBDIR%%/sqlobject/include/validators.pyo
 %%PYTHON_SITELIBDIR%%/sqlobject/index.py
 %%PYTHON_SITELIBDIR%%/sqlobject/index.pyc
 %%PYTHON_SITELIBDIR%%/sqlobject/index.pyo
+%%PYTHON_SITELIBDIR%%/sqlobject/inheritance/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlobject/inheritance/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlobject/inheritance/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlobject/inheritance/iteration.py
+%%PYTHON_SITELIBDIR%%/sqlobject/inheritance/iteration.pyc
+%%PYTHON_SITELIBDIR%%/sqlobject/inheritance/iteration.pyo
 %%PYTHON_SITELIBDIR%%/sqlobject/joins.py
 %%PYTHON_SITELIBDIR%%/sqlobject/joins.pyc
 %%PYTHON_SITELIBDIR%%/sqlobject/joins.pyo
 %%PYTHON_SITELIBDIR%%/sqlobject/main.py
 %%PYTHON_SITELIBDIR%%/sqlobject/main.pyc
 %%PYTHON_SITELIBDIR%%/sqlobject/main.pyo
+%%PYTHON_SITELIBDIR%%/sqlobject/manager/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlobject/manager/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlobject/manager/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlobject/manager/command.py
+%%PYTHON_SITELIBDIR%%/sqlobject/manager/command.pyc
+%%PYTHON_SITELIBDIR%%/sqlobject/manager/command.pyo
 %%PYTHON_SITELIBDIR%%/sqlobject/maxdb/__init__.py
 %%PYTHON_SITELIBDIR%%/sqlobject/maxdb/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sqlobject/maxdb/__init__.pyo
@@ -67,6 +83,9 @@
 %%PYTHON_SITELIBDIR%%/sqlobject/sqlite/sqliteconnection.py
 %%PYTHON_SITELIBDIR%%/sqlobject/sqlite/sqliteconnection.pyc
 %%PYTHON_SITELIBDIR%%/sqlobject/sqlite/sqliteconnection.pyo
+%%PYTHON_SITELIBDIR%%/sqlobject/sresults.py
+%%PYTHON_SITELIBDIR%%/sqlobject/sresults.pyc
+%%PYTHON_SITELIBDIR%%/sqlobject/sresults.pyo
 %%PYTHON_SITELIBDIR%%/sqlobject/styles.py
 %%PYTHON_SITELIBDIR%%/sqlobject/styles.pyc
 %%PYTHON_SITELIBDIR%%/sqlobject/styles.pyo
@@ -76,39 +95,60 @@
 %%PYTHON_SITELIBDIR%%/sqlobject/sybase/sybaseconnection.py
 %%PYTHON_SITELIBDIR%%/sqlobject/sybase/sybaseconnection.pyc
 %%PYTHON_SITELIBDIR%%/sqlobject/sybase/sybaseconnection.pyo
-%%PORTDOCS%%%%DOCSDIR%%/Authors.html
+%%PYTHON_SITELIBDIR%%/sqlobject/util/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlobject/util/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlobject/util/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlobject/util/backports.py
+%%PYTHON_SITELIBDIR%%/sqlobject/util/backports.pyc
+%%PYTHON_SITELIBDIR%%/sqlobject/util/backports.pyo
+%%PYTHON_SITELIBDIR%%/sqlobject/util/moduleloader.py
+%%PYTHON_SITELIBDIR%%/sqlobject/util/moduleloader.pyc
+%%PYTHON_SITELIBDIR%%/sqlobject/util/moduleloader.pyo
+%%PYTHON_SITELIBDIR%%/sqlobject/util/threadinglocal.py
+%%PYTHON_SITELIBDIR%%/sqlobject/util/threadinglocal.pyc
+%%PYTHON_SITELIBDIR%%/sqlobject/util/threadinglocal.pyo
 %%PORTDOCS%%%%DOCSDIR%%/Authors.txt
-%%PORTDOCS%%%%DOCSDIR%%/DeveloperGuide.html
 %%PORTDOCS%%%%DOCSDIR%%/DeveloperGuide.txt
-%%PORTDOCS%%%%DOCSDIR%%/FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
-%%PORTDOCS%%%%DOCSDIR%%/News.html
+%%PORTDOCS%%%%DOCSDIR%%/Inheritance.txt
 %%PORTDOCS%%%%DOCSDIR%%/News.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/SQLBuilder.html
 %%PORTDOCS%%%%DOCSDIR%%/SQLBuilder.txt
-%%PORTDOCS%%%%DOCSDIR%%/SQLObject.html
 %%PORTDOCS%%%%DOCSDIR%%/SQLObject.txt
-%%PORTDOCS%%%%DOCSDIR%%/TODO.html
 %%PORTDOCS%%%%DOCSDIR%%/TODO.txt
+%%PORTDOCS%%%%DOCSDIR%%/community.txt
 %%PORTDOCS%%%%DOCSDIR%%/default.css
-%%PORTDOCS%%%%EXAMPLESDIR%%/codebits.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/config.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/examplestripper.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/leftjoin.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/people.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/personaddress.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/setup.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/simpleperson.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/styles.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/userrole.py
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/download.txt
+%%PORTDOCS%%%%DOCSDIR%%/europython/europython_sqlobj.py
+%%PORTDOCS%%%%DOCSDIR%%/europython/main.css
+%%PORTDOCS%%%%DOCSDIR%%/europython/person.py
+%%PORTDOCS%%%%DOCSDIR%%/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/interface.py
+%%PORTDOCS%%%%DOCSDIR%%/links.txt
+%%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11/sqlobject-and-database-programming.html
+%%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11/ui/bodybg.gif
+%%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11/ui/custom.css
+%%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11/ui/framing.css
+%%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11/ui/opera.css
+%%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11/ui/pretty.css
+%%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11/ui/print.css
+%%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11/ui/s5-core.css
+%%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11/ui/slides.css
+%%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11/ui/slides.js
+%%PORTDOCS%%%%DOCSDIR%%/rebuild
+%%PORTDOCS%%%%DOCSDIR%%/sqlobject-admin.txt
+%%PORTDOCS%%%%DOCSDIR%%/test.py
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11/ui
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/europython
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/sqlobject/util
 @dirrm %%PYTHON_SITELIBDIR%%/sqlobject/sybase
 @dirrm %%PYTHON_SITELIBDIR%%/sqlobject/sqlite
 @dirrm %%PYTHON_SITELIBDIR%%/sqlobject/postgres
 @dirrm %%PYTHON_SITELIBDIR%%/sqlobject/mysql
 @dirrm %%PYTHON_SITELIBDIR%%/sqlobject/maxdb
-@dirrm %%PYTHON_SITELIBDIR%%/sqlobject/include
+@dirrm %%PYTHON_SITELIBDIR%%/sqlobject/manager
+@dirrm %%PYTHON_SITELIBDIR%%/sqlobject/inheritance
 @dirrm %%PYTHON_SITELIBDIR%%/sqlobject/firebird
 @dirrm %%PYTHON_SITELIBDIR%%/sqlobject
