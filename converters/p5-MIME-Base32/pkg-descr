@@ -1,0 +1,11 @@
+This package contains a base32 encoder/decoder.
+These encoding methods are specified in RFC 3548 -
+The Base16, Base32, and Base64 Data Encodings.
+
+The base32 encoding is designed to represent arbitrary
+sequences of octets in a form that need not be humanly
+readable. A 33-character subset ([A-Z2-7=]) of US-ASCII
+is used, enabling 5 bits to be represented per printable
+character.
+
+WWW: http://search.cpan.org/dist/MIME-Base32/
