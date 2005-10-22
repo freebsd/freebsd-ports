@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	5.55
+PORTVERSION=	5.67
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=Image
@@ -31,9 +31,11 @@ MAN3=		File::RandomAccess.3 \
 		Image::ExifTool::GPS.3 \
 		Image::ExifTool::GeoTiff.3 \
 		Image::ExifTool::ICC_Profile.3 \
+		Image::ExifTool::ID3.3 \
 		Image::ExifTool::IPTC.3 \
 		Image::ExifTool::Jpeg2000.3 \
 		Image::ExifTool::Kodak.3 \
+		Image::ExifTool::Leaf.3 \
 		Image::ExifTool::MIFF.3 \
 		Image::ExifTool::MNG.3 \
 		Image::ExifTool::MakerNotes.3 \
@@ -41,12 +43,15 @@ MAN3=		File::RandomAccess.3 \
 		Image::ExifTool::Nikon.3 \
 		Image::ExifTool::Olympus.3 \
 		Image::ExifTool::PDF.3 \
+		Image::ExifTool::PICT.3 \
 		Image::ExifTool::PNG.3 \
+		Image::ExifTool::PPM.3 \
 		Image::ExifTool::Panasonic.3 \
 		Image::ExifTool::Pentax.3 \
 		Image::ExifTool::Photoshop.3 \
 		Image::ExifTool::PostScript.3 \
 		Image::ExifTool::PrintIM.3 \
+		Image::ExifTool::QuickTime.3 \
 		Image::ExifTool::Ricoh.3 \
 		Image::ExifTool::Sanyo.3 \
 		Image::ExifTool::Shortcuts.3 \
@@ -55,9 +60,11 @@ MAN3=		File::RandomAccess.3 \
 		Image::ExifTool::TagLookup.3 \
 		Image::ExifTool::TagNames.3 \
 		Image::ExifTool::Unknown.3 \
+		Image::ExifTool::WAV.3 \
 		Image::ExifTool::WriteCanonRaw.3 \
 		Image::ExifTool::WriteExif.3 \
 		Image::ExifTool::WriteIPTC.3 \
+		Image::ExifTool::WritePNG.3 \
 		Image::ExifTool::WritePhotoshop.3 \
 		Image::ExifTool::WriteXMP.3 \
 		Image::ExifTool::Writer.3 \
