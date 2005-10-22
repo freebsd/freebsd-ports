@@ -1,0 +1,22 @@
+An algorithm for calculating the difference, intersection,
+exclusive-or or union of arbitrary polygon sets.
+
+Author:    Alan Murta (email: gpc@cs.man.ac.uk)
+
+Copyright: (C) 1997-2004, Advanced Interfaces Group,
+	University of Manchester.
+
+	This software is free for non-commercial use. It may be copied,
+	modified, and redistributed provided that this copyright notice
+	is preserved on all copies. The intellectual property rights of
+	the algorithms used reside with the University of Manchester
+	Advanced Interfaces Group.
+
+	You may not use this software, in whole or in part, in support
+	of any commercial product without the express consent of the
+	author.
+
+WWW:	http://www.cs.man.ac.uk/~toby/alan/software/
+
+	Software documentation at
+WWW:	http://www.cs.man.ac.uk/~toby/alan/software/gpc.html
