@@ -1,9 +1,9 @@
-sbin/adsl-connect
-sbin/adsl-init
-sbin/adsl-setup
-sbin/adsl-start
-sbin/adsl-status
-sbin/adsl-stop
+sbin/pppoe-connect
+sbin/pppoe-init
+sbin/pppoe-setup
+sbin/pppoe-start
+sbin/pppoe-status
+sbin/pppoe-stop
 sbin/pppoe
 sbin/pppoe-relay
 sbin/pppoe-server
