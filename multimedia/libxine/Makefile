@@ -75,11 +75,11 @@ PLIST_SUB+=	WITH_ARTS=""
 PLIST_SUB+=	WITH_ARTS="@comment "
 .endif
 
-.if !defined(WITHOUT_LIBCACA) && (exists(${LOCALBASE}/lib/libcaca.a) || defined(WITH_LIBCACA))
+.if !defined(WITHOUT_CACA) && (exists(${LOCALBASE}/lib/libcaca.a) || defined(WITH_CACA))
 BUILD_DEPENDS+=	caca-config:${PORTSDIR}/graphics/libcaca
-PLIST_SUB+=	WITH_LIBCACA=""
+PLIST_SUB+=	WITH_CACA=""
 .else
-PLIST_SUB+=	WITH_LIBCACA="@comment "
+PLIST_SUB+=	WITH_CACA="@comment "
 .endif
 
 .if !defined(WITHOUT_ESOUND) && (${HAVE_GNOME:Mesound} != "" || defined(WITH_ESOUND))
@@ -117,11 +117,11 @@ PLIST_SUB+=	WITH_XVMC=""
 PLIST_SUB+=	WITH_XVMC="@comment "
 .endif
 
-.if !defined(WITHOUT_LIBTHEORA) && (exists(${LOCALBASE}/lib/libtheora.so.1) || defined (WITH_LIBTHEORA))
+.if !defined(WITHOUT_THEORA) && (exists(${LOCALBASE}/lib/libtheora.so.1) || defined (WITH_THEORA))
 LIB_DEPENDS+=	theora.1:${PORTSDIR}/multimedia/libtheora
-PLIST_SUB+=	WITH_LIBTHEORA=""
+PLIST_SUB+=	WITH_THEORA=""
 .else
-PLIST_SUB+=	WITH_LIBTHEORA="@comment "
+PLIST_SUB+=	WITH_THEORA="@comment "
 .endif
 
 .if !defined(WITHOUT_SMB) && (exists(${LOCALBASE}/lib/libsmbclient.so.0) || defined (WITH_SMB))
@@ -140,10 +140,10 @@ pre-everything::
 .else
 	@${ECHO_MSG} "===> WITH_ARTS   (arts support, enabled)"
 .endif
-.if !exists(${LOCALBASE}/lib/libcaca.a) && !defined(WITH_LIBCACA)
-	@${ECHO_MSG} "===> WITH_LIBCACA (libcaca support)"
+.if !exists(${LOCALBASE}/lib/libcaca.a) && !defined(WITH_CACA)
+	@${ECHO_MSG} "===> WITH_CACA (libcaca support)"
 .else
-	@${ECHO_MSG} "===> WITH_LIBCACA (libcaca support, enabled)"
+	@${ECHO_MSG} "===> WITH_CACA (libcaca support, enabled)"
 .endif
 .if !(${HAVE_GNOME:Mgnomevfs2} != "") && !defined(WITH_GNOMEVFS2)
 	@${ECHO_MSG} "===> WITH_GNOMEVFS2 (gnomevfs2 support)"
@@ -165,10 +165,10 @@ pre-everything::
 .else
 	@${ECHO_MSG} "===> WITH_SMB (SMB support, enabled)"
 .endif
-.if !exists(${LOCALBASE}/lib/libtheora.so.1) && !defined(WITH_LIBTHEORA)
-	@${ECHO_MSG} "===> WITH_LIBTHEORA (libtheora support)"
+.if !exists(${LOCALBASE}/lib/libtheora.so.1) && !defined(WITH_THEORA)
+	@${ECHO_MSG} "===> WITH_THEORA (libtheora support)"
 .else
-	@${ECHO_MSG} "===> WITH_LIBTHEORA (libtheora support, enabled)"
+	@${ECHO_MSG} "===> WITH_THEORA (libtheora support, enabled)"
 .endif
 .if !exists(${X11BASE}/lib/libXvMCNVIDIA.so.1) && !defined(WITH_XVMC)
 	@${ECHO_MSG} "===> WITH_XVMC (XvMC support)"
