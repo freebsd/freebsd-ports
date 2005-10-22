@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	# disappeared
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mail@andr.ru
 COMMENT=	AMR encoder/decoder for Mbuni MMS Gateway (www.mbuni.org)
 
 DEPRECATED=	mastersite disappeared
