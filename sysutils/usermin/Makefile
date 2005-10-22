@@ -7,6 +7,7 @@
 
 PORTNAME=	usermin
 PORTVERSION=	1.170
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -25,7 +26,7 @@ USE_PERL5=	yes
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 
-USERMIN_MODULES=
+USERMIN_MODULES=fetchmail-1.170-2.wbm.gz
 USERMIN_THEMES=
 
 post-extract:
