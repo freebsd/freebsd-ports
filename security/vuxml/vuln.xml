@@ -525,6 +525,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <certvu>363713</certvu>
       <cvename>CVE-2005-2919</cvename>
       <cvename>CVE-2005-2920</cvename>
       <url>http://www.gentoo.org/security/en/glsa/glsa-200509-13.xml</url>
@@ -532,6 +533,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-09-16</discovery>
       <entry>2005-09-24</entry>
+      <modified>2005-10-22</modified>
     </dates>
   </vuln>
 
