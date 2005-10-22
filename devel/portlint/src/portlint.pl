@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.86 2005/10/09 18:51:51 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.89 2005/10/22 19:43:02 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 7;
-my $micro = 4;
+my $micro = 5;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -1188,13 +1188,42 @@ sub checkmakefile {
 	}
 
 	#
-	# whole file: BROKEN
+	# whole file: BROKEN et al.
 	#
-	print "OK: checking BROKEN.\n" if ($verbose);
-	if ($whole =~ /\nBROKEN[+?]?=[ \t][^"]+\w+/) {
+	my($var);
+	foreach $var qw(BROKEN FORBIDDEN MANUAL_PACKAGE_BUILD NO_CDROM NO_PACKAGE RESTRICTED) {
+		print "OK: checking ${var}.\n" if ($verbose);
+		if ($whole =~ /\n${var}[+?]?=[ \t]?[^"]+\w+/) {
+			my $lineno = &linenumber($`);
+			&perror("WARN: $file [$lineno]: ${var} messages should be ".
+				"quoted.");
+		}
+	}
+
+	#
+	# whole file: DEPRECATED
+	#
+	print "OK: checking DEPRECATED.\n" if ($verbose);
+	if ($whole =~ /\nDEPRECATED[+?]?=[ \t]*"/ &&
+		$whole !~ /\nDEPRECATED[+?]?=[ \t]*"\$\{BROKEN\}"/) {
 		my $lineno = &linenumber($`);
-		&perror("WARN: $file [$lineno]: BROKEN messages should be ".
-			"quoted.");
+		&perror("WARN: $file [$lineno]: DEPRECATED messages should not ".
+			"be quoted unless they are exactly \"\${BROKEN}\".");
+	}
+	if ($whole =~ /\nDEPRECATED[+?]?=[^"]*\$\{BROKEN\}/) {
+		my $lineno = &linenumber($`);
+		&perror("WARN: $file [$lineno]: \"\${BROKEN}\" must be quoted ".
+			"when it is the source of DEPRECATED.");
+	}
+
+	#
+	# whole file: COMMENT
+	#
+	print "OK: checking COMMENT.\n" if ($verbose);
+	if ($whole =~ /^COMMENT[+?]?=[ \t]+"[^"+]"$/m) {
+		my $lineno = &linenumber($`);
+		&perror("WARN: $file [$lineno]: COMMENT messages should not ".
+			"be quoted.");
 	}
 
 	#
