@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	liedentd
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR= wes
-
 
 MAINTAINER=	wes@freebsd.org
 COMMENT=	An ident server which refuses to divulge security information
