@@ -7,6 +7,7 @@
 
 PORTNAME=	ida
 PORTVERSION=	0.21
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://dl.bytesex.org/releases/fbida/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

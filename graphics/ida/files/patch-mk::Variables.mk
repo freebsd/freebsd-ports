@@ -1,5 +1,5 @@
 --- mk/Variables.mk.orig	Sun Feb 22 14:27:19 2004
-+++ mk/Variables.mk	Fri Aug 20 19:15:12 2004
++++ mk/Variables.mk	Sat Oct 22 22:54:34 2005
 @@ -4,10 +4,10 @@
  # directories
  DESTDIR	=
@@ -15,3 +15,16 @@
  
  # package + version
  empty	:=
+@@ -34,9 +34,9 @@
+ 	   -Wpointer-arith -Wunused
+ 
+ # add /usr/local to the search path if something is in there ...
+-ifneq ($(wildcard /usr/local/include/*.h),)
+-  CFLAGS  += -I/usr/local/include
+-  LDFLAGS += -L/usr/local/$(LIB)
++ifneq ($(wildcard $(LOCALBASE)/include/*.h),)
++  CFLAGS  += -I$(LOCALBASE)/include
++  LDFLAGS += -L$(LOCALBASE)/$(LIB)
+ endif
+ 
+ # fixup include path for $(srcdir) != "."
