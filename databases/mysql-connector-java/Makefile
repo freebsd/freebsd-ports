@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysql-connector-java
-PORTVERSION=	3.1.10
+PORTVERSION=	3.1.11
 CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	Connector-J
@@ -41,7 +41,7 @@ SRCDIR=		${WRKDIR}/${DISTNAME}/src
 JAVADOCDIR=	${WRKDIR}/${DISTNAME}/javadoc
 DESTJARFILE=	${PORTNAME}.jar
 EXTRAJARS=	jdbc2_0-stdext.jar jta-spec1_0_1.jar
-EXTRADOCS=	README CHANGES docs/index.html docs/connector-j-en.pdf
+EXTRADOCS=	README CHANGES docs/connector-j.html docs/connector-j.pdf
 JARFILE=	${DISTNAME}-bin.jar
 JDCLASSPATH=	${SRCDIR}:${SRCDIR}/lib/jdbc2_0-stdext.jar:${SRCDIR}/lib/jta-spec1_0_1.jar:${CLASSPATH}
 
@@ -55,7 +55,8 @@ PORTDOCS=	*
 
 pre-fetch:
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You may use the following build options:"
+	@${ECHO_MSG} "You may use the following build options to override the"
+	@${ECHO_MSG} "default behaviour:"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "    WITHOUT_COMPILE=yes    Install the pre-compiled .jar file"
 	@${ECHO_MSG} ""

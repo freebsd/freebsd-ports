@@ -1,10 +1,8 @@
-$FreeBSD$
-
---- build.xml.orig	Thu Jun 23 00:29:13 2005
-+++ build.xml	Tue Jul  5 23:08:11 2005
-@@ -57,12 +57,13 @@
+--- build.xml.orig	Mon Oct 10 15:59:00 2005
++++ build.xml	Tue Oct 18 09:45:11 2005
+@@ -60,12 +60,13 @@
  	</path>
- 		
+ 
  	<path id="project.build.classpath">
 -		<fileset dir="${buildDir}/${fullProdName}/lib-nodist">
 +		<fileset dir="${buildDir}/${fullProdName}/lib">
@@ -19,12 +17,3 @@ $FreeBSD$
  		</fileset>
  
  		<pathelement location="${buildDir}/${fullProdName}" />
-@@ -253,7 +254,7 @@
- 			includes="**/*.class,**/*.properties*,COPYING,README" 
- 			excludes="testsuite/**" 
- 			index="true" 
--			manifest="${buildDir}/MANIFEST.MF"/>
-+			manifest="${buildDir}/META-INF/MANIFEST.MF"/>
- 	</target>
- 
- 	<target name="dist-trace" depends="init, compile-driver-trace">
