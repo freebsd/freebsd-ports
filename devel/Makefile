@@ -340,6 +340,7 @@
     SUBDIR += gonzui
     SUBDIR += google-sparsehash
     SUBDIR += gorm
+    SUBDIR += gpc
     SUBDIR += gperf
     SUBDIR += gputils
     SUBDIR += gsoap
