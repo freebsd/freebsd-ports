@@ -18,7 +18,7 @@ USE_BZIP2=	yes
 NO_WRKSUBDIR=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-CXXFLAGS+=	-I${X11BASE}/include
+CXXFLAGS+=	-I${X11BASE}/include -L${X11BASE}/lib
 
 .include <bsd.port.pre.mk>
 
