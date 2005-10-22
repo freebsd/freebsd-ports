@@ -48,6 +48,7 @@
     SUBDIR += p5-Convert-UUlib
     SUBDIR += p5-Cstools
     SUBDIR += p5-JSON
+    SUBDIR += p5-MIME-Base32
     SUBDIR += p5-MIME-Base64
     SUBDIR += p5-String-Multibyte
     SUBDIR += p5-Text-Iconv
