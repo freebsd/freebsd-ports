@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	linux-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half Life dedicated server running on steam
 
+BUILD_DEPENDS=	${LINUX_BASE_PORT}
+
 IS_INTERACTIVE=	yes
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
@@ -28,6 +30,7 @@ pre-everything::
 	@ ${ECHO_MSG} "You can use the INSTALLDIR option to change the install dir"
 
 do-build:
+	@ ${BRANDELF} -t Linux ${WRKDIR}/hldsupdatetool.bin
 	@ ${CHMOD} +x ${WRKDIR}/hldsupdatetool.bin && cd ${WRKDIR} && ./hldsupdatetool.bin
 	@ ${CAT} pkg-message | ${SED} 's|%%PREFIX%%|${PREFIX}|' > ${PKGMESSAGE}
 
