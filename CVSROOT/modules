@@ -3259,6 +3259,7 @@ gpac-libgpac	ports/multimedia/gpac-libgpac
 gpaint		ports/graphics/gpaint
 gpart		ports/sysutils/gpart
 gpasman		ports/security/gpasman
+gpc		ports/devel/gpc
 gpdf		ports/graphics/gpdf
 gperiodic	ports/biology/gperiodic
 gpgme		ports/security/gpgme
