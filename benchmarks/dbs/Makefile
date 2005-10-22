@@ -8,7 +8,9 @@
 PORTNAME=	dbs
 PORTVERSION=	1.1.5
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://www.kusa.ac.jp/~yukio-m/dbs/software1.1.5/
+MASTER_SITES=	http://www.kusa.ac.jp/~yukio-m/dbs/software1.1.5/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	jkoshy
 
 MAINTAINER=	jkoshy@freebsd.org
 COMMENT=	A distributed network benchmarking system
