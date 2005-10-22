@@ -12,7 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.117.ne.jp/~show/pc8801/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nishika@manbow.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PC-8801 emulator for X
 
 USE_X_PREFIX=	yes
