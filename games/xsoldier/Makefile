@@ -6,20 +6,28 @@
 #
 
 PORTNAME=	xsoldier
-PORTVERSION=	0.96
+PORTVERSION=	1.3
 CATEGORIES=	games
-# mastersite disappeared in December 2002
-MASTER_SITES=	# http://www.surfline.ne.jp/hachi/xsoldier/
+MASTER_SITES=	http://www.interq.or.jp/libra/oohara/xsoldier/
 
-# A new version is available at http://www.interq.or.jp/libra/oohara/xsoldier/
-# which will require a bit of porting.
-DEPRECATED=	"master site disappeared, see Makefile if you want to save this port"
-EXPIRATION_DATE=2005-08-31
+MAINTAINER=	naddy@FreeBSD.org
+COMMENT=	Space-based shoot-em up game for X11
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Shooting game for x11
+USE_XLIB=	Yes
+GNU_CONFIGURE=	Yes
+CONFIGURE_ARGS=	--localstatedir=/var
+MAKE_ARGS=	CC_OPTIMIZE="${CFLAGS}"
 
-USE_IMAKE=	yes
-USE_XPM=	yes
+MAN6=		xsoldier.6
+
+SCOREFILE=	/var/games/xsoldier.scores
+PLIST_SUB=	SCOREFILE=${SCOREFILE}
+
+post-install:
+	${CHGRP} games ${PREFIX}/bin/xsoldier
+	${CHMOD} g+s ${PREFIX}/bin/xsoldier
+	${CP} ${EXAMPLESDIR}/xsoldier.scores ${SCOREFILE}
+	${CHGRP} games ${SCOREFILE}
+	${CHMOD} 664 ${SCOREFILE}
 
 .include <bsd.port.mk>
