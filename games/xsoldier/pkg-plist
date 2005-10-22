@@ -1,32 +1,42 @@
+@comment $FreeBSD$
 bin/xsoldier
-lib/X11/xsoldier/.scorefile
-lib/X11/xsoldier/Boss1.xpm
-lib/X11/xsoldier/Boss2.xpm
-lib/X11/xsoldier/Boss3.xpm
-lib/X11/xsoldier/Boss4.xpm
-lib/X11/xsoldier/Boss5.xpm
-lib/X11/xsoldier/Boss6.xpm
-lib/X11/xsoldier/Boss7.xpm
-lib/X11/xsoldier/Enemy1.xpm
-lib/X11/xsoldier/Enemy2.xpm
-lib/X11/xsoldier/Enemy3.xpm
-lib/X11/xsoldier/Enemy4.xpm
-lib/X11/xsoldier/Enemy5.xpm
-lib/X11/xsoldier/Enemy6.xpm
-lib/X11/xsoldier/Enemy7.xpm
-lib/X11/xsoldier/EnemyBound.xpm
-lib/X11/xsoldier/EnemyLaser.xpm
-lib/X11/xsoldier/EnemyMiss.xpm
-lib/X11/xsoldier/EnemyRing.xpm
-lib/X11/xsoldier/EnemyShot.xpm
-lib/X11/xsoldier/ExpLarge.xpm
-lib/X11/xsoldier/ExpSmall.xpm
-lib/X11/xsoldier/Item.xpm
-lib/X11/xsoldier/Player.xpm
-lib/X11/xsoldier/PlayerShot1.xpm
-lib/X11/xsoldier/PlayerShot2.xpm
-lib/X11/xsoldier/PlayerShot3.xpm
-lib/X11/xsoldier/Star1.xpm
-lib/X11/xsoldier/Star2.xpm
-lib/X11/xsoldier/Title.xpm
-@dirrm lib/X11/xsoldier
+share/examples/xsoldier/xsoldier.scores
+@exec cp %D/share/examples/xsoldier/xsoldier.scores %%SCOREFILE%% && chgrp games %%SCOREFILE%% && chmod 664 %%SCOREFILE%%
+@unexec rm -f %%SCOREFILE%%
+share/xsoldier/Boss1.xpm
+share/xsoldier/Boss2.xpm
+share/xsoldier/Boss3.xpm
+share/xsoldier/Boss4.xpm
+share/xsoldier/Boss5.xpm
+share/xsoldier/Boss6.xpm
+share/xsoldier/Boss7.xpm
+share/xsoldier/Enemy1.xpm
+share/xsoldier/Enemy2.xpm
+share/xsoldier/Enemy3.xpm
+share/xsoldier/Enemy4.xpm
+share/xsoldier/Enemy5.xpm
+share/xsoldier/Enemy6.xpm
+share/xsoldier/Enemy7.xpm
+share/xsoldier/EnemyBound.xpm
+share/xsoldier/EnemyLaser.xpm
+share/xsoldier/EnemyMiss.xpm
+share/xsoldier/EnemyRing.xpm
+share/xsoldier/EnemyShot.xpm
+share/xsoldier/ExpLarge.xpm
+share/xsoldier/ExpSmall.xpm
+share/xsoldier/Item.xpm
+share/xsoldier/Player.xpm
+share/xsoldier/PlayerShot1.xpm
+share/xsoldier/PlayerShot2.xpm
+share/xsoldier/PlayerShot3.xpm
+share/xsoldier/Star1.xpm
+share/xsoldier/Star2.xpm
+share/xsoldier/Title.xpm
+share/xsoldier/font1.xpm
+share/xsoldier/font2.xpm
+share/xsoldier/font3.xpm
+share/xsoldier/font4.xpm
+share/xsoldier/font5.xpm
+share/xsoldier/font6.xpm
+@dirrm share/examples/xsoldier
+@dirrm share/xsoldier

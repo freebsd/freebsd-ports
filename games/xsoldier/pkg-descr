@@ -1,24 +1,5 @@
-Xsoldier is a shooting game for x11.  This is adapted from the man page:
-OPTIONS:
-	-display <displayname>	Specify display.
-	-wait <unsigned int n>	Specify wait. To change this will let
-			 	your highscore unregistered.
-	-cmap			Use default colormap.
-				Without this option, xsoldier use pri-
-				vate colormap.
-	-score			Show 10 highscores.
-	-help			Show usage message.
-	You can use the first character of an option instead.
-PLAY:
-	- Start game with [space]
-	- Cursor keys to move, [left-shift] to shot
-	- Defeat enemies and you sometimes find [Weapon] or [Power]
-	- You can change your speed with [a] and [s]
-	- [p] to pause the game and [q] to return to the title
-	- [q] at the title to quit game
-	- Boss at the last of a stage to defeat for the next stage
-	- You can get bonus points along defeat average  at  clear
-	  stage
-	- 1UP per 100,000 points
-	- 8 stages all and try to clear!
-Author: hachi@surfline.ne.jp
+Xsoldier is a space-based shoot'em up game.  You fly around and try
+to kill everything that moves...  and everything that doesn't move...
+You get the idea.
+
+WWW: http://www.interq.or.jp/libra/oohara/xsoldier/

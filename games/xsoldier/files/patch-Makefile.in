@@ -1,0 +1,25 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig
++++ Makefile.in
+@@ -451,14 +451,13 @@
+ 
+ install-exec-local:
+ # install pixmap
+-	$(mkinstalldirs) $(DESTDIR)$(datadir)/games/xsoldier/
++	$(mkinstalldirs) $(DESTDIR)$(datadir)/xsoldier/
+ 	$(INSTALL_DATA) pixmap/*.xpm \
+-  $(DESTDIR)$(datadir)/games/xsoldier/
++  $(DESTDIR)$(datadir)/xsoldier/
+ # install score file
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/games/xsoldier/
+-	test -e $(DESTDIR)$(localstatedir)/games/xsoldier/xsoldier.scores \
+-  || $(INSTALL_DATA) scorefile.txt \
+-  $(DESTDIR)$(localstatedir)/games/xsoldier/xsoldier.scores
++	$(mkinstalldirs) $(DESTDIR)$(datadir)/examples/xsoldier/
++	$(INSTALL_DATA) scorefile.txt \
++  $(DESTDIR)$(datadir)/examples/xsoldier/xsoldier.scores
+ 
+ uninstall-local:
+ # uninstall pixmap
