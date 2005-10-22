@@ -82,8 +82,8 @@ lib/xine/plugins/1.1.0/xineplug_decode_spucc.so
 lib/xine/plugins/1.1.0/xineplug_decode_spucmml.so
 lib/xine/plugins/1.1.0/xineplug_decode_spudvb.so
 lib/xine/plugins/1.1.0/xineplug_decode_sputext.so
-%%WITH_LIBTHEORA%%lib/xine/plugins/1.1.0/xineplug_decode_theora.so
-%%WITH_LIBCACA%%lib/xine/plugins/1.1.0/xineplug_vo_out_caca.so
+%%WITH_THEORA%%lib/xine/plugins/1.1.0/xineplug_decode_theora.so
+%%WITH_CACA%%lib/xine/plugins/1.1.0/xineplug_vo_out_caca.so
 lib/xine/plugins/1.1.0/xineplug_decode_vorbis.so
 %%WITH_VIDIX%%lib/xine/plugins/1.1.0/xineplug_decode_w32dll.so
 lib/xine/plugins/1.1.0/xineplug_decode_yuv.so
