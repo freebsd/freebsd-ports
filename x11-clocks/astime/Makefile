@@ -17,6 +17,7 @@ COMMENT=	Time/Date applet for WindowMaker
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-xpm-library="${X11BASE}/lib" --with-xpm-includes="${X11BASE}/include/X11"
 INSTALL_TARGET=	install install.man
 
 MAN1=		astime.1
