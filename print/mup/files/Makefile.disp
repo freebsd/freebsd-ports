@@ -1,5 +1,6 @@
 PROG=	mupdisp
 NOMAN=
+NO_MAN=
 
 SRCS=	do_cmd.c \
 	genfile.c \
@@ -7,8 +8,8 @@ SRCS=	do_cmd.c \
 	mupdisp.c \
 	xterm.c
 
-CFLAGS+=-I/usr/X11R6/include
-LDADD+=	-L/usr/X11R6/lib -lX11
+CFLAGS+=-I${X11BASE}/include
+LDADD+=	-L${X11BASE}/lib -lX11
 
 .include <bsd.prog.mk>
 
