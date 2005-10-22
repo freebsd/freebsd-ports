@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	proxy-suite
-PORTVERSION=	1.9.2.2
+PORTVERSION=	1.9.2.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.suse.com/pub/projects/proxy-suite/src/ \
 		ftp://ftp.gwdg.de/pub/linux/suse/ftp.suse.com/projects/proxy-suite/src/ \
