@@ -1,0 +1,26 @@
+%%SITE_PERL%%/Graph/Easy.pm
+%%SITE_PERL%%/Graph/Easy/As_ascii.pm
+%%SITE_PERL%%/Graph/Easy/As_graphviz.pm
+%%SITE_PERL%%/Graph/Easy/As_txt.pm
+%%SITE_PERL%%/Graph/Easy/Attributes.pm
+%%SITE_PERL%%/Graph/Easy/Edge.pm
+%%SITE_PERL%%/Graph/Easy/Edge/Cell.pm
+%%SITE_PERL%%/Graph/Easy/Group.pm
+%%SITE_PERL%%/Graph/Easy/Group/Cell.pm
+%%SITE_PERL%%/Graph/Easy/Layout.pm
+%%SITE_PERL%%/Graph/Easy/Layout/Path.pm
+%%SITE_PERL%%/Graph/Easy/Layout/Scout.pm
+%%SITE_PERL%%/Graph/Easy/Node.pm
+%%SITE_PERL%%/Graph/Easy/Node/Anon.pm
+%%SITE_PERL%%/Graph/Easy/Node/Cell.pm
+%%SITE_PERL%%/Graph/Easy/Node/Empty.pm
+%%SITE_PERL%%/Graph/Easy/Parser.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/Easy/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/Easy 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Graph/Easy/Layout 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Graph/Easy/Group 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Graph/Easy/Node 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Graph/Easy/Edge 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Graph/Easy 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Graph 2>/dev/null || true
