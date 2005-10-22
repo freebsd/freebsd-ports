@@ -32,6 +32,10 @@ EXAMPLEDIRS=	01.HelloWorld 02.Quake3Map 03.CustomSceneNode 04.Movement 05.UserIn
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == amd64
+CFLAGS+=	-fPIC
+.endif
+
 # g++ 2.95.4 does not support the language features used by Irrlicht
 USE_GCC=	3.3+
 
