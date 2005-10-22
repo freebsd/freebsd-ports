@@ -1,0 +1,6 @@
+sendok is a simple program to generate qmail email addresses with timed cookies
+in them. That is, you can give someone a generated address that will accept
+mail from a given sender for a given time period. The address contains a
+cryptographic hash so that no per-address local data needs to be stored.
+
+WWW: http://peff.net/sendok/
