@@ -5,25 +5,35 @@
 # $FreeBSD$
 
 PORTNAME=	ncp
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/network/ncp/
+MASTER_SITES=	http://dl.fefe.de/ http://dl.mteege.de/fefe/
 
 MAINTAINER=	matthias@mteege.de
-COMMENT=	"A fast file copy tool for LANs."
+COMMENT=	A fast file copy tool for LANs
 
-MAN1=		ncp.1 npush.1
-MANCOMPRESSED=	no
+BUILD_DEPENDS=	${LOCALBASE}/lib/libowfat.a:${PORTSDIR}/devel/libowfat
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
+USE_GETOPT_LONG=yes
+MANCOMPRESSED=	no
+
+MAN1=		ncp.1 npush.1
+PLIST_FILES=	bin/ncp bin/npush bin/npoll
+
+CFLAGS+=	-I${LOCALBASE}/include/libowfat -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|gcc -O2|${CC} ${CFLAGS}|' \
-		${WRKSRC}/conf-cc
-	@${REINPLACE_CMD} -e 's|gcc|${CC} ${LDFLAGS}|' \
-		${WRKSRC}/conf-ld
+	@${REINPLACE_CMD} -e 's|^CC=gcc|CC=${CC}|' \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|^CFLAGS=.*|CFLAGS=${CFLAGS}|' \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|^LDFLAGS=.*|LDFLAGS=${LDFLAGS}|' \
+		${WRKSRC}/Makefile
 
 do-install:
 	cd ${WRKSRC}; ${INSTALL_PROGRAM} ncp ${PREFIX}/bin
