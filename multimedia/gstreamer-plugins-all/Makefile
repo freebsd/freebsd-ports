@@ -31,7 +31,6 @@ WITHOUT_MPEG2ENC=yes	# Broken from updated mjpegtools
 .if ${OSVERSION} < 500000
 WITHOUT_LIBVISUAL=yes	# Broken on 4.x
 WITHOUT_POLYPAUDIO=yes	# Broken on 4.x
-WITHOUT_SWFDEC=	yes	# Depeneds on liboil, does not build on 4.x
 .endif
 # Shout & Shout2 Conflict
 .if !defined(WITHOUT_SHOUT) && !defined(WITHOUT_SHOUT2)
