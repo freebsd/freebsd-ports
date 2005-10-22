@@ -1,5 +1,0 @@
-@comment $FreeBSD$
-bin/gcmp
-bin/gdiff
-bin/gdiff3
-bin/gsdiff

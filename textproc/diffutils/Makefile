@@ -7,6 +7,7 @@
 
 PORTNAME=	diffutils
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	diffutils
@@ -19,23 +20,22 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 
 INFO=		diff
-
 MAN1=		gcmp.1 gdiff.1 gdiff3.1 gsdiff.1
+PLIST_FILES=	bin/gcmp bin/gdiff bin/gdiff3 bin/gsdiff
 
-#post-extract: remove-info-files
-#
-#remove-info-files:
-#	@${RM} -f ${WRKSRC}/${PORTNAME:S/utils//}.info*
-#
-#post-patch: patch-makeinfo
-#
-#patch-makeinfo:
-#	@${REINPLACE_CMD} -e 's|makeinfo|makeinfo --no-split|g' \
-#		${WRKSRC}/Makefile.in
-#
-#post-install: install-info
-#
-#install-info:
-#	@${INSTALL_INFO} ${PREFIX}/info/${PORTNAME:S/utils//}.info ${PREFIX}/info/dir
+OPTIONS=	TIMESTAMP_PRECISION	"With nano second timestamp precision"	off
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_TIMESTAMP_PRECISION)
+PATCH_SITES+=	http://izb.knu.ac.kr/~bh/diffs/
+PATCHFILES+=	diffutils-2.8.1-timestamp_precision.diff
+PATCH_DIST_STRIP+=	-p1
+.endif
+
+.if defined(WITH_TIMESTAMP_PRECISION)
+post-install:
+	@${CAT} ${PKGMESSAGE}
+.endif
+
+.include <bsd.port.post.mk>
