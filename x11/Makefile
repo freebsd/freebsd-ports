@@ -71,6 +71,7 @@
     SUBDIR += gnomepanel
     SUBDIR += gnomesession
     SUBDIR += gnometerminal
+    SUBDIR += gpctool
     SUBDIR += grabc
     SUBDIR += gromit
     SUBDIR += gtk-launch
