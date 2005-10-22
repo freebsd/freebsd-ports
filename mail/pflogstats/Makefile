@@ -7,6 +7,7 @@
 
 PORTNAME=	pflogstats
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.aerasec.de/pub/linux/postfix/pflogsumm/${PORTNAME}/
@@ -26,17 +27,21 @@ USE_REINPLACE=	yes
 SITE_PERL_INST=	${SITE_PERL:S/${LOCALBASE}/${PREFIX}/}
 
 post-patch:
-# fix location of PERL
-	@${REINPLACE_CMD} -e 's|/usr/local/lib/pflogstats|${SITE_PERL_INST}/Pflogstats|' ${WRKSRC}/*.pl
+	@${REINPLACE_CMD} \
+		-e 's|/usr/bin/perl.*|${PERL}|' \
+		-e 's|/usr/local/lib/pflogstats|${SITE_PERL_INST}/Pflogstats|' \
+			${WRKSRC}/apachelogiostats.pl \
+			${WRKSRC}/pflogstats.pl \
+			${WRKSRC}/sqwmstats.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl  ${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${SITE_PERL_INST}/Pflogstats
-	${INSTALL_DATA} ${WRKSRC}/pflogstats-*.pm ${SITE_PERL_INST}/Pflogstats
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-*.pm ${SITE_PERL_INST}/Pflogstats
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in README INSTALL ChangeLog BUGS TODO LICENSE CREDITS
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 
