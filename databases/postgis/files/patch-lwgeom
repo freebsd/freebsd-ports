@@ -20,7 +20,7 @@
 -	$(INSTALL_DATA) lwpostgis.sql $(DESTDIR)$(datadir)/contrib/lwpostgis.sql
 -	$(INSTALL_DATA) ../spatial_ref_sys.sql $(DESTDIR)$(datadir)/contrib/spatial_ref_sys.sql
 -	$(INSTALL_DATA) ../README.postgis $(DESTDIR)$(docdir)/contrib/README.postgis
-+	$(INSTALL_DATA) lwpostgis.sql $(DESTDIR)$(DATADIR)/lwpostgis.sql.default
++	$(INSTALL_DATA) lwpostgis.sql $(DESTDIR)$(DATADIR)/lwpostgis.sql
 +	$(INSTALL_DATA) ../spatial_ref_sys.sql $(DESTDIR)$(DATADIR)/spatial_ref_sys.sql
 +	$(INSTALL_DATA) ../README.postgis $(DESTDIR)$(DATADIR)/README.postgis
  	$(INSTALL_DATA) ../doc/man/pgsql2shp.1 $(DESTDIR)$(mandir)/man1/pgsql2shp.1
