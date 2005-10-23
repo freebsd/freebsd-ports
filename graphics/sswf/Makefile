@@ -16,7 +16,8 @@ MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	A library and script language tool to create Flash movies
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 WRKSRC=		${WRKDIR}/sswf-${PORTVERSION}
 USE_ICONV=	yes
