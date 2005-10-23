@@ -1,0 +1,10 @@
+===============================================================================
+FlightGear may occasionally exceed the FreeBSD default maximum data size
+(512 MB), resulting in a crash of the program. To avoid that situation, add
+the following lines to /boot/loader.conf and reboot the system:
+
+	# set the maximum data size limit to 1 GB
+	kern.maxdsiz="1073741824"
+	# set the default data size limit to 1 GB
+	kern.dfldsiz="1073741824"
+===============================================================================
