@@ -8,6 +8,7 @@
 
 PORTNAME=	fcron
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://fcron.free.fr/
@@ -30,7 +31,6 @@ USE_RC_SUBR=	fcron
 SUB_FILES=	pkg-message
 
 MAN1=		fcrondyn.1 fcrontab.1
-MAN3=		bitstring.3
 MAN5=		fcron.conf.5 fcrontab.5
 MAN8=		fcron.8
 
@@ -49,7 +49,7 @@ do-install:
 .endfor
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/fcrontab-* ${WRKSRC}/files/*.pam ${EXAMPLESDIR}
-.for n in 1 3 5 8
+.for n in 1 5 8
 	${INSTALL_MAN} ${MAN${n}:S|^|${WRKSRC}/doc/man/|} ${PREFIX}/man/man${n}
 .endfor
 .if !defined(NOPORTDOCS)
