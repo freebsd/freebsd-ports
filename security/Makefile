@@ -170,6 +170,7 @@
     SUBDIR += ipsec-tools
     SUBDIR += isakmpd
     SUBDIR += its4
+    SUBDIR += jce_policy14
     SUBDIR += john
     SUBDIR += keychain
     SUBDIR += keynote

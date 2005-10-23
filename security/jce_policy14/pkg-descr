@@ -1,0 +1,17 @@
+java_policy14 provides JCE(Java Cryptography Extension)
+Unlimited Strength Jurisdiction Policy Files.
+
+Strong Cryptography Is the Default, Unlimited Is Available
+  Due to import control restrictions, the jurisdiction
+  policy files shipped with the Java2 SDK, v1.4 allow
+  "strong" but limited cryptography to be used.  An
+  "unlimited strength" version of these files indicating
+  no restrictions on cryptographic strengths is available
+  for those living in eligible countries (which is most
+  countries).  You can download this version and replace
+  the strong cryptography versions supplied with the Java2
+  SDK, v1.4 with the unlimited ones.  See WWW: line for
+  information indicating where to go to download the
+  unlimited version.
+
+WWW: http://java.sun.com/products/jce/index-14.html 
