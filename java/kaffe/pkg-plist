@@ -87,8 +87,12 @@ share/locale/zh_TW/LC_MESSAGES/kaffe.mo
 @dirrm man/man1
 @dirrm man
 @dirrm share/kaffe
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
 @dirrm share/locale/fr/LC_MESSAGES
 @dirrm share/locale/fr
+@dirrm share/locale/zh_CN/LC_MESSAGES
+@dirrm share/locale/zh_CN
 @dirrm share/locale/zh_TW/LC_MESSAGES
 @dirrm share/locale/zh_TW
 @dirrm share/locale
