@@ -284,9 +284,13 @@ share/paraview-2.2/Demos/quadric.vtk
 @dirrm share/paraview-2.2/Demos
 @dirrm share/paraview-2.2/Data/headsq
 @dirrm share/paraview-2.2/Data/chombo3d
+@dirrm share/paraview-2.2/Data/SPCTH
 @dirrm share/paraview-2.2/Data
 @dirrm share/paraview-2.2
+@dirrm lib/paraview-2.2/tcl/kwwidgets
+@dirrm lib/paraview-2.2/tcl
 @dirrm lib/paraview-2.2/TclTk/lib/tk8.4
+@dirrm lib/paraview-2.2/TclTk/lib/tcl8.4/encoding
 @dirrm lib/paraview-2.2/TclTk/lib/tcl8.4
 @dirrm lib/paraview-2.2/TclTk/lib
 @dirrm lib/paraview-2.2/TclTk
