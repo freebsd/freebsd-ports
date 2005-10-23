@@ -499,14 +499,20 @@ libexec/MailScanner/vexira-wrapper.sample
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.2.63
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.3.0.0
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.3.0.3
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.3.0.4
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.3.1.0
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/Message.pm.patch.3.0.0
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/Message.pm.patch.3.0.3
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/Message.pm.patch.3.0.4
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/Message.pm.patch.3.1.0
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.55
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.60
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.61
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.63
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.3.0.0
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.3.0.3
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.3.0.4
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.3.1.0
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/index.html
 %%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/install/tcp
 %%PORTDOCS%%%%DOCSDIR%%/install/mime-tools-patch.txt
@@ -524,6 +530,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%PORTDOCS%%%%DOCSDIR%%/install/tnef.shtml
 %%PORTDOCS%%%%DOCSDIR%%/install/zmailer.shtml
 %%PORTDOCS%%%%DOCSDIR%%/introduction.shtml
+%%PORTDOCS%%%%DOCSDIR%%/last-spam-logo.jpg
 %%PORTDOCS%%%%DOCSDIR%%/mailscanner_trans.gif
 %%PORTDOCS%%%%DOCSDIR%%/man/MailScanner.8
 %%PORTDOCS%%%%DOCSDIR%%/man/MailScanner.8.html
@@ -536,6 +543,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%PORTDOCS%%%%DOCSDIR%%/osdir.png
 %%PORTDOCS%%%%DOCSDIR%%/performance.shtml
 %%PORTDOCS%%%%DOCSDIR%%/phishing3.png
+%%PORTDOCS%%%%DOCSDIR%%/phishingcartoon.gif
 %%PORTDOCS%%%%DOCSDIR%%/poetry.shtml
 %%PORTDOCS%%%%DOCSDIR%%/poweredby.google.gif
 %%PORTDOCS%%%%DOCSDIR%%/poweredby.transtec.gif
@@ -551,6 +559,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%PORTDOCS%%%%DOCSDIR%%/readme.shtml
 %%PORTDOCS%%%%DOCSDIR%%/reject.html
 %%PORTDOCS%%%%DOCSDIR%%/sobig.html
+%%PORTDOCS%%%%DOCSDIR%%/store.html
 %%PORTDOCS%%%%DOCSDIR%%/support.html
 %%PORTDOCS%%%%DOCSDIR%%/transtec.logo.gif
 %%PORTDOCS%%%%DOCSDIR%%/users.shtml
