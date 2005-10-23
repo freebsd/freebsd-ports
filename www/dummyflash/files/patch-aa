@@ -52,7 +52,7 @@
 +#		api gets control.
 +
 +# PLUGIN_DEFINES= -DXP_UNIX -DPLUGIN_TRACE
-+PLUGIN_DEFINES= -DXP_UNIX -I../../../include -I../Source/_gen -I/usr/X11R6/include
++PLUGIN_DEFINES= -DXP_UNIX -I../../../include -I../Source/_gen -I${X11BASE}/include
 +
 +CC= gcc
 +OPTIMIZER= -g
