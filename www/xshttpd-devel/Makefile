@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xshttpd
-DISTVERSION=	3.3b30
+DISTVERSION=	3.3b34
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 	ftp://mud.stack.nl/pub/xs-httpd/release/
@@ -78,9 +78,7 @@ post-patch:
 		-e 's|nogroup|${WWWGRP}|g' \
 		${WRKSRC}/$i
 .endfor
-
-	@${REINPLACE_CMD} \
-		-e 's|@LOCALBASE@|${LOCALBASE}|g' \
+	@${REINPLACE_CMD} -e 's|\(MIMETYPESFILE\ "\).*|\1${LOCALBASE}/etc/mime.types"|' \
 		${WRKSRC}/src/confuser.h
 
 post-install:
