@@ -17,12 +17,12 @@
 -	install -c -m 644 dot-mavbiffrc /usr/local/share/doc/mavbiff
 -	install -c -m 644 README /usr/local/share/doc/mavbiff
 -	install -c -m 644 mavbiff.1 /usr/local/man/man1/mavbiff.1
-+	test -d ${LOCALBASE}/bin || mkdir -p ${LOCALBASE}/bin
-+	test -d ${LOCALBASE}/share/doc/mavbiff || mkdir -p ${LOCALBASE}/share/doc/mavbiff
-+	install -c -m 755 mavbiff ${LOCALBASE}/bin
-+	install -c -m 644 dot-mavbiffrc ${LOCALBASE}/share/doc/mavbiff
-+	install -c -m 644 README ${LOCALBASE}/share/doc/mavbiff
-+	install -c -m 644 mavbiff.1 ${LOCALBASE}/man/man1/mavbiff.1
++	test -d ${PREFIX}/bin || mkdir -p ${PREFIX}/bin
++	test -d ${PREFIX}/share/doc/mavbiff || mkdir -p ${PREFIX}/share/doc/mavbiff
++	install -c -m 755 mavbiff ${PREFIX}/bin
++	install -c -m 644 dot-mavbiffrc ${PREFIX}/share/doc/mavbiff
++	install -c -m 644 README ${PREFIX}/share/doc/mavbiff
++	install -c -m 644 mavbiff.1 ${PREFIX}/man/man1/mavbiff.1
  
  deinstall:
 -	-rm /usr/local/bin/mavbiff
@@ -34,15 +34,15 @@
 -	-rmdir /usr/local/share/doc
 -	-rmdir /usr/local/share
 -	-rmdir /usr/local
-+	-rm ${LOCALBASE}/bin/mavbiff
-+	-rm ${LOCALBASE}/bin/man/man1/mavbiff.1
-+	-rm ${LOCALBASE}/share/doc/mavbiff/dot-mavbiffrc
-+	-rm ${LOCALBASE}/share/doc/mavbiff/README
-+	-rmdir ${LOCALBASE}/bin
-+	-rmdir ${LOCALBASE}/share/doc/mavbiff
-+	-rmdir ${LOCALBASE}/share/doc
-+	-rmdir ${LOCALBASE}/share
-+	-rmdir ${LOCALBASE}
++	-rm ${PREFIX}/bin/mavbiff
++	-rm ${PREFIX}/bin/man/man1/mavbiff.1
++	-rm ${PREFIX}/share/doc/mavbiff/dot-mavbiffrc
++	-rm ${PREFIX}/share/doc/mavbiff/README
++	-rmdir ${PREFIX}/bin
++	-rmdir ${PREFIX}/share/doc/mavbiff
++	-rmdir ${PREFIX}/share/doc
++	-rmdir ${PREFIX}/share
++	-rmdir ${PREFIX}
  
  clean:
  	rm -f mavbiff *.o mavbiff.1
