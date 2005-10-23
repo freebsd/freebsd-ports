@@ -16,7 +16,8 @@ MAINTAINER=	mistral@imasy.or.jp
 COMMENT=	A Java/UML Object-Oriented Design Tool
 
 USE_ZIP=	yes
-USE_JAVA=	1.4+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
 # It doesn't work well with linux-sun-jdk14
 # I haven't tested with the jdks of blackdown or ibm
 JAVA_OS=	native
