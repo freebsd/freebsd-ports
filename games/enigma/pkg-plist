@@ -37,6 +37,7 @@ share/applications/enigma.desktop
 %%DOCSDIR%%/reference/functions.html
 %%DOCSDIR%%/reference/objects.txt
 %%DOCSDIR%%/reference/sounds.txt
+%%DOCSDIR%%/reference/sound.lua
 share/enigma/enigma_conf.lua
 share/enigma/fonts/dustismo_bold.ttf
 share/enigma/fonts/levelmenu.bmf
@@ -2729,6 +2730,7 @@ share/enigma/sound/switch.wav
 share/enigma/startup.lua
 share/icons/hicolor/48x48/apps/enigma.png
 share/locale/de/LC_MESSAGES/enigma.mo
+share/locale/es/LC_MESSAGES/enigma.mo
 share/locale/fr/LC_MESSAGES/enigma.mo
 share/locale/it/LC_MESSAGES/enigma.mo
 share/locale/nl/LC_MESSAGES/enigma.mo
@@ -2741,7 +2743,6 @@ share/pixmaps/enigma.png
 @unexec rmdir %D/share/icons 2>/dev/null || true
 @unexec rmdir %D/share/applications/ 2>/dev/null || true
 
-@dirrm share/enigma/thumbs
 @dirrm share/enigma/sound
 @dirrm share/enigma/levels/patches
 @dirrm share/enigma/levels/m_tutor
