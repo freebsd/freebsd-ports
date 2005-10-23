@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		kadu
-PORTVERSION=		0.4.1
-PORTREVISION=		1
+PORTVERSION=		0.4.2
 PORTEPOCH=		1
 CATEGORIES=		polish net
 MASTER_SITES=		http://www.kadu.net/download/stable/
@@ -23,9 +22,7 @@ USE_BZIP2=		yes
 USE_GMAKE=		yes
 USE_OPENSSL=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--with-existing-libgadu \
-			--with-includes="${LOCALBASE}/include" \
-			--with-libs="${LOCALBASE}/lib" \
+CONFIGURE_ARGS+=	--with-existing-libgadu="${LOCALBASE}" \
 			--program-transform-name=''
 CONFIGURE_ENV=		QTDIR="${QT_PREFIX}"
 
@@ -42,9 +39,7 @@ post-patch:
 .endif
 
 post-install:
-	${MKDIR} ${X11BASE}/share/gnome/apps/Internet
-	${INSTALL_DATA} ${WRKSRC}/kadu/kadu.desktop ${X11BASE}/share/gnome/apps/Internet
-	${MKDIR} ${LOCALBASE}/share/applnk/Internet
-	${INSTALL_DATA} ${WRKSRC}/kadu/kadu.desktop ${LOCALBASE}/share/applnk/Internet
+	${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/kadu/kadu.desktop ${PREFIX}/share/applications
 
 .include <bsd.port.post.mk>

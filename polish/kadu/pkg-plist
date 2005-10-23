@@ -553,20 +553,25 @@ include/kadu/userlist.h
 %%DATADIR%%/translations/qt_fr.qm
 %%DATADIR%%/translations/qt_it.qm
 %%DATADIR%%/translations/qt_pl.qm
+share/applications/kadu.desktop
 share/icons/hicolor/16x16/apps/kadu.png
 share/icons/hicolor/22x22/apps/kadu.png
+share/icons/hicolor/24x24/apps/kadu.png
 share/icons/hicolor/32x32/apps/kadu.png
 share/icons/hicolor/48x48/apps/kadu.png
 @unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/22x22/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/22x22 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/24x24/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/24x24 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
+@unexec rmdir %D/share/applications 2>/dev/null || true
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%/themes/sounds/default
 @dirrm %%DATADIR%%/themes/sounds
@@ -587,12 +592,3 @@ share/icons/hicolor/48x48/apps/kadu.png
 @dirrm %%DATADIR%%
 @dirrm include/kadu/modules
 @dirrm include/kadu
-@cwd %%LOCALBASE%%
-share/applnk/Internet/kadu.desktop
-@unexec rmdir %D/share/applnk/Internet 2>/dev/null || true
-@unexec rmdir %D/share/applnk 2>/dev/null || true
-@cwd %%X11BASE%%
-share/gnome/apps/Internet/kadu.desktop
-@unexec rmdir %D/share/gnome/apps/Internet 2>/dev/null || true
-@unexec rmdir %D/share/gnome/apps 2>/dev/null || true
-@unexec rmdir %D/share/gnome 2>/dev/null || true
