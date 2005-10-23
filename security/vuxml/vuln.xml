@@ -1695,13 +1695,13 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>centericq</name>
-	<range><gt>0</gt></range>
+	<range><lt>4.21.0_1</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Wojtek Kaniewski reports:</p>
-	<blockquote cite="INSERT URL HERE">
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=112198499417250">
 	  <p>Multiple vulnerabilities have been found in libgadu, a
 	    library for handling Gadu-Gadu instant messaging
 	    protocol. It is a part of ekg, a Gadu-Gadu client, but is
@@ -1744,6 +1744,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-07-21</discovery>
       <entry>2005-08-12</entry>
+      <modified>2005-10-23</modified>
     </dates>
   </vuln>
 
