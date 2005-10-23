@@ -7,7 +7,7 @@
 
 PORTNAME=	FlightGear
 PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Source/ \
 		ftp://ftp.de.flightgear.org/pub/fgfs/Source/
@@ -17,36 +17,26 @@ COMMENT=	The FlightGear flight simulator
 
 LIB_DEPENDS=	glut:${PORTSDIR}/graphics/libglut
 BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
-		${X11BASE}/include/simgear/threads/SGThread.hxx:${PORTSDIR}/devel/simgear \
 		${X11BASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
 RUN_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
-		${X11BASE}/include/simgear/threads/SGThread.hxx:${PORTSDIR}/devel/simgear \
 		${X11BASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear \
 		${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-# Force configure to look in ${LOCALBASE}/{include,lib}.  Note
-# that it already knows about ${X11BASE}/{include,lib}.
-# XXX Add ${PTHREAD_LIBS} to LDFLAGS to work around brokenness in
-# XXX FreeBSD's gcc: libopenal is linked with -pthread and should
-# XXX have a dependency on libpthread, but gcc ignores -pthread
-# XXX when building shared objects.
-CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}" \
-		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--program-transform-name='s/^${CONFIGURE_TARGET}-//' \
-		--datadir=${LOCALBASE}/share \
-		--with-threads
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--datadir=${LOCALBASE}/share	# location of fgfs-base
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		est-epsilon.1 fgfs.1 fgjs.1 gl-info.1 js_demo.1 pstest.1
 
-post-extract:
-	@${FIND} ${WRKSRC} \( -name '.#*' -or -name '*~' \) -delete
+post-patch:
+	@${REINPLACE_CMD} -e 's|-D_REENTRANT|${PTHREAD_CFLAGS}|' \
+		${WRKSRC}/configure
 
-do-install:
-	@${ECHO} ">> Installing program"
-	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
