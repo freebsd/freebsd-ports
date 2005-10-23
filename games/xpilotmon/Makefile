@@ -10,7 +10,7 @@ PORTVERSION=		2.8
 CATEGORIES=		games
 MASTER_SITES=		ftp://ftp.xpilot.org/pub/contrib/
 
-MAINTAINER=		jylefort@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	A Tcl/Tk interface to the XPilot meta server(s)
 
 RUN_DEPENDS=		wish8.4:${PORTSDIR}/x11-toolkits/tk84
