@@ -26,7 +26,9 @@ HAS_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-libdir-path=${PREFIX}/lib/xvile \
-		--datadir=${PREFIX}/share/xvile
+		--datadir=${PREFIX}/share/xvile \
+		--x-includes=${X11BASE}/X11/include \
+		--x-libraries=${X11BASE}/lib
 MAN1=		xvile.1
 
 .if defined(WITH_ALL)
