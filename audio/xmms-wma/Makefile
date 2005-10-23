@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmms-wma
-PORTVERSION=	1.0.4
-PORTREVISION=	2
+PORTVERSION=	1.0.4.1
 CATEGORIES=	audio
 MASTER_SITES=	http://mcmcc.bat.ru/xmms-wma/
 
@@ -36,6 +35,7 @@ pre-everything::
 	@${ECHO_MSG} "You may specify the following on the command line:"
 	@${ECHO_MSG} " "
 	@${ECHO_MSG} "WITH_ICONV=yes	Enable tag recoding support using iconv"
+	@${ECHO_MSG} " "
 .endif
 
 post-extract:
