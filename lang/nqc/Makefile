@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nqc
-PORTVERSION=	3.1.r2
+PORTVERSION=	3.1.r4
 CATEGORIES=	lang
 MASTER_SITES=	http://bricxcc.sourceforge.net/nqc/release/
 EXTRACT_SUFX=	.tgz
@@ -15,7 +15,7 @@ MAINTAINER=	jhay@FreeBSD.org
 COMMENT=	A compiler for writing programs for the Lego RCX
 
 USE_GMAKE=	yes
-CC=		${CXX}
+USE_GCC=	3.4+
 
 MAN1=		nqc.1
 PLIST_FILES=	bin/nqc
