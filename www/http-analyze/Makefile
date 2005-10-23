@@ -6,13 +6,13 @@
 
 PORTNAME=	http-analyze
 PORTVERSION=	2.01
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.mayn.de/pub/unix/network/www/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	todd@thisisa.com
+MAINTAINER=	tmortensen@gmail.com
 COMMENT=	A fast Log-Analyzer for web servers
 
 PATCH_DEPENDS=	gif2png:${PORTSDIR}/graphics/gif2png

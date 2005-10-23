@@ -62,7 +62,7 @@
  LDFLAGS	=  
  LINT	= lint -Dunix -Xa -u
 -LIBS	= -lm
-+LIBS	= -lm -L/usr/local/lib -lpng
++LIBS	= -lm -L$(LOCALLIB) -lpng
  NROFF	= nroff
  NRFLAGS	= -u1 -man
  
