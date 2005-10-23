@@ -1,12 +1,12 @@
 etc/rc.d/tinyproxy.sh
 etc/tinyproxy/tinyproxy.conf-dist
 sbin/tinyproxy
-share/tinyproxy/HTML_VARIABLES
-share/tinyproxy/debug.html
-share/tinyproxy/debug.html.dist
-share/tinyproxy/default.html
-share/tinyproxy/default.html.dist
-share/tinyproxy/stats.html
-share/tinyproxy/stats.html.dist
-@dirrm share/tinyproxy
+%%DATADIR%%/HTML_VARIABLES
+%%DATADIR%%/debug.html
+%%DATADIR%%/debug.html.dist
+%%DATADIR%%/default.html
+%%DATADIR%%/default.html.dist
+%%DATADIR%%/stats.html
+%%DATADIR%%/stats.html.dist
+@dirrm %%DATADIR%%
 @dirrm etc/tinyproxy

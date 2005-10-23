@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tinyproxy
-PORTVERSION=	1.6.2
+PORTVERSION=	1.7.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,14 +17,17 @@ COMMENT=	A small, efficient HTTP proxy server
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin --with-config=${PREFIX}/etc/tinyproxy/tinyproxy.conf --program-transform-name=""
+CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
+		--with-config=${PREFIX}/etc/tinyproxy/tinyproxy.conf \
+		--program-transform-name=""
 
 MAN8=		tinyproxy.8
 
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${REINPLACE_CMD} -e s:/etc/tinyproxy/tinyproxy.conf:${PREFIX}/etc/tinyproxy/tinyproxy.conf: \
+	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/\(etc/tinyproxy/tinyproxy.conf\)|${PREFIX}/\1|' \
 	  ${WRKSRC}/doc/tinyproxy.8
 .if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} -e 's|stdint.h|stdlib.h|' ${WRKSRC}/src/scanner.c
