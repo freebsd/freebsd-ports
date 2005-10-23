@@ -15,7 +15,8 @@ MAINTAINER=	nork@FreeBSD.org
 COMMENT=	JCE Unlimited Strength Jurisdiction Policy Files
 
 USE_ZIP=	yes
-USE_JAVA=	1.4
+USE_JAVA=	yes
+JAVA_VERSION=	1.4
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/jce
