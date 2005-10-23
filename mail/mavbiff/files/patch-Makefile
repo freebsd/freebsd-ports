@@ -1,0 +1,48 @@
+--- Makefile.orig	Sun Oct 23 10:27:58 2005
++++ Makefile	Sun Oct 23 10:28:58 2005
+@@ -20,29 +20,29 @@
+ 
+ 
+ mavbiff: mavbiff.o mavraise.o
+-	gcc -o mavbiff -Wall mavbiff.o mavraise.o ${GTK_L} -L/usr/X11R6/lib
++	gcc -o mavbiff -Wall mavbiff.o mavraise.o ${GTK_L} -L${X11BASE}/lib
+ 
+ .c.o:
+ 	$(CC) $(OPT_C) $(GTK_C) -o $@ $<
+ 
+ install: mavbiff
+-	test -d /usr/local/bin || mkdir -p /usr/local/bin
+-	test -d /usr/local/share/doc/mavbiff || mkdir -p /usr/local/share/doc/mavbiff
+-	install -c -m 755 mavbiff /usr/local/bin
+-	install -c -m 644 dot-mavbiffrc /usr/local/share/doc/mavbiff
+-	install -c -m 644 README /usr/local/share/doc/mavbiff
+-	install -c -m 644 mavbiff.1 /usr/local/man/man1/mavbiff.1
++	test -d ${LOCALBASE}/bin || mkdir -p ${LOCALBASE}/bin
++	test -d ${LOCALBASE}/share/doc/mavbiff || mkdir -p ${LOCALBASE}/share/doc/mavbiff
++	install -c -m 755 mavbiff ${LOCALBASE}/bin
++	install -c -m 644 dot-mavbiffrc ${LOCALBASE}/share/doc/mavbiff
++	install -c -m 644 README ${LOCALBASE}/share/doc/mavbiff
++	install -c -m 644 mavbiff.1 ${LOCALBASE}/man/man1/mavbiff.1
+ 
+ deinstall:
+-	-rm /usr/local/bin/mavbiff
+-	-rm /usr/local/bin/man/man1/mavbiff.1
+-	-rm /usr/local/share/doc/mavbiff/dot-mavbiffrc
+-	-rm /usr/local/share/doc/mavbiff/README
+-	-rmdir /usr/local/bin
+-	-rmdir /usr/local/share/doc/mavbiff
+-	-rmdir /usr/local/share/doc
+-	-rmdir /usr/local/share
+-	-rmdir /usr/local
++	-rm ${LOCALBASE}/bin/mavbiff
++	-rm ${LOCALBASE}/bin/man/man1/mavbiff.1
++	-rm ${LOCALBASE}/share/doc/mavbiff/dot-mavbiffrc
++	-rm ${LOCALBASE}/share/doc/mavbiff/README
++	-rmdir ${LOCALBASE}/bin
++	-rmdir ${LOCALBASE}/share/doc/mavbiff
++	-rmdir ${LOCALBASE}/share/doc
++	-rmdir ${LOCALBASE}/share
++	-rmdir ${LOCALBASE}
+ 
+ clean:
+ 	rm -f mavbiff *.o mavbiff.1
