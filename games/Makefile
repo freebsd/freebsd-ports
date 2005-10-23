@@ -411,6 +411,7 @@
     SUBDIR += pachi
     SUBDIR += pathological
     SUBDIR += pcgen
+    SUBDIR += pear-Games_Chess
     SUBDIR += pengpong
     SUBDIR += penguin-command
     SUBDIR += pentix
