@@ -41,6 +41,10 @@ Note:  Please add new entries to the beginning of this file.
 	<name>xloadimage</name>
 	<range><lt>4.1.15</lt></range>
       </package>
+      <package>
+	<name>xli</name>
+	<range><lt>1.17.0_4</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -70,6 +74,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-10-05</discovery>
       <entry>2005-10-20</entry>
+      <modified>2005-10-23</modified>
     </dates>
   </vuln>
 
