@@ -16,7 +16,7 @@ COMMENT?=	Joe's Own Editor
 
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
-LATEST_LINK=	joe2
+LATEST_LINK?=	joe2
 CONFLICTS=	joe-3*
 
 GNU_CONFIGURE=	yes
