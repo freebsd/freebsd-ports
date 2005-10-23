@@ -1,5 +1,5 @@
---- src/mixxx.pro.orig	Mon Oct 11 11:58:09 2004
-+++ src/mixxx.pro	Tue Oct 12 21:50:29 2004
+--- src/mixxx.pro.orig	Fri Oct 22 09:29:25 2004
++++ src/mixxx.pro	Sun Oct 23 02:53:58 2005
 @@ -31,15 +31,7 @@
  DEFINES += __PORTAUDIO__
  SOURCES += playerportaudio.cpp
@@ -25,14 +25,12 @@
  win32:SOURCES += powermatewin.cpp
  win32:HEADERS += powermatewin.h
  win32:LIBS += setupapi.lib
-@@ -145,16 +135,14 @@
+@@ -145,16 +135,12 @@
  # Mouse
  SOURCES += mouse.cpp
  HEADERS += mouse.h
 -unix:!macx:SOURCES += mouselinux.cpp
 -unix:!macx:HEADERS += mouselinux.h
-+#unix:!macx:SOURCES += mouselinux.cpp
-+#unix:!macx:HEADERS += mouselinux.h
  #win32:SOURCES += mousewin.cpp
  #win32:HEADERS += mousewin.h
  
@@ -44,7 +42,7 @@
  
  # KissFFT
  KISSFFT_DIR = ../lib/kissfft
-@@ -163,9 +151,8 @@
+@@ -163,9 +149,8 @@
  INCLUDEPATH += $$KISSFFT_DIR
  
  # Audio scaling
@@ -56,7 +54,7 @@
  
  # Debug plotting through gplot API
  #unix:DEFINES += __GNUPLOT__
-@@ -197,7 +184,6 @@
+@@ -197,7 +182,6 @@
  
    SETTINGS_FILE = \".mixxx.cfg\"
    TRACK_FILE = \".mixxxtrack.xml\"
@@ -64,7 +62,7 @@
  }
  
  unix {
-@@ -259,23 +245,12 @@
+@@ -259,23 +243,12 @@
     keyb.path = $${UNIX_SHARE_PATH}/keyboard
     keyb.files = keyboard/*
  
@@ -89,14 +87,3 @@
  }
  
  
-@@ -295,6 +270,10 @@
- # Socket
- SOURCES += mixxxsocketserver.cpp mixxxsocketclient.cpp #mixxxsocketcli.cpp
- HEADERS += mixxxsocketserver.h mixxxsocketclient.h #mixxxsocket.cli.h
-+
-+# compat_round()
-+SOURCES += compat_round.cpp
-+HEADERS += compat_round.h
- 
- IMAGES += icon.png
- DEFINES += SETTINGS_FILE=$$SETTINGS_FILE TRACK_FILE=$$TRACK_FILE
