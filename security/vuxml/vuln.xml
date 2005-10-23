@@ -269,11 +269,12 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="d2b80c7c-3aae-11da-9484-00123ffe8333">
-    <topic>zope28 -- expose RestructuredText functionalies to untrusted users</topic>
+    <topic>zope28 -- expose RestructuredText functionality to untrusted users</topic>
     <affects>
       <package>
 	<name>zope</name>
-	<range><ge>2.6.0</ge><le>2.8.1_2</le></range>
+	<range><ge>2.6.0</ge><lt>2.7.8</lt></range>
+	<range><ge>2.8.0</ge><le>2.8.1_2</le></range>
       </package>
     </affects>
     <description>
@@ -288,12 +289,13 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>15082</bid>
       <url>http://www.zope.org/Products/Zope/Hotfix_2005-10-09/security_alert</url>
     </references>
     <dates>
       <discovery>2005-10-09</discovery>
       <entry>2005-10-11</entry>
-      <modified>2005-10-13</modified>
+      <modified>2005-10-23</modified>
     </dates>
   </vuln>
 
