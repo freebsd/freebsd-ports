@@ -17,6 +17,8 @@ BROKEN=		"Upstream version updated to 2.9.8"
 DEPRECATED=	${BROKEN}
 EXPIRATION_DATE=2005-11-21
 
+LATEST_LINK=	${PKGNAMEPREFIX}joe
+
 MASTERDIR=	${.CURDIR}/../../editors/joe2
 MD5_FILE=	${.CURDIR}/distinfo
 
