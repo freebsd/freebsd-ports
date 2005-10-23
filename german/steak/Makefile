@@ -39,6 +39,7 @@ post-patch:
 	${REINPLACE_CMD} -e "s,\$$HOME/bin/Steak/Datensatz,${PREFIX}/share/steak/Datensatz,; \
 			s,BINDIR=\$$HOME/bin/Steak,BINDIR=${DATADIR},; \
 			s,$$BINDIR/help.txt,${DATADIR}/help.txt,g" ${WRKSRC}/woerterbuch
+	${REINPLACE_CMD} -e "s,/usr/X11R6/,${X11BASE}/,g" ${WRKSRC}/Printbuffer/Makefile
 
 do-install:
 .if !defined(WITHOUT_XSTEAK)
