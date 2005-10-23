@@ -9,14 +9,11 @@
 PORTNAME=	amrcoder
 PORTVERSION=	1.0
 CATEGORIES=	audio
-MASTER_SITES=	# disappeared
+MASTER_SITES=	http://coolsoft.ru/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mail@andr.ru
 COMMENT=	AMR encoder/decoder for Mbuni MMS Gateway (www.mbuni.org)
-
-DEPRECATED=	mastersite disappeared
-EXPIRATION_DATE=	2005-12-31
 
 MAN1=		amrdecoder.1 amrencoder.1
 
