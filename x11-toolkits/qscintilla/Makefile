@@ -90,9 +90,9 @@ post-configure:
 		${MV} Makefile.tmp Makefile && \
 		cd ${WRKSRC}/designer && \
 		${CAT} designer.pro | ${GREP} -v lqscintilla > designer.tmp && \
-		${ECHO} "INCPATH += /usr/X11R6/include ../qt" >> \
+		${ECHO} "INCPATH += ${X11BASE}/include ../qt" >> \
 			designer.tmp && \
-		${ECHO} "LIBS += -L../qt -L/usr/X11R6/lib -lqscintilla" >> \
+		${ECHO} "LIBS += -L../qt -L${X11BASE}/lib -lqscintilla" >> \
 			designer.tmp && \
 		${ECHO} "DESTDIR = ." >> designer.tmp && \
 		${MV} designer.tmp designer.pro )
