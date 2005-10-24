@@ -18,7 +18,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-xpm
+CONFIGURE_ARGS=	--with-xpm-includes=${X11BASE}/include --with-xpm-library=${X11BASE}/lib
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV=	EXTRA_LIBRARIES="-L${LOCALBASE}/lib"
 
