@@ -24,8 +24,9 @@ MAN1=		colordiff.1
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500806
-IGNORE=		needs Perl 5.8.6 or above (lang/perl5.8)
+.if ${PERL_LEVEL} < 500600
+BUILD_DEPENDS=	${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long
+RUN_DEPENDS=	${BUILD_DEPENDS}
 .endif
 
 post-patch:
