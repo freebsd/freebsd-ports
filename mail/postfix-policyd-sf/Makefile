@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	policyd
-PORTVERSION=	1.67
+PORTVERSION=	1.69
 CATEGORIES=	mail
 MASTER_SITES=	http://policyd.sourceforge.net/
 PKGNAMEPREFIX=	postfix-
@@ -28,7 +28,7 @@ SUB_LIST+=	REALNAME=${REALNAME}
 ALL_TARGET=	linux
 
 DOCS=		Changelog.txt README.txt License.txt DATABASE.mysql \
-		doc/WHITELIST.sql doc/SUPPORT.txt
+		doc/whitelist.sql doc/support.txt doc/blacklist_helo.sql
 PORTDOCS=	*
 
 PLIST_FILES=	sbin/${REALNAME}-cleanup \
