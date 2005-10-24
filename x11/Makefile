@@ -227,6 +227,7 @@
     SUBDIR += xfishtank
     SUBDIR += xfree86_xkb_xml
     SUBDIR += xgrab
+    SUBDIR += xidle
     SUBDIR += xinput
     SUBDIR += xkbctrl
     SUBDIR += xkbset
