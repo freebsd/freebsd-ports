@@ -9,7 +9,7 @@ PORTNAME=	sgb
 PORTVERSION=	20030623
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://labrea.stanford.edu/pub/sgb/
+MASTER_SITES=	ftp://ftp.stanford.edu/pub/sgb/
 DISTNAME=	sgb-2003-06-23
 
 MAINTAINER=	gerald@FreeBSD.org
