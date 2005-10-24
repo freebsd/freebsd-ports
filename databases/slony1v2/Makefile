@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slony1
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	databases
 MASTER_SITES=	http://developer.postgresql.org/~wieck/slony1/download/
 
@@ -47,7 +47,6 @@ CONFIGURE_ARGS+=--with-pgconfigdir=${LOCALBASE}/bin \
   --with-pglibdir=${LOCALBASE}/lib \
   --with-pgpkglibdir=${LOCALBASE}/lib/postgresql \
   --with-pgsharedir=${LOCALBASE}/share/postgresql
-
 
 DEFAULT_PGSQL_VER?=80
 
