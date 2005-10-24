@@ -22,7 +22,7 @@
 -CFLAGS=   -g -O -DAUTO -DCVODE_YES -DNOERRNO -DHAVEDLL -DMYSTR=$(VERSION)  -I/usr/X11R6/include
 -LDFLAGS=  -L/usr/X11R6/lib
 -LIBS= -lX11 -lm -ldl 
-+CFLAGS+=   -DAUTO -DCVODE_YES -DNOERRNO -DHAVEDLL -DMYSTR=$(VERSION)  -I/usr/X11R6/include
++CFLAGS+=   -DAUTO -DCVODE_YES -DNOERRNO -DHAVEDLL -DMYSTR=$(VERSION)  -I$(X11BASE)/include
 +LDFLAGS=  -L$(X11BASE)/lib
 +LIBS= -lX11 -lm 
  # NOTE: Recent (RedHat 8) versions of GCC seem to no longer have
