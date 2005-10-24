@@ -7,6 +7,7 @@
 
 PORTNAME=	eshell
 PORTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://www.newartisans.com/johnw/Emacs/packages/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -20,6 +21,7 @@ EMACS_PORT_NAME=	emacs20
 PCOMPLETE_VERSION=	1.1.7
 
 MAKE_ARGS+=	lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} \
+		prefix=${PREFIX} \
 		CP="${INSTALL_DATA}"
 
 ALL_TARGET=	default
