@@ -43,6 +43,7 @@ BREAKS_IF_PEDANTIC=	yes
 
 .if defined(WITH_GNUSTEP_XDPS)
 CONFIGURE_ARGS+=	--enable-graphics=xdps --with-name=xdps
+CONFIGURE_ARGS+=	--disable-glitz
 PLIST_SUB+=		BACK=xdps-${BACKVERSION}
 PLIST_SUB+=		USE_XLIB="@comment " USE_XDPS="" USE_ART="@comment "
 BACK_SUFFIX?=		-xdps
@@ -59,6 +60,7 @@ BACK_SUFFIX?=		-art
 CONFLICTS?=		gunstep-back-0.* gunstep-back-xdps-0.*
 .else
 CONFIGURE_ARGS+=	--enable-graphics=xlib --with-name=back
+CONFIGURE_ARGS+=	--disable-glitz
 PLIST_SUB+=		BACK=back-${BACKVERSION}
 PLIST_SUB+=		USE_XLIB="" USE_XDPS="@comment " USE_ART="@comment "
 CONFLICTS?=		gunstep-back-xdps-0.* gunstep-back-art-0.*
