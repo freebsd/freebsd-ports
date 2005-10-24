@@ -7,6 +7,7 @@
 
 PORTNAME=		sudosh
 PORTVERSION=		1.8.2
+PORTREVISION=		1
 CATEGORIES=		security
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
@@ -17,12 +18,11 @@ COMMENT=	A sudo shell
 
 RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo
 
-BROKEN=			Installs file outside of PREFIX
-
 USE_GZIP=		yes
 GNU_CONFIGURE=		yes
 
 CONFIGURE_ARGS=		--bindir="${PREFIX}/bin"
+CONFIGURE_ARGS+=	--sysconfdir="${PREFIX}/etc"
 CONFIGURE_ARGS+=	--program-transform-name=''
 .if defined(SUDOSH_LOGDIR)
 CONFIGURE_ARGS+=	--with-logdir="${SUDOSH_LOGDIR}"
