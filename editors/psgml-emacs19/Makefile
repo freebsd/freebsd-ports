@@ -14,4 +14,11 @@ MASTERDIR=	${.CURDIR}/../psgml
 # emacs port setup
 EMACS_PORT_NAME=	emacs19
 
+BUILD_DEPENDS+=	makeinfo:${PORTSDIR}/print/texinfo
+
+ALL_TARGET=	compile
+
+post-build:
+	cd ${WRKSRC} && makeinfo *.texi
+
 .include "${MASTERDIR}/Makefile"
