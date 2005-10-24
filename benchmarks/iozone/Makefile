@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iozone
-PORTVERSION=	3.196
+PORTVERSION=	3.248
 PORTREVISION=	0
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.iozone.org/src/current/
@@ -18,7 +18,7 @@ COMMENT=	Performance Test of Sequential File I/O
 
 CONFLICTS=	iozone-2.*
 
-WRKSRC=		${WRKDIR}/src/current
+WRKSRC=		${WRKDIR}/${DISTNAME}/src/current
 
 MAKEFILE=	makefile
 MAKE_ARGS=	freebsd
@@ -30,6 +30,6 @@ PLIST_FILES=	bin/iozone
 do-install:
 	${STRIP_CMD} ${WRKSRC}/iozone
 	${INSTALL_PROGRAM} ${WRKSRC}/iozone ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKDIR}/docs/iozone.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/docs/iozone.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
