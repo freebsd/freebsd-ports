@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	policyd-weight
-PORTVERSION=	0.1.10
+PORTVERSION=	0.1.11
 CATEGORIES=	mail
 MASTER_SITES=	http://robtone.mine.nu/postfix/releases/
 PKGNAMEPREFIX=	postfix-
@@ -15,7 +15,7 @@ MAINTAINER=	robtone@ek-muc.de
 COMMENT=	Weighted policy daemon for postfix
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
-		postfix:${PORTSDIR}/mail/postfix-current
+		postfix:${PORTSDIR}/mail/postfix
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	libexec/postfix/${PORTNAME} etc/${PORTNAME}.conf.sample
