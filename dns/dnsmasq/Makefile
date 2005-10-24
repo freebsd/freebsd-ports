@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dnsmasq
-PORTVERSION=	2.22
-PORTREVISION=	1
+PORTVERSION=	2.23
 CATEGORIES=	dns
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/
 
@@ -18,10 +17,11 @@ MAN8=		dnsmasq.8
 PLIST_FILES=	sbin/dnsmasq etc/dnsmasq.conf.example
 
 USE_GETOPT_LONG=yes
+USE_GMAKE=	yes
 MAKE_ENV=	LIBS="${LDFLAGS}" RPM_OPT_FLAGS="${CPPFLAGS}"
 
 .if defined(WITHOUT_IPV6)
-MAKE_ENV+=	-DNO_IPV6
+CFLAGS+=	-DNO_IPV6
 .endif
 
 .include <bsd.port.pre.mk>
