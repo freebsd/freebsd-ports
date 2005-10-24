@@ -13,15 +13,15 @@ MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
 MASTER_SITE_SUBDIR=	archives/${PORTVERSION}
 DISTNAME=	AfterStep-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Window manager originally based on the Bowman NeXTSTEP clone
 
 RUN_DEPENDS=	asclock:${PORTSDIR}/x11-clocks/asclock
 
 NO_LATEST_LINK=	yes
-USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_IMAKE=	yes
+USE_REINPLACE=	yes
 INSTALL_TARGET=	install install.man
 MANCOMPRESSED=	yes
 MAN1=		afterstep.1 Animate.1 Audio.1 Auto.1 Banner.1 Pager.1 Wharf.1
@@ -32,6 +32,10 @@ SRCDIRS=	afterstep \
 		modules/Wharf/ASSound
 
 post-patch:
+		${REINPLACE_CMD} \
+			-e 's|%%PREFIX%%|${PREFIX}|g' \
+			${WRKSRC}/configure.h \
+			${WRKSRC}/sample.steprc
 		@ for i in ${SRCDIRS}; do \
 			cd ${WRKSRC}/$$i; \
 			${MV} Imakefile Imakefile.orig; \
@@ -39,7 +43,7 @@ post-patch:
 		done
 
 pre-build:
-		@ cd ${WRKSRC}; sh MakeMakefiles
+		@ cd ${WRKSRC}; ${SH} MakeMakefiles
 
 post-install:
 		@ ${MKDIR} ${PREFIX}/lib/X11/afterstep/backgrounds/
@@ -55,14 +59,14 @@ post-install:
 		@${ECHO_MSG} "      reinstall this port with -DWITH_HICOLOR_ICONS"
 		@${ECHO_MSG} "      defined"
 .endif
-		@for file in AFstep.xpm penguin.xpm monitor_bsd.xpm; do \
-			${CP} ${FILESDIR}/$$file ${WRKSRC}/icons/8bit; \
+		@for i in AFstep.xpm penguin.xpm monitor_bsd.xpm; do \
+			${CP} ${FILESDIR}/$$i ${WRKSRC}/icons/8bit; \
 		done
 		${INSTALL_DATA} ${WRKSRC}/icons/8bit/*.xpm ${PREFIX}/include/X11/pixmaps/
 .endif
 		@ ${MKDIR} ${PREFIX}/lib/X11/afterstep/doc/
-		@for file in CHANGES CREDITS README README.8bit INSTALL FAQ module-interface.txt; do \
-			${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/lib/X11/afterstep/doc/; \
+		@for i in CHANGES CREDITS README README.8bit INSTALL FAQ module-interface.txt; do \
+			${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/lib/X11/afterstep/doc/; \
 		done
 
 .include <bsd.port.pre.mk>
