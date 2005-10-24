@@ -38,6 +38,7 @@ do-configure:
 		${WRKSRC}/installZircon
 	${REINPLACE_CMD} -e 's=%%WISH%%=wish${TCL_VER}=' \
 		-e 's=%%TCL_INCLUDE%%=${LOCALBASE}/include/tcl${TCL_VER}=' \
+		-e 's=/usr/local=${PREFIX}=' \
 		${WRKSRC}/installer/unix.tcl
 
 do-install:
