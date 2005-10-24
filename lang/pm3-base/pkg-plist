@@ -901,7 +901,7 @@ lib/m3/pkg/tempfiles/%%TARGET%%/libTempFiles.a
 lib/m3/pkg/tempfiles/%%TARGET%%/libTempFiles.m3x
 lib/m3/pkg/tempfiles/%%TARGET%%/libTempFiles.so
 lib/m3/pkg/tempfiles/src/TempFiles.i3
-share/pm3-base/COPYRIGHT
+%%DATADIR%%/COPYRIGHT
 @dirrm share/pm3-base
 @dirrm lib/m3/pkg/tempfiles/src
 @dirrm lib/m3/pkg/tempfiles/%%TARGET%%
