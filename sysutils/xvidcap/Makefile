@@ -7,7 +7,7 @@
 
 PORTNAME=		xvidcap
 PORTVERSION=		1.1.3.7
-PORTREVISION=	1
+PORTREVISION=		1
 CATEGORIES=		sysutils multimedia
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +24,8 @@ GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 #CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
 #			LDFLAGS=-L${LOCALBASE}/lib
-CONFIGURE_ARGS=		--with-forced-embedded-ffmpeg	# To be removed after 1.1.4pre2?
+CONFIGURE_ARGS=		--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib	\
+			--with-forced-embedded-ffmpeg	# To be removed after 1.1.4pre2?
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=		yes
 
