@@ -45,26 +45,32 @@ BREAKS_IF_PEDANTIC=	yes
 CONFIGURE_ARGS+=	--enable-graphics=xdps --with-name=xdps
 CONFIGURE_ARGS+=	--disable-glitz
 PLIST_SUB+=		BACK=xdps-${BACKVERSION}
-PLIST_SUB+=		USE_XLIB="@comment " USE_XDPS="" USE_ART="@comment "
+PLIST_SUB+=		USE_XLIB="@comment "
 BACK_SUFFIX?=		-xdps
-CONFLICTS?=		gunstep-back-0.* gunstep-back-art-0.*
-.else
-.if defined(WITH_GNUSTEP_LIBART)
+CONFLICTS?=		gunstep-back-0.* gunstep-back-art-0.* gunstep-back-cairo-0.*
+.elif defined(WITH_GNUSTEP_LIBART)
 LIB_DEPENDS+=		art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
+CONFIGURE_ARGS+=	--enable-graphics=art --with-name=art
+CONFIGURE_ARGS+=	--disable-glitz
+PLIST_SUB+=		BACK=art-${BACKVERSION}
+PLIST_SUB+=		USE_XLIB="@comment "
+BACK_SUFFIX?=		-art
+CONFLICTS?=		gunstep-back-0.* gunstep-back-xdps-0.* gunstep-back-cairo-0.*
+.elif defined(WITH_GNUSTEP_CAIRO)
+BROKEN=			the cairo version in the ports is too old
 LIB_DEPENDS+=		glitz-glx.1:${PORTSDIR}/graphics/glitz
 LIB_DEPENDS+=		cairo.1:${PORTSDIR}/graphics/cairo
-CONFIGURE_ARGS+=	--enable-graphics=art --with-name=art
-PLIST_SUB+=		BACK=art-${BACKVERSION}
-PLIST_SUB+=		USE_XLIB="@comment " USE_XDPS="@comment " USE_ART=""
-BACK_SUFFIX?=		-art
-CONFLICTS?=		gunstep-back-0.* gunstep-back-xdps-0.*
+CONFIGURE_ARGS+=	--enable-graphics=cairo --with-name=cairo
+PLIST_SUB+=		BACK=cairo-${BACKVERSION}
+PLIST_SUB+=		USE_XLIB="@comment "
+BACK_SUFFIX?=		-cairo
+CONFLICTS?=		gunstep-back-0.* gunstep-back-xdps-0.* gunstep-back-art-0.*
 .else
 CONFIGURE_ARGS+=	--enable-graphics=xlib --with-name=back
 CONFIGURE_ARGS+=	--disable-glitz
 PLIST_SUB+=		BACK=back-${BACKVERSION}
-PLIST_SUB+=		USE_XLIB="" USE_XDPS="@comment " USE_ART="@comment "
-CONFLICTS?=		gunstep-back-xdps-0.* gunstep-back-art-0.*
-.endif
+PLIST_SUB+=		USE_XLIB=""
+CONFLICTS?=		gunstep-back-xdps-0.* gunstep-back-art-0.* gunstep-back-cairo-0.*
 .endif
 
 .include <bsd.port.pre.mk>
