@@ -5,23 +5,20 @@
 # $FreeBSD$
 
 PORTNAME=	slrnconf
-PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTVERSION=	0.8.4
 CATEGORIES=	news
 MASTER_SITES=	http://home.arcor.de/kaffeetisch/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical configuation utility for the newsreader slrn
 
-BUILD_DEPENDS=	slrn:${PORTSDIR}/news/slrn \
-		${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
 
-WRKSRC=	${WRKDIR}/${PORTNAME}
 USE_REINPLACE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|PREFIX=|PREFIX?=|' ${WRKSRC}/Makefile
+USE_BZIP2=	yes
+USE_PERL=	yes
+MAKE_ARGS+=	PREFIX=${PREFIX}
 
 do-install:
 	@${MKDIR} ${DATADIR}/help
