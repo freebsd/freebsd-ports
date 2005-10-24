@@ -1,0 +1,7 @@
+This module implements a client interface to the Windows Messenger Service,
+enabling a perl5 application to talk to windows machines.
+This is a pure Perl implementation 
+that approximates the "net send" command on Windows.
+
+Author:	Florian Greb <greb@cpan.org>
+WWW:	http://search.cpan.org/~greb/Net-NetSend-0.12/
