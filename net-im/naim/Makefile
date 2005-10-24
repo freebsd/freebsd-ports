@@ -11,7 +11,7 @@ CATEGORIES=	net irc
 MASTER_SITES=	http://www.liquidx.org/distfiles/ \
 		http://shell.n.ml.org/n/naim/
 
-MAINTAINER=	tlp@LiquidX.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console ncurses-based AIM, ICQ, IRC, and Lily client
 
 GNU_CONFIGURE=	yes
@@ -25,6 +25,8 @@ MLINKS=		naim.1 nirc.1 naim.1 nicq.1 naim.1 nlily.1
 PORTDOCS=	FAQ README commands.txt keyboard.txt
 
 OPTIONS=	DETACH "Enable 'detach' feature (requires misc/screen)" off
+
+BROKEN=		"Unfetchable"
 
 .include <bsd.port.pre.mk>
 
