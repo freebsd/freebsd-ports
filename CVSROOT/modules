@@ -7928,6 +7928,7 @@ p5-HTML-Clean	ports/www/p5-HTML-Clean
 p5-HTML-Diff	ports/www/p5-HTML-Diff
 p5-HTML-Element-Extended	ports/www/p5-HTML-Element-Extended
 p5-HTML-Embperl	ports/www/p5-HTML-Embperl
+p5-HTML-Entities-Numbered	ports/textproc/p5-HTML-Entities-Numbered
 p5-HTML-FillInForm	ports/www/p5-HTML-FillInForm
 p5-HTML-Format	ports/textproc/p5-HTML-Format
 p5-HTML-FromText	ports/www/p5-HTML-FromText
