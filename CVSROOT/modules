@@ -6734,6 +6734,7 @@ net-http	ports/net/net-http
 net-snmp	ports/net-mgmt/net-snmp
 net-snmp-tkmib	ports/net-mgmt/net-snmp-tkmib
 net-snmp4	ports/net-mgmt/net-snmp4
+net6		ports/net/net6
 netams		ports/net-mgmt/netams
 netatalk	ports/net/netatalk
 netbeans	ports/java/netbeans
