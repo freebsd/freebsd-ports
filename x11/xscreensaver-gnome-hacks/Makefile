@@ -20,7 +20,7 @@ OPTIONS=	ALL_FORTUNES "Enable support for all fortunes" off
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-nodriver
 
-MAN1=	anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
+MAN1=	anemone.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 	blitspin.1 bouboule.1 boxed.1 braid.1 bsod.1 bubble3d.1 bubbles.1 \
 	bumps.1 cage.1 ccurve.1 circuit.1 compass.1 coral.1 critical.1 \
 	crystal.1 cubenetic.1 cynosure.1 dangerball.1 decayscreen.1 deco.1 \
@@ -51,7 +51,8 @@ MAN1=	anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 	mismunch.1 noof.1 pacman.1 wormhole.1 antinspect.1 fuzzyflakes.1\
 	polyhedra.1 anemotaxis.1 providence.1 memscroller.1 fireworkx.1 \
 	intermomentary.1 pinion.1 substrate.1 boing.1 boxfit.1 carousel.1 \
-	antmaze.1 crackberg.1 interaggregate.1 tangram.1 \
+	antmaze.1 crackberg.1 interaggregate.1 tangram.1 celtic.1 \
+	cube21.1 glhanoi.1 juggler3d.1 timetunnel.1 \
 	fiberlamp.1 fliptext.1 xscreensaver-gl-helper.1
 
 .include "${MASTERDIR}/Makefile"
