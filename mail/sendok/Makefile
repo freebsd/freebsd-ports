@@ -22,7 +22,6 @@ ALL_TARGET=	it
 QMAIL_DIR?=	/var/qmail
 
 post-patch:
-	@${ECHO_CMD} ${PREFIX} >${WRKSRC}/conf-home
 	@${ECHO_CMD} ${CC} ${CFLAGS} >${WRKSRC}/conf-cc
 
 do-install:
