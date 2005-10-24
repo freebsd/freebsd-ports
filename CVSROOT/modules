@@ -13130,6 +13130,7 @@ xhtml-basic	ports/textproc/xhtml-basic
 xhtml-modularization	ports/textproc/xhtml-modularization
 xhtml1-xsd	ports/textproc/xhtml1-xsd
 xicq		ports/net/xicq
+xidle		ports/x11/xidle
 ximian-connector	ports/mail/ximian-connector
 ximp3		ports/audio/ximp3
 xin		ports/sysutils/xin
