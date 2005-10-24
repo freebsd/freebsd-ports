@@ -7931,6 +7931,7 @@ p5-HTML-Embperl	ports/www/p5-HTML-Embperl
 p5-HTML-Entities-Numbered	ports/textproc/p5-HTML-Entities-Numbered
 p5-HTML-FillInForm	ports/www/p5-HTML-FillInForm
 p5-HTML-Format	ports/textproc/p5-HTML-Format
+p5-HTML-Fraction	ports/textproc/p5-HTML-Fraction
 p5-HTML-FromText	ports/www/p5-HTML-FromText
 p5-HTML-LinkExtractor	ports/www/p5-HTML-LinkExtractor
 p5-HTML-Mason	ports/www/p5-HTML-Mason
