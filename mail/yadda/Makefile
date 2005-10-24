@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.printf.dk/projects/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another Damn Delivery Agent
 
+DEPRECATED=	"mastersite disappeared, no longer maintained by author"
+EXPIRATION_DATE=	2005-12-31
+
 RUN_DEPENDS=	${SITE_PERL}/Mail/Audit.pm:${PORTSDIR}/mail/p5-Mail-Audit
 
 USE_PERL5_RUN=	yes
