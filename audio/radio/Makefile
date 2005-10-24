@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Radio over the Internet
 
+DEPRECATED=	"mastersite disappeared, no longer maintained by author"
+EXPIRATION_DATE=	2005-12-31
+
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	${OPSYS}
 MAN1=		radio.1 broadcast.1
