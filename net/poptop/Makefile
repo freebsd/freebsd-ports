@@ -6,17 +6,28 @@
 #
 
 PORTNAME=	poptop
-PORTVERSION=	1.1.4.b4
-PORTREVISION=	3
+PORTVERSION=	1.2.1
+PORTREVISION=	0
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://jaist.dl.sourceforge.net/sourceforge/poptop/ \
+		http://easynews.dl.sourceforge.net/sourceforge/poptop/ \
+		http://nchc.dl.sourceforge.net/sourceforge/poptop/ \
+		http://optusnet.dl.sourceforge.net/sourceforge/poptop/ \
+		http://mesh.dl.sourceforge.net/sourceforge/poptop/ \
+		http://switch.dl.sourceforge.net/sourceforge/poptop/ \
+		http://kent.dl.sourceforge.net/sourceforge/poptop/ \
+		http://puzzle.dl.sourceforge.net/sourceforge/poptop/ \
+		http://cogent.dl.sourceforge.net/sourceforge/poptop/ \
+		http://citkit.dl.sourceforge.net/sourceforge/poptop/ \
+		http://belnet.dl.sourceforge.net/sourceforge/poptop/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	pptpd-${PORTVERSION:S/.b/-b/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olmi@rentech.ru
 COMMENT=	Windows 9x compatible PPTP (VPN) server
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+WRKSRC=			${WRKDIR}/pptpd-${PORTVERSION}
 
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
@@ -36,6 +47,7 @@ post-patch:
 .for file in bcrelay.c pptpd.c
 	@${REINPLACE_CMD} -e 's|"out_getopt\.h"|<getopt.h>|g' ${WRKSRC}/${file}
 .endfor
+	@${REINPLACE_CMD} -e "s#%%PREFIX%%#${PREFIX}#" ${WRKSRC}/pptpd.8 ${WRKSRC}/pptpd.conf.5
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/samples/pptpd.conf \
