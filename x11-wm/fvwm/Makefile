@@ -7,6 +7,7 @@
 
 PORTNAME=	fvwm
 PORTVERSION=	1.24r
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.hpc.uh.edu/pub/fvwm/version-1/ \
 		ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/sources/1.x/
@@ -17,6 +18,7 @@ COMMENT=	The fvwm window manager
 NO_LATEST_LINK=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
+USE_REINPLACE=	yes
 # must overwrite the default from bsd.port.mk
 XMKMF=		xmkmf
 ALL_TARGET=	Makefiles all
@@ -24,6 +26,11 @@ MAN1=		FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmClean.1 \
 		FvwmDebug.1 FvwmIconBox.1 FvwmIdent.1 FvwmPager.1 FvwmSave.1 \
 		FvwmSaveDesk.1 FvwmScroll.1 FvwmWinList.1 GoodStuff.1 fvwm.1 \
 		xpmroot.1
+
+pre-configure:
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/configure.h \
+		${WRKSRC}/sample.fvwmrc/system.fvwmrc
 
 post-install:
 	@${MKDIR} ${PREFIX}/include/X11/pixmaps
