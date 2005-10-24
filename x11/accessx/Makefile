@@ -24,6 +24,7 @@ USE_X_PREFIX=	yes
 post-patch:
 	${REINPLACE_CMD} \
 		-e "s@/usr/local@${PREFIX}@" \
+		-e "s@/usr/X11R6/lib@${X11BASE}/lib@" \
 		-e "s@g\+\+@${CXX} ${CXXFLAGS} -I${X11BASE}/include@g" \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e "s@wish -f@wish8.2 -f@g" ${WRKSRC}/accessx
