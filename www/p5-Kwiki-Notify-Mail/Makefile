@@ -17,7 +17,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Send email notification of topic updates
 
 BUILD_DEPENDS=	${SITE_PERL}/Kwiki.pm:${PORTSDIR}/www/p5-Kwiki
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS} \
+		${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
+		${SITE_PERL}/Kwiki/Diff.pm:${PORTSDIR}/www/p5-Kwiki-Diff
 
 PERL_CONFIGURE=	yes
 
