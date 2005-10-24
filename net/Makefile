@@ -427,6 +427,7 @@
     SUBDIR += nemesis
     SUBDIR += nepim
     SUBDIR += net-http
+    SUBDIR += net6
     SUBDIR += netatalk
     SUBDIR += netboot
     SUBDIR += netcat
