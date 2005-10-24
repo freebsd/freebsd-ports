@@ -8198,6 +8198,7 @@ p5-Math-BigInt	ports/math/p5-Math-BigInt
 p5-Math-BigRat	ports/math/p5-Math-BigRat
 p5-Math-Calc-Units	ports/math/p5-Math-Calc-Units
 p5-Math-Combinatorics	ports/math/p5-Math-Combinatorics
+p5-Math-ConvexHull	ports/math/p5-Math-ConvexHull
 p5-Math-Currency	ports/math/p5-Math-Currency
 p5-Math-Derivative	ports/math/p5-Math-Derivative
 p5-Math-Expr	ports/math/p5-Math-Expr
@@ -8699,6 +8700,7 @@ p5-Text-Bind	ports/textproc/p5-Text-Bind
 p5-Text-CSV	ports/textproc/p5-Text-CSV
 p5-Text-CSV_XS	ports/textproc/p5-Text-CSV_XS
 p5-Text-Chomp	ports/textproc/p5-Text-Chomp
+p5-Text-Context-EitherSide	ports/textproc/p5-Text-Context-EitherSide
 p5-Text-Diff	ports/textproc/p5-Text-Diff
 p5-Text-Diff-HTML	ports/textproc/p5-Text-Diff-HTML
 p5-Text-DoubleMetaphone	ports/textproc/p5-Text-DoubleMetaphone
