@@ -1,0 +1,5 @@
+HTML::Entities::Numbered is a content conversion filter for named HTML
+entities (symbols, mathematical symbols, Greek letters, Latin letters,
+etc.).
+
+WWW: http://search.cpan.org/dist/HTML-Entities-Numbered/
