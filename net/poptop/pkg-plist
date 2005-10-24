@@ -1,4 +1,6 @@
-sbin/pptpd
-sbin/pptpctrl
 etc/pptpd.conf.sample
 etc/rc.d/pptpd.sh.sample
+lib/pptpd/pptpd-logwtmp.so
+sbin/pptpctrl
+sbin/pptpd
+@dirrm lib/pptpd

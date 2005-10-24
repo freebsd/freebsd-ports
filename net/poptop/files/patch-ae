@@ -1,13 +1,51 @@
---- pptpctrl.c.orig     Sat May  3 18:09:16 2003
-+++ pptpctrl.c  Sat May  3 18:09:28 2003
-@@ -26,9 +26,9 @@
- #include <time.h>
- #include <sys/time.h>
- #include <dirent.h>
-+#include <sys/socket.h>
- #include <net/if.h>
- #include <sys/types.h>
--#include <sys/socket.h>
- #include <netinet/in.h>
- #include <arpa/inet.h>
- #ifdef HAVE_OPENPTY
+--- Makefile.in.orig	Wed Jun 23 10:03:07 2004
++++ Makefile.in	Thu Oct 20 22:33:48 2005
+@@ -14,7 +14,7 @@
+ 
+ @SET_MAKE@
+ 
+-SOURCES = $(bcrelay_SOURCES) $(pptpctrl_SOURCES) $(pptpd_SOURCES)
++SOURCES = $(pptpctrl_SOURCES) $(pptpd_SOURCES)
+ 
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
+@@ -37,7 +37,7 @@
+ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+ EXTRA_PROGRAMS =
+-sbin_PROGRAMS = pptpd$(EXEEXT) pptpctrl$(EXEEXT) bcrelay$(EXEEXT)
++sbin_PROGRAMS = pptpd$(EXEEXT) pptpctrl$(EXEEXT)
+ subdir = .
+ DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
+ 	$(srcdir)/Makefile.in $(srcdir)/config.h.in \
+@@ -55,9 +55,6 @@
+ am__installdirs = "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)"
+ sbinPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ PROGRAMS = $(sbin_PROGRAMS)
+-am_bcrelay_OBJECTS = bcrelay.$(OBJEXT)
+-bcrelay_OBJECTS = $(am_bcrelay_OBJECTS)
+-bcrelay_LDADD = $(LDADD)
+ am_pptpctrl_OBJECTS = pptpctrl.$(OBJEXT) ctrlpacket.$(OBJEXT) \
+ 	inststr.$(OBJEXT) compat.$(OBJEXT) pptpgre.$(OBJEXT) \
+ 	ppphdlc.$(OBJEXT)
+@@ -76,8 +73,8 @@
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+ LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+-SOURCES = $(bcrelay_SOURCES) $(pptpctrl_SOURCES) $(pptpd_SOURCES)
+-DIST_SOURCES = $(bcrelay_SOURCES) $(pptpctrl_SOURCES) $(pptpd_SOURCES)
++SOURCES = $(pptpctrl_SOURCES) $(pptpd_SOURCES)
++DIST_SOURCES = $(pptpctrl_SOURCES) $(pptpd_SOURCES)
+ man5dir = $(mandir)/man5
+ man8dir = $(mandir)/man8
+ NROFF = nroff
+@@ -285,9 +282,6 @@
+ 
+ clean-sbinPROGRAMS:
+ 	-test -z "$(sbin_PROGRAMS)" || rm -f $(sbin_PROGRAMS)
+-bcrelay$(EXEEXT): $(bcrelay_OBJECTS) $(bcrelay_DEPENDENCIES) 
+-	@rm -f bcrelay$(EXEEXT)
+-	$(LINK) $(bcrelay_LDFLAGS) $(bcrelay_OBJECTS) $(bcrelay_LDADD) $(LIBS)
+ pptpctrl$(EXEEXT): $(pptpctrl_OBJECTS) $(pptpctrl_DEPENDENCIES) 
+ 	@rm -f pptpctrl$(EXEEXT)
+ 	$(LINK) $(pptpctrl_LDFLAGS) $(pptpctrl_OBJECTS) $(pptpctrl_LDADD) $(LIBS)
