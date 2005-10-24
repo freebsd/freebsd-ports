@@ -138,9 +138,10 @@ USE_ICONV=	yes
 
 pre-configure:
 	@(cd ${WRKSRC} ; ${MAKE} distclean)
-	@${REINPLACE_CMD} -e 's|8\.2|8.4|; \
-		s|\$$gtk_config_prefix/bin/gtk-config|\$${GTK_CONFIG}|; \
-		s|\$$gtk_config_exec_prefix/bin/gtk-config|\$${GTK_CONFIG}|' \
+	@${REINPLACE_CMD} -e 's|8\.2|8.4|g; \
+		s|\$$gtk_config_prefix/bin/gtk-config|\$${GTK_CONFIG}|g; \
+		s|\$$gtk_config_exec_prefix/bin/gtk-config|\$${GTK_CONFIG}|g; \
+		s|/usr/local|${PREFIX}|g' \
 		${WRKSRC}/auto/configure
 
 #	Clean up junk files to keep them from being installed.
