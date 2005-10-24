@@ -7,6 +7,7 @@
 
 PORTNAME=	portmanager
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 #-----------------------------------------
 #for local use, remove before submitting PR
 CATEGORIES=		sysutils
@@ -21,16 +22,13 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=		FreeBSD installed ports status and safe update utility
 
 MAN1=			portmanager.1
-MAN3=			libMG.3 		\
-			MGdbAdd.3		\
-			MGdbCreate.3		\
-			MGdbDelete.3		\
-			MGdbGetRecordQty.3	\
-			MGdbGoTop.3		\
-			MGdbSeek.3
+MAN3=			libMG.3 MGdbAdd.3 MGdbCreate.3 MGdbDelete.3 \
+			MGdbGetRecordQty.3 MGdbGoTop.3 MGdbSeek.3
 
-USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
+USE_REINPLACE=		yes
+INSTALLS_SHLIB=		yes
+INSTALL_TARGET=		install info
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 #
@@ -40,32 +38,19 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 # so --with-bindir=/bin will become ${PREFIX}/bin at configure
 # time.
 #
-CONFIGURE_ARGS=		--with-prefix=${PREFIX} 		\
-			--with-bindir=/bin			\
-			--with-etcdir=/etc/portmanager		\
-			--with-pkgdbdir=/var/db/pkg		\
-			--with-portsdir=${PORTSDIR}		\
-			--with-sharedir=/share/portmanager	\
-			--with-tempdir=/tmp
+CONFIGURE_ARGS=	--with-prefix=${PREFIX} --with-bindir=/bin --with-tempdir=/tmp \
+		--with-etcdir=/etc/portmanager --with-pkgdbdir=/var/db/pkg \
+		--with-portsdir=${PORTSDIR} --with-sharedir=/share/portmanager
 
-INSTALLS_SHLIB=		yes
-USE_REINPLACE=		yes
-INSTALL_TARGET=		install info
+OPTIONS=	DEBUG	"Enables debug support and all compile warning" off
 
-# Get __FreeBSD_version
-.if !defined(OSVERSION)
-.if exists(/sbin/sysctl)
-OSVERSION!=	/sbin/sysctl -n kern.osreldate
-.else
-OSVERSION!=	/usr/sbin/sysctl -n kern.osreldate
-.endif
-.endif
+.include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600000
 #
 # In FreeBSD 6.0 dumps core when compiled WITHOUT debug symbols
 # so for a temp fix just making the WITH_DEBUG non optional.
 #
+.if ${OSVERSION} >= 600000
 WITH_DEBUG=	YES
 .endif
 
@@ -73,23 +58,14 @@ WITH_DEBUG=	YES
 CONFIGURE_ARGS+=	--with-debug=yes
 .endif
 
-pre-fetch:
-.if !defined(WITH_DEBUG)
-	@${ECHO}	"***********************************************************************"
-	@${ECHO}	"* portmanager                                                         *"
-	@${ECHO}	"***********************************************************************"
-	@${ECHO}	"*                                                                     *"
-	@${ECHO}	"* WITH_DEBUG=yes enables debug support and all compile warnings       *"
-	@${ECHO}	"*                                                                     *"
-	@${ECHO}	"***********************************************************************"
-.endif
-
-post-configure:
+post-patch:
+.if ${PORTREVISION} != 0
 	@${REINPLACE_CMD} -e	\
 		's|VERSION "${PORTVERSION}"|VERSION "${PORTVERSION}_${PORTREVISION}"|g'	\
-		 ${WRKSRC}/externVars.h
+		 ${WRKSRC}/externVars.h.in
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
