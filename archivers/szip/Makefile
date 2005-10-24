@@ -15,6 +15,9 @@ DISTNAME=	sz${PORTVERSION:S/.//}_src
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	A fast compression utility
 
+DEPRECATED=	"mastersite disappeared, no longer maintained by author"
+EXPIRATION_DATE=	2005-12-31
+
 USE_GMAKE=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 
