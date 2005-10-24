@@ -468,6 +468,7 @@
     SUBDIR += p5-XML-Encoding
     SUBDIR += p5-XML-Feed
     SUBDIR += p5-XML-Filter-BufferText
+    SUBDIR += p5-XML-Filter-DOMFilter-LibXML
     SUBDIR += p5-XML-Filter-DetectWS
     SUBDIR += p5-XML-Filter-GenericChunk
     SUBDIR += p5-XML-Filter-Reindent
