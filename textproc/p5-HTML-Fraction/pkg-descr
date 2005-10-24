@@ -1,0 +1,7 @@
+The HTML::Fraction encodes fractions as HTML entities. Some very common
+fractions have HTML entities (eg 1/2 is &frac12;). Additionally, common
+vulgar fractions have Unicode characters (eg 1/5 is &#8533;). This
+module takes a string and encodes fractions as entities: this means that
+it will look pretty in the browser.
+
+WWW: http://search.cpan.org/dist/HTML-Fraction/
