@@ -42,6 +42,8 @@ bin/swig
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/Modula3.html
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/Library.html
+%%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/Lisp.html
+%%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/Lua.html
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/Java.html
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/Introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/Guile.html
@@ -1032,6 +1034,45 @@ bin/swig
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/abstract_inherit.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/abstract_access.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/README
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/newobject2_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/operator_overload_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/newobject1_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/primitive_ref_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/ret_by_value_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/import.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/Makefile.in
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/abstract_access_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/li_std_vector_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/li_std_string_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/exception_order_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/enums_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/tcl/newobject2_runme.tcl
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/tcl/newobject1_runme.tcl
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/extern_declaration_runme.java
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/multiple_inheritance_runme.java
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/operator_overload_runme.java
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/track_objects_directors_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/track_objects.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/track_objects_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/track_objects_directors.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/char_constant_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guile/throw_exception_runme.scm
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/perl5/inherit_runme.pl
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_cwstring_runme.py
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_cstring_runme.py
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/compactdefaultargs_runme.py
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/inherit.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/operator_overload.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/empty.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/extern_namespace.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/compactdefaultargs.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_cwstring.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_using.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/immutable.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/extern_declaration.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/typedef_struct.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/extend_variable.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/variables/runme.tcl
 %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/variables/index.html
 %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/variables/example.i
@@ -1242,6 +1283,18 @@ bin/swig
 %%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/class/example.cxx
 %%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/class/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/check.list
+%%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/free_function/example.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/free_function/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/free_function/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/free_function/example.cxx
+%%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/free_function/example.dsp
+%%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/free_function/runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/mark_function/example.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/mark_function/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/mark_function/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/mark_function/example.cxx
+%%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/mark_function/example.dsp
+%%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/mark_function/runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/python/weave/runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/python/weave/example.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/python/weave/example.h
@@ -1427,71 +1480,107 @@ bin/swig
 %%EXAMPLESDIR%%/%%PORTVERSION%%/pike/class/example.cxx
 %%EXAMPLESDIR%%/%%PORTVERSION%%/pike/class/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/pike/check.list
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/class/example.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/class/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/class/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/class/example.cxx
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/class/runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/functest/example.c
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/functest/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/functest/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/functest/runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/variables/example.c
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/variables/example.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/variables/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/variables/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/variables/runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/constants/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/constants/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/constants/runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/simple/example.c
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/simple/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/simple/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/simple/runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/pointer/example.c
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/pointer/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/pointer/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/pointer/runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/lua.c
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/import.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/check.list
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/variables/runme.php4.old
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/variables/runme.php4
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/variables/example.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/variables/example.h
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/variables/example.c
-%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/variables/Makefile.old
-%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/variables/BUILD.sh
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/value/runme.php4
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/value/example.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/value/example.h
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/value/example.c
-%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/value/Makefile.old
-%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/value/BUILD.sh
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/sync/runme.php4
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/sync/example.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/sync/example.h
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/sync/example.cxx
-%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/sync/Makefile.old
-%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/sync/BUILD.sh
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/simple/runme.php4
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/simple/example.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/simple/example.c
-%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/simple/Makefile.old
-%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/simple/BUILD.sh
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/shadow/runme.php4
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/shadow/example.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/shadow/example.h
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/shadow/example.cxx
-%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/shadow/Makefile.old
-%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/shadow/BUILD.sh
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/reference/runme.php4
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/reference/example.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/reference/example.h
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/reference/example.cxx
-%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/reference/Makefile.old
-%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/reference/BUILD.sh
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/pointer/runme.php4
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/pointer/example.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/pointer/example.c
-%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/pointer/Makefile.old
-%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/pointer/BUILD.sh
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/funcptr/runme.php4
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/funcptr/example.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/funcptr/example.h
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/funcptr/example.c
-%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/funcptr/Makefile.old
-%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/funcptr/BUILD.sh
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/enum/runme.php4
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/enum/example.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/enum/example.h
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/enum/example.cxx
-%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/enum/Makefile.old
-%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/enum/BUILD.sh
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/constants/runme.php4
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/constants/example.i
-%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/constants/Makefile.old
-%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/constants/BUILD.sh
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/class/runme.php4
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/class/example.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/class/example.h
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/class/example.cxx
-%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/class/Makefile.old
-%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/class/BUILD.sh
 %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/check.list
-%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/Makefile.php
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/overloading/example.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/overloading/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/overloading/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/overloading/example.cxx
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/overloading/runme.php4
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/enum/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/sync/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/class/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/value/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/variables/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/constants/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/disown/example.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/disown/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/disown/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/disown/example.cxx
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/disown/runme.php4
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/funcptr/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/cpointer/example.c
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/cpointer/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/cpointer/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/cpointer/runme.php4
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/shadow/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/simple/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/reference/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/reference/BUILD-proxy.sh
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/reference/runme-proxy.php4
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/pointer/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/pragmas/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/pragmas/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/pragmas/runme.php4
+%%EXAMPLESDIR%%/%%PORTVERSION%%/php4/pragmas/include.php
 %%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/variables/runme.pl
 %%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/variables/index.html
 %%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/variables/example.i
@@ -2289,6 +2378,20 @@ bin/swig
 %%DATADIR%%/%%PORTVERSION%%/allegrocl/typemaps.i
 %%DATADIR%%/%%PORTVERSION%%/allegrocl/allegrocl.swg
 %%DATADIR%%/%%PORTVERSION%%/_std_deque.i
+%%DATADIR%%/%%PORTVERSION%%/python/cwstring.i
+%%DATADIR%%/%%PORTVERSION%%/python/cstrbase.swg
+%%DATADIR%%/%%PORTVERSION%%/ruby/rubytracking.swg
+%%DATADIR%%/%%PORTVERSION%%/php4/const.i
+%%DATADIR%%/%%PORTVERSION%%/php4/globalvar.i
+%%DATADIR%%/%%PORTVERSION%%/php4/phppointers.i
+%%DATADIR%%/%%PORTVERSION%%/php4/php4init.swg
+%%DATADIR%%/%%PORTVERSION%%/clisp/clisp.swg
+%%DATADIR%%/%%PORTVERSION%%/lua/std_except.i
+%%DATADIR%%/%%PORTVERSION%%/lua/std_string.i
+%%DATADIR%%/%%PORTVERSION%%/lua/std_vector.i
+%%DATADIR%%/%%PORTVERSION%%/lua/typemaps.i
+%%DATADIR%%/%%PORTVERSION%%/lua/lua.swg
+%%DATADIR%%/%%PORTVERSION%%/lua/luarun.swg
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/xml
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/subdir2
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/subdir1
@@ -2308,6 +2411,7 @@ bin/swig
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/errors
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/variables
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/value
@@ -2345,6 +2449,8 @@ bin/swig
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/enum
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/constants
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/class
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/free_function
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/mark_function
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/ruby
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/python/weave
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/python/variables
@@ -2393,6 +2499,10 @@ bin/swig
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/enum
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/constants
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/class
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/overloading
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/disown
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/cpointer
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/php4/pragmas
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/php4
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/variables
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/value
@@ -2514,6 +2624,13 @@ bin/swig
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/GIFPlot/Chicken/full
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/GIFPlot/Chicken
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/GIFPlot
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/class
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/functest
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/variables
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/constants
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/simple
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/pointer
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%/%%PORTVERSION%%/tcl
@@ -2531,6 +2648,8 @@ bin/swig
 @dirrm %%DATADIR%%/%%PORTVERSION%%/csharp
 @dirrm %%DATADIR%%/%%PORTVERSION%%/chicken
 @dirrm %%DATADIR%%/%%PORTVERSION%%/allegrocl
+@dirrm %%DATADIR%%/%%PORTVERSION%%/clisp
+@dirrm %%DATADIR%%/%%PORTVERSION%%/lua
 @dirrm %%DATADIR%%/%%PORTVERSION%%
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/%%PORTVERSION%%/Manual
