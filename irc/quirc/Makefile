@@ -15,6 +15,7 @@ COMMENT=	An irc client for the X Window System that uses TCL/TK
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
+USE_X_PREFIX=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
