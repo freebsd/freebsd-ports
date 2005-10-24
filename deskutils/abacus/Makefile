@@ -25,7 +25,8 @@ LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -Wno-deprecated"
+MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -Wno-deprecated" LFLAGS="${LDFLAGS}"
+LDFLAGS+=	-L$(X11BASE)/lib -L$(LOCALBASE)/lib
 ALL_TARGET=	dep tcl_interf/nxlc
 
 MAN1=		abacus.1
