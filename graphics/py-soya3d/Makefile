@@ -40,6 +40,12 @@ INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
 DISTFILES+=	SoyaTutorial-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=	"Does not compile in ${ARCH}"
+.endif
+
 post-install:
 	@${INSTALL_DIR} ${EXAMPLESDIR}
 	@${CP} -R ${WRKDIR}/SoyaTutorial-${PORTVERSION}/tutorial/* ${EXAMPLESDIR}
@@ -53,4 +59,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
