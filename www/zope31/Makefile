@@ -16,6 +16,7 @@ DIST_SUBDIR=	zope
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	An object-based web application platform
 
+LATEST_LINK=	zope31
 USE_PYTHON=	yes
 USE_RC_SUBR=	${PORTNAME}31.sh zeo31.sh
 
