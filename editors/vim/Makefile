@@ -7,8 +7,8 @@
 #
 
 PORTNAME?=	vim
-PATCHLEVEL=	90
-PORTVERSION=	6.3.${PATCHLEVEL}
+PATCHLEVEL=	0
+PORTVERSION=	6.4.${PATCHLEVEL}
 PORTREVISION?=	0
 CATEGORIES?=	editors
 MASTER_SITES=	${MASTER_SITE_VIM}
@@ -18,9 +18,9 @@ PATCH_SITES=	${MASTER_SITES:S|unix|patches/${PORTVERSION:C/\.[0-9a-z]*$//}|}
 PATCHFILES!=	/usr/bin/jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 #	bits to remove
-BADPATCHES=	000 022 025 035 038 041 044 047 048 052 073 077 078 080 084 086
+BADPATCHES=	000
 .for p in ${BADPATCHES}
-PATCHFILES:=	${PATCHFILES:N6.3.${p}}
+PATCHFILES:=	${PATCHFILES:N6.4.${p}}
 .endfor
 
 MAINTAINER?=	obrien@FreeBSD.org
@@ -138,7 +138,7 @@ USE_ICONV=	yes
 
 pre-configure:
 	@(cd ${WRKSRC} ; ${MAKE} distclean)
-	@${REINPLACE_CMD} -e 's|8\.2|8.4|g; \
+	@${REINPLACE_CMD} -e ' \
 		s|\$$gtk_config_prefix/bin/gtk-config|\$${GTK_CONFIG}|g; \
 		s|\$$gtk_config_exec_prefix/bin/gtk-config|\$${GTK_CONFIG}|g; \
 		s|/usr/local|${PREFIX}|g' \
