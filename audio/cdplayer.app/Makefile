@@ -16,6 +16,9 @@ DISTNAME=	CDPlayer.app-${PORTVERSION}
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	A CD player with CDDB support resembling OpenStep's OmniCD
 
+DEPRECATED=	"mastersite disappeared"
+EXPIRATION_DATE=	2005-12-31
+
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 		cdaudio.1:${PORTSDIR}/audio/libcdaudio \
 		wraster.4:${PORTSDIR}/x11-wm/windowmaker
