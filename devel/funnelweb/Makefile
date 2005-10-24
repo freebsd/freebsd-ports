@@ -8,7 +8,7 @@
 PORTNAME=	funnelweb
 PORTVERSION=	3.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.ross.net/funnelweb/funnelweb_v320/
+MASTER_SITES=	http://www.ross.net/funnelweb/download/funnelweb_v320/
 DISTNAME=	funnelweb_v320_source
 
 MAINTAINER=	jkoshy@freebsd.org
