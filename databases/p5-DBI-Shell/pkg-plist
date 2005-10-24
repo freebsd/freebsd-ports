@@ -1,3 +1,4 @@
+bin/dbish
 %%SITE_PERL%%/DBI/Format.pm
 %%SITE_PERL%%/DBI/Shell/Completion.pm
 %%SITE_PERL%%/DBI/Shell/SQLMinus.pm
@@ -9,7 +10,6 @@
 @unexec rmdir %D/%%SITE_PERL%%/DBI/Shell   2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/DBI/Format  2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/DBI         2>/dev/null || true
-@unexec rm %D/bin/dbish  2>/dev/null || true
 @unexec rm %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/Shell/.packlist  2> /dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/Shell  2> /dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI  2> /dev/null || true
