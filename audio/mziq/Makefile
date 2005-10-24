@@ -13,6 +13,9 @@ MASTER_SITES=	http://cseg.lucidx.com/projects/src/mziq/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Perl frontend to mpg123
 
+DEPRECATED=	"mastersite disappeared, no longer maintained by author"
+EXPIRATION_DATE=	2005-12-31
+
 RUN_DEPENDS=	${LOCALBASE}/bin/mpg123:${PORTSDIR}/audio/mpg123
 
 WRKSRC=		${WRKDIR}/MZiq
