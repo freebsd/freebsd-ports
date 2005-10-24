@@ -7,7 +7,7 @@
 
 PORTNAME=	bogofilter
 PORTVERSION=	0.96.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,7 @@ OPTIONS+=	UNICODE "Normalize tokens to Unicode (UTF-8)" on
 
 LIB_DEPENDS?=	db-4.3:${PORTSDIR}/databases/db43
 
-CONFLICTS?=	bogofilter-sqlite-[0-9]* bogofilter-tdb-[0-9]* bogofilter-qdbm-[0-9]* [a-z][a-z]-bogofilter-[0-9]* bogofilter-sqlite-[0-9]*
+CONFLICTS?=	bogofilter-sqlite-[0-9]* bogofilter-qdbm-[0-9]* [a-z][a-z]-bogofilter-[0-9]*
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
@@ -72,15 +72,18 @@ post-patch:
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
+PLIST_SUB=	CONTRIB="@comment "
+.else
+PLIST_SUB=	CONTRIB=""
 .endif
 
 post-build::
 	cd ${WRKSRC} && make check SHELL=${SH}
 
 post-install::
+	@${MKDIR} ${DOCSDIR}/contrib
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in contrib html programmer xml
+.for i in html programmer xml
 	@${MKDIR} ${DOCSDIR}/${i}
 .endfor
 .for i in AUTHORS COPYING INSTALL NEWS README README.cvs \
@@ -93,19 +96,19 @@ post-install::
 	  ${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/trio/AUTHORS ${DOCSDIR}/AUTHORS.trio
+.for i in contrib/dot-qmail-bogofilter-default
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/doc/*.xml ${DOCSDIR}/xml
+	${INSTALL_DATA} ${WRKSRC}/doc/programmer/README.freebsd ${DOCSDIR}/programmer
+.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/contrib/bogogrep ${DOCSDIR}/contrib/
 .for i in contrib/bogo.R contrib/bogofilter-qfe \
 		contrib/mime.get.rfc822 contrib/printmaildir.pl \
 		contrib/bogominitrain.pl contrib/README.contrib
 	  ${INSTALL_SCRIPT} ${WRKSRC}/${i} ${DOCSDIR}/${i}
 .endfor
-.for i in contrib/dot-qmail-bogofilter-default
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
-.endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/contrib/bogogrep ${DOCSDIR}/contrib/
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/html
-	${INSTALL_DATA} ${WRKSRC}/doc/*.xml ${DOCSDIR}/xml
-	${INSTALL_DATA} ${WRKSRC}/doc/programmer/README.freebsd ${DOCSDIR}/programmer
-.endif
 .if !defined(WITHOUT_BASH)
 .for i in randomtrain scramble trainbogo.sh
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/${i} ${DOCSDIR}/contrib/

@@ -7,3 +7,16 @@ bin/bogotune
 bin/bogoutil
 bin/bogoupgrade
 etc/bogofilter.cf.example
+%%CONTRIB%%%%DOCSDIR%%/contrib/bogo.R
+%%CONTRIB%%%%DOCSDIR%%/contrib/bogofilter-qfe
+%%CONTRIB%%%%DOCSDIR%%/contrib/mime.get.rfc822
+%%CONTRIB%%%%DOCSDIR%%/contrib/printmaildir.pl
+%%CONTRIB%%%%DOCSDIR%%/contrib/bogominitrain.pl
+%%CONTRIB%%%%DOCSDIR%%/contrib/README.contrib
+%%CONTRIB%%%%DOCSDIR%%/contrib/bogogrep
+%%CONTRIB%%%%DOCSDIR%%/contrib/randomtrain
+%%CONTRIB%%%%DOCSDIR%%/contrib/scramble
+%%CONTRIB%%%%DOCSDIR%%/contrib/trainbogo.sh
+%%CONTRIB%%%%DOCSDIR%%/contrib/README.randomtrain
+%%CONTRIB%%@dirrm %%DOCSDIR%%/contrib
+%%CONTRIB%%@dirrm %%DOCSDIR%%
