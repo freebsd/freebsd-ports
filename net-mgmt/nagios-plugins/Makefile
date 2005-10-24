@@ -7,7 +7,7 @@
 
 PORTNAME=	nagios-plugins
 PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
@@ -28,6 +28,7 @@ OPTIONS=	QSTAT "Game server query support" off \
 .include <bsd.port.pre.mk>
 
 USE_SUBMAKE=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/share/nagios/cgi-bin \
 		--libexecdir=${PREFIX}/libexec/nagios \
