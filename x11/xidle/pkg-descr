@@ -1,0 +1,6 @@
+xidle uses the XScreenSaver(3) extension to receive inactivity events
+when a timeout is specified, running a specific program after the elapsed
+time.  xidle also monitors the very corner of the given position for
+pointer activity and runs a program if the pointer sits there for more
+than the specified number of seconds.  This behavior is always present,
+whether -timeout is specified or not.
