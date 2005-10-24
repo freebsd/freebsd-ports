@@ -19,8 +19,7 @@ USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_OPENSSL=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --with-x=${X11BASE}
+GNU_CONFIGURE=	yes
 DOCS=		doc/AUTHORS doc/TODO doc/*.txt
 MAN1=		rdesktop.1
 
