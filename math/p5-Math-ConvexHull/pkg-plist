@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Math/ConvexHull.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/ConvexHull/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/ConvexHull 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Math 2>/dev/null || true
