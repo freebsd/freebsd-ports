@@ -14,11 +14,11 @@ else
 Please select desired options:" -1 -1 16 \
 QStat	"Game server query support" OFF \
 FPing	"Support for non-flooding fast ping" OFF \
-NetSNMP	"SNMP support" OFF \
+NetSNMP	"SNMP support" ON \
 Radiusclient	"Radius support" OFF \
 MySQL	"MySQL support" OFF \
 PostgreSQL	"PostgreSQL support" OFF \
-OpenLDAP	"OpenLDAP support" OFF \
+OpenLDAP	"OpenLDAP support" ON \
 2> $tempfile
 
 	retval=$?
