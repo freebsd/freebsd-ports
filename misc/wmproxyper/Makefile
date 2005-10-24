@@ -15,6 +15,9 @@ DISTNAME=	WMProxyPer-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays Distributed.net Personal Proxy current status and progress
 
+DEPRECATED=	"mastersite disappeared, no longer maintained by author"
+EXPIRATION_DATE=	2005-12-31
+
 LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp
 
 PLIST_FILES=	bin/wmproxyper
