@@ -15,7 +15,7 @@ DISTFILES=	${BOOTSTRAP} \
 		pm3-${PORTVERSION}-src.tar.bz2
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Compiler and base libraries of the Polytechnique Montreal Modula-3 distribution
+COMMENT=	Compiler and base libs of Polytechnique Montreal Modula-3 distribution
 
 DIST_SUBDIR=	pm3
 WRKSRC=		${WRKDIR}/pm3-base-${PORTVERSION}
@@ -69,17 +69,13 @@ TARGET=		FBSD_ALPHA
 TARGETDIR=	fbsd-alpha
 WORDSIZE=	64
 BOOTSTRAP=	pm3-${PORTVERSION}-${TARGET}-boot.tar.bz2
+.else
+IGNORE=		Not supported on ${ARCH}
 .endif
 
-EXTRA_PATCHES!= echo ${PATCHDIR}/${TARGET}-patch-*
+EXTRA_PATCHES!=	${ECHO_CMD} ${PATCHDIR}/${TARGET}-patch-*
 .if ${EXTRA_PATCHES} == ${PATCHDIR}/${TARGET}-patch-*
 .undef EXTRA_PATCHES
-.endif
-
-.if !defined(TARGET)
-pre-fetch:
-	@${ECHO_MSG} "Cannot determine M3 target for this architecture"
-	@${FALSE}
 .endif
 
 post-patch:
