@@ -529,6 +529,7 @@
     SUBDIR += p5-Net-Jabber
     SUBDIR += p5-Net-MSN
     SUBDIR += p5-Net-MovableType
+    SUBDIR += p5-Net-NetSend
     SUBDIR += p5-Net-OSCAR
     SUBDIR += p5-Net-OpenDHT
     SUBDIR += p5-Net-Packet
