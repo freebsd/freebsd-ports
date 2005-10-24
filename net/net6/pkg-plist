@@ -1,0 +1,20 @@
+include/net6/address.hpp
+include/net6/client.hpp
+include/net6/connection.hpp
+include/net6/default_accumulator.hpp
+include/net6/error.hpp
+include/net6/host.hpp
+include/net6/main.hpp
+include/net6/non_copyable.hpp
+include/net6/packet.hpp
+include/net6/peer.hpp
+include/net6/select.hpp
+include/net6/server.hpp
+include/net6/socket.hpp
+lib/libnet6-1.1.so
+lib/libnet6-1.1.so.0
+lib/libnet6.a
+lib/libnet6.so
+libdata/pkgconfig/net6-1.1.pc
+%%NLS%%share/locale/de/LC_MESSAGES/net6.mo
+@dirrm include/net6
