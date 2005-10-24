@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mathomatic
-PORTVERSION=	12.4.11
+PORTVERSION=	12.5.0
 CATEGORIES=	math
 MASTER_SITES=	http://www.panix.com/~gesslein/
 EXTRACT_SUFX=	.tgz
@@ -15,20 +15,25 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	neuhauser@sigpipe.cz
 COMMENT=	Highly portable, general purpose CAS (Computer Algebra System)
 
-DISTVERSION=	${PORTVERSION:C/\.([[:alpha:]]+)/\1/}
-WRKSRC=		${WRKDIR}/${DISTNAME}
 MAKEFILE=	makefile
-MAKE_ARGS+=	-DREADLINE prefix=${PREFIX} docdir='$$(prefix)/share/doc'
+MAKE_ARGS=	-DREADLINE
 USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/mathomatic
-PORTDOCS=	am.htm ctips.html index.html manual.htm notes.html changes.txt
+PORTDOCS=	*
 
 MAN1=		mathomatic.1
 
-pre-configure:
+post-patch:
+	@${REINPLACE_CMD} -e '/^CFLAGS/ s|-O||; /^LDFLAGS/ s|-s||' \
+		${WRKSRC}/makefile
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/mathomatic ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/mathomatic.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e "s|#%%PORTDOCS%%|	|" ${WRKSRC}/makefile
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/changes.txt ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
