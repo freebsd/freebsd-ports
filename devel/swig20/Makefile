@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	swig
-PORTVERSION=	1.3.25
-PORTREVISION=	2
+PORTVERSION=	1.3.27
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -54,7 +53,7 @@ CONFIGURE_ARGS+=	--with-pyincl=${PYTHON_INCLUDEDIR} \
 
 .if defined(WANT_SWIG_RUBY)
 CATEGORIES+=		ruby
-USE_RUBY=	yes
+USE_RUBY=		yes
 RUBY_NO_RUN_DEPENDS=	yes
 CONFIGURE_ARGS+=	--with-ruby
 .else
@@ -101,7 +100,7 @@ CONFIGURE_ARGS+=	--without-pike
 
 .if defined(WANT_SWIG_JAVA)
 CATEGORIES+=		java
-USE_JAVA=	1.2+
+USE_JAVA=		1.2+
 .else
 CONFIGURE_ARGS+=	--without-java
 .endif
