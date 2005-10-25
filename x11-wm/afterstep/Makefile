@@ -53,6 +53,7 @@ post-install:
 		@ ${MKDIR} ${PREFIX}/include/X11/pixmaps/
 .if defined(WITH_HICOLOR_ICONS)
 		${INSTALL_DATA} ${WRKSRC}/icons/*.xpm ${PREFIX}/include/X11/pixmaps/
+		${INSTALL_DATA} ${FILESDIR}/monitor_bsd.xpm ${PREFIX}/include/X11/pixmaps/
 .else
 .if !defined(BATCH)
 		@${ECHO_MSG} "===>  Note: to use the hi-color icons,"
@@ -60,9 +61,10 @@ post-install:
 		@${ECHO_MSG} "      defined"
 .endif
 		@for i in AFstep.xpm penguin.xpm monitor_bsd.xpm; do \
-			${CP} ${FILESDIR}/$$i ${WRKSRC}/icons/8bit; \
+			${CP} ${FILESDIR}/$$i ${WRKSRC}/icons/8bit/; \
 		done
 		${INSTALL_DATA} ${WRKSRC}/icons/8bit/*.xpm ${PREFIX}/include/X11/pixmaps/
+		${INSTALL_DATA} ${WRKSRC}/icons/eyecon.xpm ${PREFIX}/include/X11/pixmaps/
 .endif
 		@ ${MKDIR} ${PREFIX}/lib/X11/afterstep/doc/
 		@for i in CHANGES CREDITS README README.8bit INSTALL FAQ module-interface.txt; do \

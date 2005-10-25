@@ -6,6 +6,7 @@ include/X11/pixmaps/FileFolders.xpm
 include/X11/pixmaps/KeysOnChain.xpm
 include/X11/pixmaps/OldFashionedRadio.xpm
 include/X11/pixmaps/YellowBlueRedGeometry.xpm
+include/X11/pixmaps/eyecon.xpm
 include/X11/pixmaps/interface.xpm
 include/X11/pixmaps/monalisa.xpm
 include/X11/pixmaps/monitor.xpm
