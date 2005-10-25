@@ -9,14 +9,18 @@ PORTNAME=	openoffice.org
 PORTVERSION=	1.0.3
 PORTREVISION=	5
 CATEGORIES+=	editors
-MASTER_SITES+=  ${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/${PORTVERSION}/&,} \
-		${MASTER_SITE_LOCAL:S,%SUBDIR%,maho/openoffice.org/&,}:moz \
+MASTER_SITES+=  ${MASTER_SITE_RINGSERVER} \
+		${MASTER_SITE_LOCAL:S/$/:moz/} \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
-		${MASTER_SITE_MOZILLA:S,%SUBDIR%,mozilla/releases/mozilla${MOZILLA_VERSION}/&,}src/:mozsrc \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent-1.0/&,}:help \
+		${MASTER_SITE_MOZILLA:S/$/:mozsrc/} \
+		${MASTER_SITE_RINGSERVER:S/$/:help/} \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent-1.0/:help \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent-1.0/:help \
-		${MASTER_SITE_LOCAL:S,%SUBDIR%,maho/openoffice.org/&,}:ru
+		${MASTER_SITE_LOCAL:S/$/:ru/}
+MASTER_SITE_SUBDIR= misc/openoffice/stable/${PORTVERSION} \
+		maho/openoffice.org/:moz,ru \
+		mozilla/releases/mozilla${MOZILLA_VERSION}/src/:mozsrc \
+		misc/openoffice/contrib/helpcontent-1.0/:help
 DISTFILES+=	OOo_${RELEASE_NR}_source.tar.gz gpc231.tar.Z:gpc patch-translation-ru-1.0.3.bz2:ru
 EXTRACT_ONLY=	OOo_${RELEASE_NR}_source.tar.gz
 

@@ -10,16 +10,21 @@ PORTVERSION=	1.1.5.${SNAPDATE}
 CATEGORIES+=	editors
 MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
 		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
-		${MASTER_SITE_LOCAL:S,%SUBDIR%,maho/openoffice.org/&,}:moz \
+		${MASTER_SITE_LOCAL:S/$/:moz/} \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
-		${MASTER_SITE_MOZILLA:S,%SUBDIR%,mozilla/releases/mozilla${MOZILLA_VERSION}/&,}src/:mozsrc \
+		${MASTER_SITE_MOZILLA:S/$/:mozsrc/} \
 		http://openoffice.lunarshells.com/sources/helpcontent/:help \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent/&,}:help \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent-1.0/&,}:help3 \
+		${MASTER_SITE_RINGSERVER:S/$/:help/} \
+		${MASTER_SITE_RINGSERVER:S/$/:help3/} \
 		ftp://ftp.kddlabs.co.jp/office/openoffice/contrib/helpcontent/:help \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent/:help \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help \
 		ftp://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/Files/:help2
+MASTER_SITE_SUBDIR=	maho/openoffice.org/:moz \
+		mozilla/releases/mozilla${MOZILLA_VERSION}/src/:mozsrc \
+		misc/openoffice/contrib/helpcontent/:help \
+		misc/openoffice/contrib/helpcontent-1.0/:help3 \
+
 DISTFILES+=	OOo_${RELEASE_NR}m${MILESTONE}.${SNAPDATE}_source.tar.bz2 gpc231.tar.Z:gpc
 EXTRACT_ONLY=	OOo_${RELEASE_NR}m${MILESTONE}.${SNAPDATE}_source.tar.bz2
 
