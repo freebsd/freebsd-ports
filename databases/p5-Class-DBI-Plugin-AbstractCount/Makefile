@@ -7,6 +7,7 @@
 
 PORTNAME=	Class-DBI-Plugin-AbstractCount
 PORTVERSION=	0.06
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -16,7 +17,8 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Get COUNT(*) results with abstract SQL
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/DBI/Plugin.pm:${PORTSDIR}/databases/p5-Class-DBI-Plugin \
-		${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI
+		${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI \
+		${SITE_PERL}/SQL/Abstract.pm:${PORTSDIR}/databases/p5-SQL-Abstract
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
