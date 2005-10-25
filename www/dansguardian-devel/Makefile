@@ -6,38 +6,41 @@
 #
 
 PORTNAME=	dansguardian
-PORTVERSION=	2.7.7.9
+PORTVERSION=	2.9.0.1
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
-DISTNAME=	DansGuardian-${PORTVERSION:R}-${PORTVERSION:E}.source
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	fcash@sd73.bc.ca
 COMMENT=	A fast, feature-rich web content filter for Squid proxy servers
 
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid \
 		${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
 
-IGNORE=		"currently at lower revision than www/dansguardian"
+#IGNORE=		"currently at lower revision than www/dansguardian"
+
+USE_GCC=	3.4+
 
 USE_RC_SUBR=	yes
 RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
-CONFLICTS=	dansguardian-2.6*
+CONFLICTS=	dansguardian-2.[678]*
 LATEST_LINK=	dansguardian-devel
 
-WRKSRC=		${WRKDIR}/DansGuardian-${PORTVERSION:R}-${PORTVERSION:E}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--bindir=/sbin/ \
-		--sysconfdir=/etc/dansguardian/ \
-		--sysvdir=/etc/rc.d/ \
-		--mandir=/man/ \
-		--logdir=/var/log/ \
-		--cgidir=/www/cgi-bin/ \
-		--piddir=/var/run/
+CONFIGURE_ARGS=	--localstatedir=/var \
+		--with-logdir=/var/log \
+		--with-piddir=/var/run
+
 MAN8=		dansguardian.8
 
-OPTIONS=	DG_GCC3 "Compile using GCC 3.3 on FreeBSD 4.x." off \
-		DG_PHRASELISTS "Install new phraselists. (Overwrites existing.)" off
+OPTIONS=	DG_CLAMAV "Enable ClamAV support (libclamav)" off \
+		DG_CLAMD  "Enable ClamAV daemon support (clamd)" off \
+		DG_ICAP   "Enable ICAP AV content scanner support" off \
+		DG_KASP   "Enable Kaspersky AV support" off \
+		DG_DMGR   "Enable the fancy download manager" off
+#		DG_PHRASELISTS "Install new phraselists. (Overwrites existing.)" off
 
 DG_URL=		http://dansguardian.org/index.php?page=copyright2
 CONFDIR=	${PREFIX}/etc/dansguardian
@@ -48,12 +51,30 @@ RESTRICTED=	${NO_PACKAGE}
 
 .include <bsd.port.pre.mk>
 
-# On FreeBSD 4.x, user can choose which GCC version to use
-.if ${OSVERSION} > 500000 || defined(WITH_DG_GCC3)
-CONFIGURE_ARGS+=	--gccver=3
-USE_GCC=		3.4
-.else
-CONFIGURE_ARGS+=	--gccver=2
+.if defined(WITH_DG_CLAMAV) && defined(WITH_DG_CLAMD)
+BROKEN=	"You have select both ClamAV integration options, which is known to cause issues.  Please select only one of the ClamAV options.  Run make config to change the options"
+.endif
+
+.if defined(WITH_DG_CLAMAV)
+CONFIGURE_ARGS+=	--enable-clamav=yes
+LIB_DEPENDS=		clamav.1:${PORTSDIR}/security/clamav:install
+.endif
+
+.if defined(WITH_DG_CLAMD)
+CONFIGURE_ARGS+=	--enable-clamd=yes
+RUN_DEPENDS+=		${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
+.endif
+
+.if defined(WITH_DG_ICAP)
+BROKEN=	"I don't have access to ICAP AV, so I can't test this.  If you have access to it, drop me an e-mail.  Thanks"
+.endif
+
+.if defined(WITH_DG_KASP)
+BROKEN=	"I don't have access to Kaspersky AV, so I can't test this.  If you have access to it, drop me an e-mail.  Thanks"
+.endif
+
+.if defined(WITH_DG_DMGR)
+CONFIGURE_ARGS+=	--enable-fancydm
 .endif
 
 # User needs to manually download the distfile
