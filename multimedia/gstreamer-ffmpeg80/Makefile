@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.8.6
+PORTVERSION=	0.8.7
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-ffmpeg/
 PKGNAMESUFFIX=	-ffmpeg
@@ -19,9 +19,7 @@ USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack \
-		gnometarget \
-		gnomeprefix
+USE_GNOME=	gnometarget
 USE_GSTREAMER=	yes
 USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG} \
