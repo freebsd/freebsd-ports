@@ -144,6 +144,7 @@
     SUBDIR += gregexp
     SUBDIR += gretl
     SUBDIR += grun
+    SUBDIR += gtk-gopod
     SUBDIR += gtkfind
     SUBDIR += gtktalog
     SUBDIR += gtl

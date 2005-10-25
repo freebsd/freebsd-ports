@@ -1,0 +1,8 @@
+bin/gtk-gopod
+%%DATADIR%%/capped.png
+%%DATADIR%%/go.png
+%%DATADIR%%/go_.png
+%%DATADIR%%/mask.xpm
+%%DATADIR%%/notdetected.png
+%%DATADIR%%/uncapped.png
+@dirrm %%DATADIR%%
