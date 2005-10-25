@@ -201,6 +201,13 @@ Note:  Please add new entries to the beginning of this file.
 	<range><le>0.9.8_1</le></range>
 	<range><ge>0.9.*_20050325</ge><le>0.9.*_20051011</le></range>
       </package>
+      <package>
+	<name>compat5x-alpha</name>
+	<name>compat5x-amd64</name>
+	<name>compat5x-i386</name>
+	<name>compat5x-sparc64</name>
+	<range><lt>5.4.0.8</lt></range>
+      </package>
       <system>
 	<name>FreeBSD</name>
 	<range><lt>4.10_19</lt></range>
@@ -238,7 +245,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-10-11</discovery>
       <entry>2005-10-12</entry>
-      <modified>2005-10-13</modified>
+      <modified>2005-10-25</modified>
     </dates>
   </vuln>
 
