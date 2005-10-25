@@ -11,7 +11,7 @@ CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lirc
 
-MAINTAINER=	mikeh@FreeBSD.org
+MAINTAINER=	doconnor@gsoft.com.au
 COMMENT=	Linux Infared Remote Control
 
 USE_XLIB=	yes
