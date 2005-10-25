@@ -5,9 +5,12 @@
 # $FreeBSD$
 #
 
+# NOTE: libc.so.5 is built with _PATH_LOCALE defined to
+# "/usr/local/share/compat/locale" in src/include/paths.h so data installed by
+# misc/localedata works out of the box if installed in default PREFIX.
+
 PORTNAME=	compat5x
-PORTVERSION=	5.4.0.6
-PORTREVISION=	1
+PORTVERSION=	5.4.0.8
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=lesi/compat5x
@@ -68,7 +71,6 @@ do-build:
 
 do-install:
 	${MKDIR} ${TARGET_DIR}
-	(cd ${WRKSRC} && ${RM} liblwres.so.3)
 	(cd ${WRKSRC} && ${INSTALL_DATA} *.so.* ${TARGET_DIR})
 .if ${ARCH} == amd64
 	${MKDIR} ${TARGET32_DIR}
