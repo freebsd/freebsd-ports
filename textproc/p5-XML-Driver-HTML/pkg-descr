@@ -1,0 +1,8 @@
+XML::Driver::HTML is a SAX Driver for HTML. 
+
+There is no need for the HTML input to be weel formed, as XML::Driver::HTML is
+generating its SAX events by walking a HTML::TreeBuilder object.  The simplest
+kind of use, is a filter from HTML to XHTML using XML::Handler::YAWriter as a
+SAX Handler.
+
+WWW: http://search.cpan.org/dist/XML-Driver-HTML/
