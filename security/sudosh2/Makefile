@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
 DISTNAME=		${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=		cy@FreeBSD.org
-COMMENT=	A sudo shell
+COMMENT=		A sudo shell
 
 RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo
 
