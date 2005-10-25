@@ -14,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../gopod
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 
+RESTRICTED=	"Unclear legal status in EU countries"
+
 PLIST=		${.CURDIR}/pkg-plist
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-main.c
 
