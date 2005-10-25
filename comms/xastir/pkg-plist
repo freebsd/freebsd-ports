@@ -1,10 +1,12 @@
 bin/callpass
 bin/xastir
+bin/xastir_udp_client
 lib/xastir/Coordinate.pm
 lib/xastir/Xastir_tigerpoly.py
 lib/xastir/coord-convert.pl
 lib/xastir/fcc-get
 lib/xastir/get-gnis
+lib/xastir/get_shapelib.sh
 lib/xastir/icontable.pl
 lib/xastir/inf2geo.pl
 lib/xastir/kiss-off.pl
@@ -59,6 +61,7 @@ share/xastir/config/tnc-startup.paccomm
 share/xastir/config/tnc-startup.pico
 share/xastir/config/tnc-startup.sys
 share/xastir/config/tnc-startup.thd7
+share/xastir/config/tnc-startup.tnc2
 share/xastir/config/tnc-startup.tnc2-ui
 share/xastir/config/tnc-stop.d700
 share/xastir/config/tnc-stop.sys
@@ -91,9 +94,12 @@ share/xastir/maps/Online/CanadaTopo250k.geo
 share/xastir/maps/Online/CanadaTopo50k.geo
 share/xastir/maps/Online/TXRadar.geo
 share/xastir/maps/Online/USRadar.geo
+share/xastir/maps/Online/WMSRadar.geo
+share/xastir/maps/Online/terraserver-reflectivity.geo
+share/xastir/maps/Online/terraserver-topo.geo
+share/xastir/maps/Online/terraserver-urban.geo
 share/xastir/maps/Online/terraserver.geo
 share/xastir/maps/Online/tigermap.geo
-share/xastir/maps/Online/toposerver.geo
 share/xastir/sounds/placeholder
 share/xastir/symbols/13pct.xbm
 share/xastir/symbols/25pct.xbm
