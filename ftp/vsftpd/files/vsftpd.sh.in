@@ -27,12 +27,15 @@ required_files="%%PREFIX%%/etc/$name.conf"
 
 vsftpd_check()
 {
-	cat ${required_files} | egrep -E "^listen.*=.*YES$" > /dev/null
-	if [ $? = 1 ]; then
+	if grep -q "^ftp[ 	]" /etc/inetd.conf
+	then
+		err 1 "ftp is already activated in /etc/inetd.conf"
+	fi
+	if ! egrep -q -i -E "^listen.*=.*YES$"
+	then
 		err 1 "vsftpd script need "listen=YES" on config file"
 	fi
-	cat ${required_files} | egrep -E "^background.*=.*YES$" > /dev/null
-	if [ $? = 1 ]; then
+	if ! egrep -q -i -E "^background.*=.*YES$"
 		err 1 "vsftpd script need "background=YES" on config file"
 	fi
 }
