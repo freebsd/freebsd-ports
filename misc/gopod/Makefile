@@ -20,7 +20,7 @@ HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
-RESTRICTED=	Unclear legal status in EU countries
+RESTRICTED=	"Unclear legal status in EU countries"
 
 .if ${PKGNAMEPREFIX} == ""
 PLIST_FILES=	bin/gopod
