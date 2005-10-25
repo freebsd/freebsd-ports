@@ -122,11 +122,12 @@
      return Val_true; \
 --- src/networks/fasttrack/fst_crypt.c.orig	Tue Sep  6 22:23:50 2005
 +++ src/networks/fasttrack/fst_crypt.c	Tue Sep  6 22:26:34 2005
-@@ -15,7 +15,7 @@
+@@ -15,7 +15,8 @@
   * General Public License for more details.
   */
  
 -#include "../../utils/lib/md5.h"
++#include <string.h>
 +#include <openssl/md5.h>
  #include "fst_crypt.h"
  

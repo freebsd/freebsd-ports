@@ -22,6 +22,7 @@ USE_BZIP2=	yes
 WANT_AUTOCONF_VER=	259
 USE_REINPLACE=	yes
 USE_OPENSSL=	yes
+USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-pthread --enable-ocamlver=3
 USE_GMAKE=	yes
