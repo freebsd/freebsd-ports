@@ -13,12 +13,25 @@ MASTER_SITES=	http://www.usermode.org/code/
 MAINTAINER=	david@usermode.org
 COMMENT=	A homebrewer's recipe calculator
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_QT_VER=	3
+PORTDOCS=	*
 QT_NONSTANDARD=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=		--x-includes=${X11BASE}/include	\
+			--x-libraries=${X11BASE}/lib
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -E 's,^(SUBDIRS = .*) docs,\1,' \
+		${WRKSRC}/Makefile.in
+.endif
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/qbrew
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
