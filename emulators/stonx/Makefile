@@ -11,10 +11,13 @@ CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.complang.tuwien.ac.at/pub/nino/stonx-current/
 DISTNAME=	STonX-0.6.7-epsilon
 
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+
 MAINTAINER=	treif@mayn.de
 COMMENT=	AtariST emulator
 
 RESTRICTED=	"tos.img is copyrighted"
+IS_INTERACTIVE=	needs running x11
 
 TOSIMG?=	tos.img
 USE_X_PREFIX=	yes
