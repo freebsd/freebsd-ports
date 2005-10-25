@@ -11,12 +11,12 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	GUI for Apple iPods using GTK2
 
 LIB_DEPENDS=	id3tag.2:${PORTSDIR}/audio/libid3tag
 RUN_DEPENDS=	mp3gain:${PORTSDIR}/audio/mp3gain \
-		recode:${PORTSDIR}/converters/recode
+		iconv:${PORTSDIR}/converters/libiconv
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
