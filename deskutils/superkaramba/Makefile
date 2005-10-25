@@ -6,7 +6,7 @@
 
 PORTNAME=		superkaramba
 PORTVERSION=		0.36
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		deskutils kde
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	netdragon
@@ -32,11 +32,11 @@ OPTIONS=	XMMS "XMMS support" off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_XMMS)
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 .endif
 
 .if defined(WITH_XMBMON)
-RUN_DEPENDS=	mbmon:${PORTSDIR}/sysutils/xmbmon
+RUN_DEPENDS+=	mbmon:${PORTSDIR}/sysutils/xmbmon
 .endif
 
 post-patch:
