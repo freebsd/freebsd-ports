@@ -5,7 +5,7 @@
  
  AUTOMAKE_OPTIONS = foreign
 -ACLOCAL_AMFLAGS = -I ../acfiles
-+ACLOCAL_AMFLAGS = -I /usr/local/share/aclocal -I /usr/X11R6/share/aclocal -I ../acfiles
++ACLOCAL_AMFLAGS = -I %%LOCALBASE%%/share/aclocal -I %%PREFIX%%/share/aclocal -I ../acfiles
  
  moduledir = $(GTK2_LIBDIR)/gtk-2.0/$(GTK2_BINARY_VERSION)/immodules
  
