@@ -1,5 +1,8 @@
 # A Makefile for the installed lmbench
-BINDIR = ./bin/bsd
+# $FreeBSD$
+#
+OS != scripts/os
+BINDIR = bin/${OS}
 
 results:
 	@(cd scripts; ./config-run ../${BINDIR}/CONFIG)
