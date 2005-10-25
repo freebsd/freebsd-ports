@@ -179,11 +179,11 @@ lib/vice/VIC20/win_sym.vkm
 lib/vice/VIC20/x11_pos.vkm
 lib/vice/VIC20/x11_sym.vkm
 lib/vice/fonts/fonts.dir
-lib/vice/fonts/cbm-directory-charset.fon
 lib/vice/fonts/vice-cbm.pcf
 %%DOCSDIR%%/64doc.txt
 %%DOCSDIR%%/BUGS
 %%DOCSDIR%%/COPYING
+%%DOCSDIR%%/MSDOS-Ethernet-Howto.txt
 %%DOCSDIR%%/MSDOS-Howto.txt
 %%DOCSDIR%%/NEWS
 %%DOCSDIR%%/NLS-Howto.txt
