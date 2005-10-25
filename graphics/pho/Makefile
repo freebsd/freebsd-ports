@@ -14,6 +14,7 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A lightweight image viewer
 
 USE_GMAKE=	yes
+MAKE_ARGS=	INSTALLPREFIX="${PREFIX}"
 USE_REINPLACE=	yes
 WANT_GNOME=	yes
 
@@ -23,8 +24,10 @@ OPTIONS=	GTK1 "Build with legacy GTK version (1.2.x)" Off
 
 .if defined(WITH_GTK1)
 USE_GNOME=	gdkpixbuf gtk12
+BAD_GTK=	2
 .else
 USE_GNOME=	gtk20
+BAD_GTK=	1
 .endif
 
 post-patch:
@@ -33,9 +36,7 @@ post-patch:
 		s|$$(INSTALL) \(pho.1\)|${INSTALL_MAN} \1|; \
 		s|-g -O2|${CFLAGS}|; s|pho xpho$$|pho|' \
 		${WRKSRC}/Makefile
-.if defined(WITH_GTK1)
-	@${REINPLACE_CMD} -e 's|^G2FLAGS|#&|' ${WRKSRC}/Makefile
-.endif
+	@${REINPLACE_CMD} -e 's|^G${BAD_GTK}FLAGS|#&|' ${WRKSRC}/Makefile
 
 MAN1=		pho.1
 PLIST_FILES=	bin/pho
