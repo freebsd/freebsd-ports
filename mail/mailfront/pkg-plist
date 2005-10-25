@@ -12,7 +12,6 @@ bin/smtpfront-reject
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/cvm-sasl.html
 %%PORTDOCS%%%%DOCSDIR%%/imapfront.html
 %%PORTDOCS%%%%DOCSDIR%%/mailfront.html
 %%PORTDOCS%%%%DOCSDIR%%/mailrules.html
