@@ -27,6 +27,12 @@ OPTIONS=	IRMAN "Build with libirman support" On
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "i386"
+LIB_DEPENDS+=	vga:${PORTSDIR}graphics/vga
+PLIST_SUB+=	SMODE2=
+.else
+PLIST_SUB+=	SMODE2="@comment "
+.endif
 .if defined(WITH_IRMAN)
 BUILD_DEPENDS=		${LOCALBASE}/lib/libirman.a:${PORTSDIR}/comms/libirman
 CONFIGURE_ARGS+=	--with-driver=irman

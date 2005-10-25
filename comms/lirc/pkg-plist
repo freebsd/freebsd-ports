@@ -6,7 +6,7 @@ bin/irsend
 bin/irw
 bin/irxevent
 bin/mode2
-bin/smode2
+%%SMODE2%%bin/smode2
 bin/xmode2
 sbin/lircd
 sbin/lircmd
