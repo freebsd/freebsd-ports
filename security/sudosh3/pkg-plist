@@ -1,3 +1,3 @@
 bin/sudosh
 bin/sudosh-replay
-etc/sudosh.conf
+etc/sudosh.conf.sample

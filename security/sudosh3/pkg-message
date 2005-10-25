@@ -1,0 +1,13 @@
+
+****************************************************************************
+*                                                                          *
+*    If this is a brand new install, a copy a new copy of                  *
+*    PREFIX/etc/sudoers.conf has been installed. Should you choose to      *
+*    uninstall sudosh, the sudoers.conf file will remain  and should you   *
+*    choose to remove it, it must be manually deleted. Any previously      *
+*    existing sudoers.conf file has not been overwritten by this package.  *
+*    A reference copy of sudoers.conf may be found in                      *
+*    PREFIX/etc/sudoers.conf.sample.                                       *
+*                                                                          *
+****************************************************************************
+
