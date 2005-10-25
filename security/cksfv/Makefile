@@ -6,18 +6,30 @@
 #
 
 PORTNAME=	cksfv
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.7
 CATEGORIES=	security
-MASTER_SITES=	http://zakalwe.virtuaalipalvelin.net/~shd/foss/cksfv/files/
+MASTER_SITES=	http://www.iki.fi/shd/foss/cksfv/files/ \
+		http://zakalwe.virtuaalipalvelin.net/~shd/foss/cksfv/files/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Create or manipulate Simple File Verification (SFV) checksum files
-
-PLIST_FILES=	bin/cksfv
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man --prefix=${PREFIX}
 
 MAN1=		cksfv.1
+PLIST_FILES=	bin/cksfv
+PORTDOCS=	README ChangeLog
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
+
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
