@@ -8877,6 +8877,7 @@ p5-XML-DT	ports/textproc/p5-XML-DT
 p5-XML-DTDParser	ports/textproc/p5-XML-DTDParser
 p5-XML-DifferenceMarkup	ports/textproc/p5-XML-DifferenceMarkup
 p5-XML-Directory	ports/textproc/p5-XML-Directory
+p5-XML-Driver-HTML	ports/textproc/p5-XML-Driver-HTML
 p5-XML-Dumper	ports/textproc/p5-XML-Dumper
 p5-XML-Elemental	ports/textproc/p5-XML-Elemental
 p5-XML-Encoding	ports/textproc/p5-XML-Encoding
