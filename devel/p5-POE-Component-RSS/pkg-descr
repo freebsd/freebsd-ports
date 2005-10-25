@@ -3,6 +3,3 @@ XML::RSS and provides a POE based framework for accessing the information
 provided.
 
 WWW: http://search.cpan.org/dist/POE-Component-RSS/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
