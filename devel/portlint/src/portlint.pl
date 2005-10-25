@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.89 2005/10/22 19:43:02 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.90 2005/10/25 04:46:34 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -1191,7 +1191,7 @@ sub checkmakefile {
 	# whole file: BROKEN et al.
 	#
 	my($var);
-	foreach $var qw(BROKEN FORBIDDEN MANUAL_PACKAGE_BUILD NO_CDROM NO_PACKAGE RESTRICTED) {
+	foreach $var (qw(BROKEN FORBIDDEN MANUAL_PACKAGE_BUILD NO_CDROM NO_PACKAGE RESTRICTED)) {
 		print "OK: checking ${var}.\n" if ($verbose);
 		if ($whole =~ /\n${var}[+?]?=[ \t]?[^"]+\w+/) {
 			my $lineno = &linenumber($`);
