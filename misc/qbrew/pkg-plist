@@ -1,37 +1,11 @@
 bin/qbrew
-share/doc/qbrew/en/primer-design.html
-share/doc/qbrew/en/primer-equipment.html
-share/doc/qbrew/en/primer-firstbrew.html
-share/doc/qbrew/en/primer-glossary.html
-share/doc/qbrew/en/primer-mashing.html
-share/doc/qbrew/en/primer-recipes.html
-share/doc/qbrew/en/primer.html
-share/doc/qbrew/en/qbrew-changes.html
-share/doc/qbrew/en/qbrew-commandline.html
-share/doc/qbrew/en/qbrew-configuration.html
-share/doc/qbrew/en/qbrew-copyright.html
-share/doc/qbrew/en/qbrew-credits.html
-share/doc/qbrew/en/qbrew-faq.html
-share/doc/qbrew/en/qbrew-handbook.html
-share/doc/qbrew/en/qbrew-hop.html
-share/doc/qbrew/en/qbrew-install.html
-share/doc/qbrew/en/qbrew-intro.html
-share/doc/qbrew/en/qbrew-misc.html
-share/doc/qbrew/en/qbrew-notes.html
-share/doc/qbrew/en/qbrew-reference.html
-share/doc/qbrew/en/qbrew-using.html
-share/doc/qbrew/en/qbrew.docbook
-share/doc/qbrew/en/qbrew.xsl
-share/doc/qbrew/en/sqa.html
-share/qbrew/ChangeLog
-share/qbrew/LICENSE
-share/qbrew/README
-share/qbrew/paleale.qbrew
-share/qbrew/qbrew.png
-share/qbrew/qbrew.svg
-share/qbrew/qbrewdata
-share/qbrew/splash.png
-share/qbrew/stout.qbrew
-@dirrm share/qbrew
-@dirrm share/doc/qbrew/en
-@dirrm share/doc/qbrew
+%%DATADIR%%/ChangeLog
+%%DATADIR%%/LICENSE
+%%DATADIR%%/README
+%%DATADIR%%/paleale.qbrew
+%%DATADIR%%/qbrew.png
+%%DATADIR%%/qbrew.svg
+%%DATADIR%%/qbrewdata
+%%DATADIR%%/splash.png
+%%DATADIR%%/stout.qbrew
+@dirrm %%DATADIR%%
