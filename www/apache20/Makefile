@@ -11,7 +11,8 @@ PORTNAME=	apache
 PORTVERSION=	2.0.55
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
-		${MASTER_SITE_LOCAL:S/%SUBDIR%/clement/}:powerlogo
+		${MASTER_SITE_LOCAL:S/$/:powerlogo/}
+MASTER_SITE_SUBDIR=	clement/:powerlogo
 DISTNAME=	httpd-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.bz2 powerlogo.gif:powerlogo
 DIST_SUBDIR=	apache2
