@@ -27,7 +27,7 @@ PORTDOCS=	AUTHORS ChangeLog ChangeLog.old README README.daemon pyosd.html
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 post-patch:
-		@${REINPLACE_CMD} -e 's;_X11BASE_;${X11BASE};g' ${WRKSRC}/setup.py
+		@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/setup.py
 
 post-install:
 .if !defined(NOPORTDOCS)
