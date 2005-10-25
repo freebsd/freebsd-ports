@@ -6,24 +6,33 @@
 #
 
 PORTNAME=	lmbench
-PORTVERSION=	1.1
+PORTVERSION=	3a4
 CATEGORIES=	benchmarks
-MASTER_SITES=	ftp://ftp.deva.net/pub/sources/system/benchmarks/ \
-		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/utils/benchmark/
-DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.tar.Z
+MASTER_SITES=	http://www.bitmover.com/lmbench/
+DISTNAME=	${PORTNAME}${PORTVERSION:S/a4//}
 
 MAINTAINER=	fenner@FreeBSD.org
 COMMENT=	A system performance measurement tool
 
 ALL_TARGET=	build
 MAKE_ENV=	PATH=${PATH}:${WRKSRC}/scripts
-MAN1=		bargraph.1 graph.1
-MAN8=		bw_file_rd.8 bw_mem_cp.8 bw_mem_rd.8 bw_mem_wr.8 \
-		bw_mmap_rd.8 bw_pipe.8 bw_tcp.8 lat_connect.8 lat_ctx.8 \
-		lat_fs.8 lat_mem_rd.8 lat_mmap.8 lat_pagefault.8 lat_pipe.8 \
-		lat_proc.8 lat_rpc.8 lat_syscall.8 lat_tcp.8 lat_udp.8 \
-		lmbench.8 lmdd.8 mhz.8
+MAN1=		bargraph.1 graph.1 pgraph.1 rccs.1
+MAN3=		lmbench.3 reporting.3 results.3 timing.3
+MAN8=		bw_file_rd.8 bw_mem.8 bw_mem_rd.8 bw_mmap_rd.8 \
+		bw_pipe.8 bw_tcp.8 bw_unix.8 cache.8 lat_connect.8 \
+		lat_ctx.8 lat_fcntl.8 lat_fifo.8 lat_fs.8 lat_http.8 \
+		lat_mem_rd.8 lat_mmap.8 lat_ops.8 lat_pagefault.8 \
+		lat_pipe.8 lat_proc.8 lat_rpc.8 lat_select.8 lat_sig.8 \
+		lat_syscall.8 lat_tcp.8 lat_udp.8 lat_unix.8 \
+		lat_unix_connect.8 line.8 lmbench.8 lmdd.8 mhz.8 \
+		par_mem.8 par_ops.8 stream.8 tlb.8
+
+# the bindir for the PLIST is:
+# (note that ./os needs to be run inside the work dir, running it
+#  outside will give a different result.)
+#LMBENCH_OS!=	cd ${WRKSRC}/scripts && ./os
+#PLIST_SUB=	LMBENCH_OS=${LMBENCH_OS}
+PLIST_SUB=	"LMBENCH_OS=$$(cd ${WRKSRC}/scripts && ./os)"
 
 test: build
 	@(cd ${WRKSRC}; make results)
@@ -31,26 +40,27 @@ test: build
 retest: build
 	@(cd ${WRKSRC}; make rerun)
 
-# The distribution comes with unwritable files; patch's magic RCS behavior
-# causes files to be checked out of RCS before being patched.  If an $Id$
-# string is in the patch, this behavior causes the string to change to
-# reflect the locker, meaning that the patch will probably fail.  Instead,
-# just chmod +w the files.
-PATCHEDFILES=	src/Makefile scripts/config-run scripts/getbg
-pre-patch:
-.for f in ${PATCHEDFILES}
-	@${CHMOD} +w ${WRKSRC}/${f}
-.endfor
+# This version seems to think that it's checked out directly from
+# bitkeeper.  It wants to look in ../SCCS/s.ChangeSet to find
+# its version.  Instead, make ../SCCS/s.ChangeSet old enough that
+# make won't care, and create a bk.ver file with the distname in it.
+post-extract:
+	${MKDIR} ${WRKSRC}/SCCS
+	${TOUCH} -t 199901010000 ${WRKSRC}/SCCS/s.ChangeSet
+	${ECHO_CMD} ${DISTNAME} > ${WRKSRC}/src/bk.ver
 
 pre-install:
 	[ -d ${PREFIX}/lib/lmbench ] || ${MKDIR} ${PREFIX}/lib/lmbench
 
 do-install:
 	${CP} ${FILESDIR}/Makefile ${PREFIX}/lib/lmbench
-	tar --exclude \*.orig -C ${WRKSRC} -cf - Results bin scripts | \
+	tar --exclude \*.orig -C ${WRKSRC} -cf - bin scripts results | \
 	  tar -C ${PREFIX}/lib/lmbench -xf -
 .for man in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/doc/${man} ${PREFIX}/man/man1
+.endfor
+.for man in ${MAN3}
+	${INSTALL_MAN} ${WRKSRC}/doc/${man} ${PREFIX}/man/man3
 .endfor
 .for man in ${MAN8}
 	${INSTALL_MAN} ${WRKSRC}/doc/${man} ${PREFIX}/man/man8
