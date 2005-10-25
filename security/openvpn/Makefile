@@ -45,8 +45,10 @@ CONFIGURE_ARGS+=	--enable-password-save
 .endif
 
 # self-tests here
+.if !defined(WITH_JAIL)
 post-build:
 	cd ${WRKSRC} && ${MAKE} check
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
