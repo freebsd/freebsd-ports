@@ -530,7 +530,6 @@ MASTER_SITE_KDE+=	\
 	ftp://ftp.gwdg.de/pub/x11/kde/%SUBDIR%/ \
 	ftp://ftp.kde.org.yu/kde/%SUBDIR%/ \
 	http://ftp.kde.org.yu/kde/%SUBDIR%/ \
-	ftp://ftp.tu-clausthal.de/pub/mirror/kde/%SUBDIR%/ \
 	ftp://ftp.belnet.be/packages/kde/%SUBDIR%/ \
 	http://ftp.belnet.be/packages/kde/%SUBDIR%/ \
 	ftp://ftp.lip6.fr/pub/X11/kde/%SUBDIR%/ \
@@ -641,7 +640,6 @@ MASTER_SITE_NETBSD+=	\
 	ftp://netbsd.secsup.org/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.plig.net/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.proxad.net/mirrors/ftp.netbsd.org/packages/distfiles/%SUBDIR%/\
-	ftp://ftp.weird.com/pub/NetBSD/distfiles/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/unix/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://sunsite.rediris.es/sites/ftp.netbsd.org/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
@@ -1018,7 +1016,7 @@ MASTER_SITE_SUSE+= 	\
 	http://suse.osuosl.org/suse/%SUBDIR%/ \
 	ftp://ftp.sunsite.utk.edu/pub/linux/suse/suse/%SUBDIR%/ \
 	http://sunsite.utk.edu/ftp/pub/linux/suse/suse/%SUBDIR%/ \
-	http://ops.tamu.edu/suse/%SUBDIR%/ \
+	http://mirror.tamu.edu/suse/%SUBDIR%/ \
 	ftp://ftp.empiricalnetworks.com/pub/suse/%SUBDIR%/ \
 	http://suse.cs.utah.edu/suse/%SUBDIR%/ \
 	ftp://ftp.mirrors.net.ar/pub/suse/%SUBDIR%/ \
@@ -1035,10 +1033,8 @@ MASTER_SITE_SUSE+= 	\
 	ftp://ftp.gwdg.de/pub/linux/suse/ftp.suse.com/suse/%SUBDIR%/ \
 	ftp://sunsite.informatik.rwth-aachen.de/pub/Linux/suse/%SUBDIR%/ \
 	ftp://ftp.rz.hu-berlin.de/pub/mirrors/ftp.suse.com/pub/suse/%SUBDIR%/ \
-	ftp://ftp.uni-bremen.de/pub/mirrors/suse/ftp.suse.com/suse/%SUBDIR%/ \
 	ftp://ftp.tu-chemnitz.de/pub/linux/suse/ftp.suse.com/suse/%SUBDIR%/ \
 	ftp://ftp.tu-cottbus.de/pub/unix/linux/suse.com/suse/%SUBDIR%/ \
-	ftp://linux.mathematik.tu-darmstadt.de/pub/linux/distributions/suse/ftp.suse.com/suse/%SUBDIR%/ \
 	http://ftp.uni-erlangen.de/pub/Linux/MIRROR.suse/pub/suse/%SUBDIR%/ \
 	http://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.suse.com/pub/suse/%SUBDIR%/ \
 	ftp://ftp.hs.uni-hamburg.de/pub/unix/linux/suse/%SUBDIR%/ \
@@ -1084,7 +1080,6 @@ MASTER_SITE_SUSE+= 	\
 	http://download.mirror.ac.uk/sites/ftp.suse.com/%SUBDIR%/ \
 	ftp://ftp.kde.org/pub/suse/ftp.suse.com/suse/%SUBDIR%/ \
 	ftp://ftp.suse.com/pub/suse/%SUBDIR%/ \
-	ftp://ftp.linux.org.tr/pub/suse/%SUBDIR%/ \
 	ftp://ftp.isr.ist.utl.pt/pub/suse/%SUBDIR%/ \
 	http://ftp.isr.ist.utl.pt/pub/suse/%SUBDIR%/ \
 	ftp://ftp.softnet.tuc.gr/pub/linux/suse/suse/%SUBDIR%/ \
