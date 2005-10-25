@@ -16,15 +16,17 @@ MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/ \
 		ftp://morpheus.wish.com.mx/pub/plt/${PORTVERSION}/plt/ \
 		http://download.plt-scheme.org/patches/${PORTVERSION}/:PLT
 DISTFILES=	plt-${PORTVERSION}-src-unix.tgz ${PLTPATCHES}
+DIST_SUBDIR=	drscheme/${PORTVERSION}
 EXTRACT_ONLY=	plt-${PORTVERSION}-src-unix.tgz
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jkoshy@FreeBSD.org
 COMMENT=	An interactive, integrated, graphical Scheme programming environment
 
-DIST_SUBDIR=	drscheme/${PORTVERSION}
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS= --prefix=${PLTHOME} --enable-shared
+CONFIGURE_ARGS= --prefix=${PLTHOME} --enable-shared 	\
+		--x-includes=${X11BASE}/include 	\
+		--x-libraries=${X11BASE}/lib
+
 WRKSRC=		${WRKDIR}/plt/src
 USE_XLIB=	yes
 USE_GMAKE=	yes
