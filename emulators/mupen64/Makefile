@@ -21,7 +21,6 @@ RUN_DEPENDS+=	${PLUGINDIR}/mupen64_audio.so:${PORTSDIR}/${PKGCATEGORY}/mupen64-s
 RUN_DEPENDS+=	${PLUGINDIR}/jttl_audio.so:${PORTSDIR}/${PKGCATEGORY}/mupen64-sdlaudio
 RUN_DEPENDS+=	${PLUGINDIR}/mupen64_input.so:${PORTSDIR}/${PKGCATEGORY}/mupen64-input
 RUN_DEPENDS+=	${PLUGINDIR}/blight_input.so:${PORTSDIR}/${PKGCATEGORY}/mupen64-sdlinput
-RUN_DEPENDS+=	${PLUGINDIR}/ricedaedalus.so:${PORTSDIR}/${PKGCATEGORY}/mupen64-rice
 RUN_DEPENDS+=	${PLUGINDIR}/mupen64_hle_rsp_azimer.so:${PORTSDIR}/${PKGCATEGORY}/mupen64-rsp
 RUN_DEPENDS+=	${PLUGINDIR}/Glide64.so:${PORTSDIR}/${PKGCATEGORY}/mupen64-glide
 RUN_DEPENDS+=	${PLUGINDIR}/glN64-0.4.1.so:${PORTSDIR}/${PKGCATEGORY}/mupen64-gln64
@@ -36,4 +35,10 @@ PLUGINDIR=	${LOCALBASE}/share/mupen64/plugins
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${MACHINE_ARCH} == "i386"
+RUN_DEPENDS+=	${PLUGINDIR}/ricedaedalus.so:${PORTSDIR}/${PKGCATEGORY}/mupen64-rice
+.endif
+
+.include <bsd.port.post.mk>
