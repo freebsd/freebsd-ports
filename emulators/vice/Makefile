@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	vice
-PORTVERSION=	1.16
+PORTVERSION=	1.17
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.funet.fi/pub/cbm/crossplatform/emulators/VICE/ \
-		http://distfiles.opendarwin.org/
+MASTER_SITES=	http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
+		ftp://ftp.zimmers.net/pub/cbm/crossplatform/emulators/VICE/
 PKGNAMESUFFIX?=	${GNOME_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -21,6 +21,7 @@ LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
 
 USE_XPM=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	MAKEINFOFLAGS="--no-split"
 
@@ -43,6 +44,10 @@ MLINKS=		vice.1 x64.1 \
 		vice.1 xplus4.1 \
 		vice.1 xcbm2.1
 
+.if !defined(WITHOUT_SDL)
+USE_SDL=	sdl
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${X_WINDOW_SYSTEM:L} != xfree86-3
@@ -58,9 +63,11 @@ post-extract:
 	@${RM} -f ${WRKSRC}/doc/vice.info*
 
 post-patch:
-	@${MV} ${WRKSRC}/man/vice.1 ${WRKSRC}/man/vice.1.sed
-	${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
-		${WRKSRC}/man/vice.1.sed > ${WRKSRC}/man/vice.1
+	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
+		${WRKSRC}/man/vice.1
+	${REINPLACE_CMD} -e "s|sdl-config|${SDL_CONFIG}|g" \
+		-e "s|l-lesd|${SDL_CONFIG}|g" \
+		${WRKSRC}/configure
 
 pre-install:
 	${MKDIR} ${DOCSDIR} ${PREFIX}/lib/vice/fonts
