@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mailfront
-PORTVERSION=	0.96
+PORTVERSION=	0.97
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
@@ -28,6 +28,14 @@ CVM_LIB=	${LOCALBASE}/lib
 
 DOCS=		NEWS README TODO *.html
 
+OPTIONS=	DW_AUTH "Include Dale Woolridge's auth patch" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_DW_AUTH)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mailfront-0.92-dw-auth
+.endif
+
 do-configure:
 	${ECHO_CMD} "${PREFIX}/bin"	> ${WRKSRC}/conf-bin
 	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/conf-cc
@@ -42,4 +50,4 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
