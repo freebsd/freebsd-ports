@@ -22,6 +22,8 @@ BUILD_DEPENDS=	fop:${PORTSDIR}/textproc/fop \
 		${LOCALBASE}/share/mathml-xsd/mathml2.xsd:${PORTSDIR}/textproc/mathml-xsd \
 		${LOCALBASE}/share/xhtml1-xsd/xhtml1-strict.xsd:${PORTSDIR}/textproc/xhtml1-xsd
 
+BROKEN=		Does not build
+
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_JAVA=	yes
