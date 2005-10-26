@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unidesc
-PORTVERSION=	2.13
+PORTVERSION=	2.14
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 EXTRACT_SUFX=	.tgz
@@ -14,28 +14,29 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Unicode Description Utilities
 
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"		\
+		LIBS="-lintl"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GETTEXT=	yes
 USE_REINPLACE=	yes
 
-TESTFILES=	TestData/Test1.ann TestData/Test1.u TestData/Test2.ann	\
-		TestData/Test2.u TestData/Test3.ann TestData/Test3.u	\
-		TestData/Test4.ann TestData/Test4.u
-DEMOS=		demo.jpg demo.u demo32.u
-PORTDOCS=	README
+TESTFILES=	Test1.ann Test1.u Test2.ann Test2.u Test3.ann Test3.u	\
+		Test4.ann Test4.u
+PORTDOCS=	AUTHORS NEWS README
 
 MAN1=		unidesc.1 uniname.1 ExplicateUTF8.1 unihist.1
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|;s|%%LOCALBASE%%|${LOCALBASE}|'	\
-		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|TestData|${EXAMPLESDIR}|' ${WRKSRC}/README
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	${INSTALL_DATA} ${TESTFILES:S|^|${WRKSRC}/|} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${DEMOS:S|^|${WRKSRC}/|} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${TESTFILES:S|^|${WRKSRC}/TestData/|} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
