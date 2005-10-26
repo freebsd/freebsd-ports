@@ -60,6 +60,9 @@ lib/gdesklets/Sensors/External/__init__.pyo
 lib/gdesklets/Sensors/FontSelector/__init__.py
 lib/gdesklets/Sensors/FontSelector/__init__.pyc
 lib/gdesklets/Sensors/FontSelector/__init__.pyo
+lib/gdesklets/config/Backend.py
+lib/gdesklets/config/Backend.pyc
+lib/gdesklets/config/Backend.pyo
 lib/gdesklets/config/ConfigBoolean.py
 lib/gdesklets/config/ConfigBoolean.pyc
 lib/gdesklets/config/ConfigBoolean.pyo
@@ -87,6 +90,9 @@ lib/gdesklets/config/ConfigFont.pyo
 lib/gdesklets/config/ConfigInteger.py
 lib/gdesklets/config/ConfigInteger.pyc
 lib/gdesklets/config/ConfigInteger.pyo
+lib/gdesklets/config/ConfigKeyBinding.py
+lib/gdesklets/config/ConfigKeyBinding.pyc
+lib/gdesklets/config/ConfigKeyBinding.pyo
 lib/gdesklets/config/ConfigManager.py
 lib/gdesklets/config/ConfigManager.pyc
 lib/gdesklets/config/ConfigManager.pyo
@@ -479,6 +485,9 @@ lib/gdesklets/utils/HIGDialog.pyo
 lib/gdesklets/utils/LogView.py
 lib/gdesklets/utils/LogView.pyc
 lib/gdesklets/utils/LogView.pyo
+lib/gdesklets/utils/KeyBinding.py
+lib/gdesklets/utils/KeyBinding.pyc
+lib/gdesklets/utils/KeyBinding.pyo
 lib/gdesklets/utils/MetaDataRegistry.py
 lib/gdesklets/utils/MetaDataRegistry.pyc
 lib/gdesklets/utils/MetaDataRegistry.pyo
@@ -515,7 +524,6 @@ lib/gdesklets/utils/dialog.pyo
 lib/gdesklets/utils/error.py
 lib/gdesklets/utils/error.pyc
 lib/gdesklets/utils/error.pyo
-lib/gdesklets/utils/ewmh.so
 lib/gdesklets/utils/i18n.py
 lib/gdesklets/utils/i18n.pyc
 lib/gdesklets/utils/i18n.pyo
@@ -537,6 +545,7 @@ lib/gdesklets/utils/vfs.pyo
 lib/gdesklets/utils/wallpaper.py
 lib/gdesklets/utils/wallpaper.pyc
 lib/gdesklets/utils/wallpaper.pyo
+lib/gdesklets/utils/x11.so
 lib/gdesklets/utils/xdr.py
 lib/gdesklets/utils/xdr.pyc
 lib/gdesklets/utils/xdr.pyo
