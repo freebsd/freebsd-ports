@@ -3608,11 +3608,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>14168</bid>
+      <cvename>CVE-2005-2177</cvename>
       <mlist msgid="sdzmt5sul0.fsf@wes.hardakers.net">http://marc.theaimsgroup.com/?l=net-snmp-announce&amp;m=112059518426328</mlist>
     </references>
     <dates>
       <discovery>2005-07-02</discovery>
       <entry>2005-07-05</entry>
+      <modified>2005-10-26</modified>
     </dates>
   </vuln>
 
