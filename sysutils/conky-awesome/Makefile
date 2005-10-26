@@ -18,6 +18,8 @@ USE_BZIP2=	yes
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes
+CONFIGURE_ENV=	CFLAGS="-I${X11BASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib"
 
 MAN1=		conky.1
 
