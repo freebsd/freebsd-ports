@@ -8,8 +8,8 @@
 PORTNAME=	tocps
 PORTVERSION=	1.0
 CATEGORIES=	chinese
-MASTER_SITES=	ftp://ftp.cn.FreeBSD.org/pub/ported/
-DISTNAME=	${PKGNAME}
+MASTER_SITES=	http://ftp.osuosl.org/pub/FreeBSD/distfiles/
+DISTNAME=	zh-${PKGNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translates PostScript files with Chinese characters
