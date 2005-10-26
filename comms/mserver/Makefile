@@ -8,7 +8,7 @@
 PORTNAME=	mserver
 PORTVERSION=	0.23a
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.usf.uni-kassel.de/pub/unix/modem/
+MASTER_SITES=	http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network modem sharing server
