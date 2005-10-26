@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	MSGAPI for Husky Fidosoft Project
 
+CONFLICTS=	husky-smapi-devel-[0-9]*
+
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>

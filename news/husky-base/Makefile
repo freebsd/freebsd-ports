@@ -14,6 +14,8 @@ DISTNAME=	huskybase-${PORTVERSION}-src
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Common files for Husky Fidosoft Project
 
+CONFLICTS=	husky-base-devel-[0-9]*
+
 WRKSRC=		${WRKDIR}/huskybse
 NO_BUILD=	yes
 

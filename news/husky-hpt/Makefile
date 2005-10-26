@@ -16,6 +16,8 @@ COMMENT=	Highly Portable Tosser (full-featured FTN tosser)
 
 LIB_DEPENDS=	fidoconfig.0:${PORTSDIR}/news/husky-fidoconf
 
+CONFLICTS=	husky-hpt-devel-[0-9]*
+
 USE_REINPLACE=	yes
 
 .if !defined(WITHOUT_PERL)
