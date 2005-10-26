@@ -1,3 +1,5 @@
+@unexec test -f %D/etc/sudosh.conf && cmp %D/etc/sudosh.conf.sample %D/etc/sudosh.conf > /dev/null 2>&1 && rm %D/etc/sudosh.conf && echo %D/etc/sudosh.conf has been removed; test -f %D/etc/sudosh.conf && echo %D/etc/sudosh.conf has not been removed; true
 bin/sudosh
 bin/sudosh-replay
 etc/sudosh.conf.sample
+@exec test -f %D/etc/sudosh.conf || cp %D/etc/sudosh.conf.sample %D/etc/sudosh.conf
