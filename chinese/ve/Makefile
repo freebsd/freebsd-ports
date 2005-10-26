@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NTHU-CS Maple BBS 2.36 BBS-like editor
 
+DEPRECATED=	"mastersite disappeared, no longer maintained by author"
+EXPIRATION_DATE=	2005-12-31
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
