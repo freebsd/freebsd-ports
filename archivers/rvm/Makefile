@@ -18,6 +18,8 @@ COMMENT=	An archive manager that uses rsync to manage backups
 BUILD_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		"Configure script attempts to allocate an infinite amount of memory to see what happens when it runs out"
+
 NO_LATEST_LINK=	yes
 
 USE_GNOME=	gnometarget
