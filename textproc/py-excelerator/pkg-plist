@@ -66,6 +66,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/format.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/formulas.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/formula_names.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/hyperlinks.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/image.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/merged.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/merged0.py
@@ -74,7 +75,9 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/num_formats.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/numbers.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/outline.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/panes.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/parse-fmla.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/protection.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/python.bmp
 %%PORTDOCS%%%%EXAMPLESDIR%%/row_styles.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/row_styles_empty.py
@@ -83,8 +86,5 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode1.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode2.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/wsprops.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/xls2txt.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/xls2csv.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/xls2html.py
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/pyExcelerator
