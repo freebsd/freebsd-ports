@@ -19,25 +19,8 @@ COMMENT?=	Enhanced QuakeWorld server with multi-view demos capability
 
 USE_BZIP2=	yes
 
-.include <bsd.port.pre.mk>
-
-.if defined(GCCVERSION)
-. if ${GCCVERSION} < 030000
-GCC_VER=	2
-. else
-GCC_VER=	3
-. endif
-.else
-. if ${OSVERSION} < 500035
-GCC_VER=	2
-. else
-GCC_VER=	3
-. endif
-.endif
-
 MAKEFILE=	${FILESDIR}/Makefile
 ALL_TARGET=	${PORTNAME}
-MAKE_ARGS+=	GCC_VER=${GCC_VER}
 
 PLIST_FILES=	bin/${PORTNAME}
 WRKSRC=		${WRKDIR}/mvdsv_${PORTVERSION}/source
@@ -53,4 +36,4 @@ pre-everything::
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/../${PORTNAME} ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
