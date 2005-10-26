@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_Template_Sigma
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	devel www pear
 
 MAINTAINER=	klammer@webonaut.com
