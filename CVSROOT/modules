@@ -3800,6 +3800,7 @@ husky-htick	ports/news/husky-htick
 husky-msged	ports/news/husky-msged
 husky-nltools	ports/news/husky-nltools
 husky-smapi	ports/news/husky-smapi
+husky-smapi-devel	ports/news/husky-smapi-devel
 husky-sqpack	ports/news/husky-sqpack
 hx		ports/net/hx
 hybserv		ports/irc/hybserv
