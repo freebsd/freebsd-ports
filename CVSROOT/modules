@@ -6967,6 +6967,7 @@ o2em		ports/emulators/o2em
 oaf		ports/devel/oaf
 oak		ports/sysutils/oak
 oases		ports/science/oases
+obby		ports/devel/obby
 obconf		ports/x11-wm/obconf
 obexapp		ports/comms/obexapp
 objc		ports/lang/objc
