@@ -98,10 +98,10 @@ QWDTOOLS_OBJS = \
 
 all:	mvdsv qwdtools
 
-mvdsv:	${SV_OBJS} ${SV_AS_OBJS}
+mvdsv:	${SV_OBJS} ${SV_AS_OBJS} .PHONY
 		${CC} ${CFLAGS} -o ../mvdsv ${SV_OBJS} ${SV_AS_OBJS} ${SV_LIBS}
 
-qwdtools:	${QWDTOOLS_OBJS}
+qwdtools:	${QWDTOOLS_OBJS} .PHONY
 		${CC} ${CFLAGS} -o ../qwdtools ${QWDTOOLS_OBJS} ${SV_LIBS}
 
 clean:
