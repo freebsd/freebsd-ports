@@ -11957,6 +11957,7 @@ tcshrc		ports/shells/tcshrc
 tct		ports/sysutils/tct
 tdb		ports/databases/tdb
 tdetect		ports/net/tdetect
+tdfsb		ports/x11-fm/tdfsb
 tdiary		ports/www/tdiary
 tdiary-devel	ports/www/tdiary-devel
 tdir		ports/sysutils/tdir
