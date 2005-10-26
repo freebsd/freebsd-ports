@@ -29,6 +29,7 @@
     SUBDIR += husky-fidoconf
     SUBDIR += husky-fidoconf-devel
     SUBDIR += husky-hpt
+    SUBDIR += husky-hpt-devel
     SUBDIR += husky-hptkill
     SUBDIR += husky-hptsqfix
     SUBDIR += husky-hpucode

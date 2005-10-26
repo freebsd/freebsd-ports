@@ -1,0 +1,31 @@
+--- doc/Makefile.orig	Sat Jun  4 09:06:45 2005
++++ doc/Makefile	Wed Oct 19 17:15:31 2005
+@@ -5,7 +5,7 @@
+ include ../../huskymak.cfg
+ endif
+ 
+-all: html info dvi
++all: html info
+ 
+ ifdef HTMLDIR
+ html: hpt.html
+@@ -59,7 +59,7 @@
+ 	-$(RM) $(RMOPT) hpt.inf
+ 	-$(RM) $(RMOPT) hpt*html
+ 
+-install: info html dvi
++install: info html
+ 	@echo .
+ ifdef INFODIR
+ 	-$(MKDIR) $(MKDIROPT) $(INFODIR)
+@@ -69,10 +69,6 @@
+ ifdef HTMLDIR
+ 	-$(MKDIR) $(MKDIROPT) $(HTMLDIR)
+ 	$(INSTALL) $(IMOPT) hpt*html $(HTMLDIR)
+-endif
+-ifdef DVIDIR
+-	-$(MKDIR) $(MKDIROPT) $(DVIDIR)
+-	$(INSTALL)  hpt.dvi $(DVIDIR)
+ endif
+ uninstall:
+ 	-install-info --remove --info-dir=$(INFODIR) $(INFODIR)$(DIRSEP)hpt.info
