@@ -1,5 +1,8 @@
---- examples/pickmm/pick.cc.orig	Thu Jan 27 09:15:24 2000
-+++ examples/pickmm/pick.cc	Fri Dec 20 09:42:57 2002
+
+$FreeBSD$
+
+--- examples/pickmm/pick.cc.orig
++++ examples/pickmm/pick.cc
 @@ -16,7 +16,7 @@
    Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  
@@ -9,12 +12,21 @@
  
  #include <GL/gl.h>
  #include <GL/glu.h>
-@@ -28,6 +28,8 @@
- #include <gtk--.h>
+@@ -29,6 +29,8 @@
  
  #include <gtkgl--/glarea.h>
-+
-+using namespace std;
  
++using namespace std;
++
  // WARNING: Verbosity level set to maximum, prepare to get an ear full
  
+ /*********************************************************************
+@@ -596,7 +598,7 @@
+ ************************************************************
+   very simple main body
+ ***********************************************************/
+-gint main(gint argc, gchar **argv)
++int main(gint argc, gchar **argv)
+   {
+    MainWindowClass *main_window;
+   
