@@ -6,9 +6,18 @@ With Mercury you can do the same things as with your normal messenger:
     * Add a display picture (also know as avatar)
     * Send files through the MSN server (for people with a firewall etc..) or
 	direct
+    * Away messages, if you are online, busy or whatever you can always have
+	 an away message.
     * Play games (Tic Tac Toe and Connect4 only at the moment)
-    * Look through the webcam of your friends (webcam receiving only)
+    * Watch the webcam of your friends (Mercury auto-saves these sessions on
+	 the disk and can convert them to Quicktime movies)
+    * Allow other people to watch your webcam (= video only)
+    * Audio and Video conference is implemented (both sending and receiving)
+	but still a beta feature
 
-But Mercury has many extra functions that your normal messenger doesn't have.
+Mercury also has some MSN7 specific features, and some additional features that
+your normal messenger doesn't have, for example: port forwarding for faster file
+transfer, handling of more accounts, having different MSN names for each
+contact, etc.
 
 WWW: http://www.mercury.to/
