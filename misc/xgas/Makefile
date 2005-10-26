@@ -17,6 +17,7 @@ COMMENT=	The animated simulation of an ideal gas
 
 USE_IMAKE=	yes
 MAN1=		xgas.1
+PLIST_FILES=	bin/xgas lib/X11/app-defaults/XGas
 
 post-install:
 	@${CHMOD} 755 ${PREFIX}/bin/xgas
