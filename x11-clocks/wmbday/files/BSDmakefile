@@ -5,8 +5,8 @@ PREFIX?=  ${X11BASE}
 
 BINDIR=   ${PREFIX}/bin
 SHAREDIR= ${PREFIX}
-CFLAGS+=  -I/usr/X11R6/include
-LDFLAGS+= -L/usr/X11R6/lib
+CFLAGS+=  -I${X11BASE}/include
+LDFLAGS+= -L${X11BASE}/lib
 LDADD=    -lX11 -lXext -lXpm
 
 .include <bsd.prog.mk>
