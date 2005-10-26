@@ -4,15 +4,14 @@
 #
 # $FreeBSD$
 
-# TODO: - better list of master sites
-#       - configurable --enable-xxx
+# TODO: - configurable --enable-xxx
 #       - libipsec issue ?
 #       - cleanup...
 #       - SYSCONFDIR
 #       - $LOCALBASE/sbin/setkey Vs /usr/sbin/setkey
 
 PORTNAME=	ipsec-tools
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ipsec-tools
