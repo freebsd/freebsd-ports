@@ -24,3 +24,6 @@ lib/X11/STonX/docs/RELEASE_NOTES
 lib/X11/STonX/docs/TOS-VERSIONS
 @dirrm lib/X11/STonX/docs
 @dirrm lib/X11/STonX
+@exec mkfontdir %D/lib/X11/fonts/misc
+@exec xset fp+ %D/lib/X11/fonts/misc
+@exec xset fp rehash
