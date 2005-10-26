@@ -21,16 +21,16 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 USE_REINPLACE=	yes
-
-.if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.else
+
+.if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
+.else
+PLIST_FILES+=	share/locale/de/LC_MESSAGES/dirtree.mo
 .endif
 
-MAN1=	dirtree.1
+PLIST_FILES+=	bin/dirtree
+MAN1=		dirtree.1
 
 post-patch:
 .for f in src/CppDir.hh src/CppDir.cpp
