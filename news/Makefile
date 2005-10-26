@@ -24,6 +24,7 @@
     SUBDIR += gup
     SUBDIR += hellanzb
     SUBDIR += husky-base
+    SUBDIR += husky-base-devel
     SUBDIR += husky-bsopack
     SUBDIR += husky-fidoconf
     SUBDIR += husky-hpt

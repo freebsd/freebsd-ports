@@ -1,0 +1,72 @@
+#!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/news/husky-base-devel/pkg-install,v 1.1 2005-10-26 15:43:45 garga Exp $
+#
+
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+BATCH=${BATCH:=no}
+PW=/usr/sbin/pw
+
+ask() {
+    local question default answer
+
+    question=$1
+    default=$2
+    if [ -z "${PACKAGE_BUILDING}" -a x${BATCH} = xno ]; then
+        read -p "${question} [${default}]? " answer
+    fi
+    if [ x${answer} = x ]; then
+        answer=${default}
+    fi
+    echo ${answer}
+}
+
+yesno() {
+    local question default answer
+
+    question=$1
+    default=$2
+    while :; do
+        answer=$(ask "${question}" "${default}")
+        case "${answer}" in
+        [Yy]*)	return 0;;
+        [Nn]*)	return 1;;
+        esac
+        echo "Please answer yes or no."
+    done
+}
+
+if [ x"$2" = xPRE-INSTALL ]; then
+    USER=fido
+    GROUP=fido
+    UID=111
+    GID=111
+
+    if ${PW} groupshow "${GROUP}" 2>/dev/null; then
+        echo "You already have a group \"${GROUP}\", so I will use it."
+    else
+        if ${PW} groupadd ${GROUP} -g ${GID}
+	then
+	    echo "Added group \"${GROUP}\"."
+	else
+	    echo "Adding group \"${GROUP}\" failed..."
+            echo "Please create it, and try again."
+            exit 1
+        fi
+    fi
+
+    if ${PW} user show "${USER}" 2>/dev/null; then
+        echo "You already have a user \"${USER}\", so I will use it."
+    else
+        if ${PW} useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+           -d ${PKG_PREFIX}/fido \
+           -c "Fido System"
+	then
+	    echo "Added user \"${USER}\"."
+	else
+	    echo "Adding user \"${USER}\" failed..."
+            echo "Please create it, and try again."
+            exit 1
+        fi
+    fi
+fi
