@@ -1,6 +1,7 @@
 --- src/Makefile.in.orig	Sun Jun 12 19:33:29 2005
-+++ src/Makefile.in	Tue Oct 25 10:06:54 2005
-@@ -428,6 +428,7 @@
++++ src/Makefile.in	Wed Oct 26 06:59:17 2005
+@@ -427,7 +427,8 @@
+ 
  install-sudosh.conf:
  	test -z "$(sysconfdir)" || $(mkdir_p) "$(DESTDIR)$(sysconfdir)"
  	test -f $(sysconfdir)/sudosh.conf || $(INSTALL) -o 0 -g 0 -m 0444 '$(srcdir)/sudosh.conf' '$(sysconfdir)/sudosh.conf'

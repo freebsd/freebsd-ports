@@ -7,7 +7,7 @@
 
 PORTNAME=		sudosh
 PORTVERSION=		1.8.2
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		security
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
@@ -40,8 +40,5 @@ MAN8=			sudosh-replay.8
 .if ${OSVERSION} < 500000
 BROKEN=			"Does not compile on FreeBSD 4.x"
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
