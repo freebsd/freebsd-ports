@@ -21,8 +21,8 @@ USE_REINPLACE=	yes
 PLIST_FILES=	bin/icoconvert
 
 post-patch:
-	${REINPLACE_CMD} -e 's|^icoconvert|all|' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's|^\(FLAGS=\)|\1-I${PREFIX}/include |' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|^icoconvert|all|' -e 's|^\(FLAGS=\)|\1-I${LOCALBASE}/include |' \
+		-e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/icoconvert ${PREFIX}/bin
