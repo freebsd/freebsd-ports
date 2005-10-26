@@ -622,6 +622,7 @@
     SUBDIR += nspr
     SUBDIR += nx
     SUBDIR += oaf
+    SUBDIR += obby
     SUBDIR += ocaml-camomile
     SUBDIR += ocaml-classes
     SUBDIR += ocaml-equeue
