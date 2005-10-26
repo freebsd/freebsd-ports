@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	plans
-PORTVERSION=	7.4.3
+PORTVERSION=	7.4.5
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.planscalendar.com/release/:plans \
 		http://www.freebsd.org/gifs/:logo
@@ -37,7 +37,9 @@ do-install:
 	@${MKDIR} ${PREFIX}/${DIR}
 	@${CP} -R ${WRKSRC}/* ${PREFIX}/${DIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${DIR}
-	@${FIND} ${PREFIX}/${DIR} -type f -exec ${CHMOD} +x {} \;
+	@${FIND} ${PREFIX}/${DIR} -type f -exec ${CHMOD} 644 {} \;
+	@${FIND} ${PREFIX}/${DIR} -name '*.cgi' -exec ${CHMOD} 755 {} \;
+	@${FIND} ${PREFIX}/${DIR} -name '*.xml' -exec ${CHMOD} 664 {} \;
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
