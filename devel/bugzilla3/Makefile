@@ -21,6 +21,8 @@ OPTIONS=	CHARTING_MODULES "Bug charting support" on \
 		CONTRIB	"Install user-contributed scripts" off \
 		LDAP "Enable LDAP support" off
 
+BROKEN=		Missing perl dependency
+
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig \
