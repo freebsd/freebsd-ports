@@ -16,8 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UTF-8 character set support library, including regular expressions
 
 GNU_CONFIGURE=	YES
-USE_GMAKE=	YES
 ALL_TARGET=	tst
+MAKE_ARGS=	ETCDIR=${EXAMPLESDIR}
 
 MAN3=		ure.3 utf.3
 
