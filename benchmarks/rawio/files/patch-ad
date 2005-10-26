@@ -1,6 +1,37 @@
---- rawio.c.orig	Sun Nov 26 19:28:19 2000
-+++ rawio.c	Fri Jan  9 23:53:28 2004
-@@ -423,7 +423,7 @@
+--- rawio.c.orig	Sun Nov 26 22:28:19 2000
++++ rawio.c	Wed Oct 26 14:07:30 2005
+@@ -58,6 +58,7 @@
+ #endif
+ #ifdef BSD4_4
+ #include <sys/disklabel.h>
++#include <sys/disk.h>
+ #endif
+ #include "randoms.h"
+ 
+@@ -99,6 +100,7 @@
+ char *buf;						    /* and what we're using, for alignment */
+ int file;
+ size_t length;
++u_int sectorsize;
+ 
+ int count;
+ enum operation
+@@ -331,13 +333,7 @@
+ 	maxchunk = (size_t) atoi (arg);
+ 	if (maxchunk < (size_t) 512)
+ 	  {
+-	  if (maxchunk <= (size_t) 0)
+-	    {
+-	    fprintf (stderr, "I/O transfer max must be at least 1 sector\n");
+-	    usage ();
+-	    }
+-	  else
+-	    maxchunk *= (size_t) 512;
++	  maxchunk *= (size_t) 512;
+ 	  }
+ 	if (maxchunk > (size_t) MAXPHYS)
+ 	  {
+@@ -423,7 +419,7 @@
  	  printf ("No arg to n flag\n");
  	  break;
  	  }
@@ -9,7 +40,47 @@
  	break;
  
        case 'S':
-@@ -580,7 +580,11 @@
+@@ -500,11 +496,6 @@
+   buf = (char *) (((int) &physbuf [MAXPHYS]) & ~ (alignment - 1)); /* where to put the aligned buffer */
+   if (op == 0)						    /* no ops specified, */
+     op = RandomRead | SequentialRead;			    /* default to the read tests */
+-  if (maxchunk & 0x1ff)
+-    {
+-    fprintf (stderr, "Invalid transfer size, must be multiple of 512: %d\n", maxchunk);
+-    usage ();
+-    }
+   if (device == NULL)
+     {
+     fprintf (stderr, "No file name specified\n");
+@@ -565,6 +556,27 @@
+     fprintf (stderr, "No file size specified\n");
+     usage ();
+     }
++#ifndef DIOCGSECTORSIZE
++  sectorsize = DEV_BSIZE;
++#else
++  if (ioctl (file, DIOCGSECTORSIZE, &sectorsize) == -1)		/* failed to find native sector size */
++    {
++    if (verbose)
++      fprintf (stderr, "Can't get sector size of %s: %s\n", device, strerror (errno));
++    sectorsize = DEV_BSIZE;
++    }
++
++#endif
++  if (maxchunk <= sectorsize)
++    {
++    fprintf (stderr, "I/O transfer max must be at least 1 sector\n");
++    usage ();
++    }
++  if (maxchunk & (sectorsize - 1))
++    {
++    fprintf (stderr, "Invalid transfer size, must be multiple of %d: %d\n", sectorsize, maxchunk);
++    usage ();
++    }
+   if (id == NULL)					    /* no ID specified, */
+     {
+     id = strrchr (device, '/');				    /* find the basename */
+@@ -580,7 +592,11 @@
    childinfo = mmap (NULL,
  		    nproc * sizeof (struct childinfo),
  		    PROT_READ | PROT_WRITE,
@@ -21,3 +92,158 @@
  		    -1,
  		    (off_t) 0 );
  #else
+@@ -835,14 +851,6 @@
+   childinfo [proc].writes = 0;
+   childinfo [proc].bytes_written = 0;
+ 
+-  /* Get our own file handle */
+-  close(file);						    /* need our own FD */
+-  if ((file = open (device, openflags, 0)) < 0)
+-    {
+-    fprintf (stderr, "Child %d: Can't open %s: %s\n", proc, device, strerror (errno));
+-    exit (1);
+-    }
+-
+   /* Don't jump the gun */
+   sigemptyset (&allsigs);
+   if (sigaction (SIGUSR1, &ignore, NULL) < 0)
+@@ -863,20 +871,13 @@
+ 	length = maxchunk;
+       else
+ 	length = (myrandom (proc + nproc * i * 2)
+-		  % (maxchunk * 2) + 512) & ~0x1ff;	    /* length of this transfer */
+-      offset = ((((off_t) (myrandom2 (proc + nproc * i)) * DEV_BSIZE)
+-		 % (filesize - SKIPSTART - length)) & ~0x1ff) + SKIPSTART;
+-      if ((pos = lseek (file, offset, SEEK_SET)) != offset)
+-	fprintf (stderr,
+-		 "Child %d can't seek to %" Quad "x (%" Quad "x): %s\n",
+-		 proc,
+-		 offset,
+-		 pos,
+-		 strerror (errno));
+-      else if ((iocount = read (file, buf, length)) != length)
++		  % (maxchunk * 2) + sectorsize) & ~(sectorsize - 1);	    /* length of this transfer */
++      offset = ((((off_t) (myrandom2 (proc + nproc * i)) * sectorsize)
++		 % (filesize - SKIPSTART - length)) & ~(sectorsize - 1)) + SKIPSTART;
++      if ((iocount = pread (file, buf, length, pos = offset)) != length)
+ 	{
+ 	int Errno = errno;
+-	pos = lseek (file, 0, SEEK_CUR);
++	pos = offset + (iocount > 0 ? iocount : 0);
+ 
+ 	fprintf (stderr,
+ 		 "offset %" Quad "d, filesize %" Quad "d\n",
+@@ -915,9 +916,9 @@
+     if (fixedoffset)
+       offset = SKIPSTART;				    /* start at the beginning */
+     else						    /* random start */
+-      offset = ((((off_t) (myrandom (proc + nproc)) * DEV_BSIZE)
++      offset = ((((off_t) (myrandom (proc + nproc)) * sectorsize)
+ 		 % (filesize - SKIPSTART		    /* decide where to start */
+-		    - (maxrecs * length))) & ~0x1ff) + SKIPSTART;
++		    - (maxrecs * length))) & ~(sectorsize - 1)) + SKIPSTART;
+     if ((offset + maxrecs * length) > filesize)		    /* XXX */
+       {
+       printf ("Overrun: offset %" Quad "d, end %" Quad "d, file size %" Quad "d\n",
+@@ -928,18 +929,12 @@
+       }
+     if ((verbose > 2) && ! fixedoffset)
+       printf ("Child %d reading from %" Quad "d\n", proc, offset);
+-    if (lseek (file, offset, SEEK_SET) < 0)
+-      fprintf (stderr,
+-	       "Child %d can't seek to %" Quad "x: %s\n",
+-	       proc,
+-	       offset,
+-	       strerror (errno));
+     for (i = 1; i <= maxrecs; i++)
+       {
+-      if ((iocount = read (file, buf, length)) != length)
++      if ((iocount = pread (file, buf, length, offset)) != length)
+ 	{
+ 	int Errno = errno;
+-	off_t pos = lseek (file, (off_t) 0, SEEK_CUR);
++	off_t pos = offset + (iocount > 0 ? iocount : 0);
+ 
+ 	fprintf (stderr,
+ 		 "offset %" Quad "d, filesize %" Quad "d\n",
+@@ -976,30 +971,28 @@
+ 	length = maxchunk;
+       else
+ 	length = (myrandom (proc + nproc * i * 2)
+-		  % (maxchunk * 2) + 512) & ~0x1ff;	    /* length of this transfer */
+-      offset = ((((off_t) (myrandom2 (proc + nproc * i)) * DEV_BSIZE)
+-		 % (filesize - SKIPSTART - length)) & ~0x1ff) + SKIPSTART;
+-      if (lseek (file, offset, SEEK_SET) < 0)
+-	fprintf (stderr, "Child %d can't seek: %s", proc, strerror (errno));
+-      else
++		  % (maxchunk * 2) + sectorsize) & ~(sectorsize - 1);	    /* length of this transfer */
++      offset = ((((off_t) (myrandom2 (proc + nproc * i)) * sectorsize)
++		 % (filesize - SKIPSTART - length)) & ~(sectorsize - 1)) + SKIPSTART;
++      if (1)
+ 	{
+ 	if ((RWfrac == 100)
+ 	    || ((myrandom (proc + nproc * i * 2 + 1) % 100) < RWfrac) )
+ 	  {
+-	  iocount = write (file, buf, length);
++	  iocount = pwrite (file, buf, length, offset);
+ 	  childinfo [proc].writes++;
+ 	  childinfo [proc].bytes_written += iocount;
+ 	  }
+ 	else
+ 	  {
+-	  iocount = read (file, buf, length);
++	  iocount = pread (file, buf, length, offset);
+ 	  childinfo [proc].reads++;
+ 	  childinfo [proc].bytes_read += iocount;
+ 	  }
+ 	if (iocount != length)
+ 	  {
+ 	  int Errno = errno;
+-	  off_t pos = lseek (file, (off_t) 0, SEEK_CUR);
++	  off_t pos = offset + (iocount > 0 ? iocount : 0);
+ 
+ 	  fprintf (stderr,
+ 		   "offset %" Quad "d, filesize %" Quad "d\n", offset,
+@@ -1032,36 +1025,30 @@
+     if (fixedoffset)
+       offset = SKIPSTART;				    /* start at the beginning */
+     else						    /* random start */
+-      offset = ((((off_t) (myrandom (proc + nproc)) * DEV_BSIZE)
++      offset = ((((off_t) (myrandom (proc + nproc)) * sectorsize)
+ 		 % (filesize - SKIPSTART		    /* decide where to start */
+-		    - (maxrecs * length))) & ~0x1ff) + SKIPSTART;
+-    if (lseek (file, offset, SEEK_SET) < 0)
+-      fprintf (stderr,
+-	       "Child %d can't seek to %" Quad "x: %s\n",
+-	       proc,
+-	       offset,
+-	       strerror (errno));
+-    else if ((verbose > 2) && ! fixedoffset)
++		    - (maxrecs * length))) & ~(sectorsize - 1)) + SKIPSTART;
++    if ((verbose > 2) && ! fixedoffset)
+       printf ("Child %d writing to %" Quad "d\n", proc, offset);
+     for (i = 1; i <= maxrecs; i++)
+       {
+       if ((SWfrac == 100)
+ 	|| ((myrandom (proc + nproc * i * 2 + 1) % 100) < SWfrac) )
+ 	{
+-	iocount = write (file, buf, length);
++	iocount = pwrite (file, buf, length, offset);
+ 	childinfo [proc].writes++;
+ 	childinfo [proc].bytes_written += iocount;
+ 	}
+       else
+ 	{
+-	iocount = read (file, buf, length);
++	iocount = pread (file, buf, length, offset);
+ 	childinfo [proc].reads++;
+ 	childinfo [proc].bytes_read += iocount;
+ 	}
+       if (iocount != length)
+ 	{
+ 	int Errno = errno;
+-	off_t pos = lseek (file, (off_t) 0, SEEK_CUR);
++	off_t pos = offset + (iocount > 0 ? iocount : 0);
+ 
+ 	fprintf (stderr,
+ 		 "offset %" Quad "d, filesize %" Quad "d\n",
