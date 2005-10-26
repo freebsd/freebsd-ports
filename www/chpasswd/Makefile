@@ -7,10 +7,10 @@
 
 PORTNAME=	chpasswd
 PORTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://ufpr.dl.sourceforge.net/sourceforge/orsochpasswd/ \
-		http://optusnet.dl.sourceforge.net/sourceforge/orsochpasswd/ \
-		http://keihanna.dl.sourceforge.net/sourceforge/orsochpasswd/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	orsochpasswd
 
 MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	Allow users to change their Squid or Web password using the browser
