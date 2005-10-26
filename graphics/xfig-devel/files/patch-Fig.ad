@@ -1,0 +1,17 @@
+--- Fig.ad.orig	Wed Oct 26 19:25:21 2005
++++ Fig.ad	Wed Oct 26 19:29:12 2005
+@@ -154,6 +154,14 @@
+ 	Fig*mode_panel.background:	black
+ 	Fig*mode_panel.foreground:	black
+ 
++!##### Shadows
++Fig*shadowWidth:			1
++Fig*Label.shadowWidth:			1
++Fig*horizontal.shadowWidth:		2
++Fig*Scrollbar.shadowWidth:		2
++! no shadows for update indicators
++Fig*button_form.update.shadowWidth:	0
++
+ ! Specify a private Compose key database file.  If this resource contains a "/"
+ ! then the wired-in name of the xfig global directory won't be prefixed to it.
+ ! An initial "~/" is replaced by the value of "$HOME/".

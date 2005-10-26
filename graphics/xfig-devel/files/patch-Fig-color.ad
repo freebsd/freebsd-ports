@@ -1,0 +1,17 @@
+--- Fig-color.ad.orig	Wed Oct 26 19:25:06 2005
++++ Fig-color.ad	Wed Oct 26 19:27:02 2005
+@@ -100,14 +100,6 @@
+ Fig*button_form.update*foreground:	red
+ Fig*upd_ctrl_form.upd_ctrl_btns*shadowWidth:	2
+ 
+-!##### Shadows
+-Fig*shadowWidth:			1
+-Fig*Label.shadowWidth:			1
+-Fig*horizontal.shadowWidth: 		2
+-Fig*Scrollbar.shadowWidth:		2
+-! no shadows for update indicators
+-Fig*button_form.update.shadowWidth:	0
+-
+ Fig*topShadowContrast:			40
+ Fig*bottomShadowContrast: 		-90 
+ 
