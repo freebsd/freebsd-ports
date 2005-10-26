@@ -1,0 +1,20 @@
+--- man/Makefile.orig	Wed Feb  5 14:51:47 2003
++++ man/Makefile	Wed Oct 19 20:57:40 2005
+@@ -20,7 +20,7 @@
+ 
+ all:
+ 
+-install:	copy link
++install:	copy
+ 
+ copy:
+ 	$(MKDIR) $(MKDIROPT) $(MAN1DIR)
+@@ -28,7 +28,7 @@
+ 
+ link:
+ 	cd $(MAN1DIR)$(DIRSEP); \
+-	for f in $(FCONF2ALIASES) ; do $(LN) -s fconf2.1 $$f ; done
++	for f in $(FCONF2ALIASES) ; $(LN) -s fconf2.1 $$f ; done
+ 
+ clean:
+ 
