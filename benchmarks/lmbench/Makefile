@@ -47,7 +47,12 @@ retest: build
 post-extract:
 	${MKDIR} ${WRKSRC}/SCCS
 	${TOUCH} -t 199901010000 ${WRKSRC}/SCCS/s.ChangeSet
-	${ECHO_CMD} ${DISTNAME} > ${WRKSRC}/src/bk.ver
+	cd ${WRKSRC}/scripts; ./version > ${WRKSRC}/src/bk.ver
+
+# Clean up turds from building the library.  Some systems just have
+# .o, some also end up with .s, so clean up both.
+post-build:
+	@${RM} ${WRKSRC}/bin/*.[os]
 
 pre-install:
 	[ -d ${PREFIX}/lib/lmbench ] || ${MKDIR} ${PREFIX}/lib/lmbench
