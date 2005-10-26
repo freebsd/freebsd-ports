@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	0.96.2
-PORTREVISION?=	1
+PORTVERSION=	0.96.3
+PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -63,10 +63,13 @@ post-patch:
 		${WRKSRC}/contrib/trainbogo.sh
 	${REINPLACE_CMD} -e 's|^#!.*perl|#! ${PERL}|' \
 		${WRKSRC}/src/tests/unsort.pl \
+		${WRKSRC}/contrib/bfproxy \
 		${WRKSRC}/contrib/bogofilter-milter.pl \
 		${WRKSRC}/contrib/bogominitrain.pl \
 		${WRKSRC}/contrib/mime.get.rfc822 \
-		${WRKSRC}/contrib/printmaildir.pl
+		${WRKSRC}/contrib/printmaildir.pl \
+		${WRKSRC}/contrib/spamitarium \
+		${WRKSRC}/contrib/stripsearch
 	${REINPLACE_CMD} -e 's/INTEGRITY_TESTS = t.lock1 t.lock3 t.valgrind/INTEGRITY_TESTS = t.lock1 t.lock3/' \
 		${WRKSRC}/src/tests/Makefile.in
 
@@ -106,7 +109,8 @@ post-install::
 	${INSTALL_PROGRAM} ${WRKSRC}/contrib/bogogrep ${DOCSDIR}/contrib/
 .for i in contrib/bogo.R contrib/bogofilter-qfe \
 		contrib/mime.get.rfc822 contrib/printmaildir.pl \
-		contrib/bogominitrain.pl contrib/README.contrib
+		contrib/bogominitrain.pl contrib/README.contrib \
+		contrib/bfproxy contrib/spamitarium contrib/stripsearch
 	  ${INSTALL_SCRIPT} ${WRKSRC}/${i} ${DOCSDIR}/${i}
 .endfor
 .if !defined(WITHOUT_BASH)
