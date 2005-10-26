@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_Table
-PORTVERSION=	1.5
+PORTVERSION=	1.6.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	tux@pinguru.net
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	HTML
-FILES=		Table.php
+FILES=		Table.php Table/Storage.php
 EXAMPLES=	Table_example1.php Table_example2.php
 _EXAMPLESDIR=	docs
 
