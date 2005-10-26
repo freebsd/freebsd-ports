@@ -1,0 +1,24 @@
+--- config/configure.orig	Tue Jan  6 10:55:26 2004
++++ config/configure	Wed Oct 26 17:04:29 2005
+@@ -28,10 +28,8 @@
+ }
+ 
+ xcc=$CC
+-#prefix=/usr/local
+-x_dirs="/usr/X11R6 /usr/X11 /usr/include \
+-		/usr/local/X11R6 /usr/local/X11 /usr/local/include \
+-		/opt/X11R6 /opt/X11 /opt/include"
++prefix=${LOCALBASE}
++x_dirs=${X11BASE}
+ 
+ if [ ! -f VERSION ]; then
+ 	echo
+@@ -228,7 +226,7 @@
+ fi
+ 
+ echo "VERSION=$version" > Makefile.cfg
+-#echo "PREFIX=$prefix" >> Makefile.cfg
++echo "PREFIX=$prefix" >> Makefile.cfg
+ echo "XLIB_DIR=$xlib_dir" >> Makefile.cfg
+ if [ "$vk_opt" != "" ]; then
+ 	echo "VK_OPT=$vk_opt" >> Makefile.cfg
