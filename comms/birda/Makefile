@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/
 MAINTAINER=	allbery@ece.cmu.edu
 COMMENT=	Bohlin's IrDA utilities, ported from NetBSD's pkgsrc
 
+DEPRECATED=	"mastersite disappeared, no longer maintained by author"
+EXPIRATION_DATE=	2005-12-31
+
 MAN1=		ircomm.1 irobex.1 irs.1 \
 		mkobexcard.1 mkobexdate.1 mkobexmemo.1 mkobexpdb.1 \
 		mkobextel.1 mkobextodo.1
