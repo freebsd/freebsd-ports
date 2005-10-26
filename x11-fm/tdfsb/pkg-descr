@@ -1,0 +1,9 @@
+TDFSB is a "3D - Filesystem Browser".  It reads directory information and
+displays them as a 3D world, so you can take a walk through your file
+system.  It also reads images, MPEG and MP3 files as well as some other
+formats.
+
+It is highly recommended that you have decent (hardware-accelerated) gfx
+card, otherwise it may run very slow.
+
+WWW: http://www.determinate.net/webdata/seg/tdfsb.html
