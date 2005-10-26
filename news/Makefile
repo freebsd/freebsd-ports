@@ -27,6 +27,7 @@
     SUBDIR += husky-base-devel
     SUBDIR += husky-bsopack
     SUBDIR += husky-fidoconf
+    SUBDIR += husky-fidoconf-devel
     SUBDIR += husky-hpt
     SUBDIR += husky-hptkill
     SUBDIR += husky-hptsqfix

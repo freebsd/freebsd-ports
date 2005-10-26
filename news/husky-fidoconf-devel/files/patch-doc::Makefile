@@ -1,0 +1,31 @@
+--- doc/Makefile.orig	Sat Jun  4 09:06:32 2005
++++ doc/Makefile	Wed Oct 19 16:34:38 2005
+@@ -6,7 +6,7 @@
+ include ../../huskymak.cfg
+ endif
+ 
+-all: html info dvi
++all: html info
+ 
+ ifdef HTMLDIR
+ html: fidoconfig.html
+@@ -68,7 +68,7 @@
+ 	-$(RM) $(RMOPT) fidoconfig.doc
+ 	-$(RM) $(RMOPT) fidoconfig.info*
+ 
+-install: info html dvi
++install: info html
+ 	@echo .
+ ifdef INFODIR
+ 	-$(MKDIR) $(MKDIROPT) $(INFODIR)
+@@ -78,10 +78,6 @@
+ ifdef HTMLDIR
+ 	-$(MKDIR) $(MKDIROPT) $(HTMLDIR)
+ 	$(INSTALL) $(IMOPT) fidoconfig*html $(HTMLDIR)
+-endif
+-ifdef DVIDIR
+-	-$(MKDIR) $(MKDIROPT) $(DVIDIR)
+-	$(INSTALL) $(IMOPT) fidoconfig.dvi $(DVIDIR)
+ endif
+ 
+ uninstall:

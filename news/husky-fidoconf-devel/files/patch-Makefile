@@ -1,0 +1,49 @@
+--- Makefile.orig	Wed Oct 19 20:29:25 2005
++++ Makefile	Wed Oct 19 20:32:23 2005
+@@ -87,7 +87,7 @@
+ progs: commonprogs
+ 
+ ifeq ($(DYNLIBS), 1)
+-  all: commonlibs ranlib $(LIBFIDOCONFIG).so.$(VER)
++  all: commonlibs ranlib $(LIBFIDOCONFIG).so.$(VERMAJOR)
+ 	$(MAKE) progs
+ 	(cd doc && $(MAKE) all)
+ else
+@@ -105,28 +105,26 @@
+ 	(cd doc && $(MAKE) distclean)
+ 
+ ifeq (~$(MKSHARED)~, ~ld~)
+-$(LIBFIDOCONFIG).so.$(VER): $(LOBJS)
+-	$(LD) $(LFLAGS) -o $(LIBFIDOCONFIG).so.$(VER) \
++$(LIBFIDOCONFIG).so.$(VERMAJOR): $(LOBJS)
++	$(LD) $(LFLAGS) -o $(LIBFIDOCONFIG).so.$(VERMAJOR) \
+ 	    $(LOBJS) $(LOPT)
+ else
+-$(LIBFIDOCONFIG).so.$(VER): $(LOBJS)
+-	$(CC) -shared -Wl,-soname,$(LIBFIDOCONFIG).so.$(VERH) \
+-         -o $(LIBFIDOCONFIG).so.$(VER) $(LOBJS) $(LOPT)
++$(LIBFIDOCONFIG).so.$(VERMAJOR): $(LOBJS)
++	$(CC) -shared -Wl,-soname,$(LIBFIDOCONFIG).so.$(VERMAJOR) \
++         -o $(LIBFIDOCONFIG).so.$(VERMAJOR) $(LOBJS) $(LOPT)
+ endif
+-	$(LN) $(LNOPT) $(LIBFIDOCONFIG).so.$(VER) $(LIBFIDOCONFIG).so.$(VERH) ;\
+-	$(LN) $(LNOPT) $(LIBFIDOCONFIG).so.$(VER) $(LIBFIDOCONFIG).so
++	$(LN) $(LNOPT) $(LIBFIDOCONFIG).so.$(VERMAJOR) $(LIBFIDOCONFIG).so
+ 
+ %$(OBJ): %.c
+ 	$(CC) $(CDEFS) $(COPT) $*.c
+ 
+ ifeq ($(DYNLIBS), 1)
+-instdyn: $(LIBFIDOCONFIG).so.$(VER)
++instdyn: $(LIBFIDOCONFIG).so.$(VERMAJOR)
+ 	-$(MKDIR) $(MKDIROPT) $(LIBDIR)
+-	$(INSTALL) $(ILOPT) $(LIBFIDOCONFIG).so.$(VER) $(LIBDIR)
++	$(INSTALL) $(ILOPT) $(LIBFIDOCONFIG).so.$(VERMAJOR) $(LIBDIR)
+ # Removed path from symlinks.
+ 	cd $(LIBDIR) ;\
+-	$(LN) $(LNOPT) $(LIBFIDOCONFIG).so.$(VER) $(LIBFIDOCONFIG).so.$(VERH) ;\
+-	$(LN) $(LNOPT) $(LIBFIDOCONFIG).so.$(VER) $(LIBFIDOCONFIG).so
++	$(LN) $(LNOPT) $(LIBFIDOCONFIG).so.$(VERMAJOR) $(LIBFIDOCONFIG).so
+ ifneq (~$(LDCONFIG)~, ~~)
+ 	$(LDCONFIG)
+ endif
