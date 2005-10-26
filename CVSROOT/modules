@@ -3789,6 +3789,7 @@ hugs		ports/lang/hugs
 hulgalugha	ports/misc/hulgalugha
 hunch		ports/security/hunch
 husky-base	ports/news/husky-base
+husky-base-devel	ports/news/husky-base-devel
 husky-bsopack	ports/news/husky-bsopack
 husky-fidoconf	ports/news/husky-fidoconf
 husky-hpt	ports/news/husky-hpt
