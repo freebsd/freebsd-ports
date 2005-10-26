@@ -3792,6 +3792,7 @@ husky-base	ports/news/husky-base
 husky-base-devel	ports/news/husky-base-devel
 husky-bsopack	ports/news/husky-bsopack
 husky-fidoconf	ports/news/husky-fidoconf
+husky-fidoconf-devel	ports/news/husky-fidoconf-devel
 husky-hpt	ports/news/husky-hpt
 husky-hptkill	ports/news/husky-hptkill
 husky-hptsqfix	ports/news/husky-hptsqfix
