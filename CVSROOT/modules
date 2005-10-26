@@ -3794,6 +3794,7 @@ husky-bsopack	ports/news/husky-bsopack
 husky-fidoconf	ports/news/husky-fidoconf
 husky-fidoconf-devel	ports/news/husky-fidoconf-devel
 husky-hpt	ports/news/husky-hpt
+husky-hpt-devel	ports/news/husky-hpt-devel
 husky-hptkill	ports/news/husky-hptkill
 husky-hptsqfix	ports/news/husky-hptsqfix
 husky-hpucode	ports/news/husky-hpucode
