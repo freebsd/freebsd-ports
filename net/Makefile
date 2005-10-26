@@ -793,6 +793,7 @@
     SUBDIR += smokeping
     SUBDIR += sniffit
     SUBDIR += sntop
+    SUBDIR += sobby
     SUBDIR += socat
     SUBDIR += socketbind
     SUBDIR += socketpipe
