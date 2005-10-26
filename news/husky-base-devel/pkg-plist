@@ -1,0 +1,4 @@
+etc/fido/huskymak.cfg
+@exec mkdir -p %D/share/doc/husky
+@dirrm etc/fido
+@dirrm share/doc/husky
