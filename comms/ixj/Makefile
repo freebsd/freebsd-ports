@@ -8,7 +8,7 @@
 PORTNAME=	ixj
 PORTVERSION=	1.1.0
 CATEGORIES=	comms
-MASTER_SITES=	ftp://telepresence.dmem.strath.ac.uk/pub/openh323/
+MASTER_SITES=	http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 DISTNAME=	ixj_freebsd-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,10 +19,10 @@ ONLY_FOR_ARCHS=	i386
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
-IGNORE	=	cannot be installed since the driver has not been updated for 5.x kernels. Still uses machine/ipl.h
+IGNORE=	cannot be installed since the driver has not been updated for 5.x kernels. Still uses machine/ipl.h
 .endif
 
-WRKSRC=         ${WRKDIR}/ixj_freebsd
+WRKSRC=		${WRKDIR}/ixj_freebsd
 USE_REINPLACE=	yes
 MAKEFILE=	Makefile.BSD
 
@@ -45,9 +45,11 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/ixjuser.h ${PREFIX}/include/sys
 	@${INSTALL_DATA} ${WRKSRC}/telephony.h ${PREFIX}/include/sys
 	@${INSTALL_SCRIPT} ${WRKSRC}/ixj.sh ${PREFIX}/etc/rc.d/
+	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 
-header-install: patch
+header-install:	patch
 	@${MKDIR} ${PREFIX}/include/sys
 	@${INSTALL_DATA} ${WRKSRC}/ixjuser.h ${PREFIX}/include/sys
 	@${INSTALL_DATA} ${WRKSRC}/telephony.h ${PREFIX}/include/sys
