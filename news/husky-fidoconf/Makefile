@@ -17,6 +17,8 @@ COMMENT=	Configuration library for Husky Fidosoft Project
 LIB_DEPENDS=	smapi.2:${PORTSDIR}/news/husky-smapi
 RUN_DEPENDS=	${LOCALBASE}/etc/fido/huskymak.cfg:${PORTSDIR}/news/husky-base
 
+CONFLICTS=	husky-fidoconf-devel-[0-9]*
+
 INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=	yes
 INSTALL_TARGET=	install install-man
