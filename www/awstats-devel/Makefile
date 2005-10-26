@@ -20,6 +20,21 @@ RUN_DEPENDS=	${SITE_PERL}/Net/XWhois.pm:${PORTSDIR}/net/p5-Net-XWhois
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
+USE_REINPLACE=	yes
+
+SUB_FILES=	pkg-message
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
+.endif
+
+post-patch:
+#	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/tools/awstats_buildstaticpages.pl
+#	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/tools/awstats_configure.pl
+#	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/tools/awstats_updateall.pl
+#	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/wwwroot/cgi-bin/awstats.pl
 
 do-install:
 	@${MKDIR} ${PREFIX}/www/awstats
@@ -86,7 +101,6 @@ do-install:
 	@${ECHO_CMD} "* Rename ${PREFIX}/www/awstats/cgi-bin/awstats.model.conf to awstats.site.conf to setup awstats"
 	@${ECHO_CMD} "* Documentation has been installed in ${PREFIX}/share/doc/awstats"
 	@${ECHO_CMD} ""
-
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/docs/images/* ${DOCSDIR}/images
@@ -96,12 +110,6 @@ do-install:
 post-install:
 .if !defined(BATCH)
 	@${CAT} ${PKGMESSAGE}
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 .endif
 
 .include <bsd.port.post.mk>
