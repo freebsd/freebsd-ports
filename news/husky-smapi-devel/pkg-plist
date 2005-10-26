@@ -1,0 +1,16 @@
+lib/libsmapi.so
+lib/libsmapi.so.2
+lib/libsmapi.a
+include/smapi/api_brow.h
+include/smapi/api_jam.h
+include/smapi/compiler.h
+include/smapi/cvsdate.h
+include/smapi/ffind.h
+include/smapi/msgapi.h
+include/smapi/patmat.h
+include/smapi/prog.h
+include/smapi/progprot.h
+include/smapi/stamp.h
+include/smapi/typedefs.h
+include/smapi/unused.h
+@dirrm include/smapi
