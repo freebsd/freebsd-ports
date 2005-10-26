@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	qsheff
-PORTVERSION=	1.0.r3
+PORTVERSION=	1.0.r4
 CATEGORIES=	mail
-MASTER_SITES=	http://www.enderunix.org/qsheff/ \
+MASTER_SITES=	http://www.enderunix.org/ \
 		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-r/}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -43,6 +44,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/clamdscan:${PORTSDIR}/security/clamav
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e "s|^CFLAGS =|CFLAGS +=|" ${WRKSRC}/Makefile.in
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|\(install-data-am: \)install-qsheffdocDATA|\1|g' \
 			  -e 's| contribute$$||g' \
