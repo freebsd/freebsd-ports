@@ -21,16 +21,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GL=		yes
 USE_SDL=	image sdl ttf
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}| ; \
-			s|%%CFLAGS%%|${CFLAGS}| ; \
-			s|%%DATADIR%%|${DATADIR}| ; \
-			s|%%X11BASE%%|${X11BASE}|' \
-				${WRKSRC}/${MAKEFILE}
 
 post-install:
 .if !defined(NOPORTDOCS)
