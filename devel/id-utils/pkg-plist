@@ -11,3 +11,5 @@ share/emacs/site-lisp/id-utils.el
 share/id-lang.map
 %%NLS%%share/locale/de/LC_MESSAGES/id-utils.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/id-utils.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/id-utils.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/id-utils.mo
