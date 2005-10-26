@@ -28,7 +28,7 @@ REINPLACE_ARGS=	-i ''
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags` `freetype-config --cflags` -I${X11BASE}/include -I${X11BASE}/include/FTGL" \
-		LDFLAGS="`${SDL_CONFIG} --libs`"
+		LDFLAGS="`${SDL_CONFIG} --libs` -L${X11BASE}/lib"
 
 SUB_FILES=	${PORTNAME}-sh
 
