@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sisctrl
-PORTVERSION=	0.0.20050410
+PORTVERSION=	0.0.20051025
 CATEGORIES=	x11
 MASTER_SITES=	http://www.winischhofer.net/sis/
 
@@ -18,6 +18,7 @@ USE_GNOME=	gtk20
 USE_GMAKE=	yes
 USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	 --with-xv-path=${X11BASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
 
