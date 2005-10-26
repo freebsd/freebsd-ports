@@ -1,0 +1,17 @@
+UNIVERSAL::require - require() modules from a variable.
+
+If you've ever had to do this...
+
+    eval "require $module";
+
+to get around the bareword caveats on require(), this module is for
+you. It creates a universal require() class method that will work with
+every Perl module and its secure. So instead of doing some arcane
+eval() work, you can do this:
+
+    $module->require;
+
+It doesn't save you much typing, but it'll make alot more sense to
+someone who's not a ninth level Perl acolyte.
+
+WWW: http://search.cpan.org/dist/UNIVERSAL-require/
