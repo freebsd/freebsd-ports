@@ -20,11 +20,6 @@ DO_CFLAGS +=	-Did386
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 DO_CFLAGS +=	-O9 -pipe -s -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations
-. if ${GCC_VER} == 2
-DO_CFLAGS +=	-malign-loops=2 -malign-jumps=2 -malign-functions=2
-. elif ${GCC_VER} == 3
-DO_CFLAGS +=	-falign-loops=2 -falign-jumps=2 -falign-functions=2
-. endif
 .endif
 
 ########################################################################
