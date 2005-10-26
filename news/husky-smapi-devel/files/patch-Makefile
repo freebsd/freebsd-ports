@@ -1,0 +1,73 @@
+--- Makefile.orig	Wed Oct 19 18:02:47 2005
++++ Makefile	Wed Oct 19 18:06:41 2005
+@@ -30,14 +30,7 @@
+ 
+ 
+ ifeq ($(DYNLIBS), 1)
+-ALL: $(TARGET) $(LIBPREFIX)smapi.so.$(VER)
+-else
+-ALL: $(TARGET)
+-endif
+-
+-
+-ifeq ($(DYNLIBS), 1)
+-all: $(TARGET) $(LIBPREFIX)smapi.so.$(VER)
++all: $(TARGET) $(LIBPREFIX)smapi.so.$(VERMAJOR)
+ else
+ all: $(TARGET)
+ endif
+@@ -53,26 +46,23 @@
+ 
+ ifeq ($(DYNLIBS), 1)
+   ifeq (~$(MKSHARED)~,~ld~)
+-$(LIBPREFIX)smapi.so.$(VER): $(OBJS)
++$(LIBPREFIX)smapi.so.$(VERMAJOR): $(OBJS)
+ 	$(LD) $(OPTLFLAGS) \
+-	      -o $(LIBPREFIX)smapi.so.$(VER) $(OBJS)
++	      -o $(LIBPREFIX)smapi.so.$(VERMAJOR) $(OBJS)
+   else
+-$(LIBPREFIX)smapi.so.$(VER): $(OBJS)
+-	$(CC) -shared -Wl,-soname,$(LIBPREFIX)smapi.so.$(VERH) \
+-          -o $(LIBPREFIX)smapi.so.$(VER) $(OBJS)
++$(LIBPREFIX)smapi.so.$(VERMAJOR): $(OBJS)
++	$(CC) -shared -Wl,-soname,$(LIBPREFIX)smapi.so.$(VERMAJOR) \
++          -o $(LIBPREFIX)smapi.so.$(VERMAJOR) $(OBJS)
+   endif
+ 
+-instdyn: $(TARGET) $(LIBPREFIX)smapi.so.$(VER)
++instdyn: $(TARGET) $(LIBPREFIX)smapi.so.$(VERMAJOR)
+ 	-$(MKDIR) $(MKDIROPT) $(LIBDIR)
+-	$(INSTALL) $(ILOPT) $(LIBPREFIX)smapi.so.$(VER) $(LIBDIR)
+-	-$(RM) $(RMOPT) $(LIBDIR)/$(LIBPREFIX)smapi.so.$(VERH)
++	$(INSTALL) $(ILOPT) $(LIBPREFIX)smapi.so.$(VERMAJOR) $(LIBDIR)
+ 	-$(RM) $(RMOPT) $(LIBDIR)/$(LIBPREFIX)smapi.so
+ # Changed the symlinks from symlinks with full path to just symlinks.
+ # Better so :)
+ 	cd $(LIBDIR) ;\
+-	$(LN) $(LNOPT) $(LIBPREFIX)smapi.so.$(VER) $(LIBPREFIX)smapi.so.$(VERH) ;\
+-	$(LN) $(LNOPT) $(LIBPREFIX)smapi.so.$(VER) $(LIBPREFIX)smapi.so.$(VERMAJOR) ;\
+-	$(LN) $(LNOPT) $(LIBPREFIX)smapi.so.$(VER) $(LIBPREFIX)smapi.so
++	$(LN) $(LNOPT) $(LIBPREFIX)smapi.so.$(VERMAJOR) $(LIBPREFIX)smapi.so
+ ifneq (~$(LDCONFIG)~, ~~)
+ 	$(LDCONFIG)
+ endif
+@@ -101,10 +91,8 @@
+ 	-cd $(INCDIR)$(DIRSEP)smapi$(DIRSEP) ;\
+ 	$(RM) $(RMOPT) $(HEADERS)
+ 	-$(RM) $(RMOPT) $(LIBDIR)$(DIRSEP)$(TARGET)
+-	-$(RM) $(RMOPT) $(LIBDIR)$(DIRSEP)$(LIBPREFIX)smapi.so.$(VER)
+-	-$(RM) $(RMOPT) $(LIBDIR)$(DIRSEP)$(LIBPREFIX)smapi.so.$(VERH)
+-	-$(RM) $(RMOPT) $(LIBDIR)$(DIRSEP)$(LIBPREFIX)smapi.so.$(VERMAJOR)
+ 	-$(RM) $(RMOPT) $(LIBDIR)$(DIRSEP)$(LIBPREFIX)smapi.so
++	-$(RM) $(RMOPT) $(LIBDIR)$(DIRSEP)$(LIBPREFIX)smapi.so.$(VERMAJOR)
+ 
+ clean:
+ 	-$(RM) $(RMOPT) *$(OBJ)
+@@ -112,6 +100,6 @@
+ 
+ distclean: clean
+ 	-$(RM) $(RMOPT) $(TARGET)
+-	-$(RM) $(RMOPT) $(LIBPREFIX)smapi.so.$(VER)
++	-$(RM) $(RMOPT) $(LIBPREFIX)smapi.so.$(VERMAJOR)
+ 
+ all: $(TARGET)

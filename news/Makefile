@@ -35,6 +35,7 @@
     SUBDIR += husky-msged
     SUBDIR += husky-nltools
     SUBDIR += husky-smapi
+    SUBDIR += husky-smapi-devel
     SUBDIR += husky-sqpack
     SUBDIR += ifmail
     SUBDIR += ija
