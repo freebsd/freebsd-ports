@@ -15,7 +15,6 @@ etc/ion3/cfg_pwm_menus.lua
 etc/ion3/cfg_query.lua
 etc/ion3/cfg_sp.lua
 etc/ion3/cfg_statusbar.lua
-etc/ion3/dock-draw.lua
 etc/ion3/look.lua
 etc/ion3/look_brownsteel.lua
 etc/ion3/look_clean.lua
@@ -25,7 +24,6 @@ etc/ion3/look_dusky.lua
 etc/ion3/look_greyviolet.lua
 etc/ion3/look_ios.lua
 etc/ion3/look_simpleblue.lua
-etc/ion3/look_wheat2.lua
 etc/ion3/lookcommon_clean.lua
 etc/ion3/lookcommon_emboss.lua
 lib/ion3/bin/ion-completefile
