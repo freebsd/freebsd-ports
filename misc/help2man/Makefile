@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	help2man
-PORTVERSION=	1.35.1
+PORTVERSION=	1.36.1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,19 +19,18 @@ COMMENT=	Automatically generating simple manual pages from program output
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-MANLANG=	"" pl fr
-PLIST_SUB=		NLS=""
+MANLANG=	"" pl fr fi
+PLIST_SUB+=		NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB=		NLS="@comment "
+PLIST_SUB+=		NLS="@comment "
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 USE_PERL5=	yes
 
 MAN1=		help2man.1
-
 INFO=		help2man
 
 .include <bsd.port.mk>
