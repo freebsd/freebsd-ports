@@ -8,7 +8,8 @@
 PORTNAME=	Ice
 PORTVERSION=	2.1.2
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.zeroc.com/download/Ice/2.1/
+MASTER_SITES=	http://www.zeroc.com/download/Ice/2.1/ \
+		ftp://ftp.ipt.ru/pub/download/
 PKGNAMEPREFIX=	py-
 DISTNAME=	IcePy-${PORTVERSION}
 
