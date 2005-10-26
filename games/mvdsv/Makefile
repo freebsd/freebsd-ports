@@ -6,11 +6,12 @@
 #
 
 PORTNAME?=	mvdsv
-PORTVERSION=	0.178
-PORTEPOCH=	1
+PORTVERSION=	0.19
+PORTEPOCH=	2
 CATEGORIES?=	games
-MASTER_SITES=	http://quakeworld.ru/files/vvd/mvdsv/ \
-		http://freebsd.nsu.ru/distfiles/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://quakeworld.ru/files/vvd/mvdsv/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	mvdsv_${PORTVERSION}_sources
 
 MAINTAINER=	danfe@FreeBSD.org

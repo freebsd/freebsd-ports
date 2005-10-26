@@ -11,7 +11,8 @@
 # Created on Wednesday, May 21 2003 by Alexey Dokuchaev <danfe@regency.nsu.ru>
 #
 
-DO_CFLAGS =	${CFLAGS} -funsigned-char -I${LOCALBASE}/include -DSERVERONLY -Dstricmp=strcasecmp
+DO_CFLAGS =	${CFLAGS} -funsigned-char -I${LOCALBASE}/include -Dstricmp=strcasecmp \
+		-DSERVERONLY -DUSE_PR2
 
 .if ${MACHINE_ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
 DO_CFLAGS +=	-Did386
@@ -35,12 +36,18 @@ SV_OBJS = \
 		pr_edict.o \
 		pr_exec.o \
 \
+		pr2_cmds.o \
+		pr2_edict.o \
+		pr2_exec.o \
+		pr2_vm.o \
+\
 		sv_ccmds.o \
 		sv_demo.o \
 		sv_ents.o \
 		sv_init.o \
 		sv_login.o \
 		sv_main.o \
+		sv_mod_frags.o \
 		sv_model.o \
 		sv_move.o \
 		sv_nchan.o \
@@ -62,7 +69,11 @@ SV_OBJS = \
 		sha1.o \
 		version.o \
 		world.o \
-		zone.o
+		zone.o \
+\
+		pcre/chartables.o \
+		pcre/get.o \
+		pcre/pcre.o
 
 .if ${MACHINE_ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
 SV_AS_OBJS = \
