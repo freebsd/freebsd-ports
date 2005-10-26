@@ -1,13 +1,4 @@
 lib/lmbench/Makefile
-lib/lmbench/bin/%%LMBENCH_OS%%/lib_tcp.o
-lib/lmbench/bin/%%LMBENCH_OS%%/lib_udp.o
-lib/lmbench/bin/%%LMBENCH_OS%%/lib_unix.o
-lib/lmbench/bin/%%LMBENCH_OS%%/lib_timing.o
-lib/lmbench/bin/%%LMBENCH_OS%%/lib_mem.o
-lib/lmbench/bin/%%LMBENCH_OS%%/lib_stats.o
-lib/lmbench/bin/%%LMBENCH_OS%%/lib_debug.o
-lib/lmbench/bin/%%LMBENCH_OS%%/getopt.o
-lib/lmbench/bin/%%LMBENCH_OS%%/lib_sched.o
 lib/lmbench/bin/%%LMBENCH_OS%%/lmbench.a
 lib/lmbench/bin/%%LMBENCH_OS%%/bw_file_rd
 lib/lmbench/bin/%%LMBENCH_OS%%/bw_mem
