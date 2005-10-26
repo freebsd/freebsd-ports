@@ -17,7 +17,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/tpager
+
+post-patch:
+	@${REINPLACE_CMD} -e 's#/usr/X11R6#${X11BASE}#' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
