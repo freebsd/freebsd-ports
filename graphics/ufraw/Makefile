@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		gimp-ufraw
-PORTVERSION=		0.4
+PORTVERSION=		0.5
 CATEGORIES=		graphics gnome
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ufraw
@@ -18,11 +18,21 @@ BUILD_DEPENDS=		gimp:${PORTSDIR}/graphics/gimp
 LIB_DEPENDS=		jpeg.9:${PORTSDIR}/graphics/jpeg \
 			tiff.4:${PORTSDIR}/graphics/tiff
 
+GNU_CONFIGURE=		yes
 USE_X_PREFIX=		yes
 USE_GMAKE=		yes
 USE_GNOME=		glib20 gnomehack intltool intlhack gtk20 libartlgpl2
 WANT_GNOME=		yes
-ALL_TARGET=		build
-INSTALL_TARGET=		install-admin
 
-.include <bsd.port.mk>
+CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
+			CFLAGS="${CFLAGS} -I ${LOCALBASE}/include"
+
+MAN1=			ufraw.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} <= 600000
+BROKEN=			"Needs memmem(3)"
+.endif
+
+.include <bsd.port.post.mk>
