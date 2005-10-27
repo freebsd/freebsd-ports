@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maven2
-DISTVERSION=	2.0-beta-3
+DISTVERSION=	2.0
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	maven/binaries
@@ -28,12 +28,13 @@ post-extract:
 
 do-install:
 	cd ${WRKSRC} && ${FIND} . -type d -exec ${MKDIR} ${DATADIR}/{} \;
-	cd ${WRKSRC} && ${FIND} . -type f -not -name "m2" -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
-	${INSTALL_SCRIPT} ${WRKDIR}/m2.sh ${DATADIR}/bin/m2
-	${LN} -fs ${DATADIR}/bin/m2 ${PREFIX}/bin/m2
+	cd ${WRKSRC} && ${FIND} . -type f -not -path "\./bin/" -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
+	${INSTALL_DATA} ${WRKSRC}/bin/m2.conf ${DATADIR}/bin/
+	${INSTALL_SCRIPT} ${WRKDIR}/m2.sh ${DATADIR}/bin/mvn
+	${LN} -fs ${DATADIR}/bin/mvn ${PREFIX}/bin/mvn
 
 post-install:
-	@${ECHO_CMD} 'bin/m2' >> ${TMPPLIST}
+	@${ECHO_CMD} 'bin/mvn' >> ${TMPPLIST}
 	@${FIND} -s ${WRKSRC} -not -type d 2>/dev/null | \
 		${SED} -ne 's,^${WRKSRC},${DATADIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
 	@${FIND} -s -d ${WRKSRC} -type d 2>/dev/null | \
