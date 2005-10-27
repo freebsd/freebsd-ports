@@ -26,7 +26,7 @@ PLIST_FILES=	modules/est.ko			\
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 600015
-IGNORE=		"est now contained in the base system (see cpufreq(4))"
+IGNORE=		'est now contained in the base system (see cpufreq(4))'
 .endif
 
 post-extract:
