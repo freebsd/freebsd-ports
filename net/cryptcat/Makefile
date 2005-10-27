@@ -6,25 +6,25 @@
 #
 
 PORTNAME=	cryptcat
-PORTVERSION=	2.0
+PORTVERSION=	20031202
 CATEGORIES=	net
-MASTER_SITES=	http://farm9.org/Cryptcat/
-DISTNAME=	cryptcat_linux2
-EXTRACT_SUFX=	.tar
+MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@oven.org
 COMMENT=	Standard netcat enhanced with twofish encryption
 
-EXTRACT_AFTER_ARGS=	| ${PAX} -r
-WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	freebsd
+
+PLIST_FILES=	bin/cryptcat
+PORTDOCS=	README.cryptcat
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cryptcat ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/cryptcat \
-		&& ${CHMOD} 755 ${PREFIX}/share/doc/cryptcat
-	${INSTALL_DATA} ${WRKSRC}/README.cryptcat ${PREFIX}/share/doc/cryptcat
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
