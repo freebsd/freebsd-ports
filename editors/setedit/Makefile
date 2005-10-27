@@ -17,6 +17,8 @@ COMMENT=	Programmer's editor with a nice Text User Interface (TUI)
 LIB_DEPENDS=	rhtv.2:${PORTSDIR}/devel/rhtvision
 
 HAS_CONFIGURE=	yes
+CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}" \
+		X11BASE="${X11BASE}"
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 

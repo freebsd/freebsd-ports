@@ -1,0 +1,21 @@
+*** libmigdb/src/Makefile.orig	Thu Oct 27 12:18:57 2005
+--- libmigdb/src/Makefile	Thu Oct 27 12:19:34 2005
+***************
+*** 3,10 ****
+  
+  all: libmigdb.a
+  
+! CFLAGS=-O2 -Wall -gstabs+3 -I.
+! CXXFLAGS=-O2 -Wall -gstabs+3
+  LDLIBS=
+  
+  connect.o: mi_gdb.h
+--- 3,10 ----
+  
+  all: libmigdb.a
+  
+! CFLAGS=-O2 -Wall -I.
+! CXXFLAGS=-O2 -Wall
+  LDLIBS=
+  
+  connect.o: mi_gdb.h
