@@ -1,0 +1,16 @@
+This generates HTML (and non-HTML) reports from an SQLite database, taking
+care of the query-building and the report formatting. This also has methods
+for adding and updating the database.
+
+Reports can have nested headers which depend on the sort-order given. One can
+select the columns and order in which the values are displayed. The HTML page
+generated can be customized with templates.
+
+The SQLite::Work::CGI module has extra methods which deal with CGI using the
+CGI module.
+
+The sqlreport script uses SQLite::Work to generate reports from the
+command-line.
+
+Author: Kathryn Andersen (RUBYKAT), perlkat AT katspace dot com
+WWW: http://www.katspace.com

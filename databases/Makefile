@@ -227,6 +227,7 @@
     SUBDIR += p5-SQL-Abstract-Limit
     SUBDIR += p5-SQL-Statement
     SUBDIR += p5-SQL-Translator
+    SUBDIR += p5-SQLite-Work
     SUBDIR += p5-Search-InvertedIndex
     SUBDIR += p5-Search-Namazu
     SUBDIR += p5-T2
