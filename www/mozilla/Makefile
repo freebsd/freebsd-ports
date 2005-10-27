@@ -222,7 +222,8 @@ post-patch:
 	@${FIND} ${WRKSRC}/other-licenses/libical -name "*.c" | ${XARGS} \
 		${REINPLACE_CMD} 's|<malloc.h>|<stdlib.h>|g'
 	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g ; \
-		s|-lpthread|${PTHREAD_LIBS}|g' \
+		s|-lpthread|${PTHREAD_LIBS}|g ; \
+		s|/usr/X11R6|${X11BASE}|g' \
 		${WRKSRC}/configure \
 		${WRKSRC}/nsprpub/configure
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
