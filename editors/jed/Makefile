@@ -17,18 +17,12 @@ COMMENT=	A SLang-based text editor
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 
+CONFLICTS=	jed-devel-[0-9]*
+
 USE_REINPLACE=	yes
 
-.if !defined(WITHOUT_X11)
-USE_XLIB=	yes
-XJED=		xjed
-PLIST_SUB+=	NOXJED=""
-MAKE_ENV+=	XJED=yes
-.else
-PLIST_SUB+=	NOXJED="@comment "
-.endif
+OPTIONS=	X11 "Build xjed (depends of X11)" on
 
-DIST_SUBDIR=	jed
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	JED_ROOT=${PREFIX}/lib/jed \
 		CFLAGS="-I${LOCALBASE}/include" \
@@ -45,6 +39,18 @@ ALL_TARGET=	all getmail ${XJED}
 MAN1=		jed.1 rgrep.1
 INFO=		jed
 
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_X11)
+PLIST_SUB+=	NOXJED="@comment "
+.else
+USE_XLIB=	yes
+XJED=		xjed
+PLIST_SUB+=	NOXJED=""
+MAKE_ENV+=	XJED=yes
+.endif
+
+DIST_SUBDIR=	jed
 pre-configure:
 .for n in 1 2 3
 	@${MV} ${WRKSRC}/info/jed.${n}in ${WRKSRC}/info/jed.info-${n}
@@ -57,4 +63,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/README ${PREFIX}/lib/jed/lib
 	${INSTALL_DATA} ${WRKSRC}/lib/jed.conf ${PREFIX}/lib/jed/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
