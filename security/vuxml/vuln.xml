@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1daea60a-4719-11da-b5c6-0004614cc33d">
+    <topic>ruby -- vulnerability in the safe level settings</topic>
+    <affects>
+      <package>
+	<name>ruby</name>
+	<name>ruby_static</name>
+	<range><gt>1.6.*</gt><lt>1.6.8.2004.07.28_2</lt></range>
+	<range><gt>1.8.*</gt><lt>1.8.2_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ruby home page reports:</p>
+	<blockquote cite="http://www.ruby-lang.org/en/20051003.html">
+	  <p>The Object Oriented Scripting Language Ruby supports
+	    safely executing an untrusted code with two mechanisms:
+	    safe level and taint flag on objects.</p>
+	  <p>A vulnerability has been found that allows bypassing
+	    these mechanisms.</p>
+	  <p>By using the vulnerability, arbitrary code can be executed
+	    beyond the restrictions specified in each safe level.
+	    Therefore, Ruby has to be updated on all systems that use
+	    safe level to execute untrusted code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2337</cvename>
+      <url>http://www.ruby-lang.org/en/20051003.html</url>
+    </references>
+    <dates>
+      <discovery>2005-10-02</discovery>
+      <entry>2005-10-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2f0cb4bb-416d-11da-99fe-000854d03344">
     <topic>xloadimage -- buffer overflows in NIFF image title handling</topic>
     <affects>
