@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libslang2
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v2.0/ \
 		ftp://ftp.fu-berlin.de/pub/unix/misc/slang/v2.0/ \
