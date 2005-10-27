@@ -1,0 +1,18 @@
+CMUNGE is a simple tool for encrypting and compacting C source code, while
+leaving it syntactically and semantically unchanged. It does this by:
+
+* Recursively in-lining `user-defined' #include files.
+* Renaming C identifiers, except those in the C Standard Library, with names
+  like l1 (i.e. letter-l one), l2, l3, etc.
+* Removing comments and blank lines, converting multiple consecutive whitespace
+  characters (including `\n') into single blanks, removing all unnecessary
+  whitespace between tokens.
+* Outputting the transformed code in lines of least N characters long, where N
+  is a user-specified minimum line length.
+
+It accepts ANSI and K & R C as its input language.
+
+WWW: http://www.vcpc.univie.ac.at/~jhm/cmunge/
+
+- Frerich Raabe
+frerich.raabe@gmx.de

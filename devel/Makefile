@@ -143,6 +143,7 @@
     SUBDIR += clint
     SUBDIR += clisp-hyperspec
     SUBDIR += cmake
+    SUBDIR += cmunge
     SUBDIR += cocktail
     SUBDIR += codecrusader
     SUBDIR += codeville
