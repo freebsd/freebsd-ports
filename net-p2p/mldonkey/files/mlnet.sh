@@ -36,9 +36,8 @@ mlnet_start() {
 		echo -n " mlnet"
 		su ${mlnet_user} -c "${command} \
 			${mlnet_flags} \
-			-daemon \
 			-http_port ${mlnet_http_port}" \
-			>>${mlnet_logfile} 2>&1
+			>>${mlnet_logfile} 2>&1 &
 	fi
 }
 
