@@ -1,7 +1,7 @@
-mod_backhand is a project that allows load balancing through seemless
+mod_backhand is a project that allows load balancing through seamless
 HTTP proxying from one web server to another.  This proxying is used
-to evenly distribute the load of a site across multiple machines to
-that way under-utilized resources are utilized to their fullest, thus
+to evenly distribute the load of a site across multiple machines so
+that under-utilized resources are utilized to their fullest, thus
 providing fine-grained, per-request HTTP load balancing for a cluster.
 
 WWW: http://www.backhand.org/mod_backhand/
