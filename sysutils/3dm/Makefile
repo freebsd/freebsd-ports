@@ -21,8 +21,8 @@ USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 450000
-IGNORE=		"3ware 3ware ATA RAID (twe) is not supported in versions earlier than 4.5-RELEASE"
+.if ${OSVERSION} < 502010
+IGNORE=		"3DM Management Utility is not supported in versions earlier than 5.2.1-RELEASE"
 .endif
 
 ONLY_FOR_ARCHS=	i386 amd64
