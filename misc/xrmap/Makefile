@@ -6,47 +6,88 @@
 #
 
 PORTNAME=	xrmap
-PORTVERSION=	2.29
+PORTVERSION=	2.32
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/geosciences/xrmap/data/ \
-		ftp://ftp.ac-grenoble.fr/ge/geosciences/xrmap/
-DISTFILES=	${XRMAPFILE} ${DISTFILE} \
-		pdfmaps-1.1.tar.gz ${CIAFILE}
-EXTRACT_ONLY=	${XRMAPFILE}
+MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/geosciences/xrmap/data/:data \
+		ftp://ftp.ac-grenoble.fr/ge/geosciences/xrmap/:src
+DISTFILES=	${SRCFILE}:src ${DATAFILES:S|$|:data|} ${CIAFILE}:data
+DIST_SUBDIR=	xrmap
+EXTRACT_ONLY=	${SRCFILE} ${DATAFILES}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	serge.gagnon@b2b2c.ca
 COMMENT=	Map portions of the earth from a given longitude/latitude
-
-BROKEN=		"distfile outdated, 2.32 is latest"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=	2005-12-11
 
 USE_BZIP2=	yes
 USE_IMAKE=	yes
+MANCOMPRESSED=	no
 USE_XPM=	yes
 USE_REINPLACE=	yes
-XMKMF=		xmkmf
 
-MAN1=		xrmap.1
+CIAFILE=	CIA_WDB2.jpd.bz2
+SRCFILE=	xrmap-${PORTVERSION}.tar.bz2
+DATAFILES=	anthems-1.1.tar.bz2 earthdata_med_res.tar.bz2 \
+		factbook_text_2005.tar.bz2 factbook_html_2005.tar.bz2 \
+		flags-2.0.tar.bz2 hymns-1.2.tar.bz2 pdfmaps-1.2.tar.bz2
 
-CIAFILE=	CIA_WDB2.jpd.gz
-XRMAPFILE=	xrmap-${PORTVERSION}.tar.bz2
-DISTFILE=	anthems-1.1.tar.bz2 \
-		factbook_text_2002.tar.bz2 factbook_html_2002.tar.bz2 \
-		flags-1.1.tar.bz2 hymns-1.2.tar.bz2
+MAN1=		emx.1 xrmap.1
+PORTDOCS=	*
+
+MAKE_ARGS=	DESTDIR="${PREFIX}"
 
 post-extract:
-	for f in ${DISTFILE}; do \
-	${TAR} -jxf ${DISTDIR}/$${f} -C ${WRKSRC}; \
-	done
-	${TAR} -zxf ${DISTDIR}/pdfmaps-1.1.tar.gz -C ${WRKSRC}
-	${GUNZIP_CMD} -c ${DISTDIR}/${CIAFILE} >${WRKSRC}/CIA_WDB2.jpd
+	@${BZIP2_CMD} -dc ${_DISTDIR}/${CIAFILE} >${WRKDIR}/CIA_WDB2.jpd
+	@${RM} -f ${WRKDIR}/flags/svg/=
 
-do-configure:
-	cd ${WRKSRC}; ${XMKMF}; cd ${WRKSRC}/editkit; ${XMKMF}
+post-patch:
+	@${REINPLACE_CMD} -Ee 's|cc |$(CC) $(CFLAGS) |' ${WRKSRC}/tools/Makefile
 
-post-configure:
-	${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' ${WRKSRC}/editkit/Makefile
+do-install:
+# install xrmap
+	${INSTALL_PROGRAM} ${WRKSRC}/xrmap ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xrmap._man ${PREFIX}/man/man1/xrmap.1
+	${MKDIR} ${PREFIX}/share/rmap
+.for f in Locations Xrmaprc i18n picons pixmaps postscript rc themes
+	cd ${WRKSRC} && \
+	${FIND} ${f} -type d -exec ${MKDIR} "${PREFIX}/share/rmap/{}" \; && \
+	${FIND} ${f} -type f -exec ${INSTALL_DATA} "{}" "${PREFIX}/share/rmap/{}" \;
+.endfor
+
+# install editkit
+	${INSTALL_PROGRAM} ${WRKSRC}/editkit/emx ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/editkit/emx._man ${PREFIX}/man/man1/emx.1
+	${MKDIR} ${PREFIX}/share/editkit
+	${INSTALL_DATA} ${WRKSRC}/editkit/rc.example ${PREFIX}/share/editkit/rc.common
+	cd ${PREFIX}/share/editkit && ${LN} -sf rc.common emxrc
+
+# install earthview
+	${INSTALL_PROGRAM} ${WRKSRC}/earthview/earthview ${PREFIX}/bin
+.for f in population topography
+	${MKDIR} ${PREFIX}/share/rmap/earthdata/${f}
+	${INSTALL_DATA} ${WRKSRC}/earthview/data/${f}.cps ${PREFIX}/share/rmap/earthdata/${f}
+.endfor
+
+# install extra data
+.for f in CIA_WDB2.jpd anthems earthdata factbook flags hymns pdfmaps
+	cd ${WRKDIR} && \
+	${FIND} ${f} -type d -exec ${MKDIR} "${PREFIX}/share/rmap/{}" \; && \
+	${FIND} ${f} -type l -exec ${CP} -Rf "{}" "${PREFIX}/share/rmap/{}" \; && \
+	${FIND} ${f} ! -type d ! -type l -exec ${INSTALL_DATA} "{}" "${PREFIX}/share/rmap/{}" \;
+.endfor
+
+# install examples
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/EXAMPLE.rc ${EXAMPLESDIR}
+
+# install documentation
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.  for doc in CHANGES MAPEDIT TODO VECTORMAP
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.  endfor
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README.xrmap
+	${INSTALL_DATA} ${WRKSRC}/editkit/README ${DOCSDIR}/README.editkit
+	${INSTALL_DATA} ${WRKSRC}/earthview/README ${DOCSDIR}/README.earthview
+	${INSTALL_DATA} ${WRKSRC}/midi_cfg/README.midi ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

@@ -1,95 +1,47 @@
---- Imakefile.orig	Tue May 20 09:15:57 2003
-+++ Imakefile	Tue May 20 09:26:51 2003
-@@ -1,14 +1,15 @@
- XCOMM Should install to /usr or /usr/local ??
--DESTDIR=/usr
-+DESTDIR=
-+PREFIX=/usr/X11R6
+--- Imakefile.orig	Tue Sep  6 22:47:09 2005
++++ Imakefile	Thu Oct 27 11:48:43 2005
+@@ -15,22 +15,20 @@
+ DOCHTMLDIR=/X11R6/lib/X11/doc/html
  
- XCOMM Name of man subdirectory of DESTDIR:
--MANDIR=/X11R6/man/man1
-+MANDIR=$(PREFIX)/man/man1
- 
- XCOMM Name of bin subdirectory of DESTDIR: /X11R6/bin or maybe just  /bin
--BINDIR=/X11R6/bin
-+BINDIR=$(PREFIX)/bin
- 
- XCOMM Name of share subdirectory of DESTDIR:
--SHAREDIR=/share/rmap
-+SHAREDIR=$(PREFIX)/share/rmap
+ XCOMM Do you want to use the libxpm bug work around ? Comment out if not
+-XPMWORKAROUND=-DXPMBUG
  
  XCOMM Default external utilities :
  XCOMM PostScript viewer, image viewer, HTML viewer, Print command
-@@ -33,18 +34,18 @@
- XCOMM HP-UX
+ XCOMM default editor, MIDI player
  
- ZLIBDIR=
--CCOPTIONS = -Ae -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DHTML_VIEWER=\"$(HTML_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMIDIPLAYER=\"$(MIDIPLAYER)\"
-+CCOPTIONS = -Ae -DZLIB -DSHAREDIR=\"$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DHTML_VIEWER=\"$(HTML_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMIDIPLAYER=\"$(MIDIPLAYER)\"
+-PS_VIEWER="gv -noantialias"
+-IM_VIEWER="display -background gray84"
+-HTML_VIEWER="dillo"
++PS_VIEWER="gv --noantialias"
++IM_VIEWER="qiv"
++HTML_VIEWER="mozilla"
+ PRINT_CMD="lpr -Plp"
+ EDITOR="emx"
+ MIDIPLAYER="timidity -ig"
  
- #else
+ XCOMM SVG viewer - select which one you prefer
+-XCOMM SVG_VIEWER="xsvg -f"
+-SVG_VIEWER="inkview"
++SVG_VIEWER="xsvg -f"
  
- XCOMM SunOS
- ZLIBDIR=-L/usr/lib
--CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMIDIPLAYER=\"$(MIDIPLAYER)\"
-+CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMIDIPLAYER=\"$(MIDIPLAYER)\"
+ XCOMM Normally -- except for new architectures -- you should be done there.
  
+@@ -62,7 +60,7 @@
  XCOMM Solaris, Linux
  
  ZLIBDIR=-L/usr/lib
--CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DHTML_VIEWER=\"$(HTML_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMIDIPLAYER=\"$(MIDIPLAYER)\"
-+CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DHTML_VIEWER=\"$(HTML_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMIDIPLAYER=\"$(MIDIPLAYER)\"
- 
- #endif
- 
-@@ -63,31 +64,37 @@
- ComplexProgramTarget(xrmap)
- 
- install.man::
--	if [ -r $(DESTDIR)$(MANDIR)/xrmap.1x.gz ] ; \
--	   then gzip -f $(DESTDIR)$(MANDIR)/xrmap.1x ; fi
-+	if [ -r $(MANDIR)/xrmap.1x.gz ] ; \
-+	   then gzip -f $(MANDIR)/xrmap.1x ; fi
- 
+-CCOPTIONS=-O $(XPMWORKAROUND) -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" \
++CCOPTIONS=$(XPMWORKAROUND) -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" \
+   -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" \
+   -DSVG_VIEWER=\"$(SVG_VIEWER)\" -DHTML_VIEWER=\"$(HTML_VIEWER)\" \
+   -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" \
+@@ -91,8 +89,6 @@
  all::
- 	strip xrmap ; ls -al xrmap
- 	cd editkit ; xmkmf ; make
+ 	cd editkit ; xmkmf ; make DESTDIR=$(DESTDIR)
+ 	cd earthview ; make DESTDIR=$(DESTDIR)
+-	strip xrmap ; ls -al xrmap
+-	@cat EXTRADATA
+ 
  
  install:: install.man
--	$(MKDIRHIER) $(DESTDIR)$(SHAREDIR)
--	cp -f Xrmaprc Locations $(DESTDIR)$(SHAREDIR)
-+	$(MKDIRHIER) $(SHAREDIR)
-+	cp -f Xrmaprc Locations CIA_WDB2.jpd $(SHAREDIR)
-+	cp -f Xrmaprc Locations $(SHAREDIR)
- 	cd postscript ; rm -f *~
--	cp -fR postscript  $(DESTDIR)$(SHAREDIR)
-+	cp -fR postscript  $(SHAREDIR)
- 	cd themes ; rm -f *~
--	cp -fR themes  $(DESTDIR)$(SHAREDIR)
-+	cp -fR themes  $(SHAREDIR)
- 	cd pixmaps ;
--	cp -fR pixmaps  $(DESTDIR)$(SHAREDIR)
-+	cp -fR pixmaps  $(SHAREDIR)
- 	if [ -d i18n ] ; then cd i18n ; rm -f *~ ; fi
--	if [ -d i18n ] ; then cp -fR i18n $(DESTDIR)$(SHAREDIR) ; fi
--	$(MKDIRHIER) $(DESTDIR)$(SHAREDIR)/flags
--	if [ -d picons ] ; then cp -fR picons $(DESTDIR)$(SHAREDIR) ; fi
--	$(MKDIRHIER) $(DESTDIR)$(SHAREDIR)/doc
-+	if [ -d i18n ] ; then cp -fR i18n $(SHAREDIR) ; fi
-+	$(MKDIRHIER) $(SHAREDIR)/flags
-+	if [ -d flags ] ; then cp -fR flags $(SHAREDIR); fi
-+	if [ -d anthems ] ; then cp -fR anthems $(SHAREDIR); fi
-+	if [ -d hymns ] ; then cp -fR hymns $(SHAREDIR); fi
-+	if [ -d picons ] ; then cp -fR picons $(SHAREDIR) ; fi
-+	if [ -d pdfmaps ] ; then cp -fR pdfmaps $(SHAREDIR) ; fi
-+	if [ -d factbook ] ; then cp -fR factbook $(SHAREDIR) ; fi
-+	$(MKDIRHIER) $(SHAREDIR)/doc
- 	cp -f CHANGES INSTALL LICENSE MAPEDIT README TODO VECTORMAP WARNING \
--	      EXAMPLE.rc midi_cfg/README.midi $(DESTDIR)$(SHAREDIR)/doc
-+	      EXAMPLE.rc midi_cfg/README.midi $(SHAREDIR)/doc
- 	cd rc ; rm -f *~
--	cp -fR rc $(DESTDIR)$(SHAREDIR)
-+	cp -fR rc $(SHAREDIR)
- 	cd editkit ; xmkmf ; make install
- 	cat WARNING
- 
