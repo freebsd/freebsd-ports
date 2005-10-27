@@ -1,14 +1,5 @@
 --- src/unexelf.c.orig	Mon Jul  4 16:11:27 2005
 +++ src/unexelf.c	Thu Sep 22 22:38:19 2005
-@@ -478,7 +478,7 @@
- # include <sys/exec_elf.h>
- #endif
- 
--#if defined(__FreeBSD__) && (defined(__alpha__) || defined(__amd64__)) 
-+#if defined(__FreeBSD__) && (defined(__alpha__) || defined(_LP64)) 
- # ifdef __STDC__ 
- #  define ElfW(type)   Elf64_##type 
- # else 
 @@ -565,8 +565,8 @@
   *
   */
