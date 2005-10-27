@@ -6,30 +6,19 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	3.3.0
+PORTVERSION=	3.3.3
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/net/ftp/lftp/ \
-		ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/ \
-		ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/old/ \
-		http://the.wiretapped.net/mirrors/lftp/ \
-		http://the.wiretapped.net/mirrors/lftp/old/ \
-		ftp://ftp.ayamura.org/pub/lftp/ \
-		ftp://ftp.ayamura.org/pub/lftp/old/ \
-		ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/ \
-		ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/old/ \
-		ftp://the.ausmac.net/pub/mirrors/lftp/ \
-		ftp://the.ausmac.net/pub/mirrors/lftp/old/ \
-		ftp://ftp.bme.hu/packages/lftp/ \
-		ftp://ftp.bme.hu/packages/lftp/old/ \
-		ftp://ftp.tuwien.ac.at/infosys/browsers/ftp/lftp/ \
-		ftp://ftp.tuwien.ac.at/infosys/browsers/ftp/lftp/old/ \
-		ftp://ftp.cs.tu-berlin.de/pub/net/ftp/lftp/old/ \
+MASTER_SITES=	\
 		ftp://mirror.widexs.nl/pub/lftp/ \
 		ftp://mirror.widexs.nl/pub/lftp/old/ \
 		ftp://ftp.130th.net/pub/mirror/lftp/ \
 		ftp://ftp.130th.net/pub/mirror/lftp/old/ \
-		ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/ \
-		ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/old/
+		ftp://ftp.iasi.roedu.net/pub/os/Linux/network/ftp/lftp/ \
+		ftp://ftp.iasi.roedu.net/pub/os/Linux/network/ftp/lftp/old/ \
+		ftp://ftp.yars.free.net/pub/source/lftp/ \
+		ftp://ftp.yars.free.net/pub/source/lftp/old/ \
+		ftp://lftp.yar.ru/lftp/ \
+		ftp://lftp.yar.ru/lftp/old/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
