@@ -1,2 +1,4 @@
 MD5 (ruby/ruby-1.6.8-2004.07.28.tar.bz2) = dfaffe53746f58d357e577b56ff0013d
 SIZE (ruby/ruby-1.6.8-2004.07.28.tar.bz2) = 905405
+MD5 (ruby/1.6.8-patch1.gz) = 7a97381d61576e68aec94d60bc4cbbab
+SIZE (ruby/1.6.8-patch1.gz) = 1178
