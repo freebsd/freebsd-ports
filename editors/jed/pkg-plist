@@ -2,7 +2,7 @@
 bin/jed
 bin/jed-script
 bin/rgrep
-%%NOXJED%%bin/xjed
+%%XJED%%bin/xjed
 lib/jed/bin/getmail
 lib/jed/lib/README
 lib/jed/lib/abbrev.sl
@@ -164,41 +164,9 @@ lib/jed/lib/wmenu.sl
 lib/jed/lib/wordstar.hlp
 lib/jed/lib/wordstar.sl
 lib/jed/lib/yankpop.sl
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/manual/jed.tex
-%%PORTDOCS%%%%DOCSDIR%%/txt/abbrev.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/color.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/compile.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/dfa.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/edt.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/emacs.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/filelock.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/fold.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/hooks.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/ide-mode.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/jed_faq.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/jedfuns.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/libfuns.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/linux-keys.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/menus.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/mouse.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/pc-keys.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/program.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/rgrep.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/rmail.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/script.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/syntax.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/undo.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/wjed.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/wordstar.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/xjed.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/xrenderfont.txt
-%%PORTDOCS%%%%DOCSDIR%%/txt/yankpop.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/jed/bin
 @dirrm lib/jed/lib/colors/Xjed
 @dirrm lib/jed/lib/colors
+@dirrm lib/jed/lib/tm
 @dirrm lib/jed/lib
 @dirrm lib/jed
