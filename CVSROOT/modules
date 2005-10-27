@@ -4207,6 +4207,7 @@ ja-japaneseAFM	ports/japanese/japaneseAFM
 ja-jargon-fpw	ports/japanese/jargon-fpw
 ja-jcode.pl	ports/japanese/jcode.pl
 ja-jed		ports/japanese/jed
+ja-jed-devel	ports/japanese/jed-devel
 ja-jhd		ports/japanese/jhd
 ja-jisx0213-fonts	ports/japanese/jisx0213-fonts
 ja-jls		ports/japanese/jls
