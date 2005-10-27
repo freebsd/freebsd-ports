@@ -1,5 +1,7 @@
 MD5 (eb/eb-4.2.1.tar.bz2) = 245e6096cf424032a258b1e5691d51b1
 SIZE (eb/eb-4.2.1.tar.bz2) = 479688
+MD5 (eb/eb-4.2.1+.diff) = 604a44523c93fd1f6d5517510ce21ea4
+SIZE (eb/eb-4.2.1+.diff) = 873
 MD5 (eb/appendix/LIST) = 07bef37d1fbd4876077f95fe2ca630a1
 SIZE (eb/appendix/LIST) = 11210
 MD5 (eb/appendix/LIST-ja) = ec3c7c980b131d1dcdbe9eddee62e2e1
