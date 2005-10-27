@@ -7,6 +7,7 @@
 
 PORTNAME=	xrmap
 PORTVERSION=	2.32
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/geosciences/xrmap/data/:data \
 		ftp://ftp.ac-grenoble.fr/ge/geosciences/xrmap/:src
@@ -40,6 +41,8 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -Ee 's|cc |$(CC) $(CFLAGS) |' ${WRKSRC}/tools/Makefile
+	@${REINPLACE_CMD} -Ee '/FLAGPATH/ s,/(xpm|svg|eps|png),,' ${WRKSRC}/xrmap.c
+	@${REINPLACE_CMD} -e 's|SHAREDIR"/doc"|"${DOCSDIR}"|' ${WRKSRC}/xrmap.h
 
 do-install:
 # install xrmap
