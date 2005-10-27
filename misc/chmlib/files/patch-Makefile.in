@@ -1,15 +1,34 @@
---- Makefile.in.orig	Fri Feb 25 18:43:09 2005
-+++ Makefile.in	Fri Feb 25 18:43:21 2005
-@@ -26,7 +26,7 @@
- %.lo: %.c
+--- Makefile.in.orig    Wed Oct 26 16:13:45 2005
++++ Makefile.in Thu Oct 27 21:33:48 2005
+@@ -11,6 +11,7 @@
+ CFLAGS=@CFLAGS@ @CHM_MT@ @CHM_USE_PREAD@ @CHM_USE_IO64@ @DMALLOC_DISABLE@
+ LDFLAGS=@LDFLAGS@
+ prefix=@prefix@
++exec_prefix=@exec_prefix@
+ libdir=@libdir@
+ includedir=@includedir@
+ CC=@CC@
+@@ -29,17 +29,15 @@
+ src/%.lo: $(srcdir)/src/%.c
  	${LIBTOOL} --mode=compile ${CC} -c -o $@ $^ ${CFLAGS}
- 
+
 -src/libchm.la: src/chm_lib.lo src/lzx.lo
 +src/libchm.la: src/chm_lib.lo src/lzx.lo src/az_chmlib_add.lo
- 	${LIBTOOL} --mode=link ${CC} -o $@ $^ ${LDFLAGS} -rpath ${INSTALLPREFIX}/lib
- 
+ 	${LIBTOOL} --mode=link ${CC} -o $@ $^ ${LDFLAGS} -rpath $(libdir)
+
  install: src/libchm.la
- 
+ 	chmod a+r src/libchm.la
+ 	mkdir -p $(prefix)
+-	install -m0755 src/libchm.la $(DESTDIR)$(libdir)/
+ 	install -m0644 $(srcdir)/src/chm_lib.h $(DESTDIR)$(includedir)/
+-	install -m0755 src/.libs/libchm.so.0.0.0 $(DESTDIR)$(libdir)/
+-	ln -s $(DESTDIR)$(libdir)/libchm.so.0.0.0 $(DESTDIR)$(libdir)/libchm.so
+-	ln -s $(DESTDIR)$(libdir)/libchm.so.0.0.0 $(DESTDIR)$(libdir)/libchm.so.0
++	install -m0755 src/.libs/libchm.so.0 $(DESTDIR)$(libdir)/
++	ln -s $(DESTDIR)$(libdir)/libchm.so.0 $(DESTDIR)$(libdir)/libchm.so
+
+ clean:
+ 	rm -fr src/libchm.la src/*.o src/*.lo .libs src/.libs src/${EXAMPLES}
 
 patch-az_chmlib_add.c
 --- /dev/null	Fri Feb 25 18:33:00 2005
