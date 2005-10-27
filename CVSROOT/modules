@@ -7096,6 +7096,7 @@ openldap23-server	ports/net/openldap23-server
 openmap		ports/astro/openmap
 openmcu		ports/net/openmcu
 openmortal	ports/games/openmortal
+openmpi		ports/net/openmpi
 opennap		ports/audio/opennap
 openntpd	ports/net/openntpd
 openobex	ports/comms/openobex
