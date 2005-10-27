@@ -8,7 +8,8 @@
 PORTNAME=	CSP
 PORTVERSION=	0.32
 CATEGORIES=	security perl5
-MASTER_SITES=	ftp://ftp.it.su.se/pub/users/leifj/
+MASTER_SITES=	ftp://ftp.it.su.se/pub/users/leifj/ \
+		http://cold.darkambient.net/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lx@redundancy.redundancy.org
