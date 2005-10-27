@@ -1,8 +1,7 @@
-@comment $FreeBSD: /tmp/pcvs/ports/editors/jed-devel/Attic/pkg-plist,v 1.1 2005-10-27 09:57:11 garga Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/editors/jed-devel/Attic/pkg-plist,v 1.2 2005-10-27 16:46:54 garga Exp $
 bin/jed
 bin/jed-script
-bin/rgrep
-%%NOXJED%%bin/xjed
+%%XJED%%bin/xjed
 lib/jed/bin/getmail
 lib/jed/lib/README
 lib/jed/lib/abbrev.sl
