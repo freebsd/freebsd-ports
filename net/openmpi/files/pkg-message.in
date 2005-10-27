@@ -1,0 +1,7 @@
+In order to use Open MPI, you make the following additions to your
+PATH and LD_LIBRARY_PATH variables:
+
+    PATH		%%PREFIX%%/%%MPIDIR%%/bin
+    LD_LIBRARY_PATH	%%PREFIX%%/%%MPIDIR%%/lib
+
+Failure to do so will result in bizarre command failures.

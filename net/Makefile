@@ -484,6 +484,7 @@
     SUBDIR += openldap23-sasl-client
     SUBDIR += openldap23-server
     SUBDIR += openmcu
+    SUBDIR += openmpi
     SUBDIR += openntpd
     SUBDIR += openradius
     SUBDIR += openslp
