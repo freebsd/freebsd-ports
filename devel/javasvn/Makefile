@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	javasvn
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	devel java
 MASTER_SITES=	http://tmate.org/svn/
 DISTNAME=	org.tmatesoft.svn_${PORTVERSION}.standalone
@@ -24,9 +24,9 @@ JAVA_VERSION=	1.3+
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-DATA_FILES=	COPYING JAVAHL-LICENSE JSCH-LICENSE SEQUENCE-LICENSE \
+DATA_FILES=	COPYING GANYMED-LICENSE JAVAHL-LICENSE SEQUENCE-LICENSE \
 		changelog.txt logging.properties.disabled javasvnsrc.zip \
-		javasvn-cli.jar javasvn-javahl.jar javasvn.jar jsch.jar
+		javasvn-cli.jar javasvn-javahl.jar javasvn.jar ganymed.jar
 
 PLIST_FILES=	bin/javasvn ${DATA_FILES:S,^,%%DATADIR%%/,}
 PLIST_DIRS=	%%DATADIR%%
