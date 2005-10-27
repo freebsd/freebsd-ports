@@ -8,6 +8,7 @@
 
 PORTNAME=	dovecot
 DISTVERSION=	1.0.alpha4
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/
 
@@ -35,11 +36,12 @@ OPTIONS=	SASL2		"SASL2 support"		off \
 		VPOPMAIL	"VPopMail support"	off \
 		LDAP		"OpenLDAP support"	off \
 		PGSQL		"PostgreSQL support"	off \
-		MYSQL		"MySQL support"		off
+		MYSQL		"MySQL support"		off \
+		RCORDER		"RC Order support"	off
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500038
+.if ${OSVERSION} < 500038 || !defined(WITH_RCORDER)
 USE_RC_SUBR=	dovecot.sh
 .else
 USE_RCORDER=	dovecot.sh
