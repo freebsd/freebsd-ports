@@ -1,0 +1,18 @@
+--- GrabWeather.orig	Sun Feb 27 08:54:47 2005
++++ GrabWeather	Sun Feb 27 08:54:47 2005
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #
+ # Grabs the latest local weather conditions from the 
+@@ -40,8 +40,7 @@
+ # Is LWP installed?
+ eval { require LWP::UserAgent };
+ if ($@) {
+-  my $cmd = qq{wget --proxy=off --passive-ftp --tries=0 --quiet } .
+-            qq{--output-document=$home/$ReportDir/$HTMLFileName $URL};
++  my $cmd = qq{fetch -d -p -1 -q -o $home/$ReportDir/$HTMLFileName $URL};
+   `$cmd` == 0 or die "unable to fetch weather: $?";
+ } else {
+   $ENV{FTP_PASSIVE} = 1; # LWP uses Net::FTP internally.
