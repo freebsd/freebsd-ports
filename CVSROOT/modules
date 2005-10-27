@@ -1195,6 +1195,7 @@ cmpsfont	ports/print/cmpsfont
 cmt		ports/audio/cmt
 cmucl		ports/lang/cmucl
 cmucl-extra	ports/lang/cmucl-extra
+cmunge		ports/devel/cmunge
 cmus		ports/audio/cmus
 cnd		ports/net/cnd
 cnet		ports/net/cnet
