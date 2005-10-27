@@ -1,0 +1,8 @@
+The Parse::FixedLength module facilitates the process of breaking a
+string into its fixed-length components. Sure, it's a glorified (and in
+some ways more limited) substitute for the perl functions pack and
+unpack, but it's the author's belief that this module helps in the
+maintainability of working with fixed length formats as the number of
+fields in a format grows.
+
+WWW: http://search.cpan.org/dist/Parse-FixedLength/
