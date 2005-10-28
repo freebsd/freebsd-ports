@@ -24,6 +24,10 @@ RUN_DEPENDS+=	${LOCALBASE}/share/applications/.keep_me:${PORTSDIR}/misc/kdehier
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not build on amd64"
+.endif
+
 #
 # Unless EMACS_PORT_NAME is overriden by the user,
 # use any installed version of [X]Emacs.
