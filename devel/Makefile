@@ -72,6 +72,7 @@
     SUBDIR += avr-libc
     SUBDIR += avra
     SUBDIR += avrdude
+    SUBDIR += bazaar-ng
     SUBDIR += bcc
     SUBDIR += bcpp
     SUBDIR += beautifyphp
