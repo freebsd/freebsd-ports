@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	nork
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	A wrapper allowing use of linux-plugins with native applications
 
+BROKEN=		Broken by update to acroread7
+
 .include <bsd.port.pre.mk>
 
 .if		!defined(WITHOUT_PLUGINS)
