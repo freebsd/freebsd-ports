@@ -1876,6 +1876,10 @@
 %%ZOPEBASEDIR%%/lib/python/Products/ZReST/dtml/manage_addZReSTForm.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/ZReST/dtml/manage_editForm.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/ZReST/refresh.txt
+%%ZOPEBASEDIR%%/lib/python/Products/ZReST/tests/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZReST/tests/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZReST/tests/test_ZReST.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZReST/tests/test_ZReST.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/ZReST/version.txt
 %%ZOPEBASEDIR%%/lib/python/Products/ZReST/www/zrest.gif
 %%ZOPEBASEDIR%%/lib/python/Products/ZSQLMethods/CHANGES.txt
@@ -1938,10 +1942,13 @@
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/Utilities.pyc
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/__init__.py
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/RestrictedPython/notes.txt
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/__init__.py
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/before_and_after.py
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/before_and_after.pyc
+%%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/before_and_after24.py
+%%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/before_and_after24.pyc
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/class.py
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/class.pyc
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/lambda.py
@@ -6808,6 +6815,7 @@
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/Transience/www
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/Transience
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZReST/dtml
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZReST/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZReST/www
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZReST
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MIMETools
