@@ -25,6 +25,12 @@ SUB_FILES=	pkg-message
 SUB_LIST=	CFSD_BOOTSTRAP=${CFSD_BOOTSTRAP}
 PLIST_SUB=	CFSD_BOOTSTRAP=${CFSD_BOOTSTRAP}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+BROKEN=		"Does not compile on FreeBSD >= 7.0"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} 's/^\.TH SSH/.TH CFSSH/' ${WRKSRC}/cfssh.1
 
@@ -40,4 +46,4 @@ do-install:
 	${INSTALL} -d ${_BINOWNGRP} -m 0 ${CFSD_BOOTSTRAP}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

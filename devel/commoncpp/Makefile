@@ -36,7 +36,13 @@ INFO=		commoncpp2
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+BROKEN=		"Does not compile on FreeBSD >= 7.0"
+.endif
+
 pre-configure:
 	@${CP} ${LTMAIN} ${WRKSRC}/autoconf
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
