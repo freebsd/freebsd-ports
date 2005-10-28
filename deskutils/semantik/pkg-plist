@@ -19,6 +19,7 @@ lib/kde3/libkdissprosperslides.la
 lib/kde3/libkdissprosperslides.so
 lib/kde3/libkdissstx.la
 lib/kde3/libkdissstx.so
+share/applications/kde/kdissert.desktop
 share/applnk/Utilities/kdissert.desktop
 share/apps/kdissert/kdissertui.rc
 share/apps/kdissert/pics/nopix.png
@@ -34,9 +35,12 @@ share/apps/kdissert/templatedata/kdissprosperslides.tar.gz
 share/apps/kdissert/templatedata/kdissstx.tar.gz
 share/apps/kdissert/tips
 share/apps/kdissertpart/kdissertpart.rc
+share/config.kcfg/kdissert.kcfg
+share/doc/HTML/en/kdissert/common
 share/doc/HTML/en/kdissert/index.cache.bz2
 share/doc/HTML/en/kdissert/index.docbook
 share/doc/HTML/en/kdissert/screenshot.jpg
+share/doc/HTML/fr/kdissert/common
 share/doc/HTML/fr/kdissert/index.cache.bz2
 share/doc/HTML/fr/kdissert/index.docbook
 share/icons/hicolor/128x128/actions/kdissert_sort.png
@@ -62,6 +66,7 @@ share/locale/it/LC_MESSAGES/kdissert.mo
 share/locale/nl/LC_MESSAGES/kdissert.mo
 share/locale/pl/LC_MESSAGES/kdissert.mo
 share/mimelnk/application/x-kdissert.desktop
+share/services/kdissertpart.desktop
 @dirrm share/doc/HTML/fr/kdissert
 @dirrm share/doc/HTML/en/kdissert
 @dirrm share/apps/kdissertpart
