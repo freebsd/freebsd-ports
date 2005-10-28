@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	jigdo
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 #PORTREVISION?=	0
 CATEGORIES=	net
 MASTER_SITES=	http://atterer.net/jigdo/
