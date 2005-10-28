@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	antlr
-PORTVERSION=	2.7.4
+PORTVERSION=	2.7.5
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.antlr.org/download/
 
@@ -42,7 +42,7 @@ PLIST_FILES=	bin/antlr %%JAVAJARDIR%%/antlr.jar
 .include <bsd.port.pre.mk>
 
 post-extract:
-	(cd ${WRKSRC} && ${CP} antlr.jar antlrall.jar)
+	(cd ${WRKSRC} && ${CP} antlr-${PORTVERSION}.jar antlrall.jar)
 	${CHMOD} -R +w ${WRKSRC}
 
 post-configure:
@@ -57,7 +57,7 @@ pre-build:
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${MKDIR} ${JAVAJARDIR}
-	@${INSTALL_DATA} ${WRKSRC}/antlr.jar ${JAVAJARDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/antlr-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [ DONE ]"
 	@${ECHO_MSG} -n ">> Installing antlr script as ${PREFIX}/bin/${PORTNAME}..."
 	@${INSTALL_SCRIPT} ${WRKDIR}/antlr.sh ${PREFIX}/bin/antlr
