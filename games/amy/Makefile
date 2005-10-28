@@ -24,6 +24,12 @@ MAN6=		Amy.6
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Segfault during build on amd64"
+.endif
+
 post-extract:
 	${BZCAT} ${DISTDIR}/ClassicGames.pgn.bz2 > \
 		${WRKSRC}/PGN/ClassicGames.pgn
@@ -34,4 +40,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
