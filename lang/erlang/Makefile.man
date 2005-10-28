@@ -169,7 +169,6 @@ MAN3=	CosEventChannelAdmin.3 \
 	http_base_64.3 \
 	httpd.3 \
 	httpd_conf.3 \
-	httpd_core.3 \
 	httpd_socket.3 \
 	httpd_util.3 \
 	i.3 \
@@ -205,23 +204,10 @@ MAN3=	CosEventChannelAdmin.3 \
 	mnesia_frag_hash.3 \
 	mnesia_registry.3 \
 	mnesia_session.3 \
-	mod_actions.3 \
 	mod_alias.3 \
 	mod_auth.3 \
-	mod_browser.3 \
-	mod_cgi.3 \
-	mod_dir.3 \
-	mod_disk_log.3 \
 	mod_esi.3 \
-	mod_get.3 \
-	mod_head.3 \
-	mod_htaccess.3 \
-	mod_include.3 \
-	mod_log.3 \
-	mod_range.3 \
-	mod_responsecontrol.3 \
 	mod_security.3 \
-	mod_trace.3 \
 	ms_transform.3 \
 	net_adm.3 \
 	net_kernel.3 \
@@ -287,6 +273,14 @@ MAN3=	CosEventChannelAdmin.3 \
 	snmpm_network_interface.3 \
 	snmpm_user.3 \
 	sofs.3 \
+	ssh.3 \
+	ssh_cli.3 \
+	ssh_cm.3 \
+	ssh_sftp.3 \
+	ssh_sftpd.3 \
+	ssh_ssh.3 \
+	ssh_sshd.3 \
+	ssh_transport.3 \
 	ssl.3 \
 	ssl_pkix.3 \
 	string.3 \
@@ -309,7 +303,8 @@ MAN3=	CosEventChannelAdmin.3 \
 	xmerl_xpath.3 \
 	xmerl_xs.3 \
 	xref.3 \
-	yecc.3
+	yecc.3 \
+	zlib.3
 	
 MAN4=	app.4 \
 	appup.4 \
@@ -325,4 +320,3 @@ MAN6=	crypto.6 \
 	sasl.6 \
 	snmp.6 \
 	ssl.6
-
