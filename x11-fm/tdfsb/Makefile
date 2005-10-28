@@ -13,7 +13,8 @@ MASTER_SITES=	http://www.determinate.net/webdata/data/
 MAINTAINER=	alejandro@varnet.biz
 COMMENT=	A 3D filesystem browser
 
-LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
+LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg \
+		glut.3:${PORTSDIR}/graphics/libglut
 
 USE_GL=		yes
 USE_REINPLACE=	yes
