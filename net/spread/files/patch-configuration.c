@@ -1,6 +1,6 @@
---- configuration.c	Sun Sep 22 12:56:52 2002
-+++ configuration.c	Tue Aug  5 21:24:19 2003
-@@ -128,9 +128,6 @@
+--- configuration.c	Mon Sep 27 00:15:48 2004
++++ configuration.c	Tue Oct  4 14:40:51 2005
+@@ -130,9 +130,6 @@
  
  	if (NULL != (yyin = fopen(file_name,"r")) )
                  Alarm( PRINT, "Conf_init: using file: %s\n", file_name);

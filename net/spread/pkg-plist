@@ -3,8 +3,12 @@ bin/spmonitor
 bin/sptuser
 bin/spuser
 etc/rc.d/spread.sh
+@unexec if cmp -s %D/etc/spread.access_ip %D/etc/spread.access_ip.sample; then rm -f %D/etc/spread.access_ip; fi
 etc/spread.access_ip.sample
+@exec [ -f %B/spread.access_ip ] || cp %B/%f %B/spread.access_ip
+@unexec if cmp -s %D/etc/spread.conf %D/etc/spread.conf.sample; then rm -f %D/etc/spread.conf; fi
 etc/spread.conf.sample
+@exec [ -f %B/spread.conf ] || cp %B/%f %B/spread.conf
 include/sp.h
 include/sp_events.h
 include/sp_func.h
@@ -14,13 +18,14 @@ lib/libspread.so.1
 lib/libtspread.a
 lib/libtspread.so
 lib/libtspread.so.1
+sbin/spread
 %%SITE_PERL%%/%%PERL_ARCH%%/Spread.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread/Spread.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread/Spread.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread/autosplit.ix
-sbin/spread
-%%PORTDOCS%%%%EXAMPLESDIR%%/test.pl
+%%EXAMPLESDIR%%/test.pl
+@exec mkdir -p /var/run/spread %B/var/run
 @unexec rmdir /var/run/spread 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread 2>/dev/null || true
-%%PORTDOCS%%@unexec rmdir %D/%%EXAMPLESDIR%% 2>/dev/null || true
+@unexec rmdir %D/%%EXAMPLESDIR%% 2>/dev/null || true
