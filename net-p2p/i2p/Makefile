@@ -15,6 +15,8 @@ COMMENT=	An anonymous network
 
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
+BROKEN=		Does not build
+
 USE_BZIP2=	yes
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
