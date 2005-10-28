@@ -10,8 +10,11 @@ PORTVERSION=	0.4
 CATEGORIES=	deskutils
 MASTER_SITES=	http://soapbox.fissure.org/journal/
 
-MAINTAINER=	jose.devezas@fe.up.pt
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Journal is a tool for replacing the traditional text-based diary
+
+DEPRECATED=	"mastersite disappeared, no longer maintained by author"
+EXPIRATION_DATE=	2005-12-31
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
