@@ -17,6 +17,8 @@ COMMENT=	Adds a graphical, configurable timestamp to a grayscale image
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
+BROKEN=		Incomplete pkg-plist
+
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
