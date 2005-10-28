@@ -39,6 +39,11 @@ INFO=		librep
 PREFIX?=	${X11BASE}
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == ia64
+BROKEN=		"Does not build on ia64"
+.endif
+
 .if ${OSVERSION} > 500023
 LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
 .else
