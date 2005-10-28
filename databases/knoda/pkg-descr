@@ -6,12 +6,16 @@ Knoda allows you to:
 - create, alter and delete tables and indices;
 - add, change and delete data in tables;
 - define, execute and store sql queries;
+- define, execute and store queries with a "query by example" GUI;
+- create, alter and delete views;
 - import and export CSV data;
-- define and use forms; and
-- define and print reports
+- define and use forms;
+- define and print reports;
+- write your own extensions using the integrated Python interpreter
+  as scripting language.
 
 Its driver concept allows a uniform connection to different 
 database servers.
 
-Author: Horst Knorr <hk_classes@knorrnet.de>
+Author: Horst Knorr <hk_classes@knoda.org>
 WWW:    http://www.knoda.org/
