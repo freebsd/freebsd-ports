@@ -88,8 +88,8 @@ MODOPT=		camlp4o camlp4r ocamlc ocamldep ocamldoc ocamllex ocamlopt
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == sparc64
-BROKEN=	ocamlc.opt seg-faults on ${MACHINE_ARCH}, please try to fix
+.if ${ARCH} == sparc64 || ${ARCH} == ia64
+BROKEN=	ocamlc.opt seg-faults on ${ARCH}, please try to fix
 .endif
 PLIST_SUB+=	PROF=""
 
