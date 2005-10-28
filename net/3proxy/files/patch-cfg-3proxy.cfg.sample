@@ -1,0 +1,22 @@
+--- cfg/3proxy.cfg.sample.orig	Mon May 30 11:16:19 2005
++++ cfg/3proxy.cfg.sample	Mon May 30 11:17:18 2005
+@@ -30,15 +30,15 @@
+ # this example shows you how to include passwd file. For included files
+ # <CR> and <LF> are treated as field separators.
+ 
+-#daemon
++daemon
+ # now we will not depend on any console (daemonize). daemon must be given
+ # before any significant command on *nix.
+ 
+-service
++#service
+ # service is required under NT if you want 3proxy to start as service
+ 
+-#log /usr/local/etc/3proxy/logs/3proxy.log D
+-log c:\3proxy\logs\3proxy.log D
++log /var/log/3proxy.log D
++#log c:\3proxy\logs\3proxy.log D
+ # log allows to specify log file location and rotation, D means logfile
+ # is created daily
+ 

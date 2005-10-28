@@ -1,5 +1,6 @@
 bin/3proxy
 bin/dighosts
+bin/ftppr
 bin/mycrypt
 bin/pop3p
 bin/proxy

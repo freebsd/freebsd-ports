@@ -1,0 +1,20 @@
+--- Makefile.unix.orig	Mon May 30 11:14:05 2005
++++ Makefile.unix	Mon May 30 11:15:25 2005
+@@ -6,13 +6,13 @@
+ # libraries
+ 
+ 
+-CC = gcc
++CC ?= gcc
+ 
+ # you may need -L/usr/pkg/lib for older NetBSD versions
+-CFLAGS = -Wall -g -O2 -c -pthread -D_THREAD_SAFE -D_REENTRANT -DNOODBC -DWITH_STD_MALLOC -DFD_SETSIZE=4096 -DWITH_POLL
++CFLAGS = -Wall -c %%CFLAGS%% ${PTHREAD_CFLAGS} -DNOODBC -DWITH_STD_MALLOC -DFD_SETSIZE=4096 -DWITH_POLL
+ COUT = -o 
+-LN = gcc
+-LDFLAGS = -Wall -O2 -pthread
++LN ?= ${CC}
++LDFLAGS = -Wall ${PTHREAD_LIBS}
+ # -lpthreads may be reuqired on some platforms instead of -pthreads
+ LIBS =
+ LNOUT = -o 
