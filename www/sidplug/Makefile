@@ -21,7 +21,7 @@ MAKE_ARGS=	CC="${CC}" OPTIMIZER="${CFLAGS} -I$(X11BASE)/include"
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
 .endif
 
