@@ -18,6 +18,8 @@ COMMENT=	A multiple DNA or protein sequence alignment package
 BUILD_DEPENDS=	clustalw:${PORTSDIR}/biology/clustalw
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Unfetchable
+
 BUILD_WRKSRC=	${WRKSRC}/t_coffee_source
 MAKE_ENV=	MV=${MV} USER_BIN=${PREFIX}/bin \
 		CLUSTALW_4_TCOFFEE=${LOCALBASE}/bin/clustalw

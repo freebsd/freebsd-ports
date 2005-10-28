@@ -21,6 +21,8 @@ COMMENT?=	UNIX/X11 port of the Multi Arcade Machine Emulator (MAME)
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
+BROKEN=		Unfetchable
+
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
