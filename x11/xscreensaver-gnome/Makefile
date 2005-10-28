@@ -95,7 +95,8 @@ post-patch:
 		${WRKSRC}/hacks/glx/extrusion.c
 	@${REINPLACE_CMD} -e 's|||' \
 		${WRKSRC}/hacks/glx/klein.c
-	@${REINPLACE_CMD} -E -e 's|^[[:space:]]*GL_LIBS="${PTHREAD_LIBS}"|#|g' \
+	@${REINPLACE_CMD} -E -e 's|^[[:space:]]*GL_LIBS="${PTHREAD_LIBS}"|#|g ; \
+		s|/usr/X11R6|${X11BASE}|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD}  -e 's|<util.h>|<libutil.h>|' \
 		${WRKSRC}/hacks/phosphor.c ${WRKSRC}/hacks/apple2-main.c
