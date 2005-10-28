@@ -16,4 +16,6 @@ HYPHDIST+=	hyph_en_NZ.zip
 MASTERDIR=	${.CURDIR}/../ooodict-all
 RDEP=		${PORTSDIR}/editors/openoffice.org-1.1
 
+BROKEN=		Incorrect pkg-plist
+
 .include "${MASTERDIR}/Makefile"
