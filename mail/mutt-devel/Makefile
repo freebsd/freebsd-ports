@@ -23,6 +23,8 @@
 # and SLANG (WITH_MUTT_SLANG) which is the default. Note that you may
 # have to set the variables COLORTERM=yes and COLORFGBG="color1;color2" in your
 # environment to get slang function properly.
+# The default version for slang is 1.x. Define WITH_MUTT_SLANG2 if you want
+# to use the slang version 2.x
 #
 # If you want to install the mutt documentation in html and ps format define:
 #  WITH_MUTT_HTML
@@ -237,12 +239,18 @@ WITH_MUTT_NCURSES=	yes
 .endif
 .if defined(WITH_MUTT_SLANG)
 MUTT_USES_SLANG=	yes
+MUTT_USES_SLANG1=	yes
+.endif
+.if defined(WITH_MUTT_SLANG2)
+MUTT_USES_SLANG=	yes
+MUTT_USES_SLANG2=	yes
 .endif
 .if defined(WITH_MUTT_NCURSES) && !defined(MUTT_USES_SLANG)
 MUTT_USES_NCURSES=	yes
 .endif
 .if !defined(MUTT_USES_SLANG) && !defined(WITHOUT_MUTT_SLANG) && !defined(MUTT_USES_NCURSES)
 MUTT_USES_SLANG=	yes
+MUTT_USES_SLANG1=	yes
 .endif
 .if defined(WITHOUT_MUTT_SGMLFORMAT)
 XML_USED=	no
@@ -265,8 +273,10 @@ XML_USED=	no
 .if defined(MUTT_USES_NCURSES) && ${OSVERSION} < 400000
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 CFLAGS+=	-I${LOCALBASE}/include/ncurses -I${LOCALBASE}/include
-.elif defined(MUTT_USES_SLANG)
+.elif defined(MUTT_USES_SLANG1)
 LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
+.elif defined(MUTT_USES_SLANG2)
+LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
 .endif
 .if defined(WITH_MUTT_CYRUS_SASL2)
 LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
