@@ -12,7 +12,7 @@ PORTVERSION=	1.3
 CATEGORIES=	x11-themes gnome
 DISTNAME=	MCity-Aero-${PORTVERSION}
 
-MAINTAINER=	MrL0L@charter.net
+MAINTAINER=	MrL0Lz@gmail.com
 COMMENT=	Aero theme for Metacity
 
 NO_PACKAGE=	${REASON}

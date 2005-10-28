@@ -15,7 +15,7 @@ MASTER_SITES=	# Empty
 DISTFILES=	# Empty
 EXTRACT_ONLY=	# Empty
 
-MAINTAINER=	MrL0L@charter.net
+MAINTAINER=	MrL0Lz@gmail.com
 COMMENT=	Meta-port for Gnome Metacity themes
 
 RUN_DEPENDS=	${X11BASE}/share/gnome/themes/6nome/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/metacity-theme-6nome \

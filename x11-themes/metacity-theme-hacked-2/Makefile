@@ -12,7 +12,7 @@ PORTVERSION=	1.0
 CATEGORIES=	x11-themes gnome
 DISTNAME=	MCity-Hacked-2
 
-MAINTAINER=	MrL0L@charter.net
+MAINTAINER=	MrL0Lz@gmail.com
 COMMENT=	Hacked-2 theme for Metacity
 
 NO_PACKAGE=	${REASON}
