@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	asfrecorder
 DISTNAME=	ASFRecorder
 
-MAINTAINER= 	ports@oven.org
+MAINTAINER= 	ports@FreeBSD.org
 COMMENT=	Tool for downloading streaming media from the Internet
 
 USE_ZIP=	yes

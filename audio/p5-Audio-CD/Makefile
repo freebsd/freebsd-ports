@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Audio
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@oven.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl interface to libcdaudio (cd + cddb)
 
 LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
