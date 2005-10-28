@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.tux.org/pub/security/secnet/tools/nat20beta/ \
 		ftp://ftp.spin.ad.jp/pub/Security/nat/nat20beta/
 DISTNAME=	${PORTNAME}${PORTVERSION}.freebsd
 
-MAINTAINER=	ports@oven.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetBIOS auditing tool
 
 NO_PACKAGE=	"Redistribution prohibited by the license"

@@ -10,7 +10,7 @@ PORTVERSION=	1.07
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.habets.pp.se/pub/synscan/
 
-MAINTAINER=	ports@oven.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ARP level "ping" utility
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet

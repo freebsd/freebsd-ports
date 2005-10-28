@@ -11,7 +11,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://www.rogoyski.com/adam/programs/hexedit/
 DISTNAME=	hexedit-${PORTVERSION}
 
-MAINTAINER=	ports@oven.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full screen text mode Hex editor using the [n]curses library
 
 GNU_CONFIGURE=	yes

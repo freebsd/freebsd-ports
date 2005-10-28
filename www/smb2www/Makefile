@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	smb2www
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/0.0.//g}
 
-MAINTAINER=	ports@oven.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Windows Network client that is accessible through a web browser
 
 RUN_DEPENDS=	httpd:${PORTSDIR}/${APACHE_PORT} \

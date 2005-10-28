@@ -10,7 +10,7 @@ PORTVERSION=	3.4.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.public.iastate.edu/~chadspen/
 
-MAINTAINER=	ports@oven.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk port of Windows' Network Neighborhood
 
 RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/net/samba \

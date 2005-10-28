@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://robert.cheramy.net/ipfm/archive/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@oven.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A bandwidth analysis tool
 
 GNU_CONFIGURE=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://lopster.sourceforge.net/download/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@oven.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ client for Napster
 
 GNU_CONFIGURE=	yes
