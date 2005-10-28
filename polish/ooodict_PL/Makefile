@@ -18,4 +18,6 @@ THESDIST+=	thes_pl_PL.zip
 MASTERDIR=	${.CURDIR}/../../editors/ooodict-all
 RDEP=		${PORTSDIR}/editors/openoffice.org-1.1
 
+BROKEN=		Size mismatch
+
 .include "${MASTERDIR}/Makefile"

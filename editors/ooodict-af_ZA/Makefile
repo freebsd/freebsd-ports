@@ -14,4 +14,6 @@ LANGDIST+=	af_ZA.zip
 MASTERDIR=	${.CURDIR}/../ooodict-all
 RDEP=		${PORTSDIR}/editors/openoffice.org-1.1
 
+BROKEN=		Size mismatch
+
 .include "${MASTERDIR}/Makefile"
