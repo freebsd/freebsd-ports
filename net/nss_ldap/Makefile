@@ -48,4 +48,8 @@ do-install:
 .if ${OSVERSION} < 500112
 IGNORE=		NSS modules only supported on FreeBSD 5.1 or later
 .endif
+
+.if ${OSVERSION} >= 700000
+BROKEN=		"Does not compile on FreeBSD >= 7.0"
+.endif
 .include <bsd.port.post.mk>

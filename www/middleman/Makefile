@@ -41,6 +41,12 @@ CONFIGURE_ARGS+=	--enable-mtime
 MMAN_CACHE=	/var/cache/mman
 PLIST_SUB+=	MMAN_CACHE=${MMAN_CACHE}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+BROKEN=		"Does not compile on FreeBSD >= 7.0"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 	's|/usr/bin/mman|${PREFIX}/bin/mman|g ; \
@@ -62,4 +68,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
