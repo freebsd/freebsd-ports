@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdissert
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://www.kde-apps.org/content/files/
 DISTNAME=	12725-${PORTNAME}-${PORTVERSION}
@@ -21,6 +21,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
 USE_KDELIBS_VER=	3
 USE_REINPLACE=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500035
+CXXFLAGS+=	-fpermissive
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -39,4 +45,4 @@ do-install:
 	@cd ${WRKSRC} && scons install
 	@${STRIP_CMD} ${PREFIX}/bin/kdissert
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
