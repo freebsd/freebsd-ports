@@ -328,6 +328,7 @@ alleyoop	ports/devel/alleyoop
 alliance	ports/cad/alliance
 alloywm		ports/x11-wm/alloywm
 alltraxclock	ports/x11-clocks/alltraxclock
+alltray		ports/x11/alltray
 alphabet_sounds_fr	ports/french/alphabet_sounds_fr
 alsaplayer	ports/audio/alsaplayer
 altermime	ports/mail/altermime
