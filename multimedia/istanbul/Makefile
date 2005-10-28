@@ -27,8 +27,8 @@ USE_REINPLACE=		yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64" || ${ARCH} == "amd64"
-BROKEN="Configure Fails"
+.if ${ARCH} != "i386"
+BROKEN=			"Configure fails on !i386"
 .endif
 
 post-configure:
