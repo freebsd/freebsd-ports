@@ -702,10 +702,6 @@ etc/horde/httpd.conf.horde
 %%HORDEDIR%%/templates/admin/user/remove.inc
 %%HORDEDIR%%/templates/admin/user/removequeued.inc
 %%HORDEDIR%%/templates/admin/user/update.inc
-%%HORDEDIR%%/templates/categorytree/rowend.inc
-%%HORDEDIR%%/templates/categorytree/rowstart.inc
-%%HORDEDIR%%/templates/categorytree/tablefoot.inc
-%%HORDEDIR%%/templates/categorytree/tablehead.inc
 %%HORDEDIR%%/templates/common-footer.inc
 %%HORDEDIR%%/templates/common-header.inc
 %%HORDEDIR%%/templates/contents/open_view_win.js
@@ -1396,7 +1392,6 @@ etc/horde/httpd.conf.horde
 @dirrm %%HORDEDIR%%/templates/help
 @dirrm %%HORDEDIR%%/templates/data
 @dirrm %%HORDEDIR%%/templates/contents
-@dirrm %%HORDEDIR%%/templates/categorytree
 @dirrm %%HORDEDIR%%/templates/admin/user
 @dirrm %%HORDEDIR%%/templates/admin/setup
 @dirrm %%HORDEDIR%%/templates/admin/groups
