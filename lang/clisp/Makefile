@@ -32,6 +32,10 @@ MAKEMAKE_ARGS=--prefix=${PREFIX} --mandir=${PREFIX}/man --with-dynamic-ffi \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == amd64 || ${ARCH} == ia64
+BROKEN=		"Does not compile on amd64 or ia64"
+.endif
+
 # The source doesn't include a top-level Makefile, so we'll fake one.
 post-extract:
 	@cd ${WRKSRC} && \
