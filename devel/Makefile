@@ -1432,6 +1432,7 @@
     SUBDIR += qsa
     SUBDIR += qssl
     SUBDIR += ragel
+    SUBDIR += raknet
     SUBDIR += rapidsvn
     SUBDIR += re2c
     SUBDIR += readline
