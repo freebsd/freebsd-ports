@@ -34,6 +34,10 @@ MAN1=		uim-xim.1
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == ia64
+BROKEN=		"Segfault during build on ia64"
+.endif
+
 .if ${HAVE_GNOME:Mgtk20}
 USE_GNOME+=	gtk20
 PLIST_SUB+=	GTK=""
