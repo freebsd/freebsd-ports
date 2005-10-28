@@ -50,6 +50,8 @@ COMMENT=		GNU GPL sources to linux_base-rh-7.3, to satisfy licence
 
 RUN_DEPENDS=		${LINUXBASE}/usr/src:${PORTSDIR}/emulators/linux_base
 
+BROKEN=			Broken dependency
+
 DIST_SUBDIR=		rpm/src/rh-${PORTVERSION}
 NO_MTREE=		yes
 PLIST=			${WRKDIR}/plist

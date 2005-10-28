@@ -42,6 +42,8 @@ COMMENT=		(L)GPL sources for linux_base-8, to comply with licences
 
 RUN_DEPENDS=		${LINUXBASE}/usr/src:${PORTSDIR}/emulators/linux_base-8
 
+BROKEN=			Broken dependency
+
 .undef USE_LINUX
 
 DIST_SUBDIR=		rpm/src/rh-${PORTVERSION}
