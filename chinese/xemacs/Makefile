@@ -44,6 +44,12 @@ MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 ALL_TARGET=	all dist
 PLIST_SUB=	XEMACS_VER=20.4 XEMACS_ARCH=${XEMACS_ARCH}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386 || ${ARCH} == ia64
+BROKEN=		"Configure fails on i386 and ia64"
+.endif
+
 # Have
 pre-configure:
 .if defined(HAVE_MOTIF)
@@ -90,4 +96,4 @@ post-install:
 # Display XIM usages.
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
