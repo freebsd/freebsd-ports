@@ -1,5 +1,5 @@
---- Makefile.in	Thu Nov 13 08:42:54 2003
-+++ Makefile.in	Thu Jul 15 21:42:27 2004
+--- Makefile.in	Thu Sep 23 12:12:52 2004
++++ Makefile.in	Tue Oct  4 14:49:56 2005
 @@ -26,7 +26,7 @@
  #Rules: major  -- inc for incompatible change
  #     : minor  -- inc for bugfix or forward compatible change
@@ -30,7 +30,7 @@
  
  LIBSP_OBJS= alarm.o events.o memory.o sp.o
  
-@@ -124,8 +126,11 @@
+@@ -127,8 +129,11 @@
  	$(INSTALL) -m 0755 libspread.$(LIBVERSION).dylib $(DESTDIR)$(libdir)/libspread.$(LIBVERSION).dylib
  	(cd $(DESTDIR)$(libdir); $(SOFTLINK) -f libspread.$(LIBVERSION).dylib libspread.dylib)
  
@@ -44,7 +44,7 @@
  
  install-libspread.so:	libspread.so
  	$(INSTALL) -m 0755 libspread.so $(DESTDIR)$(libdir)/libspread.so.$(LIBVERSION)
-@@ -143,8 +148,11 @@
+@@ -146,8 +151,11 @@
  	$(INSTALL) -m 0755 libtspread.$(LIBVERSION).dylib $(DESTDIR)$(libdir)/libtspread.$(LIBVERSION).dylib
  	(cd $(DESTDIR)$(libdir); $(SOFTLINK) -f libtspread.$(LIBVERSION).dylib libtspread.dylib)
  
@@ -58,31 +58,31 @@
  
  install-libtspread.so:	libtspread.so
  	$(INSTALL) -m 0755 libtspread.so $(DESTDIR)$(libdir)/libtspread.so.$(LIBVERSION)
-@@ -153,17 +161,17 @@
+@@ -156,11 +164,11 @@
  spread$(EXEEXT): $(SPREADOBJS)
  	$(LD) -o $@ $(SPREADOBJS) $(LDFLAGS) $(LIBS)
  
 -spuser$(EXEEXT): libspread.a	user.o
 -	$(LD) -o $@ user.o $(LDFLAGS) libspread.a $(LIBS)
-+spuser$(EXEEXT): libspread.so	user.o
++spuser$(EXEEXT): libspread.a user.o
 +	$(LD) -o $@ user.o $(LDFLAGS) -lspread $(LIBS)
  
--spflooder$(EXEEXT): libspread.a flooder.o
+ spflooder$(EXEEXT): libspread.a flooder.o
 -	$(LD) -o $@ flooder.o $(LDFLAGS) libspread.a $(LIBS)
-+spflooder$(EXEEXT): libspread.so flooder.o
 +	$(LD) -o $@ flooder.o $(LDFLAGS) -lspread $(LIBS)
  
- spmonitor$(EXEEXT): $(MONITOROBJS)
- 	$(LD) -o $@ $(MONITOROBJS) $(LDFLAGS) $(LIBS) 
+ spmonitor$(EXEEXT): $(MONITOR_OBJS)
+ 	$(LD) -o $@ $(MONITOR_OBJS) $(LDFLAGS) $(LIBS) 
+@@ -169,7 +177,7 @@
+ 	$(LD) $(THLDFLAGS) -o $@ $(TMONITOR_OBJS) $(LDFLAGS) $(LIBS) $(THLIBS) 
  
--sptuser$(EXEEXT): user.to libtspread.a
+ sptuser$(EXEEXT): user.to libtspread.a
 -	$(LD) $(THLDFLAGS) -o $@ user.to libtspread.a $(LDFLAGS) $(LIBS) $(THLIBS)
-+sptuser$(EXEEXT): user.to libtspread.so
-+	$(LD) $(THLDFLAGS) -o $@ user.to -ltspread $(LDFLAGS) $(LIBS) $(THLIBS)
++	$(LD) $(THLDFLAGS) -o $@ user.to -lspread $(LDFLAGS) $(LIBS) $(THLIBS)
  
  spsimple_user$(EXEEXT): simple_user.o libspread.a
  	$(LD) -o $@ simple_user.o $(LDFLAGS) libspread.a $(LIBS) 
-@@ -192,7 +200,7 @@
+@@ -198,7 +206,7 @@
  	fi
  
  clean:
@@ -91,7 +91,7 @@
  	rm -f config.cache config.log docs/*.out core
  	rm -rf autom4te.cache
  
-@@ -248,11 +256,6 @@
+@@ -254,11 +262,6 @@
  	done
  	if [ ! -d $(DESTDIR)$(sysconfdir) ]; then \
  		$(buildtoolsdir)/mkinstalldirs $(DESTDIR)$(sysconfdir); \
