@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chkrootkit
-PORTVERSION=	0.46
+PORTVERSION=	0.46a
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/ \
 		ftp://gd.tuwien.ac.at/infosys/security/chkrootkit/ \
@@ -19,8 +19,6 @@ MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/ \
 
 MAINTAINER=	cordeiro@nic.br
 COMMENT=	A tool to locally check for signs of a rootkit
-
-BROKEN=	"chkproc sends a 25 signal to init causing a reboot after a 30s sleep"
 
 USE_REINPLACE=	yes
 
