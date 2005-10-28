@@ -51,6 +51,10 @@ CONFIGURE_ARGS+=	--enable-ui=x11
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64"
+BROKEN=			"Internal compiler error on ia64"
+.endif
+
 # jitc_x86 is avaible only on x86
 .if ${ARCH} == "i386"
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
