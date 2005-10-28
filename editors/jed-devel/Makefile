@@ -15,19 +15,17 @@ DISTNAME=	${PORTNAME}-B${DISTVERSION}
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A SLang-based text editor. Development version
 
-LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
-
 CONFLICTS=	jed-[0-9]*
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
-OPTIONS=	X11 "Build xjed (depends of X11)" on
+
+OPTIONS=	X11 "Build xjed (depends of X11)" on \
+		SLANG2 "Build using libslang-2.x" off
 
 DIST_SUBDIR=	jed
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	JED_ROOT=${PREFIX}/lib/jed \
-		CFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	JED_ROOT=${PREFIX}/lib/jed
 MAKE_ENV+=	DEST_INFO_DIR=${PREFIX}/${INFO_PATH} \
 		DEST_DOC_DIR=${DOCSDIR}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -44,6 +42,12 @@ MAN1=		jed.1 rgrep.1
 INFO=		jed
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_SLANG2)
+LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
+.else
+LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
+.endif
 
 .if defined(WITHOUT_X11)
 PLIST_SUB+=	XJED="@comment "
