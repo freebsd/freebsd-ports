@@ -878,6 +878,7 @@
     SUBDIR += unison
     SUBDIR += unix2tcp
     SUBDIR += uplog
+    SUBDIR += urelay
     SUBDIR += urlendec
     SUBDIR += utftpd
     SUBDIR += v6eval
