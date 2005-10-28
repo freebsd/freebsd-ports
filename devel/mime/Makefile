@@ -18,10 +18,16 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600034
+BROKEN=		"Does not compile on FreeBSD >= 6.0"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s,-fpic,-fpic -fPIC,g" ${WRKSRC}/Makefile.in
 
 post-install:
 	@ cd ${PREFIX}/lib ; ${LN} -sf libmime.so.1 libmime.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
