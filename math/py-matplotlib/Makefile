@@ -48,6 +48,10 @@ PLISTDIR+=	${EXAMPLESDIR}
 USE_GCC=	3.4
 .endif
 
+.if ${OSVERSION} >= 700000
+BROKEN=		"Does not build on FreeBSD >= 7.0"
+.endif
+
 post-patch:
 	@${GREP} -lR "share/matplotlib" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
 		-e "s,share/matplotlib,share/py-matplotlib,g"
