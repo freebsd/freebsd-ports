@@ -381,7 +381,7 @@ LIB_DEPENDS+=	theora.1:${PORTSDIR}/multimedia/libtheora
 # mad
 .if ${GST_PLUGIN}=="mad"
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
-		id3tag.2:${PORTSDIR}/audio/libid3tag
+		id3tag.0:${PORTSDIR}/audio/libid3tag
 .endif
 
 # mpeg2enc
