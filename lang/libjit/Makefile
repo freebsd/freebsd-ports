@@ -24,7 +24,7 @@ MAN3=		libjit.3
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64"
+.if ${ARCH} == "ia64" || ${ARCH} ==  "sparc64"
 BROKEN=		"Segfault during build"
 .endif
 
