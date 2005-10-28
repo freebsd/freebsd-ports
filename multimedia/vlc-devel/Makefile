@@ -217,8 +217,8 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.8.2.20050813
-PORTREVISION=	2
+DISTVERSION=	0.8.4.20051027
+PORTREVISION=	0
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/vlc/snapshots/
 #		http://download2.videolan.org/pub/videolan/testing/${PORTNAME}-${DISTVERSION}/ \
@@ -228,7 +228,7 @@ MASTER_SITES=	http://download.videolan.org/pub/vlc/snapshots/
 #		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${PORTVERSION}/ \
 MASTER_SITE_SUBDIR=	ahze/:mozilla
 PKGNAMESUFFIX?=	-devel${ESOUND_SUFFIX}${MOZILLA_SUFFIX}${PKGNAMESUFFIX2}
-DISTNAME=	${PORTNAME}-snapshot-${DISTVERSION:S/0.8.2.//}
+DISTNAME=	${PORTNAME}-snapshot-${DISTVERSION:S/0.8.4.//}
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Multimedia streaming server and player for various audio/video formats
@@ -236,12 +236,13 @@ COMMENT=	Multimedia streaming server and player for various audio/video formats
 RUN_DEPEDNS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
-CONFLICTS=	vlc-*-0.8.2*
+CONFLICTS=	vlc-*-0.8.4*
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-snapshot-${PORTVERSION:S/0.8.2.//}
+WRKSRC=		${WRKDIR}/${PORTNAME}-snapshot-${PORTVERSION:S/0.8.4.//}
 ### BROKEN -- Needs newer verision of toolame ###
 WITHOUT_TOOLAME=	yes
 WITHOUT_MOZILLA_PLUGIN=	yes
+WITHOUT_LIBMATROSKA=	yes	# needs newer version of libebml
 ### BROKEN ###
 
 WITH_VLC_DEFAULT_FONT?=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
@@ -312,6 +313,7 @@ WXGTK2_PORT=	wxgtk26
 CPPFLAGS+=	-I${X11BASE}/include/wx-2.6/
 .endif
 
+.if 0
 .if !defined(BATCH)
 OPTIONS=	AALIB "Console graphics support" Off \
 		ARTS "Arts audio support" Off \
@@ -355,6 +357,7 @@ OPTIONS=	AALIB "Console graphics support" Off \
 		WIN32_CODECS "Win32-codecs support (i386 only)" Off \
 		WXGTK "WxGtk+2 frontend" On \
 		X264 "H.264 AVC video codec" Off
+.endif
 .endif
 
 .include <bsd.port.pre.mk>
