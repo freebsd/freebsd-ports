@@ -13,6 +13,8 @@ PORTREVISION=	4
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of esound
 
+NOT_FOR_ARCHS=	amd64
+
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libaudiofile.so.0:${PORTSDIR}/audio/linux-libaudiofile
 
 RPM_SET=	esound-${PORTVERSION}-1.${MACHINE_ARCH}.rpm

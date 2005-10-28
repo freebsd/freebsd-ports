@@ -11,6 +11,8 @@ CATEGORIES=	graphics linux
 MAINTAINTER=	maho@FreeBSD.org
 COMMENT=	RPM of the ungif lib
 
+NOT_FOR_ARCHS=	amd64
+
 .if (${MACHINE_ARCH} == "i386")
 RPM_SET=	libungif-4.1.0-7.${MACHINE_ARCH}.rpm
 .else
