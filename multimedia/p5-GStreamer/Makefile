@@ -33,4 +33,10 @@ MAN3=	GStreamer.3 GStreamer::Bin.3 GStreamer::Buffer.3 GStreamer::Caps.3 \
 	GStreamer::RegistryPool.3 GStreamer::Scheduler.3 GStreamer::SchedulerFactory.3 GStreamer::Structure.3 \
 	GStreamer::Tag.3 GStreamer::TagSetter.3 GStreamer::Thread.3 GStreamer::index.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64
+BROKEN=		"Coredump during build on amd64"
+.endif
+
+.include <bsd.port.post.mk>
