@@ -25,6 +25,10 @@ PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/snapshots/c_tools/source/ \
 
 LCLTARGET?=	i386-rtems
 
+.if ${ARCH} == sparc64 && ${LCLTARGET} == arm-rtems
+BROKEN=		"Does not build on sparc64"
+.endif
+
 GDBNAME=	gdb-5.2
 PLIST=		${PKGDIR}/pkg-plist.${LCLTARGET}
 
