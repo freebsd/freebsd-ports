@@ -18,6 +18,8 @@ COMMENT=	X-Chat 2.x plugin to allow Common Lisp scripting
 BUILD_DEPENDS=	ecl:${PORTSDIR}/lang/ecl
 RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat2
 
+BROKEN=		Does not build
+
 INFO=		xchatlisp
 
 WRKSRC=		${WRKDIR}/eclplugin-${PORTVERSION}
