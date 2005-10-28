@@ -35,7 +35,7 @@ post-extract:
 	@cd ${WRKDIR} && ${TAR} xzf linuxdoom-1.10.src.tgz && ${TAR} xzf sndserv.tgz
 
 do-build:
-	@cd ${WRKDIR}/linuxdoom-1.10 && ${GMAKE}
+	@cd ${WRKDIR}/linuxdoom-1.10 && ${GMAKE} X11BASE=${X11BASE}
 	@cd ${WRKDIR}/sndserv && ${GMAKE}
 
 do-install:
