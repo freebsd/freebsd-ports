@@ -30,6 +30,10 @@ USE_GNOME=	gtk20
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64" || ${ARCH} == "ia64"
+BROKEN=		"Does not compile on sparc64 or ia64"
+.endif
+
 .if ${ARCH} == amd64
 CFLAGS+=	-fPIC
 .endif
