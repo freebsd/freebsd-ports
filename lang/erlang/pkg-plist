@@ -4,7 +4,7 @@ bin/erlc
 @comment Insert PLIST.lib-erlang here
 @comment -=[ begin PLIST.lib-erlang ]=-
 @comment -=[ end PLIST.lib-erlang ]=-
-@exec mkdir %D/lib/erlang/erts-5.4.3/man
+@exec mkdir %D/lib/erlang/erts-5.4.10/man
 @exec mkdir %D/lib/erlang/usr/lib
 @dirrm lib/erlang/man/man6
 @dirrm lib/erlang/man/man4
