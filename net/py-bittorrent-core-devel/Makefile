@@ -14,4 +14,6 @@ WITHOUT_GUI=	yes
 
 MASTERDIR=	${.CURDIR}/../py-bittorrent-devel
 
+BROKEN=		Incomplete pkg-plist
+
 .include "${MASTERDIR}/Makefile"
