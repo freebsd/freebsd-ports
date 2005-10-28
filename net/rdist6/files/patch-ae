@@ -29,7 +29,7 @@
   	if (becomeuser() != 0)
   		exit(1);
   #else	/* !DIRECT_RCMD */
-! 	if (geteuid() == 0 && strcmp(path_remsh, _PATH_REMSH) == 0) {
+! 	if (geteuid() == 0 && strcmp(path_remsh, "/usr/bin/rsh") == 0) {
 ! 		debugmsg(DM_MISC, "I am root, using rsh, therefore direct rcmd\n");
   		(void) signal(SIGPIPE, sighandler);
 + 
