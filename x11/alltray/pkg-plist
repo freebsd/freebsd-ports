@@ -1,0 +1,6 @@
+bin/alltray
+lib/liballtray.so
+lib/liballtray.so.0
+share/applications/alltray.desktop
+share/pixmaps/alltray.png
+@unexec rmdir %D/share/applications 2>/dev/null || true
