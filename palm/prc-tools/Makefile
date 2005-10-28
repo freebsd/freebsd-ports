@@ -65,8 +65,8 @@ MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600034
-BROKEN=		"Does not build on FreeBSD >= 6.0"
+.if ${OSVERSION} >= 70000
+BROKEN=		"Does not build on FreeBSD >= 7.0"
 .endif
 
 .if ${PERL_LEVEL} < 500600
@@ -80,7 +80,6 @@ post-extract:
 
 pre-patch:
 	${MKDIR} ${WRKSRC}/empty
-	@cd ${WRKDIR}/prc-tools-2.3 && ${PATCH} < ${FILESDIR}/pre-patch-gcc3-gcc-3.3.1.palmos.diff
 
 post-patch:
 	@(cd ${WRKDIR} && \
