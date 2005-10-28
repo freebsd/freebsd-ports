@@ -14,4 +14,6 @@ MASTERDIR=	${.CURDIR}/../../math/fftw3
 
 ONLY_FOR_ARCHS=	i386
 
+BROKEN=		"Does not build"
+
 .include "${MASTERDIR}/Makefile"
