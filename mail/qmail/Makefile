@@ -523,6 +523,8 @@ post-patch:
 		${WRKDIR}/TLS.readme
 	@${REINPLACE_CMD} "s|/usr/local/ssl|${OPENSSLBASE}|" \
 		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} "/^const char \*strerror/d" \
+		${WRKSRC}/tls.c
 .elif defined(SLAVE_LDAP)
 	@${REINPLACE_CMD} "s|^LDAPLIBS=-L/usr/local/lib|LDAPLIBS=-L${LOCALBASE}/lib|; \
 			   s|^LDAPINCLUDES=-I/usr/local/include|LDAPINCLUDES=-I${LOCALBASE}/include|" \
