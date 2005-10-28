@@ -22,6 +22,8 @@ RUN_DEPENDS=	octave:${PORTSDIR}/math/octave \
 		qhull:${PORTSDIR}/math/qhull \
 		bash:${PORTSDIR}/shells/bash
 
+BROKEN=		Incorrect pkg-plist
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	# empty
