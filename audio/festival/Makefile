@@ -58,6 +58,10 @@ do-build:
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not build on !i386"
+.endif
+
 do-install:
 	${MKDIR} ${FHOME}/lib/voices/english/
 	${MKDIR} ${FHOME}/lib/voices/spanish/
