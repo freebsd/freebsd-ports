@@ -2,6 +2,7 @@ bin/bf_compact
 bin/bf_copy
 bin/bf_tar
 bin/bogofilter
+bin/bogogrep
 bin/bogolexer
 bin/bogotune
 bin/bogoutil
@@ -9,17 +10,19 @@ bin/bogoupgrade
 etc/bogofilter.cf.example
 %%CONTRIB%%%%DOCSDIR%%/contrib/bfproxy
 %%CONTRIB%%%%DOCSDIR%%/contrib/bogo.R
+%%CONTRIB%%%%DOCSDIR%%/contrib/bogofilter-milter.pl
 %%CONTRIB%%%%DOCSDIR%%/contrib/bogofilter-qfe
-%%CONTRIB%%%%DOCSDIR%%/contrib/mime.get.rfc822
-%%CONTRIB%%%%DOCSDIR%%/contrib/printmaildir.pl
 %%CONTRIB%%%%DOCSDIR%%/contrib/bogominitrain.pl
-%%CONTRIB%%%%DOCSDIR%%/contrib/README.contrib
-%%CONTRIB%%%%DOCSDIR%%/contrib/bogogrep
+%%CONTRIB%%%%DOCSDIR%%/contrib/dot-qmail-bogofilter-default
+%%CONTRIB%%%%DOCSDIR%%/contrib/mailfilter.example
+%%CONTRIB%%%%DOCSDIR%%/contrib/mime.get.rfc822
+%%CONTRIB%%%%DOCSDIR%%/contrib/parmtest.sh
+%%CONTRIB%%%%DOCSDIR%%/contrib/printmaildir.pl
+%%CONTRIB%%%%DOCSDIR%%/contrib/procmailrc.example
 %%CONTRIB%%%%DOCSDIR%%/contrib/randomtrain
 %%CONTRIB%%%%DOCSDIR%%/contrib/scramble
 %%CONTRIB%%%%DOCSDIR%%/contrib/spamitarium
 %%CONTRIB%%%%DOCSDIR%%/contrib/stripsearch
 %%CONTRIB%%%%DOCSDIR%%/contrib/trainbogo.sh
-%%CONTRIB%%%%DOCSDIR%%/contrib/README.randomtrain
 %%CONTRIB%%@dirrm %%DOCSDIR%%/contrib
 %%CONTRIB%%@dirrm %%DOCSDIR%%

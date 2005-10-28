@@ -1,0 +1,79 @@
+--- ./contrib/randomtrain~	2005/10/26 22:05:55	1.1
++++ ./contrib/randomtrain	2005/10/27 07:54:15	1.2
+@@ -4,15 +4,17 @@
+ #
+ #  randomtrain -- bogofilter messages from files in random order
+ #                 and train if the result is wrong or uncertain
+-#  needs:    bash basename rm grep awk wc perl dd bogofilter
++#  needs:    POSIX compliant sh, basename rm grep awk wc perl dd bogofilter
+ #  usage:    see function usage() of this file
+ #
+ #  original author: 	Greg Louis <glouis@dynamicro.on.ca>
+ #  modified by: 	David Relson <relson@osagesoftware.com>
+ 
++# Note: on Solaris, use /usr/xpg4/bin/sh -- /bin/sh will not work.
++
+ BOGOFILTER="bogofilter"
+ 
+-function usage() {
++usage() {
+     name=$(basename $0)
+     echo "Usage: $name [-d bogodir] [-p pid] [-c cfg] [-]n|s filename [-]n|s filename [...]"
+     echo "       Messages contained in the files are fed to bogofilter"
+@@ -34,7 +36,7 @@
+     exit 1
+ }
+ 
+-function train_mbox() {
++train_mbox() {
+     # go through the list, extract the messages, eval with bogofilter
+     # and train if bogofilter is wrong or uncertain
+     cnt=0; nspam=0; ngood=0; rspam=0; rgood=0;
+@@ -63,7 +65,7 @@
+     printf "\r%5d%5d  %5d%5d\n" $nspam $rspam $ngood $rgood
+ }
+ 
+-function train_maildir() {
++train_maildir() {
+     # go through the list, extract the messages, eval with bogofilter
+     # and train if bogofilter is wrong or uncertain
+     cnt=0; nspam=0; ngood=0; rspam=0; rgood=0;
+@@ -103,9 +105,9 @@
+ mdir=2		# maildir mode
+ 
+ while [ ${#*} -gt 1 ]; do
+-    indic=${1:0-1:1} ; shift
++    indic=$1 ; shift
+     case "$indic" in
+-	s | n )
++	s|-s|n|-n)
+ 	    path=$1 ; shift
+ 	    cmd="$cmd -c $indic $path"
+ 	    if [ ! -r $path ]; then echo "file '$path' not found"; usage; fi
+@@ -118,22 +120,22 @@
+ 		fi
+ 	    fi
+ 	    ;;
+-	c ) 
++	c|-c)
+ 	    file=$1 ; shift
+ 	    cfg="-c $file"
+ 	    if [ ! -r $file ]; then echo "file '$file' not found"; usage; fi
+ 	    ;;
+-	p )
++	p|-p)
+ 	    pid=$1; shift;
+ 	    ;;
+-	d )
++	d|-d)
+ 	    [ -n "$bogodir" ] && usage
+ 	    bogodir=$1 ; shift
+ 	    if [ ! -d $bogodir ]; then echo "directory '$bogodir' not found"; usage; fi
+ 	    [ ! -f $bogodir/spamlist.db ] && $BOGOFILTER -d $bogodir -s -C < /dev/null
+ 	    [ ! -f $bogodir/goodlist.db ] && $BOGOFILTER -d $bogodir -n -C < /dev/null
+ 	    ;;
+-	* )
++	*)
+ 	    usage
+     esac
+ done

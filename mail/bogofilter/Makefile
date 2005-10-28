@@ -7,7 +7,7 @@
 
 PORTNAME=	bogofilter
 PORTVERSION=	0.96.3
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER?=	matthias.andree@gmx.de
 COMMENT=	Fast, teachable, learning spam detector
 
-OPTIONS=	BASH    "Install scripts that depend on the bash(1) shell" on
-OPTIONS+=	GSL     "Link with system-wide GSL dynamically (recommended)" on
+OPTIONS=	GSL     "Link with system-wide GSL dynamically (recommended)" on
 OPTIONS+=	UNICODE "Normalize tokens to Unicode (UTF-8)" on
 
 LIB_DEPENDS?=	db-4.3:${PORTSDIR}/databases/db43
@@ -30,10 +29,6 @@ GNU_CONFIGURE=	yes
 PATCH_STRIP=	-p1
 
 .include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_BASH)
-RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
-.endif
 
 BF_LIBS?=		-ldb-4.3
 BF_CPPFLAGS?=		-I${LOCALBASE}/include/db43 -I${LOCALBASE}/include
@@ -57,10 +52,6 @@ MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1 bogotune.1 \
 		bf_copy.1 bf_compact.1 bf_tar.1
 
 post-patch:
-	${REINPLACE_CMD} -e "s|/bin/bash|${LOCALBASE}/bin/bash|" \
-		${WRKSRC}/contrib/randomtrain \
-		${WRKSRC}/contrib/scramble \
-		${WRKSRC}/contrib/trainbogo.sh
 	${REINPLACE_CMD} -e 's|^#!.*perl|#! ${PERL}|' \
 		${WRKSRC}/src/tests/unsort.pl \
 		${WRKSRC}/contrib/bfproxy \
@@ -98,27 +89,25 @@ post-install::
 	doc/bogofilter-faq.html doc/bogofilter-faq-fr.html
 	  ${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/trio/AUTHORS ${DOCSDIR}/AUTHORS.trio
-.for i in contrib/dot-qmail-bogofilter-default
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
+.for i in README.randomtrain README.contrib
+	${INSTALL_DATA} ${WRKSRC}/contrib/${i} ${DOCSDIR}/contrib/${i}
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/trio/AUTHORS ${DOCSDIR}/AUTHORS.trio
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/doc/*.xml ${DOCSDIR}/xml
 	${INSTALL_DATA} ${WRKSRC}/doc/programmer/README.freebsd ${DOCSDIR}/programmer
 .endif
-	${INSTALL_PROGRAM} ${WRKSRC}/contrib/bogogrep ${DOCSDIR}/contrib/
-.for i in contrib/bogo.R contrib/bogofilter-qfe \
-		contrib/mime.get.rfc822 contrib/printmaildir.pl \
-		contrib/bogominitrain.pl contrib/README.contrib \
-		contrib/bfproxy contrib/spamitarium contrib/stripsearch
-	  ${INSTALL_SCRIPT} ${WRKSRC}/${i} ${DOCSDIR}/${i}
+	${INSTALL_PROGRAM} ${WRKSRC}/contrib/bogogrep ${PREFIX}/bin/
+.for i in bfproxy bogofilter-milter.pl bogo.R bogofilter-qfe \
+		mime.get.rfc822 parmtest.sh printmaildir.pl \
+		bogominitrain.pl \
+		randomtrain scramble spamitarium stripsearch trainbogo.sh
+	  ${INSTALL_SCRIPT} ${WRKSRC}/contrib/${i} ${DOCSDIR}/contrib/${i}
 .endfor
-.if !defined(WITHOUT_BASH)
-.for i in randomtrain scramble trainbogo.sh
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/${i} ${DOCSDIR}/contrib/
+.for i in dot-qmail-bogofilter-default \
+	mailfilter.example procmailrc.example
+	${INSTALL_DATA} ${WRKSRC}/contrib/${i} ${DOCSDIR}/contrib/${i}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/contrib/README.randomtrain ${DOCSDIR}/contrib/
-.endif
 	${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
