@@ -236,7 +236,7 @@ COMMENT=	Multimedia streaming server and player for various audio/video formats
 RUN_DEPEDNS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
-CONFLICTS=	vlc-*-0.8.4*
+CONFLICTS=	vlc-*-0.8.2*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-snapshot-${PORTVERSION:S/0.8.4.//}
 ### BROKEN -- Needs newer verision of toolame ###
