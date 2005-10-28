@@ -16,6 +16,8 @@ COMMENT=	Allows mass virtual hosting using libhome system with Apache 2.0.x
 
 LIB_DEPENDS+=	home:${PORTSDIR}/misc/libhome
 
+BROKEN=		Conflicting dependencies (apache 1.x vs apache 2.x)
+
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 WANT_PHP_MOD=	yes
