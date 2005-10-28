@@ -7,6 +7,7 @@
 
 PORTNAME=	mt-daapd
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mt-daapd
@@ -15,7 +16,7 @@ MAINTAINER=	Meno.Abels@Adviser.com
 COMMENT=	Multithread daapd yet another Server for Apple iTunes
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
-LIB_DEPENDS=	id3tag.2:${PORTSDIR}/audio/libid3tag
+LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	AUTOCONF=autoconf259 AUTOHEADER=autoheader259 CC="${CC} -pthread"

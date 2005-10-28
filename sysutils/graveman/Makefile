@@ -7,6 +7,7 @@
 
 PORTNAME=	graveman
 PORTVERSION=	0.3.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.nongnu.org/${PORTNAME}/
 
@@ -30,7 +31,7 @@ OPTIONS=	MP3 "MP3 Support" off \
 
 .if defined(WITH_MP3)
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
-		id3tag.2:${PORTSDIR}/audio/libid3tag
+		id3tag.0:${PORTSDIR}/audio/libid3tag
 RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
 .else
 CONFIGURE_ARGS+=--disable-mp3
