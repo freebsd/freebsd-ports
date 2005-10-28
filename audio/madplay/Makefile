@@ -7,7 +7,7 @@
 
 PORTNAME=	madplay
 PORTVERSION=	0.15.0b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.mars.org/pub/mpeg/
@@ -17,7 +17,7 @@ MAINTAINER=	asa@gascom.ru
 COMMENT=	Madplay MP3 player (part of MAD project)
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
-		id3tag.2:${PORTSDIR}/audio/libid3tag
+		id3tag.0:${PORTSDIR}/audio/libid3tag
 
 WANT_GNOME=	yes
 

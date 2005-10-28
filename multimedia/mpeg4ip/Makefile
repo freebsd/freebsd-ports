@@ -7,7 +7,7 @@
 
 PORTNAME=	mpeg4ip
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,7 @@ COMMENT=	Standards-based system to encode, stream and play MPEG-4 audio/video
 LIB_DEPENDS=	faac.0:${PORTSDIR}/audio/faac \
 		faad.0:${PORTSDIR}/audio/faad \
 		mp3lame.0:${PORTSDIR}/audio/lame \
-		id3tag.2:${PORTSDIR}/audio/libid3tag \
+		id3tag.0:${PORTSDIR}/audio/libid3tag \
 		a52.0:${PORTSDIR}/audio/liba52 \
 		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2	\
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \

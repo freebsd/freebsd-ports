@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkpod
 PORTVERSION=	0.94.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	GUI for Apple iPods using GTK2
 
-LIB_DEPENDS=	id3tag.2:${PORTSDIR}/audio/libid3tag
+LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag
 RUN_DEPENDS=	mp3gain:${PORTSDIR}/audio/mp3gain \
 		iconv:${PORTSDIR}/converters/libiconv
 

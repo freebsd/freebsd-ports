@@ -7,6 +7,7 @@
 
 PORTNAME=	madman
 PORTVERSION=	0.93
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	madman
@@ -16,7 +17,7 @@ COMMENT=	An advanced digital music manager
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
-		id3tag.2:${PORTSDIR}/audio/libid3tag \
+		id3tag.0:${PORTSDIR}/audio/libid3tag \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	muine
 PORTVERSION=	0.8.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://muine.gooeylinux.org/
 
@@ -15,7 +15,7 @@ MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Mono based Gnome audio player
 
 LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
-		id3tag.2:${PORTSDIR}/audio/libid3tag \
+		id3tag.0:${PORTSDIR}/audio/libid3tag \
 		gdbm:${PORTSDIR}/databases/gdbm \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 BUILD_DEPENDS=	gapi2-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp20 \

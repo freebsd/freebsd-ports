@@ -7,7 +7,7 @@
 
 PORTNAME=	ocp
 PORTVERSION=	0.1.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://labs.nixia.no/ \
 		http://critical.ch/distfiles/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://labs.nixia.no/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	The legendary Open Cubic Player
 
-LIB_DEPENDS=	id3tag.2:${PORTSDIR}/audio/libid3tag \
+LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag \
 		mad.2:${PORTSDIR}/audio/libmad \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 

@@ -218,7 +218,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.8.2.20050813
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/vlc/snapshots/
 #		http://download2.videolan.org/pub/videolan/testing/${PORTNAME}-${DISTVERSION}/ \
@@ -634,7 +634,7 @@ CONFIGURE_ARGS+=--disable-livedotcom
 .endif
 
 .if !defined(WITHOUT_MAD)
-LIB_DEPENDS+=	id3tag.2:${PORTSDIR}/audio/libid3tag \
+LIB_DEPENDS+=	id3tag.0:${PORTSDIR}/audio/libid3tag \
 		mad.2:${PORTSDIR}/audio/libmad
 CONFIGURE_ARGS+=--enable-mad \
 		--with-mad=${LOCALBASE}

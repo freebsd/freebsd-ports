@@ -7,7 +7,7 @@
 
 PORTNAME=	rhythmbox
 PORTVERSION=	0.8.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
@@ -17,7 +17,7 @@ MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Audio player for the Gnome 2 desktop environment
 
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
-		id3tag.2:${PORTSDIR}/audio/libid3tag
+		id3tag.0:${PORTSDIR}/audio/libid3tag
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
