@@ -12,7 +12,7 @@ PORTVERSION=	1.5
 CATEGORIES=	x11-themes gnome
 DISTNAME=	MCity-6nome-${PORTVERSION}
 
-MAINTAINER=	MRL0L@charter.net
+MAINTAINER=	MrL0Lz@gmail.com
 COMMENT=	6nome theme for Metacity
 
 NO_PACKAGE=	${REASON}

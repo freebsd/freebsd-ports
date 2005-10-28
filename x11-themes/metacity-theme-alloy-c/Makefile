@@ -12,7 +12,7 @@ PORTVERSION=	1.0
 CATEGORIES=	x11-themes gnome
 DISTNAME=	MCity-Alloy-C
 
-MAINTAINER=	MrL0L@charter.net
+MAINTAINER=	MrL0Lz@gmail.com
 COMMENT=	Alloy-C theme for Metacity
 
 NO_PACKAGE=	${REASON}

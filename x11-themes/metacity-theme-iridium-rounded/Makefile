@@ -12,7 +12,7 @@ PORTVERSION=	1.0
 CATEGORIES=	x11-themes gnome
 DISTNAME=	MCity-Iridium-rounded
 
-MAINTAINER=	MrL0L@charter.net
+MAINTAINER=	MrL0Lz@gmail.com
 COMMENT=	Iridium Rounded theme for Metacity
 
 NO_PACKAGE=	${REASON}
