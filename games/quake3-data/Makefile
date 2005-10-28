@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	alejandro@varnet.biz
 COMMENT=	Quake III Arena data files
 
+BROKEN=		Unfetchable
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

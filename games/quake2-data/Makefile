@@ -17,6 +17,8 @@ COMMENT=	Quake II data files
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
+BROKEN=		Unfetchable
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
