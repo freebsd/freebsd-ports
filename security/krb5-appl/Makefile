@@ -17,6 +17,8 @@ COMMENT=		An authentication system developed at MIT, successor to Kerberos IV
 
 BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
+BROKEN=			Does not build
+
 CONFLICTS=		krb4-[0-9]* heimdal-[0-9]*
 
 LATEST_LINK=		${PORTNAME}
