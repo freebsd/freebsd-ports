@@ -8,7 +8,7 @@
 PORTNAME=	xmbase-grok
 PORTVERSION=	1.5
 CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.fu-berlin.de/pub/unix/databases/xmbase-grok/ \
+MASTER_SITES=	ftp://grok.ftp.fu-berlin.de/ \
 		ftp://bitrot.de/pub/grok/
 DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}
 
