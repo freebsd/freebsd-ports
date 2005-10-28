@@ -102,6 +102,12 @@ MAN1=		gnunet-chat.1 gnunet-check.1 gnunet-convert.1 \
 		gnunet-update.1 gnunetd.1
 MAN5=		gnunet.conf.5
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+BROKEN=		"Does not compile on FreeBSD >= 7.0"
+.endif
+
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You can build GNUnet with the following options:"
@@ -134,4 +140,4 @@ post-install:
 	${INSTALL_DATA}	${WRKSRC}/ChangeLog ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
