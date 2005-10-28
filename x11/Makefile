@@ -17,6 +17,7 @@
     SUBDIR += XFree86-aoutlibs
     SUBDIR += XFree86-contrib
     SUBDIR += accessx
+    SUBDIR += alltray
     SUBDIR += apwal
     SUBDIR += aterm
     SUBDIR += bbappconf
