@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libbfd.a:${PORTSDIR}/devel/libbfd \
 		${LOCALBASE}/include/libelf/elf_repl.h:${PORTSDIR}/devel/libelf
 RUN_DEPENDS=	valgrind:${PORTSDIR}/devel/valgrind
 
+BROKEN=		Does not compile
+
 USE_GMAKE=	yes
 USE_X_PREFIX=	yex
 USE_GETTEXT=	yes
