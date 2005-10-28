@@ -17,5 +17,6 @@ COMMENT=	Abstract Large File
 
 USE_PYTHON=	yes
 USE_LIBTOOL_VER=15
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
