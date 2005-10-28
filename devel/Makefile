@@ -803,6 +803,7 @@
     SUBDIR += p5-Date-Calc
     SUBDIR += p5-Date-DayOfWeek
     SUBDIR += p5-Date-Easter
+    SUBDIR += p5-Date-Holidays-DK
     SUBDIR += p5-Date-ICal
     SUBDIR += p5-Date-ISO
     SUBDIR += p5-Date-Leapyear
