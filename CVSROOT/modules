@@ -7672,6 +7672,7 @@ p5-Date-Calc	ports/devel/p5-Date-Calc
 p5-Date-DayOfWeek	ports/devel/p5-Date-DayOfWeek
 p5-Date-Easter	ports/devel/p5-Date-Easter
 p5-Date-Handler	ports/math/p5-Date-Handler
+p5-Date-Holidays-DK	ports/devel/p5-Date-Holidays-DK
 p5-Date-ICal	ports/devel/p5-Date-ICal
 p5-Date-ISO	ports/devel/p5-Date-ISO
 p5-Date-Leapyear	ports/devel/p5-Date-Leapyear
