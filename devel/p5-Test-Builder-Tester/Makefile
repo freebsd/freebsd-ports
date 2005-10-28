@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Test testsuites that have been built with Test::Builder
 
+BROKEN=		Incorrect pkg-plist
+
 PERL_MODBUILD=	yes
 
 MAN3=		Test::Builder::Tester.3 Test::Builder::Tester::Color.3
