@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jmrueda@diatel.upm.es
 COMMENT=	Course management system based on social constructionism
 
+BROKEN=		Modifies ports tree at build time
+
 WRKSRC=		${WRKDIR}/moodle
 
 USE_PHP=	session gd pcre
