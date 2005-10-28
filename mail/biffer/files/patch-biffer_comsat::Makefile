@@ -1,8 +1,14 @@
---- biffer_comsat/Makefile.orig	Wed Oct 22 17:11:51 2003
-+++ biffer_comsat/Makefile	Wed Oct 22 17:12:01 2003
-@@ -11,6 +11,8 @@
- BINDIR=        /usr/local/libexec
- MANDIR=        /usr/local/man/man
+--- biffer_comsat/Makefile.orig	Thu Oct 27 23:23:21 2005
++++ biffer_comsat/Makefile	Thu Oct 27 23:25:14 2005
+@@ -8,9 +8,12 @@
+ 
+ SRCS=	comsat.c usebiffer.c
+ 
+-BINDIR=        /usr/local/libexec
+-MANDIR=        /usr/local/man/man
++PREFIX=        /usr/local
++BINDIR=        ${PREFIX}/libexec
++MANDIR=        ${PREFIX}/man/man
  
 +CC?=		cc
 +CFLAGS?=	-O -pipe
