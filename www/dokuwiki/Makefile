@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	A simple and easy to use wiki, no database required
 
+BROKEN=		Unfetchable
+
 USE_PHP=	gd imagick pcre session xml zlib
 PHP4_PORT?=	www/mod_php4
 NO_BUILD=	YES
