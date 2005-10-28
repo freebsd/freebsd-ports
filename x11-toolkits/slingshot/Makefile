@@ -26,8 +26,8 @@ MAKE_ENV=	OPENWINHOME=${X11BASE}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64 (missing -fPIC)"
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		"Does not compile on amd64 or ia64 (missing -fPIC)"
 .endif
 
 pre-patch:
