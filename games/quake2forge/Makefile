@@ -19,7 +19,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 USE_AUTOCONF_VER=259
-USE_XLIB=	yes
 USE_REINPLACE=	yes
 WANT_SDL=	yes
 
@@ -43,42 +42,52 @@ WITH_LIBAO=	yes
 .if !defined (WITHOUT_LIBAO) && defined(WITH_LIBAO)
 LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
 CONFIGURE_ARGS+=--with-ao=${LOCALBASE}
-PLIST_SUB+=	AO:=""
+PLIST_SUB+=	AO=""
 .else
 CONFIGURE_ARGS+=--without-ao
-PLIST_SUB+=	AO:="@comment "
+PLIST_SUB+=	AO="@comment "
 .endif
 
 .if !defined (WITHOUT_SVGALIB) && defined(WITH_SVGALIB)
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 CONFIGURE_ARGS+=--with-svgalib=${LOCALBASE}
-PLIST_SUB+=	SVGA:=""
+PLIST_SUB+=	SVGA=""
 .else
 CONFIGURE_ARGS+=--with-svgalib=no
-PLIST_SUB+=	SVGA:="@comment "
+PLIST_SUB+=	SVGA="@comment "
+.endif
+
+.if !defined(WITHOUT_X11)
+USE_XLIB=	yes
+CONFIGURE_ARGS+=--with-x
+PLIST_SUB+=	X11=""
+.else
+WITHOUT_GL=	yes
+CONFIGURE_ARGS+=--without-x
+PLIST_SUB+=	X11="@comment "
 .endif
 
 .if !defined(WITHOUT_GL)
 CONFIGURE_ARGS+=--with-opengl=${X11BASE}
-PLIST_SUB+=	GL:=""
+PLIST_SUB+=	GL=""
 .else
 CONFIGURE_ARGS+=--with-opengl=no
-PLIST_SUB+=	GL:="@comment "
+PLIST_SUB+=	GL="@comment "
 .endif
 
 .if !defined(WITHOUT_SDL) && defined(WITH_SDL)
 USE_SDL=	yes
 CONFIGURE_ARGS+=--with-sdl=${LOCALBASE}
 .if !defined(WITHOUT_GL)
-PLIST_SUB+=	SDLGL:=""
+PLIST_SUB+=	SDLGL=""
 .else
-PLIST_SUB+=	SDLGL:="@comment "
+PLIST_SUB+=	SDLGL="@comment "
 .endif
-PLIST_SUB+=	SDL:=""
+PLIST_SUB+=	SDL=""
 .else
 CONFIGURE_ARGS+=--disable-sdl --disable-sdltest
-PLIST_SUB+=	SDL:="@comment "
-PLIST_SUB+=	SDLGL:="@comment "
+PLIST_SUB+=	SDL="@comment "
+PLIST_SUB+=	SDLGL="@comment "
 .endif
 
 pre-everything::
@@ -91,8 +100,11 @@ pre-everything::
 .if !defined(WITH_SDL)
 	@${ECHO_MSG} "Define WITH_SDL to use SDL"
 .endif
+.if !defined(WITHOUT_X11)
+	@${ECHO_MSG} "Define WITHOUT_X11 to disable X11 and OpenGL support"
+.endif
 .if !defined(WITHOUT_GL)
-	@${ECHO_MSG} "Define WITHOUT_GL to disable GL"
+	@${ECHO_MSG} "Define WITHOUT_GL to disable OpenGL support"
 .endif
 
 .if ( ${OSVERSION} < 500000 )
