@@ -34,8 +34,11 @@ include/antlr/SemanticException.hpp
 include/antlr/String.hpp
 include/antlr/Token.hpp
 include/antlr/TokenBuffer.hpp
+include/antlr/TokenRefCount.hpp
 include/antlr/TokenStream.hpp
 include/antlr/TokenStreamBasicFilter.hpp
+include/antlr/TokenStreamRewriteEngine.hpp
+include/antlr/TokenWithIndex.hpp
 include/antlr/TreeParser.hpp
 include/antlr/TokenStreamException.hpp
 include/antlr/TokenStreamHiddenTokenFilter.hpp
