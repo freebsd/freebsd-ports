@@ -1,0 +1,10 @@
+What Is S5?
+
+     * It's a Simple Standards-based Slide Show System
+     * One XHTML document provides all of the slide show's content
+     * CSS handles the layout and look of the slides
+     * JavaScript handles the dynamic aspects of the show
+     * That's all there is to it!
+
+Author:		Eric Meyer <eric@meyerweb.com>
+WWW:		http://www.meyerweb.com/eric/tools/s5/

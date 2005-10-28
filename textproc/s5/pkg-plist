@@ -1,0 +1,69 @@
+bin/s5-blank
+%%DATADIR%%/features.html
+%%DATADIR%%/filemap.html
+%%DATADIR%%/pix/mememe01.png
+%%DATADIR%%/pix/mememe02.png
+%%DATADIR%%/pix/mememe03.png
+%%DATADIR%%/pix/mememe04.png
+%%DATADIR%%/pix/mememe05.png
+%%DATADIR%%/pix/S501.jpg
+%%DATADIR%%/pix/S502.jpg
+%%DATADIR%%/pix/S503.jpg
+%%DATADIR%%/pix/S504.jpg
+%%DATADIR%%/pix/s5filemap.png
+%%DATADIR%%/primer/s5-primer01.png
+%%DATADIR%%/primer/s5-primer02.png
+%%DATADIR%%/primer/s5-primer03.png
+%%DATADIR%%/primer/s5-primer04.png
+%%DATADIR%%/primer/s5-primer05.png
+%%DATADIR%%/primer/s5-primer06.png
+%%DATADIR%%/primer/s5-primer07.png
+%%DATADIR%%/primer.html
+%%DATADIR%%/s5-blank.html
+%%DATADIR%%/s5-demo.html
+%%DATADIR%%/s5-intro.html
+%%DATADIR%%/structure-min.html
+%%DATADIR%%/structure-ref.html
+%%DATADIR%%/ui/default/blank.gif
+%%DATADIR%%/ui/default/bodybg.gif
+%%DATADIR%%/ui/default/framing.css
+%%DATADIR%%/ui/default/iepngfix.htc
+%%DATADIR%%/ui/default/opera.css
+%%DATADIR%%/ui/default/outline.css
+%%DATADIR%%/ui/default/pretty.css
+%%DATADIR%%/ui/default/print.css
+%%DATADIR%%/ui/default/s5-core.css
+%%DATADIR%%/ui/default/slides.css
+%%DATADIR%%/ui/default/slides.js
+%%DATADIR%%/ui/i18n/00_head.txt
+%%DATADIR%%/ui/i18n/bg-shade.png
+%%DATADIR%%/ui/i18n/bg-slide.jpg
+%%DATADIR%%/ui/i18n/framing.css
+%%DATADIR%%/ui/i18n/pretty.css
+%%DATADIR%%/ui/i18n/s5-core.css
+%%DATADIR%%/ui/i18n/slides.css
+%%DATADIR%%/xoxo-s5-demo.html
+%%DATADIR%%/xoxo-s5-intro.html
+%%DATADIR%%/xoxo-structure-min.html
+%%DATADIR%%/xoxo-structure-ref.html
+%%DATADIR%%/s5-blank/s5-blank.html
+%%DATADIR%%/s5-blank/ui/default/blank.gif
+%%DATADIR%%/s5-blank/ui/default/bodybg.gif
+%%DATADIR%%/s5-blank/ui/default/framing.css
+%%DATADIR%%/s5-blank/ui/default/iepngfix.htc
+%%DATADIR%%/s5-blank/ui/default/opera.css
+%%DATADIR%%/s5-blank/ui/default/outline.css
+%%DATADIR%%/s5-blank/ui/default/pretty.css
+%%DATADIR%%/s5-blank/ui/default/print.css
+%%DATADIR%%/s5-blank/ui/default/s5-core.css
+%%DATADIR%%/s5-blank/ui/default/slides.css
+%%DATADIR%%/s5-blank/ui/default/slides.js
+@dirrm %%DATADIR%%/pix
+@dirrm %%DATADIR%%/primer
+@dirrm %%DATADIR%%/s5-blank/ui/default
+@dirrm %%DATADIR%%/s5-blank/ui
+@dirrm %%DATADIR%%/s5-blank
+@dirrm %%DATADIR%%/ui/default
+@dirrm %%DATADIR%%/ui/i18n
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%

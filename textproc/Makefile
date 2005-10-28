@@ -665,6 +665,7 @@
     SUBDIR += rubygem-syntax
     SUBDIR += rw-aspell
     SUBDIR += rxp
+    SUBDIR += s5
     SUBDIR += sablotron
     SUBDIR += sagasu
     SUBDIR += sarep
