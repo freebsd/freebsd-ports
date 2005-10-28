@@ -29,7 +29,7 @@ MAKE_ENV=	BINDIR=${PREFIX}/sbin
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 600015
-IGNORE=		'estctrl now contained in the base system (see powerd(8))'
+IGNORE=		estctrl now contained in the base system (see powerd(8))
 .endif
 
 post-extract:
