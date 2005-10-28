@@ -22,6 +22,8 @@ RUN_DEPENDS=	gapi2-parser:${PORTSDIR}/x11-toolkits/gtk-sharp20 \
 		monodoc:${PORTSDIR}/devel/mono-tools \
 		${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
 
+BROKEN=		Incorrect pkg-plist
+
 .if !defined(WITH_MOZILLA)
 MOZILLA=	mozilla
 .else
