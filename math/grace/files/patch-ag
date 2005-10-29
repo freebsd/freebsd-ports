@@ -1,0 +1,12 @@
+--- src/dlmodule.c.orig  3 Jul 2004 20:47:45 -0000
++++ src/dlmodule.c      27 Oct 2005 11:08:30 -0000
+@@ -89,6 +89,9 @@
+         return RETURN_FAILURE;
+     }
+     
++    /* clear error indicator */
++    dlerror();
++
+     newkey.data = dlsym(handle, dl_function);
+     if ((error = (char *) dlerror()) != NULL) {
+         errmsg(error);
