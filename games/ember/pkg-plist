@@ -18,10 +18,12 @@ share/games/ember/carpenter/blueprints/house.blueprint.xml
 share/games/ember/carpenter/blueprints/sty.blueprint.xml
 share/games/ember/carpenter/modelblockspecs/general.modelblocks.xml
 share/games/ember/jesus/modelmappings/general.modelmapping.xml
+share/games/ember/media/gui/CEGUIConfig.xsd
 share/games/ember/media/gui/Font.xsd
 share/games/ember/media/gui/GUILayout.xsd
 share/games/ember/media/gui/GUIScheme.xsd
 share/games/ember/media/gui/Imageset.xsd
+share/games/ember/media/gui/cegui/datafiles/configs/cegui.config
 share/games/ember/media/gui/cegui/datafiles/fonts/Font.xsd
 share/games/ember/media/gui/cegui/datafiles/fonts/tahoma-10.xml
 share/games/ember/media/gui/cegui/datafiles/fonts/tahoma-14.xml
@@ -33,30 +35,30 @@ share/games/ember/media/gui/cegui/datafiles/imagesets/TaharezLookMouse.imageset
 share/games/ember/media/gui/cegui/datafiles/imagesets/WindowsLook.imageset
 share/games/ember/media/gui/cegui/datafiles/imagesets/iconset_mason.imageset
 share/games/ember/media/gui/cegui/datafiles/imagesets/iconset_standard.imageset
+share/games/ember/media/gui/cegui/datafiles/layouts/ChatWidget.xml
+share/games/ember/media/gui/cegui/datafiles/layouts/ConsoleWidget.xml
+share/games/ember/media/gui/cegui/datafiles/layouts/DebugWidget.xml
+share/games/ember/media/gui/cegui/datafiles/layouts/GiveWidget.xml
 share/games/ember/media/gui/cegui/datafiles/layouts/GUILayout.xsd
+share/games/ember/media/gui/cegui/datafiles/layouts/HelpWidget.xml
+share/games/ember/media/gui/cegui/datafiles/layouts/IngameChatWidget.xml
+share/games/ember/media/gui/cegui/datafiles/layouts/InspectWidget.xml
+share/games/ember/media/gui/cegui/datafiles/layouts/InventoryWidget.xml
+share/games/ember/media/gui/cegui/datafiles/layouts/JesusEdit.widget
+share/games/ember/media/gui/cegui/datafiles/layouts/JesusEditFile.widget
+share/games/ember/media/gui/cegui/datafiles/layouts/JesusEditPreview.widget
+share/games/ember/media/gui/cegui/datafiles/layouts/MakeEntityWidget.xml
+share/games/ember/media/gui/cegui/datafiles/layouts/MeshPreview.widget
+share/games/ember/media/gui/cegui/datafiles/layouts/Performance.widget
+share/games/ember/media/gui/cegui/datafiles/layouts/Quit.widget
+share/games/ember/media/gui/cegui/datafiles/layouts/ServerBrowserWidget.xml
+share/games/ember/media/gui/cegui/datafiles/layouts/ServerWidget.xml
 share/games/ember/media/gui/cegui/datafiles/schemes/GUIScheme.xsd
 share/games/ember/media/gui/cegui/datafiles/schemes/TaharezLook.scheme
 share/games/ember/media/gui/cegui/datafiles/schemes/TaharezLookWidgetAliases.scheme
 share/games/ember/media/gui/cegui/datafiles/schemes/TaharezLookWidgets.scheme
 share/games/ember/media/gui/cegui/datafiles/schemes/WindowsLook.scheme
 share/games/ember/media/gui/cegui/datafiles/schemes/WindowsLookWidgets.scheme
-share/games/ember/media/gui/cegui/widgets/ChatWidget.xml
-share/games/ember/media/gui/cegui/widgets/ConsoleWidget.xml
-share/games/ember/media/gui/cegui/widgets/DebugWidget.xml
-share/games/ember/media/gui/cegui/widgets/GiveWidget.xml
-share/games/ember/media/gui/cegui/widgets/HelpWidget.xml
-share/games/ember/media/gui/cegui/widgets/IngameChatWidget.xml
-share/games/ember/media/gui/cegui/widgets/InspectWidget.xml
-share/games/ember/media/gui/cegui/widgets/InventoryWidget.xml
-share/games/ember/media/gui/cegui/widgets/JesusEdit.widget
-share/games/ember/media/gui/cegui/widgets/JesusEditFile.widget
-share/games/ember/media/gui/cegui/widgets/JesusEditPreview.widget
-share/games/ember/media/gui/cegui/widgets/MakeEntityWidget.xml
-share/games/ember/media/gui/cegui/widgets/MeshPreview.widget
-share/games/ember/media/gui/cegui/widgets/Performance.widget
-share/games/ember/media/gui/cegui/widgets/Quit.widget
-share/games/ember/media/gui/cegui/widgets/ServerBrowserWidget.xml
-share/games/ember/media/gui/cegui/widgets/ServerWidget.xml
 share/games/ember/media/modeldefinitions/buildingelements.modeldef.xml
 share/games/ember/media/modeldefinitions/characters.modeldef.xml
 share/games/ember/media/modeldefinitions/creatures.modeldef.xml
@@ -79,12 +81,13 @@ share/icons/worldforge/ember.png
 @dirrm share/games/ember/carpenter
 @dirrm share/games/ember/jesus/modelmappings
 @dirrm share/games/ember/jesus
+@dirrm share/games/ember/media/gui/cegui/datafiles/configs
 @dirrm share/games/ember/media/gui/cegui/datafiles/fonts
 @dirrm share/games/ember/media/gui/cegui/datafiles/imagesets
 @dirrm share/games/ember/media/gui/cegui/datafiles/layouts
+@dirrm share/games/ember/media/gui/cegui/datafiles/lua_scripts
 @dirrm share/games/ember/media/gui/cegui/datafiles/schemes
 @dirrm share/games/ember/media/gui/cegui/datafiles
-@dirrm share/games/ember/media/gui/cegui/widgets
 @dirrm share/games/ember/media/gui/cegui
 @dirrm share/games/ember/media/gui
 @dirrm share/games/ember/media/modeldefinitions/trees/dynamic
