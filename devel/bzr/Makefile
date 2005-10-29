@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	bazaar-ng
-PORTVERSION=	0.1.1
+PORTVERSION=	0.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.bazaar-ng.org/pkg/
 MASTER_SITE_SUBDIR=	gnu-arch
 DISTNAME=	bzr-${PORTVERSION}
 
 MAINTAINER=	lulf@kerneled.org
-COMMENT=	An implementation of the GNU arch RCS protocol by Canonical
+COMMENT=	A Python implementation of the GNU arch RCS protocol by Canonical
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/elementtree/ElementTree.py:${PORTSDIR}/devel/py-elementtree
 
