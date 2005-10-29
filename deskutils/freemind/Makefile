@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	freemind
-PORTVERSION=	0.8.0b
+PORTVERSION=	0.8.0
+PORTEPOCH=	1
 CATEGORIES=	deskutils editors java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freemind
-DISTNAME=	${PORTNAME}-bin-max-${PORTVERSION:S/./_/g:S/b/_rc2/}
+DISTNAME=	${PORTNAME}-bin-max-${PORTVERSION:S/./_/g}
 
 MAINTAINER=	cartola@openit.com.br
 COMMENT=	Free mind-mapping software written in Java
@@ -40,7 +41,7 @@ SUB_FILES=	freemind.sh
 do-build:
 	(cd ${WRKSRC}; \
 	${UNZIP_CMD} lib/freemind.jar freemind.properties; \
-	${REINPLACE_CMD} -e '/^properties_folder/ s/freemind/.&/; s|./doc/freemind.mm|file:${DATADIR}/doc/freemind.mm|' freemind.properties; \
+	${REINPLACE_CMD} -e '/^keystroke_node_increase_font_size/ s/PLUS/EQUALS/;/^keystroke_branch_increase_font_size/ s/PLUS/EQUALS/;s|./doc/freemind.mm|file:${DATADIR}/doc/freemind.mm|' freemind.properties; \
 	${ZIP_CMD} -u lib/freemind.jar freemind.properties)
 
 do-install:

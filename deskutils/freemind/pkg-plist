@@ -6,10 +6,12 @@ bin/freemind
 %%DATADIR%%/accessories/ilink.png
 %%DATADIR%%/accessories/leaf.png
 %%DATADIR%%/accessories/marktree.js
+%%DATADIR%%/accessories/mindmanager2mm.xsl
 %%DATADIR%%/accessories/minus.png
 %%DATADIR%%/accessories/mm2html.xsl
 %%DATADIR%%/accessories/mm2latexartcl.xsl
 %%DATADIR%%/accessories/mm2latexbook.xsl
+%%DATADIR%%/accessories/mm2oowriter.xsl
 %%DATADIR%%/accessories/mm2opml.xsl
 %%DATADIR%%/accessories/mm2text.xsl
 %%DATADIR%%/accessories/mm2xbel.xsl
@@ -31,6 +33,7 @@ bin/freemind
 %%DATADIR%%/lib/ant/lib/sax.jar
 %%DATADIR%%/lib/ant/lib/xsdlib.jar
 %%DATADIR%%/lib/commons-lang-2.0.jar
+%%DATADIR%%/lib/forms-1.0.5.jar
 %%DATADIR%%/lib/freemind.jar
 %%DATADIR%%/license
 %%DATADIR%%/patterns.xml
