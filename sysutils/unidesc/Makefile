@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unidesc
-PORTVERSION=	2.14
+PORTVERSION=	2.15
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 EXTRACT_SUFX=	.tgz
