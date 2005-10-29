@@ -20,6 +20,7 @@ COMMENT=	Chinese-English / English-Chinese dictionary
 LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
 
 DEPRECATED=	cdict5-file.tgz does not exist anymore
+IGNORE=		${DEPRECATED}
 EXPIRATION_DATE=	2005-12-29
 
 IGNOREFILES=	cdict5-file.tgz
