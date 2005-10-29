@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	postgis-jdbc
-PORTVERSION=	1.0.0r3
+PORTVERSION=	1.0.4
 CATEGORIES=	databases java
-MASTER_SITES=	http://postgis.refractions.net/
-DISTNAME=	postgis-1.0.0-rc3
+MASTER_SITES=	http://postgis.refractions.net/download/
+DISTNAME=	postgis-${PORTVERSION}
 
 MAINTAINER=	lawrance@FreeBSD.org
 COMMENT=	PostGIS spatial data structures for JDBC
@@ -34,6 +34,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/jdbc2
 do-install:
 		${INSTALL_DATA} ${WRKSRC}/postgis.jar ${JAVAJARDIR}
 		${MKDIR} ${EXAMPLESDIR}
-		${INSTALL_DATA} ${WRKSRC}/src/examples/* ${EXAMPLESDIR}/
+		${INSTALL_DATA} ${WRKSRC}/src/examples/* ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
