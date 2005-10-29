@@ -19,8 +19,6 @@ BUILD_DEPENDS=	${JAVALIBDIR}/castor.jar:${PORTSDIR}/java/castor \
 		${JAVALIBDIR}/jakarta-oro.jar:${PORTSDIR}/java/jakarta-oro \
 		${JAVALIBDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j
 
-BROKEN=		Incomplete pkg-plist
-
 USE_JAVA=	yes
 JAVA_VERSION=	1.4
 USE_ANT=	yes

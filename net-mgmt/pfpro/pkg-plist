@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/pfpro
 %%DOCSDIR%%/BUGS
 %%DOCSDIR%%/CHANGELOG
@@ -11,6 +12,7 @@ share/xml/pfpro/firewall.xsd
 share/xsl/pfpro/001to010.xsl
 share/xsl/pfpro/xml2pf.xsl
 @dirrm share/xsl/pfpro
+@unexec rmdir %D/share/xsl 2>/dev/null || true
 @dirrm share/xml/pfpro
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%DOCSDIR%%
