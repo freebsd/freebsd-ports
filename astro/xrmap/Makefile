@@ -7,11 +7,11 @@
 
 PORTNAME=	xrmap
 PORTVERSION=	2.32
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/geosciences/xrmap/data/:data \
 		ftp://ftp.ac-grenoble.fr/ge/geosciences/xrmap/:src
-DISTFILES=	${SRCFILE}:src ${DATAFILES:S|$|:data|} ${CIAFILE}:data
+DISTFILES=	${SRCFILE}:src ${DATAFILES:S|$|:data|} ${CIAFILE}:data ${POPFILE}:data
 DIST_SUBDIR=	xrmap
 EXTRACT_ONLY=	${SRCFILE} ${DATAFILES}
 
@@ -25,6 +25,7 @@ USE_XPM=	yes
 USE_REINPLACE=	yes
 
 CIAFILE=	CIA_WDB2.jpd.bz2
+POPFILE=	population.dat.bz2
 SRCFILE=	xrmap-${PORTVERSION}.tar.bz2
 DATAFILES=	anthems-1.1.tar.bz2 earthdata_med_res.tar.bz2 \
 		factbook_text_2005.tar.bz2 factbook_html_2005.tar.bz2 \
@@ -37,6 +38,9 @@ MAKE_ARGS=	DESTDIR="${PREFIX}"
 
 post-extract:
 	@${BZIP2_CMD} -dc ${_DISTDIR}/${CIAFILE} >${WRKDIR}/CIA_WDB2.jpd
+	@${MKDIR} ${WRKDIR}/earthdata/population
+	@${BZIP2_CMD} -dc ${_DISTDIR}/${POPFILE} > \
+	${WRKDIR}/earthdata/population/population.dat
 	@${RM} -f ${WRKDIR}/flags/svg/=
 
 post-patch:
