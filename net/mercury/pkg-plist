@@ -2,10 +2,12 @@ bin/Mercury_Messenger
 %%INSTDIR%%/Mercury_Messenger
 %%INSTDIR%%/lib/JFlash.jar
 %%INSTDIR%%/lib/XML.jar
+%%INSTDIR%%/lib/commons-jxpath-1.1.jar
 %%INSTDIR%%/lib/dMSN.jar
 %%INSTDIR%%/lib/dllStuff.jar
 %%INSTDIR%%/lib/jazzy_spellcheck.jar
 %%INSTDIR%%/lib/jdom1_0.jar
+%%INSTDIR%%/lib/sbbi-upnplib-1.0.2.jar
 %%INSTDIR%%/lib/xmlpull.jar
 %%INSTDIR%%/resources/AppData/Backgrounds/Default.png
 %%INSTDIR%%/resources/AppData/CustomEmoticons/MSN6.zip
@@ -23,6 +25,10 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/Plugins/LinuxCPU/Plugin.class
 %%INSTDIR%%/resources/AppData/Plugins/LinuxCPU/Plugin.java
 %%INSTDIR%%/resources/AppData/Plugins/LinuxCPU/compile.bat
+%%INSTDIR%%/resources/AppData/Plugins/WebcamTest/Plugin.class
+%%INSTDIR%%/resources/AppData/Plugins/WebcamTest/Plugin.java
+%%INSTDIR%%/resources/AppData/Plugins/WebcamTest/Stats.class
+%%INSTDIR%%/resources/AppData/Plugins/WebcamTest/compile.bat
 %%INSTDIR%%/resources/AppData/Plugins/dFileShare/Plugin.class
 %%INSTDIR%%/resources/AppData/Plugins/dFileShare/Plugin.java
 %%INSTDIR%%/resources/AppData/Plugins/dFileShare/Settings.txt
@@ -239,6 +245,7 @@ bin/Mercury_Messenger
 @dirrm %%INSTDIR%%/resources/AppData/Sounds
 @dirrm %%INSTDIR%%/resources/AppData/Skins
 @dirrm %%INSTDIR%%/resources/AppData/Plugins/dFileShare
+@dirrm %%INSTDIR%%/resources/AppData/Plugins/WebcamTest
 @dirrm %%INSTDIR%%/resources/AppData/Plugins/LinuxCPU
 @dirrm %%INSTDIR%%/resources/AppData/Plugins/IrcCommand
 @dirrm %%INSTDIR%%/resources/AppData/Plugins/ConvoStats
