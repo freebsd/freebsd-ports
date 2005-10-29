@@ -8,10 +8,9 @@
 PORTNAME=	mp3c
 PORTVERSION=	0.27
 CATEGORIES=	audio
-MASTER_SITES=	ftp://excelsior.kullen.rwth-aachen.de/pub/linux/wspse/:src \
-		http://www.cobweb.nl/wiebel/:script
+MASTER_SITES=	ftp://ftp.wspse.de/linux/wspse/:src
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src \
-		cdrip.sh:script
+		cdrip.sh
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	joris@vandalon.nl
