@@ -8,7 +8,9 @@
 PORTNAME=	libopensync
 PORTVERSION=	0.17
 CATEGORIES=	devel
-MASTER_SITES=	http://www.opensync.org/attachment/wiki/download/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://www.opensync.org/attachment/wiki/download/
+MASTER_SITE_SUBDIR=	ahze
 EXTRACT_SUFX=	.tar.gz\?rev=\&format=raw
 
 MAINTAINER=	ahze@FreeBSD.org
@@ -17,8 +19,6 @@ COMMENT=	Freedesktop synchronization framework
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 RUN_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
-
-BROKEN=		Unfetchable
 
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 USE_LIBTOOL_VER=15
