@@ -34,7 +34,7 @@ share/locale/sv/LC_MESSAGES/sylpheed.mo
 share/locale/tr/LC_MESSAGES/sylpheed.mo
 share/locale/uk/LC_MESSAGES/sylpheed.mo
 share/locale/zh_CN/LC_MESSAGES/sylpheed.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/sylpheed.mo
+share/locale/zh_TW/LC_MESSAGES/sylpheed.mo
 %%PORTDOCS%%%%DOCSDIR%%/faq/de/sylpheed-faq-1.html
 %%PORTDOCS%%%%DOCSDIR%%/faq/de/sylpheed-faq-2.html
 %%PORTDOCS%%%%DOCSDIR%%/faq/de/sylpheed-faq-3.html
