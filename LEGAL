@@ -57,11 +57,13 @@ adstudio-novm.tar.gz	databases/adstudio	Free for personal or educational
 						use but a commercial license is
 						required for all other usages
 altivore.c		security/altivore	No redistribution allowed
+annelid-*		games/annelid		Redistribution is limited
 apache*-ssl		www/apache13-ssl	Crypto; export-controlled
 apache2/mod_taf_thief.c	www/mod_traf_thief	No license
 apple_pascal_0.dsk.gz	emulators/p-interp	Redistribution rights for Apple
 						Pascal disk images are unclear
 AquaGatekeeper-*	net/AquaGatekeeper	No redistribution allowed
+armyops*-linux.run	games/linux-americasarmy Redistribution is limited
 asWedit-*		www/aswedit		Commercial software
 atari800/*		emulators/atari800	xf25 contains copyright ROMs
 						and cannot be distributed
@@ -650,5 +652,3 @@ zh-moettf/*		chinese/moettf		Contact Taiwan Ministry of
 NTU*.TTF		chinese/ntuttf		No commercial use
 ztelnet-*		net/ztelnet		zmodem code has restrictive
 						copyright
-armyops*-linux.run	games/linux-americasarmy Redistribution is limited
-annelid-*		games/annelid		Redistribution is limited
