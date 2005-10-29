@@ -13,10 +13,13 @@
 PORTNAME=	bind
 PORTVERSION=	8.3.7
 CATEGORIES?=	dns net
-MASTER_SITES=	${MASTER_SITE_ISC}
+MASTER_SITES=	${MASTER_SITE_ISC} \
+		http://dougbarton.us/Downloads/%SUBDIR%/
 MASTER_SITE_SUBDIR=	bind/src/${PORTVERSION}
-DISTFILES=	bind-src.tar.gz bind-doc.tar.gz
+DISTFILES=	bind-src.tar.gz bind-doc.tar.gz \
+		bind-src.tar.gz.asc bind-doc.tar.gz.asc
 DIST_SUBDIR=	bind-${PORTVERSION}
+EXTRACT_ONLY=	bind-src.tar.gz bind-doc.tar.gz
 
 MAINTAINER?=	DougB@FreeBSD.org
 COMMENT=	The Berkeley Internet Name Domain, an implementation of DNS
@@ -52,6 +55,10 @@ PATCH_ARGS=	-s -d ${WRKDIR}
 PATCH_DIST_ARGS=	-s -d ${WRKDIR}
 
 WRKSRC=		${WRKDIR}/src
+
+verify:	checksum
+	gpg --verify ${DISTDIR}/${DIST_SUBDIR}/bind-src.tar.gz.asc
+	gpg --verify ${DISTDIR}/${DIST_SUBDIR}/bind-doc.tar.gz.asc
 
 post-patch:
 	@${SED} -e "s#\'DESTETC=.*#'DESTETC=${BIND_DESTETC}'#" \

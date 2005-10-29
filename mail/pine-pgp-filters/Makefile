@@ -8,7 +8,7 @@
 PORTNAME=	pine-pgp-filters
 PORTVERSION=	1.2
 CATEGORIES=	mail security
-MASTER_SITES=	http://dougbarton.net/FreeBSD/Downloads/ \
+MASTER_SITES=	http://dougbarton.us/Downloads/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dougb
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
@@ -16,6 +16,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Simple, fast, sh-based filters to integrate Pine with gnupg, or pgp6
+
+verify:	checksum
+	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
 do-build:
 	cd ${WRKSRC} && ./configure --prefix=${PREFIX}

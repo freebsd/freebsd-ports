@@ -13,7 +13,8 @@
 PORTNAME=	bind84
 PORTVERSION=	8.4.6
 CATEGORIES?=	dns net ipv6
-MASTER_SITES=	${MASTER_SITE_ISC}
+MASTER_SITES=	${MASTER_SITE_ISC} \
+		http://dougbarton.us/Downloads/%SUBDIR%/
 MASTER_SITE_SUBDIR=	bind/src/${PORTVERSION}
 DISTFILES=	bind-src.tar.gz bind-doc.tar.gz \
 		bind-src.tar.gz.asc bind-doc.tar.gz.asc
@@ -54,6 +55,10 @@ PATCH_ARGS=	-s -d ${WRKDIR}
 PATCH_DIST_ARGS=	-s -d ${WRKDIR}
 
 WRKSRC=		${WRKDIR}/src
+
+verify:	checksum
+	gpg --verify ${DISTDIR}/${DIST_SUBDIR}/bind-src.tar.gz.asc
+	gpg --verify ${DISTDIR}/${DIST_SUBDIR}/bind-doc.tar.gz.asc
 
 post-patch:
 	@${SED} -e "s#\'DESTETC=.*#'DESTETC=${BIND_DESTETC}'#" \

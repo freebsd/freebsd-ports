@@ -8,7 +8,8 @@
 PORTNAME=	xscreensaver
 PORTVERSION=	4.22
 CATEGORIES?=	x11
-MASTER_SITES=	http://www.jwz.org/xscreensaver/
+MASTER_SITES=	http://www.jwz.org/xscreensaver/ \
+		http://dougbarton.us/Downloads/
 
 MAINTAINER?=	DougB@FreeBSD.org
 COMMENT=	Save your screen while you entertain your cat

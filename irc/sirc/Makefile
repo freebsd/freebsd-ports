@@ -15,7 +15,7 @@ PORTNAME=	sirc
 PORTVERSION=	2.211
 CATEGORIES=	irc
 MASTER_SITES=	http://www.iagora.com/~espel/sirc/ \
-		http://dougbarton.net/FreeBSD/Downloads/
+		http://dougbarton.us/Downloads/
 
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Small (150k), fast, perl-based IRC client

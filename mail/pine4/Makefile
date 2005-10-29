@@ -14,7 +14,8 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.uni-magdeburg.de/pub/mirror/ftp.cac.washington.edu/pine/ \
 		ftp://ftp.fu-berlin.de/unix/mail/pine/ \
 		ftp://ftp.ut.ee/pub/unix/mail/pine/ \
-		ftp://gd.tuwien.ac.at/infosys/mail/pine/
+		ftp://gd.tuwien.ac.at/infosys/mail/pine/ \
+		http://dougbarton.us/Downloads/
 DISTNAME=	pine${PORTVERSION}
 
 MAINTAINER=	DougB@FreeBSD.org

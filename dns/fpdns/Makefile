@@ -8,7 +8,8 @@
 PORTNAME=	fpdns
 PORTVERSION=	0.9.3
 CATEGORIES=	dns net perl5
-MASTER_SITES=	http://www.rfc.se/fpdns/distfiles/
+MASTER_SITES=	http://www.rfc.se/fpdns/distfiles/ \
+		http://dougbarton.us/Downloads/
 DISTNAME=	Net-DNS-Fingerprint-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -27,6 +28,9 @@ MAN1=		fpdns.1
 .if ${PERL_LEVEL} < 500600
 IGNORE=		Requires at least Perl version 5.6.0
 .endif
+
+verify:	checksum
+	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.sig
 
 file=	${WRKSRC}/blib/man1/fpdns.1
 post-build:
