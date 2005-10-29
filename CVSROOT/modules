@@ -10432,6 +10432,7 @@ pyne		ports/news/pyne
 pynids		ports/net/pynids
 pyobfuscate	ports/devel/pyobfuscate
 pypanda		ports/misc/pypanda
+pypanel		ports/deskutils/pypanel
 pyphany		ports/www/pyphany
 pypvm		ports/net/pypvm
 pyrex		ports/devel/pyrex
