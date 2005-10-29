@@ -21,6 +21,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 USE_GNOME=	gtk12
 USE_XLIB=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--no-avi --prefix=${PREFIX}
 
@@ -56,6 +57,10 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can enable extra optimizations by defining WITH_OPTIMIZED_CFLAGS."
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
+		${WRKSRC}/libmpeg3/configure ${WRKSRC}/quicktime/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/video/exportvideo ${PREFIX}/bin

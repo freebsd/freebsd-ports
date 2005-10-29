@@ -1,16 +1,5 @@
 --- libmpeg3/configure.orig	Mon Feb 12 22:35:41 2001
 +++ libmpeg3/configure	Wed Oct 26 21:42:33 2005
-@@ -6,6 +6,10 @@
- for ac_option
- do
- case "$ac_option" in
-+	--prefix=*)
-+		PREFIX=`echo $ac_option|sed -e 's/.*=//'` 
-+		;;
-+
- 	--alpha)
- 		USE_MMX=0
- 		USE_CSS=0
 @@ -43,8 +47,8 @@
  EOF
  
@@ -18,7 +7,7 @@
 -if test -z "$CFLAGS"; then
 -	echo >> global_config "CFLAGS = -O2 -D_FILE_OFFSET_BITS=64 -funroll-loops -fomit-frame-pointer -malign-loops=2 -malign-jumps=2 -malign-functions=2 -march=i486 -I/usr/local/include"
 +if true; then
-+	echo >> global_config "CFLAGS += -D_FILE_OFFSET_BITS=64 -I${LOCALBASE}/include"
++	echo >> global_config "CFLAGS += -D_FILE_OFFSET_BITS=64 -I%%LOCALBASE%%/include"
  fi
  
  cat >> global_config << EOF
