@@ -7,6 +7,7 @@
 
 PORTNAME=	exportvideo
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://tigerente.htu.tuwien.ac.at/~aoe/mystuff/mpeg2_movie-avipatch/
 DISTNAME=	${PORTNAME}.7e-pre9
@@ -21,7 +22,7 @@ USE_GNOME=	gtk12
 USE_XLIB=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--no-avi
+CONFIGURE_ARGS=	--no-avi --prefix=${PREFIX}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
