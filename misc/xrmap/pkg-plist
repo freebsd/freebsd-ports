@@ -201,6 +201,7 @@ share/rmap/anthems/za.ant
 share/rmap/anthems/zm.ant
 share/rmap/anthems/zw.ant
 share/rmap/earthdata/population/population.cps
+share/rmap/earthdata/population/population.dat
 share/rmap/earthdata/topography/10800x5400-15x15.az2
 share/rmap/earthdata/topography/topography.cps
 share/rmap/factbook/Factbook.css
