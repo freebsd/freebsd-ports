@@ -9,9 +9,8 @@ PORTNAME=	asis
 PORTVERSION=	3.15p
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	\
-	ftp://ftp.lip6.fr/pub/gnat/${PORTVERSION}/asis/ \
-	ftp://cs.nyu.edu/pub/gnat/${PORTVERSION}/asis/
+MASTER_SITES=	http://gd.tuwien.ac.at/languages/ada/gnat/3.15p/asis/ \
+		ftp://ftp.cs.kuleuven.ac.be/pub/Ada-Belgium/mirrors/gnu-ada/3.15p/asis/
 DISTNAME=	asis-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
@@ -19,6 +18,8 @@ MAINTAINER=	thomas@cuivre.fr.eu.org
 COMMENT=	GNAT implementation of the Ada Semantic Interface Specification
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
+
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
