@@ -18,7 +18,6 @@ etc/lynx.cfg.default
 %%DOCSDIR%%/docs/CHANGES2.6
 %%DOCSDIR%%/docs/CHANGES2.7
 %%DOCSDIR%%/docs/CHANGES2.8
-%%DOCSDIR%%/docs/CMU.announce
 %%DOCSDIR%%/docs/CRAWL.announce
 %%DOCSDIR%%/docs/FM.announce
 %%DOCSDIR%%/docs/IBMPC-charsets.announce
