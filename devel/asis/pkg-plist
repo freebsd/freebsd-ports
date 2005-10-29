@@ -294,26 +294,24 @@ lib/asis/widechar.ali
 lib/libasis-3.15p.so
 lib/libasis-3.15p.so.1
 lib/libasis.a
-%%PORTDOCS%%share/doc/asis/Makefile
-%%PORTDOCS%%share/doc/asis/README.asistant
-%%PORTDOCS%%share/doc/asis/README.ds
-%%PORTDOCS%%share/doc/asis/README.gnatelim
-%%PORTDOCS%%share/doc/asis/README.gnatstub
-%%PORTDOCS%%share/doc/asis/asis_rm.html
-%%PORTDOCS%%share/doc/asis/asis_rm.info
-%%PORTDOCS%%share/doc/asis/asis_rm.ps
-%%PORTDOCS%%share/doc/asis/asis_rm.texi
-%%PORTDOCS%%share/doc/asis/asis_rm.txt
-%%PORTDOCS%%share/doc/asis/asis_ug.html
-%%PORTDOCS%%share/doc/asis/asis_ug.info
-%%PORTDOCS%%share/doc/asis/asis_ug.info-1
-%%PORTDOCS%%share/doc/asis/asis_ug.info-2
-%%PORTDOCS%%share/doc/asis/asis_ug.ps
-%%PORTDOCS%%share/doc/asis/asis_ug.texi
-%%PORTDOCS%%share/doc/asis/asis_ug.txt
-%%PORTDOCS%%share/doc/asis/asisinfo.txt
-%%PORTDOCS%%share/doc/asis/non_implemented.txt
-%%PORTDOCS%%@dirrm share/doc/asis
+%%PORTDOCS%%%%DOCSDIR%%/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/README.asistant
+%%PORTDOCS%%%%DOCSDIR%%/README.ds
+%%PORTDOCS%%%%DOCSDIR%%/README.gnatelim
+%%PORTDOCS%%%%DOCSDIR%%/README.gnatstub
+%%PORTDOCS%%%%DOCSDIR%%/asis_rm.html
+%%PORTDOCS%%%%DOCSDIR%%/asis_rm.info
+%%PORTDOCS%%%%DOCSDIR%%/asis_rm.ps
+%%PORTDOCS%%%%DOCSDIR%%/asis_rm.texi
+%%PORTDOCS%%%%DOCSDIR%%/asis_rm.txt
+%%PORTDOCS%%%%DOCSDIR%%/asis_ug.html
+%%PORTDOCS%%%%DOCSDIR%%/asis_ug.info
+%%PORTDOCS%%%%DOCSDIR%%/asis_ug.info-1
+%%PORTDOCS%%%%DOCSDIR%%/asis_ug.info-2
+%%PORTDOCS%%%%DOCSDIR%%/asis_ug.ps
+%%PORTDOCS%%%%DOCSDIR%%/asis_ug.texi
+%%PORTDOCS%%%%DOCSDIR%%/asis_ug.txt
+%%PORTDOCS%%%%DOCSDIR%%/asisinfo.txt
+%%PORTDOCS%%%%DOCSDIR%%/non_implemented.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/asis
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R
