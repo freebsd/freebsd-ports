@@ -8,11 +8,10 @@
 PORTNAME=	acpicatools
 PORTVERSION=	20030523.0
 CATEGORIES=	devel
-MASTER_SITES=	http://people.FreeBSD.org/~iwasaki/acpi/ \
-		http://developer.intel.com/technology/iapc/acpi/downloads/ \
-		${MASTER_SITE_PORTS_JP}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		acpica-unix-20030523.tar.gz
+MASTER_SITES=	http://people.FreeBSD.org/~iwasaki/acpi/:g1 \
+		http://ftp.ale.org/pub/mirrors/freebsd/distfiles/:g2
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:g1,g2 \
+		acpica-unix-20030523.tar.gz:g2
 NO_WRKSUBDIR=	yes
 
 MAINTAINER=	ports@FreeBSD.org
