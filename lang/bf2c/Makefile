@@ -11,7 +11,7 @@ CATEGORIES=     lang
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=bf2c
 
-MAINTAINER=     r.c.ladan@student.tue.nl
+MAINTAINER=     ports@FreeBSD.org
 COMMENT=        Optimizing BrainF*ck to C compiler
 
 USE_GMAKE=      yes
