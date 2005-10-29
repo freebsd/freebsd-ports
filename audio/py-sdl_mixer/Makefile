@@ -30,6 +30,10 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-sdl-mixer
 post-patch:
 	@${REINPLACE_CMD} -e 's,"SDL","SDL-1.1",g' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e 's,SDL/SDL,SDL11/SDL,g' ${WRKSRC}/sdl_mixer.c
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
+		${WRKSRC}/setup.py
 
 post-install:
 .if !defined(NOPORTDOCS)
