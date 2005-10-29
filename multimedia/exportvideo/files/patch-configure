@@ -1,5 +1,5 @@
---- configure.orig	Tue Oct  9 18:14:28 2001
-+++ configure	Mon Nov  1 09:41:06 2004
+--- configure.orig	Tue Oct  9 18:14:50 2001
++++ configure	Wed Oct 26 21:44:35 2005
 @@ -1,7 +1,9 @@
 +#!/bin/sh
 +
@@ -11,12 +11,23 @@
  PREFIX=/usr/local
  LDSTATIC=
  
-@@ -168,6 +170,8 @@
- if [ "x$LDSTATIC" != "x" ]; then                                
- 	echo >> global_config "LDFLAGS += $LDSTATIC" 
+@@ -178,15 +180,15 @@
+ cd libmpeg3
+ 
+ if [ ${USE_MMX} = 1 ]; then
+-	./configure --no-css
++	./configure --no-css --prefix=${PREFIX}
+ else
+-	./configure --no-css --no-mmx
++	./configure --no-css --no-mmx --prefix=${PREFIX}
  fi
-+
-+egrep "^LDFLAGS|^DONT_USE_AVI|^VIDEO_EXPORT_ONLY" global_config > video/global_config
  
- echo "done"
+ cd ../quicktime
  
+ if [ ${USE_MMX} = 1 ]; then
+-	./configure $NOFIREWIRE
++	./configure $NOFIREWIRE --prefix=${PREFIX}
+ else
+-	./configure $NOFIREWIRE --no-mmx
++	./configure $NOFIREWIRE --no-mmx --prefix=${PREFIX}
+ fi
