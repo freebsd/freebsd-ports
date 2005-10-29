@@ -7,6 +7,7 @@
 
 PORTNAME=	cmunge
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.vcpc.univie.ac.at/vcpc/jhm/code/
 DISTNAME=	${PORTNAME}
@@ -19,6 +20,12 @@ MAKE_ARGS=	CC="${CC} ${CFLAGS}"
 
 PLIST_FILES=	bin/cmunge bin/ctran bin/proc-incl
 PORTDOCS=	*
+
+USE_REINPLACE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/vcpc_users/jhm/bin/cmunger|${PREFIX}|; \
+		s|/usr/ccs/lib/cpp|/usr/bin/cpp|' ${WRKSRC}/cmunge
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/ctran ${PREFIX}/bin
