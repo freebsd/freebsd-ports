@@ -1,16 +1,5 @@
 --- quicktime/configure.orig	Mon Feb 12 22:35:41 2001
 +++ quicktime/configure	Wed Oct 26 21:40:17 2005
-@@ -6,6 +6,10 @@
- for ac_option
- do
- case "$ac_option" in
-+	--prefix=*)
-+		PREFIX=`echo $ac_option|sed -e 's/.*=//'` 
-+		;;
-+
- 	--alpha)
- 		USE_MMX=0
- 		;;
 @@ -39,8 +43,8 @@
  # DO NOT EDIT.  EDIT ./configure INSTEAD AND RERUN IT.
  EOF
@@ -18,7 +7,7 @@
 -if test -z "$CFLAGS"; then
 -	echo >> global_config "CFLAGS = -O2 -fomit-frame-pointer -malign-loops=2 -malign-jumps=2 -malign-functions=2 -march=i486 -I/usr/local/include"
 +if true; then
-+	echo >> global_config "CFLAGS += -I${LOCALBASE}/include"
++	echo >> global_config "CFLAGS += -I%%LOCALBASE%%/include"
  fi
  
  if [ ${USE_FIREWIRE} = 1 ]; then
