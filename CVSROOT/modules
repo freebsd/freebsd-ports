@@ -11171,6 +11171,7 @@ s-news		ports/news/s-news
 s10sh		ports/graphics/s10sh
 s3mod		ports/audio/s3mod
 s3switch	ports/graphics/s3switch
+s5		ports/textproc/s5
 sablevm		ports/java/sablevm
 sablotron	ports/textproc/sablotron
 safecat		ports/sysutils/safecat
