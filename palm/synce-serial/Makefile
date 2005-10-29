@@ -10,7 +10,7 @@ CATEGORIES=	palm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	synce
 
-MAINTAINER=	lawrance@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper for pppd to initiate communications with WinCE devices
 
 MAN8=		synce-serial-config.8 synce-serial-start.8 synce-serial-abort.8

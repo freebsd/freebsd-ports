@@ -11,7 +11,7 @@ CATEGORIES=	palm deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	synce
 
-MAINTAINER=	lawrance@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SynCE synchronisation plugin for Multisync
 
 LIB_DEPENDS=	rra.0:${PORTSDIR}/palm/synce-rra

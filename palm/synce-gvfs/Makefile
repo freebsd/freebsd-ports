@@ -11,7 +11,7 @@ CATEGORIES=	palm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	synce
 
-MAINTAINER=	lawrance@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome VFS module for WinCE devices
 
 LIB_DEPENDS=	rapi.2:${PORTSDIR}/palm/synce-librapi2

@@ -10,7 +10,7 @@ CATEGORIES=	palm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	synce
 
-MAINTAINER=	lawrance@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities/libraries to make RAPI calls on WinCE devices
 
 LIB_DEPENDS+=	synce.0:${PORTSDIR}/palm/synce-libsynce
