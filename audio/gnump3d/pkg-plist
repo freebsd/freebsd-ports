@@ -21,8 +21,8 @@ etc/gnump3d/mime.types
 %%SITE_PERL%%/gnump3d/mp4info.pm
 %%SITE_PERL%%/gnump3d/ogginfo.pm
 %%SITE_PERL%%/gnump3d/oggtagreader.pm
-%%SITE_PERL%%/gnump3d/plugins/COPYING.pm
 %%SITE_PERL%%/gnump3d/plugins/bug.pm
+%%SITE_PERL%%/gnump3d/plugins/copying.pm
 %%SITE_PERL%%/gnump3d/plugins/info.pm
 %%SITE_PERL%%/gnump3d/plugins/now.pm
 %%SITE_PERL%%/gnump3d/plugins/playlist.pm
