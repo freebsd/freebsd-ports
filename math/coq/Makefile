@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/coq/V8.0pl2/
 DISTNAME=	coq-8.0pl2
 
-MAINTAINER=	r.c.ladan@student.tue.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Theorem prover based on lambda-C
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
