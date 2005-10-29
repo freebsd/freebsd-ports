@@ -1,3 +1,4 @@
+%%SITE_PERL%%/Apache/JSONRPC.pm
 %%SITE_PERL%%/JSON.pm
 %%SITE_PERL%%/JSON/Converter.pm
 %%SITE_PERL%%/JSON/Parser.pm
@@ -8,3 +9,4 @@
 @dirrm %%SITE_PERL%%/JSONRPC/Transport
 @dirrm %%SITE_PERL%%/JSONRPC
 @dirrm %%SITE_PERL%%/JSON
+@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
