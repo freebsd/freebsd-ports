@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	JSON
-PORTVERSION=	0.99
-PORTREVISION=	1
+PORTVERSION=	1.00
 CATEGORIES=	converters perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/M/MA/MAKAMAKA
@@ -16,8 +15,20 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to convert to JSON (JavaScript Object Notation)
 
+BUILD_DEPENDS=	${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
 PERL_CONFIGURE=	yes
-MAN3=		JSON.3 JSON::Converter.3 JSON::Parser.3 \
+MAN3=		Apache::JSONRPC.3 JSON.3 JSON::Converter.3 JSON::Parser.3 \
 		JSONRPC.3 JSONRPC::Transport::HTTP.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		Port requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+.endif
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
+.endif
+
+.include <bsd.port.post.mk>
