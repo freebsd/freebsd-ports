@@ -1,5 +1,5 @@
 %%SITE_PERL%%/MIME/Base32.pm
-%%SITE_PERL%%/mach/auto/MIME/Base32/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/MIME/Base32
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Base32/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Base32
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/MIME 2>/dev/null || true
