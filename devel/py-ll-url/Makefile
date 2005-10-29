@@ -16,6 +16,9 @@ COMMENT=	RFC2396 implementation of URLs and file like classes for URLs
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ll/__init__.py:${PORTSDIR}/devel/py-ll-core
 
+DEPRECATED=	this ports was deprecated. please use devel/py-ll-core
+EXPIRATION_DATE=	2005-12-29
+
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 USE_BZIP2=	yes
