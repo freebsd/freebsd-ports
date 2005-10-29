@@ -7,7 +7,7 @@
 
 PORTNAME=	fillets-ng
 PORTVERSION=	0.7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fillets
@@ -28,7 +28,7 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=		SDL_CONFIG="${SDL_CONFIG}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=		--datadir="${DATADIR}"
+CONFIGURE_ARGS=		--datadir="${DATADIR}" --with-lua="${LOCALBASE}"
 
 OPTIONS=	FRIBIDI		"Enable fribidi support"	off
 
@@ -45,6 +45,7 @@ LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|^\(AM_CPPFLAGS.*(datadir)\)/.*|\1"\\"|' \
 		${WRKSRC}/src/gengine/Makefile.in
 .if defined(WITHOUT_FRIBIDI)
