@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	openoffice.org
-PORTVERSION=	2.0.RC3
+PORTVERSION=	2.0.0
 CATEGORIES+=	editors
 MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
 		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_MOZILLA:S/$/:mozsrc/}
 MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${MOZILLA_VERSION}/source/:mozsrc
-DISTFILES+=	OOo_2.0RC3_source.tar.bz2 gpc231.tar.Z:gpc
-EXTRACT_ONLY=	OOo_2.0RC3_source.tar.bz2
+DISTFILES+=	OOo_2.0.0_src.tar.gz gpc231.tar.Z:gpc
+EXTRACT_ONLY=	OOo_2.0.0_src.tar.gz
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(developer version)
@@ -32,7 +32,6 @@ USE_GNOME+=	libidl
 USE_KDELIBS_VER=        3
 .endif
 USE_XLIB=	yes
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
@@ -117,7 +116,7 @@ LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 .endif
 
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}
+WRKSRC=		${WRKDIR}/OOo_2.0.0rc3_src
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 ANT?=		${LOCALBASE}/bin/ant
 ZIP?=		${PREFIX}/bin/zip
@@ -203,7 +202,7 @@ post-install:
 # python post-install script start
 # consult instsetoo_native/inc_openoffice/unix/shellscripts_pyuno.txt
 	@cd ${PREFIX}/${INSTALLATION_BASEDIR}/program ; ${LN} -s python-core-2.3.4 ${PREFIX}/${INSTALLATION_BASEDIR}/program/python-core; ${LN} -s python.sh ${PREFIX}/${INSTALLATION_BASEDIR}/program/python
-	${CHMOD} +x ${PREFIX}/${INSTALLATION_BASEDIR}/program/python-core-2.3.4/bin/python
+	@${CHMOD} +x ${PREFIX}/${INSTALLATION_BASEDIR}/program/python-core-2.3.4/bin/python
 # python post-install script end
 	@${PRINTF} "bin/openoffice.org\n" > ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s bin -type f | ${GREP} ${EXECBASE} >> ${TMPPLIST}
