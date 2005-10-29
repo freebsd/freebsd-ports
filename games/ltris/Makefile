@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ltris
-PORTVERSION=	1.0.10
+PORTVERSION=	1.0.11
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -19,11 +19,23 @@ USE_SDL=	mixer sdl
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|--mode=666||g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|= @mixer_flag@|= @INTLLIBS@ @mixer_flag@|g ; \
+		 s|--mode=666||g' ${WRKSRC}/src/Makefile.in
 
 post-install:
 	${CHOWN} root:games ${PREFIX}/bin/${PORTNAME}
