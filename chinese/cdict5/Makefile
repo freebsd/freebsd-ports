@@ -19,13 +19,16 @@ COMMENT=	Chinese-English / English-Chinese dictionary
 
 LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
 
+DEPRECATED=	cdict5-file.tgz does not exist anymore
+EXPIRATION_DATE=	2005-12-29
+
 IGNOREFILES=	cdict5-file.tgz
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/cdict5-file.tgz)
-IGNORE=	"You have to obtain 21st Century Dictionary v5.0 data files yourself"
-.endif
+#.if !exists(${DISTDIR}/cdict5-file.tgz)
+#IGNORE=	"You have to obtain 21st Century Dictionary v5.0 data files yourself"
+#.endif
 
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
