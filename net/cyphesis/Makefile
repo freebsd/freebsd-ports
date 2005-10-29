@@ -39,7 +39,7 @@ MAN1=		cyclient.1 cycmd.1 cyphesis.1 cyphesis-tools.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-#IGNORE=		Does not compile
+IGNORE=		Does not compile
 .endif
 
 post-patch:
