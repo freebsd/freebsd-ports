@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fxt
-PORTVERSION=	2004.10.25
+PORTVERSION=	2005.10.06
 CATEGORIES=	math
 MASTER_SITES=	http://www.jjj.de/fxt/
 EXTRACT_SUFX=	.tgz
@@ -17,7 +17,7 @@ COMMENT=	FFT code and related stuff
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_GCC=	3.4
+USE_GCC=	3.4+
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
@@ -30,18 +30,16 @@ post-patch:
 		 s|^GFLAGS|#GFLAGS|g ; \
 		 s|^PFLAGS|#PFLAGS|g ; \
 		 s|^FXT_CXXFLAGS|#FXT_CXXFLAGS|g' ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e 's|sinl|Sin|g' ${WRKSRC}/src/aux0/trigrec.h 
+	@${REINPLACE_CMD} -e 's|sinl|sin|g' ${WRKSRC}/src/fht/hartleyshift.h
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libfxt.a ${PREFIX}/lib
 	@${MKDIR} ${PREFIX}/include/fxt
-	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/fxt
-.for dir in aux0 aux1 aux2 bits bmat bpol chirpzt correlation comb \
-	comb/bucket convolution dctdst demo ds fft fht graph graph/bucket \
-	haar matrix matrixfft mod mult ntt perm perm/bucket realfft simplfft \
-	sort sort/bucket test walsh wavelet
-	@${MKDIR} ${PREFIX}/include/fxt/${dir}
-	${INSTALL_DATA} ${WRKSRC}/${dir}/*.h ${PREFIX}/include/fxt/${dir}
-.endfor
+	cd ${WRKSRC}/src && ${FIND} . -name "*.h" | \
+		${CPIO} -pdm -L -R ${SHAROWN}:${SHAREGRP} ${PREFIX}/include/fxt
+	@${FIND} ${PREFIX}/include/fxt -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	@${FIND} ${PREFIX}/include/fxt -type d | ${XARGS} ${CHMOD} ${BINMODE}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/00*.txt ${DOCSDIR}

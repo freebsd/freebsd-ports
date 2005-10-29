@@ -1,17 +1,20 @@
 include/fxt/aux0-all.h
 include/fxt/aux0/aux0double.h
+include/fxt/aux0/binomial.h
+include/fxt/aux0/bucket/funcemu.h
 include/fxt/aux0/cmult.h
 include/fxt/aux0/constants.h
 include/fxt/aux0/csincos.h
 include/fxt/aux0/fhtmulsqr.h
-include/fxt/aux0/funcemu.h
-include/fxt/aux0/inline.h
-include/fxt/aux0/rand.h
+include/fxt/aux0/ldn2rc.h
+include/fxt/aux0/randf.h
 include/fxt/aux0/range.h
+include/fxt/aux0/sign.h
 include/fxt/aux0/sincos.h
 include/fxt/aux0/sumdiff.h
 include/fxt/aux0/swap.h
 include/fxt/aux0/timer.h
+include/fxt/aux0/trigrec.h
 include/fxt/aux0/version.h
 include/fxt/aux1-all.h
 include/fxt/aux1/applyfunc.h
@@ -34,6 +37,7 @@ include/fxt/aux2-all.h
 include/fxt/aux2/applyfunc2d.h
 include/fxt/aux2/arith2d.h
 include/fxt/aux2/array2d.h
+include/fxt/aux2/bucket/transpose2.h
 include/fxt/aux2/copy2d.h
 include/fxt/aux2/minmax2d.h
 include/fxt/aux2/reverse2d.h
@@ -42,22 +46,27 @@ include/fxt/aux2/scale2d.h
 include/fxt/aux2/shift2d.h
 include/fxt/aux2/transpose.h
 include/fxt/aux2/transpose2.h
-include/fxt/aux2/transpose2_ba.h
-include/fxt/aux2/transpose_ba.h
 include/fxt/bits-all.h
+include/fxt/bits/bin2paul.h
 include/fxt/bits/bit2adic.h
 include/fxt/bits/bit2composition.h
 include/fxt/bits/bit2pow.h
+include/fxt/bits/bitasm-amd64.h
+include/fxt/bits/bitasm-i386.h
+include/fxt/bits/bitasm-sse.h
 include/fxt/bits/bitasm.h
+include/fxt/bits/bitblock.h
 include/fxt/bits/bitcombcolex.h
 include/fxt/bits/bitcomblex.h
 include/fxt/bits/bitcombminchange.h
 include/fxt/bits/bitcopy.h
 include/fxt/bits/bitcount.h
-include/fxt/bits/bitcyclic.h
-include/fxt/bits/bitcyclic2.h
-include/fxt/bits/bitcyclic3.h
-include/fxt/bits/bitcyclicgray.h
+include/fxt/bits/bitcyclic-dist.h
+include/fxt/bits/bitcyclic-match.h
+include/fxt/bits/bitcyclic-minmax.h
+include/fxt/bits/bitcyclic-period.h
+include/fxt/bits/bitcyclic-xor.h
+include/fxt/bits/bitfibgray.h
 include/fxt/bits/bitgather.h
 include/fxt/bits/bitgraypermute.h
 include/fxt/bits/bithigh.h
@@ -66,20 +75,28 @@ include/fxt/bits/bitlow.h
 include/fxt/bits/bitmisc.h
 include/fxt/bits/bitmrotate.h
 include/fxt/bits/bitnecklace.h
+include/fxt/bits/bitperiodic.h
 include/fxt/bits/bitrotate.h
 include/fxt/bits/bitseparate.h
 include/fxt/bits/bitsequency.h
+include/fxt/bits/bitset2set.h
 include/fxt/bits/bitsperlong.h
 include/fxt/bits/bitsubset.h
-include/fxt/bits/bitsubsetgray.h
 include/fxt/bits/bitswap.h
+include/fxt/bits/bittest.h
 include/fxt/bits/bittransforms.h
 include/fxt/bits/bitxtransforms.h
 include/fxt/bits/bitzip.h
+include/fxt/bits/blue-fixed-points.h
 include/fxt/bits/branchless.h
+include/fxt/bits/bucket/bitsubsetgray.h
+include/fxt/bits/colormix-fl.h
 include/fxt/bits/colormix.h
 include/fxt/bits/colormixp.h
-include/fxt/bits/fl_colormix.h
+include/fxt/bits/crc32.h
+include/fxt/bits/crc64.h
+include/fxt/bits/cswap.h
+include/fxt/bits/fibrep.h
 include/fxt/bits/graycode.h
 include/fxt/bits/graypower.h
 include/fxt/bits/greencode.h
@@ -87,22 +104,29 @@ include/fxt/bits/grsnegative.h
 include/fxt/bits/hilbert.h
 include/fxt/bits/negbin.h
 include/fxt/bits/nextgray.h
+include/fxt/bits/parenwords.h
 include/fxt/bits/parity.h
 include/fxt/bits/printbin.h
+include/fxt/bits/revbin-upd.h
 include/fxt/bits/revbin.h
+include/fxt/bits/tcrc64.h
 include/fxt/bits/tinyfactors.h
 include/fxt/bits/zerobyte.h
+include/fxt/bits/zorder.h
 include/fxt/bmat-all.h
 include/fxt/bmat/bitmat.h
 include/fxt/bmat/bitmatinline.h
 include/fxt/bpol-all.h
 include/fxt/bpol/allirredpol.h
-include/fxt/bpol/bitpol.h
+include/fxt/bpol/bitpolarith.h
 include/fxt/bpol/bitpoldegree.h
+include/fxt/bpol/bitpolderiv.h
 include/fxt/bpol/bitpolfactor.h
+include/fxt/bpol/bitpolgcd.h
 include/fxt/bpol/bitpolirred.h
-include/fxt/bpol/bitpolmodmult.h
+include/fxt/bpol/bitpolmodarith.h
 include/fxt/bpol/bitpolmodmultrev.h
+include/fxt/bpol/bitpolmodsolvequadratic.h
 include/fxt/bpol/bitpolprimitive.h
 include/fxt/bpol/bitpolprint.h
 include/fxt/bpol/bitpolsquarefree.h
@@ -119,54 +143,85 @@ include/fxt/bpol/primpoly.h
 include/fxt/chirpzt-all.h
 include/fxt/chirpzt/chirpzt.h
 include/fxt/comb-all.h
+include/fxt/comb/all-compositions-minchange.h
 include/fxt/comb/binarydebruijn.h
 include/fxt/comb/binaryprimestring.h
+include/fxt/comb/bucket/allsetpartitions.h
 include/fxt/comb/bucket/binarydebruijn.h
 include/fxt/comb/bucket/combcolex.h
 include/fxt/comb/bucket/comblex.h
 include/fxt/comb/bucket/combminchange.h
 include/fxt/comb/bucket/compositionalt.h
+include/fxt/comb/bucket/permvisit.h
 include/fxt/comb/bucket/subsetdebruijn.h
-include/fxt/comb/combaltminchange.h
-include/fxt/comb/combcolex.h
-include/fxt/comb/comblex.h
-include/fxt/comb/combminchange.h
-include/fxt/comb/compositionlex.h
+include/fxt/comb/catalan.h
+include/fxt/comb/combination-altminchange.h
+include/fxt/comb/combination-chase.h
+include/fxt/comb/combination-colex.h
+include/fxt/comb/combination-lex.h
+include/fxt/comb/combination-minchange.h
+include/fxt/comb/combination-rec.h
+include/fxt/comb/combination-revdoor.h
+include/fxt/comb/comp2comb.h
+include/fxt/comb/composition-chase.h
+include/fxt/comb/composition-colex.h
+include/fxt/comb/composition-rank.h
+include/fxt/comb/cyclic-perm.h
 include/fxt/comb/debruijn.h
-include/fxt/comb/equivclasses.h
+include/fxt/comb/fibonacci.h
 include/fxt/comb/gray.h
-include/fxt/comb/lyndongray.h
+include/fxt/comb/ksubset-gray.h
+include/fxt/comb/ksubset-near-perfect.h
+include/fxt/comb/ksubset-rec.h
+include/fxt/comb/mixedradix-gray.h
+include/fxt/comb/mixedradix-gray2.h
+include/fxt/comb/mixedradix-lex.h
+include/fxt/comb/mixedradix-modular-gray.h
 include/fxt/comb/mixedradix.h
-include/fxt/comb/mixedradixgray.h
-include/fxt/comb/mixedradixlex.h
-include/fxt/comb/modularmixedradixgray.h
+include/fxt/comb/num2mixedradix.h
+include/fxt/comb/numof-compositions.h
 include/fxt/comb/numofnecklaces.h
 include/fxt/comb/paren.h
-include/fxt/comb/paren2.h
 include/fxt/comb/partition.h
+include/fxt/comb/perm2fact.h
+include/fxt/comb/permcyclic.h
+include/fxt/comb/permderange.h
+include/fxt/comb/permgray.h
+include/fxt/comb/permgray2.h
+include/fxt/comb/permlex-rec.h
+include/fxt/comb/permlex.h
+include/fxt/comb/permminchange.h
+include/fxt/comb/permrestrpref.h
+include/fxt/comb/permrev.h
+include/fxt/comb/permstar.h
+include/fxt/comb/permtrotter.h
 include/fxt/comb/primestring.h
+include/fxt/comb/setpartition.h
 include/fxt/comb/stringsubst.h
-include/fxt/comb/subsetdebruijn.h
-include/fxt/comb/subsetlex.h
-include/fxt/comb/subsetminchange.h
-include/fxt/comb/subsetmonotone.h
+include/fxt/comb/subset-debruijn.h
+include/fxt/comb/subset-gray-delta.h
+include/fxt/comb/subset-gray.h
+include/fxt/comb/subset-lex.h
+include/fxt/comb/subset-monotone.h
 include/fxt/complextype.h
 include/fxt/convolution-all.h
-include/fxt/convolution/convolution.h
+include/fxt/convolution/complexconvolution.h
+include/fxt/convolution/realconvolution.h
 include/fxt/convolution/slowcnvl.h
 include/fxt/convolution/slowcnvla.h
 include/fxt/convolution/slowcnvlhalf.h
+include/fxt/convolution/slowconvolution.h
 include/fxt/convolution/slowtwodimcnvl.h
 include/fxt/convolution/slowweightedcnvl.h
+include/fxt/convolution/weightedconvolution.h
 include/fxt/correlation-all.h
 include/fxt/correlation/correlation.h
 include/fxt/correlation/slowcorr.h
 include/fxt/dctdst-all.h
 include/fxt/dctdst/dctdst.h
-include/fxt/demo/bitdemos.h
-include/fxt/demo/nextarg.h
 include/fxt/ds-all.h
 include/fxt/ds/bitarray.h
+include/fxt/ds/coroutine.h
 include/fxt/ds/deque.h
 include/fxt/ds/heap.h
 include/fxt/ds/orderedrarray.h
@@ -178,10 +233,16 @@ include/fxt/ds/rset.h
 include/fxt/ds/stack.h
 include/fxt/fft-all.h
 include/fxt/fft/fft.h
+include/fxt/fft/matrixfft.h
+include/fxt/fft/shortfft.h
 include/fxt/fht-all.h
 include/fxt/fht/fht.h
+include/fxt/fht/fht2d.h
+include/fxt/fht/fhtloc2.h
+include/fxt/fht/hartleyshift.h
 include/fxt/fht/shortfhtdifcore.h
 include/fxt/fht/shortfhtditcore.h
+include/fxt/fht/slowht.h
 include/fxt/fxtalloca.h
 include/fxt/fxtio.h
 include/fxt/fxtiomanip.h
@@ -191,6 +252,7 @@ include/fxt/graph/bucket/debruijngraph.h
 include/fxt/graph/digraph.h
 include/fxt/graph/digraphpaths.h
 include/fxt/graph/digraphspecial.h
+include/fxt/graph/lyndongray.h
 include/fxt/graph/printpath.h
 include/fxt/haar-all.h
 include/fxt/haar/haar.h
@@ -210,9 +272,6 @@ include/fxt/matrix/symmetricpart.h
 include/fxt/matrix/testmatrix.h
 include/fxt/matrix/toeplitz.h
 include/fxt/matrix/vector.h
-include/fxt/matrixfft-all.h
-include/fxt/matrixfft/ldn2rc.h
-include/fxt/matrixfft/matrixfft.h
 include/fxt/mod-all.h
 include/fxt/mod/binarygcd.h
 include/fxt/mod/chebyshev.h
@@ -229,6 +288,7 @@ include/fxt/mod/primes.h
 include/fxt/mod/testnum.h
 include/fxt/mult-all.h
 include/fxt/mult/diskaux.h
+include/fxt/mult/diskconvolution.h
 include/fxt/mult/fxtmult.h
 include/fxt/mult/workspace.h
 include/fxt/ntt-all.h
@@ -238,6 +298,7 @@ include/fxt/perm/bucket/graypermute.h
 include/fxt/perm/bucket/partition.h
 include/fxt/perm/bucket/revbinpermute.h
 include/fxt/perm/cycles.h
+include/fxt/perm/even2lower.h
 include/fxt/perm/graypermute.h
 include/fxt/perm/grayrevpermute.h
 include/fxt/perm/greenpermute.h
@@ -246,16 +307,12 @@ include/fxt/perm/haarpermute.h
 include/fxt/perm/mrotate.h
 include/fxt/perm/permapply.h
 include/fxt/perm/permapplyfunc.h
-include/fxt/perm/permcyclic.h
-include/fxt/perm/permderange.h
-include/fxt/perm/permlex.h
-include/fxt/perm/permminchange.h
-include/fxt/perm/permstar.h
-include/fxt/perm/permtrotter.h
-include/fxt/perm/permutation.h
-include/fxt/perm/permvisit.h
+include/fxt/perm/permcompose.h
+include/fxt/perm/perminvert.h
+include/fxt/perm/permq.h
+include/fxt/perm/permrand.h
+include/fxt/perm/printperm.h
 include/fxt/perm/radixpermute.h
-include/fxt/perm/randperm.h
 include/fxt/perm/revbinpermute.h
 include/fxt/perm/revbinpermute0.h
 include/fxt/perm/reverse.h
@@ -269,8 +326,8 @@ include/fxt/perm/zip.h
 include/fxt/perm/ziprev.h
 include/fxt/realfft-all.h
 include/fxt/realfft/realfft.h
+include/fxt/realloc.h
 include/fxt/restrict.h
-include/fxt/simplfft/fft.h
 include/fxt/sort-all.h
 include/fxt/sort/bsearch.h
 include/fxt/sort/bsearchapprox.h
@@ -282,6 +339,7 @@ include/fxt/sort/bsearchptrfunc.h
 include/fxt/sort/bucket/searchunsorted.h
 include/fxt/sort/bucket/sort.h
 include/fxt/sort/convex.h
+include/fxt/sort/equivclasses.h
 include/fxt/sort/grep.h
 include/fxt/sort/heapsort.h
 include/fxt/sort/minmax.h
@@ -290,6 +348,7 @@ include/fxt/sort/minmaxidx.h
 include/fxt/sort/minmaxidxfunc.h
 include/fxt/sort/minmaxmed23.h
 include/fxt/sort/minmaxmed23func.h
+include/fxt/sort/minmaxmed23idx.h
 include/fxt/sort/minmaxptr.h
 include/fxt/sort/minmaxptrfunc.h
 include/fxt/sort/monotone.h
@@ -312,18 +371,25 @@ include/fxt/sort/unique.h
 include/fxt/sort/uniqueapprox.h
 include/fxt/sort/usearch.h
 include/fxt/sort/usearchfunc.h
-include/fxt/test/test.h
 include/fxt/walsh-all.h
 include/fxt/walsh/arithtransform.h
 include/fxt/walsh/dyadiccnvl.h
 include/fxt/walsh/reedmuller.h
+include/fxt/walsh/shortwalshwakdif.h
+include/fxt/walsh/shortwalshwakdit.h
 include/fxt/walsh/slant.h
 include/fxt/walsh/walshbasefunc.h
+include/fxt/walsh/walsheigen.h
 include/fxt/walsh/walshgray.h
 include/fxt/walsh/walshpal.h
 include/fxt/walsh/walshq.h
 include/fxt/walsh/walshseq.h
 include/fxt/walsh/walshwak.h
+include/fxt/walsh/walshwak2.h
+include/fxt/walsh/walshwak4.h
+include/fxt/walsh/walshwak8.h
+include/fxt/walsh/walshwakloc2.h
+include/fxt/walsh/walshwakmatrix.h
 include/fxt/walsh/walshwal.h
 include/fxt/walsh/walshwalrev.h
 include/fxt/wavelet-all.h
@@ -336,17 +402,14 @@ lib/libfxt.a
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/fxt/wavelet
 @dirrm include/fxt/walsh
-@dirrm include/fxt/test
 @dirrm include/fxt/sort/bucket
 @dirrm include/fxt/sort
-@dirrm include/fxt/simplfft
 @dirrm include/fxt/realfft
 @dirrm include/fxt/perm/bucket
 @dirrm include/fxt/perm
 @dirrm include/fxt/ntt
 @dirrm include/fxt/mult
 @dirrm include/fxt/mod
-@dirrm include/fxt/matrixfft
 @dirrm include/fxt/matrix
 @dirrm include/fxt/haar
 @dirrm include/fxt/graph/bucket
@@ -354,7 +417,6 @@ lib/libfxt.a
 @dirrm include/fxt/fht
 @dirrm include/fxt/fft
 @dirrm include/fxt/ds
-@dirrm include/fxt/demo
 @dirrm include/fxt/dctdst
 @dirrm include/fxt/correlation
 @dirrm include/fxt/convolution
@@ -363,8 +425,11 @@ lib/libfxt.a
 @dirrm include/fxt/chirpzt
 @dirrm include/fxt/bpol
 @dirrm include/fxt/bmat
+@dirrm include/fxt/bits/bucket
 @dirrm include/fxt/bits
+@dirrm include/fxt/aux2/bucket
 @dirrm include/fxt/aux2
 @dirrm include/fxt/aux1
+@dirrm include/fxt/aux0/bucket
 @dirrm include/fxt/aux0
 @dirrm include/fxt
