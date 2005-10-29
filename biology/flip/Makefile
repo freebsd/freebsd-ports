@@ -13,6 +13,9 @@ MASTER_SITES=	ftp://megasun.bch.umontreal.ca/pub/flip/
 MAINTAINER=	tonym@biolateral.com.au
 COMMENT=	Flip is used to find/translate orfs
 
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=	2005-12-31
+
 USE_REINPLACE=	yes
 
 MAN1=		flip.1
