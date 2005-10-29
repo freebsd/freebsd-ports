@@ -8,13 +8,10 @@
 PORTNAME=	battleball
 PORTVERSION=	2.1
 CATEGORIES=	games
-MASTER_SITES=	http://home.austin.rr.com/pah/
-DISTNAME=	${PORTNAME}.${PORTVERSION:S/.//}.src
+MASTER_SITES=	http://freebsd.aeternal.net/ports/
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-DEPRECATED=	"master site disappeared"
-EXPIRATION_DATE=2005-08-31
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	corwin@aeternal.net
 COMMENT=	3D single/multiplayer military soccer game for X Window System
 
 USE_X_PREFIX=	yes
