@@ -1,0 +1,7 @@
+bin/pypanel
+%%DATADIR%%/ppicon.png
+%%DATADIR%%/pypanelrc
+%%PYTHON_SITELIBDIR%%/ppmodule.so
+@dirrm %%DATADIR%%
+@unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || true
+@unexec rmdir %D/%%PYTHON_LIBDIR%% 2>/dev/null || true
