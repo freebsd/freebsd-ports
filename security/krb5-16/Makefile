@@ -17,10 +17,6 @@ COMMENT=		An authentication system developed at MIT, successor to Kerberos IV
 
 BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
-.if ${OSVERSION} < 501000
-BROKEN=			Does not build
-.endif
-
 CONFLICTS=		krb4-[0-9]* heimdal-[0-9]*
 
 LATEST_LINK=		${PORTNAME}
@@ -76,6 +72,10 @@ HTML_DOCS=		admin.html user-guide.html install.html
 HTML_OUTDIRS=		krb5-admin krb5-install
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 501000
+BROKEN=			Does not build
+.endif
 
 post-extract:
 	@${TAR} -C ${WRKDIR} -xzf ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz
