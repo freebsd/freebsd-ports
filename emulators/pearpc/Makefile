@@ -28,7 +28,8 @@ PLIST_DIRS=	%%DATADIR%%
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math
 .else
-CONFIGURE_ARGS+=	--disable-fpo
+CONFIGURE_ARGS+=	--disable-fpo \
+			--disable-release
 .endif
 
 # GTK and QT ui are broken in this version
@@ -47,6 +48,12 @@ CONFIGURE_ARGS+=	--enable-ui=sdl
 USE_SDL=	sdl
 .else
 CONFIGURE_ARGS+=	--enable-ui=x11
+.endif
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+.else
+CONFIGURE_ARGS+=	--disable-debug
 .endif
 
 .include <bsd.port.pre.mk>
