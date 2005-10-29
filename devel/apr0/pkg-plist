@@ -12,6 +12,7 @@ include/apr-1/apr_atomic.h
 include/apr-1/apr_base64.h
 include/apr-1/apr_buckets.h
 include/apr-1/apr_date.h
+include/apr-1/apr_dbd.h
 include/apr-1/apr_dbm.h
 include/apr-1/apr_dso.h
 include/apr-1/apr_env.h
@@ -27,6 +28,7 @@ include/apr-1/apr_hooks.h
 include/apr-1/apr_inherit.h
 include/apr-1/apr_ldap.h
 include/apr-1/apr_ldap_init.h
+include/apr-1/apr_ldap_option.h
 include/apr-1/apr_ldap_url.h
 include/apr-1/apr_lib.h
 include/apr-1/apr_md4.h
@@ -73,9 +75,9 @@ lib/apr.exp
 lib/aprutil.exp
 lib/libapr-1.a
 lib/libapr-1.so
-lib/libapr-1.so.0
+lib/libapr-1.so.2
 lib/libaprutil-1.a
 lib/libaprutil-1.so
-lib/libaprutil-1.so.0
+lib/libaprutil-1.so.2
 @dirrm build-1
 @dirrm include/apr-1
