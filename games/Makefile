@@ -112,6 +112,7 @@
     SUBDIR += cursive
     SUBDIR += d2x
     SUBDIR += daimonin-client
+    SUBDIR += dangerdeep
     SUBDIR += darkplaces
     SUBDIR += deal
     SUBDIR += defendguin
