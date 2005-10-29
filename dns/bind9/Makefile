@@ -14,7 +14,8 @@
 PORTNAME=	bind9
 PORTVERSION=	9.3.1
 CATEGORIES=	dns net ipv6
-MASTER_SITES=	${MASTER_SITE_ISC}
+MASTER_SITES=	${MASTER_SITE_ISC} \
+		http://dougbarton.us/Downloads/%SUBDIR%/
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
 DISTNAME=	bind-${ISCVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
@@ -90,6 +91,9 @@ MAN3=	lwres.3 lwres_addr_parse.3 lwres_buffer.3 lwres_buffer_add.3 \
 MAN5=	named.conf.5 rndc.conf.5
 MAN8=	dnssec-keygen.8 dnssec-signzone.8 lwresd.8 named-checkconf.8 \
 	named-checkzone.8 named.8 nsupdate.8 rndc-confgen.8 rndc.8
+
+verify:	checksum
+	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
 pre-fetch:
 .if defined(PORT_REPLACES_BASE_BIND9)

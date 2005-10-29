@@ -8,10 +8,11 @@
 PORTNAME=	shlock
 PORTVERSION=	2.3.5
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_ISC}
+MASTER_SITES=	${MASTER_SITE_ISC} \
+		http://dougbarton.us/Downloads/%SUBDIR%/
 MASTER_SITE_SUBDIR=inn
-
-DISTFILES=	inn-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES=	inn-${PORTVERSION}${EXTRACT_SUFX} \
+		inn-${PORTVERSION}${EXTRACT_SUFX}.asc
 
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Create lock files for use in shell scripts
@@ -22,6 +23,9 @@ MAN1=		shlock.1
 PLIST_FILES=	bin/shlock
 
 WRKSRC=		${WRKDIR}/inn-${PORTVERSION}
+
+verify:	checksum
+	gpg --verify ${DISTDIR}/inn-${PORTVERSION}${EXTRACT_SUFX}.asc
 
 do-build:
 	cd ${WRKSRC}/backends && ${MAKE} shlock
