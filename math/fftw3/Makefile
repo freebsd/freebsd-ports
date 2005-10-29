@@ -61,7 +61,7 @@ USE_GCC=	3.4
 .endif
 .endif
 .endif
-.if ${FFTW3_FLAVOR}=="long" && !defined(CPUTYPE)
+.if ${FFTW3_FLAVOR}=="long"
 USE_LDOUBLE=	yes
 .endif
 .if ${MACHINE_CPU:M3dnow}
