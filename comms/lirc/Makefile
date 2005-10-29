@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	lirc
 MAINTAINER=	doconnor@gsoft.com.au
 COMMENT=	Linux Infared Remote Control
 
-BROKEN=		Incorrect pkg-plist
-
 USE_XLIB=	yes
 USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
