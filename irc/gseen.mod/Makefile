@@ -7,6 +7,7 @@
 
 PORTNAME=	gseen.mod
 PORTVERSION=	1.1.1.p3
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://www.visions-of-fantasy.de/gseen.mod/
 DISTNAME=	${PORTNAME}.${PORTVERSION:S/p/dev/}
@@ -14,11 +15,17 @@ DISTNAME=	${PORTNAME}.${PORTVERSION:S/p/dev/}
 MAINTAINER=	tux@pinguru.net
 COMMENT=	A seen-module for the eggdrop IRC bot
 
-EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/irc/eggdrop:configure
+EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/irc/eggdrop:extract
 BUILD_DEPENDS=	eggdrop:${PORTSDIR}/irc/eggdrop
 RUN_DEPENDS=	eggdrop:${PORTSDIR}/irc/eggdrop
+LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 
 WRKSRC=		${WRKDIR}/eggdrop
+
+CONFIGURE_ARGS+=	--with-tcllib=${LOCALBASE}/lib/libtcl84.so \
+			--with-tclinc=${LOCALBASE}/include/tcl84/tcl.h
+
+GNU_CONGFIGURE=	yes
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
@@ -36,7 +43,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/src/mod/gseen.mod/*lang ${PREFIX}/share/eggdrop/language
 	@${INSTALL_DATA} ${WRKSRC}/src/mod/gseen.mod/gseen.conf ${PREFIX}/etc
 	@${ECHO_MSG} "Please add the line"
-	@${ECHO_MSG} "source /usr/local/etc/gseen.conf"
+	@${ECHO_MSG} "source ${PREFIX}/etc/gseen.conf"
 	@${ECHO_MSG} "at the end of your eggdrop config file"
 	@${ECHO_MSG} "and .rehash your bot"
 
