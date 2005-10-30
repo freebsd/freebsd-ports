@@ -52,6 +52,7 @@
     SUBDIR += qhacc
     SUBDIR += qtstalker
     SUBDIR += quantlib
+    SUBDIR += sql-ledger
     SUBDIR += venice
     SUBDIR += wmstock
     SUBDIR += xinvest
