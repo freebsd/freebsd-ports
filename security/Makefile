@@ -250,7 +250,6 @@
     SUBDIR += opencdk
     SUBDIR += openct
     SUBDIR += opensc
-    SUBDIR += opensc-esteid
     SUBDIR += openscep
     SUBDIR += openssh
     SUBDIR += openssh-askpass
