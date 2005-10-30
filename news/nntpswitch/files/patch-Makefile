@@ -1,27 +1,27 @@
---- Makefile.orig	Mon Mar  8 11:37:11 2004
-+++ Makefile	Wed Mar 24 00:53:21 2004
-@@ -1,7 +1,3 @@
-- 
+--- Makefile.orig	Mon Nov 29 16:45:38 2004
++++ Makefile	Sun Oct 30 14:48:01 2005
+@@ -1,7 +1,5 @@
+  
 -PREFIX   = /usr/local
+ LIBDIR	 = lib/nntpswitch
 -PERL	 = /usr/bin/perl
--
+ 
  PROG     = nntpswitchd
  INSTUTILS= nsstats.pl nsstats.sh updategroups
- 
-@@ -13,10 +9,8 @@
+@@ -50,10 +48,8 @@
  
  DISTNAME = nntpswitch
  VERSION  = `/bin/sh version.sh`
 -CC       = gcc
--CFLAGS   = -pipe -g -O3 -Wall -D_VERSION=\"$(VERSION)\"
+-CFLAGS   = -pipe -g -O3 -Wall -DVERSION=\"$(VERSION)\"
 -LDFLAGS  = 
 -LIBS     = -lm -ldl 
-+CFLAGS  += -D_VERSION=\"$(VERSION)\"
-+LIBS    += -lm
++CFLAGS   += -DVERSION=\"$(VERSION)\"
++LIBS     += -lm 
  _DIRNAME = $(DISTNAME)
  
  all:		protos config aconfig.o $(PROG) $(MODULES) updategroups
-@@ -33,6 +27,10 @@
+@@ -70,6 +66,10 @@
  updategroups:	$(UGOBJS)
  		$(CC) $(LDFLAGS) $(CFLAGS) $(LIBS) $(UGOBJS) -o updategroups
  
@@ -32,11 +32,13 @@
  $(PROG):	$(OBJS)
  		$(CC) $(LDFLAGS) $(CFLAGS) $(OBJS) aconfig.o $(LIBS) -o $(PROG) 
  
-@@ -82,7 +80,6 @@
- 		@if [ -f acct_radius.so ]; then cp acct_radius.so $(PREFIX)/lib/libacct_radius.so; fi
- 		@if [ -f auth_postgres.so ]; then cp auth_postgres.so $(PREFIX)/lib/libauth_postgres.so; fi
- 		@if [ -f auth_mysql.so ]; then cp auth_mysql.so $(PREFIX)/lib/libauth_mysql.so; fi
+@@ -140,8 +140,7 @@
+ 		install -b $(INSTUTILS) $(PREFIX)/sbin/
+ 		@echo "Installing modules in $(PREFIX)/$(LIBDIR)"
+ 		@if [ ! -d $(PREFIX)/$(LIBDIR) ]; then mkdir $(PREFIX)/$(LIBDIR); fi
+-		@for f in $(MODULES) $(CONDMODS); do if [ -f $$f ]; then cp $$f $(PREFIX)/$(LIBDIR)/$$f.$(VERSION); fi; done
 -		ldconfig
++		@for f in $(MODULES) $(CONDMODS); do if [ -f $$f ]; then cp $$f $(PREFIX)/$(LIBDIR)/$$f; fi; done
  
  help:
  		@echo "Choose one of the following targets:"

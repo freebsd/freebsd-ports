@@ -1,27 +1,29 @@
---- nntpswitch.conf.in.orig	Thu Mar 18 18:13:36 2004
-+++ nntpswitch.conf.in	Thu Mar 18 18:14:54 2004
-@@ -11,16 +11,16 @@
+--- nntpswitch.conf.in.orig	Fri Apr 23 13:30:04 2004
++++ nntpswitch.conf.in	Sun Oct 30 14:32:31 2005
+@@ -10,7 +10,7 @@
+ string PidFile /var/run/nntpswitchd.pid
+ 
+ # Every file or dirname not starting with a / has BasePath prepended
+-string BasePath /etc/nntpswitch
++string BasePath %%PREFIX%%/etc/nntpswitch
  
  # Paths and Files 
  # kill -1 will reload these
--string AccessFile /etc/nntpswitch/access.conf
--string AuthFile /etc/nntpswitch/auth.conf
--string ProfileFile /etc/nntpswitch/profiles.conf
--string ServerFile /usr/local/etc/nntpswitch/servers.conf
-+string AccessFile %%PREFIX%%/etc/nntpswitch/access.conf
-+string AuthFile %%PREFIX%%/etc/nntpswitch/auth.conf
-+string ProfileFile %%PREFIX%%/etc/nntpswitch/profiles.conf
-+string ServerFile %%PREFIX%%/etc/nntpswitch/servers.conf
+@@ -18,8 +18,8 @@
+ string ServerFile servers.conf
  
--string OverviewFmtFile /etc/nntpswitch/overview.fmt
+ string OverviewFmtFile overview.fmt
 -string ActiveFile /etc/nntpswitch/active
 -string NewsgroupsFile /etc/nntpswitch/newsgroups
-+string OverviewFmtFile %%PREFIX%%/etc/nntpswitch/overview.fmt
 +string ActiveFile %%PREFIX%%/etc/nntpswitch/active
 +string NewsgroupsFile %%PREFIX%%/etc/nntpswitch/newsgroups
  
--string ModulePath /usr/local/lib
-+string ModulePath %%PREFIX%%/lib
+ string ModulePath /usr/local/lib
  
- # Timeout for server reading
- int ServerReadTimeout 300
+@@ -92,5 +92,5 @@
+ int DropUnknown 10
+ 
+ # touch this file to temporarily disable the server
+-string DisableFile /etc/nntpswitch/closed
++string DisableFile %%PREFIX%%/etc/nntpswitch/closed
+ string DisableText 500 Sorry, we're closed.
