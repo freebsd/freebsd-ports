@@ -24,7 +24,7 @@ COMMENT=	Vi "workalike", with many additional features
 .if defined(PACKAGE_BUILDING) && !defined(LITE)
 BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
-USE_PERL5=	yes
+#USE_PERL5=	yes
 .endif
 
 LATEST_LINK?=	vim5
@@ -62,7 +62,7 @@ MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x --enable-multibyte"
 .endif # WITHOUT_X11
 
 .if defined(PACKAGE_BUILDING)
-MAKE_ARGS+=	CONF_OPT_PERL="--enable-perlinterp --enable-pythoninterp --enable-tclinterp --enable-cscope"
+MAKE_ARGS+=	CONF_OPT_PERL="--enable-pythoninterp --enable-tclinterp --enable-cscope"
 .endif
 
 .else	# LITE
@@ -72,10 +72,6 @@ MAKE_ARGS+=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable
 .endif	# LITE
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 500800
-BROKEN=		"Does not compile with perl 5.8"
-.endif
 
 pre-build:
 	@(cd ${WRKSRC}; ${MAKE} distclean)
