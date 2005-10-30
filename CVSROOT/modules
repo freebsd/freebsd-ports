@@ -11675,6 +11675,7 @@ spread-j	ports/net/spread-j
 spreadlogd	ports/www/spreadlogd
 springgraph	ports/graphics/springgraph
 spruce		ports/mail/spruce
+sql-ledger	ports/finance/sql-ledger
 sqldjbdns	ports/dns/sqldjbdns
 sqlgrey		ports/mail/sqlgrey
 sqlite2		ports/databases/sqlite2
