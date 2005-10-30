@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	LDAP-Account-Manager
-PORTVERSION=	0.4.9
+PORTVERSION=	0.5.1
 CATEGORIES=	sysutils www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lam
@@ -26,8 +26,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME:L}-${PORTVERSION}
 WWW_ROOT?=	www/lam
 PLIST_SUB+=	WWWROOT=${WWW_ROOT}
 WWW_DATA=	index.html config graphics help lib locale sess style templates tmp
-MYPORTDOCS=	HISTORY README TODO docs/*
-LAM_SCRIPTS=	lib/createntlm.pl lib/lamdaemon.pl
+MYPORTDOCS=	HISTORY README TODO COPYING copyright docs/*
+LAM_SCRIPTS=	lib/lamdaemon.pl
+PORTDOCS=	*
 
 do-configure:
 	@${RM} ${WRKSRC}/config/shells
@@ -37,9 +38,7 @@ do-install:
 	@cd ${WRKSRC} && ${TAR} cf - ${WWW_DATA} | ${TAR} xf - -C ${PREFIX}/${WWW_ROOT}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for FILE in ${MYPORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.endfor
+	cd ${WRKSRC} && ${TAR} cf - ${MYPORTDOCS} | ${TAR} xf - -C ${DOCSDIR}
 .endif
 	@${MKDIR} ${PREFIX}/${WWW_ROOT}/tmp
 	@[ -e ${PREFIX}/${WWW_ROOT}/config/config.cfg ] || \
@@ -49,7 +48,8 @@ do-install:
 	@${ECHO_MSG} "===> Setting correct permissions"
 	@${FIND} ${PREFIX}/${WWW_ROOT} -type f -exec ${CHMOD} 644 {} \;
 	@${FIND} ${PREFIX}/${WWW_ROOT} -type d -exec ${CHMOD} 755 {} \;
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${WWW_ROOT}/*
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${WWW_ROOT}/sess \
+		${PREFIX}/${WWW_ROOT}/tmp ${PREFIX}/${WWW_ROOT}/config 
 	@cd ${PREFIX}/${WWW_ROOT} ; ${CHMOD} 755 ${LAM_SCRIPTS}
 	@${LN} -sf /etc/shells ${PREFIX}/${WWW_ROOT}/config/shells
 
