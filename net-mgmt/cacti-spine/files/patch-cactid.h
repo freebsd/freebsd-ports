@@ -1,13 +1,11 @@
---- cactid.h.orig	Sat Feb 26 21:46:10 2005
-+++ cactid.h	Sat Feb 26 21:46:34 2005
-@@ -45,8 +45,8 @@
- 
+--- cactid.h.orig	Tue Oct 11 23:13:48 2005
++++ cactid.h	Sun Oct 30 14:15:22 2005
+@@ -55,7 +55,7 @@
  /* locations to search for the config file */
- #define CONFIG_PATHS 5
--#define CONFIG_PATH_1 ""
+ #define CONFIG_PATHS 2
+ #define CONFIG_PATH_1 ""
 -#define CONFIG_PATH_2 "/etc/"
-+#define CONFIG_PATH_1 "%%PREFIX%%/etc/"
-+#define CONFIG_PATH_2 ""
- #define CONFIG_PATH_3 "/cygdrive/c/wwwroot/cacti"
- #define CONFIG_PATH_4 "/cygdrive/c/webroot/cacti"
- #define CONFIG_PATH_5 "/cygdrive/c/inetpub/wwwroot/cacti"
++#define CONFIG_PATH_2 "%%PREFIX%%/etc/"
+ 
+ /* config file defaults */
+ #define DEFAULT_CONF_FILE "cactid.conf"

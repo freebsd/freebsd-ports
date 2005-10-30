@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	cactid
-PORTVERSION=	0.8.6.e
+PORTVERSION=	0.8.6.f
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.cacti.net/downloads/cactid/
-DISTNAME=	cacti-${PORTNAME}-0.8.6e
+DISTNAME=	cacti-${PORTNAME}-0.8.6f-${PORTREVISION}
 
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A multithreaded poller for Cacti written in C
@@ -17,6 +18,7 @@ COMMENT=	A multithreaded poller for Cacti written in C
 LIB_DEPENDS=	netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp
 
 GNU_CONFIGURE=	YES
+CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} --with-snmp=${LOCALBASE}
 USE_MYSQL=	YES
 USE_OPENSSL=	YES
 USE_REINPLACE=	YES
