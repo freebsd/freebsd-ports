@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	kazehakase
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	${PORTNAME}/16705
+MASTER_SITE_SUBDIR=	${PORTNAME}/17175
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Kazehakase is a browser with gecko engine like Epiphany or Galeon
@@ -127,6 +127,8 @@ post-patch:
 .endif
 
 post-configure:
+	@${CP} -f ${FILESDIR}/mkinstalldirs ${WRKSRC}
+	@${CHMOD} +x ${WRKSRC}/mkinstalldirs
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g ; \
 		s|%%X11BASE%%|${X11BASE}|g ; \
