@@ -39,6 +39,16 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} ${CONFIGURE_TARGET}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 503000
+.if !exists(/usr/include/stdint.h)
+BROKEN=         "requires stdint.h"
+.else
+IGNORE=         is not supported for FreeBSD < 5.3
+.endif
+.endif
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
@@ -62,4 +72,4 @@ build-plist: Makefile
 	${ECHO} "@unexec rmdir %D/%%MPIBASE%% 2>/dev/null || true" \
 	    >> pkg-plist
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
