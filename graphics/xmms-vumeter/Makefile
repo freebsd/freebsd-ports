@@ -28,6 +28,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' ${WRKSRC}/src/vumeter.h
 
 post-install:
-	@${CP} -R ${WRKSRC}/skins ${DATADIR}
+.for s in default default.mirror default.oldxmms
+	${MKDIR} ${DATADIR}/${s}
+	${INSTALL_DATA} ${WRKSRC}/skins/${s}/* ${DATADIR}/${s}
+.endfor
 
 .include <bsd.port.mk>
