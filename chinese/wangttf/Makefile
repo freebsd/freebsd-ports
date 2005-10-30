@@ -24,6 +24,9 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Many Chinese Big5 TrueType fonts, made by Dr. Hann-Tzong Wang
 
+DEPRECATED=	mastersite disappeared, no longer maintained by author"
+EXPIRATION_DATE=	2005-12-31
+
 DIST_SUBDIR=	zh-wangttf
 NO_BUILD=	yes
 
