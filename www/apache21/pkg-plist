@@ -1,17 +1,47 @@
 @comment $FreeBSD$
 @exec mkdir -p %D/etc/apache21 2> /dev/null
-@unexec if cmp -s %D/etc/apache21/httpd.conf %D/%%EXAMPLESDIR%%/httpd-std.conf; then rm -f %D/etc/apache21/httpd.conf; fi
-%%EXAMPLESDIR%%/httpd-std.conf
-@exec [ -f %D/etc/apache21/httpd.conf ] || cp %D/%%EXAMPLESDIR%%/httpd-std.conf %D/etc/apache21/httpd.conf
-@unexec if cmp -s %D/etc/apache21/magic %D/%%EXAMPLESDIR%%/magic-dist; then rm -f %D/etc/apache21/magic; fi
-%%EXAMPLESDIR%%/magic-dist
-@exec [ -f %D/etc/apache21/magic ] || cp %D/%%EXAMPLESDIR%%/magic-dist %D/etc/apache21/magic
-@unexec if cmp -s %D/etc/apache21/mime.types %D/%%EXAMPLESDIR%%/mime.types-dist; then rm -f %D/etc/apache21/mime.types; fi
-%%EXAMPLESDIR%%/mime.types-dist
-@exec [ -f %D/etc/apache21/mime.types ] || cp %D/%%EXAMPLESDIR%%/mime.types-dist %D/etc/apache21/mime.types
-@unexec if cmp -s %D/etc/apache21/ssl.conf %D/%%EXAMPLESDIR%%/ssl-std.conf; then rm -f %D/etc/apache21/ssl.conf; fi
-%%EXAMPLESDIR%%/ssl-std.conf
-@exec [ -f %D/etc/apache21/ssl.conf ] || cp %D/%%EXAMPLESDIR%%/ssl-std.conf %D/etc/apache21/ssl.conf
+@unexec if cmp -s %D/etc/apache21/httpd.conf %D/%%EXAMPLESDIR%%/httpd.conf; then rm -f %D/etc/apache21/httpd.conf; fi
+%%EXAMPLESDIR%%/httpd.conf
+@exec [ -f %D/etc/apache21/httpd.conf ] || cp %D/%%EXAMPLESDIR%%/httpd.conf %D/etc/apache21/httpd.conf
+@unexec if cmp -s %D/etc/apache21/magic %D/%%EXAMPLESDIR%%/magic; then rm -f %D/etc/apache21/magic; fi
+%%EXAMPLESDIR%%/magic
+@exec [ -f %D/etc/apache21/magic ] || cp %D/%%EXAMPLESDIR%%/magic %D/etc/apache21/magic
+@unexec if cmp -s %D/etc/apache21/mime.types %D/%%EXAMPLESDIR%%/mime.types-; then rm -f %D/etc/apache21/mime.types; fi
+%%EXAMPLESDIR%%/mime.types
+@exec [ -f %D/etc/apache21/mime.types ] || cp %D/%%EXAMPLESDIR%%/mime.types- %D/etc/apache21/mime.types
+@unexec if cmp -s %D/etc/apache21/extra/httpd-autoindex.conf %D/%%EXAMPLESDIR%%/extra/httpd-autoindex.conf; then rm -f %D/etc/apache21/extra/httpd-autoindex.conf; fi
+%%EXAMPLESDIR%%/extra/httpd-autoindex.conf
+@exec [ -f %D/etc/apache21/extra/httpd-autoindex.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-autoindex.conf %D/etc/apache21/extra/httpd-autoindex.conf
+@unexec if cmp -s %D/etc/apache21/extra/httpd-dav.conf %D/%%EXAMPLESDIR%%/extra/httpd-dav.conf; then rm -f %D/etc/apache21/extra/httpd-dav.conf; fi
+%%EXAMPLESDIR%%/extra/httpd-dav.conf
+@exec [ -f %D/etc/apache21/extra/httpd-dav.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-dav.conf %D/etc/apache21/extra/httpd-dav.conf
+@unexec if cmp -s %D/etc/apache21/extra/httpd-default.conf %D/%%EXAMPLESDIR%%/extra/httpd-default.conf; then rm -f %D/etc/apache21/extra/httpd-default.conf; fi
+%%EXAMPLESDIR%%/extra/httpd-default.conf
+@exec [ -f %D/etc/apache21/extra/httpd-default.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-default.conf %D/etc/apache21/extra/httpd-default.conf
+@unexec if cmp -s %D/etc/apache21/extra/httpd-info.conf %D/%%EXAMPLESDIR%%/extra/httpd-info.conf; then rm -f %D/etc/apache21/extra/httpd-info.conf; fi
+%%EXAMPLESDIR%%/extra/httpd-info.conf
+@exec [ -f %D/etc/apache21/extra/httpd-info.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-info.conf %D/etc/apache21/extra/httpd-info.conf
+@unexec if cmp -s %D/etc/apache21/extra/httpd-languages.conf %D/%%EXAMPLESDIR%%/extra/httpd-languages.conf; then rm -f %D/etc/apache21/extra/httpd-languages.conf; fi
+%%EXAMPLESDIR%%/extra/httpd-languages.conf
+@exec [ -f %D/etc/apache21/extra/httpd-languages.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-languages.conf %D/etc/apache21/extra/httpd-languages.conf
+@unexec if cmp -s %D/etc/apache21/extra/httpd-manual.conf %D/%%EXAMPLESDIR%%/extra/httpd-manual.conf; then rm -f %D/etc/apache21/extra/httpd-manual.conf; fi
+%%EXAMPLESDIR%%/extra/httpd-manual.conf
+@exec [ -f %D/etc/apache21/extra/httpd-manual.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-manual.conf %D/etc/apache21/extra/httpd-manual.conf
+@unexec if cmp -s %D/etc/apache21/extra/httpd-mpm.conf %D/%%EXAMPLESDIR%%/extra/httpd-mpm.conf; then rm -f %D/etc/apache21/extra/httpd-mpm.conf; fi
+%%EXAMPLESDIR%%/extra/httpd-mpm.conf
+@exec [ -f %D/etc/apache21/extra/httpd-mpm.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-mpm.conf %D/etc/apache21/extra/httpd-mpm.conf
+@unexec if cmp -s %D/etc/apache21/extra/httpd-multilang-errordoc.conf %D/%%EXAMPLESDIR%%/extra/httpd-multilang-errordoc.conf; then rm -f %D/etc/apache21/extra/httpd-multilang-errordoc.conf; fi
+%%EXAMPLESDIR%%/extra/httpd-multilang-errordoc.conf
+@exec [ -f %D/etc/apache21/extra/httpd-multilang-errordoc.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-multilang-errordoc.conf %D/etc/apache21/extra/httpd-multilang-errordoc.conf
+@unexec if cmp -s %D/etc/apache21/extra/httpd-ssl.conf %D/%%EXAMPLESDIR%%/extra/httpd-ssl.conf; then rm -f %D/etc/apache21/extra/httpd-ssl.conf; fi
+%%EXAMPLESDIR%%/extra/httpd-ssl.conf
+@exec [ -f %D/etc/apache21/extra/httpd-ssl.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-ssl.conf %D/etc/apache21/extra/httpd-ssl.conf
+@unexec if cmp -s %D/etc/apache21/extra/httpd-userdir.conf %D/%%EXAMPLESDIR%%/extra/httpd-userdir.conf; then rm -f %D/etc/apache21/extra/httpd-userdir.conf; fi
+%%EXAMPLESDIR%%/extra/httpd-userdir.conf
+@exec [ -f %D/etc/apache21/extra/httpd-userdir.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-userdir.conf %D/etc/apache21/extra/httpd-userdir.conf
+@unexec if cmp -s %D/etc/apache21/extra/httpd-vhosts.conf %D/%%EXAMPLESDIR%%/extra/httpd-vhosts.conf; then rm -f %D/etc/apache21/extra/httpd-vhosts.conf; fi
+%%EXAMPLESDIR%%/extra/httpd-vhosts.conf
+@exec [ -f %D/etc/apache21/extra/httpd-vhosts.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-vhosts.conf %D/etc/apache21/extra/httpd-vhosts.conf
 etc/rc.d/apache21.sh
 include/apache21/ap_compat.h
 include/apache21/ap_config.h
@@ -31,6 +61,7 @@ include/apache21/ap_release.h
 %%APR_PORTS%%include/apr-1/apr_base64.h
 %%APR_PORTS%%include/apr-1/apr_buckets.h
 %%APR_PORTS%%include/apr-1/apr_date.h
+%%APR_PORTS%%include/apr-1/apr_dbd.h
 %%APR_PORTS%%include/apr-1/apr_dbm.h
 %%APR_PORTS%%include/apr-1/apr_dso.h
 %%APR_PORTS%%include/apr-1/apr_env.h
@@ -131,10 +162,10 @@ include/apache21/util_xml.h
 %%APR_PORTS%%lib/aprutil.exp
 %%APR_PORTS%%lib/libapr-1.a
 %%APR_PORTS%%lib/libapr-1.so
-%%APR_PORTS%%lib/libapr-1.so.1
+%%APR_PORTS%%lib/libapr-1.so.2
 %%APR_PORTS%%lib/libaprutil-1.a
 %%APR_PORTS%%lib/libaprutil-1.so
-%%APR_PORTS%%lib/libaprutil-1.so.1
+%%APR_PORTS%%lib/libaprutil-1.so.2
 libexec/apache21/httpd.exp
 %%MOD_ACTIONS%%libexec/apache21/mod_actions.so
 %%MOD_ALIAS%%libexec/apache21/mod_alias.so
@@ -171,7 +202,7 @@ libexec/apache21/httpd.exp
 %%MOD_EXT_FILTER%%libexec/apache21/mod_ext_filter.so
 %%MOD_FILE_CACHE%%libexec/apache21/mod_file_cache.so
 %%MOD_HEADERS%%libexec/apache21/mod_headers.so
-%%MOD_IMAP%%libexec/apache21/mod_imap.so
+%%MOD_IMAGEMAP%%libexec/apache21/mod_imagemap.so
 %%MOD_INCLUDE%%libexec/apache21/mod_include.so
 %%MOD_INFO%%libexec/apache21/mod_info.so
 %%MOD_LDAP%%libexec/apache21/mod_ldap.so
@@ -213,6 +244,7 @@ sbin/htdbm
 sbin/htdigest
 sbin/htpasswd
 sbin/httpd
+sbin/httxt2dbm
 sbin/logresolve
 sbin/rotatelogs
 %%MOD_SUEXEC%%sbin/suexec
@@ -226,6 +258,7 @@ share/apache21/build/config.nice
 share/apache21/build/instdso.sh
 share/apache21/build/library.mk
 share/apache21/build/ltlib.mk
+share/apache21/build/mkdir.sh
 share/apache21/build/program.mk
 share/apache21/build/rules.mk
 share/apache21/build/special.mk
@@ -250,7 +283,6 @@ share/apache21/build/special.mk
 %%ERROR%%www/error-dist/HTTP_INTERNAL_SERVER_ERROR.html.var
 %%ERROR%%www/error-dist/HTTP_LENGTH_REQUIRED.html.var
 %%ERROR%%www/error-dist/HTTP_METHOD_NOT_ALLOWED.html.var
-%%ERROR%%www/error-dist/HTTP_NOT_ACCEPTABLE.html.var
 %%ERROR%%www/error-dist/HTTP_NOT_FOUND.html.var
 %%ERROR%%www/error-dist/HTTP_NOT_IMPLEMENTED.html.var
 %%ERROR%%www/error-dist/HTTP_PRECONDITION_FAILED.html.var
@@ -496,6 +528,7 @@ share/apache21/build/special.mk
 %%ERROR%%@dirrm www/error-dist
 %%WWWDATA%%@dirrm www/data-dist
 %%CGI%%@dirrm www/cgi-bin-dist
+@dirrm %%EXAMPLESDIR%%/extra
 @dirrm %%EXAMPLESDIR%%
 @dirrm share/apache21/build
 @dirrm share/apache21
@@ -508,4 +541,5 @@ share/apache21/build/special.mk
 @unexec rmdir %D/etc/apache21/Includes 2> /dev/null || true
 @unexec rm -f %D/etc/apache21/httpd.conf.bak 2> /dev/null || true
 @unexec rmdir %D/etc/apache21/envvars.d 2> /dev/null || true
+@unexec rmdir %D/etc/apache21/extra 2> /dev/null || true
 @unexec rmdir %D/etc/apache21 2> /dev/null || echo "===> If you plan to do not reinstall apache21, you can safely remove %D/etc/apache21."

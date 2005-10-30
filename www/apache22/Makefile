@@ -8,11 +8,13 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.8
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_LOCAL:S/%SUBDIR%/clement/}
-DISTNAME=	httpd-${PORTVERSION}-alpha
-DISTFILES=	${DISTNAME}.tar.bz2 powerlogo.gif
+MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
+		${MASTER_SITE_LOCAL:S/%SUBDIR%/clement/}:powerlogo
+DISTNAME=	httpd-${PORTVERSION}-beta
+DISTFILES=	${DISTNAME}.tar.bz2 \
+		powerlogo.gif:powerlogo
 DIST_SUBDIR=	apache21
 EXTRACT_ONLY=	${DISTNAME}.tar.bz2
 
@@ -86,7 +88,7 @@ CONFIGURE_ARGS+=	--enable-v4-mapped
 .endif
 
 #backward compatibility
-.if defined(WITHOUT_SSL) 
+.if defined(WITHOUT_SSL)
 WITHOUT_SSL_MODULES=	YES
 .endif
 
@@ -208,10 +210,11 @@ pre-configure:
 
 post-configure:
 	@FTPUSERS=`${EGREP} -v '^#' /etc/ftpusers| ${TR} -s "\n" " "` ;\
-	${REINPLACE_CMD} -e "s,%%FTPUSERS%%,$$FTPUSERS, ; \
-			s,%%WWWOWN%%,${WWWOWN}, ; \
+	${REINPLACE_CMD} -e "s,%%FTPUSERS%%,$$FTPUSERS," \
+			${WRKSRC}/docs/conf/extra/httpd-userdir.conf
+	${REINPLACE_CMD} -e "s,%%WWWOWN%%,${WWWOWN}, ; \
 			s,%%WWWGRP%%,${WWWGRP}, " \
-			${WRKSRC}/docs/conf/httpd-std.conf
+			${WRKSRC}/docs/conf/httpd.conf
 
 pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL

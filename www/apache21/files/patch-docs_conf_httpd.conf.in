@@ -1,0 +1,52 @@
+--- docs/conf/httpd.conf.in.orig	Sun Oct 30 19:33:41 2005
++++ docs/conf/httpd.conf.in	Sun Oct 30 19:37:09 2005
+@@ -63,8 +63,8 @@
+ # It is usually good practice to create a dedicated user and group for
+ # running httpd, as with most system services.
+ #
+-User daemon
+-Group daemon
++User %%WWWOWN%%
++Group %%WWWGRP%%
+ </IfModule>
+ </IfModule>
+ 
+@@ -112,7 +112,6 @@
+ # features.  
+ #
+ <Directory />
+-    Options FollowSymLinks
+     AllowOverride None
+     Order deny,allow
+     Deny from all
+@@ -182,7 +181,7 @@
+ # logged here.  If you *do* define an error logfile for a <VirtualHost>
+ # container, that host's errors will be logged there and not here.
+ #
+-ErrorLog @rel_logfiledir@/error_log
++ErrorLog @rel_logfiledir@/httpd-error.log
+ 
+ #
+ # LogLevel: Control the number of messages logged to the error_log.
+@@ -211,13 +210,13 @@
+     # define per-<VirtualHost> access logfiles, transactions will be
+     # logged therein and *not* in this file.
+     #
+-    CustomLog @rel_logfiledir@/access_log common
++    #CustomLog @rel_logfiledir@/httpd-access.log common
+ 
+     #
+     # If you prefer a logfile with access, agent, and referer information
+     # (Combined Logfile Format) you can use the following directive.
+     #
+-    #CustomLog @rel_logfiledir@/access_log combined
++    CustomLog @rel_logfiledir@/httpd-access.log combined
+ </IfModule>
+ 
+ <IfModule alias_module>
+@@ -412,3 +411,5 @@
+ SSLRandomSeed startup builtin
+ SSLRandomSeed connect builtin
+ </IfModule>
++
++Include @rel_sysconfdir@/Includes/*.conf

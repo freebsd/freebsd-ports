@@ -1,69 +1,37 @@
---- Makefile.in.orig	Thu Dec  2 08:34:20 2004
-+++ Makefile.in	Sat Dec 18 11:51:59 2004
-@@ -31,15 +31,22 @@
- 	if [ ! -d $(DESTDIR)$(sysconfdir) ]; then \
- 	    $(MKINSTALLDIRS) $(DESTDIR)$(sysconfdir) ; \
- 	fi ; \
-+	if [ ! -d $(DESTDIR)$(EXAMPLESDIR) ]; then \
-+		$(MKINSTALLDIRS) $(DESTDIR)$(EXAMPLESDIR) ; \
-+	fi ; \
- 	cd $(top_srcdir)/docs/conf; \
+--- Makefile.in.orig	Sun Sep 25 23:07:27 2005
++++ Makefile.in	Sun Oct 30 19:31:59 2005
+@@ -31,9 +31,11 @@
+ install-conf:
+ 	@echo Installing configuration files
+ 	@$(MKINSTALLDIRS) $(DESTDIR)$(sysconfdir) $(DESTDIR)$(sysconfdir)/extra
+-	@$(MKINSTALLDIRS) $(DESTDIR)$(sysconfdir)/original/extra
++	@$(MKINSTALLDIRS) $(DESTDIR)$(EXAMPLESDIR) $(DESTDIR)$(EXAMPLESDIR)/extra
++
+ 	@cd $(top_srcdir)/docs/conf; \
  	for i in mime.types magic; do \
++	    $(INSTALL_DATA) $$i $(DESTDIR)$(EXAMPLESDIR); \
  	    if test ! -f $(DESTDIR)$(sysconfdir)/$$i; then \
  	        $(INSTALL_DATA) $$i $(DESTDIR)$(sysconfdir); \
  	    fi; \
-+	    cp -f $$i $$i-dist; \
-+	    $(INSTALL_DATA) $$i-dist $(DESTDIR)$(EXAMPLESDIR); \
- 	done; \
- 	for j in $(top_srcdir)/docs/conf $(top_builddir)/docs/conf ; do \
- 	    cd $$j ; \
-+            [ -f `echo "$$i"|sed 's,\.in$$,_nonex,g'` ] || continue; \
- 	    for i in *-std*.conf; do \
-+		[ -f `echo "$$i"|sed 's,\.in$$,_nonex,g'` ] || continue; \
- 	    	( \
- 	    		n_lm=`awk 'BEGIN {n=0} /@@LoadModule@@/ {n+=1} END {print n}' < $$i`; \
- 	    		if test $$n_lm -eq 0 -o "x$(DSO_MODULES)" = "x"; then \
-@@ -57,6 +64,9 @@
- 	    				if test "x$$j" = "xssl"; then \
- 	    					echo "<IfDefine SSL>"; \
- 	    				fi; \
-+					if [ `echo "$$j" | egrep 'cgid|cache|dav|digest|proxy'` ]; then \
-+					        echo -n "#"; \
-+					fi; \
- 	    				if test $$j != "^EOL^"; then \
- 	    					echo "LoadModule $${j}_module $(rel_libexecdir)/mod_$${j}.so"; \
- 	    				fi; \
-@@ -70,23 +80,18 @@
+@@ -66,14 +68,14 @@
  	    				-e 's#@@Port@@#$(PORT)#g' \
  	    				< $$i; \
  	    		fi \
--	    	) > $(DESTDIR)$(sysconfdir)/$$i; \
--	    	chmod 0644 $(DESTDIR)$(sysconfdir)/$$i; \
--	    	file=`echo $$i|sed s/-std//`; \
+-	    	) > $(DESTDIR)$(sysconfdir)/original/$$i; \
+-	    	chmod 0644 $(DESTDIR)$(sysconfdir)/original/$$i; \
 +	    	) > $(DESTDIR)$(EXAMPLESDIR)/$$i; \
 +	    	chmod 0644 $(DESTDIR)$(EXAMPLESDIR)/$$i; \
-+	    	chmod 0644 $(DESTDIR)$(EXAMPLESDIR)/$$i; \
-+		file=`echo $$i|sed s/-std//`; \
- 	    	if [ "$$file" = "httpd.conf" ]; then \
- 	    		file=`echo $$file|sed s/.*.conf/$(PROGRAM_NAME).conf/`; \
+ 	    	file=$$i; \
+ 	    	if [ "$$i" = "httpd.conf" ]; then \
+ 	    		file=`echo $$i|sed s/.*.conf/$(PROGRAM_NAME).conf/`; \
  	    	fi; \
- 	    	if test "$$file" != "$$i" && test ! -f $(DESTDIR)$(sysconfdir)/$$file; then \
--	    		$(INSTALL_DATA) $(DESTDIR)$(sysconfdir)/$$i $(DESTDIR)$(sysconfdir)/$$file; \
+ 	    	if test ! -f $(DESTDIR)$(sysconfdir)/$$file; then \
+-	    		$(INSTALL_DATA) $(DESTDIR)$(sysconfdir)/original/$$i $(DESTDIR)$(sysconfdir)/$$file; \
 +	    		$(INSTALL_DATA) $(DESTDIR)$(EXAMPLESDIR)/$$i $(DESTDIR)$(sysconfdir)/$$file; \
  	    	fi; \
+ 	    	fi; \
  	    done ; \
--	done ; \
--	if test -f "$(builddir)/envvars-std"; then \
--	    cp -p envvars-std $(DESTDIR)$(sbindir); \
--	    if test ! -f $(DESTDIR)$(sbindir)/envvars; then \
--	        cp -p envvars-std $(DESTDIR)$(sbindir)/envvars ; \
--	    fi ; \
--	fi
-+	done ;
- 
- install-build:
- 	@echo Installing build system files 
-@@ -108,44 +113,40 @@
+@@ -117,44 +119,40 @@
  	doxygen $(top_srcdir)/docs/doxygen.conf
  
  install-htdocs:
@@ -136,7 +104,7 @@
  
  install-other:
  	@test -d $(DESTDIR)$(logfiledir) || $(MKINSTALLDIRS) $(DESTDIR)$(logfiledir)
-@@ -189,11 +190,13 @@
+@@ -198,11 +196,13 @@
  	@test -d $(DESTDIR)$(mandir)      || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)
  	@test -d $(DESTDIR)$(mandir)/man1 || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)/man1
  	@test -d $(DESTDIR)$(mandir)/man8 || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)/man8

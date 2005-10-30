@@ -5,7 +5,7 @@
 #      - make options output
 #      - apache2 man/docs routines
 #
-# $FreeBSD: /tmp/pcvs/ports/www/apache21/Attic/Makefile.doc,v 1.4 2005-02-23 10:59:45 clement Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/apache21/Attic/Makefile.doc,v 1.5 2005-10-30 20:39:04 clement Exp $
 #
 
 ## Available knobs:
@@ -99,7 +99,7 @@ MAKE_ENV+=	EXAMPLESDIR=${EXAMPLESDIR}
 MAKE_ENV+=	NOPORTDOCS=yes
 .endif
 
-MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
+MAN1=		dbmmanage.1 htdigest.1 htpasswd.1 htdbm.1
 MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 suexec.8 htcacheclean.8
 
 .if defined(WITHOUT_WWW)
