@@ -1,0 +1,11 @@
+--- src/autoconf.ORI	Sun Oct 30 10:01:45 2005
++++ src/autoconf	Sun Oct 30 10:03:56 2005
+@@ -978,6 +978,7 @@
+ 
+ echo 'Checking realloc implementation'
+ 
++$RM -f _autotst
+ if $MAKE _autotst >$DEVNULL 2>&1
+  test -f _autotst
+ then
+
