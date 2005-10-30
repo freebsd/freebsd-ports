@@ -9,10 +9,8 @@
 PORTNAME=	mopd
 PORTVERSION=	2.5.3
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.stacken.kth.se/pub/OS/NetBSD/mopd/  		\
-		http://world.std.com/~bdc/projects/vaxen/netboot/	\
-		http://world.std.com/~bdc/projects/vaxen/		\
-		http://world.std.com/~bdc/projects/vaxen/docs/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	obrien
 .if !defined(NOPORTDOCS)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		VAX-netboot-HOWTO VS3100-console-cmds.txt
@@ -21,10 +19,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	MOP Loader Daemon for netbooting DEC machines
 
-BROKEN=		"distfile unavaible since July 2004"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=	2005-12-11
-
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 #	MANDIR is concetenated to DESTDIR which all forms the man install dir...
 
@@ -32,9 +26,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAKE_ENV=	DESTDIR=${PREFIX} MANDIR=/man/man NOMANCOMPRESS=true
 USE_REINPLACE=	yes
-.if ${OSVERSION} >= 502126
-USE_GCC=	3.3
-.endif
 MAN1=		mopprobe.1 moptrace.1 mopchk.1 mopa.out.1
 MAN8=		mopd.8
 
