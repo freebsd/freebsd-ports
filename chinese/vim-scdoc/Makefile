@@ -17,9 +17,9 @@ COMMENT=	Vim documentation Simplified Chinese
 
 RUN_DEPENDS=	vim:${PORTSDIR}/editors/vim
 
-PLIST_SUB=	PATH_SUB=vim63
+PLIST_SUB=	PATH_SUB=vim64
 NO_BUILD=	yes
-VIM_PATH=	${PREFIX}/share/vim/vim63
+VIM_PATH=	${PREFIX}/share/vim/vim64
 VIM_DOCS_PATH=	${VIM_PATH}/doc.zh_CN
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
