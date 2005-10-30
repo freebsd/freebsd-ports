@@ -134,7 +134,7 @@ EXTRA_DOCS=	AUTHORS INSTALL NEWS imap/ChangeLog imap/README \
 
 post-patch:
 .if defined(WITHOUT_FAM)
-	@${REINPLACE_CMD} -e 's|$$LIBFAM||g' \
+	@${REINPLACE_CMD} -e 's|$$LIBFAM||g; s|HAVE_FAM|DO_NOT_HAVE_FAM|g' \
 		${WRKSRC}/maildir/configure
 .endif
 	@${REINPLACE_CMD} -e 's|^case x$$lockmethod in|${TEST} \&\& &|g' \
