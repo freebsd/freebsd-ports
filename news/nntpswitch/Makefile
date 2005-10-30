@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nntpswitch
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	news
 MASTER_SITES=	http://www.nntpswitch.org/download/
 
@@ -23,8 +23,7 @@ MAKE_ENV+=	PERL=${PERL} LIBS="${LDFLAGS}"
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-ETC_FILES=	access.conf auth.conf overview.fmt profiles.conf \
-		servers.conf passwd
+ETC_FILES=	access.conf servers.conf
 
 ETC_DIR=	${PREFIX}/etc/${PORTNAME}
 # dirty hack...
@@ -34,19 +33,25 @@ ALL_TARGET=	all
 USE_MYSQL=	YES
 ALL_TARGET+=	mysql
 LDFLAGS+=	-L${LOCALBASE}/lib/mysql
-PLIST_FILES+=	lib/libauth_mysql.so
+PLIST_FILES+=	lib/${PORTNAME}/auth_mysql.so
 .endif
 
 .if defined(WITH_POSTGRESQL)
 USE_PGSQL=	YES
 ALL_TARGET+=	postgres
-PLIST_FILES+=	lib/libauth_postgres.so
+PLIST_FILES+=	lib/${PORTNAME}/auth_postgres.so
 .endif
 
 .if defined(WITH_FREERADIUS)
 LIB_DEPENDS+=	radius:${PORTSDIR}/net/freeradius
 ALL_TARGET+=	radius
-PLIST_FILES+=	lib/libauth_radius.so lib/libacct_radius.so
+PLIST_FILES+=	lib/${PORTNAME}/auth_radius.so lib/${PORTNAME}/acct_radius.so
+.endif
+
+.if defined(WITH_OPENLDAP)
+USE_OPENLDAP=	YES
+ALL_TARGET+=	ldap
+PLIST_FILES+=	lib/${PORTNAME}/auth_ldap.so
 .endif
 
 do-configure:
