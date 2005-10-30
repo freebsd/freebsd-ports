@@ -16,11 +16,9 @@ MASTER_SITE_SUBDIR=	nork
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	A wrapper allowing use of linux-plugins with native applications
 
-BROKEN=		Broken by update to acroread7
-
 .include <bsd.port.pre.mk>
 
-.if		!defined(WITHOUT_PLUGINS)
+.if		defined(WITH_PLUGINS)
 RUN_DEPENDS=	${X11BASE}/lib/linux-flashplugin6/libflashplayer.so:${PORTSDIR}/www/linux-flashplugin6
 RUN_DEPENDS+=	${X11BASE}/lib/linux-mozilla/plugins/nphelix.so:${PORTSDIR}/multimedia/linux-realplayer
 RUN_DEPENDS+=	${LINUXBASE}/usr/local/Adobe/Acrobat7.0/Browser/intellinux/nppdf.so:${PORTSDIR}/print/acroread7
@@ -37,7 +35,7 @@ USE_XLIB=	yes
 USE_REINPLACE=	yes
 PLIST_SUB=	LINUXBASE=${LINUXBASE}
 PKGMESSAGE=	${WRKDIR}/pkg-message
-.if		defined(WITHOUT_PLUGINS) || ${OSVERSION} < 500000
+.if		!defined(WITH_PLUGINS) || ${OSVERSION} < 500000
 PLIST=		${WRKDIR}/pkg-plist
 .endif
 
@@ -88,13 +86,13 @@ post-build:
 		-e 's,%%LTHREADSHMAJOR%%,${LTHREADSHMAJOR},' \
 		-e 's,%%LIBMAPCONF%%,${LIBMAPCONF},' \
 		< ${.CURDIR}/pkg-message > ${PKGMESSAGE}
-.if		defined(WITHOUT_PLUGINS)
+.if		!defined(WITH_PLUGINS)
 	@${SED} -e "/exec/d" ${.CURDIR}/pkg-plist > ${PLIST}
 .endif
 
 pre-install:
 	@${MKDIR} ${X11BASE}/lib/browser_plugins
-.if		!defined(WITHOUT_PLUGINS)
+.if		defined(WITH_PLUGINS)
 	@${LN} -sf ${LINUXBASE}/usr/local/Adobe/Acrobat7.0/Browser/intellinux/nppdf.so \
 		${X11BASE}/lib/browser_plugins/
 	@${LN} -sf ${X11BASE}/lib/linux-flashplugin6/flashplayer.xpt \
