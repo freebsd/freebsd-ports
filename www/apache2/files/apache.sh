@@ -67,7 +67,7 @@ if [ -n "${2}" ]; then
 		echo "$0: extra argument ignored"
 	fi
 else
-	if [ "x${apache2_profiles}" != "x" ]; then
+	if [ "x${apache2_profiles}" != "x" -a "x${1}" != "xrestart" ]; then
 	for profile in ${apache2_profiles}; do
 		echo "===> apache2 profile: ${profile}"
 		$0 $1 $profile
