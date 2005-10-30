@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	libvanessa_adt
-PORTVERSION=	0.0.6
-PORTREVISION=	1
+PORTVERSION=	0.0.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.vergenet.net/linux/vanessa/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	vanessa_adt/${PORTVERSION}
 DISTNAME=	vanessa_adt-${PORTVERSION}
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library that provides ADTs (queues, dynamic arrays and more)
 
 LIB_DEPENDS=	vanessa_logger.0:${PORTSDIR}/devel/libvanessa_logger
