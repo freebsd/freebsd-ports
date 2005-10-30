@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	psi3
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.3
 CATEGORIES=	science
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.psicode.org/doc/:doc
-#		http://www.psicode.org/downloads.php
-MASTER_SITE_SUBDIR=	maho/psi3
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=     psicode
 DISTNAME=	psi-${PORTVERSION}
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} installation.pdf:doc userman.pdf:doc progman.pdf:doc

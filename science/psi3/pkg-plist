@@ -351,6 +351,11 @@ lib/libPSI_r12.a
 %%EXAMPLESDIR%%/rohf-lindep1/input.dat
 %%EXAMPLESDIR%%/rohf-lindep1/output.ref
 %%EXAMPLESDIR%%/rohf-lindep1/Makefile
+%%EXAMPLESDIR%%/rohf-grad1/Makefile
+%%EXAMPLESDIR%%/rohf-grad1/Makefile.in
+%%EXAMPLESDIR%%/rohf-grad1/file11.ref
+%%EXAMPLESDIR%%/rohf-grad1/input.dat
+%%EXAMPLESDIR%%/rohf-grad1/output.ref
 %%EXAMPLESDIR%%/scf-freq/Makefile.in
 %%EXAMPLESDIR%%/scf-freq/file15.ref
 %%EXAMPLESDIR%%/scf-freq/file17.ref
@@ -463,12 +468,18 @@ lib/libPSI_r12.a
 %%EXAMPLESDIR%%/uhf-stab-follow/output.ref
 %%EXAMPLESDIR%%/uhf-stab-follow/uhf-stab-follow.pl.in
 %%EXAMPLESDIR%%/uhf-stab-follow/uhf-stab-follow.test.pl
+%%EXAMPLESDIR%%/uhf-grad1/Makefile
+%%EXAMPLESDIR%%/uhf-grad1/Makefile.in
+%%EXAMPLESDIR%%/uhf-grad1/file11.ref
+%%EXAMPLESDIR%%/uhf-grad1/input.dat
+%%EXAMPLESDIR%%/uhf-grad1/output.ref
 %%EXAMPLESDIR%%/Makefile
 %%EXAMPLESDIR%%/MakeVars
 %%EXAMPLESDIR%%/MakeRules
 %%EXAMPLESDIR%%/runtest.pl
 @dirrm %%EXAMPLESDIR%%/uhf-stab-follow
 @dirrm %%EXAMPLESDIR%%/uhf-stab
+@dirrm %%EXAMPLESDIR%%/uhf-grad1
 @dirrm %%EXAMPLESDIR%%/uhf-lindep1
 @dirrm %%EXAMPLESDIR%%/scf-polar
 @dirrm %%EXAMPLESDIR%%/scf-opt9
@@ -488,6 +499,7 @@ lib/libPSI_r12.a
 @dirrm %%EXAMPLESDIR%%/scf-freq
 @dirrm %%EXAMPLESDIR%%/rohf-stab
 @dirrm %%EXAMPLESDIR%%/rohf-lindep1
+@dirrm %%EXAMPLESDIR%%/rohf-grad1
 @dirrm %%EXAMPLESDIR%%/rhf-stab
 @dirrm %%EXAMPLESDIR%%/rhf-oeprop
 @dirrm %%EXAMPLESDIR%%/rhf-lindep1
