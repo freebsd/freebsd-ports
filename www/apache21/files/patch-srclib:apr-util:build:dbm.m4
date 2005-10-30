@@ -1,6 +1,6 @@
---- srclib/apr-util/build/dbm.m4.orig	Wed Nov 17 02:12:20 2004
-+++ srclib/apr-util/build/dbm.m4	Mon Jan 17 21:22:47 2005
-@@ -298,8 +298,8 @@
+--- srclib/apr-util/build/dbm.m4.orig	Thu Feb 24 10:23:34 2005
++++ srclib/apr-util/build/dbm.m4	Sun Oct 30 19:44:43 2005
+@@ -314,8 +314,8 @@
    fi
    APU_CHECK_BERKELEY_DB(1, -1, -1,
      "$places",
@@ -11,7 +11,7 @@
    )
    if test "$apu_have_db" = "1"; then
      apu_db_version=185
-@@ -341,7 +341,7 @@
+@@ -357,7 +357,7 @@
    APU_CHECK_BERKELEY_DB(3, -1, -1,
      "$places",
      "db3/db.h db.h",
@@ -20,7 +20,7 @@
    )
    if test "$apu_have_db" = "1"; then
      apu_db_version=3
-@@ -361,8 +361,8 @@
+@@ -377,8 +377,8 @@
    fi
    APU_CHECK_BERKELEY_DB("4", "0", "-1",
      "$places",
@@ -31,7 +31,7 @@
    )
    if test "$apu_have_db" = "1"; then
      apu_db_version=4
-@@ -382,8 +382,8 @@
+@@ -398,8 +398,8 @@
    fi
    APU_CHECK_BERKELEY_DB("4", "1", "-1",
      "$places",
@@ -42,7 +42,7 @@
    )
    if test "$apu_have_db" = "1"; then
      apu_db_version=4
-@@ -403,8 +403,8 @@
+@@ -419,8 +419,8 @@
    fi
    APU_CHECK_BERKELEY_DB("4", "2", "-1",
      "$places",
@@ -53,12 +53,12 @@
    )
    if test "$apu_have_db" = "1"; then
      apu_db_version=4
-@@ -422,8 +422,8 @@
+@@ -438,8 +438,8 @@
    fi
    APU_CHECK_BERKELEY_DB("4", "3", "-1",
      "$places",
 -    "db43/db.h db4/db.h db.h",
--    "db-4.3 db43 db4 db"
+-    "db-4.3 db4-4.3 db43 db4 db"
 +    "db43/db.h",
 +    "db-4.3"
    )
