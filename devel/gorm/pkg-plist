@@ -110,21 +110,33 @@ System/Applications/Gorm.app/Resources/English.lproj/GormClassInspector.gorm/obj
 System/Applications/Gorm.app/Resources/English.lproj/GormClassPanel.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormClassPanel.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormClassPanel.gorm/objects.gorm
+System/Applications/Gorm.app/Resources/English.lproj/GormConnectionInspector.gorm/data.classes
+System/Applications/Gorm.app/Resources/English.lproj/GormConnectionInspector.gorm/data.info
+System/Applications/Gorm.app/Resources/English.lproj/GormConnectionInspector.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormCustomClassInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormCustomClassInspector.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormCustomClassInspector.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormDocument.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormDocument.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormDocument.gorm/objects.gorm
+System/Applications/Gorm.app/Resources/English.lproj/GormDummyInspector.gorm/data.classes
+System/Applications/Gorm.app/Resources/English.lproj/GormDummyInspector.gorm/data.info
+System/Applications/Gorm.app/Resources/English.lproj/GormDummyInspector.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormFontView.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormFontView.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormFontView.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm/objects.gorm
+System/Applications/Gorm.app/Resources/English.lproj/GormInspectorPanel.gorm/data.classes
+System/Applications/Gorm.app/Resources/English.lproj/GormInspectorPanel.gorm/data.info
+System/Applications/Gorm.app/Resources/English.lproj/GormInspectorPanel.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormNSSplitViewInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormNSSplitViewInspector.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormNSSplitViewInspector.gorm/objects.gorm
+System/Applications/Gorm.app/Resources/English.lproj/GormObjectInspector.gorm/data.classes
+System/Applications/Gorm.app/Resources/English.lproj/GormObjectInspector.gorm/data.info
+System/Applications/Gorm.app/Resources/English.lproj/GormObjectInspector.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm/objects.gorm
@@ -239,6 +251,7 @@ System/Library/Headers/GormCore/GormClassEditor.h
 System/Library/Headers/GormCore/GormClassInspector.h
 System/Library/Headers/GormCore/GormClassManager.h
 System/Library/Headers/GormCore/GormClassPanelController.h
+System/Library/Headers/GormCore/GormConnectionInspector.h
 System/Library/Headers/GormCore/GormControlEditor.h
 System/Library/Headers/GormCore/GormCustomClassInspector.h
 System/Library/Headers/GormCore/GormCustomView.h
@@ -256,6 +269,7 @@ System/Library/Headers/GormCore/GormInternalViewEditor.h
 System/Library/Headers/GormCore/GormMatrixEditor.h
 System/Library/Headers/GormCore/GormNSSplitViewInspector.h
 System/Library/Headers/GormCore/GormObjectEditor.h
+System/Library/Headers/GormCore/GormObjectInspector.h
 System/Library/Headers/GormCore/GormOpenGLView.h
 System/Library/Headers/GormCore/GormOutlineView.h
 System/Library/Headers/GormCore/GormPalettesManager.h
@@ -264,6 +278,7 @@ System/Library/Headers/GormCore/GormPrivate.h
 System/Library/Headers/GormCore/GormProtocol.h
 System/Library/Headers/GormCore/GormResource.h
 System/Library/Headers/GormCore/GormResourceEditor.h
+System/Library/Headers/GormCore/GormResourceManager.h
 System/Library/Headers/GormCore/GormScrollViewAttributesInspector.h
 System/Library/Headers/GormCore/GormSetNameController.h
 System/Library/Headers/GormCore/GormSound.h
@@ -273,7 +288,7 @@ System/Library/Headers/GormCore/GormSoundView.h
 System/Library/Headers/GormCore/GormSplitViewEditor.h
 System/Library/Headers/GormCore/GormViewEditor.h
 System/Library/Headers/GormCore/GormViewKnobs.h
-System/Library/Headers/GormCore/GormViewResourceManager.h
+System/Library/Headers/GormCore/GormViewSizeInspector.h
 System/Library/Headers/GormCore/GormViewWindow.h
 System/Library/Headers/GormCore/GormViewWithContentViewEditor.h
 System/Library/Headers/GormCore/GormViewWithSubviewsEditor.h
@@ -344,11 +359,15 @@ System/Library/Libraries/libGormPrefs.so.%%LIBVERSION%%
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefGuideline.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefGeneral.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm
+@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormObjectInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormNSSplitViewInspector.gorm
+@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormInspectorPanel.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormFontView.gorm
+@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormDummyInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormDocument.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormCustomClassInspector.gorm
+@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormConnectionInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormClassPanel.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormClassInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/Gorm.gorm
