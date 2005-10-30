@@ -1,0 +1,5 @@
+SQL-Ledger is a double entry accounting system, written in Perl.
+Accounting data is stored in a PostgreSQL Server, for the display
+any text or GUI browser can be used.
+
+WWW: http://www.sql-ledger.org/
