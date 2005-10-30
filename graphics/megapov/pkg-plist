@@ -178,6 +178,11 @@ bin/megapov
 %%PORTDOCS%%%%DOCSDIR%%/povlegal.doc
 %%PORTDOCS%%%%DOCSDIR%%/source-license.txt
 %%PORTDOCS%%%%DOCSDIR%%/distribution-license.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/msim_tut
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/icons
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/img
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/include/mp_types.inc
 %%PORTDOCS%%%%EXAMPLESDIR%%/include/pprocess.inc
 %%PORTDOCS%%%%EXAMPLESDIR%%/include/mp_consts.inc
