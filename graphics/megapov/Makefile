@@ -21,8 +21,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff \
 		vga:${PORTSDIR}/graphics/svgalib
 
-BROKEN=		Incomplete pkg-plist
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_XLIB=	yes
 USE_REINPLACE=	yes
