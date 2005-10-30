@@ -1664,3 +1664,4 @@ devel/yacl||2005-10-18|master site disappeared, author stopped work 2002
 sysutils/cfengine|sysutils/cfengine2|2005-10-20|removed - use cfengine-2.x
 editors/joe-devel|editors/joe|2005-10-21|moved
 games/ctetris|games/ctris|2005-10-21|moved
+security/opensc-esteid|security/opensc|2005-10-30|functionality folded into master port
