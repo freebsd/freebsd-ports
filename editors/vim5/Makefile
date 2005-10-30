@@ -22,8 +22,7 @@ MAINTAINER?=	obrien@FreeBSD.org
 COMMENT=	Vi "workalike", with many additional features
 
 .if defined(PACKAGE_BUILDING) && !defined(LITE)
-BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80
-LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
+WITH_TCL=	yes
 #USE_PERL5=	yes
 .endif
 
@@ -70,6 +69,12 @@ PKGNAMESUFFIX?=	-lite
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x --enable-multibyte"
 MAKE_ARGS+=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable-tclinterp"
 .endif	# LITE
+
+.if defined(WITH_TCL)
+BUILD_DEPENDS=	tclsh8.4:${PORTSDIR}/lang/tcl84
+LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
+MAKE_ARGS+=	CONF_OPT_TCL="--enable-tclinterp --with-tclsh=${LOCALBASE}/bin/tclsh8.4"
+.endif
 
 .include <bsd.port.pre.mk>
 
