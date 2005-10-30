@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	libvanessa_logger
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.vergenet.net/linux/vanessa/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	vanessa_logger/${PORTVERSION}
 DISTNAME=	vanessa_logger-${PORTVERSION}
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library that provides a generic logging layer
 
 INSTALLS_SHLIB=	YES
