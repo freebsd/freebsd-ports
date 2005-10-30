@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	mod_auth_external
-PORTVERSION=	2.2.9
+PORTVERSION=	2.2.10
 CATEGORIES=	www
 MASTER_SITES=	http://www.unixpapa.com/software/
-DIST_SUBDIR=	apache
+DIST_SUBDIR=	apache2
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users authentication based on external mechanisms
