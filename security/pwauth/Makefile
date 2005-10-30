@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pwauth
-PORTVERSION=	2.2.8
+PORTVERSION=	2.3.1
 CATEGORIES=	security www
 MASTER_SITES=	http://www.unixpapa.com/software/
 
@@ -14,7 +14,10 @@ MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A Unix Web Authenticator
 
 USE_REINPLACE=	yes
-PLIST_FILES=	bin/pwauth
+PLIST_FILES=	bin/pwauth bin/checkfaillog
+
+ALL_TARGET=	pwauth checkfaillog
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIB="-lcrypt -lpam"
 
 .include <bsd.port.pre.mk>
 
@@ -27,6 +30,7 @@ post-patch:
 do-install:
 	-@${MKDIR} -p ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/pwauth ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/checkfaillog ${PREFIX}/bin
 	@${CHMOD} u=rxs ${PREFIX}/bin/pwauth
 
 .include <bsd.port.post.mk>
