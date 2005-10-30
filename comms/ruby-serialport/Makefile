@@ -8,7 +8,7 @@
 PORTNAME=	serialport
 PORTVERSION=	0.6
 CATEGORIES=	comms ruby
-MASTER_SITES=	http://davedd.free.fr/ruby-serialport/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/72/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
