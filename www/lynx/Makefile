@@ -7,11 +7,18 @@
 
 PORTNAME=	lynx
 PORTVERSION=	2.8.5
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
 DISTNAME=	${PORTNAME}2.8.5rel.1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+PATCH_SITES=	ftp://lynx.isc.org/lynx2.8.5/patches/
+.for i in 2 3 4
+PATCHFILES+=	2.8.5rel.${i}.patch.gz 2.8.5rel.${i}.patch.gz.asc
+.endfor
+PATCH_DIST_STRIP= -p1
 
 MAINTAINER?=	jharris@widomaker.com
 COMMENT?=	A non-graphical, text-based World-Wide Web client
@@ -19,7 +26,7 @@ COMMENT?=	A non-graphical, text-based World-Wide Web client
 CONFLICTS?=	lynx-ssl* lynx-current*
 
 USE_GPG?=	yes
-SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.asc
+SIG_FILES=	${DISTFILES:M*.asc} ${PATCHFILES:M*.asc}
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}2-8-5
 GNU_CONFIGURE=	yes
