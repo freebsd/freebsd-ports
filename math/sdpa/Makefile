@@ -11,9 +11,9 @@ CATEGORIES=	math
 MASTER_SITES=	http://grid.r.dendai.ac.jp/sdpa/files/
 DISTFILES=	${PORTNAME}.${PORTVERSION}.src.tar.gz
 .if !defined(NOPORTDOCS)
-DISTFILES+=	${PORTNAME}.6.2.0.manual.ps.gz \
-		${PORTNAME}.6.2.0.manual.pdf \
-		${PORTNAME}.6.2.0.install.txt
+DISTFILES+=	${PORTNAME}.${OLDVERSION}.manual.ps.gz \
+		${PORTNAME}.${OLDVERSION}.manual.pdf \
+		${PORTNAME}.${OLDVERSION}.install.txt
 .endif
 DIST_SUBDIR=	sdpa
 EXTRACT_ONLY=	${PORTNAME}.${PORTVERSION}.src.tar.gz
@@ -26,6 +26,7 @@ BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 .endif
 LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
 
+OLDVERSION=	6.2.0
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
@@ -88,7 +89,7 @@ do-install:
 	${INSTALL_DATA}    ${WRKSRC}/param.sdpa ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTNAME}.${PORTVERSION}.manual.ps.gz ${PORTNAME}.${PORTVERSION}.manual.pdf ${PORTNAME}.${PORTVERSION}.install.txt
+.for i in ${PORTNAME}.${OLDVERSION}.manual.ps.gz ${PORTNAME}.${OLDVERSION}.manual.pdf ${PORTNAME}.${OLDVERSION}.install.txt
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${i} ${DOCSDIR}
 .endfor
 	@${MKDIR} ${EXAMPLESDIR}

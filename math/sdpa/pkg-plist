@@ -22,7 +22,7 @@ share/examples/sdpa/param.sdpa
 share/sdpa/param.sdpa
 @dirrm share/sdpa
 @dirrm share/examples/sdpa
-%%PORTDOCS%%%%DOCSDIR%%/sdpa.%%PORTVERSION%%.manual.ps.gz
-%%PORTDOCS%%%%DOCSDIR%%/sdpa.%%PORTVERSION%%.manual.pdf
-%%PORTDOCS%%%%DOCSDIR%%/sdpa.%%PORTVERSION%%.install.txt
+%%PORTDOCS%%%%DOCSDIR%%/sdpa.%%OLDVERSION%%.manual.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/sdpa.%%OLDVERSION%%.manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/sdpa.%%OLDVERSION%%.install.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
