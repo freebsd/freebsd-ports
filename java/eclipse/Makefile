@@ -123,6 +123,8 @@ do-install:
 	  -e "s+%%PREFIX%%+${PREFIX}+g" \
 	  -e "s+%%X11BASE%%+${X11BASE}+g" \
 	  -e "s+%%BROWSER%%+${BROWSER}+g" \
+	  -e "s,%%JAVA_VERSION%%,${JAVA_VERSION},g" \
+	  -e "s+%%JAVA_OS%%+${JAVA_OS}+g" \
 	${FILESDIR}/eclipse.in > ${WRKSRC}/eclipse.tmp
 	${INSTALL_SCRIPT} ${WRKSRC}/eclipse.tmp ${PREFIX}/bin/eclipse
 	@${SED} \
