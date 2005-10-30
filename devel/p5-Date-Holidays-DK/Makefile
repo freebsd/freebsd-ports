@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	Date-Holidays-DK
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Date
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
-COMMENT=	Date::Holidays::DK - Determine Danish public holidays
+COMMENT=	Determine Danish public holidays
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Simple.pm:${PORTSDIR}/devel/p5-Date-Simple \
-		${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
 		${SITE_PERL}/Date/Easter.pm:${PORTSDIR}/devel/p5-Date-Easter
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
