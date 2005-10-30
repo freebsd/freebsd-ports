@@ -114,7 +114,7 @@ CONFIGURE_ARGS+=--with-trashquota
 
 RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
-.if defined(WITH_FAM) || exists(${LOCALBASE}/lib/libfam.so)
+.if defined(WITH_FAM)
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS}"
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -133,6 +133,10 @@ EXTRA_DOCS=	AUTHORS INSTALL NEWS imap/ChangeLog imap/README \
 		maildir/README.sharedfolders.txt tcpd/README.couriertls \
 
 post-patch:
+.if defined(WITHOUT_FAM)
+	@${REINPLACE_CMD} -e 's|$$LIBFAM||g' \
+		${WRKSRC}/maildir/configure
+.endif
 	@${REINPLACE_CMD} -e 's|^case x$$lockmethod in|${TEST} \&\& &|g' \
 		${WRKSRC}/liblock/configure
 	@${REINPLACE_CMD} -e 's|%%INSTALL_MAN%%|${INSTALL_MAN}|' \
