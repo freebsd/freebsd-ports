@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abinit
-PORTVERSION=	4.4.4
+PORTVERSION=	4.4.5
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.abinit.org/pub/abinitio/ABINIT_v${PORTVERSION}/
 
