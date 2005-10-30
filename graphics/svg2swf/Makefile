@@ -9,7 +9,7 @@
 PORTNAME=	svg2swf
 PORTVERSION=	0.1.3
 CATEGORIES=	graphics python
-MASTER_SITES=	http://www.eskimo.com/~robla/svg2swf/
+MASTER_SITES=	http://robla.net/1996/svg2swf/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	# empty
 
