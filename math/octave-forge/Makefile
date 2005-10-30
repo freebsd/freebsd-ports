@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge
-PORTVERSION=	2004.11.16
+PORTVERSION=	2005.06.13
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	octave
@@ -21,8 +21,6 @@ BUILD_DEPENDS=	qhull:${PORTSDIR}/math/qhull \
 RUN_DEPENDS=	octave:${PORTSDIR}/math/octave \
 		qhull:${PORTSDIR}/math/qhull \
 		bash:${PORTSDIR}/shells/bash
-
-BROKEN=		Incorrect pkg-plist
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
