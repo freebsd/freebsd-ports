@@ -42,7 +42,6 @@ share/gnome/balsa/hicolor/24x24/apps/balsa-signature-good.png
 share/gnome/balsa/hicolor/24x24/apps/balsa-signature-notrust.png
 share/gnome/balsa/hicolor/24x24/apps/balsa-signature-unknown.png
 share/gnome/balsa/hicolor/24x24/apps/balsa-trash-empty.png
-share/gnome/balsa/hicolor/icon-theme.cache
 @exec gtk-update-icon-cache %D/share/icons/hicolor 2>/dev/null || true
 share/gnome/balsa/pixmaps/attachment.png
 share/gnome/balsa/pixmaps/balsa-logo.png
