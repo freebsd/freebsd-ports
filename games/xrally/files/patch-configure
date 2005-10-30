@@ -1,5 +1,5 @@
---- configure.orig	Sun May  8 21:23:28 2005
-+++ configure	Sun May  8 21:24:31 2005
+--- configure.orig	Mon Dec 18 18:21:52 2000
++++ configure	Sun Oct 30 02:39:48 2005
 @@ -1108,14 +1108,14 @@
  	if test "$WITH_SOUND" = "yes"; then
  
@@ -26,4 +26,13 @@
 +  LIBS="$LIBS ${PTHREAD_LIBS}"
  else
    echo "$ac_t""no" 1>&6
+ 
+@@ -1499,7 +1499,7 @@
+ fi
+ 
+ 
+-LDFLAGS="$LDFLAGS -L$x_libraries"
++LDFLAGS="$LDFLAGS -L{x_libraries-.}"
+ LIBS="$LIBS -lX11"
+ INCLUDES="$INCLUDES -I$x_includes"
  
