@@ -11,14 +11,18 @@
 
 PORTNAME=	fetchmail
 PORTVERSION=	6.2.5.2
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.catb.org/~esr/%SUBDIR%/ \
-		http://download.berlios.de/%SUBDIR%/ \
-		ftp://ftp.ayamura.org/pub/%SUBDIR%/ \
-		ftp://ftp.win.jp/pub/%SUBDIR%/ \
-		ftp://ftp.dti.ad.jp/pub/net/mail/%SUBDIR%/
-MASTER_SITE_SUBDIR=	fetchmail
+MASTER_SITES=	http://download.berlios.de/%SUBDIR%/:fetchmail_site,fetchmailconf_site \
+		http://www.catb.org/~esr/%SUBDIR%/:fetchmail_site \
+		ftp://ftp.ayamura.org/pub/%SUBDIR%/:fetchmail_site \
+		ftp://ftp.win.jp/pub/%SUBDIR%/:fetchmail \
+		ftp://ftp.dti.ad.jp/pub/net/mail/%SUBDIR%/:fetchmail_site
+MASTER_SITE_SUBDIR=	fetchmail/:fetchmail_site,fetchmailconf_site
 DISTNAME=	${PORTNAME}-6.2.5
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:fetchmail_site \
+		fetchmailconf-${FETCHMAILCONF_VER}.gz:fetchmailconf_site
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://download.berlios.de/%SUBDIR%/
 PATCH_SITE_SUBDIR=	fetchmail
@@ -27,6 +31,8 @@ PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Batch mail retrieval utility for IMAP/POP2/POP3/APOP/KPOP/ETRN/ODMR
+
+FETCHMAILCONF_VER=1.43.2
 
 .if defined(WITH_X11)
 RUN_DEPENDS=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
@@ -103,8 +109,11 @@ PLIST_SUB+=	NTLMDOCS="%%PORTDOCS%%@comment "
 
 pre-patch:
 	@${CP} -f  /usr/include/md5.h ${WRKSRC}
-	@${SED} -e "s,^#!/.*/python,#!${PREFIX}/bin/python,g" \
-		${WRKSRC}/fetchmailconf > ${WRKDIR}/fetchmailconf.temp
+	# Use fetchmailconf-1.43.2 to avoid a password exposure
+	# caused by insecure file creation
+	@${GZCAT} ${DISTDIR}/fetchmailconf-${FETCHMAILCONF_VER}.gz | \
+		${SED} -e "s,^#!/.*/python,#!${PREFIX}/bin/python,g" \
+		> ${WRKDIR}/fetchmailconf.temp
 	@${MV} -f ${WRKDIR}/fetchmailconf.temp ${WRKSRC}/fetchmailconf
 	@${SED} -e "s,@PREFIX@,${PREFIX},g" \
 		${FILESDIR}/fetchmailconf > ${WRKDIR}/fetchmailconf
