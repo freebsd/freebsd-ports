@@ -94,7 +94,7 @@
           }
           break;
        case LAIA64: /* don't know */
-@@ -2849,14 +2863,32 @@
+@@ -2849,14 +2863,33 @@
           if (!CmndOneLine(targ, "sysctl hw.model", ln))
           {
              if (strstr(ln, "Pentium Pro")) mach = IntPPRO;
@@ -115,6 +115,7 @@
 +            else if (strstr(ln, "Opteron(tm)") && sizeof(void *)==8) mach = AmdHammer64;
 +            else if (strstr(ln, "AMD Athlon(tm) 64") && sizeof(void *)==4) mach = AmdHammer32;
 +            else if (strstr(ln, "AMD Athlon(tm) 64") && sizeof(void *)==8) mach = AmdHammer64;
++            else if (strstr(ln, "Sempron(tm)")) mach = AmdAthlon;
 +            else if (strstr(ln, "Athlon(tm)")) mach = AmdAthlon;
              else if (strstr(ln, "Athlon")) mach = AmdAthlon;
              else if (strstr(ln, "AMD-K7")) mach = AmdAthlon;
