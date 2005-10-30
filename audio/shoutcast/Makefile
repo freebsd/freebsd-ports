@@ -16,6 +16,7 @@ ONLY_FOR_ARCHS=	i386
 NO_BUILD=	YES
 NO_PACKAGE=	Redistribution of the software isn't allowed
 
+USE_RC_SUBR=	shoutcast.sh
 PLIST_FILES=	sbin/sc_serv etc/shoutcast/sc_serv.conf
 PLIST_DIRS=	etc/shoutcast
 PORTDOCS=	README.TXT

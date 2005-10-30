@@ -1,7 +1,9 @@
-==============================================================
-Shoutcast is now installed, You can start it by typing:
+================================================================
+Shoutcast is now installed.
+The server config file is %%PREFIX%%/etc/sc_serv.conf.
+If You want to start it set shoutcast_enable="YES" in your
+/etc/rc.conf file and type:
 
-%%PREFIX%%/sbin/sc_serv [config_file]
+%%PREFIX%%/etc/rc.d/shoutcast.sh start
 
-A sample sc_serv.conf file is installed under %%PREFIX%%/etc.
-==============================================================
+================================================================

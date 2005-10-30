@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+
+# PROVIDE: shoutcast
+# REQUIRE: LOGIN
+# BEFORE:
+# KEYWORD: FreeBSD shutdown
+
+. /etc/rc.subr
+
+name="shoutcast"
+rcvar=`set_rcvar`
+start_cmd="shoutcast_startcmd"
+stop_cmd="shoutcast_stopcmd"
+
+shoutcast_startcmd ()
+{
+%%PREFIX%%/sbin/sc_serv %%PREFIX%%/etc/sc_serv.conf
+}
+
+imapd_stopcmd ()
+{
+killall sc_serv
+}
+
+load_rc_config $name
+run_rc_command "$1"
