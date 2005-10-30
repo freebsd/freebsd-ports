@@ -109,8 +109,8 @@ PLIST_SUB+=	NTLMDOCS="%%PORTDOCS%%@comment "
 
 pre-patch:
 	@${CP} -f  /usr/include/md5.h ${WRKSRC}
-	# Use fetchmailconf-1.43.2 to avoid a password exposure
-	# caused by insecure file creation
+# Use fetchmailconf-1.43.2 to avoid a password exposure
+# caused by insecure file creation
 	@${GZCAT} ${DISTDIR}/fetchmailconf-${FETCHMAILCONF_VER}.gz | \
 		${SED} -e "s,^#!/.*/python,#!${PREFIX}/bin/python,g" \
 		> ${WRKDIR}/fetchmailconf.temp
