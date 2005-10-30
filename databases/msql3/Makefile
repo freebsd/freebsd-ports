@@ -7,6 +7,7 @@
 
 PORTNAME=	msql
 PORTVERSION=	3.7
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	anrays@gmail.com
