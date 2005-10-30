@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_vhs
-PORTVERSION=	1.0.24
+PORTVERSION=	1.0.26
 CATEGORIES=	www
 MASTER_SITES=	http://www.oav.net/projects/mod_vhs/
 DIST_SUBDIR=	apache2
@@ -16,21 +16,25 @@ COMMENT=	Allows mass virtual hosting using libhome system with Apache 2.0.x
 
 LIB_DEPENDS+=	home:${PORTSDIR}/misc/libhome
 
-BROKEN=		Conflicting dependencies (apache 1.x vs apache 2.x)
-
+WITH_APACHE2=	yes
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 WANT_PHP_MOD=	yes
 WANT_APACHE=	2
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
+
+.if defined(PACKAGE_BUILDING)
+IGNORE=		This port cannot be build as package because lang/php4 requires apache2
+.endif
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 AP_INC+=	${LOCALBASE}/include/home
 AP_LIB+=	${LOCALBASE}/lib -lhome
 AP_EXTRAS+=	-I ${LOCALBASE}/include/php -I ${LOCALBASE}/include/php/Zend -I ${LOCALBASE}/include/php/TSRM -DHAVE_MOD_PHP_SUPPORT
 
-PORTDOCS=	ChangeLog AUTHORS README README.logs README.wildcards WARNING \
+PORTDOCS=	ChangeLog AUTHORS README.logs README.wildcards WARNING \
 		WARNING.THREADS README.phpopt
 
 .include <bsd.port.pre.mk>
