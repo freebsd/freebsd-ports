@@ -15,6 +15,9 @@ DISTNAME=	zh-chinput2-1.3.1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another Chinese GB2312 and Big5 X11 input server
 
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=	2005-12-31
+
 BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
 
 USE_MYSQL=	yes
