@@ -1,11 +1,5 @@
-Index: helpers.cpp
-===================================================================
-RCS file: /cvsroot/bidwatcher/bidwatcher/Attic/helpers.cpp,v
-retrieving revision 1.90.2.57
-retrieving revision 1.90.2.59
-diff -u -B -b -w -r1.90.2.57 -r1.90.2.59
---- helpers.cpp.orig	25 Feb 2005 13:47:37 -0000	1.90.2.57
-+++ helpers.cpp	11 Aug 2005 00:00:57 -0000	1.90.2.59
+--- helpers.cpp.orig	Thu Feb 17 20:46:49 2005
++++ helpers.cpp	Sun Oct 30 01:04:08 2005
 @@ -54,7 +54,7 @@
  
  const char * const CheckPrice="0123456789.$,";      // Characters allowed in a price
@@ -51,7 +45,7 @@ diff -u -B -b -w -r1.90.2.57 -r1.90.2.59
    // strip the html tags
    for (u = 0; u < buffLength; u++) {
      c = stringToStrip[u];
-@@ -378,14 +393,37 @@
+@@ -378,19 +393,44 @@
  	    stringToStrip[u+3] == '>') {
  	  Buff[BuffIdx++] = '\n';
  	  u+=2;
@@ -91,7 +85,14 @@ diff -u -B -b -w -r1.90.2.57 -r1.90.2.59
      } else if (IncludeFlag==10) {
        if ((BuffIdx > 0) && (c == ' ') &&
  	  (Buff[BuffIdx-1] != ' ') &&
-@@ -735,11 +773,12 @@
+ 	  (Buff[BuffIdx-1] != '\n'))
+ 	Buff[BuffIdx++] = ' ';
++      else if ((BuffIdx > 0) && (c == ' ') && (Buff[BuffIdx-1] != ' '))
++	continue;	/* ignore -- crunch multiple spaces */
+       else if ((BuffIdx > 0) &&
+ 	       (c == '\n') &&
+ 	       (Buff[BuffIdx-1] != '\n'))
+@@ -736,11 +776,12 @@
    else ops_type = auc_type;
  
    // Watch the change, it's strNcmp now.
@@ -105,7 +106,7 @@ diff -u -B -b -w -r1.90.2.57 -r1.90.2.59
  
    return 0;
  
-@@ -1030,7 +1069,7 @@
+@@ -1031,7 +1072,7 @@
      }
    }
  
@@ -114,7 +115,7 @@ diff -u -B -b -w -r1.90.2.57 -r1.90.2.59
     int cnt;
     int ended_early=0;
     int auc_type=TYPE_EBAY;
-@@ -1065,23 +1104,44 @@
+@@ -1066,23 +1107,44 @@
      * but that's not what I'm going to do right now.
      * Thanks to Bob Beaty!
      */
@@ -164,7 +165,7 @@ diff -u -B -b -w -r1.90.2.57 -r1.90.2.59
     StringBuffer streamBuff(Buff);
     /* Skip everything before the start of auction data */
  
-@@ -1090,14 +1150,16 @@
+@@ -1091,14 +1153,16 @@
     while(strstr(LineBuffer.buf(),"eBay")==NULL && streamBuff)
       streamBuff.getline(LineBuffer.buf(), LineBuffer.size(), '\n');
  
@@ -185,7 +186,7 @@ diff -u -B -b -w -r1.90.2.57 -r1.90.2.59
       streamBuff.getline(LineBuffer.buf(), LineBuffer.size(), '\n');
  
     if ( strstr(LineBuffer.buf(),"Another buyer used Buy It Now to purchase the item immediately") == NULL ){
-@@ -1282,6 +1344,8 @@
+@@ -1283,6 +1347,8 @@
  		}
  
             scratch = strstr(LineBuffer.buf(), ":");
@@ -194,7 +195,7 @@ diff -u -B -b -w -r1.90.2.57 -r1.90.2.59
             //strcpy(LineBuffer.buf(),scratch);
             parseprice2(scratch, this, FALSE);
             if (!CurrentBid ) {
-@@ -1398,6 +1462,7 @@
+@@ -1399,6 +1465,7 @@
  	 case 10: // seller id
  	 case 18:
  	 case 21:
