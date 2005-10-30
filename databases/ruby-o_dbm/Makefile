@@ -8,7 +8,7 @@
 PORTNAME=	o_dbm
 PORTVERSION=	0.5.1
 CATEGORIES=	databases ruby
-MASTER_SITES=	http://www.rubyist.net/~keiju/src/
+MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
