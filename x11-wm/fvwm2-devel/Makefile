@@ -46,6 +46,10 @@ OPTIONS=	ICONS		"Install default icon set" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 501000
+BROKEN=                 Does not build
+.endif
+
 .if !defined(WITHOUT_ICONS)
 DISTFILES+=	fvwm_icons.tgz
 .endif
