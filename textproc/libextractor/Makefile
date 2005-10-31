@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	libextractor
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.5.6a
 CATEGORIES=	textproc
-MASTER_SITES=	http://gnunet.org/libextractor/download/
+MASTER_SITES=	http://gnunet.org/libextractor/download/ \
+		${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Library for keyword extraction
 
-USE_BZIP2=	yes
 USE_GNOME=	glib20
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
@@ -39,6 +39,9 @@ post-patch:
 		${WRKSRC}/src/plugins/Makefile.*
 	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
+
+check: build
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
 .include <bsd.port.pre.mk>
 
