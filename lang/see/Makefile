@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.netsw.org/softeng/lang/js/ \
 MAINTAINER=	sime@logos.hr
 COMMENT=	Simple ECMAScript Engine (SEE)
 
+CONFLICTS=	see-devel-[0-9]*
+
 OPTIONS=	GC "Use Boehm-Weiser garbage collection package" on \
 		OPTIMIZED_CFLAGS "Enable some additional optimizations" off
 
