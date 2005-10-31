@@ -1,5 +1,5 @@
---- src/dns.h.orig	Fri Oct 29 01:03:35 2004
-+++ src/dns.h	Fri Oct 29 01:04:55 2004
+--- src/dns.h.orig	Fri Jul  1 14:33:35 2005
++++ src/dns.h		Sun Oct 30 09:04:28 2005
 @@ -27,6 +27,9 @@
  
  #include <config.h>
@@ -7,6 +7,6 @@
 +#if TARGET==TARGET_BSD
 +#include <sys/socket.h>
 +#endif
+ #include <sys/socket.h>
  #include <net/if.h>
  #include <sys/types.h>
- #include <inttypes.h>
