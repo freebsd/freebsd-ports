@@ -52,6 +52,11 @@ pre-fetch:
 	@${ECHO} "quality of glyphs at small bitmap sizes."
 	@${ECHO}
 .endif
+.if !defined(WITH_GPC)
+	@${ECHO}
+	@${ECHO} "You can compile OOo with gpc instead by"
+	@${ECHO} "make -DWITH_GPC"
+.endif
 	@${ECHO}
 	@${ECHO} "NOTICE:"
 	@${ECHO}

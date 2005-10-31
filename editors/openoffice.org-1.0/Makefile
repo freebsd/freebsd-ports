@@ -7,7 +7,7 @@
 
 PORTNAME=	openoffice.org
 PORTVERSION=	1.0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES+=	editors
 MASTER_SITES+=  ${MASTER_SITE_RINGSERVER} \
 		${MASTER_SITE_LOCAL:S/$/:moz/} \
@@ -21,7 +21,10 @@ MASTER_SITE_SUBDIR= misc/openoffice/stable/${PORTVERSION} \
 		maho/openoffice.org/:moz,ru \
 		mozilla/releases/mozilla${MOZILLA_VERSION}/src/:mozsrc \
 		misc/openoffice/contrib/helpcontent-1.0/:help
-DISTFILES+=	OOo_${RELEASE_NR}_source.tar.gz gpc231.tar.Z:gpc patch-translation-ru-1.0.3.bz2:ru
+DISTFILES+=	OOo_${RELEASE_NR}_source.tar.gz patch-translation-ru-1.0.3.bz2:ru
+.if defined(WITH_GPC)
+DISTFILES+=     gpc231.tar.Z:gpc
+.endif
 EXTRACT_ONLY=	OOo_${RELEASE_NR}_source.tar.gz
 
 MAINTAINER=	openoffice@FreeBSD.org
@@ -143,9 +146,14 @@ post-extract:
 	@#${REINPLACE_CMD} -e 's|"Exec", "\\"\<progpath\>/program/|"Exec", "\\"${PREFIX}/bin/openoffice.org-|' ${WRKSRC}/sysui/oounix/office/kde2/kdeint
 	@#${REINPLACE_CMD} -e 's|"Exec", "<progpath>/program/|"Exec", "${PREFIX}/bin/openoffice.org-|' ${WRKSRC}/sysui/oounix/office/gnome/gnomeint
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/patch-translation-ru-1.0.3.bz2 | ${BZIP2_CMD} | ${PATCH}
+.if defined(WITH_GPC)
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/gpc231.tar.Z | ${TAR} xfz -
 	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/external/gpc/
 	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/external/gpc/
+.endif
+.if !defined(WITH_GPC)
+	@cd ${WRKSRC} ; ${PATCH} -p0 < ${FILESDIR}/gpc-libart-patch
+.endif
 	@${CHMOD} +x ${WRKSRC}/solenv/bin/zipdep.pl
 
 	@${MKDIR} ${WRKDIR}/L10NHELP
@@ -165,7 +173,7 @@ post-patch:
 #patch for SDK
 	@${REINPLACE_CMD} 's|%%GNUTR%%|${LOCALBASE}/bin/gtr|g'   ${WRKSRC}/odk/util/makefile.pmk
 	@${REINPLACE_CMD} 's|%%GNUCOPY%%|${LOCALBASE}/bin/gcp|g' ${WRKSRC}/solenv/inc/unitools.mk
-	${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g' \
+	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g' \
 			  -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
 				${WRKSRC}/product/settings/settings.mk
 do-build:
