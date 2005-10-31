@@ -23,7 +23,7 @@ this functionality is not used at all.
 
 --- moz/mozilla-source-1.0.patch.org	Tue Feb 10 19:44:34 2004
 +++ moz/mozilla-source-1.0.patch	Sat Mar 19 12:51:35 2005
-@@ -4471,14 +4471,16 @@
+@@ -4471,14 +4471,17 @@
       return NS_OK;
   }
  
@@ -31,7 +31,7 @@ this functionality is not used at all.
 +--- misc/build/mozilla/.mozconfig	Tue Jul 22 21:52:27 2003
  +++ misc/build/mozilla/.mozconfig	Mon Jul 28 15:07:20 2003
 -@@ -0,0 +1,8 @@
-+@@ -0,0 +1,10 @@
++@@ -0,0 +1,11 @@
  +ac_add_options --disable-tests
  +ac_add_options --disable-xprint
  +ac_add_options --without-system-zlib
@@ -39,6 +39,27 @@ this functionality is not used at all.
  +ac_add_options --disable-debug
 ++ac_add_options --disable-freetype2
 ++ac_add_options --enable-default-toolkit=xlib
+++ac_add_options --disable-pedantic
  +ac_add_options --enable-optimize
  +ac_add_options --enable-crypto
  +ac_add_options --enable-strip
+@@ -4497,3 +4500,19 @@
+  endif
+  
+  # Windows equivalents
++
++--- misc/build/mozilla/xpcom/typelib/xpidl/xpidl.h	Wed Apr 10 12:38:31 2002
+++++ misc/build/mozilla/xpcom/typelib/xpidl/xpidl.h	Sat Oct 29 12:34:19 2005
++@@ -71,10 +71,10 @@
++  * parens, e.g. XPIDL_WARNING((foo, bar, "sil"))
++  *
++  * Probably best removed when we leave 6.5.  */
++-#define XPIDL_WARNING(x) IDL_tree_warning##x
+++#define XPIDL_WARNING(x) IDL_tree_warning x
++ #else
++ extern void xpidl_tree_warning(IDL_tree p, int level, const char *fmt, ...);
++-#define XPIDL_WARNING(x) xpidl_tree_warning##x
+++#define XPIDL_WARNING(x) xpidl_tree_warning x
++ #endif
++ 
++ /*
