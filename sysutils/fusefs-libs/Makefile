@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	fusefs
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fuse
@@ -27,7 +27,7 @@ USE_REINPLACE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 600000
-IGNORE=		Depends on kernel module that requires FreeBSD 6 or later
+IGNORE=		depends on kernel module that requires FreeBSD 6 or later
 .endif
 
 post-patch:
