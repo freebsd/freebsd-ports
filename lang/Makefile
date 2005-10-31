@@ -253,6 +253,7 @@
     SUBDIR += sdcc
     SUBDIR += sdcc-devel
     SUBDIR += see
+    SUBDIR += see-devel
     SUBDIR += siod
     SUBDIR += sisc
     SUBDIR += sketchy
