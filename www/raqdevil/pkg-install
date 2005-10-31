@@ -1,0 +1,32 @@
+#!/bin/sh
+
+PATH=/bin:/usr/sbin
+
+case $2 in
+POST-INSTALL)
+	GROUP=users
+
+	if pw group show "${GROUP}" 2>/dev/null; then
+		echo "You already have a group \"${GROUP}\", so I will use it."
+	else
+		if pw groupadd ${GROUP}; then
+			echo "Added group \"${GROUP}\"."
+		else
+			echo "Adding group \"${GROUP}\" failed..."
+			exit 1
+		fi
+	fi
+
+	/usr/bin/touch /etc/mail/access
+
+	if [ \! -d /usr/local/raqdevil/ui/web/base/sitestats/img ]; then
+		mkdir -p /usr/local/raqdevil/ui/web/base/sitestats/img;
+		chown www:wheel /usr/local/raqdevil/ui/web/base/sitestats/img;
+		mkdir -p /usr/local/raqdevil/skel/spam;
+		mkdir -p /usr/local/raqdevil/skel/quarantine;
+		mkdir -p /usr/local/raqdevil/sessions;
+	fi;
+
+	( cd /etc/namedb; sh /etc/namedb/make-localhost )
+	;;
+esac
