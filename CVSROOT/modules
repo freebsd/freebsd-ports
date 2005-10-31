@@ -3193,6 +3193,7 @@ gnucap		ports/cad/gnucap
 gnucash		ports/finance/gnucash
 gnucash-docs	ports/finance/gnucash-docs
 gnuchess	ports/games/gnuchess
+gnudatalanguage	ports/science/gnudatalanguage
 gnugo		ports/games/gnugo
 gnuinfo		ports/www/gnuinfo
 gnulibiberty	ports/devel/gnulibiberty
