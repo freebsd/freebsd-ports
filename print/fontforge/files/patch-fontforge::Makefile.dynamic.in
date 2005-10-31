@@ -1,11 +1,19 @@
---- fontforge/Makefile.dynamic.in.orig	Fri Jul 30 01:26:29 2004
-+++ fontforge/Makefile.dynamic.in	Wed Aug 25 19:48:55 2004
-@@ -42,7 +42,7 @@
+--- fontforge/Makefile.dynamic.in.orig	Fri Oct 14 11:14:37 2005
++++ fontforge/Makefile.dynamic.in	Sat Oct 15 14:23:19 2005
+@@ -43,13 +43,13 @@
  DIFFOBJS = sfddiff.o sfd.o diffstubs.o stamp.o
  ACORNOBJS = acorn2sfd.o sfd.o diffstubs.o psunicodenames.o stamp.o
  
 -_CFLAGS = -I$(top_srcdir)/inc -I$(srcdir) -I. @WFLAGS@ $(X_CFLAGS) \
 +_CFLAGS = -I$(LOCALBASE)/include -I$(top_srcdir)/inc -I$(srcdir) -I. @WFLAGS@ $(X_CFLAGS) \
      @DEFS@ '-DSHAREDIR="$(sharedir)"' -DLIBDIR='"$(libdir)"'
- CFLAGS = @CFLAGS@ $(_CFLAGS)
+ CFLAGS = @CFLAGS@ @CPPFLAGS@ $(_CFLAGS)
+ 
+ LIBS = -rpath $(libdir) $(X_LIBS) ../libgdraw.la ../libgunicode.la \
+-    $(X_PRE_LIBS) $(X_11LIB) $(X_EXTRA_LIBS) @LIBS@ $(STATIC_LIBS) -L/usr/lib -lm
+-DLIBS = -rpath $(libdir) ../libgunicode.la @LIBS@ -lm
++    $(X_PRE_LIBS) $(X_11LIB) $(X_EXTRA_LIBS) @LIBS@ $(STATIC_LIBS) -L/usr/lib -lm -lintl
++DLIBS = -rpath $(libdir) ../libgunicode.la @LIBS@ -lm -lintl
+ 
+ all: fontforge sfddiff
  

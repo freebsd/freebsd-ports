@@ -1,5 +1,5 @@
---- Makefile.dynamic.in.orig	Thu Jun  9 02:20:04 2005
-+++ Makefile.dynamic.in	Thu Jun 30 13:51:27 2005
+--- Makefile.dynamic.in.orig	Mon Oct 17 03:30:49 2005
++++ Makefile.dynamic.in	Mon Oct 17 10:14:46 2005
 @@ -48,34 +48,34 @@
  	$(LIBTOOL) $(INSTALL) -c libgunicode.la $(libdir)/libgunicode.la
  	#cp .libs/*.so.*.* $(libdir)
