@@ -11793,6 +11793,7 @@ stvef-server	ports/games/stvef-server
 styx		ports/devel/styx
 su2		ports/sysutils/su2
 subcalc		ports/net-mgmt/subcalc
+subclipse	ports/devel/subclipse
 subconv		ports/multimedia/subconv
 subtitleripper	ports/multimedia/subtitleripper
 subversion	ports/devel/subversion
