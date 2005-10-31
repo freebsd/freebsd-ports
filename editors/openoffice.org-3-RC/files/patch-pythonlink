@@ -1,0 +1,312 @@
+Issuetracker : #i56955#
+CWS          : N/A
+Author       : <maho@openoffice.org>
+Description  : Remove instsetoo_native/inc_openoffice/unix/shellscripts_pyuno.txt
+
+It is desirable to prepare minimal shellscripts as far as possible at
+installation part, and possibly, no shellscripts. However,
+unfortunately three things had done at shellscripts_pyuno.txt.
+
+1. symlink to python.sh -> python
+2. chmod +x program/python-core-2.3.4/bin/python
+3. symlink to python-core-2.3.4 -> python-core
+
+solution
+
+0. apply following patch. full build confirmed for SRC680_m134, FreeBSD 5.4-RELEASE.
+1. Done in scp2 project: prepare scp2/source/python/shortcut_python.scp and scp2/util/makefile.mk,
+and make a symlink to python.sh -> python.
+(3. is impossible to solve in this way since we only have python-core-2.3.4.zip in files in scp2.)
+2. Do not use program/python-core-2.3.4/bin/python, use program/python.bin instead. python.sh
+now executes program/python.bin. this is usual way; see e.g., spadmin etc.
+3. change from symlinking python-core-2.3.4->python-core
+to adding version number (by replacing by sed) to python.sh which invoke python in OOo,
+and we don't have to make a symlink.
+
+suggestion (and not yet done):
+
+4. we can also remove symlink from python.sh to python and
+rename python.sh to python. apparently intermidiate python.sh is unnecessary.
+currently: python -> python.sh -> python.bin
+suggested: python -> python.bin
+delivering a shell script python can harm since we have python binary from python project
+as well. but this is safe since python (shell script) and python.bin are delivered,
+at the same time.
+
+--- scp2/source/python/makefile.mk	Fri Sep  9 10:43:01 2005
++++ scp2/source/python/makefile.mk	Wed Oct 26 17:12:52 2005
+@@ -60,7 +60,8 @@
+ PARFILES=\
+         module_python.par              \
+         profileitem_python.par         \
+-        file_python.par
++        file_python.par                \
++        shortcut_python.par
+ 
+ ULFFILES= \
+         module_python.ulf 
+
+--- scp2/util/makefile.mk	Fri Sep  9 10:52:09 2005
++++ scp2/util/makefile.mk	Thu Oct 27 07:25:25 2005
+@@ -87,7 +87,8 @@
+              file_xsltfilter.par           \
+              module_python.par             \
+              file_python.par               \
+-             profileitem_python.par
++             profileitem_python.par        \
++             shortcut_python.par
+ 
+ .IF "$(SOLAR_JAVA)"!=""
+ SCP1FILES +=                               \
+
+--- /dev/null	Thu Oct 27 09:59:37 2005
++++ scp2/source/python/shortcut_python.scp	Thu Oct 27 09:59:19 2005
+@@ -0,0 +1,49 @@
++/*************************************************************************
++ *
++ *  OpenOffice.org - a multi-platform office productivity suite
++ *
++ *  $RCSfile: shortcut_python.scp,v $
++ *
++ *  $Revision: 1.20 $
++ *
++ *  last change: $Author: rt $ $Date: 2005/09/09 01:42:03 $
++ *
++ *  The Contents of this file are made available subject to
++ *  the terms of GNU Lesser General Public License Version 2.1.
++ *
++ *
++ *    GNU Lesser General Public License Version 2.1
++ *    =============================================
++ *    Copyright 2005 by Sun Microsystems, Inc.
++ *    901 San Antonio Road, Palo Alto, CA 94303, USA
++ *
++ *    This library is free software; you can redistribute it and/or
++ *    modify it under the terms of the GNU Lesser General Public
++ *    License version 2.1, as published by the Free Software Foundation.
++ *
++ *    This library is distributed in the hope that it will be useful,
++ *    but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ *    Lesser General Public License for more details.
++ *
++ *    You should have received a copy of the GNU Lesser General Public
++ *    License along with this library; if not, write to the Free Software
++ *    Foundation, Inc., 59 Temple Place, Suite 330, Boston,
++ *    MA  02111-1307  USA
++ *
++ ************************************************************************/
++
++#include "macros.inc"
++
++#ifndef SYSTEM_PYTHON
++#ifdef UNX
++
++Shortcut gid_Shortcut_Python_Sh
++    FileID = gid_File_Python_Sh;
++    Dir = gid_Dir_Program;
++    Name = "python";
++    Styles = (RELATIVE);
++End
++
++#endif
++#endif
+
+--- instsetoo_native/inc_openoffice/unix/shellscripts_pyuno.txt	Thu Aug 18 17:11:29 2005
++++ /dev/null	Wed Oct 26 09:51:22 2005
+@@ -1,74 +0,0 @@
+-%preinstall << END
+-# echo Command before installing
+-exit 0
+-END
+-
+-%postinstall << END
+-# echo Command after installing
+-# searching for the PRODUCTINSTALLLOCATION for the different platforms
+-platform=`uname -s`
+-case $$platform in
+-SunOS)
+-  PRODUCTINSTALLLOCATION="$$BASEDIR"
+-  ;;
+-Linux)
+-  PRODUCTINSTALLLOCATION="$$RPM_INSTALL_PREFIX"
+-  ;;
+-*)
+-  PRODUCTINSTALLLOCATION="$$BASEDIR" 
+-  ;;
+-esac
+-
+-if [ -d $$PRODUCTINSTALLLOCATION/PRODUCTDIRECTORYNAME/program/python-core-2.3.4 ]
+-then
+-  ln -s python-core-2.3.4 $$PRODUCTINSTALLLOCATION/PRODUCTDIRECTORYNAME/program/python-core >/dev/null 2>&1
+-fi
+-
+-if [ -f $$PRODUCTINSTALLLOCATION/PRODUCTDIRECTORYNAME/program/python.sh ]
+-then
+-  ln -s python.sh $$PRODUCTINSTALLLOCATION/PRODUCTDIRECTORYNAME/program/python >/dev/null 2>&1
+-fi
+-
+-if [ -f $$PRODUCTINSTALLLOCATION/PRODUCTDIRECTORYNAME/program/python-core-2.3.4/bin/python ]
+-then
+-  chmod +x $$PRODUCTINSTALLLOCATION/PRODUCTDIRECTORYNAME/program/python-core-2.3.4/bin/python
+-fi
+-
+-exit 0
+-END
+-
+-%preremove << END
+-# echo Command before removing
+-exit 0
+-END
+-
+-%postremove << END
+-# echo Command after removing
+-
+-# searching for the PRODUCTINSTALLLOCATION for the different platforms
+-platform=`uname -s`
+-case $$platform in
+-SunOS)
+-  PRODUCTINSTALLLOCATION="$$BASEDIR"
+-  ;;
+-Linux)
+-  PRODUCTINSTALLLOCATION="$$RPM_INSTALL_PREFIX"
+-  ;;
+-*)
+-  PRODUCTINSTALLLOCATION="$$BASEDIR" 
+-  ;;
+-esac
+-
+-if [ -h $$PRODUCTINSTALLLOCATION/PRODUCTDIRECTORYNAME/program/python-core ]
+-then
+-  rm -f $$PRODUCTINSTALLLOCATION/PRODUCTDIRECTORYNAME/program/python-core >/dev/null 2>&1
+-fi
+-
+-if [ -h $$PRODUCTINSTALLLOCATION/PRODUCTDIRECTORYNAME/program/python ]
+-then
+-  rm -f $$PRODUCTINSTALLLOCATION/PRODUCTDIRECTORYNAME/program/python >/dev/null 2>&1
+-fi
+-
+-
+-exit 0
+-END
+--- instsetoo_native/inc_openoffice/unix/packagelist.txt	Wed Oct 26 17:34:58 2005
++++ instsetoo_native/inc_openoffice/unix/packagelist.txt	Thu Oct 27 06:25:32 2005
+@@ -233,7 +233,6 @@
+ 
+ Start
+ module = "gid_Module_Optional_Pyuno"
+-script = "shellscripts_pyuno.txt"
+ solarispackagename = "openofficeorg-pyuno"
+ solarisrequires = "openofficeorg-core01"
+ packagename = "openoffice.org-pyuno"
+
+
+--- pyuno/zipcore/python.sh	Fri Sep  9 01:55:24 2005
++++ pyuno/zipcore/python.sh	Thu Oct 27 14:48:08 2005
+@@ -101,14 +101,14 @@
+     ;;
+ esac
+ 
+-PYTHONPATH="$sd_prog":"$sd_prog/python-core/lib":"$sd_prog/python-core/lib/lib-dynload":"$sd_prog/python-core/lib/lib-tk":"$PYTHONPATH"
++PYTHONPATH="$sd_prog":"$sd_prog/python-core-%%PYVERSION%%/lib":"$sd_prog/python-core-%%PYVERSION%%/lib/lib-dynload":"$sd_prog/python-core-%%PYVERSION%%/lib/lib-tk":"$PYTHONPATH"
+ export PYTHONPATH
+ 
+-PYTHONHOME="$sd_prog"/python-core
++PYTHONHOME="$sd_prog"/python-core-%%PYVERSION%%
+ export PYTHONHOME
+ 
+ # set path so that other apps can be started from soffice just by name
+ PATH="$sd_prog":$PATH
+ export PATH
+-exec "$sd_prog/python-core/bin/python" "$@"
++exec "$sd_prog/python.bin" "$@"
+ 
+--- pyuno/zipcore/makefile.mk	Thu Sep  9 01:55:34 2004
++++ pyuno/zipcore/makefile.mk	Thu Oct 27 14:47:34 2005
+@@ -12,7 +12,11 @@
+ 
+ PYDIRNAME=python-core-$(PYVERSION)
+ DESTROOT=$(BIN)$/python-core-$(PYVERSION)
++.IF "$(GUI)" == "UNX"
++PYTHONBINARY=$(BIN)$/python$(EXECPOST).bin
++.ELSE
+ PYTHONBINARY=$(DESTROOT)$/bin$/python$(EXECPOST)
++.ENDIF
+ 
+ FINDLIBFILES_TMP:=$(subst,/,$/ \
+ 	$(shell +$(FIND) $(SOLARLIBDIR)$/python -type f| $(GREP) -v .pyc ))
+@@ -29,6 +33,8 @@
+ $(BIN)$/python.sh : python.sh
+ 	-rm -f $@
+ 	cat $? > $@
++	sed 's/%%PYVERSION%%/$(PYVERSION)/g' < $@ > $@.new
++	mv $@.new $@
+ .IF "$(GUI)" == "UNX"
+ 	chmod +x $@
+ .ENDIF
+@@ -47,15 +53,21 @@
+ 	-rm -f $@
+ 	cat $< > $@
+ 
+-$(DESTROOT)$/bin$/python$(EXECPOST) : $(SOLARBINDIR)$/python$(EXECPOST)
++.IF "$(GUI)"== "UNX"
++$(BIN)$/python$(EXECPOST).bin : $(SOLARBINDIR)$/python$(EXECPOST)
+ 	-+$(MKDIRHIER) $(@:d)
+ 	-rm -f $@
+ 	cat $< > $@
+-.IF "$(GUI)"== "UNX"
+ .IF "$(OS)" != "MACOSX"
+ 	strip $@
+ .ENDIF
+ 	chmod +x $@
++.ELSE
++$(DESTROOT)$/bin$/python$(EXECPOST) : $(SOLARBINDIR)$/python$(EXECPOST)
++	-+$(MKDIRHIER) $(@:d)
++	-rm -f $@
++	cat $< > $@
++	strip $@
+ .ENDIF
+ 
+ .ENDIF
+--- pyuno/prj/d.lst	Wed Feb 16 03:46:13 2005
++++ pyuno/prj/d.lst	Thu Oct 27 14:52:10 2005
+@@ -22,4 +22,5 @@
+ ..\%__SRC%\misc\pyunorc %_DEST%\lib%_EXT%\pyunorc
+ ..\%__SRC%\misc\pyuno.ini %_DEST%\bin%_EXT%\pyuno.ini
+ ..\%__SRC%\bin\python-core-*.zip %_DEST%\bin%_EXT%\python-core-*.zip
++..\%__SRC%\bin\python.bin %_DEST%\bin%_EXT%\python.bin
+ ..\%__SRC%\bin\python.sh %_DEST%\bin%_EXT%\python.sh
+
+ 
+--- scp2/source/python/module_python.scp	Fri Sep  9 10:43:17 2005
++++ scp2/source/python/module_python.scp	Thu Oct 27 14:54:41 2005
+@@ -38,7 +38,7 @@
+ Module gid_Module_Optional_Pyuno
+     MOD_NAME_DESC ( MODULE_OPTIONAL_PYTHON );
+     ParentID = gid_Module_Optional;
+-    Files = (gid_File_Pyuno,gid_File_Lib_Pyuno,gid_File_Lib_Pythonloader,gid_File_Py_Unohelper,gid_File_Py_Uno,gid_File_Py_Pythonloader,gid_File_Py_Python_Core,gid_File_Python_Sh,gid_File_Lib_Python_So, gid_File_Py_Scriptprovider,gid_File_Py_Pythonscript,gid_File_Scripts_Python,gid_File_Registry_Spool_Oo_Scripting_Python_Xcu,gid_File_Pythonmsi_Dll);
++    Files = (gid_File_Pyuno,gid_File_Lib_Pyuno,gid_File_Lib_Pythonloader,gid_File_Py_Unohelper,gid_File_Py_Uno,gid_File_Py_Pythonloader,gid_File_Py_Python_Core,gid_File_Py_Python_Bin,gid_File_Python_Sh,gid_File_Lib_Python_So, gid_File_Py_Scriptprovider,gid_File_Py_Pythonscript,gid_File_Scripts_Python,gid_File_Registry_Spool_Oo_Scripting_Python_Xcu,gid_File_Pythonmsi_Dll);
+     Minimal = NO;
+     Default = YES;
+     Styles = ( );
+
+--- scp2/source/python/file_python.scp	Fri Sep  9 10:42:31 2005
++++ scp2/source/python/file_python.scp	Thu Oct 27 16:41:18 2005
+@@ -86,8 +86,17 @@
+     Name = STRING(CONCAT3(python-core-,PYVERSION,.zip));
+     Styles = (ARCHIVE);
+ End
++
++#ifdef UNX
++File gid_File_Py_Python_Bin
++    BIN_FILE_BODY;
++    Dir = gid_Dir_Program;
++    Name = "python.bin";
++    Styles = (PACKED);
++End
+ #endif
+ 
++#endif
+ 
+ // substitute for the python Windows basic scripts
+ 
