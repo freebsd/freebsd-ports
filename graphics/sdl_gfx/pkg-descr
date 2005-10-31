@@ -9,4 +9,4 @@ The current components of the SDL_gfx library are:
    - Framerate control (SDL_framerate.h)
    - MMX image filters (SDL_imageFilter.h)
 
-WWW: http://www.ferzkopp.net/mambo/index.php?option=com_content&task=view&id=14&Itemid=29
+WWW: http://www.ferzkopp.net/Software/SDL_gfx-2.0/
