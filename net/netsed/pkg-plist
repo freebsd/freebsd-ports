@@ -1,3 +1,0 @@
-bin/netsed
-%%PORTDOCS%%share/doc/netsed/README
-%%PORTDOCS%%@dirrm share/doc/netsed
