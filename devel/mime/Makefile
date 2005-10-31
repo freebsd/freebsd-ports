@@ -7,7 +7,7 @@
 
 PORTNAME=	mime
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://resnet.uoregon.edu/~gurney_j/jmpc/dist/
 
@@ -18,16 +18,10 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 600034
-BROKEN=		"Does not compile on FreeBSD >= 6.0"
-.endif
-
 post-patch:
-	${REINPLACE_CMD} -e "s,-fpic,-fpic -fPIC,g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s,-fpic,-fpic -fPIC,g" ${WRKSRC}/Makefile.in
 
 post-install:
-	@ cd ${PREFIX}/lib ; ${LN} -sf libmime.so.1 libmime.so
+	@(cd ${PREFIX}/lib ; ${LN} -sf libmime.so.1 libmime.so )
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
