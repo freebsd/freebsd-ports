@@ -13,7 +13,10 @@ MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_MOZILLA:S/$/:mozsrc/}
 MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${MOZILLA_VERSION}/source/:mozsrc
-DISTFILES+=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2 gpc231.tar.Z:gpc
+DISTFILES+=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2
+.if defined(WITH_GPC)
+DISTFILES+=     gpc231.tar.Z:gpc
+.endif
 EXTRACT_ONLY=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
@@ -50,17 +53,14 @@ JAVA_VENDOR=	bsdjava
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
 
-.if (${OSVERSION} < 503001 && ${OSVERSION} >= 500000) || (${OSVERSION} <= 492000)
-BROKEN=		"rtld depends on _end symbol. type make -DTRYBROKEN to see how to upgrade your rtld"
-.endif
 .if ${PERL_LEVEL} < 500600
 IGNORE=		Install lang/perl5.8 then try again
 .endif
 
 CODELINE=		680
-RELEASE_NR=		1.9
-MILESTONE=		134
-SNAPDATE=		20051014
+RELEASE_NR=		2.0
+MILESTONE=		136
+SNAPDATE=		20051026
 INSTALLATION_BASEDIR=	openoffice.org${RELEASE_NR}m${MILESTONE}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org2.0
@@ -117,7 +117,9 @@ BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 .endif
-
+.if !defined(WITH_GPC)
+LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
+.endif
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
@@ -127,7 +129,7 @@ TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NUMOFPROCESSES?=	1
 
-CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE}/bin/gpatch --with-epm=internal --with-system-freetype
+CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE}/bin/gpatch --with-epm=internal --with-system-freetype --enable-crashdump=yes --enable-symbols=SMALL
 
 .include <${FILESDIR}/Makefile.knobs>
 
@@ -155,9 +157,11 @@ post-extract:
 .if (${OSVERSION} <= 492000)
 	@cd ${WRKSRC} ; ${PATCH} < ${FILESDIR}/fbsd4-workaroundpatch
 .endif
+.if defined(WITH_GPC)
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/gpc231.tar.Z | ${TAR} xfz -
 	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/external/gpc/
 	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/external/gpc/
+.endif
 .if !defined(WITHOUT_MOZILLA)
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${MOZILLA_SOURCE} ${WRKSRC}/moz/download
 .endif
@@ -201,11 +205,6 @@ post-install:
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-simpress
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-spadmin
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-swriter
-# python post-install script start
-# consult instsetoo_native/inc_openoffice/unix/shellscripts_pyuno.txt
-	@cd ${PREFIX}/${INSTALLATION_BASEDIR}/program ; ${LN} -s python-core-2.3.4 ${PREFIX}/${INSTALLATION_BASEDIR}/program/python-core; ${LN} -s python.sh ${PREFIX}/${INSTALLATION_BASEDIR}/program/python
-	${CHMOD} +x ${PREFIX}/${INSTALLATION_BASEDIR}/program/python-core-2.3.4/bin/python
-# python post-install script end
 	@${PRINTF} "bin/openoffice.org\n" > ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s bin -type f | ${GREP} ${EXECBASE} >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s bin -type l | ${GREP} ${EXECBASE} >> ${TMPPLIST}

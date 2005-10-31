@@ -1,7 +1,7 @@
-Issutracker : #i56070#
-CWS         : N/A
-Author:     : <maho@openoffice.org>
-Description : some *.desktop files missing on making installsets
+Issuetracker : #i56070#, #i56731#
+CWS          : N/A
+Author       : <maho@openoffice.org>
+Description  : some *.desktop files missing on making installsets
 
 Index: postprocess/prj/build.lst
 ===================================================================
@@ -12,7 +12,10 @@ diff -u -r1.20 build.lst
 +++ postprocess/prj/build.lst	16 Oct 2005 08:36:25 -0000
 @@ -1,4 +1,4 @@
 -po	postprocess	::	accessibility automation basctl bean BINFILTER:binfilter chart2 configmgr CRASHREP:crashrep dbaccess desktop dtrans embeddedobj embedserv EPM:epm eventattacher extensions extras fileaccess filter forms fpicker helpcontent2 hwpfilter io lingucomponent MATHMLDTD:MathMLDTD MSFONTEXTRACT:msfontextract ODK:odk officecfg package padmin psprint_config remotebridges sc scaddins scp2 scripting sd setup_native slideshow starmath sw testshl testshl2 testtools ucb UnoControls unoxml ure wizards xmlsecurity BITSTREAM_VERA_FONTS:bitstream_vera_fonts DICTIONARIES:dictionaries OOo:pyuno OOo:readlicense_oo SO:top NULL
-+po	postprocess	::	accessibility automation basctl bean BINFILTER:binfilter chart2 configmgr CRASHREP:crashrep dbaccess desktop dtrans embeddedobj embedserv EPM:epm eventattacher extensions extras fileaccess filter forms fpicker helpcontent2 hwpfilter io lingucomponent MATHMLDTD:MathMLDTD MSFONTEXTRACT:msfontextract ODK:odk officecfg package padmin psprint_config remotebridges sc scaddins scp2 scripting sd setup_native slideshow starmath sw sysui testshl testshl2 testtools ucb UnoControls unoxml ure wizards xmlsecurity BITSTREAM_VERA_FONTS:bitstream_vera_fonts DICTIONARIES:dictionaries OOo:pyuno OOo:readlicense_oo SO:top NULL
++po	postprocess	::	accessibility automation basctl bean BINFILTER:binfilter chart2 configmgr CRASHREP:crashrep dbaccess desktop dtrans embeddedobj embedserv EPM:epm eventattacher extensions extras fileaccess filter forms fpicker helpcontent2 hwpfilter io lingucomponent MATHMLDTD:MathMLDTD MSFONTEXTRACT:msfontextract ODK:odk officecfg package padmin psprint_config remotebridges sc scaddins scp2 scripting sd setup_native slideshow starmath sw sysui testshl testshl2 testtools ucb UnoControls unoxml ure wizards xmlsecurity BITSTREAM_VERA_FONTS:bitstream_vera_fonts xmerge DICTIONARIES:dictionaries OOo:pyuno OOo:readlicense_oo SO:top NULL
  po	postprocess			    	usr1	-	all	po_mkout NULL
  po	postprocess\checkxml		nmake	-	all	po_checkxml NULL
  po	postprocess\packconfig		nmake	-	all	po_packconfig po_checkxml NULL
+
+
+

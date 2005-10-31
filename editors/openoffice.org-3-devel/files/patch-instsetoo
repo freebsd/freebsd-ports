@@ -1,7 +1,7 @@
-Issutracker : #i53288#
-CWS         : N/A
-Author:     : <maho@openoffice.org> (JCA)
-Description : remove circular dependency
+Issuetracker : #i53288#
+CWS          : N/A
+Author       : <maho@openoffice.org> (JCA)
+Description  : remove circular dependency
 
 in this case,
 core01 is depend on core02-core08, and core0[2-9] and core10

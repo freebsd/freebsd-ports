@@ -1,7 +1,7 @@
-Issutracker : #i53287#
-CWS         : N/A
-Author:     : <maho@openoffice.org> (JCA)
-Description : Support for FreeBSD 6 and 7
+Issuetracker : #i53287#
+CWS          : N/A
+Author       : <maho@openoffice.org> (JCA)
+Description  : Support for FreeBSD 6 and 7
 
 Index: python/Python-2.3.4.patch
 ===================================================================
