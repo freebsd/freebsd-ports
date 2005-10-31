@@ -8,6 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	3.3.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang
 VERSIONSTRING=	${PORTVERSION}
@@ -37,9 +38,6 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700000
-IGNORE=		does not support FreeBSD 7.x and above
-.endif
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 BROKEN=			"Bus errors in stage2; system compiler may be broken."
@@ -84,6 +82,7 @@ post-patch:
 
 pre-configure:
 	cd ${SRCDIR} ; contrib/gcc_update --touch
+	@${LN} -sf ${FILESDIR}/freebsd7.h ${SRCDIR}/gcc/config
 	@${RM} -f ${SRCDIR}/gcc/*/*.info*
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 
