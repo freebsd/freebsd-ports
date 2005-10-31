@@ -19,7 +19,7 @@ MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
 		ftp://ftp.kddlabs.co.jp/office/openoffice/contrib/helpcontent/:help \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent/:help \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help \
-		ftp://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/Files/:help2
+		ftp://ftp.linux.cz/pub/localization/OpenOffice.org/1.1.5/build/Files/:help2
 MASTER_SITE_SUBDIR=	maho/openoffice.org/:moz \
 		mozilla/releases/mozilla${MOZILLA_VERSION}/src/:mozsrc \
 		misc/openoffice/contrib/helpcontent/:help \
