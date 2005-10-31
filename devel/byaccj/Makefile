@@ -8,8 +8,8 @@
 PORTNAME=	byaccj
 PORTVERSION=	1.1
 CATEGORIES=	devel java
-MASTER_SITES=	http://troi.lincom-asg.com/~rjamison/byacc/ \
-		http://opensource.zjonline.com.cn/distfiles/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	byaccj
 DISTNAME=	byaccj1.1
 
 MAINTAINER=	davidxu@viatech.com.cn
