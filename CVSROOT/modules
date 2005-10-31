@@ -11318,6 +11318,7 @@ sed_inplace	ports/textproc/sed_inplace
 seda		ports/net/seda
 sedsed		ports/devel/sedsed
 see		ports/lang/see
+see-devel	ports/lang/see-devel
 seejpeg		ports/graphics/seejpeg
 seizedesktop	ports/misc/seizedesktop
 selectwm	ports/x11-wm/selectwm
