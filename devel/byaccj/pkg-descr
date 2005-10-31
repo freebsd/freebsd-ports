@@ -4,7 +4,7 @@ more C files from it, which if compiled properly, will produce a LALR-
 grammar parser. this extension support a -J option to generate Java source
 code.
 
-WWW: http://troi.lincom-asg.com/~rjamison/byacc/
+WWW: http://byaccj.sourceforge.net
 
 - David Xu
 davidxu@viatech.com.cn
