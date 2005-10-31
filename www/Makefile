@@ -735,6 +735,7 @@
     SUBDIR += pyweblib
     SUBDIR += qdecoder
     SUBDIR += quixote
+    SUBDIR += raqdevil
     SUBDIR += reportmagic
     SUBDIR += resin2
     SUBDIR += resin3
