@@ -7,6 +7,7 @@
 # Style (sorted from east to west): sort -n -r -k 2
 # Lat,		Long,		"name"	opt			# location
 
+-32.90,		151.70		"lawrance"			# Newcastle, Australia
 -34.05,		151.15,		"edwin"				# Cronulla, Australia
 -33.55,		151.1,		"bde"				# Sydney, Australia.
 -37.7,		144.9,		"jb,danny,thepish,benno"	# Melbourne, Vic Australia
