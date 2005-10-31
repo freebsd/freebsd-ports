@@ -10634,6 +10634,7 @@ randrext	ports/x11/randrext
 rapidsvn	ports/devel/rapidsvn
 raproxy		ports/audio/raproxy
 raptor		ports/textproc/raptor
+raqdevil	ports/www/raqdevil
 rar		ports/archivers/rar
 rascal		ports/math/rascal
 rasmol		ports/biology/rasmol
