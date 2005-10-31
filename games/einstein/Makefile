@@ -17,7 +17,13 @@ COMMENT=	Remake of old DOS game Sherlock, which was inspired by Albert Einstein'
 USE_SDL=	sdl ttf mixer
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=		Einstein requires wstrings which are not available in FreeBSD 4.x
+.endif
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
