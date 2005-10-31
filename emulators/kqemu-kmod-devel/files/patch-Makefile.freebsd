@@ -1,0 +1,10 @@
+--- Makefile.freebsd.orig	Fri Jul 29 06:37:06 2005
++++ Makefile.freebsd	Tue Oct 25 21:08:43 2005
+@@ -5,6 +5,7 @@
+ .elif ${MACHINE_ARCH} == "amd64"
+ OBJS=	kqemu-mod-x86_64.o
+ .endif
++CC=	cc
+ WERROR=
+ 
+ .include <bsd.kmod.mk>
