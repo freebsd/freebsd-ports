@@ -7,6 +7,7 @@
 
 PORTNAME=	openbgpd
 PORTVERSION=	3.7
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenBGPD/:openbsd \
 		${MASTER_SITE_LOCAL:S/$/:freebsd/g}
@@ -52,7 +53,8 @@ post-patch:
 		${WRKSRC}/bgpd/bgpd.8			\
 		${WRKSRC}/bgpd/bgpd.h			\
 		${WRKSRC}/bgpd/bgpd.conf.5		\
-		${WRKSRC}/bgpctl/Makefile
+		${WRKSRC}/bgpctl/Makefile		\
+		${WRKSRC}/bgpctl/bgpctl.8
 	@${REINPLACE_CMD} -e "s|__dead ||"	\
 		${WRKSRC}/bgpd/bgpd.c ${WRKSRC}/bgpctl/bgpctl.c
 	@${REINPLACE_CMD} -e "s|SIMPLEQ|STAILQ|" ${WRKSRC}/bgpd/*
