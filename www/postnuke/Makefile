@@ -6,27 +6,21 @@
 #
 
 PORTNAME=	postnuke
-PORTVERSION=	0.714
-PORTREVISION=	2
+PORTVERSION=	0.761
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	post-nuke
-DISTNAME=	Rogue_714
+MASTER_SITES=	http://downloads.postnuke.com/sf/postnuke/
+DISTNAME=	PostNuke-0.761
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automated website package to distribute and manage content
-
-FORBIDDEN=	http://vuxml.FreeBSD.org/0274a9f1-0759-11da-bc08-0001020eed82.html
-EXPIRATION_DATE=2005-09-08
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear-PEAR
 
 USE_MYSQL=	YES
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/pn_714
+WRKSRC=		${WRKDIR}/PostNuke-0.761
 NO_WRKSUBDIR=	yes
-DOCFILES=	README-FIRST.txt THEME_UPGRADES.txt UPGRADE.txt pnAPI.pdf pnMDG.pdf
 PLIST_SUB=	NUKEDIR=${NUKEDIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_REINPLACE=	yes
@@ -49,15 +43,11 @@ post-configure:
 do-install:
 	@${MKDIR} ${PREFIX}/${NUKEDIR}
 	@${MKDIR} ${PREFIX}/${NUKEDIR}/html
-	@${MKDIR} ${PREFIX}/${NUKEDIR}/sql
-	@${CP} -Rp ${WRKSRC}/html ${WRKSRC}/sql ${PREFIX}/${NUKEDIR}
+	@${MKDIR} ${PREFIX}/${NUKEDIR}/phoenix-sql
+	@${CP} -Rp ${WRKSRC}/html ${WRKSRC}/phoenix-sql ${PREFIX}/${NUKEDIR}
 
 post-install:
 	@${CHMOD} 644 ${PREFIX}/${NUKEDIR}/html/config*.php
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}
-	@ cd ${WRKSRC} && ${INSTALL_DATA} ${DOCFILES} ${DOCSDIR}
-.endif
 	@ ${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
