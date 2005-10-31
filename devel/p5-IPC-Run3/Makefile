@@ -33,7 +33,7 @@ BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .endif
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		Port requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>

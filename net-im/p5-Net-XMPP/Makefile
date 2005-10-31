@@ -32,7 +32,7 @@ MAN3=		Net::XMPP.3 Net::XMPP::Client.3 Net::XMPP::Connection.3 \
 
 # Require perl 5.8.x due to XML::Stream
 .if ${PERL_LEVEL} < 500800
-IGNORE=		Port requires perl 5.8.x or later. Install lang/perl5.8 then try again
+IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
 .endif
 
 .include <bsd.port.post.mk>

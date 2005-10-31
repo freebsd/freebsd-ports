@@ -29,7 +29,7 @@ MAN3=		MasonX::Request::WithApacheSession.3 \
 
 # Depends on devel/p5-Class-Container whichs needs perl 5.6.x or later
 .if ${PERL_LEVEL} < 500600
-IGNORE=		Port requires perl 5.6.x or later. Install lang/perl5 then try again
+IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
 .include <bsd.port.post.mk>
