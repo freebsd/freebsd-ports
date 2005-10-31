@@ -6,17 +6,13 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.7.2s.20050909
-PORTREVISION=	2
+PORTVERSION=	0.7.2s.20051030
+PORTREVISION=	0
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.qemu.org/ \
-		http://people.fruitsalad.org/nox/qemu/ \
-		http://dad-answers.com/qemu/
-DISTNAME=	${PORTNAME}-snapshot-2005-09-09_23
-.if defined(WITH_KQEMU)
-DISTFILES=	${EXTRACT_ONLY} ${DISTKQEMU}
-.endif
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	http://www.qemu.org/:release \
+		http://people.fruitsalad.org/nox/qemu/:snapshot \
+		http://qemu.dad-answers.com/download/qemu/:snapshot
+DISTFILES=	${PORTNAME}-snapshot-2005-10-30_23${EXTRACT_SUFX}:snapshot
 
 MAINTAINER=	nox@jelal.kn-bremen.de
 COMMENT=	QEMU CPU Emulator
@@ -25,10 +21,8 @@ BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
 .if defined(WITH_SAMBA)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba
 .endif
-
 .if defined(WITH_KQEMU)
-DISTKQEMU=	kqemu-0.7.2.tar.gz
-EXTRA_PATCHES=	${FILESDIR}/kqemu-freebsd-patch
+BUILD_DEPENDS+=	${LOCALBASE}/include/kqemu/kqemu.h:${PORTSDIR}/emulators/kqemu-kmod
 .endif
 
 HAS_CONFIGURE=	yes
@@ -43,13 +37,9 @@ MAKE_ENV+=	BSD_MAKE=${MAKE}
 MAN1=		qemu.1 qemu-img.1
 ONLY_FOR_ARCHS=	amd64 i386
 .if defined(WITH_KQEMU)
-NO_PACKAGE=	Depends on kernel, and module not redistributable
 CONFIGURE_ARGS+=	--enable-kqemu
-PLIST_SUB=	WITH_KQEMU=""
-PLIST_SUB+=	KMODDIR=${KMODDIR:C/^\///}
 .else
 CONFIGURE_ARGS+=	--disable-kqemu
-PLIST_SUB=	WITH_KQEMU="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
@@ -58,10 +48,6 @@ PLIST_SUB=	WITH_KQEMU="@comment "
 ARCH=		x86_64
 .endif
 USE_GCC=	3.4
-
-.if defined(WITH_KQEMU) && !exists(${SRC_BASE}/sys/Makefile)
-IGNORE=		kqemu requires kernel source to be installed
-.endif
 
 pre-everything::
 .if !defined(WITH_KQEMU)
@@ -74,11 +60,10 @@ pre-everything::
 	@${ECHO_MSG} "WITH_SAMBA."
 .endif
 
-.if defined(WITH_KQEMU)
 post-extract:
-	@cd ${WRKSRC} && ${TAR} xfz ${_DISTDIR}/${DISTKQEMU}
-	@${LN} -s Makefile.freebsd ${WRKSRC}/kqemu/BSDmakefile
-.endif
+	@${MKDIR} ${WRKSRC}/kqemu
+	@${TOUCH} ${WRKSRC}/kqemu/Makefile
+	@${ECHO} all: > ${WRKSRC}/kqemu/Makefile.freebsd
 
 pre-patch:
 	@for A in ${ONLY_FOR_ARCHS}; do \
@@ -86,17 +71,6 @@ pre-patch:
 	done
 
 post-install:
-.if defined(WITH_KQEMU)
-	${INSTALL_SCRIPT} ${WRKSRC}/kqemu/kqemu.ko ${KMODDIR}
-	if mount |${GREP} ^devfs >/dev/null ; then \
-		: ; \
-	else \
-		if [ ! -e /dev/kqemu ]; then\
-			mknod /dev/kqemu c 250 0 ; \
-		fi ; \
-		${CHMOD} 666 /dev/kqemu ; \
-	fi
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
