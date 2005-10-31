@@ -5,8 +5,8 @@ STRIP := strip
 MKDIR_CMD = test -d $(@D) || mkdir -p $(@D)
 ############################################################
 
-SDL := /usr/local
-SDL_IMAGE := /usr/local
+SDL := ${LOCALBASE}
+SDL_IMAGE := ${LOCALBASE}
 
 CPPFLAGS += -I${SDL}/include/SDL11 -I${SDL_IMAGE}/include/SDL11
 LDFLAGS += \
