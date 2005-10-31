@@ -218,7 +218,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.8.4.20051027
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/vlc/snapshots/
 #		http://download2.videolan.org/pub/videolan/testing/${PORTNAME}-${DISTVERSION}/ \
@@ -403,6 +403,10 @@ DEFAULT_DVD_DEVICE=/dev/acd0c
 .else
 DEFAULT_DVD_DEVICE=/dev/acd0
 .endif
+.endif
+
+.if ${HAVE_GNOME:Mgnomevfs2}
+USE_GNOME+=	gnomevfs2
 .endif
 
 .if defined(WITH_CDROM_DEVICE)
