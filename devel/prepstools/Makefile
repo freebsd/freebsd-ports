@@ -8,7 +8,7 @@
 PORTNAME=	prepstools
 PORTVERSION=	2.0.2
 CATEGORIES=	devel
-MASTER_SITES=	http://webpages.charter.net/stuffle/linux/preps/
+MASTER_SITES=	http://webpages.charter.net/stuffle/preps/download/files/
 
 MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	Problem reporting system
