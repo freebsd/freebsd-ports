@@ -11,13 +11,11 @@ CATEGORIES=		japanese net
 PKGNAMEPREFIX=		ja-
 
 PATCH_SITES=		http://dist.bsdlab.org/
-PATCHFILES=		samba-3.0.14a-i18n-20050417.bz2
+PATCHFILES=		samba-3.0.20b-i18n-20051031.bz2
 PATCH_DIST_STRIP=	-p0
 
 MAINTAINER=		kuriyama@FreeBSD.org
 COMMENT=		Japanese Samba
-
-BROKEN=			Out of date distinfo file
 
 CONFLICTS=		ja-samba-2.* samba-2.* samba-3.0.* sharity-light-1.*
 
