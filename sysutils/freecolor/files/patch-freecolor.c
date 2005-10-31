@@ -1,13 +1,6 @@
---- freecolor.c.bak	Wed May 19 22:43:41 2004
-+++ freecolor.c	Wed May 19 22:44:50 2004
-@@ -56,15 +56,13 @@
- #define PROC_MEMINFO "/proc/meminfo"
- #endif
- #else
-+#define SG_ENABLE_DEPRECATED
- #include <statgrab.h>
- #endif
- #include <string.h>
+--- freecolor.c.bak	Sun Oct 30 09:49:07 2005
++++ freecolor.c	Sun Oct 30 09:49:15 2005
+@@ -62,9 +62,6 @@
  #include <unistd.h>
  #include <stdlib.h>
  #include <stdio.h>
@@ -16,4 +9,4 @@
 -#endif
  #define BARLEN 35
  #define HEADERLEN 14
- #define VERSION "0.8.3"
+ #define VERSION "0.8.7"
