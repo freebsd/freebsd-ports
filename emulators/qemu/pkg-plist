@@ -51,5 +51,3 @@ bin/qemu-system-x86_64
 @dirrm %%DATADIR%%/keymaps
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@cwd /
-%%WITH_KQEMU%%%%KMODDIR%%/kqemu.ko
