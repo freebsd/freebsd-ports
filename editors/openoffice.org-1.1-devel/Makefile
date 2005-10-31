@@ -11,8 +11,8 @@ CATEGORIES+=	editors
 MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
 		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		${MASTER_SITE_LOCAL:S/$/:moz/} \
-		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_MOZILLA:S/$/:mozsrc/} \
+		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		http://openoffice.lunarshells.com/sources/helpcontent/:help \
 		${MASTER_SITE_RINGSERVER:S/$/:help/} \
 		${MASTER_SITE_RINGSERVER:S/$/:help3/} \
@@ -23,10 +23,12 @@ MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
 MASTER_SITE_SUBDIR=	maho/openoffice.org/:moz \
 		mozilla/releases/mozilla${MOZILLA_VERSION}/src/:mozsrc \
 		misc/openoffice/contrib/helpcontent/:help \
-		misc/openoffice/contrib/helpcontent-1.0/:help3 \
-
-DISTFILES+=	OOo_${RELEASE_NR}m${MILESTONE}.${SNAPDATE}_source.tar.bz2 gpc231.tar.Z:gpc
-EXTRACT_ONLY=	OOo_${RELEASE_NR}m${MILESTONE}.${SNAPDATE}_source.tar.bz2
+		misc/openoffice/contrib/helpcontent-1.0/:help3
+DISTFILES+=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2
+.if defined(WITH_GPC)
+DISTFILES+=	gpc231.tar.Z:gpc
+.endif
+EXTRACT_ONLY=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
@@ -61,10 +63,6 @@ JAVA_VENDOR=	bsdjava
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
 
-.if (${OSVERSION} < 503001 && ${OSVERSION} >= 500000) || (${OSVERSION} <= 492000)
-BROKEN=		"rtld depends on _end symbol. type make -DTRYBROKEN to see how to upgrade your rtld"
-.endif
-
 LANG_EXT?=	01
 LANG_CONFIGURE_ARG?=	ENUS
 L10NHELP?=     helpcontent_01_unix.tgz
@@ -93,8 +91,8 @@ L10NHELPS=	helpcontent_01_unix.tgz helpcontent_07_unix.tgz \
 
 CODELINE=		645
 RELEASE_NR=		1.1.5
-MILESTONE=		57
-SNAPDATE=		20050816
+MILESTONE=		58
+SNAPDATE=		20050914
 INSTALLATION_BASEDIR=	OpenOffice.org${RELEASE_NR}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org1.1
@@ -109,15 +107,15 @@ PKGNAMEPREFIX=          ${LANG_PKGNAME}-
 PKGNAMESUFFIX?=         -${LANG_SUFFIX}
 .endif
 
-BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
+BUILD_DEPENDS+=	gcc33:${PORTSDIR}/lang/gcc33
 # FIXME (correctly add ccache before gcc and g++)
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
-CC=	ccache gcc32
-CXX=	ccache g++32
+CC=	ccache gcc33
+CXX=	ccache g++33
 .else
-CC=	gcc32
-CXX=	g++32
+CC=	gcc33
+CXX=	g++33
 .endif
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
@@ -126,6 +124,9 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 .if defined(WITHOUT_JAVA)
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 .endif
+.if !defined(WITH_GPC)
+LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
+.endif
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
@@ -133,7 +134,7 @@ TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NUMOFPROCESSES?=	1
 
-CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --enable-pasf
+CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --enable-pasf --enable-crashdump --enable-symbols=SMALL
 
 .include <${FILESDIR}/Makefile.knobs>
 
@@ -158,9 +159,11 @@ post-extract:
 .if defined(WITH_TTF_BYTECODE_ENABLED)
 	@cd ${WRKSRC} ; ${PATCH} < ${FILESDIR}/optpatch-freetype
 .endif
+.if defined(WITH_GPC)
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/gpc231.tar.Z | ${TAR} xfz -
 	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/external/gpc/
 	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/external/gpc/
+.endif
 	@${MKDIR} ${WRKDIR}/L10NHELP
 	@cd ${WRKDIR}/L10NHELP ; \
 		${CAT} ${DISTDIR}/${DIST_SUBDIR}/${L10NHELP} | ${GZIP_CMD} -d | ${TAR} xf -
@@ -171,7 +174,7 @@ post-extract:
 	done
 .endif
 .if !defined(WITHOUT_MOZILLA)
-	@cd ${WRKSRC} ; ${MV} moz moz.old ; ${TAR} xfz ${DISTDIR}/${DIST_SUBDIR}/${MOZILLA_PROJECT} ; ${PATCH} < ${FILESDIR}/moz-patch
+	@(cd ${WRKSRC} ; ${MV} moz moz.old ; ${TAR} xfz ${DISTDIR}/${DIST_SUBDIR}/${MOZILLA_PROJECT} ; ${PATCH} < ${FILESDIR}/moz-patch)
 	@${MKDIR} ${WRKSRC}/moz/download
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${MOZILLA_SOURCE} ${WRKSRC}/moz/download
 	@cd ${WRKSRC} ; ${MV} moz moz.runtime ; ${MV} moz.old moz
