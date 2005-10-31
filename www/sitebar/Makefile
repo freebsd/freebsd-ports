@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	sitebar
-PORTVERSION=	3.3.3
+PORTVERSION=	3.3.5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	SiteBar-${PORTVERSION}
 
-MAINTAINER=	techgunter@yahoo.com
+MAINTAINER=	gunter@six-two.net
 COMMENT=	The Bookmark Server for Personal and Team Use
 
 USE_BZIP2=	yes
