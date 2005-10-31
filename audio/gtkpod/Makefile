@@ -26,6 +26,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2
 GNU_CONFIGURE=	yes
 
+OPTIONS=	AAC	"Enable AAC support with MPEG4IP" off
+
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libmp4v2.so)
@@ -39,13 +41,6 @@ LIB_DEPENDS+=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 
-.if !defined(WITH_AAC)
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} "To enable AAC support with mpeg4ip define the WITH_AAC knob."
-	@${ECHO_MSG}
-.endif
-
 pre-configure:
 # install locale correctly (share dir instead of lib dir)
 	@${REINPLACE_CMD} -e 's|DATADIRNAME=lib|DATADIRNAME=share|' \
@@ -56,9 +51,9 @@ pre-configure:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/TODOandBUGS.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/TODOandBUGS.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
