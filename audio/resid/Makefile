@@ -8,14 +8,16 @@
 PORTNAME=	resid
 PORTVERSION=	0.16
 CATEGORIES=	audio emulators
-MASTER_SITES=	ftp://ftp.funet.fi/pub/cbm/crossplatform/emulators/resid/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Cycle-based SID emulator engine
 
 USE_LIBTOOL_VER=15
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--enable-shared
 INSTALLS_SHLIB=	yes
+
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=		--enable-shared
 
 .include <bsd.port.mk>
