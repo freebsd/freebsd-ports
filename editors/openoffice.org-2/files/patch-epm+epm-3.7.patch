@@ -1,7 +1,7 @@
-Issutracker : #iXXXXX#
-CWS         : N/A
-Author:     : <maho@openoffice.org> (JCA)
-Description : epm porting for FreeBSD
+Issuetracker : #iXXXXX#
+CWS          : N/A
+Author       : <maho@openoffice.org> (JCA)
+Description  : epm porting for FreeBSD
 o FreeBSD's package manager doesn't allow multiple lines for
   @exec and @unexec
 o chown is at /usr/sbin/

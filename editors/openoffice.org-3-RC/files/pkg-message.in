@@ -40,4 +40,3 @@ OO.org does need $LANG to be set to a suitable value.
 If you somehow run into problems, please remove the already installed
 ".openoffice.org2" dir in your homedir. Redo the user
 installation and the problems should go away.
-
