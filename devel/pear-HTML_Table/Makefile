@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_Table
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	tux@pinguru.net
