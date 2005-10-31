@@ -8,14 +8,13 @@
 PORTNAME=	data
 DISTVERSION=	1.32b-3
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/quake3/linux/
+MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/quake3/linux/ \
+		ftp://ftp.fasta.fh-dortmund.de/mirror/idstuff/quake3/linux/
 DISTNAME=	linuxq3apoint-${DISTVERSION}.x86
 EXTRACT_SUFX=	.run
 
 MAINTAINER=	alejandro@varnet.biz
 COMMENT=	Quake III Arena data files
-
-BROKEN=		Unfetchable
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
