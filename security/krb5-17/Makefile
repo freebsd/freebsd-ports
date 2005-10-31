@@ -45,9 +45,8 @@ PLIST_SUB+=		KRB4=""
 PREFIX=			${KRB5_HOME}
 .endif
 
-INFO_FILES=		krb425.info krb5-admin.info krb5-admin.info-1 \
-			krb5-admin.info-2 krb5-admin.info-3 krb5-install.info \
-			krb5-install.info-1 krb5-install.info-2 krb5-user.info
+INFO_FILES=		krb425.info krb5-admin.info krb5-admin.info-3 \
+			krb5-install.info krb5-user.info
 
 MAN1=			krb5-send-pr.1 krb5-config.1 kpasswd.1 klist.1 \
 			kinit.1 kdestroy.1 ksu.1 sclient.1 rsh.1 rcp.1 \
@@ -73,7 +72,7 @@ HTML_OUTDIRS=		krb5-admin krb5-install
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 501000
+.if ${OSVERSION} < 501000 || ${OSVERSION} > 600000
 BROKEN=			Does not build
 .endif
 
