@@ -12,7 +12,8 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.qemu.org/:release \
 		http://people.fruitsalad.org/nox/qemu/:snapshot \
 		http://qemu.dad-answers.com/download/qemu/:snapshot
-DISTFILES=	${PORTNAME}-snapshot-2005-10-30_23${EXTRACT_SUFX}:snapshot
+DISTNAME=	${PORTNAME}-snapshot-2005-10-30_23
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
 
 MAINTAINER=	nox@jelal.kn-bremen.de
 COMMENT=	QEMU CPU Emulator
