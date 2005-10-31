@@ -36,7 +36,7 @@ upgrades.
   directory since it stores its configuration information there.
 
 20051010:
-  AFFECTS: users of games/py-balazar
+  AFFECTS: users of games/py-slune
   AUTHOR: mnag@FreeBSD.org
 
   games/py-slune has been removed to add in games/slune to
