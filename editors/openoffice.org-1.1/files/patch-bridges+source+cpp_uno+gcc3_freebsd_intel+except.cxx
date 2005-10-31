@@ -1,7 +1,7 @@
-Issutracker : #i22253#
-CWS         : N/A
-Author      : <mrauch@openoffice.org> (JCA)
-Description :
+Issuetracker : #i22253#
+CWS          : N/A
+Author       : <mrauch@openoffice.org> (JCA)
+Description  :
 
 Index: bridges/source/cpp_uno/gcc3_freebsd_intel/except.cxx
 ===================================================================
