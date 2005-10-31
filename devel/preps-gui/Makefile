@@ -8,7 +8,7 @@
 PORTNAME=	preps
 PORTVERSION=	2.0.4
 CATEGORIES=	devel
-MASTER_SITES=	http://webpages.charter.net/stuffle/linux/preps/
+MASTER_SITES=	http://webpages.charter.net/stuffle/preps/download/files/
 PKGNAMESUFFIX=	-gui
 DISTNAME=	preps-${PORTVERSION}
 DIST_SUBDIR=	prep
