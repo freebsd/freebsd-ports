@@ -34,7 +34,7 @@ MAN1=		find-updated.1 cache-init.1 cache-update.1 portindex.1
 ## Needs a recent version of perl, preferably 5.8.6, but 5.6.1 should work
 ##
 .if ${PERL_LEVEL} < 500601
-IGNORE=		Port requires perl 5.6.x or (preferably) later.  Install lang/perl5.8 and try again
+IGNORE=		requires perl 5.6.x or (preferably) later.  Install lang/perl5.8 and try again
 .endif
 
 .if ${PERL_LEVEL} < 500800
