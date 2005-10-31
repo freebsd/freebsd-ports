@@ -58,7 +58,7 @@ DOCS=	FAQ README TODO doc/*
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=         Port requires perl 5.6.1 or later. Install lang/perl5 then try again
+IGNORE=         requires perl 5.6.1 or later. Install lang/perl5 then try again
 .endif
 
 post-patch:

@@ -26,7 +26,7 @@ MAN3=		Attribute::Handlers.3
 ## this port requires PERL 5.6.x or later
 ##
 .if ${PERL_LEVEL} < 500600
-IGNORE=		Port requires perl 5.6.x or later. Install lang/perl5 then try again
+IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
 .include <bsd.port.post.mk>

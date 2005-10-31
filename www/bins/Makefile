@@ -75,7 +75,7 @@ post-install:
 ## this port requires PERL 5.6.x or later
 ##
 .if !(exists(${LOCALBASE}/bin/perl5.6.0) || exists(${LOCALBASE}/bin/perl5.6.1))
-IGNORE=	Port requires perl 5.6.x or later. Install lang/perl5 then try again
+IGNORE=	requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
 ##

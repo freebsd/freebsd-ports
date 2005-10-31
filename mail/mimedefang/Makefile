@@ -51,7 +51,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/sendmail
 .endif
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=		Port requires perl 5.6.1 or later. Install lang/perl5 or lang/perl5.8 then try again
+IGNORE=		requires perl 5.6.1 or later. Install lang/perl5 or lang/perl5.8 then try again
 .endif
 
 post-install:

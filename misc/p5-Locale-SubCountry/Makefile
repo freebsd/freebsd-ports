@@ -22,7 +22,7 @@ MAN3=	Locale::SubCountry.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500804
-IGNORE=		Port requires perl 5.8.4 or later. Install lang/perl5.8 and try again
+IGNORE=		requires perl 5.8.4 or later. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>

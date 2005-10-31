@@ -69,7 +69,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 # Easier to make this a requirement than deal with issues
 # for unicode users
 .if ${PERL_LEVEL} < 500800
-IGNORE=		Port requires perl 5.8.x or later. Install lang/perl5.8 then try again
+IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
 .endif
 
 # Optional dependencies. Use them if they're installed.

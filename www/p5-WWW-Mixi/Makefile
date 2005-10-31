@@ -25,7 +25,7 @@ MAN3=		WWW::Mixi.3 WWW::Mixi::Cookbook.3 WWW::Mixi::Mixi.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=	Port requires perl 5.6.x or later. Install lang/perl5 then try again
+IGNORE=	requires perl 5.6.x or later. Install lang/perl5 then try again
 .elif ${PERL_LEVEL} > 500800
 BUILD_DEPENDS+=	${SITE_PERL}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
 RUN_DEPENDS+=	${SITE_PERL}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode

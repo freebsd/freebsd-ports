@@ -23,7 +23,7 @@ ONLY_FOR_ARCHS=	i386
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=	Port requires perl 5.6 or newer. Upgrade your perl and try again.  \
+IGNORE=	requires perl 5.6 or newer. Upgrade your perl and try again.  \
 	If your perl is up to date then you may not have run 'use.perl ports' \
 	yet.
 .endif

@@ -29,7 +29,7 @@ MAN3=		XML::Stream.3 XML::Stream::Namespace.3 XML::Stream::Node.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-IGNORE=		Port requires perl 5.8.x or later. Install lang/perl5.8 then try again
+IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
 .endif
 
 .include <bsd.port.post.mk>
