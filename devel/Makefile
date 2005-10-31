@@ -1558,6 +1558,7 @@
     SUBDIR += str
     SUBDIR += strace
     SUBDIR += styx
+    SUBDIR += subclipse
     SUBDIR += subversion
     SUBDIR += subversion-perl
     SUBDIR += subversion-python
