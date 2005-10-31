@@ -1,0 +1,18 @@
+#
+#  'doormand.cf'
+#  Sample configuration file for the Doorman Daemon, "doormand".
+#
+#
+interface           tun0
+port                1033
+waitfor             10
+connection_delay_1  100000  # 1/10th second (delay is in microseconds)
+connection_delay_2  2
+logfile             /var/log/doorman
+loglevel            debug
+pidfile             /var/run/doormand.pid
+guestlist           %%PREFIX%%/etc/doormand/guestlist
+firewall-add        %%PREFIX%%/etc/doormand/ipf_add.before_block
+firewall-del        %%PREFIX%%/etc/doormand/ipf_delete
+hash-archive        /var/run/doormand.hash-archive
+hash-archive-size   100000

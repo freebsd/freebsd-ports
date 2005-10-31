@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Sun Jul 25 20:35:35 2004
++++ Makefile.in	Sun Oct 30 15:57:06 2005
+@@ -197,8 +197,7 @@
+ man5_MANS = knockcf.5 doormand.cf.5 guestlist.5
+ man8_MANS = doormand.8
+ cfgdir = $(sysconfdir)/doormand
+-cfg_DATA = doormand.cf.EXAMPLE\
+-	   guestlist.EXAMPLE\
++cfg_DATA = guestlist.EXAMPLE\
+ 	   iptables_add iptables_delete\
+ 	   ipchains_add ipchains_delete\
+ 	   ipf_add ipf_delete\
+@@ -864,7 +863,6 @@
+ 	chmod 744 $(DESTDIR)$(cfgdir)/pfctl_add
+ 	chmod 744 $(DESTDIR)$(cfgdir)/pfctl_delete
+ 	chmod 600 $(DESTDIR)$(cfgdir)/guestlist.EXAMPLE
+-	chmod 644 $(DESTDIR)$(cfgdir)/doormand.cf.EXAMPLE
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

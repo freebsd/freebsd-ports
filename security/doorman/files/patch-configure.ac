@@ -1,0 +1,11 @@
+--- configure.ac.orig	Sun Aug  7 16:26:03 2005
++++ configure.ac	Sun Oct 30 14:53:03 2005
+@@ -22,7 +22,7 @@
+ 
+ AC_PATH_PROG([LSOF], [lsof], [no],
+              [/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:/usr/local/sbin])
+-if test "$LSOF" == "no"; then
++if test "$LSOF" = "no"; then
+     echo -e "\a"
+     echo "*** Utility 'lsof' is missing; doormand cannot function properly without it."
+     echo "*** (Get lsof at: ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/lsof.tar.gz)"
