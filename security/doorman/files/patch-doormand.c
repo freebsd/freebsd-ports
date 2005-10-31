@@ -1,6 +1,6 @@
---- doorman-0.8.orig/doormand.c	Thu Jul 29 21:24:02 2004
-+++ doorman-0.8/doormand.c	Sun May 29 09:05:31 2005
-@@ -397,7 +397,11 @@
+--- doorman-0.81/doormand.c	2005-10-30 14:00:27.000000000 +0100
++++ doormand.c	2005-10-30 14:05:18.000000000 +0100
+@@ -387,7 +387,11 @@
      int datalink_header_lengths[] = {
      //    hdr len      code      data link type
      //    -------      --- ---------------------------
@@ -12,7 +12,7 @@
              14,    //   1  Ethernet (10Mb)
              -1,    //   2  Experimental Ethernet (3Mb)
              -1,    //   3  Amateur Radio AX.25
-@@ -557,6 +561,14 @@
+@@ -614,6 +618,14 @@
  // more readable.
  //
  
@@ -27,7 +27,7 @@
  #define LSOF()\
  sprintf (cmd, "lsof -Pn -iTCP@%s:%s", interface_ip_str, dport_string) ;\
  \
-@@ -578,6 +590,7 @@
+@@ -635,6 +647,7 @@
      if ((p1 = token (&p2, " ")) == NULL) continue ;\
      if ((p1 = token (&p2, " ")) == NULL) continue ;\
      if ((p1 = token (&p2, " ")) == NULL) continue ;\
@@ -35,7 +35,7 @@
      if ((p1 = token (&p2, " :")) == NULL) continue ;\
      local_ip = inet_addr(p1) ;\
      if ((p1 = token (&p2, "-")) == NULL) continue ;\
-@@ -602,7 +615,53 @@
+@@ -659,7 +672,53 @@
      }\
  }\
  pclose(f) ;
@@ -90,7 +90,7 @@
  
  
  
-@@ -647,7 +706,11 @@
+@@ -704,7 +763,11 @@
      snprintf (cmd, 254, "tcp and dst port %s and src %s and dst %s",
                dport_string, src_addr, interface_ip_str) ;
      DEBUG "open a secondary pcap: '%s'", cmd) ;
@@ -102,7 +102,7 @@
  
      // set broad firewall rule
      sprintf (G_fw_broad_rule, " %s %s 0 %s %s",
-@@ -659,7 +722,22 @@
+@@ -716,7 +779,22 @@
  
      for (;;) {
  
@@ -123,9 +123,9 @@
          p = (unsigned char*)pcap_next (cap, &packet_hdr) ;
 +#endif
          if (p == NULL) {
-             WARNX "manage_firewall got null from 'pcap_next'. Exiting.") ;
-             exit (1) ;
-@@ -1222,9 +1300,13 @@
+             WARNX "manage_firewall got null from 'pcap_next': %s  Exiting.",
+                    pcap_geterr(G_cap)) ;
+@@ -1300,9 +1378,13 @@
          croak (errno, "Can't get interface address of %s", device) ;
      }
  
@@ -140,10 +140,12 @@
      if (G_reconfigure) {
          G_reconfigure = FALSE ;
          NOTICE "reconfigured.") ;
-@@ -1252,7 +1334,22 @@
+@@ -1330,9 +1412,22 @@
          char            src_addr_buff[16] ;
  
          errno = 0 ;
+-        netdown_count = 0 ;
+-
 +#ifdef __FreeBSD__
 +	{
 +	    int ret = 0;

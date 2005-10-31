@@ -1,0 +1,11 @@
+--- configure.orig	Mon Sep  5 17:07:45 2005
++++ configure	Sun Oct 30 14:52:28 2005
+@@ -4893,7 +4893,7 @@
+ echo "${ECHO_T}no" >&6
+ fi
+ 
+-if test "$LSOF" == "no"; then
++if test "$LSOF" = "no"; then
+     echo -e "\a"
+     echo "*** Utility 'lsof' is missing; doormand cannot function properly without it."
+     echo "*** (Get lsof at: ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/lsof.tar.gz)"
