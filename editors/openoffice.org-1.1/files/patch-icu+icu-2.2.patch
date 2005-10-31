@@ -1,0 +1,42 @@
+Issuetracker : #iXXXXX#
+CWS          : N/A
+Author       : <maho@openoffice.org> (JCA)
+Description  : FreeBSD porting : Passing $ORIGIN to linker at icu project
+We also want to pass -rpath $ORIGIN to linker as GNU/Linux and/or Solaris's case.
+
+--- icu/icu-2.2.patch	Tue Jul  6 19:40:19 2004
++++ icu/icu-2.2.patch	Mon Oct 24 18:36:11 2005
+@@ -1127,3 +1127,33 @@
+           return tempGlyphCount;
+       };
+   
++*** misc/icu/source/config/mh-bsd-gcc	Thu May  2 08:48:10 2002
++--- misc/build/icu/source/config/mh-bsd-gcc	Mon Oct 24 18:21:04 2005
++***************
++*** 10,15 ****
++--- 10,18 ----
++  GEN_DEPS.cc=	$(CXX) -E -MM $(DEFS) $(CPPFLAGS)
++  
++  ## Flags for position independent code
+++ STATICCFLAGS = -fPIC 
+++ STATICCXXFLAGS = -fPIC 
+++ STATICCPPFLAGS = -DPIC 
++  SHAREDLIBCFLAGS = -fPIC
++  SHAREDLIBCXXFLAGS = -fPIC
++  SHAREDLIBCPPFLAGS = -DPIC
++***************
++*** 17,22 ****
++--- 20,32 ----
++  ## Compiler switch to embed a runtime search path
++  LD_RPATH=	
++  LD_RPATH_PRE=	-Wl,-rpath,
+++ 
+++ ## Force RPATH=$ORIGIN to locate own dependencies w/o need for LD_LIBRARY_PATH
+++ ENABLE_RPATH=YES
+++ RPATHLDFLAGS=${LD_RPATH_PRE}'$$ORIGIN'
+++ 
+++ #SH#	ENABLE_RPATH=YES
+++ #SH#	RPATHLDFLAGS="${LD_RPATH_PRE}'$$ORIGIN'"
++  
++  ## Compiler switch to embed a library name
++  LD_SONAME = -Wl,-soname -Wl,$(MIDDLE_SO_TARGET)

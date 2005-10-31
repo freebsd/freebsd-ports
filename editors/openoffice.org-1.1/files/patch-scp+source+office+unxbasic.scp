@@ -1,7 +1,7 @@
-Issutracker : #iXXXXX#
-CWS         : N/A
-Author      : NAKATA Maho <maho@openoffice.org> (JCA)
-Description : Do not make a link as /usr/bin/soffice
+Issuetracker : #iXXXXX#
+CWS          : N/A
+Author       : NAKATA Maho <maho@openoffice.org> (JCA)
+Description  : Do not make a link as /usr/bin/soffice
 
 Index: scp/source/office/unxbasic.scp
 ===================================================================
