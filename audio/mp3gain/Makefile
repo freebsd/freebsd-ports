@@ -24,7 +24,8 @@ NO_WRKSUBDIR=	yes
 MAKE_ENV=	PREFIX="${PREFIX}"
 
 pre-patch:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e "s/`${PRINTF} '\r'`//"
+	@${FIND} ${WRKDIR} -type f -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//'
 
 post-patch:
 	@${CP} ${FILESDIR}/Makefile.main ${WRKSRC}/Makefile
