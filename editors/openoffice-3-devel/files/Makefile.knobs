@@ -12,6 +12,10 @@ CONFIGURE_ARGS+=	--with-java=gij --with-ant-home=${LOCALBASE}/ant
 CONFIGURE_ARGS+=	--without-java
 .endif
 
+.if !defined(WITH_GPC)
+CONFIGURE_ARGS+=	--enable-libart 
+.endif
+
 .if defined(WITH_KDE)
 CONFIGURE_ARGS+=	--enable-kde QTDIR="${QT_PREFIX}"
 .endif
@@ -113,6 +117,11 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} "You can compile OOo to use Qt/KDE vclplug with"
 	@${ECHO} "make -DWITH_KDE"
+.endif
+.if !defined(WITH_GPC)
+	@${ECHO}
+	@${ECHO} "You can compile OOo with gpc instead of libart by"
+	@${ECHO} "make -DWITH_GPC"
 .endif
 	@${ECHO}
 	@${ECHO} "NOTICE:"
