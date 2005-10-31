@@ -17,3 +17,5 @@ or
 2)
 % mount_fusefs auto /path/to/mount/point sshfs -o uid=<local uid> \
        -o gid=<local gid> username@example.org:
+
+For further options see ``sshfs -h''.

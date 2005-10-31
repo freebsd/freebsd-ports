@@ -1,5 +1,5 @@
---- sshfs.c.orig	Mon Aug 15 05:07:08 2005
-+++ sshfs.c	Sun Oct  9 13:12:45 2005
+--- sshfs.c.orig	Fri Oct 28 08:15:35 2005
++++ sshfs.c	Mon Oct 31 02:59:33 2005
 @@ -14,7 +14,11 @@
  #include <unistd.h>
  #include <fcntl.h>
@@ -27,7 +27,7 @@
  
  #include "cache.h"
  #include "opts.h"
-@@ -970,7 +981,11 @@
+@@ -1070,7 +1081,11 @@
          err = req->error;
          goto out;
      }
@@ -39,7 +39,7 @@
      if (req->reply_type != expect_type && req->reply_type != SSH_FXP_STATUS) {
          fprintf(stderr, "protocol error\n");
          goto out;
-@@ -985,21 +1000,35 @@
+@@ -1085,21 +1100,35 @@
              if (expect_type == SSH_FXP_STATUS)
                  err = 0;
              else
@@ -76,19 +76,19 @@
          }
      } else {
          buf_init(outbuf, req->reply.size - req->reply.len);
-@@ -1039,7 +1068,11 @@
+@@ -1142,7 +1171,11 @@
      err = sftp_request(SSH_FXP_LSTAT, &buf, SSH_FXP_ATTRS, &outbuf);
      if (!err) {
-         if (buf_get_attrs(&outbuf, stbuf) == -1)
+         if (buf_get_attrs(&outbuf, stbuf, NULL) == -1)
 +#ifdef EPROTO
              err = -EPROTO;
 +#else
-+            err = -EPROTONOSUPPORT;
++             err = -EPROTONOSUPPORT;
 +#endif
          buf_free(&outbuf);
      }
      buf_free(&buf);
-@@ -1061,7 +1094,11 @@
+@@ -1164,7 +1197,11 @@
      if (!err) {
          uint32_t count;
          char *link;
@@ -100,7 +100,7 @@
          if(buf_get_uint32(&name, &count) != -1 && count == 1 &&
             buf_get_string(&name, &link) != -1) {
              strncpy(linkbuf, link, size-1);
-@@ -1092,7 +1129,11 @@
+@@ -1195,7 +1232,11 @@
              err = sftp_request(SSH_FXP_READDIR, &handle, SSH_FXP_NAME, &name);
              if (!err) {
                  if (buf_get_entries(&name, h, filler) == -1)
@@ -112,7 +112,7 @@
                  buf_free(&name);
              }
          } while (!err);
-@@ -1377,7 +1418,11 @@
+@@ -1528,7 +1569,11 @@
      err = sftp_request(SSH_FXP_READ, &buf, SSH_FXP_DATA, &data);
      if (!err) {
          uint32_t retsize;
@@ -124,7 +124,7 @@
          if (buf_get_uint32(&data, &retsize) != -1) {
              if (retsize > size)
                  fprintf(stderr, "long read\n");
-@@ -1399,7 +1444,11 @@
+@@ -1550,7 +1595,11 @@
      if (req->error)
          chunk->res = req->error;
      else if (req->replied) {
@@ -136,3 +136,12 @@
  
          if (req->reply_type == SSH_FXP_STATUS) {
              uint32_t serr;
+@@ -1771,7 +1820,7 @@
+ {
+     (void) path;
+ 
+-    buf->f_namelen = 255;
++    buf->f_namemax = 255;
+     buf->f_bsize = 512;
+     buf->f_blocks = 999999999 * 2;
+     buf->f_bfree =  999999999 * 2;
