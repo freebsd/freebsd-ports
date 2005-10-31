@@ -12,7 +12,7 @@ MASTER_SITES=	http://rubyforge.org/frs/download.php/5175/
 MAINTAINER=	jw@innerewut.de
 COMMENT=	MVC web application framework
 
-BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/rake-0.5.4.gemspec:${PORTSDIR}/devel/rubygem-rake \
+BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/rake-0.6.2.gemspec:${PORTSDIR}/devel/rubygem-rake \
 		${LOCALBASE}/${SPEC_DIR}/activesupport-1.1.1.gemspec:${PORTSDIR}/devel/rubygem-activesupport \
 		${LOCALBASE}/${SPEC_DIR}/actionpack-1.9.1.gemspec:${PORTSDIR}/www/rubygem-actionpack \
 		${LOCALBASE}/${SPEC_DIR}/actionwebservice-0.8.1.gemspec:${PORTSDIR}/www/rubygem-actionwebservice \

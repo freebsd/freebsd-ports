@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	rake
-PORTVERSION=	0.5.4
+PORTVERSION=	0.6.2
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/4258/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/6356/
 
 MAINTAINER=	jw@innerewut.de
 COMMENT=	Ruby Make
