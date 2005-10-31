@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	sshfs
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fuse
@@ -26,7 +26,7 @@ USE_REINPLACE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 600000
-IGNORE=		Depends on kernel module that requires FreeBSD 6 or later
+IGNORE=		depends on kernel module that requires FreeBSD 6 or later
 .endif
 
 post-install:
