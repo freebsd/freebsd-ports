@@ -1,23 +1,24 @@
-gtkpod is a graphical user interface to upload and manage songs to your iPod 
-(1G, 2G, 3G, 4G, mini, photo and shuffle). 
+gtkpod is a graphical user interface to upload and manage songs to your iPod
+(1G, 2G, 3G, 4G, mini, nano, photo, and shuffle).  Its allows one to:
 
-It allows you to :
-    * Read your existing iTunesDB (i.e. import the existing contents of 
-      your iPod).
-    * Add mp3 and m4a (no-protected AAC) files (single files, directories or
-      existing playlists) to the iPod. You can choose the charset the ID3 tags 
-      are encoded in from within gtkpod. The default is the charset currently 
-      used by your locale setting.
-    * When adding songs, gtkpod detects duplicates (option).
-    * Remove songs from the iPod.
-    * Create and modify playlists.
-    * Modify ID3 tags -- changes are also updated in the original file (option)
-    * Refresh ID3 tags from file (if you've changed the tags in the original
-      file).
-    * Sync directories.
-    * Normalize the volume of your tracks (uses mp3gain)
-    * Write the updated iTunesDB and added songs to your iPod.
-    * Work offline and synchronize your new playlists / songs with the iPod
-      at a later time
+    * Read your existing iTunesDB (i.e. import the existing contents of
+      your iPod including playcounts, ratings, and on-the-go playlists)
+    * Add MP3, WAV, M4A (non-protected AAC), M4B (audio book), and podcast
+      files (single files, directories or existing playlists) to the iPod
+    * Browse the contents of your local harddisk by album/artist/genre
+    * Create and modify playlists, including smart playlists
+    * Choose the charset the ID3 tags are encoded in from within gtkpod
+    * Extract tag information (artist, album, title, etc.) from the filename
+    * Detect duplicates when adding songs (optional)
+    * Remove and export tracks from your iPod
+    * Modify ID3 tags, optionally updating the original file
+    * Refresh ID3 tags from file (after changing tags in the original file)
+    * Synchronize directories
+    * Normalize the volume of your tracks (via mp3gain or the replay-gain tag)
+    * Write the updated iTunesDB and added songs to your iPod
+    * Work offline and synchronize your new playlists/songs with the iPod later
+    * Export your korganizer/kaddressbook/thunderbird/evocalendar/evolution/
+      webcalendar/... data to the iPod (scripts for other programs can be
+      easily added)
 
-WWW: http://gtkpod.sourceforge.net
+WWW: http://gtkpod.sourceforge.net/
