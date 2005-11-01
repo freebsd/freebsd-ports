@@ -1,6 +1,3 @@
-libDSP is C++ class library of common digital signal processing functions. 
+libDSP is C++ class library of common digital signal processing functions.
 
 WWW: http://libdsp.sourceforge.net/overview.html
-
--- Ying-Chieh Liao
-   ijliao@FreeBSD.org
