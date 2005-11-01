@@ -5141,6 +5141,7 @@ laspack		ports/math/laspack
 latd		ports/net/latd
 latex		ports/print/latex
 latex-arydshln	ports/print/latex-arydshln
+latex-auto-greek	ports/print/latex-auto-greek
 latex-beamer	ports/print/latex-beamer
 latex-biblist	ports/print/latex-biblist
 latex-bibtopic	ports/print/latex-bibtopic
