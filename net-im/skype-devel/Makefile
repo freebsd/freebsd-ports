@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	skype
-PORTVERSION=	1.2.0.17
+PORTVERSION=	1.2.0.18
 CATEGORIES=	net
 MASTER_SITES=	http://download.skype.com/linux/
 DISTNAME=	skype_staticQT-${PORTVERSION}
