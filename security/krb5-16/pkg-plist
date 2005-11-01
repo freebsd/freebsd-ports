@@ -50,12 +50,7 @@ include/krb5.h
 include/profile.h
 info/krb425.info
 info/krb5-admin.info
-info/krb5-admin.info-1
-info/krb5-admin.info-2
-info/krb5-admin.info-3
 info/krb5-install.info
-info/krb5-install.info-1
-info/krb5-install.info-2
 info/krb5-user.info
 lib/libcom_err.a
 lib/libcom_err.so
