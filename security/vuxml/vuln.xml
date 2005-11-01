@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1c3142a3-4ab2-11da-932d-00055d790c25">
+    <topic>squid -- FTP Server Response Handling Denial of Service</topic>
+    <affects>
+     <package>
+	<name>squid</name>
+	<range><lt>2.5.11_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/17271/">
+	  <p>M.A.Young has reported a vulnerability in Squid,
+	    which can be exploited by malicious people to cause
+	    a DoS (Denial of Service).</p>
+	  <p>The vulnerability is caused due to an error in
+	    handling certain FTP server responses. This can be
+	    exploited to crash Squid by visiting a malicious FTP
+            server via the proxy.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2005-3258</cvename>
+      <url>http://secunia.com/advisories/17271/</url>
+    </references>
+    <dates>
+      <discovery>2005-10-19</discovery>
+      <entry>2005-11-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f38c87a5-4a3e-11da-8ba2-0004614cc33d">
     <topic>base -- PHP SQL Injection Vulnerability</topic>
     <affects>
