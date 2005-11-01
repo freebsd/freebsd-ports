@@ -58,19 +58,10 @@ lib/ntop/plugins/xmldumpPlugin.so
 %%DATADIR%%/html/spacer.gif
 %%DATADIR%%/html/theme.css
 %%DATADIR%%/html/statsicons/flags/local.gif
-%%DATADIR%%/html/About.html
-%%DATADIR%%/html/Admin.html
-%%DATADIR%%/html/All.html
-%%DATADIR%%/html/Copyright.html
-%%DATADIR%%/html/FibreChannel.html
-%%DATADIR%%/html/IP.html
-%%DATADIR%%/html/Local.html
 %%DATADIR%%/html/Risk_high.gif
 %%DATADIR%%/html/Risk_low.gif
 %%DATADIR%%/html/Risk_medium.gif
 %%DATADIR%%/html/Risk_unknown.gif
-%%DATADIR%%/html/SCSI.html
-%%DATADIR%%/html/Summary.html
 %%DATADIR%%/html/antenna.gif
 %%DATADIR%%/html/arrow_down.gif
 %%DATADIR%%/html/arrow_up.gif
@@ -113,7 +104,6 @@ lib/ntop/plugins/xmldumpPlugin.so
 %%DATADIR%%/html/help.html
 %%DATADIR%%/html/help.png
 %%DATADIR%%/html/hostSortNote.html
-%%DATADIR%%/html/index.html
 %%DATADIR%%/html/info.gif
 %%DATADIR%%/html/initiator.gif
 %%DATADIR%%/html/lock.png
@@ -126,6 +116,7 @@ lib/ntop/plugins/xmldumpPlugin.so
 %%DATADIR%%/html/minor.gif
 %%DATADIR%%/html/modifyUser.gif
 %%DATADIR%%/html/multihomed.gif
+%%DATADIR%%/html/multivlaned.gif
 %%DATADIR%%/html/nboxLogo.gif
 %%DATADIR%%/html/ntop.gif
 %%DATADIR%%/html/ntop.html
@@ -133,6 +124,7 @@ lib/ntop/plugins/xmldumpPlugin.so
 %%DATADIR%%/html/ntophelp.html
 %%DATADIR%%/html/p2p.gif
 %%DATADIR%%/html/pie-error.png
+%%DATADIR%%/html/phone.gif
 %%DATADIR%%/html/printer.gif
 %%DATADIR%%/html/privacyNotice.html
 %%DATADIR%%/html/question.gif

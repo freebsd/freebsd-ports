@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	ntop
-PORTVERSION=	3.1
-PORTREVISION=	1
+PORTVERSION=	3.2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network monitoring tool with command line and web interfaces
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
@@ -22,13 +21,12 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		png.5:${PORTSDIR}/graphics/png
 
 DBDIR?=		/var/db
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_OPENSSL=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 PLIST_SUB+=	DBDIR=${DBDIR} \
 		SHLIB=${PORTVERSION:S/.p/pre/}
@@ -85,11 +83,6 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/libxml2 \
 			-I${LOCALBASE}/include/libgdome \
 			-I${LOCALBASE}/include/glib-2.0"
 .endif
-
-pre-everything:: show-options
-
-show-options:
-	@${SED} -ne 's/^##//p' ${.CURDIR}/Makefile
 
 post-extract:
 	@${RM} ${WRKSRC}/configureextra/FREEBSD
