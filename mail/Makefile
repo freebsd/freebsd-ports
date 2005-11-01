@@ -192,6 +192,7 @@
     SUBDIR += masqmail-devel
     SUBDIR += mavbiff
     SUBDIR += mb2md
+    SUBDIR += mbox2mdir
     SUBDIR += mboxcheck-applet
     SUBDIR += mboxgrep
     SUBDIR += mboxstats
