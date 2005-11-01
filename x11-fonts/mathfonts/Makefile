@@ -8,7 +8,7 @@
 PORTNAME=	mathfonts
 PORTVERSION=	4.1	# Don't upgrade this port if not supported by MathML-enabled Mozilla
 # 			# Please check http://www.mozilla.org/projects/mathml/fonts/
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://support.wolfram.com/mathematica/systems/windows/general/
 DISTNAME=	MathFonts_TrueType
@@ -19,18 +19,10 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Mathematica fonts for MathML-enabled Mozilla
 
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
+RUN_DEPENDS=	${FONTSBASE}/texcm-ttf/cmr10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf
 
 RESTRICTED=	"no distribution of the fonts allowed"
 NO_CDROM=	${RESTRICTED}
-
-.if !defined(WITHOUT_FULLMATHML)
-BUILD_DEPENDS+=	${X11BASE}/Acrobat5/Resource/Font/Symbol:${PORTSDIR}/print/acroread
-RUN_DEPENDS+=	${FONTSBASE}/texcm-ttf/cmr10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf	\
-		${X11BASE}/Acrobat5/Resource/Font/Symbol:${PORTSDIR}/print/acroread
-PLIST_SUB=	ACROREAD=""
-.else
-PLIST_SUB=	ACROREAD="@comment "
-.endif
 
 USE_X_PREFIX=	yes
 USE_ZIP=	yes
@@ -57,9 +49,6 @@ do-install:
 	${MKDIR} ${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${WRKSRC}/fonts.scale ${WRKSRC}/fonts.dir	\
 		${FONTSDIR}
-.if !defined(WITHOUT_FULLMATHML)
-	${LN} -fs ${X11BASE}/Acrobat5/Resource/Font/Symbol ${FONTSDIR}
-.endif
 
 post-install:
 	@${ECHO_MSG}
