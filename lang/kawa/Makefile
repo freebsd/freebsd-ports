@@ -6,12 +6,12 @@
 #
 
 PORTNAME=		kawa
-PORTVERSION=		1.7
+PORTVERSION=		1.8
 CATEGORIES=		lang scheme java
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	kawa
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		laszlof@vonostingroup.com
 COMMENT=		Java-based Scheme implementation
 
 BUILD_DEPENDS=		gsed:${PORTSDIR}/textproc/gsed
@@ -22,7 +22,7 @@ USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--enable-kawa-frontend --program-prefix=''
 
-MAN1=			kawa.1
+MAN1=			kawa.1 qexo.1
 INFO=			kawa kawa-tour
 
 pre-patch:
