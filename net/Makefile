@@ -247,7 +247,6 @@
     SUBDIR += icmpinfo
     SUBDIR += icpld
     SUBDIR += icqlib
-    SUBDIR += icqlib0
     SUBDIR += ifdepd
     SUBDIR += ifstat
     SUBDIR += ifstated
