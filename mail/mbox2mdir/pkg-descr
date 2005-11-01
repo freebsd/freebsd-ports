@@ -1,0 +1,7 @@
+mbox2mdir is a small program to convert mail stored in UNIX mbox format to
+qmail's Maildir format. It can (optionally) also truncate the source mbox file
+upon successful conversion. I use it to move mail delivered by /bin/mail or
+sendmail to qmail Maildir folders, but of course there are many other possible
+uses for it.
+
+WWW: http://sageshome.net/oss/mbox2mdir.php
