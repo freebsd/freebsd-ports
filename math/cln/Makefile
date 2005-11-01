@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cln
-PORTVERSION=	1.1.9
+PORTVERSION=	1.1.10
 CATEGORIES=	math devel
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/gnu/
 
@@ -17,7 +17,7 @@ COMMENT=	Class Library for Numbers
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
 USE_BZIP2=	yes
-USE_GCC=	3.4
+USE_GCC=	3.4+
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -32,12 +32,9 @@ INFO=		cln
 
 STRIP=		# none
 
+CFLAGS+=	-fPIC
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
-
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -52,9 +49,5 @@ post-install:
 	@${MKDIR} ${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/html
 .endif
-	@${FIND} ${PREFIX}/include/cln -type f | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/include/cln ! -type f | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
