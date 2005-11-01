@@ -1,8 +1,10 @@
 bin/gcin
 bin/gcin-setup
 bin/gcin2tab
+bin/juyin-learn
 bin/phoa2d
 bin/phod2a
+bin/sim2trad
 bin/tsa2d
 bin/tsd2a
 bin/tslearn
@@ -16,10 +18,10 @@ lib/libgcin-im-client.so
 %%DATADIR%%/table/cj.gtab
 %%DATADIR%%/table/cj5.gtab
 %%DATADIR%%/table/dayi3.gtab
-%%DATADIR%%/table/et.kbm
 %%DATADIR%%/table/et-asdf.kbm
-%%DATADIR%%/table/et26.kbm
+%%DATADIR%%/table/et.kbm
 %%DATADIR%%/table/et26-asdf.kbm
+%%DATADIR%%/table/et26.kbm
 %%DATADIR%%/table/greek.gtab
 %%DATADIR%%/table/gtab.list
 %%DATADIR%%/table/hsu.kbm
@@ -30,8 +32,8 @@ lib/libgcin-im-client.so
 %%DATADIR%%/table/pho-huge.tab
 %%DATADIR%%/table/pho.tab
 %%DATADIR%%/table/phrase.table
-%%DATADIR%%/table/simplex.gtab
 %%DATADIR%%/table/pinyin.gtab
+%%DATADIR%%/table/simplex.gtab
 %%DATADIR%%/table/symbol-table
 %%DATADIR%%/table/tsin
 %%DATADIR%%/table/tsin.idx
