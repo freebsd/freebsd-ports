@@ -6,7 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.2.3
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/tarballs/
 
@@ -177,11 +177,11 @@ APR_APU_DIR=	${LOCALBASE}/bin
 APR_CONFIG=	apr-1-config
 APU_CONFIG=	apu-1-config
 .if !defined(WITHOUT_BDB)
-LIB_DEPENDS+=	apr-1.0:${PORTSDIR}/devel/apr-svn
+LIB_DEPENDS+=	apr-1.2:${PORTSDIR}/devel/apr-svn
 APR_PORT=	devel/apr-svn
 OPT_NAME=	APR_UTIL_WITH_BERKELEY_DB=yes
 .else
-LIB_DEPENDS+=	apr-1.0:${PORTSDIR}/devel/apr
+LIB_DEPENDS+=	apr-1.2:${PORTSDIR}/devel/apr
 APR_PORT=	devel/apr
 .endif
 .endif
