@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xlockmore
-PORTVERSION=	5.19
+PORTVERSION=	5.20.1
 CATEGORIES?=	x11
 MASTER_SITES=	ftp://ftp.tux.org/pub/tux/bagleyd/xlockmore/ \
 		http://www.tux.org/~bagleyd/latest/
@@ -34,7 +34,9 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 MAN1=		xlock.1
 
-.if ${MACHINE_ARCH} == "amd64"
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64
 WITH_MESAGL=	no
 .else
 WITH_MESAGL?=	yes
@@ -60,8 +62,6 @@ CONFIGURE_ARGS+=	--enable-syslog
 .endif
 
 CONFIGURE_ENV+=		XLOCKLIBS="${KRB5LIB} ${KRB4LIB} ${MESALIB}"
-
-.include <bsd.port.pre.mk>
 
 .if defined(WITH_DISABLE_ALLOW_ROOT)
 CONFIGURE_ARGS+=	--disable-allow-root

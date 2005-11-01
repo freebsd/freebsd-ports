@@ -1,6 +1,6 @@
 --- xlock/XLock.ad.orig	Fri Dec 14 17:51:13 2001
 +++ xlock/XLock.ad	Mon Apr 15 16:08:11 2002
-@@ -60,10 +60,10 @@
+@@ -61,10 +61,10 @@
  
  ! For marquee & nose modes
  !XLock.program: fortune -o
