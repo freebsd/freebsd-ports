@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	stress
-PORTVERSION=	0.18.1
+PORTVERSION=	0.18.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://weather.ou.edu/~apw/projects/stress/
 
-MAINTAINER=	setagllib@optusnet.com.au
+MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	Tool to impose load on and stress test Unix-like systems
 
 GNU_CONFIGURE=		yes
