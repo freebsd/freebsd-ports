@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	downloader
-PORTVERSION=	2.5.5
-PORTREVISION=	1
+PORTVERSION=	2.5.6
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.krasu.ru/soft/chuchelo/files/ \
 		ftp://ftp.chg.ru/pub/X11/applications/Xdownloader/
@@ -19,7 +18,6 @@ COMMENT=	Program for downloading via FTP or HTTP with GUI
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USE_BZIP2=	yes
 USE_GNOME=	esound gnometarget gtk20
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
