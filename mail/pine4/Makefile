@@ -67,6 +67,9 @@ PATCHFILES=	maildir.patch.gz
 PATCH_DIST_ARGS+=	-E --quiet -d ${PATCH_WRKSRC} -p1
 .endif
 
+pre-patch:
+	@${CHMOD} -R u+w ${WRKSRC}
+
 post-patch:
 # Do this here because the maildir patch also modifies this file
 	@${CP} ${WRKSRC}/imap/src/osdep/unix/Makefile \
