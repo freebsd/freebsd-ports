@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	freefem++
-DISTVERSION=	1.45-6
-PORTREVISION=	1
+DISTVERSION=	2.0-3
 CATEGORIES=	math science
-MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/Gamma/freefem/	\
-		http://mule.ann.jussieu.fr/~hecht/ftp/freefem/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. old
+MASTER_SITES=	http://www.freefem.org/ff++/ftp/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of a language dedicated to the finite element method
@@ -41,14 +38,14 @@ CONFIGURE_ARGS=		--disable-download					\
 			--with-amd="-lamd"					\
 			--with-umfpack="-lumfpack"				\
 			--with-arpack="${LIBARPACK}"
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"	\
-			LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=		CPPFLAGS="${MPICFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}"	\
+			LDFLAGS="${MPILDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 LIBBLAS=	-lf2c -lf77blas -latlas -lgslcblas
 LIBARPACK=	-larpack -lalapack ${LIBBLAS}
 
-DOCS=		AUTHORS BUGS COPYING HISTORY README TODO DOC/manual-full.pdf
-BADSAMPLES=	load/myfunction.o tutorial/Makefile.in.orig
+DOCS=		AUTHORS BUGS COPYING HISTORY README TODO
+BADSAMPLES=	load/myfunction.o
 
 .include <bsd.port.pre.mk>
 
@@ -66,6 +63,9 @@ WITH_MPI=	yes
 .if defined(WITH_MPI)
 BUILD_DEPENDS+=	${LOCALBASE}/mpich/bin/mpiCC:${PORTSDIR}/net/mpich
 RUN_DEPENDS+=	${LOCALBASE}/mpich/bin/mpiCC:${PORTSDIR}/net/mpich
+MPICFLAGS=	-I${LOCALBASE}/mpich/include
+MPILDFLAGS=	-L${LOCALBASE}/mpich/lib
+CONFIGURE_ENV+=	PATH="$$PATH:${LOCALBASE}/mpich/bin"
 PLIST_SUB+=	MPI=""
 .else
 PLIST_SUB+=	MPI="@comment "
@@ -73,29 +73,27 @@ PLIST_SUB+=	MPI="@comment "
 
 pre-configure:
 	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g"		\
-		-e "s|mpiCC|${LOCALBASE}/mpich/bin/mpiCC|"		\
+		-e "s|mpiCC.|${LOCALBASE}/mpich/bin/mpiCC|"		\
 		-e "s|/usr/X11R6|${X11BASE}|g"				\
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e "s|mpiCC|${LOCALBASE}/mpich/bin/mpiCC|"	\
 		${WRKSRC}/src/mpi/Makefile.in
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/FreeFem++ ${PREFIX}/bin/FreeFem++-nw
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 . for doc in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 . endfor
 	@${ECHO_MSG} "===>  Documentation installed in ${DOCSDIR}."
-. for direx in "" -bug -eigen -load -mpi -other -tutorial
-	@${MKDIR} ${EXAMPLESDIR}/${direx:S/-//}
-	@for sample in `${LS} ${WRKSRC}/examples++${direx}` ; do	\
-		${INSTALL_DATA} ${WRKSRC}/examples++${direx}/$$sample	\
-			${EXAMPLESDIR}/${direx:S/-//} ;			\
-	done
-	@(cd ${EXAMPLESDIR}/${direx:S/-//} &&				\
-	${RM} Makefile.am Makefile.in Makefile)
+. for direx in "" -bug -chapt3 -eigen -load -mpi -other -tutorial
+	cd ${WRKSRC}/examples++${direx} && ${FIND} . -type d	\
+		-exec ${MKDIR} ${EXAMPLESDIR}/${direx:S/-//}/{} \;
+	cd ${WRKSRC}/examples++${direx} && ${FIND} -L . -type f	\
+		-exec ${INSTALL_DATA} ${WRKSRC}/examples++${direx}/{}	\
+			${EXAMPLESDIR}/${direx:S/-//} \;
 . endfor
+	 ${FIND} ${EXAMPLESDIR} -name "Makefile*" -delete
 . for sample in ${BADSAMPLES}
 	@${RM} ${EXAMPLESDIR}/${sample}
 . endfor
