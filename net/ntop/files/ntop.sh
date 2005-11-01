@@ -28,7 +28,7 @@ additional_args=''
 # End of user-configurable variables
 #----------------------------------------------------------------------
 
-args='-d -L --set-pcap-nonblocking --skip-version-check'
+args='-d -L --set-pcap-nonblocking'
 
 [ ! -z $interfaces ] && args="$args -i $interfaces"
 [ ! -z $http_port ] && args="$args -w $http_port"
