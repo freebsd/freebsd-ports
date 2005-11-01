@@ -21,11 +21,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-PLIST_FILES=	bin/html2xhtml \
-		${SITE_PERL_REL}/XML/Driver/HTML.pm \
-		${SITE_PERL_REL}/${PERL_ARCH}/auto/XML/Driver/HTML/.packlist
-PLIST_DIRS+=	${SITE_PERL_REL}/XML/Driver \
-		${SITE_PERL_REL}/${PERL_ARCH}/auto/XML/Driver/HTML
 MAN1=		html2xhtml.1
 MAN3=		XML::Driver::HTML.3
 
