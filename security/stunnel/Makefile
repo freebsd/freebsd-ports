@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	4.11
+PORTVERSION=	4.13
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
+		ftp://stunnel.mirt.net/stunnel/ \
 		ftp://stunnel.mirt.net/stunnel/OBSOLETE/ \
 		ftp://opensores.thebunker.net/pub/mirrors/stunnel/download/stunnel/src/
 
@@ -60,7 +61,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}" LDFLAGS="${LDFLAGS} ${PT
 .endif
 
 post-patch:
-# place files under /var/tmp so that this can be run by an unprivileged user
+# place files under /var/tmp so that this can be run by an unprivileged
 # user stunnel and group stunnel
 	@${REINPLACE_CMD} -E -e 's|\@prefix\@/var/run/stunnel/|/var/tmp/stunnel|; \
 		s|nobody|stunnel|;s|nogroup|stunnel|' \
