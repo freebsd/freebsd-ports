@@ -156,7 +156,7 @@ POST-INSTALL)
 	echo "     See ${PKG_PREFIX}/etc/rc.d/squid.sh for more"
 	echo "     configuration options."
 	echo ""
-	echo "     If you want to install an old style rc script, run"
+	echo "     If you want the port to install an old style rc script, run"
 	echo "     'make config' and deselect the option to install an"
 	echo "     rcNG script."
 	echo ""
