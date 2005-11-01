@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	help2man
-PORTVERSION=	1.36.1
+PORTVERSION=	1.36.2
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Automatically generating simple manual pages from program output
 
 .if !defined(WITHOUT_NLS)
