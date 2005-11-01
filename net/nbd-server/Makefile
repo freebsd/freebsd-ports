@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nbd-server
-PORTVERSION=	2.7.5
+PORTVERSION=	2.8.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nbd
@@ -16,14 +16,16 @@ MAINTAINER=	xi@borderworlds.dk
 COMMENT=	A server for the linux network block device (nbd)
 
 USE_BZIP2=	yes
+USE_GNOME=	glib20
+USE_GETOPT_LONG=yes
 
 HAS_CONFIGURE=	yes
-PLIST_FILES=	bin/nbd-server
-CONFIGURE_ARGS+=	--prefix=${PREFIX} --enable-lfs --enable-syslog
+CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-lfs --enable-syslog
 
+PLIST_FILES=	bin/nbd-server
 MAN1=		nbd-server.1
 
 post-extract:
-	${CP} ${FILESDIR}/nbd.h ${WRKSRC}
+	@${CP} ${FILESDIR}/nbd.h ${WRKSRC}
 
 .include <bsd.port.mk>
