@@ -21,9 +21,6 @@
     SUBDIR += ksteak
     SUBDIR += linux-eagle
     SUBDIR += manpages
-    SUBDIR += ooodict-de_AT
-    SUBDIR += ooodict-de_CH
-    SUBDIR += ooodict-de_DE
     SUBDIR += phone
     SUBDIR += php_doc
     SUBDIR += schwobifyer

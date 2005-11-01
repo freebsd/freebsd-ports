@@ -20,8 +20,6 @@
     SUBDIR += koffice-i18n
     SUBDIR += med
     SUBDIR += mozilla-flp
-    SUBDIR += ooodict-fr_BE
-    SUBDIR += ooodict-fr_FR
     SUBDIR += php_doc
     SUBDIR += plgrenouille
     SUBDIR += staroffice52
