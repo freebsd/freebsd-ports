@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	sim
-PORTVERSION=	3.2.0
+PORTVERSION=	3.4.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/
-DISTNAME=	${PORTNAME}hv32-0
+DISTNAME=	${PORTNAME}hv34-0
 
 MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	PDP-8, PDP-11, PDP-1, other 18b PDP, Nova, and IBM 1401 simulators
@@ -28,7 +28,7 @@ BIN_FILES=	pdp1 pdp4 pdp7 pdp8 pdp9 \
 		i1620 s3 altair altairz80 \
 		gri ibm1130 id16 id32 sds lgp
 
-PORTDOCS=	0readme_32.txt simh_doc.txt simh_swre.txt \
+PORTDOCS=	0readme_34.txt simh_doc.txt simh_swre.txt \
 		0readme_ethernet.txt simh_faq.txt
 
 PLIST_FILES=	${BIN_FILES:S/^/bin\//g} share/sim/ka655.bin share/sim/ka655x.bin
