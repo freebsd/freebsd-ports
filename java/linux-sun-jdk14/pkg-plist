@@ -957,6 +957,7 @@
 %%T%%/jre/lib/font.properties.SuSE8.0
 %%T%%/jre/lib/font.properties.ja
 %%T%%/jre/lib/font.properties.ja.Redhat3
+%%T%%/jre/lib/font.properties.ja.Redhat4
 %%T%%/jre/lib/font.properties.ja.Redhat6.1
 %%T%%/jre/lib/font.properties.ja.Redhat6.2
 %%T%%/jre/lib/font.properties.ja.Redhat7.2
@@ -976,6 +977,7 @@
 %%T%%/jre/lib/font.properties.zh.Turbo
 %%T%%/jre/lib/font.properties.zh_CN.Redhat
 %%T%%/jre/lib/font.properties.zh_CN.Redhat2.1
+%%T%%/jre/lib/font.properties.zh_CN.Redhat4
 %%T%%/jre/lib/font.properties.zh_CN.Sun
 %%T%%/jre/lib/font.properties.zh_CN_UTF8.Sun
 %%T%%/jre/lib/font.properties.zh_HK.Sun
