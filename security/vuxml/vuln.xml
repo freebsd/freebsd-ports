@@ -34,6 +34,73 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3de49331-0dec-422c-93e5-e4719e9869c5">
+    <topic>openvpn -- potential denial-of-service on servers in TCP mode</topic>
+    <affects>
+      <package>
+	<name>openvpn</name>
+	<range><gt>2.0</gt><lt>2.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>James Yonan reports:</p>
+	<blockquote cite="http://openvpn.net/changelog.html">
+	  <p>If the TCP server accept() call returns an error status, the
+	    resulting exception handler may attempt to indirect through a NULL
+	    pointer, causing a segfault.  Affects all OpenVPN 2.0 versions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2005-3409</cvename>
+      <url>http://openvpn.net/changelog.html</url>
+    </references>
+    <dates>
+      <discovery>2005-11-01</discovery>
+      <entry>2005-11-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6129fdc7-6462-456d-a3ef-8fc3fbf44d16">
+    <topic>openvpn -- arbitrary code execution on client through
+      malicious or compromised server</topic>
+    <affects>
+      <package>
+	<name>openvpn</name>
+	<range><lt>2.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>James Yonan reports:</p>
+	<blockquote cite="http://openvpn.net/changelog.html">
+	  <p>A format string vulnerability
+	    in the foreign_option function in options.c could
+	    potentially allow a malicious or compromised server
+	    to execute arbitrary code on the client.  Only
+	    non-Windows clients are affected.  The vulnerability
+	    only exists if (a) the client's TLS negotiation with
+	    the server succeeds, (b) the server is malicious or
+	    has been compromised such that it is configured to
+	    push a maliciously crafted options string to the client,
+	    and (c) the client indicates its willingness to accept
+	    pushed options from the server by having "pull" or
+	    "client" in its configuration file (Credit: Vade79).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2005-3393</cvename>
+      <mlist>http://www.securityfocus.com/archive/1/415293/30/0/threaded</mlist>
+      <url>http://openvpn.net/changelog.html</url>
+    </references>
+    <dates>
+      <discovery>2005-10-31</discovery>
+      <entry>2005-11-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6821a2db-4ab7-11da-932d-00055d790c25">
     <topic>PHP -- multiple vulnerabilities</topic>
     <affects>
