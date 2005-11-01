@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	simplog
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	A complete and powerful blogging tool
 
 DATADIR=	${PREFIX}/www/simplog
