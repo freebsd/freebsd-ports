@@ -6635,6 +6635,7 @@ nagios-base-logos	ports/misc/nagios-base-logos
 nagios-plugins	ports/net-mgmt/nagios-plugins
 nagios-silfreed-plugins	ports/net-mgmt/nagios-silfreed-plugins
 nagios-snmp-plugins	ports/net-mgmt/nagios-snmp-plugins
+nagios-spamd-plugin	ports/net-mgmt/nagios-spamd-plugin
 nagios-statd	ports/sysutils/nagios-statd
 nagios12	ports/net-mgmt/nagios12
 nagiostat	ports/net-mgmt/nagiostat
