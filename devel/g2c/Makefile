@@ -27,7 +27,7 @@ USE_GMAKE=	yes
 
 .if ${HAVE_GNOME:Mbonobo} != "" && ${HAVE_GNOME:Mgnomedb} != ""
 USE_GNOME+=	gnomeprefix bonobo gnomedb
-PKGNAMESUFFIX=	-gnome
+PKGNAMESUFFIX+=	-gnome
 .else
 CONFIGURE_ARGS=	--disable-gnome
 .endif
