@@ -7,7 +7,7 @@
 
 PORTNAME=	gnuplot
 PORTVERSION=	4.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -98,6 +98,11 @@ post-patch:
 		's|)/@PACKAGE@/@PKG_MAJOR@|)|g' ${WRKSRC}/src/Makefile.in
 	@${FIND} "${WRKSRC}" -name '*.orig' -delete
 
+.if !defined(NOPORTDOCS)
+post-build:
+	@cd ${WRKSRC}/docs && ${MAKE} groff html
+.endif
+
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/lasergnu ${PREFIX}/bin
 .if exists(${PREFIX}/bin/emacs) || exists(${PREFIX}/bin/xemacs)
@@ -107,6 +112,10 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/demo && ${FIND} . \
 		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+	@${MKDIR} ${DOCSDIR}/psdoc
+	cd ${WRKSRC}/docs && ${INSTALL_DATA} gnuplot.txt gnuplot.html \
+		gnuplot.dvi gnuplot.ps ${DOCSDIR}
+	cd ${WRKSRC}/docs/psdoc && ${INSTALL_DATA} README ps_* ${DOCSDIR}/psdoc
 .endif
 
 .include <bsd.port.post.mk>
