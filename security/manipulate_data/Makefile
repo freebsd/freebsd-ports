@@ -1,6 +1,6 @@
 # New ports collection makefile for:	manipulate_data
 # Date created:				24 Jul 2004
-# Whom:					bugghy <bugghy@SAFe-mail.net>
+# Whom:					Vaida Bogdan <vaida.bogdan@gmail.com>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	1.3
 CATEGORIES=	security
 MASTER_SITES=	http://packetstormsecurity.org/groups/thc/
 
-MAINTAINER=	bugghy@SAFe-mail.net
+MAINTAINER=	vaida.bogdan@gmail.com
 COMMENT=	Search/extract/write raw data
 
 do-install:
