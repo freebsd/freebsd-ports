@@ -9,7 +9,8 @@ PORTNAME=	NuppelVideo
 PORTVERSION=	0.52.a
 PORTREVISION=	2
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://frost.htu.tuwien.ac.at/~roman/nuppelvideo/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	arved
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/.(.)$/\1/}
 
 MAINTAINER=	steve@sohara.org
