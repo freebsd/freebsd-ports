@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	icmpmonitor
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	icmpmonitor
@@ -17,9 +16,7 @@ COMMENT=	A multiple host icmp monitoring tool
 
 GNU_CONFIGURE=	YES
 
-WRKSRC=		${WRKDIR}/icmpmonitor
-
 MAN1=		icmpmonitor.1
-PLIST_FILES=	bin/icmpmonitor
+PLIST_FILES=	sbin/icmpmonitor
 
 .include <bsd.port.mk>
