@@ -91,6 +91,7 @@
     SUBDIR += fortune-mod-futurama
     SUBDIR += fortuneit
     SUBDIR += freedialog
+    SUBDIR += freeguide
     SUBDIR += freshmeat-submit
     SUBDIR += ftdi-eeprom
     SUBDIR += ftree

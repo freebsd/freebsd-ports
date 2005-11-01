@@ -1,0 +1,18 @@
+$FreeBSD$
+
+--- src/install/linux/freeguide	Thu Oct 27 00:18:55 2005
++++ src/install/linux/freeguide	Thu Oct 27 01:10:30 2005
+@@ -1,11 +1,11 @@
+ #!/bin/sh
+-FREEGUIDE_JAR=/usr/share/freeguide/FreeGuide.jar
++FREEGUIDE_JAR=__ANT_JAR_PATH__
+ # Load default settings from config file (if it exists)
+ if [ -f "$HOME/.freeguiderc" ]; then
+ 	. "$HOME/.freeguiderc"
+ fi
+ if [ -z "$JAVACMD" ]; then
+-	JAVACMD=java
++	JAVACMD=__ANT_JAVA_BIN__
+ fi
+ $JAVACMD $FREEGUIDE_OPTS -jar $FREEGUIDE_JAR \
+     --doc_directory "__ANT_DOC_DIRECTORY__" "$@"

@@ -1,0 +1,60 @@
+$FreeBSD$
+
+--- build.xml	Thu Oct 27 18:40:07 2005
++++ build.xml	Fri Oct 28 16:43:14 2005
+@@ -29,8 +29,7 @@
+ 	</target>
+     
+     <target name="install-Linux-NoXMLTV-files"
+-            description="install all the files for linux"
+-            depends="FreeGuide-Linux-NoXMLTV" >
++            description="install all the files for linux">
+         
+         <!-- These properties are passed in from the rpm .spec file:
+             install_share_dir = ~/.rpm/tmp/FreeGuide-0.8.2-root//usr/share
+@@ -39,10 +38,7 @@
+             install_real_doc_dir = /usr/doc/freeguide
+         -->
+         
+-        <property name="install_jar_dir"
+-            location="${install_share_dir}/freeguide" />
+-
+-        <property name="install_pixmap_dir" location="${install_share_dir}/pixmaps/freeguide" />
++        <property name="install_pixmap_dir" location="${install_java_share_dir}/pixmaps/freeguide" />
+         
+         <mkdir dir="${install_jar_dir}" />
+         <copy file="${dist}/${freeguideversion}-Linux-NoXMLTV.jar"
+@@ -58,11 +54,13 @@
+             </fileset>
+         </copy>
+         
+-        <copy tofile="${install_share_dir}/pixmaps/freeguide.png" file="${src}/images/logo-32x32.png" />
++        <copy tofile="${install_java_share_dir}/pixmaps/freeguide.png" file="${src}/images/logo-32x32.png" />
+         
+         <!-- Creating the launch script: first we need to copy the source launch script, then we replace the string "__ANT_DOC_DIRECTORY__" with the docs directory, and then we move it into place and make it executable. -->
+         <copy file="${src}/install/linux/freeguide" tofile="${src}/install/linux/freeguide.tmp" />
+         <replace file="${src}/install/linux/freeguide.tmp" token="__ANT_DOC_DIRECTORY__" value="${install_real_doc_dir}" />
++        <replace file="${src}/install/linux/freeguide.tmp" token="__ANT_JAR_PATH__" value="${install_jar_dir}/FreeGuide.jar" />
++        <replace file="${src}/install/linux/freeguide.tmp" token="__ANT_JAVA_BIN__" value="${install_java_bin}" />
+         <mkdir dir="${install_bin_dir}" />
+         <move file="${src}/install/linux/freeguide.tmp" tofile="${install_bin_dir}/freeguide" />
+         <chmod file="${install_bin_dir}/freeguide" perm="a+x" />
+@@ -70,8 +68,8 @@
+         <mkdir dir="${install_share_dir}/applications" />
+         <copy file="${src}/install/linux/freeguide.desktop" todir="${install_share_dir}/applications/" />
+ 
+-        <mkdir dir="${install_share_dir}/man/man1" />
+-        <copy file="${build}/freeguide.1.gz" todir="${install_share_dir}/man/man1/" />
++        <mkdir dir="${install_man1_dir}/man/man1" />
++        <copy file="${build}/freeguide.1.gz" todir="${install_man1_dir}/man/man1/" />
+         
+         <mkdir dir="${install_doc_dir}" />
+         <copy todir="${install_doc_dir}/">
+@@ -79,7 +77,6 @@
+                 <include name="*.html" />
+                 <include name="*.png" />
+                 <include name="*.css" />
+-                <include name="COPYING" />
+                 <include name="TODO" />
+                 <exclude name="bugreport.html" />
+             </fileset>

@@ -1,0 +1,42 @@
+# New ports collection makefile for:	freeguide
+# Date Created:		27 October 2005
+# Whom:			Stephen Hurd <shurd@sasktel.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	freeguide
+PORTVERSION=	0.8.6
+CATEGORIES=	misc java
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	freeguide-tv
+DISTNAME=	FreeGuide-${PORTVERSION}
+
+MAINTAINER=	shurd@sasktel.net
+COMMENT=	An interactive TV guide which will create personalized TV listings
+
+RUN_DEPENDS=	tv_cat:${PORTSDIR}/textproc/p5-xmltv
+
+USE_JAVA=	yes
+USE_JIKES=	no
+JAVA_VERSION=	1.4+
+USE_ANT=	yes
+MANCOMPRESSED=	yes
+MAN1=		freeguide.1
+
+MAKE_ARGS=	-Dinstall_share_dir=${PREFIX}/share \
+		-Dinstall_man1_dir=${MAN1PREFIX} \
+		-Dinstall_java_bin=${JAVA} \
+		-Dinstall_real_doc_dir=${DOCSDIR} \
+		-Dinstall_bin_dir=${PREFIX}/bin \
+		-Dinstall_doc_dir=${DOCSDIR} \
+		-Dinstall_java_share_dir=${JAVASHAREDIR} \
+		-Dinstall_jar_dir=${JAVAJARDIR}
+ALL_TARGET=	FreeGuide-Linux-NoXMLTV
+INSTALL_TARGET=	install-Linux-NoXMLTV-files
+
+do-install:
+		@(cd ${BUILD_WRKSRC}; \
+			${ANT} ${MAKE_ARGS} ${INSTALL_TARGET})
+
+.include <bsd.port.mk>
