@@ -54,6 +54,7 @@ bin/nt
 %%DATADIR%%/themes/glass.xml
 %%DATADIR%%/themes/glass/dnd1.png
 %%DATADIR%%/themes/glass/dnd2.png
+%%DATADIR%%/themes/glass/tray.png
 %%DATADIR%%/themes/glass2.xml
 %%DATADIR%%/themes/glass2/dnd1.png
 %%DATADIR%%/themes/glass2/dnd2.png
@@ -76,7 +77,6 @@ bin/nt
 %%DATADIR%%/themes/gnome/popup/down.png
 %%DATADIR%%/themes/gnome/popup/log.png
 %%DATADIR%%/themes/gnome/popup/pause.png
-%%DATADIR%%/themes/gnome/popup/remove.png
 %%DATADIR%%/themes/gnome/popup/remove_completed.png
 %%DATADIR%%/themes/gnome/popup/start.png
 %%DATADIR%%/themes/gnome/popup/up.png
