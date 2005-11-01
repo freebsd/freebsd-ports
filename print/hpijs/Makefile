@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hpijs
-PORTVERSION=	1.7.1
+PORTVERSION=	2.1.4
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hpinkjet
@@ -14,12 +14,22 @@ MASTER_SITE_SUBDIR=	hpinkjet
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Drivers and support resources for HP Inkjet Printers
 
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		--disable-dependency-tracking
+USE_GHOSTSCRIPT_RUN=	yes
 
-.if defined(WITH_CUPS)
-WITH_FOOMATIC=		yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+
+OPTIONS=	CUPS		"install support for cups" on \
+		FOOMATIC	"install foomatic-rip and ppd files" on
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_CUPS)
 LIB_DEPENDS+=		cups.2:${PORTSDIR}/print/cups-base
 CONFIGURE_ARGS+=	--enable-cups-install
 PLIST_SUB+=		CUPS=""
@@ -28,7 +38,7 @@ CONFIGURE_ARGS+=	--disable-cups-install
 PLIST_SUB+=		CUPS="@comment "
 .endif
 
-.if defined(WITH_FOOMATIC)
+.if !defined(WITHOUT_FOOMATIC) || !defined(WITHOUT_CUPS)
 USE_PERL5=		true
 CONFIGURE_ARGS+=	--enable-foomatic-install
 PLIST_SUB+=		FOOMATIC=""
@@ -37,33 +47,17 @@ CONFIGURE_ARGS+=	--disable-foomatic-install
 PLIST_SUB+=		FOOMATIC="@comment "
 .endif
 
-.if !defined(WITH_FOOMATIC) || !defined(WITH_CUPS)
-pre-extract:
-	@${ECHO_MSG} "**************************************************************"
-	@${ECHO_MSG} "You can set the following build option(s):"
-	@${ECHO_MSG}
-.if !defined(WITH_CUPS)
-	@${ECHO_MSG} "WITH_CUPS=yes	install support for cups; sets WITH_FOOMATIC"
-.endif
-.if !defined(WITH_FOOMATIC)
-	@${ECHO_MSG} "WITH_FOOMATIC=yes	install foomatic-rip and ppd files"
-.endif
-	@${ECHO_MSG} "**************************************************************"
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|CFLAGS="-O2 -Wall"|CFLAGS="\$$CFLAGS"|g ; \
-		s|CXXFLAGS="-O2 -Wall"|CXXFLAGS="\$$CXXFLAGS"|g ; \
+	@${REINPLACE_CMD} -e 's|/usr/local/share/cups|${LOCALBASE}/share/cups|g ; \
 		s|/usr/lib/cups/filter|${LOCALBASE}/libexec/cups/filter|g' \
 			${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|cp -ax|${INSTALL_DATA}|g' ${WRKSRC}/Makefile.in
 
-.if !defined(WITH_FOOMATIC)
+.if defined(WITHOUT_CUPS) && defined(WITHOUT_FOOMATIC)
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hpijs ${PREFIX}/bin
 .else
 INSTALL_TARGET=	install-exec install-foomatic
-.if defined(WITH_CUPS)
+.if !defined(WITHOUT_CUPS)
 INSTALL_TARGET+=	install-cups
 .endif
 .endif
@@ -76,4 +70,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
