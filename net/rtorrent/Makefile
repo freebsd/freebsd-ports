@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rtorrent
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.6
 CATEGORIES=	net
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 
