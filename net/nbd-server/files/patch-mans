@@ -1,19 +1,12 @@
---- Makefile.in.orig	Tue Dec 14 14:25:52 2004
-+++ Makefile.in	Thu Dec 30 00:08:38 2004
-@@ -75,7 +75,7 @@
- man1dir = $(mandir)/man1
- man8dir = $(mandir)/man8
- NROFF = nroff
--MANS = $(man1_MANS) $(man8_MANS)
-+MANS = $(man1_MANS)
- ETAGS = etags
- CTAGS = ctags
- DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-@@ -166,7 +166,6 @@
- nbd_client_SOURCES = nbd-client.c cliserv.h
- nbd_server_SOURCES = nbd-server.c cliserv.h lfs.h
- man1_MANS = nbd-server.1
--man8_MANS = nbd-client.8
- EXTRA_DIST = nbd-client.8.sgml nbd-server.1.sgml gznbd winnbd nbd-client.8 nbd-server.1
+diff -urN nbd-2.8.1.orig/Makefile.in nbd-2.8.1/Makefile.in
+--- nbd-2.8.1.orig/Makefile.in	Thu Oct 27 21:04:45 2005
++++ Makefile.in	Tue Nov  1 19:47:04 2005
+@@ -172,7 +172,7 @@
+ nbd_server_SOURCES = nbd-server.c cliserv.h
+ nbd_server_CFLAGS = @CFLAGS@ @GLIB_CFLAGS@
+ nbd_server_LDADD = @GLIB_LIBS@
+-man_MANS = nbd-server.1 nbd-client.8
++man_MANS = nbd-server.1
+ EXTRA_DIST = nbd-client.8.sgml nbd-server.1.sgml gznbd winnbd lfs.h nbd-client.8 nbd-server.1
  MAINTAINERCLEANFILES = nbd-client.8 nbd-server.1
  all: config.h
