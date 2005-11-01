@@ -8,6 +8,14 @@ lib/libxdtp.so
 lib/libxdtp.so.1
 lib/libxdtp.a
 libdata/pkgconfig/libxdtp.pc
+%%DOCSDIR%%/banbun-0001.html
+%%DOCSDIR%%/banbun-0002.html
+%%DOCSDIR%%/banbun-0003.html
+%%DOCSDIR%%/banbun-0004.html
+%%DOCSDIR%%/images/glsd-base-classdiagram.gif
+%%DOCSDIR%%/images/glsd-classdiagram.gif
+@dirrm %%DOCSDIR%%/images
+@dirrm %%DOCSDIR%%
 %%DATADIR%%/toHTML/BanBun.xsl
 %%DATADIR%%/toHTML/BanBunModule.xsl
 %%DATADIR%%/toHTML/DocumentModule.xsl
@@ -23,14 +31,17 @@ libdata/pkgconfig/libxdtp.pc
 %%DATADIR%%/toXHTML/DocumentModule.xsl
 %%DATADIR%%/toXHTML/GLSD.xsl
 %%DATADIR%%/toXHTML/GLSDocumentModule.xsl
-@dirrm share/xdtp/toHTML
-@dirrm share/xdtp/toTEXT
-@dirrm share/xdtp/toXHTML
-@dirrm share/xdtp
+@dirrm %%DATADIR%%/toHTML
+@dirrm %%DATADIR%%/toTEXT
+@dirrm %%DATADIR%%/toXHTML
+@dirrm %%DATADIR%%
 %%XDTP_INC%%include/xdtp/CSVAnalyzer.h
 %%XDTP_INC%%include/xdtp/Exception.h
+%%XDTP_INC%%include/xdtp/RefPtr.h
+%%XDTP_INC%%include/xdtp/URI.h
 %%XDTP_INC%%include/xdtp/URLTool.h
 %%XDTP_INC%%include/xdtp/Utilities.h
+%%XDTP_INC%%include/xdtp/XDTPObjectWrapper.h
 %%XDTP_INC%%include/xdtp/XDTPTransform.h
 %%XDTP_INC%%include/xdtp/XMLTool.h
 %%XDTP_INC%%include/xdtp/xdtptypes.h
