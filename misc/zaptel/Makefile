@@ -17,6 +17,8 @@ COMMENT=	A FreeBSD Driver for FXO, FXS, BRI and PRI Telephony Cards
 
 LIB_DEPENDS=	newt.51:${PORTSDIR}/devel/newt
 
+USE_REINPLACE=	yes
+
 NO_PACKAGE=	Should be in sync with the kernel to work correctly
 
 ONLY_FOR_ARCHS=	i386
@@ -30,6 +32,11 @@ pre-everything::
 		${ECHO_MSG} ">> Please install FreeBSD kernel source code in /usr/src/sys."; \
 		${FALSE}; \
 	fi
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|<getopt.h>|<unistd.h>|g" \
+		${WRKSRC}/test/ztmonitor.c ${WRKSRC}/test/zttool.c \
+		${WRKSRC}/ztcfg/ztcfg.c
 
 pre-install:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message > \
