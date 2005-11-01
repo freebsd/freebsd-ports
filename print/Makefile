@@ -115,6 +115,7 @@
     SUBDIR += kover
     SUBDIR += latex
     SUBDIR += latex-arydshln
+    SUBDIR += latex-auto-greek
     SUBDIR += latex-beamer
     SUBDIR += latex-biblist
     SUBDIR += latex-bibtopic

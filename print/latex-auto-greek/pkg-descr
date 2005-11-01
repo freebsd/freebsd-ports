@@ -1,0 +1,8 @@
+This is a LaTeX port that allows one to write greek documents with both latin
+and greek text, without having to use \textlatin or any other command to switch
+between the greek/latintext modes.
+
+It includes greek postscript fonts created by Angelos Haritsis.
+
+-- EelVex
+WWW: http://a.physics.upatras.gr/~mplekos/latex-auto-greek.html
