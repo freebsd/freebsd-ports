@@ -9,7 +9,7 @@ The Harvest home page is http://harvest.cs.colorado.edu/.
 ARPA funding for the Harvest project has ended, the squid project has
 continued development of the cache where Harvest finished.
 
-Please see this port's Makefile for a list of compilation options.
+This port provides many configuration options, most of which are
+available via 'make config'.
 
-You can find further information on the project's website at
 WWW: http://www.squid-cache.org/

@@ -69,8 +69,7 @@
 #
 
 PORTNAME=	squid
-PORTVERSION=	2.5.11
-PORTREVISION=	3
+PORTVERSION=	2.5.12
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -79,21 +78,10 @@ MASTER_SITES=	\
 		ftp://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.5.STABLE11
+DISTNAME=	squid-2.5.STABLE12
 DIST_SUBDIR=	squid2.5
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
-PATCHFILES=	squid-2.5.STABLE11-delaypools_truncated.patch \
-		squid-2.5.STABLE11-tcp_outgoing_xxx.patch \
-		squid-2.5.STABLE11-ldap_auth.patch \
-		squid-2.5.STABLE11.accel_single_host_pconn.patch \
-		squid-2.5.STABLE11-CACHE_HTTP_PORT.patch \
-		squid-2.5.STABLE11-CNAME.patch \
-		squid-2.5.STABLE11-httpd_accel-internal.patch \
-		squid-2.5.STABLE11-IMS-HEAD.patch \
-		squid-2.5.STABLE11-redirect-CONNECT.patch \
-		squid-2.5.STABLE11-setcookie.patch \
-		squid-2.5.STABLE11-rfc1738_do_escape.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -110,9 +98,7 @@ SQUID_GID?=	squid
 
 MAN8=		cachemgr.cgi.8 squid.8
 docs=		QUICKSTART README RELEASENOTES.html doc/debug-sections.txt
-.if !defined(NOPORTDOCS)
 PORTDOCS=	${docs:T}
-.endif
 
 OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_DELAY_POOLS "Enable delay pools" off \
@@ -375,8 +361,9 @@ pre-install:
 	    >${WRKDIR}/squid.sh
 
 pre-su-install:
-	@${SETENV} squid_user=${SQUID_UID} squid_group=${SQUID_GID} \
-	    PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
+	    squid_user=${SQUID_UID} squid_group=${SQUID_GID} \
+	    ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 # Create cachemgr.conf.default manually since squid's install routine
