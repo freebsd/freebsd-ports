@@ -3,8 +3,6 @@ etc/zabbix/zabbix_agentd.conf.sample
 etc/zabbix/zabbix_suckerd.conf.sample
 etc/zabbix/zabbix_trapper.conf.sample
 etc/zabbix/zabbix_trapperd.conf.sample
-etc/rc.d/zabbix.sh.sample
-etc/rc.d/zabbix-agent.sh.sample
 bin/zabbix_agent
 bin/zabbix_agentd
 bin/zabbix_sender

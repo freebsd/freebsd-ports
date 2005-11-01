@@ -7,7 +7,7 @@
 
 PORTNAME=	zabbix
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES?=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -25,10 +25,10 @@ OPTIONS=	PGSQL "Use a PostgreSQL backend" off \
 .ifdef(ZABBIX_AGENT_ONLY)
 PKGNAMESUFFIX=	-agent
 PLIST=		${MASTERDIR}/pkg-plist.agent
-PKGMESSAGE=	nonexistent
 .else # ZABBIX_AGENT_ONLY
 LIB_DEPENDS=	netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp
 USE_PHP=	gd snmp sockets
+SUB_FILES=	pkg-message
 .endif # ZABBIX_AGENT_ONLY
 
 .include <bsd.port.pre.mk>
@@ -55,10 +55,12 @@ CONFIGURE_ARGS=	--with-mysql
 CONFIGURE_ARGS+=--with-net-snmp
 .endif # ZABBIX_AGENT_ONLY
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+USE_RC_SUBR=	zabbix_agent.sh
+.if !defined(ZABBIX_AGENT_ONLY)
+USE_RC_SUBR+=	zabbix_suckerd.sh
+.endif
 
 USE_REINPLACE=	yes
-USE_RC_SUBR=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include
 
@@ -69,17 +71,7 @@ ZABBIX_BINARIES+=	zabbix_suckerd zabbix_trapper zabbix_trapperd
 ZABBIX_CONFIGS+=	zabbix_suckerd.conf zabbix_trapper.conf zabbix_trapperd.conf
 .endif
 
-SCRIPT_REGEX=	-e 's|%PREFIX%|${PREFIX}|g' -e 's|%LOCALBASE%|${LOCALBASE}|g'
-
 pre-patch:
-.if !defined(ZABBIX_AGENT_ONLY)
-	@${SED} ${SCRIPT_REGEX} ${PKGDIR}/pkg-message > ${PKGMESSAGE}
-	@${SED} ${SCRIPT_REGEX} ${PKGDIR}/scripts/zabbix.sh.sample > \
-		${WRKDIR}/zabbix.sh.sample
-.endif
-	@${SED} ${SCRIPT_REGEX} ${PKGDIR}/scripts/zabbix-agent.sh.sample > \
-		${WRKDIR}/zabbix-agent.sh.sample
-
 .ifndef(ZABBIX_AGENT_ONLY)
 post-patch:
 	@${REINPLACE_CMD} 's|%LOCALBASE%|${LOCALBASE}|' ${WRKSRC}/src/zabbix_sucker/zabbix_sucker.c
@@ -106,18 +98,12 @@ do-install:
 .ifndef(ZABBIX_AGENT_ONLY)
 	${MKDIR} ${PREFIX}/share/zabbix
 	${MKDIR} ${PREFIX}/share/zabbix/create
-	${INSTALL_DATA} ${MASTERDIR}/scripts/dbsetup.sh \
-			${PREFIX}/share/zabbix/create
 	${CP} -Rf ${WRKSRC}/frontends/* ${PREFIX}/share/zabbix
 	${CP} -Rf ${WRKSRC}/create/* ${PREFIX}/share/zabbix/create
 	${CP} -Rf ${WRKSRC}/upgrades/dbpatches ${PREFIX}/share/zabbix
 	${INSTALL_SCRIPT} ${MASTERDIR}/scripts/dbsetup.sh \
 			${PREFIX}/share/zabbix/create
-	${INSTALL_SCRIPT} ${MASTERDIR}/scripts/zabbix.sh.sample \
-			${PREFIX}/etc/rc.d
 .endif
-	${INSTALL_SCRIPT} ${MASTERDIR}/scripts/zabbix-agent.sh.sample \
-			${PREFIX}/etc/rc.d
 	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .ifndef(ZABBIX_AGENT_ONLY)
 	@${CAT} ${PKGMESSAGE}
