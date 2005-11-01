@@ -12,22 +12,53 @@
 %%JFFNMSDIR%%/conf/jffnms.conf.defaults
 %%JFFNMSDIR%%/docs/apache-example
 %%JFFNMSDIR%%/docs/cisco-example
-%%JFFNMSDIR%%/docs/jffnms-0.8.1.mysql
-%%JFFNMSDIR%%/docs/jffnms-0.8.1.pgsql
+%%JFFNMSDIR%%/docs/jffnms-0.8.2.mysql
+%%JFFNMSDIR%%/docs/jffnms-0.8.2.pgsql
 %%JFFNMSDIR%%/docs/sla-creation-example.txt
 %%JFFNMSDIR%%/docs/unix/crontab
 %%JFFNMSDIR%%/docs/unix/msyslog-example
 %%JFFNMSDIR%%/docs/unix/php.ini.example
 %%JFFNMSDIR%%/docs/unix/snmp.conf
-%%JFFNMSDIR%%/docs/unix/snmptrap.txt
 %%JFFNMSDIR%%/docs/unix/snmptrapd.conf
 %%JFFNMSDIR%%/docs/unix/syslog-ng-example
 %%JFFNMSDIR%%/docs/unix/syslog.conf
 %%JFFNMSDIR%%/docs/unix/tac_plus.cfg
 %%JFFNMSDIR%%/docs/unix/tftp
-%%JFFNMSDIR%%/docs/upgrade/jffnms-0.8.0-to-0.8.1.patch
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.0-to-0.8.1.mysql.diff.x_fix_internal_ids
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.0-to-0.8.1.pgsql.diff.x_fix_internal_ids
+%%JFFNMSDIR%%/docs/upgrade/jffnms-0.8.1-to-0.8.2.patch
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.alarmed_hosts
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.alteon
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.bgp
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.cisco_nat
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.cpq_far
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.iptables
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.isdn
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.pix
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.pix_syslog
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.rechable
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.sensors
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.system_mib
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.traps
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.ups_mib
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.win_security
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.windows_informant
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.8.1-to-0.8.2.mysql.diff.x_fix_internal_ids
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.alarmed_hosts
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.alteon
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.bgp
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.cisco_nat
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.cpq_far
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.iptables
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.isdn
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.pix
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.pix_syslog
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.rechable
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.sensors
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.system_mib
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.traps
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.ups_mib
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.win_security
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.windows_informant
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.8.1-to-0.8.2.pgsql.diff.x_fix_internal_ids
 %%JFFNMSDIR%%/docs/utils/adjust_bw.php
 %%JFFNMSDIR%%/docs/utils/clean_auth.php
 %%JFFNMSDIR%%/docs/utils/exp_poller_test.php
@@ -64,6 +95,7 @@
 %%JFFNMSDIR%%/engine/backends/alarm.php
 %%JFFNMSDIR%%/engine/backends/buffer.php
 %%JFFNMSDIR%%/engine/backends/db.php
+%%JFFNMSDIR%%/engine/backends/event.php
 %%JFFNMSDIR%%/engine/backends/multi_buffer.php
 %%JFFNMSDIR%%/engine/backends/no_backend.php
 %%JFFNMSDIR%%/engine/backends/rrd.php
@@ -98,15 +130,22 @@
 %%JFFNMSDIR%%/engine/discovery/host_information.inc.php
 %%JFFNMSDIR%%/engine/discovery/hostmib_apps.inc.php
 %%JFFNMSDIR%%/engine/discovery/iis_info.inc.php
+%%JFFNMSDIR%%/engine/discovery/informant_ldisks.inc.php
+%%JFFNMSDIR%%/engine/discovery/linux_iptables.inc.php
 %%JFFNMSDIR%%/engine/discovery/linux_tc.inc.php
 %%JFFNMSDIR%%/engine/discovery/livingston_serial_port.inc.php
 %%JFFNMSDIR%%/engine/discovery/none.inc.php
 %%JFFNMSDIR%%/engine/discovery/ntp_client.inc.php
+%%JFFNMSDIR%%/engine/discovery/pix_connections.inc.php
 %%JFFNMSDIR%%/engine/discovery/reachability.inc.php
+%%JFFNMSDIR%%/engine/discovery/sensors.inc.php
+%%JFFNMSDIR%%/engine/discovery/simple.inc.php
 %%JFFNMSDIR%%/engine/discovery/smokeping.inc.php
 %%JFFNMSDIR%%/engine/discovery/snmp_interfaces.inc.php
 %%JFFNMSDIR%%/engine/discovery/storage.inc.php
 %%JFFNMSDIR%%/engine/discovery/tcp_ports.inc.php
+%%JFFNMSDIR%%/engine/discovery/ups.inc.php
+%%JFFNMSDIR%%/engine/discovery/ups_lines.inc.php
 %%JFFNMSDIR%%/engine/graphs/acct_bytes.inc.php
 %%JFFNMSDIR%%/engine/graphs/acct_packets.inc.php
 %%JFFNMSDIR%%/engine/graphs/alteon_failures_sessions.inc.php
@@ -130,10 +169,13 @@
 %%JFFNMSDIR%%/engine/graphs/apc_voltages.inc.php
 %%JFFNMSDIR%%/engine/graphs/apps_instances.inc.php
 %%JFFNMSDIR%%/engine/graphs/apps_memory.inc.php
+%%JFFNMSDIR%%/engine/graphs/bgp_routes.inc.php
 %%JFFNMSDIR%%/engine/graphs/bgp_updates.inc.php
 %%JFFNMSDIR%%/engine/graphs/brocade_sensor.inc.php
 %%JFFNMSDIR%%/engine/graphs/cisco_mac_bytes.inc.php
 %%JFFNMSDIR%%/engine/graphs/cisco_mac_packets.inc.php
+%%JFFNMSDIR%%/engine/graphs/cisco_nat_active.inc.php
+%%JFFNMSDIR%%/engine/graphs/cisco_nat_packets.inc.php
 %%JFFNMSDIR%%/engine/graphs/cisco_saagent_jitter.inc.php
 %%JFFNMSDIR%%/engine/graphs/cisco_saagent_packetloss.inc.php
 %%JFFNMSDIR%%/engine/graphs/cisco_saagent_rtl.inc.php
@@ -151,14 +193,20 @@
 %%JFFNMSDIR%%/engine/graphs/iis_tcgir.inc.php
 %%JFFNMSDIR%%/engine/graphs/iis_tfs.inc.php
 %%JFFNMSDIR%%/engine/graphs/iis_tptg.inc.php
+%%JFFNMSDIR%%/engine/graphs/inf_ldisk_rate.inc.php
+%%JFFNMSDIR%%/engine/graphs/inf_ldisk_time.inc.php
+%%JFFNMSDIR%%/engine/graphs/iptables_rate.inc.php
+%%JFFNMSDIR%%/engine/graphs/iptables_rate_aggregation.inc.php
 %%JFFNMSDIR%%/engine/graphs/memory.inc.php
 %%JFFNMSDIR%%/engine/graphs/packetloss.inc.php
 %%JFFNMSDIR%%/engine/graphs/packets.inc.php
 %%JFFNMSDIR%%/engine/graphs/packets_aggregation.inc.php
 %%JFFNMSDIR%%/engine/graphs/packets_new.inc.php
+%%JFFNMSDIR%%/engine/graphs/pix_connections.inc.php
 %%JFFNMSDIR%%/engine/graphs/pm_serial.inc.php
 %%JFFNMSDIR%%/engine/graphs/response_time.inc.php
 %%JFFNMSDIR%%/engine/graphs/rtt.inc.php
+%%JFFNMSDIR%%/engine/graphs/sensor_value.inc.php
 %%JFFNMSDIR%%/engine/graphs/sql_records.inc.php
 %%JFFNMSDIR%%/engine/graphs/storage.inc.php
 %%JFFNMSDIR%%/engine/graphs/storage_aggregation.inc.php
@@ -181,6 +229,14 @@
 %%JFFNMSDIR%%/engine/graphs/ucd_load_average.inc.php
 %%JFFNMSDIR%%/engine/graphs/ucd_load_average_aggregation.inc.php
 %%JFFNMSDIR%%/engine/graphs/ucd_memory.inc.php
+%%JFFNMSDIR%%/engine/graphs/ups_charge_remaining.inc.php
+%%JFFNMSDIR%%/engine/graphs/ups_current.inc.php
+%%JFFNMSDIR%%/engine/graphs/ups_current_aggregation.inc.php
+%%JFFNMSDIR%%/engine/graphs/ups_load.inc.php
+%%JFFNMSDIR%%/engine/graphs/ups_load_aggregation.inc.php
+%%JFFNMSDIR%%/engine/graphs/ups_time_remaining.inc.php
+%%JFFNMSDIR%%/engine/graphs/ups_voltage.inc.php
+%%JFFNMSDIR%%/engine/graphs/ups_voltage_aggregation.inc.php
 %%JFFNMSDIR%%/engine/handlers/bool.inc.php
 %%JFFNMSDIR%%/engine/handlers/none.inc.php
 %%JFFNMSDIR%%/engine/handlers/rrd_ds.inc.php
@@ -230,6 +286,7 @@
 %%JFFNMSDIR%%/engine/pollers/tcp_port_content.php
 %%JFFNMSDIR%%/engine/pollers/tcp_status.php
 %%JFFNMSDIR%%/engine/pollers/udp_status.php
+%%JFFNMSDIR%%/engine/pollers/ups_line.php
 %%JFFNMSDIR%%/engine/pollers/verify_interface_number.php
 %%JFFNMSDIR%%/engine/pollers/verify_smokeping_number.php
 %%JFFNMSDIR%%/engine/pollers/verify_tc_class_number.php
@@ -252,6 +309,10 @@
 %%JFFNMSDIR%%/engine/tools/separator.inc.php
 %%JFFNMSDIR%%/engine/tools/tcp_cnx.inc.php
 %%JFFNMSDIR%%/engine/trap_receiver.php
+%%JFFNMSDIR%%/engine/trap_receiver.sh
+%%JFFNMSDIR%%/engine/trap_receivers/none.inc.php
+%%JFFNMSDIR%%/engine/trap_receivers/static.inc.php
+%%JFFNMSDIR%%/engine/trap_receivers/unknown.inc.php
 %%JFFNMSDIR%%/engine/windows/autodiscovery_interfaces.bat
 %%JFFNMSDIR%%/engine/windows/cleanup_raw_tables.bat
 %%JFFNMSDIR%%/engine/windows/consolidate.bat
@@ -496,6 +557,7 @@
 @dirrm %%JFFNMSDIR%%/htdocs/admin
 @dirrm %%JFFNMSDIR%%/htdocs
 @dirrm %%JFFNMSDIR%%/engine/windows
+@dirrm %%JFFNMSDIR%%/engine/trap_receivers
 @dirrm %%JFFNMSDIR%%/engine/tools
 @dirrm %%JFFNMSDIR%%/engine/ticket
 @dirrm %%JFFNMSDIR%%/engine/temp
