@@ -14,6 +14,6 @@
  
 -	$(INSTALL_PROGRAM) $(target) $(DESTDIR)$(bindir)
 +	$(INSTALL_SCRIPT) $(target) $(DESTDIR)$(bindir)
- 	$(INSTALL_DATA) $(target).1 $(DESTDIR)$(mandir)/man1
- 	$(INSTALL_DATA) $(target).info $(DESTDIR)$(infodir)/$(target).info
- 	if test -f $(DESTDIR)$(infodir)/dir; \
+ 	$(INSTALL_DATA) $(srcdir)/$(target).1 $(DESTDIR)$(mandir)/man1
+ 	$(INSTALL_DATA) $(srcdir)/$(target).info \
+ 	    $(DESTDIR)$(infodir)/$(target).info
