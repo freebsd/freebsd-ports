@@ -13,7 +13,6 @@
     SUBDIR += kde3-i18n
     SUBDIR += koffice-i18n
     SUBDIR += libtlen
-    SUBDIR += ooodict_PL
     SUBDIR += php_doc
     SUBDIR += sap
     SUBDIR += sms

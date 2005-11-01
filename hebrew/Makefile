@@ -8,7 +8,6 @@
     SUBDIR += elmar-fonts
     SUBDIR += he2
     SUBDIR += hspell
-    SUBDIR += ooodict-he_IL
     SUBDIR += kde3-i18n
     SUBDIR += koffice-i18n
 
