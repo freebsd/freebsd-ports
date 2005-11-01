@@ -6017,6 +6017,7 @@ mb2md		ports/mail/mb2md
 mbasecalc	ports/math/mbasecalc
 mbdyn		ports/science/mbdyn
 mbox		ports/audio/mbox
+mbox2mdir	ports/mail/mbox2mdir
 mboxcheck-applet	ports/mail/mboxcheck-applet
 mboxgrep	ports/mail/mboxgrep
 mboxstats	ports/mail/mboxstats
