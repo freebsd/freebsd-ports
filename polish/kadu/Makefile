@@ -23,6 +23,8 @@ USE_GMAKE=		yes
 USE_OPENSSL=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-existing-libgadu="${LOCALBASE}" \
+			--with-includes="${LOCALBASE}/include ${X11BASE}/include" \
+			--with-libs="${LOCALBASE}/lib ${X11BASE}/lib" \
 			--program-transform-name=''
 CONFIGURE_ENV=		QTDIR="${QT_PREFIX}"
 
