@@ -34,8 +34,81 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6821a2db-4ab7-11da-932d-00055d790c25">
+    <topic>PHP -- multiple vulnerabilities</topic>
+    <affects>
+     <package>
+	<name>mod_php4-twig</name>
+	<name>php4-cgi</name>
+	<name>php4-cli</name>
+	<name>php4-dtc</name>
+	<name>php4-horde</name>
+	<name>php4-nms</name>
+	<name>php4</name>
+	<range><lt>4.4.1</lt></range>
+      </package>
+      <package>
+        <name>mod_php</name>
+        <name>mod_php4</name>
+	<range><ge>4</ge><lt>4.4.1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/17371/">
+	  <p>Some vulnerabilities have been reported in PHP,
+	    which can be exploited by malicious people to conduct
+	    cross-site scripting attacks, bypass certain security
+	    restrictions, and potentially compromise a vulnerable
+	    system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/17371/</url>
+    </references>
+    <dates>
+      <discovery>2005-10-31</discovery>
+      <entry>2005-11-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="70fc13d9-4ab4-11da-932d-00055d790c25">
+    <topic>skype -- multiple buffer overflow vulnerabilities</topic>
+    <affects>
+     <package>
+	<name>skype</name>
+	<range><lt>1.2.18</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/17305/">
+	  <p>Some vulnerabilities have been reported in Skype,
+	    which can be exploited by malicious people to cause
+	    a DoS or to compromise a user's system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2005-3265</cvename>
+      <cvename>CVE-2005-3267</cvename>
+      <certvu>930345</certvu>
+      <certvu>668193</certvu>
+      <url>http://secunia.com/advisories/17305/</url>
+      <url>http://skype.com/security/skype-sb-2005-02.html</url>
+      <url>http://skype.com/security/skype-sb-2005-03.html</url>
+    </references>
+    <dates>
+      <discovery>2005-10-25</discovery>
+      <entry>2005-11-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1c3142a3-4ab2-11da-932d-00055d790c25">
-    <topic>squid -- FTP Server Response Handling Denial of Service</topic>
+    <topic>squid -- FTP server response handling denial of service</topic>
     <affects>
      <package>
 	<name>squid</name>
@@ -67,7 +140,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="f38c87a5-4a3e-11da-8ba2-0004614cc33d">
-    <topic>base -- PHP SQL Injection Vulnerability</topic>
+    <topic>base -- PHP SQL injection vulnerability</topic>
     <affects>
      <package>
 	<name>base</name>
