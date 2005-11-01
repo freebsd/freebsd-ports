@@ -1,14 +1,16 @@
 --- rawio.c.orig	Sun Nov 26 22:28:19 2000
-+++ rawio.c	Wed Oct 26 14:07:30 2005
-@@ -58,6 +58,7 @@
++++ rawio.c	Tue Nov  1 11:55:33 2005
+@@ -58,6 +58,9 @@
  #endif
  #ifdef BSD4_4
  #include <sys/disklabel.h>
++#if __FreeBSD__ >= 5
 +#include <sys/disk.h>
++#endif
  #endif
  #include "randoms.h"
  
-@@ -99,6 +100,7 @@
+@@ -99,6 +102,7 @@
  char *buf;						    /* and what we're using, for alignment */
  int file;
  size_t length;
@@ -16,7 +18,7 @@
  
  int count;
  enum operation
-@@ -331,13 +333,7 @@
+@@ -331,13 +335,7 @@
  	maxchunk = (size_t) atoi (arg);
  	if (maxchunk < (size_t) 512)
  	  {
@@ -31,7 +33,7 @@
  	  }
  	if (maxchunk > (size_t) MAXPHYS)
  	  {
-@@ -423,7 +419,7 @@
+@@ -423,7 +421,7 @@
  	  printf ("No arg to n flag\n");
  	  break;
  	  }
@@ -40,7 +42,7 @@
  	break;
  
        case 'S':
-@@ -500,11 +496,6 @@
+@@ -500,11 +498,6 @@
    buf = (char *) (((int) &physbuf [MAXPHYS]) & ~ (alignment - 1)); /* where to put the aligned buffer */
    if (op == 0)						    /* no ops specified, */
      op = RandomRead | SequentialRead;			    /* default to the read tests */
@@ -52,7 +54,7 @@
    if (device == NULL)
      {
      fprintf (stderr, "No file name specified\n");
-@@ -565,6 +556,27 @@
+@@ -565,6 +558,27 @@
      fprintf (stderr, "No file size specified\n");
      usage ();
      }
@@ -80,7 +82,7 @@
    if (id == NULL)					    /* no ID specified, */
      {
      id = strrchr (device, '/');				    /* find the basename */
-@@ -580,7 +592,11 @@
+@@ -580,7 +594,11 @@
    childinfo = mmap (NULL,
  		    nproc * sizeof (struct childinfo),
  		    PROT_READ | PROT_WRITE,
@@ -92,7 +94,7 @@
  		    -1,
  		    (off_t) 0 );
  #else
-@@ -835,14 +851,6 @@
+@@ -835,14 +853,6 @@
    childinfo [proc].writes = 0;
    childinfo [proc].bytes_written = 0;
  
@@ -107,7 +109,7 @@
    /* Don't jump the gun */
    sigemptyset (&allsigs);
    if (sigaction (SIGUSR1, &ignore, NULL) < 0)
-@@ -863,20 +871,13 @@
+@@ -863,20 +873,13 @@
  	length = maxchunk;
        else
  	length = (myrandom (proc + nproc * i * 2)
@@ -133,7 +135,7 @@
  
  	fprintf (stderr,
  		 "offset %" Quad "d, filesize %" Quad "d\n",
-@@ -915,9 +916,9 @@
+@@ -915,9 +918,9 @@
      if (fixedoffset)
        offset = SKIPSTART;				    /* start at the beginning */
      else						    /* random start */
@@ -145,7 +147,7 @@
      if ((offset + maxrecs * length) > filesize)		    /* XXX */
        {
        printf ("Overrun: offset %" Quad "d, end %" Quad "d, file size %" Quad "d\n",
-@@ -928,18 +929,12 @@
+@@ -928,18 +931,12 @@
        }
      if ((verbose > 2) && ! fixedoffset)
        printf ("Child %d reading from %" Quad "d\n", proc, offset);
@@ -166,7 +168,7 @@
  
  	fprintf (stderr,
  		 "offset %" Quad "d, filesize %" Quad "d\n",
-@@ -976,30 +971,28 @@
+@@ -976,30 +973,28 @@
  	length = maxchunk;
        else
  	length = (myrandom (proc + nproc * i * 2)
@@ -204,7 +206,7 @@
  
  	  fprintf (stderr,
  		   "offset %" Quad "d, filesize %" Quad "d\n", offset,
-@@ -1032,36 +1025,30 @@
+@@ -1032,36 +1027,30 @@
      if (fixedoffset)
        offset = SKIPSTART;				    /* start at the beginning */
      else						    /* random start */
