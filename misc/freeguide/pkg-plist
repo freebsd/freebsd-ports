@@ -1,0 +1,29 @@
+@comment $FreeBSD$
+bin/freeguide
+share/applications/freeguide.desktop
+%%DOCSDIR%%/FAQ.html
+%%DOCSDIR%%/FreeGuide-0_7-Linux-MetalLookAndFeel.png
+%%DOCSDIR%%/INSTALL-linux-noxmltv.html
+%%DOCSDIR%%/LookAndFeel.html
+%%DOCSDIR%%/README.html
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/contributors.html
+%%DOCSDIR%%/design.html
+%%DOCSDIR%%/developers-compiling.html
+%%DOCSDIR%%/developers-cvs.html
+%%DOCSDIR%%/developers-translating.html
+%%DOCSDIR%%/developers.html
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/stylesheet.css
+%%DOCSDIR%%/timezone.html
+%%DOCSDIR%%/userguide.html
+%%JAVAJARDIR%%/FreeGuide.jar
+share/java/pixmaps/freeguide.png
+share/java/pixmaps/freeguide/logo-16x16.png
+share/java/pixmaps/freeguide/logo-32x32.png
+share/java/pixmaps/freeguide/logo-48x48.png
+share/java/pixmaps/freeguide/logo-64x64.png
+share/java/pixmaps/freeguide/logo-72x72.png
+share/java/pixmaps/freeguide/logo-96x96.png
+@dirrm share/java/pixmaps/freeguide
+@dirrm %%DOCSDIR%%
