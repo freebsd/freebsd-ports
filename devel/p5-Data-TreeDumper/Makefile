@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	Data-TreeDumper
-PORTVERSION=	0.23
-PORTREVISION=	1
+PORTVERSION=	0.27
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@daltons.ca
+MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Dumps a data structure in a tree fashion
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/Size.pm:${PORTSDIR}/devel/p5-Term-Size \
