@@ -1,7 +1,7 @@
 ====================================================
 ACHTUNG!!!
 
-Run dbsetup.sh from %PREFIX%/share/zabbix/create
+Run dbsetup.sh from %%PREFIX%%/share/zabbix/create
 to setup database tables. Arguments, given to
 it will be passed to mysql client, allowing
 connection do non-local MySQL server

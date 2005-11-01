@@ -1,12 +1,8 @@
 #!/bin/sh
 
-prefix=%PREFIX%
+. %%RC_SUBR%%
 
-zabbix_suckerd_enable="YES"
-
-. %LOCALBASE%/etc/rc.subr
-
-name="zabbix_suckerd"
+name="zabbix_agentd"
 rcvar=`set_rcvar`
 command="${prefix}/bin/${name}"
 required_files="/etc/zabbix/${name}.conf"
