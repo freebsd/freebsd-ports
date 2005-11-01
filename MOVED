@@ -1716,3 +1716,4 @@ portuguese/ooodict-pt_BR||2005-11-01|localized version should be built via knob
 portuguese/ooodict-pt_PT||2005-11-01|localized version should be built via knob
 russian/ooodict-ru_RU||2005-11-01|localized version should be built via knob
 ukrainian/ooodict-uk_UA||2005-11-01|localized version should be built via knob
+net/libicq0|net/libicq|2005-11-01|leaf port removed
