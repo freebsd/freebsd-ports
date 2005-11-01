@@ -6,6 +6,7 @@
 
 PORTNAME=	shoutcast
 PORTVERSION=	1.9.5
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://www.shoutcast.com/downloads/sc1-9-5/
 
