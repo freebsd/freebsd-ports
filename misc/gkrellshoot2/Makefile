@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	elitetek@tekrealm.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A screen locking and screen capture plugin for GKrellM 2
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
