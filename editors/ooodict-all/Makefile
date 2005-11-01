@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	ooodict
-PORTVERSION=	1.20050518
+PORTVERSION=	1.20051027
 CATEGORIES+=	editors
-MASTER_SITES+=	http://ftp.gwdg.de/pub/misc/openoffice/contrib/dictionaries/ \
-		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/dictionaries/
+MASTER_SITES+=	http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/dictionaries/ \
+		ftp://ftp.t.ring.gr.jp/pub/misc/openoffice/contrib/dictionaries/ \
+		http://ftp.gwdg.de/pub/misc/openoffice/contrib/dictionaries/
 DISTFILES+=	${LANGDIST}
 DISTFILES+=	${HYPHDIST}
 DISTFILES+=	${THESDIST}
@@ -20,48 +21,46 @@ COMMENT?=	MySpell dictionaries for OpenOffice.org
 USE_ZIP=	yes
 EXTRACT_ONLY=
 
-.if !defined(LANGDIST)
+.if !defined(LOCALIZED_LANG)
 DICTMETAPORT=	yes
 LANGDIST?=	af_ZA.zip bg_BG.zip ca_ES.zip cs_CZ.zip cy_GB.zip \
 		da_DK.zip de_AT.zip de_DE.zip de_CH.zip el_GR.zip \
 		en_AU.zip en_CA.zip en_GB.zip en_NZ.zip en_US.zip \
-		es_ES.zip es_MX.zip fo_FO.zip fr_BE.zip fr_FR.zip \
-		ga_IE.zip gd_GB.zip gl_ES.zip he_IL.zip hr_HR.zip \
-		hu_HU.zip id_ID.zip it_IT.zip ku_TR.zip lt_LT.zip \
-		mg_MG.zip mi_NZ.zip ms_MY.zip nb_NO.zip nl_NL.zip \
-		nn_NO.zip ny_MW.zip pl_PL.zip pt_PT.zip pt_BR.zip \
-		ro_RO.zip rw_RW.zip ru_RU.zip sk_SK.zip sl_SI.zip \
-		sv_SE.zip sw_KE.zip tl_PH.zip tn_ZA.zip uk_UA.zip \
-		zu_ZA.zip
-
+		eo_EO.zip es_ES.zip es_MX.zip fo_FO.zip \
+		fr_BE.zip fr_FR.zip ga_IE.zip gd_GB.zip gl_ES.zip \
+		he_IL.zip hr_HR.zip hu_HU.zip id_ID.zip \
+		it_IT.zip ku_TR.zip lt_LT.zip lv_LV.zip mg_MG.zip \
+		mi_NZ.zip ms_MY.zip nb_NO.zip nl_NL.zip nn_NO.zip \
+		ny_MW.zip pl_PL.zip pt_PT.zip pt_BR.zip ro_RO.zip \
+		ru_RU.zip rw_RW.zip sk_SK.zip sl_SI.zip sv_SE.zip \
+		sw_KE.zip tl_PH.zip tn_ZA.zip uk_UA.zip zu_ZA.zip
+#?? fi_FI.zip
 HYPHDIST?=	hyph_bg_BG.zip hyph_cs_CZ.zip hyph_da_DK.zip \
 		hyph_de_CH.zip hyph_de_DE.zip hyph_el_GR.zip \
-		hyph_en_CA.zip hyph_en_AU.zip hyph_en_CA.zip \
-		hyph_en_GB.zip hyph_en_NZ.zip hyph_en_US.zip \
-		hyph_es_ES.zip hyph_es_MX.zip hyph_fr_BE.zip \
-		hyph_fr_FR.zip hyph_ga_IE.zip hyph_id_ID.zip \
-		hyph_it_IT.zip hyph_nl_NL.zip hyph_pl_PL.zip \
-		hyph_pt_BR.zip hyph_pt_PT.zip hyph_ro_RO.zip \
-		hyph_ru_RU.zip hyph_sk_SK.zip hyph_sl_SI.zip \
-		hyph_sv_SE.zip hyph_uk_UA.zip
-
-THESDIST?=	thes_bg_BG.zip thes_cs_CZ.zip thes_de_DE.zip \
-		thes_es_ES.zip thes_fr_FR.zip thes_hu_HU.zip \
-		thes_it_IT.zip thes_pl_PL.zip thes_sk_SK.zip
+		hyph_en_AU.zip hyph_en_CA.zip hyph_en_GB.zip \
+		hyph_en_NZ.zip hyph_en_US.zip hyph_es_ES.zip \
+		hyph_es_MX.zip hyph_et_EE.zip \
+		hyph_fr_FR.zip hyph_ga_IE.zip hyph_hu_HU.zip hyph_ia.zip \
+		hyph_id_ID.zip hyph_is_IS.zip hyph_it_IT.zip \
+		hyph_lt_LT.zip hyph_lv_LV.zip hyph_nl_NL.zip \
+		hyph_pl_PL.zip hyph_pt_BR.zip hyph_pt_PT.zip \
+		hyph_ro_RO.zip hyph_ru_RU.zip hyph_sk_SK.zip \
+		hyph_sl_SI.zip hyph_uk_UA.zip
+#?? hyph_fr_BE.zip hyph_sv_SE.zip
+THESDIST?=	thes_bg_BG.zip thes_cs_CZ.zip thes_de_DE_v2.zip \
+		thes_en_US_v2.zip thes_es_ES.zip thes_fr_FR_v2.zip \
+		thes_hu_HU.zip thes_it_IT.zip thes_pl_PL_v2.zip \
+		thes_sk_SK_v2.zip
 .endif
 CUT?=	/usr/bin/cut
 
 .include <bsd.port.pre.mk>
+.include <${FILESDIR}/Makefile.localized>
 
 .if !defined(INSTALLATION_BASEDIR)
 INSTALLATION_BASEDIR=	OpenOffice.org1.1.5
-.if defined(RDEP)
-BUILD_DEPENDS=	${DICT_LIST_INST}:${RDEP}
-RUN_DEPENDS=	${DICT_LIST_INST}:${RDEP}
-.else
 BUILD_DEPENDS=	${DICT_LIST_INST}:${PORTSDIR}/editors/openoffice.org-1.1
 RUN_DEPENDS=	${DICT_LIST_INST}:${PORTSDIR}/editors/openoffice.org-1.1
-.endif
 .endif
 # needed for install stage
 RUN_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
@@ -92,18 +91,33 @@ EXTRACT_CMD_L?=		unzip
 EXTRACT_BEFORE_ARGS_L?=	-q -o
 EXTRACT_AFTER_ARGS_L?=	-d ${PREFIX}/${DICT_DIR}
 
+pre-fetch:
+.if !defined(LOCALIZED_LANG)
+	@${ECHO}
+	@${ECHO} "You can select the language for OOo by making it with:"
+	@${ECHO} "make LOCALIZED_LANG=xx_YY"
+	@${ECHO} "while xx_YY can be one of the following"
+	@${ECHO} "af_ZA bg_BG ca_ES cs_CZ cy_GB en_AU en_CA"
+	@${ECHO} "en_GB en_NZ en_US eo_EO es_ES es_MX"
+	@${ECHO} "fo_FO fr_BE fr_FR ga_IE gd_GB gl_ES he_IL"
+	@${ECHO} "hr_HR hu_HU id_ID is_IS it_IT ku_TR lt_LT"
+	@${ECHO} "lv_LV mg_MG mi_NZ ms_MY nb_NO nl_NL nn_NO"
+	@${ECHO} "ny_MW pl_PL pt_PT pt_BR ro_RO ru_RU rw_RW"
+	@${ECHO} "sk_SK sl_SI sv_SE sw_KE tl_PH tn_ZA uk_UA"
+	@${ECHO} "zu_ZA"
+	@${ECHO}
+.endif
 pre-install:
 .if ! exists(${WRKDIR}/pkg-plist)
 	@${TOUCH} ${WRKDIR}/pkg-plist
 .endif
 
 do-install:
-
 post-install:
 	@for file in ${LANGDIST}; do \
 		ABRV=`${ECHO_CMD} $${file} | ${SED} -e 's|\.zip||'`; \
-		LANGUAGE=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|_.*||'`; \
-		COUNTRY=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|.*_||' | ${CUT} -c 1,2`; \
+		LANGUAGE=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|_| |g' | ${AWK} '{print $$1}' `; \
+		COUNTRY=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|_| |g' | ${AWK} '{print $$2}' ` ; \
 		if ! ( ${GREP} "DICT $${LANGUAGE} $${COUNTRY}" \
 		    ${DICT_LIST_INST} > /dev/null && test -z $${DICT_OVERWRITE} ) ; \
 		then  \
@@ -133,28 +147,6 @@ post-install:
 			    fi" >> ${TMPPLIST} ; \
 			${ECHO} "@unexec ${RM} ${DICT_LIST}.$${LANGUAGE}_$${COUNTRY}" \
 			    >> ${TMPPLIST} ; \
-			case $${ABRV} in \
-			de_DE) \
-				${ECHO_MSG} "===>   Cross-register spelling dictionary $${ABRV} to $${LANGUAGE}_AT"; \
-				${LN} -fs ${DICT_PATH}/de_DE.aff ${DICT_PATH}/de_AT.aff; \
-				${ECHO} "@exec ${ECHO} \"DICT $${LANGUAGE} AT de_AT\" \
-				    >> ${DICT_LIST}" >> ${TMPPLIST} ; \
-				${ECHO_CMD} "DICT $$LANGUAGE AT $${ABRV}" >> ${DICT_LIST_INST} ; \
-				cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f \
-				    | ${GREP} $${LANGUAGE}_AT >> ${TMPPLIST} ; \
-				cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type l \
-				    | ${GREP} $${LANGUAGE}_AT >> ${TMPPLIST} ; \
-				${ECHO} "@unexec ${CP} ${DICT_LIST} \
-				    ${DICT_LIST}.$${LANGUAGE}_AT" >> ${TMPPLIST} ; \
-				${ECHO} "@unexec \
-				    if ! ( ${CAT} ${DICT_LIST}.$${LANGUAGE}_AT | \
-					${GREP} -v -e '^DICT.*$${LANGUAGE}_AT' > ${DICT_LIST} ) ;  then \
-					${ECHO_MSG} '===>   Notice: ${DICT_LIST} is empty' ; \
-				    fi" >> ${TMPPLIST} ; \
-				${ECHO} "@unexec ${RM} ${DICT_LIST}.$${LANGUAGE}_AT" \
-				    >> ${TMPPLIST} ; \
-				;; \
-			esac \
 		else \
 				${ECHO_MSG} "===>   Dictionary $${LANGUAGE}_$${COUNTRY} already registered"; \
 				${ECHO_MSG} "===>   Set DICT_OVERWRITE=YES if you like to overwrite it"; \
@@ -162,8 +154,8 @@ post-install:
 	done
 	@for file in ${HYPHDIST}; do \
 		ABRV=`${ECHO_CMD} $${file} | ${SED} -e 's|\.zip||' -e 's|^hyph_||'`; \
-		LANGUAGE=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|_.*||'`; \
-		COUNTRY=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|.*_||' | ${CUT} -c 1,2 | ${TR} "[:lower:]" "[:upper:]"` ; \
+		LANGUAGE=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|_| |g' | ${AWK} '{print $$1}' `; \
+		COUNTRY=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|_| |g' | ${AWK} '{print $$2}' ` ; \
 		if ! ( ${GREP} "HYPH $${LANGUAGE} $${COUNTRY}" \
 		    ${DICT_LIST_INST} > /dev/null && test -z $${DICT_OVERWRITE} ) ; \
 		then  \
@@ -199,8 +191,8 @@ post-install:
 	done
 	@for file in ${THESDIST}; do \
 		ABRV=`${ECHO_CMD} $${file} | ${SED} -e 's|\.zip||' -e 's|^thes_||'`; \
-		LANGUAGE=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|_.*||'`; \
-		COUNTRY=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|.*_||' | ${CUT} -c 1,2 | ${TR} "[:lower:]" "[:upper:]"` ; \
+		LANGUAGE=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|_| |g' | ${AWK} '{print $$1}' `; \
+		COUNTRY=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|_| |g' | ${AWK} '{print $$2}' ` ; \
 		if ! ( ${GREP} "THES $${LANGUAGE} $${COUNTRY}" \
 			${DICT_LIST_INST} > /dev/null && test -z $${DICT_OVERWRITE} ) ; \
 		then \
