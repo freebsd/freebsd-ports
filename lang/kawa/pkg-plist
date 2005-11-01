@@ -1,4 +1,5 @@
 bin/cgi-servlet
 bin/kawa
-share/java/kawa-1.7.jar
+bin/qexo
+share/java/kawa-1.8.jar
 share/java/kawa.jar
