@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	A simple HTML-based presentation system
 
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}
 
@@ -23,11 +25,11 @@ S5_SUBDIRS=	pix primer s5-blank ui
 do-build:
 		cd ${WRKSRC} && ${UNZIP_CMD} s5-blank.zip
 		${SED} -e "s,/usr/local,${PREFIX}," ${FILESDIR}/s5-blank.sh > ${WRKDIR}/s5-blank.sh
+		${FIND} ${WRKDIR} -type f -name .DS_Store -delete
 
 do-install:
 		${MKDIR} ${S5_DIR}
 		${CP} ${WRKDIR}/*.html ${S5_DIR}/
-		${FIND} ${WRKDIR} -type f -name .DS_Store -delete
 .for i in ${S5_SUBDIRS}
 		${CP} -Rp ${WRKDIR}/$i/ ${S5_DIR}/$i/
 .endfor
