@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DFileServer
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	www
 MASTER_SITES=	http://harpy.soarwitheagles.net/~dashy/
 
@@ -18,12 +18,17 @@ PLIST_FILES=	bin/dfileserver
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAKE_ENV=	CXX=${CXX}
+USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
 USE_GCC=	3.4+
 .endif
+
+post-patch:
+	${REINPLACE_CMD} 's,g++,${CXX},;s,$$GCCFLAGS,${CXXFLAGS},; \
+		s,strip,${STRIP_CMD},' ${WRKSRC}/build.sh
 
 do-build:
 	@(cd ${WRKSRC}; \
