@@ -267,6 +267,7 @@
     SUBDIR += p5-Authen-PAM
     SUBDIR += p5-Authen-Radius
     SUBDIR += p5-Authen-SASL
+    SUBDIR += p5-Authen-SASL-Cyrus
     SUBDIR += p5-Authen-Smb
     SUBDIR += p5-Authen-TacacsPlus
     SUBDIR += p5-Authen-Ticket
