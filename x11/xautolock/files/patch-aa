@@ -1,45 +1,13 @@
-
-$FreeBSD$
-
---- xautolock.c.orig	Thu Mar 11 23:43:25 1999
-+++ xautolock.c	Sun Aug 22 17:45:10 2004
-@@ -297,6 +297,8 @@
-  *  with vroot.h, because it needs to know the real root window.
-  */
- 
-+#include <sys/param.h>
-+
- #if defined(hpux) || defined (__hpux)
- #ifndef _HPUX_SOURCE
- #define _HPUX_SOURCE
-@@ -368,7 +370,9 @@
- #endif /* !NOSTDHDRS */
- 
- #if !defined (apollo) && !defined (VMS)
-+#if !defined (BSD)
- #include <malloc.h>
-+#endif /* !BSD */
- #include <unistd.h>
- #endif /* !apollo && !VMS */
- 
-@@ -1970,7 +1974,8 @@
- #ifdef __GNUC__
- 	default: /* Makes gcc -Wall shut up. */
- #endif /* __GNUC__ */
--      }
-+      break;
-+	}
-     }
-   }
-   else
-@@ -2028,7 +2033,9 @@
+--- src/engine.c.orig	Tue Nov  1 16:57:31 2005
++++ src/engine.c	Tue Nov  1 17:11:51 2005
+@@ -209,7 +209,9 @@
  #else /* VMS */
-   if (locker_pid)
+   if (lockerPid)
    {
--#if !defined (UTEKV) && !defined (SYSV) && !defined(SVR4)
-+#if defined (BSD)
-+    int status;
-+#elif !defined (UTEKV) && !defined (SYSV) && !defined(SVR4)
+-#if !defined (UTEKV) && !defined (SYSV) && !defined (SVR4)
++#if defined (__FreeBSD__)
++    int		status;
++#elif !defined (UTEKV) && !defined (SYSV) && !defined (SVR4)
      union wait  status;      /* childs process status */
  #else /* !UTEKV && !SYSV && !SVR4 */
      int         status = 0;  /* childs process status */
