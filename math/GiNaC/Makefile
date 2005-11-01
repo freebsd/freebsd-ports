@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	GiNaC
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 		http://www.ginac.de/
@@ -16,10 +16,10 @@ DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ library for symbolic mathematical calculations
 
-LIB_DEPENDS=	cln.3:${PORTSDIR}/math/cln
+LIB_DEPENDS=	cln.4:${PORTSDIR}/math/cln
 
 USE_BZIP2=	yes
-USE_GCC=	3.4
+USE_GCC=	3.4+
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
