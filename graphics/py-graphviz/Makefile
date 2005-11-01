@@ -17,8 +17,9 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to GraphViz agraph
 
-BUILD_DEPENDS=	${SWIG_CMD}:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	agraph.0:${PORTSDIR}/graphics/graphviz
+BUILD_DEPENDS=	${SWIG_CMD}:${PORTSDIR}/devel/swig13 \
+		dot:${PORTSDIR}/graphics/graphviz
+RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 
 NO_CDROM=	"Can't be included in a commercial product"
 
