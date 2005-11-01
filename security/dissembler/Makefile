@@ -8,7 +8,7 @@
 PORTNAME=	dissembler
 PORTVERSION=	0.9
 CATEGORIES=	security
-MASTER_SITES=	http://www.phiral.com/research/
+MASTER_SITES=	http://www.l0t3k.net/tools/ShellCode/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
