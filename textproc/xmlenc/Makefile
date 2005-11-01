@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmlenc
-PORTVERSION=	0.49
+PORTVERSION=	0.51
 CATEGORIES=	textproc java
 MASTER_SITES=	http://${PORTNAME}.sourceforge.net/
 
