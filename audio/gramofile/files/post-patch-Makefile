@@ -1,0 +1,26 @@
+Index: Makefile
+@@ -20,16 +20,16 @@
+ ########## CHOOSE YOUR ARCHITECTURE:    (NOTE: also see bplaysrc/Makefile!)
+ 
+ # For Linux (and maybe others), use these:
+-CFLAGS = -Wall -O2 -funroll-loops -DTURBO_MEDIAN -DTURBO_BUFFER
+-DEPS = $(OBJS) makebplay
+-LIBS = -lncurses -lrfftw -lfftw -lm
+-COPY_A = -a
++#CFLAGS = -Wall -O2 -funroll-loops -DTURBO_MEDIAN -DTURBO_BUFFER
++#DEPS = $(OBJS) makebplay
++#LIBS = -lncurses -lrfftw -lfftw -lm
++#COPY_A = -a
+ 
+ # For FreeBSD (and maybe others), use these:
+-#CFLAGS = -Wall -O2 -DTURBO_MEDIAN -DTURBO_BUFFER
+-#DEPS = $(OBJS) makebplay
+-#LIBS = -lncurses  -lrfftw -lfftw -lm
+-#COPY_A = -p
++CFLAGS += -Wall -DTURBO_MEDIAN -DTURBO_BUFFER -I${LOCALBASE}/include
++DEPS = $(OBJS) makebplay
++LIBS = -L${LOCALBASE}/lib -lncurses  -lrfftw -lfftw -lm
++COPY_A = -p
+ 
+ # For IRIX (and maybe others), use these:
+ #CFLAGS = -Wall -O2 -DTURBO_MEDIAN -DTURBO_BUFFER -DSWAP_ENDIAN -DOLD_CURSES

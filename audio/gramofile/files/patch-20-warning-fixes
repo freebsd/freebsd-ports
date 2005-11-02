@@ -1,0 +1,171 @@
+# Patch by Tom Harvey <TomHarvey@IndustryFigure.com>
+# Rediffed. [dk]
+# Also changed return type of bplay.c. [dk]
+#PATCHOPTIONS: -p1
+Index: bplaysrc/bplay.c
+@@ -91,7 +91,7 @@
+ extern void cleanupsems(void);
+ 
+ 
+-void main(int argc, char *argv[])
++int main(int argc, char *argv[])
+ {
+ 	
+ 	int recorder = 0;		/* 1 if recording, 0 else */
+@@ -398,6 +398,7 @@
+ 	}
+ 
+ 	finish_curses(0);
++	exit(0);	/* Not reached, but keeps compiler happy. */
+ }
+ 
+ void Usage(void)
+Index: clrscr.c
+@@ -8,6 +8,7 @@
+  */
+ 
+ #include "clrscr.h"
++#include <string.h>
+ #ifndef OLD_CURSES
+ #include <ncurses.h>
+ #else
+Index: errorwindow.c
+@@ -11,6 +11,8 @@
+ #include "buttons.h"
+ #include "boxes.h"
+ #include "textwindow.h"
++
++#include <string.h>
+ #ifndef OLD_CURSES
+ #include <ncurses.h>
+ #else
+Index: gramofile.c
+@@ -42,7 +42,7 @@
+   exit (0);
+ }
+ 
+-void
++int
+ main (void)
+ {
+   char startdir[250];
+@@ -63,4 +63,5 @@
+   mainmenu (startdir);
+ 
+   finishmenu (0);
++  return 0;
+ }
+Index: mainmenu.c
+@@ -21,6 +21,7 @@
+ #include "tracksplit.h"
+ #include <stdlib.h>
+ #include <unistd.h>
++#include <string.h>
+ #ifndef OLD_CURSES
+ #include <ncurses.h>
+ #else
+Index: signpr_cmf.c
+@@ -30,6 +30,7 @@
+ #include "yesnowindow.h"
+ #include <stdlib.h>
+ #include <stdio.h>
++#include <string.h>
+ #include <math.h>
+ #ifndef OLD_CURSES
+ #include <ncurses.h>
+@@ -88,8 +89,8 @@
+   {
+     " ^: no neat interpolation.              v: broad ticks not filtered out.       ",
+     " ^: less ticks detected.                v: not all of tick interpolated.       ",
+-    " ^: bad following of dynamics.          v: less ticks detected.                ",
+-    " ^: bad following of dynamics.          v: less ticks detected.                ",
++    " ^: bad following of dynamics.          v: fewer ticks detected.               ",
++    " ^: bad following of dynamics.          v: fewer ticks detected.               ",
+     " ^: only strong ticks detected.         v: music-ticks also filtered out.      ",
+     " Discard changes.                                                              ",
+     " Reset default values.                                                         ",
+Index: signpr_cmf2.c
+@@ -32,6 +32,7 @@
+ #include "yesnowindow.h"
+ #include <stdlib.h>
+ #include <stdio.h>
++#include <string.h>
+ #include <math.h>
+ #ifndef OLD_CURSES
+ #include <ncurses.h>
+@@ -90,9 +91,9 @@
+ 
+   char *helplines[8] =
+   {
+-    " ^: less ticks detected.                v: not all of tick interpolated.       ",
+-    " ^: bad following of dynamics.          v: less ticks detected.                ",
+-    " ^: bad following of dynamics.          v: less ticks detected.                ",
++    " ^: fewer ticks detected.               v: not all of tick interpolated.       ",
++    " ^: bad following of dynamics.          v: fewer ticks detected.               ",
++    " ^: bad following of dynamics.          v: fewer ticks detected.               ",
+     " ^: detected tick length too short      v: detected tick length longer.        ",
+     " ^: only strong ticks detected.         v: music-ticks also filtered out.      ",
+     " Discard changes.                                                              ",
+Index: signpr_doubmed.c
+@@ -19,6 +19,7 @@
+ #endif
+ #include <stdlib.h>
+ #include <stdio.h>
++#include <string.h>
+ #ifndef SWIG
+ #ifndef OLD_CURSES
+ #include <ncurses.h>
+Index: signpr_mean.c
+@@ -19,6 +19,7 @@
+ #endif
+ #include <stdlib.h>
+ #include <stdio.h>
++#include <string.h>
+ #ifndef SWIG
+ #ifndef OLD_CURSES
+ #include <ncurses.h>
+Index: signpr_median.c
+@@ -19,6 +19,7 @@
+ #endif
+ #include <stdlib.h>
+ #include <stdio.h>
++#include <string.h>
+ #ifndef SWIG
+ #ifndef OLD_CURSES
+ #include <ncurses.h>
+Index: signpr_rms.c
+@@ -17,6 +17,7 @@
+ #include "helpline.h"
+ #include <stdlib.h>
+ #include <stdio.h>
++#include <string.h>
+ #include <math.h>
+ #ifndef OLD_CURSES
+ #include <ncurses.h>
+Index: stringinput.c
+@@ -8,6 +8,7 @@
+  */
+ 
+ #include "stringinput.h"
++#include <string.h>
+ #ifndef OLD_CURSES
+ #include <ncurses.h>
+ #else
+Index: tracksplit_parammenu.c
+@@ -16,6 +16,7 @@
+ #include "helpline.h"
+ #include <stdlib.h>
+ #include <stdio.h>
++#include <string.h>
+ #ifndef OLD_CURSES
+ #include <ncurses.h>
+ #else
+Index: yesnowindow.c
+@@ -11,6 +11,7 @@
+ #include "buttons.h"
+ #include "boxes.h"
+ #include "textwindow.h"
++#include <string.h>
+ #ifndef OLD_CURSES
+ #include <ncurses.h>
+ #else
