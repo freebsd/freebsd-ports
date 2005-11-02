@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Math-Combinatorics
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@daltons.ca
+MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Perform combinations and permutations on lists
 
 MAN3=		Math::Combinatorics.3
