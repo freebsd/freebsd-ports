@@ -20,7 +20,7 @@ MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/1.1.5/
 		${MASTER_SITE_MOZILLA:S/$/:mozsrc/} \
 		http://openoffice.lunarshells.com/sources/helpcontent/:help \
 		${MASTER_SITE_RINGSERVER:S/$/:help/} \
-Jz		${MASTER_SITE_RINGSERVER:S/$/:help3/} \
+		${MASTER_SITE_RINGSERVER:S/$/:help3/} \
 		ftp://ftp.kddlabs.co.jp/office/openoffice/contrib/helpcontent/:help \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent/:help \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help \
