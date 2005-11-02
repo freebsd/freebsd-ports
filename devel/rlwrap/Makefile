@@ -8,6 +8,7 @@
 
 PORTNAME=	rlwrap
 PORTVERSION=	0.24
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://utopia.knoware.nl/~hlub/uck/rlwrap/
 
@@ -17,7 +18,7 @@ COMMENT=	Readline wrapper
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV+=	ptyttylib_cv_ptys=BSD
+CONFIGURE_ENV+=	ptyttylib_cv_ptys=BSD LDFLAGS=-lutil
 
 MAN1=	rlwrap.1
 
