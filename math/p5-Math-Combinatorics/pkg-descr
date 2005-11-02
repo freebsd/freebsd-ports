@@ -9,7 +9,6 @@ This module provides a pure-perl implementation of nCk, nPk, and n!
 (combination, permutation, and factorial, respectively).
 
 Author: Allen Day <allenday@ucla.edu>
-
 WWW: http://search.cpan.org/dist/Math-Combinatorics/
 
 - Aaron Dalton
