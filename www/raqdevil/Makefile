@@ -20,7 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/sendmail:${PORTSDIR}/mail/sendmail-sasl		\
 		${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph		\
 		${SITE_PERL}/Mail/SPF/Query.pm:${PORTSDIR}/mail/p5-Mail-SPF-Query	\
 		logrotate:${PORTSDIR}/sysutils/logrotate	\
-		httpd:${PORTSDIR}/www/apache20			\
 		perl:${PORTSDIR}/lang/perl5.8			\
 		imapd:${PORTSDIR}/mail/imap-uw			\
 		pcretest:${PORTSDIR}/devel/pcre			\
