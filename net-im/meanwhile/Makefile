@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	meanwhile
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,9 +14,16 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Open Source implementation of the Lotus Sametime protocol
 
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=15
+CONFIGURE_ARGS=	--enable-doxygen=no
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-doc-${PORTVERSION}
 
 .include <bsd.port.mk>

@@ -10,6 +10,7 @@ include/meanwhile/mw_srvc_conf.h
 include/meanwhile/mw_srvc_dir.h
 include/meanwhile/mw_srvc_ft.h
 include/meanwhile/mw_srvc_im.h
+include/meanwhile/mw_srvc_place.h
 include/meanwhile/mw_srvc_resolve.h
 include/meanwhile/mw_srvc_store.h
 include/meanwhile/mw_st_list.h
@@ -17,4 +18,14 @@ lib/libmeanwhile.a
 lib/libmeanwhile.so
 lib/libmeanwhile.so.0
 libdata/pkgconfig/meanwhile.pc
+%%DOCSDIR%%/samples/README
+%%DOCSDIR%%/samples/build
+%%DOCSDIR%%/samples/logging_proxy.c
+%%DOCSDIR%%/samples/login_server.c
+%%DOCSDIR%%/samples/nocipher_proxy.c
+%%DOCSDIR%%/samples/redirect_server.c
+%%DOCSDIR%%/samples/sendmessage.c
+%%DOCSDIR%%/samples/socket.c
+@dirrm %%DOCSDIR%%/samples
+@dirrm %%DOCSDIR%%
 @dirrm include/meanwhile
