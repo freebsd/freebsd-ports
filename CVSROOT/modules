@@ -7476,6 +7476,7 @@ p5-Class-ReturnValue	ports/devel/p5-Class-ReturnValue
 p5-Class-Roles	ports/devel/p5-Class-Roles
 p5-Class-Singleton	ports/devel/p5-Class-Singleton
 p5-Class-Tangram	ports/devel/p5-Class-Tangram
+p5-Class-Throwable	ports/devel/p5-Class-Throwable
 p5-Class-Tom	ports/devel/p5-Class-Tom
 p5-Class-Trigger	ports/devel/p5-Class-Trigger
 p5-Class-Virtual	ports/devel/p5-Class-Virtual
