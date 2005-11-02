@@ -500,6 +500,7 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimpcolor/index.html
 %%DOCSDIR%%/libgimpcolor/index.sgml
 %%DOCSDIR%%/libgimpcolor/left.png
+%%DOCSDIR%%/libgimpcolor/style.css
 %%DOCSDIR%%/libgimpcolor/libgimpcolor-GimpAdaptiveSupersample.html
 %%DOCSDIR%%/libgimpcolor/libgimpcolor-GimpBilinear.html
 %%DOCSDIR%%/libgimpcolor/libgimpcolor-GimpCMYK.html
@@ -514,6 +515,7 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimpmath/index.html
 %%DOCSDIR%%/libgimpmath/index.sgml
 %%DOCSDIR%%/libgimpmath/left.png
+%%DOCSDIR%%/libgimpmath/style.css
 %%DOCSDIR%%/libgimpmath/libgimpmath-GimpMD5.html
 %%DOCSDIR%%/libgimpmath/libgimpmath-GimpMath.html
 %%DOCSDIR%%/libgimpmath/libgimpmath-GimpMatrix.html
@@ -528,6 +530,7 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimpmodule/index.html
 %%DOCSDIR%%/libgimpmodule/index.sgml
 %%DOCSDIR%%/libgimpmodule/left.png
+%%DOCSDIR%%/libgimpmodule/style.css
 %%DOCSDIR%%/libgimpmodule/libgimpmodule.devhelp
 %%DOCSDIR%%/libgimpmodule/libgimpmodule.html
 %%DOCSDIR%%/libgimpmodule/right.png
@@ -583,6 +586,7 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimpwidgets/libgimpwidgets-GimpQueryBox.html
 %%DOCSDIR%%/libgimpwidgets/libgimpwidgets-GimpScrolledPreview.html
 %%DOCSDIR%%/libgimpwidgets/libgimpwidgets-GimpStock.html
+%%DOCSDIR%%/libgimpwidgets/libgimpwidgets-GimpStock.html~
 %%DOCSDIR%%/libgimpwidgets/libgimpwidgets-GimpWidgets.html
 %%DOCSDIR%%/libgimpwidgets/libgimpwidgets-cell-renderers.html
 %%DOCSDIR%%/libgimpwidgets/libgimpwidgets-colordisplay.html
@@ -1773,6 +1777,10 @@ share/locale/lt/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/lt/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/lt/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/lt/LC_MESSAGES/gimp20.mo
+share/locale/mk/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/mk/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/mk/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/mk/LC_MESSAGES/gimp20.mo
 share/locale/ms/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/ms/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/ms/LC_MESSAGES/gimp20-std-plug-ins.mo
