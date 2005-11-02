@@ -3,3 +3,4 @@ bin/ufraw-batch
 libexec/gimp/2.2/plug-ins/ufraw-gimp
 share/applications/ufraw.desktop
 share/pixmaps/ufraw.png
+@unexec rmdir %D/share/applications 2> /dev/null || true
