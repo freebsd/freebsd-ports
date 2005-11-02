@@ -1,0 +1,4 @@
+To use python-mode in Emacs/XEmacs, add the following lines to your ~/.emacs:
+
+(autoload 'python-mode "python-mode" "Mode for editing Python source files")
+(add-to-list 'auto-mode-alist '("\\.py" . python-mode))
