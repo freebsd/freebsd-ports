@@ -8,7 +8,7 @@
 
 PORTNAME=	gopchop
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://outflux.net/unix/software/GOPchop/download/
@@ -39,7 +39,8 @@ PLIST_SUB+=	NLS=""
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's| -mcpu=.*"|"|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|pixmaps/\$${PACKAGE}|\$${PACKAGE}|g ; \
+		 s| -mcpu=.*"|"|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|pixmaps/\$$(PACKAGE)|\$$(PACKAGE)/pixmaps|g ; \
 		 s|-lglib||g'
