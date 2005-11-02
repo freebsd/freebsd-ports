@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	i2p
-PORTVERSION=	0.6.1.3
+PORTVERSION=	0.6.1.4
 CATEGORIES=	net java security
 MASTER_SITES=	http://dev.i2p.net/i2p/
 
@@ -14,8 +14,6 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	An anonymous network
 
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-
-BROKEN=		Does not build
 
 USE_BZIP2=	yes
 USE_RC_SUBR=	yes
