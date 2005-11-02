@@ -1,5 +1,3 @@
   All headers, which are need to develop for Agenda VR3 PDA.
   Agenda VR3 uses Linux VR (mipsel-linux gcc target) as OS.
-  See also devel/agenda-libs port. 
-  
-WWW: http://dev.agendacomputing.org/
+  See also devel/agenda-libs port.
