@@ -1,5 +1,6 @@
 #!/bin/sh
 
+PREF=${PREFIX:-$PKG_PREFIX}
 PATH=/bin:/usr/sbin
 
 case $2 in
@@ -19,13 +20,11 @@ POST-INSTALL)
 
 	/usr/bin/touch /etc/mail/access
 
-	if [ \! -d /usr/local/raqdevil/ui/web/base/sitestats/img ]; then
-		mkdir -p /usr/local/raqdevil/ui/web/base/sitestats/img;
-		chown www:wheel /usr/local/raqdevil/ui/web/base/sitestats/img;
-		mkdir -p /usr/local/raqdevil/skel/spam;
-		mkdir -p /usr/local/raqdevil/skel/quarantine;
-		mkdir -p /usr/local/raqdevil/sessions;
-	fi;
+	mkdir -p ${PREF}/raqdevil/ui/web/base/sitestats/img;
+	chown www:wheel ${PREF}/raqdevil/ui/web/base/sitestats/img;
+	mkdir -p ${PREF}/raqdevil/skel/spam;
+	mkdir -p ${PREF}/raqdevil/skel/quarantine;
+	mkdir -p ${PREF}/raqdevil/sessions;
 
 	( cd /etc/namedb; sh /etc/namedb/make-localhost )
 	;;

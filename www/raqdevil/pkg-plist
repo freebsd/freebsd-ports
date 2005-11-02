@@ -23,6 +23,7 @@ admserv/certs/key
 admserv/certs/request
 admserv/libexec
 bin/clamfilter.pl
+bin/generateGraph.pl
 etc/apache2/httpd.conf
 etc/apache2/ssl.conf
 etc/build
@@ -34,6 +35,7 @@ etc/proftpd.conf
 etc/rc.d/admserv.sh
 etc/rc.d/cced.sh
 etc/ssh_banner
+etc/snmp/snmpd.conf
 etc/xinetd.conf
 etc/xinetd/xinetd.d/imap
 etc/xinetd/xinetd.d/imaps
@@ -596,6 +598,9 @@ raqdevil/ui/menu/palette/palette_attachments.xml
 raqdevil/ui/style/trueBlue.xml
 raqdevil/ui/style/trueBlue.xml.en
 raqdevil/ui/style/trueBlue.xml.ja
+raqdevil/ui/style/trueBlue.xml.fr
+raqdevil/ui/style/trueBlue.xml.de
+raqdevil/ui/style/trueBlue.xml.es
 raqdevil/ui/web/base/alpine/adminredirect.html
 raqdevil/ui/web/base/alpine/license.php
 raqdevil/ui/web/base/alpine/splashPersonal.php
@@ -1006,7 +1011,10 @@ raqdevil/ui/web/test_i18n.php
 raqdevil/ui/web/uiLog.php
 raqdevil/ui/web/uifc/MultiFileUpload.php
 raqdevil/ui/web/uifc/MultiFileUploadHandler.php
+sbin/ftplog2commonlog
+sbin/maillog2commonlog.pl
 sbin/split_logs
+sbin/grab_logs.pl
 share/locale/de/LC_MESSAGES/base-am.mo
 share/locale/de/LC_MESSAGES/base-apache.mo
 share/locale/de/LC_MESSAGES/base-cce.mo
@@ -1286,8 +1294,6 @@ share/locale/fr/LC_MESSAGES/trueBlue.mo
 @dirrm raqdevil/ccewrap
 @dirrm raqdevil/bin
 @dirrm raqdevil
-@dirrm etc/rc.d/init.d
-@dirrm etc/ccewrap.d
 @dirrm admserv/run
 @dirrm admserv/conf.d
 @dirrm admserv/conf
