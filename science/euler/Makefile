@@ -7,44 +7,33 @@
 #
 
 PORTNAME=	euler
-PORTVERSION=	1.60.6
-PORTREVISION=	1
+PORTVERSION=	1.61.0
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program computes with real and complex numbers and matrices
 
-WRKSRC=		${WRKDIR}/${DISTNAME:R}/source
-
-USE_GNOME=	gtk12
+USE_GNOME=	gnometarget gtk20
 USE_REINPLACE=	yes
-MAKEFILE=	makefile
-ALL_TARGET=	euler
+GNU_CONFIGURE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^CC=gcc|CC+= \$$\{CFLAGS\}|g ; \
-		 s|[(]INSTALL_DIR[)]|(PREFIX)|g ; \
-		 s|-O2||g ; \
-		 s|g++|\$$\{CXX\}|g ; \
-		 s|gtk-config|\$$\{GTK_CONFIG\}|g ; \
-		 s|glib-config|\$$\{GLIB_CONFIG\}|g' ${WRKSRC}/${MAKEFILE}
-	@${REINPLACE_CMD} -e 's|_DIR,|_DIR |g' ${WRKSRC}/main.c
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|docs||g ; \
+		 /^install-data-am/s|install-eulerdocDATA||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^AM_CFLAGS/d ; \
+		 /-Wall/d ; \
+		 /-O3/d' ${WRKSRC}/src/Makefile.in
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/euler ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/help.txt ${DATADIR}
-.for dir in progs progs/user
-	@${MKDIR} ${DATADIR}/${dir}
-	${INSTALL_DATA} ${WRKSRC}/../${dir}/*.* ${DATADIR}/${dir}
-.endfor
+post-install:
 .if !defined(NOPORTDOCS)
-.for dir in . french german german/images images reference
-	@${MKDIR} ${DOCSDIR}/${dir}
-	${INSTALL_DATA} ${WRKSRC}/../docs/${dir}/*.* ${DOCSDIR}/${dir}
-.endfor
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/docs && ${FIND} . ! -name "*Makefile*" | \
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	@${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	@${FIND} ${DOCSDIR} -type d | ${XARGS} ${CHMOD} ${BINMODE}
 .endif
 
 .include <bsd.port.mk>
