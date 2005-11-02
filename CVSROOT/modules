@@ -952,6 +952,7 @@ calc		ports/math/calc
 calcoo		ports/math/calcoo
 calctool	ports/math/calctool
 calculix	ports/cad/calculix
+calcurse	ports/deskutils/calcurse
 calibrator	ports/devel/calibrator
 calife		ports/security/calife
 calife-devel		ports/security/calife-devel
