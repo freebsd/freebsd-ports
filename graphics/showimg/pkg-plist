@@ -1,9 +1,24 @@
 bin/showimg
-lib/kde3/libshowimgpart.la
-lib/kde3/libshowimgpart.so
+bin/sidbtest
 lib/libshowimgcore.la
 lib/libshowimgcore.so
 lib/libshowimgcore.so.0
+lib/libshowimgkexisql3.la
+lib/libshowimgkexisql3.so.3
+lib/libshowimgkexisql2.la
+lib/libshowimgkexisql2.so.2
+lib/libshowimgkexidb.la
+lib/libshowimgkexidb.so.0
+lib/libshowimgkexidbparser.la
+lib/libshowimgkexidbparser.so.1
+lib/libshowimgkexiutils.la
+lib/libshowimgkexiutils.so.1
+lib/kde3/libshowimgpart.la
+lib/kde3/libshowimgpart.so
+lib/kde3/showimg_kexidb_sqlite3driver.la
+lib/kde3/showimg_kexidb_sqlite3driver.so
+lib/kde3/showimg_kexidb_sqlite2driver.la
+lib/kde3/showimg_kexidb_sqlite2driver.so
 share/applnk/Graphics/showimg.desktop
 share/apps/konqueror/servicemenus/konqshowimg.desktop
 share/apps/showimg/convert2png.pl
@@ -134,28 +149,41 @@ share/doc/HTML/fr/showimg/index.docbook
 share/doc/HTML/it/showimg/common
 share/doc/HTML/it/showimg/index.cache.bz2
 share/doc/HTML/it/showimg/index.docbook
+share/doc/HTML/it/showimg/comparison.png
+share/doc/HTML/it/showimg/main-window.png
 share/doc/HTML/pt/showimg/common
 share/doc/HTML/pt/showimg/index.cache.bz2
 share/doc/HTML/pt/showimg/index.docbook
+share/doc/HTML/ru/showimg/common
+share/doc/HTML/ru/showimg/index.cache.bz2
+share/doc/HTML/ru/showimg/index.docbook
 share/doc/HTML/sv/showimg/common
 share/doc/HTML/sv/showimg/index.cache.bz2
 share/doc/HTML/sv/showimg/index.docbook
+share/doc/HTML/sv/showimg/comparison.png
+share/doc/HTML/sv/showimg/main-window.png
 share/icons/hicolor/32x32/apps/showimg.png
 share/icons/hicolor/48x48/apps/showimg.png
 share/icons/hicolor/64x64/apps/showimg.png
 share/locale/br/LC_MESSAGES/showimg.mo
+share/locale/bs/LC_MESSAGES/showimg.mo
+share/locale/ca/LC_MESSAGES/showimg.mo
 share/locale/cs/LC_MESSAGES/showimg.mo
 share/locale/cy/LC_MESSAGES/showimg.mo
 share/locale/da/LC_MESSAGES/showimg.mo
 share/locale/de/LC_MESSAGES/showimg.mo
 share/locale/en_GB/LC_MESSAGES/showimg.mo
+share/locale/el/LC_MESSAGES/showimg.mo
 share/locale/es/LC_MESSAGES/showimg.mo
 share/locale/et/LC_MESSAGES/showimg.mo
 share/locale/fr/LC_MESSAGES/showimg.mo
 share/locale/ga/LC_MESSAGES/showimg.mo
+share/locale/hi/LC_MESSAGES/showimg.mo
 share/locale/hu/LC_MESSAGES/showimg.mo
 share/locale/it/LC_MESSAGES/showimg.mo
 share/locale/ja/LC_MESSAGES/showimg.mo
+share/locale/lt/LC_MESSAGES/showimg.mo
+share/locale/mt/LC_MESSAGES/showimg.mo
 share/locale/nl/LC_MESSAGES/showimg.mo
 share/locale/pl/LC_MESSAGES/showimg.mo
 share/locale/pt/LC_MESSAGES/showimg.mo
@@ -171,6 +199,9 @@ share/locale/zh_CN/LC_MESSAGES/showimg.mo
 share/mimelnk/image/x-psd.desktop
 share/mimelnk/image/x-sia.desktop
 share/services/showimgpart.desktop
+share/services/showimg_kexidb_sqlite3driver.desktop
+share/services/showimg_kexidb_sqlite2driver.desktop
+share/servicetypes/showimg_kexidb_driver.desktop
 @unexec rmdir %D/share/mimelnk/image 2>/dev/null || true
 @unexec rmdir %D/share/mimelnk 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/64x64/apps 2>/dev/null || true
@@ -195,6 +226,8 @@ share/services/showimgpart.desktop
 @unexec rmdir %D/share/doc/HTML/it 2>/dev/null || true
 @dirrm share/doc/HTML/pt/showimg
 @unexec rmdir %D/share/doc/HTML/pt 2>/dev/null || true
+@dirrm share/doc/HTML/ru/showimg
+@unexec rmdir %D/share/doc/HTML/ru 2>/dev/null || true
 @dirrm share/doc/HTML/sv/showimg
 @unexec rmdir %D/share/doc/HTML/sv 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML 2>/dev/null || true
@@ -226,5 +259,4 @@ share/services/showimgpart.desktop
 @unexec rmdir %D/share/apps/showimgpart 2>/dev/null || true
 @unexec rmdir %D/share/apps 2>/dev/null || true
 @unexec rmdir %D/share/applnk/Graphics 2>/dev/null || true
-
 @unexec rmdir %D/share/applnk 2>/dev/null || true
