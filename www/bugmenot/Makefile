@@ -7,10 +7,11 @@
 
 PORTNAME?=	bugmenot
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://extensions.roachfiend.com/
 DISTNAME=	${PORTNAME}
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}_${PORTREVISION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT?=	Mozilla extension to bypass compulsory web registration
