@@ -22,14 +22,8 @@
 %%TRAMP_LISPDIR%%/tramp-vc.elc
 %%TRAMP_LISPDIR%%/tramp.el
 %%TRAMP_LISPDIR%%/tramp.elc
-%%TRAMP_LISPDIR%%/trampcache.el
-%%TRAMP_LISPDIR%%/trampcache.elc
+%%TRAMP_LISPDIR%%/tramp-cache.el
+%%TRAMP_LISPDIR%%/tramp-cache.elc
 %%TRAMP_LISPDIR%%/trampver.el
 %%TRAMP_LISPDIR%%/trampver.elc
 @dirrm %%TRAMP_LISPDIR%%
-@unexec install-info --delete %D/info/tramp %D/info/dir
-%%JAPANESE_INFO%%@unexec install-info --delete %D/info/tramp_ja %D/info/dir
-info/tramp
-%%JAPANESE_INFO%%info/tramp_ja
-@exec install-info %D/info/tramp %D/info/dir
-%%JAPANESE_INFO%%@exec install-info %D/info/tramp_ja %D/info/dir
