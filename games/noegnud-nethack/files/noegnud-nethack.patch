@@ -64,7 +64,7 @@ diff -urN variants/nethack-3.4.3.orig/sys/unix/Makefile.src variants/nethack-3.4
  #   compile normally
  
 -COMMON_CFLAGS = -DNETHACK_3_4_3 -fomit-frame-pointer -I../include `sdl-config --cflags`
-+COMMON_CFLAGS = -DNETHACK_3_4_3 -fomit-frame-pointer -I../include -I/usr/include/gnu `${SDL_CONFIG} --cflags` -I/usr/X11R6/include
++COMMON_CFLAGS = -DNETHACK_3_4_3 -fomit-frame-pointer -I../include -I/usr/include/gnu `${SDL_CONFIG} --cflags` -I${X11BASE}/include
  
  STD_CFLAGS = -O2 -ffast-math $(COMMON_CFLAGS)
  DBG_CFLAGS = -g -Wall -DNOEGNUDDEBUG $(COMMON_CFLAGS)
@@ -73,7 +73,7 @@ diff -urN variants/nethack-3.4.3.orig/sys/unix/Makefile.src variants/nethack-3.4
 +CFLAGS += $(STD_CFLAGS)
  
 -LFLAGS = -L/usr/X11R6/lib
-+LFLAGS = -L/usr/X11R6/lib -lgnuregex
++LFLAGS = -L${X11BASE}/lib -lgnuregex
  
  #   OR compile backwards compatible a.out format
  # CFLAGS = -O2 -b i486-linuxaout -fomit-frame-pointer -I../include
