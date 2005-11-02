@@ -4,3 +4,4 @@ games/stvef/readme.txt
 games/stvef/baseEF/server.cfg
 @dirrm games/stvef/baseEF
 @dirrm games/stvef
+@unexec rmdir %D/games 2>/dev/null || true
