@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openvpn
-DISTVERSION=	2.0.2
-PORTREVISION=	1
+DISTVERSION=	2.0.4
 CATEGORIES=	security
 MASTER_SITES=	http://openvpn.net/release/
 
@@ -35,9 +34,9 @@ SUB_FILES=	pkg-message
 # So depend on LZO1 only if it's already there and LZO2 isn't.
 # PACKAGE_BUILDING will also force LZO2.
 .if exists(${LOCALBASE}/lib/liblzo2.so.2) || !exists(${LOCALBASE}/lib/liblzo.so.1) || defined(PACKAGE_BUILDING)
-LIB_DEPENDS=	lzo2.2:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS+=	lzo2.2:${PORTSDIR}/archivers/lzo2
 .else
-LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
+LIB_DEPENDS+=	lzo.1:${PORTSDIR}/archivers/lzo
 .endif
 
 .if defined(WITH_PW_SAVE)
