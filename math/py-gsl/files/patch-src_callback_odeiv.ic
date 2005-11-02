@@ -1,0 +1,21 @@
+
+$FreeBSD$
+
+--- src/callback/odeiv.ic.orig
++++ src/callback/odeiv.ic
+@@ -397,13 +397,14 @@
+ 	      goto fail;	    
+ 	 }	 
+          FUNC_MESS("T_0 FLOAT");
+-         int dim = 1;
++         { int dim = 1;
+          ts = (PyArrayObject *) PyGSL_New_Array(1, &dim, PyArray_DOUBLE);
+ 	 if(ts == NULL) {
+ 	      line = __LINE__ - 2;
+ 	      goto fail;
+ 	 }
+          (*(double *)(ts->data)) = v;
++	 }
+     }
+     FUNC_MESS("T END");
+     if(PyGSL_STRIDE_RECALC(ts->strides[0], sizeof(double), &stride) != GSL_SUCCESS)
