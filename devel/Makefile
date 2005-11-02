@@ -754,6 +754,7 @@
     SUBDIR += p5-Class-Roles
     SUBDIR += p5-Class-Singleton
     SUBDIR += p5-Class-Tangram
+    SUBDIR += p5-Class-Throwable
     SUBDIR += p5-Class-Tom
     SUBDIR += p5-Class-Trigger
     SUBDIR += p5-Class-Virtual
