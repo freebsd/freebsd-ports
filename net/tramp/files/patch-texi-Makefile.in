@@ -1,0 +1,30 @@
+--- texi/Makefile.in.orig	Sun Jul 10 19:36:08 2005
++++ texi/Makefile.in	Wed Nov  2 22:25:01 2005
+@@ -60,7 +60,8 @@
+ all: tramp dvi html
+ 
+ install: tramp $(infodir)/dir
+-	$(INSTALL) $(INFO_FILES) $(infodir)
++	$(foreach file, $(INFO_FILES), \
++		$(INSTALL) $(file).info $(infodir)/$(file).info; )
+ 
+ clean:
+ 	$(RM) $(CLEAN_FILES)
+@@ -71,7 +72,7 @@
+ 
+ $(localinfodir)/%: $(TEXI_FILES) $(JA_TEXI_FILES)
+ 	$(MAKEINFO) --footnote-style=end -D $(EMACS_INFO) -D $(JA_MANUAL) \
+-		-D $(INSTALL_CHAPTER) -o $@ $*.texi
++		-D $(INSTALL_CHAPTER) -o $@.info $*.texi
+ 
+ # don't call install-info if it failed in configure
+ $(localinfodir)/dir $(infodir)/dir:
+@@ -80,7 +81,7 @@
+ 	$(if $(findstring no, $(INSTALL_INFO)),, \
+ 		$(foreach file, $(INFO_FILES), \
+ 			$(if $(shell grep "($(notdir $(file)))\." $@),, \
+-				$(INSTALL_INFO) --info-dir=$(dir $@) $(file);)))
++				$(INSTALL_INFO) --info-dir=$(dir $@) $(file).info;)))
+ 
+ dvi: tramp.dvi $(if $(JA_TEXI_FILES), tramp_ja.dvi)
+ 
