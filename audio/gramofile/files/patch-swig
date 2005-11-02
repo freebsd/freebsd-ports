@@ -1,0 +1,35 @@
+Index: perl-swig/Makefile
+@@ -6,14 +6,14 @@
+ OBJS := $(patsubst %.c,%.o,$(wildcard *.c))
+ SWIGWRAP := $(patsubst %.c,%_wrap.c,$(wildcard *.c))
+ SWIGOBJS := $(patsubst %.c,%_wrap.o,$(wildcard *.c))
+-PERLCORE = -I/usr/lib/perl5/5.005/i386-linux/CORE 
++PERLCORE = -I${PERLCOREDIR}
+ SHELL = /bin/sh
+ SWIG = swig
+ CC = gcc
+-CFLAGS = -c -Wall -O2 -fpic -DSWIG -DTURBO_MEDIAN -DTURBO_BUFFER -Dbool=char
++CFLAGS = -c -Wall -O2 -fpic -DSWIG -DTURBO_MEDIAN -DTURBO_BUFFER -Dbool=char -DPERL_POLLUTE -I${LOCALBASE}/include
+ LD = ld
+ LDFLAGS = -shared
+-LIBS = -lm -ldl
++LIBS = -lm
+ 
+ swig:: $(LIB)
+ 
+Index: perl-swig/Gramofile.i
+@@ -6,6 +6,7 @@
+ %import signpr_general.i
+ %import signpr_wav.i
+ %import signpr_cmf2.i
++%import signpr_cmf3.i
+ %import signpr_cmf.i
+ %import signpr_copy.i
+ %import signpr_doubmed.i
+Index: perl-swig/signpr_cmf3.i
+@@ -0,0 +1,5 @@
++%module signpr_cmf3
++%{
++#include "signpr_cmf3.h"
++%}
++%include "signpr_cmf3.h"

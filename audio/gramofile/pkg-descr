@@ -1,6 +1,6 @@
-This is version 1.5 of GramoFile, released February 15, 1999. With this
-program you can record audio of (for example) gramophone records, process
-the signal and listen to the results. Because sound files of the
+This is version 1.6P-7 of GramoFile (patches are from the debian package).
+With this program you can record audio of (for example) gramophone records,
+process the signal and listen to the results. Because sound files of the
 .WAV-format are used, it is possible to exchange the files with many other
 programs. Cdrecord(1) can burn CD-Recordables of these, so you can make
 CDs with the music of your favorite records.  The user interface of
@@ -20,4 +20,4 @@ necessary. Track-times are saved in an editable (plaintext) .tracks file,
 that will be used during the signal processing to produce one processed
 .wav file for each individual track.
 
-WWW: http://panic.et.tudelft.nl/~costar/gramofile/
+WWW: http://www.opensourcepartners.nl/~costar/gramofile/

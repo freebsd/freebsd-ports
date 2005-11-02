@@ -1,5 +1,10 @@
 bin/gramofile
 bin/bplay_gramo
 bin/brec_gramo
+%%SITE_PERL%%/%%PERL_ARCH%%/Gramofile.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gramofile.so
 %%DOCSDIR%%/README
 @dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/wav2mp3.pl
+@dirrm %%EXAMPLESDIR%%

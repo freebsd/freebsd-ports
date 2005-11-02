@@ -1,0 +1,93 @@
+Index: signpr_cmf3.c
+@@ -24,6 +24,7 @@
+ #include "signpr_cmf3.h"
+ #include "signpr_general.h"
+ #include "signpr_l1fit.h"
++#ifndef SWIG
+ #include "errorwindow.h"
+ #include "stringinput.h"
+ #include "buttons.h"
+@@ -31,14 +32,17 @@
+ #include "boxes.h"
+ #include "helpline.h"
+ #include "yesnowindow.h"
++#endif
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <math.h>
++#ifndef SWIG
+ #ifndef OLD_CURSES
+ #include <ncurses.h>
+ #else
+ #include <curses.h>
+ #endif
++#endif
+ 
+ #ifdef DEBUGFILE
+ static FILE *debugf=NULL;
+@@ -88,6 +92,7 @@
+ #define SIGNPR_CMF3_PARAMSCR_HEADERTEXT "CMF IIF [SIXTH ORDER] - Parameters"
+ #endif
+ 
++#ifndef SWIG
+ void
+ cond_median3_param_screen (parampointer_t parampointer)
+ {
+@@ -579,6 +584,7 @@
+   free (threshold1str.string);
+   free (threshold2str.string);
+ }
++#endif /* SWIG */
+ 
+ void
+ init_cond_median3_filter (int filterno, parampointer_t parampointer)
+@@ -886,7 +886,11 @@
+ fillfuncpointer_t cond_median3_gate_pointer = cond_median3_gate;
+ 
+ sample_t
++#ifndef SWIG
+ cond_median3_filter (parampointer_t parampointer)
++#else
++cond_median3_filter (parampointer_t parampointer, int *filter_type)
++#endif
+ {
+   sample_t sample, gate, returnval;
+   /* Length of the fft we'll do to get the smoothed interpolate */
+@@ -901,7 +901,11 @@
+   int toleft, toright, nfreq;
+   signed short maxval;
+ 
++#ifndef SWIG
+   advance_current_pos (&parampointer->buffer, parampointer->filterno);
++#else
++  advance_current_pos (&parampointer->buffer, parampointer->filterno, filter_type);
++#endif
+ 
+   advance_current_pos_custom (&parampointer->buffer4,
+ 			      cond_median3_gate_pointer,
+Index: signpr_cmf3.h
+@@ -23,7 +23,11 @@
+ 
+ void delete_cond_median3_filter (parampointer_t parampointer);
+ 
++#ifndef SWIG
+ sample_t cond_median3_filter (parampointer_t parampointer);
++#else
++sample_t cond_median3_filter (parampointer_t parampointer, int *filter_type);
++#endif
+ 
+ 
+ #endif /* HAVE_SIGNPR_CMF3_H */
+Index: signpr_general.c
+@@ -627,7 +627,11 @@
+ 	break;
+ 
+       case COND_MEDIAN3_FILTER:
++#ifndef SWIG
+ 	return cond_median3_filter (parampointerarray[filterno]);
++#else
++	return cond_median3_filter (parampointerarray[filterno], filter_type);
++#endif
+ 	break;
+ 
+       case EXPERIMENT_FILTER:
