@@ -53,7 +53,12 @@ VERSION=	2.9011.496
 .endif
 
 .if ${OSVERSION} < 300000
-IGNORE=		"This port requires FreeBSD 3.X or greater."
+IGNORE=		requires FreeBSD 3.X or greater
+.endif
+
+.if ${ARCH} == "i386" && ${OSVERSION} > 503000
+MASTER_SITE_SUBDIR=	prerelease/rc
+DISTNAME=	dnetc${PORTVERSION:E}-freebsd5-${ARCH:S/i386/x86/}-elf
 .endif
 
 post-extract:
@@ -85,7 +90,6 @@ do-install:
 
 	${INSTALL} -c -m ${BINMODE} -o ${CLIENTUSER} -g ${CLIENTGROUP} ${WRKSRC}/dnetc ${BINDIR}
 
-	${INSTALL_DATA} ${FILESDIR}/INFO ${BINDIR}
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
 
 	${INSTALL_SCRIPT} ${WRKDIR}/dnetc.sh ${PREFIX}/etc/rc.d/dnetc.sh
