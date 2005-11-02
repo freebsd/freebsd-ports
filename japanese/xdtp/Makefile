@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xdtp
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	japanese
 MASTER_SITES+=	http://www.ongs.co.jp/projects/xdtp/
 DISTNAME=	xdtp-${PORTVERSION}

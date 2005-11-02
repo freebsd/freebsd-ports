@@ -16,6 +16,7 @@ libdata/pkgconfig/libxdtp.pc
 %%DOCSDIR%%/images/glsd-classdiagram.gif
 @dirrm %%DOCSDIR%%/images
 @dirrm %%DOCSDIR%%
+%%DATADIR%%/emacs/hanbun.el
 %%DATADIR%%/toHTML/BanBun.xsl
 %%DATADIR%%/toHTML/BanBunModule.xsl
 %%DATADIR%%/toHTML/DocumentModule.xsl
@@ -31,6 +32,7 @@ libdata/pkgconfig/libxdtp.pc
 %%DATADIR%%/toXHTML/DocumentModule.xsl
 %%DATADIR%%/toXHTML/GLSD.xsl
 %%DATADIR%%/toXHTML/GLSDocumentModule.xsl
+@dirrm %%DATADIR%%/emacs
 @dirrm %%DATADIR%%/toHTML
 @dirrm %%DATADIR%%/toTEXT
 @dirrm %%DATADIR%%/toXHTML
