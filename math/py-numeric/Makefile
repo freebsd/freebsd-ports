@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	numeric
-PORTVERSION=	23.8
+PORTVERSION=	24.0
 CATEGORIES=	math python
 MASTER_SITES=	http://numeric.scipy.org/:doc \
 		${MASTER_SITE_SOURCEFORGE:S/$/:source/}
