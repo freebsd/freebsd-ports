@@ -36,6 +36,7 @@ vsftpd_check()
 		err 1 "vsftpd script need "listen=YES" on config file"
 	fi
 	if ! egrep -q -i -E "^background.*=.*YES$" ${required_files}
+	then
 		err 1 "vsftpd script need "background=YES" on config file"
 	fi
 }
