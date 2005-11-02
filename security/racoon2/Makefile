@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	racoon2
-PORTVERSION=	20050625b
-PORTREVISION=	1
+PORTVERSION=	20051102a
 CATEGORIES=	security net ipv6
 MASTER_SITES=	ftp://ftp.kame.net/pub/racoon2/
 EXTRACT_SUFX=	.tgz
@@ -29,12 +28,11 @@ CONFIGURE_ARGS+=--sysconfdir=${LOCALBASE}/etc
 USE_REINPLACE=	yes
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	INSTALL USAGE.iked USAGE.kinkd USAGE.spmd config-usage.ja.txt
-PORTDOCS+=	draft-ietf-ipsec-ikev2-17.txt draft-ietf-kink-kink-06.txt
-PORTDOCS+=	iked-memo.ja.txt kink-spec-supplement.ja.txt
-PORTDOCS+=	kinkd-data-struct.obj kinkd-impl.ja.txt kinkd-install.ja.txt
-PORTDOCS+=	kinkd-state-txn.obj libracoon.ja.txt racoon2.conf.ikev2
-PORTDOCS+=	racoon2.conf.kink specification.ja.txt spmif.txt system-message.ja.txt
+PORTDOCS=	INSTALL USAGE USAGE.iked USAGE.kinkd USAGE.spmd
+PORTDOCS+=	config-usage.ja.txt config-usage.txt
+PORTDOCS+=	iked-memo.ja.txt kinkd-data-struct.obj kinkd-impl.ja.txt
+PORTDOCS+=	kinkd-install.ja.txt kinkd-state-txn.obj libracoon.ja.txt
+PORTDOCS+=	specification.ja.txt spmif.txt style.txt system-message.ja.txt
 .endif
 
 MAN8=		spmd.8 spmdctl.8 kinkd.8
