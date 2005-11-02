@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	runkit
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
