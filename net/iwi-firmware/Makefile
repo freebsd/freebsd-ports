@@ -8,7 +8,7 @@
 PORTNAME=	iwi-firmware
 RELNAME=	ipw2200
 PORTVERSION=	2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net sysutils
 
 MAINTAINER=	flz@FreeBSD.org
@@ -17,6 +17,7 @@ COMMENT=	Intel PRO/Wireless 2200 Driver Firmware
 MASTERDIR=	${.CURDIR}/../ipw-firmware
 MD5_FILE=	${.CURDIR}/distinfo
 PLIST=		${.CURDIR}/pkg-plist
+DESCR=		${.CURDIR}/pkg-descr
 FILESDIR=	${.CURDIR}/files
 
 DRIVERNAME=	iwi
