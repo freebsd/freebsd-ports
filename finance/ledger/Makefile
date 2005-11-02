@@ -20,8 +20,11 @@ LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4 \
 		xmltok:${PORTSDIR}/www/libwww \
 		xmlparse:${PORTSDIR}/www/libwww
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib"
+USE_GCC=	3.2+
+GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/w3c-libwww
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 NO_INSTALL_MANPAGES=	yes
 INFO=	ledger
