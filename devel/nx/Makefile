@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	nx
-PORTVERSION=	0.2
+PORTVERSION=	0.24
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	networkx
-DISTNAME=	${PORTNAME:U}-${PORTVERSION}
+DISTNAME=	networkx-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Python package for the networks (graph)
+COMMENT=	Python package for studying network structure, dynamics, and function
 
 BUILD_DEPENDS=	${PYNUMERIC} \
 		${PYTHON_SITELIBDIR}/pygsl/__init__.py:${PORTSDIR}/math/py-gsl \
@@ -26,12 +26,13 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
-DATADIR=	${PREFIX}/share/${PORTNAME:U}
+DOCSDIR=	${PREFIX}/share/doc/networkx-${PORTVERSION}
+PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
 post-install:
-.for d in ${DATADIR} ${PYTHON_SITELIBDIR}/NX
+.for d in ${PYTHON_SITELIBDIR}/networkx
 	@${FIND} ${d} ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${d} -type d | ${SORT} -r | \
