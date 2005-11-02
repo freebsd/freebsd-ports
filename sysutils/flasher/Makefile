@@ -10,7 +10,7 @@ PORTVERSION=	1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.unixporting.com/downloads/
 
-MAINTAINER=	murray@unixporting.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitors log or mail files for writes, and flashes a keyboard LED
 
 MAN1=		flasher.1
