@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mad
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.4
 CATEGORIES=	audio python
 MASTER_SITES=	http://spacepants.org/src/pymad/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
