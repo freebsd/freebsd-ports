@@ -6,7 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.2.3
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/tarballs/
 
@@ -42,6 +42,10 @@ PLIST_SUB+=		WITHOUT_GETTEXT="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fpic -DPIC
+.endif
 
 SVNREPOS?=	/home/svn/repos
 SVNFSTYPE?=	fsfs

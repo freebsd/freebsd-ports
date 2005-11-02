@@ -41,7 +41,7 @@
       OBJECT => q/$(O_FILES)/,
       LIBS => [join(' ', $apr_ldflags,
                     (map {$_ = abs_path($_); "-L$_"} @ldpaths),
-!                   @ldmodules)],
+!                   @ldmodules, '-lsvn_swig_perl-1')],
       test => { TESTS => "$swig_srcdir/perl/native/t/*.t" }
   );
   
