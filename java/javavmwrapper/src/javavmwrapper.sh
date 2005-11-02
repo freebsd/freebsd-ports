@@ -414,13 +414,16 @@ if [ "${IAM}" = "javavm" ]; then
     IAM=java
 fi
 
-# Use JAVA_HOME if its set in the environment
-if [ ! -z "${JAVA_HOME}" -a -x "${JAVA_HOME}/bin/${IAM}" ]; then
-    export JAVA_HOME
-    tryJavaCommand "${JAVA_HOME}/bin/${IAM}" "${@}"
-elif [ ! -z "${JAVA_HOME}" -a -x "${JAVA_HOME}/jre/bin/${IAM}" ]; then
-    export JAVA_HOME
-    tryJavaCommand "${JAVA_HOME}/jre/bin/${IAM}" "${@}"
+# Ignore JAVA_HOME if it's set to %%PREFIX%%
+if [ "`realpath "${JAVA_HOME}"`" != "`realpath "${PREFIX}"`" ]; then
+    # Otherwise use JAVA_HOME if it's set
+    if [ ! -z "${JAVA_HOME}" -a -x "${JAVA_HOME}/bin/${IAM}" ]; then
+        export JAVA_HOME
+        tryJavaCommand "${JAVA_HOME}/bin/${IAM}" "${@}"
+    elif [ ! -z "${JAVA_HOME}" -a -x "${JAVA_HOME}/jre/bin/${IAM}" ]; then
+        export JAVA_HOME
+        tryJavaCommand "${JAVA_HOME}/jre/bin/${IAM}" "${@}"
+    fi
 fi
 
 unset JAVA_HOME
