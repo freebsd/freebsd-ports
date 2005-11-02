@@ -1,7 +1,7 @@
 Index: configure
 diff -u configure.orig configure
 --- configure.orig	Sun May 15 14:58:28 2005
-+++ configure	Wed May 18 00:40:41 2005
++++ configure	Wed Nov  2 19:11:22 2005
 @@ -1583,6 +1583,7 @@
  fi
  echo "$as_me:$LINENO: result: yes" >&5
@@ -107,3 +107,12 @@ diff -u configure.orig configure
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
+@@ -12253,6 +12258,8 @@
+ char *__openldap_compat = "2.1.27 or better okay";
+ #elif LDAP_VENDOR_VERSION_MAJOR == 2  && LDAP_VENDOR_VERSION_MINOR == 2 && LDAP_VENDOR_VERSION_PATCH > 5
+ char *__openldap_compat = "2.2.6 or better okay";
++#elif LDAP_VENDOR_VERSION_MAJOR == 2  && LDAP_VENDOR_VERSION_MINOR > 2
++char *__openldap_compat = "2.3.0 or better okay";
+ #endif
+ 
+ _ACEOF
