@@ -5,3 +5,4 @@
 %%DOCSDIR%%/README-CID.sjis
 @dirrm %%DOCSDIR%%
 @dirrm %%FONTSDIR%%
+@dirrm %%FONTSBASEDIR%%
