@@ -14,6 +14,7 @@
     SUBDIR += blogtk
     SUBDIR += bmp-docklet
     SUBDIR += cal
+    SUBDIR += calcurse
     SUBDIR += checkrdf
     SUBDIR += cycle
     SUBDIR += dailystrips
