@@ -7,6 +7,7 @@
 
 PORTNAME=	pdksh
 PORTVERSION=	5.2.14p2
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.cs.mun.ca/pub/pdksh/ \
 		http://gd.tuwien.ac.at/utils/shells/pdksh/ \
