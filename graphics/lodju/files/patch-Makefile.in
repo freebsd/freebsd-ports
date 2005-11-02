@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Nov  3 08:44:09 2005
++++ Makefile.in	Thu Nov  3 08:43:07 2005
+@@ -69,7 +69,7 @@
+ 	install -m 0644 $(srcdir)/xsl/*.css $(datadir)/lodju
+ 	install -m 0644 $(srcdir)/xsl/*.xsl $(datadir)/lodju
+ 	install -m 0644 $(srcdir)/xsl/*.gif $(datadir)/lodju
+-	cp -r locale $(datadir)/locale
++	cp -r locale/* $(datadir)/locale
+ 	chmod -R go=u,go-w $(datadir)/locale
+ 
+ 	install -d $(datadir)/lodju/graphics
