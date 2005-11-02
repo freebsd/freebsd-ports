@@ -25,6 +25,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 ALL_TARGET=	zgv info
 MAKE_ENV=	ZGV_LIBS="${LDFLAGS}"
+BINMODE=	4755
 
 PLIST_FILES=	bin/zgv etc/zgvrc.sample
 .if !defined(NO_INSTALL_MANPAGES)
@@ -40,7 +41,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|ZGV_LIBS=|ZGV_LIBS+=|' ${WRKSRC}/src/Makefile
 
 do-install:
-	${INSTALL} -c -g wheel -o root -m 4755 ${WRKSRC}/src/zgv ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/zgv ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/doc/sample.zgvrc ${PREFIX}/etc/zgvrc.sample
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/doc/zgv ${PREFIX}/${INFO_PATH}/zgv.info
