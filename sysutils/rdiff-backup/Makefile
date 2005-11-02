@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	rdiff-backup
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://savannah.nongnu.org/download/rdiff-backup/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	steve@ion.lu
