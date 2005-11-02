@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lzo2
-PORTVERSION=	2.01
+PORTVERSION=	2.02
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/
 MASTER_SITE_SUBDIR=	libs/compression
