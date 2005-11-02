@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for transferring files to and from the Diamond Rio .mp3 player
 
 WRKSRC=		${WRKDIR}/rio107
-MAKEFILE=	makefile
 
 BINOWN=		root
 BINMODE=	4755
@@ -28,6 +27,13 @@ PLIST_FILES=	bin/rio
 .if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
 BROKEN=		"Does not compile on ia64 or sparc64"
 .endif
+
+.if ${ARCH} == "alpha"
+LDFLAGS+=	-lio
+.endif
+
+do-build:
+	cd ${WRKSRC} && ${CXX} ${CXXFLAGS} -o rio app.cpp rio.cpp ${LDFLAGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rio ${PREFIX}/bin
