@@ -1,5 +1,8 @@
---- configure.in.orig	Thu Apr 26 16:00:26 2001
-+++ configure.in	Tue May  1 18:28:01 2001
+
+$FreeBSD$
+
+--- configure.in.orig
++++ configure.in
 @@ -7,7 +7,7 @@
  dnl AM_INIT_AUTOMAKE(netsaint-plugins,$VERSION)
  AM_CONFIG_HEADER(plugins/config.h plugins/common.h plugins/version.h plugins/netutils.h plugins/utils.h plugins/popen.h)
@@ -274,11 +277,21 @@
  AC_PATH_PROG(PATH_TO_FPING,fping)
  if test -n "$PATH_TO_FPING"
  then
-@@ -656,6 +678,7 @@
- 	EXTRAS="$EXTRAS check_fping"
+@@ -657,6 +679,7 @@
  else
  	echo "** Get fping from http://www.stanford.edu/~schemers/docs/fping/fping.html in order to make check_fping plugin"
-+fi
  fi
++fi
  
  AC_PATH_PROG(PATH_TO_SSH,ssh)
+ if test -f "$PATH_TO_SSH"
+@@ -704,8 +727,8 @@
+ 		AC_DEFINE_UNQUOTED(SWAP_FORMAT,["%*s %d %*d %d"])
+ 		echo "      using FreeBSD format"
+ 	fi
+-	EXTRAS="$EXTRAS check_swap"
+ fi
++EXTRAS="$EXTRAS check_swap"
+ 
+ AC_PATH_PROG(PATH_TO_DIG,dig)
+ AC_DEFINE_UNQUOTED(PATH_TO_DIG,"$PATH_TO_DIG")
