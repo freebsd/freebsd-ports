@@ -15,6 +15,7 @@ DISTFILES=	${PYTHON_DISTFILE}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT?=	An interpreted object-oriented programming language
 
+CONFLICTS=	python-mode.el-1.*
 DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
