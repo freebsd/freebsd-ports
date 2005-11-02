@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	W3C-LinkChecker
-PORTVERSION=	4.1
+PORTVERSION=	4.2.1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/S/SC/SCOP
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@daltons.ca
+MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Checks the validity of links in an HTML or XHTML document
 
 BUILD_DEPENDS=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
