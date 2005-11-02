@@ -7,3 +7,5 @@ share/festival/lib/voices/spanish/el_diphone/festvox/spanint.scm
 share/festival/lib/voices/spanish/el_diphone/festvox/sptoken.scm
 @dirrm share/festival/lib/voices/spanish/el_diphone/festvox
 @dirrm share/festival/lib/voices/spanish/el_diphone
+@unexec rmdir %D/share/festival/lib/voices/spanish 2>/dev/null || true
+@unexec rmdir %D/share/festival/lib/voices 2>/dev/null || true
