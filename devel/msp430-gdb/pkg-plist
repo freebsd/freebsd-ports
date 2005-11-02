@@ -3,3 +3,5 @@ bin/%%GDB_TARG%%-run
 %%GDB_TARG%%/bin/gdb
 %%GDB_TARG%%/bin/run
 lib/lib%%GDB_TARG%%-sim.a
+@dirrm %%GDB_TARG%%/bin
+@dirrm %%GDB_TARG%%
