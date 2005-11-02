@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rdic
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.8
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://www.yasgursfarm.us/download/
 DIST_SUBDIR=	ruby
@@ -28,6 +28,7 @@ RUBY_RD_FILES=	xselection.rd \
 		xselection.rd.jp
 
 USE_XLIB=	yes
+USE_REINPLACE=	yes
 
 INSTALL_TARGET=	site-install
 
@@ -51,6 +52,9 @@ DOCS_ETC=	eliminate.default \
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
+
+post-patch:
+	${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|' ${WRKSRC}/extconf.rb
 
 post-install: rb-install doc-install
 
