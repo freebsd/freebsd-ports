@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libmatroska
-PORTVERSION=	0.7.7
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://dl.matroska.org/downloads/libmatroska/ \
 		http://www.bunkus.org/videotools/mkvtoolnix/sources/old/
