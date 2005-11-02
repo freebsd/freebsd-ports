@@ -20,7 +20,7 @@ DISTFILES+=     gpc231.tar.Z:gpc
 EXTRACT_ONLY=	OOo_2.0.0_src.tar.gz
 
 MAINTAINER=	openoffice@FreeBSD.org
-COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(developer version)
+COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20 gnomevfs2
