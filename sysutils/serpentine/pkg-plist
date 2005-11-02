@@ -39,6 +39,9 @@ bin/serpentine
 %%PYTHON_SITELIBDIR%%/serpentine/operations.py
 %%PYTHON_SITELIBDIR%%/serpentine/operations.pyc
 %%PYTHON_SITELIBDIR%%/serpentine/operations.pyo
+%%PYTHON_SITELIBDIR%%/serpentine/plugins/plugrhythmbox.py
+%%PYTHON_SITELIBDIR%%/serpentine/plugins/plugrhythmbox.pyc
+%%PYTHON_SITELIBDIR%%/serpentine/plugins/plugrhythmbox.pyo
 %%PYTHON_SITELIBDIR%%/serpentine/plugins/__init__.py
 %%PYTHON_SITELIBDIR%%/serpentine/plugins/__init__.pyc
 %%PYTHON_SITELIBDIR%%/serpentine/plugins/__init__.pyo
