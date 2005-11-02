@@ -1,6 +1,6 @@
 # localized makefile
 # Whom:         Maho Nakata <maho@FreeBSD.org>
-# $FreeBSD: /tmp/pcvs/ports/editors/ooodict-all/files/Attic/Makefile.localized,v 1.1 2005-11-01 22:18:28 maho Exp $
+# $FreeBSD: /tmp/pcvs/ports/editors/ooodict-all/files/Attic/Makefile.localized,v 1.2 2005-11-02 00:50:04 maho Exp $
 
 .if defined(LOCALIZED_LANG)
 .if ${LOCALIZED_LANG} == "af_ZA"
@@ -110,7 +110,7 @@ THESDIST+=	thes_en_US_v2.zip
 .endif
 
 .if ${LOCALIZED_LANG} == "eo_EO"
-COMMENT=	XXXXXX
+COMMENT=	Esperanto MySpell dictionary for OpenOffice.org
 LANGPREFIX=	eo
 LANGSUFFIX=	EO
 HAVE_HYPHNATION=yes
@@ -210,7 +210,7 @@ HAVE_HYPHNATION=yes
 .endif
 
 .if ${LOCALIZED_LANG} == "is_IS"
-COMMENT=	XXXXXXXXXXXXXX
+COMMENT=	Icelandic (Iceland) MySpell dictionary for OpenOffice.org
 LANGPREFIX=	is
 LANGSUFFIX=	IS
 HAVE_HYPHNATION=yes
@@ -238,13 +238,13 @@ LANGSUFFIX=	LT
 .endif
 
 .if ${LOCALIZED_LANG} == "lv_LV"
-COMMENT=	XXXXXXXXXXXXXX
+COMMENT=	Latvian (Latvia) MySpell dictionary for OpenOffice.org
 LANGPREFIX=	lv
 LANGSUFFIX=	LV
 .endif
 
 .if ${LOCALIZED_LANG} == "mg_MG"
-COMMENT=	Malagasy (MAdagascar) MySpell dictionary for OpenOffice.org
+COMMENT=	Malagasy (Madagascar) MySpell dictionary for OpenOffice.org
 LANGPREFIX=	mg
 LANGSUFFIX=	MG
 .endif
