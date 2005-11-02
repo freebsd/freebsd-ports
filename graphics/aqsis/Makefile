@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	aqsis
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +19,7 @@ BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
-USE_GCC=	3.4
+USE_GCC=	3.4+
 USE_GNOME=	gnometarget
 USE_BISON=	yes
 USE_REINPLACE=	yes
@@ -32,8 +31,8 @@ INSTALLS_SHLIB=	yes
 
 MAN1=		aqsis.1
 
-CFLAGS+=	-O0
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} -fPIC
+CFLAGS+=	-fPIC
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
@@ -44,7 +43,5 @@ BROKEN=		"Does not compile on ${MACHINE_ARCH} (needs -fPIC)"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|PLUGIN_FLAGS=|#PLUGIN_FLAGS=|g' ${WRKSRC}/configure
-	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
-		's|malloc\.h|stdlib.h|g'
 
 .include <bsd.port.post.mk>
