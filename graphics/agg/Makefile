@@ -18,9 +18,10 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A High Quality Rendering Engine for C++
 
-WRKSRC=		${WRKDIR}/agg23
+BUILD_WRKSRC=	${WRKDIR}/agg23/src
 USE_GMAKE=	yes
-MAKE_ENV=	C="${CC}" CXX="${CXX}"
+MAKE_ENV=	C="${CC}" CXX="${CXX}" AGGCXXFLAGS="${CXXFLAGS}"
+CXXFLAGS+=	-I${X11BASE}/include -L${X11BASE}/lib -I../include -L./
 
 PLIST_FILES=	lib/libagg.a
 
@@ -28,10 +29,6 @@ PLIST_FILES=	lib/libagg.a
 
 post-extract:
 	@${CP} -f ${FILESDIR}/Makefile.in.FreeBSD ${WRKSRC}
-	@${SED} 's,%%X11BASE%%,${X11BASE},g' < ${FILESDIR}/Makefile.in.FreeBSD > ${WRKSRC}/Makefile.in.FreeBSD
-
-do-build:
-	@cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${GMAKE} all && ranlib libagg.a
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/libagg.a ${PREFIX}/lib
