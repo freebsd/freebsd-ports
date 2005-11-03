@@ -4056,6 +4056,7 @@ itl		ports/math/itl
 itraxp		ports/mail/itraxp
 its		ports/emulators/its
 its4		ports/security/its4
+ivan		ports/games/ivan
 iverilog	ports/cad/iverilog
 ivtools		ports/graphics/ivtools
 iw-aspell	ports/hebrew/aspell
