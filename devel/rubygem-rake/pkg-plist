@@ -21,12 +21,29 @@ bin/rake
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Application.src/M000091.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Application.src/M000092.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Application.src/M000093.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Application.src/M000094.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Application.src/M000095.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Application.src/M000096.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Application.src/M000097.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Application.src/M000098.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Application.src/M000099.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Application.src/M000100.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Application.src/M000101.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Application.src/M000102.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Cloneable.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Cloneable.src/M000047.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/CompositePublisher.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/CompositePublisher.src/M000075.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/CompositePublisher.src/M000076.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/CompositePublisher.src/M000077.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/DefaultLoader.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/DefaultLoader.src/M000074.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/EarlyTime.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/EarlyTime.src/M000159.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/EarlyTime.src/M000160.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileCreationTask.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileCreationTask.src/M000079.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileCreationTask.src/M000080.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileList.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileList.src/M000134.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileList.src/M000135.html
@@ -35,8 +52,46 @@ bin/rake
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileList.src/M000139.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileList.src/M000140.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileList.src/M000141.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileList.src/M000142.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileList.src/M000143.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileList.src/M000144.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileList.src/M000145.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileList.src/M000146.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileList.src/M000147.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileList.src/M000148.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileList.src/M000149.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileList.src/M000150.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileList.src/M000151.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileList.src/M000152.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileList.src/M000153.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileList.src/M000154.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileList.src/M000155.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileList.src/M000156.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileList.src/M000157.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileList.src/M000158.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileTask.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileTask.src/M000070.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FileTask.src/M000071.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FtpFile.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FtpFile.src/M000128.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FtpFile.src/M000129.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FtpFile.src/M000130.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FtpFile.src/M000131.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FtpFile.src/M000132.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FtpFile.src/M000133.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FtpUploader.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FtpUploader.src/M000081.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FtpUploader.src/M000082.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FtpUploader.src/M000083.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FtpUploader.src/M000084.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/FtpUploader.src/M000085.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/GemPackageTask.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/GemPackageTask.src/M000122.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/GemPackageTask.src/M000123.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/GemPackageTask.src/M000124.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/GemPackageTask.src/M000125.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/MakefileLoader.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/MakefileLoader.src/M000126.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/PackageTask.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/PackageTask.src/M000053.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/PackageTask.src/M000054.html
@@ -52,10 +107,20 @@ bin/rake
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/RDocTask.src/M000050.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/RDocTask.src/M000051.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/RDocTask.src/M000052.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/RubyForgePublisher.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/RubyForgePublisher.src/M000127.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/RuleRecursionOverflowError.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/RuleRecursionOverflowError.src/M000062.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/RuleRecursionOverflowError.src/M000063.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/RuleRecursionOverflowError.src/M000064.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/SshDirPublisher.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/SshDirPublisher.src/M000065.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/SshDirPublisher.src/M000066.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/SshFilePublisher.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/SshFilePublisher.src/M000072.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/SshFilePublisher.src/M000073.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/SshFreshDirPublisher.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/SshFreshDirPublisher.src/M000161.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Task.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Task.src/M000103.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Task.src/M000104.html
@@ -67,8 +132,21 @@ bin/rake
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Task.src/M000110.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Task.src/M000111.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Task.src/M000112.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Task.src/M000113.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Task.src/M000114.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Task.src/M000115.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Task.src/M000116.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Task.src/M000117.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Task.src/M000118.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Task.src/M000119.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Task.src/M000120.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/Task.src/M000121.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/TaskLib.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/TaskLib.src/M000078.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/TestTask.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/TestTask.src/M000067.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/TestTask.src/M000068.html
+%%DOC_DIR%%/rake-0.6.2/rdoc/classes/Rake/TestTask.src/M000069.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/RakeFileUtils.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/RakeFileUtils.src/M000042.html
 %%DOC_DIR%%/rake-0.6.2/rdoc/classes/RakeFileUtils.src/M000043.html
@@ -226,6 +304,26 @@ bin/rake
 %%GEMS_DIR%%/rake-0.6.2/test/test_tasks.rb
 %%GEMS_DIR%%/rake-0.6.2/test/test_test_task.rb
 %%SPEC_DIR%%/rake-0.6.2.gemspec
+%%CACHE_DIR%%/rake-0.6.2.gem
+@dirrm %%GEMS_DIR%%/rake-0.6.2/bin
+@dirrm %%GEMS_DIR%%/rake-0.6.2/lib/rake/contrib
+@dirrm %%GEMS_DIR%%/rake-0.6.2/lib/rake/loaders
+@dirrm %%GEMS_DIR%%/rake-0.6.2/lib/rake
+@dirrm %%GEMS_DIR%%/rake-0.6.2/lib
+@dirrm %%GEMS_DIR%%/rake-0.6.2/test/contrib
+@dirrm %%GEMS_DIR%%/rake-0.6.2/test/data/rbext
+@dirrm %%GEMS_DIR%%/rake-0.6.2/test/data/imports
+@dirrm %%GEMS_DIR%%/rake-0.6.2/test/data/chains
+@dirrm %%GEMS_DIR%%/rake-0.6.2/test/data/default
+@dirrm %%GEMS_DIR%%/rake-0.6.2/test/data/dryrun
+@dirrm %%GEMS_DIR%%/rake-0.6.2/test/data/file_creation_task
+@dirrm %%GEMS_DIR%%/rake-0.6.2/test/data/multidesc
+@dirrm %%GEMS_DIR%%/rake-0.6.2/test/data
+@dirrm %%GEMS_DIR%%/rake-0.6.2/test
+@dirrm %%GEMS_DIR%%/rake-0.6.2/doc/example
+@dirrm %%GEMS_DIR%%/rake-0.6.2/doc/release_notes
+@dirrm %%GEMS_DIR%%/rake-0.6.2/doc
+@dirrm %%GEMS_DIR%%/rake-0.6.2
 @dirrm %%DOC_DIR%%/rake-0.6.2/rdoc/files/lib/rake_rb.src
 @dirrm %%DOC_DIR%%/rake-0.6.2/rdoc/files/lib/rake/loaders
 @dirrm %%DOC_DIR%%/rake-0.6.2/rdoc/files/lib/rake/contrib
@@ -274,3 +372,4 @@ bin/rake
 @dirrm %%DOC_DIR%%/rake-0.6.2/rdoc/classes/CompositePublisher.src
 @dirrm %%DOC_DIR%%/rake-0.6.2/rdoc/classes
 @dirrm %%DOC_DIR%%/rake-0.6.2/rdoc
+@dirrm %%DOC_DIR%%/rake-0.6.2
