@@ -1,6 +1,6 @@
---- modules/_Image_FreeType/configure.orig	Mon May  3 13:58:33 2004
-+++ modules/_Image_FreeType/configure	Mon May  3 13:59:12 2004
-@@ -2048,8 +2048,8 @@
+--- src/modules/_Image_FreeType/configure.orig	Tue Nov  1 09:57:18 2005
++++ src/modules/_Image_FreeType/configure	Tue Nov  1 09:57:45 2005
+@@ -2682,8 +2682,8 @@
  fi
  
    else
@@ -8,6 +8,6 @@
 -set dummy ${ac_tool_prefix}freetype-config; ac_word=$2
 +    # Extract the first word of "freetype-config", so it can be a program name with args.
 +set dummy freetype-config; ac_word=$2
- echo "$as_me:2053: checking for $ac_word" >&5
+ echo "$as_me:$LINENO: checking for $ac_word" >&5
  echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
  if test "${ac_cv_path_FT_CONFIG+set}" = set; then

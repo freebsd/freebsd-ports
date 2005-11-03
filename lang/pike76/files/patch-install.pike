@@ -1,6 +1,6 @@
---- ../bin/install.pike.orig	Sat Feb 21 03:14:53 2004
-+++ ../bin/install.pike	Sat Feb 21 03:12:41 2004
-@@ -1380,7 +1380,7 @@
+--- bin/install.pike.orig	Tue Nov  1 09:58:59 2005
++++ bin/install.pike	Tue Nov  1 09:59:20 2005
+@@ -1707,7 +1707,7 @@
  
      if(file_stat(vars->MANDIR_SRC))
      {

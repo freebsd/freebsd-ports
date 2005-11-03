@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	pike76
-PORTVERSION=	7.6.24
+PORTVERSION=	7.6.48
 CATEGORIES=	lang
-MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
+MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
+		ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		ftp://ftp.oav.net/pike/7.6/ \
 		ftp://ftp.caudium.net/pike/official_releases/${PORTVERSION}/ \
 		ftp://ftp.us.caudium.net/pub/pike/7.6/ \
@@ -41,11 +42,8 @@ OPTIONS=	TTF "Add FreeType 1 support" on \
 
 MAN1=		pike.1
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src/
-
 WANT_MESA=	yes
 
-GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS+=${PTHREAD_CFLAGS}
 CONFIGURE_ARGS+=	--without-debug \
 		 --with-thread-library=${PTHREAD_LIBS} \
@@ -76,9 +74,12 @@ CONFIGURE_ARGS+=	--without-debug \
 		 --without-machine-code \
 		 --prefix=${PREFIX}
 
+MAKE_ARGS=	"CONFIGUREARGS=${CONFIGURE_ARGS}"
+
 USE_REINPLACE=	yes
 USE_GETTEXT=	yes
 USE_BISON=	yes
+USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -154,7 +155,7 @@ CONFIGURE_ARGS+=	--with-mysql=${PREFIX}
 CONFIGURE_ARGS+=	--without-mysql
 .endif
 
-.if defined(WITH_POSTGRES)
+.if defined(WITH_POSTGRESQL)
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--with-pgsql=${PREFIX}
 .else
@@ -221,8 +222,6 @@ CONFIGURE_ARGS+=	--with-GL --with-GLUT
 CONFIGURE_ARGS+=	--without-GL --without-GLUT
 .endif
 
-USE_GMAKE=	yes
-
 INSTALL_TARGET=	install_nodoc
 
 pre-configure:
@@ -230,19 +229,19 @@ pre-configure:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -lgmp| -L${LOCALBASE}/lib -lgmp|' \
-		${WRKSRC}/modules/Gmp/configure ${WRKSRC}/modules/_Image_XFace/configure
+		${WRKSRC}/src/modules/Gmp/configure ${WRKSRC}/src/modules/_Image_XFace/configure
 	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|' \
-		${WRKSRC}/configure
+		${WRKSRC}/src/configure
 	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
-		${WRKSRC}/configure
+		${WRKSRC}/src/configure
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/pike/${PORTVERSION}/bin/pike
-	${INSTALL_SCRIPT} ${WRKSRC}hilfe ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}../man/pike.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/hilfe ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/pike.1 ${MAN1PREFIX}/man/man1
 
-verify:
-	@(cd ${WRKSRC}; make verify)
+#verify:
+#	@(cd ${WRKSRC}; make verify)
 
 # Autodocs is currently b0rken.... :/
 #doc:
