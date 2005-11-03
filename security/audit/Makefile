@@ -52,8 +52,6 @@ PLIST_SUB+=	PGSQL=''
 .else
 PLIST_SUB+=	PGSQL='@comment '
 .endif
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/alat
 MANCOMPRESSED=	yes
 MAN1=	audit.1
 MAN8=	auditd.8
