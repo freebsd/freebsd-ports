@@ -1,11 +1,11 @@
---- Makefile.in.orig	Tue Mar  1 15:10:13 2005
-+++ Makefile.in	Tue Mar  1 15:10:33 2005
-@@ -247,7 +247,7 @@
- 
+--- Makefile.in.orig	Sun Oct 30 22:07:39 2005
++++ Makefile.in	Tue Nov  1 22:46:36 2005
+@@ -260,7 +260,7 @@
  EXTRA_DIST = config.rpath mkinstalldirs  bootstrap scim-tables.spec
  AUTOMAKE_OPTIONS = gnu
--SUBDIRS = intl m4 src zh ja ko additional icons po
-+SUBDIRS = ja icons
+ @SCIM_TABLES_ENABLE_SKIM_SUPPORT_TRUE@SKIM_SUBDIR = skim
+-SUBDIRS = intl icons m4 po src tables $(SKIM_SUBDIR)
++SUBDIRS = icons tables
  MAINTAINERCLEANFILES = Makefile.in aclocal.m4 configure $(AUX_DIST)
  CLEANFILES = *.bak 
  ACLOCAL_AMFLAGS = -I m4
