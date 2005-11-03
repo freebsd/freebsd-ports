@@ -7,15 +7,18 @@
 #
 
 PORTNAME=	tinycdb
-PORTVERSION=	0.74
+PORTVERSION=	0.75
 CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.corpit.ru/pub/tinycdb/
+MASTER_SITES=	http://www.corpit.ru/mjt/tinycdb/
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Analogous to cdb, but faster
 
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" prefix="${PREFIX}"
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=	cdb.1
 MAN3=	cdb.3
