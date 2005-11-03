@@ -4,6 +4,6 @@ which may respond to events from several sources. It replaces the "select()
 loop" and allows the registration of event handlers for file and network I/O,
 timers and signals. Since processes use these mechanisms for almost all
 external communication, liboop can be used as the basis for almost any
-application. 
+application.
 
-WWW: http://liboop.org/
+WWW: http://liboop.ofb.net/
