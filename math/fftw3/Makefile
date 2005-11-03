@@ -27,6 +27,7 @@ USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_REINPLACE=	yes
 USE_PERL5_BUILD=yes
 INSTALLS_SHLIB=	yes
+USE_LDOUBLE=	yes
 
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=	CPPLAGS="${PTHREAD_CFLAGS}" \
@@ -60,9 +61,6 @@ CONFIGURE_ARGS+=--enable-sse
 USE_GCC=	3.4
 .endif
 .endif
-.endif
-.if ${FFTW3_FLAVOR}=="long"
-USE_LDOUBLE=	yes
 .endif
 .if ${MACHINE_CPU:M3dnow}
 CONFIGURE_ARGS+=--enable-k7
