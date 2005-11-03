@@ -56,6 +56,7 @@
     SUBDIR += jakarta-bcel
     SUBDIR += jakarta-commons-beanutils
     SUBDIR += jakarta-commons-cli
+    SUBDIR += jakarta-commons-codec
     SUBDIR += jakarta-commons-collections
     SUBDIR += jakarta-commons-dbcp
     SUBDIR += jakarta-commons-discovery
