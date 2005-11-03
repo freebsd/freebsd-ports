@@ -10,7 +10,8 @@ PORTNAME=	liboop
 PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	http://download.ofb.net/liboop/
+MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A low-level event loop management library for POSIX-based OS
