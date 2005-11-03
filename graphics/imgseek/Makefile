@@ -23,8 +23,6 @@ USE_CONFIGURE=	no
 USE_PYDISTUTILS=	yes
 USE_PYTHON=	yes
 USE_BZIP2=      yes
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	${PYTHON_SITELIBDIR}/imgSeekLib
 
 #do-build:
 #	(cd ${WRKSRC};${PYTHON_CMD} setup.py)
