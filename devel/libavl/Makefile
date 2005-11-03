@@ -18,4 +18,6 @@ COMMENT=	A library for balanced binary trees
 
 GNU_CONFIGURE=	yes
 
+INFO=		avl
+
 .include <bsd.port.mk>
