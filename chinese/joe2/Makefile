@@ -5,17 +5,13 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	chinese
+CATEGORIES=	chinese editors
 
-PATCH_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/joe/
-PATCHFILES=	zh-joe-2.8_3-patch
+PATCH_SITES=	http://bbs.ilc.edu.tw/~chinsan/ports/joe2/
+PATCHFILES=	zh-joe-2.9.8.diff
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@FreeBSD.org
-
-BROKEN=		"Upstream version updated to 2.9.8"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-11-21
+MAINTAINER=	chinsan.tw@gmail.com
 
 LATEST_LINK=	${PKGNAMEPREFIX}joe
 
