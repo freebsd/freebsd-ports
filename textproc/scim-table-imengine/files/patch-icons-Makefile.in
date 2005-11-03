@@ -1,6 +1,6 @@
---- icons/Makefile.in.orig	Sun Aug  7 21:42:32 2005
-+++ icons/Makefile.in	Thu Oct 20 21:11:30 2005
-@@ -233,37 +233,7 @@
+--- icons/Makefile.in.orig	Sun Oct 30 22:07:35 2005
++++ icons/Makefile.in	Tue Nov  1 22:58:55 2005
+@@ -234,53 +234,7 @@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  MAINTAINERCLEANFILES = Makefile.in
@@ -8,25 +8,41 @@
 -			  Amharic.png   \
 -			  Arabic.png    \
 -			  Array30.png   \
--			  CangJie.png   \
--			  CangJie3.png   \
+-			  Bengali-inscript.png	\
+-			  Bengali-probhat.png	\
+-			  CangJie.png	\
+-			  CangJie3.png	\
 -			  Cantonese.png \
--			  CantonHK.png \
--			  Quick.png \
--			  Stroke5.png \
+-			  CantonHK.png	\
+-			  Quick.png	\
+-			  Stroke5.png	\
 -			  Dayi.png      \
 -			  Erbi.png      \
 -			  Erbi-QS.png   \
 -			  EZ.png        \
+-			  Gujarati-inscript.png	\
+-			  Gujarati-phonetic.png	\
 -			  Hangul.png    \
 -			  Hanja.png     \
+-			  Hindi-inscript.png	\
+-			  Hindi-phonetic.png	\
 -			  HIRAGANA.png  \
 -			  Jyutping.png  \
 -			  KATAKANA.png  \
+-			  Kannada-inscript.png	\
+-			  Kannada-kgp.png	\
 -			  LaTeX.png     \
+-			  Malayalam-inscript.png	\
 -			  Nepali.png    \
 -			  Nippon.png    \
+-			  Punjabi-inscript.png	\
+-			  Punjabi-jhelum.png	\
+-			  Punjabi-phonetic.png	\
 -			  Simplex.png   \
+-			  Tamil-inscript.png	\
+-			  Tamil-phonetic.png	\
+-			  Telugu-inscript.png	\
+-			  Thai.png	\
 -			  Viqr.png      \
 -			  Wu.png        \
 -			  Wubi.png      \
