@@ -22,11 +22,10 @@ LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
 USE_REINPLACE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/echolinux/Makefile \
-		${WRKSRC}/echogui/Makefile
 	@${REINPLACE_CMD} -e 's|gcc|$${CC}|' -e 's|/usr/include/X11|$${X11BASE}/include|' \
 		-e 's|-o echogui -L/usr/X11R6/lib -lX11 -lXpm -lforms -lm -lpthread|$${CFLAGS} -o echogui -L$${X11BASE}/lib -lX11 -lXpm -lforms -lm ${PTHREAD_LIBS}|' \
 		-e 's|CARGS|CFLAGS|' -e 's|= -DNodeFont=FL_TINY_SIZE|+= ${PTHREAD_CFLAGS} -DNodeFont=FL_TINY_SIZE|' \
+		-e 's|/usr/local/bin/|$${PREFIX}/bin/|' \
 		${WRKSRC}/echogui/Makefile
 	@${REINPLACE_CMD} -e 's|<linux/soundcard.h>|<sys/soundcard.h>|' \
 		${WRKSRC}/echogui/testgui_cb.c ${WRKSRC}/echogui/testgui_main.c \
@@ -35,6 +34,7 @@ post-patch:
 		${WRKSRC}/echolinux/Makefile
 	@${REINPLACE_CMD} -e 's|LFLAGS = -lm|LFLAGS = -L${LOCALBASE}/lib -lm -lgsm|' \
 		-e 's|libgsm.a||' -e 's|-Igsm/inc|-I${LOCALBASE}/include|' \
+		-e 's|/usr/local/bin/|$${PREFIX}/bin/|' \
 		${WRKSRC}/echolinux/Makefile
 
 post-install:
