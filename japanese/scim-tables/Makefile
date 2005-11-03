@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	scim-tables
-PORTVERSION=	0.5.1
-PORTREVISION=	4
+PORTVERSION=	0.5.4
+PORTREVISION=	0
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
@@ -27,6 +27,10 @@ GNU_CONFIGURE=	yes
 .if ${OSVERSION} < 500035
 BROKEN=		No working scim-make-table command on 4.x. Install textproc/scim-table-imengine for details
 .endif
+
+post-extract:
+	@${CP} ${FILESDIR}/T-Code.txt.in   ${WRKSRC}/tables/ja/
+	@${CP} ${FILESDIR}/TUT-Code.txt.in ${WRKSRC}/tables/ja/
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

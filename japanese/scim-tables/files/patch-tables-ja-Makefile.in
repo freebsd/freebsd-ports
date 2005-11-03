@@ -1,0 +1,48 @@
+--- tables/ja/Makefile.in.orig	Sun Oct 30 22:07:37 2005
++++ tables/ja/Makefile.in	Thu Nov  3 10:56:01 2005
+@@ -39,7 +39,8 @@
+ subdir = tables/ja
+ DIST_COMMON = $(srcdir)/HIRAGANA.txt.in $(srcdir)/KATAKANA.txt.in \
+ 	$(srcdir)/Makefile.am $(srcdir)/Makefile.in \
+-	$(srcdir)/Nippon.txt.in
++	$(srcdir)/Nippon.txt.in \
++	$(srcdir)/T-Code.txt.in $(srcdir)/TUT-Code.txt.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/codeset.m4 \
+ 	$(top_srcdir)/m4/gettext.m4 $(top_srcdir)/m4/glibc21.m4 \
+@@ -60,7 +61,7 @@
+ 	$(ACLOCAL_M4)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
+-CONFIG_CLEAN_FILES = HIRAGANA.txt KATAKANA.txt Nippon.txt
++CONFIG_CLEAN_FILES = HIRAGANA.txt KATAKANA.txt Nippon.txt T-Code.txt TUT-Code.txt
+ SOURCES =
+ DIST_SOURCES =
+ am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
+@@ -235,11 +236,11 @@
+ subdirs = @subdirs@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SCIM_MAKE_TABLE = $(top_builddir)/src/scim-make-table
+-scim_tables_source = HIRAGANA.txt.in KATAKANA.txt.in Nippon.txt.in
+-scim_tables = HIRAGANA.txt KATAKANA.txt Nippon.txt
++SCIM_MAKE_TABLE = scim-make-table
++scim_tables_source = HIRAGANA.txt.in KATAKANA.txt.in Nippon.txt.in T-Code.txt.in TUT-Code.txt.in
++scim_tables = HIRAGANA.txt KATAKANA.txt Nippon.txt T-Code.txt TUT-Code.txt
+ scim_tables_bindir = $(SCIM_TABLEDIR)
+-scim_tables_bin_DATA = HIRAGANA.bin KATAKANA.bin Nippon.bin
++scim_tables_bin_DATA = HIRAGANA.bin KATAKANA.bin Nippon.bin T-Code.bin TUT-Code.bin
+ EXTRA_DIST = $(scim_tables_source) kanjidic_doc.html kanjidic_licence.html kanjidic-permission-to-use-for-scim
+ CLEANFILES = $(scim_tables_bin_DATA) *.bak
+ DISTCLEANFILES = $(scim_tables)
+@@ -281,6 +282,10 @@
+ KATAKANA.txt: $(top_builddir)/config.status $(srcdir)/KATAKANA.txt.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
+ Nippon.txt: $(top_builddir)/config.status $(srcdir)/Nippon.txt.in
++	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
++T-Code.txt: $(top_builddir)/config.status $(srcdir)/T-Code.txt.in
++	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
++TUT-Code.txt: $(top_builddir)/config.status $(srcdir)/TUT-Code.txt.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
+ 
+ mostlyclean-libtool:
