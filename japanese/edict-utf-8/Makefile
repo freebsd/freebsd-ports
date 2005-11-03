@@ -7,6 +7,7 @@
 
 PORTNAME=	edict-utf-8
 PORTVERSION=	20050310
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.cc.monash.edu.au/pub/nihongo/ \
 		http://japanology.arts.kuleuven.ac.be/mirrors/monash/ \
@@ -25,10 +26,6 @@ COMMENT=	Japanese-English edict UTF-8 dictionaries
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
-BROKEN=		Install fails
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
 USE_ICONV=	yes
 ICONV?=		iconv
 CONVERT_CMD=	${ICONV} -c -f EUC-JP -t UTF-8
@@ -36,12 +33,13 @@ NO_BUILD=	yes
 
 DIST_SUBDIR=	edict
 
-DICTFILES=	edict.gz edicth enamdict.gz compdic.gz \
+DICTFILES=	edict.gz edicth compdic.gz \
 		jddict.v02.gz j_places.gz ediclsd3.zip \
 		kanjidic.gz kanjd212.gz lawgledt.zip \
 		lingdic.zip geodic.gz pandpdic.zip \
 		aviation.zip findic.zip mktdic.zip \
 		compverb.gz 4jwords.gz concrete.zip
+BROKENDICTFILES=	enamdict.gz
 
 NODOCFILES=	edict_doc.txt edict_doc.html edicth.doc \
 		enamdict_doc.txt enamdict_doc.html jddict.doc \
@@ -66,6 +64,7 @@ do-install:
 		${MKDIR} ${DATADIR} ; \
 	fi
 	@for file in ${DICTFILES}; do \
+		echo $$file; \
 		case $$file in \
 		*.gz) \
 			instfile=`${BASENAME} $$file .gz` ; \
@@ -99,4 +98,6 @@ do-install:
 		) ; \
 	done
 
+post-install:
+	${CAT} ${PKGMESSAGE}
 .include <bsd.port.post.mk>
