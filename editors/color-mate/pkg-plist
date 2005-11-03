@@ -46,7 +46,6 @@ share/emacs/site-lisp/color-mate/theme/Stone.xdef
 share/emacs/site-lisp/color-mate/theme/SunnyDay-LCD.X
 share/emacs/site-lisp/color-mate/theme/SunnyDay-LCD.el
 share/emacs/site-lisp/color-mate/theme/SunnyDay-LCD.xdef
-share/emacs/site-lisp/color-mate/theme/SunnyDay-UTF2000.el
 share/emacs/site-lisp/color-mate/theme/SunnyDay.X
 share/emacs/site-lisp/color-mate/theme/SunnyDay.el
 share/emacs/site-lisp/color-mate/theme/SunnyDay.xdef
@@ -108,7 +107,6 @@ lib/xemacs/site-packages/lisp/color-mate/theme/Stone.xdef
 lib/xemacs/site-packages/lisp/color-mate/theme/SunnyDay-LCD.X
 lib/xemacs/site-packages/lisp/color-mate/theme/SunnyDay-LCD.el
 lib/xemacs/site-packages/lisp/color-mate/theme/SunnyDay-LCD.xdef
-lib/xemacs/site-packages/lisp/color-mate/theme/SunnyDay-UTF2000.el
 lib/xemacs/site-packages/lisp/color-mate/theme/SunnyDay.X
 lib/xemacs/site-packages/lisp/color-mate/theme/SunnyDay.el
 lib/xemacs/site-packages/lisp/color-mate/theme/SunnyDay.xdef
@@ -121,14 +119,15 @@ lib/xemacs/site-packages/lisp/color-mate/theme/Wine.xdef
 lib/xemacs/site-packages/lisp/color-mate/theme/Xdefaults.cpp
 lib/xemacs/site-packages/lisp/color-mate/theme/color-mate-theme-compile.el
 lib/xemacs/site-packages/lisp/color-mate/theme/theme_build.sh
-share/doc/color-mate/Customize.txt
-share/doc/color-mate/Dot.emacs.default.in
-share/doc/color-mate/Q_and_A.color-mate
-share/doc/color-mate/QuickStart.color-mate
-share/doc/color-mate/README.color-mate.eng
-share/doc/color-mate/README.color-mate.jp
-share/doc/color-mate/README.kanakan-cursor.eng
-share/doc/color-mate/README.kanakan-cursor.jp
+lib/xemacs/site-packages/pkginfo/MANIFEST.color-mate
+%%DOCSDIR%%/Customize.txt
+%%DOCSDIR%%/Dot.emacs.default.in
+%%DOCSDIR%%/Q_and_A.color-mate
+%%DOCSDIR%%/QuickStart.color-mate
+%%DOCSDIR%%/README.color-mate.eng
+%%DOCSDIR%%/README.color-mate.jp
+%%DOCSDIR%%/README.kanakan-cursor.eng
+%%DOCSDIR%%/README.kanakan-cursor.jp
 @dirrm share/emacs/site-lisp/color-mate/contrib
 @dirrm share/emacs/site-lisp/color-mate/kanakan-cursor
 @dirrm share/emacs/site-lisp/color-mate/theme
@@ -141,4 +140,4 @@ share/doc/color-mate/README.kanakan-cursor.jp
 @dirrm lib/xemacs/site-packages/pkginfo
 @dirrm lib/xemacs/site-packages
 @dirrm lib/xemacs
-@dirrm share/doc/color-mate
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
