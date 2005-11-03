@@ -99,8 +99,8 @@ post-patch:
 		-e 's#malloc.h#stdlib.h#g' \
 		-e 's#/usr/X11R6#${X11BASE}#g' \
 		${WRKSRC}/configure.Patched > ${WRKSRC}/configure
-	${CP} ${WRKSRC}/driver/timers.c ${WRKSRC}/driver/timers.c.presed
-	${SED} 334,344d ${WRKSRC}/driver/timers.c.presed > \
+	@ ${CP} ${WRKSRC}/driver/timers.c ${WRKSRC}/driver/timers.c.presed
+	@ ${SED} 334,344d ${WRKSRC}/driver/timers.c.presed > \
 		${WRKSRC}/driver/timers.c
 
 post-install:
