@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.raqdevil.com/
 MAINTAINER=	dodell@offmyserver.com
 COMMENT=	A port of the Sun Cobalt RaQ550 software to FreeBSD
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/sendmail:${PORTSDIR}/mail/sendmail-sasl		\
+RUN_DEPENDS=	${LOCALBASE}/sbin/sendmail:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}	\
 		${SITE_PERL}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode			\
 		${SITE_PERL}/mach/Quota.pm:${PORTSDIR}/sysutils/p5-Quota		\
 		${SITE_PERL}/mach/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext	\
@@ -47,17 +47,22 @@ LDCONFIG_DIRS=	${PREFIX}/raqdevil/lib
 
 .include <bsd.port.pre.mk>
 
+.if !defined(SENDMAIL_MILTER_PORT)
+SENDMAIL_MILTER_PORT?=	sendmail-sasl
+.else
+.if ${SENDMAIL_MILTER_PORT} != "sendmail-sasl"
+pre-everything::
+	@${ECHO_MSG} "SENDMAIL_MILTER_PORT=${SENDMAIL_MILTER_PORT}
+	@${ECHO_MSG} "RAQdevil makes use of the sendmail-sasl metaport. Please set"
+	@${ECHO_MSG} "SENDMAIL_MILTER_PORT=sendmail-sasl in /etc/make.conf"
+	@${FALSE}
+.endif
+.endif
+
 pre-extract:
 .if !defined(PACKAGE_BUILDING)
 	@${SH} ${FILESDIR}/warning
 .endif
-
-pre-configure:
-	@if [ -n "`${PKG_INFO} -xI '^sendmail+tls+sasl*' 2> /dev/null`" ]; then \
-		${ECHO_CMD} "${PKGNAME}: sendmail with sasl support is required for RAQdevil to properly function."; \
-		${ECHO_CMD} "Please install mail/sendmail-sasl." \
-		${FALSE}; \
-	fi
 
 post-extract:
 .if !defined(PACKAGE_BUILDING)
