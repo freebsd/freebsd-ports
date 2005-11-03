@@ -277,6 +277,7 @@
     SUBDIR += inform
     SUBDIR += interlogic
     SUBDIR += ishido
+    SUBDIR += ivan
     SUBDIR += jetpack
     SUBDIR += jfduke3d
     SUBDIR += jfk
