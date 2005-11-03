@@ -9308,6 +9308,7 @@ pgpgpg		ports/security/pgpgpg
 pgpin		ports/security/pgpin
 pgplot		ports/graphics/pgplot
 pgpmoose	ports/news/pgpmoose
+pgpool		ports/databases/pgpool
 pgpsendmail	ports/mail/pgpsendmail
 pgworksheet	ports/databases/pgworksheet
 phalanx		ports/games/phalanx
