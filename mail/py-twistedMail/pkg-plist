@@ -50,6 +50,9 @@ bin/mailmail
 %%S%%/twisted/mail/test/__init__.py
 %%S%%/twisted/mail/test/__init__.pyc
 %%S%%/twisted/mail/test/__init__.pyo
+%%S%%/twisted/mail/test/pop3testserver.py
+%%S%%/twisted/mail/test/pop3testserver.pyc
+%%S%%/twisted/mail/test/pop3testserver.pyo
 %%S%%/twisted/mail/test/process.alias.sh
 %%S%%/twisted/mail/test/rfc822.message
 %%S%%/twisted/mail/test/test_bounce.py
