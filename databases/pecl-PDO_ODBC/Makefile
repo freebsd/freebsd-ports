@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PDO_ODBC
-DISTVERSION=	0.9
+DISTVERSION=	1.0RC2
 CATEGORIES=	databases www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
