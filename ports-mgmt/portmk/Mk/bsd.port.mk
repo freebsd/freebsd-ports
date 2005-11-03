@@ -380,7 +380,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # 				  ${PREFIX}/etc/rc.d and added to the packing list.
 # 				  pairs will be added to ${SUB_LIST}. These files will be
 # 				  installed in ${PREFIX}/etc/rc.d and added to the packing list.
-# RC_ORDER		- List of rcNG startup scripts to be called early in the boot
+# USE_RCORDER		- List of rcNG startup scripts to be called early in the boot
 # 				  process. This acts exactly like USE_RC_SUBR except that
 # 				  scripts are installed in /etc/rc.d.
 # RC_SUBR		- Set to path of rc.subr.
