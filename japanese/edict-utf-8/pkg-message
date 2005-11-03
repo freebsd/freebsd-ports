@@ -1,0 +1,3 @@
+Plesae note that the words in the dictionary `enamdict.gz' have
+been removed because iconv wasn't able to process them. If you have
+the skills, please see if you can find what is causing this.
