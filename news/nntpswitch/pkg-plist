@@ -12,4 +12,5 @@ sbin/nntpswitchd
 sbin/nsstats.pl
 sbin/nsstats.sh
 sbin/updategroups
+@dirrm lib/nntpswitch
 @unexec rmdir %D/etc/nntpswitch 2> /dev/null || echo "===> If you plan to do not reinstall nntpswitch, you can safely remove %D/etc/nntpswitch."
