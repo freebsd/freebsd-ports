@@ -35,8 +35,6 @@ CONFIGURE_ARGS=	--program-transform-name="s/x/x/" \
 		--with-iconvlibdir=${LOCALBASE}/lib \
 		--with-tclsh=${LOCALBASE}/tcl8.4 \
 		--with-wish=${LOCALBASE}/wish8.4
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	${PREFIX}/lib/graphviz
 MAKE_ENV=	EXPR_COMPAT=yes MISSING=${TRUE}
 
 MAN1=		acyclic.1 bcomps.1 ccomps.1 dijkstra.1 dot.1 dotneato-config.1 \
