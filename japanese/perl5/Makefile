@@ -7,7 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${JPERL_VER}.${JPERL_VER_PL}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese perl5
 MASTER_SITES=	ftp://ftp.cpan.org/CPAN/src/5.0/ \
 		ftp://ftp.funet.fi/pub/languages/perl/CPAN/src/5.0/ \
@@ -39,10 +39,6 @@ PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pattern Extraction and Recognition Language + Japanese patches
-
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
 
 .include <bsd.port.pre.mk>
 
