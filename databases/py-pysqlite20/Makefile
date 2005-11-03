@@ -5,28 +5,28 @@
 # $FreeBSD$
 #
 
-PORTNAME=		pysqlite
-PORTVERSION=		2.0.4
-CATEGORIES=		databases python
-MASTER_SITES=		http://initd.org/pub/software/pysqlite/releases/2.0/${PORTVERSION}/
-PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
+PORTNAME=	pysqlite
+PORTVERSION=	2.0.5
+CATEGORIES=	databases python
+MASTER_SITES=	http://initd.org/pub/software/pysqlite/releases/2.0/${PORTVERSION}/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=		mnag@FreeBSD.org
-COMMENT=		A DB-API v2 Python library for the SQLite 3 embedded SQL engine
+MAINTAINER=	mnag@FreeBSD.org
+COMMENT=	A DB-API v2 Python library for the SQLite 3 embedded SQL engine
 
-LIB_DEPENDS=		sqlite3.8:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 
-LATEST_LINK=		${PYTHON_PKGNAMEPREFIX}${PORTNAME}2
+LATEST_LINK=	${PYTHON_PKGNAMEPREFIX}${PORTNAME}2
 
-USE_REINPLACE=		yes
-USE_PYTHON=		2.3+
+USE_REINPLACE=	yes
+USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_BUILDARGS=	build_ext -I${LOCALBASE}/include -L${LOCALBASE}/lib
-DOCSBASE=		share/doc/py-${PORTNAME}2
-DOCSDIR=		${PREFIX}/${DOCSBASE}
+DOCSBASE=	share/doc/py-${PORTNAME}2
+DOCSDIR=	${PREFIX}/${DOCSBASE}
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=		*
+PORTDOCS=	*
 .endif
 
 pre-configure:
