@@ -16,6 +16,9 @@ if [ "X$2" = X"DEINSTALL" ]; then
 			 ${elispdir}/site-start.el \
 					> ${elispdir}/site-start.el.bak
 		mv ${elispdir}/site-start.el.bak ${elispdir}/site-start.el
+		if [ -e ${elispdir}/site-start.el ]; then
+			rm ${elispdir}/site-start.el
+		fi
 	fi
 	OptionStart="!!! Emacs-w3 configuration options"
 	OptionEnd="!!! End of Emacs-w3 configuration options"
@@ -25,6 +28,9 @@ if [ "X$2" = X"DEINSTALL" ]; then
 			-e "/^${OptionStart}/,/^${OptionEnd}/d" \
 			${addir}/Emacs		> ${addir}/Emacs.bak
 		mv ${addir}/Emacs.bak ${addir}/Emacs
+		if [ -e ${addir}/Emacs ]; then
+			rm ${addir}/Emacs
+		fi
 	fi
 else
 	exit 0
