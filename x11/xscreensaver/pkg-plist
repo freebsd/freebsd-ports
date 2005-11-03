@@ -7,7 +7,6 @@ bin/xscreensaver-getimage-video
 bin/xscreensaver-gl-helper
 bin/xscreensaver-hacks/anemone
 bin/xscreensaver-hacks/anemotaxis
-bin/xscreensaver-hacks/ant
 bin/xscreensaver-hacks/antinspect
 bin/xscreensaver-hacks/antmaze
 bin/xscreensaver-hacks/antspotlight
@@ -34,6 +33,7 @@ bin/xscreensaver-hacks/bumps
 bin/xscreensaver-hacks/cage
 bin/xscreensaver-hacks/carousel
 bin/xscreensaver-hacks/ccurve
+bin/xscreensaver-hacks/celtic
 bin/xscreensaver-hacks/circuit
 bin/xscreensaver-hacks/cloudlife
 bin/xscreensaver-hacks/compass
@@ -41,6 +41,7 @@ bin/xscreensaver-hacks/coral
 bin/xscreensaver-hacks/crackberg
 bin/xscreensaver-hacks/critical
 bin/xscreensaver-hacks/crystal
+bin/xscreensaver-hacks/cube21
 bin/xscreensaver-hacks/cubenetic
 bin/xscreensaver-hacks/cubestorm
 bin/xscreensaver-hacks/cynosure
@@ -79,6 +80,7 @@ bin/xscreensaver-hacks/gflux
 bin/xscreensaver-hacks/glblur
 bin/xscreensaver-hacks/gleidescope
 bin/xscreensaver-hacks/glforestfire
+bin/xscreensaver-hacks/glhanoi
 bin/xscreensaver-hacks/glknots
 bin/xscreensaver-hacks/glmatrix
 bin/xscreensaver-hacks/glplanet
@@ -103,6 +105,7 @@ bin/xscreensaver-hacks/intermomentary
 bin/xscreensaver-hacks/jigglypuff
 bin/xscreensaver-hacks/jigsaw
 bin/xscreensaver-hacks/juggle
+bin/xscreensaver-hacks/juggler3d
 bin/xscreensaver-hacks/julia
 bin/xscreensaver-hacks/kaleidescope
 bin/xscreensaver-hacks/klein
@@ -183,6 +186,7 @@ bin/xscreensaver-hacks/swirl
 bin/xscreensaver-hacks/t3d
 bin/xscreensaver-hacks/tangram
 bin/xscreensaver-hacks/thornbird
+bin/xscreensaver-hacks/timetunnel
 bin/xscreensaver-hacks/triangle
 bin/xscreensaver-hacks/truchet
 bin/xscreensaver-hacks/twang
@@ -211,7 +215,6 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/README
 %%DATADIR%%/config/anemone.xml
 %%DATADIR%%/config/anemotaxis.xml
-%%DATADIR%%/config/ant.xml
 %%DATADIR%%/config/antinspect.xml
 %%DATADIR%%/config/antmaze.xml
 %%DATADIR%%/config/antspotlight.xml
@@ -238,6 +241,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/cage.xml
 %%DATADIR%%/config/carousel.xml
 %%DATADIR%%/config/ccurve.xml
+%%DATADIR%%/config/celtic.xml
 %%DATADIR%%/config/circuit.xml
 %%DATADIR%%/config/cloudlife.xml
 %%DATADIR%%/config/compass.xml
@@ -245,6 +249,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/crackberg.xml
 %%DATADIR%%/config/critical.xml
 %%DATADIR%%/config/crystal.xml
+%%DATADIR%%/config/cube21.xml
 %%DATADIR%%/config/cubenetic.xml
 %%DATADIR%%/config/cubestorm.xml
 %%DATADIR%%/config/cynosure.xml
@@ -283,6 +288,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/glblur.xml
 %%DATADIR%%/config/gleidescope.xml
 %%DATADIR%%/config/glforestfire.xml
+%%DATADIR%%/config/glhanoi.xml
 %%DATADIR%%/config/glknots.xml
 %%DATADIR%%/config/glmatrix.xml
 %%DATADIR%%/config/glplanet.xml
@@ -307,6 +313,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/jigglypuff.xml
 %%DATADIR%%/config/jigsaw.xml
 %%DATADIR%%/config/juggle.xml
+%%DATADIR%%/config/juggler3d.xml
 %%DATADIR%%/config/julia.xml
 %%DATADIR%%/config/kaleidescope.xml
 %%DATADIR%%/config/klein.xml
@@ -386,6 +393,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/t3d.xml
 %%DATADIR%%/config/tangram.xml
 %%DATADIR%%/config/thornbird.xml
+%%DATADIR%%/config/timetunnel.xml
 %%DATADIR%%/config/triangle.xml
 %%DATADIR%%/config/truchet.xml
 %%DATADIR%%/config/twang.xml

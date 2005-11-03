@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xscreensaver
-PORTVERSION=	4.22
+PORTVERSION=	4.23
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/ \
 		http://dougbarton.us/Downloads/
@@ -43,7 +43,7 @@ CONFIGURE_ARGS+=	--with-setuid-hacks
 
 CONFIGURE_ENV=	X_CFLAGS=-I${LOCALBASE}/include/gnome-xml
 
-MAN1=	anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
+MAN1=	anemone.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 	blitspin.1 bouboule.1 boxed.1 braid.1 bsod.1 bubble3d.1 bubbles.1 \
 	bumps.1 cage.1 ccurve.1 circuit.1 compass.1 coral.1 critical.1 \
 	crystal.1 cubenetic.1 cynosure.1 dangerball.1 decayscreen.1 deco.1 \
@@ -74,6 +74,7 @@ MAN1=	anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 	antinspect.1 fuzzyflakes.1 polyhedra.1 providence.1 memscroller.1 \
 	boing.1 boxfit.1 carousel.1 fiberlamp.1 fireworkx.1 fliptext.1 intermomentary.1 \
 	pinion.1 substrate.1 antmaze.1 crackberg.1 interaggregate.1 tangram.1 \
+	celtic.1 cube21.1 glhanoi.1 juggler3d.1 timetunnel.1 \
 	xscreensaver-command.1 xscreensaver-demo.1 xscreensaver-text.1 \
 	xscreensaver-getimage-file.1 xscreensaver-getimage-video.1 \
 	xscreensaver-getimage.1 xscreensaver-gl-helper.1 xscreensaver.1
@@ -96,7 +97,11 @@ post-patch:
 	@ ${CP} ${WRKSRC}/configure ${WRKSRC}/configure.Patched
 	@ ${SED} -e 's#-lpthread#${PTHREAD_LIBS}#g' \
 		-e 's#malloc.h#stdlib.h#g' \
+		-e 's#/usr/X11R6#${X11BASE}#g' \
 		${WRKSRC}/configure.Patched > ${WRKSRC}/configure
+	${CP} ${WRKSRC}/driver/timers.c ${WRKSRC}/driver/timers.c.presed
+	${SED} 334,344d ${WRKSRC}/driver/timers.c.presed > \
+		${WRKSRC}/driver/timers.c
 
 post-install:
 	@(if test -x ${X11BASE}/bin/xscreensaver-hacks/webcollage-helper; then \
