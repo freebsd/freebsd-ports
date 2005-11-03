@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xcompmgr
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://xapps.freedesktop.org/release/
 
