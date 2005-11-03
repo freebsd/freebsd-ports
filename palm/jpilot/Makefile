@@ -7,8 +7,7 @@
 # "?=" and "+=" are for including this Makefile from japanese/jpilot
 
 PORTNAME=	jpilot
-PORTVERSION=	0.99.7
-PORTREVISION=	3
+PORTVERSION=	0.99.8
 CATEGORIES+=	palm comms
 MASTER_SITES=	http://jpilot.org/
 
@@ -19,7 +18,7 @@ LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/jpilot/plugins
 CFLAGS+=	-I${LOCALBASE}/include
@@ -43,7 +42,7 @@ USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--enable-gtk2=yes
 .endif
 
-MAN1=		jpilot-sync.1 jpilot.1
+MAN1=		jpilot-dial.1 jpilot-dump.1 jpilot-sync.1 jpilot.1
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
@@ -54,6 +53,8 @@ post-install:
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${PREFIX}/lib/jpilot -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	${INSTALL_MAN} ${WRKSRC}/docs/jpilot-dial.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/jpilot-dump.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/docs/jpilot-sync.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/docs/jpilot.1 ${PREFIX}/man/man1
 	@${MKDIR} ${DATADIR}/icons
