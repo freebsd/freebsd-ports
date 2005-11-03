@@ -4,8 +4,8 @@ bin/xjdic_sa
 bin/xjdic_cl
 bin/xjdserver
 bin/xjdxgen
-share/dict/edict/4jword2
-share/dict/edict/4jword2.xjdx
+share/dict/edict/4jword3_edict.euc
+share/dict/edict/4jword3_edict.euc.xjdx
 share/dict/edict/aviation
 share/dict/edict/aviation.xjdx
 share/dict/edict/compdic
@@ -47,7 +47,7 @@ share/dict/edict/romkana.cnv
 share/dict/edict/vconj
 share/dict/edict/.xjdicrc
 @dirrm share/dict/edict
-share/doc/xjdic/4jword2.doc
+share/doc/xjdic/4jword3_inf.txt
 share/doc/xjdic/aviation.txt
 share/doc/xjdic/compverb.doc
 share/doc/xjdic/concrete.doc

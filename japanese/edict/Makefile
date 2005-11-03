@@ -7,7 +7,7 @@
 
 PORTNAME=	edict
 PORTVERSION=	19990714
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sedl.org/pub/mirrors/nihongo/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/nihongo/ftp.cc.monash.edu.au/ \
@@ -27,7 +27,7 @@ DICTFILES=	edict.gz edicth enamdict.gz compdic.gz \
 		kanjidic.gz kanjd212.gz lawgledt.zip \
 		lingdic.zip geodic.gz pandpdic.zip \
 		aviation.zip findic.zip mktdic.zip \
-		compverb.gz 4jword2.gz concrete.zip
+		compverb.gz 4jword3_edict.zip concrete.zip
 
 SRCFILES=	xjdic23.tgz
 
@@ -35,7 +35,7 @@ DOCFILES=	edict_doc.txt edict_doc.html edicth.doc \
 		enamdict_doc.txt enamdict_doc.html \
 		j_places.inf kanjidic.doc kanjd212.doc ediclsd3.rme \
 		lawgldoc.new lingdic.txt geodic.doc aviation.txt \
-		findic.doc mktdic.doc compverb.doc 4jword2.doc \
+		findic.doc mktdic.doc compverb.doc 4jword3_inf.txt \
 		concrete.doc
 
 #
@@ -101,6 +101,10 @@ do-install:
 			;; \
 		*.zip) \
 			instfile=`${BASENAME} $$file .zip` ; \
+			if [ $$instfile = 4jword3_edict ] ; \
+			then \
+				instfile=4jword3_edict.euc ; \
+			fi; \
 			if unzip -o ${_DISTDIR}/$$file $$instfile -d ${DATADIR} ; \
 			then \
 				${TRUE} ; \
