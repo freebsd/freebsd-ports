@@ -69,5 +69,7 @@ share/examples/w3/dot.emacs
 share/examples/w3/dot.mosaic-hotlist-default
 share/examples/w3/user-install
 @dirrm lib/mule/site-lisp/w3
+@unexec rmdir %D/lib/mule/site-lisp 2>/dev/null || true
+@unexec rmdir %D/lib/mule 2>/dev/null || true
 @dirrm share/doc/w3
 @dirrm share/examples/w3
