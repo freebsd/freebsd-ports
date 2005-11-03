@@ -122,3 +122,22 @@ lib/libsswf.so
 %%DATADIR%%/scripts/fonts/font-fotinos.sswf
 %%DATADIR%%/scripts/fonts/larabie-font_read_me.txt
 %%DATADIR%%/scripts/origin.sswf
+@dirrm %%DATADIR%%/scripts/fonts
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/samples/web-site-anim
+@dirrm %%DATADIR%%/samples/trail
+@dirrm %%DATADIR%%/samples/sun-flower
+@dirrm %%DATADIR%%/samples/showfont
+@dirrm %%DATADIR%%/samples/scroller
+@dirrm %%DATADIR%%/samples/news-samples
+@dirrm %%DATADIR%%/samples/new-anim
+@dirrm %%DATADIR%%/samples/morph
+@dirrm %%DATADIR%%/samples/logo
+@dirrm %%DATADIR%%/samples/libya
+@dirrm %%DATADIR%%/samples/lanuit-mp3
+@dirrm %%DATADIR%%/samples/functions
+@dirrm %%DATADIR%%/samples/dyn-button
+@dirrm %%DATADIR%%/samples/check_version
+@dirrm %%DATADIR%%/samples
+@dirrm %%DATADIR%%
+@dirrm include/sswf
