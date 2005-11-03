@@ -22,11 +22,7 @@ LIB_DEPENDS=	wxmozilla_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxmozilla
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython24
 
-BROKEN=		Broken dependency
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
-USE_PYTHON=	2.3
+USE_PYTHON=	2.4
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
