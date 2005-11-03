@@ -15,7 +15,7 @@
 +	#cd interface; make INCDIR=../../runtime
 +	cd intinf; make INCDIR=../../runtime
 +	#cd mgd; make INCDIR=../../runtime
-+	#cd mgdbm; make INCDIR=../../runtime
++	cd mgdbm; make INCDIR=../../runtime
 +	#cd mmysql; make INCDIR=../../runtime
 +	#cd mpq; make INCDIR=../../runtime
 +	cd mregex; make INCDIR=../../runtime
@@ -33,7 +33,7 @@
 -	cd munix; make install 
 +	cd intinf; make INCDIR=../../runtime install 
 +	#cd mgd; make INCDIR=../../runtime install 
-+	#cd mgdbm; make INCDIR=../../runtime install 
++	cd mgdbm; make INCDIR=../../runtime install 
 +	#cd mmysql; make INCDIR=../../runtime install 
 +	#cd mpq; make INCDIR=../../runtime install 
 +	cd mregex; make INCDIR=../../runtime install 

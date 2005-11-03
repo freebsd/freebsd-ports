@@ -455,6 +455,7 @@ lib/mosml/Word8Vector.uo
 lib/mosml/camlrunm
 lib/mosml/header
 lib/mosml/helpsigs.val
+lib/mosml/libmgdbm.so
 lib/mosml/libmgmp.so
 lib/mosml/libmregex.so
 lib/mosml/libmsocket.so
