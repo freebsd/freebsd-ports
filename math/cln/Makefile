@@ -9,7 +9,9 @@
 PORTNAME=	cln
 PORTVERSION=	1.1.10
 CATEGORIES=	math devel
-MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/gnu/
+MASTER_SITES=	http://www.ginac.de/CLN/ \
+		http://www.mirrors.wiretapped.net/security/cryptography/libraries/math/cln/ \
+		ftp://ftpthep.physik.uni-mainz.de/pub/gnu/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Class Library for Numbers
