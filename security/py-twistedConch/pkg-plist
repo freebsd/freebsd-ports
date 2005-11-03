@@ -35,9 +35,6 @@ bin/tkconch
 %%S%%/twisted/conch/client/unix.py
 %%S%%/twisted/conch/client/unix.pyc
 %%S%%/twisted/conch/client/unix.pyo
-%%S%%/twisted/conch/credentials.py
-%%S%%/twisted/conch/credentials.pyc
-%%S%%/twisted/conch/credentials.pyo
 %%S%%/twisted/conch/error.py
 %%S%%/twisted/conch/error.pyc
 %%S%%/twisted/conch/error.pyo
@@ -62,9 +59,15 @@ bin/tkconch
 %%S%%/twisted/conch/insults/text.py
 %%S%%/twisted/conch/insults/text.pyc
 %%S%%/twisted/conch/insults/text.pyo
+%%S%%/twisted/conch/insults/window.py
+%%S%%/twisted/conch/insults/window.pyc
+%%S%%/twisted/conch/insults/window.pyo
 %%S%%/twisted/conch/interfaces.py
 %%S%%/twisted/conch/interfaces.pyc
 %%S%%/twisted/conch/interfaces.pyo
+%%S%%/twisted/conch/ls.py
+%%S%%/twisted/conch/ls.pyc
+%%S%%/twisted/conch/ls.pyo
 %%S%%/twisted/conch/manhole.py
 %%S%%/twisted/conch/manhole.pyc
 %%S%%/twisted/conch/manhole.pyo
@@ -86,9 +89,6 @@ bin/tkconch
 %%S%%/twisted/conch/openssh_compat/primes.py
 %%S%%/twisted/conch/openssh_compat/primes.pyc
 %%S%%/twisted/conch/openssh_compat/primes.pyo
-%%S%%/twisted/conch/pamauth.py
-%%S%%/twisted/conch/pamauth.pyc
-%%S%%/twisted/conch/pamauth.pyo
 %%S%%/twisted/conch/recvline.py
 %%S%%/twisted/conch/recvline.pyc
 %%S%%/twisted/conch/recvline.pyo
@@ -218,7 +218,6 @@ bin/tkconch
 %%S%%/twisted/plugins/twisted_conch.py
 %%S%%/twisted/plugins/twisted_conch.pyc
 %%S%%/twisted/plugins/twisted_conch.pyo
-@dirrm %%S%%/twisted/plugins
 @dirrm %%S%%/twisted/conch/ui
 @dirrm %%S%%/twisted/conch/test
 @dirrm %%S%%/twisted/conch/ssh

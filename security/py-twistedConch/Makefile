@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	twistedConch
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	security devel python
-MASTER_SITES=	http://twistedmatrix.com/downloads/Conch/0.5/ \
-		http://tmrc.mit.edu/mirror/twisted/Conch/0.5/
+MASTER_SITES=	http://twistedmatrix.com/downloads/Conch/${PORTVERSION:S/.0//}/ \
+		http://tmrc.mit.edu/mirror/twisted/Conch/${PORTVERSION:S/.0//}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedConch-${PORTVERSION}
 
