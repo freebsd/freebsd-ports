@@ -7,6 +7,7 @@
 
 PORTNAME=	nntpswitch
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	http://www.nntpswitch.org/download/
 
