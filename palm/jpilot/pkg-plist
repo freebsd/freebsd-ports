@@ -1,7 +1,7 @@
 bin/jpilot
 bin/jpilot-dump
 bin/jpilot-sync
-share/gnome/apps/Applications/jpilot.desktop
+share/applications/jpilot.desktop
 %%NLS%%share/locale/ca/LC_MESSAGES/jpilot.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/jpilot.mo
 %%NLS%%share/locale/da/LC_MESSAGES/jpilot.mo
@@ -13,8 +13,10 @@ share/gnome/apps/Applications/jpilot.desktop
 %%NLS%%share/locale/nl/LC_MESSAGES/jpilot.mo
 %%NLS%%share/locale/no/LC_MESSAGES/jpilot.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/jpilot.mo
+%%NLS%%share/locale/rw/LC_MESSAGES/jpilot.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/jpilot.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/jpilot.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/jpilot.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/jpilot.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/jpilot.mo
+@unexec rmdir %D/share/applications 2>/dev/null || true

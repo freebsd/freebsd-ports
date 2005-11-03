@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sat Feb 28 15:19:48 2004
-+++ Makefile.in	Sun Feb 29 17:22:11 2004
-@@ -312,7 +312,7 @@
+--- Makefile.in.orig	Sun Oct 30 18:00:53 2005
++++ Makefile.in	Tue Nov  1 17:17:43 2005
+@@ -302,7 +302,7 @@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
