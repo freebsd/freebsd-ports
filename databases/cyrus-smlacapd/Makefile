@@ -7,6 +7,7 @@
 
 PORTNAME=	cyrus-smlacapd
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	databases mail
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
@@ -23,12 +24,12 @@ CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-sasldir=${LOCALBASE}/lib
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
+USE_RC_SUBR=	cyrus_smlacapd_backend.sh
 
 ACAPD_DOC=	${PREFIX}/share/doc/acapd
 
 pre-configure:
-	${REINPLACE_CMD} -e "s#sasl.h#sasl1/sasl.h#" ${WRKSRC}/configure
+	${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/configure
 	${REINPLACE_CMD} -e "s#<sasl.h>#<sasl1/sasl.h>#" \
 		${WRKSRC}/actest/actest.c ${WRKSRC}/api/acap.c \
 		${WRKSRC}/api/acap.h ${WRKSRC}/frontend/frontend.c \
@@ -40,9 +41,6 @@ pre-su-install:
 
 post-install:
 	${INSTALL} ${LOCALBASE}/lib/sml-nj/bin/.run/run.x86-freebsd ${PREFIX}/cyrus/bin
-	${INSTALL_SCRIPT} ${FILESDIR}/cyrus_smlacapd_backend \
-		${PREFIX}/etc/rc.d/cyrus_smlacapd_backend.sample
-
 	${MKDIR} ${ACAPD_DOC}
 	${INSTALL_DATA} ${FILESDIR}/acapd.conf-sample ${ACAPD_DOC}
 .if !defined(NOPORTDOCS)

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/databases/cyrus-smlacapd/files/Attic/cyrus_smlacapd_backend,v 1.1 2005-01-20 15:11:08 pav Exp $
+# $FreeBSD$
 #
 
 # PROVIDE: cyrus_smlacapd_backend
@@ -11,14 +11,16 @@
 # Add the following line to /etc/rc.conf to enable cyrus_smlacapd_backend:
 # cyrus_smlacapd_backend_enable="YES"
 #
-. /etc/rc.subr
+prefix=%%PREFIX%%
+cyrus=${prefix}/cyrus
+. %%RC_SUBR$$
 
 name="cyrus_smlacapd_backend"
 rcvar=`set_rcvar`
 
 [ -z "$cyrus_smlacapd_backend_enable" ]	&& cyrus_smlacapd_backend_enable="NO"
-[ -z "$cyrus_smlacapd_backend_runtime" ]	&& cyrus_smlacapd_backend_runtime="/usr/local/cyrus/bin/run.x86-freebsd"
-[ -z "$cyrus_smlacapd_backend_heap" ]	&& cyrus_smlacapd_backend_heap="/usr/local/cyrus/bin/backend.x86-bsd"
+[ -z "$cyrus_smlacapd_backend_runtime" ]	&& cyrus_smlacapd_backend_runtime="${cyrus}/bin/run.x86-freebsd"
+[ -z "$cyrus_smlacapd_backend_heap" ]	&& cyrus_smlacapd_backend_heap="${cyrus}bin/backend.x86-bsd"
 
 required_dirs="/var/acap /var/spool/acap"
 pidfile=/var/run/cyrus_smlacapd_backend.pid
@@ -34,7 +36,7 @@ cyrus_smlacapd_backend_precmd()
 	if [ -e ${SOCKET} ]
 	then
 		rm ${SOCKET}
-        fi
+	fi
 }
 
 cyrus_smlacapd_backend_postcmd()
@@ -45,7 +47,7 @@ cyrus_smlacapd_backend_postcmd()
 	if [ -n "$pid" ]
 	then
 		echo "$pid" > $pidfile
-        fi
+	fi
 }
 
 load_rc_config $name
