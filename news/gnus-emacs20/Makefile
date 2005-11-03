@@ -17,10 +17,6 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A popular newsreader for emacs20
 
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
 HAS_CONFIGURE=	yes
 
 EMACS_PORT_NAME?=emacs20
