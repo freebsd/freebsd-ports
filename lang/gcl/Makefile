@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcl
-PORTVERSION=	2.6.6
+PORTVERSION=	2.6.7
 CATEGORIES=	lang tcl84 tk84
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gcl
@@ -24,6 +24,7 @@ USE_AUTOCONF_VER=	259
 USE_GMAKE=	yes
 USE_XLIB=	yes
 CONFIGURE_ARGS=--prefix=${PREFIX} \
+	--enable-ansi \
 	--enable-machine=FreeBSD \
 	--infodir=${PREFIX}/info \
 	--enable-info=${PREFIX}/info \
