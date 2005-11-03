@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	twistedNames
-PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTVERSION=	0.2.0
 CATEGORIES=	dns devel python
 MASTER_SITES=	http://twistedmatrix.com/downloads/Names/0.1/ \
 		http://tmrc.mit.edu/mirror/twisted/Names/0.2/
