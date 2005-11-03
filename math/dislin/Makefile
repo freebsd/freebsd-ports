@@ -19,12 +19,11 @@ ONLY_FOR_ARCHS=	i386
 USE_XLIB=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-LDCONFIG_DIRS=	${DISLIN_DIR}/lib
 
 MD5_FILE=	${MASTERDIR}/distinfo${BINVER}
-PLIST_SUB=	VER=${PORTVERSION}
+PLIST_SUB+=	VER=${PORTVERSION}
 SUB_FILES=	dislin.sh pkg-message
-SUB_LIST=	DISLIN_DIR=${DISLIN_DIR}
+SUB_LIST+=	DISLIN_DIR=${DISLIN_DIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 DISLIN_DIR=	${PREFIX}/dislin
 PROGRAMS=	clink disaps disdrv disdrv_nw disdrv_w disgcl disgif dishlp	\
