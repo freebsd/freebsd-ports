@@ -1,7 +1,7 @@
---- zh/Makefile.in.orig	Tue Mar  1 14:59:32 2005
-+++ zh/Makefile.in	Tue Mar  1 14:59:50 2005
-@@ -232,7 +232,7 @@
- sharedstatedir = @sharedstatedir@
+--- tables/zh/Makefile.in.orig	Sun Oct 30 22:07:39 2005
++++ tables/zh/Makefile.in	Tue Nov  1 23:26:26 2005
+@@ -245,7 +245,7 @@
+ subdirs = @subdirs@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
 -SCIM_MAKE_TABLE = $(top_builddir)/src/scim-make-table
