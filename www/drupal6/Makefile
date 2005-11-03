@@ -7,6 +7,7 @@
 
 PORTNAME=	drupal
 PORTVERSION=	4.6.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://drupal.org/files/projects/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -20,8 +21,18 @@ COMMENT=	CMS that supports pgsql and mysql
 RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 .endif
 
+pre-fetch:
+.if !defined(DRUPDIR)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Define DRUPDIR to override default of 'www/data/drupal'."
+	@${ECHO_MSG} ""
+.endif
+
+DRUPDIR?=	www/data/drupal
+WWWOWN?=	www
+WWWGRP?=	www
+
 NO_BUILD=	yes
-DRUPDIR=	www/data/drupal
 DOCS=		CHANGELOG.txt INSTALL.txt LICENSE.txt MAINTAINERS.txt
 PLIST_SUB+=	DRUPDIR=${DRUPDIR}
 
@@ -64,7 +75,7 @@ do-install:
 	@${ECHO_MSG} "    GRANT ALL PRIVILEGES ON drupal.* TO nobody@localhost IDENTIFIED BY 'password';"
 	@${ECHO_MSG} "    mysql -u nobody -p drupal <  ${PREFIX}/${DRUPDIR}/database/database.mysql"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} " Then edit the ${PREFIX}/${DRUPDIR}/includes/conf.php to your needs."
+	@${ECHO_MSG} " Then edit the ${PREFIX}/${DRUPDIR}/sites/default/settings.php to your needs."
 	@${ECHO_MSG} " Once you have done that"
 	@${ECHO_MSG} " GoTo: http://<your_website>/drupal"
 	@${ECHO_MSG} ""
