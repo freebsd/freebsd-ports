@@ -17,10 +17,6 @@ COMMENT?=	WWW browser based on emacs/mule
 BUILD_DEPENDS?=	emacs-19.34:${PORTSDIR}/editors/emacs19
 RUN_DEPENDS?=	emacs-19.34:${PORTSDIR}/editors/emacs19
 
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
 WRKSRC=		${WRKDIR}/w3
 MAKE_ENV+=	EMACSCMD=${EMACSCMD} ELISPDIR=${ELISPDIR} \
 		MKDIR="${MKDIR}" CP=${CP} \
