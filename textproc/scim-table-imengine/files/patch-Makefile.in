@@ -1,22 +1,22 @@
---- Makefile.in.orig	Sun Aug  7 21:42:34 2005
-+++ Makefile.in	Thu Oct 20 22:13:30 2005
+--- Makefile.in.orig	Sun Oct 30 22:07:39 2005
++++ Makefile.in	Tue Nov  1 22:58:26 2005
 @@ -75,7 +75,7 @@
  	uninstall-recursive
  ETAGS = etags
  CTAGS = ctags
--DIST_SUBDIRS = intl m4 src zh ja ko ne additional icons po skim
-+DIST_SUBDIRS = intl m4 src icons po skim
+-DIST_SUBDIRS = intl icons m4 po src tables skim
++DIST_SUBDIRS = intl icons m4 po src skim
  DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
  distdir = $(PACKAGE)-$(VERSION)
  top_distdir = $(distdir)
-@@ -258,8 +258,8 @@
+@@ -259,8 +259,8 @@
  
  EXTRA_DIST = config.rpath mkinstalldirs  bootstrap scim-tables.spec
  AUTOMAKE_OPTIONS = gnu
 -@SCIM_TABLES_ENABLE_SKIM_SUPPORT_TRUE@SKIM_SUBDIR = skim
--SUBDIRS = intl m4 src zh ja ko ne additional icons po $(SKIM_SUBDIR)
-+@SCIM_TABLES_ENABLE_SKIM_SUPPORT_TRUE@SKIM_SUBDIR =
-+SUBDIRS = intl m4 src icons po $(SKIM_SUBDIR)
+-SUBDIRS = intl icons m4 po src tables $(SKIM_SUBDIR)
++@SCIM_TABLES_ENABLE_SKIM_SUPPORT_TRUE@SKIM_SUBDIR = 
++SUBDIRS = intl icons m4 po src $(SKIM_SUBDIR)
  MAINTAINERCLEANFILES = Makefile.in aclocal.m4 configure $(AUX_DIST)
  CLEANFILES = *.bak 
  ACLOCAL_AMFLAGS = -I m4
