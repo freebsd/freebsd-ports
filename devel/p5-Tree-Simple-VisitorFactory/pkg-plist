@@ -1,3 +1,4 @@
+%%SITE_PERL%%/Tree/Simple/Visitor/._FindByPath.pm
 %%SITE_PERL%%/Tree/Simple/Visitor/BreadthFirstTraversal.pm
 %%SITE_PERL%%/Tree/Simple/Visitor/CreateDirectoryTree.pm
 %%SITE_PERL%%/Tree/Simple/Visitor/FindByNodeValue.pm
@@ -14,6 +15,7 @@
 %%SITE_PERL%%/Tree/Simple/Visitor/Sort.pm
 %%SITE_PERL%%/Tree/Simple/Visitor/ToNestedArray.pm
 %%SITE_PERL%%/Tree/Simple/Visitor/ToNestedHash.pm
+%%SITE_PERL%%/Tree/Simple/Visitor/VariableDepthClone.pm
 %%SITE_PERL%%/Tree/Simple/VisitorFactory.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree/Simple/VisitorFactory/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree/Simple/VisitorFactory
