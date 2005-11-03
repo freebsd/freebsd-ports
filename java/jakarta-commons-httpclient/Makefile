@@ -6,25 +6,27 @@
 #
 
 PORTNAME=	commons-httpclient
-PORTVERSION=	2.0.2
+DISTVERSION=	3.0-rc4
 CATEGORIES=	java www
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	commons/httpclient/source
 PKGNAMEPREFIX=	jakarta-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A package implementing the client side of the HTTP standard
 
 BUILD_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging
+BUILD_DEPENDS+=	${JAVAJARDIR}/commons-codec.jar:${PORTSDIR}/java/jakarta-commons-codec
 RUN_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging
+RUN_DEPENDS+=	${JAVAJARDIR}/commons-codec.jar:${PORTSDIR}/java/jakarta-commons-codec
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 USE_ANT=	yes
 MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 ALL_TARGET=	dist
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
