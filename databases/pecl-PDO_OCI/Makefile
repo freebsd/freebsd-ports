@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PDO_OCI
-DISTVERSION=	1.0RC1
+DISTVERSION=	1.0RC2
 CATEGORIES=	databases www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -34,7 +34,7 @@ PTHREAD_STATIC=	/usr/lib/libpthread
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"does not compile on FreeBSD 4.x"
+IGNORE=	"does not compile on FreeBSD 4.x"
 .endif
 
 pre-configure:
