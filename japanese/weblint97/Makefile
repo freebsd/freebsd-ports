@@ -7,6 +7,7 @@
 
 PORTNAME=	weblint97
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	http://web.sfc.keio.ac.jp/~mimasa/jweblint/ \
 		ftp://ftp.hipecs.hokudai.ac.jp/pub/network/WWW/contrib/
@@ -17,10 +18,7 @@ COMMENT=	An internationalized HTML checker with japanese message(EUC-JP)
 
 RUN_DEPENDS=	${SITE_PERL}/jcode.pl:${PORTSDIR}/japanese/jcode.pl
 
-BROKEN=		"Incomplete pkg-plist (port installs into nonstandard perl directory)"
-DEPRECATED=	"${BROKEN}"
-EXPIRATION_DATE=2005-09-22
-
+USE_PERL5_RUN=	yes
 WRKSRC=		${WRKDIR}/weblint-97
 MANLANG=	ja
 MAN1=		jweblint.1
@@ -29,7 +27,7 @@ ALL_TARGET=	euc-jp
 INSTALL_TARGET=	jinstall
 
 PORTDOCDIR?=	${PREFIX}/share/doc/jweblint
-PERLLIBDIR?=	${PREFIX}/lib/perl
+PERLLIBDIR?=	${SITE_PERL}
 
 pre-install:
 	@${SED} -e "s,%PERLLIBDIR%,${PERLLIBDIR},g" < ${WRKSRC}/jweblint.tmp \
