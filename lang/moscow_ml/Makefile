@@ -18,15 +18,14 @@ LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
 RESTRICTED=	Restrictions on for-profit distribution.
 
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/mosml
-
+SUB_FILES=	pkg-message
 ALL_TARGET=	world MOSMLHOME=$(MOSMLHOME)
 INSTALL_TARGET=	install MOSMLHOME=$(MOSMLHOME)
 WRKSRC=		${WRKDIR}/mosml/src
 USE_PERL5=	yes
 USE_REINPLACE=	yes
-MAKE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" DOCSDIR="${DOCSDIR}"
+MAKE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" DOCSDIR="${DOCSDIR}" \
+		LD_RUN_PATH="${PREFIX}/lib/mosml"
 
 PKGMESSAGE=	${WRKDIR}/pkgmessage
 
@@ -51,8 +50,6 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/mosml/copyrght/copyrght.cl ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/mosml/copyrght/gpl2 ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/mosml/README ${DOCSDIR}
-	${SED} -e "s,%%PREFIX%%,${PREFIX},g" < ${FILESDIR}/README.FreeBSD \
-		> ${PKGMESSAGE}
 	${INSTALL_DATA} ${PKGMESSAGE} ${DOCSDIR}/README.FreeBSD
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} "${DOCSDIR}"
 	${MKDIR} ${EXAMPLESDIR}
