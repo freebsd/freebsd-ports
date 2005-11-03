@@ -13,7 +13,7 @@
 #
 prefix=%%PREFIX%%
 cyrus=${prefix}/cyrus
-. %%RC_SUBR$$
+. %%RC_SUBR%%
 
 name="cyrus_smlacapd_backend"
 rcvar=`set_rcvar`
