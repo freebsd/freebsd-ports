@@ -1,0 +1,12 @@
+diff -urN stunnel-4.13/tools/stunnel.init.in stunnel-4.14/tools/stunnel.init.in
+--- tools/stunnel.init.in	Sun Aug 11 01:17:48 2002
++++ tools/stunnel.init.in	Tue Oct 25 23:34:39 2005
+@@ -5,7 +5,7 @@
+ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+ PREFIX=@prefix@
+ DAEMON=$PREFIX/sbin/stunnel
+-PIDFILE=$PREFIX/var/stunnel/stunnel.pid
++PIDFILE=$PREFIX/var/run/stunnel/stunnel.pid
+ 
+ test -f $DAEMON || exit 0
+ 
