@@ -1,6 +1,6 @@
---- icons/Makefile.in.orig	Tue Mar  1 15:16:23 2005
-+++ icons/Makefile.in	Tue Mar  1 15:16:57 2005
-@@ -222,32 +222,8 @@
+--- icons/Makefile.in.orig	Sun Oct 30 22:07:35 2005
++++ icons/Makefile.in	Tue Nov  1 23:11:26 2005
+@@ -234,52 +234,8 @@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  MAINTAINERCLEANFILES = Makefile.in
@@ -8,29 +8,49 @@
 -			  Amharic.png   \
 -			  Arabic.png    \
 -			  Array30.png   \
--			  CangJie.png   \
--			  CangJie3.png   \
+-			  Bengali-inscript.png	\
+-			  Bengali-probhat.png	\
+-			  CangJie.png	\
+-			  CangJie3.png	\
 -			  Cantonese.png \
--			  CantonHK.png \
--			  Quick.png \
--			  Stroke5.png \
+-			  CantonHK.png	\
+-			  Quick.png	\
+-			  Stroke5.png	\
 -			  Dayi.png      \
 -			  Erbi.png      \
 -			  Erbi-QS.png   \
 -			  EZ.png        \
+-			  Gujarati-inscript.png	\
+-			  Gujarati-phonetic.png	\
 -			  Hangul.png    \
 -			  Hanja.png     \
+-			  Hindi-inscript.png	\
+-			  Hindi-phonetic.png	\
 -			  HIRAGANA.png  \
 -			  Jyutping.png  \
 -			  KATAKANA.png  \
+-			  Kannada-inscript.png	\
+-			  Kannada-kgp.png	\
+-			  LaTeX.png     \
+-			  Malayalam-inscript.png	\
+-			  Nepali.png    \
 -			  Nippon.png    \
+-			  Punjabi-inscript.png	\
+-			  Punjabi-jhelum.png	\
+-			  Punjabi-phonetic.png	\
 -			  Simplex.png   \
+-			  Tamil-inscript.png	\
+-			  Tamil-phonetic.png	\
+-			  Telugu-inscript.png	\
+-			  Thai.png	\
 -			  Viqr.png      \
+-			  Wu.png        \
 -			  Wubi.png      \
 -			  Yawerty.png   \
 -			  ZhuYin.png    \
--			  Ziranma.png
-+INST_ICONS = 		  Hangul.png    \
+-			  Ziranma.png	\
+-		          IPA-X-SAMPA.png 
++INST_ICONS =		  Hangul.png    \
 +			  Hanja.png
  
  EXTRA_DIST = $(INST_ICONS)
