@@ -7,6 +7,7 @@
 
 PORTNAME=	data
 PORTVERSION=	3.20
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/quake2/ \
 		ftp://ftp.fasta.fh-dortmund.de/mirror/idstuff/quake2/
@@ -16,7 +17,7 @@ DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 MAINTAINER=	alejandro@varnet.biz
 COMMENT=	Quake II data files
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
