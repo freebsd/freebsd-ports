@@ -82,6 +82,7 @@ CONFIGURE_ARGS+=--with-hdf=no
 
 .if !defined(WITHOUT_PYTHON) || defined(BUILD_PYTHON_MODULE)
 USE_PYTHON=	2.3+
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/numarray:${PORTSDIR}/math/py-numarray	\
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/numarray:${PORTSDIR}/math/py-numarray	\
 		${PYTHON_SITELIBDIR}/matplotlib:${PORTSDIR}/math/py-matplotlib
 CONFIGURE_ENV+=	PYTHON_VERSION=${_PYTHON_VERSION}
