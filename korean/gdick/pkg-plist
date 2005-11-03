@@ -18,6 +18,7 @@ bin/gdick_applet
 %%PYTHON_SITELIBDIR%%/gdick/gdick.py
 %%PYTHON_SITELIBDIR%%/gdick/gdick.pyc
 %%PYTHON_SITELIBDIR%%/gdick/gdick.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/gdick
 share/gdick/gdick.glade
 share/gdick/gdick.png
 share/gdick/gdick_icon.png
