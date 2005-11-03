@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PDO_SQLITE
-DISTVERSION=	1.0RC1
+DISTVERSION=	1.0RC2
 CATEGORIES=	databases www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
