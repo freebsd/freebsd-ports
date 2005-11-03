@@ -14,8 +14,4 @@ COMMENT=	Very advanced network monitoring system (agent only)
 ZABBIX_AGENT_ONLY=yes
 MASTERDIR=	${.CURDIR}/../../net-mgmt/zabbix
 
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
 .include "${MASTERDIR}/Makefile"
