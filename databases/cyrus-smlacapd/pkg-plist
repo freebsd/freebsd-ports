@@ -1,4 +1,3 @@
-etc/rc.d/cyrus_smlacapd_backend.sample
 cyrus/bin/frontend
 cyrus/bin/backend-acapd
 cyrus/bin/backend.x86-bsd
