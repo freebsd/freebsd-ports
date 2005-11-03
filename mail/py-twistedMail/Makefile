@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	twistedMail
-PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTVERSION=	0.2.0
 CATEGORIES=	mail devel python
-MASTER_SITES=	http://twistedmatrix.com/downloads/Mail/0.1/ \
-		http://tmrc.mit.edu/mirror/twisted/Mail/0.1/
+MASTER_SITES=	http://twistedmatrix.com/downloads/Mail/${PORTVERSION:S/.0//}/ \
+		http://tmrc.mit.edu/mirror/twisted/Mail/${PORTVERSION:S/.0//}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedMail-${PORTVERSION}
 
