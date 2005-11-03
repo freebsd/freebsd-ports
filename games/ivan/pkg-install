@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+STATEDIR="/var/games/ivan"
+
+[ "$2" != "POST-INSTALL" -o -d "$SCOREDIR" ] && exit 0
+
+echo "Creating state directory..."
+
+mkdir "$STATEDIR"
+touch "$STATEDIR/ivan-highscore.scores"
+mkdir "$STATEDIR/Bones"
+chgrp -R games "$STATEDIR"
+chmod -R g+w "$STATEDIR"
