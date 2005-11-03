@@ -1,6 +1,6 @@
 # New ports collection makefile for:	jailuser
 # Date created:				10 Jun 2004
-# Whom:					bugghy <bugghy@SAFe-mail.net>
+# Whom:					Vaida Bogdan <vaida.bogdan@gmail.com>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jail
 DISTNAME=	jail_${PORTVERSION}
 
-MAINTAINER=	bugghy@SAFe-mail.net
+MAINTAINER=	vaida.bogdan@gmail.com
 COMMENT=	Builds a chrooted environment
 
 WRKSRC=		${WRKDIR}/jail_1-9_stable/src
