@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openvpn
-DISTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	security
 MASTER_SITES=	http://openvpn.net/release/
 
