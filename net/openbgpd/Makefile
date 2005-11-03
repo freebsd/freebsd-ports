@@ -7,7 +7,7 @@
 
 PORTNAME=	openbgpd
 PORTVERSION=	3.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenBGPD/:openbsd \
 		${MASTER_SITE_LOCAL:S/$/:freebsd/g}
@@ -19,6 +19,8 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tgz
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Free implementation of the Border Gateway Protocol, Version 4
+
+CONFLICTS=	zebra-0* quagga-0*
 
 WRKSRC=		${WRKDIR}
 MANCOMPRESSED=	yes
