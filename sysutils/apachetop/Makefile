@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	apachetop
-PORTVERSION=	0.12
+PORTVERSION=	0.12.5
 CATEGORIES=	sysutils
-MASTER_SITES=	http://clueful.shagged.org/apachetop/files/
+MASTER_SITES=	http://spork.qfe3.net/apachetop/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	esn@x123.info
@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 MAN1=		apachetop.1
-PLIST_FILES=	sbin/apachetop
+PLIST_FILES=	bin/apachetop
 
 OPTIONS=	ADNS "Asynchronous-capable DNS support" off \
 		FAM "File Alteration Monitor support" off \
