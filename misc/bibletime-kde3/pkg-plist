@@ -161,6 +161,7 @@ share/icons/hicolor/48x48/actions/bt_tile.png
 share/icons/hicolor/48x48/actions/bt_tile_auto.png
 share/icons/hicolor/48x48/apps/bibletime.png
 share/icons/hicolor/64x64/apps/bibletime.png
+share/doc/HTML/en/common/common
 @unexec rmdir %D/share/icons/hicolor/64x64/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/64x64 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
