@@ -48,7 +48,9 @@ LDCONFIG_DIRS=	${PREFIX}/raqdevil/lib
 .include <bsd.port.pre.mk>
 
 pre-extract:
+.if !defined(PACKAGE_BUILDING)
 	@${SH} ${FILESDIR}/warning
+.endif
 
 pre-configure:
 	@if [ -n "`${PKG_INFO} -xI '^sendmail+tls+sasl*' 2> /dev/null`" ]; then \
