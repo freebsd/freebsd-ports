@@ -93,7 +93,7 @@ post-install:
 	@${RMDIR} ${PREFIX}/lib/plugins
 	@${SED} -e "s#%%PREFIX%%#${PREFIX}#g;s#%%DBDIR%%#${DBDIR}#g" \
 		${FILESDIR}/ntop.sh > ${WRKDIR}/ntop.sh
-	@${INSTALL_SCRIPT} ${WRKDIR}/ntop.sh ${PREFIX}/etc/rc.d
+	@${INSTALL_DATA} ${WRKDIR}/ntop.sh ${PREFIX}/etc/rc.d
 	@${SED} "s,%%LOCALBASE%%,${LOCALBASE},g" < ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
