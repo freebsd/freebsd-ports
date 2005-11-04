@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.clearsilver.net/downloads/ \
 		http://depot.fsck.ch/mirror/distfiles/
 
-MAINTAINER=	ports@fsck.ch
+MAINTAINER=	rui@ruilopes.com
 COMMENT=	A fast, powerful, and language-neutral template system
 
 GNU_CONFIGURE=	yes
