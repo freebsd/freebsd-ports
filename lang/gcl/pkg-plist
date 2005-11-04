@@ -47,11 +47,11 @@ lib/gcl-%%GCL_VER%%/lsp/gcl_info.o
 lib/gcl-%%GCL_VER%%/lsp/gcl_profile.lsp
 lib/gcl-%%GCL_VER%%/lsp/sys-proclaim.lisp
 lib/gcl-%%GCL_VER%%/pcl/sys-proclaim.lisp
-lib/gcl-%%GCL_VER%%/unixport/init_gcl.lsp
-lib/gcl-%%GCL_VER%%/unixport/libgcl.a
+lib/gcl-%%GCL_VER%%/unixport/init_ansi_gcl.lsp
+lib/gcl-%%GCL_VER%%/unixport/libansi_gcl.a
 lib/gcl-%%GCL_VER%%/unixport/libgclp.a
 lib/gcl-%%GCL_VER%%/unixport/rsym
-lib/gcl-%%GCL_VER%%/unixport/saved_gcl
+lib/gcl-%%GCL_VER%%/unixport/saved_ansi_gcl
 share/emacs/site-lisp/add-default.el
 share/emacs/site-lisp/ansi-doc.el
 share/emacs/site-lisp/dbl.el
