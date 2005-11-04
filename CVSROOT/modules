@@ -8920,6 +8920,7 @@ p5-XML-SAXDriver-Sablotron	ports/textproc/p5-XML-SAXDriver-Sablotron
 p5-XML-STX	ports/textproc/p5-XML-STX
 p5-XML-Sablotron	ports/textproc/p5-XML-Sablotron
 p5-XML-Schematron	ports/textproc/p5-XML-Schematron
+p5-XML-SemanticDiff	ports/textproc/p5-XML-SemanticDiff
 p5-XML-Simple	ports/textproc/p5-XML-Simple
 p5-XML-SimpleObject	ports/textproc/p5-XML-SimpleObject
 p5-XML-SimpleObject-LibXML	ports/textproc/p5-XML-SimpleObject-LibXML
