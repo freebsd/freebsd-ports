@@ -340,3 +340,4 @@ share/locale/tr/LC_MESSAGES/gourmet.mo
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet
 @unexec /bin/rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/%%PYTHON_LIBDIR%% 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/applications 2>/dev/null || /usr/bin/true
