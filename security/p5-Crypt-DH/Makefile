@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jesper@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 interface to a Diffie-Hellman key exchange system
 
 PERL_CONFIGURE=	yes
