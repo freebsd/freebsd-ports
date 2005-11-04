@@ -2,4 +2,5 @@
 bin/vnterm
 bin/VNterm
 share/doc/vnterm/README
+lib/X11/app-defaults/VNTerm
 @dirrm share/doc/vnterm

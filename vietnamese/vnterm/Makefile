@@ -8,7 +8,7 @@
 
 PORTNAME=	vnterm
 PORTVERSION=	3.4	#11.6.6[.0]
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	vietnamese x11
 MASTER_SITES=	ftp://ftp.x.org/pub/R6.6/tars/
 DISTNAME=	xorg-1
@@ -23,10 +23,6 @@ USE_IMAKE=	yes
 BUILD_DEPENDS=  ${LOCALBASE}/lib/libviqr.a:${PORTSDIR}/vietnamese/libviet \
 		mkfontdir:${X_CLIENTS_PORT}
 RUN_DEPENDS=	${PREFIX}/lib/X11/fonts/vietnamese/fonts.dir:${PORTSDIR}/vietnamese/vnxfonts
-
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - xc/programs/xterm
 WRKSRC=		${WRKDIR}/xc/programs/xterm
