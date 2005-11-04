@@ -20,7 +20,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=15
-CONFIGURE_ARGS=	--enable-doxygen=no
+CONFIGURE_ARGS=	--enable-doxygen=no \
+		--with-gmp-prefix=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
