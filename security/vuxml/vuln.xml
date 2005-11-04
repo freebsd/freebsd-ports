@@ -50,6 +50,10 @@ Note:  Please add new entries to the beginning of this file.
 	    all versions of PEAR can lead to the execution of
 	    arbitrary PHP code upon running the "pear" command
 	    or loading the Web/Gtk frontend.</p>
+	  <p>To be vulnerable, a user must explicitly install a
+	    publicly released malicious package using the PEAR
+	    installer, or explicitly install a package that depends on
+	    a malicious package.
 	</blockquote>
       </body>
     </description>
