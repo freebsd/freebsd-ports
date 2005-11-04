@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.100
+PORTVERSION?=	0.101
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.arcade-history.com/download/:history \
@@ -16,12 +16,12 @@ DISTNAME=	xmame-${XMAMEVERSION:S/.r/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:xmame
 DIST_SUBDIR=	xmame
 
-MAINTAINER?=	flynn@energyhq.es.eu.org
+MAINTAINER?=	mmendez@gmail.com
 COMMENT?=	UNIX/X11 port of the Multi Arcade Machine Emulator (MAME)
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
-BROKEN=		Unfetchable
+#BROKEN=		Unfetchable
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
@@ -112,11 +112,11 @@ ALLDOCS=	${GENERALDOCS} ${XMESSDOCS}
 #
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=	"Doesn't build on FreeBSD < 5.x"
-.elif (${OSVERSION} < 600000 && ${MAMEMESS} == "mess")
-BROKEN=	"Doesn't build on FreeBSD < 6.x"
-.endif
+#.if ${OSVERSION} < 500000
+#BROKEN=	"Doesn't build on FreeBSD < 5.x"
+#.elif (${OSVERSION} < 600000 && ${MAMEMESS} == "mess")
+#BROKEN=	"Doesn't build on FreeBSD < 6.x"
+#.endif
 
 # Option WITH_DATFILES
 .if ${MAMEMESS} == "mame"
@@ -127,9 +127,10 @@ PLIST_SUB+=	DATFILES=""
 EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 HIVER=		0100
+HISTVER=	1_05
 
 DISTFILES+=	uhsdat${HIVER}.zip:highscore \
-		history1_02.zip:history \
+		history${HISTVER}.zip:history \
 		cheat.zip:cheat
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -138,7 +139,7 @@ post-extract:
 		${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/uhsdat${HIVER}.zip \
 			hiscore.dat
 	cd ${WRKDIR} && \
-		${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/history1_02.zip \
+		${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/history${HISTVER}.zip \
 			history.dat
 	cd ${WRKDIR} && \
 		${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/cheat.zip cheat.dat
