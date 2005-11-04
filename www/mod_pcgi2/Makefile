@@ -17,9 +17,6 @@ COMMENT=	Persistent CGI module for Apache and Zope
 RUN_DEPENDS=	${ZOPEBASEDIR}/skel/bin/zopectl.in:${PORTSDIR}/www/zope
 
 APACHE_COMPAT=	yes
-BROKEN=		Does not install
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
 
 .if defined(WITH_APACHE13)
 BUILD_DEPENDS=	${LOCALBASE}/include/apache/httpd.h:${PORTSDIR}/${APACHE_PORT}
@@ -65,7 +62,7 @@ do-install:
 .if defined(WITH_APACHE13)
 	@${APXS} -ia -n pcgi2 ${WRKSRC}/mod_pcgi2.so
 .else
-	@${INSTALL_PROGRAM} ${WRKSRC}/mod_pcgi2.so ${PREFIX}/libexec/${APACHEVER}/
+	@${INSTALL_PROGRAM} ${WRKSRC}/.libs/mod_pcgi2.so ${PREFIX}/libexec/${APACHEVER}/
 	@${APXS} -ea -n pcgi2 libexec/${APACHEVER}/mod_pcgi2.so
 .endif
 	@${INSTALL_DATA} ${WRKDIR}/mod_pcgi2.conf ${PREFIX}/etc/${APACHEVER}/
