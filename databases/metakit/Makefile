@@ -7,7 +7,7 @@
 
 PORTNAME=	metakit
 PORTVERSION=	2.4.9.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.equi4.com/pub/mk/
 
@@ -94,6 +94,8 @@ post-install:
 .if !defined(METAKIT_WITHOUT_PYTHON)
 	@${INSTALL_PROGRAM} ${WRKSRC}/.libs/libmk4py.a ${PREFIX}/lib
 	@${INSTALL_PROGRAM} ${WRKSRC}/.libs/libmk4py.so ${PREFIX}/lib
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		${PYTHON_SITELIBDIR}
 .endif
 .if defined(METAKIT_WITH_TCL83) || defined(METAKIT_WITH_TCL84)
 	@${INSTALL_PROGRAM} ${WRKSRC}/.libs/libmk4tcl.a ${PREFIX}/lib
