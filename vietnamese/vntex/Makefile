@@ -16,11 +16,7 @@ MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	teTeX Vietnamese language + font support
 
 #	actually just need to make sure ${PREFIX}/share/texmf/tex/ exists
-RUN_DEPENDS=	virtex:${PORTSDIR}/print/teTeX
-
-BROKEN=		Broken dependency
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
+RUN_DEPENDS=	${LOCALBASE}/share/texmf/tex/plain:${PORTSDIR}/print/teTeX
 
 USE_ZIP=	yes
 NO_BUILD=	yes
