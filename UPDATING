@@ -6,6 +6,31 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20051104:
+  AFFECTS: users of www/trac
+  AUTHOR: rui@ruilopes.com
+
+  The Trac database schema was changed between versions 0.8 and 0.9. This
+  port also started to use PySQLite 2 (SQLite 3).  Existing environments
+  must be upgraded before they can be used with Trac 0.9.
+
+  The canonical update procedure for existing trac environments is:
+
+  $ export TRAC_ENV=/path/to/trac/env
+  $ # backup existing trac environment
+  $ cp -Rp $TRAC_ENV $TRAC_ENV.backup # backup existing trac env
+  $ # convert database from sqlite 2 to sqlite 3 format
+  $ mv $TRAC_ENV/db/trac.db $TRAC_ENV/db/trac2.db
+  $ sqlite $TRAC_ENV/db/trac2.db .dump | sqlite3 $TRAC_ENV/db/trac.db
+  $ # upgrade trac environment
+  $ /usr/local/bin/trac-admin $TRAC_ENV upgrade
+  $ /usr/local/bin/trac-admin $TRAC_ENV resync
+  $ /usr/local/bin/trac-admin $TRAC_ENV wiki upgrade
+
+  Consult the full upgrade instructions at:
+
+          http://projects.edgewall.com/trac/wiki/TracUpgrade
+
 20051013:
   AFFECTS: users of www/mediawiki
   AUTHOR: garga@FreeBSD.org
