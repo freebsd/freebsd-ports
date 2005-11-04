@@ -1,0 +1,7 @@
+Io is small prototype-based programming language. The ideas in Io
+are mostly inspired by Smalltalk (all values are objects), Self
+(prototype-based), NewtonScript (differential inheritance), Act1
+(actors and futures for concurrency), LISP (code is a runtime
+inspectable/modifiable tree) and Lua (small, embeddable).
+
+WWW:	http://www.iolanguage.com/
