@@ -26,6 +26,7 @@
     SUBDIR += bg-aspell
     SUBDIR += bib2html
     SUBDIR += bibtex2html
+    SUBDIR += bibtool
     SUBDIR += bidiv
     SUBDIR += bn-aspell
     SUBDIR += br-aspell

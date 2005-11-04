@@ -1,0 +1,12 @@
+bin/bibtool
+lib/BibTool/braces.rsc
+lib/BibTool/check_y.rsc
+lib/BibTool/default.rsc
+lib/BibTool/field.rsc
+lib/BibTool/improve.rsc
+lib/BibTool/iso2tex.rsc
+lib/BibTool/month.rsc
+lib/BibTool/opt.rsc
+lib/BibTool/sort_fld.rsc
+lib/BibTool/tex_def.rsc
+@dirrm lib/BibTool
