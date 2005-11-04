@@ -71,6 +71,10 @@ LANG=			en
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == amd64
+BROKEN=			"Incorrect pkg-plist"
+.endif
+
 DBPATH=			/var/lib/rpm
 RPM=			LC_ALL=C rpm
 RPMFLAGS=		--root ${PREFIX} --dbpath ${DBPATH} --nodeps \
