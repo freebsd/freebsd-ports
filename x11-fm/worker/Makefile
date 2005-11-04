@@ -23,8 +23,14 @@ MAN1=		worker.1
 CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--disable-libxpkmaster
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 pre-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
