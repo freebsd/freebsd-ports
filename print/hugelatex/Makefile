@@ -14,13 +14,9 @@ MASTER_SITES=		# none
 DISTFILES=		# none
 
 MAINTAINER=		ports@FreeBSD.org
-COMMENT=	LaTeX format files with large limits
+COMMENT=		LaTeX format files with large limits
 
 BUILD_DEPENDS=		tex:${PORTSDIR}/print/teTeX
-
-BROKEN=			Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
 
 NO_BUILD=		yes
 NO_WRKSUBDIR=		yes
@@ -36,5 +32,9 @@ do-install:
 	${RM} -f ${PREFIX}/bin/hugelatex
 	${LN} -s latex ${PREFIX}/bin/hugelatex
 	${PREFIX}/bin/mktexlsr
+
+post-install:
+	${RM} ${PREFIX}/share/texmf/web2c/latex.log
+	${RM} ${PREFIX}/share/texmf/web2c/latex.fmt
 
 .include <bsd.port.mk>
