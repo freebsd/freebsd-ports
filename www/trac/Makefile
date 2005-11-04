@@ -6,19 +6,21 @@
 #
 
 PORTNAME=	trac
-PORTVERSION=	0.8.4
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	www devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 		ftp://ftp.edgewall.com/pub/trac/
 
-MAINTAINER=	ports@fsck.ch
+MAINTAINER=	rui@ruilopes.com
 COMMENT=	An enhanced wiki and issue tracking system for software projects
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/sqlite/main.py:${PORTSDIR}/databases/py-PySQLite10 \
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-PySQLite2 \
 		${PYTHON_SITELIBDIR}/neo_cgi.so:${PORTSDIR}/www/clearsilver-python \
 		${PYTHON_SITELIBDIR}/svn/__init__.py:${PORTSDIR}/devel/subversion-python
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+OPTIONS=	SILVERCITY "Use Silvercity for syntax highlighting" On \
+		DOCUTILS   "Allow additional text markup" On
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -38,4 +40,14 @@ x-generate-plist:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_SILVERCITY)
+RUN_DEPENDS+=	${PREFIX}/bin/source2html.py:${PORTSDIR}/textproc/silvercity
+.endif
+
+.if defined(WITH_DOCUTILS)
+RUN_DEPENDS+=	${PREFIX}/bin/rst2html:${PORTSDIR}/textproc/py-docutils
+.endif
+
+.include <bsd.port.post.mk>
