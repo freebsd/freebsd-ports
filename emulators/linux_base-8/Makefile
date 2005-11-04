@@ -13,8 +13,7 @@ CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX} \
 			${MASTER_SITE_REDHAT_LINUX:S/$/:new/} \
 			ftp://mirror.switch.ch/mirror/ximian/mono/redhat-80-i386/:ft
-MASTER_SITE_SUBDIR=    \
-			${PORTVERSION}/${LANG}/os/${ARCH}/RedHat/RPMS \
+MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${ARCH}/RedHat/RPMS \
 			updates/${PORTVERSION}/${LANG}/os/${ARCH}/:new
 DISTFILES=		redhat-release-8.0-8.noarch.rpm \
 			glibc-common-2.3.2-4.80.8.${ARCH}.rpm:new \
@@ -71,10 +70,6 @@ LANG=			en
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64
-BROKEN=			"Incorrect pkg-plist"
-.endif
-
 DBPATH=			/var/lib/rpm
 RPM=			LC_ALL=C rpm
 RPMFLAGS=		--root ${PREFIX} --dbpath ${DBPATH} --nodeps \
@@ -129,6 +124,12 @@ do-install:
 # Create a good ld.so.conf
 #
 	@${ECHO_CMD} -e '/lib\n/usr/lib\n/usr/X11R6/lib' > ${PREFIX}/etc/ld.so.conf
+#
+# Build locale-archive manually, we passes --noscripts to rpm
+#
+.if ${MACHINE_ARCH} == "amd64"
+	@${PREFIX}/usr/sbin/build-locale-archive
+.endif
 #
 # Finish
 #
