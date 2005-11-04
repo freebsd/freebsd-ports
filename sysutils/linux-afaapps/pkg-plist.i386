@@ -1,3 +1,4 @@
 dev/MAKEDEV.afa
 usr/sbin/afacli
 usr/sbin/getcfg.afa
+@unexec rmdir %D/dev 2>/dev/null || true
