@@ -1,11 +1,18 @@
 
 *******************************************************************************
 
-The Trac database schema was changed between versions 0.7.x and 0.8.  Existing
-environments must be upgraded before they can be used with Trac 0.8.
+The Trac database schema was changed between versions 0.8 and 0.9.  This
+port also started to depend on PySQLite 2 (SQLite 3).
+
+Existing environments must be upgraded before they can be used with Trac 0.9.
 
 Consult the upgrade instructions at:
+
 	http://projects.edgewall.com/trac/wiki/TracUpgrade
+
+You can also find the canonical upgrade instructions at:
+
+	/usr/ports/UPDATING
 
 *******************************************************************************
 
