@@ -7,7 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${JPERL_VER}.${JPERL_VER_PL}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese perl5
 MASTER_SITES=	ftp://ftp.cpan.org/CPAN/src/5.0/ \
 		ftp://ftp.funet.fi/pub/languages/perl/CPAN/src/5.0/ \
@@ -58,6 +58,12 @@ PERL_SHLIBVER=	1
 .endif
 PLIST_SUB=	JPERL_VERSION=${JPERL_VERSION} JPERL_VER=${JPERL_VER} \
 		JPERL_ARCH=${JPERL_ARCH}
+
+.if ${OSVERSION} < 500000
+PLIST_SUB+=	NOTON4="@comment "
+.else
+PLIST_SUB+=	NOTON4=""
+.endif
 
 MAN1= 	a2p.1 c2ph.1 h2ph.1 h2xs.1 perl.1 perl5004delta.1 \
 	perlapio.1 perlbook.1 perlbot.1 perlbug.1 perlcall.1 \
