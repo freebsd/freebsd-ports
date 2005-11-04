@@ -22,6 +22,8 @@ CONFLICTS=	linux_base-7* linux_base-8* linux_base-gentoo* \
 		linux_base-rh* linux_base-suse*
 ONLY_FOR_ARCHS=	alpha amd64 i386
 
+BROKEN=		Does not build reliably
+
 RESTRICTED=	"binaries under GNU GPL:  http://www.gnu.org/licenses/gpl.txt"
 
 BUILD_DEPENDS=	${DPKG_CMD}:${PORTSDIR}/archivers/dpkg
