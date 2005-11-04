@@ -3,6 +3,7 @@ share/gnome/applications/easytag.desktop
 share/gnome/easytag/ChangeLog
 share/gnome/easytag/EasyTAG_logo.xpm
 share/gnome/pixmaps/EasyTAG.xpm
+share/locale/bg/LC_MESSAGES/easytag.mo
 share/locale/cs/LC_MESSAGES/easytag.mo
 share/locale/da/LC_MESSAGES/easytag.mo
 share/locale/de/LC_MESSAGES/easytag.mo
