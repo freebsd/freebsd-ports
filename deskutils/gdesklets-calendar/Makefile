@@ -18,6 +18,9 @@ COMMENT=	A calendar for gdesklets
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${X11BASE}/share/gnome/gdesklets/Sensors/Theme/__init__.py:${PORTSDIR}/deskutils/gdesklets-sensor-psi_theme
 
+DEPRECATED=	unfetchable since 2004
+EXPIRATION_DATE=2005-12-31
+
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
