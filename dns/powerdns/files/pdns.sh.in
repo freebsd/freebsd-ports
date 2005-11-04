@@ -8,7 +8,7 @@
 # KEYWORD: FreeBSD shutdown
 
 #
-# Add the following lines to /etc/rc.conf to enable dovecot:
+# Add the following lines to /etc/rc.conf to enable powerdns:
 #
 #pdns_enable="YES"
 #

@@ -13,11 +13,8 @@ else
 				--checklist "\n\
 Please select desired options:" -1 -1 8 \
 PostgreSQL	"PostgreSQL driver" ON \
-MySQL323	"MySQL 3.23 driver" OFF \
-MySQL40		"MySQL 4.0 driver" OFF \
-MySQL41		"MySQL 4.1 driver" OFF \
-OpenLDAP22	"OpenLDAP 2.2 backend" OFF \
-OpenLDAP23	"OpenLDAP 2.3 backend" OFF \
+MySQL		"MySQL driver" OFF \
+OpenLDAP	"OpenLDAP backend" OFF \
 SQLite		"SQLite backend" OFF \
 Recursor	"Build Recursor" OFF \
 2> /tmp/checklist.tmp.$$
@@ -47,23 +44,11 @@ while [ "$1" ]; do
 		\"PostgreSQL\")
 			echo WITH_POSTGRESQL_DRIVER=YES
 			;;
-		\"MySQL323\")
-			echo WITH_MYSQL_DRIVER=YES
-			echo WITH_MYSQL_VER?=323
-			;;
-		\"MySQL40\")
+		\"MySQL\")
 			echo WITH_MYSQL_DRIVER=YES
 			;;
-		\"MySQL41\")
-			echo WITH_MYSQL_DRIVER=YES
-			echo WITH_MYSQL_VER?=41
-			;;
-		\"OpenLDAP22\")
+		\"OpenLDAP\")
 			echo WITH_LDAP=YES
-			;;
-		\"OpenLDAP23\")
-			echo WITH_LDAP=YES
-			echo WANT_OPENLDAP_VER?=23
 			;;
 		\"SQLite\")
 			echo WITH_SQLITE=YES
