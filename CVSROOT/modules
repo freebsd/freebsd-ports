@@ -13823,3 +13823,4 @@ ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
 zziplib		ports/devel/zziplib
 p5-UNIVERSAL-require	ports/devel/p5-UNIVERSAL-require
+p5-Unicode-RecursiveDowngrade	ports/converters/p5-Unicode-RecursiveDowngrade
