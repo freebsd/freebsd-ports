@@ -7,7 +7,7 @@
 
 PORTNAME=	stamp
 PORTVERSION=	2.0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	stamp
@@ -16,8 +16,6 @@ MAINTAINER=	billf@FreeBSD.org
 COMMENT=	Adds a graphical, configurable timestamp to a grayscale image
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
-
-BROKEN=		Incomplete pkg-plist
 
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
