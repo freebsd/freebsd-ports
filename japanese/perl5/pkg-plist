@@ -536,8 +536,8 @@ lib/perl5/%%JPERL_VERSION%%/vars.pm
 @unexec rmdir %D/lib/perl5/site_perl/%%JPERL_VER%% 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/pod 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/man/man3 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/man 2>/dev/null || true
+%%NOTON4%%@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/man/man3 2>/dev/null || true
+%%NOTON4%%@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/man 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/i386-freebsd/auto/sdbm 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/i386-freebsd/auto/re 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/i386-freebsd/auto/attrs 2>/dev/null || true
@@ -608,7 +608,5 @@ lib/perl5/%%JPERL_VERSION%%/vars.pm
 @unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/CORE 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/B 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%% 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%% 2>/dev/null || true
+%%NOTON4%%@unexec rmdir %D/lib/perl5/%%JPERL_VERSION%% 2>/dev/null || true
 @unexec rmdir %D/lib/perl5 2>/dev/null || true
-
-
