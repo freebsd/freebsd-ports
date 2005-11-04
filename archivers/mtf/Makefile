@@ -12,10 +12,17 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/backup
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	pcasidy@casidy.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Unix reader for the Microsoft Tape Format used by NT Backup
 
 ALL_TARGET=	# empty
+MAKE_ARGS=	CFLAGS="${CFLAGS}"
+
+PLIST_FILES=	bin/mtf
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	README
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mtf ${PREFIX}/bin
