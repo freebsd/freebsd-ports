@@ -1,3 +1,6 @@
+include/gkrellm2/gkrellmd.h
+@dirrm include/gkrellm2
+libdata/pkgconfig/gkrellmd.pc
 sbin/gkrellmd
 @exec mkdir -p %D/libexec/gkrellm2/plugins-gkrellmd
 @unexec rmdir %D/libexec/gkrellm2/plugins-gkrellmd 2>/dev/null || true
@@ -9,8 +12,7 @@ sbin/gkrellmd
 @cwd %%X11BASE%%
 %%CLIENT%%include/gkrellm2/gkrellm.h
 %%CLIENT%%include/gkrellm2/gkrellm-public-proto.h
-include/gkrellm2/gkrellmd.h
-@dirrm include/gkrellm2
+%%CLIENT%%@dirrm include/gkrellm2
 %%CLIENT%%man/man1/gkrellm.1.gz
 %%CLIENT%%@unexec rm -f %D/man/cat1/gkrellm.1 %D/man/cat1/gkrellm.1.gz
 %%CLIENT%%bin/gkrellm
