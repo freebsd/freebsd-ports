@@ -17,7 +17,7 @@ bin/thudboard
 %%DATADIR%%/img/nopaste.gif
 %%DATADIR%%/img/paste.gif
 %%DATADIR%%/img/score.gif
-%%DATADIR%%/img/stone.gif
+%%DATADIR%%/img/rock.gif
 %%DATADIR%%/img/submenubottom.gif
 %%DATADIR%%/img/submenuitem.gif
 %%DATADIR%%/img/submenusep.gif
@@ -31,6 +31,7 @@ bin/thudboard
 %%DATADIR%%/thud.pyc
 %%DATADIR%%/bugfix_askyesno.py
 %%DATADIR%%/bugfix_askyesno.pyc
+%%DATADIR%%/koomvalley/koomvalley.thud
 %%PORTDOCS%%%%DOCSDIR%%/about.html
 %%PORTDOCS%%%%DOCSDIR%%/download.html
 %%PORTDOCS%%%%DOCSDIR%%/howto.html
@@ -48,7 +49,7 @@ bin/thudboard
 %%PORTDOCS%%%%DOCSDIR%%/img/quit.gif
 %%PORTDOCS%%%%DOCSDIR%%/img/selectname.gif
 %%PORTDOCS%%%%DOCSDIR%%/img/singleline.gif
-%%PORTDOCS%%%%DOCSDIR%%/img/stone.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/rock.gif
 %%PORTDOCS%%%%DOCSDIR%%/img/thudpreview.gif
 %%PORTDOCS%%%%DOCSDIR%%/img/thudscreen.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/thudscroll.gif
@@ -57,10 +58,8 @@ bin/thudboard
 %%PORTDOCS%%%%DOCSDIR%%/img/vcss.gif
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/thudboard.css
-%%PORTDOCS%%%%DOCSDIR%%/files/bug.thud
-%%PORTDOCS%%%%DOCSDIR%%/files/ThudBoardBug.jpg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/img
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/img
+@dirrm %%DATADIR%%/koomvalley
 @dirrm %%DATADIR%%
