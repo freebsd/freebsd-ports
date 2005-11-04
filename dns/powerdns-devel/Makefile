@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	powerdns
-PORTVERSION=	2.9.18
+PORTVERSION=	2.9.19
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
@@ -14,13 +14,16 @@ DISTNAME=	pdns-${PORTVERSION}
 MAINTAINER=	tremere@cainites.net
 COMMENT=	An advanced DNS server with SQL backend
 
-LIB_DEPENDS=	boost_regex.2:${PORTSDIR}/devel/boost
+BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost
 
 USE_GMAKE=	YES
 USE_SUBMAKE=	YES
 USE_REINPLACE=	YES
-GNU_CONFIGURE=	YES
-CXXFLAGS+=	-I${PREFIX}/include
+USE_LIBTOOL_VER=15
+INSTALLS_SHLIB=	YES
+CXXFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-modules="${CONFIGURE_MODULES} pipe" \
 			--with-dynmodules=""
 #			--enable-debug
@@ -62,27 +65,26 @@ NO_DESCRIBE=yes
 
 .if defined(WITH_POSTGRESQL_DRIVER) && !defined(WITHOUT_POSTGRESQL_DRIVER)
 LIB_DEPENDS+=	pq[+][+].4:${PORTSDIR}/databases/postgresql-libpq++
-CONFIGURE_ARGS+=	--enable-pgsql
+CONFIGURE_ARGS+=	--enable-pgsql --with-pgsql-includes=${LOCALBASE}/include
 CONFIGURE_MODULES+=	"gpgsql"
-CFLAGS+=	-DDLLIMPORT=""
+CFLAGS+=		-DDLLIMPORT=""
 .else
 CONFIGURE_ARGS+=	--disable-pgsql
 .endif
 
 .if defined(WITH_MYSQL_DRIVER)
 USE_MYSQL?=		YES
-CONFIGURE_ARGS+=	--enable-mysql
+CONFIGURE_ARGS+=	--enable-mysql --with-mysql-includes=${LOCALBASE}
 CONFIGURE_MODULES+=	"gmysql"
+PLIST_SUB+=		WITHMYSQL=""
 .else
 CONFIGURE_ARGS+=	--disable-mysql
+PLIST_SUB+=		WITHMYSQL="@comment "
 .endif
 
 .if defined(WITH_LDAP)
 USE_OPENLDAP?=		YES
-USE_LIBTOOL_VER=	15
-INSTALLS_SHLIB=		YES
 CONFIGURE_MODULES+=	"ldap"
-CXXFLAGS+=		-L${LOCALBASE}/lib
 PLIST_SUB+=		WITHLDAP=""
 .else
 PLIST_SUB+=		WITHLDAP="@comment "
@@ -92,8 +94,10 @@ PLIST_SUB+=		WITHLDAP="@comment "
 LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite2
 CONFIGURE_ARGS+=	--enable-sqlite
 CONFIGURE_MODULES+=	"gsqlite"
+PLIST_SUB+=		WITHSQLLITE=""
 .else
 CONFIGURE_ARGS+=	--disable-sqlite
+PLIST_SUB+=		WITHSQLLITE="@comment "
 .endif
 
 .if defined(POWERDNS_WITH_RECURSOR)
