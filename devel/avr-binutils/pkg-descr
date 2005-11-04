@@ -15,3 +15,4 @@ following AVR devices has been added by a private patch:
   ATmega164/324/644
   ATmega329/3290/649/6490
   ATmega640/1280/1281
+  AT90CAN32/64

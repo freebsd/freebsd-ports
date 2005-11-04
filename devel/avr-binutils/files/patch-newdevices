@@ -11,7 +11,7 @@ diff -ru /tmp/binutils-orig/gas/config/tc-avr.c ./gas/config/tc-avr.c
    {"atmega603", AVR_ISA_M603,     bfd_mach_avr3}, /* XXX -> m103 */
    {"atmega103", AVR_ISA_M103,     bfd_mach_avr3},
    {"at43usb320",AVR_ISA_M103,     bfd_mach_avr3},
-@@ -100,21 +103,33 @@
+@@ -100,21 +103,35 @@
    {"atmega88",  AVR_ISA_M8,       bfd_mach_avr4},
    {"atmega8515",AVR_ISA_M8,       bfd_mach_avr4},
    {"atmega8535",AVR_ISA_M8,       bfd_mach_avr4},
@@ -42,6 +42,8 @@ diff -ru /tmp/binutils-orig/gas/config/tc-avr.c ./gas/config/tc-avr.c
 +  {"atmega649", AVR_ISA_M323,     bfd_mach_avr5},
    {"atmega6450",AVR_ISA_M323,     bfd_mach_avr5},
 +  {"atmega6490",AVR_ISA_M323,     bfd_mach_avr5},
++  {"at90can32" ,AVR_ISA_M323,     bfd_mach_avr5},
++  {"at90can64" ,AVR_ISA_M323,     bfd_mach_avr5},
    {"at90can128",AVR_ISA_M128,     bfd_mach_avr5},
    {"at94k",     AVR_ISA_94K,      bfd_mach_avr5},
    {NULL, 0, 0}
