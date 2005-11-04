@@ -11,8 +11,8 @@ diff -ruN ../bind-9.3.1.org/bin/named/Makefile.in ./bin/named/Makefile.in
 -DBDRIVER_LIBS =
 +DBDRIVER_OBJS = ldapdb.@O@
 +DBDRIVER_SRCS = ldapdb.c
-+DBDRIVER_INCLUDES = -I/usr/local/include
-+DBDRIVER_LIBS = -L/usr/local/lib -lldap -llber
++DBDRIVER_INCLUDES = -I${LOCALBASE}/include
++DBDRIVER_LIBS = -L${LOCALBASE}/lib -lldap -llber
  
  CINCLUDES =	-I${srcdir}/include -I${srcdir}/unix/include \
  		${LWRES_INCLUDES} ${DNS_INCLUDES} ${BIND9_INCLUDES} \
