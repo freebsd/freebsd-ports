@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	unidesc
-PORTVERSION=	2.15
+PORTVERSION=	2.15.1
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Unicode Description Utilities
@@ -21,6 +23,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GETTEXT=	yes
 USE_REINPLACE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 TESTFILES=	Test1.ann Test1.u Test2.ann Test2.u Test3.ann Test3.u	\
 		Test4.ann Test4.u
