@@ -16,6 +16,8 @@ COMMENT=	Mail server network protocol front-ends
 BUILD_DEPENDS=	${BGLIBS_LIB}/libbg.a:${PORTSDIR}/devel/bglibs \
 		${CVM_LIB}/libcvm-v2client.a:${PORTSDIR}/security/cvm
 
+BROKEN=		Unfetchable
+
 USE_GPG=	yes
 SIG_SUFFIX=	.sig
 QMAIL_PREFIX?=	/var/qmail

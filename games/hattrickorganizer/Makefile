@@ -14,6 +14,8 @@ DISTNAME=	ho_${PORTVERSION:S/.//g}
 MAINTAINER=	lars.engels@0x20.net
 COMMENT=	A management tool for Hattrick.org written in Java
 
+BROKEN=		Unfetchable
+
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 USE_ZIP=	yes
