@@ -7,7 +7,7 @@
 PORTNAME=	rfcdiff
 PORTVERSION=	1.27
 CATEGORIES=	textproc
-MASTER_SITES=	http://ietf.levkowetz.com/tools/${PORTNAME}/
+MASTER_SITES=	http://tools.ietf.org/tools/${PORTNAME}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 EXTRACT_SUFX=
 
