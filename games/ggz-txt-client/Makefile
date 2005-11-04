@@ -13,7 +13,7 @@ MASTER_SITES=	http://mirrors.dotsrc.org/ggzgamingzone/ggz/%SUBDIR%/ \
 		http://ftp.ggzgamingzone.org/pub/ggz/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	The GGZ Gaming Zone - Console (Text) Frontend
 
 LIB_DEPENDS=	ggzcore.8:${PORTSDIR}/games/ggz-client-libs
