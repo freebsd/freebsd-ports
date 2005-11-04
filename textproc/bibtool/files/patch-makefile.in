@@ -1,0 +1,29 @@
+--- AutoConf/makefile.in.orig	Sun Feb  8 17:46:11 2004
++++ AutoConf/makefile.in	Wed Nov  2 17:05:33 2005
+@@ -67,7 +67,7 @@
+ #  Name the C compiler
+ # 
+ 
+-CC         = @CC@
++CC         ?= @CC@
+ 
+ # -------------------------------------------------------
+ #  CFLAGS are the flags for the C compiler.
+@@ -78,7 +78,7 @@
+ # 	   optimizer is turned on.
+ # 
+ 
+-CFLAGS     =
++CFLAGS     += -DHAVE_PROTOTYPES
+ # CFLAGS = -O
+ #  GNU C
+ # CFLAGS = -g -Wall
+@@ -461,7 +461,7 @@
+ #  Targets from the GNU Regular Expression Library.
+ 
+ regex$(OBJ): $(REGEX_DIR)$(DIR_SEP)regex.c $(MAKEFILE)
+-	$(CC) $(C_FLAGS) -I$(REGEX_DIR) -I.. $(NON_ANSI_DEFS) $(REGEX_DIR)$(DIR_SEP)regex.c $(DONT_LINK) -o $@
++	$(CC) $(C_FLAGS) -DSTDC_HEADERS -I$(REGEX_DIR) -I.. $(NON_ANSI_DEFS) $(REGEX_DIR)$(DIR_SEP)regex.c $(DONT_LINK) -o $@
+ 
+ 
+ bibtcl:

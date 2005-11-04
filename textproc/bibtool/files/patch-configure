@@ -1,0 +1,20 @@
+--- configure.orig	Sun Feb  8 17:35:23 2004
++++ configure	Wed Nov  2 16:45:08 2005
+@@ -4566,12 +4566,12 @@
+ 	kpathsea_dir=
+ 	kpathsea_lib=
+ 	kpathsea_def=
+-	for cand in .. ../kpse3-2 kpse3-2 .
++	for cand in ${LOCALBASE}
+ 	do
+-		if test -f $cand/kpathsea/tex-file.h ; then
+-			kpathsea_dir=$cand
+-			kpathsea_lib=$cand/kpathsea/STATIC/libkpathsea.a
+-			kpathsea_def="-DHAVE_LIBKPATHSEA -I$cand"
++		if test -f $cand/include/kpathsea/tex-file.h ; then
++			kpathsea_dir=$cand/include
++			kpathsea_lib=$cand/lib/libkpathsea.a
++			kpathsea_def="-DHAVE_LIBKPATHSEA -I$cand/include"
+ 		fi
+ 	done
+ 	if test -z "$kpathsea_dir"; then
