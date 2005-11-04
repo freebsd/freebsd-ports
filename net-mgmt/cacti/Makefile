@@ -7,7 +7,7 @@
 
 PORTNAME=	cacti
 PORTVERSION=	0.8.6g
-PORTREVISION=	4
+PORTREVISION=	41
 CATEGORIES=	net www
 MASTER_SITES=	http://www.cacti.net/downloads/
 
@@ -56,7 +56,6 @@ do-install:
 			${PREFIX}/${CACTIDIR}/include/db-settings.php; \
 	fi
 
-# Fix permissions
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}

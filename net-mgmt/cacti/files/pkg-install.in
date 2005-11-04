@@ -39,9 +39,9 @@ PRE-INSTALL)
 
 POST-INSTALL)
 
-	chown ${CACTIUSER}:${CACTIGROUP} ${PREFIX}/${CACTIDIR}/log/
-	chown ${CACTIUSER}:${CACTIGROUP} ${PREFIX}/${CACTIDIR}/log/*
 	chown ${CACTIUSER}:${CACTIGROUP} ${PREFIX}/${CACTIDIR}/rra/
+	chown -R ${CACTIUSER}:${CACTIGROUP} ${PREFIX}/${CACTIDIR}/log/
+	chmod -R a+r ${PREFIX}/${CACTIDIR}/scripts/
 	;;
 *)
 	exit 1
