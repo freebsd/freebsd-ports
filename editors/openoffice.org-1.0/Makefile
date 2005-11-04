@@ -17,7 +17,7 @@ MASTER_SITES+=  ${MASTER_SITE_RINGSERVER} \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent-1.0/:help \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent-1.0/:help \
 		${MASTER_SITE_LOCAL:S/$/:ru/}
-MASTER_SITE_SUBDIR= misc/openoffice/stable/${PORTVERSION} \
+MASTER_SITE_SUBDIR+= misc/openoffice/stable/${PORTVERSION} \
 		maho/openoffice.org/:moz,ru \
 		mozilla/releases/mozilla${MOZILLA_VERSION}/src/:mozsrc \
 		misc/openoffice/contrib/helpcontent-1.0/:help
