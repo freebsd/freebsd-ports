@@ -1,0 +1,8 @@
+File::pushd does a temporary chdir that is easily and automatically
+reverted.  It works by creating a simple object that caches the original
+working directory.  When the object is destroyed, the destructor calls
+chdir to revert to the original working directory.  By storing the
+object in a lexical variable with a limited scope, this happens
+automatically at the end of the scope.
+
+WWW: http://search.cpan.org/dist/File-pushd/

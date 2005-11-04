@@ -926,6 +926,7 @@
     SUBDIR += p5-File-Temp
     SUBDIR += p5-File-Type
     SUBDIR += p5-File-chdir
+    SUBDIR += p5-File-pushd
     SUBDIR += p5-FileHandle-Unget
     SUBDIR += p5-Filesys-Statvfs_Df
     SUBDIR += p5-Filesys-Virtual
