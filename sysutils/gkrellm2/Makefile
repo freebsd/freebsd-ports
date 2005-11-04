@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellm
 PORTVERSION=	2.2.7
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
@@ -37,7 +37,7 @@ WITH_GNUTLS=	yes
 .if defined(GKRELLM_SERVER_ONLY)
 BUILD_WRKSRC=	${WRKSRC}/server
 INSTALL_WRKSRC=	${WRKSRC}/server
-USE_GNOME=	glib12
+USE_GNOME=	glib20
 .else
 USE_GNOME=	gtk20
 .if defined(WITHOUT_NLS)
@@ -60,6 +60,7 @@ MAKE_ENV+=	without-gnutls=1 without-ssl=1
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 PLIST_SUB=	PREFIX=${PREFIX}
 .if defined(GKRELLM_SERVER_ONLY)
@@ -90,12 +91,12 @@ ALL_TARGET=	freebsd
 .endif
 INSTALL_TARGET=	install_freebsd
 
-MAKE_ENV+=	INSTALLROOT=${X11BASE} SINSTALLDIR=${PREFIX}/sbin \
+MAKE_ENV+=	INSTALLROOT=${X11BASE} INSTALLDIR=${X11BASE}/bin \
 		PKGCONFIGDIR=${X11BASE}/libdata/pkgconfig \
-		MANDIR=${MAN1PREFIX}/man/man1 SMANDIR=${MANPREFIX}/man/man8
-.if defined(GKRELLM_SERVER_ONLY)
-MAKE_ENV+=	glib12=1
-.endif
+		SINSTALLROOT=${PREFIX} SINSTALLDIR=${PREFIX}/sbin \
+		SPKGCONFIGDIR=${PREFIX}/libdata/pkgconfig \
+		MANDIR=${MAN1PREFIX}/man/man1 SMANDIR=${MANPREFIX}/man/man8 \
+		VERSION=${PORTVERSION}
 
 CFLAGS+=	-DSYSTEM_THEMES_DIR='\"${X11BASE}/share/gkrellm2/themes\"' \
 		-DSYSTEM_PLUGINS_DIR='\"${X11BASE}/libexec/gkrellm2/plugins\"' \
@@ -108,6 +109,12 @@ pre-everything::
 	@${ECHO_MSG} "You may use GKRELLM_SERVER_ONLY=yes to build gkrellmd only."
 	@${ECHO_MSG} ""
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/INCLUDEDIR/SINCLUDEDIR/g' \
+			  -e 's/INSTALLROOT/SINSTALLROOT/g' \
+			  -e 's/PKGCONFIGDIR/SPKGCONFIGDIR/g' \
+			  ${WRKSRC}/server/Makefile
 
 post-install:
 .if !defined(GKRELLM_SERVER_ONLY)
