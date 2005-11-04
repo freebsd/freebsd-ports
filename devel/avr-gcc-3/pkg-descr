@@ -17,7 +17,7 @@ Locally added support for the following AVR devices:
   ATmega325/ATmega3250/ATmega645/ATmega6450
   ATmega329/ATmega3290/ATmega649/ATmega6490
   ATmega640/ATmega1280/ATmega1281
-  AT90CAN128
+  AT90CAN32/64/128
 
 WWW: http://gcc.gnu.org/
 WWW: http://www.nongnu.org/avr-libc/
