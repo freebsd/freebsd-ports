@@ -517,6 +517,7 @@
     SUBDIR += p5-XML-STX
     SUBDIR += p5-XML-Sablotron
     SUBDIR += p5-XML-Schematron
+    SUBDIR += p5-XML-SemanticDiff
     SUBDIR += p5-XML-Simple
     SUBDIR += p5-XML-SimpleObject
     SUBDIR += p5-XML-SimpleObject-LibXML
