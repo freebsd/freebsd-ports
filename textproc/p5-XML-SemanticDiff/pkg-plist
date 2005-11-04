@@ -1,0 +1,8 @@
+bin/xmlsemdiff
+%%SITE_PERL%%/XML/SemanticDiff.pm
+%%SITE_PERL%%/XML/SemanticDiff/BasicHandler.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SemanticDiff/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SemanticDiff
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@dirrm %%SITE_PERL%%/XML/SemanticDiff
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
