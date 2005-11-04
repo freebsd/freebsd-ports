@@ -386,7 +386,8 @@ share/texmf/fonts/vf/public/vcm/vcmtt8.vf
 share/texmf/fonts/vf/public/vcm/vcmtt9.vf
 share/texmf/fonts/vf/public/vcm/vcmu10.vf
 share/texmf/fonts/vf/public/vcm/vcmvtt10.vf
-@dirrm share/texmf/fonts/source/public/vnr
-@dirrm share/texmf/fonts/tfm/public/vcm
-@dirrm share/texmf/fonts/tfm/public/vnr
+@dirrm share/texmf/tex/latex/vietnam/vnr
 @dirrm share/texmf/fonts/vf/public/vcm
+@dirrm share/texmf/fonts/vf/adobe/utopia
+@dirrm share/texmf/fonts/tfm/public/vcm
+@dirrm share/texmf/fonts/tfm/adobe/utopia
