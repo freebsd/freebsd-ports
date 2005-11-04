@@ -15,19 +15,17 @@ COMMENT=	Tune Pine for Russian (KOI8-R) defaults
 
 RUN_DEPENDS=	pine:${PORTSDIR}/mail/pine4
 
-BROKEN=		Removes pine.conf at deinstallation
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2005-09-22
-
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
-PLIST_FILES=	etc/pine.conf
+
+SUB_FILES=	pkg-install pkg-deinstall
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 do-fetch:
+	${DO_NADA}
 
 do-install:
-	${GREP} -q -i koi8 ${PREFIX}/etc/pine.conf || \
-		${CAT} ${FILESDIR}/pine.add >> \
-		${PREFIX}/etc/pine.conf
+	@${SETENV} ${SCRIPTS_ENV} PGPLIB="${PGPLIB}" PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} pkg-install
 
 .include <bsd.port.mk>
