@@ -7,6 +7,7 @@
 
 PORTNAME=	gourmet
 PORTVERSION=	0.8.6.5.1
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	grecipe-manager
@@ -16,8 +17,6 @@ COMMENT=	GNOME recipe manager
 
 RUN_DEPENDS=	${LOCALBASE}/lib/libmk4py.so:${PORTSDIR}/databases/metakit \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
-
-BROKEN=		Incomplete pkg-plist
 
 USE_X_PREFIX=	yes
 USE_PYTHON=	yes
