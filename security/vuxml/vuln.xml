@@ -67,7 +67,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>openvpn</name>
-	<range><gt>2.0</gt><lt>2.0.4</lt></range>
+	<range><ge>2.0</ge><lt>2.0.4</lt></range>
       </package>
     </affects>
     <description>
@@ -87,6 +87,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-11-01</discovery>
       <entry>2005-11-01</entry>
+      <modified>2005-11-04</modified>
     </dates>
   </vuln>
 
@@ -96,7 +97,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>openvpn</name>
-	<range><lt>2.0.4</lt></range>
+	<range><ge>2.0</ge><lt>2.0.4</lt></range>
       </package>
     </affects>
     <description>
@@ -126,6 +127,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-10-31</discovery>
       <entry>2005-11-01</entry>
+      <modified>2005-11-04</modified>
     </dates>
   </vuln>
 
