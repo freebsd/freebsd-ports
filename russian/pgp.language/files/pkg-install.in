@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+cd %%PREFIX%%/share/pgp
+
+if [ ! -f language.txt-ru ]; then
+	cp language.txt language.txt-ru
+fi
+
+if ! grep -l -q '^Language.*=.*ru' config.txt ; then
+	cp config.txt config.txt.bak
+	sed -e 's/^Language.*=.*$/Language = ru/' < config.txt.bak > config.txt
+	rm config.txt.bak
+fi
+
+%%LOCALBASE%%/bin/pgp
+exit 0
