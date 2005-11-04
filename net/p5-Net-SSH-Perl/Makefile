@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jesper@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module implements both the SSH1 and SSH2 protocols
 
 MANUAL_PACKAGE_BUILD=infinite loop prompting for input
