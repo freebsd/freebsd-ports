@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="44e5f5bd-4d76-11da-bf37-000fb586ba73">
+    <topic>pear-PEAR -- PEAR installer arbitrary code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>pear-PEAR</name>
+	<range><lt>1.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gregory Beaver reports:</p>
+	<blockquote cite="http://pear.php.net/advisory-20051104.txt">
+	  <p>A standard feature of the PEAR installer implemented in
+	    all versions of PEAR can lead to the execution of
+	    arbitrary PHP code upon running the "pear" command
+	    or loading the Web/Gtk frontend.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://pear.php.net/advisory-20051104.txt</url>
+    </references>
+    <dates>
+      <discovery>2005-11-01</discovery>
+      <entry>2005-11-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3de49331-0dec-422c-93e5-e4719e9869c5">
     <topic>openvpn -- potential denial-of-service on servers in TCP mode</topic>
     <affects>
