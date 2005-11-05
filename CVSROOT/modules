@@ -945,6 +945,7 @@ cactid		ports/net/cactid
 cadaver		ports/www/cadaver
 cadubi		ports/graphics/cadubi
 cairo		ports/graphics/cairo
+cairo-java	ports/graphics/cairo-java
 cake		ports/games/cake
 cal3d		ports/graphics/cal3d
 calamaris	ports/www/calamaris
@@ -2121,6 +2122,7 @@ evilfinder	ports/games/evilfinder
 evilwm		ports/x11-wm/evilwm
 evince		ports/graphics/evince
 evolution	ports/mail/evolution
+evolution-caldav	ports/www/evolution-caldav
 evolution-data-server	ports/databases/evolution-data-server
 evolution-exchange	ports/mail/evolution-exchange
 evolution-webcal	ports/www/evolution-webcal
@@ -10244,6 +10246,7 @@ py-mt		ports/www/py-mt
 py-musicbrainz	ports/audio/py-musicbrainz
 py-mx-base	ports/lang/py-mx-base
 py-mx-experimental	ports/devel/py-mx-experimental
+py-nautilus	ports/x11-fm/py-nautilus
 py-ncurses	ports/devel/py-ncurses
 py-nevow	ports/www/py-nevow
 py-numarray	ports/math/py-numarray
@@ -11805,6 +11808,7 @@ surfraw		ports/www/surfraw
 susv2		ports/misc/susv2
 susv3		ports/misc/susv3
 sv-aspell	ports/textproc/sv-aspell
+svg2pdf		ports/graphics/svg2pdf
 svg2png		ports/graphics/svg2png
 svg2swf		ports/graphics/svg2swf
 svgalib		ports/graphics/svgalib
