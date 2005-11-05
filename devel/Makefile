@@ -1343,6 +1343,7 @@
     SUBDIR += premake
     SUBDIR += preps-gui
     SUBDIR += prepstools
+    SUBDIR += present
     SUBDIR += privman
     SUBDIR += projectcenter.app
     SUBDIR += prototype
