@@ -10,6 +10,27 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20051105:
+AUTHOR: gnome@FreeBSD.org
+  GNOME has been upgraded from 2.10.2 to 2.12.1.  This update brings with
+  it many important porting changes:
+
+  - gtk20's pkg-config file no longer contains the X11 pango modules.
+    Therefore, if your port requires these modules, you may have to
+    manually patch them in to your port's Makefiles.  Contact
+    gnome@FreeBSD.org if you have questions on this.
+
+  - A new USE_GNOME component, ltverhack, has been added.  This
+    pseudo-component hacks libtool so that shared library versions are
+    more consistent with other operating systems.  Using this component
+    can prevent unnecessary shared library version changes.
+
+  - A new macro, INSTALLS_ICONS, has been added.  If your port installs
+    Freedesktop-style icons to ${LOCALBASE}/share/icons or
+    ${X11BASE}/share/icons, then you should use this macro.  NOTE:
+    use of this macro requires your port to set either USE_GNOME or
+    WANT_GNOME.
+
 20050618:
 AUTHOR: netchild@FreeBSD.org
   - USE_LINUX now implies NO_FILTER_SHLIBS=yes. It also doesn't use FreeBSD
