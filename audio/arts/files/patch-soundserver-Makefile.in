@@ -1,14 +1,5 @@
 --- soundserver/Makefile.in.orig	Fri Mar  4 10:58:22 2005
 +++ soundserver/Makefile.in	Wed Mar 16 04:32:04 2005
-@@ -20,7 +20,7 @@
- 
- 
- 
--SOURCES = $(libartsgslplayobject_la_SOURCES) $(libartswavplayobject_la_SOURCES) $(libkmedia2_la_SOURCES) $(libkmedia2_idl_la_SOURCES) $(libsoundserver_idl_la_SOURCES) $(artscat_SOURCES) $(artsd_SOURCES) $(artsplay_SOURCES) $(artsrec_SOURCES) $(artsshell_SOURCES) $(artswrapper_SOURCES)
-+SOURCES = $(libartsgslplayobject_la_SOURCES) $(libartswavplayobject_la_SOURCES) $(libkmedia2_la_SOURCES) $(libkmedia2_idl_la_SOURCES) $(libsoundserver_idl_la_SOURCES) $(artscat_SOURCES) $(artsd_SOURCES) $(artsplay_SOURCES) $(artsrec_SOURCES) $(artsshell_SOURCES)
- 
- srcdir = @srcdir@
- top_srcdir = @top_srcdir@
 @@ -46,7 +46,7 @@
  host_triplet = @host@
  target_triplet = @target@

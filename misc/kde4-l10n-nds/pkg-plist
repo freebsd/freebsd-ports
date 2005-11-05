@@ -175,7 +175,6 @@ share/locale/nds/LC_MESSAGES/khotkeys.mo
 share/locale/nds/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/nds/LC_MESSAGES/kicker.mo
 share/locale/nds/LC_MESSAGES/kio.mo
-share/locale/nds/LC_MESSAGES/kio_devices.mo
 share/locale/nds/LC_MESSAGES/kio_finger.mo
 share/locale/nds/LC_MESSAGES/kio_fish.mo
 share/locale/nds/LC_MESSAGES/kio_floppy.mo
@@ -183,6 +182,7 @@ share/locale/nds/LC_MESSAGES/kio_help.mo
 share/locale/nds/LC_MESSAGES/kio_imap4.mo
 share/locale/nds/LC_MESSAGES/kio_mac.mo
 share/locale/nds/LC_MESSAGES/kio_man.mo
+share/locale/nds/LC_MESSAGES/kio_media.mo
 share/locale/nds/LC_MESSAGES/kio_mobile.mo
 share/locale/nds/LC_MESSAGES/kio_nfs.mo
 share/locale/nds/LC_MESSAGES/kio_nntp.mo

@@ -8,7 +8,6 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	2
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -34,8 +33,10 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_REINPLACE=	yes
-PKGMESSAGE=	${WRKDIR}/MESSAGE
-PKGINSTALL=	${WRKDIR}/INSTALL
+SUB_FILES=	genkdmconf.sh pkg-deinstall pkg-install pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
@@ -72,14 +73,6 @@ post-configure:
 		${WRKSRC}/kappfinder/apps/Graphics/ElectricEyes.desktop
 	${REINPLACE_CMD} -e 's/444/644/g' \
 		${WRKSRC}/kdesktop/init/Templates/Makefile
-
-post-build:
-	@${CAT} ${PKGDIR}/pkg-message | ${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
-		| ${SED} -e 's,%%X11BASE%%,${X11BASE},g' > ${PKGMESSAGE}
-	@${CAT} ${PKGDIR}/pkg-install | ${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
-		| ${SED} -e 's,%%X11BASE%%,${X11BASE},g' > ${PKGINSTALL}
-	@${CAT} ${FILESDIR}/genkdmconf.sh | ${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
-		| ${SED} -e 's,%%X11BASE%%,${X11BASE},g' > ${WRKDIR}/genkdmconf.sh
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/freebsd.keytab ${PREFIX}/share/apps/konsole/

@@ -154,6 +154,7 @@ share/locale/fi/LC_MESSAGES/katepart.mo
 share/locale/fi/LC_MESSAGES/katepartkttsd.mo
 share/locale/fi/LC_MESSAGES/kateprojectmanager.mo
 share/locale/fi/LC_MESSAGES/katepybrowse.mo
+share/locale/fi/LC_MESSAGES/katesnippets.mo
 share/locale/fi/LC_MESSAGES/katespell.mo
 share/locale/fi/LC_MESSAGES/katetabbarextension.mo
 share/locale/fi/LC_MESSAGES/katetextfilter.mo
@@ -272,6 +273,7 @@ share/locale/fi/LC_MESSAGES/kdevdesigner.mo
 share/locale/fi/LC_MESSAGES/kdevelop.mo
 share/locale/fi/LC_MESSAGES/kdevtipofday.mo
 share/locale/fi/LC_MESSAGES/kdf.mo
+share/locale/fi/LC_MESSAGES/kdgantt.mo
 share/locale/fi/LC_MESSAGES/kdialog.mo
 share/locale/fi/LC_MESSAGES/kdict.mo
 share/locale/fi/LC_MESSAGES/kdictapplet.mo
@@ -287,11 +289,13 @@ share/locale/fi/LC_MESSAGES/kfifteenapplet.mo
 share/locale/fi/LC_MESSAGES/kfile_au.mo
 share/locale/fi/LC_MESSAGES/kfile_avi.mo
 share/locale/fi/LC_MESSAGES/kfile_bmp.mo
+share/locale/fi/LC_MESSAGES/kfile_cert.mo
 share/locale/fi/LC_MESSAGES/kfile_cpp.mo
 share/locale/fi/LC_MESSAGES/kfile_dds.mo
 share/locale/fi/LC_MESSAGES/kfile_deb.mo
 share/locale/fi/LC_MESSAGES/kfile_desktop.mo
 share/locale/fi/LC_MESSAGES/kfile_diff.mo
+share/locale/fi/LC_MESSAGES/kfile_drgeo.mo
 share/locale/fi/LC_MESSAGES/kfile_dvi.mo
 share/locale/fi/LC_MESSAGES/kfile_exr.mo
 share/locale/fi/LC_MESSAGES/kfile_flac.mo
@@ -302,8 +306,10 @@ share/locale/fi/LC_MESSAGES/kfile_html.mo
 share/locale/fi/LC_MESSAGES/kfile_ico.mo
 share/locale/fi/LC_MESSAGES/kfile_ics.mo
 share/locale/fi/LC_MESSAGES/kfile_jpeg.mo
+share/locale/fi/LC_MESSAGES/kfile_kig.mo
 share/locale/fi/LC_MESSAGES/kfile_lnk.mo
 share/locale/fi/LC_MESSAGES/kfile_m3u.mo
+share/locale/fi/LC_MESSAGES/kfile_mhtml.mo
 share/locale/fi/LC_MESSAGES/kfile_mp3.mo
 share/locale/fi/LC_MESSAGES/kfile_mpc.mo
 share/locale/fi/LC_MESSAGES/kfile_ogg.mo
@@ -345,6 +351,7 @@ share/locale/fi/LC_MESSAGES/kgreet_winbind.mo
 share/locale/fi/LC_MESSAGES/khangman.mo
 share/locale/fi/LC_MESSAGES/khelpcenter.mo
 share/locale/fi/LC_MESSAGES/khexedit.mo
+share/locale/fi/LC_MESSAGES/khexedit2part.mo
 share/locale/fi/LC_MESSAGES/khotkeys.mo
 share/locale/fi/LC_MESSAGES/khtmlkttsd.mo
 share/locale/fi/LC_MESSAGES/khtmlsettingsplugin.mo
@@ -383,10 +390,12 @@ share/locale/fi/LC_MESSAGES/kio_svn.mo
 share/locale/fi/LC_MESSAGES/kio_system.mo
 share/locale/fi/LC_MESSAGES/kio_trash.mo
 share/locale/fi/LC_MESSAGES/kioexec.mo
+share/locale/fi/LC_MESSAGES/kiten.mo
 share/locale/fi/LC_MESSAGES/kjobviewer.mo
 share/locale/fi/LC_MESSAGES/kjots.mo
 share/locale/fi/LC_MESSAGES/kjumpingcube.mo
 share/locale/fi/LC_MESSAGES/klaptopdaemon.mo
+share/locale/fi/LC_MESSAGES/klatin.mo
 share/locale/fi/LC_MESSAGES/klegacyimport.mo
 share/locale/fi/LC_MESSAGES/klettres.mo
 share/locale/fi/LC_MESSAGES/klickety.mo
@@ -561,6 +570,7 @@ share/locale/fi/LC_MESSAGES/kviewscannerplugin.mo
 share/locale/fi/LC_MESSAGES/kviewshell.mo
 share/locale/fi/LC_MESSAGES/kviewtemplateplugin.mo
 share/locale/fi/LC_MESSAGES/kviewviewer.mo
+share/locale/fi/LC_MESSAGES/kvoctrain.mo
 share/locale/fi/LC_MESSAGES/kwalletmanager.mo
 share/locale/fi/LC_MESSAGES/kweather.mo
 share/locale/fi/LC_MESSAGES/kwifimanager.mo
@@ -569,6 +579,7 @@ share/locale/fi/LC_MESSAGES/kwin4.mo
 share/locale/fi/LC_MESSAGES/kwin_art_clients.mo
 share/locale/fi/LC_MESSAGES/kwin_clients.mo
 share/locale/fi/LC_MESSAGES/kwireless.mo
+share/locale/fi/LC_MESSAGES/kwordquiz.mo
 share/locale/fi/LC_MESSAGES/kworldclock.mo
 share/locale/fi/LC_MESSAGES/kwriteconfig.mo
 share/locale/fi/LC_MESSAGES/kxkb.mo
@@ -579,6 +590,7 @@ share/locale/fi/LC_MESSAGES/libKTTSD.mo
 share/locale/fi/LC_MESSAGES/libcalendarresources.mo
 share/locale/fi/LC_MESSAGES/libdmctl.mo
 share/locale/fi/LC_MESSAGES/libkaddrbk_geo_xxport.mo
+share/locale/fi/LC_MESSAGES/libkaddrbk_gmx_xxport.mo
 share/locale/fi/LC_MESSAGES/libkcal.mo
 share/locale/fi/LC_MESSAGES/libkcalsystem.mo
 share/locale/fi/LC_MESSAGES/libkcddb.mo
@@ -621,6 +633,7 @@ share/locale/fi/LC_MESSAGES/privacy.mo
 share/locale/fi/LC_MESSAGES/qeditor.mo
 share/locale/fi/LC_MESSAGES/quanta.mo
 share/locale/fi/LC_MESSAGES/quicklauncher.mo
+share/locale/fi/LC_MESSAGES/rellinks.mo
 share/locale/fi/LC_MESSAGES/searchbarplugin.mo
 share/locale/fi/LC_MESSAGES/secpolicy.mo
 share/locale/fi/LC_MESSAGES/spy.mo

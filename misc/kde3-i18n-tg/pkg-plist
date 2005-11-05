@@ -275,7 +275,6 @@ share/locale/tg/LC_MESSAGES/kimagemapeditor.mo
 share/locale/tg/LC_MESSAGES/kinetd.mo
 share/locale/tg/LC_MESSAGES/kio.mo
 share/locale/tg/LC_MESSAGES/kio_audiocd.mo
-share/locale/tg/LC_MESSAGES/kio_devices.mo
 share/locale/tg/LC_MESSAGES/kio_finger.mo
 share/locale/tg/LC_MESSAGES/kio_fish.mo
 share/locale/tg/LC_MESSAGES/kio_floppy.mo
@@ -284,6 +283,7 @@ share/locale/tg/LC_MESSAGES/kio_imap4.mo
 share/locale/tg/LC_MESSAGES/kio_lan.mo
 share/locale/tg/LC_MESSAGES/kio_mac.mo
 share/locale/tg/LC_MESSAGES/kio_man.mo
+share/locale/tg/LC_MESSAGES/kio_media.mo
 share/locale/tg/LC_MESSAGES/kio_mobile.mo
 share/locale/tg/LC_MESSAGES/kio_newimap4.mo
 share/locale/tg/LC_MESSAGES/kio_nfs.mo
@@ -421,6 +421,7 @@ share/locale/tg/LC_MESSAGES/ktexteditor_docwordcompletion.mo
 share/locale/tg/LC_MESSAGES/ktexteditor_insertfile.mo
 share/locale/tg/LC_MESSAGES/ktexteditor_isearch.mo
 share/locale/tg/LC_MESSAGES/ktexteditor_kdatatool.mo
+share/locale/tg/LC_MESSAGES/ktexteditor_kttsd.mo
 share/locale/tg/LC_MESSAGES/ktimemon.mo
 share/locale/tg/LC_MESSAGES/ktimer.mo
 share/locale/tg/LC_MESSAGES/ktip.mo
@@ -461,6 +462,7 @@ share/locale/tg/LC_MESSAGES/kxkb.mo
 share/locale/tg/LC_MESSAGES/kxmlrpcd.mo
 share/locale/tg/LC_MESSAGES/kxsconfig.mo
 share/locale/tg/LC_MESSAGES/kxsldbg.mo
+share/locale/tg/LC_MESSAGES/libKTTSD.mo
 share/locale/tg/LC_MESSAGES/libcalendarresources.mo
 share/locale/tg/LC_MESSAGES/libkaddrbk_geo_xxport.mo
 share/locale/tg/LC_MESSAGES/libkcal.mo

@@ -259,6 +259,8 @@ lib/kde3/libkviewcanvas.la
 lib/kde3/libkviewcanvas.so
 lib/kde3/libkviewviewer.la
 lib/kde3/libkviewviewer.so
+lib/kde3/libphotobook.la
+lib/kde3/libphotobook.so
 lib/kde3/mrmlsearch.la
 lib/kde3/mrmlsearch.so
 lib/kde3/svgthumbnail.la
@@ -282,8 +284,6 @@ lib/libkpovmodeler.so.0
 lib/libksvg.la
 lib/libksvg.so
 lib/libksvg.so.0
-lib/libphotobook.la
-lib/libphotobook.so
 lib/libtext2path.la
 lib/libtext2path.so
 lib/libtext2path.so.0

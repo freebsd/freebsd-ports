@@ -2,7 +2,6 @@ share/locale/sr@Latn/LC_MESSAGES/desktop_koffice.mo
 share/locale/sr@Latn/LC_MESSAGES/example.mo
 share/locale/sr@Latn/LC_MESSAGES/karbon.mo
 share/locale/sr@Latn/LC_MESSAGES/kchart.mo
-share/locale/sr@Latn/LC_MESSAGES/kdgantt.mo
 share/locale/sr@Latn/LC_MESSAGES/kexi.mo
 share/locale/sr@Latn/LC_MESSAGES/kfile_koffice.mo
 share/locale/sr@Latn/LC_MESSAGES/kfile_ooo.mo
@@ -26,6 +25,3 @@ share/locale/sr@Latn/LC_MESSAGES/kthesaurus.mo
 share/locale/sr@Latn/LC_MESSAGES/kugar.mo
 share/locale/sr@Latn/LC_MESSAGES/kword.mo
 share/locale/sr@Latn/LC_MESSAGES/thesaurus_tool.mo
-@dirrm share/locale/sr@Latn/LC_MESSAGES
-@dirrm share/locale/sr@Latn
-@dirrm share/locale

@@ -45,6 +45,7 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's@%%SUBDIRS%%@${PLUGIN}@g' ${WRKSRC}/akode/plugins/Makefile.in
 
 do-build:
+	cd ${WRKSRC}/arts/runtime && gmake
 	cd ${WRKSRC}/akode && gmake
 
 do-install:

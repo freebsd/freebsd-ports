@@ -7,7 +7,6 @@
 
 PORTNAME=	juk
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -62,8 +61,10 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
-pre-configure:
-	${ECHO_CMD} "akode juk" > ${WRKSRC}/inst-apps
+do-build:
+	cd ${WRKSRC}/arts/runtime && gmake
+	cd ${WRKSRC}/akode && gmake
+	cd ${WRKSRC}/juk && gmake
 
 do-install:
 	cd ${WRKSRC}/juk && gmake install

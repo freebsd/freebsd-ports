@@ -158,6 +158,7 @@ share/locale/eu/LC_MESSAGES/kbinaryclock.mo
 share/locale/eu/LC_MESSAGES/kblackbox.mo
 share/locale/eu/LC_MESSAGES/kbounce.mo
 share/locale/eu/LC_MESSAGES/kbruch.mo
+share/locale/eu/LC_MESSAGES/kbstateapplet.mo
 share/locale/eu/LC_MESSAGES/kbugbuster.mo
 share/locale/eu/LC_MESSAGES/kcachegrind.mo
 share/locale/eu/LC_MESSAGES/kcalc.mo
@@ -202,6 +203,7 @@ share/locale/eu/LC_MESSAGES/kcmkonqhtml.mo
 share/locale/eu/LC_MESSAGES/kcmkonsole.mo
 share/locale/eu/LC_MESSAGES/kcmkontactnt.mo
 share/locale/eu/LC_MESSAGES/kcmktalkd.mo
+share/locale/eu/LC_MESSAGES/kcmkttsd.mo
 share/locale/eu/LC_MESSAGES/kcmkuick.mo
 share/locale/eu/LC_MESSAGES/kcmkurifilt.mo
 share/locale/eu/LC_MESSAGES/kcmkvaio.mo
@@ -220,6 +222,7 @@ share/locale/eu/LC_MESSAGES/kcmlirc.mo
 share/locale/eu/LC_MESSAGES/kcmlocale.mo
 share/locale/eu/LC_MESSAGES/kcmmediacontrol.mo
 share/locale/eu/LC_MESSAGES/kcmmidi.mo
+share/locale/eu/LC_MESSAGES/kcmnic.mo
 share/locale/eu/LC_MESSAGES/kcmnotify.mo
 share/locale/eu/LC_MESSAGES/kcmperformance.mo
 share/locale/eu/LC_MESSAGES/kcmprintmgr.mo
@@ -395,6 +398,7 @@ share/locale/eu/LC_MESSAGES/klines.mo
 share/locale/eu/LC_MESSAGES/klinkstatus.mo
 share/locale/eu/LC_MESSAGES/klipper.mo
 share/locale/eu/LC_MESSAGES/klock.mo
+share/locale/eu/LC_MESSAGES/kmag.mo
 share/locale/eu/LC_MESSAGES/kmahjongg.mo
 share/locale/eu/LC_MESSAGES/kmail.mo
 share/locale/eu/LC_MESSAGES/kmail_text_calendar_plugin.mo
@@ -418,6 +422,8 @@ share/locale/eu/LC_MESSAGES/kminipagerapplet.mo
 share/locale/eu/LC_MESSAGES/kmix.mo
 share/locale/eu/LC_MESSAGES/kmobile.mo
 share/locale/eu/LC_MESSAGES/kmoon.mo
+share/locale/eu/LC_MESSAGES/kmousetool.mo
+share/locale/eu/LC_MESSAGES/kmouth.mo
 share/locale/eu/LC_MESSAGES/kmplot.mo
 share/locale/eu/LC_MESSAGES/kmrml.mo
 share/locale/eu/LC_MESSAGES/knetattach.mo
@@ -484,6 +490,7 @@ share/locale/eu/LC_MESSAGES/krfb.mo
 share/locale/eu/LC_MESSAGES/kruler.mo
 share/locale/eu/LC_MESSAGES/krunapplet.mo
 share/locale/eu/LC_MESSAGES/ksame.mo
+share/locale/eu/LC_MESSAGES/ksayit.mo
 share/locale/eu/LC_MESSAGES/kscd.mo
 share/locale/eu/LC_MESSAGES/kscreensaver.mo
 share/locale/eu/LC_MESSAGES/kshisen.mo
@@ -519,6 +526,7 @@ share/locale/eu/LC_MESSAGES/ktexteditor_docwordcompletion.mo
 share/locale/eu/LC_MESSAGES/ktexteditor_insertfile.mo
 share/locale/eu/LC_MESSAGES/ktexteditor_isearch.mo
 share/locale/eu/LC_MESSAGES/ktexteditor_kdatatool.mo
+share/locale/eu/LC_MESSAGES/ktexteditor_kttsd.mo
 share/locale/eu/LC_MESSAGES/kthememanager.mo
 share/locale/eu/LC_MESSAGES/ktimemon.mo
 share/locale/eu/LC_MESSAGES/ktimer.mo
@@ -526,6 +534,19 @@ share/locale/eu/LC_MESSAGES/ktip.mo
 share/locale/eu/LC_MESSAGES/ktnef.mo
 share/locale/eu/LC_MESSAGES/ktouch.mo
 share/locale/eu/LC_MESSAGES/ktron.mo
+share/locale/eu/LC_MESSAGES/kttsd.mo
+share/locale/eu/LC_MESSAGES/kttsd_commandplugin.mo
+share/locale/eu/LC_MESSAGES/kttsd_eposplugin.mo
+share/locale/eu/LC_MESSAGES/kttsd_festivalintplugin.mo
+share/locale/eu/LC_MESSAGES/kttsd_fliteplugin.mo
+share/locale/eu/LC_MESSAGES/kttsd_freettsplugin.mo
+share/locale/eu/LC_MESSAGES/kttsd_hadifixplugin.mo
+share/locale/eu/LC_MESSAGES/kttsd_sbdplugin.mo
+share/locale/eu/LC_MESSAGES/kttsd_stringreplacerplugin.mo
+share/locale/eu/LC_MESSAGES/kttsd_talkerchooserplugin.mo
+share/locale/eu/LC_MESSAGES/kttsd_xmltransformerplugin.mo
+share/locale/eu/LC_MESSAGES/kttsjobmgr.mo
+share/locale/eu/LC_MESSAGES/kttsmgr.mo
 share/locale/eu/LC_MESSAGES/ktuberling.mo
 share/locale/eu/LC_MESSAGES/kturtle.mo
 share/locale/eu/LC_MESSAGES/ktux.mo
@@ -561,6 +582,7 @@ share/locale/eu/LC_MESSAGES/kxkb.mo
 share/locale/eu/LC_MESSAGES/kxmlrpcd.mo
 share/locale/eu/LC_MESSAGES/kxsconfig.mo
 share/locale/eu/LC_MESSAGES/kxsldbg.mo
+share/locale/eu/LC_MESSAGES/libKTTSD.mo
 share/locale/eu/LC_MESSAGES/libcalendarresources.mo
 share/locale/eu/LC_MESSAGES/libdmctl.mo
 share/locale/eu/LC_MESSAGES/libkaddrbk_geo_xxport.mo

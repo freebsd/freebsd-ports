@@ -590,19 +590,20 @@ lib/libkwordexportfilters.la
 lib/libkwordexportfilters.so
 lib/libkwordexportfilters.so.1
 share/applications/kde/kexi.desktop
+share/applications/kde/kformdesigner.desktop
 share/applications/kde/kivio.desktop
+share/applications/kde/krita.desktop
 share/applnk/Office/KThesaurus.desktop
 share/applnk/Office/karbon.desktop
 share/applnk/Office/kchart.desktop
 share/applnk/Office/kformula.desktop
 share/applnk/Office/koshell.desktop
 share/applnk/Office/kpresenter.desktop
-share/applnk/Office/krita.desktop
+share/applnk/Office/krita_magick.desktop
 share/applnk/Office/kspread.desktop
 share/applnk/Office/kudesigner.desktop
 share/applnk/Office/kugar.desktop
 share/applnk/Office/kword.desktop
-share/applnk/Utilities/kformdesigner.desktop
 share/apps/karbon/gradients/allcolors.kgr
 share/apps/karbon/gradients/simple.kgr
 share/apps/karbon/icons/crystalsvg/16x16/actions/14_layer_deletelayer.png
@@ -945,6 +946,7 @@ share/apps/kivio/icons/crystalsvg/22x22/actions/arrowheads.png
 share/apps/kivio/icons/crystalsvg/22x22/actions/font_bold.png
 share/apps/kivio/icons/crystalsvg/22x22/actions/font_italic.png
 share/apps/kivio/icons/crystalsvg/22x22/actions/font_under.png
+share/apps/kivio/icons/crystalsvg/22x22/actions/kivio_connector.png
 share/apps/kivio/icons/crystalsvg/22x22/actions/open_stencilset.png
 share/apps/kivio/icons/crystalsvg/32x32/actions/arrowheads.png
 share/apps/kivio/icons/crystalsvg/48x48/actions/template_basicflow.png
@@ -1007,6 +1009,7 @@ share/apps/kivio/icons/hicolor/22x22/actions/font_bold.png
 share/apps/kivio/icons/hicolor/22x22/actions/font_italic.png
 share/apps/kivio/icons/hicolor/22x22/actions/font_under.png
 share/apps/kivio/icons/hicolor/22x22/actions/group_stencils.png
+share/apps/kivio/icons/hicolor/22x22/actions/kivio_connector.png
 share/apps/kivio/icons/hicolor/22x22/actions/linestyle.png
 share/apps/kivio/icons/hicolor/22x22/actions/linewidth.png
 share/apps/kivio/icons/hicolor/22x22/actions/open_stencilset.png
@@ -4041,12 +4044,10 @@ share/templates/TextDocument.desktop
 @exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kdgantt/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kdgantt/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/lib/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kspread/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kdgantt/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/kspread/html
 @dirrm share/services/kformdesigner
 @dirrm share/services/kexi
-@dirrm share/icons/hicolor/scalable/apps
-@dirrm share/icons/hicolor/scalable
 @dirrm share/doc/HTML/en/thesaurus
 @dirrm share/doc/HTML/en/kword
 @dirrm share/doc/HTML/en/kugar

@@ -382,7 +382,6 @@ share/doc/HTML/pt_BR/kdebugdialog/common
 share/doc/HTML/pt_BR/kdebugdialog/index.cache.bz2
 share/doc/HTML/pt_BR/kdebugdialog/index.docbook
 share/doc/HTML/pt_BR/kdelibs/man-artsmessage.1.docbook
-share/doc/HTML/pt_BR/kdelibs/man-checkXML.1.docbook
 share/doc/HTML/pt_BR/kdelibs/man-dcop.1.docbook
 share/doc/HTML/pt_BR/kdelibs/man-kdeoptions.7.docbook
 share/doc/HTML/pt_BR/kdelibs/man-qtoptions.7.docbook
@@ -815,14 +814,11 @@ share/doc/HTML/pt_BR/kolourpaint/index.cache.bz2
 share/doc/HTML/pt_BR/kolourpaint/index.docbook
 share/doc/HTML/pt_BR/kommander/basics.docbook
 share/doc/HTML/pt_BR/kommander/commands.docbook
-share/doc/HTML/pt_BR/kommander/common
 share/doc/HTML/pt_BR/kommander/credits.docbook
 share/doc/HTML/pt_BR/kommander/dcop.docbook
 share/doc/HTML/pt_BR/kommander/editor.docbook
 share/doc/HTML/pt_BR/kommander/extending.docbook
 share/doc/HTML/pt_BR/kommander/glossary.docbook
-share/doc/HTML/pt_BR/kommander/index.cache.bz2
-share/doc/HTML/pt_BR/kommander/index.docbook
 share/doc/HTML/pt_BR/kommander/installation.docbook
 share/doc/HTML/pt_BR/kommander/introduction.docbook
 share/doc/HTML/pt_BR/kommander/q-and-a.docbook

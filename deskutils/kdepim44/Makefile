@@ -7,7 +7,6 @@
 
 PORTNAME=	kdepim
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	deskutils mail news palm kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -43,7 +42,7 @@ OPTIONS=	GNOKII "KAdressbook import/export for Nokia phones" off
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500035
-RUN_DEPENDS+=	${LOCALBASE}/lib/libssl.so:${PORTSDIR}/security/openssl
+RUN_DEPENDS+=	${LOCALBASE}/lib/libssl.so:${PORTSDIR}/security/openssl-stable
 .endif
 
 .if exists(${LOCALBASE}/bin/gnokii)
