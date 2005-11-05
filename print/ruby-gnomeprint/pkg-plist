@@ -1,5 +1,7 @@
 %%RUBY_SITEARCHLIBDIR%%/gnomeprint2.so
 %%RUBY_SITELIBDIR%%/gnomeprint2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gp-pac.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pac.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ruby-gnome2-logo.png
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/run-test.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test_context.rb

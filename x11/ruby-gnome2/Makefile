@@ -3,6 +3,7 @@
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
+#   $MCom: ports/x11/ruby-gnome2/Makefile,v 1.2 2005/10/17 07:05:42 mezz Exp $
 #
 
 PORTNAME=	gnome2

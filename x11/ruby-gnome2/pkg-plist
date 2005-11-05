@@ -4,6 +4,8 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gnome-config.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gnome-druid.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gnome-program.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gnome-sound.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gnome-trigger.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/README
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/about.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/app-helper.rb

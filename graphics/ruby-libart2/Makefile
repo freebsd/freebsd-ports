@@ -3,6 +3,7 @@
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
+#   $MCom: ports/graphics/ruby-libart2/Makefile,v 1.2 2005/10/17 07:05:41 mezz Exp $
 #
 
 PORTNAME=	libart2

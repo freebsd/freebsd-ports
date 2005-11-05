@@ -3,6 +3,7 @@
 # Whom:			Yasuhiro Fukuma <yasuf@big.or.jp>
 #
 # $FreeBSD$
+#   $MCom: ports/x11-toolkits/ruby-gtk2/Makefile,v 1.2 2005/10/17 07:05:43 mezz Exp $
 #
 
 PORTNAME=	gtk2
