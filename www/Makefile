@@ -755,6 +755,7 @@
     SUBDIR += ruby-fcgi
     SUBDIR += ruby-google
     SUBDIR += ruby-gtkhtml2
+    SUBDIR += ruby-gtkmozembed
     SUBDIR += ruby-http-access
     SUBDIR += ruby-mnogosearch
     SUBDIR += ruby-nora
