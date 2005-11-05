@@ -5,10 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.2.3
-PORTREVISION?=	3
+DISTVERSION=	1.3.0-rc2
+PORTREVISION?=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://subversion.tigris.org/tarballs/
+MASTER_SITES=	http://lolut.utbm.info/pub/subversion-1.3.0/rc2/
+#MASTER_SITES=	http://subversion.tigris.org/tarballs/
 
 MAINTAINER=	lev@freebsd.org
 COMMENT=	Version control system
@@ -84,8 +85,7 @@ PLIST_SUB+=		WITHOUT_BDB=""
 .if ${PERL_LEVEL} < 500800
 IGNORE=	"Subversion\'s Perl bindings need perl 5.8.0 or greater. Upgrade your perl and try again"
 .endif
-SWIG_BINDINGS+=		perl
-DEPENDS_ARGS+=		WANT_SWIG_PERL=yes
+SWIG_BINDINGS+=		yes
 USE_PERL5=		yes
 PLIST_SUB+=		WITH_PERL=""
 MAN3PREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
@@ -104,8 +104,7 @@ PLIST_SUB+=		WITH_PERL="@comment "
 .if defined(WITH_PYTHON)
 USE_PYTHON=		yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
-SWIG_BINDINGS+=		python
-DEPENDS_ARGS+=		WANT_SWIG_PYTHON=yes
+SWIG_BINDINGS+=		yes
 PLIST_SUB+=		WITH_PYTHON=""
 .else
 PLIST_SUB+=		WITH_PYTHON="@comment "
@@ -114,8 +113,7 @@ PLIST_SUB+=		WITH_PYTHON="@comment "
 .if defined(WITH_RUBY)
 USE_RUBY=		yes
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
-SWIG_BINDINGS+=		ruby
-DEPENDS_ARGS+=		WANT_SWIG_RUBY=yes
+SWIG_BINDINGS+=		yes
 PLIST_SUB+=		WITH_RUBY=""
 .else
 PLIST_SUB+=		WITH_RUBY="@comment "
@@ -138,12 +136,7 @@ PLIST_SUB+=		WITH_JAVA="@comment "
 BROKEN="Java bindings are supported only on FreeBSD 5.3 or newer"
 .endif
 
-.if defined(SWIG_BINDINGS) && ${SWIG_BINDINGS} != ""
-BUILD_DEPENDS+=		swig1.3:${PORTSDIR}/devel/swig13
-DEPENDS_ARGS+=		SWIG_LANGUAGES=""
-CONFIGURE_ARGS+=	--with-swig=${LOCALBASE} \
-			--enable-swig-bindings=${SWIG_BINDINGS:Q:S/ /,/g:S/\\//g}
-.else
+.if !defined(SWIG_BINDINGS)
 CONFIGURE_ARGS+=	--without-swig --disable-swig-bindings
 .endif
 
@@ -163,10 +156,12 @@ APACHE2_PORT?=	www/apache2
 BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE2_PORT}
 RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE2_PORT}
 .if ${APACHE2_PORT} == "www/apache21"
+PLIST_SUB+=	APACHEDIR="apache21"
 APR_APU_DIR=	${LOCALBASE}/bin
 APR_CONFIG=	apr-1-config
 APU_CONFIG=	apu-1-config
 .else
+PLIST_SUB+=	APACHEDIR="apache2"
 APR_APU_DIR=	${LOCALBASE}/lib/apache2
 APR_CONFIG=	apr-config
 APU_CONFIG=	apu-config
@@ -252,7 +247,7 @@ pre-extract:
 	@${ECHO_MSG} "Build with Java (JavaHL) bindings."
 .else
 	@${ECHO_MSG} "You can enable Java bindings by defining WITH_JAVA."
-	@${ECHO_MSG} "You should have apr builded with threads for Java support!"
+	@${ECHO_MSG} "You should have apr built with threads for Java support!"
 .endif
 	@${ECHO_MSG} ""
 .if defined(WITH_MOD_DAV_SVN)
@@ -282,6 +277,10 @@ pre-extract:
 .if defined(WITH_REPOSITORY_CREATION)
 	@${ECHO_MSG} "I will create (or use, if it exists) \"${SVNGROUP}\" group."
 	@${ECHO_MSG} "Make sure that all committers are its members."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Repository will be created at '${SVNREPOS}' with group '${SVNGROUP}'."
+	@${ECHO_MSG} "Type of repository will be '${SVNFSTYPE}'."
+	@${ECHO_MSG} "You could change these settings by defining SVNREPOS, SVNGROUP and SVNFSTYPE."
 .else
 	@${ECHO_MSG} "You can have the repository created for you by defining"
 	@${ECHO_MSG} "WITH_REPOSITORY_CREATION."
@@ -291,11 +290,6 @@ pre-extract:
 	@${ECHO_MSG} "* this group is the group id of the db/ and locks/"
 	@${ECHO_MSG} "  subdirectories of your repository"
 	@${ECHO_MSG} "* the above subdirectories are writable by this group"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Repository will be created at '${SVNREPOS}' with group '${SVNGROUP}'."
-	@${ECHO_MSG} "Type of repository will be '${SVNFSTYPE}'."
-	@${ECHO_MSG} "You could change these settings by defining SVNREPOS, SVNGROUP and SVNFSTYPE"
-	@${ECHO_MSG} ""
 .endif
 	@${ECHO_MSG} ""
 .if !defined(NOPORTDOCS) && defined(WITH_BOOK)
@@ -334,7 +328,7 @@ pre-configure:
 		${ECHO_MSG} 'You should build `'"${APR_PORT}' with db4 support to use subversion with it." ; \
 		${ECHO_MSG} 'Please rebuild `'"${APR_PORT}' with option "'`'"${OPT_NAME}' and try again." ; \
 		${ECHO_MSG} "" ; \
-		${ECHO_MSG} "Or you can disable db4 support. Only 'fs' repository backend will be availible." ; \
+		${ECHO_MSG} "Or you can disable db4 support. Only 'fs' repository backend will be available." ; \
 		${ECHO_MSG} "To disable db4 support, define WITHOUT_BDB." ; \
 		${ECHO_MSG} "" ; \
 		${FALSE} ; \

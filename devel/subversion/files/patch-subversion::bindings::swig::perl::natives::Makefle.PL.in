@@ -1,121 +1,39 @@
-*** subversion/bindings/swig/perl/native/Makefile.PL.in.orig	Mon Mar 21 01:12:33 2005
---- subversion/bindings/swig/perl/native/Makefile.PL.in	Sun Apr 10 12:31:37 2005
-***************
-*** 1,4 ****
-! #!/usr/bin/perl
-  use ExtUtils::MakeMaker;
-  use Config;
-  use Cwd 'abs_path';
---- 1,5 ----
-! #!/usr/bin/perl -w
-! use strict;
-  use ExtUtils::MakeMaker;
-  use Config;
-  use Cwd 'abs_path';
-***************
-*** 15,20 ****
---- 16,27 ----
-  my $swig_srcdir = "${svnlib_srcdir}/bindings/swig";
-  my $swig_builddir = "${svnlib_builddir}/bindings/swig";
-  
-+ my $top_builddir = '../../../../..';
-+ my $top_srcdir = '@top_srcdir@';
-+ my $svnlib_srcdir = "${top_srcdir}/subversion";
-+ my $swig_srcdir = "${svnlib_srcdir}/bindings/swig";
-+ 
-+ 
-  my $swig_version = @SWIG_VERSION@;
-  my $swig = '@SWIG@';
-  
-***************
-*** 48,55 ****
-      OBJECT => q/$(O_FILES)/,
-      LIBS => [join(' ', $apr_ldflags,
-                    (map {$_ = abs_path($_); "-L$_"} @ldpaths),
-!                   @ldmodules, '-lsvn_swig_perl-1',
-!                   `$swig -perl -ldflags`)],
-      test => { TESTS => "$swig_srcdir/perl/native/t/*.t" }
-  );
-  
---- 55,61 ----
-      OBJECT => q/$(O_FILES)/,
-      LIBS => [join(' ', $apr_ldflags,
-                    (map {$_ = abs_path($_); "-L$_"} @ldpaths),
-!                   @ldmodules, '-lsvn_swig_perl-1')],
-      test => { TESTS => "$swig_srcdir/perl/native/t/*.t" }
-  );
-  
-***************
-*** 64,69 ****
---- 70,76 ----
-                        "\$(INST_LIBDIR)/$_.pm") }
-           map { perlish $_ }
-           ('base', 'core', @modules)},
-+         LDFROM => '$(O_FILES) '."../libsvn_swig_perl/.libs/libsvn_swig_perl-1.a",
-          MAN3PODS => {map { ("$swig_srcdir/perl/native/$_.pm" =>
-                              "\$(INST_MAN3DIR)/SVN::$_.\$(MAN3EXT)") }
-           map { perlish $_ }
-***************
-*** 88,107 ****
-     my $module_c_files = join (' ',map { "svn_$_.c"} @modules);
-     my $module_make_commands = join ('',map {"\t\$(MAKE) -f Makefile.$_\n"} @modules);
-  
-!    my $flags;
-     if ($swig_version >= 103024) {
-       $flags = '-noproxy';
-     } elsif ($swig_version >= 103020) {
-       $flags = '-noruntime -noproxy';
-     } else {
-       $flags = '-c';
-     }
-     
-!    my $swig_command = "$swig $flags -nopm -perl " .
-                        "-I$swig_srcdir " .
-                        "-I$swig_srcdir/perl/libsvn_swig_perl".
-                        " -I$svnlib_srcdir/include" .
-!                       $apr_cflags;
-  
-     my $swig_modules_command = join ('',
-                                map {"\nsvn_$_.c : $swig_srcdir/svn_$_.i ".
---- 95,118 ----
-     my $module_c_files = join (' ',map { "svn_$_.c"} @modules);
-     my $module_make_commands = join ('',map {"\t\$(MAKE) -f Makefile.$_\n"} @modules);
-  
-!    my ($flags, $flags_runtime);
-     if ($swig_version >= 103024) {
-       $flags = '-noproxy';
-+      $flags_runtime = '-noproxy';
-     } elsif ($swig_version >= 103020) {
-       $flags = '-noruntime -noproxy';
-+      $flags_runtime = '-runtime -noproxy';
-     } else {
-       $flags = '-c';
-     }
-     
-!    my ($swig_command, $swig_command_runtime) =
-!                 map { "$swig $_ -nopm -perl " .
-                        "-I$swig_srcdir " .
-                        "-I$swig_srcdir/perl/libsvn_swig_perl".
-                        " -I$svnlib_srcdir/include" .
-!                       $apr_cflags }
-!                     ($flags, $flags_runtime);
-  
-     my $swig_modules_command = join ('',
-                                map {"\nsvn_$_.c : $swig_srcdir/svn_$_.i ".
-***************
-*** 139,145 ****
-  $module_make_commands\t\$(NOECHO) \$(TOUCH) \$\@
-  
-  core.c :: $swig_srcdir/core.i
-! \t$swig_command -o core.c $swig_srcdir/core.i
-  
-  $swig_modules_command
-  
---- 150,156 ----
-  $module_make_commands\t\$(NOECHO) \$(TOUCH) \$\@
-  
-  core.c :: $swig_srcdir/core.i
-! \t$swig_command_runtime -o core.c $swig_srcdir/core.i
-  
-  $swig_modules_command
-  
+--- subversion/bindings/swig/perl/native/Makefile.PL.in.orig	Sat Oct 15 00:45:33 2005
++++ subversion/bindings/swig/perl/native/Makefile.PL.in	Wed Nov  2 21:58:44 2005
+@@ -1,4 +1,5 @@
+-#!/usr/bin/perl
++#!/usr/bin/perl -w
++use strict;
+ use ExtUtils::MakeMaker;
+ use Config;
+ use Cwd 'abs_path';
+@@ -15,6 +16,11 @@
+ my $swig_srcdir = "${svnlib_srcdir}/bindings/swig";
+ my $swig_builddir = "${svnlib_builddir}/bindings/swig";
+ 
++my $top_builddir = '../../../../..';
++my $top_srcdir = '@top_srcdir@';
++my $svnlib_srcdir = "${top_srcdir}/subversion";
++my $swig_srcdir = "${svnlib_srcdir}/bindings/swig";
++
+ my @modules = qw/client delta fs ra repos wc/;
+ my @ldpaths = ("$swig_builddir/perl/libsvn_swig_perl/.libs",
+                map {"$svnlib_builddir/libsvn_$_/.libs"} (@modules, qw/diff subr
+@@ -45,8 +51,7 @@
+     OBJECT => q/$(O_FILES)/,
+     LIBS => [join(' ', $apr_ldflags,
+                   (map {$_ = abs_path($_); "-L$_"} @ldpaths),
+-                  @ldmodules, '-lsvn_swig_perl-1',
+-                  `$swig -perl -ldflags`)],
++                  @ldmodules, '-lsvn_swig_perl-1')],
+     test => { TESTS => "$swig_srcdir/perl/native/t/*.t" }
+ );
+ 
+@@ -61,6 +66,7 @@
+                       "\$(INST_LIBDIR)/$_.pm") }
+          map { perlish $_ }
+          ('base', 'core', @modules)},
++        LDFROM => '$(O_FILES) '."../libsvn_swig_perl/.libs/libsvn_swig_perl-1.a",
+         MAN3PODS => {map { ("$swig_srcdir/perl/native/$_.pm" =>
+                             "\$(INST_MAN3DIR)/SVN::$_.\$(MAN3EXT)") }
+          map { perlish $_ }
