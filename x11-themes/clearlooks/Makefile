@@ -3,11 +3,12 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
+#      $MCom: ports/x11-themes/clearlooks/Makefile,v 1.4 2005/10/14 20:39:59 adamw Exp $
 #
 
 PORTNAME?=	clearlooks
 PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	clearlooks
@@ -17,17 +18,18 @@ MAINTAINER=	ahze@FreeBSD.org
 COMMENT?=	GTK+ 2.x engine based on Bluecurve
 
 USE_BZIP2=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gtk20
+INSTALLS_ICONS=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
 
-OPTIONS+=	METACITY "Depend on MetaCity Theme" On
 .if defined(PORTNAME) && ${PORTNAME} == "clearlooks"
-OPTIONS+=	ANIMATION "Enable experimental animated progressbars" Off
+OPTIONS+=	ANIMATION "Enable experimental animated progressbars" Off \
+		METACITY "Depend on MetaCity Theme" On
 .endif
 
 .include <bsd.port.pre.mk>
@@ -47,7 +49,7 @@ INSTALL_WRKSRC=	${WRKSRC}/themes
 PLIST_SUB+=	ENGINE="@comment "
 .endif
 
-.if !defined(WITHOUT_METACITY)
+.if !defined(WITHOUT_METACITY) && ${PORTNAME}=="clearlooks"
 RUN_DEPENDS+=	${X11BASE}/share/gnome/themes/Clearlooks/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/clearlooks-metacity
 .endif
 
@@ -56,7 +58,7 @@ CONFIGURE_ARGS+=	--enable-animation
 .endif
 
 .if ${PORTNAME} == "clearlooks"
-3pre-everything::
+pre-everything::
 	@if [ -n "`${PKG_INFO} -xI '^gtk-engines2*[0-9]*'`" ]; then \
 		${ECHO_MSG} ; \
 		${ECHO_MSG} "Gnome/gtk-engine users should use ${PORTSDIR}/x11-themes/clearlooks-themes instead" ; \
