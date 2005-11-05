@@ -1,4 +1,0 @@
-lib/libXm-ns.so.1.0.2
-lib/libXm.so
-lib/libXm.so.1
-@exec /compat/linux/sbin/ldconfig

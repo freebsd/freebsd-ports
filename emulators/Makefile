@@ -72,7 +72,6 @@
     SUBDIR += m2000
     SUBDIR += mastergear
     SUBDIR += minivmac
-    SUBDIR += mips64emul
     SUBDIR += mtools
     SUBDIR += mupen64
     SUBDIR += mupen64-base
@@ -86,7 +85,6 @@
     SUBDIR += mupen64-sdlinput
     SUBDIR += mupen64-sound
     SUBDIR += o2em
-    SUBDIR += osf1_base
     SUBDIR += osmose
     SUBDIR += p-interp
     SUBDIR += pcemu

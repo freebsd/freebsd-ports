@@ -1,7 +1,0 @@
-ZiaRC (which is a recursive acronym for "ZiaRC is a Resistor Calculator")
-facilitates the drawing of resistor nets and calculates overall resistivity
-and particular currents through the resistors. It consists of a graphical
-user interface which allows the easy creation of resistor nets and has many
-functions such as undo/redo, delete, move and many more.
-
-WWW: http://www.procoders.net/pythonstuff/ZiaRC/

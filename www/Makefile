@@ -218,7 +218,6 @@
     SUBDIR += linux-flashplugin
     SUBDIR += linux-flashplugin6
     SUBDIR += linux-flashplugin7
-    SUBDIR += linux-lesstif-ns
     SUBDIR += linux-mozilla
     SUBDIR += linux-mozilla-devel
     SUBDIR += linux-nvu
@@ -332,7 +331,6 @@
     SUBDIR += mod_mylo
     SUBDIR += mod_mysqluserdir
     SUBDIR += mod_ntlm
-    SUBDIR += mod_pcgi2
     SUBDIR += mod_perl
     SUBDIR += mod_perl2
     SUBDIR += mod_php4
@@ -386,7 +384,6 @@
     SUBDIR += neon
     SUBDIR += neowebscript
     SUBDIR += netrik
-    SUBDIR += netscape-remote
     SUBDIR += netscape-wrapper
     SUBDIR += nginx
     SUBDIR += notftp
@@ -511,7 +508,6 @@
     SUBDIR += p5-Feed-Find
     SUBDIR += p5-Flickr-API
     SUBDIR += p5-Flickr-Upload
-    SUBDIR += p5-GtkHTML
     SUBDIR += p5-HTML
     SUBDIR += p5-HTML-Breadcrumbs
     SUBDIR += p5-HTML-CalendarMonthSimple
@@ -591,7 +587,6 @@
     SUBDIR += p5-Kwiki-VimMode
     SUBDIR += p5-Kwiki-plugins
     SUBDIR += p5-LWP-Authen-Wsse
-    SUBDIR += p5-MasonX-Apache2Handler
     SUBDIR += p5-MasonX-Interp-WithCallbacks
     SUBDIR += p5-MasonX-Profiler
     SUBDIR += p5-MasonX-Request-WithApacheSession
@@ -674,7 +669,6 @@
     SUBDIR += pear-Text_Wiki
     SUBDIR += pecl-APC
     SUBDIR += perlbal
-    SUBDIR += pgdriver
     SUBDIR += pglogd
     SUBDIR += photo_gallery
     SUBDIR += php-dyn
@@ -804,7 +798,6 @@
     SUBDIR += swish++
     SUBDIR += swish-e
     SUBDIR += syndigator
-    SUBDIR += tasks
     SUBDIR += tclhttpd
     SUBDIR += tclwebtest
     SUBDIR += tdiary
@@ -913,13 +906,11 @@
     SUBDIR += zope-silva
     SUBDIR += zope-silvaviews
     SUBDIR += zope-simpleblog
-    SUBDIR += zope-soapmethod
     SUBDIR += zope-ttwtype
     SUBDIR += zope-validation
     SUBDIR += zope-xmlmethods
     SUBDIR += zope-xmlwidgets
     SUBDIR += zope-zmysqlda
-    SUBDIR += zope-zpt
     SUBDIR += zope-zsyncer
     SUBDIR += zope-zwiki
     SUBDIR += zope31

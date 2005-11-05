@@ -91,7 +91,6 @@
     SUBDIR += sn
     SUBDIR += suck
     SUBDIR += suck-cnews
-    SUBDIR += t-gnus
     SUBDIR += t-gnus-emacs20
     SUBDIR += t-gnus-mule
     SUBDIR += t-gnus-xemacs21-mule

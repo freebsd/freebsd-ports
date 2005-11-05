@@ -77,7 +77,6 @@
     SUBDIR += gcc41
     SUBDIR += gcl
     SUBDIR += gdc
-    SUBDIR += generic-haskell
     SUBDIR += gforth
     SUBDIR += gfortran
     SUBDIR += ghc
@@ -101,7 +100,6 @@
     SUBDIR += guile
     SUBDIR += harbour
     SUBDIR += haskell-mode.el
-    SUBDIR += helium
     SUBDIR += hope
     SUBDIR += huc
     SUBDIR += hugs
@@ -151,7 +149,6 @@
     SUBDIR += njs
     SUBDIR += nml
     SUBDIR += nqc
-    SUBDIR += o2c
     SUBDIR += objc
     SUBDIR += ocaml
     SUBDIR += ocaml-doc

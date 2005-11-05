@@ -104,7 +104,6 @@
     SUBDIR += criticalmass
     SUBDIR += crossfire-client
     SUBDIR += crossfire-server
-    SUBDIR += crossword
     SUBDIR += cryptoslam
     SUBDIR += csmash
     SUBDIR += ctris
@@ -167,7 +166,6 @@
     SUBDIR += foobillard
     SUBDIR += fotaq
     SUBDIR += frabs
-    SUBDIR += freebooters
     SUBDIR += freebsd-games
     SUBDIR += freecell-solver
     SUBDIR += freeciv
@@ -204,7 +202,6 @@
     SUBDIR += gltron
     SUBDIR += gma
     SUBDIR += gnarr
-    SUBDIR += gniffel
     SUBDIR += gnmm
     SUBDIR += gno3dtet
     SUBDIR += gnome-music-quiz
@@ -249,7 +246,6 @@
     SUBDIR += heroes
     SUBDIR += hex
     SUBDIR += highmoon
-    SUBDIR += hlserver-action
     SUBDIR += hlserver-admin
     SUBDIR += hlserver-cs
     SUBDIR += hlserver-dod
@@ -433,7 +429,6 @@
     SUBDIR += pmars-sdl
     SUBDIR += polypuzzle
     SUBDIR += powermanga
-    SUBDIR += powerpak
     SUBDIR += powwow
     SUBDIR += pp
     SUBDIR += ppracer
@@ -449,7 +444,6 @@
     SUBDIR += pysol
     SUBDIR += pysol-cardsets
     SUBDIR += pysol-music
-    SUBDIR += pythoong
     SUBDIR += q15
     SUBDIR += q3server
     SUBDIR += q3server-excessive
@@ -511,7 +505,6 @@
     SUBDIR += sl
     SUBDIR += slashem-tty
     SUBDIR += slune
-    SUBDIR += smacx
     SUBDIR += smiley
     SUBDIR += sokoban
     SUBDIR += sol
@@ -547,7 +540,6 @@
     SUBDIR += textmaze
     SUBDIR += thevalley
     SUBDIR += thudboard
-    SUBDIR += tictactoe3d
     SUBDIR += tileworld
     SUBDIR += tinymux
     SUBDIR += tkmoo
@@ -587,7 +579,6 @@
     SUBDIR += urban
     SUBDIR += urban-sounds
     SUBDIR += utserver
-    SUBDIR += utserver-to
     SUBDIR += vamos
     SUBDIR += vavoom
     SUBDIR += vectoroids
@@ -633,7 +624,6 @@
     SUBDIR += xbomber
     SUBDIR += xbubble
     SUBDIR += xchadance
-    SUBDIR += xchain
     SUBDIR += xcheckers
     SUBDIR += xchomp
     SUBDIR += xcogitate
@@ -667,7 +657,6 @@
     SUBDIR += xjewel
     SUBDIR += xjig
     SUBDIR += xjump
-    SUBDIR += xjumpjump
     SUBDIR += xjumpx
     SUBDIR += xkobo
     SUBDIR += xkoules
@@ -684,19 +673,16 @@
     SUBDIR += xminehunter
     SUBDIR += xmines
     SUBDIR += xminesweep
-    SUBDIR += xmj
     SUBDIR += xmlink
     SUBDIR += xmoto
     SUBDIR += xmris
     SUBDIR += xmulti
     SUBDIR += xneko
-    SUBDIR += xnibbles
     SUBDIR += xoct
     SUBDIR += xoids
     SUBDIR += xoj
     SUBDIR += xonix
     SUBDIR += xosmulti
-    SUBDIR += xothello
     SUBDIR += xpacman
     SUBDIR += xpanex
     SUBDIR += xpat2
@@ -734,7 +720,6 @@
     SUBDIR += xskewb
     SUBDIR += xsok
     SUBDIR += xsokoban
-    SUBDIR += xsol
     SUBDIR += xsoldier
     SUBDIR += xspacewarp
     SUBDIR += xspringies

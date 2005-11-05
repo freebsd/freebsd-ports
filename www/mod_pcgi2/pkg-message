@@ -1,8 +1,0 @@
--
-	Please, adjust the %%PREFIX%%/%%CONFFILE%%
-	to your liking and add
-
-		include %%CONFFILE%%
-
-	to the Apache's config file.
--

@@ -171,7 +171,6 @@
     SUBDIR += nl-acroread
     SUBDIR += no-acroread
     SUBDIR += offix-printer
-    SUBDIR += p5-GnomePrint
     SUBDIR += p5-Net-Printer
     SUBDIR += p5-PDFLib
     SUBDIR += p5-PostScript-Simple

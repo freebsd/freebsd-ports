@@ -40,7 +40,6 @@
     SUBDIR += diclookup-emacs20
     SUBDIR += diclookup-mule
     SUBDIR += drpl
-    SUBDIR += dserver
     SUBDIR += dvi2dvi
     SUBDIR += dvi2ps
     SUBDIR += dvi2tty
@@ -55,13 +54,11 @@
     SUBDIR += ebnetd
     SUBDIR += ebview
     SUBDIR += ebview-gtk2
-    SUBDIR += ebw3
     SUBDIR += edict
     SUBDIR += edict-fpw
     SUBDIR += edict-utf-8
     SUBDIR += egg-canna
     SUBDIR += eijiro-fpw
-    SUBDIR += elisa10x8
     SUBDIR += elisa8x8
     SUBDIR += elisp-manual
     SUBDIR += elvis
@@ -114,7 +111,6 @@
     SUBDIR += ipa-ttfonts
     SUBDIR += ipadic
     SUBDIR += ircII
-    SUBDIR += iv
     SUBDIR += jadetex-ptex
     SUBDIR += japaneseAFM
     SUBDIR += jargon-fpw
@@ -224,7 +220,6 @@
     SUBDIR += monafonts-ttf
     SUBDIR += motoya-ttfonts
     SUBDIR += mozilla-jlp
-    SUBDIR += mozilla-jlp-devel
     SUBDIR += mplusfonts
     SUBDIR += msdosfs
     SUBDIR += mtools
@@ -276,7 +271,6 @@
     SUBDIR += onew-freewnn
     SUBDIR += onew-wnn6
     SUBDIR += onew-wnn7
-    SUBDIR += openoffice-templates
     SUBDIR += otojiro-fpw
     SUBDIR += p5-Date-Japanese-Era
     SUBDIR += p5-Jcode
@@ -291,7 +285,6 @@
     SUBDIR += paledit
     SUBDIR += pejv-fpw
     SUBDIR += perl5
-    SUBDIR += pgp.language
     SUBDIR += php_doc
     SUBDIR += phpgroupware
     SUBDIR += plain2
@@ -412,11 +405,6 @@
     SUBDIR += xemacs-devel-canna+wnn6
     SUBDIR += xemacs-devel-freewnn
     SUBDIR += xemacs-devel-wnn6
-    SUBDIR += xemacs21-canna
-    SUBDIR += xemacs21-canna+freewnn
-    SUBDIR += xemacs21-canna+wnn6
-    SUBDIR += xemacs21-freewnn
-    SUBDIR += xemacs21-wnn6
     SUBDIR += xjman
     SUBDIR += xjman-3
     SUBDIR += xjtext
@@ -437,6 +425,5 @@
     SUBDIR += zipcodes
     SUBDIR += zope-ejsplitter
     SUBDIR += zope-jamailhost
-    SUBDIR += zope-zmilocalizer
 
 .include <bsd.port.subdir.mk>

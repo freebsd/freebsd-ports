@@ -65,7 +65,6 @@
     SUBDIR += grass-i18n
     SUBDIR += gtksql
     SUBDIR += hk_classes
-    SUBDIR += hs-hsql
     SUBDIR += isql-viewer
     SUBDIR += jasperreports
     SUBDIR += java-sqlrelay
@@ -350,7 +349,6 @@
     SUBDIR += ruby-bdb
     SUBDIR += ruby-bdb1
     SUBDIR += ruby-cdb
-    SUBDIR += ruby-criteria
     SUBDIR += ruby-dbd_interbase
     SUBDIR += ruby-dbd_msql
     SUBDIR += ruby-dbd_mysql
@@ -386,7 +384,6 @@
     SUBDIR += tcl-Mysql
     SUBDIR += tdb
     SUBDIR += tinycdb
-    SUBDIR += tkgnats
     SUBDIR += typhoon
     SUBDIR += unixODBC
     SUBDIR += useracc

@@ -59,6 +59,5 @@
     SUBDIR += vipec
     SUBDIR += xcircuit
     SUBDIR += z88
-    SUBDIR += ziarc
 
 .include <bsd.port.subdir.mk>

@@ -12,7 +12,6 @@
     SUBDIR += bsdav
     SUBDIR += bsdbktr_tvtune
     SUBDIR += camserv
-    SUBDIR += cupid
     SUBDIR += dirac
     SUBDIR += dtv
     SUBDIR += dumpmpeg

@@ -197,7 +197,6 @@
     SUBDIR += gnetcat
     SUBDIR += gnewtellium
     SUBDIR += gnoemoe
-    SUBDIR += gnomba
     SUBDIR += gnome-btdownload
     SUBDIR += gnome-jabber
     SUBDIR += gnome-mud
@@ -277,7 +276,6 @@
     SUBDIR += jabber-pyicq
     SUBDIR += jabber-pymsn
     SUBDIR += jabber-users-agent
-    SUBDIR += jabber-xdb_ldap
     SUBDIR += jabber-yahoo
     SUBDIR += jabberd
     SUBDIR += jags

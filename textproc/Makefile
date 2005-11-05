@@ -38,7 +38,6 @@
     SUBDIR += cbedic
     SUBDIR += cdif
     SUBDIR += cdiff
-    SUBDIR += cdsware
     SUBDIR += chpp
     SUBDIR += cl-meta
     SUBDIR += cl-meta-clisp
@@ -507,7 +506,6 @@
     SUBDIR += p5-XML-RSS-JavaScript
     SUBDIR += p5-XML-RegExp
     SUBDIR += p5-XML-SAX
-    SUBDIR += p5-XML-SAX-Base
     SUBDIR += p5-XML-SAX-Expat
     SUBDIR += p5-XML-SAX-ExpatXS
     SUBDIR += p5-XML-SAX-Machines
@@ -716,7 +714,6 @@
     SUBDIR += tei-lite
     SUBDIR += tei-p3
     SUBDIR += tei-p4
-    SUBDIR += tei-xlite
     SUBDIR += tet-aspell
     SUBDIR += tex2im
     SUBDIR += texi2db

@@ -13,7 +13,6 @@
     SUBDIR += easygtk
     SUBDIR += eel
     SUBDIR += efltk
-    SUBDIR += erlgtk
     SUBDIR += etox
     SUBDIR += ewl
     SUBDIR += fl_editor
@@ -66,11 +65,9 @@
     SUBDIR += gtoolkit
     SUBDIR += guile-gnome
     SUBDIR += guile-gtk
-    SUBDIR += guis
     SUBDIR += hs-frantk
     SUBDIR += hs-gio
     SUBDIR += hs-gtk2hs
-    SUBDIR += hs-port
     SUBDIR += inti
     SUBDIR += inti-gconf
     SUBDIR += inti-gl
@@ -78,7 +75,6 @@
     SUBDIR += irrlicht
     SUBDIR += itk
     SUBDIR += iwidgets
-    SUBDIR += jx
     SUBDIR += lesstif
     SUBDIR += libXaw
     SUBDIR += libXmu
@@ -170,7 +166,6 @@
     SUBDIR += py-wxPython26-unicode
     SUBDIR += py-xlib
     SUBDIR += qscintilla
-    SUBDIR += qt145
     SUBDIR += qt33
     SUBDIR += qtpixmap
     SUBDIR += qwt

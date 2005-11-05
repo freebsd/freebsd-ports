@@ -1,4 +1,0 @@
-The SOAP Method product provides support for remote SOAP methods, exposing
-them as callable objects within the Zope environment.
-
-WWW: http://zope.org/Members/EIONET/SOAPMethod/

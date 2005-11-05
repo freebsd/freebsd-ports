@@ -221,7 +221,6 @@
     SUBDIR += dits
     SUBDIR += dmake
     SUBDIR += dmalloc
-    SUBDIR += doc++
     SUBDIR += doctorj
     SUBDIR += dotconf
     SUBDIR += dotconf++
@@ -235,7 +234,6 @@
     SUBDIR += ebnf2yacc
     SUBDIR += eboxy
     SUBDIR += ecb
-    SUBDIR += ecb-emacs20
     SUBDIR += ecgi
     SUBDIR += ecos-tools
     SUBDIR += eet
@@ -546,8 +544,6 @@
     SUBDIR += linux-runrev
     SUBDIR += linux-sdl12
     SUBDIR += linux_devtools
-    SUBDIR += linux_devtools-6
-    SUBDIR += linux_devtools-7
     SUBDIR += linux_kdump
     SUBDIR += linuxthreads
     SUBDIR += log4c
@@ -563,7 +559,6 @@
     SUBDIR += m17n-lib
     SUBDIR += m4
     SUBDIR += m6811-binutils
-    SUBDIR += m6811-gcc
     SUBDIR += m68k-rtems-binutils
     SUBDIR += m68k-rtems-g77
     SUBDIR += m68k-rtems-gcc
@@ -1636,7 +1631,6 @@
     SUBDIR += xxl
     SUBDIR += yasm
     SUBDIR += z80-asm
-    SUBDIR += zendstudio
     SUBDIR += zthread
     SUBDIR += zziplib
 
