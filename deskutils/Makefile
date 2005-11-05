@@ -112,6 +112,7 @@
     SUBDIR += narval
     SUBDIR += nautilus-actions
     SUBDIR += nautilus-locked-folder
+    SUBDIR += nautilus-open-terminal
     SUBDIR += nautilus-sendto
     SUBDIR += notebook
     SUBDIR += notification-daemon
