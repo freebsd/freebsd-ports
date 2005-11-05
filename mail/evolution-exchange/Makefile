@@ -1,17 +1,17 @@
-# New ports collection makefile for:   ximian-connector
-# Date created:        30 May 2004
-# Whom:                kiesel
+# New ports collection makefile for:	evolution-exchange
+# Date created:				28 April, 2005
+# Whom:					Adam Weinberger, based off kiesel's ximian-exchange port
 #
 # $FreeBSD$
+#   $MCom: ports/mail/evolution-exchange/Makefile,v 1.39 2005/10/04 04:32:19 marcus Exp $
 #
 
-PORTNAME=	ximian
-PORTVERSION=	2.2.3
+PORTNAME=	evolution-exchange
+PORTVERSION=	2.4.1
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}${PKGNAMESUFFIX}/2.2
-PKGNAMESUFFIX=	-connector
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}${PKGNAMESUFFIX}/2.4
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	kiesel@schlund.de
 COMMENT=	Evolution plugin to connect to Microsoft Exchange servers
@@ -21,18 +21,21 @@ RUN_DEPENDS=	evolution-${EVO_VERSION}:${PORTSDIR}/mail/evolution
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=15
+
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_OPENLDAP=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnometarget
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-openldap=${LOCALBASE} \
-		--with-static-ldap=no
+		--with-static-ldap=no \
+		--disable-compile-warnings
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
-EVO_VERSION=	2.2
-PLIST_SUB=	VERSION="2.2" EVO_VERSION=${EVO_VERSION} EDS_VERSION="1.2"
+EVO_VERSION=	2.4
+PLIST_SUB=	VERSION="2.4" EVO_VERSION=${EVO_VERSION} EDS_VERSION="1.2" \
+		OLDDOCSDIR="share/doc/ximian-connector"
 
 .include <bsd.port.pre.mk>
 
