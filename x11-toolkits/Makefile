@@ -66,7 +66,6 @@
     SUBDIR += guile-gnome
     SUBDIR += guile-gtk
     SUBDIR += hs-frantk
-    SUBDIR += hs-gio
     SUBDIR += hs-gtk2hs
     SUBDIR += inti
     SUBDIR += inti-gconf
