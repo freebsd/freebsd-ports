@@ -1,0 +1,50 @@
+include/%%PORTNAME%%/jg_jnu.h
+lib/libglibjni-%%GLIB_API_VERSION%%.so
+lib/libglibjni-%%GLIB_API_VERSION%%.so.1
+libdata/pkgconfig/%%PORTNAME%%.pc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/api/allclasses-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/api/allclasses-noframe.html
+%%PORTDOCS%%%%DOCSDIR%%/api/constant-values.html
+%%PORTDOCS%%%%DOCSDIR%%/api/deprecated-list.html
+%%PORTDOCS%%%%DOCSDIR%%/api/help-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/api/index-all.html
+%%PORTDOCS%%%%DOCSDIR%%/api/index.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/Config.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/Enum.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/Flags.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/Handle.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/Handle32Bits.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/Handle64Bits.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/Struct.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/api/overview-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/api/package-list
+%%PORTDOCS%%%%DOCSDIR%%/api/packages.html
+%%PORTDOCS%%%%DOCSDIR%%/api/resources/inherit.gif
+%%PORTDOCS%%%%DOCSDIR%%/api/serialized-form.html
+%%PORTDOCS%%%%DOCSDIR%%/api/stylesheet.css
+share/%%PORTNAME%%/macros/ac_prog_jar.m4
+share/%%PORTNAME%%/macros/ac_prog_javac.m4
+share/%%PORTNAME%%/macros/ac_prog_javac_works.m4
+share/%%PORTNAME%%/macros/ac_prog_javadoc.m4
+share/%%PORTNAME%%/macros/am_path_docbook.m4
+share/%%PORTNAME%%/macros/am_path_gcj.m4
+share/%%PORTNAME%%/macros/jg_check_nativecompile.m4
+share/%%PORTNAME%%/macros/jg_common.m4
+share/%%PORTNAME%%/macros/jg_lib.m4
+share/java/classes/glib%%GLIB_API_VERSION%%.jar
+@dirrm share/%%PORTNAME%%/macros
+@dirrm share/%%PORTNAME%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/resources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/org/gnu/glib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/org/gnu
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/org
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/%%PORTNAME%%
