@@ -2124,6 +2124,7 @@ evilwm		ports/x11-wm/evilwm
 evince		ports/graphics/evince
 evolution	ports/mail/evolution
 evolution-data-server	ports/databases/evolution-data-server
+evolution-exchange	ports/mail/evolution-exchange
 evolution-webcal	ports/www/evolution-webcal
 evolvotron	ports/graphics/evolvotron
 ewipe		ports/misc/ewipe
@@ -2786,7 +2787,6 @@ geda-symcheck	ports/cad/geda-symcheck
 geda-utils	ports/cad/geda-utils
 gedit		ports/editors/gedit
 gedit-autocomplete-plugin	ports/editors/gedit-autocomplete-plugin
-gedit-plugins	ports/editors/gedit-plugins
 geekcode	ports/misc/geekcode
 geeklog		ports/www/geeklog
 geg		ports/math/geg
@@ -3082,6 +3082,7 @@ gnome-osd	ports/misc/gnome-osd
 gnome-password-generator	ports/security/gnome-password-generator
 gnome-pkgview	ports/sysutils/gnome-pkgview
 gnome-schedule	ports/sysutils/gnome-schedule
+gnome-screensaver	ports/x11/gnome-screensaver
 gnome-splashscreen-manager	ports/x11-themes/gnome-splashscreen-manager
 gnome-ssh-askpass	ports/security/gnome-ssh-askpass
 gnome-swallow	ports/x11/gnome-swallow
@@ -10411,7 +10412,6 @@ pynids		ports/net/pynids
 pyobfuscate	ports/devel/pyobfuscate
 pypanda		ports/misc/pypanda
 pypanel		ports/deskutils/pypanel
-pyphany		ports/www/pyphany
 pypvm		ports/net/pypvm
 pyrex		ports/devel/pyrex
 pyro		ports/graphics/pyro
@@ -13128,7 +13128,6 @@ xhtml-modularization	ports/textproc/xhtml-modularization
 xhtml1-xsd	ports/textproc/xhtml1-xsd
 xicq		ports/net/xicq
 xidle		ports/x11/xidle
-ximian-connector	ports/mail/ximian-connector
 ximp3		ports/audio/ximp3
 xin		ports/sysutils/xin
 xincluder	ports/textproc/xincluder
