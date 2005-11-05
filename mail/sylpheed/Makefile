@@ -7,7 +7,7 @@
 
 PORTNAME=	sylpheed
 PORTVERSION=	1.0.5
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/v1.0/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -53,7 +53,7 @@ CONFIGURE_ARGS+=--disable-imlib
 CONFIGURE_ARGS+=--disable-gdk-pixbuf
 .endif
 .if defined(WITH_GPGME)
-LIB_DEPENDS+=	gpgme.14:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=	gpgme.15:${PORTSDIR}/security/gpgme
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=--enable-gpgme
 .else
