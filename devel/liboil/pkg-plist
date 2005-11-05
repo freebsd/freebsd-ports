@@ -15,9 +15,6 @@ include/liboil-%%VERSION%%/liboil/liboiltypes.h
 lib/liboil-%%VERSION%%.a
 lib/liboil-%%VERSION%%.so
 lib/liboil-%%VERSION%%.so.1
-lib/liboiltmp1.a
-lib/liboiltmp1.so
-lib/liboiltmp1.so.0
 libdata/pkgconfig/liboil-%%VERSION%%.pc
 share/gtk-doc/html/liboil/ch01.html
 share/gtk-doc/html/liboil/ch02.html

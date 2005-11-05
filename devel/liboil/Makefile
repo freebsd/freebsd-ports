@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	liboil
-PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTVERSION=	0.3.5
 CATEGORIES=	devel
-MASTER_SITES=	http://www.schleef.org/liboil/download/
+MASTER_SITES=	http://liboil.freedesktop.org/download/
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Library of optimized inner loops
