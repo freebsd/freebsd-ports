@@ -1,0 +1,18 @@
+--- configure.in.orig	Sat Nov  5 13:26:00 2005
++++ configure.in	Sat Nov  5 13:26:20 2005
+@@ -138,12 +138,12 @@
+ 
+ # Set NOVA_PIXMAP_DIR in config.h.
+ if test "x${prefix}" = "xNONE"; then
+-  AC_DEFINE_UNQUOTED(NOVA_PIXMAP_DIR, "${ac_default_prefix}/nova/pixmaps")
++  AC_DEFINE_UNQUOTED(NOVA_PIXMAP_DIR, "${ac_default_prefix}/share/nova/pixmaps")
+   NOVA_PIXMAP_DIR=${ac_default_prefix}/nova/pixmaps
+   AC_SUBST(NOVA_PIXMAP_DIR)
+ else
+-  AC_DEFINE_UNQUOTED(NOVA_PIXMAP_DIR, "${prefix}/nova/pixmaps")
+-  NOVA_PIXMAP_DIR=${prefix}/nova/pixmaps
++  AC_DEFINE_UNQUOTED(NOVA_PIXMAP_DIR, "${prefix}/share/nova/pixmaps")
++  NOVA_PIXMAP_DIR=${prefix}/share/nova/pixmaps
+   AC_SUBST(NOVA_PIXMAP_DIR)
+ fi
+ 

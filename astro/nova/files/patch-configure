@@ -1,0 +1,33 @@
+--- configure.orig	Mon Jan  5 05:54:36 2004
++++ configure	Sat Nov  5 13:27:16 2005
+@@ -8350,7 +8350,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <libnova.h>
++#include <libnova/libnova.h>
+ 
+ static char*
+ my_strdup (char *str)
+@@ -8619,17 +8619,17 @@
+ # Set NOVA_PIXMAP_DIR in config.h.
+ if test "x${prefix}" = "xNONE"; then
+   cat >>confdefs.h <<_ACEOF
+-#define NOVA_PIXMAP_DIR "${ac_default_prefix}/nova/pixmaps"
++#define NOVA_PIXMAP_DIR "${ac_default_prefix}/share/nova/pixmaps"
+ _ACEOF
+ 
+-  NOVA_PIXMAP_DIR=${ac_default_prefix}/nova/pixmaps
++  NOVA_PIXMAP_DIR=${ac_default_prefix}/share/nova/pixmaps
+ 
+ else
+   cat >>confdefs.h <<_ACEOF
+-#define NOVA_PIXMAP_DIR "${prefix}/nova/pixmaps"
++#define NOVA_PIXMAP_DIR "${prefix}/share/nova/pixmaps"
+ _ACEOF
+ 
+-  NOVA_PIXMAP_DIR=${prefix}/nova/pixmaps
++  NOVA_PIXMAP_DIR=${prefix}/share/nova/pixmaps
+ 
+ fi
+ 
