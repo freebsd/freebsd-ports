@@ -4,10 +4,11 @@
 # Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/textproc/libxml++26/Makefile,v 1.7 2005/10/14 20:39:58 adamw Exp $
 #
 
 PORTNAME=	libxml++
-PORTVERSION=	2.10.0
+PORTVERSION=	2.12.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -23,7 +24,7 @@ LATEST_LINK=	libxml++26
 USE_GMAKE=	yes
 USE_GCC=	3.4
 USE_GNOME=	gnomehack gnometarget libxml2 pkgconfig
-USE_INC_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15:inc
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
