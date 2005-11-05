@@ -3,11 +3,11 @@
 # Whom:                 Alexander Nedotsukov <bland@mail.ru>
 #
 # $FreeBSD$
+#   $MCom: ports/devel/gnome-vfsmm/Makefile,v 1.14 2005/10/14 20:39:56 adamw Exp $
 #
 
 PORTNAME=	gnome-vfsmm
-PORTVERSION=	2.10.0
-PORTREVISION=	1
+PORTVERSION=	2.12.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -24,7 +24,7 @@ USE_X_PREFIX=	yes
 USE_GCC=	3.4
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomevfs2
-USE_INC_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15:inc
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static
 

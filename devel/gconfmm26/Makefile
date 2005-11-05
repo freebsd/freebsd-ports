@@ -3,10 +3,11 @@
 # Whom:                 Alexander Nedotsukov <bland@mail.ru>
 #
 # $FreeBSD$
+#   $MCom: ports/devel/gconfmm26/Makefile,v 1.7 2005/10/29 22:31:16 marcus Exp $
 #
 
 PORTNAME=	gconfmm
-PORTVERSION=	2.10.0
+PORTVERSION=	2.12.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -38,7 +39,6 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|\(-lglibmm\)|-L\$$(GMM_PROCDIR)/../.. \1|" \
 		${WRKSRC}/tools/extra_defs_gen/Makefile.in
-
 
 patch-autotools:
 	@(cd ${PATCH_WRKSRC}; \
