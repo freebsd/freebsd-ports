@@ -3,10 +3,11 @@
 # Whom:                 Alexander Nedotsukov <bland@mail.ru>
 #
 # $FreeBSD$
+#   $MCom: ports/graphics/libgnomecanvasmm26/Makefile,v 1.9 2005/09/07 18:37:21 marcus Exp $
 #
 
 PORTNAME=	libgnomecanvasmm
-PORTVERSION=	2.10.0
+PORTVERSION=	2.12.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -26,7 +27,7 @@ USE_GMAKE=	yes
 USE_GCC=	3.4
 USE_REINPLACE=	yes
 USE_GNOME=	gnomehack libgnomecanvas
-USE_INC_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15:inc
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static
 
@@ -37,7 +38,6 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|\(-lglibmm\)|-L\$$(GMM_PROCDIR)/../.. \1|" \
 		${WRKSRC}/tools/extra_defs_gen/Makefile.in
-
 
 patch-autotools:
 	@(cd ${PATCH_WRKSRC}; \
