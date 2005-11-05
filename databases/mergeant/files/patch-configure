@@ -1,15 +1,11 @@
---- configure.orig	Wed May 28 19:35:54 2003
-+++ configure	Wed May 28 23:22:14 2003
-@@ -9407,13 +9408,13 @@
+--- configure.orig	Sun Aug  7 17:40:05 2005
++++ configure	Sun Aug  7 17:40:37 2005
+@@ -22920,9 +22920,9 @@
  
  MERGEANT_Pixmapdir=${datadir}/pixmaps/${PACKAGE}
  
--MERGEANT_Appdir=${datadir}/gnome/apps/Applications
-+MERGEANT_Appdir=${datadir}/apps/Applications
- 
- MERGEANT_DTDdir=${datadir}/${PACKAGE}/dtd
- 
- MERGEANT_Plugdir=${libdir}/${PACKAGE}/plugins
+-MERGEANT_Appdir=${datadir}/gnome/applications
++MERGEANT_Appdir=${datadir}/applications
  
 -MERGEANT_Helpdir=${datadir}/gnome/help/${PACKAGE}
 +MERGEANT_Helpdir=${datadir}/help/${PACKAGE}
