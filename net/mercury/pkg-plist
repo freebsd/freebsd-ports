@@ -1,7 +1,6 @@
 bin/Mercury_Messenger
 %%INSTDIR%%/Mercury_Messenger
 %%INSTDIR%%/lib/JFlash.jar
-%%INSTDIR%%/lib/XML.jar
 %%INSTDIR%%/lib/commons-jxpath-1.1.jar
 %%INSTDIR%%/lib/dMSN.jar
 %%INSTDIR%%/lib/dllStuff.jar
@@ -25,6 +24,85 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/Plugins/LinuxCPU/Plugin.class
 %%INSTDIR%%/resources/AppData/Plugins/LinuxCPU/Plugin.java
 %%INSTDIR%%/resources/AppData/Plugins/LinuxCPU/compile.bat
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/Plugin$1.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/Plugin.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/Plugin.java
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/compile.bat
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/converter/Converter$PrintWriterProgressListener.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/converter/Converter$ProgressListener.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/converter/Converter.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/converter/RiffFile$RiffChunkHeader.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/converter/RiffFile.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/converter/WaveFile$WaveFileSample.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/converter/WaveFile$WaveFormat_Chunk.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/converter/WaveFile$WaveFormat_ChunkData.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/converter/WaveFile.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/converter/WaveFileObuffer.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/converter/jlc$jlcArgs.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/converter/jlc.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/BitReserve.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/Bitstream.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/BitstreamErrors.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/BitstreamException.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/Control.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/Crc16.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/Decoder$Params.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/Decoder.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/DecoderErrors.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/DecoderException.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/Equalizer$EQFunction.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/Equalizer.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/FrameDecoder.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/Header.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/InputStreamSource.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/JavaLayerError.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/JavaLayerErrors.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/JavaLayerException.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/JavaLayerHook.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/JavaLayerUtils.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/LayerIDecoder$Subband.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/LayerIDecoder$SubbandLayer1.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/LayerIDecoder$SubbandLayer1IntensityStereo.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/LayerIDecoder$SubbandLayer1Stereo.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/LayerIDecoder.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/LayerIIDecoder$SubbandLayer2.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/LayerIIDecoder$SubbandLayer2IntensityStereo.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/LayerIIDecoder$SubbandLayer2Stereo.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/LayerIIDecoder.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/LayerIIIDecoder$III_side_info_t.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/LayerIIIDecoder$SBI.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/LayerIIIDecoder$Sftable.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/LayerIIIDecoder$gr_info_s.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/LayerIIIDecoder$temporaire.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/LayerIIIDecoder$temporaire2.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/LayerIIIDecoder.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/Manager.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/Obuffer.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/OutputChannels.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/SampleBuffer.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/Source.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/SynthesisFilter.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/au2lin.ser
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/huffcodetab.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/l3reorder.ser
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/lin2au.ser
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder/sfd.ser
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/player/AudioDevice.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/player/AudioDeviceBase.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/player/AudioDeviceFactory.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/player/FactoryRegistry.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/player/JavaSoundAudioDevice.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/player/JavaSoundAudioDeviceFactory.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/player/NullAudioDevice.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/player/Player.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/player/PlayerApplet.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/player/advanced/AdvancedPlayer.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/player/advanced/PlaybackEvent.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/player/advanced/PlaybackListener.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/player/advanced/jlap$1.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/player/advanced/jlap$InfoListener.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/player/advanced/jlap.class
+%%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/player/jlp.class
 %%INSTDIR%%/resources/AppData/Plugins/WebcamTest/Plugin.class
 %%INSTDIR%%/resources/AppData/Plugins/WebcamTest/Plugin.java
 %%INSTDIR%%/resources/AppData/Plugins/WebcamTest/Stats.class
@@ -86,6 +164,7 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/Views/Default_CLContact/Email.html
 %%INSTDIR%%/resources/AppData/Views/Default_CLContact/LargeDP_Alias_PM_Song.html
 %%INSTDIR%%/resources/AppData/Views/Default_CLContact/LargeDP_MsnName_PM_Song.html
+%%INSTDIR%%/resources/AppData/Views/Default_CLContact/MSN7.html
 %%INSTDIR%%/resources/AppData/Views/Default_CLContact/MSNName.html
 %%INSTDIR%%/resources/AppData/Views/Default_CLContact/View.xml
 %%INSTDIR%%/resources/AppData/Views/Default_CLGroup/Default.html
@@ -194,6 +273,7 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/settings/Window_Advanced_Global.xml
 %%INSTDIR%%/resources/settings/Window_Basic_Account.xml
 %%INSTDIR%%/resources/settings/Window_Basic_Global.xml
+%%INSTDIR%%/resources/settings/Window_View.xml
 %%INSTDIR%%/resources/settings/Wizard_FirstTime_Account.xml
 %%INSTDIR%%/resources/text/ConvoCommands.xml
 %%INSTDIR%%/resources/text/JabberServers.xml
@@ -246,6 +326,13 @@ bin/Mercury_Messenger
 @dirrm %%INSTDIR%%/resources/AppData/Skins
 @dirrm %%INSTDIR%%/resources/AppData/Plugins/dFileShare
 @dirrm %%INSTDIR%%/resources/AppData/Plugins/WebcamTest
+@dirrm %%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/player/advanced
+@dirrm %%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/player
+@dirrm %%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/decoder
+@dirrm %%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl/converter
+@dirrm %%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom/jl
+@dirrm %%INSTDIR%%/resources/AppData/Plugins/RadioTest/javazoom
+@dirrm %%INSTDIR%%/resources/AppData/Plugins/RadioTest
 @dirrm %%INSTDIR%%/resources/AppData/Plugins/LinuxCPU
 @dirrm %%INSTDIR%%/resources/AppData/Plugins/IrcCommand
 @dirrm %%INSTDIR%%/resources/AppData/Plugins/ConvoStats
