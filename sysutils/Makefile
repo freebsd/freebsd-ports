@@ -463,6 +463,7 @@
     SUBDIR += sb16config
     SUBDIR += sbniconfig
     SUBDIR += scan_ffs
+    SUBDIR += screen
     SUBDIR += sdd
     SUBDIR += sec
     SUBDIR += serpentine
