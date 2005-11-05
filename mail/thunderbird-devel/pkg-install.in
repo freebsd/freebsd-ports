@@ -1,6 +1,7 @@
 #!/bin/sh
 #
 # $FreeBSD$
+#   $MCom: ports/mail/thunderbird-devel/pkg-install.in,v 1.5 2005/06/28 05:40:07 adamw Exp $
 #
 # Date created:			Mon Nov 29, 2003
 # Whom:				Thierry Thomas (<thierry@pompo.net>)
@@ -14,19 +15,12 @@ PATH=/bin:/usr/bin:/usr/local/bin
 
 MOZDIR=%%MOZDIR%%
 REGXPCOM=${MOZDIR}/regxpcom
-REGCHROME=${MOZDIR}/regchrome
 THUNDERBIRD=${MOZDIR}/thunderbird-bin
 
 echo "===> Building Chrome's registry..."
-rm -rf ${MOZDIR}/chrome/overlayinfo
-rm -f ${MOZDIR}/chrome/*.rdf
-mkdir -p ${MOZDIR}/chrome/overlayinfo
-rm -f ${MOZDIR}/component.reg
-rm -rf ${MOZDIR}/extensions
 
 cd ${MOZDIR} || exit 1
 ./run-mozilla.sh ${REGXPCOM} || true
-./run-mozilla.sh ${REGCHROME} || true
 ./run-mozilla.sh ${THUNDERBIRD} -register > /dev/null 2>&1
 
 exit 0
