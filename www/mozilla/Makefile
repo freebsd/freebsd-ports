@@ -3,11 +3,12 @@
 # Whom:			eivind/dima/jseger
 #
 # $FreeBSD$
+#    $MCom: ports/www/mozilla/Makefile,v 1.23 2005/10/27 00:08:39 marcus Exp $
 #
 
 PORTNAME=	mozilla
 PORTVERSION=	1.7.12
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -99,38 +100,38 @@ OPTIONS=XFT "Enable Xft font anti-aliasing" on \
 	XMLTERM "Enable the XMLTerm module" on \
 	JAVASCRIPT_DEBUGGER "Enable DTD and JavaScript debuggers" off \
 	OPTIMIZED_CFLAGS "Enable -O2 optimizations" off \
-	CAIRO_RENDER "Enable SVG rendering with Cairo" off \
 	SMB "Enable smb:// URI support via gnomevfs" off
+#	CAIRO_RENDER "Enable SVG rendering with Cairo" off
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_CAIRO_RENDER)
+#.if !defined(WITH_CAIRO_RENDER)
 DISTFILES+=	libart_lgpl-1${EXTRACT_SUFX}:local
-.endif
+#.endif
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500035
 IGNORE=	core dumps on ${ARCH} during post-build
 .endif
 
 .if exists(${LOCALBASE}/include/freetype/freetype.h)
-BROKEN=	You must upgrade your freetype port to 1.3.1_2 or higher before \
+BROKEN=	"You must upgrade your freetype port to 1.3.1_2 or higher before \
 	installing Mozilla.  If you have 1.3.1_2 installed, please remove \
-	${LOCALBASE}/include/freetype, then build Mozilla
+	${LOCALBASE}/include/freetype, then build Mozilla"
 .endif
 
 .if defined(WITH_CALENDAR) && (defined(WITHOUT_MAILNEWS) || \
 	defined(WITHOUT_COMPOSER))
-BROKEN=	Calendar requires Composer and Mailnews support.
+BROKEN=	"Calendar requires Composer and Mailnews support."
 .endif
 
-.if defined(WITH_CAIRO_RENDER)
-LIB_DEPENDS+=		svg-cairo.1:${PORTSDIR}/graphics/libsvg-cairo
-BUILD_DEPENDS+=		${LOCALBASE}/include/cairo/cairo-xlib.h:${PORTSDIR}/graphics/cairo
+#.if defined(WITH_CAIRO_RENDER)
+#LIB_DEPENDS+=		svg-cairo.1:${PORTSDIR}/graphics/libsvg-cairo
+#BUILD_DEPENDS+=		${LOCALBASE}/include/cairo/cairo-xlib.h:${PORTSDIR}/graphics/cairo
 
-CONFIGURE_ARGS+=	--enable-svg-renderer-cairo \
-			--disable-svg-renderer-libart
-CONFIGURE_ENV+=		MOZ_SVG_RENDERER_CAIRO=1
-.else
+#CONFIGURE_ARGS+=	--enable-svg-renderer-cairo \
+#			--disable-svg-renderer-libart
+#CONFIGURE_ENV+=		MOZ_SVG_RENDERER_CAIRO=1
+#.else
 CONFIGURE_ARGS+=	--enable-svg-renderer-libart \
 			--disable-svg-renderer-cairo
 CONFIGURE_ENV+=		MOZ_INTERNAL_LIBART_LGPL=1
@@ -140,14 +141,14 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-nsSVGLibartGlyphMetricsFT.cpp
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch2-nsSVGLibartGlyphMetricsFT.cpp
 .endif
-.endif
+#.endif
 
 .if !defined(WITHOUT_XFT)
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 CONFIGURE_ARGS+=--enable-xft
 .if exists(${X11BASE}/lib/X11/fonts/mozilla/fonts.dir)
-BROKEN=		Mozilla${MOZ_SUFX} and Xft2 render the mozilla-fonts \
-		illegibly. Please remove the mozilla-fonts package.
+BROKEN=		"Mozilla${MOZ_SUFX} and Xft2 render the mozilla-fonts \
+		illegibly. Please remove the mozilla-fonts package."
 .endif
 .else
 CONFIGURE_ARGS+=--disable-xft
@@ -273,7 +274,7 @@ pre-install:
 	${RM} -rf ${FAKEDIR} ${PLIST}
 	${TOUCH} -f ${PLIST}
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
-		Makefile ${MAKE_ARGS} install
+		Makefile ${MAKE_ARGS} ${INSTALL_TARGET}
 	${MKDIR} ${MOZ_PIS_DIR}
 	${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
 		${FAKEDIR}/bin/mozilla \
@@ -325,7 +326,7 @@ pre-install:
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's:^:@dirrm share/idl/${MOZILLA}/:' >> ${PLIST}
 		${ECHO_CMD} "@dirrm share/idl/${MOZILLA}" >> ${PLIST}
-		${ECHO_CMD} "@unexec rmdir %D/share/idl 2>/dev/null || true" >> ${PLIST}
+		${ECHO_CMD} "@unexec ${RMDIR} %D/share/idl 2>/dev/null || true" >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/${MOZILLA}
