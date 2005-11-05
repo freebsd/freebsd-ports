@@ -1,7 +1,7 @@
 %%FOOMATIC%%bin/foomatic-rip
+%%CUPS%%@exec /bin/ln -s %D/bin/foomatic-rip %%LOCALBASE%%/libexec/cups/filter/foomatic-rip
+%%CUPS%%@unexec /bin/rm -f %%LOCALBASE%%/libexec/cups/filter/foomatic-rip
 bin/hpijs
-%%CUPS%%libexec/cups/filter/foomatic-rip
-%%CUPS%%share/cups/model/foomatic-ppds
 %%FOOMATIC%%share/ppd/HP/HP-2000C-hpijs.ppd.gz
 %%FOOMATIC%%share/ppd/HP/HP-2500C-hpijs.ppd.gz
 %%FOOMATIC%%share/ppd/HP/HP-2500CM-hpijs.ppd.gz
@@ -424,6 +424,8 @@ bin/hpijs
 %%FOOMATIC%%share/ppd/HP/hp_color_LaserJet_9500.ppd.gz
 %%FOOMATIC%%share/ppd/HP/hp_color_LaserJet_9500_MFP.ppd.gz
 %%FOOMATIC%%share/ppd/HP/hp_officejet_9100_series.ppd.gz
+%%CUPS%%@exec /bin/ln -s %D/share/ppd %%LOCALBASE%%/share/cups/model/foomatic-ppds
+%%CUPS%%@unexec /bin/rm -f %%LOCALBASE%%/share/cups/model/foomatic-ppds
 %%PORTDOCS%%%%DOCSDIR%%/gs_hpijs.png
 %%PORTDOCS%%%%DOCSDIR%%/hpijs_readme.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
