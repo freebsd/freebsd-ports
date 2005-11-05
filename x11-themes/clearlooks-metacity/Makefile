@@ -3,6 +3,7 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/x11-themes/clearlooks-metacity/Makefile,v 1.1 2005/08/08 15:27:13 kwm Exp $
 #
 
 PORTNAME=	clearlooks-metacity
@@ -14,6 +15,8 @@ MASTER_SITE_SUBDIR=	clearlooks
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Clearlooks Metacity theme
+
+CONFLICTS=	gnome-themes-2.11.9[1-9]* gnome-themes-2.12.*
 
 WRKSRC=		${WRKDIR}/Clearlooks/metacity-1/
 USE_GNOME=	metacity gnomeprefix
