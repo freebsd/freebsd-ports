@@ -499,6 +499,7 @@
     SUBDIR += recoverjpeg
     SUBDIR += renderpark
     SUBDIR += robot
+    SUBDIR += ruby-cairo
     SUBDIR += ruby-gd
     SUBDIR += ruby-gdk_imlib
     SUBDIR += ruby-gdk_pixbuf
