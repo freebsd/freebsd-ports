@@ -7,7 +7,13 @@
 *                                                                     
 * upgrades everything except nedit,open office and their dependencies 
 *                                                                     
-* portmanager -sl will show you leaf ports, these are safe to remove  
+* portmanager x11/gnome2 -l
+*
+*	upgrade gnome2 and its dependencies with logging enabled
+*
+* portmanager x11/gnome2 -l -f
+*
+*	rebuild gnome2 and its dependencies
 *                                                                     
 * portmanager -slid will let you safely remove leaf ports             
 *                                                                     
