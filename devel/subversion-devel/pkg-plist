@@ -23,6 +23,7 @@ include/subversion-1/svn_fs.h
 include/subversion-1/svn_hash.h
 include/subversion-1/svn_io.h
 include/subversion-1/svn_md5.h
+include/subversion-1/svn_nls.h
 include/subversion-1/svn_opt.h
 include/subversion-1/svn_path.h
 include/subversion-1/svn_pools.h
@@ -34,7 +35,6 @@ include/subversion-1/svn_repos.h
 include/subversion-1/svn_sorts.h
 include/subversion-1/svn_string.h
 include/subversion-1/svn_subst.h
-include/subversion-1/svn_test.h
 include/subversion-1/svn_time.h
 include/subversion-1/svn_types.h
 include/subversion-1/svn_utf.h
@@ -103,11 +103,12 @@ lib/libsvn_wc-1.so.0
 %%DATADIR%%/client-side/server-vsn.py
 %%DATADIR%%/client-side/showchange.pl
 %%DATADIR%%/client-side/svn-graph.pl
-%%DATADIR%%/cvs2svn/README
 %%DATADIR%%/dev/check-license.py
 %%DATADIR%%/dev/datecheck.py
+%%DATADIR%%/dev/contribulyze.py
 %%DATADIR%%/dev/find-textfiles.sh
 %%DATADIR%%/dev/gcov.patch
+%%DATADIR%%/dev/getsigs.pl
 %%DATADIR%%/dev/gnuify-changelog.pl
 %%DATADIR%%/dev/iz/defect.dem
 %%DATADIR%%/dev/iz/ff2csv.command
@@ -124,8 +125,13 @@ lib/libsvn_wc-1.so.0
 %%DATADIR%%/dev/stress.pl
 %%DATADIR%%/dev/svn-dev.el
 %%DATADIR%%/dev/svn-dev.vim
+%%DATADIR%%/dev/svn-merge-revs.py
 %%DATADIR%%/dev/trails.py
 %%DATADIR%%/dev/verify-history.py
+%%DATADIR%%/dev/which-error.py
+%%DATADIR%%/diff/diff.c
+%%DATADIR%%/diff/diff3.c
+%%DATADIR%%/diff/diff4.c
 %%DATADIR%%/examples/blame.py
 %%DATADIR%%/examples/check-modified.py
 %%DATADIR%%/examples/dumpprops.py
@@ -160,6 +166,8 @@ lib/libsvn_wc-1.so.0
 %%DATADIR%%/po/svn-po-status-report.sh
 %%DATADIR%%/po/svn-po-status-run.sh
 %%DATADIR%%/test-scripts/svntest/README
+%%DATADIR%%/test-scripts/svntest/dav_svn.passwd
+%%DATADIR%%/test-scripts/svntest/mod_dav_svn.conf
 %%DATADIR%%/test-scripts/svntest/svntest-bindings.sh
 %%DATADIR%%/test-scripts/svntest/svntest-bindings-generic.sh
 %%DATADIR%%/test-scripts/svntest/svntest-check-configuration.sh
@@ -173,10 +181,10 @@ lib/libsvn_wc-1.so.0
 %%DATADIR%%/test-scripts/svntest/svntest.sh
 %%DATADIR%%/xslt/svnindex.css
 %%DATADIR%%/xslt/svnindex.xsl
-%%MOD_DAV_SVN%%libexec/apache2/mod_dav_svn.so
-%%MOD_DAV_SVN%%libexec/apache2/mod_authz_svn.so
-%%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/libexec/apache2 -a -n dav libexec/apache2/mod_dav.so
-%%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/libexec/apache2 -a -n dav_svn libexec/apache2/mod_dav_svn.so
+%%MOD_DAV_SVN%%libexec/%%APACHEDIR%%/mod_dav_svn.so
+%%MOD_DAV_SVN%%libexec/%%APACHEDIR%%/mod_authz_svn.so
+%%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/libexec/%%APACHEDIR%% -a -n dav libexec/%%APACHEDIR%%/mod_dav.so
+%%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/libexec/%%APACHEDIR%% -a -n dav_svn libexec/%%APACHEDIR%%/mod_dav_svn.so
 %%WITH_JAVA%%lib/libsvnjavahl-1.a
 %%WITH_JAVA%%lib/libsvnjavahl-1.so
 %%WITH_JAVA%%lib/libsvnjavahl-1.so.0
@@ -288,9 +296,9 @@ lib/libsvn_wc-1.so.0
 @dirrm %%DATADIR%%/backup
 @dirrm %%DATADIR%%/bdb
 @dirrm %%DATADIR%%/client-side
-@dirrm %%DATADIR%%/cvs2svn
 @dirrm %%DATADIR%%/dev/iz
 @dirrm %%DATADIR%%/dev
+@dirrm %%DATADIR%%/diff
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%/hook-scripts/mailer/tests
 @dirrm %%DATADIR%%/hook-scripts/mailer

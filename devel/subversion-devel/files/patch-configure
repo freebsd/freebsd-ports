@@ -1,0 +1,11 @@
+--- configure.orig	Sat Nov  5 16:13:58 2005
++++ configure	Sat Nov  5 16:14:12 2005
+@@ -19933,7 +19933,7 @@
+         if test "$NEON_VERSION" = "$svn_allowed_neon" -o $svn_allowed_neon = "any"; then
+             svn_allowed_neon_on_system="yes"
+             SVN_NEON_INCLUDES=`$neon_config --cflags | sed -e 's/-D[^ ]*//g'`
+-            NEON_LIBS=`$neon_config --la-file`
++            NEON_LIBS=`$neon_config --libs`
+             CFLAGS="$CFLAGS `$neon_config --cflags | sed -e 's/-I[^ ]*//g'`"
+             svn_lib_neon="yes"
+             break
