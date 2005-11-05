@@ -113,6 +113,7 @@
     SUBDIR += erwn
     SUBDIR += eventum
     SUBDIR += evg
+    SUBDIR += evolution-caldav
     SUBDIR += evolution-webcal
     SUBDIR += fcgi
     SUBDIR += feedonfeeds
