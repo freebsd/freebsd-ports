@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	lbreakout2
-DISTVERSION=	2.6beta
+DISTVERSION=	2.6beta-3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lgames
 
-MAINTAINER=	flynn@energyhq.es.eu.org
+MAINTAINER=	mmendez@gmail.com
 COMMENT=	The polished successor to LBreakout
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
@@ -22,7 +22,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-sdl-net \
-		--localstatedir=/var/games
+		--localstatedir=/var/games \
+		--disable-nls
 CONFIGURE_TARGET=
 
 CPPFLAGS=	-I${LOCALBASE}/include

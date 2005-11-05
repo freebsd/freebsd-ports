@@ -34,7 +34,7 @@ bin/lbreakout2server
 %%PORTDOCS%%%%DOCSDIR%%/x7.jpg
 %%PORTDOCS%%%%DOCSDIR%%/x8.jpg
 %%PORTDOCS%%%%DOCSDIR%%/x9.jpg
-@unexec if cmp -s %D/share/lbreakout2/empty.hscr /var/games/lbreakout2.hscr; then rm -f /var/games/lbreakout2.hscr; else true; fi
+@unexec if cmp -s %D/%%DATADIR%%/empty.hscr /var/games/lbreakout2.hscr; then rm -f /var/games/lbreakout2.hscr; else true; fi
 %%DATADIR%%/empty.hscr
 %%DATADIR%%/gfx/AbsoluteB/ABOUT
 %%DATADIR%%/gfx/AbsoluteB/README
@@ -233,6 +233,15 @@ bin/lbreakout2server
 %%DATADIR%%/levels/StarWars
 %%DATADIR%%/levels/Vader
 %%DATADIR%%/levels/Yoda
+%%DATADIR%%/levels/Crossing
+%%DATADIR%%/levels/TrickShot
+%%DATADIR%%/levels/Weirdness
+%%DATADIR%%/levels/TheEnd
+%%DATADIR%%/levels/AllNighter
+%%DATADIR%%/levels/Patience
+%%DATADIR%%/levels/JediAdventure
+%%DATADIR%%/levels/KungFu
+%%DATADIR%%/levels/Zooligan
 %%DATADIR%%/sounds/attach.wav
 %%DATADIR%%/sounds/bonus_magnet.wav
 %%DATADIR%%/sounds/chaos.wav
