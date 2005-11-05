@@ -1,9 +1,0 @@
-Tasks is installed, now you must configure it
-
-1: You now need to create the database that you want for tasks
-   WARNING: Installation script does not create it !!!!
-
-2: Open %%WWW_DIR%%/tasks/database.php and Edit the settings to match your need
-
-3: Point your web browser to http://localhost/tasks/index.php
-   And follow the instructions

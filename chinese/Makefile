@@ -27,7 +27,6 @@
     SUBDIR += cce
     SUBDIR += cdict5
     SUBDIR += celvis
-    SUBDIR += chinput
     SUBDIR += chinput2
     SUBDIR += chinput3
     SUBDIR += chm2html
@@ -73,7 +72,6 @@
     SUBDIR += libtabe
     SUBDIR += links
     SUBDIR += lunar
-    SUBDIR += metalist
     SUBDIR += mingunittf
     SUBDIR += miniChinput
     SUBDIR += mldonkey-core

@@ -65,7 +65,6 @@
     SUBDIR += demeter
     SUBDIR += devil
     SUBDIR += dia
-    SUBDIR += diacanvas
     SUBDIR += diacanvas2
     SUBDIR += digikam
     SUBDIR += digikam-doc
@@ -118,7 +117,6 @@
     SUBDIR += fly
     SUBDIR += fnlib
     SUBDIR += fracplanet
-    SUBDIR += fractorama
     SUBDIR += fraqtive
     SUBDIR += freeimage
     SUBDIR += frontline
@@ -337,7 +335,6 @@
     SUBDIR += linux_dri
     SUBDIR += linux_glide
     SUBDIR += linux_glx
-    SUBDIR += linux_mesa3
     SUBDIR += lodju
     SUBDIR += long-exposure-tools
     SUBDIR += lphoto
@@ -375,7 +372,6 @@
     SUBDIR += optipng
     SUBDIR += orca
     SUBDIR += osg
-    SUBDIR += osgedit
     SUBDIR += p5-Cairo
     SUBDIR += p5-Chart-Graph
     SUBDIR += p5-Chart-PNGgraph
@@ -474,7 +470,6 @@
     SUBDIR += py-gdchart2
     SUBDIR += py-graphviz
     SUBDIR += py-imaging
-    SUBDIR += py-imaging-handbook
     SUBDIR += py-ming
     SUBDIR += py-opengl
     SUBDIR += py-paint
@@ -587,7 +582,6 @@
     SUBDIR += wmgrabimage
     SUBDIR += wmicons
     SUBDIR += xaos
-    SUBDIR += xbarcode
     SUBDIR += xbmbrowser
     SUBDIR += xd3d
     SUBDIR += xdgagrab
@@ -624,7 +618,6 @@
     SUBDIR += xmms-scivi
     SUBDIR += xmms-vumeter
     SUBDIR += xmms-waterfall
-    SUBDIR += xmms-xvs
     SUBDIR += xmorph
     SUBDIR += xmountains
     SUBDIR += xmrm

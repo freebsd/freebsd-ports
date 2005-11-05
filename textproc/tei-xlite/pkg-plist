@@ -1,9 +1,0 @@
-share/xml/tei/xlite/teixlite.dtd
-@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DTDDIR%%/catalog
-share/xml/tei/xlite/catalog
-@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DTDDIR%%/catalog
-@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove %%DTDDIR%%/catalog.xml
-share/xml/tei/xlite/catalog.xml
-@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add nextCatalog %%DTDDIR%%/catalog.xml
-@dirrm share/xml/tei/xlite
-@unexec rmdir %D/share/xml/tei 2>/dev/null || true

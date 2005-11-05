@@ -163,7 +163,6 @@
     SUBDIR += resourceext
     SUBDIR += rox-wallpaper
     SUBDIR += ruby-X11
-    SUBDIR += ruby-gnome
     SUBDIR += ruby-gnome-all
     SUBDIR += ruby-gnome2
     SUBDIR += ruby-gnome2-all

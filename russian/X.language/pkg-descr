@@ -1,5 +1,0 @@
-Setup X locale/nls/keyboard/fonts for russian language (koi8-r)
-Don't forget to add /usr/X11R6/lib/X11/fonts/cyrillic/* to your
-FontPath as first component.
-
-WWW: http://koi8.pp.ru/xwin.html

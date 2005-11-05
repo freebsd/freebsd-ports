@@ -8,8 +8,6 @@
     SUBDIR += bluej
     SUBDIR += bouncycastle
     SUBDIR += bsh
-    SUBDIR += bugseeker
-    SUBDIR += bugseeker-demo
     SUBDIR += castor
     SUBDIR += classpath
     SUBDIR += collections
@@ -42,7 +40,6 @@
     SUBDIR += eclipse-viplugin
     SUBDIR += eclipse-webtools
     SUBDIR += eclipseme
-    SUBDIR += forte
     SUBDIR += gj
     SUBDIR += gj-jdk11
     SUBDIR += gnu-regexp

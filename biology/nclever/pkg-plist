@@ -1,6 +1,0 @@
-bin/nclever
-%%PORTDOCS%%%%DOCSDIR%%/nclever.citation
-%%PORTDOCS%%%%DOCSDIR%%/nclever_manual.txt
-%%PORTDOCS%%%%DOCSDIR%%/sample_script1.txt
-%%PORTDOCS%%%%DOCSDIR%%/sample_script2.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

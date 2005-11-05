@@ -1,3 +1,0 @@
-#!/bin/sh
-
-cd %%PYTHON_SITELIBDIR%%/ziarc && python ./main_ziarc.py

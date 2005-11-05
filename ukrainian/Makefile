@@ -5,7 +5,6 @@
 
     SUBDIR += aspell
     SUBDIR += gd
-    SUBDIR += iceb
     SUBDIR += ispell
     SUBDIR += kde3-i18n
     SUBDIR += koffice-i18n

@@ -1,6 +1,0 @@
-#!/bin/sh
-echo "updating /etc/services"
-cp /etc/services /etc/services.bak
-(grep -v '\bndtp\b' /etc/services.bak) > /etc/services
-echo "Removing PREFIX_DIR/etc/rc.d/dserver.sh"
-rm -f PREFIX_DIR/etc/rc.d/dserver.sh

@@ -71,7 +71,6 @@
     SUBDIR += dvorakng
     SUBDIR += earthview
     SUBDIR += edonkey-tool-hash
-    SUBDIR += edonkey-tool-slist
     SUBDIR += elscreen
     SUBDIR += esniper
     SUBDIR += estic
@@ -353,7 +352,6 @@
     SUBDIR += pdmenu
     SUBDIR += pear-Services_Weather
     SUBDIR += pear-Text_Figlet
-    SUBDIR += peq
     SUBDIR += php4-calendar
     SUBDIR += php4-mcal
     SUBDIR += php5-calendar
