@@ -36,6 +36,7 @@
     SUBDIR += gnomemm
     SUBDIR += gnustep-art
     SUBDIR += gnustep-back
+    SUBDIR += gnustep-cairo
     SUBDIR += gnustep-gui
     SUBDIR += gnustep-xdps
     SUBDIR += gob
