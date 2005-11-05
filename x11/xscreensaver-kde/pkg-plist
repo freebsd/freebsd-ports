@@ -2,7 +2,6 @@ bin/kxsconfig
 bin/kxsrun
 share/applnk/System/ScreenSavers/anemone.desktop
 share/applnk/System/ScreenSavers/anemotaxis.desktop
-share/applnk/System/ScreenSavers/ant.desktop
 share/applnk/System/ScreenSavers/antinspect.desktop
 share/applnk/System/ScreenSavers/antspotlight.desktop
 share/applnk/System/ScreenSavers/apollonian.desktop
