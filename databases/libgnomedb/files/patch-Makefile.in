@@ -1,7 +1,7 @@
---- Makefile.in.orig	Thu Jul 22 10:56:33 2004
-+++ Makefile.in	Thu Jul 22 10:57:14 2004
-@@ -251,8 +251,7 @@
- @HAVE_LIBGLADE_TRUE@LIBGLADE_DIRECTORY = glade
+--- Makefile.in.orig	Thu Oct 13 15:59:10 2005
++++ Makefile.in	Thu Oct 13 16:00:04 2005
+@@ -290,15 +290,13 @@
+ @BUILD_GNOMEDB_SHARP_TRUE@GNOME_DIRECTORY = gnomedb-sharp
  @BUILD_WITH_GNOME_FALSE@GNOME_DIRECTORY = 
  @BUILD_WITH_GNOME_TRUE@GNOME_DIRECTORY = control-center
 -@ENABLE_GTK_DOC_FALSE@DOC_DIRECTORY = 
@@ -10,3 +10,10 @@
  SUBDIRS = \
  	po \
  	libgnomedb \
+ 	$(LIBGLADE_DIRECTORY) \
+ 	$(GNOME_DIRECTORY) \
+ 	$(GNOMEDB_SHARP_DIRECTORY) \
+-	testing \
+ 	extra \
+ 	examples \
+ 	$(DOC_DIRECTORY) \
