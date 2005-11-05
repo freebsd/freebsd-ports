@@ -1,0 +1,11 @@
+--- configure.orig	Wed Oct 26 21:01:20 2005
++++ configure	Wed Oct 26 21:01:45 2005
+@@ -20254,7 +20254,7 @@
+ 
+ WINDOWS_LIB_VERSION="0-2"
+ 
+-INSTALLED_CLASSPATH=\${prefix}/share/java/glib${apiversion}-${VERSION}.jar
++INSTALLED_CLASSPATH=\${prefix}/share/java/classes/glib${apiversion}.jar
+ INSTALLED_JNI_DIR=\${prefix}/lib/
+ INSTALLED_MACRO_DIR=\${prefix}/share/glib-java/macros/
+ 
