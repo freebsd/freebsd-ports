@@ -856,7 +856,6 @@
     SUBDIR += traff
     SUBDIR += traffic
     SUBDIR += trafshow
-    SUBDIR += trafshow4
     SUBDIR += tramp
     SUBDIR += transmission
     SUBDIR += trickle
