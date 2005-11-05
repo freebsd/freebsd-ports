@@ -7,7 +7,7 @@
 
 PORTNAME=	qnxstyle
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.kde-look.org/content/files/
 DISTNAME=	${KDELOOKITEM}-${PORTNAME}-${PORTVERSION}

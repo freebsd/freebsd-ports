@@ -7,7 +7,7 @@
 
 PORTNAME=	bmp-wma
 PORTVERSION=	0.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.nixp.ru/pub/files/ \
 		http://bmpwma.younggods.net/download/

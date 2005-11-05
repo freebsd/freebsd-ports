@@ -8,6 +8,7 @@
 
 PORTNAME=	ctrlproxy
 PORTVERSION=	2.6.2
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://jelmer.vernstok.nl/releases/
 

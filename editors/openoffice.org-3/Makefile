@@ -7,6 +7,7 @@
 
 PORTNAME=	openoffice.org
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES+=	editors
 MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
 		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \

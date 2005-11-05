@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-qt-engine
 PORTVERSION=	0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.freedesktop.org/~davidsansome/ \
 		http://freebsd.ricin.com/ports/distfiles/

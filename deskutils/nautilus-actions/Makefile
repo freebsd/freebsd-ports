@@ -7,6 +7,7 @@
 
 PORTNAME=	nautilus-actions
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	ftp://ftp2.grumz.net/grumz/
 

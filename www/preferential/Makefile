@@ -7,7 +7,7 @@
 
 PORTNAME?=	preferential
 PORTVERSION=	0.7.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.mozdev.org/preferential/versions/	\
 		http://ftp.ntua.gr/pub/www/mozdev/preferential/versions/	\

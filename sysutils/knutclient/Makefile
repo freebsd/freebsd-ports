@@ -7,7 +7,7 @@
 
 PORTNAME=	knutclient
 PORTVERSION=	0.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils kde
 MASTER_SITES=	ftp://ftp.buzuluk.cz/pub/alo/knutclient/
 

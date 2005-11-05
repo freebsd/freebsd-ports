@@ -5,6 +5,7 @@
 
 PORTNAME=	nepim
 PORTVERSION=	0.15
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://www.yazzy.org/ports/

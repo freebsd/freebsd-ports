@@ -7,6 +7,7 @@
 
 PORTNAME=	alexandria
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	deskutils ruby
 MASTER_SITES=	http://rubyforge.org/frs/download.php/3445/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

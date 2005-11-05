@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellm-xkb
 PORTVERSION=	1.05
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc x11
 MASTER_SITES=	http://www.sweb.cz/tripie/gkrellm/xkb/dist/
 

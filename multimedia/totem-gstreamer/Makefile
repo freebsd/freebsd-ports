@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-gstreamer
 
 MAINTAINER=	gnome@FreeBSD.org

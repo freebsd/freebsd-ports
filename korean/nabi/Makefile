@@ -7,7 +7,7 @@
 
 PORTNAME=	nabi
 PORTVERSION=	0.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	korean gnome
 MASTER_SITES=	http://kldp.net/frs/download.php/1651/
 

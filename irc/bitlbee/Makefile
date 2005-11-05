@@ -7,7 +7,7 @@
 
 PORTNAME=	bitlbee
 PORTVERSION=	0.92
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/:bitlbee \
 		http://www.bitlbee.be/andy/:msn6 \

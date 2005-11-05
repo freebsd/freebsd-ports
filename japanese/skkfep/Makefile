@@ -7,6 +7,7 @@
 
 PORTNAME=	skkfep
 PORTVERSION=	0.87
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://homepage2.nifty.com/aito/skkfep/
 

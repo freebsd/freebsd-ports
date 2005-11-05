@@ -7,7 +7,7 @@
 
 PORTNAME=	gmpc
 PORTVERSION=	0.11.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://mercury.chem.pitt.edu/~shank/ \

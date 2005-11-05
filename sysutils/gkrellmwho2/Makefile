@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellmwho2
 PORTVERSION=	0.2.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://shisha.spb.ru/ \
 		http://users.podolsk.ru/c104598/

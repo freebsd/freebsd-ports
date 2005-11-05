@@ -7,7 +7,7 @@
 
 PORTNAME=	kde
 PORTVERSION=	4.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits python kde
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyKDE2/ \
 		http://freebsd.ricin.com/ports/distfiles/

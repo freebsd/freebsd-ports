@@ -7,6 +7,7 @@
 
 PORTNAME=	fraqtive
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://zeus.polsl.gliwice.pl/%7Emimec/files/
 

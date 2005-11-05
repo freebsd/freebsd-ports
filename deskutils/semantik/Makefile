@@ -7,6 +7,7 @@
 
 PORTNAME=	kdissert
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://www.kde-apps.org/content/files/
 DISTNAME=	12725-${PORTNAME}-${PORTVERSION}

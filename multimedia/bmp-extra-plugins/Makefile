@@ -7,7 +7,7 @@
 
 PORTNAME=	bmp-extra-plugins
 PORTVERSION=	0.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio
 MASTER_SITES=	# disappeared
 

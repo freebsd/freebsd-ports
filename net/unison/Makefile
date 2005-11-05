@@ -7,6 +7,7 @@
 
 PORTNAME=	unison
 PORTVERSION=	2.13.16
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/
 DISTFILES=	${EXTRACT_ONLY} ${EXTRA_DOCS}

@@ -7,7 +7,7 @@
 
 PORTNAME=	gtodo
 PORTVERSION=	0.2.5.a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://voidtrance.home.comcast.net/software/files/gtodo/ \
 		http://depot.fsck.ch/mirror/distfiles/

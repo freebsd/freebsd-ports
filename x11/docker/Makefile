@@ -7,7 +7,7 @@
 
 PORTNAME=	docker
 PORTVERSION=	1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://www.kerneled.org/files/FreeBSD-ports/ \
 		http://icculus.org/openbox/2/docker/

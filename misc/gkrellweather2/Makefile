@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellweather
 PORTVERSION=	2.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://kmlinux.fjfi.cvut.cz/~makovick/gkrellm/
 EXTRACT_SUFX=	.tgz

@@ -7,7 +7,7 @@
 
 PORTNAME=	gweled
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games gnome
 MASTER_SITES=	http://sebdelestaing.free.fr/gweled/Release/
 

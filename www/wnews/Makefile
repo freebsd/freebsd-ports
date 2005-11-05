@@ -7,6 +7,7 @@
 
 PORTNAME=	wnews
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://samy.kerneled.org/stuff/
 

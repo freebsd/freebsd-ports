@@ -8,6 +8,7 @@
 
 PORTNAME=	downloader
 PORTVERSION=	2.5.6
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.krasu.ru/soft/chuchelo/files/ \
 		ftp://ftp.chg.ru/pub/X11/applications/Xdownloader/

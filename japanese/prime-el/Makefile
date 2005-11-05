@@ -7,6 +7,7 @@
 
 PORTNAME=	prime
 PORTVERSION=	1.5.1.3
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://prime.sourceforge.jp/src/
 PKGNAMESUFFIX=	-el

@@ -6,7 +6,7 @@
 
 PORTNAME=	portbrowser
 PORTVERSION=	0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bytelabs.org/
 DISTNAME=	pb-browser-${PORTVERSION}

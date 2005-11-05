@@ -7,6 +7,7 @@
 
 PORTNAME=	Terminal
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 

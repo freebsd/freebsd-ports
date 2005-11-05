@@ -7,6 +7,7 @@
 
 PORTNAME=	smeg
 PORTVERSION=	0.7.5
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://dev.realistanew.com/${PORTNAME}/${PORTVERSION}/
 

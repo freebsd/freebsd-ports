@@ -7,6 +7,7 @@
 
 PORTNAME=	swfdec-plugin
 PORTVERSION=	0.3.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.schleef.org/swfdec/download/
 DISTNAME=	swfdec-${PORTVERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms
 PORTVERSION=	2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-

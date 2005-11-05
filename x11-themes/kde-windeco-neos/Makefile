@@ -7,6 +7,7 @@
 
 PORTNAME=	neos
 PORTVERSION=	0.2b
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://perso.wanadoo.fr/chamayou/
 DISTNAME=	kwin-${PORTNAME}-${PORTVERSION}

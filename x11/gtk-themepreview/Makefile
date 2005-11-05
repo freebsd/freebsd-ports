@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-themepreview
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.users.monornet.hu/linux/files/
 DISTNAME=	ThemePreview-2-src

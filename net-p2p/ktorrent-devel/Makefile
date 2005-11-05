@@ -7,6 +7,7 @@
 
 PORTNAME=	ktorrent
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	net kde
 MASTER_SITES=	http://ktorrent.pwsp.net/downloads/${PORTVERSION}/
 

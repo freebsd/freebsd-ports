@@ -7,7 +7,7 @@
 
 PORTNAME=	wmtimer
 PORTVERSION=	2.92
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://www.darkops.net/wmtimer/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	comix
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.kde-look.org/content/files/
 DISTNAME=	16028-${PORTNAME}-${PORTVERSION}

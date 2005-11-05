@@ -7,6 +7,7 @@
 
 PORTNAME=	nautilus-sendto
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/nautilus-sendto/0.4

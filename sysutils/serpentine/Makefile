@@ -7,6 +7,7 @@
 
 PORTNAME=	serpentine
 PORTVERSION=	0.6.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.berlios.de/${PORTNAME}/
 

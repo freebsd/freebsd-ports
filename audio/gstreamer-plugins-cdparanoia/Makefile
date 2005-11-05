@@ -6,7 +6,7 @@
 #
 
 CATEGORIES=	audio
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	Gstreamer CDDA extraction (aka audio ripping) plugin
 

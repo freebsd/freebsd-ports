@@ -7,6 +7,7 @@
 
 PORTNAME=	hdup
 PORTVERSION=	2.0.12
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.miek.nl/projects/hdup2/ \
 		http://www.miek.nl/projects/hdup2/previous

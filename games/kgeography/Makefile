@@ -6,6 +6,7 @@
 
 PORTNAME=	kgeography
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	games kde
 MASTER_SITES=	http://download.berlios.de/kgeography/
 

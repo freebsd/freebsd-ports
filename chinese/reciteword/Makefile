@@ -7,7 +7,7 @@
 
 PORTNAME=	reciteword
 PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese
 MASTER_SITES=	http://reciteword.cosoft.org.cn/reciteword/download/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2 \

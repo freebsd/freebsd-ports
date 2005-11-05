@@ -6,7 +6,7 @@
 
 PORTNAME=	senken
 PORTVERSION=	0.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.contrib.andrew.cmu.edu/~tmartin/senken/download/
 

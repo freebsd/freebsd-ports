@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-uim
 PORTVERSION=	0.1.4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://freedesktop.org/~suzhe/sources/

@@ -7,6 +7,7 @@
 
 PORTNAME=	libopensync
 PORTVERSION=	0.17
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.opensync.org/attachment/wiki/download/

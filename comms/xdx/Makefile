@@ -6,7 +6,7 @@
 
 PORTNAME=	xdx
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms
 MASTER_SITES=	http://www.qsl.net/pg4i/download/ \
 		${MASTER_SITE_LOCAL}

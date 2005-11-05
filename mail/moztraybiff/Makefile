@@ -7,7 +7,7 @@
 
 PORTNAME=	moztraybiff
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://mozdev.oregonstate.edu/moztraybiff/
 DISTNAME=	mozTrayBiff-${PORTVERSION}

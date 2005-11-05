@@ -7,7 +7,7 @@
 
 PORTNAME=	gpsdrive
 PORTVERSION=	2.09
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	astro
 MASTER_SITES=	http://www.gpsdrive.cc/           \
 		http://gpsdrive.teachlinux.com/

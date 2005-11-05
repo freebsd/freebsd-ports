@@ -7,7 +7,7 @@
 
 PORTNAME=	bmp-songchange
 PORTVERSION=	0.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://download.berlios.de/bmp-plugins/
 

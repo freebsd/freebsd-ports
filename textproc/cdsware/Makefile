@@ -7,7 +7,7 @@
 
 PORTNAME=	cdsware
 PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc www
 MASTER_SITES=	http://cdsware.cern.ch/download/
 

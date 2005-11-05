@@ -7,6 +7,7 @@
 
 PORTNAME=	distcc
 PORTVERSION=	2.18.3
+PORTREVISION=	1
 CATEGORIES=	devel ipv6
 MASTER_SITES=	http://distcc.samba.org/ftp/distcc/
 

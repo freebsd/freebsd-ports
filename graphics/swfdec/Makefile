@@ -8,6 +8,7 @@
 
 PORTNAME=	swfdec
 PORTVERSION=	0.3.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.schleef.org/swfdec/download/
 

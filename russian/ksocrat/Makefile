@@ -6,7 +6,7 @@
 
 PORTNAME=	ksocrat
 PORTVERSION=	3.2.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	russian kde
 MASTER_SITES=	http://ksocrat.linux.kiev.ua/download/ \
 		http://core.inec.ru/~az/

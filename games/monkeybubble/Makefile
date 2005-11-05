@@ -7,7 +7,7 @@
 
 PORTNAME=	monkeybubble
 PORTVERSION=	0.3.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games gnome
 MASTER_SITES=	http://home.gna.org/monkeybubble/downloads/
 DISTNAME=	monkey-bubble-${PORTVERSION}
