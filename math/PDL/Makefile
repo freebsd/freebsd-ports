@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	PDL
-PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTVERSION=	2.4.2
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:S/$/:cpan/} \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
@@ -17,24 +16,25 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/:cpan \
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:cpan \
 		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:sf
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Data Language
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl \
 		${SITE_PERL}/ExtUtils/F77.pm:${PORTSDIR}/lang/p5-F77 \
 		${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline \
 		${SITE_PERL}/${PERL_ARCH}/Filter/Util/Call.pm:${PORTSDIR}/devel/p5-Filter \
-		${SITE_PERL}/Astro/FITS/Header.pm:${PORTSDIR}/astro/p5-Astro-FITS-Header
+		${SITE_PERL}/Astro/FITS/Header.pm:${PORTSDIR}/astro/p5-Astro-FITS-Header \
+		${SITE_PERL}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl \
+		${SITE_PERL}/Term/ReadLine/readline.pm:${PORTSDIR}/devel/p5-ReadLine-Perl
 LIB_DEPENDS=	plplotd.10:${PORTSDIR}/math/plplot \
 		fftw.2:${PORTSDIR}/math/fftw \
 		gsl.7:${PORTSDIR}/math/gsl
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl \
-		${SITE_PERL}/Term/ReadLine/readline.pm:${PORTSDIR}/devel/p5-ReadLine-Perl
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GL=		yes
 PERL_CONFIGURE=	yes
 PLIST_DIRS=	${SITE_PERL:S,^${PREFIX}/,,}/${PERL_ARCH}/Inline
-PLIST_FILES=	bin/pdldoc bin/perldl bin/pptemplate \
+PLIST_FILES=	bin/pdl bin/pdldoc bin/perldl bin/pptemplate \
 		${SITE_PERL:S,^${PREFIX}/,,}/${PERL_ARCH}/Inline/Pdlpp.pm \
 		${SITE_PERL:S,^${PREFIX}/,,}/${PERL_ARCH}/Inline/MakePdlppInstallable.pm
 
