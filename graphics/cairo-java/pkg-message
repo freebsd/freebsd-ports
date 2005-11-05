@@ -1,0 +1,7 @@
+************************************************************************
+Libgtk-java was successfully installed.  In order to build and run cairo
+Java applications, you must add the following to your CLASSPATH:
+
+%%JAVAJARDIR%%/cairo%%CAIRO_API_VERSION%%.jar
+
+************************************************************************

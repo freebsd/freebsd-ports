@@ -1,0 +1,8 @@
+--- cairo-java.pc.in.orig	Wed Oct 26 20:58:27 2005
++++ cairo-java.pc.in	Wed Oct 26 20:58:39 2005
+@@ -10,4 +10,4 @@
+ Requires: cairo glib-java
+ api_version=@apiversion@
+ classpath=@INSTALLED_CLASSPATH@
+-Libs: -L@libdir@ -lcairojava
++Libs: -L@libdir@ -lcairojava-@apiversion@
