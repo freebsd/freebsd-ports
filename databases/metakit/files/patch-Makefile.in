@@ -13,7 +13,7 @@
  install-python: Mk4py@MODULE_SUFFIX@
  	$(INSTALL_PROGRAM) Mk4py@MODULE_SUFFIX@ $(DESTDIR)$(pylibdir)
 -	$(INSTALL_PROGRAM) $(srcdir)/../python/metakit.py $(DESTDIR)$(pylibdir)
-+	$(INSTALL_SCRIPT) $(srcdir)/../python/metakit.py $(DESTDIR)$(pylibdir)
++	$(INSTALL_SCRIPT) $(srcdir)/../python/metakit.* $(DESTDIR)$(pylibdir)
  
  clean:
  	$L rm -f *.la *.o *.lo
