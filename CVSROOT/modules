@@ -1592,6 +1592,7 @@ demoroniser	ports/www/demoroniser
 denature	ports/textproc/denature
 denemo		ports/audio/denemo
 deng		ports/games/deng
+deskbar-applet	ports/deskutils/deskbar-applet
 deskmenu	ports/x11/deskmenu
 desktop-file-utils	ports/devel/desktop-file-utils
 despoof		ports/net/despoof
@@ -2125,6 +2126,8 @@ evolution	ports/mail/evolution
 evolution-caldav	ports/www/evolution-caldav
 evolution-data-server	ports/databases/evolution-data-server
 evolution-exchange	ports/mail/evolution-exchange
+evolution-gconf-tools	ports/devel/evolution-gconf-tools
+evolution-jescs		ports/deskutils/evolution-jescs
 evolution-webcal	ports/www/evolution-webcal
 evolvotron	ports/graphics/evolvotron
 ewipe		ports/misc/ewipe
@@ -2968,6 +2971,7 @@ gleyes		ports/games/gleyes
 glflow		ports/net/glflow
 glfw		ports/graphics/glfw
 glgraph		ports/math/glgraph
+glib-java	ports/devel/glib-java
 glib12		ports/devel/glib12
 glib20		ports/devel/glib20
 glibmm		ports/devel/glibmm
@@ -3215,6 +3219,7 @@ gob		ports/x11-toolkits/gob
 gob2		ports/devel/gob2
 goblin		ports/misc/goblin
 gocr		ports/graphics/gocr
+goffice		ports/devel/goffice
 gofish		ports/net/gofish
 goggles		ports/multimedia/goggles
 gogo		ports/audio/gogo
