@@ -22,6 +22,7 @@
     SUBDIR += mtoolsfm
     SUBDIR += nautilus2
     SUBDIR += offix-files
+    SUBDIR += py-nautilus
     SUBDIR += rox-filer
     SUBDIR += rox-mime-editor
     SUBDIR += rox-session
