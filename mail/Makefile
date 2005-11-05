@@ -487,6 +487,7 @@
     SUBDIR += smtpproxy
     SUBDIR += smtprc
     SUBDIR += smtptrapd
+    SUBDIR += smx
     SUBDIR += solidpop3d
     SUBDIR += sortmail
     SUBDIR += spamass-milter

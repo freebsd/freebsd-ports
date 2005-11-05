@@ -1,0 +1,57 @@
+@exec if ! pw groupshow smxs 2>/dev/null; then pw groupadd smxs -g 260; fi
+@exec if ! pw groupshow smxq 2>/dev/null; then pw groupadd smxq -g 261; fi
+@exec if ! pw groupshow smxc 2>/dev/null; then pw groupadd smxc -g 262; fi
+@exec if ! pw groupshow smxm 2>/dev/null; then pw groupadd smxm -g 263; fi
+@exec if ! pw groupshow smx 2>/dev/null; then pw groupadd smx -g 264; fi
+@exec if ! pw usershow smxs 2>/dev/null; then pw useradd smxs -g smxs -u 260 -h - -d /nonexistent -s %%NOLOGIN%% -c "Sendmail X SMTPS"; fi
+@exec if ! pw usershow smxq 2>/dev/null; then pw useradd smxq -g smxq -u 261 -h - -d /nonexistent -s %%NOLOGIN%% -c "Sendmail X QMGR"; fi
+@exec if ! pw usershow smxc 2>/dev/null; then pw useradd smxc -g smxc -u 262 -h - -d /nonexistent -s %%NOLOGIN%% -c "Sendmail X SMTPC"; fi
+@exec if ! pw usershow smxm 2>/dev/null; then pw useradd smxm -g smxm -u 263 -h - -d /nonexistent -s %%NOLOGIN%% -c "Sendmail X misc"; fi
+@exec if ! pw usershow smx 2>/dev/null; then pw useradd smx -g smx -u 264 -h - -d /nonexistent -s %%NOLOGIN%% -c "Sendmail X other"; fi
+@exec pw groupmod smxc -m smxs
+@exec pw groupmod smxm -m smxs,smxq
+@unexec if pw usershow smxs; then pw userdel smxs; fi
+@unexec if pw usershow smxq; then pw userdel smxq; fi
+@unexec if pw usershow smxc; then pw userdel smxc; fi
+@unexec if pw usershow smxm; then pw userdel smxm; fi
+@unexec if pw usershow smx; then pw userdel smx; fi
+%%WITH_BDBINT%%bin/db_archive
+%%WITH_BDBINT%%bin/db_checkpoint
+%%WITH_BDBINT%%bin/db_deadlock
+%%WITH_BDBINT%%bin/db_dump
+%%WITH_BDBINT%%bin/db_load
+%%WITH_BDBINT%%bin/db_printlog
+%%WITH_BDBINT%%bin/db_recover
+%%WITH_BDBINT%%bin/db_stat
+%%WITH_BDBINT%%bin/db_upgrade
+%%WITH_BDBINT%%bin/db_verify
+%%WITH_BDBINT%%include/db.h
+%%WITH_BDBINT%%lib/libdb-4.3.a
+%%WITH_BDBINT%%lib/libdb.a
+bin/createmap
+bin/log2time
+bin/mailq
+bin/qmgrctl
+bin/rcvrenvfromlog.sh
+bin/runas
+bin/smconf
+include/smX/mfapi.h
+include/smX/pmfapi.h
+include/smX/pmfdef.h
+include/smX/smreplycodes.h
+libexec/qmgr
+libexec/smar
+libexec/smtpc
+libexec/smtps
+sbin/greyprint
+sbin/greyrm
+sbin/mcp
+sbin/noroot
+sbin/sm.check.sh
+sbin/sm.setup.sh
+sbin/statit
+sbin/t-hostname
+sbin/t-getgroup
+sbin/tree
+@dirrm include/smX
+@exec %D/sbin/sm.setup.sh
