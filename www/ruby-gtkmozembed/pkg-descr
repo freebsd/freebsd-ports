@@ -1,0 +1,4 @@
+Ruby/GtkMozEmbed is a Ruby binding of GtkMozEmbed a widget embedding a
+Mozilla Gecko renderer.
+
+WWW: http://ruby-gnome2.sourceforge.jp/
