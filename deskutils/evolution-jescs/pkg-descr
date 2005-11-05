@@ -1,0 +1,4 @@
+This is the Evolution Connector for Sun Java Enterprise System Calendar Server
+(SJESCS), which adds support for SJESCS 5.1 and above to Evolution.
+
+This connector supports the WCAP (Web Calendar Access Protocol) 2.0, 3.0, 3.1.

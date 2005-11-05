@@ -25,6 +25,7 @@
     SUBDIR += drivel
     SUBDIR += egroupware
     SUBDIR += etask
+    SUBDIR += evolution-jescs
     SUBDIR += freemind
     SUBDIR += fusenshi
     SUBDIR += gaddr
