@@ -1,0 +1,20 @@
+--- Makefile.dist	Sat Nov  5 00:06:42 2005
++++ Makefile	Sat Nov  5 00:27:42 2005
+@@ -171,13 +171,13 @@
+ .for i in ${SCRIPTS}
+ 	install -c -o ${BINOWN} -g ${BINGRP} -m 555 ${i} ${PREFIX}/bin
+ .endfor
+-	mkdir -p ${PREFIX}/man/cat1
++	mkdir -p ${PREFIX}/man/man1
+ .for i in ${MAN1S}
+-	install -c -o ${MANOWN} -g ${MANGRP} -m 444 ${i} ${PREFIX}/man/cat1
++	install -c -o ${MANOWN} -g ${MANGRP} -m 444 ${i} ${PREFIX}/man/man1/${i:S/.0$/.1/}
+ .endfor
+-	mkdir -p ${PREFIX}/man/cat5
++	mkdir -p ${PREFIX}/man/man5
+ .for i in ${MAN5S}
+-	install -c -o ${MANOWN} -g ${MANGRP} -m 444 ${i} ${PREFIX}/man/cat5
++	install -c -o ${MANOWN} -g ${MANGRP} -m 444 ${i} ${PREFIX}/man/man5/${i:S/.0$/.5/}
+ .endfor
+ 
+ 

@@ -1,0 +1,13 @@
+bin/audiorec
+bin/avplay
+bin/bktrplay
+bin/bktrrec
+bin/bsdavdemux
+bin/bsdavplay
+bin/bsdavrec
+bin/btv
+bin/tunerctl
+include/bsdav.h
+lib/libbsdav.a
+lib/libbsdav.so
+lib/libbsdav.so.1
