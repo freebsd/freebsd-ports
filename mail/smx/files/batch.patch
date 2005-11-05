@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Oct 29 01:06:00 2005
++++ Makefile.in	Fri Nov  4 17:53:22 2005
+@@ -886,7 +886,7 @@
+ 
+ install-data-hook:
+ 	${CHMOD} +x ./misc/sm.setup.sh
+-	${SHELL} ./misc/sm.setup.sh
++#	${SHELL} ./misc/sm.setup.sh
+ 
+ # fix this...
+ 

@@ -1,0 +1,11 @@
+--- misc/sm.setup.sh.in.orig	Tue Sep  6 07:40:58 2005
++++ misc/sm.setup.sh.in	Fri Nov  4 18:23:36 2005
+@@ -202,7 +202,7 @@
+ SMXCNF=${SMXETC}/${SMXCNFB}
+ if test -s ${SMXCNF}
+ then
+-  SMXCONFPRG=./misc/smxconf
++  SMXCONFPRG=./misc/smconf
+   if test -x ${SMXCONFPRG}
+   then
+     ${SMXCONFPRG} ${SMXCNF} >/dev/null 2>&1
