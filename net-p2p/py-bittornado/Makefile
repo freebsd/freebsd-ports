@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	BitTornado
-PORTVERSION=	0.3.13
-PORTREVISION=	1
+PORTVERSION=	0.3.14
 PORTEPOCH=	1
 CATEGORIES?=	net python ipv6
 MASTER_SITES=	http://www.bittornado.com/download/ \
@@ -84,21 +83,21 @@ pre-everything::
 post-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES1}
-	@${INSTALL_DATA} ${WRKSRC}/docs/${file} ${DOCSDIR}
+.for f in ${DOC_FILES1}
+	@${INSTALL_DATA} ${WRKSRC}/docs/${f} ${DOCSDIR}
 .endfor
-.for file in ${DOC_FILES2}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in ${DOC_FILES2}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
-.for file in ${EXTRA_DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/`${ECHO} ${file} | ${SED} -e 's|/|_|g'`
+.for f in ${EXTRA_DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/`${ECHO} ${f} | ${SED} -e 's|/|_|g'`
 .endfor
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${FILESDIR}/bittornado.sh.sample ${EXAMPLESDIR}
 .endif
 .ifndef(NO_INSTALL_MANPAGES)
-.for file in ${MAN1}
-	@${INSTALL_MAN} ${WRKSRC}/docs/man/${file} ${PREFIX}/man/man1
+.for f in ${MAN1}
+	@${INSTALL_MAN} ${WRKSRC}/docs/man/${f} ${PREFIX}/man/man1
 .endfor
 .endif
 
