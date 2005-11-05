@@ -12,12 +12,12 @@
 #     When a port has a lib-prefix (ie: libquicktime, libxine)
 #      the lib-prefix should be stipped from the knob name.
 #      (ie: QUICKTIME, XINE).
-#     
+#
 #
 # Keep this list sorted in alphabetical order
 #
 # Knob name:		Knob Description:
-#  Length  |		|                   Length                   | 
+#  Length  |		|                   Length                   |
 
 A52			ATSC A/52 audio decoding (used in most dvds)
 ARTS			aRts support via the KDE sound daemon
