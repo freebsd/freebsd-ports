@@ -1,0 +1,11 @@
+===============================================================================
+
+If trafshow displays errors similar to the following:
+
+	ed1: (no devices found) /dev/bpf4: No such file or directory
+
+create more bpf devices, for instance:
+
+	cd /dev && ./MAKEDEV bpf7	# create 8 devices
+
+===============================================================================
