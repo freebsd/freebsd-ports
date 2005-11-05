@@ -1,0 +1,91 @@
+#
+# KNOBS - A list of popular knobs and descriptions
+#
+# $FreeBSD$
+#
+# Rules to adding knobs:
+#
+#  - Knob names must be 12 characters or less
+#  - Knob descriptions must be 45 characters or less
+#
+#  - Nameing knobs:
+#     When a port has a lib-prefix (ie: libquicktime, libxine)
+#      the lib-prefix should be stipped from the knob name.
+#      (ie: QUICKTIME, XINE).
+#     
+#
+# Keep this list sorted in alphabetical order
+#
+# Knob name:		Knob Description:
+#  Length  |		|                   Length                   | 
+
+A52			ATSC A/52 audio decoding (used in most dvds)
+ARTS			aRts support via the KDE sound daemon
+APACHE2			Use www/apache2 port
+AVIFILE			Adds support for avi multimedia
+CACA			Libcaca colored ASCII graphics
+CDDB			CDDB support
+CDPARANOIA		Support for cdparanoia CD extraction
+CJK			Chinese, Japanese, and Korean language support
+CUPS			Cups support (Common Unix Printing System)
+CURL			Curl URL transfer library support
+DBUS			Adds support for dbus
+DEBUG			Enables debugging support
+DTS			DTS coherent acustics decoding (some dvds)
+DV			Dgital Video used by many digital camcorders
+DVD			Enables General DVD support
+DVDNAV			Enables DVD Menu support
+DVDREAD			Enables DVD support
+ESOUND			Adds support for Esound
+EXAMPLES		Installs optional example code, graphics, etc
+EXIF			Support for EXIF headers in JPEG or TIFF files
+FAAD			Faad aac and MP4 audio decoder support
+FAAC			Faac aac and MP4 audio encder support
+FLAC			Flac audio support
+GNOME			Adds GNOME support
+GSTREAMER		Gstreamer multimedia support
+GTK1			Adds Gtk+1 support
+GTK2			Adds Gtk+2 support
+IMAGEMAGICK		ImageMagick graphics support
+IMAP			Adds support for IMAP mail protocol
+IPV6			IPv6 internet support
+JAVA			Adds support for Java
+KDE			Adds KDE support
+LAME			LAME MP3 audio encoder support
+LDAP			Adds LDAP support
+LINUX			Adds support for linux
+LIVEMEDIA		LiveMedia rstp/rtp/sdp support
+LZO			LZO data compression support
+MAD			Mad MP3 audio decoder support
+MATROSKA		Matroska multimedia container support
+MMX			Adds support for x86 MMX optimizations
+MPEG4IP			MPEG4 multimedia support
+MYSQL			MySQL database support
+NAS			Adds support for NAS (Network Audio Sound)
+NCURSES			Adds ncurses console graphics support
+NIS			Support for NIS/YP
+NLS			Native Language Support via gettext utilities
+OGG			OGG multimedia container format
+OPENGL			Adds OpenGL support
+PERL			Adds Perl language/module support
+PGSQL			PostgreSQL database support
+POP3			Adds support for POP3 mail protocol
+PYTHON			Adds Python language/module support
+QT			Adds Qt support
+QUICKTIME 		Quicktime audio/video support
+RUBY			Adds Ruby language/module support
+SAMBA			Adds SAMBA support
+SDL			Adds support for SDL media library
+SLP			Adds SLP (Service Locator Protocol) support
+SNDFILE			Adds support for libsndfile
+SOX			Sox audio support
+SPEEX			Speex audio codec support
+SQLITE			Sqlite embedded sql database support
+SSE			Adds support for x86 SSE optimizations
+SSL			Adds support for SSL (Secure Socket Layer)
+THEORA			Theora video codec support
+VORBIS			OGG/Vorbis audio support
+X11			Support for X11
+X264			H.264/AVC (MPEG4 part 10) multimedia codec
+XINE			XINE multimedia support
+XVID			XVID multimedia mpeg4 codec support
