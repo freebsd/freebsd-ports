@@ -39,15 +39,6 @@
  
  #==========================================================================
  # Directories
-@@ -96,7 +96,7 @@
- 
- ifeq ($(SHIORI_PYTHON),yes)
- 	_LINK_PYTHON = 1
--	SHIOSRC := $(SHIOSRC) $(SHIOSRC_python)
-+	SHIOSRC := $(SHIOSRC) $(SHIOSRC_PYTHON)
- endif
- 
- ifdef _LINK_PYTHON_
 @@ -104,7 +104,7 @@
  	ifndef CFLAGS_PYTHON
  		CFLAGS_PYTHON = -I$(shell python -c "import sys; print sys.prefix+'/include/python'+sys.version[:3]")
