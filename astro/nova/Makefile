@@ -8,13 +8,13 @@
 
 PORTNAME=	nova
 PORTVERSION=	0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An Integrated Observational Environment for amatuer astronomers
+COMMENT=	An Integrated Observational Environment for amateur astronomers
 
 LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
 		gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtk--2 \
@@ -24,23 +24,15 @@ LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
 		gnomecanvasmm-2.0.1:${PORTSDIR}/graphics/libgnomecanvasmm \
 		gnomeuimm-2.0.1:${PORTSDIR}/x11-toolkits/libgnomeuimm \
 		xml\\+\\+-1.0.1:${PORTSDIR}/textproc/libxml++ \
-		nova-0.9.0:${PORTSDIR}/astro/libnova
+		nova-0.11.0:${PORTSDIR}/astro/libnova
 RUN_DEPENDS=	${LOCALBASE}/share/nova/catalogs/sky2000.ncd:${PORTSDIR}/astro/sky2000
 
-BROKEN=		Broken dependency
-
+#USE_AUTOMAKE_VER=17
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--datadir=${DATADIR}
+USE_GCC=	3.3+
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile with gcc 2.x"
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,/nova/,/share/nova/,' ${WRKSRC}/configure
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
