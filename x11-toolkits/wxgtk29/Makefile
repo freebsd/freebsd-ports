@@ -7,6 +7,7 @@
 
 PORTNAME=	wx
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wxwindows
@@ -85,6 +86,11 @@ pre-configure:
 
 .endif # !gtk2-contrib-common
 .endif # *-contrib*
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|pkg_config_args --cflags|pkg_config_args pangox --cflags|g ; \
+		s|pkg_config_args --libs|pkg_config_args pangox --libs|g' \
+			${WRKSRC}/configure
 
 .include <bsd.port.pre.mk>
 
