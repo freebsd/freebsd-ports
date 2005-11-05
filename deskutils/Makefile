@@ -111,6 +111,7 @@
     SUBDIR += nag
     SUBDIR += narval
     SUBDIR += nautilus-actions
+    SUBDIR += nautilus-locked-folder
     SUBDIR += nautilus-sendto
     SUBDIR += notebook
     SUBDIR += notification-daemon
