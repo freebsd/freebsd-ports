@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cream
-PORTVERSION=	0.32
+PORTVERSION=	0.33.1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,22 +21,22 @@ NO_BUILD=	YES
 PLIST_FILES=	bin/cream
 
 # needs updating for each major vim update.
-VIMRUNTIMEDIR=	share/vim/vim63
+VIMRUNTIMEDIR=	share/vim/vim64
 
 CREAM_FILES=	EasyHtml.vim EnhancedCommentify.vim Rndm.vim calendar.vim \
 		cream-abbr-eng.vim cream-abbr-fre.vim cream-abbr.vim \
 		cream-addon.vim cream-ascii.vim cream-autocmd.vim \
-		cream-behavior.vim cream-bookmarks.vim \
-		cream-capitalization.vim cream-colors-blackwhite.vim \
-		cream-colors-chocolateliquor.vim cream-colors-dawn.vim \
-		cream-colors-default.vim cream-colors-navajo-night.vim \
-		cream-colors-navajo.vim cream-colors-night.vim \
-		cream-colors-oceandeep.vim cream-colors-terminal.vim \
-		cream-colors-zenburn.vim cream-colors.vim cream-columns.vim \
-		cream-conf.example.vim cream-devel.vim cream-expertmode.vim \
-		cream-explorer.vim cream-filetype.vim cream-find.vim \
-		cream-gui.vim cream-iso3166-1.vim cream-iso639.vim \
-		cream-justify.vim cream-keys.vim cream-lib.vim cream-loremipsum.vim \
+		cream-behavior.vim cream-bookmarks.vim cream-capitalization.vim \
+		cream-colors-blackwhite.vim cream-colors-chocolateliquor.vim \
+		cream-colors-dawn.vim cream-colors-default.vim \
+		cream-colors-navajo-night.vim cream-colors-navajo.vim \
+		cream-colors-night.vim cream-colors-oceandeep.vim \
+		cream-colors-terminal.vim cream-colors-zenburn.vim \
+		cream-colors.vim cream-columns.vim cream-conf.example.vim \
+		cream-devel.vim cream-expertmode.vim cream-explorer.vim \
+		cream-filetype.vim cream-find.vim cream-gui.vim \
+		cream-iso3166-1.vim cream-iso639.vim cream-justify.vim \
+		cream-keys.vim cream-lib.vim cream-loremipsum.vim \
 		cream-macros.vim cream-menu-developer.vim cream-menu-edit.vim \
 		cream-menu-file.vim cream-menu-format.vim cream-menu-help.vim \
 		cream-menu-insert.vim cream-menu-mru.vim cream-menu-popup.vim \
@@ -47,23 +47,23 @@ CREAM_FILES=	EasyHtml.vim EnhancedCommentify.vim Rndm.vim calendar.vim \
 		cream-replace.vim cream-replacemulti.vim cream-server.vim \
 		cream-settings.vim cream-showinvisibles.vim cream-spell.vim \
 		cream-statusline.vim cream-templates.vim \
-		cream-window-buffer.vim cream.vim creamrc \
-		genutils.vim multvals.vim opsplorer.vim taglist.vim
+		cream-window-buffer.vim cream.vim creamrc genutils.vim \
+		multvals.vim opsplorer.vim taglist.vim
 
 CREAM_ADDONS=	cream-colorinvert.vim cream-convert-hex.vim \
 		cream-cream-bugreport.vim cream-cream-ctags.vim \
 		cream-cream-fileformat.vim cream-cream-foldfunctions.vim \
 		cream-cream-keytest.vim cream-cream-release.vim \
 		cream-cream-update.vim cream-cream-vim-abbrev.vim \
-		cream-cream-vim-deformat.vim cream-dailyread.vim cream-debinary.vim \
-		cream-email-formatter.vim cream-email-munge.vim \
-		cream-encrypt-algorithmic.vim cream-encrypt-h4x0r.vim \
-		cream-encrypt-hexme.vim cream-encrypt-rot13.vim \
+		cream-cream-vim-deformat.vim cream-dailyread.vim \
+		cream-debinary.vim cream-email-formatter.vim \
+		cream-email-munge.vim cream-encrypt-algorithmic.vim \
+		cream-encrypt-h4x0r.vim cream-encrypt-hexme.vim \
+		cream-encrypt-rot13.vim cream-helptags.vim \
 		cream-highlight-ctrlchars.vim cream-highlight-mbyte.vim \
 		cream-ispell.vim cream-sort.vim cream-spell-french.vim \
-		cream-stamp-filename.vim \
-		cream-str-invert.vim cream-text2html.vim cream-timestamp.vim \
-		cream-typingtutor.vim
+		cream-stamp-filename.vim cream-str-invert.vim cream-table.vim \
+		cream-text2html.vim cream-timestamp.vim cream-typingtutor.vim
 
 CREAM_BITMAPS=	book.xpm broken_image.xpm copy_alt.xpm cut_alt.xpm exit.xpm \
 		font.xpm help.xpm new.xpm open.xpm paste.xpm print.xpm \
@@ -98,6 +98,12 @@ CREAM_FTYPES=	c.vim html.vim lisp.vim txt.vim vim.vim
 
 CREAM_HELP=	EnhancedCommentify.txt opsplorer.txt
 
+CREAM_LANG=	menu_chinese_gb.936.vim menu_en_us.utf-8.vim \
+		menu_fr_fr.latin1.vim menu_zh.cp936.vim menu_zh.cp950.vim \
+		menu_zh.gb2312.vim menu_zh_cn.18030.vim menu_zh_cn.cp936.vim \
+		menu_zh_cn.gb2312.vim menu_zh_cn.gbk.vim menu_zh_cn.utf-8.vim \
+		strings_en_us.utf-8.vim
+
 CREAM_SPELL=	cream-spell-dict-eng-s-GB_1.vim \
 		cream-spell-dict-eng-s-GB_2.vim \
 		cream-spell-dict-eng-s-GB_3.vim \
@@ -125,6 +131,7 @@ do-install:
 		${MKDIR}	${PREFIX}/${VIMRUNTIMEDIR}/cream/docs-html/
 		${MKDIR}	${PREFIX}/${VIMRUNTIMEDIR}/cream/filetypes/
 		${MKDIR}	${PREFIX}/${VIMRUNTIMEDIR}/cream/help/
+		${MKDIR}	${PREFIX}/${VIMRUNTIMEDIR}/cream/lang/
 		${MKDIR}	${PREFIX}/${VIMRUNTIMEDIR}/cream/spelldicts/
 		#installing files
 .for f in ${CREAM_FILES}
@@ -153,6 +160,10 @@ do-install:
 .for f in ${CREAM_HELP}
 	${INSTALL_DATA} ${WRKSRC}/help/${f} \
 		${PREFIX}/${VIMRUNTIMEDIR}/cream/help/
+.endfor
+.for f in ${CREAM_LANG}
+	${INSTALL_DATA} ${WRKSRC}/lang/${f} \
+		${PREFIX}/${VIMRUNTIMEDIR}/cream/lang/
 .endfor
 .for f in ${CREAM_SPELL}
 	${INSTALL_DATA} ${WRKSRC}/spelldicts/${f} \
@@ -183,6 +194,9 @@ post-install:
 .for f in ${CREAM_HELP}
 	${ECHO} ${VIMRUNTIMEDIR}/cream/help/${f} >>${TMPPLIST}
 .endfor
+.for f in ${CREAM_LANG}
+	${ECHO} ${VIMRUNTIMEDIR}/cream/lang/${f} >>${TMPPLIST}
+.endfor
 .for f in ${CREAM_SPELL}
 	${ECHO} ${VIMRUNTIMEDIR}/cream/spelldicts/${f} >>${TMPPLIST}
 .endfor
@@ -192,6 +206,7 @@ post-install:
 	${ECHO} "@dirrm ${VIMRUNTIMEDIR}/cream/docs-html" >>${TMPPLIST}
 	${ECHO} "@dirrm ${VIMRUNTIMEDIR}/cream/filetypes" >>${TMPPLIST}
 	${ECHO} "@dirrm ${VIMRUNTIMEDIR}/cream/help" >>${TMPPLIST}
+	${ECHO} "@dirrm ${VIMRUNTIMEDIR}/cream/lang" >>${TMPPLIST}
 	${ECHO} "@dirrm ${VIMRUNTIMEDIR}/cream/spelldicts" >>${TMPPLIST}
 	${ECHO} "@dirrm ${VIMRUNTIMEDIR}/cream" >>${TMPPLIST}
 
