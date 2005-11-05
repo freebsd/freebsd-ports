@@ -1,0 +1,22 @@
+The bsdav package is a set of programs for audio and video reading and writing.
+The programs use BSD native devices and the source code is free-as-in-BSD
+licensed as well.The bsdav package also includes a general purpose library,
+libbsdav, for both accessing audio(4) and bktr(4) devices, and simple data
+operations. While one of the goals of the bsdav project is simplicity, another
+goal is to make A/V processing on *BSD systems "easily" accessible. So to ease
+the storage and synchronization of both audio and video streams, bsdav has it's
+own, very simple, A/V container format. Hopefully the bsdav programs are
+written understandably and correclty enough that they may help others
+understand how to use audio(4) and bktr(4).
+
+bsdav consists of:
+        audiorec - record raw audio streams from audio(4) to file
+        bktrrec - record raw video streams from bktr(4) to file
+        avplay - play raw audio and/or raw video streams
+        bktrplay - display video from bktr(4) via Xv(3X)
+        tunerctl - manipulate bktr(4) tuner devices
+        bsdavrec - records audio and/or video in bsdav(5) streams
+        bsdavplay - play audio and/or video in bsdav(5) streams
+        bsdavdemux - extract audio and/or video from bsdav(5) streams
+        btv - shell script frontend for the above programs
+        libbsdav - general purpose *BSD A/V library
