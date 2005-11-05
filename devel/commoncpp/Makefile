@@ -38,10 +38,6 @@ LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700000
-BROKEN=		"Does not compile on FreeBSD >= 7.0"
-.endif
-
 pre-configure:
 	@${CP} ${LTMAIN} ${WRKSRC}/autoconf
 
