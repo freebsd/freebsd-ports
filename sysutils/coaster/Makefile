@@ -3,11 +3,12 @@
 # Whom:					Mezz <mezz7@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/sysutils/coaster/Makefile,v 1.11 2005/10/14 20:39:58 adamw Exp $
 #
 
 PORTNAME=	coaster
 PORTVERSION=	0.1.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils gnome
 #MASTER_SITES=	http://www.coaster-burn.org/files/coaster/
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -33,6 +34,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS README TODO
 GCONF_SCHEMAS=	coaster.schemas
+
+BROKEN=	"Broken with new nautilus-cd-burner"
 
 patch-autotools:
 	@(cd ${PATCH_WRKSRC}; \
