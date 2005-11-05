@@ -22,11 +22,13 @@ include/gnotime/qofquerycore.h
 include/gnotime/qofsession.h
 include/gnotime/qofsql.h
 include/gnotime/sql_parser.h
+lib/libqof.a
+lib/libqof.so
+lib/libqof.so.0
 lib/libqofsql.a
 lib/libqofsql.so
 lib/libqofsql.so.0
 share/gnome/applications/gnotime.desktop
-share/gnome/gnotime/ghtml/C/activity.ghtml
 share/gnome/gnotime/ghtml/C/basic-daily.ghtml
 share/gnome/gnotime/ghtml/C/basic-invoice.ghtml
 share/gnome/gnotime/ghtml/C/basic-journal.ghtml
@@ -43,10 +45,10 @@ share/gnome/gnotime/ghtml/C/primer.ghtml
 share/gnome/gnotime/ghtml/C/query.ghtml
 share/gnome/gnotime/ghtml/C/status.ghtml
 share/gnome/gnotime/ghtml/C/tab-delim.ghtml
+share/gnome/gnotime/ghtml/C/time-interval.ghtml
 share/gnome/gnotime/ghtml/C/todo-export.ghtml
 share/gnome/gnotime/ghtml/C/todo.ghtml
 share/gnome/gnotime/glade/active.glade
-share/gnome/gnotime/glade/column_menu.glade
 share/gnome/gnotime/glade/idle.glade
 share/gnome/gnotime/glade/interval_edit.glade
 share/gnome/gnotime/glade/interval_popup.glade
@@ -59,8 +61,6 @@ share/gnome/gnotime/glade/prefs.glade
 share/gnome/gnotime/glade/project_properties.glade
 share/gnome/gnotime/glade/task_popup.glade
 share/gnome/gnotime/glade/task_properties.glade
-share/gnome/help/gnotime/C/figures/gtt_startprojwin.png
-share/gnome/help/gnotime/C/figures/gtt_restartwin.png
 share/gnome/help/gnotime/C/figures/gtt_mainwin.png
 share/gnome/help/gnotime/C/figures/gtt_prefswin.png
 share/gnome/help/gnotime/C/gnotime.xml
