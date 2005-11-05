@@ -3,13 +3,14 @@
 # Whom:					marc@informatik.uni-bremen.de
 #
 # $FreeBSD$
+#   $MCom: ports/x11-toolkits/py-gtk2/Makefile,v 1.29 2005/10/09 19:52:49 marcus Exp $
 #
 
 PORTNAME=	gtk
-PORTVERSION=	2.6.2
+PORTVERSION=	2.8.2
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/pygtk/2.6
+MASTER_SITE_SUBDIR=	sources/pygtk/2.8
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pygtk-${PORTVERSION}
 DIST_SUBDIR=	gnome2
@@ -17,14 +18,16 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of Python bindings for GTK
 
-RUN_DEPENDS=	${PYNUMERIC}
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo
+RUN_DEPENDS=	${PYNUMERIC} \
+		${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget libglade2
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-lintl"
 LDFLAGS+=	-L${LOCALBASE}/lib
