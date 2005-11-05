@@ -43,10 +43,8 @@ USE_PGSQL=	yes
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-PG_INCDIR!=	${LOCALBASE}/bin/pg_config --includedir
-PG_LIBDIR!=	${LOCALBASE}/bin/pg_config --libdir
-
-CONFIGURE_ARGS+=--with-pgsqlincdir=${PG_INCDIR} --with-pgsqllibdir=${PG_LIBDIR}
+CONFIGURE_ARGS+=--with-pgsqlincdir=${LOCALBASE}/include \
+		--with-pgsqllibdir=${LOCALBASE}/lib
 
 .if ${OSVERSION} < 500035
 EXTRA_PATCHES=	${PATCHDIR}/extrapatch-kexi-main-keximainwindowimpl.cpp
