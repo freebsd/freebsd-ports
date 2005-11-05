@@ -1,6 +1,6 @@
---- configure.orig	Thu Mar 11 15:38:00 2004
-+++ configure	Thu Mar 11 15:38:00 2004
-@@ -1917,9 +1917,9 @@
+--- configure.orig	Wed Jul 13 19:29:53 2005
++++ configure	Wed Jul 13 19:36:36 2005
+@@ -1931,9 +1931,9 @@
  
  # libtool versioning
  LT_RELEASE=$LIBGTOP_MAJOR_VERSION.$LIBGTOP_MINOR_VERSION
@@ -13,3 +13,21 @@
  LT_VERSION_INFO="-version-info ${LT_CURRENT}:${LT_REVISION}:${LT_AGE}"
  
  
+@@ -23654,6 +23654,8 @@
+ fi
+ 
+ done
++;;
++esac
+ 
+ 
+ 
+@@ -23792,8 +23794,6 @@
+ 
+ fi
+ 
+-     ;;
+-esac
+ 
+ 
+ echo "$as_me:$LINENO: checking for vm_statistics in -lmach" >&5

@@ -30,6 +30,10 @@ share/gnome/help/eog/ko/legal.xml
 share/gnome/help/eog/sv/eog.xml
 share/gnome/help/eog/sv/figures/eog_start_window.png
 share/gnome/help/eog/sv/legal.xml
+share/gnome/help/eog/uk/eog.xml
+share/gnome/help/eog/uk/figures/eog_save_as_window.png
+share/gnome/help/eog/uk/figures/eog_start_window.png
+share/gnome/help/eog/uk/legal.xml
 share/gnome/help/eog/zh_CN/eog.xml
 share/gnome/help/eog/zh_CN/figures/eog_start_window.png
 share/gnome/help/eog/zh_CN/legal.xml
@@ -45,6 +49,7 @@ share/gnome/omf/eog/eog-it.omf
 share/gnome/omf/eog/eog-ja.omf
 share/gnome/omf/eog/eog-ko.omf
 share/gnome/omf/eog/eog-sv.omf
+share/gnome/omf/eog/eog-uk.omf
 share/gnome/omf/eog/eog-zh_CN.omf
 share/gnome/omf/eog/eog-zh_TW.omf
 share/gnome/pixmaps/eog/down-right.png
@@ -93,6 +98,7 @@ share/locale/it/LC_MESSAGES/eog.mo
 share/locale/ja/LC_MESSAGES/eog.mo
 share/locale/kn/LC_MESSAGES/eog.mo
 share/locale/ko/LC_MESSAGES/eog.mo
+share/locale/ku/LC_MESSAGES/eog.mo
 share/locale/lt/LC_MESSAGES/eog.mo
 share/locale/lv/LC_MESSAGES/eog.mo
 share/locale/mk/LC_MESSAGES/eog.mo
@@ -123,6 +129,7 @@ share/locale/ta/LC_MESSAGES/eog.mo
 share/locale/th/LC_MESSAGES/eog.mo
 share/locale/tk/LC_MESSAGES/eog.mo
 share/locale/tr/LC_MESSAGES/eog.mo
+share/locale/ug/LC_MESSAGES/eog.mo
 share/locale/uk/LC_MESSAGES/eog.mo
 share/locale/vi/LC_MESSAGES/eog.mo
 share/locale/wa/LC_MESSAGES/eog.mo
@@ -134,16 +141,22 @@ share/locale/zu/LC_MESSAGES/eog.mo
 @unexec rmdir %D/share/locale/zu 2> /dev/null || true
 @unexec rmdir %D/share/locale/xh/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/xh 2> /dev/null || true
+@unexec rmdir %D/share/locale/ug/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ug 2> /dev/null || true
 @unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/rw 2> /dev/null || true
 @unexec rmdir %D/share/locale/nso/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/nso 2> /dev/null || true
+@unexec rmdir %D/share/locale/ku/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ku 2> /dev/null || true
 @dirrm share/gnome/pixmaps/eog
 @dirrm share/gnome/omf/eog
 @dirrm share/gnome/help/eog/zh_TW/figures
 @dirrm share/gnome/help/eog/zh_TW
 @dirrm share/gnome/help/eog/zh_CN/figures
 @dirrm share/gnome/help/eog/zh_CN
+@dirrm share/gnome/help/eog/uk/figures
+@dirrm share/gnome/help/eog/uk
 @dirrm share/gnome/help/eog/sv/figures
 @dirrm share/gnome/help/eog/sv
 @dirrm share/gnome/help/eog/ko/figures

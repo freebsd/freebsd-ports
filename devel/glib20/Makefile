@@ -3,13 +3,14 @@
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/devel/glib20/Makefile,v 1.55 2005/10/03 17:39:56 mezz Exp $
 #
 
 PORTNAME=	glib
-PORTVERSION=	2.6.6
+PORTVERSION=	2.8.3
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/2.6,} \
-		ftp://ftp.gtk.org/pub/gtk/v2.6/ \
+MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/2.8,} \
+		ftp://ftp.gtk.org/pub/gtk/v2.8/ \
 		ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
 		http://www.ameth.org/gimp/%SUBDIR%/ \
@@ -24,10 +25,10 @@ LATEST_LINK=	glib20
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack gnometarget pkgconfig ltverhack
 USE_GMAKE=	yes
 USE_PERL5=	yes
 CONFIGURE_ARGS=	--enable-static --with-libiconv=gnu \

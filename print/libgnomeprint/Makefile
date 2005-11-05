@@ -3,14 +3,14 @@
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/print/libgnomeprint/Makefile,v 1.54 2005/09/26 21:07:03 marcus Exp $
 #
 
 PORTNAME=	libgnomeprint
-PORTVERSION=	2.10.3
-PORTREVISION=	1
+PORTVERSION=	2.12.1
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.10
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.12
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -19,14 +19,15 @@ COMMENT=	Gnome print support library
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		popt.0:${PORTSDIR}/devel/popt
 
+USE_BISON=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier glib20 pango libxml2 \
-		libartlgpl2
+		libartlgpl2 ltverhack
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -35,17 +36,20 @@ PLIST_SUB=	VERSION=${PORTVERSION} \
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libcups.so)
-WITH_CUPS=	yes
-.endif
-
-.if defined(WITH_CUPS) && !defined(WITHOUT_CUPS)
+.if defined(WITH_CUPS) || exists(${LOCALBASE}/lib/libcups.so)
 CONFIGURE_ARGS+=	--with-cups
 LIB_DEPENDS+=		gnomecups-1.0:${PORTSDIR}/print/libgnomecups
 PLIST_SUB+=		CUPS:=""
 .else
 CONFIGURE_ARGS+=	--without-cups
 PLIST_SUB+=		CUPS:="@comment "
+.endif
+
+pre-everything::
+.if !defined(WITH_CUPS)
+	@${ECHO_MSG} " Enable cups support by defining"
+	@${ECHO_MSG} " WITH_CUPS"
+	@${ECHO_MSG} ""
 .endif
 
 post-patch:

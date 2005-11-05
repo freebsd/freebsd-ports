@@ -3,10 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/devel/libsoup/Makefile,v 1.30 2005/08/29 03:22:33 marcus Exp $
 #
 
 PORTNAME=	libsoup
 PORTVERSION=	2.2.6.1
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
@@ -18,9 +20,9 @@ COMMENT=	A SOAP (Simple Object Access Protocol) implementation in C
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack glib20 libxml2
+USE_GNOME=	gnomehack glib20 libxml2 ltverhack
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc

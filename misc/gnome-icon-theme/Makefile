@@ -3,14 +3,15 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/misc/gnome-icon-theme/Makefile,v 1.56 2005/10/06 17:36:54 mezz Exp $
 #
 
 PORTNAME=	gnome-icon-theme
-PORTVERSION=	2.10.1
+PORTVERSION=	2.12.1
 PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.10
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -29,8 +30,11 @@ CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
-		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g ; \
+		s|[(]datadir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
+			${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|@mkdir_p@|mkdir -p|g' \
+		${WRKSRC}/po/Makefile.in.in
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/icons/gnome/48x48/apps

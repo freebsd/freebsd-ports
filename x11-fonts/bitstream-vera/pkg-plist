@@ -1,6 +1,4 @@
-@unexec if cmp -s %D/etc/fonts/local.conf %D/etc/fonts/local.conf-vera; then rm -f %D/etc/fonts/local.conf; fi
-etc/fonts/local.conf-vera
-@exec [ ! -f %B/local.conf ] && cp %B/%f %B/local.conf
+etc/fonts/conf.d/0.vera.conf
 %%FONTSDIR%%/COPYRIGHT.TXT
 %%FONTSDIR%%/fonts.dir
 %%FONTSDIR%%/Vera.ttf

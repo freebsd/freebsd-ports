@@ -1,6 +1,6 @@
---- gnome-settings-daemon/gnome-settings-multimedia-keys.c.orig	Thu Oct 14 15:44:21 2004
-+++ gnome-settings-daemon/gnome-settings-multimedia-keys.c	Thu Oct 14 15:44:38 2004
-@@ -813,7 +813,7 @@
+--- gnome-settings-daemon/gnome-settings-multimedia-keys.c.orig	Wed Jul 27 13:52:13 2005
++++ gnome-settings-daemon/gnome-settings-multimedia-keys.c	Wed Jul 27 13:52:32 2005
+@@ -828,7 +828,7 @@
  		do_mail_action (acme);
  		break;
  	case SLEEP_KEY:
@@ -8,4 +8,4 @@
 +		do_sleep_action ("zzz", "xset dpms force off");
  		break;
  	case SCREENSAVER_KEY:
- 		execute ("xscreensaver-command -lock", FALSE);
+ 		if ((cmd = g_find_program_in_path ("gnome-screensaver-command")))

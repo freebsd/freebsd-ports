@@ -3,31 +3,23 @@
 # Whom:                 marcus@FreeBSD.org
 #
 # $FreeBSD$
+#   $MCom: ports/graphics/poppler/Makefile,v 1.14 2005/09/03 04:44:58 ahze Exp $
 #
 
 PORTNAME=	poppler
-PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTVERSION=	0.4.2
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A PDF rendering library
 
-LIB_DEPENDS=	cairo.1:${PORTSDIR}/graphics/cairo
-
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomeprefix gnomehack gtk20
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|poppler-[@]VERSION[@]|poppler|g' \
-		${WRKSRC}/poppler-cairo.pc.in \
-		${WRKSRC}/poppler-splash.pc.in
 
 .include <bsd.port.mk>

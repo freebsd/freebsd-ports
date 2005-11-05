@@ -9,7 +9,17 @@ share/gnome/help/gconf-editor/C/figures/entry-string.png
 share/gnome/help/gconf-editor/C/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/C/gconf-editor.xml
 share/gnome/help/gconf-editor/C/legal.xml
+share/gnome/help/gconf-editor/uk/figures/entry-blank.png
+share/gnome/help/gconf-editor/uk/figures/entry-bool.png
+share/gnome/help/gconf-editor/uk/figures/entry-list.png
+share/gnome/help/gconf-editor/uk/figures/entry-number.png
+share/gnome/help/gconf-editor/uk/figures/entry-schema.png
+share/gnome/help/gconf-editor/uk/figures/entry-string.png
+share/gnome/help/gconf-editor/uk/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/uk/gconf-editor.xml
+share/gnome/help/gconf-editor/uk/legal.xml
 share/gnome/omf/gconf-editor/gconf-editor-C.omf
+share/gnome/omf/gconf-editor/gconf-editor-uk.omf
 share/gnome/pixmaps/gconf-editor/entry-blank.png
 share/gnome/pixmaps/gconf-editor/entry-bool.png
 share/gnome/pixmaps/gconf-editor/entry-list.png
@@ -71,6 +81,7 @@ share/locale/pt/LC_MESSAGES/gconf-editor.mo
 share/locale/pt_BR/LC_MESSAGES/gconf-editor.mo
 share/locale/ro/LC_MESSAGES/gconf-editor.mo
 share/locale/ru/LC_MESSAGES/gconf-editor.mo
+share/locale/rw/LC_MESSAGES/gconf-editor.mo
 share/locale/sk/LC_MESSAGES/gconf-editor.mo
 share/locale/sl/LC_MESSAGES/gconf-editor.mo
 share/locale/sq/LC_MESSAGES/gconf-editor.mo
@@ -78,14 +89,23 @@ share/locale/sr/LC_MESSAGES/gconf-editor.mo
 share/locale/sr@Latn/LC_MESSAGES/gconf-editor.mo
 share/locale/sv/LC_MESSAGES/gconf-editor.mo
 share/locale/ta/LC_MESSAGES/gconf-editor.mo
+share/locale/te/LC_MESSAGES/gconf-editor.mo
 share/locale/th/LC_MESSAGES/gconf-editor.mo
 share/locale/tr/LC_MESSAGES/gconf-editor.mo
+share/locale/ug/LC_MESSAGES/gconf-editor.mo
 share/locale/uk/LC_MESSAGES/gconf-editor.mo
 share/locale/vi/LC_MESSAGES/gconf-editor.mo
+share/locale/xh/LC_MESSAGES/gconf-editor.mo
 share/locale/zh_CN/LC_MESSAGES/gconf-editor.mo
 share/locale/zh_TW/LC_MESSAGES/gconf-editor.mo
+@unexec rmdir %D/share/locale/ug/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ug 2> /dev/null || true
+@unexec rmdir %D/share/locale/te/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/te 2> /dev/null || true
 @dirrm share/gnome/pixmaps/gconf-editor
 @dirrm share/gnome/omf/gconf-editor
+@dirrm share/gnome/help/gconf-editor/uk/figures
+@dirrm share/gnome/help/gconf-editor/uk
 @dirrm share/gnome/help/gconf-editor/C/figures
 @dirrm share/gnome/help/gconf-editor/C
 @dirrm share/gnome/help/gconf-editor

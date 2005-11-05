@@ -5,9 +5,10 @@ include/totem/1/plparser/totem-pl-parser-builtins.h
 include/totem/1/plparser/totem-pl-parser.h
 lib/libtotem-plparser.a
 lib/libtotem-plparser.so
-lib/libtotem-plparser.so.0
+lib/libtotem-plparser.so.1
 lib/nautilus/extensions-1.0/libtotem-properties-page.a
 lib/nautilus/extensions-1.0/libtotem-properties-page.so
+lib/nautilus/extensions-1.0/libtotem-properties-page.so.0
 libdata/pkgconfig/totem-plparser.pc
 share/gnome/applications/totem.desktop
 share/gnome/help/totem/C/figures/totem_next_button.png
@@ -40,6 +41,16 @@ share/gnome/help/totem/es/figures/totem_volume_maximum_button.png
 share/gnome/help/totem/es/figures/totem_volume_mute_button.png
 share/gnome/help/totem/es/legal.xml
 share/gnome/help/totem/es/totem.xml
+share/gnome/help/totem/fr/figures/totem_next_button.png
+share/gnome/help/totem/fr/figures/totem_pause_button.png
+share/gnome/help/totem/fr/figures/totem_play_button.png
+share/gnome/help/totem/fr/figures/totem_previous_button.png
+share/gnome/help/totem/fr/figures/totem_show_playlist_button.png
+share/gnome/help/totem/fr/figures/totem_start_window.png
+share/gnome/help/totem/fr/figures/totem_volume_maximum_button.png
+share/gnome/help/totem/fr/figures/totem_volume_mute_button.png
+share/gnome/help/totem/fr/legal.xml
+share/gnome/help/totem/fr/totem.xml
 share/gnome/help/totem/ru/figures/totem_screenshot.png
 share/gnome/help/totem/ru/figures/totem_start_window.png
 share/gnome/help/totem/ru/legal.xml
@@ -47,6 +58,7 @@ share/gnome/help/totem/ru/totem.xml
 share/gnome/omf/totem/totem-C.omf
 share/gnome/omf/totem/totem-de.omf
 share/gnome/omf/totem/totem-es.omf
+share/gnome/omf/totem/totem-fr.omf
 share/gnome/omf/totem/totem-ru.omf
 share/gnome/pixmaps/media-player-48.png
 share/gnome/pixmaps/vanity.png
@@ -55,8 +67,6 @@ share/gnome/totem/filmholes-big-right.png
 share/gnome/totem/filmholes.png
 share/gnome/totem/media-player-48.png
 share/gnome/totem/mozilla-viewer.glade
-share/gnome/totem/playlist-16.png
-share/gnome/totem/playlist-24.png
 share/gnome/totem/playlist-playing.png
 share/gnome/totem/playlist.glade
 share/gnome/totem/popup.glade
@@ -92,6 +102,7 @@ share/locale/en_GB/LC_MESSAGES/totem.mo
 share/locale/es/LC_MESSAGES/totem.mo
 share/locale/et/LC_MESSAGES/totem.mo
 share/locale/eu/LC_MESSAGES/totem.mo
+share/locale/fa/LC_MESSAGES/totem.mo
 share/locale/fi/LC_MESSAGES/totem.mo
 share/locale/fr/LC_MESSAGES/totem.mo
 share/locale/ga/LC_MESSAGES/totem.mo
@@ -112,6 +123,7 @@ share/locale/mk/LC_MESSAGES/totem.mo
 share/locale/ml/LC_MESSAGES/totem.mo
 share/locale/ms/LC_MESSAGES/totem.mo
 share/locale/nb/LC_MESSAGES/totem.mo
+share/locale/ne/LC_MESSAGES/totem.mo
 share/locale/nl/LC_MESSAGES/totem.mo
 share/locale/no/LC_MESSAGES/totem.mo
 share/locale/pa/LC_MESSAGES/totem.mo
@@ -126,8 +138,10 @@ share/locale/sq/LC_MESSAGES/totem.mo
 share/locale/sr/LC_MESSAGES/totem.mo
 share/locale/sr@Latn/LC_MESSAGES/totem.mo
 share/locale/sv/LC_MESSAGES/totem.mo
+share/locale/te/LC_MESSAGES/totem.mo
 share/locale/th/LC_MESSAGES/totem.mo
 share/locale/tr/LC_MESSAGES/totem.mo
+share/locale/ug/LC_MESSAGES/totem.mo
 share/locale/uk/LC_MESSAGES/totem.mo
 share/locale/vi/LC_MESSAGES/totem.mo
 share/locale/wa/LC_MESSAGES/totem.mo
@@ -138,6 +152,8 @@ share/locale/zh_TW/LC_MESSAGES/totem.mo
 @dirrm share/gnome/omf/totem
 @dirrm share/gnome/help/totem/ru/figures
 @dirrm share/gnome/help/totem/ru
+@dirrm share/gnome/help/totem/fr/figures
+@dirrm share/gnome/help/totem/fr
 @dirrm share/gnome/help/totem/es/figures
 @dirrm share/gnome/help/totem/es
 @dirrm share/gnome/help/totem/de/figures

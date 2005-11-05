@@ -3,16 +3,13 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/x11/gnome2-fifth-toe/Makefile,v 1.73 2005/08/26 03:21:23 marcus Exp $
 #
 
-PORTNAME=	gnome2-fifth-toe
-PORTVERSION=	2.10.2
+PORTREVISION=	0
 CATEGORIES=	x11 gnome
-MASTER_SITES=	# empty
-DISTFILES=	# empty
-EXTRACT_ONLY=	# empty
+PKGNAMESUFFIX=	-fifth-toe
 
-MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Additional GNOME 2 applications not included in the core desktop
 
 RUN_DEPENDS=	pan:${PORTSDIR}/news/pan2 \
@@ -35,14 +32,14 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan2 \
 		jamboree:${PORTSDIR}/audio/jamboree \
 		${X11BASE}/share/gnome/pixmaps/glines/classic.png:${PORTSDIR}/games/gnomegames2-extra-data \
 		nautilus-sendto:${PORTSDIR}/deskutils/nautilus-sendto \
-		evince:${PORTSDIR}/graphics/evince \
 		goobox:${PORTSDIR}/audio/goobox \
-		inkscape:${PORTSDIR}/graphics/inkscape
+		inkscape:${PORTSDIR}/graphics/inkscape \
+		gpdf:${PORTSDIR}/graphics/gpdf \
+		ggv:${PORTSDIR}/print/ggv
 
-.include <bsd.port.pre.mk>
+MASTERDIR=	${.CURDIR}/../gnome2
+GNOME_SLAVE=	yes
 
-NO_BUILD=	yes
+DESCR=		${.CURDIR}/pkg-descr
 
-do-install:	# empty
-
-.include <bsd.port.post.mk>
+.include "${MASTERDIR}/Makefile"

@@ -3,13 +3,15 @@
 # Whom:					Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
+#   $MCom: ports/net/vino/Makefile,v 1.21 2005/10/08 19:41:39 marcus Exp $
 #
 
 PORTNAME=	vino
-PORTVERSION=	2.10.0
+PORTVERSION=	2.12.0
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.10
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.12
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VNC server that allows for remote access to your GNOME desktop
@@ -21,7 +23,8 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomepanel
 USE_GMAKE=	yes
 GNOME_DESKTOP_VERSION=2
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
+INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-session-support
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,11 +1,11 @@
---- modules/Makefile.in.orig	Tue May  6 15:39:48 2003
-+++ modules/Makefile.in	Tue May  6 15:41:28 2003
-@@ -210,7 +210,7 @@
- @BUILD_CDEMENU_MODULE_TRUE@CDEMENU_LTLIBS = @BUILD_CDEMENU_MODULE_TRUE@libcdemenu-desktop.la
- @BUILD_CDEMENU_MODULE_FALSE@CDEMENU_LTLIBS = 
- 
+--- modules/Makefile.in.orig	Mon Oct  3 11:55:14 2005
++++ modules/Makefile.in	Mon Oct  3 11:55:55 2005
+@@ -465,7 +465,7 @@
+ @HAVE_SAMBA_TRUE@SMB_LTLIBS = libsmb.la
+ @OS_WIN32_FALSE@PLATFROM_SPECIFIC_LTLIBS = libdns-sd.la libnetwork.la libnntp.la libsftp.la $(HTTP_LTLIBS) libftp.la
+ @OS_WIN32_TRUE@PLATFROM_SPECIFIC_LTLIBS = 
 -module_flags = -export_dynamic -avoid-version -module -no-undefined
 +module_flags = -export_dynamic -avoid-version -module -no-undefined $(PTHREAD_LIB)
  modulesdir = $(libdir)/gnome-vfs-2.0/modules
- 
  modules_LTLIBRARIES = \
+ 	$(CDDA_LTLIBS)				\

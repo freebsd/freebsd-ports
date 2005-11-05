@@ -3,10 +3,11 @@
 # Whom:					lewiz <purple@lewiz.net>
 #
 # $FreeBSD$
+#   $MCom: ports/accessibility/dasher/Makefile,v 1.18 2005/10/29 22:31:15 marcus Exp $
 #
 
 PORTNAME=	dasher
-PORTVERSION=	3.2.17
+PORTVERSION=	3.2.18
 PORTEPOCH=	1
 CATEGORIES=	accessibility editors x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -55,6 +56,5 @@ patch-autotools:
 			$$file.tmp > $$file; \
 		${RM} $$file.tmp; \
 	done);
-
 
 .include <bsd.port.post.mk>

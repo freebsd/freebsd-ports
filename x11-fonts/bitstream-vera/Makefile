@@ -3,11 +3,12 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/x11-fonts/bitstream-vera/Makefile,v 1.2 2005/10/14 20:39:59 adamw Exp $
 #
 
 PORTNAME=	bitstream-vera
 PORTVERSION=	1.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/ttf-${PORTNAME}/1.10
@@ -56,12 +57,9 @@ install-fonts:
 	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT.TXT ${FONTSDIR}
 
 install-conf:
-	${MKDIR} ${PREFIX}/etc/fonts
-	if [ ! -f ${PREFIX}/etc/fonts/local.conf ]; then \
-	    ${INSTALL_DATA} ${WRKSRC}/local.conf ${PREFIX}/etc/fonts ; \
-	fi
+	${MKDIR} ${PREFIX}/etc/fonts/conf.d
 	${INSTALL_DATA} ${WRKSRC}/local.conf \
-		${PREFIX}/etc/fonts/local.conf-vera
+		${PREFIX}/etc/fonts/conf.d/0.vera.conf
 
 install-docs:
 .if !defined(NOPORTDOCS)

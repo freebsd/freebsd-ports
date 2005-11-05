@@ -2,19 +2,25 @@ bin/gnome-session
 bin/gnome-session-properties
 bin/gnome-session-remove
 bin/gnome-session-save
-bin/gnome-smproxy
 bin/gnome-wm
 share/gnome/applications/session-properties.desktop
 share/gnome/default.session
 share/gnome/default.wm
-share/gnome/pixmaps/splash/adamw.png
-share/gnome/pixmaps/splash/banana_flex.png
-share/gnome/pixmaps/splash/franco_malatacca.jpg
-share/gnome/pixmaps/splash/franz_klammer-1.png
-share/gnome/pixmaps/splash/franz_klammer-3.png
+share/gnome/pixmaps/splash/MaMBaNgGaoX-2.12.png
+share/gnome/pixmaps/splash/adamw-piggy-2.12.png
+share/gnome/pixmaps/splash/adamw-trophy-2.12.png
+share/gnome/pixmaps/splash/andreas-slogan-2.12.png
+share/gnome/pixmaps/splash/andreas-splash-2.12.png
+share/gnome/pixmaps/splash/domix-splash-2.12.png
+share/gnome/pixmaps/splash/domix-splash2-2.12.png
 share/gnome/pixmaps/splash/gnome-splash.png
+share/gnome/pixmaps/splash/mumija-2.12.png
+share/gnome/pixmaps/splash/mumija2-2.12.png
+share/gnome/pixmaps/splash/mumija3-2.12.png
 share/gnome/pixmaps/splash/original-gnome-splash.png
-share/gnome/pixmaps/splash/radek.png
+share/gnome/pixmaps/splash/tremulant-2.12.png
+share/gnome/pixmaps/splash/tremulant-blood-2.12.png
+share/gnome/pixmaps/splash/tremulant-brushed-metal-2.12.png
 share/locale/af/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-session-2.0.mo
@@ -45,6 +51,7 @@ share/locale/he/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/hi/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/hr/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/hu/LC_MESSAGES/gnome-session-2.0.mo
+share/locale/hy/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/id/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/is/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-session-2.0.mo
@@ -82,9 +89,12 @@ share/locale/th/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/tk/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/uk/LC_MESSAGES/gnome-session-2.0.mo
+share/locale/rw/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/vi/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/xh/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/zu/LC_MESSAGES/gnome-session-2.0.mo
+@unexec /bin/rmdir %D/share/locale/hy/LC_MESSAGES 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/locale/hy 2>/dev/null || /usr/bin/true

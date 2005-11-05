@@ -12,7 +12,7 @@ include/libwnck-1.0/libwnck/wnck-enum-types.h
 include/libwnck-1.0/libwnck/workspace.h
 lib/libwnck-1.a
 lib/libwnck-1.so
-lib/libwnck-1.so.16
+lib/libwnck-1.so.18
 libdata/pkgconfig/libwnck-1.0.pc
 %%DOCSDIR%%/ch01.html
 %%DOCSDIR%%/home.png
@@ -113,14 +113,6 @@ share/locale/wa/LC_MESSAGES/libwnck.mo
 share/locale/xh/LC_MESSAGES/libwnck.mo
 share/locale/zh_CN/LC_MESSAGES/libwnck.mo
 share/locale/zh_TW/LC_MESSAGES/libwnck.mo
-@unexec rmdir %D/share/locale/xh/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/xh 2> /dev/null || true
-@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/rw 2> /dev/null || true
-@unexec rmdir %D/share/locale/mr/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/mr 2> /dev/null || true
-@unexec rmdir %D/share/locale/mi/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/mi 2> /dev/null || true
 @dirrm %%DOCSDIR%%
 @dirrm include/libwnck-1.0/libwnck
 @dirrm include/libwnck-1.0

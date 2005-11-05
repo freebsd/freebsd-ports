@@ -1,5 +1,5 @@
 bin/network-admin
-%%SERVICES%%bin/services-admin
+bin/services-admin
 bin/shares-admin
 bin/time-admin
 bin/users-admin
@@ -58,12 +58,13 @@ share/gnome-system-tools/pixmaps/turbolinux.png
 share/gnome-system-tools/pixmaps/unsupported-distro.png
 share/gnome-system-tools/pixmaps/users-groups.png
 share/gnome-system-tools/pixmaps/users.png
+share/gnome-system-tools/pixmaps/vidalinux.png
 share/gnome-system-tools/pixmaps/vine.png
 share/gnome-system-tools/pixmaps/wavelan-16.png
 share/gnome-system-tools/pixmaps/wavelan-48.png
 share/gnome-system-tools/pixmaps/world_map-960.png
 share/gnome/applications/network.desktop
-%%SERVICES%%share/gnome/applications/services.desktop
+share/gnome/applications/services.desktop
 share/gnome/applications/shares.desktop
 share/gnome/applications/time.desktop
 share/gnome/applications/users.desktop
@@ -77,18 +78,29 @@ share/gnome/help/services-admin/C/figures/service-properties.png
 share/gnome/help/services-admin/C/figures/services-tool.png
 share/gnome/help/services-admin/C/legal.xml
 share/gnome/help/services-admin/C/services-admin.xml
+share/gnome/help/services-admin/nl/figures/service-properties.png
+share/gnome/help/services-admin/nl/figures/services-tool.png
+share/gnome/help/services-admin/nl/legal.xml
+share/gnome/help/services-admin/nl/services-admin.xml
 share/gnome/help/time-admin/C/figures/time-map.png
 share/gnome/help/time-admin/C/figures/time-servers.png
 share/gnome/help/time-admin/C/figures/time-tool.png
 share/gnome/help/time-admin/C/legal.xml
 share/gnome/help/time-admin/C/time-admin.xml
+share/gnome/help/time-admin/nl/figures/time-map.png
+share/gnome/help/time-admin/nl/figures/time-servers.png
+share/gnome/help/time-admin/nl/figures/time-tool.png
+share/gnome/help/time-admin/nl/legal.xml
+share/gnome/help/time-admin/nl/time-admin.xml
 share/gnome/help/users-admin/C/figures/users-tool.png
 share/gnome/help/users-admin/C/legal.xml
 share/gnome/help/users-admin/C/users-admin.xml
 share/gnome/omf/gnome-system-tools/boot-admin-C.omf
 share/gnome/omf/gnome-system-tools/network-admin-C.omf
 share/gnome/omf/gnome-system-tools/services-admin-C.omf
+share/gnome/omf/gnome-system-tools/services-admin-nl.omf
 share/gnome/omf/gnome-system-tools/time-admin-C.omf
+share/gnome/omf/gnome-system-tools/time-admin-nl.omf
 share/gnome/omf/gnome-system-tools/users-admin-C.omf
 share/locale/am/LC_MESSAGES/gnome-system-tools.mo
 share/locale/ar/LC_MESSAGES/gnome-system-tools.mo
@@ -110,6 +122,7 @@ share/locale/fr/LC_MESSAGES/gnome-system-tools.mo
 share/locale/ga/LC_MESSAGES/gnome-system-tools.mo
 share/locale/gl/LC_MESSAGES/gnome-system-tools.mo
 share/locale/gu/LC_MESSAGES/gnome-system-tools.mo
+share/locale/he/LC_MESSAGES/gnome-system-tools.mo
 share/locale/hi/LC_MESSAGES/gnome-system-tools.mo
 share/locale/hr/LC_MESSAGES/gnome-system-tools.mo
 share/locale/hu/LC_MESSAGES/gnome-system-tools.mo
@@ -123,6 +136,8 @@ share/locale/mk/LC_MESSAGES/gnome-system-tools.mo
 share/locale/ml/LC_MESSAGES/gnome-system-tools.mo
 share/locale/mn/LC_MESSAGES/gnome-system-tools.mo
 share/locale/ms/LC_MESSAGES/gnome-system-tools.mo
+share/locale/nb/LC_MESSAGES/gnome-system-tools.mo
+share/locale/ne/LC_MESSAGES/gnome-system-tools.mo
 share/locale/nl/LC_MESSAGES/gnome-system-tools.mo
 share/locale/nn/LC_MESSAGES/gnome-system-tools.mo
 share/locale/no/LC_MESSAGES/gnome-system-tools.mo
@@ -132,6 +147,7 @@ share/locale/pt/LC_MESSAGES/gnome-system-tools.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-system-tools.mo
 share/locale/ro/LC_MESSAGES/gnome-system-tools.mo
 share/locale/ru/LC_MESSAGES/gnome-system-tools.mo
+share/locale/rw/LC_MESSAGES/gnome-system-tools.mo
 share/locale/sk/LC_MESSAGES/gnome-system-tools.mo
 share/locale/sq/LC_MESSAGES/gnome-system-tools.mo
 share/locale/sr/LC_MESSAGES/gnome-system-tools.mo
@@ -143,15 +159,20 @@ share/locale/tr/LC_MESSAGES/gnome-system-tools.mo
 share/locale/uk/LC_MESSAGES/gnome-system-tools.mo
 share/locale/vi/LC_MESSAGES/gnome-system-tools.mo
 share/locale/wa/LC_MESSAGES/gnome-system-tools.mo
+share/locale/xh/LC_MESSAGES/gnome-system-tools.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-system-tools.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-system-tools.mo
 @dirrm share/gnome/omf/gnome-system-tools
 @dirrm share/gnome/help/users-admin/C/figures
 @dirrm share/gnome/help/users-admin/C
 @dirrm share/gnome/help/users-admin
+@dirrm share/gnome/help/time-admin/nl/figures
+@dirrm share/gnome/help/time-admin/nl
 @dirrm share/gnome/help/time-admin/C/figures
 @dirrm share/gnome/help/time-admin/C
 @dirrm share/gnome/help/time-admin
+@dirrm share/gnome/help/services-admin/nl/figures
+@dirrm share/gnome/help/services-admin/nl
 @dirrm share/gnome/help/services-admin/C/figures
 @dirrm share/gnome/help/services-admin/C
 @dirrm share/gnome/help/services-admin

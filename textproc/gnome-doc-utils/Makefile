@@ -3,13 +3,14 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/textproc/gnomedocutils/Makefile,v 1.21 2005/10/12 19:50:19 marcus Exp $
 #
 
 PORTNAME=	gnomedocutils
-PORTVERSION=	0.2.2
+PORTVERSION=	0.4.3
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-doc-utils/0.2
+MASTER_SITE_SUBDIR=	sources/gnome-doc-utils/0.4
 DISTNAME=	gnome-doc-utils-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -36,8 +37,11 @@ MAN1=		xml2po.1
 DOCBOOK_VERSION=4.1.2
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|4\.2|${DOCBOOK_VERSION}|g' \
+	@${REINPLACE_CMD} -e 's|4\.4|${DOCBOOK_VERSION}|g' \
 		${WRKSRC}/doc/xslt/C/gnome-doc-xslt.xml \
 		${WRKSRC}/doc/gnome-doc-make/C/gnome-doc-make.xml
+
+post-install:
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${PREFIX}/share/xml2po
 
 .include <bsd.port.mk>

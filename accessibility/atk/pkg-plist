@@ -26,8 +26,12 @@ include/atk-1.0/atk/atkutil.h
 include/atk-1.0/atk/atkvalue.h
 lib/libatk-1.0.a
 lib/libatk-1.0.so
-lib/libatk-1.0.so.901
+lib/libatk-1.0.so.0
 libdata/pkgconfig/atk.pc
+%%DOCSDIR%%/home.png
+%%DOCSDIR%%/left.png
+%%DOCSDIR%%/right.png
+%%DOCSDIR%%/up.png
 share/locale/af/LC_MESSAGES/atk10.mo
 share/locale/am/LC_MESSAGES/atk10.mo
 share/locale/ar/LC_MESSAGES/atk10.mo
@@ -53,6 +57,7 @@ share/locale/fa/LC_MESSAGES/atk10.mo
 share/locale/fi/LC_MESSAGES/atk10.mo
 share/locale/fr/LC_MESSAGES/atk10.mo
 share/locale/ga/LC_MESSAGES/atk10.mo
+share/locale/gl/LC_MESSAGES/atk10.mo
 share/locale/gu/LC_MESSAGES/atk10.mo
 share/locale/he/LC_MESSAGES/atk10.mo
 share/locale/hi/LC_MESSAGES/atk10.mo
@@ -83,6 +88,7 @@ share/locale/pt/LC_MESSAGES/atk10.mo
 share/locale/pt_BR/LC_MESSAGES/atk10.mo
 share/locale/ro/LC_MESSAGES/atk10.mo
 share/locale/ru/LC_MESSAGES/atk10.mo
+share/locale/rw/LC_MESSAGES/atk10.mo
 share/locale/sk/LC_MESSAGES/atk10.mo
 share/locale/sl/LC_MESSAGES/atk10.mo
 share/locale/sq/LC_MESSAGES/atk10.mo
@@ -94,6 +100,7 @@ share/locale/ta/LC_MESSAGES/atk10.mo
 share/locale/th/LC_MESSAGES/atk10.mo
 share/locale/tk/LC_MESSAGES/atk10.mo
 share/locale/tr/LC_MESSAGES/atk10.mo
+share/locale/ug/LC_MESSAGES/atk10.mo
 share/locale/uk/LC_MESSAGES/atk10.mo
 share/locale/vi/LC_MESSAGES/atk10.mo
 share/locale/wa/LC_MESSAGES/atk10.mo
@@ -101,15 +108,19 @@ share/locale/xh/LC_MESSAGES/atk10.mo
 share/locale/yi/LC_MESSAGES/atk10.mo
 share/locale/zh_CN/LC_MESSAGES/atk10.mo
 share/locale/zh_TW/LC_MESSAGES/atk10.mo
+@dirrm %%DOCSDIR%%
 @exec mkdir -p %D/%%DOCSDIR%%
 @unexec rmdir %D/share/locale/as/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/as 2> /dev/null || true
+@unexec rmdir %D/share/locale/gl/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/gl 2> /dev/null || true
 @unexec rmdir %D/share/locale/li/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/li 2> /dev/null || true
 @unexec rmdir %D/share/locale/mr/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/mr 2> /dev/null || true
 @unexec rmdir %D/share/locale/tk/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/tk 2> /dev/null || true
-@dirrm %%DOCSDIR%%
+@unexec rmdir %D/share/locale/ug/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ug 2> /dev/null || true
 @dirrm include/atk-1.0/atk
 @dirrm include/atk-1.0

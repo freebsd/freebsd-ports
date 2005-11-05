@@ -3,14 +3,15 @@
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/devel/gnomevfs2/Makefile,v 1.115 2005/10/31 00:12:01 marcus Exp $
 #
 
 PORTNAME=	gnomevfs2
-PORTVERSION=	2.10.1
-PORTREVISION=	1
+PORTVERSION=	2.12.1.1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-vfs/2.10
+MASTER_SITE_SUBDIR=	sources/gnome-vfs/2.12
 DISTNAME=	gnome-vfs-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -23,9 +24,9 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomemimedata gconf2 \
-		libbonobo
+		libbonobo ltverhack
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-openssl \
 		--disable-gnutls
@@ -38,37 +39,13 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 GCONF_SCHEMAS=	desktop_default_applications.schemas \
 		desktop_gnome_url_handlers.schemas system_dns_sd.schemas \
-		system_http_proxy.schemas system_smb.schemas
+		system_http_proxy.schemas system_smb.schemas \
+		system_storage.schemas
+
+OPTIONS=	SAMBA "Enable SMB volume support" on \
+		MDNS "Enable Bonjour/Rendezvous support" on
 
 .include <bsd.port.pre.mk>
-
-.if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
-.undef WITHOUT_CDPARANOIA
-.undef WITHOUT_SAMBA
-.undef WITHOUT_MDNS
-WITH_MDNS=		yes
-WITH_CDPARANOIA=	yes
-WITH_SAMBA=		yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libcdda_paranoia.a)
-WITH_CDPARANOIA=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libsmbclient.so)
-WITH_SAMBA=		yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libhowl.so)
-WITH_MDNS=		yes
-.endif
-
-.if defined(WITH_CDPARANOIA)
-LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
-PLIST_SUB+=	CDPARANOIA=""
-.else
-PLIST_SUB+=	CDPARANOIA="@comment "
-.endif
 
 .if exists(${LOCALBASE}/lib/libfam.so) || !defined(WITHOUT_FAM)
 USE_FAM=	yes
@@ -78,15 +55,18 @@ USE_FAM=	yes
 LIB_DEPENDS+=	krb5:${PORTSDIR}/security/heimdal
 .endif
 
-.if defined(WITH_SAMBA)
+.if !defined(WITHOUT_SAMBA)
 LIB_DEPENDS+=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
 PLIST_SUB+=	SAMBA=""
 .else
 PLIST_SUB+=	SAMBA="@comment "
+CONFIGURE_ARGS+=--disable-samba
 .endif
 
-.if defined(WITH_MDNS)
+.if !defined(WITHOUT_MDNS)
 LIB_DEPENDS+=	howl:${PORTSDIR}/net/howl
+.else
+CONFIGURE_ARGS+=--disable-howl
 .endif
 
 post-patch:
@@ -94,8 +74,7 @@ post-patch:
 		${WRKSRC}/libgnomevfs/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
 		s|%%X11BASE%%|${X11BASE}|g' \
-		${WRKSRC}/libgnomevfs/xdgmime.c \
-		${WRKSRC}/libgnomevfs/gnome-vfs-mime-info.c
+		${WRKSRC}/libgnomevfs/xdgmime.c
 	@${SED} -e 's|%%X11BASE%%|${X11BASE}|g' \
 		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
 	@${SED} -e 's|%%X11BASE%%|${X11BASE}|g' \

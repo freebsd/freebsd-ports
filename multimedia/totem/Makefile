@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	totem
-PORTVERSION=	1.0.4
-PORTREVISION?=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -23,7 +22,7 @@ USE_GNOME=	gnomeprefix intlhack gnomehack gnomedesktop desktopfileutils \
 		nautiluscdburner
 WANT_GSTREAMER=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 INSTALLS_OMF=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -36,11 +35,15 @@ OPTIONS?=	DVDNAV "Enable DVD support" on \
 MAN1=	totem.1 totem-video-thumbnailer.1
 GCONF_SCHEMAS=	totem-handlers.schemas totem-video-thumbnail.schemas \
 		totem.schemas
-CONFLICTS?=	totem-gstreamer-[0-9]*
+CONFLICTS=	totem-gstreamer-[0-9]*
 
 .include <bsd.port.pre.mk>
 
+LIB_DEPENDS+=	musicbrainz:${PORTSDIR}/audio/libmusicbrainz
+
 .if defined(WITH_GSTREAMER)
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 CONFIGURE_ARGS+=--enable-gstreamer
 USE_GSTREAMER+=	gnomevfs core gconf
 WITHOUT_DVDNAV=	yes
@@ -86,13 +89,11 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
 		${WRKSRC}/src/totem-preferences.c \
-		${WRKSRC}/src/bacon-video-widget-gst.c
+		${WRKSRC}/src/backend/bacon-video-widget-gst.c
 .if defined(WITH_GSTREAMER)
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
-		${WRKSRC}/src/bacon-video-widget-gst.c
+		${WRKSRC}/src/backend/bacon-video-widget-gst.c
 .endif
-	@${REINPLACE_CMD} -e 's|@LOCALBASE@|${LOCALBASE}|' \
-		${WRKSRC}/src/bacon-video-widget-xine.c
 
 post-install:
 	@-update-desktop-database

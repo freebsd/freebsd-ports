@@ -1,6 +1,21 @@
---- src/common/gst-tool.c.orig	Thu Mar 10 14:39:54 2005
-+++ src/common/gst-tool.c	Thu Mar 10 14:40:00 2005
-@@ -1653,7 +1653,7 @@ poll_backend (GstTool *tool)
+--- src/common/gst-tool.c.orig	Tue Jun 21 15:07:05 2005
++++ src/common/gst-tool.c	Wed Jul  6 01:28:22 2005
+@@ -598,7 +598,14 @@ gst_tool_kill_backend_cb (GstDirectiveEn
+ 		if (tool->root_access == ROOT_ACCESS_SIMULATED_DISABLED)
+ 			tool->root_access = ROOT_ACCESS_SIMULATED;
+ 
++#if 0
++		/*
++		 * We do not need to wait for the tool,
++		 * as it will get SIGPIPE anyway.
++		 * This waitpid causes problems on FreeBSD.
++		 */
+ 		waitpid (tool->backend_pid, NULL, 0);
++#endif
+ 	}
+ }
+ 
+@@ -1655,7 +1662,7 @@ poll_backend (GstTool *tool)
  	struct pollfd fd;
  
  	fd.fd = tool->read_fd;

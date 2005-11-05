@@ -1,5 +1,6 @@
 bin/gconf-merge-tree
 bin/gconftool-2
+%%LDAP%%etc/gconf/2/evoldap.conf
 etc/gconf/2/path
 include/gconf/2/gconf/gconf-changeset.h
 include/gconf/2/gconf/gconf-client.h
@@ -10,14 +11,16 @@ include/gconf/2/gconf/gconf-listeners.h
 include/gconf/2/gconf/gconf-schema.h
 include/gconf/2/gconf/gconf-value.h
 include/gconf/2/gconf/gconf.h
+%%LDAP%%lib/GConf/2/libgconfbackend-evoldap.so
 lib/GConf/2/libgconfbackend-oldxml.so
 lib/GConf/2/libgconfbackend-xml.so
 lib/libgconf-2.a
 lib/libgconf-2.so
-lib/libgconf-2.so.5
+lib/libgconf-2.so.4
 libdata/pkgconfig/gconf-2.0.pc
 libexec/gconf-sanity-check-2
 libexec/gconfd-2
+%%LDAP%%share/GConf/schema/evoldap.schema
 share/aclocal/gconf-2.m4
 share/doc/gconf/ch01.html
 share/doc/gconf/gconf-GConfClient.html
@@ -64,6 +67,7 @@ share/locale/fr/LC_MESSAGES/GConf2.mo
 share/locale/ga/LC_MESSAGES/GConf2.mo
 share/locale/gl/LC_MESSAGES/GConf2.mo
 share/locale/gu/LC_MESSAGES/GConf2.mo
+share/locale/he/LC_MESSAGES/GConf2.mo
 share/locale/hi/LC_MESSAGES/GConf2.mo
 share/locale/hr/LC_MESSAGES/GConf2.mo
 share/locale/hu/LC_MESSAGES/GConf2.mo
@@ -71,6 +75,7 @@ share/locale/id/LC_MESSAGES/GConf2.mo
 share/locale/it/LC_MESSAGES/GConf2.mo
 share/locale/ja/LC_MESSAGES/GConf2.mo
 share/locale/ko/LC_MESSAGES/GConf2.mo
+share/locale/ku/LC_MESSAGES/GConf2.mo
 share/locale/lt/LC_MESSAGES/GConf2.mo
 share/locale/lv/LC_MESSAGES/GConf2.mo
 share/locale/mk/LC_MESSAGES/GConf2.mo
@@ -96,6 +101,7 @@ share/locale/sr/LC_MESSAGES/GConf2.mo
 share/locale/sr@Latn/LC_MESSAGES/GConf2.mo
 share/locale/sv/LC_MESSAGES/GConf2.mo
 share/locale/ta/LC_MESSAGES/GConf2.mo
+share/locale/th/LC_MESSAGES/GConf2.mo
 share/locale/tr/LC_MESSAGES/GConf2.mo
 share/locale/uk/LC_MESSAGES/GConf2.mo
 share/locale/vi/LC_MESSAGES/GConf2.mo
@@ -105,13 +111,11 @@ share/locale/zh_CN/LC_MESSAGES/GConf2.mo
 share/locale/zh_TW/LC_MESSAGES/GConf2.mo
 share/sgml/gconf/gconf-1.0.dtd
 @dirrm share/sgml/gconf
-@unexec rmdir %D/share/locale/yi/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/yi 2> /dev/null || true
-@unexec rmdir %D/share/locale/xh/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/xh 2> /dev/null || true
-@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/rw 2> /dev/null || true
+@unexec rmdir %D/share/locale/ku/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ku 2> /dev/null || true
 @dirrm share/doc/gconf
+@dirrm share/GConf/schema
+@dirrm share/GConf
 @dirrm lib/GConf/2
 @dirrm include/gconf/2/gconf
 @dirrm include/gconf/2

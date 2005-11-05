@@ -1,6 +1,7 @@
 #!/bin/sh
 #
 # $FreeBSD$
+#   $MCom: ports/devel/gnomevfs2/pkg-install.in,v 1.5 2005/06/28 05:40:01 adamw Exp $
 #
 # Restore gconf keys of libgnome.
 

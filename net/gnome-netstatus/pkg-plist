@@ -2,12 +2,6 @@ libdata/bonobo/servers/GNOME_NetstatusApplet_Factory.server
 libexec/gnome-netstatus-applet
 share/gnome/gnome-2.0/ui/GNOME_NetstatusApplet.xml
 share/gnome/gnome-netstatus/gnome-netstatus.glade
-share/gnome/help/gnome-netstatus/C/figures/gnome-netstatus-disconn.png
-share/gnome/help/gnome-netstatus/C/figures/gnome-netstatus-error.png
-share/gnome/help/gnome-netstatus/C/figures/gnome-netstatus-idle.png
-share/gnome/help/gnome-netstatus/C/figures/gnome-netstatus-rx.png
-share/gnome/help/gnome-netstatus/C/figures/gnome-netstatus-tx.png
-share/gnome/help/gnome-netstatus/C/figures/gnome-netstatus-txrx.png
 share/gnome/help/gnome-netstatus/C/gnome-netstatus.xml
 share/gnome/help/gnome-netstatus/C/legal.xml
 share/gnome/help/gnome-netstatus/de/figures/gnome-netstatus-disconn.png
@@ -18,14 +12,7 @@ share/gnome/help/gnome-netstatus/de/figures/gnome-netstatus-tx.png
 share/gnome/help/gnome-netstatus/de/figures/gnome-netstatus-txrx.png
 share/gnome/help/gnome-netstatus/de/gnome-netstatus.xml
 share/gnome/help/gnome-netstatus/de/legal.xml
-share/gnome/help/gnome-netstatus/es/figures/gnome-netstatus-disconn.png
-share/gnome/help/gnome-netstatus/es/figures/gnome-netstatus-error.png
-share/gnome/help/gnome-netstatus/es/figures/gnome-netstatus-idle.png
-share/gnome/help/gnome-netstatus/es/figures/gnome-netstatus-rx.png
-share/gnome/help/gnome-netstatus/es/figures/gnome-netstatus-tx.png
-share/gnome/help/gnome-netstatus/es/figures/gnome-netstatus-txrx.png
 share/gnome/help/gnome-netstatus/es/gnome-netstatus.xml
-share/gnome/help/gnome-netstatus/es/legal.xml
 share/gnome/help/gnome-netstatus/fr/figures/gnome-netstatus-disconn.png
 share/gnome/help/gnome-netstatus/fr/figures/gnome-netstatus-error.png
 share/gnome/help/gnome-netstatus/fr/figures/gnome-netstatus-idle.png
@@ -66,6 +53,7 @@ share/gnome/help/gnome-netstatus/sv/figures/gnome-netstatus-tx.png
 share/gnome/help/gnome-netstatus/sv/figures/gnome-netstatus-txrx.png
 share/gnome/help/gnome-netstatus/sv/gnome-netstatus.xml
 share/gnome/help/gnome-netstatus/sv/legal.xml
+share/gnome/help/gnome-netstatus/uk/gnome-netstatus.xml
 share/gnome/help/gnome-netstatus/zh_CN/figures/gnome-netstatus-disconn.png
 share/gnome/help/gnome-netstatus/zh_CN/figures/gnome-netstatus-error.png
 share/gnome/help/gnome-netstatus/zh_CN/figures/gnome-netstatus-idle.png
@@ -98,6 +86,7 @@ share/gnome/omf/gnome-netstatus/gnome-netstatus-it.omf
 share/gnome/omf/gnome-netstatus/gnome-netstatus-ja.omf
 share/gnome/omf/gnome-netstatus/gnome-netstatus-ko.omf
 share/gnome/omf/gnome-netstatus/gnome-netstatus-sv.omf
+share/gnome/omf/gnome-netstatus/gnome-netstatus-uk.omf
 share/gnome/omf/gnome-netstatus/gnome-netstatus-zh_CN.omf
 share/gnome/omf/gnome-netstatus/gnome-netstatus-zh_HK.omf
 share/gnome/omf/gnome-netstatus/gnome-netstatus-zh_TW.omf
@@ -126,7 +115,9 @@ share/locale/el/LC_MESSAGES/gnome-netstatus.mo
 share/locale/en_CA/LC_MESSAGES/gnome-netstatus.mo
 share/locale/en_GB/LC_MESSAGES/gnome-netstatus.mo
 share/locale/es/LC_MESSAGES/gnome-netstatus.mo
+share/locale/et/LC_MESSAGES/gnome-netstatus.mo
 share/locale/eu/LC_MESSAGES/gnome-netstatus.mo
+share/locale/fa/LC_MESSAGES/gnome-netstatus.mo
 share/locale/fi/LC_MESSAGES/gnome-netstatus.mo
 share/locale/fr/LC_MESSAGES/gnome-netstatus.mo
 share/locale/ga/LC_MESSAGES/gnome-netstatus.mo
@@ -153,6 +144,7 @@ share/locale/pt/LC_MESSAGES/gnome-netstatus.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-netstatus.mo
 share/locale/ro/LC_MESSAGES/gnome-netstatus.mo
 share/locale/ru/LC_MESSAGES/gnome-netstatus.mo
+share/locale/rw/LC_MESSAGES/gnome-netstatus.mo
 share/locale/sk/LC_MESSAGES/gnome-netstatus.mo
 share/locale/sq/LC_MESSAGES/gnome-netstatus.mo
 share/locale/sr/LC_MESSAGES/gnome-netstatus.mo
@@ -164,6 +156,7 @@ share/locale/tr/LC_MESSAGES/gnome-netstatus.mo
 share/locale/uk/LC_MESSAGES/gnome-netstatus.mo
 share/locale/vi/LC_MESSAGES/gnome-netstatus.mo
 share/locale/wa/LC_MESSAGES/gnome-netstatus.mo
+share/locale/xh/LC_MESSAGES/gnome-netstatus.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-netstatus.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-netstatus.mo
 @dirrm share/gnome/omf/gnome-netstatus
@@ -173,6 +166,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-netstatus.mo
 @dirrm share/gnome/help/gnome-netstatus/zh_HK
 @dirrm share/gnome/help/gnome-netstatus/zh_CN/figures
 @dirrm share/gnome/help/gnome-netstatus/zh_CN
+@dirrm share/gnome/help/gnome-netstatus/uk
 @dirrm share/gnome/help/gnome-netstatus/sv/figures
 @dirrm share/gnome/help/gnome-netstatus/sv
 @dirrm share/gnome/help/gnome-netstatus/ko/figures
@@ -183,11 +177,9 @@ share/locale/zh_TW/LC_MESSAGES/gnome-netstatus.mo
 @dirrm share/gnome/help/gnome-netstatus/it
 @dirrm share/gnome/help/gnome-netstatus/fr/figures
 @dirrm share/gnome/help/gnome-netstatus/fr
-@dirrm share/gnome/help/gnome-netstatus/es/figures
 @dirrm share/gnome/help/gnome-netstatus/es
 @dirrm share/gnome/help/gnome-netstatus/de/figures
 @dirrm share/gnome/help/gnome-netstatus/de
-@dirrm share/gnome/help/gnome-netstatus/C/figures
 @dirrm share/gnome/help/gnome-netstatus/C
 @dirrm share/gnome/help/gnome-netstatus
 @dirrm share/gnome/gnome-netstatus

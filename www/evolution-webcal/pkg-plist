@@ -18,6 +18,7 @@ share/locale/eu/LC_MESSAGES/evolution-webcal.mo
 share/locale/fa/LC_MESSAGES/evolution-webcal.mo
 share/locale/fi/LC_MESSAGES/evolution-webcal.mo
 share/locale/fr/LC_MESSAGES/evolution-webcal.mo
+share/locale/gl/LC_MESSAGES/evolution-webcal.mo
 share/locale/gu/LC_MESSAGES/evolution-webcal.mo
 share/locale/hi/LC_MESSAGES/evolution-webcal.mo
 share/locale/hu/LC_MESSAGES/evolution-webcal.mo
@@ -37,8 +38,10 @@ share/locale/pa/LC_MESSAGES/evolution-webcal.mo
 share/locale/pl/LC_MESSAGES/evolution-webcal.mo
 share/locale/pt/LC_MESSAGES/evolution-webcal.mo
 share/locale/pt_BR/LC_MESSAGES/evolution-webcal.mo
+share/locale/ro/LC_MESSAGES/evolution-webcal.mo
 share/locale/ru/LC_MESSAGES/evolution-webcal.mo
 share/locale/rw/LC_MESSAGES/evolution-webcal.mo
+share/locale/sk/LC_MESSAGES/evolution-webcal.mo
 share/locale/sq/LC_MESSAGES/evolution-webcal.mo
 share/locale/sr/LC_MESSAGES/evolution-webcal.mo
 share/locale/sr@Latn/LC_MESSAGES/evolution-webcal.mo
@@ -46,8 +49,11 @@ share/locale/sv/LC_MESSAGES/evolution-webcal.mo
 share/locale/ta/LC_MESSAGES/evolution-webcal.mo
 share/locale/th/LC_MESSAGES/evolution-webcal.mo
 share/locale/tr/LC_MESSAGES/evolution-webcal.mo
+share/locale/ug/LC_MESSAGES/evolution-webcal.mo
 share/locale/uk/LC_MESSAGES/evolution-webcal.mo
 share/locale/vi/LC_MESSAGES/evolution-webcal.mo
 share/locale/xh/LC_MESSAGES/evolution-webcal.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-webcal.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-webcal.mo
+@unexec rmdir %D/share/locale/ug/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ug 2> /dev/null || true

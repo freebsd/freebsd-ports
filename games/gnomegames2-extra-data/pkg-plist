@@ -28,6 +28,3 @@ share/gnome/pixmaps/mahjongg/default.png
 share/gnome/pixmaps/mahjongg/default2.png
 share/gnome/pixmaps/mahjongg/maya.png
 share/gnome/pixmaps/mahjongg/seta.png
-@dirrm share/gnome/gnome-games/same-gnome/themes/2.10
-@dirrm share/gnome/gnome-games/same-gnome/themes
-@dirrm share/gnome/gnome-games/same-gnome

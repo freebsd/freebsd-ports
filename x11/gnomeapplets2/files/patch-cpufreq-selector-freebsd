@@ -1,38 +1,3 @@
---- cpufreq/src/cpufreq-selector/Makefile.in.orig	Mon Feb 14 00:26:10 2005
-+++ cpufreq/src/cpufreq-selector/Makefile.in	Mon Feb 14 00:26:58 2005
-@@ -53,7 +53,7 @@
- PROGRAMS = $(bin_PROGRAMS)
- am_cpufreq_selector_OBJECTS = cpufreq.$(OBJEXT) \
- 	cpufreq-sysfs.$(OBJEXT) cpufreq-procfs.$(OBJEXT) \
--	main.$(OBJEXT)
-+	cpufreq-sysctl.$(OBJEXT) main.$(OBJEXT)
- cpufreq_selector_OBJECTS = $(am_cpufreq_selector_OBJECTS)
- am__DEPENDENCIES_1 =
- cpufreq_selector_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@@ -61,6 +61,7 @@
- depcomp = $(SHELL) $(top_srcdir)/depcomp
- am__depfiles_maybe = depfiles
- @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/cpufreq-procfs.Po \
-+@AMDEP_TRUE@	./$(DEPDIR)/cpufreq-sysctl.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-sysfs.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/cpufreq.Po ./$(DEPDIR)/main.Po
- COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
-@@ -310,6 +311,7 @@
- 	cpufreq.c               cpufreq.h        \
- 	cpufreq-sysfs.c         cpufreq-sysfs.h  \
- 	cpufreq-procfs.c        cpufreq-procfs.h \
-+	cpufreq-sysctl.c        cpufreq-sysctl.h \
- 	main.c
- 
- cpufreq_selector_LDADD = $(CPUFREQ_SELECTOR_LIBS) -lpopt
-@@ -385,6 +387,7 @@
- 	-rm -f *.tab.c
- 
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-procfs.Po@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-sysctl.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-sysfs.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
 --- cpufreq/src/cpufreq-selector/cpufreq-sysctl.h.orig	Mon Feb 14 00:38:57 2005
 +++ cpufreq/src/cpufreq-selector/cpufreq-sysctl.h	Mon Feb 14 00:21:39 2005
 @@ -0,0 +1,51 @@
@@ -87,52 +52,6 @@
 +CPUFreqSysctl *cpufreq_sysctl_new      ();
 +
 +#endif /* __CPUFREQ_SYSCTL_H__ */
---- cpufreq/src/cpufreq-selector/main.c.orig	Mon Feb 14 00:22:12 2005
-+++ cpufreq/src/cpufreq-selector/main.c	Mon Feb 14 00:26:04 2005
-@@ -16,6 +16,7 @@
-  *  Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-  *
-  * Authors : Carlos García Campos <carlosgc@gnome.org>
-+ *           Joe Marcus Clarke <marcus@FreeBSD.org>
-  */
- 
- #include <glib-object.h>
-@@ -26,6 +27,9 @@
- #include "cpufreq.h"
- #include "cpufreq-sysfs.h"
- #include "cpufreq-procfs.h"
-+#ifdef __FreeBSD__
-+#include "cpufreq-sysctl.h"
-+#endif /* __FreeBSD__ */
- 
- gint
- main (gint argc, gchar **argv)
-@@ -35,6 +39,9 @@
- 	   gulong      frequency = 0;
- 	   poptContext ctx;
- 	   gint        nextopt;
-+#ifdef __FreeBSD__
-+	   size_t      len;
-+#endif /* __FreeBSD__ */
- 	   CPUFreq    *cfq;
- 
- 	   struct poptOption options[] = {
-@@ -76,10 +83,15 @@
- 
- 	   poptFreeContext(ctx);
- 
-+#ifndef __FreeBSD__
- 	   if (g_file_test ("/sys/devices/system/cpu/cpu0/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.6 kernel */
- 			 cfq = CPUFREQ (cpufreq_sysfs_new ());
- 	   } else if (g_file_test ("/proc/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.4 kernel */
- 			 cfq = CPUFREQ (cpufreq_procfs_new ());
-+#else
-+           if (sysctlbyname ("dev.cpu.0.freq", NULL, &len, NULL, 0) == 0) {
-+	       		 cfq = CPUFREQ (cpufreq_sysctl_new ());
-+#endif /* __FreeBSD __ */
- 	   } else {
- 			 g_print ("No cpufreq support\n");
- 			 return 1;
 --- cpufreq/src/cpufreq-selector/cpufreq-sysctl.c.orig	Mon Feb 14 00:38:52 2005
 +++ cpufreq/src/cpufreq-selector/cpufreq-sysctl.c	Mon Feb 14 00:44:43 2005
 @@ -0,0 +1,235 @@
@@ -371,3 +290,84 @@
 +
 +	   g_free (governor);
 +}
+--- cpufreq/src/cpufreq-selector/main.c.orig	Sun Apr  3 12:03:13 2005
++++ cpufreq/src/cpufreq-selector/main.c	Sun Jul  3 17:16:19 2005
+@@ -17,6 +17,7 @@
+  *  Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  *
+  * Authors : Carlos García Campos <carlosgc@gnome.org>
++ *           Joe Marcus Clarke <marcus@FreeBSD.org>
+  */
+ 
+ #include <glib-object.h>
+@@ -26,6 +27,9 @@
+ #include "cpufreq.h"
+ #include "cpufreq-sysfs.h"
+ #include "cpufreq-procfs.h"
++#ifdef __FreeBSD__
++#include "cpufreq-sysctl.h"
++#endif /* __FreeBSD__ */
+ 
+ gint
+ main (gint argc, gchar **argv)
+@@ -34,6 +38,9 @@ main (gint argc, gchar **argv)
+         static gint     cpu = 0;
+         static gchar   *governor = NULL;
+         static gulong   frequency = 0;
++#ifdef __FreeBSD__
++	size_t          len;
++#endif /* __FreeBSD__ */
+ 	GError         *error = NULL;
+         CPUFreq        *cfq;
+ 
+@@ -71,10 +78,15 @@ main (gint argc, gchar **argv)
+ 	
+ 	g_option_context_free (context);
+ 	
++#ifndef __FreeBSD__
+         if (g_file_test ("/sys/devices/system/cpu/cpu0/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.6 kernel */
+                 cfq = CPUFREQ (cpufreq_sysfs_new ());
+         } else if (g_file_test ("/proc/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.4 kernel */
+                 cfq = CPUFREQ (cpufreq_procfs_new ());
++#else
++	if (sysctlbyname ("dev.cpu.0.freq", NULL, &len, NULL, 0) == 0) {
++		cfq = CPUFREQ (cpufreq_sysctl_new ());
++#endif /* __FreeBSD__ */
+         } else {
+                 g_print ("No cpufreq support\n");
+                 return 1;
+--- cpufreq/src/cpufreq-selector/Makefile.in.orig	Tue Oct  4 00:21:25 2005
++++ cpufreq/src/cpufreq-selector/Makefile.in	Tue Oct  4 00:27:54 2005
+@@ -55,7 +55,7 @@
+ PROGRAMS = $(bin_PROGRAMS)
+ am_cpufreq_selector_OBJECTS = cpufreq.$(OBJEXT) \
+ 	cpufreq-sysfs.$(OBJEXT) cpufreq-procfs.$(OBJEXT) \
+-	main.$(OBJEXT)
++	cpufreq-sysctl.$(OBJEXT) main.$(OBJEXT)
+ cpufreq_selector_OBJECTS = $(am_cpufreq_selector_OBJECTS)
+ am__DEPENDENCIES_1 =
+ cpufreq_selector_DEPENDENCIES = $(am__DEPENDENCIES_1)
+@@ -64,6 +64,7 @@
+ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/cpufreq-procfs.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-sysfs.Po \
++@AMDEP_TRUE@	./$(DEPDIR)/cpufreq-sysctl.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/cpufreq.Po ./$(DEPDIR)/main.Po
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+@@ -332,6 +333,7 @@
+ 	cpufreq.c               cpufreq.h        \
+ 	cpufreq-sysfs.c         cpufreq-sysfs.h  \
+ 	cpufreq-procfs.c        cpufreq-procfs.h \
++	cpufreq-sysctl.c        cpufreq-sysctl.h \
+ 	main.c
+ 
+ cpufreq_selector_LDADD = $(CPUFREQ_SELECTOR_LIBS) -lpopt
+@@ -407,6 +409,7 @@
+ 	-rm -f *.tab.c
+ 
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-procfs.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-sysctl.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-sysfs.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@

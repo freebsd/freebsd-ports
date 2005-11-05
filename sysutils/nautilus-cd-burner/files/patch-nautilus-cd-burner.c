@@ -1,20 +1,18 @@
---- nautilus-cd-burner.c.orig	Mon Feb 28 19:40:05 2005
-+++ nautilus-cd-burner.c	Mon Feb 28 20:05:56 2005
-@@ -23,6 +23,8 @@
-  *          Bastien Nocera <hadess@hadess.net>
+--- nautilus-cd-burner.c.orig	Wed May 11 18:56:59 2005
++++ nautilus-cd-burner.c	Tue May 17 17:11:49 2005
+@@ -25,6 +25,8 @@
+  *          William Jon McCann <mccann@jhu.edu>
   */
  
 +#include <sys/types.h>
 +#include <sys/stat.h>
- #include <gtk/gtk.h>
- #include <gtk/gtkfilesel.h>
- #include <gtk/gtkseparatormenuitem.h>
-@@ -843,8 +845,19 @@
+ #include <time.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -1103,10 +1105,20 @@ burn_cd (const NautilusBurnDrive *drive,
  		}
  
  		if (res == NAUTILUS_BURN_RECORDER_RESULT_RETRY) {
--			g_free (filename);
--			filename = g_build_filename (g_get_tmp_dir (), "image.iso.XXXXXX", NULL);
 +			gchar *path1;
 +
 +			path1 = g_strdup_printf ("%s/.ncb", g_get_home_dir());
@@ -23,11 +21,13 @@
 +				mkdir (path1, 0700);
 +			}
 +
-+			if (filename != NULL) {
-+				g_free (filename);
-+			}
+ 			g_free (toc_filename);
+ 			g_free (filename);
+ 
+-			filename = g_build_filename (g_get_tmp_dir (), "image.iso.XXXXXX", NULL);
 +			filename = g_build_filename (path1, "image.iso.XXXXXX", NULL);
 +			g_free (path1);
- 			fd = g_mkstemp(filename);
++
+ 			fd = g_mkstemp (filename);
  			close (fd);
  

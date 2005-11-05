@@ -3,14 +3,15 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/x11/gnomeapplets2/Makefile,v 1.94 2005/10/08 19:41:40 marcus Exp $
 #
 
 PORTNAME=	gnomeapplets2
-PORTVERSION=	2.10.1
-PORTREVISION=	3
+PORTVERSION=	2.12.1
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-applets/2.10
+MASTER_SITE_SUBDIR=	sources/gnome-applets/2.12
 DISTNAME=	gnome-applets-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -28,10 +29,11 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNOME_DESKTOP_VERSION=2
 INSTALLS_OMF=	yes
+INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomepanel \
-		gail
+		gail gnomedocutils
 USE_GSTREAMER=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		FREEBSD_SYS=${FREEBSD_SYS}
@@ -52,22 +54,6 @@ PLIST_SUB=	BATTERY="@comment "
 .else
 GCONF_SCHEMAS+=	battstat.schemas
 PLIST_SUB=	BATTERY=""
-
-.if ${OSVERSION} < 600019
-.if ${OSVERSION} < 503105 || ${OSVERSION} >= 600000
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "              W  A  R  N  I  N  G"
-	@${ECHO_MSG} "*****************************************************"
-	@${ECHO_MSG} "* gnomeapplets2 requires that you have your kernel  *"
-	@${ECHO_MSG} "* sources installed. If your kernel sources         *"
-	@${ECHO_MSG} "* are somewhere other than /usr/src/sys, you        *"
-	@${ECHO_MSG} "* may set the FREEBSD_SYS variable to the           *"
-	@${ECHO_MSG} "* correct path.                                     *"
-	@${ECHO_MSG} "*****************************************************"
-	@${ECHO_MSG} ""
-.endif
-.endif
 .endif
 
 .if ${ARCH} != "i386" && ${ARCH} != "amd64"

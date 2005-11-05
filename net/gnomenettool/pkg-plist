@@ -23,6 +23,7 @@ share/locale/el/LC_MESSAGES/gnome-nettool.mo
 share/locale/en_CA/LC_MESSAGES/gnome-nettool.mo
 share/locale/en_GB/LC_MESSAGES/gnome-nettool.mo
 share/locale/es/LC_MESSAGES/gnome-nettool.mo
+share/locale/et/LC_MESSAGES/gnome-nettool.mo
 share/locale/eu/LC_MESSAGES/gnome-nettool.mo
 share/locale/fa/LC_MESSAGES/gnome-nettool.mo
 share/locale/fi/LC_MESSAGES/gnome-nettool.mo
@@ -52,6 +53,7 @@ share/locale/pt/LC_MESSAGES/gnome-nettool.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-nettool.mo
 share/locale/ro/LC_MESSAGES/gnome-nettool.mo
 share/locale/ru/LC_MESSAGES/gnome-nettool.mo
+share/locale/rw/LC_MESSAGES/gnome-nettool.mo
 share/locale/sk/LC_MESSAGES/gnome-nettool.mo
 share/locale/sq/LC_MESSAGES/gnome-nettool.mo
 share/locale/sr/LC_MESSAGES/gnome-nettool.mo
@@ -63,6 +65,7 @@ share/locale/tr/LC_MESSAGES/gnome-nettool.mo
 share/locale/uk/LC_MESSAGES/gnome-nettool.mo
 share/locale/vi/LC_MESSAGES/gnome-nettool.mo
 share/locale/wa/LC_MESSAGES/gnome-nettool.mo
+share/locale/xh/LC_MESSAGES/gnome-nettool.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-nettool.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-nettool.mo
 @dirrm share/gnome/gnome-nettool/pixmaps

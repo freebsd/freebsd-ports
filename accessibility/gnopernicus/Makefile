@@ -3,13 +3,14 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/accessibility/gnopernicus/Makefile,v 1.63 2005/10/12 00:10:26 marcus Exp $
 #
 
 PORTNAME=	gnopernicus
-PORTVERSION=	0.10.9
+PORTVERSION=	0.12.0
 CATEGORIES=	accessibility x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.10
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.12
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -23,13 +24,13 @@ INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui atspi gnomespeech
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV=	SED="${SED}"
 
 GCONF_SCHEMAS=	brlmonitor.schemas gnopernicus.schemas remote.schemas
-SHLIB_VERSION=	9
+SHLIB_VERSION=	0
 PLIST_SUB=	SHLIB_VERSION=${SHLIB_VERSION}
 
 post-patch:

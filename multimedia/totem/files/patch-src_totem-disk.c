@@ -1,5 +1,5 @@
---- src/totem-disc.c.orig	Sun Mar 13 08:37:57 2005
-+++ src/totem-disc.c	Wed Mar 23 03:29:26 2005
+--- src/plparse/totem-disc.c.orig	Sun Mar 13 08:37:57 2005
++++ src/plparse/totem-disc.c	Wed Mar 23 03:29:26 2005
 @@ -34,18 +34,40 @@
  #include <stdio.h>
  #include <stdlib.h>

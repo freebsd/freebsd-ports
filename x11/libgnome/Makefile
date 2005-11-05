@@ -3,13 +3,14 @@
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
+#   $MCom: ports/x11/libgnome/Makefile,v 1.61 2005/09/07 16:21:36 marcus Exp $
 #
 
 PORTNAME=	libgnome
-PORTVERSION=	2.10.1
+PORTVERSION=	2.12.0.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.10
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.12
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -24,14 +25,16 @@ USE_REINPLACE=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack esound \
-		gnomevfs2 libxslt
+		gnomevfs2 libxslt ltverhack
 USE_BISON=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 SUB_FILES=	pkg-deinstall
+
+MAN7=		gnome-options.7
 
 GCONF_SCHEMAS=	desktop_gnome_accessibility_keyboard.schemas \
 		desktop_gnome_accessibility_startup.schemas \

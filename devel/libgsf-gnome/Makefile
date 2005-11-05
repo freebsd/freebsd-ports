@@ -3,6 +3,7 @@
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/devel/libgsf-gnome/Makefile,v 1.8 2005/09/08 17:53:00 marcus Exp $
 #
 
 CATEGORIES=	devel gnome
@@ -15,17 +16,21 @@ MASTERDIR=	${.CURDIR}/../libgsf
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-USE_GNOME=	gnomehack libgsf gnomevfs2
+USE_GNOME=	gnomehack libgsf gnomevfs2 ltverhack intlhack
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc/gsf \
 		--disable-gtk-doc --with-bz2 --with-gnome
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgsf-1"
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lgsf-1"
+
+GCONF_SCHEMAS=
+GSF_SLAVE=	yes
 
 do-build:
 		@cd ${WRKSRC}/gsf-gnome && ${MAKE}
 
 do-install:
-		cd ${WRKSRC}/gsf-gnome && ${MAKE} install
+		cd ${WRKSRC}/gsf-gnome && ${MAKE} ${INSTALL_TARGET}
+		${MKDIR} ${PREFIX}/libdata/pkgconfig
 		${INSTALL_DATA} ${WRKSRC}/libgsf-gnome-1.pc ${PREFIX}/libdata/pkgconfig
 
 .include "${MASTERDIR}/Makefile"
