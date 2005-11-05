@@ -3,6 +3,7 @@
 # Whom:                 Alexander Nedotsukov <bland@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/databases/libgdamm/Makefile,v 1.3 2005/10/14 20:39:55 adamw Exp $
 #
 
 PORTNAME=	libgdamm
@@ -28,6 +29,8 @@ USE_INC_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static
 
+BROKEN=	"Does not build with libgda-1.3.91"
+
 patch-autotools:
 	@(cd ${PATCH_WRKSRC}; \
 	for file in ${LIBTOOLFILES}; do \
@@ -40,5 +43,8 @@ patch-autotools:
 post-patch:
 	@${REINPLACE_CMD} -e "s|\(-lglibmm\)|-L\$$(GMM_PROCDIR)/../.. \1|" \
 		${WRKSRC}/tools/extra_defs_gen/Makefile.in
+# remove after next update!!
+	@${REINPLACE_CMD} -e "s|libgda >=|libgda-2.0 >=|g" \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
