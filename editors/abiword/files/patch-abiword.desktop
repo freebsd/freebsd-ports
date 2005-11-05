@@ -1,5 +1,5 @@
---- abiword.desktop.orig	Mon Apr  4 00:10:55 2005
-+++ abiword.desktop	Mon Apr  4 00:12:20 2005
+--- abiword.desktop.orig	Tue Oct  4 13:22:33 2005
++++ abiword.desktop	Tue Oct  4 13:23:58 2005
 @@ -3,11 +3,11 @@
  Icon=abiword_48.png
  Terminal=false

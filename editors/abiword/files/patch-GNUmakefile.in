@@ -1,6 +1,6 @@
---- GNUmakefile.in.orig	Wed Jan  5 15:28:11 2005
-+++ GNUmakefile.in	Wed Jan  5 15:30:55 2005
-@@ -315,15 +315,15 @@
+--- GNUmakefile.in.orig	Wed Jul 20 22:21:46 2005
++++ GNUmakefile.in	Wed Jul 20 22:23:12 2005
+@@ -337,15 +337,15 @@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  SUBDIRS = src
@@ -25,7 +25,7 @@
  @BIGENDIAN_FALSE@dictionary = $(top_srcdir)/../abidistfiles/dictionary/LittleEndian32.american.hash
  @BIGENDIAN_TRUE@dictionary = $(top_srcdir)/../abidistfiles/dictionary/BigEndian32.american.hash
  @WITH_ISPELL_FALSE@INSTALLDICTIONARY = no
-@@ -816,7 +816,6 @@
+@@ -844,7 +844,6 @@
  
  # Install the datafiles. This is quick-and-dirty.
  install-data-local:
@@ -33,7 +33,7 @@
  	if test -d $(top_srcdir)/../abidistfiles ; then \
  	  for dir in `cd $(top_srcdir)/../abidistfiles; find . -type d ! -name CVS` ; do \
  	    $(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/$$dir ;\
-@@ -829,11 +828,7 @@
+@@ -857,11 +856,7 @@
  	      for file in `echo $(top_srcdir)/../abidistfiles/$$dir/* | grep -v MANIFEST`; do \
  	        if test -f $$file ; then \
  		  sfile=`echo "$$file" | sed 's/\.[^.]*$$//'`; \

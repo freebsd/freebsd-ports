@@ -10,12 +10,14 @@
 %%FREETRANSLATION:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiFreeTranslation.so
 %%GDICT:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiGdict.so
 %%GOOGLE:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiGoogle.so
+%%GRAMMAR:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiGrammar.so
 %%HRTEXT:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiHRText.so
 %%HANCOM:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiHancom.so
 %%JPEG:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiJPEG.so
 %%LATEX:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiLaTeX.so
 %%MSWRITE:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiMSWrite.so
 %%NROFF:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiNroff.so
+%%OPENDOCUMENT:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiOpenDocument.so
 %%OPENWRITER:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiOpenWriter.so
 %%PDB:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiPalmDoc.so
 %%PSION:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiPsion.so

@@ -3,10 +3,11 @@
 # Whom:                 Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/editors/abiword/Makefile,v 1.2 2005/10/29 22:31:16 marcus Exp $
 #
 
 PORTNAME=	abiword
-PORTVERSION=	2.2.8
+PORTVERSION=	2.4.1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -26,7 +27,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_GNOME=	gnomehier libglade2 libxml2
+USE_GNOME=	libglade2 libxml2 libgnomeprintui desktopfileutils
 WANT_GNOME=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
@@ -41,13 +42,13 @@ CONFIGURE_ARGS=	--enable-xft \
 		--disable-peer-config
 MAKEFILE=	GNUmakefile
 
-EXCLUDE_EXTRACT=	MSVC6 MSVC71 abipbx abiword-docs abiword-plugins expat \
-			fribidi libiconv libpng pbx popt wv zlib
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${EXCLUDE_EXTRACT:S/^/--exclude /}
-
-ABIVERSION=	2.2
+ABIVERSION=	2.4
 PLIST_SUB+=	ABIVERSION=${ABIVERSION}
 WRKSRC=		${WRKDIR}/abiword-${PORTVERSION}/abi
+
+EXTERNALS=	MSVC* abipbx abiword-docs abiword-plugins expat fribidi \
+		libiconv libpng pbx popt wv zlib
+EXTRACT_AFTER_ARGS=| ${TAR} -xpf - ${EXTERNALS:C,^,--exclude ${DISTNAME}/,}
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug \
@@ -64,10 +65,10 @@ PLIST_SUB+=		DICT:=""
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mlibgnomeprintui}!=""
-USE_GNOME+=		libgnomeprintui libgnomeui desktopfileutils
+.if ${HAVE_GNOME:Mlibgnomeui}!=""
+USE_GNOME+=		libgnomeui
 CONFIGURE_ARGS+=	--enable-gnome
-PKGNAMESUFFIX=		-gnome
+PKGNAMESUFFIX:=		-gnome
 GNOME_ENABLED=		yes
 .endif
 
@@ -97,17 +98,19 @@ post-patch:
 		 s|[(]libdir[)]/bonobo/servers|(prefix)/libdata/bonobo/servers|g'
 
 post-install:
-	@${MKDIR} ${PREFIX}/lib/AbiWord-${ABIVERSION}/plugins
-.if defined(GNOME_ENABLED)
+	@${MKDIR} ${X11BASE}/lib/AbiWord-${ABIVERSION}/plugins
+	@${MKDIR} ${X11BASE}/share/applications
 	@${INSTALL_DATA} ${WRKSRC}/abiword.desktop \
-		${X11BASE}/share/gnome/applications/abiword.desktop
+		${X11BASE}/share/applications/abiword.desktop
+	@${MKDIR} ${X11BASE}/share/pixmaps
 	@${LN} -sf ${PREFIX}/share/AbiSuite-${ABIVERSION}/icons/abiword_48.png \
-		${X11BASE}/share/gnome/pixmaps/abiword_48.png
+		${X11BASE}/share/pixmaps/abiword_48.png
+.if defined(GNOME_ENABLED)
 	@${INSTALL_DATA} ${WRKDIR}/abiword-${PORTVERSION}/abidistfiles/GNOME_AbiWord_Control_${ABIVERSION:S/./_/}.server \
 		${X11BASE}/libdata/bonobo/servers/
 	@${INSTALL_DATA} ${WRKDIR}/abiword-${PORTVERSION}/abidistfiles/abi-nautilus-view-file.xml \
 		${X11BASE}/share/gnome/gnome-2.0/ui/
-	@-update-desktop-database
 .endif
+	@-update-desktop-database
 
 .include <bsd.port.post.mk>
