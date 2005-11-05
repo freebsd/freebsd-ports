@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	flashplugin
-PORTVERSION=	7.0r25
-PORTREVISION=	2
+PORTVERSION=	7.0r61
 CATEGORIES=	www multimedia linux
-MASTER_SITES=	http://download.macromedia.com/pub/shockwave/flash/english/linux/${PORTVERSION}/
+MASTER_SITES=	http://fpdownload.macromedia.com/get/shockwave/flash/english/linux/7.0r25/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	install_flash_player_7_linux
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
