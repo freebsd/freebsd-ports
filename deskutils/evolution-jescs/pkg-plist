@@ -1,0 +1,34 @@
+lib/evolution/%%EVO_VERSION%%/libwcapcalendar.a
+lib/evolution/%%EVO_VERSION%%/libwcapcalendar.so
+lib/evolution/%%EVO_VERSION%%/libwcapcalendar.so.0
+lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelsunone.so
+lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelsunone.urls
+libdata/bonobo/servers/GNOME_Evolution_SunOne_Storage.server
+share/gnome/evolution-jescs/glade/sunone-add-permission-dialog.glade
+share/gnome/evolution-jescs/glade/sunone-permissions-dialog.glade
+share/gnome/evolution-jescs/glade/sunone-subscription-dialog.glade
+share/locale/ca/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/cs/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/de/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/en_CA/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/en_GB/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/es/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/fr/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/it/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/ja/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/ko/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/no/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/pl/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/pt/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/pt_BR/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/ru/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/rw/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/sk/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/sq/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/sv/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/uk/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/zh_CN/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/zh_HK/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/zh_TW/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+@dirrm share/gnome/evolution-jescs/glade
+@dirrm share/gnome/evolution-jescs
