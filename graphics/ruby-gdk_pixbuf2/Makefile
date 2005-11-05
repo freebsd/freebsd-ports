@@ -3,6 +3,7 @@
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
+#   $MCom: ports/graphics/ruby-gdk_pixbuf2/Makefile,v 1.2 2005/10/17 07:05:40 mezz Exp $
 #
 
 PORTNAME=	gdk_pixbuf2

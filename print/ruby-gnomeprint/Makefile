@@ -3,6 +3,7 @@
 # Whom:					Mezz <mezz@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/print/ruby-gnomeprint/Makefile,v 1.2 2005/10/17 07:05:41 mezz Exp $
 #
 
 PORTNAME=	gnomeprint

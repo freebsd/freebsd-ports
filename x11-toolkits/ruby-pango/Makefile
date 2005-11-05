@@ -3,6 +3,7 @@
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
+#   $MCom: ports/x11-toolkits/ruby-pango/Makefile,v 1.2 2005/10/17 07:05:43 mezz Exp $
 #
 
 PORTNAME=	pango
@@ -17,7 +18,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	Ruby binding for Pango
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
+BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/cairo.so:${PORTSDIR}/graphics/ruby-cairo
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2 \
+		${RUBY_SITEARCHLIBDIR}/cairo.so:${PORTSDIR}/graphics/ruby-cairo
 
 USE_RUBY=	yes
 USE_GNOME=	pango
@@ -30,6 +33,11 @@ WRKSRC=		${RUBY_GNOME_WRKSRC}/${PORTNAME}
 INSTALL_TARGET=	site-install
 
 DOCS=		COPYING.LIB ChangeLog README
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|local/bin/|bin/env |g' \
+		${WRKSRC}/sample/layout.rb
+	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 post-install:
 .if !defined(NOPORTDOCS)

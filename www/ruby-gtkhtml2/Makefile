@@ -3,6 +3,7 @@
 # Whom:					Mezz <mezz7@cox.net>
 #
 # $FreeBSD$
+#   $MCom: ports/www/ruby-gtkhtml2/Makefile,v 1.2 2005/10/17 07:05:42 mezz Exp $
 #
 
 PORTNAME=	gtkhtml2

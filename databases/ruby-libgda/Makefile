@@ -3,6 +3,7 @@
 # Whom:					Mezz <mezz7@cox.net>
 #
 # $FreeBSD$
+#   $MCom: ports/databases/ruby-libgda/Makefile,v 1.2 2005/10/17 07:05:39 mezz Exp $
 #
 
 PORTNAME=	libgda
@@ -22,6 +23,8 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
 USE_RUBY=	yes
 USE_GNOME=	libgda2
 USE_RUBY_EXTCONF=	yes
+
+BROKEN="Doesn't build with newer libgda-2.0"
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 

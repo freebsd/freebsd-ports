@@ -3,6 +3,7 @@
 # Whom:					Mezz <mezz7@cox.net>
 #
 # $FreeBSD$
+#   $MCom: ports/x11-toolkits/ruby-gtkglext/Makefile,v 1.2 2005/10/17 07:05:43 mezz Exp $
 #
 
 PORTNAME=	gtkglext

@@ -3,6 +3,7 @@
 # Whom:					Mezz <mezz@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/x11-toolkits/ruby-gnomeprintui/Makefile,v 1.2 2005/10/17 07:05:42 mezz Exp $
 #
 
 PORTNAME=	gnomeprintui
@@ -30,6 +31,12 @@ WRKSRC=		${RUBY_GNOME_WRKSRC}/gnomeprintui
 INSTALL_TARGET=	site-install
 
 DOCS=		COPYING.LIB ChangeLog README
+
+# Have to do that to generate ruby-gnomeprint's rblibgnomeprintversion.h or
+# it will not build.
+pre-configure:
+	@(cd ${RUBY_GNOME_WRKSRC}/gnomeprint ; ${SETENV} ${CONFIGURE_ENV} \
+		${RUBY} ${RUBY_FLAGS} ${RUBY_EXTCONF} ${CONFIGURE_ARGS})
 
 post-install:
 .if !defined(NOPORTDOCS)

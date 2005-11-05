@@ -3,6 +3,7 @@
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
+#   $MCom: ports/devel/ruby-gnomevfs/Makefile,v 1.2 2005/10/17 07:05:40 mezz Exp $
 #
 
 PORTNAME=	gnomevfs
