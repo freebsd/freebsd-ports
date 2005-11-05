@@ -3,25 +3,24 @@
 # Whom:				Alan Eldridge <alane@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports-stable/www/firefox/Makefile,v 1.18 2005/08/20 21:53:54 mezz Exp $
+#   $MCom: ports/www/firefox-devel/Makefile,v 1.23 2005/11/02 23:41:52 marcus Exp $
 #
 
 PORTNAME=	firefox
-PORTVERSION=	1.0.7
-PORTREVISION=	4
+DISTVERSION=	1.5rc1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}/source
-DISTNAME=	${PORTNAME}-${PORTVERSION}-source
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source/
+PKGNAMESUFFIX=	${FF_SUFX}
+DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg	\
-		nspr4:${PORTSDIR}/devel/nspr	\
-		png:${PORTSDIR}/graphics/png	\
-		nss3:${PORTSDIR}/security/nss
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png \
+		Xft.2:${PORTSDIR}/x11-fonts/libXft
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 ALL_TARGET=	default
@@ -33,10 +32,11 @@ PLIST=		${WRKDIR}/plist
 PLUGINSDIR=	${PREFIX}/lib/browser_plugins
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 libidl gnomehier desktopfileutils
+USE_GNOME=	gtk20 libidl desktopfileutils
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
+USE_GCC=	3.4+
 WRKSRC=		${WRKDIR}/mozilla
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
@@ -44,51 +44,43 @@ KRB5_HOME?=	/usr
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
 			--exclude */macbuild/*\
-			--exclude */nsprpub/*\
 			--exclude */package/* \
-			--exclude */zlib/ \
-			--exclude mozilla/modules/libimg/png \
-			--exclude mozilla/jpeg \
-			--exclude mozilla/dbm \
-			--exclude mozilla/js/src/fdlibm \
-			--exclude mozilla/security/nss	\
-			--exclude mozilla/gc/boehm	\
 			--exclude .cvsignore \
 			--exclude makefile.win \
 			--exclude MANIFEST
 
-PORTNAME_ICON=	${PREFIX}/lib/${PORTNAME}/chrome/icons/default/default.xpm
+FIREFOX=	${PORTNAME}
+FF_SUFX=	-devel
+FF=		${FIREFOX}${FF_SUFX}
+FF_VER=		1.5
+#FF_VER=	${PORTVERSION}
 
-PKGCONFIG_FILES=${PORTNAME}-gtkmozembed ${PORTNAME}-js ${PORTNAME}-xpcom \
-		${PORTNAME}-plugin
+FIREFOX_ICON=		${FF}.xpm
+FIREFOX_ICON_SRC=	${PREFIX}/lib/${FF}/icons/default.xpm
+
+PKGCONFIG_FILES=firefox-gtkmozembed firefox-js firefox-xpcom \
+		firefox-nspr firefox-nss firefox-plugin
 
 JPI_LIST?=\
 	${LOCALBASE}/jdk1.5.0/jre/plugin/${ARCH}/ns7/libjavaplugin_oji.so \
 	${LOCALBASE}/jdk1.4.2/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so
 
-SYSTEM_PREFS=	${FAKEDIR}/lib/${PORTNAME}-${PORTVERSION}/defaults/pref/${PORTNAME}.js
-SCRIPTS_DIR=	${FAKEDIR}/lib/${PORTNAME}-${PORTVERSION}
-MOZ_PIS_SCRIPTS=S50cleanhome
-MOZ_PIS_DIR=	${SCRIPTS_DIR}/init.d
+SYSTEM_PREFS=		${FAKEDIR}/lib/${FF}/defaults/pref/firefox.js
+SCRIPTS_DIR=		${FAKEDIR}/lib/${FF}
+MOZ_PIS_SCRIPTS=	S50cleanhome
+MOZ_PIS_DIR=		${SCRIPTS_DIR}/init.d
+CPPFLAGS+=	-I${X11BASE}/include -I${LOCALBASE}/include
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${X11BASE}/lib
+LIBS+=		${PTHREAD_LIBS}
 
 OPTIONS=	DEBUG "Build a debugging image" off \
 		LOGGING "Enable additional log messages" off \
 		OPTIMIZED_CFLAGS "Enable some additional optimizations" off \
-		XFT "Enable support for anti-aliased fonts" on \
 		SMB "Enable smb:// URI support using gnomevfs" off \
 		NEWTAB "Open external links in a new tab" on
-#		CJK "Enable CJK font family support" off
 
 .include <bsd.port.pre.mk>
-
-# Enable CJK Font Familyname support
-#.if defined(WITH_CJK)
-#PATCH_SITES+=	http://bbs.ilc.edu.tw/~chinsan/ \
-#		http://bsdchat.com/dist/firefly-cjk-patchset/ \
-#		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
-#PATCHFILES+=	mozilla-1.7.10-cjkfamilyname-20050731.patch.gz
-#PATCH_DIST_STRIP+=	-p1
-#.endif
 
 .if defined(WITH_DEBUG)
 WITH_LOGGING=		yes
@@ -106,23 +98,10 @@ CONFIGURE_ENV+=		WITH_OPTIMIZE=-O
 CONFIGURE_ENV+=	WITH_LOGGING=yes
 .endif # defined(WITH_LOGGING)
 
-.if defined(WITHOUT_XFT)
-CONFIGURE_ENV+=	WITHOUT_XFT=yes
-.else
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
-.endif # !defined(WITHOUT_XFT)
-
 .if defined(WITH_SMB)
 USE_GNOME+=	gnomevfs2
 CONFIGURE_ENV+=	WITH_SMB=yes
 .endif # defined(WITH_SMB)
-
-CPPFLAGS+=		-I${X11BASE}/include -I${LOCALBASE}/include
-CFLAGS+=		${PTHREAD_CFLAGS}
-LDFLAGS+=		-L${X11BASE}/lib
-LIBS+=			${PTHREAD_LIBS}
-
-EXTRA_SCRIPTS=		${PORTNAME}.rb
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500035
 IGNORE=	core dumps on alpha during post-build
@@ -148,28 +127,20 @@ post-extract::
 		-e 's|@PERL@|${PERL5}|'			\
 		-e 's|@KRB5_HOME@|${KRB5_HOME}|'		\
 		<${FILESDIR}/mozconfig.in >${WRKSRC}/.mozconfig
-	@${SED} -e 's|@PORTNAME_ICON@|${PORTNAME_ICON}|' \
-		<${FILESDIR}/${PORTNAME}.desktop.in >${WRKDIR}/${PORTNAME}.desktop
+	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' \
+		<${FILESDIR}/firefox.desktop.in >${WRKDIR}/${FF}.desktop
 
 post-patch:
-	@${REINPLACE_CMD} -e  's/%{idldir}/%idldir%/g ; \
-		s|"%FULL_NSPR_CFLAGS%"|`nspr-config --cflags`|g ; \
-		s|"%FULL_NSPR_LIBS%"|`nspr-config --libs`|g' \
-			${WRKSRC}/build/unix/mozilla-config.in
-	@${SED} -e 's|%%MOZDIR%%|${PREFIX}/lib/${PORTNAME}|g ; \
+	@${REINPLACE_CMD} -e 's|%%FIREFOX%%|${FF}|' \
+		${WRKSRC}/config/autoconf.mk.in
+	@${SED} -e 's|%%MOZDIR%%|${PREFIX}/lib/${FF}|g ; \
 		s|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%X11BASE%%|${X11BASE}|g' \
 		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
-	@${SED} -e 's|%%MOZDIR%%|${PREFIX}/lib/${PORTNAME}|g' \
+	@${SED} -e 's|%%MOZDIR%%|${PREFIX}/lib/${FF}|g' \
 		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
-.for ii in ${EXTRA_SCRIPTS}
-	@${SED} -e 's|%%MOZILLA%%|${PORTNAME}|g ; \
-		s|%%PREFIX%%|${PREFIX}|g ; \
-		s|%%X11BASE%%|${X11BASE}|g' \
-		< ${FILESDIR}/${ii} > ${WRKDIR}/${ii}
-.endfor
 .for ii in ${MOZ_PIS_SCRIPTS}
-	@${SED} -e 's|%%MOZILLA%%|${PORTNAME}|g ; \
+	@${SED} -e 's|%%MOZILLA%%|${FF}|g ; \
 		s|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%X11BASE%%|${X11BASE}|g' \
 		< ${FILESDIR}/moz_pis_${ii} > ${WRKDIR}/moz_pis_${ii}
@@ -178,8 +149,10 @@ post-patch:
 		${WRKSRC}/build/unix/run-mozilla.sh
 	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g ; \
 		s|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/configure
+		${WRKSRC}/configure \
+		${WRKSRC}/nsprpub/configure
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/nsprpub/config/config.mk \
 		${WRKSRC}/security/coreconf/FreeBSD.mk \
 		${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
 		${WRKSRC}/js/src/Makefile.in
@@ -187,12 +160,12 @@ post-patch:
 		${WRKSRC}/widget/src/gtk2/nsSound.cpp
 	@${REINPLACE_CMD} -E -e 's|libcups\.so\.[0-9]+|libcups.so|g' \
 		${WRKSRC}/gfx/src/gtk/nsDeviceContextSpecG.cpp
-	@${REINPLACE_CMD} -e 's|/usr/local/netscape|${LOCALBASE}|g' \
-		-e 's|/usr/local/lib/netscape|${LOCALBASE}/lib|g' \
-		${WRKSRC}/xpcom/*/SpecialSystemDirectory.cpp
-	@${FIND} ${WRKSRC} -name all.js | ${XARGS} ${REINPLACE_CMD} -e \
-		'/accessibility.typeaheadfind.enablesound/s/true/false/ ; \
-		/dom.disable_window_open_feature.toolbar/s/false/true/'
+.for ii in modules/libpref/src/init extensions/sroaming/resources/content/prefs \
+	embedding/minimo
+	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/ ; \
+		/dom.disable_window_open_feature.toolbar/s/false/true/' \
+		${WRKSRC}/${ii}/all.js
+.endfor
 
 pre-configure:
 	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]'`" ]; then \
@@ -206,16 +179,17 @@ pre-install:
 		Makefile ${MAKE_ARGS} ${INSTALL_TARGET}
 	@${MKDIR} ${SCRIPTS_DIR}
 	@${MKDIR} ${MOZ_PIS_DIR}
-	${ECHO_CMD} 'share/applications/${PORTNAME}.desktop' >> ${PLIST}
+	@${RM} -rf ${FAKEDIR}/lib/${FF}/extensions
+	${ECHO_CMD} 'share/applications/${FF}.desktop' >> ${PLIST}
+	${ECHO_CMD} 'share/pixmaps/${FIREFOX_ICON}' >> ${PLIST}
 	${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g; \
-		s|${PORTNAME}-${PORTVERSION}|${PORTNAME}|' \
-		${FAKEDIR}/bin/${PORTNAME} \
-		${FAKEDIR}/bin/${PORTNAME}-config
-	for i in ${EXTRA_SCRIPTS}; do \
-		${ECHO_CMD} bin/$${i} >> ${PLIST}; \
-	done
-	${ECHO_CMD} bin/${PORTNAME} >> ${PLIST}
-	${ECHO_CMD} bin/${PORTNAME}-config >> ${PLIST}
+		s|${FIREFOX}|${FF}|; \
+		s|-devel||; \
+		s|$${progbase}-bin|${FIREFOX}-bin|' \
+		${FAKEDIR}/bin/firefox \
+		${FAKEDIR}/bin/firefox-config
+	${ECHO_CMD} bin/${FF} >> ${PLIST}
+	${ECHO_CMD} bin/${FF}-config >> ${PLIST}
 .for ii in ${MOZ_PIS_SCRIPTS}
 	${INSTALL_SCRIPT} ${WRKDIR}/moz_pis_${ii} ${MOZ_PIS_DIR}/${ii}
 .endfor
@@ -225,44 +199,42 @@ pre-install:
 	${ECHO_CMD} "pref(\"browser.link.open_external\", 3);" \
 		>> ${SYSTEM_PREFS}
 .endif # !defined(WITHOUT_NEWTAB)
-	cd ${FAKEDIR}/lib/${PORTNAME}-${PORTVERSION} && ${FIND} -s * -type f -o -type l | \
-		${SED} -e 's|^|lib/${PORTNAME}/|' >> ${PLIST} \
+	cd ${FAKEDIR}/lib/${FF} && ${FIND} -s * -type f -o -type l | \
+		${SED} -e 's|^|lib/${FF}/|' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm lib/${PORTNAME}/|' >> ${PLIST}
-	${ECHO_CMD} @dirrm lib/${PORTNAME} >> ${PLIST}
+		${SED} -e 's|^|@dirrm lib/${FF}/|' >> ${PLIST}
+	${ECHO_CMD} @dirrm lib/${FF} >> ${PLIST}
 	for pcfile in ${PKGCONFIG_FILES}; do \
-		${REINPLACE_CMD} -e 's|${PORTNAME}-${PORTVERSION}|${PORTNAME}|g; \
-			s|${FAKEDIR}|${PREFIX}|g ; \
-			s|${PORTNAME}-nspr = ${PORTVERSION}|nspr >= 4.6.0|g' \
+		${REINPLACE_CMD} -e 's|${FF}|${FF}|g; \
+			s|${FAKEDIR}|${PREFIX}|' \
 			${FAKEDIR}/lib/pkgconfig/$${pcfile}.pc ; \
-		${ECHO_CMD} libdata/pkgconfig/$${pcfile}.pc >> ${PLIST} ; \
+		${ECHO_CMD} libdata/pkgconfig/$${pcfile}${FF_SUFX}.pc >> ${PLIST} ; \
 	done
-	cd ${FAKEDIR}/include/${PORTNAME}-${PORTVERSION} && ${FIND} -s * -type f -o -type l | \
-		${SED} -e 's|^|include/${PORTNAME}/|' >> ${PLIST} \
+	cd ${FAKEDIR}/include/${FF} && ${FIND} -s * -type f -o -type l | \
+		${SED} -e 's|^|include/${FF}/|' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm include/${PORTNAME}/|' >> ${PLIST}
-	${ECHO_CMD} @dirrm include/${PORTNAME} >> ${PLIST}
-	${ECHO_CMD} lib/browser_plugins/.${PORTNAME}.keep >> ${PLIST}
+		${SED} -e 's|^|@dirrm include/${FF}/|' >> ${PLIST}
+	${ECHO_CMD} @dirrm include/${FF} >> ${PLIST}
+	${ECHO_CMD} lib/browser_plugins/.${FF}.keep >> ${PLIST}
 	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/browser_plugins 2>/dev/null || ${TRUE}" >> ${PLIST}
+	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
 	${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
 	${ECHO_CMD} "@unexec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
-	cd ${FAKEDIR}/share/idl/${PORTNAME}-${PORTVERSION} \
+	cd ${FAKEDIR}/share/idl/${FIREFOX}-${FF_VER} \
 		&& ${FIND} -s * -type f -o -type l | \
-		${SED} -e 's:^:share/idl/${PORTNAME}/:' >> ${PLIST} \
+		${SED} -e 's:^:share/idl/${FF}/:' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
-		${SED} -e 's:^:@dirrm share/idl/${PORTNAME}/:' >> ${PLIST}
-		${ECHO_CMD} "@dirrm share/idl/${PORTNAME}" >> ${PLIST}
+		${SED} -e 's:^:@dirrm share/idl/${FF}/:' >> ${PLIST}
+		${ECHO_CMD} "@dirrm share/idl/${FF}" >> ${PLIST}
 		${ECHO_CMD} "@unexec ${RMDIR} %D/share/idl 2>/dev/null || true" >> ${PLIST}
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/${PORTNAME}
-	${CHMOD} 755 ${PREFIX}/lib/${PORTNAME}
-	${INSTALL_SCRIPT} ${FAKEDIR}/bin/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${FAKEDIR}/bin/${PORTNAME}-config ${PREFIX}/bin
-	if [ ! -d ${PREFIX}/lib/browser_plugins ]; then \
-		${MKDIR} ${PREFIX}/lib/browser_plugins ; \
-	fi
-	${TOUCH} -f ${PREFIX}/lib/browser_plugins/.${PORTNAME}.keep
+	${MKDIR} ${PREFIX}/lib/${FF}
+	${CHMOD} 755 ${PREFIX}/lib/${FF}
+	${INSTALL_SCRIPT} ${FAKEDIR}/bin/firefox ${PREFIX}/bin/${FF}
+	${INSTALL_SCRIPT} ${FAKEDIR}/bin/firefox-config ${PREFIX}/bin/${FF}-config
+	${MKDIR} ${PREFIX}/lib/browser_plugins
+	${TOUCH} -f ${PREFIX}/lib/browser_plugins/.${FF}.keep
 	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
 		for jpi in ${JPI_LIST}; do \
 			if [ -f $${jpi} ]; then \
@@ -274,30 +246,28 @@ do-install:
 	fi
 	for pcfile in ${PKGCONFIG_FILES}; do \
 		${INSTALL_DATA} ${FAKEDIR}/lib/pkgconfig/$${pcfile}.pc \
-			${PREFIX}/libdata/pkgconfig/$${pcfile}.pc ; \
+			${PREFIX}/libdata/pkgconfig/$${pcfile}${FF_SUFX}.pc ; \
 	done
-	-${RM} -fr ${PREFIX}/include/${PORTNAME}
-	${MKDIR} ${PREFIX}/include/${PORTNAME}
-	${CHMOD} 755 ${PREFIX}/include/${PORTNAME}
-	cd ${FAKEDIR}/include/${PORTNAME}-${PORTVERSION} && ${FIND} . | \
-		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/${PORTNAME}
-	cd ${FAKEDIR}/lib/${PORTNAME}-${PORTVERSION} && ${FIND} . | \
-		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/${PORTNAME}
-	${MKDIR} ${PREFIX}/share/idl/${PORTNAME}
-	cd ${FAKEDIR}/share/idl/${PORTNAME}-${PORTVERSION} && ${FIND} . | \
-		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/idl/${PORTNAME}
+	-${RM} -fr ${PREFIX}/include/${FF}
+	${MKDIR} ${PREFIX}/include/${FF}
+	${CHMOD} 755 ${PREFIX}/include/${FF}
+	cd ${FAKEDIR}/include/${FF} && ${FIND} . | \
+		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/${FF}
+	cd ${FAKEDIR}/lib/${FF} && ${FIND} . | \
+		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/${FF}
+	${MKDIR} ${PREFIX}/share/idl/${FF}
+	cd ${FAKEDIR}/share/idl/${FIREFOX}-${FF_VER} && ${FIND} . | \
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/idl/${FF}
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
-.for i in ${EXTRA_SCRIPTS}
-	${INSTALL_SCRIPT} ${FILESDIR}/${i} ${PREFIX}/bin
-.endfor
-	${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/${PORTNAME}/default.xpm \
-		${PREFIX}/lib/${PORTNAME}/chrome/icons/default/default.xpm
+	${MKDIR} ${PREFIX}/share/applications ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKDIR}/${FF}.desktop ${PREFIX}/share/applications/
+	${MKDIR} ${PREFIX}/lib/${FF}/chrome/icons/default
+	${LN} -sf ${FIREFOX_ICON_SRC} ${PREFIX}/lib/${FF}/chrome/icons/default/default.xpm
+	${LN} -sf ${FIREFOX_ICON_SRC} ${PREFIX}/share/pixmaps/${FIREFOX_ICON}
 	@-update-desktop-database
 
 .include <bsd.port.post.mk>

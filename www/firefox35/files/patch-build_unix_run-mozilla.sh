@@ -1,4 +1,5 @@
 $FreeBSD$
+  $MCom: ports/www/firefox-devel/files/patch-build_unix_run-mozilla.sh,v 1.6 2005/07/14 05:25:44 ahze Exp $
 
 --- build/unix/run-mozilla.sh.orig	Mon Dec 15 12:27:28 2003
 +++ build/unix/run-mozilla.sh	Wed Feb 11 14:24:17 2004
