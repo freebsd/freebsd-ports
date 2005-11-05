@@ -9215,26 +9215,41 @@ var/lib/rpm/requiredby.rpm
 var/lib/rpm/triggerindex.rpm
 var/log/lastlog
 var/mail
+@exec /bin/mkdir -p %D/var/yp
 @dirrm var/yp
+@exec /bin/mkdir -p %D/var/spool/repackage
 @dirrm var/spool/repackage
+@exec /bin/mkdir -p %D/var/spool/mail
 @dirrm var/spool/mail
+@exec /bin/mkdir -p %D/var/spool/lpd
 @dirrm var/spool/lpd
 @dirrm var/spool
+@exec /bin/mkdir -p %D/var/run
 @dirrm var/run
+@exec /bin/mkdir -p %D/var/preserve
 @dirrm var/preserve
+@exec /bin/mkdir -p %D/var/opt
 @dirrm var/opt
+@exec /bin/mkdir -p %D/var/nis
 @dirrm var/nis
 @dirrm var/log
+@exec /bin/mkdir -p %D/var/lock/subsys
 @dirrm var/lock/subsys
 @dirrm var/lock
+@exec /bin/mkdir -p %D/var/local
 @dirrm var/local
 @dirrm var/lib/rpm
+@exec /bin/mkdir -p %D/var/lib/misc
 @dirrm var/lib/misc
+@exec /bin/mkdir -p %D/var/lib/games
 @dirrm var/lib/games
 @dirrm var/lib
+@exec /bin/mkdir -p %D/var/db
 @dirrm var/db
+@exec /bin/mkdir -p %D/var/cache
 @dirrm var/cache
 @dirrm var
+@exec /bin/mkdir -p %D/usr/src
 @dirrm usr/src
 @dirrm usr/share/zoneinfo/right/US
 @dirrm usr/share/zoneinfo/right/SystemV
@@ -9346,7 +9361,9 @@ var/mail
 @dirrm usr/share/terminfo/1
 @dirrm usr/share/terminfo
 @dirrm usr/share/tabset
+@exec /bin/mkdir -p %D/usr/share/pixmaps
 @dirrm usr/share/pixmaps
+@exec /bin/mkdir -p %D/usr/share/misc
 @dirrm usr/share/misc
 @dirrm usr/share/man/sk/man8
 @dirrm usr/share/man/sk
@@ -9354,14 +9371,19 @@ var/mail
 @dirrm usr/share/man/ru
 @dirrm usr/share/man/pl/man8
 @dirrm usr/share/man/pl
+@exec /bin/mkdir -p %D/usr/share/man/mann
 @dirrm usr/share/man/mann
+@exec /bin/mkdir -p %D/usr/share/man/man9
 @dirrm usr/share/man/man9
 @dirrm usr/share/man/man8
 @dirrm usr/share/man/man7
+@exec /bin/mkdir -p %D/usr/share/man/man6
 @dirrm usr/share/man/man6
 @dirrm usr/share/man/man5
+@exec /bin/mkdir -p %D/usr/share/man/man4
 @dirrm usr/share/man/man4
 @dirrm usr/share/man/man3
+@exec /bin/mkdir -p %D/usr/share/man/man2
 @dirrm usr/share/man/man2
 @dirrm usr/share/man/man1
 @dirrm usr/share/man/ja/man8
@@ -9446,6 +9468,7 @@ var/mail
 @dirrm usr/share/i18n/locales
 @dirrm usr/share/i18n/charmaps
 @dirrm usr/share/i18n
+@exec /bin/mkdir -p %D/usr/share/empty
 @dirrm usr/share/empty
 @dirrm usr/share/doc/zlib-1.1.4
 @dirrm usr/share/doc/sh-utils-2.0.12
@@ -10099,40 +10122,61 @@ var/mail
 @dirrm usr/lib/locale/af_ZA
 @dirrm usr/lib/locale
 @dirrm usr/lib/gconv
+@exec /bin/mkdir -p %D/usr/lib/gcc-lib
 @dirrm usr/lib/gcc-lib
+@exec /bin/mkdir -p %D/usr/lib/games
 @dirrm usr/lib/games
 @dirrm usr/lib/bash
 @dirrm usr/lib
 @dirrm usr/include
+@exec /bin/mkdir -p %D/usr/games
 @dirrm usr/games
+@exec /bin/mkdir -p %D/usr/etc
 @dirrm usr/etc
+@exec /bin/mkdir -p %D/usr/dict
 @dirrm usr/dict
 @dirrm usr/bin
+@exec /bin/mkdir -p %D/usr/X11R6/share
 @dirrm usr/X11R6/share
+@exec /bin/mkdir -p %D/usr/X11R6/man
 @dirrm usr/X11R6/man
+@exec /bin/mkdir -p %D/usr/X11R6/lib
 @dirrm usr/X11R6/lib
+@exec /bin/mkdir -p %D/usr/X11R6/include
 @dirrm usr/X11R6/include
+@exec /bin/mkdir -p %D/usr/X11R6/bin
 @dirrm usr/X11R6/bin
 @dirrm usr/X11R6
 @dirrm usr
 @dirrm sbin
 @dirrm proc
+@exec /bin/mkdir -p %D/opt
 @dirrm opt
+@exec /bin/mkdir -p %D/mnt
 @dirrm mnt
+@exec /bin/mkdir -p %D/lib/modules
 @dirrm lib/modules
 @dirrm lib
+@exec /bin/mkdir -p %D/etc/xinetd.d
 @dirrm etc/xinetd.d
+@exec /bin/mkdir -p %D/etc/sysconfig
 @dirrm etc/sysconfig
 @dirrm etc/skel
+@exec /bin/mkdir -p %D/etc/rpm
 @dirrm etc/rpm
 @dirrm etc/profile.d
 @dirrm etc/pam.d
+@exec /bin/mkdir -p %D/etc/opt
 @dirrm etc/opt
 @dirrm etc/logrotate.d
 @dirrm etc/cron.daily
+@exec /bin/mkdir -p %D/etc/X11/sysconfig
 @dirrm etc/X11/sysconfig
+@exec /bin/mkdir -p %D/etc/X11/starthere
 @dirrm etc/X11/starthere
+@exec /bin/mkdir -p %D/etc/X11/serverconfig
 @dirrm etc/X11/serverconfig
+@exec /bin/mkdir -p %D/etc/X11/applnk
 @dirrm etc/X11/applnk
 @dirrm etc/X11
 @dirrm etc
