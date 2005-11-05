@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20051105:
+  AFFECTS: all users of gnome/glib/gtk
+  AUTHOR: gnome@FreeBSD.org
+
+  GNOME has been updated to 2.12 and gtk/glib to 2.8.
+  DO NOT USE portupgrade(1) to update your ports. Instead, use
+  the gnome_upgrade.sh script from
+  http://www.marcuscom.com/downloads/gnome_upgrade212.sh
+
 20051104:
   AFFECTS: users of www/trac
   AUTHOR: rui@ruilopes.com
