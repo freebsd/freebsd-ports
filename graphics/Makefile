@@ -498,7 +498,6 @@
     SUBDIR += robot
     SUBDIR += ruby-cairo
     SUBDIR += ruby-gd
-    SUBDIR += ruby-gdk_pixbuf
     SUBDIR += ruby-gdk_pixbuf2
     SUBDIR += ruby-gnomecanvas2
     SUBDIR += ruby-graph
