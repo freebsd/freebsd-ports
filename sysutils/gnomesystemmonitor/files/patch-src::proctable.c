@@ -1,7 +1,7 @@
---- src/proctable.c.orig	Tue Nov 30 01:28:31 2004
-+++ src/proctable.c	Wed Dec  1 13:25:55 2004
-@@ -772,6 +772,12 @@
- 
+--- src/proctable.c.orig	Fri Jul 22 18:58:42 2005
++++ src/proctable.c	Mon Jul 25 22:25:58 2005
+@@ -853,6 +853,12 @@ static void cb_exclude(ProcInfo* info, G
+ }
  
  
 +static int
@@ -13,7 +13,7 @@
  static void
  refresh_list (ProcData *procdata, const unsigned *pid_list, const guint n)
  {
-@@ -863,10 +869,15 @@
+@@ -945,10 +951,15 @@ proctable_update_list (ProcData * const 
  
  	pid_list = glibtop_get_proclist (&proclist, which, arg);
  
@@ -22,7 +22,7 @@
  	/* FIXME: total cpu time elapsed should be calculated on an individual basis here
  	** should probably have a total_time_last gint in the ProcInfo structure */
  	glibtop_get_cpu (&cpu);
- 	total_time = cpu.total - total_time_last;
+ 	total_time = MAX(cpu.total - total_time_last, 1);
 +	if (cpu.frequency) {
 +		total_time /= (cpu.frequency/100);
 +	}

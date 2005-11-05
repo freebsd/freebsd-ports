@@ -1,6 +1,15 @@
---- src/utils.c.orig	Sun Jul  4 20:11:49 2004
-+++ src/utils.c	Sun Jul  4 20:12:14 2004
-@@ -240,7 +240,7 @@
+--- src/utils.c.orig	Fri May  6 16:10:28 2005
++++ src/utils.c	Sun Jul  3 17:48:12 2005
+@@ -24,6 +24,8 @@
+    on GNOME 2.0 */
+ 
+ #include "utils.h"
++#include <stdlib.h>
++#include <limits.h>
+ #include <string.h>
+ #include <glib/gi18n.h>
+ 
+@@ -240,7 +242,7 @@ util_legible_bytes (gchar *bytes)
  	const gchar *unit = "B";
  	gchar *result;
  	

@@ -46,7 +46,7 @@ include/eel-2/eel/eel-xml-extensions.h
 include/eel-2/eel/eel.h
 lib/libeel-2.a
 lib/libeel-2.so
-lib/libeel-2.so.12
+lib/libeel-2.so.2
 libdata/pkgconfig/eel-2.0.pc
 share/locale/am/LC_MESSAGES/eel-2.0.mo
 share/locale/ang/LC_MESSAGES/eel-2.0.mo
@@ -114,6 +114,7 @@ share/locale/sv/LC_MESSAGES/eel-2.0.mo
 share/locale/ta/LC_MESSAGES/eel-2.0.mo
 share/locale/th/LC_MESSAGES/eel-2.0.mo
 share/locale/tr/LC_MESSAGES/eel-2.0.mo
+share/locale/ug/LC_MESSAGES/eel-2.0.mo
 share/locale/uk/LC_MESSAGES/eel-2.0.mo
 share/locale/vi/LC_MESSAGES/eel-2.0.mo
 share/locale/wa/LC_MESSAGES/eel-2.0.mo
@@ -122,6 +123,8 @@ share/locale/zh_CN/LC_MESSAGES/eel-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/eel-2.0.mo
 @unexec rmdir %D/share/locale/xh/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/xh 2> /dev/null || true
+@unexec rmdir %D/share/locale/ug/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ug 2> /dev/null || true
 @unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/rw 2> /dev/null || true
 @unexec rmdir %D/share/locale/ang/LC_MESSAGES 2> /dev/null || true

@@ -3,39 +3,44 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/www/epiphany/Makefile,v 1.84 2005/10/02 23:28:19 marcus Exp $
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	1.6.5
+PORTVERSION=	1.8.2
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.6
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.8
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An extremely lightweight and simple web browser for GNOME 2
 
-BUILD_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
-RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
+BUILD_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA} \
+		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA} \
+		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
 MOZILLA=	mozilla
 HEADERS_SUFX=
 MOZ_BUILD=	mozilla
 
 .if !defined(WITH_MOZILLA)
-MOZILLA=	mozilla
-HEADERS_SUFX=
-.else
-.if ${WITH_MOZILLA}=="firefox"
 MOZILLA=	firefox
+HEADERS_SUFX=
 MOZ_BUILD=	firefox
+.else
+.if ${WITH_MOZILLA}=="mozilla"
+MOZILLA=	mozilla
+MOZ_BUILD=	mozilla
 .else
 .if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-devel-gtk2"
 MOZILLA=	mozilla-devel
 HEADERS_SUFX=	-devel
 .else
-MOZILLA=	mozilla
+MOZILLA=	firefox
 HEADERS_SUFX=
+MOZ_BUILD=	firefox
 .endif
 .endif
 .endif
@@ -43,12 +48,14 @@ HEADERS_SUFX=
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 GNOME_DESKTOP_VERSION=2
-USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop desktopfileutils
-USE_LIBTOOL_VER=15
+USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop desktopfileutils \
+		libgnomeprintui
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 INSTALLS_OMF=	yes
-CONFIGURE_ARGS=	--with-mozilla=${MOZ_BUILD}
+CONFIGURE_ARGS=	--with-mozilla=${MOZ_BUILD} \
+		--disable-python
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
@@ -75,23 +82,25 @@ USE_GCC=	3.4
 
 pre-everything::
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} " By default epiphany uses www/mozilla for html rendering, but you can"
+	@${ECHO_MSG} " By default epiphany uses www/firefox for html rendering, but you can"
 	@${ECHO_MSG} " change this by defining WITH_MOZILLA to one of the following values:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "  firefox       "
+	@${ECHO_MSG} "  mozilla       "
 	@${ECHO_MSG} "  mozilla-devel "
 	@${ECHO_MSG} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|mozilla-gtkmozembed|mozilla-gtkmozembed${HEADERS_SUFX}|g ; \
-		s|mozilla-xpcom|mozilla-xpcom${HEADERS_SUFX}|g ; \
-		s|$$MOZILLA-gtkmozembed|$$MOZILLA-gtkmozembed${HEADERS_SUFX}|g ; \
-		s|$$MOZILLA-xpcom|$$MOZILLA-xpcom${HEADERS_SUFX}|g' \
+.if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="mozilla-devel"
+	@${REINPLACE_CMD} -e 's|xmozilla|xmozilla${HEADERS_SUFX}|g; \
+		s|mozilla)|mozilla${HEADERS_SUFX})|g; \
+		s|mozilla-gtkmozembed|mozilla-gtkmozembed${HEADERS_SUFX}|g; \
+		s|mozilla-xpcom|mozilla-xpcom${HEADERS_SUFX}|g; \
+		s|$$MOZILLA-gtkmozembed|mozilla-gtkmozembed${HEADERS_SUFX}|g; \
+		s|$$MOZILLA-xpcom|mozilla-xpcom${HEADERS_SUFX}|g' \
 		${WRKSRC}/configure
+.endif
 	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		 's|-lpthread|${PTHREAD_LIBS}|g'
-	@${FIND} ${WRKSRC} -name "*.cpp" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|malloc\.h|stdlib.h|g'
 
 post-configure:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; \

@@ -131,6 +131,7 @@ share/locale/he/LC_MESSAGES/metacity.mo
 share/locale/hi/LC_MESSAGES/metacity.mo
 share/locale/hr/LC_MESSAGES/metacity.mo
 share/locale/hu/LC_MESSAGES/metacity.mo
+share/locale/hy/LC_MESSAGES/metacity.mo
 share/locale/id/LC_MESSAGES/metacity.mo
 share/locale/is/LC_MESSAGES/metacity.mo
 share/locale/it/LC_MESSAGES/metacity.mo
@@ -154,13 +155,13 @@ share/locale/pt/LC_MESSAGES/metacity.mo
 share/locale/pt_BR/LC_MESSAGES/metacity.mo
 share/locale/ro/LC_MESSAGES/metacity.mo
 share/locale/ru/LC_MESSAGES/metacity.mo
+share/locale/rw/LC_MESSAGES/metacity.mo
 share/locale/sk/LC_MESSAGES/metacity.mo
 share/locale/sl/LC_MESSAGES/metacity.mo
 share/locale/sq/LC_MESSAGES/metacity.mo
 share/locale/sr/LC_MESSAGES/metacity.mo
 share/locale/sr@Latn/LC_MESSAGES/metacity.mo
 share/locale/sv/LC_MESSAGES/metacity.mo
-share/locale/rw/LC_MESSAGES/metacity.mo
 share/locale/ta/LC_MESSAGES/metacity.mo
 share/locale/th/LC_MESSAGES/metacity.mo
 share/locale/tk/LC_MESSAGES/metacity.mo

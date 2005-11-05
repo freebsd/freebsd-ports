@@ -3,16 +3,17 @@
 # Whom:					Franz Klammer <klammer@webonaut.com>
 #
 # $FreeBSD$
+#   $MCom: ports/x11/zenity/Makefile,v 1.46 2005/10/30 23:07:09 marcus Exp $
 #
 
 PORTNAME=	zenity
-PORTVERSION=	2.10.0
+PORTVERSION=	2.12.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.10
-DIST_SUBDIR=    gnome2
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.12
+DIST_SUBDIR=	gnome2
 
-MAINTAINER=	klammer@webonaut.com
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Display GNOME dialogs from the command line
 
 BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
@@ -21,7 +22,7 @@ RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomecanvas gconf2
+USE_GNOME=	gnomeprefix gnomehack libgnomecanvas gconf2 gnomedocutils
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes

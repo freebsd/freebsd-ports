@@ -69,34 +69,15 @@ share/gnome/nautilus/ui/nautilus-list-view-ui.xml
 share/gnome/nautilus/ui/nautilus-navigation-window-ui.xml
 share/gnome/nautilus/ui/nautilus-shell-ui.xml
 share/gnome/nautilus/ui/nautilus-spatial-window-ui.xml
-share/gnome/pixmaps/nautilus/Search.png
-share/gnome/pixmaps/nautilus/audio.png
+share/gnome/pixmaps/nautilus/audio.svg
 share/gnome/pixmaps/nautilus/backgrounds.png
 share/gnome/pixmaps/nautilus/chit_frame.png
 share/gnome/pixmaps/nautilus/colors.png
-share/gnome/pixmaps/nautilus/crux_eggplant/Search.png
-share/gnome/pixmaps/nautilus/crux_eggplant/crux_eggplant.xml
-share/gnome/pixmaps/nautilus/crux_teal/Search.png
-share/gnome/pixmaps/nautilus/crux_teal/crux_teal.xml
-share/gnome/pixmaps/nautilus/default/Search.png
-share/gnome/pixmaps/nautilus/default/default.xml
-share/gnome/pixmaps/nautilus/default/side_bar_image.png
 share/gnome/pixmaps/nautilus/emblems.png
 share/gnome/pixmaps/nautilus/erase.png
-share/gnome/pixmaps/nautilus/gnome/Services.png
-share/gnome/pixmaps/nautilus/gnome/gnome.xml
 share/gnome/pixmaps/nautilus/knob.png
-share/gnome/pixmaps/nautilus/nautilus-desktop.png
-share/gnome/pixmaps/nautilus/nautilus-file-management-properties.png
 share/gnome/pixmaps/nautilus/nautilus-launch-icon.png
-share/gnome/pixmaps/nautilus/nautilus-mini-logo.png
-share/gnome/pixmaps/nautilus/nautilus-server-connect.png
 share/gnome/pixmaps/nautilus/note-indicator.png
-share/gnome/pixmaps/nautilus/side_bar_image.png
-share/gnome/pixmaps/nautilus/sierra/green_weave.png
-share/gnome/pixmaps/nautilus/sierra/sierra.xml
-share/gnome/pixmaps/nautilus/tahoe/bluewall.png
-share/gnome/pixmaps/nautilus/tahoe/tahoe.xml
 share/gnome/pixmaps/nautilus/text-selection-frame.png
 share/gnome/pixmaps/nautilus/thumbnail_frame.png
 share/locale/af/LC_MESSAGES/nautilus.mo
@@ -133,6 +114,7 @@ share/locale/is/LC_MESSAGES/nautilus.mo
 share/locale/it/LC_MESSAGES/nautilus.mo
 share/locale/ja/LC_MESSAGES/nautilus.mo
 share/locale/ko/LC_MESSAGES/nautilus.mo
+share/locale/ku/LC_MESSAGES/nautilus.mo
 share/locale/li/LC_MESSAGES/nautilus.mo
 share/locale/lt/LC_MESSAGES/nautilus.mo
 share/locale/lv/LC_MESSAGES/nautilus.mo
@@ -162,6 +144,7 @@ share/locale/sr@Latn/LC_MESSAGES/nautilus.mo
 share/locale/sr@ije/LC_MESSAGES/nautilus.mo
 share/locale/sv/LC_MESSAGES/nautilus.mo
 share/locale/ta/LC_MESSAGES/nautilus.mo
+share/locale/te/LC_MESSAGES/nautilus.mo
 share/locale/th/LC_MESSAGES/nautilus.mo
 share/locale/tk/LC_MESSAGES/nautilus.mo
 share/locale/tr/LC_MESSAGES/nautilus.mo
@@ -177,12 +160,6 @@ share/locale/zu/LC_MESSAGES/nautilus.mo
 @unexec rmdir %D/share/locale/xh 2> /dev/null || true
 @unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/rw 2> /dev/null || true
-@dirrm share/gnome/pixmaps/nautilus/tahoe
-@dirrm share/gnome/pixmaps/nautilus/sierra
-@dirrm share/gnome/pixmaps/nautilus/gnome
-@dirrm share/gnome/pixmaps/nautilus/default
-@dirrm share/gnome/pixmaps/nautilus/crux_teal
-@dirrm share/gnome/pixmaps/nautilus/crux_eggplant
 @dirrm share/gnome/pixmaps/nautilus
 @dirrm share/gnome/nautilus/ui
 @dirrm share/gnome/nautilus/patterns

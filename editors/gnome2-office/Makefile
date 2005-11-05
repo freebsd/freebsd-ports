@@ -3,16 +3,13 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/editors/gnome2-office/Makefile,v 1.39 2005/08/11 02:55:29 marcus Exp $
 #
 
-PORTNAME=	gnome2-office
-PORTVERSION=	2.10.2
+PORTREVISION=	0
 CATEGORIES=	editors gnome
-MASTER_SITES=	# empty
-DISTFILES=	# empty
-EXTRACT_ONLY=	# empty
+PKGNAMESUFFIX=	-office
 
-MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 office applications
 
 RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric \
@@ -22,8 +19,9 @@ RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric \
 		abiword:${PORTSDIR}/editors/abiword \
 		mergeant:${PORTSDIR}/databases/mergeant
 
-NO_BUILD=	yes
+MASTERDIR=	${.CURDIR}/../../x11/gnome2
+GNOME_SLAVE=	yes
 
-do-install:	# empty
+DESCR=		${.CURDIR}/pkg-descr
 
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"

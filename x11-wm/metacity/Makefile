@@ -3,10 +3,11 @@
 # Whom:                Garrett Rooney <rooneg@electricjellyfish.net>
 #
 # $FreeBSD$
+#    $MCom: ports/x11-wm/metacity/Makefile,v 1.59 2005/10/03 21:18:00 mezz Exp $
 #
 
 PORTNAME=	metacity
-PORTVERSION=	2.10.3
+PORTVERSION=	2.12.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -21,7 +22,7 @@ CONFLICTS=	expocity-[0-9]*
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomeprefix intlhack gnomehack gconf2
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-render

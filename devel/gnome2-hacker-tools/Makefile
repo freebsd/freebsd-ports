@@ -3,16 +3,13 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/devel/gnome2-hacker-tools/Makefile,v 1.40 2005/08/11 02:55:29 marcus Exp $
 #
 
-PORTNAME=	gnome2-hacker-tools
-PORTVERSION=	2.10.2
+PORTREVISION=	0
 CATEGORIES=	devel gnome
-MASTER_SITES=	# empty
-DISTFILES=	# empty
-EXTRACT_ONLY=	# empty
+PKGNAMESUFFIX=	-hacker-tools
 
-MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 development tools
 
 RUN_DEPENDS=	mlview:${PORTSDIR}/editors/mlview \
@@ -26,8 +23,9 @@ RUN_DEPENDS=	mlview:${PORTSDIR}/editors/mlview \
 		regexxer:${PORTSDIR}/devel/regexxer \
 		anjuta:${PORTSDIR}/devel/anjuta
 
-NO_BUILD=	yes
+MASTERDIR=	${.CURDIR}/../../x11/gnome2
+GNOME_SLAVE=	yes
 
-do-install:	# empty
+DESCR=		${.CURDIR}/pkg-descr
 
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"

@@ -19,7 +19,7 @@ include/libgnome-2.0/libgnome/libgnometypebuiltins.h
 lib/bonobo/monikers/libmoniker_extra_2.so
 lib/libgnome-2.a
 lib/libgnome-2.so
-lib/libgnome-2.so.1000
+lib/libgnome-2.so.0
 libdata/bonobo/servers/GNOME_Moniker_std.server
 libdata/pkgconfig/libgnome-2.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/ch01s02.html
@@ -46,6 +46,7 @@ libdata/pkgconfig/libgnome-2.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/libgnome.devhelp
 %%PORTDOCS%%%%DOCSDIR%%/libgnome.html
 %%PORTDOCS%%%%DOCSDIR%%/right.png
+%%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/up.png
 share/locale/am/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ar/LC_MESSAGES/libgnome-2.0.mo
@@ -115,14 +116,6 @@ share/locale/xh/LC_MESSAGES/libgnome-2.0.mo
 share/locale/yi/LC_MESSAGES/libgnome-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/libgnome-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgnome-2.0.mo
-@unexec rmdir %D/share/locale/yi/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/yi 2> /dev/null || true
-@unexec rmdir %D/share/locale/xh/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/xh 2> /dev/null || true
-@unexec rmdir %D/share/locale/sr@ije/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/sr@ije 2> /dev/null || true
-@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/rw 2> /dev/null || true
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/libgnome-2.0/libgnome
 @dirrm include/libgnome-2.0
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

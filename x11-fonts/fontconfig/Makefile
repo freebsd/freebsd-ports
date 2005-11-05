@@ -3,10 +3,11 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/x11-fonts/fontconfig/Makefile,v 1.3 2005/08/26 04:03:55 marcus Exp $
 #
 
 PORTNAME=	fontconfig
-PORTVERSION=	2.2.3
+PORTVERSION=	2.3.2
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://fontconfig.org/release/
@@ -20,7 +21,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 USE_GMAKE=	yes
 PREFIX?=	${X11BASE}
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnometarget pkgconfig
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
 		--with-expat-includes=${LOCALBASE}/include \
@@ -31,7 +32,7 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${PKGINSTALL}
 USE_REINPLACE=	yes
 
-MAN1=		fc-cache.1 fc-list.1
+MAN1=		fc-match.1
 MAN3=		FcAtomicCreate.3  \
 		FcAtomicDeleteNew.3  \
 		FcAtomicDestroy.3  \
@@ -85,6 +86,7 @@ MAN3=		FcAtomicCreate.3  \
 		FcDirSave.3  \
 		FcDirScan.3  \
 		FcFileScan.3  \
+		FcFini.3  \
 		FcFontList.3  \
 		FcFontMatch.3  \
 		FcFontRenderPrepare.3  \
@@ -134,11 +136,13 @@ MAN3=		FcAtomicCreate.3  \
 		FcPatternGet.3  \
 		FcPatternHash.3  \
 		FcPatternPrint.3  \
+		FcPatternRemove.3  \
 		FcStrBasename.3  \
 		FcStrCmpIgnoreCase.3  \
 		FcStrCopy.3  \
 		FcStrCopyFilename.3  \
 		FcStrDirname.3  \
+		FcStrDowncase.3  \
 		FcStrListCreate.3  \
 		FcStrListDone.3  \
 		FcStrListNext.3  \
@@ -148,6 +152,8 @@ MAN3=		FcAtomicCreate.3  \
 		FcStrSetDel.3  \
 		FcStrSetDestroy.3  \
 		FcStrSetMember.3  \
+		FcStrStr.3  \
+		FcStrStrIgnoreCase.3  \
 		FcUcs4ToUtf8.3  \
 		FcUtf16Len.3  \
 		FcUtf16ToUcs4.3  \
@@ -159,12 +165,12 @@ MAN5=		fonts-conf.5
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_CJK)
-PATCH_SITES+=	ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/ \
-		http://bsdchat.com/dist/firefly-cjk-patchset/
-PATCHFILES+=	cjk-fontconfig-2.2.3-20050315.patch.gz
-PATCH_DIST_STRIP+=	-p1
-.endif
+#.if defined(WITH_CJK)
+#PATCH_SITES+=	ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/ \
+#		http://bsdchat.com/dist/firefly-cjk-patchset/
+#PATCHFILES+=	cjk-fontconfig-2.2.3-20050315.patch.gz
+#PATCH_DIST_STRIP+=	-p1
+#.endif
 
 .if defined(NOPORTDOCS)
 post-patch:
@@ -173,6 +179,12 @@ post-patch:
 .endif
 
 post-install:
+	if [ ! -f ${PREFIX}/etc/fonts/fonts.conf ]; then \
+		${INSTALL_DATA} ${WRKSRC}/fonts.conf ${PREFIX}/etc/fonts/fonts.conf; \
+		${INSTALL_DATA} ${WRKSRC}/fonts.conf ${PREFIX}/etc/fonts/fonts.conf.default; \
+	else \
+		${INSTALL_DATA} ${WRKSRC}/fonts.conf ${PREFIX}/etc/fonts/fonts.conf.default; \
+	fi
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' < ${FILESDIR}/pkg-install.in \
 		> ${PKGINSTALL}
 .if !defined(PACKAGE_BUILDING)

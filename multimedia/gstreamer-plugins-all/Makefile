@@ -3,6 +3,7 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
+#    $MCom: ports/multimedia/gstreamer-plugins-all/Makefile,v 1.3 2005/10/22 06:20:02 ahze Exp $
 #
 
 PORTNAME=	gstreamer-plugins-all
@@ -21,7 +22,6 @@ OPTIONS=	# Hacky.. but it works the way it is set up...
 
 .include <bsd.port.pre.mk>
 
-WITHOUT_CAIRO=	yes
 # Weed out gst-plugins that can not be packaged. or are broken.
 .if defined(PACKAGE_BUILDING)
 WITHOUT_FAAC=	yes	# Mp4 Dolby license , no package

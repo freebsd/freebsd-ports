@@ -1,5 +1,6 @@
 
 $FreeBSD$
+$MCom: ports/devel/pkgconfig/files/patch-parse.c,v 1.4 2005/10/14 20:39:57 adamw Exp $
 
 --- parse.c	2001/08/01 07:24:17	1.1
 +++ parse.c	2001/08/01 07:25:02

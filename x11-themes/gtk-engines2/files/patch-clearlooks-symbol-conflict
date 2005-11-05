@@ -1,0 +1,54 @@
+--- engines/clearlooks/src/clearlooks_style.c.orig	Wed Sep  7 01:41:42 2005
++++ engines/clearlooks/src/clearlooks_style.c	Wed Sep  7 01:41:49 2005
+@@ -178,7 +178,7 @@ clearlooks_draw_arrow (GtkStyle      *st
+ 	
+ 	sanitize_size (window, &width, &height);
+ 	
+-	if (is_combo_box (widget))
++	if (is_combo_box_cl (widget))
+ 	{
+ 		width = 7;
+ 		height = 5;
+--- engines/clearlooks/src/support.c.orig	Wed Sep  7 01:40:25 2005
++++ engines/clearlooks/src/support.c	Wed Sep  7 01:40:59 2005
+@@ -959,7 +959,7 @@ GdkColor *get_parent_bgcolor (GtkWidget 
+ }
+ 
+ GtkWidget *
+-find_combo_box_widget (GtkWidget * widget)
++find_combo_box_widget_cl (GtkWidget * widget)
+ {
+ 	GtkWidget *result = NULL;
+ 	
+@@ -968,14 +968,14 @@ find_combo_box_widget (GtkWidget * widge
+ 		if (GTK_IS_COMBO_BOX (widget))
+ 			result = widget;
+ 		else
+-			result = find_combo_box_widget(widget->parent);
++			result = find_combo_box_widget_cl(widget->parent);
+ 	}
+ 	
+ 	return result;
+ }
+ 
+ gboolean
+-is_combo_box (GtkWidget * widget)
++is_combo_box_cl (GtkWidget * widget)
+ {
+-	return (find_combo_box_widget(widget) != NULL);
++	return (find_combo_box_widget_cl(widget) != NULL);
+ }
+--- engines/clearlooks/src/support.h.orig	Wed Sep  7 01:41:03 2005
++++ engines/clearlooks/src/support.h	Wed Sep  7 01:41:17 2005
+@@ -102,9 +102,9 @@ GtkWidget *get_parent_window (GtkWidget 
+ 
+ GdkColor *get_parent_bgcolor (GtkWidget *widget);
+ 
+-gboolean is_combo_box (GtkWidget * widget);
++gboolean is_combo_box_cl (GtkWidget * widget);
+ 
+-GtkWidget *find_combo_box_widget (GtkWidget * widget);
++GtkWidget *find_combo_box_widget_cl (GtkWidget * widget);
+ 
+ void gtk_clist_get_header_index (GtkCList *clist, GtkWidget *button,
+                                  gint *column_index, gint *columns);

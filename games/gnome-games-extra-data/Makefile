@@ -3,13 +3,14 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/games/gnomegames2-extra-data/Makefile,v 1.6 2005/09/07 15:01:43 adamw Exp $
 #
 
 PORTNAME=	gnomegames2-extra-data
-PORTVERSION=	2.10.0
+PORTVERSION=	2.12.0
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-games-extra-data/2.10
+MASTER_SITE_SUBDIR=	sources/gnome-games-extra-data/2.12
 DISTNAME=	gnome-games-extra-data-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 

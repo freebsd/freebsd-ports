@@ -1,5 +1,6 @@
 
 $FreeBSD$
+  $MCom: ports/x11-toolkits/eel/files/patch-Makefile.in,v 1.4 2005/06/28 05:40:14 adamw Exp $
 
 --- Makefile.in	2002/06/13 16:05:09	1.1
 +++ Makefile.in	2002/06/13 16:05:18

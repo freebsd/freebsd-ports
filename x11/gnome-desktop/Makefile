@@ -3,13 +3,14 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/x11/gnomedesktop/Makefile,v 1.74 2005/10/03 15:18:36 ahze Exp $
 #
 
 PORTNAME=	gnomedesktop
-PORTVERSION=	2.10.2
+PORTVERSION=	2.12.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-desktop/2.10
+MASTER_SITE_SUBDIR=	sources/gnome-desktop/2.12
 DISTNAME=	gnome-desktop-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -20,13 +21,14 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui
+USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui gnomedocutils \
+		ltverhack
 GNOME_DESKTOP_VERSION=2
 USE_GMAKE=	yes
 USE_BISON=	yes
 INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-gnome-distributor="FreeBSD GNOME Project" \
 		--with-kde-datadir=${LOCALBASE}/share
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

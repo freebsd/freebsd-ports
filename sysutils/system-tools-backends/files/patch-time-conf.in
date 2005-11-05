@@ -1,0 +1,27 @@
+--- time-conf.in.orig	Fri Aug 26 00:58:10 2005
++++ time-conf.in	Fri Aug 26 00:58:28 2005
+@@ -71,7 +71,7 @@
+               "slackware-8.0.0", "slackware-8.1", "slackware-9.0.0", "slackware-9.1.0", "slackware-10.0.0", "slackware-10.1.0",
+               "gentoo", "vlos-1.2", "pld-1.0", "pld-1.1", "pld-1.99", "fedora-1", "fedora-2", "fedora-3", "specifix",
+               "vine-3.0", "vine-3.1",
+-              "freebsd-5", "freebsd-6");
++              "freebsd-5", "freebsd-6", "freebsd-7");
+ 
+ $description =<<"end_of_description;";
+        Configures your system clock, timezone and time server list.
+@@ -551,6 +551,7 @@
+ 
+    "freebsd-5"       => "freebsd-5",
+    "freebsd-6"       => "freebsd-5",
++   "freebsd-7"       => "freebsd-5",
+    );
+ 
+   my %dist_tables =
+@@ -782,6 +783,7 @@
+ 
+    "freebsd-5"       => "freebsd-5",
+    "freebsd-6"       => "freebsd-5",
++   "freebsd-7"       => "freebsd-5",
+    );
+ 
+   my %dist_tables =

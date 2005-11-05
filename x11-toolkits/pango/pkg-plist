@@ -22,6 +22,7 @@ include/pango-1.0/pango/pango-tabs.h
 include/pango-1.0/pango/pango-types.h
 include/pango-1.0/pango/pango-utils.h
 include/pango-1.0/pango/pango.h
+include/pango-1.0/pango/pangocairo.h
 include/pango-1.0/pango/pangofc-decoder.h
 include/pango-1.0/pango/pangofc-font.h
 include/pango-1.0/pango/pangofc-fontmap.h
@@ -31,16 +32,19 @@ include/pango-1.0/pango/pangoxft-render.h
 include/pango-1.0/pango/pangoxft.h
 lib/libpango-1.0.a
 lib/libpango-1.0.so
-lib/libpango-1.0.so.800
+lib/libpango-1.0.so.0
+lib/libpangocairo-1.0.a
+lib/libpangocairo-1.0.so
+lib/libpangocairo-1.0.so.0
 lib/libpangoft2-1.0.a
 lib/libpangoft2-1.0.so
-lib/libpangoft2-1.0.so.800
+lib/libpangoft2-1.0.so.0
 lib/libpangox-1.0.a
 lib/libpangox-1.0.so
-lib/libpangox-1.0.so.800
+lib/libpangox-1.0.so.0
 lib/libpangoxft-1.0.a
 lib/libpangoxft-1.0.so
-lib/libpangoxft-1.0.so.800
+lib/libpangoxft-1.0.so.0
 lib/pango/%%VERSION%%/modules/pango-arabic-fc.so
 lib/pango/%%VERSION%%/modules/pango-basic-fc.so
 lib/pango/%%VERSION%%/modules/pango-basic-x.so
@@ -52,6 +56,7 @@ lib/pango/%%VERSION%%/modules/pango-syriac-fc.so
 lib/pango/%%VERSION%%/modules/pango-thai-fc.so
 lib/pango/%%VERSION%%/modules/pango-tibetan-fc.so
 libdata/pkgconfig/pango.pc
+libdata/pkgconfig/pangocairo.pc
 libdata/pkgconfig/pangoft2.pc
 libdata/pkgconfig/pangox.pc
 libdata/pkgconfig/pangoxft.pc
@@ -68,6 +73,7 @@ libdata/pkgconfig/pangoxft.pc
 %%DOCSDIR%%/layout.gif
 %%DOCSDIR%%/left.png
 %%DOCSDIR%%/lowlevel.html
+%%DOCSDIR%%/pango-Cairo-Rendering.html
 %%DOCSDIR%%/pango-Coverage-Maps.html
 %%DOCSDIR%%/pango-Engines.html
 %%DOCSDIR%%/pango-Fonts.html
@@ -88,6 +94,7 @@ libdata/pkgconfig/pangoxft.pc
 %%DOCSDIR%%/pango.html
 %%DOCSDIR%%/rendering.html
 %%DOCSDIR%%/right.png
+%%DOCSDIR%%/rotated-text.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/tools.html
 %%DOCSDIR%%/up.png

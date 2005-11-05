@@ -3,13 +3,14 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/graphics/eog/Makefile,v 1.9 2005/10/04 03:00:35 ahze Exp $
 #
 
 PORTNAME=	eog
-PORTVERSION=	2.10.2
+PORTVERSION=	2.12.1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.10
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.12
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -22,13 +23,17 @@ USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeprintui \
 		librsvg2 desktopfileutils libgnomeui
 USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 GCONF_SCHEMAS=	eog.schemas
 
 .include <bsd.port.pre.mk>
+
+.if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
+WITH_EXIF=	yes
+.endif
 
 .if defined(WITH_EXIF) || exists(${LOCALBASE}/lib/libexif.so.12)
 LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif

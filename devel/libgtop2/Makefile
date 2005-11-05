@@ -3,13 +3,14 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/devel/libgtop2/Makefile,v 1.49 2005/09/05 19:23:42 ahze Exp $
 #
 
 PORTNAME=	libgtop2
-PORTVERSION=	2.10.2
+PORTVERSION=	2.12.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.10
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.12
 DISTNAME=	libgtop-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -25,7 +26,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -35,7 +36,9 @@ INFO=		libgtop2
 
 .if ${OSVERSION} >= 600000
 PKGMESSAGE=	${FILESDIR}/pkg-message
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-sysdeps_freebsd_Makefile.in
+EXTRA_PATCHES+=	${FILESDIR}/extra-67-patch-sysdeps_freebsd_Makefile.in
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-45-patch-sysdeps_freebsd_Makefile.in
 .endif
 
 post-patch:

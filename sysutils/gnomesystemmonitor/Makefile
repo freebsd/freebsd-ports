@@ -3,13 +3,14 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/sysutils/gnomesystemmonitor/Makefile,v 1.51 2005/10/04 03:07:41 ahze Exp $
 #
 
 PORTNAME=	gnomesystemmonitor
-PORTVERSION=	2.10.1
+PORTVERSION=	2.12.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-system-monitor/2.10
+MASTER_SITE_SUBDIR=	sources/gnome-system-monitor/2.12
 DISTNAME=	gnome-system-monitor-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -24,7 +25,7 @@ INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui libwnck
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lutil"
 

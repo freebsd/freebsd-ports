@@ -1,6 +1,10 @@
+bin/gsf-office-thumbnailer
 include/libgsf-1/gsf-win32/gsf-input-win32.h
 include/libgsf-1/gsf-win32/gsf-output-win32.h
+include/libgsf-1/gsf/gsf-blob.h
+include/libgsf-1/gsf/gsf-clip-data.h
 include/libgsf-1/gsf/gsf-doc-meta-data.h
+include/libgsf-1/gsf/gsf-docprop-vector.h
 include/libgsf-1/gsf/gsf-impl-utils.h
 include/libgsf-1/gsf/gsf-infile-impl.h
 include/libgsf-1/gsf/gsf-infile-msole.h
@@ -20,13 +24,16 @@ include/libgsf-1/gsf/gsf-input.h
 include/libgsf-1/gsf/gsf-libxml.h
 include/libgsf-1/gsf/gsf-meta-names.h
 include/libgsf-1/gsf/gsf-msole-utils.h
+include/libgsf-1/gsf/gsf-opendoc-utils.h
 include/libgsf-1/gsf/gsf-outfile-impl.h
 include/libgsf-1/gsf/gsf-outfile-msole.h
 include/libgsf-1/gsf/gsf-outfile-stdio.h
 include/libgsf-1/gsf/gsf-outfile-zip.h
 include/libgsf-1/gsf/gsf-outfile.h
 include/libgsf-1/gsf/gsf-output-bzip.h
+include/libgsf-1/gsf/gsf-output-csv.h
 include/libgsf-1/gsf/gsf-output-gzip.h
+include/libgsf-1/gsf/gsf-output-iconv.h
 include/libgsf-1/gsf/gsf-output-impl.h
 include/libgsf-1/gsf/gsf-output-iochannel.h
 include/libgsf-1/gsf/gsf-output-memory.h
@@ -38,8 +45,10 @@ include/libgsf-1/gsf/gsf-utils.h
 include/libgsf-1/gsf/gsf.h
 lib/libgsf-1.a
 lib/libgsf-1.so
-lib/libgsf-1.so.12
+lib/libgsf-1.so.113
 libdata/pkgconfig/libgsf-1.pc
+share/doc/gsf/GsfBlob.html
+share/doc/gsf/GsfClipData.html
 share/doc/gsf/api.html
 share/doc/gsf/gsf-Bononbo.html
 share/doc/gsf/gsf-Compression.html
@@ -72,6 +81,7 @@ share/doc/gsf/right.png
 share/doc/gsf/sources.html
 share/doc/gsf/style.css
 share/doc/gsf/up.png
+share/locale/es/LC_MESSAGES/libgsf.mo
 @dirrm share/doc/gsf
 @dirrm include/libgsf-1/gsf-win32
 @dirrm include/libgsf-1/gsf

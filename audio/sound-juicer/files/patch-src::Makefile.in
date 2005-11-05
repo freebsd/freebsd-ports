@@ -1,15 +1,15 @@
---- src/Makefile.in.orig	Mon Feb  7 02:21:49 2005
-+++ src/Makefile.in	Mon Feb  7 02:22:46 2005
-@@ -61,7 +61,7 @@
- 	sj-about.$(OBJEXT) sj-extracting.$(OBJEXT) $(am__objects_1) \
- 	$(am__objects_2)
+--- src/Makefile.in.orig	Tue Aug 23 20:23:29 2005
++++ src/Makefile.in	Tue Aug 23 20:23:57 2005
+@@ -63,7 +63,7 @@
+ 	sj-about.$(OBJEXT) sj-extracting.$(OBJEXT) \
+ 	bacon-volume.$(OBJEXT) $(am__objects_1) $(am__objects_2)
  sound_juicer_OBJECTS = $(am_sound_juicer_OBJECTS)
 -sound_juicer_LDADD = $(LDADD)
 +sound_juicer_LDADD = $(LDADD) -lcam
  DEFAULT_INCLUDES = -I. -I$(srcdir) -I.
  depcomp = $(SHELL) $(top_srcdir)/depcomp
  am__depfiles_maybe = depfiles
-@@ -233,7 +233,7 @@
+@@ -257,7 +257,7 @@
  target_alias = @target_alias@
  
  # General compiler flags

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Sep  8 13:59:53 2005
++++ Makefile.in	Thu Sep  8 14:00:08 2005
+@@ -205,7 +205,7 @@
+ target_alias = @target_alias@
+ NULL = 
+ 
+-@HAVE_PYTHON_TRUE@PYTHON_SUBDIRS = python simple-editor
++@HAVE_PYTHON_TRUE@PYTHON_SUBDIRS = python
+ 
+ ALL_SUBDIRS = \
+ 	po 			\

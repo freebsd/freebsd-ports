@@ -3,14 +3,15 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#	$MCom: ports/x11/gnome-menus/Makefile,v 1.21 2005/09/08 18:04:51 marcus Exp $
 #
 
 PORTNAME=	gnome-menus
-PORTVERSION=	2.10.2
+PORTVERSION=	2.12.0
 PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.10
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.12
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -20,8 +21,9 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gnomevfs2
-USE_LIBTOOL_VER=15
+USE_GNOME=	gnomeprefix gnomehack intlhack gnomevfs2 ltverhack
+USE_AUTOTOOLS=	libtool:15
+USE_PYTHON=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -32,6 +34,8 @@ post-patch:
 		${WRKSRC}/layout/settings.menu
 	@${SED} -e 's|/usr/local|${LOCALBASE}|g' \
 		< ${FILESDIR}/KDE.directory > ${WRKSRC}/KDE.directory
+	@${REINPLACE_CMD} -e s'|%%X11BASE%%|${X11BASE}|g' \
+		${WRKSRC}/simple-editor/GMenuSimpleEditor/menutreemodel.py
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/gnome/desktop-directories

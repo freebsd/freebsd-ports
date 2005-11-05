@@ -1,20 +1,67 @@
---- network.pl.in.orig	Mon Mar  7 17:33:59 2005
-+++ network.pl.in	Sun Apr 24 02:36:51 2005
-@@ -777,7 +777,7 @@
+--- network.pl.in.orig	Tue Aug 23 05:58:01 2005
++++ network.pl.in	Fri Aug 26 00:56:03 2005
+@@ -522,6 +522,7 @@
+        "vlos-1.2"     => "debian-2.2",
+        "freebsd-5"    => "debian-2.2",
+        "freebsd-6"    => "debian-2.2",
++       "freebsd-7"    => "debian-2.2",
+        );
+ 
+   return $cmd_map{$dist_map{$gst_dist}};
+@@ -791,7 +792,7 @@
        $types_cache{$dev} = "modem";
      }
    }
--  elsif ($dev =~ /(eth|dc|ed|bfe)[0-9]/)
+-  elsif ($dev =~ /^(eth|dc|ed|bfe|em|fxp|bge|de|xl|ixgb|txp|vx|lge|nge|pcn|re|rl|sf|sis|sk|ste|ti|tl|tx|vge|vr|wb|cs|ex|ep|fe|ie|lnc|sn|xe|le|an|awi|wi|ndis|wlaue|axe|cue|kue|rue|fwe|nve)[0-9]/)
 +  elsif ($dev =~ /(eth|dc|ed|bfe|em|fxp|bge|de|xl|ixgb|txp|vx|lge|nge|pcn|re|rl|sf|sis|sk|ste|ti|tl|tx|vge|vr|wb|cs|ex|ep|fe|ie|lnc|sn|xe|le|an|awi|wi|ndis|wl|aue|axe|cue|kue|rue|fwe|nve|hme|ath|iwi|ipw|ral|ural|my)[0-9]/)
    {
      $types_cache{$dev} = "ethernet";
    }
-@@ -4285,7 +4285,7 @@
-       table =>
-       [
-        [ "hostname",      \&gst_parse_sh_re,                          RC_CONF, hostname, "^([^\.]*)\." ],
--       [ "domain",        \&gst_parse_sh_re,                          RC_CONF, hostname, "\.([^\.]*)\$" ],
-+       [ "domain",        \&gst_parse_split_first_str,                RESOLV_CONF, "domain", "[ \t]+" ],
-        [ "nameserver",    \&gst_parse_split_all_unique_hash_comment,  RESOLV_CONF,  "nameserver", "[ \t]+" ],
-        [ "searchdomain",  \&gst_parse_split_first_array_unique,       RESOLV_CONF,  "search", "[ \t]+", "[ \t]+" ],
-        [ "statichost",    \&gst_parse_split_hash,                     HOSTS,        "[ \t]+", "[ \t]+" ],
+@@ -1803,6 +1804,7 @@
+     "gentoo"       => \&gst_network_deb22_get_file,
+     "freebsd-5"    => \&gst_network_deb22_get_file,
+     "freebsd-6"    => \&gst_network_deb22_get_file,
++    "freebsd-7"    => \&gst_network_deb22_get_file,
+ 	  );
+ 
+   $proc = $dist_map{$gst_dist};
+@@ -3906,6 +3908,7 @@
+     "vlos-1.2"     => "",
+     "freebsd-5"    => "",
+     "freebsd-6"    => "",
++    "freebsd-7"    => "",
+ 	  );
+ 
+   $dev = $dist_map {$gst_dist};
+@@ -4034,6 +4037,7 @@
+     "vlos-1.2"     => "vlos-1.2",
+     "freebsd-5"    => "freebsd-5",
+     "freebsd-6"    => "freebsd-5",
++    "freebsd-7"    => "freebsd-5",
+ 	  );
+ 
+   my %dist_tables =
+@@ -4478,6 +4482,7 @@
+     "vlos-1.2"     => "vlos-1.2",
+     "freebsd-5"    => "freebsd-5",
+     "freebsd-6"    => "freebsd-5",
++    "freebsd-7"    => "freebsd-5",
+ 	  );
+   
+   my %dist_tables =
+@@ -5352,6 +5357,7 @@
+     "vlos-1.2"     => "vlos-1.2",
+     "freebsd-5"    => "freebsd-5",
+     "freebsd-6"    => "freebsd-5",
++    "freebsd-7"    => "freebsd-5",
+ 	  );
+ 
+   my %dist_tables =
+@@ -5782,6 +5788,7 @@
+     "vlos-1.2"     => "vlos-1.2",
+     "freebsd-5"    => "freebsd-5",
+     "freebsd-6"    => "freebsd-5",
++    "freebsd-7"    => "freebsd-5",
+ 	  );
+ 
+   my %dist_tables =

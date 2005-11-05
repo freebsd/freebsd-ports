@@ -3,14 +3,15 @@
 # Whom:				Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/net/gnomenettool/Makefile,v 1.11 2005/10/04 03:12:16 ahze Exp $
 #
 
 PORTNAME=	gnomenettool
-PORTVERSION=	1.2.0
+PORTVERSION=	1.4.1
 PORTEPOCH=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-nettool/1.2
+MASTER_SITE_SUBDIR=	sources/gnome-nettool/1.4
 DISTNAME=	gnome-nettool-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -19,9 +20,9 @@ COMMENT=	A GNOME utility that provides network information statistics
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui
+USE_GNOME=	gnomehack intlhack gnomeprefix libglade2 gconf2
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CFLAGS+=	-DHAVE_SOCKADDR_SA_LEN

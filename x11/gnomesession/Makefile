@@ -3,16 +3,18 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/x11/gnomesession/Makefile,v 1.67 2005/10/31 19:46:29 adamw Exp $
 #
 
 PORTNAME=	gnomesession
-PORTVERSION=	2.10.0
+PORTVERSION=	2.12.0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
-		http://people.FreeBSD.org/~pav/:local
-MASTER_SITE_SUBDIR=	sources/gnome-session/2.10 \
-		    	pav/:local
+		http://people.FreeBSD.org/~adamw/images/gnome_splashes/2.12/:local
+MASTER_SITE_SUBDIR=	sources/gnome-session/2.12 \
+		    	adamw/:local
 DISTNAME=	gnome-session-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${SPLASHES}:local
@@ -26,16 +28,16 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-MAN1=		gnome-session.1 gnome-smproxy.1 gnome-wm.1 \
-		session-properties.1 gnome-session-save.1
+MAN1=		gnome-session.1 gnome-wm.1 session-properties.1 \
+		gnome-session-save.1
 MAN5=		default.session.5
 GCONF_SCHEMAS=	gnome-session.schemas
 
-SPLASHES=	freebsd-splashes-gnome-2.10.tar
+SPLASHES=	freebsd-splashes-gnome-2.12.1.tar
 
 post-extract:
 	cd ${WRKDIR} && ${TAR} xf ${DISTDIR}/${DIST_SUBDIR}/${SPLASHES}
@@ -43,10 +45,10 @@ post-extract:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/gnome-session/gnome-splash.png \
 		${PREFIX}/share/gnome/pixmaps/splash/original-gnome-splash.png
-	${INSTALL_DATA} ${WRKDIR}/freebsd-splashes-gnome-2.10/franz_klammer-2.png \
+	${INSTALL_DATA} ${WRKDIR}/freebsd-splashes-gnome-2.12/domix-splash-2.12.png \
 		${PREFIX}/share/gnome/pixmaps/splash/gnome-splash.png
-.for splash in adamw.png banana_flex.png franco_malatacca.jpg franz_klammer-1.png franz_klammer-3.png radek.png
-	${INSTALL_DATA} ${WRKDIR}/freebsd-splashes-gnome-2.10/${splash} \
+.for splash in MaMBaNgGaoX-2.12.png adamw-piggy-2.12.png adamw-trophy-2.12.png andreas-slogan-2.12.png andreas-splash-2.12.png domix-splash-2.12.png domix-splash2-2.12.png mumija-2.12.png mumija2-2.12.png mumija3-2.12.png tremulant-2.12.png tremulant-blood-2.12.png tremulant-brushed-metal-2.12.png 
+	${INSTALL_DATA} ${WRKDIR}/freebsd-splashes-gnome-2.12/${splash} \
 		${PREFIX}/share/gnome/pixmaps/splash
 .endfor
 

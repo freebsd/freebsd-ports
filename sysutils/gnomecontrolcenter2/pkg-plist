@@ -1,3 +1,4 @@
+%%ABOUTME%%bin/gnome-about-me
 bin/gnome-accessibility-keyboard-properties
 bin/gnome-at-properties
 bin/gnome-background-properties
@@ -40,6 +41,7 @@ share/gnome/applications/background.desktop
 share/gnome/applications/default-applications.desktop
 share/gnome/applications/display-properties.desktop
 share/gnome/applications/font-properties.desktop
+%%ABOUTME%%share/gnome/applications/gnome-about-me.desktop
 share/gnome/applications/gnome-font-viewer.desktop
 share/gnome/applications/gnome-network-preferences.desktop
 share/gnome/applications/gnome-settings-mouse.desktop
@@ -51,12 +53,12 @@ share/gnome/applications/keybinding.desktop
 share/gnome/applications/keyboard.desktop
 share/gnome/applications/themus-theme-applier.desktop
 share/gnome/applications/window-properties.desktop
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/control-center-2.0/icons/display-capplet.png
 share/gnome/control-center-2.0/interfaces/acme.glade
 share/gnome/control-center-2.0/interfaces/apply-font.glade
 share/gnome/control-center-2.0/interfaces/at-enable-dialog.glade
 share/gnome/control-center-2.0/interfaces/font-properties.glade
+%%ABOUTME%%share/gnome/control-center-2.0/interfaces/gnome-about-me.glade
 share/gnome/control-center-2.0/interfaces/gnome-accessibility-keyboard-properties.glade
 share/gnome/control-center-2.0/interfaces/gnome-background-properties.glade
 share/gnome/control-center-2.0/interfaces/gnome-default-applications-properties.glade
@@ -84,6 +86,12 @@ share/gnome/control-center-2.0/pixmaps/bar.png
 share/gnome/control-center-2.0/pixmaps/double-click-maybe.png
 share/gnome/control-center-2.0/pixmaps/double-click-off.png
 share/gnome/control-center-2.0/pixmaps/double-click-on.png
+%%ABOUTME%%share/gnome/control-center-2.0/pixmaps/gnome-about-me-bulb-off.png
+%%ABOUTME%%share/gnome/control-center-2.0/pixmaps/gnome-about-me-bulb-on.png
+share/gnome/control-center-2.0/pixmaps/acme-brightness.png
+share/gnome/control-center-2.0/pixmaps/acme-eject.png
+share/gnome/control-center-2.0/pixmaps/gnome-speakernotes-muted.png
+share/gnome/control-center-2.0/pixmaps/gnome-speakernotes.png
 share/gnome/control-center-2.0/pixmaps/keyboard-bell.png
 share/gnome/control-center-2.0/pixmaps/keyboard-cursor.png
 share/gnome/control-center-2.0/pixmaps/keyboard-repeat.png
@@ -111,15 +119,27 @@ share/gnome/control-center-2.0/xrdb/Xaw.ad
 share/gnome/cursor-fonts/cursor-large-white.pcf
 share/gnome/cursor-fonts/cursor-large.pcf
 share/gnome/cursor-fonts/cursor-white.pcf
+share/gnome/help/control-center/C/config-accessibility-keyboard.xml
+share/gnome/help/control-center/C/config-background.xml
+share/gnome/help/control-center/C/config-behavior.xml
+share/gnome/help/control-center/C/config-cds.xml
+share/gnome/help/control-center/C/config-default-apps.xml
+share/gnome/help/control-center/C/config-file-type.xml
+share/gnome/help/control-center/C/config-hints.xml
+share/gnome/help/control-center/C/config-html.xml
+share/gnome/help/control-center/C/config-kbd.xml
+share/gnome/help/control-center/C/config-keybindings.xml
+share/gnome/help/control-center/C/config-mouse.xml
+share/gnome/help/control-center/C/config-screensaver.xml
+share/gnome/help/control-center/C/config-sound.xml
+share/gnome/help/control-center/C/config-themes.xml
+share/gnome/help/control-center/C/control-center.xml
 share/gnome/idl/ConfigArchiver.idl
 share/gnome/idl/GNOME_SettingsDaemon.idl
+share/gnome/omf/control-center/control-center-C.omf
 share/gnome/pixmaps/display-capplet.png
 share/gnome/vfolders/font-method.directory
 share/gnome/vfolders/theme-method.directory
-share/icons/gnome/48x48/apps/acme-brightness.png
-share/icons/gnome/48x48/apps/acme-eject.png
-share/icons/gnome/48x48/apps/gnome-speakernotes-muted.png
-share/icons/gnome/48x48/apps/gnome-speakernotes.png
 share/icons/hicolor/48x48/apps/gnome-control-center.png
 share/locale/af/LC_MESSAGES/control-center-2.0.mo
 share/locale/am/LC_MESSAGES/control-center-2.0.mo
@@ -155,6 +175,7 @@ share/locale/is/LC_MESSAGES/control-center-2.0.mo
 share/locale/it/LC_MESSAGES/control-center-2.0.mo
 share/locale/ja/LC_MESSAGES/control-center-2.0.mo
 share/locale/ko/LC_MESSAGES/control-center-2.0.mo
+share/locale/ku/LC_MESSAGES/control-center-2.0.mo
 share/locale/lt/LC_MESSAGES/control-center-2.0.mo
 share/locale/lv/LC_MESSAGES/control-center-2.0.mo
 share/locale/mk/LC_MESSAGES/control-center-2.0.mo
@@ -181,6 +202,7 @@ share/locale/sr/LC_MESSAGES/control-center-2.0.mo
 share/locale/sr@Latn/LC_MESSAGES/control-center-2.0.mo
 share/locale/sv/LC_MESSAGES/control-center-2.0.mo
 share/locale/ta/LC_MESSAGES/control-center-2.0.mo
+share/locale/te/LC_MESSAGES/control-center-2.0.mo
 share/locale/th/LC_MESSAGES/control-center-2.0.mo
 share/locale/tr/LC_MESSAGES/control-center-2.0.mo
 share/locale/uk/LC_MESSAGES/control-center-2.0.mo
@@ -190,9 +212,18 @@ share/locale/xh/LC_MESSAGES/control-center-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/control-center-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/control-center-2.0.mo
 share/locale/zu/LC_MESSAGES/control-center-2.0.mo
+@unexec rmdir %D/share/locale/zu/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/zu 2> /dev/null || true
+@unexec rmdir %D/share/locale/xh/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/xh 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw 2> /dev/null || true
 @unexec rmdir %D/share/locale/nso/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/nso 2> /dev/null || true
-@dirrm share/gnome/gnome-background-properties
+@dirrm share/gnome/omf/control-center
+@dirrm share/gnome/help/control-center/C
+@dirrm share/gnome/help/control-center
+@unexec /bin/rmdir %D/share/gnome/gnome-background-properties 2>/dev/null || /usr/bin/true
 @dirrm share/gnome/cursor-fonts
 @dirrm share/gnome/control-center-2.0/xrdb
 @dirrm share/gnome/control-center-2.0/pixmaps
@@ -200,4 +231,5 @@ share/locale/zu/LC_MESSAGES/control-center-2.0.mo
 @unexec rmdir %D/share/gnome/control-center-2.0/icons 2> /dev/null || true
 @dirrm lib/window-manager-settings
 @dirrm include/gnome-window-settings-2.0
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

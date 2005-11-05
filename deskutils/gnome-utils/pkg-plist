@@ -116,6 +116,7 @@ share/gnome/omf/gnome-utils/gnome-system-log-sv.omf
 share/gnome/omf/gnome-utils/gnome-system-log-uk.omf
 share/gnome/omf/gnome-utils/gnome-system-log-zh_CN.omf
 share/gnome/omf/gnome-utils/gnome-system-log-zh_TW.omf
+share/gnome/pixmaps/gsearchtool/thumbnail_frame.png
 share/locale/am/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-utils-2.0.mo
@@ -181,6 +182,7 @@ share/locale/wa/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/xh/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-utils-2.0.mo
+@dirrm share/gnome/pixmaps/gsearchtool
 @dirrm share/gnome/omf/gnome-utils
 @dirrm share/gnome/help/gnome-system-log/zh_TW/figures
 @dirrm share/gnome/help/gnome-system-log/zh_TW

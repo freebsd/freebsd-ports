@@ -3,14 +3,15 @@
 # Whom:					Anders Nordby <anders@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/archivers/fileroller/Makefile,v 1.79 2005/10/03 21:14:16 mezz Exp $
 #
 
 PORTNAME=	fileroller
-PORTVERSION=	2.10.4
+PORTVERSION=	2.12.1
 PORTEPOCH=	1
 CATEGORIES=	archivers gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/file-roller/2.10
+MASTER_SITE_SUBDIR=	sources/file-roller/2.12
 DISTNAME=	file-roller-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -27,8 +28,9 @@ INSTALLS_OMF=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack desktopfileutils nautilus2
-USE_LIBTOOL_VER=15
+USE_GNOME=	gnomeprefix intlhack gnomehack desktopfileutils nautilus2 \
+		gnomedocutils
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -37,6 +39,8 @@ GCONF_SCHEMAS=	file-roller.schemas
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/src/fr-command-tar.c
+	@${FIND} ${WRKSRC} -name "fr-command-*.c" | ${XARGS} ${REINPLACE_CMD} \
+		-e 's|atoll|fr_atoll|g'
 
 post-install:
 	@-update-desktop-database

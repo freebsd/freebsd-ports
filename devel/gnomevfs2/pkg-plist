@@ -3,9 +3,9 @@ bin/gnomevfs-copy
 bin/gnomevfs-info
 bin/gnomevfs-ls
 bin/gnomevfs-mkdir
+bin/gnomevfs-monitor
 bin/gnomevfs-mv
 bin/gnomevfs-rm
-%%CDPARANOIA%%etc/gnome-vfs-2.0/modules/cdda-module.conf
 etc/gnome-vfs-2.0/modules/default-modules.conf
 %%SAMBA%%etc/gnome-vfs-2.0/modules/smb-module.conf
 etc/gnome-vfs-2.0/modules/ssl-modules.conf
@@ -58,7 +58,6 @@ include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-ssl.h
 include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-transform.h
 lib/bonobo/monikers/libmoniker_gnome_vfs_std.so
 lib/gnome-vfs-2.0/modules/libbzip2.so
-%%CDPARANOIA%%lib/gnome-vfs-2.0/modules/libcdda.so
 lib/gnome-vfs-2.0/modules/libcomputer.so
 lib/gnome-vfs-2.0/modules/libdns-sd.so
 lib/gnome-vfs-2.0/modules/libfile.so
@@ -70,12 +69,10 @@ lib/gnome-vfs-2.0/modules/libnntp.so
 lib/gnome-vfs-2.0/modules/libsftp.so
 %%SAMBA%%lib/gnome-vfs-2.0/modules/libsmb.so
 lib/gnome-vfs-2.0/modules/libtar.so
-lib/gnome-vfs-2.0/modules/libvfs-pipe.so
 lib/gnome-vfs-2.0/modules/libvfs-test.so
-lib/gnome-vfs-2.0/modules/libvfs-translate.so
 lib/libgnomevfs-2.a
 lib/libgnomevfs-2.so
-lib/libgnomevfs-2.so.1000
+lib/libgnomevfs-2.so.0
 libdata/bonobo/servers/GNOME_VFS_Daemon.server
 libdata/bonobo/servers/GNOME_VFS_Moniker_std.server
 libdata/pkgconfig/gnome-vfs-2.0.pc

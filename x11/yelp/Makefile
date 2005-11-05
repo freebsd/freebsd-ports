@@ -3,39 +3,38 @@
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/x11/yelp/Makefile,v 1.63 2005/10/09 00:42:45 marcus Exp $
 #
 
 PORTNAME=	yelp
-PORTVERSION=	2.10.0
+PORTVERSION=	2.12.1
 PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.10
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.12
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A help browser for the GNOME 2 desktop
 
-BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/gnome-doc-utils.pc:${PORTSDIR}/textproc/gnomedocutils \
-		${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gnome-doc-utils.pc:${PORTSDIR}/textproc/gnomedocutils \
-		${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
+BUILD_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
+RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
 
-MOZILLA=	mozilla
+MOZILLA=	firefox
 HEADERS_SUFX=
 
 .if !defined(WITH_MOZILLA)
-MOZILLA=	mozilla
+MOZILLA=	firefox
 HEADERS_SUFX=
 .else
-.if ${WITH_MOZILLA}=="firefox"
-MOZILLA=	firefox
+.if ${WITH_MOZILLA}=="mozilla"
+MOZILLA=	mozilla
 .else
 .if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-devel-gtk2"
 MOZILLA=	mozilla-devel
 HEADERS_SUFX=	-devel
 .else
-MOZILLA=	mozilla
+MOZILLA=	firefox
 HEADERS_SUFX=
 .endif
 .endif
@@ -45,8 +44,9 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui
-USE_LIBTOOL_VER=15
+USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui gnomedocutils
+USE_AUTOTOOLS=	libtool:15
+INSTALLS_ICONS=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-mozilla=${MOZILLA}
@@ -75,11 +75,11 @@ CONFIGURE_ARGS+=--enable-info
 
 pre-everything::
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} " By default yelp uses www/mozilla for html rendering, but you can"
+	@${ECHO_MSG} " By default yelp uses www/firefox for html rendering, but you can"
 	@${ECHO_MSG} " change this by defining WITH_MOZILLA to one of the following values:"
 	@${ECHO_MSG}
 	@${ECHO_MSG} "  mozilla-devel "
-	@${ECHO_MSG} "  firefox "
+	@${ECHO_MSG} "  mozilla"
 	@${ECHO_MSG} ""
 
 post-patch:

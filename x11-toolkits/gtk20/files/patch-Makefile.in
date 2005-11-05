@@ -1,11 +1,11 @@
---- Makefile.in.orig	Thu Jan 22 19:40:10 2004
-+++ Makefile.in	Thu Jan 22 19:40:52 2004
-@@ -286,7 +286,7 @@
+--- Makefile.in.orig	Wed Aug  3 18:09:32 2005
++++ Makefile.in	Wed Aug  3 18:10:01 2005
+@@ -288,7 +288,7 @@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  
--SRC_SUBDIRS = gdk-pixbuf gdk gtk modules demos tests contrib
-+SRC_SUBDIRS = gdk-pixbuf gdk gtk modules demos contrib
- SUBDIRS = po po-properties $(SRC_SUBDIRS) docs build m4macros
+-SRC_SUBDIRS = gdk-pixbuf gdk gtk modules demos tests perf contrib
++SRC_SUBDIRS = gdk-pixbuf gdk gtk modules demos perf contrib
+ SUBDIRS = po po-properties $(SRC_SUBDIRS) docs m4macros
  
  # require automake 1.4

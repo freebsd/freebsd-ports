@@ -3,14 +3,14 @@
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/mail/evolution/Makefile,v 1.76 2005/10/09 11:09:15 kwm Exp $
 #
 
 PORTNAME=	evolution
-PORTVERSION=	2.2.3
-PORTREVISION=	1
+PORTVERSION=	2.4.1
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.4
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -23,28 +23,30 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack evolutiondataserver gal2 \
+USE_GNOME=	gnomeprefix gnomehack intlhack evolutiondataserver \
 		gtkhtml3 desktopfileutils
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_OMF=	yes
 CONFIGURE_ARGS=	--enable-nss=yes \
 		--with-nss-includes=${LOCALBASE}/include/nss/nss \
 		--with-nss-libs=${LOCALBASE}/lib \
 		--with-nspr-includes=${LOCALBASE}/include/nspr \
 		--with-nspr-libs=${LOCALBASE}/lib \
+		--enable-mono=no \
 		--with-sub-version=" FreeBSD GNOME Team Port"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 GCONF_SCHEMAS=	apps_evolution_addressbook-${EVO_VERSION}.schemas \
 		apps_evolution_calendar-${EVO_VERSION}.schemas \
+		apps-evolution-mail-prompts-checkdefault-2.4.schemas \
 		apps_evolution_shell-${EVO_VERSION}.schemas \
 		evolution-mail-${EVO_VERSION}.schemas
 
-EVO_VERSION=	2.2
+EVO_VERSION=	2.4
 PLIST_SUB=	VERSION=${EVO_VERSION} \
-		PORTVERSION=2.2
+		PORTVERSION=2.4
 
 OPTIONS=	PILOT "Enable Palm Pilot sync support" off \
 		LDAP "Enable LDAP support" on \
@@ -52,14 +54,18 @@ OPTIONS=	PILOT "Enable Palm Pilot sync support" off \
 
 .include <bsd.port.pre.mk>
 
-.if exists(${X11BASE}/lib/libgstreamer-0.8.so.5) || \
-	defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
+.if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
 WITH_GSTREAMER=	yes
+WITH_DBUS=	yes
 .endif
 
-#.if exists(${LOCALBASE}/lib/libdbus-glib-1.so)
-#WITH_DBUS=	yes
-#.endif
+.if exists(${LOCALBASE}/lib/libdbus-glib-1.so)
+WITH_DBUS=	yes
+.endif
+
+.if exists(${X11BASE}/lib/libgstreamer-0.8.so)
+WITH_GSTREAMER=	yes
+.endif
 
 .if defined(WITH_PILOT)
 LIB_DEPENDS+=	gpilotdconduit.2:${PORTSDIR}/palm/gnomepilot2
@@ -88,12 +94,12 @@ PLIST_SUB+=	GSTREAMER=""
 PLIST_SUB+=	GSTREAMER="@comment "
 .endif
 
-#.if defined(WITH_DBUS)
-#LIB_DEPENDS+=	dbus-glib-1.1:${PORTSDIR}/devel/dbus
-#PLIST_SUB+=	DBUS=""
-#.else
-#PLIST_SUB+=	DBUS="@comment "
-#.endif
+.if defined(WITH_DBUS)
+LIB_DEPENDS+=	dbus-glib-1.1:${PORTSDIR}/devel/dbus
+PLIST_SUB+=	DBUS=""
+.else
+PLIST_SUB+=	DBUS="@comment "
+.endif
 
 .if ${OSVERSION} >= 500000 && !defined(NO_KERBEROS) && \
 	exists(/usr/lib/libkrb5.so)
@@ -111,6 +117,9 @@ post-patch:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}| ; \
 		s|%%EVO_VERSION%%|${EVO_VERSION}|' \
 		${FILESDIR}/evolibs.sh > ${WRKDIR}/evolibs.sh
+	@${REINPLACE_CMD} -e "s|gal-2.4|gal-2.6|g" \
+		${WRKSRC}/evolution-shell.pc.in \
+		${WRKSRC}/evolution-plugin.pc.in
 
 post-install:
 	@${LN} -sf ${PREFIX}/bin/evolution-${EVO_VERSION} \

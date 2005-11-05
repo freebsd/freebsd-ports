@@ -3,14 +3,15 @@
 # Whom:                 		Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
+#    $MCom: ports/graphics/librsvg2/Makefile,v 1.73 2005/10/11 22:27:04 marcus Exp $
 #
 
 PORTNAME=	librsvg2
-PORTVERSION=	2.9.5
-PORTREVISION=	2
+PORTVERSION=	2.12.7
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.9
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.12
 DISTNAME=	librsvg-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -27,10 +28,9 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
-WANT_GNOME=	yes
-USE_GNOME=	gnomehack gnomeprefix libartlgpl2 libgsf gtk20
+USE_GNOME=	gnomehack gnomeprefix libartlgpl2 libgsf gtk20 ltverhack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-svgz \
@@ -46,75 +46,46 @@ PLIST_SUB=	GTK_VERSION=${GTK_VERSION}
 
 MAN1=		rsvg.1
 
-OPTIONS=	MOZILLA_PLUGIN "Enable the RSVG browser plug-in" no
-
-.if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
-.undef WITHOUT_GNOME
-WITH_GNOME=	yes
-.endif
+OPTIONS=	MOZILLA_PLUGIN "Enable the SVG browser plug-in" no
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MOZILLA_PLUGIN)
-.if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="firefox"
-BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
-RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
-.else
-BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
-RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
-.endif
+WITH_MOZILLA?=	firefox
 
+.if ${WITH_MOZILLA}=="firefox"
+MOZILLA=	firefox
 HEADERS_SUFX=
-
-.if !defined(WITH_MOZILLA)
+.elif ${WITH_MOZILLA}=="mozilla"
+MOZILLA=	mozilla
 HEADERS_SUFX=
-.else
-.if ${WITH_MOZILLA}=="mozilla"
-HEADERS_SUFX=
-.else
-.if ${WITH_MOZILLA}=="mozilla-devel"
+.elif ${WITH_MOZILLA}=="mozilla-devel"
+MOZILLA=	mozilla
 HEADERS_SUFX=	-devel
 .else
-.if ${WITH_MOZILLA}=="firefox"
-HEADERS_SUFX=
+BROKEN=		"Unknown Gecko source specified (${WITH_MOZILLA})"
 .endif
+
+BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/${MOZILLA}-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/${MOZILLA}${HEADERS_SUFX}
+RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/${MOZILLA}-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/${MOZILLA}${HEADERS_SUFX}
+
+.if ${WITH_MOZILLA}=="mozilla-devel" && ${OSVERSION} < 500000
+USE_GCC=	3.4
 .endif
-.endif
-.endif
+CONFIGURE_ENV+=	MOZILLA_CONFIG=no
+CONFIGURE_ARGS+=--enable-mozilla-plugin=yes
+
 PLIST_SUB+=	PLUGIN=""
 .else
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile.in
+CONFIGURE_ARGS+=--enable-mozilla-plugin=no
+
 PLIST_SUB+=	PLUGIN="@comment "
 .endif
 
-.if ${OSVERSION} < 500000
-.if defined(WITH_MOZILLA)
-.if ${WITH_MOZILLA}=="mozilla-devel"
-USE_GCC=	3.4
-.endif
-.endif
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
-		${WRKSRC}/librsvg-2.0.pc.in
 .if defined(WITH_MOZILLA_PLUGIN)
-.if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="firefox"
-	@${REINPLACE_CMD} -e 's|mozilla-|firefox-|g' ${WRKSRC}/configure
-.else
-	@${REINPLACE_CMD} -e 's|mozilla-plugin|mozilla-plugin${HEADERS_SUFX}|g' \
+	@${REINPLACE_CMD} -e 's|mozilla-plugin|${MOZILLA}-plugin${HEADERS_SUFX}|g' \
 		${WRKSRC}/configure
-.endif
-.endif
-
-pre-build:
-	@${REINPLACE_CMD} -E -e 's|O2|O|g' ${WRKSRC}/Makefile
-
-.if defined(WITH_MOZILLA_PLUGIN)
-post-install:
-	${MKDIR} ${PREFIX}/lib/browser_plugins
-	${INSTALL_PROGRAM} ${WRKSRC}/moz-plugin/.libs/libmozsvgdec.so \
-		${PREFIX}/lib/browser_plugins
 .endif
 
 .include <bsd.port.post.mk>

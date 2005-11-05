@@ -1,28 +1,32 @@
---- Makefile.in.orig	Tue Mar 16 15:15:47 2004
-+++ Makefile.in	Tue Mar 16 15:16:18 2004
-@@ -192,7 +192,6 @@
-         fontconfig.pc.in \
-         fonts.conf.in \
- 	fonts.dtd \
--	local.conf \
-         fontconfig.spec.in \
-         fontconfig.spec \
- 	fontconfig-zip.in
-@@ -671,16 +670,7 @@
+--- Makefile.in.orig	Wed Jul 27 02:23:03 2005
++++ Makefile.in	Wed Jul 27 02:25:27 2005
+@@ -721,28 +721,7 @@
  
  
  install-data-local:
--	if [ -f $(DESTDIR)$(configdir)/local.conf ]; then \
--	  echo "not overwriting existing $(DESTDIR)$(configdir)/local.conf"; \
--	else if [ -f $(srcdir)/local.conf ]; then \
--	  echo " $(INSTALL_DATA) $(srcdir)/local.conf $(DESTDIR)$(configdir)/local.conf"; \
--	  $(INSTALL_DATA) $(srcdir)/local.conf $(DESTDIR)$(configdir)/local.conf; \
--	else if [ -f local.conf ]; then \
--	  echo " $(INSTALL_DATA) local.conf $(DESTDIR)$(configdir)/local.conf"; \
--	  $(INSTALL_DATA) local.conf $(DESTDIR)$(configdir)/local.conf; \
--	fi; fi; fi
--	if [ x$(DESTDIR) = x ]; then fc-cache/fc-cache -f -v; fi
-+#	if [ x$(DESTDIR) = x ]; then fc-cache/fc-cache -f -v; fi
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
+-	$(mkinstalldirs) $(DESTDIR)$(configdir)
+-	if [ -f $(DESTDIR)$(configdir)/fonts.conf ]; then \
+-	  echo "backing up existing $(DESTDIR)$(configdir)/fonts.conf"; \
+-	  mv $(DESTDIR)$(configdir)/fonts.conf $(DESTDIR)$(configdir)/fonts.conf.bak; \
+-	fi
+-	if [ -f $(srcdir)/fonts.conf ]; then \
+-	  echo " $(INSTALL_DATA) $(srcdir)/fonts.conf $(DESTDIR)$(configdir)/fonts.conf"; \
+-	  $(INSTALL_DATA) $(srcdir)/fonts.conf $(DESTDIR)$(configdir)/fonts.conf; \
+-	else if [ -f fonts.conf ]; then \
+-	  echo " $(INSTALL_DATA) fonts.conf $(DESTDIR)$(configdir)/fonts.conf"; \
+-	  $(INSTALL_DATA) fonts.conf $(DESTDIR)$(configdir)/fonts.conf; \
+-	fi; fi
+-	if $(RUN_FC_CACHE_TEST); then \
+-	    echo " fc-cache/fc-cache -f -v"; \
+-	    fc-cache/fc-cache -f -v; \
+-	else \
+-	    echo "***"; \
+-	    echo "*** Warning: fonts.cache not built"; \
+-	    echo "***"; \
+-	    echo "*** Generate this file manually on host system using fc-cache"; \
+-	    echo "***"; \
+-	fi
++
+ 
+ uninstall-local:
+ 	if [ -f $(srcdir)/fonts.conf ]; then \

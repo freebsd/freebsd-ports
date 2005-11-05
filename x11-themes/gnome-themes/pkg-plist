@@ -1,3 +1,4 @@
+share/gnome/themes/Clearlooks/metacity-1/metacity-theme-1.xml
 share/gnome/themes/Glider/metacity-1/metacity-theme-1.xml
 share/gnome/themes/Mist/metacity-1/metacity-theme-1.xml
 share/gnome/themes/Sandwish/metacity-1/active-border-top-left-border.png
@@ -167,6 +168,7 @@ share/icons/HighContrastLargePrint/48x48/apps/acme-48.png
 share/icons/HighContrastLargePrint/48x48/apps/administration.png
 share/icons/HighContrastLargePrint/48x48/apps/advanced-directory.png
 share/icons/HighContrastLargePrint/48x48/apps/ax-applet.png
+share/icons/HighContrastLargePrint/48x48/apps/battstat.png
 share/icons/HighContrastLargePrint/48x48/apps/charpick.png
 share/icons/HighContrastLargePrint/48x48/apps/clock.png
 share/icons/HighContrastLargePrint/48x48/apps/config-language.png
@@ -174,6 +176,7 @@ share/icons/HighContrastLargePrint/48x48/apps/config-users.png
 share/icons/HighContrastLargePrint/48x48/apps/config-xfree.png
 share/icons/HighContrastLargePrint/48x48/apps/disks.png
 share/icons/HighContrastLargePrint/48x48/apps/display-capplet.png
+share/icons/HighContrastLargePrint/48x48/apps/drivemount-applet.png
 share/icons/HighContrastLargePrint/48x48/apps/evolution-1.4.png
 share/icons/HighContrastLargePrint/48x48/apps/evolution.png
 share/icons/HighContrastLargePrint/48x48/apps/file-manager.png
@@ -184,12 +187,14 @@ share/icons/HighContrastLargePrint/48x48/apps/gataxx.png
 share/icons/HighContrastLargePrint/48x48/apps/gcalctool.png
 share/icons/HighContrastLargePrint/48x48/apps/gconf-editor.png
 share/icons/HighContrastLargePrint/48x48/apps/gdict.png
+share/icons/HighContrastLargePrint/48x48/apps/gdm-setup.png
+share/icons/HighContrastLargePrint/48x48/apps/gdm-xnest.png
 share/icons/HighContrastLargePrint/48x48/apps/gdm.png
 share/icons/HighContrastLargePrint/48x48/apps/gedit-icon.png
 share/icons/HighContrastLargePrint/48x48/apps/gkb.png
 share/icons/HighContrastLargePrint/48x48/apps/glade-2.png
 share/icons/HighContrastLargePrint/48x48/apps/glines.png
-share/icons/HighContrastLargePrint/48x48/apps/glow.png
+share/icons/HighContrastLargePrint/48x48/apps/glow-app-icon.png
 share/icons/HighContrastLargePrint/48x48/apps/gnect-icon.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-application-generic.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-applications.png
@@ -205,7 +210,6 @@ share/icons/HighContrastLargePrint/48x48/apps/gnome-desktop-config.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-devel.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-eog.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-folder-generic.png
-share/icons/HighContrastLargePrint/48x48/apps/gnome-folder.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-ftp.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-ghex.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-ghostview.png
@@ -230,6 +234,7 @@ share/icons/HighContrastLargePrint/48x48/apps/gnome-mini-commander.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-mixer-applet.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-mixer.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-modem.png
+share/icons/HighContrastLargePrint/48x48/apps/gnome-money.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-monitor.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-multimedia.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-nibbles.png
@@ -270,6 +275,7 @@ share/icons/HighContrastLargePrint/48x48/apps/gnomemeeting-logo-icon.png
 share/icons/HighContrastLargePrint/48x48/apps/gnopernicus.png
 share/icons/HighContrastLargePrint/48x48/apps/gnotski-icon.png
 share/icons/HighContrastLargePrint/48x48/apps/gok.png
+share/icons/HighContrastLargePrint/48x48/apps/gswitchit-applet.png
 share/icons/HighContrastLargePrint/48x48/apps/gthumb.png
 share/icons/HighContrastLargePrint/48x48/apps/gtkam-camera.png
 share/icons/HighContrastLargePrint/48x48/apps/gucharmap.png
@@ -287,15 +293,16 @@ share/icons/HighContrastLargePrint/48x48/apps/logviewer.png
 share/icons/HighContrastLargePrint/48x48/apps/media-player-48.png
 share/icons/HighContrastLargePrint/48x48/apps/mozilla-icon.png
 share/icons/HighContrastLargePrint/48x48/apps/nb48x48.png
+share/icons/HighContrastLargePrint/48x48/apps/netapplet.png
 share/icons/HighContrastLargePrint/48x48/apps/network-config.png
 share/icons/HighContrastLargePrint/48x48/apps/network.png
+share/icons/HighContrastLargePrint/48x48/apps/panel-notification-area.png
 share/icons/HighContrastLargePrint/48x48/apps/password.png
 share/icons/HighContrastLargePrint/48x48/apps/perfmeter.png
 share/icons/HighContrastLargePrint/48x48/apps/postscript-viewer.png
 share/icons/HighContrastLargePrint/48x48/apps/procman.png
+share/icons/HighContrastLargePrint/48x48/apps/quick-lounge-applet.png
 share/icons/HighContrastLargePrint/48x48/apps/realplay.png
-share/icons/HighContrastLargePrint/48x48/apps/realplayer.xpm
-share/icons/HighContrastLargePrint/48x48/apps/rp7.xpm
 share/icons/HighContrastLargePrint/48x48/apps/screensaver.png
 share/icons/HighContrastLargePrint/48x48/apps/serviceconf.png
 share/icons/HighContrastLargePrint/48x48/apps/sound-capplet.png
@@ -303,8 +310,10 @@ share/icons/HighContrastLargePrint/48x48/apps/star.png
 share/icons/HighContrastLargePrint/48x48/apps/staroffice-calc.png
 share/icons/HighContrastLargePrint/48x48/apps/staroffice-impress.png
 share/icons/HighContrastLargePrint/48x48/apps/staroffice-writer.png
+share/icons/HighContrastLargePrint/48x48/apps/stock_notes.png
 share/icons/HighContrastLargePrint/48x48/apps/stock_proxy.png
 share/icons/HighContrastLargePrint/48x48/apps/stock_timezone.png
+share/icons/HighContrastLargePrint/48x48/apps/stock_weather-storm.png
 share/icons/HighContrastLargePrint/48x48/apps/sun_java.png
 share/icons/HighContrastLargePrint/48x48/apps/web-browser.png
 share/icons/HighContrastLargePrint/48x48/apps/window-capplet.png
@@ -318,6 +327,8 @@ share/icons/HighContrastLargePrint/48x48/devices/gnome-dev-jazdisk.png
 share/icons/HighContrastLargePrint/48x48/devices/gnome-dev-keyboard.png
 share/icons/HighContrastLargePrint/48x48/devices/gnome-dev-mouse-ball.png
 share/icons/HighContrastLargePrint/48x48/devices/gnome-dev-mouse-optical.png
+share/icons/HighContrastLargePrint/48x48/devices/gnome-dev-printer-network.png
+share/icons/HighContrastLargePrint/48x48/devices/gnome-dev-printer-new.png
 share/icons/HighContrastLargePrint/48x48/devices/gnome-dev-printer.png
 share/icons/HighContrastLargePrint/48x48/devices/gnome-dev-removable.png
 share/icons/HighContrastLargePrint/48x48/devices/gnome-dev-zipdisk.png
@@ -536,6 +547,7 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/acme-48.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/administration.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/advanced-directory.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/ax-applet.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/battstat.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/charpick.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/clock.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/config-language.png
@@ -543,6 +555,7 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/config-users.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/config-xfree.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/disks.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/display-capplet.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/drivemount-applet.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/evolution-1.4.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/evolution.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/file-manager.png
@@ -553,12 +566,14 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/gataxx.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gcalctool.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gconf-editor.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gdict.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/gdm-setup.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/gdm-xnest.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gdm.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gedit-icon.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gkb.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/glade-2.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/glines.png
-share/icons/HighContrastLargePrintInverse/48x48/apps/glow.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/glow-app-icon.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnect-icon.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-application-generic.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-applications.png
@@ -574,7 +589,6 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-desktop-config.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-devel.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-eog.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-folder-generic.png
-share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-folder.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-ftp.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-ghex.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-ghostview.png
@@ -599,6 +613,7 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-mini-commander.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-mixer-applet.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-mixer.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-modem.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-money.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-monitor.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-multimedia.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-nibbles.png
@@ -639,6 +654,7 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/gnomemeeting-logo-icon.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnopernicus.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnotski-icon.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gok.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/gswitchit-applet.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gthumb.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gtkam-camera.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gucharmap.png
@@ -656,15 +672,16 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/logviewer.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/media-player-48.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/mozilla-icon.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/nb48x48.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/netapplet.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/network-config.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/network.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/panel-notification-area.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/password.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/perfmeter.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/postscript-viewer.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/procman.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/quick-lounge-applet.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/realplay.png
-share/icons/HighContrastLargePrintInverse/48x48/apps/realplayer.xpm
-share/icons/HighContrastLargePrintInverse/48x48/apps/rp7.xpm
 share/icons/HighContrastLargePrintInverse/48x48/apps/screensaver.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/serviceconf.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/sound-capplet.png
@@ -672,8 +689,10 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/star.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/staroffice-calc.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/staroffice-impress.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/staroffice-writer.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/stock_notes.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/stock_proxy.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/stock_timezone.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/stock_weather-storm.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/sun_java.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/web-browser.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/window-capplet.png
@@ -687,6 +706,8 @@ share/icons/HighContrastLargePrintInverse/48x48/devices/gnome-dev-jazdisk.png
 share/icons/HighContrastLargePrintInverse/48x48/devices/gnome-dev-keyboard.png
 share/icons/HighContrastLargePrintInverse/48x48/devices/gnome-dev-mouse-ball.png
 share/icons/HighContrastLargePrintInverse/48x48/devices/gnome-dev-mouse-optical.png
+share/icons/HighContrastLargePrintInverse/48x48/devices/gnome-dev-printer-network.png
+share/icons/HighContrastLargePrintInverse/48x48/devices/gnome-dev-printer-new.png
 share/icons/HighContrastLargePrintInverse/48x48/devices/gnome-dev-printer.png
 share/icons/HighContrastLargePrintInverse/48x48/devices/gnome-dev-removable.png
 share/icons/HighContrastLargePrintInverse/48x48/devices/gnome-dev-zipdisk.png
@@ -976,6 +997,9 @@ share/icons/LowContrastLargePrint/48x48/devices/gnome-dev-jazdisk.png
 share/icons/LowContrastLargePrint/48x48/devices/gnome-dev-keyboard.png
 share/icons/LowContrastLargePrint/48x48/devices/gnome-dev-memory.png
 share/icons/LowContrastLargePrint/48x48/devices/gnome-dev-mouse-optical.png
+share/icons/LowContrastLargePrint/48x48/devices/gnome-dev-printer-network.png
+share/icons/LowContrastLargePrint/48x48/devices/gnome-dev-printer-new.png
+share/icons/LowContrastLargePrint/48x48/devices/gnome-dev-printer.png
 share/icons/LowContrastLargePrint/48x48/devices/gnome-dev-zipdisk.png
 share/icons/LowContrastLargePrint/48x48/emblems/emblem-art.png
 share/icons/LowContrastLargePrint/48x48/emblems/emblem-camera.png
@@ -1255,6 +1279,7 @@ share/locale/wa/LC_MESSAGES/gnome-themes.mo
 share/locale/xh/LC_MESSAGES/gnome-themes.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-themes.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-themes.mo
+share/themes/Clearlooks/index.theme
 share/themes/Crux/index.theme
 share/themes/Glider/gtk-2.0/gtkrc
 share/themes/Glider/index.theme
@@ -1907,12 +1932,9 @@ share/themes/Traditional/index.theme
 @dirrm share/themes/Glider/gtk-2.0
 @dirrm share/themes/Glider
 @dirrm share/themes/Crux
-@unexec rmdir %D/share/locale/xh/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/xh 2> /dev/null || true
+@dirrm share/themes/Clearlooks
 @unexec rmdir %D/share/locale/ug/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/ug 2> /dev/null || true
-@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/rw 2> /dev/null || true
 @dirrm share/icons/Smokey-Red/96x96/filesystems
 @dirrm share/icons/Smokey-Red/96x96
 @dirrm share/icons/Smokey-Red/72x72/filesystems
@@ -2023,4 +2045,6 @@ share/themes/Traditional/index.theme
 @dirrm share/gnome/themes/Mist
 @dirrm share/gnome/themes/Glider/metacity-1
 @dirrm share/gnome/themes/Glider
+@dirrm share/gnome/themes/Clearlooks/metacity-1
+@dirrm share/gnome/themes/Clearlooks
 @unexec /bin/rmdir %D/share/icons 2>/dev/null || /usr/bin/true

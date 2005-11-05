@@ -3,20 +3,22 @@
 # Whom:				Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/x11-toolkits/pango/Makefile,v 1.43 2005/10/03 15:42:47 ahze Exp $
 #
 
 PORTNAME=	pango
-PORTVERSION=	1.8.2
+PORTVERSION=	1.10.1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/1.8,} \
-		ftp://ftp.gtk.org/pub/gtk/v2.6/
+MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/1.10,} \
+		ftp://ftp.gtk.org/pub/gtk/v2.7/
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An open-source framework for the layout and rendering of i18n text
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft \
+		cairo.2:${PORTSDIR}/graphics/cairo
 RUN_DEPENDS=	${FONTSCALE}:${X_FONTS_TTF_PORT} \
 		${FONTENCOD}:${X_FONTS_ENCODINGS_PORT}
 
@@ -26,8 +28,8 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
-USE_GNOME=	gnomehack glib20
+USE_AUTOTOOLS=	libtool:15
+USE_GNOME=	gnomehack glib20 ltverhack
 CONFIGURE_ARGS=	--with-qt=no \
 		--with-html-dir=${PREFIX}/share/doc \
 		--enable-static
@@ -52,9 +54,6 @@ post-patch:
 	@${FIND} ${WRKSRC}/pango/opentype -name "*.[ch]" | ${XARGS} \
 		${REINPLACE_CMD} -e 's|internal/tterrors\.h|fterrors.h| ; \
 		s|TT_Err_|FT_Err_|g'
-	@${REINPLACE_CMD} -e 's|LT_VERSION_INFO="801:1:801"|LT_VERSION_INFO="800:1:800"|g' \
-		${WRKSRC}/configure
-
 post-install:
 	@${SED} -e 's|%%X11BASE%%|${X11BASE}|' < ${FILESDIR}/pkg-install.in \
 		> ${PKGINSTALL}

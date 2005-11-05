@@ -2,16 +2,18 @@ bin/gnome-menu-spec-test
 etc/xdg/menus/applications.menu
 etc/xdg/menus/preferences.menu
 etc/xdg/menus/settings.menu
-include/gnome-menus/menu-tree.h
+include/gnome-menus/gmenu-tree.h
 lib/libgnome-menu.a
 lib/libgnome-menu.so
-lib/libgnome-menu.so.0
+lib/libgnome-menu.so.2
+%%PYTHON_SITELIBDIR%%/gmenu.so
 libdata/pkgconfig/libgnome-menu.pc
 share/gnome/desktop-directories/Accessibility.directory
 share/gnome/desktop-directories/Accessories.directory
 share/gnome/desktop-directories/Applications.directory
+share/gnome/desktop-directories/Desktop.directory
 share/gnome/desktop-directories/Development.directory
-share/gnome/desktop-directories/Edutainment.directory
+share/gnome/desktop-directories/Education.directory
 share/gnome/desktop-directories/Games.directory
 share/gnome/desktop-directories/Graphics.directory
 share/gnome/desktop-directories/Internet.directory
@@ -19,6 +21,7 @@ share/gnome/desktop-directories/KDE.directory
 share/gnome/desktop-directories/Multimedia.directory
 share/gnome/desktop-directories/Office.directory
 share/gnome/desktop-directories/Other.directory
+share/gnome/desktop-directories/Preferences.directory
 share/gnome/desktop-directories/Settings-Accessibility.directory
 share/gnome/desktop-directories/Settings.directory
 share/gnome/desktop-directories/System-Settings.directory
@@ -44,12 +47,14 @@ share/locale/gu/LC_MESSAGES/gnome-menus.mo
 share/locale/he/LC_MESSAGES/gnome-menus.mo
 share/locale/hi/LC_MESSAGES/gnome-menus.mo
 share/locale/hu/LC_MESSAGES/gnome-menus.mo
+share/locale/hy/LC_MESSAGES/gnome-menus.mo
 share/locale/id/LC_MESSAGES/gnome-menus.mo
 share/locale/it/LC_MESSAGES/gnome-menus.mo
 share/locale/ja/LC_MESSAGES/gnome-menus.mo
 share/locale/ko/LC_MESSAGES/gnome-menus.mo
 share/locale/lt/LC_MESSAGES/gnome-menus.mo
 share/locale/mk/LC_MESSAGES/gnome-menus.mo
+share/locale/mr/LC_MESSAGES/gnome-menus.mo
 share/locale/ms/LC_MESSAGES/gnome-menus.mo
 share/locale/nb/LC_MESSAGES/gnome-menus.mo
 share/locale/ne/LC_MESSAGES/gnome-menus.mo
@@ -64,7 +69,6 @@ share/locale/ro/LC_MESSAGES/gnome-menus.mo
 share/locale/ru/LC_MESSAGES/gnome-menus.mo
 share/locale/rw/LC_MESSAGES/gnome-menus.mo
 share/locale/sk/LC_MESSAGES/gnome-menus.mo
-share/locale/sl/LC_MESSAGES/gnome-menus.mo
 share/locale/sq/LC_MESSAGES/gnome-menus.mo
 share/locale/sr/LC_MESSAGES/gnome-menus.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-menus.mo
@@ -80,7 +84,13 @@ share/locale/zh_TW/LC_MESSAGES/gnome-menus.mo
 @unexec rmdir %D/share/locale/xh 2> /dev/null || true
 @unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/rw 2> /dev/null || true
+@unexec rmdir %D/share/locale/mr/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/mr 2> /dev/null || true
+@unexec rmdir %D/share/locale/hy/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/hy 2> /dev/null || true
 @dirrm share/gnome/desktop-directories
 @dirrm include/gnome-menus
 @dirrm etc/xdg/menus
 @dirrm etc/xdg
+@unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2> /dev/null || true
+@unexec rmdir %D/%%PYTHON_LIBDIR%% 2> /dev/null || true

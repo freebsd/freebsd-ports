@@ -3,11 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/deskutils/gucharmap/Makefile,v 1.12 2005/10/29 22:31:15 marcus Exp $
 #
 
 PORTNAME=	gucharmap
-PORTVERSION=	1.4.3
-PORTREVISION=	1
+PORTVERSION=	1.4.4
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.4
@@ -23,7 +24,7 @@ RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack gtk20
+USE_GNOME=	gnomeprefix intlhack gnomehack gtk20 gnomedocutils
 WANT_GNOME=	yes
 USE_LIBTOOL_VER=15
 INSTALLS_OMF=	yes
@@ -41,7 +42,7 @@ WITH_GNOME=	yes
 
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 USE_GNOME+=	libgnomeui
-PKGNAMESUFFIX=	-gnome
+PKGNAMESUFFIX:=	-gnome
 .else
 CONFIGURE_ARGS=	--disable-gnome
 .endif

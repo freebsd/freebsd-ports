@@ -1,7 +1,6 @@
 bin/bug-buddy
 share/gnome/application-registry/bug-buddy.applications
 share/gnome/applications/bug-buddy-core.desktop
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/applications/bug-buddy.desktop
 share/gnome/bug-buddy/bug-buddy.glade
 share/gnome/bug-buddy/bug-buddy.png
@@ -18,8 +17,16 @@ share/gnome/bug-buddy/gnome.png
 share/gnome/bug-buddy/ximian.png
 share/gnome/help/bug-buddy/C/bug-buddy.xml
 share/gnome/help/bug-buddy/C/legal.xml
+share/gnome/help/bug-buddy/es/bug-buddy.xml
+share/gnome/help/bug-buddy/pa/bug-buddy.xml
+share/gnome/help/bug-buddy/sr/bug-buddy.xml
+share/gnome/help/bug-buddy/uk/bug-buddy.xml
 share/gnome/mime-info/bug-buddy.keys
 share/gnome/omf/bug-buddy/bug-buddy-C.omf
+share/gnome/omf/bug-buddy/bug-buddy-es.omf
+share/gnome/omf/bug-buddy/bug-buddy-pa.omf
+share/gnome/omf/bug-buddy/bug-buddy-sr.omf
+share/gnome/omf/bug-buddy/bug-buddy-uk.omf
 share/gnome/pixmaps/bug-buddy.png
 share/locale/am/LC_MESSAGES/bug-buddy.mo
 share/locale/ar/LC_MESSAGES/bug-buddy.mo
@@ -59,6 +66,7 @@ share/locale/lv/LC_MESSAGES/bug-buddy.mo
 share/locale/mk/LC_MESSAGES/bug-buddy.mo
 share/locale/ml/LC_MESSAGES/bug-buddy.mo
 share/locale/mn/LC_MESSAGES/bug-buddy.mo
+share/locale/mr/LC_MESSAGES/bug-buddy.mo
 share/locale/ms/LC_MESSAGES/bug-buddy.mo
 share/locale/nb/LC_MESSAGES/bug-buddy.mo
 share/locale/ne/LC_MESSAGES/bug-buddy.mo
@@ -72,6 +80,7 @@ share/locale/pt/LC_MESSAGES/bug-buddy.mo
 share/locale/pt_BR/LC_MESSAGES/bug-buddy.mo
 share/locale/ro/LC_MESSAGES/bug-buddy.mo
 share/locale/ru/LC_MESSAGES/bug-buddy.mo
+share/locale/rw/LC_MESSAGES/bug-buddy.mo
 share/locale/sk/LC_MESSAGES/bug-buddy.mo
 share/locale/sl/LC_MESSAGES/bug-buddy.mo
 share/locale/sq/LC_MESSAGES/bug-buddy.mo
@@ -81,16 +90,31 @@ share/locale/sv/LC_MESSAGES/bug-buddy.mo
 share/locale/ta/LC_MESSAGES/bug-buddy.mo
 share/locale/th/LC_MESSAGES/bug-buddy.mo
 share/locale/tr/LC_MESSAGES/bug-buddy.mo
+share/locale/ug/LC_MESSAGES/bug-buddy.mo
 share/locale/uk/LC_MESSAGES/bug-buddy.mo
 share/locale/vi/LC_MESSAGES/bug-buddy.mo
 share/locale/wa/LC_MESSAGES/bug-buddy.mo
+share/locale/xh/LC_MESSAGES/bug-buddy.mo
 share/locale/zh_CN/LC_MESSAGES/bug-buddy.mo
 share/locale/zh_TW/LC_MESSAGES/bug-buddy.mo
+@unexec rmdir %D/share/locale/xh/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/xh 2> /dev/null || true
+@unexec rmdir %D/share/locale/ug/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ug 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw 2> /dev/null || true
+@unexec rmdir %D/share/locale/mr/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/mr 2> /dev/null || true
 @dirrm share/gnome/omf/bug-buddy
+@dirrm share/gnome/help/bug-buddy/uk
+@dirrm share/gnome/help/bug-buddy/sr
+@dirrm share/gnome/help/bug-buddy/pa
+@dirrm share/gnome/help/bug-buddy/es
 @dirrm share/gnome/help/bug-buddy/C
 @dirrm share/gnome/help/bug-buddy
 @dirrm share/gnome/bug-buddy/bugzilla/ximian
 @dirrm share/gnome/bug-buddy/bugzilla/gnome
 @dirrm share/gnome/bug-buddy/bugzilla
 @dirrm share/gnome/bug-buddy
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
