@@ -71,8 +71,12 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libakode_src_resampler.so:${PORTSDIR}/audio/akode
 RUN_DEPENDS+=	${LOCALBASE}/lib/libakode_xiph_decoder.so:${PORTSDIR}/audio/akode-plugins-xiph
 .endif
 
-pre-configure:
-	${ECHO_CMD} "akode" > ${WRKSRC}/inst-apps
+do-build:
+	cd ${WRKSRC}/arts/runtime && gmake
+	cd ${WRKSRC}/akode && gmake
+
+do-install:
+	cd ${WRKSRC}/akode && gmake install
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.post.mk>

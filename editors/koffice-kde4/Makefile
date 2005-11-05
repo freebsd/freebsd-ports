@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	koffice
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 PORTEPOCH=	1
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
@@ -53,14 +52,13 @@ CONFIGURE_ARGS+=--with-pgsqlincdir=${PG_INCDIR} --with-pgsqllibdir=${PG_LIBDIR}
 EXTRA_PATCHES=	${PATCHDIR}/extrapatch-kexi-main-keximainwindowimpl.cpp
 .endif
 
-post-patch:
-	@env TZ=UTC ${TOUCH} -t 200507191955.36 ${WRKSRC}/config.h.in
-
 post-configure:
 .if ${OSVERSION} < 500035
 	${REINPLACE_CMD} -e 's|\(^CPPFLAGS =.*\)|\1 -I${LOCALBASE}/include/stlport|g' \
 	-e 's|\(^LDFLAGS =.*\)|\1 -L${LOCALBASE}/lib -lstlport_gcc ${PTHREAD_LIBS}|g' \
 		${WRKSRC}/filters/kspread/excel/sidewinder/Makefile \
+		${WRKSRC}/kchart/Makefile \
+		${WRKSRC}/kchart/kdchart/Makefile \
 		${WRKSRC}/kexi/kexidb/drivers/pqxx/Makefile \
 		${WRKSRC}/kexi/migration/pqxx/Makefile
 .endif

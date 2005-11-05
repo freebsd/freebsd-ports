@@ -1,0 +1,12 @@
+--- kscreensaver/kdesavers/Makefile.in.orig	Thu Oct 13 14:16:53 2005
++++ kscreensaver/kdesavers/Makefile.in	Thu Oct 13 14:17:35 2005
+@@ -635,7 +635,8 @@
+ desktop_DATA = KBanner.desktop KPolygon.desktop \
+                KSlideshow.desktop KLines-saver.desktop KLorenz.desktop \
+                KBlob.desktop KVm.desktop \
+-               KClock.desktop $(X11_DESKTOP_FILES) $(GL_DESKTOP_FILES) $(LIBART_DESKTOP_FILES)
++               KClock.desktop $(X11_DESKTOP_FILES) $(GL_DESKTOP_FILES) $(LIBART_DESKTOP_FILES) \
++               $(ARTS_GL_DESKTOP_FILES)
+ 
+ desktopdir = $(kde_appsdir)/System/ScreenSavers
+ EXTRA_DIST = $(desktop_DATA) vm.xpm vm.xbm kscience.png  particle.png image.png

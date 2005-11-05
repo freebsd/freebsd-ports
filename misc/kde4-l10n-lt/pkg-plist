@@ -446,6 +446,7 @@ share/locale/lt/LC_MESSAGES/kstars.mo
 share/locale/lt/LC_MESSAGES/kstart.mo
 share/locale/lt/LC_MESSAGES/kstartperf.mo
 share/locale/lt/LC_MESSAGES/kstyle_keramik_config.mo
+share/locale/lt/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/lt/LC_MESSAGES/kstyle_plastik_config.mo
 share/locale/lt/LC_MESSAGES/ksvgplugin.mo
 share/locale/lt/LC_MESSAGES/ksync.mo
@@ -461,6 +462,7 @@ share/locale/lt/LC_MESSAGES/ktexteditor_docwordcompletion.mo
 share/locale/lt/LC_MESSAGES/ktexteditor_insertfile.mo
 share/locale/lt/LC_MESSAGES/ktexteditor_isearch.mo
 share/locale/lt/LC_MESSAGES/ktexteditor_kdatatool.mo
+share/locale/lt/LC_MESSAGES/ktexteditor_kttsd.mo
 share/locale/lt/LC_MESSAGES/kthememanager.mo
 share/locale/lt/LC_MESSAGES/ktimemon.mo
 share/locale/lt/LC_MESSAGES/ktimer.mo
@@ -469,7 +471,12 @@ share/locale/lt/LC_MESSAGES/ktnef.mo
 share/locale/lt/LC_MESSAGES/ktouch.mo
 share/locale/lt/LC_MESSAGES/ktron.mo
 share/locale/lt/LC_MESSAGES/kttsd.mo
+share/locale/lt/LC_MESSAGES/kttsd_commandplugin.mo
+share/locale/lt/LC_MESSAGES/kttsd_eposplugin.mo
 share/locale/lt/LC_MESSAGES/kttsd_festivalintplugin.mo
+share/locale/lt/LC_MESSAGES/kttsd_fliteplugin.mo
+share/locale/lt/LC_MESSAGES/kttsd_freettsplugin.mo
+share/locale/lt/LC_MESSAGES/kttsd_hadifixplugin.mo
 share/locale/lt/LC_MESSAGES/kttsd_sbdplugin.mo
 share/locale/lt/LC_MESSAGES/kttsd_stringreplacerplugin.mo
 share/locale/lt/LC_MESSAGES/kttsd_talkerchooserplugin.mo

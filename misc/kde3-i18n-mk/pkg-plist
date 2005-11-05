@@ -32,6 +32,7 @@ share/locale/mk/LC_MESSAGES/kabc_sql.mo
 share/locale/mk/LC_MESSAGES/kabcformat_binary.mo
 share/locale/mk/LC_MESSAGES/kaboodle.mo
 share/locale/mk/LC_MESSAGES/kaccess.mo
+share/locale/mk/LC_MESSAGES/kaddressbook.mo
 share/locale/mk/LC_MESSAGES/kalzium.mo
 share/locale/mk/LC_MESSAGES/kappfinder.mo
 share/locale/mk/LC_MESSAGES/karm.mo
@@ -42,6 +43,7 @@ share/locale/mk/LC_MESSAGES/katedefaultproject.mo
 share/locale/mk/LC_MESSAGES/katepart.mo
 share/locale/mk/LC_MESSAGES/katomic.mo
 share/locale/mk/LC_MESSAGES/kaudiocreator.mo
+share/locale/mk/LC_MESSAGES/kbabel.mo
 share/locale/mk/LC_MESSAGES/kbackgammon.mo
 share/locale/mk/LC_MESSAGES/kbattleship.mo
 share/locale/mk/LC_MESSAGES/kblackbox.mo
@@ -212,6 +214,7 @@ share/locale/mk/LC_MESSAGES/kio_finger.mo
 share/locale/mk/LC_MESSAGES/kio_fish.mo
 share/locale/mk/LC_MESSAGES/kio_floppy.mo
 share/locale/mk/LC_MESSAGES/kio_help.mo
+share/locale/mk/LC_MESSAGES/kio_imap4.mo
 share/locale/mk/LC_MESSAGES/kio_lan.mo
 share/locale/mk/LC_MESSAGES/kio_ldap.mo
 share/locale/mk/LC_MESSAGES/kio_mac.mo

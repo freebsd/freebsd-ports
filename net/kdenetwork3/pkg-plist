@@ -1162,6 +1162,7 @@ share/apps/kppp/Rules/Ireland/Eircom_Special.rst
 share/apps/kppp/Rules/Israel/Bezeq_Interurban.rst
 share/apps/kppp/Rules/Israel/Bezeq_Local.rst
 share/apps/kppp/Rules/Italy/Atlanet.rst
+share/apps/kppp/Rules/Italy/Cheapnet.rst
 share/apps/kppp/Rules/Italy/Infostrada_Internet_SpZero.rst
 share/apps/kppp/Rules/Italy/Infostrada_Libero1055_Base.rst
 share/apps/kppp/Rules/Italy/Infostrada_Libero1055_SpZero.rst

@@ -99,7 +99,6 @@ share/locale/bn/LC_MESSAGES/kicker.mo
 share/locale/bn/LC_MESSAGES/kig.mo
 share/locale/bn/LC_MESSAGES/kio.mo
 share/locale/bn/LC_MESSAGES/kio_audiocd.mo
-share/locale/bn/LC_MESSAGES/kio_devices.mo
 share/locale/bn/LC_MESSAGES/kio_finger.mo
 share/locale/bn/LC_MESSAGES/kio_fish.mo
 share/locale/bn/LC_MESSAGES/kio_floppy.mo
@@ -108,6 +107,7 @@ share/locale/bn/LC_MESSAGES/kio_imap4.mo
 share/locale/bn/LC_MESSAGES/kio_ldap.mo
 share/locale/bn/LC_MESSAGES/kio_mac.mo
 share/locale/bn/LC_MESSAGES/kio_man.mo
+share/locale/bn/LC_MESSAGES/kio_media.mo
 share/locale/bn/LC_MESSAGES/kio_nfs.mo
 share/locale/bn/LC_MESSAGES/kio_pop3.mo
 share/locale/bn/LC_MESSAGES/kio_print.mo

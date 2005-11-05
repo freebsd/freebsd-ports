@@ -35,9 +35,9 @@ share/locale/hsb/LC_MESSAGES/kgreet_classic.mo
 share/locale/hsb/LC_MESSAGES/khotkeys.mo
 share/locale/hsb/LC_MESSAGES/kicker.mo
 share/locale/hsb/LC_MESSAGES/kio.mo
-share/locale/hsb/LC_MESSAGES/kio_devices.mo
 share/locale/hsb/LC_MESSAGES/kio_help.mo
 share/locale/hsb/LC_MESSAGES/kio_mac.mo
+share/locale/hsb/LC_MESSAGES/kio_media.mo
 share/locale/hsb/LC_MESSAGES/kio_nntp.mo
 share/locale/hsb/LC_MESSAGES/kio_settings.mo
 share/locale/hsb/LC_MESSAGES/kio_smb.mo

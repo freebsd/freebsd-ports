@@ -56,6 +56,7 @@ share/doc/HTML/es/ark/common
 share/doc/HTML/es/ark/index.cache.bz2
 share/doc/HTML/es/ark/index.docbook
 share/doc/HTML/es/artsbuilder/apis.docbook
+share/doc/HTML/es/artsbuilder/arts-structure.png
 share/doc/HTML/es/artsbuilder/artsbuilder.docbook
 share/doc/HTML/es/artsbuilder/detail.docbook
 share/doc/HTML/es/artsbuilder/digitalaudio.docbook
@@ -64,6 +65,48 @@ share/doc/HTML/es/artsbuilder/future.docbook
 share/doc/HTML/es/artsbuilder/glossary.docbook
 share/doc/HTML/es/artsbuilder/gui.docbook
 share/doc/HTML/es/artsbuilder/helping.docbook
+share/doc/HTML/es/artsbuilder/images/Synth_ADD.png
+share/doc/HTML/es/artsbuilder/images/Synth_AMAN_PLAY.png
+share/doc/HTML/es/artsbuilder/images/Synth_AMAN_RECORD.png
+share/doc/HTML/es/artsbuilder/images/Synth_BRICKWALL_LIMITER.png
+share/doc/HTML/es/artsbuilder/images/Synth_BUS_DOWNLINK.png
+share/doc/HTML/es/artsbuilder/images/Synth_BUS_UPLINK.png
+share/doc/HTML/es/artsbuilder/images/Synth_CAPTURE.png
+share/doc/HTML/es/artsbuilder/images/Synth_CDELAY.png
+share/doc/HTML/es/artsbuilder/images/Synth_COMPRESSOR.png
+share/doc/HTML/es/artsbuilder/images/Synth_DATA.png
+share/doc/HTML/es/artsbuilder/images/Synth_DEBUG.png
+share/doc/HTML/es/artsbuilder/images/Synth_DELAY.png
+share/doc/HTML/es/artsbuilder/images/Synth_DIV.png
+share/doc/HTML/es/artsbuilder/images/Synth_ENVELOPE_ADSR.png
+share/doc/HTML/es/artsbuilder/images/Synth_FM_SOURCE.png
+share/doc/HTML/es/artsbuilder/images/Synth_FREEVERB.png
+share/doc/HTML/es/artsbuilder/images/Synth_FREQUENCY.png
+share/doc/HTML/es/artsbuilder/images/Synth_FX_CFLANGER.png
+share/doc/HTML/es/artsbuilder/images/Synth_MIDI_DEBUG.png
+share/doc/HTML/es/artsbuilder/images/Synth_MIDI_TEST.png
+share/doc/HTML/es/artsbuilder/images/Synth_MOOG_VCF.png
+share/doc/HTML/es/artsbuilder/images/Synth_MUL.png
+share/doc/HTML/es/artsbuilder/images/Synth_MULTI_ADD.png
+share/doc/HTML/es/artsbuilder/images/Synth_NIL.png
+share/doc/HTML/es/artsbuilder/images/Synth_NOISE.png
+share/doc/HTML/es/artsbuilder/images/Synth_PITCH_SHIFT.png
+share/doc/HTML/es/artsbuilder/images/Synth_PLAY.png
+share/doc/HTML/es/artsbuilder/images/Synth_PLAY_WAV.png
+share/doc/HTML/es/artsbuilder/images/Synth_PSCALE.png
+share/doc/HTML/es/artsbuilder/images/Synth_RC.png
+share/doc/HTML/es/artsbuilder/images/Synth_RECORD.png
+share/doc/HTML/es/artsbuilder/images/Synth_SEQUENCE.png
+share/doc/HTML/es/artsbuilder/images/Synth_SEQUENCE_FREQ.png
+share/doc/HTML/es/artsbuilder/images/Synth_SHELVE_CUTOFF.png
+share/doc/HTML/es/artsbuilder/images/Synth_STD_EQUALIZER.png
+share/doc/HTML/es/artsbuilder/images/Synth_TREMOLO.png
+share/doc/HTML/es/artsbuilder/images/Synth_WAVE_PULSE.png
+share/doc/HTML/es/artsbuilder/images/Synth_WAVE_SIN.png
+share/doc/HTML/es/artsbuilder/images/Synth_WAVE_SOFTSAW.png
+share/doc/HTML/es/artsbuilder/images/Synth_WAVE_SQUARE.png
+share/doc/HTML/es/artsbuilder/images/Synth_WAVE_TRI.png
+share/doc/HTML/es/artsbuilder/images/Synth_XFADE.png
 share/doc/HTML/es/artsbuilder/mcop.docbook
 share/doc/HTML/es/artsbuilder/midi.docbook
 share/doc/HTML/es/artsbuilder/midiintro.docbook
@@ -269,6 +312,9 @@ share/doc/HTML/es/kcontrol/crypto/index.docbook
 share/doc/HTML/es/kcontrol/desktop/common
 share/doc/HTML/es/kcontrol/desktop/index.cache.bz2
 share/doc/HTML/es/kcontrol/desktop/index.docbook
+share/doc/HTML/es/kcontrol/desktopbehavior/common
+share/doc/HTML/es/kcontrol/desktopbehavior/index.cache.bz2
+share/doc/HTML/es/kcontrol/desktopbehavior/index.docbook
 share/doc/HTML/es/kcontrol/ebrowsing/common
 share/doc/HTML/es/kcontrol/ebrowsing/index.cache.bz2
 share/doc/HTML/es/kcontrol/ebrowsing/index.docbook
@@ -379,6 +425,9 @@ share/doc/HTML/es/kcontrol/netpref/index.docbook
 share/doc/HTML/es/kcontrol/panel/common
 share/doc/HTML/es/kcontrol/panel/index.cache.bz2
 share/doc/HTML/es/kcontrol/panel/index.docbook
+share/doc/HTML/es/kcontrol/panelappearance/common
+share/doc/HTML/es/kcontrol/panelappearance/index.cache.bz2
+share/doc/HTML/es/kcontrol/panelappearance/index.docbook
 share/doc/HTML/es/kcontrol/passwords/common
 share/doc/HTML/es/kcontrol/passwords/index.cache.bz2
 share/doc/HTML/es/kcontrol/passwords/index.docbook
@@ -434,6 +483,7 @@ share/doc/HTML/es/kdelirc/kcmlirc/common
 share/doc/HTML/es/kdelirc/kcmlirc/index.cache.bz2
 share/doc/HTML/es/kdelirc/kcmlirc/index.docbook
 share/doc/HTML/es/kdeprint/add-printer-wiz.docbook
+share/doc/HTML/es/kdeprint/common
 share/doc/HTML/es/kdeprint/cups-config.docbook
 share/doc/HTML/es/kdeprint/cupsaddprinterwizard1.png
 share/doc/HTML/es/kdeprint/cupsaddprinterwizard2_backendselection.png
@@ -469,6 +519,8 @@ share/doc/HTML/es/kdeprint/external-command.docbook
 share/doc/HTML/es/kdeprint/final-word.docbook
 share/doc/HTML/es/kdeprint/getting-started.docbook
 share/doc/HTML/es/kdeprint/highlights.docbook
+share/doc/HTML/es/kdeprint/index.cache.bz2
+share/doc/HTML/es/kdeprint/index.docbook
 share/doc/HTML/es/kdeprint/kcontrolcenter-printmanager-jobcontrol-2.png
 share/doc/HTML/es/kdeprint/kcron_to_be_printed.png
 share/doc/HTML/es/kdeprint/kdeprint-jobviewer.png
@@ -911,6 +963,9 @@ share/doc/HTML/es/kmines/kmines2.png
 share/doc/HTML/es/kmix/common
 share/doc/HTML/es/kmix/index.cache.bz2
 share/doc/HTML/es/kmix/index.docbook
+share/doc/HTML/es/kmix/kmix-channel-playback.png
+share/doc/HTML/es/kmix/kmix-channel-record.png
+share/doc/HTML/es/kmix/kmix-window.png
 share/doc/HTML/es/kmoon/common
 share/doc/HTML/es/kmoon/index.cache.bz2
 share/doc/HTML/es/kmoon/index.docbook
@@ -951,6 +1006,7 @@ share/doc/HTML/es/kmplot/settingsdlg.png
 share/doc/HTML/es/kmplot/stepdlg.png
 share/doc/HTML/es/kmplot/toolbar.png
 share/doc/HTML/es/kmplot/using.docbook
+share/doc/HTML/es/knetattach/screenshot.png
 share/doc/HTML/es/knode/commands.docbook
 share/doc/HTML/es/knode/common
 share/doc/HTML/es/knode/credits.docbook
@@ -1068,6 +1124,8 @@ share/doc/HTML/es/konquest/index.docbook
 share/doc/HTML/es/konsole/common
 share/doc/HTML/es/konsole/index.cache.bz2
 share/doc/HTML/es/konsole/index.docbook
+share/doc/HTML/es/konsole/konsole.png
+share/doc/HTML/es/konsole/tabbar.png
 share/doc/HTML/es/konsolekalendar/common
 share/doc/HTML/es/konsolekalendar/index.cache.bz2
 share/doc/HTML/es/konsolekalendar/index.docbook
@@ -1259,6 +1317,9 @@ share/doc/HTML/es/ksysguard/index.docbook
 share/doc/HTML/es/ksysv/common
 share/doc/HTML/es/ksysv/index.cache.bz2
 share/doc/HTML/es/ksysv/index.docbook
+share/doc/HTML/es/ktalkd/common
+share/doc/HTML/es/ktalkd/index.cache.bz2
+share/doc/HTML/es/ktalkd/index.docbook
 share/doc/HTML/es/kteatime/common
 share/doc/HTML/es/kteatime/config.png
 share/doc/HTML/es/kteatime/index.cache.bz2
@@ -2048,6 +2109,7 @@ share/locale/es/flag.png
 @dirrm share/doc/HTML/es/ktnef
 @dirrm share/doc/HTML/es/ktimer
 @dirrm share/doc/HTML/es/kteatime
+@dirrm share/doc/HTML/es/ktalkd
 @dirrm share/doc/HTML/es/ksysv
 @dirrm share/doc/HTML/es/ksysguard
 @dirrm share/doc/HTML/es/kstars
@@ -2105,6 +2167,7 @@ share/locale/es/flag.png
 @dirrm share/doc/HTML/es/kodo
 @dirrm share/doc/HTML/es/knotes
 @dirrm share/doc/HTML/es/knode
+@dirrm share/doc/HTML/es/knetattach
 @dirrm share/doc/HTML/es/kmplot
 @dirrm share/doc/HTML/es/kmouth
 @dirrm share/doc/HTML/es/kmousetool
@@ -2192,6 +2255,7 @@ share/locale/es/flag.png
 @dirrm share/doc/HTML/es/kcontrol/proxy
 @dirrm share/doc/HTML/es/kcontrol/powerctrl
 @dirrm share/doc/HTML/es/kcontrol/passwords
+@dirrm share/doc/HTML/es/kcontrol/panelappearance
 @dirrm share/doc/HTML/es/kcontrol/panel
 @dirrm share/doc/HTML/es/kcontrol/netpref
 @dirrm share/doc/HTML/es/kcontrol/mouse
@@ -2227,6 +2291,7 @@ share/locale/es/flag.png
 @dirrm share/doc/HTML/es/kcontrol/energy
 @dirrm share/doc/HTML/es/kcontrol/email
 @dirrm share/doc/HTML/es/kcontrol/ebrowsing
+@dirrm share/doc/HTML/es/kcontrol/desktopbehavior
 @dirrm share/doc/HTML/es/kcontrol/desktop
 @dirrm share/doc/HTML/es/kcontrol/crypto
 @dirrm share/doc/HTML/es/kcontrol/cookies
@@ -2263,6 +2328,7 @@ share/locale/es/flag.png
 @dirrm share/doc/HTML/es/flashkard
 @dirrm share/doc/HTML/es/common
 @dirrm share/doc/HTML/es/atlantik
+@dirrm share/doc/HTML/es/artsbuilder/images
 @dirrm share/doc/HTML/es/artsbuilder
 @dirrm share/doc/HTML/es/ark
 @dirrm share/doc/HTML/es/amor

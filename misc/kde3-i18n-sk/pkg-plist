@@ -1045,6 +1045,7 @@ share/locale/sk/LC_MESSAGES/kfile_avi.mo
 share/locale/sk/LC_MESSAGES/kfile_bmp.mo
 share/locale/sk/LC_MESSAGES/kfile_cert.mo
 share/locale/sk/LC_MESSAGES/kfile_cpp.mo
+share/locale/sk/LC_MESSAGES/kfile_dds.mo
 share/locale/sk/LC_MESSAGES/kfile_deb.mo
 share/locale/sk/LC_MESSAGES/kfile_desktop.mo
 share/locale/sk/LC_MESSAGES/kfile_diff.mo
@@ -1224,6 +1225,7 @@ share/locale/sk/LC_MESSAGES/krdc.mo
 share/locale/sk/LC_MESSAGES/kreadconfig.mo
 share/locale/sk/LC_MESSAGES/krec.mo
 share/locale/sk/LC_MESSAGES/kregexpeditor.mo
+share/locale/sk/LC_MESSAGES/kres_bugzilla.mo
 share/locale/sk/LC_MESSAGES/kres_exchange.mo
 share/locale/sk/LC_MESSAGES/kres_remote.mo
 share/locale/sk/LC_MESSAGES/kres_xmlrpc.mo

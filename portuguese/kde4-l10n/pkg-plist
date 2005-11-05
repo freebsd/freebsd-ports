@@ -1337,7 +1337,6 @@ share/locale/pt/LC_MESSAGES/crashesplugin.mo
 share/locale/pt/LC_MESSAGES/cupsdconf.mo
 share/locale/pt/LC_MESSAGES/cvsservice.mo
 share/locale/pt/LC_MESSAGES/dcoprss.mo
-share/locale/pt/LC_MESSAGES/devicesapplet.mo
 share/locale/pt/LC_MESSAGES/dirfilterplugin.mo
 share/locale/pt/LC_MESSAGES/display.mo
 share/locale/pt/LC_MESSAGES/dockbarextension.mo
@@ -1605,7 +1604,6 @@ share/locale/pt/LC_MESSAGES/kimagemapeditor.mo
 share/locale/pt/LC_MESSAGES/kinetd.mo
 share/locale/pt/LC_MESSAGES/kio.mo
 share/locale/pt/LC_MESSAGES/kio_audiocd.mo
-share/locale/pt/LC_MESSAGES/kio_devices.mo
 share/locale/pt/LC_MESSAGES/kio_finger.mo
 share/locale/pt/LC_MESSAGES/kio_fish.mo
 share/locale/pt/LC_MESSAGES/kio_floppy.mo
@@ -1618,7 +1616,6 @@ share/locale/pt/LC_MESSAGES/kio_mac.mo
 share/locale/pt/LC_MESSAGES/kio_man.mo
 share/locale/pt/LC_MESSAGES/kio_media.mo
 share/locale/pt/LC_MESSAGES/kio_mobile.mo
-share/locale/pt/LC_MESSAGES/kio_newimap4.mo
 share/locale/pt/LC_MESSAGES/kio_nfs.mo
 share/locale/pt/LC_MESSAGES/kio_nntp.mo
 share/locale/pt/LC_MESSAGES/kio_pop3.mo
@@ -1833,7 +1830,6 @@ share/locale/pt/LC_MESSAGES/kxmlrpcd.mo
 share/locale/pt/LC_MESSAGES/kxsconfig.mo
 share/locale/pt/LC_MESSAGES/kxsldbg.mo
 share/locale/pt/LC_MESSAGES/libKTTSD.mo
-share/locale/pt/LC_MESSAGES/libcalendarresources.mo
 share/locale/pt/LC_MESSAGES/libdmctl.mo
 share/locale/pt/LC_MESSAGES/libkaddrbk_geo_xxport.mo
 share/locale/pt/LC_MESSAGES/libkaddrbk_gmx_xxport.mo

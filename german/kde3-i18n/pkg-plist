@@ -208,11 +208,14 @@ share/doc/HTML/de/kate-plugins/textfilter.docbook
 share/doc/HTML/de/kate-plugins/xmlcheck.docbook
 share/doc/HTML/de/kate-plugins/xmltools.docbook
 share/doc/HTML/de/kate/advanced.docbook
+share/doc/HTML/de/kate/common
 share/doc/HTML/de/kate/configdialog01.png
 share/doc/HTML/de/kate/configdialog02.png
 share/doc/HTML/de/kate/configuring.docbook
 share/doc/HTML/de/kate/fundamentals.docbook
 share/doc/HTML/de/kate/highlighting.docbook
+share/doc/HTML/de/kate/index.cache.bz2
+share/doc/HTML/de/kate/index.docbook
 share/doc/HTML/de/kate/kate.png
 share/doc/HTML/de/kate/mdi.docbook
 share/doc/HTML/de/kate/menus.docbook
@@ -506,6 +509,9 @@ share/doc/HTML/de/kenolaba/common
 share/doc/HTML/de/kenolaba/index.cache.bz2
 share/doc/HTML/de/kenolaba/index.docbook
 share/doc/HTML/de/kenolaba/man-kenolaba.6.docbook
+share/doc/HTML/de/kfilereplace/common
+share/doc/HTML/de/kfilereplace/index.cache.bz2
+share/doc/HTML/de/kfilereplace/index.docbook
 share/doc/HTML/de/kfind/common
 share/doc/HTML/de/kfind/index.cache.bz2
 share/doc/HTML/de/kfind/index.docbook
@@ -1502,14 +1508,18 @@ share/doc/HTML/de/opengl/common
 share/doc/HTML/de/opengl/index.cache.bz2
 share/doc/HTML/de/opengl/index.docbook
 share/doc/HTML/de/quanta/adv-quanta.docbook
+share/doc/HTML/de/quanta/common
 share/doc/HTML/de/quanta/config-quanta.docbook
 share/doc/HTML/de/quanta/credits-license.docbook
 share/doc/HTML/de/quanta/debugging-quanta.docbook
 share/doc/HTML/de/quanta/extending-quanta.docbook
 share/doc/HTML/de/quanta/fundamentals.docbook
 share/doc/HTML/de/quanta/glossary.docbook
+share/doc/HTML/de/quanta/index.cache.bz2
+share/doc/HTML/de/quanta/index.docbook
 share/doc/HTML/de/quanta/installation.docbook
 share/doc/HTML/de/quanta/introduction.docbook
+share/doc/HTML/de/quanta/man-quanta.1.docbook
 share/doc/HTML/de/quanta/q-and-a.docbook
 share/doc/HTML/de/quanta/quanta-menus.docbook
 share/doc/HTML/de/quanta/quanta-projects.docbook
@@ -2335,6 +2345,7 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/kfouleggs
 @dirrm share/doc/HTML/de/kfloppy
 @dirrm share/doc/HTML/de/kfind
+@dirrm share/doc/HTML/de/kfilereplace
 @dirrm share/doc/HTML/de/kenolaba
 @dirrm share/doc/HTML/de/keduca
 @dirrm share/doc/HTML/de/kedit

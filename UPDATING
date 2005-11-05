@@ -7,6 +7,22 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20051105:
+  AFFECTS: users of x11-toolkits/qt33
+  AUTHOR: kde@FreeBSD.org
+
+  If the compilation of qt fails due to uic segfaulting 
+ 
+  (example:
+  /usr/ports/x11-toolkits/qt33/work/qt-x11-free-3.3.5/bin/uic -L 
+  /usr/ports/x11-toolkits/qt33/work/qt-x11-free-3.3.5/plugins 
+  listboxeditor.ui -i listboxeditor.h -o listboxeditor.cpp
+  *** Signal 11)
+
+  delete your old .qt directories:
+
+  rm -r ~/.qt /root/.qt
+
+20051105:
   AFFECTS: all users of gnome/glib/gtk
   AUTHOR: gnome@FreeBSD.org
 
