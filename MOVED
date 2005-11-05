@@ -1720,3 +1720,5 @@ net/libicq0|net/libicq|2005-11-01|leaf port removed
 mail/ximian-connector|mail/evolution-exchange|2005-11-04|POOF! Now it's called evolution-exchange!
 editors/gedit-plugins||2005-11-04|This component is unmaintained, and has succumbed to code rot
 www/pyphany||2005-11-04|Has been merged into epiphany
+editors/abiword-devel|editors/abiword|2005-11-04|Has been merged into abiword
+editors/abiword-plugins-devel|editors/abiword-plugins|2005-11-04|Has been merged into abiword-plugins

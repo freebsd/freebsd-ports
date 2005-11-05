@@ -179,9 +179,7 @@ abcselect	ports/audio/abcselect
 abe		ports/games/abe
 abinit		ports/science/abinit
 abiword		ports/editors/abiword
-abiword-devel	ports/editors/abiword-devel
 abiword-plugins	ports/editors/abiword-plugins
-abiword-plugins-devel	ports/editors/abiword-plugins-devel
 abntex		ports/print/abntex
 abook		ports/mail/abook
 abridge		ports/games/abridge
