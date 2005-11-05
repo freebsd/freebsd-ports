@@ -11256,7 +11256,7 @@ scr2txt		ports/textproc/scr2txt
 scr_ipfm	ports/net/scr_ipfm
 screamer	ports/lang/screamer
 screem		ports/www/screem
-screen		ports/misc/screen
+screen		ports/sysutils/screen
 scriba		ports/lang/scriba
 scribus		ports/print/scribus
 script4rss	ports/www/script4rss

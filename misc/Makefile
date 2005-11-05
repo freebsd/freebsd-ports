@@ -385,7 +385,6 @@
     SUBDIR += rpl
     SUBDIR += rtfm
     SUBDIR += salias
-    SUBDIR += screen
     SUBDIR += seizedesktop
     SUBDIR += seq2
     SUBDIR += shared-mime-info
