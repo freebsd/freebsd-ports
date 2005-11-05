@@ -6,21 +6,19 @@
 #
 
 PORTNAME=	oregano
-PORTVERSION=	0.40.4
+PORTVERSION=	0.40.5
 CATEGORIES=	cad gnome
-MASTER_SITES=	http://gforge.lug.fi.uba.ar/frs/download.php/62/
+MASTER_SITES=	http://gforge.lug.fi.uba.ar/frs/download.php/64/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Schematic capture and simulation of electrical circuits
-
-LIB_DEPENDS=	cairo.1:${PORTSDIR}/graphics/cairo
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gtksourceview intlhack libglade2 \
 		libgnomeprintui libgnomeui
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
