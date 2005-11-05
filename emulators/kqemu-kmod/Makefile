@@ -27,6 +27,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	Makefile.freebsd
 
 .include <bsd.port.pre.mk>
+MAKE_ENV+=	KMODDIR="${KMODDIR}"
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		kqemu requires kernel source to be installed
