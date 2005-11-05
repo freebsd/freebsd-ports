@@ -384,7 +384,6 @@
     SUBDIR += neon
     SUBDIR += neowebscript
     SUBDIR += netrik
-    SUBDIR += netscape-wrapper
     SUBDIR += nginx
     SUBDIR += notftp
     SUBDIR += npc
