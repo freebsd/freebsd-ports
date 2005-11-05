@@ -21,6 +21,7 @@ libdata/pkgconfig/gconf-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gconf/ConfSchema.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gconf/ConfValue.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gconf/ConfValueType.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gconf/Config.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gconf/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gconf/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gconf/package-tree.html

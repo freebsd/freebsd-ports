@@ -16,6 +16,7 @@ libdata/pkgconfig/glade-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glade/CheckMenuItemDelegate.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glade/ColorButtonDelegate.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glade/ComboBoxDelegate.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glade/Config.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glade/ExpanderDelegate.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glade/ExposeDelegate.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glade/FontButtonDelegate.html
