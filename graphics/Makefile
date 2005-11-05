@@ -548,6 +548,7 @@
     SUBDIR += sswf
     SUBDIR += stamp
     SUBDIR += stl2pov
+    SUBDIR += svg2pdf
     SUBDIR += svg2png
     SUBDIR += svg2swf
     SUBDIR += svgalib
