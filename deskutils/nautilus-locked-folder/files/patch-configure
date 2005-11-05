@@ -1,0 +1,11 @@
+--- configure.orig	Wed Aug 31 07:17:44 2005
++++ configure	Sat Sep 17 00:31:55 2005
+@@ -19277,7 +19277,7 @@
+         echo "$as_me:$LINENO: checking for libnautilus-extension >= $NAUTILUS_REQUIRED eel-2.0 >= $EEL_REQUIRED glib-2.0 >= $GLIB_REQUIRED openssl >= $OPENSSL_REQUIRED libglade-2.0 >= $LIBGLADE_REQUIRED libgnomeui-2.0 >= $LIBGNOMEUI_REQUIRED" >&5
+ echo $ECHO_N "checking for libnautilus-extension >= $NAUTILUS_REQUIRED eel-2.0 >= $EEL_REQUIRED glib-2.0 >= $GLIB_REQUIRED openssl >= $OPENSSL_REQUIRED libglade-2.0 >= $LIBGLADE_REQUIRED libgnomeui-2.0 >= $LIBGNOMEUI_REQUIRED... $ECHO_C" >&6
+ 
+-        if $PKG_CONFIG --exists "libnautilus-extension >= $NAUTILUS_REQUIRED eel-2.0 >= $EEL_REQUIRED glib-2.0 >= $GLIB_REQUIRED openssl >= $OPENSSL_REQUIRED libglade-2.0 >= $LIBGLADE_REQUIRED libgnomeui-2.0 >= $LIBGNOMEUI_REQUIRED" ; then
++        if $PKG_CONFIG --exists "libnautilus-extension >= $NAUTILUS_REQUIRED eel-2.0 >= $EEL_REQUIRED glib-2.0 >= $GLIB_REQUIRED  libglade-2.0 >= $LIBGLADE_REQUIRED libgnomeui-2.0 >= $LIBGNOMEUI_REQUIRED" ; then
+             echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+             succeeded=yes
