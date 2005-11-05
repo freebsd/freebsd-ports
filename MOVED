@@ -1722,3 +1722,4 @@ editors/gedit-plugins||2005-11-04|This component is unmaintained, and has succum
 www/pyphany||2005-11-04|Has been merged into epiphany
 editors/abiword-devel|editors/abiword|2005-11-04|Has been merged into abiword
 editors/abiword-plugins-devel|editors/abiword-plugins|2005-11-04|Has been merged into abiword-plugins
+net/trafshow4|net/trafshow|2005-11-05|obsolete version, use net/trafshow instead
