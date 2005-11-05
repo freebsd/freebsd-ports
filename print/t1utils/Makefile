@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	t1utils
-PORTVERSION=	1.29
+PORTVERSION=	1.32
 CATEGORIES=	print
 MASTER_SITES=	http://www.lcdf.org/type/
 
