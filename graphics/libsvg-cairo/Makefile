@@ -3,10 +3,12 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/graphics/libsvg-cairo/Makefile,v 1.5 2005/08/09 04:49:38 ahze Exp $
 #
 
 PORTNAME=	libsvg-cairo
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/snapshots/
 
@@ -15,9 +17,9 @@ COMMENT=	SVG rendering library
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		svg.1:${PORTSDIR}/graphics/libsvg \
-		cairo.1:${PORTSDIR}/graphics/cairo
+		cairo.2:${PORTSDIR}/graphics/cairo
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	pkgconfig gnometarget gnomehack
 INSTALLS_SHLIB=	yes
 PLIST_FILES=	include/svg-cairo.h \
