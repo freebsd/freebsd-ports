@@ -7,6 +7,7 @@
 
 PORTNAME=	openvpn
 PORTVERSION=	2.0.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://openvpn.net/release/
 
@@ -44,10 +45,8 @@ CONFIGURE_ARGS+=	--enable-password-save
 .endif
 
 # self-tests here
-.if !defined(WITH_JAIL)
 post-build:
 	cd ${WRKSRC} && ${MAKE} check
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
