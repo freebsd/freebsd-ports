@@ -18,6 +18,7 @@
     SUBDIR += checkrdf
     SUBDIR += cycle
     SUBDIR += dailystrips
+    SUBDIR += deskbar-applet
     SUBDIR += dlume
     SUBDIR += doodle
     SUBDIR += dragstack
