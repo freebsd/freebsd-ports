@@ -21,8 +21,11 @@ share/locale/nl/LC_MESSAGES/krename.mo
 share/locale/pl/LC_MESSAGES/krename.mo
 share/locale/pt_BR/LC_MESSAGES/krename.mo
 share/locale/ru/LC_MESSAGES/krename.mo
+share/locale/sl/LC_MESSAGES/krename.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/krename.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/krename.mo
+@unexec rmdir %D/share/locale/sl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sl 2>/dev/null || true
 @unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/pl 2>/dev/null || true
 @dirrm share/doc/HTML/en/krename
