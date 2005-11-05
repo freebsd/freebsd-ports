@@ -4,10 +4,12 @@ dependency ports are built.
 
 **New options**
 
-1)  Leaf port report: Shows ports with no other ports depending on
-them, these are ports that may be safely de-installed.
+1)  Single port update/add/rebuild examples:
 
-2)  Remove leaf ports safely: Interactively delete leaf ports.
+portmanager x11/gnome2	updates/adds gnome2 and dependencies 
+portmanager x11/gnome2	-f rebuilds gnome2 and dependencies 
+
+2) portmanager -u -f forces rebuild of everything
 
 portmanager-questions archive may be found at:
 http://www.mail-archive.com/portmanager-questions%40sunsite.dk/
@@ -16,6 +18,4 @@ to subscribe just send an empty message to:
 portmanager-questions-subscribe@sunsite.dk
 
 WWW: http://portmanager.sunsite.dk/
-
-Michael C. Shultz
-ringworm01@gmail.com	
+Author: Michael C. Shultz <ringworm01@gmail.com>
