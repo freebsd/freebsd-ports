@@ -7,7 +7,7 @@
 
 PORTNAME=	wx
 PORTVERSION=	2.4.2
-PORTREVISION?=	9
+PORTREVISION?=	10
 PKGNAMESUFFIX=	${WXGTK_FLAVOR}
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -52,5 +52,10 @@ WXGTK_FLAVOR?=	gtk2
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|lgdk|lgdk-x11-2.0|g' ${WRKSRC}/configure
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|pkg_config_args --cflags|pkg_config_args pangox --cflags|g ; \
+		s|pkg_config_args --libs|pkg_config_args pangox --libs|g' \
+			${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
