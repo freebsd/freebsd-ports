@@ -10891,6 +10891,7 @@ ruby-bsearch	ports/devel/ruby-bsearch
 ruby-byaccr	ports/devel/ruby-byaccr
 ruby-bz2	ports/archivers/ruby-bz2
 ruby-cache	ports/devel/ruby-cache
+ruby-cairo	ports/graphics/ruby-cairo
 ruby-calendar	ports/devel/ruby-calendar
 ruby-cast_256	ports/security/ruby-cast_256
 ruby-cdb	ports/databases/ruby-cdb
@@ -10958,6 +10959,7 @@ ruby-gtk	ports/x11-toolkits/ruby-gtk
 ruby-gtk2	ports/x11-toolkits/ruby-gtk2
 ruby-gtkglext	ports/x11-toolkits/ruby-gtkglext
 ruby-gtkhtml2	ports/www/ruby-gtkhtml2
+ruby-gtkmozembed	ports/www/ruby-gtkmozembed
 ruby-gtksourceview	ports/x11-toolkits/ruby-gtksourceview
 ruby-gtktrayicon	ports/x11/ruby-gtktrayicon
 ruby-hmac	ports/security/ruby-hmac
