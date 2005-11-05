@@ -103,6 +103,7 @@ lib/pygtk/2.0/pygtk-demo.pyo
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/keysyms.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/keysyms.pyo
 %%PYTHON_SITELIBDIR%%/gtk-2.0/pango.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/pangocairo.so
 %%PYTHON_SITELIBDIR%%/pygtk.pth
 %%PYTHON_SITELIBDIR%%/pygtk.py
 %%PYTHON_SITELIBDIR%%/pygtk.pyc
@@ -143,16 +144,7 @@ libdata/pkgconfig/pygtk-2.0.pc
 %%PORTDOCS%%share/examples/py-gtk/ide/return.xpm
 %%PORTDOCS%%share/examples/py-gtk/ide/run.xpm
 %%PORTDOCS%%share/examples/py-gtk/ide/step.xpm
-%%PORTDOCS%%share/examples/py-gtk/neil/README
-%%PORTDOCS%%share/examples/py-gtk/neil/TAppli.py
-%%PORTDOCS%%share/examples/py-gtk/neil/TAppli2.py
-%%PORTDOCS%%share/examples/py-gtk/neil/TAppli3.py
-%%PORTDOCS%%share/examples/py-gtk/neil/TAppli4.py
-%%PORTDOCS%%share/examples/py-gtk/neil/TAppli5.py
-%%PORTDOCS%%share/examples/py-gtk/neil/bomb.xpm
-%%PORTDOCS%%share/examples/py-gtk/neil/gtk-logo.xpm
-%%PORTDOCS%%share/examples/py-gtk/neil/notebook.py
-%%PORTDOCS%%share/examples/py-gtk/neil/question.xpm
+%%PORTDOCS%%share/examples/py-gtk/pango/pangocairo-simple.py
 %%PORTDOCS%%share/examples/py-gtk/pango/utf8-demo.py
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/__init__.py
 %%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/appwindow.py
@@ -199,65 +191,66 @@ libdata/pkgconfig/pygtk-2.0.pc
 %%PORTDOCS%%share/examples/py-gtk/simple/scribble.py
 %%PORTDOCS%%share/examples/py-gtk/simple/simple.py
 %%PORTDOCS%%share/examples/py-gtk/simple/tooltip.py
-%%PORTDOCS%%share/pygtk/2.0/codegen/__init__.py
-%%PORTDOCS%%share/pygtk/2.0/codegen/__init__.pyc
-%%PORTDOCS%%share/pygtk/2.0/codegen/__init__.pyo
-%%PORTDOCS%%share/pygtk/2.0/codegen/argtypes.py
-%%PORTDOCS%%share/pygtk/2.0/codegen/argtypes.pyc
-%%PORTDOCS%%share/pygtk/2.0/codegen/argtypes.pyo
-%%PORTDOCS%%share/pygtk/2.0/codegen/codegen.py
-%%PORTDOCS%%share/pygtk/2.0/codegen/codegen.pyc
-%%PORTDOCS%%share/pygtk/2.0/codegen/codegen.pyo
-%%PORTDOCS%%share/pygtk/2.0/codegen/definitions.py
-%%PORTDOCS%%share/pygtk/2.0/codegen/definitions.pyc
-%%PORTDOCS%%share/pygtk/2.0/codegen/definitions.pyo
-%%PORTDOCS%%share/pygtk/2.0/codegen/defsparser.py
-%%PORTDOCS%%share/pygtk/2.0/codegen/defsparser.pyc
-%%PORTDOCS%%share/pygtk/2.0/codegen/defsparser.pyo
-%%PORTDOCS%%share/pygtk/2.0/codegen/docextract.py
-%%PORTDOCS%%share/pygtk/2.0/codegen/docextract.pyc
-%%PORTDOCS%%share/pygtk/2.0/codegen/docextract.pyo
-%%PORTDOCS%%share/pygtk/2.0/codegen/docgen.py
-%%PORTDOCS%%share/pygtk/2.0/codegen/docgen.pyc
-%%PORTDOCS%%share/pygtk/2.0/codegen/docgen.pyo
-%%PORTDOCS%%share/pygtk/2.0/codegen/h2def.py
-%%PORTDOCS%%share/pygtk/2.0/codegen/h2def.pyc
-%%PORTDOCS%%share/pygtk/2.0/codegen/h2def.pyo
-%%PORTDOCS%%share/pygtk/2.0/codegen/mergedefs.py
-%%PORTDOCS%%share/pygtk/2.0/codegen/mergedefs.pyc
-%%PORTDOCS%%share/pygtk/2.0/codegen/mergedefs.pyo
-%%PORTDOCS%%share/pygtk/2.0/codegen/mkskel.py
-%%PORTDOCS%%share/pygtk/2.0/codegen/mkskel.pyc
-%%PORTDOCS%%share/pygtk/2.0/codegen/mkskel.pyo
-%%PORTDOCS%%share/pygtk/2.0/codegen/override.py
-%%PORTDOCS%%share/pygtk/2.0/codegen/override.pyc
-%%PORTDOCS%%share/pygtk/2.0/codegen/override.pyo
-%%PORTDOCS%%share/pygtk/2.0/codegen/reversewrapper.py
-%%PORTDOCS%%share/pygtk/2.0/codegen/reversewrapper.pyc
-%%PORTDOCS%%share/pygtk/2.0/codegen/reversewrapper.pyo
-%%PORTDOCS%%share/pygtk/2.0/codegen/scmexpr.py
-%%PORTDOCS%%share/pygtk/2.0/codegen/scmexpr.pyc
-%%PORTDOCS%%share/pygtk/2.0/codegen/scmexpr.pyo
-%%PORTDOCS%%share/pygtk/2.0/defs/atk-types.defs
-%%PORTDOCS%%share/pygtk/2.0/defs/atk.defs
-%%PORTDOCS%%share/pygtk/2.0/defs/gdk-types.defs
-%%PORTDOCS%%share/pygtk/2.0/defs/gdk.defs
-%%PORTDOCS%%share/pygtk/2.0/defs/gtk-extrafuncs.defs
-%%PORTDOCS%%share/pygtk/2.0/defs/gtk-types.defs
-%%PORTDOCS%%share/pygtk/2.0/defs/gtk.defs
-%%PORTDOCS%%share/pygtk/2.0/defs/libglade.defs
-%%PORTDOCS%%share/pygtk/2.0/defs/pango-types.defs
-%%PORTDOCS%%share/pygtk/2.0/defs/pango.defs
-%%PORTDOCS%%@dirrm share/pygtk/2.0/defs
-%%PORTDOCS%%@dirrm share/pygtk/2.0/codegen
-%%PORTDOCS%%@dirrm share/pygtk/2.0
-%%PORTDOCS%%@dirrm share/pygtk
+share/pygtk/2.0/codegen/__init__.py
+share/pygtk/2.0/codegen/__init__.pyc
+share/pygtk/2.0/codegen/__init__.pyo
+share/pygtk/2.0/codegen/argtypes.py
+share/pygtk/2.0/codegen/argtypes.pyc
+share/pygtk/2.0/codegen/argtypes.pyo
+share/pygtk/2.0/codegen/codegen.py
+share/pygtk/2.0/codegen/codegen.pyc
+share/pygtk/2.0/codegen/codegen.pyo
+share/pygtk/2.0/codegen/definitions.py
+share/pygtk/2.0/codegen/definitions.pyc
+share/pygtk/2.0/codegen/definitions.pyo
+share/pygtk/2.0/codegen/defsparser.py
+share/pygtk/2.0/codegen/defsparser.pyc
+share/pygtk/2.0/codegen/defsparser.pyo
+share/pygtk/2.0/codegen/docextract.py
+share/pygtk/2.0/codegen/docextract.pyc
+share/pygtk/2.0/codegen/docextract.pyo
+share/pygtk/2.0/codegen/docgen.py
+share/pygtk/2.0/codegen/docgen.pyc
+share/pygtk/2.0/codegen/docgen.pyo
+share/pygtk/2.0/codegen/h2def.py
+share/pygtk/2.0/codegen/h2def.pyc
+share/pygtk/2.0/codegen/h2def.pyo
+share/pygtk/2.0/codegen/mergedefs.py
+share/pygtk/2.0/codegen/mergedefs.pyc
+share/pygtk/2.0/codegen/mergedefs.pyo
+share/pygtk/2.0/codegen/mkskel.py
+share/pygtk/2.0/codegen/mkskel.pyc
+share/pygtk/2.0/codegen/mkskel.pyo
+share/pygtk/2.0/codegen/override.py
+share/pygtk/2.0/codegen/override.pyc
+share/pygtk/2.0/codegen/override.pyo
+share/pygtk/2.0/codegen/reversewrapper.py
+share/pygtk/2.0/codegen/reversewrapper.pyc
+share/pygtk/2.0/codegen/reversewrapper.pyo
+share/pygtk/2.0/codegen/scmexpr.py
+share/pygtk/2.0/codegen/scmexpr.pyc
+share/pygtk/2.0/codegen/scmexpr.pyo
+share/pygtk/2.0/defs/atk-types.defs
+share/pygtk/2.0/defs/atk.defs
+share/pygtk/2.0/defs/gdk-types.defs
+share/pygtk/2.0/defs/gdk.defs
+share/pygtk/2.0/defs/gtk-extrafuncs.defs
+share/pygtk/2.0/defs/gtk-types.defs
+share/pygtk/2.0/defs/gtk.defs
+share/pygtk/2.0/defs/libglade.defs
+share/pygtk/2.0/defs/pango-types.defs
+share/pygtk/2.0/defs/pango.defs
+share/pygtk/2.0/defs/pangocairo.defs
+share/pygtk/2.0/defs/pangocairo.override
+@dirrm share/pygtk/2.0/defs
+@dirrm share/pygtk/2.0/codegen
+@dirrm share/pygtk/2.0
+@dirrm share/pygtk
 %%PORTDOCS%%@dirrm share/examples/py-gtk/simple
 %%PORTDOCS%%@dirrm share/examples/py-gtk/pygtk-demo/demos/images
 %%PORTDOCS%%@dirrm share/examples/py-gtk/pygtk-demo/demos
 %%PORTDOCS%%@dirrm share/examples/py-gtk/pygtk-demo
 %%PORTDOCS%%@dirrm share/examples/py-gtk/pango
-%%PORTDOCS%%@dirrm share/examples/py-gtk/neil
 %%PORTDOCS%%@dirrm share/examples/py-gtk/ide
 %%PORTDOCS%%@dirrm share/examples/py-gtk/gtk
 %%PORTDOCS%%@dirrm share/examples/py-gtk/gobject
