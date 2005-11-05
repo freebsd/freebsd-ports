@@ -430,7 +430,6 @@
     SUBDIR += polypuzzle
     SUBDIR += powermanga
     SUBDIR += powwow
-    SUBDIR += pp
     SUBDIR += ppracer
     SUBDIR += prboom
     SUBDIR += ptkei
