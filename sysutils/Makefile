@@ -446,7 +446,6 @@
     SUBDIR += rename
     SUBDIR += reoback
     SUBDIR += rfstool
-    SUBDIR += rlogview
     SUBDIR += rmonitor
     SUBDIR += roottail
     SUBDIR += rotate
