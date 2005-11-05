@@ -1,7 +1,8 @@
-include/%%PORTNAME%%/jg_jnu.h
+include/%%PORTNAME%%/gtk_java.h
 lib/libgtkjni-%%GTK_API_VERSION%%.so
 lib/libgtkjni-%%GTK_API_VERSION%%.so.1
 libdata/pkgconfig/gtk2-java.pc
+%%JAVAJARDIR%%/gtk%%GTK_API_VERSION%%.jar
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
@@ -76,6 +77,7 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gdk/GC.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gdk/GCValuesMask.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gdk/Gdk.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gdk/GdkCairo.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gdk/Geometry.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gdk/GrabStatus.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gdk/Gravity.html
@@ -87,13 +89,13 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gdk/InterpType.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gdk/JoinStyle.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gdk/KeySymbol.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gdk/KeyValue.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gdk/Keymap.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gdk/KeymapKey.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gdk/LineStyle.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gdk/ModifierType.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gdk/NotifyType.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gdk/OverlapType.html
-%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gdk/Pango.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gdk/PangoAttrEmbossed.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gdk/PangoAttrStipple.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gdk/Pixbuf.html
@@ -139,21 +141,17 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gdk/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gdk/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/Boxed.html
-%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/Config.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/CustomEvents.html
-%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/Enum.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/Error.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/EventMap.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/EventType.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/Fireable.html
-%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/Flags.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/GListString.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/GObject.html
-%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/Handle.html
-%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/Handle32Bits.html
-%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/Handle64Bits.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/JGException.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/List.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/MainLoop.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/MemStruct.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/ParmFlags.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/PropertyNotificationListener.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/glib/Quark.html
@@ -172,6 +170,7 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/AccelKey.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/AccelLabel.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/AccelMap.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/Accelerator.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/Accessible.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/Action.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/ActionEntry.html
@@ -218,6 +217,7 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/Combo.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/ComboBox.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/ComboBoxEntry.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/Config.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/Container.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/CornerType.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/Curve.html
@@ -231,6 +231,7 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/DataColumnPixbuf.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/DataColumnStockItem.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/DataColumnString.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/DataRow.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/DebugFlag.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/DeleteType.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/DestDefaults.html
@@ -284,13 +285,7 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/IconTheme.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/IconView.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/Image.html
-%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/ImageAnimationData.html
-%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/ImageIconSetData.html
-%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/ImageImageData.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/ImageMenuItem.html
-%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/ImagePixbufData.html
-%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/ImagePixmapData.html
-%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/ImageStockData.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/ImageType.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/InputDialog.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/Invisible.html
@@ -315,9 +310,11 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/Misc.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/MovementStep.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/Notebook.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/ObjectDestroyedException.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/ObjectFlags.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/OptionMenu.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/Orientation.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/PackDirection.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/PackType.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/Paned.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/PathPriorityType.html
@@ -325,6 +322,8 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/Plug.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/PolicyType.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/PositionType.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/Preview.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/PreviewType.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/Progress.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/ProgressBar.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/ProgressBarOrientation.html
@@ -386,6 +385,7 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/TextSearchFlags.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/TextTag.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/TextTagTable.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/TextView.VerticalLineRange.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/TextView.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/TextWindowType.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/ToggleAction.html
@@ -444,6 +444,9 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/WindowType.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/WrapMode.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/ActionEntryListener.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/ActionEvent.Type.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/ActionEvent.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/ActionListener.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/AdjustmentEvent.Type.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/AdjustmentEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/AdjustmentListener.html
@@ -474,14 +477,30 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/ComboBoxEvent.Type.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/ComboBoxEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/ComboBoxListener.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/ConfigureEvent.Type.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/ConfigureEvent.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/ConfigureListener.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/ContainerEvent.Type.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/ContainerEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/ContainerListener.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/DeleteDragDataEvent.Type.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/DeleteDragDataEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/DialogEvent.Type.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/DialogEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/DialogListener.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/DragDestinationListener.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/DragEvent.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/DragMotionEvent.Type.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/DragMotionEvent.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/DragOriginAdapter.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/DragOriginListener.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/DragSourceListener.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/DragTargetAdapter.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/DragTargetListener.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/DropDragEvent.Type.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/DropDragEvent.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/EndDragEvent.Type.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/EndDragEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/EntryCompletionEvent.Type.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/EntryCompletionEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/EntryCompletionListener.html
@@ -494,6 +513,9 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/ExposeEvent.Type.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/ExposeEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/ExposeListener.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/FileChooserEvent.Type.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/FileChooserEvent.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/FileChooserListener.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/FocusEvent.Type.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/FocusEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/FocusListener.html
@@ -513,6 +535,8 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/KeyEvent.Type.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/KeyEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/KeyListener.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/LeaveDragDestinationEvent.Type.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/LeaveDragDestinationEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/LifeCycleEvent.Type.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/LifeCycleEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/LifeCycleListener.html
@@ -535,12 +559,18 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/RangeEvent.Type.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/RangeEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/RangeListener.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/ReceiveDragDataEvent.Type.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/ReceiveDragDataEvent.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/RequestDragDataEvent.Type.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/RequestDragDataEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/ScaleEvent.Type.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/ScaleEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/ScaleListener.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/SpinEvent.Type.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/SpinEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/SpinListener.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/StartDragEvent.Type.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/StartDragEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/StatusBarEvent.Type.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/StatusBarEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gtk/event/StatusBarListener.html
@@ -630,16 +660,16 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/overview-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/api/package-list
 %%PORTDOCS%%%%DOCSDIR%%/api/packages.html
+%%PORTDOCS%%%%DOCSDIR%%/api/resources/inherit.gif
 %%PORTDOCS%%%%DOCSDIR%%/api/serialized-form.html
 %%PORTDOCS%%%%DOCSDIR%%/api/stylesheet.css
-%%PORTDOCS%%%%DOCSDIR%%/api/resources/inherit.gif
 %%PORTDOCS%%%%DOCSDIR%%/examples/TestTree/TestTree.java
 %%PORTDOCS%%%%DOCSDIR%%/examples/aboutdialog/AboutDialogExample.java
 %%PORTDOCS%%%%DOCSDIR%%/examples/aboutdialog/java-gnome.png
 %%PORTDOCS%%%%DOCSDIR%%/examples/alignment/AlignmentExample.java
 %%PORTDOCS%%%%DOCSDIR%%/examples/application/Application.java
-%%PORTDOCS%%%%DOCSDIR%%/examples/aspectframe/aspectframe.java
-%%PORTDOCS%%%%DOCSDIR%%/examples/base/base.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/aspectframe/AspectFrameExample.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/base/Base.java
 %%PORTDOCS%%%%DOCSDIR%%/examples/buttonbox/ButtonBoxes.java
 %%PORTDOCS%%%%DOCSDIR%%/examples/buttons/ButtonEvents.java
 %%PORTDOCS%%%%DOCSDIR%%/examples/buttons/Buttons.java
@@ -649,6 +679,7 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/examples/combobox/ComboBoxExample.java
 %%PORTDOCS%%%%DOCSDIR%%/examples/dataTable/TableExample.java
 %%PORTDOCS%%%%DOCSDIR%%/examples/draganddrop/DnDExample1.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/draganddrop/DnDExample2.java
 %%PORTDOCS%%%%DOCSDIR%%/examples/draganddrop/DnDExample3.java
 %%PORTDOCS%%%%DOCSDIR%%/examples/drawingAreaTest/Test.java
 %%PORTDOCS%%%%DOCSDIR%%/examples/editor/Editor.java
@@ -662,6 +693,7 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/examples/image/ImageTest.java
 %%PORTDOCS%%%%DOCSDIR%%/examples/image/test.xpm
 %%PORTDOCS%%%%DOCSDIR%%/examples/invisible/InvisibleExample.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/memorymgt/MemoryMgt.java
 %%PORTDOCS%%%%DOCSDIR%%/examples/notebook/NotebookExample.java
 %%PORTDOCS%%%%DOCSDIR%%/examples/packbox/Packbox.java
 %%PORTDOCS%%%%DOCSDIR%%/examples/paned/PanedExample.java
@@ -675,6 +707,7 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/examples/spinbutton/Spinbutton.java
 %%PORTDOCS%%%%DOCSDIR%%/examples/statusbar/StatusBarExample.java
 %%PORTDOCS%%%%DOCSDIR%%/examples/stockicons/GtkStockIcons.java
+%%PORTDOCS%%%%DOCSDIR%%/examples/stockitem/StockItemExample.java
 %%PORTDOCS%%%%DOCSDIR%%/examples/table/TableExample.java
 %%PORTDOCS%%%%DOCSDIR%%/examples/testgtk/TestGTK.java
 %%PORTDOCS%%%%DOCSDIR%%/examples/testgtk/test.xpm
@@ -685,15 +718,6 @@ libdata/pkgconfig/gtk2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/examples/tree/test.xpm
 %%PORTDOCS%%%%DOCSDIR%%/examples/treestore/TreeStoreExample.java
 %%PORTDOCS%%%%DOCSDIR%%/examples/uimanager/UIManagerExample.java
-%%JAVAJARDIR%%/gtk%%GTK_API_VERSION%%.jar
-share/%%PORTNAME%%/macros/ac_prog_jar.m4
-share/%%PORTNAME%%/macros/ac_prog_javac.m4
-share/%%PORTNAME%%/macros/ac_prog_javac_works.m4
-share/%%PORTNAME%%/macros/ac_prog_javadoc.m4
-share/%%PORTNAME%%/macros/am_path_docbook.m4
-share/%%PORTNAME%%/macros/am_path_gcj.m4
-share/%%PORTNAME%%/macros/jg_check_nativecompile.m4
-share/%%PORTNAME%%/macros/jg_common.m4
 share/%%PORTNAME%%/macros/jg_gnome_java.m4
 share/%%PORTNAME%%/macros/jg_gtk_java.m4
 @dirrm share/%%PORTNAME%%/macros
@@ -705,6 +729,7 @@ share/%%PORTNAME%%/macros/jg_gtk_java.m4
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/text
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/testgtk
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/table
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/stockitem
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/stockicons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/statusbar
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/spinbutton
@@ -716,6 +741,7 @@ share/%%PORTNAME%%/macros/jg_gtk_java.m4
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/paned
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/packbox
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/notebook
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/memorymgt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/invisible
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/image
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/frame
