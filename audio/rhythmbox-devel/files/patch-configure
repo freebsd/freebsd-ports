@@ -1,0 +1,47 @@
+--- configure.orig	Mon Oct 17 10:21:14 2005
++++ configure	Mon Oct 17 10:22:47 2005
+@@ -21603,7 +21603,7 @@
+ 	enable_hal02=yes
+ fi
+ 	fi
+-	if test x$enable_hal05 == xyes || test x$enable_hal02 == xyes; then
++	if test x$enable_hal05 = xyes || test x$enable_hal02 = xyes; then
+   	  enable_hal=yes
+ 	else
+ 	  enable_hal=no
+@@ -21620,7 +21620,7 @@
+ _ACEOF
+ 
+ 	   enable_ipod=yes
+-	   if test x$enable_hal05 == xyes; then
++	   if test x$enable_hal05 = xyes; then
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_HAL_0_5 1
+@@ -21887,7 +21887,7 @@
+ RHYTHMBOX_LIBS="$RHYTHMBOX_LIBS $SOUNDSYSTEM_LIBS"
+ 
+ 
+-  if test "x$GST_INSPECT" == "x"; then
++  if test "x$GST_INSPECT" = "x"; then
+     # Extract the first word of "gst-inspect-0.8", so it can be a program name with args.
+ set dummy gst-inspect-0.8; ac_word=$2
+ echo "$as_me:$LINENO: checking for $ac_word" >&5
+@@ -22640,7 +22640,7 @@
+ 
+ 
+ if test x"$x_includes" != x"NONE" && test -n "$x_includes" ; then
+-	CFLAGS=$CFLAGS -I`echo $x_includes | sed -e "s/:/ -I/g"`
++	CFLAGS=$CFLAGS\ -I`echo $x_includes | sed -e "s/:/ -I/g"`
+ fi
+ if test x"$x_libraries" != x"NONE" && test -n "$x_libraries" ; then
+ 	LIBS=-L`echo $x_libraries | sed -e "s/:/ -L/g"`
+@@ -22977,7 +22977,7 @@
+ fi
+ if test "x$enable_audiocd" = "xyes"; then
+ 
+-  if test "x$GST_INSPECT" == "x"; then
++  if test "x$GST_INSPECT" = "x"; then
+     # Extract the first word of "gst-inspect-0.8", so it can be a program name with args.
+ set dummy gst-inspect-0.8; ac_word=$2
+ echo "$as_me:$LINENO: checking for $ac_word" >&5
