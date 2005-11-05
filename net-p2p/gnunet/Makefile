@@ -105,10 +105,6 @@ MAN5=		gnunet.conf.5
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700000
-BROKEN=		"Does not compile on FreeBSD >= 7.0"
-.endif
-
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You can build GNUnet with the following options:"
