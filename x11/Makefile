@@ -61,6 +61,7 @@
     SUBDIR += gmrun
     SUBDIR += gnome-clipboard-daemon
     SUBDIR += gnome-menus
+    SUBDIR += gnome-screensaver
     SUBDIR += gnome-swallow
     SUBDIR += gnome2
     SUBDIR += gnome2-fifth-toe
