@@ -7,6 +7,7 @@
 
 PORTNAME=	qhacc
 PORTVERSION=	3.4
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -66,7 +67,7 @@ PLIST_SUB+=	SQLITE="@comment "
 .endif
 
 .if defined(WITH_GPGME)
-LIB_DEPENDS+=	gpgme.14:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=	gpgme.15:${PORTSDIR}/security/gpgme
 CONFIGURE_ARGS+=	--enable-gpg
 PLIST_SUB+=	GPGME=""
 .else

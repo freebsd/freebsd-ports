@@ -8,7 +8,7 @@
 
 PORTNAME=	balsa
 PORTVERSION=	2.3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/
 DISTNAME=	balsa-${PORTVERSION}
@@ -51,7 +51,7 @@ OPTIONS=	LDAP "Enable LDAP support" on \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GPG)
-LIB_DEPENDS+=		gpgme.14:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=		gpgme.15:${PORTSDIR}/security/gpgme
 CONFIGURE_ARGS+=	--with-gpgme=${LOCALBASE}/bin/gpgme-config
 .endif
 
