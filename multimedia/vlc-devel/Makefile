@@ -63,10 +63,13 @@
 #  Mp3 encoder Support
 #   ** NOT DEFINED if PACKAGE_BUILDING is defined **
 #
-# WITHOUT_LIBA52=yes
+# WITHOUT_A52=yes
 #  liba52 audio Support
 #
-# WITH_LIBTREMOR
+# WITH_REALAUDIO
+#  Real audio(R) support
+#
+# WITH_TREMOR
 #  Interger-only Ogg Vorbis decoder
 #   !!experimental!!
 #
@@ -97,7 +100,7 @@
 #
 # WITH_GGI=yes
 #
-# WITH_LIBCACA=yes
+# WITH_CACA=yes
 #  Console Graphics Support (implies WITH_AALIB)
 #
 # WITH_SDL=yes
@@ -118,13 +121,13 @@
 # WITH_X264
 #  Enable H.264/AVC Video Support
 #
-# WITHOUT_LIBMATROSKA=yes
+# WITHOUT_MATROSKA=yes
 #  Matroska Container Format Support
 #
-# WITHOUT_LIBMPEG2=yes
+# WITHOUT_MPEG2=yes
 #  Mpeg-2 A/V Decoder Support
 #
-# WITH_LIBTHEORA=yes
+# WITH_THEORA=yes
 #  Video codec for OGG/Vorbis Support
 #
 # WITH_TRANSCODE=yes
@@ -179,7 +182,7 @@
 # WITH_OPENGL=yes
 #  Enable OpenGL visual plugin (not playback, play back is default with X11)
 #
-# WITH_SMB=yes
+# WITH_SAMBA=yes
 #  Enable SAMBA Access module
 #
 # WITH_SSL=yes
@@ -217,8 +220,8 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.8.4.20051027
-PORTREVISION=	2
+DISTVERSION=	0.8.4.20051102
+PORTREVISION=	0
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/vlc/snapshots/
 #		http://download2.videolan.org/pub/videolan/testing/${PORTNAME}-${DISTVERSION}/ \
@@ -312,53 +315,6 @@ WXGTK2_PORT=	wxgtk26
 CPPFLAGS+=	-I${X11BASE}/include/wx-2.6/
 .endif
 
-.if 0
-.if !defined(BATCH)
-OPTIONS=	AALIB "Console graphics support" Off \
-		ARTS "Arts audio support" Off \
-		CDROM "Cddb and vcd support" On \
-		CORBA "Corba interface via orbit2" Off \
-		DAAP "iTunes(R) music shares support" Off \
-		DIRAC "Dirac audio/video codec" Off \
-		DTS "DTS audio decoder support" On \
-		DVBPSI "TS MUX and DEMUX support" On \
-		DVDNAV "DVD (dvd menus) support" On \
-		DVDREAD "Regular dvd support (no menus)" Off \
-		ESOUND "Esound audio support" Off \
-		FAAC "Faac audio encoder (mp4/aac) support" Off \
-		FAAD "Faad audio decoder (mp4/aac) support" On \
-		FLAC "Flac audio codec support" On \
-		HTTPD "Web Interface to control streaming media" On \
-		LAME "Mp3 encoder support" On \
-		LIBA52 "Liba52 (dolby) audio decoder support" On \
-		LIBCACA "Console graphics support" Off \
-		LIBMATROSKA "Matroska container format support" On \
-		LIBMPEG2 "Mpeg-2 A/V decoder support" On \
-		LIBTHEORA "OGG/Vorbis video codec support" Off \
-		LIVEMEDIA "Support for rstp/rtp/sdp protocols" On \
-		MAD "Mp3 decoder support" On \
-		MOZILLA_PLUGIN "Enable mozilla plugin" Off \
-		NCURSES "Ncurses (console) interface" Off \
-		OGG "Ogg audio decoder support" On \
-		OPENGL "OpenGL visual plugin" Off \
-		OPTIMIZED_CFLAGS "Complie with -O2 -ffast-math" Off \
-		SMB "SAMBA Access module" Off \
-		SDL "SDL video output support" Off \
-		SKINS "Skinned x11 interface (similar to xmms)" Off \
-		SLP "SLP service discovery support" On \
-		SPEEX "Voice codec support" Off \
-		SSL "TLS/SSL support for httpd interface" Off \
-		SVG "SVG graphics support" Off \
-		SVGALIB "SVGAlib video out support" On \
-		TRANSCODE "Depends on multimedia/transcode" Off \
-		TWOLAME "Twolame Mpeg layer 2 audio Support" Off \
-		VORBIS "Vorbis support (implies WITH_OGG)" On \
-		WIN32_CODECS "Win32-codecs support (i386 only)" Off \
-		WXGTK "WxGtk+2 frontend" On \
-		X264 "H.264 AVC video codec" Off
-.endif
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
@@ -381,12 +337,28 @@ WITHOUT_LIVEMEDIA=	yes
 DEBUG=	yes
 .endif
 
-.if defined(WITH_MATROSKA)
-WITH_LIBMATROSKA=yes
+.if defined(WITH_LIBMPEG2)
+WITH_MPEG2=yes
 .endif
 
-.if defined(WITH_TREMOR)
-WITH_LIBTREMOR=yes
+.if defined(WITH_LIBCACA)
+WITH_CACA=yes
+.endif
+
+.if defined(WITH_LIBA52)
+WITH_A52=yes
+.endif
+
+.if defined(WITH_SMB)
+WITH_SAMBA=yes
+.endif
+
+.if defined(WITH_LIBMATROSKA)
+WITH_MATROSKA=yes
+.endif
+
+.if defined(WITH_LIBTREMOR)
+WITH_TREMOR=yes
 .endif
 # end compatible knobs
 
@@ -404,8 +376,11 @@ DEFAULT_DVD_DEVICE=/dev/acd0
 .endif
 .endif
 
-.if ${HAVE_GNOME:Mgnomevfs2}
+.if ${HAVE_GNOME:Mgnomevfs2} || defined(WITH_GNOMEVFS)
 USE_GNOME+=	gnomevfs2
+CONFIGURE_ARGS+=	--enable-gnomevfs
+.else
+CONFIGURE_ARGS+=	--disable-gnomevfs
 .endif
 
 .if defined(WITH_CDROM_DEVICE)
@@ -557,7 +532,7 @@ LIB_DEPENDS+=	x264.1:${PORTSDIR}/multimedia/x264
 CONFIGURE_ARGS+=--disable-x264
 .endif
 
-.if (defined(WITH_LIBCACA) || exists(${LOCALBASE}/lib/libcaca.a)) && !defined(WITHOUT_LIBCACA)
+.if (defined(WITH_CACA) || exists(${LOCALBASE}/lib/libcaca.a)) && !defined(WITHOUT_CACA)
 .if !defined(WITHOUT_AALIB)
 WITH_AALIB=	yes
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcaca.a:${PORTSDIR}/graphics/libcaca
@@ -603,28 +578,32 @@ CONFIGURE_ARGS+=--enable-mp3lame
 CONFIGURE_ARGS+=--disable-mp3lame
 .endif
 
-.if !defined(WITHOUT_LIBMATROSKA)
+.if !defined(WITHOUT_MATROSKA)
 LIB_DEPENDS+=	matroska.0:${PORTSDIR}/multimedia/libmatroska
 CONFIGURE_ARGS+=--enable-mkv
 .else
 CONFIGURE_ARGS+=--disable-mkv
 .endif
 
-.if !defined(WITHOUT_LIBA52)
+.if !defined(WITHOUT_A52)
 LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
 CONFIGURE_ARGS+=--enable-a52
 .else
 CONFIGURE_ARGS+=--disable-a52
 .endif
 
-.if !defined(WITHOUT_LIBMPEG2)
+.if !defined(WITHOUT_MPEG2)
 LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 CONFIGURE_ARGS+=--enable-libmpeg2
 .else
 CONFIGURE_ARGS+=--disable-libmpeg2
 .endif
 
-.if (defined(WITH_LIBTHEORA) || exists(${LOCALBASE}/lib/libtheora.a)) && !defined(WITHOUT_LIBTHEORA)
+.if defined(WITH_REALAUDIO)
+CONFIGURE_ARGS+=	--enable-real
+.endif
+
+.if (defined(WITH_THEORA) || exists(${LOCALBASE}/lib/libtheora.a)) && !defined(WITHOUT_THEORA)
 LIB_DEPENDS+=	theora.1:${PORTSDIR}/multimedia/libtheora
 CONFIGURE_ARGS+=--enable-theora
 .else
@@ -667,7 +646,7 @@ CONFIGURE_ARGS+=--enable-galaktos
 CONFIGURE_ARGS+=--disable-galaktos
 .endif
 
-.if (defined(WITH_SMB) || exists(${LOCALBASE}/lib/lib/libsmbclient.a)) && !defined(WITHOUT_SMB)
+.if (defined(WITH_SAMBA) || exists(${LOCALBASE}/lib/lib/libsmbclient.a)) && !defined(WITHOUT_SAMBA)
 LIB_DEPEND+=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
 CONFIGURE_ARGS+=--enable-smb
 .else
@@ -724,7 +703,7 @@ CONFIGURE_ARGS+=--enable-svgalib
 CONFIGURE_ARGS+=--disable-svgalib
 .endif
 
-.if (defined(WITH_LIBTREMOR) || exists(${LOCALBASE}/lib/libvorbisidec.a)) && !defined(WITHOUT_LIBTREMOR)
+.if (defined(WITH_TREMOR) || exists(${LOCALBASE}/lib/libvorbisidec.a)) && !defined(WITHOUT_TREMOR)
 LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
 .else
 CONFIGURE_ARGS+=--disable-tremor
