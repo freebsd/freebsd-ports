@@ -1,0 +1,65 @@
+lib/libcairojni-%%CAIRO_API_VERSION%%.so
+lib/libcairojni-%%CAIRO_API_VERSION%%.so.1
+libdata/pkgconfig/%%PORTNAME%%.pc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/api/allclasses-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/api/allclasses-noframe.html
+%%PORTDOCS%%%%DOCSDIR%%/api/constant-values.html
+%%PORTDOCS%%%%DOCSDIR%%/api/deprecated-list.html
+%%PORTDOCS%%%%DOCSDIR%%/api/help-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/api/index-all.html
+%%PORTDOCS%%%%DOCSDIR%%/api/index.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/Antialias.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/CairoException.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/Config.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/Content.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/Context.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/Extend.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/FillRule.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/Filter.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/FontExtents.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/FontFace.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/FontOptions.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/FontSlant.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/FontWeight.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/Format.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/Glyph.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/Gradient.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/HintMetrics.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/HintStyle.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/ImageSurface.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/LineCap.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/LineJoin.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/LinearGradient.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/Matrix.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/Operator.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/PDFSurface.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/Pattern.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/Point.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/RadialGradient.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/Rectangle.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/ScaledFont.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/Status.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/SubpixelOrder.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/Surface.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/SurfacePattern.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/TextExtents.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/freedesktop/cairo/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/api/overview-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/api/package-list
+%%PORTDOCS%%%%DOCSDIR%%/api/packages.html
+%%PORTDOCS%%%%DOCSDIR%%/api/resources/inherit.gif
+%%PORTDOCS%%%%DOCSDIR%%/api/serialized-form.html
+%%PORTDOCS%%%%DOCSDIR%%/api/stylesheet.css
+share/java/classes/cairo%%CAIRO_API_VERSION%%.jar
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/resources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/org/freedesktop/cairo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/org/freedesktop
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/org
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

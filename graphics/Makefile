@@ -38,6 +38,7 @@
     SUBDIR += bugle
     SUBDIR += cadubi
     SUBDIR += cairo
+    SUBDIR += cairo-java
     SUBDIR += cal3d
     SUBDIR += camediaplay
     SUBDIR += cbrpager

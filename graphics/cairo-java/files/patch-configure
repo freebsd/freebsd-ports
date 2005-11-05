@@ -1,0 +1,11 @@
+--- configure.orig	Wed Oct 26 20:57:49 2005
++++ configure	Wed Oct 26 20:58:13 2005
+@@ -20032,7 +20032,7 @@
+ 
+ apiversion="1.0"
+ 
+-INSTALLED_CLASSPATH=\${prefix}/share/java/cairo${apiversion}-${VERSION}.jar
++INSTALLED_CLASSPATH=\${prefix}/share/java/classes/cairo${apiversion}.jar
+ INSTALLED_JNI_DIR=\${prefix}/lib/
+ 
+ 
