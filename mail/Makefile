@@ -58,6 +58,7 @@
     SUBDIR += demime
     SUBDIR += distribute
     SUBDIR += dk-milter
+    SUBDIR += dkfilter
     SUBDIR += dkimap4
     SUBDIR += dovecot
     SUBDIR += drac
