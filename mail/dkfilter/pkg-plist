@@ -1,0 +1,20 @@
+lib/MSDW/SMTP/Client.pm
+lib/MSDW/SMTP/Server.pm
+lib/Mail/DomainKeys/Key/Private.pm
+lib/Mail/DomainKeys/Key/Public.pm
+lib/Mail/DomainKeys/Header.pm
+lib/Mail/DomainKeys/Key.pm
+lib/Mail/DomainKeys/Message.pm
+lib/Mail/DomainKeys/Policy.pm
+lib/Mail/DomainKeys/Signature.pm
+lib/Mail/DomainKeys.pm
+lib/DKMessage.pm
+bin/auto_responder.pl
+bin/dkverify.pl
+bin/dkfilter.in
+bin/dkfilter.out
+@dirrm lib/Mail/DomainKeys/Key
+@dirrm lib/Mail/DomainKeys
+@dirrm lib/Mail
+@dirrm lib/MSDW/SMTP
+@dirrm lib/MSDW
