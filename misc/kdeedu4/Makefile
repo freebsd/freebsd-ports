@@ -41,4 +41,11 @@ CONFIGURE_ARGS+=--disable-kig-python-scripting
 PLIST_SUB+=	BOOST_PYTHON="@comment "
 .endif
 
+PYTHON_LIBDIR!=	${LOCALBASE}/bin/python -c 'import sys;print sys.prefix'
+
+pre-configure:
+	${REINPLACE_CMD} \
+	-e 's|pylibdir in.*|pylibdir in "${PYTHON_LIBDIR}/lib" \\|g' \
+	${WRKSRC}/configure
+
 .include <bsd.port.post.mk>
