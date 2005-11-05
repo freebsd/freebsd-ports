@@ -1,0 +1,62 @@
+# New ports collection makefile for:	gnome-screensaver
+# Date created:		09 June 2005
+# Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
+#
+# $FreeBSD$
+#   $MCom: ports/x11/gnome-screensaver/Makefile,v 1.23 2005/11/03 19:04:24 marcus Exp $
+#
+
+PORTNAME=	gnome-screensaver
+PORTVERSION=	0.0.18
+CATEGORIES=	x11 gnome
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.0
+
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNOME screen saver and locker
+
+LIB_DEPENDS=	dbus-1.1:${PORTSDIR}/devel/dbus
+RUN_DEPENDS=	xscreensaver-gl-helper:${PORTSDIR}/x11/xscreensaver-gnome-hacks
+
+USE_BZIP2=	yes
+USE_X_PREFIX=	yes
+USE_GMAKE=	yes
+USE_REINPLACE=	yes
+USE_AUTOTOOLS=	libtool:15
+USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui gnomemenus
+CONFIGURE_ARGS=	--disable-pam \
+		--with-gdm-config=${X11BASE}/etc/gdm/gdm.conf \
+		--with-xscreensaverdir=${XSCREENSAVER_DIR} \
+		--with-xscreensaverhackdir=${X11BASE}/bin/xscreensaver-hacks
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+GCONF_SCHEMAS=	gnome-screensaver.schemas
+
+PLIST=	${WRKDIR}/pkg-plist
+
+XSCREENSAVER_DIR=	${X11BASE}/share/xscreensaver/config
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
+		${WRKSRC}/configure
+
+pre-install:
+	@${CP} ${.CURDIR}/pkg-plist ${PLIST}
+	@cd ${XSCREENSAVER_DIR} && ${FIND} -s * -maxdepth 1 -type f -name "*.xml" | \
+		${SED} -e 's:^:share/gnome/gnome-screensaver/themes/xscreensaver/:' | \
+		${SED} -e 's:[.]xml$$:.desktop:' >> ${PLIST}
+	@${ECHO_CMD} @dirrm share/gnome/gnome-screensaver/themes/xscreensaver >> ${PLIST}
+	@${ECHO_CMD} @dirrm share/gnome/gnome-screensaver/themes >> ${PLIST}
+	@${ECHO_CMD} @dirrm share/gnome/gnome-screensaver >> ${PLIST}
+
+post-install:
+	${CHOWN} root ${PREFIX}/libexec/gnome-screensaver-dialog
+	${CHMOD} +s ${PREFIX}/libexec/gnome-screensaver-dialog
+	${MKDIR} ${PREFIX}/share/gnome/gnome-screensaver/themes/xscreensaver
+	cd ${PREFIX}/share/gnome/gnome-screensaver/themes/xscreensaver && \
+		${FIND} -s ${XSCREENSAVER_DIR} -maxdepth 1 -type f -name "*.xml" | \
+			${XARGS} ${WRKSRC}/data/migrate-xscreensaver-config.sh
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>
