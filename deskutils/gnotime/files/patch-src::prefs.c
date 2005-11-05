@@ -1,6 +1,6 @@
---- src/prefs.c.orig	Fri Sep  2 23:08:26 2005
-+++ src/prefs.c	Fri Oct 21 11:54:01 2005
-@@ -199,10 +199,12 @@
+--- src/prefs.c.orig	Mon May 24 20:25:52 2004
++++ src/prefs.c	Mon May 24 20:29:36 2004
+@@ -200,10 +200,12 @@
  scan_time_string (const char *str)
  {
  	int hours=0, minutes=0, seconds = 0;
@@ -14,7 +14,7 @@
  	if (p) *p = 0;
  	hours = atoi (buff);
  	if (p)
-@@ -220,7 +222,7 @@
+@@ -221,7 +223,7 @@
  	minutes %= 60;
  	hours %= 24;
  
@@ -23,14 +23,13 @@
  	if (12*3600 < totalsecs) totalsecs -= 24*3600;
  	return totalsecs;
  }
-@@ -391,15 +393,17 @@
+@@ -373,14 +375,16 @@
  	if (5 == page)
  	{
  		int change = 0;
-+		const char *buff;
 +		int off, day;
++		const char *buff;
  		config_idle_timeout = atoi(gtk_entry_get_text(GTK_ENTRY(odlg->idle_secs)));
- 		config_no_project_timeout = atoi(gtk_entry_get_text(GTK_ENTRY(odlg->no_project_secs)));
  
  		/* Hunt for the hour-of night on which to start */
 -		const char * buff = gtk_entry_get_text (odlg->daystart_secs);
@@ -44,7 +43,7 @@
  		SET_VAL (config_weekstart_offset, day);
  
  		if (change)
-@@ -440,6 +444,8 @@
+@@ -421,6 +425,8 @@
  options_dialog_set(PrefsDialog *odlg)
  {
  	char s[30];
@@ -53,15 +52,15 @@
  
  	SET_ACTIVE(secs);
  	SET_ACTIVE(statusbar);
-@@ -518,7 +524,6 @@
- 	gtk_entry_set_text(GTK_ENTRY(odlg->no_project_secs), s);
+@@ -495,7 +501,6 @@
+ 	gtk_entry_set_text(GTK_ENTRY(odlg->idle_secs), s);
  
  	/* Set the correct menu item based on current values */
 -	int hour;
  	if (0<config_daystart_offset)
  	{
  		hour = (config_daystart_offset +1800)/3600;
-@@ -533,14 +538,13 @@
+@@ -510,14 +515,13 @@
  	set_optionmenu_item (odlg->daystart_menu, hour);
  
  	/* Print the daystart offset as a string in 24 hour time */
@@ -78,7 +77,7 @@
  	set_optionmenu_item (odlg->weekstart_menu, day);
  
  	/* set to unmodified as it reflects the current state of the app */
-@@ -554,12 +558,13 @@
+@@ -531,12 +535,13 @@
  {
  	PrefsDialog *dlg = data;
  
