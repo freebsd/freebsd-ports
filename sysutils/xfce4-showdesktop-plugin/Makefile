@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-showdesktop-plugin
 PORTVERSION=	0.3.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 DIST_SUBDIR=	xfce4

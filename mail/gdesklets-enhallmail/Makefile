@@ -7,6 +7,7 @@
 
 PORTNAME=	enhallmail
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/ \
 		http://www.mathematik.uni-marburg.de/~wetzmj/files/

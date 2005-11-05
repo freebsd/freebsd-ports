@@ -7,7 +7,7 @@
 
 PORTNAME=	libgksuui
 PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.debian.org/~kov/gksu/libgksuui1.0/
 DISTNAME=	${PORTNAME}1.0-${PORTVERSION}

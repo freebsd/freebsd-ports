@@ -7,6 +7,7 @@
 
 PORTNAME=	lucidlife
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/~jcspray/LucidLife/ \
 		http://icculus.org/~jcspray/LucidLife/

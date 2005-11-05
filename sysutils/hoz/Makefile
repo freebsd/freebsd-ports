@@ -7,6 +7,7 @@
 
 PORTNAME=	hoz
 PORTVERSION=	1.65
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hoz.sourceforge.net/download/
 DISTNAME=	hoz-165

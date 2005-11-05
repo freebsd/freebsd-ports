@@ -214,7 +214,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.8.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 		${MASTER_SITE_LOCAL:S|$|:mozilla|}

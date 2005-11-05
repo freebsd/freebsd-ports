@@ -7,7 +7,7 @@
 
 PORTNAME=	gperiodic
 PORTVERSION=	2.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	http://koti.welho.com/jfrantz/software/
 

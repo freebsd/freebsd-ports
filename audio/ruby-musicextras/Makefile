@@ -7,6 +7,7 @@
 
 PORTNAME=	musicextras
 PORTVERSION=	0.6.6
+PORTREVISION=	1
 CATEGORIES=	audio ruby
 MASTER_SITES=	http://kapheine.hypa.net/musicextras/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

@@ -7,6 +7,7 @@
 
 PORTNAME=	gimp
 PORTVERSION=	2.2.9
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \

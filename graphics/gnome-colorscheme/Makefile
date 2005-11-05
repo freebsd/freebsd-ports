@@ -7,6 +7,7 @@
 
 PORTNAME=	colorscheme
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://download.gna.org/${PORTNAME}/0.2/
 PKGNAMEPREFIX=	gnome-

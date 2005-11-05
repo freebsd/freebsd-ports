@@ -8,7 +8,7 @@
 
 PORTNAME=	guis
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.starynkevitch.net/Basile/
 

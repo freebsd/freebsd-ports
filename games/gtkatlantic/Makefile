@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkatlantic
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://gtkatlantic.gradator.net/downloads/v0.4/
 

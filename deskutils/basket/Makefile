@@ -6,7 +6,7 @@
 
 PORTNAME=		basket
 PORTVERSION=		0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
 

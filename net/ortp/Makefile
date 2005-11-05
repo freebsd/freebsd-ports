@@ -7,7 +7,7 @@
 
 PORTNAME=	ortp
 PORTVERSION=	0.6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://www.linphone.org/ortp/sources/
 

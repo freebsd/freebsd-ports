@@ -8,6 +8,7 @@
 
 PORTNAME=	g3dviewer
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://automagically.de/files/
 

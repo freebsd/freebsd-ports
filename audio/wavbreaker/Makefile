@@ -6,7 +6,7 @@
 
 PORTNAME=	wavbreaker
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://huli.org/wavbreaker/
 

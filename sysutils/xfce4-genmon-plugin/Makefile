@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-genmon-plugin
 PORTVERSION=	1.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 DIST_SUBDIR=	xfce4

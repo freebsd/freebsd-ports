@@ -7,7 +7,7 @@
 
 PORTNAME=	starterbar
 PORTVERSION=	0.31.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-

@@ -7,7 +7,7 @@
 
 PORTNAME=	gkx86info2
 PORTVERSION=	0.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://anchois.free.fr/ \
 		http://depot.fsck.ch/mirror/distfiles/

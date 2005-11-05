@@ -6,7 +6,7 @@
 
 PORTNAME=	ksetisaver
 PORTVERSION=	0.3.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	astro kde
 MASTER_SITES=	http://www.frozenlight.de/content/ksetisaver/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	nessus-plugins-devel
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/experimental/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/experimental/nessus-${PORTVERSION}/src/ \

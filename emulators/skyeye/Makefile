@@ -7,6 +7,7 @@
 
 PORTNAME=	skyeye
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.gro.clinux.org/skyeye/
 

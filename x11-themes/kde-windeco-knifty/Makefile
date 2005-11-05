@@ -7,6 +7,7 @@
 
 PORTNAME=	knifty
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://kde-look.org/content/files/
 DISTNAME=	8841-${PORTNAME}-${PORTVERSION}

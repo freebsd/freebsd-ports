@@ -7,7 +7,7 @@
 
 PORTNAME=		regexxer
 PORTVERSION=		0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=		devel textproc gnome
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
 			ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/:pcre \

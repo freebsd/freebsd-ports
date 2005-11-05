@@ -7,6 +7,7 @@
 
 PORTNAME=	rubrica
 PORTVERSION=	1.0.14
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://download.berlios.de/${PORTNAME}/
 

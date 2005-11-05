@@ -7,6 +7,7 @@
 
 PORTNAME=	knzb
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	http://dmp.org.uk/linux/knzb/download/
 

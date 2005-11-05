@@ -7,7 +7,7 @@
 
 PORTNAME=	cupid
 PORTVERSION=	0.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio gnome
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-recorder/
 DIST_SUBDIR=    gnome2

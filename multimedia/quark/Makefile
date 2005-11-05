@@ -6,7 +6,7 @@
 
 PORTNAME=	quark
 PORTVERSION=	3.21
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://quark.sunsite.dk/ \
 		http://demian.dyndns.org/src/

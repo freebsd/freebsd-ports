@@ -7,6 +7,7 @@
 
 PORTNAME=	autocomplete-plugin
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://usuarios.lycos.es/acisif/gedit/autocomplete/
 PKGNAMEPREFIX=	gedit-

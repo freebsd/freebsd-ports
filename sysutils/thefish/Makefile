@@ -7,6 +7,7 @@
 
 PORTNAME=	thefish
 PORTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.energyhq.es.eu.org/files/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	ethereal
 PORTVERSION=	0.10.13
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.ethereal.com/pub/ethereal/all-versions/

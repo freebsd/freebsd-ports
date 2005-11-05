@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-xfce-engine
 PORTVERSION=	2.2.7
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-themes xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-4.2.2/src/ \
 		http://www.ca-us.xfce.org/archive/xfce-4.2.2/src/ \

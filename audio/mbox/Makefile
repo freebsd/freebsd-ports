@@ -5,7 +5,7 @@
 
 PORTNAME=	mbox
 PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mbox.wz.cz/src/
 

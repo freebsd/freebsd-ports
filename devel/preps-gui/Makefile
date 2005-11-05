@@ -7,6 +7,7 @@
 
 PORTNAME=	preps
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://webpages.charter.net/stuffle/preps/download/files/
 PKGNAMESUFFIX=	-gui

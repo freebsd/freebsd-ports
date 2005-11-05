@@ -7,6 +7,7 @@
 
 PORTNAME=	kdmtheme
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://smileaf.org/files/
 DISTNAME=	kdmtheme-${PORTVERSION}

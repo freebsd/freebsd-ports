@@ -7,7 +7,7 @@
 
 PORTNAME=	gphpedit
 PORTVERSION=	0.9.50
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors gnome
 MASTER_SITES=	http://www.gphpedit.org/download/store/ \
 		http://ftp.ceid.upatras.gr/pub/linux/gentoo/distfiles/ \
