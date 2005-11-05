@@ -30,8 +30,8 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN="Does not build."
+.if ${OSVERSION} < 500000 || ${ARCH} == "sparc64"
+BROKEN="Does not build"
 .endif
 
 pre-everything::
