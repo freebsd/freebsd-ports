@@ -3,11 +3,12 @@
 # Whom:			eivind/dima/jseger
 #
 # $FreeBSD$
+#    $MCom: ports/www/mozilla-devel/Makefile,v 1.10 2005/10/27 00:08:39 marcus Exp $
 #
 
 PORTNAME?=	mozilla
 PORTVERSION=	1.8.b1
-PORTREVISION?=	6
+PORTREVISION?=	7
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -92,21 +93,22 @@ JPI_LIST?=\
 	${LOCALBASE}/jdk1.5.0/jre/plugin/${ARCH}/ns7/libjavaplugin_oji.so \
 	${LOCALBASE}/jdk1.4.2/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so
 
-OPTIONS=MAILNEWS "Enable Mail and News modules" on \
+OPTIONS=CALENDAR "Enable the Calendar module" off \
+	MAILNEWS "Enable Mail and News modules" on \
 	COMPOSER "Enable the HTML Composer module" on \
 	DEBUG "Enable debugging (i.e. gdb) support" off \
 	LDAP "Enable LDAP support for Mailnews" on \
 	CHATZILLA "Enable the Chatzilla IRC module" on \
 	JAVASCRIPT_DEBUGGER "Enable DTD and JavaScript debuggers" off \
 	OPTIMIZED_CFLAGS "Enable -O2 optimizations" off \
-	CAIRO_RENDER "Enable SVG rendering with Cairo" off \
-	CAIRO "Enable Cairo-specific Canvas features" off \
 	SMB "Enable smb:// URI support via gnomevfs" off
+#	CAIRO_RENDER "Enable SVG rendering with Cairo" off \
+#	CAIRO "Enable Cairo-specific Canvas features" off \
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "alpha"
-BROKEN=		Does not compile on ${ARCH}
+BROKEN=		"Does not compile on ${ARCH}"
 .endif
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500035
@@ -114,38 +116,38 @@ IGNORE=		core dumps on ${ARCH} during post-build
 .endif
 
 .if exists(${X11BASE}/lib/X11/fonts/mozilla/fonts.dir)
-BROKEN=		Mozilla${MOZ_SUFX} and Xft2 render the mozilla-fonts \
-		illegibly. Please remove the mozilla-fonts package
+BROKEN=		"Mozilla${MOZ_SUFX} and Xft2 render the mozilla-fonts \
+		illegibly. Please remove the mozilla-fonts package"
 .endif
 
-#.if defined(WITH_CALENDAR) && (defined(WITHOUT_MAILNEWS) || \
-#	defined(WITHOUT_COMPOSER))
-#BROKEN=		Calendar requires Composer and Mailnews support.
-#.endif
+.if defined(WITH_CALENDAR) && (defined(WITHOUT_MAILNEWS) || \
+	defined(WITHOUT_COMPOSER))
+BROKEN=		"Calendar requires Composer and Mailnews support."
+.endif
 
 .if ${OSVERSION} < 500000
 USE_GCC=	3.4
 .endif
 
 .if defined(WITH_CAIRO_RENDER) || defined(WITH_CAIRO)
-LIB_DEPENDS+=		svg-cairo.1:${PORTSDIR}/graphics/libsvg-cairo
+#LIB_DEPENDS+=		svg-cairo.1:${PORTSDIR}/graphics/libsvg-cairo
 .endif
 
-.if defined(WITH_CAIRO_RENDER)
-CONFIGURE_ARGS+=	--enable-svg-renderer-cairo \
-			--disable-svg-renderer-libart
-CONFIGURE_ENV+=		MOZ_SVG_RENDERER_CAIRO=1
-.else
+#.if defined(WITH_CAIRO_RENDER)
+#CONFIGURE_ARGS+=	--enable-svg-renderer-cairo \
+#			--disable-svg-renderer-libart
+#CONFIGURE_ENV+=		MOZ_SVG_RENDERER_CAIRO=1
+#.else
 CONFIGURE_ARGS+=	--enable-svg-renderer-libart \
 			--disable-svg-renderer-cairo
 CONFIGURE_ENV+=		MOZ_INTERNAL_LIBART_LGPL=1
 MAKE_ENV+=		MOZ_INTERNAL_LIBART_LGPL=1
-.endif
+#.endif
 
-.if defined(WITH_CAIRO)
-CONFIGURE_ARGS+=	--enable-cairo
-CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/cairo"
-.endif
+#.if defined(WITH_CAIRO)
+#CONFIGURE_ARGS+=	--enable-cairo
+#CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/cairo"
+#.endif
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug \
@@ -179,9 +181,9 @@ CONFIGURE_ARGS+=	--disable-jsd \
 			--disable-dtd-debug
 .endif
 
-#.if defined(WITH_CALENDAR)
-#CONFIGURE_ARGS+=	--enable-calendar
-#.endif
+.if defined(WITH_CALENDAR)
+CONFIGURE_ARGS+=	--enable-calendar
+.endif
 
 .if defined(WITHOUT_COMPOSER)
 CONFIGURE_ARGS+=	--disable-composer
@@ -261,7 +263,7 @@ pre-install:
 	${RM} -rf ${PLIST} ${FAKEDIR}
 	${TOUCH} -f ${PLIST}
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
-		Makefile ${MAKE_ARGS} install
+		Makefile ${MAKE_ARGS} ${INSTALL_TARGET}
 	${MKDIR} ${SCRIPTS_DIR} ${MOZ_PIS_DIR}
 	${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
 		${FAKEDIR}/bin/mozilla \
@@ -311,7 +313,7 @@ pre-install:
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's:^:@dirrm share/idl/${MOZILLA}/:' >> ${PLIST}
 		${ECHO_CMD} "@dirrm share/idl/${MOZILLA}" >> ${PLIST}
-		${ECHO_CMD} "@unexec rmdir %D/share/idl 2>/dev/null || true" >> ${PLIST}
+		${ECHO_CMD} "@unexec ${RMDIR} %D/share/idl 2>/dev/null || true" >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/${MOZILLA}
