@@ -1690,6 +1690,7 @@ djbfft		ports/math/djbfft
 djvulibre	ports/graphics/djvulibre
 djvulibre-nox11	ports/graphics/djvulibre-nox11
 dk-milter	ports/mail/dk-milter
+dkfilter	ports/mail/dkfilter
 dkftpbench	ports/benchmarks/dkftpbench
 dkimap4		ports/mail/dkimap4
 dlint		ports/dns/dlint
