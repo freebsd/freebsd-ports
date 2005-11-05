@@ -26,6 +26,12 @@ LIBTOOLFLAGS=		# none
 USE_GMAKE=		yes
 CONFIGURE_ARGS=		--with-conv-includes=${LOCALBASE}/include	\
 			--with-conv-libraries=${LOCALBASE}/lib		\
+			--with-intl-includes=${LOCALBASE}/include	\
+			--with-intl-libraries=${LOCALBASE}/lib		\
+			--with-conv-includes=${LOCALBASE}/include	\
+			--with-conv-libraries=${LOCALBASE}/lib		\
+			--with-gettext-includes=${LOCALBASE}/include	\
+			--with-gettext-libraries=${LOCALBASE}/lib	\
 			--with-moc=${X11BASE}/bin
 CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"		\
 			PTHREAD_LIBS="${PTHREAD_LIBS}"
@@ -42,6 +48,8 @@ SRC2FIX3=		Makefile.in src/exec/gbx_project.c
 CONFIGURE_ARGS+=	--disable-mysql
 PLIST_SUB+=		MYSQL="@comment "
 .else
+CONFIGURE_ARGS+=	--with-mysql-includes=${LOCALBASE}/include/mysql	\
+			--with-mysql-libraries=${LOCALBASE}/lib/mysql
 USE_MYSQL=		yes
 PLIST_SUB+=		MYSQL=""
 .endif
@@ -59,6 +67,10 @@ PLIST_SUB+=		SDL="@comment "
 .if !defined(WITHOUT_XML)
 USE_GNOME=		libxml2 libxslt
 PLIST_SUB+=		XML=""
+CONFIGURE_ARGS+=	--with-libxml-includes=${LOCALBASE}/include/libxml2	\
+			--with-libxml-libraries=${LOCALBASE}/lib		\
+			--with-xslt-includes=${LOCALBASE}/include/libxml2	\
+			--with-xslt-libraries=${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--disable-libxml --disable-xslt
 PLIST_SUB+=		XML="@comment "
