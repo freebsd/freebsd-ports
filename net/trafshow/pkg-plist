@@ -1,4 +1,4 @@
 bin/trafshow
 @unexec if cmp -s %D/etc/trafshow %D/etc/trafshow.dist; then rm -f %D/etc/trafshow; fi
 etc/trafshow.dist
-@exec if [ ! -f %D/etc/trafshow.dist ]; then cp -p %D/%F %B/trafshow.dist; fi
+@exec if [ ! -e %D/etc/trafshow ]; then cp -p %D/%F %B/trafshow; fi
