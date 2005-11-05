@@ -3,10 +3,12 @@
 # Whom:					Glenn Johnson <gljohns@bellsouth.net>
 #
 # $FreeBSD$
+#   $MCom: ports/mail/balsa/Makefile,v 1.5 2005/10/30 00:29:16 marcus Exp $
 #
 
 PORTNAME=	balsa
 PORTVERSION=	2.3.6
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/
 DISTNAME=	balsa-${PORTVERSION}
@@ -23,6 +25,7 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
+INSTALLS_ICONS=	yes
 USE_PERL5=	yes
 USE_OPENSSL=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui libgnomeprintui \
@@ -70,8 +73,5 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|^(HICOLOR_ICON_DIR)[^/]+/|\1=${PREFIX}/|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-
-post-install:
-	-@gtk-update-icon-cache ${X11BASE}/share/icons/hicolor
 
 .include <bsd.port.post.mk>
