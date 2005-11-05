@@ -15,7 +15,6 @@
     SUBDIR += anubis
     SUBDIR += archivemail
     SUBDIR += archmbox
-    SUBDIR += arrow
     SUBDIR += asmail
     SUBDIR += assp
     SUBDIR += autorespond

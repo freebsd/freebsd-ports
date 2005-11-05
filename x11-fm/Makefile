@@ -26,7 +26,6 @@
     SUBDIR += rox-filer
     SUBDIR += rox-mime-editor
     SUBDIR += rox-session
-    SUBDIR += systemg
     SUBDIR += tdfsb
     SUBDIR += tkdesk
     SUBDIR += twander

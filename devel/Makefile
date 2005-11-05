@@ -146,7 +146,6 @@
     SUBDIR += cmake
     SUBDIR += cmunge
     SUBDIR += cocktail
-    SUBDIR += codecrusader
     SUBDIR += codeville
     SUBDIR += codeworker
     SUBDIR += cogito
