@@ -28,7 +28,6 @@ CONFIGURE_ARGS+=	--with-tiff-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-tiff-include=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-jpeg-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-jpeg-include=${LOCALBASE}/include
-#CPPFLAGS+=		-I${LOCALBASE}/include/freetype2
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}"
 USE_GMAKE=		yes
 USE_GNUSTEP=	yes
@@ -57,9 +56,8 @@ PLIST_SUB+=		USE_XLIB="@comment "
 BACK_SUFFIX?=		-art
 CONFLICTS?=		gunstep-back-0.* gunstep-back-xdps-0.* gunstep-back-cairo-0.*
 .elif defined(WITH_GNUSTEP_CAIRO)
-BROKEN=			the cairo version in the ports is too old
 LIB_DEPENDS+=		glitz-glx.1:${PORTSDIR}/graphics/glitz
-LIB_DEPENDS+=		cairo.1:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS+=		cairo.3:${PORTSDIR}/graphics/cairo
 CONFIGURE_ARGS+=	--enable-graphics=cairo --with-name=cairo
 PLIST_SUB+=		BACK=cairo-${BACKVERSION}
 PLIST_SUB+=		USE_XLIB="@comment "
