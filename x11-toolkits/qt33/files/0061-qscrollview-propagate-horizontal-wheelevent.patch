@@ -12,15 +12,6 @@ retrieving revision 1.65
 diff -u -3 -p -r1.65 qscrollview.cpp
 --- src/widgets/qscrollview.cpp	29 Apr 2004 22:31:28 -0000	1.65
 +++ src/widgets/qscrollview.cpp	25 Jan 2005 12:07:04 -0000
-@@ -1180,7 +1180,7 @@ void  QScrollView::mouseMoveEvent( QMous
- void QScrollView::wheelEvent( QWheelEvent *e )
- {
-     QWheelEvent ce( viewport()->mapFromGlobal( e->globalPos() ),
--                    e->globalPos(), e->delta(), e->state());
-+                    e->globalPos(), e->delta(), e->state(), e->orientation() );
-     viewportWheelEvent(&ce);
-     if ( !ce.isAccepted() ) {
- 	if ( e->orientation() == Horizontal && horizontalScrollBar() )
 @@ -1863,7 +1863,7 @@ void QScrollView::viewportWheelEvent( QW
         the event itself.
      */

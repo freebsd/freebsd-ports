@@ -19,6 +19,8 @@ dgux-g++/qmake.conf
 dgux-g++/qplatformdefs.h
 freebsd-g++/qmake.conf
 freebsd-g++/qplatformdefs.h
+freebsd-g++34/qmake.conf
+freebsd-g++34/qplatformdefs.h
 freebsd-icc/qmake.conf
 freebsd-icc/qplatformdefs.h
 hpux-acc-64/qmake.conf
@@ -123,6 +125,8 @@ win32-msvc/qplatformdefs.h
 win32-msvc/win32app.dsp
 win32-msvc/win32dll.dsp
 win32-msvc/win32lib.dsp
+win32-msvc2005/qmake.conf
+win32-msvc2005/qplatformdefs.h
 win32-watcom/qmake.conf
 @dirrm aix-g++
 @dirrm aix-g++-64
@@ -133,6 +137,7 @@ win32-watcom/qmake.conf
 @dirrm darwin-g++
 @dirrm dgux-g++
 @dirrm freebsd-g++
+@dirrm freebsd-g++34
 @dirrm freebsd-icc
 @dirrm hpux-acc
 @dirrm hpux-acc-64
@@ -180,6 +185,7 @@ win32-watcom/qmake.conf
 @dirrm win32-icc
 @dirrm win32-msvc
 @dirrm win32-msvc.net
+@dirrm win32-msvc2005
 @dirrm win32-watcom
 @unexec rmdir %%_PREFIX%%/share/qt/mkspecs
 @unexec rmdir %%_PREFIX%%/share/qt || echo %%_PREFIX%%/share/qt is still in use -- probably by the rest of Qt

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	qt
-PORTVERSION=	3.3.4
+PORTVERSION=	3.3.5
 CATEGORIES?=	x11-toolkits ipv6
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-free-${PORTVERSION}
@@ -126,7 +126,6 @@ EXTRA_PATCHES=	${PATCHDIR}/0001-dnd_optimization.patch \
 		${PATCHDIR}/0020-designer-deletetabs.patch \
 		${PATCHDIR}/0032-fix_rotated_randr.diff \
 		${PATCHDIR}/0035-qvaluelist-streaming-operator.patch \
-		${PATCHDIR}/0037-dnd-timestamp-fix.patch \
 		${PATCHDIR}/0038-dragobject-dont-prefer-unknown.patch \
 		${PATCHDIR}/0044-qscrollview-windowactivate-fix.diff \
 		${PATCHDIR}/0046-qiconview-no-useless-scrollbar.diff \
@@ -138,7 +137,8 @@ EXTRA_PATCHES=	${PATCHDIR}/0001-dnd_optimization.patch \
 		${PATCHDIR}/0056-khotkeys_input_84434.patch \
 		${PATCHDIR}/0059-qpopup_has_mouse.patch \
 		${PATCHDIR}/0060-qpopup_ignore_mousepos.patch \
-		${PATCHDIR}/0061-qscrollview-propagate-horizontal-wheelevent.patch
+		${PATCHDIR}/0061-qscrollview-propagate-horizontal-wheelevent.patch \
+		${PATCHDIR}/0064-fix_gcc4.patch
 PKGNAMESUFFIX=	-copy
 COMMENT+=	(+ KDE patches)
 CONFLICTS+=	qt-3.3.*
