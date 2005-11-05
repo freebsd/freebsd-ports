@@ -3,10 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/x11-toolkits/py-gnome2/Makefile,v 1.24 2005/10/03 16:28:50 marcus Exp $
 #
 
 PORTNAME=	gnome
-PORTVERSION=	2.10.0
+PORTVERSION=	2.12.1
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-python/${PORTVERSION:C/..$//}
@@ -25,7 +26,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gnomehack libgnomeui pygtk2
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
@@ -33,6 +35,16 @@ EG_SRC_DIR=	${WRKSRC}/examples
 EG_DST_DIR=	${PREFIX}/share/examples/py-gnome
 
 CONFLICTS=	py*-gnome-1*
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 503001
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gnomevfs_Makefile.in
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|' \
+		${WRKSRC}/gnomevfs/Makefile.in
 
 .if !defined(NOPORTDOCS)
 post-install:
@@ -43,4 +55,4 @@ post-install:
 	${FIND} ${EG_DST_DIR} -type f -print | ${XARGS} ${CHMOD} 0444
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

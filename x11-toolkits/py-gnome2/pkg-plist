@@ -1,3 +1,4 @@
+include/gnome-python-2.0/pygnomevfs.h
 %%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/__init__.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/__init__.pyo
@@ -25,6 +26,7 @@ libdata/pkgconfig/gnome-python-2.0.pc
 %%PORTDOCS%%share/examples/py-gnome/bonobo/echo/README
 %%PORTDOCS%%share/examples/py-gnome/bonobo/echo/echo-client.py
 %%PORTDOCS%%share/examples/py-gnome/bonobo/unknown.py
+%%PORTDOCS%%share/examples/py-gnome/canvas/canvas-curve.py
 %%PORTDOCS%%share/examples/py-gnome/canvas/canvas-example.py
 %%PORTDOCS%%share/examples/py-gnome/gconf/basic-gconf-app.py
 %%PORTDOCS%%share/examples/py-gnome/gconf/simple-controller.py
@@ -32,6 +34,10 @@ libdata/pkgconfig/gnome-python-2.0.pc
 %%PORTDOCS%%share/examples/py-gnome/popt/popt.py
 %%PORTDOCS%%share/examples/py-gnome/vfs/async-xfer.py
 %%PORTDOCS%%share/examples/py-gnome/vfs/async.py
+%%PORTDOCS%%share/examples/py-gnome/vfs/cancellation.py
+%%PORTDOCS%%share/examples/py-gnome/vfs/pygvfsmethod/README
+%%PORTDOCS%%share/examples/py-gnome/vfs/pygvfsmethod/pyfs.conf
+%%PORTDOCS%%share/examples/py-gnome/vfs/pygvfsmethod/pyfs.py
 %%PORTDOCS%%share/examples/py-gnome/vfs/shell.py
 %%PORTDOCS%%share/examples/py-gnome/vfs/sync-xfer.py
 share/pygtk/2.0/argtypes/bonobo-arg-types.py
@@ -50,6 +56,7 @@ share/pygtk/2.0/defs/gnome-types.defs
 share/pygtk/2.0/defs/gnome.defs
 share/pygtk/2.0/defs/ui.defs
 @dirrm share/pygtk/2.0/argtypes
+%%PORTDOCS%%@dirrm share/examples/py-gnome/vfs/pygvfsmethod
 %%PORTDOCS%%@dirrm share/examples/py-gnome/vfs
 %%PORTDOCS%%@dirrm share/examples/py-gnome/popt
 %%PORTDOCS%%@dirrm share/examples/py-gnome/gconf
@@ -60,3 +67,6 @@ share/pygtk/2.0/defs/ui.defs
 %%PORTDOCS%%@dirrm share/examples/py-gnome
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo
+@dirrm include/gnome-python-2.0
+@cwd %%X11BASE%%
+lib/gnome-vfs-2.0/modules/libpythonmethod.so
