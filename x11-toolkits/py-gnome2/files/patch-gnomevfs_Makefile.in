@@ -1,0 +1,11 @@
+--- gnomevfs/Makefile.in.orig	Sat Sep  3 15:51:39 2005
++++ gnomevfs/Makefile.in	Sat Sep  3 15:52:19 2005
+@@ -276,7 +276,7 @@
+ 
+ gpincdir = $(includedir)/gnome-python-2.0
+ gpinc_HEADERS = pygnomevfs.h
+-vfsmethoddir = $(libdir)/gnome-vfs-2.0/modules
++vfsmethoddir = %%X11BASE%%/lib/gnome-vfs-2.0/modules
+ @BUILD_PYVFSMODULE_FALSE@vfsmethod_LTLIBRARIES = 
+ @BUILD_PYVFSMODULE_TRUE@vfsmethod_LTLIBRARIES = libpythonmethod.la
+ libpythonmethod_la_CFLAGS = $(GNOME_VFS_MODULE_CFLAGS) -DGNOME_VFS_PYTHON_DIR="\"$(vfsmethoddir)\""
