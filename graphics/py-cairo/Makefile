@@ -3,12 +3,13 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
+#	$MCom: ports/graphics/py-cairo/Makefile,v 1.15 2005/10/12 16:31:53 ahze Exp $
 #
 
 PORTNAME=	cairo
-PORTVERSION=	0.4.0
+PORTVERSION=	1.0.2
 CATEGORIES=	graphics python
-MASTER_SITES=	http://cairographics.org/snapshots/
+MASTER_SITES=	http://cairographics.org/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
@@ -16,36 +17,36 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python bindings for Cairo
 
 BUILD_DEPENDS=	${PYNUMERIC}
-LIB_DEPENDS=	cairo.1:${PORTSDIR}/graphics/cairo
-RUN_DEPENDS=	${BUILD_DEPENDS}
+LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
+RUN_DEPENDS=	${PYNUMERIC}
 
 USE_PYTHON=	yes
-WANT_GNOME=	yes
-USE_LIBTOOL_VER=15
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnometarget gnomehack
+USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ARGS=	--without-pygtk
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mpygtk2}!=""
-WITH_PYGTK=	yes
-.endif
-
-.if defined(WITHOUT_PYGTK) && !defined(WITH_PYGTK)
-PLIST_SUB+=	GTK="@comment "
-.else
-USE_GNOME=	pygtk2
-PLIST_SUB+=	GTK=""
-.endif
-
-.if defined(WITH_SVG) || exists(${LOCALBASE}/lib/libsvg-cairo.a)
-LIB_DEPENDS+=	svg-cairo.1:${PORTSDIR}/graphics/libsvg-cairo
-PLIST_SUB+=	SVG=""
-.else
+.if defined(WITHOUT_SVG) && !exists(${LOCALBASE}/lib/libsvg-cairo.a)
 PLIST_SUB+=	SVG="@comment "
+.else
+PLIST_SUB+=	SVG=""
+LIB_DEPENDS+=	svg-cairo.1:${PORTSDIR}/graphics/libsvg-cairo
 .endif
 
 pre-everything::
-	@${ECHO_MSG} "Enable SVG support by defining WITH_SVG"
-	@${ECHO_MSG} "Enable PyGtk support by defining WITH_PYGTK"
+	@${ECHO_MSG} "Disable SVG support by defining WITHOUT_SVG"
 	@${ECHO_MSG}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|; \
+		s|SUBDIRS = cairo examples test|SUBDIRS = cairo examples|' \
+		${WRKSRC}/Makefile.in
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e 's|-std=c99||' \
+		${WRKSRC}/configure
+.endif
 
 .include <bsd.port.post.mk>
