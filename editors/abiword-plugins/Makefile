@@ -3,10 +3,11 @@
 # Whom:					FreeBSD GNOME Team <gnome@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/editors/abiword-plugins/Makefile,v 1.16 2005/10/29 22:31:16 marcus Exp $
 #
 
 PORTNAME=	abiword
-PORTVERSION=	2.2.8
+PORTVERSION=	2.4.1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -16,8 +17,8 @@ DIST_SUBDIR=	AbiWord
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Multi-plugins for AbiWord
 
-BUILD_DEPENDS=	abiword:${PORTSDIR}/editors/abiword
-RUN_DEPENDS=	abiword:${PORTSDIR}/editors/abiword
+BUILD_DEPENDS=	AbiWord-${ABIVERSION}:${PORTSDIR}/editors/abiword
+RUN_DEPENDS=	AbiWord-${ABIVERSION}:${PORTSDIR}/editors/abiword
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -34,12 +35,12 @@ MAKEFILE=	GNUmakefile
 WRKSRC=		${WRKDIR}/abiword-${PORTVERSION}/abiword-plugins
 MD5_FILE=	${.CURDIR}/../abiword/distinfo
 
-ABIVERSION=	2.2
+ABIVERSION=	2.4
 PLIST_SUB+=	ABIVERSION=${ABIVERSION}
 
-EXCLUDE_EXTRACT=	MSVC6 MSVC71 abidistfiles abipbx abiword-docs expat \
-			fribidi libiconv libpng pbx popt wv zlib
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${EXCLUDE_EXTRACT:S/^/--exclude /}
+EXTERNALS=	MSVC* abipbx abiword-docs expat fribidi libiconv libpng pbx \
+		popt wv zlib
+EXTRACT_AFTER_ARGS=| ${TAR} -xpf - ${EXTERNALS:C,^,--exclude ${DISTNAME}/,}
 
 # NOTE: Please, keep those knobs in the ABC's order.
 
@@ -130,6 +131,14 @@ PLIST_SUB+=		GOOGLE:=""
 PLIST_SUB+=		GOOGLE:="@comment "
 .endif
 
+.if defined(WITH_GRAMMAR) || defined(PACKAGE_BUILDING)
+LIB_DEPENDS+=		link-grammar.5:${PORTSDIR}/textproc/link-grammar
+CONFIGURE_ARGS+=	--enable-abigrammar
+PLIST_SUB+=		GRAMMAR:=""
+.else
+PLIST_SUB+=		GRAMMAR:="@comment "
+.endif
+
 .if defined(WITH_HANCOM) # Need to be tested
 CONFIGURE_ARGS+=	--enable-hancom
 PLIST_SUB+=		HANCOM:=""
@@ -170,6 +179,14 @@ CONFIGURE_ARGS+=	--enable-nroff
 PLIST_SUB+=		NROFF:=""
 .else
 PLIST_SUB+=		NROFF:="@comment "
+.endif
+
+.if defined(WITH_OPENDOCUMENT) || defined(PACKAGE_BUILDING)
+USE_GNOME+=		libgsf
+CONFIGURE_ARGS+=	--enable-OpenDocument
+PLIST_SUB+=		OPENDOCUMENT:=""
+.else
+PLIST_SUB+=		OPENDOCUMENT:="@comment "
 .endif
 
 .if defined(WITH_OPENWRITER) || defined(PACKAGE_BUILDING)
@@ -288,6 +305,9 @@ pre-everything::
 .if !defined(WITH_GDICT)
 	@${ECHO_MSG} "WITH_GDICT=yes		Look up definitions of selected text."
 .endif
+.if !defined(WITH_GRAMMAR)
+	@${ECHO_MSG} "WITH_GRAMMAR=yes	Allows AbiWord to be Grammar checked."
+.endif
 .if !defined(WITH_HANCOM)
 	@${ECHO_MSG} "WITH_HANCOM=yes		Hancom Word Importer. Only does text."
 .endif
@@ -302,6 +322,9 @@ pre-everything::
 .endif
 .if !defined(WITH_NROFF)
 	@${ECHO_MSG} "WITH_NROFF=yes		Nroff/Man file format."
+.endif
+.if !defined(WITH_OPENDOCUMENT)
+	@${ECHO_MSG} "WITH_OPENDOCUMENT=yes	Import/export OpenDocument files."
 .endif
 .if !defined(WITH_OPENWRITER)
 	@${ECHO_MSG} "WITH_OPENWRITER=yes	Import/export OpenOffice files."

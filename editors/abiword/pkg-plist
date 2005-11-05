@@ -2,16 +2,18 @@ bin/AbiWord-%%ABIVERSION%%
 bin/abiword
 bin/ttfadmin.sh
 bin/ttftool
-%%GNOME:%%libdata/bonobo/servers/GNOME_AbiWord_Control_2_2.server
+%%GNOME:%%libdata/bonobo/servers/GNOME_AbiWord_Control_2_4.server
 share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/ap_UnixDialog_Break.glade
 share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/ap_UnixDialog_Field.glade
 share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/ap_UnixDialog_FormatFootnotes.glade
 share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/ap_UnixDialog_FormatFrame.glade
 share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/ap_UnixDialog_FormatTOC.glade
 share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/ap_UnixDialog_FormatTable.glade
+share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/ap_UnixDialog_Goto.glade
 share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/ap_UnixDialog_HdrFtr.glade
 share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/ap_UnixDialog_InsertTable.glade
 share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/ap_UnixDialog_Insert_DateTime.glade
+share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/ap_UnixDialog_Latex.glade
 share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/ap_UnixDialog_MailMerge.glade
 share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/ap_UnixDialog_MetaData.glade
 share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/ap_UnixDialog_New.glade
@@ -24,6 +26,7 @@ share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/ap_UnixDialog_Spell.glade
 share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/ap_UnixDialog_Styles.glade
 share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/ap_UnixDialog_Stylist.glade
 share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/ap_UnixDialog_Stylist_modal.glade
+share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/ap_UnixDialog_Tab.glade
 share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/ap_UnixDialog_WordCount.glade
 share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/xap_UnixDlg_About.glade
 share/AbiSuite-%%ABIVERSION%%/AbiWord/glade/xap_UnixDlg_DocComparison.glade
@@ -274,9 +277,10 @@ share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-ur_PK
 share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-yi
 share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-zh_CN
 share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-zh_TW
-%%GNOME:%%share/gnome/applications/abiword.desktop
+share/applications/abiword.desktop
 %%GNOME:%%share/gnome/gnome-2.0/ui/abi-nautilus-view-file.xml
-%%GNOME:%%share/gnome/pixmaps/abiword_48.png
+share/pixmaps/abiword_48.png
+@unexec rmdir %D/share/applications 2> /dev/null || true
 @dirrm share/AbiSuite-%%ABIVERSION%%/templates
 @dirrm share/AbiSuite-%%ABIVERSION%%/icons
 @dirrm share/AbiSuite-%%ABIVERSION%%/dictionary
@@ -286,7 +290,8 @@ share/AbiSuite-%%ABIVERSION%%/templates/normal.awt-zh_TW
 @dirrm share/AbiSuite-%%ABIVERSION%%/AbiWord/glade
 @dirrm share/AbiSuite-%%ABIVERSION%%/AbiWord
 @dirrm share/AbiSuite-%%ABIVERSION%%
-@dirrm lib/AbiWord-%%ABIVERSION%%/plugins
-@dirrm lib/AbiWord-%%ABIVERSION%%
-%%GNOME:%%@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-%%GNOME:%%@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@exec /bin/mkdir -p %D/lib/AbiWord-%%ABIVERSION%%/plugins
+@unexec /bin/rmdir %D/lib/AbiWord-%%ABIVERSION%%/plugins 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/lib/AbiWord-%%ABIVERSION%% 2>/dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

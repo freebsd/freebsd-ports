@@ -1,5 +1,6 @@
 
 $FreeBSD$
+$MCom: ports/editors/abiword/files/patch-ar,v 1.2 2005/10/14 20:39:57 adamw Exp $
 
 --- src/pkg/common/unix/scripts/install.sh.orig	Sat Apr  7 10:59:52 2001
 +++ src/pkg/common/unix/scripts/install.sh	Wed Aug  8 13:31:57 2001
