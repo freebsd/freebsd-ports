@@ -53,6 +53,7 @@ libdata/pkgconfig/gnome2-java.pc
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/FontPickerMode.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/GConf.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/Gnome.html
+%%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/GnomeConfig.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/GnomeStockItem.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/HRef.html
 %%PORTDOCS%%%%DOCSDIR%%/api/org/gnu/gnome/Help.html

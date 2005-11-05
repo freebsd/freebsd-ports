@@ -3,13 +3,14 @@
 # Whom:                Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/x11/libgnome-java/Makefile,v 1.9 2005/10/29 22:06:06 marcus Exp $
 #
 
 PORTNAME=	libgnome-java
-PORTVERSION=	2.10.1
+PORTVERSION=	2.12.1
 CATEGORIES=	x11 java
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.10
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.12
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -22,7 +23,7 @@ USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
 JAVA_OS=	native
@@ -32,8 +33,8 @@ USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--without-gcj-compile
 CONFIGURE_ENV=	CPPFLAGS="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd"
 
-GNOME_API_VERSION=	2.10
-GTK_API_VERSION=	2.6
+GNOME_API_VERSION=	2.12
+GTK_API_VERSION=	2.8
 PLIST_SUB=		GNOME_API_VERSION=${GNOME_API_VERSION} PORTNAME=${PORTNAME}
 
 PKGMESSAGE=		${WRKDIR}/pkg-message
