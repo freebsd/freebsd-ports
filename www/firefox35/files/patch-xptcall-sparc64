@@ -1,4 +1,5 @@
 $FreeBSD$
+  $MCom: ports/www/firefox-devel/files/patch-xptcall-sparc64,v 1.6 2005/07/14 05:25:44 ahze Exp $
 
 --- /dev/null	Mon May 26 13:22:00 2003
 +++ xpcom/reflect/xptcall/src/md/unix/xptcstubs_sparc64_freebsd.cpp	Mon May 26 04:12:55 2003

@@ -1,4 +1,5 @@
 $FreeBSD$
+  $MCom: ports/www/firefox-devel/files/patch-xptcall-alpha,v 1.6 2005/07/14 05:25:44 ahze Exp $
 
 --- xpcom/reflect/xptcall/src/md/unix/xptcinvoke_freebsd_alpha.cpp.orig	Tue May 27 01:37:25 2003
 +++ xpcom/reflect/xptcall/src/md/unix/xptcinvoke_freebsd_alpha.cpp	Tue May 27 01:37:00 2003
