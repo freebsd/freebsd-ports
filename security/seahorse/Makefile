@@ -3,10 +3,12 @@
 # Whom:			Dave McKay <dave@mu.org>
 #
 # $FreeBSD$
+#   $MCom: ports/security/seahorse/Makefile,v 1.8 2005/10/14 20:39:58 adamw Exp $
 #
 
 PORTNAME=	seahorse
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=sources/${PORTNAME}/0.8
@@ -65,10 +67,14 @@ CONFIGURE_ARGS+=--disable-ldap
 .endif
 
 .if !defined(WITHOUT_HKP)
-LIB_DEPENDS+=	soup-2.2.9:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS+=	soup-2.2.8:${PORTSDIR}/devel/libsoup
 .else
 CONFIGURE_ARGS+=--disable-hkp
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|gedit-2.10|gedit-2.12|g' \
+		${WRKSRC}/configure
 
 post-install:
 	-@update-desktop-database
