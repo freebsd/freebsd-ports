@@ -57,12 +57,13 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hpijs ${PREFIX}/bin
 .else
 INSTALL_TARGET=	install-exec install-foomatic
-.if !defined(WITHOUT_CUPS)
-INSTALL_TARGET+=	install-cups
-.endif
 .endif
 
 post-install:
+.if !defined(WITHOUT_CUPS)
+	@${LN} -s ${PREFIX}/bin/foomatic-rip ${LOCALBASE}/libexec/cups/filter/foomatic-rip
+	@${LN} -s ${PREFIX}/share/ppd ${LOCALBASE}/share/cups/model/foomatic-ppds
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/gs_hpijs.png ${DOCSDIR}
