@@ -1,5 +1,5 @@
---- sys/dev/ltmdm/ltmdmsio.c.orig	Mon Mar 11 18:47:31 2002
-+++ sys/dev/ltmdm/ltmdmsio.c	Wed Jun 22 13:06:35 2005
+--- sys/dev/ltmdm/ltmdmsio.c.orig	Tue Mar 12 04:47:31 2002
++++ sys/dev/ltmdm/ltmdmsio.c	Sat Nov  5 07:27:48 2005
 @@ -60,7 +60,9 @@
  #include <sys/proc.h>
  #include <sys/module.h>
@@ -211,7 +211,50 @@
  
      /*
       * initialize the device registers as follows:
-@@ -1433,11 +1487,19 @@
+@@ -1368,11 +1422,16 @@
+     write_vuart_port(UART_FIFO, 0);
+     printf("\n");
+ 
+-#if __FreeBSD_version >= 500000
++#if __FreeBSD_version >= 500000 && __FreeBSD_version < 700003
+     if (sio_fast_ih == NULL)
+         swi_add(&tty_ithd, "tty:ltmdm", siopoll, NULL, ltmdm_swi_type, 0, &sio_fast_ih);
+     if (sio_slow_ih == NULL)
+         swi_add(&clk_ithd, "tty:ltmdm", siopoll, NULL, ltmdm_swi_type, 0, &sio_slow_ih);
++#elif __FreeBSD_version >= 700003
++    if (sio_fast_ih == NULL)
++	swi_add(&tty_intr_event, "tty:ltmdm", siopoll, NULL, ltmdm_swi_type, 0, &sio_fast_ih);
++    if (sio_slow_ih == NULL)
++        swi_add(&clk_intr_event, "tty:ltmdm", siopoll, NULL, ltmdm_swi_type, 0, &sio_slow_ih);
+ #else
+     if (!sio_registered) {
+         register_swi(ltmdm_swi_type, siopoll);
+@@ -1415,7 +1474,7 @@
+         return EBUSY;
+ 
+     com->gone = 1;
+-#if __FreeBSD_version >= 500000
++#if __FreeBSD_version >= 500000 &&  __FreeBSD_version < 700003
+     if (sio_fast_ih != NULL) {
+         ithread_remove_handler(sio_fast_ih);
+         sio_fast_ih = NULL;
+@@ -1424,6 +1483,15 @@
+         ithread_remove_handler(sio_slow_ih);
+         sio_slow_ih = NULL;
+     }
++#elif __FreeBSD_version >= 700003
++    if (sio_fast_ih != NULL) {
++	intr_event_remove_handler(sio_fast_ih);
++	sio_fast_ih = NULL;
++    }
++    if (sio_slow_ih != NULL) {
++	intr_event_remove_handler(sio_slow_ih);
++	sio_slow_ih = NULL;
++    }
+ #else
+     if (sio_registered) {
+         unregister_swi(ltmdm_swi_type, siopoll);
+@@ -1433,11 +1501,19 @@
  
      s = splfunc();
      if (tp) {
@@ -231,7 +274,7 @@
      }
      vxdPortClose();
      siosettimeout();
-@@ -1470,7 +1532,11 @@
+@@ -1470,7 +1546,11 @@
  }
  
  static int
@@ -243,7 +286,7 @@
  {
      struct com_s    *com;
      int     error;
-@@ -1610,7 +1676,11 @@
+@@ -1610,7 +1690,11 @@
           * the true carrier.
           */
          if (com->prev_modem_status & MSR_DCD || mynor & CALLOUT_MASK)
@@ -255,7 +298,7 @@
      }
      /*
       * Wait for DCD if necessary.
-@@ -1626,7 +1696,11 @@
+@@ -1626,7 +1710,11 @@
              goto out;
          goto open_top;
      }
@@ -267,7 +310,7 @@
      disc_optim(tp, &tp->t_termios, com);
      if (tp->t_state & TS_ISOPEN && mynor & CALLOUT_MASK)
          com->active_out = TRUE;
-@@ -1639,7 +1713,11 @@
+@@ -1639,7 +1727,11 @@
  }
  
  static int
@@ -279,7 +322,7 @@
  {
      struct com_s    *com;
      int     mynor;
-@@ -1654,11 +1732,19 @@
+@@ -1654,11 +1746,19 @@
          return (ENODEV);
      tp = com->tp;
      s = splfunc();
@@ -299,7 +342,7 @@
      siosettimeout();
      splx(s);
      if (com->gone) {
-@@ -1685,7 +1771,9 @@
+@@ -1685,7 +1785,9 @@
      s = splfunc();
      com->do_timestamp = FALSE;
      com->do_dcd_timestamp = FALSE;
@@ -309,7 +352,7 @@
      write_vuart_port(UART_CFCR, com->cfcr_image &= ~CFCR_SBREAK);
      {
          write_vuart_port(UART_IER, 0);
-@@ -1724,7 +1812,11 @@
+@@ -1724,7 +1826,11 @@
  }
  
  static int
@@ -321,7 +364,7 @@
  {
      int     mynor;
      struct com_s    *com;
-@@ -1735,11 +1827,19 @@
+@@ -1735,11 +1841,19 @@
      com = com_addr(MINOR_TO_UNIT(mynor));
      if (com == NULL || com->gone)
          return (ENODEV);
@@ -341,7 +384,7 @@
  {
      int     mynor;
      struct com_s    *com;
-@@ -1754,7 +1854,11 @@
+@@ -1754,7 +1868,11 @@
      if (com == NULL || com->gone)
          return (ENODEV);
  
@@ -353,7 +396,7 @@
  }
  
  static void
-@@ -1860,7 +1964,11 @@
+@@ -1860,7 +1978,11 @@
                  if (line_status & LSR_PE)
                      recv_data |= TTY_PE;
              }
@@ -365,7 +408,7 @@
              lt_disable_intr();
          } while (buf < com->iptr);
      }
-@@ -1894,23 +2002,34 @@
+@@ -1894,23 +2016,34 @@
      u_char  recv_data;
      u_char  int_ctl;
      u_char  int_ctl_new;
@@ -400,7 +443,7 @@
          line_status = read_vuart_port(UART_LSR);
  
          /* input event? (check first to help avoid overruns) */
-@@ -1948,7 +2067,11 @@
+@@ -1948,7 +2081,11 @@
                      recv_data = 0;
              }
              ++com->bytes_in;
@@ -412,7 +455,7 @@
                  setsofttty();
              ioptr = com->iptr;
              if (ioptr >= com->ibufend)
-@@ -2053,7 +2176,11 @@
+@@ -2053,7 +2190,11 @@
  }
  
  static int
@@ -424,7 +467,23 @@
  {
      struct com_s    *com;
      int     error;
-@@ -2134,7 +2261,11 @@
+@@ -2103,6 +2244,7 @@
+         }
+     }
+     tp = com->tp;
++#if __FreeBSD_version < 700003
+ #if defined(COMPAT_43) || defined(COMPAT_SUNOS)
+     term = tp->t_termios;
+     oldcmd = cmd;
+@@ -2112,6 +2254,7 @@
+     if (cmd != oldcmd)
+         data = (caddr_t)&term;
+ #endif
++#endif
+     if (cmd == TIOCSETA || cmd == TIOCSETAW || cmd == TIOCSETAF) {
+         int cc;
+         struct termios *dt = (struct termios *)data;
+@@ -2134,7 +2277,11 @@
          if (lt->c_ospeed != 0)
              dt->c_ospeed = tp->t_ospeed;
      }
@@ -436,7 +495,7 @@
      if (error != ENOIOCTL)
          return (error);
      s = splfunc();
-@@ -2189,13 +2320,17 @@
+@@ -2189,13 +2336,17 @@
          com->do_timestamp = TRUE;
          *(struct timeval *)data = com->timestamp;
          break;
@@ -454,7 +513,7 @@
          if (error == ENODEV)
              error = ENOTTY;
          return (error);
-@@ -2257,8 +2392,13 @@
+@@ -2257,8 +2408,13 @@
              com->state &= ~CS_CHECKMSR;
              lt_enable_intr();
              if (delta_modem_status & MSR_DCD)
@@ -468,7 +527,7 @@
          }
          if (com->state & CS_ODONE) {
              lt_disable_intr();
-@@ -2270,7 +2410,11 @@
+@@ -2270,7 +2426,11 @@
                  sio_busycheck_handle = timeout(siobusycheck, com, hz / 100);
                  com->extra_state |= CSE_BUSYCHECK;
              }
@@ -480,7 +539,7 @@
          }
          if (com_events == 0)
              break;
-@@ -2769,11 +2913,21 @@
+@@ -2769,11 +2929,21 @@
          && (!(t->c_iflag & PARMRK)
          || (t->c_iflag & (IGNPAR | IGNBRK)) == (IGNPAR | IGNBRK))
          && !(t->c_lflag & (ECHO | ICANON | IEXTEN | ISIG | PENDIN))
@@ -502,7 +561,7 @@
  }
  
  #ifdef KLD_MODULE
-@@ -2796,7 +2950,7 @@
+@@ -2796,7 +2966,7 @@
  #endif
  
  DRIVER_MODULE(ltmdm, pci, ltmdm_pci_driver, ltmdm_devclass, ltmdm_event, 0);
