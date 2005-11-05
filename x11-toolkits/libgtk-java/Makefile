@@ -3,24 +3,26 @@
 # Whom:                Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/x11-toolkits/libgtk-java/Makefile,v 1.16 2005/10/29 22:06:06 marcus Exp $
 #
 
 PORTNAME=	libgtk-java
-PORTVERSION=	2.6.2
-PORTREVISION=	1
+PORTVERSION=	2.8.1
 CATEGORIES=	x11-toolkits java
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.8
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Java wrapper for Gtk+, Pango, Atk, and Glib
 
+LIB_DEPENDS=	cairojni-${CAIRO_API_VERSION}.1:${PORTSDIR}/graphics/cairo-java
+
 USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
 JAVA_OS=	native
@@ -29,7 +31,8 @@ USE_GNOME=	gnomehack gtk20
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--without-gcj-compile
 CONFIGURE_ENV=	CPPFLAGS="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd"
-GTK_API_VERSION=	2.6
+GTK_API_VERSION=	2.8
+CAIRO_API_VERSION=	1.0
 PLIST_SUB=		GTK_API_VERSION=${GTK_API_VERSION} PORTNAME=${PORTNAME}
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
@@ -46,7 +49,8 @@ do-install:
 	${MKDIR} ${PREFIX}/libdata/pkgconfig
 	${INSTALL_DATA} ${WRKSRC}/gtk2-java.pc	${PREFIX}/libdata/pkgconfig
 	${MKDIR} ${PREFIX}/include/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/src/jni/jg_jnu.h ${PREFIX}/include/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/src/jni/gtk_java.h \
+		${PREFIX}/include/${PORTNAME}
 	${MKDIR} ${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/gtk${GTK_API_VERSION}.jar ${JAVAJARDIR}
 	${MKDIR} ${PREFIX}/share/${PORTNAME}/macros
