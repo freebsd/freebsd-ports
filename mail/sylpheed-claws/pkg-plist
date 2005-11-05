@@ -1,5 +1,4 @@
 bin/sylpheed-claws
-bin/sylpheed-switcher
 bin/sylprint.pl
 etc/sylprint.rc.example
 include/sylpheed-claws/account.h
@@ -221,10 +220,9 @@ libdata/pkgconfig/sylpheed-claws.pc
 %%SA_PLUG%%lib/sylpheed-claws/plugins/spamassassin_gtk.so
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.claws
 %%PORTDOCS%%%%DOCSDIR%%/README.sylprint
 %%PORTDOCS%%%%DOCSDIR%%/README.tools
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES.claws
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/faq/de/sylpheed-faq-1.html
 %%PORTDOCS%%%%DOCSDIR%%/faq/de/sylpheed-faq-2.html
@@ -394,7 +392,6 @@ share/pixmaps/sylpheed-claws.png
 %%DATADIR%%/gif2xface.pl
 %%DATADIR%%/google_msgid.pl
 %%DATADIR%%/google_search.pl
-%%DATADIR%%/gpg-sign-syl
 %%DATADIR%%/kmail2sylpheed.pl
 %%DATADIR%%/kmail2sylpheed_v2.pl
 %%DATADIR%%/maildir2sylpheed.pl

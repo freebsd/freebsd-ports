@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	1.9.15
-PORTREVISION=	1
+PORTVERSION=	1.9.99
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -36,7 +35,7 @@ WANT_GNOME=	yes
 
 MAN1=		sylpheed-claws.1
 
-CONFIGURE_ARGS=	--program-suffix="-claws" --enable-ipv6 \
+CONFIGURE_ARGS=	--enable-ipv6 \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-manualdir=${DOCSDIR}/manual \
 		--with-faqdir=${DOCSDIR}/faq
@@ -178,7 +177,7 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-.for i in NEWS README README.claws RELEASE_NOTES.claws TODO tools/README.sylprint
+.for i in NEWS README RELEASE_NOTES TODO tools/README.sylprint
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/tools/README ${DOCSDIR}/README.tools
@@ -188,7 +187,7 @@ post-install:
 		${INSTALL_SCRIPT} OOo2sylpheed.pl acroread2sylpheed.pl \
 		calypso_convert.pl convert_mbox.pl eud2gc.py filter_conv.pl \
 		freshmeat_search.pl gif2xface.pl google_msgid.pl \
-		google_search.pl gpg-sign-syl kmail2sylpheed.pl \
+		google_search.pl kmail2sylpheed.pl \
 		kmail2sylpheed_v2.pl maildir2sylpheed.pl multiwebsearch.conf \
 		multiwebsearch.pl nautilus2sylpheed.sh outlook2sylpheed.pl \
 		tb2sylpheed textviewer.sh update-po uudec vcard2xml.py \
@@ -207,7 +206,6 @@ post-install:
 	@${CHMOD} -R a+r ${DATADIR}/themes
 	@${FIND} ${DATADIR}/themes -type d -print0 | ${XARGS} -0 ${CHMOD} a+x
 .endif
-	@${INSTALL_SCRIPT} ${WRKSRC}/tools/sylpheed-switcher ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/sylprint.pl ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/tools/sylprint.rc ${PREFIX}/etc/sylprint.rc.example
 	@${MKDIR} ${PREFIX}/share/pixmaps
