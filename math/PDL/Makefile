@@ -53,8 +53,8 @@ pre-extract:
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == "alpha"
-BROKEN=	test script t/flexraw.t fails all 26 tests
+.if ${ARCH} == "alpha"
+BROKEN=	"test script t/flexraw.t fails all 26 tests"
 .endif
 
 .if ${PERL_LEVEL} < 500601
