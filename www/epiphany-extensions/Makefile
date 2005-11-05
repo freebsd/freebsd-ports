@@ -3,13 +3,14 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/www/epiphany-extensions/Makefile,v 1.54 2005/10/02 23:33:10 marcus Exp $
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	1.6.6
+PORTVERSION=	1.8.1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}${PKGNAMESUFFIX}/1.6
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}${PKGNAMESUFFIX}/1.8
 PKGNAMESUFFIX=	-extensions
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
@@ -27,19 +28,21 @@ HEADERS_SUFX=
 MOZ_BUILD=	mozilla
 
 .if !defined(WITH_MOZILLA)
-MOZILLA=	mozilla
-HEADERS_SUFX=
-.else
-.if ${WITH_MOZILLA}=="firefox"
 MOZILLA=	firefox
+HEADERS_SUFX=
 MOZ_BUILD=	firefox
+.else
+.if ${WITH_MOZILLA}=="mozilla"
+MOZILLA=	mozilla
+MOZ_BUILD=	mozilla
 .else
 .if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-devel-gtk2"
 MOZILLA=	mozilla-devel
 HEADERS_SUFX=	-devel
 .else
-MOZILLA=	mozilla
+MOZILLA=	firefox
 HEADERS_SUFX=
+MOZ_BUILD=	firefox
 .endif
 .endif
 .endif
@@ -47,14 +50,14 @@ HEADERS_SUFX=
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnometarget
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-extensions="all" \
 		--with-mozilla=${MOZ_BUILD}
 
-PLIST_SUB=	VERSION="1.6" EPHY_VERSION="1.6"
+PLIST_SUB=	VERSION="1.8" EPHY_VERSION="1.8"
 
 .if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
 .undef WITHOUT_OPENSP
@@ -81,10 +84,10 @@ USE_GCC=	3.4
 
 pre-everything::
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} " By default epiphany-extensions builds with www/mozilla support, but you can"
+	@${ECHO_MSG} " By default epiphany-extensions builds with www/firefox support, but you can"
 	@${ECHO_MSG} " change this by defining WITH_MOZILLA to one of the following values:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "  firefox       "
+	@${ECHO_MSG} "  mozilla       "
 	@${ECHO_MSG} "  mozilla-devel "
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Epiphany-extensions also supports the following tunable option(s):"
