@@ -1,0 +1,11 @@
+bin/gnome-presentation-viewer
+include/libpresent-1/libpresent/load-ppt.h
+include/libpresent-1/libpresent/present-presentation.h
+include/libpresent-1/libpresent/present-slide.h
+include/libpresent-1/libpresent/present-text.h
+lib/libpresent.a
+lib/libpresent.so
+lib/libpresent.so.0
+libdata/pkgconfig/libpresent-1.pc
+@dirrm include/libpresent-1/libpresent
+@dirrm include/libpresent-1
