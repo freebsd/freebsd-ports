@@ -3,10 +3,11 @@
 # Whom:                 		Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/devel/glibmm/Makefile,v 1.22 2005/10/29 22:31:16 marcus Exp $
 #
 
 PORTNAME=	glibmm
-PORTVERSION=	2.6.1
+PORTVERSION=	2.8.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -15,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ interfaces for glib2
 
-LIB_DEPENDS=    sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
+LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_BZIP2=	yes
@@ -24,17 +25,11 @@ USE_GCC=	3.4
 USE_GNOME=	gnomehack gnometarget glib20
 USE_REINPLACE=	yes
 USE_PERL5=	yes
-USE_INC_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15:inc
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static
 
 PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha"
-BROKEN=		"Does not build on alpha"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS = /s/tests//' ${WRKSRC}/Makefile.in
@@ -56,4 +51,4 @@ patch-autotools:
 		${RM} $$file.tmp; \
 	done);
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
