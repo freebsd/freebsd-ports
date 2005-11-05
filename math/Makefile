@@ -73,7 +73,6 @@
     SUBDIR += geonext
     SUBDIR += gexpr
     SUBDIR += glgraph
-    SUBDIR += glove
     SUBDIR += glpk
     SUBDIR += gnumeric
     SUBDIR += gnuplot
@@ -264,7 +263,6 @@
     SUBDIR += superlu_mt
     SUBDIR += surf
     SUBDIR += taucs
-    SUBDIR += thx_1138
     SUBDIR += tomsfastmath
     SUBDIR += topaz
     SUBDIR += triangle

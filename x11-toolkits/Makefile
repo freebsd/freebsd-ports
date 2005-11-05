@@ -88,11 +88,6 @@
     SUBDIR += libgnomeuimm26
     SUBDIR += libgtk-java
     SUBDIR += libgtkeditor
-    SUBDIR += libj2dplot
-    SUBDIR += libjparser
-    SUBDIR += libjsearch
-    SUBDIR += libjtoolbar
-    SUBDIR += libjtree
     SUBDIR += libpanelappletmm
     SUBDIR += libwnck
     SUBDIR += libxfce4gui

@@ -114,7 +114,6 @@
     SUBDIR += nautilus-locked-folder
     SUBDIR += nautilus-open-terminal
     SUBDIR += nautilus-sendto
-    SUBDIR += notebook
     SUBDIR += notification-daemon
     SUBDIR += offix-trash
     SUBDIR += pal
