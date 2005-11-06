@@ -18,7 +18,7 @@ COMMENT=	A simple autocompletion plugin for gedit
 BUILD_DEPENDS=	gedit:${PORTSDIR}/editors/gedit
 RUN_DEPENDS=	gedit:${PORTSDIR}/editors/gedit
 
-GEDIT_VERSION=	2.10
+GEDIT_VERSION=	2.12
 
 USE_X_PREFIX=	yes
 MAKEFILE=	makefile
