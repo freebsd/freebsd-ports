@@ -1,0 +1,7 @@
+HTML::TagFilter is a subclass of HTML::Parser with a single purpose: it
+will remove unwanted html tags and attributes from a piece of text. It
+can act in a more or less fine-grained way - you can specify permitted
+tags, permitted attributes of each tag, and permitted values for each
+attribute in as much detail as you like.
+
+WWW: http://search.cpan.org/dist/HTML-TagFilter/
