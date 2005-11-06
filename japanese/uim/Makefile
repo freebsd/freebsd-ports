@@ -55,7 +55,7 @@ PLIST_SUB+=	GNOME="@comment "
 
 .if exists(${X11BASE}/bin/scim) || defined(WITH_SCIM)
 USE_GCC=	3.4
-LIB_DEPENDS=	scim-1.0.8:${PORTSDIR}/textproc/scim
+LIB_DEPENDS=	scim-1.0.9:${PORTSDIR}/textproc/scim
 CONFIGURE_ARGS+=--with-scim
 PLIST_SUB+=	SCIM=""
 .else
