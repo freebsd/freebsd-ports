@@ -4,3 +4,5 @@ MD5 (ucspi-tcp-0.88-man.tar.gz) = d33160cbd43bccbc0963d0499dfcebdb
 SIZE (ucspi-tcp-0.88-man.tar.gz) = 7562
 MD5 (ucspi-rss.diff) = 554ec0eb60f619667efde3fb5325310d
 SIZE (ucspi-rss.diff) = 1828
+MD5 (ucspi-tcp-ssl-20050405.patch.gz) = cbe2443539d5289ffb5ae2a036e0ba3d
+SIZE (ucspi-tcp-ssl-20050405.patch.gz) = 13173
