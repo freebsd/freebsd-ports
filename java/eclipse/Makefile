@@ -95,6 +95,7 @@ MAKE_ENV+=	BROWSER=${BROWSER} \
 
 PLIST_FILES=	bin/eclipse share/applications/eclipse.desktop
 
+SWTCAIRO=${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI/cairo/library
 SWTGTK=${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library
 SWTMOTIF=${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI/motif/library
 
@@ -108,9 +109,16 @@ post-patch:
 	  ${FILESDIR}/manualpatch-plugins-swt-gtk-make_freebsd.mak
 	@${PATCH} ${PATCH_DIST_ARGS} "${SWTGTK}/build.sh" \
 	  ${FILESDIR}/manualpatch-plugins-swt-gtk-build.sh
-	@${PATCH} ${PATCH_DIST_ARGS} "${SWTGTK}/os_custom.h" \
-	  ${FILESDIR}/manualpatch-plugins-swt-gtk-os_custom.h
-
+	@${PATCH} ${PATCH_DIST_ARGS} \
+	  "plugins/org.eclipse.swt/Eclipse SWT PI/cairo/library/cairo.c" \
+	  ${FILESDIR}/manualpatch-plugins-swt-cairo-library \
+	  + "plugins/org.eclipse.swt/Eclipse SWT PI/cairo/library/cairo.h" \
+	  + "plugins/org.eclipse.swt/Eclipse SWT PI/cairo/library/cairo_custom.c" \
+	  + "plugins/org.eclipse.swt/Eclipse SWT PI/cairo/library/cairo_stats.c" \
+	  + "plugins/org.eclipse.swt/Eclipse SWT PI/cairo/library/cairo_stats.h" \
+	  + "plugins/org.eclipse.swt/Eclipse SWT PI/cairo/library/cairo_structs.c" \
+	  + "plugins/org.eclipse.swt/Eclipse SWT PI/cairo/library/cairo_structs.h"
+ 
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} \
 	  ./build -os ${ECLIPSE_OS} -ws ${ECLIPSE_WS} -arch ${ECLIPSE_ARCH} -compilelibs)
