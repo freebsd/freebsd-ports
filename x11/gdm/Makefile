@@ -36,7 +36,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN1=		gdm.1
 
-OPTIONS=	IPV6 "Enable IPv6 support (This disables IPv4 support)" off
+OPTIONS=	IPV6 "Enable IPv6 support" off
 
 .include <bsd.port.pre.mk>
 
