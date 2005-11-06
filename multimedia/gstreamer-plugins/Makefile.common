@@ -150,7 +150,7 @@ GST_PLIST_SUFFIX=	sink
 
 # cairo
 .if ${GST_PLUGIN}=="cairo"
-LIB_DEPENDS+=	cairo.1:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
 .endif
 
 # cdparanoia
