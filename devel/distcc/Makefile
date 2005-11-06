@@ -7,7 +7,7 @@
 
 PORTNAME=	distcc
 PORTVERSION=	2.18.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel ipv6
 MASTER_SITES=	http://distcc.samba.org/ftp/distcc/
 
@@ -16,17 +16,19 @@ COMMENT=	Distribute compilation of C(++) code acrosss machines on a network
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
-USE_RC_SUBR=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 WANT_GNOME=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 DISTCCD_PIDFILE=/var/run/distccd.pid
+USE_RC_SUBR=	distccd.sh
+SUB_LIST=	DISTCCD_PIDFILE=${DISTCCD_PIDFILE}
 
-OPTIONS=	GNOME "Build GUI monitor based on GNOME" Off \
-		GTK "Build GUI monitor based on GTK" Off \
-		IPV6 "Enable IPV6 (not available on 4.X)" Off
+OPTIONS=	GNOME	"Build GUI monitor based on GNOME"	Off \
+		GTK	"Build GUI monitor based on GTK"	Off \
+		IPV6	"Enable IPV6 (not available on 4.X)"	Off
 
 .include <bsd.port.pre.mk>
 
@@ -54,9 +56,6 @@ DOC_FILES=	AUTHORS INSTALL NEWS README \
 		doc/protocol-2.txt doc/reporting-bugs.txt
 
 pre-install:
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|; s|%%RC_SUBR%%|${RC_SUBR}|; \
-		s|%%DISTCCD_PIDFILE%%|${DISTCCD_PIDFILE}|' \
-		${FILESDIR}/distccd.sh.sample >${WRKDIR}/distccd.sh
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" \
 		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
@@ -67,8 +66,6 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccmon-gnome ${PREFIX}/bin
 .endif
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccd ${PREFIX}/sbin
-	@${INSTALL_SCRIPT} -m 751 ${WRKDIR}/distccd.sh \
-		${PREFIX}/etc/rc.d/distccd.sh
 
 post-install: install-doc install-man
 	@${TOUCH} ${DISTCCD_PIDFILE}
@@ -84,8 +81,8 @@ install-doc:
 .endif
 
 install-man:
-.for file in ${MAN1}
-	@${INSTALL_MAN} ${WRKSRC}/man/${file} ${MANPREFIX}/man/man1
+.for f in ${MAN1}
+	@${INSTALL_MAN} ${WRKSRC}/man/${f} ${MANPREFIX}/man/man1
 .endfor
 
 .include <bsd.port.post.mk>

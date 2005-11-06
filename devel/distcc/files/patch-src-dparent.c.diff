@@ -1,0 +1,20 @@
+--- src/dparent.c.orig	Sun Oct 24 08:05:48 2004
++++ src/dparent.c	Fri Nov  4 17:35:09 2005
+@@ -285,6 +285,9 @@
+  **/
+ void dcc_remove_pid(void)
+ {
++    /* distcc user, we are running as, cannot delete files in /var/run
++     */
++#if 0
+     if (!arg_pid_file)
+         return;
+ 
+@@ -292,6 +295,7 @@
+         rs_log_warning("failed to remove pid file %s: %s",
+                        arg_pid_file, strerror(errno));
+     }
++#endif
+ }
+ 
+ 
