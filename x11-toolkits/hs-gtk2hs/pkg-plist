@@ -1,3 +1,12 @@
+lib/gtk2hs/HScairo.o
+lib/gtk2hs/HSgconf.o
+lib/gtk2hs/HSglade.o
+lib/gtk2hs/HSglib.o
+lib/gtk2hs/HSgtk.o
+lib/gtk2hs/HSmogul.o
+lib/gtk2hs/HSmozembed.o
+lib/gtk2hs/HSsourceview.o
+lib/gtk2hs/cairo.package.conf
 lib/gtk2hs/gconf.package.conf
 lib/gtk2hs/glade.package.conf
 lib/gtk2hs/glib.package.conf
@@ -5,59 +14,83 @@ lib/gtk2hs/gtk.package.conf
 lib/gtk2hs/mogul.package.conf
 lib/gtk2hs/mozembed.package.conf
 lib/gtk2hs/sourceview.package.conf
-lib/gtk2hs/libHSgconf.a
-lib/gtk2hs/libHSglib.a
-lib/gtk2hs/libHSglade.a
-lib/gtk2hs/libHSgtk.a
-lib/gtk2hs/libHSmogul.a
-lib/gtk2hs/libHSmozembed.a
-lib/gtk2hs/libHSsourceview.a
+lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo.hi
+lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal.hi
+lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Drawing/Cairo.hi
+lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Drawing/Paths.hi
+lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Drawing/Patterns.hi
+lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Drawing/Text.hi
+lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Drawing/Transformations.hi
+lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Fonts/FontOptions.hi
+lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Surfaces/Image.hi
+lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Surfaces/PNG.hi
+lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Surfaces/Surface.hi
+lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Utilities.hi
+lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Matrix.hi
+lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Types.hi
+lib/gtk2hs/imports/gconf/System/Gnome/GConf.hi
+lib/gtk2hs/imports/gconf/System/Gnome/GConf/GConfClient.hi
+lib/gtk2hs/imports/gconf/System/Gnome/GConf/GConfValue.hi
 lib/gtk2hs/imports/gconf/System/Gnome/GConf/Signals.hi
+lib/gtk2hs/imports/gconf/System/Gnome/GConf/Types.hi
+lib/gtk2hs/imports/glade/Graphics/UI/Gtk/Glade.hi
+lib/gtk2hs/imports/glade/Graphics/UI/Gtk/Glade/Types.hi
+lib/gtk2hs/imports/glib/System/Glib.hi
 lib/gtk2hs/imports/glib/System/Glib/Attributes.hi
 lib/gtk2hs/imports/glib/System/Glib/FFI.hi
 lib/gtk2hs/imports/glib/System/Glib/Flags.hi
 lib/gtk2hs/imports/glib/System/Glib/GError.hi
 lib/gtk2hs/imports/glib/System/Glib/GList.hi
 lib/gtk2hs/imports/glib/System/Glib/GObject.hi
+lib/gtk2hs/imports/glib/System/Glib/GParameter.hi
 lib/gtk2hs/imports/glib/System/Glib/GType.hi
+lib/gtk2hs/imports/glib/System/Glib/GTypeConstants.hi
 lib/gtk2hs/imports/glib/System/Glib/GValue.hi
 lib/gtk2hs/imports/glib/System/Glib/GValueTypes.hi
-lib/gtk2hs/imports/glib/System/Glib/GParameter.hi
-lib/gtk2hs/imports/glib/System/Glib/GTypeConstants.hi
+lib/gtk2hs/imports/glib/System/Glib/MainLoop.hi
 lib/gtk2hs/imports/glib/System/Glib/Properties.hi
 lib/gtk2hs/imports/glib/System/Glib/Signals.hi
 lib/gtk2hs/imports/glib/System/Glib/StoreValue.hi
 lib/gtk2hs/imports/glib/System/Glib/Types.hi
 lib/gtk2hs/imports/glib/System/Glib/UTFString.hi
-lib/gtk2hs/imports/glib/System/Glib.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango/Description.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango/Enums.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango/Layout.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango/Markup.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango/Rendering.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango/Types.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/CellView.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/CellRenderer.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/CellRendererPixbuf.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/CellRendererText.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/CellRendererToggle.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/IconView.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/ListStore.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeIter.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeModel.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeModelSort.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreePath.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeRowReference.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeSelection.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeStore.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeView.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeViewColumn.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Multiline/TextIter.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Multiline/TextBuffer.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Multiline/TextMark.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Multiline/TextTag.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Multiline/TextTagTable.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Multiline/TextView.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Bin.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Box.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/ButtonBox.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Container.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/ContainerChildProperties.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Misc.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Object.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Paned.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Range.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Scale.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Scrollbar.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Separator.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Widget.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ActionMenuToolbar/Action.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ActionMenuToolbar/ActionGroup.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ActionMenuToolbar/RadioAction.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ActionMenuToolbar/ToggleAction.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ActionMenuToolbar/UIManager.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Buttons/Button.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Buttons/CheckButton.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Buttons/RadioButton.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Buttons/ToggleButton.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Cairo.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Display/AccelLabel.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Display/Image.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Display/Label.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Display/ProgressBar.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Display/Statusbar.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Embedding/Embedding.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Embedding/Plug.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Embedding/Socket.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Entry/Editable.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Entry/Entry.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Entry/EntryCompletion.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Entry/HScale.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Entry/SpinButton.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Entry/VScale.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/DrawWindow.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/Drawable.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/Enums.hi
@@ -69,45 +102,12 @@ lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/Pixbuf.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/PixbufData.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/Pixmap.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/Region.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Bin.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Box.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/ButtonBox.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Container.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/ContainerChildProperties.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Misc.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Object.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Paned.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Range.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Scale.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Widget.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Scrollbar.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Separator.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ActionMenuToolbar/Action.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ActionMenuToolbar/ActionGroup.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ActionMenuToolbar/RadioAction.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ActionMenuToolbar/ToggleAction.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ActionMenuToolbar/UIManager.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Buttons/Button.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Buttons/CheckButton.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Buttons/RadioButton.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Buttons/ToggleButton.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Display/AccelLabel.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Display/Image.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Display/Label.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Display/ProgressBar.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Display/Statusbar.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Entry/Editable.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Entry/Entry.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Entry/EntryCompletion.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Entry/HScale.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Entry/SpinButton.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Entry/VScale.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General/Enums.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General/General.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General/IconFactory.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General/Style.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General/StockItems.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General/Structs.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General/Style.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Layout/Alignment.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Layout/AspectFrame.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Layout/Expander.hi
@@ -150,46 +150,71 @@ lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Misc/HandleBox.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Misc/SizeGroup.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Misc/Tooltips.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Misc/Viewport.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Multiline/TextBuffer.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Multiline/TextIter.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Multiline/TextMark.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Multiline/TextTag.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Multiline/TextTagTable.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Multiline/TextView.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Ornaments/Frame.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Ornaments/HSeparator.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Ornaments/VSeparator.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango/Attributes.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango/Context.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango/Description.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango/Enums.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango/Font.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango/GlyphStorage.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango/Layout.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango/Markup.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango/Rendering.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango/Types.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Scrolling/HScrollbar.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Scrolling/ScrolledWindow.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Scrolling/VScrollbar.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Selectors/ColorButton.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Selectors/ColorSelection.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Selectors/ColorSelectionDialog.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Selectors/FileChooser.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Selectors/FileChooserButton.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Selectors/FileChooserDialog.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Selectors/FileChooserWidget.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Selectors/FileFilter.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Selectors/FileSelection.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Selectors/FontButton.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Selectors/FontSelection.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Selectors/FontSelectionDialog.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Selectors/FileChooser.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Selectors/FileChooserWidget.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Selectors/FileChooserDialog.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Signals.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/CellRenderer.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/CellRendererPixbuf.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/CellRendererText.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/CellRendererToggle.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/CellView.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/IconView.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/ListStore.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeIter.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeModel.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeModelSort.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreePath.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeRowReference.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeSelection.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeStore.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeView.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeViewColumn.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Types.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Windows/AboutDialog.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Windows/Dialog.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Windows/Window.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Windows/WindowGroup.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Embedding/Embedding.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Embedding/Plug.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Embedding/Socket.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Signals.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Types.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk.hi
+lib/gtk2hs/imports/mogul/Graphics/UI/Gtk/Mogul.hi
 lib/gtk2hs/imports/mogul/Graphics/UI/Gtk/Mogul/GetWidget.hi
 lib/gtk2hs/imports/mogul/Graphics/UI/Gtk/Mogul/MDialog.hi
 lib/gtk2hs/imports/mogul/Graphics/UI/Gtk/Mogul/NewWidget.hi
 lib/gtk2hs/imports/mogul/Graphics/UI/Gtk/Mogul/TreeList.hi
 lib/gtk2hs/imports/mogul/Graphics/UI/Gtk/Mogul/WidgetTable.hi
-lib/gtk2hs/imports/mogul/Graphics/UI/Gtk/Mogul.hi
-lib/gtk2hs/imports/glade/Graphics/UI/Gtk/Glade/Types.hi
-lib/gtk2hs/imports/glade/Graphics/UI/Gtk/Glade.hi
-lib/gtk2hs/imports/gconf/System/Gnome/GConf/GConfClient.hi
-lib/gtk2hs/imports/gconf/System/Gnome/GConf/GConfValue.hi
-lib/gtk2hs/imports/gconf/System/Gnome/GConf/Types.hi
-lib/gtk2hs/imports/gconf/System/Gnome/GConf.hi
+lib/gtk2hs/imports/mozembed/Graphics/UI/Gtk/MozEmbed.hi
+lib/gtk2hs/imports/mozembed/Graphics/UI/Gtk/MozEmbed/Types.hi
+lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView.hi
 lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceBuffer.hi
 lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceIter.hi
 lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceLanguage.hi
@@ -197,20 +222,19 @@ lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceLanguagesManager.
 lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceMarker.hi
 lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceStyleScheme.hi
 lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceTag.hi
-lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceTagTable.hi
 lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceTagStyle.hi
+lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceTagTable.hi
 lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceView.hi
 lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/Types.hi
-lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView.hi
-lib/gtk2hs/imports/mozembed/Graphics/UI/Gtk/MozEmbed/Types.hi
-lib/gtk2hs/imports/mozembed/Graphics/UI/Gtk/MozEmbed.hi
-lib/gtk2hs/HSglib.o
-lib/gtk2hs/HSgtk.o
-lib/gtk2hs/HSmogul.o
-lib/gtk2hs/HSglade.o
-lib/gtk2hs/HSgconf.o
-lib/gtk2hs/HSsourceview.o
-lib/gtk2hs/HSmozembed.o
+lib/gtk2hs/include/gtk2hs-config.h
+lib/gtk2hs/libHScairo.a
+lib/gtk2hs/libHSgconf.a
+lib/gtk2hs/libHSglade.a
+lib/gtk2hs/libHSglib.a
+lib/gtk2hs/libHSgtk.a
+lib/gtk2hs/libHSmogul.a
+lib/gtk2hs/libHSmozembed.a
+lib/gtk2hs/libHSsourceview.a
 @dirrm lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView
 @dirrm lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk
 @dirrm lib/gtk2hs/imports/sourceview/Graphics/UI
@@ -260,15 +284,25 @@ lib/gtk2hs/HSmozembed.o
 @dirrm lib/gtk2hs/imports/gconf/System/Gnome
 @dirrm lib/gtk2hs/imports/gconf/System
 @dirrm lib/gtk2hs/imports/gconf
+@dirrm lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Drawing
+@dirrm lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Fonts
+@dirrm lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Surfaces
+@dirrm lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal
+@dirrm lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo
+@dirrm lib/gtk2hs/imports/cairo/Graphics/Rendering
+@dirrm lib/gtk2hs/imports/cairo/Graphics
+@dirrm lib/gtk2hs/imports/cairo
 @dirrm lib/gtk2hs/imports
+@dirrm lib/gtk2hs/include
 @dirrm lib/gtk2hs
-@exec env pkglibdir=%D/lib/gtk2hs %D/bin/ghc-pkg -i %D/lib/gtk2hs/glib.pkg -a -g
-@exec env pkglibdir=%D/lib/gtk2hs %D/bin/ghc-pkg -i %D/lib/gtk2hs/gtk.pkg -a -g
-@exec env pkglibdir=%D/lib/gtk2hs %D/bin/ghc-pkg -i %D/lib/gtk2hs/mogul.pkg -a -g
-@exec env pkglibdir=%D/lib/gtk2hs %D/bin/ghc-pkg -i %D/lib/gtk2hs/glade.pkg -a -g
-@exec env pkglibdir=%D/lib/gtk2hs %D/bin/ghc-pkg -i %D/lib/gtk2hs/gconf.pkg -a -g
-@exec env pkglibdir=%D/lib/gtk2hs %D/bin/ghc-pkg -i %D/lib/gtk2hs/sourceview.pkg -a -g
-@exec env pkglibdir=%D/lib/gtk2hs %D/bin/ghc-pkg -i %D/lib/gtk2hs/mozembed.pkg -a -g
+@exec env pkglibdir=%D/lib/gtk2hs %D/bin/ghc-pkg -i %D/lib/gtk2hs/glib.package.conf -a -g
+@exec env pkglibdir=%D/lib/gtk2hs %D/bin/ghc-pkg -i %D/lib/gtk2hs/cairo.package.conf -a -g
+@exec env pkglibdir=%D/lib/gtk2hs %D/bin/ghc-pkg -i %D/lib/gtk2hs/gtk.package.conf -a -g
+@exec env pkglibdir=%D/lib/gtk2hs %D/bin/ghc-pkg -i %D/lib/gtk2hs/mogul.package.conf -a -g
+@exec env pkglibdir=%D/lib/gtk2hs %D/bin/ghc-pkg -i %D/lib/gtk2hs/glade.package.conf -a -g
+@exec env pkglibdir=%D/lib/gtk2hs %D/bin/ghc-pkg -i %D/lib/gtk2hs/gconf.package.conf -a -g
+@exec env pkglibdir=%D/lib/gtk2hs %D/bin/ghc-pkg -i %D/lib/gtk2hs/sourceview.package.conf -a -g
+@exec env pkglibdir=%D/lib/gtk2hs %D/bin/ghc-pkg -i %D/lib/gtk2hs/mozembed.package.conf -a -g
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec %D/bin/ghc-pkg -r mozembed
 @unexec %D/bin/ghc-pkg -r sourceview
@@ -277,4 +311,5 @@ lib/gtk2hs/HSmozembed.o
 @unexec %D/bin/ghc-pkg -r mogul
 @unexec %D/bin/ghc-pkg -r gtk
 @unexec %D/bin/ghc-pkg -r glib
+@unexec %D/bin/ghc-pkg -r cairo
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
