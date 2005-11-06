@@ -22,7 +22,19 @@ name=distccd
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/${name}
-pidfile=%%DISTCCD_PIDFILE%%
+# extract pid file from distccd_flags (if any)
+pidfile="`echo ${distccd_flags} |sed -nE -e 's/^.*-P ([^ ]+).*$/\1/p'`"
+# set default value
+pidfile=${pidfile:-%%DISTCCD_PIDFILE%%}
+
+distccd_precmd()
+{
+	# distccd drops root privileges and then attempts to create the pid file
+	touch ${pidfile}
+	chown distcc:distcc ${pidfile}
+}
+
+start_precmd="distccd_precmd"
 
 load_rc_config ${name}
 run_rc_command "$1"
