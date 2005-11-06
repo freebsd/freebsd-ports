@@ -293,6 +293,7 @@
     SUBDIR += p5-HTML-Entities-Numbered
     SUBDIR += p5-HTML-Format
     SUBDIR += p5-HTML-Fraction
+    SUBDIR += p5-HTML-TagFilter
     SUBDIR += p5-HTML-Tidy
     SUBDIR += p5-Hash-Merge
     SUBDIR += p5-IDNA-Punycode
