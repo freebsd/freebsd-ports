@@ -7,6 +7,7 @@
 
 PORTNAME=	wmii
 DISTVERSION=	2
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://wmi.modprobe.de/download/
 
@@ -31,7 +32,7 @@ MAN5=		wmii.rc.5
 # The cairo backend is not recommended in production use, because the cairo
 # library is still very buggy and causes crashes often.
 .if defined(WITH_CAIRO)
-LIB_DEPENDS=	cairo.1:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 MAKE_ARGS+=	DRAW=cairo
 .endif
 

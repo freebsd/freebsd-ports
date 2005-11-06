@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkcairo
 PORTVERSION=	0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	ahze
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gtk+ bindings to cairo
 
-LIB_DEPENDS=	cairo.1:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20 gnometarget gnomehack
