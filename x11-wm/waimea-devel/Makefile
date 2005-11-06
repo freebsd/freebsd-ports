@@ -7,6 +7,7 @@
 
 PORTNAME=	waimea
 PORTVERSION=	0.5.0.20050825
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	danfe
@@ -15,7 +16,7 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An X11 window manager designed for maximum efficiency
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
-		cairo.1:${PORTSDIR}/graphics/cairo
+		cairo.2:${PORTSDIR}/graphics/cairo
 
 BROKEN=		Configure fails
 
