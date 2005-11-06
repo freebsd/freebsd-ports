@@ -1,5 +1,31 @@
---- setup.py.old	Wed Oct  5 00:05:48 2005
-+++ setup.py	Wed Oct  5 02:47:23 2005
+--- setup.py	Fri Aug 19 16:05:49 2005
++++ setup.py	Sat Nov  5 13:13:31 2005
+@@ -25,19 +25,19 @@
+ INCDIR = [
+   "ode-0.5/include",
+   "/usr/include",
+-  "/usr/local/include",
+-  "/usr/X11R6/include",
++  "%%LOCALBASE%%/include",
++  "%%X11BASE%%/include",
+   "/usr/include/freetype2",
+-  "/usr/local/include/freetype2",
++  "%%LOCALBASE%%/include/freetype2",
+   "/usr/include/cal3d",
+-  "/usr/local/include/cal3d",
++  "%%LOCALBASE%%/include/cal3d",
+   "/sw/include", # For Mac OS X
+   ]
+ LIBDIR = [
+   "ode-0.5/lib",
+   "/usr/lib",
+-  "/usr/local/lib",
+-  "/usr/X11R6/lib",
++  "%%LOCALBASE%%/lib",
++  "%%X11BASE%%/lib",
+   "/sw/lib/", # For Mac OS X
+   ]
+ 
 @@ -63,10 +63,10 @@
  from config import *
  
