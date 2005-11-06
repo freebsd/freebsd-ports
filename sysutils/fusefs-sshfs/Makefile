@@ -16,13 +16,13 @@ DISTNAME=	${PORTNAME}-fuse-${PORTVERSION}
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	Mount remote directories over ssh
 
-LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs \
-		glib-2.0.600:${PORTSDIR}/devel/glib20
+LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 USE_REINPLACE=	yes
+USE_GNOME=	glib20
 
 .include <bsd.port.pre.mk>
 
