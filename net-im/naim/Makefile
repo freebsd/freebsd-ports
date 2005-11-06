@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=	--with-pkgdocdir=${DOCSDIR}
 CONFIGURE_ARGS+=	--without-pkgdocdir
 .endif
 .if defined(WITH_DETACH)
-RUN_DEPENDS=	screen:${PORTSDIR}/misc/screen
+RUN_DEPENDS=	screen:${PORTSDIR}/sysutils/screen
 CONFIGURE_ARGS+=	--enable-detach
 .endif
 
