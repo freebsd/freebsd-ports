@@ -69,8 +69,8 @@ CONFIGURE_ARGS+=	--disable-evolution
 PLIST_SUB+=		EVOLUTION="@comment "
 .else
 BUILD_DEPENDS+=		${NONEXISTENT}:${PORTSDIR}/mail/evolution:patch \
-			${X11BASE}/libdata/pkgconfig/evolution-plugin-2.2.pc:${PORTSDIR}/mail/evolution
-RUN_DEPENDS+=		${X11BASE}/libdata/pkgconfig/evolution-plugin-2.2.pc:${PORTSDIR}/mail/evolution
+			${X11BASE}/libdata/pkgconfig/evolution-plugin-2.4.pc:${PORTSDIR}/mail/evolution
+RUN_DEPENDS+=		${X11BASE}/libdata/pkgconfig/evolution-plugin-2.4.pc:${PORTSDIR}/mail/evolution
 EVOLUTION_WRKSRC!=	cd ${PORTSDIR}/mail/evolution && ${MAKE} -V WRKSRC
 CONFIGURE_ARGS+=	--with-evolution-source-dir="${EVOLUTION_WRKSRC}"
 PLIST_SUB+=		EVOLUTION="" LITERAL_PREFIX="${PREFIX}"
