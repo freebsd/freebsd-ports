@@ -15,7 +15,7 @@ MAINTAINER=	sw@gegenunendlich.de
 COMMENT=	Ncurses based file manager with vi like keybindings
 
 .if defined(WITH_VIFM_SCREEN)
-RUN_DEPENDS=	screen:${PORTSDIR}/misc/screen
+RUN_DEPENDS=	screen:${PORTSDIR}/sysutils/screen
 .endif
 
 GNU_CONFIGURE=	yes
