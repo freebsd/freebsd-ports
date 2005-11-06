@@ -141,16 +141,77 @@ Python_Include_MAINTAINER=	perky@FreeBSD.org
 #				server, SZOPEBASEDIR - absolute base directory of zope that
 #				is ${LOCALBASE}/${SZOPEBASEDIR} by default, 
 #				ZOPEPRODUCTDIR - directory, where products for zope can be 
-#				found. Note that USE_ZOPE require python2.3
+#				found.
+#
+# ZOPE_VERSION:	Version of zope that will be used in the port. Set this in
+#				your /etc/make.conf in case you want to use a specific
+#				version of zope.
 #
 
 _PYTHON_PORTBRANCH=		2.4
 _PYTHON_ALLBRANCHES=	2.4 2.3 2.2 2.1 2.5 # preferred first
+_ZOPE_PORTBRANCH=		2.7
+_ZOPE_ALLBRANCHES=		2.7 2.8 3.1
 
+
+# Determine version number of Zope to use
 .if defined(USE_ZOPE)
-PYTHON_VERSION=		python2.3
+.if defined(ZOPE_VERSION)
+_ZOPE_VERSION:=			${ZOPE_VERSION}
+.else
+_ZOPE_VERSION:=			${_ZOPE_PORTBRANCH}
 .endif
 
+# Validate Zope version whether it meets USE_ZOPE version restriction.
+_ZOPE_VERSION_CHECK:=		${USE_ZOPE:C/^([1-9]\.[0-9])$/\1-\1/}
+_ZOPE_VERSION_MINIMUM_TMP:=	${_ZOPE_VERSION_CHECK:C/([1-9]\.[0-9])[-+].*/\1/}
+_ZOPE_VERSION_MINIMUM:=		${_ZOPE_VERSION_MINIMUM_TMP:M[1-9].[0-9]}
+_ZOPE_VERSION_MAXIMUM_TMP:=	${_ZOPE_VERSION_CHECK:C/.*-([1-9]\.[0-9])/\1/}
+_ZOPE_VERSION_MAXIMUM:=		${_ZOPE_VERSION_MAXIMUM_TMP:M[1-9].[0-9]}
+
+.if !empty(_ZOPE_VERSION_MINIMUM) && ( \
+		${_ZOPE_VERSION} < ${_ZOPE_VERSION_MINIMUM})
+_ZOPE_VERSION_NONSUPPORTED=	${_ZOPE_VERSION_MINIMUM} at least
+.elif !empty(_ZOPE_VERSION_MAXIMUM) && ( \
+		${_ZOPE_VERSION} > ${_ZOPE_VERSION_MAXIMUM})
+_ZOPE_VERSION_NONSUPPORTED=	${_ZOPE_VERSION_MAXIMUM} at most
+.endif
+
+# If we have an unsupported version of Zope, try another.
+.if defined(_ZOPE_VERSION_NONSUPPORTED)
+.if defined(ZOPE_VERSION)
+IGNORE=				needs Zope ${_ZOPE_VERSION_NONSUPPORTED}.\
+					But you specified ${_ZOPE_VERSION}
+.else
+.undef _ZOPE_VERSION
+.for ver in ${_ZOPE_ALLBRANCHES}
+__VER=		${ver}
+.if !defined(_ZOPE_VERSION) && \
+	!(!empty(_ZOPE_VERSION_MINIMUM) && ( \
+		${__VER} < ${_ZOPE_VERSION_MINIMUM})) && \
+	!(!empty(_ZOPE_VERSION_MAXIMUM) && ( \
+		${__VER} > ${_ZOPE_VERSION_MAXIMUM}))
+_ZOPE_VERSION=	${ver}
+.endif
+.endfor
+.if !defined(_ZOPE_VERSION)
+IGNORE=				needs an unsupported version of Zope
+_ZOPE_VERSION=	${_ZOPE_PORTBRANCH} # just to avoid version sanity checking.
+.endif
+.endif	# defined(ZOPE_VERSION)
+.endif	# defined(_ZOPE_VERSION_NONSUPPORTED)
+
+ZOPE_VERSION?=	${_ZOPE_VERSION}
+
+.if ${ZOPE_VERSION} == "2.7"
+PYTHON_VERSION=         python2.3
+.else
+PYTHON_VERSION=         python2.4
+.endif
+.endif	# defined(USE_ZOPE)
+
+
+# Determine version number of Python to use
 .if defined(PYTHON_VERSION)
 _PYTHON_VERSION:=	${PYTHON_VERSION:S/^python//}
 _PYTHON_CMD=		${LOCALBASE}/bin/${PYTHON_VERSION}
@@ -318,13 +379,28 @@ PYDISTUTILS_CONFIGUREARGS?=
 PYDISTUTILS_BUILDARGS?=
 PYDISTUTILS_INSTALLARGS?=	-c -O1 --prefix=${PREFIX}
 
-# Zope specific variables
+# Zope-related variables
 .if defined(USE_ZOPE)
+.if ${ZOPE_VERSION} == "3.1"
+SZOPEBASEDIR?=			www/Zope31
+ZOPE_PORTSDIR=			${PORTSDIR}/www/zope31
+.elif ${ZOPE_VERSION} == "2.8"
+SZOPEBASEDIR?=			www/Zope28
+ZOPE_PORTSDIR=			${PORTSDIR}/www/zope28
+.elif ${ZOPE_VERSION} == "2.7"
 SZOPEBASEDIR?=			www/Zope
+ZOPE_PORTSDIR=			${PORTSDIR}/www/zope
+.else
+check-makevars::
+	@${ECHO} "Makefile error: bad value for ZOPE_VERSION: ${ZOPE_VERSION}."
+	@${ECHO} "Legal values are:	2.7 (default), 2.8, 3.1"
+	@${FALSE}
+.endif
 ZOPEBASEDIR?=			${PREFIX}/${SZOPEBASEDIR}
 ZOPEPRODUCTDIR?=		Products
 .endif
 
+# Python 3rd-party modules
 PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
 PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
 PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
@@ -348,7 +424,7 @@ RUN_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
 .endif		# ${PYTHON_NO_DEPENDS} == "NO"
 
 .if defined(USE_ZOPE)
-RUN_DEPENDS+=	${ZOPEBASEDIR}/skel/bin/zopectl.in:${PORTSDIR}/www/zope
+RUN_DEPENDS+=	${ZOPEBASEDIR}/skel/bin/zopectl.in:${ZOPE_PORTSDIR}
 .endif
 
 # set $PREFIX as Python's one
