@@ -7136,6 +7136,7 @@ p5-Algorithm-Annotate	ports/devel/p5-Algorithm-Annotate
 p5-Algorithm-Bucketizer	ports/devel/p5-Algorithm-Bucketizer
 p5-Algorithm-ChooseSubsets	ports/devel/p5-Algorithm-ChooseSubsets
 p5-Algorithm-Cluster	ports/devel/p5-Algorithm-Cluster
+p5-Algorithm-Combinatorics	ports/math/p5-Algorithm-Combinatorics
 p5-Algorithm-Diff	ports/devel/p5-Algorithm-Diff
 p5-Algorithm-Evolutionary	ports/devel/p5-Algorithm-Evolutionary
 p5-Algorithm-Interval2Prefix	ports/devel/p5-Algorithm-Interval2Prefix
