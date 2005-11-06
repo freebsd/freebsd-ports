@@ -1,5 +1,5 @@
---- kqemu-freebsd.c.orig	Mon Aug 15 01:34:06 2005
-+++ kqemu-freebsd.c	Tue Oct 25 21:08:43 2005
+--- kqemu-freebsd.c.orig	Sun Aug 14 18:34:06 2005
++++ kqemu-freebsd.c	Thu Nov  3 17:15:47 2005
 @@ -3,32 +3,55 @@
  #include <sys/param.h>
  #include <sys/systm.h>
@@ -228,7 +228,7 @@
  
  static char log_buf[4096];
  
-@@ -176,47 +227,159 @@
+@@ -176,47 +227,160 @@
      va_end(ap);
  }
  
@@ -312,6 +312,7 @@
 +	*dev = make_dev(&kqemu_cdevsw, unit2minor(unit),
 +	    UID_ROOT, GID_WHEEL, 0660, "kqemu%d", unit);
 +	if (*dev != NULL) {
++	    dev_ref(*dev);
 +	    (*dev)->si_flags |= SI_CHEAPCLONE;
 +	}
 +    }
@@ -393,7 +394,7 @@
  {
      int error = 0;
      int ret;
-@@ -231,8 +394,9 @@
+@@ -231,8 +395,9 @@
  	    break;
  	}
  	d1 = *(struct kqemu_init *)addr;
@@ -405,7 +406,7 @@
  	if (s == NULL) {
  	    error = ENOMEM;
  	    break;
-@@ -248,9 +412,16 @@
+@@ -248,9 +413,16 @@
  	}
  	ctx = kqemu_get_cpu_state(s);
  	*ctx = *(struct kqemu_cpu_state *)addr;
@@ -422,7 +423,7 @@
  	*(struct kqemu_cpu_state *)addr = *ctx;
  	break;
      }
-@@ -265,10 +436,22 @@
+@@ -265,10 +437,22 @@
  
  /* ARGSUSED */
  static int
@@ -446,7 +447,7 @@
  }
  
  /* ARGSUSED */
-@@ -276,15 +459,55 @@
+@@ -276,15 +460,55 @@
  kqemu_modevent(module_t mod __unused, int type, void *data __unused)
  {
      int error = 0;
