@@ -144,6 +144,7 @@
     SUBDIR += p5-AI-NeuralNet-BackProp
     SUBDIR += p5-AI-NeuralNet-Mesh
     SUBDIR += p5-AI-Perceptron
+    SUBDIR += p5-Algorithm-Combinatorics
     SUBDIR += p5-Bit-ShiftReg
     SUBDIR += p5-Bit-Vector
     SUBDIR += p5-Bit-Vector-Minimal

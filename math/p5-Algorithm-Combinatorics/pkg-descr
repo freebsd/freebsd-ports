@@ -1,0 +1,13 @@
+Algorithm::Combinatorics is an efficient generator of combinatorial 
+sequences, where efficient means:
+
+    * Speed: The core loops are written in C.
+    * Memory: No recursion and no stacks are used.
+
+Tuples are generated in lexicographic order.
+
+Author: Xavier Noria (FXN) <fxn@cpan.org>
+WWW: http://search.cpan.org/dist/Algorithm-Combinatorics/
+
+- Aaron Dalton
+aaron@FreeBSD.org

@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Algorithm/Combinatorics.pm
+%%SITE_PERL%%/Algorithm/Combinatorics/C.pm
+%%SITE_PERL%%/Algorithm/Combinatorics/Iterator.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Combinatorics/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Combinatorics
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Algorithm/Combinatorics
+@unexec rmdir %D/%%SITE_PERL%%/Algorithm 2>/dev/null || true
