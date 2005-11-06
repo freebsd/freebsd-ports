@@ -53,7 +53,7 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>To be vulnerable, a user must explicitly install a
 	    publicly released malicious package using the PEAR
 	    installer, or explicitly install a package that depends on
-	    a malicious package.
+	    a malicious package.</p>
 	</blockquote>
       </body>
     </description>
@@ -4494,7 +4494,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>ruby</name>
 	<name>ruby_static</name>
-	<range><le>1.8.2_3</le></range>
+	<range><gt>1.8.*</gt><lt>1.8.2_3</lt></range>
       </package>
     </affects>
     <description>
@@ -4518,6 +4518,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-06-22</discovery>
       <entry>2005-06-23</entry>
+      <modified>2005-11-06</modified>
     </dates>
   </vuln>
 
