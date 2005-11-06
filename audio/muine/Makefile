@@ -7,7 +7,7 @@
 
 PORTNAME=	muine
 PORTVERSION=	0.8.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://muine.gooeylinux.org/
 
