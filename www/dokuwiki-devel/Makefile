@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	dokuwiki
-PORTVERSION=	20050922
+PORTVERSION=	20051023
 CATEGORIES=	www
-MASTER_SITES=	http://www.splitbrain.org/Programming/PHP/DokuWiki/
-DISTNAME=	${PORTNAME}-2005-09-22
+MASTER_SITES=	http://bbs.ilc.edu.tw/chinsan/ports/dokuwiki/ \
+		http://dev.splitbrain.org/browse/snapshots/ \
+		http://www.splitbrain.org/Programming/PHP/DokuWiki/
+DISTNAME=	${PORTNAME}-2005-10-23
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	A simple and easy to use wiki, no database required
-
-BROKEN=		Unfetchable
 
 USE_PHP=	gd imagick pcre session xml zlib
 PHP4_PORT?=	www/mod_php4
@@ -23,18 +23,10 @@ NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 USE_REINPLACE=	YES
 
-pre-fetch:
-.if !defined(DOKUWIKI_DIR)
-	 @${ECHO_MSG} ""
-	 @${ECHO_MSG} "Define DOKUWIKI_DIR to override default of '${DOKUWIKI_DIR}'."
-	 @${ECHO_MSG} ""
-.endif
-
 WWWDOCROOT?=	www/data
 DOKUWIKI_URL?=	${PORTNAME}
-WWWOWN?=	www
-WWWGRP?=	www
 DOKUWIKI_DIR?=	${WWWDOCROOT}/${DOKUWIKI_URL}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST=		${WRKDIR}/pkg-plist
 
 .if defined(BATCH)
@@ -83,6 +75,14 @@ pre-everything::
 	@${ECHO_MSG} '*******************************************************'
 .endif
 
+pre-fetch:
+.if ${DOKUWIKI_DIR} == ${WWWDOCROOT}/${DOKUWIKI_URL}
+	 @${ECHO_MSG} ""
+	 @${ECHO_MSG} "You can define DOKUWIKI_DIR to override default '${DOKUWIKI_DIR}'"
+	 @${ECHO_MSG} "installed under ${PREFIX}"
+	 @${ECHO_MSG} ""
+.endif
+
 pre-patch:
 .if defined(WIKI_LANG)
 	@${REINPLACE_CMD} -e 's|lang\(.*\)'en'|lang\1'${WIKI_LANG}'|g' \
@@ -99,12 +99,12 @@ pre-install:
 		&& ${ECHO_CMD} "@unexec ${RMDIR} %D/${DOKUWIKI_DIR} 2>/dev/null || true">> ${PLIST}
 
 do-install:
-	# Data files
+# Data files
 	-${MKDIR} ${PREFIX}/${DOKUWIKI_DIR}
 	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${DOKUWIKI_DIR}
 	@${CHMOD} 755 ${PREFIX}/${DOKUWIKI_DIR}
 	@${CP} -R ${WRKSRC}/ ${PREFIX}/${DOKUWIKI_DIR}
-	# Setup the correct permissions
+# Setup the correct permissions
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${DOKUWIKI_DIR}/data
 
 post-install:
