@@ -17,12 +17,15 @@ COMMENT=	S.C.O.U.R.G.E. is a rogue-like game
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_X_PREFIX=	yes
-USE_GL=	yes
+USE_GL=		yes
 USE_SDL=	sdl mixer net
 USE_GMAKE=	yes
 USE_GCC=	3.3+
 GNU_CONFIGURE=	yes
-WRKSRC=	${WRKDIR}/${PORTNAME}
+CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 CONFIGURE_ARGS=	--with-data-dir=${DATADIR}
 
