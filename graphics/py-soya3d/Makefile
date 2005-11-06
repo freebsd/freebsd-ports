@@ -31,6 +31,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 MANDIR=	${WRKDIR}/${DISTNAME}/manpage/man1
 MAN1=	soya_editor.1
@@ -45,6 +46,10 @@ DISTFILES+=	SoyaTutorial-${PORTVERSION}${EXTRACT_SUFX}
 .if ${ARCH} == "amd64"
 BROKEN=	"Does not compile in ${ARCH}"
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		-e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/setup.py
 
 post-install:
 	@${INSTALL_DIR} ${EXAMPLESDIR}
