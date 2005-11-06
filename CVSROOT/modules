@@ -2989,6 +2989,7 @@ glmaze		ports/games/glmaze
 glob2		ports/games/glob2
 global		ports/devel/global
 globus2		ports/misc/globus2
+glom		ports/databases/glom
 glove		ports/math/glove
 glpk		ports/math/glpk
 glrparser	ports/devel/glrparser
