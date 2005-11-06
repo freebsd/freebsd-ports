@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayerplug-in
 PORTVERSION=	3.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mplayerplug-in
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	mplayerplug-in
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	A Mozilla plugin for the MPlayer media player
 
-.if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="firefox"
+.if !defined(WITH_MOZILLA) || ${WITH_MOZILLA}=="firefox"
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
 .else
@@ -63,10 +63,10 @@ USE_GCC=	3.4
 
 pre-everything::
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} " By default this port uses www/mozilla for Gecko support, but you can"
+	@${ECHO_MSG} " By default this port uses www/firefox for Gecko support, but you can"
 	@${ECHO_MSG} " change this by defining WITH_MOZILLA to one of the following values:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} " firefox "
+	@${ECHO_MSG} " mozilla "
 	@${ECHO_MSG} " mozilla-devel "
 	@${ECHO_MSG} ""
 
