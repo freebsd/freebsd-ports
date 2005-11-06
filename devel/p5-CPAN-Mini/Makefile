@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CPAN-Mini
-PORTVERSION=	0.38
+PORTVERSION=	0.40
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CPAN
@@ -16,6 +16,7 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	CPAN::Mini - create a minimal mirror of CPAN
 
 BUILD_DEPENDS=	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
+		${SITE_PERL}/File/HomeDir.pm:${PORTSDIR}/devel/p5-File-HomeDir \
 		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
