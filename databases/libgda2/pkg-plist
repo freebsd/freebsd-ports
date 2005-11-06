@@ -208,6 +208,7 @@ share/locale/zh_TW/LC_MESSAGES/libgda-3.mo
 @dirrm share/gnome/libgda
 @dirrm lib/libgda-%%VERSION%%/providers
 @dirrm lib/libgda-%%VERSION%%
+@dirrm lib/libgda
 @dirrm include/libgda-%%VERSION%%/sql
 @dirrm include/libgda-%%VERSION%%/libgda-report
 @dirrm include/libgda-%%VERSION%%/libgda
