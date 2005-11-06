@@ -302,6 +302,7 @@ include/wine/windows/schnlsp.h
 include/wine/windows/schemadef.h
 include/wine/windows/sddl.h
 include/wine/windows/secext.h
+include/wine/windows/security.h
 include/wine/windows/sensapi.h
 include/wine/windows/sensevts.h
 include/wine/windows/sensevts.idl
