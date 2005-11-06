@@ -1,5 +1,5 @@
 This is a deamon the uses the LM78/79, WINBond 83781/83782/83783/83626
-or the ASUS 991227 hardware monitor chips to warn the operator when
+or the ASUS 99127 hardware monitor chips to warn the operator when
 something is out of range.  The software is capable of monitoring up
 to 3 tempuratures, 3 fan speeds and 7 voltages. The configuration file
 specifies which functions are active and their acceptable ranges.
