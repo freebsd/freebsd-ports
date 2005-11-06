@@ -1172,6 +1172,7 @@
     SUBDIR += p5-Tie-DB_FileLock
     SUBDIR += p5-Tie-File
     SUBDIR += p5-Tie-FileLRUCache
+    SUBDIR += p5-Tie-Hash-Sorted
     SUBDIR += p5-Tie-IxHash
     SUBDIR += p5-Tie-iCal
     SUBDIR += p5-Time-Duration
