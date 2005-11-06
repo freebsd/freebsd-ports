@@ -1,0 +1,38 @@
+bin/glom
+%%PYTHON_SITELIBDIR%%/glom.so
+share/gnome/application-registry/glom.applications
+share/gnome/apps/Applications/glom.desktop
+share/gnome/glom/glade/glom.glade
+share/gnome/glom/glom_document.dtd
+share/gnome/glom/xslt/print_details_to_html.xsl
+share/gnome/glom/xslt/print_report_to_html.xsl
+share/gnome/help/glom/C/figures/start.png
+share/gnome/help/glom/C/glom.xml
+share/gnome/help/glom/C/legal.xml
+share/gnome/mime-info/glom.keys
+share/gnome/mime-info/glom.mime
+share/gnome/omf/glom/glom-C.omf
+share/locale/cs/LC_MESSAGES/glom.mo
+share/locale/de/LC_MESSAGES/glom.mo
+share/locale/en_CA/LC_MESSAGES/glom.mo
+share/locale/en_GB/LC_MESSAGES/glom.mo
+share/locale/es/LC_MESSAGES/glom.mo
+share/locale/fr/LC_MESSAGES/glom.mo
+share/locale/gu/LC_MESSAGES/glom.mo
+share/locale/it/LC_MESSAGES/glom.mo
+share/locale/nl/LC_MESSAGES/glom.mo
+share/locale/pa/LC_MESSAGES/glom.mo
+share/locale/pt/LC_MESSAGES/glom.mo
+share/locale/pt_BR/LC_MESSAGES/glom.mo
+share/locale/rw/LC_MESSAGES/glom.mo
+share/locale/sq/LC_MESSAGES/glom.mo
+share/locale/sv/LC_MESSAGES/glom.mo
+share/locale/tr/LC_MESSAGES/glom.mo
+share/locale/zh_CN/LC_MESSAGES/glom.mo
+share/mime/packages/glom.xml
+@dirrm share/gnome/help/glom/C/figures
+@dirrm share/gnome/help/glom/C
+@dirrm share/gnome/help/glom
+@dirrm share/gnome/glom/xslt
+@dirrm share/gnome/glom/glade
+@dirrm share/gnome/glom

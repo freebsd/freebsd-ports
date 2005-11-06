@@ -55,6 +55,7 @@
     SUBDIR += gbib
     SUBDIR += gdbm
     SUBDIR += gigabase
+    SUBDIR += glom
     SUBDIR += gmysql
     SUBDIR += gnats
     SUBDIR += gnats4
