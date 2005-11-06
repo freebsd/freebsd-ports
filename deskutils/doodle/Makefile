@@ -8,14 +8,14 @@
 
 PORTNAME=	doodle
 PORTVERSION=	0.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://gnunet.org/doodle/download/
 
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	Quickly search documents
 
-LIB_DEPENDS=	extractor.1:${PORTSDIR}/textproc/libextractor
+LIB_DEPENDS=	extractor.2:${PORTSDIR}/textproc/libextractor
 
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
