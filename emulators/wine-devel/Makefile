@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	20050930
+PORTVERSION=	0.9
+PORTEPOCH=	1
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	ALPHA/wine/development
-DISTNAME=	Wine-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Microsoft Windows compatibility layer for Unix-like systems
@@ -31,6 +31,7 @@ USE_GMAKE=	yes
 USE_GL=		yes
 USE_MESA=	yes	# wine/dlls/glut32/ depends on the presence of libglut.
 USE_XPM=	yes
+USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
