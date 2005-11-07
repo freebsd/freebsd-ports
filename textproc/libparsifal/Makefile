@@ -7,22 +7,25 @@
 #
 
 PORTNAME=	libparsifal
-PORTVERSION=	0.9.3
+PORTVERSION=	1.0.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.saunalahti.fi/~samiuus/toni/xmlproc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight XML Parser
 
+USE_ICONV=	yes
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's| -O3||g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|g' ${WRKSRC}/configure
 
 post-install:
 .ifndef(NOPORTDOCS)
