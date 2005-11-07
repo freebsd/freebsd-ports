@@ -8,7 +8,9 @@
 PORTNAME=	pysqlite
 PORTVERSION=	2.0.5
 CATEGORIES=	databases python
-MASTER_SITES=	http://initd.org/pub/software/pysqlite/releases/2.0/${PORTVERSION}/
+MASTER_SITES=	http://initd.org/pub/software/pysqlite/releases/2.0/${PORTVERSION}/ \
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mnag@FreeBSD.org
