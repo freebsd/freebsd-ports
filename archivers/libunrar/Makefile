@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/unrar
 
 USE_GMAKE=	yes
 MAKEFILE=	makefile.unix
+MAKE_ENV+=	CXX="${CXX}" LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	lib
 INSTALLS_SHLIB=	yes
 

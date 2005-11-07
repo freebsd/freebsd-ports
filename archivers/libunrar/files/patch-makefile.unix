@@ -1,9 +1,10 @@
 --- makefile.unix.orig	Sat Apr 30 04:00:12 2005
 +++ makefile.unix	Fri Sep 23 16:22:04 2005
-@@ -7,9 +7,10 @@
+@@ -6,10 +6,10 @@
+ #
  
  # Linux using GCC
- CXX=g++
+-CXX=g++
 -CXXFLAGS=-O2
 -DEFINES=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
 +CXXFLAGS=$(CFLAGS) -fPIC -DPIC
@@ -13,7 +14,7 @@
  
  # Linux using LCC
  #CXX=lcc
-@@ -86,7 +87,7 @@
+@@ -86,7 +86,7 @@
  LINK=$(CXX)
  
  UNRAR_OBJ=filestr.o recvol.o rs.o scantree.o
@@ -22,7 +23,7 @@
  
  OBJECTS=rar.o strlist.o strfn.o pathfn.o int64.o savepos.o global.o file.o filefn.o filcreat.o \
  	archive.o arcread.o unicode.o system.o isnt.o crypt.o crc.o rawread.o encname.o \
-@@ -114,6 +115,12 @@
+@@ -114,6 +114,12 @@
  	$(STRIP) default.sfx
  
  lib:	WHAT=RARDLL
