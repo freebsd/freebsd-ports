@@ -50,6 +50,7 @@ libdata/pkgconfig/libgsf-1.pc
 share/doc/gsf/GsfBlob.html
 share/doc/gsf/GsfClipData.html
 share/doc/gsf/api.html
+share/doc/gsf/dependencies.html
 share/doc/gsf/gsf-Bononbo.html
 share/doc/gsf/gsf-Compression.html
 share/doc/gsf/gsf-GIOChannel.html
@@ -64,14 +65,17 @@ share/doc/gsf/gsf-Structured-Blobs.html
 share/doc/gsf/gsf-Text.html
 share/doc/gsf/gsf-XML-and-libxml.html
 share/doc/gsf/gsf-Zip.html
+share/doc/gsf/gsf-gsf-opendoc-utils.html
 share/doc/gsf/gsf-memory.html
 share/doc/gsf/gsf-metadata.html
+share/doc/gsf/gsf-users.html
 share/doc/gsf/gsf-utils.html
 share/doc/gsf/gsf.devhelp
+share/doc/gsf/history.html
 share/doc/gsf/home.png
 share/doc/gsf/index.html
 share/doc/gsf/index.sgml
-share/doc/gsf/into.html
+share/doc/gsf/intro.html
 share/doc/gsf/io.html
 share/doc/gsf/ix01.html
 share/doc/gsf/left.png
