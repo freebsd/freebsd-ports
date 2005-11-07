@@ -1,13 +1,10 @@
---- src/vasprintf.c.orig	Sat May 21 19:01:50 2005
-+++ src/vasprintf.c	Mon Jul 11 23:23:19 2005
-@@ -78,6 +78,10 @@
- #include <ctype.h>
- #include <limits.h>
+--- src/vasprintf.c.orig	Wed Nov  2 21:01:32 2005
++++ src/vasprintf.c	Thu Nov  3 01:48:31 2005
+@@ -579,7 +579,6 @@
+   memcpy (&s.vargs, vargs, sizeof (va_list));
+ #endif /* __va_copy */
+ #endif /* va_copy */
+-  va_copy(s.vargs, vargs);
+   s.maxlen = (size_t)INT_MAX;
  
-+#ifndef va_copy
-+#define va_copy(to,fr) ((to)=(fr))
-+#endif
-+
- #define ALLOC_CHUNK 2048
- #define ALLOC_SECURITY_MARGIN 1024   /* big value because some platforms have very big 'G' exponent */
- #if ALLOC_CHUNK < ALLOC_SECURITY_MARGIN
+   retval = core(&s);
