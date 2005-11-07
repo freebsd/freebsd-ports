@@ -7,6 +7,7 @@
 
 PORTNAME=	filemagic
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://grub.ath.cx/filemagic/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
