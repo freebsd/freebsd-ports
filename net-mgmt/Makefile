@@ -52,6 +52,7 @@
     SUBDIR += fprobe
     SUBDIR += gps
     SUBDIR += grepcidr
+    SUBDIR += grepip
     SUBDIR += icmpmonitor
     SUBDIR += icmpquery
     SUBDIR += ifgraph
