@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	thunderbird
-DISTVERSION=	1.5b2
+DISTVERSION=	1.5rc1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	thunderbird/releases/${DISTVERSION}/source
@@ -24,7 +24,7 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 USE_X_PREFIX=	yes
 
-USE_GCC=	3.4
+USE_GCC=	3.4+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
@@ -40,13 +40,20 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 FAKEDIR=	${WRKDIR}/fake
 
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
+			--exclude */macbuild/*\
+			--exclude */package/* \
+			--exclude .cvsignore \
+			--exclude makefile.win \
+			--exclude MANIFEST
+
 NO_MTREE=		yes
 WRKSRC=			${WRKDIR}/mozilla
 LOCAL_SUBDIR=		lib/${PORTNAME}
 LOCAL_PREFIX=		${PREFIX}/${LOCAL_SUBDIR}
 
 THUNDERBIRD=		${PORTNAME}
-THUNDERBIRD_VER=	1.4.1
+THUNDERBIRD_VER=	1.5
 THUNDERBIRD_ICON_SRC=	${LOCAL_PREFIX}/lib/${THUNDERBIRD}-${THUNDERBIRD_VER}/icons/default.xpm
 THUNDERBIRD_ICON=	${PORTNAME}.xpm
 MOZ_PIS_SCRIPTS=	S50cleanhome
