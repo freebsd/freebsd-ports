@@ -1,0 +1,10 @@
+--- fastest_cvsup.bak	Sat Nov  5 14:48:17 2005
++++ fastest_cvsup	Sat Nov  5 14:48:46 2005
+@@ -295,6 +295,7 @@
+ 
+       # extract the country name and the rest (what a mess!)
+ 
++      s/^<a[^>]+><\/a>//;
+       if ( m/^(\w+)(\s{1}\w+)?\s*(.*)/s ) {
+         my $country = $1.$2; # for two word names
+         my $mess = $3;       # the rest
