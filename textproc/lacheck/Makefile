@@ -8,8 +8,8 @@
 PORTNAME=	lacheck
 PORTVERSION=	1.26
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.dina.kvl.dk/pub/Staff/Per.Abrahamsen/mirror/ftp/lacheck/ \
-		http://ftp.agh.edu.pl/pub/tex/support/lacheck/
+MASTER_SITES=	ftp://cam.ctan.org/tex-archive/support/lacheck/ \
+		http://www.heim2.tu-clausthal.de/~upp/lacheck/
 
 MAINTAINER=	uwe.pierau@tu-clausthal.de
 COMMENT=	A tool for finding common mistakes in LaTeX documents
