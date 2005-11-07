@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	mailnotify
 MAINTAINER=		jylefort@FreeBSD.org
 COMMENT=		A mail notification for freedesktop.org-compliant system trays
 
+USE_REINPLACE=		yes
 USE_X_PREFIX=		yes
 USE_GNOME=		gnomeprefix gnomehack eel2
 USE_LIBTOOL_VER=	15
@@ -97,5 +98,9 @@ CONFIGURE_ARGS+=	--disable-sasl
 .else
 LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|evolution-plugin-2.2|evolution-plugin-2.4|' \
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
