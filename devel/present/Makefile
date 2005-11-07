@@ -8,6 +8,7 @@
 
 PORTNAME=	present
 PORTVERSION=	0.0.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.0
@@ -15,7 +16,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.0
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A library for reading Microsoft PowerPoint(tm) documents
 
-LIB_DEPENDS=	goffice-1.0:${PORTSDIR}/devel/goffice
+LIB_DEPENDS=	goffice-1.1:${PORTSDIR}/devel/goffice
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
