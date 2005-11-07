@@ -27,7 +27,7 @@ LIB_DEPENDS=	speex.3:${PORTSDIR}/audio/speex \
 		newt.51:${PORTSDIR}/devel/newt
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
-ONLY_FOR_ARCHS=	i386 sparc64
+ONLY_FOR_ARCHS=	i386 sparc64 amd64
 
 BRIVER=		bristuff-0.2.0-RC8h
 GNU_CONFIGURE=	yes

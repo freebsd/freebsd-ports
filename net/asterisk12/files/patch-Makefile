@@ -1,6 +1,9 @@
---- Makefile.orig	Tue Aug  9 17:18:53 2005
-+++ Makefile	Tue Aug  9 17:33:29 2005
-@@ -45,6 +45,15 @@
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
+@@ -45,6 +45,19 @@
  PROC=$(shell uname -m)
  endif
  
@@ -11,12 +14,16 @@
 +OPTIONS+=$(shell if $(CC) -mcpu=v9 -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-mcpu=v9"; fi)
 +OPTIONS+=-fomit-frame-pointer
 +endif
++ifeq ($(PROC),amd64)
++PROC=k8
++OPTIONS+=-m64
++endif
 +endif
 +
  # Pentium Pro Optimize
  #PROC=i686
  
-@@ -63,10 +72,10 @@
+@@ -63,10 +76,10 @@
  #K6OPT  = -DK6OPT
  
  #Tell gcc to optimize the asterisk's code
@@ -29,7 +36,7 @@
  
  # If you are running a radio application, define RADIO_RELAX so that the DTMF
  # will be received more reliably
-@@ -91,7 +100,7 @@
+@@ -91,7 +104,7 @@
  
  # Where to install asterisk after compiling
  # Default -> leave empty
@@ -38,7 +45,7 @@
  
  # Staging directory
  # Files are copied here temporarily during the install process
-@@ -111,23 +120,23 @@
+@@ -111,23 +124,23 @@
  # Don't use together with -DBUSYDETECT_TONEONLY
  BUSYDETECT+= #-DBUSYDETECT_COMPARE_TONE_AND_SILENCE
  
@@ -72,7 +79,7 @@
  CFLAGS+=$(OPTIMIZE)
  
  ifneq ($(PROC),ultrasparc)
-@@ -138,12 +147,8 @@
+@@ -138,12 +151,8 @@
  CFLAGS+=$(shell if [ -f /usr/include/osp/osp.h ]; then echo "-DOSP_SUPPORT -I/usr/include/osp" ; fi)
  
  ifeq (${OSARCH},FreeBSD)
@@ -87,7 +94,7 @@
  endif # FreeBSD
  
  ifeq (${OSARCH},NetBSD)
-@@ -160,7 +165,10 @@
+@@ -160,7 +169,10 @@
  #CFLAGS+=-DOLD_DSP_ROUTINES
  
  CFLAGS+=$(shell if [ -f /usr/include/linux/zaptel.h ]; then echo "-DZAPTEL_OPTIMIZATIONS"; fi)
@@ -99,7 +106,7 @@
  
  LIBEDIT=editline/libedit.a
  
-@@ -222,7 +230,7 @@
+@@ -222,7 +234,7 @@
  SOLINK=-shared -Xlinker -x
  endif
  
@@ -108,7 +115,7 @@
  INSTALL=install
  
  _all: all
-@@ -234,7 +242,7 @@
+@@ -234,7 +246,7 @@
  	@echo " +               $(MAKE) install                +"  
  	@echo " +-------------------------------------------+"  
  
@@ -117,7 +124,7 @@
  
  editline/config.h:
  	cd editline && unset CFLAGS LIBS && ./configure ; \
-@@ -243,13 +251,13 @@
+@@ -243,13 +255,13 @@
  	cd editline && unset CFLAGS LIBS && test -f config.h || ./configure
  	$(MAKE) -C editline libedit.a
  
@@ -138,7 +145,7 @@
  
  ifneq ($(wildcard .depend),)
  include .depend
-@@ -271,13 +279,10 @@
+@@ -271,13 +283,10 @@
  
  asterisk.o: asterisk.c build.h
  
@@ -155,7 +162,7 @@
  
  ifneq ($(strip $(ASTERISKVERSION)),)
  build.h: .version
-@@ -295,8 +300,8 @@
+@@ -295,8 +304,8 @@
  		exit 1; \
  	fi
  
@@ -166,7 +173,7 @@
  
  muted: muted.o
  	$(CC) -o muted muted.o
-@@ -315,28 +320,28 @@
+@@ -315,28 +324,28 @@
  	$(MAKE) -C stdtime clean
  
  datafiles: all
@@ -201,7 +208,7 @@
  		else \
  			echo "No description for $$x"; \
  			exit 1; \
-@@ -344,18 +349,18 @@
+@@ -344,18 +353,18 @@
  	done
  	for x in sounds/vm-* sounds/transfer* sounds/pbx-* sounds/ss-* sounds/beep* sounds/dir-* sounds/conf-* sounds/agent-* sounds/invalid* sounds/tt-* sounds/auth-* sounds/privacy-* sounds/queue-*; do \
  		if grep -q "^%`basename $$x`%" sounds.txt; then \
@@ -225,7 +232,7 @@
  
  update: 
  	@if [ -d CVS ]; then \
-@@ -367,127 +372,90 @@
+@@ -367,127 +376,90 @@
  	fi
  
  bininstall: all
@@ -405,7 +412,7 @@
  	:> $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/unavail.gsm
  	for x in vm-theperson digits/1 digits/2 digits/3 digits/4 vm-isunavail; do \
  		cat $(DESTDIR)$(ASTVARLIBDIR)/sounds/$$x.gsm >> $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/unavail.gsm ; \
-@@ -502,7 +470,7 @@
+@@ -502,7 +474,7 @@
  	@[ -d $(DESTDIR)$(HTTPDIR)/html ] || ( echo "No http directory" && exit 1 )
  	@[ -d $(DESTDIR)$(HTTPDIR)/cgi-bin ] || ( echo "No cgi-bin directory" && exit 1 )
  	install -m 4755 -o root -g root contrib/scripts/vmail.cgi $(DESTDIR)$(HTTPDIR)/cgi-bin/vmail.cgi
@@ -414,7 +421,7 @@
  	for x in images/*.gif; do \
  		install -m 644 $$x $(DESTDIR)$(HTTPDIR)/html/_asterisk/; \
  	done
-@@ -522,10 +490,10 @@
+@@ -522,10 +494,10 @@
  
  __rpm: _version
  	rm -rf /tmp/asterisk ; \
