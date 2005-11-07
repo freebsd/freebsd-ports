@@ -8,6 +8,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	2.8.6
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/gtk+/2.8,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.8/ \
@@ -95,6 +96,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
 		s|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/gtk/xdgmime/xdgmime.c
+# GnomeVFS needs pthread; gtk-demo may use GnomeVFS (via GtkFileChooser)
+	@${REINPLACE_CMD} -e 's|@CFLAGS@|& ${PTHREAD_CFLAGS}|; \
+		s|@LDFLAGS@|& ${PTHREAD_LIBS}|' \
+		${WRKSRC}/demos/gtk-demo/Makefile.in
 
 pre-build:
 	@${RM} -rf ${WRKSRC}/docs/gtk.info*
