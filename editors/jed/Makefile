@@ -28,8 +28,7 @@ DIST_SUBDIR=	jed
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	JED_ROOT=${PREFIX}/lib/jed
-MAKE_ENV+=	DEST_INFO_DIR=${PREFIX}/${INFO_PATH} \
-		DEST_DOC_DIR=${DOCSDIR}
+MAKE_ENV+=	DEST_DOC_DIR=${DOCSDIR}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PORTDOCS=	*
@@ -41,7 +40,6 @@ MAKE_ENV+=	JED_DOC_FILES="" \
 
 ALL_TARGET=	all getmail
 MAN1=		jed.1 rgrep.1
-INFO=		jed
 
 .include <bsd.port.pre.mk>
 
@@ -63,18 +61,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,__linux__,__FreeBSD__,g' \
 		${WRKSRC}/src/pty.c
 	@${REINPLACE_CMD} -e 's,(DEST_JED_ROOT)/doc,(DEST_DOC_DIR),g' \
-			  -e 's,(DEST_JED_ROOT)/info,(DEST_INFO_DIR),g' \
-			  -e 's,\.\./info/\*,../info/jed.info ../info/jed.info-\[0-9\],' \
+			  -e 's,\.\./info/\*,,' \
 			  -e 's,^\(JED_DOC_.*FILES\) =,\1 \?=,g' \
 			  -e 's,-lslang$$,-lslang -ltermcap,' \
 		${WRKSRC}/src/Makefile.in
-
-pre-configure:
-.for n in 1 2 3
-	@${MV} ${WRKSRC}/info/jed.${n}in ${WRKSRC}/info/jed.info-${n}
-.endfor
-	@${REINPLACE_CMD} 's|jed.\([0-9]\)in|jed.info-\1|' \
-		${WRKSRC}/info/jed.info
 
 post-configure:
 	@${REINPLACE_CMD} -e 's,\(.usr.bin.install\) *-c,\1 -s -m 555,' \
