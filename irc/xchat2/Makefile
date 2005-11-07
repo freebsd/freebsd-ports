@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	xchat2
-PORTVERSION=	2.4.5
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://xchat.org/files/source/2.4/
+		http://xchat.org/files/source/2.6/
 MASTER_SITE_SUBDIR=	${PORTNAME:S|2||}
 DISTNAME=	xchat-${PORTVERSION}
 
@@ -59,6 +58,16 @@ CONFIGURE_ARGS+=--enable-tcl=no
 PLIST_SUB+=	TCL="@comment "
 .endif
 
+.if !defined(WITHOUT_DBUS)
+LIB_DEPENDS+=	dbus-1.1:${PORTSDIR}/devel/dbus
+CONFIGURE_ARGS+=--enable-dbus
+GCONF_SCHEMAS=	apps_xchat_url_handler.schemas
+PLIST_SUB+=	DBUS=""
+.else
+CONFIGURE_ARGS+=--disable-dbus
+PLIST_SUB+=	DBUS="@comment "
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600 || defined(WITHOUT_PERL)
@@ -71,7 +80,7 @@ PLIST_SUB+=	PERL=""
 .endif
 
 pre-everything::
-.if !defined(WITH_PYTHON) || !defined(WITH_SOCKS) || !defined(WITH_TCL)
+.if !defined(WITH_PYTHON) || !defined(WITH_SOCKS) || !defined(WITH_TCL) || !defined(WITHOUT_PERL) || !defined(WITHOUT_DBUS)
 	@${ECHO_MSG} "You may specify the following on the command line:"
 	@${ECHO_MSG} ""
 .endif
@@ -86,6 +95,9 @@ pre-everything::
 .endif
 .if !defined(WITHOUT_PERL)
 	@${ECHO_MSG} "WITHOUT_PERL=yes to disable Perl support"
+.endif
+.if !defined(WITHOUT_DBUS)
+	@${ECHO_MSG} "WITHOUT_DBUS=yes to disable dbus support"
 .endif
 
 post-patch:
