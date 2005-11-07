@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="eb29a575-3381-11da-8340-000e0c2e438a">
+    <topic>qpopper -- multiple privilege escalation vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>qpopper</name>
+	<range><le>4.0.5</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jens Steube reports that qpopper is vulnerable to a privilege
+	  escalation vulnerability.  qpopper does not properly drop root
+	  privileges so that user supplied configuration and trace files
+	  can be processed with root privileges.  This could allow a
+	  local attacker to create or modify arbitrary files.</p>
+	<p>qpopper is also affected by improper umask settings
+	  which could allow users to create group or world-writeable
+	  files, possibly allowing an attacker to overwrite arbitrary
+	  files.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1151</cvename>
+      <cvename>CAN-2005-1152</cvename>
+      <url>http://secunia.com/advisories/15475/</url>
+    </references>
+    <dates>
+      <discovery>2005-05-26</discovery>
+      <entry>2005-11-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="44e5f5bd-4d76-11da-bf37-000fb586ba73">
     <topic>pear-PEAR -- PEAR installer arbitrary code execution vulnerability</topic>
     <affects>
