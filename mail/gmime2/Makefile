@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gmime
-PORTVERSION=	2.1.16
-PORTREVISION=	1
+PORTVERSION=	2.1.17
 CATEGORIES?=	mail
 MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/v2.1/
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	mnag@FreeBSD.org
 COMMENT?=	Library (written in C) for parsing and creating messages using MIME
 
 CONFLICTS=	gmime-1.0.*
