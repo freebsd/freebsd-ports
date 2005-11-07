@@ -7,7 +7,7 @@
 
 PORTNAME=	sylpheed
 PORTVERSION=	2.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/v2.0/
 
@@ -25,8 +25,10 @@ USE_GNOME=	gtk20
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib -L${X11BASE}/lib"
+# Sylpheed needs pthread if GnomeVFS is installed (GtkFileChooser uses it)
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
+		CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include -I${X11BASE}/include" \
+		LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-ipv6 \
 		--prefix=${PREFIX} \
 		--with-libintl-prefix=${LOCALBASE} \
