@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	file
-PORTVERSION=	4.15
+PORTVERSION=	4.16
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.gw.com/mirrors/pub/unix/file/ \
 		ftp://ftp.fu-berlin.de/unix/tools/file/
 
 MAINTAINER=	jharris@widomaker.com
-COMMENT=	File - determine file type
+COMMENT=	Utility to determine file type
 
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--enable-fsect-man5
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
+
+CONFIGURE_ARGS=	--enable-fsect-man5
 
 MAN1=		file.1
 MAN3=		libmagic.3

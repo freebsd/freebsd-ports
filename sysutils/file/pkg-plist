@@ -2,7 +2,6 @@ bin/file
 lib/libmagic.so.1
 lib/libmagic.so
 lib/libmagic.a
-lib/libmagic.la
 include/magic.h
 %%DATADIR%%/magic
 %%DATADIR%%/magic.mime
