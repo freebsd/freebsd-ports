@@ -80,6 +80,7 @@ sbin/saslpasswd2
 %%PORTDOCS%%%%DOCSDIR%%/testing.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/advanced.html
 %%PORTDOCS%%%%DOCSDIR%%/html/appconvert.html
+%%PORTDOCS%%%%DOCSDIR%%/html/components.html
 %%PORTDOCS%%%%DOCSDIR%%/html/gssapi.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/install.html

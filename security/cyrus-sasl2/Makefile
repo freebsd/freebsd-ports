@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	2.1.21
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
@@ -213,8 +213,9 @@ DOC2=	ONEWS TODO draft-burdis-cat-srp-sasl-xx.txt \
 	rfc2444.txt rfc2595.txt rfc2831.txt rfc2945.txt rfc3174.txt \
 	server-plugin-flow.fig testing.txt
 
-HTDOCS=	advanced appconvert gssapi index install macosx mechanisms \
-	options plugprog programming readme sysadmin upgrading windows
+HTDOCS=	advanced appconvert components gssapi index install macosx \
+	mechanisms options plugprog programming readme sysadmin upgrading \
+	windows
 
 PLIST_SUB=	PREFIX=${PREFIX} \
 		LOGIN=${LOGIN} \
