@@ -29,7 +29,7 @@ RUN_DEPENDS=	${X11BASE}/lib/epiphany/1.8/extensions/libgesturesextension.so:${PO
 		${X11BASE}/lib/nautilus/extensions-1.0/libnautilus-open-terminal.so:${PORTSDIR}/deskutils/nautilus-open-terminal \
 		gtweakui-menus:${PORTSDIR}/deskutils/gtweakui \
 		gnome-art:${PORTSDIR}/x11-themes/gnome-art \
-		${X11BASE}/libdata/bonobo/servers/DeskbarApplet.server:${PORTSDIR}/deskutils/deskbar-applet \
+		${X11BASE}/lib/deskbar-applet/deskbar-applet:${PORTSDIR}/deskutils/deskbar-applet \
 		brightside:${PORTSDIR}/x11/brightside \
 		evolution-gconf-filter-exchange:${PORTSDIR}/devel/evolution-gconf-tools \
 		${X11BASE}/libexec/quick-lounge-applet:${PORTSDIR}/misc/quick-lounge-applet \
