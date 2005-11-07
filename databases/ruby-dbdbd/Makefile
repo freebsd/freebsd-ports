@@ -8,7 +8,8 @@
 PORTNAME=	dbdbd
 PORTVERSION=	0.2.2
 CATEGORIES=	databases ruby
-MASTER_SITES=	http://knossos.shu.edu/dblack/dbdbd/
+MASTER_SITES=	http://knossos.shu.edu/dblack/dbdbd/ \
+		http://raa.ruby-lang.org/cache/${PORTNAME}/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 
