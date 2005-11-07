@@ -8,7 +8,7 @@
 PORTNAME=	jumpgis-postgis
 PORTVERSION=	1.1.0
 CATEGORIES=	graphics databases java
-MASTER_SITES=	http://postgis.refractions.net/
+MASTER_SITES=	http://postgis.refractions.net/download/
 DISTNAME=	postgisdriver-${PORTVERSION}
 
 MAINTAINER=	lawrance@FreeBSD.org
