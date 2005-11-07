@@ -43,15 +43,9 @@ PLIST_SUB+=	STATIC=""
 
 MAN1=		catior.1 genior.1 nameclt.1 omniNames.1 omniidl.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-BROKEN=		"Does not compile on FreeBSD >= 7.0"
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -Ee 's#-pthread|-lc_r#${PTHREAD_LIBS}#' \
-		${WRKSRC}/mk/beforeauto.mk.in
+	@${REINPLACE_CMD} -e 's#-pthread|-lc_r#${PTHREAD_LIBS}#' \
+		-e 's#-O2#${CFLAGS}#g' ${WRKSRC}/mk/beforeauto.mk.in
 
 pre-configure:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
@@ -69,4 +63,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/sample.cfg ${EXAMPLESDIR}/omniORB.cfg
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
