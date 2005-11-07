@@ -3295,6 +3295,7 @@ greed		ports/ftp/greed
 greed_game	ports/games/greed
 gregexp		ports/misc/gregexp
 grepcidr	ports/net-mgmt/grepcidr
+grepip		ports/net-mgmt/grepip
 grepmail	ports/mail/grepmail
 gresolver	ports/dns/gresolver
 gretl		ports/misc/gretl
