@@ -15,7 +15,7 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}:plans \
 		powerani.gif:logo
 EXTRACT_ONLY=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	infofarmer@gmail.com
 COMMENT=	A Good Web Calendar
 
 USE_ZIP=	yes
