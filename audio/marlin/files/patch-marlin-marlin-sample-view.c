@@ -1,12 +1,11 @@
---- marlin/marlin-sample-view.c.orig	Mon Jul 11 21:28:23 2005
-+++ marlin/marlin-sample-view.c	Wed Jul 13 00:36:31 2005
-@@ -177,6 +177,10 @@
- 			 guint64 new_position,
- 			 gboolean extend_selection);
+--- marlin/marlin-sample-view.c.orig	Tue Jul 12 17:57:56 2005
++++ marlin/marlin-sample-view.c	Wed Jul 13 17:51:32 2005
+@@ -179,6 +179,9 @@
+ static void scroll_to (MarlinSampleView *view,
+ 		       int x);
  
 +void marlin_sample_view_vzoom_in (MarlinSampleView *view);
 +void marlin_sample_view_vzoom_out (MarlinSampleView *view);
-+void scroll_to (MarlinSampleView *view, int x);
 +
  /* Stuff to register the coverage enum */
  #define MARLIN_TYPE_COVERAGE (coverage_get_type ())
