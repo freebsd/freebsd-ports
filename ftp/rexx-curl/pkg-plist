@@ -2,14 +2,15 @@ bin/rexxcurl
 bin/rexxcurl-config
 lib/librexxcurl.a
 lib/librexxcurl.so
-%%DATADIR%%/images/rxcurl64.png
+%%PORTDOCS%%%%DOCSDIR%%/images/rxcurl64.png
+%%PORTDOCS%%%%DOCSDIR%%/index.html
 %%DATADIR%%/README.txt
 %%DATADIR%%/getright.rexx
 %%DATADIR%%/httppost.rexx
-%%DATADIR%%/index.html
 %%DATADIR%%/mirror.rexx
 %%DATADIR%%/scp.rexx
 %%DATADIR%%/testcurl.rexx
 %%DATADIR%%/upload.rexx
-@dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
