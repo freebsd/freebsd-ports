@@ -1,0 +1,73 @@
+--- data/Makefile.in.orig	Mon Nov  7 05:37:01 2005
++++ data/Makefile.in	Mon Nov  7 05:37:38 2005
+@@ -737,38 +737,38 @@
+ @GCONF_SCHEMAS_INSTALL_FALSE@install-data-local:
+ 
+ install-data-hook:
+-	@system=`uname`; \
+-	if test -f /usr/include/security/pam_appl.h; then \
+-	  if test '!' -d $(DESTDIR)$(PAM_PREFIX)/pam.d; then \
+-		$(mkinstalldirs) $(DESTDIR)$(PAM_PREFIX)/pam.d; \
+-		chmod 755 $(DESTDIR)$(PAM_PREFIX)/pam.d; \
+-	   fi; \
+-	   if test $$system = Linux; then \
+-		if test '!' -f $(DESTDIR)$(PAM_PREFIX)/pam.d/gnome-screensaver; then \
+-		     $(INSTALL_DATA) gnome-screensaver $(DESTDIR)$(PAM_PREFIX)/pam.d/gnome-screensaver; \
+-		fi; \
+-		if test "x$(PAM_PREFIX)" != "x/etc/pam.d"; then \
+-	             echo "***" ; \
+-	             echo "***  Warning: gnome-screensaver has been compiled with support for" ; \
+-	             echo "***           Pluggable Authentication Modules (PAM).  However, you may need to" ; \
+-	             echo "***           manually install $(PAM_PREFIX)/pam.d/gnome-screensaver" ; \
+-	             echo "***           to /etc/pam.d/gnome-screensaver.  Otherwise, unlocking might" ; \
+-	             echo "***           not work." ; \
+-	             echo "***" ; \
+-	             echo "***           Note: If you are using SuSE/Novell you may have to modify this file." ; \
+-	             echo "***" ; \
+-		fi; \
+-	   fi; \
+-	   if test $$system = SunOS; then \
+-	        echo "***" ; \
+-	        echo "***  Warning: gnome-screensaver has been compiled with support for" ; \
+-	        echo "***           Pluggable Authentication Modules (PAM).  However, you" ; \
+-	        echo "***           need to manually add authentication for gnome-screensaver in" ; \
+-	        echo "***           $(PAM_PREFIX)/pam.conf or /etc/pam.conf." ; \
+-	        echo "***           Otherwise, unlocking might not work." ; \
+-	        echo "***" ; \
+-	   fi; \
+-	fi
++#	@system=`uname`; \
++#	if test -f /usr/include/security/pam_appl.h; then \
++#	  if test '!' -d $(DESTDIR)$(PAM_PREFIX)/pam.d; then \
++#		$(mkinstalldirs) $(DESTDIR)$(PAM_PREFIX)/pam.d; \
++#		chmod 755 $(DESTDIR)$(PAM_PREFIX)/pam.d; \
++#	   fi; \
++#	   if test $$system = Linux; then \
++#		if test '!' -f $(DESTDIR)$(PAM_PREFIX)/pam.d/gnome-screensaver; then \
++#		     $(INSTALL_DATA) gnome-screensaver $(DESTDIR)$(PAM_PREFIX)/pam.d/gnome-screensaver; \
++#		fi; \
++#		if test "x$(PAM_PREFIX)" != "x/etc/pam.d"; then \
++#	             echo "***" ; \
++#	             echo "***  Warning: gnome-screensaver has been compiled with support for" ; \
++#	             echo "***           Pluggable Authentication Modules (PAM).  However, you may need to" ; \
++#	             echo "***           manually install $(PAM_PREFIX)/pam.d/gnome-screensaver" ; \
++#	             echo "***           to /etc/pam.d/gnome-screensaver.  Otherwise, unlocking might" ; \
++#	             echo "***           not work." ; \
++#	             echo "***" ; \
++#	             echo "***           Note: If you are using SuSE/Novell you may have to modify this file." ; \
++#	             echo "***" ; \
++#		fi; \
++#	   fi; \
++#	   if test $$system = SunOS; then \
++#	        echo "***" ; \
++#	        echo "***  Warning: gnome-screensaver has been compiled with support for" ; \
++#	        echo "***           Pluggable Authentication Modules (PAM).  However, you" ; \
++#	        echo "***           need to manually add authentication for gnome-screensaver in" ; \
++#	        echo "***           $(PAM_PREFIX)/pam.conf or /etc/pam.conf." ; \
++#	        echo "***           Otherwise, unlocking might not work." ; \
++#	        echo "***" ; \
++#	   fi; \
++#	fi
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

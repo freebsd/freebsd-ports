@@ -39,4 +39,6 @@ share/locale/sv/LC_MESSAGES/gnome-screensaver.mo
 share/locale/uk/LC_MESSAGES/gnome-screensaver.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-screensaver.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-screensaver.mo
+@dirrm share/gnome/pixmaps/backgrounds/cosmos
+@dirrm share/gnome/pixmaps/backgrounds
 @dirrm libexec/gnome-screensaver
