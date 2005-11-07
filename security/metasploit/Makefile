@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	metasploit
-PORTVERSION=	2.4
-PORTREVISION=	1
+PORTVERSION=	2.5
 CATEGORIES=	security
 MASTER_SITES=	http://www.metasploit.org/tools/
 DISTNAME=	framework-${PORTVERSION}
@@ -21,6 +20,11 @@ RUN_DEPENDS=	${SITE_PERL}/mach/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLin
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ''
+
+SCRIPTS=	msfcli msfconsole msfelfscan msfencode msflogdump msfpayload msfpescan \
+		msfupdate msfweb
 
 .include <bsd.port.pre.mk>
 
@@ -28,11 +32,16 @@ USE_PERL5_RUN=	yes
 IGNORE=		This port requires perl version 5.6.0 or higher.
 .endif
 
+post-patch:
+.for f in ${SCRIPTS}
+	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/${f}
+.endfor
+
 do-install:
 	${MKDIR} ${DATADIR}
 	${CP} -Rp ${WRKSRC}/ ${DATADIR}
-.	for i in msfcli msfconsole msfelfscan msfencode msflogdump msfpayload msfpescan msfupdate msfweb
-		${LN} -s ${DATADIR}/$i ${PREFIX}/bin
-.	endfor
+.for f in ${SCRIPTS}
+	${LN} -s ${DATADIR}/${f} ${PREFIX}/bin
+.endfor
 
 .include <bsd.port.post.mk>
