@@ -1,6 +1,6 @@
 bin/lisp
-share/doc/cmucl/README
-share/doc/cmucl/release-19a.txt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/release-%%VER%%.txt
 lib/cmucl/lisp.nm
 lib/cmucl/lisp.map
 lib/cmucl/internals.h
@@ -18,4 +18,4 @@ lib/cmucl/lib/subsystems/iodefs-library.x86f
 @dirrm lib/cmucl/lib/subsystems
 @dirrm lib/cmucl/lib
 @dirrm lib/cmucl
-@dirrm share/doc/cmucl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	cmucl
-PORTVERSION=	19a
+PORTVERSION=	19b
 CATEGORIES=	lang lisp
-MASTER_SITES=	ftp://ftp.common-lisp.net/pub/project/cmucl/release/19a/ \
-		http://www.pmsf.de/pub/cmucl/release/19a/ \
-		ftp://ftp.averillpark.net/cmucl/release/19a/ \
-		ftp://ftp.linux.org.uk/pub/lisp/cmucl/release/19a/ \
-		ftp://ftp.tepus.com/pub/project/cmucl/release/19a/
-DISTNAME=	cmucl-19a-x86-FreeBSD
+MASTER_SITES=	ftp://ftp.common-lisp.net/pub/project/cmucl/release/${PORTVERSION}/ \
+		http://www.pmsf.de/pub/cmucl/release/${PORTVERSION}/ \
+		ftp://ftp.averillpark.net/cmucl/release/${PORTVERSION}/ \
+		ftp://ftp.linux.org.uk/pub/lisp/cmucl/release/${PORTVERSION}/ \
+		ftp://ftp.tepus.com/pub/project/cmucl/release/${PORTVERSION}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-x86-FreeBSD
 
 MAINTAINER=	cracauer@cons.org
 COMMENT=	The CMU implementation of Common Lisp
@@ -24,6 +24,8 @@ USE_BZIP2=	YES
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 MAN1=		lisp.1 cmucl.1
+
+PLIST_SUB=	VER=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
@@ -36,11 +38,13 @@ do-install:
 	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} ${WRKDIR}/bin/lisp ${PREFIX}/bin
 	(cd ${WRKDIR} && ${FIND} lib | \
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX})
-	-${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/doc/cmucl/* ${DOCSDIR}
 	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} ${WRKDIR}/man/man1/cmucl.1 \
 		${PREFIX}/man/man1
 	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} ${WRKDIR}/man/man1/lisp.1 \
 		${PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/doc/cmucl/* ${DOCSDIR}
+.endif
 
 .include <bsd.port.post.mk>
