@@ -27,6 +27,8 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	OSTYPE=linux-gnu DATADIR=${DATADIR}
 
+BROKEN=	"Requires update for gtkmm 2.8"
+
 post-patch:
 	@${FIND} ${WRKSRC} -name "*Makefile*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|\.\./data|$$(DATADIR)|g ; \
