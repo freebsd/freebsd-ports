@@ -148,7 +148,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003acondition_002dwait.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003aget_002dmutex.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003ainterrupt_002dthread.html
-%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003ainterrupt_002dthread_002derror_002derrno.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003ainterrupt_002dthread_002derror_002dthread.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003alist_002dall_002dthreads.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dthread_003amake_002dmutex.html
@@ -532,11 +531,11 @@ lib/sbcl/systems/sb-posix.asd
 lib/sbcl/systems/sb-rotate-byte.asd
 lib/sbcl/systems/sb-rt.asd
 lib/sbcl/systems/sb-simple-streams.asd
+@exec mkdir -p %D/lib/sbcl/site-systems
+@exec mkdir -p %D/lib/sbcl/sb-posix/test-lab
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/sbcl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/asdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-@exec mkdir -p %D/lib/sbcl/site-systems
-@exec mkdir -p %D/lib/sbcl/sb-posix/test-lab
 @dirrm %%DOCSDIR%%
 @dirrm lib/sbcl/systems
 @dirrm lib/sbcl/site-systems

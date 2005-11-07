@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	lang lisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sbcl
@@ -31,10 +31,14 @@ LISP_CMD=	"lisp -noinit -batch"
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/*
+
 # Can currently only bootstrap using cmucl, which is i386-only
 ONLY_FOR_ARCHS=	i386
 
 MAN1=		sbcl.1
+INFO=		asdf sbcl
+INFODIR=	${PREFIX}/${INFO_PATH}
 
 .include <bsd.port.pre.mk>
 
@@ -46,29 +50,24 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-contrib_asdf-install_installer.lisp
 BUILD_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
 .endif
 
-post-extract:
-	(${FIND} ${WRKSRC} -type d -name CVS -print0 | ${XARGS} -0 ${RM} -rf)
+post-patch:
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 do-build:
-	(cd ${WRKSRC} && ${SH} make.sh ${LISP_CMD})
+	(cd ${WRKSRC} && ${SETENV} INSTALL_ROOT=${PREFIX} \
+		${SH} make.sh ${LISP_CMD})
+	(cd ${WRKSRC}/doc/manual && \
+		${GMAKE} MAKEINFO='makeinfo --no-split' info)
 
 do-install:
 	(cd ${WRKSRC} && ${SETENV} INSTALL_ROOT=${PREFIX} \
-	    MAN_DIR=${PREFIX}/man DOC_DIR=${DOCSDIR} \
-	    INFO_DIR=${DOCSDIR}/info NO_DOCS=${NO_DOCS} \
-	    ${SH} install.sh)
-	# sbcl creates these directories even when they're not needed
+		MAN_DIR=${PREFIX}/man DOC_DIR=${DOCSDIR} \
+		INFO_DIR=${INFODIR}  ${SH} install.sh)
 .if defined(NOPORTDOCS)
-	${RMDIR} ${DOCSDIR}/html
+	@${RMDIR} ${DOCSDIR}/html
 .endif
-	# we do not build the documentation
-	# perhaps this should be configurable
-	${RMDIR} ${DOCSDIR}/info
 
-test:
+test:	build
 	(cd ${WRKSRC}/tests && ${SH} run-tests.sh)
-
-post-patch:
-	${FIND} ${WRKSRC} -name '*.orig' -delete
 
 .include <bsd.port.post.mk>
