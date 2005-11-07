@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	plans
-PORTVERSION=	7.4.6
+PORTVERSION=	7.4.7
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.planscalendar.com/release/:plans \
 		http://www.freebsd.org/gifs/:logo
@@ -15,7 +15,7 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}:plans \
 		powerani.gif:logo
 EXTRACT_ONLY=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Good Web Calendar
 
 USE_ZIP=	yes
@@ -26,6 +26,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
 DIR=		www/data/plans
 PLIST_SUB+=	DIR=${DIR}
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-extract:
 	${CP} ${DISTDIR}/powerani.gif ${WRKSRC}/theme/graphics/freebsd.gif
