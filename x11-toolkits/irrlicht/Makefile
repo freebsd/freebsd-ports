@@ -32,7 +32,7 @@ EXAMPLEDIRS=	01.HelloWorld 02.Quake3Map 03.CustomSceneNode 04.Movement 05.UserIn
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64
+.if (${ARCH} == amd64) || (${ARCH} == ia64)
 CFLAGS+=	-fPIC
 .endif
 
