@@ -7,10 +7,15 @@
 
 PORTNAME=	spamilter
 PORTVERSION=	0.59
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.wanlink.com/spamilter/download/
+MASTER_SITE_SUBDIR=	dinoex
 EXTRACT_SUFX=	.tgz
+
+PATCH_SITES=	${MASTER_SITE_LOCAL} \
+PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
+PATCHFILES=	spamilter-0.59-2005-11-08.patch.gz
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A Sendmail LibMilter filter to block spam
@@ -51,7 +56,7 @@ IGNORE=		is unusable because of resource starvation in threads
 
 .if !defined(SENDMAIL_MILTER_IN_BASE)
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--sendmail_dir ${LOCALBASE}
+CONFIGURE_ARGS+=	--sendmail_dir "${LOCALBASE}"
 .endif
 #CFLAGS+=	-DDEBUG_TIMESTAMP
 
@@ -89,7 +94,16 @@ post-configure:
 		-e "s|^LIBDIRS=|#LIBDIRS=|" \
 		-e "s|/usr/local/bind|${LOCALBASE}/bind|" \
 		-e "s|/usr/local/|${PREFIX}/|" \
+		-e "s|<SUPPORT_POPAUTH\\([^>]*\\)>|\\1|" \
+		-e "s|<SUPPORT_LIBSPF[^>]*>| |" \
+		-e "s|<SUPPORT_SPF\\([^>]*\\)>| |" \
+		-e "s|<SUPPORT_PAM[^>]*>| |" \
+		-e "s|uam.[hco]| |" \
 		${WRKSRC}/Makefile
+	${REINPLACE_CMD} \
+		-e "s|#define SUPPORT_LIBSPF|#undef SUPPORT_LIBSPF|" \
+		-e "s|#define SUPPORT_PAM|#undef SUPPORT_PAM|" \
+		${WRKSRC}/config.h
 .if ${OSVERSION} > 500000
 	${REINPLACE_CMD} \
 		-e "s| install-ipfwmtad | |" \
