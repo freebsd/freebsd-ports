@@ -1,0 +1,124 @@
+#! /usr/bin/perl -w
+# ----------------------------------------------------------------------------
+# "THE BEER-WARE LICENSE" (Revision 42)
+# <tobez@tobez.org> wrote this file.  As long as you retain this notice you
+# can do whatever you want with this stuff. If we meet some day, and you think
+# this stuff is worth it, you can buy me a beer in return.   Anton Berezin
+# ----------------------------------------------------------------------------
+#
+# $Id$
+#
+# A command line version of biblical curse generator
+# (http://www.shipoffools.com/curses/index.html)
+#
+# The curses are theirs, the code is theirs,
+# I just translated it from JavaScript to Perl.
+#
+# If you are offended by this script, get a life!
+#
+use strict;
+use vars qw($VERSION);
+
+$VERSION = 0.02;
+
+my @mayYou = (
+	"I pray thou shalt",
+	"I hope you will",
+	"Behold, thou shalt",
+	"May you",
+	"Thou shalt",
+	"O that thou wouldest",
+);
+ 
+my @haveBadThingsHappen = (
+	"have more mother-in-laws than King Solomon",
+	"be pursued into the mountains by sex-mad baboons",
+	"be whipped with a thousand scorpions",
+	"be thrown into a den of hyperactive lions",
+	"be swallowed by a whale with excessively bad breath",
+	"be smitten with all-over boils",
+	"be mocked by eunuchs",
+	"be captured by Midianite maniacs",
+	"become as popular as a boil on the king's backside",
+	"be plagued with gnats, flies and locusts",
+	"be taunted by the king's concubines",
+	"fall under a speeding chariot",
+	"be as welcome as a fart in the queen's bedchamber",
+	"accidentally insult Goliath",
+	"go about weeping and wailing in sackcloth and ashes",
+	"go on a diet of crunchy, unsweetened locusts",
+	"be trampled by a herd of stampeding pigs",
+	"be cast onto a steaming dung-heap",
+	"be turned into a pillar of salt",
+	"see your pomegranates wither",
+	"beget difficult teenagers",
+	"be kicked by an incontinent camel",
+	"crash the king's best-loved chariot",
+);
+ 
+my @ohYou = (
+	"thou",
+	"O thou",
+	"O ye",
+);
+ 
+my @ofLittleFaith = (
+	"of little faith",
+	"whose name is but dung",
+	"who art a byword for idiocy",
+	"breaker of the commandments",
+	"discourager of the brethren",
+	"wolf in sheep's clothing",
+	"sad Pharisee",
+	"armpit of Satan",
+	"irritating inhabitant of Gath",
+	"child of Jezebel",
+	"son of thunder",
+	"relative of Herod",
+	"incompetent tax-collector",
+	"lazy Babylonian",
+	"babbling Assyrian",
+	"Amalekite dog",
+	"lying Girgashite",
+	"love-crazed Gittite",
+	"creature of the pit",
+	"bull of Bashan",
+	"Mesopotomian harlot",
+	"wayward winebibber",
+	"son of a Philistine",
+	"sulphurous nonentity",
+	"love-child of Methuselah",
+	"plaything of Beelzebub",
+	"dabbler in abominations",
+	"exceedingly foolish virgin",
+	"denizen of the underworld",
+	"offspring of a squashed cockroach",
+);
+ 
+my @hearThis = (
+	"Listen",
+	"Hear this",
+	"Take heed",
+	"Woe unto thee",
+	"Harken",
+);
+ 
+sub insult
+{
+	if (0.5 < rand) {
+		return
+			"$mayYou[rand @mayYou] ".
+			"$haveBadThingsHappen[rand @haveBadThingsHappen], ".
+			"$ohYou[rand @ohYou] ".
+			"$ofLittleFaith[rand @ofLittleFaith]!\n";
+	} else {
+		return
+			"$hearThis[rand @hearThis], ".
+			"$ohYou[rand @ohYou] ".
+			"$ofLittleFaith[rand @ofLittleFaith], ".
+			"for you will ".
+			"$haveBadThingsHappen[rand @haveBadThingsHappen]!\n";
+	}
+}
+
+print insult;

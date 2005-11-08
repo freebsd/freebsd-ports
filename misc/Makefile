@@ -22,6 +22,7 @@
     SUBDIR += bdelta
     SUBDIR += bestfit
     SUBDIR += bibletime
+    SUBDIR += biblical-curse
     SUBDIR += bidwatcher
     SUBDIR += birthday
     SUBDIR += bogosort
