@@ -1,8 +1,8 @@
 Index: gkfreq.c
 diff -u -p gkfreq.c.orig gkfreq.c
---- gkfreq.c.orig	Wed Jun  8 01:42:00 2005
-+++ gkfreq.c	Tue Jul  5 16:12:29 2005
-@@ -9,6 +9,9 @@
+--- gkfreq.c.orig	Fri Aug 12 01:53:22 2005
++++ gkfreq.c	Wed Nov  9 02:28:35 2005
+@@ -10,6 +10,9 @@
  #include <sys/time.h>
  #include <string.h>
  #include <unistd.h>
@@ -12,7 +12,7 @@ diff -u -p gkfreq.c.orig gkfreq.c
  
  #define	CONFIG_NAME	"gkfreq"
  #define	STYLE_NAME	"gkfreq"
-@@ -17,20 +20,36 @@ static GkrellmMonitor	*monitor;
+@@ -18,18 +21,34 @@ static GkrellmMonitor	*monitor;
  static GkrellmPanel	*panel;
  static GkrellmDecal	*decal_text1;
  static gint	style_id;
@@ -31,8 +31,6 @@ diff -u -p gkfreq.c.orig gkfreq.c
  }
 +#endif
  
- /* FIXED : whatdoineed2do@yahoo.co.uk
-  */
  static
  void read_MHz(char* buffer_, size_t bufsz_)
  {
@@ -48,8 +46,8 @@ diff -u -p gkfreq.c.orig gkfreq.c
 +#else
     FILE *f;
     if ( (f = fopen("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq", "r")) == NULL) {
-        /* this can happen if the the scaling is built as a module but it aint
-@@ -44,6 +63,7 @@ void read_MHz(char* buffer_, size_t bufs
+ 
+@@ -41,6 +60,7 @@ void read_MHz(char* buffer_, size_t bufs
         snprintf(buffer_, bufsz_, "%d MHz", i/1000 );
         fclose(f);
     }
@@ -57,7 +55,7 @@ diff -u -p gkfreq.c.orig gkfreq.c
  }
  
  static gint
-@@ -106,6 +126,12 @@ create_plugin(GtkWidget *vbox, gint firs
+@@ -103,6 +123,12 @@ create_plugin(GtkWidget *vbox, gint firs
  	if (first_create)
  	    g_signal_connect(G_OBJECT (panel->drawing_area), "expose_event",
      	        G_CALLBACK (panel_expose_event), NULL);

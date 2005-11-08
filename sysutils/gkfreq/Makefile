@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gkfreq
-PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTVERSION=	1.0
 #PORTREVISION=	0
 CATEGORIES=	sysutils
+DISTNAME=	gkrellm-gkfreq-${PORTVERSION}
 MASTER_SITES=	http://www.peakunix.net/downloads/
 
 MAINTAINER=	ume@FreeBSD.org
@@ -21,8 +21,5 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 PLIST_FILES=	libexec/gkrellm2/plugins/gkfreq.so
 
 USE_X_PREFIX=	yes
-
-post-patch:
-	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 .include <bsd.port.mk>
