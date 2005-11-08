@@ -9,10 +9,3 @@
  		{
  			message_die(CRITICAL_ERROR, 'Error creating new session', '', __LINE__, __FILE__, $sql);
  		}
-@@ -421,4 +421,4 @@
- 	return $url;
- }
- 
--?>
-\ No newline at end of file
-+?>
