@@ -1,0 +1,22 @@
+include/libsexymm/libsexymm.h
+include/libsexymm/libsexymm/icon-entry.h
+include/libsexymm/libsexymm/private/icon-entry_p.h
+include/libsexymm/libsexymm/private/spell-entry_p.h
+include/libsexymm/libsexymm/private/url-label_p.h
+include/libsexymm/libsexymm/spell-entry.h
+include/libsexymm/libsexymm/url-label.h
+include/libsexymm/libsexymm/wrap_init.h
+lib/libsexymm.a
+lib/libsexymm.so
+lib/libsexymm.so.1
+lib/libsexymm/include/libsexymmconfig.h
+lib/libsexymm/proc/m4/convert.m4
+lib/libsexymm/proc/m4/convert_libsexymm.m4
+libdata/pkgconfig/libsexymm.pc
+@dirrm lib/libsexymm/proc/m4
+@dirrm lib/libsexymm/proc
+@dirrm lib/libsexymm/include
+@dirrm lib/libsexymm
+@dirrm include/libsexymm/libsexymm/private
+@dirrm include/libsexymm/libsexymm
+@dirrm include/libsexymm
