@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xfce4-fm
-PORTVERSION=	4.2.2
-PORTREVISION=	2
+PORTVERSION=	4.2.3
+PORTREVISION=	0
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \

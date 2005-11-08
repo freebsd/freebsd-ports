@@ -1,5 +1,6 @@
 bin/xfce4-tips
 lib/xfce4/panel-plugins/libeyes.so
+share/locale/af/LC_MESSAGES/xfce4-toys.mo
 share/locale/ar/LC_MESSAGES/xfce4-toys.mo
 share/locale/az/LC_MESSAGES/xfce4-toys.mo
 share/locale/be/LC_MESSAGES/xfce4-toys.mo
@@ -11,7 +12,9 @@ share/locale/da/LC_MESSAGES/xfce4-toys.mo
 share/locale/de/LC_MESSAGES/xfce4-toys.mo
 share/locale/el/LC_MESSAGES/xfce4-toys.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-toys.mo
+share/locale/eo/LC_MESSAGES/xfce4-toys.mo
 share/locale/es/LC_MESSAGES/xfce4-toys.mo
+share/locale/es_MX/LC_MESSAGES/xfce4-toys.mo
 share/locale/et/LC_MESSAGES/xfce4-toys.mo
 share/locale/eu/LC_MESSAGES/xfce4-toys.mo
 share/locale/fa/LC_MESSAGES/xfce4-toys.mo
@@ -24,6 +27,7 @@ share/locale/hu/LC_MESSAGES/xfce4-toys.mo
 share/locale/it/LC_MESSAGES/xfce4-toys.mo
 share/locale/ja/LC_MESSAGES/xfce4-toys.mo
 share/locale/ko/LC_MESSAGES/xfce4-toys.mo
+share/locale/ku/LC_MESSAGES/xfce4-toys.mo
 share/locale/lt/LC_MESSAGES/xfce4-toys.mo
 share/locale/mr/LC_MESSAGES/xfce4-toys.mo
 share/locale/ms/LC_MESSAGES/xfce4-toys.mo
@@ -36,6 +40,7 @@ share/locale/pt_PT/LC_MESSAGES/xfce4-toys.mo
 share/locale/ro/LC_MESSAGES/xfce4-toys.mo
 share/locale/ru/LC_MESSAGES/xfce4-toys.mo
 share/locale/sk/LC_MESSAGES/xfce4-toys.mo
+share/locale/sl/LC_MESSAGES/xfce4-toys.mo
 share/locale/sv/LC_MESSAGES/xfce4-toys.mo
 share/locale/ta/LC_MESSAGES/xfce4-toys.mo
 share/locale/tr/LC_MESSAGES/xfce4-toys.mo
