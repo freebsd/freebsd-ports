@@ -18,8 +18,6 @@ BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrell
 LIB_DEPENDS=	fftw3.3:${PORTSDIR}/math/fftw3
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-LATEST_LINK=	gkrellmss2
-
 USE_X_PREFIX=	yes
 USE_GNOME=	esound gtk20
 USE_GCC=	3.4
