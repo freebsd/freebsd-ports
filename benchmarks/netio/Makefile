@@ -10,7 +10,7 @@ CATEGORIES=	benchmarks net
 MASTER_SITES=	http://www.netfuse.de/techarea/netio/
 DISTNAME=	netio114
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Network benchmark
 
 WRKSRC=		${WRKDIR}
