@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	web2ldap
-PORTVERSION=	0.15.22
+PORTVERSION=	0.16.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.web2ldap.de/download/ \
 		ftp://ftp.ipt.ru/pub/download/
@@ -26,29 +26,24 @@ SUB_FILES=	pkg-message
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/etc/web2ldap/web2ldapcnf/standalone.py
+	@${FIND} ${WRKSRC} -name '*.orig'  -o -name '*.bak' | ${XARGS} ${RM}
 
 do-build:
 	@(cd ${WRKSRC} && ${PYTHON_CMD} ./sbin/compile.py)
 
 do-install:
-	@${RM} -f ${WRKSRC}/fcgi/web2ldap.py.orig
-	@${RM} -f ${WRKSRC}/scgi/web2ldap.py.orig
-	@${RM} -f ${WRKSRC}/etc/web2ldap/web2ldapcnf/standalone.py.orig
-	@${RM} -f ${WRKSRC}/etc/web2ldap/web2ldapcnf/standalone.py.bak
-	@${RM} -f ${WRKSRC}/sbin/compile.py.orig
-	@${RM} -f ${WRKSRC}/sbin/web2ldap.py.orig
-	@${ECHO} "Installing program files..."
-	@cd ${WRKSRC}; \
-	${FIND} * -type f | ${GREP} -vE "^htdocs" | ${CPIO} -pd ${DATADIR}
-	@${MKDIR} ${DATADIR}/var ${DATADIR}/var/run ${DATADIR}/var/log
-	@if [ -w /var/log ]; then ${MKDIR} /var/log/web2ldap; fi
-.if !defined(NOPORTDOCS)
-	@${ECHO} "Installing document files..."
-	@cd ${WRKSRC}; \
-	${FIND} * -type f | ${GREP} "^htdocs" | ${CPIO} -pd ${DOCSDIR}
-.endif
+	@${ECHO_CMD} "==> Installing program files..."
+	@${MKDIR} ${DATADIR}
+	@(cd ${WRKSRC}; \
+		${FIND} * -type f | ${GREP} -vE "^htdocs" | ${CPIO} -pd ${DATADIR})
 
 post-install:
+.if !defined(NOPORTDOCS)
+	@${ECHO_CMD} "==> Installing document files..."
+	@(cd ${WRKSRC}; \
+		${FIND} * -type f | ${GREP} "^htdocs" | ${CPIO} -pd ${DOCSDIR})
+.endif
+	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
