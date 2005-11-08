@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- sdplib/port_misc.c.orig	Fri Jun 25 13:29:37 2004
-+++ sdplib/port_misc.c	Fri Jun 25 13:31:13 2004
+--- sdplib/port_misc.c.orig
++++ sdplib/port_misc.c
 @@ -47,6 +47,7 @@
  #  include <sys/unistd.h>
  #endif
@@ -11,13 +11,14 @@ $FreeBSD$
  #if defined (HAVE_UNISTD_H)
  #  include <unistd.h>
  #endif
-@@ -55,6 +56,9 @@
+@@ -54,6 +55,10 @@
+ #if defined (HAVE_SYSLOG_H)
  #  include <syslog.h>
  #endif
- 
++
 +#include <sys/types.h>
 +#include <sys/time.h>
 +#define HAVE_SYS_SELECT_H
+ 
  #if defined (HAVE_SYS_SELECT_H)
  #  include <sys/select.h>
- #endif
