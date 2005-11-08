@@ -33,6 +33,16 @@ MANLANG=	"" ru_RU.KOI8-R
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 600000
+MAKE_ARGS+=	-DWITHOUT_IPFIL
+WITHOUT_IPFIL=	yes
+.endif
+
+.if ${OSVERSION} >= 600000
+MAKE_ARGS+=	-DIPFW2
+IPFW2=		yes
+.endif
+
 pre-everything::
 	@${ECHO_MSG} "-------------------------------------------------------------------"
 .if !defined(WITHOUT_IPFW)
