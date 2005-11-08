@@ -7,7 +7,7 @@
 
 PORTNAME=		krb5
 PORTVERSION=		1.4.2
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/krb5/${PORTVERSION:C/\.[0-9]*$/&/:C/\.[0-9]*$//}/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
@@ -72,10 +72,6 @@ HTML_DOCS=		admin.html user-guide.html install.html
 HTML_OUTDIRS=		krb5-admin krb5-install
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 501000
-BROKEN=			Does not build
-.endif
 
 post-extract:
 	@${TAR} -C ${WRKDIR} -xzf ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz
