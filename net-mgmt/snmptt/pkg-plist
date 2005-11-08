@@ -3,8 +3,12 @@ sbin/snmptt-net-snmp-test
 sbin/snmpttconvert
 sbin/snmpttconvertmib
 sbin/snmptthandler
-etc/snmptt.ini
-etc/snmptt.conf.generic
+@unexec if cmp -s %D/etc/snmp/snmptt.ini %D/etc/snmp/snmptt.ini-dist; then rm -f %D/etc/snmp/snmptt.ini; fi
+etc/snmp/snmptt.ini-dist
+@exec [ ! -f %B/snmptt.ini ] && cp %B/%f %B/snmptt.ini
+@unexec if cmp -s %D/etc/snmp/snmptt.conf.generic %D/etc/snmp/snmptt.conf.generic-dist; then rm -f %D/etc/snmp/snmptt.conf.generic; fi
+etc/snmp/snmptt.conf.generic-dist
+@exec [ ! -f %B/snmptt.conf.generic ] && cp %B/%f %B/snmptt.conf.generic
 %%PORTDOCS%%%%DOCSDIR%%/faqs.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/layout1.css
@@ -12,5 +16,3 @@ etc/snmptt.conf.generic
 %%PORTDOCS%%%%DOCSDIR%%/snmpttconvert.html
 %%PORTDOCS%%%%DOCSDIR%%/snmpttconvertmib.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@cwd %%RC_DIR%%
-snmptt%%RC_SUFX%%
