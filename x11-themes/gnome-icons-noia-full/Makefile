@@ -11,6 +11,7 @@
 
 PORTNAME=	noia-full
 PORTVERSION=	20041102
+PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	teams/art.gnome.org/archive/themes/icon

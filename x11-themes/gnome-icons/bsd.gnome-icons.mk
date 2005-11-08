@@ -19,6 +19,9 @@ REASON=		Themes may contain artwork not done by the author. \
 USE_X_PREFIX=	yes
 PLIST=		${WRKDIR}/plist
 
+WANT_GNOME=	yes
+INSTALLS_ICONS=	yes
+
 pre-install:
 	@${RM} -rf ${PLIST}
 

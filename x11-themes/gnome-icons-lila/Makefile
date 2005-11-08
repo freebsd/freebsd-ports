@@ -11,6 +11,7 @@
 
 PORTNAME=	lila
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://lila-theme.uni.cc/files/tarballs/
 DISTNAME=	${PORTNAME}-gnome-${PORTVERSION}
