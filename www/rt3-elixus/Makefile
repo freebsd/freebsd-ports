@@ -18,10 +18,10 @@ BUILD_DEPENDS=	${SITE_PERL}/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTabl
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
 
 .if defined(WITH_APACHE2)
-BUILD_DEPENDS+=	${SITE_PERL}/MasonX/Apache2Handler.pm:${PORTSDIR}/www/p5-MasonX-Apache2Handler
+IGNORE=	This port is unsuitable to use with Apache 2.x
 .endif
 
-BROKEN=		Install fails
+BROKEN=		"Install fails"
 
 MASTERDIR=	${.CURDIR}/../../www/rt3
 MD5_FILE=	${.CURDIR}/distinfo
