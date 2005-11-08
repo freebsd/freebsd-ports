@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xshttpd
-DISTVERSION=	3.3b34
+DISTVERSION=	3.3g01
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 	ftp://mud.stack.nl/pub/xs-httpd/release/
@@ -26,6 +26,7 @@ USE_RC_SUBR=	xshttpd.sh
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 OPTIONS=	SSL "Enable https support" On \
 		LDAP "Enable ldap support" Off \
