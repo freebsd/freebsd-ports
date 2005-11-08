@@ -233,6 +233,12 @@ bin/gourmet
 %%PYTHON_SITELIBDIR%%/gourmet/mnemonic_manager.py
 %%PYTHON_SITELIBDIR%%/gourmet/mnemonic_manager.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/mnemonic_manager.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/nutrition/databaseGrabber.py
+%%PYTHON_SITELIBDIR%%/gourmet/nutrition/databaseGrabber.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/nutrition/databaseGrabber.pyo
+%%PYTHON_SITELIBDIR%%/gourmet/nutrition/parser_data.py
+%%PYTHON_SITELIBDIR%%/gourmet/nutrition/parser_data.pyc
+%%PYTHON_SITELIBDIR%%/gourmet/nutrition/parser_data.pyo
 %%PYTHON_SITELIBDIR%%/gourmet/optionTable.py
 %%PYTHON_SITELIBDIR%%/gourmet/optionTable.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/optionTable.pyo
@@ -279,7 +285,9 @@ bin/gourmet
 %%PYTHON_SITELIBDIR%%/gourmet/version.pyc
 %%PYTHON_SITELIBDIR%%/gourmet/version.pyo
 share/applications/gourmet.desktop
+%%DATADIR%%/ABBREV.txt
 %%DATADIR%%/FAQ
+%%DATADIR%%/WEIGHT.txt
 %%DATADIR%%/app.glade
 %%DATADIR%%/converter.glade
 %%DATADIR%%/databaseChooser.glade
@@ -298,41 +306,8 @@ share/applications/gourmet.desktop
 %%DATADIR%%/shopList.glade
 %%DATADIR%%/splash.png
 share/pixmaps/recbox.png
-share/locale/bg/LC_MESSAGES/gourmet.mo
-share/locale/ca/LC_MESSAGES/gourmet.mo
-share/locale/cs/LC_MESSAGES/gourmet.mo
-share/locale/da/LC_MESSAGES/gourmet.mo
-share/locale/de_AT/LC_MESSAGES/gourmet.mo
-share/locale/de_DE/LC_MESSAGES/gourmet.mo
-share/locale/el/LC_MESSAGES/gourmet.mo
-share/locale/es/LC_MESSAGES/gourmet.mo
-share/locale/es_ES/LC_MESSAGES/gourmet.mo
-share/locale/fr/LC_MESSAGES/gourmet.mo
-share/locale/gl/LC_MESSAGES/gourmet.mo
-share/locale/he/LC_MESSAGES/gourmet.mo
-share/locale/hu/LC_MESSAGES/gourmet.mo
-share/locale/it/LC_MESSAGES/gourmet.mo
-share/locale/nb/LC_MESSAGES/gourmet.mo
-share/locale/nl/LC_MESSAGES/gourmet.mo
-share/locale/nl_BE/LC_MESSAGES/gourmet.mo
-share/locale/nl_NL/LC_MESSAGES/gourmet.mo
-share/locale/pl/LC_MESSAGES/gourmet.mo
-share/locale/pt/LC_MESSAGES/gourmet.mo
-share/locale/pt_BR/LC_MESSAGES/gourmet.mo
-share/locale/pt_PT/LC_MESSAGES/gourmet.mo
-share/locale/sk/LC_MESSAGES/gourmet.mo
-share/locale/sv/LC_MESSAGES/gourmet.mo
-share/locale/sv_SE/LC_MESSAGES/gourmet.mo
-share/locale/tr/LC_MESSAGES/gourmet.mo
-@dirrm share/locale/de_DE/LC_MESSAGES
-@dirrm share/locale/de_DE
-@dirrm share/locale/nl_NL/LC_MESSAGES
-@dirrm share/locale/nl_NL
-@dirrm share/locale/nl_BE/LC_MESSAGES
-@dirrm share/locale/nl_BE
-@dirrm share/locale/sv_SE/LC_MESSAGES
-@dirrm share/locale/sv_SE
 @dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/gourmet/nutrition
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/importers/html_plugins
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/importers
 @dirrm %%PYTHON_SITELIBDIR%%/gourmet/exporters
