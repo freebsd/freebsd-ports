@@ -7,6 +7,7 @@
 
 PORTNAME=	pftpd
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/unix/pftpd/ \
 		ftp://ftp.ifm.liu.se/pub/unix/pftpd/
@@ -16,6 +17,7 @@ COMMENT=	Multithreaded anonymous FTP daemon
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		pftpd.1 rpad.1
 PLIST_FILES=	sbin/pftpd
@@ -26,6 +28,8 @@ post-extract:
 .endfor
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|mktemp|mkstemp|g' \
+		${WRKSRC}/src/rpa.c
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure \
 		${WRKSRC}/plib/configure
