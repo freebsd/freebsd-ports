@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freefem++
-DISTVERSION=	2.0-3
+DISTVERSION=	2.0-4
 CATEGORIES=	math science
 MASTER_SITES=	http://www.freefem.org/ff++/ftp/
 
@@ -44,7 +44,8 @@ CONFIGURE_ENV=		CPPFLAGS="${MPICFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
 LIBBLAS=	-lf2c -lf77blas -latlas -lgslcblas
 LIBARPACK=	-larpack -lalapack ${LIBBLAS}
 
-DOCS=		AUTHORS BUGS COPYING HISTORY README TODO
+DOC_TARGET=	manual-full.pdf
+PORTDOCS=	AUTHORS BUGS COPYING HISTORY README TODO ${DOC_TARGET}
 BADSAMPLES=	load/myfunction.o
 
 .include <bsd.port.pre.mk>
@@ -79,21 +80,27 @@ pre-configure:
 	@${REINPLACE_CMD} -e "s|mpiCC|${LOCALBASE}/mpich/bin/mpiCC|"	\
 		${WRKSRC}/src/mpi/Makefile.in
 
+post-build:
+.if !defined(NOPORTDOCS)
+	@(cd ${BUILD_WRKSRC}/DOC;	\
+	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${DOC_TARGET}; \
+	${CP} ${DOC_TARGET} ${BUILD_WRKSRC})
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-. for doc in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-. endfor
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 	@${ECHO_MSG} "===>  Documentation installed in ${DOCSDIR}."
 . for direx in "" -bug -chapt3 -eigen -load -mpi -other -tutorial
-	cd ${WRKSRC}/examples++${direx} && ${FIND} . -type d	\
+	@cd ${WRKSRC}/examples++${direx} && ${FIND} . -type d	\
 		-exec ${MKDIR} ${EXAMPLESDIR}/${direx:S/-//}/{} \;
-	cd ${WRKSRC}/examples++${direx} && ${FIND} -L . -type f	\
+	@cd ${WRKSRC}/examples++${direx} && ${FIND} -L . -type f	\
 		-exec ${INSTALL_DATA} ${WRKSRC}/examples++${direx}/{}	\
 			${EXAMPLESDIR}/${direx:S/-//} \;
 . endfor
-	 ${FIND} ${EXAMPLESDIR} -name "Makefile*" -delete
+	@${FIND} ${EXAMPLESDIR} -name "Makefile*" -delete
+	@${RMDIR} ${EXAMPLESDIR}/load/include
 . for sample in ${BADSAMPLES}
 	@${RM} ${EXAMPLESDIR}/${sample}
 . endfor
