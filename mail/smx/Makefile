@@ -151,7 +151,7 @@ pre-install:
 	pw groupmod smxc -m smxs
 	pw groupmod smxm -m smxs,smxq
 .if !defined(BATCH)
-	${SHELL} ${WRKSRC}/misc/sm.setup.sh
+	${SH} ${WRKSRC}/misc/sm.setup.sh
 .endif
 
 post-install:
