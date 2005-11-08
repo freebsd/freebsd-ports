@@ -32,10 +32,6 @@ include/ssp/unistd.h
 %%JAVA%%bin/%%GNU_HOST%%-gcj41
 %%JAVA%%bin/%%GNU_HOST%%-gcjh41
 %%JAVA%%include/ffi.h
-%%JAVA%%include/jawt.h
-%%JAVA%%include/jawt_md.h
-%%JAVA%%include/jni.h
-%%JAVA%%include/jni_md.h
 %%JAVA%%libdata/pkgconfig/libgcj.pc
 %%JAVA%%share/java/libgcj-%%GCC_VER%%.jar
 @comment Insert PLIST.lib here
