@@ -500,7 +500,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="60f8fe7b-3cfb-11da-baa2-0004614cc33d">
-    <topic>webcalendar -- multiple reports of websites getting defaced</topic>
+    <topic>webcalendar -- remote file inclusion vulnerability</topic>
     <affects>
       <package>
 	<name>WebCalendar</name>
@@ -509,22 +509,28 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>There is a vulnerability in includes/functions.php file.
-	  No details available.</p>
+	<p>WebCalendar is proven vulnerable to a remote file inclusion
+	  vulnerability.  The send_reminders.php does not properly
+	  verify the "includedir" parameter, giving remote attackers
+	  the possibility to include local and remote files.  These
+	  files can be used by the attacker to gain access to the
+	  system.</p>
       </body>
     </description>
     <references>
+      <bid>14651</bid>
+      <cvename>CVE-2005-2717</cvename>
       <url>http://sourceforge.net/forum/forum.php?thread_id=1342085&amp;forum_id=11587</url>
     </references>
     <dates>
       <discovery>2005-08-26</discovery>
       <entry>2005-10-15</entry>
-      <modified>2005-10-18</modified>
+      <modified>2005-11-08</modified>
     </dates>
   </vuln>
 
   <vuln vid="47bdabcf-3cf9-11da-baa2-0004614cc33d">
-    <topic>gallery2 -- a vulnerability has been discovered</topic>
+    <topic>gallery2 -- file disclosure vulnerability</topic>
     <affects>
       <package>
 	<name>gallery2</name>
@@ -550,11 +556,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>15108</bid>
+      <cvename>CVE-2005-3251</cvename>
       <url>http://dipper.info/security/20051012/</url>
     </references>
     <dates>
       <discovery>2005-10-12</discovery>
       <entry>2005-10-15</entry>
+      <modified>2005-11-08</modified>
     </dates>
   </vuln>
 
