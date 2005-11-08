@@ -5498,6 +5498,8 @@ librsync	ports/net/librsync
 libsamplerate	ports/audio/libsamplerate
 libsdb		ports/databases/libsdb
 libsectok	ports/security/libsectok
+libsexy		ports/x11-toolkits/libsexy
+libsexymm	ports/x11-toolkits/libsexymm
 libshbuf	ports/devel/libshbuf
 libshhcards	ports/games/libshhcards
 libshhmsg	ports/devel/libshhmsg
