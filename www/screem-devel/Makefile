@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	screem
-PORTVERSION=	0.14.3
-PORTREVISION=	1
+PORTVERSION=	0.16.0
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,9 +23,10 @@ USE_GNOME=	desktopfileutils gnomehack gnomemenus gnomeprefix gnometarget \
 USE_XPM=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-enchant
 INSTALLS_OMF=	yes
 
 GCONF_SCHEMAS=	screem.schemas
