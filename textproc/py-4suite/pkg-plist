@@ -2312,6 +2312,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/modules/Ft.Lib.number.html
 %%PORTDOCS%%%%DOCSDIR%%/html/modules/Ft.Rdf.Container.html
 %%PORTDOCS%%%%DOCSDIR%%/html/modules/Ft.Rdf.Drivers.BerkeleyDB.html
+%%WITH_PYBSDDB%%%%PORTDOCS%%%%DOCSDIR%%/html/modules/Ft.Rdf.Drivers.BerkeleyDBTxnTable.html
 %%PORTDOCS%%%%DOCSDIR%%/html/modules/Ft.Rdf.Drivers.DataBaseExceptions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/modules/Ft.Rdf.Drivers.Dbm.html
 %%PORTDOCS%%%%DOCSDIR%%/html/modules/Ft.Rdf.Drivers.Memory.html
@@ -2492,6 +2493,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/modules/Ft.Server.Server.Drivers.SessionManager.html
 %%PORTDOCS%%%%DOCSDIR%%/html/modules/Ft.Server.Server.Drivers.Util.html
 %%PORTDOCS%%%%DOCSDIR%%/html/modules/Ft.Server.Server.Drivers.html
+%%WITH_PYBDBXML%%%%PORTDOCS%%%%DOCSDIR%%/xml/modules/Ft.Server.Server.Drivers.BerkeleyDB.BerkeleyDBContainer.xml
+%%WITH_PYBDBXML%%%%PORTDOCS%%%%DOCSDIR%%/html/modules/Ft.Server.Server.Drivers.BerkeleyDB.BerkeleyDBContainer.html
+%%WITH_PYBDBXML%%%%PORTDOCS%%%%DOCSDIR%%/xml/modules/Ft.Server.Server.Drivers.BerkeleyDB.Util.xml
+%%WITH_PYBDBXML%%%%PORTDOCS%%%%DOCSDIR%%/html/modules/Ft.Server.Server.Drivers.BerkeleyDB.Util.html
 %%PORTDOCS%%%%DOCSDIR%%/html/modules/Ft.Server.Server.Drivers.pAclObject.html
 %%PORTDOCS%%%%DOCSDIR%%/html/modules/Ft.Server.Server.FtRpc.FtRpcHandler.html
 %%PORTDOCS%%%%DOCSDIR%%/html/modules/Ft.Server.Server.FtRpc.html
@@ -2800,6 +2805,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/xml/modules/Ft.Lib.xml
 %%PORTDOCS%%%%DOCSDIR%%/xml/modules/Ft.Rdf.Container.xml
 %%PORTDOCS%%%%DOCSDIR%%/xml/modules/Ft.Rdf.Drivers.BerkeleyDB.xml
+%%WITH_PYBSDDB%%%%PORTDOCS%%%%DOCSDIR%%/xml/modules/Ft.Rdf.Drivers.BerkeleyDBTxnTable.xml
 %%PORTDOCS%%%%DOCSDIR%%/xml/modules/Ft.Rdf.Drivers.DataBaseExceptions.xml
 %%PORTDOCS%%%%DOCSDIR%%/xml/modules/Ft.Rdf.Drivers.Dbm.xml
 %%PORTDOCS%%%%DOCSDIR%%/xml/modules/Ft.Rdf.Drivers.Memory.xml

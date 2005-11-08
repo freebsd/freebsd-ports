@@ -7,6 +7,7 @@
 
 PORTNAME=	4suite
 PORTVERSION=	1.0.b1
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	ftp://ftp.4suite.org/pub/4Suite/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -20,8 +21,10 @@ COMMENT=	A collection of Python tools for XML and RDF processing
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i "" -E
-USE_PYTHON=	2.2+
+USE_PYTHON=	2.2.1+
 USE_PYDISTUTILS=	yes
+
+CONFLICTS=	py*-4Suite-1* py*-xml-0.7*
 
 .include <bsd.port.pre.mk>
 
@@ -59,6 +62,16 @@ PYDISTUTILS_INSTALLARGS=	--without-docs
 .else
 PYDISTUTILS_BUILDARGS=		--with-docs
 PYDISTUTILS_INSTALLARGS=	--with-docs
+.if exists(${PYTHON_SITELIBDIR}/_bsddb.so) || exists(${PYTHON_SITELIBDIR}/bsddb3/_pybsddb.so)
+PLIST_SUB+=	WITH_PYBSDDB=""
+.else
+PLIST_SUB+=	WITH_PYBSDDB="@comment "
+.endif
+.if exists(${PYTHON_SITELIBDIR}/_dbxml.so)
+PLIST_SUB+=	WITH_PYBDBXML=""
+.else
+PLIST_SUB+=	WITH_PYBDBXML="@comment "
+.endif
 .endif
 
 post-extract:
@@ -69,6 +82,5 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/${DOCSDIR}
 .endif
-	@ ${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
