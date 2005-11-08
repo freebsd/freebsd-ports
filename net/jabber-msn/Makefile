@@ -5,12 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	msn
-PORTVERSION=	1.3
+PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://msn-transport.jabberstudio.org/
+MASTER_SITES=	http://msn-transport.jabberstudio.org/old/
 PKGNAMEPREFIX=	jabber-
 PKGNAMESUFFIX=	-transport
-DISTNAME=	msn-transport-1.3-cvs3
+DISTNAME=	msn-transport-1.3.0
 DIST_SUBDIR=	jabber
 
 MAINTAINER=	martijn@pacno.net
@@ -21,9 +22,9 @@ BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net/jabber
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+= --with-jabberd=${PREFIX}/include/jabber \
+CONFIGURE_ARGS+=--with-jabberd=${PREFIX}/include/jabber \
 		--with-pth=${LOCALBASE}/include/pth
-CONFIGURE_ENV=  LDFLAGS=-L${LOCALBASE}/lib
+CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib
 
 PORTDOCS=	README
 
