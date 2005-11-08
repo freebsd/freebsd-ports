@@ -33,6 +33,8 @@ PLIST_SUB=	VERSION="2.6" API_VERSION="2.6"
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/examples//' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^gentoo_ltmain_version=/s/`.*`/$$gentoo_lt_version/' \
+		${WRKSRC}/configure
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -E '/^SUBDIRS = /s/(docs|examples)//g' ${WRKSRC}/Makefile.in
 .endif
