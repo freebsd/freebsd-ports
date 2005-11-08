@@ -22,6 +22,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+RUN_DEPENDS=	Xvfb:${X_VFBSERVER_PORT}
 
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
