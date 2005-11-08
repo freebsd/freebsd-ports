@@ -61,6 +61,9 @@
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/exchange.py
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/posixaccount.py
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/activedirectory.py
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/ibmds.py
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/pilotperson.py
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/vpim.py
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/__init__.py
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/entrust.py
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/samba.pyc
@@ -69,6 +72,9 @@
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/exchange.pyc
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/posixaccount.pyc
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/activedirectory.pyc
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/ibmds.pyc
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/pilotperson.pyc
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/vpim.pyc
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/__init__.pyc
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/entrust.pyc
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/ppolicy.py
@@ -122,6 +128,7 @@
 %%DATADIR%%/etc/web2ldap/templates/add_olcBdbConfig_AddressBook.ldif
 %%DATADIR%%/etc/web2ldap/templates/add_olcHdbConfig_UnixUsers.ldif
 %%DATADIR%%/etc/web2ldap/templates/add_olcSchemaConfig.ldif
+%%DATADIR%%/etc/web2ldap/templates/add_olcIncludeFile.ldif
 %%DATADIR%%/etc/web2ldap/templates/inputform_olcBdbConfig.html
 %%DATADIR%%/etc/dumpasn1.cfg
 %%DATADIR%%/fcgi/web2ldap.py
@@ -249,7 +256,6 @@
 %%DATADIR%%/scgi/web2ldap.py
 %%DATADIR%%/scgi/web2ldap.pyc
 %%DATADIR%%/web2ldap.spec
-@exec mkdir -p /var/log/web2ldap
 @unexec rmdir /var/log/web2ldap 2>/dev/null || true
 @dirrm %%DATADIR%%/var/run
 @dirrm %%DATADIR%%/var/log
