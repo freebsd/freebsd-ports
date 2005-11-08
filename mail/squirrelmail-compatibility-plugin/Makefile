@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		squirrelmail-${SQUIRREL_PLUGIN_NAME}-plugin
-PORTVERSION=		2.0
+PORTVERSION=		2.0.2
 CATEGORIES=		mail www
 MASTER_SITES=		http://www.squirrelmail.org/plugins/
 DISTNAME=		${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}
@@ -50,12 +50,11 @@ pre-everything::
 
 do-install:
 	${CP} -rp ${WRKSRC}/${SQUIRREL_PLUGIN_NAME} ${SQUIRRELDIR}/plugins
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${SQUIRRELDIR}/plugins/${SQUIRREL_PLUGIN_NAME}
 
 post-install:
 	@${ECHO} "Patching SquirrelMail for compatibility plugin"
 	@${ECHO} ""
-	${PATCH} -sN -p0 -d ${SQUIRRELDIR}/plugins < ${SQUIRRELDIR}/plugins/compatibility/patches/compatibility_patch-1.4.4.diff
+	${PATCH} -sN -p0 -d ${SQUIRRELDIR}/plugins < ${SQUIRRELDIR}/plugins/compatibility/patches/compatibility_patch-1.4.5.diff
 	@${ECHO} ""
 
 .ifndef WITHOUT_ACTIVATE
