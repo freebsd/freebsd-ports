@@ -7,6 +7,7 @@
 
 PORTNAME=	ucblogo
 PORTVERSION=	5.5
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cs.berkeley.edu/~bh/downloads/
 DISTNAME=	${PORTNAME}

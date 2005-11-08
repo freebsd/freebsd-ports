@@ -474,8 +474,6 @@ lib/logo/logolib/ycor
 %%EXAMPLESDIR%%/csls/student
 %%EXAMPLESDIR%%/csls/tower
 %%EXAMPLESDIR%%/csls/ttt
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 %%PORTDOCS%%%%DOCSDIR%%/usermanual
 %%WITH_FULL_DOCS%%share/doc/ucblogo/html/usermanual.html
 %%WITH_FULL_DOCS%%share/doc/ucblogo/html/usermanual_1.html
