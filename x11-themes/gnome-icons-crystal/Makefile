@@ -11,6 +11,7 @@
 
 PORTNAME=	crystal
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://files.customize.org/gicons/
 DISTNAME=	CrystalSVGforGnomeIcons1-2-0_1082838150

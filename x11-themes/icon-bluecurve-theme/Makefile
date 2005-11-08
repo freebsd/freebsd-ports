@@ -6,12 +6,16 @@
 #
 
 PORTNAME=	icon-bluecurve-theme
+PORTREVISION=	1
 
 COMMENT=	The Bluecurve icon set
 
 BUILD_DEPENDS=	icon-slicer:${PORTSDIR}/graphics/icon-slicer
 
 MASTERDIR=	${.CURDIR}/../bluecurve-themes
+
+WANT_GNOME=	yes
+INSTALLS_ICONS=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/art/icon/Bluecurve/sheets
 BC_HIERS=	${BUILD_WRKSRC}/Bluecurve:${PREFIX}/share/icons/Bluecurve
