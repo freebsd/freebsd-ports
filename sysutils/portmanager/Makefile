@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	portmanager
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://portmanager.sunsite.dk/distfiles/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	portmanager
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ringworm01@gmail.com
 COMMENT=	FreeBSD installed ports status and safe update utility
 
 MAN1=		portmanager.1
@@ -45,13 +45,10 @@ OPTIONS=	DEBUG	"Enables debug support and all compile warning"	off
 CONFIGURE_ARGS+=	--with-debug=yes
 .endif
 
-post-patch:
-.if ${PORTREVISION} != 0
+post-configure:
 	@${REINPLACE_CMD} -e    \
 		's|PACKAGE_VERSION "${PORTVERSION}"|PACKAGE_VERSION "${PORTVERSION}_${PORTREVISION}"|g' \
 		${WRKSRC}/externVars.h.in
-.endif
-
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
