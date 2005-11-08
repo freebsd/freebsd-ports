@@ -28,6 +28,7 @@ BUILD_DEPENDS=	lisp:${PORTSDIR}/lang/cmucl
 LISP_CMD=	"lisp -noinit -batch"
 .endif
 
+USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
@@ -51,7 +52,10 @@ BUILD_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name '*.orig' -delete
+	@${REINPLACE_CMD} -E -e \
+		's|CFLAGS = .*|CFLAGS = ${CFLAGS} -DSBCL_HOME=\\"${PREFIX}/lib/sbcl/\\"|' \
+		${WRKSRC}/src/runtime/GNUmakefile
+	@${FIND} ${WRKSRC} -name '*.orig' -o -name '*.bak' | ${XARGS} ${RM}
 
 do-build:
 	(cd ${WRKSRC} && ${SETENV} INSTALL_ROOT=${PREFIX} \
