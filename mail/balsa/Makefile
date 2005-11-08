@@ -8,7 +8,7 @@
 
 PORTNAME=	balsa
 PORTVERSION=	2.3.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/
 DISTNAME=	balsa-${PORTVERSION}
@@ -73,5 +73,9 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|^(HICOLOR_ICON_DIR)[^/]+/|\1=${PREFIX}/|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+
+post-install:
+	@${X11BASE}/bin/gtk-update-icon-cache -f -q \
+		${PREFIX}/share/gnome/balsa/hicolor
 
 .include <bsd.port.post.mk>
