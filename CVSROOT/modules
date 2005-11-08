@@ -7043,6 +7043,7 @@ openrm		ports/graphics/openrm
 opensc		ports/security/opensc
 openscep	ports/security/openscep
 opensched	ports/textproc/opensched
+openser		ports/net/openser
 openslp		ports/net/openslp
 opensp		ports/textproc/opensp
 openspc		ports/audio/openspc
