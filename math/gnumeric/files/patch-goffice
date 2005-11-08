@@ -1,0 +1,545 @@
+--- src/sheet-object-graph.c.orig	Sun Sep  4 15:05:12 2005
++++ src/sheet-object-graph.c	Tue Nov  8 15:24:25 2005
+@@ -280,27 +280,33 @@
+ 
+ static void
+ sheet_object_graph_write_object (SheetObject const *so, const char *format,
+-				GsfOutput *output, GError **err)
++				 GsfOutput *output, GError **err)
+ {
+ 	SheetObjectGraph *sog = SHEET_OBJECT_GRAPH (so);
+-	xmlDocPtr pDoc = xmlNewDoc ((xmlChar const*)"1.0");
+-	xmlChar *mem;
+-	int size;
++	GsfXMLOut *xout;
+ 	char *old_num_locale, *old_monetary_locale;
+-	GogObject *graph = gog_object_dup (GOG_OBJECT (sog->graph), NULL, gog_dataset_dup_to_simple);
++	GogObject *graph;
++
+ 	g_return_if_fail (strcmp (format, "application/x-goffice-graph") == 0);
++
+ 	old_num_locale = g_strdup (go_setlocale (LC_NUMERIC, NULL));
+ 	go_setlocale (LC_NUMERIC, "C");
+ 	old_monetary_locale = g_strdup (go_setlocale (LC_MONETARY, NULL));
+-	go_setlocale(LC_MONETARY, "C");
+-	pDoc->children = gog_object_write_xml (graph, pDoc);
++	go_setlocale (LC_MONETARY, "C");
++	go_set_untranslated_bools ();
++
++	graph = gog_object_dup (GOG_OBJECT (sog->graph),
++		NULL, gog_dataset_dup_to_simple);
++	xout = gsf_xml_out_new (output);
++	gog_object_write_xml_sax (GOG_OBJECT (graph), xout);
++	g_object_unref (xout);
+ 	g_object_unref (graph);
+-	xmlDocDumpMemory (pDoc, &mem, &size);
++
++	/* go_setlocale restores bools to locale translation */
+ 	go_setlocale (LC_MONETARY, old_monetary_locale);
+ 	g_free (old_monetary_locale);
+ 	go_setlocale (LC_NUMERIC, old_num_locale);
+ 	g_free (old_num_locale);
+-	gsf_output_write (output, size, (guint8 const*) mem);
+ }
+ 
+ /* 
+@@ -337,9 +343,8 @@
+ 		l = g_slist_prepend (l, (gpointer) (fmts + i));
+ 	l = g_slist_reverse (l);
+ 
+-	wbcg = scg_get_wbcg (SHEET_CONTROL_GUI (sc));
+-
+ #warning "This violates model gui barrier"
++	wbcg = scg_get_wbcg (SHEET_CONTROL_GUI (sc));
+ 	uri = gui_get_image_save_info (wbcg_toplevel (wbcg), l, &sel_fmt);
+ 	if (!uri)
+ 		goto out;
+@@ -380,16 +385,6 @@
+ 	return FALSE;
+ }
+ 
+-static gboolean
+-sheet_object_graph_write_xml_dom (SheetObject const *so,
+-				  XmlParseContext const *ctxt, xmlNode *parent)
+-{
+-	SheetObjectGraph *sog = SHEET_OBJECT_GRAPH (so);
+-	xmlNode *res = gog_object_write_xml (GOG_OBJECT (sog->graph), ctxt->doc);
+-	if (res != NULL)
+-		xmlAddChild (parent, res);
+-	return FALSE;
+-}
+ static void
+ sheet_object_graph_write_xml_sax (SheetObject const *so, GsfXMLOut *output)
+ {
+@@ -398,6 +393,21 @@
+ }
+ 
+ static void
++sog_xml_finish (GogObject *graph, SheetObject *so)
++{
++	sheet_object_graph_set_gog (so, GOG_GRAPH (graph));
++	g_object_unref (graph);
++}
++
++static gboolean
++sheet_object_graph_prep_xml_sax (SheetObject const *so,
++				 GsfXMLIn *xin, xmlChar const **attrs)
++{
++	gog_object_sax_push_parser (xin, attrs,
++		(GogObjectSaxHandler) sog_xml_finish, so);
++}
++
++static void
+ sheet_object_graph_copy (SheetObject *dst, SheetObject const *src)
+ {
+ 	SheetObjectGraph const *sog = SHEET_OBJECT_GRAPH (src);
+@@ -512,8 +522,8 @@
+ 	so_class->bounds_changed     = sheet_object_graph_bounds_changed;
+ 	so_class->populate_menu	     = sheet_object_graph_populate_menu;
+ 	so_class->read_xml_dom	     = sheet_object_graph_read_xml_dom;
+-	so_class->write_xml_dom	     = sheet_object_graph_write_xml_dom;
+ 	so_class->write_xml_sax	     = sheet_object_graph_write_xml_sax;
++//	so_class->prep_xml_sax	     = sheet_object_graph_prep_xml_sax;
+ 	so_class->copy               = sheet_object_graph_copy;
+ 	so_class->user_config        = sheet_object_graph_user_config;
+ 	so_class->assign_to_sheet    = sheet_object_graph_set_sheet;
+===================================================================
+RCS file: /cvs/gnome/gnumeric/src/sheet-object-image.c,v
+retrieving revision 1.59
+retrieving revision 1.60
+diff -u -r1.59 -r1.60
+--- src/sheet-object-image.c	2005/08/11 15:22:49	1.59
++++ src/sheet-object-image.c	2005/11/06 02:21:57	1.60
+@@ -566,18 +566,6 @@
+ 	return FALSE;
+ }
+ 
+-static gboolean
+-sheet_object_image_write_xml_dom (SheetObject const *so,
+-				  XmlParseContext const *ctxt, xmlNodePtr tree)
+-{
+-	SheetObjectImage *soi;
+-
+-	g_return_val_if_fail (IS_SHEET_OBJECT_IMAGE (so), TRUE);
+-	soi = SHEET_OBJECT_IMAGE (so);
+-
+-	return FALSE;
+-}
+-
+ static void
+ sheet_object_image_write_xml_sax (SheetObject const *so, GsfXMLOut *output)
+ {
+@@ -691,7 +679,6 @@
+ 	sheet_object_class->new_view	  	= sheet_object_image_new_view;
+ 	sheet_object_class->populate_menu	= sheet_object_image_populate_menu;
+ 	sheet_object_class->read_xml_dom	= sheet_object_image_read_xml_dom;
+-	sheet_object_class->write_xml_dom	= sheet_object_image_write_xml_dom;
+ 	sheet_object_class->write_xml_sax	= sheet_object_image_write_xml_sax;
+ 	sheet_object_class->copy		= sheet_object_image_copy;
+ 	sheet_object_class->user_config		= NULL;
+===================================================================
+RCS file: /cvs/gnome/gnumeric/src/sheet-object-widget.c,v
+retrieving revision 1.156
+retrieving revision 1.158
+diff -u -r1.156 -r1.158
+--- src/sheet-object-widget.c	2005/09/28 13:13:47	1.156
++++ src/sheet-object-widget.c	2005/11/07 13:34:16	1.158
+@@ -116,7 +116,7 @@
+ #define SOW_CLASS(so)	 	     (SHEET_OBJECT_WIDGET_CLASS (G_OBJECT_GET_CLASS(so)))
+ 
+ #define SOW_MAKE_TYPE(n1, n2, fn_config, fn_set_sheet, fn_clear_sheet,			\
+-		      fn_copy, fn_write_dom, fn_read_dom, fn_write_sax,			\
++		      fn_copy, fn_read_dom, fn_write_sax,				\
+ 	              fn_get_property, fn_set_property, class_init_code)		\
+ static void										\
+ sheet_widget_ ## n1 ## _class_init (GObjectClass *object_class)				\
+@@ -130,7 +130,6 @@
+ 	so_class->assign_to_sheet	= fn_set_sheet;					\
+ 	so_class->remove_from_sheet	= fn_clear_sheet;				\
+ 	so_class->copy			= fn_copy;					\
+-	so_class->write_xml_dom		= fn_write_dom;					\
+ 	so_class->read_xml_dom		= fn_read_dom;					\
+ 	so_class->write_xml_sax		= fn_write_sax;					\
+ 	sow_class->create_widget     	= &sheet_widget_ ## n1 ## _create_widget;	\
+@@ -167,19 +166,6 @@
+ }
+ 
+ static void
+-dom_write_dep (xmlNodePtr tree, GnmDependent const *dep, char const *id)
+-{
+-	if (dep->expression != NULL) {
+-		GnmParsePos pos;
+-		char *val = gnm_expr_as_string (dep->expression,
+-			parse_pos_init_sheet (&pos, dep->sheet),
+-			gnm_expr_conventions_default);
+-		xml_node_set_cstr (tree, id, val);
+-		g_free (val);
+-	}
+-}
+-
+-static void
+ read_dep (GnmDependent *dep, char const *name,
+ 	  xmlNodePtr tree, XmlParseContext const *context)
+ {
+@@ -297,18 +283,6 @@
+ }
+ 
+ static gboolean
+-sheet_widget_frame_write_xml_dom (SheetObject const 	*so,
+-				  XmlParseContext const *context,
+-				  xmlNodePtr tree)
+-{
+-	SheetWidgetFrame *swf = SHEET_WIDGET_FRAME (so);
+-
+-	xml_node_set_cstr (tree, "Label", swf->label);
+-
+-	return FALSE;
+-}
+-
+-static gboolean
+ sheet_widget_frame_read_xml_dom (SheetObject *so, char const *typename,
+ 				 XmlParseContext const *context,
+ 				 xmlNodePtr tree)
+@@ -468,7 +442,6 @@
+ 	       NULL,
+ 	       NULL,
+ 	       &sheet_widget_frame_copy,
+-	       &sheet_widget_frame_write_xml_dom,
+ 	       &sheet_widget_frame_read_xml_dom,
+ 	       &sheet_widget_frame_write_xml_sax,
+ 	       NULL,
+@@ -545,19 +518,6 @@
+ }
+ 
+ static gboolean
+-sheet_widget_button_write_xml_dom (SheetObject const	 *so,
+-				   XmlParseContext const *context,
+-				   xmlNodePtr tree)
+-{
+-	// FIXME: markup
+-	SheetWidgetButton *swb = SHEET_WIDGET_BUTTON (so);
+-
+-	xml_node_set_cstr (tree, "Label", swb->label);
+-
+-	return FALSE;
+-}
+-
+-static gboolean
+ sheet_widget_button_read_xml_dom (SheetObject *so, char const *typename,
+ 				  XmlParseContext const *context,
+ 				  xmlNodePtr tree)
+@@ -666,7 +626,6 @@
+ 	       NULL,
+ 	       NULL,
+ 	       sheet_widget_button_copy,
+-	       sheet_widget_button_write_xml_dom,
+ 	       sheet_widget_button_read_xml_dom,
+ 	       sheet_widget_button_write_xml_sax,
+ 	       sheet_widget_button_get_property,
+@@ -1048,22 +1007,6 @@
+ }
+ 
+ static gboolean
+-sheet_widget_adjustment_write_xml_dom (SheetObject const     *so,
+-				       XmlParseContext const *context,
+-				       xmlNodePtr tree)
+-{
+-	SheetWidgetAdjustment *swa = SHEET_WIDGET_ADJUSTMENT (so);
+-
+-	xml_node_set_double (tree, "Min", swa->adjustment->lower, 2);
+-	xml_node_set_double (tree, "Max", swa->adjustment->upper, 2); /* allow scrolling to max */
+-	xml_node_set_double (tree, "Inc", swa->adjustment->step_increment, 2);
+-	xml_node_set_double (tree, "Page", swa->adjustment->page_increment, 2);
+-	xml_node_set_double  (tree, "Value", swa->adjustment->value, 2);
+-	dom_write_dep (tree, &swa->dep, "Input");
+-	return FALSE;
+-}
+-
+-static gboolean
+ sheet_widget_adjustment_read_xml_dom (SheetObject *so, char const *typename,
+ 				      XmlParseContext const *context,
+ 				      xmlNodePtr tree)
+@@ -1122,7 +1065,6 @@
+ 	       &sheet_widget_adjustment_set_sheet,
+ 	       &sheet_widget_adjustment_clear_sheet,
+ 	       &sheet_widget_adjustment_copy,
+-	       &sheet_widget_adjustment_write_xml_dom,
+ 	       &sheet_widget_adjustment_read_xml_dom,
+ 	       &sheet_widget_adjustment_write_xml_sax,
+ 	       NULL,
+@@ -1659,18 +1601,6 @@
+ }
+ 
+ static gboolean
+-sheet_widget_checkbox_write_xml_dom (SheetObject const 	   *so,
+-				     XmlParseContext const *context,
+-				     xmlNodePtr tree)
+-{
+-	SheetWidgetCheckbox *swc = SHEET_WIDGET_CHECKBOX (so);
+-	xml_node_set_cstr (tree, "Label", swc->label);
+-	xml_node_set_int  (tree, "Value", swc->value);
+-	dom_write_dep (tree, &swc->dep, "Input");
+-	return FALSE;
+-}
+-
+-static gboolean
+ sheet_widget_checkbox_read_xml_dom (SheetObject *so, char const *typename,
+ 				    XmlParseContext const *context,
+ 				    xmlNodePtr tree)
+@@ -1730,7 +1660,6 @@
+ 	       &sheet_widget_checkbox_set_sheet,
+ 	       &sheet_widget_checkbox_clear_sheet,
+ 	       &sheet_widget_checkbox_copy,
+-	       &sheet_widget_checkbox_write_xml_dom,
+ 	       &sheet_widget_checkbox_read_xml_dom,
+ 	       &sheet_widget_checkbox_write_xml_sax,
+ 	       &sheet_widget_checkbox_get_property,
+@@ -1961,7 +1890,6 @@
+ 	       NULL,
+ 	       NULL,
+ 	       NULL,
+-	       NULL,
+ 	       &sheet_widget_radio_button_get_property,
+ 	       &sheet_widget_radio_button_set_property,
+ 	       {
+@@ -2114,17 +2042,6 @@
+ }
+ 
+ static gboolean
+-sheet_widget_list_base_write_xml_dom (SheetObject const 	*so,
+-				      XmlParseContext const *context,
+-				      xmlNodePtr tree)
+-{
+-	SheetWidgetListBase *swl = SHEET_WIDGET_LIST_BASE (so);
+-	dom_write_dep (tree, &swl->content_dep, "Content");
+-	dom_write_dep (tree, &swl->output_dep, "Output");
+-	return FALSE;
+-}
+-
+-static gboolean
+ sheet_widget_list_base_read_xml_dom (SheetObject *so, char const *typename,
+ 				     XmlParseContext const *context,
+ 				     xmlNodePtr tree)
+@@ -2152,7 +2069,6 @@
+ 	       &sheet_widget_list_base_set_sheet,
+ 	       &sheet_widget_list_base_clear_sheet,
+ 	       NULL,
+-	       &sheet_widget_list_base_write_xml_dom,
+ 	       &sheet_widget_list_base_read_xml_dom,
+ 	       &sheet_widget_list_base_write_xml_sax,
+ 	       NULL,
+===================================================================
+RCS file: /cvs/gnome/gnumeric/src/gnm-so-filled.c,v
+retrieving revision 1.16
+retrieving revision 1.17
+diff -u -r1.16 -r1.17
+--- src/gnm-so-filled.c	2005/08/12 02:24:13	1.16
++++ src/gnm-so-filled.c	2005/11/06 02:21:57	1.17
+@@ -390,27 +390,6 @@
+ 	return FALSE;
+ }
+ 
+-static gboolean
+-gnm_so_filled_write_xml_dom (SheetObject const *so,
+-			     XmlParseContext const *ctxt,
+-			     xmlNodePtr node)
+-{
+-	GnmSOFilled *sof = GNM_SO_FILLED (so);
+-	xmlNode *child;
+-
+-	xml_node_set_int (node,  "Type",  sof->is_oval ? 102 : 101);
+-	xml_node_set_double (node,  "Width", sof->style->outline.width, 2);
+-	xml_node_set_gocolor (node, "OutlineColor",	sof->style->outline.color);
+-	xml_node_set_gocolor (node, "FillColor",	sof->style->fill.pattern.back);
+-	if (sof->text != NULL)
+-		xml_node_set_cstr (node, "Label", sof->text);
+-
+-	child = xmlNewDocNode (node->doc, NULL, "Style", NULL);
+-	gog_persist_dom_save (GOG_PERSIST (sof->style), child);
+-	xmlAddChild (node, child);
+-	return FALSE;
+-}
+-
+ static void
+ gnm_so_filled_write_xml_sax (SheetObject const *so, GsfXMLOut *output)
+ {
+@@ -532,7 +511,6 @@
+ 	gobject_class->set_property	= gnm_so_filled_set_property;
+ 	gobject_class->get_property	= gnm_so_filled_get_property;
+ 	so_class->read_xml_dom		= gnm_so_filled_read_xml_dom;
+-	so_class->write_xml_dom		= gnm_so_filled_write_xml_dom;
+ 	so_class->write_xml_sax		= gnm_so_filled_write_xml_sax;
+ 	so_class->copy			= gnm_so_filled_copy;
+ 	so_class->rubber_band_directly	= TRUE;
+===================================================================
+RCS file: /cvs/gnome/gnumeric/src/gnm-so-line.c,v
+retrieving revision 1.11
+retrieving revision 1.12
+diff -u -r1.11 -r1.12
+--- src/gnm-so-line.c	2005/08/11 15:22:49	1.11
++++ src/gnm-so-line.c	2005/11/06 02:21:57	1.12
+@@ -300,31 +300,6 @@
+ 	return FALSE;
+ }
+ 
+-static gboolean
+-gnm_so_line_write_xml_dom (SheetObject const *so,
+-			   XmlParseContext const *ctxt,
+-			   xmlNodePtr node)
+-{
+-	GnmSOLine const *sol = GNM_SO_LINE (so);
+-	xmlNode *child;
+-
+-	/* YES FillColor, this is for backwards compat */
+-	xml_node_set_gocolor (node, "FillColor", sol->style->line.color);
+-	xml_node_set_double (node,  "Width", sol->style->line.width, -1);
+-
+-	if (sol->end_arrow.c > 0.) {
+-		xml_node_set_int (node, "Type", 2);
+-		xml_node_set_double (node, "ArrowShapeA", sol->end_arrow.a, -1);
+-		xml_node_set_double (node, "ArrowShapeB", sol->end_arrow.b, -1);
+-		xml_node_set_double (node, "ArrowShapeC", sol->end_arrow.c, -1);
+-	} else
+-		xml_node_set_int (node, "Type", 1);
+-
+-	child = xmlNewDocNode (node->doc, NULL, "Style", NULL);
+-	gog_persist_dom_save (GOG_PERSIST (sol->style), child);
+-	xmlAddChild (node, child);
+-	return FALSE;
+-}
+ static void
+ gnm_so_line_write_xml_sax (SheetObject const *so, GsfXMLOut *output)
+ {
+@@ -431,7 +406,6 @@
+ 	gobject_class->set_property	= gnm_so_line_set_property;
+ 	gobject_class->get_property	= gnm_so_line_get_property;
+ 	so_class->read_xml_dom		= gnm_so_line_read_xml_dom;
+-	so_class->write_xml_dom		= gnm_so_line_write_xml_dom;
+ 	so_class->write_xml_sax		= gnm_so_line_write_xml_sax;
+ 	so_class->copy			= gnm_so_line_copy;
+ 	so_class->rubber_band_directly  = TRUE;
+===================================================================
+RCS file: /cvs/gnome/gnumeric/src/gnm-so-polygon.c,v
+retrieving revision 1.4
+retrieving revision 1.5
+diff -u -r1.4 -r1.5
+--- src/gnm-so-polygon.c	2005/09/07 01:33:52	1.4
++++ src/gnm-so-polygon.c	2005/11/06 02:21:57	1.5
+@@ -210,14 +210,6 @@
+ 		read_xml_dom (so, typename, ctxt, node);
+ }
+ 
+-static gboolean
+-gnm_so_polygon_write_xml_dom (SheetObject const *so,
+-			      XmlParseContext const *ctxt, xmlNodePtr node)
+-{
+-	/* TODO */
+-	return gnm_so_polygon_parent_class->write_xml_dom (so, ctxt, node);
+-}
+-
+ static void
+ gnm_so_polygon_write_xml_sax (SheetObject const *so, GsfXMLOut *output)
+ {
+@@ -311,7 +303,6 @@
+ 	gobject_class->set_property	= gnm_so_polygon_set_property;
+ 	gobject_class->get_property	= gnm_so_polygon_get_property;
+ 	so_class->read_xml_dom		= gnm_so_polygon_read_xml_dom;
+-	so_class->write_xml_dom		= gnm_so_polygon_write_xml_dom;
+ 	so_class->write_xml_sax		= gnm_so_polygon_write_xml_sax;
+ 	so_class->copy			= gnm_so_polygon_copy;
+ 	so_class->rubber_band_directly	= FALSE;
+===================================================================
+RCS file: /cvs/gnome/gnumeric/src/sheet-object-cell-comment.c,v
+retrieving revision 1.67
+retrieving revision 1.68
+diff -u -r1.67 -r1.68
+--- src/sheet-object-cell-comment.c	2005/08/11 15:22:49	1.67
++++ src/sheet-object-cell-comment.c	2005/11/06 02:21:57	1.68
+@@ -275,15 +275,6 @@
+ 	return FALSE;
+ }
+ 
+-static gboolean
+-cell_comment_write_xml_dom (SheetObject const *so, XmlParseContext const *ctxt,
+-			    xmlNodePtr tree)
+-{
+-	GnmComment const *cc = CELL_COMMENT (so);
+-	xml_node_set_cstr (tree, "Author", cc->author);
+-	xml_node_set_cstr (tree, "Text", cc->text);
+-	return FALSE;
+-}
+ static void
+ cell_comment_write_xml_sax (SheetObject const *so, GsfXMLOut *output)
+ {
+@@ -335,7 +326,6 @@
+ 	/* SheetObject class method overrides */
+ 	sheet_object_class->new_view		= &cell_comment_new_view;
+ 	sheet_object_class->read_xml_dom	= &cell_comment_read_xml_dom;
+-	sheet_object_class->write_xml_dom	= &cell_comment_write_xml_dom;
+ 	sheet_object_class->write_xml_sax	= &cell_comment_write_xml_sax;
+ 	sheet_object_class->print		= &cell_comment_print;
+ 	sheet_object_class->copy		= &cell_comment_copy;
+--- src/xml-sax-read.c.orig	Sun Oct  2 09:47:17 2005
++++ src/xml-sax-read.c	Tue Nov  8 15:29:50 2005
+@@ -320,7 +320,8 @@
+ 	XMLSaxParseState *state = (XMLSaxParseState *)gsf_state->user_state;
+ 
+ 	for (; attrs != NULL && attrs[0] && attrs[1] ; attrs += 2)
+-		if (strcmp (attrs[0], "xmlns:gmr") == 0) {
++		if (strcmp (attrs[0], "xmlns:gmr") == 0 ||
++		    strcmp (attrs[0], "xmlns:gnm") == 0) {
+ 			static struct {
+ 				char const * const id;
+ 				GnumericXMLVersion const version;
+@@ -359,10 +360,12 @@
+ xml_sax_wb_sheetname (GsfXMLIn *gsf_state, G_GNUC_UNUSED GsfXMLBlob *blob)
+ {
+ 	XMLSaxParseState *state = (XMLSaxParseState *)gsf_state->user_state;
++	char const *name = gsf_state->content->str;
++	
++	g_return_if_fail (name != NULL);
+ 
+-	char const *content = gsf_state->content->str;
+-	Sheet *sheet = sheet_new (state->wb, content);
+-	workbook_sheet_attach (state->wb, sheet);
++	if (NULL == workbook_sheet_by_name (state->wb, name))
++		workbook_sheet_attach (state->wb, sheet_new (state->wb, name));
+ }
+ 
+ static void
+@@ -1451,6 +1454,7 @@
+ 	char const *type_name = gsf_state->node->name;
+ 	int tmp_int;
+ 	SheetObject *so;
++	SheetObjectClass *klass;
+ 
+ 	g_return_if_fail (state->so == NULL);
+ 
+@@ -1508,7 +1512,7 @@
+ 			sscanf (attrs[1], "%g %g %g %g",
+ 				so->anchor.offset +0, so->anchor.offset +1,
+ 				so->anchor.offset +2, so->anchor.offset +3);
+-		} else if (!strcmp (attrs[0], "ObjectanchorType")) {
++		} else if (!strcmp (attrs[0], "ObjectAnchorType")) {
+ 			int i[4], count;
+ 			sscanf (attrs[1], "%d %d %d %d", i+0, i+1, i+2, i+3);
+ 
+@@ -1519,6 +1523,10 @@
+ 		else
+ 			unknown_attr (gsf_state, attrs);
+ 	}
++
++	klass = SHEET_OBJECT_CLASS (G_OBJECT_GET_CLASS (so));
++	if (so != NULL)
++		g_object_unref (G_OBJECT (so));
+ }
+ 
+ static void
+@@ -1787,6 +1795,7 @@
+ 	GSF_XML_IN_NODE (SHEET_OBJECTS, OBJECT_OLD_LINE, GNM, "SheetObjectGraphic", FALSE, &xml_sax_object_start, &xml_sax_object_end),
+ 	GSF_XML_IN_NODE (SHEET_OBJECTS, OBJECT_OLD_FILLED, GNM, "SheetObjectFilled", FALSE, &xml_sax_object_start, &xml_sax_object_end),
+ 	GSF_XML_IN_NODE (SHEET_OBJECTS, OBJECT_OLD_TEXT, GNM, "SheetObjectText", FALSE,	&xml_sax_object_start, &xml_sax_object_end),
++	GSF_XML_IN_NODE (SHEET_OBJECTS, OBJECT_GRAPH, GNM, "SheetObjectGraph", FALSE,	&xml_sax_object_start, &xml_sax_object_end),
+ 
+   GSF_XML_IN_NODE (WB, WB_GEOMETRY, GNM, "Geometry", FALSE, &xml_sax_wb_view, NULL),
+   GSF_XML_IN_NODE (WB, WB_VIEW, GNM, "UIData", FALSE, &xml_sax_wb_view, NULL),
