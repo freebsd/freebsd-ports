@@ -2,7 +2,7 @@
 # Date created:		31 May 2002
 # Whom:			dinoex
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.26 2005-11-08 08:31:20 dinoex Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.27 2005-11-08 08:44:33 dinoex Exp $
 #
 # Use of 'USE_OPENSSL=yes' includes this Makefile after bsd.ports.pre.mk
 #
@@ -50,6 +50,7 @@ WITH_OPENSSL_STABLE=yes
 .if !defined(WITHOUT_OPENSSL_097) && !defined(WITH_OPENSSL_BETA)
 .if ( ${OSVERSION} >= 600000 ) && ( ${OSVERSION} < 600100 )
 WITH_OPENSSL_STABLE=yes
+OPENSSL_PORT?=		security/openssl
 .endif
 .endif
 .endif
