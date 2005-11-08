@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkcairo
 PORTVERSION=	0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -20,6 +20,7 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 USE_BZIP2=	yes
 USE_GNOME=	gtk20 gnometarget gnomehack
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
@@ -30,4 +31,6 @@ PLIST_FILES=	include/gtkcairo.h \
 		lib/libgtkcairo.so.2 \
 		libdata/pkgconfig/gtkcairo.pc
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|tests||' ${WRKSRC}/Makefile.in
 .include <bsd.port.mk>
