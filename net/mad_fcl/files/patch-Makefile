@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- Makefile.orig	Fri Jun 25 13:16:29 2004
-+++ Makefile	Fri Jun 25 13:17:58 2004
-@@ -4,78 +4,78 @@
+--- Makefile.orig
++++ Makefile
+@@ -4,34 +4,34 @@
  	@echo "-------------------"
  	@echo "*** ALC library ***"
  	@echo "-------------------"
@@ -17,38 +17,6 @@ $FreeBSD$
  	@echo "-------------------"
 -	mkdir lib; cd sdplib; make clean; make                   
 +	mkdir lib; cd sdplib; gmake clean; gmake                   
- 	@echo "done"
- 
- nullfeclib ::
- 	@echo "-------------------"
- 	@echo "*** Null-FEC library ***"
- 	@echo "-------------------"
--	mkdir lib; cd nullfeclib; make clean; make
-+	mkdir lib; cd nullfeclib; gmake clean; gmake
- 	@echo "done"
- 
- xorfeclib ::
- 	@echo "-------------------"
- 	@echo "*** Simple XOR FEC library ***"
- 	@echo "-------------------"
--	mkdir lib; cd xorfeclib; make clean; make
-+	mkdir lib; cd xorfeclib; gmake clean; gmake
- 	@echo "done"
- 
- rsfeclib ::
- 	@echo "-------------------"
- 	@echo "*** Reed-Solomon FEC library ***"
- 	@echo "-------------------"
--	mkdir lib; cd rsfeclib; make clean; make
-+	mkdir lib; cd rsfeclib; gmake clean; gmake
- 	@echo "done"
- 
- rlclib ::
- 	@echo "-------------------"
- 	@echo "*** RLC library ***"
- 	@echo "-------------------"
--	mkdir lib; cd rlclib; make clean; make
-+	mkdir lib; cd rlclib; gmake clean; gmake
  	@echo "done"
  
  flute ::
@@ -70,26 +38,6 @@ $FreeBSD$
  	@echo "----------------------------"
 -	cd sdplib; make clean
 +	cd sdplib; gmake clean
- 	@echo "----------------------------"
- 	@echo "*** Cleaning Null-FEC library ***"
- 	@echo "----------------------------"
--	cd nullfeclib; make clean
-+	cd nullfeclib; gmake clean
- 	@echo "----------------------------"
- 	@echo "*** Cleaning Simple XOR FEC library ***"
- 	@echo "----------------------------"
--	cd nullfeclib; make clean
-+	cd nullfeclib; gmake clean
- 	@echo "----------------------------"
- 	@echo "*** Cleaning Reed-Solomon FEC library ***"
- 	@echo "----------------------------"
--	cd rsfeclib; make clean
-+	cd rsfeclib; gmake clean
- 	@echo "----------------------------"
- 	@echo "*** Cleaning RLC library ***"
- 	@echo "----------------------------"
--	cd rlclib; make clean
-+	cd rlclib; gmake clean
  	@echo "----------------------------------"
  	@echo "*** Cleaning flute application ***"
  	@echo "----------------------------------"

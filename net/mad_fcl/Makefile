@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	mad_fcl
-PORTVERSION=	1.1
+PORTVERSION=	1.3
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.atm.tut.fi/mad/download/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}_src
 
-MAINTAINER=	Janos.Mohacsi@bsd.hu
+MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	FLUTE - File Delivery over Unidirectional Transport implementation
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+USE_OPENSSL=	yes
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 
@@ -27,6 +28,10 @@ PORTDOCS=	${DOC_FILES} README.TXT
 PLIST_FILES=	bin/flute
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"does not compile"
+.endif
 
 .if ${OSVERSION} < 502120
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-alclib_defines.h
