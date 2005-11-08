@@ -120,5 +120,5 @@ include/libetpan/pop3storage.h
 include/libetpan.h
 lib/libetpan.a
 lib/libetpan.so
-lib/libetpan.so.4
+lib/libetpan.so.5
 @dirrm include/libetpan
