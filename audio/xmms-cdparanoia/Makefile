@@ -20,6 +20,10 @@ BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
 
+BROKEN=		"mastersite disappeared, no longer maintained by author"
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=	2006-01-08
+
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
