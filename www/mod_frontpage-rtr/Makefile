@@ -7,7 +7,7 @@
 
 CATEGORIES=	www
 
-MAINTAINER=	hetzels@westbend.net
+MAINTAINER=	swhetzel@gmail.com
 
 WANT_APACHE=	13
 
