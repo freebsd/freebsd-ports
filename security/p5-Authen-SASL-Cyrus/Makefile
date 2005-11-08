@@ -20,6 +20,7 @@ LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include"
 
 MAN3=		Authen::SASL::Cyrus.3
 
