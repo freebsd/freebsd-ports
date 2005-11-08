@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	tkabber
-PORTVERSION=	0.9.8.a.20050928
+PORTVERSION=	0.9.8.a.20051012
 CATEGORIES=	net
-MASTER_SITES=	http://neva.vlink.ru/distfiles/
+MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	dsh@vlink.ru

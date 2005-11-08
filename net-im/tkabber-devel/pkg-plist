@@ -494,6 +494,7 @@ bin/tkabber
 %%DATADIR%%/pixmaps/psi/tkabber/toolbar-show-online.gif
 %%DATADIR%%/plugins.tcl
 %%DATADIR%%/plugins/chat/bookmark_highlighted.tcl
+%%DATADIR%%/plugins/chat/chatstate.tcl
 %%DATADIR%%/plugins/chat/clear.tcl
 %%DATADIR%%/plugins/chat/complete_last_nick.tcl
 %%DATADIR%%/plugins/chat/completion.tcl
