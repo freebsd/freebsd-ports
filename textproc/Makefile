@@ -738,6 +738,7 @@
     SUBDIR += urlview
     SUBDIR += uz-aspell
     SUBDIR += wa-aspell
+    SUBDIR += wbxml2
     SUBDIR += wdiff
     SUBDIR += webcpp
     SUBDIR += website
