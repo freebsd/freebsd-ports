@@ -14,12 +14,12 @@ MASTER_SITES=	http://www.mavetju.org/download/
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Ports new version checker
 
-RUN_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3 \
-		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
 		${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
 USE_PERL_RUN=	yes
+USE_SQLITE=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
