@@ -1,5 +1,6 @@
 bin/gdc
 bin/cc1d
+include/d/%%GCC_VER%%/etc/gamma.d
 include/d/%%GCC_VER%%/etc/c/zlib.d
 include/d/%%GCC_VER%%/etc/c/recls/recls.h
 include/d/%%GCC_VER%%/etc/c/recls/recls_assert.h
@@ -122,6 +123,7 @@ include/d/%%GCC_VER%%/std/c/stdio.d
 include/d/%%GCC_VER%%/std/c/stdlib.d
 include/d/%%GCC_VER%%/std/c/time.d
 include/d/%%GCC_VER%%/std/c/darwin/darwin.d
+include/d/%%GCC_VER%%/std/c/darwin/ldblcompat.d
 include/d/%%GCC_VER%%/std/c/linux/linux.d
 include/d/%%GCC_VER%%/std/c/linux/linuxextern.d
 include/d/%%GCC_VER%%/std/c/linux/socket.d
