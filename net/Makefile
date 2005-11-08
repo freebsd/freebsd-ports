@@ -484,6 +484,7 @@
     SUBDIR += openmpi
     SUBDIR += openntpd
     SUBDIR += openradius
+    SUBDIR += openser
     SUBDIR += openslp
     SUBDIR += openverse
     SUBDIR += ortp
