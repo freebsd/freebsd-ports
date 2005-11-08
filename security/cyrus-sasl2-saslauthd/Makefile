@@ -44,23 +44,17 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-saslauthd=${SASLAUTHD_RUNPATH}
 
 .if defined(WITH_BDB_VER)
-.if ${WITH_BDB_VER} == 3
-BDB_MAJOR=	3
-.elif ${WITH_BDB_VER} == 4
-BDB_MAJOR=	0
-.elif ${WITH_BDB_VER} == 41
-BDB_MAJOR=	1
+.if ${WITH_BDB_VER} == 4
+USE_BDB=	40
 .elif ${WITH_BDB_VER} == 42
 BDB_SUFFIX=	-4.2
-BDB_MAJOR=	2
 .elif ${WITH_BDB_VER} == 43
 BDB_SUFFIX=	-4.3
-BDB_MAJOR=	0
-.else
+.elif ${WITH_BDB_VER} != 3 && ${WITH_BDB_VER} != 41
 BROKEN=		"WITH_BDB_VER must be 3, 4, 41, 42 or 43"
 .endif
+USE_BDB?=	${WITH_BDB_VER}
 BDB_SUFFIX?=	${WITH_BDB_VER}
-LIB_DEPENDS+=	db${BDB_SUFFIX}.${BDB_MAJOR}:${PORTSDIR}/databases/db${WITH_BDB_VER}
 CONFIGURE_ARGS+=--with-dblib=berkeley --with-bdb-libdir=${LOCALBASE}/lib \
 		--with-bdb-incdir=${LOCALBASE}/include/db${WITH_BDB_VER} \
 		--with-bdb=db${BDB_SUFFIX}
