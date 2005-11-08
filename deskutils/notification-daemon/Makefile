@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	notification-daemon
-PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTVERSION=	0.2.4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.galago-project.org/files/releases/source/notification-daemon/
 
@@ -15,7 +14,8 @@ MAINTAINER=	andreas@syndrom23.de
 COMMENT=	Send small notifications to your desktop
 
 LIB_DEPENDS=	dbus-1.1:${PORTSDIR}/devel/dbus \
-		notify.0:${PORTSDIR}/devel/libnotify
+		notify.0:${PORTSDIR}/devel/libnotify \
+		sexy:${PORTSDIR}/x11-toolkits/libsexy
 
 USE_GNOME=	gnomehack gnometarget intlhack gtk20
 USE_LIBTOOL_VER=15
