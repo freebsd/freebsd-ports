@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTVERSION=	1.0.6
+PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/v1.0/ \
 		${MASTER_SITE_SOURCEFORGE}
