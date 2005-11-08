@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.3.17
+PORTVERSION=	1.3.18
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wikipedia
@@ -26,13 +26,7 @@ MEDIAWIKIDIR?=	www/data-dist/mediawiki
 OPTIONS=	PGSQL "Use PostgreSQL instead of MySQL" off \
 		LDAP "Use LDAP authentication" off
 
-PORT_DBDIR?=	/var/db/ports
-LATEST_LINK=	${PORTNAME}
-OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
-
-.if exists(${OPTIONSFILE})
-.include "${OPTIONSFILE}"
-.endif
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_PGSQL)
 USE_PHP+=	pgsql
@@ -56,4 +50,4 @@ post-install:
 	  | ${SED} -ne 's,^${WRKSRC},@dirrm ${MEDIAWIKIDIR},p' >> ${TMPPLIST}
 	@${SED} -e 's|%%MEDIAWIKIDIR%%|${PREFIX}/${MEDIAWIKIDIR}|' ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
