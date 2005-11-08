@@ -20,8 +20,6 @@ COMMENT=	A GTK based system monitor
 CONFLICTS=	gkrellm-1.*
 .endif
 
-LATEST_LINK=	${PORTNAME}2
-
 USE_RC_SUBR=	gkrellmd.sh
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/[a-z]$//}

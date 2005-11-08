@@ -18,6 +18,8 @@ COMMENT=	A GTK based system monitor
 
 CONFLICTS=	gkrellm-2.*
 
+NO_LATEST_LINK=	yes
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
