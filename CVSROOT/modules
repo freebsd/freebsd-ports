@@ -702,6 +702,7 @@ bibcard		ports/print/bibcard
 bibcursed	ports/print/bibcursed
 bibelot		ports/palm/bibelot
 bibletime	ports/misc/bibletime
+biblical-curse	ports/misc/biblical-curse
 bibtex2html	ports/textproc/bibtex2html
 bibtool		ports/textproc/bibtool
 bibview		ports/print/bibview
