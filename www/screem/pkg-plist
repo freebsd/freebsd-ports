@@ -1,4 +1,11 @@
 bin/screem
+include/screem/fileops.h
+include/screem/screem-dtd.h
+include/screem/screem-page.h
+include/screem/screem-plugin.h
+include/screem/screem-site.h
+include/screem/screem-skel-plugin.h
+include/screem/screem-view.h
 lib/screem/plugins/colourWizard.so
 lib/screem/plugins/css_wizard.so
 lib/screem/plugins/entityWizard.so
@@ -8,6 +15,7 @@ lib/screem/plugins/object_wizard.so
 lib/screem/plugins/ssiWizard.so
 lib/screem/plugins/tableWizard.so
 lib/screem/plugins/uploadWizard.so
+libdata/pkgconfig/screem-plugin.pc
 share/gnome/application-registry/screem.applications
 share/gnome/applications/screem.desktop
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
@@ -58,20 +66,22 @@ share/gnome/help/screem/C/figures/table-wizard.png
 share/gnome/help/screem/C/figures/tree.png
 share/gnome/help/screem/C/legal.xml
 share/gnome/help/screem/C/screem.xml
-share/gnome/mime-info/screem.keys
 share/gnome/omf/screem/screem-C.omf
 share/gnome/pixmaps/screem/splash/splash.png
 share/gnome/pixmaps/screem.png
+share/gnome/screem/doctypes.xml
 share/gnome/screem/dtd/HTMLlat1.ent
 share/gnome/screem/dtd/HTMLspecial.ent
 share/gnome/screem/dtd/HTMLsymbols.ent
 share/gnome/screem/dtd/catalog
+share/gnome/screem/dtd/gtkuimanager.dtd
 share/gnome/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fhtml4%2Fframeset.dtd
 share/gnome/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fhtml4%2Floose.dtd
 share/gnome/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fhtml4%2Fstrict.dtd
 share/gnome/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fxhtml1%2FDTD%2Fxhtml1-frameset.dtd
 share/gnome/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fxhtml1%2FDTD%2Fxhtml1-strict.dtd
 share/gnome/screem/dtd/http%3A%2F%2Fwww.w3.org%2FTR%2Fxhtml1%2FDTD%2Fxhtml1-transitional.dtd
+share/gnome/screem/dtd/screem-doctypes.dtd
 share/gnome/screem/dtd/screem-tagtree-config.dtd
 share/gnome/screem/dtd/screem-tagtree.dtd
 share/gnome/screem/dtd/xhtml-lat1.ent
@@ -88,6 +98,12 @@ share/gnome/screem/glade/tablewizard.glade
 share/gnome/screem/glade/uploadwizard.glade
 share/gnome/screem/helpers/Tidy/TidyHTML.desktop
 share/gnome/screem/helpers/Tidy/TidyXML.desktop
+share/gnome/screem/helpers/browsers/epiphany.desktop
+share/gnome/screem/helpers/browsers/konqueror.desktop
+share/gnome/screem/helpers/browsers/opera.desktop
+share/gnome/screem/helpers/browsers-remote/epiphany.desktop
+share/gnome/screem/helpers/browsers-remote/konqueror.desktop
+share/gnome/screem/helpers/browsers-remote/opera.desktop
 share/gnome/screem/hints/screem_hints.txt
 share/gnome/screem/hints/screem_hints_fr.txt
 share/gnome/screem/hints/screem_hints_pt_BR.txt
@@ -156,6 +172,7 @@ share/gnome/screem/resources/Javascript/preload.js
 share/gnome/screem/resources/Javascript/rollover.js
 share/gnome/screem/resources/Templates/template.html
 share/gnome/screem/tagtrees/apache.tagtree
+share/gnome/screem/tagtrees/cfml.tagtree
 share/gnome/screem/tagtrees/css.tagtree
 share/gnome/screem/tagtrees/funcref_php.tagtree
 share/gnome/screem/tagtrees/funcref_python.tagtree
@@ -190,24 +207,7 @@ share/locale/tr/LC_MESSAGES/screem.mo
 share/locale/uk/LC_MESSAGES/screem.mo
 share/locale/vi/LC_MESSAGES/screem.mo
 share/locale/zh_CN/LC_MESSAGES/screem.mo
-share/mime/application/vnd.wap.wmlc.xml
-share/mime/application/vnd.wap.wmlscriptc.xml
-share/mime/application/x-php-source.xml
-share/mime/application/x-screem-tag-tree.xml
-share/mime/application/x-screem.xml
-share/mime/application/xhtml+xml.xml
-share/mime/image/vnd.wap.wbmp.xml
 share/mime/packages/screem.xml
-share/mime/text/actionscript.xml
-share/mime/text/html.xml
-share/mime/text/javascript.xml
-share/mime/text/vnd.wap.wml.xml
-share/mime/text/vnd.wap.wmlscript.xml
-share/mime/text/x-actionscript.xml
-share/mime/text/x-component.xml
-share/mime/text/x-javascript.xml
-share/mime/text/x-php-source.xml
-share/mime/text/x-php.xml
 @dirrm share/gnome/screem/ui
 @dirrm share/gnome/screem/tagtrees
 @dirrm share/gnome/screem/resources/Templates
@@ -219,6 +219,8 @@ share/mime/text/x-php.xml
 @dirrm share/gnome/screem/resources
 @dirrm share/gnome/screem/pixmaps
 @dirrm share/gnome/screem/hints
+@dirrm share/gnome/screem/helpers/browsers-remote
+@dirrm share/gnome/screem/helpers/browsers
 @dirrm share/gnome/screem/helpers/Tidy
 @dirrm share/gnome/screem/helpers
 @dirrm share/gnome/screem/glade
@@ -232,6 +234,7 @@ share/mime/text/x-php.xml
 @dirrm share/gnome/help/screem
 @dirrm lib/screem/plugins
 @dirrm lib/screem
+@dirrm include/screem
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
