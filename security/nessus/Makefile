@@ -11,8 +11,7 @@
 #  WITHOUT_NESSUS_GTK
 
 PORTNAME=	nessus
-PORTVERSION=	2.2.5
-PORTREVISION=	1
+PORTVERSION=	2.2.6
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
@@ -24,9 +23,10 @@ DISTNAME=	nessus-core-${PORTVERSION}
 MAINTAINER=	udo.schweigert@siemens.com
 COMMENT=	A security scanner: looks for vulnerabilities in a given network
 
+LIB_DEPENDS=	nasl.4:${PORTSDIR}/security/nessus-libnasl
+
 CONFLICTS=	nessus-devel-[0-9]* nessus-devel-gtk-[0-9]* \
 		nessus-devel-gtk2-[0-9]*
-LIB_DEPENDS=	nasl.4:${PORTSDIR}/security/nessus-libnasl
 
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-core
@@ -44,10 +44,10 @@ WITHOUT_GNOME=	yes
 
 .if ${HAVE_GNOME:Mgtk20}!=""
 USE_GNOME+=	gtk20
-PKGNAMESUFFIX=	-gtk2
+PKGNAMESUFFIX+=	-gtk2
 .elif ${HAVE_GNOME:Mgtk12}!=""
 USE_GNOME+=	gtk12
-PKGNAMESUFFIX=	-gtk
+PKGNAMESUFFIX+=	-gtk
 .else
 CONFIGURE_ARGS+=--disable-gtk
 .endif
@@ -87,7 +87,7 @@ post-install:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/move_nessus
 .if ! exists(${PREFIX}/var/CA/serverkey.pem)
 	@${ECHO} ""
-	@${ECHO} "**************************************************************************"   
+	@${ECHO} "**************************************************************************"
 	@${ECHO} "To create and install a new certificate, type \"make cert\""
 	@${ECHO} "**************************************************************************"
 	@${ECHO} ""
