@@ -65,7 +65,7 @@ MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 70000
+.if ${OSVERSION} >= 700000
 BROKEN=		"Does not build on FreeBSD >= 7.0"
 .endif
 
