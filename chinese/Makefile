@@ -62,6 +62,7 @@
     SUBDIR += irssi
     SUBDIR += jis2gb
     SUBDIR += joe
+    SUBDIR += joe2
     SUBDIR += kcfonts
     SUBDIR += kde3-i18n-zh_CN
     SUBDIR += kde3-i18n-zh_TW
