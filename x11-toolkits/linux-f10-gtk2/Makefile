@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	gtk2
-PORTVERSION=	2.2.1
-PORTREVISION=	5
+PORTVERSION=	2.2.4
+PORTREVISION=	0
 CATEGORIES=	x11-toolkits linux
-MASTER_SITES=	http://www.infostrategique.com/linuxrpms/legacy/9/
+MASTER_SITES=	http://mirrors.kernel.org/fedora/core/updates/1/i386/ \
+		http://distro.ibiblio.org/pub/linux/distributions/fedora/linux/core/updates/1/i386/ \
+		ftp://ftp.uni-koeln.de/mirrors/fedora/linux/core/updates/1/i386/
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	GTK+ library, version 2.X, Linux binary
@@ -24,12 +26,11 @@ BUILD_DEPENDS+=	${LINUXBASE}/usr/lib/libglib-2.0.so.0:${PORTSDIR}/devel/linux-gl
 		${LINUXBASE}/usr/lib/libpango-1.0.so.0.200.1:${PORTSDIR}/x11-toolkits/linux-pango
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
-DIST_SUBDIR=	rpm/i386/rh9
 ONLY_FOR_ARCHS=	i386 amd64
 PLIST=		${PKGDIR}/pkg-plist
 USE_XLIB=	yes
 RESTRICTED=	"binaries under GNU LGPL without accompanying source"
-RPM_SET=	gtk2-2.2.1-4.1.legacy.i386.rpm
+RPM_SET=	gtk2-${PORTVERSION}-10.i386.rpm
 
 post-install:
 .for ii in gdk-pixbuf-query-loaders gtk-demo gtk-query-immodules-2.0 testgtk testtext
