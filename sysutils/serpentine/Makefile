@@ -7,7 +7,7 @@
 
 PORTNAME=	serpentine
 PORTVERSION=	0.6.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.berlios.de/${PORTNAME}/
 
@@ -24,7 +24,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pygnomeextras intlhack
 USE_GMAKE=	yes
-USE_GSTREAMER=	core
+USE_GSTREAMER=	core gnomevfs
 USE_PYTHON=	2.4+
 
 OPTIONS=	MUINE "Cd-Burner Plugin for muine audio player" Off
