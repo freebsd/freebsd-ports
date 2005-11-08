@@ -12569,6 +12569,7 @@ wavplay		ports/audio/wavplay
 wb		ports/mbone/wb
 wb0		ports/www/wb0
 wbd		ports/mbone/wbd
+wbxml2		ports/textproc/wbxml2
 wcol		ports/www/wcol
 wdiff		ports/textproc/wdiff
 wdm		ports/x11/wdm
