@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	skytemplate
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 CATEGORIES=	www
 MASTER_SITES=	http://daddy.withsky.net/SkyTemplate/download/ \
 		http://mirror.pmy.lv/SkyTemplate/download/
-DISTNAME=	SkyTemplate.v131
+DISTNAME=	SkyTemplate.v${PORTVERSION:S/.//g}
 
 MAINTAINER=	munggo@gmail.com
 COMMENT=	Yet another PHP compiling template engine
