@@ -1,0 +1,30 @@
+Index: Makefile
+diff -u Makefile.orig Makefile
+--- Makefile.orig	Thu Aug 11 05:58:26 2005
++++ Makefile	Wed Nov  9 02:42:46 2005
+@@ -1,13 +1,20 @@
+-all: gkfreq.so
++PREFIX?=	/usr/X11R6
++PLUGIN_DIR?=	${PREFIX}/libexec/gkrellm2/plugins
++
++GKRELLM_INCLUDE=-I${PREFIX}/include
++
++GTK_CONFIG=	pkg-config gtk+-2.0
++GTK_CFLAGS=	`${GTK_CONFIG} --cflags`
+ 
+-gkfreq.o: gkfreq.c
+-	gcc -fPIC -O2 -Wall `pkg-config gtk+-2.0 --cflags` -c gkfreq.c
++CFLAGS+=	-Wall -fPIC ${GTK_CFLAGS} ${GKRELLM_INCLUDE}
++
++all: gkfreq.so
+ 
+ gkfreq.so: gkfreq.o
+-	gcc -shared -Wall -o gkfreq.so gkfreq.o
++	${CC} -shared -Wall -o gkfreq.so gkfreq.o
+ 
+ clean:
+ 	rm -rf *.o *.so
+ 
+ install:
+-	cp gkfreq.so ~/.gkrellm2/plugins/
++	${INSTALL} -s gkfreq.so ${PLUGIN_DIR}
