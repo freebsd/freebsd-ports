@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	0.96.3
-PORTREVISION?=	2
+PORTVERSION=	0.96.5
+PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -54,13 +54,7 @@ MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1 bogotune.1 \
 post-patch:
 	${REINPLACE_CMD} -e 's|^#!.*perl|#! ${PERL}|' \
 		${WRKSRC}/src/tests/unsort.pl \
-		${WRKSRC}/contrib/bfproxy \
-		${WRKSRC}/contrib/bogofilter-milter.pl \
-		${WRKSRC}/contrib/bogominitrain.pl \
-		${WRKSRC}/contrib/mime.get.rfc822 \
-		${WRKSRC}/contrib/printmaildir.pl \
-		${WRKSRC}/contrib/spamitarium \
-		${WRKSRC}/contrib/stripsearch
+		${WRKSRC}/contrib/*.pl
 	${REINPLACE_CMD} -e 's/INTEGRITY_TESTS = t.lock1 t.lock3 t.valgrind/INTEGRITY_TESTS = t.lock1 t.lock3/' \
 		${WRKSRC}/src/tests/Makefile.in
 
@@ -81,11 +75,10 @@ post-install::
 	@${MKDIR} ${DOCSDIR}/${i}
 .endfor
 .for i in AUTHORS COPYING INSTALL NEWS README README.cvs \
-	doc/README.validation TODO \
+	doc/README.validation TODO GETTING.STARTED \
 	RELEASE.NOTES doc/README.db doc/README.sqlite \
 	doc/integrating-with-postfix doc/integrating-with-qmail \
-	doc/bogofilter-tuning.HOWTO.html doc/bogofilter-SA-2002-01 \
-	doc/bogofilter-SA-2004-01 GETTING.STARTED \
+	doc/bogofilter-tuning.HOWTO.html doc/bogofilter-SA-* \
 	doc/bogofilter-faq.html doc/bogofilter-faq-fr.html
 	  ${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
@@ -97,11 +90,11 @@ post-install::
 	${INSTALL_DATA} ${WRKSRC}/doc/*.xml ${DOCSDIR}/xml
 	${INSTALL_DATA} ${WRKSRC}/doc/programmer/README.freebsd ${DOCSDIR}/programmer
 .endif
-	${INSTALL_PROGRAM} ${WRKSRC}/contrib/bogogrep ${PREFIX}/bin/
-.for i in bfproxy bogofilter-milter.pl bogo.R bogofilter-qfe \
-		mime.get.rfc822 parmtest.sh printmaildir.pl \
+	${INSTALL_PROGRAM} ${WRKSRC}/bogogrep ${PREFIX}/bin/
+.for i in bfproxy.pl bogofilter-milter.pl bogo.R bogofilter-qfe.sh \
+		mime.get.rfc822.pl parmtest.sh printmaildir.pl \
 		bogominitrain.pl \
-		randomtrain scramble spamitarium stripsearch trainbogo.sh
+		randomtrain.sh scramble.sh spamitarium.pl stripsearch.pl trainbogo.sh
 	  ${INSTALL_SCRIPT} ${WRKSRC}/contrib/${i} ${DOCSDIR}/contrib/${i}
 .endfor
 .for i in dot-qmail-bogofilter-default \
