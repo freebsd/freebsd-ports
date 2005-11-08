@@ -13,7 +13,7 @@ MASTER_SITES=	# Requries manual fetch of files from http://www.rtr.com/
 PKGNAMESUFFIX=	${AP_VER}
 DISTFILES=	${FRONTPAGE}
 
-MAINTAINER=	hetzels@westbend.net
+MAINTAINER=	swhetzel@gmail.com
 COMMENT=	Microsoft mod_frontpage (by RTR) for Apache ${FP_AP_VER}
 
 RUN_DEPENDS=	${LOCALBASE}/${FP_SETPERM}:${PORTSDIR}/www/frontpage
