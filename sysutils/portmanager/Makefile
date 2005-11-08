@@ -48,7 +48,8 @@ CONFIGURE_ARGS+=	--with-debug=yes
 post-configure:
 	@${REINPLACE_CMD} -e    \
 		's|PACKAGE_VERSION "${PORTVERSION}"|PACKAGE_VERSION "${PORTVERSION}_${PORTREVISION}"|g' \
-		${WRKSRC}/externVars.h.in
+		${WRKSRC}/externVars.h
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
