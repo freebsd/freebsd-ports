@@ -1,4 +1,5 @@
 include/xfce4/libxfce4mcs/mcs-client.h
+include/xfce4/libxfce4mcs/mcs-client-enum-types.h
 include/xfce4/libxfce4mcs/mcs-common.h
 include/xfce4/libxfce4mcs/mcs-manager.h
 lib/libxfce4mcs-client.a

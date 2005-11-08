@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xfce4-toys
-PORTVERSION=	4.2.2
-PORTREVISION=	1
+PORTVERSION=	4.2.3
+PORTREVISION=	0
 CATEGORIES=	games xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \

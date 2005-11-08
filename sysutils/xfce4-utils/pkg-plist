@@ -12,6 +12,7 @@ share/applications/xfce-taskbar-settings.desktop
 share/icons/hicolor/48x48/apps/xfce4-logo.png
 share/icons/hicolor/48x48/apps/xfce4-taskbar.png
 share/icons/hicolor/scalable/apps/xfce4-taskbar.svg
+share/locale/af/LC_MESSAGES/xfce-utils.mo
 share/locale/ar/LC_MESSAGES/xfce-utils.mo
 share/locale/az/LC_MESSAGES/xfce-utils.mo
 share/locale/be/LC_MESSAGES/xfce-utils.mo
@@ -23,6 +24,7 @@ share/locale/da/LC_MESSAGES/xfce-utils.mo
 share/locale/de/LC_MESSAGES/xfce-utils.mo
 share/locale/el/LC_MESSAGES/xfce-utils.mo   
 share/locale/en_GB/LC_MESSAGES/xfce-utils.mo
+share/locale/eo/LC_MESSAGES/xfce-utils.mo
 share/locale/es/LC_MESSAGES/xfce-utils.mo
 share/locale/es_MX/LC_MESSAGES/xfce-utils.mo
 share/locale/et/LC_MESSAGES/xfce-utils.mo
@@ -34,9 +36,11 @@ share/locale/gu/LC_MESSAGES/xfce-utils.mo
 share/locale/he/LC_MESSAGES/xfce-utils.mo
 share/locale/hi/LC_MESSAGES/xfce-utils.mo
 share/locale/hu/LC_MESSAGES/xfce-utils.mo
+share/locale/hy/LC_MESSAGES/xfce-utils.mo
 share/locale/it/LC_MESSAGES/xfce-utils.mo
 share/locale/ja/LC_MESSAGES/xfce-utils.mo
 share/locale/ko/LC_MESSAGES/xfce-utils.mo
+share/locale/ku/LC_MESSAGES/xfce-utils.mo
 share/locale/lt/LC_MESSAGES/xfce-utils.mo
 share/locale/mr/LC_MESSAGES/xfce-utils.mo
 share/locale/ms/LC_MESSAGES/xfce-utils.mo
@@ -48,6 +52,7 @@ share/locale/pt_PT/LC_MESSAGES/xfce-utils.mo
 share/locale/ro/LC_MESSAGES/xfce-utils.mo
 share/locale/ru/LC_MESSAGES/xfce-utils.mo
 share/locale/sk/LC_MESSAGES/xfce-utils.mo
+share/locale/sl/LC_MESSAGES/xfce-utils.mo
 share/locale/sv/LC_MESSAGES/xfce-utils.mo
 share/locale/ta/LC_MESSAGES/xfce-utils.mo
 share/locale/tr/LC_MESSAGES/xfce-utils.mo
@@ -79,6 +84,7 @@ share/xfce4/AUTHORS.html.ro
 share/xfce4/AUTHORS.html.ru
 share/xfce4/AUTHORS.html.sk
 share/xfce4/AUTHORS.html.vi
+share/xfce4/AUTHORS.html.zh_TW
 share/xfce4/AUTHORS.it
 share/xfce4/AUTHORS.ja
 share/xfce4/AUTHORS.lt
@@ -87,6 +93,7 @@ share/xfce4/AUTHORS.ru
 share/xfce4/AUTHORS.uk
 share/xfce4/AUTHORS.sk
 share/xfce4/AUTHORS.vi
+share/xfce4/AUTHORS.zh_TW
 share/xfce4/COPYING
 share/xfce4/COPYING.html
 share/xfce4/COPYING.vi
@@ -151,8 +158,25 @@ share/xfce4/doc/fr/xfce4-components.html
 share/xfce4/doc/fr/xfce4-use.html
 share/xfce4/doc/fr/xfce4-install.html
 share/xfce4/doc/fr/xfce-utils.html
+share/xfce4/doc/he/images/default-session.png
+share/xfce4/doc/he/images/link_xfce.jpg
+share/xfce4/doc/he/images/about-dialog.png
+share/xfce4/doc/he/images/run-dialog.png
+share/xfce4/doc/he/images/taskbar_settings.png
+share/xfce4/doc/he/index.html
+share/xfce4/doc/he/BSD.html
+share/xfce4/doc/he/GPL.html
+share/xfce4/doc/he/LGPL.html
+share/xfce4/doc/he/xfce4-user-guide.html
+share/xfce4/doc/he/xfce4-intro.html
+share/xfce4/doc/he/xfce4-copyright.html
+share/xfce4/doc/he/xfce4-components.html
+share/xfce4/doc/he/xfce4-use.html 
+share/xfce4/doc/he/xfce4-install.html
+share/xfce4/doc/he/xfce-utils.html
 share/xfce4/doc/xfce.css
 share/xfce4/doc/xfce-mouse.png
+share/xfce4/doc/xfce-rtl.css
 @unexec rmdir %D/etc/xdg/xfce4 2>/dev/null || true
 @unexec rmdir %D/etc/xdg 2>/dev/null || true
 @unexec rmdir %D/etc/xfce4 2>/dev/null || true
@@ -167,5 +191,7 @@ share/xfce4/doc/xfce-mouse.png
 @unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/fr/images 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/fr 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/he/images 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/he 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
 @unexec rmdir %D/share/xfce4 2>/dev/null || true

@@ -4,6 +4,7 @@ include/xfce4/libxfce4util/libxfce4util.h
 include/xfce4/libxfce4util/libxfce4util-config.h
 include/xfce4/libxfce4util/utf8.h
 include/xfce4/libxfce4util/util.h
+include/xfce4/libxfce4util/util-enum-types.h
 include/xfce4/libxfce4util/xfce-desktopentry.h
 include/xfce4/libxfce4util/xfce-fileutils.h
 include/xfce4/libxfce4util/xfce-generics.h

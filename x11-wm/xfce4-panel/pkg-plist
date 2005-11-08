@@ -4,6 +4,7 @@ etc/xdg/xfce4/panel/contents.xml.ar
 etc/xdg/xfce4/panel/contents.xml.az
 etc/xdg/xfce4/panel/contents.xml.ca
 etc/xdg/xfce4/panel/contents.xml.da
+etc/xdg/xfce4/panel/contents.xml.el
 etc/xdg/xfce4/panel/contents.xml.eu
 etc/xdg/xfce4/panel/contents.xml.fi
 etc/xdg/xfce4/panel/contents.xml.fr
@@ -15,9 +16,11 @@ etc/xdg/xfce4/panel/contents.xml.ko
 etc/xdg/xfce4/panel/contents.xml.lt
 etc/xdg/xfce4/panel/contents.xml.ms
 etc/xdg/xfce4/panel/contents.xml.nl
+etc/xdg/xfce4/panel/contents.xml.pl
 etc/xdg/xfce4/panel/contents.xml.ro
 etc/xdg/xfce4/panel/contents.xml.ru
 etc/xdg/xfce4/panel/contents.xml.sk
+etc/xdg/xfce4/panel/contents.xml.sv
 etc/xdg/xfce4/panel/contents.xml.tr
 etc/xdg/xfce4/panel/contents.xml.vi
 etc/xdg/xfce4/panel/contents.xml.zh_CN
@@ -61,6 +64,7 @@ share/icons/hicolor/48x48/apps/xfce-terminal.png
 share/icons/hicolor/48x48/apps/xfce-unknown.png
 share/icons/hicolor/48x48/apps/xfce-utils.png
 share/applications/xfce-panel-settings.desktop
+share/locale/af/LC_MESSAGES/xfce4-panel.mo
 share/locale/ar/LC_MESSAGES/xfce4-panel.mo
 share/locale/az/LC_MESSAGES/xfce4-panel.mo
 share/locale/be/LC_MESSAGES/xfce4-panel.mo
@@ -72,6 +76,7 @@ share/locale/da/LC_MESSAGES/xfce4-panel.mo
 share/locale/de/LC_MESSAGES/xfce4-panel.mo
 share/locale/el/LC_MESSAGES/xfce4-panel.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-panel.mo
+share/locale/eo/LC_MESSAGES/xfce4-panel.mo
 share/locale/es/LC_MESSAGES/xfce4-panel.mo
 share/locale/es_MX/LC_MESSAGES/xfce4-panel.mo
 share/locale/et/LC_MESSAGES/xfce4-panel.mo
@@ -83,9 +88,11 @@ share/locale/gu/LC_MESSAGES/xfce4-panel.mo
 share/locale/he/LC_MESSAGES/xfce4-panel.mo
 share/locale/hi/LC_MESSAGES/xfce4-panel.mo
 share/locale/hu/LC_MESSAGES/xfce4-panel.mo
+share/locale/hy/LC_MESSAGES/xfce4-panel.mo
 share/locale/it/LC_MESSAGES/xfce4-panel.mo
 share/locale/ja/LC_MESSAGES/xfce4-panel.mo
 share/locale/ko/LC_MESSAGES/xfce4-panel.mo
+share/locale/ku/LC_MESSAGES/xfce4-panel.mo
 share/locale/lt/LC_MESSAGES/xfce4-panel.mo
 share/locale/mr/LC_MESSAGES/xfce4-panel.mo
 share/locale/ms/LC_MESSAGES/xfce4-panel.mo
@@ -98,9 +105,11 @@ share/locale/pt_PT/LC_MESSAGES/xfce4-panel.mo
 share/locale/ro/LC_MESSAGES/xfce4-panel.mo
 share/locale/ru/LC_MESSAGES/xfce4-panel.mo
 share/locale/sk/LC_MESSAGES/xfce4-panel.mo
+share/locale/sl/LC_MESSAGES/xfce4-panel.mo
 share/locale/sv/LC_MESSAGES/xfce4-panel.mo
 share/locale/ta/LC_MESSAGES/xfce4-panel.mo
 share/locale/tr/LC_MESSAGES/xfce4-panel.mo
+share/locale/uk/LC_MESSAGES/xfce4-panel.mo
 share/locale/vi/LC_MESSAGES/xfce4-panel.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-panel.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-panel.mo
@@ -130,6 +139,19 @@ share/xfce4/doc/fr/images/pager-properties.png
 share/xfce4/doc/fr/images/panel-settings.png
 share/xfce4/doc/fr/images/systembuttons-properties.png
 share/xfce4/doc/fr/xfce4-panel.html
+share/xfce4/doc/he/images/add-item-dialog.png
+share/xfce4/doc/he/images/clock-properties.png
+share/xfce4/doc/he/images/default_panel.png
+share/xfce4/doc/he/images/handle-popup.png
+share/xfce4/doc/he/images/item-popup.png  
+share/xfce4/doc/he/images/launcher-properties.png
+share/xfce4/doc/he/images/mailcheck-properties.png
+share/xfce4/doc/he/images/menuitem-properties.png
+share/xfce4/doc/he/images/nooptions-properties.png
+share/xfce4/doc/he/images/pager-properties.png
+share/xfce4/doc/he/images/panel-settings.png 
+share/xfce4/doc/he/images/systembuttons-properties.png
+share/xfce4/doc/he/xfce4-panel.html
 @dirrm etc/xdg/xfce4/panel
 @unexec rmdir %D/etc/xdg/xfce4 2>/dev/null || true
 @unexec rmdir %D/etc/xdg 2>/dev/null || true
@@ -148,6 +170,8 @@ share/xfce4/doc/fr/xfce4-panel.html
 @unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/fr/images 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/fr 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/he/images 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/he 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
 @unexec rmdir %D/share/xfce4 2>/dev/null || true
 @unexec rmdir %D/share/locale/nb_NO/LC_MESSAGES 2>/dev/null || true

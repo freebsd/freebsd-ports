@@ -15,6 +15,7 @@ share/icons/hicolor/scalable/apps/xfce4-display.svg
 share/icons/hicolor/scalable/apps/xfce4-keyboard.svg
 share/icons/hicolor/scalable/apps/xfce4-mouse.svg
 share/icons/hicolor/scalable/apps/xfce4-ui.svg
+share/locale/af/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/ar/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/az/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/bg/LC_MESSAGES/xfce-mcs-plugins.mo
@@ -22,9 +23,11 @@ share/locale/be/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/bn_IN/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/ca/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/cs/LC_MESSAGES/xfce-mcs-plugins.mo
+share/locale/da/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/de/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/el/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/en_GB/LC_MESSAGES/xfce-mcs-plugins.mo
+share/locale/eo/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/es/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/es_MX/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/et/LC_MESSAGES/xfce-mcs-plugins.mo
@@ -39,6 +42,7 @@ share/locale/hu/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/it/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/ja/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/ko/LC_MESSAGES/xfce-mcs-plugins.mo
+share/locale/ku/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/lt/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/mr/LC_MESSAGES/xfce-mcs-plugins.mo  
 share/locale/ms/LC_MESSAGES/xfce-mcs-plugins.mo
@@ -50,6 +54,7 @@ share/locale/pt_PT/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/ro/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/ru/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/sk/LC_MESSAGES/xfce-mcs-plugins.mo
+share/locale/sl/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/sv/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/ta/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/tr/LC_MESSAGES/xfce-mcs-plugins.mo
@@ -70,6 +75,12 @@ share/xfce4/doc/fr/images/keyboard_settings.png
 share/xfce4/doc/fr/images/mouse_settings.png
 share/xfce4/doc/fr/images/user_interface_settings.png
 share/xfce4/doc/fr/xfce-mcs-plugins.html
+share/xfce4/doc/he/images/display_preferences.png
+share/xfce4/doc/he/images/font_selection.png   
+share/xfce4/doc/he/images/keyboard_settings.png
+share/xfce4/doc/he/images/mouse_settings.png   
+share/xfce4/doc/he/images/user_interface_settings.png
+share/xfce4/doc/he/xfce-mcs-plugins.html
 @unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4 2>/dev/null || true
 @unexec rmdir %D/share/locale/bn_IN/LC_MESSAGES 2>/dev/null || true
@@ -80,5 +91,7 @@ share/xfce4/doc/fr/xfce-mcs-plugins.html
 @unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/fr/images 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/fr 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/he/images 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/he 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
 @unexec rmdir %D/share/xfce4 2>/dev/null || true

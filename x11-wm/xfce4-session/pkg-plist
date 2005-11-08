@@ -26,6 +26,7 @@ share/icons/hicolor/72x72/apps/xfsm-trash-hilight.png
 share/icons/hicolor/72x72/apps/xfsm-trash-normal.png
 share/icons/hicolor/scalable/apps/xfce4-session.svg
 share/icons/hicolor/scalable/apps/xfsm-shutdown.svg
+share/locale/af/LC_MESSAGES/xfce4-session.mo
 share/locale/ar/LC_MESSAGES/xfce4-session.mo
 share/locale/az/LC_MESSAGES/xfce4-session.mo
 share/locale/be/LC_MESSAGES/xfce4-session.mo
@@ -36,6 +37,7 @@ share/locale/da/LC_MESSAGES/xfce4-session.mo
 share/locale/de/LC_MESSAGES/xfce4-session.mo
 share/locale/el/LC_MESSAGES/xfce4-session.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-session.mo
+share/locale/eo/LC_MESSAGES/xfce4-session.mo
 share/locale/es/LC_MESSAGES/xfce4-session.mo
 share/locale/es_MX/LC_MESSAGES/xfce4-session.mo
 share/locale/et/LC_MESSAGES/xfce4-session.mo
@@ -50,6 +52,7 @@ share/locale/hu/LC_MESSAGES/xfce4-session.mo
 share/locale/it/LC_MESSAGES/xfce4-session.mo
 share/locale/ja/LC_MESSAGES/xfce4-session.mo
 share/locale/ko/LC_MESSAGES/xfce4-session.mo
+share/locale/ku/LC_MESSAGES/xfce4-session.mo
 share/locale/lt/LC_MESSAGES/xfce4-session.mo
 share/locale/mr/LC_MESSAGES/xfce4-session.mo
 share/locale/ms/LC_MESSAGES/xfce4-session.mo
@@ -62,6 +65,7 @@ share/locale/pt_PT/LC_MESSAGES/xfce4-session.mo
 share/locale/ro/LC_MESSAGES/xfce4-session.mo
 share/locale/ru/LC_MESSAGES/xfce4-session.mo
 share/locale/sk/LC_MESSAGES/xfce4-session.mo
+share/locale/sl/LC_MESSAGES/xfce4-session.mo
 share/locale/sv/LC_MESSAGES/xfce4-session.mo
 share/locale/ta/LC_MESSAGES/xfce4-session.mo
 share/locale/tr/LC_MESSAGES/xfce4-session.mo
@@ -79,6 +83,10 @@ share/xfce4/doc/fr/images/xfsm-advanced.png
 share/xfce4/doc/fr/images/xfsm-general.png
 share/xfce4/doc/fr/images/xfsm-splash.png 
 share/xfce4/doc/fr/xfce4-session.html  
+share/xfce4/doc/he/images/xfsm-advanced.png 
+share/xfce4/doc/he/images/xfsm-general.png  
+share/xfce4/doc/he/images/xfsm-splash.png   
+share/xfce4/doc/he/xfce4-session.html
 @dirrm etc/xdg/xfce4-session
 @unexec rmdir %D/etc/xdg 2>/dev/null || true
 @dirrm include/xfce4/xfce4-session-4.2/libxfsm
@@ -96,6 +104,8 @@ share/xfce4/doc/fr/xfce4-session.html
 @unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/fr/images 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/fr 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/he/images 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/he 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
 @unexec rmdir %D/share/xfce4 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4/splash/engines 2>/dev/null || true

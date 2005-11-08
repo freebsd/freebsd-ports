@@ -8,6 +8,7 @@ share/applications/xfprint-manager.desktop
 share/applications/xfce-xfprint-settings.desktop
 share/icons/hicolor/scalable/apps/xfprint.svg
 share/icons/hicolor/48x48/apps/xfprint.png
+share/locale/af/LC_MESSAGES/xfprint.mo
 share/locale/ar/LC_MESSAGES/xfprint.mo
 share/locale/az/LC_MESSAGES/xfprint.mo
 share/locale/be/LC_MESSAGES/xfprint.mo
@@ -32,6 +33,7 @@ share/locale/hu/LC_MESSAGES/xfprint.mo
 share/locale/it/LC_MESSAGES/xfprint.mo
 share/locale/ja/LC_MESSAGES/xfprint.mo
 share/locale/ko/LC_MESSAGES/xfprint.mo
+share/locale/ku/LC_MESSAGES/xfprint.mo
 share/locale/lt/LC_MESSAGES/xfprint.mo
 share/locale/mr/LC_MESSAGES/xfprint.mo
 share/locale/ms/LC_MESSAGES/xfprint.mo
@@ -40,8 +42,10 @@ share/locale/pa/LC_MESSAGES/xfprint.mo
 share/locale/pl/LC_MESSAGES/xfprint.mo
 share/locale/pt_BR/LC_MESSAGES/xfprint.mo
 share/locale/pt_PT/LC_MESSAGES/xfprint.mo
+share/locale/ro/LC_MESSAGES/xfprint.mo
 share/locale/ru/LC_MESSAGES/xfprint.mo
 share/locale/sk/LC_MESSAGES/xfprint.mo
+share/locale/sl/LC_MESSAGES/xfprint.mo
 share/locale/sv/LC_MESSAGES/xfprint.mo
 share/locale/ta/LC_MESSAGES/xfprint.mo
 share/locale/tr/LC_MESSAGES/xfprint.mo
@@ -67,6 +71,15 @@ share/xfce4/doc/fr/images/xfprint_prettyprinting.png
 share/xfce4/doc/fr/images/xfprint_sheets.png
 share/xfce4/doc/fr/images/xfprint_virtualpages.png
 share/xfce4/doc/fr/xfprint.html
+share/xfce4/doc/he/images/xfprint_headings.png
+share/xfce4/doc/he/images/xfprint_input.png
+share/xfce4/doc/he/images/xfprint-manager.png
+share/xfce4/doc/he/images/xfprint-manager-queue.png
+share/xfce4/doc/he/images/xfprint_mcs_plugin.png
+share/xfce4/doc/he/images/xfprint_prettyprinting.png
+share/xfce4/doc/he/images/xfprint_sheets.png
+share/xfce4/doc/he/images/xfprint_virtualpages.png
+share/xfce4/doc/he/xfprint.html
 @unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4/xfprint-plugins 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4 2>/dev/null || true 
@@ -79,5 +92,7 @@ share/xfce4/doc/fr/xfprint.html
 @unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/fr/images 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/fr 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/he/images 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/he 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
 @unexec rmdir %D/share/xfce4 2>/dev/null || true
