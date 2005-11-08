@@ -8,21 +8,21 @@ bin/bogotune
 bin/bogoutil
 bin/bogoupgrade
 etc/bogofilter.cf.example
-%%CONTRIB%%%%DOCSDIR%%/contrib/bfproxy
+%%CONTRIB%%%%DOCSDIR%%/contrib/bfproxy.pl
 %%CONTRIB%%%%DOCSDIR%%/contrib/bogo.R
 %%CONTRIB%%%%DOCSDIR%%/contrib/bogofilter-milter.pl
-%%CONTRIB%%%%DOCSDIR%%/contrib/bogofilter-qfe
+%%CONTRIB%%%%DOCSDIR%%/contrib/bogofilter-qfe.sh
 %%CONTRIB%%%%DOCSDIR%%/contrib/bogominitrain.pl
 %%CONTRIB%%%%DOCSDIR%%/contrib/dot-qmail-bogofilter-default
 %%CONTRIB%%%%DOCSDIR%%/contrib/mailfilter.example
-%%CONTRIB%%%%DOCSDIR%%/contrib/mime.get.rfc822
+%%CONTRIB%%%%DOCSDIR%%/contrib/mime.get.rfc822.pl
 %%CONTRIB%%%%DOCSDIR%%/contrib/parmtest.sh
 %%CONTRIB%%%%DOCSDIR%%/contrib/printmaildir.pl
 %%CONTRIB%%%%DOCSDIR%%/contrib/procmailrc.example
-%%CONTRIB%%%%DOCSDIR%%/contrib/randomtrain
-%%CONTRIB%%%%DOCSDIR%%/contrib/scramble
-%%CONTRIB%%%%DOCSDIR%%/contrib/spamitarium
-%%CONTRIB%%%%DOCSDIR%%/contrib/stripsearch
+%%CONTRIB%%%%DOCSDIR%%/contrib/randomtrain.sh
+%%CONTRIB%%%%DOCSDIR%%/contrib/scramble.sh
+%%CONTRIB%%%%DOCSDIR%%/contrib/spamitarium.pl
+%%CONTRIB%%%%DOCSDIR%%/contrib/stripsearch.pl
 %%CONTRIB%%%%DOCSDIR%%/contrib/trainbogo.sh
 %%CONTRIB%%@dirrm %%DOCSDIR%%/contrib
 %%CONTRIB%%@dirrm %%DOCSDIR%%
