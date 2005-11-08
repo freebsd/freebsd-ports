@@ -30,15 +30,18 @@ SLAVEDIRS=	arabic/php_doc \
 		russian/php_doc
 
 PHP_LANG?=	en
+PHP_LANGS=	${PHP_WRKDIR} ${PHP_WRKSRC}
+PHP_WRKDIR=	ar br de en fr hu pl ru tw zh
+PHP_WRKSRC=	hk ja kr
 PHPDOCDIR=	${PREFIX}/share/doc/php-${PHP_LANG}
 PLIST=		${WRKDIR}/pkg-plist
 
-.for lang in hk ja kr
+.for lang in ${PHP_WRKSRC}
 .if ${PHP_LANG} == ${lang}
 WRK_SRC=	${WRKDIR}
 .endif
 .endfor
-.for lang in ar br de en fr hu pl ru tw zh
+.for lang in ${PHP_WRKDIR}
 .if ${PHP_LANG} == ${lang}
 WRK_SRC=	${WRKDIR}/html
 .endif
@@ -81,27 +84,17 @@ do-install:
 	done
 
 # this is for the maintainer only
-.if defined(MAINTAINER_MODE)
-LOCAL_DISTDIR?=	/var/tmp/php_doc/php
-LOCAL_TMPDIR?=	/var/tmp/php_doc/tmp
-DISTSITE?=	http://de.php.net/distributions/manual/
 
-localfetch:
-.for lang in br de en es fr ja
-	${MKDIR} ${LOCAL_DISTDIR}
-	[ -f ${LOCAL_DISTDIR}/php_manual_${lang}${EXTRACT_SUFX} ] || \
-	${FETCH_CMD} -o ${LOCAL_DISTDIR}/php_manual_${lang}${EXTRACT_SUFX} ${DISTSITE}php_manual_${lang}${EXTRACT_SUFX}
-
-	${MKDIR} ${LOCAL_TMPDIR}/${lang}
-	cd ${LOCAL_TMPDIR}/${lang} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${LOCAL_DISTDIR}/php_manual_${lang}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS}
-
-	(cd ${LOCAL_TMPDIR}/${lang} && ${LS} -1) | ${PERL} -pe 'print "%%PHPDOCDIR%%/$_";' > ${.CURDIR}/pkg-plist.${lang}
-	${ECHO_CMD} "@dirrm %%PHPDOCDIR%%" >> ${.CURDIR}/pkg-plist.${lang}
-	${RM} -rf ${LOCAL_TMPDIR}/${lang}
+makesum:
+	@> ${MD5_FILE}
+.for l in ${PHP_LANGS}
+	@f=php_manual_${l}-${PORTVERSION}${EXTRACT_SUFX}; \
+	${ECHO_CMD} makesum on $${f}; \
+	cd ${DISTDIR}; \
+	${MD5} $${f} >> ${MD5_FILE}; \
+	${SHA256} $${f} >> ${MD5_FILE}; \
+	${ECHO_CMD} "SIZE ($${f}) = "`${LS} -ALln $${f} | ${AWK} '{print $$5}'` >> ${MD5_FILE}
 .endfor
 
-	${MV} ${.CURDIR}/pkg-plist.en ${.CURDIR}/pkg-plist
-	cd ${LOCAL_DISTDIR} && ${MD5} php_manual_* > ${.CURDIR}/distinfo
-.endif
 
 .include <bsd.port.mk>
