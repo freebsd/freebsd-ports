@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sysmon
-PORTVERSION=	0.92
+PORTVERSION=	0.92.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://puck.nether.net/pub/jared/ \
 		http://titan.oxeo.com/mirror/sysmon.org/
@@ -16,10 +16,11 @@ COMMENT=	A network tool designed for high performance and accurate monitoring
 
 DOCS=		Changes.html binaries.html config.html docs.html index.html \
 		jclient.jpg net-example.png sysmon.conf.man.html sysmon.jpg \
-		sysmon.man.html
+		sysmon.man.html reporting.xml-spec.txt
 MAN8=		sysmon.man.8 sysmon.conf.man.8
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/sysmon ${PREFIX}/bin
