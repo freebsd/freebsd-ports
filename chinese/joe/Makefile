@@ -18,7 +18,9 @@ MAINTAINER=	chinsan.tw@gmail.com
 
 LATEST_LINK=	${PKGNAMEPREFIX}joe
 
-MASTERDIR=	${.CURDIR}/../../editors/joe2
+MASTERDIR=	${.CURDIR}/../../editors/joe
 MD5_FILE=	${.CURDIR}/distinfo
+
+IGNORE=	"Waiting to be updated to 3.x, use chinese/joe2"
 
 .include "${MASTERDIR}/Makefile"
