@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tomsfastmath
-PORTVERSION=	0.05
-PORTREVISION=	1
+PORTVERSION=	0.06
 CATEGORIES=	math
 MASTER_SITES=	http://libtomcrypt.org/tfm/files/
 DISTNAME=	tfm-${PORTVERSION}
@@ -21,6 +20,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	default
 USE_REINPLACE=	yes
+
+PLIST_FILES=	include/tfm.h lib/libtfm.a
 
 .include <bsd.port.pre.mk>
 
