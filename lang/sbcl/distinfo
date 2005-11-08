@@ -1,4 +1,6 @@
 MD5 (sbcl-0.9.6-source.tar.bz2) = 5e94122e73bc59c1411ff93fee948bfb
+SHA256 (sbcl-0.9.6-source.tar.bz2) = 7a2dbfbaba7160acc5085c06bdcb158ea870778f7e472c3ebf4a0728ab5d9e45
 SIZE (sbcl-0.9.6-source.tar.bz2) = 2664152
 MD5 (sbcl-0.9.6-html.tar.bz2) = e2d56c8df81e73f7085791e9ef89a2b3
+SHA256 (sbcl-0.9.6-html.tar.bz2) = 921edd471203e2865a0fe90e180b18606681945343ec923031fc85943a846267
 SIZE (sbcl-0.9.6-html.tar.bz2) = 117398
