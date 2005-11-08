@@ -201,6 +201,66 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- Only build ports if ${ARCH} matches one of these.
 # NOT_FOR_ARCHS	- Only build ports if ${ARCH} doesn't match one of these.
 #
+# Dependency checking.  Use these if your port requires another port
+# not in the list below.  (Default: empty.)
+#
+# EXTRACT_DEPENDS
+#				- A list of "path:dir[:target]" tuples of other ports this
+#				  package depends on in the "extract" stage.  "path" is
+#				  the name of a file if it starts with a slash (/), an
+#				  executable otherwise.  make will test for the existence
+#				  (if it is a full pathname) or search for it in your
+#				  $PATH (if it is an executable) and go into "dir" to do
+#				  a "make all install" if it's not found.  If the third
+#				  field ("target") exists, it will be used instead of
+#				  ${DEPENDS_TARGET}.
+# PATCH_DEPENDS	- A list of "path:dir[:target]" tuples of other ports this
+#				  package depends on in the "patch" stage.  "path" is the
+#				  name of a file if it starts with a slash (/), an
+#				  executable otherwise.  make will test for the existence
+#				  (if it is a full pathname) or search for it in your
+#				  $PATH (if it is an executable) and go into "dir" to do
+#				  a "make all install" if it's not found.  If the third
+#				  field ("target") exists, it will be used instead of
+#				  ${DEPENDS_TARGET}.
+# FETCH_DEPENDS	- A list of "path:dir[:target]" tuples of other ports this
+#				  package depends in the "fetch" stage.  "path" is the
+#				  name of a file if it starts with a slash (/), an
+#				  executable otherwise.  make will test for the
+#				  existence (if it is a full pathname) or search for
+#				  it in your $PATH (if it is an executable) and go
+#				  into "dir" to do a "make all install" if it's not
+#				  found.  If the third field ("target") exists, it will
+#				  be used instead of ${DEPENDS_TARGET}.
+# BUILD_DEPENDS	- A list of "path:dir[:target]" tuples of other ports this
+#				  package depends to build (between the "extract" and
+#				  "build" stages, inclusive).  The test done to
+#				  determine the existence of the dependency is the
+#				  same as FETCH_DEPENDS.  If the third field ("target")
+#				  exists, it will be used instead of ${DEPENDS_TARGET}.
+# RUN_DEPENDS	- A list of "path:dir[:target]" tuples of other ports this
+#				  package depends to run.  The test done to determine
+#				  the existence of the dependency is the same as
+#				  FETCH_DEPENDS.  This will be checked during the
+#				  "install" stage and the name of the dependency will
+#				  be put into the package as well.  If the third field
+#				  ("target") exists, it will be used instead of
+#				  ${DEPENDS_TARGET}.
+# LIB_DEPENDS	- A list of "lib:dir[:target]" tuples of other ports this
+#				  package depends on.  "lib" is the name of a shared library.
+#				  make will use "ldconfig -r" to search for the library.
+#				  lib can contain extended regular expressions.
+# DEPENDS		- A list of "dir[:target]" tuples of other ports this
+#				  package depends on being made first.  Use this only for
+#				  things that don't fall into the above four categories.
+#				  If the second field ("target") exists, it will be used
+#				  instead of ${DEPENDS_TARGET}.
+#
+# DEPENDS_TARGET
+#				- The default target to execute when a port is calling a
+#				  dependency.
+#				  Default: install
+#
 # These variables control options about how a port gets built and/or
 # are shorthand notations for common sets of dependencies.
 # Use these if your port uses some of the common software packages. By
@@ -371,39 +431,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # LINUX_BASE_PORT		- This is a read-only variable, it gets set to a value which
 #				  is usable in *_DEPENDS (e.g. BUILD_DEPENDS=${LINUX_BASE_PORT}).
 #				  It honors USE_LINUX=foo and OVERRIDE_LINUX_BASE_PORT.
-##
-# USE_MYSQL		- Add MySQL client dependency.
-#				  If no version is given (by the maintainer via the port or
-#				  by the user via defined variable), try to find the
-#				  currently installed version.  Fall back to default if
-#				  necessary (MySQL4.1 = 41).
-# DEFAULT_MYSQL_VER
-#				- MySQL default version. Can be overriden within a port.
-#				  Default: 41.
-# WANT_MYSQL_VER
-#				- Maintainer can set an arbitrary version of MySQL by using it.
-# BROKEN_WITH_MYSQL
-#				- This variable can be defined if the ports doesn't support
-#				  one or more version of MySQL.
-# MYSQL_VER		- Internal variable for MySQL version.
-# WITH_MYSQL_VER
-#				- User defined variable to set MySQL version.
-##
-# USE_PGSQL		- Add PostgreSQL client dependency.
-#				  If no version is given (by the maintainer via the port or
-#				  by the user via defined variable), try to find the
-#				  currently installed version.  Fall back to default if
-#				  necessary (PostgreSQL-7.4 = 74).
-# DEFAULT_PGSQL_VER
-#				- PostgreSQL default version. Can be overridden within a port.
-#				  Default: 74.
-# WANT_PGSQL_VER
-#				- Maintainer can set an arbitrary version of PostgreSQL by
-#				  using it.
-# BROKEN_WITH_PGSQL
-#				- This variable can be defined if the ports doesn't support
-#				  one or more versions of PostgreSQL.
-##
 # USE_RC_SUBR	- If set, the ports startup/shutdown script uses the common
 # 				  routines found in etc/rc.subr and may need to
 # 				  depend on the sysutils/rc_subr port.
@@ -413,79 +440,13 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # 				  ${PREFIX}/etc/rc.d and added to the packing list.
 # 				  pairs will be added to ${SUB_LIST}. These files will be
 # 				  installed in ${PREFIX}/etc/rc.d and added to the packing list.
-# RC_ORDER		- List of rcNG startup scripts to be called early in the boot
+# USE_RCORDER		- List of rcNG startup scripts to be called early in the boot
 # 				  process. This acts exactly like USE_RC_SUBR except that
 # 				  scripts are installed in /etc/rc.d.
 # RC_SUBR		- Set to path of rc.subr.
 #				  Default: ${LOCALBASE}/etc/rc.subr.
 ##
 # USE_APACHE	- If set, this port relies on an apache webserver.
-# APACHE_PORT	- CATEGORY and portname of the prefered port for apache.
-#				  Default: www/apache13
-#				  If WITH_APACHE2 is defined defaults to www/apache2
-# APXS			- Full path to the prefered apxs binary to configure
-#				  apache modules.
-#				  Default: ${LOCALBASE}/sbin/apxs
-#
-#
-# Dependency checking.  Use these if your port requires another port
-# not in the list above.  (Default: empty.)
-#
-# EXTRACT_DEPENDS
-#				- A list of "path:dir[:target]" tuples of other ports this
-#				  package depends on in the "extract" stage.  "path" is
-#				  the name of a file if it starts with a slash (/), an
-#				  executable otherwise.  make will test for the existence
-#				  (if it is a full pathname) or search for it in your
-#				  $PATH (if it is an executable) and go into "dir" to do
-#				  a "make all install" if it's not found.  If the third
-#				  field ("target") exists, it will be used instead of
-#				  ${DEPENDS_TARGET}.
-# PATCH_DEPENDS	- A list of "path:dir[:target]" tuples of other ports this
-#				  package depends on in the "patch" stage.  "path" is the
-#				  name of a file if it starts with a slash (/), an
-#				  executable otherwise.  make will test for the existence
-#				  (if it is a full pathname) or search for it in your
-#				  $PATH (if it is an executable) and go into "dir" to do
-#				  a "make all install" if it's not found.  If the third
-#				  field ("target") exists, it will be used instead of
-#				  ${DEPENDS_TARGET}.
-# FETCH_DEPENDS	- A list of "path:dir[:target]" tuples of other ports this
-#				  package depends in the "fetch" stage.  "path" is the
-#				  name of a file if it starts with a slash (/), an
-#				  executable otherwise.  make will test for the
-#				  existence (if it is a full pathname) or search for
-#				  it in your $PATH (if it is an executable) and go
-#				  into "dir" to do a "make all install" if it's not
-#				  found.  If the third field ("target") exists, it will
-#				  be used instead of ${DEPENDS_TARGET}.
-# BUILD_DEPENDS	- A list of "path:dir[:target]" tuples of other ports this
-#				  package depends to build (between the "extract" and
-#				  "build" stages, inclusive).  The test done to
-#				  determine the existence of the dependency is the
-#				  same as FETCH_DEPENDS.  If the third field ("target")
-#				  exists, it will be used instead of ${DEPENDS_TARGET}.
-# RUN_DEPENDS	- A list of "path:dir[:target]" tuples of other ports this
-#				  package depends to run.  The test done to determine
-#				  the existence of the dependency is the same as
-#				  FETCH_DEPENDS.  This will be checked during the
-#				  "install" stage and the name of the dependency will
-#				  be put into the package as well.  If the third field
-#				  ("target") exists, it will be used instead of
-#				  ${DEPENDS_TARGET}.
-# LIB_DEPENDS	- A list of "lib:dir[:target]" tuples of other ports this
-#				  package depends on.  "lib" is the name of a shared library.
-#				  make will use "ldconfig -r" to search for the library.
-#				  lib can contain extended regular expressions.
-# DEPENDS		- A list of "dir[:target]" tuples of other ports this
-#				  package depends on being made first.  Use this only for
-#				  things that don't fall into the above four categories.
-#				  If the second field ("target") exists, it will be used
-#				  instead of ${DEPENDS_TARGET}.
-# DEPENDS_TARGET
-#				- The default target to execute when a port is calling a
-#				  dependency.
-#				  Default: install
 #
 # Conflict checking.  Use if your port cannot be installed at the same time as
 # another package.
@@ -775,7 +736,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # CONFIGURE_TARGET
 #				- The name of target to call when GNU_CONFIGURE is
 #				  defined.
-#				  Default: ${MACHINE_ARCH}-portbld-freebsd${OSREL}
+#				  Default: ${ARCH}-portbld-freebsd${OSREL}
 # CONFIGURE_ARGS
 #				- Pass these args to configure if ${HAS_CONFIGURE} is set.
 #				  Default: "--prefix=${PREFIX} ${CONFIGURE_TARGET}" if
@@ -866,6 +827,36 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # DATADIR		- Name of the directory to install the packages shared data in.
 #				  Default: ${PREFIX}/share/${PORTNAME}
 #
+# DESKTOPDIR	- Name of the directory to install ${DESKTOP_ENTRIES} in.
+#				  Default: ${PREFIX}/share/applications
+# DESKTOP_ENTRIES
+#				- List of desktop entry files to generate and install in
+#				  ${DESKTOPDIR}. The format is
+#				  "Name" "Comment" "Icon" "Exec" "Categories" StartupNotify
+#				  Rules:
+#					* Only add desktop entries for applications which do not
+#					  require a terminal (ie. X applications).
+#					* If the upstream distribution already installs .desktop
+#					  files, you do not need to use this.
+#					* If you require a more elaborate .desktop file than this
+#					  variable permits, write it yourself and install it
+#					  in ${DESKTOPDIR}.
+#				  Notes:
+#					* Comment and Icon may be empty strings (""). The other
+#					  fields are mandatory.
+#					* Exec will also be used to name the .desktop file.
+#					* The files will be automatically added to ${PLIST}.
+#				  Example:
+#					"X Window Information" \
+#					"Get information about X windows" \
+#					"wininfo.png" \
+#					"wininfo" \
+#					"Application;System;" \
+#					true
+#				  See http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html
+#				  for an explanation of the fields. If you need to create more
+#				  than one file, just chain them into a single variable.
+#
 # Note that the install target will automatically add manpages (see
 # above) and also substitute special sequences of characters (delimited
 # by "%%") as defined in PLIST_SUB to generate ${TMPPLIST}.  For
@@ -909,6 +900,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- If set, it will overwrite any existing package
 #				  registration information in ${PKG_DBDIR}/${PKGNAME}.
 # NO_DEPENDS	- Don't verify build of dependencies.
+# CHECKSUM_ALGORITHMS
+#				- Different checksum algorithms to check for verifying the
+#				  integrity of the distfiles. The absence of the algorithm
+#				  in distinfo doesn't make it fail. 
+#				  Default: md5
 # NO_CHECKSUM	- Don't verify the checksum.  Typically used when
 #				  when you noticed the distfile you just fetched has
 #				  a different checksum and you intend to verify if
@@ -926,6 +922,26 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # End of the list of all variables that need to be defined in a port.
 # Most port authors should not need to understand anything after this point.
 #
+
+# Look for ${WRKSRC}/.../*.orig files, and (re-)create
+# ${FILEDIR}/patch-* files from them.
+
+.if !target(makepatch)
+makepatch:
+	@cd ${.CURDIR} && ${MKDIR} ${FILESDIR}
+	@(cd ${WRKSRC}; \
+		for i in `find . -type f -name '*.orig'`; do \
+			ORG=$$i; \
+			NEW=$${i%.orig}; \
+			OUT=${FILESDIR}`${ECHO} $${NEW} | \
+				${SED} -e 's|/|__|g' \
+					-e 's|^\.__|/patch-|'`; \
+			${ECHO} ${DIFF} -ud $${ORG} $${NEW} '>' $${OUT}; \
+			${DIFF} -ud $${ORG} $${NEW} > $${OUT} || ${TRUE}; \
+		done \
+	)
+.endif
+
 
 # Start of pre-makefile section.
 .if !defined(AFTERPORTMK)
@@ -965,6 +981,7 @@ CPIO?=		/usr/bin/cpio
 CUT?=		/usr/bin/cut
 DC?=		/usr/bin/dc
 DIALOG?=	/usr/bin/dialog
+DIFF?=		/usr/bin/diff
 DIRNAME?=	/usr/bin/dirname
 EGREP?=		/usr/bin/egrep
 EXPR?=		/bin/expr
@@ -1187,10 +1204,8 @@ X11BASE?=		${DESTDIR}/usr/X11R6
 LINUXBASE?=		${DESTDIR}/compat/linux
 DISTDIR?=		${PORTSDIR}/distfiles
 _DISTDIR?=		${DISTDIR}/${DIST_SUBDIR}
-.if ${OSVERSION} >= 600000
-INDEXFILE?=		INDEX-6
-.elif ${OSVERSION} >= 500036
-INDEXFILE?=		INDEX-5
+.if ${OSVERSION} >= 500036
+INDEXFILE?=		INDEX-${OSVERSION:C/([0-9]).*/\1/}
 .else
 INDEXFILE?=		INDEX
 .endif
@@ -1235,17 +1250,6 @@ PREFIX?=		${LOCALBASE}
 
 PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
-.if defined(WITH_APACHE2)
-APACHE_PORT?=	www/apache2
-.else
-APACHE_PORT?=	www/apache13
-.endif
-APXS?=		${LOCALBASE}/sbin/apxs
-.if defined(USE_APACHE)
-BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
-RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
-.endif
-
 .if ${OSVERSION} >= 500036
 PERL_VERSION?=	5.8.7
 PERL_VER?=	5.8.7
@@ -1258,11 +1262,7 @@ PERL_VER?=		5.6.1
 PERL_VERSION?=	5.6.0
 PERL_VER?=		5.6.0
 .else
-.if ${OSVERSION} >= 300000
 PERL_VERSION?=	5.00503
-.else
-PERL_VERSION?=	5.00502
-.endif
 PERL_VER?=		5.005
 .endif
 .endif
@@ -1337,6 +1337,14 @@ PERL=		${LOCALBASE}/bin/perl
 
 .if defined(USE_RUBY) || defined(USE_LIBRUBY)
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
+.endif
+
+.if defined(USE_TCL) || defined(USE_TK)
+.include "${PORTSDIR}/Mk/bsd.tcl.mk"
+.endif
+
+.if defined(USE_APACHE) || defined(APACHE_COMPAT)
+.include "${PORTSDIR}/Mk/bsd.apache.mk"
 .endif
 
 .if defined(USE_QT_VER) || defined(USE_KDELIBS_VER) || defined(USE_KDEBASE_VER)
@@ -1424,7 +1432,7 @@ MAKE_SHELL?=	${SH}
 
 CONFIGURE_ENV+=	SHELL=${SH} CONFIG_SHELL=${SH} PORTOBJFORMAT=${PORTOBJFORMAT}
 SCRIPTS_ENV+=	PORTOBJFORMAT=${PORTOBJFORMAT}
-MAKE_ENV+=		SHELL=${SH} PORTOBJFORMAT=${PORTOBJFORMAT}
+MAKE_ENV+=		SHELL=${SH} PORTOBJFORMAT=${PORTOBJFORMAT} NO_LINT=YES
 PLIST_SUB+=		PORTOBJFORMAT=${PORTOBJFORMAT}
 
 .if defined(MANCOMPRESSED)
@@ -1479,8 +1487,6 @@ _OPENLDAP_FLAVOUR=
 .endif
 .if ${WANT_OPENLDAP_VER} == 22
 LIB_DEPENDS+=		ldap-2.2.7:${PORTSDIR}/net/openldap22${_OPENLDAP_FLAVOUR}-client
-.elif ${WANT_OPENLDAP_VER} == 21
-LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap21${_OPENLDAP_FLAVOUR}-client
 .elif ${WANT_OPENLDAP_VER} == 23
 LIB_DEPENDS+=		ldap-2.3.1:${PORTSDIR}/net/openldap23${_OPENLDAP_FLAVOUR}-client
 .else
@@ -1679,9 +1685,7 @@ LIB_DEPENDS+=			glut.3:${PORTSDIR}/graphics/libglut
 .endif
 
 .if defined(USE_BISON)
-.if ${OSVERSION} >= 400014
 BUILD_DEPENDS+=	bison:${PORTSDIR}/devel/bison
-.endif
 .endif
 
 PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
@@ -1725,99 +1729,15 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .endif
 .endif
 
-.if defined(USE_MYSQL)
-DEFAULT_MYSQL_VER?=	41
-# MySQL client version currently supported.
-MYSQL323_LIBVER=	10
-MYSQL40_LIBVER=		12
-MYSQL41_LIBVER=		14
-MYSQL50_LIBVER=		15
-
-# Setting/finding MySQL version we want.
-.if exists(${LOCALBASE}/bin/mysql)
-_MYSQL_VER!=	${LOCALBASE}/bin/mysql --version | ${SED} -e 's/.*Distrib \([0-9]\)\.\([0-9]*\).*/\1\2/'
-.endif
-
-.if defined(WANT_MYSQL_VER)
-.if defined(WITH_MYSQL_VER) && ${WITH_MYSQL_VER} != ${WANT_MYSQL_VER}
-BROKEN=		The port wants mysql${WANT_MYSQL_VER}-client and you try to install mysql${WITH_MYSQL_VER}-client.
-.endif
-MYSQL_VER=	${WANT_MYSQL_VER}
-.elif defined(WITH_MYSQL_VER)
-MYSQL_VER=	${WITH_MYSQL_VER}
-.else
-.if defined(_MYSQL_VER)
-MYSQL_VER=	${_MYSQL_VER}
-.else
-MYSQL_VER=	${DEFAULT_MYSQL_VER}
-.endif
-.endif # WANT_MYSQL_VER
-
-.if defined(_MYSQL_VER)
-.if ${_MYSQL_VER} != ${MYSQL_VER}
-BROKEN=	MySQL versions mismatch: mysql${_MYSQL_VER}-client is installed and wanted version is mysql${MYSQL_VER}-client
-.endif
-.endif
-
-# And now we are checking if we can use it
-.if defined(MYSQL${MYSQL_VER}_LIBVER)
-.if defined(BROKEN_WITH_MYSQL)
-.	for VER in ${BROKEN_WITH_MYSQL}
-.		if (${MYSQL_VER} == "${VER}")
-IGNORE=		Doesn't work with MySQL version : ${MYSQL_VER} (Doesn't support MySQL ${BROKEN_WITH_MYSQL})
-.		endif
-.	endfor
-.endif # BROKEN_WITH_MYSQL
-LIB_DEPENDS+=	mysqlclient.${MYSQL${MYSQL_VER}_LIBVER}:${PORTSDIR}/databases/mysql${MYSQL_VER}-client
-.else
-BROKEN=		"unknown MySQL version: ${MYSQL_VER}"
-.endif # Check for correct libs
-.endif # USE_MYSQL
-
-.if defined(USE_PGSQL)
-DEFAULT_PGSQL_VER?=	74
-PGSQL73_LIBVER=		3
-PGSQL74_LIBVER=		3
-PGSQL80_LIBVER=		4
-
-# Setting/finding PostgreSQL version we want.
-.if exists(${LOCALBASE}/bin/pg_config)
-_PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | ${SED} -n 's/PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\)\..*/\1\2/p'
-.endif
-
-.if defined(WANT_PGSQL_VER) && defined(_PGSQL_VER) && ${WANT_PGSQL_VER} != ${_PGSQL_VER}
-IGNORE=		"The port wants postgresql${WANT_PGSQL_VER}-client but you have postgresql${_PGSQL_VER}-client installed"
-.endif
-
-.if defined(_PGSQL_VER)
-PGSQL_VER=	${_PGSQL_VER}
-.elif defined(WANT_PGSQL_VER)
-PGSQL_VER=	${WANT_PGSQL_VER}
-.else
-PGSQL_VER=	${DEFAULT_PGSQL_VER}
-.endif
-
-# And now we are checking if we can use it
-.if defined(PGSQL${PGSQL_VER}_LIBVER)
-.if defined(BROKEN_WITH_PGSQL)
-.	for VER in ${BROKEN_WITH_PGSQL}
-.		if (${PGSQL_VER} == "${VER}")
-IGNORE=		"Does not work with postgresql${PGSQL_VER}-client PostgresSQL \(${BROKEN_WITH_PGSQL} not supported\)"
-.		endif
-.	endfor
-.endif # BROKEN_WITH_PGSQL
-LIB_DEPENDS+=	pq.${PGSQL${PGSQL_VER}_LIBVER}:${PORTSDIR}/databases/postgresql${PGSQL_VER}-client
-.else
-BROKEN=		"unknown PostgreSQL version: ${PGSQL_VER}"
-.endif # Check for correct version
-CPPFLAGS+=		-I${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-.endif # USE_PGSQL
-
 # XXX: (not yet): .if defined(USE_AUTOTOOLS)
 .include "${PORTSDIR}/Mk/bsd.autotools.mk"
 # XXX: (not yet): .endif
+
+.if defined(USE_MYSQL) || defined(WANT_MYSQL_VER) || \
+	defined(USE_PGSQL) || defined(WANT_PGSQL_VER) || \
+	defined(USE_BDB) || defined(USE_SQLITE) 
+.include "${PORTSDIR}/Mk/bsd.database.mk"
+.endif
 
 .if defined(WANT_GNOME) || defined(USE_GNOME) || defined(USE_GTK)
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
@@ -1833,6 +1753,14 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .if defined(USE_PYTHON)
 .include "${PORTSDIR}/Mk/bsd.python.mk"
+.endif
+
+.if defined(USE_TCL) || defined(USE_TK)
+.include "${PORTSDIR}/Mk/bsd.tcl.mk"
+.endif
+
+.if defined(USE_APACHE) || defined(APACHE_COMPAT)
+.include "${PORTSDIR}/Mk/bsd.apache.mk"
 .endif
 
 .if exists(${PORTSDIR}/../Makefile.inc)
@@ -1887,12 +1815,7 @@ RUN_DEPENDS+=	gs:${PORTSDIR}/${GHOSTSCRIPT_PORT}
 # Special macro for doing in-place file editing using regexps
 .if defined(USE_REINPLACE)
 REINPLACE_ARGS?=	-i.bak
-.if ${OSVERSION} < 460101 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500036 )
-PATCH_DEPENDS+=	${LOCALBASE}/bin/sed_inplace:${PORTSDIR}/textproc/sed_inplace
-REINPLACE_CMD?=	${LOCALBASE}/bin/sed_inplace ${REINPLACE_ARGS}
-.else
 REINPLACE_CMD?=	${SED} ${REINPLACE_ARGS}
-.endif
 .endif
 
 # Names of cookies used to skip already completed stages
@@ -1922,6 +1845,16 @@ MD5?=			/usr/bin/md5
 .else
 MD5?=			md5
 .endif
+.if exists(/sbin/sha256)
+SHA256?=		/sbin/sha256
+.elif exists(${LOCALBASE}/sbin/sha256)
+SHA256?=		${LOCALBASE}/sbin/sha256
+.else
+SHA256?=		NO
+.endif
+
+CHECKSUM_ALGORITHMS?= md5 sha256
+
 MD5_FILE?=		${MASTERDIR}/distinfo
 
 MAKE_FLAGS?=	-f
@@ -1940,13 +1873,8 @@ PTHREAD_LIBS?=		-pthread
 .endif
 
 .if exists(/usr/bin/fetch)
-# avoid -A for 2.2 -- it's not ported to that branch
-.if ${OSVERSION} < 300000
-FETCH_CMD?=		/usr/bin/fetch
-.else
 FETCH_CMD?=		/usr/bin/fetch -ARr
 FETCH_REGET?=	1
-.endif
 .if ${OSVERSION} >= 480000 && !defined(DISABLE_SIZE)
 # Avoid -S for 4.7 and earlier since it causes fetch errors
 FETCH_BEFORE_ARGS+=	$${CKSIZE:+-S $$CKSIZE}
@@ -2081,7 +2009,7 @@ SCRIPTS_ENV+=	${INSTALL_MACROS}
 .undef NO_PACKAGE
 .endif
 
-COMMENTFILE?=		${PKGDIR}/pkg-comment
+COMMENTFILE?=	${PKGDIR}/pkg-comment
 DESCR?=			${PKGDIR}/pkg-descr
 PLIST?=			${PKGDIR}/pkg-plist
 PKGINSTALL?=	${PKGDIR}/pkg-install
@@ -2091,26 +2019,17 @@ PKGMESSAGE?=	${PKGDIR}/pkg-message
 
 TMPPLIST?=	${WRKDIR}/.PLIST.mktmp
 
-.if ${OSVERSION} >= 400000
 .for _CATEGORY in ${CATEGORIES}
 PKGCATEGORY?=	${_CATEGORY}
 .endfor
 _PORTDIRNAME=	${.CURDIR:T}
 PORTDIRNAME?=	${_PORTDIRNAME}
 PKGORIGIN?=		${PKGCATEGORY}/${PORTDIRNAME}
-.endif
 
 .if exists(${LOCALBASE}/sbin/pkg_info)
 PKG_CMD?=		${LOCALBASE}/sbin/pkg_create
 PKG_ADD?=		${LOCALBASE}/sbin/pkg_add
 PKG_DELETE?=	${LOCALBASE}/sbin/pkg_delete
-PKG_INFO?=		${LOCALBASE}/sbin/pkg_info
-PKG_VERSION?=		${LOCALBASE}/sbin/pkg_version
-.elif ${OSVERSION} < 460102 && ${PKGORIGIN} != "sysutils/pkg_install"
-BUILD_DEPENDS+=		${LOCALBASE}/sbin/pkg_info:${PORTSDIR}/sysutils/pkg_install
-PKG_CMD?=		${LOCALBASE}/sbin/pkg_create
-PKG_ADD?=		${LOCALBASE}/sbin/pkg_add
-PKG_DELETE?=		${LOCALBASE}/sbin/pkg_delete
 PKG_INFO?=		${LOCALBASE}/sbin/pkg_info
 PKG_VERSION?=		${LOCALBASE}/sbin/pkg_version
 .else
@@ -2597,7 +2516,7 @@ VALID_CATEGORIES+= accessibility afterstep arabic archivers astro audio \
 	deskutils devel dns editors elisp emulators finance french ftp \
 	games german gnome graphics haskell hebrew hungarian \
 	ipv6 irc japanese java kde korean lang linux lisp \
-	mail math mbone misc multimedia net net-mgmt news \
+	mail math mbone misc multimedia net net-im net-mgmt news \
 	offix palm parallel pear perl5 picobsd plan9 polish portuguese print \
 	python ruby russian \
 	scheme science security shells sysutils \
@@ -2651,7 +2570,7 @@ MAN3PREFIX?=		${PREFIX}/lib/perl5/${PERL_VERSION}
 .endif
 
 CONFIGURE_SCRIPT?=	configure
-CONFIGURE_TARGET?=	${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET?=	${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_LOG?=		config.log
 
 # A default message to print if do-configure fails.
@@ -2788,6 +2707,14 @@ PLIST_SUB+=	DOCSDIR="${DOCSDIR:S,^${PREFIX}/,,}" \
 		EXAMPLESDIR="${EXAMPLESDIR:S,^${PREFIX}/,,}" \
 		DATADIR="${DATADIR:S,^${PREFIX}/,,}"
 
+DESKTOPDIR?=		${PREFIX}/share/applications
+_DESKTOPDIR_REL=	${DESKTOPDIR:S,^${PREFIX}/,,}/
+
+.if ${_DESKTOPDIR_REL} == ${DESKTOPDIR}/
+# DESKTOPDIR is not beneath PREFIX
+_DESKTOPDIR_REL=
+.endif
+
 # Put this as far down as possible so it will catch all PLIST_SUB definitions.
 
 .if defined(INSTALLS_SHLIB)
@@ -2823,14 +2750,9 @@ LDCONFIG_RUNLIST!=	${ECHO_CMD} ${LDCONFIG_PLIST} | ${SED} -e "s!%D!${PREFIX}!g"
 # Don't build a port if the system is too old.
 ################################################################
 
-.if ${OSVERSION} < 420000
-# You need an upgrade kit or make world newer than this
-IGNORE=	": Your system is too old to use this bsd.port.mk.  You need a fresh make world or an upgrade kit.  Please go to http://www.FreeBSD.org/ports/ or a mirror site and follow the instructions"
-.endif
-
 .if defined(ONLY_FOR_ARCHS)
 .for __ARCH in ${ONLY_FOR_ARCHS}
-.if ${MACHINE_ARCH:M${__ARCH}} != ""
+.if ${ARCH:M${__ARCH}} != ""
 __ARCH_OK?=     1
 .endif
 .endfor
@@ -2840,7 +2762,7 @@ __ARCH_OK?=     1
 
 .if defined(NOT_FOR_ARCHS)
 .for __NARCH in ${NOT_FOR_ARCHS}
-.if ${MACHINE_ARCH:M${__NARCH}} != ""
+.if ${ARCH:M${__NARCH}} != ""
 .undef __ARCH_OK
 .endif
 .endfor
@@ -3072,10 +2994,6 @@ check-deprecated:
 .endif
 
 # Check if the port is listed in the vulnerability database
-
-.if ${PKGINSTALLVER} < 20040125 || ${OSVERSION} < 420001 || ${OSVERSION} >= 500000 && ${OSVERSION} < 500014
-DISABLE_VULNERABILITIES=	yes
-.endif
 
 AUDITFILE?=		/var/db/portaudit/auditfile.tbz
 _EXTRACT_AUDITFILE=	${TAR} -jxOf "${AUDITFILE}" auditfile
@@ -3624,7 +3542,7 @@ security-check:
 #
 	-@${RM} -f ${WRKDIR}/.PLIST.setuid ${WRKDIR}/.PLIST.writable ${WRKDIR}/.PLIST.objdump; \
 	${AWK} -v prefix='${PREFIX}' ' \
-		match($$0, /^@cwd /) { prefix = substr($$0, RSTART + RLENGTH); next; } \
+		match($$0, /^@cwd /) { prefix = substr($$0, RSTART + RLENGTH); if (prefix == "/") prefix=""; next; } \
 		/^@/ { next; } \
 		/^\// { print; next; } \
 		{ print prefix "/" $$0; } \
@@ -3783,10 +3701,10 @@ _INSTALL_SEQ=	install-message check-conflicts \
 			    run-depends lib-depends apply-slist pre-install \
 				pre-install-script generate-plist check-already-installed
 _INSTALL_SUSEQ= check-umask install-mtree pre-su-install \
-				pre-su-install-script do-install post-install \
-				post-install-script add-plist-info add-plist-docs \
-				add-plist-post install-rc-script compress-man run-ldconfig \
-				fake-pkg security-check
+				pre-su-install-script do-install install-desktop-entries \
+				post-install post-install-script add-plist-info \
+				add-plist-docs add-plist-post install-rc-script compress-man \
+				run-ldconfig fake-pkg security-check
 _PACKAGE_DEP=	install
 _PACKAGE_SEQ=	package-message pre-package pre-package-script \
 				do-package post-package-script
@@ -4156,88 +4074,174 @@ update-patches:
 
 # Checksumming utilities
 
+check-checksum-algorithms:
+	@ \
+	${checksum_init} \
+	\
+	for alg in ${CHECKSUM_ALGORITHMS:U}; do \
+		eval alg_executable=\$$$$alg; \
+		if [ -z "$$alg_executable" ]; then \
+			${ECHO_CMD} "Checksum algorithm $$alg: Couldn't find the executable."; \
+			${ECHO_CMD} "Set $$alg=/path/to/$$alg in /etc/make.conf and try again."; \
+			exit 1; \
+		fi; \
+	done; \
+
+checksum_init=\
+	SHA256=${SHA256}; \
+	MD5=${MD5};
+
 .if !target(makesum)
-makesum:
+makesum: check-checksum-algorithms
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fetch NO_CHECKSUM=yes \
 		DISABLE_SIZE=yes
 	@if [ -f ${MD5_FILE} ]; then ${CAT} /dev/null > ${MD5_FILE}; fi
-	@(cd ${DISTDIR}; \
-	 for file in ${_CKSUMFILES}; do \
-		${MD5} $$file >> ${MD5_FILE}; \
-		if [ -z "${NO_SIZE}" ]; then \
-			${ECHO_CMD} "SIZE ($$file) = "`${LS} -ALln $$file | ${AWK} '{print $$5}'` >> ${MD5_FILE}; \
-		fi; \
-	 done)
+	@( \
+		cd ${DISTDIR}; \
+		\
+		${checksum_init} \
+		\
+		for file in ${_CKSUMFILES}; do \
+			for alg in ${CHECKSUM_ALGORITHMS:U}; do \
+				eval alg_executable=\$$$$alg; \
+				\
+				if [ $$alg_executable != "NO" ]; then \
+					$$alg_executable $$file >> ${MD5_FILE}; \
+				fi; \
+			done; \
+			if [ -z "${NO_SIZE}" ]; then \
+				${ECHO_CMD} "SIZE ($$file) = "`${LS} -ALln $$file | ${AWK} '{print $$5}'` >> ${MD5_FILE}; \
+			fi; \
+		done \
+	)
 	@for file in ${_IGNOREFILES}; do \
-		${ECHO_CMD} "MD5 ($$file) = IGNORE" >> ${MD5_FILE}; \
+		for alg in ${CHECKSUM_ALGORITHMS:U}; do \
+			${ECHO_CMD} "$$alg ($$file) = IGNORE" >> ${MD5_FILE}; \
+		done; \
 	done
 .endif
 
-
 .if !target(checksum)
-checksum: fetch
-	@if [ -f ${MD5_FILE} ]; then \
-		(cd ${DISTDIR}; OK=""; \
-		  for file in ${_CKSUMFILES}; do \
+checksum: fetch check-checksum-algorithms
+	@ \
+	\
+	${checksum_init} \
+	\
+	if [ -f ${MD5_FILE} ]; then \
+	(	cd ${DISTDIR}; OK=""; \
+		for file in ${_CKSUMFILES}; do \
 			pattern="`${ECHO_CMD} $$file | ${SED} -e 's/\./\\\\./g'`"; \
-			CKSUM=`${MD5} < $$file`; \
-			CKSUM2=`${GREP} "^MD5 ($$pattern)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
-			if [ -z "$$CKSUM2" ]; then \
-				${ECHO_MSG} "=> No checksum recorded for $$file."; \
-				OK="false"; \
-			elif [ "$$CKSUM2" = "IGNORE" ]; then \
-				${ECHO_MSG} "=> Checksum for $$file is set to IGNORE in distinfo file even though"; \
-				${ECHO_MSG} "   the file is not in the "'$$'"{IGNOREFILES} list."; \
-				OK="false"; \
-			else \
-				ckmatch=${FALSE}; \
-				for cksum2 in $$CKSUM2; do \
-					if [ "$$cksum2" = "$$CKSUM" ]; then \
-						ckmatch=${TRUE}; \
-						break; \
-					fi; \
-				done; \
-				if $$ckmatch; then \
-					${ECHO_MSG} "=> Checksum OK for $$file."; \
+			\
+			ignored="true"; \
+			for alg in ${CHECKSUM_ALGORITHMS:U}; do \
+				ignore="false"; \
+				eval alg_executable=\$$$$alg; \
+				\
+				if [ $$alg_executable != "NO" ]; then \
+					MKSUM=`$$alg_executable < $$file`; \
+					CKSUM=`${GREP} "^$$alg ($$pattern)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
 				else \
-					${ECHO_MSG} "=> Checksum mismatch for $$file."; \
-					refetchlist="$$refetchlist$$file "; \
-					OK="$${OK:-retry}"; \
+					ignore="true"; \
 				fi; \
+				\
+				if [ $$ignore = "false" -a -z "$$CKSUM" ]; then \
+					${ECHO_MSG} "=> No $$alg checksum recorded for $$file."; \
+					ignore="true"; \
+				fi; \
+				\
+				if [ "$$CKSUM" = "IGNORE" ]; then \
+					${ECHO_MSG} "=> $$alg Checksum for $$file is set to IGNORE in distinfo file even though"; \
+					${ECHO_MSG} "   the file is not in the "'$$'"{IGNOREFILES} list."; \
+					ignore="true"; \
+					OK=${FALSE}; \
+				fi; \
+				\
+				if [ $$ignore = "false" ]; then \
+					match="false"; \
+					for chksum in $$CKSUM; do \
+						if [ "$$chksum" = "$$MKSUM" ]; then \
+							match="true"; \
+							break; \
+						fi; \
+					done; \
+					if [ $$match = "true" ]; then \
+						${ECHO_MSG} "=> $$alg Checksum OK for $$file."; \
+						ignored="false"; \
+					else \
+						${ECHO_MSG} "=> $$alg Checksum mismatch for $$file."; \
+						refetchlist="$$refetchlist$$file "; \
+						OK="$${OK:-retry}"; \
+						ignored="false"; \
+					fi; \
+				fi; \
+			done; \
+			\
+			if [ $$ignored = "true" ]; then \
+				${ECHO_MSG} "=> No suitable checksum found for $$file."; \
+				OK="${FALSE}"; \
 			fi; \
-		  done; \
-		  for file in ${_IGNOREFILES}; do \
+			\
+		done; \
+		\
+		for file in ${_IGNOREFILES}; do \
 			pattern="`${ECHO_CMD} $$file | ${SED} -e 's/\./\\\\./g'`"; \
-			CKSUM2=`${GREP} "($$pattern)" ${MD5_FILE} | ${AWK} '{if(NR<2)print $$4}'`; \
-			if [ "$$CKSUM2" = "" ]; then \
-				${ECHO_MSG} "=> No checksum recorded for $$file, file is in "'$$'"{IGNOREFILES} list."; \
-				OK="false"; \
-			elif [ "$$CKSUM2" != "IGNORE" ]; then \
-				${ECHO_MSG} "=> Checksum for $$file is not set to IGNORE in distinfo file even though"; \
-				${ECHO_MSG} "   the file is in the "'$$'"{IGNOREFILES} list."; \
+			\
+			ignored="true"; \
+			alreadymatched="false"; \
+			for alg in ${CHECKSUM_ALGORITHMS:U}; do \
+				ignore="false"; \
+				eval alg_executable=\$$$$alg; \
+				\
+				if [ $$alg_executable != "NO" ]; then \
+					CKSUM=`${GREP} "^$$alg ($$pattern)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
+				else \
+					ignore="true"; \
+				fi; \
+				\
+				if [ $$ignore = "false" ]; then \
+					if [ -z "$$CKSUM" ]; then \
+						${ECHO_MSG} "=> No $$alg checksum for $$file recorded (expected IGNORE)"; \
+						OK="$$alreadymatched"; \
+					elif [ $$CKSUM != "IGNORE" ]; then \
+						${ECHO_MSG} "=> $$alg Checksum for $$file is not set to IGNORE in distinfo file even though"; \
+						${ECHO_MSG} "   the file is in the "'$$'"{IGNOREFILES} list."; \
+						OK="false"; \
+					else \
+						ignored="false"; \
+						alreadymatched="true"; \
+					fi; \
+				fi; \
+			done; \
+			\
+			if ( [ $$ignored = "true" ]) ; then \
+				${ECHO_MSG} "=> No suitable checksum found for $$file."; \
 				OK="false"; \
 			fi; \
-		  done; \
-		  if [ "$${OK:=true}" = "retry" ] && [ ${FETCH_REGET} -gt 0 ]; then \
-			  ${ECHO_MSG} "===>  Refetch for ${FETCH_REGET} more times files: $$refetchlist"; \
-			  if ( cd ${.CURDIR} && \
+			\
+		done; \
+		\
+		if [ "$${OK:=true}" = "retry" ] && [ ${FETCH_REGET} -gt 0 ]; then \
+			${ECHO_MSG} "===>  Refetch for ${FETCH_REGET} more times files: $$refetchlist"; \
+			if ( cd ${.CURDIR} && \
 			    ${MAKE} ${.MAKEFLAGS} FORCE_FETCH="$$refetchlist" FETCH_REGET="`${EXPR} ${FETCH_REGET} - 1`" fetch); then \
 				  if ( cd ${.CURDIR} && \
 			        ${MAKE} ${.MAKEFLAGS} FETCH_REGET="`${EXPR} ${FETCH_REGET} - 1`" checksum ); then \
 				      OK="true"; \
 				  fi; \
-			  fi; \
-		  fi ; \
-		  if [ "$$OK" != "true" -a ${FETCH_REGET} -eq 0 ]; then \
-			  ${ECHO_MSG} "===>  Giving up on fetching files: $$refetchlist"; \
-			  ${ECHO_MSG} "Make sure the Makefile and distinfo file (${MD5_FILE})"; \
-			  ${ECHO_MSG} "are up to date.  If you are absolutely sure you want to override this"; \
-			  ${ECHO_MSG} "check, type \"make NO_CHECKSUM=yes [other args]\"."; \
-			  exit 1; \
-		  fi; \
-		  if [ "$$OK" != "true" ]; then \
-			  exit 1; \
-		  fi); \
+			fi; \
+		fi ; \
+		\
+		if [ "$$OK" != "true" -a ${FETCH_REGET} -eq 0 ]; then \
+			${ECHO_MSG} "===>  Giving up on fetching files: $$refetchlist"; \
+			${ECHO_MSG} "Make sure the Makefile and distinfo file (${MD5_FILE})"; \
+			${ECHO_MSG} "are up to date.  If you are absolutely sure you want to override this"; \
+			${ECHO_MSG} "check, type \"make NO_CHECKSUM=yes [other args]\"."; \
+			exit 1; \
+		fi; \
+		if [ "$$OK" != "true" ]; then \
+			exit 1; \
+		fi \
+	); \
 	elif [ -n "${_CKSUMFILES:M*}" ]; then \
 		${ECHO_MSG} "=> No checksum file (${MD5_FILE})."; \
 	fi
@@ -4652,11 +4656,7 @@ PACKAGE-DEPENDS-LIST?= \
 # Print out package names.
 
 package-depends:
-.if ${OSVERSION} >= 460102 || exists(${LOCALBASE}/sbin/pkg_info)
 	@${PACKAGE-DEPENDS-LIST} | ${AWK} '{print $$1":"$$3}'
-.else
-	@${PACKAGE-DEPENDS-LIST} | ${AWK} '{print $$1}'
-.endif
 
 # Build packages for port and dependencies
 
@@ -5229,6 +5229,44 @@ rmconfig-recursive:
 	@for dir in ${.CURDIR} $$(${ALL-DEPENDS-LIST}); do \
 		(cd $$dir; ${MAKE} rmconfig); \
 	done
+.endif
+
+.if !target(install-desktop-entries)
+install-desktop-entries:
+.if defined(DESKTOP_ENTRIES)
+	@(${MKDIR} "${DESKTOPDIR}" 2> /dev/null) || \
+		(${ECHO_MSG} "===> Cannot create ${DESKTOPDIR}, check permissions"; exit 1)
+	@set ${DESKTOP_ENTRIES} XXX; \
+	if [ -z "${_DESKTOPDIR_REL}" ]; then \
+		${ECHO_CMD} "@cwd ${DESKTOPDIR}" >> ${TMPPLIST}; \
+	fi; \
+	while [ $$# -gt 6 ]; do \
+		filename="$$4.desktop"; \
+		pathname="${DESKTOPDIR}/$$filename"; \
+		${ECHO_CMD} "${_DESKTOPDIR_REL}$$filename" >> ${TMPPLIST}; \
+		${ECHO_CMD} "[Desktop Entry]" > $$pathname; \
+		${ECHO_CMD} "Type=Application" >> $$pathname; \
+		${ECHO_CMD} "Version=0.9.4" >> $$pathname; \
+		${ECHO_CMD} "Encoding=UTF-8" >> $$pathname; \
+		${ECHO_CMD} "Name=$$1" >> $$pathname; \
+		if [ -n "$$2" ]; then \
+			${ECHO_CMD} "Comment=$$2" >> $$pathname; \
+		fi; \
+		if [ -n "$$3" ]; then \
+			${ECHO_CMD} "Icon=$$3" >> $$pathname; \
+		fi; \
+		${ECHO_CMD} "Exec=$$4" >> $$pathname; \
+		${ECHO_CMD} "Categories=$$5" >> $$pathname; \
+		${ECHO_CMD} "StartupNotify=$$6" >> $$pathname; \
+		shift 6; \
+	done; \
+	${ECHO_CMD} "@unexec rmdir ${DESKTOPDIR} 2>/dev/null || true" >> ${TMPPLIST}; \
+	if [ -z "${_DESKTOPDIR_REL}" ]; then \
+		${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}; \
+	fi
+.else
+	@${DO_NADA}
+.endif
 .endif
 
 .endif

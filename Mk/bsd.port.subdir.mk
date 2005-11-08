@@ -107,6 +107,7 @@ TARGETS+=	ignorelist
 TARGETS+=	makesum
 TARGETS+=	maintainer
 TARGETS+=	package
+TARGETS+=	package-recursive
 TARGETS+=	realinstall
 TARGETS+=	reinstall
 TARGETS+=	tags
@@ -365,6 +366,7 @@ search: ${PORTSDIR}/${INDEXFILE}
 	    -v xkeylim="$${xkeylim:-${PORTSEARCH_XKEYLIM}}" \
 	    -v display="$${display:-${PORTSEARCH_DISPLAY_FIELDS}}" \
 	'BEGIN { \
+            gsub(/\+/,"\\+",name); \
 	    if (substr(there, 1, length(top)) == top) \
 	      there = "${PORTSDIR}" substr(there, 1 + length(top)); \
 	    therelen = length(there); \
