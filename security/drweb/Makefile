@@ -7,24 +7,28 @@
 
 PORTNAME=	drweb
 PORTVERSION=	4.33
+PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.drweb.ru/pub/drweb/unix/FreeBSD/411/ \
-		ftp://ftp.drweb.ru/pub/drweb/unix/FreeBSD/54/
+MASTER_SITES=	ftp://ftp.drweb.ru/pub/drweb/unix/FreeBSD/411/:f411 \
+		ftp://ftp.drweb.ru/pub/drweb/unix/FreeBSD/54/:f54 \
+		http://freebsd.spectrum.ru/distfiles/:f411,f54
 
 MAINTAINER=	support@spectrum.ru
 COMMENT=	DrWeb antivirus suite
 
+RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
+
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
-
-RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd411
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:f411
 .else
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd54
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:f54
 .if ${OSVERSION} >= 600000
 LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
 .endif
@@ -58,7 +62,7 @@ do-install:
 		${PREFIX}/etc/drweb/email.ini; \
 	fi
 	${INSTALL_SCRIPT} -m 0750 -b ${WRKSRC}${LOCALBASE}/etc/rc.d/00.drwebd.sh \
-		${PREFIX}/etc/rc.d/00.drwebd.sh
+		${PREFIX}/etc/rc.d/001.drwebd.sh
 
 post-install:
 .if !defined(NOPORTDOCS)
