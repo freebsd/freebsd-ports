@@ -115,24 +115,20 @@ BROKEN=		"Multiple BDB versions selected.  Run 'make config' again!"
 .endif
 .if defined(WITH_BDB_3)
 BDB_VER=	3
-BDB_MAJOR=	3
 .elif defined(WITH_BDB_4)
 BDB_VER=	4
-BDB_MAJOR=	0
+USE_BDB=	40
 .elif defined(WITH_BDB_41)
 BDB_VER=	41
-BDB_MAJOR=	1
 .elif defined(WITH_BDB_42)
 BDB_VER=	42
 BDB_SUFFIX=	-4.2
-BDB_MAJOR=	2
 .elif defined(WITH_BDB_43)
 BDB_VER=	43
 BDB_SUFFIX=	-4.3
-BDB_MAJOR=	0
 .endif
+USE_BDB?=	${BDB_VER}
 BDB_SUFFIX?=	${BDB_VER}
-LIB_DEPENDS+=	db${BDB_SUFFIX}.${BDB_MAJOR}:${PORTSDIR}/databases/db${BDB_VER}
 CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db${BDB_VER} \
 		--with-bdb=db${BDB_SUFFIX}
 

@@ -50,15 +50,12 @@ USE_BDB_VER=	${WITH_BDB_VER}
 .else
 USE_BDB_VER=	3
 .endif
-.if ${USE_BDB_VER} == 3
-LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
-.elif ${USE_BDB_VER} == 4
-LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
-.elif ${USE_BDB_VER} == 41
-LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
-.else
+.if ${USE_BDB_VER} == 4
+USE_BDB=	40
+.elif ${USE_BDB_VER} != 3 && ${USE_BDB_VER} != 41
 BROKEN=		"WITH_BDB_VER must be 3, 4 or 41"
 .endif
+USE_BDB?=	${USE_BDB_VER}
 CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db${USE_BDB_VER} \
 		--with-bdb=db${USE_BDB_VER}
 
