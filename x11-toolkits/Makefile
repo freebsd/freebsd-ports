@@ -89,6 +89,8 @@
     SUBDIR += libgtk-java
     SUBDIR += libgtkeditor
     SUBDIR += libpanelappletmm
+    SUBDIR += libsexy
+    SUBDIR += libsexymm
     SUBDIR += libwnck
     SUBDIR += libxfce4gui
     SUBDIR += libzvt

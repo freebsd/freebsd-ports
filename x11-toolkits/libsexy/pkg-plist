@@ -1,0 +1,10 @@
+include/libsexy/sexy-enum-types.h
+include/libsexy/sexy-icon-entry.h
+include/libsexy/sexy-spell-entry.h
+include/libsexy/sexy-url-label.h
+include/libsexy/sexy.h
+lib/libsexy.a
+lib/libsexy.so
+lib/libsexy.so.1
+libdata/pkgconfig/libsexy.pc
+@dirrm include/libsexy
