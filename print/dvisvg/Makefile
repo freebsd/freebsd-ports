@@ -9,13 +9,13 @@
 PORTNAME=	dvisvg
 DISTVERSION=	0.7.1d
 CATEGORIES=	print
-MASTER_SITES=	http://dvisvg.sourceforge.net/
+MASTER_SITES=	http://dvisvg.sourceforge.net/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converter from DVI to SVG
 
-BUILD_DEPENDS=	${MKTEXLSR}:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	${MKTEXLSR}:${PORTSDIR}/print/teTeX \
+BUILD_DEPENDS=	${MKTEXLSR}:${PORTSDIR}/print/teTeX-base
+RUN_DEPENDS=	${MKTEXLSR}:${PORTSDIR}/print/teTeX-base \
 		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
