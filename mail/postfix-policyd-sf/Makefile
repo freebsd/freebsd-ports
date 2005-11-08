@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	policyd
-PORTVERSION=	1.69
+PORTVERSION=	1.70
 CATEGORIES=	mail
 MASTER_SITES=	http://policyd.sourceforge.net/
 PKGNAMEPREFIX=	postfix-
