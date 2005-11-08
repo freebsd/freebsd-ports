@@ -7,7 +7,10 @@
 
 CATEGORIES=	chinese editors
 
-PATCH_SITES=	http://bbs.ilc.edu.tw/~chinsan/ports/joe2/
+PATCH_SITES=	http://opensvn.csie.org/chinsan/patch/ \
+		ftp://bbs.ilc.edu.tw/chinsan/patch/ \
+		http://bbs.ilc.edu.tw/~chinsan/ports/joe2/ \
+		ftp://news.giga.net.tw/chinsan/patch/
 PATCHFILES=	zh-joe-2.9.8.diff
 PATCH_DIST_STRIP=	-p1
 
