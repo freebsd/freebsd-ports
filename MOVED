@@ -1833,3 +1833,4 @@ graphics/ruby-gdk_pixbuf||2005-11-05|Port depended on another that was removed.
 news/t-gnus-emacs20||2005-11-05|Port depended on another that was removed.
 news/t-gnus-mule||2005-11-05|Port depended on another that was removed.
 news/t-gnus-xemacs21-mule||2005-11-05|Port depended on another that was removed.
+chinese/joe|chinese/joe2|2005-11-08|Move to joe2 in preparation to update to 3.x
