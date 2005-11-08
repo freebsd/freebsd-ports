@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	getmail
-PORTVERSION=	4.3.14
+PORTVERSION=	4.4.0
 CATEGORIES=	mail python
 MASTER_SITES=	http://pyropus.ca/software/getmail/%SUBDIR%/ \
 		http://mirrors.closedsrc.org/getmail/
@@ -18,7 +18,7 @@ COMMENT=	POP3/IMAP4 mail retriever with Maildir and command delivery
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
-MAN1=		getmail.1 getmail_maildir.1 getmail_mbox.1
+MAN1=		getmail.1 getmail_fetch.1 getmail_maildir.1 getmail_mbox.1
 DOCS=		../README BUGS CHANGELOG THANKS TODO *.txt *.html *.css
 
 post-install:

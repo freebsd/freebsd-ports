@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/getmail
+bin/getmail_fetch
 bin/getmail_maildir
 bin/getmail_mbox
 %%PYTHON_SITELIBDIR%%/getmailcore/__init__.py
