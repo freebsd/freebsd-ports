@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	WWW-SourceForge
-PORTVERSION=	0.084
+PORTVERSION=	0.090
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/G/GU/GUGOD
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Retrieve infromation from SourceForge site
