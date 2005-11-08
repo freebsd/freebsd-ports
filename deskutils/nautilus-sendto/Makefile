@@ -17,7 +17,8 @@ COMMENT=	Integration between nautilus, evolution, and gaim
 
 BUILD_DEPENDS=	gaim:${PORTSDIR}/net/gaim \
 		evolution:${PORTSDIR}/mail/evolution
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	gaim:${PORTSDIR}/net/gaim \
+		evolution:${PORTSDIR}/mail/evolution
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
