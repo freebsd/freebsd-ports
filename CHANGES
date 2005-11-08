@@ -10,6 +10,52 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20051108:
+AUTHOR: portmgr@FreeBSD.org
+The following changes were introduced:
+  * Add bsd.database.mk
+    - move out from bsd.port.mk USE_MYSQL and USE_PGSQL.
+    - add support for Berkley DB and SQLite (via USE_BDB and USE_SQLITE
+      knobs).
+
+  * Espace '+' in make search
+
+  * Add "makepatch" target to simplify creation of patches during porting
+
+  * Replace deprecated MACHINE_ARCH with ARCH
+
+  * Remove support of OpenLDAP 2.1
+
+  * Add bsd.tcl.mk
+    It introduces USE_TCL/USE_TCL_BUILD knobs to support various
+    version of tcl (8.0 -> 8.4) 
+
+  * Fix cosmetic bugs in security-check target
+
+  * Add support for INDEX-7 and above (up to INDEX-9 actually)
+
+  * Add "package-recursive" to bsd.port.subdir.mk
+
+  * Remove check for FreeBSD version < 460101
+
+  * New category: net-im
+
+  * Add .desktop file facilities
+    It introduces DESKTOPDIR and DESKTOP_ENTRIES knobs
+
+  * Add SHA256 support to "*checksum" targets
+  
+  * Fix USE_PYTHON with OPTIONS
+
+  * Force NO_LINT to MAKE_ENV to avoid library breaks
+
+  * Fix typo: s/RC_ORDER/USE_RCORDER/g
+
+  * Add support for PostgreSQL 8.1
+
+  * Add bsd.apache.mk
+    USE_APACHE knob enhancements
+
 20051105:
 AUTHOR: gnome@FreeBSD.org
   GNOME has been upgraded from 2.10.2 to 2.12.1.  This update brings with
