@@ -10,7 +10,6 @@ sbin/cfkey
 sbin/cfrun
 sbin/cfservd
 sbin/cfshow
-sbin/vicf
 %%EXAMPLESDIR%%/cf.chflags.example
 %%EXAMPLESDIR%%/cf.freebsd.example
 %%EXAMPLESDIR%%/cf.ftp.example
