@@ -2,8 +2,10 @@
 Its major components include the following:
 
  * Ft.Xml.Domlette: A very fast, lightweight XPath-oriented DOM.
+ * Ft.Xml.Sax: A very fast SAX 2 parser.
  * Ft.Xml.XPath: An XPath 1.0 implementation for Domlette documents.
  * Ft.Xml.Xslt: A robust XSLT 1.0 processor.
+ * Ft.Xml.XUpdate: An XUpdate processor.
  * Ft.Rdf: RDF processing tools, including a query/inference language.
  * Ft.Server: An integrated document & RDF repository with web access.
  * Ft.Lib: Various support libraries that can be used independently.
@@ -11,10 +13,14 @@ Its major components include the following:
 4Suite also includes convenient command-line tools:
  * 4xml: XML document parsing and reserialization.
  * 4xpath: XPath expression evaluation.
- * 4xslt: XSLT processing engine.
+ * 4xslt: XSLT processing.
+ * 4xupdate: XUpdate processing.
  * 4rdf: RDF/XML parsing, persistence, querying and reserialization.
  * 4ss_manager: Document/RDF repository administration.
  * 4ss: Document/RDF repository user commands.
+
+4Suite 1.0b1 is the last release of the monolithic 4Suite package;
+4Suite XML, 4Suite RDF, and 4Suite Repository are replacing it.
 
 WWW: http://4suite.org/
 
