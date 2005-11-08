@@ -1,18 +1,18 @@
 etc/profile.d/glib2.csh
 etc/profile.d/glib2.sh
 usr/lib/libglib-2.0.so.0
-usr/lib/libglib-2.0.so.0.200.1
+usr/lib/libglib-2.0.so.0.200.3
 usr/lib/libgmodule-2.0.so.0
-usr/lib/libgmodule-2.0.so.0.200.1
+usr/lib/libgmodule-2.0.so.0.200.3
 usr/lib/libgobject-2.0.so.0
-usr/lib/libgobject-2.0.so.0.200.1
+usr/lib/libgobject-2.0.so.0.200.3
 usr/lib/libgthread-2.0.so.0
-usr/lib/libgthread-2.0.so.0.200.1
-usr/share/doc/glib2-2.2.1/AUTHORS
-usr/share/doc/glib2-2.2.1/COPYING
-usr/share/doc/glib2-2.2.1/ChangeLog
-usr/share/doc/glib2-2.2.1/NEWS
-usr/share/doc/glib2-2.2.1/README
+usr/lib/libgthread-2.0.so.0.200.3
+usr/share/doc/glib2-2.2.3/AUTHORS
+usr/share/doc/glib2-2.2.3/COPYING
+usr/share/doc/glib2-2.2.3/ChangeLog
+usr/share/doc/glib2-2.2.3/NEWS
+usr/share/doc/glib2-2.2.3/README
 usr/share/locale/am/LC_MESSAGES/glib20.mo
 usr/share/locale/az/LC_MESSAGES/glib20.mo
 usr/share/locale/be/LC_MESSAGES/glib20.mo
@@ -20,18 +20,29 @@ usr/share/locale/bg/LC_MESSAGES/glib20.mo
 usr/share/locale/bn/LC_MESSAGES/glib20.mo
 usr/share/locale/ca/LC_MESSAGES/glib20.mo
 usr/share/locale/cs/LC_MESSAGES/glib20.mo
+usr/share/locale/cy/LC_MESSAGES/glib20.mo
 usr/share/locale/da/LC_MESSAGES/glib20.mo
 usr/share/locale/de/LC_MESSAGES/glib20.mo
 usr/share/locale/el/LC_MESSAGES/glib20.mo
+usr/share/locale/eo/LC_MESSAGES/glib20.mo
 usr/share/locale/es/LC_MESSAGES/glib20.mo
 usr/share/locale/et/LC_MESSAGES/glib20.mo
 usr/share/locale/eu/LC_MESSAGES/glib20.mo
+usr/share/locale/fa/LC_MESSAGES/glib20.mo
 usr/share/locale/fi/LC_MESSAGES/glib20.mo
 usr/share/locale/fr/LC_MESSAGES/glib20.mo
 usr/share/locale/gl/LC_MESSAGES/glib20.mo
+usr/share/locale/he/LC_MESSAGES/glib20.mo
 usr/share/locale/hi/LC_MESSAGES/glib20.mo
+usr/share/locale/id/LC_MESSAGES/glib20.mo
+usr/share/locale/is/LC_MESSAGES/glib20.mo
+usr/share/locale/it/LC_MESSAGES/glib20.mo
 usr/share/locale/ja/LC_MESSAGES/glib20.mo
 usr/share/locale/ko/LC_MESSAGES/glib20.mo
+usr/share/locale/li/LC_MESSAGES/glib20.mo
+usr/share/locale/lv/LC_MESSAGES/glib20.mo
+usr/share/locale/mk/LC_MESSAGES/glib20.mo
+usr/share/locale/ml/LC_MESSAGES/glib20.mo
 usr/share/locale/mn/LC_MESSAGES/glib20.mo
 usr/share/locale/ms/LC_MESSAGES/glib20.mo
 usr/share/locale/nl/LC_MESSAGES/glib20.mo
@@ -45,35 +56,38 @@ usr/share/locale/ru/LC_MESSAGES/glib20.mo
 usr/share/locale/sk/LC_MESSAGES/glib20.mo
 usr/share/locale/sl/LC_MESSAGES/glib20.mo
 usr/share/locale/sq/LC_MESSAGES/glib20.mo
+usr/share/locale/sr/LC_MESSAGES/glib20.mo
+usr/share/locale/sr@Latn/LC_MESSAGES/glib20.mo
 usr/share/locale/sv/LC_MESSAGES/glib20.mo
 usr/share/locale/ta/LC_MESSAGES/glib20.mo
 usr/share/locale/tr/LC_MESSAGES/glib20.mo
 usr/share/locale/uk/LC_MESSAGES/glib20.mo
 usr/share/locale/vi/LC_MESSAGES/glib20.mo
+usr/share/locale/yi/LC_MESSAGES/glib20.mo
 usr/share/locale/zh_CN/LC_MESSAGES/glib20.mo
 usr/share/locale/zh_TW/LC_MESSAGES/glib20.mo
-@dirrm usr/share/doc/glib2-2.2.1
-@unexec rmdir %D/usr/share/locale/am/LC_MESSAGES 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/am 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/az/LC_MESSAGES 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/az 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/bg/LC_MESSAGES 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/bg 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/bn/LC_MESSAGES 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/bn 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/eu/LC_MESSAGES 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/eu 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/hi/LC_MESSAGES 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/hi 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/mn/LC_MESSAGES 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/mn 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/ms/LC_MESSAGES 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/ms 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/nn/LC_MESSAGES 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/nn 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/sq/LC_MESSAGES 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/sq 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/ta/LC_MESSAGES 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/ta 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/vi/LC_MESSAGES 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/vi 2>&1 >/dev/null || true
+@dirrm usr/share/doc/glib2-2.2.3
+@unexec rmdir %D/usr/share/locale/am/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/am >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/az/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/az >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/bg/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/bg >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/bn/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/bn >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/eu/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/eu >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/hi/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/hi >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/mn/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/mn >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ms/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ms >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/nn/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/nn >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/sq/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/sq >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ta/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ta >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/vi/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/vi >/dev/null 2>&1 || true
