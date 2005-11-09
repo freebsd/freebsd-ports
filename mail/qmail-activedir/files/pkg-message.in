@@ -1,0 +1,45 @@
+*****************************************************************************
+You have installed the qmail-activedir.
+
+Now you need follow this steps:
+
+1) create the control files.
+
+2.a) Test
+
+# %%QMAIL_PREFIX%%/bin/qmail-popup blah %%PREFIX%%/bin/checkadpassword id
+
+Put in a valid username and password and it should give you the results of id.
+Do the same with pwd to make sure that the user, group and directory are 
+correct.
+
+Do it again with an invalid username and password to verify that it will
+actually reject failures.
+
+Check the auth log to verify that the failure occurred.
+
+2.b) Test some more
+
+Next test the ad_getpw:
+
+# %%PREFIX%%/bin/ad_getpw user
+It should return the user, uid, gid, homedir, separated by NULL character
+
+2.c) Just using create_alias_files will let you know if it works...
+Do %%PREFIX%%/bin/create_alias_files -h for more info.
+
+3) Copy the original someplace and rename:
+# mv %%QMAIL_PREFIX%%/bin/qmail-getpw %%QMAIL_PREFIX%%/bin/qmail-getpw_old
+# cp %%PREFIX%%/bin/qmail-adgetpw %%QMAIL_PREFIX%%/bin/qmail-getpw
+
+4) Update your qmail pop scripts (run file) like this:
+...
+%%QMAIL_PREFIX%%/bin/qmail-popup "${POPUPHOST-`sed 1q %%QMAIL_PREFIX%%/control/me`}" \
+%%PREFIX%%/checkadpassword \
+%%QMAIL_PREFIX%%/bin/qmail-pop3d "${MAILDIRNAME-Maildir}"
+...
+
+and restart.  Run some trial tests.
+
+For more information you should read %%DOCSDIR%%/README.
+
