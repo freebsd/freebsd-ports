@@ -22,18 +22,4 @@
 -  program_transform_name="s,\$,$program_suffix,;$program_transform_name"
 +# test "$program_suffix" != NONE &&
 +#   program_transform_name="s,\$,$program_suffix,;$program_transform_name"
- # Double any \ or $.  echo might interpret backslashes.
-@@ -8831,9 +8831,2 @@
- 
--    if grep "^# ### BEGIN LIBTOOL TAG CONFIG: $tagname$" < "${ofile}" > /dev/null
--    then
--      { { echo "$as_me:$LINENO: error: tag name \"$tagname\" already exists" >&5
--echo "$as_me: error: tag name \"$tagname\" already exists" >&2;}
--   { (exit 1); exit 1; }; }
--    fi
--
-     # Update the list of available tags.
-@@ -18062,2 +18055,3 @@
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
+ # Double any \ or $.  echo might interpret backslashes. 
