@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	eukleides
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	math
 MASTER_SITES=	http://perso.wanadoo.fr/obrecht/download/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
