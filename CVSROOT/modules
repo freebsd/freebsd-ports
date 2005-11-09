@@ -4489,7 +4489,7 @@ jabber-aim	ports/net-im/jabber-aim
 jabber-conference	ports/net-im/jabber-conference
 jabber-jud	ports/net-im/jabber-jud
 jabber-msn	ports/net-im/jabber-msn
-jabber-pyicq	ports/net/jabber-pyicq
+jabber-pyicq	ports/net-im/jabber-pyicq
 jabber-pymsn	ports/net-im/jabber-pymsn
 jabber-users-agent	ports/net-im/jabber-users-agent
 jabber-yahoo	ports/net-im/jabber-yahoo
@@ -4691,7 +4691,7 @@ junipoll	ports/net-mgmt/junipoll
 junit		ports/java/junit
 junkfilter	ports/mail/junkfilter
 juno-2		ports/graphics/juno-2
-jwchat		ports/www/jwchat
+jwchat		ports/net-im/jwchat
 jwhois		ports/net/jwhois
 jxm		ports/audio/jxm
 jython		ports/lang/jython
@@ -8285,7 +8285,7 @@ p5-Net-Wake	ports/net/p5-Net-Wake
 p5-Net-Whois	ports/net/p5-Net-Whois
 p5-Net-Whois-RIPE	ports/net/p5-Net-Whois-RIPE
 p5-Net-Whois-Raw	ports/net/p5-Net-Whois-Raw
-p5-Net-XMPP	ports/net/p5-Net-XMPP
+p5-Net-XMPP	ports/net-im/p5-Net-XMPP
 p5-Net-XWhois	ports/net/p5-Net-XWhois
 p5-Net-Z3950	ports/net/p5-Net-Z3950
 p5-Net-Z3950-SimpleServer	ports/net/p5-Net-Z3950-SimpleServer
