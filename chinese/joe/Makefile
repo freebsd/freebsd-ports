@@ -7,11 +7,10 @@
 
 CATEGORIES=	chinese editors
 
-PATCH_SITES=	http://opensvn.csie.org/chinsan/patch/ \
-		ftp://bbs.ilc.edu.tw/chinsan/patch/ \
-		http://bbs.ilc.edu.tw/~chinsan/ports/joe2/ \
+PATCH_SITES=	ftp://bbs.ilc.edu.tw/chinsan/patch/ \
+		http://bbs.ilc.edu.tw/~chinsan/ports/joe/ \
 		ftp://news.giga.net.tw/chinsan/patch/
-PATCHFILES=	zh-joe-2.9.8.diff
+PATCHFILES=	zh-joe-3.3.diff
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	chinsan.tw@gmail.com
@@ -20,7 +19,5 @@ LATEST_LINK=	${PKGNAMEPREFIX}joe
 
 MASTERDIR=	${.CURDIR}/../../editors/joe
 MD5_FILE=	${.CURDIR}/distinfo
-
-IGNORE=	"Waiting to be updated to 3.x, use chinese/joe2"
 
 .include "${MASTERDIR}/Makefile"
