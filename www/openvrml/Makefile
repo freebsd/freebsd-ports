@@ -55,9 +55,9 @@ BROKEN=		"Does not compile on ${OPSYS}-${OSREL}"
 .endif
 
 .if exists(${LOCALBASE}/include/boost/python.hpp)
-LIB_DEPENDS+=	boost_python.2:${PORTSDIR}/devel/boost-python
+LIB_DEPENDS+=	boost_python.3:${PORTSDIR}/devel/boost-python
 .else
-LIB_DEPENDS+=	boost_regex.2:${PORTSDIR}/devel/boost
+LIB_DEPENDS+=	boost_regex.3:${PORTSDIR}/devel/boost
 .endif
 
 post-patch:

@@ -16,7 +16,7 @@ MAINTAINER=	lapo@lapo.it
 COMMENT=	A distributed version control system with digital signatures
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		boost_regex.2:${PORTSDIR}/devel/boost
+		boost_regex.3:${PORTSDIR}/devel/boost
 
 OPTIONS=	LUA_PORT "Use Lua port instead of the included one" on \
 		SQLITE_PORT "Use SQLite3 port instead of the included one" on
