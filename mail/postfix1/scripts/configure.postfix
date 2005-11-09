@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix1/scripts/Attic/configure.postfix,v 1.40 2005-08-11 22:03:06 pav Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix1/scripts/Attic/configure.postfix,v 1.41 2005-11-09 02:32:48 mnag Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -137,7 +137,7 @@ for i; do
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 				exit 1
 			fi
-			echo "PATCH_SITES+=	http://www.cyber-magic.org/~taka/misc/"
+			echo "PATCH_SITES+=	http://www.uinet.or.jp/~taka/misc/"
 			echo "PATCHFILES+=	postfix-1.1.11+ipv6.patch.gz"
 			echo "PATCH_DIST_STRIP= -p1"
 			echo "IPv6_SUFFIX=	+ipv6"
