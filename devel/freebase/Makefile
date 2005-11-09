@@ -6,22 +6,18 @@
 #
 
 PORTNAME=	freebase
-PORTVERSION=	0.9.4
-CATEGORIES=	devel ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/3931/
-PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	freeride-${PORTVERSION}
-DIST_SUBDIR=	ruby
+PORTREVISION=	1
 
-MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	Plugin subsystem of FreeRIDE
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
-USE_RUBY=	yes
-NO_BUILD=	yes
+MASTERDIR=	${.CURDIR}/../freeride
+FILESDIR=	${.CURDIR}/files
+PATCHDIR=	${FILESDIR}
+PLIST=	${.CURDIR}/pkg-plist
 
 do-install:
 	cd ${WRKSRC}; ${RUBY} bin/install.rb --prefix=${PREFIX}
 
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"
