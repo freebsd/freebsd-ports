@@ -637,6 +637,7 @@ battfink	ports/sysutils/battfink
 battleball	ports/games/battleball
 baudline	ports/audio/baudline
 bayespam	ports/mail/bayespam
+bazaar		ports/devel/bazaar
 bazaar-ng	ports/devel/bazaar-ng
 bb		ports/misc/bb
 bbapm		ports/sysutils/bbapm
