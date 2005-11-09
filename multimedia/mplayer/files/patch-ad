@@ -1,5 +1,5 @@
 --- configure.orig	Wed Apr 13 13:46:35 2005
-+++ configure	Tue Sep 27 21:31:54 2005
++++ configure	Wed Nov  9 19:52:06 2005
 @@ -29,9 +29,9 @@
    echo >> "$TMPLOG"
    cat "$TMPC" >> "$TMPLOG"
@@ -161,7 +161,19 @@
  #error We do not support old versions of x264. Get the latest from SVN.
  #endif
  int main(void) { x264_encoder_open((void*)0); return 0; }
-@@ -6477,7 +6416,7 @@
+@@ -6115,8 +6054,11 @@
+  if test "$_tv" = yes ; then
+     cat > $TMPC <<EOF
+ #include <sys/types.h>
++#include <sys/param.h>
+ #if defined(__NetBSD__)
+ #include <dev/ic/bt8xx.h>
++#elif(__FreeBSD_version >= 502100)
++#include <dev/bktr/ioctl_bt848.h>
+ #else
+ #include <machine/ioctl_bt848.h>
+ #endif
+@@ -6477,7 +6419,7 @@
    fi
    _stripbinaries=no
  elif test -z "$CFLAGS" ; then
@@ -170,7 +182,7 @@
    # always compile with '-g' if .developer:
    if test -f ".developer" ; then
      CFLAGS="-g $CFLAGS"
-@@ -6487,6 +6426,9 @@
+@@ -6487,6 +6429,9 @@
      _stripbinaries=no
    fi
  else
@@ -180,7 +192,7 @@
    cat <<EOF
  
  MPlayer compilation will use the CFLAGS set by you, but:
-@@ -6526,7 +6468,7 @@
+@@ -6526,7 +6471,7 @@
    CFLAGS="$CFLAGS -D_REENTRANT"
  elif bsd ; then
    # FIXME bsd needs this so maybe other OS'es
@@ -189,7 +201,7 @@
  fi
  # 64 bit file offsets?
  if test "$_largefiles" = yes || freebsd ; then
-@@ -6640,13 +6582,11 @@
+@@ -6640,13 +6585,11 @@
  echocheck "lirc"
  if test "$_lirc" = auto ; then
    _lirc=no
