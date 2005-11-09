@@ -1,0 +1,9 @@
+%%SITE_PERL%%/WWW/Scraper/ISBN/Record.pm
+@unexec rmdir %D/%%SITE_PERL%%/WWW/Scraper/ISBN 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/WWW/Scraper 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/WWW 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scraper/ISBN/Record/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scraper/ISBN/Record
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scraper/ISBN 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Scraper 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW 2>/dev/null || true

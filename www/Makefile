@@ -641,6 +641,7 @@
     SUBDIR += p5-WWW-Mixi
     SUBDIR += p5-WWW-Robot
     SUBDIR += p5-WWW-Scraper-ISBN-Driver
+    SUBDIR += p5-WWW-Scraper-ISBN-Record
     SUBDIR += p5-WWW-Search
     SUBDIR += p5-WWW-Search-AltaVista
     SUBDIR += p5-WWW-Search-Google
