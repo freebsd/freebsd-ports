@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}-editor
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	toasty@dragondata.com
+MAINTAINER?=	toasty@dragondata.com
 COMMENT=	Joe's Own Editor
 
 BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
