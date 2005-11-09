@@ -33,7 +33,7 @@ post-extract:
 	${CP} ${DISTDIR}/powerani.gif ${WRKSRC}/theme/graphics/freebsd.gif
 
 post-patch:
-	${FIND} ${WRKSRC} -name '*.orig' -delete
+	@${RM} -f ${WRKSRC}/theme/plans.template.orig
 
 do-install:
 	@${MKDIR} ${PREFIX}/${DIR}
