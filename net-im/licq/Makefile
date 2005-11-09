@@ -8,7 +8,7 @@
 PORTNAME=	base
 PORTVERSION=	${LICQ_VER}
 PORTREVISION=	2
-CATEGORIES=	net
+CATEGORIES=	net-im
 PKGNAMESUFFIX=	${SOCKS_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
-LICQ_PORT?=	net/licq
+LICQ_PORT?=	net-im/licq
 
 # workaround for installed autoconf/automake
 CONFIGURE_ARGS+=--program-transform-name=s,y,y,

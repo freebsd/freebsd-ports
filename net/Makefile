@@ -293,10 +293,6 @@
     SUBDIR += libunp
     SUBDIR += libunpipc
     SUBDIR += libvncserver
-    SUBDIR += licq
-    SUBDIR += licq-console
-    SUBDIR += licq-osd
-    SUBDIR += licq-qt-gui
     SUBDIR += liferea
     SUBDIR += limewire
     SUBDIR += linc

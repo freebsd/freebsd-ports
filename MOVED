@@ -1924,3 +1924,7 @@ net/psi|net-im/psi|2005-11-09|Moved to a new net-im category
 net/py-jabber|net-im/py-jabber|2005-11-09|Moved to a new net-im category
 net/py-twistedWords|net-im/py-twistedWords|2005-11-09|Moved to a new net-im category
 net/p5-Net-Jabber|net-im/p5-Net-Jabber|2005-11-09|Moved to a new net-im category
+net/licq|net-im/licq|2005-11-09|Moved to a new net-im category
+net/licq-console|net-im/licq-console|2005-11-09|Moved to a new net-im category
+net/licq-osd|net-im/licq-osd|2005-11-09|Moved to a new net-im category
+net/licq-qt-gui|net-im/licq-qt-gui|2005-11-09|Moved to a new net-im category
