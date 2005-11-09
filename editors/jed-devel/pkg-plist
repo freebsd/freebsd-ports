@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/editors/jed-devel/Attic/pkg-plist,v 1.2 2005-10-27 16:46:54 garga Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/editors/jed-devel/Attic/pkg-plist,v 1.3 2005-11-09 08:57:20 garga Exp $
 bin/jed
 bin/jed-script
 %%XJED%%bin/xjed
@@ -180,4 +180,5 @@ lib/jed/lib/yankpop.sl
 @dirrm lib/jed/lib/colors/Xjed
 @dirrm lib/jed/lib/colors
 @dirrm lib/jed/lib
+@dirrm lib/jed/info
 @dirrm lib/jed
