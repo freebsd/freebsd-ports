@@ -7,7 +7,7 @@
 
 PORTNAME=	vicq
 PORTVERSION=	0.4.1
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://gonzo.kiev.ua/projects/vicq/
 
 MAINTAINER=	kevlo@FreeBSD.org

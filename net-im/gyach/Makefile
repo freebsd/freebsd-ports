@@ -8,7 +8,7 @@
 PORTNAME=	gyach
 PORTVERSION=	0.9.8
 PORTREVISION=	3
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://www4.infi.net/~cpinkham/gyach/code/
 
 MAINTAINER?=	aaron@snaphat.com

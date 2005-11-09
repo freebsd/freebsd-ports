@@ -8,7 +8,7 @@
 PORTNAME=	sulci
 PORTVERSION=	0.5.a.20050918
 PORTEPOCH=	1
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://www.jabber.ru/files/sulci/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./-alpha-/}
 

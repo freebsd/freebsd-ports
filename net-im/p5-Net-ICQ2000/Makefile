@@ -7,7 +7,7 @@
 
 PORTNAME=	Net-ICQ2000
 PORTVERSION=	0.2.1
-CATEGORIES=	net perl5
+CATEGORIES=	net-im perl5
 MASTER_SITES=	http://gonzo.kiev.ua/projects/vicq/
 PKGNAMEPREFIX=	p5-
 

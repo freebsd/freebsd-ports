@@ -7,7 +7,7 @@
 
 PORTNAME=	cicquin
 PORTVERSION=	0.1
-CATEGORIES=	net
+CATEGORIES=	net-im
 #MASTER_SITES=	${MASTER_SITE_LOCAL} \ 
 MASTER_SITES=	\
 		http://devel.ringlet.net/misc/cicquin/ \

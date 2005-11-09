@@ -6,7 +6,7 @@
 
 PORTNAME=	pymsn
 PORTVERSION=	0.10
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://msn-transport.jabberstudio.org/tarballs/
 PKGNAMEPREFIX=	jabber-
 PKGNAMESUFFIX=	-transport

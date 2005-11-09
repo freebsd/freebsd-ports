@@ -1,8 +1,0 @@
-@comment $FreeBSD$
-bin/icb
-%%DATADIR%%/bartender
-%%DATADIR%%/confuse
-%%DATADIR%%/echofunctions
-%%DATADIR%%/icbserverdb
-%%DATADIR%%/sample.icbrc
-@dirrm %%DATADIR%%

@@ -7,7 +7,7 @@
 
 PORTNAME=	ginsu
 PORTVERSION=	0.7.1
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://repetae.net/john/computer/ginsu/drop/
 
 MAINTAINER=	jason-fbsd-ports-ginsu@shalott.net

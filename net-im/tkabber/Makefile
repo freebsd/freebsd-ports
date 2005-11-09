@@ -7,7 +7,7 @@
 
 PORTNAME=	tkabber
 PORTVERSION=	0.9.7
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://www.jabber.ru/files/tkabber/
 
 MAINTAINER=	alexander.timoshenko@gmail.com

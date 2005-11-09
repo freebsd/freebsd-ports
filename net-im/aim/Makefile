@@ -8,7 +8,7 @@
 PORTNAME=	aim
 PORTVERSION=	1.5.286
 PORTREVISION=	2
-CATEGORIES=	net linux
+CATEGORIES=	net-im linux
 MASTER_SITES=	ftp://ftp.newaol.com/aimgen/380469/
 DISTNAME=	aim-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
