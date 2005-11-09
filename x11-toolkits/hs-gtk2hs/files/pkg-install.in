@@ -1,0 +1,19 @@
+#!/bin/sh
+
+pkglibdir=$PKG_PREFIX/lib/gtk2hs
+ghcpkg=%%LOCALBASE%%/bin/ghc-pkg
+
+case "$2" in
+POST-INSTALL)
+	for p in %%PKGS%%; do
+  	  $ghcpkg --auto-ghci-libs update $pkglibdir/$p.package.conf ;
+	done
+	/bin/rm -f %%LOCALBASE%%/lib/ghc-%%GHC_VERSION%%/package.conf.old
+	;;
+DEINSTALL)
+	for p in %%PKGS%%; do
+	  $ghcpkg unregister $p-%%PORTVERSION%% ;
+	done
+	/bin/rm -f %%LOCALBASE%%/lib/ghc-%%GHC_VERSION%%/package.conf.old
+	;;
+esac
