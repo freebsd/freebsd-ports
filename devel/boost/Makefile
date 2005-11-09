@@ -6,8 +6,7 @@
 # $FreeBSD$
 
 PORTNAME=	boost
-PORTVERSION=	1.32.0
-PORTREVISION=	2
+PORTVERSION=	1.33.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:boost_site,spirit_site/}
 MASTER_SITE_SUBDIR=boost/:boost_site
@@ -25,17 +24,26 @@ MAKE_ENV+=	GCC="${CC} ${CFLAGS}"\
 		GXX="${CXX} ${CXXFLAGS}"\
 		STLPORT_ROOT=/
 
+.if defined(WITH_PYTHON) || defined (WITH_PYSTE)
+USE_PYTHON=	2.3+
+.endif
+
 OPTIONS=	VERBOSE_BUILD	"Show compiler messages"	off \
 		DEBUG		"Build debugging symbols"	off \
 		THREADS		"Thread support"		on  \
-		OPTIMIZED_CFLAGS "Enable -O3 optimization"	off
+		ICU		"Boost.Regex with ICU unicode support" off \
+		OPTIMIZED_CFLAGS "Enable -O3 optimization"	off \
+		GCC34		"Use GCC 3.4 (for FreeBSD 4.x only)" off
 
 UNIQ=		/usr/bin/uniq
-BOOST_LIBS=	date_time filesystem prg_exec_monitor program_options \
-		regex signals test_exec_monitor unit_test_framework
-BOOST_SHARED_LIB_VER=	2
+BOOST_LIBS=	date_time filesystem iostreams prg_exec_monitor\
+		program_options regex signals test_exec_monitor\
+		unit_test_framework
+BOOST_SHARED_LIB_VER=	3
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+.include <bsd.port.pre.mk>
 
 .if !defined(WITH_PYTHON) && defined(WITH_PYSTE)
 WITH_PYTHON=	IMPLIED_BY_PYSTE
@@ -54,7 +62,6 @@ WITH_PYTHON=	IMPLIED_BY_PYSTE
 #
 .if defined(WITH_PYTHON)
 PKGNAMESUFFIX=	-python
-USE_PYTHON=	2.3+
 PLIST_SUB+=	BOOST_PYTHON=""
 MAKE_ENV+=	PYTHON_ROOT="${LOCALBASE}"\
 		PYTHON_VERSION="${PYTHON_VERSION}"\
@@ -74,18 +81,24 @@ PLIST_SUB+=	BOOST_PYTHON="@comment "
 PLIST_SUB+=	BOOST_PYSTE="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
 SPIRIT_VERSION=	1.6.2
 
 # FreeBSD 4:
+# WITHOUT_GCC34:
 # - no wchar support
 # - needs stlport
 # - spirit 1.6.x
+# - don't build wave
+# WITH_GCC34:
+# - no wchar support
 .if ${OSVERSION} < 500000
-USE_ZIP=	yes
-EXTRA_PATCHES=	${FILESDIR}/FBSD4-patch-libs::serialization::build::Jamfile\
-		${FILESDIR}/FBSD4-patch-boost::program_options::detail::utf8_codecvt_facet.hpp
+EXTRA_PATCHES=	${FILESDIR}/FBSD4-patch-boost_detail_utf8_codecvt_facet.hpp \
+		${FILESDIR}/FBSD4-patch-libs_serialization_src_stl_port.cpp \
+		${FILESDIR}/FBSD4-patch-libs::serialization::build::Jamfile \
+		${FILESDIR}/FBSD4-patch-boost_test_impl_test_tools.ipp
 
+.if !defined(WITH_GCC34)
+USE_ZIP=	yes
 DISTFILES+=	spirit-only-${SPIRIT_VERSION}.zip:spirit_site
 MASTER_SITE_SUBDIR+=spirit/:spirit_site
 BJAM_BUILD+=	<stlport-iostream>on
@@ -93,24 +106,39 @@ BOOST_TOOLS=	gcc-stlport
 
 PLIST_SUB+=	BOOST_WCHAR="@comment "\
 		BOOST_SPIRIT_1.6=""\
-		BOOST_SPIRIT_1.8="@comment "
+		BOOST_SPIRIT_1.8="@comment "\
+		BOOST_WAVE="@comment "
 
 BOOST_STL_OPTS=	"-sSTLPORT_INCLUDE_DIRECTORY=${LOCALBASE}/include/stlport"\
 		"-sSTLPORT_LIB_DIRECTORY=${LOCALBASE}/lib"
 
 RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
+.else
+USE_GCC=3.4+
+BOOST_TOOLS=	gcc
+
+PLIST_SUB+=	BOOST_WCHAR="@comment "\
+		BOOST_SPIRIT_1.6="@comment "\
+		BOOST_SPIRIT_1.8=""\
+		BOOST_WAVE=""
+.endif
+
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 
-# FreeBSD 5
+# FreeBSD 5 and above
 # - wchar support
 # - spirit 1.8.x
+# - wave 1.2
 .else
 BOOST_TOOLS=	gcc
 EXTRA_PATCHES=	${FILESDIR}/FBSD5-patch-boost::python::detail::config.hpp
 
 PLIST_SUB+=	BOOST_WCHAR=""\
 		BOOST_SPIRIT_1.6="@comment "\
-		BOOST_SPIRIT_1.8=""
+		BOOST_SPIRIT_1.8=""\
+		BOOST_WAVE=""
+
+BOOST_LIBS+=	wserialization
 .endif
 
 .if defined (WITH_VERBOSE_BUILD)
@@ -130,6 +158,11 @@ PLIST_SUB+=	BOOST_THREADS="@comment "
 BJAM_BUILD+=	<threading>multi
 PLIST_SUB+=	BOOST_THREADS=""
 BOOST_LIBS+=	thread
+.endif
+
+.if defined (WITH_ICU)
+LIB_DEPENDS+=	icuuc.32:${PORTSDIR}/devel/icu
+BOOST_ICU_OPTS=	"-sICU_PATH=${LOCALBASE}"
 .endif
 
 .if defined (WITHOUT_OPTIMIZED_CFLAGS)
@@ -188,9 +221,9 @@ do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} && ${TAR} -xjpof ${DISTDIR}/${DISTNAME}.tar.bz2
 
-# boost 1.32.0's spirit 1.8.x cannot be built with GCC 2.95.4,
+# boost 1.33.0's spirit 1.8.x cannot be built with GCC 2.95.4,
 # so we use spirit 1.6.x
-.if ${OSVERSION} < 500000
+.if ${OSVERSION} < 500000 && !defined(WITH_GCC34)
 	@cd ${WRKDIR} && ${UNZIP_CMD} ${DISTDIR}/spirit-only-${SPIRIT_VERSION}.zip > /dev/null
 
 # remove CRLF
@@ -201,6 +234,9 @@ do-extract:
 	@${RM} -rf ${WRKSRC}/boost/spirit* ${WRKSRC}/libs/spirit
 	@${MV} ${WRKDIR}/spirit_${SPIRIT_VERSION:S/./_/g}/boost/* ${WRKSRC}/boost
 	@${MV} ${WRKDIR}/spirit_${SPIRIT_VERSION:S/./_/g}/libs/spirit ${WRKSRC}/libs
+
+# remove wave
+	@${RM} -rf ${WRKSRC}/boost/wave* ${WRKSRC}/libs/wave
 .endif
 
 post-patch:
@@ -233,7 +269,7 @@ do-build:
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_OPTIONS} --prefix=${PREFIX}\
 		"-sTOOLS=${BOOST_TOOLS}" "-sBUILD=${BJAM_BUILD}"\
-		${BOOST_STL_OPTS}
+		${BOOST_STL_OPTS} ${BOOST_ICU_OPTS}
 
 # Build pyste, the Boost.Python code generator
 .if defined(WITH_PYSTE)
@@ -250,13 +286,14 @@ do-install:
 		-exec ${INSTALL_DATA} \{\} ${PREFIX}/lib \;
 
 	${FIND} ${WRKSRC}/bin/boost/libs -type f \
-		-name "*.so.${BOOST_SHARED_LIB_VER}" \
+		-name "*.so" \
 		-exec ${INSTALL_DATA} \{\} ${PREFIX}/lib \;
 
 # Create symlinks for shared libraries
 .for lib in ${BOOST_LIBS}
-	cd ${PREFIX}/lib && ${RM} -f "libboost_${lib}.so" && \
-	${LN} -s "libboost_${lib}.so.${BOOST_SHARED_LIB_VER}" "libboost_${lib}.so"
+	cd ${PREFIX}/lib && \
+	${MV} -f "libboost_${lib}.so" "libboost_${lib}.so.${BOOST_SHARED_LIB_VER}" && \
+	${LN} -fs "libboost_${lib}.so.${BOOST_SHARED_LIB_VER}" "libboost_${lib}.so"
 .endfor
 
 # Install headers
@@ -285,6 +322,7 @@ do-install:
 
 	${FIND} ${WRKSRC} -type f -exec ${CHMOD} 0444 {} \;
 	${FIND} ${WRKSRC} -type d -exec ${CHMOD} 0555 {} \;
+	${FIND} ${WRKSRC} -name ".cvsignore" -delete
 	cd ${WRKSRC} &&\
 	${FIND} . -name "*.htm" -o -name "*.html"  -o -name "*.css"\
 		-o -name "*.jp*g" -o -name "*.png" -o -name "*.gif"\
@@ -302,7 +340,7 @@ do-install:
 post-install:
 	@${TOUCH} ${PKGMESSAGE}
 
-.if ${OSVERSION} < 500000
+.if ${OSVERSION} < 500000 && !defined(WITH_GCC34)
 	@${CAT} ${.CURDIR}/../boost/pkg-message.stlport >> ${PKGMESSAGE}
 	@${ECHO_CMD} >> ${PKGMESSAGE}
 .endif

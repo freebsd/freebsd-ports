@@ -5,7 +5,6 @@
 # $FreeBSD$
 #
 
-MAINTAINER=	barner@gmx.de
 COMMENT=	Free portable C++ source libraries with Python bindings
 
 MASTERDIR=	${.CURDIR}/../../devel/boost
