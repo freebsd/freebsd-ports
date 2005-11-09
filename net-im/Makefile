@@ -41,11 +41,13 @@
     SUBDIR += jabber-conference
     SUBDIR += jabber-jud
     SUBDIR += jabber-msn
+    SUBDIR += jabber-pyicq
     SUBDIR += jabber-pymsn
     SUBDIR += jabber-yahoo
     SUBDIR += jabber-users-agent
     SUBDIR += jarl
     SUBDIR += jit
+    SUBDIR += jwchat
     SUBDIR += kf
     SUBDIR += kmerlin
     SUBDIR += kmess
@@ -83,6 +85,7 @@
     SUBDIR += p5-Net-MSN
     SUBDIR += p5-Net-NetSend
     SUBDIR += p5-Net-OSCAR
+    SUBDIR += p5-Net-XMPP
     SUBDIR += psi
     SUBDIR += py-jabber
     SUBDIR += py-twistedWords
