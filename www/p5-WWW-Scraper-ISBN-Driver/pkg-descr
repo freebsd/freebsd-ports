@@ -1,0 +1,9 @@
+This is a base class, all site-specific drivers should inherit its members
+and methods. Driver subclasses named '$name' should be packaged as
+WWW::Scraper::ISBN::$name_Driver, e.g. WWW::Scraper::ISBN::LOC_Driver for
+LOC (Library of Congress) driver. Each driver need only implement the
+search() method, though they may have as many other methods as they need to
+get their job done. Only search() will be called by
+WWW::Scraper::ISBN->search().
+
+WWW: http://search.cpan.org/dist/WWW-Scraper-ISBN-Driver/
