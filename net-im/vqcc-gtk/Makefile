@@ -11,7 +11,7 @@ CATEGORIES?=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER?=	bob@nulis.lt
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	LAN chat client compatible with quickChat and Vypress Chat (TM)
 
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
