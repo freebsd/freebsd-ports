@@ -1928,3 +1928,6 @@ net/licq|net-im/licq|2005-11-09|Moved to a new net-im category
 net/licq-console|net-im/licq-console|2005-11-09|Moved to a new net-im category
 net/licq-osd|net-im/licq-osd|2005-11-09|Moved to a new net-im category
 net/licq-qt-gui|net-im/licq-qt-gui|2005-11-09|Moved to a new net-im category
+net/jabber-pyicq|net-im/jabber-pyicq|2005-11-09|Moved to a new net-im category
+net/p5-Net-XMPP|net-im/p5-Net-XMPP|2005-11-09|Moved to a new net-im category
+www/jwchat|net-im/jwchat|2005-11-09|Moved to a new net-im category

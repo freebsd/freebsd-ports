@@ -236,7 +236,6 @@
     SUBDIR += isc-dhcp3-relay
     SUBDIR += isc-dhcp3-server
     SUBDIR += iwi-firmware
-    SUBDIR += jabber-pyicq
     SUBDIR += jags
     SUBDIR += java-beepcore
     SUBDIR += javadc
@@ -484,7 +483,6 @@
     SUBDIR += p5-Net-Whois
     SUBDIR += p5-Net-Whois-RIPE
     SUBDIR += p5-Net-Whois-Raw
-    SUBDIR += p5-Net-XMPP
     SUBDIR += p5-Net-XWhois
     SUBDIR += p5-Net-Z3950
     SUBDIR += p5-Net-Z3950-SimpleServer

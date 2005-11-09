@@ -16,7 +16,7 @@ DIST_SUBDIR=	jabber
 MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Net::Jabber provides Perl Developer access to the Jabber protocol
 
-BUILD_DEPENDS=	${SITE_PERL}/Net/XMPP.pm:${PORTSDIR}/net/p5-Net-XMPP
+BUILD_DEPENDS=	${SITE_PERL}/Net/XMPP.pm:${PORTSDIR}/net-im/p5-Net-XMPP
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

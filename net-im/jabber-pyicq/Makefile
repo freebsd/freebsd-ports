@@ -6,7 +6,7 @@
 
 PORTNAME=	pyicq
 PORTVERSION=	0.6
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://www.blathersource.org/download.php/pyicq-t/
 PKGNAMEPREFIX=	jabber-
 PKGNAMESUFFIX=	-transport
