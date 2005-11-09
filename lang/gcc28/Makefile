@@ -17,11 +17,11 @@ MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	GNU Compiler Collection 2.8
 
 NOT_FOR_ARCHS=	amd64 sparc64 ia64
-NO_CDROM=	'old version, not worth the cost in real estate'
+NO_CDROM=	"old version, not worth the cost in real estate"
 
 LATEST_LINK=	gcc28
 
-DEPRECATED=	"This port is no longer in use by anything in the ports collection.  Use a later release instead"
+DEPRECATED=	This port is no longer in use by anything in the ports collection.  Use a later release instead
 
 .include <bsd.port.pre.mk>
 
@@ -39,8 +39,8 @@ PLIST_SUB=	GNUHOST=${CONFIGURE_TARGET}
 .if ${OSVERSION} < 600011
 PLIST_FILES+=	lib/gcc-lib/${CONFIGURE_TARGET}/2.8.1/include/math.h
 .endif
-CONFIGURE_ARGS=	--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/2.8.1/include/g++
-CONFIGURE_ARGS+= --program-suffix=28
+CONFIGURE_ARGS=	--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/2.8.1/include/g++ \
+		--program-suffix=28
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	bootstrap
