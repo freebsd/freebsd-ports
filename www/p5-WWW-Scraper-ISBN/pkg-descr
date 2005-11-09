@@ -1,0 +1,9 @@
+The WWW::Scraper::ISBN class was built as a way to retrieve information on
+books from multiple sources easily. It utilizes at least one driver
+implemented as a subclass of WWW::Scraper::ISBN::Driver, each of which is
+designed to scrape from a single source. Because we found that different
+sources had different information available on different books, we designed
+a basic interface that could be implemented in whatever ways necessary to
+retrieve the desired information.
+
+WWW: http://search.cpan.org/dist/WWW-Scraper-ISBN/
