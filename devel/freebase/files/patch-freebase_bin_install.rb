@@ -1,6 +1,6 @@
 --- bin/install.rb.orig	Mon Mar 24 07:10:57 2003
-+++ bin/install.rb	Mon Feb 21 18:38:00 2005
-@@ -1,21 +1,40 @@
++++ bin/install.rb	Thu Oct 13 12:05:17 2005
+@@ -1,21 +1,39 @@
  require 'rbconfig'
  require 'find'
  require 'ftools'
@@ -34,7 +34,6 @@
  
 -$srcdir = CONFIG["srcdir"]
 +$prefix = CONFIG["prefix"]
-+$srcdir = prefixize( CONFIG["srcdir"] )
  $version = CONFIG["MAJOR"]+"."+CONFIG["MINOR"]
 -$libdir = File.join(CONFIG["libdir"], "ruby", $version)
 -$archdir = File.join($libdir, CONFIG["arch"])
@@ -50,3 +49,10 @@
  
  def install_rb(srcdir = nil)
    libdir = "lib"
+@@ -39,4 +57,4 @@
+   end
+ end
+ 
+-install_rb
+\ No newline at end of file
++install_rb

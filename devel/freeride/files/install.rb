@@ -1,17 +1,57 @@
 require 'rbconfig'
 require 'find'
 require 'ftools'
+require 'getoptlong'
 
 Dir.chdir ".." if Dir.pwd =~ /bin.?$/
 
+class Prefixizer
+	attr_reader :orig_prefix, :my_prefix
+
+	def initialize( orig_prefix = "/usr/local", my_prefix = nil )
+		self.orig_prefix = orig_prefix
+		self.my_prefix = my_prefix
+	end
+	
+	def orig_prefix=( orig_prefix = "/usr/local" )
+		@orig_prefix = orig_prefix
+	end
+	
+	def my_prefix=( my_prefix = nil )
+		@my_prefix = my_prefix
+	end
+	
+	def prefixize( str )
+		my_prefix ?
+			str.gsub( Regexp::compile( "^#{Regexp::escape(orig_prefix)}" ), my_prefix ) :
+			str
+	end
+end
+
 include Config
 
+prefixizer = Prefixizer.new( CONFIG["prefix"] )
+no_harm = false
+
+opts = GetoptLong.new( 
+	[ "--no-harm", "-n", GetoptLong::OPTIONAL_ARGUMENT],
+	[ "--prefix", "-p", GetoptLong::OPTIONAL_ARGUMENT]
+)
+
+opts.each { |opt, arg|
+	case opt
+	when "--no-harm"	
+		no_harm = true
+	when "--prefix"
+		prefixizer.my_prefix = arg
+	end
+}
+
 FREERIDE = "freeride"
-$srcdir = CONFIG["srcdir"]
 $version = CONFIG["MAJOR"]+"."+CONFIG["MINOR"]
-$libdir = File.join(CONFIG["libdir"], "ruby", $version)
-$archdir = File.join($libdir, CONFIG["arch"])
-$site_libdir = CONFIG["sitelibdir"]
+$libdir = prefixizer.prefixize( CONFIG["rubylibdir"] )
+$archdir = prefixizer.prefixize( CONFIG["archdir"] )
+$site_libdir = prefixizer.prefixize( CONFIG["sitelibdir"] )
 
 $libdir = ["config", "plugins", "redist"]
 $libdir_excl = [ /CVS[^\/]*$/, /i[36]86-/, /^rrb\//, /\.so\s*$/, /ripper/ ]
@@ -19,7 +59,6 @@ $libdir_subst = [ [/i686-linux/, CONFIG["arch"] ] ]
 
 class Array
   def contains?
-	return false unless defined?( yield )
 	each { |e| return true if yield( e ) }
 	return false
   end
@@ -40,7 +79,7 @@ end
 
 class String
 	attr_accessor :localDir
-	
+
 	def rmLocal
 		localDir = "/usr/local/" if localDir.nil?
 		gsub( Regexp.new( "^#{Regexp.escape(localDir)}" ), "" )
@@ -98,7 +137,6 @@ def install_rb(noharm = false, srcdir = nil)
   $stdout.flush
 end
 
-no_harm = (ARGV.include_like?(/\A^-[a-zA-Z0-9]*n/) or ARGV.include?("--no-harm"))
 $stderr << "No-harm install\n" if no_harm
 $stderr.flush
 install_rb( no_harm )
