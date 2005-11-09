@@ -11,11 +11,8 @@ portmanager x11/gnome2	-f rebuilds gnome2 and dependencies
 
 2) portmanager -u -f forces rebuild of everything
 
-portmanager-questions archive may be found at:
-http://www.mail-archive.com/portmanager-questions%40sunsite.dk/
-
-to subscribe just send an empty message to:
-portmanager-questions-subscribe@sunsite.dk
+3) -sl showleaves and -slid  delete leaves
+	now no longer list build dependencies
 
 WWW: http://portmanager.sunsite.dk/
-Author: Michael C. Shultz <ringworm01@gmail.com>
+Maintainer: Michael C. Shultz <ringworm01@gmail.com>
