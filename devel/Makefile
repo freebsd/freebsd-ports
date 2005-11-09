@@ -1506,6 +1506,7 @@
     SUBDIR += rubygem-rake
     SUBDIR += rubygem-rgl
     SUBDIR += rubygem-stream
+    SUBDIR += rubygem-transactionsimple
     SUBDIR += rudiments
     SUBDIR += rvi
     SUBDIR += rvm

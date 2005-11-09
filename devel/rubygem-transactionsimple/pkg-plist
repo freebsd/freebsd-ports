@@ -1,0 +1,78 @@
+%%CACHE_DIR%%/transaction-simple-%%PORTVERSION%%%%EXTRACT_SUFX%%
+%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/Changelog
+%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/Install
+%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/Rakefile
+%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/Readme
+%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/lib/transaction/simple.rb
+%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/lib/transaction/simple/group.rb
+%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/lib/transaction/simple/threadsafe.rb
+%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/lib/transaction/simple/threadsafe/group.rb
+%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/tests/tc_transaction_simple.rb
+%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/tests/tc_transaction_simple_group.rb
+%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/tests/tc_transaction_simple_threadsafe.rb
+%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/tests/testall.rb
+%%SPEC_DIR%%//transaction-simple-%%PORTVERSION%%%%EXTRACT_SUFX%%spec
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/created.rid
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/rdoc-style.css
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/files/lib/transaction/simple_rb.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/files/lib/transaction/simple/group_rb.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/files/lib/transaction/simple/threadsafe_rb.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/files/lib/transaction/simple/threadsafe/group_rb.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/files/Readme.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/files/Changelog.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple.src/M000001.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple.src/M000002.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple.src/M000003.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple.src/M000004.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple.src/M000005.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple.src/M000006.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple.src/M000007.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple.src/M000008.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple.src/M000009.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple.src/M000010.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple.src/M000011.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple.src/M000012.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple.src/M000013.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple/ThreadSafe/Group.src/M000014.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple/ThreadSafe/Group.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple/Group.src/M000015.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple/Group.src/M000016.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple/Group.src/M000017.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple/Group.src/M000018.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple/Group.src/M000019.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple/Group.src/M000020.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple/Group.src/M000021.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple/Group.src/M000022.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple/Group.src/M000023.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple/ThreadSafe.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple/Group.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/TransactionThreadError.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/TransactionCommitted.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/TransactionAborted.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/TransactionError.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/fr_file_index.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/fr_class_index.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/fr_method_index.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/index.html
+@dirrm %%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/lib/transaction/simple/threadsafe
+@dirrm %%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/lib/transaction/simple
+@dirrm %%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/lib/transaction
+@dirrm %%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/lib
+@dirrm %%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/tests
+@dirrm %%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%
+@dirrm %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/files/lib/transaction/simple/threadsafe
+@dirrm %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/files/lib/transaction/simple
+@dirrm %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/files/lib/transaction
+@dirrm %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/files/lib
+@dirrm %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/files
+@dirrm %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple.src
+@dirrm %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple/ThreadSafe/Group.src
+@dirrm %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple/ThreadSafe
+@dirrm %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple/Group.src
+@dirrm %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple
+@dirrm %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction
+@dirrm %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes
+@dirrm %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc
+@dirrm %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%
