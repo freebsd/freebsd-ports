@@ -79,10 +79,11 @@ EXTRA_PATCHES+=	${FILESDIR}/${NVVERSION}-*
 .else
 .if defined(WITH_LEGACY_GPU_SUPPORT)
 NVVERSION=	7174
-PORTREVISION=	1
+PORTREVISION=	2
 EXTRA_PATCHES+=	${FILESDIR}/6113-patch-lib::Makefile
 .else
 NVVERSION=	7676
+PORTREVISION=	1
 EXTRA_PATCHES+=	${FILESDIR}/7667-*
 .if ${OSVERSION} >= 600033
 LIB_DEPENDS+=	m.3:${PORTSDIR}/misc/compat5x
@@ -143,6 +144,7 @@ post-patch: .SILENT
 	${REINPLACE_CMD} 's/define NV_SUPPORT_LINUX_COMPAT/undef NV_SUPPORT_LINUX_COMPAT/' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
+	${REINPLACE_CMD} -E 's/(extension).*/\1/ ; /bin/d' ${WRKSRC}/x11/Makefile
 
 post-install:
 	${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
