@@ -15,7 +15,7 @@ DISTFILES=	${DISTNAME}-source${EXTRACT_SUFX}
 DISTFILES+=	${DISTNAME}-html${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sa2c@sa2c.net
 COMMENT=	A Common Lisp development system derived from the CMU CL system
 
 # If you have a previous version of SBCL installed, you can use it
