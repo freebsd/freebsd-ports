@@ -20,8 +20,7 @@ WRKSRC=		${WRKDIR}/huskybse
 NO_BUILD=	yes
 
 pre-install:
-	@ ${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGDIR}/pkg-install ${PORTNAME} PRE-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 
 do-install:
 	@${MKDIR} ${PREFIX}/etc/fido ${PREFIX}/share/doc/husky
