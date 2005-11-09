@@ -8,8 +8,7 @@ PORTNAME=	ktextdecode
 PORTVERSION=	3.0
 PORTREVISION=	4
 CATEGORIES=	converters kde
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	markus
+MASTER_SITES=	http://zavolzhsky.dax.ru/download/
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	The simple text conversion utility for KDE 3
