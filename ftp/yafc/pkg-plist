@@ -1,4 +1,0 @@
-bin/yafc
-%%PORTDOCS%%%%EXAMPLESDIR%%/inputrc.sample
-%%PORTDOCS%%%%EXAMPLESDIR%%/yafcrc.sample
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
