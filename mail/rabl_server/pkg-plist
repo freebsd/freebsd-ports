@@ -1,0 +1,4 @@
+bin/rabl_server
+@unexec if cmp -s %D/etc/rabl_server.conf %D/etc/rabl_server.conf.sample; then rm -f %D/etc/rabl_server.conf; fi
+etc/rabl_server.conf.sample
+@exec if [ ! %D/etc/rabl_server.conf ] ; then cp -p %D/%F %D/etc/rabl_server.conf

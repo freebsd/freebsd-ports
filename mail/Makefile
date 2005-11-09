@@ -443,6 +443,7 @@
     SUBDIR += queue-repair
     SUBDIR += quickml
     SUBDIR += rabl_client
+    SUBDIR += rabl_server
     SUBDIR += raysfilter
     SUBDIR += razor-agents
     SUBDIR += rbl-milter

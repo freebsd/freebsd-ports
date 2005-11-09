@@ -1,0 +1,46 @@
+#!/bin/sh
+# $FreeBSD$
+#
+
+# PROVIDE: rabl_server
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: mail
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf[.local] to enable rabl_server:
+#
+# rabl_server_enable="YES"
+# User variables:
+# rabl_server_conf - conf file to use (default: %%PREFIX%%/etc/${name}.conf)
+# rabl_server_user - user to run as (default: bind)
+#
+
+. %%RC_SUBR%%
+
+name=rabl_server
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/bin/${name}
+#command_args="-c ${rabl_server_conf} -u ${rabl_server_user}"
+#${name}_flags="-c ${rabl_server_conf} -u ${rabl_server_user}"
+required_files=%%PREFIX%%/etc/${name}.conf
+
+extra_commands=reload
+
+#reload()
+#{
+# kill -HUP `cat $pidfile`
+#}
+
+# set defaults
+rabl_server_enable=${rabl_server_enable:-"NO"}
+
+load_rc_config $name
+
+rabl_server_user=${rabl_server_user:-"bind"}
+rabl_server_conf=${rabl_server_conf:-"%%PREFIX%%/etc/${name}.conf"}
+
+rabl_server_flags="-c ${rabl_server_conf} -u ${rabl_server_user} &"
+
+run_rc_command "$1"
