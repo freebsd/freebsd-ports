@@ -7,7 +7,7 @@
 
 PORTNAME=	fvwm
 PORTVERSION=	2.5.14
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
@@ -45,10 +45,6 @@ OPTIONS=	ICONS		"Install default icon set" on \
 		GNOME		"Enable GNOME desktop support" off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 501000
-BROKEN=                 Does not build
-.endif
 
 .if !defined(WITHOUT_ICONS)
 DISTFILES+=	fvwm_icons.tgz
