@@ -8,20 +8,20 @@
 
 PORTNAME=	osd
 PORTVERSION=	${OSD_LICQ_VER}
-CATEGORIES=	net
+CATEGORIES=	net-im
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OnScreenDisplay messages in licq
 
 LIB_DEPENDS=	xosd.4:${PORTSDIR}/misc/xosd
-RUN_DEPENDS=${LOCALBASE}/lib/licq/licq_qt-gui.so:${PORTSDIR}/net/licq-qt-gui
+RUN_DEPENDS=	${LOCALBASE}/lib/licq/licq_qt-gui.so:${PORTSDIR}/net-im/licq-qt-gui
 # run dependency may be too strict, delete it if you use another
 # plugin (gtk+) and wish run osd with it. i've not tested with
 # plugins other than qt-gui
 
 USE_LIBTOOL_VER=15
 
-LICQ_PORT?=	net/licq
+LICQ_PORT?=	net-im/licq
 
 LOCALES=	de cs es fr pt pt_BR ro ru se
 PLIST_FILES=	lib/licq/licq_osd.so \
