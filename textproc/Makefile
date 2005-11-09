@@ -387,6 +387,7 @@
     SUBDIR += p5-String-Strip
     SUBDIR += p5-Syntax-Highlight-Perl-Improved
     SUBDIR += p5-TeX-Hyphen
+    SUBDIR += p5-Template-Extract
     SUBDIR += p5-Template-Magic
     SUBDIR += p5-Text-ASCIITable
     SUBDIR += p5-Text-Affixes

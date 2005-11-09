@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Template/Extract.pm
+%%SITE_PERL%%/Template/Extract/Compile.pm
+%%SITE_PERL%%/Template/Extract/Parser.pm
+%%SITE_PERL%%/Template/Extract/Run.pm
+@dirrm %%SITE_PERL%%/Template/Extract
+@unexec rmdir %D/%%SITE_PERL%%/Template 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Extract/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Extract
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template 2>/dev/null || true
