@@ -7,6 +7,7 @@
 
 PORTNAME=	portmanager
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://portmanager.sunsite.dk/distfiles/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -45,6 +46,7 @@ OPTIONS=	DEBUG	"Enables debug support and all compile warning"	off
 CONFIGURE_ARGS+=	--with-debug=yes
 .endif
 
+# Keep this in post-configure. After run configure, he change this value.
 post-configure:
 	@${REINPLACE_CMD} -e    \
 		's|PACKAGE_VERSION "${PORTVERSION}"|PACKAGE_VERSION "${PORTVERSION}_${PORTREVISION}"|g' \

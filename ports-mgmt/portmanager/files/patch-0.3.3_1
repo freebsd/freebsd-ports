@@ -1,0 +1,877 @@
+diff -ruN ../0.3.3/libMG/src/MGdbDelete.c ./libMG/src/MGdbDelete.c
+--- ../0.3.3/libMG/src/MGdbDelete.c	Sat Nov  5 05:43:08 2005
++++ ./libMG/src/MGdbDelete.c	Tue Nov  8 11:38:35 2005
+@@ -23,18 +23,19 @@
+ #include	<libMG.h>
+ #include	<libMG.ph>
+ 
+-int	MGdbDelete( classDb* db, int recordIdx )
++classDb*	MGdbDelete( classDb* db, int recordIdx )
+ {
+ 	FILE*		dbFileStream;
+ 	char		id[]		= "MGdbDelete";
+ 	static	char*	newPath		= NULL;
+ 	int		stringSize	= 0;
++	static	classDb*	newDb;
+ 	
+ 	/* check if we have a valid object */
+ 	if(db == NULL || db->parent.type != CLASS_TYPE_DB)
+ 	{
+ 		fprintf( stderr, "%s error: invalid object type\n", id);
+-		return( 1 );
++		return( NULL );
+ 	}
+ 
+ 	db->parent.recordIdx	= 0;
+@@ -50,7 +51,7 @@
+ 	{
+ 		fprintf( stderr, "%s error: unable to open %s mode \"w\"\n", id, db->parent.path );
+ 		perror( "system message" );
+-		return( 1 );
++		return( NULL );
+ 	}
+ 	/*zzzzzzzzzzzzzz*/
+ 
+@@ -91,14 +92,15 @@
+ 	newPath			= (char*)calloc( stringSize, 1 );
+ 	strcpy( newPath, db->parent.path );
+ 	MGdbDestroy( db );
+-	if( ( db = MGdbOpen( newPath ) ) == NULL )
++	if( ( newDb = MGdbOpen( newPath ) ) == NULL )
+ 	{
+ 		fprintf( stderr, "%s error: unable to MGdbOpen %s\n", id, newPath );
+ 		perror( "system message" );
+-		return( 1 );
++		return( NULL );
+ 	}
++	db	= newDb;
+ 	free( newPath );
+-	return( 0 );
++	return( newDb );
+ }
+ 
+ 
+diff -ruN ../0.3.3/libMG/src/MGdbOpen.c ./libMG/src/MGdbOpen.c
+--- ../0.3.3/libMG/src/MGdbOpen.c	Sat Nov  5 05:43:08 2005
++++ ./libMG/src/MGdbOpen.c	Tue Nov  8 08:20:40 2005
+@@ -26,11 +26,10 @@
+ classDb*	MGdbOpen( char* dbFileName )
+ {
+ 	char	id[]		= "MGdbOpen";
+-	int	errorCode	= 0;
+ 	static	classDb* db;
+ 
+ 	/*zzzzzzzzzzzzzz*/
+-	db			= ( classDb* )malloc( sizeof(classDb) + 1 );
++	db			= ( classDb* )calloc( sizeof(classDb), 1 );
+ 	db->parent.mallocIdx	= 1;
+ 	/*zzzzzzzzzzzzzz*/
+ 
+@@ -48,13 +47,6 @@
+ 	db->parent.recordIdx	= 0;
+ 	db->parent.recordQty	= 0;
+ 	db->parent.type		= CLASS_TYPE_DB;
+-
+-
+-	if(errorCode)
+-	{
+-		fprintf( stderr, "%s error: %s returned errorCode %d\n", id, "MGmSetString", errorCode );
+-		assert(0);
+-	}
+ 
+ 	MGdbRead( db );
+ 
+diff -ruN ../0.3.3/libMG/src/libMG.h ./libMG/src/libMG.h
+--- ../0.3.3/libMG/src/libMG.h	Sat Nov  5 05:43:08 2005
++++ ./libMG/src/libMG.h	Tue Nov  8 11:37:11 2005
+@@ -106,7 +106,7 @@
+ classDb*		MGdbCreate( char* dbFileName, ... );
+ classDb*		MGdbOpen( char* dbFileName );	
+ int			MGdbAdd(classDb* db, ...);
+-int			MGdbDelete(classDb* db, int recordIdx );
++classDb*		MGdbDelete(classDb* db, int recordIdx );
+ int			MGdbDestroy(classDb* db);
+ int			MGdbGetRecno(classDb* db );
+ int			MGdbGetRecordQty(classDb* db);
+diff -ruN ../0.3.3/libMGPM/src/MGPMrBestOldPort.c ./libMGPM/src/MGPMrBestOldPort.c
+--- ../0.3.3/libMGPM/src/MGPMrBestOldPort.c	Mon Nov  7 14:51:35 2005
++++ ./libMGPM/src/MGPMrBestOldPort.c	Tue Nov  8 00:16:52 2005
+@@ -121,7 +121,7 @@
+ 					property->fieldOldPortsDbOldPortDir,
+ 					exact ) )
+ 				{
+-					fprintf( stdout, "skipping %s %s old dependency: %s\n",
++					fprintf( stdout, "skipping %s %s until dependency %s updated\n",
+ 						oldPortName,
+ 						oldPortDir,
+ 						MGdbGet( property->availableDependenciesDb,
+@@ -156,7 +156,7 @@
+ 					property->fieldOldPortsDbOldPortDir,
+ 					exact ) )
+ 				{
+-					fprintf( stdout, "skipping %s %s old dependency: %s\n",
++					fprintf( stdout, "skipping %s %s until dependency %s updated\n",
+ 						oldPortName,
+ 						oldPortDir,
+ 						MGdbGet( property->availableDependenciesDb,
+diff -ruN ../0.3.3/libMGPM/src/MGPMrController.c ./libMGPM/src/MGPMrController.c
+--- ../0.3.3/libMGPM/src/MGPMrController.c	Sat Nov  5 05:43:08 2005
++++ ./libMGPM/src/MGPMrController.c	Tue Nov  8 12:29:47 2005
+@@ -30,9 +30,18 @@
+ #include	<libMGPM.h>
+ 
+ int	rPmUpgradeNewMethod( structProperty* property );
+-int	rPmUpgradeOriginalMethod( structProperty* property );
+ int	MGPMrController( structProperty* property, char* path )
+ {
++	char	ignore[]			= "/IGNORE";
++	char	upgradeInteractive[]		= "--upgrade-interactive";
++	char	resume[]			= "--resume";
++	char	ui[]				= "-ui";
++	char	backUp[]			= "--back-up";
++	char	yes[]				= "--yes";
++	char	y[]				= "-y";
++	char	f[]				= "-f";
++	char	fix[]				= "--fix";
++	char	bu[]				= "-bu";
+ 	char	exact[]				= "exact";
+ 	char	id[]				= "MGPMrController";
+ 	char*	command				= NULL;
+@@ -52,8 +61,8 @@
+ 	int	oldPortsDbTOTALIZER		= 0;
+ 
+ 	command		= (char*)calloc( bufferSize,1);
+-	oldPortDir	= (char*)calloc(255,1);
+-	oldPortName	= (char*)calloc(255,1);
++	oldPortDir	= (char*)calloc(512,1);
++	oldPortName	= (char*)calloc(512,1);
+ 	xtermTitle	= (char*)calloc( bufferSize,1 );	
+ 
+ 	property->cacheDb	= MGdbCreate(
+@@ -71,14 +80,14 @@
+ 	property->commandLineDb	= MGdbOpen( property->commandLineDbFileName );
+ 
+ 	MGdbGoTop( property->commandLineDb );
+-	if( MGdbSeek( property->commandLineDb, property->fieldCommandLineDbKey, "-f", property->fieldCommandLineDbKey, exact ) )
++	if( MGdbSeek( property->commandLineDb, property->fieldCommandLineDbKey, f, property->fieldCommandLineDbKey, exact ) )
+ 	{
+ 		property->forced	= 1;
+ 		fprintf( stdout, "%s %s info: running in forced update mode\n", id, PACKAGE_VERSION );
+ 		while( fflush( stdout ) );
+ 	}
+ 	MGdbGoTop( property->commandLineDb );
+-	if( MGdbSeek( property->commandLineDb, property->fieldCommandLineDbKey, "--fix", property->fieldCommandLineDbKey, exact ) )
++	if( MGdbSeek( property->commandLineDb, property->fieldCommandLineDbKey, fix, property->fieldCommandLineDbKey, exact ) )
+ 	{
+ 		property->forced	= 1;
+ 		fprintf( stdout, "%s %s info: running in forced update mode\n", id, PACKAGE_VERSION );
+@@ -86,37 +95,37 @@
+ 	}
+ 
+ 	MGdbGoTop( property->commandLineDb );
+-	if( MGdbSeek( property->commandLineDb, property->fieldCommandLineDbKey, "-bu", property->fieldCommandLineDbKey, exact ) )
++	if( MGdbSeek( property->commandLineDb, property->fieldCommandLineDbKey, bu, property->fieldCommandLineDbKey, exact ) )
+ 	{
+ 		property->backUp	= 1;
+ 	} 
+ 	MGdbGoTop( property->commandLineDb );
+-	if( MGdbSeek( property->commandLineDb, property->fieldCommandLineDbKey, "--back-up", property->fieldCommandLineDbKey, exact ) )
++	if( MGdbSeek( property->commandLineDb, property->fieldCommandLineDbKey, backUp, property->fieldCommandLineDbKey, exact ) )
+ 	{
+ 		property->backUp	= 1;
+ 	} 
+ 	MGdbGoTop( property->commandLineDb );
+-	if( MGdbSeek( property->commandLineDb, property->fieldCommandLineDbKey, "-y", property->fieldCommandLineDbKey, exact ) )
++	if( MGdbSeek( property->commandLineDb, property->fieldCommandLineDbKey, y, property->fieldCommandLineDbKey, exact ) )
+ 	{
+ 		property->autoConflicts	= 1;
+ 		property->autoMoved	= 1;
+ 	} 
+-	if( MGdbSeek( property->commandLineDb, property->fieldCommandLineDbKey, "--yes", property->fieldCommandLineDbKey, exact ) )
++	if( MGdbSeek( property->commandLineDb, property->fieldCommandLineDbKey, yes, property->fieldCommandLineDbKey, exact ) )
+ 	{
+ 		property->autoConflicts	= 1;
+ 	} 
+ 	MGdbGoTop( property->commandLineDb );
+-	if( MGdbSeek( property->commandLineDb, property->fieldCommandLineDbKey, "--resume", property->fieldCommandLineDbKey, exact ) )
++	if( MGdbSeek( property->commandLineDb, property->fieldCommandLineDbKey, resume, property->fieldCommandLineDbKey, exact ) )
+ 	{
+ 		property->resume	= 1;
+ 	} 
+ 	MGdbGoTop( property->commandLineDb );
+-	if( MGdbSeek( property->commandLineDb, property->fieldCommandLineDbKey, "-ui", property->fieldCommandLineDbKey, exact ) )
++	if( MGdbSeek( property->commandLineDb, property->fieldCommandLineDbKey, ui, property->fieldCommandLineDbKey, exact ) )
+ 	{
+ 		property->interactive	= 1;
+ 	} 
+ 	MGdbGoTop( property->commandLineDb );
+-	if( MGdbSeek( property->commandLineDb, property->fieldCommandLineDbKey, "--upgrade-interactive", property->fieldCommandLineDbKey, exact ) )
++	if( MGdbSeek( property->commandLineDb, property->fieldCommandLineDbKey, upgradeInteractive, property->fieldCommandLineDbKey, exact ) )
+ 	{
+ 		property->interactive	= 1;
+ 	} 
+@@ -128,7 +137,7 @@
+ 	property->configDb			= MGdbOpen( property->configDbFileName );
+ 	property->ignoreDb			= MGdbOpen( property->ignoreDbFileName );
+ 	MGdbGoTop( property->configDb );
+-	while( ( configDbValuePtr = MGdbSeek( property->configDb, property->fieldConfigDbKey, "/IGNORE", property->fieldConfigDbValue, exact ) ) )
++	while( ( configDbValuePtr = MGdbSeek( property->configDb, property->fieldConfigDbKey, ignore, property->fieldConfigDbValue, exact ) ) )
+ 	{
+ 		MGdbAdd( property->ignoreDb, configDbValuePtr, "set to ignore in pm-020.conf", NULL );
+ 		fprintf( stdout, "%s %s info: Adding %s to ignoreDB reason: %s\n", id, PACKAGE_VERSION, configDbValuePtr, "set to ignore in pm-020.conf" );
+@@ -146,6 +155,7 @@
+ 			fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGPMrCreateInstalledDb", errorCode );
+ 			free( command );
+ 			free( oldPortDir );
++			free( oldPortName );
+ 			free( xtermTitle );
+ 			return( 1 );
+ 		}
+@@ -155,11 +165,13 @@
+ 			fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGPMrShowLeaves", errorCode );
+ 			free( command );
+ 			free( oldPortDir );
++			free( oldPortName );
+ 			free( xtermTitle );
+ 			return( 1 );
+ 		}
+ 		free( command );
+ 		free( oldPortDir );
++		free( oldPortName );
+ 		free( xtermTitle );
+ 		return( 0 );
+ 	}
+@@ -190,6 +202,7 @@
+ 					"MGPMrCreateInstalledDb", errorCode );
+ 				free( command );
+ 				free( oldPortDir );
++				free( oldPortName );
+ 				free( xtermTitle );
+ 				return( 1 );
+ 			}
+@@ -197,6 +210,10 @@
+ 			{
+ 				fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION,
+ 					"MGPMrCreateAllUpdateStatusDb", errorCode );
++				free( command );
++				free( oldPortDir );
++				free( oldPortName );
++				free( xtermTitle );
+ 				return( 1 );
+ 			}
+ 		}
+@@ -206,6 +223,10 @@
+ 		{
+ 			fprintf( stdout, "%s %s error: failed to open %s\n", id, PACKAGE_VERSION, property->ignoreDbFileName );
+ 			perror( "system" );
++			free( command );
++			free( oldPortDir );
++			free( oldPortName );
++			free( xtermTitle );
+ 			return( 1 );
+ 		}
+ 		MGdbDestroy( property->ignoreDb );
+@@ -215,11 +236,13 @@
+ 			fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGPMrShowLeavesDelete", errorCode );
+ 			free( command );
+ 			free( oldPortDir );
++			free( oldPortName );
+ 			free( xtermTitle );
+ 			return( 1 );
+ 		}
+ 		free( command );
+ 		free( oldPortDir );
++		free( oldPortName );
+ 		free( xtermTitle );
+ 		return( 0 );
+ 	}
+@@ -231,6 +254,7 @@
+ 			fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGPMrCreateStatusDb", errorCode );
+ 			free( command );
+ 			free( oldPortDir );
++			free( oldPortName );
+ 			free( xtermTitle );
+ 			return( 1 );
+ 		}
+@@ -238,6 +262,10 @@
+ 		if( ( errorCode = MGPMrMissingDependencies( property ) ) )
+ 		{
+ 			fprintf( stdout, "%s %s error:  %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGPMrMissingDependencies", errorCode );
++			free( command );
++			free( oldPortDir );
++			free( oldPortName );
++			free( xtermTitle );
+ 			return( 1 );
+ 		}
+ 
+@@ -246,11 +274,13 @@
+ 			fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGPMrCreateStatusDb", errorCode );
+ 			free( command );
+ 			free( oldPortDir );
++			free( oldPortName );
+ 			free( xtermTitle );
+ 			return( 1 );
+ 		}
+ 		free( command );
+ 		free( oldPortDir );
++		free( oldPortName );
+ 		free( xtermTitle );
+ 		return(0);
+ 	}
+@@ -258,9 +288,10 @@
+ 	if( path && strcmp( path, "PMUPGRADE" ) == 0 )
+ 	{
+ 		rPmUpgradeNewMethod( property );
+-/*
+-		rPmUpgradeOriginalMethod( property );
+-*/
++		free( command );
++		free( oldPortDir );
++		free( oldPortName );
++		free( xtermTitle );
+ 		return( 0 );
+ 	}
+ 
+@@ -274,6 +305,10 @@
+ 			if( ( errorCode	= MGPMrSinglePortCreateStatusDb( property, path ) ) )
+ 			{
+ 				fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGPMrSinglePortCreateStatusDb", errorCode );
++				free( command );
++				free( oldPortDir );
++				free( oldPortName );
++				free( xtermTitle );
+ 				return( 1 );
+ 			}
+ 
+@@ -293,6 +328,7 @@
+ 				fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGPMrCreateStatusDb", errorCode );
+ 				free( command );
+ 				free( oldPortDir );
++				free( oldPortName );
+ 				free( xtermTitle );
+ 				return( 1 );
+ 			}
+@@ -300,6 +336,10 @@
+ 			if( ( errorCode	= MGPMrSinglePortStatus( property ) ) )
+ 			{
+ 				fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGPMrSinglePortStatus", errorCode );
++				free( command );
++				free( oldPortDir );
++				free( oldPortName );
++				free( xtermTitle );
+ 				return( 1 );
+ 			}
+ 			oldPortDir[0]	= 0;
+@@ -319,6 +359,10 @@
+ 				else
+ 				{
+ 					fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGPMrBestOldPort", errorCode );
++					free( command );
++					free( oldPortDir );
++					free( oldPortName );
++					free( xtermTitle );
+ 					return( 1 );
+ 				}
+ 			}
+@@ -448,236 +492,9 @@
+ 	}
+ 	free( command );
+ 	free( oldPortDir );
+-	free( xtermTitle );
+-	return( errorCode );
+-}
+-
+-/*******************************************************/
+-int	rPmUpgradeOriginalMethod( structProperty* property )
+-/*******************************************************/
+-{
+-	char	exact[]				= "exact";
+-	char	id[]				= "rPmUpgradeOriginalMethod";
+-	char*	command				= NULL;
+-	char*	configDbValuePtr		= NULL;
+-	char*	oldPortDir			= NULL;
+-	char*	oldPortName			= NULL;
+-	char*	oldPortsDbNewPortDirPtr		= NULL;
+-	char*	oldPortsDbNewPortNamePtr	= NULL;
+-	char*	oldPortsDbReasonPtr		= NULL;
+-	char*	term				= NULL;
+-	char*	xtermTitle			= NULL;
+-	float	percentDone			= 0;
+-	int	bufferSize			= 0xffff;
+-	int	errorCode			= 0;
+-	int	oldPortsDbIDX			= 0;
+-	int	oldPortsDbQTY			= 0;
+-	int	oldPortsDbTOTALIZER		= 0;
+-
+-	command		= (char*)calloc( bufferSize,1);
+-	oldPortDir	= (char*)calloc(255,1);
+-	oldPortName	= (char*)calloc(255,1);
+-	xtermTitle	= (char*)calloc( bufferSize,1 );	
+-
+-	property->cacheDb	= MGdbCreate(
+-					property->cacheDbFileName,
+-					property->fieldCacheDbPortDir,
+-					property->fieldCacheDbAvailablePortName,
+-					property->fieldCacheDbMakeFileSize,
+-					property->fieldCacheDbMakeFileTime,
+-					NULL );
+-	MGdbDestroy( property->cacheDb );
+-	if( property->log )
+-	{
+-		strcpy( command, "echo \"portmanager.log\" " );
+-		strcat( command, " > /var/log/portmanager.log" );
+-		system( command );
+-		strcpy( command, "date >> /var/log/portmanager.log" );
+-		system( command );
+-	}
+-	while( 1 )
+-	{
+-		if( ( errorCode	= MGPMrCreateInstalledDb( property ) ) )
+-		{
+-			fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGPMrCreateInstalledDb", errorCode );
+-			free( command );
+-			free( oldPortDir );
+-			free( oldPortName );
+-			free( xtermTitle );
+-			return( 1 );
+-		}
+-
+-		if( ( errorCode = MGPMrMissingDependencies( property ) ) )
+-		{
+-			fprintf( stdout, "%s %s error:  %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGPMrMissingDependencies", errorCode );
+-			free( command );
+-			free( oldPortDir );
+-			free( oldPortName );
+-			free( xtermTitle );
+-			return( 1 );
+-		}
+-		if( ( errorCode	= MGPMrStatus( property ) ) )
+-		{
+-			fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGPMrCreateStatusDb", errorCode );
+-			free( command );
+-			free( oldPortDir );
+-			free( oldPortName );
+-			free( xtermTitle );
+-			return( 1 );
+-		}
+-		oldPortDir[0]	= 0;
+-		oldPortName[0]	= 0;
+-		if( ( errorCode	= MGPMrBestOldPort( property, oldPortDir, oldPortName ) ) )
+-		{
+-			if( errorCode == 100 )
+-			{
+-				fprintf( stdout, "%s\n", SINGLE_LINES );
+-				fprintf( stdout, "%s %s INFO: finished with some ports not updated  if --log was used see /var/log/portmanager.log\n",
+-					"portmanager", PACKAGE_VERSION );
+-				while( fflush( stdout ) );
+-				fprintf( stdout, "%s\n", SINGLE_LINES );
+-				errorCode = 0;
+-				break;
+-			}
+-			else
+-			{
+-				fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGPMrBestOldPort", errorCode );
+-				free( command );
+-				free( oldPortDir );
+-				free( oldPortName );
+-				free( xtermTitle );
+-				return( 1 );
+-			}
+-		}
+-		if( strlen(oldPortDir) > 1 )
+-		{
+-			fprintf( stdout, "%s\n", SINGLE_LINES );
+-			fprintf( stdout, "updating %s %s\n", oldPortName, oldPortDir );
+-
+-			/*
+-			 *  Set xterm title bar indicator
+-			 */
+-			property->oldPortsDb	= MGdbOpen( property->oldPortsDbFileName );
+-			oldPortsDbQTY		= MGdbGetRecordQty( property->oldPortsDb );
+-
+-			if( oldPortsDbQTY - 1 > oldPortsDbTOTALIZER )
+-			{
+-				oldPortsDbTOTALIZER	= oldPortsDbQTY - 1;
+-			}
+-			percentDone	= 100 - ( 100 * ( ( (float)oldPortsDbQTY - 1 ) / (float)oldPortsDbTOTALIZER ) );
+-			fprintf( stdout, "percentDone-=>%d = 100 - ( 100 * ( oldPortsDbQTY-=>%d / oldPortsDbTOTALIZER-=>%d ) ) \n",
+-				(int)percentDone, oldPortsDbQTY-1, oldPortsDbTOTALIZER );
+-			while( fflush( stdout ) );
+-
+-			term	= getenv("TERM");
+-			if( term && strncmp( term, "xterm", 5 ) == 0 && isatty(fileno(stdout)) )
+-			{
+-				/*
+-				pr 81481
+-				To fix the modification of xterm title, even when redirecting, one can
+-				test isatty(fileno(stdout)) before printing the escape sequence.
+-				*/
+-				strcpy( xtermTitle, "portmanager" );
+-				strcat( xtermTitle, " done:% " );
+-				strcat( xtermTitle, MGrIntToString( (long)percentDone ) );
+-				strcat( xtermTitle, " updating " );
+-				strcat( xtermTitle, oldPortName );
+-				strcat( xtermTitle, " " );
+-				strcat( xtermTitle, oldPortDir );
+-				printf( "%c]0;%s%c", '\033', xtermTitle, '\007' );
+-			}
+-			if( property->log )
+-			{
+-				property->configDb	= MGdbOpen( property->configDbFileName );
+-				MGdbGoTop( property->configDb );
+-				configDbValuePtr	= MGdbSeek( property->configDb, property->fieldConfigDbKey, oldPortDir,
+-								property->fieldConfigDbValue, exact );				
+-
+-				MGdbGoTop( property->oldPortsDb );
+-				oldPortsDbReasonPtr	= MGdbSeek( property->oldPortsDb, property->fieldOldPortsDbOldPortDir, oldPortDir,
+-								property->fieldOldPortsDbReason, exact );
+-				if( oldPortsDbReasonPtr )
+-				{
+-					oldPortsDbIDX	= MGdbGetRecno( property->oldPortsDb ) - 1;
+-					oldPortsDbNewPortNamePtr	= MGdbGet( property->oldPortsDb, oldPortsDbIDX, 
+-										property->fieldOldPortsDbNewPortName );
+-					oldPortsDbNewPortDirPtr	= MGdbGet( property->oldPortsDb, oldPortsDbIDX, 
+-										property->fieldOldPortsDbNewPortDir );
+-				}
+-				strcpy( command, "echo \" " );
+-				if( strcmp( oldPortName, "not installed" ) == 0 )
+-				{
+-					strcat( command, "adding " );
+-					strcat( command, oldPortName );
+-					strcat( command, " " );
+-					strcat( command, oldPortDir );
+-					strcat( command, " " );
+-				}
+-				else
+-				{
+-					strcat( command, "updating " );
+-					strcat( command, oldPortName );
+-					strcat( command, " " );
+-					strcat( command, oldPortDir );
+-					strcat( command, " " );
+-				}
+-				if( configDbValuePtr )
+-				{
+-					strcat( command, " options " );
+-					strcat( command, configDbValuePtr );
+-				}
+-				if( oldPortsDbReasonPtr )
+-				{
+-					strcat( command, " " );
+-					strcat( command, oldPortsDbReasonPtr );
+-					strcat( command, " " );
+-					strcat( command, oldPortsDbNewPortNamePtr );
+-					strcat( command, " " );
+-					strcat( command, oldPortsDbNewPortDirPtr );
+-					strcat( command, " " );
+-				}
+-				strcat( command, "\" >> /var/log/portmanager.log" );
+-				system( command );
+-				MGdbDestroy( property->configDb );
+-			}
+-			MGdbDestroy( property->oldPortsDb );
+-		}
+-		else
+-		{
+-			/*
+-			 *  Set xterm title bar indicator
+-			 *
+-			 * pr 81481
+-			 * To fix the modification of xterm title, even when redirecting, one can
+-			 * test isatty(fileno(stdout)) before printing the escape sequence.
+-			 */
+-			if( term && strncmp( term, "xterm", 5 ) == 0 && isatty(fileno(stdout)) )
+-			{
+-				strcpy( xtermTitle, "portmanager" );
+-				strcat( xtermTitle, " " );
+-				strcat( xtermTitle, " finished" );
+-				printf( "%c]0;%s%c", '\033', xtermTitle, '\007' );
+-			}
+-			fprintf( stdout, "%s %s INFO: all ports are up to date\n", "portmanager", PACKAGE_VERSION );
+-			while( fflush( stdout ) );
+-			break;
+-		}
+-		MGPMrUpdate( property, oldPortDir, oldPortName );
+-	}
+-
+-	if( property->log )
+-	{
+-		strcpy( command, "echo \" end of log \" " );
+-		strcat( command, " >> /var/log/portmanager.log" );
+-		system( command );
+-		strcpy( command, "date >> /var/log/portmanager.log" );
+-		system( command );
+-	}
+-	free( command );
+-	free( oldPortDir );
+ 	free( oldPortName );
+ 	free( xtermTitle );
+-	return( 0 );
++	return( errorCode );
+ }
+ 
+ /*******************************************************/
+@@ -901,6 +718,7 @@
+ 		strcpy( command, "date >> /var/log/portmanager.log" );
+ 		system( command );
+ 	}
++	free( oldPortName );
+ 	free( command );
+ 	free( oldPortDir );
+ 	free( xtermTitle );
+diff -ruN ../0.3.3/libMGPM/src/MGPMrCreateAllUpdateStatusDb.c ./libMGPM/src/MGPMrCreateAllUpdateStatusDb.c
+--- ../0.3.3/libMGPM/src/MGPMrCreateAllUpdateStatusDb.c	Sun Nov  6 19:26:26 2005
++++ ./libMGPM/src/MGPMrCreateAllUpdateStatusDb.c	Tue Nov  8 15:49:01 2005
+@@ -52,7 +52,7 @@
+ 	
+ 	counterPtr	= &counter;
+ 
+-	availablePortDir	= (char*)calloc( 510, 1 );
++	availablePortDir	= (char*)calloc( bufferSize, 1 );
+ 	availablePortName	= (char*)calloc( bufferSize, 1 );
+ 
+ 	fprintf( stdout,"%s\n", SINGLE_LINES );
+@@ -122,6 +122,7 @@
+ 		installedPortsDbIDX++;
+ 	}
+ 	MGdbDestroy( property->availablePortsDb );
++	MGdbDestroy( property->installedPortsDb );
+ 	MGdbDestroy( property->availableDependenciesDb );
+ 	MGdbDestroy( property->configDb );
+ 	free( availablePortDir );
+@@ -132,10 +133,9 @@
+ int	rrFindDepends( structProperty* property, char* availablePortDir, char* availablePortName, int* counterPtr )
+ {
+ 	char	id[]			= "rrFindDepends";
+-	char*	availablePortsDbFlagPtr	= NULL;
+ 	int	availablePortsDbIDX	= 0;
+ 	int	errorCode		= 0;
+-	int	idx			= 0;
++	int	availablePortsDbQTY	= 0;
+ 
+ 	if( ( errorCode = rrGetPortName( property, availablePortDir, availablePortName ) ) )
+ 	{
+@@ -155,20 +155,19 @@
+ 	/*
+  	 * fill dependencies for each record in property->availablePortsDb
+  	 */		
+-	availablePortsDbIDX	= MGdbGetRecordQty( property->availablePortsDb );
+-	idx	= 1;
+-	while( idx < availablePortsDbIDX )
++	availablePortsDbQTY	= MGdbGetRecordQty( property->availablePortsDb );
++	availablePortsDbIDX	= 1;
++	while( availablePortsDbIDX < availablePortsDbQTY )
+ 	{
+-		availablePortsDbFlagPtr	= MGdbGet( property->availablePortsDb, idx, property->fieldAvailablePortsDbFlag );
+-		if( availablePortsDbFlagPtr && strncmp( availablePortsDbFlagPtr, "0", 1 ) == 0 )
++		if( strncmp( MGdbGet( property->availablePortsDb, availablePortsDbIDX, property->fieldAvailablePortsDbFlag ), "0", 1 ) == 0 )
+ 		{
+-			strcpy( availablePortDir, MGdbGet( property->availablePortsDb, idx, property->fieldAvailablePortsDbPortDir ) );
+-			strcpy( availablePortName, MGdbGet( property->availablePortsDb, idx, property->fieldAvailablePortsDbPortName ) );
++			strcpy( availablePortDir, MGdbGet( property->availablePortsDb, availablePortsDbIDX, property->fieldAvailablePortsDbPortDir ) );
++			strcpy( availablePortName, MGdbGet( property->availablePortsDb, availablePortsDbIDX, property->fieldAvailablePortsDbPortName ) );
+ 			rrFillDependencies( property, availablePortName, availablePortDir, counterPtr );
+-			availablePortsDbIDX	= MGdbGetRecordQty( property->availablePortsDb );
+-			idx	= 0;
++			availablePortsDbQTY	= MGdbGetRecordQty( property->availablePortsDb );
++			availablePortsDbIDX	= 0;
+ 		}
+-		idx++;
++		availablePortsDbIDX++;
+ 	}
+ 	return( 0 );
+ }
+@@ -340,7 +339,6 @@
+ 	char*	buffer			= NULL;
+ 	int	availablePortsDbIDX	= 0;
+ 	int	bufferSize		= 0xffff;
+-	int	errorCode		= 0;
+ 
+ 	buffer		= calloc( bufferSize + 1, 1 );
+ 
+@@ -361,14 +359,10 @@
+ 		return( 1 );
+ 	}
+ 	MGdbGoTop( property->availablePortsDb );
+-	availablePortDirPtr	= MGdbSeek( property->availablePortsDb, property->fieldAvailablePortsDbPortDir, availablePortDir,
+-					property->fieldAvailablePortsDbPortDir, exact );
+-	availablePortsDbIDX	= MGdbGetRecno( property->availablePortsDb ) - 1;
+-	if( ( errorCode = MGdbDelete( property->availablePortsDb, availablePortsDbIDX ) ) )
+-	{
+-		fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGdbDelete", errorCode );
+-		return( 1 );
+-	}
++	availablePortDirPtr		= MGdbSeek( property->availablePortsDb, property->fieldAvailablePortsDbPortDir, availablePortDir,
++						property->fieldAvailablePortsDbPortDir, exact );
++	availablePortsDbIDX		= MGdbGetRecno( property->availablePortsDb ) - 1;
++	property->availablePortsDb	= MGdbDelete( property->availablePortsDb, availablePortsDbIDX );
+ 	MGdbAdd( property->availablePortsDb, availablePortName, availablePortDir, "1", NULL);
+ 
+ 	return( 0 );
+@@ -435,8 +429,8 @@
+ 	int	idx1			= 0;
+ 	int	idx2			= 0;
+ 
+-	dependencyPortDir	= (char*)calloc( 255, 1 );
+-	dependencyPortName	= (char*)calloc( 255, 1 );
++	dependencyPortDir	= (char*)calloc( bufferSize, 1 );
++	dependencyPortName	= (char*)calloc( bufferSize, 1 );
+ 	
+ 	bufferSize	= strlen( buffer );
+ 	idx1		= 0;
+diff -ruN ../0.3.3/libMGPM/src/MGPMrSinglePortCreateStatusDb.c ./libMGPM/src/MGPMrSinglePortCreateStatusDb.c
+--- ../0.3.3/libMGPM/src/MGPMrSinglePortCreateStatusDb.c	Sat Nov  5 21:12:54 2005
++++ ./libMGPM/src/MGPMrSinglePortCreateStatusDb.c	Tue Nov  8 15:53:41 2005
+@@ -52,7 +52,7 @@
+ 
+ 	counterPtr	= &counter;
+ 
+-	availablePortDir	= (char*)calloc( 255, 1 );
++	availablePortDir	= (char*)calloc( bufferSize, 1 );
+ 	availablePortName	= (char*)calloc( bufferSize, 1 );
+ 
+ 	/*.............................................................*/
+@@ -237,7 +237,6 @@
+ 	char*	buffer			= NULL;
+ 	int	availablePortsDbIDX	= 0;
+ 	int	bufferSize		= 0xffff;
+-	int	errorCode		= 0;
+ 
+ 	buffer			= calloc( bufferSize + 1, 1 );
+ 	rDependencyParse( property, buffer, availablePortName, availablePortDir, BUILD_DEPENDS, counterPtr );
+@@ -257,13 +256,8 @@
+ 	availablePortDirPtr	= MGdbSeek( property->availablePortsDb, property->fieldAvailablePortsDbPortDir, availablePortDir,
+ 					property->fieldAvailablePortsDbPortDir, exact );
+ 	availablePortsDbIDX	= MGdbGetRecno( property->availablePortsDb ) - 1;
+-	if( ( errorCode = MGdbDelete( property->availablePortsDb, availablePortsDbIDX ) ) )
+-	{
+-		fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGdbDelete", errorCode );
+-		return( 1 );
+-	}
++	property->availablePortsDb = MGdbDelete( property->availablePortsDb, availablePortsDbIDX );
+ 	MGdbAdd( property->availablePortsDb, availablePortName, availablePortDir, "1", NULL);
+-
+ 	return( 0 );
+ }
+ 
+@@ -328,8 +322,8 @@
+ 	int	idx1			= 0;
+ 	int	idx2			= 0;
+ 
+-	dependencyPortDir	= (char*)calloc( 255, 1 );
+-	dependencyPortName	= (char*)calloc( 255, 1 );
++	dependencyPortDir	= (char*)calloc( bufferSize, 1 );
++	dependencyPortName	= (char*)calloc( bufferSize, 1 );
+ 
+ 	bufferSize	= strlen( buffer );
+ 	idx1		= 0;
+diff -ruN ../0.3.3/libMGPM/src/MGPMrSinglePortStatus.c ./libMGPM/src/MGPMrSinglePortStatus.c
+--- ../0.3.3/libMGPM/src/MGPMrSinglePortStatus.c	Mon Nov  7 09:48:20 2005
++++ ./libMGPM/src/MGPMrSinglePortStatus.c	Tue Nov  8 11:18:04 2005
+@@ -333,6 +333,7 @@
+ 		char*	oldDependencyDir,
+ 		int*	counterPtr )
+ {
++	char*	availableDependenciesDbDependencyTypePtr	= NULL;
+ 	char	id[]						= "rCheckForOldDependencies";
+ 	char	exact[]						= "exact";
+ 	char*	availableDependenciesDbDependencyNamePtr	= NULL;
+@@ -351,19 +352,20 @@
+ 	 * 	is a BUILD_DEPENDS desired out come is installedPortsDbPortDir with
+ 	 *	a RUN_DEPENDS at finish time
+ 	 */
+-	while( ( availableDependenciesDbDependencyNamePtr = MGdbSeek( property->availableDependenciesDb,
+-								property->fieldAvailableDependenciesDbPortDir,
+-								installedPortsDbPortDir,
+-								property->fieldAvailableDependenciesDbDependencyName,
+-								exact ) ) )
++	while( ( availableDependenciesDbDependencyNamePtr	= MGdbSeek( property->availableDependenciesDb,
++									property->fieldAvailableDependenciesDbPortDir,
++									installedPortsDbPortDir,
++									property->fieldAvailableDependenciesDbDependencyName,
++									exact ) ) )
+ 	{
+-		if( strcmp( MGdbGet( property->availableDependenciesDb,
+-				MGdbGetRecno(  property->availableDependenciesDb ) -1,
+-				property->fieldAvailableDependenciesDbDependType ), "BUILD_DEPENDS" ) == 0 )
++		availableDependenciesDbDependencyTypePtr	= MGdbGet( property->availableDependenciesDb,
++									MGdbGetRecno(  property->availableDependenciesDb ) -1,
++									property->fieldAvailableDependenciesDbDependType );
++
++		if( availableDependenciesDbDependencyTypePtr && strcmp( availableDependenciesDbDependencyTypePtr, "BUILD_DEPENDS" ) == 0 )
+ 		{
+ 			continue;
+ 		}
+-
+ 		break;
+ 	}			
+ 											 
+diff -ruN ../0.3.3/libMGPM/src/MGPMrUpdate.c ./libMGPM/src/MGPMrUpdate.c
+--- ../0.3.3/libMGPM/src/MGPMrUpdate.c	Sun Nov  6 05:17:31 2005
++++ ./libMGPM/src/MGPMrUpdate.c	Tue Nov  8 16:34:59 2005
+@@ -69,7 +69,6 @@
+ 	char	yes[]						= "--yes";
+ 	char*	availableDependenciesDbDependencyDirPtr		= NULL;
+ 	char*	availableDependenciesDbDependencyNamePtr	= NULL;
+-	char*	availablePortsFlagPtr				= NULL;
+ 	char*	bufferBase					= NULL;
+ 	char*	dependencyDbDependencyPortDirPtr		= NULL;
+ 	char*	dependencyDbDependencyPortNamePtr		= NULL;
+@@ -272,14 +271,12 @@
+ 			fprintf( stdout, "one more attempt and it will be marked as ignore.\n\n" );
+ 			while( fflush( stdout ) );
+ 			MGdbGoTop( property->strikesDb );
+-			strikePtr	= MGdbSeek( property->strikesDb, property->fieldStrikesDbPortDir, oldPortDir, property->fieldStrikesIDX, exact );
+-			if( ( errorCode = MGdbDelete( property->strikesDb, MGdbGetRecno( property->strikesDb ) - 1 ) ) )
+-			{
+-				fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGdbDelete", errorCode );
+-				while( fflush( stdout ) );
+-				rCleanUp( property, &localProperty );
+-				return( 1 );
+-			}
++			strikePtr		= MGdbSeek( property->strikesDb,
++							property->fieldStrikesDbPortDir,
++							oldPortDir,
++							property->fieldStrikesIDX,
++							exact );
++			property->strikesDb	= MGdbDelete( property->strikesDb, MGdbGetRecno( property->strikesDb ) - 1 );
+ 			MGdbAdd( property->strikesDb, oldPortDir, "2", NULL );
+ 			if( property->log )
+ 			{
+@@ -779,7 +776,8 @@
+ 						MGdbGetRecno( property->availablePortsDb ) - 1,
+ 						property->fieldAvailablePortsDbPortName ) );
+ 				while( fflush( stdout ) );
+-				MGdbDelete( property->availablePortsDb, MGdbGetRecno( property->availablePortsDb ) - 1 );
++				property->availablePortsDb	= MGdbDelete( property->availablePortsDb,
++										MGdbGetRecno( property->availablePortsDb ) - 1 );
+ 				MGdbGoTop( property->availablePortsDb );
+ 			}
+ 
+@@ -1262,19 +1260,17 @@
+ 	if( property->pmMode || property->forced )
+ 	{
+ 		MGdbGoTop( property->availablePortsDb );
+-		availablePortsFlagPtr	= MGdbSeek( property->availablePortsDb, property->fieldAvailablePortsDbPortDir, oldPortDir,
+-						property->fieldAvailablePortsDbFlag, exact );
+-		if( availablePortsFlagPtr && strncmp( availablePortsFlagPtr, "2", 1 ) )
++		if( strncmp( MGdbSeek( property->availablePortsDb,
++					property->fieldAvailablePortsDbPortDir,
++					oldPortDir,
++					property->fieldAvailablePortsDbFlag,
++					exact ),
++					"2", 1 ) )
+ 		{
+ 			availablePortsDbIDX		= MGdbGetRecno( property->availablePortsDb ) - 1;
+ 			strcpy( localProperty.newPortName, MGdbGet( property->availablePortsDb, availablePortsDbIDX, property->fieldAvailablePortsDbPortName ) );
+ 			strcpy( localProperty.newPortDir, MGdbGet( property->availablePortsDb, availablePortsDbIDX, property->fieldAvailablePortsDbPortDir ) );
+-			if( ( errorCode = MGdbDelete( property->availablePortsDb, availablePortsDbIDX ) ) )
+-			{
+-				fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGdbDelete", errorCode );
+-				rCleanUp( property, &localProperty );
+-				return( 1 );
+-			}
++			property->availablePortsDb = MGdbDelete( property->availablePortsDb, availablePortsDbIDX );
+ 			MGdbAdd( property->availablePortsDb, localProperty.newPortName, localProperty.newPortDir, "2", NULL );			
+ 		}
+ 	}
