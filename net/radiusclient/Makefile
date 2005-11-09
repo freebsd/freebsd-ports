@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	radiusclient
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/radiusclient-ng/
 DISTNAME=	${PORTNAME}-ng-${PORTVERSION}
@@ -15,7 +15,7 @@ MAINTAINER=	maurice@castro.aus.net
 COMMENT=	Client library and basic utilities for Radius authenticated login
 
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=13
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
