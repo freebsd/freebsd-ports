@@ -99,6 +99,7 @@
     SUBDIR += buildtool
     SUBDIR += buildtool-doc
     SUBDIR += byaccj
+    SUBDIR += bzrtools
     SUBDIR += c2lib
     SUBDIR += c2man
     SUBDIR += c2mdoc
