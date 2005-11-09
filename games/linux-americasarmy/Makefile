@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	americasarmy
-PORTVERSION=	2.3.0
+PORTVERSION=	2.5.0
 CATEGORIES=	games linux
-MASTER_SITES=	http://3dgamers.intelenet.net/pub/3dgamers/games/americasarmy/ \
+MASTER_SITES=	http://3dgamers.iinet.net.au/pub/3dgamers/games/americasarmy/ \
 		http://downloads-3dg.planetmirror.com/pub/3dgamers/games/americasarmy/ \
-		ftp://3dgamers.mirror.internode.on.net/3dgamers/games/americasarmy/ \
-		http://3dgamers.iinet.net.au/pub/3dgamers/games/americasarmy/
+		http://downloads-3dg.planetmirror.com/pub/3dgamers/games/americasarmy/ \
+		http://0day.icculus.org/armyops/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	armyops230-linux
+DISTNAME=	armyops250-linux
 EXTRACT_SUFX=	.run
 
 MAINTAINER=	acardenas@bsd.org.pe
@@ -32,16 +32,16 @@ INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@cd ${WRKSRC} && \
-		${TAIL} -c +8815 ${_DISTDIR}/${DISTFILES} | ${TAR} xf -
+		${TAIL} -c +8844 ${_DISTDIR}/${DISTFILES} | ${TAR} xf -
 	@${TAR} xfz ${WRKSRC}/setupstuff.tar.gz -C ${WRKSRC}
 	@${MV} ${WRKSRC}/bin/armyops ${WRKSRC}/armyops
 
 do-install:
 	@${MKDIR} ${ARMYDIR}
-.for FILE in ArmyOps.xpm README.linux ArmyOps230_EULA.txt
+.for FILE in ArmyOps.xpm README.linux ArmyOps250_EULA.txt
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${ARMYDIR}
 .endfor
-.for FILE in armyops230.tar.bz2 binaries.tar.bz2
+.for FILE in armyops250.tar.bz2 binaries.tar.bz2
 	@${TAR} xfpj ${WRKSRC}/${FILE} -C ${ARMYDIR}/
 .endfor
 .for DIR in Animations Briefings Demos Help KarmaData Maps Movies Music Sounds StaticMeshes \
