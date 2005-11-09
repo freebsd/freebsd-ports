@@ -1,0 +1,1042 @@
+diff -ruN ../0.3.3_1/libMGPM/src/MGPMrController.c ./libMGPM/src/MGPMrController.c
+--- ../0.3.3_1/libMGPM/src/MGPMrController.c	Tue Nov  8 17:05:25 2005
++++ ./libMGPM/src/MGPMrController.c	Tue Nov  8 20:37:08 2005
+@@ -150,14 +150,28 @@
+ 
+ 	if( path && ( strcmp( path, "SHOWLEAVES" ) == 0 ) )
+ 	{
+-		if( ( errorCode	= MGPMrCreateInstalledDb( property ) ) )
++		if( property->resume == 0 ) /* skip this if portmanager has upgraded/rebuilt its self */
+ 		{
+-			fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGPMrCreateInstalledDb", errorCode );
+-			free( command );
+-			free( oldPortDir );
+-			free( oldPortName );
+-			free( xtermTitle );
+-			return( 1 );
++			if( ( errorCode	= MGPMrCreateInstalledDb( property ) ) )
++			{
++				fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION,
++					"MGPMrCreateInstalledDb", errorCode );
++				free( command );
++				free( oldPortDir );
++				free( oldPortName );
++				free( xtermTitle );
++				return( 1 );
++			}
++			if( ( errorCode	= MGPMrCreateAllUpdateStatusDb( property ) ) )
++			{
++				fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION,
++					"MGPMrCreateAllUpdateStatusDb", errorCode );
++				free( command );
++				free( oldPortDir );
++				free( oldPortName );
++				free( xtermTitle );
++				return( 1 );
++			}
+ 		}
+ 
+ 		if( ( errorCode	= MGPMrShowLeaves( property ) ) )
+@@ -217,7 +231,6 @@
+ 				return( 1 );
+ 			}
+ 		}
+-
+ 
+ 		if( ( property->ignoreDb = MGdbCreate( property->ignoreDbFileName, property->fieldignoreDbPortDir, property->fieldIgnoreDbReason, NULL ) ) == NULL )
+ 		{
+diff -ruN ../0.3.3_1/libMGPM/src/MGPMrShowLeaves.c ./libMGPM/src/MGPMrShowLeaves.c
+--- ../0.3.3_1/libMGPM/src/MGPMrShowLeaves.c	Tue Nov  8 17:05:25 2005
++++ ./libMGPM/src/MGPMrShowLeaves.c	Tue Nov  8 21:32:18 2005
+@@ -31,16 +31,22 @@
+ 
+ int	MGPMrShowLeaves( structProperty* property )
+ {
++	FILE*	pHandle			= NULL;
+ 	char	exact[]			= "exact";
+ 	char	id[]			= "MGPMrShowLeaves";
++	char*	buffer			= NULL;
+ 	char*	command			= NULL;
+-	char*	leafPortDirPtr		= NULL;
+-	char*	leafPortNamePtr		= NULL;
++	char*	leafPortDir		= NULL;
++	char*	leafPortName		= NULL;
++	int	bufferIdx		= 0;
+ 	int	bufferSize		= 0xffff;
+ 	int	installedPortsDbIDX	= 0;
+ 	int	installedPortsDbQTY	= 0;
+ 
+-	command	= (char*)calloc( bufferSize, 1 );
++	command		= (char*)calloc( bufferSize, 1 );
++	buffer		= (char*)calloc( bufferSize, 1 );
++	leafPortDir	= (char*)calloc( bufferSize, 1 );
++	leafPortName	= (char*)calloc( bufferSize, 1 );
+ 
+ 	if( ( property->installedPortsDb = MGdbOpen( property->installedPortsDbFileName ) ) == NULL )
+ 	{
+@@ -49,7 +55,7 @@
+ 		return( 1 );
+ 	}
+ 
+-	if( ( property->dependencyPortsDb = MGdbOpen( property->dependencyPortsDbFileName ) ) == NULL )
++	if( ( property->availableDependenciesDb = MGdbOpen( property->availableDependenciesDbFileName ) ) == NULL )
+ 	{
+ 		fprintf( stdout, "%s %s error: failed to open %s\n", id, PACKAGE_VERSION, property->dependencyPortsDbFileName );
+ 		perror( "system" );
+@@ -57,9 +63,8 @@
+ 	}
+ 
+ 	fprintf( stdout,"%s\n", SINGLE_LINES );
+-	fprintf( stdout, "Ports with no ports depending on them as run dependencies AKA \"leaf ports.\"\n" );
+-	fprintf( stdout, "These ports may be deinstalled because no other ports rely on them.to run;\"\n" );
+-	fprintf( stdout, "however, other ports may rely on these.to build;\"\n" );
++	fprintf( stdout, "Ports with no ports depending on them to run or build AKA \"leaf ports.\"\n" );
++	fprintf( stdout, "These ports may be deinstalled because no other ports rely on them.\"\n" );
+ 	fprintf( stdout, "%s\n", SINGLE_LINES );
+ 	while( fflush( stdout ) );
+ 
+@@ -67,28 +72,47 @@
+ 	installedPortsDbIDX	= 1;
+ 	while( installedPortsDbIDX < installedPortsDbQTY )
+ 	{
+-
+-		leafPortDirPtr	= MGdbGet( property->installedPortsDb, installedPortsDbIDX, property->fieldInstalledPortsDbPortDir );		
+-		leafPortNamePtr	= MGdbGet( property->installedPortsDb, installedPortsDbIDX, property->fieldInstalledPortsDbPortName );		
+-		MGdbGoTop( property->dependencyPortsDb );
+-		if( MGdbSeek( property->dependencyPortsDb, property->fieldDependencyDbPortDir, leafPortDirPtr,	property->fieldDependencyDbPortDir,
++		strcpy( leafPortDir, MGdbGet( property->installedPortsDb, installedPortsDbIDX, property->fieldInstalledPortsDbPortDir ) );
++		strcpy( leafPortName, MGdbGet( property->installedPortsDb, installedPortsDbIDX, property->fieldInstalledPortsDbPortName ) );
++		MGdbGoTop( property->availableDependenciesDb );
++		if( MGdbSeek( property->availableDependenciesDb,
++			property->fieldAvailableDependenciesDbDependencyDir,
++			leafPortDir,
++			property->fieldAvailableDependenciesDbDependencyDir,
+ 			exact ) == NULL )
+ 		{
+-			fprintf( stdout, "%s dir -=> %s\n", leafPortNamePtr, leafPortDirPtr );
++			fprintf( stdout, "%-30s %-30s ", leafPortName, leafPortDir );
+ 			while( fflush( stdout ) );
+ 			strcpy( command, "grep COMMENT " );
+ 			strcat( command, PORTSDIR );
+-			strcat( command, leafPortDirPtr );
++			strcat( command, leafPortDir );
+ 			strcat( command, "/Makefile" );
+-			system( command );
+-			fprintf( stdout, "%s\n", SINGLE_LINES );
++			pHandle		= popen( command, "r" );
++			buffer[0]	= 0;
++			fread( buffer, bufferSize - 1, 1, pHandle );
++			pclose( pHandle );
++			bufferIdx	= 0;
++			while( bufferIdx < bufferSize )
++			{
++				if( buffer[bufferIdx]	== LINEFEED )
++				{
++					buffer[bufferIdx]	= 0;
++					break;
++				}
++				bufferIdx++;
++			}
++			fprintf( stdout, "%-25s\n", buffer+9 );
++			while( fflush( stdout ) );
+ 		}
+ 		installedPortsDbIDX++;
+ 	}
+-	fprintf( stdout, "%s\n", SINGLE_LINES );
++	fprintf( stdout, "%s\n", DOUBLE_LINES );
+ 	while( fflush( stdout ) );
++	free( buffer );
+ 	free( command );
++	free( leafPortDir );
++	free( leafPortName );
+ 	MGdbDestroy( property->installedPortsDb );
+-	MGdbDestroy( property->dependencyPortsDb );
++	MGdbDestroy( property->availableDependenciesDb );
+ 	return(0);
+ }
+diff -ruN ../0.3.3_1/libMGPM/src/MGPMrUpdate.c ./libMGPM/src/MGPMrUpdate.c
+--- ../0.3.3_1/libMGPM/src/MGPMrUpdate.c	Tue Nov  8 17:05:25 2005
++++ ./libMGPM/src/MGPMrUpdate.c	Wed Nov  9 10:37:20 2005
+@@ -35,6 +35,7 @@
+ {
+ 	char*	afterOptionsFileSize;
+ 	char*	afterOptionsFileTime;
++	char*	batchCheck;
+ 	char*	beforeOptionsFileSize;
+ 	char*	beforeOptionsFileTime;
+ 	char*	buffer;
+@@ -70,8 +71,6 @@
+ 	char*	availableDependenciesDbDependencyDirPtr		= NULL;
+ 	char*	availableDependenciesDbDependencyNamePtr	= NULL;
+ 	char*	bufferBase					= NULL;
+-	char*	dependencyDbDependencyPortDirPtr		= NULL;
+-	char*	dependencyDbDependencyPortNamePtr		= NULL;
+ 	char*	installedPortsDbPortNamePtr			= NULL;
+ 	char*	ipPtr						= NULL;
+ 	char*	oldPortDirPtr					= NULL;
+@@ -82,8 +81,6 @@
+ 	int	availableDependenciesDbQTY			= 0;
+ 	int	availablePortsDbIDX				= 0;
+ 	int	bufferSize					= 0xffff;
+-	int	dependencyPortsDbIDX				= 0;
+-	int	dependencyPortsDbQTY				= 0;
+ 	int	errorCode					= 0;
+ 	int	idx						= 0;
+ 	int	installedPortsDbIDX				= 0;
+@@ -96,6 +93,7 @@
+ 
+ 	localProperty.afterOptionsFileSize	= (char*)calloc( 511, 1 );
+ 	localProperty.afterOptionsFileTime	= (char*)calloc( 511, 1 );
++	localProperty.batchCheck		= (char*)calloc( 511, 1 );
+ 	localProperty.beforeOptionsFileSize	= (char*)calloc( 511, 1 );
+ 	localProperty.beforeOptionsFileTime	= (char*)calloc( 511, 1 );
+ 	localProperty.buffer			= (char*)calloc( bufferSize, 1 );
+@@ -111,13 +109,12 @@
+ 	property->availablePortsDb		= MGdbOpen( property->availablePortsDbFileName );
+ 	property->commandLineDb			= MGdbOpen( property->commandLineDbFileName );
+ 	property->configDb			= MGdbOpen( property->configDbFileName );
+-	property->dependencyPortsDb		= MGdbOpen( property->dependencyPortsDbFileName );
+ 	property->ignoreDb			= MGdbOpen( property->ignoreDbFileName );
+ 	property->installedPortsDb		= MGdbOpen( property->installedPortsDbFileName );
+ 	property->strikesDb			= MGdbOpen( property->strikesDbFileName );
+ 
+ 	/* 
+-	 * store work directoy base
++	 * store localProperty.workDir
+ 	 */
+ 	strcpy( localProperty.workDir, "cd " );
+ 	strcat( localProperty.workDir, PORTSDIR );
+@@ -163,9 +160,8 @@
+ 	strcpy( localProperty.optionsDir, localProperty.buffer );
+ 
+ 	/*
+-	 * BEFORE check for /var/db/ports/{oldPortDir} less sub dir
+-	 * if it exists get size/time of options file for later comparison
+-	 *
++	 * BEFORE check for /var/db/ports/{port dir name}/options
++	 * get size/time of file for later comparison
+ 	 *
+ 	 */
+ 	
+@@ -182,6 +178,9 @@
+ 	strcpy( localProperty.beforeOptionsFileTime, MGrIntToString( (int)MGrFileTime( localProperty.optionsDir ) ) );
+ 	strcpy( localProperty.beforeOptionsFileSize, MGrIntToString( MGrFileSize( localProperty.optionsDir ) ) );	
+ 
++	/*
++	 *	Do update in interactive mode (command line switch -ui )
++	 */
+ 	if( property->interactive )
+ 	{
+ 		fprintf( stdout, "ok to update/rebuild %s %s (yes/no/auto yes to all) [y/n/a] [y]?\n",  oldPortDir, oldPortName );
+@@ -241,9 +240,166 @@
+ 		}
+ 	}
+ 
+-	/*
+-	 * 3 strikes check
+-	 */
++	/************************************************************************/
++	/*			Command "1" " make -V OPTIONS"		*/
++	/************************************************************************/
++
++	strcpy( localProperty.batchCheck, "cd " );
++	strcat( localProperty.batchCheck, PORTSDIR );
++	strcat( localProperty.batchCheck, oldPortDir );
++	strcat( localProperty.batchCheck, "; make -V BATCH" );
++	
++ 	pHandle		= popen( localProperty.batchCheck, "r" );
++	localProperty.buffer[0]	= 0;
++	fread( localProperty.buffer, bufferSize, 1, pHandle );
++	pclose( pHandle );
++	idx	= 0;
++	while( idx < bufferSize )
++	{
++		if( localProperty.buffer[idx]	== LINEFEED )
++		{
++			localProperty.buffer[idx]	= 0;
++			break;
++		}
++		idx++;
++	}
++	if( strlen( localProperty.buffer ) > 0 )	/* BATCH is defined */
++	{
++		fprintf( stdout, "%s\n", SINGLE_LINES );
++		fprintf( stdout, "%s %s:\n\t commands 1 & 2 of 14 OPTIONS check and \"make config\" skipped because BATCH is defined\n",
++			id,  PACKAGE_VERSION );
++		fprintf( stdout, "\t recommend not defining BATCH so options may at least be set to their defaults\n" );
++		while( fflush( stdout ) );
++	}
++	else
++	{
++		/*
++		 * If no /var/db/ports/{port dir name}/options file exists
++		 * yet make -V OPTIONS shows OPTIONS as being defined
++		 * make is going to bluescreen, we need to handle that here
++		 */
++
++		strcpy( localProperty.optionsCheck, "cd " );
++		strcat( localProperty.optionsCheck, PORTSDIR );
++		strcat( localProperty.optionsCheck, oldPortDir );
++		strcat( localProperty.optionsCheck, "; make -V OPTIONS" );
++
++		fprintf( stdout, "%s\n", SINGLE_LINES );
++		fprintf( stdout, "%s %s command: #1 of 14  %s\n", id, PACKAGE_VERSION, localProperty.optionsCheck );
++		fprintf( stdout, "%s\n", SINGLE_LINES );
++		while( fflush( stdout ) );
++
++ 		pHandle		= popen( localProperty.optionsCheck, "r" );
++		localProperty.buffer[0]	= 0;
++		fread( localProperty.buffer, bufferSize, 1, pHandle );
++		pclose( pHandle );
++		/************************************************************************/
++		/*			Command "2" " make conf"				*/
++		/************************************************************************/
++		if( strlen( localProperty.buffer ) > 4 )
++		{
++			/*
++			 * If here we know OPTIONS is defined, now need to know if 
++			 * /var/db/ports/{package name}/options exists
++			 */
++			fileStream	= fopen( localProperty.optionsDir, "r" );
++			if( fileStream == NULL )	/* no file */
++			{
++				if( options )
++				{
++					strcpy( localProperty.command, "cd " );
++					strcat( localProperty.command, PORTSDIR );
++					strcat( localProperty.command, oldPortDir );
++					strcat( localProperty.command, "; make config " );
++					strcat( localProperty.command, options );
++				}
++				else
++				{
++					strcpy( localProperty.command, "cd " );
++					strcat( localProperty.command, PORTSDIR );
++					strcat( localProperty.command, oldPortDir );
++					strcat( localProperty.command, "; make config " );
++				}	
++				fprintf( stdout, "%s\n", SINGLE_LINES );
++				fprintf( stdout, "update %s \n", oldPortName );
++				fprintf( stdout, "%s %s command: #2 of 14  %s\n", id, PACKAGE_VERSION, localProperty.command );
++				fprintf( stdout, "%s\n", SINGLE_LINES );
++				while( fflush( stdout ) );
++				system(localProperty.command);
++			}
++			else
++			{
++				fclose( fileStream );
++			}
++			strcpy( localProperty.afterOptionsFileTime, MGrIntToString( (int)MGrFileTime( localProperty.optionsDir ) ) );
++			strcpy( localProperty.afterOptionsFileSize, MGrIntToString( MGrFileSize( localProperty.optionsDir ) ) );	
++
++			/*
++			 * test to see if any options changed
++			 */
++			if( strlen( localProperty.beforeOptionsFileTime ) !=  strlen( localProperty.afterOptionsFileTime ) 	||
++				strlen( localProperty.beforeOptionsFileSize ) !=  strlen( localProperty.afterOptionsFileSize )	||
++				strcmp( localProperty.beforeOptionsFileTime, localProperty.afterOptionsFileTime ) 		||
++				strcmp( localProperty.beforeOptionsFileSize, localProperty.afterOptionsFileSize ) )
++			{
++				/*
++				 * options changed so need to purge oldPortDir's records
++				 * from availablePortsDb and availableDependenciesDb
++				 */
++				property->optionsChanged	= 1;
++				MGdbGoTop( property->availablePortsDb );
++				while( MGdbSeek( property->availablePortsDb,
++						property->fieldAvailablePortsDbPortDir,
++						oldPortDir,
++						property->fieldAvailablePortsDbPortDir,
++						exact ) )
++				{
++					fprintf( stdout, "%s info: purging availablePortsDb of old %s record\n",
++						id,
++						MGdbGet( property->availablePortsDb,
++							MGdbGetRecno( property->availablePortsDb ) - 1,
++							property->fieldAvailablePortsDbPortName ) );
++					while( fflush( stdout ) );
++					property->availablePortsDb	= MGdbDelete( property->availablePortsDb,
++											MGdbGetRecno( property->availablePortsDb ) - 1 );
++					MGdbGoTop( property->availablePortsDb );
++				}
++
++				MGdbGoTop( property->availableDependenciesDb );
++				while( MGdbSeek( property->availableDependenciesDb,
++						property->fieldAvailableDependenciesDbPortDir,
++						oldPortDir,
++						property->fieldAvailableDependenciesDbPortDir,
++						exact ) )
++				{
++				fprintf( stdout, "%s info: purging availableDependenciesDb of old %s dependency records %s\n",
++					id,
++					MGdbGet( property->availableDependenciesDb,
++						MGdbGetRecno( property->availableDependenciesDb ) - 1,
++						property->fieldAvailableDependenciesDbPortName ),
++					MGdbGet( property->availableDependenciesDb,
++						MGdbGetRecno( property->availableDependenciesDb ) - 1,
++						property->fieldAvailableDependenciesDbDependencyName ) );
++					while( fflush( stdout ) );
++					MGdbDelete( property->availableDependenciesDb, MGdbGetRecno( property->availableDependenciesDb ) - 1 );
++					MGdbGoTop( property->availableDependenciesDb );
++				}
++				/*
++				 * add oldPortDir's new records back into availablePortsDb
++				 * and availableDependenciesDb
++				 */
++				fprintf( stdout, "%s info: adding new/modified %s records\n", id, oldPortDir );
++				MGPMrSinglePortCreateStatusDb( property, oldPortDir );
++				rCleanUp( property, &localProperty );
++				return( 0 );
++			}
++		}
++
++	}
++
++	/************************************************************************/
++	/* 3 strikes check							*/
++	/************************************************************************/
+ 	MGdbGoTop( property->strikesDb );
+ 	strikePtr		= MGdbSeek( property->strikesDb, property->fieldStrikesDbPortDir, oldPortDir, property->fieldStrikesIDX, exact );  
+ 	if( strikePtr )
+@@ -288,8 +444,9 @@
+ 				system( localProperty.command );
+ 			}
+ /*
+-dualOriginCheck( property, oldPortName );
+-*/
++ * dualOriginCheck( property, oldPortName ); used to be here in old portmanager ver < 0.3.1, seems to be no longer
++ * needed, keep this note just in case
++ */
+ 		}
+ 	}
+ 	else
+@@ -301,7 +458,7 @@
+ 	options		= MGdbSeek( property->configDb, property->fieldConfigDbKey, oldPortDir, property->fieldConfigDbValue, exact );
+ 
+ 	/************************************************************************/
+-	/*			Command "1" " make check-conflicts "		*/
++	/*			Command "3" " make check-conflicts "		*/
+ 	/************************************************************************/
+ 	if( options )
+ 	{
+@@ -320,7 +477,7 @@
+ 	}	
+ 	fprintf( stdout, "%s\n", SINGLE_LINES );
+ 	fprintf( stdout, "checking for conflicts before building %s\n", oldPortName );
+-	fprintf( stdout, "%s %s command: #1 of 8  %s\n", id, PACKAGE_VERSION, localProperty.command );
++	fprintf( stdout, "%s %s command: #3 of 14  %s\n", id, PACKAGE_VERSION, localProperty.command );
+ 	fprintf( stdout, "%s\n", SINGLE_LINES );
+ 	while( fflush( stdout ) );
+ 	if( ( errorCode = system(localProperty.command) ) )
+@@ -492,7 +649,7 @@
+ 		return( 0 );
+ 	}
+ 	/************************************************************************/
+-	/*			Command "1.1" " make -V FORBIDDEN "		*/
++	/*			Command "4" " make -V FORBIDDEN "		*/
+ 	/************************************************************************/
+ 	if( ( errorCode = rPortBrokeCheck( property, options, oldPortDir, oldPortName, FORBIDDEN  ) ) )
+ 	{
+@@ -511,8 +668,9 @@
+ 		}
+ 			
+ 	}
++
+ 	/************************************************************************/
+-	/*			Command "1.2" " make -V BROKEN "		*/
++	/*			Command "5" " make -V BROKEN "		*/
+ 	/************************************************************************/
+ 	if( ( errorCode = rPortBrokeCheck( property, options, oldPortDir, oldPortName, BROKEN  ) ) )
+ 	{
+@@ -531,8 +689,9 @@
+ 		}
+ 			
+ 	}
++
+ 	/************************************************************************/
+-	/*			Command "1.3" " make -V IGNORE "		*/
++	/*			Command "6" " make -V IGNORE "		*/
+ 	/************************************************************************/
+ 	if( ( errorCode = rPortBrokeCheck( property, options, oldPortDir, oldPortName, IGNORE  ) ) )
+ 	{
+@@ -551,99 +710,53 @@
+ 		}
+ 			
+ 	}
++
+ 	/************************************************************************/
+-	/*			Command "2" " make clean "			*/
++	/*			Command "7" " make clean "			*/
+ 	/************************************************************************/
+ 	fprintf( stdout, "%s\n", SINGLE_LINES );
+ 	fprintf( stdout, "intitial clean of work directories \n" );
+-	fprintf( stdout, "%s %s command: #2 of 8:  \n", id, PACKAGE_VERSION );
++	fprintf( stdout, "%s %s command: #7 of 14:  \n", id, PACKAGE_VERSION );
+ 	fprintf( stdout, "%s\n", SINGLE_LINES );
+ 	while( fflush( stdout ) );
+ 
+-	if( property->pmMode == SINGLE )
+-	{
+-		availableDependenciesDbQTY	= MGdbGetRecordQty( property->availableDependenciesDb );
+-		MGdbGoTop( property->availableDependenciesDb );
+-		oldPortDirPtr	= MGdbSeek( property->availableDependenciesDb,
+-					property->fieldAvailableDependenciesDbPortDir,
+-					oldPortDir,
+-					property->fieldAvailableDependenciesDbPortDir,
+-					exact );
++	availableDependenciesDbQTY	= MGdbGetRecordQty( property->availableDependenciesDb );
++	MGdbGoTop( property->availableDependenciesDb );
++	oldPortDirPtr	= MGdbSeek( property->availableDependenciesDb,
++				property->fieldAvailableDependenciesDbPortDir,
++				oldPortDir,
++				property->fieldAvailableDependenciesDbPortDir,
++				exact );
+ 
+-		availableDependenciesDbIDX	= MGdbGetRecno( property->availableDependenciesDb )-1;
++	availableDependenciesDbIDX	= MGdbGetRecno( property->availableDependenciesDb )-1;
++
++	availableDependenciesDbDependencyDirPtr		= MGdbGet( property->availableDependenciesDb,
++								availableDependenciesDbIDX,
++								property->fieldAvailableDependenciesDbDependencyDir );
++
++	availableDependenciesDbDependencyNamePtr	= MGdbGet( property->availableDependenciesDb,
++								availableDependenciesDbIDX,
++								property->fieldAvailableDependenciesDbDependencyName );
+ 
++	while( oldPortDirPtr && availableDependenciesDbIDX < availableDependenciesDbQTY && strcmp( oldPortDir, oldPortDirPtr ) == 0 )
++	{
++		rCleanDir( availableDependenciesDbDependencyDirPtr, localProperty.workDir );
++
++		oldPortDirPtr					= MGdbGet( property->availableDependenciesDb,
++									availableDependenciesDbIDX,
++									property->fieldAvailableDependenciesDbPortDir );
+ 		availableDependenciesDbDependencyDirPtr		= MGdbGet( property->availableDependenciesDb,
+ 									availableDependenciesDbIDX,
+ 									property->fieldAvailableDependenciesDbDependencyDir );
+-
+ 		availableDependenciesDbDependencyNamePtr	= MGdbGet( property->availableDependenciesDb,
+ 									availableDependenciesDbIDX,
+ 									property->fieldAvailableDependenciesDbDependencyName );
+-
+-		while( oldPortDirPtr && availableDependenciesDbIDX < availableDependenciesDbQTY && strcmp( oldPortDir, oldPortDirPtr ) == 0 )
+-		{
+-			rCleanDir( availableDependenciesDbDependencyDirPtr, localProperty.workDir );
+-
+-			oldPortDirPtr					= MGdbGet( property->availableDependenciesDb,
+-										availableDependenciesDbIDX,
+-										property->fieldAvailableDependenciesDbPortDir );
+-			availableDependenciesDbDependencyDirPtr		= MGdbGet( property->availableDependenciesDb,
+-										availableDependenciesDbIDX,
+-										property->fieldAvailableDependenciesDbDependencyDir );
+-			availableDependenciesDbDependencyNamePtr	= MGdbGet( property->availableDependenciesDb,
+-										availableDependenciesDbIDX,
+-										property->fieldAvailableDependenciesDbDependencyName );
+-			availableDependenciesDbIDX++;
+-		}
+-		rCleanDir( oldPortDir, localProperty.workDir );
+-	}
+-	else
+-	{
+-		dependencyPortsDbQTY	= MGdbGetRecordQty( property->dependencyPortsDb );
+-
+-		MGdbGoTop( property->dependencyPortsDb );
+-
+-		oldPortDirPtr		= MGdbSeek( property->dependencyPortsDb,
+-						property->fieldDependencyDbPortDir,
+-						oldPortDir,
+-						property->fieldDependencyDbPortDir,
+-						exact );
+-
+-		dependencyPortsDbIDX	= MGdbGetRecno( property->dependencyPortsDb )-1;
+-
+-		dependencyDbDependencyPortDirPtr	= MGdbGet( property->dependencyPortsDb,
+-								dependencyPortsDbIDX,
+-								property->fieldDependencyDbDependencyPortDir );
+-
+-		dependencyDbDependencyPortNamePtr	= MGdbGet( property->dependencyPortsDb,
+-								dependencyPortsDbIDX,
+-								property->fieldDependencyDbDependencyPortName );
+-
+-		while( oldPortDirPtr && dependencyPortsDbIDX < dependencyPortsDbQTY && strcmp( oldPortDir, oldPortDirPtr ) == 0 )
+-		{
+-			rCleanDir( dependencyDbDependencyPortDirPtr, localProperty.workDir );
+-
+-			oldPortDirPtr		= MGdbSeek( property->dependencyPortsDb,
+-							property->fieldDependencyDbPortDir,
+-							oldPortDir,
+-							property->fieldDependencyDbPortDir,
+-							exact );
+-
+-			dependencyDbDependencyPortDirPtr	= MGdbGet( property->dependencyPortsDb,
+-									dependencyPortsDbIDX,
+-									property->fieldDependencyDbDependencyPortDir );
+-
+-			dependencyDbDependencyPortNamePtr	= MGdbGet( property->dependencyPortsDb,
+-									dependencyPortsDbIDX,
+-									property->fieldDependencyDbDependencyPortName );
+-
+-			dependencyPortsDbIDX++;
+-		}
+-		rCleanDir( oldPortDir, localProperty.workDir );
++		availableDependenciesDbIDX++;
+ 	}
++	rCleanDir( oldPortDir, localProperty.workDir );
+ 
+ 	/************************************************************************/
+-	/*			Command "3.1" " make fetch"				*/
++	/*			Command "8" make fetch				*/
+ 	/************************************************************************/
+ 	strcpy( localProperty.command, "cd " );
+ 	strcat( localProperty.command, PORTSDIR );
+@@ -655,7 +768,7 @@
+ 	}
+ 	fprintf( stdout, "%s\n", SINGLE_LINES );
+ 	fprintf( stdout, "fetch %s \n", oldPortName );
+-	fprintf( stdout, "%s %s command: #3.1 of 8  %s\n", id, PACKAGE_VERSION, localProperty.command );
++	fprintf( stdout, "%s %s command: #8 of 14  %s\n", id, PACKAGE_VERSION, localProperty.command );
+ 	fprintf( stdout, "%s\n", SINGLE_LINES );
+ 	while( fflush( stdout ) );
+ 	if( ( errorCode = system(localProperty.command) ) )
+@@ -676,143 +789,8 @@
+ 		return(0);
+ 	}
+ 
+-
+-	/************************************************************************/
+-	/*			Command "3.2" " make -V OPTIONS"		*/
+-	/************************************************************************/
+-
+-	/*
+-	 * If no /var/db/ports/{package name}/options file exists
+-	 * yet make -V OPTIONS shows OPTIONS as being defined
+-	 * make is going to bluescreen, we need to handle that here
+-	 */
+-
+-	strcpy( localProperty.optionsCheck, "cd " );
+-	strcat( localProperty.optionsCheck, PORTSDIR );
+-	strcat( localProperty.optionsCheck, oldPortDir );
+-	strcat( localProperty.optionsCheck, "; make -V OPTIONS" );
+-
+-	fprintf( stdout, "%s\n", SINGLE_LINES );
+-	fprintf( stdout, "%s %s command: #3.2 of 8  %s\n", id, PACKAGE_VERSION, localProperty.optionsCheck );
+-	fprintf( stdout, "%s\n", SINGLE_LINES );
+-	while( fflush( stdout ) );
+-
+- 	pHandle		= popen( localProperty.optionsCheck, "r" );
+-	localProperty.buffer[0]	= 0;
+-	fread( localProperty.buffer, bufferSize, 1, pHandle );
+-	pclose( pHandle );
+ 	/************************************************************************/
+-	/*			Command "3.3" " make conf"				*/
+-	/************************************************************************/
+-	if( strlen( localProperty.buffer ) > 4 )
+-	{
+-		/*
+-		 * If here we know OPTIONS is defined, now need to know if 
+-		 * /var/db/ports/{package name}/options exists
+-		 */
+-		fileStream	= fopen( localProperty.optionsDir, "r" );
+-		if( fileStream == NULL )	/* no file */
+-		{
+-			if( options )
+-			{
+-				strcpy( localProperty.command, "cd " );
+-				strcat( localProperty.command, PORTSDIR );
+-				strcat( localProperty.command, oldPortDir );
+-				strcat( localProperty.command, "; make config " );
+-				strcat( localProperty.command, options );
+-			}
+-			else
+-			{
+-				strcpy( localProperty.command, "cd " );
+-				strcat( localProperty.command, PORTSDIR );
+-				strcat( localProperty.command, oldPortDir );
+-				strcat( localProperty.command, "; make config " );
+-			}	
+-			fprintf( stdout, "%s\n", SINGLE_LINES );
+-			fprintf( stdout, "update %s \n", oldPortName );
+-			fprintf( stdout, "%s %s command: #3.3 of 8  %s\n", id, PACKAGE_VERSION, localProperty.command );
+-			fprintf( stdout, "%s\n", SINGLE_LINES );
+-			while( fflush( stdout ) );
+-			system(localProperty.command);
+-		}
+-		else
+-		{
+-			fclose( fileStream );
+-		}
+-		strcpy( localProperty.afterOptionsFileTime, MGrIntToString( (int)MGrFileTime( localProperty.optionsDir ) ) );
+-		strcpy( localProperty.afterOptionsFileSize, MGrIntToString( MGrFileSize( localProperty.optionsDir ) ) );	
+-
+-		/*
+-		 * test to see if any options changed
+-		 */
+-		if( strlen( localProperty.beforeOptionsFileTime ) !=  strlen( localProperty.afterOptionsFileTime ) 	||
+-			strlen( localProperty.beforeOptionsFileSize ) !=  strlen( localProperty.afterOptionsFileSize )	||
+-			strcmp( localProperty.beforeOptionsFileTime, localProperty.afterOptionsFileTime ) 		||
+-			strcmp( localProperty.beforeOptionsFileSize, localProperty.afterOptionsFileSize ) )
+-		{
+-fprintf( stdout, "%s debug 01: 	beforeOptionsFileTime-=>%s afterOptionsFileTime-=>%s beforeOptionsFileSize-=>%s afterOptionsFileSize-=>%s\n",
+-			id,
+-			localProperty.beforeOptionsFileTime,
+-			localProperty.afterOptionsFileTime,
+-			localProperty.beforeOptionsFileSize,
+-			localProperty.afterOptionsFileSize );
+-while( fflush( stdout ) );
+-				
+-			/*
+-			 * options changed so need to purge oldPortDir's records
+-			 * from availablePortsDb and availableDependenciesDb
+-			 */
+-			property->optionsChanged	= 1;
+-			MGdbGoTop( property->availablePortsDb );
+-			while( MGdbSeek( property->availablePortsDb,
+-					property->fieldAvailablePortsDbPortDir,
+-					oldPortDir,
+-					property->fieldAvailablePortsDbPortDir,
+-					exact ) )
+-			{
+-				fprintf( stdout, "%s info: purging availablePortsDb of old %s record\n",
+-					id,
+-					MGdbGet( property->availablePortsDb,
+-						MGdbGetRecno( property->availablePortsDb ) - 1,
+-						property->fieldAvailablePortsDbPortName ) );
+-				while( fflush( stdout ) );
+-				property->availablePortsDb	= MGdbDelete( property->availablePortsDb,
+-										MGdbGetRecno( property->availablePortsDb ) - 1 );
+-				MGdbGoTop( property->availablePortsDb );
+-			}
+-
+-			MGdbGoTop( property->availableDependenciesDb );
+-			while( MGdbSeek( property->availableDependenciesDb,
+-					property->fieldAvailableDependenciesDbPortDir,
+-					oldPortDir,
+-					property->fieldAvailableDependenciesDbPortDir,
+-					exact ) )
+-			{
+-			fprintf( stdout, "%s info: purging availableDependenciesDb of old %s dependency records %s\n",
+-				id,
+-				MGdbGet( property->availableDependenciesDb,
+-					MGdbGetRecno( property->availableDependenciesDb ) - 1,
+-					property->fieldAvailableDependenciesDbPortName ),
+-				MGdbGet( property->availableDependenciesDb,
+-					MGdbGetRecno( property->availableDependenciesDb ) - 1,
+-					property->fieldAvailableDependenciesDbDependencyName ) );
+-				while( fflush( stdout ) );
+-				MGdbDelete( property->availableDependenciesDb, MGdbGetRecno( property->availableDependenciesDb ) - 1 );
+-				MGdbGoTop( property->availableDependenciesDb );
+-			}
+-			/*
+-			 * add oldPortDir's new records back into availablePortsDb
+-			 * and availableDependenciesDb
+-			 */
+-			fprintf( stdout, "%s info: adding new/modified %s records\n", id, oldPortDir );
+-			MGPMrSinglePortCreateStatusDb( property, oldPortDir );
+-			rCleanUp( property, &localProperty );
+-			return( 0 );
+-		}
+-	}
+-
+-	/************************************************************************/
+-	/*			Command "3.4" " make"				*/
++	/*			Command "9" " make"				*/
+ 	/************************************************************************/
+ 	if( options )
+ 	{
+@@ -831,7 +809,7 @@
+ 	}	
+ 	fprintf( stdout, "%s\n", SINGLE_LINES );
+ 	fprintf( stdout, "update %s \n", oldPortName );
+-	fprintf( stdout, "%s %s command: #3.4 of 8  %s\n", id, PACKAGE_VERSION, localProperty.command );
++	fprintf( stdout, "%s %s command: #9 of 14  %s\n", id, PACKAGE_VERSION, localProperty.command );
+ 	fprintf( stdout, "%s\n", SINGLE_LINES );
+ 	while( fflush( stdout ) );
+ 	if( ( errorCode = system(localProperty.command) ) )
+@@ -852,13 +830,13 @@
+ 		return(0);
+ 	}
+ 	/************************************************************************/
+-	/*			Command "4" " pkg_create -b "			*/
++	/*			Command "10" pkg_create -b			*/
+ 	/************************************************************************/
+ 	if( strcmp( oldPortName, "not installed" ) == 0 )
+ 	{
+ 		fprintf( stdout, "%s\n", SINGLE_LINES );
+ 		fprintf( stdout, "backing up installed %s before removing it \n", oldPortName );
+-		fprintf( stdout, "%s %s command: #4 of 8 N/A - new port\n", id, PACKAGE_VERSION );
++		fprintf( stdout, "%s %s command: #10 of 14 N/A - new port\n", id, PACKAGE_VERSION );
+ 		fprintf( stdout, "%s\n", SINGLE_LINES );
+ 		while( fflush( stdout ) );
+ 	}
+@@ -871,13 +849,13 @@
+ 
+ 		fprintf( stdout, "%s\n", SINGLE_LINES );
+ 		fprintf( stdout, "backing up installed %s before removing it \n", oldPortName );
+-		fprintf( stdout, "%s %s command: #4 of 8 %s\n", id, PACKAGE_VERSION, localProperty.command );
++		fprintf( stdout, "%s %s command: #10 of 14 %s\n", id, PACKAGE_VERSION, localProperty.command );
+ 		fprintf( stdout, "%s\n", SINGLE_LINES );
+ 		while( fflush( stdout ) );
+ 		system(localProperty.command);
+ 	}
+ 	/************************************************************************/
+-	/*			Command "5" " make deinstall "			*/
++	/*			Command "11" " make deinstall "			*/
+ 	/************************************************************************/
+ 	/*
+ 	 * inforced mass update mode portmanager  CANNOT loose its databases
+@@ -934,7 +912,7 @@
+ 		{
+ 			fprintf( stdout, "%s\n", SINGLE_LINES );
+ 			fprintf( stdout, "removing old %s \n", oldPortName );
+-			fprintf( stdout, "%s %s command: #5 of 8 N/A new port\n", id, PACKAGE_VERSION );
++			fprintf( stdout, "%s %s command: #11 of 14 N/A new port\n", id, PACKAGE_VERSION );
+ 			fprintf( stdout, "%s\n", SINGLE_LINES );
+ 			while( fflush( stdout ) );
+ 		}
+@@ -944,7 +922,7 @@
+ 			strcat( localProperty.command, oldPortName);
+ 			fprintf( stdout, "%s\n", SINGLE_LINES );
+ 			fprintf( stdout, "removing old %s \n", oldPortName );
+-			fprintf( stdout, "%s %s command: #5 of 8 %s\n", id, PACKAGE_VERSION, localProperty.command );
++			fprintf( stdout, "%s %s command: #11 of 14 %s\n", id, PACKAGE_VERSION, localProperty.command );
+ 			fprintf( stdout, "%s\n", SINGLE_LINES );
+ 			while( fflush( stdout ) );
+ 			if( ( system(localProperty.command) ) )
+@@ -957,7 +935,7 @@
+ 
+ 				fprintf( stdout, "%s\n", SINGLE_LINES );
+ 				fprintf( stdout, "trying one more way to remove %s...\n", oldPortName );
+-				fprintf( stdout, "%s %s command: #5 of 8  %s\n", id, PACKAGE_VERSION, localProperty.command );
++				fprintf( stdout, "%s %s command: #11 of 14  %s\n", id, PACKAGE_VERSION, localProperty.command );
+ 				fprintf( stdout, "%s\n", SINGLE_LINES );
+ 				while( fflush( stdout ) );
+ 				system(localProperty.command);
+@@ -965,7 +943,7 @@
+ 		}
+ 	}
+ 	/************************************************************************/
+-	/*			Command "6" " make reinstall "			*/
++	/*			Command "12" make reinstall			*/
+ 	/************************************************************************/
+ 	if( options )
+ 	{
+@@ -984,7 +962,7 @@
+ 	}	
+ 	fprintf( stdout, "%s\n", SINGLE_LINES );
+ 	fprintf( stdout, "installing updated %s \n", oldPortDir );
+-	fprintf( stdout, "%s %s command: #6 of 8 %s\n", id, PACKAGE_VERSION, localProperty.command );
++	fprintf( stdout, "%s %s command: #12 of 14 %s\n", id, PACKAGE_VERSION, localProperty.command );
+ 	fprintf( stdout, "%s\n", SINGLE_LINES );
+ 	while( fflush( stdout ) );
+ 	if( ( errorCode = system( localProperty.command ) ) )
+@@ -1007,7 +985,7 @@
+ 		strcat(localProperty.command, ".tgz");
+ 		fprintf( stdout, "%s\n", SINGLE_LINES );
+ 		fprintf( stderr, "restoring original port from backup \n" );
+-		fprintf( stderr, "%s %s command: #6!! ***Emergancy restore***  %s\n", id, PACKAGE_VERSION, localProperty.command );
++		fprintf( stderr, "%s %s command: #12 of 14!! ***Emergancy restore***  %s\n", id, PACKAGE_VERSION, localProperty.command );
+ 		fprintf( stdout, "%s\n", SINGLE_LINES );
+ 		while( fflush( stdout ) );
+ 		if( ( errorCode = system( localProperty.command ) ) )
+@@ -1057,14 +1035,14 @@
+ 			strcat( localProperty.command, ".tgz" );
+ 			fprintf( stdout, "%s\n", SINGLE_LINES );
+ 			fprintf( stderr, "deleting backup copy, installation of updated %s successful\n", oldPortDir );
+-			fprintf( stdout, "%s %s command: #6 of 8 %s\n", id, PACKAGE_VERSION, localProperty.command );
++			fprintf( stdout, "%s %s command: #12 of 14 %s\n", id, PACKAGE_VERSION, localProperty.command );
+ 			fprintf( stdout, "%s\n", SINGLE_LINES );
+ 			while( fflush( stdout ) );
+ 			system( localProperty.command );
+ 		}
+ 	}
+ 	/************************************************************************/
+-	/*			Command "7" " make package "			*/
++	/*			Command "13" make package			*/
+ 	/************************************************************************/
+ 	if( property->backUp )
+ 	{
+@@ -1085,7 +1063,7 @@
+ 		}	
+ 		fprintf( stdout, "%s\n", SINGLE_LINES );
+ 		fprintf( stderr, "making package of updated %s \n", oldPortDir );
+-		fprintf( stdout, "%s %s command: #7 of 8 %s\n", id, PACKAGE_VERSION, localProperty.command );
++		fprintf( stdout, "%s %s command: #13 of 14 %s\n", id, PACKAGE_VERSION, localProperty.command );
+ 		fprintf( stdout, "%s\n", SINGLE_LINES );
+ 		while( fflush( stdout ) );
+ 		system(localProperty.command);
+@@ -1098,11 +1076,11 @@
+ 		while( fflush( stdout ) );
+ 	}
+ 	/************************************************************************/
+-	/*			Command "8" " make clean "			*/
++	/*			Command "14" make clean				*/
+ 	/************************************************************************/
+ 	fprintf( stdout, "%s\n", SINGLE_LINES );
+ 	fprintf( stderr, "terminal clean of work directories\n" );
+-	fprintf( stdout, "%s %s command: #8 of 8\n", id, PACKAGE_VERSION  );
++	fprintf( stdout, "%s %s command: #14 of 14\n", id, PACKAGE_VERSION  );
+ 	fprintf( stdout, "%s\n", SINGLE_LINES );
+ 	while( fflush( stdout ) );
+ 
+@@ -1116,87 +1094,40 @@
+ 	}
+ 	else
+ 	{
+-		if( property->pmMode == SINGLE )
+-		{
+-			availableDependenciesDbQTY	= MGdbGetRecordQty( property->availableDependenciesDb );
+-			MGdbGoTop( property->availableDependenciesDb );
+-			oldPortDirPtr	= MGdbSeek( property->availableDependenciesDb,
+-						property->fieldAvailableDependenciesDbPortDir,
+-						oldPortDir,
+-						property->fieldAvailableDependenciesDbPortDir,
+-						exact );
++		availableDependenciesDbQTY	= MGdbGetRecordQty( property->availableDependenciesDb );
++		MGdbGoTop( property->availableDependenciesDb );
++		oldPortDirPtr	= MGdbSeek( property->availableDependenciesDb,
++					property->fieldAvailableDependenciesDbPortDir,
++					oldPortDir,
++					property->fieldAvailableDependenciesDbPortDir,
++					exact );
++
++		availableDependenciesDbIDX	= MGdbGetRecno( property->availableDependenciesDb )-1;
++
++		availableDependenciesDbDependencyDirPtr		= MGdbGet( property->availableDependenciesDb,
++									availableDependenciesDbIDX,
++									property->fieldAvailableDependenciesDbDependencyDir );
++
++		availableDependenciesDbDependencyNamePtr	= MGdbGet( property->availableDependenciesDb,
++									availableDependenciesDbIDX,
++									property->fieldAvailableDependenciesDbDependencyName );
+ 
+-			availableDependenciesDbIDX	= MGdbGetRecno( property->availableDependenciesDb )-1;
++		while( oldPortDirPtr && availableDependenciesDbIDX < availableDependenciesDbQTY && strcmp( oldPortDir, oldPortDirPtr ) == 0 )
++		{
++			rCleanDir( availableDependenciesDbDependencyDirPtr, localProperty.workDir );
+ 
++			oldPortDirPtr					= MGdbGet( property->availableDependenciesDb,
++										availableDependenciesDbIDX,
++										property->fieldAvailableDependenciesDbPortDir );
+ 			availableDependenciesDbDependencyDirPtr		= MGdbGet( property->availableDependenciesDb,
+ 										availableDependenciesDbIDX,
+ 										property->fieldAvailableDependenciesDbDependencyDir );
+-
+ 			availableDependenciesDbDependencyNamePtr	= MGdbGet( property->availableDependenciesDb,
+ 										availableDependenciesDbIDX,
+ 										property->fieldAvailableDependenciesDbDependencyName );
+-
+-			while( oldPortDirPtr && availableDependenciesDbIDX < availableDependenciesDbQTY && strcmp( oldPortDir, oldPortDirPtr ) == 0 )
+-			{
+-				rCleanDir( availableDependenciesDbDependencyDirPtr, localProperty.workDir );
+-
+-				oldPortDirPtr					= MGdbGet( property->availableDependenciesDb,
+-											availableDependenciesDbIDX,
+-											property->fieldAvailableDependenciesDbPortDir );
+-				availableDependenciesDbDependencyDirPtr		= MGdbGet( property->availableDependenciesDb,
+-											availableDependenciesDbIDX,
+-											property->fieldAvailableDependenciesDbDependencyDir );
+-				availableDependenciesDbDependencyNamePtr	= MGdbGet( property->availableDependenciesDb,
+-											availableDependenciesDbIDX,
+-											property->fieldAvailableDependenciesDbDependencyName );
+-				availableDependenciesDbIDX++;
+-			}
+-			rCleanDir( oldPortDir, localProperty.workDir );
+-		}
+-		else
+-		{
+-			dependencyPortsDbQTY	= MGdbGetRecordQty( property->dependencyPortsDb );
+-
+-			MGdbGoTop( property->dependencyPortsDb );
+-
+-			oldPortDirPtr		= MGdbSeek( property->dependencyPortsDb,
+-							property->fieldDependencyDbPortDir,
+-							oldPortDir,
+-							property->fieldDependencyDbPortDir,
+-							exact );
+-
+-			dependencyPortsDbIDX	= MGdbGetRecno( property->dependencyPortsDb )-1;
+-
+-			dependencyDbDependencyPortDirPtr	= MGdbGet( property->dependencyPortsDb,
+-									dependencyPortsDbIDX,
+-									property->fieldDependencyDbDependencyPortDir );
+-
+-			dependencyDbDependencyPortNamePtr	= MGdbGet( property->dependencyPortsDb,
+-									dependencyPortsDbIDX,
+-									property->fieldDependencyDbDependencyPortName );
+-
+-			while( oldPortDirPtr && dependencyPortsDbIDX < dependencyPortsDbQTY && strcmp( oldPortDir, oldPortDirPtr ) == 0 )
+-			{
+-				rCleanDir( dependencyDbDependencyPortDirPtr, localProperty.workDir );
+-
+-				oldPortDirPtr		= MGdbSeek( property->dependencyPortsDb,
+-								property->fieldDependencyDbPortDir,
+-								oldPortDir,
+-								property->fieldDependencyDbPortDir,
+-								exact );
+-
+-				dependencyDbDependencyPortDirPtr	= MGdbGet( property->dependencyPortsDb,
+-										dependencyPortsDbIDX,
+-										property->fieldDependencyDbDependencyPortDir );
+-
+-				dependencyDbDependencyPortNamePtr	= MGdbGet( property->dependencyPortsDb,
+-										dependencyPortsDbIDX,
+-										property->fieldDependencyDbDependencyPortName );
+-
+-				dependencyPortsDbIDX++;
+-			}
+-			rCleanDir( oldPortDir, localProperty.workDir );
++			availableDependenciesDbIDX++;
+ 		}
++		rCleanDir( oldPortDir, localProperty.workDir );
+ 	}
+ 
+ 	/*
+@@ -1286,13 +1217,13 @@
+ 	MGdbDestroy( property->availablePortsDb );
+ 	MGdbDestroy( property->commandLineDb );
+ 	MGdbDestroy( property->configDb );
+-	MGdbDestroy( property->dependencyPortsDb );
+ 	MGdbDestroy( property->ignoreDb );
+ 	MGdbDestroy( property->installedPortsDb );
+ 	MGdbDestroy( property->strikesDb );
+ 
+ 	free( localProperty->afterOptionsFileSize );
+ 	free( localProperty->afterOptionsFileTime );
++	free( localProperty->batchCheck );
+ 	free( localProperty->beforeOptionsFileSize );
+ 	free( localProperty->beforeOptionsFileTime );
+ 	free( localProperty->buffer );
+diff -ruN ../0.3.3_1/programmer-notes.txt ./programmer-notes.txt
+--- ../0.3.3_1/programmer-notes.txt	Tue Nov  8 17:05:25 2005
++++ ./programmer-notes.txt	Wed Nov  9 10:46:58 2005
+@@ -1,13 +1,13 @@
+ 	portmanager program overview
+ 
+-Must do before releasing
++TODO list
+ 
+ 	auto stop/start of programs?
+-	dual origin
+ 	move database files to /var/db/portmanager
+ 	test in 6.0
++	use signal to abort only current build?
++	use signal to off/on inteactive mode?
+ 	use signal to shutdown with <ctl> c
+-	valgrind clean
+ c/w	(yes/no/auto yes to all) [y/n/a] [y]
+ c/w	--resume option for forced modes
+ c/w	-sl
+@@ -20,12 +20,14 @@
+ c/w	get ignored ports from pm-020.conf working
+ c/w	no packages option
+ c/w	put an inkeys on conflicting port removal
++c/w	respect a defined BATCH=1
+ c/w	seperate make/make fetch for better logging of errors
+ c/w	test emergency restore
+ c/w	test moved ports
+ c/w	three strikes
+ c/w	update man pages
+ c/w	update web site
++inw	valgrind clean
+ 
+ portmanager.c - passes argv, arc to MGPMrCommandLine.c
+ 
