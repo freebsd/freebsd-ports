@@ -17,8 +17,8 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@c0decafe.net
 COMMENT=	Provides transparent RSA encryption as a Gaim plugin
 
-BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net/gaim
-RUN_DEPENDS=	gaim:${PORTSDIR}/net/gaim
+BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net-im/gaim
+RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 LIB_DEPENDS=	nss3:${PORTSDIR}/security/nss
 
 USE_X_PREFIX=	yes
@@ -43,7 +43,7 @@ PLIST_SUB+=	NLS="@comment "
 
 pre-everything::
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "WARNING: make sure net/gaim is built with NSS support (it is, by default)"
+	@${ECHO_MSG} "WARNING: make sure net-im/gaim is built with NSS support (it is, by default)"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} ""
 

@@ -6,7 +6,7 @@
 
 PORTNAME=	yahoo
 PORTVERSION=	2.3.2
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://files.jabberstudio.org/yahoo-transport-2/
 PKGNAMEPREFIX=	jabber-
 DISTNAME=	yahoo-transport-${PORTVERSION}
@@ -15,7 +15,7 @@ DIST_SUBDIR=	jabber
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Jabber Yahoo Transport module
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net/jabber
+BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net-im/jabber
 
 USE_GNOME=	glib12
 USE_GMAKE=	yes

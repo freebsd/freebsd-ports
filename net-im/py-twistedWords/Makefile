@@ -8,7 +8,7 @@
 PORTNAME=	twistedWords
 PORTVERSION=	0.1.0
 PORTREVISION=	1
-CATEGORIES=	net devel python
+CATEGORIES=	net-im devel python
 MASTER_SITES=	http://twistedmatrix.com/downloads/Words/0.1/ \
 		http://tmrc.mit.edu/mirror/twisted/Words/0.1/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

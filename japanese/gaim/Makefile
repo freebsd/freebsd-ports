@@ -13,7 +13,7 @@ PATCH_DIST_STRIP=	-p1:jp_patch
 
 MAINTAINER=	freebsd@next-generation.org
 
-MASTERDIR=	${.CURDIR}/../../net/gaim
+MASTERDIR=	${.CURDIR}/../../net-im/gaim
 MD5_FILE=	${.CURDIR}/distinfo
 
 CONFLICTS=	gaim-[0-9]*

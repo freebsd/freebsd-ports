@@ -60,7 +60,7 @@ CONFLICTS+=	mldonkey-gui-[0.9]*
 CONFLICTS+=	mldonkey-devel-[0-9]*
 .endif
 BUILD_DEPENDS+=	lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk \
-		${LOCALBASE}/lib/ocaml/jabbr.cma:${PORTSDIR}/net/ocaml-jabbr
+		${LOCALBASE}/lib/ocaml/jabbr.cma:${PORTSDIR}/net-im/ocaml-jabbr
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 
 CONFIGURE_ARGS+=--enable-gui=newgui1

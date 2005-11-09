@@ -8,7 +8,7 @@
 PORTNAME=	jabber
 PORTVERSION=	1.4.3.1
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://devel.amessage.info/jabberd14/
 DISTNAME=	${PORTNAME}d-${PORTVERSION}
 DIST_SUBDIR=	jabber

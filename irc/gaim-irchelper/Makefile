@@ -15,8 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Gaim plugin that enhances the usability of the IRC protocol
 
-BUILD_DEPENDS=	gaim:${PORTSDIR}/net/gaim
-RUN_DEPENDS=	gaim:${PORTSDIR}/net/gaim
+BUILD_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
+RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

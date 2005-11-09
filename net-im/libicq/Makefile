@@ -7,7 +7,7 @@
 
 PORTNAME=	libicq
 PORTVERSION=	0.33
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://download.sourceforge.net/libicq/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	flathill

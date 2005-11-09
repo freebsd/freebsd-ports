@@ -9,14 +9,14 @@
 PORTNAME=	newsbot
 PORTVERSION=	0.4.5
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://www.jabberstudio.org/files/${PORTNAME}/
 DISTNAME=	${PORTNAME}-0.45
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gathers news from RDF/RSS and send them to your IM client
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/jabber/jabber.py:${PORTSDIR}/net/py-jabber
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/jabber/jabber.py:${PORTSDIR}/net-im/py-jabber
 
 USE_PYTHON=	2.2+
 NO_BUILD=	yes

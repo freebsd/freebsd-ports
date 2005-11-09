@@ -8,7 +8,7 @@
 PORTNAME=	gicq
 PORTVERSION=	0.33
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://download.sourceforge.net/gicq/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	flathill
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	flathill
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK based ICQ program
 
-LIB_DEPENDS=	icq.0:${PORTSDIR}/net/libicq
+LIB_DEPENDS=	icq.0:${PORTSDIR}/net-im/libicq
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

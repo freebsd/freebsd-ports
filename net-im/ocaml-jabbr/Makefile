@@ -7,7 +7,7 @@
 
 PORTNAME=	jabbr
 PORTVERSION=	0.0.${DATE_VERSION}
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://mikelin.mit.edu/xmpp/jabbr/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	jabbr

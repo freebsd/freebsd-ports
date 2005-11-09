@@ -16,8 +16,8 @@ PKGNAMEPREFIX=	gaim-
 MAINTAINER=	ports@c0decafe.net
 COMMENT=	Plugin to add msn style "toaster" popups to Gaim
 
-BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net/gaim
-RUN_DEPENDS=	gaim:${PORTSDIR}/net/gaim
+BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net-im/gaim
+RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

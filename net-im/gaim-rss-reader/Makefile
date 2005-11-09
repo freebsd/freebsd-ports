@@ -8,7 +8,7 @@
 PORTNAME=	rss-reader
 PORTVERSION=	0.1
 PORTREVISION=	9
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 PKGNAMEPREFIX=	gaim-
@@ -17,8 +17,8 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	mycroft@virgaria.org
 COMMENT=	Provides Rss support for Gaim
 
-BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net/gaim
-RUN_DEPENDS=	gaim:${PORTSDIR}/net/gaim
+BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net-im/gaim
+RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 
 IGNORE=	Requires update to work with Gaim 0.82.1
 

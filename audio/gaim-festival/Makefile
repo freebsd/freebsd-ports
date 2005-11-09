@@ -17,9 +17,9 @@ DISTNAME=	festival-gaim-1.00
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Festival speech support for Gaim
 
-BUILD_DEPENDS=	gaim:${PORTSDIR}/net/gaim
+BUILD_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival \
-		gaim:${PORTSDIR}/net/gaim
+		gaim:${PORTSDIR}/net-im/gaim
 
 USE_GNOME=	gtk20
 USE_GMAKE=	yes

@@ -16,8 +16,8 @@ PKGNAMEPREFIX=	gaim-
 MAINTAINER=	kruptos@mlinux.org
 COMMENT=	Command interpreter plugin for gaim
 
-BUILD_DEPENDS=	gaim:${PORTSDIR}/net/gaim
-RUN_DEPENDS=	gaim:${PORTSDIR}/net/gaim
+BUILD_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
+RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes

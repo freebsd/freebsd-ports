@@ -1,7 +1,0 @@
-Psi is a client for the Jabber system. Written in C++ and based on the
-Qt library, there are versions available for Linux, FreeBSD (and other
-flavors of unix/X11), Microsoft Windows, and Apple MacOS X.
-
-It does not require KDE to run.
-
-WWW: http://psi.affinix.com/

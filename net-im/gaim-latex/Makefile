@@ -8,7 +8,7 @@
 PORTNAME=	latex
 PORTVERSION=	0.3
 PORTREVISION=	3
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 PKGNAMEPREFIX=	gaim-
@@ -17,8 +17,8 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	Display LaTeX output in your IMs
 
-BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net/gaim
-RUN_DEPENDS=	gaim:${PORTSDIR}/net/gaim \
+BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net-im/gaim
+RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim \
 		latex:${PORTSDIR}/print/teTeX \
 		convert:${PORTSDIR}/graphics/ImageMagick
 

@@ -15,9 +15,9 @@ MASTER_SITE_SUBDIR=	sources/nautilus-sendto/0.4
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integration between nautilus, evolution, and gaim
 
-BUILD_DEPENDS=	gaim:${PORTSDIR}/net/gaim \
+BUILD_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim \
 		evolution:${PORTSDIR}/mail/evolution
-RUN_DEPENDS=	gaim:${PORTSDIR}/net/gaim \
+RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim \
 		evolution:${PORTSDIR}/mail/evolution
 
 USE_BZIP2=	yes

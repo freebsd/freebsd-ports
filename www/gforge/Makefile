@@ -33,7 +33,7 @@ NO_PACKAGE=	"The configure process uses hostname."
 
 .if defined(WITH_JABBER)
 CONFIGURE_ARGS+=	--enable-jabber
-RUN_DEPENDS+=		${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net/jabber
+RUN_DEPENDS+=		${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net-im/jabber
 .endif
 
 .if defined(WITH_MAILMAN)
