@@ -7,7 +7,7 @@
 
 PORTNAME=	gale
 PORTVERSION=	0.99f
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://download.ofb.net/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}ruit
 

@@ -9,7 +9,7 @@
 PORTNAME=	centericq
 PORTVERSION=	4.21.0
 PORTREVISION=	3
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://centericq.de/archive/source/releases/ \
 		http://thekonst.net/download/
 

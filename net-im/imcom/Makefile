@@ -6,7 +6,7 @@
 
 PORTNAME=	imcom
 PORTVERSION=	1.34
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://nafai.dyndns.org/files/
 #Main Site Down:	http://imcom.floobin.cx/files/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	Jabber-Connection
 PORTVERSION=	0.04
-CATEGORIES=	net perl5
+CATEGORIES=	net-im perl5
 #MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 #MASTER_SITE_SUBDIR=	Jabber
 MASTER_SITES=	http://www.pipetree.com/jabber/jabberconnection/

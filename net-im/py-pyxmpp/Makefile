@@ -7,7 +7,7 @@
 
 PORTNAME=	pyxmpp
 PORTVERSION=	0.5
-CATEGORIES=	net python
+CATEGORIES=	net-im python
 MASTER_SITES=	http://jabberstudio.2nw.net/pyxmpp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	firetalk
 PORTVERSION=	0.0.11
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://site.n.ml.org/download/20031016162822/_firetalk/ \
 		http://www.penguinhosting.net/~ian/firetalk/
 

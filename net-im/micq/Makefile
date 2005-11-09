@@ -7,7 +7,7 @@
 
 PORTNAME=	micq
 PORTVERSION=	0.5.0.4
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://micq.org/source/ \
 		http://micq.alpha345.com/source/ \
 		http://http.bg.micq.org/source/

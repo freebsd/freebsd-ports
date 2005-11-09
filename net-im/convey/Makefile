@@ -7,7 +7,7 @@
 
 PORTNAME=	convey
 PORTVERSION=	0.3
-CATEGORIES=	net java
+CATEGORIES=	net-im java
 MASTER_SITES=	http://convey.sourceforge.net/downloads/ \
 		http://nivi.interfree.it/tmp/convey.sourceforge.net/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}

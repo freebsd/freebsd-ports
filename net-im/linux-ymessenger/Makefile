@@ -7,7 +7,7 @@
 
 PORTNAME=	ymessenger
 PORTVERSION=	1.0.4.1
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://download.yahoo.com/dl/unix/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	rh${BASEVERSION:C/([^\.])\..*/\1/}.${PORTNAME}-${PORTVERSION:C/\.([^\.]+)$/-\1/}.${MACHINE_ARCH}

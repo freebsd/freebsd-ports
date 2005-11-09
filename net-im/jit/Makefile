@@ -7,7 +7,7 @@
 
 PORTNAME=	jit
 PORTVERSION=	1.1.7
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://www.penza-gsm.ru/snake/xmpp/
 DIST_SUBDIR=	jabber
 

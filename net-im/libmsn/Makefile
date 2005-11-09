@@ -8,7 +8,7 @@
 
 PORTNAME=	libmsn
 PORTVERSION=	3.2
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://libmsn.bdash.net.nz/files/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}

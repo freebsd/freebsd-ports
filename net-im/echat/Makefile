@@ -7,7 +7,7 @@
 
 PORTNAME=	echat
 PORTVERSION=	0.02f2
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://echat.deep.perm.ru/files/
 
 MAINTAINER=	sead@mail.ru

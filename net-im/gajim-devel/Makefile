@@ -8,7 +8,7 @@
 PORTNAME=	gajim
 PORTVERSION=	0.8.2
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://www.gajim.org/downloads/
 
 MAINTAINER=	vsevolod@FreeBSD.org

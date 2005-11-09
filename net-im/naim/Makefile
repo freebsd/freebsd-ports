@@ -7,7 +7,7 @@
 
 PORTNAME=	naim
 PORTVERSION=	0.11.8
-CATEGORIES=	net irc
+CATEGORIES=	net-im irc
 MASTER_SITES=	http://www.liquidx.org/distfiles/ \
 		http://shell.n.ml.org/n/naim/
 
