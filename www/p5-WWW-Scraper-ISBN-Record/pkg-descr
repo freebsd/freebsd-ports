@@ -1,0 +1,9 @@
+The WWW::Scraper::ISBN::Record module defines a class that can be used to deal
+with book information. It was primarily created as a return type for the
+WWW::Scraper::ISBN module, though it could be used for other purposes. It
+knows minimal information about itself, whether the book was found, where it
+was found, its ISBN number, and whether any errors occurred. It is usually up
+to the WWW::Scraper::ISBN::Driver and its subclasses to make sure that the
+fields get set correctly.
+
+WWW: http://search.cpan.org/dist/WWW-Scraper-ISBN-Record/
