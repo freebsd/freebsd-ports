@@ -111,6 +111,7 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/Plugins/dFileShare/Plugin.java
 %%INSTDIR%%/resources/AppData/Plugins/dFileShare/Settings.txt
 %%INSTDIR%%/resources/AppData/Plugins/dFileShare/compile.bat
+%%INSTDIR%%/resources/AppData/RadioTest.zip
 %%INSTDIR%%/resources/AppData/Skins/Aqua.zip
 %%INSTDIR%%/resources/AppData/Skins/BBJ2.zip
 %%INSTDIR%%/resources/AppData/Skins/Barbie.zip
@@ -177,6 +178,7 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/Views/Default_General/MSNName.txt
 %%INSTDIR%%/resources/AppData/Views/Default_General/View.xml
 %%INSTDIR%%/resources/AppData/Views/Default_IM/Colors1.html
+%%INSTDIR%%/resources/AppData/Views/Default_IM/Colors2.html
 %%INSTDIR%%/resources/AppData/Views/Default_IM/Default.html
 %%INSTDIR%%/resources/AppData/Views/Default_IM/View.xml
 %%INSTDIR%%/resources/AppData/Winks/L0g4WmxDZ1JTOXlsZmFvTCtnd0ZIektleXA4PQ==/Wink.cab
