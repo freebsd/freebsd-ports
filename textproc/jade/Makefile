@@ -9,7 +9,8 @@ PORTNAME=	jade
 PORTVERSION=	1.2.1
 PORTREVISION=	9
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.jclark.com/pub/jade/
+MASTER_SITES=	ftp://ftp.jclark.com/pub/jade/ \
+		http://dist.bsdlab.org/
 
 #PATCH_SITES=	http://ftp.debian.org/debian/pool/main/j/jade/
 PATCH_SITES=	http://dist.bsdlab.org/
@@ -18,6 +19,8 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	An object-oriented SGML/XML parser toolkit and DSSSL engine
+
+CONFLICTS=	sp-1.*
 
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 

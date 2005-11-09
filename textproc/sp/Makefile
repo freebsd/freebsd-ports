@@ -8,13 +8,16 @@
 PORTNAME=	sp
 PORTVERSION=	1.3.4
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/
+MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/ \
+		http://dist.bsdlab.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An object-oriented toolkit for SGML parsing and entity management
 
+CONFLICTS=	jade-1.*
+
 .if ${MACHINE_ARCH} == sparc64
-BROKEN=		does not compile on ${MACHINE_ARCH}
+BROKEN=		"does not compile on ${MACHINE_ARCH}"
 .endif
 
 USE_SUBMAKE=	yes
