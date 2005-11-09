@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free peak fitting software
 
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
-LIB_DEPENDS=	boost_thread.2:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	boost_thread.3:${PORTSDIR}/devel/boost
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 USE_GNOME=	gnometarget gtk20
