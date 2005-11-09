@@ -18,16 +18,15 @@ COMMENT=	Perl extension for Kerberos 5
 
 LIB_DEPENDS=	gssapi_krb5.2:${PORTSDIR}/security/krb5
 
-#WRKSRC=		${WRKDIR}/${PORTNAME}
-
 PERL_CONFIGURE=	yes
 
 MAN3=		Authen::Krb5.3
 
-KRB5_HOME?=	${PREFIX}
+KRB5_HOME?=	${LOCALBASE}
 
 post-patch:
-	@${PERL} -pi -e 's:${LOCALBASE}/krb5:${KRB5_HOME}:g' \
+	@${PERL} -pi -e 's:/usr/local/krb5:${KRB5_HOME}:g; \
+		         s:/usr/local:${LOCALBASE}:g;' \
 		${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
