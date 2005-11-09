@@ -169,4 +169,5 @@ lib/jed/lib/yankpop.sl
 @dirrm lib/jed/lib/colors
 @dirrm lib/jed/lib/tm
 @dirrm lib/jed/lib
+@dirrm lib/jed/info
 @dirrm lib/jed
