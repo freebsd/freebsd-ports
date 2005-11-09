@@ -38,6 +38,9 @@ ONLY_FOR_ARCHS=		i386
 # There are some problems on alpha and sparc64; use 1.8 or later.
 ONLY_FOR_ARCHS+=	alpha sparc64
 
+# For port testing: should install in PREFIX, not in LOCALBASE
+_RUBY_PORT_TEST=	yes
+
 USE_BZIP2=	yes
 
 RUBY_VER=	1.6

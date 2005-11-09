@@ -7,31 +7,22 @@
 
 PORTNAME=	ruby
 PORTVERSION=	${RUBY_PORTVERSION}
-PORTREVISION=	5
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=		${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	${MASTER_SITE_SUBDIR_RUBY}
-DISTFILES=		${RUBY_DISTNAME}${EXTRACT_SUFX}
+DISTNAME=		${RUBY_DISTNAME}
 DIST_SUBDIR=	ruby
 
 PATCH_SITES=	${MASTER_SITE_RUBY}
-#PATCH_SITE_SUBDIR=	snapshots
+PATCH_SITE_SUBDIR=	snapshots
 PATCH_SITE_SUBDIR=	1.8
 PATCHFILES=	${RUBY_PATCHFILES}
-#PATCH_DIST_STRIP=	-p1
+PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	An object-oriented interpreted scripting language
 
-.if defined(WITH_ONIGURUMA)
-PKGNAMESUFFIX=	+oniguruma
-BUILD_DEPENDS+=	${NONEXISTENT}:${ONIGURUMA_PORTDIR}:patch
-ONIGURUMA_PORTDIR=	${PORTSDIR}/devel/oniguruma
-ONIGURUMA_WRKSRC=	`cd ${ONIGURUMA_PORTDIR}; ${MAKE} -V WRKSRC`
-PLIST_SUB+=	ONIGURUMA=""
-.else
-PLIST_SUB+=	ONIGURUMA="@comment "
-.endif
+OPTIONS+=	ONIGURUMA "With Oniguruma (BSDL RegEx library) support" off
 
 #USE_BZIP2=	yes
 USE_OPENSSL=	yes
@@ -41,6 +32,9 @@ RUBY_VER=	1.8
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
 RUBY_NO_RUN_DEPENDS=	yes
+
+# For port testing: should install in PREFIX, not in LOCALBASE
+_RUBY_PORT_TEST=	yes
 
 #USE_AUTOCONF=	yes	# does not work with 2.13; requires 2.53 or later
 USE_REINPLACE=	yes
@@ -61,7 +55,20 @@ MAN1=		${RUBY_NAME}.1
 
 LATEST_LINK=	ruby-devel
 
+DATE_CMD=	/bin/date
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_ONIGURUMA)
+PKGNAMESUFFIX=	+oniguruma
+BUILD_DEPENDS+=	${NONEXISTENT}:${ONIGURUMA_PORTDIR}:patch
+ONIGURUMA_PORTDIR=	${PORTSDIR}/devel/oniguruma
+ONIGURUMA_WRKSRC=	`cd ${ONIGURUMA_PORTDIR}; ${MAKE} -V WRKSRC`
+PLIST_SUB+=	ONIGURUMA=""
+.else
+PLIST_SUB+=	ONIGURUMA="@comment "
+.endif
+
 .if ${OSVERSION} < 502102
 EXTRA_PATCHES=	${PATCHDIR}/extrapatch-eval.c
 .endif
@@ -170,9 +177,9 @@ post-install:
 	${MKDIR} ${RUBY_DOCDIR}
 	${TOUCH} ${RUBY_DOCDIR}/.keep_me
 	${MKDIR} ${RUBY_RIDIR}
-	${SETENV} LC_TIME=C /bin/date > ${RUBY_RIDIR}/created.rid
+	${SETENV} LC_TIME=C ${DATE_CMD} > ${RUBY_RIDIR}/created.rid
 	${MKDIR} ${RUBY_SITERIDIR}
-	${SETENV} LC_TIME=C /bin/date > ${RUBY_SITERIDIR}/created.rid
+	${SETENV} LC_TIME=C ${DATE_CMD} > ${RUBY_SITERIDIR}/created.rid
 .if !defined(NOPORTDOCS)
 	${CP} -R ${WRKSRC}/sample/* ${RUBY_EXAMPLESDIR}/
 	${MKDIR} ${RUBY_EXAMPLESDIR}/curses

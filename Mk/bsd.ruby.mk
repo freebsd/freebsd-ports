@@ -9,7 +9,7 @@
 .if !defined(Ruby_Include)
 
 Ruby_Include=			bsd.ruby.mk
-Ruby_Include_MAINTAINER=	knu@FreeBSD.org
+Ruby_Include_MAINTAINER=	alecn2002@yandex.ru
 
 #
 # [variables that a user may define]
@@ -112,7 +112,13 @@ RUBY_DEFAULT_VER?=	1.8
 
 RUBY_VER?=		${RUBY_DEFAULT_VER}
 
-.if defined(RUBY)
+.if defined(_RUBY_PORT_TEST)
+_RUBY_BASE=	${PREFIX}
+.else
+_RUBY_BASE=	${LOCALBASE}
+.endif
+
+.if defined(RUBY) && !defined(_RUBY_PORT_TEST)
 .if !exists(${RUBY})
 BROKEN=	"You set the variable RUBY to \"${RUBY}\", but it does not seem to exist.  Please specify an already installed ruby executable."
 .endif
@@ -133,15 +139,12 @@ RUBY_NAME!=		${_RUBY_CONFIG} 'puts C["ruby_install_name"]'
 _RUBY_SYSLIBDIR!=	${_RUBY_CONFIG} 'puts C["libdir"]'
 _RUBY_SITEDIR!=		${_RUBY_CONFIG} 'puts C["sitedir"]'
 .else
-RUBY?=			${LOCALBASE}/bin/${RUBY_NAME}
+RUBY?=			${_RUBY_BASE}/bin/${RUBY_NAME}
 
 .if defined(RUBY_VER) && ${RUBY_VER} == 1.8
-RUBY_VERSION?=		1.8.2
+RUBY_VERSION?=		1.8.3
 #RUBY_DISTVERSION?=	${RUBY_VERSION}
 #RUBY_PATCHFILES?=	ruby-${RUBY_DISTVERSION}-yyyy.mm.dd.diff.bz2
-
-# Security patch
-RUBY_PATCHFILES?=	${RUBY_VERSION}-patch1.gz
 
 #RUBY_PORTVERSION?=	${RUBY_VERSION}
 RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_VERSION}
@@ -167,7 +170,7 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL:C/\..*//}
 RUBY_ARCH?=		${ARCH}-freebsd${OSREL:C/\..*//}
 RUBY_NAME?=		ruby${RUBY_SUFFIX}
 
-_RUBY_SYSLIBDIR?=	${LOCALBASE}/lib
+_RUBY_SYSLIBDIR?=	${_RUBY_BASE}/lib
 _RUBY_SITEDIR?=		${_RUBY_SYSLIBDIR}/ruby/site_ruby
 .endif
 #      defined(RUBY)
@@ -185,7 +188,7 @@ RUBY_VERSION_CODE?=	${RUBY_VERSION:S/.//g}
 RUBY_VER=		${RUBY_VERSION:R}
 RUBY_SUFFIX=		${RUBY_VER:S/.//}
 
-RUBY_WITHOUT_SUFFIX?=	${LOCALBASE}/bin/ruby
+RUBY_WITHOUT_SUFFIX?=	${_RUBY_BASE}/bin/ruby
 RUBY_WITH_SUFFIX?=	${RUBY_WITHOUT_SUFFIX}${RUBY_SUFFIX}
 
 RUBY_PKGNAMEPREFIX?=	ruby${RUBY_SUFFIX}-
@@ -200,8 +203,8 @@ RUBY_CONFIGURE_ARGS+=	--program-suffix="${RUBY_SUFFIX}"
 RUBY_MODNAME?=		${PORTNAME}
 
 # Commands
-RUBY_RD2?=		${LOCALBASE}/bin/rd2
-RUBY_RDOC?=		${LOCALBASE}/bin/rdoc
+RUBY_RD2?=		${_RUBY_BASE}/bin/rd2
+RUBY_RDOC?=		${_RUBY_BASE}/bin/rdoc
 
 # Ports
 RUBY_BASE_PORT?=	lang/ruby${RUBY_VER:S/.//}
@@ -229,10 +232,10 @@ RUBY_LIBDIR?=		${_RUBY_SYSLIBDIR}/ruby/${RUBY_VER}
 RUBY_ARCHLIBDIR?=	${RUBY_LIBDIR}/${RUBY_ARCH}
 RUBY_SITELIBDIR?=	${_RUBY_SITEDIR}/${RUBY_VER}
 RUBY_SITEARCHLIBDIR?=	${RUBY_SITELIBDIR}/${RUBY_ARCH}
-RUBY_DOCDIR?=		${LOCALBASE}/share/doc/${RUBY_NAME}
-RUBY_EXAMPLESDIR?=	${LOCALBASE}/share/examples/${RUBY_NAME}
-RUBY_RIDIR?=		${LOCALBASE}/share/ri/${RUBY_VER}/system
-RUBY_SITERIDIR?=	${LOCALBASE}/share/ri/${RUBY_VER}/site
+RUBY_DOCDIR?=		${_RUBY_BASE}/share/doc/${RUBY_NAME}
+RUBY_EXAMPLESDIR?=	${_RUBY_BASE}/share/examples/${RUBY_NAME}
+RUBY_RIDIR?=		${_RUBY_BASE}/share/ri/${RUBY_VER}/system
+RUBY_SITERIDIR?=	${_RUBY_BASE}/share/ri/${RUBY_VER}/site
 RUBY_MODDOCDIR?=	${RUBY_DOCDIR}/${RUBY_MODNAME}
 RUBY_MODEXAMPLESDIR?=	${RUBY_EXAMPLESDIR}/${RUBY_MODNAME}
 RUBY_ELISPDIR?=		${_RUBY_SYSLIBDIR}/ruby/elisp
@@ -257,7 +260,7 @@ PLIST_SUB+=		RUBY_VERSION="${RUBY_VERSION}" \
 			RUBY_SUFFIX="${RUBY_SUFFIX}" \
 			RUBY_NAME="${RUBY_NAME}" \
 			RUBY_DEFAULT_SUFFIX="${RUBY_DEFAULT_SUFFIX}" \
-			${PLIST_RUBY_DIRS:S,DIR="${LOCALBASE}/,DIR=",}
+			${PLIST_RUBY_DIRS:S,DIR="${_RUBY_BASE}/,DIR=",}
 
 .if ${RUBY_VER} >= 1.7
 RUBY18_ONLY=		""
@@ -318,7 +321,7 @@ RUBY_FLAGS+=	-d
 USE_RUBY=		yes
 
 RUBY_EXTCONF?=		extconf.rb
-CONFIGURE_ARGS+=	--with-opt-dir="${LOCALBASE}"
+CONFIGURE_ARGS+=	--with-opt-dir="${_RUBY_BASE}"
 
 do-configure:	ruby-extconf-configure
 
