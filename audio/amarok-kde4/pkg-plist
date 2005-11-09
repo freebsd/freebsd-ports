@@ -428,7 +428,9 @@ share/icons/hicolor/32x32/apps/amarok.png
 share/icons/hicolor/48x48/apps/amarok.png
 share/icons/hicolor/64x64/apps/amarok.png
 share/locale/az/LC_MESSAGES/amarok.mo
+share/locale/be/LC_MESSAGES/amarok.mo
 share/locale/bg/LC_MESSAGES/amarok.mo
+share/locale/bn/LC_MESSAGES/amarok.mo
 share/locale/br/LC_MESSAGES/amarok.mo
 share/locale/ca/LC_MESSAGES/amarok.mo
 share/locale/cs/LC_MESSAGES/amarok.mo
@@ -437,21 +439,28 @@ share/locale/da/LC_MESSAGES/amarok.mo
 share/locale/de/LC_MESSAGES/amarok.mo
 share/locale/el/LC_MESSAGES/amarok.mo
 share/locale/en_GB/LC_MESSAGES/amarok.mo
+share/locale/eo/LC_MESSAGES/amarok.mo
 share/locale/es/LC_MESSAGES/amarok.mo
 share/locale/et/LC_MESSAGES/amarok.mo
 share/locale/fi/LC_MESSAGES/amarok.mo
 share/locale/fr/LC_MESSAGES/amarok.mo
+share/locale/fy/LC_MESSAGES/amarok.mo
 share/locale/ga/LC_MESSAGES/amarok.mo
 share/locale/gl/LC_MESSAGES/amarok.mo
 share/locale/he/LC_MESSAGES/amarok.mo
 share/locale/hi/LC_MESSAGES/amarok.mo
+share/locale/hr/LC_MESSAGES/amarok.mo
 share/locale/hu/LC_MESSAGES/amarok.mo
+share/locale/id/LC_MESSAGES/amarok.mo
 share/locale/is/LC_MESSAGES/amarok.mo
 share/locale/it/LC_MESSAGES/amarok.mo
 share/locale/ja/LC_MESSAGES/amarok.mo
 share/locale/ko/LC_MESSAGES/amarok.mo
+share/locale/ku/LC_MESSAGES/amarok.mo
+share/locale/lo/LC_MESSAGES/amarok.mo
 share/locale/lt/LC_MESSAGES/amarok.mo
 share/locale/nb/LC_MESSAGES/amarok.mo
+share/locale/nds/LC_MESSAGES/amarok.mo
 share/locale/nl/LC_MESSAGES/amarok.mo
 share/locale/nn/LC_MESSAGES/amarok.mo
 share/locale/pa/LC_MESSAGES/amarok.mo
@@ -460,13 +469,16 @@ share/locale/pt/LC_MESSAGES/amarok.mo
 share/locale/pt_BR/LC_MESSAGES/amarok.mo
 share/locale/ro/LC_MESSAGES/amarok.mo
 share/locale/ru/LC_MESSAGES/amarok.mo
-share/locale/rw/LC_MESSAGES/amarok.mo
+share/locale/se/LC_MESSAGES/amarok.mo
 share/locale/sl/LC_MESSAGES/amarok.mo
+share/locale/sq/LC_MESSAGES/amarok.mo
 share/locale/sr/LC_MESSAGES/amarok.mo
 share/locale/sr@Latn/LC_MESSAGES/amarok.mo
+share/locale/ss/LC_MESSAGES/amarok.mo
 share/locale/sv/LC_MESSAGES/amarok.mo
 share/locale/ta/LC_MESSAGES/amarok.mo
 share/locale/tg/LC_MESSAGES/amarok.mo
+share/locale/th/LC_MESSAGES/amarok.mo
 share/locale/tr/LC_MESSAGES/amarok.mo
 share/locale/uk/LC_MESSAGES/amarok.mo
 share/locale/uz/LC_MESSAGES/amarok.mo
@@ -479,6 +491,18 @@ share/nls/en_US.US-ASCII
 %%XINE%%share/services/amarok_xine-engine.desktop
 share/services/amarok_void-engine_plugin.desktop
 share/servicetypes/amarok_plugin.desktop
+@dirrm share/locale/fy/LC_MESSAGES
+@dirrm share/locale/fy
+@dirrm share/locale/ku/LC_MESSAGES
+@dirrm share/locale/ku
+@dirrm share/locale/lo/LC_MESSAGES
+@dirrm share/locale/lo
+@dirrm share/locale/nds/LC_MESSAGES
+@dirrm share/locale/nds
+@dirrm share/locale/se/LC_MESSAGES
+@dirrm share/locale/se
+@dirrm share/locale/ss/LC_MESSAGES
+@dirrm share/locale/ss
 @dirrm share/locale/uz/LC_MESSAGES
 @dirrm share/locale/uz
 @dirrm share/doc/HTML/sv/amarok
