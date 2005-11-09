@@ -9,7 +9,6 @@ PORTNAME=	bazaar
 PORTVERSION=	1.4.2
 CATEGORIES=	devel
 MASTER_SITES=	http://bazaar.canonical.com/releases/src/
-MASTER_SITE_SUBDIR=	gnu-arch
 DISTNAME=	bazaar_${PORTVERSION}
 
 MAINTAINER=	lulf@kerneled.org
