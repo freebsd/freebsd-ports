@@ -18,28 +18,41 @@ USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_SDL=	mixer sdl
 USE_REINPLACE=	yes
+CONFLICTS=	jfduke3d-200[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 TARGET_DIR=	${LOCALBASE}/${PORTNAME}
 
-DATA_FILES=	defs.con game.con user.con
 PROG_FILES=	${WRKSRC}/source/${PORTNAME} ${WRKSRC}/source/buildengine/build
-DOC_FILES=	README BUILDLIC.TXT CONTRIB TODO CHANGELOG ../../readme.txt ../../gnu.txt
+DATA_FILES=	defs.con game.con user.con
+BUILD_FILES=	${WRKSRC}/source/buildengine/stuff.dat
+SCRIPT_FILES=	${WRKDIR}/fix.sh ${WRKDIR}/duke3d.sh ${WRKDIR}/build.sh
+PORTDOCS=	README BUILDLIC.TXT CONTRIB TODO CHANGELOG
+MOREDOCS=	readme.txt gnu.txt
 
-OPTIONS=	DOSBOX "Dependency on dosbox (config editor use it)" on
+OPTIONS=	DOSBOX "Dependency on dosbox (required by SETUP.EXE and\
+		SETMAIN.EXE to edit the config file)" on
+
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 499999
+DEPRECATED=	Please use games/jfduke3d. This port is being kept for RELENG_4 users
+.endif
 
 .if !defined(WITHOUT_DOSBOX)
 RUN_DEPENDS+=	dosbox:${PORTSDIR}/emulators/dosbox
 .endif
 
 post-patch:
-	@${SED} -e 's|%%DUKEDIR%%|${PREFIX}/${PORTNAME}|g' ${FILESDIR}/fix.sh > \
+	@${SED} -e 's|%%DUKEDIR%%|${DATADIR}|g' ${FILESDIR}/fix.sh > \
 		${WRKDIR}/fix.sh
-	@${SED} -e 's|%%DUKEDIR%%|${PREFIX}/${PORTNAME}|g' ${FILESDIR}/wrapper.sh > \
-		${WRKDIR}/wrapper.sh
+	@${SED} -e 's|%%DUKEDIR%%|${DATADIR}|g' ${FILESDIR}/wrapper.sh > \
+		${WRKDIR}/duke3d.sh
+	@${SED} -e 's|%%DUKEDIR%%|${DATADIR}|g' ${FILESDIR}/build-wrapper.sh > \
+		${WRKDIR}/build.sh
 	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
 	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
@@ -51,28 +64,31 @@ do-build:
 	cd ${WRKSRC}/source && ${GMAKE}
 
 do-install:
-	${INSTALL} -d ${TARGET_DIR}
-	${INSTALL_PROGRAM} ${PROG_FILES} ${TARGET_DIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/fix.sh ${TARGET_DIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${TARGET_DIR}/duke.sh
-	${INSTALL} -d ${TARGET_DIR}/testdata
+	${INSTALL} -d ${DATADIR}
+	${INSTALL_PROGRAM} ${PROG_FILES} ${DATADIR}
+	${INSTALL_DATA}	${BUILD_FILES} ${DATADIR}
+	${INSTALL} -d ${DATADIR}/testdata
 
 .for file in ${DATA_FILES}
-	${INSTALL_DATA} ${WRKSRC}/testdata/${file} ${TARGET_DIR}/testdata
+	${INSTALL_DATA} ${WRKSRC}/testdata/${file} ${DATADIR}/testdata
 .endfor
 
-	${LN} -s ${TARGET_DIR}/duke.sh ${LOCALBASE}/bin/duke3d
+	${INSTALL_SCRIPT} ${SCRIPT_FILES} ${DATADIR}
+	${LN} -fs ${DATADIR}/duke3d.sh ${LOCALBASE}/bin/duke3d
+	${LN} -fs ${DATADIR}/build.sh ${LOCALBASE}/bin/duke3d-build
 
 post-install:
 .ifndef(NOPORTDOCS)
 	${INSTALL} -d ${DOCSDIR}
 
-.for file in ${DOC_FILES}
+.for file in ${PORTDOCS}
 	${INSTALL_MAN} ${WRKSRC}/source/buildengine/${file} ${DOCSDIR}
 .endfor
-	${SED} -e 's|%%DUKEDIR%%|${PREFIX}/${PORTNAME}|g' ${FILESDIR}/README.bsd > \
-		${DOCSDIR}/README.bsd
+
+.for file in ${MOREDOCS}
+	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
-	@${SED} -e 's|%%DOCSDIR%%|${DOCSDIR}|' ${PKGMESSAGE}
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
