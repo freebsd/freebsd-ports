@@ -295,21 +295,3 @@ lib/gtk2hs/libHSsourceview.a
 @dirrm lib/gtk2hs/imports
 @dirrm lib/gtk2hs/include
 @dirrm lib/gtk2hs
-@exec env pkglibdir=%D/lib/gtk2hs %D/bin/ghc-pkg -i %D/lib/gtk2hs/glib.package.conf -a -g
-@exec env pkglibdir=%D/lib/gtk2hs %D/bin/ghc-pkg -i %D/lib/gtk2hs/cairo.package.conf -a -g
-@exec env pkglibdir=%D/lib/gtk2hs %D/bin/ghc-pkg -i %D/lib/gtk2hs/gtk.package.conf -a -g
-@exec env pkglibdir=%D/lib/gtk2hs %D/bin/ghc-pkg -i %D/lib/gtk2hs/mogul.package.conf -a -g
-@exec env pkglibdir=%D/lib/gtk2hs %D/bin/ghc-pkg -i %D/lib/gtk2hs/glade.package.conf -a -g
-@exec env pkglibdir=%D/lib/gtk2hs %D/bin/ghc-pkg -i %D/lib/gtk2hs/gconf.package.conf -a -g
-@exec env pkglibdir=%D/lib/gtk2hs %D/bin/ghc-pkg -i %D/lib/gtk2hs/sourceview.package.conf -a -g
-@exec env pkglibdir=%D/lib/gtk2hs %D/bin/ghc-pkg -i %D/lib/gtk2hs/mozembed.package.conf -a -g
-@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg -r mozembed
-@unexec %D/bin/ghc-pkg -r sourceview
-@unexec %D/bin/ghc-pkg -r gconf
-@unexec %D/bin/ghc-pkg -r glade
-@unexec %D/bin/ghc-pkg -r mogul
-@unexec %D/bin/ghc-pkg -r gtk
-@unexec %D/bin/ghc-pkg -r glib
-@unexec %D/bin/ghc-pkg -r cairo
-@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
