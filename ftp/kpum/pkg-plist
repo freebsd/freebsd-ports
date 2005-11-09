@@ -13,5 +13,5 @@ share/icons/locolor/16x16/apps/kpum.png
 share/icons/locolor/22x22/apps/kpum.png
 share/icons/locolor/32x32/apps/kpum.png
 share/locale/de/LC_MESSAGES/kpum.mo
-@dirrm share/apps/kpum
 @dirrm share/doc/HTML/en/kpum
+@dirrm share/apps/kpum
