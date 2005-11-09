@@ -82,6 +82,7 @@ MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
 pre-configure:
 	cd ${SRCDIR} ; contrib/gcc_update --touch
+	@${LN} -sf ${FILESDIR}/freebsd7.h ${SRCDIR}/gcc/config
 	@${RM} -f ${SRCDIR}/gcc/*/*.info*
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 	@${REINPLACE_CMD} -e 's/elf_x86_64/elf_x86_64_fbsd/g' \
