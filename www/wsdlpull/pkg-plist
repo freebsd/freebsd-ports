@@ -1,13 +1,8 @@
-bin/print
 bin/schema
-bin/typedefs.h
-bin/wsdl2cpp
+bin/wsdl
 lib/libschema.a
 lib/libschema.so
 lib/libschema.so.0
-lib/libutils.a
-lib/libutils.so
-lib/libutils.so.0
 lib/libwsdl.a
 lib/libwsdl.so
 lib/libwsdl.so.0

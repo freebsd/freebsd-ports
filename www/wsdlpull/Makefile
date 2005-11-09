@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	wsdlpull
-PORTVERSION=	1.6.1
+PORTVERSION=	1.9.5.c
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ WSDL Parser
@@ -33,10 +34,14 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} \
 		-e "s,[$$][(]prefix[)]/docs,${DOCSDIR},"
 
-post-install:
-	@${FIND} ${PREFIX}/include/wsdl ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/include/wsdl -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+post-install:
+.for dir in ${PREFIX}/include/wsdl ${PREFIX}/share/${PORTNAME}
+	@${FIND} ${dir} ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${dir} -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+.endfor
+
+.include <bsd.port.post.mk>
