@@ -9,8 +9,7 @@ PORTNAME=	bforce
 PORTVERSION=	0.22.8
 PORTREVISION=	2
 CATEGORIES=	comms
-MASTER_SITES=	ftp://fido.kuzbass.ru/pub/fileecho/DALLAS.SOFT/ \
-		http://bforce.chbs.ru/
+MASTER_SITES=	ftp://fido.kuzbass.ru/pub/fileecho/DALLAS.SOFT/
 
 MAINTAINER=	vk@vk.pp.ru
 COMMENT=	Simple ifcico like Fidonet technology mailer
