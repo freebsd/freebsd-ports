@@ -15,5 +15,3 @@ It currently allows you to easily :
 
 The actions name should be self-explaining, except misc, which ask you for
 all the fields (email, system user, password) on your terminal.
-
-WWW: http://www.cooptel.qc.ca/~limitln/cvsadmin/
