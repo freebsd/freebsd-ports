@@ -9,8 +9,7 @@
 PORTNAME=	qgfe
 PORTVERSION=	1.0
 CATEGORIES=	math
-MASTER_SITES=	http://perso.club-internet.fr/pascal.brachet/qgfe/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	http://www.xm1math.net/qgfe/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnuplot Front End
@@ -25,10 +24,6 @@ MAKE_ENV=	QTDIR=${X11BASE} \
 		MOC=${MOC}
 
 PLIST_FILES=	bin/qgfe
-
-post-patch:
-	@${REINPLACE_CMD} -e "s@strstream.h@sstream@" \
-		-e "s,ostrstream,ostringstream," ${WRKSRC}/logScaleOp.cpp
 
 pre-build:
 	@cd ${WRKSRC}; qmake -spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ ${PORTNAME}.pro
