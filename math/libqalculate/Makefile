@@ -18,6 +18,7 @@ COMMENT=	Very powerful GUI calculator for GNOME (backend library)
 LIB_DEPENDS=	cln.4:${PORTSDIR}/math/cln
 
 USE_X_PREFIX=	yes
+USE_GCC=	3.4+
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 USE_GNOME=	intlhack lthack pkgconfig gnomehack glib20 libxml2
@@ -26,7 +27,7 @@ INSTALLS_SHLIB=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"does not configure"
+BROKEN=		"does not build even with USE_GCC"
 .endif
 
 .include <bsd.port.post.mk>
