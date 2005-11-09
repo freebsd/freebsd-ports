@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.habazie.rams.pl/kf/files/ \
 MAINTAINER=	anrays@gmail.com
 COMMENT=	A simple Jabber client using the GTK+ 2.0 toolkit
 
-LIB_DEPENDS=	loudmouth-1.0:${PORTSDIR}/net/loudmouth
+LIB_DEPENDS=	loudmouth-1.0:${PORTSDIR}/net-im/loudmouth
 
 USE_X_PREFIX=	yes
 USE_GNOME=	libglade2
