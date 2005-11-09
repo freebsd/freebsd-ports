@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libexif-gtk
-PORTVERSION=	0.3.4
-PORTREVISION=	4
+PORTVERSION=	0.3.5
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libexif
@@ -17,8 +16,8 @@ COMMENT=	GTK+ widgets to display/edit EXIF tags
 
 LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif
 
-USE_GNOME=	gnomehack gtk20
-USE_LIBTOOL_VER=15
+USE_GNOME=	gnomehack gnometarget gtk20
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
