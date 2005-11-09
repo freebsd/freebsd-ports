@@ -6,18 +6,22 @@
 #
 
 PORTNAME=	dokuwiki
-PORTVERSION=	20051023
+PORTVERSION=	20051109
 CATEGORIES=	www
-MASTER_SITES=	http://bbs.ilc.edu.tw/chinsan/ports/dokuwiki/ \
+MASTER_SITES=	ftp://bbs.ilc.edu.tw/chinsan/distfiles/ \
+		http://bbs.ilc.edu.tw/chinsan/ports/dokuwiki/ \
 		http://dev.splitbrain.org/browse/snapshots/ \
 		http://www.splitbrain.org/Programming/PHP/DokuWiki/
-DISTNAME=	${PORTNAME}-2005-10-23
+DISTNAME=	${PORTNAME}-2005-11-09
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	A simple and easy to use wiki, no database required
 
-USE_PHP=	gd imagick pcre session xml zlib
+USE_PHP=	gd pcre session xml zlib
+.if !defined(WITHOUT_X11)
+USE_PHP+=	imagick
+.endif
 PHP4_PORT?=	www/mod_php4
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
