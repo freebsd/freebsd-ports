@@ -923,6 +923,7 @@ byaccj		ports/devel/byaccj
 bygfoot		ports/games/bygfoot
 bzflag		ports/games/bzflag
 bzip		ports/archivers/bzip
+bzrtools	ports/devel/bzrtools
 c-hey		ports/misc/c-hey
 c-nocem		ports/news/c-nocem
 c-sig		ports/mail/c-sig
