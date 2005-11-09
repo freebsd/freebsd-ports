@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	ns
-PORTVERSION=	2.28
-#PORTREVISION=	1
+PORTVERSION=	2.29
 CATEGORIES=	net
 MASTER_SITES=	http://www.isi.edu/nsnam/dist/
 DISTNAME=	ns-src-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Discrete event simulator for networking research
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtclcl.a:${PORTSDIR}/devel/tclcl
@@ -24,7 +23,8 @@ MANCOMPRESSED=	no
 WRKSRC=		${WRKDIR}/ns-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4
+CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4 --with-tclcl=${LOCALBASE}
+MAKE_ARGS+=	"LDFLAGS=${LDFLAGS}"
 
 ALL_TARGET=
 
