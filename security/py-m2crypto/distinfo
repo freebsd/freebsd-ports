@@ -1,4 +1,6 @@
 MD5 (python/m2crypto-0.13.zip) = be2790a34349ab452dddbcfe4c95606a
+SHA256 (python/m2crypto-0.13.zip) = c1c67839d4af290aecd8f7743312aacc0a39ae99757f0910918531ef9a63e14f
 SIZE (python/m2crypto-0.13.zip) = 410759
 MD5 (python/0.13p1.patch) = 4bc65c6cd30d01fa5ea5163b637464d5
+SHA256 (python/0.13p1.patch) = 2d491e912b6836ec2c1d131fe503b9920dc96a134c3542264df5b5565042f304
 SIZE (python/0.13p1.patch) = 1645
