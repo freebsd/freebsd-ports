@@ -1,102 +1,13 @@
---- usr/local/etc/drweb/drweb_smf.conf.orig	Mon Oct 11 11:55:31 2004
-+++ usr/local/etc/drweb/drweb_smf.conf	Mon Oct 11 12:02:22 2004
-@@ -97,10 +97,10 @@
- DenyByDefault = no
+--- usr/local/etc/drweb/drweb_smf.conf.def	Mon Sep 26 18:51:24 2005
++++ usr/local/etc/drweb/drweb_smf.conf	Mon Nov  7 21:44:51 2005
+@@ -480,8 +480,8 @@
  
- # List with rules for users or domains to block scanning 
--DenyList = /usr/local/etc/drweb/users.conf
-+DenyList = %CONFDIR%/users.conf
+ # Definition of Sendmail Milter Address according to sendmail.cf 
+ # Note: FAMILY pid is not valid
+-# MilterAddress = local:/usr/local/drweb/run/drweb-smf.skt
+-MilterAddress = inet:3001@localhost
++MilterAddress = local:/usr/local/drweb/run/drweb-smf.skt
++# MilterAddress = inet:3001@localhost
  
- # Directory used to store temporary files
--Spool = /var/drweb/spool 
-+Spool = /tmp
- 
- # Permissions for created spool files
- SpoolFilesMode = 0600
-@@ -282,16 +282,16 @@
- FilterMail = DrWEB-DAEMON
- 
- # List of unnotificable viruses
--UnnotificableVirusesList = /usr/local/etc/drweb/viruses.conf
-+UnnotificableVirusesList = %CONFDIR%/viruses.conf
- 
- # List of unnotificable addresses
--UnnotificableAddressesList = /usr/local/etc/drweb/addresses.conf
-+UnnotificableAddressesList = %CONFDIR%/addresses.conf
- 
- # Quarantine directory. 
- # The infected files could be moved in that dir 
- # if you leave this field empty or commented out then 
- # infected messages will not be stored
--Quarantine = /var/drweb/infected
-+Quarantine = /usr/local/drweb/infected
- 
- # Permissions for quarantined files
- QuarantineFilesMode = 0660
-@@ -330,21 +330,21 @@
- RcptsNotify = yes
- 
- # Files with notification templates
--SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/virus-sender.msg
--AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/virus-admin.msg
--RcptsTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/virus-rcpts.msg
-+SenderTemplate = %CONFDIR%/templates/en-ru/sendmail/virus-sender.msg
-+AdminTemplate = %CONFDIR%/templates/en-ru/sendmail/virus-admin.msg
-+RcptsTemplate = %CONFDIR%/templates/en-ru/sendmail/virus-rcpts.msg
- 
- [CuredNotifications]
- SenderNotify = yes
- AdminNotify = yes
--SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/cured-sender.msg
--AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/cured-admin.msg
-+SenderTemplate = %CONFDIR%/templates/en-ru/sendmail/cured-sender.msg
-+AdminTemplate = %CONFDIR%/templates/en-ru/sendmail/cured-admin.msg
- 
- [SkipNotifications]
- SenderNotify = yes
- AdminNotify = no
- RcptsNotify = no
--SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/skip-sender.msg
-+SenderTemplate = %CONFDIR%/templates/en-ru/sendmail/skip-sender.msg
- AdminTemplate = 
- RcptsTemplate = 
- 
-@@ -352,16 +352,16 @@
- SenderNotify = yes
- AdminNotify = yes
- RcptsNotify = no
--SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/archive-sender.msg
--AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/archive-admin.msg
-+SenderTemplate = %CONFDIR%/templates/en-ru/sendmail/archive-sender.msg
-+AdminTemplate = %CONFDIR%/templates/en-ru/sendmail/archive-admin.msg
- RcptsTemplate = 
- 
- [ErrorNotifications]
- SenderNotify = yes
- AdminNotify = yes
- RcptsNotify = no
--SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/error-sender.msg
--AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/error-admin.msg
-+SenderTemplate = %CONFDIR%/templates/en-ru/sendmail/error-sender.msg
-+AdminTemplate = %CONFDIR%/templates/en-ru/sendmail/error-admin.msg
- RcptsTemplate = 
- 
- [RuleFilterNotifications]
-@@ -369,7 +369,7 @@
- AdminNotify = yes
- RcptsNotify = no
- SenderTemplate = 
--AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/rule-admin.msg
-+AdminTemplate = %CONFDIR%/templates/en-ru/sendmail/rule-admin.msg
- RcptsTemplate = 
- 
- ###################
-@@ -430,7 +430,7 @@
- 
- # Milter (libmilter have its own output system) debug level (0 - quiet .. 5 -
- # verbose)
--MilterDebugLevel = 0
-+MilterDebugLevel = 1
- 
- ################################
- # Mail system settings section #
+ # Timeout for drweb-smf to sendmail connection
+ # (Must be greater than any Timeout. parameter in sendmail.cf)
