@@ -1,0 +1,65 @@
+# Ports collection makefile for:	bazaar
+# Date created:		11 October 2005
+# Whom:			Ulf Lilleengen
+#
+# $FreeBSD$
+#
+
+PORTNAME=	bazaar
+PORTVERSION=	1.4.2
+CATEGORIES=	devel
+MASTER_SITES=	http://bazaar.canonical.com/releases/src/
+MASTER_SITE_SUBDIR=	gnu-arch
+DISTNAME=	bazaar_${PORTVERSION}
+
+MAINTAINER=	lulf@kerneled.org
+COMMENT=	An implementation of the GNU Arch RCS protocol in C by Canonical
+
+BUILD_DEPENDS=	gmake:${PORTSDIR}/devel/gmake \
+		gpatch:${PORTSDIR}/devel/patch \
+		gdiff:${PORTSDIR}/textproc/diffutils \
+		gtar:${PORTSDIR}/archivers/gtar
+RUN_DEPENDS=	${BUILD_DEPENDS}
+LIB_DEPENDS=	neon.24:${PORTSDIR}/www/neon \
+		gpgme.15:${PORTSDIR}/security/gpgme
+
+USE_GMAKE=	yes
+USE_GETTEXT=	yes
+USE_PERL5_BUILD=yes
+GNU_CONFIGURE=	yes
+
+MAN1=		baz.1
+
+MAJORVERSION=	1.4
+BASEWRKDIR=	${WRKDIR}/thelove@canonical.com---dists--bazaar--${MAJORVERSION}
+WRKSRC=		${BASEWRKDIR}/src/=build
+PATCH_WRKSRC=	${BASEWRKDIR}
+LDFLAGS+=	-L ${LOCALBASE}/lib
+CFLAGS+=	-I ${LOCALBASE}/include ${LDFLAGS}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=		"does not compile (missing va_copy)"
+.endif
+
+pre-patch:
+	${MKDIR} ${WRKSRC}
+
+# I know the CFLAGS export is ugly, but it's the only way i've gotten bazaars
+# own autotools to detect libraries the "correct" way.
+do-configure:
+	cd ${WRKSRC} && export CFLAGS="${CFLAGS}" \
+			&& ../configure --prefix ${PREFIX} \
+			--with-gnu-patch gpatch \
+			--with-gnu-diff gdiff \
+			--with-gnu-diff3 gdiff3 \
+			--with-gnu-tar gtar
+
+post-install:
+	cd ${BASEWRKDIR}/src/baz-manpage && ${PERL} generate-manpage.pl ${MAN1}\
+	&& \
+	${INSTALL_MAN} ${BASEWRKDIR}/src/baz-manpage/${MAN1} \
+	${MAN1PREFIX}/man/man1
+
+.include <bsd.port.post.mk>
