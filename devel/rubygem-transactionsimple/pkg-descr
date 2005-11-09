@@ -1,0 +1,4 @@
+Transaction::Simple provides active ("live", non-backend)
+transactional support to Marshal-able objects.
+
+WWW: http://rubyforge.org/projects/trans-simple/
