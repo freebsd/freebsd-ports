@@ -7,7 +7,7 @@
 PORTNAME=		ekg
 PORTVERSION=		1.6r3
 PORTEPOCH=		1
-CATEGORIES=		polish net
+CATEGORIES=		polish net-im
 MASTER_SITES=		http://dev.null.pl/ekg/archive/
 DISTNAME=		${PORTNAME}-1.6rc3
 

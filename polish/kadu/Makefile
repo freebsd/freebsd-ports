@@ -8,7 +8,7 @@
 PORTNAME=		kadu
 PORTVERSION=		0.4.2
 PORTEPOCH=		1
-CATEGORIES=		polish net
+CATEGORIES=		polish net-im
 MASTER_SITES=		http://www.kadu.net/download/stable/
 DISTNAME=		${PORTNAME}-${PORTVERSION}
 
