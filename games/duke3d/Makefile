@@ -38,7 +38,7 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 499999
+.if ${OSVERSION} >= 500000
 DEPRECATED=	Please use games/jfduke3d. This port is being kept for RELENG_4 users
 .endif
 
