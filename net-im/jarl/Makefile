@@ -7,7 +7,7 @@
 
 PORTNAME=	jarl
 PORTVERSION=	0.5001
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	Jarl-${PORTVERSION}
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Perl/Tk Jabber client
 
 RUN_DEPENDS=	ptksh:${PORTSDIR}/x11-toolkits/p5-Tk \
-		${SITE_PERL}/Net/Jabber/IQ.pm:${PORTSDIR}/net/p5-Net-Jabber
+		${SITE_PERL}/Net/Jabber/IQ.pm:${PORTSDIR}/net-im/p5-Net-Jabber
 
 NO_BUILD=	yes
 

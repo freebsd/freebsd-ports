@@ -8,7 +8,7 @@
 PORTNAME=	openq
 PORTVERSION=	0.3.2
 PORTREVISION=	5
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	gaim-
@@ -16,8 +16,8 @@ PKGNAMEPREFIX=	gaim-
 MAINTAINER=	hamigua@hotpop.com
 COMMENT=	A QQ-liked protocol plugin for Gaim
 
-BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net/gaim
-RUN_DEPENDS=	gaim:${PORTSDIR}/net/gaim
+BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net-im/gaim
+RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

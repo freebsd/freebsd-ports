@@ -7,7 +7,7 @@
 PORTNAME=	conference
 PORTVERSION=	0.4.1
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://download.jabber.org/dists/1.4/final/old/
 PKGNAMEPREFIX=	jabber-
 DIST_SUBDIR=	jabber
@@ -15,7 +15,7 @@ DIST_SUBDIR=	jabber
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	Jabber Conferencing module
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net/jabber
+BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net-im/jabber
 
 PLIST_FILES=	lib/jabber/conference.so
 USE_GMAKE=	yes

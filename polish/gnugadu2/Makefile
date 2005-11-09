@@ -84,7 +84,7 @@ PLIST_SUB+=	TLEN:="@comment "
 .endif
 
 .if defined(WITH_JABBER)
-LIB_DEPENDS+=	loudmouth-1.0:${PORTSDIR}/net/loudmouth
+LIB_DEPENDS+=	loudmouth-1.0:${PORTSDIR}/net-im/loudmouth
 CONFIGURE_ARGS+=	--with-jabber
 PLIST_SUB+=	JABBER:=""
 .else

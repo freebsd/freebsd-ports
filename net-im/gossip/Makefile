@@ -8,14 +8,14 @@
 PORTNAME=	gossip
 PORTVERSION=	0.9
 PORTREVISION=	1
-CATEGORIES=	net gnome
+CATEGORIES=	net-im gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.9
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GTK2 Jabber Instant Messaging client
 
-LIB_DEPENDS=	loudmouth-1.0:${PORTSDIR}/net/loudmouth
+LIB_DEPENDS=	loudmouth-1.0:${PORTSDIR}/net-im/loudmouth
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

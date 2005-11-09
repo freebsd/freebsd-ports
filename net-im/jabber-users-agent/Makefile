@@ -7,7 +7,7 @@
 
 PORTNAME=	users-agent
 PORTVERSION=	1.2
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://files.jabberstudio.org/users-agent/
 PKGNAMEPREFIX=	jabber-
 DISTNAME=	Users-Agent-${PORTVERSION}
@@ -24,7 +24,7 @@ USE_PERL5=	yes
 USE_RC_SUBR=	jabber-users-agent.sh
 SUB_LIST+=	PERL=${PERL}
 
-BUILD_DEPENDS+=	${SITE_PERL}/Net/Jabber.pm:${PORTSDIR}/net/p5-Net-Jabber \
+BUILD_DEPENDS+=	${SITE_PERL}/Net/Jabber.pm:${PORTSDIR}/net-im/p5-Net-Jabber \
 		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 
 .include <bsd.port.pre.mk>

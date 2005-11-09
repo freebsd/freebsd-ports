@@ -15,8 +15,8 @@ MASTER_SITE_SUBDIR=	guifications
 MAINTAINER=	danielshafer@gmail.com
 COMMENT=	Plugin to display current XMMS song in Gaim
 
-BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net/gaim
-RUN_DEPENDS=	gaim:${PORTSDIR}/net/gaim
+BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net-im/gaim
+RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes

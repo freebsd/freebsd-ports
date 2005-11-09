@@ -18,8 +18,8 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@mcdermottroe.com
 COMMENT=	Allows deniable private conversations using GAIM
 
-BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net/gaim
-RUN_DEPENDS=	gaim:${PORTSDIR}/net/gaim
+BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net-im/gaim
+RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 LIB_DEPENDS=	otr:${PORTSDIR}/security/libotr \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 

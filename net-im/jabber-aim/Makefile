@@ -6,7 +6,7 @@
 
 PORTNAME=	aim
 PORTVERSION=	20040131.b
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://aim-transport.jabberstudio.org/
 PKGNAMEPREFIX=	jabber-
 PKGNAMESUFFIX=	-transport
@@ -16,7 +16,7 @@ DIST_SUBDIR=	jabber
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	Jabber AIM Transport module
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net/jabber
+BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net-im/jabber
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-stable-${PORTVERSION:R}
 PLIST_FILES=	lib/jabber/aimtrans.so

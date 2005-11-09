@@ -9,7 +9,7 @@
 PORTNAME=	ickle
 PORTVERSION=	0.3.2
 PORTREVISION=	1
-CATEGORIES=	net devel
+CATEGORIES=	net-im devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ICQ2000 protocol implementation
 
 LIB_DEPENDS=	gtkmm:${PORTSDIR}/x11-toolkits/gtk-- \
-		icq2000.5:${PORTSDIR}/net/libicq2000
+		icq2000.5:${PORTSDIR}/net-im/libicq2000
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12

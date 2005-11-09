@@ -145,10 +145,6 @@
     SUBDIR += fspd
     SUBDIR += fsplib
     SUBDIR += gacxtool
-    SUBDIR += gaim
-    SUBDIR += gaim-latex
-    SUBDIR += gaim-openq
-    SUBDIR += gaim-rss-reader
     SUBDIR += gastman
     SUBDIR += gatekeeper
     SUBDIR += gdesklets-lt-network
@@ -157,7 +153,6 @@
     SUBDIR += generic-nqs
     SUBDIR += geotrace
     SUBDIR += ggsd
-    SUBDIR += gicq
     SUBDIR += gift
     SUBDIR += gift-fasttrack
     SUBDIR += gift-gnutella
@@ -183,7 +178,6 @@
     SUBDIR += gnome-btdownload
     SUBDIR += gnome-mud
     SUBDIR += gnome-vnc
-    SUBDIR += gnomeicu2
     SUBDIR += gnomemeeting
     SUBDIR += gnomenetstatus
     SUBDIR += gnomenettool
@@ -195,7 +189,6 @@
     SUBDIR += gofish
     SUBDIR += googolplex
     SUBDIR += gopher
-    SUBDIR += gossip
     SUBDIR += gq
     SUBDIR += grdesktop
     SUBDIR += gsk
@@ -220,7 +213,6 @@
     SUBDIR += httping
     SUBDIR += hx
     SUBDIR += i2p
-    SUBDIR += ickle
     SUBDIR += icmpinfo
     SUBDIR += icpld
     SUBDIR += ifdepd
@@ -244,16 +236,8 @@
     SUBDIR += isc-dhcp3-relay
     SUBDIR += isc-dhcp3-server
     SUBDIR += iwi-firmware
-    SUBDIR += jabber
-    SUBDIR += jabber-aim
-    SUBDIR += jabber-conference
-    SUBDIR += jabber-jud
-    SUBDIR += jabber-msn
     SUBDIR += jabber-pyicq
-    SUBDIR += jabber-users-agent
-    SUBDIR += jabber-yahoo
     SUBDIR += jags
-    SUBDIR += jarl
     SUBDIR += java-beepcore
     SUBDIR += javadc
     SUBDIR += jcifs
@@ -264,7 +248,6 @@
     SUBDIR += jwhois
     SUBDIR += kdenetwork3
     SUBDIR += keepalived
-    SUBDIR += kf
     SUBDIR += kissd
     SUBDIR += kmldonkey
     SUBDIR += knemo
@@ -290,8 +273,6 @@
     SUBDIR += liberator
     SUBDIR += libfreenet
     SUBDIR += libgnetwork
-    SUBDIR += libicq
-    SUBDIR += libicq2000
     SUBDIR += libmms
     SUBDIR += libnet
     SUBDIR += libnet-devel
@@ -331,15 +312,12 @@
     SUBDIR += linuxigd
     SUBDIR += liveMedia
     SUBDIR += lla
-    SUBDIR += loudmouth
     SUBDIR += luasocket
     SUBDIR += lyntin
     SUBDIR += mDNSResponder
     SUBDIR += mad_fcl
     SUBDIR += magictun
     SUBDIR += mars_nwe
-    SUBDIR += meanwhile
-    SUBDIR += meanwhile-gaim
     SUBDIR += merlinmon
     SUBDIR += mgen
     SUBDIR += micro_proxy
@@ -397,7 +375,6 @@
     SUBDIR += netstrain
     SUBDIR += nettest
     SUBDIR += netwib
-    SUBDIR += newsbot
     SUBDIR += nfsshell
     SUBDIR += ng_car
     SUBDIR += ng_daphne
@@ -423,7 +400,6 @@
     SUBDIR += nxserver
     SUBDIR += nylon
     SUBDIR += obnc
-    SUBDIR += ocaml-jabbr
     SUBDIR += ocaml-netclient
     SUBDIR += ohphone
     SUBDIR += olsrd
@@ -481,7 +457,6 @@
     SUBDIR += p5-Net-Gopher
     SUBDIR += p5-Net-HL7
     SUBDIR += p5-Net-Ident
-    SUBDIR += p5-Net-Jabber
     SUBDIR += p5-Net-MovableType
     SUBDIR += p5-Net-OpenDHT
     SUBDIR += p5-Net-Packet
@@ -609,7 +584,6 @@
     SUBDIR += proxy-suite
     SUBDIR += proxychains
     SUBDIR += prtunnel
-    SUBDIR += psi
     SUBDIR += ptunnel
     SUBDIR += pvm
     SUBDIR += pvm++
@@ -624,7 +598,6 @@
     SUBDIR += py-fngrab
     SUBDIR += py-google
     SUBDIR += py-impacket
-    SUBDIR += py-jabber
     SUBDIR += py-kenosis
     SUBDIR += py-kenosis-bittorrent
     SUBDIR += py-ldap2
@@ -647,7 +620,6 @@
     SUBDIR += py-spreadmodule
     SUBDIR += py-tofu
     SUBDIR += py-twistedPair
-    SUBDIR += py-twistedWords
     SUBDIR += py-xmlrpc
     SUBDIR += py-xmlrpclib
     SUBDIR += py-zsi
