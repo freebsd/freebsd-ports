@@ -368,6 +368,7 @@
     SUBDIR += p5-Regexp-Common
     SUBDIR += p5-Regexp-Log
     SUBDIR += p5-Regexp-Log-Common
+    SUBDIR += p5-SGMLSpm
     SUBDIR += p5-SVG
     SUBDIR += p5-Search-Saryer
     SUBDIR += p5-Search-VectorSpace
