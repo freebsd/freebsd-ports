@@ -7,16 +7,18 @@
 
 PORTNAME=	binkd
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://happy.kiev.ua/pub/fidosoft/mailer/binkd/ \
 		ftp://ftp.rsu.ru/pub/FreeBSD/ports/distfiles/
 DISTNAME=	binkd098
 
-MAINTAINER=	dsh@vlink.ru
+MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Fidonet TCP/IP mailer
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_ZIP=	yes
+USE_RC_SUBR=	binkd.sh
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
@@ -33,6 +35,9 @@ CONFIGURE_ARGS+=	--with-https
 pre-configure:
 	@${CP} ${WRKSRC}/mkfls/unix/* ${WRKSRC}/
 	@${CHMOD} a+x ${WRKSRC}/configure
+
+pre-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/binkd ${PREFIX}/sbin
