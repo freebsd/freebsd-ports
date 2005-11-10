@@ -2630,11 +2630,11 @@ gai-album	ports/audio/gai-album
 gai-visual-audio	ports/audio/gai-visual-audio
 gail		ports/accessibility/gail
 gaim		ports/net-im/gaim
-gaim-bangexec	ports/misc/gaim-bangexec
+gaim-bangexec	ports/net-im/gaim-bangexec
 gaim-encryption	ports/security/gaim-encryption
 gaim-festival	ports/audio/gaim-festival
-gaim-guifications	ports/misc/gaim-guifications
-gaim-ignorance	ports/misc/gaim-ignorance
+gaim-guifications	ports/net-im/gaim-guifications
+gaim-ignorance	ports/net-im/gaim-ignorance
 gaim-irchelper	ports/irc/gaim-irchelper
 gaim-latex	ports/net-im/gaim-latex
 gaim-openq	ports/net-im/gaim-openq
