@@ -26,6 +26,7 @@ sbin/popfile.sh
 %%DATADIR%%/insert.pl
 %%DATADIR%%/languages/Arabic.msg
 %%DATADIR%%/languages/Bulgarian.msg
+%%DATADIR%%/languages/Catala.msg
 %%DATADIR%%/languages/Chinese-Simplified-GB2312.msg
 %%DATADIR%%/languages/Chinese-Simplified.msg
 %%DATADIR%%/languages/Chinese-Traditional-BIG5.msg
