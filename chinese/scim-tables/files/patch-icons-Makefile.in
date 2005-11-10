@@ -1,5 +1,5 @@
---- icons/Makefile.in.orig	Sun Oct 30 22:07:35 2005
-+++ icons/Makefile.in	Tue Nov  1 23:24:17 2005
+--- icons/Makefile.in.orig	Sun Oct 30 06:07:35 2005
++++ icons/Makefile.in	Mon Nov  7 22:02:59 2005
 @@ -234,12 +234,7 @@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
@@ -14,7 +14,7 @@
  			  CangJie.png	\
  			  CangJie3.png	\
  			  Cantonese.png \
-@@ -250,36 +245,11 @@
+@@ -250,36 +245,12 @@
  			  Erbi.png      \
  			  Erbi-QS.png   \
  			  EZ.png        \
@@ -42,7 +42,7 @@
 -			  Telugu-inscript.png	\
 -			  Thai.png	\
 -			  Viqr.png      \
--			  Wu.png        \
+ 			  Wu.png        \
  			  Wubi.png      \
 -			  Yawerty.png   \
  			  ZhuYin.png    \
