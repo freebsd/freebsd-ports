@@ -17,14 +17,16 @@ MASTER_SITES=	http://download.berlios.de/%SUBDIR%/:fetchmail_site,fetchmailconf_
 		http://www.catb.org/~esr/%SUBDIR%/:fetchmail_site \
 		ftp://ftp.ayamura.org/pub/%SUBDIR%/:fetchmail_site \
 		ftp://ftp.win.jp/pub/%SUBDIR%/:fetchmail \
-		ftp://ftp.dti.ad.jp/pub/net/mail/%SUBDIR%/:fetchmail_site
+		ftp://ftp.dti.ad.jp/pub/net/mail/%SUBDIR%/:fetchmail_site \
+		http://home.leo.org/~barner/freebsd/distfiles/:fetchmail_site,fetchmailconf_site
 MASTER_SITE_SUBDIR=	fetchmail/:fetchmail_site,fetchmailconf_site
 DISTNAME=	${PORTNAME}-6.2.5
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:fetchmail_site \
 		fetchmailconf-${FETCHMAILCONF_VER}.gz:fetchmailconf_site
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=	http://download.berlios.de/%SUBDIR%/
+PATCH_SITES=	http://download.berlios.de/%SUBDIR%/ \
+		http://home.leo.org/~barner/freebsd/distfiles/
 PATCH_SITE_SUBDIR=	fetchmail
 PATCHFILES=	${PORTNAME}-patch-${PORTVERSION}.gz
 PATCH_DIST_STRIP=-p1
