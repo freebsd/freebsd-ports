@@ -82,6 +82,7 @@
     SUBDIR += esmtp
     SUBDIR += evolution
     SUBDIR += evolution-exchange
+    SUBDIR += evolution-sharp
     SUBDIR += exact
     SUBDIR += exilog
     SUBDIR += exim

@@ -1,0 +1,21 @@
+--- evolution/Makefile.in.orig	Thu Mar  3 00:28:29 2005
++++ evolution/Makefile.in	Thu Mar  3 00:44:28 2005
+@@ -364,14 +364,14 @@
+ 
+ install-data-local:
+ 	@if test -n '$(TARGET)'; then									\
+-	  echo "$(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE) /root $(DESTDIR)$(libdir)";		\
+-	  $(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE) /root $(DESTDIR)$(libdir) || exit 1;		\
++	  echo "$(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE) /gacdir $(DESTDIR)$(libdir) /root $(DESTDIR)$(libdir)";		\
++	  $(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE) /gacdir $(DESTDIR)$(libdir) /root $(DESTDIR)$(libdir) || exit 1;		\
+ 	fi
+ 
+ uninstall-local:
+ 	@if test -n '$(TARGET)'; then									\
+-	  echo "$(GACUTIL) /u $(ASSEMBLY_NAME) /package $(PACKAGE) /root $(DESTDIR)$(libdir)";		\
+-	  $(GACUTIL) /u $(ASSEMBLY_NAME) /package $(PACKAGE) /root $(DESTDIR)$(libdir) || exit 1;	\
++	  echo "$(GACUTIL) /u $(ASSEMBLY_NAME) /package $(PACKAGE) /gacdir $(DESTDIR)$(libdir) /root $(DESTDIR)$(libdir)";		\
++	  $(GACUTIL) /u $(ASSEMBLY_NAME) /package $(PACKAGE) /gacdir $(DESTDIR)$(libdir) /root $(DESTDIR)$(libdir) || exit 1;	\
+ 	fi
+ 
+ evolution-sharp.pub: $(top_srcdir)/evolution-sharp.pub
