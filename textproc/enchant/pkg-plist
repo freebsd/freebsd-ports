@@ -5,19 +5,21 @@ include/enchant/enchant-provider.h
 include/enchant/enchant.h
 %%ASPELL%%lib/enchant/libenchant_aspell.a
 %%ASPELL%%lib/enchant/libenchant_aspell.so
-%%ASPELL%%lib/enchant/libenchant_aspell.so.2
+%%ASPELL%%lib/enchant/libenchant_aspell.so.1
 %%HSPELL%%lib/enchant/libenchant_hspell.a
 %%HSPELL%%lib/enchant/libenchant_hspell.so
-%%HSPELL%%lib/enchant/libenchant_hspell.so.2
+%%HSPELL%%lib/enchant/libenchant_hspell.so.1
 lib/enchant/libenchant_ispell.a
 lib/enchant/libenchant_ispell.so
-lib/enchant/libenchant_ispell.so.2
+lib/enchant/libenchant_ispell.so.1
 lib/enchant/libenchant_myspell.a
 lib/enchant/libenchant_myspell.so
-lib/enchant/libenchant_myspell.so.2
+lib/enchant/libenchant_myspell.so.1
 lib/libenchant.a
 lib/libenchant.so
-lib/libenchant.so.2
+lib/libenchant.so.1
 libdata/pkgconfig/enchant.pc
+share/enchant/enchant.ordering
+@dirrm share/enchant
 @dirrm lib/enchant
 @dirrm include/enchant
