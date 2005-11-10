@@ -1,0 +1,21 @@
+--- ../docbook-utils-0.6.14.orig/doc/refentry/frontend-spec.sgml	Thu Nov  9 22:06:23 2000
++++ doc/refentry/frontend-spec.sgml	Mon May  3 20:14:10 2004
+@@ -51,7 +51,7 @@
+               <term>centralized-catalog</term>
+               <listitem><para>The frontend must return the DTD-specific
+               centralized catalog name.  Centralized catalogs normally
+-              reside in <filename>/etc/sgml</filename> and provide the
++              reside in <filename>/usr/local/share/sgml</filename> and provide the
+               location of all the catalog files useful for handling
+               this input type (the catalog for the DTD, the catalog
+               for the stylesheets, the catalog for the entities,
+@@ -78,7 +78,7 @@
+         </glossterm>
+         <glossdef>
+           <para>The directory where the centralized catalogs reside. It is normally
+-            <filename>/etc/sgml</filename>.</para>
++            <filename>/usr/local/share/sgml</filename>.</para>
+           <para>(This variable is valid only while determining
+             the centralized catalog to use.)</para>
+         </glossdef>
+diff -uNr ../docbook-utils-0.6.14.orig/doc/refentry/jw.sgml ./doc/refentry/jw.sgml

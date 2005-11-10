@@ -1,0 +1,26 @@
+--- ../docbook-utils-0.6.14.orig/backends/txt	Wed Feb 11 13:58:03 2004
++++ backends/txt	Tue May  4 09:29:54 2004
+@@ -2,17 +2,17 @@
+ # Send any comments to Eric Bischoff <eric@caldera.de>
+ # This program is under GPL license. See LICENSE file for details.
+ 
+-if [ -x /usr/bin/lynx ]
++if [ -x /usr/local/bin/lynx ]
+ then
+-  CONVERT=/usr/bin/lynx
++  CONVERT=/usr/local/bin/lynx
+   ARGS="-force_html -dump -nolist -width=72"
+-elif [ -x /usr/bin/links ]
++elif [ -x /usr/local/bin/links ]
+ then
+-  CONVERT=/usr/bin/links
++  CONVERT=/usr/local/bin/links
+   ARGS="-dump"
+-elif [ -x /usr/bin/w3m ]
++elif [ -x /usr/local/bin/w3m ]
+ then
+-  CONVERT=/usr/bin/w3m
++  CONVERT=/usr/local/bin/w3m
+   ARGS="-dump"
+ else
+   echo >&2 "No way to convert HTML to text found."

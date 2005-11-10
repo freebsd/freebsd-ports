@@ -1,0 +1,11 @@
+--- configure	Wed Feb 11 14:16:10 2004
++++ configure	Tue May  4 08:53:49 2004
+@@ -1649,7 +1649,7 @@
+ 
+ 
+ 
+-docdir='$(prefix)/doc'
++docdir='$(prefix)/share/doc'
+ 
+ 
+ jade_bindirs="/usr/bin /usr/local/bin"

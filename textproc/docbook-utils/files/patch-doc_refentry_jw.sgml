@@ -1,0 +1,24 @@
+--- ../docbook-utils-0.6.14.orig/doc/refentry/jw.sgml	Mon Oct 21 16:54:35 2002
++++ doc/refentry/jw.sgml	Mon May  3 20:15:26 2004
+@@ -371,10 +371,10 @@
+               <para>if the centralized catalog exists, then
+               use it. The centralized catalog is a list of all
+               catalogs that might be necessary that usually
+-              resides in <filename>/etc/sgml</filename>. Its
++              resides in <filename>/usr/local/share/sgml</filename>. Its
+               name is provided by the frontend, for example
+               the <filename>docbook</filename> frontend returns
+-              <filename>/etc/sgml/sgml-docbook.cat</filename>.</para>
++              <filename>/usr/local/share/sgml/sgml-docbook.cat</filename>.</para>
+             </listitem>
+             <listitem>
+               <para>Otherwise, take all the files
+@@ -583,7 +583,7 @@
+     <variablelist>
+ 
+       <varlistentry>
+-	<term><filename>/etc/sgml/sgml-docbook.cat</filename></term>
++	<term><filename>/usr/local/share/sgml/sgml-docbook.cat</filename></term>
+ 	<listitem>
+           <para>Centralized SGML open catalog. This file name might
+           vary if another frontend than <filename>docbook</filename>

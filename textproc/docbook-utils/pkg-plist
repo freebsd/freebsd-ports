@@ -1,0 +1,28 @@
+bin/docbook2dvi
+bin/docbook2html
+bin/docbook2man
+bin/docbook2pdf
+bin/docbook2ps
+bin/docbook2rtf
+bin/docbook2tex
+bin/docbook2texi
+bin/docbook2txt
+bin/jw
+bin/sgmldiff
+share/sgml/docbook/utils-0.6.14/backends/dvi
+share/sgml/docbook/utils-0.6.14/backends/html
+share/sgml/docbook/utils-0.6.14/backends/man
+share/sgml/docbook/utils-0.6.14/backends/pdf
+share/sgml/docbook/utils-0.6.14/backends/ps
+share/sgml/docbook/utils-0.6.14/backends/rtf
+share/sgml/docbook/utils-0.6.14/backends/tex
+share/sgml/docbook/utils-0.6.14/backends/texi
+share/sgml/docbook/utils-0.6.14/backends/txt
+share/sgml/docbook/utils-0.6.14/frontends/docbook
+share/sgml/docbook/utils-0.6.14/helpers/docbook2man-spec.pl
+share/sgml/docbook/utils-0.6.14/helpers/docbook2texi-spec.pl
+share/sgml/docbook/utils-0.6.14/docbook-utils.dsl
+@dirrm share/sgml/docbook/utils-0.6.14/backends
+@dirrm share/sgml/docbook/utils-0.6.14/frontends
+@dirrm share/sgml/docbook/utils-0.6.14/helpers
+@dirrm share/sgml/docbook/utils-0.6.14
