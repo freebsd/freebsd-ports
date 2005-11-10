@@ -11,7 +11,7 @@
 
 PORTNAME=	fetchmail
 PORTVERSION=	6.2.5.2
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://download.berlios.de/%SUBDIR%/:fetchmail_site,fetchmailconf_site \
 		http://www.catb.org/~esr/%SUBDIR%/:fetchmail_site \
@@ -112,10 +112,10 @@ pre-patch:
 # Use fetchmailconf-1.43.2 to avoid a password exposure
 # caused by insecure file creation
 	@${GZCAT} ${DISTDIR}/fetchmailconf-${FETCHMAILCONF_VER}.gz | \
-		${SED} -e "s,^#!/.*/python,#!${PREFIX}/bin/python,g" \
+		${SED} -e "s,^#!/.*/python,#!${LOCALBASE}/bin/python,g" \
 		> ${WRKDIR}/fetchmailconf.temp
 	@${MV} -f ${WRKDIR}/fetchmailconf.temp ${WRKSRC}/fetchmailconf
-	@${SED} -e "s,@PREFIX@,${PREFIX},g" \
+	@${SED} -e "s,@LOCALBASE@,${LOCALBASE},g" \
 		${FILESDIR}/fetchmailconf > ${WRKDIR}/fetchmailconf
 	@${REINPLACE_CMD} -e "s,@l@,,;s,@GT_NO@,," \
 		${WRKSRC}/intl/Makefile.in
