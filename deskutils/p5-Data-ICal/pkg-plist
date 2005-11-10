@@ -1,0 +1,22 @@
+%%SITE_PERL%%/Data/ICal.pm
+%%SITE_PERL%%/Data/ICal/Entry.pm
+%%SITE_PERL%%/Data/ICal/Entry/Alarm/Audio.pm
+%%SITE_PERL%%/Data/ICal/Entry/Alarm/Display.pm
+%%SITE_PERL%%/Data/ICal/Entry/Alarm/Email.pm
+%%SITE_PERL%%/Data/ICal/Entry/Alarm/Procedure.pm
+%%SITE_PERL%%/Data/ICal/Entry/Event.pm
+%%SITE_PERL%%/Data/ICal/Entry/FreeBusy.pm
+%%SITE_PERL%%/Data/ICal/Entry/Journal.pm
+%%SITE_PERL%%/Data/ICal/Entry/TimeZone.pm
+%%SITE_PERL%%/Data/ICal/Entry/TimeZone/Daylight.pm
+%%SITE_PERL%%/Data/ICal/Entry/TimeZone/Standard.pm
+%%SITE_PERL%%/Data/ICal/Entry/Todo.pm
+%%SITE_PERL%%/Data/ICal/Property.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ICal/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/Data/ICal/Entry/TimeZone 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Data/ICal/Entry/Alarm 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ICal 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Data/ICal/Entry
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Data/ICal 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Data 2>/dev/null || true
