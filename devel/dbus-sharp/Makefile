@@ -2,11 +2,11 @@
 # Date Created:					20041011
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
-# $Id: Makefile,v 1.11 2005/07/04 01:04:36 tmclau02 Exp $
 # $FreeBSD$
+#   $Id: Makefile,v 1.14 2005/11/01 05:04:07 tmclau02 Exp $
 #
 
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel gnome
 PKGNAMESUFFIX=	-sharp
 
@@ -43,4 +43,5 @@ CONFIGURE_ARGS=	--enable-mono \
 #	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 #		${WRKSRC}/mono/doc/Makefile.in
 
+.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include "${MASTERDIR}/Makefile"
