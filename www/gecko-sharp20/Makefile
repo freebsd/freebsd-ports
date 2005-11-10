@@ -3,12 +3,12 @@
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.6 2005/09/25 19:01:20 tmclau02 Exp $
+#   $Id: Makefile,v 1.10 2005/10/23 20:56:06 tmclau02 Exp $
 #
 
 PORTNAME=	gecko-sharp
 PORTVERSION=	0.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://go-mono.com/sources/gecko-sharp-2.0/
 DISTNAME=	gecko-sharp-2.0-${PORTVERSION}
@@ -52,4 +52,5 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|[(]prefix[)]/lib/pkgconfig|(prefix)/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
 
+.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@
 
 PORTNAME=	gecko-sharp
 PORTVERSION=	0.6
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	http://go-mono.com/archive/1.0.3/
 
@@ -42,4 +42,5 @@ pre-everything::
 	@${ECHO_MSG} "  firefox       "
 	@${ECHO_MSG} ""
 
+.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>
