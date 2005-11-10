@@ -1,0 +1,12 @@
+XArchive is a GTK+ front end for command line archiving tools such as tar, rar,
+zip, ace, 7zip, arj, and rpm.
+
+It uses external bash shell wrappers to handle the different types of file
+formats, so adding support for new archive types can be easily done by writing
+a wrapper.
+
+WWW: http://xarchive.sourceforge.net
+
+- Mark
+mark@mkproductions.org
+http://www.mkproductions.org

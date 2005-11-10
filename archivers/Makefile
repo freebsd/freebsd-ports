@@ -110,6 +110,7 @@
     SUBDIR += unzoo
     SUBDIR += upx
     SUBDIR += wzip
+    SUBDIR += xarchive
     SUBDIR += xdms
     SUBDIR += xmill
     SUBDIR += xpk
