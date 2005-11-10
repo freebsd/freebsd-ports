@@ -7,7 +7,7 @@
 
 PORTNAME=	solitaire
 PORTVERSION=	19980817
-CATEGORIES=	math misc
+CATEGORIES=	math
 MASTER_SITES=	http://www.counterpane.com/ \
 		${MASTER_SITE_LOCAL} \
 		http://www.unixfreak.org/~dima/distfiles/

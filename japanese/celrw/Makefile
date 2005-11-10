@@ -7,7 +7,7 @@
 
 PORTNAME=	celrw
 PORTVERSION=	0.12
-CATEGORIES=	japanese misc
+CATEGORIES=	japanese
 MASTER_SITES=	http://www.nurs.or.jp/~kurati/celrw/
 
 MAINTAINER=	shuna@pop16.odn.ne.jp

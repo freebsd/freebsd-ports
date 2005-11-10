@@ -7,7 +7,7 @@
 
 PORTNAME=	phone
 PORTVERSION=	20020622
-CATEGORIES=	hungarian misc
+CATEGORIES=	hungarian
 MASTER_SITES=	http://skye.ki.iif.hu/~mohacsi/downloads/
 PKGNAMEPREFIX=	hu-
 DISTNAME=	korzetszam.2002.06.22

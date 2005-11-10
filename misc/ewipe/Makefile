@@ -7,7 +7,7 @@
 
 PORTNAME=	ewipe
 PORTVERSION=	1.2.0
-CATEGORIES+=	misc tk82
+CATEGORIES?=	misc tk82
 MASTER_SITES=	http://www.jnet-jp.to/~sekisita/ewipe/
 
 MAINTAINER?=	ports@FreeBSD.org
