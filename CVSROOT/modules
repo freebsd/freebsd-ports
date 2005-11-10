@@ -12862,6 +12862,7 @@ xaos		ports/graphics/xaos
 xapply		ports/sysutils/xapply
 xaraya		ports/www/xaraya
 xarchie		ports/net/xarchie
+xarchive	ports/archivers/xarchive
 xarchon		ports/games/xarchon
 xaric		ports/irc/xaric
 xasteroids	ports/games/xasteroids
