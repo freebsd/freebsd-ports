@@ -3,10 +3,10 @@
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.9 2005/09/25 00:56:46 tmclau02 Exp $
+#   $Id: Makefile,v 1.13 2005/11/01 05:03:44 tmclau02 Exp $
 #
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-sharp
 
@@ -27,7 +27,7 @@ USE_GNOME=	gnomehack gnometarget glib20
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-mono=yes
 
-LATEST_LINK=  gmime2-sharp
+LATEST_LINK=    gmime2-sharp
 
 # Else we conflict with mail/gmime2
 NOPORTDOCS=	yes
@@ -36,6 +36,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|.@GMIME_VERSION@||g' \
 		${WRKSRC}/mono/gmime-sharp.dll.config.in
 	@${REINPLACE_CMD} -e 's|libglib-2.0.so.0|libglib-2.0.so|g' \
-		${WRKSRC}/mono/ObjectStream.cs ${WRKSRC}/mono/Object.custom
+		${WRKSRC}/mono/ObjectStream.cs ${WRKSRC}/mono/Stream.custom
 
+.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include "${MASTERDIR}/Makefile"
