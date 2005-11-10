@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	fortunepl
-PORTVERSION=	0.0.20050220
+PORTVERSION=	0.0.20051022
 CATEGORIES=	polish
-MASTER_SITES=	ftp://ftp.debian.org/debian/pool/main/f/fortunes-pl/ \
-		http://www.bsdguru.org/fortunes/20050320/
+MASTER_SITES=	http://www.bsdguru.org/fortunes/
 DISTNAME=	fortunes-pl_${PORTVERSION}.orig
 
-PATCH_SITES=	http://bsdguru.org/fortunes/20050320/
-PATCHFILES=	freebsd.pl filozofia
+PATCH_SITES=	http://bsdguru.org/fortunes/
+PATCHFILES=	fortunes-pl_${PORTVERSION}.freebsd.pl \
+		fortunes-pl_${PORTVERSION}.filozofia
 
 MAINTAINER=	alex@bsdguru.org
 COMMENT=	A lot of funny Polish fortune files
@@ -27,8 +27,8 @@ FORTUNES=	7thguard advocacy apcoh argante bajki bok cnp cows \
 		filozofia freebsd.pl gra_polslowek haiku http icpusers imiona \
 		ipv6.pl komputery konikbujany koscielne lcamtuf life matura \
 		microsoft milosc misc nauka ospl ospl-ad perl polish_manpages \
-		pratchett puchatek radio_maryja rywingate sad sapkowski \
-		seneka sigpl sigvirus slownik spolem sport stachura \
+		pratchett psy1 puchatek radio_maryja rywingate sad sapkowski \
+		seneka sigpl sigvirus slownik spolem sport stachura stirlitz \
 		teleturnieje testnaosobowosc wierszyki wieza-pilot zen \
 		znaki_zodiaku
 
@@ -38,9 +38,8 @@ IGNORE=		need strfile command. Please install games distribution of base system
 .endif
 
 do-patch:
-.for extras in ${PATCHFILES}
-	@${CP} ${DISTDIR}/${extras} ${WRKSRC}/
-.endfor
+	${CP} ${DISTDIR}/fortunes-pl_${PORTVERSION}.freebsd.pl ${WRKSRC}/freebsd.pl
+	${CP} ${DISTDIR}/fortunes-pl_${PORTVERSION}.filozofia ${WRKSRC}/filozofia
 
 do-build:
 .for FILE in ${FORTUNES}
