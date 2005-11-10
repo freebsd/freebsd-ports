@@ -18,6 +18,9 @@
     SUBDIR += firetalk
     SUBDIR += fugu
     SUBDIR += gaim
+    SUBDIR += gaim-bangexec
+    SUBDIR += gaim-guifications
+    SUBDIR += gaim-ignorance
     SUBDIR += gaim-latex
     SUBDIR += gaim-openq
     SUBDIR += gaim-rss-reader
