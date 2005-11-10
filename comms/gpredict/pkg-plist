@@ -1,11 +1,11 @@
 bin/gpredict
-share/gpredict/amateur.tle
-share/gpredict/iridium.tle
-share/gpredict/locations.dat
-share/gpredict/military.tle
-share/gpredict/radar.tle
-share/gpredict/science.tle
-share/gpredict/weather.tle
+%%DATADIR%%/amateur.tle
+%%DATADIR%%/iridium.tle
+%%DATADIR%%/locations.dat
+%%DATADIR%%/military.tle
+%%DATADIR%%/radar.tle
+%%DATADIR%%/science.tle
+%%DATADIR%%/weather.tle
 share/pixmaps/gpredict/icons/antenna.png
 share/pixmaps/gpredict/icons/calendar.png
 share/pixmaps/gpredict/icons/cancel.png
@@ -21,18 +21,24 @@ share/pixmaps/gpredict/icons/gpredict-home.png
 share/pixmaps/gpredict/icons/gpredict-icon.png
 share/pixmaps/gpredict/icons/gpredict-icon.xpm
 share/pixmaps/gpredict/icons/gpredict-tle-web.png
+share/pixmaps/gpredict/icons/ic910-wide.png
+share/pixmaps/gpredict/icons/ic910.png
+share/pixmaps/gpredict/icons/info.png
+share/pixmaps/gpredict/icons/map-druid.png
 share/pixmaps/gpredict/icons/map.png
 share/pixmaps/gpredict/icons/map.xpm
-share/pixmaps/gpredict/icons/map-druid.png
 share/pixmaps/gpredict/icons/mir-original.png
+share/pixmaps/gpredict/icons/module-attach.png
+share/pixmaps/gpredict/icons/module-close.png
+share/pixmaps/gpredict/icons/module-detach.png
 share/pixmaps/gpredict/icons/prefs.png
 share/pixmaps/gpredict/icons/prefs_20.png
 share/pixmaps/gpredict/icons/print.png
 share/pixmaps/gpredict/icons/print_20.png
 share/pixmaps/gpredict/icons/radio.png
 share/pixmaps/gpredict/icons/radio.xpm
-share/pixmaps/gpredict/icons/satlist.png
 share/pixmaps/gpredict/icons/satlist-druid.png
+share/pixmaps/gpredict/icons/satlist.png
 share/pixmaps/gpredict/icons/save.png
 share/pixmaps/gpredict/icons/save_as.png
 share/pixmaps/gpredict/icons/save_as_20.png
@@ -41,11 +47,11 @@ share/pixmaps/gpredict/icons/stock_timer.png
 share/pixmaps/gpredict/icons/windows.png
 share/pixmaps/gpredict/icons/windows_small.png
 share/pixmaps/gpredict/maps/CPEarth_800.jpg
-share/pixmaps/gpredict/maps/earth_800.jpg
-share/pixmaps/gpredict/maps/NASA_800.jpg
-share/pixmaps/gpredict/maps/night_800.jpg
 share/pixmaps/gpredict/maps/N1MXK_YEL_800.jpg
+share/pixmaps/gpredict/maps/NASA_800.jpg
+share/pixmaps/gpredict/maps/earth_800.jpg
+share/pixmaps/gpredict/maps/night_800.jpg
 @dirrm share/pixmaps/gpredict/maps
 @dirrm share/pixmaps/gpredict/icons
 @dirrm share/pixmaps/gpredict
-@dirrm share/gpredict
+@dirrm %%DATADIR%%
