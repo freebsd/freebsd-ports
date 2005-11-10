@@ -3,12 +3,13 @@
 # Friday the 13th!
 # Whom:                 Christopher Nehren
 #
-# $Id: Makefile,v 1.20 2005/06/17 05:45:49 tmclau02 Exp $
 # $FreeBSD$
+#   $Id: Makefile,v 1.27 2005/10/22 06:02:36 tmclau02 Exp $
 #
 
 PORTNAME=	monodoc
-PORTVERSION=	1.0.7
+PORTVERSION=	1.1.9
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://www.go-mono.com/sources/${PORTNAME}/
 
@@ -23,4 +24,5 @@ USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>

@@ -10,6 +10,8 @@ lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/monodoc.dll
 lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/monodoc.dll.config
 lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/monodoc.dll.mdb
 lib/mono/monodoc/monodoc.dll
+lib/mono/monodoc/monodoc.dll.config
+lib/mono/monodoc/monodoc.dll.mdb
 lib/monodoc/assembler.exe
 lib/monodoc/cs2ecma.exe
 lib/monodoc/mod.exe
@@ -30,15 +32,6 @@ lib/monodoc/sources/cs-errors.zip
 lib/monodoc/sources/ecma334.source
 lib/monodoc/sources/ecma334.tree
 lib/monodoc/sources/ecma334.zip
-lib/monodoc/sources/gecko-sharp-docs.source
-lib/monodoc/sources/gecko-sharp-docs.tree
-lib/monodoc/sources/gecko-sharp-docs.zip
-lib/monodoc/sources/gtk-sharp-docs.source
-lib/monodoc/sources/gtk-sharp-docs.tree
-lib/monodoc/sources/gtk-sharp-docs.zip
-lib/monodoc/sources/monohb.source
-lib/monodoc/sources/monohb.tree
-lib/monodoc/sources/monohb.zip
 lib/monodoc/sources/netdocs.source
 lib/monodoc/sources/netdocs.tree
 lib/monodoc/sources/netdocs.zip
