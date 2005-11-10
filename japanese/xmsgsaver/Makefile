@@ -8,7 +8,7 @@
 PORTNAME=	xmsgsaver
 PORTVERSION=	1.8.1
 PORTREVISION=	1
-CATEGORIES=	japanese misc
+CATEGORIES=	japanese
 MASTER_SITES=	http://www19.xdsl.ne.jp/~cdr/soft/dl/
 
 MAINTAINER=	ports@FreeBSD.org
