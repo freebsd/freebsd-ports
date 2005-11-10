@@ -75,7 +75,7 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
-	@${X11BASE}/bin/gtk-update-icon-cache -f -q \
+	@${X11BASE}/bin/gtk-update-icon-cache -f -q --ignore-theme-index \
 		${PREFIX}/share/gnome/balsa/hicolor
 
 .include <bsd.port.post.mk>
