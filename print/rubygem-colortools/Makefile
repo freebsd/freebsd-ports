@@ -11,7 +11,7 @@ MASTER_SITES=	http://rubyforge.org/frs/download.php/5476/
 DISTNAME=	color-tools-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	Working with PDF documents in pure Ruby
+COMMENT=	Provides colour space definition and manpiulation
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
