@@ -1770,6 +1770,7 @@ dotproject	ports/www/dotproject
 dovecot		ports/mail/dovecot
 downloader	ports/ftp/downloader
 doxygen		ports/devel/doxygen
+doxymacs	ports/editors/doxymacs
 dparser		ports/devel/dparser
 dpkg		ports/archivers/dpkg
 dprog		ports/devel/dprog
