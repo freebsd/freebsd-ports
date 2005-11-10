@@ -9,7 +9,9 @@ PORTNAME=	alltraxclock
 PORTVERSION=	2.0.2
 PORTREVISION=	4
 CATEGORIES=	x11-clocks
-MASTER_SITES=	http://perso.wanadoo.fr/alltrax/
+MASTER_SITES=	http://perso.wanadoo.fr/alltrax/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	novel
 DISTNAME=	${PORTNAME}2_0.2-1
 
 MAINTAINER=	novel@FreeBSD.org
