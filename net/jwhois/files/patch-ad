@@ -1,0 +1,10 @@
+--- src/Makefile.in.dist	Sun Jul 10 03:52:02 2005
++++ src/Makefile.in	Thu Nov 10 16:54:24 2005
+@@ -61,6 +61,7 @@
+ 	jwhois-http.$(OBJEXT)
+ jwhois_OBJECTS = $(am_jwhois_OBJECTS)
+ jwhois_LDADD = $(LDADD)
++jwhois_LDFLAGS = $(LDFLAGS) $(LTLIBINTL)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
