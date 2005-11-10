@@ -2,15 +2,15 @@
 # Date created:					20041008
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
-# $Id: Makefile,v 1.5 2005/05/16 03:31:37 mezz7 Exp $
 # $FreeBSD$
+#   $Id: Makefile,v 1.17 2005/10/22 21:17:46 tmclau02 Exp $
 #
 
 PORTNAME=	f-spot
-PORTVERSION=	0.0.13
+PORTVERSION=	0.1.3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.0
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.1
 
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Personal photo management to the GNOME desktop
@@ -19,8 +19,10 @@ LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
 		exif.12:${PORTSDIR}/graphics/libexif \
 		sqlite.2:${PORTSDIR}/databases/sqlite2 \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
-BUILD_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp10
-RUN_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp10
+BUILD_DEPENDS=	gapi2-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp20 \
+		${LOCALBASE}/lib/mono/dbus-sharp/dbus-sharp.dll:${PORTSDIR}/devel/dbus-sharp
+RUN_DEPENDS=	gapi2-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp20 \
+		${LOCALBASE}/lib/mono/dbus-sharp/dbus-sharp.dll:${PORTSDIR}/devel/dbus-sharp
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack
@@ -31,4 +33,5 @@ USE_GMAKE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>
