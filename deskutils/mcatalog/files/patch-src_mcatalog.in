@@ -1,0 +1,16 @@
+--- src/mcatalog.in.orig	Sun Aug  7 14:51:42 2005
++++ src/mcatalog.in	Sun Aug  7 14:51:49 2005
+@@ -1,6 +1,12 @@
+ #!/bin/sh
+ 
+-export LD_LIBRARY_PATH="@prefix@/lib/mcatalog:$LD_LIBRARY_PATH"
++MOZILLA_HOME=%%MOZILLA%%
++export MOZILLA_HOME
++ 
++MOZILLA_FIVE_HOME=%%MOZILLA%%
++export MOZILLA_FIVE_HOME
++
++export LD_LIBRARY_PATH="@prefix@/lib/mcatalog:%%MOZILLA%%:$LD_LIBRARY_PATH"
+ EXE_TO_RUN="@prefix@/lib/mcatalog/mcatalog.exe"
+ 
+ mono $EXE_TO_RUN "$@"
