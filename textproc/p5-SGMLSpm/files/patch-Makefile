@@ -1,0 +1,11 @@
+--- Makefile.orig	Tue May  4 10:39:40 2004
++++ Makefile	Tue May  4 10:39:57 2004
+@@ -36,7 +36,7 @@
+ # End of user options.
+ #
+ 
+-HTML_SOURCES = DOC/HTML/SGMLSpm/ DOC/HTML/sgmlspl/
++HTML_SOURCES = DOC/HTML/SGMLSpm DOC/HTML/sgmlspl
+ 
+ FILES =	${BINDIR}/sgmlspl \
+ 	${PERL5DIR}/SGMLS.pm \
