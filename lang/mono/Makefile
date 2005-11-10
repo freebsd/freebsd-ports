@@ -2,12 +2,12 @@
 # Date created:        22 July 2002
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
-# $Id: Makefile,v 1.30 2005/07/12 22:00:50 mezz7 Exp $
 # $FreeBSD$
+#   $Id: Makefile,v 1.47 2005/11/06 03:26:36 tmclau02 Exp $
 #
 
 PORTNAME=	mono
-PORTVERSION=	1.1.8.2
+PORTVERSION=	1.1.9.2
 PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/sources/mono-1.1/
@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	--program-transform-name=\'\' \
 		--with-gc=included \
 		--with-tls=pthread
 
-MAN1=		cert2spc.1 certmgr.1 chktrust.1 cilc.1 disco.1 dtd2xsd.1 \
+MAN1=		al.1 cert2spc.1 certmgr.1 chktrust.1 cilc.1 disco.1 dtd2xsd.1 \
 		gacutil.1 genxs.1 ilasm.1 jay.1 macpack.1 makecert.1 mcs.1 \
 		mint.1 mkbundle.1 mono-service.1 mono-shlib-cop.1 mono.1 \
 		monoburg.1 monodis.1 monop.1 monostyle.1 oldmono.1 \
@@ -38,11 +38,16 @@ MAN1=		cert2spc.1 certmgr.1 chktrust.1 cilc.1 disco.1 dtd2xsd.1 \
 		soapsuds.1 sqlsharp.1 wsdl.1 xsd.1
 MAN5=		mono-config.5
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 #amd64
 
-MAKE_ENV=MONO_SHARED_DIR=${WRKDIR}
+MONO_SHARED_DIR=${WRKDIR}
+
+MAKE_ENV=MONO_SHARED_DIR=${MONO_SHARED_DIR}
 
 .include <bsd.port.pre.mk>
+
+pre-everything::
+	@${CAT} ${PKGMESSAGE}
 
 .if ${OSVERSION} < 503000
 IGNORE=	Does not work on 4.X and 5.X before 503000
@@ -64,7 +69,7 @@ post-patch:
 		${WRKSRC}/configure
 .if ${OSVERSION} >= 700000
 	@${REINPLACE_CMD} -e 's|freebsd6|freebsd7|g' \
-		${WRKSRC}/configure ${WRKSRC}/libgc/configure
+	${WRKSRC}/configure ${WRKSRC}/libgc/configure
 .endif
 
 tests: build
@@ -76,5 +81,9 @@ pre-su-install:
 	${MKDIR} ${X11BASE}/lib/mono/1.0
 	${MKDIR} ${X11BASE}/lib/mono/2.0
 	${MKDIR} ${X11BASE}/lib/mono/gac
+
+post-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/mono/handles/semdel ${PREFIX}/bin/mono-semdel
+	@${SETENV} MONO_SHARED_DIR_PORT="${MONO_SHARED_DIR}" ${SH} ${WRKSRC}/runtime/semdel-wrapper 2> /dev/null || true
 
 .include <bsd.port.post.mk>
