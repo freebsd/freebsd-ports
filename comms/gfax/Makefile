@@ -2,13 +2,13 @@
 # Date created:			20 January 2002
 # Whom:				John Merryweather Cooper <jmcoopr@webmail.bmi.net>
 #
-# $Id: Makefile,v 1.8 2005/06/15 02:10:28 tmclau02 Exp $
 # $FreeBSD$
+#   $Id: Makefile,v 1.12 2005/11/10 01:21:02 tmclau02 Exp $
 #
 
 PORTNAME=	gfax
 PORTVERSION=	0.7.3
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	comms print gnome
 MASTER_SITES=	http://gfax.cowlug.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -41,4 +41,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \
 		${WRKSRC}/scripts/printer-setup.sh
 
+.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>
