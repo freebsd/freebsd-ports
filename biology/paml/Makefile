@@ -6,27 +6,28 @@
 #
 
 PORTNAME=	paml
-PORTVERSION=	3.14
+PORTVERSION=	3.14b
 CATEGORIES=	biology
-MASTER_SITES=	ftp://abacus.gene.ucl.ac.uk/pub/paml/
+MASTER_SITES=	http://abacus.gene.ucl.ac.uk/software/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	dbader@eece.unm.edu
 COMMENT=	Phylogenetic Analysis by Maximum Likelihood (PAML)
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+USE_GMAKE=	YES
+WRKSRC=		${WRKDIR}/${DISTNAME:S/b//g}/src
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 BINARIES=	baseml basemlg chi2 codeml evolver pamp yn00
 
 do-install:
 .for f in ${BINARIES}
-		${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
 .if !defined(NOPORTDOCS)
-		${MKDIR} ${DOCSDIR}
-		${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/pamlDOC.pdf \
-			${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME:S/b//g}/doc/pamlDOC.pdf \
+		${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
