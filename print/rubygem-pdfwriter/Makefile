@@ -11,7 +11,7 @@ MASTER_SITES=	http://rubyforge.org/frs/download.php/5993/
 DISTNAME=	pdf-writer-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	Working with PDF documents in pure Ruby
+COMMENT=	A pure Ruby PDF document creation library
 
 BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/color-tools-1.3.0.gemspec:${PORTSDIR}/${PKGCATEGORY}/rubygem-colortools
 BUILD_DEPENDS+=	${LOCALBASE}/${SPEC_DIR}/transaction-simple-1.3.0.gemspec:${PORTSDIR}/devel/rubygem-transactionsimple

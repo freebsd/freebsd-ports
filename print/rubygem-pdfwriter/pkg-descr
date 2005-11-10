@@ -1,3 +1,7 @@
-Tools written in pure Ruby (no C extensions) for working with PDF documents.
+This library provides the ability to create PDF documents using only native
+Ruby libraries. There are several demo programs available in the demo/
+directory. The canonical documentation for PDF::Writer is "manual.pdf",
+which can be generated using bin/techbook (just "techbook" for RubyGem users)
+and the manual file "manual.pwd".
 
 WWW: http://rubyforge.org/projects/ruby-pdf/
