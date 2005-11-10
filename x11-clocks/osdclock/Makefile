@@ -9,7 +9,9 @@ PORTNAME=	osdclock
 PORTVERSION=	0.5
 PORTREVISION=	1
 CATEGORIES=	x11-clocks
-MASTER_SITES=	http://leftorium.net/software/
+MASTER_SITES=	http://leftorium.net/software/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	novel
 DISTNAME=	osd_clock-${PORTVERSION}
 
 MAINTAINER=	novel@FreeBSD.org
