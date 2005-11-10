@@ -2121,6 +2121,7 @@ evolution-data-server	ports/databases/evolution-data-server
 evolution-exchange	ports/mail/evolution-exchange
 evolution-gconf-tools	ports/devel/evolution-gconf-tools
 evolution-jescs		ports/deskutils/evolution-jescs
+evolution-sharp		ports/mail/evolution-sharp
 evolution-webcal	ports/www/evolution-webcal
 evolvotron	ports/graphics/evolvotron
 ewipe		ports/misc/ewipe
