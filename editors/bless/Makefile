@@ -2,12 +2,12 @@
 # Date created:				24 October 2004
 # Whom:					Mezz <mezz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 2005/05/10 16:34:16 mezz7 Exp $
 # $FreeBSD$
+#   $Id: Makefile,v 1.10 2005/11/06 00:06:05 tmclau02 Exp $
 #
 
 PORTNAME=	bless
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.6
 PORTEPOCH=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://download.gna.org/bless/
@@ -45,4 +45,5 @@ post-install:
 .endfor
 .endif
 
+.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>

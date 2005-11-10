@@ -1,11 +1,12 @@
 bin/bless
-lib/bless-0.3.5/bin/bless.exe
-lib/bless-0.3.5/data/bless-16-bytes-per-row.layout
-lib/bless-0.3.5/data/bless-48x48.png
-lib/bless-0.3.5/data/bless-about.png
-lib/bless-0.3.5/data/bless-all-number-bases.layout
-lib/bless-0.3.5/data/bless-default.layout
-lib/bless-0.3.5/data/help_script.sh
+lib/bless-0.3.6/bin/bless.exe
+lib/bless-0.3.6/data/bless-16-bytes-per-row.layout
+lib/bless-0.3.6/data/bless-48x48.png
+lib/bless-0.3.6/data/bless-about.png
+lib/bless-0.3.6/data/bless-all-number-bases.layout
+lib/bless-0.3.6/data/bless-default.layout
+lib/bless-0.3.6/data/default-preferences.xml
+lib/bless-0.3.6/data/help_script.sh
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -24,6 +25,7 @@ lib/bless-0.3.5/data/help_script.sh
 %%PORTDOCS%%%%DOCSDIR%%/user/ch04s04.html
 %%PORTDOCS%%%%DOCSDIR%%/user/ch05.html
 %%PORTDOCS%%%%DOCSDIR%%/user/ch05s02.html
+%%PORTDOCS%%%%DOCSDIR%%/user/ch05s03.html
 %%PORTDOCS%%%%DOCSDIR%%/user/ch06.html
 %%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_area_focus.png
 %%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_display_tag.png
@@ -31,6 +33,9 @@ lib/bless-0.3.5/data/help_script.sh
 %%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_goto.png
 %%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_layout_example1.png
 %%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_layout_oha.png
+%%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_number_base.png
+%%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_preferences_general.png
+%%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_preferences_session.png
 %%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_search_find.png
 %%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_search_replace.png
 %%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_start_window.png
@@ -45,6 +50,6 @@ share/gnome/pixmaps/bless-48x48.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/user
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/developer
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/bless-0.3.5/data
-@dirrm lib/bless-0.3.5/bin
-@dirrm lib/bless-0.3.5
+@dirrm lib/bless-0.3.6/data
+@dirrm lib/bless-0.3.6/bin
+@dirrm lib/bless-0.3.6
