@@ -21,18 +21,15 @@ DIST_SUBDIR=	postgresql
 
 USE_ANT=	yes
 USE_JAVA=	yes
-JAVA_VERSION?=	"1.1+"
 USE_REINPLACE=	yes
 
 PKGMESSAGE=	${WRKDIR}/.pkg-message
 
 post-patch:
-	${REINPLACE_CMD} 's,/usr/local/pgsql/share/java,${PREFIX}/share/java/classes,' ${WRKSRC}/README
+	${REINPLACE_CMD} 's,/usr/local/pgsql/share/java,${JAVAJARDIR},' ${WRKSRC}/README
 
 do-install:
-	@- ${MKDIR} -m 0755 ${PREFIX}/share/java/classes ;\
-	  ${INSTALL_DATA} ${WRKSRC}/jars/postgresql.jar \
-		${PREFIX}/share/java/classes/postgresql.jar ;\
+	@- ${INSTALL_DATA} ${WRKSRC}/jars/postgresql.jar ${JAVAJARDIR}/postgresql.jar ;\
 	  ${MKDIR} -m 0755 ${DOCSDIR} ;\
 	  ${INSTALL_DATA} ${WRKSRC}/README \
 			  ${DOCSDIR}/README-jdbc
@@ -45,7 +42,8 @@ do-install:
 .endif
 
 post-install:
-	@ ${SED} "s|%%PREFIX%%|${PREFIX}|g" \
+	@ ${SED} -e "s|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g" \
+	  -e "s|%%JAVAJARDIR%%|${JAVAJARDIR}|g" \
 	  < ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 	@ ${CAT} ${PKGMESSAGE}
 
