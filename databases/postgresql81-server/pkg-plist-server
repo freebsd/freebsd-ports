@@ -24,10 +24,11 @@ lib/postgresql/utf8_and_iso8859.so
 lib/postgresql/utf8_and_iso8859_1.so
 lib/postgresql/utf8_and_johab.so
 lib/postgresql/utf8_and_sjis.so
-lib/postgresql/utf8_and_tcvn.so
 lib/postgresql/utf8_and_uhc.so
 lib/postgresql/utf8_and_win1250.so
+lib/postgresql/utf8_and_win1252.so
 lib/postgresql/utf8_and_win1256.so
+lib/postgresql/utf8_and_win1258.so
 lib/postgresql/utf8_and_win874.so
 lib/postgresql/plpgsql.so
 %%DOCSDIR%%/README-server
@@ -246,6 +247,7 @@ share/postgresql/timezone/Asia/Ujung_Pandang
 share/postgresql/timezone/Asia/Tel_Aviv
 share/postgresql/timezone/Asia/Thimbu
 share/postgresql/timezone/Asia/Ulan_Bator
+share/postgresql/timezone/Australia/Currie
 share/postgresql/timezone/Australia/Darwin
 share/postgresql/timezone/Australia/Perth
 share/postgresql/timezone/Australia/Brisbane
@@ -365,6 +367,7 @@ share/postgresql/timezone/CET
 share/postgresql/timezone/MET
 share/postgresql/timezone/EET
 share/postgresql/timezone/America/Danmarkshavn
+share/postgresql/timezone/America/Coral_Harbour
 share/postgresql/timezone/America/Scoresbysund
 share/postgresql/timezone/America/Godthab
 share/postgresql/timezone/America/Thule
