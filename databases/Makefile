@@ -313,6 +313,8 @@
     SUBDIR += postgresql74-server
     SUBDIR += postgresql80-client
     SUBDIR += postgresql80-server
+    SUBDIR += postgresql81-client
+    SUBDIR += postgresql81-server
     SUBDIR += postgresql_autodoc
     SUBDIR += puredb
     SUBDIR += pxtools
