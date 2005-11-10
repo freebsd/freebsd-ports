@@ -22,8 +22,6 @@ lib/mono/gac/atk-sharp/1.0.0.0__35e10195dab3c99f/atk-sharp.dll.config
 lib/mono/gac/gconf-sharp-peditors/1.0.0.0__35e10195dab3c99f/gconf-sharp-peditors.dll
 lib/mono/gac/gconf-sharp/1.0.0.0__35e10195dab3c99f/gconf-sharp.dll
 lib/mono/gac/gconf-sharp/1.0.0.0__35e10195dab3c99f/gconf-sharp.dll.config
-lib/mono/gac/gda-sharp/1.0.0.0__35e10195dab3c99f/gda-sharp.dll
-lib/mono/gac/gda-sharp/1.0.0.0__35e10195dab3c99f/gda-sharp.dll.config
 lib/mono/gac/gdk-sharp/1.0.0.0__35e10195dab3c99f/gdk-sharp.dll
 lib/mono/gac/gdk-sharp/1.0.0.0__35e10195dab3c99f/gdk-sharp.dll.config
 lib/mono/gac/glade-sharp/1.0.0.0__35e10195dab3c99f/glade-sharp.dll
@@ -32,8 +30,6 @@ lib/mono/gac/glib-sharp/1.0.0.0__35e10195dab3c99f/glib-sharp.dll
 lib/mono/gac/glib-sharp/1.0.0.0__35e10195dab3c99f/glib-sharp.dll.config
 lib/mono/gac/gnome-sharp/1.0.0.0__35e10195dab3c99f/gnome-sharp.dll
 lib/mono/gac/gnome-sharp/1.0.0.0__35e10195dab3c99f/gnome-sharp.dll.config
-lib/mono/gac/gnomedb-sharp/1.0.0.0__35e10195dab3c99f/gnomedb-sharp.dll
-lib/mono/gac/gnomedb-sharp/1.0.0.0__35e10195dab3c99f/gnomedb-sharp.dll.config
 lib/mono/gac/gtk-sharp/1.0.0.0__35e10195dab3c99f/gtk-sharp.dll
 lib/mono/gac/gtk-sharp/1.0.0.0__35e10195dab3c99f/gtk-sharp.dll.config
 lib/mono/gac/gtkhtml-sharp/1.0.0.0__35e10195dab3c99f/gtkhtml-sharp.dll
@@ -45,27 +41,49 @@ lib/mono/gac/rsvg-sharp/1.0.0.0__35e10195dab3c99f/rsvg-sharp.dll.config
 lib/mono/gac/vte-sharp/1.0.0.0__35e10195dab3c99f/vte-sharp.dll
 lib/mono/gac/vte-sharp/1.0.0.0__35e10195dab3c99f/vte-sharp.dll.config
 lib/mono/gtk-sharp/art-sharp.dll
+lib/mono/gtk-sharp/art-sharp.dll.config
+lib/mono/gtk-sharp/art-sharp.dll.mdb
 lib/mono/gtk-sharp/atk-sharp.dll
+lib/mono/gtk-sharp/atk-sharp.dll.config
+lib/mono/gtk-sharp/atk-sharp.dll.mdb
 lib/mono/gtk-sharp/gconf-sharp-peditors.dll
+lib/mono/gtk-sharp/gconf-sharp-peditors.dll.config
+lib/mono/gtk-sharp/gconf-sharp-peditors.dll.mdb
 lib/mono/gtk-sharp/gconf-sharp.dll
-lib/mono/gtk-sharp/gda-sharp.dll
+lib/mono/gtk-sharp/gconf-sharp.dll.config
+lib/mono/gtk-sharp/gconf-sharp.dll.mdb
 lib/mono/gtk-sharp/gdk-sharp.dll
+lib/mono/gtk-sharp/gdk-sharp.dll.config
+lib/mono/gtk-sharp/gdk-sharp.dll.mdb
 lib/mono/gtk-sharp/glade-sharp.dll
+lib/mono/gtk-sharp/glade-sharp.dll.config
+lib/mono/gtk-sharp/glade-sharp.dll.mdb
 lib/mono/gtk-sharp/glib-sharp.dll
+lib/mono/gtk-sharp/glib-sharp.dll.config
+lib/mono/gtk-sharp/glib-sharp.dll.mdb
 lib/mono/gtk-sharp/gnome-sharp.dll
-lib/mono/gtk-sharp/gnomedb-sharp.dll
+lib/mono/gtk-sharp/gnome-sharp.dll.config
+lib/mono/gtk-sharp/gnome-sharp.dll.mdb
 lib/mono/gtk-sharp/gtk-sharp.dll
+lib/mono/gtk-sharp/gtk-sharp.dll.config
+lib/mono/gtk-sharp/gtk-sharp.dll.mdb
 lib/mono/gtk-sharp/gtkhtml-sharp.dll
+lib/mono/gtk-sharp/gtkhtml-sharp.dll.config
+lib/mono/gtk-sharp/gtkhtml-sharp.dll.mdb
 lib/mono/gtk-sharp/pango-sharp.dll
+lib/mono/gtk-sharp/pango-sharp.dll.config
+lib/mono/gtk-sharp/pango-sharp.dll.mdb
 lib/mono/gtk-sharp/rsvg-sharp.dll
+lib/mono/gtk-sharp/rsvg-sharp.dll.config
+lib/mono/gtk-sharp/rsvg-sharp.dll.mdb
 lib/mono/gtk-sharp/vte-sharp.dll
+lib/mono/gtk-sharp/vte-sharp.dll.config
+lib/mono/gtk-sharp/vte-sharp.dll.mdb
 libdata/pkgconfig/art-sharp.pc
 libdata/pkgconfig/gapi.pc
 libdata/pkgconfig/gconf-sharp.pc
-libdata/pkgconfig/gda-sharp.pc
 libdata/pkgconfig/glade-sharp.pc
 libdata/pkgconfig/gnome-sharp.pc
-libdata/pkgconfig/gnomedb-sharp.pc
 libdata/pkgconfig/gtk-sharp.pc
 libdata/pkgconfig/gtkhtml-sharp.pc
 libdata/pkgconfig/rsvg-sharp.pc
@@ -73,12 +91,10 @@ libdata/pkgconfig/vte-sharp.pc
 share/gapi/art-api.xml
 share/gapi/art-symbols.xml
 share/gapi/atk-api.xml
-share/gapi/gda-api.xml
 share/gapi/gdk-api.xml
 share/gapi/gdk-symbols.xml
 share/gapi/glade-api.xml
 share/gapi/gnome-api.xml
-share/gapi/gnomedb-api.xml
 share/gapi/gtk-api.xml
 share/gapi/gtk-symbols.xml
 share/gapi/gtkhtml-api.xml
@@ -97,8 +113,6 @@ share/gapi/vte-api.xml
 @unexec rmdir %D/lib/mono/gac/gtkhtml-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/gtk-sharp/1.0.0.0__35e10195dab3c99f
 @unexec rmdir %D/lib/mono/gac/gtk-sharp 2> /dev/null || true
-@dirrm lib/mono/gac/gnomedb-sharp/1.0.0.0__35e10195dab3c99f
-@unexec rmdir %D/lib/mono/gac/gnomedb-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/gnome-sharp/1.0.0.0__35e10195dab3c99f
 @unexec rmdir %D/lib/mono/gac/gnome-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/glib-sharp/1.0.0.0__35e10195dab3c99f
@@ -107,8 +121,6 @@ share/gapi/vte-api.xml
 @unexec rmdir %D/lib/mono/gac/glade-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/gdk-sharp/1.0.0.0__35e10195dab3c99f
 @unexec rmdir %D/lib/mono/gac/gdk-sharp 2> /dev/null || true
-@dirrm lib/mono/gac/gda-sharp/1.0.0.0__35e10195dab3c99f
-@unexec rmdir %D/lib/mono/gac/gda-sharp 2> /dev/null || true
 @dirrm lib/mono/gac/gconf-sharp/1.0.0.0__35e10195dab3c99f
 @dirrm lib/mono/gac/gconf-sharp-peditors/1.0.0.0__35e10195dab3c99f
 @unexec rmdir %D/lib/mono/gac/gconf-sharp-peditors 2> /dev/null || true
