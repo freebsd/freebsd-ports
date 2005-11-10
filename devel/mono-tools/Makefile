@@ -2,22 +2,22 @@
 # Date created:			2005-06-16
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
-# $Id: Makefile,v 1.3 2005/07/02 22:27:12 apeiron Exp $
 # $FreeBSD$
+#   $Id: Makefile,v 1.10 2005/10/22 06:02:35 tmclau02 Exp $
 #
 
 PORTNAME=	mono-tools
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.1.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.go-mono.com/sources/${PORTNAME}/
 
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Documentation browser for Mono and Mono libraries
 
-BUILD_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp10 \
+BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/gecko-sharp.pc:${PORTSDIR}/www/gecko-sharp10 \
 		monodocer:${PORTSDIR}/devel/monodoc
-RUN_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp10 \
+RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gecko-sharp.pc:${PORTSDIR}/www/gecko-sharp10 \
 		monodocer:${PORTSDIR}/devel/monodoc
 
 USE_GNOME=	gnomehack gnometarget
@@ -30,4 +30,5 @@ post-extract:
 	@${REINPLACE_CMD} -e 's|@bindir@/monodoc|monodoc|g' \
 		${WRKSRC}/docbrowser/monodoc.desktop.in
 
+.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>
