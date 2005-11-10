@@ -36,8 +36,8 @@ MAN3=	GStreamer.3 GStreamer::Bin.3 GStreamer::Buffer.3 GStreamer::Caps.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64
-BROKEN=		"Coredump during build on amd64"
+.if ${ARCH} == amd64 || ${ARCH} == "sparc64"
+BROKEN=		"Coredump during build on ${ARCH}"
 .endif
 
 .include <bsd.port.post.mk>
