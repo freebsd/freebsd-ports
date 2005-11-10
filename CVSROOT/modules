@@ -1727,6 +1727,7 @@ docbook-430	ports/textproc/docbook-430
 docbook-sk	ports/textproc/docbook-sk
 docbook-tdg	ports/textproc/docbook-tdg
 docbook-to-man	ports/textproc/docbook-to-man
+docbook-utils	ports/textproc/docbook-utils
 docbook-xml	ports/textproc/docbook-xml
 docbook-xml-430	ports/textproc/docbook-xml-430
 docbook-xml-440	ports/textproc/docbook-xml-440
