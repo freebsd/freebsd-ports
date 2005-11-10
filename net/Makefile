@@ -124,7 +124,6 @@
     SUBDIR += ethereal
     SUBDIR += ethereal-lite
     SUBDIR += etunnel
-    SUBDIR += eva
     SUBDIR += fcptools
     SUBDIR += fidelio
     SUBDIR += findmtu

@@ -15,6 +15,7 @@
     SUBDIR += convey
     SUBDIR += echat
     SUBDIR += ejabberd
+    SUBDIR += eva
     SUBDIR += firetalk
     SUBDIR += fugu
     SUBDIR += gaim
