@@ -34,6 +34,72 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f4b95430-51d8-11da-8e93-0010dc4afb40">
+    <topic>flyspray -- cross-site scripting vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>flyspray</name>
+	<range><le>0.9.8</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/17316/">
+	  <p>Lostmon has reported some vulnerabilities in Flyspray,
+	    which can be exploited by malicious people to conduct
+	    cross-site scripting attacks.</p>
+    	  <p>Some input isn't properly sanitised before being
+	    returned to the user. This can be exploited to execute
+	    arbitrary HTML and script code in a user's browser
+	    session in context of an affected site.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/17316/</url>
+      <url>http://lostmon.blogspot.com/2005/10/flyspray-bug-killer-multiple-variable.html</url>
+    </references>
+    <dates>
+      <discovery>2005-10-26</discovery>
+      <entry>2005-11-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7f3fdef7-51d2-11da-8e93-0010dc4afb40">
+    <topic>p5-Mail-SpamAssassin -- long message header denial of service</topic>
+    <affects>
+      <package>
+	<name>p5-Mail-SpamAssassin</name>
+	<range><lt>3.1.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/17386/">
+	  <p>A vulnerability has been reported in SpamAssassin,
+	    which can be exploited by malicious people to cause
+	    a DoS (Denial of Service).</p>
+          <p>The vulnerability is caused due to the use of
+	    an inefficient regular expression in
+	    "/SpamAssassin/Message.pm" to parse email headers.
+	    This can cause perl to crash when it runs out of stack
+	    space and can be exploited via a malicious email that
+	    contains a large number of recipients.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/17386/</url>
+      <url>http://issues.apache.org/SpamAssassin/show_bug.cgi?id=4570</url>
+    </references>
+    <dates>
+      <discovery>2005-11-10</discovery>
+      <entry>2005-11-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="eb29a575-3381-11da-8340-000e0c2e438a">
     <topic>qpopper -- multiple privilege escalation vulnerabilities</topic>
     <affects>
