@@ -48,4 +48,14 @@ post-patch:
 		/^install		:: install_guide/d' \
 		${WRKSRC}/src/MkInstal.in
 
+do-build:
+.	for dir in src libraries docs
+	cd ${WRKSRC}/${dir} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
+.	endfor
+
+do-install:
+.	for dir in src libraries demos docs
+	cd ${WRKSRC}/${dir} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
+.	endfor
+
 .include <bsd.port.post.mk>
